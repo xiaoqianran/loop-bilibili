@@ -9,19 +9,27 @@ paths:
 # 默认限速（与 packages/loop_core/rate_limit.py 中 conservative 对齐）
 rate_limit:
   default_profile: conservative
-  # 可覆盖单项（未接 CLI 时供未来 load_config 使用）
+  # list: page_delay ~1.5s; item: item_delay ~5s (always serial)
   # page_size: 30
   # page_delay: 1.5
-  # page_jitter: 0.5
-  # search_delay: 4.0
+  # item_delay: 5.0
   # max_retries: 5
   # cooldown_412: 300
 
 modules:
   catalog:
     enabled: true
-    order: pubdate
+  hot:
+    enabled: true
+  ranking:
+    enabled: true
+  search:
+    enabled: true
+  feed:
+    enabled: true
   summary:
-    enabled: false   # planned
+    enabled: true
   subtitle:
-    enabled: false   # planned
+    enabled: true
+  comments:
+    enabled: true
