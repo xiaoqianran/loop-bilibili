@@ -1,9 +1,30 @@
+# Runtime / local
+**/logs/
+data/
+config.yaml
+.env
+.env.*
+
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
 .venv/
 venv/
-.env
-*.log
-.DS_Store
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+
+# IDE / OS
 .idea/
 .vscode/
+*.swp
+.DS_Store
+
+# Progress mid-fetch (optional keep; ignore by default)
+**/.progress.json
+**/all.partial.json

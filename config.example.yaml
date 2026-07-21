@@ -1,0 +1,27 @@
+# loop-bilibili 配置模板
+# 复制为 config.yaml 后按需修改（config.yaml 已 gitignore）
+# 当前版本以 CLI --profile 为主；此文件预留扩展。
+
+paths:
+  catalogs_dir: catalogs
+  logs_dir: logs
+
+# 默认限速（与 packages/loop_core/rate_limit.py 中 conservative 对齐）
+rate_limit:
+  default_profile: conservative
+  # 可覆盖单项（未接 CLI 时供未来 load_config 使用）
+  # page_size: 30
+  # page_delay: 1.5
+  # page_jitter: 0.5
+  # search_delay: 4.0
+  # max_retries: 5
+  # cooldown_412: 300
+
+modules:
+  catalog:
+    enabled: true
+    order: pubdate
+  summary:
+    enabled: false   # planned
+  subtitle:
+    enabled: false   # planned
