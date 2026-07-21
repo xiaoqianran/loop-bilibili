@@ -4,8 +4,9 @@
 - **空间**: https://space.bilibili.com/2071007724
 - **投稿总数**: **281**
 - **系列数**: **5**
-- **导出时间**: 2026-07-21 09:10 UTC
+- **导出时间**: 2026-07-21 09:30 UTC
 - **数据源**: `opencli bilibili user-videos`
+- **限速 profile**: `rebuild`
 
 ## 系列一览
 
@@ -70,7 +71,9 @@
 ## 原始数据
 
 - 全量 JSON: [all.json](all.json)
+- 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
+- 元信息: [meta.json](meta.json)
 
 ---
 

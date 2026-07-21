@@ -6,33 +6,62 @@
 
 ## 依赖
 
-- Python 3.10+
+- Python 3.10+（仅标准库）
 - 已安装并可运行的 `opencli`（且 bilibili adapter 可用）
 
 ```bash
-# 确认 opencli 可用
 opencli bilibili user-videos --help
 ```
 
 ## 用法
 
 ```bash
-# UID
+# 推荐：UID + 显示名，默认 conservative 限速
 python3 scripts/export_up.py 2071007724 --name 海安雨
 
 # 空间链接
 python3 scripts/export_up.py 'https://space.bilibili.com/2071007724' --name 海安雨
 
-# UP 名（若 opencli 能解析）
+# UP 名（若 opencli 能解析；搜索间隔更长）
 python3 scripts/export_up.py 海安雨
+
+# 中断后续跑
+python3 scripts/export_up.py 2071007724 --name 海安雨 --resume
+
+# 不联网：根据已有 all.json 重生成 markdown / csv
+python3 scripts/export_up.py --rebuild catalogs/2071007724-海安雨
+
+# 更快 profile（有风控风险，不推荐大批量）
+python3 scripts/export_up.py 2071007724 --name 海安雨 --profile balanced
 ```
 
-可选参数：
+### 参数
 
 | 参数 | 说明 | 默认 |
 |------|------|------|
-| `--name` | 显示名（UID/链接时建议带上） | 与 target 相同 |
+| `target` | UP 名 / UID / 空间链接 | （导出时必填） |
+| `--name` | 显示名 | 与 target 相同 |
 | `--out` | 导出根目录 | `catalogs` |
+| `--profile` | `conservative` / `balanced` / `aggressive` | `conservative` |
+| `--page-size` | 每页条数 | 随 profile（保守 30） |
+| `--delay` | 页间隔秒数 | 随 profile（保守 1.5） |
+| `--jitter` | 间隔抖动 | 随 profile |
+| `--retries` | 单页最大重试 | 随 profile |
+| `--max-pages` | 最大页数 | 随 profile（200） |
+| `--cooldown-412` | 命中硬风控后冷却秒数 | 随 profile（保守 300） |
+| `--order` | `pubdate` / `click` / `stow` | `pubdate` |
+| `--resume` | 从进度文件续跑 | off |
+| `--rebuild DIR` | 从已有 JSON 重建目录 | — |
+
+### 限速 profile
+
+| profile | page_size | 页间隔 | 适用 |
+|---------|-----------|--------|------|
+| **conservative**（默认） | 30 | ~1.5s ±0.5s | 日常全量导出 |
+| **balanced** | 50 | ~1.0s ±0.3s | 账号稳、只拉列表 |
+| **aggressive** | 50 | ~0.3s ±0.1s | 调试；易触发限流 |
+
+失败时：指数退避；疑似 `-412` 长冷却；进度写入 `.progress.json` + `all.partial.json`，可用 `--resume` 继续。
 
 ## 输出结构
 
@@ -40,25 +69,54 @@ python3 scripts/export_up.py 海安雨
 catalogs/
   {uid}-{name}/
     README.md          # 总目录：系列一览 / 最新 / 播放 Top
-    meta.json          # 元信息
+    meta.json          # 元信息（含 profile）
     all.json           # 全量视频列表
+    all.csv            # 全量 CSV（便于表格处理）
     by_series.json     # 按系列分组
     series/
       每天一个宝藏问题.md
-      每天一个宝藏论文.md
       ...
+    # 抓取中途才会出现：
+    .progress.json
+    all.partial.json
 ```
 
-系列识别规则：从标题中的 `【标签】` 提取；优先含「宝藏 / 系列 / 合集 / 每天 / 每周」等词的标签；没有标签则归入「未分类 / 其他」。
+系列识别：从标题 `【标签】` 提取；优先含「宝藏 / 系列 / 合集 / 每天 / 每周」等；无标签 →「未分类 / 其他」。
+
+## 已实现功能
+
+| 功能 | 状态 |
+|------|------|
+| 按 UID / 链接 / 名称定位 UP | ✅ |
+| 分页拉取全部投稿 | ✅ |
+| 按系列分组导出 Markdown | ✅ |
+| 总目录 + 最新 20 + 播放 Top 20 | ✅ |
+| JSON / CSV / meta | ✅ |
+| 限速 profile + 抖动间隔 | ✅ |
+| 失败退避 / 412 冷却 | ✅ |
+| 断点续跑 `--resume` | ✅ |
+| 离线重建 `--rebuild` | ✅ |
+| 排序 `--order` | ✅ |
+
+## 规划中 / 未做（欢迎后续加）
+
+| 功能 | 说明 | 风险 |
+|------|------|------|
+| 批量 AI 总结 | 对目录内视频跑 `opencli bilibili summary` | 高（每视频一次，需更严限速） |
+| 批量字幕 | `subtitle` 导出 SRT/文本 | 高 |
+| 按系列筛选导出 | 只导出某一 `【系列】` | 低 |
+| 增量更新 | 对比已有 all.json 只拉新稿 | 低 |
+| 多 UP 批处理 | 配置文件一次跑多个 UP | 中（UP 间需额外间隔） |
+| 视频详情 enrich | 补 duration、简介等 | 中 |
+
+扩展能力务必单独限速，**不要**与列表翻页同速。
 
 ## 示例目录
-
-已导出示例：
 
 - [海安雨（2071007724）](catalogs/2071007724-海安雨/README.md)
 
 ```bash
-python3 scripts/export_up.py 2071007724 --name 海安雨
+python3 scripts/export_up.py 2071007724 --name 海安雨 --profile conservative
 ```
 
 ## 关于限速与风控（必读）
@@ -69,19 +127,17 @@ python3 scripts/export_up.py 2071007724 --name 海安雨
 
 因此本项目将 **限速、退避、断点续跑** 视为导出能力的一部分，而不是可选项。实现与默认参数以社区实践与公开错误码为参考（见下），**不是** B 站官方 SLA；平台策略会变，我们默认偏保守。
 
-### 我们采用的策略（摘要）
+### 策略摘要
 
 | 项 | 约定 |
 |----|------|
 | 请求方式 | **串行**翻页，默认禁止并发 |
-| 页大小 | 默认约 **30 条/页**（比 50 更温和） |
-| 页间隔 | 默认约 **1.5s ± 抖动**，避免整秒对齐 |
+| 页大小 | 默认约 **30 条/页** |
+| 页间隔 | 默认约 **1.5s ± 抖动** |
 | 搜索解析 UP 名 | 更慢（约 **3–5s/次** 量级） |
-| 失败 | **指数退避重试**；识别过频 / 风控码，而非盲目重试 |
+| 失败 | **指数退避重试**；识别过频 / 风控信号 |
 | 硬风控（如 -412） | **冷却后再试**，并 **落盘进度** 支持续跑 |
 | 扩展能力 | 全量字幕 / 总结等按「每视频」更严限速，与列表导出分开 |
-
-当前脚本若尚未完全落地上述参数，以仓库后续更新为准；策略意图以本节为准。
 
 ### 常见相关信号（社区归纳）
 
@@ -96,24 +152,22 @@ python3 scripts/export_up.py 2071007724 --name 海安雨
 
 ### 检索与了解渠道
 
-撰写本节时参考了下列类型的公开信息（工程折中，非官方保证）：
-
 | 类型 | 渠道 / 代表 | 看什么 |
 |------|-------------|--------|
 | 错误码整理 | 社区 bilibili API 文档镜像中的公共错误码表（如 `-799` / `-412` / `-352` 等） | 失败如何分类 |
 | Python 调用库 FAQ | bilibili-api 一类开源库的文档与说明 | 线性请求相对安全、并发易 412 |
-| 工程实践 | GitHub 示例脚本、博客（投稿列表 `space` 分页 + `sleep`） | 常见间隔 1s 级、`ps=30/50` |
+| 工程实践 | GitHub 示例脚本、博客（投稿列表分页 + `sleep`） | 常见间隔 1s 级、`ps=30/50` |
 | 站点/问答 | CSDN、掘金、知乎等「B 站爬虫 / 限流 / 412」讨论 | 搜索更严、批量需延时 |
 | 产品 issue | RSSHub 等「B 站空间/投稿 412」类 issue | 风控与 Cookie/访问方式 |
-| 开放平台 / 小程序文档 | [open.bilibili.com](https://open.bilibili.com)、小程序「接口调用频率」类说明 | 官方有「按频次限制」的产品思路；**不等于**网页投稿接口的公开 QPS |
+| 开放平台 / 小程序文档 | [open.bilibili.com](https://open.bilibili.com)、小程序「接口调用频率」类说明 | 官方有频次限制思路；**不等于**网页投稿接口公开 QPS |
 | 合规动态 | 非官方 API 汇总仓库停更/归档相关公开说明（2026） | 克制使用、避免滥用 |
 
-**重要**：B 站 **没有** 对外承诺「投稿列表允许 QPS = x」。上表策略是综合公开讨论后的 **保守默认**，仅用于个人学习与目录整理；请合理控制频率，遵守平台规则与适用法律。
+**重要**：B 站 **没有** 对外承诺「投稿列表允许 QPS = x」。上表是综合公开讨论后的 **保守默认**，仅用于个人学习与目录整理；请合理控制频率，遵守平台规则与适用法律。
 
 ## 相关 opencli 命令
 
 ```bash
-opencli bilibili user-videos <uid> --limit 50 --page 1 --order pubdate -f json
+opencli bilibili user-videos <uid> --limit 30 --page 1 --order pubdate -f json
 opencli bilibili search "关键词" --limit 10 -f json
 opencli bilibili video <bvid>
 opencli bilibili summary <bvid>
