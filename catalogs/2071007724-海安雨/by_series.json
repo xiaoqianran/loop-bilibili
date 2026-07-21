@@ -1,0 +1,2822 @@
+{
+  "每天一个宝藏问题": [
+    {
+      "title": "175. 如何理解正态分布的多元扩展？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1eVKG6CEZH",
+      "bvid": "BV1eVKG6CEZH",
+      "plays": 351,
+      "likes": 0,
+      "date": "2026-07-20",
+      "series": "每天一个宝藏问题",
+      "number": 175
+    },
+    {
+      "title": "174. 为什么DDPM加噪相当于90°旋转插值？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1vAN36BEit",
+      "bvid": "BV1vAN36BEit",
+      "plays": 673,
+      "likes": 0,
+      "date": "2026-07-19",
+      "series": "每天一个宝藏问题",
+      "number": 174
+    },
+    {
+      "title": "173. 如何证明任意两句话的公共前缀都有相同的KV Cache？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1HNM76GEo8",
+      "bvid": "BV1HNM76GEo8",
+      "plays": 2860,
+      "likes": 0,
+      "date": "2026-07-18",
+      "series": "每天一个宝藏问题",
+      "number": 173
+    },
+    {
+      "title": "172. 如何用外积优化GEMM？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1E9Mb6MEeq",
+      "bvid": "BV1E9Mb6MEeq",
+      "plays": 775,
+      "likes": 0,
+      "date": "2026-07-17",
+      "series": "每天一个宝藏问题",
+      "number": 172
+    },
+    {
+      "title": "171. 如何可视化 DeepSeek MLA（简化版）？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1MRTd6bEbH",
+      "bvid": "BV1MRTd6bEbH",
+      "plays": 567,
+      "likes": 0,
+      "date": "2026-07-16",
+      "series": "每天一个宝藏问题",
+      "number": 171
+    },
+    {
+      "title": "170. vLLM 投机解码首token合并 prefill 这个小技巧是怎么来的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1hETD6mERB",
+      "bvid": "BV1hETD6mERB",
+      "plays": 1053,
+      "likes": 0,
+      "date": "2026-07-15",
+      "series": "每天一个宝藏问题",
+      "number": 170
+    },
+    {
+      "title": "169. MTP为什么能一次预测多个未来 token？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1aDMu6BEDb",
+      "bvid": "BV1aDMu6BEDb",
+      "plays": 1010,
+      "likes": 0,
+      "date": "2026-07-14",
+      "series": "每天一个宝藏问题",
+      "number": 169
+    },
+    {
+      "title": "168. Megatron张量并行如何用列切分加行切分降低FFN层的通信？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1zTMP6YEqg",
+      "bvid": "BV1zTMP6YEqg",
+      "plays": 722,
+      "likes": 0,
+      "date": "2026-07-13",
+      "series": "每天一个宝藏问题",
+      "number": 168
+    },
+    {
+      "title": "167. 为什么KL散度非负和信息熵是最优码长这两件事是等价的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1fTMP6YEtZ",
+      "bvid": "BV1fTMP6YEtZ",
+      "plays": 610,
+      "likes": 0,
+      "date": "2026-07-12",
+      "series": "每天一个宝藏问题",
+      "number": 167
+    },
+    {
+      "title": "166. 如何用双缓冲优化GEMM？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1WzMP6rEN6",
+      "bvid": "BV1WzMP6rEN6",
+      "plays": 1550,
+      "likes": 0,
+      "date": "2026-07-11",
+      "series": "每天一个宝藏问题",
+      "number": 166
+    },
+    {
+      "title": "165. 残差连接在Transformer反向传播中可视化出来是什么样的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1AzMP6kE62",
+      "bvid": "BV1AzMP6kE62",
+      "plays": 757,
+      "likes": 0,
+      "date": "2026-07-10",
+      "series": "每天一个宝藏问题",
+      "number": 165
+    },
+    {
+      "title": "164. 为什么环形All-Reduce 时，4卡和128卡单卡通信量差不多？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1AzMP6rE61",
+      "bvid": "BV1AzMP6rE61",
+      "plays": 1193,
+      "likes": 0,
+      "date": "2026-07-09",
+      "series": "每天一个宝藏问题",
+      "number": 164
+    },
+    {
+      "title": "163. 张量并行中的列并行和行并行是如何切分W和X矩阵的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1rJTb6qEYr",
+      "bvid": "BV1rJTb6qEYr",
+      "plays": 718,
+      "likes": 0,
+      "date": "2026-07-08",
+      "series": "每天一个宝藏问题",
+      "number": 163
+    },
+    {
+      "title": "162. 如何可视化GEMM？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1tWTj6jEGU",
+      "bvid": "BV1tWTj6jEGU",
+      "plays": 1097,
+      "likes": 0,
+      "date": "2026-07-07",
+      "series": "每天一个宝藏问题",
+      "number": 162
+    },
+    {
+      "title": "161. MoE每个token都要选专家，那prefill要如何并行？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1foTi6sEyH",
+      "bvid": "BV1foTi6sEyH",
+      "plays": 2643,
+      "likes": 0,
+      "date": "2026-07-06",
+      "series": "每天一个宝藏问题",
+      "number": 161
+    },
+    {
+      "title": "160. 如何对注意力头剪枝？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1YCTY6qEMZ",
+      "bvid": "BV1YCTY6qEMZ",
+      "plays": 601,
+      "likes": 0,
+      "date": "2026-07-05",
+      "series": "每天一个宝藏问题",
+      "number": 160
+    },
+    {
+      "title": "159. 如何可视化MTP？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1rtTc6tEqd",
+      "bvid": "BV1rtTc6tEqd",
+      "plays": 1217,
+      "likes": 0,
+      "date": "2026-07-04",
+      "series": "每天一个宝藏问题",
+      "number": 159
+    },
+    {
+      "title": "158. 最简单的含RoPE的Transformer可视化有多简单？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV18e7p6FEeD",
+      "bvid": "BV18e7p6FEeD",
+      "plays": 954,
+      "likes": 0,
+      "date": "2026-07-03",
+      "series": "每天一个宝藏问题",
+      "number": 158
+    },
+    {
+      "title": "157. 为什么Adam除以√vt让稳定的梯度项归一化，振荡的梯度项归零化【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV13e7p6cEF4",
+      "bvid": "BV13e7p6cEF4",
+      "plays": 620,
+      "likes": 0,
+      "date": "2026-07-02",
+      "series": "每天一个宝藏问题",
+      "number": 157
+    },
+    {
+      "title": "156. 最简单的transformer反向传播可视化能有多简单？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV18e7p6FE1J",
+      "bvid": "BV18e7p6FE1J",
+      "plays": 1350,
+      "likes": 0,
+      "date": "2026-07-01",
+      "series": "每天一个宝藏问题",
+      "number": 156
+    },
+    {
+      "title": "155. 为什么信息熵=最优码长，交叉熵=实际码长，KL散度=浪费码长【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV18e7p6FEZ1",
+      "bvid": "BV18e7p6FEZ1",
+      "plays": 853,
+      "likes": 0,
+      "date": "2026-06-30",
+      "series": "每天一个宝藏问题",
+      "number": 155
+    },
+    {
+      "title": "154. 为什么投机解码确保每轮至少产出一个 token？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1De7p6FEL3",
+      "bvid": "BV1De7p6FEL3",
+      "plays": 979,
+      "likes": 0,
+      "date": "2026-06-29",
+      "series": "每天一个宝藏问题",
+      "number": 154
+    },
+    {
+      "title": "153. 从等比数列求和理解Adam优化器训练初期动量修正【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1he7p6FEp1",
+      "bvid": "BV1he7p6FEp1",
+      "plays": 713,
+      "likes": 0,
+      "date": "2026-06-28",
+      "series": "每天一个宝藏问题",
+      "number": 153
+    },
+    {
+      "title": "152. 为什么前向残差连接对应反向残差连接【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1bv7p6bEeG",
+      "bvid": "BV1bv7p6bEeG",
+      "plays": 991,
+      "likes": 0,
+      "date": "2026-06-27",
+      "series": "每天一个宝藏问题",
+      "number": 152
+    },
+    {
+      "title": "151. 如何可视化MQA？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1gAj36ZEmj",
+      "bvid": "BV1gAj36ZEmj",
+      "plays": 444,
+      "likes": 0,
+      "date": "2026-06-26",
+      "series": "每天一个宝藏问题",
+      "number": 151
+    },
+    {
+      "title": "150. 对比注意力池和注意力温度对注意力汇聚有什么影响？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1hAj36ZE8a",
+      "bvid": "BV1hAj36ZE8a",
+      "plays": 594,
+      "likes": 0,
+      "date": "2026-06-25",
+      "series": "每天一个宝藏问题",
+      "number": 150
+    },
+    {
+      "title": "149. 为什么投机解码最多可以比K个Token多生成一个Token？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1gAj36ZEY3",
+      "bvid": "BV1gAj36ZEY3",
+      "plays": 994,
+      "likes": 0,
+      "date": "2026-06-24",
+      "series": "每天一个宝藏问题",
+      "number": 149
+    },
+    {
+      "title": "148. 超连接中的连边和感知机的连边有何异同？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1DAj36ZEZD",
+      "bvid": "BV1DAj36ZEZD",
+      "plays": 459,
+      "likes": 0,
+      "date": "2026-06-23",
+      "series": "每天一个宝藏问题",
+      "number": 148
+    },
+    {
+      "title": "147. 如何直观理解RoPE的平移不变性【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV18Aj36ZEZP",
+      "bvid": "BV18Aj36ZEZP",
+      "plays": 844,
+      "likes": 0,
+      "date": "2026-06-22",
+      "series": "每天一个宝藏问题",
+      "number": 147
+    },
+    {
+      "title": "146. 能否有一种方法同时可视化注意力的前向和反向传播？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1gAj36ZEUA",
+      "bvid": "BV1gAj36ZEUA",
+      "plays": 952,
+      "likes": 0,
+      "date": "2026-06-21",
+      "series": "每天一个宝藏问题",
+      "number": 146
+    },
+    {
+      "title": "145. 从prefill和decode角度理解投机解码何以加速？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1hAj36ZE7E",
+      "bvid": "BV1hAj36ZE7E",
+      "plays": 2058,
+      "likes": 0,
+      "date": "2026-06-20",
+      "series": "每天一个宝藏问题",
+      "number": 145
+    },
+    {
+      "title": "144. 如何可视化Transformer的残差连接？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1DAj36ZE2E",
+      "bvid": "BV1DAj36ZE2E",
+      "plays": 622,
+      "likes": 0,
+      "date": "2026-06-19",
+      "series": "每天一个宝藏问题",
+      "number": 144
+    },
+    {
+      "title": "143. 如何可视化SGLang中的KV Cache？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV13Aj36ZEcC",
+      "bvid": "BV13Aj36ZEcC",
+      "plays": 1280,
+      "likes": 0,
+      "date": "2026-06-18",
+      "series": "每天一个宝藏问题",
+      "number": 143
+    },
+    {
+      "title": "142. 如何可视化前馈网络｜线性层的反向传播？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1gAj36ZELC",
+      "bvid": "BV1gAj36ZELC",
+      "plays": 733,
+      "likes": 0,
+      "date": "2026-06-17",
+      "series": "每天一个宝藏问题",
+      "number": 142
+    },
+    {
+      "title": "141. 多轮对话中Decode之后还要增量Prefill，那新的KV如何并入KV Cache？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1zCjg6rE9F",
+      "bvid": "BV1zCjg6rE9F",
+      "plays": 1828,
+      "likes": 0,
+      "date": "2026-06-16",
+      "series": "每天一个宝藏问题",
+      "number": 141
+    },
+    {
+      "title": "140. 稀疏矩阵乘稠密向量SpMV是如何跳过0值计算的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1AG7m6HEEW",
+      "bvid": "BV1AG7m6HEEW",
+      "plays": 711,
+      "likes": 0,
+      "date": "2026-06-15",
+      "series": "每天一个宝藏问题",
+      "number": 140
+    },
+    {
+      "title": "139. 为什么传统残差连接是mhc残差流扩展率=1 的特例？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1zRVE6sExg",
+      "bvid": "BV1zRVE6sExg",
+      "plays": 663,
+      "likes": 0,
+      "date": "2026-06-14",
+      "series": "每天一个宝藏问题",
+      "number": 139
+    },
+    {
+      "title": "138. 如何可视化含RoPE的注意力分数矩阵【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1FRVE6xEap",
+      "bvid": "BV1FRVE6xEap",
+      "plays": 602,
+      "likes": 0,
+      "date": "2026-06-13",
+      "series": "每天一个宝藏问题",
+      "number": 138
+    },
+    {
+      "title": "137. HC=？会让超连接退化为preNorm传统残差连接？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1zRVE6sE2x",
+      "bvid": "BV1zRVE6sE2x",
+      "plays": 637,
+      "likes": 0,
+      "date": "2026-06-12",
+      "series": "每天一个宝藏问题",
+      "number": 137
+    },
+    {
+      "title": "136. BERT和GPT的可视化有多像？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1LsG26dEuq",
+      "bvid": "BV1LsG26dEuq",
+      "plays": 706,
+      "likes": 0,
+      "date": "2026-06-11",
+      "series": "每天一个宝藏问题",
+      "number": 136
+    },
+    {
+      "title": "135. 如何直观理解超连接中的残差流？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1bGVK6iE2B",
+      "bvid": "BV1bGVK6iE2B",
+      "plays": 700,
+      "likes": 0,
+      "date": "2026-06-10",
+      "series": "每天一个宝藏问题",
+      "number": 135
+    },
+    {
+      "title": "134. 为什么RoPE中旋转矩阵R0是单位阵？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1UGVK6vEzn",
+      "bvid": "BV1UGVK6vEzn",
+      "plays": 615,
+      "likes": 0,
+      "date": "2026-06-09",
+      "series": "每天一个宝藏问题",
+      "number": 134
+    },
+    {
+      "title": "133. 如何可视化超连接？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1h1GE6BEMm",
+      "bvid": "BV1h1GE6BEMm",
+      "plays": 788,
+      "likes": 0,
+      "date": "2026-06-08",
+      "series": "每天一个宝藏问题",
+      "number": 133
+    },
+    {
+      "title": "132. 为什么只用柱状图就能证明投机解码是无损的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1UHGB6REeL",
+      "bvid": "BV1UHGB6REeL",
+      "plays": 1208,
+      "likes": 0,
+      "date": "2026-06-07",
+      "series": "每天一个宝藏问题",
+      "number": 132
+    },
+    {
+      "title": "131. 折扣因子γ是如何改变未来的奖励重要程度的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1AtGe6KEuk",
+      "bvid": "BV1AtGe6KEuk",
+      "plays": 706,
+      "likes": 0,
+      "date": "2026-06-06",
+      "series": "每天一个宝藏问题",
+      "number": 131
+    },
+    {
+      "title": "130. 如何从概率树理解投机解码是无损的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1ktGe6NEtg",
+      "bvid": "BV1ktGe6NEtg",
+      "plays": 896,
+      "likes": 0,
+      "date": "2026-06-05",
+      "series": "每天一个宝藏问题",
+      "number": 130
+    },
+    {
+      "title": "129. 举例说明DPO论文里三行核心代码是啥意思？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1AtGe6KEbW",
+      "bvid": "BV1AtGe6KEbW",
+      "plays": 698,
+      "likes": 0,
+      "date": "2026-06-04",
+      "series": "每天一个宝藏问题",
+      "number": 129
+    },
+    {
+      "title": "128. 为什么4D并行的四个任务划分维度是正交的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1ZzLC6bEbU",
+      "bvid": "BV1ZzLC6bEbU",
+      "plays": 932,
+      "likes": 0,
+      "date": "2026-06-03",
+      "series": "每天一个宝藏问题",
+      "number": 128
+    },
+    {
+      "title": "127. 为什么Adam优化器相当于在求19日EMA均线？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1FGLM6wEbm",
+      "bvid": "BV1FGLM6wEbm",
+      "plays": 1999,
+      "likes": 0,
+      "date": "2026-06-02",
+      "series": "每天一个宝藏问题",
+      "number": 127
+    },
+    {
+      "title": "126. 举例说明投机解码如何拒绝采样？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1EVLM6bEuU",
+      "bvid": "BV1EVLM6bEuU",
+      "plays": 1117,
+      "likes": 0,
+      "date": "2026-06-01",
+      "series": "每天一个宝藏问题",
+      "number": 126
+    },
+    {
+      "title": "125. 为什么Token数相同的批次未必是负载均衡的？以WLB LLM为例【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1FXLJ6YEiX",
+      "bvid": "BV1FXLJ6YEiX",
+      "plays": 1147,
+      "likes": 0,
+      "date": "2026-05-31",
+      "series": "每天一个宝藏问题",
+      "number": 125
+    },
+    {
+      "title": "124. 训练时是如何恰好错开一个token的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1FXLJ6YE1L",
+      "bvid": "BV1FXLJ6YE1L",
+      "plays": 1462,
+      "likes": 0,
+      "date": "2026-05-30",
+      "series": "每天一个宝藏问题",
+      "number": 124
+    },
+    {
+      "title": "123. 如何用CPU内存的残差修正量化误差？以DecDEC为例【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1FXLJ6YEEv",
+      "bvid": "BV1FXLJ6YEEv",
+      "plays": 767,
+      "likes": 0,
+      "date": "2026-05-29",
+      "series": "每天一个宝藏问题",
+      "number": 123
+    },
+    {
+      "title": "122. 为什么只有单个词嵌入就能构成二元语言模型？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1FXLJ6YEwC",
+      "bvid": "BV1FXLJ6YEwC",
+      "plays": 636,
+      "likes": 0,
+      "date": "2026-05-28",
+      "series": "每天一个宝藏问题",
+      "number": 122
+    },
+    {
+      "title": "121. 为什么GQA是MQA过渡到MHA的插值？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV16XLJ6YEVP",
+      "bvid": "BV16XLJ6YEVP",
+      "plays": 1125,
+      "likes": 0,
+      "date": "2026-05-27",
+      "series": "每天一个宝藏问题",
+      "number": 121
+    },
+    {
+      "title": "120. 任意矩阵满足什么性质就能成为RoPE旋转矩阵？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1TN5b6YE5q",
+      "bvid": "BV1TN5b6YE5q",
+      "plays": 1217,
+      "likes": 0,
+      "date": "2026-05-26",
+      "series": "每天一个宝藏问题",
+      "number": 120
+    },
+    {
+      "title": "119. 如何可视化多头注意力？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1235J6qENx",
+      "bvid": "BV1235J6qENx",
+      "plays": 1674,
+      "likes": 0,
+      "date": "2026-05-25",
+      "series": "每天一个宝藏问题",
+      "number": 119
+    },
+    {
+      "title": "118. 为什么Deepseek V3不用辅助损失也能做到MoE负载均衡？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1MyRXBvEG1",
+      "bvid": "BV1MyRXBvEG1",
+      "plays": 1771,
+      "likes": 0,
+      "date": "2026-05-24",
+      "series": "每天一个宝藏问题",
+      "number": 118
+    },
+    {
+      "title": "117. 如何用动态规划理解在线softmax的循环与归约？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1SHR9BuEBH",
+      "bvid": "BV1SHR9BuEBH",
+      "plays": 1599,
+      "likes": 0,
+      "date": "2026-05-23",
+      "series": "每天一个宝藏问题",
+      "number": 117
+    },
+    {
+      "title": "116. 如何从动态规划和记忆化搜索理解DQN？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1ygRXBZEQf",
+      "bvid": "BV1ygRXBZEQf",
+      "plays": 1474,
+      "likes": 0,
+      "date": "2026-05-22",
+      "series": "每天一个宝藏问题",
+      "number": 116
+    },
+    {
+      "title": "115. 为什么梯度下降、泰勒展开、正态分布都有多元扩展？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1M5RmBDENg",
+      "bvid": "BV1M5RmBDENg",
+      "plays": 1551,
+      "likes": 0,
+      "date": "2026-05-21",
+      "series": "每天一个宝藏问题",
+      "number": 115
+    },
+    {
+      "title": "114. 为什么除以√dk是在给注意力升温？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1m5RmBSEkF",
+      "bvid": "BV1m5RmBSEkF",
+      "plays": 4328,
+      "likes": 0,
+      "date": "2026-05-20",
+      "series": "每天一个宝藏问题",
+      "number": 114
+    },
+    {
+      "title": "113. 如何理解梯度下降的多元函数扩展？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1m5RmBSENE",
+      "bvid": "BV1m5RmBSENE",
+      "plays": 791,
+      "likes": 0,
+      "date": "2026-05-19",
+      "series": "每天一个宝藏问题",
+      "number": 113
+    },
+    {
+      "title": "112. 如何可视化MOE？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1uGdgBnE65",
+      "bvid": "BV1uGdgBnE65",
+      "plays": 4926,
+      "likes": 0,
+      "date": "2026-05-18",
+      "series": "每天一个宝藏问题",
+      "number": 112
+    },
+    {
+      "title": "111. 如何直观理解KV Cache的显存计算公式？以Llama2-7B为例。【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1Tf9XBwEzM",
+      "bvid": "BV1Tf9XBwEzM",
+      "plays": 2229,
+      "likes": 0,
+      "date": "2026-05-17",
+      "series": "每天一个宝藏问题",
+      "number": 111
+    },
+    {
+      "title": "110. 为什么激活值per channel量化比per token量化难加速得多？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1k7RuBPEqt",
+      "bvid": "BV1k7RuBPEqt",
+      "plays": 1813,
+      "likes": 0,
+      "date": "2026-05-16",
+      "series": "每天一个宝藏问题",
+      "number": 110
+    },
+    {
+      "title": "109. 最简单的Transformer可视化能有多简单？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1A7RuBNETS",
+      "bvid": "BV1A7RuBNETS",
+      "plays": 2199,
+      "likes": 0,
+      "date": "2026-05-15",
+      "series": "每天一个宝藏问题",
+      "number": 109
+    },
+    {
+      "title": "108. 如何用前缀和理解稀疏矩阵的CSR格式？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1k7RuBPEsV",
+      "bvid": "BV1k7RuBPEsV",
+      "plays": 1484,
+      "likes": 0,
+      "date": "2026-05-14",
+      "series": "每天一个宝藏问题",
+      "number": 108
+    },
+    {
+      "title": "107. DeepSeek V4如何使用Attention Sink忽略上下文？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1389kB3Ek4",
+      "bvid": "BV1389kB3Ek4",
+      "plays": 1927,
+      "likes": 0,
+      "date": "2026-05-13",
+      "series": "每天一个宝藏问题",
+      "number": 107
+    },
+    {
+      "title": "106. Flash Attention反向传播也做到线性显存了吗？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1a89kB3EVu",
+      "bvid": "BV1a89kB3EVu",
+      "plays": 1434,
+      "likes": 0,
+      "date": "2026-05-12",
+      "series": "每天一个宝藏问题",
+      "number": 106
+    },
+    {
+      "title": "105. K-Means聚类和中垂线有什么关系？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1Kk9kBAEnC",
+      "bvid": "BV1Kk9kBAEnC",
+      "plays": 823,
+      "likes": 0,
+      "date": "2026-05-11",
+      "series": "每天一个宝藏问题",
+      "number": 105
+    },
+    {
+      "title": "104. 为什么训练时是同时预测token的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1jNoRBoE9b",
+      "bvid": "BV1jNoRBoE9b",
+      "plays": 2706,
+      "likes": 0,
+      "date": "2026-05-10",
+      "series": "每天一个宝藏问题",
+      "number": 104
+    },
+    {
+      "title": "103. 多个线程执行同一段算子代码时发生了什么？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1JcoRB8EGb",
+      "bvid": "BV1JcoRB8EGb",
+      "plays": 2393,
+      "likes": 0,
+      "date": "2026-05-09",
+      "series": "每天一个宝藏问题",
+      "number": 103
+    },
+    {
+      "title": "102. PagedAttention是如何减少内存浪费的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1EwoRBfExe",
+      "bvid": "BV1EwoRBfExe",
+      "plays": 1390,
+      "likes": 0,
+      "date": "2026-05-08",
+      "series": "每天一个宝藏问题",
+      "number": 102
+    },
+    {
+      "title": "101. 如何用矩阵乘法链式法则速推Flash Attention梯度？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV12CoMB5EDJ",
+      "bvid": "BV12CoMB5EDJ",
+      "plays": 1616,
+      "likes": 0,
+      "date": "2026-05-07",
+      "series": "每天一个宝藏问题",
+      "number": 101
+    },
+    {
+      "title": "100. 为什么神经网络连接可以用矩阵乘法实现？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1SBoMBmEVB",
+      "bvid": "BV1SBoMBmEVB",
+      "plays": 2177,
+      "likes": 0,
+      "date": "2026-05-06",
+      "series": "每天一个宝藏问题",
+      "number": 100
+    },
+    {
+      "title": "99. MOE中先求Top K后Softmax，与先求Softmax后重归一化能一样？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1U6oMBjE1D",
+      "bvid": "BV1U6oMBjE1D",
+      "plays": 4481,
+      "likes": 0,
+      "date": "2026-05-05",
+      "series": "每天一个宝藏问题",
+      "number": 99
+    },
+    {
+      "title": "98. 为什么训练时上个词的概率预测不直接影响下个词？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1CSoMBgEUA",
+      "bvid": "BV1CSoMBgEUA",
+      "plays": 2185,
+      "likes": 0,
+      "date": "2026-05-04",
+      "series": "每天一个宝藏问题",
+      "number": 98
+    },
+    {
+      "title": "97. 张量广播的线性索引是如何对应的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1KyoMByEdR",
+      "bvid": "BV1KyoMByEdR",
+      "plays": 1166,
+      "likes": 0,
+      "date": "2026-05-03",
+      "series": "每天一个宝藏问题",
+      "number": 97
+    },
+    {
+      "title": "96. LoRA微调中A、B都随机初始化或全零初始化分别会带来什么问题？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV15GdjByEpy",
+      "bvid": "BV15GdjByEpy",
+      "plays": 1898,
+      "likes": 0,
+      "date": "2026-05-02",
+      "series": "每天一个宝藏问题",
+      "number": 96
+    },
+    {
+      "title": "95. 标量乘法的链式法则可以推广到矩阵吗？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1D8daB7En5",
+      "bvid": "BV1D8daB7En5",
+      "plays": 765,
+      "likes": 0,
+      "date": "2026-05-01",
+      "series": "每天一个宝藏问题",
+      "number": 95
+    },
+    {
+      "title": "94. 量化感知训练中为什么要STE来处理round梯度？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV12qdaBkERq",
+      "bvid": "BV12qdaBkERq",
+      "plays": 559,
+      "likes": 0,
+      "date": "2026-04-30",
+      "series": "每天一个宝藏问题",
+      "number": 94
+    },
+    {
+      "title": "93. 为什么Transformer的核心公式是在做加权平均？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1CkQjBJE8K",
+      "bvid": "BV1CkQjBJE8K",
+      "plays": 5549,
+      "likes": 0,
+      "date": "2026-04-29",
+      "series": "每天一个宝藏问题",
+      "number": 93
+    },
+    {
+      "title": "92. 为什么量化会让损失“山谷”变成“台阶”？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1eoQvBQEMF",
+      "bvid": "BV1eoQvBQEMF",
+      "plays": 1103,
+      "likes": 0,
+      "date": "2026-04-28",
+      "series": "每天一个宝藏问题",
+      "number": 92
+    },
+    {
+      "title": "91. 游戏AI和LLM的πθ(a∣s)有何异同？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1TeD9B4EbF",
+      "bvid": "BV1TeD9B4EbF",
+      "plays": 1695,
+      "likes": 0,
+      "date": "2026-04-27",
+      "series": "每天一个宝藏问题",
+      "number": 91
+    },
+    {
+      "title": "90. OBQ如何将最小化剪枝损失推广到量化？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1kkDQBVE4y",
+      "bvid": "BV1kkDQBVE4y",
+      "plays": 733,
+      "likes": 0,
+      "date": "2026-04-26",
+      "series": "每天一个宝藏问题",
+      "number": 90
+    },
+    {
+      "title": "89. 量化感知训练是如何感知到量化的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1d9QABeEdC",
+      "bvid": "BV1d9QABeEdC",
+      "plays": 861,
+      "likes": 0,
+      "date": "2026-04-25",
+      "series": "每天一个宝藏问题",
+      "number": 89
+    },
+    {
+      "title": "88. 量化后微调为什么要对聚类中心求和？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1fcD4BPEo7",
+      "bvid": "BV1fcD4BPEo7",
+      "plays": 1564,
+      "likes": 0,
+      "date": "2026-04-24",
+      "series": "每天一个宝藏问题",
+      "number": 88
+    },
+    {
+      "title": "87. 为什么前向广播对应着反向归约？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV177DWBdEoV",
+      "bvid": "BV177DWBdEoV",
+      "plays": 703,
+      "likes": 0,
+      "date": "2026-04-23",
+      "series": "每天一个宝藏问题",
+      "number": 87
+    },
+    {
+      "title": "86. 为什么矩阵乘法可以看作标量乘法的拓展？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1WxDeBcExC",
+      "bvid": "BV1WxDeBcExC",
+      "plays": 718,
+      "likes": 0,
+      "date": "2026-04-22",
+      "series": "每天一个宝藏问题",
+      "number": 86
+    },
+    {
+      "title": "85. 为什么prefill和decode都可以跳过掩码上三角计算？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1ZEDvB9E6Y",
+      "bvid": "BV1ZEDvB9E6Y",
+      "plays": 3428,
+      "likes": 0,
+      "date": "2026-04-21",
+      "series": "每天一个宝藏问题",
+      "number": 85
+    },
+    {
+      "title": "84. LoRA要增加旁路，微调前后模型结构却可以不变，为什么？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1cQSSBvE8N",
+      "bvid": "BV1cQSSBvE8N",
+      "plays": 1283,
+      "likes": 0,
+      "date": "2026-04-20",
+      "series": "每天一个宝藏问题",
+      "number": 84
+    },
+    {
+      "title": "83. Flash Attention的线性显存比平方显存增长慢了多少？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1baNGzmEzn",
+      "bvid": "BV1baNGzmEzn",
+      "plays": 1272,
+      "likes": 0,
+      "date": "2026-04-19",
+      "series": "每天一个宝藏问题",
+      "number": 83
+    },
+    {
+      "title": "82. 在线Softmax和Flash Attention分别维护了多少个“动态规划量”？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1oA93BtETZ",
+      "bvid": "BV1oA93BtETZ",
+      "plays": 2755,
+      "likes": 0,
+      "date": "2026-04-18",
+      "series": "每天一个宝藏问题",
+      "number": 82
+    },
+    {
+      "title": "81. 量化后微调让聚在一起的权重分家了怎么办？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1zf9gBwEqd",
+      "bvid": "BV1zf9gBwEqd",
+      "plays": 847,
+      "likes": 0,
+      "date": "2026-04-16",
+      "series": "每天一个宝藏问题",
+      "number": 81
+    },
+    {
+      "title": "80. 剪枝后微调让被置零的权重不再为零怎么办？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV16E9cBqEK8",
+      "bvid": "BV16E9cBqEK8",
+      "plays": 928,
+      "likes": 0,
+      "date": "2026-04-16",
+      "series": "每天一个宝藏问题",
+      "number": 80
+    },
+    {
+      "title": "79. 为什么基于权重大小剪枝是特殊的OBD、OBS、OBQ？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1fn9cBKEbt",
+      "bvid": "BV1fn9cBKEbt",
+      "plays": 551,
+      "likes": 0,
+      "date": "2026-04-15",
+      "series": "每天一个宝藏问题",
+      "number": 79
+    },
+    {
+      "title": "78. GPTQ量化的最小化目标如何写成类似OBS形式的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1679cBME93",
+      "bvid": "BV1679cBME93",
+      "plays": 619,
+      "likes": 0,
+      "date": "2026-04-14",
+      "series": "每天一个宝藏问题",
+      "number": 78
+    },
+    {
+      "title": "77. 为什么训练时教师强制是只“感觉”不“生成”的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV14BXoBMEsk",
+      "bvid": "BV14BXoBMEsk",
+      "plays": 822,
+      "likes": 0,
+      "date": "2026-04-13",
+      "series": "每天一个宝藏问题",
+      "number": 77
+    },
+    {
+      "title": "76. 为什么OBS剪枝可看作特殊的OBQ量化？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1cKX1BhED8",
+      "bvid": "BV1cKX1BhED8",
+      "plays": 489,
+      "likes": 0,
+      "date": "2026-04-12",
+      "series": "每天一个宝藏问题",
+      "number": 76
+    },
+    {
+      "title": "75. OBS剪枝是如何选择被剪枝的权重的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1AwX1BPE1g",
+      "bvid": "BV1AwX1BPE1g",
+      "plays": 553,
+      "likes": 0,
+      "date": "2026-04-11",
+      "series": "每天一个宝藏问题",
+      "number": 75
+    },
+    {
+      "title": "74. 为什么OBD剪枝是特殊的OBS剪枝？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1xTXKB4Ecn",
+      "bvid": "BV1xTXKB4Ecn",
+      "plays": 546,
+      "likes": 0,
+      "date": "2026-04-10",
+      "series": "每天一个宝藏问题",
+      "number": 74
+    },
+    {
+      "title": "73. OBS剪枝保留与修改了OBD剪枝的哪些假设？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1njXKBnEBg",
+      "bvid": "BV1njXKBnEBg",
+      "plays": 573,
+      "likes": 0,
+      "date": "2026-04-09",
+      "series": "每天一个宝藏问题",
+      "number": 73
+    },
+    {
+      "title": "72. 如何从几何视角理解拉格朗日乘子法？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1C3XKB9EHm",
+      "bvid": "BV1C3XKB9EHm",
+      "plays": 1027,
+      "likes": 0,
+      "date": "2026-04-08",
+      "series": "每天一个宝藏问题",
+      "number": 72
+    },
+    {
+      "title": "71. OBD剪枝假设山谷是什么样的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV11RQfB3Eot",
+      "bvid": "BV11RQfB3Eot",
+      "plays": 604,
+      "likes": 0,
+      "date": "2026-04-07",
+      "series": "每天一个宝藏问题",
+      "number": 71
+    },
+    {
+      "title": "70. 如何理解泰勒展开的多元函数扩展？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1HVXKBpE9p",
+      "bvid": "BV1HVXKBpE9p",
+      "plays": 877,
+      "likes": 0,
+      "date": "2026-04-06",
+      "series": "每天一个宝藏问题",
+      "number": 70
+    },
+    {
+      "title": "69. 深度学习中两种常用的矩阵微积分是怎么来的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1a9XNBTERT",
+      "bvid": "BV1a9XNBTERT",
+      "plays": 1764,
+      "likes": 0,
+      "date": "2026-04-05",
+      "series": "每天一个宝藏问题",
+      "number": 69
+    },
+    {
+      "title": "68. prefill和decode时KV Cache是如何\"堆积\"的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1AYQdBfEDS",
+      "bvid": "BV1AYQdBfEDS",
+      "plays": 3677,
+      "likes": 0,
+      "date": "2026-04-04",
+      "series": "每天一个宝藏问题",
+      "number": 68
+    },
+    {
+      "title": "67. 为何圆形山谷会让OBD剪枝退化为基于大小剪枝？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1qAA5ztELy",
+      "bvid": "BV1qAA5ztELy",
+      "plays": 614,
+      "likes": 0,
+      "date": "2026-04-03",
+      "series": "每天一个宝藏问题",
+      "number": 67
+    },
+    {
+      "title": "66. LLM.int8与SmoothQuant解决离群值的思路有何异同？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV13rwCzwEKX",
+      "bvid": "BV13rwCzwEKX",
+      "plays": 767,
+      "likes": 0,
+      "date": "2026-04-02",
+      "series": "每天一个宝藏问题",
+      "number": 66
+    },
+    {
+      "title": "65. 从校准集说明为何SmoothQuant中的S无需矩阵乘算子【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV12DwRz9E4j",
+      "bvid": "BV12DwRz9E4j",
+      "plays": 652,
+      "likes": 0,
+      "date": "2026-04-01",
+      "series": "每天一个宝藏问题",
+      "number": 65
+    },
+    {
+      "title": "64. SmoothQuant量化中有没有用到外积思想？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1DMwmzgEyV",
+      "bvid": "BV1DMwmzgEyV",
+      "plays": 674,
+      "likes": 0,
+      "date": "2026-03-31",
+      "series": "每天一个宝藏问题",
+      "number": 64
+    },
+    {
+      "title": "63. 举例说明SmoothQuant量化对角矩阵乘法的正确性？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1VTw7zbEzq",
+      "bvid": "BV1VTw7zbEzq",
+      "plays": 779,
+      "likes": 0,
+      "date": "2026-03-30",
+      "series": "每天一个宝藏问题",
+      "number": 63
+    },
+    {
+      "title": "61. 含广播的偏置b的梯度如何计算？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1WWXWBzELJ",
+      "bvid": "BV1WWXWBzELJ",
+      "plays": 799,
+      "likes": 0,
+      "date": "2026-03-28",
+      "series": "每天一个宝藏问题",
+      "number": 61
+    },
+    {
+      "title": "60. LoRA微调和向量外积为何长得很像？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1pKwjz3E1P",
+      "bvid": "BV1pKwjz3E1P",
+      "plays": 1500,
+      "likes": 0,
+      "date": "2026-03-27",
+      "series": "每天一个宝藏问题",
+      "number": 60
+    },
+    {
+      "title": "59. DeepSeek OCR比较人性化的可视化可能是什么样的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV13gcCzbE7y",
+      "bvid": "BV13gcCzbE7y",
+      "plays": 844,
+      "likes": 0,
+      "date": "2026-03-26",
+      "series": "每天一个宝藏问题",
+      "number": 59
+    },
+    {
+      "title": "58. 如何根据答案倒推合成思维链做SFT？以AscendKernelGen为例【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1DvcyzcEa4",
+      "bvid": "BV1DvcyzcEa4",
+      "plays": 2753,
+      "likes": 0,
+      "date": "2026-03-25",
+      "series": "每天一个宝藏问题",
+      "number": 58
+    },
+    {
+      "title": "57. 网格步进是如何加速张量计算的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1SSNFz2EDK",
+      "bvid": "BV1SSNFz2EDK",
+      "plays": 743,
+      "likes": 0,
+      "date": "2026-03-24",
+      "series": "每天一个宝藏问题",
+      "number": 57
+    },
+    {
+      "title": "56. 为什么多个Sub-Agent也可以共享前缀KV Cache？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1cPAuzpE6e",
+      "bvid": "BV1cPAuzpE6e",
+      "plays": 3102,
+      "likes": 0,
+      "date": "2026-03-23",
+      "series": "每天一个宝藏问题",
+      "number": 56
+    },
+    {
+      "title": "55. 为什么KV Cache也有LRU等缓存替换策略?【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1YdANzcESN",
+      "bvid": "BV1YdANzcESN",
+      "plays": 1978,
+      "likes": 0,
+      "date": "2026-03-22",
+      "series": "每天一个宝藏问题",
+      "number": 55
+    },
+    {
+      "title": "53. 如何加速两个张量之和？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1SqPhzAErH",
+      "bvid": "BV1SqPhzAErH",
+      "plays": 836,
+      "likes": 0,
+      "date": "2026-03-20",
+      "series": "每天一个宝藏问题",
+      "number": 53
+    },
+    {
+      "title": "52 简单的梯度算子是如何定义的【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1TUPWzkEgW",
+      "bvid": "BV1TUPWzkEgW",
+      "plays": 934,
+      "likes": 0,
+      "date": "2026-03-19",
+      "series": "每天一个宝藏问题",
+      "number": 52
+    },
+    {
+      "title": "51 矩阵乘法对权重的梯度是怎么来的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1TUPWzkE6U",
+      "bvid": "BV1TUPWzkE6U",
+      "plays": 1161,
+      "likes": 0,
+      "date": "2026-03-18",
+      "series": "每天一个宝藏问题",
+      "number": 51
+    },
+    {
+      "title": "49. 双缓冲是如何加速张量计算的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1bUP5zDER5",
+      "bvid": "BV1bUP5zDER5",
+      "plays": 1617,
+      "likes": 0,
+      "date": "2026-03-16",
+      "series": "每天一个宝藏问题",
+      "number": 49
+    },
+    {
+      "title": "47 CLIP比较人性化的可视化可能长什么样？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1k4PDzrE9X",
+      "bvid": "BV1k4PDzrE9X",
+      "plays": 1289,
+      "likes": 0,
+      "date": "2026-03-14",
+      "series": "每天一个宝藏问题",
+      "number": 47
+    },
+    {
+      "title": "46. 矩阵乘法对激活的梯度是怎么来的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1ioArzKEMB",
+      "bvid": "BV1ioArzKEMB",
+      "plays": 2220,
+      "likes": 0,
+      "date": "2026-03-13",
+      "series": "每天一个宝藏问题",
+      "number": 46
+    },
+    {
+      "title": "45. SIMD是如何加速张量计算的(简单理解)【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1doArzKExB",
+      "bvid": "BV1doArzKExB",
+      "plays": 1807,
+      "likes": 0,
+      "date": "2026-03-12",
+      "series": "每天一个宝藏问题",
+      "number": 45
+    },
+    {
+      "title": "44. 为什么把权重置0就是在剪枝？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1B9ArzuEP3",
+      "bvid": "BV1B9ArzuEP3",
+      "plays": 1968,
+      "likes": 0,
+      "date": "2026-03-11",
+      "series": "每天一个宝藏问题",
+      "number": 44
+    },
+    {
+      "title": "42. 聚类量化和线性量化有何不同？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1yBArzEEeE",
+      "bvid": "BV1yBArzEEeE",
+      "plays": 1188,
+      "likes": 0,
+      "date": "2026-03-09",
+      "series": "每天一个宝藏问题",
+      "number": 42
+    },
+    {
+      "title": "41 Flash Attention之前的那种N^2注意力不好在哪里？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1WzArzUEdr",
+      "bvid": "BV1WzArzUEdr",
+      "plays": 1691,
+      "likes": 0,
+      "date": "2026-03-08",
+      "series": "每天一个宝藏问题",
+      "number": 41
+    },
+    {
+      "title": "40. Temperature、TopK/P退化为贪婪解码的三种条件是？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1AzArzUEh1",
+      "bvid": "BV1AzArzUEh1",
+      "plays": 1423,
+      "likes": 0,
+      "date": "2026-03-07",
+      "series": "每天一个宝藏问题",
+      "number": 40
+    },
+    {
+      "title": "39. FlashAttention V2中为何要先循环Q后循环K？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1yiArzSEs1",
+      "bvid": "BV1yiArzSEs1",
+      "plays": 2159,
+      "likes": 0,
+      "date": "2026-03-06",
+      "series": "每天一个宝藏问题",
+      "number": 39
+    },
+    {
+      "title": "37. GQA中讲的共享指的是Token还是Head？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1cTZyBzEjv",
+      "bvid": "BV1cTZyBzEjv",
+      "plays": 1674,
+      "likes": 0,
+      "date": "2026-03-04",
+      "series": "每天一个宝藏问题",
+      "number": 37
+    },
+    {
+      "title": "36. 为什么推理时prefill是GEMM，而decode是（Batched）GEMV？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1UtZkBjEZP",
+      "bvid": "BV1UtZkBjEZP",
+      "plays": 8679,
+      "likes": 0,
+      "date": "2026-03-03",
+      "series": "每天一个宝藏问题",
+      "number": 36
+    },
+    {
+      "title": "35. Transformer暗含多少种分块矩阵乘法的理解方式？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1pRZtBaEYv",
+      "bvid": "BV1pRZtBaEYv",
+      "plays": 5019,
+      "likes": 0,
+      "date": "2026-03-02",
+      "series": "每天一个宝藏问题",
+      "number": 35
+    },
+    {
+      "title": "34. BERT为什么没有KV Cache/KV Cache何以存在？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1qKZ7BsEs5",
+      "bvid": "BV1qKZ7BsEs5",
+      "plays": 2115,
+      "likes": 0,
+      "date": "2026-03-01",
+      "series": "每天一个宝藏问题",
+      "number": 34
+    },
+    {
+      "title": "33. 用户改提示词为什么不会影响前面的KV Cache？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1dgZ7BQEHL",
+      "bvid": "BV1dgZ7BQEHL",
+      "plays": 5739,
+      "likes": 0,
+      "date": "2026-02-28",
+      "series": "每天一个宝藏问题",
+      "number": 33
+    },
+    {
+      "title": "32. 一种人性化的Transformer可视化可能是什么样的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV13FZEBEE6y",
+      "bvid": "BV13FZEBEE6y",
+      "plays": 1412,
+      "likes": 0,
+      "date": "2026-02-27",
+      "series": "每天一个宝藏问题",
+      "number": 32
+    },
+    {
+      "title": "31. FlashAttention v2版本如何省略掩码上三角矩阵计算？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV16qZLBxEZt",
+      "bvid": "BV16qZLBxEZt",
+      "plays": 1609,
+      "likes": 0,
+      "date": "2026-02-26",
+      "series": "每天一个宝藏问题",
+      "number": 31
+    },
+    {
+      "title": "30. 举例说明SlimAttention的分块矩阵乘法的正确性？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV11KcWz8EZm",
+      "bvid": "BV11KcWz8EZm",
+      "plays": 884,
+      "likes": 0,
+      "date": "2026-02-25",
+      "series": "每天一个宝藏问题",
+      "number": 30
+    },
+    {
+      "title": "29. 以逐元素乘加为例，算子融合为什么能提高计算效率？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV19PcnzPEQp",
+      "bvid": "BV19PcnzPEQp",
+      "plays": 2016,
+      "likes": 0,
+      "date": "2026-02-24",
+      "series": "每天一个宝藏问题",
+      "number": 29
+    },
+    {
+      "title": "28. 为什么在线Softmax比安全Softmax可以少一次循环？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1i6cnzzE2x",
+      "bvid": "BV1i6cnzzE2x",
+      "plays": 2132,
+      "likes": 0,
+      "date": "2026-02-23",
+      "series": "每天一个宝藏问题",
+      "number": 28
+    },
+    {
+      "title": "23. Llama的旋转位置编码实现和RoPE原论文有何不同？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV15EcbzoEY7",
+      "bvid": "BV15EcbzoEY7",
+      "plays": 785,
+      "likes": 0,
+      "date": "2026-02-18",
+      "series": "每天一个宝藏问题",
+      "number": 23
+    },
+    {
+      "title": "22. 为什么transformers.Llama的实现和RoPE原论文不一致？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1nUcbzTEGi",
+      "bvid": "BV1nUcbzTEGi",
+      "plays": 1677,
+      "likes": 0,
+      "date": "2026-02-17",
+      "series": "每天一个宝藏问题",
+      "number": 22
+    },
+    {
+      "title": "21. 为什么增大旋转位置编码中10000可提高模型外推能力【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1o5FozuEz2",
+      "bvid": "BV1o5FozuEz2",
+      "plays": 749,
+      "likes": 0,
+      "date": "2026-02-16",
+      "series": "每天一个宝藏问题",
+      "number": 21
+    },
+    {
+      "title": "20. RoPE注意力的绝对位置无关性和欧拉公式有什么关系？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1fFFDzsEt6",
+      "bvid": "BV1fFFDzsEt6",
+      "plays": 787,
+      "likes": 0,
+      "date": "2026-02-15",
+      "series": "每天一个宝藏问题",
+      "number": 20
+    },
+    {
+      "title": "19. 为什么RoPE中旋转矩阵R实际上不需要矩阵乘算子？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1XyFyzcEN6",
+      "bvid": "BV1XyFyzcEN6",
+      "plays": 2210,
+      "likes": 0,
+      "date": "2026-02-14",
+      "series": "每天一个宝藏问题",
+      "number": 19
+    },
+    {
+      "title": "17. 为什么正余弦位置编码的注意力是和绝对位置相关的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1mZcuztEw2",
+      "bvid": "BV1mZcuztEw2",
+      "plays": 1030,
+      "likes": 0,
+      "date": "2026-02-12",
+      "series": "每天一个宝藏问题",
+      "number": 17
+    },
+    {
+      "title": "16. RoPE如何从2维推广到任意偶数维，奇数维咋办？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1FgcMzkE5h",
+      "bvid": "BV1FgcMzkE5h",
+      "plays": 943,
+      "likes": 0,
+      "date": "2026-02-11",
+      "series": "每天一个宝藏问题",
+      "number": 16
+    },
+    {
+      "title": "14. 旋转位置编码和高中三角函数和差角公式有什么关系？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1uoFxzgEWz",
+      "bvid": "BV1uoFxzgEWz",
+      "plays": 1102,
+      "likes": 0,
+      "date": "2026-02-09",
+      "series": "每天一个宝藏问题",
+      "number": 14
+    },
+    {
+      "title": "13. 旋转位置编码和复数欧拉公式有什么关系？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV1qzFxzQES2",
+      "bvid": "BV1qzFxzQES2",
+      "plays": 2801,
+      "likes": 0,
+      "date": "2026-02-08",
+      "series": "每天一个宝藏问题",
+      "number": 13
+    },
+    {
+      "title": "62．LLM.int8是如何利用向量外积进行量化的？【每天一个宝藏问题】",
+      "url": "https://www.bilibili.com/video/BV17pwEzMETL",
+      "bvid": "BV17pwEzMETL",
+      "plays": 1257,
+      "likes": 0,
+      "date": "2026-03-29",
+      "series": "每天一个宝藏问题",
+      "number": null
+    }
+  ],
+  "每天一个宝藏论文": [
+    {
+      "title": "[106]. RWKV，一种序列模型：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1MRME6oE2V",
+      "bvid": "BV1MRME6oE2V",
+      "plays": 592,
+      "likes": 0,
+      "date": "2026-07-20",
+      "series": "每天一个宝藏论文",
+      "number": 106
+    },
+    {
+      "title": "[105]. TTT，一种序列模型：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1MRME6oE3a",
+      "bvid": "BV1MRME6oE3a",
+      "plays": 670,
+      "likes": 0,
+      "date": "2026-07-19",
+      "series": "每天一个宝藏论文",
+      "number": 105
+    },
+    {
+      "title": "[104]. kimi的注意力残差：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1MRME6oEhx",
+      "bvid": "BV1MRME6oEhx",
+      "plays": 868,
+      "likes": 0,
+      "date": "2026-07-18",
+      "series": "每天一个宝藏论文",
+      "number": 104
+    },
+    {
+      "title": "[103]. Reflexion：Agent经典论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1cJTb6BE3S",
+      "bvid": "BV1cJTb6BE3S",
+      "plays": 427,
+      "likes": 0,
+      "date": "2026-07-17",
+      "series": "每天一个宝藏论文",
+      "number": 103
+    },
+    {
+      "title": "[102]. ReAct：Agent经典论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1FRTi6oEz2",
+      "bvid": "BV1FRTi6oEz2",
+      "plays": 768,
+      "likes": 0,
+      "date": "2026-07-16",
+      "series": "每天一个宝藏论文",
+      "number": 102
+    },
+    {
+      "title": "[101]. H2O：KV缓存压缩论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1ktTc6tEce",
+      "bvid": "BV1ktTc6tEce",
+      "plays": 521,
+      "likes": 0,
+      "date": "2026-07-15",
+      "series": "每天一个宝藏论文",
+      "number": 101
+    },
+    {
+      "title": "[100]. FlashDecoding的改进：FlashDecoding++论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1rtTc6tEen",
+      "bvid": "BV1rtTc6tEen",
+      "plays": 609,
+      "likes": 0,
+      "date": "2026-07-14",
+      "series": "每天一个宝藏论文",
+      "number": 100
+    },
+    {
+      "title": "[99]. Medusa：投机解码和树形注意力论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1NsKQ6zENp",
+      "bvid": "BV1NsKQ6zENp",
+      "plays": 397,
+      "likes": 0,
+      "date": "2026-07-13",
+      "series": "每天一个宝藏论文",
+      "number": 99
+    },
+    {
+      "title": "[98]. TurboQuant：KV Cache量化论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV11sKQ6zEFj",
+      "bvid": "BV11sKQ6zEFj",
+      "plays": 720,
+      "likes": 0,
+      "date": "2026-07-12",
+      "series": "每天一个宝藏论文",
+      "number": 98
+    },
+    {
+      "title": "[97]. RaBitQ的改进工作：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV18e7p6FEU6",
+      "bvid": "BV18e7p6FEU6",
+      "plays": 317,
+      "likes": 0,
+      "date": "2026-07-11",
+      "series": "每天一个宝藏论文",
+      "number": 97
+    },
+    {
+      "title": "[96]. Mamba_2：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Av7q6dEpF",
+      "bvid": "BV1Av7q6dEpF",
+      "plays": 436,
+      "likes": 0,
+      "date": "2026-07-10",
+      "series": "每天一个宝藏论文",
+      "number": 96
+    },
+    {
+      "title": "[95]. SAM_2：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1kv7q6RELS",
+      "bvid": "BV1kv7q6RELS",
+      "plays": 469,
+      "likes": 0,
+      "date": "2026-07-09",
+      "series": "每天一个宝藏论文",
+      "number": 95
+    },
+    {
+      "title": "[94]. BPE：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1kv7q6REeS",
+      "bvid": "BV1kv7q6REeS",
+      "plays": 532,
+      "likes": 0,
+      "date": "2026-07-08",
+      "series": "每天一个宝藏论文",
+      "number": 94
+    },
+    {
+      "title": "[93]. PyTorch_2：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1kv7q6RE7a",
+      "bvid": "BV1kv7q6RE7a",
+      "plays": 500,
+      "likes": 0,
+      "date": "2026-07-07",
+      "series": "每天一个宝藏论文",
+      "number": 93
+    },
+    {
+      "title": "[92]. TVM：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1kv7q6REVg",
+      "bvid": "BV1kv7q6REVg",
+      "plays": 396,
+      "likes": 0,
+      "date": "2026-07-06",
+      "series": "每天一个宝藏论文",
+      "number": 92
+    },
+    {
+      "title": "[91]. ConsistencyModels：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1wv7q6dEtL",
+      "bvid": "BV1wv7q6dEtL",
+      "plays": 548,
+      "likes": 0,
+      "date": "2026-07-05",
+      "series": "每天一个宝藏论文",
+      "number": 91
+    },
+    {
+      "title": "[90]. EDM：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1kv7q6REvQ",
+      "bvid": "BV1kv7q6REvQ",
+      "plays": 454,
+      "likes": 0,
+      "date": "2026-07-04",
+      "series": "每天一个宝藏论文",
+      "number": 90
+    },
+    {
+      "title": "[89]. LDM：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Av7q6dEKW",
+      "bvid": "BV1Av7q6dEKW",
+      "plays": 343,
+      "likes": 0,
+      "date": "2026-07-03",
+      "series": "每天一个宝藏论文",
+      "number": 89
+    },
+    {
+      "title": "[88]. DiffusionBeatGANs：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1kv7q6REEK",
+      "bvid": "BV1kv7q6REEK",
+      "plays": 498,
+      "likes": 0,
+      "date": "2026-07-02",
+      "series": "每天一个宝藏论文",
+      "number": 88
+    },
+    {
+      "title": "[87]. ScoreSDE：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1kv7q6REtL",
+      "bvid": "BV1kv7q6REtL",
+      "plays": 392,
+      "likes": 0,
+      "date": "2026-07-01",
+      "series": "每天一个宝藏论文",
+      "number": 87
+    },
+    {
+      "title": "[86]. DDIM：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1LXjg6vEPM",
+      "bvid": "BV1LXjg6vEPM",
+      "plays": 536,
+      "likes": 0,
+      "date": "2026-06-30",
+      "series": "每天一个宝藏论文",
+      "number": 86
+    },
+    {
+      "title": "[85]. NCSN：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1LXjg6vEhk",
+      "bvid": "BV1LXjg6vEhk",
+      "plays": 365,
+      "likes": 0,
+      "date": "2026-06-29",
+      "series": "每天一个宝藏论文",
+      "number": 85
+    },
+    {
+      "title": "[84]. WGAN：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV176Js6DELe",
+      "bvid": "BV176Js6DELe",
+      "plays": 414,
+      "likes": 0,
+      "date": "2026-06-28",
+      "series": "每天一个宝藏论文",
+      "number": 84
+    },
+    {
+      "title": "[83]. 思维树：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV176Js6DEsq",
+      "bvid": "BV176Js6DEsq",
+      "plays": 411,
+      "likes": 0,
+      "date": "2026-06-27",
+      "series": "每天一个宝藏论文",
+      "number": 83
+    },
+    {
+      "title": "[82]. 思维链：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1q6Js6DEaQ",
+      "bvid": "BV1q6Js6DEaQ",
+      "plays": 633,
+      "likes": 0,
+      "date": "2026-06-26",
+      "series": "每天一个宝藏论文",
+      "number": 82
+    },
+    {
+      "title": "[81]. ProgressiveDistillation：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1q6Js6DE2b",
+      "bvid": "BV1q6Js6DE2b",
+      "plays": 352,
+      "likes": 0,
+      "date": "2026-06-25",
+      "series": "每天一个宝藏论文",
+      "number": 81
+    },
+    {
+      "title": "[80]. GAN：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV176Js6DEPp",
+      "bvid": "BV176Js6DEPp",
+      "plays": 565,
+      "likes": 0,
+      "date": "2026-06-24",
+      "series": "每天一个宝藏论文",
+      "number": 80
+    },
+    {
+      "title": "[79]. FlashAttention-4：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1q6Js6DEwE",
+      "bvid": "BV1q6Js6DEwE",
+      "plays": 919,
+      "likes": 0,
+      "date": "2026-06-23",
+      "series": "每天一个宝藏论文",
+      "number": 79
+    },
+    {
+      "title": "[78]. CFG：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV176Js6DE5W",
+      "bvid": "BV176Js6DE5W",
+      "plays": 404,
+      "likes": 0,
+      "date": "2026-06-22",
+      "series": "每天一个宝藏论文",
+      "number": 78
+    },
+    {
+      "title": "[77]. DDPM：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV176Js6DEaM",
+      "bvid": "BV176Js6DEaM",
+      "plays": 547,
+      "likes": 0,
+      "date": "2026-06-21",
+      "series": "每天一个宝藏论文",
+      "number": 77
+    },
+    {
+      "title": "[76]. VAE：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Ag7m6XEyN",
+      "bvid": "BV1Ag7m6XEyN",
+      "plays": 710,
+      "likes": 0,
+      "date": "2026-06-20",
+      "series": "每天一个宝藏论文",
+      "number": 76
+    },
+    {
+      "title": "[75]. GoogLeNet：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Pg7m6XEnq",
+      "bvid": "BV1Pg7m6XEnq",
+      "plays": 534,
+      "likes": 0,
+      "date": "2026-06-19",
+      "series": "每天一个宝藏论文",
+      "number": 75
+    },
+    {
+      "title": "[74]. VGG：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Ag7m6XEy4",
+      "bvid": "BV1Ag7m6XEy4",
+      "plays": 401,
+      "likes": 0,
+      "date": "2026-06-18",
+      "series": "每天一个宝藏论文",
+      "number": 74
+    },
+    {
+      "title": "[73]. FasterRCNN：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Wg7m6XEgG",
+      "bvid": "BV1Wg7m6XEgG",
+      "plays": 431,
+      "likes": 0,
+      "date": "2026-06-17",
+      "series": "每天一个宝藏论文",
+      "number": 73
+    },
+    {
+      "title": "[72]. Word2Vec：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Ag7m6XERk",
+      "bvid": "BV1Ag7m6XERk",
+      "plays": 453,
+      "likes": 0,
+      "date": "2026-06-16",
+      "series": "每天一个宝藏论文",
+      "number": 72
+    },
+    {
+      "title": "[71]. Whisper：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Ag7m6XErq",
+      "bvid": "BV1Ag7m6XErq",
+      "plays": 625,
+      "likes": 0,
+      "date": "2026-06-15",
+      "series": "每天一个宝藏论文",
+      "number": 71
+    },
+    {
+      "title": "[70]. UNet：论文精读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1zRVE6sEz1",
+      "bvid": "BV1zRVE6sEz1",
+      "plays": 681,
+      "likes": 0,
+      "date": "2026-06-14",
+      "series": "每天一个宝藏论文",
+      "number": 70
+    },
+    {
+      "title": "[69]. SwinTransformer：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1zRVE6sEU2",
+      "bvid": "BV1zRVE6sEU2",
+      "plays": 686,
+      "likes": 0,
+      "date": "2026-06-13",
+      "series": "每天一个宝藏论文",
+      "number": 69
+    },
+    {
+      "title": "[68]. EfficientNet：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1zRVE6sEmR",
+      "bvid": "BV1zRVE6sEmR",
+      "plays": 518,
+      "likes": 0,
+      "date": "2026-06-12",
+      "series": "每天一个宝藏论文",
+      "number": 68
+    },
+    {
+      "title": "[67]. Dropout：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1dsG26dETn",
+      "bvid": "BV1dsG26dETn",
+      "plays": 680,
+      "likes": 0,
+      "date": "2026-06-11",
+      "series": "每天一个宝藏论文",
+      "number": 67
+    },
+    {
+      "title": "[66]. DINO：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1bGVK6iEq7",
+      "bvid": "BV1bGVK6iEq7",
+      "plays": 786,
+      "likes": 0,
+      "date": "2026-06-10",
+      "series": "每天一个宝藏论文",
+      "number": 66
+    },
+    {
+      "title": "[65]. Mamba：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1uGVK6iEh2",
+      "bvid": "BV1uGVK6iEh2",
+      "plays": 739,
+      "likes": 0,
+      "date": "2026-06-09",
+      "series": "每天一个宝藏论文",
+      "number": 65
+    },
+    {
+      "title": "[64]. YOLO：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV18iGx6oEo1",
+      "bvid": "BV18iGx6oEo1",
+      "plays": 548,
+      "likes": 0,
+      "date": "2026-06-08",
+      "series": "每天一个宝藏论文",
+      "number": 64
+    },
+    {
+      "title": "[63]. DETR：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1DiGx6oE4S",
+      "bvid": "BV1DiGx6oE4S",
+      "plays": 648,
+      "likes": 0,
+      "date": "2026-06-07",
+      "series": "每天一个宝藏论文",
+      "number": 63
+    },
+    {
+      "title": "[62]. FlowMatching：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1hiGx6oExa",
+      "bvid": "BV1hiGx6oExa",
+      "plays": 982,
+      "likes": 0,
+      "date": "2026-06-06",
+      "series": "每天一个宝藏论文",
+      "number": 62
+    },
+    {
+      "title": "[61]. RaBitQ：向量检索论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1AtGe6KEuV",
+      "bvid": "BV1AtGe6KEuV",
+      "plays": 700,
+      "likes": 0,
+      "date": "2026-06-05",
+      "series": "每天一个宝藏论文",
+      "number": 61
+    },
+    {
+      "title": "[60]. SAM：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1ktGe6NE1c",
+      "bvid": "BV1ktGe6NE1c",
+      "plays": 573,
+      "likes": 0,
+      "date": "2026-06-04",
+      "series": "每天一个宝藏论文",
+      "number": 60
+    },
+    {
+      "title": "[59]. MoE：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV17zLC68Emq",
+      "bvid": "BV17zLC68Emq",
+      "plays": 671,
+      "likes": 0,
+      "date": "2026-06-03",
+      "series": "每天一个宝藏论文",
+      "number": 59
+    },
+    {
+      "title": "[58]. MAE：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1zGLM6cEYG",
+      "bvid": "BV1zGLM6cEYG",
+      "plays": 539,
+      "likes": 0,
+      "date": "2026-06-02",
+      "series": "每天一个宝藏论文",
+      "number": 58
+    },
+    {
+      "title": "[57]. CLIP：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1cQLJ6PE78",
+      "bvid": "BV1cQLJ6PE78",
+      "plays": 924,
+      "likes": 0,
+      "date": "2026-06-01",
+      "series": "每天一个宝藏论文",
+      "number": 57
+    },
+    {
+      "title": "[56]. 旋转位置编码RoPE：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1cQLJ6PEAs",
+      "bvid": "BV1cQLJ6PEAs",
+      "plays": 1111,
+      "likes": 0,
+      "date": "2026-05-31",
+      "series": "每天一个宝藏论文",
+      "number": 56
+    },
+    {
+      "title": "[55]. ScaNN：向量检索论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1FQLJ6PESa",
+      "bvid": "BV1FQLJ6PESa",
+      "plays": 572,
+      "likes": 0,
+      "date": "2026-05-30",
+      "series": "每天一个宝藏论文",
+      "number": 55
+    },
+    {
+      "title": "[54]. ViT：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1JXLJ6YE1X",
+      "bvid": "BV1JXLJ6YE1X",
+      "plays": 936,
+      "likes": 0,
+      "date": "2026-05-29",
+      "series": "每天一个宝藏论文",
+      "number": 54
+    },
+    {
+      "title": "[53]. GPT3：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1FXLJ6YEh4",
+      "bvid": "BV1FXLJ6YEh4",
+      "plays": 909,
+      "likes": 0,
+      "date": "2026-05-28",
+      "series": "每天一个宝藏论文",
+      "number": 53
+    },
+    {
+      "title": "[52]. GPT2：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1FXLJ6YECS",
+      "bvid": "BV1FXLJ6YECS",
+      "plays": 632,
+      "likes": 0,
+      "date": "2026-05-27",
+      "series": "每天一个宝藏论文",
+      "number": 52
+    },
+    {
+      "title": "[51]. BERT：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1fXLJ6aEZ1",
+      "bvid": "BV1fXLJ6aEZ1",
+      "plays": 753,
+      "likes": 0,
+      "date": "2026-05-26",
+      "series": "每天一个宝藏论文",
+      "number": 51
+    },
+    {
+      "title": "[50]. MobileNet：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1FXLJ6YExi",
+      "bvid": "BV1FXLJ6YExi",
+      "plays": 842,
+      "likes": 0,
+      "date": "2026-05-25",
+      "series": "每天一个宝藏论文",
+      "number": 50
+    },
+    {
+      "title": "[49]. ResNet：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1FXLJ6YE4U",
+      "bvid": "BV1FXLJ6YE4U",
+      "plays": 1066,
+      "likes": 0,
+      "date": "2026-05-24",
+      "series": "每天一个宝藏论文",
+      "number": 49
+    },
+    {
+      "title": "[48]. DAPO：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1tN5b6YEjF",
+      "bvid": "BV1tN5b6YEjF",
+      "plays": 1062,
+      "likes": 0,
+      "date": "2026-05-23",
+      "series": "每天一个宝藏论文",
+      "number": 48
+    },
+    {
+      "title": "[47]. QLearning：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV14N5b6YEbS",
+      "bvid": "BV14N5b6YEbS",
+      "plays": 1446,
+      "likes": 0,
+      "date": "2026-05-22",
+      "series": "每天一个宝藏论文",
+      "number": 47
+    },
+    {
+      "title": "[46]. Muon is Scalable：Muon优化器论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV14N5b6YEbf",
+      "bvid": "BV14N5b6YEbf",
+      "plays": 1218,
+      "likes": 0,
+      "date": "2026-05-21",
+      "series": "每天一个宝藏论文",
+      "number": 46
+    },
+    {
+      "title": "[45]. AlphaZero：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1nERrB9E7d",
+      "bvid": "BV1nERrB9E7d",
+      "plays": 631,
+      "likes": 0,
+      "date": "2026-05-20",
+      "series": "每天一个宝藏论文",
+      "number": 45
+    },
+    {
+      "title": "[44]. AutoRound：大模型量化论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1t1RrBNEEt",
+      "bvid": "BV1t1RrBNEEt",
+      "plays": 1010,
+      "likes": 0,
+      "date": "2026-05-19",
+      "series": "每天一个宝藏论文",
+      "number": 44
+    },
+    {
+      "title": "[43]. MQA：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1m1RrBNEmy",
+      "bvid": "BV1m1RrBNEmy",
+      "plays": 1003,
+      "likes": 0,
+      "date": "2026-05-18",
+      "series": "每天一个宝藏论文",
+      "number": 43
+    },
+    {
+      "title": "[42]. DQN：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV141RrBNEd1",
+      "bvid": "BV141RrBNEd1",
+      "plays": 805,
+      "likes": 0,
+      "date": "2026-05-17",
+      "series": "每天一个宝藏论文",
+      "number": 42
+    },
+    {
+      "title": "[41]. DeepSeek_GRPO：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1m1RrBNEhp",
+      "bvid": "BV1m1RrBNEhp",
+      "plays": 1103,
+      "likes": 0,
+      "date": "2026-05-16",
+      "series": "每天一个宝藏论文",
+      "number": 41
+    },
+    {
+      "title": "[40]. Transformer：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1t1RrBNEwi",
+      "bvid": "BV1t1RrBNEwi",
+      "plays": 1433,
+      "likes": 0,
+      "date": "2026-05-15",
+      "series": "每天一个宝藏论文",
+      "number": 40
+    },
+    {
+      "title": "[39]. 智能体强化学习论文串讲：WebRL、DigiRL、WebAgent-R1、AgentQ【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1f9RxBCEyN",
+      "bvid": "BV1f9RxBCEyN",
+      "plays": 3847,
+      "likes": 0,
+      "date": "2026-05-14",
+      "series": "每天一个宝藏论文",
+      "number": 39
+    },
+    {
+      "title": "[38]. AlphaGo：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1t1RrBNELs",
+      "bvid": "BV1t1RrBNELs",
+      "plays": 1339,
+      "likes": 0,
+      "date": "2026-05-13",
+      "series": "每天一个宝藏论文",
+      "number": 38
+    },
+    {
+      "title": "[37]. Adam：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV142RrBeEjQ",
+      "bvid": "BV142RrBeEjQ",
+      "plays": 1227,
+      "likes": 0,
+      "date": "2026-05-12",
+      "series": "每天一个宝藏论文",
+      "number": 37
+    },
+    {
+      "title": "[36]. DPO：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV142RrBeE8E",
+      "bvid": "BV142RrBeE8E",
+      "plays": 1105,
+      "likes": 0,
+      "date": "2026-05-11",
+      "series": "每天一个宝藏论文",
+      "number": 36
+    },
+    {
+      "title": "[35]. Deepseek-Engram：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV122RrBeEfs",
+      "bvid": "BV122RrBeEfs",
+      "plays": 1027,
+      "likes": 0,
+      "date": "2026-05-10",
+      "series": "每天一个宝藏论文",
+      "number": 35
+    },
+    {
+      "title": "[34]. PPO：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1T2RrBvE25",
+      "bvid": "BV1T2RrBvE25",
+      "plays": 1166,
+      "likes": 0,
+      "date": "2026-05-09",
+      "series": "每天一个宝藏论文",
+      "number": 34
+    },
+    {
+      "title": "[33]. mHC：流形约束超连接【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1m2RrBeEFS",
+      "bvid": "BV1m2RrBeEFS",
+      "plays": 1277,
+      "likes": 0,
+      "date": "2026-05-08",
+      "series": "每天一个宝藏论文",
+      "number": 33
+    },
+    {
+      "title": "[32]. Hyper Connections：残差连接的改进【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV142RrBeEa3",
+      "bvid": "BV142RrBeEa3",
+      "plays": 1267,
+      "likes": 0,
+      "date": "2026-05-07",
+      "series": "每天一个宝藏论文",
+      "number": 32
+    },
+    {
+      "title": "[31]. OSDI 2025 LLM方向论文串讲：DecDEC、WLB_LLM、Straggler【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV129ReB1EiW",
+      "bvid": "BV129ReB1EiW",
+      "plays": 1319,
+      "likes": 0,
+      "date": "2026-05-06",
+      "series": "每天一个宝藏论文",
+      "number": 31
+    },
+    {
+      "title": "[30] Deepseek-MLA、MTP解读 【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Vgd2BtEKe",
+      "bvid": "BV1Vgd2BtEKe",
+      "plays": 939,
+      "likes": 0,
+      "date": "2026-05-05",
+      "series": "每天一个宝藏论文",
+      "number": 30
+    },
+    {
+      "title": "[29] GPTQ：大模型量化论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Y3d2BoELh",
+      "bvid": "BV1Y3d2BoELh",
+      "plays": 948,
+      "likes": 0,
+      "date": "2026-05-04",
+      "series": "每天一个宝藏论文",
+      "number": 29
+    },
+    {
+      "title": "[28] 模型剪枝OB家族论文一口气看完：OBD、OBS、OBC【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1bJd2BHEeb",
+      "bvid": "BV1bJd2BHEeb",
+      "plays": 1104,
+      "likes": 0,
+      "date": "2026-05-03",
+      "series": "每天一个宝藏论文",
+      "number": 28
+    },
+    {
+      "title": "[27] SlimAttention：一种和FlashAttention分块策略不同的注意力【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1hjd2BWEGS",
+      "bvid": "BV1hjd2BWEGS",
+      "plays": 1109,
+      "likes": 0,
+      "date": "2026-05-02",
+      "series": "每天一个宝藏论文",
+      "number": 27
+    },
+    {
+      "title": "[26] GQA：分组查询注意力论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Bcd2BeEVv",
+      "bvid": "BV1Bcd2BeEVv",
+      "plays": 633,
+      "likes": 0,
+      "date": "2026-05-01",
+      "series": "每天一个宝藏论文",
+      "number": 26
+    },
+    {
+      "title": "[25] QLora：大模型量化微调论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1CFdrBfE2D",
+      "bvid": "BV1CFdrBfE2D",
+      "plays": 1011,
+      "likes": 0,
+      "date": "2026-04-30",
+      "series": "每天一个宝藏论文",
+      "number": 25
+    },
+    {
+      "title": "[24] SGLang：大模型推理引擎论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV18Ud6BME78",
+      "bvid": "BV18Ud6BME78",
+      "plays": 1122,
+      "likes": 0,
+      "date": "2026-04-29",
+      "series": "每天一个宝藏论文",
+      "number": 24
+    },
+    {
+      "title": "[23] flash-attention-v3：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1yZd6BcE3b",
+      "bvid": "BV1yZd6BcE3b",
+      "plays": 1223,
+      "likes": 0,
+      "date": "2026-04-28",
+      "series": "每天一个宝藏论文",
+      "number": 23
+    },
+    {
+      "title": "[22] FlashAttention-V2：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1yfd6B8E37",
+      "bvid": "BV1yfd6B8E37",
+      "plays": 1295,
+      "likes": 0,
+      "date": "2026-04-27",
+      "series": "每天一个宝藏论文",
+      "number": 22
+    },
+    {
+      "title": "[21] 在线softmax：论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Qkd6B3EUe",
+      "bvid": "BV1Qkd6B3EUe",
+      "plays": 923,
+      "likes": 0,
+      "date": "2026-04-26",
+      "series": "每天一个宝藏论文",
+      "number": 21
+    },
+    {
+      "title": "[20] 投机采样：大模型推理加速论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1V6d6BCEzJ",
+      "bvid": "BV1V6d6BCEzJ",
+      "plays": 1021,
+      "likes": 0,
+      "date": "2026-04-25",
+      "series": "每天一个宝藏论文",
+      "number": 20
+    },
+    {
+      "title": "[19] DeepSeek-V4逐图、逐公式解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1Mgo5BwEST",
+      "bvid": "BV1Mgo5BwEST",
+      "plays": 3143,
+      "likes": 0,
+      "date": "2026-04-24",
+      "series": "每天一个宝藏论文",
+      "number": 19
+    },
+    {
+      "title": "[18] SmoothQuant：大模型量化论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1CkoPBbEyB",
+      "bvid": "BV1CkoPBbEyB",
+      "plays": 697,
+      "likes": 0,
+      "date": "2026-04-23",
+      "series": "每天一个宝藏论文",
+      "number": 18
+    },
+    {
+      "title": "[17] FlashAttention-1论文解读 【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1XPoNB5EQy",
+      "bvid": "BV1XPoNB5EQy",
+      "plays": 1510,
+      "likes": 0,
+      "date": "2026-04-22",
+      "series": "每天一个宝藏论文",
+      "number": 17
+    },
+    {
+      "title": "[16] LLM.int8()：大模型量化论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1BeoNB9EQP",
+      "bvid": "BV1BeoNB9EQP",
+      "plays": 1202,
+      "likes": 0,
+      "date": "2026-04-21",
+      "series": "每天一个宝藏论文",
+      "number": 16
+    },
+    {
+      "title": "[15] PagedAttention：vLLM论文解读【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1xJoNBPEqe",
+      "bvid": "BV1xJoNBPEqe",
+      "plays": 1232,
+      "likes": 0,
+      "date": "2026-04-20",
+      "series": "每天一个宝藏论文",
+      "number": 15
+    },
+    {
+      "title": "[14] AWQ：大语言模型量化论文解读 【每天一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1RuoFBvEm8",
+      "bvid": "BV1RuoFBvEm8",
+      "plays": 1403,
+      "likes": 0,
+      "date": "2026-04-19",
+      "series": "每天一个宝藏论文",
+      "number": 14
+    }
+  ],
+  "每周一个宝藏论文": [
+    {
+      "title": "[8] 读三个强化学习写算子的论文【每周一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1fVckzqE1S",
+      "bvid": "BV1fVckzqE1S",
+      "plays": 1672,
+      "likes": 0,
+      "date": "2026-03-16",
+      "series": "每周一个宝藏论文",
+      "number": 8
+    },
+    {
+      "title": "[6] Agent写算子：读三个Agent写算子的论文【每周一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1HVPkzEEx9",
+      "bvid": "BV1HVPkzEEx9",
+      "plays": 3405,
+      "likes": 0,
+      "date": "2026-03-09",
+      "series": "每周一个宝藏论文",
+      "number": 6
+    },
+    {
+      "title": "[4] 大模型写算子：一篇综述+2个数据集【每周一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1pJA6zkEH4",
+      "bvid": "BV1pJA6zkEH4",
+      "plays": 1830,
+      "likes": 0,
+      "date": "2026-03-02",
+      "series": "每周一个宝藏论文",
+      "number": 4
+    },
+    {
+      "title": "[2] 读上月新鲜出炉的综述：大模型写算子【每周一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1XcfBBGEUw",
+      "bvid": "BV1XcfBBGEUw",
+      "plays": 2220,
+      "likes": 0,
+      "date": "2026-02-24",
+      "series": "每周一个宝藏论文",
+      "number": 2
+    },
+    {
+      "title": "［10］大模型写算子：读两个KernelBench的改进工作【每周一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1M8QUBUESz",
+      "bvid": "BV1M8QUBUESz",
+      "plays": 1087,
+      "likes": 0,
+      "date": "2026-03-26",
+      "series": "每周一个宝藏论文",
+      "number": null
+    },
+    {
+      "title": "［12］读2个多Agent共享KV Cache的论文【每周一个宝藏论文】",
+      "url": "https://www.bilibili.com/video/BV1B997BmEGr",
+      "bvid": "BV1B997BmEGr",
+      "plays": 2176,
+      "likes": 0,
+      "date": "2026-04-02",
+      "series": "每周一个宝藏论文",
+      "number": null
+    }
+  ],
+  "每周一个宝藏实验": [
+    {
+      "title": "[13] AutoDL上部署龙虾，它能帮忙测试算子性能吗？【每周一个宝藏实验】",
+      "url": "https://www.bilibili.com/video/BV1XMX5BZEGF",
+      "bvid": "BV1XMX5BZEGF",
+      "plays": 806,
+      "likes": 0,
+      "date": "2026-03-30",
+      "series": "每周一个宝藏实验",
+      "number": 13
+    },
+    {
+      "title": "[11] 跑robust-kbench测试LLM写算子，附Agent提示词【每周一个宝藏实验】",
+      "url": "https://www.bilibili.com/video/BV1vxAszpE3P",
+      "bvid": "BV1vxAszpE3P",
+      "plays": 1097,
+      "likes": 0,
+      "date": "2026-03-23",
+      "series": "每周一个宝藏实验",
+      "number": 11
+    },
+    {
+      "title": "[9] 跑CUDA-L2测试和cuBLAS相比效果如何？【每周一个宝藏实验】",
+      "url": "https://www.bilibili.com/video/BV1QPwszCE39",
+      "bvid": "BV1QPwszCE39",
+      "plays": 882,
+      "likes": 0,
+      "date": "2026-03-19",
+      "series": "每周一个宝藏实验",
+      "number": 9
+    },
+    {
+      "title": "[7] 跑KernelBench测试LLM将PyTorch转译为CUDA代码的能力（ICML2025）【每周一个宝藏实验】",
+      "url": "https://www.bilibili.com/video/BV1gzPyzuERu",
+      "bvid": "BV1gzPyzuERu",
+      "plays": 1455,
+      "likes": 0,
+      "date": "2026-03-12",
+      "series": "每周一个宝藏实验",
+      "number": 7
+    },
+    {
+      "title": "[5] 快速上手FuctionCall和React：极简易百词斩Agent【每周一个宝藏实验】",
+      "url": "https://www.bilibili.com/video/BV1nUAazDEma",
+      "bvid": "BV1nUAazDEma",
+      "plays": 664,
+      "likes": 0,
+      "date": "2026-03-05",
+      "series": "每周一个宝藏实验",
+      "number": 5
+    },
+    {
+      "title": "[3] 从采摘200片三叶草开始训练一个简易无条件DDPM 【每周一个宝藏实验】",
+      "url": "https://www.bilibili.com/video/BV1PcfEBrEBs",
+      "bvid": "BV1PcfEBrEBs",
+      "plays": 2905,
+      "likes": 0,
+      "date": "2026-02-26",
+      "series": "每周一个宝藏实验",
+      "number": 3
+    },
+    {
+      "title": "[1]. 跑通TritonBench测试LLM的算子生成能力(ACL2025)【每周一个宝藏实验】",
+      "url": "https://www.bilibili.com/video/BV12xZBBwEKf",
+      "bvid": "BV12xZBBwEKf",
+      "plays": 4368,
+      "likes": 0,
+      "date": "2026-02-20",
+      "series": "每周一个宝藏实验",
+      "number": 1
+    }
+  ],
+  "每天一个宝藏名词": [
+    {
+      "title": "54. bf16：与FP32有相同的8位指数位，所以更适合模型训练【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1DvPhzeE3R",
+      "bvid": "BV1DvPhzeE3R",
+      "plays": 1684,
+      "likes": 0,
+      "date": "2026-03-21",
+      "series": "每天一个宝藏名词",
+      "number": 54
+    },
+    {
+      "title": "50. 环境变量的工作原理：控制台启动时自动执行命令，让简写命令找到在哪执行【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1zXP7zyEbD",
+      "bvid": "BV1zXP7zyEbD",
+      "plays": 1002,
+      "likes": 0,
+      "date": "2026-03-17",
+      "series": "每天一个宝藏名词",
+      "number": 50
+    },
+    {
+      "title": "48. NoteBookLM：Google的PPT制作神器，还有思维导图等一系列功能【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1MUP5zDEmj",
+      "bvid": "BV1MUP5zDEmj",
+      "plays": 849,
+      "likes": 0,
+      "date": "2026-03-15",
+      "series": "每天一个宝藏名词",
+      "number": 48
+    },
+    {
+      "title": "43. everything：比Windows默认文件搜索工具快很多，2MB的免费小工具【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1iRArzqEvU",
+      "bvid": "BV1iRArzqEvU",
+      "plays": 884,
+      "likes": 0,
+      "date": "2026-03-10",
+      "series": "每天一个宝藏名词",
+      "number": 43
+    },
+    {
+      "title": "38. miniSGLang：一个简化版SGLang，仅5000行python【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1obA6zeEtE",
+      "bvid": "BV1obA6zeEtE",
+      "plays": 1449,
+      "likes": 0,
+      "date": "2026-03-05",
+      "series": "每天一个宝藏名词",
+      "number": 38
+    },
+    {
+      "title": "27. 在线Softmax：通过修正比安全Softmax减少了一次循环【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1c1c7zzEb4",
+      "bvid": "BV1c1c7zzEb4",
+      "plays": 1453,
+      "likes": 0,
+      "date": "2026-02-22",
+      "series": "每天一个宝藏名词",
+      "number": 27
+    },
+    {
+      "title": "26. TinyML：MIT推出的大模型轻量化课，亲手量化一个本地llama模型【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1CPcJzLELq",
+      "bvid": "BV1CPcJzLELq",
+      "plays": 3996,
+      "likes": 0,
+      "date": "2026-02-21",
+      "series": "每天一个宝藏名词",
+      "number": 26
+    },
+    {
+      "title": "25. 举例说明FlashAttention的分块矩阵乘法的正确性？【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV18pcLz2E3P",
+      "bvid": "BV18pcLz2E3P",
+      "plays": 3298,
+      "likes": 0,
+      "date": "2026-02-20",
+      "series": "每天一个宝藏名词",
+      "number": 25
+    },
+    {
+      "title": "24. 思维树：大模型+DFS玩24点游戏成功率大增【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1gtcbzDENr",
+      "bvid": "BV1gtcbzDENr",
+      "plays": 702,
+      "likes": 0,
+      "date": "2026-02-19",
+      "series": "每天一个宝藏名词",
+      "number": 24
+    },
+    {
+      "title": "18. CCF-DDL：一个统计CCF分类和倒计时的宝藏网站【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1Jif9BeEYE",
+      "bvid": "BV1Jif9BeEYE",
+      "plays": 536,
+      "likes": 0,
+      "date": "2026-02-13",
+      "series": "每天一个宝藏名词",
+      "number": 18
+    },
+    {
+      "title": "15. 投机解码：小模型草拟，大模型验证【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1yS6zBXEVu",
+      "bvid": "BV1yS6zBXEVu",
+      "plays": 906,
+      "likes": 0,
+      "date": "2026-02-10",
+      "series": "每天一个宝藏名词",
+      "number": 15
+    },
+    {
+      "title": "12. RoPE：通过旋转矩阵让注意力只取决于相对位置【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1gQ6iBREZw",
+      "bvid": "BV1gQ6iBREZw",
+      "plays": 695,
+      "likes": 0,
+      "date": "2026-02-07",
+      "series": "每天一个宝藏名词",
+      "number": 12
+    },
+    {
+      "title": "11. GQA：介于MHA和MQA之间，键值共享查询分组【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV19u6BBwEQ8",
+      "bvid": "BV19u6BBwEQ8",
+      "plays": 254,
+      "likes": 0,
+      "date": "2026-02-07",
+      "series": "每天一个宝藏名词",
+      "number": 11
+    },
+    {
+      "title": "10. NF4：QLoRA中的非均匀量化数据类型【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1qA6BBKEck",
+      "bvid": "BV1qA6BBKEck",
+      "plays": 370,
+      "likes": 0,
+      "date": "2026-02-06",
+      "series": "每天一个宝藏名词",
+      "number": 10
+    },
+    {
+      "title": "9. FlashAttention：将Attention的显存占用从平方级降到了线性级【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1C66YBvECv",
+      "bvid": "BV1C66YBvECv",
+      "plays": 1153,
+      "likes": 0,
+      "date": "2026-02-05",
+      "series": "每天一个宝藏名词",
+      "number": 9
+    },
+    {
+      "title": "8. PagedAttention：借鉴操作系统分页机制，内置于vLLM【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1Ht6wBVEUX",
+      "bvid": "BV1Ht6wBVEUX",
+      "plays": 485,
+      "likes": 0,
+      "date": "2026-02-04",
+      "series": "每天一个宝藏名词",
+      "number": 8
+    },
+    {
+      "title": "7. SlimAttention：一种比FlashAttention更适合CPU的推理方案【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1MUzZBVEtV",
+      "bvid": "BV1MUzZBVEtV",
+      "plays": 810,
+      "likes": 0,
+      "date": "2026-02-03",
+      "series": "每天一个宝藏名词",
+      "number": 7
+    },
+    {
+      "title": "6. nano-vLLM：纯python实现的堪比vLLM的推理框架【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1FTzfBcE3h",
+      "bvid": "BV1FTzfBcE3h",
+      "plays": 1807,
+      "likes": 0,
+      "date": "2026-02-02",
+      "series": "每天一个宝藏名词",
+      "number": 6
+    },
+    {
+      "title": "5. CS336：斯坦福LLM神课，甚至包含洗数据和SFT【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV12pzXBREPY",
+      "bvid": "BV12pzXBREPY",
+      "plays": 2322,
+      "likes": 0,
+      "date": "2026-02-01",
+      "series": "每天一个宝藏名词",
+      "number": 5
+    },
+    {
+      "title": "4. SmoothQuant：一种转嫁压力的LLM量化方法【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1RyzXB6Eyz",
+      "bvid": "BV1RyzXB6Eyz",
+      "plays": 352,
+      "likes": 0,
+      "date": "2026-01-31",
+      "series": "每天一个宝藏名词",
+      "number": 4
+    },
+    {
+      "title": "3. GPTQ：一种纯数学的LLM量化方法【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1aXzXBNE4A",
+      "bvid": "BV1aXzXBNE4A",
+      "plays": 516,
+      "likes": 0,
+      "date": "2026-01-30",
+      "series": "每天一个宝藏名词",
+      "number": 3
+    },
+    {
+      "title": "2. AWQ：一种保护关键权重的LLM量化算法【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV16H6EBHEP5",
+      "bvid": "BV16H6EBHEP5",
+      "plays": 599,
+      "likes": 0,
+      "date": "2026-01-29",
+      "series": "每天一个宝藏名词",
+      "number": 2
+    },
+    {
+      "title": "1. BitNet 1.58b：微软开源的3值量化模型【每天一个宝藏名词】",
+      "url": "https://www.bilibili.com/video/BV1kG6jBSE3u",
+      "bvid": "BV1kG6jBSE3u",
+      "plays": 1215,
+      "likes": 0,
+      "date": "2026-01-28",
+      "series": "每天一个宝藏名词",
+      "number": 1
+    }
+  ]
+}
