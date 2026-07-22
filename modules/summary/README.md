@@ -4,7 +4,7 @@
 opencli bilibili summary BV1xxx -f json
 ```
 
-默认 **item_delay ~3s**（conservative 温和提速），串行 + resume（不并发）。
+默认 **item_delay ~2s**（conservative 温和提速），串行 + resume（不并发）。
 
 ```bash
 python3 main.py summary --bvid BV1BVEs6LENZ

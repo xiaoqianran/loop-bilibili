@@ -1,7 +1,7 @@
 # modules/subtitle — 字幕批量导出
 
-默认 **conservative**：`item_delay=3.0±1.0s`，**串行**（不并发）。  
-（曾用 5s；实跑无真实限流后改为温和 3s。）
+默认 **conservative**：`item_delay=2.0±0.5s`，**串行**（不并发）。  
+（曾用 5s → 3s → 2s；实跑无真实限流后温和提速。）
 
 ```bash
 python3 main.py subtitle --bvid BV1BVEs6LENZ

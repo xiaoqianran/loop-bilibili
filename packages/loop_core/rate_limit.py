@@ -4,8 +4,8 @@ Anti-risk defaults (B 站社区实践归纳，非官方 SLA):
   - list/discovery: serial pages, ~1.5s ± jitter (conservative)
   - per-item (summary/subtitle/comments): multi-second gaps, always serial
   - never concurrent opencli against one session by default
-  - mild item pacing (default ~3s) after real-world runs showed 5s was
-    conservative with no true rate-limit hits on serial subtitle crawls
+  - mild item pacing (default ~2s) after real-world serial subtitle crawls
+    showed no true Bilibili rate-limit; still serial, no concurrency
 """
 
 from __future__ import annotations
@@ -47,8 +47,8 @@ PROFILES: dict[str, Profile] = {
         cooldown_412=300.0,
         max_pages=200,
         # Mild item pacing: still > page_delay, serial only (no concurrency).
-        item_delay=3.0,
-        item_jitter=1.0,
+        item_delay=2.0,
+        item_jitter=0.5,
     ),
     "balanced": Profile(
         name="balanced",
@@ -62,8 +62,8 @@ PROFILES: dict[str, Profile] = {
         backoff_cap=90.0,
         cooldown_412=180.0,
         max_pages=200,
-        item_delay=2.0,
-        item_jitter=0.5,
+        item_delay=1.5,
+        item_jitter=0.4,
     ),
     "aggressive": Profile(
         name="aggressive",

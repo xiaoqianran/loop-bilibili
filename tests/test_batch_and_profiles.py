@@ -92,12 +92,12 @@ class TestProfilesAntiRisk(unittest.TestCase):
 
     def test_conservative_item_delay_multi_second(self):
         p = get_profile("conservative")
-        # Mild default: ~3s item gap (was 5s); still multi-second and > page_delay
-        self.assertGreaterEqual(p.item_delay, 3.0)
-        self.assertLessEqual(p.item_delay, 4.0)
+        # Mild default: ~2s item gap (was 5s → 3s → 2s); still > page_delay
+        self.assertGreaterEqual(p.item_delay, 2.0)
+        self.assertLessEqual(p.item_delay, 3.0)
         self.assertGreaterEqual(p.page_delay, 1.0)
         self.assertGreater(p.item_delay, p.page_delay)
-        self.assertGreaterEqual(p.item_jitter, 0.5)
+        self.assertGreaterEqual(p.item_jitter, 0.4)
 
 
 if __name__ == "__main__":

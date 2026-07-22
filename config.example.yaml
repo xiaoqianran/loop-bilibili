@@ -9,11 +9,11 @@ paths:
 # 默认限速（与 packages/loop_core/rate_limit.py 中 conservative 对齐）
 rate_limit:
   default_profile: conservative
-  # list: page_delay ~1.5s; item: item_delay ~3s mild (always serial, no concurrency)
+  # list: page_delay ~1.5s; item: item_delay ~2s mild (always serial, no concurrency)
   # page_size: 30
   # page_delay: 1.5
-  # item_delay: 3.0
-  # item_jitter: 1.0
+  # item_delay: 2.0
+  # item_jitter: 0.5
   # max_retries: 5
   # cooldown_412: 300
 
