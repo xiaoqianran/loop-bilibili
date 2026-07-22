@@ -99,3 +99,20 @@ class TestProfilesAntiRisk(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestClassifyNoFalse429(unittest.TestCase):
+    def test_subtitle_timestamp_not_rate(self):
+        from loop_core.runner import classify_failure, extract_json
+        sample = """[
+          {"index": 1, "from": "429.10s", "to": "430.00s", "content": "hello"}
+        ]"""
+        self.assertIsNone(classify_failure(sample, 0))
+        self.assertTrue(extract_json(sample))
+
+    def test_real_rate_still_detected(self):
+        from loop_core.runner import classify_failure
+        self.assertEqual(
+            classify_failure('{"code": -799, "message": "请求过于频繁"}', 1),
+            "rate",
+        )

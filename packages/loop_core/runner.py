@@ -13,12 +13,13 @@ from .errors import FetchError
 
 logger = logging.getLogger(__name__)
 
+# Do NOT use bare "429" / "412" — subtitle JSON timestamps like "429.10s" false-positive.
 RATE_LIMIT_MARKERS = (
     "-799",
     "请求过于频繁",
     "too many requests",
     "rate limit",
-    "429",
+    "ratelimit",
 )
 RISK_412_MARKERS = (
     "-412",
@@ -66,21 +67,35 @@ def extract_json(text: str) -> Any:
 
 
 def classify_failure(text: str, returncode: int | None = None) -> str | None:
+    """Classify risk/rate failures. Avoid matching numbers inside large JSON bodies."""
     low = (text or "").lower()
     raw = text or ""
 
-    if "-352" in raw or "风控校验" in raw:
+    # Prefer explicit API / opencli error phrasing over bare digits.
+    if re.search(r'"code"\s*:\s*-352\b', raw) or "-352" in raw or "风控校验" in raw:
         return "sign352"
-    if any(m in raw or m.lower() in low for m in SIGN_352_MARKERS):
-        if "-352" in raw or "风控校验" in raw:
-            return "sign352"
 
-    if "-412" in raw or "precondition failed" in low or "请求被拦截" in raw:
+    if (
+        re.search(r'"code"\s*:\s*-412\b', raw)
+        or "-412" in raw
+        or "precondition failed" in low
+        or "请求被拦截" in raw
+    ):
         return "risk412"
-    if re.search(r"\b412\b", raw) and ("风控" in raw or "intercept" in low or "fail" in low):
+    if re.search(r"\bHTTP[/\s]*412\b", raw, re.I) or (
+        re.search(r"\b412\b", raw)
+        and ("风控" in raw or "intercept" in low or "precondition" in low)
+    ):
         return "risk412"
 
-    if any(m.lower() in low or m in raw for m in RATE_LIMIT_MARKERS):
+    if re.search(r'"code"\s*:\s*-799\b', raw) or any(
+        m.lower() in low for m in RATE_LIMIT_MARKERS
+    ):
+        return "rate"
+    # HTTP 429 only as status token, not as "429.12s" timestamps
+    if re.search(r"(?:status|http)[^\n]{0,20}\b429\b", low) or re.search(
+        r"\bHTTP[/\s]*429\b", raw, re.I
+    ):
         return "rate"
 
     if returncode is not None and returncode != 0:
@@ -117,6 +132,16 @@ class OpencliRunner:
             ) from e
 
         out = (proc.stdout or "") + ("\n" + proc.stderr if proc.stderr else "")
+
+        # If we already have parseable JSON success body, do not treat embedded
+        # numbers (e.g. subtitle timestamps "429.1s") as rate-limit signals.
+        if proc.returncode == 0:
+            try:
+                extract_json(out)
+                return out, proc.returncode
+            except ValueError:
+                pass
+
         cat = classify_failure(out, proc.returncode)
         if cat:
             raise FetchError(out[-800:] or f"opencli exit {proc.returncode}", cat)
@@ -130,11 +155,12 @@ class OpencliRunner:
         return out, proc.returncode
 
     def run_json(self, args: Sequence[str], *, timeout: int | None = None) -> Any:
-        out, _ = self.run(args, timeout=timeout)
+        out, rc = self.run(args, timeout=timeout)
         try:
             return extract_json(out)
         except ValueError as e:
-            raise FetchError(str(e), "hard") from e
+            cat = classify_failure(out, rc) or "hard"
+            raise FetchError(str(e), cat) from e
 
     def run_json_list(
         self, args: Sequence[str], *, timeout: int | None = None
