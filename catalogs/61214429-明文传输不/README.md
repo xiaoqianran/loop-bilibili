@@ -1,12 +1,26 @@
 # 明文传输不 · 完整视频目录
 
+---
+
+## ⭐ 字幕与全文导航（优先读这里）
+
+> **看字幕 / txt 全文？点这里，不要往下翻 Top 20。**
+>
+> ### 👉 [明文传输不 · 全部视频 · 字幕预览 · txt/srt](../../data/subtitles/ups/61214429-明文传输不/README.md)
+>
+> 按投稿顺序列出**全部**视频：标题、播放页、有无字幕、**txt 正文预览**、相对路径 `txt/` · `srt/`。
+> 本 catalog 页只是投稿元数据摘要；真正给人读的字幕导航在上面的链接。
+
+---
+
 - **UID**: `61214429`
 - **空间**: https://space.bilibili.com/61214429
 - **投稿总数**: **359**
 - **系列数**: **14**
-- **导出时间**: 2026-07-23 17:38 UTC
+- **导出时间**: 2026-07-23 18:00 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
+- **字幕导航**: [../../data/subtitles/ups/61214429-明文传输不/README.md](../../data/subtitles/ups/61214429-明文传输不/README.md)
 
 ## 系列一览
 
@@ -27,15 +41,7 @@
 | 设计规则：优秀UI设计的原则与实践 | 1 | [series/设计规则：优秀UI设计的原则与实践.md](series/设计规则：优秀UI设计的原则与实践.md) |
 | 未分类 / 其他 | 342 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 字幕与全文导航（推荐从这里读）
-
-抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
-**[明文传输不 · 字幕导航](../../data/subtitles/ups/61214429-明文传输不/README.md)**
-
-本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
-不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
-
-## 全站最新 20 条（摘要）
+## 全站最新 20 条（仅摘要，非全文）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -60,7 +66,7 @@
 | 2026-05-16 | Blender 3D角色建模入门 （中文语音）2/2 | 未分类 / 其他 | 1,448 | [BV1QyDrBcEuu](https://www.bilibili.com/video/BV1QyDrBcEuu) |
 | 2026-05-15 | Cursor AI从入门到精通：使用AI构建生产级Web应用(中文语音) | 未分类 / 其他 | 2,224 | [BV1HYXUBzENk](https://www.bilibili.com/video/BV1HYXUBzENk) |
 
-## 播放量 Top 20（摘要）
+## 播放量 Top 20（仅摘要，非全文）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -91,7 +97,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
-- 字幕导航: [../../data/subtitles/ups/61214429-明文传输不/README.md](../../data/subtitles/ups/61214429-明文传输不/README.md)
+- **字幕/全文导航（推荐）**: [../../data/subtitles/ups/61214429-明文传输不/README.md](../../data/subtitles/ups/61214429-明文传输不/README.md)
 
 ---
 

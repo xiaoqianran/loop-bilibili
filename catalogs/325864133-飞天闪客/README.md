@@ -1,12 +1,26 @@
 # 飞天闪客 · 完整视频目录
 
+---
+
+## ⭐ 字幕与全文导航（优先读这里）
+
+> **看字幕 / txt 全文？点这里，不要往下翻 Top 20。**
+>
+> ### 👉 [飞天闪客 · 全部视频 · 字幕预览 · txt/srt](../../data/subtitles/ups/325864133-飞天闪客/README.md)
+>
+> 按投稿顺序列出**全部**视频：标题、播放页、有无字幕、**txt 正文预览**、相对路径 `txt/` · `srt/`。
+> 本 catalog 页只是投稿元数据摘要；真正给人读的字幕导航在上面的链接。
+
+---
+
 - **UID**: `325864133`
 - **空间**: https://space.bilibili.com/325864133
 - **投稿总数**: **70**
 - **系列数**: **12**
-- **导出时间**: 2026-07-23 17:38 UTC
+- **导出时间**: 2026-07-23 18:00 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
+- **字幕导航**: [../../data/subtitles/ups/325864133-飞天闪客/README.md](../../data/subtitles/ups/325864133-飞天闪客/README.md)
 
 ## 系列一览
 
@@ -25,15 +39,7 @@
 | 白话Transformer02 | 1 | [series/白话Transformer02.md](series/白话Transformer02.md) |
 | 未分类 / 其他 | 24 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 字幕与全文导航（推荐从这里读）
-
-抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
-**[飞天闪客 · 字幕导航](../../data/subtitles/ups/325864133-飞天闪客/README.md)**
-
-本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
-不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
-
-## 全站最新 20 条（摘要）
+## 全站最新 20 条（仅摘要，非全文）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -58,7 +64,7 @@
 | 2026-03-30 | 我犯了 skill 焦虑症，别怕，亲手写一个终结它！ | 未分类 / 其他 | 297,726 | [BV1wJXhBxE6F](https://www.bilibili.com/video/BV1wJXhBxE6F) |
 | 2026-03-19 | 【闪客】深入解读 Kimi 爆火论文，马斯克都转了！到底什么是注意力残差？白话解读哟 | 闪客 | 273,052 | [BV1MMw1zaESW](https://www.bilibili.com/video/BV1MMw1zaESW) |
 
-## 播放量 Top 20（摘要）
+## 播放量 Top 20（仅摘要，非全文）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -89,7 +95,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
-- 字幕导航: [../../data/subtitles/ups/325864133-飞天闪客/README.md](../../data/subtitles/ups/325864133-飞天闪客/README.md)
+- **字幕/全文导航（推荐）**: [../../data/subtitles/ups/325864133-飞天闪客/README.md](../../data/subtitles/ups/325864133-飞天闪客/README.md)
 
 ---
 

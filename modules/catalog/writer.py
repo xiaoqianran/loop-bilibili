@@ -69,8 +69,26 @@ def write_index_md(
         return (0, -len(vs), name)
 
     ordered = sorted(groups.items(), key=series_order)
+    # Point humans to the subtitle hub FIRST — most readers want txt, not Top20 tables.
+    # catalogs/ only carries metadata; full ordered transcripts live under data/subtitles.
+    slug = path.parent.name  # catalogs/{uid}-{name}/README.md
+    hub_rel = f"../../data/subtitles/ups/{slug}/README.md"
+
     lines = [
         f"# {up_name} · 完整视频目录",
+        "",
+        "---",
+        "",
+        "## ⭐ 字幕与全文导航（优先读这里）",
+        "",
+        "> **看字幕 / txt 全文？点这里，不要往下翻 Top 20。**",
+        ">",
+        f"> ### 👉 [{up_name} · 全部视频 · 字幕预览 · txt/srt]({hub_rel})",
+        ">",
+        "> 按投稿顺序列出**全部**视频：标题、播放页、有无字幕、**txt 正文预览**、相对路径 `txt/` · `srt/`。",
+        "> 本 catalog 页只是投稿元数据摘要；真正给人读的字幕导航在上面的链接。",
+        "",
+        "---",
         "",
         f"- **UID**: `{uid}`",
         f"- **空间**: {space_url}",
@@ -82,6 +100,7 @@ def write_index_md(
     if profile_name:
         lines.append(f"- **限速 profile**: `{profile_name}`")
     lines += [
+        f"- **字幕导航**: [{hub_rel}]({hub_rel})",
         "",
         "## 系列一览",
         "",
@@ -92,21 +111,9 @@ def write_index_md(
         fname = f"series/{slugify(series)}.md"
         lines.append(f"| {series} | {len(vs)} | [{fname}]({fname}) |")
 
-    # Point humans to the subtitle hub (full list + txt preview + srt links).
-    # catalogs/ alone only carries metadata; subtitles live under data/subtitles.
-    slug = path.parent.name  # catalogs/{uid}-{name}/README.md
-    hub_rel = f"../../data/subtitles/ups/{slug}/README.md"
     lines += [
         "",
-        "## 字幕与全文导航（推荐从这里读）",
-        "",
-        f"抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：",
-        f"**[{up_name} · 字幕导航]({hub_rel})**",
-        "",
-        "本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；",
-        "不要只靠 `data/subtitles/.../srt/` 文件名去对标题。",
-        "",
-        "## 全站最新 20 条（摘要）",
+        "## 全站最新 20 条（仅摘要，非全文）",
         "",
         "| 日期 | 标题 | 系列 | 播放 | 链接 |",
         "|------|------|------|------|------|",
@@ -122,7 +129,7 @@ def write_index_md(
 
     lines += [
         "",
-        "## 播放量 Top 20（摘要）",
+        "## 播放量 Top 20（仅摘要，非全文）",
         "",
         "| 播放 | 标题 | 系列 | 日期 | 链接 |",
         "|------|------|------|------|------|",
@@ -143,7 +150,7 @@ def write_index_md(
         "- 全量 CSV: [all.csv](all.csv)",
         "- 按系列 JSON: [by_series.json](by_series.json)",
         "- 元信息: [meta.json](meta.json)",
-        f"- 字幕导航: [{hub_rel}]({hub_rel})",
+        f"- **字幕/全文导航（推荐）**: [{hub_rel}]({hub_rel})",
         "",
         "---",
         "",

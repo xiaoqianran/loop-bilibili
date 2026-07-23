@@ -1,12 +1,26 @@
 # 码里奥Ziho · 完整视频目录
 
+---
+
+## ⭐ 字幕与全文导航（优先读这里）
+
+> **看字幕 / txt 全文？点这里，不要往下翻 Top 20。**
+>
+> ### 👉 [码里奥Ziho · 全部视频 · 字幕预览 · txt/srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
+>
+> 按投稿顺序列出**全部**视频：标题、播放页、有无字幕、**txt 正文预览**、相对路径 `txt/` · `srt/`。
+> 本 catalog 页只是投稿元数据摘要；真正给人读的字幕导航在上面的链接。
+
+---
+
 - **UID**: `3546804396230870`
 - **空间**: https://space.bilibili.com/3546804396230870
 - **投稿总数**: **70**
 - **系列数**: **4**
-- **导出时间**: 2026-07-23 17:38 UTC
+- **导出时间**: 2026-07-23 18:00 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
+- **字幕导航**: [../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
 
 ## 系列一览
 
@@ -17,15 +31,7 @@
 | 项目实战 | 1 | [series/项目实战.md](series/项目实战.md) |
 | 未分类 / 其他 | 67 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 字幕与全文导航（推荐从这里读）
-
-抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
-**[码里奥Ziho · 字幕导航](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)**
-
-本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
-不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
-
-## 全站最新 20 条（摘要）
+## 全站最新 20 条（仅摘要，非全文）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -50,7 +56,7 @@
 | 2026-04-06 | Karpathy的Obsidian工作流，结合WIKI打造本地知识库 | 未分类 / 其他 | 51,037 | [BV1EVSfBpERw](https://www.bilibili.com/video/BV1EVSfBpERw) |
 | 2026-04-04 | 谷歌最新开源，手机部署Gemma4大模型 安装教程+实测 | 未分类 / 其他 | 24,030 | [BV1eqDNBcEJp](https://www.bilibili.com/video/BV1eqDNBcEJp) |
 
-## 播放量 Top 20（摘要）
+## 播放量 Top 20（仅摘要，非全文）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -81,7 +87,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
-- 字幕导航: [../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
+- **字幕/全文导航（推荐）**: [../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
 
 ---
 
