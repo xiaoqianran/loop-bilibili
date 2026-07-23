@@ -1,0 +1,538 @@
+Ahora, veamos al archienemigo del sobreajuste: la regularización.
+Muchos de los conceptos que hemos presentado hasta ahora...
+Su objetivo principal es muy similar.
+Todo esto ocurre durante el proceso de entrenamiento del modelo.
+hacer que el valor de la función de pérdida del modelo disminuya continuamente.
+lo que significa que las predicciones del modelo son cada vez más precisas.
+Pero, que la pérdida de entrenamiento sea baja...
+tampoco significa necesariamente que el modelo sea bueno en la práctica.
+Esto puede sonar un poco contradictorio.
+Pero en la práctica, durante el entrenamiento,
+A menudo nos encontramos con una situación muy típica.
+la pérdida en el conjunto de entrenamiento disminuye continuamente,
+y las predicciones son cada vez más precisas.
+llegando a ser casi del cien por cien.
+Pero, al aplicar el modelo al conjunto de validación real,
+y lo ponemos a prueba,
+Nos daremos cuenta de que, antes de cierto punto,
+Es posible que, al igual que con el conjunto de entrenamiento, su rendimiento siga mejorando de forma continua.
+Pero al llegar a ese punto,
+empieza a aparecer un punto de inflexión.
+Es decir, la pérdida repentinamente vuelve a aumentar.
+y la precisión también disminuye.
+Este es un caso muy típico de sobreajuste.
+Por ejemplo, digamos que estos puntos negros son la distribución real de los datos.
+Si los valores de predicción del modelo que hemos entrenado son así,
+la línea azul,
+Entonces, esto podría deberse a que el modelo es demasiado simple.
+Es que no ha captado para nada los patrones que hay detrás de los datos.
+a esto lo llamamos subajuste.
+simplemente no se ajusta a los datos.
+El caso ideal sería este.
+Entonces, la línea que hemos entrenado...
+Se ajusta a la distribución de los datos, ¿verdad?
+La complejidad del modelo es la adecuada.
+Es capaz de captar la tendencia de los datos,
+tampoco se verá afectado por el ruido.
+A esto se le conoce como un buen ajuste o "good fit".
+Este es el tipo de entrenamiento que consideramos ideal.
+Si el entrenamiento es excesivo,
+se producirá este fenómeno.
+Es decir, el modelo...
+Intenta pasar por cada uno de los puntos de los datos, ¿verdad?
+En realidad, en estos casos, no ha encontrado el patrón que subyace a los datos.
+Simplemente está memorizando los datos que tiene delante.
+En este caso,
+En el conjunto de entrenamiento, su precisión es definitivamente mayor que la de este.
+Por ejemplo, para este punto...
+Mira, esta línea lo atraviesa.
+Es cien por cien exacto.
+Este ya es un poco impreciso.
+Por lo tanto, su precisión en el conjunto de entrenamiento es, sin duda, altísima.
+Pero cuando se aplica al conjunto de validación,
+pero la distribución real de los datos no es así en absoluto.
+no se vea afectado por este ruido.
+las predicciones ya no son precisas.
+A esto se le llama sobreajuste.
+Cuando hablamos de que un modelo es demasiado complejo,
+Generalmente, se refiere a que hay demasiados parámetros.
+o que la dimensionalidad de los parámetros también sea demasiado alta.
+lo que resulta en que en realidad nunca ha llegado a aprender.
+La esencia del ajuste es la capacidad del modelo.
+superando la complejidad que la tarea realmente requiere.
+Los parámetros adicionales no aprenden los patrones subyacentes de los datos,
+sino que se usan para memorizarlo todo de memoria.
+sino el ruido o los casos particulares del conjunto de entrenamiento.
+Y para determinar si un modelo está sobreajustado,
+La forma más sencilla es observar la curva de entrenamiento.
+La línea azul representa el rendimiento en el conjunto de entrenamiento.
+veremos que su pérdida va disminuyendo de forma continua.
+y la roja, su rendimiento en el conjunto de validación.
+Al principio, también disminuye.
+Pero, a partir de cierto punto,
+la pérdida comienza a aumentar.
+Al contrario, esto significa que ha comenzado el sobreajuste.
+Y la precisión de nuestro modelo, pues, también.
+Al principio, ambos van aumentando de forma paralela.
+Pero, a partir de cierto punto,
+verás que, durante el entrenamiento, la curva sigue subiendo.
+hasta casi alcanzar el cien por cien.
+mientras que el del conjunto de validación comienza a disminuir.
+la capacidad de generalización se va reduciendo.
+Es en este momento cuando se produce el sobreajuste.
+El sobreajuste es, se podría decir, el problema más común durante el proceso de entrenamiento de un modelo.
+el problema más frecuente.
+Y la solución es la regularización.
+La regularización se refiere a una serie de técnicas que se utilizan para combatir el sobreajuste.
+para obligar al modelo a aprender de una forma más sencilla.
+patrones más generalizados.
+en lugar de memorizar los detalles de los datos de entrenamiento.
+Podemos entender la regularización
+Podemos entenderlo como la implementación matemática del principio de la navaja de Occam.
+Es decir, si durante el proceso de entrenamiento del modelo...
+descubriremos que existen múltiples modelos capaces de explicar los datos de entrenamiento.
+entonces deberíamos elegir el más simple.
+Las técnicas de regularización más utilizadas en el aprendizaje profundo,
+incluidas en el aprendizaje automático.
+la regularización L1 y L2 que ya hemos visto,
+y también la atenuación de pesos.
+Dropout, detención temprana.
+y el aumento de datos.
+Todos estos los vamos a explicar a continuación.
+En sentido estricto,
+la regularización podría referirse a estos dos primeros tipos.
+Pero, en un sentido más amplio,
+Cualquier técnica que permita al modelo aprender de una forma más simple,
+técnicas que le permiten aprender patrones más generales,
+pueden ser consideradas técnicas de regularización.
+Primero, vamos a hacer un repaso.
+En el aprendizaje automático ya hemos visto la regularización L1 y L2.
+La idea que siguen es añadir, después de la función de pérdida original,
+introduciendo un término de penalización para los pesos.
+Entonces, la razón por la que se produce el sobreajuste es...
+es porque tienes demasiados parámetros o estos son demasiado grandes.
+Entonces, lo que haré será actuar sobre sus parámetros.
+Es decir, se añade un término de penalización para los pesos.
+Por ejemplo, esta es la función de pérdida original.
+Y luego,
+Entonces, ¿para qué sirve la regularización L1?
+Lo que voy a hacer es sumar todos los valores de los pesos.
+sino a su valor absoluto.
+porque los pesos pueden ser negativos.
+y luego se multiplica por un coeficiente de penalización lambda.
+En este momento es cuando se calcula tu pérdida.
+Es decir, cuanto mayor sea tu peso,
+cuanto mayor sea el peso que establezcas,
+mayor será su pérdida.
+Por lo tanto, esto obliga al modelo a reducir sus pesos.
+Y L2, en realidad, es bastante parecido.
+Pero en este caso, ya no se le suma el valor absoluto.
+sino que se le suma su cuadrado.
+sino sumar su cuadrado.
+De hecho, este principio es muy similar al de usar el cuadrado en el MSE.
+Por un lado, al igual que el valor absoluto, también elimina los signos positivos y negativos.
+Otro punto es que, si tu peso es pequeño,
+por ejemplo, si es menor que cero o menor que uno.
+al cuadrado, se hace aún más pequeño.
+Si tu peso es mayor que uno,
+el castigo será más severo.
+En cuanto a lambda sobre dos...
+Esto es para facilitar los cálculos posteriores.
+Así que, aparte del dos,
+Entonces, al usar L1 y L2...
+Ambos imponen una restricción a los pesos que son demasiado grandes.
+Esto hace que el modelo tienda a elegir pesos con valores más pequeños.
+Pero sus efectos son un poco diferentes.
+Aunque uno es el valor absoluto,
+y la otra es el cuadrado.
+A primera vista,
+Pero la regularización L1...
+También la conocemos como regularización Lasso.
+Tiende a generar lo que se conoce como pesos dispersos.
+Entonces, ¿a qué nos referimos con pesos dispersos?
+Originalmente, tenías 100 pesos.
+probablemente todos tengan valores diferentes.
+Pero, ¿qué pasa después de aplicar la regularización L1?
+Nos daremos cuenta de que muchos de ellos son cero.
+Es decir, si observamos esta barra, es especialmente alta.
+¿Qué significa esto?
+los pesos se acercan a cero.
+que originalmente era del 2,5 % cuando no se había hecho nada,
+aumentó a un 22 %.
+Es decir, que hace que muchos parámetros se conviertan directamente en cero.
+Es decir, considera que algunos parámetros simplemente no son útiles.
+No deberías ni usarlos.
+De esta forma, el número de parámetros se reduce.
+Es como si nos ayudara automáticamente a seleccionar algunas características.
+reduciendo así el número de características.
+¿Acaso algunas características no sirven para nada?
+Y en cuanto a la regularización L2,
+Como podemos ver, tiende a hacer que todos los pesos...
+están distribuidos alrededor de cero.
+de un 2,5 % a un 3,8 %.
+Y de hecho, también hace que algunos se acerquen mucho a cero.
+Pero, como podemos ver, el valor absoluto de los pesos...
+Hace que el valor absoluto de los pesos se vuelva muy pequeño.
+En comparación con el anterior,
+Por lo tanto, tiende a reducir todos los pesos de manera uniforme.
+hacia el cero.
+Pero, eso sí, no los reducirá a cero.
+y así garantizar una distribución uniforme de los pesos.
+En el aprendizaje profundo,
+De hecho, el L2 se utiliza con mucha más frecuencia.
+Porque en las redes neuronales profundas,
+Su capacidad de generalización depende de la coordinación entre las diferentes neuronas.
+la interacción entre ellas y una distribución suave de los parámetros.
+y no simplemente eliminar ciertas neuronas específicas.
+Además, la L2 es derivable en todos sus puntos.
+En cuanto al SGD,
+y también es más compatible con algoritmos de optimización de gradientes como ADAM.
+Por eso se usa con más frecuencia en Python.
+En PyTorch,
+Normalmente, no es necesario que apliquemos la regularización L2 manualmente.
+le añadimos a la función de pérdida la suma de los cuadrados.
+En realidad, basta con añadir el llamado "weight decay" al optimizador.
+con este parámetro es suficiente.
+Por ejemplo, cuando definimos el SGD,
+Es decir, al principio, se escriben los parámetros del modelo.
+¿Cuál es el momentum de la tasa de aprendizaje?
+Solo tenemos que configurar un parámetro de decaimiento de peso y listo.
+En este caso, es como si le estuviéramos aplicando regularización.
+Ahora, veamos otro ejemplo.
+El decaimiento de los pesos y el valor del parámetro L2 que acabamos de mencionar...
+Es precisamente la idea central que utiliza la disminución de peso.
+En realidad, no es exactamente lo mismo que la regularización.
+La idea es que, cada vez que se realiza una actualización del gradiente,
+obligando a los pesos a multiplicarse por un factor ligeramente inferior a uno.
+haciéndola disminuir proporcionalmente.
+Normalmente, el descenso de gradiente...
+podría ser el factor de decaimiento sin ese factor que mencionamos antes.
+Simplemente se trata del gradiente menos la tasa de aprendizaje multiplicada por la pérdida.
+Pero en el caso de la atenuación de peso,
+Ya que estamos hablando de la reducción de pesos,
+En cada paso, te fuerzo a multiplicar por un valor un poco más pequeño.
+Porque este es un número positivo, ¿verdad?
+Por lo tanto, al restarle uno, el resultado es un valor menor que uno.
+haciendo que los pesos sean un poco más pequeños cada vez.
+En estos casos,
+Es como si cada peso estuviera sujeto a una especie de...
+un muelle que lo devuelve a su punto de origen.
+haciéndolo retroceder un poco en cada paso.
+A menos que el gradiente exija que aumente.
+De lo contrario,
+poco a poco,
+hará que se convierta gradualmente en un valor muy cercano a cero.
+Y cuanto más lo escuchan, más familiar les suena.
+¿Verdad que sí?
+¿Por qué esto suena tan parecido al efecto que se consigue con la regularización L2?
+Se parecen tanto, ¿verdad?
+Es más, el parámetro de la regularización L2 se llama precisamente "decaimiento de peso".
+Y es que, en realidad, su principio es diferente.
+¿Qué es la regularización L2?
+Es decir, se le añade un término de penalización de los pesos a la función de pérdida.
+Mientras que la reducción de pesos se aplica directamente en el optimizador.
+Es una intervención directa sobre los parámetros.
+Te exijo que reduzcas los parámetros.
+Esto solo se refiere a penalizar los parámetros.
+Es una exigencia directa para reducir los parámetros.
+Pero conceptualmente, son dos enfoques diferentes.
+Pero si tomamos el término de la L2,
+y lo volvemos a introducir en la fórmula del SGD.
+Al derivarlos, nos daremos cuenta de que...
+la atenuación de pesos y la regularización L2,
+Entonces, ¿cuál es la fórmula final para la actualización de sus parámetros?
+no son prácticamente idénticas.
+Al desarrollar la fórmula, vemos que es la misma.
+Es decir, en el SGD estándar,
+Es decir, la regularización L2.
+En realidad, es lo mismo que la atenuación de peso.
+Dado que ambos son completamente equivalentes,
+Entonces, ¿por qué hacemos distinción entre ambos?
+porque al usar un optimizador con tasa de aprendizaje adaptativa como ADAM,
+esta equivalencia ya no se cumple.
+En el caso de ADAM,
+se basará en el cuadrado de los gradientes históricos,
+y escala de forma adaptativa el gradiente de cada parámetro.
+Entonces, ¿qué pasaría si incorporamos la regularización L2 en la función de pérdida?
+De hecho, en estas situaciones puede aparecer un bug oculto.
+Si el gradiente ya es bastante pequeño de por sí,
+Pero cada vez que se adapta, está bajo una raíz cuadrada.
+VT, ¿verdad?
+Originalmente, nuestro gradiente ya era bastante pequeño.
+Es decir, que los parámetros ya eran pequeños de por sí.
+el término de penalización debería ser menor.
+Según la regularización L2,
+te obliga a dividir entre un valor relativamente pequeño.
+la fuerza de la regularización, por el contrario, se magnifica.
+Y lo mismo ocurre a la inversa.
+Originalmente, el gradiente era muy grande.
+entonces el castigo que le impongo debería ser mayor.
+Pero como lo he dividido por la raíz cuadrada de VT,
+En este caso, la intensidad de la regularización, por el contrario, se ve reducida.
+Es decir, la intensidad originalmente uniforme de la regularización, que es grande cuando M es grande...
+se ve distorsionado por el mecanismo de ajuste adaptativo del gradiente.
+Esto hace que el efecto de la regularización se vea muy reducido.
+e incluso puede que no llegue a converger.
+cuanto más pequeño sea mi gradiente,
+menor debería ser el castigo.
+Pero como se trata de una división,
+al contrario, el castigo es mayor.
+Y cuanto mayor sea el gradiente,
+el castigo se vuelve más pequeño.
+Esto, en realidad, ya no funciona.
+Al principio, nadie se había dado cuenta de este problema.
+Este problema no se descubrió hasta el año 2017.
+Entonces se propuso ADAMW, que en realidad significa "weight decay".
+Su idea principal, en realidad, es tomar el momento...
+Entonces, ¿cómo se calculaba antes?
+Es decir, mt y vt.
+¿Cómo se calculaba?
+Y en mi caso, la atenuación de los pesos.
+Lo he separado de forma individual.
+No lo incluyas en este cálculo.
+Básicamente, se trata de combinar ambos de forma completamente adaptativa.
+El mecanismo de escalado se ha separado por completo.
+Es como si corrija un bug del algoritmo ADAM.
+Así que este es ADAMW.
+Así que, en nuestro uso normal,
+De hecho, al escribir código en PyTorch,
+Si decido seguir usando Adam,
+Es que es bastante sencillo.
+Pero para este tipo de decaimiento, es mejor no escribirlo.
+Porque si lo hago, el resultado sería incluso peor.
+simplemente ponlo en cero y listo.
+En el caso del algoritmo Adam,
+lo configuramos en un valor relativamente pequeño.
+para que realmente pueda surtir efecto.
+Otra técnica de regularización se llama Dropout.
+Este también fue propuesto por Hinton.
+que consiste en desactivar aleatoriamente algunas neuronas.
+L1,
+La L2, por su parte, limita la capacidad desde la perspectiva del valor numérico de los pesos.
+Lo que hace es intentar que los parámetros sean lo más pequeños posible.
+Y en cuanto al Dropout,
+es decir, desde la estructura de la red,
+regulariza desde la perspectiva de la diversidad.
+En cada pasada hacia adelante,
+se aplicará aleatoriamente con una cierta probabilidad.
+para anular la salida de ciertas neuronas.
+Es decir, durante esta iteración del entrenamiento,
+se desactiva esa neurona.
+En estos casos,
+se fuerza a las neuronas
+ya no puede depender de la salida de neuronas específicas.
+Cada una de ellas debe aprender de forma independiente algunas características útiles.
+En segundo lugar,
+De hecho, durante el proceso de entrenamiento de cada lote de datos,
+Son subredes diferentes en cada caso.
+Es decir, que cada vez es de forma aleatoria.
+La inferencia final es como la de miles y miles de subredes que comparten los mismos parámetros.
+Es como una votación colectiva de todas estas subredes.
+Esto es algo parecido al aprendizaje por ensamblaje.
+Es decir, que en realidad tiene un efecto implícito de aprendizaje por ensamblaje.
+Entonces, a la hora de usarlo,
+Entonces, cuando estamos escribiendo el código de forma normal,
+y después de eso, añadimos un dropout.
+Es decir, la probabilidad de que se desactive.
+haciendo que algunas neuronas dejen de funcionar temporalmente.
+Esto evita que el modelo dependa excesivamente de esa neurona en particular.
+Por supuesto, durante el entrenamiento, algunas neuronas no están activas.
+Entonces, el valor esperado de la salida de las neuronas restantes se reducirá.
+Originalmente, la suma de todos debería ser igual a uno.
+Pero si desactivas algunos de ellos,
+la suma total sería 0.5.
+Si desactivas la mitad de ellas,
+Es para que durante el entrenamiento y la inferencia,
+la expectativa se mantenga consistente.
+Es decir, la esperanza es la media.
+El método de Haitao es, en realidad, un mecanismo de propagación inversa del error.
+Entonces, durante el entrenamiento...
+Si descarto estas neuronas,
+se divide el valor de los demás neuronas por esta probabilidad.
+Es decir, aumentar un poco su valor.
+En la fase de inferencia, simplemente se mantiene como está.
+Este es un pequeño truco.
+Pero este pequeño truco afectará a la forma en que escribas tu código.
+Durante el entrenamiento,
+simplemente usamos model.train y ya está.
+y hace que los valores de activación sean efectivos.
+Es decir, se descartan de forma aleatoria y proporcional.
+Pero durante la inferencia,
+En realidad, lo que deberíamos usar es model.eval() y ya está.
+Y si nos olvidamos de hacer ese cambio...
+esto puede provocar algunos errores.
+Con saber esto es suficiente.
+Entonces, ¿cuánto rendimiento se pierde aproximadamente con esto?
+Su valor razonable depende de la posición de la capa en la red.
+y también de la tarea específica.
+Por ejemplo, en la capa oculta,
+entonces usamos 0.5.
+De hecho, así es como se describe en este nuevo artículo.
+En las capas MLP, es decir, las capas totalmente conectadas,
+Básicamente, con este valor se desactiva aleatoriamente la mitad de las neuronas.
+Pero en la capa de entrada...
+Normalmente, se usa 0.1 o 0.2.
+Este valor es relativamente pequeño.
+Si usas 0.5,
+De esta manera, se estaría descartando la mitad de las características.
+En realidad, esto provoca una pérdida de la información original.
+Es un poco excesivo.
+Y en el caso de los transformadores, ¿qué pasa?
+Normalmente, usamos un valor inferior a 0.1.
+Porque la estructura del propio Transformer ya está diseñada de una manera muy sólida.
+Si la regularización es demasiado agresiva,
+al contrario, afectaría al preentrenamiento a gran escala.
+Entonces, ¿qué pasa con las tareas de imágenes en CNN?
+Porque las imágenes, por su propia naturaleza, tienen una fuerte componente espacial.
+en una imagen con correlación espacial local,
+El primer píxel y el segundo píxel están muy correlacionados.
+Si se decide descartarlo,
+Entonces, este píxel ya no tendría mucha importancia.
+Por eso, por lo general, basta con usar el batch normalization.
+Y en tareas como las de las redes neuronales convolucionales,
+básicamente no se usa el dropout.
+Ahora, veamos la siguiente técnica de regularización.
+que es el early stopping.
+De hecho, esto es algo que ya mencionamos cuando hablamos del aprendizaje continuo.
+¿No es que, a medida que entrenas, el rendimiento empieza a empeorar?
+Entonces, a medida que avanza el entrenamiento,
+Entonces, mientras entreno, voy monitoreando su rendimiento en el conjunto de validación.
+Me di cuenta de que en el conjunto de validación,
+Por ejemplo, si después de varias iteraciones de entrenamiento seguidas, eh, no hay ninguna mejora.
+entonces detengo el entrenamiento.
+Simplemente volvemos al punto donde se obtuvo el mejor rendimiento y listo.
+La técnica de detención temprana.
+¿No es que cuanto más entrenas, peor es el resultado?
+Así que lo voy monitoreando en cada paso.
+antes de que empeore.
+simplemente detengo el entrenamiento.
+Básicamente, el código lo que hace es comparar cada vez.
+Y en los momentos clave,
+De hecho, tiene un parámetro llamado "patience".
+Entonces, 'patience' se refiere a cuántas épocas se van a tolerar.
+Es decir, si en una época no hay ninguna mejora.
+Normalmente, un valor de entre 5 y 20 se considera razonable.
+Es decir, si durante cinco épocas consecutivas no hay ninguna mejora.
+entonces detengo el entrenamiento.
+De hecho, también lo es.
+Pero, ¿por qué parece que no tiene nada que ver con la regularización?
+En realidad, es una forma de regularización en un sentido más amplio.
+Por eso también se le conoce como regularización implícita.
+No modificó la comunicación.
+ni se ha modificado la función de pérdida,
+ni ha modificado la estructura.
+Pero lo que sí hace es reducir el número de pasos de entrenamiento.
+De esta forma, los pesos se mantienen más cerca de su valor inicial.
+el espacio de parámetros que se puede explorar es menor.
+lo que equivale a limitar la complejidad efectiva del modelo.
+Y por último, tenemos la ampliación de datos.
+En sentido estricto,
+el aumento de datos no pertenece a la regularización,
+Pero, en realidad, es la forma más, más, más eficaz de solucionar el problema.
+En realidad, todo lo que hemos visto hasta ahora se centra en limitar la capacidad del modelo.
+para solucionar el sobreajuste.
+En cambio, la ampliación de datos, o 'data augmentation', aborda el problema desde otra perspectiva: expande la distribución de los datos de entrenamiento.
+Consiste en añadir algunas transformaciones aleatorias a los datos de entrenamiento.
+El objetivo no es que memorices el ruido de los datos de entrenamiento.
+o algunos valores específicos.
+Así que lo que hago es aplicar todo tipo de transformaciones a los datos de entrenamiento.
+haciéndole más difícil al modelo memorizar muestras específicas.
+y así obligamos al modelo a aprender características más generales.
+La más común es la inversión.
+reflejo horizontal,
+y la inversión vertical.
+También se puede recortar parte de los datos.
+aplicar algunas rotaciones,
+alteración de los colores,
+De hecho, esto parece ser muy común en las tareas de visión.
+Esta es la técnica más común.
+Es decir, es la misma imagen.
+Te la muestro desde diferentes ángulos para que aprendas.
+Es como si tuviéramos varias veces más muestras de entrenamiento de forma gratuita.
+Vamos a escribir un poco de código para ver qué tal funcionan.
+Aunque, a primera vista, todos parecen ser muy, muy parecidos,
+Pero hay algo que se puede notar.
+su pérdida,
+incluida su precisión final en la validación, que es excepcionalmente superior.
+Entonces, ¿qué es esto?
+Pues se trata del aumento de datos.
+Aunque hemos aprendido tantas técnicas,
+Solo hay que añadir una o dos líneas de código y listo.
+Pero al final, en el ajuste fino de los modelos...
+nuestro ajuste de parámetros probablemente siga siendo una de las bases,
+nuestra capacidad para comprender los datos.
+Por lo tanto, realizar la ampliación de datos podría ser la solución más eficaz.
+Bueno, repasemos brevemente estas líneas de base.
+Así que, en realidad, no vamos a seguir comparando estos gráficos con todos ustedes.
+Nos daremos cuenta de que...
+De hecho, cuando observamos los patrones,
+nos daremos cuenta de que
+La regularización L2, por su parte, reduce los pesos de manera relativamente uniforme.
+pero la proporción de pesos cercanos a cero apenas cambia.
+mientras que la L1 aumenta significativamente la proporción de pesos cercanos a cero.
+En esencia, lo que hace es reducir el número de características.
+En cuanto al dropout, este no cambia la magnitud de los pesos.
+Simplemente rompe la dependencia de una sola neurona.
+y así la precisión en la validación sigue aumentando.
+Y en cuanto a ADAMM, en realidad, tanto ADAMM como ADAMMW...
+Es como una mejora del algoritmo ADAM.
+y se corrigieron sus errores.
+En cuanto al paro temprano, prácticamente no requiere ningún ajuste de parámetros.
+Es decir, monitoreo el momento en que dejas de optimizarte de forma continua.
+simplemente detengo el entrenamiento antes de tiempo.
+Regularización sin coste alguno.
+Bueno, en realidad, tampoco es que sea de coste cero.
+Porque, al fin y al cabo, monitorear también tiene un coste.
+Y la verdad es que la mejora de datos es, de hecho, la más efectiva.
+Es decir, ampliar la distribución de los datos.
+De hecho, es lo que comúnmente conocemos como la ley de los rendimientos decrecientes.
+Aumentar la cantidad de datos.
+Exacto.
+De hecho, así se puede mejorar su precisión.
+y mejora de forma continua.
+Y al final, el resultado en el conjunto de validación también será el mejor.
+Aunque hemos aprendido tantas técnicas,
+Pero la técnica más eficaz sigue siendo aumentar la cantidad de datos.
+En resumen,
+De hecho, se trata de estas técnicas de regularización que comúnmente utilizamos.
+Claro, aunque su efectividad no sea tan buena como la del aumento de datos,
+Pero aun así, hay que usarlas.
+Sin esto, el rendimiento sería aún peor.
+Y en cuanto a la regularización L1 y L2...
+En realidad, todos estos métodos actúan sobre la función de pérdida.
+Su idea central es penalizar los pesos.
+limitando la magnitud de los parámetros.
+En cuanto a la reducción de los pesos,
+En realidad, esto ocurre durante el proceso de descenso del gradiente.
+actúa sobre el optimizador.
+De modo que, al actualizar los parámetros,
+en cada paso, se ajustan los pesos para que se acerquen a cero.
+Es decir, la atenuación obliga a que tus parámetros se reduzcan.
+Mientras que el dropout se aplica a toda la estructura de la red.
+Es decir, desactiva aleatoriamente algunas neuronas.
+para forzar la reducción de las características.
+La parada temprana, por su parte, se enfoca en el proceso de entrenamiento.
+Es decir, observa el rendimiento durante la validación.
+si durante la validación el rendimiento deja de mejorar,
+entonces detengo el entrenamiento.
+En cambio, el aumento de datos se aplica a los datos de entrenamiento.
+Se busca aumentar la diversidad de los datos para reducir la memorización de casos específicos.
+De hecho, durante todo el proceso de entrenamiento,
+No estamos diciendo que la mejora de datos sea tan eficaz por alguna razón en particular.
+Ahora veamos también los otros métodos.
+porque no son mutuamente excluyentes.
+En la práctica,
+De hecho, es muy común que usemos estos métodos de forma combinada.
+se suelen utilizar.
+Por lo tanto, al utilizarlos en conjunto,
+se puede mejorar el rendimiento de las redes neuronales profundas
+para alcanzar su máximo potencial.
+Y bueno, si recordamos desde el principio,
+comenzando con la introducción de un perceptrón,
+Luego, al llegar a las MLP, aprendimos todo tipo de técnicas de entrenamiento.
+En estos casos,
+Básicamente, en lo que respecta al entrenamiento de redes neuronales profundas,
+los conocimientos fundamentales que se necesitan.
+ya lo tenemos más o menos dominado.
+Bien, a continuación, vamos a hacer un breve resumen de todo lo que hemos visto.
+Y después de eso, ya podremos aprender sobre arquitecturas de redes como CNN, RNN y Transformer.

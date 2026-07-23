@@ -1,0 +1,2947 @@
+1
+00:00:00,000 --> 00:00:02,420
+Let's dive into gradient descent and optimizers.
+
+2
+00:00:02,420 --> 00:00:06,750
+Let's find out how a neural network finds a good set of parameters.
+
+3
+00:00:06,750 --> 00:00:11,270
+So, the essence of training a neural network is really just about finding a good set of parameters.
+
+4
+00:00:11,270 --> 00:00:14,070
+In the last video, we introduced the concept of activation functions.
+
+5
+00:00:14,070 --> 00:00:15,410
+By introducing non-linearity,
+
+6
+00:00:15,410 --> 00:00:18,600
+This gives neural networks the ability to approximate any function.
+
+7
+00:00:18,600 --> 00:00:21,980
+But having that ability doesn't mean you have the answer just yet.
+
+8
+00:00:21,980 --> 00:00:24,990
+a model with hundreds of millions of parameters,
+
+9
+00:00:24,990 --> 00:00:26,390
+But to actually make it do something useful,
+
+10
+00:00:26,390 --> 00:00:28,970
+you first have to figure out the value for each of these hundreds of millions of parameters.
+
+11
+00:00:28,970 --> 00:00:31,049
+But what should those values actually be?
+
+12
+00:00:31,489 --> 00:00:32,369
+So, what about gradient descent?
+
+13
+00:00:32,369 --> 00:00:34,220
+And that's exactly what's going to help us solve this problem.
+
+14
+00:00:34,220 --> 00:00:36,680
+So, let's first take a look at the process of training a neural network.
+
+15
+00:00:36,680 --> 00:00:38,660
+Let's get a sense of where gradient descent fits into this process.
+
+16
+00:00:38,660 --> 00:00:39,860
+so that we can better understand it.
+
+17
+00:00:39,860 --> 00:00:41,810
+So, let's get into what we're going to cover next.
+
+18
+00:00:41,810 --> 00:00:44,250
+So, first, we need to initialize the parameters.
+
+19
+00:00:44,250 --> 00:00:47,349
+This can be done either randomly or using a tool for parameter initialization.
+
+20
+00:00:47,349 --> 00:00:48,549
+So, once we have these parameters,
+
+21
+00:00:48,549 --> 00:00:52,870
+Then, we use these parameters to perform forward propagation on our training data.
+
+22
+00:00:52,870 --> 00:00:55,130
+to calculate a value and make a prediction.
+
+23
+00:00:55,130 --> 00:01:00,170
+And we measure this prediction using something called a loss function.
+
+24
+00:01:00,170 --> 00:01:04,810
+What's the difference between the value we predicted and the actual label from the data?
+
+25
+00:01:04,810 --> 00:01:06,010
+With this difference,
+
+26
+00:01:06,010 --> 00:01:07,530
+and we call this the loss.
+
+27
+00:01:07,530 --> 00:01:08,870
+So, with this loss value,
+
+28
+00:01:08,870 --> 00:01:10,530
+we can start backpropagation.
+
+29
+00:01:10,530 --> 00:01:11,970
+This involves calculating the derivative for each layer.
+
+30
+00:01:11,970 --> 00:01:14,560
+And the vector composed of these calculated values is what we call the gradient.
+
+31
+00:01:14,560 --> 00:01:15,700
+So, once we have this,
+
+32
+00:01:15,700 --> 00:01:20,480
+we can then use this method of gradient descent to update our parameters.
+
+33
+00:01:20,480 --> 00:01:23,090
+This brings the parameters a little closer to their true values.
+
+34
+00:01:23,090 --> 00:01:25,410
+So, what does it mean to get closer to the true value?
+
+35
+00:01:25,410 --> 00:01:28,450
+Basically, it's just about making some fine-tuning adjustments to its parameters.
+
+36
+00:01:28,450 --> 00:01:29,570
+So, after this fine-tuning,
+
+37
+00:01:29,570 --> 00:01:31,030
+And we repeat this process.
+
+38
+00:01:31,030 --> 00:01:33,670
+and then we keep performing forward propagation with the new parameters.
+
+39
+00:01:33,670 --> 00:01:34,430
+calculate the loss,
+
+40
+00:01:34,430 --> 00:01:35,870
+and backpropagate to update them.
+
+41
+00:01:35,870 --> 00:01:37,170
+And we just keep repeating this cycle.
+
+42
+00:01:37,170 --> 00:01:39,419
+until the loss is close to zero.
+
+43
+00:01:39,419 --> 00:01:41,459
+Or, we've reached the maximum number of training epochs.
+
+44
+00:01:41,459 --> 00:01:42,640
+and then we stop.
+
+45
+00:01:42,640 --> 00:01:45,900
+Alright, so training is essentially a minimization problem.
+
+46
+00:01:45,900 --> 00:01:47,160
+So, what are we trying to minimize?
+
+47
+00:01:47,160 --> 00:01:50,680
+In other words, it's about minimizing the loss function.
+
+48
+00:01:50,680 --> 00:01:53,210
+And the corresponding theta is just a collection of all our parameters.
+
+49
+00:01:53,210 --> 00:01:57,070
+So, we use the loss function to measure how far off our predictions are from the actual values, right?
+
+50
+00:01:57,070 --> 00:01:58,950
+The smaller that difference is,
+
+51
+00:01:58,950 --> 00:02:01,570
+the more accurate our parameters are.
+
+52
+00:02:01,570 --> 00:02:04,250
+Sounds a lot like a math problem from high school, doesn't it?
+
+53
+00:02:04,250 --> 00:02:05,870
+You take the derivative and set it equal to zero.
+
+54
+00:02:05,870 --> 00:02:06,950
+and then just solve for it.
+
+55
+00:02:06,950 --> 00:02:09,770
+But modern large models can easily have tens of billions of parameters.
+
+56
+00:02:09,770 --> 00:02:10,720
+hundreds of billions of parameters.
+
+57
+00:02:10,720 --> 00:02:13,460
+So, we'd end up with a system of equations that has tens or even hundreds of billions of variables.
+
+58
+00:02:13,460 --> 00:02:15,000
+It has no analytical solution.
+
+59
+00:02:15,000 --> 00:02:16,160
+Since we can't solve it directly,
+
+60
+00:02:16,160 --> 00:02:17,800
+There's no way to solve it in a single step.
+
+61
+00:02:17,800 --> 00:02:19,360
+So, we'll just have to calculate it step by step.
+
+62
+00:02:19,360 --> 00:02:21,030
+Letting it get a little closer each time.
+
+63
+00:02:21,030 --> 00:02:22,350
+the loss gets smaller and smaller.
+
+64
+00:02:22,350 --> 00:02:26,850
+And gradually, the set of parameters we land on can be considered the optimal solution.
+
+65
+00:02:26,850 --> 00:02:28,430
+And that's gradient descent.
+
+66
+00:02:28,430 --> 00:02:29,810
+So, what's the intuition behind gradient descent?
+
+67
+00:02:29,810 --> 00:02:33,170
+And this is probably the most common example you'll see in all sorts of tutorials online.
+
+68
+00:02:33,170 --> 00:02:34,590
+It's like trying to get down a mountain with your eyes closed.
+
+69
+00:02:34,590 --> 00:02:36,670
+Picture yourself on a mountain.
+
+70
+00:02:36,670 --> 00:02:38,230
+So, how do I get to the valley?
+
+71
+00:02:38,230 --> 00:02:39,950
+So, if your eyes are blindfolded,
+
+72
+00:02:39,950 --> 00:02:42,140
+I wouldn't know which way to go.
+
+73
+00:02:42,140 --> 00:02:44,320
+The only way I can tell is by feeling the slope with my feet.
+
+74
+00:02:44,320 --> 00:02:45,460
+I'll take a small step forward.
+
+75
+00:02:45,460 --> 00:02:49,860
+to see if I'm currently going uphill or downhill.
+
+76
+00:02:49,860 --> 00:02:50,880
+I'll just take another step forward.
+
+77
+00:02:50,880 --> 00:02:51,460
+What if I'm going uphill?
+
+78
+00:02:51,460 --> 00:02:53,569
+I'll just head in the opposite direction.
+
+79
+00:02:53,569 --> 00:02:54,689
+I can, I can stick my foot out, right?
+
+80
+00:02:54,689 --> 00:02:55,569
+I keep testing the ground.
+
+81
+00:02:55,569 --> 00:02:57,309
+to see which way is the steepest.
+
+82
+00:02:57,309 --> 00:03:01,310
+Basically, I want to take the steepest path in the opposite direction.
+
+83
+00:03:01,310 --> 00:03:02,950
+And we just keep repeating this cycle.
+
+84
+00:03:02,950 --> 00:03:03,990
+We take it one small step at a time, feeling our way down.
+
+85
+00:03:03,990 --> 00:03:06,800
+And gradually, we'll find our way down the mountain.
+
+86
+00:03:06,800 --> 00:03:10,320
+In fact, this process is very similar to gradient descent.
+
+87
+00:03:10,320 --> 00:03:12,080
+So, during the gradient descent process,
+
+88
+00:03:12,080 --> 00:03:13,540
+We have to keep using the derivative.
+
+89
+00:03:13,540 --> 00:03:15,800
+So, let's do a quick recap for everyone.
+
+90
+00:03:15,800 --> 00:03:19,180
+So, the derivative is basically the instantaneous rate of change of a function.
+
+91
+00:03:19,180 --> 00:03:22,520
+Let's take the simplest example: a parabola, f(x) equals x squared.
+
+92
+00:03:22,520 --> 00:03:25,769
+Its derivative is 2X, and its value will change depending on where you are on the curve.
+
+93
+00:03:25,769 --> 00:03:28,889
+In fact, the tangent line of the derivative has a specific direction.
+
+94
+00:03:28,889 --> 00:03:29,409
+So, as we can see,
+
+95
+00:03:29,409 --> 00:03:30,249
+At the point where x equals three,
+
+96
+00:03:30,249 --> 00:03:31,160
+the derivative is six.
+
+97
+00:03:31,160 --> 00:03:32,160
+So, what does that actually mean?
+
+98
+00:03:32,160 --> 00:03:33,860
+So it's a tangent line pointing to the left, right?
+
+99
+00:03:33,860 --> 00:03:35,800
+Basically, the further you move to the left on the X-axis,
+
+100
+00:03:35,800 --> 00:03:37,120
+the larger the Y-value will be.
+
+101
+00:03:37,120 --> 00:03:38,470
+If you take a small step,
+
+102
+00:03:38,470 --> 00:03:39,890
+Let's say you move by 0.01.
+
+103
+00:03:39,890 --> 00:03:41,830
+So, what would the corresponding Y value be greater than?
+
+104
+00:03:41,830 --> 00:03:42,610
+Is it six?
+
+105
+00:03:42,610 --> 00:03:44,970
+it will increase by 0.06.
+
+106
+00:03:44,970 --> 00:03:47,610
+So, for example, when it's equal to two,
+
+107
+00:03:47,610 --> 00:03:48,670
+When X equals two,
+
+108
+00:03:48,670 --> 00:03:49,770
+So the slope is actually four.
+
+109
+00:03:49,770 --> 00:03:51,530
+So, what that means is, you take a small step to the right.
+
+110
+00:03:51,530 --> 00:03:53,460
+So, is it pointing to the right?
+
+111
+00:03:53,460 --> 00:03:54,440
+if you take a small step to the right,
+
+112
+00:03:54,440 --> 00:03:56,020
+So, let's say it moves by 0.01.
+
+113
+00:03:56,020 --> 00:03:59,870
+the value of the function will increase by 0.04.
+
+114
+00:03:59,870 --> 00:04:01,490
+And when it's equal to zero,
+
+115
+00:04:01,490 --> 00:04:03,150
+Now, this is something you all really need to pay attention to.
+
+116
+00:04:03,150 --> 00:04:04,650
+We'll get to point N in a bit.
+
+117
+00:04:04,650 --> 00:04:08,980
+Or, to put it another way, when we talk about gradients vanishing, this is what we're referring to.
+
+118
+00:04:08,980 --> 00:04:11,940
+So, when the gradient we calculate, which is the slope, gets close to zero...
+
+119
+00:04:11,940 --> 00:04:13,300
+So why is that a disaster?
+
+120
+00:04:13,300 --> 00:04:17,040
+Actually, this concept applies regardless of whether the calculated value is positive or negative.
+
+121
+00:04:17,040 --> 00:04:18,500
+We know how to make the update.
+
+122
+00:04:18,500 --> 00:04:19,780
+Should we go left or right?
+
+123
+00:04:19,780 --> 00:04:21,440
+whether it will make it larger or smaller.
+
+124
+00:04:21,440 --> 00:04:24,060
+So basically, you just move in the direction of the derivative.
+
+125
+00:04:24,060 --> 00:04:24,880
+it will get larger.
+
+126
+00:04:24,880 --> 00:04:26,260
+But what if we go in the opposite direction of the derivative?
+
+127
+00:04:26,260 --> 00:04:27,640
+it will get smaller.
+
+128
+00:04:27,640 --> 00:04:29,080
+But what if it's equal to zero?
+
+129
+00:04:29,080 --> 00:04:29,800
+So what does that mean?
+
+130
+00:04:29,800 --> 00:04:30,280
+move to the left,
+
+131
+00:04:30,280 --> 00:04:30,820
+or to the right.
+
+132
+00:04:30,820 --> 00:04:32,200
+the function won't change at all.
+
+133
+00:04:32,200 --> 00:04:34,200
+So, what happens when the gradient is equal to zero?
+
+134
+00:04:34,200 --> 00:04:36,720
+we won't know which way the gradient should go next.
+
+135
+00:04:36,720 --> 00:04:39,420
+This situation can make our calculations extremely difficult.
+
+136
+00:04:39,420 --> 00:04:41,270
+So, when we're performing gradient descent,
+
+137
+00:04:41,270 --> 00:04:43,110
+We need to avoid a derivative value of zero.
+
+138
+00:04:43,110 --> 00:04:45,290
+So, what if we extend this from two dimensions to multiple dimensions?
+
+139
+00:04:45,290 --> 00:04:49,180
+So basically, this happens when we have multiple variables in our loss function.
+
+140
+00:04:49,180 --> 00:04:54,110
+So, we have X1 through XN. What we'll do is take the partial derivative with respect to each of these variables.
+
+141
+00:04:54,110 --> 00:04:55,410
+Together, they form a vector.
+
+142
+00:04:55,410 --> 00:04:57,370
+And this vector is what we call the gradient.
+
+143
+00:04:57,370 --> 00:04:58,550
+It has a direction.
+
+144
+00:04:58,550 --> 00:05:02,580
+It represents the direction of the steepest ascent at the current point, theta.
+
+145
+00:05:02,580 --> 00:05:03,780
+So, that's what a gradient is.
+
+146
+00:05:03,780 --> 00:05:06,760
+So, what if we want to reduce the overall loss?
+
+147
+00:05:06,760 --> 00:05:08,280
+We just take the negative of it.
+
+148
+00:05:08,280 --> 00:05:10,040
+and take a small step in the opposite direction.
+
+149
+00:05:10,040 --> 00:05:11,900
+This is the direction of the steepest descent.
+
+150
+00:05:11,900 --> 00:05:14,620
+So, what exactly is the workflow for gradient descent?
+
+151
+00:05:14,620 --> 00:05:17,400
+For example, let's say we're at the seventh step.
+
+152
+00:05:17,400 --> 00:05:20,020
+So, we know we have a matrix of parameters.
+
+153
+00:05:20,020 --> 00:05:21,540
+We just want to make it smaller.
+
+154
+00:05:21,540 --> 00:05:23,240
+to make the overall loss a little smaller.
+
+155
+00:05:23,240 --> 00:05:25,640
+So, I'll subtract this... this is the gradient, right?
+
+156
+00:05:25,640 --> 00:05:26,780
+multiplied by a learning rate.
+
+157
+00:05:26,780 --> 00:05:31,020
+We'll have it take a tiny step forward, in the opposite direction of the gradient.
+
+158
+00:05:31,020 --> 00:05:32,280
+We can't take too big of a step.
+
+159
+00:05:32,280 --> 00:05:33,700
+This prevents us from going in the wrong direction.
+
+160
+00:05:33,700 --> 00:05:36,480
+By taking small steps, I can gradually get closer to the solution.
+
+161
+00:05:37,560 --> 00:05:38,860
+Alright, let's look at a quick example.
+
+162
+00:05:38,860 --> 00:05:42,180
+For example, when X, or X0, is equal to four.
+
+163
+00:05:42,180 --> 00:05:44,160
+This is actually the point we're trying to find.
+
+164
+00:05:44,160 --> 00:05:45,380
+So, this is actually the point where the loss is at.
+
+165
+00:05:45,380 --> 00:05:47,620
+But of course, what we're trying to do is get it to zero, right?
+
+166
+00:05:47,620 --> 00:05:49,649
+When we get to the point where the loss is zero,
+
+167
+00:05:49,649 --> 00:05:51,249
+So, how do we get it to zero, step by step?
+
+168
+00:05:51,249 --> 00:05:53,200
+For example, let's say the learning rate is 0.1.
+
+169
+00:05:53,200 --> 00:05:54,980
+So, when the value is four,
+
+170
+00:05:54,980 --> 00:05:57,720
+So, let's see, the value we get is 16.
+
+171
+00:05:57,720 --> 00:05:59,240
+So when we plug in four,
+
+172
+00:05:59,240 --> 00:06:01,049
+And the derivative of that is eight.
+
+173
+00:06:01,049 --> 00:06:04,469
+So each time, we have it subtract 8 times 0.1.
+
+174
+00:06:04,469 --> 00:06:05,369
+So that's 0.8.
+
+175
+00:06:05,369 --> 00:06:08,870
+So, that's it for this step. Now, we move on to the next one.
+
+176
+00:06:08,870 --> 00:06:11,490
+So in this step, we're going to multiply its value by 0.1 again.
+
+177
+00:06:11,490 --> 00:06:13,320
+And as you keep doing this, you'll notice that...
+
+178
+00:06:13,320 --> 00:06:15,720
+And as a result, our Y value will get smaller and smaller.
+
+179
+00:06:15,720 --> 00:06:16,280
+getting smaller and smaller.
+
+180
+00:06:16,280 --> 00:06:18,100
+Until, well, this is actually the loss value, right?
+
+181
+00:06:18,100 --> 00:06:19,220
+until it approaches zero.
+
+182
+00:06:19,220 --> 00:06:20,460
+getting infinitely close to zero.
+
+183
+00:06:20,460 --> 00:06:24,299
+and we can consider the current parameters to be good enough.
+
+184
+00:06:24,299 --> 00:06:25,859
+So, in this simple example,
+
+185
+00:06:25,859 --> 00:06:27,479
+We can also make three observations here.
+
+186
+00:06:27,479 --> 00:06:29,199
+The slower it moves.
+
+187
+00:06:29,199 --> 00:06:30,080
+Right?
+
+188
+00:06:30,080 --> 00:06:32,200
+See how big the steps are at the beginning.
+
+189
+00:06:32,200 --> 00:06:35,280
+In other words, the change in our loss is actually getting smaller and smaller.
+
+190
+00:06:35,280 --> 00:06:37,600
+This means the change in our loss is getting smaller and smaller.
+
+191
+00:06:37,600 --> 00:06:40,680
+So, you can think of it as having a built-in brake.
+
+192
+00:06:40,680 --> 00:06:42,990
+Another thing is that it's monotonically decreasing.
+
+193
+00:06:42,990 --> 00:06:45,200
+Each step gets us closer to zero than the last.
+
+194
+00:06:45,200 --> 00:06:46,400
+And it just keeps getting closer and closer.
+
+195
+00:06:46,400 --> 00:06:48,320
+But it's very difficult to actually reach zero.
+
+196
+00:06:48,320 --> 00:06:50,700
+So, the point isn't to get an exact value of zero.
+
+197
+00:06:50,700 --> 00:06:53,150
+Getting close enough is good enough.
+
+198
+00:06:53,150 --> 00:06:54,910
+In a real neural network,
+
+199
+00:06:54,910 --> 00:06:56,390
+And the process is actually the same.
+
+200
+00:06:56,390 --> 00:06:58,030
+Of course, let's just briefly touch on this.
+
+201
+00:06:58,030 --> 00:07:01,900
+Now, the learning rate is actually a very sensitive hyperparameter throughout the entire training process.
+
+202
+00:07:01,900 --> 00:07:03,360
+So, why do we pick 0.1?
+
+203
+00:07:03,360 --> 00:07:05,880
+or 0.01 is a common choice in practice.
+
+204
+00:07:05,880 --> 00:07:08,760
+The problem with this is that if the learning rate is too large, it can cause the model to oscillate.
+
+205
+00:07:08,760 --> 00:07:09,680
+or even diverge.
+
+206
+00:07:09,680 --> 00:07:11,840
+If it's too small, the learning process will be too slow.
+
+207
+00:07:11,840 --> 00:07:16,230
+So, we'll also cover how to tune the learning rate in a separate video later on.
+
+208
+00:07:16,230 --> 00:07:17,830
+Of course, in the upcoming sections,
+
+209
+00:07:17,830 --> 00:07:22,160
+Now, some of our optimizers actually handle the learning rate adjustment themselves, based on the principles of gradient descent.
+
+210
+00:07:22,160 --> 00:07:23,000
+And that's pretty much how it works.
+
+211
+00:07:23,000 --> 00:07:24,600
+So, with the knowledge we have so far,
+
+212
+00:07:24,600 --> 00:07:26,840
+and you can implement a neural network on your own.
+
+213
+00:07:26,840 --> 00:07:29,489
+But when it comes to actually training a neural network,
+
+214
+00:07:29,489 --> 00:07:30,769
+But we generally don't do it this way.
+
+215
+00:07:30,769 --> 00:07:33,329
+Because, in reality, this approach is a bit inefficient.
+
+216
+00:07:33,329 --> 00:07:35,810
+Now, this formula might look incredibly simple,
+
+217
+00:07:35,810 --> 00:07:37,590
+But in a real-world scenario,
+
+218
+00:07:37,590 --> 00:07:40,120
+The first question is, how many samples' gradients are we using?
+
+219
+00:07:40,120 --> 00:07:41,720
+You're only training on a single sample each time.
+
+220
+00:07:41,720 --> 00:07:43,060
+and that gives us a gradient.
+
+221
+00:07:43,060 --> 00:07:44,480
+So, how many parameters are you updating at once?
+
+222
+00:07:44,480 --> 00:07:46,420
+So, should you use all the samples?
+
+223
+00:07:46,420 --> 00:07:47,620
+And then, where do we go from there?
+
+224
+00:07:47,620 --> 00:07:49,480
+Imagine you're in a narrow, elongated valley.
+
+225
+00:07:49,480 --> 00:07:50,420
+So, what about your next step?
+
+226
+00:07:50,420 --> 00:07:52,180
+it might seem like the right move for now is to go down.
+
+227
+00:07:52,180 --> 00:07:53,420
+But in reality, overall,
+
+228
+00:07:53,420 --> 00:07:55,440
+This isn't because you're heading in the optimal direction.
+
+229
+00:07:55,440 --> 00:07:58,320
+If you're in a canyon like this, you can get to this side in just one step.
+
+230
+00:07:58,320 --> 00:08:00,020
+You'll find you still have to take a step in this direction.
+
+231
+00:08:00,020 --> 00:08:01,060
+and then you have to move back this way.
+
+232
+00:08:01,060 --> 00:08:01,880
+It keeps oscillating back and forth.
+
+233
+00:08:01,880 --> 00:08:03,630
+So, how can we avoid this?
+
+234
+00:08:03,630 --> 00:08:05,750
+And another thing is, how should the learning rate be distributed?
+
+235
+00:08:05,750 --> 00:08:07,930
+Should it automatically adjust, and so on.
+
+236
+00:08:07,930 --> 00:08:09,280
+So, there are all sorts of issues that come up.
+
+237
+00:08:09,280 --> 00:08:10,960
+So, the optimizers we're going to talk about next...
+
+238
+00:08:10,960 --> 00:08:14,400
+essentially, they are here to help us solve these very problems.
+
+239
+00:08:14,400 --> 00:08:17,630
+to make the gradient change in the most optimal way in real-time.
+
+240
+00:08:17,630 --> 00:08:21,150
+First, let's start with the most basic form, which is the principle we just discussed.
+
+241
+00:08:21,150 --> 00:08:22,850
+And this is what we call a 'batch'.
+
+242
+00:08:22,850 --> 00:08:23,930
+gradient descent.
+
+243
+00:08:23,930 --> 00:08:25,410
+And 'batch' just means a batch of data, right?
+
+244
+00:08:25,410 --> 00:08:27,070
+We use the entire dataset every single time.
+
+245
+00:08:27,070 --> 00:08:28,380
+So, after I've done the calculation,
+
+246
+00:08:28,380 --> 00:08:30,980
+and that means we've trained on the entire dataset.
+
+247
+00:08:30,980 --> 00:08:32,659
+Now, doing it this way actually has its benefits.
+
+248
+00:08:32,659 --> 00:08:34,299
+So, I just take the average of it, right?
+
+249
+00:08:34,299 --> 00:08:36,179
+So, we just use the average of its gradients.
+
+250
+00:08:36,179 --> 00:08:39,000
+Actually, this all started way back in 1847.
+
+251
+00:08:39,000 --> 00:08:42,520
+The French mathematician Cauchy, uh, while he was studying the orbits of comets,
+
+252
+00:08:42,520 --> 00:08:44,090
+And that's basically how he did it.
+
+253
+00:08:44,090 --> 00:08:46,570
+So basically, what do you do when there's no analytical solution?
+
+254
+00:08:46,570 --> 00:08:47,690
+You just get closer and closer, step by step.
+
+255
+00:08:47,690 --> 00:08:51,460
+This was actually a very, very advanced idea for its time.
+
+256
+00:08:51,460 --> 00:08:53,660
+So, when we want to update the parameters in gradient descent,
+
+257
+00:08:53,660 --> 00:08:55,980
+the model has to go through the entire dataset to complete one training cycle.
+
+258
+00:08:55,980 --> 00:08:58,600
+and then perform an update using the averaged gradient.
+
+259
+00:08:58,600 --> 00:09:02,660
+So, by now, you've probably figured out its pros and cons.
+
+260
+00:09:02,660 --> 00:09:06,740
+So, the advantage is that we're actually using all of the data.
+
+261
+00:09:06,740 --> 00:09:07,550
+virtually
+
+262
+00:09:07,550 --> 00:09:10,410
+So, you could say the training process is a very accurate reflection of the real data.
+
+263
+00:09:10,410 --> 00:09:13,370
+But the downside is, the training cost is just too high.
+
+264
+00:09:13,370 --> 00:09:16,220
+You have to run through the entire dataset just to calculate a single gradient.
+
+265
+00:09:16,220 --> 00:09:17,460
+It just takes way too long.
+
+266
+00:09:17,460 --> 00:09:18,940
+Plus, it lacks randomness.
+
+267
+00:09:18,940 --> 00:09:21,180
+it gets stuck in a saddle point or a region with a small gradient.
+
+268
+00:09:21,180 --> 00:09:22,540
+so there's no noise to jolt it out of there.
+
+269
+00:09:22,540 --> 00:09:23,560
+and that helps it get out of there.
+
+270
+00:09:23,560 --> 00:09:26,220
+This is actually what I was explaining to you all earlier when we were talking about functions.
+
+271
+00:09:26,220 --> 00:09:28,300
+If it reaches a point where the calculation results in zero,
+
+272
+00:09:28,300 --> 00:09:30,160
+when it's obviously not at the lowest point yet.
+
+273
+00:09:30,160 --> 00:09:32,390
+but when its gradient is about to hit zero,
+
+274
+00:09:32,390 --> 00:09:34,710
+So, in a situation like this, we're pretty much talking about gradient descent, right?
+
+275
+00:09:34,710 --> 00:09:36,810
+we multiply the learning rate by the gradient,
+
+276
+00:09:36,810 --> 00:09:38,210
+And no matter how small the learning rate is,
+
+277
+00:09:38,210 --> 00:09:39,330
+no matter what the learning rate is,
+
+278
+00:09:39,330 --> 00:09:40,390
+When the gradient is zero,
+
+279
+00:09:40,390 --> 00:09:41,690
+What you're subtracting is the value of the parameter.
+
+280
+00:09:41,690 --> 00:09:42,940
+But the amount you're subtracting is always zero.
+
+281
+00:09:42,940 --> 00:09:45,060
+If it's in a region that's completely flat,
+
+282
+00:09:45,060 --> 00:09:45,960
+So when it gets to a place like this,
+
+283
+00:09:45,960 --> 00:09:47,480
+it won't continue to go down any further.
+
+284
+00:09:47,480 --> 00:09:49,870
+it won't be able to find the lowest point, relatively speaking.
+
+285
+00:09:49,870 --> 00:09:51,790
+and it'll just get stuck in certain spots.
+
+286
+00:09:51,790 --> 00:09:53,410
+It thinks it has found a low point,
+
+287
+00:09:53,410 --> 00:09:55,430
+In reality, this is just a local minimum.
+
+288
+00:09:55,430 --> 00:09:57,040
+but not the lowest point overall.
+
+289
+00:09:57,040 --> 00:09:58,440
+This approach just won't work.
+
+290
+00:09:59,440 --> 00:10:02,140
+And this is basically the formula we saw at the very beginning.
+
+291
+00:10:02,140 --> 00:10:03,990
+So, what happens when the gradient is zero?
+
+292
+00:10:03,990 --> 00:10:07,430
+In fact, the parameter itself is the same at time T+1 as it was at time T.
+
+293
+00:10:07,430 --> 00:10:08,680
+it stops changing.
+
+294
+00:10:08,680 --> 00:10:10,400
+So, how do we avoid this?
+
+295
+00:10:10,400 --> 00:10:13,320
+So, to address this, we introduce Stochastic Gradient Descent.
+
+296
+00:10:13,320 --> 00:10:17,430
+Each time, I just use a single random sample to update the gradient.
+
+297
+00:10:17,430 --> 00:10:20,670
+And actually, this approach is grounded in some real-world principles.
+
+298
+00:10:20,670 --> 00:10:22,089
+I just have to keep doing this over and over again.
+
+299
+00:10:22,089 --> 00:10:23,029
+and keep on adjusting it,
+
+300
+00:10:23,029 --> 00:10:25,149
+and in the long run, it will converge to the true solution.
+
+301
+00:10:25,149 --> 00:10:26,209
+So, here's the general formula.
+
+302
+00:10:26,209 --> 00:10:30,180
+So, you can see that this part here, what was it in the previous formula?
+
+303
+00:10:30,180 --> 00:10:32,660
+Now, you don't need to get too bogged down in the details of this formula.
+
+304
+00:10:32,660 --> 00:10:34,180
+Just having a general idea of the principle is enough.
+
+305
+00:10:34,180 --> 00:10:36,500
+So, after we've calculated all the losses,
+
+306
+00:10:36,500 --> 00:10:37,600
+and take the average.
+
+307
+00:10:37,600 --> 00:10:39,020
+So, what's the situation now?
+
+308
+00:10:39,020 --> 00:10:41,280
+We just randomly pick one from the numbers one to N.
+
+309
+00:10:41,280 --> 00:10:43,140
+And we just use the one we picked.
+
+310
+00:10:43,140 --> 00:10:45,880
+And its pros and cons are also very clear.
+
+311
+00:10:45,880 --> 00:10:48,040
+The upside is that it's incredibly efficient.
+
+312
+00:10:48,040 --> 00:10:48,720
+Right?
+
+313
+00:10:48,720 --> 00:10:50,100
+And since you're just randomly picking one,
+
+314
+00:10:50,100 --> 00:10:51,520
+It's inherently noisy.
+
+315
+00:10:51,520 --> 00:10:54,280
+It might even help us during the training process,
+
+316
+00:10:54,280 --> 00:10:56,120
+Let's break out of the saddle point.
+
+317
+00:10:56,120 --> 00:10:57,920
+But the downside is that it's just too inaccurate.
+
+318
+00:10:57,920 --> 00:10:58,500
+The thing is,
+
+319
+00:10:58,500 --> 00:11:02,350
+So, during the training process, you'll find that the loss fluctuates wildly.
+
+320
+00:11:02,350 --> 00:11:05,370
+So, it all comes down to how lucky you get with your random sampling.
+
+321
+00:11:05,370 --> 00:11:07,589
+And on top of that, if you're just unlucky,
+
+322
+00:11:07,589 --> 00:11:09,009
+and you happen to pick an outlier.
+
+323
+00:11:09,009 --> 00:11:10,589
+it's actually an outlier.
+
+324
+00:11:10,589 --> 00:11:12,920
+this outlier data will take our gradient and...
+
+325
+00:11:12,920 --> 00:11:15,760
+and pulls our entire set of parameters in a really weird direction.
+
+326
+00:11:15,760 --> 00:11:19,020
+We'd have to train it many times just to pull it back.
+
+327
+00:11:19,020 --> 00:11:22,210
+But sometimes, this can actually make things less efficient.
+
+328
+00:11:22,210 --> 00:11:25,500
+But in reality, this approach actually makes a lot of sense.
+
+329
+00:11:25,500 --> 00:11:27,300
+It's just that every time, we only draw one sample.
+
+330
+00:11:27,300 --> 00:11:29,220
+But it did come with some pretty significant issues.
+
+331
+00:11:29,220 --> 00:11:31,920
+But it did inspire the optimizers that came after it.
+
+332
+00:11:31,920 --> 00:11:33,900
+So, what's the optimizer that came after that?
+
+333
+00:11:33,900 --> 00:11:36,200
+Mini-batch Stochastic Gradient Descent.
+
+334
+00:11:36,200 --> 00:11:39,560
+So, for mini-batch... well, the first one we have is batch gradient descent.
+
+335
+00:11:39,560 --> 00:11:41,140
+The second one is Stochastic Gradient Descent.
+
+336
+00:11:41,140 --> 00:11:43,180
+And the third one? It's a combination of the two.
+
+337
+00:11:43,180 --> 00:11:46,420
+So, it's stochastic, but we're just taking a small, random batch.
+
+338
+00:11:46,420 --> 00:11:47,760
+Doing it all at once is too aggressive,
+
+339
+00:11:47,760 --> 00:11:48,900
+But using the entire batch is way too slow.
+
+340
+00:11:48,900 --> 00:11:50,000
+So, I'll just find a middle ground.
+
+341
+00:11:50,000 --> 00:11:54,820
+So, each time, we randomly sample a batch—say, 32 or 128 samples.
+
+342
+00:11:54,820 --> 00:11:56,490
+So, we just take a portion each time.
+
+343
+00:11:56,490 --> 00:12:00,290
+This way, it combines the benefits of both approaches,
+
+344
+00:12:00,290 --> 00:12:01,390
+and the drawbacks were balanced out.
+
+345
+00:12:01,390 --> 00:12:03,610
+And the computation is also significantly faster.
+
+346
+00:12:03,610 --> 00:12:04,130
+Makes sense, right?
+
+347
+00:12:04,130 --> 00:12:06,030
+Plus, the oscillations aren't as severe anymore.
+
+348
+00:12:06,030 --> 00:12:07,810
+And at the same time, because it's also stochastic,
+
+349
+00:12:07,810 --> 00:12:09,880
+So, it still maintains a certain degree of randomness.
+
+350
+00:12:09,880 --> 00:12:12,960
+So, as you can see, it's actually incredibly useful in many ways.
+
+351
+00:12:12,960 --> 00:12:15,160
+So, nowadays, a lot of the time...
+
+352
+00:12:15,160 --> 00:12:17,780
+So, when we talk about SGD, or Stochastic Gradient Descent,
+
+353
+00:12:17,780 --> 00:12:20,380
+In practice, we're no longer talking about just randomly picking a single sample.
+
+354
+00:12:20,380 --> 00:12:22,620
+So, even if we don't have 'mini-batch' in front of it,
+
+355
+00:12:22,620 --> 00:12:23,320
+Mini-batch.
+
+356
+00:12:23,320 --> 00:12:26,380
+This also refers to mini-batch stochastic gradient descent.
+
+357
+00:12:26,380 --> 00:12:31,320
+It strikes a remarkably good balance between statistical efficiency and computational efficiency.
+
+358
+00:12:31,320 --> 00:12:33,040
+So, when we talk about SGD,
+
+359
+00:12:33,040 --> 00:12:36,100
+By default, the 'S' in SGD actually refers to mini-batch SGD.
+
+360
+00:12:36,100 --> 00:12:39,060
+Now, even though mini-batch SGD is already quite good,
+
+361
+00:12:39,060 --> 00:12:43,280
+But of course, brilliant minds were still constantly researching and pushing the boundaries in this field.
+
+362
+00:12:43,280 --> 00:12:44,200
+In 1964,
+
+363
+00:12:44,200 --> 00:12:47,420
+So, when Soviet mathematicians were studying the convergence speed of iterative methods,
+
+364
+00:12:47,420 --> 00:12:49,230
+and proposed a method called Momentum.
+
+365
+00:12:49,230 --> 00:12:53,010
+The core idea is that you shouldn't just look at the gradient of the current step.
+
+366
+00:12:53,010 --> 00:12:57,330
+Instead, you also need to factor in the momentum from the past few steps.
+
+367
+00:12:57,330 --> 00:12:58,510
+When the directions are aligned,
+
+368
+00:12:58,510 --> 00:13:00,170
+the update gets continuously reinforced.
+
+369
+00:13:00,170 --> 00:13:03,900
+This way, those oscillating updates are gradually neutralized.
+
+370
+00:13:03,900 --> 00:13:06,839
+Let's take a look at an example of an iron ball rolling down a mountain.
+
+371
+00:13:06,839 --> 00:13:09,399
+Now, the plain vanilla gradient descent we started with...
+
+372
+00:13:09,399 --> 00:13:11,419
+So, for each small section it goes down,
+
+373
+00:13:11,419 --> 00:13:13,819
+it has to stop and calculate the current gradient.
+
+374
+00:13:13,819 --> 00:13:15,310
+and then take another small step.
+
+375
+00:13:15,310 --> 00:13:16,790
+So it stops right here.
+
+376
+00:13:16,790 --> 00:13:17,790
+and it finds that the gradient is zero.
+
+377
+00:13:17,790 --> 00:13:19,250
+Because this area is flat, right?
+
+378
+00:13:19,250 --> 00:13:21,089
+It might just stop moving downwards.
+
+379
+00:13:21,089 --> 00:13:22,409
+It can't be optimized any further.
+
+380
+00:13:22,409 --> 00:13:24,660
+It figures that going left would also be zero.
+
+381
+00:13:24,660 --> 00:13:25,800
+and going right is also zero.
+
+382
+00:13:25,800 --> 00:13:26,320
+Alright then.
+
+383
+00:13:26,320 --> 00:13:27,660
+This must be the lowest point then.
+
+384
+00:13:27,660 --> 00:13:28,240
+I'm not moving.
+
+385
+00:13:28,240 --> 00:13:29,940
+But in reality, if you take just one more step forward...
+
+386
+00:13:29,940 --> 00:13:31,200
+there's actually a lower point.
+
+387
+00:13:31,200 --> 00:13:33,680
+But in the real, physical world,
+
+388
+00:13:33,680 --> 00:13:34,960
+Imagine a small ball rolling down a mountain.
+
+389
+00:13:34,960 --> 00:13:36,100
+But that's not actually how it works.
+
+390
+00:13:36,100 --> 00:13:37,830
+until it reaches a flat area.
+
+391
+00:13:37,830 --> 00:13:39,270
+It will keep moving forward.
+
+392
+00:13:39,270 --> 00:13:39,830
+Why is that?
+
+393
+00:13:39,830 --> 00:13:41,940
+Because as it was going down the slope earlier,
+
+394
+00:13:41,940 --> 00:13:43,360
+It has a certain amount of inertia.
+
+395
+00:13:43,360 --> 00:13:44,480
+When it encounters some small
+
+396
+00:13:44,480 --> 00:13:46,380
+or even over some small bumps,
+
+397
+00:13:46,380 --> 00:13:48,560
+so it won't get stuck oscillating back and forth here.
+
+398
+00:13:48,560 --> 00:13:50,950
+and it'll use that inertia to break right through.
+
+399
+00:13:50,950 --> 00:13:52,310
+It won't veer off to the left,
+
+400
+00:13:52,310 --> 00:13:53,150
+and then to the right.
+
+401
+00:13:53,150 --> 00:13:54,310
+Because it has this momentum,
+
+402
+00:13:54,310 --> 00:13:55,620
+This will keep it moving straight forward.
+
+403
+00:13:55,620 --> 00:13:56,800
+and it just pushes right through.
+
+404
+00:13:56,800 --> 00:14:01,090
+So basically, what this means is that gradient descent doesn't just consider your current gradient.
+
+405
+00:14:01,090 --> 00:14:03,010
+but also the gradients from previous steps.
+
+406
+00:14:03,010 --> 00:14:04,510
+If they're in the same direction,
+
+407
+00:14:04,510 --> 00:14:05,910
+I need to factor that in as well.
+
+408
+00:14:05,910 --> 00:14:07,470
+This way, it keeps pushing forward.
+
+409
+00:14:07,470 --> 00:14:08,829
+so the updates are much faster.
+
+410
+00:14:08,829 --> 00:14:11,129
+So, the formula for this would basically look something like this.
+
+411
+00:14:11,129 --> 00:14:12,409
+So, what are the benefits of this?
+
+412
+00:14:12,409 --> 00:14:17,230
+If the gradient directions in several consecutive steps of gradient descent are all very similar,
+
+413
+00:14:21,300 --> 00:14:23,600
+In fact, it also dampens this kind of left-right oscillation.
+
+414
+00:14:23,600 --> 00:14:24,180
+So, why is that?
+
+415
+00:14:24,180 --> 00:14:25,300
+Because it'll go left for a bit,
+
+416
+00:14:25,300 --> 00:14:25,900
+and then to the right,
+
+417
+00:14:25,900 --> 00:14:27,920
+But, because you're adding in the historical information,
+
+418
+00:14:27,920 --> 00:14:29,490
+the leftward and rightward movements will cancel each other out.
+
+419
+00:14:29,490 --> 00:14:32,070
+In reality, it will form a straight line going downwards like this.
+
+420
+00:14:32,070 --> 00:14:34,220
+For this kind of narrow, elongated valley,
+
+421
+00:14:34,220 --> 00:14:35,740
+So, if it actually has momentum,
+
+422
+00:14:35,740 --> 00:14:37,260
+the updates will be incredibly fast.
+
+423
+00:14:37,260 --> 00:14:38,740
+And, like we just mentioned,
+
+424
+00:14:38,740 --> 00:14:40,550
+It also makes it easier to get past some saddle points.
+
+425
+00:14:40,550 --> 00:14:42,070
+or some flat regions.
+
+426
+00:14:42,070 --> 00:14:44,390
+or some small, local minima.
+
+427
+00:14:44,390 --> 00:14:47,290
+Even if the instantaneous speed at that moment is close to zero,
+
+428
+00:14:47,290 --> 00:14:48,890
+But because I have that momentum built up from before,
+
+429
+00:14:48,890 --> 00:14:49,980
+I can still power through.
+
+430
+00:14:49,980 --> 00:14:52,020
+And that's the benefit of using momentum.
+
+431
+00:14:53,100 --> 00:14:55,220
+But, of course, this inertia is a double-edged sword.
+
+432
+00:14:55,220 --> 00:14:56,320
+But it might also overshoot.
+
+433
+00:14:56,320 --> 00:14:58,580
+It just keeps going right past it because of that inertia.
+
+434
+00:14:58,580 --> 00:15:02,020
+This can also cause it to oscillate around the optimal point.
+
+435
+00:15:02,020 --> 00:15:03,420
+But that's still acceptable.
+
+436
+00:15:03,420 --> 00:15:05,700
+Plus, it introduces an additional hyperparameter.
+
+437
+00:15:05,700 --> 00:15:09,919
+Now, to be fair, any hyperparameter is going to be somewhat sensitive.
+
+438
+00:15:09,919 --> 00:15:11,399
+Values that are too small or too large just won't work well.
+
+439
+00:15:11,399 --> 00:15:13,119
+Now, in most practical applications,
+
+440
+00:15:13,119 --> 00:15:15,690
+And 0.9 is a pretty good number to go with.
+
+441
+00:15:15,690 --> 00:15:20,610
+So, that's why in almost all subsequent Stochastic Gradient Descent training sessions,
+
+442
+00:15:20,610 --> 00:15:22,190
+it will come with some momentum by default.
+
+443
+00:15:27,440 --> 00:15:30,220
+And by default, it also passes a momentum value to us, which is set to...
+
+444
+00:15:30,220 --> 00:15:31,660
+So basically, this is what everyone is using now.
+
+445
+00:15:31,660 --> 00:15:33,500
+And for all subsequent large-scale training,
+
+446
+00:15:33,500 --> 00:15:36,660
+The core idea is mini-batch SGD plus momentum.
+
+447
+00:15:36,660 --> 00:15:38,900
+Okay, sounds like we've reached the grand finale, right?
+
+448
+00:15:38,900 --> 00:15:39,540
+That's good enough, right?
+
+449
+00:15:39,540 --> 00:15:40,180
+Right?
+
+450
+00:15:40,180 --> 00:15:42,520
+But, there's always a bigger fish.
+
+451
+00:15:42,520 --> 00:15:44,820
+And then, in 2011,
+
+452
+00:15:44,820 --> 00:15:46,240
+But then, some researchers started to notice something.
+
+453
+00:15:46,240 --> 00:15:47,880
+You see, you have different parameters.
+
+454
+00:15:47,880 --> 00:15:49,280
+and they actually represent different features.
+
+455
+00:15:49,280 --> 00:15:52,460
+So you're updating all of them with the exact same learning rate.
+
+456
+00:15:52,460 --> 00:15:53,500
+all set to 0.1.
+
+457
+00:15:53,500 --> 00:15:55,620
+Doesn't that seem a bit too simple and crude?
+
+458
+00:15:55,620 --> 00:16:00,010
+For example, in NLP, which is, you know, Natural Language Processing...
+
+459
+00:16:00,010 --> 00:16:05,250
+We know that the word 'the' appears with a very high frequency in any given text.
+
+460
+00:16:05,250 --> 00:16:06,210
+So, during training,
+
+461
+00:16:06,210 --> 00:16:08,490
+Each batch will have its corresponding parameters.
+
+462
+00:16:08,490 --> 00:16:09,590
+the gradient will be very large.
+
+463
+00:16:09,590 --> 00:16:11,590
+This makes the updates actually quite thorough.
+
+464
+00:16:11,590 --> 00:16:13,110
+But for a word like this, you might not even recognize it.
+
+465
+00:16:13,110 --> 00:16:13,370
+so the gradient will be huge,
+
+466
+00:16:13,370 --> 00:16:15,170
+In fact, its frequency of occurrence is extremely low.
+
+467
+00:16:15,170 --> 00:16:18,330
+It only shows up a handful of times during the entire training process.
+
+468
+00:16:18,330 --> 00:16:19,720
+the gradient will be extremely small.
+
+469
+00:16:19,720 --> 00:16:22,480
+So, what if we use the same learning rate for low-frequency words?
+
+470
+00:16:22,480 --> 00:16:23,780
+It's pretty much impossible to train.
+
+471
+00:16:23,780 --> 00:16:26,660
+Because its gradient is almost always zero.
+
+472
+00:16:26,660 --> 00:16:29,320
+Only when it does appear will there be some minor changes.
+
+473
+00:16:29,320 --> 00:16:31,320
+The update frequency is just way too low.
+
+474
+00:16:31,320 --> 00:16:36,220
+So, the idea is to have an adaptive way to adjust the effective learning rate for this parameter.
+
+475
+00:16:36,220 --> 00:16:39,800
+In other words, each parameter maintains its own learning rate independently.
+
+476
+00:16:39,800 --> 00:16:41,140
+It's not shared with any other parameters.
+
+477
+00:16:41,140 --> 00:16:42,740
+So I keep track of it myself, right?
+
+478
+00:16:42,740 --> 00:16:44,860
+In this case, my own frequency of updates is relatively low.
+
+479
+00:16:44,860 --> 00:16:46,780
+So, I'll just set the learning rate to be relatively large.
+
+480
+00:16:46,780 --> 00:16:48,420
+so I can take a big step each time.
+
+481
+00:16:48,420 --> 00:16:50,240
+I'm updating my parameters more frequently.
+
+482
+00:16:50,240 --> 00:16:51,920
+So, I'll just set the learning rate to be pretty small.
+
+483
+00:16:51,920 --> 00:16:53,160
+taking just one small step at a time.
+
+484
+00:16:53,160 --> 00:16:54,890
+This is to prevent it from overshooting.
+
+485
+00:16:54,890 --> 00:16:57,710
+So, what is this? It's an adaptive gradient.
+
+486
+00:16:57,710 --> 00:16:59,410
+So, the formula for it looks something like this.
+
+487
+00:16:59,410 --> 00:17:03,460
+In other words, it adds the square of the gradient from each step.
+
+488
+00:17:03,460 --> 00:17:06,780
+And this small value we're adding here is to prevent the denominator from being zero.
+
+489
+00:17:06,780 --> 00:17:07,980
+and then divide that by the learning rate.
+
+490
+00:17:07,980 --> 00:17:10,360
+Basically, it's taking its past gradients into account.
+
+491
+00:17:10,360 --> 00:17:13,880
+Of course, when we're updating the parameters really frequently,
+
+492
+00:17:13,880 --> 00:17:15,300
+the gradient will be larger.
+
+493
+00:17:15,300 --> 00:17:17,120
+So, we'll end up with a larger gradient.
+
+494
+00:17:17,120 --> 00:17:18,680
+This way, the learning rate becomes smaller.
+
+495
+00:17:18,680 --> 00:17:19,180
+Right?
+
+496
+00:17:19,180 --> 00:17:20,200
+Because the denominator gets bigger, right?
+
+497
+00:17:20,200 --> 00:17:22,000
+So, when our gradient is relatively small,
+
+498
+00:17:22,000 --> 00:17:23,860
+So, when the updates aren't happening very often,
+
+499
+00:17:23,860 --> 00:17:25,500
+In that case, the denominator would be smaller.
+
+500
+00:17:25,500 --> 00:17:26,560
+the learning rate will increase.
+
+501
+00:17:26,560 --> 00:17:28,120
+This lets it update more quickly.
+
+502
+00:17:28,120 --> 00:17:30,500
+So, this is essentially what we call an adaptive learning rate.
+
+503
+00:17:31,070 --> 00:17:33,690
+And this, in turn, influenced a whole lot of what came after.
+
+504
+00:17:33,930 --> 00:17:35,930
+But it does have its drawbacks.
+
+505
+00:17:35,930 --> 00:17:37,330
+Now, this might sound great,
+
+506
+00:17:37,330 --> 00:17:40,840
+The biggest problem is that the learning rate monotonically decays to zero.
+
+507
+00:17:40,840 --> 00:17:43,200
+And why is that? Well, let's take a look at the formula.
+
+508
+00:17:43,200 --> 00:17:44,460
+This value is always positive.
+
+509
+00:17:46,320 --> 00:17:49,560
+This way, your learning rate will eventually be driven towards zero.
+
+510
+00:17:49,560 --> 00:17:51,200
+And that's actually not a good thing.
+
+511
+00:17:51,200 --> 00:17:53,120
+And that, right there, is its biggest problem.
+
+512
+00:17:53,120 --> 00:17:54,840
+But it does have some advantages, though.
+
+513
+00:17:54,840 --> 00:17:56,960
+Basically, it means you don't have to manually tune the learning rate anymore.
+
+514
+00:17:56,960 --> 00:17:59,840
+And its adaptive nature also makes it particularly well-suited for sparse data.
+
+515
+00:17:59,840 --> 00:18:01,480
+Because it can adjust itself, right?
+
+516
+00:18:01,480 --> 00:18:03,520
+But its major problem is, what if the training isn't even finished yet?
+
+517
+00:18:03,520 --> 00:18:04,440
+and the training just grinds to a halt.
+
+518
+00:18:04,440 --> 00:18:07,100
+Gradually, the gradient itself will just... you know, the learning rate gets...
+
+519
+00:18:07,100 --> 00:18:07,500
+Plus,
+
+520
+00:18:07,500 --> 00:18:09,500
+But what happens is, you've basically set the learning rate to zero.
+
+521
+00:18:09,500 --> 00:18:10,980
+And just like that, the training process grinds to a halt.
+
+522
+00:18:10,980 --> 00:18:16,380
+And it was precisely this flaw that led to the development of the next method, RMSprop.
+
+523
+00:18:16,380 --> 00:18:17,520
+And then there are others like ADAM.
+
+524
+00:18:17,520 --> 00:18:20,160
+At their core, they're all trying to improve the same thing.
+
+525
+00:18:22,820 --> 00:18:24,580
+and only keep the influence of recent gradients.
+
+526
+00:18:24,580 --> 00:18:27,120
+And that was the first optimization for adaptive learning rates.
+
+527
+00:18:27,120 --> 00:18:31,390
+And RMSprop... well, that was after AlexNet ignited the deep learning boom back in 2012.
+
+528
+00:18:31,390 --> 00:18:33,730
+This led to the development of deeper and deeper networks.
+
+529
+00:18:33,730 --> 00:18:35,050
+and training took longer and longer.
+
+530
+00:18:35,050 --> 00:18:38,530
+So basically, with these adaptive gradient methods, we just couldn't make progress with the training anymore.
+
+531
+00:18:38,530 --> 00:18:40,100
+This would cause the learning rate to shrink to zero.
+
+532
+00:18:40,100 --> 00:18:41,980
+So, here's an idea for an improvement.
+
+533
+00:18:41,980 --> 00:18:43,300
+And that's actually the problem with RMSprop.
+
+534
+00:18:43,300 --> 00:18:44,440
+The idea behind it is very simple.
+
+535
+00:18:44,440 --> 00:18:47,820
+Instead of summing up the squares of all the gradients from the entire training process,
+
+536
+00:18:47,820 --> 00:18:50,310
+Because that would just make the denominator larger and larger, right?
+
+537
+00:18:50,310 --> 00:18:51,570
+the learning rate would eventually drop to zero.
+
+538
+00:18:51,570 --> 00:18:52,850
+So, it doesn't use all of them anymore.
+
+539
+00:18:52,850 --> 00:18:55,450
+Instead, it only uses the most recent ones, like the last ten updates, right?
+
+540
+00:18:55,450 --> 00:18:57,270
+In this case, it stabilizes to a certain value.
+
+541
+00:18:57,270 --> 00:19:00,550
+So, by using this one clever little trick,
+
+542
+00:19:00,550 --> 00:19:02,030
+This solves the problem of the denominator getting infinitely large.
+
+543
+00:19:02,030 --> 00:19:04,230
+and the problem of the learning rate shrinking to zero.
+
+544
+00:19:04,230 --> 00:19:05,070
+And what's interesting is,
+
+545
+00:19:05,070 --> 00:19:08,039
+Now, this optimization method is an old friend of ours.
+
+546
+00:19:08,039 --> 00:19:09,559
+It was proposed by Hinton.
+
+547
+00:19:09,559 --> 00:19:11,319
+But he didn't even write it up as a formal paper.
+
+548
+00:19:11,319 --> 00:19:13,830
+Because he felt this improvement was just so logical.
+
+549
+00:19:13,830 --> 00:19:15,750
+So he just mentioned it in an online course,
+
+550
+00:19:15,750 --> 00:19:18,630
+After he wrote it down in his slides, it just took off and became the new standard.
+
+551
+00:19:18,630 --> 00:19:23,499
+So, as a result, when people cited it, there was no proper paper to reference. This is how it ended up being cited.
+
+552
+00:19:23,499 --> 00:19:24,099
+Right.
+
+553
+00:19:24,099 --> 00:19:25,659
+In this section, we have this so-called 'COSER'...
+
+554
+00:19:25,659 --> 00:19:28,639
+Just a single page from a lecture's PowerPoint.
+
+555
+00:19:28,639 --> 00:19:32,469
+And just like that, the algorithm we just saw in the PPT became the new mainstream.
+
+556
+00:19:32,469 --> 00:19:33,749
+Let's take a look at its formula.
+
+557
+00:19:33,749 --> 00:19:35,609
+Now, this might look a lot more complicated than the last one.
+
+558
+00:19:35,609 --> 00:19:37,880
+And that's really the biggest difference.
+
+559
+00:19:39,680 --> 00:19:41,660
+So it's not the sum of all the squares, right?
+
+560
+00:19:41,660 --> 00:19:42,780
+It's based on the most recent ones.
+
+561
+00:19:42,780 --> 00:19:46,320
+So, what this does is, it prevents the learning rate from decaying all the way to zero.
+
+562
+00:19:46,320 --> 00:19:47,980
+And on top of that, it also maintains its adaptability.
+
+563
+00:19:47,980 --> 00:19:50,940
+So your recent gradients haven't plateaued either, right?
+
+564
+00:19:50,940 --> 00:19:51,880
+And what about the previous ones?
+
+565
+00:19:51,880 --> 00:19:52,260
+Right?
+
+566
+00:19:52,260 --> 00:19:55,120
+And it's also particularly well-suited for non-stationary objectives.
+
+567
+00:19:55,120 --> 00:19:56,520
+So, it's incredibly useful.
+
+568
+00:19:56,520 --> 00:19:58,540
+However, it does have its limitations.
+
+569
+00:19:58,540 --> 00:20:00,500
+First of all, it's just an adaptive learning rate.
+
+570
+00:20:00,500 --> 00:20:02,680
+It doesn't take the gradient into account, right?
+
+571
+00:20:02,680 --> 00:20:04,040
+For instance, which direction should it move in?
+
+572
+00:20:04,040 --> 00:20:04,600
+It doesn't have that.
+
+573
+00:20:04,600 --> 00:20:06,360
+So, this can also cause oscillations.
+
+574
+00:20:06,360 --> 00:20:07,600
+And on top of that, there are these issues.
+
+575
+00:20:07,600 --> 00:20:10,130
+Of course, it also adds another hyperparameter.
+
+576
+00:20:10,450 --> 00:20:12,250
+So, despite these drawbacks,
+
+577
+00:20:12,250 --> 00:20:14,650
+So, what it's actually doing is already happening during the training process.
+
+578
+00:20:14,650 --> 00:20:17,240
+It became especially popular for things like RNNs.
+
+579
+00:20:17,240 --> 00:20:19,760
+Especially when the loss landscape is quite rugged.
+
+580
+00:20:19,760 --> 00:20:20,580
+It's incredibly effective.
+
+581
+00:20:20,580 --> 00:20:25,240
+So, for a while, RMSprop became the go-to choice for training neural networks.
+
+582
+00:20:25,240 --> 00:20:26,160
+the go-to choice.
+
+583
+00:20:26,160 --> 00:20:28,550
+This was the case until ADAM appeared in 2015.
+
+584
+00:20:28,550 --> 00:20:31,030
+So, what's the core idea behind ADAM?
+
+585
+00:20:31,030 --> 00:20:33,190
+Then, around 2014 to 2015,
+
+586
+00:20:33,190 --> 00:20:36,590
+By this point, two distinct schools of thought had clearly emerged in the field of deep learning optimization.
+
+587
+00:20:36,590 --> 00:20:39,370
+One is the adaptive gradient approach.
+
+588
+00:20:39,370 --> 00:20:41,850
+And then there's the other track, which is all about improving upon it, right?
+
+589
+00:20:41,850 --> 00:20:45,550
+The idea is to let different parameters use different learning rates.
+
+590
+00:20:45,550 --> 00:20:49,290
+Then there's another method, which is the momentum method, an idea that's been around since 1964.
+
+591
+00:20:49,290 --> 00:20:50,590
+So, we just give it some momentum.
+
+592
+00:20:50,590 --> 00:20:52,700
+Both of these methods are incredibly useful, by the way.
+
+593
+00:20:52,700 --> 00:20:54,040
+So, since each has its own strengths,
+
+594
+00:20:54,040 --> 00:20:55,800
+So, why not just combine them?
+
+595
+00:20:55,800 --> 00:20:57,780
+And so, in 2014, it was born.
+
+596
+00:20:57,780 --> 00:21:01,080
+ADAM is short for Adaptive Moment Estimation.
+
+597
+00:21:01,080 --> 00:21:01,600
+Makes sense, right?
+
+598
+00:21:01,600 --> 00:21:03,000
+I need both the direction,
+
+599
+00:21:03,000 --> 00:21:03,860
+and I also need the step size.
+
+600
+00:21:03,860 --> 00:21:07,160
+So, that's basically the ADAM formula, which, you know, is just a whole bunch of math.
+
+601
+00:21:07,160 --> 00:21:10,240
+And then, it also applies some bias correction to it.
+
+602
+00:21:10,240 --> 00:21:12,720
+So, it doesn't really matter what value you initialize it with at the very beginning.
+
+603
+00:21:12,720 --> 00:21:13,720
+It can adapt to all of them.
+
+604
+00:21:13,720 --> 00:21:16,820
+So, that's why the first step makes perfect sense.
+
+605
+00:21:16,820 --> 00:21:18,460
+And that's why it became so popular.
+
+606
+00:21:18,460 --> 00:21:19,780
+It's just incredibly, incredibly useful.
+
+607
+00:21:19,780 --> 00:21:21,220
+So, what are its three main advantages?
+
+608
+00:21:21,220 --> 00:21:22,860
+First, it introduced the concept of momentum, right?
+
+609
+00:21:22,860 --> 00:21:24,800
+And it can also reference past gradients.
+
+610
+00:21:24,800 --> 00:21:26,040
+And the updates become much smoother.
+
+611
+00:21:26,040 --> 00:21:27,160
+and it's less likely to get stuck.
+
+612
+00:21:27,160 --> 00:21:28,340
+oscillations.
+
+613
+00:21:28,340 --> 00:21:30,580
+Second, I also want to apply this to each individual parameter.
+
+614
+00:21:30,580 --> 00:21:33,480
+In this case, we're still using a single learning rate for all the parameters.
+
+615
+00:21:33,480 --> 00:21:35,660
+So now, I'm going to do something similar to RMSprop.
+
+616
+00:21:35,660 --> 00:21:37,320
+for all the parameters.
+
+617
+00:21:37,320 --> 00:21:40,080
+assign its own learning rate to each parameter.
+
+618
+00:21:40,080 --> 00:21:42,880
+So, it basically combines the strengths of both.
+
+619
+00:21:42,880 --> 00:21:44,570
+So you could say it's incredibly versatile.
+
+620
+00:21:44,570 --> 00:21:46,730
+And for a very long time, it was pretty much the go-to choice.
+
+621
+00:21:46,730 --> 00:21:49,490
+It became the default optimizer for pretty much all developers.
+
+622
+00:21:49,490 --> 00:21:54,720
+But as people dug deeper, they found that the idea behind Adam was exceptionally good.
+
+623
+00:21:54,720 --> 00:21:56,740
+But in reality, it had a hidden bug.
+
+624
+00:21:56,740 --> 00:21:59,080
+This is actually an issue with weight decay.
+
+625
+00:21:59,080 --> 00:22:01,740
+So, in the traditional stochastic gradient descent,
+
+626
+00:22:01,740 --> 00:22:03,320
+that is, the decay of the weights.
+
+627
+00:22:03,320 --> 00:22:05,080
+So, as the weights get smaller and smaller,
+
+628
+00:22:05,080 --> 00:22:07,640
+In fact, it's pretty much equivalent to L2 regularization.
+
+629
+00:22:07,640 --> 00:22:09,780
+So, in the early days, we had Adam.
+
+630
+00:22:09,780 --> 00:22:12,620
+It also adds this L2 term to the gradient.
+
+631
+00:22:12,620 --> 00:22:14,220
+But then, people started to run into a problem.
+
+632
+00:22:14,220 --> 00:22:18,800
+The thing is, what this does is, it takes the regularization signal, which is supposed to be stable, right?
+
+633
+00:22:18,800 --> 00:22:20,500
+The regularization signal itself should be stable.
+
+634
+00:22:20,500 --> 00:22:23,100
+But what ended up happening was, it got scaled down along with everything else by the adaptive mechanism.
+
+635
+00:22:23,100 --> 00:22:27,220
+This means the effect of regularization is being distorted from its original purpose by the adaptive mechanism.
+
+636
+00:22:27,220 --> 00:22:28,220
+You can't do that.
+
+637
+00:22:28,220 --> 00:22:32,740
+So basically, you can just think of it as a bug in how it handles the weights.
+
+638
+00:22:32,740 --> 00:22:34,380
+This would cause the regularization to fail.
+
+639
+00:22:34,380 --> 00:22:37,980
+So then, in 2017, Ilya Sutskever came up with a proposal.
+
+640
+00:22:37,980 --> 00:22:40,740
+And the 'W' in AdamW? Well, that stands for 'weight'.
+
+641
+00:22:40,740 --> 00:22:45,010
+Essentially, it just decouples the gradient update from the weight decay.
+
+642
+00:22:45,010 --> 00:22:47,420
+So, the general formula would look something like this.
+
+643
+00:22:47,420 --> 00:22:49,580
+But this actually introduces yet another hyperparameter.
+
+644
+00:22:49,580 --> 00:22:52,840
+But the thing is, it solves the problem with Adam.
+
+645
+00:22:52,840 --> 00:22:55,480
+So, it might seem like a very, very small improvement.
+
+646
+00:22:55,480 --> 00:22:56,840
+But in the case of Transformers,
+
+647
+00:22:56,840 --> 00:22:57,520
+BERT,
+
+648
+00:22:57,520 --> 00:22:59,000
+and large language models like ViT,
+
+649
+00:22:59,000 --> 00:23:00,800
+It's pretty much the de facto standard.
+
+650
+00:23:00,800 --> 00:23:03,240
+The vast majority of models we see today,
+
+651
+00:23:03,240 --> 00:23:04,570
+They all use it at their core.
+
+652
+00:23:04,570 --> 00:23:06,470
+And we're not at the grand finale yet.
+
+653
+00:23:06,470 --> 00:23:09,250
+And then, more recently, around 2024, right?
+
+654
+00:23:09,250 --> 00:23:11,940
+And then, people started to discover some new angles to tackle this problem.
+
+655
+00:23:11,940 --> 00:23:13,420
+And that's where MIR comes in.
+
+656
+00:23:13,420 --> 00:23:15,120
+So, what's its core idea?
+
+657
+00:23:15,120 --> 00:23:16,360
+Basically, it's built on top of momentum.
+
+658
+00:23:16,360 --> 00:23:20,000
+The core idea is to treat the parameters as a two-dimensional matrix.
+
+659
+00:23:20,000 --> 00:23:21,100
+and perform an orthogonal correction.
+
+660
+00:23:21,100 --> 00:23:23,830
+It flattens out some of the singular values before taking another step.
+
+661
+00:23:23,830 --> 00:23:25,430
+I know, that sounds super complicated, right?
+
+662
+00:23:25,430 --> 00:23:28,350
+So, to put it simply, when it updates the parameters like this...
+
+663
+00:23:28,350 --> 00:23:30,290
+the updates will all be in the same direction.
+
+664
+00:23:30,290 --> 00:23:33,410
+This prevents it from moving off in a bunch of random directions.
+
+665
+00:23:33,410 --> 00:23:36,460
+So, to put it simply, it's just really, really effective.
+
+666
+00:23:36,460 --> 00:23:37,580
+For matrix-type data,
+
+667
+00:23:37,580 --> 00:23:39,060
+But for biases, it's not really used.
+
+668
+00:23:39,060 --> 00:23:41,690
+So, speaking of which, we also know about KIMI later on.
+
+669
+00:23:41,690 --> 00:23:43,390
+In fact, KIMI also uses it.
+
+670
+00:23:43,390 --> 00:23:46,760
+In fact, its efficiency is much higher than what you'd get with IMMW.
+
+671
+00:23:46,760 --> 00:23:49,080
+So, when it comes to training the next generation of large models,
+
+672
+00:23:49,080 --> 00:23:51,020
+Especially in all sorts of open-source models.
+
+673
+00:23:51,020 --> 00:23:53,590
+In fact, it's still used quite a lot.
+
+674
+00:23:53,750 --> 00:23:56,070
+So, this is pretty much the latest and greatest optimizer out there.
+
+675
+00:23:56,070 --> 00:23:56,830
+So, to sum it all up,
+
+676
+00:23:56,830 --> 00:23:57,850
+Our optimization journey,
+
+677
+00:23:57,850 --> 00:24:03,190
+The driving force behind every single one of these advancements is really the same question: how can we make parameter updates faster and more stable?
+
+678
+00:24:03,190 --> 00:24:06,190
+So, we'll start with the very original method: batch gradient descent.
+
+679
+00:24:06,190 --> 00:24:08,710
+This established the fundamental conceptual framework.
+
+680
+00:24:08,710 --> 00:24:12,530
+Basically, all the subsequent developments have been built upon this foundational idea.
+
+681
+00:24:12,530 --> 00:24:13,770
+And then, we introduced stochasticity.
+
+682
+00:24:13,770 --> 00:24:15,850
+So, 'stochastic' just means it uses a single sample.
+
+683
+00:24:15,850 --> 00:24:17,490
+Now, this method is certainly faster, no doubt about it.
+
+684
+00:24:17,490 --> 00:24:19,159
+But the problem is, it's way too noisy.
+
+685
+00:24:19,159 --> 00:24:20,959
+So, we compromise with a mini-batch.
+
+686
+00:24:20,959 --> 00:24:21,759
+So, instead of using just one,
+
+687
+00:24:21,759 --> 00:24:22,599
+Let's use 32.
+
+688
+00:24:22,599 --> 00:24:24,030
+or maybe 64 samples?
+
+689
+00:24:24,030 --> 00:24:25,510
+This one is incredibly efficient.
+
+690
+00:24:25,510 --> 00:24:26,870
+It's pretty much the default choice now.
+
+691
+00:24:26,870 --> 00:24:29,860
+Then, we introduced another concept: momentum.
+
+692
+00:24:29,860 --> 00:24:33,120
+This gives it some inertia to power through plateaus and small local minima.
+
+693
+00:24:33,120 --> 00:24:34,620
+Then, later on, other researchers came along.
+
+694
+00:24:34,620 --> 00:24:37,720
+The idea was that using a single learning rate for all the parameters wasn't a good fit.
+
+695
+00:24:37,720 --> 00:24:40,170
+And so, this is where adaptive learning rates come into play.
+
+696
+00:24:40,170 --> 00:24:44,370
+However, it had some minor issues that would cause the learning rate to decay to zero.
+
+697
+00:24:44,370 --> 00:24:47,130
+So, to optimize it, RMSprop was introduced.
+
+698
+00:24:47,130 --> 00:24:49,100
+This way, the learning rate won't drop to zero.
+
+699
+00:24:49,100 --> 00:24:53,580
+Then came ADAM, which combined these optimizations for both momentum and the learning rate.
+
+700
+00:24:55,040 --> 00:24:56,960
+And then came this one, which was incredibly effective.
+
+701
+00:24:56,960 --> 00:25:02,070
+So, AdamW, well, it's basically a fix for the weight decay issue in the original Adam.
+
+702
+00:25:02,070 --> 00:25:03,910
+and became the de facto standard.
+
+703
+00:25:03,910 --> 00:25:06,390
+And then, starting from 2024,
+
+704
+00:25:06,390 --> 00:25:10,900
+So, MIR works by considering the update direction as orthogonal to the weight matrix.
+
+705
+00:25:10,900 --> 00:25:12,880
+This makes the update direction more stable.
+
+706
+00:25:12,880 --> 00:25:16,330
+So, we're seeing it being used more and more in 2024.
+
+707
+00:25:16,330 --> 00:25:18,850
+So, this is basically how you use an optimizer.
+
+708
+00:25:18,850 --> 00:25:23,020
+So, in our day-to-day work with all sorts of machine learning tasks,
+
+709
+00:25:23,020 --> 00:25:24,620
+In fact, this one is the most widely used.
+
+710
+00:25:24,620 --> 00:25:27,060
+And another one that's actually used quite a lot is Adam.
+
+711
+00:25:27,060 --> 00:25:29,880
+But in reality, different fields will have different preferences.
+
+712
+00:25:29,880 --> 00:25:31,920
+It's not like there's a single, definitive answer.
+
+713
+00:25:31,920 --> 00:25:33,500
+For instance, in many computer vision tasks,
+
+714
+00:25:33,500 --> 00:25:35,560
+particularly on convolutional neural networks.
+
+715
+00:25:35,560 --> 00:25:37,650
+SGD, in combination with momentum,
+
+716
+00:25:37,650 --> 00:25:40,330
+But if we manage to tune the learning rate really well,
+
+717
+00:25:40,330 --> 00:25:43,010
+its final accuracy can often still be optimized.
+
+718
+00:25:43,010 --> 00:25:44,510
+it can even outperform Adam.
+
+719
+00:25:44,510 --> 00:25:47,730
+For a long time, the go-to choice for large NLP models has been AdamW.
+
+720
+00:25:47,730 --> 00:25:50,699
+But now, in 2024, Muon is making a comeback.
+
+721
+00:25:50,699 --> 00:25:53,339
+So, when we're doing some quick experiments and prototyping,
+
+722
+00:25:53,339 --> 00:25:54,599
+ADAM is the fastest of the fast.
+
+723
+00:25:54,599 --> 00:25:57,270
+You can often get a pretty good baseline just by using it.
+
+724
+00:25:57,270 --> 00:26:00,680
+In cases with sparse data, or during short online cycles,
+
+725
+00:26:00,680 --> 00:26:03,540
+So, the adaptive learning rate is still a really useful method.
+
+726
+00:26:03,540 --> 00:26:07,590
+So, for things like ad CTR prediction, these traditional LP methods also have some real-world value.
+
+727
+00:26:07,590 --> 00:26:11,070
+So, that's basically how gradient descent works.
+
+728
+00:26:11,070 --> 00:26:13,980
+So, using gradient descent is really just one way of thinking about the problem.
+
+729
+00:26:13,980 --> 00:26:15,860
+But in our actual practice,
+
+730
+00:26:15,860 --> 00:26:17,380
+we'll use all sorts of different optimizers.
+
+731
+00:26:17,380 --> 00:26:18,790
+to make it more efficient.
+
+732
+00:26:18,790 --> 00:26:22,290
+But throughout this process, we've repeatedly mentioned the learning rate.
+
+733
+00:26:22,290 --> 00:26:24,500
+This is an extremely sensitive hyperparameter.
+
+734
+00:26:24,500 --> 00:26:30,560
+Whether it's set correctly or not has a huge impact on the success of our training.
+
+735
+00:26:30,560 --> 00:26:35,370
+So, in the next video, we'll dive into how to actually set the learning rate.
+
+736
+00:26:35,370 --> 00:26:37,370
+And how do we schedule the learning rate?
+
+737
+00:26:37,370 --> 00:26:39,120
+Okay, that's all for this video.

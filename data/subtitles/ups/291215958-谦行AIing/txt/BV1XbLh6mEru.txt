@@ -1,0 +1,737 @@
+Let's dive into gradient descent and optimizers.
+Let's find out how a neural network finds a good set of parameters.
+So, the essence of training a neural network is really just about finding a good set of parameters.
+In the last video, we introduced the concept of activation functions.
+By introducing non-linearity,
+This gives neural networks the ability to approximate any function.
+But having that ability doesn't mean you have the answer just yet.
+a model with hundreds of millions of parameters,
+But to actually make it do something useful,
+you first have to figure out the value for each of these hundreds of millions of parameters.
+But what should those values actually be?
+So, what about gradient descent?
+And that's exactly what's going to help us solve this problem.
+So, let's first take a look at the process of training a neural network.
+Let's get a sense of where gradient descent fits into this process.
+so that we can better understand it.
+So, let's get into what we're going to cover next.
+So, first, we need to initialize the parameters.
+This can be done either randomly or using a tool for parameter initialization.
+So, once we have these parameters,
+Then, we use these parameters to perform forward propagation on our training data.
+to calculate a value and make a prediction.
+And we measure this prediction using something called a loss function.
+What's the difference between the value we predicted and the actual label from the data?
+With this difference,
+and we call this the loss.
+So, with this loss value,
+we can start backpropagation.
+This involves calculating the derivative for each layer.
+And the vector composed of these calculated values is what we call the gradient.
+So, once we have this,
+we can then use this method of gradient descent to update our parameters.
+This brings the parameters a little closer to their true values.
+So, what does it mean to get closer to the true value?
+Basically, it's just about making some fine-tuning adjustments to its parameters.
+So, after this fine-tuning,
+And we repeat this process.
+and then we keep performing forward propagation with the new parameters.
+calculate the loss,
+and backpropagate to update them.
+And we just keep repeating this cycle.
+until the loss is close to zero.
+Or, we've reached the maximum number of training epochs.
+and then we stop.
+Alright, so training is essentially a minimization problem.
+So, what are we trying to minimize?
+In other words, it's about minimizing the loss function.
+And the corresponding theta is just a collection of all our parameters.
+So, we use the loss function to measure how far off our predictions are from the actual values, right?
+The smaller that difference is,
+the more accurate our parameters are.
+Sounds a lot like a math problem from high school, doesn't it?
+You take the derivative and set it equal to zero.
+and then just solve for it.
+But modern large models can easily have tens of billions of parameters.
+hundreds of billions of parameters.
+So, we'd end up with a system of equations that has tens or even hundreds of billions of variables.
+It has no analytical solution.
+Since we can't solve it directly,
+There's no way to solve it in a single step.
+So, we'll just have to calculate it step by step.
+Letting it get a little closer each time.
+the loss gets smaller and smaller.
+And gradually, the set of parameters we land on can be considered the optimal solution.
+And that's gradient descent.
+So, what's the intuition behind gradient descent?
+And this is probably the most common example you'll see in all sorts of tutorials online.
+It's like trying to get down a mountain with your eyes closed.
+Picture yourself on a mountain.
+So, how do I get to the valley?
+So, if your eyes are blindfolded,
+I wouldn't know which way to go.
+The only way I can tell is by feeling the slope with my feet.
+I'll take a small step forward.
+to see if I'm currently going uphill or downhill.
+I'll just take another step forward.
+What if I'm going uphill?
+I'll just head in the opposite direction.
+I can, I can stick my foot out, right?
+I keep testing the ground.
+to see which way is the steepest.
+Basically, I want to take the steepest path in the opposite direction.
+And we just keep repeating this cycle.
+We take it one small step at a time, feeling our way down.
+And gradually, we'll find our way down the mountain.
+In fact, this process is very similar to gradient descent.
+So, during the gradient descent process,
+We have to keep using the derivative.
+So, let's do a quick recap for everyone.
+So, the derivative is basically the instantaneous rate of change of a function.
+Let's take the simplest example: a parabola, f(x) equals x squared.
+Its derivative is 2X, and its value will change depending on where you are on the curve.
+In fact, the tangent line of the derivative has a specific direction.
+So, as we can see,
+At the point where x equals three,
+the derivative is six.
+So, what does that actually mean?
+So it's a tangent line pointing to the left, right?
+Basically, the further you move to the left on the X-axis,
+the larger the Y-value will be.
+If you take a small step,
+Let's say you move by 0.01.
+So, what would the corresponding Y value be greater than?
+Is it six?
+it will increase by 0.06.
+So, for example, when it's equal to two,
+When X equals two,
+So the slope is actually four.
+So, what that means is, you take a small step to the right.
+So, is it pointing to the right?
+if you take a small step to the right,
+So, let's say it moves by 0.01.
+the value of the function will increase by 0.04.
+And when it's equal to zero,
+Now, this is something you all really need to pay attention to.
+We'll get to point N in a bit.
+Or, to put it another way, when we talk about gradients vanishing, this is what we're referring to.
+So, when the gradient we calculate, which is the slope, gets close to zero...
+So why is that a disaster?
+Actually, this concept applies regardless of whether the calculated value is positive or negative.
+We know how to make the update.
+Should we go left or right?
+whether it will make it larger or smaller.
+So basically, you just move in the direction of the derivative.
+it will get larger.
+But what if we go in the opposite direction of the derivative?
+it will get smaller.
+But what if it's equal to zero?
+So what does that mean?
+move to the left,
+or to the right.
+the function won't change at all.
+So, what happens when the gradient is equal to zero?
+we won't know which way the gradient should go next.
+This situation can make our calculations extremely difficult.
+So, when we're performing gradient descent,
+We need to avoid a derivative value of zero.
+So, what if we extend this from two dimensions to multiple dimensions?
+So basically, this happens when we have multiple variables in our loss function.
+So, we have X1 through XN. What we'll do is take the partial derivative with respect to each of these variables.
+Together, they form a vector.
+And this vector is what we call the gradient.
+It has a direction.
+It represents the direction of the steepest ascent at the current point, theta.
+So, that's what a gradient is.
+So, what if we want to reduce the overall loss?
+We just take the negative of it.
+and take a small step in the opposite direction.
+This is the direction of the steepest descent.
+So, what exactly is the workflow for gradient descent?
+For example, let's say we're at the seventh step.
+So, we know we have a matrix of parameters.
+We just want to make it smaller.
+to make the overall loss a little smaller.
+So, I'll subtract this... this is the gradient, right?
+multiplied by a learning rate.
+We'll have it take a tiny step forward, in the opposite direction of the gradient.
+We can't take too big of a step.
+This prevents us from going in the wrong direction.
+By taking small steps, I can gradually get closer to the solution.
+Alright, let's look at a quick example.
+For example, when X, or X0, is equal to four.
+This is actually the point we're trying to find.
+So, this is actually the point where the loss is at.
+But of course, what we're trying to do is get it to zero, right?
+When we get to the point where the loss is zero,
+So, how do we get it to zero, step by step?
+For example, let's say the learning rate is 0.1.
+So, when the value is four,
+So, let's see, the value we get is 16.
+So when we plug in four,
+And the derivative of that is eight.
+So each time, we have it subtract 8 times 0.1.
+So that's 0.8.
+So, that's it for this step. Now, we move on to the next one.
+So in this step, we're going to multiply its value by 0.1 again.
+And as you keep doing this, you'll notice that...
+And as a result, our Y value will get smaller and smaller.
+getting smaller and smaller.
+Until, well, this is actually the loss value, right?
+until it approaches zero.
+getting infinitely close to zero.
+and we can consider the current parameters to be good enough.
+So, in this simple example,
+We can also make three observations here.
+The slower it moves.
+Right?
+See how big the steps are at the beginning.
+In other words, the change in our loss is actually getting smaller and smaller.
+This means the change in our loss is getting smaller and smaller.
+So, you can think of it as having a built-in brake.
+Another thing is that it's monotonically decreasing.
+Each step gets us closer to zero than the last.
+And it just keeps getting closer and closer.
+But it's very difficult to actually reach zero.
+So, the point isn't to get an exact value of zero.
+Getting close enough is good enough.
+In a real neural network,
+And the process is actually the same.
+Of course, let's just briefly touch on this.
+Now, the learning rate is actually a very sensitive hyperparameter throughout the entire training process.
+So, why do we pick 0.1?
+or 0.01 is a common choice in practice.
+The problem with this is that if the learning rate is too large, it can cause the model to oscillate.
+or even diverge.
+If it's too small, the learning process will be too slow.
+So, we'll also cover how to tune the learning rate in a separate video later on.
+Of course, in the upcoming sections,
+Now, some of our optimizers actually handle the learning rate adjustment themselves, based on the principles of gradient descent.
+And that's pretty much how it works.
+So, with the knowledge we have so far,
+and you can implement a neural network on your own.
+But when it comes to actually training a neural network,
+But we generally don't do it this way.
+Because, in reality, this approach is a bit inefficient.
+Now, this formula might look incredibly simple,
+But in a real-world scenario,
+The first question is, how many samples' gradients are we using?
+You're only training on a single sample each time.
+and that gives us a gradient.
+So, how many parameters are you updating at once?
+So, should you use all the samples?
+And then, where do we go from there?
+Imagine you're in a narrow, elongated valley.
+So, what about your next step?
+it might seem like the right move for now is to go down.
+But in reality, overall,
+This isn't because you're heading in the optimal direction.
+If you're in a canyon like this, you can get to this side in just one step.
+You'll find you still have to take a step in this direction.
+and then you have to move back this way.
+It keeps oscillating back and forth.
+So, how can we avoid this?
+And another thing is, how should the learning rate be distributed?
+Should it automatically adjust, and so on.
+So, there are all sorts of issues that come up.
+So, the optimizers we're going to talk about next...
+essentially, they are here to help us solve these very problems.
+to make the gradient change in the most optimal way in real-time.
+First, let's start with the most basic form, which is the principle we just discussed.
+And this is what we call a 'batch'.
+gradient descent.
+And 'batch' just means a batch of data, right?
+We use the entire dataset every single time.
+So, after I've done the calculation,
+and that means we've trained on the entire dataset.
+Now, doing it this way actually has its benefits.
+So, I just take the average of it, right?
+So, we just use the average of its gradients.
+Actually, this all started way back in 1847.
+The French mathematician Cauchy, uh, while he was studying the orbits of comets,
+And that's basically how he did it.
+So basically, what do you do when there's no analytical solution?
+You just get closer and closer, step by step.
+This was actually a very, very advanced idea for its time.
+So, when we want to update the parameters in gradient descent,
+the model has to go through the entire dataset to complete one training cycle.
+and then perform an update using the averaged gradient.
+So, by now, you've probably figured out its pros and cons.
+So, the advantage is that we're actually using all of the data.
+virtually
+So, you could say the training process is a very accurate reflection of the real data.
+But the downside is, the training cost is just too high.
+You have to run through the entire dataset just to calculate a single gradient.
+It just takes way too long.
+Plus, it lacks randomness.
+it gets stuck in a saddle point or a region with a small gradient.
+so there's no noise to jolt it out of there.
+and that helps it get out of there.
+This is actually what I was explaining to you all earlier when we were talking about functions.
+If it reaches a point where the calculation results in zero,
+when it's obviously not at the lowest point yet.
+but when its gradient is about to hit zero,
+So, in a situation like this, we're pretty much talking about gradient descent, right?
+we multiply the learning rate by the gradient,
+And no matter how small the learning rate is,
+no matter what the learning rate is,
+When the gradient is zero,
+What you're subtracting is the value of the parameter.
+But the amount you're subtracting is always zero.
+If it's in a region that's completely flat,
+So when it gets to a place like this,
+it won't continue to go down any further.
+it won't be able to find the lowest point, relatively speaking.
+and it'll just get stuck in certain spots.
+It thinks it has found a low point,
+In reality, this is just a local minimum.
+but not the lowest point overall.
+This approach just won't work.
+And this is basically the formula we saw at the very beginning.
+So, what happens when the gradient is zero?
+In fact, the parameter itself is the same at time T+1 as it was at time T.
+it stops changing.
+So, how do we avoid this?
+So, to address this, we introduce Stochastic Gradient Descent.
+Each time, I just use a single random sample to update the gradient.
+And actually, this approach is grounded in some real-world principles.
+I just have to keep doing this over and over again.
+and keep on adjusting it,
+and in the long run, it will converge to the true solution.
+So, here's the general formula.
+So, you can see that this part here, what was it in the previous formula?
+Now, you don't need to get too bogged down in the details of this formula.
+Just having a general idea of the principle is enough.
+So, after we've calculated all the losses,
+and take the average.
+So, what's the situation now?
+We just randomly pick one from the numbers one to N.
+And we just use the one we picked.
+And its pros and cons are also very clear.
+The upside is that it's incredibly efficient.
+Right?
+And since you're just randomly picking one,
+It's inherently noisy.
+It might even help us during the training process,
+Let's break out of the saddle point.
+But the downside is that it's just too inaccurate.
+The thing is,
+So, during the training process, you'll find that the loss fluctuates wildly.
+So, it all comes down to how lucky you get with your random sampling.
+And on top of that, if you're just unlucky,
+and you happen to pick an outlier.
+it's actually an outlier.
+this outlier data will take our gradient and...
+and pulls our entire set of parameters in a really weird direction.
+We'd have to train it many times just to pull it back.
+But sometimes, this can actually make things less efficient.
+But in reality, this approach actually makes a lot of sense.
+It's just that every time, we only draw one sample.
+But it did come with some pretty significant issues.
+But it did inspire the optimizers that came after it.
+So, what's the optimizer that came after that?
+Mini-batch Stochastic Gradient Descent.
+So, for mini-batch... well, the first one we have is batch gradient descent.
+The second one is Stochastic Gradient Descent.
+And the third one? It's a combination of the two.
+So, it's stochastic, but we're just taking a small, random batch.
+Doing it all at once is too aggressive,
+But using the entire batch is way too slow.
+So, I'll just find a middle ground.
+So, each time, we randomly sample a batch—say, 32 or 128 samples.
+So, we just take a portion each time.
+This way, it combines the benefits of both approaches,
+and the drawbacks were balanced out.
+And the computation is also significantly faster.
+Makes sense, right?
+Plus, the oscillations aren't as severe anymore.
+And at the same time, because it's also stochastic,
+So, it still maintains a certain degree of randomness.
+So, as you can see, it's actually incredibly useful in many ways.
+So, nowadays, a lot of the time...
+So, when we talk about SGD, or Stochastic Gradient Descent,
+In practice, we're no longer talking about just randomly picking a single sample.
+So, even if we don't have 'mini-batch' in front of it,
+Mini-batch.
+This also refers to mini-batch stochastic gradient descent.
+It strikes a remarkably good balance between statistical efficiency and computational efficiency.
+So, when we talk about SGD,
+By default, the 'S' in SGD actually refers to mini-batch SGD.
+Now, even though mini-batch SGD is already quite good,
+But of course, brilliant minds were still constantly researching and pushing the boundaries in this field.
+In 1964,
+So, when Soviet mathematicians were studying the convergence speed of iterative methods,
+and proposed a method called Momentum.
+The core idea is that you shouldn't just look at the gradient of the current step.
+Instead, you also need to factor in the momentum from the past few steps.
+When the directions are aligned,
+the update gets continuously reinforced.
+This way, those oscillating updates are gradually neutralized.
+Let's take a look at an example of an iron ball rolling down a mountain.
+Now, the plain vanilla gradient descent we started with...
+So, for each small section it goes down,
+it has to stop and calculate the current gradient.
+and then take another small step.
+So it stops right here.
+and it finds that the gradient is zero.
+Because this area is flat, right?
+It might just stop moving downwards.
+It can't be optimized any further.
+It figures that going left would also be zero.
+and going right is also zero.
+Alright then.
+This must be the lowest point then.
+I'm not moving.
+But in reality, if you take just one more step forward...
+there's actually a lower point.
+But in the real, physical world,
+Imagine a small ball rolling down a mountain.
+But that's not actually how it works.
+until it reaches a flat area.
+It will keep moving forward.
+Why is that?
+Because as it was going down the slope earlier,
+It has a certain amount of inertia.
+When it encounters some small
+or even over some small bumps,
+so it won't get stuck oscillating back and forth here.
+and it'll use that inertia to break right through.
+It won't veer off to the left,
+and then to the right.
+Because it has this momentum,
+This will keep it moving straight forward.
+and it just pushes right through.
+So basically, what this means is that gradient descent doesn't just consider your current gradient.
+but also the gradients from previous steps.
+If they're in the same direction,
+I need to factor that in as well.
+This way, it keeps pushing forward.
+so the updates are much faster.
+So, the formula for this would basically look something like this.
+So, what are the benefits of this?
+If the gradient directions in several consecutive steps of gradient descent are all very similar,
+In fact, it also dampens this kind of left-right oscillation.
+So, why is that?
+Because it'll go left for a bit,
+and then to the right,
+But, because you're adding in the historical information,
+the leftward and rightward movements will cancel each other out.
+In reality, it will form a straight line going downwards like this.
+For this kind of narrow, elongated valley,
+So, if it actually has momentum,
+the updates will be incredibly fast.
+And, like we just mentioned,
+It also makes it easier to get past some saddle points.
+or some flat regions.
+or some small, local minima.
+Even if the instantaneous speed at that moment is close to zero,
+But because I have that momentum built up from before,
+I can still power through.
+And that's the benefit of using momentum.
+But, of course, this inertia is a double-edged sword.
+But it might also overshoot.
+It just keeps going right past it because of that inertia.
+This can also cause it to oscillate around the optimal point.
+But that's still acceptable.
+Plus, it introduces an additional hyperparameter.
+Now, to be fair, any hyperparameter is going to be somewhat sensitive.
+Values that are too small or too large just won't work well.
+Now, in most practical applications,
+And 0.9 is a pretty good number to go with.
+So, that's why in almost all subsequent Stochastic Gradient Descent training sessions,
+it will come with some momentum by default.
+And by default, it also passes a momentum value to us, which is set to...
+So basically, this is what everyone is using now.
+And for all subsequent large-scale training,
+The core idea is mini-batch SGD plus momentum.
+Okay, sounds like we've reached the grand finale, right?
+That's good enough, right?
+Right?
+But, there's always a bigger fish.
+And then, in 2011,
+But then, some researchers started to notice something.
+You see, you have different parameters.
+and they actually represent different features.
+So you're updating all of them with the exact same learning rate.
+all set to 0.1.
+Doesn't that seem a bit too simple and crude?
+For example, in NLP, which is, you know, Natural Language Processing...
+We know that the word 'the' appears with a very high frequency in any given text.
+So, during training,
+Each batch will have its corresponding parameters.
+the gradient will be very large.
+This makes the updates actually quite thorough.
+But for a word like this, you might not even recognize it.
+so the gradient will be huge,
+In fact, its frequency of occurrence is extremely low.
+It only shows up a handful of times during the entire training process.
+the gradient will be extremely small.
+So, what if we use the same learning rate for low-frequency words?
+It's pretty much impossible to train.
+Because its gradient is almost always zero.
+Only when it does appear will there be some minor changes.
+The update frequency is just way too low.
+So, the idea is to have an adaptive way to adjust the effective learning rate for this parameter.
+In other words, each parameter maintains its own learning rate independently.
+It's not shared with any other parameters.
+So I keep track of it myself, right?
+In this case, my own frequency of updates is relatively low.
+So, I'll just set the learning rate to be relatively large.
+so I can take a big step each time.
+I'm updating my parameters more frequently.
+So, I'll just set the learning rate to be pretty small.
+taking just one small step at a time.
+This is to prevent it from overshooting.
+So, what is this? It's an adaptive gradient.
+So, the formula for it looks something like this.
+In other words, it adds the square of the gradient from each step.
+And this small value we're adding here is to prevent the denominator from being zero.
+and then divide that by the learning rate.
+Basically, it's taking its past gradients into account.
+Of course, when we're updating the parameters really frequently,
+the gradient will be larger.
+So, we'll end up with a larger gradient.
+This way, the learning rate becomes smaller.
+Right?
+Because the denominator gets bigger, right?
+So, when our gradient is relatively small,
+So, when the updates aren't happening very often,
+In that case, the denominator would be smaller.
+the learning rate will increase.
+This lets it update more quickly.
+So, this is essentially what we call an adaptive learning rate.
+And this, in turn, influenced a whole lot of what came after.
+But it does have its drawbacks.
+Now, this might sound great,
+The biggest problem is that the learning rate monotonically decays to zero.
+And why is that? Well, let's take a look at the formula.
+This value is always positive.
+This way, your learning rate will eventually be driven towards zero.
+And that's actually not a good thing.
+And that, right there, is its biggest problem.
+But it does have some advantages, though.
+Basically, it means you don't have to manually tune the learning rate anymore.
+And its adaptive nature also makes it particularly well-suited for sparse data.
+Because it can adjust itself, right?
+But its major problem is, what if the training isn't even finished yet?
+and the training just grinds to a halt.
+Gradually, the gradient itself will just... you know, the learning rate gets...
+Plus,
+But what happens is, you've basically set the learning rate to zero.
+And just like that, the training process grinds to a halt.
+And it was precisely this flaw that led to the development of the next method, RMSprop.
+And then there are others like ADAM.
+At their core, they're all trying to improve the same thing.
+and only keep the influence of recent gradients.
+And that was the first optimization for adaptive learning rates.
+And RMSprop... well, that was after AlexNet ignited the deep learning boom back in 2012.
+This led to the development of deeper and deeper networks.
+and training took longer and longer.
+So basically, with these adaptive gradient methods, we just couldn't make progress with the training anymore.
+This would cause the learning rate to shrink to zero.
+So, here's an idea for an improvement.
+And that's actually the problem with RMSprop.
+The idea behind it is very simple.
+Instead of summing up the squares of all the gradients from the entire training process,
+Because that would just make the denominator larger and larger, right?
+the learning rate would eventually drop to zero.
+So, it doesn't use all of them anymore.
+Instead, it only uses the most recent ones, like the last ten updates, right?
+In this case, it stabilizes to a certain value.
+So, by using this one clever little trick,
+This solves the problem of the denominator getting infinitely large.
+and the problem of the learning rate shrinking to zero.
+And what's interesting is,
+Now, this optimization method is an old friend of ours.
+It was proposed by Hinton.
+But he didn't even write it up as a formal paper.
+Because he felt this improvement was just so logical.
+So he just mentioned it in an online course,
+After he wrote it down in his slides, it just took off and became the new standard.
+So, as a result, when people cited it, there was no proper paper to reference. This is how it ended up being cited.
+Right.
+In this section, we have this so-called 'COSER'...
+Just a single page from a lecture's PowerPoint.
+And just like that, the algorithm we just saw in the PPT became the new mainstream.
+Let's take a look at its formula.
+Now, this might look a lot more complicated than the last one.
+And that's really the biggest difference.
+So it's not the sum of all the squares, right?
+It's based on the most recent ones.
+So, what this does is, it prevents the learning rate from decaying all the way to zero.
+And on top of that, it also maintains its adaptability.
+So your recent gradients haven't plateaued either, right?
+And what about the previous ones?
+Right?
+And it's also particularly well-suited for non-stationary objectives.
+So, it's incredibly useful.
+However, it does have its limitations.
+First of all, it's just an adaptive learning rate.
+It doesn't take the gradient into account, right?
+For instance, which direction should it move in?
+It doesn't have that.
+So, this can also cause oscillations.
+And on top of that, there are these issues.
+Of course, it also adds another hyperparameter.
+So, despite these drawbacks,
+So, what it's actually doing is already happening during the training process.
+It became especially popular for things like RNNs.
+Especially when the loss landscape is quite rugged.
+It's incredibly effective.
+So, for a while, RMSprop became the go-to choice for training neural networks.
+the go-to choice.
+This was the case until ADAM appeared in 2015.
+So, what's the core idea behind ADAM?
+Then, around 2014 to 2015,
+By this point, two distinct schools of thought had clearly emerged in the field of deep learning optimization.
+One is the adaptive gradient approach.
+And then there's the other track, which is all about improving upon it, right?
+The idea is to let different parameters use different learning rates.
+Then there's another method, which is the momentum method, an idea that's been around since 1964.
+So, we just give it some momentum.
+Both of these methods are incredibly useful, by the way.
+So, since each has its own strengths,
+So, why not just combine them?
+And so, in 2014, it was born.
+ADAM is short for Adaptive Moment Estimation.
+Makes sense, right?
+I need both the direction,
+and I also need the step size.
+So, that's basically the ADAM formula, which, you know, is just a whole bunch of math.
+And then, it also applies some bias correction to it.
+So, it doesn't really matter what value you initialize it with at the very beginning.
+It can adapt to all of them.
+So, that's why the first step makes perfect sense.
+And that's why it became so popular.
+It's just incredibly, incredibly useful.
+So, what are its three main advantages?
+First, it introduced the concept of momentum, right?
+And it can also reference past gradients.
+And the updates become much smoother.
+and it's less likely to get stuck.
+oscillations.
+Second, I also want to apply this to each individual parameter.
+In this case, we're still using a single learning rate for all the parameters.
+So now, I'm going to do something similar to RMSprop.
+for all the parameters.
+assign its own learning rate to each parameter.
+So, it basically combines the strengths of both.
+So you could say it's incredibly versatile.
+And for a very long time, it was pretty much the go-to choice.
+It became the default optimizer for pretty much all developers.
+But as people dug deeper, they found that the idea behind Adam was exceptionally good.
+But in reality, it had a hidden bug.
+This is actually an issue with weight decay.
+So, in the traditional stochastic gradient descent,
+that is, the decay of the weights.
+So, as the weights get smaller and smaller,
+In fact, it's pretty much equivalent to L2 regularization.
+So, in the early days, we had Adam.
+It also adds this L2 term to the gradient.
+But then, people started to run into a problem.
+The thing is, what this does is, it takes the regularization signal, which is supposed to be stable, right?
+The regularization signal itself should be stable.
+But what ended up happening was, it got scaled down along with everything else by the adaptive mechanism.
+This means the effect of regularization is being distorted from its original purpose by the adaptive mechanism.
+You can't do that.
+So basically, you can just think of it as a bug in how it handles the weights.
+This would cause the regularization to fail.
+So then, in 2017, Ilya Sutskever came up with a proposal.
+And the 'W' in AdamW? Well, that stands for 'weight'.
+Essentially, it just decouples the gradient update from the weight decay.
+So, the general formula would look something like this.
+But this actually introduces yet another hyperparameter.
+But the thing is, it solves the problem with Adam.
+So, it might seem like a very, very small improvement.
+But in the case of Transformers,
+BERT,
+and large language models like ViT,
+It's pretty much the de facto standard.
+The vast majority of models we see today,
+They all use it at their core.
+And we're not at the grand finale yet.
+And then, more recently, around 2024, right?
+And then, people started to discover some new angles to tackle this problem.
+And that's where MIR comes in.
+So, what's its core idea?
+Basically, it's built on top of momentum.
+The core idea is to treat the parameters as a two-dimensional matrix.
+and perform an orthogonal correction.
+It flattens out some of the singular values before taking another step.
+I know, that sounds super complicated, right?
+So, to put it simply, when it updates the parameters like this...
+the updates will all be in the same direction.
+This prevents it from moving off in a bunch of random directions.
+So, to put it simply, it's just really, really effective.
+For matrix-type data,
+But for biases, it's not really used.
+So, speaking of which, we also know about KIMI later on.
+In fact, KIMI also uses it.
+In fact, its efficiency is much higher than what you'd get with IMMW.
+So, when it comes to training the next generation of large models,
+Especially in all sorts of open-source models.
+In fact, it's still used quite a lot.
+So, this is pretty much the latest and greatest optimizer out there.
+So, to sum it all up,
+Our optimization journey,
+The driving force behind every single one of these advancements is really the same question: how can we make parameter updates faster and more stable?
+So, we'll start with the very original method: batch gradient descent.
+This established the fundamental conceptual framework.
+Basically, all the subsequent developments have been built upon this foundational idea.
+And then, we introduced stochasticity.
+So, 'stochastic' just means it uses a single sample.
+Now, this method is certainly faster, no doubt about it.
+But the problem is, it's way too noisy.
+So, we compromise with a mini-batch.
+So, instead of using just one,
+Let's use 32.
+or maybe 64 samples?
+This one is incredibly efficient.
+It's pretty much the default choice now.
+Then, we introduced another concept: momentum.
+This gives it some inertia to power through plateaus and small local minima.
+Then, later on, other researchers came along.
+The idea was that using a single learning rate for all the parameters wasn't a good fit.
+And so, this is where adaptive learning rates come into play.
+However, it had some minor issues that would cause the learning rate to decay to zero.
+So, to optimize it, RMSprop was introduced.
+This way, the learning rate won't drop to zero.
+Then came ADAM, which combined these optimizations for both momentum and the learning rate.
+And then came this one, which was incredibly effective.
+So, AdamW, well, it's basically a fix for the weight decay issue in the original Adam.
+and became the de facto standard.
+And then, starting from 2024,
+So, MIR works by considering the update direction as orthogonal to the weight matrix.
+This makes the update direction more stable.
+So, we're seeing it being used more and more in 2024.
+So, this is basically how you use an optimizer.
+So, in our day-to-day work with all sorts of machine learning tasks,
+In fact, this one is the most widely used.
+And another one that's actually used quite a lot is Adam.
+But in reality, different fields will have different preferences.
+It's not like there's a single, definitive answer.
+For instance, in many computer vision tasks,
+particularly on convolutional neural networks.
+SGD, in combination with momentum,
+But if we manage to tune the learning rate really well,
+its final accuracy can often still be optimized.
+it can even outperform Adam.
+For a long time, the go-to choice for large NLP models has been AdamW.
+But now, in 2024, Muon is making a comeback.
+So, when we're doing some quick experiments and prototyping,
+ADAM is the fastest of the fast.
+You can often get a pretty good baseline just by using it.
+In cases with sparse data, or during short online cycles,
+So, the adaptive learning rate is still a really useful method.
+So, for things like ad CTR prediction, these traditional LP methods also have some real-world value.
+So, that's basically how gradient descent works.
+So, using gradient descent is really just one way of thinking about the problem.
+But in our actual practice,
+we'll use all sorts of different optimizers.
+to make it more efficient.
+But throughout this process, we've repeatedly mentioned the learning rate.
+This is an extremely sensitive hyperparameter.
+Whether it's set correctly or not has a huge impact on the success of our training.
+So, in the next video, we'll dive into how to actually set the learning rate.
+And how do we schedule the learning rate?
+Okay, that's all for this video.

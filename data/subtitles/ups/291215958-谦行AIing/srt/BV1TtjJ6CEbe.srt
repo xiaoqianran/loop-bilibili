@@ -1,0 +1,2659 @@
+1
+00:00:00,040 --> 00:00:02,140
+Over the past dozen or so lessons,
+
+2
+00:00:02,140 --> 00:00:05,109
+and have covered all sorts of fundamental concepts in neural networks.
+
+3
+00:00:05,109 --> 00:00:06,769
+We've basically mastered the ultimate weapon.
+
+4
+00:00:06,769 --> 00:00:08,389
+So, starting with this video,
+
+5
+00:00:08,389 --> 00:00:10,240
+we're going to start learning about
+
+6
+00:00:10,240 --> 00:00:13,120
+a framework specifically designed for computer vision tasks.
+
+7
+00:00:13,120 --> 00:00:13,800
+the CNN,
+
+8
+00:00:13,800 --> 00:00:16,310
+commonly known as Convolutional Neural Networks.
+
+9
+00:00:16,310 --> 00:00:19,110
+So first, let's talk about what computer vision tasks actually are.
+
+10
+00:00:19,110 --> 00:00:22,390
+So, computer vision is essentially about getting machines to understand images.
+
+11
+00:00:22,390 --> 00:00:23,590
+For us humans,
+
+12
+00:00:23,590 --> 00:00:26,110
+recognizing an image is a piece of cake.
+
+13
+00:00:26,110 --> 00:00:27,430
+But for a computer,
+
+14
+00:00:27,430 --> 00:00:29,430
+an image, in its essence, is just a collection of numbers.
+
+15
+00:00:29,430 --> 00:00:33,099
+Specifically, the RGB values corresponding to each pixel.
+
+16
+00:00:33,099 --> 00:00:35,159
+Now, what if we make some slight changes to the image?
+
+17
+00:00:35,159 --> 00:00:36,339
+For instance, if we change the angle,
+
+18
+00:00:36,339 --> 00:00:39,039
+adjust the lighting, or cover up a part of it.
+
+19
+00:00:39,039 --> 00:00:41,260
+To us, it doesn't look all that different.
+
+20
+00:00:41,260 --> 00:00:42,700
+So, it still seems pretty straightforward.
+
+21
+00:00:42,700 --> 00:00:44,060
+But for a computer,
+
+22
+00:00:44,060 --> 00:00:46,780
+the distribution of these pixels has changed dramatically.
+
+23
+00:00:46,780 --> 00:00:48,460
+it's no longer recognizable.
+
+24
+00:00:48,460 --> 00:00:51,100
+So, this really gets to the heart of the matter with CV, or Computer Vision.
+
+25
+00:00:51,100 --> 00:00:52,820
+is not about processing these pixels directly.
+
+26
+00:00:52,820 --> 00:00:57,170
+Instead, its core purpose is to extract meaningful information from that raw visual data.
+
+27
+00:00:57,170 --> 00:00:59,630
+to achieve an understanding similar to the human visual system.
+
+28
+00:00:59,630 --> 00:01:01,019
+judge and reason.
+
+29
+00:01:01,019 --> 00:01:04,299
+Its core tasks, some of the most common ones, include image classification.
+
+30
+00:01:04,299 --> 00:01:05,579
+Give us an image,
+
+31
+00:01:05,579 --> 00:01:08,850
+and ask us to figure out what the main subject in the picture is.
+
+32
+00:01:08,850 --> 00:01:11,130
+Then there's object detection, which, within an image,
+
+33
+00:01:11,130 --> 00:01:12,130
+like people, cars,
+
+34
+00:01:12,130 --> 00:01:13,600
+and traffic lights等各种目标标注出来。
+
+35
+00:01:13,600 --> 00:01:14,920
+And then there's image segmentation.
+
+36
+00:01:14,920 --> 00:01:17,520
+It separates the road, the sky, and the pedestrians pixel by pixel.
+
+37
+00:01:17,520 --> 00:01:18,420
+the detection of human faces,
+
+38
+00:01:18,420 --> 00:01:19,880
+This is something we use a lot.
+
+39
+00:01:19,880 --> 00:01:22,800
+OCR, or Optical Character Recognition, extracts text from images.
+
+40
+00:01:22,800 --> 00:01:24,480
+or even autonomous driving in cars.
+
+41
+00:01:24,480 --> 00:01:25,840
+and it's also used in image processing.
+
+42
+00:01:25,840 --> 00:01:27,320
+Here we have a picture of a cat.
+
+43
+00:01:27,320 --> 00:01:29,960
+So, what if we keep zooming in on this picture?
+
+44
+00:01:29,960 --> 00:01:32,920
+At first, you can still zoom in smoothly and continuously.
+
+45
+00:01:32,920 --> 00:01:35,600
+we'll start to see this kind of pixelated style.
+
+46
+00:01:35,600 --> 00:01:37,950
+or mosaic-like grid cells.
+
+47
+00:01:37,950 --> 00:01:41,590
+So, in reality, an image is just made up of a huge number of these tiny squares.
+
+48
+00:01:41,590 --> 00:01:44,000
+They are arranged one by one in a specific order.
+
+49
+00:01:44,000 --> 00:01:46,720
+And each of these small grids is actually a block of color.
+
+50
+00:01:46,720 --> 00:01:49,400
+And each one of these represents a color.
+
+51
+00:01:49,400 --> 00:01:51,980
+And we call this color block a pixel.
+
+52
+00:01:51,980 --> 00:01:55,220
+It stores the color information for that specific location in the image.
+
+53
+00:01:55,220 --> 00:01:58,460
+So, how do we actually represent this color?
+
+54
+00:01:58,460 --> 00:01:59,720
+Why is this color brown,
+
+55
+00:01:59,720 --> 00:02:00,950
+This is red,
+
+56
+00:02:00,950 --> 00:02:02,250
+This one's magenta or something like that.
+
+57
+00:02:02,250 --> 00:02:03,050
+So, how is this expressed?
+
+58
+00:02:03,050 --> 00:02:06,210
+We also often see that RGB corresponds to three numbers.
+
+59
+00:02:06,210 --> 00:02:07,820
+So, what are these?
+
+60
+00:02:07,820 --> 00:02:10,920
+So, let's take a look at how computers actually represent color.
+
+61
+00:02:10,920 --> 00:02:13,100
+In nature, there are countless colors.
+
+62
+00:02:13,100 --> 00:02:16,170
+But obviously, a computer can't just assign a unique code to every single possible color.
+
+63
+00:02:16,170 --> 00:02:19,070
+In reality, within a computer, color is defined by something called RGB.
+
+64
+00:02:19,070 --> 00:02:20,470
+—stands for Red, Green, and Blue.
+
+65
+00:02:20,470 --> 00:02:24,200
+These three primary colors are also known as the three primary colors.
+
+66
+00:02:24,200 --> 00:02:26,140
+By arranging and combining these three colors,
+
+67
+00:02:26,140 --> 00:02:29,000
+a vast array of colors can be produced.
+
+68
+00:02:29,160 --> 00:02:30,560
+Now, let's take a look at this diagram.
+
+69
+00:02:30,560 --> 00:02:31,460
+If it's just red light,
+
+70
+00:02:31,460 --> 00:02:32,500
+green light, and blue light.
+
+71
+00:02:32,500 --> 00:02:34,080
+and for this one, we adjust its brightness
+
+72
+00:02:34,080 --> 00:02:35,720
+That is, it ranges from 0 to 255.
+
+73
+00:02:38,870 --> 00:02:40,019
+This is a solid color.
+
+74
+00:02:40,019 --> 00:02:42,779
+So, what if we start to mix red and green?
+
+75
+00:02:42,779 --> 00:02:43,859
+it will actually create yellow.
+
+76
+00:02:43,859 --> 00:02:45,520
+And it's the same in the natural world.
+
+77
+00:02:45,520 --> 00:02:48,740
+Different combinations of these colors will produce new ones.
+
+78
+00:02:48,740 --> 00:02:51,630
+So, if we make all three colors fully bright,
+
+79
+00:02:51,630 --> 00:02:52,930
+all set to 255,
+
+80
+00:02:52,930 --> 00:02:54,350
+you get pure white.
+
+81
+00:02:54,350 --> 00:02:56,080
+It's kind of like how a rainbow works.
+
+82
+00:02:56,080 --> 00:02:58,200
+It's just breaking down the color white.
+
+83
+00:02:58,200 --> 00:02:59,620
+So this is how we put it back together.
+
+84
+00:02:59,620 --> 00:03:01,280
+If all three colors are dark,
+
+85
+00:03:01,280 --> 00:03:01,720
+and they're all zero
+
+86
+00:03:01,720 --> 00:03:02,320
+So what does that look like?
+
+87
+00:03:02,320 --> 00:03:03,600
+That would be pure black.
+
+88
+00:03:03,600 --> 00:03:07,240
+So, every color can be represented by these three RGB values.
+
+89
+00:03:07,240 --> 00:03:09,640
+And each of these numbers represents the brightness of its respective color channel.
+
+90
+00:03:09,640 --> 00:03:13,260
+And by combining values from 0 to 255, we can create all sorts of different colors.
+
+91
+00:03:13,460 --> 00:03:16,350
+For example, pure red would be 255,
+
+92
+00:03:16,350 --> 00:03:17,590
+And all the others are zero.
+
+93
+00:03:17,590 --> 00:03:20,210
+So for pure black, we just covered that it's zero.
+
+94
+00:03:20,210 --> 00:03:22,270
+and for black, it's all 255s.
+
+95
+00:03:22,270 --> 00:03:23,269
+that's white.
+
+96
+00:03:23,269 --> 00:03:25,549
+And if we look closely, we'll notice something.
+
+97
+00:03:25,549 --> 00:03:27,929
+Now, if the RGB values are all equal,
+
+98
+00:03:27,929 --> 00:03:29,229
+for example, all at 255,
+
+99
+00:03:29,229 --> 00:03:29,929
+or zero,
+
+100
+00:03:29,929 --> 00:03:32,670
+or maybe they're all 128, something like that.
+
+101
+00:03:32,670 --> 00:03:34,750
+So, you'll find that when these three color values are equal,
+
+102
+00:03:34,750 --> 00:03:36,210
+you'll get a shade of gray.
+
+103
+00:03:36,210 --> 00:03:37,190
+If all of them are zero,
+
+104
+00:03:37,190 --> 00:03:38,050
+then it becomes black.
+
+105
+00:03:38,050 --> 00:03:39,920
+And if it's all 255, it becomes white.
+
+106
+00:03:39,920 --> 00:03:41,440
+What if it's 121, 128?
+
+107
+00:03:41,440 --> 00:03:42,820
+It would be a shade of gray in the middle.
+
+108
+00:03:42,820 --> 00:03:43,720
+And that's a circle.
+
+109
+00:03:43,720 --> 00:03:47,910
+So, a computer can represent any color using just three sets of numbers.
+
+110
+00:03:47,910 --> 00:03:50,650
+So, that's how we process color images.
+
+111
+00:03:50,650 --> 00:03:52,230
+So, let's say for example, we're given a...
+
+112
+00:03:52,230 --> 00:03:54,150
+a 32 by 32 color image.
+
+113
+00:03:54,150 --> 00:03:55,170
+So, what does that mean?
+
+114
+00:03:55,170 --> 00:03:57,730
+So, it just means there are 32 pixels horizontally.
+
+115
+00:03:57,730 --> 00:03:59,390
+It doesn't matter if we're talking about the length or the width.
+
+116
+00:03:59,390 --> 00:04:00,230
+But that's not important.
+
+117
+00:04:00,230 --> 00:04:02,250
+You have 32 pixels horizontally,
+
+118
+00:04:02,250 --> 00:04:04,709
+And vertically, it also has 32 pixels.
+
+119
+00:04:04,709 --> 00:04:09,530
+And each of these pixels is represented by three values: Red, Green, and Blue, or RGB.
+
+120
+00:04:09,530 --> 00:04:11,890
+So, if we're processing an image on a computer,
+
+121
+00:04:11,890 --> 00:04:14,170
+a 32 by 32 color image,
+
+122
+00:04:14,170 --> 00:04:15,560
+it would be written as three channels.
+
+123
+00:04:15,560 --> 00:04:17,060
+the RGB channels.
+
+124
+00:04:17,060 --> 00:04:19,120
+where each channel is a 32 by 32 grid.
+
+125
+00:04:19,120 --> 00:04:20,060
+It's a two-dimensional array.
+
+126
+00:04:20,060 --> 00:04:22,040
+So essentially, it's a three-dimensional tensor overall.
+
+127
+00:04:22,040 --> 00:04:24,350
+or a three-dimensional array, and that's what we get.
+
+128
+00:04:24,350 --> 00:04:26,750
+But as I mentioned before, for gray-scale images...
+
+129
+00:04:26,750 --> 00:04:28,430
+That's because all three of its color channels are identical.
+
+130
+00:04:28,430 --> 00:04:30,870
+So, there's no need to distinguish between the three channels.
+
+131
+00:04:30,870 --> 00:04:31,790
+So you just give it a single channel.
+
+132
+00:04:31,790 --> 00:04:33,150
+So in this case, it's 32 by 32.
+
+133
+00:04:33,150 --> 00:04:36,090
+So, it can be represented by just a two-dimensional matrix.
+
+134
+00:04:36,090 --> 00:04:37,390
+Let's take a look.
+
+135
+00:04:37,390 --> 00:04:40,650
+Before, when we used the MNIST handwritten digits dataset,
+
+136
+00:04:40,650 --> 00:04:42,290
+So, it's essentially a grayscale image.
+
+137
+00:04:42,290 --> 00:04:43,290
+And the numbers on it,
+
+138
+00:04:43,290 --> 00:04:46,650
+represented by either white or some shade of gray in between.
+
+139
+00:04:46,650 --> 00:04:48,590
+So, its representation is a two-dimensional array.
+
+140
+00:04:48,590 --> 00:04:50,750
+Now, these numbers aren't set in stone;
+
+141
+00:04:50,750 --> 00:04:53,289
+It's just meant as an illustration to show how it's represented.
+
+142
+00:04:53,289 --> 00:04:55,129
+For instance, take the MNIST dataset we use.
+
+143
+00:04:55,129 --> 00:04:56,369
+are all 28 by 28.
+
+144
+00:04:56,369 --> 00:04:58,460
+That means there are 28 points horizontally,
+
+145
+00:04:58,460 --> 00:04:59,940
+and 28 points vertically.
+
+146
+00:04:59,940 --> 00:05:04,509
+And each of these points is represented by a numerical value, typically ranging from 0 to 1.
+
+147
+00:05:04,509 --> 00:05:06,429
+The darker areas gradually get larger and more resemble white.
+
+148
+00:05:06,429 --> 00:05:07,809
+As you can see, the center is white.
+
+149
+00:05:07,809 --> 00:05:08,549
+So it's pretty much the same.
+
+150
+00:05:08,549 --> 00:05:10,530
+So basically, that's what it means.
+
+151
+00:05:10,530 --> 00:05:11,490
+so we can just use one channel
+
+152
+00:05:11,490 --> 00:05:13,050
+Because the color values in all three channels are the same.
+
+153
+00:05:13,050 --> 00:05:15,210
+So, I can just use one channel to represent it.
+
+154
+00:05:15,210 --> 00:05:16,770
+that tells you how bright it is.
+
+155
+00:05:16,770 --> 00:05:18,350
+The brightest is 255.
+
+156
+00:05:18,350 --> 00:05:19,370
+So, we know that...
+
+157
+00:05:19,370 --> 00:05:21,470
+So that's why, when we were talking about MLPs,
+
+158
+00:05:21,470 --> 00:05:22,270
+Do you all remember?
+
+159
+00:05:22,270 --> 00:05:25,020
+and you might be wondering where this number 784 comes from.
+
+160
+00:05:25,020 --> 00:05:27,860
+So, 28 times 28 gives you 784.
+
+161
+00:05:27,860 --> 00:05:30,640
+This represents how many numbers are used for each pixel.
+
+162
+00:05:30,640 --> 00:05:32,300
+What about for a color image?
+
+163
+00:05:32,300 --> 00:05:34,760
+Now, we know that a color image has three channels.
+
+164
+00:05:34,760 --> 00:05:37,280
+We can represent this as three arrays.
+
+165
+00:05:37,280 --> 00:05:38,600
+forming three two-dimensional arrays.
+
+166
+00:05:38,600 --> 00:05:41,830
+So, it's really just a three-dimensional tensor.
+
+167
+00:05:41,830 --> 00:05:43,850
+This arranges them so that the top part is all red.
+
+168
+00:05:43,850 --> 00:05:45,590
+and the intensity values for the red channel,
+
+169
+00:05:45,590 --> 00:05:46,230
+the green channel,
+
+170
+00:05:46,230 --> 00:05:47,660
+and the blue channel.
+
+171
+00:05:47,660 --> 00:05:50,480
+And just like that, you get an RGB array.
+
+172
+00:05:50,480 --> 00:05:52,180
+and feeds it a three-dimensional array.
+
+173
+00:05:52,180 --> 00:05:54,409
+and that's how you get a full-color image.
+
+174
+00:05:54,409 --> 00:05:56,750
+But, for a 32 by 32 image,
+
+175
+00:05:56,750 --> 00:05:58,170
+you would then multiply that by three.
+
+176
+00:05:58,170 --> 00:06:00,370
+So that's a total of 3072 values.
+
+177
+00:06:00,370 --> 00:06:03,810
+Alright, now that we've got a handle on how images are represented,
+
+178
+00:06:03,810 --> 00:06:05,520
+Actually, when we were working with handwritten digits,
+
+179
+00:06:05,520 --> 00:06:07,400
+to have a computer recognize handwritten digits,
+
+180
+00:06:07,400 --> 00:06:10,360
+and we were already able to successfully recognize it using an MLP.
+
+181
+00:06:10,360 --> 00:06:13,600
+And if we then combine that with learning rate scheduling and parameter initialization,
+
+182
+00:06:13,600 --> 00:06:14,100
+normalization,
+
+183
+00:06:14,100 --> 00:06:16,570
+and other training optimization techniques like regularization,
+
+184
+00:06:16,570 --> 00:06:18,570
+the accuracy of this handwritten digit recognition,
+
+185
+00:06:18,570 --> 00:06:20,190
+We've already hit 98%.
+
+186
+00:06:20,190 --> 00:06:22,469
+So, what if I were to tweak this a bit?
+
+187
+00:06:22,469 --> 00:06:24,589
+to have it recognize whether there's a dog or a cat in the picture.
+
+188
+00:06:24,589 --> 00:06:26,980
+Or have it mark out the roads.
+
+189
+00:06:26,980 --> 00:06:28,100
+Wouldn't that also work?
+
+190
+00:06:28,100 --> 00:06:30,100
+But what about using the MLP approach?
+
+191
+00:06:30,100 --> 00:06:30,940
+Deep neural networks...
+
+192
+00:06:30,940 --> 00:06:32,800
+like, by making the network a bit deeper.
+
+193
+00:06:32,800 --> 00:06:34,780
+So, can it handle more complex tasks?
+
+194
+00:06:34,780 --> 00:06:35,840
+Actually, that doesn't work.
+
+195
+00:06:35,840 --> 00:06:36,919
+So, why is that?
+
+196
+00:06:36,919 --> 00:06:38,279
+What about for something like the MNIST dataset?
+
+197
+00:06:38,279 --> 00:06:38,819
+isn't too bad.
+
+198
+00:06:38,819 --> 00:06:39,279
+So, why is that?
+
+199
+00:06:39,279 --> 00:06:41,839
+Because it's a 28 by 28 grayscale image.
+
+200
+00:06:41,839 --> 00:06:43,519
+So, when you convert it into a matrix,
+
+201
+00:06:43,519 --> 00:06:44,639
+So, it has 28 rows in total,
+
+202
+00:06:44,639 --> 00:06:46,400
+and 28 columns, making 784 pixels in total.
+
+203
+00:06:46,400 --> 00:06:47,400
+So, when we process it,
+
+204
+00:06:47,400 --> 00:06:48,720
+What we're actually doing is flattening it.
+
+205
+00:06:48,720 --> 00:06:49,780
+rather than treating it as a two-dimensional object.
+
+206
+00:06:49,780 --> 00:06:52,080
+Because we're treating it as 784 individual features.
+
+207
+00:06:52,080 --> 00:06:53,440
+and feed it into the neural network.
+
+208
+00:06:53,440 --> 00:06:56,499
+So, from X1 to X784, it goes to the second layer.
+
+209
+00:06:56,499 --> 00:06:57,699
+and that's it for the third layer.
+
+210
+00:06:57,699 --> 00:06:59,819
+So, what about the hidden layer? Let's break it down.
+
+211
+00:06:59,819 --> 00:07:02,530
+So, if it only has 784 features, it's still manageable.
+
+212
+00:07:02,530 --> 00:07:04,730
+This is especially true for modern computers.
+
+213
+00:07:04,730 --> 00:07:05,970
+it can still handle it.
+
+214
+00:07:05,970 --> 00:07:08,230
+So overall, the number of parameters is manageable.
+
+215
+00:07:08,230 --> 00:07:10,510
+But what about images from the real world?
+
+216
+00:07:10,510 --> 00:07:13,070
+are far more complex than the images in the MNIST dataset.
+
+217
+00:07:13,070 --> 00:07:15,320
+So, let's start with something a little more complex.
+
+218
+00:07:15,320 --> 00:07:16,320
+just a bit bigger.
+
+219
+00:07:16,320 --> 00:07:17,480
+Let's say 32 by 32.
+
+220
+00:07:17,480 --> 00:07:19,040
+But... this time, it's a color image.
+
+221
+00:07:19,040 --> 00:07:20,680
+So, we multiply that by three,
+
+222
+00:07:20,680 --> 00:07:23,280
+That's about 3,072 pixel values in total.
+
+223
+00:07:23,280 --> 00:07:26,120
+if we design the second layer to have 512 neurons,
+
+224
+00:07:26,120 --> 00:07:28,669
+So, in the first layer, after we flatten this small image,
+
+225
+00:07:28,669 --> 00:07:30,129
+you'd just multiply that by three.
+
+226
+00:07:30,129 --> 00:07:31,389
+Because, you know, there are three channels.
+
+227
+00:07:31,389 --> 00:07:33,269
+So for a color image, that's 3072 right there.
+
+228
+00:07:33,269 --> 00:07:36,100
+So what if we add another hidden layer after that?
+
+229
+00:07:36,100 --> 00:07:37,700
+and it has 512 neurons,
+
+230
+00:07:37,700 --> 00:07:41,460
+Then, that would require roughly over a million parameters.
+
+231
+00:07:41,460 --> 00:07:42,150
+that's already
+
+232
+00:07:42,150 --> 00:07:43,710
+So, what if we make things a bit more complex?
+
+233
+00:07:43,710 --> 00:07:45,150
+Now, for the images we use today,
+
+234
+00:07:45,150 --> 00:07:45,990
+We often talk about...
+
+235
+00:07:45,990 --> 00:07:49,070
+that our pixel count is 1024 by 768.
+
+236
+00:07:49,070 --> 00:07:52,490
+Even 1920 by 1080 is considered quite large.
+
+237
+00:07:52,490 --> 00:07:54,670
+and this is just 224 by 224 pixels.
+
+238
+00:07:54,670 --> 00:07:57,100
+Now, for modern images, a small picture like this...
+
+239
+00:07:57,100 --> 00:07:58,380
+is far from being considered clear.
+
+240
+00:07:58,380 --> 00:07:59,320
+And since it's a color image,
+
+241
+00:07:59,320 --> 00:08:00,580
+So, after flattening it out...
+
+242
+00:08:00,580 --> 00:08:02,830
+that's already 150,000 inputs.
+
+243
+00:08:02,830 --> 00:08:04,570
+And if the second layer also has 512 neurons,
+
+244
+00:08:04,570 --> 00:08:07,010
+In fact, 512 isn't even that many compared to the first layer.
+
+245
+00:08:07,010 --> 00:08:08,800
+Multiply that, and you're already at seventy...
+
+246
+00:08:08,800 --> 00:08:11,600
+And just the first two layers alone would already require over 70 million parameters.
+
+247
+00:08:11,600 --> 00:08:13,160
+Now, for a computer,
+
+248
+00:08:13,160 --> 00:08:15,080
+especially back in the early days of computing.
+
+249
+00:08:15,080 --> 00:08:16,140
+This was completely infeasible.
+
+250
+00:08:16,140 --> 00:08:17,560
+And keep in mind, that's just for the first layer.
+
+251
+00:08:17,560 --> 00:08:19,020
+and if I multiply that by another layer...
+
+252
+00:08:19,020 --> 00:08:20,120
+Then it gets even bigger.
+
+253
+00:08:20,120 --> 00:08:22,100
+So there's just no way I can make it into...
+
+254
+00:08:22,100 --> 00:08:23,200
+a deep neural network.
+
+255
+00:08:23,200 --> 00:08:24,980
+It can only handle learning one or two layers at most.
+
+256
+00:08:24,980 --> 00:08:27,990
+So naturally, the features it learns are going to be very shallow.
+
+257
+00:08:27,990 --> 00:08:29,550
+So, what can we do about it?
+
+258
+00:08:29,550 --> 00:08:32,030
+But of course, we've only scratched the surface of its problems.
+
+259
+00:08:32,030 --> 00:08:33,650
+And it’s not just about having too many parameters.
+
+260
+00:08:33,650 --> 00:08:35,860
+Having too many parameters is just one of the problems.
+
+261
+00:08:35,860 --> 00:08:37,880
+They just make the training process much slower.
+
+262
+00:08:37,880 --> 00:08:39,320
+The strain on memory also increased.
+
+263
+00:08:39,320 --> 00:08:43,869
+And on top of that, if you have a limited amount of data,
+
+264
+00:08:43,869 --> 00:08:45,620
+For instance, let's say we don't have enough images.
+
+265
+00:08:45,620 --> 00:08:47,720
+let's say you only have a few tens of thousands of images
+
+266
+00:08:47,720 --> 00:08:49,940
+but when my model has over 70 million parameters,
+
+267
+00:08:49,940 --> 00:08:53,420
+So, with a model like that, it's pretty much guaranteed to overfit as soon as you start training it.
+
+268
+00:08:53,420 --> 00:08:54,010
+pretty much.
+
+269
+00:08:54,010 --> 00:08:55,930
+But actually, that's not even its biggest problem.
+
+270
+00:08:55,930 --> 00:08:58,290
+The MLP can't handle images at its core.
+
+271
+00:08:58,290 --> 00:09:00,240
+So, what's the real, deeper reason for this?
+
+272
+00:09:00,240 --> 00:09:01,280
+So, when it comes to images...
+
+273
+00:09:01,280 --> 00:09:03,680
+Well, even though images are represented in a computer as...
+
+274
+00:09:03,680 --> 00:09:05,260
+strings of ones and zeros, just like that.
+
+275
+00:09:05,260 --> 00:09:08,260
+We say it's 255, but that's just us humans converting it into a decimal number.
+
+276
+00:09:10,560 --> 00:09:14,120
+But an image itself isn't really just a list of independent numbers.
+
+277
+00:09:14,120 --> 00:09:15,920
+It has a spatial structure.
+
+278
+00:09:15,920 --> 00:09:17,200
+is related to the pixel in front of it,
+
+279
+00:09:17,200 --> 00:09:19,340
+is usually related to the pixels that come after it.
+
+280
+00:09:19,340 --> 00:09:20,480
+that come together to form a person.
+
+281
+00:09:20,480 --> 00:09:21,940
+They're not randomly distributed.
+
+282
+00:09:21,940 --> 00:09:22,380
+Right.
+
+283
+00:09:22,380 --> 00:09:23,620
+And also, think about an image.
+
+284
+00:09:23,620 --> 00:09:25,700
+In fact, there are a few typical characteristics.
+
+285
+00:09:25,700 --> 00:09:26,700
+This is called local correlation.
+
+286
+00:09:26,700 --> 00:09:29,020
+Its pattern only appears within a small, localized area.
+
+287
+00:09:29,020 --> 00:09:30,620
+It's a gradual transition.
+
+288
+00:09:30,620 --> 00:09:32,040
+For example, let's say this part here is black.
+
+289
+00:09:32,040 --> 00:09:33,520
+the surrounding area is also very likely to be black.
+
+290
+00:09:33,520 --> 00:09:35,220
+as purple starts to gradually appear,
+
+291
+00:09:35,220 --> 00:09:36,200
+the surrounding area is also purple.
+
+292
+00:09:36,200 --> 00:09:37,800
+They are related to each other.
+
+293
+00:09:37,800 --> 00:09:39,460
+Another one is translation equivariance.
+
+294
+00:09:39,460 --> 00:09:41,040
+Or, as it's also called, translation invariance.
+
+295
+00:09:41,040 --> 00:09:41,880
+Its position has changed,
+
+296
+00:09:41,880 --> 00:09:43,280
+the pattern itself remains unchanged.
+
+297
+00:09:43,280 --> 00:09:45,360
+For example, let's say we move these characters over here.
+
+298
+00:09:45,360 --> 00:09:46,630
+It's still the same characters.
+
+299
+00:09:46,630 --> 00:09:48,350
+And another property is its hierarchical structure.
+
+300
+00:09:48,350 --> 00:09:50,470
+So, we'll break this down together in a moment.
+
+301
+00:09:51,590 --> 00:09:53,840
+First, let's take a look at local correlation.
+
+302
+00:09:53,840 --> 00:09:55,400
+Take the meaning of a single pixel, for instance.
+
+303
+00:09:55,400 --> 00:09:57,280
+is mainly determined by what this pixel represents.
+
+304
+00:09:57,280 --> 00:09:58,600
+So, once we flatten it,
+
+305
+00:09:58,600 --> 00:10:00,460
+It loses all connection to its surroundings.
+
+306
+00:10:00,460 --> 00:10:03,800
+But in reality, the relationship a pixel has with its neighbors is extremely important.
+
+307
+00:10:03,800 --> 00:10:05,000
+Let's try to recognize something.
+
+308
+00:10:05,000 --> 00:10:06,280
+For example, say we have this picture of a dog.
+
+309
+00:10:06,280 --> 00:10:07,220
+We can tell that...
+
+310
+00:10:07,220 --> 00:10:08,680
+For example, when we're looking at this part here,
+
+311
+00:10:08,680 --> 00:10:09,720
+and we can tell right away.
+
+312
+00:10:09,720 --> 00:10:10,820
+This is the dog's eye.
+
+313
+00:10:10,820 --> 00:10:13,020
+It's what's right next to it that helps us make that identification.
+
+314
+00:10:13,020 --> 00:10:13,860
+Or take the dog's paw, for instance.
+
+315
+00:10:13,860 --> 00:10:17,080
+So, for instance, does this part of the image affect our ability to recognize the dog's eye?
+
+316
+00:10:17,080 --> 00:10:18,600
+Not at all. It has no effect whatsoever.
+
+317
+00:10:18,600 --> 00:10:22,469
+It's only related to the local area around it, its immediate surroundings.
+
+318
+00:10:22,469 --> 00:10:23,509
+or its nose and mouth.
+
+319
+00:10:23,509 --> 00:10:25,360
+and it's also connected to the global information.
+
+320
+00:10:25,360 --> 00:10:26,340
+or the grass next to it.
+
+321
+00:10:26,340 --> 00:10:27,160
+its legs,
+
+322
+00:10:27,160 --> 00:10:30,089
+don't really help us much in identifying the eyes.
+
+323
+00:10:30,089 --> 00:10:32,009
+For example, if we take images from the natural world,
+
+324
+00:10:32,009 --> 00:10:33,009
+And it's actually the same for all of them.
+
+325
+00:10:33,009 --> 00:10:34,389
+We can see right away, this is an edge.
+
+326
+00:10:34,389 --> 00:10:35,349
+And this one is a corner.
+
+327
+00:10:35,349 --> 00:10:36,989
+It doesn't matter what's next to it.
+
+328
+00:10:36,989 --> 00:10:38,920
+And this one, that would be animal fur.
+
+329
+00:10:38,920 --> 00:10:40,220
+And this one looks like it's part of a leaf.
+
+330
+00:10:40,220 --> 00:10:41,120
+And this right here is the wheel.
+
+331
+00:10:41,120 --> 00:10:42,960
+Actually, it's related to the car's window,
+
+332
+00:10:42,960 --> 00:10:44,480
+or this glass, this is a door handle.
+
+333
+00:10:44,480 --> 00:10:46,080
+realistically, all you need to do is look at the local area.
+
+334
+00:10:46,080 --> 00:10:49,520
+Pixels that are far away don't really have much to do with it.
+
+335
+00:10:49,520 --> 00:10:52,540
+But in an MLP, we establish full connections.
+
+336
+00:10:52,540 --> 00:10:55,960
+essentially, it makes every single pixel relate to all the others.
+
+337
+00:10:55,960 --> 00:10:58,109
+But in the context of images, that's really not necessary.
+
+338
+00:10:58,109 --> 00:10:59,770
+This leads to an explosion in the number of parameters.
+
+339
+00:10:59,770 --> 00:11:00,770
+So, what's the second point?
+
+340
+00:11:00,770 --> 00:11:01,750
+translation equivariance.
+
+341
+00:11:01,750 --> 00:11:04,090
+And as I briefly mentioned with that example a moment ago...
+
+342
+00:11:04,090 --> 00:11:05,130
+the same local pattern
+
+343
+00:11:05,130 --> 00:11:07,740
+appearing in the top-left corner or the bottom-right corner of an image
+
+344
+00:11:07,740 --> 00:11:09,360
+essentially, it's the same pattern.
+
+345
+00:11:09,360 --> 00:11:11,339
+Only their position has changed.
+
+346
+00:11:11,339 --> 00:11:14,099
+So really, it doesn't need to learn a separate pattern for every single position.
+
+347
+00:11:14,099 --> 00:11:16,200
+there's no need to train a whole new detection pattern for it.
+
+348
+00:11:16,200 --> 00:11:18,900
+For example, let's say we have an image of a kitten.
+
+349
+00:11:18,900 --> 00:11:21,280
+In the top-left corner of the image, we've successfully identified it.
+
+350
+00:11:21,280 --> 00:11:22,380
+And that it's a cat.
+
+351
+00:11:22,380 --> 00:11:24,140
+And that actually affects the entire image.
+
+352
+00:11:24,140 --> 00:11:25,240
+This is called a feature map.
+
+353
+00:11:25,240 --> 00:11:26,740
+We'll get to that in a moment.
+
+354
+00:11:26,740 --> 00:11:27,600
+This area is highlighted,
+
+355
+00:11:27,600 --> 00:11:29,440
+This indicates there's a cat in this region.
+
+356
+00:11:29,440 --> 00:11:30,980
+The rest of the areas remain dark.
+
+357
+00:11:30,980 --> 00:11:32,780
+This means there's nothing significant in the rest of the areas.
+
+358
+00:11:32,780 --> 00:11:34,900
+This can be interpreted as a filter.
+
+359
+00:11:34,900 --> 00:11:37,070
+For example, let's take a thermal imaging scenario.
+
+360
+00:11:37,070 --> 00:11:38,250
+Let's say this area has some heat signal.
+
+361
+00:11:38,250 --> 00:11:40,940
+Only this specific spot lights up, while other areas without heat remain dark.
+
+362
+00:11:40,940 --> 00:11:42,180
+So, this is what image recognition is all about.
+
+363
+00:11:42,180 --> 00:11:44,360
+or, you could say, some of the fundamental techniques for signal recognition.
+
+364
+00:11:44,360 --> 00:11:47,300
+You can also call it pattern detection, or a 'detector', things like that.
+
+365
+00:11:47,300 --> 00:11:48,540
+So, what about the second picture?
+
+366
+00:11:48,540 --> 00:11:50,620
+I just need to move the kitten to the bottom-right corner.
+
+367
+00:11:50,620 --> 00:11:51,900
+it's still the same kitten.
+
+368
+00:11:51,900 --> 00:11:54,500
+So, I don't actually need to build a whole new detector for that, right?
+
+369
+00:11:54,500 --> 00:11:57,920
+So, whether we call it a convolutional kernel or a filter later on,
+
+370
+00:11:57,920 --> 00:11:59,540
+Right, they're just all sorts of signal waves.
+
+371
+00:11:59,540 --> 00:12:00,080
+There's no need for that.
+
+372
+00:12:00,080 --> 00:12:01,120
+As long as these two are the same, it'll work.
+
+373
+00:12:01,120 --> 00:12:02,020
+All I need to do is detect...
+
+374
+00:12:02,020 --> 00:12:04,160
+In fact, you can just use the same thing to detect it.
+
+375
+00:12:04,160 --> 00:12:06,000
+It only needs to process this small section, and that's it.
+
+376
+00:12:06,000 --> 00:12:07,920
+But, if you were to use a fully connected network,
+
+377
+00:12:07,920 --> 00:12:09,680
+you actually have to recognize the entire thing.
+
+378
+00:12:09,680 --> 00:12:11,560
+and now everything in this block is different.
+
+379
+00:12:11,560 --> 00:12:14,070
+This results in a huge waste of parameters.
+
+380
+00:12:14,070 --> 00:12:17,410
+And the third is the hierarchy of high-level semantics within an image.
+
+381
+00:12:17,410 --> 00:12:19,340
+In fact, it's not generated by a single pixel.
+
+382
+00:12:19,340 --> 00:12:22,180
+Instead, they are constructed gradually from low-level visual patterns.
+
+383
+00:12:22,180 --> 00:12:23,420
+So, in general,
+
+384
+00:12:23,420 --> 00:12:27,040
+We'll also cover this when we get to the low-level details later on.
+
+385
+00:12:27,040 --> 00:12:28,940
+So, when we try to recognize images,
+
+386
+00:12:28,940 --> 00:12:30,300
+Although we aren't consciously aware of this process,
+
+387
+00:12:30,300 --> 00:12:31,980
+But this is what's actually happening.
+
+388
+00:12:31,980 --> 00:12:34,740
+At first, all we see is this vague, patchy area.
+
+389
+00:12:34,740 --> 00:12:35,620
+an idea of what it is.
+
+390
+00:12:35,620 --> 00:12:37,860
+and gradually starts to make out the textures and edges.
+
+391
+00:12:37,860 --> 00:12:39,380
+and then you can start to make out the different parts.
+
+392
+00:12:39,380 --> 00:12:41,800
+And gradually, these parts can actually be pieced together into a whole.
+
+393
+00:12:41,800 --> 00:12:44,080
+In fact, this principle applies to human visual nerves, which are, after all, those of mammals.
+
+394
+00:12:44,080 --> 00:12:45,860
+The visual nerve works in exactly the same way.
+
+395
+00:12:45,860 --> 00:12:49,370
+So, at the lower layers, if we process it layer by layer...
+
+396
+00:12:49,370 --> 00:12:52,190
+At the shallow layers, it primarily looks for some local features.
+
+397
+00:12:52,190 --> 00:12:54,770
+As we go deeper, it gradually abstracts the features, creating a higher-level representation.
+
+398
+00:12:54,770 --> 00:12:57,840
+So, if we take this cat's face, an MLP just can't solve these problems.
+
+399
+00:12:57,840 --> 00:13:00,340
+It flattens the image into a one-dimensional vector.
+
+400
+00:13:00,340 --> 00:13:01,860
+This completely ignores the local correlations within the image.
+
+401
+00:13:01,860 --> 00:13:04,380
+Because originally, all the pixels were right next to each other.
+
+402
+00:13:04,380 --> 00:13:05,420
+once you flatten it out,
+
+403
+00:13:05,420 --> 00:13:07,460
+so any relationship between them is basically lost.
+
+404
+00:13:07,460 --> 00:13:10,030
+This completely destroys the image's spatial structure.
+
+405
+00:13:10,030 --> 00:13:12,110
+If we truly want to process images,
+
+406
+00:13:12,110 --> 00:13:13,030
+So, how do we go about recognizing images?
+
+407
+00:13:13,030 --> 00:13:16,160
+What we truly need is something that's well-suited for images.
+
+408
+00:13:16,160 --> 00:13:17,620
+a network for these kinds of tasks.
+
+409
+00:13:17,620 --> 00:13:20,060
+one that can adapt to the unique characteristics of images themselves.
+
+410
+00:13:20,060 --> 00:13:23,110
+And that's exactly what a Convolutional Neural Network, or CNN, is all about.
+
+411
+00:13:23,110 --> 00:13:25,510
+Its core philosophy can be summed up in one single sentence.
+
+412
+00:13:25,510 --> 00:13:26,030
+So, why is that?
+
+413
+00:13:26,030 --> 00:13:26,790
+First, you look at the local parts.
+
+414
+00:13:26,790 --> 00:13:31,330
+and then gradually piece together the bigger picture. So, what does that mean?
+
+415
+00:13:31,330 --> 00:13:32,430
+Let's take a look.
+
+416
+00:13:32,430 --> 00:13:34,870
+Of course, this concept wasn't just pulled out of thin air.
+
+417
+00:13:34,870 --> 00:13:37,060
+In fact, this idea goes way back to the 1950s.
+
+418
+00:13:37,060 --> 00:13:38,380
+neuroscientists had actually already...
+
+419
+00:13:38,380 --> 00:13:40,140
+while studying the visual cortex of cats,
+
+420
+00:13:40,140 --> 00:13:41,480
+and they discovered a certain pattern.
+
+421
+00:13:41,480 --> 00:13:44,200
+You see, the visual cortex has a massive number of neurons.
+
+422
+00:13:44,200 --> 00:13:47,000
+But it turns out, these neurons don't just light up for any image they see.
+
+423
+00:13:47,000 --> 00:13:48,160
+to respond to.
+
+424
+00:13:48,160 --> 00:13:50,270
+It's only certain neurons,
+
+425
+00:13:50,270 --> 00:13:53,330
+For instance, some neurons will only respond when they encounter a vertical line.
+
+426
+00:13:53,330 --> 00:13:54,960
+that it will have a strong reaction.
+
+427
+00:13:54,960 --> 00:13:58,520
+But when it comes across horizontal lines in an image,
+
+428
+00:13:58,520 --> 00:14:00,300
+it barely responds at all.
+
+429
+00:14:00,300 --> 00:14:03,300
+So, if we were to explain this using a neural network...
+
+430
+00:14:03,300 --> 00:14:04,620
+So after it goes through the activation function,
+
+431
+00:14:04,620 --> 00:14:06,120
+basically means it doesn't output anything.
+
+432
+00:14:06,120 --> 00:14:08,560
+But for others, let's say, they are highly sensitive to diagonal lines.
+
+433
+00:14:08,560 --> 00:14:09,960
+So when you show it a diagonal line like this,
+
+434
+00:14:09,960 --> 00:14:11,860
+it's not sensitive to it at all.
+
+435
+00:14:11,860 --> 00:14:14,260
+And of course, these two researchers also made a breakthrough based on this principle.
+
+436
+00:14:14,260 --> 00:14:15,800
+And later on, they both won the Nobel Prize for it.
+
+437
+00:14:15,800 --> 00:14:17,360
+In essence, this is what's known as a local receptive field.
+
+438
+00:14:17,360 --> 00:14:18,920
+In other words, it also only looks at a small patch.
+
+439
+00:14:18,920 --> 00:14:20,000
+it only focuses on a small patch.
+
+440
+00:14:20,000 --> 00:14:21,380
+whether there are horizontal or vertical lines,
+
+441
+00:14:21,380 --> 00:14:22,380
+What kind of textures are there?
+
+442
+00:14:22,380 --> 00:14:24,260
+Now, this is just a simple example to illustrate the point.
+
+443
+00:14:24,260 --> 00:14:25,880
+and it's being processed layer by layer.
+
+444
+00:14:25,880 --> 00:14:26,500
+And what about this one?
+
+445
+00:14:26,500 --> 00:14:30,270
+This actually also influenced how later generations tackled computer vision tasks.
+
+446
+00:14:30,270 --> 00:14:31,890
+So, I'll start by just looking at a small patch.
+
+447
+00:14:31,890 --> 00:14:35,610
+and then the deeper layers will take these small pieces and combine them,
+
+448
+00:14:35,610 --> 00:14:37,430
+to abstract even higher-level features.
+
+449
+00:14:37,430 --> 00:14:39,630
+And then combine those even further.
+
+450
+00:14:39,630 --> 00:14:41,310
+and gradually, it all starts to make sense.
+
+451
+00:14:41,310 --> 00:14:43,849
+And that's pretty much how a CNN works, too.
+
+452
+00:14:43,849 --> 00:14:44,749
+Of course,
+
+453
+00:14:44,749 --> 00:14:45,449
+In the early days,
+
+454
+00:14:45,449 --> 00:14:48,649
+Neuroscientists pretty much always use cats' eyes for their experiments.
+
+455
+00:14:48,649 --> 00:14:51,320
+So, that's why in a lot of educational content about computer vision,
+
+456
+00:14:51,320 --> 00:14:53,340
+love to use cats as examples.
+
+457
+00:14:53,340 --> 00:14:54,980
+And it's not just because their eyes are big.
+
+458
+00:14:54,980 --> 00:14:58,390
+Or maybe it's because our real-life "Hakimi" also played a huge role in this.
+
+459
+00:14:58,390 --> 00:15:00,970
+and helped kick-start our understanding of neural networks.
+
+460
+00:15:00,970 --> 00:15:03,570
+So, what's the basic principle we use in neural networks?
+
+461
+00:15:03,570 --> 00:15:05,370
+It acts as a small filter,
+
+462
+00:15:05,370 --> 00:15:06,950
+or a small detector.
+
+463
+00:15:06,950 --> 00:15:08,620
+And we call this a convolution kernel.
+
+464
+00:15:08,620 --> 00:15:10,500
+And what's inside it is really just a bunch of numbers.
+
+465
+00:15:10,500 --> 00:15:11,980
+For example, let's say I want to identify vertical lines.
+
+466
+00:15:11,980 --> 00:15:13,790
+so that they're all the same for the vertical ones.
+
+467
+00:15:13,790 --> 00:15:15,430
+This is a 3x3 matrix of numbers.
+
+468
+00:15:15,430 --> 00:15:17,510
+We'll have it move from the top-left corner all the way over here.
+
+469
+00:15:17,510 --> 00:15:20,040
+and just keep letting the convolution kernel scan across it.
+
+470
+00:15:20,040 --> 00:15:22,340
+And with each scan, it's interacting with the image itself.
+
+471
+00:15:22,340 --> 00:15:25,240
+Because, as we know, every single pixel has its own...
+
+472
+00:15:25,240 --> 00:15:26,660
+and that number represents the pixel's color intensity.
+
+473
+00:15:26,660 --> 00:15:29,530
+Let's have them perform a convolution operation.
+
+474
+00:15:29,530 --> 00:15:32,610
+This mathematical operation is known as convolution.
+
+475
+00:15:32,610 --> 00:15:35,290
+So, this scanning process is essentially what happens after we perform the convolution operation.
+
+476
+00:15:35,290 --> 00:15:36,310
+into a single number.
+
+477
+00:15:36,310 --> 00:15:37,630
+So, for this number...
+
+478
+00:15:37,630 --> 00:15:40,960
+So, each of these convolution kernels represents a specific pattern.
+
+479
+00:15:40,960 --> 00:15:42,800
+For example, one might represent the ability to recognize vertical lines.
+
+480
+00:15:42,800 --> 00:15:45,120
+If it detects a larger number,
+
+481
+00:15:45,120 --> 00:15:46,960
+it will make this section appear brighter.
+
+482
+00:15:46,960 --> 00:15:48,120
+But if the number is smaller,
+
+483
+00:15:48,120 --> 00:15:49,780
+it will make the corresponding area slightly darker.
+
+484
+00:15:49,780 --> 00:15:50,520
+a high response
+
+485
+00:15:50,520 --> 00:15:54,470
+This is just like the visual neurons we saw earlier in a cat's brain.
+
+486
+00:15:54,470 --> 00:15:55,870
+The process is very similar.
+
+487
+00:15:55,870 --> 00:15:57,110
+So, with this particular feature,
+
+488
+00:15:57,110 --> 00:16:00,000
+Of course, we can use a whole lot of these convolutional kernels.
+
+489
+00:16:00,000 --> 00:16:02,020
+to scan the image over and over again.
+
+490
+00:16:02,020 --> 00:16:02,980
+And as we all know,
+
+491
+00:16:02,980 --> 00:16:06,100
+As we know, a color image is made up of three channels: RGB, right?
+
+492
+00:16:06,100 --> 00:16:08,260
+So, we'd basically scan through this image three times.
+
+493
+00:16:08,260 --> 00:16:09,460
+But in reality, mathematically speaking,
+
+494
+00:16:09,460 --> 00:16:11,520
+It's a computation on a three-dimensional matrix.
+
+495
+00:16:11,520 --> 00:16:13,420
+Actually, it doesn't even need three passes; it can be computed in just one.
+
+496
+00:16:13,420 --> 00:16:16,140
+But for our purposes, we can understand it as operating on the three channels,
+
+497
+00:16:16,140 --> 00:16:19,140
+the computation is performed by scanning through the R, G, and B channels separately.
+
+498
+00:16:19,140 --> 00:16:20,640
+And after the calculation is done,
+
+499
+00:16:20,640 --> 00:16:23,360
+So, it takes this image, an image of a little cat,
+
+500
+00:16:23,360 --> 00:16:25,600
+Then, in the first layer, it gets transformed into something like this.
+
+501
+00:16:25,600 --> 00:16:27,320
+Showing us which areas are sensitive to vertical lines.
+
+502
+00:16:27,320 --> 00:16:28,560
+and which parts are not sensitive to vertical lines.
+
+503
+00:16:28,560 --> 00:16:30,170
+So, for example, let's say...
+
+504
+00:16:30,170 --> 00:16:32,250
+So we can interpret this area as having no vertical lines.
+
+505
+00:16:32,250 --> 00:16:34,510
+this section might have a lot of vertical lines.
+
+506
+00:16:34,510 --> 00:16:36,470
+And we call this the feature map.
+
+507
+00:16:36,470 --> 00:16:37,480
+Feature map.
+
+508
+00:16:37,480 --> 00:16:40,760
+Of course, if we use different convolution kernels, we'll get different ones.
+
+509
+00:16:40,760 --> 00:16:43,020
+Each convolutional kernel corresponds to one feature map.
+
+510
+00:16:43,020 --> 00:16:44,860
+revealing a variety of features.
+
+511
+00:16:44,860 --> 00:16:47,000
+And then it's passed on to the next layer for further processing.
+
+512
+00:16:47,000 --> 00:16:49,940
+So basically, each of these kernels is tasked with looking for a specific pattern.
+
+513
+00:16:49,940 --> 00:16:50,840
+Some look for vertical lines,
+
+514
+00:16:50,840 --> 00:16:51,680
+some for diagonal lines,
+
+515
+00:16:51,680 --> 00:16:52,820
+some for edges and corners,
+
+516
+00:16:52,820 --> 00:16:54,020
+As for the resulting feature map,
+
+517
+00:16:54,020 --> 00:16:56,360
+Once arranged, these can be passed as input to the next layer.
+
+518
+00:16:56,360 --> 00:16:59,500
+And then, the convolutional kernels in the next layer can just keep scanning them.
+
+519
+00:16:59,500 --> 00:17:00,610
+to perform a convolutional operation.
+
+520
+00:17:00,610 --> 00:17:03,630
+So, why is this CNN model so well-suited for images?
+
+521
+00:17:03,630 --> 00:17:06,390
+So, how exactly does this scanning process reduce the number of parameters?
+
+522
+00:17:06,390 --> 00:17:08,450
+Well, the core of its design really comes down to two key points.
+
+523
+00:17:08,450 --> 00:17:11,010
+And these characteristics perfectly align with the fundamental features of an image.
+
+524
+00:17:11,010 --> 00:17:12,110
+So, for this kind of data...
+
+525
+00:17:12,110 --> 00:17:14,040
+Image data isn't just random information.
+
+526
+00:17:14,040 --> 00:17:15,380
+This is data with an inherent structure.
+
+527
+00:17:15,380 --> 00:17:17,300
+So, we can leverage this very structure.
+
+528
+00:17:17,300 --> 00:17:18,660
+In fact, they do some subtraction.
+
+529
+00:17:18,660 --> 00:17:19,839
+removing some of that complexity.
+
+530
+00:17:19,839 --> 00:17:21,959
+First, it has local connections.
+
+531
+00:17:21,959 --> 00:17:23,679
+So, it's not like an MLP,
+
+532
+00:17:23,679 --> 00:17:25,980
+where every single neuron is fully connected.
+
+533
+00:17:25,980 --> 00:17:28,700
+This corresponds to the local correlations in an image.
+
+534
+00:17:28,700 --> 00:17:29,140
+neuron
+
+535
+00:17:29,140 --> 00:17:30,860
+So, each neuron, you can think of it as...
+
+536
+00:17:30,860 --> 00:17:32,600
+Or, let's just call it each convolutional kernel.
+
+537
+00:17:32,600 --> 00:17:34,520
+So it's not looking at the entire image anymore.
+
+538
+00:17:34,520 --> 00:17:37,220
+It's just a small window, say 3x3 or 5x5.
+
+539
+00:17:37,220 --> 00:17:38,240
+This is called the receptive...
+
+540
+00:17:38,240 --> 00:17:40,390
+Which, yeah, basically means its field of view.
+
+541
+00:17:40,390 --> 00:17:42,110
+field, or in Chinese, '感受野' (gǎn shòu yě).
+
+542
+00:17:42,110 --> 00:17:43,690
+I only look at my own little patch.
+
+543
+00:17:43,690 --> 00:17:46,210
+I just need to scan over you, and that's it.
+
+544
+00:17:46,210 --> 00:17:48,530
+So, are you an edge, or a texture?
+
+545
+00:17:48,530 --> 00:17:51,010
+This itself is determined by the neighboring pixels.
+
+546
+00:17:51,010 --> 00:17:54,209
+So, as I scan the image from left to right and top to bottom,
+
+547
+00:17:54,209 --> 00:17:57,389
+But by scanning, I can pull out all sorts of different features from you.
+
+548
+00:17:57,389 --> 00:17:58,429
+Some are diagonal lines like this.
+
+549
+00:17:58,429 --> 00:17:59,449
+Some might look like this.
+
+550
+00:17:59,449 --> 00:18:00,320
+of all different types.
+
+551
+00:18:00,320 --> 00:18:01,220
+So, what's the second point?
+
+552
+00:18:01,220 --> 00:18:01,980
+Parameter sharing.
+
+553
+00:18:01,980 --> 00:18:05,160
+This is what's known as translation invariance, or some might call it translation equivariance.
+
+554
+00:18:05,160 --> 00:18:06,780
+With the very same convolution kernel,
+
+555
+00:18:06,780 --> 00:18:10,260
+So basically, each number in this convolution kernel represents a parameter.
+
+556
+00:18:10,260 --> 00:18:12,670
+So, a lot of students, including myself back in the day, might know this and also wonder...
+
+557
+00:18:12,670 --> 00:18:13,590
+So, for different features...
+
+558
+00:18:13,590 --> 00:18:15,310
+So how am I supposed to know that you're all just zeros inside?
+
+559
+00:18:15,310 --> 00:18:16,290
+For one, it's still one.
+
+560
+00:18:16,290 --> 00:18:17,570
+So what numbers should we use here?
+
+561
+00:18:17,570 --> 00:18:19,550
+This number is also something that gets trained by the model.
+
+562
+00:18:19,550 --> 00:18:20,560
+But you don't need to worry about that.
+
+563
+00:18:20,560 --> 00:18:23,900
+All you need to do is master the techniques for parameter initialization.
+
+564
+00:18:23,900 --> 00:18:25,120
+As long as you initialize it properly,
+
+565
+00:18:25,120 --> 00:18:27,190
+and the rest will be handled by the neural network training.
+
+566
+00:18:27,190 --> 00:18:30,040
+So, the thing is, the patterns these different [kernels] learn...
+
+567
+00:18:30,040 --> 00:18:31,920
+the patterns they recognize will be different.
+
+568
+00:18:31,920 --> 00:18:34,020
+But when it comes to the same convolutional kernel,
+
+569
+00:18:34,020 --> 00:18:35,760
+it's trying to recognize that same pattern.
+
+570
+00:18:35,760 --> 00:18:38,950
+So, the overall architecture we're using is no longer fully connected.
+
+571
+00:18:38,950 --> 00:18:41,330
+So, for all the pixels in this image,
+
+572
+00:18:41,330 --> 00:18:42,790
+In fact, the parameters are all the same.
+
+573
+00:18:42,790 --> 00:18:44,440
+Because we assume that as long as it's a vertical line,
+
+574
+00:18:44,440 --> 00:18:46,000
+then their features are all the same.
+
+575
+00:18:46,000 --> 00:18:47,260
+So there's no need for me to change the parameters.
+
+576
+00:18:47,260 --> 00:18:50,540
+So, as you can see, this actually reduces the total number of parameters by a whole lot.
+
+577
+00:18:50,540 --> 00:18:52,700
+So, different kernels are essentially looking for different patterns.
+
+578
+00:18:52,700 --> 00:18:53,540
+Some look for horizontal features,
+
+579
+00:18:53,540 --> 00:18:54,400
+some look for vertical ones,
+
+580
+00:18:54,400 --> 00:18:55,340
+Some look for textures.
+
+581
+00:18:55,340 --> 00:18:56,370
+Some look for color.
+
+582
+00:18:56,370 --> 00:18:57,330
+The deeper the layers go,
+
+583
+00:18:57,330 --> 00:19:00,510
+these simple patterns are continuously combined in the later layers.
+
+584
+00:19:00,510 --> 00:19:02,070
+Of course, you might be thinking...
+
+585
+00:19:02,070 --> 00:19:03,850
+So how do you piece all that together?
+
+586
+00:19:03,850 --> 00:19:05,110
+You're only looking at a small patch.
+
+587
+00:19:05,110 --> 00:19:06,940
+So how can you possibly see the whole picture?
+
+588
+00:19:06,940 --> 00:19:09,800
+In fact, this layer we're talking about is what's called a convolutional layer.
+
+589
+00:19:09,800 --> 00:19:11,680
+and the layer that comes after it is what we call the pooling layer.
+
+590
+00:19:11,680 --> 00:19:14,240
+Essentially, it's about combining and aggregating that information.
+
+591
+00:19:14,240 --> 00:19:16,340
+Just like gathering them all into a 'pool'.
+
+592
+00:19:16,340 --> 00:19:18,929
+We'll also cover this in the next chapter when we introduce neural networks.
+
+593
+00:19:18,929 --> 00:19:21,369
+We'll get into the specific architecture of CNNs when we cover that topic.
+
+594
+00:19:21,369 --> 00:19:24,349
+For now, just focus on getting a general idea of how it works.
+
+595
+00:19:24,349 --> 00:19:25,400
+And that's pretty much how it works.
+
+596
+00:19:25,400 --> 00:19:27,320
+So, as we move through each subsequent layer,
+
+597
+00:19:27,320 --> 00:19:28,400
+I can sense it.
+
+598
+00:19:28,400 --> 00:19:30,360
+And then, gradually, after pooling,
+
+599
+00:19:30,360 --> 00:19:31,160
+and it gets bigger.
+
+600
+00:19:31,160 --> 00:19:31,960
+And as it gets larger,
+
+601
+00:19:31,960 --> 00:19:34,280
+慢慢地, I can start to figure out what you most likely are.
+
+602
+00:19:34,280 --> 00:19:36,730
+This is because it extracts more and more abstract features.
+
+603
+00:19:36,730 --> 00:19:39,230
+So, to wrap things up, let me give you a quick summary.
+
+604
+00:19:39,230 --> 00:19:43,050
+So, first off, let's talk about how images are actually represented in a computer.
+
+605
+00:19:43,050 --> 00:19:44,380
+or possibly in color.
+
+606
+00:19:44,380 --> 00:19:48,220
+So, a color image is essentially a three-dimensional structure, while a grayscale one is two-dimensional.
+
+607
+00:19:48,220 --> 00:19:51,340
+CNNs address this by preserving the spatial grid structure of the image.
+
+608
+00:19:51,340 --> 00:19:54,070
+instead of just treating it as a pool of unrelated data.
+
+609
+00:19:54,070 --> 00:19:55,950
+So, why don't MLPs work in this case?
+
+610
+00:19:55,950 --> 00:19:58,030
+Basically, what it does is take an image's pixels
+
+611
+00:19:58,030 --> 00:19:59,290
+and the relationships between them.
+
+612
+00:19:59,290 --> 00:20:01,179
+that spatial structure is completely lost.
+
+613
+00:20:01,179 --> 00:20:02,579
+completely flattening it out.
+
+614
+00:20:02,579 --> 00:20:04,699
+This leads to a massive explosion in the number of parameters.
+
+615
+00:20:04,699 --> 00:20:06,600
+Plus, the spatial relationships are completely lost.
+
+616
+00:20:06,600 --> 00:20:09,880
+So, the solution is to use local connections instead.
+
+617
+00:20:09,880 --> 00:20:11,670
+namely, massive full connectivity.
+
+618
+00:20:11,670 --> 00:20:13,470
+So, what are the inherent patterns within the image itself?
+
+619
+00:20:13,470 --> 00:20:14,210
+So, these are the three principles.
+
+620
+00:20:14,210 --> 00:20:15,710
+So, for the design of a CNN...
+
+621
+00:20:15,710 --> 00:20:18,750
+To address this, it uses a convolution kernel to continuously scan the image.
+
+622
+00:20:18,750 --> 00:20:21,929
+In essence, it performs convolutions to calculate the features.
+
+623
+00:20:21,929 --> 00:20:23,629
+in an attempt to abstract features from it.
+
+624
+00:20:23,629 --> 00:20:26,089
+But these aren't features that humans can readily understand.
+
+625
+00:20:26,089 --> 00:20:29,280
+We're just using examples like vertical, horizontal, or diagonal lines, and edges.
+
+626
+00:20:29,280 --> 00:20:31,240
+In reality, after training the neural network,
+
+627
+00:20:31,240 --> 00:20:33,660
+and you have no idea what the features it identifies actually mean.
+
+628
+00:20:33,660 --> 00:20:35,580
+The point is, as long as it undergoes massive amounts of computation,
+
+629
+00:20:35,580 --> 00:20:36,500
+and that seems to be good enough.
+
+630
+00:20:36,500 --> 00:20:38,710
+This is somewhat similar to our deep neural networks.
+
+631
+00:20:38,710 --> 00:20:39,830
+You don't know what the parameters are either,
+
+632
+00:20:39,830 --> 00:20:43,000
+So, what's the deal with, say, 1e-7 in the parameters of each neuron?
+
+633
+00:20:43,000 --> 00:20:46,080
+But the general idea is that after all sorts of permutations and combinations,
+
+634
+00:20:46,080 --> 00:20:48,080
+and it'll spit out the corresponding result for you.
+
+635
+00:20:48,080 --> 00:20:49,760
+So why do we need CNNs in the first place?
+
+636
+00:20:49,760 --> 00:20:51,400
+Well, it's really about the structure of the model.
+
+637
+00:20:51,400 --> 00:20:52,940
+it should align with the structure of the data.
+
+638
+00:20:52,940 --> 00:20:55,800
+So, what this means is, it performs a local perception.
+
+639
+00:20:55,800 --> 00:20:58,200
+and reused the parameters within the convolutional kernels.
+
+640
+00:20:58,200 --> 00:21:00,670
+It preserves the image's spatial structure, abstracting it layer by layer.
+
+641
+00:21:00,670 --> 00:21:03,190
+In other words, we're dealing with a specific data structure.
+
+642
+00:21:03,190 --> 00:21:06,510
+So, our fully connected MLP has been modified slightly.
+
+643
+00:21:06,510 --> 00:21:07,390
+It is still a deep network,
+
+644
+00:21:07,390 --> 00:21:09,250
+It still processes the network layer by layer.
+
+645
+00:21:09,250 --> 00:21:11,210
+This is all fundamental knowledge we've covered before, right?
+
+646
+00:21:11,210 --> 00:21:12,480
+All of this remains the same.
+
+647
+00:21:12,480 --> 00:21:14,280
+It's just that, to handle this special structure,
+
+648
+00:21:14,280 --> 00:21:15,740
+for special data structures,
+
+649
+00:21:15,740 --> 00:21:17,940
+we also need to make special adjustments to our networks.
+
+650
+00:21:17,940 --> 00:21:19,610
+to process it.
+
+651
+00:21:19,810 --> 00:21:21,490
+So, with that understanding,
+
+652
+00:21:21,490 --> 00:21:21,890
+we'll realize that
+
+653
+00:21:21,890 --> 00:21:25,900
+So we really do need to design a network structure for the model.
+
+654
+00:21:25,900 --> 00:21:26,640
+and make some adjustments
+
+655
+00:21:26,640 --> 00:21:28,300
+to better recognize images.
+
+656
+00:21:28,300 --> 00:21:31,100
+So, in this lesson, we'll just be giving a brief introduction.
+
+657
+00:21:31,100 --> 00:21:31,880
+So, why does it work?
+
+658
+00:21:31,880 --> 00:21:33,780
+But... how does it actually work?
+
+659
+00:21:33,780 --> 00:21:35,130
+how it's done step by step.
+
+660
+00:21:35,130 --> 00:21:36,090
+How the convolution works,
+
+661
+00:21:36,090 --> 00:21:37,130
+and how it performs pooling.
+
+662
+00:21:37,130 --> 00:21:38,110
+and how it makes identifications.
+
+663
+00:21:38,110 --> 00:21:38,490
+So, what's that all about?
+
+664
+00:21:38,490 --> 00:21:41,370
+We'll save a detailed discussion of this for the next video.
+
+665
+00:21:41,370 --> 00:21:44,240
+so you can all understand exactly how a CNN works.

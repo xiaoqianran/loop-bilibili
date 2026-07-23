@@ -1,0 +1,3035 @@
+1
+00:00:00,000 --> 00:00:02,160
+Alright, we've finally made it to the video on NLP.
+
+2
+00:00:02,160 --> 00:00:04,920
+But we're not going to jump right into the specific details of NLP just yet.
+
+3
+00:00:04,920 --> 00:00:08,070
+Instead, let's walk through the timeline of NLP's development.
+
+4
+00:00:08,070 --> 00:00:08,910
+So, after we've covered all that,
+
+5
+00:00:08,910 --> 00:00:12,000
+you'll have a clear picture of the entire field of NLP.
+
+6
+00:00:12,000 --> 00:00:13,160
+including the Transformer.
+
+7
+00:00:13,160 --> 00:00:16,600
+and how it was invented, step-by-step, by standing on the shoulders of giants.
+
+8
+00:00:16,600 --> 00:00:17,880
+So, after the Transformer was invented,
+
+9
+00:00:17,880 --> 00:00:19,760
+So why didn't it immediately take the world by storm?
+
+10
+00:00:19,760 --> 00:00:22,020
+Even the companies of the eight authors,
+
+11
+00:00:22,020 --> 00:00:24,890
+Even Google didn't recognize the value of the Transformer.
+
+12
+00:00:24,890 --> 00:00:27,330
+So, how did Transformer then evolve into GPT?
+
+13
+00:00:27,330 --> 00:00:29,490
+So, what about NLP, the technology that changed the world?
+
+14
+00:00:29,490 --> 00:00:31,340
+It's short for Natural Language Processing.
+
+15
+00:00:31,340 --> 00:00:35,180
+Its core objective is to enable computers to understand, process, and generate human language.
+
+16
+00:00:35,180 --> 00:00:37,610
+or even use human natural language.
+
+17
+00:00:37,610 --> 00:00:38,890
+So, what are the most common tasks?
+
+18
+00:00:38,890 --> 00:00:41,870
+Take machine translation and sentiment analysis, for example.
+
+19
+00:00:41,870 --> 00:00:42,610
+You give it a sentence,
+
+20
+00:00:42,610 --> 00:00:45,310
+and have it determine whether the sentiment is positive or negative.
+
+21
+00:00:45,310 --> 00:00:46,310
+Information extraction.
+
+22
+00:00:46,310 --> 00:00:48,770
+This involves pulling out key pieces of information from a text.
+
+23
+00:00:48,770 --> 00:00:49,770
+Text generation.
+
+24
+00:00:49,770 --> 00:00:52,550
+This is actually the most common application area for AI today.
+
+25
+00:00:52,550 --> 00:00:54,430
+Right, like generating a summary of an article.
+
+26
+00:00:54,430 --> 00:00:55,410
+and interact with us.
+
+27
+00:00:55,410 --> 00:00:56,030
+generate charts,
+
+28
+00:00:56,030 --> 00:00:57,070
+answer our questions,
+
+29
+00:00:57,070 --> 00:00:58,600
+help us write emails,
+
+30
+00:00:58,600 --> 00:00:59,780
+all of which requires coding.
+
+31
+00:00:59,780 --> 00:01:00,460
+write a thesis,
+
+32
+00:01:00,460 --> 00:01:02,820
+In fact, all of these are tasks that NLP can handle.
+
+33
+00:01:02,820 --> 00:01:05,120
+Now, on the surface, these tasks might seem completely different from one another.
+
+34
+00:01:05,120 --> 00:01:08,140
+But the problem they're all trying to solve is actually the same.
+
+35
+00:01:08,140 --> 00:01:11,840
+It's all about how to get machines to understand and process human language.
+
+36
+00:01:11,840 --> 00:01:15,960
+So, this is where NLP differs from programming.
+
+37
+00:01:15,960 --> 00:01:19,220
+Programming, at its core, is a situation where neither humans nor computers understand each other.
+
+38
+00:01:19,220 --> 00:01:21,560
+So, they both had to take a step back and meet in the middle.
+
+39
+00:01:21,560 --> 00:01:23,280
+and invented an intermediary language.
+
+40
+00:01:23,280 --> 00:01:24,740
+Humans learn grammar,
+
+41
+00:01:24,740 --> 00:01:25,860
+Take the C programming language, for example.
+
+42
+00:01:25,860 --> 00:01:26,740
+and learned Python.
+
+43
+00:01:26,740 --> 00:01:28,060
+and wrote it in a programming language.
+
+44
+00:01:28,060 --> 00:01:29,920
+But the machine can't understand this programming language either.
+
+45
+00:01:29,920 --> 00:01:32,980
+It uses a compiler or an interpreter to convert it into binary code.
+
+46
+00:01:32,980 --> 00:01:34,070
+And that's how it works.
+
+47
+00:01:34,070 --> 00:01:37,710
+But for humans, this is relatively costly.
+
+48
+00:01:37,710 --> 00:01:39,940
+That's why not everyone can program, right?
+
+49
+00:01:39,940 --> 00:01:41,800
+But NLP, it takes that a step further.
+
+50
+00:01:41,800 --> 00:01:42,880
+It's incredibly user-friendly.
+
+51
+00:01:42,880 --> 00:01:44,280
+You just use English yourself,
+
+52
+00:01:44,280 --> 00:01:44,820
+or Chinese,
+
+53
+00:01:44,820 --> 00:01:46,509
+You just use your own natural language.
+
+54
+00:01:46,509 --> 00:01:48,109
+You can just talk directly to the machine.
+
+55
+00:01:48,109 --> 00:01:50,490
+and let the machine learn everything else on its own.
+
+56
+00:01:50,490 --> 00:01:53,210
+So, this means it places a much heavier burden on the machine.
+
+57
+00:01:53,210 --> 00:01:55,090
+But, of course, this also made things more difficult.
+
+58
+00:01:55,090 --> 00:01:56,870
+Compared to static programming,
+
+59
+00:01:56,870 --> 00:01:59,270
+But at the same time, it's also become a technology that benefits everyone.
+
+60
+00:01:59,270 --> 00:02:01,570
+Nowadays, you have kids as young as six or seven,
+
+61
+00:02:01,570 --> 00:02:03,030
+and up to the elderly in their 70s and 80s,
+
+62
+00:02:03,030 --> 00:02:05,260
+can all use AI in their daily lives.
+
+63
+00:02:05,260 --> 00:02:06,880
+and in their work.
+
+64
+00:02:06,880 --> 00:02:11,220
+And that's what's making AI technology so much more accessible to everyone.
+
+65
+00:02:11,720 --> 00:02:13,820
+So, how did NLP evolve to this point?
+
+66
+00:02:13,820 --> 00:02:16,600
+Actually, this is something we've covered in our introduction to machine learning and AI.
+
+67
+00:02:16,600 --> 00:02:17,600
+As we've also mentioned,
+
+68
+00:02:17,600 --> 00:02:19,040
+It all started with symbolism.
+
+69
+00:02:19,040 --> 00:02:21,360
+People tried to describe the world using rules.
+
+70
+00:02:21,360 --> 00:02:23,760
+This approach is all about using rules to express human language.
+
+71
+00:02:23,760 --> 00:02:25,700
+But eventually, they found this approach was a dead end. It just didn't work.
+
+72
+00:02:25,700 --> 00:02:27,870
+And so, we gradually moved into the realm of probability.
+
+73
+00:02:27,870 --> 00:02:30,190
+And this probabilistic approach led to the field of machine learning.
+
+74
+00:02:30,190 --> 00:02:30,910
+And then, moving on...
+
+75
+00:02:30,910 --> 00:02:32,570
+And that's when word embeddings were invented.
+
+76
+00:02:32,570 --> 00:02:35,620
+So, the consensus was that language still had to be represented by numbers.
+
+77
+00:02:35,620 --> 00:02:39,370
+And computers are exceptionally good at processing numbers, right?
+
+78
+00:02:39,370 --> 00:02:41,250
+So, they took these discrete symbols...
+
+79
+00:02:41,250 --> 00:02:43,710
+and placed them into a continuous semantic space.
+
+80
+00:02:43,710 --> 00:02:46,120
+And gradually, this led to the development of RNNs.
+
+81
+00:02:46,120 --> 00:02:48,520
+So, besides being able to, uh, process complete sentences...
+
+82
+00:02:48,520 --> 00:02:49,240
+After understanding the words,
+
+83
+00:02:49,240 --> 00:02:50,800
+It could also process entire sentences.
+
+84
+00:02:50,800 --> 00:02:53,329
+This was a huge leap forward for NLP.
+
+85
+00:02:53,329 --> 00:02:55,729
+But, we'll find that it still has a few minor issues.
+
+86
+00:02:55,729 --> 00:02:57,409
+It couldn't handle generation tasks.
+
+87
+00:02:57,409 --> 00:02:59,829
+and it also had some shortcomings when it came to translation.
+
+88
+00:02:59,829 --> 00:03:02,500
+And that's where sequence-to-sequence came in.
+
+89
+00:03:02,500 --> 00:03:05,240
+And this idea would then lead to the concept of attention.
+
+90
+00:03:05,240 --> 00:03:07,540
+But this attention mechanism wasn't the one from the Transformer.
+
+91
+00:03:07,540 --> 00:03:08,160
+Transformer.
+
+92
+00:03:08,160 --> 00:03:09,320
+but the one in the Transformer.
+
+93
+00:03:09,320 --> 00:03:11,420
+It pretty much brought all of this previous knowledge together.
+
+94
+00:03:11,420 --> 00:03:13,020
+It stands on the shoulders of giants.
+
+95
+00:03:13,020 --> 00:03:14,440
+And of course, it invented self-attention.
+
+96
+00:03:14,440 --> 00:03:15,019
+self-
+
+97
+00:03:15,019 --> 00:03:16,939
+Because it's a decoder-only model.
+
+98
+00:03:16,939 --> 00:03:19,659
+And this self-referential process, this looking at itself, was the very birth of the Transformer.
+
+99
+00:03:19,659 --> 00:03:21,420
+And from there, large models gradually emerged.
+
+100
+00:03:21,420 --> 00:03:24,840
+So, step by step, machines went from merely seeing text to actually understanding it.
+
+101
+00:03:24,840 --> 00:03:26,700
+and eventually, learned to generate.
+
+102
+00:03:26,930 --> 00:03:29,550
+So, let's take a look at the evolution of NLP.
+
+103
+00:03:29,550 --> 00:03:31,550
+First up is the Symbolism era.
+
+104
+00:03:31,550 --> 00:03:34,000
+The core idea was to use rules to enumerate every possible language construct.
+
+105
+00:03:34,000 --> 00:03:35,240
+So, in the early days of NLP,
+
+106
+00:03:35,240 --> 00:03:36,820
+This approach is quite intuitive.
+
+107
+00:03:36,820 --> 00:03:38,400
+Language, after all, has grammar.
+
+108
+00:03:38,400 --> 00:03:40,260
+You know, subject, predicate, object, verb, linking verb, predicate... all that stuff.
+
+109
+00:03:40,260 --> 00:03:40,880
+and so on.
+
+110
+00:03:40,880 --> 00:03:43,350
+Things like passive voice, and all that, uh...
+
+111
+00:03:43,350 --> 00:03:44,430
+Back then, the prevailing belief was that...
+
+112
+00:03:44,430 --> 00:03:46,610
+The idea was, as long as you could just write all these rules into a program,
+
+113
+00:03:46,610 --> 00:03:48,270
+and the machine would be able to understand language.
+
+114
+00:03:48,270 --> 00:03:50,750
+This was because language itself was thought to be something that could be formalized.
+
+115
+00:03:50,750 --> 00:03:52,150
+and can therefore be programmed.
+
+116
+00:03:52,150 --> 00:03:54,270
+And machine translation is the most classic example of this.
+
+117
+00:03:54,270 --> 00:03:55,690
+The first step is to perform a dictionary-based substitution.
+
+118
+00:03:55,690 --> 00:03:57,870
+and then re-adjust the word order within the sentence.
+
+119
+00:03:57,870 --> 00:03:59,450
+and perform some information extraction.
+
+120
+00:03:59,450 --> 00:04:01,370
+and then extract the main components like the subject, verb, and object.
+
+121
+00:04:01,370 --> 00:04:03,450
+And they figured that would be good enough.
+
+122
+00:04:03,450 --> 00:04:04,610
+There was dictionary-based translation.
+
+123
+00:04:04,610 --> 00:04:06,740
+And just like that, a one-to-one mapping would produce the translation.
+
+124
+00:04:06,740 --> 00:04:07,900
+But,
+
+125
+00:04:07,900 --> 00:04:11,180
+But it's not like there was no theoretical foundation back then.
+
+126
+00:04:11,180 --> 00:04:13,619
+So, whether it was mathematicians conducting some explorations,
+
+127
+00:04:13,619 --> 00:04:14,619
+Just like translation.
+
+128
+00:04:14,619 --> 00:04:16,899
+This was the very first exploration of LP.
+
+129
+00:04:16,899 --> 00:04:18,499
+So basically, language is like a code.
+
+130
+00:04:18,499 --> 00:04:21,900
+You feed it the source text, which contains some hidden rules for mapping relationships.
+
+131
+00:04:21,900 --> 00:04:23,180
+As long as you write down every single one of them,
+
+132
+00:04:23,180 --> 00:04:25,440
+you can convert it into another language.
+
+133
+00:04:25,440 --> 00:04:29,039
+So, for this kind of language, translation is basically a decoding process.
+
+134
+00:04:29,039 --> 00:04:30,959
+Meanwhile, linguists also provided proof of this.
+
+135
+00:04:30,959 --> 00:04:32,679
+formal languages and generative grammar.
+
+136
+00:04:32,679 --> 00:04:36,429
+These rules reinforced the belief that language could be fully systematized.
+
+137
+00:04:36,429 --> 00:04:37,089
+This belief
+
+138
+00:04:37,089 --> 00:04:40,849
+So, as you can see, the symbolic approach was dominant for a very long time.
+
+139
+00:04:40,849 --> 00:04:42,100
+So, language is like a code.
+
+140
+00:04:42,100 --> 00:04:44,020
+So, the corresponding solutions for early NLP...
+
+141
+00:04:44,020 --> 00:04:47,870
+The idea was to write out this 'password' in the form of a corresponding rulebook.
+
+142
+00:04:48,070 --> 00:04:50,630
+But gradually, people started to realize there was a problem.
+
+143
+00:04:50,630 --> 00:04:52,630
+I mean, language does have rules, that's for sure.
+
+144
+00:04:52,630 --> 00:04:54,230
+And on top of that, the sheer volume of these rules is just massive.
+
+145
+00:04:54,230 --> 00:04:55,320
+It was simply impossible to write them all down.
+
+146
+00:04:55,320 --> 00:04:58,360
+Natural language is highly dependent on its context.
+
+147
+00:04:58,360 --> 00:04:59,640
+And it's not just that there are a ton of rules.
+
+148
+00:04:59,640 --> 00:05:01,040
+and the same rules...
+
+149
+00:05:01,040 --> 00:05:03,450
+can actually mean something completely different in different contexts.
+
+150
+00:05:03,450 --> 00:05:05,250
+For example, take the phrase "You're quite the talker."
+
+151
+00:05:05,250 --> 00:05:06,930
+This sentence could be a compliment,
+
+152
+00:05:06,930 --> 00:05:08,080
+or it could be sarcasm.
+
+153
+00:05:08,080 --> 00:05:10,760
+You have to consider the context and the tone of voice.
+
+154
+00:05:10,760 --> 00:05:13,420
+and even the relationship between the speakers to make that call.
+
+155
+00:05:13,420 --> 00:05:15,820
+So, as you can imagine, people gradually started to realize...
+
+156
+00:05:15,820 --> 00:05:17,560
+There are just too many ways to express language.
+
+157
+00:05:17,560 --> 00:05:19,480
+and all sorts of unexpected issues kept popping up.
+
+158
+00:05:19,480 --> 00:05:20,920
+Context also plays a crucial role.
+
+159
+00:05:20,920 --> 00:05:22,890
+There's just no way to enumerate all the rules.
+
+160
+00:05:22,890 --> 00:05:26,410
+So basically, this whole approach just went bust.
+
+161
+00:05:26,410 --> 00:05:30,490
+Gradually, some NLP researchers began to turn to statistical methods.
+
+162
+00:05:30,490 --> 00:05:33,130
+And as you dive into machine learning, you'll start to notice something.
+
+163
+00:05:33,130 --> 00:05:34,810
+In fact, all sorts of statistical methods...
+
+164
+00:05:34,810 --> 00:05:36,860
+and there's a whole lot of knowledge in probability theory.
+
+165
+00:05:36,860 --> 00:05:39,200
+And this, in turn, ushered in the era of statistics.
+
+166
+00:05:39,200 --> 00:05:40,500
+In other words, machine learning.
+
+167
+00:05:40,500 --> 00:05:43,420
+They learn the patterns from the corpus, uh...
+
+168
+00:05:43,420 --> 00:05:44,860
+But of course, this was all driven by the context of the times.
+
+169
+00:05:44,860 --> 00:05:47,500
+So, starting from the late 1980s,
+
+170
+00:05:47,500 --> 00:05:49,040
+Then, in the 1990s,
+
+171
+00:05:49,040 --> 00:05:50,600
+First of all, computing power had improved.
+
+172
+00:05:50,600 --> 00:05:52,640
+text and all sorts of speech data.
+
+173
+00:05:52,640 --> 00:05:54,900
+and with that, the amount of data for NLP also increased.
+
+174
+00:05:54,900 --> 00:05:57,620
+People started to see language as something that could be estimated from data.
+
+175
+00:05:57,620 --> 00:05:58,700
+a probability distribution.
+
+176
+00:05:58,700 --> 00:06:01,060
+For instance, if I say, "I want to eat something today..."
+
+177
+00:06:01,060 --> 00:06:03,060
+So, you know the probability of the word 'hot pot' coming next,
+
+178
+00:06:03,060 --> 00:06:04,960
+is much, much higher than the probability of it being 'screwdriver'.
+
+179
+00:06:04,960 --> 00:06:07,400
+It's just because I've seen all sorts of phrases like 'let's eat hot pot today'...
+
+180
+00:06:07,400 --> 00:06:08,710
+Let's have hot pot tomorrow.
+
+181
+00:06:08,710 --> 00:06:10,070
+And I like to put beef in my hot pot.
+
+182
+00:06:10,070 --> 00:06:10,910
+The screwdriver is great.
+
+183
+00:06:10,910 --> 00:06:11,150
+use
+
+184
+00:06:11,150 --> 00:06:12,210
+Screwdriver, fix the chair.
+
+185
+00:06:12,210 --> 00:06:14,150
+A screwdriver is a machine with a cross-shaped head.
+
+186
+00:06:14,150 --> 00:06:16,590
+It doesn't truly understand what 'hot pot' is.
+
+187
+00:06:16,590 --> 00:06:18,190
+But what it can do is look at it probabilistically.
+
+188
+00:06:18,190 --> 00:06:21,110
+As long as it's fed enough sentences to learn from,
+
+189
+00:06:21,110 --> 00:06:23,310
+it will know the probability of 'hot pot' following the word 'eat'.
+
+190
+00:06:23,310 --> 00:06:25,230
+is much, much higher than 'screwdriver', right?
+
+191
+00:06:25,230 --> 00:06:26,030
+I don't have to understand.
+
+192
+00:06:26,030 --> 00:06:28,830
+But probabilistically, I just know what comes next.
+
+193
+00:06:28,830 --> 00:06:30,810
+And that's the core idea behind it.
+
+194
+00:06:30,810 --> 00:06:34,920
+There was even a speech recognition expert at IBM who once said,
+
+195
+00:06:34,920 --> 00:06:35,300
+He once said,
+
+196
+00:06:35,300 --> 00:06:37,040
+that every time I fire a linguist,
+
+197
+00:06:37,040 --> 00:06:39,280
+my speech recognition rate goes up a little.
+
+198
+00:06:39,280 --> 00:06:41,160
+Now, that sounds incredibly harsh, doesn't it?
+
+199
+00:06:41,160 --> 00:06:43,160
+But it also really reflected the reality of the situation back then.
+
+200
+00:06:43,160 --> 00:06:44,940
+A key shift in NLP research
+
+201
+00:06:44,940 --> 00:06:47,680
+So, systems were no longer primarily dependent on experts writing rules.
+
+202
+00:06:47,680 --> 00:06:49,120
+So, what did they rely on instead?
+
+203
+00:06:49,120 --> 00:06:50,860
+Instead, they use probability to analyze massive amounts of text corpora,
+
+204
+00:06:50,860 --> 00:06:55,050
+and treating massive amounts of text and speech data as empirical evidence for statistical analysis.
+
+205
+00:06:55,050 --> 00:06:57,830
+and what's more likely to come after it.
+
+206
+00:06:57,830 --> 00:06:59,130
+and what might have come before it.
+
+207
+00:06:59,130 --> 00:07:00,409
+Even though I don't understand language itself,
+
+208
+00:07:00,409 --> 00:07:03,560
+But from an engineering perspective, I can actually make that prediction.
+
+209
+00:07:03,560 --> 00:07:06,320
+And it was around this time that all sorts of n-grams were born.
+
+210
+00:07:06,320 --> 00:07:07,820
+and then it could predict the next word.
+
+211
+00:07:07,820 --> 00:07:08,920
+In language modeling,
+
+212
+00:07:08,920 --> 00:07:10,720
+And for input methods, there's also... uh...
+
+213
+00:07:10,720 --> 00:07:12,720
+In fact, the earliest input methods we used also employed this technology.
+
+214
+00:07:12,720 --> 00:07:14,420
+And it was also widely used in machine translation.
+
+215
+00:07:14,420 --> 00:07:15,980
+And there were also different RCRFs.
+
+216
+00:07:15,980 --> 00:07:19,080
+These include classic statistical machine translators.
+
+217
+00:07:19,080 --> 00:07:22,940
+This kind of dual-source, semantically driven system is what we call a translation system.
+
+218
+00:07:22,940 --> 00:07:26,820
+And this approach did yield some results during that era.
+
+219
+00:07:26,820 --> 00:07:29,250
+This allowed for the application of probability theory or, more broadly, machine learning.
+
+220
+00:07:29,250 --> 00:07:31,260
+And it did see some applications in NLP.
+
+221
+00:07:31,260 --> 00:07:33,720
+The idea is to first convert a language task into something that can be statistically analyzed.
+
+222
+00:07:33,720 --> 00:07:35,300
+into a probabilistic problem that can be estimated.
+
+223
+00:07:35,300 --> 00:07:37,180
+and then use that data to select the answer.
+
+224
+00:07:37,180 --> 00:07:39,539
+So, that's the core idea behind it.
+
+225
+00:07:39,539 --> 00:07:41,579
+But, this approach also had its own set of problems.
+
+226
+00:07:41,579 --> 00:07:44,220
+First of all, even though it works with a massive amount of text corpora,
+
+227
+00:07:44,220 --> 00:07:44,920
+It was able to count,
+
+228
+00:07:44,920 --> 00:07:47,200
+For example, it could count how many times a word appeared, and things like that.
+
+229
+00:07:47,200 --> 00:07:48,520
+So, it does recognize some words.
+
+230
+00:07:48,520 --> 00:07:50,420
+and how many times the word 'cat' appears.
+
+231
+00:07:50,420 --> 00:07:52,900
+and which words it's likely to appear together with.
+
+232
+00:07:52,900 --> 00:07:56,600
+But the thing is, these words are all just treated as separate entities with no real connection between them.
+
+233
+00:07:56,600 --> 00:07:58,360
+So, even after all that training, the model still has no idea.
+
+234
+00:07:58,360 --> 00:08:00,280
+So, "cat" and "dog" might be considered more similar.
+
+235
+00:08:00,280 --> 00:08:02,520
+whereas the difference between a cat and a refrigerator is huge.
+
+236
+00:08:02,520 --> 00:08:04,480
+It can only work by counting frequencies.
+
+237
+00:08:04,480 --> 00:08:06,520
+It didn't truly understand language.
+
+238
+00:08:06,520 --> 00:08:10,370
+So, as we know, the core of NLP is that you have to understand language before you can process it.
+
+239
+00:08:10,370 --> 00:08:11,810
+and then it can start generating content on its own.
+
+240
+00:08:11,810 --> 00:08:12,550
+Right?
+
+241
+00:08:12,550 --> 00:08:14,690
+So, from that perspective,
+
+242
+00:08:14,690 --> 00:08:18,830
+the statistical or machine learning capabilities were quite limited.
+
+243
+00:08:18,830 --> 00:08:19,790
+So, what's next?
+
+244
+00:08:19,790 --> 00:08:23,360
+So, the question we were asking was, how can we get computers to process language more effectively?
+
+245
+00:08:23,360 --> 00:08:25,600
+So, if you want a computer to process language,
+
+246
+00:08:25,600 --> 00:08:26,680
+But first, there's a fundamental premise we need to understand.
+
+247
+00:08:26,680 --> 00:08:29,400
+You see, computers can't actually understand every single word in a natural language.
+
+248
+00:08:29,400 --> 00:08:30,460
+or every single Chinese character.
+
+249
+00:08:30,460 --> 00:08:32,160
+We have to convert these words into something
+
+250
+00:08:32,160 --> 00:08:34,469
+into numbers that a computer can understand.
+
+251
+00:08:34,469 --> 00:08:38,840
+So, how exactly do we represent this? How do we turn it into these numbers?
+
+252
+00:08:38,840 --> 00:08:40,440
+In the data processing for machine learning,
+
+253
+00:08:40,440 --> 00:08:41,440
+we've already touched upon this.
+
+254
+00:08:41,440 --> 00:08:43,909
+So, in that case, we take some of the data and...
+
+255
+00:08:43,909 --> 00:08:44,969
+For example, let's say it's a category.
+
+256
+00:08:44,969 --> 00:08:46,650
+So, what category does it belong to?
+
+257
+00:08:46,650 --> 00:08:47,790
+or, say, locations.
+
+258
+00:08:47,790 --> 00:08:51,690
+So, for these enumerable text features, like Beijing, Shanghai, Guangzhou...
+
+259
+00:08:51,690 --> 00:08:54,420
+So, we use one-hot encoding for that, right?
+
+260
+00:08:54,420 --> 00:08:55,560
+So, why not just use numbers?
+
+261
+00:08:55,560 --> 00:08:57,420
+Because, when it comes to machine learning training,
+
+262
+00:08:57,420 --> 00:09:00,200
+For example, if you represent Beijing, Shanghai, and Guangzhou with the numbers 1, 2, and 3 respectively,
+
+263
+00:09:00,200 --> 00:09:01,280
+For a machine,
+
+264
+00:09:01,280 --> 00:09:02,360
+One is less than two,
+
+265
+00:09:02,360 --> 00:09:03,160
+and two is less than three.
+
+266
+00:09:03,160 --> 00:09:05,780
+But in reality, there's no such relationship between these three locations.
+
+267
+00:09:05,780 --> 00:09:07,520
+So, we can't express it like this.
+
+268
+00:09:07,520 --> 00:09:08,580
+So, we can't just use plain numbers.
+
+269
+00:09:08,580 --> 00:09:09,900
+So, what does one-hot encoding do?
+
+270
+00:09:09,900 --> 00:09:12,140
+So, let's say we have three or more words.
+
+271
+00:09:12,140 --> 00:09:14,140
+So, I'm not going to encode each word as just 1, 2, or 3.
+
+272
+00:09:14,140 --> 00:09:16,680
+This would imply that there's some kind of ordering relationship between them.
+
+273
+00:09:16,680 --> 00:09:18,040
+Instead, I use a vector for each one.
+
+274
+00:09:18,040 --> 00:09:22,010
+So, for example, let's say this vector is 10,000 zeros.
+
+275
+00:09:22,010 --> 00:09:23,770
+Let's say, a 10,000-dimensional vector.
+
+276
+00:09:23,770 --> 00:09:24,310
+So, which one is it?
+
+277
+00:09:24,310 --> 00:09:25,070
+Take 'football' for example.
+
+278
+00:09:25,070 --> 00:09:26,350
+So, the second one, for basketball,
+
+279
+00:09:26,350 --> 00:09:27,110
+The third one, the refrigerator.
+
+280
+00:09:27,110 --> 00:09:28,720
+and for the fourth one, there's a single one.
+
+281
+00:09:28,720 --> 00:09:29,680
+and the rest are all zeros.
+
+282
+00:09:29,680 --> 00:09:30,940
+All you have to do is see which one is a one,
+
+283
+00:09:30,940 --> 00:09:32,320
+and you'll know what it represents.
+
+284
+00:09:32,320 --> 00:09:33,920
+And that's why it's called 'one-hot', right?
+
+285
+00:09:33,920 --> 00:09:35,080
+Only one of them is 'hot'.
+
+286
+00:09:35,080 --> 00:09:36,520
+and all the rest are just zeros.
+
+287
+00:09:36,520 --> 00:09:37,360
+In this scenario,
+
+288
+00:09:37,360 --> 00:09:38,440
+So, for a computer,
+
+289
+00:09:38,440 --> 00:09:39,400
+As we've mentioned before,
+
+290
+00:09:39,400 --> 00:09:42,320
+it can then process all these texts without any discrimination.
+
+291
+00:09:42,320 --> 00:09:44,180
+And just like that, the text is represented.
+
+292
+00:09:44,180 --> 00:09:45,640
+But in the context of L2P,
+
+293
+00:09:45,640 --> 00:09:47,900
+Now, the sheer volume of vocabulary we might encounter...
+
+294
+00:09:47,900 --> 00:09:50,400
+the number of words will be far, far greater than just a few categories or locations.
+
+295
+00:09:50,400 --> 00:09:52,560
+Before, maybe we could get by with a ten-dimensional vector.
+
+296
+00:09:52,560 --> 00:09:54,100
+a 100-dimensional vector would be enough.
+
+297
+00:09:54,100 --> 00:09:55,280
+But when it comes to natural language,
+
+298
+00:09:55,280 --> 00:09:58,190
+you might be dealing with vectors that have 10,000, or even a million dimensions.
+
+299
+00:09:58,190 --> 00:10:00,230
+The advantages of this approach are actually pretty clear.
+
+300
+00:10:00,230 --> 00:10:01,130
+It's pretty straightforward, right?
+
+301
+00:10:01,130 --> 00:10:02,870
+it clearly expresses to the model
+
+302
+00:10:02,870 --> 00:10:04,910
+So, are these the downsides of this method?
+
+303
+00:10:04,910 --> 00:10:07,340
+First of all, its dimensionality is just way too high.
+
+304
+00:10:07,340 --> 00:10:08,940
+It's just way too inefficient with its information.
+
+305
+00:10:08,940 --> 00:10:09,600
+Right?
+
+306
+00:10:09,600 --> 00:10:12,510
+For example, you might have a million one-hot vectors, but you only use one of them at a time.
+
+307
+00:10:12,510 --> 00:10:14,610
+Then you've just wasted all the rest of them.
+
+308
+00:10:14,610 --> 00:10:15,310
+So, for the second point...
+
+309
+00:10:15,310 --> 00:10:16,630
+Actually, this is similar to what we just talked about.
+
+310
+00:10:16,630 --> 00:10:18,720
+The principle behind using numbers is kind of similar.
+
+311
+00:10:18,720 --> 00:10:21,020
+Although, it's not like they have a size or a ranking relationship anymore.
+
+312
+00:10:21,020 --> 00:10:23,240
+But there's no semantic meaning between them either.
+
+313
+00:10:23,240 --> 00:10:25,550
+So, let's break it down for a regular person to understand.
+
+314
+00:10:25,550 --> 00:10:28,390
+So, soccer and basketball should definitely be pretty close to each other.
+
+315
+00:10:28,390 --> 00:10:31,010
+And the gap between this and, say, a refrigerator should be huge.
+
+316
+00:10:31,010 --> 00:10:32,950
+But within their 10,000-dimensional vectors,
+
+317
+00:10:32,950 --> 00:10:34,760
+the distance between them is pretty much the same.
+
+318
+00:10:34,760 --> 00:10:35,960
+Or, even if they're different,
+
+319
+00:10:35,960 --> 00:10:37,640
+but it couldn't express how close they were either.
+
+320
+00:10:37,640 --> 00:10:39,060
+while semantically closer ones...
+
+321
+00:10:39,060 --> 00:10:41,480
+Semantically, they are different and more distant from each other.
+
+322
+00:10:41,480 --> 00:10:42,800
+This is something it just can't express.
+
+323
+00:10:42,800 --> 00:10:44,400
+And that's one of the drawbacks of the one-hot encoding.
+
+324
+00:10:44,400 --> 00:10:47,400
+So, after a while, through research, people also discovered that...
+
+325
+00:10:47,400 --> 00:10:50,160
+In fact, they also discovered that language expression actually follows certain patterns.
+
+326
+00:10:50,160 --> 00:10:51,080
+For example, if I say the word "football"...
+
+327
+00:10:51,080 --> 00:10:53,360
+Brazil might pop into your head.
+
+328
+00:10:53,360 --> 00:10:54,610
+It's the kingdom of soccer.
+
+329
+00:10:54,610 --> 00:10:56,410
+Messi is an incredible football player.
+
+330
+00:10:56,410 --> 00:10:58,730
+or something like the World Cup is happening right now.
+
+331
+00:10:58,730 --> 00:11:00,610
+is a term in soccer.
+
+332
+00:11:00,610 --> 00:11:01,970
+Of course, for our friends in China,
+
+333
+00:11:01,970 --> 00:11:04,110
+the phrase "refund my money" might also pop into their heads.
+
+334
+00:11:04,110 --> 00:11:05,830
+These associations show that words...
+
+335
+00:11:05,830 --> 00:11:07,930
+are not just isolated symbols in themselves.
+
+336
+00:11:07,930 --> 00:11:09,350
+So, what about the meaning of a word?
+
+337
+00:11:09,350 --> 00:11:11,860
+is often tied to the context it frequently appears in,
+
+338
+00:11:11,860 --> 00:11:12,620
+the context,
+
+339
+00:11:12,620 --> 00:11:13,220
+emotions,
+
+340
+00:11:13,220 --> 00:11:15,480
+or even cultural memories.
+
+341
+00:11:15,480 --> 00:11:19,360
+The meaning of a word can be determined by the words that it frequently appears with.
+
+342
+00:11:19,360 --> 00:11:20,500
+can be figured out.
+
+343
+00:11:20,500 --> 00:11:23,580
+So, in other words, words themselves have a certain distribution.
+
+344
+00:11:23,580 --> 00:11:25,260
+This is the distributed hypothesis.
+
+345
+00:11:25,260 --> 00:11:29,370
+It's not just a collection of unrelated things.
+
+346
+00:11:29,370 --> 00:11:32,680
+And this gave birth to a technique called embedding.
+
+347
+00:11:32,680 --> 00:11:35,560
+So, instead of using one-hot encoding for words,
+
+348
+00:11:35,560 --> 00:11:38,280
+or even just a numerical symbol to represent it.
+
+349
+00:11:38,280 --> 00:11:39,360
+Now, it's still data,
+
+350
+00:11:39,360 --> 00:11:41,520
+Instead, it uses a semantic space.
+
+351
+00:11:41,520 --> 00:11:43,400
+This is actually the technique known as word embedding.
+
+352
+00:11:43,400 --> 00:11:46,480
+And this was developed by none other than one of the legendary 'AI Big Three'.
+
+353
+00:11:46,480 --> 00:11:48,480
+discovered by Bengio and his team.
+
+354
+00:11:48,480 --> 00:11:50,060
+Later on, when it comes to natural language processing,
+
+355
+00:11:50,060 --> 00:11:52,110
+We'll be seeing a lot of Bengio's name.
+
+356
+00:11:52,110 --> 00:11:54,270
+So, what it's actually doing is, in the process of predicting the next word,
+
+357
+00:11:54,270 --> 00:11:56,110
+He started out by studying statistics as well.
+
+358
+00:11:56,110 --> 00:11:57,100
+and researching machine learning.
+
+359
+00:11:57,100 --> 00:11:59,740
+And gradually, it just naturally learned all these words along the way.
+
+360
+00:11:59,740 --> 00:12:01,740
+It doesn't need a separate, dedicated thing to represent it.
+
+361
+00:12:01,740 --> 00:12:04,530
+It uses a vector to represent the dimensionality of that vector.
+
+362
+00:12:04,530 --> 00:12:06,490
+and look at the space of the corresponding words.
+
+363
+00:12:06,490 --> 00:12:08,090
+But the thing is, it's a vector.
+
+364
+00:12:08,090 --> 00:12:09,450
+So it's not just a single number anymore.
+
+365
+00:12:09,450 --> 00:12:11,950
+It's likely a vector composed of multiple numbers.
+
+366
+00:12:11,950 --> 00:12:15,230
+So, its dimensionality is much lower than one-hot encoding.
+
+367
+00:12:15,230 --> 00:12:17,190
+Because it's not like only one of them has a number.
+
+368
+00:12:17,190 --> 00:12:19,190
+and the numbers in each of these positions are meaningful.
+
+369
+00:12:19,190 --> 00:12:20,980
+They are trained using machine learning.
+
+370
+00:12:20,980 --> 00:12:23,540
+And to this day, this technology is still in use.
+
+371
+00:12:23,540 --> 00:12:25,700
+It's just that a whole lot of new things have been introduced.
+
+372
+00:12:25,700 --> 00:12:28,230
+So, when we're learning about the Transformer,
+
+373
+00:12:28,230 --> 00:12:31,030
+You'll also often come across things like position embeddings.
+
+374
+00:12:31,030 --> 00:12:33,310
+Exactly, a word is a token embedding.
+
+375
+00:12:33,310 --> 00:12:36,720
+You'll come across all of these, and their origins can actually be traced right back to this.
+
+376
+00:12:36,720 --> 00:12:39,100
+Of course, once this idea was discovered...
+
+377
+00:12:39,100 --> 00:12:41,100
+But actually, it didn't catch on right away.
+
+378
+00:12:41,100 --> 00:12:43,660
+This continued until 2013, when the concept was finally proposed.
+
+379
+00:12:43,660 --> 00:12:45,320
+the proposal of Word2Vec.
+
+380
+00:12:45,320 --> 00:12:47,380
+So, what are words actually turned into?
+
+381
+00:12:47,380 --> 00:12:48,180
+Vectors, right?
+
+382
+00:12:48,180 --> 00:12:49,270
+So, what does it do?
+
+383
+00:12:49,270 --> 00:12:50,550
+So, it used a few techniques.
+
+384
+00:12:50,550 --> 00:12:51,870
+This also builds on the idea of embedding.
+
+385
+00:12:51,870 --> 00:12:54,310
+But it did propose two very simple training methods.
+
+386
+00:12:54,310 --> 00:12:57,190
+So, gradually, what else was it able to do?
+
+387
+00:12:57,190 --> 00:13:00,570
+Take the phrase 'I like to watch the game' for example.
+
+388
+00:13:00,570 --> 00:13:02,490
+and figure out that the word is 'football'.
+
+389
+00:13:02,490 --> 00:13:06,440
+But it can also work in reverse, using the word 'football' to predict all those other words.
+
+390
+00:13:06,440 --> 00:13:09,520
+So, based on a central word, you can predict the words that come before and after it.
+
+391
+00:13:09,520 --> 00:13:13,050
+Or, it could work the other way around, predicting the central word from the words on either side. Both are possible.
+
+392
+00:13:13,050 --> 00:13:14,730
+So, once this was discovered,
+
+393
+00:13:14,730 --> 00:13:16,250
+and it immediately took the world by storm.
+
+394
+00:13:16,250 --> 00:13:17,530
+And a classic example of this is...
+
+395
+00:13:17,530 --> 00:13:18,340
+And what they discovered was...
+
+396
+00:13:18,340 --> 00:13:19,940
+and between the vectors of the words it learned,
+
+397
+00:13:19,940 --> 00:13:22,580
+exhibit a kind of geometric structure for both semantics and grammar.
+
+398
+00:13:22,580 --> 00:13:25,730
+So, words with similar meanings are positioned closer to each other in this space.
+
+399
+00:13:25,730 --> 00:13:28,230
+while words that aren't as similar are farther apart.
+
+400
+00:13:31,720 --> 00:13:33,960
+Right, so after using Word2Vec...
+
+401
+00:13:33,960 --> 00:13:37,080
+For example, if you take the word 'king' and subtract 'man'...
+
+402
+00:13:37,080 --> 00:13:39,440
+and then you add the vector for 'woman', the result you get is surprisingly...
+
+403
+00:13:39,440 --> 00:13:42,940
+is incredibly close to the vector for 'queen'.
+
+404
+00:13:42,940 --> 00:13:45,540
+So, we can say she's now got her wings.
+
+405
+00:13:45,540 --> 00:13:47,700
+So, starting from today's, from the word... uh...
+
+406
+00:13:47,700 --> 00:13:48,980
+So, after the whole word-to-vector thing...
+
+407
+00:13:48,980 --> 00:13:52,240
+computers could finally grasp the semantic relationships between words.
+
+408
+00:13:52,240 --> 00:13:54,850
+This was a truly monumental discovery.
+
+409
+00:13:54,850 --> 00:13:58,210
+But it didn't immediately cause an explosion in NLP either.
+
+410
+00:13:58,210 --> 00:13:59,530
+But it still had one more problem.
+
+411
+00:13:59,530 --> 00:14:02,110
+So, embedding solved the problem of how to represent words.
+
+412
+00:14:02,110 --> 00:14:04,620
+But it didn't solve the problem of how sentences are structured.
+
+413
+00:14:04,620 --> 00:14:06,140
+For example, let's say we use embeddings.
+
+414
+00:14:06,140 --> 00:14:07,620
+Take, for instance, the phrases 'a dog bites a person' and 'a person bites a dog'.
+
+415
+00:14:07,620 --> 00:14:09,820
+is that the words that appear are exactly the same.
+
+416
+00:14:09,820 --> 00:14:11,740
+But for us humans, we can tell the difference in a heartbeat.
+
+417
+00:14:11,740 --> 00:14:14,000
+convey completely different meanings.
+
+418
+00:14:14,000 --> 00:14:16,980
+But for technologies like embeddings or word vectors,
+
+419
+00:14:16,980 --> 00:14:18,580
+But in reality, there's no difference.
+
+420
+00:14:18,580 --> 00:14:20,500
+Because the words that appear are exactly the same, right?
+
+421
+00:14:20,500 --> 00:14:22,240
+and the results I get are also the same.
+
+422
+00:14:22,240 --> 00:14:23,800
+But the meaning is completely different.
+
+423
+00:14:23,800 --> 00:14:26,220
+So, it's not enough for us to just understand individual words.
+
+424
+00:14:26,220 --> 00:14:28,300
+we also need the model to understand a sentence.
+
+425
+00:14:28,300 --> 00:14:30,020
+And sentences, well, they have a sequence.
+
+426
+00:14:30,020 --> 00:14:33,500
+So, pay close attention to this term: 'sequence' or 'sequentiality'.
+
+427
+00:14:33,500 --> 00:14:35,040
+You'll be seeing this a lot more later on.
+
+428
+00:14:35,040 --> 00:14:37,680
+So, how do we make it read things in order?
+
+429
+00:14:37,800 --> 00:14:39,340
+And this is actually the RNN.
+
+430
+00:14:39,340 --> 00:14:41,680
+It can read a sentence word by word.
+
+431
+00:14:41,680 --> 00:14:43,060
+aka, the Recurrent Neural Network.
+
+432
+00:14:43,060 --> 00:14:45,160
+This solved the problem of sequential data.
+
+433
+00:14:45,160 --> 00:14:47,180
+I watched a game on the court last night.
+
+434
+00:14:47,180 --> 00:14:48,839
+And in its normal state, it just keeps on reading.
+
+435
+00:14:48,839 --> 00:14:49,919
+So, as I'm reading,
+
+436
+00:14:49,919 --> 00:14:53,099
+Through the hidden state in the middle, I can remember everything I've read before.
+
+437
+00:14:53,099 --> 00:14:56,080
+As I keep reading, I'll eventually figure out who it is.
+
+438
+00:14:56,080 --> 00:14:57,560
+Do you know what time it was yesterday?
+
+439
+00:14:57,560 --> 00:14:58,280
+So, where are we now?
+
+440
+00:14:58,280 --> 00:15:00,380
+And all these things in front of the court are still there.
+
+441
+00:15:00,380 --> 00:15:02,520
+So, this meant it was capable of processing entire sentences.
+
+442
+00:15:02,520 --> 00:15:04,410
+This was a massive breakthrough.
+
+443
+00:15:04,410 --> 00:15:05,330
+But as we moved on,
+
+444
+00:15:05,330 --> 00:15:07,230
+Because with RNNs, they're okay for short sentences.
+
+445
+00:15:07,230 --> 00:15:08,210
+But when the sentences get longer,
+
+446
+00:15:08,210 --> 00:15:10,610
+Because it has to remember all the information that came before it.
+
+447
+00:15:10,610 --> 00:15:12,370
+So, when it comes to processing long texts,
+
+448
+00:15:12,370 --> 00:15:16,780
+For example, take the book written by the professor who is highly admired by the students.
+
+449
+00:15:16,780 --> 00:15:18,100
+was very influential.
+
+450
+00:15:18,100 --> 00:15:21,060
+and by the time you get to 'influential,' you've forgotten whether it's the students who are influential,
+
+451
+00:15:21,060 --> 00:15:22,420
+or the professor was influential.
+
+452
+00:15:22,420 --> 00:15:23,890
+or if the book was the one that was influential.
+
+453
+00:15:23,890 --> 00:15:26,150
+It's gotten so long I can't even keep track anymore.
+
+454
+00:15:26,150 --> 00:15:28,690
+So, later on, some further improvements were made to the RNN.
+
+455
+00:15:28,690 --> 00:15:31,550
+And that's what we call LSTM. Even though it was an improvement,
+
+456
+00:15:31,550 --> 00:15:32,590
+They added something called a 'forget gate'.
+
+457
+00:15:32,590 --> 00:15:33,950
+what information to remember,
+
+458
+00:15:33,950 --> 00:15:35,470
+and which ones you should get rid of.
+
+459
+00:15:35,470 --> 00:15:37,030
+Then, by 2014,
+
+460
+00:15:37,030 --> 00:15:38,170
+Then came the GRU.
+
+461
+00:15:38,170 --> 00:15:41,170
+It was essentially an improvement on the LSTM.
+
+462
+00:15:41,170 --> 00:15:43,430
+And the results were quite a bit better.
+
+463
+00:15:44,039 --> 00:15:46,599
+And then, what came next was the encoder-decoder.
+
+464
+00:15:46,599 --> 00:15:47,279
+the encoder,
+
+465
+00:15:47,279 --> 00:15:49,100
+and the invention of the decoder architecture.
+
+466
+00:15:49,100 --> 00:15:51,860
+And this is where you really need to pay close attention to the Transformer.
+
+467
+00:15:51,860 --> 00:15:52,500
+For those of you who are familiar with it,
+
+468
+00:15:52,500 --> 00:15:52,740
+Got it.
+
+469
+00:15:52,740 --> 00:15:55,500
+And the Transformer is a classic example of an architecture that uses this, right?
+
+470
+00:15:55,500 --> 00:15:56,660
+So, after 2014,
+
+471
+00:15:56,660 --> 00:16:00,769
+So, Ilya's team published the sequence-to-sequence model.
+
+472
+00:16:00,769 --> 00:16:02,169
+So, what was their idea?
+
+473
+00:16:02,169 --> 00:16:03,069
+This was a new concept.
+
+474
+00:16:03,069 --> 00:16:06,270
+So, you could say that, of course, its original purpose was for translation.
+
+475
+00:16:06,270 --> 00:16:07,850
+This essentially defines the encoder.
+
+476
+00:16:07,850 --> 00:16:10,870
+The way this decoder works is that the encoder reads in the text.
+
+477
+00:16:10,870 --> 00:16:12,350
+to read in the original text,
+
+478
+00:16:12,350 --> 00:16:14,950
+transforms it into an intermediate representation for the decoder.
+
+479
+00:16:14,950 --> 00:16:15,990
+and then translate it out.
+
+480
+00:16:15,990 --> 00:16:18,550
+Actually, this approach isn't just for translation tasks.
+
+481
+00:16:18,550 --> 00:16:19,940
+In fact, it can be used for many other tasks as well.
+
+482
+00:16:19,940 --> 00:16:21,960
+He believed that many NLP tasks...
+
+483
+00:16:21,960 --> 00:16:25,730
+In fact, even for text summarization, we use the encoder to process the text.
+
+484
+00:16:25,730 --> 00:16:27,690
+It reads through the entire article,
+
+485
+00:16:27,690 --> 00:16:29,650
+and uses it as an intermediate representation for the decoder.
+
+486
+00:16:29,650 --> 00:16:32,090
+and then decode it into a summary that's much shorter than the original text.
+
+487
+00:16:32,090 --> 00:16:35,390
+Many NLP tasks can be framed as taking a sequence as input.
+
+488
+00:16:35,390 --> 00:16:36,590
+and output another sequence.
+
+489
+00:16:36,590 --> 00:16:39,630
+So, this was actually the case for the early encoders.
+
+490
+00:16:39,630 --> 00:16:41,810
+The decoder's architecture, however, also had some issues.
+
+491
+00:16:41,810 --> 00:16:43,990
+it compresses the entire sentence into a single, fixed-length vector.
+
+492
+00:16:43,990 --> 00:16:45,640
+a single, long vector.
+
+493
+00:16:45,640 --> 00:16:46,640
+So, when it comes to the decoder,
+
+494
+00:16:46,640 --> 00:16:48,080
+can only rely on this compressed memory.
+
+495
+00:16:48,080 --> 00:16:49,080
+to generate it word by word.
+
+496
+00:16:49,080 --> 00:16:49,560
+the translation.
+
+497
+00:16:49,560 --> 00:16:51,420
+But in practice, this approach wasn't very effective.
+
+498
+00:16:51,420 --> 00:16:52,880
+Because when it's generating each word,
+
+499
+00:16:52,880 --> 00:16:54,800
+So, if we could just look back at the original text,
+
+500
+00:16:54,800 --> 00:16:56,480
+the most relevant parts, that would be great.
+
+501
+00:16:56,480 --> 00:16:58,490
+And that's the attention mechanism.
+
+502
+00:16:58,490 --> 00:16:59,550
+But, and this is important,
+
+503
+00:16:59,550 --> 00:17:02,609
+Now, this attention mechanism isn't the self-attention from the Transformer model.
+
+504
+00:17:02,609 --> 00:17:05,489
+And the Transformer is also built upon these foundations.
+
+505
+00:17:05,489 --> 00:17:06,629
+and some architectural inventions.
+
+506
+00:17:06,629 --> 00:17:08,129
+So, fast forward to 2014.
+
+507
+00:17:08,129 --> 00:17:11,870
+So basically, they introduced the attention mechanism into the RNN framework.
+
+508
+00:17:11,870 --> 00:17:14,110
+This allowed it to alleviate the bottleneck of fixed-length vectors.
+
+509
+00:17:14,110 --> 00:17:16,660
+For example, when we're translating a sentence,
+
+510
+00:17:16,660 --> 00:17:18,500
+The cat sat on the mat.
+
+511
+00:17:18,500 --> 00:17:19,380
+So, when you see the word 'cat'
+
+512
+00:17:19,380 --> 00:17:20,820
+So, when you see the word 'cat',
+
+513
+00:17:20,820 --> 00:17:22,760
+you'll see what action is happening right after it.
+
+514
+00:17:22,760 --> 00:17:23,960
+And when you see the action being performed,
+
+515
+00:17:23,960 --> 00:17:26,020
+You need to look ahead to see who is doing the action,
+
+516
+00:17:26,020 --> 00:17:28,400
+and look back to see the context in which it's happening.
+
+517
+00:17:28,400 --> 00:17:30,220
+But if you can't look back, well, that's a different story.
+
+518
+00:17:30,220 --> 00:17:33,320
+you just focus on what's most important to you from what came before.
+
+519
+00:17:33,320 --> 00:17:35,230
+And this is basically the attention mechanism.
+
+520
+00:17:35,230 --> 00:17:37,430
+In other words, we're constantly generating that first word.
+
+521
+00:17:37,430 --> 00:17:38,830
+So, when it comes to the word 'cat', you have to take a look, right?
+
+522
+00:17:38,830 --> 00:17:39,870
+There's not much to see for the word 'cat'.
+
+523
+00:17:39,870 --> 00:17:40,870
+Then, when it's time to generate the second word,
+
+524
+00:17:40,870 --> 00:17:43,680
+I need to see which words before it are more relevant.
+
+525
+00:17:43,680 --> 00:17:44,760
+But what if I had the ability,
+
+526
+00:17:44,760 --> 00:17:47,970
+So, if I look at the whole picture, I'll find that 'cat' is the most relevant to this word.
+
+527
+00:17:47,970 --> 00:17:50,090
+If it finds a match, it has to check which words...
+
+528
+00:17:50,090 --> 00:17:51,510
+So, it calculates this every single time.
+
+529
+00:17:51,510 --> 00:17:55,430
+This gives the probability of how relevant every word in the entire encoder is to it.
+
+530
+00:17:55,430 --> 00:17:57,950
+So it knows which words it should be paying the most attention to.
+
+531
+00:17:57,950 --> 00:18:01,090
+And this way, it gradually learns to pay attention to the preceding words.
+
+532
+00:18:01,090 --> 00:18:03,150
+It's no longer a fixed vector.
+
+533
+00:18:03,150 --> 00:18:04,630
+So, that's where the attention mechanism and...
+
+534
+00:18:04,630 --> 00:18:06,900
+So, when the decoder is generating the current word,
+
+535
+00:18:06,900 --> 00:18:09,860
+to find the relevant parts in the sentence input to the encoder.
+
+536
+00:18:09,860 --> 00:18:11,820
+to see which words it should pay the most attention to.
+
+537
+00:18:11,820 --> 00:18:12,730
+to pay the most attention to.
+
+538
+00:18:12,730 --> 00:18:14,530
+So, what about the Transformer's self-attention?
+
+539
+00:18:14,530 --> 00:18:16,410
+That's actually because it's decoder-only.
+
+540
+00:18:16,410 --> 00:18:17,730
+It's within the same sentence.
+
+541
+00:18:17,730 --> 00:18:19,950
+every word looks at every other word.
+
+542
+00:18:19,950 --> 00:18:22,700
+And this self-only approach is a perfect segue to talk about the earlier stages.
+
+543
+00:18:22,700 --> 00:18:23,420
+So, what about attention?
+
+544
+00:18:23,420 --> 00:18:25,020
+For the most part, in most applications,
+
+545
+00:18:25,020 --> 00:18:27,020
+They were all based on a typical encoder like RNN.
+
+546
+00:18:27,020 --> 00:18:29,580
+in the decoder's architectural structure, uh...
+
+547
+00:18:29,580 --> 00:18:31,780
+These enhancements were basically all about adding attention to RN.
+
+548
+00:18:31,780 --> 00:18:33,140
+And actually, the results were already pretty good.
+
+549
+00:18:33,140 --> 00:18:36,580
+Of course, you could also use improved versions of RNNs, like LSTM and GRU.
+
+550
+00:18:36,580 --> 00:18:39,960
+But at their core, these models were still fundamentally based on the RNN architecture.
+
+551
+00:18:39,960 --> 00:18:40,460
+So, as for the model,
+
+552
+00:18:40,460 --> 00:18:43,710
+They still have to process words one by one, sequentially from start to finish.
+
+553
+00:18:43,710 --> 00:18:44,730
+This makes parallel processing very difficult.
+
+554
+00:18:44,730 --> 00:18:46,750
+But what about even longer sequences?
+
+555
+00:18:46,750 --> 00:18:48,440
+problems would still arise.
+
+556
+00:18:48,440 --> 00:18:50,520
+So, could we treat attention as a language of its own?
+
+557
+00:18:50,520 --> 00:18:51,900
+So, what about the main architecture of the model?
+
+558
+00:18:51,900 --> 00:18:55,100
+And that, right there, is the biggest innovation brought by the Transformer.
+
+559
+00:18:55,100 --> 00:18:56,180
+And that was back in 2017.
+
+560
+00:18:56,180 --> 00:18:59,640
+Google's eight authors invented and published the paper on the Transformer.
+
+561
+00:18:59,640 --> 00:19:01,900
+And this architecture is, in fact, its most crucial component.
+
+562
+00:19:01,900 --> 00:19:03,330
+And that is, in fact, self-attention.
+
+563
+00:19:03,330 --> 00:19:06,070
+So, self-attention happens within the same sequence.
+
+564
+00:19:06,070 --> 00:19:09,970
+It allows every word to directly connect with every other word.
+
+565
+00:19:09,970 --> 00:19:11,840
+So, what this means is, when I'm looking at the word 'cat',
+
+566
+00:19:11,840 --> 00:19:14,440
+So, for instance, when I look at the word 'cat,' it's not like before.
+
+567
+00:19:14,440 --> 00:19:16,000
+I only look at the words that came before.
+
+568
+00:19:16,000 --> 00:19:16,760
+It pays more attention to me.
+
+569
+00:19:16,760 --> 00:19:19,120
+It pays attention to every single word in the entire sequence.
+
+570
+00:19:19,120 --> 00:19:20,220
+Take the word "it" for example.
+
+571
+00:19:20,220 --> 00:19:20,960
+The animal,
+
+572
+00:19:20,960 --> 00:19:22,600
+Didn't cross the street.
+
+573
+00:19:22,600 --> 00:19:24,260
+It didn't cross the street,
+
+574
+00:19:24,260 --> 00:19:25,660
+Because... and why is that?
+
+575
+00:19:25,660 --> 00:19:27,260
+He was too tired.
+
+576
+00:19:27,260 --> 00:19:29,260
+But what does this 'it' refer to?
+
+577
+00:19:29,260 --> 00:19:30,180
+Is it 'street'?
+
+578
+00:19:30,180 --> 00:19:31,300
+or animal?
+
+579
+00:19:31,300 --> 00:19:33,120
+It will then establish associations with all the words.
+
+580
+00:19:33,120 --> 00:19:34,660
+and see which one is the most relevant.
+
+581
+00:19:34,660 --> 00:19:38,000
+and it will find that the word 'animal' is the most relevant one.
+
+582
+00:19:38,000 --> 00:19:40,280
+Instead of making a choice for each word,
+
+583
+00:19:40,280 --> 00:19:42,280
+But the amount of computation has definitely increased.
+
+584
+00:19:42,280 --> 00:19:44,260
+And that's exactly why in the era of large models,
+
+585
+00:19:44,260 --> 00:19:45,520
+demands even more computing power.
+
+586
+00:19:45,520 --> 00:19:47,820
+But the first thing is, it can be done in parallel.
+
+587
+00:19:47,820 --> 00:19:50,860
+Because every word needs to be connected to every other word indiscriminately.
+
+588
+00:19:50,860 --> 00:19:52,060
+So, within the sentence itself,
+
+589
+00:19:52,060 --> 00:19:53,500
+Does every word need to be connected to every other word?
+
+590
+00:19:53,500 --> 00:19:54,960
+So, it can now perform computations in parallel.
+
+591
+00:19:54,960 --> 00:19:57,180
+And that's where the Transformer came in with its self-attention mechanism.
+
+592
+00:19:57,180 --> 00:20:01,600
+This also brought another major, revolutionary innovation.
+
+593
+00:20:01,600 --> 00:20:04,320
+This means that computational speed is no longer the bottleneck.
+
+594
+00:20:04,320 --> 00:20:05,540
+All you need is the computing power.
+
+595
+00:20:05,540 --> 00:20:08,260
+Before, models like RNNs had to process things sequentially.
+
+596
+00:20:08,260 --> 00:20:09,140
+as long as you have the computing power.
+
+597
+00:20:09,140 --> 00:20:12,070
+You still had to wait for each step, so all that computing power couldn't be used at the same time.
+
+598
+00:20:12,070 --> 00:20:14,110
+So, self-attention, along with its parallel processing mechanism,
+
+599
+00:20:14,110 --> 00:20:16,110
+This brought about a major innovation.
+
+600
+00:20:16,110 --> 00:20:17,390
+But with the Transformer,
+
+601
+00:20:17,390 --> 00:20:18,670
+and everything changed.
+
+602
+00:20:18,670 --> 00:20:20,670
+RNNs, on the other hand, had to process things sequentially.
+
+603
+00:20:20,670 --> 00:20:23,590
+You finish the first word, then you read the second one, right?
+
+604
+00:20:23,590 --> 00:20:25,510
+So, it's more of a sequential process, right?
+
+605
+00:20:25,510 --> 00:20:28,830
+But with the Transformer, all positions participate in the computation simultaneously.
+
+606
+00:20:28,830 --> 00:20:32,110
+This makes it much more suitable for parallel computing on GPUs or TPUs.
+
+607
+00:20:32,110 --> 00:20:32,670
+So, what this means is...
+
+608
+00:20:32,670 --> 00:20:35,590
+And it's not just about providing some small trick for a specific task, either.
+
+609
+00:20:35,590 --> 00:20:37,290
+In fact, it's combined with the training process,
+
+610
+00:20:37,290 --> 00:20:38,610
+and engineering.
+
+611
+00:20:38,610 --> 00:20:41,230
+It was innovative not only in its algorithmic architecture,
+
+612
+00:20:41,230 --> 00:20:43,390
+but it's also quite advanced from an engineering perspective.
+
+613
+00:20:43,390 --> 00:20:46,370
+This is what ultimately allowed it to become the foundation for all subsequent large language models.
+
+614
+00:20:46,370 --> 00:20:47,550
+the foundational architecture for models.
+
+615
+00:20:47,550 --> 00:20:48,650
+So, what came after the Transformer?
+
+616
+00:20:48,650 --> 00:20:49,340
+So, at this point,
+
+617
+00:20:49,340 --> 00:20:50,180
+as you can probably understand,
+
+618
+00:20:50,180 --> 00:20:52,100
+So, why is it that after the Transformer was invented,
+
+619
+00:20:52,100 --> 00:20:53,500
+it didn't immediately blow the world away.
+
+620
+00:20:53,500 --> 00:20:55,500
+The innovative points it used, almost all of them,
+
+621
+00:20:55,500 --> 00:20:57,860
+It wasn't as revolutionary as you might think.
+
+622
+00:20:57,860 --> 00:20:58,800
+groundbreaking
+
+623
+00:20:58,800 --> 00:21:00,460
+In fact, it was all built on the foundation laid by its predecessors.
+
+624
+00:21:00,460 --> 00:21:04,240
+Then, by incorporating engineering principles, they made some optimal choices and modifications.
+
+625
+00:21:04,240 --> 00:21:06,280
+It didn't just appear out of thin air.
+
+626
+00:21:06,280 --> 00:21:08,900
+And that's actually why, when it was first created,
+
+627
+00:21:08,900 --> 00:21:12,330
+Even Google itself didn't even recognize its value at the time.
+
+628
+00:21:12,330 --> 00:21:14,610
+So, what happened after the Transformer was born?
+
+629
+00:21:14,610 --> 00:21:16,290
+But it's not like Google was just sitting on its hands, either.
+
+630
+00:21:16,290 --> 00:21:18,780
+Instead, they continued to explore the field of machine translation.
+
+631
+00:21:18,780 --> 00:21:19,660
+But before that,
+
+632
+00:21:19,660 --> 00:21:21,520
+So basically, for all these different tasks,
+
+633
+00:21:21,520 --> 00:21:23,140
+essentially, each was training its own models.
+
+634
+00:21:23,140 --> 00:21:24,860
+And then, a new paradigm emerged.
+
+635
+00:21:24,860 --> 00:21:26,220
+And that's what's called pre-training.
+
+636
+00:21:26,220 --> 00:21:27,580
+So, what exactly is pre-training?
+
+637
+00:21:27,580 --> 00:21:28,260
+So, what about the model?
+
+638
+00:21:28,260 --> 00:21:31,280
+First, it learns general language patterns from massive amounts of text.
+
+639
+00:21:31,280 --> 00:21:34,220
+And it doesn't matter if I'm doing sentiment analysis or translation.
+
+640
+00:21:34,220 --> 00:21:35,390
+Basically, you just let it train.
+
+641
+00:21:35,390 --> 00:21:36,510
+So, once the training is done...
+
+642
+00:21:36,510 --> 00:21:39,160
+you just need to make a few small adjustments for the specific task at hand.
+
+643
+00:21:39,160 --> 00:21:41,220
+And this initial phase is what's called pre-training.
+
+644
+00:21:41,220 --> 00:21:43,080
+So, when we move on to specific tasks later on,
+
+645
+00:21:43,080 --> 00:21:44,940
+So, with this pre-trained model,
+
+646
+00:21:44,940 --> 00:21:48,690
+and just make a few small adjustments for the specific task at hand.
+
+647
+00:21:48,690 --> 00:21:51,330
+This makes the training process much, much simpler.
+
+648
+00:21:51,820 --> 00:21:52,860
+Of course.
+
+649
+00:21:52,860 --> 00:21:54,740
+Then came another major, revolutionary development.
+
+650
+00:21:54,740 --> 00:21:56,380
+So it's not about the embedding itself.
+
+651
+00:21:56,380 --> 00:21:58,780
+We're talking about simple embedding techniques, like word2vec.
+
+652
+00:21:58,780 --> 00:22:01,220
+The thing is, back then, every word had a fixed vector.
+
+653
+00:22:01,220 --> 00:22:02,680
+Because it needs context, right?
+
+654
+00:22:02,680 --> 00:22:05,200
+So, what about later on? What did we start using then?
+
+655
+00:22:05,200 --> 00:22:06,040
+And that's where ELMo came in.
+
+656
+00:22:06,040 --> 00:22:07,100
+So, what does it do?
+
+657
+00:22:07,100 --> 00:22:10,000
+The model will then dynamically generate these based on the context.
+
+658
+00:22:10,000 --> 00:22:12,660
+This makes the results of its embedding dynamic.
+
+659
+00:22:12,660 --> 00:22:14,030
+Take the word 'bank' for example.
+
+660
+00:22:14,030 --> 00:22:16,750
+So, in certain sentences, the words it gets embedded with...
+
+661
+00:22:16,750 --> 00:22:19,610
+it would be more closely associated with things related to banking and finance.
+
+662
+00:22:19,610 --> 00:22:20,850
+But in other contexts,
+
+663
+00:22:20,850 --> 00:22:24,630
+it's actually closer to things like rivers or camping.
+
+664
+00:22:24,630 --> 00:22:26,370
+The word itself is inherently polysemous.
+
+665
+00:22:26,370 --> 00:22:28,210
+This later gave rise to models like BERT.
+
+666
+00:22:28,210 --> 00:22:30,370
+This was also part of his work on machine translation.
+
+667
+00:22:30,370 --> 00:22:33,220
+But it brought about a major revolutionary update in its training process.
+
+668
+00:22:33,220 --> 00:22:35,360
+It will randomly mask out a word.
+
+669
+00:22:35,360 --> 00:22:36,960
+and masks out a portion of it.
+
+670
+00:22:36,960 --> 00:22:39,610
+and have it predict what should be in the middle.
+
+671
+00:22:39,610 --> 00:22:43,370
+But it was quickly superseded by Google's own T5.
+
+672
+00:22:43,370 --> 00:22:46,450
+Now, T5 was actually a pretty big revolution in NLP.
+
+673
+00:22:46,450 --> 00:22:47,250
+all sorts of different tasks.
+
+674
+00:22:47,250 --> 00:22:49,070
+I can solve them all using the same architecture.
+
+675
+00:22:49,070 --> 00:22:50,330
+Whether it's translation or summarization,
+
+676
+00:22:50,330 --> 00:22:50,970
+sentiment analysis,
+
+677
+00:22:50,970 --> 00:22:52,070
+I'm pretty good at all of them.
+
+678
+00:22:52,070 --> 00:22:53,970
+The boundaries between these tasks began to blur.
+
+679
+00:22:53,970 --> 00:22:56,810
+So, of course, what came next was the pre-training plus fine-tuning approach.
+
+680
+00:22:56,810 --> 00:22:59,070
+and quickly became the dominant paradigm in NLP.
+
+681
+00:22:59,070 --> 00:23:01,010
+And T5 also made a huge contribution.
+
+682
+00:23:01,010 --> 00:23:03,910
+And of course, the name that everyone's more familiar with is OpenAI.
+
+683
+00:23:03,910 --> 00:23:07,200
+And the 'GPT' in GPT stands for 'Generative Pre-trained Transformer'.
+
+684
+00:23:07,200 --> 00:23:11,020
+It stands for Generative, Pre-trained Transformer architecture.
+
+685
+00:23:11,020 --> 00:23:12,220
+So, when you look at it that way,
+
+686
+00:23:12,220 --> 00:23:14,560
+So, the meaning of these terms becomes pretty obvious, right?
+
+687
+00:23:14,560 --> 00:23:16,100
+So, what exactly is 'generative'?
+
+688
+00:23:16,100 --> 00:23:17,680
+This is a standard task in NLP.
+
+689
+00:23:17,680 --> 00:23:20,160
+It's about generative pre-training for text generation.
+
+690
+00:23:20,160 --> 00:23:21,460
+So, as we just explained,
+
+691
+00:23:21,460 --> 00:23:23,740
+So, 'Transformer' refers to the architecture it uses, right?
+
+692
+00:23:23,740 --> 00:23:26,500
+Of course, it simplified the Transformer architecture a bit.
+
+693
+00:23:26,500 --> 00:23:27,980
+It's decoder-only.
+
+694
+00:23:27,980 --> 00:23:30,540
+So, when we start learning about GPT, we'll find that...
+
+695
+00:23:30,540 --> 00:23:31,840
+So, with that foundation we've just covered,
+
+696
+00:23:31,840 --> 00:23:34,240
+we can pick it up pretty quickly.
+
+697
+00:23:34,240 --> 00:23:36,969
+And its training objective is also very simple.
+
+698
+00:23:36,969 --> 00:23:38,569
+Given the preceding text,
+
+699
+00:23:38,569 --> 00:23:40,249
+and have it continuously predict the next word.
+
+700
+00:23:40,249 --> 00:23:43,169
+For example, let's say you're given the phrase 'the development of natural language processing'.
+
+701
+00:23:43,169 --> 00:23:45,870
+It's gone from rules to you just constantly predicting.
+
+702
+00:23:45,870 --> 00:23:47,900
+and just keep going until I tell you to stop.
+
+703
+00:23:47,900 --> 00:23:50,560
+So, on the surface, it might just seem like it's completing a sentence.
+
+704
+00:23:50,560 --> 00:23:53,900
+Behind the scenes, its training process actually forces the model to learn grammar.
+
+705
+00:23:53,900 --> 00:23:54,400
+semantics,
+
+706
+00:23:54,400 --> 00:23:55,580
+or what kind of factual style it has.
+
+707
+00:23:55,580 --> 00:23:57,040
+and common patterns of reasoning.
+
+708
+00:23:57,040 --> 00:24:00,460
+Gradually, it could handle the entire NLP task as a whole.
+
+709
+00:24:00,460 --> 00:24:03,280
+So, it was no longer just for things like translation and summarization.
+
+710
+00:24:03,280 --> 00:24:05,360
+The question-answering tasks were designed with their own separate structures.
+
+711
+00:24:05,360 --> 00:24:08,420
+Actually, this was developing in parallel with T5.
+
+712
+00:24:08,420 --> 00:24:09,550
+Both of them made contributions.
+
+713
+00:24:09,550 --> 00:24:12,190
+compressing a multitude of tasks into a single training objective.
+
+714
+00:24:12,190 --> 00:24:13,850
+Once it understands things just like a human does,
+
+715
+00:24:13,850 --> 00:24:16,280
+you can naturally perform all sorts of tasks.
+
+716
+00:24:16,280 --> 00:24:19,060
+And so, it gradually evolved into a universal task interface.
+
+717
+00:24:19,060 --> 00:24:20,580
+Whether it's writing or answering questions,
+
+718
+00:24:20,580 --> 00:24:22,400
+writing code, or calling up tools,
+
+719
+00:24:22,400 --> 00:24:23,760
+it can handle all of them.
+
+720
+00:24:23,760 --> 00:24:24,740
+And in situations like this,
+
+721
+00:24:24,740 --> 00:24:27,900
+Language is no longer just the input data for a model to process.
+
+722
+00:24:27,900 --> 00:24:29,920
+It gradually evolved into...
+
+723
+00:24:29,920 --> 00:24:31,660
+a unified interface for human-computer interaction.
+
+724
+00:24:31,660 --> 00:24:34,030
+All you have to do is talk to the machine in natural language.
+
+725
+00:24:34,030 --> 00:24:37,659
+So, that's a general overview of how NLP has evolved.
+
+726
+00:24:37,659 --> 00:24:39,059
+So, to wrap things up,
+
+727
+00:24:39,059 --> 00:24:41,979
+You can see it's been a continuous exploration, constantly getting closer to the essence of language.
+
+728
+00:24:41,979 --> 00:24:43,119
+First, it all started with rules.
+
+729
+00:24:43,119 --> 00:24:45,490
+From writing all sorts of rules to the world of statistics.
+
+730
+00:24:45,490 --> 00:24:50,050
+Starting from symbols to represent things, from initial numeric encoding to later... well, my heart.
+
+731
+00:24:50,050 --> 00:24:51,890
+And then later, we had word embeddings.
+
+732
+00:24:51,890 --> 00:24:53,900
+using vectors to represent meaning.
+
+733
+00:24:53,900 --> 00:24:57,020
+Then, after gradually learning the sequence,
+
+734
+00:24:57,020 --> 00:24:58,420
+Then, the attention mechanism was introduced.
+
+735
+00:24:58,420 --> 00:25:01,239
+to dynamically let the model decide where to focus.
+
+736
+00:25:01,239 --> 00:25:03,359
+Then, after the Transformer was born,
+
+737
+00:25:03,359 --> 00:25:06,919
+And then, we moved from specialized models to general-purpose, pre-trained models.
+
+738
+00:25:06,919 --> 00:25:08,050
+And all of these were born.
+
+739
+00:25:08,050 --> 00:25:09,530
+So, the journey went from rules to statistics,
+
+740
+00:25:09,530 --> 00:25:11,430
+From word embeddings to attention mechanisms.
+
+741
+00:25:11,430 --> 00:25:13,790
+From specialized models to general-purpose large models.
+
+742
+00:25:13,790 --> 00:25:18,910
+Ultimately, NLP has transformed natural language into the primary interface for human-computer collaboration.
+
+743
+00:25:19,240 --> 00:25:21,920
+And that's the complete journey of how NLP has evolved.
+
+744
+00:25:21,920 --> 00:25:23,020
+So, you could say that up to this point,
+
+745
+00:25:23,020 --> 00:25:25,280
+So, with that said, we're not going to rush into what's next.
+
+746
+00:25:25,280 --> 00:25:27,770
+and jump right into the Transformer architecture.
+
+747
+00:25:27,770 --> 00:25:29,330
+Because when it comes to the Transformer, you could say...
+
+748
+00:25:29,330 --> 00:25:32,270
+Two-thirds of it is built on the foundations we've already covered.
+
+749
+00:25:32,270 --> 00:25:34,680
+It merely stands on the shoulders of its predecessors.
+
+750
+00:25:34,680 --> 00:25:37,320
+And then, it brought about a truly massive, revolutionary innovation.
+
+751
+00:25:37,320 --> 00:25:40,050
+So, if we really want to master the Transformer,
+
+752
+00:25:40,050 --> 00:25:43,010
+and we have to understand that this whole journey actually started way back with residual connections.
+
+753
+00:25:43,010 --> 00:25:45,920
+Residual connections are also used extensively in the Transformer.
+
+754
+00:25:45,920 --> 00:25:46,940
+and using normalization.
+
+755
+00:25:46,940 --> 00:25:48,940
+These are also some training techniques.
+
+756
+00:25:48,940 --> 00:25:52,020
+All of these are absolutely crucial for us to understand the Transformer.
+
+757
+00:25:52,020 --> 00:25:53,020
+So, moving on,
+
+758
+00:25:53,020 --> 00:25:55,580
+So, let's first dive into word embeddings.
+
+759
+00:25:55,580 --> 00:25:57,000
+So, how does it roughly work?

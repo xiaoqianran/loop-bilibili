@@ -1,0 +1,716 @@
+Now, let's implement the simplest neural network in code.
+The reason we're adding this section
+The reason is that the material we've covered so far has been mostly theoretical.
+and we haven't really gotten our hands dirty with any actual practice.
+you might not get that hands-on feel.
+And another thing is,
+Plus, I've seen a lot of discussions online about deep learning.
+Some think it takes a week,
+You can't possibly learn it all in just a week or two.
+And another thing is, most of the time, people just can't understand it.
+And it's not because you don't understand its API.
+The real reason is that you don't understand the various principles behind neural networks.
+The truth is, you don't really understand why it has to be written this way.
+So, in this lesson,
+So, let's take a look at what we've learned in the previous sections.
+and how it's actually implemented in code.
+So, what have we been covering in the last three sections?
+So, really, everything from the perceptron to backpropagation...
+All of that was just theory.
+So, when you actually put them all together,
+And that's pretty much everything there is to training a neural network.
+All that's left is to write the code.
+We've learned about forward propagation and activation functions.
+and loss functions.
+and we've also covered gradient descent.
+and then backpropagation.
+And really, this whole thing is just these four steps repeating in a loop.
+And that's basically the entire process of training a neural network.
+Whether it's the simplest image recognition task we're covering today,
+And this holds true even for training GPT—no exceptions.
+So, for today's task,
+So, we're going to take these four steps and write the code to put them all together.
+and show you how a neural network actually works.
+Specifically, we're going to build a two-layer MLP from scratch.
+Its task is to recognize handwritten digits.
+And now, let's draw a number on the screen.
+and have the model perform real-time recognition.
+Of course, in reality, just two layers aren't enough to guarantee its accuracy.
+This is just a quick demonstration for you all.
+So, first things first, what we need to do in our code is...
+So, here's what we'll be doing.
+Let's take a look at what the MNIST dataset actually looks like.
+and how to write the code for it.
+First, we're going to write it out from scratch, the most basic way.
+and you'll get a real feel for it.
+In fact, it's perfectly normal if you don't understand all the code along the way.
+If you don't understand the fundamentals of deep learning,
+you still wouldn't be able to understand the code.
+And finally, let's put it all together and have it recognize a hand-written digit.
+Let's see how the model we trained performs at recognition.
+Now, the code we've written is pretty simple, I'll admit.
+But in fact, this was the very foundation of the CNN that Yann LeCun developed back in the day.
+Later on, it was used to implement systems for banks to recognize the amounts on checks.
+and the automatic sorting of postal codes.
+and the recognition of answer sheets.
+And all of these applications are powered by it.
+First, let's get to know the dataset we'll be using today, MNIST.
+You could call it the 'Hello World' of deep learning or computer vision tasks.
+Hello world.
+It's a collection of handwritten digits.
+And they're all in black and white.
+28 by 28.
+So, for an image of this size, it can represent the digits from 0 to 9.
+It consists of over 60,000 training samples and more than 10,000 test samples.
+So, it's actually pretty small.
+It can be run on a CPU in just a few dozen seconds.
+And you don't even need a graphics card. Let's take a quick look at the dataset we'll be using today.
+First, let's import the necessary dependencies.
+and set up the random number generator.
+and set up support for Chinese characters.
+Because the format of the images we're reading in...
+This format is slightly different from what we need for our deep learning training.
+So, we'll define a transform.
+to perform some transformations on the images.
+This involves two operations.
+The first one is to_tensor.
+So, what does it do?
+Computers represent colors using numbers from 0 to 255.
+And it uses three of them to represent that.
+That's the RGB system.
+But in the world of deep learning,
+So, we want to perform calculations using numbers between 0 and 1.
+And they're floating-point numbers.
+This just makes the calculations a lot more convenient.
+Otherwise, uh, the numbers would be just way too big.
+So, we'll use `.to_tensor()` to do this conversion.
+So we'll just divide them by 255.
+After we've done this conversion,
+There's one more thing we need to do.
+Because, by default, the images we read in...
+is generally composed of the image's height, width, and the number of channels.
+And since our images are grayscale,
+so it probably has just one channel.
+But if it were a color image,
+then you'd have the three RGB channels, right?
+We need to transform it so that the channel comes first.
+then the height,
+and finally, the width.
+So that's exactly what the 'to tensor' function does for us.
+And that's one more step.
+and that is normalize.
+So, what does 'normalize' do?
+Basically, it's to standardize these distributions.
+And on top of that, it uses two really weird numbers.
+These numbers are constants that are widely used in the industry.
+So, why do we need to do this?
+In fact, this step is called normalization.
+in the later chapters.
+We'll dive into the reasons behind this normalization process in detail.
+And sometimes it's P.
+and sometimes it's by layer.
+This makes the training process more stable.
+and converge faster.
+But it's not a must, either.
+But the training process will be much slower.
+Alright, so for our dataset, we're going to use torchvision's datasets.MNIST.
+and download it.
+We'll download the training set and the test set separately.
+Alright, once the download is complete,
+Of course, we're going to apply some transforms.
+and we've already applied the transformations to them.
+Next, let's define the data loader.
+and load them into the data loader.
+and split it into specific patches.
+Remember when we talked about the gradient...
+Remember the concept of 'batch' from when we talked about gradient descent and optimizers?
+Training it all at once is incredibly difficult.
+So, we break it down into some smaller patches.
+This is to shuffle the data.
+Basically, we just need to shuffle the order.
+So, that's basically what we're doing here.
+So, let's take a look.
+So, for our training set, we're actually working with over 60,000 images.
+and a 10,000-sample test set.
+And each image is actually a...
+So, the number of channels is just one.
+Because they're black and white.
+Both the height and width are 28.
+So that's the size of it.
+So, let's grab nine samples and take a look.
+Let's grab nine samples from this dataset.
+and plot them out.
+Let's see what it looks like.
+Alright, as you can see,
+So, it's got a label.
+or its Y-value.
+So, we can interpret this as the number five.
+So, what this means is that the input is a five.
+Since these are handwritten digits,
+And the label is zero, four.
+So, it basically looks something like this. Alright.
+Alright, so let's take a look at how we can write the training loop from scratch.
+So, we'll just build a very basic two-layer MLP, and that'll do the trick.
+So, first off, how many features are in our input?
+It's 784.
+So, where does this 784 come from?
+That's because it's a 28 by 28 grayscale image.
+So, we need to flatten it.
+Because I'm going to turn it into a 784-dimensional vector.
+This means it has 784 features.
+So each pixel is a feature.
+So, for our input layer,
+already has 784 neurons.
+And in between, we have a hidden layer.
+And for this hidden layer, what about the activation function?
+So, what does ReLU do?
+First, we perform a linear transformation.
+and then apply a non-linearity.
+So, what about the linear transformation?
+So, we just need one parameter, plus...
+So all you need is one weight and one bias.
+And then we move on to the output layer.
+And then, we perform another linear transformation on the output layer.
+Which is also a parameter, actually.
+a weight.
+so that it outputs a 10-dimensional logit vector.
+These correspond to the ten digit classes.
+But we haven't applied the softmax function yet.
+So, it's not the probability for each class just yet.
+So, let's do a quick calculation.
+And that's roughly the scale we're looking at.
+In reality, even for a simple two-layer...
+So as you can see, the number of parameters is already this large.
+This is actually the key to understanding when we get to CNNs.
+So, why can't we just use a neural network directly?
+This is the most basic neural network there is.
+The number of parameters is just exploding.
+And the images are so tiny to begin with.
+And it's already got this many parameters with just two layers.
+So why not some other numbers in between, right?
+There are 128.
+So why not 256 or 64?
+There's no particular reason for that.
+First off, we're always using powers of two.
+As long as it runs, we're good.
+So today, what we're mainly interested in is what the training process actually looks like.
+The point isn't to fine-tune it to perfection.
+Alright, to really optimize it, we'll need the knowledge we'll cover later on.
+So, what we're really doing boils down to these four steps.
+Regardless of the type of training,
+It's always these four.
+So, first, let's define how the forward propagation works.
+How do we get from the input layer to the hidden layer,
+and how it gets to the output layer.
+Let's define the loss function we used in the last lesson.
+Let's see just how big the gap is between them.
+Then, we just do backpropagation and update the gradients.
+So that's basically how it's done.
+Alright, let's get back to the code. The handwritten version is just these four steps.
+So, let's do a quick recap together.
+So, our input layer has 784 neurons, and for the hidden layer...
+and we used 128 neurons.
+And don't get too hung up on this 128 number.
+And the output layer has ten neurons.
+Because, you know, we have ten classes to classify.
+So, the input and output layers are both fixed.
+Now, for the hidden layer, you can actually set it to have any number of neurons you want.
+Alright, let's take a look at the code.
+And uh, let's also set the random seed.
+Alright, let's go ahead and initialize our parameters.
+So, during initialization,
+We also used some... rather peculiar numbers here.
+In fact, these aren't just completely random numbers.
+Now, as for why we do it this way...
+We'll also have a dedicated chapter on this later on.
+specifically about some techniques for parameter initialization.
+For now, all you need to know is that you use this number.
+We'll understand what 'requires_grad' is for later on.
+I need you to calculate the gradients for me.
+First, you need to keep track of the computation process for the forward propagation.
+This makes calculating the gradient much easier, right?
+So we have W1 and B1 for the first layer, and then W2 and B2 for the second layer.
+for the output layer, right?
+So, we're going to put these four parameters into an array.
+Let's just jot down a number.
+Now, let's define the learning rate.
+So for now, let's set the learning rate to 0.1.
+There's not much logic to it, really.
+It's just a value we're defining ourselves.
+in the later chapters
+We'll also cover how to set the learning rate for maximum efficiency.
+Let's print it out.
+As you can see, we have a whole bunch of parameters here.
+So, let's take a look at the process we've written.
+We'll have it train for five epochs.
+You can pronounce this word however you like.
+Epoch.
+Epoch.
+What's that? 'Watch'?
+You can pronounce it however you like.
+But pronouncing it as 'epoch' is probably what most people will understand.
+So, what exactly is an 'epoch'?
+Basically, it means taking all 600,000 images in the training set...
+to go through them all completely.
+But, as we mentioned in the last lesson when we were talking about gradient descent,
+as I've mentioned to you all before,
+If you were to train on the entire dataset in one go,
+computing the gradient again is actually incredibly slow.
+So, we usually use mini-batches.
+So, we can set it to, say, 128 images.
+and process them as a batch to calculate the gradient once.
+Alright, let's take a look at these five epochs.
+So, we're going to keep track of the loss from each training session.
+And, uh, let's also keep track of the accuracy for each round.
+We'll do five loops here, which will make it easier to plot the results later.
+First, let's initialize the starting loss to zero.
+Alright, as you can see,
+So, what exactly is inside our training set?
+So, 'B' here actually stands for 'batch'.
+So, what is this 'X'? It's our input features.
+And Y, well, that's our label, which tells us the actual value.
+So, the shape of X is basically something like this.
+Because each batch has 128 samples, right?
+It has a single channel, with a height of 28.
+by 28 wide.
+and 28 wide.
+So Y is really just a 128-dimensional vector.
+the data for that row.
+Each one tells you what its value is.
+So, what exactly is its classification?
+Okay, so, first things first, we need to take our one-dimensional vector.
+So, we need to take this image and transform it into a...
+a 784-dimensional data point.
+Because it's 28 by 28, right?
+Now, let's take a look at the hidden layer.
+So, this is the input layer.
+Now, let's look at the hidden layer.
+So, the hidden layer is where we perform a linear combination of the inputs.
+And the multiplication of vectors is just matrix multiplication.
+So, this notation right here, it's just X times W1.
+and then we add B1.
+And after that,
+And then, we'll apply a non-linearity using ReLU.
+You'll most likely have no idea what this means.
+But if we have learned it,
+So, we've previously covered some of the basics about neural networks.
+You can tell just by looking at it.
+So, what this really is, is after the linear part.
+and wrap it with a non-linear activation function.
+And just like that, we can get our result.
+Right?
+So, what is this?
+And for the output layer...
+So, the result from your input layer, isn't that going to be the input for the output layer?
+into the input for the next layer.
+So, this H here is the result we've calculated.
+Then, we take this result and multiply it by the weights of the output layer.
+and then add the bias.
+We're not going to apply the softmax transformation here.
+Because, back when we were covering the section on loss functions,
+we've covered this before.
+So, what does it do for you automatically?
+You don't have to do the softmax yourself.
+So, we just need to keep the original logits output as is.
+And then, we'll, uh, set up the loss function for our network.
+Because this is a classification problem.
+We've already covered the section on loss functions.
+So what if it's a regression problem?
+So what do we use?
+So, for regression problems,
+we can just use MSE.
+So, for classification problems...
+And then, we can move on to backpropagation.
+So, we won't be walking you through writing this line by line.
+and that's the calculation process for backpropagation.
+Because, as we specified earlier when setting up the parameters,
+as I mentioned,
+I need the gradients.
+During the forward pass, it will just temporarily store the intermediate results.
+This way, when I define the backpropagation,
+In fact, it will automatically calculate it for us.
+and apply gradient descent.
+So for now, let's not use an optimizer either.
+First, let's write out the gradient descent process ourselves.
+So, during gradient descent,
+This means we don't have to rebuild the computation graph all over again.
+So, we just need to use 'with torch.no_grad()'.
+Then, we'll take out each of the parameters inside.
+So, what exactly is parameter updating?
+So the parameter is equal to the parameter...
+and then add its negative, uh...
+The negative gradient times the learning rate, right?
+So basically, it's the parameter minus, uh...
+So, just multiply the learning rate by its gradient, and that's it.
+So, we need to zero out the gradients.
+So in practice, we calculate the gradient using just one batch each time.
+And that's everything.
+without moving on to the next batch.
+Actually, this is to prevent the data volume from getting too large.
+You can't process it all at once.
+So each calculation is like doing ten calculations for you at once.
+So, when it's time to calculate the gradient for the final time,
+But in our case, we calculate it once per batch.
+So we just need to zero it out.
+So, looking at all this code, right?
+So, if we understand the process of backpropagation,
+and understand the process of gradient descent,
+it's actually very easy to understand.
+Right?
+But if you're just looking at it from a purely syntactic point of view,
+But you could look up what this line of code actually means.
+But the code used in these three lines is actually very, very simple.
+If you don't understand gradient descent, you won't be able to follow this at all.
+And let's keep a record of all the historical losses.
+So, how many samples did we use?
+Let's add that up.
+So, let's see, the average loss times the number of samples.
+Shouldn't we divide that by the number of samples?
+So, that gives us the average loss, right?
+So, to evaluate it, we just need to run it through one more round.
+So, let's see what we've got here.
+So, what's going on here?
+Let's run a forward pass on the test set.
+Let's calculate our accuracy to see what it's roughly at.
+All of this is for the plotting we'll do later.
+Basically, we're just using the results we've just calculated to make a prediction.
+Let's make a prediction each time.
+and see what the final accuracy will be.
+We can see it's run for a few epochs.
+As for the loss in each round...
+And as you can see, the loss is also gradually decreasing.
+And our prediction accuracy is also gradually improving.
+Let's plot the curve to see how it looks.
+And you can see,
+This shows how it changes over the number of training epochs.
+So, each of these dots represents one full training epoch.
+So basically, it's just running through all 60,000 data points once.
+So, what's the approximate loss going to be?
+And by the fifth round,
+the loss is already very small.
+And this here is the accuracy.
+In the first round, the accuracy was around 94-point-something percent.
+just under 95%.
+And by the fifth round,
+In fact, the accuracy has already reached 97%.
+That's super high, right?
+As we can see from our slides,
+So, this is basically the process we were talking about.
+So, what's next?
+Actually, we used a specific initialization technique here.
+We'll get into that later on.
+So this is the code for each round of our training.
+We've just gone over all of this in the code.
+Now, there are a few details here.
+Let me also mention this.
+Do not add softmax to the output layer.
+And why is that?
+So, about what I was just saying...
+It will handle that on its own.
+So, we don't need to do that in the neural network itself.
+Because at the input layer, our network only sees each feature individually.
+each one is a single feature.
+Right?
+Our data is in a 28 by 28 grid.
+But that won't work.
+So, we need to flatten it.
+converting it into 784 input features.
+So, why is that?
+So, that 'T' is actually... uh... right at this step.
+So, when we're actually updating the parameters, we don't need the gradients anymore, right?
+The parameter update itself doesn't need to build the computation graph.
+So, this step is really just to save memory.
+So, what's the point of clearing it to zero?
+It takes the gradients,
+But in reality, we're computing the gradient once per batch.
+So, that batch is done.
+so we don't need to do it next time.
+So we need to zero it out.
+This is something you won't really encounter in theoretical studies.
+So, we need to combine the two a bit.
+But that's the kind of thing you can just look up.
+Another thing is, what is this 'background' line doing here?
+Basically, it's calculated by tracing back along our forward propagation.
+This is the chain rule for differentiation, applied backward through the computation graph.
+and calculate the gradients layer by layer.
+So, this is basically it.
+Basically, the auto-grad does it for us, so we don't have to do it ourselves.
+So, when we talk about the backpropagation process,
+and all that complex mathematical derivation.
+And the result we get is exactly the same as the conclusion we just reached.
+So, this is really just a review of what we've covered in the last three lessons.
+and apply what we've learned from the previous lessons.
+So, it's actually capable of performing some simple tasks.
+So, let's just rewrite the entire code from scratch.
+But we were still writing most of it from scratch.
+These features can make our code a whole lot simpler.
+Besides, the network we have here is just way too simple.
+But if we were to write out complex networks by hand like this,
+the code would actually be really hard to understand.
+So, how do we write that?
+In reality, it becomes incredibly simple.
+First, let's write a class, SimpleMLP.
+We'll have it inherit from nn.Module.
+So, once we've done that,
+So, let's see what it does.
+So, what did we do in the initialization part?
+So, what we're actually doing is quite simple.
+This means we don't have to manually set the parameter initialization ourselves.
+It already has some default values.
+But for now, we've just defined the first layer, FC1.
+So, what does the first layer actually do?
+So, it's basically a linear layer with 784 inputs.
+and 128 outputs.
+And the second layer? That's our hidden layer.
+and 128 inputs.
+And these ten outputs are what feed into our output layer.
+Right?
+And that's just because it's a linear layer, right?
+So, we just need to write it out.
+And that's it.
+This is for the two parameters: how many... how many features we have.
+the number of features and the number of outputs.
+And just like that, we're done.
+It's super simple.
+Next, let's define the 'forward' method, which is the forward propagation process.
+Alright, so first things first.
+So, after we've flattened all the features,
+So, for the ReLU, we're just calling its method on the first layer.
+and wrap it with ReLU.
+And then we'll set up the second layer.
+And for the second layer, there's no activation function.
+It's just a linear function.
+And just call it.
+And then we just return the result.
+It's the same as before.
+Let's set the random seed.
+This is the same thing.
+Let's instantiate the model.
+Now, let's define the optimizer.
+In fact, let's take a look.
+Now, even though we've written SGD here,
+But by default, it's actually mini-batch SGD.
+Let's pass all the parameters in.
+As for the learning rate, let's just set it manually to 0.1.
+So, what's its loss function?
+First, we'll import the necessary modules, and then we're ready for the training process.
+For the training process, all you have to do is call model.train().
+This is actually the one we just wrote by hand.
+So, during that process...
+So, let's see how we actually write the code to use it.
+So, let's go ahead and call our optimizer.
+Let's zero out the gradients.
+Then, let's calculate the model's output.
+Now, let's calculate the loss.
+Then, we'll calculate the loss.
+and calculate the loss using the loss function.
+And calling `.backward()` on the loss is how we perform backpropagation.
+So, once backpropagation is done,
+Then, we use the optimizer, which is gradient descent, to take a step.
+and step-by-step, we update our parameters.
+And then we just need to add up the loss.
+So, as you can see, it's done in just four lines of code.
+And with that, we've pretty much implemented all four of the processes we talked about earlier.
+Alright, let's print out the final result.
+As you can see, the results are pretty much the same as what we got earlier.
+But our parameter initialization is a bit different.
+So, that's why the results might be slightly different.
+But in the end, it all works out.
+And besides, for every line of code in there, if you're just learning the syntax...
+The syntax itself is all pretty simple.
+So, it's all just a bunch of function calls, right?
+So what's so hard about it?
+But the real challenge is understanding what's actually happening in this step.
+This is all covered in the theoretical part of deep learning.
+The sheer amount of syntax is just overwhelming.
+There's just no way you can memorize it all.
+You can just look it up when you need it.
+So, what you really need to learn is the theory behind deep learning.
+Alright, let's go back to our slides and look at this table.
+First off, we have the declaration of the parameters.
+that we had to define ourselves.
+And we also defined an array to store all those parameters.
+We've written our own initialization parameters.
+And basically, that's all it takes to get it done.
+It's incredibly simple.
+As for collecting the parameters,
+It automatically collects all of them from model.parameters().
+So, when it comes to clearing the gradients,
+Writing it this way is actually pretty much the same.
+The only difference is that with an optimizer, we just call `.zero_grad()` and we're done.
+As for updating the parameters,
+we also have to write the parameter update process ourselves.
+But if we use an optimizer,
+we're using gradient descent.
+You can just call optimizer.step() and you're good.
+If you use different optimizers inside it,
+Its computation method is different.
+Right?
+We've covered some very complex topics in our discussions on gradient descent and optimizers.
+the calculation process for AdamW.
+But that's not the case here.
+It's still just this one line.
+This part here is for moving the data to the device.
+Actually, if we use some devices,
+a GPU or something like that.
+This also allows for better support.
+So, at the end of the day, there's nothing really new here.
+It's just that the computations are simpler, that's all.
+Alright, let's move on and take a look at our training process.
+And now for the results of the training.
+and use a little drawing board to test it out.
+and have the model make a prediction for us.
+Alright, let's get back to the code and take a look.
+So, our model is now trained.
+Alright, so let's put this model to the test.
+So, for our first application,
+Let's randomly pick a few images from our test set.
+and have the model figure out what number it actually is.
+If the green guess is correct,
+Because we have the labels.
+And we'll know if it guessed correctly or not.
+This part is pretty simple.
+And this is the most important part.
+Alright, let's use the model to get the result.
+Let's see what we get after running it through softmax.
+Let's see what we get.
+We just need to know which class has the highest probability.
+Alright, let's see the results of our execution.
+So that's a zero.
+This one's a six.
+As you can see,
+So, the model has a 97% accuracy rate.
+So, it gets the prediction right pretty much every time.
+Alright, let's do a quick demo and draw one right here.
+Alright, let's draw a handwritten digit.
+Alright, let's test the model and see how it does.
+Let's have the model make a prediction.
+So, this is actually something you need to pay attention to when you're drawing.
+Make sure you draw the number big and in the center.
+And the strokes should be thick.
+That's because the data in the MNIST training set all looks like this.
+If you don't draw it very well,
+the training accuracy will be lower.
+So, let's go ahead and give it a test run.
+If the recognition isn't accurate,
+And don't be surprised if it does.
+Well, the first reason is the MNIST dataset itself.
+The images in it have all been pre-processed.
+The digits are all centered.
+Plus, the strokes are quite thick.
+But our own handwriting can't guarantee that.
+And second, the code we wrote is for a two-layer MLP.
+And we haven't done any optimization either.
+So the training itself isn't going to be that accurate to begin with.
+Alright, so to run this...
+So, we need to install a package.
+Alright, with that package installed, we can take a look.
+Let's run this code.
+There's not much to say about this code.
+If you're interested,
+Just go ahead and run it on your own.
+Alright, let's see the result. We've handwritten it like this.
+So, it's probably a four.
+Right?
+Let's see what it comes up with.
+And the probability for four is... yep.
+A bit bigger.
+And it's also thinking this might be a seven.
+A 44% accuracy rate, huh.
+Let's clear it.
+Let's try predicting another one.
+For example, let's say we write a three in the corner.
+So, in a case like this, there's a high chance it'll get the prediction wrong.
+Because it's too far off to the side.
+See, it's because it's not centered.
+And it's not thick enough, either.
+So when it predicts a seven, it's wrong.
+So, for example, we can make this a really big one.
+Let's have it make a prediction.
+So it's 99% sure it's a one.
+So that's pretty straightforward.
+Let's write a... say, an eight.
+But the eight we've drawn here is a little bit weird, though.
+Let's have it make a prediction.
+I bet it'll get this one right, too.
+Because this one still looks pretty much like an eight.
+And the number eight doesn't really look that much like the others.
+As you can see,
+So, it's 95% an eight.
+And there's also a chance it's a five.
+But overall, it's still pretty fun.
+Right?
+So, that pretty much covers the main points we wanted to go over.
+So, let's take a look back.
+In fact, we've used a lot of empirical values in many places without really explaining them.
+But why?
+This is just to give you a heads-up that we'll be covering this later.
+And that's exactly what we'll be covering in the upcoming lessons.
+So, how do we actually fine-tune the model we're going to talk about?
+And seeing this example should make it easier for everyone to understand.
+So, all this code we're writing...
+For example, let's just use the default learning rate of 0.1.
+So, this is just a number we've pulled out of thin air.
+Actually, we can try using different learning rates.
+And as a result, we'll see some changes.
+So, what is the best initial learning rate?
+The network only has two layers.
+So, wouldn't it be better to make it deeper?
+So what if we add more layers to make it deeper?
+So why won't it run?
+We'll cover this when we get to CNNs and, uh, Residual Networks.
+We'll also touch on parameter initialization.
+Let's see what happens with good parameters.
+and compare it with different, poor initializations of those parameters.
+and compare their effects.
+And in between all that,
+We also performed some normalization on the data.
+and wrote down a bunch of weird-looking numbers.
+So, what's all this for?
+So what happens if we remove it?
+We'll cover that in the normalization section.
+So, that's why when we talk about things like the Transformer,
+Why is there always a layer normalization process?
+So, what does this layer do?
+If you don't understand the fundamentals of deep learning,
+and expect to understand transformers in just half an hour.
+That's just not realistic.
+Because you won't have a clue what its architecture is even doing.
+So, what if we have fewer images for training?
+so we don't have that many.
+So, what's the solution?
+So, can we make the training process any smarter?
+So, we can move on to learning about regularization.
+Now, even though we've already covered L1 in machine learning,
+and L2 regularization.
+and they're just as applicable in deep learning.
+However, deep learning also has a rather special technique called dropout.
+So, for today's code,
+In fact, it's really just a review of the deep learning concepts we've already covered.
+all of it.
+in just over 30 lines of code.
+to get a deep learning model
+and that completes one full training cycle.
+In fact, whether we're talking about mini...
+or ResNet,
+or even GPT,
+In fact, they are all pretty much trained in this way.
+It's just taking our theories
+and turns the theories we know into some commonly used tools.
+You don't have to write it from scratch,
+and implemented it step-by-step.
+But at its core, deep learning is really about the mindset.
+can't understand the code for models like this.
+Absolutely not.
+What you should be learning are the fundamentals of deep learning.
+Once you have a solid foundation,
+and then look at the individual functions it exposes.
+it'll be a piece of cake.
+So, in the next few lessons,
+And we're not going to rush into CNNs, RNNs, or even Transformers just yet.
+Instead, let's focus on how to train our model more effectively.
+and get these concepts down pat.
+and then move on to CNNs, sequence-to-sequence models, and so on.
+and RNNs and Transformers will feel like a breeze.
+So, in our next lesson, we're going to start by talking about...
+how to set a good learning rate.

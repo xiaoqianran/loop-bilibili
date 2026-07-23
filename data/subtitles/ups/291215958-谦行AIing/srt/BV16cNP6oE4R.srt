@@ -1,0 +1,3299 @@
+1
+00:00:00,000 --> 00:00:01,840
+Continuamos con el estudio del PNL.
+
+2
+00:00:01,840 --> 00:00:05,540
+Hoy vamos a ver el embedding y el modelo word2vec.
+
+3
+00:00:05,540 --> 00:00:07,600
+Es precisamente gracias a estas dos técnicas que podemos entenderlo.
+
+4
+00:00:07,600 --> 00:00:09,649
+cada palabra de un idioma natural.
+
+5
+00:00:09,649 --> 00:00:12,329
+Aquellos que ya estén familiarizados con la arquitectura Transformer
+
+6
+00:00:12,329 --> 00:00:14,750
+seguramente el término "embedding" no les resultará desconocido.
+
+7
+00:00:14,750 --> 00:00:17,550
+Hoy vamos a ver cómo se representa.
+
+8
+00:00:17,550 --> 00:00:19,150
+las palabras en el lenguaje natural.
+
+9
+00:00:19,150 --> 00:00:20,690
+Si vemos la palabra "manzana",
+
+10
+00:00:20,690 --> 00:00:23,070
+es muy probable que pienses de forma natural en la fruta.
+
+11
+00:00:23,070 --> 00:00:24,670
+el sabor y el color que le corresponden,
+
+12
+00:00:24,670 --> 00:00:26,330
+o incluso algunas situaciones de la vida cotidiana.
+
+13
+00:00:26,330 --> 00:00:28,240
+Incluso es posible que nos recuerde a un teléfono móvil.
+
+14
+00:00:28,240 --> 00:00:30,460
+Pero para un ordenador o un modelo,
+
+15
+00:00:30,460 --> 00:00:32,870
+solo puede ver un símbolo discreto como este.
+
+16
+00:00:32,870 --> 00:00:35,370
+En realidad, para el ordenador, esta palabra en sí no tiene ningún significado.
+
+17
+00:00:35,370 --> 00:00:37,670
+Porque ni el modelo ni el ordenador pueden
+
+18
+00:00:37,670 --> 00:00:39,460
+en lo que mejor se le da: la suma y la multiplicación.
+
+19
+00:00:39,460 --> 00:00:41,780
+tampoco sirve para determinar el significado de la palabra.
+
+20
+00:00:41,780 --> 00:00:44,920
+incluyendo la relación que tiene con el símbolo discreto "banana".
+
+21
+00:00:44,920 --> 00:00:49,140
+y cuál es exactamente su relación con la palabra "coche".
+
+22
+00:00:49,140 --> 00:00:52,500
+Por eso, todas las diversas arquitecturas de PNL que tenemos...
+
+23
+00:00:52,500 --> 00:00:55,120
+Para que un ordenador pueda procesar problemas de PNL,
+
+24
+00:00:55,120 --> 00:00:56,860
+Para empezar, nos encontramos con una cuestión fundamental.
+
+25
+00:00:56,860 --> 00:00:59,520
+Es decir, cómo convertir estos símbolos discretos, uno por uno,
+
+26
+00:00:59,520 --> 00:01:01,640
+Es decir, lo que llamamos palabras o "words".
+
+27
+00:01:01,640 --> 00:01:05,720
+para que pueda ser procesado por ordenadores y modelos.
+
+28
+00:01:05,720 --> 00:01:08,450
+una representación matemática que se pueda comparar y aprender.
+
+29
+00:01:08,450 --> 00:01:10,190
+Lo mejor es convertirlas en números.
+
+30
+00:01:10,190 --> 00:01:12,150
+y luego reflejarlos en un espacio vectorial.
+
+31
+00:01:12,150 --> 00:01:14,720
+Entonces, como los ordenadores solo entienden de números,
+
+32
+00:01:14,720 --> 00:01:15,240
+Bien, entonces.
+
+33
+00:01:15,240 --> 00:01:16,440
+Entonces, ¿cuál es la forma más directa de hacerlo?
+
+34
+00:01:16,440 --> 00:01:19,020
+Es decir, asignar a cada palabra un número entero como identificador.
+
+35
+00:01:19,020 --> 00:01:20,620
+Por ejemplo, supongamos que tenemos cuatro palabras.
+
+36
+00:01:20,620 --> 00:01:21,460
+Manzana es igual a uno.
+
+37
+00:01:21,460 --> 00:01:22,260
+plátano es igual a dos,
+
+38
+00:01:22,260 --> 00:01:23,140
+coche es igual a tres,
+
+39
+00:01:23,140 --> 00:01:24,340
+Tren es igual a cuatro.
+
+40
+00:01:24,340 --> 00:01:26,500
+Entonces, cuando quieras usarlo, simplemente consultas la tabla.
+
+41
+00:01:26,500 --> 00:01:28,240
+Veamos a qué números corresponden.
+
+42
+00:01:28,240 --> 00:01:29,280
+Así se ve bien.
+
+43
+00:01:29,280 --> 00:01:32,040
+Pero, cuando se lo entregamos directamente al modelo,
+
+44
+00:01:32,040 --> 00:01:32,900
+surgirán algunos problemas.
+
+45
+00:01:32,900 --> 00:01:35,230
+De hecho, esto es algo que ya vimos cuando estudiamos aprendizaje automático.
+
+46
+00:01:35,230 --> 00:01:36,270
+ya se los he explicado antes.
+
+47
+00:01:36,270 --> 00:01:38,790
+Entonces, ¿qué pasaría si le damos estos números directamente al modelo para que entrene?
+
+48
+00:01:38,790 --> 00:01:39,930
+Y de hecho, lo ha reconocido.
+
+49
+00:01:39,930 --> 00:01:43,020
+Pero, para el modelo, este número de identificación...
+
+50
+00:01:43,020 --> 00:01:44,620
+no son números comunes y corrientes.
+
+51
+00:01:44,620 --> 00:01:47,580
+Entenderá que el tren es mayor que la manzana.
+
+52
+00:01:47,580 --> 00:01:50,220
+la distancia entre manzana y coche y
+
+53
+00:01:50,220 --> 00:01:53,229
+es mayor que la distancia entre la manzana y el tren.
+
+54
+00:01:53,229 --> 00:01:55,869
+Es decir, existe entre ellas una relación de magnitud y distancia.
+
+55
+00:01:55,869 --> 00:01:57,269
+Pero en realidad, esto no existe.
+
+56
+00:01:57,269 --> 00:01:58,880
+Al menos, antes de ser entrenado,
+
+57
+00:01:58,880 --> 00:02:00,440
+No se puede hacer esa suposición.
+
+58
+00:02:00,440 --> 00:02:03,940
+Así que, este método de representación tiene un defecto inherente.
+
+59
+00:02:03,940 --> 00:02:04,940
+Entonces, ¿qué hacemos ahora?
+
+60
+00:02:04,940 --> 00:02:06,980
+Entonces, ¿podríamos encontrar una forma de representar solo la identidad,
+
+61
+00:02:06,980 --> 00:02:10,060
+No se debe añadir ninguna asociación como el tamaño o la distancia.
+
+62
+00:02:10,060 --> 00:02:12,980
+Bueno, pues en realidad es el one-hot que ya habíamos visto antes.
+
+63
+00:02:12,980 --> 00:02:14,670
+Es aquí donde aparece la codificación one-hot.
+
+64
+00:02:14,670 --> 00:02:17,270
+OK, por ejemplo, digamos que solo tenemos cuatro palabras en total.
+
+65
+00:02:17,270 --> 00:02:19,860
+Entonces, lo que haría sería crear un vector de cuatro dimensiones.
+
+66
+00:02:19,860 --> 00:02:21,520
+Por ejemplo, si la manzana es la primera,
+
+67
+00:02:21,520 --> 00:02:23,300
+Entonces, solo el primer valor es uno.
+
+68
+00:02:23,300 --> 00:02:24,180
+y los demás son cero.
+
+69
+00:02:24,180 --> 00:02:25,280
+El plátano es el segundo.
+
+70
+00:02:25,280 --> 00:02:28,710
+De esta manera, en realidad, si tenemos más palabras,
+
+71
+00:02:28,710 --> 00:02:31,570
+entonces lo represento con un vector de más dimensiones.
+
+72
+00:02:31,570 --> 00:02:33,470
+De esta manera, solo me fijo en las posiciones donde el valor es uno.
+
+73
+00:02:33,470 --> 00:02:34,680
+significa que sí lo es.
+
+74
+00:02:34,680 --> 00:02:36,140
+y un cero significa que no.
+
+75
+00:02:36,140 --> 00:02:38,020
+De esta forma, solo estoy indicando qué es cada cosa.
+
+76
+00:02:38,020 --> 00:02:40,880
+ya no hay ninguna implicación sobre su tamaño o distancia.
+
+77
+00:02:40,880 --> 00:02:44,090
+Y así se soluciona el problema de la codificación con números enteros.
+
+78
+00:02:44,090 --> 00:02:46,230
+Pero, evidentemente, esta solución tampoco es perfecta.
+
+79
+00:02:46,230 --> 00:02:49,470
+Porque el vocabulario que usamos en la vida real es mucho más grande que cuatro.
+
+80
+00:02:49,470 --> 00:02:51,920
+Incluso si tenemos en cuenta todos los idiomas,
+
+81
+00:02:51,920 --> 00:02:53,980
+Es incluso mayor que millones o decenas de millones.
+
+82
+00:02:53,980 --> 00:02:56,590
+Utilizo un vector muy, muy largo,
+
+83
+00:02:56,590 --> 00:02:58,650
+para representarlo con un vector de muchísimas dimensiones.
+
+84
+00:02:58,650 --> 00:02:59,990
+Entonces, yo tampoco represento la mayor parte.
+
+85
+00:02:59,990 --> 00:03:00,890
+solo hay un uno,
+
+86
+00:03:00,890 --> 00:03:02,210
+y todo lo demás son ceros.
+
+87
+00:03:02,210 --> 00:03:03,730
+Esto supone un enorme desperdicio.
+
+88
+00:03:03,730 --> 00:03:04,750
+Es decir, se vuelve cada vez más grande.
+
+89
+00:03:04,750 --> 00:03:07,790
+Además, su densidad de información es realmente muy baja.
+
+90
+00:03:07,790 --> 00:03:08,690
+Solo uno es útil.
+
+91
+00:03:08,690 --> 00:03:09,770
+y el resto son ceros.
+
+92
+00:03:09,770 --> 00:03:11,690
+Así que, pero, con un tamaño tan grande...
+
+93
+00:03:11,690 --> 00:03:14,150
+lo que hace que la carga computacional sea extremadamente compleja.
+
+94
+00:03:14,150 --> 00:03:16,330
+Además, tampoco existe ninguna relación semántica entre ellos.
+
+95
+00:03:16,330 --> 00:03:17,570
+Por ejemplo, con esto tampoco puedo saberlo.
+
+96
+00:03:17,570 --> 00:03:20,810
+¿Qué relación hay entre este uno y el siguiente?
+
+97
+00:03:20,810 --> 00:03:21,610
+cuál está más cerca y cuál más lejos.
+
+98
+00:03:21,610 --> 00:03:22,510
+Tampoco pueden representar nada.
+
+99
+00:03:22,510 --> 00:03:25,110
+Pero, por naturaleza, las palabras tienen una relación de cercanía y lejanía entre sí.
+
+100
+00:03:25,110 --> 00:03:26,470
+Pero, ¿cuál es el problema más grave?
+
+101
+00:03:26,470 --> 00:03:27,700
+Es básicamente lo que acabamos de mencionar.
+
+102
+00:03:27,700 --> 00:03:29,660
+Y esto es precisamente lo que ocurre en el modelo 'one-hot'.
+
+103
+00:03:29,660 --> 00:03:31,140
+todas las palabras son ortogonales.
+
+104
+00:03:31,140 --> 00:03:32,260
+Entonces, ¿qué significa que sean ortogonales?
+
+105
+00:03:32,260 --> 00:03:34,280
+De hecho, si decimos que es un vector...
+
+106
+00:03:34,280 --> 00:03:35,680
+Hablemos de un vector bidimensional.
+
+107
+00:03:35,680 --> 00:03:37,220
+Esto es algo que una persona puede entender.
+
+108
+00:03:37,220 --> 00:03:38,860
+y el otro, a lo largo del eje Y.
+
+109
+00:03:38,860 --> 00:03:39,960
+uno a lo largo del eje X,
+
+110
+00:03:39,960 --> 00:03:41,260
+El ángulo entre ellos es de 90 grados.
+
+111
+00:03:41,260 --> 00:03:42,640
+Su coseno es igual a cero.
+
+112
+00:03:42,640 --> 00:03:45,630
+De hecho, a esto lo llamamos similitud del coseno igual a cero.
+
+113
+00:03:45,630 --> 00:03:48,090
+Porque el coseno de 90 grados es cero.
+
+114
+00:03:48,090 --> 00:03:49,310
+A esto se le llama que son ortogonales.
+
+115
+00:03:49,310 --> 00:03:50,910
+Se podría decir que no tienen ninguna relación.
+
+116
+00:03:50,910 --> 00:03:53,250
+Si el ángulo entre ellos es muy pequeño,
+
+117
+00:03:53,250 --> 00:03:55,710
+entonces su coseno de theta se acercará mucho a uno.
+
+118
+00:03:55,710 --> 00:03:58,900
+decimos que estos dos vectores están muy fuertemente correlacionados.
+
+119
+00:03:58,900 --> 00:04:00,220
+significa que son muy parecidos.
+
+120
+00:04:00,220 --> 00:04:02,280
+Si lo convertimos en un vector unitario,
+
+121
+00:04:02,280 --> 00:04:03,680
+si el ángulo entre ellos es cero,
+
+122
+00:04:03,680 --> 00:04:05,280
+se consideran iguales.
+
+123
+00:04:05,280 --> 00:04:07,620
+Entonces, si el ángulo entre ambos es muy grande,
+
+124
+00:04:07,620 --> 00:04:09,080
+si se acerca a los 180 grados,
+
+125
+00:04:09,080 --> 00:04:11,240
+Eso significa que entre ellos sí que hay una relación.
+
+126
+00:04:11,240 --> 00:04:12,660
+Es mejor que un ángulo de 90 grados.
+
+127
+00:04:12,660 --> 00:04:14,440
+Esto significa que tienen una correlación negativa perfecta.
+
+128
+00:04:14,440 --> 00:04:16,329
+Es una relación en la que si uno sube, el otro baja.
+
+129
+00:04:16,329 --> 00:04:18,129
+y también es mejor que ser completamente ortogonales.
+
+130
+00:04:18,129 --> 00:04:19,889
+Para esto, nos fijamos en el coseno de theta.
+
+131
+00:04:19,889 --> 00:04:21,449
+Por eso se llama similitud del coseno.
+
+132
+00:04:21,449 --> 00:04:23,090
+También podemos representarlo de esta manera.
+
+133
+00:04:23,090 --> 00:04:24,210
+Pero en el caso de one-hot,
+
+134
+00:04:24,210 --> 00:04:24,890
+Este es cero.
+
+135
+00:04:24,890 --> 00:04:27,770
+Por ejemplo, representarlo de esta manera es, en realidad, hacer un producto escalar.
+
+136
+00:04:27,770 --> 00:04:28,940
+Cuando se realiza el producto punto,
+
+137
+00:04:28,940 --> 00:04:30,620
+Vamos a ponerlo en vertical para verlo.
+
+138
+00:04:30,620 --> 00:04:31,980
+multiplicamos cada posición correspondiente.
+
+139
+00:04:31,980 --> 00:04:32,780
+donde tú tienes un uno,
+
+140
+00:04:32,780 --> 00:04:33,560
+yo soy cero.
+
+141
+00:04:33,560 --> 00:04:34,720
+y donde tú tienes un cero,
+
+142
+00:04:34,720 --> 00:04:36,200
+yo tengo un uno aquí.
+
+143
+00:04:36,200 --> 00:04:38,100
+Pero, como mínimo, el resultado de multiplicarlos sigue siendo cero.
+
+144
+00:04:38,100 --> 00:04:40,820
+Por lo tanto, todos se encuentran en un espacio de one-hot.
+
+145
+00:04:40,820 --> 00:04:42,100
+Todas las palabras son ortogonales entre sí.
+
+146
+00:04:42,100 --> 00:04:44,120
+Por lo tanto, su similitud de coseno es cero.
+
+147
+00:04:44,120 --> 00:04:46,660
+Pero, en realidad, la distancia entre 'manzana' y 'plátano'...
+
+148
+00:04:46,660 --> 00:04:48,380
+Para que lo entendamos de una forma más humana,
+
+149
+00:04:48,380 --> 00:04:52,480
+es evidente que estas dos palabras están mucho más relacionadas que 'manzana' y 'coche'.
+
+150
+00:04:52,480 --> 00:04:53,920
+Pero en el caso de one-hot...
+
+151
+00:04:53,920 --> 00:04:55,280
+no hay ninguna diferencia entre ellos.
+
+152
+00:04:55,280 --> 00:04:58,320
+El one-hot simplemente elimina la relación del orden de los elementos.
+
+153
+00:04:58,320 --> 00:05:01,380
+Pero no expresa nada a nivel semántico.
+
+154
+00:05:01,380 --> 00:05:02,800
+este grado de similitud.
+
+155
+00:05:02,800 --> 00:05:04,520
+Además, su dimensionalidad es extremadamente alta.
+
+156
+00:05:04,520 --> 00:05:06,160
+Así que esta solución tampoco es muy buena.
+
+157
+00:05:06,160 --> 00:05:07,440
+Si queremos saber,
+
+158
+00:05:07,440 --> 00:05:10,480
+por qué la palabra "manzana" está más cerca de "coche" que de "banana",
+
+159
+00:05:10,480 --> 00:05:11,800
+entonces tenemos que observar
+
+160
+00:05:11,800 --> 00:05:13,980
+cómo se utilizan en el lenguaje.
+
+161
+00:05:13,980 --> 00:05:16,200
+Podemos ver muchas frases como "me comí una manzana".
+
+162
+00:05:16,200 --> 00:05:17,470
+Me comí un plátano.
+
+163
+00:05:17,470 --> 00:05:19,250
+pero es muy raro que alguien diga "me comí un coche".
+
+164
+00:05:19,250 --> 00:05:20,530
+Esta manzana es muy dulce.
+
+165
+00:05:20,530 --> 00:05:21,909
+El plátano está dulce.
+
+166
+00:05:21,909 --> 00:05:23,769
+Este coche se ve muy bonito.
+
+167
+00:05:23,769 --> 00:05:25,170
+Las llantas brillan un montón.
+
+168
+00:05:25,170 --> 00:05:26,130
+Entonces, ¿qué nos dice esto?
+
+169
+00:05:26,130 --> 00:05:27,850
+Detrás de esto hay una teoría.
+
+170
+00:05:27,850 --> 00:05:28,770
+se llama representación distribuida.
+
+171
+00:05:28,770 --> 00:05:30,250
+Entonces, ¿qué significa esto?
+
+172
+00:05:30,250 --> 00:05:32,010
+Es decir, el significado de una palabra...
+
+173
+00:05:32,010 --> 00:05:35,630
+puede entenderse a través del contexto en el que aparece con frecuencia.
+
+174
+00:05:35,630 --> 00:05:37,430
+palabras con significados muy parecidos,
+
+175
+00:05:37,430 --> 00:05:39,390
+su contexto también será muy similar.
+
+176
+00:05:39,390 --> 00:05:42,000
+Con estos sencillos ejemplos ya podemos ver que...
+
+177
+00:05:42,000 --> 00:05:43,160
+Como manzana y banana.
+
+178
+00:05:43,160 --> 00:05:45,720
+Es decir, no es que la palabra "fruta" lleve escrita su color de forma literal.
+
+179
+00:05:45,720 --> 00:05:47,960
+Pero suelen aparecer en contextos similares.
+
+180
+00:05:47,960 --> 00:05:49,320
+aunque a veces no se puedan comer.
+
+181
+00:05:49,320 --> 00:05:50,320
+y todas son muy dulces.
+
+182
+00:05:50,320 --> 00:05:53,020
+y también suelen aparecer junto a palabras como fruta, precio o color.
+
+183
+00:05:53,020 --> 00:05:55,760
+entonces consideramos que estas dos palabras en el espacio vectorial
+
+184
+00:05:55,760 --> 00:05:57,080
+deberían estar muy cercanos.
+
+185
+00:05:57,080 --> 00:06:00,680
+en cambio, el número de veces que aparecen junto con la palabra "coche"...
+
+186
+00:06:00,680 --> 00:06:02,400
+debería ser relativamente
+
+187
+00:06:02,400 --> 00:06:03,800
+la distancia es muy grande.
+
+188
+00:06:03,800 --> 00:06:05,740
+Es decir, no suelen aparecer juntos con frecuencia.
+
+189
+00:06:05,740 --> 00:06:09,320
+Es decir, lo que queremos es utilizar la relación de cercanía o lejanía entre los vectores.
+
+190
+00:06:09,320 --> 00:06:13,409
+para expresar la cercanía o lejanía de su significado.
+
+191
+00:06:13,409 --> 00:06:15,889
+y luego, convertir esta similitud contextual
+
+192
+00:06:15,889 --> 00:06:19,220
+y transformarla en una relación de proximidad en el espacio vectorial.
+
+193
+00:06:19,460 --> 00:06:20,460
+Entonces, ¿qué hacemos?
+
+194
+00:06:20,460 --> 00:06:21,580
+Y uno de los métodos que existen...
+
+195
+00:06:21,580 --> 00:06:24,880
+a esto se le llama matriz de co-ocurrencia para registrar las relaciones de contexto.
+
+196
+00:06:24,880 --> 00:06:26,120
+¿Y cómo lo hace?
+
+197
+00:06:26,120 --> 00:06:28,360
+Este es un método clásico de la estadística.
+
+198
+00:06:28,360 --> 00:06:30,920
+Entonces, lo que hacemos es contar la aparición de una palabra junto con las palabras de su contexto.
+
+199
+00:06:30,920 --> 00:06:33,179
+que suelen aparecer en la misma ventana.
+
+200
+00:06:33,179 --> 00:06:34,359
+Por ejemplo, la palabra "manzana".
+
+201
+00:06:34,359 --> 00:06:36,099
+Entonces, voy a observar entre estas palabras,
+
+202
+00:06:36,099 --> 00:06:37,459
+Cuando menciono la palabra "manzana",
+
+203
+00:06:37,459 --> 00:06:39,860
+¿Cuántas veces aparece la palabra "comer" en una frase?
+
+204
+00:06:39,860 --> 00:06:41,580
+Por ejemplo, he analizado una novela,
+
+205
+00:06:41,580 --> 00:06:44,020
+o una gran biblioteca de textos, por ejemplo.
+
+206
+00:06:44,020 --> 00:06:45,380
+la palabra "comer" apareció 24 veces.
+
+207
+00:06:45,380 --> 00:06:46,260
+le asigno esa frecuencia.
+
+208
+00:06:46,260 --> 00:06:47,300
+le asignaré ese mismo valor.
+
+209
+00:06:47,300 --> 00:06:50,840
+Es posible que la palabra "manzana" y la palabra "motor" nunca aparezcan juntas, ¿verdad?
+
+210
+00:06:50,840 --> 00:06:54,460
+Pero la palabra "motor" sí que aparece muchísimas veces junto a "tren" y "carretera".
+
+211
+00:06:54,460 --> 00:06:55,680
+Y aquí, en este contexto...
+
+212
+00:06:55,680 --> 00:06:58,840
+Entonces, a grandes rasgos, si los organizo en un vector...
+
+213
+00:06:58,840 --> 00:07:00,940
+Estos números, en realidad, ya adquieren un cierto significado.
+
+214
+00:07:00,940 --> 00:07:01,840
+Entonces, nos daremos cuenta de que...
+
+215
+00:07:01,840 --> 00:07:02,800
+manzana y banana,
+
+216
+00:07:02,800 --> 00:07:03,920
+A ver, fíjense en ellos.
+
+217
+00:07:03,920 --> 00:07:06,580
+Es decir, estos vectores son muy parecidos entre sí.
+
+218
+00:07:06,580 --> 00:07:08,760
+Una manzana y un tren no se parecen en nada.
+
+219
+00:07:08,760 --> 00:07:11,120
+Pero los coches y los trenes, en cambio, sí que son muy parecidos.
+
+220
+00:07:11,120 --> 00:07:13,620
+En este caso, las palabras ya no son posiciones aisladas.
+
+221
+00:07:13,620 --> 00:07:16,620
+sino que se define por las palabras que suelen aparecer en su contexto.
+
+222
+00:07:16,620 --> 00:07:18,409
+sino que se describen a través de la relación que tienen entre sí.
+
+223
+00:07:18,409 --> 00:07:19,889
+El resultado parece bastante bueno.
+
+224
+00:07:19,889 --> 00:07:22,269
+Es un vector que se puede calcular.
+
+225
+00:07:22,269 --> 00:07:23,209
+Es un vector numérico.
+
+226
+00:07:23,209 --> 00:07:25,490
+y también puede representar cierta relación de cercanía o lejanía.
+
+227
+00:07:25,490 --> 00:07:27,250
+Pero también tiene ciertas desventajas.
+
+228
+00:07:27,250 --> 00:07:28,250
+Registra las relaciones.
+
+229
+00:07:28,250 --> 00:07:31,150
+pero no se generó un espacio semántico estable.
+
+230
+00:07:31,150 --> 00:07:34,640
+Bueno, el primer problema es que su escala es demasiado grande.
+
+231
+00:07:34,640 --> 00:07:37,320
+Cuando aparece la palabra 'manzana', las palabras que la rodean son muchísimas más que estas cinco.
+
+232
+00:07:37,320 --> 00:07:39,420
+O también podría decir que, en el corpus que estoy analizando,
+
+233
+00:07:39,420 --> 00:07:41,080
+Si hay millones de palabras,
+
+234
+00:07:41,080 --> 00:07:43,360
+Entonces, este vector es en realidad el mismo que el de antes.
+
+235
+00:07:43,360 --> 00:07:45,060
+la longitud sigue siendo muy grande.
+
+236
+00:07:45,060 --> 00:07:47,350
+Además, se trata de una relación cuadrática.
+
+237
+00:07:47,350 --> 00:07:48,970
+¿Es por tu matriz de colinealidad?
+
+238
+00:07:48,970 --> 00:07:50,190
+Es una relación cuadrática.
+
+239
+00:07:50,190 --> 00:07:53,610
+Por lo tanto, esto hará que su volumen sea extremadamente grande.
+
+240
+00:07:53,610 --> 00:07:55,350
+Además, su capacidad de generalización es limitada.
+
+241
+00:07:55,350 --> 00:07:57,249
+A esto yo lo llamo manzana, eh...
+
+242
+00:07:57,249 --> 00:07:59,729
+La siguiente palabra que voy a usar es la palabra en inglés "apple".
+
+243
+00:07:59,729 --> 00:08:01,229
+o incluso un dialecto de alguna región.
+
+244
+00:08:01,229 --> 00:08:02,069
+tampoco se le llama manzana.
+
+245
+00:08:02,069 --> 00:08:04,129
+o incluso la marca de una manzana.
+
+246
+00:08:04,129 --> 00:08:05,890
+o por ejemplo, la manzana Fuji.
+
+247
+00:08:05,890 --> 00:08:08,530
+De hecho, para una persona, todas estas cosas son muy parecidas.
+
+248
+00:08:08,530 --> 00:08:11,220
+Pero, si estas palabras no llegaran a aparecer,
+
+249
+00:08:11,220 --> 00:08:13,620
+Entonces, en la matriz de co-ocurrencia, no se podrá registrar ninguna estadística.
+
+250
+00:08:13,620 --> 00:08:16,810
+O simplemente se trata de diferencias dialectales, de distintas formas de llamar a la misma cosa.
+
+251
+00:08:16,810 --> 00:08:19,170
+pero no los agrupa en un mismo conjunto.
+
+252
+00:08:19,170 --> 00:08:21,610
+Por lo tanto, su capacidad de generalización es muy limitada.
+
+253
+00:08:21,610 --> 00:08:23,500
+Además, los datos estadísticos también son bastante dispersos.
+
+254
+00:08:23,500 --> 00:08:25,940
+Estos pueden verse afectados por el ruido, ¿eh?
+
+255
+00:08:25,940 --> 00:08:29,160
+tampoco se puede comprimir en un espacio semántico compacto.
+
+256
+00:08:29,160 --> 00:08:30,380
+Estos son algunos de sus problemas.
+
+257
+00:08:30,380 --> 00:08:32,390
+Pero aun así, la idea ya era muy buena.
+
+258
+00:08:32,390 --> 00:08:35,390
+Entonces, ahora solo nos falta el último paso.
+
+259
+00:08:35,390 --> 00:08:38,089
+Es decir, comprimir la relación en un problema de coordenadas.
+
+260
+00:08:38,089 --> 00:08:40,649
+Ahora la cuestión ya no es si podemos convertir las palabras en números.
+
+261
+00:08:40,649 --> 00:08:41,509
+sino que ya se ha convertido en
+
+262
+00:08:41,509 --> 00:08:44,450
+sino que esperamos que este número pueda conservar el significado semántico.
+
+263
+00:08:44,450 --> 00:08:46,070
+y que además sea adecuado para el aprendizaje del modelo.
+
+264
+00:08:46,070 --> 00:08:47,230
+No tiene por qué ser excesivamente grande.
+
+265
+00:08:47,230 --> 00:08:49,880
+Como ya hemos dicho, los números enteros, conocemos su numeración.
+
+266
+00:08:49,880 --> 00:08:51,480
+Es decir, se convierte en un número.
+
+267
+00:08:51,480 --> 00:08:52,700
+Solo fue el primer intento.
+
+268
+00:08:52,700 --> 00:08:55,770
+Sin embargo, esto trae consigo problemas de magnitud y distancia artificiales.
+
+269
+00:08:55,770 --> 00:08:57,750
+El método one-hot resolvió ese problema.
+
+270
+00:08:57,750 --> 00:09:01,310
+Pero, en primer lugar, el problema de one-hot es que su escala sigue siendo demasiado grande.
+
+271
+00:09:01,310 --> 00:09:02,370
+Es un desperdicio de espacio.
+
+272
+00:09:02,370 --> 00:09:04,130
+Y el segundo problema grave es que son ortogonales.
+
+273
+00:09:04,130 --> 00:09:05,250
+y no aportó nada de valor.
+
+274
+00:09:05,250 --> 00:09:07,990
+Poco a poco, vamos haciendo la transición hacia la matriz de contribución.
+
+275
+00:09:07,990 --> 00:09:09,250
+Para ello, se utiliza el contexto.
+
+276
+00:09:09,250 --> 00:09:10,349
+Se utilizó la estadística.
+
+277
+00:09:10,349 --> 00:09:13,309
+Así, poco a poco, las palabras empiezan a tener relaciones semánticas entre sí.
+
+278
+00:09:13,309 --> 00:09:15,319
+Pero la dimensionalidad seguía siendo demasiado alta.
+
+279
+00:09:15,319 --> 00:09:17,259
+Los vectores utilizan una cantidad de dimensiones excesiva,
+
+280
+00:09:17,259 --> 00:09:19,239
+Además, el conjunto de datos completo es demasiado disperso.
+
+281
+00:09:19,239 --> 00:09:21,280
+Y esto, además, lo hace poco estable.
+
+282
+00:09:21,280 --> 00:09:24,080
+Por lo tanto, prácticamente hemos conservado el contexto similar.
+
+283
+00:09:24,080 --> 00:09:25,520
+lo que equivale a un significado similar.
+
+284
+00:09:25,520 --> 00:09:29,489
+Por eso, lo que queremos es comprimir esta información en un espacio de menor dimensión.
+
+285
+00:09:29,489 --> 00:09:30,369
+Que no sea demasiado alta.
+
+286
+00:09:30,369 --> 00:09:31,860
+Es que tienes demasiadas columnas.
+
+287
+00:09:31,860 --> 00:09:34,420
+De esta forma, los datos tampoco son tan dispersos como en la codificación one-hot.
+
+288
+00:09:34,420 --> 00:09:35,680
+Quiero que sea más denso.
+
+289
+00:09:35,680 --> 00:09:39,640
+y además, son números continuos que se pueden aprender y computar.
+
+290
+00:09:39,640 --> 00:09:42,820
+Este método es el famoso embedding.
+
+291
+00:09:42,820 --> 00:09:43,320
+Embedding.
+
+292
+00:09:43,320 --> 00:09:45,280
+Su idea central es tomar estas palabras discretas,
+
+293
+00:09:45,280 --> 00:09:47,210
+y colocarlas en un espacio continuo.
+
+294
+00:09:47,210 --> 00:09:49,650
+Entonces, todas las palabras que usamos pueden entenderse como elementos discretos.
+
+295
+00:09:49,650 --> 00:09:51,610
+Estas palabras aisladas se "embedding" o incrustan,
+
+296
+00:09:51,610 --> 00:09:53,670
+Por lo tanto, la palabra en sí significa 'incrustar'.
+
+297
+00:09:53,670 --> 00:09:55,290
+en un espacio vectorial continuo.
+
+298
+00:09:55,290 --> 00:09:57,670
+Así, la palabra deja de ser simplemente una posición en el vocabulario.
+
+299
+00:09:57,670 --> 00:09:58,710
+ya no es un simple 1, 2, 3, 4, 5.
+
+300
+00:09:58,710 --> 00:10:00,960
+sino que se convierte en una coordenada con la que se puede operar.
+
+301
+00:10:00,960 --> 00:10:04,180
+De esta forma, puede participar en cálculos de distancia y similitud,
+
+302
+00:10:04,180 --> 00:10:06,760
+y también permite realizar tareas de agrupamiento y clasificación.
+
+303
+00:10:06,760 --> 00:10:09,640
+Por ejemplo, esperamos que en el espacio de embedding...
+
+304
+00:10:09,640 --> 00:10:10,480
+Esto es solo una idea.
+
+305
+00:10:10,480 --> 00:10:13,240
+Primero, por ejemplo, la similitud entre dos palabras.
+
+306
+00:10:13,240 --> 00:10:14,480
+Este es un método de similitud.
+
+307
+00:10:14,480 --> 00:10:17,280
+podemos calcularla entre estas dos palabras, manzana y banana.
+
+308
+00:10:17,280 --> 00:10:19,680
+mayor que la similitud entre "manzana" y "coche".
+
+309
+00:10:19,680 --> 00:10:21,970
+Su representación podría ser algo así.
+
+310
+00:10:21,970 --> 00:10:23,410
+A menudo, lo que vemos es que...
+
+311
+00:10:23,410 --> 00:10:24,910
+Porque después de normalizarlos,
+
+312
+00:10:24,910 --> 00:10:26,210
+o después de normalizarlo,
+
+313
+00:10:26,210 --> 00:10:29,060
+Sus valores estarán entre -1 y 1, y su dimensión puede ser fijada.
+
+314
+00:10:29,060 --> 00:10:31,860
+Pero como cada una tiene su propio significado,
+
+315
+00:10:31,860 --> 00:10:34,100
+Por lo tanto, su dimensionalidad no será especialmente alta.
+
+316
+00:10:34,100 --> 00:10:36,640
+Entonces, ¿de dónde salen todos estos números?
+
+317
+00:10:36,640 --> 00:10:37,620
+Se obtienen a través del entrenamiento.
+
+318
+00:10:37,620 --> 00:10:39,110
+No son valores asignados manualmente, ¿eh?
+
+319
+00:10:39,110 --> 00:10:41,050
+Cada uno de sus valores se obtiene a través del entrenamiento,
+
+320
+00:10:41,050 --> 00:10:42,830
+y se optimiza continuamente durante el entrenamiento.
+
+321
+00:10:42,830 --> 00:10:44,100
+Para una persona, puede que no sea fácil de entender.
+
+322
+00:10:44,100 --> 00:10:46,020
+Así que no nos fijemos solo en esto.
+
+323
+00:10:46,020 --> 00:10:47,420
+¿Qué significa 0.31?
+
+324
+00:10:47,420 --> 00:10:49,200
+¿Y qué significa menos 0,82?
+
+325
+00:10:49,200 --> 00:10:50,720
+Esto es algo que no podemos entender.
+
+326
+00:10:50,720 --> 00:10:53,560
+Un número por sí solo no corresponde a ninguna característica en particular.
+
+327
+00:10:53,560 --> 00:10:56,480
+Si hemos estudiado el PCA en el aprendizaje automático,
+
+328
+00:10:56,480 --> 00:10:58,220
+es posible que lo entiendas muy bien.
+
+329
+00:10:58,220 --> 00:11:01,380
+Solo cuando consideramos el vector en su conjunto es que este tiene sentido.
+
+330
+00:11:01,380 --> 00:11:04,420
+Individualmente, los números por sí solos no tienen ningún significado para nosotros.
+
+331
+00:11:04,420 --> 00:11:07,289
+Y las relaciones semánticas se encuentran precisamente en estos vectores.
+
+332
+00:11:07,289 --> 00:11:09,309
+Y bueno, esto es solo una idea.
+
+333
+00:11:09,309 --> 00:11:13,080
+Lo que realmente permitió que esta idea se pudiera implementar a bajo costo,
+
+334
+00:11:13,080 --> 00:11:14,900
+Una arquitectura técnica clásica es...
+
+335
+00:11:14,900 --> 00:11:16,670
+es Word2Vec.
+
+336
+00:11:16,670 --> 00:11:20,980
+Y el nombre que le dieron a este proceso de convertir palabras en vectores también es excelente.
+
+337
+00:11:20,980 --> 00:11:22,600
+Entonces, ¿cómo lo hace?
+
+338
+00:11:22,600 --> 00:11:24,420
+Es decir, antes de que existiera Word2Vec,
+
+339
+00:11:24,420 --> 00:11:27,200
+La idea de la 'embedding' probablemente ya existía desde hace mucho tiempo.
+
+340
+00:11:27,200 --> 00:11:27,400
+también
+
+341
+00:11:27,400 --> 00:11:29,720
+Pero la gente siempre ha optado por métodos de bajo costo.
+
+342
+00:11:29,720 --> 00:11:30,950
+no lograban resolver este problema.
+
+343
+00:11:30,950 --> 00:11:33,550
+Bueno, para empezar, los dos métodos más utilizados hasta ahora eran...
+
+344
+00:11:33,550 --> 00:11:35,880
+Una de ellas es reducir la dimensionalidad de la matriz de covarianza.
+
+345
+00:11:35,880 --> 00:11:38,160
+De hecho, existe un método específico, y hay varias maneras de hacerlo.
+
+346
+00:11:38,160 --> 00:11:39,640
+De hecho, es algo parecido al PCA.
+
+347
+00:11:39,640 --> 00:11:41,020
+¿No tienes muchísimas dimensiones?
+
+348
+00:11:41,020 --> 00:11:41,960
+Ya lo he aprendido.
+
+349
+00:11:41,960 --> 00:11:42,840
+Ya he terminado las estadísticas.
+
+350
+00:11:42,840 --> 00:11:45,520
+Entonces, voy a usar algunos métodos de procesamiento de datos,
+
+351
+00:11:45,520 --> 00:11:47,780
+o bien, se utiliza un método de aprendizaje automático para reducir la dimensionalidad.
+
+352
+00:11:47,780 --> 00:11:51,180
+Pero, al fin y al cabo, esta reducción de dimensionalidad siempre conlleva una pérdida de información.
+
+353
+00:11:51,180 --> 00:11:51,700
+¿Verdad?
+
+354
+00:11:51,700 --> 00:11:53,580
+No puede evitar ciertos problemas de escala.
+
+355
+00:11:53,580 --> 00:11:54,390
+y la dispersión,
+
+356
+00:11:54,390 --> 00:11:55,890
+y también problemas como el ruido.
+
+357
+00:11:55,890 --> 00:11:59,790
+Y otro tipo, que de hecho se utiliza en los modelos neuronales de lenguaje.
+
+358
+00:11:59,790 --> 00:12:00,710
+Su núcleo...
+
+359
+00:12:00,710 --> 00:12:02,710
+Pero el objetivo principal del modelo de lenguaje neuronal...
+
+360
+00:12:02,710 --> 00:12:06,119
+El objetivo es predecir la siguiente palabra, y los vectores de palabras que se aprenden son solo un subproducto.
+
+361
+00:12:06,119 --> 00:12:07,439
+porque lo que quieres es predecir la siguiente palabra.
+
+362
+00:12:07,439 --> 00:12:09,479
+necesitas obtener los vectores de las palabras.
+
+363
+00:12:09,479 --> 00:12:10,439
+Es solo un efecto secundario.
+
+364
+00:12:10,439 --> 00:12:11,879
+Pero su objetivo principal es este.
+
+365
+00:12:11,879 --> 00:12:14,940
+Así que, para obtener el vector de una palabra,
+
+366
+00:12:14,940 --> 00:12:16,840
+para llevar a cabo esta tarea en su totalidad.
+
+367
+00:12:16,840 --> 00:12:18,480
+el costo seguía siendo demasiado alto.
+
+368
+00:12:18,480 --> 00:12:20,240
+Llegamos entonces a Word2Vec.
+
+369
+00:12:20,240 --> 00:12:21,760
+Cuando apareció en escena,
+
+370
+00:12:21,760 --> 00:12:23,320
+Su objetivo cambió por completo.
+
+371
+00:12:23,320 --> 00:12:25,200
+Ya no se trata de construir un modelo de lenguaje completo.
+
+372
+00:12:25,200 --> 00:12:27,760
+Para una matriz de contribución como esta, la estadística tradicional definitivamente no es suficiente.
+
+373
+00:12:27,760 --> 00:12:29,580
+Así que, para entrenarlo, tenemos que usar redes neuronales.
+
+374
+00:12:29,580 --> 00:12:31,700
+Pero ya no voy a predecir la siguiente palabra.
+
+375
+00:12:31,700 --> 00:12:34,680
+En este caso, ya no se trata de crear un modelo de lenguaje completo.
+
+376
+00:12:34,680 --> 00:12:37,360
+Solo me centro en el aprendizaje de los vectores de palabras.
+
+377
+00:12:37,360 --> 00:12:39,150
+sino que aprendo el modelo correspondiente.
+
+378
+00:12:39,150 --> 00:12:40,190
+un espacio vectorial.
+
+379
+00:12:40,190 --> 00:12:42,210
+Y aquí es donde entran las que uso con frecuencia.
+
+380
+00:12:42,210 --> 00:12:43,490
+todas las palabras que se van a aprender.
+
+381
+00:12:43,490 --> 00:12:45,570
+Mi objetivo general es precisamente este.
+
+382
+00:12:45,570 --> 00:12:47,830
+Ya no se trata de crear un modelo de lenguaje.
+
+383
+00:12:47,830 --> 00:12:50,730
+En este caso, se convierte en una tarea de predicción más sencilla.
+
+384
+00:12:50,730 --> 00:12:52,130
+Lo que hace es predecir esta palabra.
+
+385
+00:12:52,130 --> 00:12:55,589
+Pero su propósito principal es precisamente para ver la similitud entre las palabras.
+
+386
+00:12:55,589 --> 00:12:58,369
+Y si repetimos este proceso de predicción basándonos en el contexto una y otra vez,
+
+387
+00:12:58,369 --> 00:13:01,049
+Así que, la idea de la matriz de co-ocurrencia sigue siendo útil.
+
+388
+00:13:01,049 --> 00:13:04,029
+En realidad, esto se debe a los principios que lo sustentan.
+
+389
+00:13:04,029 --> 00:13:06,300
+Solo tengo que predecir repetidamente basándome en el contexto.
+
+390
+00:13:06,300 --> 00:13:07,840
+y se usan los errores para ajustar los vectores.
+
+391
+00:13:07,840 --> 00:13:09,880
+En realidad, es un proceso de retropropagación.
+
+392
+00:13:09,880 --> 00:13:12,140
+De esta manera, las palabras similares se van acercando poco a poco.
+
+393
+00:13:12,140 --> 00:13:14,560
+así puedo aprender su vector.
+
+394
+00:13:14,560 --> 00:13:18,720
+Entonces, ¿qué fue lo que realmente hizo que Word2Vec asombrara al mundo?
+
+395
+00:13:18,720 --> 00:13:19,740
+Después de entrenarlo,
+
+396
+00:13:19,740 --> 00:13:21,860
+En primer lugar, su entrenamiento es increíblemente rápido.
+
+397
+00:13:21,860 --> 00:13:23,200
+y el costo es muy bajo.
+
+398
+00:13:23,200 --> 00:13:25,220
+Y en segundo lugar, los resultados que se obtienen son especialmente buenos.
+
+399
+00:13:25,220 --> 00:13:26,940
+Una vez que lo hayamos entrenado,
+
+400
+00:13:26,940 --> 00:13:29,509
+Por ejemplo, digamos que tenemos un método llamado VEC.
+
+401
+00:13:29,509 --> 00:13:30,249
+o sea, "vector".
+
+402
+00:13:30,249 --> 00:13:32,709
+Es capaz de obtener los vectores correspondientes a estas palabras.
+
+403
+00:13:32,709 --> 00:13:34,749
+Tomamos el de "king", que significa "rey".
+
+404
+00:13:34,749 --> 00:13:35,790
+le restamos
+
+405
+00:13:35,790 --> 00:13:38,310
+porque entre sus vectores se pueden realizar operaciones matemáticas.
+
+406
+00:13:38,310 --> 00:13:40,870
+le restamos el vector correspondiente a la palabra "man", que significa "hombre".
+
+407
+00:13:40,870 --> 00:13:42,840
+y luego le sumamos el vector correspondiente a la palabra "mujer".
+
+408
+00:13:42,840 --> 00:13:45,080
+Y nos daremos cuenta de que el resultado que obtenemos...
+
+409
+00:13:45,080 --> 00:13:48,470
+es muy parecido al de la palabra 'reina' o 'queen'.
+
+410
+00:13:48,470 --> 00:13:51,750
+Por lo tanto, nos daremos cuenta de que parece que realmente ha comprendido el significado de las palabras.
+
+411
+00:13:51,750 --> 00:13:53,190
+la relación entre las palabras.
+
+412
+00:13:53,190 --> 00:13:54,490
+es como si fuera un rey.
+
+413
+00:13:54,490 --> 00:13:56,310
+Si no lo hace un hombre,
+
+414
+00:13:56,310 --> 00:13:57,070
+sino por una mujer,
+
+415
+00:13:57,070 --> 00:13:58,530
+es posible que la llamemos "queen".
+
+416
+00:13:58,530 --> 00:14:00,370
+Parece que ahora nos entiende.
+
+417
+00:14:00,370 --> 00:14:01,330
+Es decir, el espacio vectorial.
+
+418
+00:14:01,330 --> 00:14:03,530
+Así que ya no se trata de pura estadística.
+
+419
+00:14:03,530 --> 00:14:05,490
+En él se codifica parte del significado semántico.
+
+420
+00:14:05,490 --> 00:14:07,069
+e incluso la estructura gramatical.
+
+421
+00:14:07,069 --> 00:14:09,269
+Por supuesto, en el artículo sobre Word2Vec,
+
+422
+00:14:09,269 --> 00:14:13,170
+También ofrece dos métodos de entrenamiento clásicos que me gustaría presentarles.
+
+423
+00:14:13,170 --> 00:14:15,090
+Uno de ellos se llama Continuous Bag-of-Words, o CBOW.
+
+424
+00:14:15,090 --> 00:14:20,040
+Es decir, el modelo CBOW utiliza el contexto para predecir la palabra central.
+
+425
+00:14:20,040 --> 00:14:20,960
+¿Para qué sirve?
+
+426
+00:14:20,960 --> 00:14:24,060
+Por ejemplo, la frase "Hoy me apetece comer una manzana".
+
+427
+00:14:24,060 --> 00:14:25,940
+Tenemos un contexto, que es W W.
+
+428
+00:14:25,940 --> 00:14:26,900
+Es decir, la ventana de contexto.
+
+429
+00:14:26,900 --> 00:14:28,500
+a lo que llamamos tamaño de la ventana.
+
+430
+00:14:28,500 --> 00:14:29,900
+A partir de una palabra central,
+
+431
+00:14:29,900 --> 00:14:31,400
+Por ejemplo, tomemos la palabra "pensar".
+
+432
+00:14:31,400 --> 00:14:33,160
+Entonces, voy a mirar a su izquierda y a su derecha.
+
+433
+00:14:33,160 --> 00:14:34,480
+Entonces, ¿a qué se refiere el tamaño de la ventana?
+
+434
+00:14:34,480 --> 00:14:36,060
+Es decir, cuántas palabras se consideran a su izquierda y a su derecha.
+
+435
+00:14:36,060 --> 00:14:37,040
+Si es uno,
+
+436
+00:14:37,040 --> 00:14:39,000
+solo me fijo en una palabra a cada lado, a la izquierda y a la derecha.
+
+437
+00:14:39,000 --> 00:14:40,040
+Si es dos,
+
+438
+00:14:40,040 --> 00:14:41,780
+entonces considero las dos palabras que tiene a su izquierda y a su derecha.
+
+439
+00:14:41,780 --> 00:14:43,040
+Si ahora es dos,
+
+440
+00:14:43,040 --> 00:14:45,500
+Entonces, para esta palabra central, ¿qué pasa con su contexto?
+
+441
+00:14:45,500 --> 00:14:48,990
+A su izquierda, suelen aparecer con él palabras como "hoy" y "yo".
+
+442
+00:14:48,990 --> 00:14:51,290
+y las palabras "comer" y "manzana" también aparecen junto a él.
+
+443
+00:14:51,290 --> 00:14:52,850
+Así que lo que introduzco es esto.
+
+444
+00:14:52,850 --> 00:14:53,950
+Esta es la palabra central.
+
+445
+00:14:53,950 --> 00:14:57,430
+Entonces, su contexto... a ver, en realidad es esta palabra central.
+
+446
+00:14:57,430 --> 00:14:58,790
+Entonces, al principio del entrenamiento,
+
+447
+00:14:58,790 --> 00:15:00,870
+Es decir, cada vector de palabra es inicialmente aleatorio.
+
+448
+00:15:00,870 --> 00:15:02,070
+Así que, con este método...
+
+449
+00:15:02,070 --> 00:15:05,470
+y así, va extrayendo constantemente el contexto de las palabras.
+
+450
+00:15:05,470 --> 00:15:09,030
+Luego, se calcula el promedio de estos vectores de palabras del contexto.
+
+451
+00:15:09,030 --> 00:15:10,110
+porque son varias, ¿no?
+
+452
+00:15:10,110 --> 00:15:12,200
+y calcula el vector promedio de estas palabras.
+
+453
+00:15:12,200 --> 00:15:14,120
+y así se obtiene una representación del contexto.
+
+454
+00:15:14,120 --> 00:15:16,740
+Y luego, se usa para predecir cuál es la palabra central.
+
+455
+00:15:16,740 --> 00:15:18,100
+y así se repite el proceso constantemente.
+
+456
+00:15:18,100 --> 00:15:20,540
+Por lo tanto, también utiliza una red neuronal simple.
+
+457
+00:15:20,540 --> 00:15:22,760
+Así, la ventana se desliza continuamente para tomar el contexto.
+
+458
+00:15:22,760 --> 00:15:24,140
+Se fusionan los vectores del contexto.
+
+459
+00:15:24,140 --> 00:15:26,560
+Esta combinación consiste en hacer una predicción basada en el promedio de estos vectores.
+
+460
+00:15:26,560 --> 00:15:27,780
+¿Cuál es esta palabra central?
+
+461
+00:15:27,780 --> 00:15:28,800
+¿Y si la predicción es incorrecta?
+
+462
+00:15:28,800 --> 00:15:30,580
+Y la retropropagación se encarga de calcular la pérdida.
+
+463
+00:15:30,580 --> 00:15:34,470
+La retropropagación calcula el gradiente para actualizar los parámetros correspondientes.
+
+464
+00:15:34,470 --> 00:15:37,770
+Al repetir este proceso constantemente, el modelo se va entrenando.
+
+465
+00:15:37,770 --> 00:15:40,340
+Como pueden ver, este es a grandes rasgos el proceso.
+
+466
+00:15:40,340 --> 00:15:43,130
+El objetivo es generar continuamente las palabras de la izquierda y de la derecha.
+
+467
+00:15:43,130 --> 00:15:45,690
+Aquí, es posible que durante la inicialización...
+
+468
+00:15:45,690 --> 00:15:47,310
+y se van calculando algunos valores vectoriales.
+
+469
+00:15:47,310 --> 00:15:48,690
+Primero, vamos a extraer esto.
+
+470
+00:15:48,690 --> 00:15:50,220
+Calculamos el promedio de estos.
+
+471
+00:15:50,220 --> 00:15:53,960
+Porque, en esencia, al final todo se reduce a una única operación.
+
+472
+00:15:53,960 --> 00:15:54,660
+Una vez que los tenemos,
+
+473
+00:15:54,660 --> 00:15:56,540
+y entonces predigo cuál es la palabra del medio.
+
+474
+00:15:56,540 --> 00:15:59,500
+Si la probabilidad que predigo es incorrecta,
+
+475
+00:15:59,500 --> 00:16:01,340
+Entonces, lo que hago es calcularlo usando la pérdida de entropía cruzada.
+
+476
+00:16:01,340 --> 00:16:03,940
+Este es el proceso de una MLP convencional.
+
+477
+00:16:03,940 --> 00:16:05,260
+Es un proceso muy sencillo.
+
+478
+00:16:05,260 --> 00:16:06,740
+Por eso, el entrenamiento también es especialmente rápido.
+
+479
+00:16:06,740 --> 00:16:07,940
+Después de la propagación hacia atrás,
+
+480
+00:16:07,940 --> 00:16:10,030
+y se actualizan los parámetros con el descenso de gradiente.
+
+481
+00:16:10,030 --> 00:16:13,360
+Solo hay que repetir este proceso para seguir entrenando y listo.
+
+482
+00:16:13,360 --> 00:16:15,580
+basándome constantemente en las palabras que la rodean,
+
+483
+00:16:15,580 --> 00:16:18,920
+y así adivinar cuál es la palabra central a partir de su contexto.
+
+484
+00:16:18,920 --> 00:16:22,150
+y así se puede predecir y construir este espacio vectorial.
+
+485
+00:16:22,150 --> 00:16:24,590
+¿Ya sabes qué palabras suelen aparecer juntas?
+
+486
+00:16:24,590 --> 00:16:26,250
+Entonces, ¿cuál es el otro método?
+
+487
+00:16:26,250 --> 00:16:26,890
+Skip-gram.
+
+488
+00:16:26,890 --> 00:16:28,750
+Este, en cambio, es prácticamente al revés.
+
+489
+00:16:28,750 --> 00:16:31,480
+Es decir, utiliza la palabra central para predecir cada una de las palabras de su contexto.
+
+490
+00:16:31,480 --> 00:16:33,740
+Por ejemplo, digamos que hoy me apetece comer una manzana.
+
+491
+00:16:33,740 --> 00:16:37,100
+Entonces, su entrada es la palabra central, y a partir de ella, predice las cuatro palabras circundantes.
+
+492
+00:16:37,100 --> 00:16:39,220
+y se encarga de predecir todas las palabras que la rodean.
+
+493
+00:16:39,220 --> 00:16:40,460
+para realizar esta operación.
+
+494
+00:16:40,460 --> 00:16:41,780
+Toma la palabra del centro.
+
+495
+00:16:41,780 --> 00:16:43,560
+y se toma la palabra central.
+
+496
+00:16:43,560 --> 00:16:46,710
+De hecho, esto es algo que se puede ver a simple vista.
+
+497
+00:16:46,710 --> 00:16:49,270
+La cantidad de muestras para su entrenamiento es mayor que la de antes.
+
+498
+00:16:49,270 --> 00:16:51,880
+Es decir, con una sola palabra podemos obtener cuatro muestras para el entrenamiento.
+
+499
+00:16:51,880 --> 00:16:53,120
+porque tiene cuatro palabras a su alrededor.
+
+500
+00:16:53,120 --> 00:16:54,920
+Este es el caso original para una ventana de tamaño 2.
+
+501
+00:16:54,920 --> 00:16:55,840
+En el caso de un window de tamaño 1,
+
+502
+00:16:55,840 --> 00:16:56,820
+entonces ya solo serían dos.
+
+503
+00:16:56,820 --> 00:16:59,280
+Así, utilizo estas palabras de forma continua para predecir la palabra central.
+
+504
+00:16:59,280 --> 00:17:02,190
+Es decir, las palabras que aparecen en su contexto.
+
+505
+00:17:02,190 --> 00:17:04,329
+qué palabras deberían aparecer a tu alrededor.
+
+506
+00:17:04,329 --> 00:17:06,709
+Y de nuevo, se utiliza la función de pérdida para calcular el error.
+
+507
+00:17:06,709 --> 00:17:08,009
+y se realiza la propagación hacia atrás de forma continua.
+
+508
+00:17:08,009 --> 00:17:09,449
+y se usa el descenso de gradiente para actualizar los parámetros.
+
+509
+00:17:09,449 --> 00:17:11,210
+Y simplemente hay que repetir este cálculo una y otra vez.
+
+510
+00:17:11,210 --> 00:17:13,990
+De hecho, vamos a verlo desde la perspectiva de una palabra en su contexto.
+
+511
+00:17:13,990 --> 00:17:16,480
+De hecho, es más ventajoso para las palabras de baja frecuencia.
+
+512
+00:17:16,480 --> 00:17:19,460
+Así podemos entender por qué, si una palabra aparece solo una vez...
+
+513
+00:17:19,460 --> 00:17:21,140
+yo también puedo entrenarla cuatro veces.
+
+514
+00:17:21,140 --> 00:17:23,840
+Por eso, es más ventajoso para las palabras de baja frecuencia.
+
+515
+00:17:23,840 --> 00:17:26,180
+Así, una palabra que aparece una sola vez también puede generar múltiples ejemplos de entrenamiento.
+
+516
+00:17:26,180 --> 00:17:28,640
+Ahora, si hacemos una simple comparación entre estos dos,
+
+517
+00:17:28,640 --> 00:17:30,420
+la dirección es la opuesta.
+
+518
+00:17:30,420 --> 00:17:33,780
+CBOW, por su parte, se basa en las palabras del contexto.
+
+519
+00:17:33,780 --> 00:17:36,520
+se usan estas cuatro palabras del contexto para predecir una palabra central.
+
+520
+00:17:36,520 --> 00:17:39,500
+Mientras que, eh, el Skip-gram, se basa en una palabra central,
+
+521
+00:17:39,500 --> 00:17:42,040
+para predecir las palabras del contexto que la rodean.
+
+522
+00:17:42,040 --> 00:17:44,260
+Por lo tanto, su dirección de entrenamiento es exactamente la opuesta.
+
+523
+00:17:44,260 --> 00:17:45,520
+y su enfoque también es diferente.
+
+524
+00:17:45,520 --> 00:17:47,410
+Porque, en el caso de CBOW,
+
+525
+00:17:47,410 --> 00:17:50,050
+Entonces, ¿cómo se predice una palabra a partir de cuatro vectores?
+
+526
+00:17:50,050 --> 00:17:51,900
+Lo que se hace en realidad es promediar estos cuatro vectores.
+
+527
+00:17:51,900 --> 00:17:53,940
+Por eso, su velocidad de entrenamiento también es bastante rápida.
+
+528
+00:17:53,940 --> 00:17:55,400
+Si aparecen algunas palabras de alta frecuencia,
+
+529
+00:17:55,400 --> 00:17:57,429
+su rendimiento en el entrenamiento es excelente.
+
+530
+00:17:57,429 --> 00:18:00,189
+Mientras que el modelo Skip-gram, por su parte, genera múltiples muestras a partir de cada una.
+
+531
+00:18:00,189 --> 00:18:02,229
+Si la frecuencia con la que aparecen estas palabras es muy baja,
+
+532
+00:18:02,229 --> 00:18:04,000
+o si mi cantidad de muestras es reducida,
+
+533
+00:18:04,000 --> 00:18:06,100
+Entonces, hay algunos nombres propios,
+
+534
+00:18:06,100 --> 00:18:09,080
+Este se entrena utilizando el modelo Skip-gram.
+
+535
+00:18:09,080 --> 00:18:10,400
+el resultado será bastante bueno.
+
+536
+00:18:10,400 --> 00:18:12,140
+Pero, independientemente del método que utilices,
+
+537
+00:18:12,140 --> 00:18:13,440
+Ambos métodos funcionan.
+
+538
+00:18:13,440 --> 00:18:16,889
+Esta decisión se toma en función de las características de tus datos.
+
+539
+00:18:16,889 --> 00:18:19,489
+Pero el principio detrás de todo esto es el mismo.
+
+540
+00:18:19,489 --> 00:18:22,249
+Y Word2Vec, en esencia, es capaz de predecir el contexto.
+
+541
+00:18:22,249 --> 00:18:25,439
+De esta forma, las relaciones semánticas se incorporan automáticamente en el espacio vectorial.
+
+542
+00:18:25,439 --> 00:18:28,650
+Así que ya no tienes que preocuparte por las estadísticas.
+
+543
+00:18:28,650 --> 00:18:30,450
+Bien, ahora vamos a hacer una demostración.
+
+544
+00:18:30,450 --> 00:18:33,010
+Pero no hace falta que escribamos este código nosotros mismos.
+
+545
+00:18:33,010 --> 00:18:35,920
+No es muy diferente de una red neuronal normal.
+
+546
+00:18:35,920 --> 00:18:38,020
+En el mundo real, también existen bibliotecas ya desarrolladas para esto.
+
+547
+00:18:38,020 --> 00:18:39,040
+Ahora vamos a entrenarlo.
+
+548
+00:18:39,040 --> 00:18:41,680
+Vamos a entrenarlo con la novela "Viaje al Oeste".
+
+549
+00:18:41,680 --> 00:18:44,400
+A ver si podemos convertir todas las palabras de "Viaje al Oeste" en vectores.
+
+550
+00:18:44,400 --> 00:18:46,200
+A grandes rasgos, el proceso se divide en tres pasos.
+
+551
+00:18:46,200 --> 00:18:46,600
+El primer paso es...
+
+552
+00:18:46,600 --> 00:18:49,750
+Primero, vamos a descargar la novela "Viaje al Oeste".
+
+553
+00:18:49,750 --> 00:18:51,710
+y lo leemos en el programa.
+
+554
+00:18:51,710 --> 00:18:55,670
+Así que vamos a usar un método para tokenizarlo.
+
+555
+00:18:55,670 --> 00:18:58,010
+Claro, porque este paso no es estrictamente necesario.
+
+556
+00:18:58,010 --> 00:18:59,210
+entonces se segmentará automáticamente.
+
+557
+00:18:59,210 --> 00:19:01,740
+Pero la segmentación automática, a veces, por ejemplo, con el nombre «Sun Wukong»...
+
+558
+00:19:01,740 --> 00:19:03,840
+te lo divide en "Sun" y "Wukong".
+
+559
+00:19:03,840 --> 00:19:05,160
+lo cual no es muy bueno.
+
+560
+00:19:05,160 --> 00:19:07,440
+porque para nosotros, «Sun Wukong» es una única palabra.
+
+561
+00:19:07,440 --> 00:19:09,360
+Así que esto es algo que veremos más adelante.
+
+562
+00:19:09,360 --> 00:19:11,280
+Llegamos a la era de los transformers.
+
+563
+00:19:11,280 --> 00:19:12,160
+Hay algo a lo que deben prestar atención.
+
+564
+00:19:12,160 --> 00:19:14,280
+Entonces, ¿por qué ahora simplemente lo llamamos una palabra?
+
+565
+00:19:14,280 --> 00:19:15,540
+En realidad, eso no es del todo correcto.
+
+566
+00:19:15,540 --> 00:19:17,830
+La forma más correcta de llamarlo es "token".
+
+567
+00:19:17,830 --> 00:19:21,310
+Y hoy en día, con los grandes modelos, también hablamos constantemente del cobro por tokens.
+
+568
+00:19:21,310 --> 00:19:25,570
+Es decir, la relación entre los tokens y las palabras no es de uno a uno.
+
+569
+00:19:25,570 --> 00:19:29,750
+Es posible que un token represente un carácter, o que represente estos dos caracteres juntos.
+
+570
+00:19:29,750 --> 00:19:31,770
+Porque suelen aparecer juntos con frecuencia.
+
+571
+00:19:31,770 --> 00:19:33,110
+entonces lo agruparía todo junto.
+
+572
+00:19:33,110 --> 00:19:33,990
+También es posible.
+
+573
+00:19:33,990 --> 00:19:35,610
+corresponde a una palabra.
+
+574
+00:19:35,610 --> 00:19:38,130
+Incluso puede que divida una palabra en dos partes.
+
+575
+00:19:38,130 --> 00:19:39,430
+¿Y cuándo es más fácil hacerlo?
+
+576
+00:19:39,430 --> 00:19:40,870
+Para algunas palabras compuestas,
+
+577
+00:19:40,870 --> 00:19:42,530
+Por ejemplo, la palabra "review".
+
+578
+00:19:42,530 --> 00:19:45,370
+entonces podría descomponerse en "RE" y "view".
+
+579
+00:19:45,370 --> 00:19:48,510
+y en este último caso, una palabra puede incluso llegar a dividirse en dos partes.
+
+580
+00:19:48,510 --> 00:19:49,750
+a eso se le llama un "token".
+
+581
+00:19:49,750 --> 00:19:52,320
+Pero por ahora, podemos entenderlo simplemente como una palabra.
+
+582
+00:19:52,320 --> 00:19:53,880
+Pero existen bibliotecas específicas para ello.
+
+583
+00:19:53,880 --> 00:19:55,460
+Nos ayudará a segmentar las palabras.
+
+584
+00:19:55,460 --> 00:19:57,360
+lo hará de una manera más precisa.
+
+585
+00:19:57,360 --> 00:19:58,670
+Si lo comparamos con no hacer nada,
+
+586
+00:19:58,670 --> 00:19:59,710
+Con que lo sepan es suficiente.
+
+587
+00:19:59,710 --> 00:20:00,870
+Sun Wukong, Tang Sanzang,
+
+588
+00:20:00,870 --> 00:20:03,530
+Si lo separas en "Tang" y "sēng", ya no tendrá mucho sentido.
+
+589
+00:20:03,530 --> 00:20:04,370
+El Gran Sabio Igual al Cielo
+
+590
+00:20:04,370 --> 00:20:06,110
+Tienes que tratarlo como una sola palabra.
+
+591
+00:20:06,110 --> 00:20:08,450
+No lo dividas en «Qi», «Tian» y «Da».
+
+592
+00:20:08,450 --> 00:20:09,690
+y el carácter 'Sheng'.
+
+593
+00:20:09,690 --> 00:20:10,290
+Entonces no sería muy...
+
+594
+00:20:10,290 --> 00:20:11,850
+Entonces, el entrenamiento no tendría mucho sentido.
+
+595
+00:20:11,850 --> 00:20:14,540
+En realidad, esto es una especie de sesgo inductivo.
+
+596
+00:20:14,540 --> 00:20:15,900
+Esto, cuando llegamos a los grandes modelos,
+
+597
+00:20:15,900 --> 00:20:17,460
+volveremos a mencionar este punto con más detalle.
+
+598
+00:20:17,460 --> 00:20:19,880
+Primero, permítanme explicarles qué es una palabra.
+
+599
+00:20:19,880 --> 00:20:22,889
+Solo que ahora lo decimos así para abreviar.
+
+600
+00:20:22,889 --> 00:20:24,989
+De hecho, la forma más correcta de llamarlo es "token".
+
+601
+00:20:24,989 --> 00:20:27,489
+En nuestro contexto actual, su significado es prácticamente el mismo.
+
+602
+00:20:27,489 --> 00:20:28,409
+Una vez tokenizado el texto,
+
+603
+00:20:28,409 --> 00:20:29,729
+ya puedo configurarlo.
+
+604
+00:20:29,729 --> 00:20:32,380
+Claro, también podemos... ¿qué es esto?
+
+605
+00:20:32,380 --> 00:20:34,240
+Generar similitud.
+
+606
+00:20:34,240 --> 00:20:36,140
+Es decir, generar la similitud.
+
+607
+00:20:36,140 --> 00:20:38,250
+Dentro de este paquete ya viene Word2Vec.
+
+608
+00:20:38,250 --> 00:20:39,010
+Entonces, ¿qué es Word2Vec?
+
+609
+00:20:39,010 --> 00:20:39,690
+le configuramos algunos parámetros,
+
+610
+00:20:39,690 --> 00:20:40,790
+Por ejemplo, tus frases.
+
+611
+00:20:40,790 --> 00:20:43,560
+Es decir, el resultado que obtienes después de segmentarlo.
+
+612
+00:20:43,560 --> 00:20:44,340
+Tamaño del vector.
+
+613
+00:20:44,340 --> 00:20:47,420
+Básicamente, se refiere a la dimensión del espacio que has obtenido tras el entrenamiento.
+
+614
+00:20:47,420 --> 00:20:49,800
+Por ejemplo, digamos que después de entrenar, obtenemos una dimensión de 100.
+
+615
+00:20:49,800 --> 00:20:51,360
+Creemos que con 100 números,
+
+616
+00:20:51,360 --> 00:20:53,340
+con los que se pueden representar todas las palabras.
+
+617
+00:20:53,340 --> 00:20:55,540
+Esto suena mucho más pequeño que cien mil.
+
+618
+00:20:55,540 --> 00:20:57,580
+Entonces, ¿cuál es el tamaño mínimo de la ventana de contexto?
+
+619
+00:20:57,580 --> 00:20:58,800
+Podemos configurarlo en cinco,
+
+620
+00:20:58,800 --> 00:21:00,690
+O incluso podemos configurarlo en dos, también sirve.
+
+621
+00:21:00,690 --> 00:21:02,150
+Es decir, el 'min_count' es tres.
+
+622
+00:21:02,150 --> 00:21:04,770
+Es decir, las palabras que aparecen con una frecuencia demasiado baja.
+
+623
+00:21:04,770 --> 00:21:06,010
+no las voy a calcular.
+
+624
+00:21:06,010 --> 00:21:07,930
+Es decir, pasarlo por el algoritmo SG.
+
+625
+00:21:07,930 --> 00:21:08,730
+¿Y esto qué significa?
+
+626
+00:21:08,730 --> 00:21:10,870
+Básicamente, se trata de cuál de los dos métodos vas a utilizar.
+
+627
+00:21:10,870 --> 00:21:13,110
+Y si hablamos de SJ, en realidad es la abreviatura de skip gram.
+
+628
+00:21:13,110 --> 00:21:13,670
+si es uno,
+
+629
+00:21:13,670 --> 00:21:15,270
+significa que estoy usando Skip-gram.
+
+630
+00:21:15,270 --> 00:21:15,990
+Si es cero,
+
+631
+00:21:15,990 --> 00:21:19,820
+significa que estoy usando el método CBOW, que es diferente.
+
+632
+00:21:19,820 --> 00:21:21,900
+EPÓCAS. Bueno, esto se refiere a cuántas rondas de entrenamiento voy a realizar.
+
+633
+00:21:21,900 --> 00:21:23,520
+works, ¿cuántos hilos se van a ejecutar?
+
+634
+00:21:23,520 --> 00:21:25,000
+Todo esto está bien, y así sucesivamente.
+
+635
+00:21:25,000 --> 00:21:26,480
+Una vez que hemos completado el entrenamiento,
+
+636
+00:21:26,480 --> 00:21:27,760
+Esto es solo una versión abreviada del código.
+
+637
+00:21:27,760 --> 00:21:30,010
+Si les interesa, pueden echarle un vistazo.
+
+638
+00:21:30,010 --> 00:21:31,690
+el nuestro es Jupyter Notebook.
+
+639
+00:21:31,690 --> 00:21:33,210
+Ahí dentro encontrarán el código completo.
+
+640
+00:21:34,370 --> 00:21:35,290
+Una vez completado el entrenamiento,
+
+641
+00:21:35,290 --> 00:21:37,409
+Entonces, puedo llamar al método del modelo.
+
+642
+00:21:37,409 --> 00:21:38,689
+Es decir, WV punto.
+
+643
+00:21:38,689 --> 00:21:39,669
+Más similares
+
+644
+00:21:39,669 --> 00:21:42,829
+¿Cuáles son las diez palabras más parecidas a Sun Wukong?
+
+645
+00:21:42,829 --> 00:21:44,420
+Ya podemos verlo.
+
+646
+00:21:44,420 --> 00:21:46,440
+Vamos a echar un vistazo a los resultados.
+
+647
+00:21:46,440 --> 00:21:47,620
+Y lo que descubriremos es que...
+
+648
+00:21:47,620 --> 00:21:49,140
+Entonces, si le echamos un vistazo...
+
+649
+00:21:49,140 --> 00:21:50,620
+Podemos usar este método,
+
+650
+00:21:50,620 --> 00:21:52,060
+vamos a extraer el vector que está dentro.
+
+651
+00:21:52,060 --> 00:21:53,820
+Pero como lo entrenamos para que fuera de 100 dimensiones,
+
+652
+00:21:53,820 --> 00:21:54,700
+Podemos echar un vistazo.
+
+653
+00:21:54,700 --> 00:21:58,659
+Si solo miramos las primeras 20 dimensiones, veremos que son números más o menos como estos.
+
+654
+00:21:58,659 --> 00:22:00,739
+¿Y si lo visualizamos?
+
+655
+00:22:00,739 --> 00:22:03,019
+veremos que se trata de una serie de niveles de brillo como estos.
+
+656
+00:22:03,019 --> 00:22:05,099
+No son más que cien números de punto flotante.
+
+657
+00:22:05,099 --> 00:22:07,359
+Cada casilla representa una dimensión de color.
+
+658
+00:22:07,359 --> 00:22:10,359
+En realidad, solo indica si el número es positivo o negativo y su magnitud.
+
+659
+00:22:10,359 --> 00:22:12,039
+No representa un número específico en sí.
+
+660
+00:22:12,039 --> 00:22:13,700
+Entonces, ¿qué significa esto en concreto?
+
+661
+00:22:13,700 --> 00:22:15,540
+La combinación de estos 100 números...
+
+662
+00:22:15,540 --> 00:22:18,370
+para así poder representar la palabra "Sun Wukong".
+
+663
+00:22:18,370 --> 00:22:20,930
+De esta forma, hemos colocado a Sun Wukong en el espacio semántico.
+
+664
+00:22:20,930 --> 00:22:22,230
+en una posición concreta.
+
+665
+00:22:22,230 --> 00:22:24,290
+Entonces, ¿es preciso el entrenamiento que hemos realizado?
+
+666
+00:22:24,290 --> 00:22:25,990
+Pero, ¿será capaz de expresar el significado?
+
+667
+00:22:25,990 --> 00:22:28,650
+El resultado que hemos obtenido en el entrenamiento, la verdad, es que tampoco tiene una dimensionalidad muy alta.
+
+668
+00:22:28,650 --> 00:22:29,890
+Y además, ahora son computables.
+
+669
+00:22:29,890 --> 00:22:31,890
+Pero lo importante es, ¿realmente captura el significado?
+
+670
+00:22:31,890 --> 00:22:33,900
+Vamos a ver si de verdad tienen un significado semántico.
+
+671
+00:22:33,900 --> 00:22:36,420
+A continuación, usaremos la similitud del coseno que acabamos de mencionar.
+
+672
+00:22:36,420 --> 00:22:39,280
+En realidad, el cálculo de su SIMILARIDAD se hace siempre de esta manera.
+
+673
+00:22:39,280 --> 00:22:40,900
+Podemos crear nuestro propio método.
+
+674
+00:22:40,900 --> 00:22:43,020
+De hecho, para calcularlo, después de hacer el producto punto,
+
+675
+00:22:43,020 --> 00:22:44,060
+Después de calcular el producto punto,
+
+676
+00:22:44,060 --> 00:22:44,960
+Hacemos lo suyo.
+
+677
+00:22:44,960 --> 00:22:47,200
+Solo tenemos que dividirlo entre su producto y listo.
+
+678
+00:22:47,200 --> 00:22:47,800
+Claro.
+
+679
+00:22:47,800 --> 00:22:51,200
+También podemos utilizar los métodos nativos que ya vienen implementados.
+
+680
+00:22:51,200 --> 00:22:52,400
+Ya lo han encapsulado todo por nosotros.
+
+681
+00:22:52,400 --> 00:22:54,540
+Veamos la similitud entre Sun Wukong y Tang Sanzang.
+
+682
+00:22:54,540 --> 00:22:57,490
+Y también, la similitud entre Sun Wukong y el emperador Taizong.
+
+683
+00:22:57,490 --> 00:22:58,650
+En "Viaje al Oeste",
+
+684
+00:22:58,650 --> 00:23:01,490
+De hecho, el emperador Taizong de Tang y Sun Wukong prácticamente no tienen ninguna relación.
+
+685
+00:23:01,490 --> 00:23:03,390
+pero su relación con Tang Sanzang es bastante más estrecha.
+
+686
+00:23:03,390 --> 00:23:04,670
+Como podemos ver,
+
+687
+00:23:04,670 --> 00:23:06,630
+Entonces, ¿cuál es la similitud entre Sun Wukong y Tang Sanzang?
+
+688
+00:23:06,630 --> 00:23:08,250
+y nos da un resultado de 0,17.
+
+689
+00:23:08,250 --> 00:23:11,670
+En cuanto a Sun Wukong y el emperador Taizong, es de 0.05, lo que significa que prácticamente no tienen ninguna relación.
+
+690
+00:23:11,670 --> 00:23:14,900
+Entonces, ¿cuáles son las palabras más cercanas a Sun Wukong?
+
+691
+00:23:14,900 --> 00:23:16,860
+El Gran Sabio, Igual al Cielo, y Sha Wujing.
+
+692
+00:23:16,860 --> 00:23:17,900
+y Zhu Wuneng.
+
+693
+00:23:17,900 --> 00:23:18,660
+Ah, Arhat.
+
+694
+00:23:18,660 --> 00:23:20,220
+Pero eso no significa que el entrenamiento sea preciso.
+
+695
+00:23:20,220 --> 00:23:22,380
+Es que el número de épocas de entrenamiento fue demasiado bajo.
+
+696
+00:23:22,380 --> 00:23:23,730
+Es solo una demostración.
+
+697
+00:23:23,730 --> 00:23:26,110
+Además, en realidad, si lo comparamos con otros, "Viaje al Oeste"...
+
+698
+00:23:26,110 --> 00:23:27,610
+el número de palabras que tiene es relativamente pequeño.
+
+699
+00:23:27,610 --> 00:23:30,420
+Es posible que al entrenarlo no logremos una precisión muy alta.
+
+700
+00:23:30,420 --> 00:23:32,600
+En la práctica, la escala de nuestro entrenamiento será mucho mayor que esta.
+
+701
+00:23:32,600 --> 00:23:34,460
+Pero podemos darnos cuenta fácilmente de que...
+
+702
+00:23:34,460 --> 00:23:36,330
+Parece que el modelo ha llegado a comprender la trama.
+
+703
+00:23:36,330 --> 00:23:38,410
+Entonces, este espacio vectorial que hemos entrenado...
+
+704
+00:23:38,410 --> 00:23:40,810
+También existen algunas diferencias de tono dependiendo del contexto.
+
+705
+00:23:40,810 --> 00:23:44,270
+Todas estas diferencias se reflejan en este espacio vectorial.
+
+706
+00:23:44,270 --> 00:23:46,070
+No tenemos por qué usar este tipo de ejemplos individuales.
+
+707
+00:23:46,070 --> 00:23:48,170
+Ahora, echemos un vistazo a los vectores de palabras que hemos entrenado.
+
+708
+00:23:48,170 --> 00:23:50,710
+Entonces, ¿cómo podemos visualizarlo en un gráfico?
+
+709
+00:23:50,710 --> 00:23:53,159
+Queremos ver qué palabras están más próximas entre sí.
+
+710
+00:23:53,159 --> 00:23:56,379
+Claro, porque 100 dimensiones ya superan nuestra capacidad de comprensión.
+
+711
+00:23:56,379 --> 00:23:59,239
+Así que vamos a utilizar el PCA, que se usa en el aprendizaje automático.
+
+712
+00:23:59,239 --> 00:24:00,999
+para reducir la dimensionalidad con el análisis de componentes principales.
+
+713
+00:24:00,999 --> 00:24:03,130
+para comprimir todas las palabras en dos dimensiones.
+
+714
+00:24:03,130 --> 00:24:06,610
+De esta forma, podremos ver qué palabras están más o menos cerca unas de otras.
+
+715
+00:24:06,610 --> 00:24:09,090
+Por supuesto, esta compresión tiene un coste.
+
+716
+00:24:09,090 --> 00:24:10,090
+Originalmente, yo tenía 100 dimensiones.
+
+717
+00:24:10,090 --> 00:24:11,350
+y me lo has comprimido a dos dimensiones.
+
+718
+00:24:11,350 --> 00:24:14,330
+Es inevitable que se pierda parte de la información.
+
+719
+00:24:14,330 --> 00:24:16,250
+Además, como decíamos antes,
+
+720
+00:24:16,250 --> 00:24:18,240
+Es que la muestra que usamos para el entrenamiento no es muy grande.
+
+721
+00:24:18,240 --> 00:24:20,220
+Por lo tanto, es posible que existan algunas diferencias.
+
+722
+00:24:20,220 --> 00:24:23,700
+Pero, aun así, podemos sacar algunas conclusiones de este gráfico.
+
+723
+00:24:23,700 --> 00:24:26,200
+Por ejemplo, pueden observar a Bodhisattva y a Tathagata.
+
+724
+00:24:26,200 --> 00:24:28,660
+Buda, el Emperador de Jade y Guanyin están un poco más cerca.
+
+725
+00:24:28,660 --> 00:24:30,140
+y también están más cerca del Palacio Celestial.
+
+726
+00:24:30,140 --> 00:24:32,400
+Sun Wukong, el Mar del Este, la Montaña de las Flores y Frutas.
+
+727
+00:24:32,400 --> 00:24:36,040
+Mientras que la Montaña de Fuego, el Palacio del Dragón y el Bastón Dorado estarán más cerca entre sí.
+
+728
+00:24:36,040 --> 00:24:39,060
+Y sorprendentemente, los demonios y Zhu Bajie están muy cerca.
+
+729
+00:24:39,060 --> 00:24:41,590
+El Rey Demonio, el Gran Rey y los demonios menores también están muy cerca entre sí.
+
+730
+00:24:41,590 --> 00:24:43,530
+Sha Seng y Bajie también están muy cerca.
+
+731
+00:24:43,530 --> 00:24:45,170
+Maestro, Tang Sanzang, Sun Wukong...
+
+732
+00:24:45,170 --> 00:24:47,610
+mientras que los nombres de Sanzang están muy próximos entre sí.
+
+733
+00:24:47,610 --> 00:24:50,090
+Esto demuestra que, aunque se haya producido una pérdida de información,
+
+734
+00:24:50,090 --> 00:24:53,160
+Como podemos ver, este entrenamiento tiene un cierto sentido.
+
+735
+00:24:53,160 --> 00:24:54,920
+Si aumentamos el corpus de entrenamiento,
+
+736
+00:24:54,920 --> 00:24:55,720
+el número de rondas de entrenamiento,
+
+737
+00:24:55,720 --> 00:24:59,130
+la mejora en los resultados será mucho mayor.
+
+738
+00:24:59,530 --> 00:25:01,390
+Así que, en resumen, el embedding...
+
+739
+00:25:01,390 --> 00:25:03,430
+Pero los embeddings que se usan en los grandes modelos actuales,
+
+740
+00:25:03,430 --> 00:25:05,230
+Es un poco diferente de lo que hemos explicado.
+
+741
+00:25:05,230 --> 00:25:06,630
+Lo que acabamos de explicar sigue siendo estático.
+
+742
+00:25:06,630 --> 00:25:08,840
+Más adelante veremos que existen versiones dinámicas.
+
+743
+00:25:08,840 --> 00:25:10,680
+Pero la idea detrás es la misma.
+
+744
+00:25:10,680 --> 00:25:13,080
+Y se ha convertido en la interfaz universal de la inteligencia artificial moderna.
+
+745
+00:25:13,080 --> 00:25:15,640
+Las redes neuronales son buenas procesando tensores continuos,
+
+746
+00:25:15,640 --> 00:25:17,660
+pero no pueden procesar símbolos discretos.
+
+747
+00:25:17,660 --> 00:25:19,800
+Y el embedding es precisamente esa interfaz universal.
+
+748
+00:25:19,800 --> 00:25:21,900
+Asigna a cada objeto discreto
+
+749
+00:25:21,900 --> 00:25:25,429
+Cada texto en el lenguaje natural es un ejemplo típico de un objeto discreto.
+
+750
+00:25:25,429 --> 00:25:27,209
+le asigna una representación vectorial.
+
+751
+00:25:27,209 --> 00:25:31,240
+Y esta representación vectorial ya puede ser procesada y utilizada por el modelo.
+
+752
+00:25:31,240 --> 00:25:33,900
+Por ejemplo, las palabras que usamos en nuestro lenguaje natural del día a día.
+
+753
+00:25:33,900 --> 00:25:35,240
+la información de los usuarios,
+
+754
+00:25:35,240 --> 00:25:38,200
+Nuestras imágenes, los distintos tipos de secuencias, como el habla,
+
+755
+00:25:38,200 --> 00:25:40,240
+Todos estos pueden ser objetos discretos.
+
+756
+00:25:40,240 --> 00:25:41,400
+Entonces, después del embedding,
+
+757
+00:25:41,400 --> 00:25:42,760
+se les ha aplicado una codificación.
+
+758
+00:25:42,760 --> 00:25:44,180
+se convierten en vectores continuos.
+
+759
+00:25:44,180 --> 00:25:45,620
+y así el modelo puede procesarlos.
+
+760
+00:25:45,620 --> 00:25:47,670
+Esto, de hecho, en el Transformer...
+
+761
+00:25:47,670 --> 00:25:50,730
+Además, está el RAG, que probablemente usamos con frecuencia en el desarrollo de agentes.
+
+762
+00:25:50,730 --> 00:25:51,630
+¿Qué es RAG?
+
+763
+00:25:51,630 --> 00:25:53,140
+Entonces, ¿cómo realiza la recuperación de información RAG?
+
+764
+00:25:53,140 --> 00:25:56,220
+Siempre se dice que lo primero es hacer la recuperación aumentada por consulta, ¿verdad?
+
+765
+00:25:56,220 --> 00:25:57,740
+Entonces, ¿cómo realiza la búsqueda?
+
+766
+00:25:57,740 --> 00:26:00,850
+En realidad, aunque muchos de los sistemas RAG actuales utilizan la recuperación por múltiples vías,
+
+767
+00:26:00,850 --> 00:26:03,850
+Pero la recuperación por similitud de vectores es, sin duda, una de ellas.
+
+768
+00:26:03,850 --> 00:26:05,170
+Además, hemos utilizado RAG.
+
+769
+00:26:05,170 --> 00:26:07,840
+seguramente sabrás cuál es el primer paso.
+
+770
+00:26:07,840 --> 00:26:09,560
+Si te dieran un montón de palabras,
+
+771
+00:26:09,560 --> 00:26:10,680
+Si te damos un artículo,
+
+772
+00:26:10,680 --> 00:26:12,020
+y te piden que lo integres en un sistema RAG.
+
+773
+00:26:12,020 --> 00:26:14,139
+Entonces, lo primero es la segmentación de palabras, ¿verdad?
+
+774
+00:26:14,139 --> 00:26:15,779
+De hecho, es justo lo que acabamos de explicar.
+
+775
+00:26:15,779 --> 00:26:19,039
+Así podrán entender más o menos de qué va el principio de RAG.
+
+776
+00:26:19,039 --> 00:26:22,120
+Esto lo explicaremos con más detalle en el curso de desarrollo de A-Zheng.
+
+777
+00:26:22,120 --> 00:26:23,780
+También están los diversos sistemas de recomendación.
+
+778
+00:26:23,780 --> 00:26:27,220
+Entonces, ¿cómo se establece la relación entre el usuario y el producto? ¿Verdad?
+
+779
+00:26:27,220 --> 00:26:30,020
+Y entre los productos, es decir, cómo se hace la relación de producto a producto, o i-to-i.
+
+780
+00:26:30,020 --> 00:26:31,640
+¿Cómo se establece la relación usuario-producto?
+
+781
+00:26:31,640 --> 00:26:34,340
+Básicamente, lo primero que hay que hacer siempre es el paso del "embedding".
+
+782
+00:26:34,340 --> 00:26:36,100
+Y ni hablar de los modelos para imágenes.
+
+783
+00:26:36,100 --> 00:26:37,460
+¿Cómo se interpreta una imagen?
+
+784
+00:26:37,460 --> 00:26:39,580
+También, por ejemplo, en el campo de la biología.
+
+785
+00:26:39,580 --> 00:26:42,700
+O por ejemplo, las secuencias de aminoácidos, que son muy complejas.
+
+786
+00:26:42,700 --> 00:26:44,690
+Todos estos son ejemplos de lo que se conoce como 'embedding'.
+
+787
+00:26:44,690 --> 00:26:48,090
+Así que, siempre que los objetos sean originalmente símbolos discretos,
+
+788
+00:26:48,090 --> 00:26:50,930
+Todo esto no se puede procesar directamente con una red neuronal.
+
+789
+00:26:50,930 --> 00:26:54,360
+podemos primero mapearlos a un mismo espacio donde se puedan realizar operaciones.
+
+790
+00:26:54,360 --> 00:26:55,320
+en un espacio continuo.
+
+791
+00:26:55,320 --> 00:26:58,480
+Esta es la idea de los embeddings, que consiste en proyectar las palabras en un espacio vectorial.
+
+792
+00:26:58,480 --> 00:27:00,320
+Entonces, ¿significa que ya podemos entender el lenguaje natural?
+
+793
+00:27:00,320 --> 00:27:03,140
+y así podremos dar rienda suelta a todo nuestro potencial en el PLN.
+
+794
+00:27:03,140 --> 00:27:04,540
+En realidad, tampoco es suficiente.
+
+795
+00:27:04,540 --> 00:27:05,420
+Y esa es la 'embedding'.
+
+796
+00:27:05,420 --> 00:27:06,860
+Entonces, ¿cuál es su función?
+
+797
+00:27:06,860 --> 00:27:09,000
+De esta forma, las palabras dejan de ser símbolos discretos.
+
+798
+00:27:09,000 --> 00:27:10,380
+Así, ya puede entrar.
+
+799
+00:27:10,380 --> 00:27:11,280
+Ya se pueden realizar cálculos con ellas.
+
+800
+00:27:11,280 --> 00:27:12,060
+y ahora se pueden calcular.
+
+801
+00:27:12,060 --> 00:27:13,660
+y también podemos conocer la similitud entre ellas.
+
+802
+00:27:13,660 --> 00:27:14,460
+y también se pueden procesar.
+
+803
+00:27:14,460 --> 00:27:17,040
+y también pueden ser actualizados y utilizados continuamente por el modelo.
+
+804
+00:27:17,040 --> 00:27:19,489
+Pero, por ejemplo, en el lenguaje natural,
+
+805
+00:27:19,489 --> 00:27:21,949
+«No me gusta esta película» y «Me gusta esta película».
+
+806
+00:27:21,949 --> 00:27:23,750
+En realidad, la única diferencia es la palabra "no".
+
+807
+00:27:23,750 --> 00:27:25,310
+Si seguimos el método que acabamos de explicar,
+
+808
+00:27:25,310 --> 00:27:27,210
+su similitud debería ser muy alta.
+
+809
+00:27:27,210 --> 00:27:29,820
+Pero en realidad, sus significados son completamente opuestos.
+
+810
+00:27:29,820 --> 00:27:31,320
+Apple ha lanzado un nuevo producto.
+
+811
+00:27:31,320 --> 00:27:32,620
+y «me comí una manzana».
+
+812
+00:27:32,620 --> 00:27:33,580
+ambas contienen la palabra "manzana".
+
+813
+00:27:33,580 --> 00:27:35,290
+pero su significado es diferente.
+
+814
+00:27:35,290 --> 00:27:37,930
+Pero si nos fijamos en el resultado que nos dio el embedding de antes,
+
+815
+00:27:37,930 --> 00:27:39,330
+Son muy parecidos.
+
+816
+00:27:39,330 --> 00:27:41,550
+Lo que demuestra que se trata simplemente de un embedding.
+
+817
+00:27:41,550 --> 00:27:42,710
+solo puede entender las palabras,
+
+818
+00:27:42,710 --> 00:27:44,170
+pero aún no puede entender las frases.
+
+819
+00:27:44,170 --> 00:27:46,550
+Pero para comprender realmente el lenguaje, lo que se necesita es...
+
+820
+00:27:46,550 --> 00:27:48,930
+Seguimos analizando la relación entre las palabras.
+
+821
+00:27:48,930 --> 00:27:51,110
+Sobre todo porque estas tienen un orden.
+
+822
+00:27:51,110 --> 00:27:54,190
+Y esto es, precisamente, lo que explicaremos más adelante sobre las RN.
+
+823
+00:27:54,190 --> 00:27:56,290
+así como las GRU de las que también hablaremos.
+
+824
+00:27:56,290 --> 00:27:59,690
+y de los problemas que las LSTM e incluso los Transformer se encargan de resolver.
+
+825
+00:27:59,690 --> 00:28:01,980
+Bueno, hasta aquí el vídeo de hoy.

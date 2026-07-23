@@ -53,7 +53,9 @@ python3 main.py pack-subtitles --src-root data/subtitle -o data/subtitles --skip
 
 ## 字幕数据
 
-见 [docs/DATASET.md](docs/DATASET.md)。归档示例在 **`data/subtitles/`**（已含多 UP 的 srt/txt）。
+见 [docs/DATASET.md](docs/DATASET.md)。归档在 **`data/subtitles/`**。
+
+抓取管线可扩展（processors / 未来 LLM / Actions）：[docs/ROADMAP.md](docs/ROADMAP.md)。
 
 ```bash
 ls data/subtitles/ups/

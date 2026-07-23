@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 import time
-from dataclasses import dataclass, field
 from typing import Any, Callable
 
 from .http import format_subtitle_url, get_cookie, http_json
+from .models import SubtitleResult
 from .util import is_charge_exclusive_blocked, pick_track, resolve_cid, to_cues
 from .wbi import enc_wbi, key_from_url
 
@@ -16,43 +16,6 @@ _WBI_TTL = 600.0
 # Optional injectables (tests). Production leaves these as module defaults.
 HttpJsonFn = Callable[..., Any]
 GetWbiKeysFn = Callable[[str], tuple[str, str]]
-
-
-@dataclass
-class SubtitleResult:
-    bvid: str
-    status: str  # ok | empty | error
-    cue_count: int = 0
-    lan: str = ""
-    aid: int | None = None
-    cid: int | None = None
-    title: str = ""
-    author: str = ""
-    data: list[dict[str, Any]] = field(default_factory=list)
-    error: str = ""
-    source: str = ""  # player_wbi | dm_view | ai_stat
-
-    def to_row(self, *, elapsed_s: float | None = None) -> dict[str, Any]:
-        row: dict[str, Any] = {
-            "bvid": self.bvid,
-            "status": self.status,
-            "cue_count": self.cue_count,
-            "lan": self.lan,
-            "aid": self.aid,
-            "cid": self.cid,
-            "title": self.title,
-            "author": self.author,
-            "source": self.source,
-            "data": self.data,
-            "plugin": "bili_subbatch",
-        }
-        if elapsed_s is not None:
-            row["elapsed_s"] = round(elapsed_s, 3)
-        if self.status == "empty":
-            row["reason"] = self.error or "no_subtitle"
-        if self.error and self.status == "error":
-            row["error"] = self.error
-        return row
 
 
 def clear_wbi_cache() -> None:
@@ -300,3 +263,30 @@ def fetch_subtitle(
         source=source,
         **base,
     )
+
+
+class BiliClient:
+    """
+    Stateful client (cookie + injectables). Prefer this for multi-call use
+    and tests; module-level fetch_subtitle remains a thin wrapper.
+    """
+
+    def __init__(
+        self,
+        cookie: str | None = None,
+        *,
+        http: HttpJsonFn | None = None,
+        wbi_keys: GetWbiKeysFn | None = None,
+    ):
+        self.cookie = get_cookie(cookie)
+        self.http = http or http_json
+        self.wbi_keys = wbi_keys or get_wbi_keys
+
+    def fetch_subtitle(self, bvid: str, *, page: int = 1) -> SubtitleResult:
+        return fetch_subtitle(
+            bvid,
+            cookie=self.cookie,
+            page=page,
+            http=self.http,
+            wbi_keys=self.wbi_keys,
+        )

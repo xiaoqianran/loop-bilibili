@@ -1,0 +1,916 @@
+Let's continue our journey into NLP.
+Today, we're going to look at the RNN architecture.
+It allows the model to move beyond just understanding words,
+to the point where it can understand entire sentences.
+In the last video, we introduced the concept of embedding.
+It can take discrete text labels
+represented as numbers within a continuous vector space.
+This makes them computable.
+And on top of that, it also carries some semantic meaning.
+So, words with similar meanings are closer to each other.
+and also computable.
+And just like that, the computer can understand words.
+Now, a sentence is obviously made up of a bunch of words.
+So, since the model can understand a single word,
+So, does that mean it can understand the entire sentence?
+But that's not actually the case.
+Let's look at a few examples.
+For example, take the sentences "I like watching this movie" and "I don't like watching this movie."
+If we just look at it from the perspective of embedding technology,
+These two sentences are very similar.
+Their vector spaces are almost identical.
+But the only difference is the addition of the word 'not'.
+But the meaning they convey is completely different.
+And then you have the difference between 'fighting the White Bone Spirit' and 'the White Bone Spirit fighting Sun Wukong'.
+Their embeddings are actually identical.
+The words themselves don't have that information.
+are exactly the same.
+However, because their order is different,
+This completely changes the subject and the object.
+Or take these two sentences: "Apple released a new product" and "I ate an apple."
+They both use the word 'apple'.
+But, in different contexts,
+the meanings they convey are completely different.
+For example, if we rely solely on embeddings,
+we can't really understand a complete sentence.
+It's not just about knowing which words are in a sentence.
+We also need to know the order of these words.
+and the context surrounding them.
+Only then can we accurately understand the sentence.
+So, you might be thinking, "Why not just use an FN?"
+So, could we just use a neural network to solve this problem?
+So first, let's take a look at what a feedforward neural network is.
+I'm sure when you've all seen the Transformer architecture,
+and at the end, there's also an FNN layer.
+And the reason it's called a 'feed-forward' network is...
+It's a type of network where information flows in one direction only.
+Does the front give feedback to the back?
+The data starts from the input layer,
+passing through the hidden layers,
+until it reaches the output layer.
+and makes a prediction.
+There are no recurrent connections within the network.
+It just keeps moving in a single direction.
+It doesn't loop back on itself and go through various cycles.
+The MLP we learned about earlier is a classic example of an FNN.
+But this kind of structure isn't really suitable for direct processing.
+There are two main reasons why it's not suited for natural language sequences.
+The first reason is that it can't model the dependencies between preceding and following words.
+Take our natural language sentences, for example.
+I'm going to the bank to deposit money.
+The meaning of the word 'bank' can only be determined by looking at the context that comes before it.
+There's a sequential relationship between them.
+Now, with a traditional approach, if we were to just flatten these words,
+and feed them into the network,
+and feed it in all at once,
+and get an output all at once.
+In reality, they don't capture this sequential order.
+the sequential order and dependencies between them.
+Instead, they just treat the entire sequence as a single, fixed vector.
+So, in this case, the architecture itself simply doesn't have that kind of mechanism.
+So, it just can't understand the sequential relationships between these words.
+And what's the other thing?
+Variable-length sequences are difficult to align with its fixed input.
+Now, we know that for the input to our neural network,
+is actually a fixed one.
+For instance, let's say we're talking about how many neurons we have in the first input layer.
+This determines the length of the input I can accept.
+But the thing is, for natural language sentences, their length is actually variable.
+Different sentences have different lengths.
+And of course, to force them to align,
+So, when you want to use an FN to represent it,
+The inputs have to be the same.
+It's not that it's impossible, though.
+What I can do is set a fixed length.
+And for the parts that go over, I'll just truncate them.
+And for the next input, what if it's too short?
+I can just pad it to make up the difference.
+This also forces the sequences to be aligned.
+And just like that, it's ready for input.
+But truncation means you lose information.
+And if you pad it by filling in with empty spaces, you'll just introduce some noise.
+This affects the model's learning.
+This, in turn, makes the training process extremely difficult.
+So, since these methods can't solve the problem,
+So, what's the solution?
+So basically, what RNN did was make some changes to the overall approach.
+It didn't change the independent variables either.
+I mean, the word vectors, they stay exactly as they were.
+What it changes is how we read the sentence.
+It's not like the old methods.
+Instead, it's about combining the entire sentence into a single, fixed vector.
+It reads the input sequentially, performing calculations layer by layer.
+and then spit out a result.
+So, how does it work?
+From left to right.
+one token at a time.
+reading one token at a time.
+When it reads the first word,
+it can only determine a state based on the current input.
+Then it moves on to the second word.
+So, it reads the, uh...
+The first thing it does is remember that word.
+and create a vectorized representation of it.
+Then, when it reads the second word,
+and combines it with the state representation from the previous step.
+and combine them.
+And based on these two, it then reads the third word.
+And it goes on, layer by layer.
+until it's completely processed.
+Let's look at a simple example.
+For example, let's say it needs to process the natural language sequence "I love nature."
+So, how does it read it?
+So, first, it only reads this one token, 'I'.
+This is what we call a time step.
+Because, you know, it's a process that's completed in multiple steps.
+So, T equals one.
+So, after it's processed my input and formed an understanding,
+and store it somewhere.
+We call this the hidden state.
+We'll call this H1.
+So at this point, it knows the word is 'me'.
+Then, the second word, 'I', is fed in as the next input.
+So, when it's processing the 'I'...
+It remembers that the previous word was 'my'.
+So, it understands the word 'I' based on the context of 'my'.
+So it combines these two to understand the meaning.
+And just like that, it's remembered the sequence "I love."
+So, when it gets to the next word, 'nature'...
+and combine it with the words 'I love' and 'nature'.
+and it kind of puts two and two together, you know?
+and it understands the phrase 'I love nature'.
+So, during this process,
+In other words, with each step of the process,
+When it reads in one,
+it generates a hidden state.
+Then, when it reads the second one,
+it combines with the first hidden state.
+to produce the second hidden state.
+Then, it reads the third token.
+and then combines it with the second hidden state.
+to produce the third hidden state.
+This process continues until it reads the end-of-sequence token.
+the end of the sequence.
+And that final result is all that matters.
+to produce the final output.
+So, that's the basic idea.
+So, what exactly is this hidden state?
+So, in the logical deduction we just went through,
+It does give off a sense of memory, doesn't it?
+Well, mathematically speaking, it's actually a vector.
+represented by a vector with a fixed dimensionality.
+and it calculates a set of floating-point numbers.
+And this information is multidimensional.
+It's not that
+But it's not exactly the same as the embedding result either.
+And it's not like each one of them corresponds to a single word.
+Together, they reflect the overall picture.
+This is the memory processing work I'm doing on your previous input.
+And it gets updated with each step.
+But its dimensionality doesn't change.
+Let me express this mathematically.
+So, for example, how is the hidden state at timestep T generated?
+is a function of...
+First, we have my input.
+my XT,
+So, step seven.
+So, I take my input and the hidden state from the previous step,
+and we perform a combined operation on them.
+And that gives us the new hidden state for this step.
+So, HT is the hidden state generated at step T.
+And XT is the current input.
+So, let's take the example again of the sentence, "I do not like this movie."
+So, how does this process work?
+First, at H0, the initial state could be all zeros.
+Or of course, it could also be a set of parameters from the model's training.
+Either way works.
+So, when T is equal to one...
+meaning there's no hidden state.
+I just need to input "OK," and it gets me.
+and puts it into the hidden state, H1.
+So, what we're actually doing is computing the hidden state for this step.
+And for the second step,
+So, by the second step, it has already understood me.
+Right?
+So it combines me and my input, which becomes my hidden state, right?
+It's about understanding me.
+So, it just goes on and on, using the result from the previous step in this process.
+Doesn't this feel familiar, especially if you're into programming?
+This should feel pretty familiar.
+Right?
+This is actually kind of like recursion.
+is the hidden state.
+So basically, it represents, uh, the information from what I've read in before.
+understanding of a sequence.
+So, let's take a look at its entire cycle.
+So, maybe if we go back one step from T to the seventh step, the input at that point...
+So, at time step T minus one...
+and that gives us HT minus one, which is this hidden state.
+So, you can think of it as...
+I combine my previous memory point with my current input,
+to form my current memory point.
+and then process the next input.
+So, as you can see in the diagram, there are a lot of these RNN cells.
+So, for each of these processing steps...
+So, this whole process of processing the hidden state and the input...
+And we call this an RNN cell.
+They are all the same cell, you see.
+It's just that it's used repeatedly at different points in time.
+And this process, doesn't it look a lot like a loop?
+So, if we were to represent this in pseudocode...
+So, H0 is just the initialization.
+So, I'll just loop through, calling the RNN cell to process each token in the sequence.
+And with each processing step, we store that information in the hidden state.
+So, I'll use a while loop for the current input,
+as long as it's not the end of the sequence.
+until it's a continuous end-of-sequence token.
+So, what do I append to the current hidden state?
+So, for this RNN function...
+It takes the current input and the previous hidden state,
+and append it.
+and at T plus one, it processes the next step.
+And you just keep repeating this loop.
+And finally, let's say I'm ready to make an output.
+I've learned everything there is to learn.
+and then I can make the output, right?
+I don't need to wait until the very last hidden state.
+Once it's processed all the inputs,
+I can just use that final hidden state,
+and feed it into something called a task.
+and place it outside the loop.
+to make an overall prediction.
+And with that, I can make a prediction for the entire sequence.
+So, this is basically how an RNN works.
+This is the most basic workflow.
+Of course, we've also included the output for each step here.
+That is, the prediction at each step.
+But this step isn't always necessary, though.
+This depends on the specific task.
+Next, we'll cover the different types of tasks.
+The timing of its output is different.
+Take the example I have here, for instance.
+none of the previous ones have it.
+It only produces an output at the very last step.
+and make the output after HT plus one.
+So, after the entire loop is finished,
+I only produce an output once.
+But sometimes, I need to produce an output at every single step.
+So, what we do is, within the loop, we make use of the current hidden state.
+and just use that to make an output.
+We'll see a practical example of this in just a moment.
+From a local perspective,
+So, let's take a look at what's happening inside an RNN.
+So, what's happening inside the RNN...
+So, what it does is, it takes the input and the hidden state from the previous step,
+to produce a new hidden state.
+So, XT is the word vector for the current token.
+This is the new information from the current step.
+And H subscript T minus one?
+This is the vector representation of the context accumulated so far.
+Okay, so for RNNs...
+and combines them into a new hidden state.
+And that completes one state update.
+Then, when it's used in the next position,
+it will then call upon it.
+So, what's going on inside it?
+So, we can see that when the input X comes in,
+First off, it has a matrix parameter, which is WI.
+So, it's really all just WX plus B, you know.
+So, what exactly is this W?
+This is the hidden state, H, that's specifically learned from X.
+It will also be processed by a similar matrix.
+But this is a separate set of parameters.
+WHH, and then we multiply it with the previous hidden state.
+So, after we multiply these two,
+and then we do an addition.
+And maybe it's because this part isn't actually shown in the demo.
+And in this step, there might also be an addition operation.
+And finally, a bias term is also added.
+It's actually just like what's shown in this little formula right here.
+So, it's WXH plus ST, which is WH plus HT minus one.
+And finally, we add a ***.
+which is basically its bias.
+So after we add them up,
+We might use tanh, or other functions like ReLU,
+and other activation functions to introduce non-linearity.
+And that gives us a new one.
+And just like that, we get a new hidden state.
+So, if at this step,
+And that's what I pass on to the next timestep.
+So, if at this current step, I need to produce an output,
+Then I'm just performing the calculation for it.
+and just let it generate the output.
+This will involve a new set of weights.
+So, depending on the specific task, you'll be training different parameters.
+And G here represents its activation function.
+Of course, this step is optional.
+So, it's possible that the current RNN cell doesn't necessarily have to produce an output.
+I just need to calculate the hidden state.
+Sometimes, a hidden state is produced at every step.
+But that doesn't mean an output is generated at every single step.
+We'll look at specific tasks in a moment.
+and it will all make sense.
+So, before we get into the specific tasks,
+So, let me explain a bit more.
+Although it has multiple RNN cells stacked together,
+Now, you might be thinking, 'Wow, how many parameters does that even have?'
+But in reality, the number of its parameters isn't that large.
+That's because each RNN cell is identical.
+And when we say 'the same,' we mean that their parameters are identical.
+It's a set of param-
+Specifically, the weight parameters and the biases.
+and biases.
+They are not actually being updated during the training process.
+In fact, they are also updated synchronously over and over again.
+So, this approach has a few advantages.
+First off, it works like this.
+This decouples it from the sentence's length.
+No matter how long or short the sentence is,
+In fact, it's all a loop.
+And the CEL parameter that's hanging there? It stays constant.
+And every time I update, I'm updating all of them as well.
+Let's take the weights within an RNN cell,
+so that it can be understood from different perspectives.
+no matter how long it is,
+I can understand the entire sequence, and the number of parameters is manageable.
+So, what this means is,
+And it doesn't matter if your sentence has ten tokens,
+or even 100 tokens, I can handle it all.
+And that solves the problem.
+Unlike the FNN, the feedforward neural network we just mentioned,
+it's not very good at handling sequences of variable length.
+Now, let's circle back to the issue of output that we just mentioned.
+So, you have to generate a hidden state at every single step.
+But that doesn't mean it has to produce an output every single time.
+So, in an RNN architecture, when exactly do we produce an output?
+This depends on the specific task it's designed for.
+There are three common types.
+The first type is called global classification.
+For example, after reading a sentence,
+I need to make a judgment call on it.
+Is this sentence expressing a positive sentiment,
+or a negative one.
+Take movie reviews, for example.
+Once I've finished analyzing it,
+Is this a positive review or a negative one?
+I need to process every single word the user says, from start to finish.
+So, after all the hidden states are processed,
+Finally, we add a classifier.
+through a linear layer,
+and then add a softmax layer to classify it.
+All you have to do is determine if it's positive or negative.
+This is the final output after reading the entire sequence.
+And there's another type where you need an output at every single step.
+For instance, when I'm trying to understand a word,
+like when you're trying to understand the meaning of a word,
+Let's say we want to do some part-of-speech analysis on it.
+And for each sentence in between,
+For instance, some sentences might have pronouns involved.
+This token here is a verb.
+The next one is an adverb.
+and the one after that is a noun.
+And I have to use the hidden state every single time.
+to generate an output from the current hidden state.
+And that's also a possibility.
+But of course, there's actually a bit of a difference here.
+Each time, it uses the current token.
+and the new hidden state that is generated.
+Next up is sequence generation.
+Actually, when we use GPT to generate text today,
+That's pretty much what it is.
+So, at each step, I have to base my decision on all the input I've received so far.
+to predict the next word.
+It's like how GPT is constantly predicting the next token, right?
+So, you could say that I, too, am a gift from you.
+So, for every single one I read in,
+I'll generate the next one for you.
+and use it as the next input.
+Then I'll feed that next word back in as the new input.
+and then predict the one after that, always just predicting the next word.
+In fact, it also has to produce an output at every single step.
+So, these tasks are actually different.
+Alright, so let's take a general look.
+First, let's look at the overall classification.
+It only outputs a result at the very end.
+This one is relatively simple.
+What we input is a sequence.
+and the output is a single label.
+For example, sentiment classification.
+This is the most classic example.
+So, what do we do about it?
+Actually, you really have to look at the code directly.
+This might make things a bit simpler.
+We just read through the entire sequence.
+Only the final state...
+and then feed that final hidden state into a classifier.
+I don't need any of the previous ones.
+I only need the last one.
+This is because the final hidden state already contains all the information from the preceding steps.
+and finally, output a single overall label.
+So, first, let's take a look.
+So, when we define a model,
+First, let's talk about the embedding.
+And that's what an embedding is.
+How large is my vocabulary?
+I'm thinking, for my entire vocabulary, what dimensionality should I use?
+So, a 100-dimensional space is enough to represent it.
+Or maybe 10,000 dimensions, right?
+in the middle, in the RNN layer.
+So, for this step in the RNN, all we need to input is the pair.
+It's basically just the one from the previous step.
+How many dimensions is your embedding?
+your hidden layer.
+In other words, that's your hidden state.
+So, what size vector do you want to use to represent it?
+Well, that depends on the scale of your sentences.
+And another thing,
+Of course, this is what determines the, uh, structure.
+So, do you put the batch dimension first,
+Or do you put the sequence length first?
+Because when we train the model, we're processing multiple sentences at once.
+We're not training on just one sentence.
+It determines it, just like this.
+It outputs the batch.
+So, by setting batch_first to true, it will output the batch dimension first.
+and then the length of the sequence.
+and then the result of the embedding.
+If it's set to false,
+So first, we output the sequence length.
+This is more of a PyTorch syntax issue.
+Finally, we just need to define a classifier.
+It's a linear layer.
+and just classify it.
+Of course, this linear layer alone can't handle the classification for us.
+Ultimately, we'll definitely need to do some processing on our own.
+Now, let's take another look at our forward propagation process.
+So, the first step is to embed all of our tokens.
+And we get...
+Each time, we call the RNN.
+Then, each time, we pass the current input through the RNN.
+It outputs the current hidden state and all the past hidden states.
+So, what exactly is this state?
+Because for this one, we only need to take the last layer.
+We just need to take out that last layer.
+Then, we just need to perform classification on the final layer.
+And that's how we get the classification result.
+The code, for the most part, isn't that complex.
+Now, let's look at the second application: sequence tagging.
+For each position, I need to output a label.
+So, "I" is a pronoun, right?
+This is an adverb.
+"Like" is a verb.
+Movie is a noun.
+So, let's look at how humans express sentences.
+This means we need to produce an output at every single step.
+So, what do we do in a situation like this?
+We're dealing with the same kind of task here.
+So, at every single time step, we have to make a prediction.
+So, let's take a look at what our code might look like.
+This is actually super similar to what we just saw.
+This entire section is the embedding layer.
+This part is the same.
+And the RNN part hasn't changed much either.
+and it's also connected to a classifier.
+But the difference, as you can see, is what?
+So first, after we've used the embedding to properly represent X,
+and pass it into the RNN layer.
+and we also get the states and HN.
+But this time, things are different.
+So, let's recap what we did in the last step.
+We only used the final h_last.
+the final hidden layer.
+So, what about this one?
+I'm taking the state from every single step,
+This is from each step.
+I need to use all of them, not just the last one.
+So, I just need to output the results for each position one by one.
+I need to output at every single position.
+Basically, it just depends on the parameters you pass to it.
+Now, let's take a look at sequence generation.
+At each position, it has to predict the next token.
+And this is actually the hottest thing in generative tasks right now.
+So, each time, I have to output the probability for the next token.
+So, the input we're training on is 'I don't like this movie maybe'
+But our goal is to predict the next five characters.
+When it's my turn, you make a prediction.
+The probability for 'bu' should be the highest.
+I write 'I'...
+So, I'll just treat "boa" as the second input.
+So now you know about these two.
+So, it would predict the next word is 'like', as in the 'GT' we use every day.
+So, that's pretty much how it works.
+It's just that behind the scenes, it's not using an RNN architecture.
+So, how does it do that?
+It's pretty much the same as these steps.
+This part here will look very similar to what we just saw.
+It's just that the task we're dealing with here will be completely different.
+based on what we give it during backpropagation.
+some of the training tasks,
+And different tasks will have different losses.
+And this way, we gradually get it to make a prediction at every step.
+So, the prediction we just made was for a single label.
+And this time, we're also feeding in all of the states.
+to predict the probability of the next one.
+As I mentioned earlier,
+Although they use the same task head,
+different task heads.
+and that might also determine the position of its output and...
+what the output will be.
+But the training process is pretty much the same for all of them.
+First, we have the forward propagation, which generates the output.
+Then, we use the loss function to calculate the loss.
+and then we use backpropagation to calculate the gradients.
+Then, we use gradient descent to update the parameters with that gradient.
+And that's how it's done.
+So, it's not really any different.
+So, how does training this compare to the regular neural networks we saw earlier?
+The difference isn't that big either.
+Now, let's look at a slightly more complete example of an RNN.
+Given a few words,
+and then continuously predicts the next word.
+until a complete sentence is generated.
+So, for a given sequence from W1 to WT, the model...
+At each position, it has to estimate the probability of the next token.
+And that's pretty much what GPT does, more or less.
+The only difference is that it doesn't use an RNN.
+it just uses the Transformer architecture instead.
+So, speaking in terms of probability,
+So, given that words W1 through WT have already occurred,
+we want to find the probability of W sub T plus one occurring.
+So, which one is the largest?
+Of course, all our words need to be in the vocabulary.
+We can also generate them ourselves.
+or find some training sentences to train it.
+So, during the training process,
+For example, let's say the sentence is "I like to eat apples."
+the end of the sentence.
+So, what do we feed into the model?
+I like to eat apples.
+We want it to predict on its own where the sentence should end.
+So, what should our goal be at that point?
+So we'll just skip the first word.
+Because the first word is already given, right?
+So, we start by having it predict from the first word.
+the second one.
+and use the second one as the input.
+and predict the next one based on the previous two.
+So for the third step, it's basically like we're just dropping the first one.
+and shift it over by one position.
+The entire sequence shifts one step to the left.
+And with these, we might have tens of thousands of training sentences.
+So, we shift each sentence one position to the left.
+And from this training,
+So our goal is to predict the next word based on the word 'I'.
+So, given the words "I" and "like," the model predicts the word "eat."
+predicting 'apple' based on 'I like to eat'
+and then, based on 'I like to eat apples'
+and predict the end-of-sentence marker.
+So that's what it does.
+Alright, so for our overall code, the first step is to find a corpus.
+and load it into the program.
+and build a vocabulary.
+Actually, it's similar to when we were doing the embedding.
+As we've also mentioned before,
+So, when we do that,
+We shift each sentence one position to the left.
+So, we define our RNN model using a training set.
+And we just keep training it over and over again.
+Once the training is done, we can start making predictions.
+Let's take a look at the specific program.
+First, we need to prepare the corpus and the training data.
+We can find some of these online beforehand.
+Whether it's from a novel or something else,
+We might generate different batches for them.
+Each batch might contain, say, ten sentences or five sentences.
+It doesn't really matter.
+And it's best if the lengths of these batches are consistent with each other.
+And it's not just based on the longest sentence.
+So for the shorter ones,
+So, for the shorter ones,
+we just pad it with this special token to make up the difference.
+But we just ignore it when calculating the loss.
+Now, what if some very unfamiliar words show up that aren't in our vocabulary?
+What if it's not in the vocabulary?
+So, we'll also use a special marker for that.
+to act as a placeholder.
+So, to mark the end of a sentence,
+So, we use this one special token to teach the model,
+So, when should it stop?
+You can't just keep generating forever, right?
+Right?
+So, let's take a look at the actual code.
+Alright, so first, after we've imported the necessary dependencies,
+So, what we can do here is...
+So, for example, let's say we've already got a model that we've trained.
+and found a corpus.
+So, for the training corpus,
+We've placed a TST file in a specific directory.
+So, let's go ahead and read it in.
+Let's split it by line.
+And then we'll get rid of any empty lines.
+Let's split it by spaces.
+Now, for English text,
+and we can tokenize it into a list of tokens.
+And this is the table we get.
+And these are a few special tokens used for padding.
+and an unknown word token.
+And an end-of-sentence marker.
+So, after we get rid of those,
+And with that, we can build our vocabulary.
+So, once we've compiled our vocabulary,
+So, basically, we're creating the training data.
+So, as we just said, we'll shift them by one position.
+Okay, so that's pretty much it for the preparatory work. Once we have all that ready,
+Now, we'll define the model.
+The model essentially consists of three main steps.
+First, the embedding.
+Second, we have the main RNN structure itself.
+And third, we process it with a linear layer.
+to get the raw scores.
+So, we don't need softmax during training.
+Later, when we make the final prediction for everyone,
+that's when we need to take a look at this definition.
+It's pretty much the same as what we just used.
+So first, we'll embed it.
+So, it's determined by a few dimensions.
+So for this one, we might need to do some padding.
+We didn't do that just now.
+The second one is the same as before.
+And we'll set 'batch_first' to True.
+And the linear layer is defined in the same way.
+Because for this one, we need to make a prediction at every single step.
+Right?
+So, when we're defining the forward propagation,
+First, we have the embedding.
+So, for the input sequence,
+After the embedding,
+So, this is where the RNN performs its prediction.
+The prediction result we get at each step is actually the hidden state from that same step.
+So, the output from the cf layer is basically just a linear layer.
+So, we just need to process it once at each step.
+Let's see what the score is.
+Now that we have the model definition,
+and we can start training.
+and then we can generate predictions.
+We can treat each valid position as a classification problem.
+We use cross-entropy for backpropagation, repeatedly propagating the error forward.
+and update the parameters.
+And that's how we train the model.
+So, we use the cross-entropy loss.
+And it will automatically apply softmax here.
+and we'll use a gradient descent optimizer.
+So, we can just use 'item' here.
+Set the learning rate to 0.01, and you can train it for, say, 10,000 epochs.
+The exact number of epochs will depend on your machine, though.
+This also depends on the size of our corpus.
+First, we need to get the results from the trained model.
+and calculate the loss.
+Alright, so after we've calculated the loss,
+and clear the gradients.
+and start the backpropagation.
+And after backpropagation is complete, we let it update the parameters.
+I'm sure we're all very familiar with these steps by now.
+In the fundamentals of neural networks,
+So, it's all the same process.
+So, that's why in the first dozen or so lessons,
+are the various architectures that came later.
+including the foundation for Transformer.
+In fact, the core ideas behind all of them are essentially the same.
+and then we can make our predictions.
+So, let's look at the final step.
+We just need to look at the distribution from the final step.
+Because each prediction is based on all the previous ones.
+So, when we're predicting the next word,
+that's where we need to manually tweak the softmax.
+So, you take the top k, and then from within that top k, you repeatedly select the one with the highest probability.
+If you've ever worked with some of the large models,
+So, when it comes to developing these models,
+When you're configuring it,
+And sometimes, it even asks us to pass in something called a 'temperature' parameter.
+Actually, it doesn't necessarily have to pick the one with the highest probability.
+Let's see if we want to maintain some diversity.
+Sometimes I might not even want the one with the highest probability.
+I might do that just to introduce a bit of diversity.
+Okay, so this function mainly has two parts.
+The first one is 'predict'.
+Next.
+One is to predict the next word, and the other is to generate, just keep on generating.
+So, what it's actually doing is just calling itself over and over again in a loop.
+So, it's just a matter of predicting the next word, right?
+and just keeps appending it to the end of the sentence.
+So, what exactly is happening inside this 'predict_next' function?
+Basically, it converts the words in the prefix into vectors.
+If it's not in the vocabulary,
+So we just use this one as a catch-all.
+So, let's see what happens after we've trained the model.
+So, here's the logic.
+So, what we do is, we don't allow the model to generate certain things in its output.
+We don't want it to generate these special tokens.
+and just kick it out.
+and then it's displayed on its own.
+Then, we apply the softmax function to convert them into probabilities.
+From the top k, we might just pick the one with the highest probability.
+Or, we can decide for ourselves which one to pick.
+and take the one with the highest probability for the next word.
+Or maybe I want to add some diversity.
+or something like picking one of the top three each time.
+These are all our own strategies.
+By repeatedly running this loop, we can generate a sentence.
+So, this is really just a simple illustration.
+So, this is basically how it works.
+For example, let's say we have the sentence, "I... I like him."
+So, the probability of it predicting 'eat' is the highest.
+This is a result of the training corpus we're using.
+He might also have some other activities like watching, reading, listening, or swimming.
+But it knows that 'eat' has the highest probability.
+So I'll just append 'eat' to the end.
+Then, if we predict the next word, we'll find that 'apple' has the highest probability.
+But of course, this all depends on the training corpus you're using.
+And just like that, it can keep making predictions.
+Of course, 'the weather today' could also be the one with the highest probability.
+The probability for that is just a little bit lower.
+So, it really just depends on which one you want to use.
+And the probability for 'the weather tomorrow might be' would be close to one hundred percent.
+So we'll use this greedy method to keep generating new tokens, one after another.
+until it generates the "EOS" token.
+This means the model thinks the probability of this sentence needing to end is the highest.
+and we'll stop there.
+and it won't make any more calls.
+Alright.
+So, that's the basic principle behind it.
+But the thing is, we're going to...
+So today, let's circle back and take a closer look at this thing called the hidden state.
+The hidden state is incredibly important.
+Because it's what gives the RNN its ability to remember.
+and thus understand the complete sentence as a whole.
+Whether it's for generation,
+or determining the sentiment of a sentence,
+or performing some part-of-speech tagging on a sentence.
+So, this hidden state is incredibly important.
+So, in an RNN,
+So, it doesn't matter how long our sequence is.
+Because it can handle sequences of variable length, right?
+At each step, the RNN has to take the current input and all the past information,
+and compresses it all into a fixed-dimensional hidden state.
+For example, let's say we're using a...
+a 128-dimensional vector.
+So, the hidden state...
+So, let's say I only have five tokens at the beginning,
+it still has to be compressed into a 128-dimensional vector.
+But what if I have 500 tokens?
+it still has to squeeze everything into that same 128-dimensional vector.
+And this is where you can start to see a problem.
+In short sentences,
+This summary is basically just a summary of what came before.
+But as the sequence gets longer,
+So, the earlier information is more likely to be overwritten by what comes later.
+And that's actually pretty easy to understand.
+Each time, it's performing a multiplication operation.
+The most recent information is bound to leave a stronger impression, right?
+What the RNN is actually storing is a task-relevant summary.
+It's not a perfect, lossless backup of the historical content.
+It's a lossy process.
+The more recent the information, the more clearly it's remembered.
+The longer your sequence gets,
+the information from the earlier steps gradually gets lost in all that multiplication.
+So, that's one of its problems.
+So, as our sequences get longer and longer...
+So, RNNs actually run into a few obvious difficulties.
+The first is its capacity for representation.
+So, as you're writing the current...
+as it continuously writes into a state of fixed dimensionality,
+the earlier content tends to get weakened or overwritten.
+In other words, it's hard to retain information from far back in the sequence.
+So, for a really long sentence,
+Take this sentence, for example.
+For example,
+So, we were talking about what problems RNNs solved, right?
+when it comes to the problem,
+He's already forgotten which architecture actually solved that problem.
+And that's very likely to happen.
+So, what about the loss at the very end of the optimization path?
+propagating backward along the time chain.
+So, during this process,
+Each time it passes through, it performs multiple matrix multiplications.
+Actually, as we go further, we run into a familiar problem.
+This leads to the problems of either vanishing or exploding gradients.
+Gradient explosion, on the other hand, is something we can still manage to some extent.
+But vanishing gradients are nearly impossible to control.
+The longer the sequence is,
+the more likely this problem is to occur.
+So, for these two reasons, it's just not very good at handling long sequences.
+They're still okay for understanding short sentences, though.
+Another issue is computational efficiency.
+So, when we were looking at that simulation code earlier,
+And you can see from that as well,
+It's basically like a while loop.
+In fact, it's basically a recursive call.
+Each new output depends on the previous one.
+So, that's why it can't be parallelized.
+It has to be executed sequentially.
+You have to get the result from the first step before you can use it to calculate the next one.
+the second step.
+and only after the result of the second step is computed, can you use it for the next step.
+The calculation for the third step is a serial, interdependent process.
+This means there's a dependency between the steps.
+This inherent dependency means it cannot be parallelized.
+This makes it extremely inefficient.
+So, in essence, RNNs solved the problem of how to pass context along a sequence.
+this one problem.
+through a memory unit.
+However, it didn't completely solve the problem.
+the memory problem in long sequences.
+and the corresponding optimizations.
+Another issue was the problem of training efficiency, which also remained unresolved.
+So, these are some of its shortcomings.
+So, RNNs basically laid the foundation for...
+Basically, this is the approach to handling sequence tasks.
+It's a core concept.
+And all the various models that came after,
+all built upon the RNN's core idea and made certain optimizations.
+in an attempt to solve these problems.
+including the Transformer.
+So, first off, LSTM and GRU were developed to tackle these issues.
+the problem of long-term dependencies.
+They both introduced some gating mechanisms.
+This also keeps the gradient under control.
+Basically, it's about selectively retaining information.
+You don't have to remember every single thing, right?
+and forget some things appropriately.
+Next up, we have the encoder-decoder.
+This means the lengths of the input and output sequences can be vastly different.
+So, we can organize these processes of reading and writing into a structure.
+the complete sequence.
+transforming it into a sequence-to-sequence mapping.
+This is essentially the 'sequence-to-sequence' problem.
+A classic example of this is machine translation.
+And for machine translation, it's not a word-for-word translation, you know.
+Unlike the part-of-speech tagging example we just saw,
+What it actually does is understand the entire sentence first.
+and then translates it into another sentence.
+First, it performs an encoding.
+First, it encodes it for you,
+and then decode it for you.
+So, this means the length of its input and output...
+So, the English text could be exceptionally long.
+In Chinese, you can just use an idiom to sum it up.
+This is a very likely scenario.
+This was incredibly difficult to achieve in the past.
+Now, if we use this architecture, things get a little simpler.
+And we'll find that...
+But the thing is, these methods still can't fundamentally solve the problem of longer-term memory.
+It only helps to alleviate the problem.
+And this, in turn, led to the development of...
+The core issue is still that you're trying to cram all the information
+For sequences of variable length,
+and compress all of it into a fixed-length state.
+So, to solve this, we later introduced the attention mechanism.
+And that is attention.
+But this isn't self-attention yet.
+So, what about the attention mechanism?
+Basically, it helps you understand how everything connects with each other.
+It helps you, uh, understand the entire input sequence.
+This helps to alleviate that bottleneck.
+And later on, this led to the development of the Transformer.
+But the Transformer, on the other hand, uses self-attention.
+It addresses the problem within a single sentence,
+within itself
+Every word needs to understand its relationship with every other word.
+Let's take a look at the relationship between them.
+So in this way, it doesn't actually depend on it either.
+And it brought another added benefit.
+So, it allows for parallel computation, right?
+So, it's no longer advancing through cycles.
+It gets the whole picture right from the start.
+And on top of that, if every single word has to be connected to all the other words,
+Then I don't need to rely on your previous result anymore.
+Each word can just act as its own spy, independently.
+And then, when we get to the Transformer...
+We'll also break that down and explain it in detail for you.
+Finally, let's wrap up with a summary of the RNN architecture.
+So, what exactly did the RNN do?
+Essentially, it uses the same set of parameters to process sequences of varying lengths.
+The network then begins to recursively update itself along each timestep.
+and the context is also unified for the overall classification.
+as well as tasks like sequence labeling and text generation.
+All of these can be handled by this single architecture.
+So, it basically established the framework for sequence modeling.
+ushering in the era of end-to-end training frameworks.
+This allowed everyone to build upon its ideas and make further advancements.
+However, it didn't solve the problem of long-range dependencies.
+And of course, the vanishing and exploding gradient problems are the core issues that come with it.
+It uses a fixed-length vector to maintain this state.
+So, this is a problem that it didn't solve.
+Another thing is its step-by-step inference approach.
+This also makes it impossible to parallelize the computations.
+This inability to parallelize makes the training process quite inefficient.
+So, RNNs defined the fundamental problem of sequence modeling.
+So, it established the fundamental paradigm for us.
+So, from this point on, the focus was really on continuously improving it.
+So, in the next lesson,
+So, let's first take a look at LSTM and GRU.
+This was a direct modification of the RNN.
+So, it's a direct evolution of the RNN.
+When you have a state with a fixed dimension,
+when it can't remember information from further back in the sequence,
+So, they introduced gating mechanisms to alleviate this problem.

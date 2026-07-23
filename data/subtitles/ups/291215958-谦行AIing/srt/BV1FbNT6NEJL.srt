@@ -1,0 +1,3663 @@
+1
+00:00:00,000 --> 00:00:01,820
+Let's continue our journey into NLP.
+
+2
+00:00:01,820 --> 00:00:03,780
+Today, we're going to look at the RNN architecture.
+
+3
+00:00:03,780 --> 00:00:06,200
+It allows the model to move beyond just understanding words,
+
+4
+00:00:06,200 --> 00:00:08,760
+to the point where it can understand entire sentences.
+
+5
+00:00:08,760 --> 00:00:11,500
+In the last video, we introduced the concept of embedding.
+
+6
+00:00:11,500 --> 00:00:13,940
+It can take discrete text labels
+
+7
+00:00:13,940 --> 00:00:17,000
+represented as numbers within a continuous vector space.
+
+8
+00:00:17,000 --> 00:00:18,340
+This makes them computable.
+
+9
+00:00:18,340 --> 00:00:21,020
+And on top of that, it also carries some semantic meaning.
+
+10
+00:00:21,020 --> 00:00:23,060
+So, words with similar meanings are closer to each other.
+
+11
+00:00:23,060 --> 00:00:24,150
+and also computable.
+
+12
+00:00:24,150 --> 00:00:26,350
+And just like that, the computer can understand words.
+
+13
+00:00:26,350 --> 00:00:29,810
+Now, a sentence is obviously made up of a bunch of words.
+
+14
+00:00:29,810 --> 00:00:31,670
+So, since the model can understand a single word,
+
+15
+00:00:31,670 --> 00:00:33,910
+So, does that mean it can understand the entire sentence?
+
+16
+00:00:33,910 --> 00:00:35,190
+But that's not actually the case.
+
+17
+00:00:35,190 --> 00:00:36,410
+Let's look at a few examples.
+
+18
+00:00:36,410 --> 00:00:39,530
+For example, take the sentences "I like watching this movie" and "I don't like watching this movie."
+
+19
+00:00:39,530 --> 00:00:41,950
+If we just look at it from the perspective of embedding technology,
+
+20
+00:00:41,950 --> 00:00:43,730
+These two sentences are very similar.
+
+21
+00:00:43,730 --> 00:00:46,380
+Their vector spaces are almost identical.
+
+22
+00:00:46,380 --> 00:00:47,860
+But the only difference is the addition of the word 'not'.
+
+23
+00:00:47,860 --> 00:00:50,150
+But the meaning they convey is completely different.
+
+24
+00:00:50,150 --> 00:00:53,370
+And then you have the difference between 'fighting the White Bone Spirit' and 'the White Bone Spirit fighting Sun Wukong'.
+
+25
+00:00:53,370 --> 00:00:56,080
+Their embeddings are actually identical.
+
+26
+00:00:56,080 --> 00:00:57,240
+The words themselves don't have that information.
+
+27
+00:00:57,240 --> 00:00:58,100
+are exactly the same.
+
+28
+00:00:58,100 --> 00:00:59,920
+However, because their order is different,
+
+29
+00:00:59,920 --> 00:01:02,220
+This completely changes the subject and the object.
+
+30
+00:01:02,220 --> 00:01:05,980
+Or take these two sentences: "Apple released a new product" and "I ate an apple."
+
+31
+00:01:05,980 --> 00:01:07,500
+They both use the word 'apple'.
+
+32
+00:01:07,500 --> 00:01:09,220
+But, in different contexts,
+
+33
+00:01:09,220 --> 00:01:11,479
+the meanings they convey are completely different.
+
+34
+00:01:11,479 --> 00:01:13,039
+For example, if we rely solely on embeddings,
+
+35
+00:01:13,039 --> 00:01:15,419
+we can't really understand a complete sentence.
+
+36
+00:01:15,419 --> 00:01:18,199
+It's not just about knowing which words are in a sentence.
+
+37
+00:01:18,199 --> 00:01:20,420
+We also need to know the order of these words.
+
+38
+00:01:20,420 --> 00:01:21,940
+and the context surrounding them.
+
+39
+00:01:21,940 --> 00:01:23,900
+Only then can we accurately understand the sentence.
+
+40
+00:01:23,900 --> 00:01:25,900
+So, you might be thinking, "Why not just use an FN?"
+
+41
+00:01:25,900 --> 00:01:28,500
+So, could we just use a neural network to solve this problem?
+
+42
+00:01:28,500 --> 00:01:30,900
+So first, let's take a look at what a feedforward neural network is.
+
+43
+00:01:30,900 --> 00:01:33,140
+I'm sure when you've all seen the Transformer architecture,
+
+44
+00:01:33,140 --> 00:01:34,760
+and at the end, there's also an FNN layer.
+
+45
+00:01:34,760 --> 00:01:36,380
+And the reason it's called a 'feed-forward' network is...
+
+46
+00:01:36,380 --> 00:01:38,900
+It's a type of network where information flows in one direction only.
+
+47
+00:01:38,900 --> 00:01:41,520
+Does the front give feedback to the back?
+
+48
+00:01:41,520 --> 00:01:43,180
+The data starts from the input layer,
+
+49
+00:01:43,180 --> 00:01:44,600
+passing through the hidden layers,
+
+50
+00:01:44,600 --> 00:01:45,500
+until it reaches the output layer.
+
+51
+00:01:45,500 --> 00:01:46,360
+and makes a prediction.
+
+52
+00:01:46,360 --> 00:01:48,600
+There are no recurrent connections within the network.
+
+53
+00:01:48,600 --> 00:01:50,240
+It just keeps moving in a single direction.
+
+54
+00:01:50,240 --> 00:01:52,820
+It doesn't loop back on itself and go through various cycles.
+
+55
+00:01:52,820 --> 00:01:56,710
+The MLP we learned about earlier is a classic example of an FNN.
+
+56
+00:01:56,710 --> 00:01:59,230
+But this kind of structure isn't really suitable for direct processing.
+
+57
+00:01:59,230 --> 00:02:02,390
+There are two main reasons why it's not suited for natural language sequences.
+
+58
+00:02:02,920 --> 00:02:05,720
+The first reason is that it can't model the dependencies between preceding and following words.
+
+59
+00:02:05,720 --> 00:02:07,180
+Take our natural language sentences, for example.
+
+60
+00:02:07,180 --> 00:02:08,690
+I'm going to the bank to deposit money.
+
+61
+00:02:08,690 --> 00:02:13,250
+The meaning of the word 'bank' can only be determined by looking at the context that comes before it.
+
+62
+00:02:13,250 --> 00:02:15,310
+There's a sequential relationship between them.
+
+63
+00:02:15,310 --> 00:02:18,680
+Now, with a traditional approach, if we were to just flatten these words,
+
+64
+00:02:18,680 --> 00:02:19,400
+and feed them into the network,
+
+65
+00:02:19,400 --> 00:02:20,240
+and feed it in all at once,
+
+66
+00:02:20,240 --> 00:02:21,140
+and get an output all at once.
+
+67
+00:02:21,140 --> 00:02:23,470
+In reality, they don't capture this sequential order.
+
+68
+00:02:23,470 --> 00:02:25,150
+the sequential order and dependencies between them.
+
+69
+00:02:25,150 --> 00:02:27,750
+Instead, they just treat the entire sequence as a single, fixed vector.
+
+70
+00:02:27,750 --> 00:02:31,810
+So, in this case, the architecture itself simply doesn't have that kind of mechanism.
+
+71
+00:02:31,810 --> 00:02:35,570
+So, it just can't understand the sequential relationships between these words.
+
+72
+00:02:35,810 --> 00:02:36,890
+And what's the other thing?
+
+73
+00:02:36,890 --> 00:02:38,970
+Variable-length sequences are difficult to align with its fixed input.
+
+74
+00:02:38,970 --> 00:02:40,890
+Now, we know that for the input to our neural network,
+
+75
+00:02:40,890 --> 00:02:42,250
+is actually a fixed one.
+
+76
+00:02:42,250 --> 00:02:44,940
+For instance, let's say we're talking about how many neurons we have in the first input layer.
+
+77
+00:02:44,940 --> 00:02:47,680
+This determines the length of the input I can accept.
+
+78
+00:02:47,680 --> 00:02:51,830
+But the thing is, for natural language sentences, their length is actually variable.
+
+79
+00:02:51,830 --> 00:02:53,590
+Different sentences have different lengths.
+
+80
+00:02:53,590 --> 00:02:56,000
+And of course, to force them to align,
+
+81
+00:02:56,000 --> 00:02:58,260
+So, when you want to use an FN to represent it,
+
+82
+00:02:58,260 --> 00:02:59,100
+The inputs have to be the same.
+
+83
+00:02:59,100 --> 00:03:00,260
+It's not that it's impossible, though.
+
+84
+00:03:00,260 --> 00:03:02,260
+What I can do is set a fixed length.
+
+85
+00:03:02,260 --> 00:03:04,540
+And for the parts that go over, I'll just truncate them.
+
+86
+00:03:04,540 --> 00:03:06,660
+And for the next input, what if it's too short?
+
+87
+00:03:06,660 --> 00:03:08,600
+I can just pad it to make up the difference.
+
+88
+00:03:08,600 --> 00:03:09,800
+This also forces the sequences to be aligned.
+
+89
+00:03:09,800 --> 00:03:11,040
+And just like that, it's ready for input.
+
+90
+00:03:11,040 --> 00:03:13,180
+But truncation means you lose information.
+
+91
+00:03:13,180 --> 00:03:15,980
+And if you pad it by filling in with empty spaces, you'll just introduce some noise.
+
+92
+00:03:15,980 --> 00:03:17,340
+This affects the model's learning.
+
+93
+00:03:17,340 --> 00:03:20,220
+This, in turn, makes the training process extremely difficult.
+
+94
+00:03:20,220 --> 00:03:22,690
+So, since these methods can't solve the problem,
+
+95
+00:03:22,690 --> 00:03:23,530
+So, what's the solution?
+
+96
+00:03:23,530 --> 00:03:26,910
+So basically, what RNN did was make some changes to the overall approach.
+
+97
+00:03:26,910 --> 00:03:29,440
+It didn't change the independent variables either.
+
+98
+00:03:29,440 --> 00:03:31,360
+I mean, the word vectors, they stay exactly as they were.
+
+99
+00:03:31,360 --> 00:03:34,000
+What it changes is how we read the sentence.
+
+100
+00:03:34,000 --> 00:03:35,240
+It's not like the old methods.
+
+101
+00:03:35,240 --> 00:03:37,780
+Instead, it's about combining the entire sentence into a single, fixed vector.
+
+102
+00:03:37,780 --> 00:03:39,540
+It reads the input sequentially, performing calculations layer by layer.
+
+103
+00:03:39,540 --> 00:03:40,500
+and then spit out a result.
+
+104
+00:03:40,500 --> 00:03:41,860
+So, how does it work?
+
+105
+00:03:41,860 --> 00:03:43,460
+From left to right.
+
+106
+00:03:43,460 --> 00:03:44,260
+one token at a time.
+
+107
+00:03:44,260 --> 00:03:45,320
+reading one token at a time.
+
+108
+00:03:45,320 --> 00:03:46,660
+When it reads the first word,
+
+109
+00:03:46,660 --> 00:03:49,720
+it can only determine a state based on the current input.
+
+110
+00:03:49,720 --> 00:03:50,960
+Then it moves on to the second word.
+
+111
+00:03:50,960 --> 00:03:51,920
+So, it reads the, uh...
+
+112
+00:03:51,920 --> 00:03:53,160
+The first thing it does is remember that word.
+
+113
+00:03:53,160 --> 00:03:54,720
+and create a vectorized representation of it.
+
+114
+00:03:54,720 --> 00:03:56,120
+Then, when it reads the second word,
+
+115
+00:03:56,120 --> 00:03:59,600
+and combines it with the state representation from the previous step.
+
+116
+00:03:59,600 --> 00:04:00,400
+and combine them.
+
+117
+00:04:00,400 --> 00:04:03,140
+And based on these two, it then reads the third word.
+
+118
+00:04:03,140 --> 00:04:03,940
+And it goes on, layer by layer.
+
+119
+00:04:03,940 --> 00:04:05,400
+until it's completely processed.
+
+120
+00:04:05,400 --> 00:04:06,620
+Let's look at a simple example.
+
+121
+00:04:06,620 --> 00:04:10,800
+For example, let's say it needs to process the natural language sequence "I love nature."
+
+122
+00:04:10,800 --> 00:04:11,820
+So, how does it read it?
+
+123
+00:04:11,820 --> 00:04:14,320
+So, first, it only reads this one token, 'I'.
+
+124
+00:04:14,320 --> 00:04:15,960
+This is what we call a time step.
+
+125
+00:04:15,960 --> 00:04:18,140
+Because, you know, it's a process that's completed in multiple steps.
+
+126
+00:04:18,140 --> 00:04:19,029
+So, T equals one.
+
+127
+00:04:19,029 --> 00:04:21,989
+So, after it's processed my input and formed an understanding,
+
+128
+00:04:21,989 --> 00:04:23,309
+and store it somewhere.
+
+129
+00:04:23,309 --> 00:04:24,849
+We call this the hidden state.
+
+130
+00:04:24,849 --> 00:04:26,269
+We'll call this H1.
+
+131
+00:04:26,269 --> 00:04:27,720
+So at this point, it knows the word is 'me'.
+
+132
+00:04:27,720 --> 00:04:30,630
+Then, the second word, 'I', is fed in as the next input.
+
+133
+00:04:30,630 --> 00:04:31,990
+So, when it's processing the 'I'...
+
+134
+00:04:31,990 --> 00:04:34,190
+It remembers that the previous word was 'my'.
+
+135
+00:04:34,190 --> 00:04:35,990
+So, it understands the word 'I' based on the context of 'my'.
+
+136
+00:04:35,990 --> 00:04:37,820
+So it combines these two to understand the meaning.
+
+137
+00:04:37,820 --> 00:04:39,780
+And just like that, it's remembered the sequence "I love."
+
+138
+00:04:39,780 --> 00:04:41,720
+So, when it gets to the next word, 'nature'...
+
+139
+00:04:41,720 --> 00:04:43,540
+and combine it with the words 'I love' and 'nature'.
+
+140
+00:04:43,540 --> 00:04:45,830
+and it kind of puts two and two together, you know?
+
+141
+00:04:45,830 --> 00:04:47,210
+and it understands the phrase 'I love nature'.
+
+142
+00:04:47,210 --> 00:04:48,070
+So, during this process,
+
+143
+00:04:48,070 --> 00:04:50,050
+In other words, with each step of the process,
+
+144
+00:04:50,050 --> 00:04:50,790
+When it reads in one,
+
+145
+00:04:50,790 --> 00:04:52,380
+it generates a hidden state.
+
+146
+00:04:52,380 --> 00:04:53,580
+Then, when it reads the second one,
+
+147
+00:04:53,580 --> 00:04:55,860
+it combines with the first hidden state.
+
+148
+00:04:55,860 --> 00:04:57,640
+to produce the second hidden state.
+
+149
+00:04:57,640 --> 00:04:58,980
+Then, it reads the third token.
+
+150
+00:04:58,980 --> 00:05:00,960
+and then combines it with the second hidden state.
+
+151
+00:05:00,960 --> 00:05:02,300
+to produce the third hidden state.
+
+152
+00:05:02,300 --> 00:05:04,900
+This process continues until it reads the end-of-sequence token.
+
+153
+00:05:04,900 --> 00:05:06,240
+the end of the sequence.
+
+154
+00:05:06,240 --> 00:05:08,400
+And that final result is all that matters.
+
+155
+00:05:08,400 --> 00:05:09,500
+to produce the final output.
+
+156
+00:05:09,500 --> 00:05:11,080
+So, that's the basic idea.
+
+157
+00:05:11,080 --> 00:05:12,740
+So, what exactly is this hidden state?
+
+158
+00:05:12,740 --> 00:05:14,660
+So, in the logical deduction we just went through,
+
+159
+00:05:14,660 --> 00:05:16,880
+It does give off a sense of memory, doesn't it?
+
+160
+00:05:16,880 --> 00:05:19,580
+Well, mathematically speaking, it's actually a vector.
+
+161
+00:05:19,580 --> 00:05:21,620
+represented by a vector with a fixed dimensionality.
+
+162
+00:05:21,620 --> 00:05:23,159
+and it calculates a set of floating-point numbers.
+
+163
+00:05:23,159 --> 00:05:25,679
+And this information is multidimensional.
+
+164
+00:05:25,679 --> 00:05:26,399
+It's not that
+
+165
+00:05:26,399 --> 00:05:29,000
+But it's not exactly the same as the embedding result either.
+
+166
+00:05:29,000 --> 00:05:31,280
+And it's not like each one of them corresponds to a single word.
+
+167
+00:05:31,280 --> 00:05:32,920
+Together, they reflect the overall picture.
+
+168
+00:05:32,920 --> 00:05:35,650
+This is the memory processing work I'm doing on your previous input.
+
+169
+00:05:35,650 --> 00:05:37,590
+And it gets updated with each step.
+
+170
+00:05:37,590 --> 00:05:40,070
+But its dimensionality doesn't change.
+
+171
+00:05:40,070 --> 00:05:41,490
+Let me express this mathematically.
+
+172
+00:05:41,490 --> 00:05:44,480
+So, for example, how is the hidden state at timestep T generated?
+
+173
+00:05:44,480 --> 00:05:45,500
+is a function of...
+
+174
+00:05:45,500 --> 00:05:46,740
+First, we have my input.
+
+175
+00:05:46,740 --> 00:05:47,810
+my XT,
+
+176
+00:05:47,810 --> 00:05:48,690
+So, step seven.
+
+177
+00:05:48,690 --> 00:05:51,730
+So, I take my input and the hidden state from the previous step,
+
+178
+00:05:51,730 --> 00:05:53,620
+and we perform a combined operation on them.
+
+179
+00:05:53,620 --> 00:05:56,780
+And that gives us the new hidden state for this step.
+
+180
+00:05:56,780 --> 00:05:59,570
+So, HT is the hidden state generated at step T.
+
+181
+00:05:59,570 --> 00:06:01,970
+And XT is the current input.
+
+182
+00:06:01,970 --> 00:06:05,130
+So, let's take the example again of the sentence, "I do not like this movie."
+
+183
+00:06:05,130 --> 00:06:06,290
+So, how does this process work?
+
+184
+00:06:06,290 --> 00:06:09,470
+First, at H0, the initial state could be all zeros.
+
+185
+00:06:09,470 --> 00:06:11,990
+Or of course, it could also be a set of parameters from the model's training.
+
+186
+00:06:11,990 --> 00:06:12,820
+Either way works.
+
+187
+00:06:12,820 --> 00:06:13,980
+So, when T is equal to one...
+
+188
+00:06:13,980 --> 00:06:15,020
+meaning there's no hidden state.
+
+189
+00:06:15,020 --> 00:06:17,780
+I just need to input "OK," and it gets me.
+
+190
+00:06:17,780 --> 00:06:19,660
+and puts it into the hidden state, H1.
+
+191
+00:06:19,660 --> 00:06:22,040
+So, what we're actually doing is computing the hidden state for this step.
+
+192
+00:06:22,040 --> 00:06:23,540
+And for the second step,
+
+193
+00:06:23,540 --> 00:06:25,680
+So, by the second step, it has already understood me.
+
+194
+00:06:25,680 --> 00:06:26,120
+Right?
+
+195
+00:06:26,120 --> 00:06:29,320
+So it combines me and my input, which becomes my hidden state, right?
+
+196
+00:06:29,320 --> 00:06:30,460
+It's about understanding me.
+
+197
+00:06:30,460 --> 00:06:33,560
+So, it just goes on and on, using the result from the previous step in this process.
+
+198
+00:06:33,560 --> 00:06:35,600
+Doesn't this feel familiar, especially if you're into programming?
+
+199
+00:06:35,600 --> 00:06:36,600
+This should feel pretty familiar.
+
+200
+00:06:36,600 --> 00:06:37,200
+Right?
+
+201
+00:06:37,200 --> 00:06:38,980
+This is actually kind of like recursion.
+
+202
+00:06:38,980 --> 00:06:39,940
+is the hidden state.
+
+203
+00:06:39,940 --> 00:06:43,010
+So basically, it represents, uh, the information from what I've read in before.
+
+204
+00:06:43,010 --> 00:06:43,950
+understanding of a sequence.
+
+205
+00:06:43,950 --> 00:06:46,210
+So, let's take a look at its entire cycle.
+
+206
+00:06:46,210 --> 00:06:49,770
+So, maybe if we go back one step from T to the seventh step, the input at that point...
+
+207
+00:06:49,770 --> 00:06:51,750
+So, at time step T minus one...
+
+208
+00:06:51,750 --> 00:06:54,920
+and that gives us HT minus one, which is this hidden state.
+
+209
+00:06:54,920 --> 00:06:56,040
+So, you can think of it as...
+
+210
+00:06:56,040 --> 00:06:59,169
+I combine my previous memory point with my current input,
+
+211
+00:06:59,169 --> 00:07:01,069
+to form my current memory point.
+
+212
+00:07:01,069 --> 00:07:03,590
+and then process the next input.
+
+213
+00:07:03,590 --> 00:07:06,750
+So, as you can see in the diagram, there are a lot of these RNN cells.
+
+214
+00:07:06,750 --> 00:07:08,550
+So, for each of these processing steps...
+
+215
+00:07:08,550 --> 00:07:11,979
+So, this whole process of processing the hidden state and the input...
+
+216
+00:07:11,979 --> 00:07:14,339
+And we call this an RNN cell.
+
+217
+00:07:14,339 --> 00:07:15,699
+They are all the same cell, you see.
+
+218
+00:07:15,699 --> 00:07:18,640
+It's just that it's used repeatedly at different points in time.
+
+219
+00:07:18,640 --> 00:07:21,600
+And this process, doesn't it look a lot like a loop?
+
+220
+00:07:21,600 --> 00:07:23,440
+So, if we were to represent this in pseudocode...
+
+221
+00:07:23,440 --> 00:07:25,409
+So, H0 is just the initialization.
+
+222
+00:07:25,409 --> 00:07:29,180
+So, I'll just loop through, calling the RNN cell to process each token in the sequence.
+
+223
+00:07:29,180 --> 00:07:31,180
+And with each processing step, we store that information in the hidden state.
+
+224
+00:07:31,180 --> 00:07:32,540
+So, I'll use a while loop for the current input,
+
+225
+00:07:32,540 --> 00:07:34,460
+as long as it's not the end of the sequence.
+
+226
+00:07:34,460 --> 00:07:36,689
+until it's a continuous end-of-sequence token.
+
+227
+00:07:36,689 --> 00:07:39,789
+So, what do I append to the current hidden state?
+
+228
+00:07:39,789 --> 00:07:41,420
+So, for this RNN function...
+
+229
+00:07:41,420 --> 00:07:44,860
+It takes the current input and the previous hidden state,
+
+230
+00:07:44,860 --> 00:07:46,300
+and append it.
+
+231
+00:07:46,300 --> 00:07:48,060
+and at T plus one, it processes the next step.
+
+232
+00:07:48,060 --> 00:07:49,760
+And you just keep repeating this loop.
+
+233
+00:07:49,760 --> 00:07:53,400
+And finally, let's say I'm ready to make an output.
+
+234
+00:07:53,400 --> 00:07:54,880
+I've learned everything there is to learn.
+
+235
+00:07:54,880 --> 00:07:56,040
+and then I can make the output, right?
+
+236
+00:07:56,040 --> 00:07:58,080
+I don't need to wait until the very last hidden state.
+
+237
+00:07:58,080 --> 00:07:59,560
+Once it's processed all the inputs,
+
+238
+00:07:59,560 --> 00:08:01,360
+I can just use that final hidden state,
+
+239
+00:08:01,360 --> 00:08:04,580
+and feed it into something called a task.
+
+240
+00:08:04,580 --> 00:08:06,120
+and place it outside the loop.
+
+241
+00:08:06,120 --> 00:08:07,100
+to make an overall prediction.
+
+242
+00:08:07,100 --> 00:08:09,900
+And with that, I can make a prediction for the entire sequence.
+
+243
+00:08:09,900 --> 00:08:11,620
+So, this is basically how an RNN works.
+
+244
+00:08:11,620 --> 00:08:12,980
+This is the most basic workflow.
+
+245
+00:08:12,980 --> 00:08:16,100
+Of course, we've also included the output for each step here.
+
+246
+00:08:16,100 --> 00:08:17,340
+That is, the prediction at each step.
+
+247
+00:08:17,340 --> 00:08:19,540
+But this step isn't always necessary, though.
+
+248
+00:08:19,540 --> 00:08:20,740
+This depends on the specific task.
+
+249
+00:08:20,740 --> 00:08:22,940
+Next, we'll cover the different types of tasks.
+
+250
+00:08:22,940 --> 00:08:24,930
+The timing of its output is different.
+
+251
+00:08:24,930 --> 00:08:26,610
+Take the example I have here, for instance.
+
+252
+00:08:26,610 --> 00:08:27,550
+none of the previous ones have it.
+
+253
+00:08:27,550 --> 00:08:29,410
+It only produces an output at the very last step.
+
+254
+00:08:29,410 --> 00:08:31,260
+and make the output after HT plus one.
+
+255
+00:08:31,260 --> 00:08:32,860
+So, after the entire loop is finished,
+
+256
+00:08:32,860 --> 00:08:34,309
+I only produce an output once.
+
+257
+00:08:34,309 --> 00:08:36,569
+But sometimes, I need to produce an output at every single step.
+
+258
+00:08:36,569 --> 00:08:40,229
+So, what we do is, within the loop, we make use of the current hidden state.
+
+259
+00:08:40,229 --> 00:08:41,389
+and just use that to make an output.
+
+260
+00:08:41,389 --> 00:08:43,760
+We'll see a practical example of this in just a moment.
+
+261
+00:08:43,760 --> 00:08:44,720
+From a local perspective,
+
+262
+00:08:44,720 --> 00:08:47,820
+So, let's take a look at what's happening inside an RNN.
+
+263
+00:08:47,820 --> 00:08:49,400
+So, what's happening inside the RNN...
+
+264
+00:08:49,400 --> 00:08:52,240
+So, what it does is, it takes the input and the hidden state from the previous step,
+
+265
+00:08:52,240 --> 00:08:54,640
+to produce a new hidden state.
+
+266
+00:08:54,640 --> 00:08:57,470
+So, XT is the word vector for the current token.
+
+267
+00:08:57,470 --> 00:08:59,810
+This is the new information from the current step.
+
+268
+00:08:59,810 --> 00:09:00,750
+And H subscript T minus one?
+
+269
+00:09:00,750 --> 00:09:03,980
+This is the vector representation of the context accumulated so far.
+
+270
+00:09:03,980 --> 00:09:05,500
+Okay, so for RNNs...
+
+271
+00:09:05,500 --> 00:09:07,900
+and combines them into a new hidden state.
+
+272
+00:09:07,900 --> 00:09:09,630
+And that completes one state update.
+
+273
+00:09:09,630 --> 00:09:11,550
+Then, when it's used in the next position,
+
+274
+00:09:11,550 --> 00:09:13,190
+it will then call upon it.
+
+275
+00:09:13,190 --> 00:09:14,510
+So, what's going on inside it?
+
+276
+00:09:14,510 --> 00:09:16,230
+So, we can see that when the input X comes in,
+
+277
+00:09:16,230 --> 00:09:19,660
+First off, it has a matrix parameter, which is WI.
+
+278
+00:09:19,660 --> 00:09:21,620
+So, it's really all just WX plus B, you know.
+
+279
+00:09:21,620 --> 00:09:22,960
+So, what exactly is this W?
+
+280
+00:09:22,960 --> 00:09:25,580
+This is the hidden state, H, that's specifically learned from X.
+
+281
+00:09:25,580 --> 00:09:28,120
+It will also be processed by a similar matrix.
+
+282
+00:09:28,120 --> 00:09:30,060
+But this is a separate set of parameters.
+
+283
+00:09:30,060 --> 00:09:34,180
+WHH, and then we multiply it with the previous hidden state.
+
+284
+00:09:34,180 --> 00:09:35,400
+So, after we multiply these two,
+
+285
+00:09:35,400 --> 00:09:36,320
+and then we do an addition.
+
+286
+00:09:36,320 --> 00:09:38,300
+And maybe it's because this part isn't actually shown in the demo.
+
+287
+00:09:38,300 --> 00:09:41,540
+And in this step, there might also be an addition operation.
+
+288
+00:09:41,540 --> 00:09:43,040
+And finally, a bias term is also added.
+
+289
+00:09:43,040 --> 00:09:45,620
+It's actually just like what's shown in this little formula right here.
+
+290
+00:09:45,620 --> 00:09:49,490
+So, it's WXH plus ST, which is WH plus HT minus one.
+
+291
+00:09:49,490 --> 00:09:51,790
+And finally, we add a ***.
+
+292
+00:09:51,790 --> 00:09:53,150
+which is basically its bias.
+
+293
+00:09:53,150 --> 00:09:54,050
+So after we add them up,
+
+294
+00:09:54,050 --> 00:09:57,759
+We might use tanh, or other functions like ReLU,
+
+295
+00:09:57,759 --> 00:10:00,039
+and other activation functions to introduce non-linearity.
+
+296
+00:10:00,039 --> 00:10:01,670
+And that gives us a new one.
+
+297
+00:10:01,670 --> 00:10:04,450
+And just like that, we get a new hidden state.
+
+298
+00:10:04,450 --> 00:10:05,670
+So, if at this step,
+
+299
+00:10:05,670 --> 00:10:07,750
+And that's what I pass on to the next timestep.
+
+300
+00:10:07,750 --> 00:10:10,080
+So, if at this current step, I need to produce an output,
+
+301
+00:10:10,080 --> 00:10:11,900
+Then I'm just performing the calculation for it.
+
+302
+00:10:11,900 --> 00:10:13,340
+and just let it generate the output.
+
+303
+00:10:13,340 --> 00:10:15,200
+This will involve a new set of weights.
+
+304
+00:10:15,200 --> 00:10:18,520
+So, depending on the specific task, you'll be training different parameters.
+
+305
+00:10:18,520 --> 00:10:20,440
+And G here represents its activation function.
+
+306
+00:10:20,440 --> 00:10:21,880
+Of course, this step is optional.
+
+307
+00:10:21,880 --> 00:10:25,160
+So, it's possible that the current RNN cell doesn't necessarily have to produce an output.
+
+308
+00:10:25,160 --> 00:10:26,920
+I just need to calculate the hidden state.
+
+309
+00:10:26,920 --> 00:10:28,980
+Sometimes, a hidden state is produced at every step.
+
+310
+00:10:28,980 --> 00:10:31,470
+But that doesn't mean an output is generated at every single step.
+
+311
+00:10:31,470 --> 00:10:32,870
+We'll look at specific tasks in a moment.
+
+312
+00:10:32,870 --> 00:10:34,380
+and it will all make sense.
+
+313
+00:10:34,380 --> 00:10:36,380
+So, before we get into the specific tasks,
+
+314
+00:10:36,380 --> 00:10:37,260
+So, let me explain a bit more.
+
+315
+00:10:37,260 --> 00:10:39,100
+Although it has multiple RNN cells stacked together,
+
+316
+00:10:39,100 --> 00:10:42,120
+Now, you might be thinking, 'Wow, how many parameters does that even have?'
+
+317
+00:10:42,120 --> 00:10:43,740
+But in reality, the number of its parameters isn't that large.
+
+318
+00:10:43,740 --> 00:10:45,940
+That's because each RNN cell is identical.
+
+319
+00:10:45,940 --> 00:10:48,620
+And when we say 'the same,' we mean that their parameters are identical.
+
+320
+00:10:48,620 --> 00:10:49,980
+It's a set of param-
+
+321
+00:10:49,980 --> 00:10:51,500
+Specifically, the weight parameters and the biases.
+
+322
+00:10:51,500 --> 00:10:52,320
+and biases.
+
+323
+00:10:52,320 --> 00:10:54,020
+They are not actually being updated during the training process.
+
+324
+00:10:54,020 --> 00:10:56,700
+In fact, they are also updated synchronously over and over again.
+
+325
+00:10:56,700 --> 00:10:59,180
+So, this approach has a few advantages.
+
+326
+00:10:59,180 --> 00:11:00,180
+First off, it works like this.
+
+327
+00:11:00,180 --> 00:11:02,280
+This decouples it from the sentence's length.
+
+328
+00:11:02,280 --> 00:11:04,800
+No matter how long or short the sentence is,
+
+329
+00:11:04,800 --> 00:11:06,180
+In fact, it's all a loop.
+
+330
+00:11:06,180 --> 00:11:08,520
+And the CEL parameter that's hanging there? It stays constant.
+
+331
+00:11:08,520 --> 00:11:10,820
+And every time I update, I'm updating all of them as well.
+
+332
+00:11:10,820 --> 00:11:12,860
+Let's take the weights within an RNN cell,
+
+333
+00:11:12,860 --> 00:11:15,720
+so that it can be understood from different perspectives.
+
+334
+00:11:15,720 --> 00:11:16,560
+no matter how long it is,
+
+335
+00:11:16,560 --> 00:11:19,260
+I can understand the entire sequence, and the number of parameters is manageable.
+
+336
+00:11:19,260 --> 00:11:19,760
+So, what this means is,
+
+337
+00:11:19,760 --> 00:11:22,200
+And it doesn't matter if your sentence has ten tokens,
+
+338
+00:11:22,200 --> 00:11:24,200
+or even 100 tokens, I can handle it all.
+
+339
+00:11:24,200 --> 00:11:25,280
+And that solves the problem.
+
+340
+00:11:25,280 --> 00:11:27,840
+Unlike the FNN, the feedforward neural network we just mentioned,
+
+341
+00:11:27,840 --> 00:11:31,410
+it's not very good at handling sequences of variable length.
+
+342
+00:11:31,410 --> 00:11:33,850
+Now, let's circle back to the issue of output that we just mentioned.
+
+343
+00:11:33,850 --> 00:11:36,410
+So, you have to generate a hidden state at every single step.
+
+344
+00:11:36,410 --> 00:11:38,339
+But that doesn't mean it has to produce an output every single time.
+
+345
+00:11:38,339 --> 00:11:40,839
+So, in an RNN architecture, when exactly do we produce an output?
+
+346
+00:11:40,839 --> 00:11:43,139
+This depends on the specific task it's designed for.
+
+347
+00:11:43,139 --> 00:11:44,680
+There are three common types.
+
+348
+00:11:44,680 --> 00:11:46,560
+The first type is called global classification.
+
+349
+00:11:46,560 --> 00:11:48,240
+For example, after reading a sentence,
+
+350
+00:11:48,240 --> 00:11:49,740
+I need to make a judgment call on it.
+
+351
+00:11:49,740 --> 00:11:52,060
+Is this sentence expressing a positive sentiment,
+
+352
+00:11:52,060 --> 00:11:53,380
+or a negative one.
+
+353
+00:11:53,380 --> 00:11:54,540
+Take movie reviews, for example.
+
+354
+00:11:54,540 --> 00:11:55,400
+Once I've finished analyzing it,
+
+355
+00:11:55,400 --> 00:11:56,940
+Is this a positive review or a negative one?
+
+356
+00:11:56,940 --> 00:12:00,490
+I need to process every single word the user says, from start to finish.
+
+357
+00:12:00,490 --> 00:12:01,930
+So, after all the hidden states are processed,
+
+358
+00:12:01,930 --> 00:12:03,290
+Finally, we add a classifier.
+
+359
+00:12:03,290 --> 00:12:04,750
+through a linear layer,
+
+360
+00:12:04,750 --> 00:12:06,700
+and then add a softmax layer to classify it.
+
+361
+00:12:06,700 --> 00:12:08,600
+All you have to do is determine if it's positive or negative.
+
+362
+00:12:08,600 --> 00:12:10,900
+This is the final output after reading the entire sequence.
+
+363
+00:12:10,900 --> 00:12:13,500
+And there's another type where you need an output at every single step.
+
+364
+00:12:13,500 --> 00:12:15,420
+For instance, when I'm trying to understand a word,
+
+365
+00:12:15,420 --> 00:12:18,180
+like when you're trying to understand the meaning of a word,
+
+366
+00:12:18,180 --> 00:12:20,200
+Let's say we want to do some part-of-speech analysis on it.
+
+367
+00:12:20,200 --> 00:12:21,540
+And for each sentence in between,
+
+368
+00:12:21,540 --> 00:12:23,420
+For instance, some sentences might have pronouns involved.
+
+369
+00:12:23,420 --> 00:12:24,740
+This token here is a verb.
+
+370
+00:12:24,740 --> 00:12:25,890
+The next one is an adverb.
+
+371
+00:12:25,890 --> 00:12:27,230
+and the one after that is a noun.
+
+372
+00:12:27,230 --> 00:12:29,170
+And I have to use the hidden state every single time.
+
+373
+00:12:29,170 --> 00:12:31,290
+to generate an output from the current hidden state.
+
+374
+00:12:31,290 --> 00:12:32,660
+And that's also a possibility.
+
+375
+00:12:32,660 --> 00:12:35,120
+But of course, there's actually a bit of a difference here.
+
+376
+00:12:35,120 --> 00:12:37,060
+Each time, it uses the current token.
+
+377
+00:12:37,060 --> 00:12:39,180
+and the new hidden state that is generated.
+
+378
+00:12:39,180 --> 00:12:40,680
+Next up is sequence generation.
+
+379
+00:12:40,680 --> 00:12:44,270
+Actually, when we use GPT to generate text today,
+
+380
+00:12:44,270 --> 00:12:45,310
+That's pretty much what it is.
+
+381
+00:12:45,310 --> 00:12:47,910
+So, at each step, I have to base my decision on all the input I've received so far.
+
+382
+00:12:47,910 --> 00:12:50,280
+to predict the next word.
+
+383
+00:12:50,280 --> 00:12:53,220
+It's like how GPT is constantly predicting the next token, right?
+
+384
+00:12:53,220 --> 00:12:55,080
+So, you could say that I, too, am a gift from you.
+
+385
+00:12:55,080 --> 00:12:56,040
+So, for every single one I read in,
+
+386
+00:12:56,040 --> 00:12:57,579
+I'll generate the next one for you.
+
+387
+00:12:57,579 --> 00:12:58,859
+and use it as the next input.
+
+388
+00:12:58,859 --> 00:13:00,419
+Then I'll feed that next word back in as the new input.
+
+389
+00:13:00,419 --> 00:13:02,999
+and then predict the one after that, always just predicting the next word.
+
+390
+00:13:02,999 --> 00:13:05,040
+In fact, it also has to produce an output at every single step.
+
+391
+00:13:05,040 --> 00:13:06,740
+So, these tasks are actually different.
+
+392
+00:13:06,740 --> 00:13:08,300
+Alright, so let's take a general look.
+
+393
+00:13:08,300 --> 00:13:09,780
+First, let's look at the overall classification.
+
+394
+00:13:09,780 --> 00:13:11,100
+It only outputs a result at the very end.
+
+395
+00:13:11,100 --> 00:13:12,340
+This one is relatively simple.
+
+396
+00:13:12,340 --> 00:13:14,060
+What we input is a sequence.
+
+397
+00:13:14,060 --> 00:13:15,420
+and the output is a single label.
+
+398
+00:13:15,420 --> 00:13:16,560
+For example, sentiment classification.
+
+399
+00:13:16,560 --> 00:13:17,760
+This is the most classic example.
+
+400
+00:13:17,760 --> 00:13:19,020
+So, what do we do about it?
+
+401
+00:13:19,020 --> 00:13:20,400
+Actually, you really have to look at the code directly.
+
+402
+00:13:20,400 --> 00:13:21,680
+This might make things a bit simpler.
+
+403
+00:13:21,680 --> 00:13:22,780
+We just read through the entire sequence.
+
+404
+00:13:22,780 --> 00:13:24,080
+Only the final state...
+
+405
+00:13:24,080 --> 00:13:27,170
+and then feed that final hidden state into a classifier.
+
+406
+00:13:27,170 --> 00:13:28,250
+I don't need any of the previous ones.
+
+407
+00:13:28,250 --> 00:13:29,330
+I only need the last one.
+
+408
+00:13:29,330 --> 00:13:32,890
+This is because the final hidden state already contains all the information from the preceding steps.
+
+409
+00:13:32,890 --> 00:13:34,720
+and finally, output a single overall label.
+
+410
+00:13:34,720 --> 00:13:35,960
+So, first, let's take a look.
+
+411
+00:13:35,960 --> 00:13:37,440
+So, when we define a model,
+
+412
+00:13:37,440 --> 00:13:38,460
+First, let's talk about the embedding.
+
+413
+00:13:38,460 --> 00:13:39,320
+And that's what an embedding is.
+
+414
+00:13:39,320 --> 00:13:40,440
+How large is my vocabulary?
+
+415
+00:13:40,440 --> 00:13:43,820
+I'm thinking, for my entire vocabulary, what dimensionality should I use?
+
+416
+00:13:43,820 --> 00:13:45,220
+So, a 100-dimensional space is enough to represent it.
+
+417
+00:13:45,220 --> 00:13:46,680
+Or maybe 10,000 dimensions, right?
+
+418
+00:13:46,680 --> 00:13:48,340
+in the middle, in the RNN layer.
+
+419
+00:13:48,340 --> 00:13:50,480
+So, for this step in the RNN, all we need to input is the pair.
+
+420
+00:13:50,480 --> 00:13:51,520
+It's basically just the one from the previous step.
+
+421
+00:13:51,520 --> 00:13:53,880
+How many dimensions is your embedding?
+
+422
+00:13:53,880 --> 00:13:54,860
+your hidden layer.
+
+423
+00:13:54,860 --> 00:13:56,560
+In other words, that's your hidden state.
+
+424
+00:13:56,560 --> 00:13:58,800
+So, what size vector do you want to use to represent it?
+
+425
+00:13:58,800 --> 00:14:00,760
+Well, that depends on the scale of your sentences.
+
+426
+00:14:00,760 --> 00:14:01,280
+And another thing,
+
+427
+00:14:01,280 --> 00:14:03,160
+Of course, this is what determines the, uh, structure.
+
+428
+00:14:03,160 --> 00:14:04,640
+So, do you put the batch dimension first,
+
+429
+00:14:04,640 --> 00:14:06,900
+Or do you put the sequence length first?
+
+430
+00:14:06,900 --> 00:14:09,660
+Because when we train the model, we're processing multiple sentences at once.
+
+431
+00:14:09,660 --> 00:14:10,980
+We're not training on just one sentence.
+
+432
+00:14:10,980 --> 00:14:12,700
+It determines it, just like this.
+
+433
+00:14:12,700 --> 00:14:13,920
+It outputs the batch.
+
+434
+00:14:13,920 --> 00:14:16,970
+So, by setting batch_first to true, it will output the batch dimension first.
+
+435
+00:14:16,970 --> 00:14:18,770
+and then the length of the sequence.
+
+436
+00:14:18,770 --> 00:14:20,490
+and then the result of the embedding.
+
+437
+00:14:20,490 --> 00:14:22,039
+If it's set to false,
+
+438
+00:14:22,039 --> 00:14:23,779
+So first, we output the sequence length.
+
+439
+00:14:23,779 --> 00:14:26,130
+This is more of a PyTorch syntax issue.
+
+440
+00:14:26,130 --> 00:14:27,950
+Finally, we just need to define a classifier.
+
+441
+00:14:27,950 --> 00:14:29,110
+It's a linear layer.
+
+442
+00:14:29,110 --> 00:14:31,329
+and just classify it.
+
+443
+00:14:31,329 --> 00:14:33,809
+Of course, this linear layer alone can't handle the classification for us.
+
+444
+00:14:33,809 --> 00:14:36,840
+Ultimately, we'll definitely need to do some processing on our own.
+
+445
+00:14:36,840 --> 00:14:38,720
+Now, let's take another look at our forward propagation process.
+
+446
+00:14:38,720 --> 00:14:41,360
+So, the first step is to embed all of our tokens.
+
+447
+00:14:41,360 --> 00:14:42,100
+And we get...
+
+448
+00:14:42,100 --> 00:14:43,520
+Each time, we call the RNN.
+
+449
+00:14:43,520 --> 00:14:47,150
+Then, each time, we pass the current input through the RNN.
+
+450
+00:14:47,150 --> 00:14:50,330
+It outputs the current hidden state and all the past hidden states.
+
+451
+00:14:50,330 --> 00:14:52,230
+So, what exactly is this state?
+
+452
+00:14:52,230 --> 00:14:55,400
+Because for this one, we only need to take the last layer.
+
+453
+00:14:55,400 --> 00:14:57,100
+We just need to take out that last layer.
+
+454
+00:14:57,100 --> 00:14:59,160
+Then, we just need to perform classification on the final layer.
+
+455
+00:14:59,160 --> 00:15:02,380
+And that's how we get the classification result.
+
+456
+00:15:02,380 --> 00:15:04,900
+The code, for the most part, isn't that complex.
+
+457
+00:15:05,040 --> 00:15:06,800
+Now, let's look at the second application: sequence tagging.
+
+458
+00:15:06,800 --> 00:15:08,820
+For each position, I need to output a label.
+
+459
+00:15:08,820 --> 00:15:10,400
+So, "I" is a pronoun, right?
+
+460
+00:15:10,400 --> 00:15:11,060
+This is an adverb.
+
+461
+00:15:11,060 --> 00:15:12,140
+"Like" is a verb.
+
+462
+00:15:12,140 --> 00:15:13,180
+Movie is a noun.
+
+463
+00:15:13,180 --> 00:15:16,140
+So, let's look at how humans express sentences.
+
+464
+00:15:16,140 --> 00:15:18,740
+This means we need to produce an output at every single step.
+
+465
+00:15:18,740 --> 00:15:20,430
+So, what do we do in a situation like this?
+
+466
+00:15:20,430 --> 00:15:22,010
+We're dealing with the same kind of task here.
+
+467
+00:15:22,010 --> 00:15:25,270
+So, at every single time step, we have to make a prediction.
+
+468
+00:15:25,270 --> 00:15:28,230
+So, let's take a look at what our code might look like.
+
+469
+00:15:28,230 --> 00:15:29,750
+This is actually super similar to what we just saw.
+
+470
+00:15:29,750 --> 00:15:31,030
+This entire section is the embedding layer.
+
+471
+00:15:31,030 --> 00:15:32,070
+This part is the same.
+
+472
+00:15:32,070 --> 00:15:33,890
+And the RNN part hasn't changed much either.
+
+473
+00:15:33,890 --> 00:15:35,319
+and it's also connected to a classifier.
+
+474
+00:15:35,319 --> 00:15:37,479
+But the difference, as you can see, is what?
+
+475
+00:15:37,479 --> 00:15:41,399
+So first, after we've used the embedding to properly represent X,
+
+476
+00:15:41,399 --> 00:15:42,679
+and pass it into the RNN layer.
+
+477
+00:15:42,679 --> 00:15:44,569
+and we also get the states and HN.
+
+478
+00:15:44,569 --> 00:15:46,689
+But this time, things are different.
+
+479
+00:15:46,689 --> 00:15:48,549
+So, let's recap what we did in the last step.
+
+480
+00:15:48,549 --> 00:15:50,809
+We only used the final h_last.
+
+481
+00:15:50,809 --> 00:15:52,430
+the final hidden layer.
+
+482
+00:15:52,430 --> 00:15:54,010
+So, what about this one?
+
+483
+00:15:54,010 --> 00:15:56,270
+I'm taking the state from every single step,
+
+484
+00:15:56,270 --> 00:15:57,810
+This is from each step.
+
+485
+00:15:57,810 --> 00:15:59,770
+I need to use all of them, not just the last one.
+
+486
+00:15:59,770 --> 00:16:02,450
+So, I just need to output the results for each position one by one.
+
+487
+00:16:02,450 --> 00:16:03,970
+I need to output at every single position.
+
+488
+00:16:03,970 --> 00:16:07,390
+Basically, it just depends on the parameters you pass to it.
+
+489
+00:16:07,390 --> 00:16:08,970
+Now, let's take a look at sequence generation.
+
+490
+00:16:08,970 --> 00:16:11,030
+At each position, it has to predict the next token.
+
+491
+00:16:11,030 --> 00:16:14,100
+And this is actually the hottest thing in generative tasks right now.
+
+492
+00:16:14,100 --> 00:16:17,040
+So, each time, I have to output the probability for the next token.
+
+493
+00:16:17,040 --> 00:16:19,920
+So, the input we're training on is 'I don't like this movie maybe'
+
+494
+00:16:19,920 --> 00:16:22,620
+But our goal is to predict the next five characters.
+
+495
+00:16:22,620 --> 00:16:24,380
+When it's my turn, you make a prediction.
+
+496
+00:16:24,380 --> 00:16:26,640
+The probability for 'bu' should be the highest.
+
+497
+00:16:26,640 --> 00:16:27,440
+I write 'I'...
+
+498
+00:16:27,440 --> 00:16:30,080
+So, I'll just treat "boa" as the second input.
+
+499
+00:16:30,080 --> 00:16:31,480
+So now you know about these two.
+
+500
+00:16:31,480 --> 00:16:34,720
+So, it would predict the next word is 'like', as in the 'GT' we use every day.
+
+501
+00:16:34,720 --> 00:16:36,020
+So, that's pretty much how it works.
+
+502
+00:16:36,020 --> 00:16:39,000
+It's just that behind the scenes, it's not using an RNN architecture.
+
+503
+00:16:39,000 --> 00:16:40,420
+So, how does it do that?
+
+504
+00:16:40,420 --> 00:16:42,870
+It's pretty much the same as these steps.
+
+505
+00:16:42,870 --> 00:16:46,030
+This part here will look very similar to what we just saw.
+
+506
+00:16:46,030 --> 00:16:49,390
+It's just that the task we're dealing with here will be completely different.
+
+507
+00:16:49,390 --> 00:16:52,220
+based on what we give it during backpropagation.
+
+508
+00:16:52,220 --> 00:16:53,340
+some of the training tasks,
+
+509
+00:16:53,340 --> 00:16:54,960
+And different tasks will have different losses.
+
+510
+00:16:54,960 --> 00:16:57,580
+And this way, we gradually get it to make a prediction at every step.
+
+511
+00:16:57,580 --> 00:16:59,160
+So, the prediction we just made was for a single label.
+
+512
+00:16:59,160 --> 00:17:01,660
+And this time, we're also feeding in all of the states.
+
+513
+00:17:01,660 --> 00:17:03,900
+to predict the probability of the next one.
+
+514
+00:17:03,900 --> 00:17:04,900
+As I mentioned earlier,
+
+515
+00:17:04,900 --> 00:17:07,680
+Although they use the same task head,
+
+516
+00:17:07,680 --> 00:17:08,580
+different task heads.
+
+517
+00:17:08,580 --> 00:17:10,980
+and that might also determine the position of its output and...
+
+518
+00:17:10,980 --> 00:17:12,830
+what the output will be.
+
+519
+00:17:12,830 --> 00:17:15,250
+But the training process is pretty much the same for all of them.
+
+520
+00:17:15,250 --> 00:17:17,670
+First, we have the forward propagation, which generates the output.
+
+521
+00:17:17,670 --> 00:17:19,839
+Then, we use the loss function to calculate the loss.
+
+522
+00:17:19,839 --> 00:17:22,679
+and then we use backpropagation to calculate the gradients.
+
+523
+00:17:22,679 --> 00:17:25,220
+Then, we use gradient descent to update the parameters with that gradient.
+
+524
+00:17:25,220 --> 00:17:26,160
+And that's how it's done.
+
+525
+00:17:26,160 --> 00:17:27,160
+So, it's not really any different.
+
+526
+00:17:27,160 --> 00:17:29,680
+So, how does training this compare to the regular neural networks we saw earlier?
+
+527
+00:17:29,680 --> 00:17:31,179
+The difference isn't that big either.
+
+528
+00:17:31,179 --> 00:17:34,159
+Now, let's look at a slightly more complete example of an RNN.
+
+529
+00:17:34,159 --> 00:17:35,379
+Given a few words,
+
+530
+00:17:35,379 --> 00:17:37,339
+and then continuously predicts the next word.
+
+531
+00:17:37,339 --> 00:17:39,429
+until a complete sentence is generated.
+
+532
+00:17:39,429 --> 00:17:42,229
+So, for a given sequence from W1 to WT, the model...
+
+533
+00:17:42,229 --> 00:17:45,170
+At each position, it has to estimate the probability of the next token.
+
+534
+00:17:45,170 --> 00:17:48,210
+And that's pretty much what GPT does, more or less.
+
+535
+00:17:48,210 --> 00:17:49,610
+The only difference is that it doesn't use an RNN.
+
+536
+00:17:49,610 --> 00:17:51,570
+it just uses the Transformer architecture instead.
+
+537
+00:17:51,570 --> 00:17:53,690
+So, speaking in terms of probability,
+
+538
+00:17:53,690 --> 00:17:56,150
+So, given that words W1 through WT have already occurred,
+
+539
+00:17:56,150 --> 00:17:57,930
+we want to find the probability of W sub T plus one occurring.
+
+540
+00:17:57,930 --> 00:17:59,200
+So, which one is the largest?
+
+541
+00:17:59,200 --> 00:18:01,500
+Of course, all our words need to be in the vocabulary.
+
+542
+00:18:01,500 --> 00:18:02,880
+We can also generate them ourselves.
+
+543
+00:18:02,880 --> 00:18:05,790
+or find some training sentences to train it.
+
+544
+00:18:05,790 --> 00:18:06,670
+So, during the training process,
+
+545
+00:18:06,670 --> 00:18:08,190
+For example, let's say the sentence is "I like to eat apples."
+
+546
+00:18:08,190 --> 00:18:09,270
+the end of the sentence.
+
+547
+00:18:09,270 --> 00:18:10,630
+So, what do we feed into the model?
+
+548
+00:18:10,630 --> 00:18:11,870
+I like to eat apples.
+
+549
+00:18:11,870 --> 00:18:14,890
+We want it to predict on its own where the sentence should end.
+
+550
+00:18:14,890 --> 00:18:17,010
+So, what should our goal be at that point?
+
+551
+00:18:17,010 --> 00:18:18,250
+So we'll just skip the first word.
+
+552
+00:18:18,250 --> 00:18:20,370
+Because the first word is already given, right?
+
+553
+00:18:20,370 --> 00:18:21,730
+So, we start by having it predict from the first word.
+
+554
+00:18:21,730 --> 00:18:22,210
+the second one.
+
+555
+00:18:22,210 --> 00:18:23,310
+and use the second one as the input.
+
+556
+00:18:23,310 --> 00:18:25,920
+and predict the next one based on the previous two.
+
+557
+00:18:25,920 --> 00:18:27,680
+So for the third step, it's basically like we're just dropping the first one.
+
+558
+00:18:27,680 --> 00:18:29,200
+and shift it over by one position.
+
+559
+00:18:29,200 --> 00:18:30,520
+The entire sequence shifts one step to the left.
+
+560
+00:18:30,520 --> 00:18:33,820
+And with these, we might have tens of thousands of training sentences.
+
+561
+00:18:33,820 --> 00:18:35,700
+So, we shift each sentence one position to the left.
+
+562
+00:18:35,700 --> 00:18:37,020
+And from this training,
+
+563
+00:18:37,020 --> 00:18:39,300
+So our goal is to predict the next word based on the word 'I'.
+
+564
+00:18:39,300 --> 00:18:41,520
+So, given the words "I" and "like," the model predicts the word "eat."
+
+565
+00:18:41,520 --> 00:18:43,430
+predicting 'apple' based on 'I like to eat'
+
+566
+00:18:43,430 --> 00:18:44,910
+and then, based on 'I like to eat apples'
+
+567
+00:18:44,910 --> 00:18:46,890
+and predict the end-of-sentence marker.
+
+568
+00:18:46,890 --> 00:18:48,190
+So that's what it does.
+
+569
+00:18:48,190 --> 00:18:51,450
+Alright, so for our overall code, the first step is to find a corpus.
+
+570
+00:18:51,450 --> 00:18:53,170
+and load it into the program.
+
+571
+00:18:53,170 --> 00:18:53,850
+and build a vocabulary.
+
+572
+00:18:53,850 --> 00:18:55,370
+Actually, it's similar to when we were doing the embedding.
+
+573
+00:18:55,370 --> 00:18:56,290
+As we've also mentioned before,
+
+574
+00:18:56,290 --> 00:18:57,850
+So, when we do that,
+
+575
+00:18:57,850 --> 00:18:59,910
+We shift each sentence one position to the left.
+
+576
+00:18:59,910 --> 00:19:03,440
+So, we define our RNN model using a training set.
+
+577
+00:19:03,440 --> 00:19:04,520
+And we just keep training it over and over again.
+
+578
+00:19:04,520 --> 00:19:06,220
+Once the training is done, we can start making predictions.
+
+579
+00:19:06,220 --> 00:19:08,300
+Let's take a look at the specific program.
+
+580
+00:19:08,680 --> 00:19:11,040
+First, we need to prepare the corpus and the training data.
+
+581
+00:19:11,040 --> 00:19:13,140
+We can find some of these online beforehand.
+
+582
+00:19:13,140 --> 00:19:15,180
+Whether it's from a novel or something else,
+
+583
+00:19:15,180 --> 00:19:17,140
+We might generate different batches for them.
+
+584
+00:19:17,140 --> 00:19:19,500
+Each batch might contain, say, ten sentences or five sentences.
+
+585
+00:19:19,500 --> 00:19:20,360
+It doesn't really matter.
+
+586
+00:19:20,360 --> 00:19:23,560
+And it's best if the lengths of these batches are consistent with each other.
+
+587
+00:19:23,560 --> 00:19:25,440
+And it's not just based on the longest sentence.
+
+588
+00:19:25,440 --> 00:19:26,880
+So for the shorter ones,
+
+589
+00:19:26,880 --> 00:19:27,880
+So, for the shorter ones,
+
+590
+00:19:27,880 --> 00:19:30,250
+we just pad it with this special token to make up the difference.
+
+591
+00:19:30,250 --> 00:19:33,000
+But we just ignore it when calculating the loss.
+
+592
+00:19:33,000 --> 00:19:36,000
+Now, what if some very unfamiliar words show up that aren't in our vocabulary?
+
+593
+00:19:36,000 --> 00:19:36,920
+What if it's not in the vocabulary?
+
+594
+00:19:36,920 --> 00:19:39,200
+So, we'll also use a special marker for that.
+
+595
+00:19:39,200 --> 00:19:40,750
+to act as a placeholder.
+
+596
+00:19:40,750 --> 00:19:42,230
+So, to mark the end of a sentence,
+
+597
+00:19:42,230 --> 00:19:44,690
+So, we use this one special token to teach the model,
+
+598
+00:19:44,690 --> 00:19:46,030
+So, when should it stop?
+
+599
+00:19:46,030 --> 00:19:47,910
+You can't just keep generating forever, right?
+
+600
+00:19:47,910 --> 00:19:48,780
+Right?
+
+601
+00:19:48,780 --> 00:19:50,260
+So, let's take a look at the actual code.
+
+602
+00:19:50,260 --> 00:19:52,820
+Alright, so first, after we've imported the necessary dependencies,
+
+603
+00:19:52,820 --> 00:19:54,260
+So, what we can do here is...
+
+604
+00:19:54,260 --> 00:19:57,120
+So, for example, let's say we've already got a model that we've trained.
+
+605
+00:19:57,120 --> 00:19:58,420
+and found a corpus.
+
+606
+00:19:58,420 --> 00:19:59,200
+So, for the training corpus,
+
+607
+00:19:59,200 --> 00:20:01,440
+We've placed a TST file in a specific directory.
+
+608
+00:20:01,440 --> 00:20:02,700
+So, let's go ahead and read it in.
+
+609
+00:20:02,700 --> 00:20:04,750
+Let's split it by line.
+
+610
+00:20:04,750 --> 00:20:07,110
+And then we'll get rid of any empty lines.
+
+611
+00:20:07,110 --> 00:20:08,490
+Let's split it by spaces.
+
+612
+00:20:08,490 --> 00:20:09,750
+Now, for English text,
+
+613
+00:20:09,750 --> 00:20:12,110
+and we can tokenize it into a list of tokens.
+
+614
+00:20:12,110 --> 00:20:13,510
+And this is the table we get.
+
+615
+00:20:13,510 --> 00:20:15,990
+And these are a few special tokens used for padding.
+
+616
+00:20:15,990 --> 00:20:16,850
+and an unknown word token.
+
+617
+00:20:16,850 --> 00:20:18,410
+And an end-of-sentence marker.
+
+618
+00:20:18,410 --> 00:20:19,430
+So, after we get rid of those,
+
+619
+00:20:19,430 --> 00:20:21,330
+And with that, we can build our vocabulary.
+
+620
+00:20:21,330 --> 00:20:22,650
+So, once we've compiled our vocabulary,
+
+621
+00:20:22,650 --> 00:20:23,970
+So, basically, we're creating the training data.
+
+622
+00:20:23,970 --> 00:20:26,310
+So, as we just said, we'll shift them by one position.
+
+623
+00:20:26,310 --> 00:20:29,330
+Okay, so that's pretty much it for the preparatory work. Once we have all that ready,
+
+624
+00:20:29,330 --> 00:20:30,580
+Now, we'll define the model.
+
+625
+00:20:30,580 --> 00:20:32,440
+The model essentially consists of three main steps.
+
+626
+00:20:32,440 --> 00:20:33,400
+First, the embedding.
+
+627
+00:20:33,400 --> 00:20:35,280
+Second, we have the main RNN structure itself.
+
+628
+00:20:35,280 --> 00:20:38,240
+And third, we process it with a linear layer.
+
+629
+00:20:38,240 --> 00:20:40,250
+to get the raw scores.
+
+630
+00:20:40,380 --> 00:20:42,840
+So, we don't need softmax during training.
+
+631
+00:20:42,840 --> 00:20:45,860
+Later, when we make the final prediction for everyone,
+
+632
+00:20:45,860 --> 00:20:48,420
+that's when we need to take a look at this definition.
+
+633
+00:20:48,420 --> 00:20:50,300
+It's pretty much the same as what we just used.
+
+634
+00:20:50,300 --> 00:20:52,000
+So first, we'll embed it.
+
+635
+00:20:52,000 --> 00:20:53,380
+So, it's determined by a few dimensions.
+
+636
+00:20:53,380 --> 00:20:55,540
+So for this one, we might need to do some padding.
+
+637
+00:20:55,540 --> 00:20:56,870
+We didn't do that just now.
+
+638
+00:20:56,940 --> 00:20:58,620
+The second one is the same as before.
+
+639
+00:20:58,620 --> 00:21:00,880
+And we'll set 'batch_first' to True.
+
+640
+00:21:00,880 --> 00:21:03,440
+And the linear layer is defined in the same way.
+
+641
+00:21:03,440 --> 00:21:06,640
+Because for this one, we need to make a prediction at every single step.
+
+642
+00:21:06,640 --> 00:21:07,080
+Right?
+
+643
+00:21:07,080 --> 00:21:08,980
+So, when we're defining the forward propagation,
+
+644
+00:21:08,980 --> 00:21:10,190
+First, we have the embedding.
+
+645
+00:21:10,190 --> 00:21:11,630
+So, for the input sequence,
+
+646
+00:21:11,630 --> 00:21:12,630
+After the embedding,
+
+647
+00:21:12,630 --> 00:21:14,730
+So, this is where the RNN performs its prediction.
+
+648
+00:21:14,730 --> 00:21:18,610
+The prediction result we get at each step is actually the hidden state from that same step.
+
+649
+00:21:18,610 --> 00:21:22,130
+So, the output from the cf layer is basically just a linear layer.
+
+650
+00:21:22,130 --> 00:21:25,010
+So, we just need to process it once at each step.
+
+651
+00:21:25,010 --> 00:21:27,010
+Let's see what the score is.
+
+652
+00:21:27,010 --> 00:21:28,970
+Now that we have the model definition,
+
+653
+00:21:28,970 --> 00:21:30,070
+and we can start training.
+
+654
+00:21:30,070 --> 00:21:31,500
+and then we can generate predictions.
+
+655
+00:21:31,500 --> 00:21:34,460
+We can treat each valid position as a classification problem.
+
+656
+00:21:34,460 --> 00:21:38,319
+We use cross-entropy for backpropagation, repeatedly propagating the error forward.
+
+657
+00:21:38,319 --> 00:21:39,139
+and update the parameters.
+
+658
+00:21:39,139 --> 00:21:40,399
+And that's how we train the model.
+
+659
+00:21:40,399 --> 00:21:42,139
+So, we use the cross-entropy loss.
+
+660
+00:21:42,139 --> 00:21:44,409
+And it will automatically apply softmax here.
+
+661
+00:21:44,409 --> 00:21:46,129
+and we'll use a gradient descent optimizer.
+
+662
+00:21:46,129 --> 00:21:47,549
+So, we can just use 'item' here.
+
+663
+00:21:47,549 --> 00:21:51,480
+Set the learning rate to 0.01, and you can train it for, say, 10,000 epochs.
+
+664
+00:21:51,480 --> 00:21:53,880
+The exact number of epochs will depend on your machine, though.
+
+665
+00:21:53,880 --> 00:21:55,700
+This also depends on the size of our corpus.
+
+666
+00:21:55,700 --> 00:21:58,480
+First, we need to get the results from the trained model.
+
+667
+00:21:58,480 --> 00:22:00,280
+and calculate the loss.
+
+668
+00:22:00,280 --> 00:22:01,680
+Alright, so after we've calculated the loss,
+
+669
+00:22:01,680 --> 00:22:02,610
+and clear the gradients.
+
+670
+00:22:02,610 --> 00:22:03,810
+and start the backpropagation.
+
+671
+00:22:03,810 --> 00:22:05,910
+And after backpropagation is complete, we let it update the parameters.
+
+672
+00:22:05,910 --> 00:22:08,950
+I'm sure we're all very familiar with these steps by now.
+
+673
+00:22:08,950 --> 00:22:10,660
+In the fundamentals of neural networks,
+
+674
+00:22:10,660 --> 00:22:11,800
+So, it's all the same process.
+
+675
+00:22:11,800 --> 00:22:14,180
+So, that's why in the first dozen or so lessons,
+
+676
+00:22:14,180 --> 00:22:15,940
+are the various architectures that came later.
+
+677
+00:22:15,940 --> 00:22:17,470
+including the foundation for Transformer.
+
+678
+00:22:17,470 --> 00:22:20,460
+In fact, the core ideas behind all of them are essentially the same.
+
+679
+00:22:20,460 --> 00:22:22,020
+and then we can make our predictions.
+
+680
+00:22:22,020 --> 00:22:23,020
+So, let's look at the final step.
+
+681
+00:22:23,020 --> 00:22:24,980
+We just need to look at the distribution from the final step.
+
+682
+00:22:24,980 --> 00:22:27,580
+Because each prediction is based on all the previous ones.
+
+683
+00:22:27,580 --> 00:22:29,460
+So, when we're predicting the next word,
+
+684
+00:22:29,460 --> 00:22:32,020
+that's where we need to manually tweak the softmax.
+
+685
+00:22:32,020 --> 00:22:36,210
+So, you take the top k, and then from within that top k, you repeatedly select the one with the highest probability.
+
+686
+00:22:36,210 --> 00:22:38,090
+If you've ever worked with some of the large models,
+
+687
+00:22:38,090 --> 00:22:39,450
+So, when it comes to developing these models,
+
+688
+00:22:39,450 --> 00:22:40,330
+When you're configuring it,
+
+689
+00:22:40,330 --> 00:22:43,290
+And sometimes, it even asks us to pass in something called a 'temperature' parameter.
+
+690
+00:22:43,290 --> 00:22:46,270
+Actually, it doesn't necessarily have to pick the one with the highest probability.
+
+691
+00:22:46,270 --> 00:22:48,170
+Let's see if we want to maintain some diversity.
+
+692
+00:22:48,170 --> 00:22:50,110
+Sometimes I might not even want the one with the highest probability.
+
+693
+00:22:50,110 --> 00:22:52,820
+I might do that just to introduce a bit of diversity.
+
+694
+00:22:52,820 --> 00:22:55,140
+Okay, so this function mainly has two parts.
+
+695
+00:22:55,140 --> 00:22:56,340
+The first one is 'predict'.
+
+696
+00:22:56,340 --> 00:22:56,720
+Next.
+
+697
+00:22:56,720 --> 00:23:00,040
+One is to predict the next word, and the other is to generate, just keep on generating.
+
+698
+00:23:00,040 --> 00:23:02,260
+So, what it's actually doing is just calling itself over and over again in a loop.
+
+699
+00:23:02,260 --> 00:23:04,260
+So, it's just a matter of predicting the next word, right?
+
+700
+00:23:04,260 --> 00:23:07,240
+and just keeps appending it to the end of the sentence.
+
+701
+00:23:07,240 --> 00:23:09,580
+So, what exactly is happening inside this 'predict_next' function?
+
+702
+00:23:09,580 --> 00:23:12,060
+Basically, it converts the words in the prefix into vectors.
+
+703
+00:23:12,060 --> 00:23:13,320
+If it's not in the vocabulary,
+
+704
+00:23:13,320 --> 00:23:15,770
+So we just use this one as a catch-all.
+
+705
+00:23:15,770 --> 00:23:18,610
+So, let's see what happens after we've trained the model.
+
+706
+00:23:18,610 --> 00:23:19,710
+So, here's the logic.
+
+707
+00:23:19,710 --> 00:23:23,290
+So, what we do is, we don't allow the model to generate certain things in its output.
+
+708
+00:23:23,290 --> 00:23:25,250
+We don't want it to generate these special tokens.
+
+709
+00:23:25,250 --> 00:23:26,230
+and just kick it out.
+
+710
+00:23:26,230 --> 00:23:27,890
+and then it's displayed on its own.
+
+711
+00:23:27,890 --> 00:23:30,320
+Then, we apply the softmax function to convert them into probabilities.
+
+712
+00:23:30,320 --> 00:23:32,360
+From the top k, we might just pick the one with the highest probability.
+
+713
+00:23:32,360 --> 00:23:34,640
+Or, we can decide for ourselves which one to pick.
+
+714
+00:23:34,640 --> 00:23:36,859
+and take the one with the highest probability for the next word.
+
+715
+00:23:36,859 --> 00:23:38,399
+Or maybe I want to add some diversity.
+
+716
+00:23:38,399 --> 00:23:41,240
+or something like picking one of the top three each time.
+
+717
+00:23:41,240 --> 00:23:42,680
+These are all our own strategies.
+
+718
+00:23:42,680 --> 00:23:45,660
+By repeatedly running this loop, we can generate a sentence.
+
+719
+00:23:45,660 --> 00:23:48,880
+So, this is really just a simple illustration.
+
+720
+00:23:49,109 --> 00:23:50,149
+So, this is basically how it works.
+
+721
+00:23:50,149 --> 00:23:52,749
+For example, let's say we have the sentence, "I... I like him."
+
+722
+00:23:52,749 --> 00:23:55,109
+So, the probability of it predicting 'eat' is the highest.
+
+723
+00:23:55,109 --> 00:23:57,210
+This is a result of the training corpus we're using.
+
+724
+00:23:57,210 --> 00:24:01,070
+He might also have some other activities like watching, reading, listening, or swimming.
+
+725
+00:24:01,070 --> 00:24:02,610
+But it knows that 'eat' has the highest probability.
+
+726
+00:24:02,610 --> 00:24:04,080
+So I'll just append 'eat' to the end.
+
+727
+00:24:04,080 --> 00:24:07,920
+Then, if we predict the next word, we'll find that 'apple' has the highest probability.
+
+728
+00:24:07,920 --> 00:24:10,500
+But of course, this all depends on the training corpus you're using.
+
+729
+00:24:10,500 --> 00:24:12,460
+And just like that, it can keep making predictions.
+
+730
+00:24:12,460 --> 00:24:16,060
+Of course, 'the weather today' could also be the one with the highest probability.
+
+731
+00:24:16,060 --> 00:24:17,500
+The probability for that is just a little bit lower.
+
+732
+00:24:17,500 --> 00:24:19,600
+So, it really just depends on which one you want to use.
+
+733
+00:24:19,600 --> 00:24:22,840
+And the probability for 'the weather tomorrow might be' would be close to one hundred percent.
+
+734
+00:24:22,840 --> 00:24:25,690
+So we'll use this greedy method to keep generating new tokens, one after another.
+
+735
+00:24:25,690 --> 00:24:27,380
+until it generates the "EOS" token.
+
+736
+00:24:27,380 --> 00:24:30,840
+This means the model thinks the probability of this sentence needing to end is the highest.
+
+737
+00:24:30,840 --> 00:24:32,180
+and we'll stop there.
+
+738
+00:24:32,180 --> 00:24:33,520
+and it won't make any more calls.
+
+739
+00:24:33,520 --> 00:24:34,420
+Alright.
+
+740
+00:24:34,420 --> 00:24:36,160
+So, that's the basic principle behind it.
+
+741
+00:24:36,160 --> 00:24:37,720
+But the thing is, we're going to...
+
+742
+00:24:37,720 --> 00:24:40,360
+So today, let's circle back and take a closer look at this thing called the hidden state.
+
+743
+00:24:40,360 --> 00:24:41,520
+The hidden state is incredibly important.
+
+744
+00:24:41,520 --> 00:24:44,520
+Because it's what gives the RNN its ability to remember.
+
+745
+00:24:44,520 --> 00:24:46,920
+and thus understand the complete sentence as a whole.
+
+746
+00:24:46,920 --> 00:24:48,200
+Whether it's for generation,
+
+747
+00:24:48,200 --> 00:24:49,840
+or determining the sentiment of a sentence,
+
+748
+00:24:49,840 --> 00:24:51,800
+or performing some part-of-speech tagging on a sentence.
+
+749
+00:24:51,800 --> 00:24:54,040
+So, this hidden state is incredibly important.
+
+750
+00:24:54,040 --> 00:24:55,240
+So, in an RNN,
+
+751
+00:24:55,240 --> 00:24:57,020
+So, it doesn't matter how long our sequence is.
+
+752
+00:24:57,020 --> 00:24:59,620
+Because it can handle sequences of variable length, right?
+
+753
+00:24:59,620 --> 00:25:03,470
+At each step, the RNN has to take the current input and all the past information,
+
+754
+00:25:03,470 --> 00:25:06,870
+and compresses it all into a fixed-dimensional hidden state.
+
+755
+00:25:06,870 --> 00:25:08,920
+For example, let's say we're using a...
+
+756
+00:25:08,920 --> 00:25:11,020
+a 128-dimensional vector.
+
+757
+00:25:11,020 --> 00:25:11,840
+So, the hidden state...
+
+758
+00:25:11,840 --> 00:25:13,720
+So, let's say I only have five tokens at the beginning,
+
+759
+00:25:13,720 --> 00:25:15,600
+it still has to be compressed into a 128-dimensional vector.
+
+760
+00:25:15,600 --> 00:25:17,320
+But what if I have 500 tokens?
+
+761
+00:25:17,320 --> 00:25:20,860
+it still has to squeeze everything into that same 128-dimensional vector.
+
+762
+00:25:20,860 --> 00:25:23,540
+And this is where you can start to see a problem.
+
+763
+00:25:23,540 --> 00:25:24,480
+In short sentences,
+
+764
+00:25:24,480 --> 00:25:27,790
+This summary is basically just a summary of what came before.
+
+765
+00:25:27,790 --> 00:25:29,330
+But as the sequence gets longer,
+
+766
+00:25:29,330 --> 00:25:32,140
+So, the earlier information is more likely to be overwritten by what comes later.
+
+767
+00:25:32,140 --> 00:25:33,740
+And that's actually pretty easy to understand.
+
+768
+00:25:33,740 --> 00:25:35,500
+Each time, it's performing a multiplication operation.
+
+769
+00:25:35,500 --> 00:25:37,730
+The most recent information is bound to leave a stronger impression, right?
+
+770
+00:25:37,730 --> 00:25:40,250
+What the RNN is actually storing is a task-relevant summary.
+
+771
+00:25:40,250 --> 00:25:42,620
+It's not a perfect, lossless backup of the historical content.
+
+772
+00:25:42,620 --> 00:25:43,740
+It's a lossy process.
+
+773
+00:25:43,740 --> 00:25:45,520
+The more recent the information, the more clearly it's remembered.
+
+774
+00:25:45,520 --> 00:25:46,560
+The longer your sequence gets,
+
+775
+00:25:46,560 --> 00:25:50,030
+the information from the earlier steps gradually gets lost in all that multiplication.
+
+776
+00:25:50,030 --> 00:25:51,590
+So, that's one of its problems.
+
+777
+00:25:51,590 --> 00:25:53,590
+So, as our sequences get longer and longer...
+
+778
+00:25:53,590 --> 00:25:56,900
+So, RNNs actually run into a few obvious difficulties.
+
+779
+00:25:56,900 --> 00:25:58,300
+The first is its capacity for representation.
+
+780
+00:25:58,300 --> 00:26:00,280
+So, as you're writing the current...
+
+781
+00:26:00,280 --> 00:26:02,980
+as it continuously writes into a state of fixed dimensionality,
+
+782
+00:26:02,980 --> 00:26:05,640
+the earlier content tends to get weakened or overwritten.
+
+783
+00:26:05,640 --> 00:26:08,440
+In other words, it's hard to retain information from far back in the sequence.
+
+784
+00:26:08,440 --> 00:26:09,640
+So, for a really long sentence,
+
+785
+00:26:09,640 --> 00:26:10,760
+Take this sentence, for example.
+
+786
+00:26:10,760 --> 00:26:11,520
+For example,
+
+787
+00:26:11,520 --> 00:26:13,020
+So, we were talking about what problems RNNs solved, right?
+
+788
+00:26:13,020 --> 00:26:14,480
+when it comes to the problem,
+
+789
+00:26:14,480 --> 00:26:16,760
+He's already forgotten which architecture actually solved that problem.
+
+790
+00:26:16,760 --> 00:26:17,990
+And that's very likely to happen.
+
+791
+00:26:17,990 --> 00:26:20,630
+So, what about the loss at the very end of the optimization path?
+
+792
+00:26:20,630 --> 00:26:22,310
+propagating backward along the time chain.
+
+793
+00:26:22,310 --> 00:26:23,510
+So, during this process,
+
+794
+00:26:23,510 --> 00:26:26,480
+Each time it passes through, it performs multiple matrix multiplications.
+
+795
+00:26:26,480 --> 00:26:29,120
+Actually, as we go further, we run into a familiar problem.
+
+796
+00:26:29,120 --> 00:26:31,930
+This leads to the problems of either vanishing or exploding gradients.
+
+797
+00:26:31,930 --> 00:26:34,910
+Gradient explosion, on the other hand, is something we can still manage to some extent.
+
+798
+00:26:34,910 --> 00:26:37,370
+But vanishing gradients are nearly impossible to control.
+
+799
+00:26:37,370 --> 00:26:38,630
+The longer the sequence is,
+
+800
+00:26:38,630 --> 00:26:40,389
+the more likely this problem is to occur.
+
+801
+00:26:40,389 --> 00:26:44,449
+So, for these two reasons, it's just not very good at handling long sequences.
+
+802
+00:26:44,449 --> 00:26:46,400
+They're still okay for understanding short sentences, though.
+
+803
+00:26:46,400 --> 00:26:47,860
+Another issue is computational efficiency.
+
+804
+00:26:47,860 --> 00:26:50,480
+So, when we were looking at that simulation code earlier,
+
+805
+00:26:50,480 --> 00:26:51,040
+And you can see from that as well,
+
+806
+00:26:51,040 --> 00:26:52,520
+It's basically like a while loop.
+
+807
+00:26:52,520 --> 00:26:54,320
+In fact, it's basically a recursive call.
+
+808
+00:26:54,320 --> 00:26:56,620
+Each new output depends on the previous one.
+
+809
+00:26:56,620 --> 00:26:58,440
+So, that's why it can't be parallelized.
+
+810
+00:26:58,440 --> 00:26:59,840
+It has to be executed sequentially.
+
+811
+00:26:59,840 --> 00:27:03,360
+You have to get the result from the first step before you can use it to calculate the next one.
+
+812
+00:27:03,360 --> 00:27:04,030
+the second step.
+
+813
+00:27:04,030 --> 00:27:06,810
+and only after the result of the second step is computed, can you use it for the next step.
+
+814
+00:27:06,810 --> 00:27:09,720
+The calculation for the third step is a serial, interdependent process.
+
+815
+00:27:09,720 --> 00:27:11,460
+This means there's a dependency between the steps.
+
+816
+00:27:11,460 --> 00:27:13,440
+This inherent dependency means it cannot be parallelized.
+
+817
+00:27:13,440 --> 00:27:15,180
+This makes it extremely inefficient.
+
+818
+00:27:18,030 --> 00:27:21,530
+So, in essence, RNNs solved the problem of how to pass context along a sequence.
+
+819
+00:27:21,530 --> 00:27:22,270
+this one problem.
+
+820
+00:27:22,270 --> 00:27:23,720
+through a memory unit.
+
+821
+00:27:23,720 --> 00:27:25,660
+However, it didn't completely solve the problem.
+
+822
+00:27:25,660 --> 00:27:27,540
+the memory problem in long sequences.
+
+823
+00:27:27,540 --> 00:27:28,800
+and the corresponding optimizations.
+
+824
+00:27:28,800 --> 00:27:32,040
+Another issue was the problem of training efficiency, which also remained unresolved.
+
+825
+00:27:32,040 --> 00:27:33,800
+So, these are some of its shortcomings.
+
+826
+00:27:33,800 --> 00:27:36,000
+So, RNNs basically laid the foundation for...
+
+827
+00:27:36,000 --> 00:27:38,240
+Basically, this is the approach to handling sequence tasks.
+
+828
+00:27:38,240 --> 00:27:39,620
+It's a core concept.
+
+829
+00:27:39,620 --> 00:27:41,340
+And all the various models that came after,
+
+830
+00:27:41,340 --> 00:27:43,800
+all built upon the RNN's core idea and made certain optimizations.
+
+831
+00:27:43,800 --> 00:27:45,380
+in an attempt to solve these problems.
+
+832
+00:27:45,380 --> 00:27:46,830
+including the Transformer.
+
+833
+00:27:46,830 --> 00:27:50,670
+So, first off, LSTM and GRU were developed to tackle these issues.
+
+834
+00:27:50,670 --> 00:27:52,300
+the problem of long-term dependencies.
+
+835
+00:27:52,300 --> 00:27:54,460
+They both introduced some gating mechanisms.
+
+836
+00:27:54,460 --> 00:27:56,140
+This also keeps the gradient under control.
+
+837
+00:27:56,140 --> 00:27:57,740
+Basically, it's about selectively retaining information.
+
+838
+00:27:57,740 --> 00:27:59,590
+You don't have to remember every single thing, right?
+
+839
+00:27:59,590 --> 00:28:01,130
+and forget some things appropriately.
+
+840
+00:28:01,130 --> 00:28:03,390
+Next up, we have the encoder-decoder.
+
+841
+00:28:03,390 --> 00:28:06,150
+This means the lengths of the input and output sequences can be vastly different.
+
+842
+00:28:06,150 --> 00:28:10,230
+So, we can organize these processes of reading and writing into a structure.
+
+843
+00:28:10,230 --> 00:28:11,090
+the complete sequence.
+
+844
+00:28:11,090 --> 00:28:12,970
+transforming it into a sequence-to-sequence mapping.
+
+845
+00:28:12,970 --> 00:28:15,580
+This is essentially the 'sequence-to-sequence' problem.
+
+846
+00:28:15,580 --> 00:28:17,300
+A classic example of this is machine translation.
+
+847
+00:28:17,300 --> 00:28:19,940
+And for machine translation, it's not a word-for-word translation, you know.
+
+848
+00:28:19,940 --> 00:28:22,160
+Unlike the part-of-speech tagging example we just saw,
+
+849
+00:28:22,160 --> 00:28:24,280
+What it actually does is understand the entire sentence first.
+
+850
+00:28:24,280 --> 00:28:25,920
+and then translates it into another sentence.
+
+851
+00:28:25,920 --> 00:28:27,240
+First, it performs an encoding.
+
+852
+00:28:27,240 --> 00:28:28,080
+First, it encodes it for you,
+
+853
+00:28:28,080 --> 00:28:29,200
+and then decode it for you.
+
+854
+00:28:29,200 --> 00:28:31,020
+So, this means the length of its input and output...
+
+855
+00:28:31,020 --> 00:28:32,300
+So, the English text could be exceptionally long.
+
+856
+00:28:32,300 --> 00:28:34,680
+In Chinese, you can just use an idiom to sum it up.
+
+857
+00:28:34,680 --> 00:28:36,520
+This is a very likely scenario.
+
+858
+00:28:36,520 --> 00:28:38,380
+This was incredibly difficult to achieve in the past.
+
+859
+00:28:38,380 --> 00:28:40,820
+Now, if we use this architecture, things get a little simpler.
+
+860
+00:28:40,820 --> 00:28:41,880
+And we'll find that...
+
+861
+00:28:41,880 --> 00:28:44,480
+But the thing is, these methods still can't fundamentally solve the problem of longer-term memory.
+
+862
+00:28:44,480 --> 00:28:45,810
+It only helps to alleviate the problem.
+
+863
+00:28:45,810 --> 00:28:47,250
+And this, in turn, led to the development of...
+
+864
+00:28:47,250 --> 00:28:50,030
+The core issue is still that you're trying to cram all the information
+
+865
+00:28:50,030 --> 00:28:51,750
+For sequences of variable length,
+
+866
+00:28:51,750 --> 00:28:54,909
+and compress all of it into a fixed-length state.
+
+867
+00:28:54,909 --> 00:28:57,769
+So, to solve this, we later introduced the attention mechanism.
+
+868
+00:28:57,769 --> 00:28:58,749
+And that is attention.
+
+869
+00:28:58,749 --> 00:29:00,389
+But this isn't self-attention yet.
+
+870
+00:29:00,389 --> 00:29:01,429
+So, what about the attention mechanism?
+
+871
+00:29:01,429 --> 00:29:04,109
+Basically, it helps you understand how everything connects with each other.
+
+872
+00:29:04,109 --> 00:29:07,570
+It helps you, uh, understand the entire input sequence.
+
+873
+00:29:07,570 --> 00:29:09,690
+This helps to alleviate that bottleneck.
+
+874
+00:29:09,690 --> 00:29:11,890
+And later on, this led to the development of the Transformer.
+
+875
+00:29:11,890 --> 00:29:14,030
+But the Transformer, on the other hand, uses self-attention.
+
+876
+00:29:14,030 --> 00:29:15,870
+It addresses the problem within a single sentence,
+
+877
+00:29:15,870 --> 00:29:17,090
+within itself
+
+878
+00:29:17,090 --> 00:29:19,670
+Every word needs to understand its relationship with every other word.
+
+879
+00:29:19,670 --> 00:29:21,420
+Let's take a look at the relationship between them.
+
+880
+00:29:21,420 --> 00:29:22,900
+So in this way, it doesn't actually depend on it either.
+
+881
+00:29:22,900 --> 00:29:24,380
+And it brought another added benefit.
+
+882
+00:29:24,380 --> 00:29:26,180
+So, it allows for parallel computation, right?
+
+883
+00:29:26,180 --> 00:29:28,100
+So, it's no longer advancing through cycles.
+
+884
+00:29:28,100 --> 00:29:29,450
+It gets the whole picture right from the start.
+
+885
+00:29:29,450 --> 00:29:32,750
+And on top of that, if every single word has to be connected to all the other words,
+
+886
+00:29:32,750 --> 00:29:35,250
+Then I don't need to rely on your previous result anymore.
+
+887
+00:29:35,250 --> 00:29:38,120
+Each word can just act as its own spy, independently.
+
+888
+00:29:38,120 --> 00:29:39,520
+And then, when we get to the Transformer...
+
+889
+00:29:39,520 --> 00:29:41,440
+We'll also break that down and explain it in detail for you.
+
+890
+00:29:42,600 --> 00:29:45,120
+Finally, let's wrap up with a summary of the RNN architecture.
+
+891
+00:29:45,120 --> 00:29:46,340
+So, what exactly did the RNN do?
+
+892
+00:29:46,340 --> 00:29:49,610
+Essentially, it uses the same set of parameters to process sequences of varying lengths.
+
+893
+00:29:49,610 --> 00:29:52,690
+The network then begins to recursively update itself along each timestep.
+
+894
+00:29:52,690 --> 00:29:55,229
+and the context is also unified for the overall classification.
+
+895
+00:29:55,229 --> 00:29:58,029
+as well as tasks like sequence labeling and text generation.
+
+896
+00:29:58,029 --> 00:29:59,749
+All of these can be handled by this single architecture.
+
+897
+00:29:59,749 --> 00:30:02,000
+So, it basically established the framework for sequence modeling.
+
+898
+00:30:02,000 --> 00:30:03,900
+ushering in the era of end-to-end training frameworks.
+
+899
+00:30:03,900 --> 00:30:06,920
+This allowed everyone to build upon its ideas and make further advancements.
+
+900
+00:30:06,920 --> 00:30:10,040
+However, it didn't solve the problem of long-range dependencies.
+
+901
+00:30:10,040 --> 00:30:13,870
+And of course, the vanishing and exploding gradient problems are the core issues that come with it.
+
+902
+00:30:13,870 --> 00:30:17,270
+It uses a fixed-length vector to maintain this state.
+
+903
+00:30:17,270 --> 00:30:18,750
+So, this is a problem that it didn't solve.
+
+904
+00:30:18,750 --> 00:30:21,270
+Another thing is its step-by-step inference approach.
+
+905
+00:30:21,270 --> 00:30:23,230
+This also makes it impossible to parallelize the computations.
+
+906
+00:30:23,230 --> 00:30:26,330
+This inability to parallelize makes the training process quite inefficient.
+
+907
+00:30:26,330 --> 00:30:29,750
+So, RNNs defined the fundamental problem of sequence modeling.
+
+908
+00:30:29,750 --> 00:30:31,990
+So, it established the fundamental paradigm for us.
+
+909
+00:30:31,990 --> 00:30:34,310
+So, from this point on, the focus was really on continuously improving it.
+
+910
+00:30:34,310 --> 00:30:35,150
+So, in the next lesson,
+
+911
+00:30:35,150 --> 00:30:38,900
+So, let's first take a look at LSTM and GRU.
+
+912
+00:30:38,900 --> 00:30:41,240
+This was a direct modification of the RNN.
+
+913
+00:30:41,240 --> 00:30:42,460
+So, it's a direct evolution of the RNN.
+
+914
+00:30:42,460 --> 00:30:44,260
+When you have a state with a fixed dimension,
+
+915
+00:30:44,260 --> 00:30:47,010
+when it can't remember information from further back in the sequence,
+
+916
+00:30:47,010 --> 00:30:50,280
+So, they introduced gating mechanisms to alleviate this problem.

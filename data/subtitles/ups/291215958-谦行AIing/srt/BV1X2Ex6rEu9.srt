@@ -1,0 +1,1851 @@
+1
+00:00:00,000 --> 00:00:00,760
+Vamos dar uma olhada
+
+2
+00:00:00,760 --> 00:00:03,320
+na técnica de treinamento que até mesmo os Transformers precisam usar:
+
+3
+00:00:03,320 --> 00:00:04,230
+A normalização.
+
+4
+00:00:04,230 --> 00:00:06,110
+No vídeo anterior, eu lhes apresentei a
+
+5
+00:00:06,110 --> 00:00:08,790
+inicialização dos parâmetros da matriz do modelo usando He.
+
+6
+00:00:08,790 --> 00:00:12,720
+Isso pode manter a propagação do sinal estável entre as camadas do modelo.
+
+7
+00:00:12,720 --> 00:00:14,600
+para que, no início do treinamento,
+
+8
+00:00:14,600 --> 00:00:17,900
+não ocorra o problema de gradiente evanescente ou explosivo.
+
+9
+00:00:17,900 --> 00:00:20,940
+A inicialização só resolve a primeira etapa, mas sabemos que o modelo não é treinado apenas uma vez.
+
+10
+00:00:20,940 --> 00:00:22,740
+É dividido em várias rodadas.
+
+11
+00:00:22,740 --> 00:00:25,400
+E a inicialização só serve para a primeira vez.
+
+12
+00:00:25,400 --> 00:00:27,760
+Depois, à medida que avançamos com o gradiente descendente,
+
+13
+00:00:27,760 --> 00:00:30,070
+modificando constantemente os parâmetros de peso.
+
+14
+00:00:30,070 --> 00:00:30,870
+Nesse momento,
+
+15
+00:00:30,870 --> 00:00:34,030
+a distribuição do modelo, ou seja, a distribuição dos parâmetros, já se desviou.
+
+16
+00:00:34,030 --> 00:00:36,070
+Se não houver qualquer interferência
+
+17
+00:00:36,070 --> 00:00:38,540
+ocorrerá o fenômeno de mudança interna das covariáveis.
+
+18
+00:00:38,540 --> 00:00:40,060
+Uma vez que esse fenômeno ocorra,
+
+19
+00:00:40,060 --> 00:00:41,900
+A distribuição pode ser observada, certo?
+
+20
+00:00:41,900 --> 00:00:43,260
+À medida que o modelo é treinado,
+
+21
+00:00:43,260 --> 00:00:45,830
+sua distribuição passa por muitas mudanças.
+
+22
+00:00:45,830 --> 00:00:47,230
+A inicialização só cuida do primeiro passo, depois que essa situação acontece,
+
+23
+00:00:47,230 --> 00:00:49,390
+a dificuldade do nosso treinamento aumenta muito.
+
+24
+00:00:49,390 --> 00:00:51,610
+Se os valores de ativação de uma camada forem muito grandes,
+
+25
+00:00:51,610 --> 00:00:53,010
+Os gradientes também se tornam excessivamente grandes.
+
+26
+00:00:53,010 --> 00:00:56,210
+O treinamento divergirá, e as escalas de diferentes recursos serão ampliadas.
+
+27
+00:00:56,210 --> 00:00:59,139
+Alguns são 1, outros são 100, e a função de perda...
+
+28
+00:00:59,139 --> 00:01:01,619
+A direção fica muito fácil de errar.
+
+29
+00:01:01,619 --> 00:01:03,639
+O otimizador vai começar a oscilar.
+
+30
+00:01:03,639 --> 00:01:05,400
+Ora mudando para valores muito grandes,
+
+31
+00:01:05,400 --> 00:01:07,610
+Ora o peso é ajustado para ser muito pequeno.
+
+32
+00:01:07,610 --> 00:01:11,390
+Isto é particularmente verdade quando os valores de ativação são levados a extremos,
+
+33
+00:01:11,390 --> 00:01:13,830
+caindo na zona de saturação da função de ativação.
+
+34
+00:01:13,830 --> 00:01:16,030
+Na zona de saturação, o gradiente está próximo de zero.
+
+35
+00:01:16,030 --> 00:01:17,670
+Assim, o gradiente não pode ser retropropagado.
+
+36
+00:01:17,670 --> 00:01:20,350
+Nesse caso, a descida do gradiente praticamente para.
+
+37
+00:01:20,350 --> 00:01:22,580
+Os parâmetros não podem ser atualizados.
+
+38
+00:01:22,580 --> 00:01:23,540
+Por exemplo,
+
+39
+00:01:23,540 --> 00:01:25,380
+Tomemos o exemplo do Sigma, o mais típico.
+
+40
+00:01:25,380 --> 00:01:27,000
+Seja dizendo que sabemos que entre -1
+
+41
+00:01:27,000 --> 00:01:29,900
+e 1 é a sua zona sensível.
+
+42
+00:01:29,900 --> 00:01:31,380
+Se ultrapassar os 10,
+
+43
+00:01:31,380 --> 00:01:33,430
+Podem olhar para a sua derivada.
+
+44
+00:01:33,430 --> 00:01:35,590
+Depois de ultrapassar 10, a derivada aproxima-se de 0.
+
+45
+00:01:35,590 --> 00:01:38,060
+Nesse momento, é chamada de sua zona de saturação.
+
+46
+00:01:38,060 --> 00:01:39,140
+Quanto mais plana for a curva,
+
+47
+00:01:39,140 --> 00:01:40,700
+mais a derivada se aproxima de zero.
+
+48
+00:01:40,700 --> 00:01:41,740
+Na retropropagação,
+
+49
+00:01:41,740 --> 00:01:43,340
+o gradiente será multiplicado por essa derivada.
+
+50
+00:01:43,340 --> 00:01:45,840
+Então, 1 multiplicado por 0 será quase igual a 0.
+
+51
+00:01:45,840 --> 00:01:47,360
+Assim, os parâmetros não poderão ser atualizados.
+
+52
+00:01:47,360 --> 00:01:50,780
+Mas o ReLU não tem o problema da saturação na região direita.
+
+53
+00:01:50,780 --> 00:01:52,320
+Porque, quando a entrada é maior que zero,
+
+54
+00:01:52,320 --> 00:01:53,740
+a derivada do ReLU é sempre um.
+
+55
+00:01:53,740 --> 00:01:56,660
+Esta é também uma razão importante pela qual ele pode substituir o Sigmoid.
+
+56
+00:01:56,660 --> 00:01:58,820
+No entanto, a função ReLu, quando a entrada é menor que zero,
+
+57
+00:01:58,820 --> 00:02:00,340
+a saída também será sempre zero.
+
+58
+00:02:00,340 --> 00:02:01,340
+A derivada também é zero.
+
+59
+00:02:01,340 --> 00:02:02,920
+Então o neurônio se desativa.
+
+60
+00:02:02,920 --> 00:02:05,880
+É o que chamamos de neurônio morto.
+
+61
+00:02:05,880 --> 00:02:07,420
+Então, como resolvemos isso?
+
+62
+00:02:07,420 --> 00:02:10,259
+Já que o problema reside no desvio da média e da variância,
+
+63
+00:02:10,259 --> 00:02:12,979
+se, após cada camada realizar uma transformação linear,
+
+64
+00:02:12,979 --> 00:02:15,119
+reajustamos a média das ativações para zero
+
+65
+00:02:15,119 --> 00:02:16,379
+e o desvio padrão para um,
+
+66
+00:02:16,379 --> 00:02:18,700
+conseguiremos resolver o problema pela raiz.
+
+67
+00:02:18,700 --> 00:02:20,020
+Mas na estatística,
+
+68
+00:02:20,020 --> 00:02:22,880
+normalização e padronização são dois conceitos diferentes.
+
+69
+00:02:22,880 --> 00:02:27,010
+A normalização geralmente se refere à escala min-max para um intervalo de 0 a 1.
+
+70
+00:02:27,010 --> 00:02:29,310
+Já a padronização, que mencionamos agora,
+
+71
+00:02:29,310 --> 00:02:30,770
+é o que transforma sua média em zero,
+
+72
+00:02:30,770 --> 00:02:32,710
+e o desvio padrão em um.
+
+73
+00:02:32,710 --> 00:02:36,189
+Mas a comunidade de aprendizagem profunda, desde 2015,
+
+74
+00:02:36,189 --> 00:02:37,949
+com a publicação do artigo sobre a normalização por lotes,
+
+75
+00:02:37,949 --> 00:02:39,929
+passou a chamá-la de normalização.
+
+76
+00:02:39,929 --> 00:02:40,929
+Então, já era normalizado.
+
+77
+00:02:40,929 --> 00:02:43,560
+Todas as variantes posteriores adotaram esse nome.
+
+78
+00:02:43,560 --> 00:02:45,400
+Alguns dizem que, no contexto do aprendizado profundo,
+
+79
+00:02:45,400 --> 00:02:47,520
+Mencionamos a normalização, o que fazemos
+
+80
+00:02:47,520 --> 00:02:48,820
+na verdade, é a padronização.
+
+81
+00:02:48,820 --> 00:02:51,079
+Ou seja, pegamos um conjunto de dados, subtraímos a média,
+
+82
+00:02:51,079 --> 00:02:52,479
+e depois dividimos pelo desvio padrão.
+
+83
+00:02:52,479 --> 00:02:56,199
+Aí eles se tornam uma distribuição com média zero e variância um.
+
+84
+00:02:56,199 --> 00:02:58,790
+Subtraímos a média do valor e dividimos pelo desvio padrão.
+
+85
+00:02:58,790 --> 00:02:59,710
+Vamos dar uma olhada.
+
+86
+00:02:59,710 --> 00:03:01,570
+Se tivermos um conjunto de valores de ativação X,
+
+87
+00:03:01,570 --> 00:03:03,850
+a média será 52,88.
+
+88
+00:03:03,850 --> 00:03:05,730
+Porque a dispersão é assim.
+
+89
+00:03:05,730 --> 00:03:07,570
+O desvio padrão é 12,97.
+
+90
+00:03:07,570 --> 00:03:09,770
+O primeiro passo é subtrair a média.
+
+91
+00:03:09,770 --> 00:03:11,010
+obtemos um valor assim.
+
+92
+00:03:11,010 --> 00:03:12,180
+O segundo passo é dividir pelo desvio padrão.
+
+93
+00:03:12,180 --> 00:03:13,740
+Depois de dividir pelo desvio padrão,
+
+94
+00:03:13,740 --> 00:03:15,780
+Nesse caso, é como se tivéssemos essa coluna.
+
+95
+00:03:15,780 --> 00:03:18,040
+Nós a padronizamos.
+
+96
+00:03:18,040 --> 00:03:19,649
+Podemos dar uma olhada na distribuição.
+
+97
+00:03:19,649 --> 00:03:23,519
+Na verdade, antes e depois da normalização,
+
+98
+00:03:23,519 --> 00:03:25,239
+a distribuição não muda de forma alguma.
+
+99
+00:03:25,239 --> 00:03:25,779
+É todo o processo?
+
+100
+00:03:25,779 --> 00:03:28,319
+É apenas que as coordenadas
+
+101
+00:03:28,319 --> 00:03:30,600
+podem ter mudado um pouco.
+
+102
+00:03:30,600 --> 00:03:32,480
+Os valores numéricos mudaram.
+
+103
+00:03:32,480 --> 00:03:35,000
+Mas a tendência da sua distribuição é exatamente a mesma.
+
+104
+00:03:35,000 --> 00:03:37,380
+Todo o processo envolveu apenas translação e escala.
+
+105
+00:03:37,380 --> 00:03:39,130
+O formato da distribuição não mudou.
+
+106
+00:03:39,130 --> 00:03:42,610
+Por exemplo, aquele valor que era o maior antes, depois da normalização, uhm...
+
+107
+00:03:42,610 --> 00:03:45,769
+O que era o menor antes, depois da normalização, continua sendo o menor valor.
+
+108
+00:03:45,769 --> 00:03:48,609
+Nesse caso, é apenas a forma como descrevemos o significado que muda.
+
+109
+00:03:48,609 --> 00:03:52,110
+Pode-se dizer que está 2,33 desvios padrão acima da média.
+
+110
+00:03:52,110 --> 00:03:55,490
+Este está um pouco abaixo da média, 1,5 desvios padrão.
+
+111
+00:03:55,490 --> 00:03:56,990
+É assim que o descrevemos.
+
+112
+00:03:56,990 --> 00:04:00,280
+É por isso que as mudanças de valores numéricos não afetam o treinamento.
+
+113
+00:04:00,280 --> 00:04:03,580
+Porque nossa rede neural inteira aprende os padrões nos dados,
+
+114
+00:04:03,580 --> 00:04:05,260
+e não seus valores absolutos.
+
+115
+00:04:05,260 --> 00:04:08,980
+E a saída final da rede neural depende da capacidade de transformação combinada de todas as camadas.
+
+116
+00:04:08,980 --> 00:04:11,950
+Não depende da escala de representação usada em uma camada intermediária.
+
+117
+00:04:11,950 --> 00:04:13,070
+Por exemplo, é como a temperatura.
+
+118
+00:04:13,070 --> 00:04:14,990
+Mudamos de Celsius para Fahrenheit.
+
+119
+00:04:14,990 --> 00:04:16,330
+Os números também mudaram completamente.
+
+120
+00:04:16,330 --> 00:04:19,090
+No entanto, a relação entre quente e frio não mudou.
+
+121
+00:04:19,090 --> 00:04:21,539
+Em outras palavras, o que realmente muda?
+
+122
+00:04:21,539 --> 00:04:23,699
+Na verdade, desde que seus valores numéricos mudem,
+
+123
+00:04:23,699 --> 00:04:25,799
+Se o modelo que ele aprendeu estiver correto,
+
+124
+00:04:25,799 --> 00:04:27,680
+os parâmetros correspondentes mudam,
+
+125
+00:04:27,680 --> 00:04:29,240
+os parâmetros de peso mudam,
+
+126
+00:04:29,240 --> 00:04:31,120
+o valor de saída ainda pode ser mantido estável.
+
+127
+00:04:32,200 --> 00:04:34,390
+Portanto, isso, na verdade, não afetará o treinamento.
+
+128
+00:04:34,390 --> 00:04:35,990
+Ou seja, não fará com que o treinamento piore.
+
+129
+00:04:35,990 --> 00:04:37,050
+Impedindo-o de aprender os padrões.
+
+130
+00:04:37,050 --> 00:04:38,620
+No entanto, pode estabilizar o treinamento.
+
+131
+00:04:38,620 --> 00:04:40,880
+Então, por que normalizar?
+
+132
+00:04:40,880 --> 00:04:43,700
+Então, como a normalização é feita especificamente em redes neurais?
+
+133
+00:04:43,700 --> 00:04:45,840
+A normalização, em geral, envolve duas etapas.
+
+134
+00:04:45,840 --> 00:04:47,280
+Subtraímos a média e dividimos pelo desvio padrão.
+
+135
+00:04:47,280 --> 00:04:49,800
+Mas, para usá-la em redes neurais,
+
+136
+00:04:49,800 --> 00:04:53,100
+Vamos ver de onde vêm essa média e o desvio padrão.
+
+137
+00:04:53,100 --> 00:04:56,470
+Por exemplo, em cada treinamento, usamos um mini-lote.
+
+138
+00:04:56,470 --> 00:04:58,810
+Digamos que um lote tenha 128 amostras.
+
+139
+00:04:58,810 --> 00:05:02,460
+Cada amostra pode ter 256 características dimensionais.
+
+140
+00:05:02,460 --> 00:05:05,080
+Ou seja, um dado possui 256 características.
+
+141
+00:05:05,080 --> 00:05:08,460
+Assim, podemos formar uma matriz de 128 por 256.
+
+142
+00:05:08,460 --> 00:05:10,140
+Para cada coluna desta matriz,
+
+143
+00:05:10,140 --> 00:05:11,640
+que na verdade é uma característica,
+
+144
+00:05:11,640 --> 00:05:13,600
+usamos essas 128 amostras
+
+145
+00:05:13,600 --> 00:05:15,200
+calculamos a sua média e desvio padrão.
+
+146
+00:05:15,200 --> 00:05:17,100
+Para esta coluna, fazemos a normalização.
+
+147
+00:05:17,100 --> 00:05:19,769
+Isto é o que chamamos de normalização p.
+
+148
+00:05:19,769 --> 00:05:22,690
+Então, por isso, é chamado de b, e o n de batch normalization.
+
+149
+00:05:22,690 --> 00:05:24,210
+Nesse momento, podemos ver que
+
+150
+00:05:24,210 --> 00:05:26,490
+No fim das contas, não estamos simplesmente realizando operações sobre ele.
+
+151
+00:05:26,490 --> 00:05:28,500
+Na verdade, adicionamos uma constante muito pequena
+
+152
+00:05:28,500 --> 00:05:29,920
+para evitar que o denominador se torne zero.
+
+153
+00:05:29,920 --> 00:05:30,820
+Nesta etapa,
+
+154
+00:05:30,820 --> 00:05:33,300
+Na verdade, os valores de ativação de cada coluna são ajustados para ter uma média de zero.
+
+155
+00:05:33,300 --> 00:05:34,340
+Hum, uma média de zero e uma variância de um.
+
+156
+00:05:34,340 --> 00:05:36,299
+Mas só dar este passo ainda não é o suficiente.
+
+157
+00:05:36,299 --> 00:05:37,499
+Porque, ao fazer isso,
+
+158
+00:05:37,499 --> 00:05:40,879
+todas as ativações das camadas seriam forçadas a ter a mesma distribuição.
+
+159
+00:05:40,879 --> 00:05:45,010
+A rede não conseguiria fazer com que a saída de uma camada fosse um pouco maior ou menor.
+
+160
+00:05:45,010 --> 00:05:46,730
+aprender algumas dessas representações.
+
+161
+00:05:46,730 --> 00:05:49,090
+Isso limitaria a capacidade de representação da rede.
+
+162
+00:05:49,090 --> 00:05:51,370
+Então, depois de fazermos isso,
+
+163
+00:05:51,370 --> 00:05:53,270
+Além disso, adicionamos mais dois parâmetros para aprendizagem.
+
+164
+00:05:53,270 --> 00:05:55,110
+Sim, sim, para escalá-lo.
+
+165
+00:05:55,110 --> 00:05:56,450
+A multiplicação é para escalá-lo.
+
+166
+00:05:56,450 --> 00:05:58,789
+A adição é para deslocá-lo.
+
+167
+00:05:58,789 --> 00:06:00,149
+Para que faça essa operação.
+
+168
+00:06:00,149 --> 00:06:02,609
+Os dois parâmetros são gerados durante o processo de aprendizagem.
+
+169
+00:06:02,609 --> 00:06:05,849
+Assim, ele pode tanto estar em conformidade com a padronização,
+
+170
+00:06:05,849 --> 00:06:08,849
+quanto ter algumas pequenas diferenças entre cada um,
+
+171
+00:06:08,849 --> 00:06:11,419
+o que facilita para a rede aprender as características intermediárias.
+
+172
+00:06:11,419 --> 00:06:13,019
+Muitos alunos podem estar curiosos
+
+173
+00:06:13,019 --> 00:06:15,059
+Você padroniza e depois o coloca de volta
+
+174
+00:06:15,059 --> 00:06:16,599
+Então, por que você faria isso?
+
+175
+00:06:16,599 --> 00:06:19,060
+Na verdade, isso é para padronizar primeiro para 0-1.
+
+176
+00:06:19,060 --> 00:06:21,400
+É como dar ao otimizador um ponto de partida fixo.
+
+177
+00:06:21,400 --> 00:06:23,640
+Caso contrário, o ponto de partida do otimizador continuaria mudando.
+
+178
+00:06:23,640 --> 00:06:24,660
+não pode mais aprender.
+
+179
+00:06:24,660 --> 00:06:26,220
+Depois que o otimizador está pronto,
+
+180
+00:06:26,220 --> 00:06:28,420
+os graus de liberdade restantes são entregues a esses dois parâmetros.
+
+181
+00:06:28,420 --> 00:06:30,530
+para o modelo aprender.
+
+182
+00:06:30,530 --> 00:06:31,810
+Então, na hora da inferência,
+
+183
+00:06:31,810 --> 00:06:33,210
+Sabemos que o treinamento não é um problema.
+
+184
+00:06:33,210 --> 00:06:34,430
+cada vez é um lote.
+
+185
+00:06:34,430 --> 00:06:36,450
+Como fazemos quando precisamos prever de verdade?
+
+186
+00:06:36,450 --> 00:06:38,380
+Eu só prevejo uma amostra por vez.
+
+187
+00:06:38,380 --> 00:06:40,220
+Nesses casos, na verdade, é durante o treinamento
+
+188
+00:06:40,220 --> 00:06:42,780
+que mantemos simultaneamente um conjunto de médias móveis.
+
+189
+00:06:42,780 --> 00:06:43,620
+Na inferência,
+
+190
+00:06:43,620 --> 00:06:45,620
+basta usar o que foi acumulado durante o treinamento.
+
+191
+00:06:45,620 --> 00:06:48,140
+Essa estatística global serve.
+
+192
+00:06:48,140 --> 00:06:49,220
+Já falamos bastante, né?
+
+193
+00:06:49,220 --> 00:06:50,880
+Então, vamos ver como ele é usado.
+
+194
+00:06:50,880 --> 00:06:53,320
+Na verdade, é muito simples de usar com o PyTorch.
+
+195
+00:06:53,320 --> 00:06:55,720
+É simplesmente depois de uma camada linear e outra camada linear.
+
+196
+00:06:55,720 --> 00:06:58,300
+Basta inserir uma camada de normalização em lote antes da função de ativação.
+
+197
+00:06:58,300 --> 00:07:00,090
+Basta fazer a normalização em lote.
+
+198
+00:07:00,090 --> 00:07:02,410
+Se quisermos escrever um MLP de 6 camadas,
+
+199
+00:07:02,410 --> 00:07:05,250
+Vamos dar uma olhada, depois de cada camada linear,
+
+200
+00:07:05,250 --> 00:07:06,210
+Esta é a camada linear, certo?
+
+201
+00:07:06,210 --> 00:07:08,710
+Aqui, usamos explicitamente o método Kaiming.
+
+202
+00:07:08,710 --> 00:07:11,850
+É a inicialização de Kaiming, certo?
+
+203
+00:07:11,850 --> 00:07:13,420
+O viés é todo zero.
+
+204
+00:07:13,420 --> 00:07:16,520
+Finalmente, podemos ver o que está dentro das camadas adicionadas.
+
+205
+00:07:16,520 --> 00:07:17,840
+Adicionei uma camada linear.
+
+206
+00:07:17,840 --> 00:07:19,240
+Essa é a camada de pré-processamento P.
+
+207
+00:07:19,240 --> 00:07:21,650
+É só adicionar a função de ativação e pronto.
+
+208
+00:07:21,650 --> 00:07:24,810
+Porque se houver várias camadas, repetimos o processo várias vezes.
+
+209
+00:07:24,810 --> 00:07:27,350
+É muito simples de usar dessa forma.
+
+210
+00:07:27,350 --> 00:07:28,929
+Se fizermos uma comparação:
+
+211
+00:07:28,929 --> 00:07:29,889
+Podemos dar uma olhada.
+
+212
+00:07:29,889 --> 00:07:32,129
+Depois de adicionar o Batch Normalization,
+
+213
+00:07:32,129 --> 00:07:35,940
+o desvio padrão dos valores de ativação de cada camada muda com o treinamento.
+
+214
+00:07:35,940 --> 00:07:37,900
+Por exemplo, na primeira camada,
+
+215
+00:07:37,900 --> 00:07:42,800
+se não houver normalização em lote, o valor é 0,85, e na sexta camada, torna-se 0,91.
+
+216
+00:07:42,800 --> 00:07:44,010
+Isso é apenas a primeira vez.
+
+217
+00:07:44,010 --> 00:07:45,090
+Parece que a mudança não é grande coisa.
+
+218
+00:07:45,090 --> 00:07:46,790
+Isso porque há uma inicialização do Kaiming.
+
+219
+00:07:46,790 --> 00:07:49,630
+Quando chegamos à 50ª rodada, olha só.
+
+220
+00:07:49,630 --> 00:07:51,410
+A mudança é cada vez maior.
+
+221
+00:07:51,410 --> 00:07:52,070
+Não é?
+
+222
+00:07:52,070 --> 00:07:52,940
+Relativamente
+
+223
+00:07:52,940 --> 00:07:55,860
+Mas se fizermos a normalização em lote,
+
+224
+00:07:55,860 --> 00:07:57,540
+Podemos ver que, a partir da segunda rodada,
+
+225
+00:07:57,540 --> 00:08:00,740
+Basicamente, ele já está, na 50ª rodada,
+
+226
+00:08:00,740 --> 00:08:01,700
+Basicamente, já se estabilizou.
+
+227
+00:08:01,700 --> 00:08:02,820
+Não vai mais mudar.
+
+228
+00:08:02,820 --> 00:08:03,530
+Não é mesmo?
+
+229
+00:08:03,530 --> 00:08:06,890
+Então, a normalização permite que a variância seja preservada na primeira etapa,
+
+230
+00:08:06,890 --> 00:08:10,010
+estendendo essa preservação para todo o processo de treinamento.
+
+231
+00:08:10,010 --> 00:08:13,820
+Assim, evitamos problemas como o desaparecimento ou a explosão do gradiente.
+
+232
+00:08:13,820 --> 00:08:17,340
+Isso é crucial para o treinamento de redes neurais profundas.
+
+233
+00:08:17,340 --> 00:08:19,160
+Claro, isso é a normalização de batch.
+
+234
+00:08:19,160 --> 00:08:21,620
+Ela faz uma normalização no nível do batch.
+
+235
+00:08:21,620 --> 00:08:23,950
+Ou seja, diferentes amostras, mesma característica.
+
+236
+00:08:23,950 --> 00:08:26,290
+Por exemplo, se estivermos treinando uma lista de alunos,
+
+237
+00:08:26,290 --> 00:08:28,250
+então todos os dados seriam para a idade dos alunos.
+
+238
+00:08:28,250 --> 00:08:29,630
+o sexo do aluno,
+
+239
+00:08:29,630 --> 00:08:31,670
+as notas do aluno em cada disciplina.
+
+240
+00:08:31,670 --> 00:08:34,289
+Todas as notas de português são normalizadas.
+
+241
+00:08:34,289 --> 00:08:35,969
+Mas por que é assim?
+
+242
+00:08:35,969 --> 00:08:39,049
+É porque a ligação entre estas características é maior.
+
+243
+00:08:39,049 --> 00:08:40,140
+Certo?
+
+244
+00:08:40,140 --> 00:08:42,820
+Isso é ainda mais verdadeiro, especialmente na área de Visão Computacional.
+
+245
+00:08:42,820 --> 00:08:45,020
+Por exemplo, quando falarmos sobre CNNs mais tarde,
+
+246
+00:08:45,020 --> 00:08:46,860
+vocês saberão que, nas CNNs,
+
+247
+00:08:46,860 --> 00:08:50,490
+Tudo o que treinamos é para detectar padrões verticais que aparecem nas imagens.
+
+248
+00:08:50,490 --> 00:08:52,010
+Não importa se é uma imagem de um gato,
+
+249
+00:08:52,010 --> 00:08:53,530
+de um cachorro, ou de qualquer outra coisa.
+
+250
+00:08:53,530 --> 00:08:55,750
+Na verdade, o princípio da detecção de listras verticais é o mesmo.
+
+251
+00:08:55,750 --> 00:08:59,280
+Então, o que fazemos é encontrar as características comuns neste lote.
+
+252
+00:08:59,280 --> 00:09:01,700
+Assim, em um lote, pode haver 'n' amostras.
+
+253
+00:09:01,700 --> 00:09:04,520
+Normalizamos cada uma das suas características.
+
+254
+00:09:04,520 --> 00:09:06,130
+É a única operação necessária.
+
+255
+00:09:06,130 --> 00:09:08,090
+Nas tarefas de sequência,
+
+256
+00:09:08,090 --> 00:09:11,030
+Por exemplo, a típica tarefa de sequência, que é o processamento de linguagem natural,
+
+257
+00:09:11,030 --> 00:09:12,710
+onde um TOKEN é usado para representar as dimensões internas de um vetor,
+
+258
+00:09:12,710 --> 00:09:15,290
+e essas dimensões internas codificam coletivamente seu significado semântico.
+
+259
+00:09:15,290 --> 00:09:16,290
+Nesse momento,
+
+260
+00:09:16,290 --> 00:09:18,070
+digamos que temos três frases.
+
+261
+00:09:18,070 --> 00:09:20,150
+Por exemplo, “Eu gosto de estudar processamento de linguagem natural”.
+
+262
+00:09:20,150 --> 00:09:21,750
+A aprendizagem profunda mudou o mundo.
+
+263
+00:09:21,750 --> 00:09:23,380
+O tempo está ótimo hoje.
+
+264
+00:09:23,380 --> 00:09:24,820
+É o mesmo que este aqui.
+
+265
+00:09:24,820 --> 00:09:27,140
+Por exemplo, o primeiro token é sempre o primeiro token dele.
+
+266
+00:09:27,140 --> 00:09:28,930
+Eles não têm relação alguma entre si.
+
+267
+00:09:28,930 --> 00:09:31,210
+Pelo contrário, ou seja, a mesma amostra.
+
+268
+00:09:31,210 --> 00:09:33,570
+A relação entre o antes e o depois é muito forte.
+
+269
+00:09:33,570 --> 00:09:35,690
+Eu adoro estudar.
+
+270
+00:09:35,690 --> 00:09:37,880
+Neste caso, quando fazemos o lote
+
+271
+00:09:37,880 --> 00:09:40,980
+Na verdade, todos normalizam o primeiro TOKEN.
+
+272
+00:09:40,980 --> 00:09:42,080
+Faça o mesmo com o segundo.
+
+273
+00:09:42,080 --> 00:09:43,500
+Nesse caso, não seria razoável.
+
+274
+00:09:43,500 --> 00:09:44,840
+Na verdade, o que devemos fazer
+
+275
+00:09:44,840 --> 00:09:46,650
+é virá-lo e girá-lo 90 graus.
+
+276
+00:09:46,650 --> 00:09:48,930
+Na verdade, isso é chamado de normalização de camada.
+
+277
+00:09:48,930 --> 00:09:50,030
+Para a mesma camada,
+
+278
+00:09:50,030 --> 00:09:51,630
+ou seja, para a mesma amostra,
+
+279
+00:09:51,630 --> 00:09:53,510
+todos os seus atributos entre si.
+
+280
+00:09:53,510 --> 00:09:56,970
+para todas as características de uma única amostra, realizamos uma normalização. E
+
+281
+00:09:56,970 --> 00:09:58,890
+o que é a normalização p?
+
+282
+00:09:58,890 --> 00:10:01,690
+Para uma característica comum entre n amostras,
+
+283
+00:10:01,690 --> 00:10:04,620
+são notas de matemática, de todos os alunos.
+
+284
+00:10:04,620 --> 00:10:06,980
+Para este lote, as notas de matemática de todos os alunos,
+
+285
+00:10:06,980 --> 00:10:08,099
+vamos normalizá-las.
+
+286
+00:10:08,099 --> 00:10:09,059
+E o que é isso?
+
+287
+00:10:09,059 --> 00:10:11,399
+Para todos os tokens desta frase,
+
+288
+00:10:11,399 --> 00:10:13,139
+vamos entender isso como palavras por enquanto.
+
+289
+00:10:13,139 --> 00:10:14,539
+Quando chegarmos ao processamento de linguagem natural,
+
+290
+00:10:14,539 --> 00:10:17,140
+já vamos entender o que significa um token.
+
+291
+00:10:17,140 --> 00:10:19,440
+Certo? Para todos os tokens, faremos uma normalização.
+
+292
+00:10:19,440 --> 00:10:21,240
+Esta é, na verdade, a diferença entre os dois.
+
+293
+00:10:21,240 --> 00:10:23,020
+Depois de fazer isso,
+
+294
+00:10:23,020 --> 00:10:24,880
+A camada de normalização tem outra vantagem.
+
+295
+00:10:24,880 --> 00:10:26,420
+Ou seja, não depende mais do tamanho do lote.
+
+296
+00:10:26,420 --> 00:10:28,900
+Porque ele usa uma amostra de cada vez, né?
+
+297
+00:10:28,900 --> 00:10:31,390
+E quando fazemos a normalização por grupo,
+
+298
+00:10:31,390 --> 00:10:33,470
+Depende do número de amostras.
+
+299
+00:10:33,470 --> 00:10:37,579
+O número de amostras em cada lote é crucial, pois um número muito pequeno não é ideal.
+
+300
+00:10:37,579 --> 00:10:39,259
+Em cada camada normalizada,
+
+301
+00:10:39,259 --> 00:10:40,839
+Cada amostra é calculada independentemente.
+
+302
+00:10:40,839 --> 00:10:42,899
+Por isso, é mais conveniente.
+
+303
+00:10:42,899 --> 00:10:45,860
+Além disso, é naturalmente compatível com sequências de comprimento variável.
+
+304
+00:10:45,860 --> 00:10:47,820
+Porque sabemos que as frases e as frases entre si
+
+305
+00:10:47,820 --> 00:10:49,540
+não têm necessariamente o mesmo comprimento.
+
+306
+00:10:49,540 --> 00:10:50,910
+Isso tudo já aprendemos.
+
+307
+00:10:50,910 --> 00:10:53,950
+É possível que, quando estudarmos CNNs e fizermos alguns painéis,
+
+308
+00:10:53,950 --> 00:10:55,579
+perceberemos o porquê.
+
+309
+00:10:55,579 --> 00:10:57,699
+Claro, o comprimento das frases varia.
+
+310
+00:10:57,699 --> 00:10:58,659
+Isso também não importa.
+
+311
+00:10:58,659 --> 00:11:02,519
+Porque não importa se sua frase tem 10 ou 20 palavras,
+
+312
+00:11:02,519 --> 00:11:04,530
+eu normalizo todas essas palavras.
+
+313
+00:11:04,530 --> 00:11:08,120
+Nesse caso, o comprimento não importa.
+
+314
+00:11:08,120 --> 00:11:10,000
+É por isso que o Transformer
+
+315
+00:11:10,000 --> 00:11:13,880
+e todos os grandes modelos de linguagem que usamos depois, usam LN.
+
+316
+00:11:13,880 --> 00:11:15,420
+É a normalização de camadas (Layer Normalization).
+
+317
+00:11:15,420 --> 00:11:16,730
+Ou suas variantes.
+
+318
+00:11:16,730 --> 00:11:18,449
+Claro, no PyTorch, usamos
+
+319
+00:11:18,449 --> 00:11:22,929
+É quase o mesmo que usar a normalização em lote.
+
+320
+00:11:22,929 --> 00:11:25,940
+É apenas inseri-lo entre a camada linear e a camada de ativação.
+
+321
+00:11:25,940 --> 00:11:27,829
+Um é suficiente.
+
+322
+00:11:28,189 --> 00:11:31,149
+Os cenários de aplicação de cada um são basicamente batch normalization.
+
+323
+00:11:31,149 --> 00:11:33,469
+O batch normalization é usado em tarefas de imagem de CNN,
+
+324
+00:11:33,469 --> 00:11:34,789
+ou em MLP.
+
+325
+00:11:34,789 --> 00:11:36,890
+ou sequências com um batch maior.
+
+326
+00:11:36,890 --> 00:11:39,990
+Já a normalização por camada, ou Layer Normalization, é quase sinônimo de Transformer.
+
+327
+00:11:39,990 --> 00:11:42,570
+O RNN, na verdade, está muito ligado a sequências.
+
+328
+00:11:42,570 --> 00:11:44,370
+É um problema de sequência para sequência.
+
+329
+00:11:44,370 --> 00:11:47,160
+Os grandes modelos de linguagem são ainda mais assim.
+
+330
+00:11:47,160 --> 00:11:48,860
+Então, podemos entender que
+
+331
+00:11:48,860 --> 00:11:51,500
+Batch Normalization e Layer Normalization.
+
+332
+00:11:51,500 --> 00:11:52,940
+Qual a maior diferença entre eles?
+
+333
+00:11:52,940 --> 00:11:55,340
+A diferença é quem será normalizado.
+
+334
+00:11:55,340 --> 00:11:58,960
+Normalização em lote, onde se considera que um conjunto de dados possui características semelhantes.
+
+335
+00:11:58,960 --> 00:12:01,329
+A conexão entre eles é mais forte.
+
+336
+00:12:01,329 --> 00:12:05,009
+Já a normalização por camadas, considera que, dentro de uma única linha de dados,
+
+337
+00:12:05,009 --> 00:12:08,329
+a relação das características antes e depois é relativamente grande.
+
+338
+00:12:08,329 --> 00:12:10,370
+Então, a normalização em lote,
+
+339
+00:12:10,370 --> 00:12:12,650
+podemos entender que ela corta essa dimensão verticalmente.
+
+340
+00:12:12,650 --> 00:12:15,480
+E a normalização de camada é um corte horizontal. Chegando aqui,
+
+341
+00:12:15,480 --> 00:12:16,600
+já conseguimos entender,
+
+342
+00:12:16,600 --> 00:12:19,520
+o que significa esse "adicionar e normalizar" que aparece repetidamente na arquitetura Transformer.
+
+343
+00:12:19,520 --> 00:12:21,360
+e a normalização da camada.
+
+344
+00:12:21,360 --> 00:12:22,320
+O que tudo isso significa?
+
+345
+00:12:22,320 --> 00:12:23,460
+É o que estamos fazendo repetidamente.
+
+346
+00:12:23,460 --> 00:12:24,700
+Por que estamos fazendo isso?
+
+347
+00:12:24,700 --> 00:12:26,040
+Assim, já sabemos o porquê.
+
+348
+00:12:26,040 --> 00:12:27,850
+Mas o 'add' refere-se à conexão residual.
+
+349
+00:12:27,850 --> 00:12:29,890
+Ao aprofundar os conceitos de CNNs,
+
+350
+00:12:29,890 --> 00:12:33,310
+abordaremos como elas mantêm a estabilidade do modelo.
+
+351
+00:12:33,310 --> 00:12:37,479
+E a normalização no Transformer se refere à normalização por camadas.
+
+352
+00:12:37,479 --> 00:12:40,999
+Na verdade, também serve para trazer de volta a ativação para um alcance estável,
+
+353
+00:12:40,999 --> 00:12:42,560
+e evitar que as camadas mais profundas se desviem.
+
+354
+00:12:42,560 --> 00:12:44,800
+Tudo isso é para tornar o treinamento mais estável.
+
+355
+00:12:44,800 --> 00:12:46,440
+Então, é preciso adicionar continuamente.
+
+356
+00:12:46,440 --> 00:12:47,880
+Quando chegarmos ao Transformer, descobriremos que...
+
+357
+00:12:47,880 --> 00:12:50,330
+Vamos descobrir que quase todos os resíduos
+
+358
+00:12:50,330 --> 00:12:52,910
+Ah, então, já aprendemos alguns conhecimentos comuns, certo?
+
+359
+00:12:52,910 --> 00:12:55,459
+Inclusive, agora também aprendemos sobre camadas, camadas lineares.
+
+360
+00:12:55,459 --> 00:12:57,299
+E também sobre Softmax, para classificação multiclasse.
+
+361
+00:12:57,299 --> 00:12:57,879
+Certo?
+
+362
+00:12:57,879 --> 00:12:59,259
+Pode ir devagar, passo a passo.
+
+363
+00:12:59,259 --> 00:13:01,319
+Não precisa ter pressa para aprender o Transformer de uma vez.
+
+364
+00:13:01,319 --> 00:13:03,450
+Além desses dois tipos mais comuns,
+
+365
+00:13:03,450 --> 00:13:04,730
+existem também outros tipos de normalização.
+
+366
+00:13:04,730 --> 00:13:05,990
+Um deles é chamado de normalização por grupo (Group Norm).
+
+367
+00:13:05,990 --> 00:13:06,690
+Para que serve?
+
+368
+00:13:06,690 --> 00:13:09,830
+É um meio-termo entre o batch e o layer.
+
+369
+00:13:09,830 --> 00:13:11,710
+Ele divide os canais em vários grupos.
+
+370
+00:13:11,710 --> 00:13:14,969
+Cada grupo pode calcular sua média e sua variância.
+
+371
+00:13:14,969 --> 00:13:16,369
+Não depende do lote completo,
+
+372
+00:13:16,369 --> 00:13:17,929
+ou seja, não depende do lote.
+
+373
+00:13:17,929 --> 00:13:19,129
+Também não é como a normalização,
+
+374
+00:13:19,129 --> 00:13:21,060
+que mistura todos os canais.
+
+375
+00:13:21,060 --> 00:13:23,740
+É muito comum em CNNs com batch size pequeno.
+
+376
+00:13:23,740 --> 00:13:24,940
+Por exemplo, em tarefas como detecção de objetos,
+
+377
+00:13:24,940 --> 00:13:27,320
+onde é muito comum usarmos isso.
+
+378
+00:13:27,320 --> 00:13:29,740
+Podemos substituir a normalização de lote.
+
+379
+00:13:29,740 --> 00:13:33,280
+Outra forma é, na verdade, uma simplificação da normalização de camada.
+
+380
+00:13:33,280 --> 00:13:34,970
+É chamada de RMS norm.
+
+381
+00:13:34,970 --> 00:13:37,010
+Ela remove a etapa de subtrair a média.
+
+382
+00:13:37,010 --> 00:13:39,150
+É só dividir pela raiz quadrada média.
+
+383
+00:13:39,150 --> 00:13:41,130
+Claro, o parâmetro Beta também não é mais necessário.
+
+384
+00:13:41,130 --> 00:13:43,230
+Eu só preciso fazer o ajuste.
+
+385
+00:13:43,230 --> 00:13:44,950
+É um passo a menos na computação.
+
+386
+00:13:45,270 --> 00:13:46,790
+No entanto, a prática provou que
+
+387
+00:13:46,790 --> 00:13:50,069
+seu efeito é quase igual ao da normalização de camadas.
+
+388
+00:13:50,069 --> 00:13:51,009
+ou até melhor.
+
+389
+00:13:51,009 --> 00:13:53,229
+Então, em alguns modelos de fonte grande atuais,
+
+390
+00:13:53,229 --> 00:13:56,610
+quase todos já usam a normalização do RMS.
+
+391
+00:13:56,610 --> 00:13:57,610
+Em resumo,
+
+392
+00:13:57,610 --> 00:13:59,650
+existem quatro tipos comuns de normalização.
+
+393
+00:13:59,650 --> 00:14:03,559
+Eles têm alguns cenários de uso típicos.
+
+394
+00:14:03,559 --> 00:14:04,399
+A normalização de lote
+
+395
+00:14:04,399 --> 00:14:07,719
+é adequada para redes neurais convolucionais (CNNs) e perceptrons multicamadas (MLPs), ou quando o lote é
+
+396
+00:14:07,719 --> 00:14:09,260
+o tamanho do lote é grande.
+
+397
+00:14:09,260 --> 00:14:12,100
+A normalização de camada é usada para processar dados de sequência, ou seja, para aplicações de processamento de dados de sequência.
+
+398
+00:14:12,100 --> 00:14:13,540
+aplicações de processamento de dados de sequência.
+
+399
+00:14:13,540 --> 00:14:15,080
+E estes dois são variantes.
+
+400
+00:14:15,080 --> 00:14:17,940
+A normalização de grupo, por sua vez, pode ser usada para tarefas de novos usuários com pequenos lotes.
+
+401
+00:14:17,940 --> 00:14:19,349
+Pode ser uma alternativa.
+
+402
+00:14:19,349 --> 00:14:22,109
+E a normalização RMS é para modelos de linguagem grandes.
+
+403
+00:14:22,109 --> 00:14:24,640
+quando a quantidade de treinamento é muito grande,
+
+404
+00:14:24,640 --> 00:14:25,960
+podemos simplificá-lo
+
+405
+00:14:25,960 --> 00:14:27,000
+e os resultados ainda são bons.
+
+406
+00:14:27,000 --> 00:14:29,619
+Então, nos modelos de linguagem grandes, ele é sempre usado.
+
+407
+00:14:29,619 --> 00:14:30,779
+OK, chegados a este ponto,
+
+408
+00:14:30,779 --> 00:14:33,739
+podemos entender que é a inicialização mais a normalização.
+
+409
+00:14:33,739 --> 00:14:35,140
+A combinação desses dois elementos
+
+410
+00:14:35,140 --> 00:14:38,120
+é o que permite que o processo de treinamento permaneça estável.
+
+411
+00:14:38,120 --> 00:14:40,190
+Claro que não dependemos apenas desses dois.
+
+412
+00:14:40,190 --> 00:14:42,630
+Todos esses conhecimentos que apresentamos anteriormente,
+
+413
+00:14:42,630 --> 00:14:43,350
+no geral,
+
+414
+00:14:43,350 --> 00:14:46,590
+juntos, eles permitem que toda a rede treine de forma estável.
+
+415
+00:14:46,590 --> 00:14:48,580
+Ao falar sobre a seleção de funções de ativação,
+
+416
+00:14:48,580 --> 00:14:50,020
+que tipo de tarefa
+
+417
+00:14:50,020 --> 00:14:52,360
+corresponde a que tipo de função de ativação.
+
+418
+00:14:52,360 --> 00:14:54,920
+A função de perda também tem suas opções.
+
+419
+00:14:54,920 --> 00:14:57,849
+Há diferentes otimizadores para diversas tarefas.
+
+420
+00:14:57,849 --> 00:15:00,429
+A taxa de aprendizado também possui seus próprios esquemas de agendamento correspondentes.
+
+421
+00:15:00,429 --> 00:15:01,809
+Quanto à inicialização de parâmetros,
+
+422
+00:15:01,809 --> 00:15:04,790
+também escolheremos He ou Zivir.
+
+423
+00:15:04,790 --> 00:15:08,360
+Ao planejar, também selecionaremos algumas tarefas de planejamento com base nas tarefas reais.
+
+424
+00:15:08,360 --> 00:15:11,840
+Na verdade, muitos alunos, quando estudam aprendizado profundo,
+
+425
+00:15:11,840 --> 00:15:13,710
+já começam com CNN e RNN,
+
+426
+00:15:13,710 --> 00:15:15,310
+e depois pulam para Transformer.
+
+427
+00:15:15,310 --> 00:15:18,110
+e ignoram o aprendizado de alguns desses conhecimentos mais básicos.
+
+428
+00:15:18,110 --> 00:15:21,070
+Embora possamos entender conceitualmente
+
+429
+00:15:21,070 --> 00:15:22,030
+a arquitetura de rede correspondente.
+
+430
+00:15:22,030 --> 00:15:24,410
+Mas quando estamos realmente treinando, percebemos que
+
+431
+00:15:24,410 --> 00:15:27,670
+os resultados que obtemos no treinamento, comparados com os de algumas pessoas
+
+432
+00:15:27,670 --> 00:15:29,830
+com mais experiência, sempre têm uma diferença.
+
+433
+00:15:29,830 --> 00:15:32,750
+Pode ser que o nosso domínio destes detalhes
+
+434
+00:15:32,750 --> 00:15:35,089
+e o domínio dos especialistas sejam diferentes.
+
+435
+00:15:35,089 --> 00:15:37,129
+Depois de ter essa normalização como base,
+
+436
+00:15:37,129 --> 00:15:39,720
+A escolha da inicialização não é tão sensível.
+
+437
+00:15:39,720 --> 00:15:42,200
+Ou seja, depois de adicionar o Batch Normalization
+
+438
+00:15:42,200 --> 00:15:44,180
+ou o Layer Normalization,
+
+439
+00:15:44,180 --> 00:15:46,220
+A inicialização padrão é suficiente.
+
+440
+00:15:46,220 --> 00:15:47,160
+Em muitas situações,
+
+441
+00:15:47,160 --> 00:15:50,560
+não precisamos forçá-la a ser uma inicialização Kaiming.
+
+442
+00:15:50,560 --> 00:15:51,760
+Com a combinação desses elementos,
+
+443
+00:15:51,760 --> 00:15:55,160
+redes de dezenas de camadas já conseguem convergir de forma estável.
+
+444
+00:15:55,160 --> 00:15:58,829
+E isso melhora ainda mais se adicionarmos as conexões residuais, que apresentaremos mais adiante.
+
+445
+00:15:58,829 --> 00:16:03,300
+Basicamente, o treinamento de um modelo de deep learning pode começar.
+
+446
+00:16:03,740 --> 00:16:06,640
+Embora tenhamos uma alta precisão de treinamento,
+
+447
+00:16:06,640 --> 00:16:09,340
+podemos garantir uma precisão de treinamento relativamente alta.
+
+448
+00:16:09,340 --> 00:16:11,840
+No entanto, isso não significa que a precisão do teste será alta.
+
+449
+00:16:11,840 --> 00:16:14,900
+O modelo está se tornando cada vez mais preciso no conjunto de treinamento.
+
+450
+00:16:17,600 --> 00:16:18,839
+Pelo contrário, começou a regredir. O que é isso?
+
+451
+00:16:18,839 --> 00:16:21,119
+Na verdade, é exatamente isso que apresentamos no aprendizado de máquina.
+
+452
+00:16:21,119 --> 00:16:22,339
+Já havíamos introduzido isso, certo?
+
+453
+00:16:22,339 --> 00:16:23,979
+O fenômeno do overfitting surgiu.
+
+454
+00:16:23,979 --> 00:16:26,290
+Na próxima aula, falaremos sobre a normalização.
+
+455
+00:16:26,290 --> 00:16:27,290
+Sem regularização.
+
+456
+00:16:27,290 --> 00:16:28,650
+Seja L1,
+
+457
+00:16:28,650 --> 00:16:31,430
+A regularização L2 é frequentemente usada em modelos de aprendizado de máquina.
+
+458
+00:16:31,430 --> 00:16:34,740
+Ferramentas especializadas como dropout e decaimento de peso,
+
+459
+00:16:34,740 --> 00:16:39,040
+resolvendo o problema do overfitting.
+
+460
+00:16:39,040 --> 00:16:42,020
+que uma rede neural profunda,
+
+461
+00:16:42,020 --> 00:16:43,340
+possa ser realmente treinada
+
+462
+00:16:43,340 --> 00:16:46,560
+e obter bons resultados de teste.
+
+463
+00:16:46,560 --> 00:16:48,360
+Bem, este vídeo termina aqui.

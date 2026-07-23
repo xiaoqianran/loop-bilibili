@@ -1,0 +1,463 @@
+Vamos dar uma olhada
+na técnica de treinamento que até mesmo os Transformers precisam usar:
+A normalização.
+No vídeo anterior, eu lhes apresentei a
+inicialização dos parâmetros da matriz do modelo usando He.
+Isso pode manter a propagação do sinal estável entre as camadas do modelo.
+para que, no início do treinamento,
+não ocorra o problema de gradiente evanescente ou explosivo.
+A inicialização só resolve a primeira etapa, mas sabemos que o modelo não é treinado apenas uma vez.
+É dividido em várias rodadas.
+E a inicialização só serve para a primeira vez.
+Depois, à medida que avançamos com o gradiente descendente,
+modificando constantemente os parâmetros de peso.
+Nesse momento,
+a distribuição do modelo, ou seja, a distribuição dos parâmetros, já se desviou.
+Se não houver qualquer interferência
+ocorrerá o fenômeno de mudança interna das covariáveis.
+Uma vez que esse fenômeno ocorra,
+A distribuição pode ser observada, certo?
+À medida que o modelo é treinado,
+sua distribuição passa por muitas mudanças.
+A inicialização só cuida do primeiro passo, depois que essa situação acontece,
+a dificuldade do nosso treinamento aumenta muito.
+Se os valores de ativação de uma camada forem muito grandes,
+Os gradientes também se tornam excessivamente grandes.
+O treinamento divergirá, e as escalas de diferentes recursos serão ampliadas.
+Alguns são 1, outros são 100, e a função de perda...
+A direção fica muito fácil de errar.
+O otimizador vai começar a oscilar.
+Ora mudando para valores muito grandes,
+Ora o peso é ajustado para ser muito pequeno.
+Isto é particularmente verdade quando os valores de ativação são levados a extremos,
+caindo na zona de saturação da função de ativação.
+Na zona de saturação, o gradiente está próximo de zero.
+Assim, o gradiente não pode ser retropropagado.
+Nesse caso, a descida do gradiente praticamente para.
+Os parâmetros não podem ser atualizados.
+Por exemplo,
+Tomemos o exemplo do Sigma, o mais típico.
+Seja dizendo que sabemos que entre -1
+e 1 é a sua zona sensível.
+Se ultrapassar os 10,
+Podem olhar para a sua derivada.
+Depois de ultrapassar 10, a derivada aproxima-se de 0.
+Nesse momento, é chamada de sua zona de saturação.
+Quanto mais plana for a curva,
+mais a derivada se aproxima de zero.
+Na retropropagação,
+o gradiente será multiplicado por essa derivada.
+Então, 1 multiplicado por 0 será quase igual a 0.
+Assim, os parâmetros não poderão ser atualizados.
+Mas o ReLU não tem o problema da saturação na região direita.
+Porque, quando a entrada é maior que zero,
+a derivada do ReLU é sempre um.
+Esta é também uma razão importante pela qual ele pode substituir o Sigmoid.
+No entanto, a função ReLu, quando a entrada é menor que zero,
+a saída também será sempre zero.
+A derivada também é zero.
+Então o neurônio se desativa.
+É o que chamamos de neurônio morto.
+Então, como resolvemos isso?
+Já que o problema reside no desvio da média e da variância,
+se, após cada camada realizar uma transformação linear,
+reajustamos a média das ativações para zero
+e o desvio padrão para um,
+conseguiremos resolver o problema pela raiz.
+Mas na estatística,
+normalização e padronização são dois conceitos diferentes.
+A normalização geralmente se refere à escala min-max para um intervalo de 0 a 1.
+Já a padronização, que mencionamos agora,
+é o que transforma sua média em zero,
+e o desvio padrão em um.
+Mas a comunidade de aprendizagem profunda, desde 2015,
+com a publicação do artigo sobre a normalização por lotes,
+passou a chamá-la de normalização.
+Então, já era normalizado.
+Todas as variantes posteriores adotaram esse nome.
+Alguns dizem que, no contexto do aprendizado profundo,
+Mencionamos a normalização, o que fazemos
+na verdade, é a padronização.
+Ou seja, pegamos um conjunto de dados, subtraímos a média,
+e depois dividimos pelo desvio padrão.
+Aí eles se tornam uma distribuição com média zero e variância um.
+Subtraímos a média do valor e dividimos pelo desvio padrão.
+Vamos dar uma olhada.
+Se tivermos um conjunto de valores de ativação X,
+a média será 52,88.
+Porque a dispersão é assim.
+O desvio padrão é 12,97.
+O primeiro passo é subtrair a média.
+obtemos um valor assim.
+O segundo passo é dividir pelo desvio padrão.
+Depois de dividir pelo desvio padrão,
+Nesse caso, é como se tivéssemos essa coluna.
+Nós a padronizamos.
+Podemos dar uma olhada na distribuição.
+Na verdade, antes e depois da normalização,
+a distribuição não muda de forma alguma.
+É todo o processo?
+É apenas que as coordenadas
+podem ter mudado um pouco.
+Os valores numéricos mudaram.
+Mas a tendência da sua distribuição é exatamente a mesma.
+Todo o processo envolveu apenas translação e escala.
+O formato da distribuição não mudou.
+Por exemplo, aquele valor que era o maior antes, depois da normalização, uhm...
+O que era o menor antes, depois da normalização, continua sendo o menor valor.
+Nesse caso, é apenas a forma como descrevemos o significado que muda.
+Pode-se dizer que está 2,33 desvios padrão acima da média.
+Este está um pouco abaixo da média, 1,5 desvios padrão.
+É assim que o descrevemos.
+É por isso que as mudanças de valores numéricos não afetam o treinamento.
+Porque nossa rede neural inteira aprende os padrões nos dados,
+e não seus valores absolutos.
+E a saída final da rede neural depende da capacidade de transformação combinada de todas as camadas.
+Não depende da escala de representação usada em uma camada intermediária.
+Por exemplo, é como a temperatura.
+Mudamos de Celsius para Fahrenheit.
+Os números também mudaram completamente.
+No entanto, a relação entre quente e frio não mudou.
+Em outras palavras, o que realmente muda?
+Na verdade, desde que seus valores numéricos mudem,
+Se o modelo que ele aprendeu estiver correto,
+os parâmetros correspondentes mudam,
+os parâmetros de peso mudam,
+o valor de saída ainda pode ser mantido estável.
+Portanto, isso, na verdade, não afetará o treinamento.
+Ou seja, não fará com que o treinamento piore.
+Impedindo-o de aprender os padrões.
+No entanto, pode estabilizar o treinamento.
+Então, por que normalizar?
+Então, como a normalização é feita especificamente em redes neurais?
+A normalização, em geral, envolve duas etapas.
+Subtraímos a média e dividimos pelo desvio padrão.
+Mas, para usá-la em redes neurais,
+Vamos ver de onde vêm essa média e o desvio padrão.
+Por exemplo, em cada treinamento, usamos um mini-lote.
+Digamos que um lote tenha 128 amostras.
+Cada amostra pode ter 256 características dimensionais.
+Ou seja, um dado possui 256 características.
+Assim, podemos formar uma matriz de 128 por 256.
+Para cada coluna desta matriz,
+que na verdade é uma característica,
+usamos essas 128 amostras
+calculamos a sua média e desvio padrão.
+Para esta coluna, fazemos a normalização.
+Isto é o que chamamos de normalização p.
+Então, por isso, é chamado de b, e o n de batch normalization.
+Nesse momento, podemos ver que
+No fim das contas, não estamos simplesmente realizando operações sobre ele.
+Na verdade, adicionamos uma constante muito pequena
+para evitar que o denominador se torne zero.
+Nesta etapa,
+Na verdade, os valores de ativação de cada coluna são ajustados para ter uma média de zero.
+Hum, uma média de zero e uma variância de um.
+Mas só dar este passo ainda não é o suficiente.
+Porque, ao fazer isso,
+todas as ativações das camadas seriam forçadas a ter a mesma distribuição.
+A rede não conseguiria fazer com que a saída de uma camada fosse um pouco maior ou menor.
+aprender algumas dessas representações.
+Isso limitaria a capacidade de representação da rede.
+Então, depois de fazermos isso,
+Além disso, adicionamos mais dois parâmetros para aprendizagem.
+Sim, sim, para escalá-lo.
+A multiplicação é para escalá-lo.
+A adição é para deslocá-lo.
+Para que faça essa operação.
+Os dois parâmetros são gerados durante o processo de aprendizagem.
+Assim, ele pode tanto estar em conformidade com a padronização,
+quanto ter algumas pequenas diferenças entre cada um,
+o que facilita para a rede aprender as características intermediárias.
+Muitos alunos podem estar curiosos
+Você padroniza e depois o coloca de volta
+Então, por que você faria isso?
+Na verdade, isso é para padronizar primeiro para 0-1.
+É como dar ao otimizador um ponto de partida fixo.
+Caso contrário, o ponto de partida do otimizador continuaria mudando.
+não pode mais aprender.
+Depois que o otimizador está pronto,
+os graus de liberdade restantes são entregues a esses dois parâmetros.
+para o modelo aprender.
+Então, na hora da inferência,
+Sabemos que o treinamento não é um problema.
+cada vez é um lote.
+Como fazemos quando precisamos prever de verdade?
+Eu só prevejo uma amostra por vez.
+Nesses casos, na verdade, é durante o treinamento
+que mantemos simultaneamente um conjunto de médias móveis.
+Na inferência,
+basta usar o que foi acumulado durante o treinamento.
+Essa estatística global serve.
+Já falamos bastante, né?
+Então, vamos ver como ele é usado.
+Na verdade, é muito simples de usar com o PyTorch.
+É simplesmente depois de uma camada linear e outra camada linear.
+Basta inserir uma camada de normalização em lote antes da função de ativação.
+Basta fazer a normalização em lote.
+Se quisermos escrever um MLP de 6 camadas,
+Vamos dar uma olhada, depois de cada camada linear,
+Esta é a camada linear, certo?
+Aqui, usamos explicitamente o método Kaiming.
+É a inicialização de Kaiming, certo?
+O viés é todo zero.
+Finalmente, podemos ver o que está dentro das camadas adicionadas.
+Adicionei uma camada linear.
+Essa é a camada de pré-processamento P.
+É só adicionar a função de ativação e pronto.
+Porque se houver várias camadas, repetimos o processo várias vezes.
+É muito simples de usar dessa forma.
+Se fizermos uma comparação:
+Podemos dar uma olhada.
+Depois de adicionar o Batch Normalization,
+o desvio padrão dos valores de ativação de cada camada muda com o treinamento.
+Por exemplo, na primeira camada,
+se não houver normalização em lote, o valor é 0,85, e na sexta camada, torna-se 0,91.
+Isso é apenas a primeira vez.
+Parece que a mudança não é grande coisa.
+Isso porque há uma inicialização do Kaiming.
+Quando chegamos à 50ª rodada, olha só.
+A mudança é cada vez maior.
+Não é?
+Relativamente
+Mas se fizermos a normalização em lote,
+Podemos ver que, a partir da segunda rodada,
+Basicamente, ele já está, na 50ª rodada,
+Basicamente, já se estabilizou.
+Não vai mais mudar.
+Não é mesmo?
+Então, a normalização permite que a variância seja preservada na primeira etapa,
+estendendo essa preservação para todo o processo de treinamento.
+Assim, evitamos problemas como o desaparecimento ou a explosão do gradiente.
+Isso é crucial para o treinamento de redes neurais profundas.
+Claro, isso é a normalização de batch.
+Ela faz uma normalização no nível do batch.
+Ou seja, diferentes amostras, mesma característica.
+Por exemplo, se estivermos treinando uma lista de alunos,
+então todos os dados seriam para a idade dos alunos.
+o sexo do aluno,
+as notas do aluno em cada disciplina.
+Todas as notas de português são normalizadas.
+Mas por que é assim?
+É porque a ligação entre estas características é maior.
+Certo?
+Isso é ainda mais verdadeiro, especialmente na área de Visão Computacional.
+Por exemplo, quando falarmos sobre CNNs mais tarde,
+vocês saberão que, nas CNNs,
+Tudo o que treinamos é para detectar padrões verticais que aparecem nas imagens.
+Não importa se é uma imagem de um gato,
+de um cachorro, ou de qualquer outra coisa.
+Na verdade, o princípio da detecção de listras verticais é o mesmo.
+Então, o que fazemos é encontrar as características comuns neste lote.
+Assim, em um lote, pode haver 'n' amostras.
+Normalizamos cada uma das suas características.
+É a única operação necessária.
+Nas tarefas de sequência,
+Por exemplo, a típica tarefa de sequência, que é o processamento de linguagem natural,
+onde um TOKEN é usado para representar as dimensões internas de um vetor,
+e essas dimensões internas codificam coletivamente seu significado semântico.
+Nesse momento,
+digamos que temos três frases.
+Por exemplo, “Eu gosto de estudar processamento de linguagem natural”.
+A aprendizagem profunda mudou o mundo.
+O tempo está ótimo hoje.
+É o mesmo que este aqui.
+Por exemplo, o primeiro token é sempre o primeiro token dele.
+Eles não têm relação alguma entre si.
+Pelo contrário, ou seja, a mesma amostra.
+A relação entre o antes e o depois é muito forte.
+Eu adoro estudar.
+Neste caso, quando fazemos o lote
+Na verdade, todos normalizam o primeiro TOKEN.
+Faça o mesmo com o segundo.
+Nesse caso, não seria razoável.
+Na verdade, o que devemos fazer
+é virá-lo e girá-lo 90 graus.
+Na verdade, isso é chamado de normalização de camada.
+Para a mesma camada,
+ou seja, para a mesma amostra,
+todos os seus atributos entre si.
+para todas as características de uma única amostra, realizamos uma normalização. E
+o que é a normalização p?
+Para uma característica comum entre n amostras,
+são notas de matemática, de todos os alunos.
+Para este lote, as notas de matemática de todos os alunos,
+vamos normalizá-las.
+E o que é isso?
+Para todos os tokens desta frase,
+vamos entender isso como palavras por enquanto.
+Quando chegarmos ao processamento de linguagem natural,
+já vamos entender o que significa um token.
+Certo? Para todos os tokens, faremos uma normalização.
+Esta é, na verdade, a diferença entre os dois.
+Depois de fazer isso,
+A camada de normalização tem outra vantagem.
+Ou seja, não depende mais do tamanho do lote.
+Porque ele usa uma amostra de cada vez, né?
+E quando fazemos a normalização por grupo,
+Depende do número de amostras.
+O número de amostras em cada lote é crucial, pois um número muito pequeno não é ideal.
+Em cada camada normalizada,
+Cada amostra é calculada independentemente.
+Por isso, é mais conveniente.
+Além disso, é naturalmente compatível com sequências de comprimento variável.
+Porque sabemos que as frases e as frases entre si
+não têm necessariamente o mesmo comprimento.
+Isso tudo já aprendemos.
+É possível que, quando estudarmos CNNs e fizermos alguns painéis,
+perceberemos o porquê.
+Claro, o comprimento das frases varia.
+Isso também não importa.
+Porque não importa se sua frase tem 10 ou 20 palavras,
+eu normalizo todas essas palavras.
+Nesse caso, o comprimento não importa.
+É por isso que o Transformer
+e todos os grandes modelos de linguagem que usamos depois, usam LN.
+É a normalização de camadas (Layer Normalization).
+Ou suas variantes.
+Claro, no PyTorch, usamos
+É quase o mesmo que usar a normalização em lote.
+É apenas inseri-lo entre a camada linear e a camada de ativação.
+Um é suficiente.
+Os cenários de aplicação de cada um são basicamente batch normalization.
+O batch normalization é usado em tarefas de imagem de CNN,
+ou em MLP.
+ou sequências com um batch maior.
+Já a normalização por camada, ou Layer Normalization, é quase sinônimo de Transformer.
+O RNN, na verdade, está muito ligado a sequências.
+É um problema de sequência para sequência.
+Os grandes modelos de linguagem são ainda mais assim.
+Então, podemos entender que
+Batch Normalization e Layer Normalization.
+Qual a maior diferença entre eles?
+A diferença é quem será normalizado.
+Normalização em lote, onde se considera que um conjunto de dados possui características semelhantes.
+A conexão entre eles é mais forte.
+Já a normalização por camadas, considera que, dentro de uma única linha de dados,
+a relação das características antes e depois é relativamente grande.
+Então, a normalização em lote,
+podemos entender que ela corta essa dimensão verticalmente.
+E a normalização de camada é um corte horizontal. Chegando aqui,
+já conseguimos entender,
+o que significa esse "adicionar e normalizar" que aparece repetidamente na arquitetura Transformer.
+e a normalização da camada.
+O que tudo isso significa?
+É o que estamos fazendo repetidamente.
+Por que estamos fazendo isso?
+Assim, já sabemos o porquê.
+Mas o 'add' refere-se à conexão residual.
+Ao aprofundar os conceitos de CNNs,
+abordaremos como elas mantêm a estabilidade do modelo.
+E a normalização no Transformer se refere à normalização por camadas.
+Na verdade, também serve para trazer de volta a ativação para um alcance estável,
+e evitar que as camadas mais profundas se desviem.
+Tudo isso é para tornar o treinamento mais estável.
+Então, é preciso adicionar continuamente.
+Quando chegarmos ao Transformer, descobriremos que...
+Vamos descobrir que quase todos os resíduos
+Ah, então, já aprendemos alguns conhecimentos comuns, certo?
+Inclusive, agora também aprendemos sobre camadas, camadas lineares.
+E também sobre Softmax, para classificação multiclasse.
+Certo?
+Pode ir devagar, passo a passo.
+Não precisa ter pressa para aprender o Transformer de uma vez.
+Além desses dois tipos mais comuns,
+existem também outros tipos de normalização.
+Um deles é chamado de normalização por grupo (Group Norm).
+Para que serve?
+É um meio-termo entre o batch e o layer.
+Ele divide os canais em vários grupos.
+Cada grupo pode calcular sua média e sua variância.
+Não depende do lote completo,
+ou seja, não depende do lote.
+Também não é como a normalização,
+que mistura todos os canais.
+É muito comum em CNNs com batch size pequeno.
+Por exemplo, em tarefas como detecção de objetos,
+onde é muito comum usarmos isso.
+Podemos substituir a normalização de lote.
+Outra forma é, na verdade, uma simplificação da normalização de camada.
+É chamada de RMS norm.
+Ela remove a etapa de subtrair a média.
+É só dividir pela raiz quadrada média.
+Claro, o parâmetro Beta também não é mais necessário.
+Eu só preciso fazer o ajuste.
+É um passo a menos na computação.
+No entanto, a prática provou que
+seu efeito é quase igual ao da normalização de camadas.
+ou até melhor.
+Então, em alguns modelos de fonte grande atuais,
+quase todos já usam a normalização do RMS.
+Em resumo,
+existem quatro tipos comuns de normalização.
+Eles têm alguns cenários de uso típicos.
+A normalização de lote
+é adequada para redes neurais convolucionais (CNNs) e perceptrons multicamadas (MLPs), ou quando o lote é
+o tamanho do lote é grande.
+A normalização de camada é usada para processar dados de sequência, ou seja, para aplicações de processamento de dados de sequência.
+aplicações de processamento de dados de sequência.
+E estes dois são variantes.
+A normalização de grupo, por sua vez, pode ser usada para tarefas de novos usuários com pequenos lotes.
+Pode ser uma alternativa.
+E a normalização RMS é para modelos de linguagem grandes.
+quando a quantidade de treinamento é muito grande,
+podemos simplificá-lo
+e os resultados ainda são bons.
+Então, nos modelos de linguagem grandes, ele é sempre usado.
+OK, chegados a este ponto,
+podemos entender que é a inicialização mais a normalização.
+A combinação desses dois elementos
+é o que permite que o processo de treinamento permaneça estável.
+Claro que não dependemos apenas desses dois.
+Todos esses conhecimentos que apresentamos anteriormente,
+no geral,
+juntos, eles permitem que toda a rede treine de forma estável.
+Ao falar sobre a seleção de funções de ativação,
+que tipo de tarefa
+corresponde a que tipo de função de ativação.
+A função de perda também tem suas opções.
+Há diferentes otimizadores para diversas tarefas.
+A taxa de aprendizado também possui seus próprios esquemas de agendamento correspondentes.
+Quanto à inicialização de parâmetros,
+também escolheremos He ou Zivir.
+Ao planejar, também selecionaremos algumas tarefas de planejamento com base nas tarefas reais.
+Na verdade, muitos alunos, quando estudam aprendizado profundo,
+já começam com CNN e RNN,
+e depois pulam para Transformer.
+e ignoram o aprendizado de alguns desses conhecimentos mais básicos.
+Embora possamos entender conceitualmente
+a arquitetura de rede correspondente.
+Mas quando estamos realmente treinando, percebemos que
+os resultados que obtemos no treinamento, comparados com os de algumas pessoas
+com mais experiência, sempre têm uma diferença.
+Pode ser que o nosso domínio destes detalhes
+e o domínio dos especialistas sejam diferentes.
+Depois de ter essa normalização como base,
+A escolha da inicialização não é tão sensível.
+Ou seja, depois de adicionar o Batch Normalization
+ou o Layer Normalization,
+A inicialização padrão é suficiente.
+Em muitas situações,
+não precisamos forçá-la a ser uma inicialização Kaiming.
+Com a combinação desses elementos,
+redes de dezenas de camadas já conseguem convergir de forma estável.
+E isso melhora ainda mais se adicionarmos as conexões residuais, que apresentaremos mais adiante.
+Basicamente, o treinamento de um modelo de deep learning pode começar.
+Embora tenhamos uma alta precisão de treinamento,
+podemos garantir uma precisão de treinamento relativamente alta.
+No entanto, isso não significa que a precisão do teste será alta.
+O modelo está se tornando cada vez mais preciso no conjunto de treinamento.
+Pelo contrário, começou a regredir. O que é isso?
+Na verdade, é exatamente isso que apresentamos no aprendizado de máquina.
+Já havíamos introduzido isso, certo?
+O fenômeno do overfitting surgiu.
+Na próxima aula, falaremos sobre a normalização.
+Sem regularização.
+Seja L1,
+A regularização L2 é frequentemente usada em modelos de aprendizado de máquina.
+Ferramentas especializadas como dropout e decaimento de peso,
+resolvendo o problema do overfitting.
+que uma rede neural profunda,
+possa ser realmente treinada
+e obter bons resultados de teste.
+Bem, este vídeo termina aqui.

@@ -1,0 +1,1803 @@
+1
+00:00:00,000 --> 00:00:01,870
+Vamos dar uma olhada na inicialização de parâmetros.
+
+2
+00:00:01,870 --> 00:00:05,810
+Se a programação da taxa de aprendizado, que vimos no vídeo anterior, era um pouco "de nicho",
+
+3
+00:00:05,810 --> 00:00:09,730
+então a inicialização de parâmetros é ainda menos conhecida por muitos iniciantes.
+
+4
+00:00:09,730 --> 00:00:14,440
+Mas a verdade é que a diferença entre um mestre em ajuste de parâmetros de redes neurais e uma pessoa comum é apenas um pequeno detalhe.
+
+5
+00:00:14,440 --> 00:00:16,780
+Claro, a inicialização dos parâmetros é crucial.
+
+6
+00:00:16,780 --> 00:00:20,660
+Também nos prepara para entender a normalização mais tarde.
+
+7
+00:00:20,660 --> 00:00:22,540
+Acredito que, depois de aprender todo este conteúdo,
+
+8
+00:00:22,540 --> 00:00:26,620
+quando olharmos para o “layer normalization” do Transformer, essa parte
+
+9
+00:00:26,620 --> 00:00:28,490
+será muito mais fácil de entender.
+
+10
+00:00:28,730 --> 00:00:32,180
+Sabemos que o treinamento de uma rede neural é feito em várias rodadas.
+
+11
+00:00:32,180 --> 00:00:34,460
+Mas o que pode surpreender um pouco é que,
+
+12
+00:00:34,460 --> 00:00:37,480
+se uma rede neural profunda pode ser treinada ou não,
+
+13
+00:00:37,480 --> 00:00:41,010
+geralmente, já é determinado durante a primeira propagação para frente.
+
+14
+00:00:41,010 --> 00:00:44,890
+Anteriormente, demonstrei uma rede neural simples escrita à mão.
+
+15
+00:00:44,890 --> 00:00:47,490
+Ao inicializar os parâmetros,
+
+16
+00:00:47,490 --> 00:00:49,680
+Nós escrevemos alguns códigos bem estranhos.
+
+17
+00:00:49,680 --> 00:00:51,760
+Depois de inicializar uma matriz de pesos...
+
+18
+00:00:51,760 --> 00:00:53,880
+Também a multiplicamos por um parâmetro especial.
+
+19
+00:00:53,880 --> 00:00:55,560
+Naquele momento, eu apenas disse que era um valor empírico.
+
+20
+00:00:55,560 --> 00:00:56,740
+Por que multiplicamos por isso?
+
+21
+00:00:56,740 --> 00:01:00,790
+E por que o viés pode ser simplesmente zerado?
+
+22
+00:01:00,790 --> 00:01:01,890
+Os pesos não podem ser usados.
+
+23
+00:01:01,890 --> 00:01:03,160
+O que está acontecendo com tudo isso?
+
+24
+00:01:03,160 --> 00:01:04,940
+A seguir, vou explicar tudo claramente.
+
+25
+00:01:04,940 --> 00:01:08,850
+Por que é que se escreve assim, para que uma rede neural possa ser treinada?
+
+26
+00:01:08,850 --> 00:01:11,450
+A rede não tem parâmetros quando é treinada pela primeira vez.
+
+27
+00:01:11,450 --> 00:01:13,770
+Precisamos atribuir um valor inicial manualmente.
+
+28
+00:01:13,770 --> 00:01:15,320
+Então, o que atribuímos a ele?
+
+29
+00:01:15,320 --> 00:01:18,980
+Na verdade, a ideia mais simples, é claro, seria definir todos os pesos como zero.
+
+30
+00:01:18,980 --> 00:01:20,900
+De qualquer forma, porque existe o algoritmo de descida do gradiente,
+
+31
+00:01:20,900 --> 00:01:22,480
+Depois, você ajustaria os parâmetros, certo?
+
+32
+00:01:22,480 --> 00:01:25,610
+Aos poucos, ajustando cada parâmetro para o valor correto.
+
+33
+00:01:25,610 --> 00:01:27,250
+Mas se você fizesse isso,
+
+34
+00:01:27,250 --> 00:01:29,110
+vamos encontrar problemas sérios. Por exemplo,
+
+35
+00:01:29,110 --> 00:01:31,250
+se definirmos que na primeira camada
+
+36
+00:01:31,250 --> 00:01:33,430
+todos os parâmetros de peso são zero,
+
+37
+00:01:33,430 --> 00:01:35,770
+Após a transformação linear, o resultado obtido
+
+38
+00:01:35,770 --> 00:01:37,470
+ainda é zero. E depois de passar pela função de ativação, também é zero.
+
+39
+00:01:37,470 --> 00:01:39,690
+Então, cada neurônio
+
+40
+00:01:39,690 --> 00:01:42,730
+Na verdade, os resultados de saída são todos iguais.
+
+41
+00:01:42,730 --> 00:01:45,530
+E na camada de saída, os valores que vemos também são os mesmos.
+
+42
+00:01:45,530 --> 00:01:47,610
+Então, na verdade, suas funções são todas equivalentes.
+
+43
+00:01:47,610 --> 00:01:48,729
+não haveria qualquer diferença.
+
+44
+00:01:48,729 --> 00:01:52,709
+Então, se houver, não importa quantos neurônios tenhamos nesta camada,
+
+45
+00:01:52,709 --> 00:01:54,049
+os resultados serão todos iguais.
+
+46
+00:01:54,049 --> 00:02:00,169
+Por exemplo, a rede inteira perderia a capacidade de ver as características de diferentes perspectivas.
+
+47
+00:02:00,329 --> 00:02:02,649
+Inicializar os pesos da mesma camada com qualquer constante idêntica resulta na mesma coisa—então os pesos devem receber valores aleatórios diferentes desde o início. Na passagem para frente, seria tudo igual.
+
+48
+00:02:02,649 --> 00:02:05,169
+A retropropagação, ao calcular os gradientes, também os calcularia da mesma forma.
+
+49
+00:02:05,169 --> 00:02:08,350
+Às vezes, é quase impossível de treinar.
+
+50
+00:02:08,350 --> 00:02:11,020
+Este problema é conhecido como o problema da simetria.
+
+51
+00:02:11,020 --> 00:02:13,120
+Claro, você não inicializa apenas com zero.
+
+52
+00:02:13,120 --> 00:02:14,920
+Quando inicializamos os pesos
+
+53
+00:02:14,920 --> 00:02:17,060
+com quaisquer parâmetros idênticos
+
+54
+00:02:17,060 --> 00:02:17,900
+por exemplo, 1, 3, etc.
+
+55
+00:02:17,900 --> 00:02:19,260
+os resultados são os mesmos.
+
+56
+00:02:19,260 --> 00:02:22,000
+Se quisermos que uma rede neural treine normalmente,
+
+57
+00:02:22,000 --> 00:02:25,649
+os pesos iniciais devem ter valores diferentes.
+
+58
+00:02:25,649 --> 00:02:27,329
+não podem ser todos iguais.
+
+59
+00:02:27,329 --> 00:02:29,560
+basta usar valores aleatórios.
+
+60
+00:02:29,560 --> 00:02:32,380
+Então, por que os vieses podem ser todos definidos como zero?
+
+61
+00:02:32,380 --> 00:02:33,480
+Na fórmula anterior,
+
+62
+00:02:33,480 --> 00:02:35,930
+o "bias" foi totalmente zerado, certo?
+
+63
+00:02:35,930 --> 00:02:39,410
+No entanto, como os pesos são aleatórios,
+
+64
+00:02:39,410 --> 00:02:41,010
+A polarização é a mesma?
+
+65
+00:02:41,010 --> 00:02:42,610
+Os neurónios não se degenerarão.
+
+66
+00:02:42,610 --> 00:02:47,800
+Isso porque a principal diferença entre os neurónios vem do peso, que pondera as entradas de forma diferente.
+
+67
+00:02:47,800 --> 00:02:49,020
+Uma vez que os pesos são diferentes,
+
+68
+00:02:49,020 --> 00:02:50,120
+ou seja, o W é diferente,
+
+69
+00:02:50,120 --> 00:02:53,060
+o resultado da saída de cada neurônio já será diferente.
+
+70
+00:02:53,060 --> 00:02:55,010
+Os gradientes recebidos mais tarde também serão diferentes.
+
+71
+00:02:55,010 --> 00:02:56,130
+E quanto a definir o bias como zero?
+
+72
+00:02:56,130 --> 00:02:57,690
+Também não fará com que eles se tornem iguais.
+
+73
+00:02:57,690 --> 00:02:59,250
+Durante a retropropagação,
+
+74
+00:02:59,250 --> 00:03:02,070
+também ajustaremos os vieses gradualmente.
+
+75
+00:03:02,070 --> 00:03:04,690
+Então, na maioria dos MLPs, independentemente de serem
+
+76
+00:03:04,690 --> 00:03:07,230
+Ou em camadas lineares, como CNN e Transformer,
+
+77
+00:03:07,230 --> 00:03:08,930
+a inicialização do bias geralmente ainda é zero.
+
+78
+00:03:09,930 --> 00:03:10,970
+Isso não é um problema.
+
+79
+00:03:10,970 --> 00:03:15,599
+O que importa são os pesos, então como quantificamos a "escala" e como a controlamos? Precisamos de uma ferramenta matemática precisa: a variância. A randomização dos parâmetros pode resolver o problema da simetria.
+
+80
+00:03:15,599 --> 00:03:17,599
+Então, podemos começar a treinar?
+
+81
+00:03:17,599 --> 00:03:18,750
+Na verdade, ainda não.
+
+82
+00:03:18,750 --> 00:03:21,910
+Porque, seja na propagação direta ou na propagação reversa,
+
+83
+00:03:21,910 --> 00:03:24,250
+já apresentamos a vocês em nossas derivações de fórmulas.
+
+84
+00:03:24,250 --> 00:03:26,800
+Há muitas operações de multiplicação em cadeia.
+
+85
+00:03:26,800 --> 00:03:29,180
+A multiplicação em série é, na verdade, algo muito assustador.
+
+86
+00:03:29,180 --> 00:03:31,080
+Não importa se estamos falando de multiplicação em série...
+
+87
+00:03:31,080 --> 00:03:32,640
+Cada vez, nós só aumentamos um pouco.
+
+88
+00:03:32,640 --> 00:03:35,190
+Por exemplo, se aumentasse 5%, poderíamos colocar 1.05.
+
+89
+00:03:35,190 --> 00:03:36,670
+Se fosse depois de 30 camadas,
+
+90
+00:03:36,670 --> 00:03:38,040
+viraria 4.3.
+
+91
+00:03:38,040 --> 00:03:41,680
+Se eu tiver um aumento de apenas 20% em cada camada, tornando-se 1.2,
+
+92
+00:03:41,680 --> 00:03:43,260
+depois de 30 camadas de treinamento,
+
+93
+00:03:43,260 --> 00:03:44,700
+o valor resultante seria 237.
+
+94
+00:03:44,700 --> 00:03:47,080
+Essa mudança de escala é exponencial.
+
+95
+00:03:47,080 --> 00:03:48,700
+Pode levar à ativação explosiva.
+
+96
+00:03:48,700 --> 00:03:50,800
+Na verdade, é sobre isso que sempre falamos.
+
+97
+00:03:50,800 --> 00:03:55,079
+Claro, porque o resultado da sua saída, na retropropagação, será multiplicado por ela.
+
+98
+00:03:55,079 --> 00:03:56,519
+Isso é o que chamamos de explosão de gradiente.
+
+99
+00:03:56,519 --> 00:03:58,799
+Na verdade, ser muito pequeno também não é bom.
+
+100
+00:03:58,799 --> 00:03:59,919
+É o mesmo princípio.
+
+101
+00:03:59,919 --> 00:04:01,999
+Mesmo que você diminua 5% a cada vez,
+
+102
+00:04:01,999 --> 00:04:03,899
+ainda chegará a 0,21, certo?
+
+103
+00:04:03,899 --> 00:04:06,699
+Se depois de 30 camadas diminuir 20% a cada vez,
+
+104
+00:04:06,699 --> 00:04:08,179
+vai se tornar 10 elevado a -3.
+
+105
+00:04:08,179 --> 00:04:09,519
+Já diminuiu a esse ponto.
+
+106
+00:04:09,519 --> 00:04:11,840
+Os gradientes já se tornaram praticamente zero.
+
+107
+00:04:11,840 --> 00:04:13,000
+Os parâmetros não são mais atualizados.
+
+108
+00:04:13,000 --> 00:04:15,400
+Isso é o que comumente chamamos de "desaparecimento de gradiente".
+
+109
+00:04:15,400 --> 00:04:18,940
+Então, a escala entre as camadas
+
+110
+00:04:18,940 --> 00:04:21,160
+deve ser mantida o mais estável possível.
+
+111
+00:04:21,160 --> 00:04:23,240
+Não pode aumentar; se aumentar um pouco,
+
+112
+00:04:23,240 --> 00:04:24,680
+Nem mesmo a conexão pode fazê-lo.
+
+113
+00:04:24,680 --> 00:04:30,020
+Se mudar um pouco, depois de várias camadas, pode causar o fenômeno do desaparecimento do gradiente.
+
+114
+00:04:30,020 --> 00:04:33,420
+Então, como devemos quantificar essa escala?
+
+115
+00:04:33,420 --> 00:04:34,920
+E como devemos controlá-lo?
+
+116
+00:04:34,920 --> 00:04:36,960
+Para isso, precisamos de uma ferramenta matemática.
+
+117
+00:04:36,960 --> 00:04:38,120
+Que é a variância.
+
+118
+00:04:38,120 --> 00:04:41,440
+é usado para descrever o quão disperso um conjunto de dados está.
+
+119
+00:04:41,440 --> 00:04:43,920
+A fórmula, na verdade, é para cada conjunto de dados, certo?
+
+120
+00:04:43,920 --> 00:04:45,620
+Cada valor é subtraído da média.
+
+121
+00:04:45,620 --> 00:04:46,200
+eleva ao quadrado
+
+122
+00:04:46,200 --> 00:04:47,360
+e depois somamos todos eles.
+
+123
+00:04:47,360 --> 00:04:48,320
+Após a soma,
+
+124
+00:04:48,320 --> 00:04:49,720
+E depois tiramos a média, certo?
+
+125
+00:04:49,720 --> 00:04:51,020
+Exatamente, é a média, a variância é o erro quadrático médio (EQM).
+
+126
+00:04:51,020 --> 00:04:54,330
+Já vimos isso muitas vezes antes.
+
+127
+00:04:54,330 --> 00:04:55,990
+Mas como tiramos o quadrado,
+
+128
+00:04:55,990 --> 00:04:58,370
+a escala é diferente dos dados originais.
+
+129
+00:04:58,370 --> 00:04:59,710
+Então, se tirarmos a raiz quadrada,
+
+130
+00:04:59,710 --> 00:05:01,400
+É o que chamamos de desvio padrão.
+
+131
+00:05:01,400 --> 00:05:02,560
+Quanto menor a variância,
+
+132
+00:05:02,560 --> 00:05:08,100
+isso significa que a variação de todo o conjunto de dados é menor, e chamamos isso de sinal estável.
+
+133
+00:05:08,100 --> 00:05:08,980
+Quanto maior a variância,
+
+134
+00:05:08,980 --> 00:05:12,200
+maior a diferença entre cada número e a média.
+
+135
+00:05:12,200 --> 00:05:14,419
+Quanto maior a distribuição, mais dispersa ela é.
+
+136
+00:05:14,419 --> 00:05:17,219
+Então, como podemos manter o sinal estável?
+
+137
+00:05:17,219 --> 00:05:22,460
+Devemos fazer com que a variância da saída de cada camada seja aproximadamente igual à variância da entrada.
+
+138
+00:05:22,460 --> 00:05:27,580
+Dessa forma, evitaremos os problemas de explosão ou desaparecimento do sinal que mencionamos.
+
+139
+00:05:27,580 --> 00:05:29,100
+Para manter essa variância, o que devemos fazer?
+
+140
+00:05:29,100 --> 00:05:31,380
+Isso equivale a manter a estabilidade do sinal.
+
+141
+00:05:31,380 --> 00:05:35,760
+Em seguida, vamos usar experimentos para ver como diferentes inicializações de peso de desvio padrão afetam isso.
+
+142
+00:05:35,760 --> 00:05:39,409
+como a variância vai mudar entre as camadas.
+
+143
+00:05:39,409 --> 00:05:42,309
+Vamos criar uma rede neural puramente linear de 6 camadas.
+
+144
+00:05:42,309 --> 00:05:43,809
+Sem camadas de ativação no meio.
+
+145
+00:05:43,809 --> 00:05:46,240
+cada camada tem 512 neurônios.
+
+146
+00:05:46,240 --> 00:05:48,240
+Vamos ver como o peso é inicializado com três variâncias diferentes,
+
+147
+00:05:48,240 --> 00:05:50,560
+ou seja, desvios padrão diferentes.
+
+148
+00:05:50,560 --> 00:05:52,409
+para ver que tipo de efeito eles terão.
+
+149
+00:05:52,409 --> 00:05:54,369
+Ou seja, o desvio padrão é definido como um.
+
+150
+00:05:54,369 --> 00:05:57,369
+Assim, descobriremos que, começando com um, após três camadas,
+
+151
+00:05:59,960 --> 00:06:02,840
+Depois de três camadas, o que era um se tornou 1,3 vezes 10 elevado a 8. E depois de seis camadas, virou 10 elevado a 16.
+
+152
+00:06:02,840 --> 00:06:05,440
+Significa que cada camada ampliou em 512 vezes.
+
+153
+00:06:05,440 --> 00:06:07,330
+Então, se olharmos o gradiente de forma inversa,
+
+154
+00:06:07,330 --> 00:06:09,010
+É a mesma coisa.
+
+155
+00:06:09,010 --> 00:06:10,750
+haverá uma explosão de gradientes.
+
+156
+00:06:10,750 --> 00:06:13,190
+Se o desvio padrão for definido como 0,01,
+
+157
+00:06:13,190 --> 00:06:16,039
+quase 512 vezes menor.
+
+158
+00:06:16,039 --> 00:06:17,479
+Então, depois de seis camadas,
+
+159
+00:06:19,639 --> 00:06:22,299
+cai para 10 elevado à potência de -8, o que faz com que a ativação seja quase zero.
+
+160
+00:06:22,299 --> 00:06:24,499
+Todos os neurônios podem ser considerados sem saída.
+
+161
+00:06:24,499 --> 00:06:26,200
+Isso é o desvanecimento do gradiente.
+
+162
+00:06:26,200 --> 00:06:30,320
+Se definirmos nosso desvio padrão como a raiz quadrada de 1/512,
+
+163
+00:06:30,320 --> 00:06:34,530
+Desse modo, veremos que, cada vez que você amplifica por 5112 vezes, não é?
+
+164
+00:06:34,530 --> 00:06:36,410
+Na verdade, eu vou multiplicar por um número assim.
+
+165
+00:06:36,410 --> 00:06:38,159
+A mudança em cada camada é, na verdade, de um.
+
+166
+00:06:38,159 --> 00:06:42,890
+Nós vamos descobrir que isso vai estabilizar a variância em raiz quadrada de 1/512.
+
+167
+00:06:42,890 --> 00:06:44,530
+O que são esses 512?
+
+168
+00:06:44,530 --> 00:06:46,590
+É o número de neurônios em cada camada.
+
+169
+00:06:46,590 --> 00:06:49,490
+Porque a variância de cada camada é multiplicada por um fator.
+
+170
+00:06:49,490 --> 00:06:50,570
+Quanto mais profunda a profundidade,
+
+171
+00:06:50,570 --> 00:06:52,650
+o desvio é ampliado geometricamente.
+
+172
+00:06:52,650 --> 00:06:55,370
+Então, precisamos encontrar uma maneira de fazer com que este fator seja igual a um.
+
+173
+00:06:55,370 --> 00:06:57,560
+Isso estabilizaria a variância.
+
+174
+00:06:57,560 --> 00:06:59,800
+A questão que resta é: pelo que é determinado?
+
+175
+00:06:59,800 --> 00:07:01,180
+Como estabilizar essa variância?
+
+176
+00:07:01,180 --> 00:07:03,680
+Uma camada linear sem função de ativação.
+
+177
+00:07:03,680 --> 00:07:05,960
+Então, o neurônio de saída y seria igual ao quê?
+
+178
+00:07:05,960 --> 00:07:08,840
+A soma de W vezes X de 1 a N.
+
+179
+00:07:08,840 --> 00:07:11,860
+Se W e X são independentes
+
+180
+00:07:11,860 --> 00:07:13,320
+e a média é zero,
+
+181
+00:07:13,320 --> 00:07:17,750
+Então, a variância de W vezes X é igual à variância de W vezes a variância de X.
+
+182
+00:07:17,750 --> 00:07:21,310
+Então, a variância de toda a saída é igual ao quê?
+
+183
+00:07:21,310 --> 00:07:24,010
+É a variância de W vezes a variância de X.
+
+184
+00:07:24,010 --> 00:07:27,230
+Pois cada um é somado de 1 a n.
+
+185
+00:07:27,230 --> 00:07:30,600
+Ou seja, isso acontece n vezes, então é só multiplicar por n.
+
+186
+00:07:30,600 --> 00:07:33,640
+O sinal, a cada camada que passa, é a variância.
+
+187
+00:07:33,640 --> 00:07:38,720
+Por exemplo, a saída de cada camada, ao chegar na próxima, torna-se novamente a entrada.
+
+188
+00:07:38,720 --> 00:07:39,640
+Transforma-se em 'x'.
+
+189
+00:07:39,640 --> 00:07:40,200
+Certo?
+
+190
+00:07:40,200 --> 00:07:45,760
+Então, é como se cada camada fosse multiplicada por um 'n' e pela variância da matriz de pesos.
+
+191
+00:07:45,760 --> 00:07:48,580
+Se 'n' multiplicado pelo peso...
+
+192
+00:07:48,580 --> 00:07:51,060
+for maior que um, então cada camada será ampliada.
+
+193
+00:07:51,060 --> 00:07:52,260
+Se for menor que um,
+
+194
+00:07:52,260 --> 00:07:53,360
+cada camada irá decair.
+
+195
+00:07:53,360 --> 00:07:54,860
+Só será estável se for exatamente igual a um.
+
+196
+00:07:54,860 --> 00:07:58,920
+Se queremos que a variância de y seja igual à variância da sua entrada, que é x,
+
+197
+00:07:58,920 --> 00:08:00,400
+a sua variância é a mesma.
+
+198
+00:08:00,400 --> 00:08:02,140
+Assim, as camadas entre si são todas estáveis.
+
+199
+00:08:02,140 --> 00:08:05,350
+Em outras palavras, podemos simplesmente inserir a fórmula, certo?
+
+200
+00:08:05,350 --> 00:08:06,990
+Os dois se anulam, resultando em um.
+
+201
+00:08:06,990 --> 00:08:10,840
+Então, a variância da matriz de pesos deve ser igual a um sobre n.
+
+202
+00:08:10,840 --> 00:08:11,960
+E o que é N?
+
+203
+00:08:11,960 --> 00:08:14,360
+É o número de neurônios de entrada, certo?
+
+204
+00:08:14,360 --> 00:08:17,789
+Isso é como se tivéssemos um mixer em uma estação de rádio, por exemplo.
+
+205
+00:08:17,789 --> 00:08:20,529
+A saída final é a entrada de áudio N gravada.
+
+206
+00:08:20,529 --> 00:08:23,029
+Então, se quisermos que a saída deste misturador...
+
+207
+00:08:23,029 --> 00:08:24,560
+não a torne muito alta.
+
+208
+00:08:24,560 --> 00:08:26,440
+ou diminuí-lo demais.
+
+209
+00:08:26,440 --> 00:08:27,280
+Então, o que devemos fazer?
+
+210
+00:08:27,280 --> 00:08:28,300
+Quantas pistas existem?
+
+211
+00:08:28,300 --> 00:08:31,000
+cada caminho é ajustado proporcionalmente para ficar menor.
+
+212
+00:08:31,000 --> 00:08:32,520
+Quando eles se juntam,
+
+213
+00:08:32,520 --> 00:08:34,600
+a saída é parecida com a entrada.
+
+214
+00:08:34,600 --> 00:08:35,700
+Voltando ao experimento,
+
+215
+00:08:35,700 --> 00:08:39,420
+como chegamos à raiz quadrada de 1/521?
+
+216
+00:08:39,420 --> 00:08:43,289
+É porque temos 512 neurônios, certo?
+
+217
+00:08:43,289 --> 00:08:46,489
+Então, o que precisamos fazer é multiplicar por, se for o desvio padrão da variância,
+
+218
+00:08:46,489 --> 00:08:48,569
+e se for 1/512,
+
+219
+00:08:48,569 --> 00:08:51,000
+o desvio padrão, é só tirar a raiz quadrada.
+
+220
+00:08:51,000 --> 00:08:52,890
+É assim que funciona.
+
+221
+00:08:52,890 --> 00:08:56,610
+Então, na inicialização de parâmetros, há três coisas que precisamos resolver:
+
+222
+00:08:56,610 --> 00:08:57,210
+nenhuma delas pode faltar.
+
+223
+00:08:57,210 --> 00:08:58,410
+A primeira é que, como já foi dito,
+
+224
+00:08:58,410 --> 00:08:59,570
+não pode ser tudo zero.
+
+225
+00:08:59,570 --> 00:09:01,500
+Mas nem tudo um, nem tudo três funciona.
+
+226
+00:09:01,500 --> 00:09:03,660
+Tem que quebrar a simetria.
+
+227
+00:09:03,660 --> 00:09:05,400
+Tem que ser aleatório.
+
+228
+00:09:05,400 --> 00:09:07,280
+E também precisamos controlar a escala.
+
+229
+00:09:07,280 --> 00:09:09,040
+Na verdade, durante a propagação direta,
+
+230
+00:09:09,040 --> 00:09:10,900
+a magnitude da ativação não deve aumentar camada por camada
+
+231
+00:09:10,900 --> 00:09:12,230
+nem diminuir camada por camada.
+
+232
+00:09:12,230 --> 00:09:13,710
+Durante a retropropagação,
+
+233
+00:09:13,710 --> 00:09:17,310
+a retropropagação é, na verdade, a propagação direta invertida.
+
+234
+00:09:17,310 --> 00:09:20,130
+Ao mesmo tempo, ela também não pode ser muito grande nem muito pequena.
+
+235
+00:09:20,130 --> 00:09:22,970
+Caso contrário, haverá desaparecimento ou explosão do gradiente.
+
+236
+00:09:22,970 --> 00:09:25,760
+Então, as fórmulas clássicas de inicialização...
+
+237
+00:09:25,760 --> 00:09:27,780
+A lógica dos métodos de inicialização é muito semelhante.
+
+238
+00:09:27,780 --> 00:09:29,980
+Primeiro, usamos a distribuição normal ou uniforme.
+
+239
+00:09:29,980 --> 00:09:31,320
+Então, quebramos a simetria.
+
+240
+00:09:31,320 --> 00:09:34,250
+Devemos usar a fórmula que acabamos de mencionar para controlar a variância.
+
+241
+00:09:34,250 --> 00:09:37,930
+Por fim, é só fazer algumas correções, de acordo com as funções de ativação específicas.
+
+242
+00:09:37,930 --> 00:09:40,320
+Então, vamos ver os dois mais comuns.
+
+243
+00:09:40,320 --> 00:09:44,000
+Primeiro, vamos dar uma olhada na inicialização Xavier, proposta em 2010.
+
+244
+00:09:44,000 --> 00:09:46,160
+Essa é a primeira vez que nos deparamos com o nome do Yoshua Bengio.
+
+245
+00:09:46,160 --> 00:09:47,740
+Ele é um dos três grandes nomes da IA.
+
+246
+00:09:47,740 --> 00:09:49,340
+Vamos vê-lo com frequência mais adiante.
+
+247
+00:09:49,340 --> 00:09:51,820
+A fórmula, na verdade, não é simplesmente 1 sobre n.
+
+248
+00:09:51,820 --> 00:09:54,370
+Mas, considerando a propagação para frente,
+
+249
+00:09:54,370 --> 00:09:56,840
+você quer que seja 1 sobre o número de neurônios de entrada.
+
+250
+00:09:56,840 --> 00:09:57,880
+Na retropropagação,
+
+251
+00:09:57,880 --> 00:09:59,740
+na verdade, você usa os neurônios de saída.
+
+252
+00:09:59,740 --> 00:10:01,340
+A entrada e a saída são invertidas, certo?
+
+253
+00:10:01,340 --> 00:10:03,450
+Esse é um em um dividido pelo número de saídas, o Xavier
+
+254
+00:10:03,450 --> 00:10:05,910
+ele faz um meio-termo entre os dois.
+
+255
+00:10:05,910 --> 00:10:09,819
+É o número de neurônios de entrada mais o número de neurônios de saída, dividido por dois.
+
+256
+00:10:09,819 --> 00:10:12,099
+No PyTorch, já temos uma API para isso.
+
+257
+00:10:12,099 --> 00:10:13,810
+Não precisamos ajustar essa fórmula manualmente.
+
+258
+00:10:13,810 --> 00:10:15,530
+Na prática, usamos o Xavier.normal.
+
+259
+00:10:15,530 --> 00:10:17,110
+Se você usa uma distribuição normal,
+
+260
+00:10:17,110 --> 00:10:18,290
+e se for uma distribuição uniforme?
+
+261
+00:10:18,290 --> 00:10:20,470
+Então, basta usar Xavier.uniform.
+
+262
+00:10:20,470 --> 00:10:22,070
+Por que é escrito assim?
+
+263
+00:10:22,070 --> 00:10:24,310
+Na verdade, naquela época, em 2010,
+
+264
+00:10:24,310 --> 00:10:27,920
+a maioria ainda usava Sigmoid ou Tanh como função de ativação.
+
+265
+00:10:27,920 --> 00:10:29,400
+No ponto zero,
+
+266
+00:10:29,400 --> 00:10:30,800
+sua derivada é muito próxima de um.
+
+267
+00:10:30,800 --> 00:10:33,899
+Essas duas funções, esta é a inicialização He proposta pela equipe de Kaiming He em 2015. Vou mostrar a aparência dessas duas funções.
+
+268
+00:10:33,899 --> 00:10:38,430
+Ainda se lembram que, em 0, a derivada já está muito próxima de um?
+
+269
+00:10:38,670 --> 00:10:41,890
+Nesse caso, se os nossos dados estiverem distribuídos ao redor deles,
+
+270
+00:10:41,890 --> 00:10:43,110
+mas se for bem feito,
+
+271
+00:10:43,110 --> 00:10:46,280
+a propagação para frente e a propagação para trás praticamente não alteram a variância.
+
+272
+00:10:46,280 --> 00:10:50,770
+Por isso, o Xavier é muito estável com esses tipos de funções de ativação.
+
+273
+00:10:50,770 --> 00:10:53,130
+Mas na era do ReLU, a história é diferente.
+
+274
+00:10:53,130 --> 00:10:55,100
+Redes neurais profundas agora usam ReLU.
+
+275
+00:10:55,100 --> 00:10:56,820
+E a função do ReLU é assim:
+
+276
+00:10:56,820 --> 00:10:58,180
+Quando está à esquerda do zero,
+
+277
+00:10:58,180 --> 00:10:59,500
+Não é um, certo?
+
+278
+00:10:59,500 --> 00:11:00,960
+Quando está à direita de zero, é um.
+
+279
+00:11:00,960 --> 00:11:02,160
+Afinal, o que vem antes é zero.
+
+280
+00:11:02,160 --> 00:11:03,440
+Isso é diferente disso.
+
+281
+00:11:03,440 --> 00:11:04,800
+Como é a distribuição?
+
+282
+00:11:04,800 --> 00:11:07,440
+Então, nesses casos, quando é igual a zero, o que acontece?
+
+283
+00:11:07,440 --> 00:11:12,140
+Se os sinais estiverem distribuídos uniformemente em ambos os lados, ou em uma distribuição normal,
+
+284
+00:11:12,140 --> 00:11:15,320
+é como se o lado zero estivesse removendo todos os sinais.
+
+285
+00:11:15,320 --> 00:11:18,520
+Então, aproximadamente metade dos sinais é, na verdade, eliminada.
+
+286
+00:11:18,520 --> 00:11:21,660
+Então, a variância de saída é apenas metade da variância de entrada.
+
+287
+00:11:21,660 --> 00:11:22,840
+O que devemos fazer neste caso?
+
+288
+00:11:22,840 --> 00:11:24,540
+Na verdade, o método que acabamos de usar não funcionaria mais.
+
+289
+00:11:24,540 --> 00:11:26,460
+Então, o que vem a seguir é 2015,
+
+290
+00:11:26,460 --> 00:11:28,800
+quando a equipe de Kaiming He propôs a inicialização He.
+
+291
+00:11:28,800 --> 00:11:31,299
+Na verdade, é o sobrenome dele, também conhecido como Kaiming.
+
+292
+00:11:31,299 --> 00:11:32,759
+A inicialização leva o seu nome.
+
+293
+00:11:32,759 --> 00:11:35,159
+Mas ele também é o inventor das redes residuais.
+
+294
+00:11:35,159 --> 00:11:37,620
+Os artigos mais citados.
+
+295
+00:11:38,020 --> 00:11:39,100
+Como é que ele faz isso?
+
+296
+00:11:39,100 --> 00:11:41,660
+Na verdade, é apenas para as características da função ReLU.
+
+297
+00:11:41,660 --> 00:11:43,160
+Vai cortar a variância pela metade, não é?
+
+298
+00:11:43,160 --> 00:11:46,440
+eu compensaria com a variância dos pesos.
+
+299
+00:11:46,440 --> 00:11:47,920
+Para o termo anterior,
+
+300
+00:11:47,920 --> 00:11:49,160
+Xavier faz da seguinte forma:
+
+301
+00:11:49,160 --> 00:11:51,460
+Para a inicialização de Kaiming ou He,
+
+302
+00:11:51,460 --> 00:11:52,280
+como funciona?
+
+303
+00:11:52,280 --> 00:11:54,320
+Ele pega o número de neurônios de entrada
+
+304
+00:11:54,320 --> 00:11:55,440
+basta multiplicar por 2.
+
+305
+00:11:55,440 --> 00:11:57,960
+Porque metade é eliminada no zero, certo?
+
+306
+00:11:57,960 --> 00:12:02,000
+Nesses casos, é claro que o PyTorch também possui uma fórmula correspondente.
+
+307
+00:12:02,000 --> 00:12:04,560
+É tipo a inicialização Kaiming normal e Kaiming uniforme, sabe?
+
+308
+00:12:04,560 --> 00:12:06,770
+Para distribuições normais e uniformes, é diferente.
+
+309
+00:12:07,640 --> 00:12:09,000
+No Pytorch,
+
+310
+00:12:09,000 --> 00:12:12,339
+Os parâmetros padrão do Kaiming, na verdade, são para Leaky ReLU.
+
+311
+00:12:12,339 --> 00:12:13,459
+Não é para ReLU.
+
+312
+00:12:13,459 --> 00:12:14,859
+Se estivermos usando ReLU,
+
+313
+00:12:14,859 --> 00:12:17,259
+na verdade, precisamos especificar isso explicitamente.
+
+314
+00:12:17,259 --> 00:12:20,040
+Este é, na verdade, a inicialização He padrão.
+
+315
+00:12:20,040 --> 00:12:21,960
+Se entendermos as fórmulas anteriores,
+
+316
+00:12:21,960 --> 00:12:24,120
+descobriremos que, na verdade, porque quando é menor que zero,
+
+317
+00:12:24,120 --> 00:12:26,660
+quando é menor que zero, a variância desaparece, certo?
+
+318
+00:12:26,660 --> 00:12:28,200
+Eu vou compensar isso.
+
+319
+00:12:28,200 --> 00:12:29,640
+basta multiplicar por 2.
+
+320
+00:12:29,640 --> 00:12:31,000
+Porque, de acordo com a minha hipótese,
+
+321
+00:12:31,000 --> 00:12:32,040
+você tem uma distribuição uniforme.
+
+322
+00:12:32,040 --> 00:12:34,360
+A quantidade de valores menores que zero e maiores que zero deve ser parecida, certo?
+
+323
+00:12:34,360 --> 00:12:37,720
+Então, se eu multiplicar por 2, o resultado também deve ser um número parecido.
+
+324
+00:12:37,720 --> 00:12:39,120
+Portanto, aprendendo até aqui...
+
+325
+00:12:39,120 --> 00:12:43,940
+Vamos revisar aquelas linhas de código de inicialização de pesos que usamos antes para entender o que elas realmente fazem.
+
+326
+00:12:43,940 --> 00:12:45,060
+Podemos observar o primeiro passo.
+
+327
+00:12:45,060 --> 00:12:45,820
+O que está acontecendo aqui?
+
+328
+00:12:45,820 --> 00:12:47,960
+Na verdade, isso é apenas uma distribuição normal padrão, certo?
+
+329
+00:12:47,960 --> 00:12:49,180
+Essa é a distribuição normal.
+
+330
+00:12:49,180 --> 00:12:53,030
+É apenas uma matriz de pesos de 784 por 128 dimensões.
+
+331
+00:12:53,030 --> 00:12:54,990
+Que número devemos multiplicar?
+
+332
+00:12:54,990 --> 00:12:57,920
+Podemos ver que é 2/784.
+
+333
+00:12:57,920 --> 00:12:59,480
+Assim, fica mais fácil de entender, certo?
+
+334
+00:12:59,480 --> 00:13:01,240
+Por último, tiramos a raiz quadrada.
+
+335
+00:13:01,240 --> 00:13:02,320
+É uma potência de 0,5, certo?
+
+336
+00:13:02,320 --> 00:13:03,080
+Tira a raiz quadrada.
+
+337
+00:13:03,080 --> 00:13:07,270
+Não é um esquema padrão de inicialização de pesos, certo?
+
+338
+00:13:07,270 --> 00:13:08,650
+Assim parece mais simples.
+
+339
+00:13:08,650 --> 00:13:10,210
+Então, todos os pesos, ah,
+
+340
+00:13:10,210 --> 00:13:12,300
+Quanto ao viés, é só defini-lo para zero.
+
+341
+00:13:12,300 --> 00:13:13,720
+É super simples.
+
+342
+00:13:13,720 --> 00:13:15,020
+Mas ao escrever o código de verdade,
+
+343
+00:13:15,020 --> 00:13:16,140
+não precisamos escrever dessa forma.
+
+344
+00:13:16,140 --> 00:13:18,180
+Basta usar a API diretamente.
+
+345
+00:13:18,180 --> 00:13:19,800
+Já que a inicialização é tão importante,
+
+346
+00:13:19,800 --> 00:13:22,860
+Então, por que muitas pessoas, ao escreverem código de demonstração,
+
+347
+00:13:22,860 --> 00:13:24,080
+não fazem isso?
+
+348
+00:13:24,080 --> 00:13:26,820
+E por que minha rede neural ainda consegue ser treinada?
+
+349
+00:13:26,820 --> 00:13:28,900
+nem teve o problema do desaparecimento ou da explosão do gradiente.
+
+350
+00:13:28,900 --> 00:13:32,360
+Isso acontece porque, na verdade, o PyTorch já faz isso por padrão internamente.
+
+351
+00:13:32,360 --> 00:13:34,220
+Por exemplo, quando você usa nn.Linear,
+
+352
+00:13:34,220 --> 00:13:36,220
+você não tem nenhum modelo de inicialização.
+
+353
+00:13:36,220 --> 00:13:38,860
+O modelo nos ajudou com algumas coisas internamente.
+
+354
+00:13:38,860 --> 00:13:41,120
+Veja que há uma redefinição de parâmetros por trás disso.
+
+355
+00:13:41,120 --> 00:13:42,420
+O que está acontecendo por dentro?
+
+356
+00:13:42,420 --> 00:13:43,370
+Vocês podem dar uma olhada.
+
+357
+00:13:43,370 --> 00:13:45,550
+Na verdade, está ajustando o Kaiming Uniform.
+
+358
+00:13:45,550 --> 00:13:47,370
+A única diferença é que ele recebeu um
+
+359
+00:13:47,370 --> 00:13:49,250
+Embora tenha ajustado o Kaiming Uniform,
+
+360
+00:13:49,250 --> 00:13:52,500
+o número que ele passou foi a raiz quadrada de 5.
+
+361
+00:13:52,500 --> 00:13:56,640
+Isso provavelmente cria uma certa diferença no desvio padrão, em comparação com o desvio padrão do HE.
+
+362
+00:13:56,640 --> 00:13:58,620
+Então, em redes de camada intermediária,
+
+363
+00:13:58,620 --> 00:14:00,000
+essa pequena diferença é insignificante.
+
+364
+00:14:00,000 --> 00:14:02,070
+Já pode usar quase normalmente.
+
+365
+00:14:02,070 --> 00:14:03,430
+Não precisa esconder, ele consegue treinar.
+
+366
+00:14:03,430 --> 00:14:05,750
+Mas para redes neurais profundas puras,
+
+367
+00:14:05,750 --> 00:14:08,350
+Ainda assim, sugiro que se use a padronização manual, que seria a inicialização de Kaiming.
+
+368
+00:14:08,350 --> 00:14:10,110
+Após entender a teoria,
+
+369
+00:14:10,110 --> 00:14:11,350
+então, vamos comparar cinco métodos de inicialização. Faremos um MLP *** camadas, que terá estes neurônios em cada camada.
+
+370
+00:14:11,350 --> 00:14:13,310
+Vamos dar uma olhada em cinco métodos de inicialização.
+
+371
+00:14:13,310 --> 00:14:17,730
+Uma comparação prática deles. Ainda usaremos um MLP *** camadas, que tem estes...
+
+372
+00:14:17,730 --> 00:14:19,660
+Cada camada tem estes neurônios.
+
+373
+00:14:19,660 --> 00:14:21,180
+Vamos treinar cinco rodadas.
+
+374
+00:14:21,180 --> 00:14:23,780
+Para ver as diferenças de inicialização.
+
+375
+00:14:23,780 --> 00:14:25,300
+E também seus resultados finais.
+
+376
+00:14:25,300 --> 00:14:26,780
+Quais são esses cinco métodos?
+
+377
+00:14:26,780 --> 00:14:29,060
+São o de todos os zeros e o da distribuição normal padrão.
+
+378
+00:14:29,060 --> 00:14:30,880
+E também um que usa 0.01.
+
+379
+00:14:30,880 --> 00:14:31,880
+Isso é um pouco curioso.
+
+380
+00:14:31,880 --> 00:14:34,480
+Porque nós, em geral, estamos apenas a tentar que seja aproximadamente zero ponto
+
+381
+00:14:34,480 --> 00:14:36,420
+E um desvio padrão de 0,1 é suficiente.
+
+382
+00:14:36,420 --> 00:14:38,640
+Então, você vai descobrir que ele também pode ser treinado.
+
+383
+00:14:38,640 --> 00:14:42,230
+As inicializações de Z. B. Er e Kaiming são distribuições normais.
+
+384
+00:14:42,230 --> 00:14:43,570
+Vamos ver o que são.
+
+385
+00:14:43,570 --> 00:14:46,070
+Primeiro, vamos dar uma olhada na linha azul, que representa o zero.
+
+386
+00:14:46,070 --> 00:14:48,869
+Vamos perceber que a perda é quase sempre alta.
+
+387
+00:14:48,869 --> 00:14:51,089
+A precisão dela é sempre muito baixa.
+
+388
+00:14:51,089 --> 00:14:54,020
+É como adivinhar aleatoriamente, não faz diferença.
+
+389
+00:14:54,020 --> 00:14:54,740
+Vamos ver de novo.
+
+390
+00:14:54,740 --> 00:14:56,540
+Se usarmos a distribuição normal padrão,
+
+391
+00:14:56,540 --> 00:14:57,060
+Podem ver
+
+392
+00:14:57,060 --> 00:14:58,660
+Primeiro, a perda não pode ser vista porque
+
+393
+00:14:58,660 --> 00:14:59,980
+é super grande.
+
+394
+00:14:59,980 --> 00:15:01,260
+Nem aparece mais nessa tabela.
+
+395
+00:15:01,260 --> 00:15:01,940
+Já explodiu o gradiente.
+
+396
+00:15:01,940 --> 00:15:04,790
+Na verdade, não dá para treinar assim, né?
+
+397
+00:15:04,790 --> 00:15:07,359
+Então, a precisão é quase a mesma que a de um palpite aleatório.
+
+398
+00:15:07,359 --> 00:15:09,719
+Vamos ver, é exatamente 0,01.
+
+399
+00:15:09,719 --> 00:15:12,280
+Isso é porque foi apenas uma coincidência que escolhemos bem.
+
+400
+00:15:12,280 --> 00:15:15,660
+Mas também perceberemos que a sua velocidade de convergência de treinamento é relativamente mais lenta.
+
+401
+00:15:15,660 --> 00:15:19,910
+A precisão final ainda é ligeiramente menor do que a inicialização de Kaiming ou He.
+
+402
+00:15:19,910 --> 00:15:24,530
+E a inicialização de Kaiming e Xavier são quase igualmente eficazes.
+
+403
+00:15:24,530 --> 00:15:26,980
+Se olharmos atentamente para os valores aqui,
+
+404
+00:15:26,980 --> 00:15:29,140
+descobrimos que o 微 está um pouco melhor. Isto acontece porque
+
+405
+00:15:29,140 --> 00:15:31,079
+temos poucas camadas. Se tivéssemos mais camadas,
+
+406
+00:15:31,079 --> 00:15:33,639
+Quando chegamos ao Resnet e usamos 50 camadas,
+
+407
+00:15:33,639 --> 00:15:35,559
+ou quando o número de camadas aumenta,
+
+408
+00:15:35,559 --> 00:15:36,239
+percebemos que
+
+409
+00:15:36,239 --> 00:15:39,400
+A inicialização Kaiming, geralmente, é melhor do que a Xavier.
+
+410
+00:15:39,400 --> 00:15:41,540
+E a curva de treinamento é um pouco mais suave.
+
+411
+00:15:41,540 --> 00:15:46,730
+Para finalizar, a inicialização dos parâmetros não é só dar um número aleatório qualquer.
+
+412
+00:15:46,730 --> 00:15:50,610
+Mas é necessário que a rede, no início do treinamento, esteja em um estado de sinalização
+
+413
+00:15:50,610 --> 00:15:52,599
+muito razoável.
+
+414
+00:15:52,599 --> 00:15:55,119
+Neste ponto, há três requisitos mais básicos.
+
+415
+00:15:55,119 --> 00:15:56,519
+Primeiro, é preciso quebrar a simetria.
+
+416
+00:15:56,519 --> 00:15:57,700
+Você tem que ser aleatório.
+
+417
+00:15:57,700 --> 00:15:59,720
+Segundo, é preciso controlar a escala.
+
+418
+00:15:59,720 --> 00:16:02,720
+Permite que a escala de entrada e a escala de saída se mantenham consistentes.
+
+419
+00:16:02,720 --> 00:16:05,720
+Além disso, o viés pode ser totalmente zerado.
+
+420
+00:16:05,720 --> 00:16:08,000
+Se estivermos lidando com redes como ReLU, GeLU,
+
+421
+00:16:08,000 --> 00:16:11,780
+Então, usamos Kaiming, ou seja, a distribuição normal de He, e é o suficiente.
+
+422
+00:16:11,780 --> 00:16:15,420
+Se, em alguns de nossos treinamentos, usarmos sigmoid ou Tanh,
+
+423
+00:16:15,420 --> 00:16:17,560
+geralmente podemos usar a inicialização Xavier.
+
+424
+00:16:17,560 --> 00:16:20,320
+Mas para redes mais rasas ou de camada média,
+
+425
+00:16:20,320 --> 00:16:22,420
+o PyTorch já as inicializou por padrão.
+
+426
+00:16:22,420 --> 00:16:23,820
+Na verdade, não precisa fazer nada.
+
+427
+00:16:23,820 --> 00:16:25,000
+Mas para algumas redes mais profundas,
+
+428
+00:16:25,000 --> 00:16:28,060
+é melhor redefinirmos manualmente os parâmetros visíveis
+
+429
+00:16:28,060 --> 00:16:29,450
+e ajustá-los.
+
+430
+00:16:29,450 --> 00:16:30,250
+Normalmente, é melhor ajustar as configurações manualmente para redes mais profundas.
+
+431
+00:16:30,250 --> 00:16:33,110
+Integramos a estratégia na função init.
+
+432
+00:16:33,110 --> 00:16:34,420
+Aplicamos.
+
+433
+00:16:34,420 --> 00:16:35,180
+Depois da inicialização dos parâmetros,
+
+434
+00:16:35,180 --> 00:16:38,680
+podemos fazer com que a rede se mantenha estável na primeira vez que for treinada.
+
+435
+00:16:38,680 --> 00:16:40,770
+Mas sabemos que, com o treinamento da nossa rede,
+
+436
+00:16:40,770 --> 00:16:42,330
+Durante o descenso do gradiente,
+
+437
+00:16:42,330 --> 00:16:44,110
+ele ajustará nossos pesos.
+
+438
+00:16:44,110 --> 00:16:47,150
+Mas ao ajustar os pesos, ele não seguirá as regras que mencionamos.
+
+439
+00:16:47,150 --> 00:16:49,070
+Ele não vai garantir estabilidade de variância
+
+440
+00:16:49,070 --> 00:16:49,910
+nem nada disso.
+
+441
+00:16:49,910 --> 00:16:51,010
+Então, o que faremos?
+
+442
+00:16:51,010 --> 00:16:52,510
+Na verdade, na próxima aula,
+
+443
+00:16:52,510 --> 00:16:54,660
+vamos falar sobre como fazer explicitamente
+
+444
+00:16:54,660 --> 00:16:55,720
+uma normalização.
+
+445
+00:16:55,720 --> 00:17:00,400
+para que toda essa estabilidade possa ser mantida durante todo o processo de treinamento.
+
+446
+00:17:00,400 --> 00:17:01,560
+Depois de entender isso,
+
+447
+00:17:01,560 --> 00:17:04,850
+vamos analisar a normalização de camada do Transformer.
+
+448
+00:17:04,850 --> 00:17:07,330
+Esta camada ficará muito clara.
+
+449
+00:17:07,330 --> 00:17:08,990
+Então saberão por que adicionar esta camada.
+
+450
+00:17:08,990 --> 00:17:10,750
+E o que essa camada realmente está fazendo.
+
+451
+00:17:10,750 --> 00:17:13,300
+Bem, este vídeo termina aqui.

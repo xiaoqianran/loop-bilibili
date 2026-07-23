@@ -1,0 +1,665 @@
+Over the past dozen or so lessons,
+and have covered all sorts of fundamental concepts in neural networks.
+We've basically mastered the ultimate weapon.
+So, starting with this video,
+we're going to start learning about
+a framework specifically designed for computer vision tasks.
+the CNN,
+commonly known as Convolutional Neural Networks.
+So first, let's talk about what computer vision tasks actually are.
+So, computer vision is essentially about getting machines to understand images.
+For us humans,
+recognizing an image is a piece of cake.
+But for a computer,
+an image, in its essence, is just a collection of numbers.
+Specifically, the RGB values corresponding to each pixel.
+Now, what if we make some slight changes to the image?
+For instance, if we change the angle,
+adjust the lighting, or cover up a part of it.
+To us, it doesn't look all that different.
+So, it still seems pretty straightforward.
+But for a computer,
+the distribution of these pixels has changed dramatically.
+it's no longer recognizable.
+So, this really gets to the heart of the matter with CV, or Computer Vision.
+is not about processing these pixels directly.
+Instead, its core purpose is to extract meaningful information from that raw visual data.
+to achieve an understanding similar to the human visual system.
+judge and reason.
+Its core tasks, some of the most common ones, include image classification.
+Give us an image,
+and ask us to figure out what the main subject in the picture is.
+Then there's object detection, which, within an image,
+like people, cars,
+and traffic lights等各种目标标注出来。
+And then there's image segmentation.
+It separates the road, the sky, and the pedestrians pixel by pixel.
+the detection of human faces,
+This is something we use a lot.
+OCR, or Optical Character Recognition, extracts text from images.
+or even autonomous driving in cars.
+and it's also used in image processing.
+Here we have a picture of a cat.
+So, what if we keep zooming in on this picture?
+At first, you can still zoom in smoothly and continuously.
+we'll start to see this kind of pixelated style.
+or mosaic-like grid cells.
+So, in reality, an image is just made up of a huge number of these tiny squares.
+They are arranged one by one in a specific order.
+And each of these small grids is actually a block of color.
+And each one of these represents a color.
+And we call this color block a pixel.
+It stores the color information for that specific location in the image.
+So, how do we actually represent this color?
+Why is this color brown,
+This is red,
+This one's magenta or something like that.
+So, how is this expressed?
+We also often see that RGB corresponds to three numbers.
+So, what are these?
+So, let's take a look at how computers actually represent color.
+In nature, there are countless colors.
+But obviously, a computer can't just assign a unique code to every single possible color.
+In reality, within a computer, color is defined by something called RGB.
+—stands for Red, Green, and Blue.
+These three primary colors are also known as the three primary colors.
+By arranging and combining these three colors,
+a vast array of colors can be produced.
+Now, let's take a look at this diagram.
+If it's just red light,
+green light, and blue light.
+and for this one, we adjust its brightness
+That is, it ranges from 0 to 255.
+This is a solid color.
+So, what if we start to mix red and green?
+it will actually create yellow.
+And it's the same in the natural world.
+Different combinations of these colors will produce new ones.
+So, if we make all three colors fully bright,
+all set to 255,
+you get pure white.
+It's kind of like how a rainbow works.
+It's just breaking down the color white.
+So this is how we put it back together.
+If all three colors are dark,
+and they're all zero
+So what does that look like?
+That would be pure black.
+So, every color can be represented by these three RGB values.
+And each of these numbers represents the brightness of its respective color channel.
+And by combining values from 0 to 255, we can create all sorts of different colors.
+For example, pure red would be 255,
+And all the others are zero.
+So for pure black, we just covered that it's zero.
+and for black, it's all 255s.
+that's white.
+And if we look closely, we'll notice something.
+Now, if the RGB values are all equal,
+for example, all at 255,
+or zero,
+or maybe they're all 128, something like that.
+So, you'll find that when these three color values are equal,
+you'll get a shade of gray.
+If all of them are zero,
+then it becomes black.
+And if it's all 255, it becomes white.
+What if it's 121, 128?
+It would be a shade of gray in the middle.
+And that's a circle.
+So, a computer can represent any color using just three sets of numbers.
+So, that's how we process color images.
+So, let's say for example, we're given a...
+a 32 by 32 color image.
+So, what does that mean?
+So, it just means there are 32 pixels horizontally.
+It doesn't matter if we're talking about the length or the width.
+But that's not important.
+You have 32 pixels horizontally,
+And vertically, it also has 32 pixels.
+And each of these pixels is represented by three values: Red, Green, and Blue, or RGB.
+So, if we're processing an image on a computer,
+a 32 by 32 color image,
+it would be written as three channels.
+the RGB channels.
+where each channel is a 32 by 32 grid.
+It's a two-dimensional array.
+So essentially, it's a three-dimensional tensor overall.
+or a three-dimensional array, and that's what we get.
+But as I mentioned before, for gray-scale images...
+That's because all three of its color channels are identical.
+So, there's no need to distinguish between the three channels.
+So you just give it a single channel.
+So in this case, it's 32 by 32.
+So, it can be represented by just a two-dimensional matrix.
+Let's take a look.
+Before, when we used the MNIST handwritten digits dataset,
+So, it's essentially a grayscale image.
+And the numbers on it,
+represented by either white or some shade of gray in between.
+So, its representation is a two-dimensional array.
+Now, these numbers aren't set in stone;
+It's just meant as an illustration to show how it's represented.
+For instance, take the MNIST dataset we use.
+are all 28 by 28.
+That means there are 28 points horizontally,
+and 28 points vertically.
+And each of these points is represented by a numerical value, typically ranging from 0 to 1.
+The darker areas gradually get larger and more resemble white.
+As you can see, the center is white.
+So it's pretty much the same.
+So basically, that's what it means.
+so we can just use one channel
+Because the color values in all three channels are the same.
+So, I can just use one channel to represent it.
+that tells you how bright it is.
+The brightest is 255.
+So, we know that...
+So that's why, when we were talking about MLPs,
+Do you all remember?
+and you might be wondering where this number 784 comes from.
+So, 28 times 28 gives you 784.
+This represents how many numbers are used for each pixel.
+What about for a color image?
+Now, we know that a color image has three channels.
+We can represent this as three arrays.
+forming three two-dimensional arrays.
+So, it's really just a three-dimensional tensor.
+This arranges them so that the top part is all red.
+and the intensity values for the red channel,
+the green channel,
+and the blue channel.
+And just like that, you get an RGB array.
+and feeds it a three-dimensional array.
+and that's how you get a full-color image.
+But, for a 32 by 32 image,
+you would then multiply that by three.
+So that's a total of 3072 values.
+Alright, now that we've got a handle on how images are represented,
+Actually, when we were working with handwritten digits,
+to have a computer recognize handwritten digits,
+and we were already able to successfully recognize it using an MLP.
+And if we then combine that with learning rate scheduling and parameter initialization,
+normalization,
+and other training optimization techniques like regularization,
+the accuracy of this handwritten digit recognition,
+We've already hit 98%.
+So, what if I were to tweak this a bit?
+to have it recognize whether there's a dog or a cat in the picture.
+Or have it mark out the roads.
+Wouldn't that also work?
+But what about using the MLP approach?
+Deep neural networks...
+like, by making the network a bit deeper.
+So, can it handle more complex tasks?
+Actually, that doesn't work.
+So, why is that?
+What about for something like the MNIST dataset?
+isn't too bad.
+So, why is that?
+Because it's a 28 by 28 grayscale image.
+So, when you convert it into a matrix,
+So, it has 28 rows in total,
+and 28 columns, making 784 pixels in total.
+So, when we process it,
+What we're actually doing is flattening it.
+rather than treating it as a two-dimensional object.
+Because we're treating it as 784 individual features.
+and feed it into the neural network.
+So, from X1 to X784, it goes to the second layer.
+and that's it for the third layer.
+So, what about the hidden layer? Let's break it down.
+So, if it only has 784 features, it's still manageable.
+This is especially true for modern computers.
+it can still handle it.
+So overall, the number of parameters is manageable.
+But what about images from the real world?
+are far more complex than the images in the MNIST dataset.
+So, let's start with something a little more complex.
+just a bit bigger.
+Let's say 32 by 32.
+But... this time, it's a color image.
+So, we multiply that by three,
+That's about 3,072 pixel values in total.
+if we design the second layer to have 512 neurons,
+So, in the first layer, after we flatten this small image,
+you'd just multiply that by three.
+Because, you know, there are three channels.
+So for a color image, that's 3072 right there.
+So what if we add another hidden layer after that?
+and it has 512 neurons,
+Then, that would require roughly over a million parameters.
+that's already
+So, what if we make things a bit more complex?
+Now, for the images we use today,
+We often talk about...
+that our pixel count is 1024 by 768.
+Even 1920 by 1080 is considered quite large.
+and this is just 224 by 224 pixels.
+Now, for modern images, a small picture like this...
+is far from being considered clear.
+And since it's a color image,
+So, after flattening it out...
+that's already 150,000 inputs.
+And if the second layer also has 512 neurons,
+In fact, 512 isn't even that many compared to the first layer.
+Multiply that, and you're already at seventy...
+And just the first two layers alone would already require over 70 million parameters.
+Now, for a computer,
+especially back in the early days of computing.
+This was completely infeasible.
+And keep in mind, that's just for the first layer.
+and if I multiply that by another layer...
+Then it gets even bigger.
+So there's just no way I can make it into...
+a deep neural network.
+It can only handle learning one or two layers at most.
+So naturally, the features it learns are going to be very shallow.
+So, what can we do about it?
+But of course, we've only scratched the surface of its problems.
+And it’s not just about having too many parameters.
+Having too many parameters is just one of the problems.
+They just make the training process much slower.
+The strain on memory also increased.
+And on top of that, if you have a limited amount of data,
+For instance, let's say we don't have enough images.
+let's say you only have a few tens of thousands of images
+but when my model has over 70 million parameters,
+So, with a model like that, it's pretty much guaranteed to overfit as soon as you start training it.
+pretty much.
+But actually, that's not even its biggest problem.
+The MLP can't handle images at its core.
+So, what's the real, deeper reason for this?
+So, when it comes to images...
+Well, even though images are represented in a computer as...
+strings of ones and zeros, just like that.
+We say it's 255, but that's just us humans converting it into a decimal number.
+But an image itself isn't really just a list of independent numbers.
+It has a spatial structure.
+is related to the pixel in front of it,
+is usually related to the pixels that come after it.
+that come together to form a person.
+They're not randomly distributed.
+Right.
+And also, think about an image.
+In fact, there are a few typical characteristics.
+This is called local correlation.
+Its pattern only appears within a small, localized area.
+It's a gradual transition.
+For example, let's say this part here is black.
+the surrounding area is also very likely to be black.
+as purple starts to gradually appear,
+the surrounding area is also purple.
+They are related to each other.
+Another one is translation equivariance.
+Or, as it's also called, translation invariance.
+Its position has changed,
+the pattern itself remains unchanged.
+For example, let's say we move these characters over here.
+It's still the same characters.
+And another property is its hierarchical structure.
+So, we'll break this down together in a moment.
+First, let's take a look at local correlation.
+Take the meaning of a single pixel, for instance.
+is mainly determined by what this pixel represents.
+So, once we flatten it,
+It loses all connection to its surroundings.
+But in reality, the relationship a pixel has with its neighbors is extremely important.
+Let's try to recognize something.
+For example, say we have this picture of a dog.
+We can tell that...
+For example, when we're looking at this part here,
+and we can tell right away.
+This is the dog's eye.
+It's what's right next to it that helps us make that identification.
+Or take the dog's paw, for instance.
+So, for instance, does this part of the image affect our ability to recognize the dog's eye?
+Not at all. It has no effect whatsoever.
+It's only related to the local area around it, its immediate surroundings.
+or its nose and mouth.
+and it's also connected to the global information.
+or the grass next to it.
+its legs,
+don't really help us much in identifying the eyes.
+For example, if we take images from the natural world,
+And it's actually the same for all of them.
+We can see right away, this is an edge.
+And this one is a corner.
+It doesn't matter what's next to it.
+And this one, that would be animal fur.
+And this one looks like it's part of a leaf.
+And this right here is the wheel.
+Actually, it's related to the car's window,
+or this glass, this is a door handle.
+realistically, all you need to do is look at the local area.
+Pixels that are far away don't really have much to do with it.
+But in an MLP, we establish full connections.
+essentially, it makes every single pixel relate to all the others.
+But in the context of images, that's really not necessary.
+This leads to an explosion in the number of parameters.
+So, what's the second point?
+translation equivariance.
+And as I briefly mentioned with that example a moment ago...
+the same local pattern
+appearing in the top-left corner or the bottom-right corner of an image
+essentially, it's the same pattern.
+Only their position has changed.
+So really, it doesn't need to learn a separate pattern for every single position.
+there's no need to train a whole new detection pattern for it.
+For example, let's say we have an image of a kitten.
+In the top-left corner of the image, we've successfully identified it.
+And that it's a cat.
+And that actually affects the entire image.
+This is called a feature map.
+We'll get to that in a moment.
+This area is highlighted,
+This indicates there's a cat in this region.
+The rest of the areas remain dark.
+This means there's nothing significant in the rest of the areas.
+This can be interpreted as a filter.
+For example, let's take a thermal imaging scenario.
+Let's say this area has some heat signal.
+Only this specific spot lights up, while other areas without heat remain dark.
+So, this is what image recognition is all about.
+or, you could say, some of the fundamental techniques for signal recognition.
+You can also call it pattern detection, or a 'detector', things like that.
+So, what about the second picture?
+I just need to move the kitten to the bottom-right corner.
+it's still the same kitten.
+So, I don't actually need to build a whole new detector for that, right?
+So, whether we call it a convolutional kernel or a filter later on,
+Right, they're just all sorts of signal waves.
+There's no need for that.
+As long as these two are the same, it'll work.
+All I need to do is detect...
+In fact, you can just use the same thing to detect it.
+It only needs to process this small section, and that's it.
+But, if you were to use a fully connected network,
+you actually have to recognize the entire thing.
+and now everything in this block is different.
+This results in a huge waste of parameters.
+And the third is the hierarchy of high-level semantics within an image.
+In fact, it's not generated by a single pixel.
+Instead, they are constructed gradually from low-level visual patterns.
+So, in general,
+We'll also cover this when we get to the low-level details later on.
+So, when we try to recognize images,
+Although we aren't consciously aware of this process,
+But this is what's actually happening.
+At first, all we see is this vague, patchy area.
+an idea of what it is.
+and gradually starts to make out the textures and edges.
+and then you can start to make out the different parts.
+And gradually, these parts can actually be pieced together into a whole.
+In fact, this principle applies to human visual nerves, which are, after all, those of mammals.
+The visual nerve works in exactly the same way.
+So, at the lower layers, if we process it layer by layer...
+At the shallow layers, it primarily looks for some local features.
+As we go deeper, it gradually abstracts the features, creating a higher-level representation.
+So, if we take this cat's face, an MLP just can't solve these problems.
+It flattens the image into a one-dimensional vector.
+This completely ignores the local correlations within the image.
+Because originally, all the pixels were right next to each other.
+once you flatten it out,
+so any relationship between them is basically lost.
+This completely destroys the image's spatial structure.
+If we truly want to process images,
+So, how do we go about recognizing images?
+What we truly need is something that's well-suited for images.
+a network for these kinds of tasks.
+one that can adapt to the unique characteristics of images themselves.
+And that's exactly what a Convolutional Neural Network, or CNN, is all about.
+Its core philosophy can be summed up in one single sentence.
+So, why is that?
+First, you look at the local parts.
+and then gradually piece together the bigger picture. So, what does that mean?
+Let's take a look.
+Of course, this concept wasn't just pulled out of thin air.
+In fact, this idea goes way back to the 1950s.
+neuroscientists had actually already...
+while studying the visual cortex of cats,
+and they discovered a certain pattern.
+You see, the visual cortex has a massive number of neurons.
+But it turns out, these neurons don't just light up for any image they see.
+to respond to.
+It's only certain neurons,
+For instance, some neurons will only respond when they encounter a vertical line.
+that it will have a strong reaction.
+But when it comes across horizontal lines in an image,
+it barely responds at all.
+So, if we were to explain this using a neural network...
+So after it goes through the activation function,
+basically means it doesn't output anything.
+But for others, let's say, they are highly sensitive to diagonal lines.
+So when you show it a diagonal line like this,
+it's not sensitive to it at all.
+And of course, these two researchers also made a breakthrough based on this principle.
+And later on, they both won the Nobel Prize for it.
+In essence, this is what's known as a local receptive field.
+In other words, it also only looks at a small patch.
+it only focuses on a small patch.
+whether there are horizontal or vertical lines,
+What kind of textures are there?
+Now, this is just a simple example to illustrate the point.
+and it's being processed layer by layer.
+And what about this one?
+This actually also influenced how later generations tackled computer vision tasks.
+So, I'll start by just looking at a small patch.
+and then the deeper layers will take these small pieces and combine them,
+to abstract even higher-level features.
+And then combine those even further.
+and gradually, it all starts to make sense.
+And that's pretty much how a CNN works, too.
+Of course,
+In the early days,
+Neuroscientists pretty much always use cats' eyes for their experiments.
+So, that's why in a lot of educational content about computer vision,
+love to use cats as examples.
+And it's not just because their eyes are big.
+Or maybe it's because our real-life "Hakimi" also played a huge role in this.
+and helped kick-start our understanding of neural networks.
+So, what's the basic principle we use in neural networks?
+It acts as a small filter,
+or a small detector.
+And we call this a convolution kernel.
+And what's inside it is really just a bunch of numbers.
+For example, let's say I want to identify vertical lines.
+so that they're all the same for the vertical ones.
+This is a 3x3 matrix of numbers.
+We'll have it move from the top-left corner all the way over here.
+and just keep letting the convolution kernel scan across it.
+And with each scan, it's interacting with the image itself.
+Because, as we know, every single pixel has its own...
+and that number represents the pixel's color intensity.
+Let's have them perform a convolution operation.
+This mathematical operation is known as convolution.
+So, this scanning process is essentially what happens after we perform the convolution operation.
+into a single number.
+So, for this number...
+So, each of these convolution kernels represents a specific pattern.
+For example, one might represent the ability to recognize vertical lines.
+If it detects a larger number,
+it will make this section appear brighter.
+But if the number is smaller,
+it will make the corresponding area slightly darker.
+a high response
+This is just like the visual neurons we saw earlier in a cat's brain.
+The process is very similar.
+So, with this particular feature,
+Of course, we can use a whole lot of these convolutional kernels.
+to scan the image over and over again.
+And as we all know,
+As we know, a color image is made up of three channels: RGB, right?
+So, we'd basically scan through this image three times.
+But in reality, mathematically speaking,
+It's a computation on a three-dimensional matrix.
+Actually, it doesn't even need three passes; it can be computed in just one.
+But for our purposes, we can understand it as operating on the three channels,
+the computation is performed by scanning through the R, G, and B channels separately.
+And after the calculation is done,
+So, it takes this image, an image of a little cat,
+Then, in the first layer, it gets transformed into something like this.
+Showing us which areas are sensitive to vertical lines.
+and which parts are not sensitive to vertical lines.
+So, for example, let's say...
+So we can interpret this area as having no vertical lines.
+this section might have a lot of vertical lines.
+And we call this the feature map.
+Feature map.
+Of course, if we use different convolution kernels, we'll get different ones.
+Each convolutional kernel corresponds to one feature map.
+revealing a variety of features.
+And then it's passed on to the next layer for further processing.
+So basically, each of these kernels is tasked with looking for a specific pattern.
+Some look for vertical lines,
+some for diagonal lines,
+some for edges and corners,
+As for the resulting feature map,
+Once arranged, these can be passed as input to the next layer.
+And then, the convolutional kernels in the next layer can just keep scanning them.
+to perform a convolutional operation.
+So, why is this CNN model so well-suited for images?
+So, how exactly does this scanning process reduce the number of parameters?
+Well, the core of its design really comes down to two key points.
+And these characteristics perfectly align with the fundamental features of an image.
+So, for this kind of data...
+Image data isn't just random information.
+This is data with an inherent structure.
+So, we can leverage this very structure.
+In fact, they do some subtraction.
+removing some of that complexity.
+First, it has local connections.
+So, it's not like an MLP,
+where every single neuron is fully connected.
+This corresponds to the local correlations in an image.
+neuron
+So, each neuron, you can think of it as...
+Or, let's just call it each convolutional kernel.
+So it's not looking at the entire image anymore.
+It's just a small window, say 3x3 or 5x5.
+This is called the receptive...
+Which, yeah, basically means its field of view.
+field, or in Chinese, '感受野' (gǎn shòu yě).
+I only look at my own little patch.
+I just need to scan over you, and that's it.
+So, are you an edge, or a texture?
+This itself is determined by the neighboring pixels.
+So, as I scan the image from left to right and top to bottom,
+But by scanning, I can pull out all sorts of different features from you.
+Some are diagonal lines like this.
+Some might look like this.
+of all different types.
+So, what's the second point?
+Parameter sharing.
+This is what's known as translation invariance, or some might call it translation equivariance.
+With the very same convolution kernel,
+So basically, each number in this convolution kernel represents a parameter.
+So, a lot of students, including myself back in the day, might know this and also wonder...
+So, for different features...
+So how am I supposed to know that you're all just zeros inside?
+For one, it's still one.
+So what numbers should we use here?
+This number is also something that gets trained by the model.
+But you don't need to worry about that.
+All you need to do is master the techniques for parameter initialization.
+As long as you initialize it properly,
+and the rest will be handled by the neural network training.
+So, the thing is, the patterns these different [kernels] learn...
+the patterns they recognize will be different.
+But when it comes to the same convolutional kernel,
+it's trying to recognize that same pattern.
+So, the overall architecture we're using is no longer fully connected.
+So, for all the pixels in this image,
+In fact, the parameters are all the same.
+Because we assume that as long as it's a vertical line,
+then their features are all the same.
+So there's no need for me to change the parameters.
+So, as you can see, this actually reduces the total number of parameters by a whole lot.
+So, different kernels are essentially looking for different patterns.
+Some look for horizontal features,
+some look for vertical ones,
+Some look for textures.
+Some look for color.
+The deeper the layers go,
+these simple patterns are continuously combined in the later layers.
+Of course, you might be thinking...
+So how do you piece all that together?
+You're only looking at a small patch.
+So how can you possibly see the whole picture?
+In fact, this layer we're talking about is what's called a convolutional layer.
+and the layer that comes after it is what we call the pooling layer.
+Essentially, it's about combining and aggregating that information.
+Just like gathering them all into a 'pool'.
+We'll also cover this in the next chapter when we introduce neural networks.
+We'll get into the specific architecture of CNNs when we cover that topic.
+For now, just focus on getting a general idea of how it works.
+And that's pretty much how it works.
+So, as we move through each subsequent layer,
+I can sense it.
+And then, gradually, after pooling,
+and it gets bigger.
+And as it gets larger,
+慢慢地, I can start to figure out what you most likely are.
+This is because it extracts more and more abstract features.
+So, to wrap things up, let me give you a quick summary.
+So, first off, let's talk about how images are actually represented in a computer.
+or possibly in color.
+So, a color image is essentially a three-dimensional structure, while a grayscale one is two-dimensional.
+CNNs address this by preserving the spatial grid structure of the image.
+instead of just treating it as a pool of unrelated data.
+So, why don't MLPs work in this case?
+Basically, what it does is take an image's pixels
+and the relationships between them.
+that spatial structure is completely lost.
+completely flattening it out.
+This leads to a massive explosion in the number of parameters.
+Plus, the spatial relationships are completely lost.
+So, the solution is to use local connections instead.
+namely, massive full connectivity.
+So, what are the inherent patterns within the image itself?
+So, these are the three principles.
+So, for the design of a CNN...
+To address this, it uses a convolution kernel to continuously scan the image.
+In essence, it performs convolutions to calculate the features.
+in an attempt to abstract features from it.
+But these aren't features that humans can readily understand.
+We're just using examples like vertical, horizontal, or diagonal lines, and edges.
+In reality, after training the neural network,
+and you have no idea what the features it identifies actually mean.
+The point is, as long as it undergoes massive amounts of computation,
+and that seems to be good enough.
+This is somewhat similar to our deep neural networks.
+You don't know what the parameters are either,
+So, what's the deal with, say, 1e-7 in the parameters of each neuron?
+But the general idea is that after all sorts of permutations and combinations,
+and it'll spit out the corresponding result for you.
+So why do we need CNNs in the first place?
+Well, it's really about the structure of the model.
+it should align with the structure of the data.
+So, what this means is, it performs a local perception.
+and reused the parameters within the convolutional kernels.
+It preserves the image's spatial structure, abstracting it layer by layer.
+In other words, we're dealing with a specific data structure.
+So, our fully connected MLP has been modified slightly.
+It is still a deep network,
+It still processes the network layer by layer.
+This is all fundamental knowledge we've covered before, right?
+All of this remains the same.
+It's just that, to handle this special structure,
+for special data structures,
+we also need to make special adjustments to our networks.
+to process it.
+So, with that understanding,
+we'll realize that
+So we really do need to design a network structure for the model.
+and make some adjustments
+to better recognize images.
+So, in this lesson, we'll just be giving a brief introduction.
+So, why does it work?
+But... how does it actually work?
+how it's done step by step.
+How the convolution works,
+and how it performs pooling.
+and how it makes identifications.
+So, what's that all about?
+We'll save a detailed discussion of this for the next video.
+so you can all understand exactly how a CNN works.

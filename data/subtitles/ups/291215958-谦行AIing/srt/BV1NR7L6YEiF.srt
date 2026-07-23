@@ -1,0 +1,2271 @@
+1
+00:00:00,040 --> 00:00:03,640
+In the last video, we covered how images are represented inside a computer.
+
+2
+00:00:03,640 --> 00:00:04,360
+and how
+
+3
+00:00:04,360 --> 00:00:07,600
+So why is it that when it comes to handling complex visual tasks, MLPs...
+
+4
+00:00:07,600 --> 00:00:08,820
+leads to a parameter explosion.
+
+5
+00:00:08,820 --> 00:00:10,660
+and lead to overfitting.
+
+6
+00:00:10,660 --> 00:00:13,340
+and broke down the unique nature of image data.
+
+7
+00:00:13,340 --> 00:00:15,340
+the structural information it inherently contains.
+
+8
+00:00:15,340 --> 00:00:17,950
+And from there, the CNN architecture was gradually developed.
+
+9
+00:00:17,950 --> 00:00:19,510
+Alright, so starting with this video,
+
+10
+00:00:19,510 --> 00:00:21,830
+let's take a detailed look at the CNN architecture.
+
+11
+00:00:21,830 --> 00:00:24,970
+and how it recognizes an image step by step.
+
+12
+00:00:24,970 --> 00:00:29,080
+And the most crucial components are convolution, feature maps, and pooling.
+
+13
+00:00:29,080 --> 00:00:31,800
+First, let's take a look at the overall architecture of a CNN.
+
+14
+00:00:31,800 --> 00:00:34,250
+This will make it easier to understand the specifics that follow.
+
+15
+00:00:34,250 --> 00:00:36,290
+Actually, the architecture of a CNN isn't that complex.
+
+16
+00:00:36,290 --> 00:00:38,530
+It can be broken down into two main parts: a front end and a back end.
+
+17
+00:00:38,530 --> 00:00:41,610
+The first part can be thought of as a feature extractor.
+
+18
+00:00:41,610 --> 00:00:44,330
+and the latter part takes these extracted features,
+
+19
+00:00:44,330 --> 00:00:45,400
+After processing those,
+
+20
+00:00:45,400 --> 00:00:47,200
+to give the final classification of the image.
+
+21
+00:00:47,200 --> 00:00:49,560
+to achieve our goal in visual processing.
+
+22
+00:00:49,560 --> 00:00:53,080
+For instance, the final output for this image might simply be 'landscape'.
+
+23
+00:00:53,080 --> 00:00:55,480
+So, how exactly do they extract these features?
+
+24
+00:00:55,480 --> 00:00:57,880
+And this process is carried out by three specific components.
+
+25
+00:00:57,880 --> 00:00:59,700
+And each of these components forms a distinct layer.
+
+26
+00:00:59,700 --> 00:01:01,940
+The first of these layers is called the convolutional layer.
+
+27
+00:01:01,940 --> 00:01:03,060
+This one is, of course, the most important part.
+
+28
+00:01:03,060 --> 00:01:05,300
+And that's also where the 'C' in CNN comes from, right?
+
+29
+00:01:05,300 --> 00:01:08,089
+So, the convolutional layer works by using a small matrix,
+
+30
+00:01:08,089 --> 00:01:09,869
+and it scans the image over and over again.
+
+31
+00:01:09,869 --> 00:01:11,629
+to extract local features.
+
+32
+00:01:11,629 --> 00:01:13,090
+and generates a feature map.
+
+33
+00:01:13,090 --> 00:01:14,210
+So, once that's generated,
+
+34
+00:01:14,210 --> 00:01:14,830
+ReLU,
+
+35
+00:01:14,830 --> 00:01:16,130
+And this, we're all very familiar with.
+
+36
+00:01:16,130 --> 00:01:17,150
+to introduce non-linearity.
+
+37
+00:01:17,150 --> 00:01:20,770
+The activated result is then passed to the next layer for pooling.
+
+38
+00:01:20,770 --> 00:01:21,870
+So, what is 'pooling'?
+
+39
+00:01:21,870 --> 00:01:25,460
+Basically, it's just about reducing the size of the feature map.
+
+40
+00:01:25,460 --> 00:01:27,820
+But the thing is, our convolutional kernel...
+
+41
+00:01:27,820 --> 00:01:29,880
+In other words, this small scanner...
+
+42
+00:01:29,880 --> 00:01:31,360
+its size stays the same.
+
+43
+00:01:31,360 --> 00:01:32,900
+So, as the image gets smaller,
+
+44
+00:01:32,900 --> 00:01:35,660
+my scanner sees relatively more of it.
+
+45
+00:01:35,660 --> 00:01:39,220
+This means we can take the features from the convolutional layer and combine them in an abstract way.
+
+46
+00:01:39,220 --> 00:01:40,680
+But a single set like this isn't enough.
+
+47
+00:01:40,680 --> 00:01:42,900
+And beyond that, these layers can be stacked repeatedly.
+
+48
+00:01:42,900 --> 00:01:43,700
+And this holds true for multiple layers.
+
+49
+00:01:43,700 --> 00:01:46,940
+However, each time, it's the combination of these three layers that we're talking about.
+
+50
+00:01:46,940 --> 00:01:49,080
+The specific number of layers is typically not limited.
+
+51
+00:01:49,080 --> 00:01:51,460
+Ultimately, this allows us to abstract away from the raw image.
+
+52
+00:01:51,460 --> 00:01:55,179
+a more complex, higher-level combination that the network can understand.
+
+53
+00:01:55,179 --> 00:01:57,509
+This is what's called a feature map.
+
+54
+00:01:57,509 --> 00:02:00,069
+we then flatten this feature map into a one-dimensional vector.
+
+55
+00:02:00,069 --> 00:02:01,689
+Finally, we'll pass it through a fully connected layer.
+
+56
+00:02:01,689 --> 00:02:04,129
+and then the softmax function gives us the final output.
+
+57
+00:02:04,129 --> 00:02:07,020
+And just like that, we've classified the image.
+
+58
+00:02:07,020 --> 00:02:08,860
+This architecture, as it turns out, isn't actually that complex.
+
+59
+00:02:08,860 --> 00:02:11,290
+In fact, as we can see from the description,
+
+60
+00:02:11,290 --> 00:02:12,830
+The core of it is the convolutional layer.
+
+61
+00:02:12,830 --> 00:02:14,770
+So, how do we scan it piece by piece,
+
+62
+00:02:14,770 --> 00:02:17,320
+and see its features without having to flatten the image first.
+
+63
+00:02:17,320 --> 00:02:19,000
+and eventually recognize the image.
+
+64
+00:02:19,000 --> 00:02:21,440
+So, let's dive into the specifics now.
+
+65
+00:02:21,440 --> 00:02:24,140
+the core components: the convolutional and pooling layers.
+
+66
+00:02:24,140 --> 00:02:25,640
+And lastly, the fully connected layers.
+
+67
+00:02:25,640 --> 00:02:27,360
+The first part of the network acts as a feature extractor.
+
+68
+00:02:27,360 --> 00:02:30,800
+So, these three groups of layers emerge repeatedly. The convolutional layers are responsible for extracting these patterns.
+
+69
+00:02:30,800 --> 00:02:32,720
+ReLU introduces a non-linear component, while the pooling layer...
+
+70
+00:02:32,720 --> 00:02:34,240
+this decreases the spatial resolution.
+
+71
+00:02:34,240 --> 00:02:35,640
+Which basically means the image's resolution.
+
+72
+00:02:35,640 --> 00:02:36,960
+and expand the effective receptive field.
+
+73
+00:02:36,960 --> 00:02:38,500
+We call this the receptive field.
+
+74
+00:02:38,500 --> 00:02:41,100
+Then, in the later part of the network for classification, it takes the feature map...
+
+75
+00:02:41,100 --> 00:02:42,380
+Not the original image.
+
+76
+00:02:42,380 --> 00:02:43,820
+So, after we flatten the feature map,
+
+77
+00:02:43,820 --> 00:02:44,900
+we perform a fully connected layer.
+
+78
+00:02:44,900 --> 00:02:46,980
+So, we're no longer working with the original image at this point.
+
+79
+00:02:46,980 --> 00:02:49,860
+Instead, it's processing the high-level features extracted by the convolutional layers.
+
+80
+00:02:49,860 --> 00:02:51,480
+and finally, classify it.
+
+81
+00:02:51,480 --> 00:02:53,760
+The latter part is a bit like an MLP, though.
+
+82
+00:02:53,760 --> 00:02:56,970
+The only difference is that it's no longer processing the original pixels directly.
+
+83
+00:02:57,130 --> 00:03:00,770
+So, this means that a CNN can't understand the entire image with just a single convolutional layer.
+
+84
+00:03:00,770 --> 00:03:02,330
+Instead, it's a process of stacking these layers one by one.
+
+85
+00:03:02,330 --> 00:03:05,410
+Gradually transforming pixels into semantic meaning.
+
+86
+00:03:05,410 --> 00:03:08,570
+So, in the early layers, it first starts by looking at things like the edges of the image.
+
+87
+00:03:08,570 --> 00:03:09,090
+colors,
+
+88
+00:03:09,090 --> 00:03:09,550
+and textures.
+
+89
+00:03:09,550 --> 00:03:12,530
+Then, in the middle layers, it can start to perceive...
+
+90
+00:03:12,530 --> 00:03:13,660
+And through the pooling layer,
+
+91
+00:03:13,660 --> 00:03:15,100
+And that also increases the receptive field.
+
+92
+00:03:15,100 --> 00:03:17,460
+and then we can start combining these low-level features.
+
+93
+00:03:17,460 --> 00:03:18,380
+a convolutional kernel
+
+94
+00:03:18,380 --> 00:03:20,740
+This means that the area it scans effectively becomes larger.
+
+95
+00:03:20,740 --> 00:03:23,490
+By combining them, we can start to form things like outlines and distinct components.
+
+96
+00:03:23,490 --> 00:03:26,670
+And going even deeper, it gradually starts to achieve some higher-level understanding.
+
+97
+00:03:26,670 --> 00:03:29,870
+leading to a complete understanding of the object itself.
+
+98
+00:03:30,150 --> 00:03:32,870
+Alright, so now let's get to the most crucial part.
+
+99
+00:03:32,870 --> 00:03:34,570
+So, what does the convolutional layer do?
+
+100
+00:03:34,570 --> 00:03:37,779
+The convolutional layer's job is to transform local patterns into a feature map.
+
+101
+00:03:37,779 --> 00:03:41,059
+Its core task is to do this without flattening the image.
+
+102
+00:03:41,059 --> 00:03:42,059
+nor using fully connected layers.
+
+103
+00:03:42,059 --> 00:03:45,190
+Because if you do that, you're just following the MLP approach, and the number of parameters would explode.
+
+104
+00:03:45,190 --> 00:03:46,710
+But without doing those two things,
+
+105
+00:03:46,710 --> 00:03:49,859
+it extracts meaningful local features from the image.
+
+106
+00:03:49,859 --> 00:03:51,119
+So, how does it do that?
+
+107
+00:03:51,119 --> 00:03:54,019
+First, it uses a small matrix of weights.
+
+108
+00:03:54,019 --> 00:03:55,670
+we call it a convolutional kernel.
+
+109
+00:03:55,670 --> 00:03:58,030
+For instance, let's say this matrix is a 3 by 3.
+
+110
+00:03:58,030 --> 00:03:59,410
+filled with some numbers.
+
+111
+00:03:59,410 --> 00:04:01,670
+So, it's going to move across the image, probably from left to right,
+
+112
+00:04:01,670 --> 00:04:03,530
+sliding down from the top.
+
+113
+00:04:03,530 --> 00:04:05,030
+And at each position,
+
+114
+00:04:05,030 --> 00:04:07,520
+it takes the pixels within that current window
+
+115
+00:04:07,520 --> 00:04:09,920
+Because in our last lesson, we already introduced how images...
+
+116
+00:04:09,920 --> 00:04:12,500
+In fact, each of these little squares represents a single pixel.
+
+117
+00:04:12,500 --> 00:04:13,740
+I'm a 3x3.
+
+118
+00:04:13,740 --> 00:04:16,540
+Now, as it slides across the original image, we see there are three values here.
+
+119
+00:04:16,540 --> 00:04:17,860
+So, that's nine numbers.
+
+120
+00:04:17,860 --> 00:04:20,960
+And it just so happens that this convolutional kernel also has nine numbers.
+
+121
+00:04:20,960 --> 00:04:21,880
+So, what does it do?
+
+122
+00:04:21,880 --> 00:04:24,200
+and multiplies the values in each corresponding position.
+
+123
+00:04:24,200 --> 00:04:25,520
+and then you add up all the results.
+
+124
+00:04:25,520 --> 00:04:27,940
+and then summed up to create the new pixel value.
+
+125
+00:04:27,940 --> 00:04:30,740
+And just like that, it becomes one of the image's features.
+
+126
+00:04:30,740 --> 00:04:33,520
+For example, this one I've listed here is a sharpening filter.
+
+127
+00:04:33,520 --> 00:04:35,120
+It can sharpen the image.
+
+128
+00:04:35,120 --> 00:04:35,880
+So, you can see here,
+
+129
+00:04:35,880 --> 00:04:37,600
+So as it processes the image, layer by layer from top to bottom,
+
+130
+00:04:37,600 --> 00:04:39,080
+After scanning from left to right,
+
+131
+00:04:39,080 --> 00:04:41,880
+gradually, the image is transformed into something like this.
+
+132
+00:04:41,880 --> 00:04:43,480
+And this right here shows you the correspondence between them.
+
+133
+00:04:43,480 --> 00:04:47,280
+So, as you can see, let's take a more mathematical look at it.
+
+134
+00:04:47,280 --> 00:04:47,880
+So,
+
+135
+00:04:47,880 --> 00:04:49,360
+For example, let's take our original image.
+
+136
+00:04:49,360 --> 00:04:51,370
+The gray area represents our original image.
+
+137
+00:04:51,370 --> 00:04:53,090
+Let's say it's 6 by 6.
+
+138
+00:04:53,090 --> 00:04:54,710
+So, it's a 6 by 6 pixel image.
+
+139
+00:04:54,710 --> 00:04:56,800
+And our convolutional kernel is 3x3.
+
+140
+00:04:56,800 --> 00:04:58,480
+or we can also call it a filter.
+
+141
+00:04:58,480 --> 00:04:59,640
+Actually, it does look very similar.
+
+142
+00:04:59,640 --> 00:05:02,880
+It’s kind of like an overlay layer on top of our image, right?
+
+143
+00:05:02,880 --> 00:05:04,460
+First, I'll place it in the top-left corner.
+
+144
+00:05:04,460 --> 00:05:05,860
+Because it's a 3x3 kernel, right?
+
+145
+00:05:05,860 --> 00:05:08,799
+And in this position, there are some overlapping areas with it.
+
+146
+00:05:08,799 --> 00:05:10,079
+and have the two of them perform an operation,
+
+147
+00:05:10,079 --> 00:05:12,739
+Actually, this operation, what we understand as convolution...
+
+148
+00:05:12,739 --> 00:05:13,959
+The reason it's called that,
+
+149
+00:05:13,959 --> 00:05:15,639
+And that's exactly where the operation gets its name from.
+
+150
+00:05:15,639 --> 00:05:17,740
+Actually, it's not a convolution in the strict mathematical sense.
+
+151
+00:05:17,740 --> 00:05:21,220
+Once you've multiplied all the corresponding positions, you add up the results.
+
+152
+00:05:21,220 --> 00:05:23,900
+And then, you take those nine products and add them all up.
+
+153
+00:05:23,900 --> 00:05:25,340
+And that gives us a single number.
+
+154
+00:05:25,340 --> 00:05:27,860
+and that becomes the first value in our new image.
+
+155
+00:05:27,860 --> 00:05:29,830
+And we just keep moving it...
+
+156
+00:05:29,830 --> 00:05:30,750
+then to the second,
+
+157
+00:05:30,750 --> 00:05:31,790
+then to the third position.
+
+158
+00:05:31,790 --> 00:05:33,610
+until finally, it gets moved to this position.
+
+159
+00:05:33,610 --> 00:05:36,910
+We perform the convolution operation at each position to fill in the values.
+
+160
+00:05:36,910 --> 00:05:38,890
+And just like that, a new image is formed.
+
+161
+00:05:38,890 --> 00:05:39,930
+So, as you can see,
+
+162
+00:05:39,930 --> 00:05:42,830
+So, if we don't do anything special,
+
+163
+00:05:42,830 --> 00:05:45,440
+this resulting image is actually larger than the original one.
+
+164
+00:05:45,440 --> 00:05:47,760
+This means the new image is going to be a bit smaller.
+
+165
+00:05:47,760 --> 00:05:49,080
+This is because with every operation,
+
+166
+00:05:49,080 --> 00:05:51,720
+For instance, each slide only produces one pixel.
+
+167
+00:05:51,720 --> 00:05:54,000
+But in a situation like this, let's say you're up here,
+
+168
+00:05:54,000 --> 00:05:55,080
+It can't slide off the edge, right?
+
+169
+00:05:55,080 --> 00:05:56,740
+It can only slide completely within the image.
+
+170
+00:05:56,740 --> 00:05:57,520
+So that's the first pass.
+
+171
+00:05:57,520 --> 00:05:59,940
+So, for the second, third, and fourth positions, does that mean you can only slide it four times?
+
+172
+00:05:59,940 --> 00:06:00,980
+And the same applies from top to bottom.
+
+173
+00:06:00,980 --> 00:06:03,780
+So, we end up with a 4x4 matrix.
+
+174
+00:06:04,350 --> 00:06:06,900
+So, this value that we've calculated...
+
+175
+00:06:06,900 --> 00:06:08,020
+Actually, this result is meaningful.
+
+176
+00:06:08,020 --> 00:06:10,620
+This value represents the local region at the current position.
+
+177
+00:06:10,620 --> 00:06:12,600
+that matches the pattern of the convolutional kernel.
+
+178
+00:06:12,600 --> 00:06:14,210
+For instance, let's say I'm sharpening the image.
+
+179
+00:06:14,210 --> 00:06:17,250
+I'm detecting edges, or let's say, horizontal lines.
+
+180
+00:06:17,250 --> 00:06:18,490
+or the recognition of vertical lines.
+
+181
+00:06:18,490 --> 00:06:20,810
+Is there a horizontal line in the area I'm currently scanning?
+
+182
+00:06:20,810 --> 00:06:21,740
+or a vertical line.
+
+183
+00:06:21,740 --> 00:06:23,060
+The larger this number is,
+
+184
+00:06:23,060 --> 00:06:26,360
+the more it matches the pattern of the convolutional kernel.
+
+185
+00:06:26,360 --> 00:06:28,680
+And the smaller the number, the less of a match it is.
+
+186
+00:06:28,680 --> 00:06:31,940
+So, the output from this process, while it's also just a bunch of numbers,
+
+187
+00:06:31,940 --> 00:06:33,720
+But these numbers actually mean something.
+
+188
+00:06:33,720 --> 00:06:35,300
+and it corresponds to the convolutional kernel.
+
+189
+00:06:35,300 --> 00:06:37,360
+So, each convolutional kernel represents a specific feature.
+
+190
+00:06:37,360 --> 00:06:40,440
+Alright, let me show you a slightly more practical example.
+
+191
+00:06:40,440 --> 00:06:41,360
+Let's take a look.
+
+192
+00:06:41,360 --> 00:06:43,240
+So, for instance, let's take a...
+
+193
+00:06:43,240 --> 00:06:45,020
+a scan of a cup of coffee.
+
+194
+00:06:45,020 --> 00:06:45,940
+So, after scanning it...
+
+195
+00:06:45,940 --> 00:06:47,380
+And with just one convolutional kernel,
+
+196
+00:06:47,380 --> 00:06:49,800
+and gradually, it can take on a form like this.
+
+197
+00:06:49,800 --> 00:06:51,640
+So, let's see how it all works.
+
+198
+00:06:51,640 --> 00:06:55,400
+Because, as we know, any image has its RGB three channels.
+
+199
+00:06:55,400 --> 00:06:56,580
+They actually correspond to each other.
+
+200
+00:06:56,580 --> 00:06:58,300
+So, let's break down this convolutional kernel.
+
+201
+00:06:58,300 --> 00:07:00,800
+It continuously scans across the image.
+
+202
+00:07:00,800 --> 00:07:03,940
+Finally, it will combine these three images into one.
+
+203
+00:07:03,940 --> 00:07:05,020
+and then we add a bias.
+
+204
+00:07:05,020 --> 00:07:07,430
+And just like that, we have a new image.
+
+205
+00:07:07,430 --> 00:07:08,750
+a new feature map.
+
+206
+00:07:08,750 --> 00:07:10,870
+But the dimensions aren't necessarily a perfect match.
+
+207
+00:07:10,870 --> 00:07:11,990
+This is just a simplified illustration.
+
+208
+00:07:11,990 --> 00:07:13,560
+And it ends up looking something like this.
+
+209
+00:07:13,560 --> 00:07:15,720
+So, after processing all three channels,
+
+210
+00:07:15,720 --> 00:07:19,120
+Finally, the values from all three channels are summed up together.
+
+211
+00:07:19,120 --> 00:07:20,720
+This process, which we call convolution,
+
+212
+00:07:20,720 --> 00:07:23,120
+And this resulting image is the processed output.
+
+213
+00:07:23,120 --> 00:07:24,940
+This resulting image is what we call a feature map.
+
+214
+00:07:24,940 --> 00:07:26,300
+So, looking at it from this perspective,
+
+215
+00:07:26,300 --> 00:07:29,730
+In essence, a convolutional kernel is a tiny, tiny feature detector.
+
+216
+00:07:30,090 --> 00:07:32,890
+So, let me show you a more concrete example.
+
+217
+00:07:32,890 --> 00:07:35,700
+Some kernels might learn to detect vertical lines,
+
+218
+00:07:35,700 --> 00:07:37,580
+while others might learn to detect horizontal lines.
+
+219
+00:07:37,580 --> 00:07:38,860
+Some might detect changes in color,
+
+220
+00:07:38,860 --> 00:07:40,420
+or certain textures, things like that.
+
+221
+00:07:40,420 --> 00:07:41,690
+And that's how it works.
+
+222
+00:07:41,690 --> 00:07:43,370
+So for the original image, I've converted it to grayscale.
+
+223
+00:07:43,370 --> 00:07:44,200
+It's a pretty simple one.
+
+224
+00:07:44,200 --> 00:07:45,720
+I've applied two convolutional kernels.
+
+225
+00:07:45,720 --> 00:07:46,840
+and I'll scan it with them.
+
+226
+00:07:46,840 --> 00:07:48,640
+As you can see, these two convolutional kernels...
+
+227
+00:07:48,640 --> 00:07:50,160
+in the scan results?
+
+228
+00:07:50,160 --> 00:07:52,970
+This is because it has very distinct horizontal and vertical lines.
+
+229
+00:07:52,970 --> 00:07:55,960
+This convolutional kernel is clearly much more sensitive to vertical lines.
+
+230
+00:07:55,960 --> 00:07:57,900
+The horizontal lines have been almost completely filtered out.
+
+231
+00:07:57,900 --> 00:07:59,520
+and shapes like circles become much less defined.
+
+232
+00:07:59,520 --> 00:08:01,680
+This convolutional kernel, on the other hand, is clearly more sensitive to horizontal lines.
+
+233
+00:08:01,680 --> 00:08:04,570
+So, the image it produces after scanning would look something like this.
+
+234
+00:08:04,570 --> 00:08:05,370
+And using this one,
+
+235
+00:08:05,370 --> 00:08:08,110
+we can get a sense of how many horizontal lines are in this image.
+
+236
+00:08:08,110 --> 00:08:09,050
+And with this one,
+
+237
+00:08:09,050 --> 00:08:11,760
+and figure out roughly how many vertical lines are in the image.
+
+238
+00:08:11,760 --> 00:08:13,600
+Of course, not all convolutional kernels...
+
+239
+00:08:13,600 --> 00:08:15,760
+All of these kernels have meanings that humans can understand.
+
+240
+00:08:15,760 --> 00:08:17,400
+and some of them are just plain incomprehensible.
+
+241
+00:08:17,400 --> 00:08:20,670
+It's like how some parameters in a deep neural network might be a seven,
+
+242
+00:08:20,670 --> 00:08:21,390
+some are two or three.
+
+243
+00:08:21,390 --> 00:08:22,070
+What does that even mean?
+
+244
+00:08:22,070 --> 00:08:22,930
+You can't really make sense of it either.
+
+245
+00:08:22,930 --> 00:08:25,360
+But, well, since I can't make any sense of it,
+
+246
+00:08:25,360 --> 00:08:27,320
+Plus, I don't even know how many different patterns there are.
+
+247
+00:08:27,320 --> 00:08:29,600
+So, for each convolutional kernel, don't they have...
+
+248
+00:08:29,600 --> 00:08:30,440
+Let's say it's a 3x3,
+
+249
+00:08:30,440 --> 00:08:31,540
+So, does that mean there are nine parameters?
+
+250
+00:08:31,540 --> 00:08:33,910
+So, how do I set the values for these parameters?
+
+251
+00:08:33,910 --> 00:08:36,360
+The truth is, you don't know what these values should be either.
+
+252
+00:08:36,360 --> 00:08:39,100
+And this result is, in fact, what you get from training the model.
+
+253
+00:08:39,100 --> 00:08:41,880
+So, what about the numbers inside these convolutional kernels?
+
+254
+00:08:41,880 --> 00:08:43,960
+Essentially, these are the parameters of the neural network.
+
+255
+00:08:43,960 --> 00:08:45,300
+The ones we've trained the model to produce.
+
+256
+00:08:45,300 --> 00:08:47,660
+and then corrected bit by bit through backpropagation.
+
+257
+00:08:47,660 --> 00:08:49,020
+Now, let's take a look inside.
+
+258
+00:08:49,020 --> 00:08:51,020
+In fact, there are three other key concepts we need to cover.
+
+259
+00:08:51,020 --> 00:08:53,750
+First, a crucial concept is the size of the convolutional kernel.
+
+260
+00:08:53,750 --> 00:08:54,990
+So, the size of the convolutional kernel...
+
+261
+00:08:54,990 --> 00:08:57,850
+This determines the size of the local region the kernel looks at each time.
+
+262
+00:08:57,850 --> 00:08:59,930
+A common choice might be a 3x3.
+
+263
+00:08:59,930 --> 00:09:01,079
+or 5x5.
+
+264
+00:09:01,079 --> 00:09:02,499
+the larger the convolutional kernel is,
+
+265
+00:09:02,499 --> 00:09:04,419
+the larger the area it scans each time.
+
+266
+00:09:04,419 --> 00:09:06,119
+so the visible area at one time is larger.
+
+267
+00:09:06,119 --> 00:09:07,439
+But the thing is, the larger it is...
+
+268
+00:09:07,439 --> 00:09:09,599
+the more parameters it's going to have.
+
+269
+00:09:09,599 --> 00:09:11,359
+And the computational load will increase as well.
+
+270
+00:09:11,359 --> 00:09:13,419
+Nowadays, the 3x3 kernel is the most common choice.
+
+271
+00:09:13,419 --> 00:09:14,319
+Because they're small enough.
+
+272
+00:09:14,319 --> 00:09:14,959
+which makes them easy to stack.
+
+273
+00:09:16,039 --> 00:09:17,430
+So, let's take an example.
+
+274
+00:09:17,430 --> 00:09:19,090
+So this is a 3x3 one.
+
+275
+00:09:19,090 --> 00:09:21,590
+So, for example, you can take a look at how it scans the image.
+
+276
+00:09:21,590 --> 00:09:22,750
+In fact, the first time is right here.
+
+277
+00:09:22,750 --> 00:09:23,230
+The second time, it moves here.
+
+278
+00:09:23,230 --> 00:09:25,530
+and for the third and fourth, it moves down one again.
+
+279
+00:09:25,530 --> 00:09:27,270
+And you just keep shifting it down, one by one.
+
+280
+00:09:27,270 --> 00:09:28,380
+and move down one more step.
+
+281
+00:09:28,380 --> 00:09:30,100
+And, like I just mentioned...
+
+282
+00:09:30,100 --> 00:09:31,800
+So, the original image is 6 by 6.
+
+283
+00:09:31,800 --> 00:09:33,180
+and after it scans through,
+
+284
+00:09:33,180 --> 00:09:34,300
+without any special padding,
+
+285
+00:09:34,300 --> 00:09:35,220
+So, after scanning,
+
+286
+00:09:35,220 --> 00:09:37,440
+So, horizontally, we can only make four moves each time, right?
+
+287
+00:09:37,440 --> 00:09:39,160
+and we get a result for each step.
+
+288
+00:09:39,160 --> 00:09:41,170
+And vertically, it's the same, it can only scan four times.
+
+289
+00:09:41,170 --> 00:09:43,370
+So, what you end up with is a 4 by 4 matrix.
+
+290
+00:09:43,370 --> 00:09:45,710
+So, the feature map has actually gotten smaller.
+
+291
+00:09:45,710 --> 00:09:48,950
+So, this is the difference based on the size of the convolutional kernel.
+
+292
+00:09:48,950 --> 00:09:51,450
+So, what if my convolutional kernel is 5x5?
+
+293
+00:09:51,450 --> 00:09:53,450
+So it can only scan twice, right?
+
+294
+00:09:53,450 --> 00:09:55,110
+and the resulting image will be 2x2.
+
+295
+00:09:55,110 --> 00:09:55,790
+So it gets smaller.
+
+296
+00:09:55,790 --> 00:09:58,770
+But at the end of the day, the numbers we get out are all meaningful.
+
+297
+00:09:58,770 --> 00:10:01,950
+The second factor is actually the stride, or how much it moves each time.
+
+298
+00:10:01,950 --> 00:10:04,710
+So, what this means is, before, we were just moving it one step at a time by default.
+
+299
+00:10:04,710 --> 00:10:05,270
+Right?
+
+300
+00:10:05,270 --> 00:10:06,750
+moving one pixel at a time.
+
+301
+00:10:06,750 --> 00:10:09,070
+But in reality, I can increase the stride a bit.
+
+302
+00:10:09,070 --> 00:10:11,200
+So it moves by a larger amount each time.
+
+303
+00:10:11,200 --> 00:10:14,040
+This way, it will skip one position each time, outputting the feature from that location.
+
+304
+00:10:14,040 --> 00:10:17,680
+the reduction in the height and width of the feature map becomes more pronounced.
+
+305
+00:10:17,680 --> 00:10:18,760
+Let's say, like this.
+
+306
+00:10:18,760 --> 00:10:20,160
+I'm jumping two at a time.
+
+307
+00:10:20,160 --> 00:10:21,760
+This way, since it can't go any further.
+
+308
+00:10:21,760 --> 00:10:22,960
+and can't move any further.
+
+309
+00:10:22,960 --> 00:10:25,580
+So, we're basically just discarding this feature.
+
+310
+00:10:25,580 --> 00:10:26,569
+Then we move on to the second one.
+
+311
+00:10:26,569 --> 00:10:28,369
+Because if it moves two more steps,
+
+312
+00:10:28,369 --> 00:10:29,049
+it's also out of bounds.
+
+313
+00:10:29,049 --> 00:10:30,209
+and it can't move any further.
+
+314
+00:10:30,209 --> 00:10:31,240
+So, it changes.
+
+315
+00:10:31,240 --> 00:10:33,280
+So, if my stride is two,
+
+316
+00:10:33,280 --> 00:10:34,780
+it becomes a 2x2.
+
+317
+00:10:34,780 --> 00:10:36,120
+That's quite a significant reduction.
+
+318
+00:10:36,120 --> 00:10:36,740
+Right?
+
+319
+00:10:36,740 --> 00:10:38,200
+But for a 5x5 image,
+
+320
+00:10:38,200 --> 00:10:39,640
+it will also become 2 by 2.
+
+321
+00:10:39,640 --> 00:10:41,820
+Because it can't move any further outside the original bounds.
+
+322
+00:10:41,820 --> 00:10:46,170
+So, we see that my stride can also change its dimensions.
+
+323
+00:10:46,370 --> 00:10:47,930
+But of course, for convolutional layers in general,
+
+324
+00:10:47,930 --> 00:10:49,330
+our stride is set to one.
+
+325
+00:10:49,330 --> 00:10:50,850
+This is to get a more complete picture.
+
+326
+00:10:50,850 --> 00:10:53,710
+It's generally in the pooling layer that we'll set it to two.
+
+327
+00:10:53,710 --> 00:10:55,110
+And the next thing is padding.
+
+328
+00:10:55,110 --> 00:10:56,630
+So, what's padding for?
+
+329
+00:10:56,630 --> 00:10:58,210
+to solve the problem we just mentioned.
+
+330
+00:10:58,210 --> 00:10:59,390
+So every time I perform a scan,
+
+331
+00:10:59,390 --> 00:11:01,320
+it's now shrunk to a 6x6.
+
+332
+00:11:01,320 --> 00:11:02,900
+and it gets scanned down to 4x4.
+
+333
+00:11:02,900 --> 00:11:05,060
+So, to keep our dimensions the same size,
+
+334
+00:11:05,060 --> 00:11:07,240
+This is to ensure that the computation remains stable.
+
+335
+00:11:07,240 --> 00:11:08,560
+So, before we start this scanning process,
+
+336
+00:11:08,560 --> 00:11:10,780
+we can add a border of zeros around the edges of the image.
+
+337
+00:11:10,780 --> 00:11:12,380
+So, after adding this zero-padding,
+
+338
+00:11:12,380 --> 00:11:15,260
+So, let's say we have a 4x4 image to start with.
+
+339
+00:11:15,260 --> 00:11:16,500
+So, after I add this border of zeros,
+
+340
+00:11:16,500 --> 00:11:17,930
+so it becomes 6 by 6.
+
+341
+00:11:17,930 --> 00:11:19,290
+So now it becomes a 6 by 6 image.
+
+342
+00:11:19,290 --> 00:11:21,510
+And then, we just do the same scanning process as before.
+
+343
+00:11:21,510 --> 00:11:23,250
+so the output remains 4 by 4.
+
+344
+00:11:23,250 --> 00:11:24,579
+I started out with a 4x4.
+
+345
+00:11:24,579 --> 00:11:26,400
+So after scanning, it's still 4x4.
+
+346
+00:11:26,400 --> 00:11:28,960
+This is for a convolutional kernel size of three.
+
+347
+00:11:28,960 --> 00:11:30,280
+So, when we're making that determination,
+
+348
+00:11:30,280 --> 00:11:32,260
+All you have to do is pad the edges of the image with zeros.
+
+349
+00:11:32,260 --> 00:11:33,460
+This way, it's possible to...
+
+350
+00:11:33,460 --> 00:11:35,420
+so that the feature map we get from scanning the image...
+
+351
+00:11:35,420 --> 00:11:37,100
+matches the size of the original image.
+
+352
+00:11:37,100 --> 00:11:38,900
+So, for this, uh...
+
+353
+00:11:38,900 --> 00:11:41,450
+And later on, when we're actually defining this in our code,
+
+354
+00:11:41,450 --> 00:11:43,550
+we'll also be frequently setting the values for these three numbers.
+
+355
+00:11:43,550 --> 00:11:45,980
+So, do you know what each of these three values represents?
+
+356
+00:11:45,980 --> 00:11:48,020
+So, how exactly do we calculate this size?
+
+357
+00:11:48,020 --> 00:11:49,600
+Actually, there's a formula for this.
+
+358
+00:11:49,600 --> 00:11:51,069
+So, for example, the final...
+
+359
+00:11:51,069 --> 00:11:54,069
+For example, the height and width of the resulting image that I calculate.
+
+360
+00:11:54,069 --> 00:11:55,020
+what their dimensions will be.
+
+361
+00:11:55,020 --> 00:11:58,380
+It actually depends on the height of your original input image,
+
+362
+00:11:58,380 --> 00:12:00,640
+and the size of your convolutional kernel.
+
+363
+00:12:00,640 --> 00:12:01,740
+the stride of the movement,
+
+364
+00:12:01,740 --> 00:12:03,100
+All of these factors are related.
+
+365
+00:12:03,100 --> 00:12:04,460
+And there's a formula for this,
+
+366
+00:12:04,460 --> 00:12:06,340
+For example, let's say it's a 32 by 32 image.
+
+367
+00:12:06,340 --> 00:12:07,680
+So, if our K is equal to three...
+
+368
+00:12:07,680 --> 00:12:08,380
+K is equal to three,
+
+369
+00:12:08,380 --> 00:12:12,630
+So basically, it means a 3x3 convolutional kernel with P equal to one.
+
+370
+00:12:12,630 --> 00:12:14,170
+so we'll pad it with a一圈一 of zeros.
+
+371
+00:12:14,170 --> 00:12:15,430
+And S equals one.
+
+372
+00:12:15,430 --> 00:12:17,190
+So basically, it just slides across the image each time.
+
+373
+00:12:17,190 --> 00:12:18,530
+If we move it by one each time,
+
+374
+00:12:18,530 --> 00:12:21,800
+So, our output volume will still be 3x32x32.
+
+375
+00:12:21,800 --> 00:12:23,000
+If we keep everything else the same,
+
+376
+00:12:23,000 --> 00:12:25,200
+Basically, you just change that S to a two.
+
+377
+00:12:25,200 --> 00:12:26,280
+essentially, it gets divided by two.
+
+378
+00:12:26,280 --> 00:12:28,210
+Because it was originally 33 by 4.
+
+379
+00:12:28,210 --> 00:12:29,370
+Wasn't it 32 by 32?
+
+380
+00:12:29,370 --> 00:12:30,450
+So, after you divide by two,
+
+381
+00:12:30,450 --> 00:12:32,010
+it becomes 16 by 16.
+
+382
+00:12:32,010 --> 00:12:33,890
+So that's why it gets cut in half.
+
+383
+00:12:33,890 --> 00:12:35,370
+And this also happens during pooling.
+
+384
+00:12:35,370 --> 00:12:37,330
+So, how exactly does it get cut in half?
+
+385
+00:12:37,330 --> 00:12:39,790
+All you have to do is set the stride to two.
+
+386
+00:12:39,790 --> 00:12:41,870
+So, in the example we were just looking at...
+
+387
+00:12:41,870 --> 00:12:43,550
+Actually, we've just converted it to a grayscale image.
+
+388
+00:12:43,550 --> 00:12:44,910
+so it looks like it's just two-dimensional.
+
+389
+00:12:44,910 --> 00:12:46,910
+So, we're saying this is a 3x3 convolutional kernel.
+
+390
+00:12:46,910 --> 00:12:48,650
+and that'd be a 4×4 convolutional kernel.
+
+391
+00:12:48,650 --> 00:12:51,090
+But in reality, when we're dealing with actual images...
+
+392
+00:12:51,090 --> 00:12:53,010
+For instance, an RGB image has three channels.
+
+393
+00:12:53,010 --> 00:12:53,490
+Right?
+
+394
+00:12:53,490 --> 00:12:54,530
+It's not just a grayscale image.
+
+395
+00:12:54,530 --> 00:12:57,750
+It's made up of three images, or three channels, right?
+
+396
+00:12:57,750 --> 00:12:59,670
+So in this case, what about our convolutional kernel?
+
+397
+00:12:59,670 --> 00:13:01,150
+and it can't be a 3×3 either.
+
+398
+00:13:01,150 --> 00:13:02,770
+so it has to have three as well.
+
+399
+00:13:02,770 --> 00:13:03,990
+So for each of my convolutional kernels,
+
+400
+00:13:03,990 --> 00:13:06,360
+has to scan your entire image from top to bottom.
+
+401
+00:13:06,360 --> 00:13:08,760
+In reality, I'm scanning across all three of your channels.
+
+402
+00:13:08,760 --> 00:13:11,520
+Actually, I... I... I'm also corresponding to the red one.
+
+403
+00:13:11,520 --> 00:13:13,060
+I have a 2x3x3 one.
+
+404
+00:13:13,060 --> 00:13:15,300
+This demo might be showing a 4x4 image, actually.
+
+405
+00:13:15,300 --> 00:13:16,220
+And for the green one?
+
+406
+00:13:16,220 --> 00:13:17,380
+I have a corresponding one for that as well.
+
+407
+00:13:17,380 --> 00:13:19,339
+And for the blue one, I have a similar one as well.
+
+408
+00:13:19,339 --> 00:13:21,339
+So, for the feature map that I get after scanning...
+
+409
+00:13:21,339 --> 00:13:24,400
+So, what's inside... well, of course, for the feature map I've just scanned out,
+
+410
+00:13:24,400 --> 00:13:27,780
+Because I also need to use that previous image to give you a demonstration.
+
+411
+00:13:27,780 --> 00:13:28,440
+As you can see,
+
+412
+00:13:28,440 --> 00:13:29,780
+Let me give you a demonstration.
+
+413
+00:13:29,780 --> 00:13:31,660
+Ultimately, it doesn't matter how many channels you have,
+
+414
+00:13:31,660 --> 00:13:34,640
+Now, it might look like these are three separate convolutional kernels.
+
+415
+00:13:34,640 --> 00:13:35,820
+it's actually one single convolutional kernel.
+
+416
+00:13:35,820 --> 00:13:37,420
+It's just that it has an extra dimension.
+
+417
+00:13:37,420 --> 00:13:40,330
+It's a 3×3, but also by 3.
+
+418
+00:13:40,330 --> 00:13:42,110
+But after it finishes scanning,
+
+419
+00:13:42,110 --> 00:13:44,190
+as if it's going to generate three feature maps.
+
+420
+00:13:44,190 --> 00:13:45,240
+But that's not actually the case.
+
+421
+00:13:45,240 --> 00:13:48,140
+So, it takes the results from scanning these three feature maps,
+
+422
+00:13:48,140 --> 00:13:49,260
+This is a single operation.
+
+423
+00:13:49,260 --> 00:13:50,440
+and then combines them all together.
+
+424
+00:13:50,440 --> 00:13:51,980
+And after adding the bias term,
+
+425
+00:13:51,980 --> 00:13:54,340
+This process creates what's called a feature map.
+
+426
+00:13:54,340 --> 00:13:57,710
+So, That means a single convolutional kernel will only generate one output feature map.
+
+427
+00:13:57,710 --> 00:13:59,350
+So, it doesn't matter how many channels you have.
+
+428
+00:13:59,350 --> 00:14:01,810
+It doesn't matter if it's three channels or six.
+
+429
+00:14:01,810 --> 00:14:04,350
+and you'll end up with just a single feature map.
+
+430
+00:14:04,350 --> 00:14:07,470
+Alright, so how do we get more features?
+
+431
+00:14:07,470 --> 00:14:09,730
+all we have to do is use more convolutional kernels.
+
+432
+00:14:09,730 --> 00:14:10,710
+So, sometimes...
+
+433
+00:14:10,710 --> 00:14:12,520
+For instance, let's say we use 16 convolutional kernels.
+
+434
+00:14:12,520 --> 00:14:15,120
+So, how many feature maps will we end up with?
+
+435
+00:14:15,120 --> 00:14:17,920
+So, you'll get 16 feature maps, and that number is independent of the specific number of channels in the input.
+
+436
+00:14:17,920 --> 00:14:19,140
+The number of convolutional kernels you use,
+
+437
+00:14:19,140 --> 00:14:21,000
+that's how many channels you'll get.
+
+438
+00:14:21,000 --> 00:14:22,569
+these are the feature maps.
+
+439
+00:14:22,569 --> 00:14:23,289
+feature map.
+
+440
+00:14:23,289 --> 00:14:24,929
+So, in the end, let's say I used 16 of them.
+
+441
+00:14:24,929 --> 00:14:27,209
+ultimately, this results in 16 feature maps
+
+442
+00:14:27,209 --> 00:14:28,400
+and combine them all together.
+
+443
+00:14:28,400 --> 00:14:30,780
+This makes computations with matrices much more convenient.
+
+444
+00:14:30,780 --> 00:14:32,360
+And in PyTorch,
+
+445
+00:14:32,360 --> 00:14:35,150
+which is to say, it's a multi-dimensional tensor.
+
+446
+00:14:35,470 --> 00:14:37,700
+So, it's really important for everyone to get this straight.
+
+447
+00:14:37,700 --> 00:14:39,440
+As for the dimensions of my convolutional kernel...
+
+448
+00:14:39,440 --> 00:14:41,780
+Here, we use K-by-K to represent its size.
+
+449
+00:14:41,780 --> 00:14:43,420
+So, what's its dimensionality, then?
+
+450
+00:14:43,420 --> 00:14:45,560
+It actually represents the number of channels in your input.
+
+451
+00:14:45,560 --> 00:14:46,720
+that's how many dimensions it has.
+
+452
+00:14:46,720 --> 00:14:48,560
+So, it's just a simple calculation, really.
+
+453
+00:14:48,560 --> 00:14:51,010
+So, try not to get this part mixed up.
+
+454
+00:14:51,130 --> 00:14:53,350
+A single convolutional kernel can only produce one feature map.
+
+455
+00:14:53,350 --> 00:14:54,730
+So, as we just introduced,
+
+456
+00:14:54,730 --> 00:14:55,970
+regardless of how many channels there are.
+
+457
+00:14:55,970 --> 00:14:56,850
+So, a convolutional kernel...
+
+458
+00:14:56,850 --> 00:15:00,330
+It will perform multiplication and addition operations on each of the channels individually.
+
+459
+00:15:00,330 --> 00:15:02,950
+But in the end, all these results are added together.
+
+460
+00:15:02,950 --> 00:15:05,270
+And then you add the bias to get a single response value.
+
+461
+00:15:05,270 --> 00:15:07,690
+In other words, a single convolutional kernel will only output one feature map.
+
+462
+00:15:07,690 --> 00:15:09,620
+Okay, so what about the number of output channels?
+
+463
+00:15:09,620 --> 00:15:11,660
+In reality, it's about how many convolutional kernels you have.
+
+464
+00:15:11,660 --> 00:15:12,780
+that's how many outputs you get.
+
+465
+00:15:12,780 --> 00:15:14,540
+So, naturally, that would be the number of convolutional kernels.
+
+466
+00:15:14,540 --> 00:15:16,140
+This gives you the number of output channels.
+
+467
+00:15:16,140 --> 00:15:19,040
+Because a single feature map can only represent one type of detection result.
+
+468
+00:15:19,040 --> 00:15:21,100
+More often than not, we need to detect multiple features, right?
+
+469
+00:15:21,100 --> 00:15:23,120
+So, we just use multiple convolutional kernels.
+
+470
+00:15:23,120 --> 00:15:25,040
+So, it'll output as many maps as there are kernels.
+
+471
+00:15:25,040 --> 00:15:26,800
+For example, let's say we want to detect 16 different patterns.
+
+472
+00:15:26,800 --> 00:15:28,940
+So, we'll use 16 convolutional kernels to scan it.
+
+473
+00:15:28,940 --> 00:15:31,339
+And just like that, we've extracted 16 different features.
+
+474
+00:15:31,339 --> 00:15:32,859
+So, we just stack them all together.
+
+475
+00:15:32,859 --> 00:15:35,239
+So, it's 16 times the size of the feature map.
+
+476
+00:15:35,239 --> 00:15:36,219
+So, for our input...
+
+477
+00:15:36,219 --> 00:15:37,419
+So, for example, let's take a look at this.
+
+478
+00:15:37,419 --> 00:15:41,499
+So our input, for example, is a 3 by 32 by 32... so, after processing...
+
+479
+00:15:41,499 --> 00:15:42,419
+So what is this?
+
+480
+00:15:42,419 --> 00:15:45,050
+You'll be using this a lot when you start coding later on.
+
+481
+00:15:45,050 --> 00:15:48,290
+So, for a 2D convolutional layer, what does this '3' represent?
+
+482
+00:15:48,290 --> 00:15:49,570
+It refers to the number of input channels.
+
+483
+00:15:49,570 --> 00:15:51,460
+This represents the number of convolutional kernels.
+
+484
+00:15:51,460 --> 00:15:54,580
+The number four here means it's a 3x3 kernel.
+
+485
+00:15:54,580 --> 00:15:55,420
+Which is one, right?
+
+486
+00:15:55,420 --> 00:15:57,900
+Then the output will become this 16-channel feature map.
+
+487
+00:15:57,900 --> 00:15:59,890
+But the dimensions stay the same.
+
+488
+00:15:59,890 --> 00:16:01,450
+The default stride is one.
+
+489
+00:16:01,450 --> 00:16:02,610
+as long as you don't change it.
+
+490
+00:16:02,610 --> 00:16:03,170
+I don't buy it.
+
+491
+00:16:03,170 --> 00:16:04,240
+It's one.
+
+492
+00:16:04,240 --> 00:16:07,400
+We need to actually look at a more realistic example.
+
+493
+00:16:07,400 --> 00:16:09,420
+So, for example, what does this all mean?
+
+494
+00:16:09,420 --> 00:16:10,840
+So first, we have the input.
+
+495
+00:16:10,840 --> 00:16:11,760
+Here we have an image.
+
+496
+00:16:11,760 --> 00:16:15,270
+Because a color image has three channels: RGB.
+
+497
+00:16:15,270 --> 00:16:17,070
+But, I have ten convolutional kernels.
+
+498
+00:16:17,070 --> 00:16:17,590
+Right?
+
+499
+00:16:17,590 --> 00:16:18,350
+So, as you can see,
+
+500
+00:16:18,350 --> 00:16:21,280
+Each of these convolutional kernels is designed to extract a unique feature from the image.
+
+501
+00:16:21,280 --> 00:16:23,220
+And this process is repeated, layer by layer, as the information is passed on.
+
+502
+00:16:23,220 --> 00:16:24,960
+And after that, we have another ten convolutional kernels.
+
+503
+00:16:24,960 --> 00:16:27,040
+Another ten convolutional kernels continue this scanning process.
+
+504
+00:16:27,040 --> 00:16:29,620
+And finally, it concludes that this is... a cup of coffee.
+
+505
+00:16:29,620 --> 00:16:30,360
+Now, let's continue.
+
+506
+00:16:30,360 --> 00:16:32,540
+So, why do convolutional layers save so many parameters?
+
+507
+00:16:32,540 --> 00:16:34,020
+So by now, we should be able to understand why.
+
+508
+00:16:34,020 --> 00:16:35,900
+So, as we can see...
+
+509
+00:16:35,900 --> 00:16:37,950
+So, how many parameters are there in a single layer?
+
+510
+00:16:37,950 --> 00:16:39,590
+In fact, this is determined by the convolutional kernels.
+
+511
+00:16:39,590 --> 00:16:41,060
+So, how many convolutional kernels do you have?
+
+512
+00:16:41,060 --> 00:16:43,540
+And then you just add the number of biases.
+
+513
+00:16:43,540 --> 00:16:46,060
+So, as for the convolutional kernel, let's say its size is defined by K.
+
+514
+00:16:46,060 --> 00:16:46,860
+so it would be a 3 by 3.
+
+515
+00:16:46,860 --> 00:16:48,120
+If you have three channels,
+
+516
+00:16:48,120 --> 00:16:49,040
+then you multiply by three.
+
+517
+00:16:49,040 --> 00:16:51,540
+For instance, if you wanted to have 16 features,
+
+518
+00:16:51,540 --> 00:16:52,900
+Then you'd multiply that by 16.
+
+519
+00:16:52,900 --> 00:16:54,280
+Plus another 16 biases.
+
+520
+00:16:54,280 --> 00:16:57,000
+Because every convolutional kernel needs its own bias term.
+
+521
+00:16:57,000 --> 00:16:58,580
+So, adding all that up gives you 448.
+
+522
+00:16:58,580 --> 00:17:00,860
+So as you can see, this layer has only a little over 400 parameters.
+
+523
+00:17:00,860 --> 00:17:04,660
+Compare that to the MLPs we covered last time, which can easily run into the thousands or even millions of parameters.
+
+524
+00:17:04,660 --> 00:17:06,360
+So the difference is massive, right?
+
+525
+00:17:06,360 --> 00:17:09,340
+So, that's what makes Convolutional Neural Networks, or CNNs, so incredible.
+
+526
+00:17:09,340 --> 00:17:11,260
+This is all thanks to the convolution operation.
+
+527
+00:17:11,260 --> 00:17:13,020
+So that it allows me to, without flattening it,
+
+528
+00:17:13,020 --> 00:17:14,900
+instead of flatting the image.
+
+529
+00:17:14,900 --> 00:17:16,440
+I can still extract, uh...
+
+530
+00:17:16,440 --> 00:17:17,220
+the intermediate features.
+
+531
+00:17:17,220 --> 00:17:19,520
+all with just a small number of parameters.
+
+532
+00:17:19,520 --> 00:17:21,620
+So, at this point, we've basically covered the convolution operation.
+
+533
+00:17:21,620 --> 00:17:24,160
+And this is the most complex operation in the entire CNN.
+
+534
+00:17:24,160 --> 00:17:25,640
+As for the mathematical principles behind it,
+
+535
+00:17:25,640 --> 00:17:27,640
+For those of you who are interested, you can go check some of them out.
+
+536
+00:17:27,640 --> 00:17:29,080
+There are plenty of resources available online.
+
+537
+00:17:29,080 --> 00:17:30,620
+So we won't go into detail about that here.
+
+538
+00:17:30,620 --> 00:17:32,820
+So, the first thing we need to understand is the convolutional kernel.
+
+539
+00:17:32,820 --> 00:17:34,260
+It's just a small matrix.
+
+540
+00:17:34,260 --> 00:17:35,880
+And most of the time, it's going to be 3x3.
+
+541
+00:17:35,880 --> 00:17:36,960
+scan continuously from top to bottom,
+
+542
+00:17:36,960 --> 00:17:39,240
+and from left to right, scanning our image.
+
+543
+00:17:39,240 --> 00:17:41,900
+to capture some of the local features within this image.
+
+544
+00:17:41,900 --> 00:17:42,860
+It could be a horizontal line,
+
+545
+00:17:42,860 --> 00:17:43,640
+or a vertical line.
+
+546
+00:17:43,640 --> 00:17:47,070
+Or even the edges and corners. The result of this scanning process is what we call a feature map.
+
+547
+00:17:47,070 --> 00:17:49,110
+It records the value at each position,
+
+548
+00:17:49,110 --> 00:17:52,340
+and the strength of the response from this convolutional kernel.
+
+549
+00:17:52,340 --> 00:17:55,280
+The number of output channels is equal to the number of convolutional kernels.
+
+550
+00:17:55,280 --> 00:17:57,120
+And the parameters? They can be shared.
+
+551
+00:17:57,120 --> 00:17:58,480
+So with that in mind, let's take another look.
+
+552
+00:17:58,480 --> 00:18:01,540
+So, remember that architecture diagram we showed you at the beginning?
+
+553
+00:18:01,540 --> 00:18:03,500
+So, does that make things a little bit clearer?
+
+554
+00:18:03,500 --> 00:18:05,700
+At the very least, for this layer, you can see all these little boxes we've drawn,
+
+555
+00:18:05,700 --> 00:18:06,960
+So, these correspond to each other.
+
+556
+00:18:06,960 --> 00:18:10,160
+So basically, the information propagates from here, layer by layer, all the way to this point.
+
+557
+00:18:10,160 --> 00:18:11,600
+and the feature map becomes smaller.
+
+558
+00:18:11,600 --> 00:18:13,600
+So, we should have a general idea of what's going on here.
+
+559
+00:18:13,600 --> 00:18:13,960
+This is a typo. It should be 'pooling'.
+
+560
+00:18:13,960 --> 00:18:15,960
+Of course, we haven't explained how it actually gets smaller yet.
+
+561
+00:18:15,960 --> 00:18:19,000
+Actually, you can figure out how it changes just by looking at its state.
+
+562
+00:18:19,000 --> 00:18:22,480
+Alright, next up, let's take a look at some of the layers that come after this.
+
+563
+00:18:22,480 --> 00:18:23,860
+First up is the rectified linear unit, or ReLU.
+
+564
+00:18:23,860 --> 00:18:25,970
+The non-linear activation is... uh... rectification.
+
+565
+00:18:25,970 --> 00:18:26,950
+And that's how these layers are stacked.
+
+566
+00:18:26,950 --> 00:18:27,690
+So, after the pooling layer,
+
+567
+00:18:27,690 --> 00:18:29,270
+and it will output the final classification results.
+
+568
+00:18:29,270 --> 00:18:31,380
+Finally, let's look at a simple example.

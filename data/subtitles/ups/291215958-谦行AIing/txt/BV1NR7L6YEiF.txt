@@ -1,0 +1,568 @@
+In the last video, we covered how images are represented inside a computer.
+and how
+So why is it that when it comes to handling complex visual tasks, MLPs...
+leads to a parameter explosion.
+and lead to overfitting.
+and broke down the unique nature of image data.
+the structural information it inherently contains.
+And from there, the CNN architecture was gradually developed.
+Alright, so starting with this video,
+let's take a detailed look at the CNN architecture.
+and how it recognizes an image step by step.
+And the most crucial components are convolution, feature maps, and pooling.
+First, let's take a look at the overall architecture of a CNN.
+This will make it easier to understand the specifics that follow.
+Actually, the architecture of a CNN isn't that complex.
+It can be broken down into two main parts: a front end and a back end.
+The first part can be thought of as a feature extractor.
+and the latter part takes these extracted features,
+After processing those,
+to give the final classification of the image.
+to achieve our goal in visual processing.
+For instance, the final output for this image might simply be 'landscape'.
+So, how exactly do they extract these features?
+And this process is carried out by three specific components.
+And each of these components forms a distinct layer.
+The first of these layers is called the convolutional layer.
+This one is, of course, the most important part.
+And that's also where the 'C' in CNN comes from, right?
+So, the convolutional layer works by using a small matrix,
+and it scans the image over and over again.
+to extract local features.
+and generates a feature map.
+So, once that's generated,
+ReLU,
+And this, we're all very familiar with.
+to introduce non-linearity.
+The activated result is then passed to the next layer for pooling.
+So, what is 'pooling'?
+Basically, it's just about reducing the size of the feature map.
+But the thing is, our convolutional kernel...
+In other words, this small scanner...
+its size stays the same.
+So, as the image gets smaller,
+my scanner sees relatively more of it.
+This means we can take the features from the convolutional layer and combine them in an abstract way.
+But a single set like this isn't enough.
+And beyond that, these layers can be stacked repeatedly.
+And this holds true for multiple layers.
+However, each time, it's the combination of these three layers that we're talking about.
+The specific number of layers is typically not limited.
+Ultimately, this allows us to abstract away from the raw image.
+a more complex, higher-level combination that the network can understand.
+This is what's called a feature map.
+we then flatten this feature map into a one-dimensional vector.
+Finally, we'll pass it through a fully connected layer.
+and then the softmax function gives us the final output.
+And just like that, we've classified the image.
+This architecture, as it turns out, isn't actually that complex.
+In fact, as we can see from the description,
+The core of it is the convolutional layer.
+So, how do we scan it piece by piece,
+and see its features without having to flatten the image first.
+and eventually recognize the image.
+So, let's dive into the specifics now.
+the core components: the convolutional and pooling layers.
+And lastly, the fully connected layers.
+The first part of the network acts as a feature extractor.
+So, these three groups of layers emerge repeatedly. The convolutional layers are responsible for extracting these patterns.
+ReLU introduces a non-linear component, while the pooling layer...
+this decreases the spatial resolution.
+Which basically means the image's resolution.
+and expand the effective receptive field.
+We call this the receptive field.
+Then, in the later part of the network for classification, it takes the feature map...
+Not the original image.
+So, after we flatten the feature map,
+we perform a fully connected layer.
+So, we're no longer working with the original image at this point.
+Instead, it's processing the high-level features extracted by the convolutional layers.
+and finally, classify it.
+The latter part is a bit like an MLP, though.
+The only difference is that it's no longer processing the original pixels directly.
+So, this means that a CNN can't understand the entire image with just a single convolutional layer.
+Instead, it's a process of stacking these layers one by one.
+Gradually transforming pixels into semantic meaning.
+So, in the early layers, it first starts by looking at things like the edges of the image.
+colors,
+and textures.
+Then, in the middle layers, it can start to perceive...
+And through the pooling layer,
+And that also increases the receptive field.
+and then we can start combining these low-level features.
+a convolutional kernel
+This means that the area it scans effectively becomes larger.
+By combining them, we can start to form things like outlines and distinct components.
+And going even deeper, it gradually starts to achieve some higher-level understanding.
+leading to a complete understanding of the object itself.
+Alright, so now let's get to the most crucial part.
+So, what does the convolutional layer do?
+The convolutional layer's job is to transform local patterns into a feature map.
+Its core task is to do this without flattening the image.
+nor using fully connected layers.
+Because if you do that, you're just following the MLP approach, and the number of parameters would explode.
+But without doing those two things,
+it extracts meaningful local features from the image.
+So, how does it do that?
+First, it uses a small matrix of weights.
+we call it a convolutional kernel.
+For instance, let's say this matrix is a 3 by 3.
+filled with some numbers.
+So, it's going to move across the image, probably from left to right,
+sliding down from the top.
+And at each position,
+it takes the pixels within that current window
+Because in our last lesson, we already introduced how images...
+In fact, each of these little squares represents a single pixel.
+I'm a 3x3.
+Now, as it slides across the original image, we see there are three values here.
+So, that's nine numbers.
+And it just so happens that this convolutional kernel also has nine numbers.
+So, what does it do?
+and multiplies the values in each corresponding position.
+and then you add up all the results.
+and then summed up to create the new pixel value.
+And just like that, it becomes one of the image's features.
+For example, this one I've listed here is a sharpening filter.
+It can sharpen the image.
+So, you can see here,
+So as it processes the image, layer by layer from top to bottom,
+After scanning from left to right,
+gradually, the image is transformed into something like this.
+And this right here shows you the correspondence between them.
+So, as you can see, let's take a more mathematical look at it.
+So,
+For example, let's take our original image.
+The gray area represents our original image.
+Let's say it's 6 by 6.
+So, it's a 6 by 6 pixel image.
+And our convolutional kernel is 3x3.
+or we can also call it a filter.
+Actually, it does look very similar.
+It’s kind of like an overlay layer on top of our image, right?
+First, I'll place it in the top-left corner.
+Because it's a 3x3 kernel, right?
+And in this position, there are some overlapping areas with it.
+and have the two of them perform an operation,
+Actually, this operation, what we understand as convolution...
+The reason it's called that,
+And that's exactly where the operation gets its name from.
+Actually, it's not a convolution in the strict mathematical sense.
+Once you've multiplied all the corresponding positions, you add up the results.
+And then, you take those nine products and add them all up.
+And that gives us a single number.
+and that becomes the first value in our new image.
+And we just keep moving it...
+then to the second,
+then to the third position.
+until finally, it gets moved to this position.
+We perform the convolution operation at each position to fill in the values.
+And just like that, a new image is formed.
+So, as you can see,
+So, if we don't do anything special,
+this resulting image is actually larger than the original one.
+This means the new image is going to be a bit smaller.
+This is because with every operation,
+For instance, each slide only produces one pixel.
+But in a situation like this, let's say you're up here,
+It can't slide off the edge, right?
+It can only slide completely within the image.
+So that's the first pass.
+So, for the second, third, and fourth positions, does that mean you can only slide it four times?
+And the same applies from top to bottom.
+So, we end up with a 4x4 matrix.
+So, this value that we've calculated...
+Actually, this result is meaningful.
+This value represents the local region at the current position.
+that matches the pattern of the convolutional kernel.
+For instance, let's say I'm sharpening the image.
+I'm detecting edges, or let's say, horizontal lines.
+or the recognition of vertical lines.
+Is there a horizontal line in the area I'm currently scanning?
+or a vertical line.
+The larger this number is,
+the more it matches the pattern of the convolutional kernel.
+And the smaller the number, the less of a match it is.
+So, the output from this process, while it's also just a bunch of numbers,
+But these numbers actually mean something.
+and it corresponds to the convolutional kernel.
+So, each convolutional kernel represents a specific feature.
+Alright, let me show you a slightly more practical example.
+Let's take a look.
+So, for instance, let's take a...
+a scan of a cup of coffee.
+So, after scanning it...
+And with just one convolutional kernel,
+and gradually, it can take on a form like this.
+So, let's see how it all works.
+Because, as we know, any image has its RGB three channels.
+They actually correspond to each other.
+So, let's break down this convolutional kernel.
+It continuously scans across the image.
+Finally, it will combine these three images into one.
+and then we add a bias.
+And just like that, we have a new image.
+a new feature map.
+But the dimensions aren't necessarily a perfect match.
+This is just a simplified illustration.
+And it ends up looking something like this.
+So, after processing all three channels,
+Finally, the values from all three channels are summed up together.
+This process, which we call convolution,
+And this resulting image is the processed output.
+This resulting image is what we call a feature map.
+So, looking at it from this perspective,
+In essence, a convolutional kernel is a tiny, tiny feature detector.
+So, let me show you a more concrete example.
+Some kernels might learn to detect vertical lines,
+while others might learn to detect horizontal lines.
+Some might detect changes in color,
+or certain textures, things like that.
+And that's how it works.
+So for the original image, I've converted it to grayscale.
+It's a pretty simple one.
+I've applied two convolutional kernels.
+and I'll scan it with them.
+As you can see, these two convolutional kernels...
+in the scan results?
+This is because it has very distinct horizontal and vertical lines.
+This convolutional kernel is clearly much more sensitive to vertical lines.
+The horizontal lines have been almost completely filtered out.
+and shapes like circles become much less defined.
+This convolutional kernel, on the other hand, is clearly more sensitive to horizontal lines.
+So, the image it produces after scanning would look something like this.
+And using this one,
+we can get a sense of how many horizontal lines are in this image.
+And with this one,
+and figure out roughly how many vertical lines are in the image.
+Of course, not all convolutional kernels...
+All of these kernels have meanings that humans can understand.
+and some of them are just plain incomprehensible.
+It's like how some parameters in a deep neural network might be a seven,
+some are two or three.
+What does that even mean?
+You can't really make sense of it either.
+But, well, since I can't make any sense of it,
+Plus, I don't even know how many different patterns there are.
+So, for each convolutional kernel, don't they have...
+Let's say it's a 3x3,
+So, does that mean there are nine parameters?
+So, how do I set the values for these parameters?
+The truth is, you don't know what these values should be either.
+And this result is, in fact, what you get from training the model.
+So, what about the numbers inside these convolutional kernels?
+Essentially, these are the parameters of the neural network.
+The ones we've trained the model to produce.
+and then corrected bit by bit through backpropagation.
+Now, let's take a look inside.
+In fact, there are three other key concepts we need to cover.
+First, a crucial concept is the size of the convolutional kernel.
+So, the size of the convolutional kernel...
+This determines the size of the local region the kernel looks at each time.
+A common choice might be a 3x3.
+or 5x5.
+the larger the convolutional kernel is,
+the larger the area it scans each time.
+so the visible area at one time is larger.
+But the thing is, the larger it is...
+the more parameters it's going to have.
+And the computational load will increase as well.
+Nowadays, the 3x3 kernel is the most common choice.
+Because they're small enough.
+which makes them easy to stack.
+So, let's take an example.
+So this is a 3x3 one.
+So, for example, you can take a look at how it scans the image.
+In fact, the first time is right here.
+The second time, it moves here.
+and for the third and fourth, it moves down one again.
+And you just keep shifting it down, one by one.
+and move down one more step.
+And, like I just mentioned...
+So, the original image is 6 by 6.
+and after it scans through,
+without any special padding,
+So, after scanning,
+So, horizontally, we can only make four moves each time, right?
+and we get a result for each step.
+And vertically, it's the same, it can only scan four times.
+So, what you end up with is a 4 by 4 matrix.
+So, the feature map has actually gotten smaller.
+So, this is the difference based on the size of the convolutional kernel.
+So, what if my convolutional kernel is 5x5?
+So it can only scan twice, right?
+and the resulting image will be 2x2.
+So it gets smaller.
+But at the end of the day, the numbers we get out are all meaningful.
+The second factor is actually the stride, or how much it moves each time.
+So, what this means is, before, we were just moving it one step at a time by default.
+Right?
+moving one pixel at a time.
+But in reality, I can increase the stride a bit.
+So it moves by a larger amount each time.
+This way, it will skip one position each time, outputting the feature from that location.
+the reduction in the height and width of the feature map becomes more pronounced.
+Let's say, like this.
+I'm jumping two at a time.
+This way, since it can't go any further.
+and can't move any further.
+So, we're basically just discarding this feature.
+Then we move on to the second one.
+Because if it moves two more steps,
+it's also out of bounds.
+and it can't move any further.
+So, it changes.
+So, if my stride is two,
+it becomes a 2x2.
+That's quite a significant reduction.
+Right?
+But for a 5x5 image,
+it will also become 2 by 2.
+Because it can't move any further outside the original bounds.
+So, we see that my stride can also change its dimensions.
+But of course, for convolutional layers in general,
+our stride is set to one.
+This is to get a more complete picture.
+It's generally in the pooling layer that we'll set it to two.
+And the next thing is padding.
+So, what's padding for?
+to solve the problem we just mentioned.
+So every time I perform a scan,
+it's now shrunk to a 6x6.
+and it gets scanned down to 4x4.
+So, to keep our dimensions the same size,
+This is to ensure that the computation remains stable.
+So, before we start this scanning process,
+we can add a border of zeros around the edges of the image.
+So, after adding this zero-padding,
+So, let's say we have a 4x4 image to start with.
+So, after I add this border of zeros,
+so it becomes 6 by 6.
+So now it becomes a 6 by 6 image.
+And then, we just do the same scanning process as before.
+so the output remains 4 by 4.
+I started out with a 4x4.
+So after scanning, it's still 4x4.
+This is for a convolutional kernel size of three.
+So, when we're making that determination,
+All you have to do is pad the edges of the image with zeros.
+This way, it's possible to...
+so that the feature map we get from scanning the image...
+matches the size of the original image.
+So, for this, uh...
+And later on, when we're actually defining this in our code,
+we'll also be frequently setting the values for these three numbers.
+So, do you know what each of these three values represents?
+So, how exactly do we calculate this size?
+Actually, there's a formula for this.
+So, for example, the final...
+For example, the height and width of the resulting image that I calculate.
+what their dimensions will be.
+It actually depends on the height of your original input image,
+and the size of your convolutional kernel.
+the stride of the movement,
+All of these factors are related.
+And there's a formula for this,
+For example, let's say it's a 32 by 32 image.
+So, if our K is equal to three...
+K is equal to three,
+So basically, it means a 3x3 convolutional kernel with P equal to one.
+so we'll pad it with a一圈一 of zeros.
+And S equals one.
+So basically, it just slides across the image each time.
+If we move it by one each time,
+So, our output volume will still be 3x32x32.
+If we keep everything else the same,
+Basically, you just change that S to a two.
+essentially, it gets divided by two.
+Because it was originally 33 by 4.
+Wasn't it 32 by 32?
+So, after you divide by two,
+it becomes 16 by 16.
+So that's why it gets cut in half.
+And this also happens during pooling.
+So, how exactly does it get cut in half?
+All you have to do is set the stride to two.
+So, in the example we were just looking at...
+Actually, we've just converted it to a grayscale image.
+so it looks like it's just two-dimensional.
+So, we're saying this is a 3x3 convolutional kernel.
+and that'd be a 4×4 convolutional kernel.
+But in reality, when we're dealing with actual images...
+For instance, an RGB image has three channels.
+Right?
+It's not just a grayscale image.
+It's made up of three images, or three channels, right?
+So in this case, what about our convolutional kernel?
+and it can't be a 3×3 either.
+so it has to have three as well.
+So for each of my convolutional kernels,
+has to scan your entire image from top to bottom.
+In reality, I'm scanning across all three of your channels.
+Actually, I... I... I'm also corresponding to the red one.
+I have a 2x3x3 one.
+This demo might be showing a 4x4 image, actually.
+And for the green one?
+I have a corresponding one for that as well.
+And for the blue one, I have a similar one as well.
+So, for the feature map that I get after scanning...
+So, what's inside... well, of course, for the feature map I've just scanned out,
+Because I also need to use that previous image to give you a demonstration.
+As you can see,
+Let me give you a demonstration.
+Ultimately, it doesn't matter how many channels you have,
+Now, it might look like these are three separate convolutional kernels.
+it's actually one single convolutional kernel.
+It's just that it has an extra dimension.
+It's a 3×3, but also by 3.
+But after it finishes scanning,
+as if it's going to generate three feature maps.
+But that's not actually the case.
+So, it takes the results from scanning these three feature maps,
+This is a single operation.
+and then combines them all together.
+And after adding the bias term,
+This process creates what's called a feature map.
+So, That means a single convolutional kernel will only generate one output feature map.
+So, it doesn't matter how many channels you have.
+It doesn't matter if it's three channels or six.
+and you'll end up with just a single feature map.
+Alright, so how do we get more features?
+all we have to do is use more convolutional kernels.
+So, sometimes...
+For instance, let's say we use 16 convolutional kernels.
+So, how many feature maps will we end up with?
+So, you'll get 16 feature maps, and that number is independent of the specific number of channels in the input.
+The number of convolutional kernels you use,
+that's how many channels you'll get.
+these are the feature maps.
+feature map.
+So, in the end, let's say I used 16 of them.
+ultimately, this results in 16 feature maps
+and combine them all together.
+This makes computations with matrices much more convenient.
+And in PyTorch,
+which is to say, it's a multi-dimensional tensor.
+So, it's really important for everyone to get this straight.
+As for the dimensions of my convolutional kernel...
+Here, we use K-by-K to represent its size.
+So, what's its dimensionality, then?
+It actually represents the number of channels in your input.
+that's how many dimensions it has.
+So, it's just a simple calculation, really.
+So, try not to get this part mixed up.
+A single convolutional kernel can only produce one feature map.
+So, as we just introduced,
+regardless of how many channels there are.
+So, a convolutional kernel...
+It will perform multiplication and addition operations on each of the channels individually.
+But in the end, all these results are added together.
+And then you add the bias to get a single response value.
+In other words, a single convolutional kernel will only output one feature map.
+Okay, so what about the number of output channels?
+In reality, it's about how many convolutional kernels you have.
+that's how many outputs you get.
+So, naturally, that would be the number of convolutional kernels.
+This gives you the number of output channels.
+Because a single feature map can only represent one type of detection result.
+More often than not, we need to detect multiple features, right?
+So, we just use multiple convolutional kernels.
+So, it'll output as many maps as there are kernels.
+For example, let's say we want to detect 16 different patterns.
+So, we'll use 16 convolutional kernels to scan it.
+And just like that, we've extracted 16 different features.
+So, we just stack them all together.
+So, it's 16 times the size of the feature map.
+So, for our input...
+So, for example, let's take a look at this.
+So our input, for example, is a 3 by 32 by 32... so, after processing...
+So what is this?
+You'll be using this a lot when you start coding later on.
+So, for a 2D convolutional layer, what does this '3' represent?
+It refers to the number of input channels.
+This represents the number of convolutional kernels.
+The number four here means it's a 3x3 kernel.
+Which is one, right?
+Then the output will become this 16-channel feature map.
+But the dimensions stay the same.
+The default stride is one.
+as long as you don't change it.
+I don't buy it.
+It's one.
+We need to actually look at a more realistic example.
+So, for example, what does this all mean?
+So first, we have the input.
+Here we have an image.
+Because a color image has three channels: RGB.
+But, I have ten convolutional kernels.
+Right?
+So, as you can see,
+Each of these convolutional kernels is designed to extract a unique feature from the image.
+And this process is repeated, layer by layer, as the information is passed on.
+And after that, we have another ten convolutional kernels.
+Another ten convolutional kernels continue this scanning process.
+And finally, it concludes that this is... a cup of coffee.
+Now, let's continue.
+So, why do convolutional layers save so many parameters?
+So by now, we should be able to understand why.
+So, as we can see...
+So, how many parameters are there in a single layer?
+In fact, this is determined by the convolutional kernels.
+So, how many convolutional kernels do you have?
+And then you just add the number of biases.
+So, as for the convolutional kernel, let's say its size is defined by K.
+so it would be a 3 by 3.
+If you have three channels,
+then you multiply by three.
+For instance, if you wanted to have 16 features,
+Then you'd multiply that by 16.
+Plus another 16 biases.
+Because every convolutional kernel needs its own bias term.
+So, adding all that up gives you 448.
+So as you can see, this layer has only a little over 400 parameters.
+Compare that to the MLPs we covered last time, which can easily run into the thousands or even millions of parameters.
+So the difference is massive, right?
+So, that's what makes Convolutional Neural Networks, or CNNs, so incredible.
+This is all thanks to the convolution operation.
+So that it allows me to, without flattening it,
+instead of flatting the image.
+I can still extract, uh...
+the intermediate features.
+all with just a small number of parameters.
+So, at this point, we've basically covered the convolution operation.
+And this is the most complex operation in the entire CNN.
+As for the mathematical principles behind it,
+For those of you who are interested, you can go check some of them out.
+There are plenty of resources available online.
+So we won't go into detail about that here.
+So, the first thing we need to understand is the convolutional kernel.
+It's just a small matrix.
+And most of the time, it's going to be 3x3.
+scan continuously from top to bottom,
+and from left to right, scanning our image.
+to capture some of the local features within this image.
+It could be a horizontal line,
+or a vertical line.
+Or even the edges and corners. The result of this scanning process is what we call a feature map.
+It records the value at each position,
+and the strength of the response from this convolutional kernel.
+The number of output channels is equal to the number of convolutional kernels.
+And the parameters? They can be shared.
+So with that in mind, let's take another look.
+So, remember that architecture diagram we showed you at the beginning?
+So, does that make things a little bit clearer?
+At the very least, for this layer, you can see all these little boxes we've drawn,
+So, these correspond to each other.
+So basically, the information propagates from here, layer by layer, all the way to this point.
+and the feature map becomes smaller.
+So, we should have a general idea of what's going on here.
+This is a typo. It should be 'pooling'.
+Of course, we haven't explained how it actually gets smaller yet.
+Actually, you can figure out how it changes just by looking at its state.
+Alright, next up, let's take a look at some of the layers that come after this.
+First up is the rectified linear unit, or ReLU.
+The non-linear activation is... uh... rectification.
+And that's how these layers are stacked.
+So, after the pooling layer,
+and it will output the final classification results.
+Finally, let's look at a simple example.

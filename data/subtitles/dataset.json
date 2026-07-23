@@ -1,14 +1,14 @@
 {
   "name": "loop-bilibili/data/subtitles",
   "description": "Packed Bilibili UP subtitles (SRT + slim index)",
-  "packed_at": "2026-07-23T16:10:28.405077+00:00",
-  "up_count": 9,
-  "ok_total": 658,
-  "empty_total": 26,
+  "packed_at": "2026-07-23T16:23:35.262610+00:00",
+  "up_count": 10,
+  "ok_total": 755,
+  "empty_total": 32,
   "error_total": 12,
-  "cues_total": 212612,
-  "srt_bytes_total": 15156203,
-  "txt_bytes_total": 7706946,
+  "cues_total": 263350,
+  "srt_bytes_total": 18741791,
+  "txt_bytes_total": 9526867,
   "layout": {
     "ups": "ups/{mid}-{name}/",
     "index": "index.jsonl",
@@ -42,6 +42,15 @@
       "empty_count": 8,
       "total_cues": 93487,
       "path": "ups/280780745-张小珺商业访谈录"
+    },
+    {
+      "slug": "291215958-谦行AIing",
+      "mid": "291215958",
+      "name": "谦行AIing",
+      "ok_count": 97,
+      "empty_count": 6,
+      "total_cues": 50738,
+      "path": "ups/291215958-谦行AIing"
     },
     {
       "slug": "325864133-飞天闪客",

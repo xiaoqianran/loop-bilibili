@@ -1,0 +1,451 @@
+Vamos dar uma olhada na inicialização de parâmetros.
+Se a programação da taxa de aprendizado, que vimos no vídeo anterior, era um pouco "de nicho",
+então a inicialização de parâmetros é ainda menos conhecida por muitos iniciantes.
+Mas a verdade é que a diferença entre um mestre em ajuste de parâmetros de redes neurais e uma pessoa comum é apenas um pequeno detalhe.
+Claro, a inicialização dos parâmetros é crucial.
+Também nos prepara para entender a normalização mais tarde.
+Acredito que, depois de aprender todo este conteúdo,
+quando olharmos para o “layer normalization” do Transformer, essa parte
+será muito mais fácil de entender.
+Sabemos que o treinamento de uma rede neural é feito em várias rodadas.
+Mas o que pode surpreender um pouco é que,
+se uma rede neural profunda pode ser treinada ou não,
+geralmente, já é determinado durante a primeira propagação para frente.
+Anteriormente, demonstrei uma rede neural simples escrita à mão.
+Ao inicializar os parâmetros,
+Nós escrevemos alguns códigos bem estranhos.
+Depois de inicializar uma matriz de pesos...
+Também a multiplicamos por um parâmetro especial.
+Naquele momento, eu apenas disse que era um valor empírico.
+Por que multiplicamos por isso?
+E por que o viés pode ser simplesmente zerado?
+Os pesos não podem ser usados.
+O que está acontecendo com tudo isso?
+A seguir, vou explicar tudo claramente.
+Por que é que se escreve assim, para que uma rede neural possa ser treinada?
+A rede não tem parâmetros quando é treinada pela primeira vez.
+Precisamos atribuir um valor inicial manualmente.
+Então, o que atribuímos a ele?
+Na verdade, a ideia mais simples, é claro, seria definir todos os pesos como zero.
+De qualquer forma, porque existe o algoritmo de descida do gradiente,
+Depois, você ajustaria os parâmetros, certo?
+Aos poucos, ajustando cada parâmetro para o valor correto.
+Mas se você fizesse isso,
+vamos encontrar problemas sérios. Por exemplo,
+se definirmos que na primeira camada
+todos os parâmetros de peso são zero,
+Após a transformação linear, o resultado obtido
+ainda é zero. E depois de passar pela função de ativação, também é zero.
+Então, cada neurônio
+Na verdade, os resultados de saída são todos iguais.
+E na camada de saída, os valores que vemos também são os mesmos.
+Então, na verdade, suas funções são todas equivalentes.
+não haveria qualquer diferença.
+Então, se houver, não importa quantos neurônios tenhamos nesta camada,
+os resultados serão todos iguais.
+Por exemplo, a rede inteira perderia a capacidade de ver as características de diferentes perspectivas.
+Inicializar os pesos da mesma camada com qualquer constante idêntica resulta na mesma coisa—então os pesos devem receber valores aleatórios diferentes desde o início. Na passagem para frente, seria tudo igual.
+A retropropagação, ao calcular os gradientes, também os calcularia da mesma forma.
+Às vezes, é quase impossível de treinar.
+Este problema é conhecido como o problema da simetria.
+Claro, você não inicializa apenas com zero.
+Quando inicializamos os pesos
+com quaisquer parâmetros idênticos
+por exemplo, 1, 3, etc.
+os resultados são os mesmos.
+Se quisermos que uma rede neural treine normalmente,
+os pesos iniciais devem ter valores diferentes.
+não podem ser todos iguais.
+basta usar valores aleatórios.
+Então, por que os vieses podem ser todos definidos como zero?
+Na fórmula anterior,
+o "bias" foi totalmente zerado, certo?
+No entanto, como os pesos são aleatórios,
+A polarização é a mesma?
+Os neurónios não se degenerarão.
+Isso porque a principal diferença entre os neurónios vem do peso, que pondera as entradas de forma diferente.
+Uma vez que os pesos são diferentes,
+ou seja, o W é diferente,
+o resultado da saída de cada neurônio já será diferente.
+Os gradientes recebidos mais tarde também serão diferentes.
+E quanto a definir o bias como zero?
+Também não fará com que eles se tornem iguais.
+Durante a retropropagação,
+também ajustaremos os vieses gradualmente.
+Então, na maioria dos MLPs, independentemente de serem
+Ou em camadas lineares, como CNN e Transformer,
+a inicialização do bias geralmente ainda é zero.
+Isso não é um problema.
+O que importa são os pesos, então como quantificamos a "escala" e como a controlamos? Precisamos de uma ferramenta matemática precisa: a variância. A randomização dos parâmetros pode resolver o problema da simetria.
+Então, podemos começar a treinar?
+Na verdade, ainda não.
+Porque, seja na propagação direta ou na propagação reversa,
+já apresentamos a vocês em nossas derivações de fórmulas.
+Há muitas operações de multiplicação em cadeia.
+A multiplicação em série é, na verdade, algo muito assustador.
+Não importa se estamos falando de multiplicação em série...
+Cada vez, nós só aumentamos um pouco.
+Por exemplo, se aumentasse 5%, poderíamos colocar 1.05.
+Se fosse depois de 30 camadas,
+viraria 4.3.
+Se eu tiver um aumento de apenas 20% em cada camada, tornando-se 1.2,
+depois de 30 camadas de treinamento,
+o valor resultante seria 237.
+Essa mudança de escala é exponencial.
+Pode levar à ativação explosiva.
+Na verdade, é sobre isso que sempre falamos.
+Claro, porque o resultado da sua saída, na retropropagação, será multiplicado por ela.
+Isso é o que chamamos de explosão de gradiente.
+Na verdade, ser muito pequeno também não é bom.
+É o mesmo princípio.
+Mesmo que você diminua 5% a cada vez,
+ainda chegará a 0,21, certo?
+Se depois de 30 camadas diminuir 20% a cada vez,
+vai se tornar 10 elevado a -3.
+Já diminuiu a esse ponto.
+Os gradientes já se tornaram praticamente zero.
+Os parâmetros não são mais atualizados.
+Isso é o que comumente chamamos de "desaparecimento de gradiente".
+Então, a escala entre as camadas
+deve ser mantida o mais estável possível.
+Não pode aumentar; se aumentar um pouco,
+Nem mesmo a conexão pode fazê-lo.
+Se mudar um pouco, depois de várias camadas, pode causar o fenômeno do desaparecimento do gradiente.
+Então, como devemos quantificar essa escala?
+E como devemos controlá-lo?
+Para isso, precisamos de uma ferramenta matemática.
+Que é a variância.
+é usado para descrever o quão disperso um conjunto de dados está.
+A fórmula, na verdade, é para cada conjunto de dados, certo?
+Cada valor é subtraído da média.
+eleva ao quadrado
+e depois somamos todos eles.
+Após a soma,
+E depois tiramos a média, certo?
+Exatamente, é a média, a variância é o erro quadrático médio (EQM).
+Já vimos isso muitas vezes antes.
+Mas como tiramos o quadrado,
+a escala é diferente dos dados originais.
+Então, se tirarmos a raiz quadrada,
+É o que chamamos de desvio padrão.
+Quanto menor a variância,
+isso significa que a variação de todo o conjunto de dados é menor, e chamamos isso de sinal estável.
+Quanto maior a variância,
+maior a diferença entre cada número e a média.
+Quanto maior a distribuição, mais dispersa ela é.
+Então, como podemos manter o sinal estável?
+Devemos fazer com que a variância da saída de cada camada seja aproximadamente igual à variância da entrada.
+Dessa forma, evitaremos os problemas de explosão ou desaparecimento do sinal que mencionamos.
+Para manter essa variância, o que devemos fazer?
+Isso equivale a manter a estabilidade do sinal.
+Em seguida, vamos usar experimentos para ver como diferentes inicializações de peso de desvio padrão afetam isso.
+como a variância vai mudar entre as camadas.
+Vamos criar uma rede neural puramente linear de 6 camadas.
+Sem camadas de ativação no meio.
+cada camada tem 512 neurônios.
+Vamos ver como o peso é inicializado com três variâncias diferentes,
+ou seja, desvios padrão diferentes.
+para ver que tipo de efeito eles terão.
+Ou seja, o desvio padrão é definido como um.
+Assim, descobriremos que, começando com um, após três camadas,
+Depois de três camadas, o que era um se tornou 1,3 vezes 10 elevado a 8. E depois de seis camadas, virou 10 elevado a 16.
+Significa que cada camada ampliou em 512 vezes.
+Então, se olharmos o gradiente de forma inversa,
+É a mesma coisa.
+haverá uma explosão de gradientes.
+Se o desvio padrão for definido como 0,01,
+quase 512 vezes menor.
+Então, depois de seis camadas,
+cai para 10 elevado à potência de -8, o que faz com que a ativação seja quase zero.
+Todos os neurônios podem ser considerados sem saída.
+Isso é o desvanecimento do gradiente.
+Se definirmos nosso desvio padrão como a raiz quadrada de 1/512,
+Desse modo, veremos que, cada vez que você amplifica por 5112 vezes, não é?
+Na verdade, eu vou multiplicar por um número assim.
+A mudança em cada camada é, na verdade, de um.
+Nós vamos descobrir que isso vai estabilizar a variância em raiz quadrada de 1/512.
+O que são esses 512?
+É o número de neurônios em cada camada.
+Porque a variância de cada camada é multiplicada por um fator.
+Quanto mais profunda a profundidade,
+o desvio é ampliado geometricamente.
+Então, precisamos encontrar uma maneira de fazer com que este fator seja igual a um.
+Isso estabilizaria a variância.
+A questão que resta é: pelo que é determinado?
+Como estabilizar essa variância?
+Uma camada linear sem função de ativação.
+Então, o neurônio de saída y seria igual ao quê?
+A soma de W vezes X de 1 a N.
+Se W e X são independentes
+e a média é zero,
+Então, a variância de W vezes X é igual à variância de W vezes a variância de X.
+Então, a variância de toda a saída é igual ao quê?
+É a variância de W vezes a variância de X.
+Pois cada um é somado de 1 a n.
+Ou seja, isso acontece n vezes, então é só multiplicar por n.
+O sinal, a cada camada que passa, é a variância.
+Por exemplo, a saída de cada camada, ao chegar na próxima, torna-se novamente a entrada.
+Transforma-se em 'x'.
+Certo?
+Então, é como se cada camada fosse multiplicada por um 'n' e pela variância da matriz de pesos.
+Se 'n' multiplicado pelo peso...
+for maior que um, então cada camada será ampliada.
+Se for menor que um,
+cada camada irá decair.
+Só será estável se for exatamente igual a um.
+Se queremos que a variância de y seja igual à variância da sua entrada, que é x,
+a sua variância é a mesma.
+Assim, as camadas entre si são todas estáveis.
+Em outras palavras, podemos simplesmente inserir a fórmula, certo?
+Os dois se anulam, resultando em um.
+Então, a variância da matriz de pesos deve ser igual a um sobre n.
+E o que é N?
+É o número de neurônios de entrada, certo?
+Isso é como se tivéssemos um mixer em uma estação de rádio, por exemplo.
+A saída final é a entrada de áudio N gravada.
+Então, se quisermos que a saída deste misturador...
+não a torne muito alta.
+ou diminuí-lo demais.
+Então, o que devemos fazer?
+Quantas pistas existem?
+cada caminho é ajustado proporcionalmente para ficar menor.
+Quando eles se juntam,
+a saída é parecida com a entrada.
+Voltando ao experimento,
+como chegamos à raiz quadrada de 1/521?
+É porque temos 512 neurônios, certo?
+Então, o que precisamos fazer é multiplicar por, se for o desvio padrão da variância,
+e se for 1/512,
+o desvio padrão, é só tirar a raiz quadrada.
+É assim que funciona.
+Então, na inicialização de parâmetros, há três coisas que precisamos resolver:
+nenhuma delas pode faltar.
+A primeira é que, como já foi dito,
+não pode ser tudo zero.
+Mas nem tudo um, nem tudo três funciona.
+Tem que quebrar a simetria.
+Tem que ser aleatório.
+E também precisamos controlar a escala.
+Na verdade, durante a propagação direta,
+a magnitude da ativação não deve aumentar camada por camada
+nem diminuir camada por camada.
+Durante a retropropagação,
+a retropropagação é, na verdade, a propagação direta invertida.
+Ao mesmo tempo, ela também não pode ser muito grande nem muito pequena.
+Caso contrário, haverá desaparecimento ou explosão do gradiente.
+Então, as fórmulas clássicas de inicialização...
+A lógica dos métodos de inicialização é muito semelhante.
+Primeiro, usamos a distribuição normal ou uniforme.
+Então, quebramos a simetria.
+Devemos usar a fórmula que acabamos de mencionar para controlar a variância.
+Por fim, é só fazer algumas correções, de acordo com as funções de ativação específicas.
+Então, vamos ver os dois mais comuns.
+Primeiro, vamos dar uma olhada na inicialização Xavier, proposta em 2010.
+Essa é a primeira vez que nos deparamos com o nome do Yoshua Bengio.
+Ele é um dos três grandes nomes da IA.
+Vamos vê-lo com frequência mais adiante.
+A fórmula, na verdade, não é simplesmente 1 sobre n.
+Mas, considerando a propagação para frente,
+você quer que seja 1 sobre o número de neurônios de entrada.
+Na retropropagação,
+na verdade, você usa os neurônios de saída.
+A entrada e a saída são invertidas, certo?
+Esse é um em um dividido pelo número de saídas, o Xavier
+ele faz um meio-termo entre os dois.
+É o número de neurônios de entrada mais o número de neurônios de saída, dividido por dois.
+No PyTorch, já temos uma API para isso.
+Não precisamos ajustar essa fórmula manualmente.
+Na prática, usamos o Xavier.normal.
+Se você usa uma distribuição normal,
+e se for uma distribuição uniforme?
+Então, basta usar Xavier.uniform.
+Por que é escrito assim?
+Na verdade, naquela época, em 2010,
+a maioria ainda usava Sigmoid ou Tanh como função de ativação.
+No ponto zero,
+sua derivada é muito próxima de um.
+Essas duas funções, esta é a inicialização He proposta pela equipe de Kaiming He em 2015. Vou mostrar a aparência dessas duas funções.
+Ainda se lembram que, em 0, a derivada já está muito próxima de um?
+Nesse caso, se os nossos dados estiverem distribuídos ao redor deles,
+mas se for bem feito,
+a propagação para frente e a propagação para trás praticamente não alteram a variância.
+Por isso, o Xavier é muito estável com esses tipos de funções de ativação.
+Mas na era do ReLU, a história é diferente.
+Redes neurais profundas agora usam ReLU.
+E a função do ReLU é assim:
+Quando está à esquerda do zero,
+Não é um, certo?
+Quando está à direita de zero, é um.
+Afinal, o que vem antes é zero.
+Isso é diferente disso.
+Como é a distribuição?
+Então, nesses casos, quando é igual a zero, o que acontece?
+Se os sinais estiverem distribuídos uniformemente em ambos os lados, ou em uma distribuição normal,
+é como se o lado zero estivesse removendo todos os sinais.
+Então, aproximadamente metade dos sinais é, na verdade, eliminada.
+Então, a variância de saída é apenas metade da variância de entrada.
+O que devemos fazer neste caso?
+Na verdade, o método que acabamos de usar não funcionaria mais.
+Então, o que vem a seguir é 2015,
+quando a equipe de Kaiming He propôs a inicialização He.
+Na verdade, é o sobrenome dele, também conhecido como Kaiming.
+A inicialização leva o seu nome.
+Mas ele também é o inventor das redes residuais.
+Os artigos mais citados.
+Como é que ele faz isso?
+Na verdade, é apenas para as características da função ReLU.
+Vai cortar a variância pela metade, não é?
+eu compensaria com a variância dos pesos.
+Para o termo anterior,
+Xavier faz da seguinte forma:
+Para a inicialização de Kaiming ou He,
+como funciona?
+Ele pega o número de neurônios de entrada
+basta multiplicar por 2.
+Porque metade é eliminada no zero, certo?
+Nesses casos, é claro que o PyTorch também possui uma fórmula correspondente.
+É tipo a inicialização Kaiming normal e Kaiming uniforme, sabe?
+Para distribuições normais e uniformes, é diferente.
+No Pytorch,
+Os parâmetros padrão do Kaiming, na verdade, são para Leaky ReLU.
+Não é para ReLU.
+Se estivermos usando ReLU,
+na verdade, precisamos especificar isso explicitamente.
+Este é, na verdade, a inicialização He padrão.
+Se entendermos as fórmulas anteriores,
+descobriremos que, na verdade, porque quando é menor que zero,
+quando é menor que zero, a variância desaparece, certo?
+Eu vou compensar isso.
+basta multiplicar por 2.
+Porque, de acordo com a minha hipótese,
+você tem uma distribuição uniforme.
+A quantidade de valores menores que zero e maiores que zero deve ser parecida, certo?
+Então, se eu multiplicar por 2, o resultado também deve ser um número parecido.
+Portanto, aprendendo até aqui...
+Vamos revisar aquelas linhas de código de inicialização de pesos que usamos antes para entender o que elas realmente fazem.
+Podemos observar o primeiro passo.
+O que está acontecendo aqui?
+Na verdade, isso é apenas uma distribuição normal padrão, certo?
+Essa é a distribuição normal.
+É apenas uma matriz de pesos de 784 por 128 dimensões.
+Que número devemos multiplicar?
+Podemos ver que é 2/784.
+Assim, fica mais fácil de entender, certo?
+Por último, tiramos a raiz quadrada.
+É uma potência de 0,5, certo?
+Tira a raiz quadrada.
+Não é um esquema padrão de inicialização de pesos, certo?
+Assim parece mais simples.
+Então, todos os pesos, ah,
+Quanto ao viés, é só defini-lo para zero.
+É super simples.
+Mas ao escrever o código de verdade,
+não precisamos escrever dessa forma.
+Basta usar a API diretamente.
+Já que a inicialização é tão importante,
+Então, por que muitas pessoas, ao escreverem código de demonstração,
+não fazem isso?
+E por que minha rede neural ainda consegue ser treinada?
+nem teve o problema do desaparecimento ou da explosão do gradiente.
+Isso acontece porque, na verdade, o PyTorch já faz isso por padrão internamente.
+Por exemplo, quando você usa nn.Linear,
+você não tem nenhum modelo de inicialização.
+O modelo nos ajudou com algumas coisas internamente.
+Veja que há uma redefinição de parâmetros por trás disso.
+O que está acontecendo por dentro?
+Vocês podem dar uma olhada.
+Na verdade, está ajustando o Kaiming Uniform.
+A única diferença é que ele recebeu um
+Embora tenha ajustado o Kaiming Uniform,
+o número que ele passou foi a raiz quadrada de 5.
+Isso provavelmente cria uma certa diferença no desvio padrão, em comparação com o desvio padrão do HE.
+Então, em redes de camada intermediária,
+essa pequena diferença é insignificante.
+Já pode usar quase normalmente.
+Não precisa esconder, ele consegue treinar.
+Mas para redes neurais profundas puras,
+Ainda assim, sugiro que se use a padronização manual, que seria a inicialização de Kaiming.
+Após entender a teoria,
+então, vamos comparar cinco métodos de inicialização. Faremos um MLP *** camadas, que terá estes neurônios em cada camada.
+Vamos dar uma olhada em cinco métodos de inicialização.
+Uma comparação prática deles. Ainda usaremos um MLP *** camadas, que tem estes...
+Cada camada tem estes neurônios.
+Vamos treinar cinco rodadas.
+Para ver as diferenças de inicialização.
+E também seus resultados finais.
+Quais são esses cinco métodos?
+São o de todos os zeros e o da distribuição normal padrão.
+E também um que usa 0.01.
+Isso é um pouco curioso.
+Porque nós, em geral, estamos apenas a tentar que seja aproximadamente zero ponto
+E um desvio padrão de 0,1 é suficiente.
+Então, você vai descobrir que ele também pode ser treinado.
+As inicializações de Z. B. Er e Kaiming são distribuições normais.
+Vamos ver o que são.
+Primeiro, vamos dar uma olhada na linha azul, que representa o zero.
+Vamos perceber que a perda é quase sempre alta.
+A precisão dela é sempre muito baixa.
+É como adivinhar aleatoriamente, não faz diferença.
+Vamos ver de novo.
+Se usarmos a distribuição normal padrão,
+Podem ver
+Primeiro, a perda não pode ser vista porque
+é super grande.
+Nem aparece mais nessa tabela.
+Já explodiu o gradiente.
+Na verdade, não dá para treinar assim, né?
+Então, a precisão é quase a mesma que a de um palpite aleatório.
+Vamos ver, é exatamente 0,01.
+Isso é porque foi apenas uma coincidência que escolhemos bem.
+Mas também perceberemos que a sua velocidade de convergência de treinamento é relativamente mais lenta.
+A precisão final ainda é ligeiramente menor do que a inicialização de Kaiming ou He.
+E a inicialização de Kaiming e Xavier são quase igualmente eficazes.
+Se olharmos atentamente para os valores aqui,
+descobrimos que o 微 está um pouco melhor. Isto acontece porque
+temos poucas camadas. Se tivéssemos mais camadas,
+Quando chegamos ao Resnet e usamos 50 camadas,
+ou quando o número de camadas aumenta,
+percebemos que
+A inicialização Kaiming, geralmente, é melhor do que a Xavier.
+E a curva de treinamento é um pouco mais suave.
+Para finalizar, a inicialização dos parâmetros não é só dar um número aleatório qualquer.
+Mas é necessário que a rede, no início do treinamento, esteja em um estado de sinalização
+muito razoável.
+Neste ponto, há três requisitos mais básicos.
+Primeiro, é preciso quebrar a simetria.
+Você tem que ser aleatório.
+Segundo, é preciso controlar a escala.
+Permite que a escala de entrada e a escala de saída se mantenham consistentes.
+Além disso, o viés pode ser totalmente zerado.
+Se estivermos lidando com redes como ReLU, GeLU,
+Então, usamos Kaiming, ou seja, a distribuição normal de He, e é o suficiente.
+Se, em alguns de nossos treinamentos, usarmos sigmoid ou Tanh,
+geralmente podemos usar a inicialização Xavier.
+Mas para redes mais rasas ou de camada média,
+o PyTorch já as inicializou por padrão.
+Na verdade, não precisa fazer nada.
+Mas para algumas redes mais profundas,
+é melhor redefinirmos manualmente os parâmetros visíveis
+e ajustá-los.
+Normalmente, é melhor ajustar as configurações manualmente para redes mais profundas.
+Integramos a estratégia na função init.
+Aplicamos.
+Depois da inicialização dos parâmetros,
+podemos fazer com que a rede se mantenha estável na primeira vez que for treinada.
+Mas sabemos que, com o treinamento da nossa rede,
+Durante o descenso do gradiente,
+ele ajustará nossos pesos.
+Mas ao ajustar os pesos, ele não seguirá as regras que mencionamos.
+Ele não vai garantir estabilidade de variância
+nem nada disso.
+Então, o que faremos?
+Na verdade, na próxima aula,
+vamos falar sobre como fazer explicitamente
+uma normalização.
+para que toda essa estabilidade possa ser mantida durante todo o processo de treinamento.
+Depois de entender isso,
+vamos analisar a normalização de camada do Transformer.
+Esta camada ficará muito clara.
+Então saberão por que adicionar esta camada.
+E o que essa camada realmente está fazendo.
+Bem, este vídeo termina aqui.

@@ -1,0 +1,759 @@
+Alright, we've finally made it to the video on NLP.
+But we're not going to jump right into the specific details of NLP just yet.
+Instead, let's walk through the timeline of NLP's development.
+So, after we've covered all that,
+you'll have a clear picture of the entire field of NLP.
+including the Transformer.
+and how it was invented, step-by-step, by standing on the shoulders of giants.
+So, after the Transformer was invented,
+So why didn't it immediately take the world by storm?
+Even the companies of the eight authors,
+Even Google didn't recognize the value of the Transformer.
+So, how did Transformer then evolve into GPT?
+So, what about NLP, the technology that changed the world?
+It's short for Natural Language Processing.
+Its core objective is to enable computers to understand, process, and generate human language.
+or even use human natural language.
+So, what are the most common tasks?
+Take machine translation and sentiment analysis, for example.
+You give it a sentence,
+and have it determine whether the sentiment is positive or negative.
+Information extraction.
+This involves pulling out key pieces of information from a text.
+Text generation.
+This is actually the most common application area for AI today.
+Right, like generating a summary of an article.
+and interact with us.
+generate charts,
+answer our questions,
+help us write emails,
+all of which requires coding.
+write a thesis,
+In fact, all of these are tasks that NLP can handle.
+Now, on the surface, these tasks might seem completely different from one another.
+But the problem they're all trying to solve is actually the same.
+It's all about how to get machines to understand and process human language.
+So, this is where NLP differs from programming.
+Programming, at its core, is a situation where neither humans nor computers understand each other.
+So, they both had to take a step back and meet in the middle.
+and invented an intermediary language.
+Humans learn grammar,
+Take the C programming language, for example.
+and learned Python.
+and wrote it in a programming language.
+But the machine can't understand this programming language either.
+It uses a compiler or an interpreter to convert it into binary code.
+And that's how it works.
+But for humans, this is relatively costly.
+That's why not everyone can program, right?
+But NLP, it takes that a step further.
+It's incredibly user-friendly.
+You just use English yourself,
+or Chinese,
+You just use your own natural language.
+You can just talk directly to the machine.
+and let the machine learn everything else on its own.
+So, this means it places a much heavier burden on the machine.
+But, of course, this also made things more difficult.
+Compared to static programming,
+But at the same time, it's also become a technology that benefits everyone.
+Nowadays, you have kids as young as six or seven,
+and up to the elderly in their 70s and 80s,
+can all use AI in their daily lives.
+and in their work.
+And that's what's making AI technology so much more accessible to everyone.
+So, how did NLP evolve to this point?
+Actually, this is something we've covered in our introduction to machine learning and AI.
+As we've also mentioned,
+It all started with symbolism.
+People tried to describe the world using rules.
+This approach is all about using rules to express human language.
+But eventually, they found this approach was a dead end. It just didn't work.
+And so, we gradually moved into the realm of probability.
+And this probabilistic approach led to the field of machine learning.
+And then, moving on...
+And that's when word embeddings were invented.
+So, the consensus was that language still had to be represented by numbers.
+And computers are exceptionally good at processing numbers, right?
+So, they took these discrete symbols...
+and placed them into a continuous semantic space.
+And gradually, this led to the development of RNNs.
+So, besides being able to, uh, process complete sentences...
+After understanding the words,
+It could also process entire sentences.
+This was a huge leap forward for NLP.
+But, we'll find that it still has a few minor issues.
+It couldn't handle generation tasks.
+and it also had some shortcomings when it came to translation.
+And that's where sequence-to-sequence came in.
+And this idea would then lead to the concept of attention.
+But this attention mechanism wasn't the one from the Transformer.
+Transformer.
+but the one in the Transformer.
+It pretty much brought all of this previous knowledge together.
+It stands on the shoulders of giants.
+And of course, it invented self-attention.
+self-
+Because it's a decoder-only model.
+And this self-referential process, this looking at itself, was the very birth of the Transformer.
+And from there, large models gradually emerged.
+So, step by step, machines went from merely seeing text to actually understanding it.
+and eventually, learned to generate.
+So, let's take a look at the evolution of NLP.
+First up is the Symbolism era.
+The core idea was to use rules to enumerate every possible language construct.
+So, in the early days of NLP,
+This approach is quite intuitive.
+Language, after all, has grammar.
+You know, subject, predicate, object, verb, linking verb, predicate... all that stuff.
+and so on.
+Things like passive voice, and all that, uh...
+Back then, the prevailing belief was that...
+The idea was, as long as you could just write all these rules into a program,
+and the machine would be able to understand language.
+This was because language itself was thought to be something that could be formalized.
+and can therefore be programmed.
+And machine translation is the most classic example of this.
+The first step is to perform a dictionary-based substitution.
+and then re-adjust the word order within the sentence.
+and perform some information extraction.
+and then extract the main components like the subject, verb, and object.
+And they figured that would be good enough.
+There was dictionary-based translation.
+And just like that, a one-to-one mapping would produce the translation.
+But,
+But it's not like there was no theoretical foundation back then.
+So, whether it was mathematicians conducting some explorations,
+Just like translation.
+This was the very first exploration of LP.
+So basically, language is like a code.
+You feed it the source text, which contains some hidden rules for mapping relationships.
+As long as you write down every single one of them,
+you can convert it into another language.
+So, for this kind of language, translation is basically a decoding process.
+Meanwhile, linguists also provided proof of this.
+formal languages and generative grammar.
+These rules reinforced the belief that language could be fully systematized.
+This belief
+So, as you can see, the symbolic approach was dominant for a very long time.
+So, language is like a code.
+So, the corresponding solutions for early NLP...
+The idea was to write out this 'password' in the form of a corresponding rulebook.
+But gradually, people started to realize there was a problem.
+I mean, language does have rules, that's for sure.
+And on top of that, the sheer volume of these rules is just massive.
+It was simply impossible to write them all down.
+Natural language is highly dependent on its context.
+And it's not just that there are a ton of rules.
+and the same rules...
+can actually mean something completely different in different contexts.
+For example, take the phrase "You're quite the talker."
+This sentence could be a compliment,
+or it could be sarcasm.
+You have to consider the context and the tone of voice.
+and even the relationship between the speakers to make that call.
+So, as you can imagine, people gradually started to realize...
+There are just too many ways to express language.
+and all sorts of unexpected issues kept popping up.
+Context also plays a crucial role.
+There's just no way to enumerate all the rules.
+So basically, this whole approach just went bust.
+Gradually, some NLP researchers began to turn to statistical methods.
+And as you dive into machine learning, you'll start to notice something.
+In fact, all sorts of statistical methods...
+and there's a whole lot of knowledge in probability theory.
+And this, in turn, ushered in the era of statistics.
+In other words, machine learning.
+They learn the patterns from the corpus, uh...
+But of course, this was all driven by the context of the times.
+So, starting from the late 1980s,
+Then, in the 1990s,
+First of all, computing power had improved.
+text and all sorts of speech data.
+and with that, the amount of data for NLP also increased.
+People started to see language as something that could be estimated from data.
+a probability distribution.
+For instance, if I say, "I want to eat something today..."
+So, you know the probability of the word 'hot pot' coming next,
+is much, much higher than the probability of it being 'screwdriver'.
+It's just because I've seen all sorts of phrases like 'let's eat hot pot today'...
+Let's have hot pot tomorrow.
+And I like to put beef in my hot pot.
+The screwdriver is great.
+use
+Screwdriver, fix the chair.
+A screwdriver is a machine with a cross-shaped head.
+It doesn't truly understand what 'hot pot' is.
+But what it can do is look at it probabilistically.
+As long as it's fed enough sentences to learn from,
+it will know the probability of 'hot pot' following the word 'eat'.
+is much, much higher than 'screwdriver', right?
+I don't have to understand.
+But probabilistically, I just know what comes next.
+And that's the core idea behind it.
+There was even a speech recognition expert at IBM who once said,
+He once said,
+that every time I fire a linguist,
+my speech recognition rate goes up a little.
+Now, that sounds incredibly harsh, doesn't it?
+But it also really reflected the reality of the situation back then.
+A key shift in NLP research
+So, systems were no longer primarily dependent on experts writing rules.
+So, what did they rely on instead?
+Instead, they use probability to analyze massive amounts of text corpora,
+and treating massive amounts of text and speech data as empirical evidence for statistical analysis.
+and what's more likely to come after it.
+and what might have come before it.
+Even though I don't understand language itself,
+But from an engineering perspective, I can actually make that prediction.
+And it was around this time that all sorts of n-grams were born.
+and then it could predict the next word.
+In language modeling,
+And for input methods, there's also... uh...
+In fact, the earliest input methods we used also employed this technology.
+And it was also widely used in machine translation.
+And there were also different RCRFs.
+These include classic statistical machine translators.
+This kind of dual-source, semantically driven system is what we call a translation system.
+And this approach did yield some results during that era.
+This allowed for the application of probability theory or, more broadly, machine learning.
+And it did see some applications in NLP.
+The idea is to first convert a language task into something that can be statistically analyzed.
+into a probabilistic problem that can be estimated.
+and then use that data to select the answer.
+So, that's the core idea behind it.
+But, this approach also had its own set of problems.
+First of all, even though it works with a massive amount of text corpora,
+It was able to count,
+For example, it could count how many times a word appeared, and things like that.
+So, it does recognize some words.
+and how many times the word 'cat' appears.
+and which words it's likely to appear together with.
+But the thing is, these words are all just treated as separate entities with no real connection between them.
+So, even after all that training, the model still has no idea.
+So, "cat" and "dog" might be considered more similar.
+whereas the difference between a cat and a refrigerator is huge.
+It can only work by counting frequencies.
+It didn't truly understand language.
+So, as we know, the core of NLP is that you have to understand language before you can process it.
+and then it can start generating content on its own.
+Right?
+So, from that perspective,
+the statistical or machine learning capabilities were quite limited.
+So, what's next?
+So, the question we were asking was, how can we get computers to process language more effectively?
+So, if you want a computer to process language,
+But first, there's a fundamental premise we need to understand.
+You see, computers can't actually understand every single word in a natural language.
+or every single Chinese character.
+We have to convert these words into something
+into numbers that a computer can understand.
+So, how exactly do we represent this? How do we turn it into these numbers?
+In the data processing for machine learning,
+we've already touched upon this.
+So, in that case, we take some of the data and...
+For example, let's say it's a category.
+So, what category does it belong to?
+or, say, locations.
+So, for these enumerable text features, like Beijing, Shanghai, Guangzhou...
+So, we use one-hot encoding for that, right?
+So, why not just use numbers?
+Because, when it comes to machine learning training,
+For example, if you represent Beijing, Shanghai, and Guangzhou with the numbers 1, 2, and 3 respectively,
+For a machine,
+One is less than two,
+and two is less than three.
+But in reality, there's no such relationship between these three locations.
+So, we can't express it like this.
+So, we can't just use plain numbers.
+So, what does one-hot encoding do?
+So, let's say we have three or more words.
+So, I'm not going to encode each word as just 1, 2, or 3.
+This would imply that there's some kind of ordering relationship between them.
+Instead, I use a vector for each one.
+So, for example, let's say this vector is 10,000 zeros.
+Let's say, a 10,000-dimensional vector.
+So, which one is it?
+Take 'football' for example.
+So, the second one, for basketball,
+The third one, the refrigerator.
+and for the fourth one, there's a single one.
+and the rest are all zeros.
+All you have to do is see which one is a one,
+and you'll know what it represents.
+And that's why it's called 'one-hot', right?
+Only one of them is 'hot'.
+and all the rest are just zeros.
+In this scenario,
+So, for a computer,
+As we've mentioned before,
+it can then process all these texts without any discrimination.
+And just like that, the text is represented.
+But in the context of L2P,
+Now, the sheer volume of vocabulary we might encounter...
+the number of words will be far, far greater than just a few categories or locations.
+Before, maybe we could get by with a ten-dimensional vector.
+a 100-dimensional vector would be enough.
+But when it comes to natural language,
+you might be dealing with vectors that have 10,000, or even a million dimensions.
+The advantages of this approach are actually pretty clear.
+It's pretty straightforward, right?
+it clearly expresses to the model
+So, are these the downsides of this method?
+First of all, its dimensionality is just way too high.
+It's just way too inefficient with its information.
+Right?
+For example, you might have a million one-hot vectors, but you only use one of them at a time.
+Then you've just wasted all the rest of them.
+So, for the second point...
+Actually, this is similar to what we just talked about.
+The principle behind using numbers is kind of similar.
+Although, it's not like they have a size or a ranking relationship anymore.
+But there's no semantic meaning between them either.
+So, let's break it down for a regular person to understand.
+So, soccer and basketball should definitely be pretty close to each other.
+And the gap between this and, say, a refrigerator should be huge.
+But within their 10,000-dimensional vectors,
+the distance between them is pretty much the same.
+Or, even if they're different,
+but it couldn't express how close they were either.
+while semantically closer ones...
+Semantically, they are different and more distant from each other.
+This is something it just can't express.
+And that's one of the drawbacks of the one-hot encoding.
+So, after a while, through research, people also discovered that...
+In fact, they also discovered that language expression actually follows certain patterns.
+For example, if I say the word "football"...
+Brazil might pop into your head.
+It's the kingdom of soccer.
+Messi is an incredible football player.
+or something like the World Cup is happening right now.
+is a term in soccer.
+Of course, for our friends in China,
+the phrase "refund my money" might also pop into their heads.
+These associations show that words...
+are not just isolated symbols in themselves.
+So, what about the meaning of a word?
+is often tied to the context it frequently appears in,
+the context,
+emotions,
+or even cultural memories.
+The meaning of a word can be determined by the words that it frequently appears with.
+can be figured out.
+So, in other words, words themselves have a certain distribution.
+This is the distributed hypothesis.
+It's not just a collection of unrelated things.
+And this gave birth to a technique called embedding.
+So, instead of using one-hot encoding for words,
+or even just a numerical symbol to represent it.
+Now, it's still data,
+Instead, it uses a semantic space.
+This is actually the technique known as word embedding.
+And this was developed by none other than one of the legendary 'AI Big Three'.
+discovered by Bengio and his team.
+Later on, when it comes to natural language processing,
+We'll be seeing a lot of Bengio's name.
+So, what it's actually doing is, in the process of predicting the next word,
+He started out by studying statistics as well.
+and researching machine learning.
+And gradually, it just naturally learned all these words along the way.
+It doesn't need a separate, dedicated thing to represent it.
+It uses a vector to represent the dimensionality of that vector.
+and look at the space of the corresponding words.
+But the thing is, it's a vector.
+So it's not just a single number anymore.
+It's likely a vector composed of multiple numbers.
+So, its dimensionality is much lower than one-hot encoding.
+Because it's not like only one of them has a number.
+and the numbers in each of these positions are meaningful.
+They are trained using machine learning.
+And to this day, this technology is still in use.
+It's just that a whole lot of new things have been introduced.
+So, when we're learning about the Transformer,
+You'll also often come across things like position embeddings.
+Exactly, a word is a token embedding.
+You'll come across all of these, and their origins can actually be traced right back to this.
+Of course, once this idea was discovered...
+But actually, it didn't catch on right away.
+This continued until 2013, when the concept was finally proposed.
+the proposal of Word2Vec.
+So, what are words actually turned into?
+Vectors, right?
+So, what does it do?
+So, it used a few techniques.
+This also builds on the idea of embedding.
+But it did propose two very simple training methods.
+So, gradually, what else was it able to do?
+Take the phrase 'I like to watch the game' for example.
+and figure out that the word is 'football'.
+But it can also work in reverse, using the word 'football' to predict all those other words.
+So, based on a central word, you can predict the words that come before and after it.
+Or, it could work the other way around, predicting the central word from the words on either side. Both are possible.
+So, once this was discovered,
+and it immediately took the world by storm.
+And a classic example of this is...
+And what they discovered was...
+and between the vectors of the words it learned,
+exhibit a kind of geometric structure for both semantics and grammar.
+So, words with similar meanings are positioned closer to each other in this space.
+while words that aren't as similar are farther apart.
+Right, so after using Word2Vec...
+For example, if you take the word 'king' and subtract 'man'...
+and then you add the vector for 'woman', the result you get is surprisingly...
+is incredibly close to the vector for 'queen'.
+So, we can say she's now got her wings.
+So, starting from today's, from the word... uh...
+So, after the whole word-to-vector thing...
+computers could finally grasp the semantic relationships between words.
+This was a truly monumental discovery.
+But it didn't immediately cause an explosion in NLP either.
+But it still had one more problem.
+So, embedding solved the problem of how to represent words.
+But it didn't solve the problem of how sentences are structured.
+For example, let's say we use embeddings.
+Take, for instance, the phrases 'a dog bites a person' and 'a person bites a dog'.
+is that the words that appear are exactly the same.
+But for us humans, we can tell the difference in a heartbeat.
+convey completely different meanings.
+But for technologies like embeddings or word vectors,
+But in reality, there's no difference.
+Because the words that appear are exactly the same, right?
+and the results I get are also the same.
+But the meaning is completely different.
+So, it's not enough for us to just understand individual words.
+we also need the model to understand a sentence.
+And sentences, well, they have a sequence.
+So, pay close attention to this term: 'sequence' or 'sequentiality'.
+You'll be seeing this a lot more later on.
+So, how do we make it read things in order?
+And this is actually the RNN.
+It can read a sentence word by word.
+aka, the Recurrent Neural Network.
+This solved the problem of sequential data.
+I watched a game on the court last night.
+And in its normal state, it just keeps on reading.
+So, as I'm reading,
+Through the hidden state in the middle, I can remember everything I've read before.
+As I keep reading, I'll eventually figure out who it is.
+Do you know what time it was yesterday?
+So, where are we now?
+And all these things in front of the court are still there.
+So, this meant it was capable of processing entire sentences.
+This was a massive breakthrough.
+But as we moved on,
+Because with RNNs, they're okay for short sentences.
+But when the sentences get longer,
+Because it has to remember all the information that came before it.
+So, when it comes to processing long texts,
+For example, take the book written by the professor who is highly admired by the students.
+was very influential.
+and by the time you get to 'influential,' you've forgotten whether it's the students who are influential,
+or the professor was influential.
+or if the book was the one that was influential.
+It's gotten so long I can't even keep track anymore.
+So, later on, some further improvements were made to the RNN.
+And that's what we call LSTM. Even though it was an improvement,
+They added something called a 'forget gate'.
+what information to remember,
+and which ones you should get rid of.
+Then, by 2014,
+Then came the GRU.
+It was essentially an improvement on the LSTM.
+And the results were quite a bit better.
+And then, what came next was the encoder-decoder.
+the encoder,
+and the invention of the decoder architecture.
+And this is where you really need to pay close attention to the Transformer.
+For those of you who are familiar with it,
+Got it.
+And the Transformer is a classic example of an architecture that uses this, right?
+So, after 2014,
+So, Ilya's team published the sequence-to-sequence model.
+So, what was their idea?
+This was a new concept.
+So, you could say that, of course, its original purpose was for translation.
+This essentially defines the encoder.
+The way this decoder works is that the encoder reads in the text.
+to read in the original text,
+transforms it into an intermediate representation for the decoder.
+and then translate it out.
+Actually, this approach isn't just for translation tasks.
+In fact, it can be used for many other tasks as well.
+He believed that many NLP tasks...
+In fact, even for text summarization, we use the encoder to process the text.
+It reads through the entire article,
+and uses it as an intermediate representation for the decoder.
+and then decode it into a summary that's much shorter than the original text.
+Many NLP tasks can be framed as taking a sequence as input.
+and output another sequence.
+So, this was actually the case for the early encoders.
+The decoder's architecture, however, also had some issues.
+it compresses the entire sentence into a single, fixed-length vector.
+a single, long vector.
+So, when it comes to the decoder,
+can only rely on this compressed memory.
+to generate it word by word.
+the translation.
+But in practice, this approach wasn't very effective.
+Because when it's generating each word,
+So, if we could just look back at the original text,
+the most relevant parts, that would be great.
+And that's the attention mechanism.
+But, and this is important,
+Now, this attention mechanism isn't the self-attention from the Transformer model.
+And the Transformer is also built upon these foundations.
+and some architectural inventions.
+So, fast forward to 2014.
+So basically, they introduced the attention mechanism into the RNN framework.
+This allowed it to alleviate the bottleneck of fixed-length vectors.
+For example, when we're translating a sentence,
+The cat sat on the mat.
+So, when you see the word 'cat'
+So, when you see the word 'cat',
+you'll see what action is happening right after it.
+And when you see the action being performed,
+You need to look ahead to see who is doing the action,
+and look back to see the context in which it's happening.
+But if you can't look back, well, that's a different story.
+you just focus on what's most important to you from what came before.
+And this is basically the attention mechanism.
+In other words, we're constantly generating that first word.
+So, when it comes to the word 'cat', you have to take a look, right?
+There's not much to see for the word 'cat'.
+Then, when it's time to generate the second word,
+I need to see which words before it are more relevant.
+But what if I had the ability,
+So, if I look at the whole picture, I'll find that 'cat' is the most relevant to this word.
+If it finds a match, it has to check which words...
+So, it calculates this every single time.
+This gives the probability of how relevant every word in the entire encoder is to it.
+So it knows which words it should be paying the most attention to.
+And this way, it gradually learns to pay attention to the preceding words.
+It's no longer a fixed vector.
+So, that's where the attention mechanism and...
+So, when the decoder is generating the current word,
+to find the relevant parts in the sentence input to the encoder.
+to see which words it should pay the most attention to.
+to pay the most attention to.
+So, what about the Transformer's self-attention?
+That's actually because it's decoder-only.
+It's within the same sentence.
+every word looks at every other word.
+And this self-only approach is a perfect segue to talk about the earlier stages.
+So, what about attention?
+For the most part, in most applications,
+They were all based on a typical encoder like RNN.
+in the decoder's architectural structure, uh...
+These enhancements were basically all about adding attention to RN.
+And actually, the results were already pretty good.
+Of course, you could also use improved versions of RNNs, like LSTM and GRU.
+But at their core, these models were still fundamentally based on the RNN architecture.
+So, as for the model,
+They still have to process words one by one, sequentially from start to finish.
+This makes parallel processing very difficult.
+But what about even longer sequences?
+problems would still arise.
+So, could we treat attention as a language of its own?
+So, what about the main architecture of the model?
+And that, right there, is the biggest innovation brought by the Transformer.
+And that was back in 2017.
+Google's eight authors invented and published the paper on the Transformer.
+And this architecture is, in fact, its most crucial component.
+And that is, in fact, self-attention.
+So, self-attention happens within the same sequence.
+It allows every word to directly connect with every other word.
+So, what this means is, when I'm looking at the word 'cat',
+So, for instance, when I look at the word 'cat,' it's not like before.
+I only look at the words that came before.
+It pays more attention to me.
+It pays attention to every single word in the entire sequence.
+Take the word "it" for example.
+The animal,
+Didn't cross the street.
+It didn't cross the street,
+Because... and why is that?
+He was too tired.
+But what does this 'it' refer to?
+Is it 'street'?
+or animal?
+It will then establish associations with all the words.
+and see which one is the most relevant.
+and it will find that the word 'animal' is the most relevant one.
+Instead of making a choice for each word,
+But the amount of computation has definitely increased.
+And that's exactly why in the era of large models,
+demands even more computing power.
+But the first thing is, it can be done in parallel.
+Because every word needs to be connected to every other word indiscriminately.
+So, within the sentence itself,
+Does every word need to be connected to every other word?
+So, it can now perform computations in parallel.
+And that's where the Transformer came in with its self-attention mechanism.
+This also brought another major, revolutionary innovation.
+This means that computational speed is no longer the bottleneck.
+All you need is the computing power.
+Before, models like RNNs had to process things sequentially.
+as long as you have the computing power.
+You still had to wait for each step, so all that computing power couldn't be used at the same time.
+So, self-attention, along with its parallel processing mechanism,
+This brought about a major innovation.
+But with the Transformer,
+and everything changed.
+RNNs, on the other hand, had to process things sequentially.
+You finish the first word, then you read the second one, right?
+So, it's more of a sequential process, right?
+But with the Transformer, all positions participate in the computation simultaneously.
+This makes it much more suitable for parallel computing on GPUs or TPUs.
+So, what this means is...
+And it's not just about providing some small trick for a specific task, either.
+In fact, it's combined with the training process,
+and engineering.
+It was innovative not only in its algorithmic architecture,
+but it's also quite advanced from an engineering perspective.
+This is what ultimately allowed it to become the foundation for all subsequent large language models.
+the foundational architecture for models.
+So, what came after the Transformer?
+So, at this point,
+as you can probably understand,
+So, why is it that after the Transformer was invented,
+it didn't immediately blow the world away.
+The innovative points it used, almost all of them,
+It wasn't as revolutionary as you might think.
+groundbreaking
+In fact, it was all built on the foundation laid by its predecessors.
+Then, by incorporating engineering principles, they made some optimal choices and modifications.
+It didn't just appear out of thin air.
+And that's actually why, when it was first created,
+Even Google itself didn't even recognize its value at the time.
+So, what happened after the Transformer was born?
+But it's not like Google was just sitting on its hands, either.
+Instead, they continued to explore the field of machine translation.
+But before that,
+So basically, for all these different tasks,
+essentially, each was training its own models.
+And then, a new paradigm emerged.
+And that's what's called pre-training.
+So, what exactly is pre-training?
+So, what about the model?
+First, it learns general language patterns from massive amounts of text.
+And it doesn't matter if I'm doing sentiment analysis or translation.
+Basically, you just let it train.
+So, once the training is done...
+you just need to make a few small adjustments for the specific task at hand.
+And this initial phase is what's called pre-training.
+So, when we move on to specific tasks later on,
+So, with this pre-trained model,
+and just make a few small adjustments for the specific task at hand.
+This makes the training process much, much simpler.
+Of course.
+Then came another major, revolutionary development.
+So it's not about the embedding itself.
+We're talking about simple embedding techniques, like word2vec.
+The thing is, back then, every word had a fixed vector.
+Because it needs context, right?
+So, what about later on? What did we start using then?
+And that's where ELMo came in.
+So, what does it do?
+The model will then dynamically generate these based on the context.
+This makes the results of its embedding dynamic.
+Take the word 'bank' for example.
+So, in certain sentences, the words it gets embedded with...
+it would be more closely associated with things related to banking and finance.
+But in other contexts,
+it's actually closer to things like rivers or camping.
+The word itself is inherently polysemous.
+This later gave rise to models like BERT.
+This was also part of his work on machine translation.
+But it brought about a major revolutionary update in its training process.
+It will randomly mask out a word.
+and masks out a portion of it.
+and have it predict what should be in the middle.
+But it was quickly superseded by Google's own T5.
+Now, T5 was actually a pretty big revolution in NLP.
+all sorts of different tasks.
+I can solve them all using the same architecture.
+Whether it's translation or summarization,
+sentiment analysis,
+I'm pretty good at all of them.
+The boundaries between these tasks began to blur.
+So, of course, what came next was the pre-training plus fine-tuning approach.
+and quickly became the dominant paradigm in NLP.
+And T5 also made a huge contribution.
+And of course, the name that everyone's more familiar with is OpenAI.
+And the 'GPT' in GPT stands for 'Generative Pre-trained Transformer'.
+It stands for Generative, Pre-trained Transformer architecture.
+So, when you look at it that way,
+So, the meaning of these terms becomes pretty obvious, right?
+So, what exactly is 'generative'?
+This is a standard task in NLP.
+It's about generative pre-training for text generation.
+So, as we just explained,
+So, 'Transformer' refers to the architecture it uses, right?
+Of course, it simplified the Transformer architecture a bit.
+It's decoder-only.
+So, when we start learning about GPT, we'll find that...
+So, with that foundation we've just covered,
+we can pick it up pretty quickly.
+And its training objective is also very simple.
+Given the preceding text,
+and have it continuously predict the next word.
+For example, let's say you're given the phrase 'the development of natural language processing'.
+It's gone from rules to you just constantly predicting.
+and just keep going until I tell you to stop.
+So, on the surface, it might just seem like it's completing a sentence.
+Behind the scenes, its training process actually forces the model to learn grammar.
+semantics,
+or what kind of factual style it has.
+and common patterns of reasoning.
+Gradually, it could handle the entire NLP task as a whole.
+So, it was no longer just for things like translation and summarization.
+The question-answering tasks were designed with their own separate structures.
+Actually, this was developing in parallel with T5.
+Both of them made contributions.
+compressing a multitude of tasks into a single training objective.
+Once it understands things just like a human does,
+you can naturally perform all sorts of tasks.
+And so, it gradually evolved into a universal task interface.
+Whether it's writing or answering questions,
+writing code, or calling up tools,
+it can handle all of them.
+And in situations like this,
+Language is no longer just the input data for a model to process.
+It gradually evolved into...
+a unified interface for human-computer interaction.
+All you have to do is talk to the machine in natural language.
+So, that's a general overview of how NLP has evolved.
+So, to wrap things up,
+You can see it's been a continuous exploration, constantly getting closer to the essence of language.
+First, it all started with rules.
+From writing all sorts of rules to the world of statistics.
+Starting from symbols to represent things, from initial numeric encoding to later... well, my heart.
+And then later, we had word embeddings.
+using vectors to represent meaning.
+Then, after gradually learning the sequence,
+Then, the attention mechanism was introduced.
+to dynamically let the model decide where to focus.
+Then, after the Transformer was born,
+And then, we moved from specialized models to general-purpose, pre-trained models.
+And all of these were born.
+So, the journey went from rules to statistics,
+From word embeddings to attention mechanisms.
+From specialized models to general-purpose large models.
+Ultimately, NLP has transformed natural language into the primary interface for human-computer collaboration.
+And that's the complete journey of how NLP has evolved.
+So, you could say that up to this point,
+So, with that said, we're not going to rush into what's next.
+and jump right into the Transformer architecture.
+Because when it comes to the Transformer, you could say...
+Two-thirds of it is built on the foundations we've already covered.
+It merely stands on the shoulders of its predecessors.
+And then, it brought about a truly massive, revolutionary innovation.
+So, if we really want to master the Transformer,
+and we have to understand that this whole journey actually started way back with residual connections.
+Residual connections are also used extensively in the Transformer.
+and using normalization.
+These are also some training techniques.
+All of these are absolutely crucial for us to understand the Transformer.
+So, moving on,
+So, let's first dive into word embeddings.
+So, how does it roughly work?

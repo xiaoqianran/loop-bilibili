@@ -1,20 +1,26 @@
-# subtitle（现行：SubBatch HTTP）
+# subtitle（现行：Pipeline + SubBatch HTTP）
 
-不依赖 opencli。协议与 Chrome 扩展 SubBatch 一致，实现在 `packages/bili_subbatch/`。
+不依赖 opencli。实现：`packages/bili_subbatch/`（client + **pipeline + processors**）。
 
 ```bash
-# 单 UP catalog 后批量字幕
-python3 main.py catalog 280780745 --name 张小珺商业访谈录
-python3 main.py subtitle --catalog catalogs/280780745-张小珺商业访谈录 -o data --resume
-
-# Cookie（推荐，AI 字幕更稳）
+python3 main.py catalog 291215958 --name 谦行AIing
 export BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...'
-python3 main.py subtitle --bvid BV1xxx -o data --cookie "$BILI_COOKIE"
+python3 main.py subtitle --catalog catalogs/291215958-谦行AIing -o data --resume
 ```
 
-输出：`data/subtitle/{slug}/`（results / done / items / srt）。
+抓取时默认 processor 链（**实时落盘**）：
 
-打包进仓瘦数据：
+1. `normalize_cues` — 去空行、压空白  
+2. `write_srt` — `srt/{bvid}.srt`  
+3. `write_txt` — `txt/{bvid}.txt`（RAG / 未来 LLM）  
+4. `index_jsonl` — 追加 `index.jsonl` 瘦索引  
+
+输出目录：`data/subtitle/{slug}/`（results / done / items / srt / txt / index.jsonl）。
+
+扩展：实现 `SubtitleProcessor`，经 `export_subtitles(..., processors=[...])` 注入。  
+路线图：`docs/ROADMAP.md`（LLM、GitHub Actions、离线 reprocess）。
+
+打包进仓：
 
 ```bash
 python3 main.py pack-subtitles --src-root data/subtitle -o data/subtitles

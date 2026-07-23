@@ -1,0 +1,2151 @@
+1
+00:00:00,000 --> 00:00:03,330
+Ahora, veamos al archienemigo del sobreajuste: la regularización.
+
+2
+00:00:03,450 --> 00:00:05,770
+Muchos de los conceptos que hemos presentado hasta ahora...
+
+3
+00:00:05,770 --> 00:00:07,750
+Su objetivo principal es muy similar.
+
+4
+00:00:07,750 --> 00:00:09,710
+Todo esto ocurre durante el proceso de entrenamiento del modelo.
+
+5
+00:00:09,710 --> 00:00:12,370
+hacer que el valor de la función de pérdida del modelo disminuya continuamente.
+
+6
+00:00:12,370 --> 00:00:15,060
+lo que significa que las predicciones del modelo son cada vez más precisas.
+
+7
+00:00:15,060 --> 00:00:17,160
+Pero, que la pérdida de entrenamiento sea baja...
+
+8
+00:00:17,160 --> 00:00:20,080
+tampoco significa necesariamente que el modelo sea bueno en la práctica.
+
+9
+00:00:20,080 --> 00:00:21,850
+Esto puede sonar un poco contradictorio.
+
+10
+00:00:21,850 --> 00:00:23,130
+Pero en la práctica, durante el entrenamiento,
+
+11
+00:00:23,130 --> 00:00:25,320
+A menudo nos encontramos con una situación muy típica.
+
+12
+00:00:25,320 --> 00:00:27,580
+la pérdida en el conjunto de entrenamiento disminuye continuamente,
+
+13
+00:00:27,580 --> 00:00:29,120
+y las predicciones son cada vez más precisas.
+
+14
+00:00:29,120 --> 00:00:30,530
+llegando a ser casi del cien por cien.
+
+15
+00:00:30,530 --> 00:00:33,570
+Pero, al aplicar el modelo al conjunto de validación real,
+
+16
+00:00:33,570 --> 00:00:34,370
+y lo ponemos a prueba,
+
+17
+00:00:34,370 --> 00:00:36,250
+Nos daremos cuenta de que, antes de cierto punto,
+
+18
+00:00:36,250 --> 00:00:39,490
+Es posible que, al igual que con el conjunto de entrenamiento, su rendimiento siga mejorando de forma continua.
+
+19
+00:00:39,490 --> 00:00:40,790
+Pero al llegar a ese punto,
+
+20
+00:00:40,790 --> 00:00:42,440
+empieza a aparecer un punto de inflexión.
+
+21
+00:00:42,440 --> 00:00:44,680
+Es decir, la pérdida repentinamente vuelve a aumentar.
+
+22
+00:00:44,680 --> 00:00:46,220
+y la precisión también disminuye.
+
+23
+00:00:46,220 --> 00:00:48,870
+Este es un caso muy típico de sobreajuste.
+
+24
+00:00:48,870 --> 00:00:52,270
+Por ejemplo, digamos que estos puntos negros son la distribución real de los datos.
+
+25
+00:00:52,270 --> 00:00:54,910
+Si los valores de predicción del modelo que hemos entrenado son así,
+
+26
+00:00:54,910 --> 00:00:56,030
+la línea azul,
+
+27
+00:00:56,030 --> 00:00:58,710
+Entonces, esto podría deberse a que el modelo es demasiado simple.
+
+28
+00:00:58,710 --> 00:01:01,510
+Es que no ha captado para nada los patrones que hay detrás de los datos.
+
+29
+00:01:01,510 --> 00:01:03,350
+a esto lo llamamos subajuste.
+
+30
+00:01:03,350 --> 00:01:05,190
+simplemente no se ajusta a los datos.
+
+31
+00:01:05,190 --> 00:01:07,030
+El caso ideal sería este.
+
+32
+00:01:07,030 --> 00:01:09,470
+Entonces, la línea que hemos entrenado...
+
+33
+00:01:09,470 --> 00:01:11,790
+Se ajusta a la distribución de los datos, ¿verdad?
+
+34
+00:01:11,790 --> 00:01:13,290
+La complejidad del modelo es la adecuada.
+
+35
+00:01:13,290 --> 00:01:15,130
+Es capaz de captar la tendencia de los datos,
+
+36
+00:01:15,130 --> 00:01:17,130
+tampoco se verá afectado por el ruido.
+
+37
+00:01:17,130 --> 00:01:18,810
+A esto se le conoce como un buen ajuste o "good fit".
+
+38
+00:01:18,810 --> 00:01:21,310
+Este es el tipo de entrenamiento que consideramos ideal.
+
+39
+00:01:21,310 --> 00:01:22,970
+Si el entrenamiento es excesivo,
+
+40
+00:01:22,970 --> 00:01:24,390
+se producirá este fenómeno.
+
+41
+00:01:24,390 --> 00:01:25,960
+Es decir, el modelo...
+
+42
+00:01:25,960 --> 00:01:30,029
+Intenta pasar por cada uno de los puntos de los datos, ¿verdad?
+
+43
+00:01:30,029 --> 00:01:33,049
+En realidad, en estos casos, no ha encontrado el patrón que subyace a los datos.
+
+44
+00:01:33,049 --> 00:01:36,130
+Simplemente está memorizando los datos que tiene delante.
+
+45
+00:01:36,130 --> 00:01:37,090
+En este caso,
+
+46
+00:01:37,090 --> 00:01:40,410
+En el conjunto de entrenamiento, su precisión es definitivamente mayor que la de este.
+
+47
+00:01:40,410 --> 00:01:41,730
+Por ejemplo, para este punto...
+
+48
+00:01:41,730 --> 00:01:42,950
+Mira, esta línea lo atraviesa.
+
+49
+00:01:42,950 --> 00:01:44,170
+Es cien por cien exacto.
+
+50
+00:01:44,170 --> 00:01:45,880
+Este ya es un poco impreciso.
+
+51
+00:01:45,880 --> 00:01:49,060
+Por lo tanto, su precisión en el conjunto de entrenamiento es, sin duda, altísima.
+
+52
+00:01:49,060 --> 00:01:50,520
+Pero cuando se aplica al conjunto de validación,
+
+53
+00:01:50,520 --> 00:01:52,540
+pero la distribución real de los datos no es así en absoluto.
+
+54
+00:01:52,540 --> 00:01:53,900
+no se vea afectado por este ruido.
+
+55
+00:01:53,900 --> 00:01:55,240
+las predicciones ya no son precisas.
+
+56
+00:01:55,240 --> 00:01:57,020
+A esto se le llama sobreajuste.
+
+57
+00:01:57,020 --> 00:01:58,660
+Cuando hablamos de que un modelo es demasiado complejo,
+
+58
+00:01:58,660 --> 00:02:00,960
+Generalmente, se refiere a que hay demasiados parámetros.
+
+59
+00:02:00,960 --> 00:02:03,540
+o que la dimensionalidad de los parámetros también sea demasiado alta.
+
+60
+00:02:03,540 --> 00:02:06,310
+lo que resulta en que en realidad nunca ha llegado a aprender.
+
+61
+00:02:06,310 --> 00:02:08,170
+La esencia del ajuste es la capacidad del modelo.
+
+62
+00:02:08,170 --> 00:02:10,350
+superando la complejidad que la tarea realmente requiere.
+
+63
+00:02:10,350 --> 00:02:13,480
+Los parámetros adicionales no aprenden los patrones subyacentes de los datos,
+
+64
+00:02:13,480 --> 00:02:15,560
+sino que se usan para memorizarlo todo de memoria.
+
+65
+00:02:15,560 --> 00:02:18,660
+sino el ruido o los casos particulares del conjunto de entrenamiento.
+
+66
+00:02:18,660 --> 00:02:21,180
+Y para determinar si un modelo está sobreajustado,
+
+67
+00:02:21,180 --> 00:02:23,880
+La forma más sencilla es observar la curva de entrenamiento.
+
+68
+00:02:23,880 --> 00:02:26,000
+La línea azul representa el rendimiento en el conjunto de entrenamiento.
+
+69
+00:02:26,000 --> 00:02:28,920
+veremos que su pérdida va disminuyendo de forma continua.
+
+70
+00:02:28,920 --> 00:02:31,420
+y la roja, su rendimiento en el conjunto de validación.
+
+71
+00:02:31,420 --> 00:02:32,800
+Al principio, también disminuye.
+
+72
+00:02:32,800 --> 00:02:34,890
+Pero, a partir de cierto punto,
+
+73
+00:02:34,890 --> 00:02:36,650
+la pérdida comienza a aumentar.
+
+74
+00:02:36,650 --> 00:02:39,829
+Al contrario, esto significa que ha comenzado el sobreajuste.
+
+75
+00:02:39,829 --> 00:02:42,229
+Y la precisión de nuestro modelo, pues, también.
+
+76
+00:02:42,229 --> 00:02:44,169
+Al principio, ambos van aumentando de forma paralela.
+
+77
+00:02:44,169 --> 00:02:45,629
+Pero, a partir de cierto punto,
+
+78
+00:02:45,629 --> 00:02:48,470
+verás que, durante el entrenamiento, la curva sigue subiendo.
+
+79
+00:02:48,470 --> 00:02:49,870
+hasta casi alcanzar el cien por cien.
+
+80
+00:02:49,870 --> 00:02:52,230
+mientras que el del conjunto de validación comienza a disminuir.
+
+81
+00:02:52,230 --> 00:02:54,170
+la capacidad de generalización se va reduciendo.
+
+82
+00:02:54,170 --> 00:02:56,560
+Es en este momento cuando se produce el sobreajuste.
+
+83
+00:02:56,560 --> 00:02:59,560
+El sobreajuste es, se podría decir, el problema más común durante el proceso de entrenamiento de un modelo.
+
+84
+00:02:59,560 --> 00:03:00,860
+el problema más frecuente.
+
+85
+00:03:00,860 --> 00:03:03,260
+Y la solución es la regularización.
+
+86
+00:03:03,260 --> 00:03:06,990
+La regularización se refiere a una serie de técnicas que se utilizan para combatir el sobreajuste.
+
+87
+00:03:06,990 --> 00:03:09,210
+para obligar al modelo a aprender de una forma más sencilla.
+
+88
+00:03:09,210 --> 00:03:10,390
+patrones más generalizados.
+
+89
+00:03:10,390 --> 00:03:12,870
+en lugar de memorizar los detalles de los datos de entrenamiento.
+
+90
+00:03:12,870 --> 00:03:14,070
+Podemos entender la regularización
+
+91
+00:03:14,070 --> 00:03:17,130
+Podemos entenderlo como la implementación matemática del principio de la navaja de Occam.
+
+92
+00:03:17,130 --> 00:03:19,589
+Es decir, si durante el proceso de entrenamiento del modelo...
+
+93
+00:03:19,589 --> 00:03:22,600
+descubriremos que existen múltiples modelos capaces de explicar los datos de entrenamiento.
+
+94
+00:03:22,600 --> 00:03:25,100
+entonces deberíamos elegir el más simple.
+
+95
+00:03:25,100 --> 00:03:27,720
+Las técnicas de regularización más utilizadas en el aprendizaje profundo,
+
+96
+00:03:27,720 --> 00:03:29,530
+incluidas en el aprendizaje automático.
+
+97
+00:03:29,530 --> 00:03:31,630
+la regularización L1 y L2 que ya hemos visto,
+
+98
+00:03:31,630 --> 00:03:33,070
+y también la atenuación de pesos.
+
+99
+00:03:33,070 --> 00:03:34,510
+Dropout, detención temprana.
+
+100
+00:03:34,510 --> 00:03:35,570
+y el aumento de datos.
+
+101
+00:03:35,570 --> 00:03:38,380
+Todos estos los vamos a explicar a continuación.
+
+102
+00:03:38,380 --> 00:03:39,740
+En sentido estricto,
+
+103
+00:03:39,740 --> 00:03:43,040
+la regularización podría referirse a estos dos primeros tipos.
+
+104
+00:03:43,040 --> 00:03:44,400
+Pero, en un sentido más amplio,
+
+105
+00:03:44,400 --> 00:03:46,840
+Cualquier técnica que permita al modelo aprender de una forma más simple,
+
+106
+00:03:46,840 --> 00:03:48,200
+técnicas que le permiten aprender patrones más generales,
+
+107
+00:03:48,200 --> 00:03:50,060
+pueden ser consideradas técnicas de regularización.
+
+108
+00:03:50,060 --> 00:03:51,630
+Primero, vamos a hacer un repaso.
+
+109
+00:03:51,630 --> 00:03:55,030
+En el aprendizaje automático ya hemos visto la regularización L1 y L2.
+
+110
+00:03:55,030 --> 00:03:58,310
+La idea que siguen es añadir, después de la función de pérdida original,
+
+111
+00:03:58,310 --> 00:04:00,760
+introduciendo un término de penalización para los pesos.
+
+112
+00:04:00,760 --> 00:04:03,660
+Entonces, la razón por la que se produce el sobreajuste es...
+
+113
+00:04:03,660 --> 00:04:06,480
+es porque tienes demasiados parámetros o estos son demasiado grandes.
+
+114
+00:04:06,480 --> 00:04:08,260
+Entonces, lo que haré será actuar sobre sus parámetros.
+
+115
+00:04:08,260 --> 00:04:10,660
+Es decir, se añade un término de penalización para los pesos.
+
+116
+00:04:10,660 --> 00:04:12,640
+Por ejemplo, esta es la función de pérdida original.
+
+117
+00:04:12,640 --> 00:04:13,460
+Y luego,
+
+118
+00:04:13,460 --> 00:04:14,980
+Entonces, ¿para qué sirve la regularización L1?
+
+119
+00:04:14,980 --> 00:04:17,840
+Lo que voy a hacer es sumar todos los valores de los pesos.
+
+120
+00:04:17,840 --> 00:04:19,360
+sino a su valor absoluto.
+
+121
+00:04:19,360 --> 00:04:20,800
+porque los pesos pueden ser negativos.
+
+122
+00:04:20,800 --> 00:04:23,690
+y luego se multiplica por un coeficiente de penalización lambda.
+
+123
+00:04:23,690 --> 00:04:25,730
+En este momento es cuando se calcula tu pérdida.
+
+124
+00:04:25,730 --> 00:04:28,409
+Es decir, cuanto mayor sea tu peso,
+
+125
+00:04:28,409 --> 00:04:29,909
+cuanto mayor sea el peso que establezcas,
+
+126
+00:04:29,909 --> 00:04:31,849
+mayor será su pérdida.
+
+127
+00:04:31,849 --> 00:04:35,200
+Por lo tanto, esto obliga al modelo a reducir sus pesos.
+
+128
+00:04:35,200 --> 00:04:38,000
+Y L2, en realidad, es bastante parecido.
+
+129
+00:04:38,000 --> 00:04:39,740
+Pero en este caso, ya no se le suma el valor absoluto.
+
+130
+00:04:39,740 --> 00:04:41,929
+sino que se le suma su cuadrado.
+
+131
+00:04:41,929 --> 00:04:42,889
+sino sumar su cuadrado.
+
+132
+00:04:42,889 --> 00:04:46,460
+De hecho, este principio es muy similar al de usar el cuadrado en el MSE.
+
+133
+00:04:46,460 --> 00:04:50,120
+Por un lado, al igual que el valor absoluto, también elimina los signos positivos y negativos.
+
+134
+00:04:50,120 --> 00:04:53,020
+Otro punto es que, si tu peso es pequeño,
+
+135
+00:04:53,020 --> 00:04:54,660
+por ejemplo, si es menor que cero o menor que uno.
+
+136
+00:04:54,660 --> 00:04:56,700
+al cuadrado, se hace aún más pequeño.
+
+137
+00:04:56,700 --> 00:04:58,180
+Si tu peso es mayor que uno,
+
+138
+00:04:58,180 --> 00:04:59,870
+el castigo será más severo.
+
+139
+00:04:59,870 --> 00:05:01,710
+En cuanto a lambda sobre dos...
+
+140
+00:05:01,710 --> 00:05:04,130
+Esto es para facilitar los cálculos posteriores.
+
+141
+00:05:04,130 --> 00:05:05,570
+Así que, aparte del dos,
+
+142
+00:05:05,570 --> 00:05:07,570
+Entonces, al usar L1 y L2...
+
+143
+00:05:07,570 --> 00:05:10,290
+Ambos imponen una restricción a los pesos que son demasiado grandes.
+
+144
+00:05:10,290 --> 00:05:14,180
+Esto hace que el modelo tienda a elegir pesos con valores más pequeños.
+
+145
+00:05:14,180 --> 00:05:16,420
+Pero sus efectos son un poco diferentes.
+
+146
+00:05:16,420 --> 00:05:17,520
+Aunque uno es el valor absoluto,
+
+147
+00:05:17,520 --> 00:05:18,600
+y la otra es el cuadrado.
+
+148
+00:05:18,600 --> 00:05:19,260
+A primera vista,
+
+149
+00:05:19,260 --> 00:05:21,130
+Pero la regularización L1...
+
+150
+00:05:21,130 --> 00:05:23,810
+También la conocemos como regularización Lasso.
+
+151
+00:05:23,810 --> 00:05:26,690
+Tiende a generar lo que se conoce como pesos dispersos.
+
+152
+00:05:26,690 --> 00:05:28,090
+Entonces, ¿a qué nos referimos con pesos dispersos?
+
+153
+00:05:28,090 --> 00:05:29,630
+Originalmente, tenías 100 pesos.
+
+154
+00:05:29,630 --> 00:05:31,070
+probablemente todos tengan valores diferentes.
+
+155
+00:05:31,070 --> 00:05:32,490
+Pero, ¿qué pasa después de aplicar la regularización L1?
+
+156
+00:05:32,490 --> 00:05:34,640
+Nos daremos cuenta de que muchos de ellos son cero.
+
+157
+00:05:34,640 --> 00:05:36,360
+Es decir, si observamos esta barra, es especialmente alta.
+
+158
+00:05:36,360 --> 00:05:37,120
+¿Qué significa esto?
+
+159
+00:05:37,120 --> 00:05:38,460
+los pesos se acercan a cero.
+
+160
+00:05:38,460 --> 00:05:41,850
+que originalmente era del 2,5 % cuando no se había hecho nada,
+
+161
+00:05:41,850 --> 00:05:43,060
+aumentó a un 22 %.
+
+162
+00:05:43,060 --> 00:05:46,800
+Es decir, que hace que muchos parámetros se conviertan directamente en cero.
+
+163
+00:05:46,800 --> 00:05:48,860
+Es decir, considera que algunos parámetros simplemente no son útiles.
+
+164
+00:05:48,860 --> 00:05:50,000
+No deberías ni usarlos.
+
+165
+00:05:50,000 --> 00:05:51,760
+De esta forma, el número de parámetros se reduce.
+
+166
+00:05:51,760 --> 00:05:55,020
+Es como si nos ayudara automáticamente a seleccionar algunas características.
+
+167
+00:05:55,020 --> 00:05:56,200
+reduciendo así el número de características.
+
+168
+00:05:56,200 --> 00:05:57,360
+¿Acaso algunas características no sirven para nada?
+
+169
+00:05:57,360 --> 00:05:59,000
+Y en cuanto a la regularización L2,
+
+170
+00:05:59,000 --> 00:06:01,960
+Como podemos ver, tiende a hacer que todos los pesos...
+
+171
+00:06:01,960 --> 00:06:03,200
+están distribuidos alrededor de cero.
+
+172
+00:06:03,200 --> 00:06:05,300
+de un 2,5 % a un 3,8 %.
+
+173
+00:06:05,300 --> 00:06:08,310
+Y de hecho, también hace que algunos se acerquen mucho a cero.
+
+174
+00:06:08,310 --> 00:06:11,770
+Pero, como podemos ver, el valor absoluto de los pesos...
+
+175
+00:06:11,770 --> 00:06:14,510
+Hace que el valor absoluto de los pesos se vuelva muy pequeño.
+
+176
+00:06:14,510 --> 00:06:16,159
+En comparación con el anterior,
+
+177
+00:06:16,159 --> 00:06:20,019
+Por lo tanto, tiende a reducir todos los pesos de manera uniforme.
+
+178
+00:06:20,019 --> 00:06:21,079
+hacia el cero.
+
+179
+00:06:21,079 --> 00:06:23,690
+Pero, eso sí, no los reducirá a cero.
+
+180
+00:06:23,690 --> 00:06:25,970
+y así garantizar una distribución uniforme de los pesos.
+
+181
+00:06:25,970 --> 00:06:27,110
+En el aprendizaje profundo,
+
+182
+00:06:27,110 --> 00:06:29,290
+De hecho, el L2 se utiliza con mucha más frecuencia.
+
+183
+00:06:29,290 --> 00:06:30,790
+Porque en las redes neuronales profundas,
+
+184
+00:06:30,790 --> 00:06:33,990
+Su capacidad de generalización depende de la coordinación entre las diferentes neuronas.
+
+185
+00:06:33,990 --> 00:06:36,130
+la interacción entre ellas y una distribución suave de los parámetros.
+
+186
+00:06:36,130 --> 00:06:39,470
+y no simplemente eliminar ciertas neuronas específicas.
+
+187
+00:06:39,470 --> 00:06:41,510
+Además, la L2 es derivable en todos sus puntos.
+
+188
+00:06:41,510 --> 00:06:42,750
+En cuanto al SGD,
+
+189
+00:06:42,750 --> 00:06:45,050
+y también es más compatible con algoritmos de optimización de gradientes como ADAM.
+
+190
+00:06:45,050 --> 00:06:47,470
+Por eso se usa con más frecuencia en Python.
+
+191
+00:06:47,470 --> 00:06:48,710
+En PyTorch,
+
+192
+00:06:48,710 --> 00:06:51,750
+Normalmente, no es necesario que apliquemos la regularización L2 manualmente.
+
+193
+00:06:51,750 --> 00:06:53,730
+le añadimos a la función de pérdida la suma de los cuadrados.
+
+194
+00:06:53,730 --> 00:06:57,210
+En realidad, basta con añadir el llamado "weight decay" al optimizador.
+
+195
+00:06:57,210 --> 00:06:58,789
+con este parámetro es suficiente.
+
+196
+00:06:58,789 --> 00:07:01,469
+Por ejemplo, cuando definimos el SGD,
+
+197
+00:07:01,469 --> 00:07:03,069
+Es decir, al principio, se escriben los parámetros del modelo.
+
+198
+00:07:03,069 --> 00:07:04,769
+¿Cuál es el momentum de la tasa de aprendizaje?
+
+199
+00:07:04,769 --> 00:07:08,199
+Solo tenemos que configurar un parámetro de decaimiento de peso y listo.
+
+200
+00:07:08,199 --> 00:07:11,730
+En este caso, es como si le estuviéramos aplicando regularización.
+
+201
+00:07:11,730 --> 00:07:13,950
+Ahora, veamos otro ejemplo.
+
+202
+00:07:13,950 --> 00:07:16,850
+El decaimiento de los pesos y el valor del parámetro L2 que acabamos de mencionar...
+
+203
+00:07:16,850 --> 00:07:19,200
+Es precisamente la idea central que utiliza la disminución de peso.
+
+204
+00:07:19,200 --> 00:07:21,580
+En realidad, no es exactamente lo mismo que la regularización.
+
+205
+00:07:21,580 --> 00:07:24,890
+La idea es que, cada vez que se realiza una actualización del gradiente,
+
+206
+00:07:24,890 --> 00:07:28,210
+obligando a los pesos a multiplicarse por un factor ligeramente inferior a uno.
+
+207
+00:07:28,210 --> 00:07:30,000
+haciéndola disminuir proporcionalmente.
+
+208
+00:07:30,000 --> 00:07:31,280
+Normalmente, el descenso de gradiente...
+
+209
+00:07:31,280 --> 00:07:33,560
+podría ser el factor de decaimiento sin ese factor que mencionamos antes.
+
+210
+00:07:33,560 --> 00:07:38,680
+Simplemente se trata del gradiente menos la tasa de aprendizaje multiplicada por la pérdida.
+
+211
+00:07:38,680 --> 00:07:41,310
+Pero en el caso de la atenuación de peso,
+
+212
+00:07:41,310 --> 00:07:42,510
+Ya que estamos hablando de la reducción de pesos,
+
+213
+00:07:42,510 --> 00:07:44,960
+En cada paso, te fuerzo a multiplicar por un valor un poco más pequeño.
+
+214
+00:07:44,960 --> 00:07:46,260
+Porque este es un número positivo, ¿verdad?
+
+215
+00:07:46,260 --> 00:07:48,680
+Por lo tanto, al restarle uno, el resultado es un valor menor que uno.
+
+216
+00:07:48,680 --> 00:07:50,880
+haciendo que los pesos sean un poco más pequeños cada vez.
+
+217
+00:07:50,880 --> 00:07:51,840
+En estos casos,
+
+218
+00:07:51,840 --> 00:07:53,920
+Es como si cada peso estuviera sujeto a una especie de...
+
+219
+00:07:53,920 --> 00:07:55,180
+un muelle que lo devuelve a su punto de origen.
+
+220
+00:07:55,180 --> 00:07:57,100
+haciéndolo retroceder un poco en cada paso.
+
+221
+00:07:57,100 --> 00:08:00,179
+A menos que el gradiente exija que aumente.
+
+222
+00:08:00,179 --> 00:08:00,899
+De lo contrario,
+
+223
+00:08:00,899 --> 00:08:01,659
+poco a poco,
+
+224
+00:08:01,659 --> 00:08:04,379
+hará que se convierta gradualmente en un valor muy cercano a cero.
+
+225
+00:08:05,459 --> 00:08:06,819
+Y cuanto más lo escuchan, más familiar les suena.
+
+226
+00:08:06,819 --> 00:08:07,549
+¿Verdad que sí?
+
+227
+00:08:07,549 --> 00:08:10,349
+¿Por qué esto suena tan parecido al efecto que se consigue con la regularización L2?
+
+228
+00:08:10,349 --> 00:08:11,249
+Se parecen tanto, ¿verdad?
+
+229
+00:08:11,249 --> 00:08:14,530
+Es más, el parámetro de la regularización L2 se llama precisamente "decaimiento de peso".
+
+230
+00:08:14,530 --> 00:08:17,570
+Y es que, en realidad, su principio es diferente.
+
+231
+00:08:17,570 --> 00:08:18,930
+¿Qué es la regularización L2?
+
+232
+00:08:18,930 --> 00:08:22,730
+Es decir, se le añade un término de penalización de los pesos a la función de pérdida.
+
+233
+00:08:22,730 --> 00:08:25,790
+Mientras que la reducción de pesos se aplica directamente en el optimizador.
+
+234
+00:08:25,790 --> 00:08:27,410
+Es una intervención directa sobre los parámetros.
+
+235
+00:08:27,410 --> 00:08:29,340
+Te exijo que reduzcas los parámetros.
+
+236
+00:08:29,340 --> 00:08:30,940
+Esto solo se refiere a penalizar los parámetros.
+
+237
+00:08:30,940 --> 00:08:33,200
+Es una exigencia directa para reducir los parámetros.
+
+238
+00:08:33,200 --> 00:08:36,120
+Pero conceptualmente, son dos enfoques diferentes.
+
+239
+00:08:36,120 --> 00:08:38,649
+Pero si tomamos el término de la L2,
+
+240
+00:08:38,649 --> 00:08:40,329
+y lo volvemos a introducir en la fórmula del SGD.
+
+241
+00:08:40,329 --> 00:08:42,690
+Al derivarlos, nos daremos cuenta de que...
+
+242
+00:08:42,690 --> 00:08:45,050
+la atenuación de pesos y la regularización L2,
+
+243
+00:08:45,050 --> 00:08:48,210
+Entonces, ¿cuál es la fórmula final para la actualización de sus parámetros?
+
+244
+00:08:48,210 --> 00:08:49,970
+no son prácticamente idénticas.
+
+245
+00:08:49,970 --> 00:08:51,790
+Al desarrollar la fórmula, vemos que es la misma.
+
+246
+00:08:51,790 --> 00:08:53,910
+Es decir, en el SGD estándar,
+
+247
+00:08:53,910 --> 00:08:56,040
+Es decir, la regularización L2.
+
+248
+00:08:56,040 --> 00:08:58,550
+En realidad, es lo mismo que la atenuación de peso.
+
+249
+00:08:58,550 --> 00:09:00,050
+Dado que ambos son completamente equivalentes,
+
+250
+00:09:00,050 --> 00:09:01,950
+Entonces, ¿por qué hacemos distinción entre ambos?
+
+251
+00:09:01,950 --> 00:09:05,070
+porque al usar un optimizador con tasa de aprendizaje adaptativa como ADAM,
+
+252
+00:09:05,070 --> 00:09:07,410
+esta equivalencia ya no se cumple.
+
+253
+00:09:07,410 --> 00:09:08,290
+En el caso de ADAM,
+
+254
+00:09:08,290 --> 00:09:10,450
+se basará en el cuadrado de los gradientes históricos,
+
+255
+00:09:10,450 --> 00:09:13,810
+y escala de forma adaptativa el gradiente de cada parámetro.
+
+256
+00:09:13,810 --> 00:09:17,250
+Entonces, ¿qué pasaría si incorporamos la regularización L2 en la función de pérdida?
+
+257
+00:09:17,250 --> 00:09:20,050
+De hecho, en estas situaciones puede aparecer un bug oculto.
+
+258
+00:09:20,050 --> 00:09:22,770
+Si el gradiente ya es bastante pequeño de por sí,
+
+259
+00:09:22,770 --> 00:09:25,450
+Pero cada vez que se adapta, está bajo una raíz cuadrada.
+
+260
+00:09:25,450 --> 00:09:26,220
+VT, ¿verdad?
+
+261
+00:09:26,220 --> 00:09:27,860
+Originalmente, nuestro gradiente ya era bastante pequeño.
+
+262
+00:09:27,860 --> 00:09:30,120
+Es decir, que los parámetros ya eran pequeños de por sí.
+
+263
+00:09:30,120 --> 00:09:31,480
+el término de penalización debería ser menor.
+
+264
+00:09:31,480 --> 00:09:32,700
+Según la regularización L2,
+
+265
+00:09:32,700 --> 00:09:34,780
+te obliga a dividir entre un valor relativamente pequeño.
+
+266
+00:09:34,780 --> 00:09:36,940
+la fuerza de la regularización, por el contrario, se magnifica.
+
+267
+00:09:36,940 --> 00:09:38,260
+Y lo mismo ocurre a la inversa.
+
+268
+00:09:38,260 --> 00:09:39,400
+Originalmente, el gradiente era muy grande.
+
+269
+00:09:39,400 --> 00:09:41,680
+entonces el castigo que le impongo debería ser mayor.
+
+270
+00:09:41,680 --> 00:09:44,120
+Pero como lo he dividido por la raíz cuadrada de VT,
+
+271
+00:09:44,120 --> 00:09:47,580
+En este caso, la intensidad de la regularización, por el contrario, se ve reducida.
+
+272
+00:09:47,580 --> 00:09:51,700
+Es decir, la intensidad originalmente uniforme de la regularización, que es grande cuando M es grande...
+
+273
+00:09:51,700 --> 00:09:54,320
+se ve distorsionado por el mecanismo de ajuste adaptativo del gradiente.
+
+274
+00:09:54,320 --> 00:09:56,980
+Esto hace que el efecto de la regularización se vea muy reducido.
+
+275
+00:09:56,980 --> 00:09:58,390
+e incluso puede que no llegue a converger.
+
+276
+00:09:58,390 --> 00:09:59,430
+cuanto más pequeño sea mi gradiente,
+
+277
+00:09:59,430 --> 00:10:00,710
+menor debería ser el castigo.
+
+278
+00:10:00,710 --> 00:10:02,430
+Pero como se trata de una división,
+
+279
+00:10:02,430 --> 00:10:04,520
+al contrario, el castigo es mayor.
+
+280
+00:10:04,520 --> 00:10:05,660
+Y cuanto mayor sea el gradiente,
+
+281
+00:10:05,660 --> 00:10:07,060
+el castigo se vuelve más pequeño.
+
+282
+00:10:07,060 --> 00:10:09,250
+Esto, en realidad, ya no funciona.
+
+283
+00:10:09,250 --> 00:10:11,730
+Al principio, nadie se había dado cuenta de este problema.
+
+284
+00:10:11,730 --> 00:10:13,900
+Este problema no se descubrió hasta el año 2017.
+
+285
+00:10:13,900 --> 00:10:18,000
+Entonces se propuso ADAMW, que en realidad significa "weight decay".
+
+286
+00:10:18,000 --> 00:10:20,560
+Su idea principal, en realidad, es tomar el momento...
+
+287
+00:10:20,560 --> 00:10:21,840
+Entonces, ¿cómo se calculaba antes?
+
+288
+00:10:21,840 --> 00:10:23,040
+Es decir, mt y vt.
+
+289
+00:10:23,040 --> 00:10:23,920
+¿Cómo se calculaba?
+
+290
+00:10:23,920 --> 00:10:26,020
+Y en mi caso, la atenuación de los pesos.
+
+291
+00:10:26,020 --> 00:10:27,800
+Lo he separado de forma individual.
+
+292
+00:10:27,800 --> 00:10:29,720
+No lo incluyas en este cálculo.
+
+293
+00:10:29,720 --> 00:10:32,480
+Básicamente, se trata de combinar ambos de forma completamente adaptativa.
+
+294
+00:10:32,480 --> 00:10:33,960
+El mecanismo de escalado se ha separado por completo.
+
+295
+00:10:33,960 --> 00:10:36,220
+Es como si corrija un bug del algoritmo ADAM.
+
+296
+00:10:36,220 --> 00:10:37,460
+Así que este es ADAMW.
+
+297
+00:10:38,500 --> 00:10:40,849
+Así que, en nuestro uso normal,
+
+298
+00:10:40,849 --> 00:10:43,009
+De hecho, al escribir código en PyTorch,
+
+299
+00:10:43,009 --> 00:10:44,689
+Si decido seguir usando Adam,
+
+300
+00:10:44,689 --> 00:10:45,900
+Es que es bastante sencillo.
+
+301
+00:10:45,900 --> 00:10:48,240
+Pero para este tipo de decaimiento, es mejor no escribirlo.
+
+302
+00:10:48,240 --> 00:10:50,069
+Porque si lo hago, el resultado sería incluso peor.
+
+303
+00:10:50,069 --> 00:10:51,489
+simplemente ponlo en cero y listo.
+
+304
+00:10:51,489 --> 00:10:53,489
+En el caso del algoritmo Adam,
+
+305
+00:10:53,489 --> 00:10:55,549
+lo configuramos en un valor relativamente pequeño.
+
+306
+00:10:55,549 --> 00:10:57,100
+para que realmente pueda surtir efecto.
+
+307
+00:10:57,100 --> 00:10:59,660
+Otra técnica de regularización se llama Dropout.
+
+308
+00:10:59,660 --> 00:11:01,400
+Este también fue propuesto por Hinton.
+
+309
+00:11:01,400 --> 00:11:03,630
+que consiste en desactivar aleatoriamente algunas neuronas.
+
+310
+00:11:03,630 --> 00:11:04,390
+L1,
+
+311
+00:11:04,390 --> 00:11:07,790
+La L2, por su parte, limita la capacidad desde la perspectiva del valor numérico de los pesos.
+
+312
+00:11:07,790 --> 00:11:10,600
+Lo que hace es intentar que los parámetros sean lo más pequeños posible.
+
+313
+00:11:10,600 --> 00:11:11,620
+Y en cuanto al Dropout,
+
+314
+00:11:11,620 --> 00:11:13,080
+es decir, desde la estructura de la red,
+
+315
+00:11:13,080 --> 00:11:15,260
+regulariza desde la perspectiva de la diversidad.
+
+316
+00:11:15,260 --> 00:11:17,500
+En cada pasada hacia adelante,
+
+317
+00:11:17,500 --> 00:11:20,140
+se aplicará aleatoriamente con una cierta probabilidad.
+
+318
+00:11:20,140 --> 00:11:23,020
+para anular la salida de ciertas neuronas.
+
+319
+00:11:23,020 --> 00:11:24,700
+Es decir, durante esta iteración del entrenamiento,
+
+320
+00:11:24,700 --> 00:11:26,640
+se desactiva esa neurona.
+
+321
+00:11:26,640 --> 00:11:27,600
+En estos casos,
+
+322
+00:11:27,600 --> 00:11:28,880
+se fuerza a las neuronas
+
+323
+00:11:28,880 --> 00:11:32,040
+ya no puede depender de la salida de neuronas específicas.
+
+324
+00:11:32,040 --> 00:11:36,280
+Cada una de ellas debe aprender de forma independiente algunas características útiles.
+
+325
+00:11:36,280 --> 00:11:37,080
+En segundo lugar,
+
+326
+00:11:37,080 --> 00:11:39,200
+De hecho, durante el proceso de entrenamiento de cada lote de datos,
+
+327
+00:11:39,200 --> 00:11:40,520
+Son subredes diferentes en cada caso.
+
+328
+00:11:40,520 --> 00:11:42,300
+Es decir, que cada vez es de forma aleatoria.
+
+329
+00:11:42,300 --> 00:11:45,420
+La inferencia final es como la de miles y miles de subredes que comparten los mismos parámetros.
+
+330
+00:11:45,420 --> 00:11:47,510
+Es como una votación colectiva de todas estas subredes.
+
+331
+00:11:47,510 --> 00:11:51,410
+Esto es algo parecido al aprendizaje por ensamblaje.
+
+332
+00:11:51,410 --> 00:11:54,850
+Es decir, que en realidad tiene un efecto implícito de aprendizaje por ensamblaje.
+
+333
+00:11:54,850 --> 00:11:56,130
+Entonces, a la hora de usarlo,
+
+334
+00:11:56,130 --> 00:11:59,070
+Entonces, cuando estamos escribiendo el código de forma normal,
+
+335
+00:11:59,070 --> 00:12:00,950
+y después de eso, añadimos un dropout.
+
+336
+00:12:00,950 --> 00:12:04,050
+Es decir, la probabilidad de que se desactive.
+
+337
+00:12:04,290 --> 00:12:06,780
+haciendo que algunas neuronas dejen de funcionar temporalmente.
+
+338
+00:12:06,780 --> 00:12:09,540
+Esto evita que el modelo dependa excesivamente de esa neurona en particular.
+
+339
+00:12:09,540 --> 00:12:12,140
+Por supuesto, durante el entrenamiento, algunas neuronas no están activas.
+
+340
+00:12:12,140 --> 00:12:15,720
+Entonces, el valor esperado de la salida de las neuronas restantes se reducirá.
+
+341
+00:12:15,720 --> 00:12:17,640
+Originalmente, la suma de todos debería ser igual a uno.
+
+342
+00:12:17,640 --> 00:12:19,280
+Pero si desactivas algunos de ellos,
+
+343
+00:12:19,280 --> 00:12:21,420
+la suma total sería 0.5.
+
+344
+00:12:21,420 --> 00:12:23,500
+Si desactivas la mitad de ellas,
+
+345
+00:12:23,500 --> 00:12:25,680
+Es para que durante el entrenamiento y la inferencia,
+
+346
+00:12:25,680 --> 00:12:26,520
+la expectativa se mantenga consistente.
+
+347
+00:12:26,520 --> 00:12:27,750
+Es decir, la esperanza es la media.
+
+348
+00:12:27,750 --> 00:12:30,090
+El método de Haitao es, en realidad, un mecanismo de propagación inversa del error.
+
+349
+00:12:30,090 --> 00:12:31,310
+Entonces, durante el entrenamiento...
+
+350
+00:12:31,310 --> 00:12:33,230
+Si descarto estas neuronas,
+
+351
+00:12:33,230 --> 00:12:35,800
+se divide el valor de los demás neuronas por esta probabilidad.
+
+352
+00:12:35,800 --> 00:12:37,700
+Es decir, aumentar un poco su valor.
+
+353
+00:12:37,700 --> 00:12:40,360
+En la fase de inferencia, simplemente se mantiene como está.
+
+354
+00:12:40,360 --> 00:12:41,620
+Este es un pequeño truco.
+
+355
+00:12:41,620 --> 00:12:43,800
+Pero este pequeño truco afectará a la forma en que escribas tu código.
+
+356
+00:12:43,800 --> 00:12:44,980
+Durante el entrenamiento,
+
+357
+00:12:44,980 --> 00:12:46,800
+simplemente usamos model.train y ya está.
+
+358
+00:12:46,800 --> 00:12:48,680
+y hace que los valores de activación sean efectivos.
+
+359
+00:12:48,680 --> 00:12:50,580
+Es decir, se descartan de forma aleatoria y proporcional.
+
+360
+00:12:50,580 --> 00:12:52,140
+Pero durante la inferencia,
+
+361
+00:12:52,140 --> 00:12:54,880
+En realidad, lo que deberíamos usar es model.eval() y ya está.
+
+362
+00:12:54,880 --> 00:12:56,660
+Y si nos olvidamos de hacer ese cambio...
+
+363
+00:12:56,660 --> 00:12:57,820
+esto puede provocar algunos errores.
+
+364
+00:12:57,820 --> 00:12:59,940
+Con saber esto es suficiente.
+
+365
+00:13:00,530 --> 00:13:03,370
+Entonces, ¿cuánto rendimiento se pierde aproximadamente con esto?
+
+366
+00:13:03,370 --> 00:13:07,150
+Su valor razonable depende de la posición de la capa en la red.
+
+367
+00:13:07,150 --> 00:13:08,210
+y también de la tarea específica.
+
+368
+00:13:08,210 --> 00:13:09,470
+Por ejemplo, en la capa oculta,
+
+369
+00:13:09,470 --> 00:13:10,550
+entonces usamos 0.5.
+
+370
+00:13:10,550 --> 00:13:12,730
+De hecho, así es como se describe en este nuevo artículo.
+
+371
+00:13:12,730 --> 00:13:14,450
+En las capas MLP, es decir, las capas totalmente conectadas,
+
+372
+00:13:14,450 --> 00:13:17,010
+Básicamente, con este valor se desactiva aleatoriamente la mitad de las neuronas.
+
+373
+00:13:17,010 --> 00:13:18,610
+Pero en la capa de entrada...
+
+374
+00:13:18,610 --> 00:13:20,839
+Normalmente, se usa 0.1 o 0.2.
+
+375
+00:13:20,839 --> 00:13:23,380
+Este valor es relativamente pequeño.
+
+376
+00:13:23,380 --> 00:13:24,260
+Si usas 0.5,
+
+377
+00:13:24,260 --> 00:13:26,640
+De esta manera, se estaría descartando la mitad de las características.
+
+378
+00:13:26,640 --> 00:13:29,340
+En realidad, esto provoca una pérdida de la información original.
+
+379
+00:13:29,340 --> 00:13:30,710
+Es un poco excesivo.
+
+380
+00:13:30,710 --> 00:13:32,270
+Y en el caso de los transformadores, ¿qué pasa?
+
+381
+00:13:32,270 --> 00:13:34,550
+Normalmente, usamos un valor inferior a 0.1.
+
+382
+00:13:34,550 --> 00:13:37,710
+Porque la estructura del propio Transformer ya está diseñada de una manera muy sólida.
+
+383
+00:13:37,710 --> 00:13:39,270
+Si la regularización es demasiado agresiva,
+
+384
+00:13:39,270 --> 00:13:42,090
+al contrario, afectaría al preentrenamiento a gran escala.
+
+385
+00:13:42,090 --> 00:13:44,770
+Entonces, ¿qué pasa con las tareas de imágenes en CNN?
+
+386
+00:13:44,770 --> 00:13:47,840
+Porque las imágenes, por su propia naturaleza, tienen una fuerte componente espacial.
+
+387
+00:13:47,840 --> 00:13:49,560
+en una imagen con correlación espacial local,
+
+388
+00:13:49,560 --> 00:13:51,880
+El primer píxel y el segundo píxel están muy correlacionados.
+
+389
+00:13:51,880 --> 00:13:53,260
+Si se decide descartarlo,
+
+390
+00:13:53,260 --> 00:13:55,040
+Entonces, este píxel ya no tendría mucha importancia.
+
+391
+00:13:55,040 --> 00:13:57,600
+Por eso, por lo general, basta con usar el batch normalization.
+
+392
+00:13:57,600 --> 00:13:59,520
+Y en tareas como las de las redes neuronales convolucionales,
+
+393
+00:13:59,520 --> 00:14:01,140
+básicamente no se usa el dropout.
+
+394
+00:14:01,140 --> 00:14:03,140
+Ahora, veamos la siguiente técnica de regularización.
+
+395
+00:14:03,140 --> 00:14:04,460
+que es el early stopping.
+
+396
+00:14:04,460 --> 00:14:07,640
+De hecho, esto es algo que ya mencionamos cuando hablamos del aprendizaje continuo.
+
+397
+00:14:07,640 --> 00:14:09,860
+¿No es que, a medida que entrenas, el rendimiento empieza a empeorar?
+
+398
+00:14:09,860 --> 00:14:11,080
+Entonces, a medida que avanza el entrenamiento,
+
+399
+00:14:11,080 --> 00:14:14,890
+Entonces, mientras entreno, voy monitoreando su rendimiento en el conjunto de validación.
+
+400
+00:14:14,890 --> 00:14:16,310
+Me di cuenta de que en el conjunto de validación,
+
+401
+00:14:16,310 --> 00:14:19,170
+Por ejemplo, si después de varias iteraciones de entrenamiento seguidas, eh, no hay ninguna mejora.
+
+402
+00:14:19,170 --> 00:14:20,030
+entonces detengo el entrenamiento.
+
+403
+00:14:20,030 --> 00:14:23,530
+Simplemente volvemos al punto donde se obtuvo el mejor rendimiento y listo.
+
+404
+00:14:23,530 --> 00:14:24,630
+La técnica de detención temprana.
+
+405
+00:14:24,630 --> 00:14:27,490
+¿No es que cuanto más entrenas, peor es el resultado?
+
+406
+00:14:27,490 --> 00:14:28,930
+Así que lo voy monitoreando en cada paso.
+
+407
+00:14:28,930 --> 00:14:30,510
+antes de que empeore.
+
+408
+00:14:30,510 --> 00:14:32,260
+simplemente detengo el entrenamiento.
+
+409
+00:14:32,260 --> 00:14:34,960
+Básicamente, el código lo que hace es comparar cada vez.
+
+410
+00:14:34,960 --> 00:14:36,180
+Y en los momentos clave,
+
+411
+00:14:36,180 --> 00:14:37,300
+De hecho, tiene un parámetro llamado "patience".
+
+412
+00:14:37,300 --> 00:14:39,970
+Entonces, 'patience' se refiere a cuántas épocas se van a tolerar.
+
+413
+00:14:39,970 --> 00:14:41,990
+Es decir, si en una época no hay ninguna mejora.
+
+414
+00:14:41,990 --> 00:14:44,330
+Normalmente, un valor de entre 5 y 20 se considera razonable.
+
+415
+00:14:44,330 --> 00:14:46,190
+Es decir, si durante cinco épocas consecutivas no hay ninguna mejora.
+
+416
+00:14:46,190 --> 00:14:48,099
+entonces detengo el entrenamiento.
+
+417
+00:14:48,099 --> 00:14:49,419
+De hecho, también lo es.
+
+418
+00:14:49,419 --> 00:14:52,820
+Pero, ¿por qué parece que no tiene nada que ver con la regularización?
+
+419
+00:14:52,820 --> 00:14:54,580
+En realidad, es una forma de regularización en un sentido más amplio.
+
+420
+00:14:54,580 --> 00:14:56,900
+Por eso también se le conoce como regularización implícita.
+
+421
+00:14:56,900 --> 00:14:58,530
+No modificó la comunicación.
+
+422
+00:14:58,530 --> 00:14:59,730
+ni se ha modificado la función de pérdida,
+
+423
+00:14:59,730 --> 00:15:00,710
+ni ha modificado la estructura.
+
+424
+00:15:00,710 --> 00:15:03,010
+Pero lo que sí hace es reducir el número de pasos de entrenamiento.
+
+425
+00:15:03,010 --> 00:15:05,530
+De esta forma, los pesos se mantienen más cerca de su valor inicial.
+
+426
+00:15:05,530 --> 00:15:08,150
+el espacio de parámetros que se puede explorar es menor.
+
+427
+00:15:08,150 --> 00:15:11,430
+lo que equivale a limitar la complejidad efectiva del modelo.
+
+428
+00:15:11,430 --> 00:15:13,410
+Y por último, tenemos la ampliación de datos.
+
+429
+00:15:13,410 --> 00:15:14,950
+En sentido estricto,
+
+430
+00:15:14,950 --> 00:15:16,990
+el aumento de datos no pertenece a la regularización,
+
+431
+00:15:16,990 --> 00:15:21,070
+Pero, en realidad, es la forma más, más, más eficaz de solucionar el problema.
+
+432
+00:15:21,070 --> 00:15:23,450
+En realidad, todo lo que hemos visto hasta ahora se centra en limitar la capacidad del modelo.
+
+433
+00:15:23,450 --> 00:15:24,610
+para solucionar el sobreajuste.
+
+434
+00:15:24,610 --> 00:15:28,170
+En cambio, la ampliación de datos, o 'data augmentation', aborda el problema desde otra perspectiva: expande la distribución de los datos de entrenamiento.
+
+435
+00:15:28,170 --> 00:15:31,270
+Consiste en añadir algunas transformaciones aleatorias a los datos de entrenamiento.
+
+436
+00:15:31,270 --> 00:15:34,230
+El objetivo no es que memorices el ruido de los datos de entrenamiento.
+
+437
+00:15:34,230 --> 00:15:36,610
+o algunos valores específicos.
+
+438
+00:15:36,610 --> 00:15:39,250
+Así que lo que hago es aplicar todo tipo de transformaciones a los datos de entrenamiento.
+
+439
+00:15:39,250 --> 00:15:41,840
+haciéndole más difícil al modelo memorizar muestras específicas.
+
+440
+00:15:41,840 --> 00:15:44,680
+y así obligamos al modelo a aprender características más generales.
+
+441
+00:15:44,680 --> 00:15:46,420
+La más común es la inversión.
+
+442
+00:15:46,420 --> 00:15:47,380
+reflejo horizontal,
+
+443
+00:15:47,380 --> 00:15:48,100
+y la inversión vertical.
+
+444
+00:15:48,100 --> 00:15:50,420
+También se puede recortar parte de los datos.
+
+445
+00:15:50,420 --> 00:15:51,580
+aplicar algunas rotaciones,
+
+446
+00:15:51,580 --> 00:15:52,400
+alteración de los colores,
+
+447
+00:15:52,400 --> 00:15:54,620
+De hecho, esto parece ser muy común en las tareas de visión.
+
+448
+00:15:54,620 --> 00:15:56,450
+Esta es la técnica más común.
+
+449
+00:15:56,450 --> 00:15:57,610
+Es decir, es la misma imagen.
+
+450
+00:15:57,610 --> 00:15:59,410
+Te la muestro desde diferentes ángulos para que aprendas.
+
+451
+00:15:59,410 --> 00:16:02,850
+Es como si tuviéramos varias veces más muestras de entrenamiento de forma gratuita.
+
+452
+00:16:03,090 --> 00:16:05,870
+Vamos a escribir un poco de código para ver qué tal funcionan.
+
+453
+00:16:05,870 --> 00:16:09,310
+Aunque, a primera vista, todos parecen ser muy, muy parecidos,
+
+454
+00:16:09,310 --> 00:16:11,030
+Pero hay algo que se puede notar.
+
+455
+00:16:11,030 --> 00:16:11,850
+su pérdida,
+
+456
+00:16:11,850 --> 00:16:14,900
+incluida su precisión final en la validación, que es excepcionalmente superior.
+
+457
+00:16:14,900 --> 00:16:15,880
+Entonces, ¿qué es esto?
+
+458
+00:16:15,880 --> 00:16:17,280
+Pues se trata del aumento de datos.
+
+459
+00:16:17,280 --> 00:16:19,080
+Aunque hemos aprendido tantas técnicas,
+
+460
+00:16:19,080 --> 00:16:21,120
+Solo hay que añadir una o dos líneas de código y listo.
+
+461
+00:16:21,120 --> 00:16:23,000
+Pero al final, en el ajuste fino de los modelos...
+
+462
+00:16:23,000 --> 00:16:26,190
+nuestro ajuste de parámetros probablemente siga siendo una de las bases,
+
+463
+00:16:26,190 --> 00:16:27,890
+nuestra capacidad para comprender los datos.
+
+464
+00:16:27,890 --> 00:16:31,450
+Por lo tanto, realizar la ampliación de datos podría ser la solución más eficaz.
+
+465
+00:16:31,450 --> 00:16:33,430
+Bueno, repasemos brevemente estas líneas de base.
+
+466
+00:16:33,430 --> 00:16:36,580
+Así que, en realidad, no vamos a seguir comparando estos gráficos con todos ustedes.
+
+467
+00:16:36,580 --> 00:16:37,360
+Nos daremos cuenta de que...
+
+468
+00:16:37,360 --> 00:16:38,680
+De hecho, cuando observamos los patrones,
+
+469
+00:16:38,680 --> 00:16:39,240
+nos daremos cuenta de que
+
+470
+00:16:39,240 --> 00:16:42,620
+La regularización L2, por su parte, reduce los pesos de manera relativamente uniforme.
+
+471
+00:16:42,620 --> 00:16:45,480
+pero la proporción de pesos cercanos a cero apenas cambia.
+
+472
+00:16:45,480 --> 00:16:48,670
+mientras que la L1 aumenta significativamente la proporción de pesos cercanos a cero.
+
+473
+00:16:48,670 --> 00:16:51,410
+En esencia, lo que hace es reducir el número de características.
+
+474
+00:16:51,410 --> 00:16:53,730
+En cuanto al dropout, este no cambia la magnitud de los pesos.
+
+475
+00:16:53,730 --> 00:16:56,400
+Simplemente rompe la dependencia de una sola neurona.
+
+476
+00:16:56,400 --> 00:16:59,400
+y así la precisión en la validación sigue aumentando.
+
+477
+00:16:59,400 --> 00:17:02,720
+Y en cuanto a ADAMM, en realidad, tanto ADAMM como ADAMMW...
+
+478
+00:17:02,720 --> 00:17:04,200
+Es como una mejora del algoritmo ADAM.
+
+479
+00:17:04,200 --> 00:17:05,880
+y se corrigieron sus errores.
+
+480
+00:17:05,880 --> 00:17:08,360
+En cuanto al paro temprano, prácticamente no requiere ningún ajuste de parámetros.
+
+481
+00:17:08,360 --> 00:17:11,020
+Es decir, monitoreo el momento en que dejas de optimizarte de forma continua.
+
+482
+00:17:11,020 --> 00:17:12,260
+simplemente detengo el entrenamiento antes de tiempo.
+
+483
+00:17:12,260 --> 00:17:13,540
+Regularización sin coste alguno.
+
+484
+00:17:13,540 --> 00:17:15,040
+Bueno, en realidad, tampoco es que sea de coste cero.
+
+485
+00:17:15,040 --> 00:17:17,250
+Porque, al fin y al cabo, monitorear también tiene un coste.
+
+486
+00:17:17,250 --> 00:17:20,890
+Y la verdad es que la mejora de datos es, de hecho, la más efectiva.
+
+487
+00:17:20,890 --> 00:17:22,930
+Es decir, ampliar la distribución de los datos.
+
+488
+00:17:22,930 --> 00:17:25,210
+De hecho, es lo que comúnmente conocemos como la ley de los rendimientos decrecientes.
+
+489
+00:17:25,210 --> 00:17:26,520
+Aumentar la cantidad de datos.
+
+490
+00:17:26,520 --> 00:17:27,040
+Exacto.
+
+491
+00:17:27,040 --> 00:17:29,160
+De hecho, así se puede mejorar su precisión.
+
+492
+00:17:29,160 --> 00:17:30,240
+y mejora de forma continua.
+
+493
+00:17:30,240 --> 00:17:33,360
+Y al final, el resultado en el conjunto de validación también será el mejor.
+
+494
+00:17:33,360 --> 00:17:34,720
+Aunque hemos aprendido tantas técnicas,
+
+495
+00:17:34,720 --> 00:17:36,580
+Pero la técnica más eficaz sigue siendo aumentar la cantidad de datos.
+
+496
+00:17:36,580 --> 00:17:37,800
+En resumen,
+
+497
+00:17:37,800 --> 00:17:41,120
+De hecho, se trata de estas técnicas de regularización que comúnmente utilizamos.
+
+498
+00:17:41,120 --> 00:17:43,560
+Claro, aunque su efectividad no sea tan buena como la del aumento de datos,
+
+499
+00:17:43,560 --> 00:17:44,460
+Pero aun así, hay que usarlas.
+
+500
+00:17:44,460 --> 00:17:46,340
+Sin esto, el rendimiento sería aún peor.
+
+501
+00:17:46,340 --> 00:17:47,940
+Y en cuanto a la regularización L1 y L2...
+
+502
+00:17:47,940 --> 00:17:50,180
+En realidad, todos estos métodos actúan sobre la función de pérdida.
+
+503
+00:17:50,180 --> 00:17:52,620
+Su idea central es penalizar los pesos.
+
+504
+00:17:52,620 --> 00:17:54,159
+limitando la magnitud de los parámetros.
+
+505
+00:17:54,159 --> 00:17:55,719
+En cuanto a la reducción de los pesos,
+
+506
+00:17:55,719 --> 00:17:57,999
+En realidad, esto ocurre durante el proceso de descenso del gradiente.
+
+507
+00:17:57,999 --> 00:17:59,419
+actúa sobre el optimizador.
+
+508
+00:17:59,419 --> 00:18:01,130
+De modo que, al actualizar los parámetros,
+
+509
+00:18:01,130 --> 00:18:03,570
+en cada paso, se ajustan los pesos para que se acerquen a cero.
+
+510
+00:18:03,570 --> 00:18:07,140
+Es decir, la atenuación obliga a que tus parámetros se reduzcan.
+
+511
+00:18:07,140 --> 00:18:09,860
+Mientras que el dropout se aplica a toda la estructura de la red.
+
+512
+00:18:09,860 --> 00:18:12,520
+Es decir, desactiva aleatoriamente algunas neuronas.
+
+513
+00:18:12,520 --> 00:18:14,930
+para forzar la reducción de las características.
+
+514
+00:18:14,930 --> 00:18:16,990
+La parada temprana, por su parte, se enfoca en el proceso de entrenamiento.
+
+515
+00:18:16,990 --> 00:18:18,450
+Es decir, observa el rendimiento durante la validación.
+
+516
+00:18:18,450 --> 00:18:20,470
+si durante la validación el rendimiento deja de mejorar,
+
+517
+00:18:20,470 --> 00:18:21,970
+entonces detengo el entrenamiento.
+
+518
+00:18:21,970 --> 00:18:24,410
+En cambio, el aumento de datos se aplica a los datos de entrenamiento.
+
+519
+00:18:24,410 --> 00:18:27,840
+Se busca aumentar la diversidad de los datos para reducir la memorización de casos específicos.
+
+520
+00:18:27,840 --> 00:18:30,180
+De hecho, durante todo el proceso de entrenamiento,
+
+521
+00:18:30,180 --> 00:18:33,860
+No estamos diciendo que la mejora de datos sea tan eficaz por alguna razón en particular.
+
+522
+00:18:33,860 --> 00:18:35,460
+Ahora veamos también los otros métodos.
+
+523
+00:18:35,460 --> 00:18:37,320
+porque no son mutuamente excluyentes.
+
+524
+00:18:37,320 --> 00:18:38,760
+En la práctica,
+
+525
+00:18:38,760 --> 00:18:41,030
+De hecho, es muy común que usemos estos métodos de forma combinada.
+
+526
+00:18:41,030 --> 00:18:41,890
+se suelen utilizar.
+
+527
+00:18:41,890 --> 00:18:43,950
+Por lo tanto, al utilizarlos en conjunto,
+
+528
+00:18:43,950 --> 00:18:46,470
+se puede mejorar el rendimiento de las redes neuronales profundas
+
+529
+00:18:46,470 --> 00:18:48,230
+para alcanzar su máximo potencial.
+
+530
+00:18:49,010 --> 00:18:51,470
+Y bueno, si recordamos desde el principio,
+
+531
+00:18:51,470 --> 00:18:53,950
+comenzando con la introducción de un perceptrón,
+
+532
+00:18:53,950 --> 00:18:58,150
+Luego, al llegar a las MLP, aprendimos todo tipo de técnicas de entrenamiento.
+
+533
+00:18:58,150 --> 00:18:58,910
+En estos casos,
+
+534
+00:18:58,910 --> 00:19:01,180
+Básicamente, en lo que respecta al entrenamiento de redes neuronales profundas,
+
+535
+00:19:01,180 --> 00:19:02,540
+los conocimientos fundamentales que se necesitan.
+
+536
+00:19:02,540 --> 00:19:04,000
+ya lo tenemos más o menos dominado.
+
+537
+00:19:04,000 --> 00:19:07,820
+Bien, a continuación, vamos a hacer un breve resumen de todo lo que hemos visto.
+
+538
+00:19:07,820 --> 00:19:12,060
+Y después de eso, ya podremos aprender sobre arquitecturas de redes como CNN, RNN y Transformer.

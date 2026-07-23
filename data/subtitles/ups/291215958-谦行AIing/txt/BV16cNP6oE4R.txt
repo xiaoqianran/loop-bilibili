@@ -1,0 +1,825 @@
+Continuamos con el estudio del PNL.
+Hoy vamos a ver el embedding y el modelo word2vec.
+Es precisamente gracias a estas dos técnicas que podemos entenderlo.
+cada palabra de un idioma natural.
+Aquellos que ya estén familiarizados con la arquitectura Transformer
+seguramente el término "embedding" no les resultará desconocido.
+Hoy vamos a ver cómo se representa.
+las palabras en el lenguaje natural.
+Si vemos la palabra "manzana",
+es muy probable que pienses de forma natural en la fruta.
+el sabor y el color que le corresponden,
+o incluso algunas situaciones de la vida cotidiana.
+Incluso es posible que nos recuerde a un teléfono móvil.
+Pero para un ordenador o un modelo,
+solo puede ver un símbolo discreto como este.
+En realidad, para el ordenador, esta palabra en sí no tiene ningún significado.
+Porque ni el modelo ni el ordenador pueden
+en lo que mejor se le da: la suma y la multiplicación.
+tampoco sirve para determinar el significado de la palabra.
+incluyendo la relación que tiene con el símbolo discreto "banana".
+y cuál es exactamente su relación con la palabra "coche".
+Por eso, todas las diversas arquitecturas de PNL que tenemos...
+Para que un ordenador pueda procesar problemas de PNL,
+Para empezar, nos encontramos con una cuestión fundamental.
+Es decir, cómo convertir estos símbolos discretos, uno por uno,
+Es decir, lo que llamamos palabras o "words".
+para que pueda ser procesado por ordenadores y modelos.
+una representación matemática que se pueda comparar y aprender.
+Lo mejor es convertirlas en números.
+y luego reflejarlos en un espacio vectorial.
+Entonces, como los ordenadores solo entienden de números,
+Bien, entonces.
+Entonces, ¿cuál es la forma más directa de hacerlo?
+Es decir, asignar a cada palabra un número entero como identificador.
+Por ejemplo, supongamos que tenemos cuatro palabras.
+Manzana es igual a uno.
+plátano es igual a dos,
+coche es igual a tres,
+Tren es igual a cuatro.
+Entonces, cuando quieras usarlo, simplemente consultas la tabla.
+Veamos a qué números corresponden.
+Así se ve bien.
+Pero, cuando se lo entregamos directamente al modelo,
+surgirán algunos problemas.
+De hecho, esto es algo que ya vimos cuando estudiamos aprendizaje automático.
+ya se los he explicado antes.
+Entonces, ¿qué pasaría si le damos estos números directamente al modelo para que entrene?
+Y de hecho, lo ha reconocido.
+Pero, para el modelo, este número de identificación...
+no son números comunes y corrientes.
+Entenderá que el tren es mayor que la manzana.
+la distancia entre manzana y coche y
+es mayor que la distancia entre la manzana y el tren.
+Es decir, existe entre ellas una relación de magnitud y distancia.
+Pero en realidad, esto no existe.
+Al menos, antes de ser entrenado,
+No se puede hacer esa suposición.
+Así que, este método de representación tiene un defecto inherente.
+Entonces, ¿qué hacemos ahora?
+Entonces, ¿podríamos encontrar una forma de representar solo la identidad,
+No se debe añadir ninguna asociación como el tamaño o la distancia.
+Bueno, pues en realidad es el one-hot que ya habíamos visto antes.
+Es aquí donde aparece la codificación one-hot.
+OK, por ejemplo, digamos que solo tenemos cuatro palabras en total.
+Entonces, lo que haría sería crear un vector de cuatro dimensiones.
+Por ejemplo, si la manzana es la primera,
+Entonces, solo el primer valor es uno.
+y los demás son cero.
+El plátano es el segundo.
+De esta manera, en realidad, si tenemos más palabras,
+entonces lo represento con un vector de más dimensiones.
+De esta manera, solo me fijo en las posiciones donde el valor es uno.
+significa que sí lo es.
+y un cero significa que no.
+De esta forma, solo estoy indicando qué es cada cosa.
+ya no hay ninguna implicación sobre su tamaño o distancia.
+Y así se soluciona el problema de la codificación con números enteros.
+Pero, evidentemente, esta solución tampoco es perfecta.
+Porque el vocabulario que usamos en la vida real es mucho más grande que cuatro.
+Incluso si tenemos en cuenta todos los idiomas,
+Es incluso mayor que millones o decenas de millones.
+Utilizo un vector muy, muy largo,
+para representarlo con un vector de muchísimas dimensiones.
+Entonces, yo tampoco represento la mayor parte.
+solo hay un uno,
+y todo lo demás son ceros.
+Esto supone un enorme desperdicio.
+Es decir, se vuelve cada vez más grande.
+Además, su densidad de información es realmente muy baja.
+Solo uno es útil.
+y el resto son ceros.
+Así que, pero, con un tamaño tan grande...
+lo que hace que la carga computacional sea extremadamente compleja.
+Además, tampoco existe ninguna relación semántica entre ellos.
+Por ejemplo, con esto tampoco puedo saberlo.
+¿Qué relación hay entre este uno y el siguiente?
+cuál está más cerca y cuál más lejos.
+Tampoco pueden representar nada.
+Pero, por naturaleza, las palabras tienen una relación de cercanía y lejanía entre sí.
+Pero, ¿cuál es el problema más grave?
+Es básicamente lo que acabamos de mencionar.
+Y esto es precisamente lo que ocurre en el modelo 'one-hot'.
+todas las palabras son ortogonales.
+Entonces, ¿qué significa que sean ortogonales?
+De hecho, si decimos que es un vector...
+Hablemos de un vector bidimensional.
+Esto es algo que una persona puede entender.
+y el otro, a lo largo del eje Y.
+uno a lo largo del eje X,
+El ángulo entre ellos es de 90 grados.
+Su coseno es igual a cero.
+De hecho, a esto lo llamamos similitud del coseno igual a cero.
+Porque el coseno de 90 grados es cero.
+A esto se le llama que son ortogonales.
+Se podría decir que no tienen ninguna relación.
+Si el ángulo entre ellos es muy pequeño,
+entonces su coseno de theta se acercará mucho a uno.
+decimos que estos dos vectores están muy fuertemente correlacionados.
+significa que son muy parecidos.
+Si lo convertimos en un vector unitario,
+si el ángulo entre ellos es cero,
+se consideran iguales.
+Entonces, si el ángulo entre ambos es muy grande,
+si se acerca a los 180 grados,
+Eso significa que entre ellos sí que hay una relación.
+Es mejor que un ángulo de 90 grados.
+Esto significa que tienen una correlación negativa perfecta.
+Es una relación en la que si uno sube, el otro baja.
+y también es mejor que ser completamente ortogonales.
+Para esto, nos fijamos en el coseno de theta.
+Por eso se llama similitud del coseno.
+También podemos representarlo de esta manera.
+Pero en el caso de one-hot,
+Este es cero.
+Por ejemplo, representarlo de esta manera es, en realidad, hacer un producto escalar.
+Cuando se realiza el producto punto,
+Vamos a ponerlo en vertical para verlo.
+multiplicamos cada posición correspondiente.
+donde tú tienes un uno,
+yo soy cero.
+y donde tú tienes un cero,
+yo tengo un uno aquí.
+Pero, como mínimo, el resultado de multiplicarlos sigue siendo cero.
+Por lo tanto, todos se encuentran en un espacio de one-hot.
+Todas las palabras son ortogonales entre sí.
+Por lo tanto, su similitud de coseno es cero.
+Pero, en realidad, la distancia entre 'manzana' y 'plátano'...
+Para que lo entendamos de una forma más humana,
+es evidente que estas dos palabras están mucho más relacionadas que 'manzana' y 'coche'.
+Pero en el caso de one-hot...
+no hay ninguna diferencia entre ellos.
+El one-hot simplemente elimina la relación del orden de los elementos.
+Pero no expresa nada a nivel semántico.
+este grado de similitud.
+Además, su dimensionalidad es extremadamente alta.
+Así que esta solución tampoco es muy buena.
+Si queremos saber,
+por qué la palabra "manzana" está más cerca de "coche" que de "banana",
+entonces tenemos que observar
+cómo se utilizan en el lenguaje.
+Podemos ver muchas frases como "me comí una manzana".
+Me comí un plátano.
+pero es muy raro que alguien diga "me comí un coche".
+Esta manzana es muy dulce.
+El plátano está dulce.
+Este coche se ve muy bonito.
+Las llantas brillan un montón.
+Entonces, ¿qué nos dice esto?
+Detrás de esto hay una teoría.
+se llama representación distribuida.
+Entonces, ¿qué significa esto?
+Es decir, el significado de una palabra...
+puede entenderse a través del contexto en el que aparece con frecuencia.
+palabras con significados muy parecidos,
+su contexto también será muy similar.
+Con estos sencillos ejemplos ya podemos ver que...
+Como manzana y banana.
+Es decir, no es que la palabra "fruta" lleve escrita su color de forma literal.
+Pero suelen aparecer en contextos similares.
+aunque a veces no se puedan comer.
+y todas son muy dulces.
+y también suelen aparecer junto a palabras como fruta, precio o color.
+entonces consideramos que estas dos palabras en el espacio vectorial
+deberían estar muy cercanos.
+en cambio, el número de veces que aparecen junto con la palabra "coche"...
+debería ser relativamente
+la distancia es muy grande.
+Es decir, no suelen aparecer juntos con frecuencia.
+Es decir, lo que queremos es utilizar la relación de cercanía o lejanía entre los vectores.
+para expresar la cercanía o lejanía de su significado.
+y luego, convertir esta similitud contextual
+y transformarla en una relación de proximidad en el espacio vectorial.
+Entonces, ¿qué hacemos?
+Y uno de los métodos que existen...
+a esto se le llama matriz de co-ocurrencia para registrar las relaciones de contexto.
+¿Y cómo lo hace?
+Este es un método clásico de la estadística.
+Entonces, lo que hacemos es contar la aparición de una palabra junto con las palabras de su contexto.
+que suelen aparecer en la misma ventana.
+Por ejemplo, la palabra "manzana".
+Entonces, voy a observar entre estas palabras,
+Cuando menciono la palabra "manzana",
+¿Cuántas veces aparece la palabra "comer" en una frase?
+Por ejemplo, he analizado una novela,
+o una gran biblioteca de textos, por ejemplo.
+la palabra "comer" apareció 24 veces.
+le asigno esa frecuencia.
+le asignaré ese mismo valor.
+Es posible que la palabra "manzana" y la palabra "motor" nunca aparezcan juntas, ¿verdad?
+Pero la palabra "motor" sí que aparece muchísimas veces junto a "tren" y "carretera".
+Y aquí, en este contexto...
+Entonces, a grandes rasgos, si los organizo en un vector...
+Estos números, en realidad, ya adquieren un cierto significado.
+Entonces, nos daremos cuenta de que...
+manzana y banana,
+A ver, fíjense en ellos.
+Es decir, estos vectores son muy parecidos entre sí.
+Una manzana y un tren no se parecen en nada.
+Pero los coches y los trenes, en cambio, sí que son muy parecidos.
+En este caso, las palabras ya no son posiciones aisladas.
+sino que se define por las palabras que suelen aparecer en su contexto.
+sino que se describen a través de la relación que tienen entre sí.
+El resultado parece bastante bueno.
+Es un vector que se puede calcular.
+Es un vector numérico.
+y también puede representar cierta relación de cercanía o lejanía.
+Pero también tiene ciertas desventajas.
+Registra las relaciones.
+pero no se generó un espacio semántico estable.
+Bueno, el primer problema es que su escala es demasiado grande.
+Cuando aparece la palabra 'manzana', las palabras que la rodean son muchísimas más que estas cinco.
+O también podría decir que, en el corpus que estoy analizando,
+Si hay millones de palabras,
+Entonces, este vector es en realidad el mismo que el de antes.
+la longitud sigue siendo muy grande.
+Además, se trata de una relación cuadrática.
+¿Es por tu matriz de colinealidad?
+Es una relación cuadrática.
+Por lo tanto, esto hará que su volumen sea extremadamente grande.
+Además, su capacidad de generalización es limitada.
+A esto yo lo llamo manzana, eh...
+La siguiente palabra que voy a usar es la palabra en inglés "apple".
+o incluso un dialecto de alguna región.
+tampoco se le llama manzana.
+o incluso la marca de una manzana.
+o por ejemplo, la manzana Fuji.
+De hecho, para una persona, todas estas cosas son muy parecidas.
+Pero, si estas palabras no llegaran a aparecer,
+Entonces, en la matriz de co-ocurrencia, no se podrá registrar ninguna estadística.
+O simplemente se trata de diferencias dialectales, de distintas formas de llamar a la misma cosa.
+pero no los agrupa en un mismo conjunto.
+Por lo tanto, su capacidad de generalización es muy limitada.
+Además, los datos estadísticos también son bastante dispersos.
+Estos pueden verse afectados por el ruido, ¿eh?
+tampoco se puede comprimir en un espacio semántico compacto.
+Estos son algunos de sus problemas.
+Pero aun así, la idea ya era muy buena.
+Entonces, ahora solo nos falta el último paso.
+Es decir, comprimir la relación en un problema de coordenadas.
+Ahora la cuestión ya no es si podemos convertir las palabras en números.
+sino que ya se ha convertido en
+sino que esperamos que este número pueda conservar el significado semántico.
+y que además sea adecuado para el aprendizaje del modelo.
+No tiene por qué ser excesivamente grande.
+Como ya hemos dicho, los números enteros, conocemos su numeración.
+Es decir, se convierte en un número.
+Solo fue el primer intento.
+Sin embargo, esto trae consigo problemas de magnitud y distancia artificiales.
+El método one-hot resolvió ese problema.
+Pero, en primer lugar, el problema de one-hot es que su escala sigue siendo demasiado grande.
+Es un desperdicio de espacio.
+Y el segundo problema grave es que son ortogonales.
+y no aportó nada de valor.
+Poco a poco, vamos haciendo la transición hacia la matriz de contribución.
+Para ello, se utiliza el contexto.
+Se utilizó la estadística.
+Así, poco a poco, las palabras empiezan a tener relaciones semánticas entre sí.
+Pero la dimensionalidad seguía siendo demasiado alta.
+Los vectores utilizan una cantidad de dimensiones excesiva,
+Además, el conjunto de datos completo es demasiado disperso.
+Y esto, además, lo hace poco estable.
+Por lo tanto, prácticamente hemos conservado el contexto similar.
+lo que equivale a un significado similar.
+Por eso, lo que queremos es comprimir esta información en un espacio de menor dimensión.
+Que no sea demasiado alta.
+Es que tienes demasiadas columnas.
+De esta forma, los datos tampoco son tan dispersos como en la codificación one-hot.
+Quiero que sea más denso.
+y además, son números continuos que se pueden aprender y computar.
+Este método es el famoso embedding.
+Embedding.
+Su idea central es tomar estas palabras discretas,
+y colocarlas en un espacio continuo.
+Entonces, todas las palabras que usamos pueden entenderse como elementos discretos.
+Estas palabras aisladas se "embedding" o incrustan,
+Por lo tanto, la palabra en sí significa 'incrustar'.
+en un espacio vectorial continuo.
+Así, la palabra deja de ser simplemente una posición en el vocabulario.
+ya no es un simple 1, 2, 3, 4, 5.
+sino que se convierte en una coordenada con la que se puede operar.
+De esta forma, puede participar en cálculos de distancia y similitud,
+y también permite realizar tareas de agrupamiento y clasificación.
+Por ejemplo, esperamos que en el espacio de embedding...
+Esto es solo una idea.
+Primero, por ejemplo, la similitud entre dos palabras.
+Este es un método de similitud.
+podemos calcularla entre estas dos palabras, manzana y banana.
+mayor que la similitud entre "manzana" y "coche".
+Su representación podría ser algo así.
+A menudo, lo que vemos es que...
+Porque después de normalizarlos,
+o después de normalizarlo,
+Sus valores estarán entre -1 y 1, y su dimensión puede ser fijada.
+Pero como cada una tiene su propio significado,
+Por lo tanto, su dimensionalidad no será especialmente alta.
+Entonces, ¿de dónde salen todos estos números?
+Se obtienen a través del entrenamiento.
+No son valores asignados manualmente, ¿eh?
+Cada uno de sus valores se obtiene a través del entrenamiento,
+y se optimiza continuamente durante el entrenamiento.
+Para una persona, puede que no sea fácil de entender.
+Así que no nos fijemos solo en esto.
+¿Qué significa 0.31?
+¿Y qué significa menos 0,82?
+Esto es algo que no podemos entender.
+Un número por sí solo no corresponde a ninguna característica en particular.
+Si hemos estudiado el PCA en el aprendizaje automático,
+es posible que lo entiendas muy bien.
+Solo cuando consideramos el vector en su conjunto es que este tiene sentido.
+Individualmente, los números por sí solos no tienen ningún significado para nosotros.
+Y las relaciones semánticas se encuentran precisamente en estos vectores.
+Y bueno, esto es solo una idea.
+Lo que realmente permitió que esta idea se pudiera implementar a bajo costo,
+Una arquitectura técnica clásica es...
+es Word2Vec.
+Y el nombre que le dieron a este proceso de convertir palabras en vectores también es excelente.
+Entonces, ¿cómo lo hace?
+Es decir, antes de que existiera Word2Vec,
+La idea de la 'embedding' probablemente ya existía desde hace mucho tiempo.
+también
+Pero la gente siempre ha optado por métodos de bajo costo.
+no lograban resolver este problema.
+Bueno, para empezar, los dos métodos más utilizados hasta ahora eran...
+Una de ellas es reducir la dimensionalidad de la matriz de covarianza.
+De hecho, existe un método específico, y hay varias maneras de hacerlo.
+De hecho, es algo parecido al PCA.
+¿No tienes muchísimas dimensiones?
+Ya lo he aprendido.
+Ya he terminado las estadísticas.
+Entonces, voy a usar algunos métodos de procesamiento de datos,
+o bien, se utiliza un método de aprendizaje automático para reducir la dimensionalidad.
+Pero, al fin y al cabo, esta reducción de dimensionalidad siempre conlleva una pérdida de información.
+¿Verdad?
+No puede evitar ciertos problemas de escala.
+y la dispersión,
+y también problemas como el ruido.
+Y otro tipo, que de hecho se utiliza en los modelos neuronales de lenguaje.
+Su núcleo...
+Pero el objetivo principal del modelo de lenguaje neuronal...
+El objetivo es predecir la siguiente palabra, y los vectores de palabras que se aprenden son solo un subproducto.
+porque lo que quieres es predecir la siguiente palabra.
+necesitas obtener los vectores de las palabras.
+Es solo un efecto secundario.
+Pero su objetivo principal es este.
+Así que, para obtener el vector de una palabra,
+para llevar a cabo esta tarea en su totalidad.
+el costo seguía siendo demasiado alto.
+Llegamos entonces a Word2Vec.
+Cuando apareció en escena,
+Su objetivo cambió por completo.
+Ya no se trata de construir un modelo de lenguaje completo.
+Para una matriz de contribución como esta, la estadística tradicional definitivamente no es suficiente.
+Así que, para entrenarlo, tenemos que usar redes neuronales.
+Pero ya no voy a predecir la siguiente palabra.
+En este caso, ya no se trata de crear un modelo de lenguaje completo.
+Solo me centro en el aprendizaje de los vectores de palabras.
+sino que aprendo el modelo correspondiente.
+un espacio vectorial.
+Y aquí es donde entran las que uso con frecuencia.
+todas las palabras que se van a aprender.
+Mi objetivo general es precisamente este.
+Ya no se trata de crear un modelo de lenguaje.
+En este caso, se convierte en una tarea de predicción más sencilla.
+Lo que hace es predecir esta palabra.
+Pero su propósito principal es precisamente para ver la similitud entre las palabras.
+Y si repetimos este proceso de predicción basándonos en el contexto una y otra vez,
+Así que, la idea de la matriz de co-ocurrencia sigue siendo útil.
+En realidad, esto se debe a los principios que lo sustentan.
+Solo tengo que predecir repetidamente basándome en el contexto.
+y se usan los errores para ajustar los vectores.
+En realidad, es un proceso de retropropagación.
+De esta manera, las palabras similares se van acercando poco a poco.
+así puedo aprender su vector.
+Entonces, ¿qué fue lo que realmente hizo que Word2Vec asombrara al mundo?
+Después de entrenarlo,
+En primer lugar, su entrenamiento es increíblemente rápido.
+y el costo es muy bajo.
+Y en segundo lugar, los resultados que se obtienen son especialmente buenos.
+Una vez que lo hayamos entrenado,
+Por ejemplo, digamos que tenemos un método llamado VEC.
+o sea, "vector".
+Es capaz de obtener los vectores correspondientes a estas palabras.
+Tomamos el de "king", que significa "rey".
+le restamos
+porque entre sus vectores se pueden realizar operaciones matemáticas.
+le restamos el vector correspondiente a la palabra "man", que significa "hombre".
+y luego le sumamos el vector correspondiente a la palabra "mujer".
+Y nos daremos cuenta de que el resultado que obtenemos...
+es muy parecido al de la palabra 'reina' o 'queen'.
+Por lo tanto, nos daremos cuenta de que parece que realmente ha comprendido el significado de las palabras.
+la relación entre las palabras.
+es como si fuera un rey.
+Si no lo hace un hombre,
+sino por una mujer,
+es posible que la llamemos "queen".
+Parece que ahora nos entiende.
+Es decir, el espacio vectorial.
+Así que ya no se trata de pura estadística.
+En él se codifica parte del significado semántico.
+e incluso la estructura gramatical.
+Por supuesto, en el artículo sobre Word2Vec,
+También ofrece dos métodos de entrenamiento clásicos que me gustaría presentarles.
+Uno de ellos se llama Continuous Bag-of-Words, o CBOW.
+Es decir, el modelo CBOW utiliza el contexto para predecir la palabra central.
+¿Para qué sirve?
+Por ejemplo, la frase "Hoy me apetece comer una manzana".
+Tenemos un contexto, que es W W.
+Es decir, la ventana de contexto.
+a lo que llamamos tamaño de la ventana.
+A partir de una palabra central,
+Por ejemplo, tomemos la palabra "pensar".
+Entonces, voy a mirar a su izquierda y a su derecha.
+Entonces, ¿a qué se refiere el tamaño de la ventana?
+Es decir, cuántas palabras se consideran a su izquierda y a su derecha.
+Si es uno,
+solo me fijo en una palabra a cada lado, a la izquierda y a la derecha.
+Si es dos,
+entonces considero las dos palabras que tiene a su izquierda y a su derecha.
+Si ahora es dos,
+Entonces, para esta palabra central, ¿qué pasa con su contexto?
+A su izquierda, suelen aparecer con él palabras como "hoy" y "yo".
+y las palabras "comer" y "manzana" también aparecen junto a él.
+Así que lo que introduzco es esto.
+Esta es la palabra central.
+Entonces, su contexto... a ver, en realidad es esta palabra central.
+Entonces, al principio del entrenamiento,
+Es decir, cada vector de palabra es inicialmente aleatorio.
+Así que, con este método...
+y así, va extrayendo constantemente el contexto de las palabras.
+Luego, se calcula el promedio de estos vectores de palabras del contexto.
+porque son varias, ¿no?
+y calcula el vector promedio de estas palabras.
+y así se obtiene una representación del contexto.
+Y luego, se usa para predecir cuál es la palabra central.
+y así se repite el proceso constantemente.
+Por lo tanto, también utiliza una red neuronal simple.
+Así, la ventana se desliza continuamente para tomar el contexto.
+Se fusionan los vectores del contexto.
+Esta combinación consiste en hacer una predicción basada en el promedio de estos vectores.
+¿Cuál es esta palabra central?
+¿Y si la predicción es incorrecta?
+Y la retropropagación se encarga de calcular la pérdida.
+La retropropagación calcula el gradiente para actualizar los parámetros correspondientes.
+Al repetir este proceso constantemente, el modelo se va entrenando.
+Como pueden ver, este es a grandes rasgos el proceso.
+El objetivo es generar continuamente las palabras de la izquierda y de la derecha.
+Aquí, es posible que durante la inicialización...
+y se van calculando algunos valores vectoriales.
+Primero, vamos a extraer esto.
+Calculamos el promedio de estos.
+Porque, en esencia, al final todo se reduce a una única operación.
+Una vez que los tenemos,
+y entonces predigo cuál es la palabra del medio.
+Si la probabilidad que predigo es incorrecta,
+Entonces, lo que hago es calcularlo usando la pérdida de entropía cruzada.
+Este es el proceso de una MLP convencional.
+Es un proceso muy sencillo.
+Por eso, el entrenamiento también es especialmente rápido.
+Después de la propagación hacia atrás,
+y se actualizan los parámetros con el descenso de gradiente.
+Solo hay que repetir este proceso para seguir entrenando y listo.
+basándome constantemente en las palabras que la rodean,
+y así adivinar cuál es la palabra central a partir de su contexto.
+y así se puede predecir y construir este espacio vectorial.
+¿Ya sabes qué palabras suelen aparecer juntas?
+Entonces, ¿cuál es el otro método?
+Skip-gram.
+Este, en cambio, es prácticamente al revés.
+Es decir, utiliza la palabra central para predecir cada una de las palabras de su contexto.
+Por ejemplo, digamos que hoy me apetece comer una manzana.
+Entonces, su entrada es la palabra central, y a partir de ella, predice las cuatro palabras circundantes.
+y se encarga de predecir todas las palabras que la rodean.
+para realizar esta operación.
+Toma la palabra del centro.
+y se toma la palabra central.
+De hecho, esto es algo que se puede ver a simple vista.
+La cantidad de muestras para su entrenamiento es mayor que la de antes.
+Es decir, con una sola palabra podemos obtener cuatro muestras para el entrenamiento.
+porque tiene cuatro palabras a su alrededor.
+Este es el caso original para una ventana de tamaño 2.
+En el caso de un window de tamaño 1,
+entonces ya solo serían dos.
+Así, utilizo estas palabras de forma continua para predecir la palabra central.
+Es decir, las palabras que aparecen en su contexto.
+qué palabras deberían aparecer a tu alrededor.
+Y de nuevo, se utiliza la función de pérdida para calcular el error.
+y se realiza la propagación hacia atrás de forma continua.
+y se usa el descenso de gradiente para actualizar los parámetros.
+Y simplemente hay que repetir este cálculo una y otra vez.
+De hecho, vamos a verlo desde la perspectiva de una palabra en su contexto.
+De hecho, es más ventajoso para las palabras de baja frecuencia.
+Así podemos entender por qué, si una palabra aparece solo una vez...
+yo también puedo entrenarla cuatro veces.
+Por eso, es más ventajoso para las palabras de baja frecuencia.
+Así, una palabra que aparece una sola vez también puede generar múltiples ejemplos de entrenamiento.
+Ahora, si hacemos una simple comparación entre estos dos,
+la dirección es la opuesta.
+CBOW, por su parte, se basa en las palabras del contexto.
+se usan estas cuatro palabras del contexto para predecir una palabra central.
+Mientras que, eh, el Skip-gram, se basa en una palabra central,
+para predecir las palabras del contexto que la rodean.
+Por lo tanto, su dirección de entrenamiento es exactamente la opuesta.
+y su enfoque también es diferente.
+Porque, en el caso de CBOW,
+Entonces, ¿cómo se predice una palabra a partir de cuatro vectores?
+Lo que se hace en realidad es promediar estos cuatro vectores.
+Por eso, su velocidad de entrenamiento también es bastante rápida.
+Si aparecen algunas palabras de alta frecuencia,
+su rendimiento en el entrenamiento es excelente.
+Mientras que el modelo Skip-gram, por su parte, genera múltiples muestras a partir de cada una.
+Si la frecuencia con la que aparecen estas palabras es muy baja,
+o si mi cantidad de muestras es reducida,
+Entonces, hay algunos nombres propios,
+Este se entrena utilizando el modelo Skip-gram.
+el resultado será bastante bueno.
+Pero, independientemente del método que utilices,
+Ambos métodos funcionan.
+Esta decisión se toma en función de las características de tus datos.
+Pero el principio detrás de todo esto es el mismo.
+Y Word2Vec, en esencia, es capaz de predecir el contexto.
+De esta forma, las relaciones semánticas se incorporan automáticamente en el espacio vectorial.
+Así que ya no tienes que preocuparte por las estadísticas.
+Bien, ahora vamos a hacer una demostración.
+Pero no hace falta que escribamos este código nosotros mismos.
+No es muy diferente de una red neuronal normal.
+En el mundo real, también existen bibliotecas ya desarrolladas para esto.
+Ahora vamos a entrenarlo.
+Vamos a entrenarlo con la novela "Viaje al Oeste".
+A ver si podemos convertir todas las palabras de "Viaje al Oeste" en vectores.
+A grandes rasgos, el proceso se divide en tres pasos.
+El primer paso es...
+Primero, vamos a descargar la novela "Viaje al Oeste".
+y lo leemos en el programa.
+Así que vamos a usar un método para tokenizarlo.
+Claro, porque este paso no es estrictamente necesario.
+entonces se segmentará automáticamente.
+Pero la segmentación automática, a veces, por ejemplo, con el nombre «Sun Wukong»...
+te lo divide en "Sun" y "Wukong".
+lo cual no es muy bueno.
+porque para nosotros, «Sun Wukong» es una única palabra.
+Así que esto es algo que veremos más adelante.
+Llegamos a la era de los transformers.
+Hay algo a lo que deben prestar atención.
+Entonces, ¿por qué ahora simplemente lo llamamos una palabra?
+En realidad, eso no es del todo correcto.
+La forma más correcta de llamarlo es "token".
+Y hoy en día, con los grandes modelos, también hablamos constantemente del cobro por tokens.
+Es decir, la relación entre los tokens y las palabras no es de uno a uno.
+Es posible que un token represente un carácter, o que represente estos dos caracteres juntos.
+Porque suelen aparecer juntos con frecuencia.
+entonces lo agruparía todo junto.
+También es posible.
+corresponde a una palabra.
+Incluso puede que divida una palabra en dos partes.
+¿Y cuándo es más fácil hacerlo?
+Para algunas palabras compuestas,
+Por ejemplo, la palabra "review".
+entonces podría descomponerse en "RE" y "view".
+y en este último caso, una palabra puede incluso llegar a dividirse en dos partes.
+a eso se le llama un "token".
+Pero por ahora, podemos entenderlo simplemente como una palabra.
+Pero existen bibliotecas específicas para ello.
+Nos ayudará a segmentar las palabras.
+lo hará de una manera más precisa.
+Si lo comparamos con no hacer nada,
+Con que lo sepan es suficiente.
+Sun Wukong, Tang Sanzang,
+Si lo separas en "Tang" y "sēng", ya no tendrá mucho sentido.
+El Gran Sabio Igual al Cielo
+Tienes que tratarlo como una sola palabra.
+No lo dividas en «Qi», «Tian» y «Da».
+y el carácter 'Sheng'.
+Entonces no sería muy...
+Entonces, el entrenamiento no tendría mucho sentido.
+En realidad, esto es una especie de sesgo inductivo.
+Esto, cuando llegamos a los grandes modelos,
+volveremos a mencionar este punto con más detalle.
+Primero, permítanme explicarles qué es una palabra.
+Solo que ahora lo decimos así para abreviar.
+De hecho, la forma más correcta de llamarlo es "token".
+En nuestro contexto actual, su significado es prácticamente el mismo.
+Una vez tokenizado el texto,
+ya puedo configurarlo.
+Claro, también podemos... ¿qué es esto?
+Generar similitud.
+Es decir, generar la similitud.
+Dentro de este paquete ya viene Word2Vec.
+Entonces, ¿qué es Word2Vec?
+le configuramos algunos parámetros,
+Por ejemplo, tus frases.
+Es decir, el resultado que obtienes después de segmentarlo.
+Tamaño del vector.
+Básicamente, se refiere a la dimensión del espacio que has obtenido tras el entrenamiento.
+Por ejemplo, digamos que después de entrenar, obtenemos una dimensión de 100.
+Creemos que con 100 números,
+con los que se pueden representar todas las palabras.
+Esto suena mucho más pequeño que cien mil.
+Entonces, ¿cuál es el tamaño mínimo de la ventana de contexto?
+Podemos configurarlo en cinco,
+O incluso podemos configurarlo en dos, también sirve.
+Es decir, el 'min_count' es tres.
+Es decir, las palabras que aparecen con una frecuencia demasiado baja.
+no las voy a calcular.
+Es decir, pasarlo por el algoritmo SG.
+¿Y esto qué significa?
+Básicamente, se trata de cuál de los dos métodos vas a utilizar.
+Y si hablamos de SJ, en realidad es la abreviatura de skip gram.
+si es uno,
+significa que estoy usando Skip-gram.
+Si es cero,
+significa que estoy usando el método CBOW, que es diferente.
+EPÓCAS. Bueno, esto se refiere a cuántas rondas de entrenamiento voy a realizar.
+works, ¿cuántos hilos se van a ejecutar?
+Todo esto está bien, y así sucesivamente.
+Una vez que hemos completado el entrenamiento,
+Esto es solo una versión abreviada del código.
+Si les interesa, pueden echarle un vistazo.
+el nuestro es Jupyter Notebook.
+Ahí dentro encontrarán el código completo.
+Una vez completado el entrenamiento,
+Entonces, puedo llamar al método del modelo.
+Es decir, WV punto.
+Más similares
+¿Cuáles son las diez palabras más parecidas a Sun Wukong?
+Ya podemos verlo.
+Vamos a echar un vistazo a los resultados.
+Y lo que descubriremos es que...
+Entonces, si le echamos un vistazo...
+Podemos usar este método,
+vamos a extraer el vector que está dentro.
+Pero como lo entrenamos para que fuera de 100 dimensiones,
+Podemos echar un vistazo.
+Si solo miramos las primeras 20 dimensiones, veremos que son números más o menos como estos.
+¿Y si lo visualizamos?
+veremos que se trata de una serie de niveles de brillo como estos.
+No son más que cien números de punto flotante.
+Cada casilla representa una dimensión de color.
+En realidad, solo indica si el número es positivo o negativo y su magnitud.
+No representa un número específico en sí.
+Entonces, ¿qué significa esto en concreto?
+La combinación de estos 100 números...
+para así poder representar la palabra "Sun Wukong".
+De esta forma, hemos colocado a Sun Wukong en el espacio semántico.
+en una posición concreta.
+Entonces, ¿es preciso el entrenamiento que hemos realizado?
+Pero, ¿será capaz de expresar el significado?
+El resultado que hemos obtenido en el entrenamiento, la verdad, es que tampoco tiene una dimensionalidad muy alta.
+Y además, ahora son computables.
+Pero lo importante es, ¿realmente captura el significado?
+Vamos a ver si de verdad tienen un significado semántico.
+A continuación, usaremos la similitud del coseno que acabamos de mencionar.
+En realidad, el cálculo de su SIMILARIDAD se hace siempre de esta manera.
+Podemos crear nuestro propio método.
+De hecho, para calcularlo, después de hacer el producto punto,
+Después de calcular el producto punto,
+Hacemos lo suyo.
+Solo tenemos que dividirlo entre su producto y listo.
+Claro.
+También podemos utilizar los métodos nativos que ya vienen implementados.
+Ya lo han encapsulado todo por nosotros.
+Veamos la similitud entre Sun Wukong y Tang Sanzang.
+Y también, la similitud entre Sun Wukong y el emperador Taizong.
+En "Viaje al Oeste",
+De hecho, el emperador Taizong de Tang y Sun Wukong prácticamente no tienen ninguna relación.
+pero su relación con Tang Sanzang es bastante más estrecha.
+Como podemos ver,
+Entonces, ¿cuál es la similitud entre Sun Wukong y Tang Sanzang?
+y nos da un resultado de 0,17.
+En cuanto a Sun Wukong y el emperador Taizong, es de 0.05, lo que significa que prácticamente no tienen ninguna relación.
+Entonces, ¿cuáles son las palabras más cercanas a Sun Wukong?
+El Gran Sabio, Igual al Cielo, y Sha Wujing.
+y Zhu Wuneng.
+Ah, Arhat.
+Pero eso no significa que el entrenamiento sea preciso.
+Es que el número de épocas de entrenamiento fue demasiado bajo.
+Es solo una demostración.
+Además, en realidad, si lo comparamos con otros, "Viaje al Oeste"...
+el número de palabras que tiene es relativamente pequeño.
+Es posible que al entrenarlo no logremos una precisión muy alta.
+En la práctica, la escala de nuestro entrenamiento será mucho mayor que esta.
+Pero podemos darnos cuenta fácilmente de que...
+Parece que el modelo ha llegado a comprender la trama.
+Entonces, este espacio vectorial que hemos entrenado...
+También existen algunas diferencias de tono dependiendo del contexto.
+Todas estas diferencias se reflejan en este espacio vectorial.
+No tenemos por qué usar este tipo de ejemplos individuales.
+Ahora, echemos un vistazo a los vectores de palabras que hemos entrenado.
+Entonces, ¿cómo podemos visualizarlo en un gráfico?
+Queremos ver qué palabras están más próximas entre sí.
+Claro, porque 100 dimensiones ya superan nuestra capacidad de comprensión.
+Así que vamos a utilizar el PCA, que se usa en el aprendizaje automático.
+para reducir la dimensionalidad con el análisis de componentes principales.
+para comprimir todas las palabras en dos dimensiones.
+De esta forma, podremos ver qué palabras están más o menos cerca unas de otras.
+Por supuesto, esta compresión tiene un coste.
+Originalmente, yo tenía 100 dimensiones.
+y me lo has comprimido a dos dimensiones.
+Es inevitable que se pierda parte de la información.
+Además, como decíamos antes,
+Es que la muestra que usamos para el entrenamiento no es muy grande.
+Por lo tanto, es posible que existan algunas diferencias.
+Pero, aun así, podemos sacar algunas conclusiones de este gráfico.
+Por ejemplo, pueden observar a Bodhisattva y a Tathagata.
+Buda, el Emperador de Jade y Guanyin están un poco más cerca.
+y también están más cerca del Palacio Celestial.
+Sun Wukong, el Mar del Este, la Montaña de las Flores y Frutas.
+Mientras que la Montaña de Fuego, el Palacio del Dragón y el Bastón Dorado estarán más cerca entre sí.
+Y sorprendentemente, los demonios y Zhu Bajie están muy cerca.
+El Rey Demonio, el Gran Rey y los demonios menores también están muy cerca entre sí.
+Sha Seng y Bajie también están muy cerca.
+Maestro, Tang Sanzang, Sun Wukong...
+mientras que los nombres de Sanzang están muy próximos entre sí.
+Esto demuestra que, aunque se haya producido una pérdida de información,
+Como podemos ver, este entrenamiento tiene un cierto sentido.
+Si aumentamos el corpus de entrenamiento,
+el número de rondas de entrenamiento,
+la mejora en los resultados será mucho mayor.
+Así que, en resumen, el embedding...
+Pero los embeddings que se usan en los grandes modelos actuales,
+Es un poco diferente de lo que hemos explicado.
+Lo que acabamos de explicar sigue siendo estático.
+Más adelante veremos que existen versiones dinámicas.
+Pero la idea detrás es la misma.
+Y se ha convertido en la interfaz universal de la inteligencia artificial moderna.
+Las redes neuronales son buenas procesando tensores continuos,
+pero no pueden procesar símbolos discretos.
+Y el embedding es precisamente esa interfaz universal.
+Asigna a cada objeto discreto
+Cada texto en el lenguaje natural es un ejemplo típico de un objeto discreto.
+le asigna una representación vectorial.
+Y esta representación vectorial ya puede ser procesada y utilizada por el modelo.
+Por ejemplo, las palabras que usamos en nuestro lenguaje natural del día a día.
+la información de los usuarios,
+Nuestras imágenes, los distintos tipos de secuencias, como el habla,
+Todos estos pueden ser objetos discretos.
+Entonces, después del embedding,
+se les ha aplicado una codificación.
+se convierten en vectores continuos.
+y así el modelo puede procesarlos.
+Esto, de hecho, en el Transformer...
+Además, está el RAG, que probablemente usamos con frecuencia en el desarrollo de agentes.
+¿Qué es RAG?
+Entonces, ¿cómo realiza la recuperación de información RAG?
+Siempre se dice que lo primero es hacer la recuperación aumentada por consulta, ¿verdad?
+Entonces, ¿cómo realiza la búsqueda?
+En realidad, aunque muchos de los sistemas RAG actuales utilizan la recuperación por múltiples vías,
+Pero la recuperación por similitud de vectores es, sin duda, una de ellas.
+Además, hemos utilizado RAG.
+seguramente sabrás cuál es el primer paso.
+Si te dieran un montón de palabras,
+Si te damos un artículo,
+y te piden que lo integres en un sistema RAG.
+Entonces, lo primero es la segmentación de palabras, ¿verdad?
+De hecho, es justo lo que acabamos de explicar.
+Así podrán entender más o menos de qué va el principio de RAG.
+Esto lo explicaremos con más detalle en el curso de desarrollo de A-Zheng.
+También están los diversos sistemas de recomendación.
+Entonces, ¿cómo se establece la relación entre el usuario y el producto? ¿Verdad?
+Y entre los productos, es decir, cómo se hace la relación de producto a producto, o i-to-i.
+¿Cómo se establece la relación usuario-producto?
+Básicamente, lo primero que hay que hacer siempre es el paso del "embedding".
+Y ni hablar de los modelos para imágenes.
+¿Cómo se interpreta una imagen?
+También, por ejemplo, en el campo de la biología.
+O por ejemplo, las secuencias de aminoácidos, que son muy complejas.
+Todos estos son ejemplos de lo que se conoce como 'embedding'.
+Así que, siempre que los objetos sean originalmente símbolos discretos,
+Todo esto no se puede procesar directamente con una red neuronal.
+podemos primero mapearlos a un mismo espacio donde se puedan realizar operaciones.
+en un espacio continuo.
+Esta es la idea de los embeddings, que consiste en proyectar las palabras en un espacio vectorial.
+Entonces, ¿significa que ya podemos entender el lenguaje natural?
+y así podremos dar rienda suelta a todo nuestro potencial en el PLN.
+En realidad, tampoco es suficiente.
+Y esa es la 'embedding'.
+Entonces, ¿cuál es su función?
+De esta forma, las palabras dejan de ser símbolos discretos.
+Así, ya puede entrar.
+Ya se pueden realizar cálculos con ellas.
+y ahora se pueden calcular.
+y también podemos conocer la similitud entre ellas.
+y también se pueden procesar.
+y también pueden ser actualizados y utilizados continuamente por el modelo.
+Pero, por ejemplo, en el lenguaje natural,
+«No me gusta esta película» y «Me gusta esta película».
+En realidad, la única diferencia es la palabra "no".
+Si seguimos el método que acabamos de explicar,
+su similitud debería ser muy alta.
+Pero en realidad, sus significados son completamente opuestos.
+Apple ha lanzado un nuevo producto.
+y «me comí una manzana».
+ambas contienen la palabra "manzana".
+pero su significado es diferente.
+Pero si nos fijamos en el resultado que nos dio el embedding de antes,
+Son muy parecidos.
+Lo que demuestra que se trata simplemente de un embedding.
+solo puede entender las palabras,
+pero aún no puede entender las frases.
+Pero para comprender realmente el lenguaje, lo que se necesita es...
+Seguimos analizando la relación entre las palabras.
+Sobre todo porque estas tienen un orden.
+Y esto es, precisamente, lo que explicaremos más adelante sobre las RN.
+así como las GRU de las que también hablaremos.
+y de los problemas que las LSTM e incluso los Transformer se encargan de resolver.
+Bueno, hasta aquí el vídeo de hoy.

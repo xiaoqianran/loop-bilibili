@@ -1,0 +1,452 @@
+Let's take a look at the loss function.
+The loss function is crucial for training a model.
+So, in our series of videos on machine learning,
+in linear regression and logistic regression, respectively.
+we've already provided a detailed introduction to the loss function.
+But, some of you might have skipped the machine learning part.
+and started directly with deep learning.
+So, let's do a quick recap for everyone.
+So first, let's take a look at what a loss function actually does.
+So, after the model has been trained,
+We need to use a number to tell the model,
+just how badly you messed up in this training session.
+And it also tells the model what changes to make to get it a little less wrong next time.
+So, this number is actually provided by the loss function.
+calculated for us.
+Throughout the entire model training process,
+In fact, it plays three key roles.
+The first one is to measure the error.
+It has to tell the model,
+So, after this round of training,
+between your predicted results and the actual labels of the data.
+In other words, how big is the gap between your prediction and the actual value.
+We take the derivative of the loss function.
+And this result is what we call the gradient.
+And this is the starting point for backpropagation.
+And finally, it also serves to set the objective for the task.
+So, if I tell the model,
+A model won't understand if you just tell it, "I want to build a classification model."
+And that's all it takes.
+So, this loss function's job is to translate our human intentions into a language the optimizer can understand.
+In other words, it's the only channel for gradient descent.
+This way, the gradient descent algorithm knows what to do.
+So, let's take a look at how this process actually works.
+First, let's look at the loss function for regression tasks.
+And the one that's widely used is MSE.
+MSE stands for Mean Squared Error.
+Its formula looks something like this.
+So basically, the mean squared error represents three operations.
+First, I need to calculate the error.
+This means you subtract the actual label value from the predicted value.
+and then we square that error.
+And finally, we sum all of that up.
+and then take the average.
+And that's why it's called the Mean Squared Error.
+Each step is a separate operation.
+Let's look at it in reverse.
+And a lot of the time, you'll also see this,
+And that's what the formula looks like when you put it all together.
+But a lot of people might see a 1 over 2N in there.
+It's just an extra multiplication by one-half.
+Actually, this is just to make the derivative calculation more convenient.
+Either way, it doesn't affect the final optimization result.
+So, why do we square it?
+First off, it's to get rid of the positive and negative signs.
+If there are any,
+So, for example, let's take this red line.
+This is the linear model that we've predicted, right?
+And this point here represents the actual value.
+So, it's likely that each prediction is a little bit off from the actual value.
+Some of these errors are big, and some are small.
+If you don't square them,
+the large and small ones might just cancel each other out,
+as if there were no errors at all.
+But in reality, some of these errors are large,
+and some are small.
+Now, a lot of you might be asking,
+So, couldn't you just use the absolute value instead?
+So, that brings us to the question: why not just use the absolute value?
+By squaring the error, you're essentially amplifying it.
+For instance, we obviously want the error to be zero.
+But other times, my calculated error might be three.
+and when I square it, that's nine.
+So, this value actually gets bigger.
+But what if, for instance, my calculated error is 0.4?
+The difference is actually quite small already.
+So, if I square that, I get 0.16.
+This makes the error even smaller.
+This way, we're making the model more sensitive to larger errors.
+In other words, it prioritizes the big picture over minor details.
+This allows it to
+Of course, squaring the error brings another advantage.
+And its derivative is incredibly simple.
+is two times...
+which is the predicted value minus the actual value.
+So, as soon as you see this,
+and you'll see what I mean.
+So, why do a lot of people immediately multiply it by one-half?
+So, it's just the residual.
+So, this way, it's a straight line that passes through the origin.
+The further you are from it,
+the larger it gets, right?
+The closer you get to the origin, the smaller it becomes.
+This way, it can adaptively compensate for the error.
+But what if we use MAE instead?
+it actually remains constant.
+you won't be able to calculate the derivative.
+But MSE actually makes an underlying assumption.
+It assumes that our data is actually Gaussian distributed.
+In other words, a normal distribution.
+In this case, the majority of the data points are still very close to zero.
+and the further you get from zero, the rarer they become.
+So, in this case,
+Then, MMSE is equivalent to maximum likelihood estimation.
+So, where MSE really shines is when the errors are symmetrical.
+some predictions are large,
+while others are under-predicted.
+and they're also clustered around zero.
+and the closer they are to zero, the more of them there are.
+And there aren't any data points that are way off the mark.
+In situations like this, using MSE is actually a perfect fit.
+But a lot of the time, you do have some outliers.
+This means the error is just outrageously large.
+In cases like this, squaring the error will just make the problem even worse.
+So, in cases where you have a lot of these outliers,
+using MSE wouldn't be very appropriate.
+So, we can use the absolute value, which is the MAE.
+Another thing is, let's assume the target is continuous and comparable.
+This means that the error for X2 is four times more severe than for X1.
+This holds true for things like housing prices and temperature.
+But what if you're dealing with continuous values?
+And that, in essence, is what a regression task is all about.
+But if you're predicting categories,
+For example, predicting a cat as a dog.
+or predicting a dog to be an airplane.
+So, for classification tasks,
+In these cases, you're either right,
+or it's just wrong.
+There's no issue of magnifying the error or anything like that.
+So in a situation like this,
+So, what about MSE?
+So, it's really not a good fit for classification tasks.
+But actually, classification tasks have an even bigger problem.
+the gradient will vanish.
+making it unusable.
+So, let's take a look.
+So, MSE is just so great, right?
+So why don't we use it for classification?
+In binary classification, we use the sigmoid function to output a probability.
+to see whether it belongs to the positive class or the negative class.
+So, for the sigmoid, the calculation is basically, uh, written like this.
+So, that's the loss function.
+So, if we do backpropagation to calculate the derivative of L with respect to Z...
+So, the derivative of L with respect to Z... well, that's just L itself.
+And for Y times Y, that's the derivative of Y with respect to Z.
+So, it can be written out roughly like this.
+And of course, the derivative of the sigmoid function is just this.
+So, it's just Y times one minus Y.
+For example, let's say we get a positive sample today.
+So it's being classified.
+or it's one.
+or it's zero.
+So, the correct value for this classification should be one.
+But our model predicted it to be zero.
+So in a situation like this, when we do the math...
+So, what should its derivative be?
+So its derivative should be extremely large, right?
+So, let's get these parameters fixed, right?
+But in reality, if you plug in zero,
+you'll find that the entire derivative evaluates to zero.
+Basically, what this means is that the sigmoid function has been squashed flat around zero.
+and you can't update the parameters anymore.
+Because your derivative is zero.
+This is something we've covered when we talked about backpropagation.
+Because every time, it's the learning rate multiplied by the derivative, right?
+to adjust the parameters.
+So, if the derivative is zero,
+the parameters just stop updating.
+In other words, my prediction of 'win' was the most egregious error possible.
+For example, the correct answer is one, but I predicted it to be zero.
+But what happens is, the training just grinds to a halt.
+So, to put it simply, you can't use MSE for classification tasks.
+So, what should the loss function for a classification task look like?
+So, when it comes to classification,
+So, what should our new objective be?
+In other words, how high is the probability P that the model assigns to the true class.
+So for this picture, the probability you should assign to it being a dog is one.
+That's the best-case scenario.
+If you predict the probability of it being a dog is zero,
+that would be the worst-case scenario.
+If the prediction is 0.5,
+that's basically the same as just guessing.
+So, obviously, we want that predicted P to be as high as possible.
+So, what we're inputting here is a probability.
+So in this case, it's no longer just a single number.
+Is it a probability between 0 and 1?
+The model assigns a score to the true class.
+rather than something like how many classes it's off by.
+So, what we want is for it to be monotonically decreasing with respect to P.
+In other words, the larger P is,
+the smaller the loss.
+Right?
+So, when P is one,
+the loss would be zero, right?
+That means its prediction is completely correct.
+But what if the prediction is way off?
+the penalty should be more severe.
+So, if its prediction is zero,
+For the positive class, the prediction 'p' should be one, but when the prediction is zero...
+the loss should be infinite.
+This sends a strong signal to the model that it needs to correct its mistake.
+You can't have the penalty for being completely wrong be the same as for being just a little bit wrong.
+That won't work.
+And it's additive across multiple samples.
+Because, as we know,
+So, for those N independent samples,
+So, the total loss is best represented as a sum.
+If you're dealing with continuous multiplication,
+Now, as you all know,
+Because it's a value between 0 and 1.
+Even if you just multiply 0.9 by itself four times, it drops down to 0.6.
+If you multiply it by itself ten more times,
+and with enough multiplications, it just becomes zero.
+In this case, we can't calculate the derivative again.
+So, it's best to find one that fits these four characteristics.
+So, we need one that fits these four characteristics.
+Generally, there are two of them.
+One is one minus P, which is your probability subtracted from one.
+So, it's basically just how wrong you were, right?
+So, if your prediction is one,
+then you're completely correct.
+But if you predict zero, you're wrong.
+is one.
+The other one is negative log p.
+So, let's take a look at the graphs of these two functions.
+In reality, for example, it's one minus P.
+So, this curve as a whole still comes down to the four points we mentioned earlier.
+They are basically all composite.
+But in reality, the third point doesn't hold true.
+So, what's the third one?
+So, the more mistakes it makes,
+the greater the penalty should be.
+But its value, its maximum value, is actually one minus P.
+Its maximum value is one.
+no matter how wildly wrong I am,
+I predicted it to be zero.
+So your penalty is just one, and that's it.
+So that's not going to work, right?
+So, that's not ideal.
+So let's take a look at negative log p.
+Let's see what happens when its value is between 0 and 1.
+Actually, it satisfies all of these conditions.
+When your prediction is wrong,
+its loss is infinite.
+And when you predict the one and only correct answer,
+the loss is zero.
+And on top of that, it has another advantage.
+Now, as we know,
+log of a times b is equal to log of a plus log of b.
+So, when we're actually doing the calculations,
+Because, in essence, it's the product of this whole series of probabilities, right?
+And finally, this allows us to convert it into a summation.
+This way, it won't just become zero.
+So, that's why we generally use the negative log of p as our loss function.
+to be the loss function for classification tasks.
+So, of course, when we write the loss function as negative log p...
+It's not something that was just pulled out of thin air or discovered by accident.
+Actually, it comes from Information Theory.
+or in information theory, the meaning it represents is quite similar.
+When something has a great many possibilities,
+It means the outcome is uncertain.
+So, we want to be able to determine its outcome.
+So, how much extra information do we need?
+When something is absolutely certain,
+Does that mean you need very little information?
+For example, let's say you have a loaded coin.
+and it lands on heads 99% of the time.
+So, if I flip it, and I ask you whether it'll land on heads or tails...
+You'd need very little information to make that call.
+You can just say it's going to land heads up.
+But what if both sides are heads?
+So, if I just ask you directly,
+both sides are heads.
+Then the amount of information you need is zero.
+This means it's a 100% certain event.
+No matter how you toss it,
+and they all land heads up.
+So, as you can probably tell from these two letters,
+It refers to the difference between two distributions.
+So, which two distributions are we talking about?
+So, for classification tasks,
+So, these two distributions refer to the probability distribution predicted by the model,
+and the distribution of the true labels.
+in other words, the gap between the two.
+Of course.
+The smaller the gap between these two,
+And the more reliable the model's prediction will be.
+First, let's take a look at the binary classification task.
+But wait, that's not right.
+Wait, didn't you just say it was negative log p?
+Why does it look so complicated when you write it out like that?
+Well, the thing is, in binary classification tasks...
+In reality, there are only two possibilities.
+Or, to put it another way, in the original data...
+it's either positive,
+or it's negative.
+So, this is how we actually write it.
+In fact, there are two ways to write the formula for this.
+But, in order to force it into a single formula,
+we used a little trick.
+automatically turning the other one off.
+For example, let's say our true label is positive.
+So, when the sample Y equals one,
+You'll find that this latter term just becomes zero.
+So you can just ignore it, because one minus Y, one minus one, is just zero, right?
+So, Y times Y... well, it becomes Y times the log of y.
+So, what this really means is the negative log of p.
+If our sample is a negative sample,
+So, that term is just zero to begin with.
+Then the first term here becomes zero.
+So, only the latter term is useful here.
+And since one minus Y is just one,
+So we can just ignore that part.
+So, it's log of one minus y, y hat.
+And this part here is the prediction.
+So in reality, it collapses down to something like this.
+So, the reason we write it this way is just for the sake of our calculations.
+Let's express this with a formula.
+Its gradient calculation is actually combined with the sigmoid function.
+So, we know that when we take the derivative of the loss function with respect to the sigmoid,
+But, its derivation is, uh, particularly complex.
+so I won't walk you through the derivation here.
+But the result we get is surprisingly simple.
+But when you look at the predicted value minus the actual value,
+This is a probability, you see.
+Because after it goes through the Sigmoid function, it's transformed into a probability.
+Hmm, why does this look so much like MSE?
+And that's actually no coincidence.
+They were designed as a pair in the first place.
+And that's how simple it is to calculate its derivative.
+And that's all there is to it.
+And that's actually another one of its advantages.
+So why is it so widely used?
+And the derivative is simple.
+This makes backpropagation much simpler.
+I won't go through the mathematical derivation with you all.
+So, all you need to remember is this result.
+The same applies to multi-class classification.
+So, let's take a look.
+So, let's say our neural network gives us an output.
+We're dealing with a three-class classification task.
+one of which is two,
+one is one,
+and the other is 0.1.
+It has the highest score.
+But this doesn't represent a probability.
+Right?
+So, what do we do?
+So, first, we need to take these three values and run them through the Softmax function.
+This process makes them add up to a total of one.
+Let's say an event can happen in three different ways.
+So the probabilities for each might be, say, 0.66, 0.24, and 0.1.
+And they have to add up to one, right?
+And that's pretty much the main job of the softmax function.
+It takes the values of these three and transforms them into a sum.
+a single value that equals one.
+And it's always a positive number.
+And at this point, they've been converted into probabilities.
+So, once we have these probabilities,
+So, we just need to plug it into the formula.
+So, as you can see, when we plug it in, it basically looks like this.
+So, one times this, plus zero times that, and so on.
+So let's assume that our prediction for D is the correct one.
+is the true value.
+the one in the first position.
+So, the corresponding true labels for the other two should be zero.
+Because out of the three, only one can happen, right?
+And that's exactly what the Bernoulli distribution is all about.
+So, when only one of them can happen,
+So, the probability of the other events occurring is zero.
+So, the true value is one, and when you multiply it by one...
+So you can see, this is the magnitude of the loss.
+And the same goes for calculating its derivative.
+The result is simply the predicted value minus the actual value.
+It's incredibly simple.
+It aligns perfectly with the four characteristics we discussed earlier.
+making it perfect for classification tasks.
+Plus, when it comes to backpropagation,
+Whether it's used for binary classification with the Sigmoid function,
+or multi-classification's Softmax,
+calculating the derivative is incredibly simple.
+This makes the computation extremely efficient.
+is pretty much the go-to choice
+it's the go-to choice for pretty much any kind of classification task.
+Alright, to wrap things up, let's do a quick summary.
+So, how do we choose between them?
+So, for regression tasks,
+A lot of the time, we just go ahead and use MSE for binary classification.
+And for multi-class classification, you just apply Softmax.
+So, their loss formulas basically look something like this.
+It looks incredibly complex.
+But their gradients are actually very simple to calculate.
+Under the hood, they also make certain assumptions about the distribution of the data.
+So, for MSE,
+we assume it follows a Gaussian distribution.
+in other words, a normal distribution.
+As for binary classification, we assume it follows a Bernoulli distribution.
+In essence, these two are mutually exclusive.
+it either happens,
+or it doesn't.
+Both can't happen at the same time.
+So, what about multi-class classification?
+This is essentially the multinomial distribution.
+It's basically a further extension of the Bernoulli distribution.
+And we don't actually have to implement any of this ourselves.
+is implemented.
+So, let's take a look.
+Now, for regression tasks,
+So, once we bring in neural networks,
+and you'll see it's just the MSE loss.
+So, for the loss function...
+You just need to plug in the predicted values and the actual values.
+Now, for binary classification tasks,
+For binary classification, you just use logistic regression.
+And then, for multi-class classification,
+In these cases, it's actually quite simple.
+But, there's a hidden catch here.
+As we know,
+So, when we're writing the code to define our model,
+So, as we know, when we use this one...
+and you can get a whole bunch of neurons all set up.
+and that defines every single layer for us.
+And finally, we apply the softmax function to the last layer.
+But what we'll find is...
+its accuracy gets stuck at a random guess level.
+It just won't train.
+So, why is that?
+And that's because of this step right here.
+it has already applied softmax on its own.
+So, when you're defining your model,
+So, when we're defining our network,
+don't include the Softmax layer in your code.
+The loss function will take care of it internally.
+So, what it wants you to output is the most direct, raw result.
+that result.
+It will apply the Softmax function on its own.
+So, in situations like this, the training process gets a real boost.
+So, to wrap things up.
+So, the optimizer decides the path we take.
+The loss function.
+determines where to go.
+So, the loss function essentially has three roles.
+MSE is pretty much exclusively for regression tasks.
+So, in the next lesson, we'll start introducing some code.
+Let's see how a very simple neural network works.
+And at that point,
+So, when we're looking at this kind of code,
+and it'll all make sense.
+And from an engineering perspective, remember this:
+So, when you're implementing this Softmax layer, never, ever write it yourself.
+Alright then.
+So, about the loss function...
+So that's a quick rundown for you all.
