@@ -1,0 +1,11 @@
+GQAGQA级
+Group query attention
+是谷歌提出的一种高效注意力机制
+它介于MHA和MQA之间
+多个查询头共享一组键值
+对K和V向量比Q向量更短
+从而降低了kv cash的显存占用
+GQA被la等模型广泛采用
+目前拉玛三在GITHUB上已经有了接近3万个st
+可以通过hagfist transformers库中的拉马源码
+去查看GQA的射线方法

@@ -1,0 +1,12 @@
+Sliming attention
+Swiming attention
+是由英特尔在2024年
+随推理框架x fast transformer
+提出的一种CPU专用的优化方案
+不同于GPU上流行的flash attention
+采用二维分块
+slime attention采用一维分块技术
+无需flash attention在计算时所需的重复迭代修正
+更适合多核CPU的并行计算
+目前相关的GITHUB仓库已经超过了400个star
+可以通过p install或者docker进行一键安装

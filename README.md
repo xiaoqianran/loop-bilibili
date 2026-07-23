@@ -1,107 +1,78 @@
 # loop-bilibili
 
-B 站自动化与数据采集（**模块化**）。根目录 **`main.py`** 统一入口；公共能力在 **`packages/loop_core`**；业务在 **`modules/*`**。
+B 站自动化与数据采集（**单仓**）。根目录 **`main.py`**；公共库在 **`packages/`**；业务在 **`modules/`**。
 
-对齐：[loop-zhihu](https://github.com/xiaoqianran/loop-zhihu)。数据经 [opencli](https://github.com/jackwener/OpenCLI) `bilibili` adapter。
-
-**默认防风控**：列表类 `page_delay≈1.5s`；逐视频类 `item_delay≈2s`（温和提速，仍 **serial** + jitter + 退避，**不并发**）。写操作（发评/关注）不做成模块。
+- **字幕（现行）**：`packages/bili_subbatch` — SubBatch HTTP/WBI，**不依赖 opencli**
+- **列表 / 总结 / 评论**：仍走 [opencli](https://github.com/jackwener/OpenCLI) `bilibili` adapter
+- **过世方案**：`legacy/opencli/`（旧 opencli 字幕）
 
 ## 架构
 
 ```text
 loop-bilibili/
 ├── main.py
-├── config.example.yaml
-├── catalogs/                 # catalog 导出
-├── data/                     # hot/ranking/feed/summary/... 运行输出（gitignore 可选）
-├── packages/loop_core/       # opencli、限速、batch resume
+├── packages/
+│   ├── loop_core/          # opencli 运行器、限速、进度（列表/总结/评论）
+│   └── bili_subbatch/      # 字幕 HTTP 客户端 + pack
 ├── modules/
-│   ├── catalog/              # ✅ user-videos 全量目录
-│   ├── discover/             # ✅ hot / ranking / search
-│   ├── feed/                 # ✅ feed 动态
-│   ├── summary/              # ✅ AI 总结（item 限速 + resume）
-│   ├── subtitle/             # ✅ 字幕
-│   ├── comments/             # ✅ 评论
-│   └── item_batch/           # 共享串行批处理
-└── tests/
+│   ├── catalog/ discover/ feed/ summary/ comments/
+│   └── subtitle/           # → bili_subbatch
+├── legacy/opencli/         # 过世：opencli 字幕
+├── catalogs/               # UP 投稿目录（可提交）
+├── data/
+│   ├── subtitle/           # 抓取工作区（gitignore）
+│   └── subtitles/          # 瘦归档 srt+txt+index（进 git）
+└── docs/DATASET.md
 ```
 
 ## 快速开始
 
 ```bash
+# 依赖：列表类仍需 opencli；字幕仅需 Python 3.10+
 opencli bilibili --help
+
 python3 main.py modules
-python3 main.py status
-
-# 列表 / 发现（conservative）
-python3 main.py hot --limit 5
-python3 main.py ranking --limit 5
-python3 main.py search "AI" --limit 5
-python3 main.py feed --limit 5
-
-# UP 目录
 python3 main.py catalog 2071007724 --name 海安雨
 
-# 逐视频（更严 item_delay，支持 --catalog + --resume）
-python3 main.py summary --bvid BV1BVEs6LENZ
-python3 main.py subtitle --catalog catalogs/2071007724-海安雨 --limit 3
-python3 main.py comments --bvid BV1BVEs6LENZ --comment-limit 10
+# 字幕（SubBatch，推荐 Cookie）
+export BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...'
+python3 main.py subtitle --catalog catalogs/2071007724-海安雨 -o data --resume
+
+# 打包瘦数据并准备提交
+python3 main.py pack-subtitles --src-root data/subtitle -o data/subtitles --skip-empty-up
 ```
 
-## 模块状态
+## 模块
 
-| 模块 | 状态 | opencli | 限速类型 |
-|------|------|---------|----------|
-| catalog | ✅ | user-videos | list |
-| hot | ✅ | hot | list |
-| ranking | ✅ | ranking | list |
-| search | ✅ | search | list |
-| feed | ✅ | feed | list |
-| summary | ✅ | summary | **item** (~2s 默认) |
-| subtitle | ✅ | subtitle | **item** (~2s 默认) |
-| comments | ✅ | comments | **item** (~2s 默认) |
+| 模块 | 后端 | 说明 |
+|------|------|------|
+| catalog / hot / ranking / search / feed | opencli | 列表类，page_delay≈1.5s |
+| summary / comments | opencli | item 串行，默认 ~2s |
+| **subtitle** | **bili_subbatch** | SubBatch，默认 ~0.4–0.5s |
+| pack-subtitles | bili_subbatch.pack | 工作区 → `data/subtitles` |
 
-非目标（不实现为归档模块）：`comment` 发帖、`follow`/`unfollow` 等写操作；大体积 `download` 为可选扩展。
+## 字幕数据
 
-## 限速 profile
-
-| profile | page_delay | item_delay | 用途 |
-|---------|------------|------------|------|
-| **conservative**（默认） | 1.5±0.5s | **2.0±0.5s** | 日常 / 温和提速 |
-| balanced | 1.0±0.3s | 1.5±0.4s | 再快一点 |
-| aggressive | 0.3±0.1s | 1.2±0.3s | 调试（易风控） |
-
-字幕/总结/评论 **仅串行**，不通过提高并发提速。需要更慢可 `--item-delay 5`。
-
-批量 summary/subtitle/comments：`done.json` + `results.json` + `items/*.json`，默认 resume。
-
-## 字幕数据与 GitHub
-
-`data/` **默认 gitignore**，不要把原始 `items/results`（含完整 cue 数组）提交进本仓。
-
-推荐用独立工具 [loop-bilibili-subbatch](https://github.com/xiaoqianran/loop-bilibili-subbatch) 的 **`pack`** 生成瘦数据集，推到数据仓 [loop-bilibili-subtitles](https://github.com/xiaoqianran/loop-bilibili-subtitles)：
+见 [docs/DATASET.md](docs/DATASET.md)。归档示例在 **`data/subtitles/`**（已含多 UP 的 srt/txt）。
 
 ```bash
-python3 -m bili_subbatch pack \
-  --src-root ./data/subtitle \
-  --catalogs ./catalogs \
-  -o ../loop-bilibili-subtitles
+ls data/subtitles/ups/
 ```
 
-方案细节： [docs/DATASET.md](https://github.com/xiaoqianran/loop-bilibili-subbatch/blob/main/docs/DATASET.md)。
+## 限速
 
-## 关于限速与风控（摘要）
+| 场景 | 默认 |
+|------|------|
+| 列表 page_delay | 1.5±0.5s（conservative） |
+| 字幕 delay | profile 映射 ≈0.5s（非 opencli 的 2s） |
+| 总结/评论 item_delay | ~2s |
 
-投稿列表/发现串行分页；逐视频操作间隔必须 **严于** 列表。识别 `-799` / `-412` / `-352` 等信号并退避。B 站无公开 QPS SLA；策略为社区实践下的保守默认。
+字幕可用 `--item-delay 0.3` 覆盖；**仅串行**。
 
-检索渠道：错误码镜像、bilibili-api FAQ、分页 sleep 实践、CSDN/掘金/知乎讨论、RSSHub 412 issue、开放平台/小程序频率说明、合规动态。
+## 过世方案
 
-## 测试
-
-```bash
-python3 -m unittest tests.test_batch_and_profiles -v
-```
+`legacy/opencli/` — 旧 `bilibili subtitle` 路径，含假阳性 429、偏慢等问题，**不要再用**。
 
 ## License
 
-MIT
+MIT（工具代码）。字幕文本权利归原 UP / B 站，见 `data/subtitles/NOTICE`。

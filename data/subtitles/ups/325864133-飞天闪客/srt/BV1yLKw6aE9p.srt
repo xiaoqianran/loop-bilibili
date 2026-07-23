@@ -1,0 +1,1107 @@
+1
+00:00:00,000 --> 00:00:02,780
+Kimi's latest K three is buzzing summed up in three words,
+
+2
+00:00:02,780 --> 00:00:04,000
+big, good, and open source!
+
+3
+00:00:04,240 --> 00:00:06,580
+But now, each large language model bests the last
+
+4
+00:00:06,580 --> 00:00:08,240
+and tomorrow, they get even bigger!
+
+5
+00:00:08,420 --> 00:00:10,060
+So what are they competing over, exactly?
+
+6
+00:00:10,060 --> 00:00:11,490
+Well, it boils down to three things,
+
+7
+00:00:11,490 --> 00:00:12,840
+first, the model’s parameter count
+
+8
+00:00:12,840 --> 00:00:14,540
+that is the most literal meaning of large
+
+9
+00:00:14,540 --> 00:00:15,540
+in large language model .
+
+10
+00:00:15,680 --> 00:00:17,020
+Today, open source model shave
+
+11
+00:00:17,020 --> 00:00:18,910
+started joining the one T parameter race,
+
+12
+00:00:18,910 --> 00:00:21,070
+including Meituan's LongCat, DeepSeek, and Kimi,
+
+13
+00:00:21,070 --> 00:00:23,520
+a feat once solely the domain of closed source models.
+
+14
+00:00:23,660 --> 00:00:25,690
+The second battleground is context length—back then,
+
+15
+00:00:25,690 --> 00:00:26,920
+we’d often test this by seeing
+
+16
+00:00:26,920 --> 00:00:27,560
+if a single chat
+
+17
+00:00:27,560 --> 00:00:29,780
+could read through the whole of “The Three Body Problem”.
+
+18
+00:00:30,080 --> 00:00:31,520
+For cutting edge large language models,
+
+19
+00:00:31,520 --> 00:00:33,310
+a million token context length has swiftly gone
+
+20
+00:00:33,310 --> 00:00:34,960
+from a novel gimmick to a standard feature.
+
+21
+00:00:35,000 --> 00:00:36,610
+Because even a regular person
+
+22
+00:00:36,610 --> 00:00:38,190
+can spawn tons of long agent
+
+23
+00:00:38,190 --> 00:00:40,450
+tasks—beyond just chatting on a webpage.
+
+24
+00:00:40,450 --> 00:00:42,680
+The third battleground is modal support.
+
+25
+00:00:42,920 --> 00:00:45,240
+Supporting more modalities beyond text
+
+26
+00:00:45,240 --> 00:00:47,440
+greatly impacts the user experience.
+
+27
+00:00:47,640 --> 00:00:50,560
+For instance, we always ask: when will DeepSeek support images?
+
+28
+00:00:50,760 --> 00:00:53,060
+That speaks to the hunger for multimodal capabilities,
+
+29
+00:00:53,060 --> 00:00:54,720
+and one reason Gemini blew up back then
+
+30
+00:00:54,720 --> 00:00:56,720
+was the debut of its native multimodal feature.
+
+31
+00:00:56,920 --> 00:00:58,970
+See? The current three point five Flash supports
+
+32
+00:00:58,970 --> 00:00:59,930
+up to five modalities,
+
+33
+00:00:59,930 --> 00:01:00,900
+while this new K three
+
+34
+00:01:00,900 --> 00:01:02,850
+brings all three of those key ones together!
+
+35
+00:01:02,930 --> 00:01:03,820
+two point eight T
+
+36
+00:01:03,820 --> 00:01:04,770
+params—the largest
+
+37
+00:01:04,770 --> 00:01:07,480
+open source model yet—plus a million token context
+
+38
+00:01:07,480 --> 00:01:09,050
+length AND multimodal support!
+
+39
+00:01:09,240 --> 00:01:10,930
+Plus, what piqued my curiosity is that,
+
+40
+00:01:10,930 --> 00:01:12,030
+as an open source model,
+
+41
+00:01:12,030 --> 00:01:14,580
+it ranked just behind GPT five point six and Fable five
+
+42
+00:01:14,580 --> 00:01:15,880
+in many key benchmark tests!
+
+43
+00:01:16,080 --> 00:01:17,600
+and some even snagged number one!
+
+44
+00:01:17,800 --> 00:01:19,860
+Of course, this bigness is just on the surface,
+
+45
+00:01:19,860 --> 00:01:21,610
+what truly matters are the technologies
+
+46
+00:01:21,610 --> 00:01:23,180
+behind the scenes that support it
+
+47
+00:01:23,180 --> 00:01:25,060
+and today, I will break it all down for you!
+
+48
+00:01:25,220 --> 00:01:27,740
+First, let us see what issues a high parameter count brings.
+
+49
+00:01:27,960 --> 00:01:29,790
+This is the bedrock of large language model s:
+
+50
+00:01:29,790 --> 00:01:30,970
+the Transformer architecture;
+
+51
+00:01:30,970 --> 00:01:32,890
+and within it, the part with the most parameters
+
+52
+00:01:32,890 --> 00:01:34,450
+are these Feed Forward Network layers,
+
+53
+00:01:34,450 --> 00:01:36,500
+which are just simple, multi layer neural networks.
+
+54
+00:01:36,500 --> 00:01:38,040
+except that the number of neurons
+
+55
+00:01:38,040 --> 00:01:39,340
+and thus, parameters is huge.
+
+56
+00:01:39,540 --> 00:01:40,790
+So, the fix is quite simple,
+
+57
+00:01:40,790 --> 00:01:43,100
+break it down into many smaller neural networks.
+
+58
+00:01:43,180 --> 00:01:44,430
+Then, for each new token,
+
+59
+00:01:44,430 --> 00:01:45,690
+a trained routing layer
+
+60
+00:01:45,690 --> 00:01:48,500
+directs it to one of those smaller neural networks.
+
+61
+00:01:48,680 --> 00:01:50,990
+This way, the total parameter count stays the same,
+
+62
+00:01:50,990 --> 00:01:51,850
+but for each token,
+
+63
+00:01:51,850 --> 00:01:54,440
+far fewer parameters are actually used in computation.
+
+64
+00:01:54,680 --> 00:01:57,410
+That is the classic MO E Mixture of Experts architecture ,
+
+65
+00:01:57,410 --> 00:01:59,220
+DeepSeek even put their own spin on it ,
+
+66
+00:01:59,220 --> 00:02:01,280
+adding  shared experts , dubbed DeepSeek MO E .
+
+67
+00:02:01,470 --> 00:02:03,660
+Kimi this time also uses an M O E architecture,
+
+68
+00:02:03,660 --> 00:02:05,560
+eight hundred and ninety six experts, only
+
+69
+00:02:05,560 --> 00:02:06,870
+sixteen activated at a time.
+
+70
+00:02:06,910 --> 00:02:08,820
+More precisely, its Latent Mo E scheme
+
+71
+00:02:08,820 --> 00:02:10,330
+optimizes compute efficiency
+
+72
+00:02:10,330 --> 00:02:13,020
+via dimension reduction in the expert routing layer.
+
+73
+00:02:13,280 --> 00:02:14,220
+Anyway, just recall this,
+
+74
+00:02:14,220 --> 00:02:15,830
+anything with latent prepended shares
+
+75
+00:02:15,830 --> 00:02:17,760
+one goal, to first shrink then expand dimensions.
+
+76
+00:02:17,800 --> 00:02:20,720
+so you can compute in this low d space to boost efficiency.
+
+77
+00:02:21,020 --> 00:02:22,940
+The latent in M L A works the same way.
+
+78
+00:02:23,220 --> 00:02:25,330
+Okay! So, M O E eases computational strain
+
+79
+00:02:25,330 --> 00:02:27,820
+by cutting down on parameters during inference.
+
+80
+00:02:28,020 --> 00:02:29,940
+But, the total parameter count stays the same,
+
+81
+00:02:29,940 --> 00:02:32,380
+and during training, all those params still get trained up.
+
+82
+00:02:32,620 --> 00:02:33,830
+But as models grow larger,
+
+83
+00:02:33,830 --> 00:02:35,630
+the Transformer layers get very deep,
+
+84
+00:02:35,630 --> 00:02:37,600
+which in turn makes the training process
+
+85
+00:02:37,600 --> 00:02:38,640
+prone to instability.
+
+86
+00:02:38,640 --> 00:02:40,590
+For these basic deep learning principles,
+
+87
+00:02:40,590 --> 00:02:42,840
+see my prior video, Understand A I in One Hour.
+
+88
+00:02:43,140 --> 00:02:45,420
+Of course, a classic structure, Residual Connection,
+
+89
+00:02:45,420 --> 00:02:46,820
+can fix this issue quite well.
+
+90
+00:02:47,040 --> 00:02:48,940
+So, outside each layer’s transformation,
+
+91
+00:02:48,940 --> 00:02:50,000
+you add an extra link
+
+92
+00:02:50,000 --> 00:02:52,880
+and just mindlessly tack on the prior value—super simple!
+
+93
+00:02:53,060 --> 00:02:54,670
+But there’s a snag: it’s too rigid.
+
+94
+00:02:54,670 --> 00:02:57,270
+For instance, by the time info from A one reaches A four,
+
+95
+00:02:57,270 --> 00:02:58,130
+not much is left;
+
+96
+00:02:58,130 --> 00:03:00,400
+so, ByteDance came up with a new scheme called HC.
+
+97
+00:03:00,480 --> 00:03:02,560
+Simply put, they copy A one multiple times,
+
+98
+00:03:02,560 --> 00:03:04,820
+and what gets passed on is not just added on,
+
+99
+00:03:04,820 --> 00:03:07,080
+but rather multiplied by a learnable matrix.
+
+100
+00:03:07,270 --> 00:03:08,450
+This way, the info passed along
+
+101
+00:03:08,450 --> 00:03:10,070
+stands a better chance of being retained.
+
+102
+00:03:10,190 --> 00:03:12,750
+But the snag is, if this learning matrix has no constraints,
+
+103
+00:03:12,750 --> 00:03:15,230
+its repeated products could spiral out of control again.
+
+104
+00:03:15,420 --> 00:03:16,430
+So, DeepSeek's m H C
+
+105
+00:03:16,430 --> 00:03:19,260
+adds fluidity constraints to these learning matrices.
+
+106
+00:03:19,540 --> 00:03:20,960
+Simply put, it keeps these matrices,
+
+107
+00:03:20,960 --> 00:03:22,340
+no matter how they are multiplied,
+
+108
+00:03:22,340 --> 00:03:23,520
+within a controllable range
+
+109
+00:03:23,520 --> 00:03:24,660
+thus, an enhancement to H C.
+
+110
+00:03:24,920 --> 00:03:26,410
+But Kimi chose a different path.
+
+111
+00:03:26,410 --> 00:03:27,760
+In fact, from a broader view,
+
+112
+00:03:27,760 --> 00:03:29,760
+no matter how these methods get optimized,
+
+113
+00:03:29,760 --> 00:03:31,480
+they all add to the Residual Stream
+
+114
+00:03:31,480 --> 00:03:33,160
+layer by layer, from bottom to top.
+
+115
+00:03:33,400 --> 00:03:35,530
+whereas Kimi, right within the Residual Stream,
+
+116
+00:03:35,530 --> 00:03:36,870
+uses the attention mechanism
+
+117
+00:03:36,870 --> 00:03:39,020
+to perform a weighted sum of prior residuals.
+
+118
+00:03:39,260 --> 00:03:40,770
+to ensure each layer’s residual info
+
+119
+00:03:40,770 --> 00:03:41,940
+gets a chance to be noticed.
+
+120
+00:03:42,120 --> 00:03:44,790
+This is Kimi’s Attention Residuals—many big shots
+
+121
+00:03:44,790 --> 00:03:45,990
+reposted and liked it
+
+122
+00:03:45,990 --> 00:03:46,530
+back then,
+
+123
+00:03:46,530 --> 00:03:48,000
+sparking community chatter,
+
+124
+00:03:48,000 --> 00:03:49,640
+and I even made a video on it!
+
+125
+00:03:49,870 --> 00:03:51,630
+And this time, the Kimi K three model
+
+126
+00:03:51,630 --> 00:03:53,870
+puts that tech from that classic paper to use.
+
+127
+00:03:53,990 --> 00:03:57,110
+Nice! Another open source model with new tech to check out!
+
+128
+00:03:57,510 --> 00:03:59,900
+Okay! So, the issues stemming from vast parameters
+
+129
+00:03:59,900 --> 00:04:01,960
+computational load and training stability
+
+130
+00:04:01,960 --> 00:04:03,670
+are solved via the familiar M O E
+
+131
+00:04:03,670 --> 00:04:05,480
+and Kimi is own Attention Residuals.
+
+132
+00:04:05,680 --> 00:04:07,140
+So, what about the computation issues
+
+133
+00:04:07,140 --> 00:04:08,800
+stemming from that million token context?
+
+134
+00:04:09,020 --> 00:04:11,030
+Back to this Transformer architecture diagram—indeed,
+
+135
+00:04:11,030 --> 00:04:12,810
+the biggest issue with million token contexts
+
+136
+00:04:12,810 --> 00:04:15,140
+is that it balloons the computation for the Attention Layer.
+
+137
+00:04:15,320 --> 00:04:16,960
+since each token in the Attention Layer
+
+138
+00:04:16,960 --> 00:04:18,390
+must run an attention calculation
+
+139
+00:04:18,390 --> 00:04:20,320
+with every other token to yield a coefficient.
+
+140
+00:04:20,540 --> 00:04:22,140
+So, how do we cut down on this compute?
+
+141
+00:04:22,300 --> 00:04:25,430
+Simple! One way is to shrink the vector length,
+
+142
+00:04:25,430 --> 00:04:28,080
+for example, M Q A, G Q A, M L A, and so on.
+
+143
+00:04:28,120 --> 00:04:28,900
+But these still
+
+144
+00:04:28,900 --> 00:04:29,750
+fall under dense
+
+145
+00:04:29,750 --> 00:04:32,340
+attention—meaning, the number of vectors computed
+
+146
+00:04:32,340 --> 00:04:33,180
+stays the same;
+
+147
+00:04:33,180 --> 00:04:34,900
+only the vector length is reduced.
+
+148
+00:04:35,100 --> 00:04:36,590
+Then, of course, there’s another class
+
+149
+00:04:36,590 --> 00:04:38,250
+that cuts down on the number of vectors
+
+150
+00:04:38,250 --> 00:04:40,780
+computed—say, by fixing a computation window to select tokens.
+
+151
+00:04:41,000 --> 00:04:43,470
+or, via some method, sieve out a few Tokens,
+
+152
+00:04:43,470 --> 00:04:44,440
+not all of them.
+
+153
+00:04:44,760 --> 00:04:48,320
+Classic methods say, D S A, S W A C S, H C A, and so on
+
+154
+00:04:48,320 --> 00:04:50,270
+are termed sparse attention,
+
+155
+00:04:50,270 --> 00:04:53,130
+where the number of vectors grows sparse.
+
+156
+00:04:53,380 --> 00:04:54,900
+Then, there is the most potent class
+
+157
+00:04:54,900 --> 00:04:56,560
+that slashes computational complexity
+
+158
+00:04:56,560 --> 00:04:58,080
+straight from n squared down to n
+
+159
+00:04:58,080 --> 00:04:59,820
+this approach is called Linear Attention,
+
+160
+00:04:59,820 --> 00:05:01,300
+which includes these methods here.
+
+161
+00:05:01,520 --> 00:05:04,220
+So, K D A here stands for Kimi Delta Attention
+
+162
+00:05:04,220 --> 00:05:06,950
+an in house Linear Attention scheme from Kimi
+
+163
+00:05:06,950 --> 00:05:09,680
+that is also been used in this K three model.
+
+164
+00:05:10,000 --> 00:05:12,250
+Of course, this Linear Attention, in some ways,
+
+165
+00:05:12,250 --> 00:05:14,040
+reverts back to an RNN like method.
+
+166
+00:05:14,290 --> 00:05:15,960
+So, typically, every few layers,
+
+167
+00:05:15,960 --> 00:05:17,470
+a Linear Attention is used
+
+168
+00:05:17,470 --> 00:05:20,100
+and blended with the normal Attention Layer,
+
+169
+00:05:20,100 --> 00:05:22,570
+hence, it is called Hybrid Attention overall.
+
+170
+00:05:23,360 --> 00:05:23,770
+To sum up,
+
+171
+00:05:23,770 --> 00:05:26,120
+a large language model boils down to two key things,
+
+172
+00:05:26,120 --> 00:05:28,270
+the parameter count of its Feed Forward Network,
+
+173
+00:05:28,270 --> 00:05:30,280
+and the compute load of its Attention Layer.
+
+174
+00:05:30,440 --> 00:05:32,950
+And this time, K three uses the Latent MoE scheme
+
+175
+00:05:32,950 --> 00:05:35,800
+to sparsify the Feed Forward Network’s parameter count
+
+176
+00:05:35,800 --> 00:05:37,280
+and compress its length, too.
+
+177
+00:05:37,540 --> 00:05:39,410
+with K D A Linear Attention, greatly
+
+178
+00:05:39,410 --> 00:05:41,660
+cutting the Attention Layer's computation.
+
+179
+00:05:41,980 --> 00:05:44,810
+It also provides a strong case for the effectiveness
+
+180
+00:05:44,810 --> 00:05:47,200
+of the much debated Hybrid Attention Scheme.
+
+181
+00:05:47,440 --> 00:05:50,120
+then, they used their novel Attention Residuals
+
+182
+00:05:50,120 --> 00:05:51,810
+to ensure training stability.
+
+183
+00:05:51,810 --> 00:05:54,090
+I wager that many future open source efforts
+
+184
+00:05:54,090 --> 00:05:56,530
+will widely discuss and adopt these techniques.
+
+185
+00:05:56,780 --> 00:05:58,690
+So, I gave it a test myself
+
+186
+00:05:58,690 --> 00:06:01,530
+but using my prior model evaluation tool,
+
+187
+00:06:01,530 --> 00:06:04,010
+I ran into lots of server timeouts.
+
+188
+00:06:04,210 --> 00:06:06,420
+Perhaps this K three release broke out of its niche
+
+189
+00:06:06,420 --> 00:06:07,950
+so much that it crashed the servers
+
+190
+00:06:07,950 --> 00:06:09,390
+which counts as a worthy finding,
+
+191
+00:06:09,390 --> 00:06:09,920
+I would say!
+
+192
+00:06:09,960 --> 00:06:10,940
+As for the exact scores,
+
+193
+00:06:10,940 --> 00:06:13,360
+let us re test in a few days once server strain eases up.
+
+194
+00:06:13,630 --> 00:06:15,830
+Of course, what matters more is its agent capabilities
+
+195
+00:06:15,830 --> 00:06:18,230
+and in public tests, K three's performance was quite stellar.
+
+196
+00:06:18,390 --> 00:06:19,150
+Well, as it happens,
+
+197
+00:06:19,150 --> 00:06:21,540
+I’ve been working on automating agent evaluations lately,
+
+198
+00:06:21,540 --> 00:06:22,550
+so let’s give it a shot.
+
+199
+00:06:22,680 --> 00:06:23,910
+My plan is quite simple,
+
+200
+00:06:23,910 --> 00:06:25,450
+I create a directory like this,
+
+201
+00:06:25,450 --> 00:06:27,780
+and for each one, I pop in a task dot m d file
+
+202
+00:06:27,780 --> 00:06:29,600
+and jot down its task requirements.
+
+203
+00:06:29,780 --> 00:06:31,160
+Then, in the top level root dir,
+
+204
+00:06:31,160 --> 00:06:33,820
+have the agent tackle all tasks in each subdir, one by one.
+
+205
+00:06:34,140 --> 00:06:35,750
+So, my tasks comprise these,
+
+206
+00:06:35,750 --> 00:06:38,980
+which not only tests the model’s basic agent skills,
+
+207
+00:06:38,980 --> 00:06:41,340
+but also its overall planning prowess.
+
+208
+00:06:41,480 --> 00:06:43,480
+Plus, it is comprehensive and simple to test.
+
+209
+00:06:43,720 --> 00:06:45,520
+Plus, these tasks are all real ones
+
+210
+00:06:45,520 --> 00:06:46,950
+I face day to day—problems
+
+211
+00:06:46,950 --> 00:06:49,600
+that agents back then struggled mightily to solve.
+
+212
+00:06:49,950 --> 00:06:51,290
+First off, kudos to K three
+
+213
+00:06:51,290 --> 00:06:53,990
+it clearly used four separate sub agents in parallel
+
+214
+00:06:53,990 --> 00:06:55,040
+to get the job done,
+
+215
+00:06:55,040 --> 00:06:57,660
+and the output was super clear and straightforward.
+
+216
+00:06:57,860 --> 00:06:59,360
+In a past video of mine,
+
+217
+00:06:59,360 --> 00:07:03,130
+I praised Kimi Code’s ease of use it does look very slick!
+
+218
+00:07:03,330 --> 00:07:05,740
+And what is cool here is, an accident happened
+
+219
+00:07:05,740 --> 00:07:08,370
+that helped me test out some of its other skills.
+
+220
+00:07:08,550 --> 00:07:10,690
+So, since I’m running this task from my hotel,
+
+221
+00:07:10,690 --> 00:07:12,420
+and I have to head off to the World
+
+222
+00:07:12,420 --> 00:07:14,390
+Artificial Intelligence Conference soon,
+
+223
+00:07:14,630 --> 00:07:16,350
+So, I left the hotel early,
+
+224
+00:07:16,350 --> 00:07:17,670
+thus its net cut out.
+
+225
+00:07:17,850 --> 00:07:20,730
+So, once the net cut out, its fourth task went unfinished.
+
+226
+00:07:20,910 --> 00:07:23,150
+Once I got back to my hotel, I reconnected the net.
+
+227
+00:07:23,150 --> 00:07:26,440
+So, this was a perfect test to see if, midway through a task,
+
+228
+00:07:26,440 --> 00:07:27,980
+should the network cut out,
+
+229
+00:07:27,980 --> 00:07:30,820
+could it pick back up and finish the job properly.
+
+230
+00:07:31,100 --> 00:07:32,100
+At that point, I thought,
+
+231
+00:07:32,100 --> 00:07:33,900
+Oh man, was this recording all for naught?
+
+232
+00:07:33,900 --> 00:07:34,830
+But it pulled through
+
+233
+00:07:34,830 --> 00:07:36,610
+and ultimately completed all the tasks!
+
+234
+00:07:36,610 --> 00:07:37,960
+So, let us check out the results.
+
+235
+00:07:38,360 --> 00:07:41,420
+First, the text to audio, image to audio, and video workflow.
+
+236
+00:07:41,420 --> 00:07:44,100
+All A P I calls worked, and the page was intuitive.
+
+237
+00:07:44,300 --> 00:07:45,640
+Plus, kudos here: for video,
+
+238
+00:07:45,640 --> 00:07:47,440
+when I used Opus four point eight
+
+239
+00:07:47,440 --> 00:07:49,340
+before, the polling logic had flaws,
+
+240
+00:07:49,340 --> 00:07:51,060
+but K three nailed it this time.
+
+241
+00:07:51,290 --> 00:07:57,870
+Second, the large language model evaluation—this project required a full front end revamp, and yes, you can open it with a double click, and the logic is sound.
+
+242
+00:07:58,110 --> 00:08:00,230
+The review runs fine, and the styling is unchanged.
+
+243
+00:08:00,560 --> 00:08:01,900
+Third, three D file format
+
+244
+00:08:01,900 --> 00:08:03,890
+conversion—this requires pinpointing
+
+245
+00:08:03,890 --> 00:08:05,830
+where the Blender app sits on my PC
+
+246
+00:08:05,830 --> 00:08:08,360
+and knowing how to use its command line syntax.
+
+247
+00:08:08,590 --> 00:08:11,690
+So let us test this output just drag it straight into P P T,
+
+248
+00:08:11,690 --> 00:08:12,950
+and that works fine, too.
+
+249
+00:08:13,180 --> 00:08:15,220
+Fourth: adding features to spaghetti code!
+
+250
+00:08:15,220 --> 00:08:17,270
+This is that spaghetti code canvas app
+
+251
+00:08:17,270 --> 00:08:19,920
+I whipped up ages ago with some shoddy tokens—though,
+
+252
+00:08:19,920 --> 00:08:21,100
+gotta say, it IS flawed.
+
+253
+00:08:21,300 --> 00:08:24,100
+The new text addition feature click it, and zip happens!
+
+254
+00:08:24,100 --> 00:08:26,850
+Of course, this lets us test its problem fixing skills,
+
+255
+00:08:26,850 --> 00:08:29,140
+so let us give it another shot at fixing this.
+
+256
+00:08:29,310 --> 00:08:31,650
+In the end, those issues were all fixed with ease!
+
+257
+00:08:31,650 --> 00:08:34,430
+And based on my experience using it these past few days,
+
+258
+00:08:34,430 --> 00:08:36,530
+K three’s benchmark scores this time around
+
+259
+00:08:36,530 --> 00:08:37,510
+really pack a punch.
+
+260
+00:08:37,870 --> 00:08:39,690
+Lastly, some personal thoughts,
+
+261
+00:08:39,690 --> 00:08:43,080
+training a super large model is not just a tech issue,
+
+262
+00:08:43,080 --> 00:08:45,030
+it is more about cost and risk.
+
+263
+00:08:45,230 --> 00:08:47,220
+A single training run might need thousands
+
+264
+00:08:47,220 --> 00:08:49,110
+upon thousands of GPU's and take months—
+
+265
+00:08:49,110 --> 00:08:50,300
+and if it crashes midway,
+
+266
+00:08:50,300 --> 00:08:52,190
+that’s pretty much money down the drain.
+
+267
+00:08:52,310 --> 00:08:55,240
+Plus, in this fiercely competitive large language model scene,
+
+268
+00:08:55,240 --> 00:08:58,030
+falling behind even for a moment—well, that’s a huge risk.
+
+269
+00:08:58,270 --> 00:08:59,910
+Of course, we should be wary
+
+270
+00:08:59,910 --> 00:09:02,100
+of over hyping our models’ abilities,
+
+271
+00:09:02,100 --> 00:09:04,890
+while also showing more patience and openness.
+
+272
+00:09:05,170 --> 00:09:07,140
+Understand that this process of training
+
+273
+00:09:07,140 --> 00:09:10,130
+a large language model —much like alchemy—involves many costs,
+
+274
+00:09:10,130 --> 00:09:12,180
+risks, and non technical factors to weigh.
+
+275
+00:09:12,390 --> 00:09:14,270
+Uh, here is hoping China’s large language model
+
+276
+00:09:14,270 --> 00:09:15,710
+can go even further down this path!
+
+277
+00:09:15,870 --> 00:09:16,270
+Go!

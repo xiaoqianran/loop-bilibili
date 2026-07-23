@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
-"""loop-bilibili 根入口（packages/loop_core + modules/*）。
+"""loop-bilibili 根入口（packages/* + modules/*）。
 
 用法:
   python3 main.py modules
   python3 main.py status
   python3 main.py catalog 2071007724 --name 海安雨
-  python3 main.py hot --limit 5
-  python3 main.py ranking --limit 5
-  python3 main.py feed --limit 5
-  python3 main.py search "AI" --limit 5
+  python3 main.py subtitle --catalog catalogs/UID-name --resume
+  python3 main.py pack-subtitles --src-root data/subtitle -o data/subtitles
   python3 main.py summary --bvid BV1xxx
-  python3 main.py subtitle --catalog catalogs/UID-name --limit 3 --resume
   python3 main.py comments --bvid BV1xxx --comment-limit 10
 """
 
@@ -100,9 +97,9 @@ MODULE_CATALOG = {
     },
     "subtitle": {
         "status": "implemented",
-        "opencli": "bilibili subtitle",
-        "desc": "批量字幕（更严 item 限速 + resume）",
-        "path": "modules/subtitle/",
+        "opencli": "— (SubBatch HTTP / packages/bili_subbatch)",
+        "desc": "批量字幕 SubBatch 协议（WBI+player/dm，非 opencli）",
+        "path": "modules/subtitle/ + packages/bili_subbatch/",
         "rate": "item",
     },
     "comments": {
@@ -314,7 +311,36 @@ def cmd_subtitle(args: argparse.Namespace) -> int:
     profile = build_profile(args, default=ITEM_DEFAULT_PROFILE)
     bvids = resolve_bvids(args)
     resume = not args.no_resume
-    export_subtitles(bvids, _item_out(args, "subtitle"), profile, resume=resume)
+    # only pass explicit overrides (None → subbatch profile mapping)
+    delay = getattr(args, "item_delay", None)
+    jitter = getattr(args, "item_jitter", None)
+    export_subtitles(
+        bvids,
+        _item_out(args, "subtitle"),
+        profile,
+        resume=resume,
+        cookie=getattr(args, "cookie", None),
+        delay=delay,
+        jitter=jitter,
+    )
+    return 0
+
+
+def cmd_pack_subtitles(args: argparse.Namespace) -> int:
+    """Pack crawl workspace into slim data/subtitles for git."""
+    from bili_subbatch.pack import pack_dataset
+
+    src_root = Path(args.src_root)
+    out = Path(args.out)
+    catalogs = Path(args.catalogs) if args.catalogs else None
+    pack_dataset(
+        src_root,
+        out,
+        write_txt=not args.no_txt,
+        catalogs=catalogs,
+        skip_empty_up=args.skip_empty_up,
+        clean=not args.no_clean,
+    )
     return 0
 
 
@@ -379,15 +405,41 @@ def build_parser() -> argparse.ArgumentParser:
     add_list_rate_args(feed)
 
     for name, help_ in (
-        ("summary", "批量 AI 总结"),
-        ("subtitle", "批量字幕"),
-        ("comments", "批量评论"),
+        ("summary", "批量 AI 总结（opencli）"),
+        ("subtitle", "批量字幕（SubBatch HTTP，非 opencli）"),
+        ("comments", "批量评论（opencli）"),
     ):
         sp = sub.add_parser(name, help=help_)
         add_bvid_source_args(sp)
         add_item_rate_args(sp)
         if name == "comments":
             sp.add_argument("--comment-limit", type=int, default=10)
+        if name == "subtitle":
+            sp.add_argument(
+                "--cookie",
+                default=None,
+                help="B 站 Cookie；默认可读环境变量 BILI_COOKIE",
+            )
+
+    pk = sub.add_parser(
+        "pack-subtitles",
+        help="打包字幕工作区 → 瘦数据 data/subtitles（srt+txt+index）",
+    )
+    pk.add_argument(
+        "--src-root",
+        default="data/subtitle",
+        help="批量字幕输出根（含各 UP 子目录）",
+    )
+    pk.add_argument(
+        "-o",
+        "--out",
+        default="data/subtitles",
+        help="瘦归档输出目录（建议进 git）",
+    )
+    pk.add_argument("--catalogs", default="catalogs")
+    pk.add_argument("--no-txt", action="store_true")
+    pk.add_argument("--skip-empty-up", action="store_true")
+    pk.add_argument("--no-clean", action="store_true")
 
     return p
 
@@ -413,6 +465,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         "summary": cmd_summary,
         "subtitle": cmd_subtitle,
         "comments": cmd_comments,
+        "pack-subtitles": cmd_pack_subtitles,
     }
     return handlers[args.command](args)
 

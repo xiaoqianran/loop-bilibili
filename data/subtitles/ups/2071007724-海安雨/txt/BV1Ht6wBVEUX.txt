@@ -1,0 +1,10 @@
+page的attention
+page的attention是伯克利在2023年提出的
+被内置于VLLM当中
+论文提到配置的attention
+灵感源自操作系统中的内存分页机制
+解决了内存分配碎片化的问题
+目前已成为大模型部署的工业级标准
+D time
+相关仓库VLLM已经收获了超过6万个st
+通过pip install v LLM即可一键部署使用

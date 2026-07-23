@@ -25,11 +25,11 @@ def repo_root(start: Path | None = None) -> Path:
 
 
 def ensure_sys_path(root: Path | None = None) -> Path:
-    """把 packages/ 与 modules/ 加入 sys.path。"""
+    """把 repo 根、packages/、modules/ 加入 sys.path。"""
     root = root or repo_root()
     packages = root / "packages"
     modules = root / "modules"
-    for p in (packages, modules):
+    for p in (root, packages, modules):
         if p.is_dir() and str(p) not in sys.path:
             sys.path.insert(0, str(p))
     return root

@@ -1,0 +1,11 @@
+Nf4
+NF4是由华盛顿大学
+随Q罗A算法提出的一种新型量化数据类型
+NF4针对权重呈现零均值正态分布的特征
+构建了一种非均匀的量化映射
+相较于传统的四比特整数
+NF4在保留模型精度方面具有优势
+他以作为beats and bytes的核心算子
+被寄存在了hin face的transformers库当中
+目前CULA和b s bytes
+在GITHUB上面有了超过1万个和7000个star

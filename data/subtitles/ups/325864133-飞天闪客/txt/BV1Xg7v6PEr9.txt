@@ -1,0 +1,249 @@
+最近AI领域又来了个新概念
+Loop engineering
+自媒体们将其奉为prompt context
+HARLEYS之后的新时代
+一些专家号们又一本正经地将其解释为
+围绕大模型构建的自主运行循环系统
+使AI从单次响应工具升级为长期资质代理
+反正说人话是不可能的
+如果说之前的harness是过度包装出来的词儿
+那这次的loop我简直认为是名词诈骗了
+他完全是由三个中年男人和一群无知自媒体人
+硬生生搞出来的一个新概念
+不但呢对普通人来说毫无意义
+对趋势的理解也毫帮助
+接下来我就给大家用大白话解释一下
+我们先回顾一下
+我们第一次和AI聊天的时候
+就是非常单纯的提问
+但是呢可能得不到想要的答案
+后来一些人发现
+有一些话术可以提升回答的质量
+那么在这些提示词上下功夫
+调教的手段
+就被造出了一个新词
+叫prompt engineering及提示词工程
+再后来一些人又发现
+在提示词前面补充一些上下文信息
+就可以进一步提升回答的准确性
+于是呢又造了个新词叫context engineering及上下文工程
+再后来一些人又发现
+当问题越来越复杂
+需要长时间多轮对话才能完成任务时
+就需要在外围做各种管理和约束
+防止agent的放飞自我
+于是呢前段时间又造了个新词
+叫harness engineering
+即驾驭工程
+我在之前的视频中说过
+驾驭工程这个词起的就让人非常困惑
+因为我们自始至终就是在不断
+驾驭大模型的过程
+并不需要煞有介事的起个新名字
+让人觉得是什么新的范式一样
+最开始人们直接驾驭大模型
+就是提示词工程
+后来呢驾驭大模型的工作交给了agent
+就是上下文工程
+再后来人们开始研究怎么驾驭agent的
+包括自己给自己定一套使用规范
+或者呢使用open spec这样的专门框架管理
+这就是驾驭工程
+你看自始至终不都是在驾驭吗
+当一个词的作用范围过大的时候
+就成了废话和干扰项了
+而loop engineering更让人费解
+它简单来说就是循环调用agent
+仅此而已
+你说它很宏观吧
+可是它完全起不到什么概括的作用
+你说它很具体吧
+他又被冠以一个什么下一代编程范式
+这样的宏观概念
+比harness还鸡肋
+那这个时候有人就要问了
+为什么这个词还莫名其妙的这么火呢
+那这就要说到三个始作俑者的男人
+第一个人叫BORIS
+他是cloud code的创始人
+在几次访谈节目中
+说什么自己把IDE都删了
+不写一行代码了
+也慢慢减少了和agent的直接对话
+更多的是使用loop
+Actually the the thing that i've been finding myself
+Using more and more is loop
+So this is slash loop
+And it's just like the cool thing
+It's like the simple thing networks
+而在之后的一次访谈中
+他说的就更激进了
+之前的用词还是越来越多
+这回呢直接就是全部了
+Parallel and my coding was prompting quad to to write code
+Now
+It's actually levelled up
+I think again to the next wave of obstruction
+Where i don't prompt clawd anymore
+I have loops that are running
+They're the ones that are prompting clawin
+Kind of figuring out
+What to do my job is to write loops
+很简单嘛
+创始人直接站台宣传自家的产品的新功能loop
+而这个命令的背后逻辑非常非常非常简单
+我直接请创始人给大家解释一下就懂了
+All it is is you have claud use
+Kan to schedule a job for some point in the future
+And it's a repeat job
+And it can run every every minute
+Every five minutes
+Every day kind of
+However
+Often you want to schedule it
+And at this point
+I have like dozens of loops that are running for stuff
+So i have one
+That's babysitting my pers
+So like fixing ci auto rebing
+Have another one that keeps the eye healthy
+So like if
+There's like a flicky teor
+Whatever it'll it'll go
+And fix it um
+I have another one that grabs feedback from twitter
+And kind of clusters
+It for me
+Every thirty minutes
+懂了吧
+其实就是cloud code定时任务而已
+先输入GLOOP
+然后再输入时间间隔
+比如说一分钟
+然后呢再输入具体的指令
+比如说简单点让他就告诉我当前的时间
+然后cloud code就会每分钟把这个prompt发给自己
+然后自动按下回车
+仅此而已
+唉咱们国内各个大厂的AH的工具早就标配
+支持定时任务了
+但谁让人家cloud code掌握了技术的定义权呢
+第二个人叫peter是open cloud创始人
+他一看哎我去cloud code
+这大哥又来新东西了
+那赶紧发个推特蹭一下热度吧
+于是呢这词说的更激进了
+直接就告诉大家
+你不应当在自己命令智能体了
+你应该设计loop死循环来命令你的智能体
+好家伙
+一个shouldn'T1个竖的可太有那味儿了
+人人都想当新趋势的命名人啊
+可你这也太标题党了吧
+当然更离谱的是第三个人
+谷歌的id
+他的另一个身份是个知名的博主
+之前在web前端和软件工程领域
+有过非常多的免费的著作
+而近两年呢开始转向AI的创作领域
+而在BORIS和peter把loop这个词的势头造起来之后
+他专门写了一篇loop engineering的文章
+试图拿下这个新概念的定义
+好家伙
+演都不演了
+这是吃了当年HARLEYS没抢到的亏呀
+不管怎么样
+我们简单阅读一下这篇文章
+开篇呢先来个让你焦虑的趋势描述
+这回知道很多焦虑的词儿从哪来的吧
+这些大佬才是始作俑者
+国内的博主呢
+充其量只能算是个无脑的二道贩子
+加速了这个过程
+接下来提到了前面两个大佬的热度发言
+那我的目标呢就是正式把他俩没说的话
+给你定义一下
+嘿嘿热度你们赖造成果算我的
+接下来开始回顾历史
+顺便呢宣传一下自己错过最佳热度的时候
+写的harness engineering
+然后呢把loop engineering放在了这个词之上
+就说这是下一代趋势
+或者说在这个基建之上的一个应用
+再往下就是最核心的
+他给这个loop定义了需要的五个组件
+第一个automation自动化机制
+说白了就是要么分配个定时任务
+要么来个钩子去自动触发
+第二个work trace
+唉其实就是git分支
+第三个技能
+第四个插件或MCP
+第五个子智能体
+说实话我觉得这个文章写的可能有点仓促
+这五个词既没有构成全集的要素
+互相之间呢又不够正交
+所描述的scope又不在一个维度
+接下来就是对这几个大家早已经熟知的概念
+做个简单的描述
+像个流水账一样
+最后呢举几个常用的例子
+也是人家BORIS斯早就讲过的老掉牙案例
+没什么新鲜的
+最最最最后还不忘给自己叠个甲
+放手去设置你的循环吧
+但是呢也别忘了直接写prompt同样有效
+关键在于找到正确的平衡
+不是计算机领域的很多事情不都是trade off吗
+你一开始那种什么prompt时代已死的自信
+哪去了呢
+啊刚刚说的可能有些激进哈
+我也得给自己叠个甲
+上面这三个男人肯定都是大佬级别的人物
+咱们小老百姓也没啥资格评价人家的发言
+但是呢大佬们的发言往往更容易被更多人关注
+也更容易被人放大和解读
+进而呢炒热了某个名词
+正如之前卡帕西随手一说的web coding
+但是人都是有自己的目的的
+BORIS作为cloud code创始人
+肯定是希望宣传自己产品的功能
+peter呢作为open cloud创始人
+热度降下来之后
+肯定还想维持点热度
+这次的发言就难免标题党一些
+艾利作为博主
+肯定也尽量想抓住技术名词的热点
+毕竟每次呢都是千载难逢的刷存在感的好机会
+即使是像卡帕西这样的非常独立的技术布道师
+我觉得他加入ANTHROPIC之后
+有些发言也难免带点营销味了
+当然认识到一个词的来源之后
+我们自己能够展开一些思考还是可以的
+比如说人们一开始和大模型聊天
+其实agent的出现之后就已经有了循环思想了
+也就是说agent代替人类循环和大型沟通
+通过多轮对话完成一个具体的任务
+而现在呢
+人们还想再找个程序和A人进行循环沟通
+进而能解决更大的更持久的问题
+可以说我们一直在尝试寻找自动化的方式
+在其他领域亦是如此
+比如说分布式系统中的raft循环
+完成选主K8S中
+通过循环监控保证节点啊
+负载啊
+各项指标的稳定
+循环这层壳并不重要
+重要的是呢这套机制能够持续的跑起来
+遇到问题也能自动修复
+只要不出现什么极端的情况
+完全不需要我们人类来参与呃
+实现这个目标需要算法和边界条件的精巧设计
+以及系统本身的各种harness配置
+对于我们大部分人来说
+别说一个可以构建起这样的循环的系统了
+我们就连一个代码仓库可能都没有
+甚至呢还没有使用简单的提示词
+写过一个小demo
+哪来的什么loop engineering的新时代呢

@@ -1,9 +1,20 @@
-# Runtime / local
+# Runtime / secrets
 **/logs/
-/data/
 config.yaml
 .env
 .env.*
+
+# Crawl workspace (full cue JSON bloat) — keep packed data/subtitles in git
+/data/subtitle/
+/data/summary/
+/data/comments/
+/data/hot/
+/data/ranking/
+/data/search/
+/data/feed/
+# allow packed archive
+!/data/subtitles/
+!/data/subtitles/**
 
 # Python
 __pycache__/
@@ -25,6 +36,6 @@ build/
 *.swp
 .DS_Store
 
-# Progress mid-fetch (optional keep; ignore by default)
+# Progress mid-fetch
 **/.progress.json
 **/all.partial.json

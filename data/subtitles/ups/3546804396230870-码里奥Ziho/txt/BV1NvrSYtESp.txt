@@ -1,0 +1,879 @@
+哈喽大家好
+我是ZIO
+这个视频的话
+我会带大家使用大约一个小时左右的时间
+去构建我们的一个AI聊天网站
+我们的网站支持上传功能
+并把文件储存到知识库
+给大模型赋予了上下文的能力
+网站使用到了long unchain
+Next js pcoin
+以及我们的国产大模型
+Deep seek
+在屏幕的右侧可以跟大模型进行一个对话
+啊我们可以看到现在屏幕右侧的聊天框中
+AI已经知道了我们的摄像文信息
+并且能够回复我们非常personal的一些信息
+同时的话我也整理了一份课程资料以及源代码
+如果大家感兴趣的话
+可以在评论区里自取
+OK看完了演示视频之后
+如果大家依然对此感兴趣的话
+那就让我们直接开始吧
+我们首先打开自己喜欢的编译器
+我这边用到的是cursor
+然后我们先初始一下这个项目
+先创建一个next的项目
+你叫他CHECKBOT
+剩下的这些东西的话
+我们使用默认的就好
+然后稍等片刻
+OK我们看到已经创建成功
+我们打开刚才我们创建好的项目
+打开terminal
+先安装一下依赖
+Ok
+们把这个项目先跑起来
+Local host3000
+我们可以先哦好的
+我们看到我们屏幕的右边
+已经把这个项目启动起来了
+我们先把这个配置
+这个页面改成我们想要的东西
+OK我们再新起一个命令行
+我们可以搜索这个short cn
+对啊
+直接选择这个安装next js
+安装一下这个组件库
+这个选用默认的就好
+我们来安装一个button实验室一下
+看到我们source这个目录底下的话
+我们SHTCN的话
+自动给我们创建了这个components的这个路径
+而且我们刚才INIT了一个button
+我们这个的话就可以帮助我们节约很多时间
+好吧
+我们回到我们的这个page
+看到我们这个页面
+我们刷新一下
+好的
+我们看到我们的屏幕右边已经显示了
+我们左边写的这个hello world
+我们接下来的话就是想把这个项目额
+可以看到我们这个屏幕的话一分为二
+左边的话我把它叫做上传的我们这个一个模块
+右边的话是我们的一个聊天框
+那我们就继续开始哈
+To write
+好我们给它加上这个背景颜色
+我们这里用到的是TLWINDCSS
+我先import一下
+我们看到我们刚才在用SHTCN生成的
+这个button的话
+已经渲染出来了
+这样的话就很方便的给我们节约一些时间
+当然我们这里要去掉它
+诶不好意思
+我太不见
+刚才有一点
+这应该是高four一下
+是这个me messages
+OK哎呀
+不好意思
+这个是flex groll啧
+OK我们现在的话把这个屏幕的样式添加好了
+左边的话我们会有一个上传模块
+然后右边的话会有一个消息的一个模块
+我们接下来的话先做这个消息模块
+我们来到我们的components
+新建一个叫做嗯
+叫做chat bots吧
+Chat container
+我们使用快捷键TSRAFCE就是typescript
+React
+Error function
+Export component
+如果大家没有这个快捷键的话
+需要在设置里面找到我们的这个extension
+去安装一下这个es7加react这样的一个语法
+可以帮我们节约很多时间
+OK我们回到我们这个项目
+把这个container引引进来
+OK看到我们已经出现了
+我们chat container这个东西
+OK接下来的话我们开始做呃
+Ai sticky
+搜索一下
+访问到这个VERSAL的这个AISDK
+这个工具的话可以帮助我们很快的去搭建嗯
+一个嗯聊天的这样的一个功能
+我们先安装一下依赖
+OK接下来我们找到他的这个document
+我们在document里面找一下这个CHECKBOT
+我们可以看到他的这个示例代码
+是用这个use chat
+这个hook来管理我们的这样的一个聊天
+我们可以把这一个内容先复制一下
+以及他的依赖
+因为我们这里的话需要用户进行一些交互
+所以用使用到的是use client这样的一个模块
+OK我们保存一下
+我们可以看到现在出现了一个输入框
+以及一个提交的一个按钮
+OK我们给它新增一些样式
+Classname
+Ok
+哎这个tab键有点有点坑啊
+哼
+OK把这个聊天框给它挤到下面去
+OK我们先来做这个聊天框吧
+给它加上一些样式
+给它加上一个gap input的话
+我们这里给它
+CLASSNAME给它铺长一点
+Ok rounded gone large
+再加上一个padding
+二去H杠20吧
+OK我们这个button的话
+就换成我们刚才用short cn生成的这个button啊
+你这个button的话也给它加上一个样式
+wounded哦
+不用H杠负
+OK我们看到我们现在给我们的输入框增加好了
+这个样式可以拖过来看一下
+我们在这里输出25
+不好意思
+输入内容的话会展示到我们的上上面的框里面
+我们来试一下
+user您好
+因为它这个地方的话
+on submit会调用这个handle submit
+这样的一个方法
+这个方法的话使用的这个hook生成出来的
+他会把我们的消息塞到这个message里面
+然后更新我们的组件
+所以我们最上面的话就是我们的一个message的一个
+模块这个模块的话是输入input
+Ok
+我删除
+我们给它调整一下DIVK
+这里给它加一个pp标签
+Classname text small
+Ok
+然后是
+in a lime nine block b g杠
+White
+先给它一个框
+rd的gone gone2
+D的高R值
+OK然后对于这个message class
+OK70杠二
+OK您好
+OK我们给这个消息加上了一个气泡
+我们接下来的话可以看到
+我们回到我们这个AISDK
+这个的话是相当于一个前端
+它我们输入了消息之后的话
+可以通过方法访问到
+我们可以通过API的调用
+调用到我们的后端
+可以看到这里
+我们把这个代码复制一下
+然后找到app新增一个文件叫做API杠
+chat杠
+Root dots
+Ok
+这里也是这里我们暂时不用OpenAI这个model
+所以我们先删除一下嗯
+Ok
+我们可以回到我们刚才的首页哦
+Boys
+我们可以回到我们dock里面
+在我们的dock里面
+找到我们deep sick这样的一个API
+它是一个GN和ChatGPT一样的一个AI
+等于一个GPT
+我们首先安装一下依赖
+OK依赖安装完成之后
+我们复制一下这一段代码
+Deep sick
+然后我们看到这个地方需要一个deep sick的API
+我们回到我们的目录里面
+新建一个doe mv文件
+把这一个复制一下
+等于
+我们去deep seek
+可以来到V3platform API
+大家如果没有注册的话
+可以注册一下
+他会送你十块钱人民币
+其实这个API是非常耐用的
+我们来到APIK生成一个新的API
+我叫他chat bot吧
+ok copy一下
+我们回到刚才的页面
+把这一个放在doe v文件底下
+Ok
+回到我们的后端
+这一段代码我们初始化了deep sick之后
+在model这里的话
+我们使用到了它的deep sick chat这样的一个model
+拿到我们的response
+拿到result之后的话
+通过这个two data string response进行一个流式输出
+输出到我们的前端
+我们的前端的话呃
+这个地方也可以通过这个API杠chat
+进行一个交互
+这样的话当每当我们输入一条消息的话
+他会直接帮我们把这条消息
+把整个message list输入到后端
+然后后端的话我们接到了这个message之后
+会把这个拿去访问大模型
+接着我们大模型的话拿到result之后
+去做一个流式输出
+重新渲染到这个messages上
+对页面重新进行一个渲染
+OK我们保存一下
+再测试一下哈
+我们刷新一下
+OK输入一个零
+好
+OK我们看到这个已经成功了
+拿到了大模型的一个输出
+但是我们还得给他增添改动一点样式
+Ok
+刷新一下text
+这个AI工具有一点
+好的我们调整了一下啊
+根据不同row来定义它的这个颜色
+以及它的左右的这样一个方向
+我们测试一下
+OK我们颜色已经好了
+把这个text这个cursor这个工具
+一直帮我写了很多代码
+但是其实不是我想要的效果
+Ok
+然后我们再给它加上一些样式
+pre rap rap一下
+好的
+我们可以看到他的输出是非常快的
+Ok
+但我们现在的话还有一个问题
+他会把我们这个元素挤到下面是吧
+这个调整一下
+And under ref sorry
+OK我们给它新增一个自动下滑
+还是有点小问题啊
+OK我们给它加上一个overflow auto
+嗯好的
+现在没有问题了
+他这样的话
+他这个消息的话越来越长的话
+会自动的把往下走行
+就就会进行一个overflow
+Ok
+嗯OK
+好的我们继续啊
+我们接下来的话会对这个chat进行一个
+rag的一个包装
+我们回到我们这个AISDK找到documents
+搜索CHATBOT
+搜索这个RGCHATBOT
+我们可以看到我们可能问大模型的问题是
+What is my favorite food
+就是我最喜欢吃的东西是什么
+但是呢大模型的话
+它其实是基于互联网上的一些数据
+进行一些训练的
+所以大模型他并不知道
+我们对于我们这个人来说
+我们喜欢的东西是什么
+但是呢我们可以呃给他就可以
+大家可以看到这样的一个回复
+I don't have access to personal information
+就他不知道我喜欢吃的是什么
+但是呢我们通过rag这个技术的话
+我们可以给它附上一段context
+User loves
+Chicken nuts
+Uchicken uh nudgets
+就是我喜欢吃这个chicken nuggets
+我们把这个上下文信息一起丢给这个大模型
+那大模型的话理解了这个意思之后
+他就会返回我们
+Your favorite food is chicken nuggets
+Ok
+所以的话我们就需要去构建一个
+rag的一个知识库来搜索我们自己的上下文
+我们可以看到这样一张图
+就我有一个这是可能是我的
+这是我的知识库
+我会把它分成一个一个的chunk
+就是一一个小段一个小段
+我对它进行一个向量化
+把它向量化成一段一段的数据
+并且存入我的向量库中
+当我去问大模型的时候
+我可以把我的请求就是what is my favorite food呃
+把它embedding成为一串向量
+在向量库中去进行一个比对
+比
+对出我最相关的这样的一些段落
+然后拿到这些段落之后的话
+作为一个上下文进行一个大模型的一个询问
+这样的话大模型就会理解到我们需要的内容
+这个就是rag的一个思想
+那接下来的话我们就开始做我们的这样的一个
+上下文以及数据库的一个搭建
+Ok
+首先关掉这些内容
+我们先添加一个job zone
+Ok
+想安装一下这个drop zone
+OK安装好了
+我们来到这个
+Share bots components
+新增一个APOLODE的contain
+Contain
+还是这一串命令啊
+回到我们首页这个地方
+upload container推断一下
+来到这个地方
+请stify center一下
+我们把这一段代码进行一个复制
+安装一下
+依赖accept f
+这个需要用到use client
+OK我们可以看到这里有一个drop n
+我们可以点击一下
+可以看到我们可以进行一个上传文件
+on drop的话
+输出一下
+我们尝试一下
+可以看到已经能够正常的一个进行一个上传
+Ok
+我们给他改一下这个样式吧
+OK给他加了一个框
+JUSTIN去一下
+毛二进top
+高20
+把它放在最上面一点
+因为我们下面的话还要新增这样的一个列表
+Ok
+点首宽度高
+OK改一下这个文字
+点击上传或者拖动文件到此
+Text center ok
+好我们看一下效果
+OK给他改了一个样式
+OK没什么问题
+接下来的话我们需要连接一下前后端
+我们可以用到react query这样的一个工具
+你打开这个react query
+来到install
+找到NPM
+复制一下
+OK然后来到这个quick start
+他需要把我们的代码包裹在这个
+query client provider里面
+所以我们可以
+新增一个provider
+Query client provider t
+Ok
+复制一下这一段代码
+OK把这个children拉进来
+Ok
+们回到layout
+在children对children进行一个包裹
+我们把它引入进来
+OK这个应该是需要一个use client
+OK刷新一下
+OK没什么问题
+嗯来到upload这样一个模块
+我们首先上传的话
+我们用这个mutation
+如果我们是读取的话
+就用这个query
+那我们就先用这个mutation吧
+这里我们可以安装一下XXU
+K1个fire
+Const form data
+OK嗯
+date点
+OK我们新增在API这底下额新增一个
+找root到ts这样的文件
+Export i think function post
+OK我们先读取这
+我们后端读取到这样的一个文件
+应该使用next response对吧
+我们把它进行一个输出
+回到我们的这个路径
+我们尝试一下哈
+诶没有反应
+Post from data
+哦抱歉
+这个mutation的话
+我还没有接到这个on drop里面
+不好意思
+OK你尝试一下哈
+OK我们已经输出了这个上传的文件的名字
+说明已经输入到输已经连接到我们的后端
+然后我们的后端的话拿到了这个文件之后
+要做这么几个事情
+第一个是把它分割乘DOS点
+做一个split
+上传到向量库
+我们一步一步来做吧
+分割成dogs的话
+我们这个地方需要用到的是嗯
+Long cha
+找到GITHUB啊
+先安装一下
+我们回到我们的long cha
+首先我们需要把文件进行一个pass一下
+找到loader
+找到web loader
+我们搜索这个Pdf files
+先安装一下依赖
+我们可以看到先把这个文件的buffer读到
+创再创建一个blob
+把这个复制下来就行
+名字的话blob吧
+这个import一下
+OK我们拿到这个loader之后的话
+可以看到当它进行一个load
+就会把这个PDF文件的话变成每一个一
+变成一个dog list
+我们试一下
+点page content
+拿到我们page content
+我们尝试一下
+比如说我的这个简历
+当然这个是豆包帮我生成的
+它是有一页一页的
+他会把根据这个页码的话
+把它分割成应该是分成三页
+我们来看一下是否成功了
+看看我的输出
+OK我们看到他把整个呃第一页的所有的内容
+全都已经pass到这个DOS的page content里面了
+OK就没什么问题
+把它关掉一下
+但是的话我们这个dog这个目前是以dogs
+就是每一个每一页PDF为一个单位
+我们还要对它进行一个呃详细的一个划分
+这个地方的话会用到这个recursive character
+Texas splitter
+回到我们long chain里面
+Conceptual guide
+OK我们搜索这个text splitters
+OK它的话你看就可以把每一页这个document
+把它划分成不同的splits
+减小我们的这个力度
+搜索这个recursive character
+Texas splitter
+这个可以最大程度的保留我们需要的力度
+我们把它复制一下这一块
+先复制一下依赖吧
+先复直接复制一下代码
+Ok
+我们可以把这个包装成一个函数型
+Split dock
+对i think呃
+对每一个doc自己split一下
+把这个复制一下
+嗯import一下document
+The page content return text
+Ok
+我们对于每一个dock可以对它进行一个split
+接下来的话会用到embedding
+我们打开这个pin coin
+大家可以先登录一下
+没有啊
+我们可以安装一下依赖
+OK安装完依赖之后的话
+我们把这一段代码复制一下
+把这个给复制一下
+Export
+我们来到API的key
+新增一个API key叫CHECKBOT
+OK把它复制一下
+回到EMV是吧
+叫pin coin API k o k
+保存一下
+回到这个PINCOIN这里
+Process invidia be coin
+直接保存一下
+Ok
+好我们回到pink coin
+创建一个index
+选择微软的这个模型维度是1024
+叫他chat bot吧
+OK创建成功
+我们点击这个dogs
+点击quick start
+看到这个january vectors
+就是我们会把我们的数据
+把它划分成为EMBEDANCE
+但是回到我们的代码里面
+可以关掉
+上传到数据库是吧
+Chunks
+我们可以把
+这一段代码复制一下
+KPC的话
+Import pc
+Model chunks
+Ok input return messages
+嗯可以
+我们来到
+会要把它转换成这个records
+text c是吧
+这个地方安装一下MD5
+Md 5typescript
+安装一下
+我们这个id的话
+给他一个MD5
+port一下
+MD5点has string是吧
+给PERCHUNKS进行一个
+In bed chunks
+这个地方直接await a index Upset
+我们可以看到这块
+有了records之后的话
+就把它进行一个Upset
+我们拿到刚才创建的这个index点
+Upset
+Oh is a line
+Okay
+Records
+他这个
+该时间OKOK我们有了这个embed chunks
+把它上传到数向量库里面
+等于cocost cost
+Rice
+等于
+With promise
+点O
+把它进行一个
+Upset到数据库里面
+Ok
+嗯OK
+这里有点多哈
+try catch一下
+return一个upload是吧
+再把console dolog
+OK我们这样的话就我们可以看一下这段代码
+我们先上传文件的话
+把它读取到buffer
+先load到文件里面
+把它分割成一个一个的DOS
+我们接着对于每一个页面的话
+把它分割成了一个文本
+然后我们文本的话通过这个embed chunks
+再把每一个chunks的话进行了一个embedding
+最后把它转换成records
+进行了一个上传
+OK就是干了这么一个事情
+我们回到这个主页
+刷新一下
+我们上传一个文件
+尝试一下
+这里显示是200
+我们看到我们回pin quin
+看一下我的这个数据有没有
+OK我们看到这个数据已经是把它上传进来了
+就把每一个这样的一条一条的数据
+分割成为一串一串的向量
+OK看来是上传已经没什么问题
+我们接下来的话就是需要拼接我们的prompt
+我们来到这个chat这个模块
+最开始的话我们就直接把我们的messages
+messages位给了大模型
+我们现在的话需要在未给大模型之前的话
+去读取context
+OK首先获取到最后的一条消息
+Messages
+Ok
+我们新建一个cont函数
+Get content
+I think content
+Ok
+我们读一下这个文档
+search index这个地方
+他首先你看这个就是我们的新的query
+Tell me about the tech company
+Known as apple
+我们需要把这一段代码给它复制过来啊
+PC的话我们export了之后
+model是
+Ok query
+but get成content
+首先去读取到了我的query的这个向量
+把它也转换成了一个向量
+接着的话会去我的index里面去进行一个比对
+Index pc are indeed chat bot
+Okay
+那直接
+Query response
+Ok
+我输出一下query的response
+Contents ok
+那我们测试一下
+我刚才上传了简历是吧
+我搜索一个工作经验吧
+OK我们可以看到我们在向量库里去
+匹配到了这些数据
+我们的原来的文本的话是放在这个meta data里面
+但我们现在的话
+我们工作经验还是拿不到这个上下文的
+因为我们还没有把这个content接入我们的消息
+我们的消息里面
+我们可以输出一下点点match
+Dear matches
+再重新来一次工作经验
+OK我们可以看到我们
+这个已经是有这个metadata了
+可以看到它的text data里面是有我们简历的
+这些内容
+这些就是我们需要的上下文
+于是我们可以把它点点join一下
+metadata ok metadata的text
+拿到这个content之后
+我们把它放到这个system里面
+Here is a context
+这个保存一下
+OK保存一下
+刷新一下
+自此的话我们的这个就携带了嗯
+我们的上下文我们试一下
+你搜索一下
+跟你看回复的话
+根据你的自我评价
+您拥有五端的工作经验是吧
+我们回到这一个
+你看工作经历是5年
+并且参加了这个东西
+什么这个都是我随机生成的啊
+我们也不用去找了
+呵呵你看电商智谋大数据分析平台
+那所以的话现在我们的这个就已经搭建起来了
+我们的这个RAC系统
+但是我们上传的这些文件的话
+还需要在表示表示一下
+我们是否有真的上传这个文件
+所以的话我们这里需要出示一下数据库
+我们去到
+Super base
+大家先注册一下这个项目哈
+然后我们创建一个project
+我就叫他project好了
+Generate
+一个password
+点击create
+我们回来在EMV里面
+把刚才的这个database的密码给保存一下
+我们点击这个connect
+现在还没有初始化成功啊
+稍等一小会儿
+你们刷新一下
+看一下
+还没有出
+还在项目
+还在初始化中
+OK我们项目已经初始化成功了
+点击这个connect
+把这一个URL给复制下来
+再把这个密码拼接到这里
+这样的话
+我们可以使用这个免费的POSTGRASS数据库
+OK这关闭一下
+接下来我们用到一个ORM工具追踪
+Get start
+啊首先
+我们点击super base
+我们可以看到项目里面的话
+我们主要是需要新建一个dB的一个
+文件夹来到source
+source是吧
+DBOK再新建一个schema点TS还需要一个index
+Dex dots s
+OK安装一下依赖
+在把EMV文件里面添加数据库的URL
+找一下严威
+Ok ok
+第三步的话我们在哦
+我们可以往下接着看创建表
+我们把这个复制一下
+回到schema dots
+复制一下
+我们可以叫它file table
+files对吧
+id的话取名叫serial id primary
+这里import一下
+首先一个file name等于watch
+File name
+Ok creator
+以及这个file key
+防止文件重名
+建好表之后的话
+我们需要以setup一个drizzle config
+把这个复制一下
+在最外层创建一个drizzle dot
+Com fire dots s
+把它复制下来
+确保schema的路径是source dB schema
+OK没问题
+接着我们初始一下这个表格
+并且测试一下它的连通性
+OK看到这里是成功的
+回到super base的话
+我们按道理来说就已经创建出来一张新表
+唉有了files
+看到我们的id
+File name
+file k以及create
+看来是没问题的
+接下来的话我们可以看它是怎么查询的
+是用到了await dB
+点insert以及select对吧
+我们在这个index的话给它进行一个包装吧
+首先需要一个drizzle dB
+把这些都复制一下
+the table给它改成file table
+然后export const insert file类型
+直接推断
+file name一下可以直接dB点insert
+就可以新加入一个一条数据
+我们还需要一个get fi
+其实是get files
+就因为我们文件目前不多
+需要所有的这个文件
+就直接用dB点select点front就可以了
+OK接下来的话我们新增一个API叫做get files
+Rote dot x
+Export a think
+OK我们先放在这
+以及OK我们回到刚才
+upload这个模块
+当我们上传完数据向量数据库之后的话
+其实还有第四步是保存到数据库里面
+我们直接调用刚才写好的这个接口嗯
+file file name和file key这个地方用MD5点还是string一下
+防止就这个是作为它的一个唯一KEOK
+保存到数据库
+这样的话上传一个文件会保存到数据库
+然后我们还需要一个读取
+我们回到upload这样的一个页面
+当时我们在用query嗯
+react query的时候
+我们用到了这个mutation
+这个mutation的话会更改我们的数据
+我们读取的话使用这个query就可以了
+你把它拿过来
+把它import进来
+query key的话
+把它生成files
+这个query key的话
+可以给我们相当于一个缓存的一个key
+这个的话是一个后端
+我们可以return axio
+点post get files
+拿到所有的这个FES
+OK当我们通过mutation去upload数据的时候
+其实我们可以on success之后的话
+你这个地方需要把把刚才的这个files这个key的话
+invalidate一下
+先import进来
+把这个use client import一下
+ok query key的话改成这个files
+Ok
+这个地方的话我们改一下它的这个样式
+直接把它解包一下
+拿到一个expending
+Data is loading
+我给他重新取个名叫files吧
+再把这个files渲染到
+所以下面这一块儿
+你可以回到这个drizzle的sta export export
+Const export type a fire fire model
+等于type file table
+这个
+回到这个get files里面
+我们就是刚才写好的接口去拿取所有的files
+再把它返回给前端
+应该就可以了
+好的嗯
+测试一下
+有一个loading是吧
+上传一下这个简历
+上传成功了
+但是好像没有读取成功啊
+我们看一下上传有没有成功
+刷新一下这个数据库
+上传是已经成功了
+可以看到有数据
+那就是读取还有点小问题
+ok files是吧
+看一下upload
+Get files
+Note
+try catch一下吧
+你try catch一下
+诶现在又有了
+不知道怎么回事啊
+那我们接下来的话调整一下它的这个样式
+In class name
+把这个把它放中间吧
+Next concenter
+Ok
+嗯以及is study
+这个也给他改一下
+把它放中间
+Ok
+files的话
+加个margin top
+刚20把margin称一下
+哎呀这颜色太浅了
+直接去了吧
+就用黑色
+好我们现在的话再上传一个文件
+试一下
+我的1月份旅行计划
+它这个没有自动的出现
+可能invalidate这个地方没有弄对
+All success
+回到我们这个地方
+我们可能是这个问题不应该是new出来的这个client
+而是用这个hook
+再试一下1月份计划
+哎现在就可以了
+上传出来的就会出现在我这边
+然后我刷新的话
+你看这个也会在
+OK那就没什么问题
+那我们现在大家可以看到这些嗯啊
+download这几个文件其实都是我用GBT帮我生成的
+这些东西都是些假数据
+比如我的旅行计划
+以及我的一些简历
+还有我随便的一些嗯东西
+我重新的再问他一些问题吧
+比如说我问GBT我的1月份计划是什么
+看看他会回复什么
+OK这样的话你看他就会结合我的旅行计划
+以及我的工作计划
+给我生成出了我1月份的一些计划
+呃我的
+技术强啊
+搜索一下
+对
+他就把我的简历的上面写的这些内容
+给我总结了一下
+就还是很不错的
+大家就可以通过这样的一个项目的话
+不断的去嗯
+上传你需要的这些文件
+打造自己的一个知识库
+Ok

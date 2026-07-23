@@ -1,0 +1,277 @@
+Kimi's latest K three is buzzing summed up in three words,
+big, good, and open source!
+But now, each large language model bests the last
+and tomorrow, they get even bigger!
+So what are they competing over, exactly?
+Well, it boils down to three things,
+first, the model’s parameter count
+that is the most literal meaning of large
+in large language model .
+Today, open source model shave
+started joining the one T parameter race,
+including Meituan's LongCat, DeepSeek, and Kimi,
+a feat once solely the domain of closed source models.
+The second battleground is context length—back then,
+we’d often test this by seeing
+if a single chat
+could read through the whole of “The Three Body Problem”.
+For cutting edge large language models,
+a million token context length has swiftly gone
+from a novel gimmick to a standard feature.
+Because even a regular person
+can spawn tons of long agent
+tasks—beyond just chatting on a webpage.
+The third battleground is modal support.
+Supporting more modalities beyond text
+greatly impacts the user experience.
+For instance, we always ask: when will DeepSeek support images?
+That speaks to the hunger for multimodal capabilities,
+and one reason Gemini blew up back then
+was the debut of its native multimodal feature.
+See? The current three point five Flash supports
+up to five modalities,
+while this new K three
+brings all three of those key ones together!
+two point eight T
+params—the largest
+open source model yet—plus a million token context
+length AND multimodal support!
+Plus, what piqued my curiosity is that,
+as an open source model,
+it ranked just behind GPT five point six and Fable five
+in many key benchmark tests!
+and some even snagged number one!
+Of course, this bigness is just on the surface,
+what truly matters are the technologies
+behind the scenes that support it
+and today, I will break it all down for you!
+First, let us see what issues a high parameter count brings.
+This is the bedrock of large language model s:
+the Transformer architecture;
+and within it, the part with the most parameters
+are these Feed Forward Network layers,
+which are just simple, multi layer neural networks.
+except that the number of neurons
+and thus, parameters is huge.
+So, the fix is quite simple,
+break it down into many smaller neural networks.
+Then, for each new token,
+a trained routing layer
+directs it to one of those smaller neural networks.
+This way, the total parameter count stays the same,
+but for each token,
+far fewer parameters are actually used in computation.
+That is the classic MO E Mixture of Experts architecture ,
+DeepSeek even put their own spin on it ,
+adding  shared experts , dubbed DeepSeek MO E .
+Kimi this time also uses an M O E architecture,
+eight hundred and ninety six experts, only
+sixteen activated at a time.
+More precisely, its Latent Mo E scheme
+optimizes compute efficiency
+via dimension reduction in the expert routing layer.
+Anyway, just recall this,
+anything with latent prepended shares
+one goal, to first shrink then expand dimensions.
+so you can compute in this low d space to boost efficiency.
+The latent in M L A works the same way.
+Okay! So, M O E eases computational strain
+by cutting down on parameters during inference.
+But, the total parameter count stays the same,
+and during training, all those params still get trained up.
+But as models grow larger,
+the Transformer layers get very deep,
+which in turn makes the training process
+prone to instability.
+For these basic deep learning principles,
+see my prior video, Understand A I in One Hour.
+Of course, a classic structure, Residual Connection,
+can fix this issue quite well.
+So, outside each layer’s transformation,
+you add an extra link
+and just mindlessly tack on the prior value—super simple!
+But there’s a snag: it’s too rigid.
+For instance, by the time info from A one reaches A four,
+not much is left;
+so, ByteDance came up with a new scheme called HC.
+Simply put, they copy A one multiple times,
+and what gets passed on is not just added on,
+but rather multiplied by a learnable matrix.
+This way, the info passed along
+stands a better chance of being retained.
+But the snag is, if this learning matrix has no constraints,
+its repeated products could spiral out of control again.
+So, DeepSeek's m H C
+adds fluidity constraints to these learning matrices.
+Simply put, it keeps these matrices,
+no matter how they are multiplied,
+within a controllable range
+thus, an enhancement to H C.
+But Kimi chose a different path.
+In fact, from a broader view,
+no matter how these methods get optimized,
+they all add to the Residual Stream
+layer by layer, from bottom to top.
+whereas Kimi, right within the Residual Stream,
+uses the attention mechanism
+to perform a weighted sum of prior residuals.
+to ensure each layer’s residual info
+gets a chance to be noticed.
+This is Kimi’s Attention Residuals—many big shots
+reposted and liked it
+back then,
+sparking community chatter,
+and I even made a video on it!
+And this time, the Kimi K three model
+puts that tech from that classic paper to use.
+Nice! Another open source model with new tech to check out!
+Okay! So, the issues stemming from vast parameters
+computational load and training stability
+are solved via the familiar M O E
+and Kimi is own Attention Residuals.
+So, what about the computation issues
+stemming from that million token context?
+Back to this Transformer architecture diagram—indeed,
+the biggest issue with million token contexts
+is that it balloons the computation for the Attention Layer.
+since each token in the Attention Layer
+must run an attention calculation
+with every other token to yield a coefficient.
+So, how do we cut down on this compute?
+Simple! One way is to shrink the vector length,
+for example, M Q A, G Q A, M L A, and so on.
+But these still
+fall under dense
+attention—meaning, the number of vectors computed
+stays the same;
+only the vector length is reduced.
+Then, of course, there’s another class
+that cuts down on the number of vectors
+computed—say, by fixing a computation window to select tokens.
+or, via some method, sieve out a few Tokens,
+not all of them.
+Classic methods say, D S A, S W A C S, H C A, and so on
+are termed sparse attention,
+where the number of vectors grows sparse.
+Then, there is the most potent class
+that slashes computational complexity
+straight from n squared down to n
+this approach is called Linear Attention,
+which includes these methods here.
+So, K D A here stands for Kimi Delta Attention
+an in house Linear Attention scheme from Kimi
+that is also been used in this K three model.
+Of course, this Linear Attention, in some ways,
+reverts back to an RNN like method.
+So, typically, every few layers,
+a Linear Attention is used
+and blended with the normal Attention Layer,
+hence, it is called Hybrid Attention overall.
+To sum up,
+a large language model boils down to two key things,
+the parameter count of its Feed Forward Network,
+and the compute load of its Attention Layer.
+And this time, K three uses the Latent MoE scheme
+to sparsify the Feed Forward Network’s parameter count
+and compress its length, too.
+with K D A Linear Attention, greatly
+cutting the Attention Layer's computation.
+It also provides a strong case for the effectiveness
+of the much debated Hybrid Attention Scheme.
+then, they used their novel Attention Residuals
+to ensure training stability.
+I wager that many future open source efforts
+will widely discuss and adopt these techniques.
+So, I gave it a test myself
+but using my prior model evaluation tool,
+I ran into lots of server timeouts.
+Perhaps this K three release broke out of its niche
+so much that it crashed the servers
+which counts as a worthy finding,
+I would say!
+As for the exact scores,
+let us re test in a few days once server strain eases up.
+Of course, what matters more is its agent capabilities
+and in public tests, K three's performance was quite stellar.
+Well, as it happens,
+I’ve been working on automating agent evaluations lately,
+so let’s give it a shot.
+My plan is quite simple,
+I create a directory like this,
+and for each one, I pop in a task dot m d file
+and jot down its task requirements.
+Then, in the top level root dir,
+have the agent tackle all tasks in each subdir, one by one.
+So, my tasks comprise these,
+which not only tests the model’s basic agent skills,
+but also its overall planning prowess.
+Plus, it is comprehensive and simple to test.
+Plus, these tasks are all real ones
+I face day to day—problems
+that agents back then struggled mightily to solve.
+First off, kudos to K three
+it clearly used four separate sub agents in parallel
+to get the job done,
+and the output was super clear and straightforward.
+In a past video of mine,
+I praised Kimi Code’s ease of use it does look very slick!
+And what is cool here is, an accident happened
+that helped me test out some of its other skills.
+So, since I’m running this task from my hotel,
+and I have to head off to the World
+Artificial Intelligence Conference soon,
+So, I left the hotel early,
+thus its net cut out.
+So, once the net cut out, its fourth task went unfinished.
+Once I got back to my hotel, I reconnected the net.
+So, this was a perfect test to see if, midway through a task,
+should the network cut out,
+could it pick back up and finish the job properly.
+At that point, I thought,
+Oh man, was this recording all for naught?
+But it pulled through
+and ultimately completed all the tasks!
+So, let us check out the results.
+First, the text to audio, image to audio, and video workflow.
+All A P I calls worked, and the page was intuitive.
+Plus, kudos here: for video,
+when I used Opus four point eight
+before, the polling logic had flaws,
+but K three nailed it this time.
+Second, the large language model evaluation—this project required a full front end revamp, and yes, you can open it with a double click, and the logic is sound.
+The review runs fine, and the styling is unchanged.
+Third, three D file format
+conversion—this requires pinpointing
+where the Blender app sits on my PC
+and knowing how to use its command line syntax.
+So let us test this output just drag it straight into P P T,
+and that works fine, too.
+Fourth: adding features to spaghetti code!
+This is that spaghetti code canvas app
+I whipped up ages ago with some shoddy tokens—though,
+gotta say, it IS flawed.
+The new text addition feature click it, and zip happens!
+Of course, this lets us test its problem fixing skills,
+so let us give it another shot at fixing this.
+In the end, those issues were all fixed with ease!
+And based on my experience using it these past few days,
+K three’s benchmark scores this time around
+really pack a punch.
+Lastly, some personal thoughts,
+training a super large model is not just a tech issue,
+it is more about cost and risk.
+A single training run might need thousands
+upon thousands of GPU's and take months—
+and if it crashes midway,
+that’s pretty much money down the drain.
+Plus, in this fiercely competitive large language model scene,
+falling behind even for a moment—well, that’s a huge risk.
+Of course, we should be wary
+of over hyping our models’ abilities,
+while also showing more patience and openness.
+Understand that this process of training
+a large language model —much like alchemy—involves many costs,
+risks, and non technical factors to weigh.
+Uh, here is hoping China’s large language model
+can go even further down this path!
+Go!

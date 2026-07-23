@@ -1,0 +1,104 @@
+{
+  "name": "loop-bilibili/data/subtitles",
+  "description": "Packed Bilibili UP subtitles (SRT + slim index)",
+  "packed_at": "2026-07-23T16:10:28.405077+00:00",
+  "up_count": 9,
+  "ok_total": 658,
+  "empty_total": 26,
+  "error_total": 12,
+  "cues_total": 212612,
+  "srt_bytes_total": 15156203,
+  "txt_bytes_total": 7706946,
+  "layout": {
+    "ups": "ups/{mid}-{name}/",
+    "index": "index.jsonl",
+    "srt": "srt/{bvid}.srt",
+    "txt": "txt/{bvid}.txt"
+  },
+  "ups": [
+    {
+      "slug": "1223644844-杜子源源",
+      "mid": "1223644844",
+      "name": "杜子源源",
+      "ok_count": 67,
+      "empty_count": 1,
+      "total_cues": 18780,
+      "path": "ups/1223644844-杜子源源"
+    },
+    {
+      "slug": "2071007724-海安雨",
+      "mid": "2071007724",
+      "name": "海安雨",
+      "ok_count": 276,
+      "empty_count": 5,
+      "total_cues": 35900,
+      "path": "ups/2071007724-海安雨"
+    },
+    {
+      "slug": "280780745-张小珺商业访谈录",
+      "mid": "280780745",
+      "name": "张小珺商业访谈录",
+      "ok_count": 23,
+      "empty_count": 8,
+      "total_cues": 93487,
+      "path": "ups/280780745-张小珺商业访谈录"
+    },
+    {
+      "slug": "325864133-飞天闪客",
+      "mid": "325864133",
+      "name": "飞天闪客",
+      "ok_count": 62,
+      "empty_count": 8,
+      "total_cues": 16002,
+      "path": "ups/325864133-飞天闪客"
+    },
+    {
+      "slug": "341376543-堂吉诃德拉曼查的英豪",
+      "mid": "341376543",
+      "name": "堂吉诃德拉曼查的英豪",
+      "ok_count": 7,
+      "empty_count": 0,
+      "total_cues": 7252,
+      "path": "ups/341376543-堂吉诃德拉曼查的英豪"
+    },
+    {
+      "slug": "3546804396230870-码里奥Ziho",
+      "mid": "3546804396230870",
+      "name": "码里奥Ziho",
+      "ok_count": 70,
+      "empty_count": 0,
+      "total_cues": 14332,
+      "path": "ups/3546804396230870-码里奥Ziho"
+    },
+    {
+      "slug": "3546957802899978-日新月异max",
+      "mid": "3546957802899978",
+      "name": "日新月异max",
+      "ok_count": 4,
+      "empty_count": 0,
+      "total_cues": 1528,
+      "path": "ups/3546957802899978-日新月异max"
+    },
+    {
+      "slug": "404186354-callwhl",
+      "mid": "404186354",
+      "name": "callwhl",
+      "ok_count": 8,
+      "empty_count": 1,
+      "total_cues": 2375,
+      "path": "ups/404186354-callwhl"
+    },
+    {
+      "slug": "499725296-AI扫地曾",
+      "mid": "499725296",
+      "name": "AI扫地曾",
+      "ok_count": 141,
+      "empty_count": 3,
+      "total_cues": 22956,
+      "path": "ups/499725296-AI扫地曾"
+    }
+  ],
+  "tool": "loop-bilibili",
+  "plugin": "bili_subbatch",
+  "tool_url": "https://github.com/xiaoqianran/loop-bilibili"
+}

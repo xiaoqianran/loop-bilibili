@@ -1,54 +1,65 @@
-"""批量 bilibili subtitle。"""
+"""批量字幕 — 默认 SubBatch 协议（packages/bili_subbatch），不经 opencli。"""
 
 from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
 
-from loop_core.errors import FetchError
 from loop_core.rate_limit import Profile
-from loop_core.retry import run_with_retry
-from loop_core.runner import OpencliRunner
 
-from item_batch.runner import run_item_batch
+from bili_subbatch.batch import run_batch
+from bili_subbatch.client import fetch_subtitle as _fetch_one
+
+# opencli 时代 profile 名 → subbatch 友好间隔（秒）
+_PROFILE_PACE = {
+    "conservative": (0.5, 0.2),
+    "balanced": (0.4, 0.15),
+    "aggressive": (0.25, 0.1),
+}
 
 
-def fetch_subtitle(runner: OpencliRunner, bvid: str, profile: Profile) -> dict[str, Any]:
-    try:
-        data = run_with_retry(
-            runner,
-            ["bilibili", "subtitle", bvid, "-f", "json"],
-            profile,
-            timeout=180,
-        )
-    except FetchError as e:
-        msg = str(e).lower()
-        if "empty" in msg or "no data" in msg or "no subtitle" in msg:
-            return {"bvid": bvid, "status": "empty", "reason": "no_subtitle", "raw_error": str(e)[:400]}
-        raise
-
-    if data is None or (isinstance(data, list) and len(data) == 0):
-        return {"bvid": bvid, "status": "empty", "reason": "no_subtitle"}
-
-    cues = data if isinstance(data, list) else data.get("cues") or data.get("items") or [data]
-    n = len(cues) if isinstance(cues, list) else 1
-    return {"bvid": bvid, "status": "ok", "cue_count": n, "data": data}
+def fetch_subtitle(
+    bvid: str,
+    *,
+    cookie: str | None = None,
+) -> dict[str, Any]:
+    """单条字幕，返回与 batch 一致的 row dict。"""
+    r = _fetch_one(bvid, cookie=cookie)
+    return r.to_row()
 
 
 def export_subtitles(
     bvids: list[str],
     out_dir: Path,
-    profile: Profile,
+    profile: Profile | None = None,
     *,
     resume: bool = True,
-    runner: OpencliRunner | None = None,
+    cookie: str | None = None,
+    write_srt_files: bool = True,
+    delay: float | None = None,
+    jitter: float | None = None,
 ) -> Path:
-    return run_item_batch(
-        kind="subtitle",
-        bvids=bvids,
-        out_dir=out_dir,
-        profile=profile,
-        fetch_one=fetch_subtitle,
+    """
+    串行批量字幕（SubBatch HTTP）。
+
+    - 未显式传 delay/jitter 时：按 profile 名映射到 subbatch 温和间隔
+      （不再沿用 opencli 的 2s item_delay）。
+    - 显式 --item-delay / --item-jitter 优先生效。
+    """
+    if delay is None or jitter is None:
+        name = getattr(profile, "name", None) if profile is not None else None
+        d0, j0 = _PROFILE_PACE.get(name or "balanced", (0.4, 0.15))
+        if delay is None:
+            delay = d0
+        if jitter is None:
+            jitter = j0
+
+    return run_batch(
+        bvids,
+        Path(out_dir),
+        delay=float(delay),
+        jitter=float(jitter),
         resume=resume,
-        runner=runner,
+        cookie=cookie,
+        write_srt_files=write_srt_files,
     )

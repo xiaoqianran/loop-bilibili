@@ -9,7 +9,7 @@ paths:
 # 默认限速（与 packages/loop_core/rate_limit.py 中 conservative 对齐）
 rate_limit:
   default_profile: conservative
-  # list: page_delay ~1.5s; item: item_delay ~2s mild (always serial, no concurrency)
+  # list: page_delay ~1.5s; summary/comments item_delay ~2s; subtitle uses SubBatch ~0.4–0.5s
   # page_size: 30
   # page_delay: 1.5
   # item_delay: 2.0
