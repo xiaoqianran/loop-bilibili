@@ -53,12 +53,19 @@ python3 main.py pack-subtitles --src-root data/subtitle -o data/subtitles --skip
 
 ## 字幕数据
 
-见 [docs/DATASET.md](docs/DATASET.md)。归档在 **`data/subtitles/`**。
+| 去哪 | 链接 |
+|------|------|
+| **★ 人类导航（按 UP 读字幕）** | **[data/subtitles/README.md](data/subtitles/README.md)** → 点进各 `ups/{mid}-名字/README.md` |
+| 方案说明 | [docs/DATASET.md](docs/DATASET.md) |
+| 扩展路线 | [docs/ROADMAP.md](docs/ROADMAP.md) |
+| 版权说明 | [data/subtitles/NOTICE](data/subtitles/NOTICE) |
 
-抓取管线可扩展（processors / 未来 LLM / Actions）：[docs/ROADMAP.md](docs/ROADMAP.md)。
+示例（北歌AIGC 全量有序 + txt 预览 + srt）：  
+[data/subtitles/ups/3546588152597451-北歌AIGC/README.md](data/subtitles/ups/3546588152597451-北歌AIGC/README.md)
 
 ```bash
-ls data/subtitles/ups/
+# 本地浏览
+open data/subtitles/README.md   # 或直接在 GitHub 点开
 ```
 
 ## 限速
