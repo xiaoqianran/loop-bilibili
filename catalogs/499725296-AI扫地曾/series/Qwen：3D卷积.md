@@ -1,8 +1,10 @@
 # Qwen：3D卷积
 
-> UP：AI扫地曾（UID `499725296`）  
-> 本系列共 **1** 条
+> UP：AI扫地曾（UID `499725296`）· 本系列 **1** 条  
+> 字幕总导航：[AI扫地曾 · 字幕 README](../../../data/subtitles/ups/499725296-AI扫地曾/README.md)
 
-| # | 编号 | 标题 | 播放 | 日期 | 链接 |
-|---|------|------|------|------|------|
-| 1 | - | 【Qwen：3D卷积】为何要复制图片伪装成2帧视频？ | 1,124 | 2026-03-25 | [BV11fQfBBEJA](https://www.bilibili.com/video/BV11fQfBBEJA) |
+| # | 标题 | 播放 | 日期 | 字幕 txt/srt |
+|---|------|------|------|--------------|
+| 1 | 【Qwen：3D卷积】为何要复制图片伪装成2帧视频？ | [BV11fQfBBEJA](https://www.bilibili.com/video/BV11fQfBBEJA) | 2026-03-25 | [txt](../../../data/subtitles/ups/499725296-AI扫地曾/txt/BV11fQfBBEJA.txt) · [srt](../../../data/subtitles/ups/499725296-AI扫地曾/srt/BV11fQfBBEJA.srt) |
+
+全量导航（含预览）：[../../../data/subtitles/ups/499725296-AI扫地曾/README.md](../../../data/subtitles/ups/499725296-AI扫地曾/README.md)

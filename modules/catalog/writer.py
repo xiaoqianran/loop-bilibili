@@ -25,32 +25,103 @@ def log(msg: str) -> None:
     logger.info(msg)
 
 
+def _subtitle_paths(catalog_folder: Path, bvid: str) -> tuple[str, str, bool, bool]:
+    """
+    Relative links from catalogs/{slug}/ to packed archive, plus existence flags.
+
+    Returns (txt_rel_from_catalog_root, srt_rel_from_catalog_root, has_txt, has_srt).
+    """
+    slug = catalog_folder.name
+    # catalogs/slug -> ../../data/subtitles/ups/slug/txt/BVxx.txt
+    txt_rel = f"../../data/subtitles/ups/{slug}/txt/{bvid}.txt"
+    srt_rel = f"../../data/subtitles/ups/{slug}/srt/{bvid}.srt"
+    repo = catalog_folder.parent.parent  # .../loop-bilibili
+    has_txt = (repo / "data" / "subtitles" / "ups" / slug / "txt" / f"{bvid}.txt").is_file()
+    has_srt = (repo / "data" / "subtitles" / "ups" / slug / "srt" / f"{bvid}.srt").is_file()
+    return txt_rel, srt_rel, has_txt, has_srt
+
+
+def _subtitle_cell(catalog_folder: Path, bvid: str, *, from_series_subdir: bool = False) -> str:
+    """Markdown cell: [txt] · [srt] or 无字幕."""
+    if not bvid:
+        return "—"
+    txt_rel, srt_rel, has_txt, has_srt = _subtitle_paths(catalog_folder, bvid)
+    if from_series_subdir:
+        # series/*.md is one level deeper → need ../../../
+        txt_rel = "../" + txt_rel
+        srt_rel = "../" + srt_rel
+    parts: list[str] = []
+    if has_txt:
+        parts.append(f"[txt]({txt_rel})")
+    if has_srt:
+        parts.append(f"[srt]({srt_rel})")
+    if parts:
+        return " · ".join(parts)
+    # still offer intended path when missing (pack not done yet)
+    return f"_无_（pack 后见 `{txt_rel}`）"
+
+
 def write_series_md(
-    path: Path, series: str, videos: list[dict], up_name: str, uid: str
+    path: Path,
+    series: str,
+    videos: list[dict],
+    up_name: str,
+    uid: str,
+    catalog_folder: Path | None = None,
 ) -> None:
+    catalog_folder = catalog_folder or path.parent.parent
+    slug = catalog_folder.name
+    hub_rel = f"../../../data/subtitles/ups/{slug}/README.md"
     lines = [
         f"# {series}",
         "",
-        f"> UP：{up_name}（UID `{uid}`）  ",
-        f"> 本系列共 **{len(videos)}** 条",
+        f"> UP：{up_name}（UID `{uid}`）· 本系列 **{len(videos)}** 条  ",
+        f"> 字幕总导航：[{up_name} · 字幕 README]({hub_rel})",
         "",
-        "| # | 编号 | 标题 | 播放 | 日期 | 链接 |",
-        "|---|------|------|------|------|------|",
+        "| # | 标题 | 播放 | 日期 | 字幕 txt/srt |",
+        "|---|------|------|------|--------------|",
     ]
     for i, v in enumerate(videos, 1):
-        num = v.get("number")
-        num_s = str(num) if num is not None else "-"
         title = (v.get("title") or "").replace("|", "\\|")
         bvid = v.get("bvid") or ""
         link = v.get("url") or (
             f"https://www.bilibili.com/video/{bvid}" if bvid else ""
         )
+        play = f"[{bvid or 'link'}]({link})" if link else (bvid or "—")
+        sub = _subtitle_cell(catalog_folder, bvid, from_series_subdir=True)
         lines.append(
-            f"| {i} | {num_s} | {title} | {fmt_plays(v.get('plays'))} | "
-            f"{v.get('date') or '-'} | [{bvid or 'link'}]({link}) |"
+            f"| {i} | {title} | {play} | {v.get('date') or '-'} | {sub} |"
+        )
+    lines += [
+        "",
+        f"全量导航（含预览）：[{hub_rel}]({hub_rel})",
+        "",
+    ]
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def _append_series_video_table(
+    lines: list[str],
+    videos: list[dict],
+    catalog_folder: Path,
+) -> None:
+    lines += [
+        "",
+        "| # | 标题 | 播放 | 日期 | 字幕 txt/srt |",
+        "|---|------|------|------|--------------|",
+    ]
+    for i, v in enumerate(videos, 1):
+        title = (v.get("title") or "").replace("|", "\\|")
+        bvid = v.get("bvid") or ""
+        link = v.get("url") or (
+            f"https://www.bilibili.com/video/{bvid}" if bvid else ""
+        )
+        play = f"[{bvid or 'link'}]({link})" if link else (bvid or "—")
+        sub = _subtitle_cell(catalog_folder, bvid, from_series_subdir=False)
+        lines.append(
+            f"| {i} | {title} | {play} | {v.get('date') or '-'} | {sub} |"
         )
     lines.append("")
-    path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def write_index_md(
@@ -69,9 +140,8 @@ def write_index_md(
         return (0, -len(vs), name)
 
     ordered = sorted(groups.items(), key=series_order)
-    # Point humans to the subtitle hub FIRST — most readers want txt, not Top20 tables.
-    # catalogs/ only carries metadata; full ordered transcripts live under data/subtitles.
-    slug = path.parent.name  # catalogs/{uid}-{name}/README.md
+    catalog_folder = path.parent
+    slug = catalog_folder.name
     hub_rel = f"../../data/subtitles/ups/{slug}/README.md"
 
     lines = [
@@ -86,8 +156,44 @@ def write_index_md(
         f"> ### 👉 [{up_name} · 全部视频 · 字幕预览 · txt/srt]({hub_rel})",
         ">",
         "> 按投稿顺序列出**全部**视频：标题、播放页、有无字幕、**txt 正文预览**、相对路径 `txt/` · `srt/`。",
-        "> 本 catalog 页只是投稿元数据摘要；真正给人读的字幕导航在上面的链接。",
         "",
+        "---",
+        "",
+        "## 📚 系列一览（含每条视频的 txt / srt）",
+        "",
+        f"> 下列按系列展开**全部**视频；**字幕 txt/srt** 链到 "
+        f"`data/subtitles/ups/{slug}/`。"
+        f"总索引仍见上方 [字幕导航]({hub_rel})。",
+        "",
+        "### 系列速查",
+        "",
+        "| 系列 | 条数 | 本页锚点 | 系列文件 |",
+        "|------|------|----------|----------|",
+    ]
+
+    for series, vs in ordered:
+        fname = f"series/{slugify(series)}.md"
+        anchor = slugify(series)
+        lines.append(
+            f"| {series} | {len(vs)} | [↓ 展开](#{anchor}) | [{fname}]({fname}) |"
+        )
+
+    lines.append("")
+
+    for series, vs in ordered:
+        anchor = slugify(series)
+        # GitHub-style heading anchors: we use explicit HTML id for reliability with CJK
+        lines.append(f'<a id="{anchor}"></a>')
+        lines.append("")
+        lines.append(f"### {series} · {len(vs)} 条")
+        lines.append("")
+        lines.append(
+            f"系列页（同表）：[series/{slugify(series)}.md](series/{slugify(series)}.md)"
+            f" · [全部字幕导航]({hub_rel})"
+        )
+        _append_series_video_table(lines, vs, catalog_folder)
+
+    lines += [
         "---",
         "",
         f"- **UID**: `{uid}`",
@@ -102,44 +208,35 @@ def write_index_md(
     lines += [
         f"- **字幕导航**: [{hub_rel}]({hub_rel})",
         "",
-        "## 系列一览",
-        "",
-        "| 系列 | 数量 | 文件 |",
-        "|------|------|------|",
-    ]
-    for series, vs in ordered:
-        fname = f"series/{slugify(series)}.md"
-        lines.append(f"| {series} | {len(vs)} | [{fname}]({fname}) |")
-
-    lines += [
-        "",
         "## 全站最新 20 条（仅摘要，非全文）",
         "",
-        "| 日期 | 标题 | 系列 | 播放 | 链接 |",
-        "|------|------|------|------|------|",
+        "| 日期 | 标题 | 系列 | 播放 | 链接 | 字幕 |",
+        "|------|------|------|------|------|------|",
     ]
     latest = sorted(videos, key=lambda v: str(v.get("date") or ""), reverse=True)[:20]
     for v in latest:
         title = (v.get("title") or "").replace("|", "\\|")
         bvid = v.get("bvid") or ""
+        sub = _subtitle_cell(catalog_folder, bvid)
         lines.append(
             f"| {v.get('date') or '-'} | {title} | {v.get('series')} | "
-            f"{fmt_plays(v.get('plays'))} | [{bvid or 'link'}]({v.get('url') or ''}) |"
+            f"{fmt_plays(v.get('plays'))} | [{bvid or 'link'}]({v.get('url') or ''}) | {sub} |"
         )
 
     lines += [
         "",
         "## 播放量 Top 20（仅摘要，非全文）",
         "",
-        "| 播放 | 标题 | 系列 | 日期 | 链接 |",
-        "|------|------|------|------|------|",
+        "| 播放 | 标题 | 系列 | 日期 | 链接 | 字幕 |",
+        "|------|------|------|------|------|------|",
     ]
     for v in sorted(videos, key=plays_int, reverse=True)[:20]:
         title = (v.get("title") or "").replace("|", "\\|")
         bvid = v.get("bvid") or ""
+        sub = _subtitle_cell(catalog_folder, bvid)
         lines.append(
             f"| {fmt_plays(v.get('plays'))} | {title} | {v.get('series')} | "
-            f"{v.get('date') or '-'} | [{bvid or 'link'}]({v.get('url') or ''}) |"
+            f"{v.get('date') or '-'} | [{bvid or 'link'}]({v.get('url') or ''}) | {sub} |"
         )
 
     lines += [
@@ -188,7 +285,12 @@ def write_catalog_files(
 
     for series, vs in groups.items():
         write_series_md(
-            series_dir / f"{slugify(series)}.md", series, vs, up_name, uid
+            series_dir / f"{slugify(series)}.md",
+            series,
+            vs,
+            up_name,
+            uid,
+            catalog_folder=folder,
         )
 
     write_index_md(

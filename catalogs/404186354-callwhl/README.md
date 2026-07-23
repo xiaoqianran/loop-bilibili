@@ -9,7 +9,48 @@
 > ### 👉 [callwhl · 全部视频 · 字幕预览 · txt/srt](../../data/subtitles/ups/404186354-callwhl/README.md)
 >
 > 按投稿顺序列出**全部**视频：标题、播放页、有无字幕、**txt 正文预览**、相对路径 `txt/` · `srt/`。
-> 本 catalog 页只是投稿元数据摘要；真正给人读的字幕导航在上面的链接。
+
+---
+
+## 📚 系列一览（含每条视频的 txt / srt）
+
+> 下列按系列展开**全部**视频；**字幕 txt/srt** 链到 `data/subtitles/ups/404186354-callwhl/`。总索引仍见上方 [字幕导航](../../data/subtitles/ups/404186354-callwhl/README.md)。
+
+### 系列速查
+
+| 系列 | 条数 | 本页锚点 | 系列文件 |
+|------|------|----------|----------|
+| 未分类 / 其他 | 21 | [↓ 展开](#未分类-其他) | [series/未分类-其他.md](series/未分类-其他.md) |
+
+<a id="未分类-其他"></a>
+
+### 未分类 / 其他 · 21 条
+
+系列页（同表）：[series/未分类-其他.md](series/未分类-其他.md) · [全部字幕导航](../../data/subtitles/ups/404186354-callwhl/README.md)
+
+| # | 标题 | 播放 | 日期 | 字幕 txt/srt |
+|---|------|------|------|--------------|
+| 1 | 6.机械臂IK-程序控制机械臂 | [BV1xxgy68E8U](https://www.bilibili.com/video/BV1xxgy68E8U) | 2026-07-22 | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1xxgy68E8U.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1xxgy68E8U.srt) |
+| 2 | 5.纹身的制作 | [BV1xhEn67EuR](https://www.bilibili.com/video/BV1xhEn67EuR) | 2026-06-06 | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1xhEn67EuR.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1xhEn67EuR.srt) |
+| 3 | 1.关卡基础1 | [BV12dVV6JEtK](https://www.bilibili.com/video/BV12dVV6JEtK) | 2026-05-30 | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV12dVV6JEtK.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV12dVV6JEtK.srt) |
+| 4 | 1.Houdini人群-基本设置 | [BV14TMG6vErX](https://www.bilibili.com/video/BV14TMG6vErX) | 2026-07-08 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV14TMG6vErX.txt`） |
+| 5 | 计算机图形学之Brensenham算法 | [BV15x4y1r7AG](https://www.bilibili.com/video/BV15x4y1r7AG) | 2024-02-26 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV15x4y1r7AG.txt`） |
+| 6 | Unity高级角色物理与交互 | [BV1B4gEeeEnk](https://www.bilibili.com/video/BV1B4gEeeEnk) | 2024-06-19 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1B4gEeeEnk.txt`） |
+| 7 | C++ 高级编程与DirectX游戏制作全流程 | [BV1Gda8zuEUL](https://www.bilibili.com/video/BV1Gda8zuEUL) | 2025-09-05 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1Gda8zuEUL.txt`） |
+| 8 | 计算机图形学之物理渲染算法精讲 | [BV1Db4Az5E3p](https://www.bilibili.com/video/BV1Db4Az5E3p) | 2025-10-11 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1Db4Az5E3p.txt`） |
+| 9 | AI工匠课：从零手搓Unity深度强化学习引擎 | [BV1eQykB9EEm](https://www.bilibili.com/video/BV1eQykB9EEm) | 2025-10-28 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1eQykB9EEm.txt`） |
+| 10 | 模糊与锐化算法 | [BV1mKzgBiEMj](https://www.bilibili.com/video/BV1mKzgBiEMj) | 2026-01-23 | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1mKzgBiEMj.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1mKzgBiEMj.srt) |
+| 11 | 屏幕空间环境光遮蔽（SSAO） | [BV17YAMzCEC8](https://www.bilibili.com/video/BV17YAMzCEC8) | 2026-03-22 | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV17YAMzCEC8.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV17YAMzCEC8.srt) |
+| 12 | 基于BRDF的 PBR高光计算 | [BV1Vh9gBnEXi](https://www.bilibili.com/video/BV1Vh9gBnEXi) | 2026-04-03 | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1Vh9gBnEXi.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1Vh9gBnEXi.srt) |
+| 13 | GPU编程基本概念-分支发散 | [BV12QDjBJEzM](https://www.bilibili.com/video/BV12QDjBJEzM) | 2026-04-08 | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV12QDjBJEzM.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV12QDjBJEzM.srt) |
+| 14 | 虚幻引擎AAA恐怖游戏制作：全技术永久迭代版 | [BV1ytdWB2E3S](https://www.bilibili.com/video/BV1ytdWB2E3S) | 2026-04-18 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1ytdWB2E3S.txt`） |
+| 15 | 吃透逆运动学：角色骨骼绑定与实时IK控制系统课 | [BV1eFTy6iEkf](https://www.bilibili.com/video/BV1eFTy6iEkf) | 2026-07-05 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1eFTy6iEkf.txt`） |
+| 16 | 一步步搭建Unity可编程渲染管线 | [BV1KKNA6eEKB](https://www.bilibili.com/video/BV1KKNA6eEKB) | 2026-07-11 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1KKNA6eEKB.txt`） |
+| 17 | MeshTerrain-1.网格体地形 | [BV1WqNB6FErH](https://www.bilibili.com/video/BV1WqNB6FErH) | 2026-07-15 | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1WqNB6FErH.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1WqNB6FErH.srt) |
+| 18 | 虚幻引擎程序化环境 | [BV1X6Kw6LE9X](https://www.bilibili.com/video/BV1X6Kw6LE9X) | 2026-07-18 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1X6Kw6LE9X.txt`） |
+| 19 | Unity全场景TA实战：覆盖所有游戏需求 | [BV1WMKr66E4r](https://www.bilibili.com/video/BV1WMKr66E4r) | 2026-07-19 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1WMKr66E4r.txt`） |
+| 20 | 虚幻引擎全场景TA实战：覆盖所有游戏需求 | [BV12bKH6sEV5](https://www.bilibili.com/video/BV12bKH6sEV5) | 2026-07-20 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV12bKH6sEV5.txt`） |
+| 21 | MetaHuman数字人 | [BV1Fvgy6WEnR](https://www.bilibili.com/video/BV1Fvgy6WEnR) | 2026-07-22 | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1Fvgy6WEnR.txt`） |
 
 ---
 
@@ -17,66 +58,60 @@
 - **空间**: https://space.bilibili.com/404186354
 - **投稿总数**: **21**
 - **系列数**: **1**
-- **导出时间**: 2026-07-23 18:00 UTC
+- **导出时间**: 2026-07-23 18:07 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 - **字幕导航**: [../../data/subtitles/ups/404186354-callwhl/README.md](../../data/subtitles/ups/404186354-callwhl/README.md)
 
-## 系列一览
-
-| 系列 | 数量 | 文件 |
-|------|------|------|
-| 未分类 / 其他 | 21 | [series/未分类-其他.md](series/未分类-其他.md) |
-
 ## 全站最新 20 条（仅摘要，非全文）
 
-| 日期 | 标题 | 系列 | 播放 | 链接 |
-|------|------|------|------|------|
-| 2026-07-22 | 6.机械臂IK-程序控制机械臂 | 未分类 / 其他 | 32 | [BV1xxgy68E8U](https://www.bilibili.com/video/BV1xxgy68E8U) |
-| 2026-07-22 | MetaHuman数字人 | 未分类 / 其他 | 0 | [BV1Fvgy6WEnR](https://www.bilibili.com/video/BV1Fvgy6WEnR) |
-| 2026-07-20 | 虚幻引擎全场景TA实战：覆盖所有游戏需求 | 未分类 / 其他 | 2 | [BV12bKH6sEV5](https://www.bilibili.com/video/BV12bKH6sEV5) |
-| 2026-07-19 | Unity全场景TA实战：覆盖所有游戏需求 | 未分类 / 其他 | 0 | [BV1WMKr66E4r](https://www.bilibili.com/video/BV1WMKr66E4r) |
-| 2026-07-18 | 虚幻引擎程序化环境 | 未分类 / 其他 | 0 | [BV1X6Kw6LE9X](https://www.bilibili.com/video/BV1X6Kw6LE9X) |
-| 2026-07-15 | MeshTerrain-1.网格体地形 | 未分类 / 其他 | 44 | [BV1WqNB6FErH](https://www.bilibili.com/video/BV1WqNB6FErH) |
-| 2026-07-11 | 一步步搭建Unity可编程渲染管线 | 未分类 / 其他 | 10 | [BV1KKNA6eEKB](https://www.bilibili.com/video/BV1KKNA6eEKB) |
-| 2026-07-08 | 1.Houdini人群-基本设置 | 未分类 / 其他 | 55 | [BV14TMG6vErX](https://www.bilibili.com/video/BV14TMG6vErX) |
-| 2026-07-05 | 吃透逆运动学：角色骨骼绑定与实时IK控制系统课 | 未分类 / 其他 | 0 | [BV1eFTy6iEkf](https://www.bilibili.com/video/BV1eFTy6iEkf) |
-| 2026-06-06 | 5.纹身的制作 | 未分类 / 其他 | 78 | [BV1xhEn67EuR](https://www.bilibili.com/video/BV1xhEn67EuR) |
-| 2026-05-30 | 1.关卡基础1 | 未分类 / 其他 | 137 | [BV12dVV6JEtK](https://www.bilibili.com/video/BV12dVV6JEtK) |
-| 2026-04-18 | 虚幻引擎AAA恐怖游戏制作：全技术永久迭代版 | 未分类 / 其他 | 7 | [BV1ytdWB2E3S](https://www.bilibili.com/video/BV1ytdWB2E3S) |
-| 2026-04-08 | GPU编程基本概念-分支发散 | 未分类 / 其他 | 148 | [BV12QDjBJEzM](https://www.bilibili.com/video/BV12QDjBJEzM) |
-| 2026-04-03 | 基于BRDF的 PBR高光计算 | 未分类 / 其他 | 264 | [BV1Vh9gBnEXi](https://www.bilibili.com/video/BV1Vh9gBnEXi) |
-| 2026-03-22 | 屏幕空间环境光遮蔽（SSAO） | 未分类 / 其他 | 263 | [BV17YAMzCEC8](https://www.bilibili.com/video/BV17YAMzCEC8) |
-| 2026-01-23 | 模糊与锐化算法 | 未分类 / 其他 | 73 | [BV1mKzgBiEMj](https://www.bilibili.com/video/BV1mKzgBiEMj) |
-| 2025-10-28 | AI工匠课：从零手搓Unity深度强化学习引擎 | 未分类 / 其他 | 0 | [BV1eQykB9EEm](https://www.bilibili.com/video/BV1eQykB9EEm) |
-| 2025-10-11 | 计算机图形学之物理渲染算法精讲 | 未分类 / 其他 | 9 | [BV1Db4Az5E3p](https://www.bilibili.com/video/BV1Db4Az5E3p) |
-| 2025-09-05 | C++ 高级编程与DirectX游戏制作全流程 | 未分类 / 其他 | 11 | [BV1Gda8zuEUL](https://www.bilibili.com/video/BV1Gda8zuEUL) |
-| 2024-06-19 | Unity高级角色物理与交互 | 未分类 / 其他 | 124 | [BV1B4gEeeEnk](https://www.bilibili.com/video/BV1B4gEeeEnk) |
+| 日期 | 标题 | 系列 | 播放 | 链接 | 字幕 |
+|------|------|------|------|------|------|
+| 2026-07-22 | 6.机械臂IK-程序控制机械臂 | 未分类 / 其他 | 32 | [BV1xxgy68E8U](https://www.bilibili.com/video/BV1xxgy68E8U) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1xxgy68E8U.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1xxgy68E8U.srt) |
+| 2026-07-22 | MetaHuman数字人 | 未分类 / 其他 | 0 | [BV1Fvgy6WEnR](https://www.bilibili.com/video/BV1Fvgy6WEnR) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1Fvgy6WEnR.txt`） |
+| 2026-07-20 | 虚幻引擎全场景TA实战：覆盖所有游戏需求 | 未分类 / 其他 | 2 | [BV12bKH6sEV5](https://www.bilibili.com/video/BV12bKH6sEV5) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV12bKH6sEV5.txt`） |
+| 2026-07-19 | Unity全场景TA实战：覆盖所有游戏需求 | 未分类 / 其他 | 0 | [BV1WMKr66E4r](https://www.bilibili.com/video/BV1WMKr66E4r) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1WMKr66E4r.txt`） |
+| 2026-07-18 | 虚幻引擎程序化环境 | 未分类 / 其他 | 0 | [BV1X6Kw6LE9X](https://www.bilibili.com/video/BV1X6Kw6LE9X) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1X6Kw6LE9X.txt`） |
+| 2026-07-15 | MeshTerrain-1.网格体地形 | 未分类 / 其他 | 44 | [BV1WqNB6FErH](https://www.bilibili.com/video/BV1WqNB6FErH) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1WqNB6FErH.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1WqNB6FErH.srt) |
+| 2026-07-11 | 一步步搭建Unity可编程渲染管线 | 未分类 / 其他 | 10 | [BV1KKNA6eEKB](https://www.bilibili.com/video/BV1KKNA6eEKB) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1KKNA6eEKB.txt`） |
+| 2026-07-08 | 1.Houdini人群-基本设置 | 未分类 / 其他 | 55 | [BV14TMG6vErX](https://www.bilibili.com/video/BV14TMG6vErX) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV14TMG6vErX.txt`） |
+| 2026-07-05 | 吃透逆运动学：角色骨骼绑定与实时IK控制系统课 | 未分类 / 其他 | 0 | [BV1eFTy6iEkf](https://www.bilibili.com/video/BV1eFTy6iEkf) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1eFTy6iEkf.txt`） |
+| 2026-06-06 | 5.纹身的制作 | 未分类 / 其他 | 78 | [BV1xhEn67EuR](https://www.bilibili.com/video/BV1xhEn67EuR) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1xhEn67EuR.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1xhEn67EuR.srt) |
+| 2026-05-30 | 1.关卡基础1 | 未分类 / 其他 | 137 | [BV12dVV6JEtK](https://www.bilibili.com/video/BV12dVV6JEtK) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV12dVV6JEtK.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV12dVV6JEtK.srt) |
+| 2026-04-18 | 虚幻引擎AAA恐怖游戏制作：全技术永久迭代版 | 未分类 / 其他 | 7 | [BV1ytdWB2E3S](https://www.bilibili.com/video/BV1ytdWB2E3S) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1ytdWB2E3S.txt`） |
+| 2026-04-08 | GPU编程基本概念-分支发散 | 未分类 / 其他 | 148 | [BV12QDjBJEzM](https://www.bilibili.com/video/BV12QDjBJEzM) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV12QDjBJEzM.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV12QDjBJEzM.srt) |
+| 2026-04-03 | 基于BRDF的 PBR高光计算 | 未分类 / 其他 | 264 | [BV1Vh9gBnEXi](https://www.bilibili.com/video/BV1Vh9gBnEXi) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1Vh9gBnEXi.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1Vh9gBnEXi.srt) |
+| 2026-03-22 | 屏幕空间环境光遮蔽（SSAO） | 未分类 / 其他 | 263 | [BV17YAMzCEC8](https://www.bilibili.com/video/BV17YAMzCEC8) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV17YAMzCEC8.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV17YAMzCEC8.srt) |
+| 2026-01-23 | 模糊与锐化算法 | 未分类 / 其他 | 73 | [BV1mKzgBiEMj](https://www.bilibili.com/video/BV1mKzgBiEMj) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1mKzgBiEMj.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1mKzgBiEMj.srt) |
+| 2025-10-28 | AI工匠课：从零手搓Unity深度强化学习引擎 | 未分类 / 其他 | 0 | [BV1eQykB9EEm](https://www.bilibili.com/video/BV1eQykB9EEm) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1eQykB9EEm.txt`） |
+| 2025-10-11 | 计算机图形学之物理渲染算法精讲 | 未分类 / 其他 | 9 | [BV1Db4Az5E3p](https://www.bilibili.com/video/BV1Db4Az5E3p) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1Db4Az5E3p.txt`） |
+| 2025-09-05 | C++ 高级编程与DirectX游戏制作全流程 | 未分类 / 其他 | 11 | [BV1Gda8zuEUL](https://www.bilibili.com/video/BV1Gda8zuEUL) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1Gda8zuEUL.txt`） |
+| 2024-06-19 | Unity高级角色物理与交互 | 未分类 / 其他 | 124 | [BV1B4gEeeEnk](https://www.bilibili.com/video/BV1B4gEeeEnk) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1B4gEeeEnk.txt`） |
 
 ## 播放量 Top 20（仅摘要，非全文）
 
-| 播放 | 标题 | 系列 | 日期 | 链接 |
-|------|------|------|------|------|
-| 3,027 | 计算机图形学之Brensenham算法 | 未分类 / 其他 | 2024-02-26 | [BV15x4y1r7AG](https://www.bilibili.com/video/BV15x4y1r7AG) |
-| 264 | 基于BRDF的 PBR高光计算 | 未分类 / 其他 | 2026-04-03 | [BV1Vh9gBnEXi](https://www.bilibili.com/video/BV1Vh9gBnEXi) |
-| 263 | 屏幕空间环境光遮蔽（SSAO） | 未分类 / 其他 | 2026-03-22 | [BV17YAMzCEC8](https://www.bilibili.com/video/BV17YAMzCEC8) |
-| 148 | GPU编程基本概念-分支发散 | 未分类 / 其他 | 2026-04-08 | [BV12QDjBJEzM](https://www.bilibili.com/video/BV12QDjBJEzM) |
-| 137 | 1.关卡基础1 | 未分类 / 其他 | 2026-05-30 | [BV12dVV6JEtK](https://www.bilibili.com/video/BV12dVV6JEtK) |
-| 124 | Unity高级角色物理与交互 | 未分类 / 其他 | 2024-06-19 | [BV1B4gEeeEnk](https://www.bilibili.com/video/BV1B4gEeeEnk) |
-| 78 | 5.纹身的制作 | 未分类 / 其他 | 2026-06-06 | [BV1xhEn67EuR](https://www.bilibili.com/video/BV1xhEn67EuR) |
-| 73 | 模糊与锐化算法 | 未分类 / 其他 | 2026-01-23 | [BV1mKzgBiEMj](https://www.bilibili.com/video/BV1mKzgBiEMj) |
-| 55 | 1.Houdini人群-基本设置 | 未分类 / 其他 | 2026-07-08 | [BV14TMG6vErX](https://www.bilibili.com/video/BV14TMG6vErX) |
-| 44 | MeshTerrain-1.网格体地形 | 未分类 / 其他 | 2026-07-15 | [BV1WqNB6FErH](https://www.bilibili.com/video/BV1WqNB6FErH) |
-| 32 | 6.机械臂IK-程序控制机械臂 | 未分类 / 其他 | 2026-07-22 | [BV1xxgy68E8U](https://www.bilibili.com/video/BV1xxgy68E8U) |
-| 11 | C++ 高级编程与DirectX游戏制作全流程 | 未分类 / 其他 | 2025-09-05 | [BV1Gda8zuEUL](https://www.bilibili.com/video/BV1Gda8zuEUL) |
-| 10 | 一步步搭建Unity可编程渲染管线 | 未分类 / 其他 | 2026-07-11 | [BV1KKNA6eEKB](https://www.bilibili.com/video/BV1KKNA6eEKB) |
-| 9 | 计算机图形学之物理渲染算法精讲 | 未分类 / 其他 | 2025-10-11 | [BV1Db4Az5E3p](https://www.bilibili.com/video/BV1Db4Az5E3p) |
-| 7 | 虚幻引擎AAA恐怖游戏制作：全技术永久迭代版 | 未分类 / 其他 | 2026-04-18 | [BV1ytdWB2E3S](https://www.bilibili.com/video/BV1ytdWB2E3S) |
-| 2 | 虚幻引擎全场景TA实战：覆盖所有游戏需求 | 未分类 / 其他 | 2026-07-20 | [BV12bKH6sEV5](https://www.bilibili.com/video/BV12bKH6sEV5) |
-| 0 | MetaHuman数字人 | 未分类 / 其他 | 2026-07-22 | [BV1Fvgy6WEnR](https://www.bilibili.com/video/BV1Fvgy6WEnR) |
-| 0 | Unity全场景TA实战：覆盖所有游戏需求 | 未分类 / 其他 | 2026-07-19 | [BV1WMKr66E4r](https://www.bilibili.com/video/BV1WMKr66E4r) |
-| 0 | 虚幻引擎程序化环境 | 未分类 / 其他 | 2026-07-18 | [BV1X6Kw6LE9X](https://www.bilibili.com/video/BV1X6Kw6LE9X) |
-| 0 | 吃透逆运动学：角色骨骼绑定与实时IK控制系统课 | 未分类 / 其他 | 2026-07-05 | [BV1eFTy6iEkf](https://www.bilibili.com/video/BV1eFTy6iEkf) |
+| 播放 | 标题 | 系列 | 日期 | 链接 | 字幕 |
+|------|------|------|------|------|------|
+| 3,027 | 计算机图形学之Brensenham算法 | 未分类 / 其他 | 2024-02-26 | [BV15x4y1r7AG](https://www.bilibili.com/video/BV15x4y1r7AG) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV15x4y1r7AG.txt`） |
+| 264 | 基于BRDF的 PBR高光计算 | 未分类 / 其他 | 2026-04-03 | [BV1Vh9gBnEXi](https://www.bilibili.com/video/BV1Vh9gBnEXi) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1Vh9gBnEXi.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1Vh9gBnEXi.srt) |
+| 263 | 屏幕空间环境光遮蔽（SSAO） | 未分类 / 其他 | 2026-03-22 | [BV17YAMzCEC8](https://www.bilibili.com/video/BV17YAMzCEC8) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV17YAMzCEC8.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV17YAMzCEC8.srt) |
+| 148 | GPU编程基本概念-分支发散 | 未分类 / 其他 | 2026-04-08 | [BV12QDjBJEzM](https://www.bilibili.com/video/BV12QDjBJEzM) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV12QDjBJEzM.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV12QDjBJEzM.srt) |
+| 137 | 1.关卡基础1 | 未分类 / 其他 | 2026-05-30 | [BV12dVV6JEtK](https://www.bilibili.com/video/BV12dVV6JEtK) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV12dVV6JEtK.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV12dVV6JEtK.srt) |
+| 124 | Unity高级角色物理与交互 | 未分类 / 其他 | 2024-06-19 | [BV1B4gEeeEnk](https://www.bilibili.com/video/BV1B4gEeeEnk) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1B4gEeeEnk.txt`） |
+| 78 | 5.纹身的制作 | 未分类 / 其他 | 2026-06-06 | [BV1xhEn67EuR](https://www.bilibili.com/video/BV1xhEn67EuR) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1xhEn67EuR.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1xhEn67EuR.srt) |
+| 73 | 模糊与锐化算法 | 未分类 / 其他 | 2026-01-23 | [BV1mKzgBiEMj](https://www.bilibili.com/video/BV1mKzgBiEMj) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1mKzgBiEMj.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1mKzgBiEMj.srt) |
+| 55 | 1.Houdini人群-基本设置 | 未分类 / 其他 | 2026-07-08 | [BV14TMG6vErX](https://www.bilibili.com/video/BV14TMG6vErX) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV14TMG6vErX.txt`） |
+| 44 | MeshTerrain-1.网格体地形 | 未分类 / 其他 | 2026-07-15 | [BV1WqNB6FErH](https://www.bilibili.com/video/BV1WqNB6FErH) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1WqNB6FErH.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1WqNB6FErH.srt) |
+| 32 | 6.机械臂IK-程序控制机械臂 | 未分类 / 其他 | 2026-07-22 | [BV1xxgy68E8U](https://www.bilibili.com/video/BV1xxgy68E8U) | [txt](../../data/subtitles/ups/404186354-callwhl/txt/BV1xxgy68E8U.txt) · [srt](../../data/subtitles/ups/404186354-callwhl/srt/BV1xxgy68E8U.srt) |
+| 11 | C++ 高级编程与DirectX游戏制作全流程 | 未分类 / 其他 | 2025-09-05 | [BV1Gda8zuEUL](https://www.bilibili.com/video/BV1Gda8zuEUL) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1Gda8zuEUL.txt`） |
+| 10 | 一步步搭建Unity可编程渲染管线 | 未分类 / 其他 | 2026-07-11 | [BV1KKNA6eEKB](https://www.bilibili.com/video/BV1KKNA6eEKB) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1KKNA6eEKB.txt`） |
+| 9 | 计算机图形学之物理渲染算法精讲 | 未分类 / 其他 | 2025-10-11 | [BV1Db4Az5E3p](https://www.bilibili.com/video/BV1Db4Az5E3p) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1Db4Az5E3p.txt`） |
+| 7 | 虚幻引擎AAA恐怖游戏制作：全技术永久迭代版 | 未分类 / 其他 | 2026-04-18 | [BV1ytdWB2E3S](https://www.bilibili.com/video/BV1ytdWB2E3S) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1ytdWB2E3S.txt`） |
+| 2 | 虚幻引擎全场景TA实战：覆盖所有游戏需求 | 未分类 / 其他 | 2026-07-20 | [BV12bKH6sEV5](https://www.bilibili.com/video/BV12bKH6sEV5) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV12bKH6sEV5.txt`） |
+| 0 | MetaHuman数字人 | 未分类 / 其他 | 2026-07-22 | [BV1Fvgy6WEnR](https://www.bilibili.com/video/BV1Fvgy6WEnR) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1Fvgy6WEnR.txt`） |
+| 0 | Unity全场景TA实战：覆盖所有游戏需求 | 未分类 / 其他 | 2026-07-19 | [BV1WMKr66E4r](https://www.bilibili.com/video/BV1WMKr66E4r) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1WMKr66E4r.txt`） |
+| 0 | 虚幻引擎程序化环境 | 未分类 / 其他 | 2026-07-18 | [BV1X6Kw6LE9X](https://www.bilibili.com/video/BV1X6Kw6LE9X) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1X6Kw6LE9X.txt`） |
+| 0 | 吃透逆运动学：角色骨骼绑定与实时IK控制系统课 | 未分类 / 其他 | 2026-07-05 | [BV1eFTy6iEkf](https://www.bilibili.com/video/BV1eFTy6iEkf) | _无_（pack 后见 `../../data/subtitles/ups/404186354-callwhl/txt/BV1eFTy6iEkf.txt`） |
 
 ## 原始数据
 

@@ -9,7 +9,127 @@
 > ### 👉 [码里奥Ziho · 全部视频 · 字幕预览 · txt/srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
 >
 > 按投稿顺序列出**全部**视频：标题、播放页、有无字幕、**txt 正文预览**、相对路径 `txt/` · `srt/`。
-> 本 catalog 页只是投稿元数据摘要；真正给人读的字幕导航在上面的链接。
+
+---
+
+## 📚 系列一览（含每条视频的 txt / srt）
+
+> 下列按系列展开**全部**视频；**字幕 txt/srt** 链到 `data/subtitles/ups/3546804396230870-码里奥Ziho/`。总索引仍见上方 [字幕导航](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)。
+
+### 系列速查
+
+| 系列 | 条数 | 本页锚点 | 系列文件 |
+|------|------|----------|----------|
+| 实战教程 | 1 | [↓ 展开](#实战教程) | [series/实战教程.md](series/实战教程.md) |
+| 闲聊 | 1 | [↓ 展开](#闲聊) | [series/闲聊.md](series/闲聊.md) |
+| 项目实战 | 1 | [↓ 展开](#项目实战) | [series/项目实战.md](series/项目实战.md) |
+| 未分类 / 其他 | 67 | [↓ 展开](#未分类-其他) | [series/未分类-其他.md](series/未分类-其他.md) |
+
+<a id="实战教程"></a>
+
+### 实战教程 · 1 条
+
+系列页（同表）：[series/实战教程.md](series/实战教程.md) · [全部字幕导航](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
+
+| # | 标题 | 播放 | 日期 | 字幕 txt/srt |
+|---|------|------|------|--------------|
+| 1 | 【实战教程】从零到一基于RAG构建AI知识库聊天网站 | [BV1NvrSYtESp](https://www.bilibili.com/video/BV1NvrSYtESp) | 2025-01-07 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1NvrSYtESp.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1NvrSYtESp.srt) |
+
+<a id="闲聊"></a>
+
+### 闲聊 · 1 条
+
+系列页（同表）：[series/闲聊.md](series/闲聊.md) · [全部字幕导航](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
+
+| # | 标题 | 播放 | 日期 | 字幕 txt/srt |
+|---|------|------|------|--------------|
+| 1 | 【闲聊】一个人不会写代码也能开发APP？还能冲上付费榜第一？小猫补光灯给我的启发 | [BV1BFcve9E6V](https://www.bilibili.com/video/BV1BFcve9E6V) | 2025-01-15 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1BFcve9E6V.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1BFcve9E6V.srt) |
+
+<a id="项目实战"></a>
+
+### 项目实战 · 1 条
+
+系列页（同表）：[series/项目实战.md](series/项目实战.md) · [全部字幕导航](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
+
+| # | 标题 | 播放 | 日期 | 字幕 txt/srt |
+|---|------|------|------|--------------|
+| 1 | 【项目实战】React Native开发Feed流社交媒体小红书app | [BV1LmAPeMERL](https://www.bilibili.com/video/BV1LmAPeMERL) | 2025-02-15 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1LmAPeMERL.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1LmAPeMERL.srt) |
+
+<a id="未分类-其他"></a>
+
+### 未分类 / 其他 · 67 条
+
+系列页（同表）：[series/未分类-其他.md](series/未分类-其他.md) · [全部字幕导航](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
+
+| # | 标题 | 播放 | 日期 | 字幕 txt/srt |
+|---|------|------|------|--------------|
+| 1 | Nextjs(React)开发AI导航站，附部署教程，5分钟开启副业 | [BV1yHAneFEYQ](https://www.bilibili.com/video/BV1yHAneFEYQ) | 2025-02-20 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1yHAneFEYQ.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1yHAneFEYQ.srt) |
+| 2 | 仿Deepseek官网AI聊天网站React(Nextjs)项目实战 | [BV19wRAY6E69](https://www.bilibili.com/video/BV19wRAY6E69) | 2025-03-06 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV19wRAY6E69.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV19wRAY6E69.srt) |
+| 3 | 如何学习新技术 | [BV1eXXbYyE8a](https://www.bilibili.com/video/BV1eXXbYyE8a) | 2025-03-23 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1eXXbYyE8a.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1eXXbYyE8a.srt) |
+| 4 | React native项目实战AI大模型记账app开发 | [BV1qiLuzCERB](https://www.bilibili.com/video/BV1qiLuzCERB) | 2025-04-21 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1qiLuzCERB.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1qiLuzCERB.srt) |
+| 5 | Go语言(Golang)零基础入门级项目Todo List | [BV1oUEozDEQa](https://www.bilibili.com/video/BV1oUEozDEQa) | 2025-05-20 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1oUEozDEQa.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1oUEozDEQa.srt) |
+| 6 | 告别后端, 免费全栈开发神器Supabase零基础入门教程 | [BV1GD7GzUExH](https://www.bilibili.com/video/BV1GD7GzUExH) | 2025-05-29 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1GD7GzUExH.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1GD7GzUExH.srt) |
+| 7 | Cursor1.0新特性BugBot自动化代码Code Review使用教程+实测 | [BV1JfT4zVEa5](https://www.bilibili.com/video/BV1JfT4zVEa5) | 2025-06-05 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1JfT4zVEa5.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1JfT4zVEa5.srt) |
+| 8 | Vercel AI SDK零基础教程，React/Vue轻松集成AI大语言模型对话聊天功能Chatbot | [BV1ymMyzqEEh](https://www.bilibili.com/video/BV1ymMyzqEEh) | 2025-06-14 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1ymMyzqEEh.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1ymMyzqEEh.srt) |
+| 9 | 手把手教你如何在国内调用Gemini API \| Cloudfare中转免费使用顶级大模型API | [BV1YjKWzHExE](https://www.bilibili.com/video/BV1YjKWzHExE) | 2025-06-23 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1YjKWzHExE.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1YjKWzHExE.srt) |
+| 10 | Siri接入AI大模型教程 \| 支持DeepSeek,千问,ChatGPT等模型 \| 打造属于自己的Apple Intelligence | [BV1Jsg6zRE9S](https://www.bilibili.com/video/BV1Jsg6zRE9S) | 2025-06-30 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1Jsg6zRE9S.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1Jsg6zRE9S.srt) |
+| 11 | AI编程轻松搞定登录注册+数据库连接\| Lovable+Supabase开发图书管理系统教程 | [BV1pzGJzrED7](https://www.bilibili.com/video/BV1pzGJzrED7) | 2025-07-08 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1pzGJzrED7.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1pzGJzrED7.srt) |
+| 12 | 如何用Reddit和AI寻找创业灵感，手把手教程 | [BV1RCgczMEZi](https://www.bilibili.com/video/BV1RCgczMEZi) | 2025-07-17 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1RCgczMEZi.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1RCgczMEZi.srt) |
+| 13 | 工作流平台开源协议对比，为什么BISHENG是最好的Agent落地平台 | [BV1uy8TzhEZK](https://www.bilibili.com/video/BV1uy8TzhEZK) | 2025-07-24 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1uy8TzhEZK.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1uy8TzhEZK.srt) |
+| 14 | n8n免费云端部署教程，可持久使用，无需信用卡 | [BV1yY8BzuENA](https://www.bilibili.com/video/BV1yY8BzuENA) | 2025-07-30 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1yY8BzuENA.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1yY8BzuENA.srt) |
+| 15 | 试用了一下这款Agent，想抛弃Manus了 | [BV1TLeVzJEun](https://www.bilibili.com/video/BV1TLeVzJEun) | 2025-08-21 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1TLeVzJEun.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1TLeVzJEun.srt) |
+| 16 | Nextjs零基础入门教程 | [BV1JZeDzLECX](https://www.bilibili.com/video/BV1JZeDzLECX) | 2025-08-28 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1JZeDzLECX.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1JZeDzLECX.srt) |
+| 17 | Drizzle ORM零基础教程 \| Typescript最好的ORM工具 | [BV1WuHQz9E5F](https://www.bilibili.com/video/BV1WuHQz9E5F) | 2025-09-11 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1WuHQz9E5F.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1WuHQz9E5F.srt) |
+| 18 | 项目中用代码免费发邮件 \| Resend零基础教程 | [BV12UJDznEw7](https://www.bilibili.com/video/BV12UJDznEw7) | 2025-09-24 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV12UJDznEw7.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV12UJDznEw7.srt) |
+| 19 | Better Auth教学 \| 最好用的Typescript登录注册工具 \| Nextjs + Postgres | [BV12JnkzwEUd](https://www.bilibili.com/video/BV12JnkzwEUd) | 2025-09-30 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV12JnkzwEUd.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV12JnkzwEUd.srt) |
+| 20 | 完爆Browser use \| AI操控浏览器神器Stagehand使用教学 | [BV1y5HgzuEjr](https://www.bilibili.com/video/BV1y5HgzuEjr) | 2025-10-03 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1y5HgzuEjr.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1y5HgzuEjr.srt) |
+| 21 | 告别Vercel天价账单! Dokploy服务器免费部署Nextjs教程 | [BV1g2xjzjEXZ](https://www.bilibili.com/video/BV1g2xjzjEXZ) | 2025-10-15 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1g2xjzjEXZ.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1g2xjzjEXZ.srt) |
+| 22 | Docker和Cloudflare自部署Nextjs项目并配置CDN和Https | [BV1eY2cBkEUx](https://www.bilibili.com/video/BV1eY2cBkEUx) | 2025-11-06 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1eY2cBkEUx.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1eY2cBkEUx.srt) |
+| 23 | 高端玩具还是生产力神器？ 明基程序员专用显示器评测 | [BV19CCTBEET4](https://www.bilibili.com/video/BV19CCTBEET4) | 2025-11-14 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV19CCTBEET4.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV19CCTBEET4.srt) |
+| 24 | 无需担心封禁，安全使用海外大模型API，VoyraCloud一键安装SillyTavern酒馆 | [BV1tNUVBTEb6](https://www.bilibili.com/video/BV1tNUVBTEb6) | 2025-11-24 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1tNUVBTEb6.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1tNUVBTEb6.srt) |
+| 25 | Gemini被严重低估的独有能力 \| 理解YouTube视频 \| 附各种案例分享 | [BV1sk27B6Eic](https://www.bilibili.com/video/BV1sk27B6Eic) | 2025-12-06 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1sk27B6Eic.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1sk27B6Eic.srt) |
+| 26 | 0封号风险，Claude Code稳定使用教程 | [BV191msByEX7](https://www.bilibili.com/video/BV191msByEX7) | 2025-12-10 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV191msByEX7.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV191msByEX7.srt) |
+| 27 | 无需订阅！CodeX保姆级安装教程 | [BV1J9qqBaEho](https://www.bilibili.com/video/BV1J9qqBaEho) | 2025-12-20 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1J9qqBaEho.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1J9qqBaEho.srt) |
+| 28 | Nextjs项目实战开发，AI新闻每日推送网站 | [BV1BgB8BrE2m](https://www.bilibili.com/video/BV1BgB8BrE2m) | 2025-12-23 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1BgB8BrE2m.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1BgB8BrE2m.srt) |
+| 29 | AI+语音输入 让与大模型的交互提效四倍 | [BV1TUquBwEyA](https://www.bilibili.com/video/BV1TUquBwEyA) | 2026-01-07 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1TUquBwEyA.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1TUquBwEyA.srt) |
+| 30 | Vibe Kanban解决Claude Code并行难题，秒变项目经理 \| Vibe看板 | [BV1PRrwBUERz](https://www.bilibili.com/video/BV1PRrwBUERz) | 2026-01-09 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1PRrwBUERz.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1PRrwBUERz.srt) |
+| 31 | 降维打击Claude Code，OpenCode+Oh My OpenCode安装并配置教程 | [BV1airpBHEXu](https://www.bilibili.com/video/BV1airpBHEXu) | 2026-01-14 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1airpBHEXu.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1airpBHEXu.srt) |
+| 32 | Obsidian+Claude+Skills+云同步，打造AI笔记 | [BV1vAzzBwECr](https://www.bilibili.com/video/BV1vAzzBwECr) | 2026-01-24 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1vAzzBwECr.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1vAzzBwECr.srt) |
+| 33 | 比Playwright更省token,Vercel新开源浏览器自动化工具Agent Browser | [BV1qW65BeEFQ](https://www.bilibili.com/video/BV1qW65BeEFQ) | 2026-01-28 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1qW65BeEFQ.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1qW65BeEFQ.srt) |
+| 34 | OpenClaw为什么能记住你说过的话? AI记忆系统拆解 | [BV1fv61B4EQ5](https://www.bilibili.com/video/BV1fv61B4EQ5) | 2026-01-31 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1fv61B4EQ5.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1fv61B4EQ5.srt) |
+| 35 | 套壳产品？免费+并行! OpenAI Codex App桌面端实测 | [BV1RefoBaE8Y](https://www.bilibili.com/video/BV1RefoBaE8Y) | 2026-02-04 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1RefoBaE8Y.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1RefoBaE8Y.srt) |
+| 36 | 微信公众号，消息一键导入 AI 知识库，别再让收藏夹吃灰了！ | [BV1jgFrzoEJP](https://www.bilibili.com/video/BV1jgFrzoEJP) | 2026-02-06 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1jgFrzoEJP.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1jgFrzoEJP.srt) |
+| 37 | Agent Skills安装+使用+可视化管理 | [BV18acMz4EW6](https://www.bilibili.com/video/BV18acMz4EW6) | 2026-02-09 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV18acMz4EW6.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV18acMz4EW6.srt) |
+| 38 | AI+Excalidraw制作手绘风格流程图教程 | [BV1JhcjzcEP8](https://www.bilibili.com/video/BV1JhcjzcEP8) | 2026-02-15 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1JhcjzcEP8.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1JhcjzcEP8.srt) |
+| 39 | 给Claude Code加上持久记忆，避免每次输入重复提示词 | [BV15JfqB3EJz](https://www.bilibili.com/video/BV15JfqB3EJz) | 2026-02-23 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV15JfqB3EJz.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV15JfqB3EJz.srt) |
+| 40 | Claude Code接入飞书教程, 手机远程操纵电脑写代码 | [BV15TPrzeELm](https://www.bilibili.com/video/BV15TPrzeELm) | 2026-03-05 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV15TPrzeELm.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV15TPrzeELm.srt) |
+| 41 | Codex接入飞书教程，手机远程操控电脑写代码 | [BV1jKPaz5Eym](https://www.bilibili.com/video/BV1jKPaz5Eym) | 2026-03-07 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1jKPaz5Eym.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1jKPaz5Eym.srt) |
+| 42 | 飞书+OpenClaw多Agent模式，打造AI团队，记忆隔离 | [BV1zWc2zjEpo](https://www.bilibili.com/video/BV1zWc2zjEpo) | 2026-03-13 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1zWc2zjEpo.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1zWc2zjEpo.srt) |
+| 43 | OpenClaw安装教程：接入海外模型+飞书\| Claude \| Gemini \| GPT | [BV19ywVz2Eco](https://www.bilibili.com/video/BV19ywVz2Eco) | 2026-03-16 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV19ywVz2Eco.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV19ywVz2Eco.srt) |
+| 44 | 1/20 价格“平替”？MiniMax M2.5 + OpenClaw 效果实测 | [BV1TPwEznErs](https://www.bilibili.com/video/BV1TPwEznErs) | 2026-03-17 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1TPwEznErs.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1TPwEznErs.srt) |
+| 45 | 我是如何获取高质量AI信息的？打破信息差! | [BV1NAQzBLEnv](https://www.bilibili.com/video/BV1NAQzBLEnv) | 2026-03-24 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1NAQzBLEnv.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1NAQzBLEnv.srt) |
+| 46 | 我用Claude Code开发了一个Screen Studio AI自动剪辑Skill | [BV15FXHB7EmE](https://www.bilibili.com/video/BV15FXHB7EmE) | 2026-03-26 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV15FXHB7EmE.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV15FXHB7EmE.srt) |
+| 47 | 飞书CLI最新开源，AI自动化办公，比OpenClaw更好上手 | [BV1nNXaB9EDg](https://www.bilibili.com/video/BV1nNXaB9EDg) | 2026-03-30 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1nNXaB9EDg.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1nNXaB9EDg.srt) |
+| 48 | 谷歌最新开源，手机部署Gemma4大模型 安装教程+实测 | [BV1eqDNBcEJp](https://www.bilibili.com/video/BV1eqDNBcEJp) | 2026-04-04 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1eqDNBcEJp.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1eqDNBcEJp.srt) |
+| 49 | Karpathy的Obsidian工作流，结合WIKI打造本地知识库 | [BV1EVSfBpERw](https://www.bilibili.com/video/BV1EVSfBpERw) | 2026-04-06 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1EVSfBpERw.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1EVSfBpERw.srt) |
+| 50 | Claude Mythos强到不敢发布？安全领域的分水岭时刻！ | [BV1NaDLB5E8p](https://www.bilibili.com/video/BV1NaDLB5E8p) | 2026-04-08 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1NaDLB5E8p.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1NaDLB5E8p.srt) |
+| 51 | PDF导入obsidian，打造本地知识库 | [BV1HvdvBrEXi](https://www.bilibili.com/video/BV1HvdvBrEXi) | 2026-04-17 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1HvdvBrEXi.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1HvdvBrEXi.srt) |
+| 52 | Gemini APP最新电脑桌面版，一键唤醒，和AI共享屏幕 | [BV1rbdJB8E5H](https://www.bilibili.com/video/BV1rbdJB8E5H) | 2026-04-18 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1rbdJB8E5H.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1rbdJB8E5H.srt) |
+| 53 | 不止Claude Code:任意AI接入Obsidian打造本地知识库,Gemini/GLM/Codex/MiniMax全搞定 | [BV1BgoVBGEox](https://www.bilibili.com/video/BV1BgoVBGEox) | 2026-04-24 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1BgoVBGEox.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1BgoVBGEox.srt) |
+| 54 | Claude Code免费用!接入英伟达API教程: 白嫖顶尖模型 | [BV1uRZFBfEnB](https://www.bilibili.com/video/BV1uRZFBfEnB) | 2026-04-26 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1uRZFBfEnB.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1uRZFBfEnB.srt) |
+| 55 | 不用登录也可以使用Claude Desktop桌面端了! 无需订阅 | [BV1cU96BnEZA](https://www.bilibili.com/video/BV1cU96BnEZA) | 2026-04-28 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1cU96BnEZA.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1cU96BnEZA.srt) |
+| 56 | 用OpenCode免费模型,零成本搭建Obsidian AI本地知识库 | [BV1qURhBpE9V](https://www.bilibili.com/video/BV1qURhBpE9V) | 2026-05-07 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1qURhBpE9V.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1qURhBpE9V.srt) |
+| 57 | AI总说错明星名字？MiniMax官方报告给出了答案 | [BV1ue516UEbV](https://www.bilibili.com/video/BV1ue516UEbV) | 2026-05-13 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1ue516UEbV.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1ue516UEbV.srt) |
+| 58 | Claude Mythos实测翻车? 真实项目实测效果如何 | [BV1o2L36eEen](https://www.bilibili.com/video/BV1o2L36eEen) | 2026-05-17 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1o2L36eEen.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1o2L36eEen.srt) |
+| 59 | 这个AI Agent看得懂我硬盘里的每张图、每份文件｜Marvis 内测实测 | [BV172L16YEoP](https://www.bilibili.com/video/BV172L16YEoP) | 2026-05-20 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV172L16YEoP.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV172L16YEoP.srt) |
+| 60 | WorkBuddy+Obsidian打造AI知识库 盘活微信碎片信息 | [BV1jzGR6EEUX](https://www.bilibili.com/video/BV1jzGR6EEUX) | 2026-05-25 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1jzGR6EEUX.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1jzGR6EEUX.srt) |
+| 61 | 复杂任务大杀器,Claude Dynamic Workflow动态工作流, 大规模协调子代理 | [BV1GRVJ65Esx](https://www.bilibili.com/video/BV1GRVJ65Esx) | 2026-05-31 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1GRVJ65Esx.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1GRVJ65Esx.srt) |
+| 62 | Codex接入DeepSeek, MiniMax, GLM等模型, 插件可用 | [BV1RNV66MEWp](https://www.bilibili.com/video/BV1RNV66MEWp) | 2026-06-02 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1RNV66MEWp.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1RNV66MEWp.srt) |
+| 63 | 不用手改配置,解决Codex 5次重连Reconnecting问题 | [BV1W8EE6gEpg](https://www.bilibili.com/video/BV1W8EE6gEpg) | 2026-06-09 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1W8EE6gEpg.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1W8EE6gEpg.srt) |
+| 64 | 免费使用Codex,接入顶级模型Agnes,支持生图和视频 | [BV1bTju67EPu](https://www.bilibili.com/video/BV1bTju67EPu) | 2026-06-16 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1bTju67EPu.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1bTju67EPu.srt) |
+| 65 | 用MiniMax M3开发真实全栈项目, AI提示词生图网站 | [BV1nCj96hEUm](https://www.bilibili.com/video/BV1nCj96hEUm) | 2026-06-24 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1nCj96hEUm.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1nCj96hEUm.srt) |
+| 66 | 准确率暴涨!录屏教AI操作电脑,Windows也可用,Agivar实测 | [BV1esTe6zEjx](https://www.bilibili.com/video/BV1esTe6zEjx) | 2026-07-01 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1esTe6zEjx.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1esTe6zEjx.srt) |
+| 67 | 从localhost 到线上应用:Codex+Zion开发部署AI知识库网站 | [BV1Y8Ts65EhG](https://www.bilibili.com/video/BV1Y8Ts65EhG) | 2026-07-06 | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1Y8Ts65EhG.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1Y8Ts65EhG.srt) |
 
 ---
 
@@ -17,69 +137,60 @@
 - **空间**: https://space.bilibili.com/3546804396230870
 - **投稿总数**: **70**
 - **系列数**: **4**
-- **导出时间**: 2026-07-23 18:00 UTC
+- **导出时间**: 2026-07-23 18:07 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 - **字幕导航**: [../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md](../../data/subtitles/ups/3546804396230870-码里奥Ziho/README.md)
 
-## 系列一览
-
-| 系列 | 数量 | 文件 |
-|------|------|------|
-| 实战教程 | 1 | [series/实战教程.md](series/实战教程.md) |
-| 闲聊 | 1 | [series/闲聊.md](series/闲聊.md) |
-| 项目实战 | 1 | [series/项目实战.md](series/项目实战.md) |
-| 未分类 / 其他 | 67 | [series/未分类-其他.md](series/未分类-其他.md) |
-
 ## 全站最新 20 条（仅摘要，非全文）
 
-| 日期 | 标题 | 系列 | 播放 | 链接 |
-|------|------|------|------|------|
-| 2026-07-06 | 从localhost 到线上应用:Codex+Zion开发部署AI知识库网站 | 未分类 / 其他 | 7,030 | [BV1Y8Ts65EhG](https://www.bilibili.com/video/BV1Y8Ts65EhG) |
-| 2026-07-01 | 准确率暴涨!录屏教AI操作电脑,Windows也可用,Agivar实测 | 未分类 / 其他 | 10,140 | [BV1esTe6zEjx](https://www.bilibili.com/video/BV1esTe6zEjx) |
-| 2026-06-24 | 用MiniMax M3开发真实全栈项目, AI提示词生图网站 | 未分类 / 其他 | 17,020 | [BV1nCj96hEUm](https://www.bilibili.com/video/BV1nCj96hEUm) |
-| 2026-06-16 | 免费使用Codex,接入顶级模型Agnes,支持生图和视频 | 未分类 / 其他 | 42,998 | [BV1bTju67EPu](https://www.bilibili.com/video/BV1bTju67EPu) |
-| 2026-06-09 | 不用手改配置,解决Codex 5次重连Reconnecting问题 | 未分类 / 其他 | 65,135 | [BV1W8EE6gEpg](https://www.bilibili.com/video/BV1W8EE6gEpg) |
-| 2026-06-02 | Codex接入DeepSeek, MiniMax, GLM等模型, 插件可用 | 未分类 / 其他 | 47,747 | [BV1RNV66MEWp](https://www.bilibili.com/video/BV1RNV66MEWp) |
-| 2026-05-31 | 复杂任务大杀器,Claude Dynamic Workflow动态工作流, 大规模协调子代理 | 未分类 / 其他 | 14,536 | [BV1GRVJ65Esx](https://www.bilibili.com/video/BV1GRVJ65Esx) |
-| 2026-05-25 | WorkBuddy+Obsidian打造AI知识库 盘活微信碎片信息 | 未分类 / 其他 | 43,152 | [BV1jzGR6EEUX](https://www.bilibili.com/video/BV1jzGR6EEUX) |
-| 2026-05-20 | 这个AI Agent看得懂我硬盘里的每张图、每份文件｜Marvis 内测实测 | 未分类 / 其他 | 16,886 | [BV172L16YEoP](https://www.bilibili.com/video/BV172L16YEoP) |
-| 2026-05-17 | Claude Mythos实测翻车? 真实项目实测效果如何 | 未分类 / 其他 | 35,691 | [BV1o2L36eEen](https://www.bilibili.com/video/BV1o2L36eEen) |
-| 2026-05-13 | AI总说错明星名字？MiniMax官方报告给出了答案 | 未分类 / 其他 | 59,841 | [BV1ue516UEbV](https://www.bilibili.com/video/BV1ue516UEbV) |
-| 2026-05-07 | 用OpenCode免费模型,零成本搭建Obsidian AI本地知识库 | 未分类 / 其他 | 17,991 | [BV1qURhBpE9V](https://www.bilibili.com/video/BV1qURhBpE9V) |
-| 2026-04-28 | 不用登录也可以使用Claude Desktop桌面端了! 无需订阅 | 未分类 / 其他 | 42,223 | [BV1cU96BnEZA](https://www.bilibili.com/video/BV1cU96BnEZA) |
-| 2026-04-26 | Claude Code免费用!接入英伟达API教程: 白嫖顶尖模型 | 未分类 / 其他 | 51,840 | [BV1uRZFBfEnB](https://www.bilibili.com/video/BV1uRZFBfEnB) |
-| 2026-04-24 | 不止Claude Code:任意AI接入Obsidian打造本地知识库,Gemini/GLM/Codex/MiniMax全搞定 | 未分类 / 其他 | 22,343 | [BV1BgoVBGEox](https://www.bilibili.com/video/BV1BgoVBGEox) |
-| 2026-04-18 | Gemini APP最新电脑桌面版，一键唤醒，和AI共享屏幕 | 未分类 / 其他 | 16,676 | [BV1rbdJB8E5H](https://www.bilibili.com/video/BV1rbdJB8E5H) |
-| 2026-04-17 | PDF导入obsidian，打造本地知识库 | 未分类 / 其他 | 39,425 | [BV1HvdvBrEXi](https://www.bilibili.com/video/BV1HvdvBrEXi) |
-| 2026-04-08 | Claude Mythos强到不敢发布？安全领域的分水岭时刻！ | 未分类 / 其他 | 18,788 | [BV1NaDLB5E8p](https://www.bilibili.com/video/BV1NaDLB5E8p) |
-| 2026-04-06 | Karpathy的Obsidian工作流，结合WIKI打造本地知识库 | 未分类 / 其他 | 51,037 | [BV1EVSfBpERw](https://www.bilibili.com/video/BV1EVSfBpERw) |
-| 2026-04-04 | 谷歌最新开源，手机部署Gemma4大模型 安装教程+实测 | 未分类 / 其他 | 24,030 | [BV1eqDNBcEJp](https://www.bilibili.com/video/BV1eqDNBcEJp) |
+| 日期 | 标题 | 系列 | 播放 | 链接 | 字幕 |
+|------|------|------|------|------|------|
+| 2026-07-06 | 从localhost 到线上应用:Codex+Zion开发部署AI知识库网站 | 未分类 / 其他 | 7,030 | [BV1Y8Ts65EhG](https://www.bilibili.com/video/BV1Y8Ts65EhG) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1Y8Ts65EhG.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1Y8Ts65EhG.srt) |
+| 2026-07-01 | 准确率暴涨!录屏教AI操作电脑,Windows也可用,Agivar实测 | 未分类 / 其他 | 10,140 | [BV1esTe6zEjx](https://www.bilibili.com/video/BV1esTe6zEjx) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1esTe6zEjx.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1esTe6zEjx.srt) |
+| 2026-06-24 | 用MiniMax M3开发真实全栈项目, AI提示词生图网站 | 未分类 / 其他 | 17,020 | [BV1nCj96hEUm](https://www.bilibili.com/video/BV1nCj96hEUm) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1nCj96hEUm.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1nCj96hEUm.srt) |
+| 2026-06-16 | 免费使用Codex,接入顶级模型Agnes,支持生图和视频 | 未分类 / 其他 | 42,998 | [BV1bTju67EPu](https://www.bilibili.com/video/BV1bTju67EPu) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1bTju67EPu.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1bTju67EPu.srt) |
+| 2026-06-09 | 不用手改配置,解决Codex 5次重连Reconnecting问题 | 未分类 / 其他 | 65,135 | [BV1W8EE6gEpg](https://www.bilibili.com/video/BV1W8EE6gEpg) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1W8EE6gEpg.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1W8EE6gEpg.srt) |
+| 2026-06-02 | Codex接入DeepSeek, MiniMax, GLM等模型, 插件可用 | 未分类 / 其他 | 47,747 | [BV1RNV66MEWp](https://www.bilibili.com/video/BV1RNV66MEWp) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1RNV66MEWp.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1RNV66MEWp.srt) |
+| 2026-05-31 | 复杂任务大杀器,Claude Dynamic Workflow动态工作流, 大规模协调子代理 | 未分类 / 其他 | 14,536 | [BV1GRVJ65Esx](https://www.bilibili.com/video/BV1GRVJ65Esx) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1GRVJ65Esx.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1GRVJ65Esx.srt) |
+| 2026-05-25 | WorkBuddy+Obsidian打造AI知识库 盘活微信碎片信息 | 未分类 / 其他 | 43,152 | [BV1jzGR6EEUX](https://www.bilibili.com/video/BV1jzGR6EEUX) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1jzGR6EEUX.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1jzGR6EEUX.srt) |
+| 2026-05-20 | 这个AI Agent看得懂我硬盘里的每张图、每份文件｜Marvis 内测实测 | 未分类 / 其他 | 16,886 | [BV172L16YEoP](https://www.bilibili.com/video/BV172L16YEoP) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV172L16YEoP.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV172L16YEoP.srt) |
+| 2026-05-17 | Claude Mythos实测翻车? 真实项目实测效果如何 | 未分类 / 其他 | 35,691 | [BV1o2L36eEen](https://www.bilibili.com/video/BV1o2L36eEen) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1o2L36eEen.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1o2L36eEen.srt) |
+| 2026-05-13 | AI总说错明星名字？MiniMax官方报告给出了答案 | 未分类 / 其他 | 59,841 | [BV1ue516UEbV](https://www.bilibili.com/video/BV1ue516UEbV) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1ue516UEbV.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1ue516UEbV.srt) |
+| 2026-05-07 | 用OpenCode免费模型,零成本搭建Obsidian AI本地知识库 | 未分类 / 其他 | 17,991 | [BV1qURhBpE9V](https://www.bilibili.com/video/BV1qURhBpE9V) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1qURhBpE9V.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1qURhBpE9V.srt) |
+| 2026-04-28 | 不用登录也可以使用Claude Desktop桌面端了! 无需订阅 | 未分类 / 其他 | 42,223 | [BV1cU96BnEZA](https://www.bilibili.com/video/BV1cU96BnEZA) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1cU96BnEZA.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1cU96BnEZA.srt) |
+| 2026-04-26 | Claude Code免费用!接入英伟达API教程: 白嫖顶尖模型 | 未分类 / 其他 | 51,840 | [BV1uRZFBfEnB](https://www.bilibili.com/video/BV1uRZFBfEnB) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1uRZFBfEnB.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1uRZFBfEnB.srt) |
+| 2026-04-24 | 不止Claude Code:任意AI接入Obsidian打造本地知识库,Gemini/GLM/Codex/MiniMax全搞定 | 未分类 / 其他 | 22,343 | [BV1BgoVBGEox](https://www.bilibili.com/video/BV1BgoVBGEox) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1BgoVBGEox.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1BgoVBGEox.srt) |
+| 2026-04-18 | Gemini APP最新电脑桌面版，一键唤醒，和AI共享屏幕 | 未分类 / 其他 | 16,676 | [BV1rbdJB8E5H](https://www.bilibili.com/video/BV1rbdJB8E5H) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1rbdJB8E5H.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1rbdJB8E5H.srt) |
+| 2026-04-17 | PDF导入obsidian，打造本地知识库 | 未分类 / 其他 | 39,425 | [BV1HvdvBrEXi](https://www.bilibili.com/video/BV1HvdvBrEXi) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1HvdvBrEXi.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1HvdvBrEXi.srt) |
+| 2026-04-08 | Claude Mythos强到不敢发布？安全领域的分水岭时刻！ | 未分类 / 其他 | 18,788 | [BV1NaDLB5E8p](https://www.bilibili.com/video/BV1NaDLB5E8p) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1NaDLB5E8p.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1NaDLB5E8p.srt) |
+| 2026-04-06 | Karpathy的Obsidian工作流，结合WIKI打造本地知识库 | 未分类 / 其他 | 51,037 | [BV1EVSfBpERw](https://www.bilibili.com/video/BV1EVSfBpERw) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1EVSfBpERw.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1EVSfBpERw.srt) |
+| 2026-04-04 | 谷歌最新开源，手机部署Gemma4大模型 安装教程+实测 | 未分类 / 其他 | 24,030 | [BV1eqDNBcEJp](https://www.bilibili.com/video/BV1eqDNBcEJp) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1eqDNBcEJp.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1eqDNBcEJp.srt) |
 
 ## 播放量 Top 20（仅摘要，非全文）
 
-| 播放 | 标题 | 系列 | 日期 | 链接 |
-|------|------|------|------|------|
-| 115,731 | 降维打击Claude Code，OpenCode+Oh My OpenCode安装并配置教程 | 未分类 / 其他 | 2026-01-14 | [BV1airpBHEXu](https://www.bilibili.com/video/BV1airpBHEXu) |
-| 95,018 | 手把手教你如何在国内调用Gemini API \| Cloudfare中转免费使用顶级大模型API | 未分类 / 其他 | 2025-06-23 | [BV1YjKWzHExE](https://www.bilibili.com/video/BV1YjKWzHExE) |
-| 78,420 | Obsidian+Claude+Skills+云同步，打造AI笔记 | 未分类 / 其他 | 2026-01-24 | [BV1vAzzBwECr](https://www.bilibili.com/video/BV1vAzzBwECr) |
-| 66,422 | Nextjs零基础入门教程 | 未分类 / 其他 | 2025-08-28 | [BV1JZeDzLECX](https://www.bilibili.com/video/BV1JZeDzLECX) |
-| 65,135 | 不用手改配置,解决Codex 5次重连Reconnecting问题 | 未分类 / 其他 | 2026-06-09 | [BV1W8EE6gEpg](https://www.bilibili.com/video/BV1W8EE6gEpg) |
-| 59,841 | AI总说错明星名字？MiniMax官方报告给出了答案 | 未分类 / 其他 | 2026-05-13 | [BV1ue516UEbV](https://www.bilibili.com/video/BV1ue516UEbV) |
-| 57,559 | 飞书+OpenClaw多Agent模式，打造AI团队，记忆隔离 | 未分类 / 其他 | 2026-03-13 | [BV1zWc2zjEpo](https://www.bilibili.com/video/BV1zWc2zjEpo) |
-| 55,669 | 告别后端, 免费全栈开发神器Supabase零基础入门教程 | 未分类 / 其他 | 2025-05-29 | [BV1GD7GzUExH](https://www.bilibili.com/video/BV1GD7GzUExH) |
-| 51,840 | Claude Code免费用!接入英伟达API教程: 白嫖顶尖模型 | 未分类 / 其他 | 2026-04-26 | [BV1uRZFBfEnB](https://www.bilibili.com/video/BV1uRZFBfEnB) |
-| 51,037 | Karpathy的Obsidian工作流，结合WIKI打造本地知识库 | 未分类 / 其他 | 2026-04-06 | [BV1EVSfBpERw](https://www.bilibili.com/video/BV1EVSfBpERw) |
-| 47,747 | Codex接入DeepSeek, MiniMax, GLM等模型, 插件可用 | 未分类 / 其他 | 2026-06-02 | [BV1RNV66MEWp](https://www.bilibili.com/video/BV1RNV66MEWp) |
-| 43,152 | WorkBuddy+Obsidian打造AI知识库 盘活微信碎片信息 | 未分类 / 其他 | 2026-05-25 | [BV1jzGR6EEUX](https://www.bilibili.com/video/BV1jzGR6EEUX) |
-| 43,129 | 0封号风险，Claude Code稳定使用教程 | 未分类 / 其他 | 2025-12-10 | [BV191msByEX7](https://www.bilibili.com/video/BV191msByEX7) |
-| 42,998 | 免费使用Codex,接入顶级模型Agnes,支持生图和视频 | 未分类 / 其他 | 2026-06-16 | [BV1bTju67EPu](https://www.bilibili.com/video/BV1bTju67EPu) |
-| 42,223 | 不用登录也可以使用Claude Desktop桌面端了! 无需订阅 | 未分类 / 其他 | 2026-04-28 | [BV1cU96BnEZA](https://www.bilibili.com/video/BV1cU96BnEZA) |
-| 40,991 | 给Claude Code加上持久记忆，避免每次输入重复提示词 | 未分类 / 其他 | 2026-02-23 | [BV15JfqB3EJz](https://www.bilibili.com/video/BV15JfqB3EJz) |
-| 40,742 | Claude Code接入飞书教程, 手机远程操纵电脑写代码 | 未分类 / 其他 | 2026-03-05 | [BV15TPrzeELm](https://www.bilibili.com/video/BV15TPrzeELm) |
-| 39,425 | PDF导入obsidian，打造本地知识库 | 未分类 / 其他 | 2026-04-17 | [BV1HvdvBrEXi](https://www.bilibili.com/video/BV1HvdvBrEXi) |
-| 38,473 | 我是如何获取高质量AI信息的？打破信息差! | 未分类 / 其他 | 2026-03-24 | [BV1NAQzBLEnv](https://www.bilibili.com/video/BV1NAQzBLEnv) |
-| 36,451 | Codex接入飞书教程，手机远程操控电脑写代码 | 未分类 / 其他 | 2026-03-07 | [BV1jKPaz5Eym](https://www.bilibili.com/video/BV1jKPaz5Eym) |
+| 播放 | 标题 | 系列 | 日期 | 链接 | 字幕 |
+|------|------|------|------|------|------|
+| 115,731 | 降维打击Claude Code，OpenCode+Oh My OpenCode安装并配置教程 | 未分类 / 其他 | 2026-01-14 | [BV1airpBHEXu](https://www.bilibili.com/video/BV1airpBHEXu) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1airpBHEXu.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1airpBHEXu.srt) |
+| 95,018 | 手把手教你如何在国内调用Gemini API \| Cloudfare中转免费使用顶级大模型API | 未分类 / 其他 | 2025-06-23 | [BV1YjKWzHExE](https://www.bilibili.com/video/BV1YjKWzHExE) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1YjKWzHExE.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1YjKWzHExE.srt) |
+| 78,420 | Obsidian+Claude+Skills+云同步，打造AI笔记 | 未分类 / 其他 | 2026-01-24 | [BV1vAzzBwECr](https://www.bilibili.com/video/BV1vAzzBwECr) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1vAzzBwECr.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1vAzzBwECr.srt) |
+| 66,422 | Nextjs零基础入门教程 | 未分类 / 其他 | 2025-08-28 | [BV1JZeDzLECX](https://www.bilibili.com/video/BV1JZeDzLECX) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1JZeDzLECX.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1JZeDzLECX.srt) |
+| 65,135 | 不用手改配置,解决Codex 5次重连Reconnecting问题 | 未分类 / 其他 | 2026-06-09 | [BV1W8EE6gEpg](https://www.bilibili.com/video/BV1W8EE6gEpg) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1W8EE6gEpg.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1W8EE6gEpg.srt) |
+| 59,841 | AI总说错明星名字？MiniMax官方报告给出了答案 | 未分类 / 其他 | 2026-05-13 | [BV1ue516UEbV](https://www.bilibili.com/video/BV1ue516UEbV) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1ue516UEbV.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1ue516UEbV.srt) |
+| 57,559 | 飞书+OpenClaw多Agent模式，打造AI团队，记忆隔离 | 未分类 / 其他 | 2026-03-13 | [BV1zWc2zjEpo](https://www.bilibili.com/video/BV1zWc2zjEpo) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1zWc2zjEpo.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1zWc2zjEpo.srt) |
+| 55,669 | 告别后端, 免费全栈开发神器Supabase零基础入门教程 | 未分类 / 其他 | 2025-05-29 | [BV1GD7GzUExH](https://www.bilibili.com/video/BV1GD7GzUExH) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1GD7GzUExH.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1GD7GzUExH.srt) |
+| 51,840 | Claude Code免费用!接入英伟达API教程: 白嫖顶尖模型 | 未分类 / 其他 | 2026-04-26 | [BV1uRZFBfEnB](https://www.bilibili.com/video/BV1uRZFBfEnB) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1uRZFBfEnB.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1uRZFBfEnB.srt) |
+| 51,037 | Karpathy的Obsidian工作流，结合WIKI打造本地知识库 | 未分类 / 其他 | 2026-04-06 | [BV1EVSfBpERw](https://www.bilibili.com/video/BV1EVSfBpERw) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1EVSfBpERw.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1EVSfBpERw.srt) |
+| 47,747 | Codex接入DeepSeek, MiniMax, GLM等模型, 插件可用 | 未分类 / 其他 | 2026-06-02 | [BV1RNV66MEWp](https://www.bilibili.com/video/BV1RNV66MEWp) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1RNV66MEWp.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1RNV66MEWp.srt) |
+| 43,152 | WorkBuddy+Obsidian打造AI知识库 盘活微信碎片信息 | 未分类 / 其他 | 2026-05-25 | [BV1jzGR6EEUX](https://www.bilibili.com/video/BV1jzGR6EEUX) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1jzGR6EEUX.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1jzGR6EEUX.srt) |
+| 43,129 | 0封号风险，Claude Code稳定使用教程 | 未分类 / 其他 | 2025-12-10 | [BV191msByEX7](https://www.bilibili.com/video/BV191msByEX7) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV191msByEX7.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV191msByEX7.srt) |
+| 42,998 | 免费使用Codex,接入顶级模型Agnes,支持生图和视频 | 未分类 / 其他 | 2026-06-16 | [BV1bTju67EPu](https://www.bilibili.com/video/BV1bTju67EPu) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1bTju67EPu.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1bTju67EPu.srt) |
+| 42,223 | 不用登录也可以使用Claude Desktop桌面端了! 无需订阅 | 未分类 / 其他 | 2026-04-28 | [BV1cU96BnEZA](https://www.bilibili.com/video/BV1cU96BnEZA) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1cU96BnEZA.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1cU96BnEZA.srt) |
+| 40,991 | 给Claude Code加上持久记忆，避免每次输入重复提示词 | 未分类 / 其他 | 2026-02-23 | [BV15JfqB3EJz](https://www.bilibili.com/video/BV15JfqB3EJz) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV15JfqB3EJz.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV15JfqB3EJz.srt) |
+| 40,742 | Claude Code接入飞书教程, 手机远程操纵电脑写代码 | 未分类 / 其他 | 2026-03-05 | [BV15TPrzeELm](https://www.bilibili.com/video/BV15TPrzeELm) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV15TPrzeELm.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV15TPrzeELm.srt) |
+| 39,425 | PDF导入obsidian，打造本地知识库 | 未分类 / 其他 | 2026-04-17 | [BV1HvdvBrEXi](https://www.bilibili.com/video/BV1HvdvBrEXi) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1HvdvBrEXi.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1HvdvBrEXi.srt) |
+| 38,473 | 我是如何获取高质量AI信息的？打破信息差! | 未分类 / 其他 | 2026-03-24 | [BV1NAQzBLEnv](https://www.bilibili.com/video/BV1NAQzBLEnv) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1NAQzBLEnv.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1NAQzBLEnv.srt) |
+| 36,451 | Codex接入飞书教程，手机远程操控电脑写代码 | 未分类 / 其他 | 2026-03-07 | [BV1jKPaz5Eym](https://www.bilibili.com/video/BV1jKPaz5Eym) | [txt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/txt/BV1jKPaz5Eym.txt) · [srt](../../data/subtitles/ups/3546804396230870-码里奥Ziho/srt/BV1jKPaz5Eym.srt) |
 
 ## 原始数据
 

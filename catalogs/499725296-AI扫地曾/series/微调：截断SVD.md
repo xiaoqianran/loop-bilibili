@@ -1,8 +1,10 @@
 # 微调：截断SVD
 
-> UP：AI扫地曾（UID `499725296`）  
-> 本系列共 **1** 条
+> UP：AI扫地曾（UID `499725296`）· 本系列 **1** 条  
+> 字幕总导航：[AI扫地曾 · 字幕 README](../../../data/subtitles/ups/499725296-AI扫地曾/README.md)
 
-| # | 编号 | 标题 | 播放 | 日期 | 链接 |
-|---|------|------|------|------|------|
-| 1 | - | 【微调：截断SVD】猎头实例精讲协同过滤与LoRA应用！ | 521 | 2025-05-25 | [BV1YvjuzMEx1](https://www.bilibili.com/video/BV1YvjuzMEx1) |
+| # | 标题 | 播放 | 日期 | 字幕 txt/srt |
+|---|------|------|------|--------------|
+| 1 | 【微调：截断SVD】猎头实例精讲协同过滤与LoRA应用！ | [BV1YvjuzMEx1](https://www.bilibili.com/video/BV1YvjuzMEx1) | 2025-05-25 | [txt](../../../data/subtitles/ups/499725296-AI扫地曾/txt/BV1YvjuzMEx1.txt) · [srt](../../../data/subtitles/ups/499725296-AI扫地曾/srt/BV1YvjuzMEx1.srt) |
+
+全量导航（含预览）：[../../../data/subtitles/ups/499725296-AI扫地曾/README.md](../../../data/subtitles/ups/499725296-AI扫地曾/README.md)
