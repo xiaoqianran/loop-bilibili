@@ -53,19 +53,25 @@ python3 main.py pack-subtitles --src-root data/subtitle -o data/subtitles --skip
 
 ## 字幕数据
 
-| 去哪 | 链接 |
-|------|------|
-| **★ 人类导航（按 UP 读字幕）** | **[data/subtitles/README.md](data/subtitles/README.md)** → 点进各 `ups/{mid}-名字/README.md` |
-| 方案说明 | [docs/DATASET.md](docs/DATASET.md) |
-| 扩展路线 | [docs/ROADMAP.md](docs/ROADMAP.md) |
-| 版权说明 | [data/subtitles/NOTICE](data/subtitles/NOTICE) |
+**两条入口都行，按习惯选：**
 
-示例（北歌AIGC 全量有序 + txt 预览 + srt）：  
-[data/subtitles/ups/3546588152597451-北歌AIGC/README.md](data/subtitles/ups/3546588152597451-北歌AIGC/README.md)
+| 去哪 | 链接 | 适合 |
+|------|------|------|
+| **★ 按 UP 读字幕（归档总表）** | **[data/subtitles/README.md](data/subtitles/README.md)** → `ups/{mid}-名字/README.md` | 直接进字幕 hub：全量有序 + **txt 预览** + srt/txt |
+| **★ 按 UP 从目录进（catalog）** | **[catalogs/](catalogs/)** → 各 `catalogs/{mid}-名字/README.md` | 顶栏字幕导航 + **系列一览里每条带 txt/srt 链接** |
+| 方案说明 | [docs/DATASET.md](docs/DATASET.md) | 三层数据含义 |
+| 扩展路线 | [docs/ROADMAP.md](docs/ROADMAP.md) | pipeline / LLM / Actions |
+| 版权说明 | [data/subtitles/NOTICE](data/subtitles/NOTICE) | 非官方、学习研究用 |
+
+**同一 UP 双入口示例（北歌AIGC）：**
+
+- 字幕 hub：[data/subtitles/ups/3546588152597451-北歌AIGC/README.md](data/subtitles/ups/3546588152597451-北歌AIGC/README.md)
+- catalog 目录：[catalogs/3546588152597451-北歌AIGC/README.md](catalogs/3546588152597451-北歌AIGC/README.md)（系列表内也有 txt/srt）
 
 ```bash
-# 本地浏览
-open data/subtitles/README.md   # 或直接在 GitHub 点开
+# 本地
+open data/subtitles/README.md
+open catalogs/   # 或直接打开某个 UP 的 catalogs/.../README.md
 ```
 
 ## 限速
