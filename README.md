@@ -75,6 +75,21 @@ python3 main.py comments --bvid BV1BVEs6LENZ --comment-limit 10
 
 批量 summary/subtitle/comments：`done.json` + `results.json` + `items/*.json`，默认 resume。
 
+## 字幕数据与 GitHub
+
+`data/` **默认 gitignore**，不要把原始 `items/results`（含完整 cue 数组）提交进本仓。
+
+推荐用独立工具 [loop-bilibili-subbatch](https://github.com/xiaoqianran/loop-bilibili-subbatch) 的 **`pack`** 生成瘦数据集，推到数据仓 [loop-bilibili-subtitles](https://github.com/xiaoqianran/loop-bilibili-subtitles)：
+
+```bash
+python3 -m bili_subbatch pack \
+  --src-root ./data/subtitle \
+  --catalogs ./catalogs \
+  -o ../loop-bilibili-subtitles
+```
+
+方案细节： [docs/DATASET.md](https://github.com/xiaoqianran/loop-bilibili-subbatch/blob/main/docs/DATASET.md)。
+
 ## 关于限速与风控（摘要）
 
 投稿列表/发现串行分页；逐视频操作间隔必须 **严于** 列表。识别 `-799` / `-412` / `-352` 等信号并退避。B 站无公开 QPS SLA；策略为社区实践下的保守默认。
