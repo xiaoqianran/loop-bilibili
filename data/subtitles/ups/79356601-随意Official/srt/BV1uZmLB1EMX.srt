@@ -1,0 +1,495 @@
+1
+00:00:00,000 --> 00:00:00,440
+Hello everyone
+
+2
+00:00:00,440 --> 00:00:01,280
+I am Sui Yi
+
+3
+00:00:01,280 --> 00:00:03,120
+This video discusses the gossip algorithm.
+
+4
+00:00:03,120 --> 00:00:06,180
+This is the most renowned algorithm among broadcast algorithms.
+
+5
+00:00:06,180 --> 00:00:08,220
+It is used in and applied to registration centers
+
+6
+00:00:08,220 --> 00:00:09,540
+Consoredis
+
+7
+00:00:09,540 --> 00:00:14,460
+as well as infrastructure like CASA database and Amazon's DOMO
+
+8
+00:00:14,460 --> 00:00:17,600
+I found many incorrect statements about the Gossip algorithm online
+
+9
+00:00:17,600 --> 00:00:18,570
+are all wrong
+
+10
+00:00:18,570 --> 00:00:20,410
+First of all, it is not a consensus
+
+11
+00:00:20,410 --> 00:00:23,290
+The algorithm also has nothing to do with eventual consistency
+
+12
+00:00:23,290 --> 00:00:26,380
+even without any node failures
+
+13
+00:00:26,380 --> 00:00:28,049
+data loss may also occur
+
+14
+00:00:28,049 --> 00:00:30,489
+Let's first understand the broadcast algorithm
+
+15
+00:00:30,489 --> 00:00:32,129
+As the name suggests, the broadcast algorithm
+
+16
+00:00:32,129 --> 00:00:35,270
+is to distribute data from one node to multiple nodes
+
+17
+00:00:35,270 --> 00:00:37,690
+For example, when I package a Docker image
+
+18
+00:00:37,690 --> 00:00:40,629
+or distribute a Spark binary package
+
+19
+00:00:40,629 --> 00:00:44,749
+or even sending a Messages to the lobby in a game
+
+20
+00:00:44,749 --> 00:00:48,690
+These actions can be regarded as a broadcast algorithm
+
+21
+00:00:48,690 --> 00:00:51,690
+Among them, the most common broadcast algorithm is a node
+
+22
+00:00:51,690 --> 00:00:54,120
+send the value to all nodes
+
+23
+00:00:54,120 --> 00:00:56,840
+From this perspective, the master-slave synchronization in databases
+
+24
+00:00:56,840 --> 00:01:00,280
+synchronize messages from the master node of the keeper to the slave nodes
+
+25
+00:01:00,280 --> 00:01:02,710
+can all be regarded as a type of gossip algorithm
+
+26
+00:01:02,710 --> 00:01:04,470
+we refer to this one node
+
+27
+00:01:04,470 --> 00:01:07,530
+a broadcast algorithm that sends messages to all other nodes
+
+28
+00:01:07,530 --> 00:01:10,210
+collectively referred to as the gossip algorithm
+
+29
+00:01:10,210 --> 00:01:11,770
+However, the problem with this algorithm is
+
+30
+00:01:11,770 --> 00:01:13,890
+a bottleneck at a single node may occur
+
+31
+00:01:13,890 --> 00:01:16,670
+When a node propagates messages to multiple nodes
+
+32
+00:01:16,670 --> 00:01:20,170
+the deleted traffic is also the outgoing traffic from the server
+
+33
+00:01:20,170 --> 00:01:23,190
+The traffic of messages is always the bottleneck
+
+34
+00:01:23,190 --> 00:01:24,470
+after all, in the network
+
+35
+00:01:24,470 --> 00:01:26,790
+Both uplink and downlink bandwidth are limited
+
+36
+00:01:26,790 --> 00:01:31,280
+and the CPU copies the data to the network buffer in the kernel
+
+37
+00:01:31,280 --> 00:01:32,950
+there will also be some overhead
+
+38
+00:01:32,950 --> 00:01:35,270
+such as the Eureka we learned in second grade
+
+39
+00:01:35,270 --> 00:01:36,370
+uses this algorithm
+
+40
+00:01:36,370 --> 00:01:37,550
+That's why
+
+41
+00:01:37,550 --> 00:01:39,210
+the performance of eureka is not very good
+
+42
+00:01:39,210 --> 00:01:43,080
+a performance bottleneck may occur when there are too many nodes
+
+43
+00:01:43,080 --> 00:01:46,260
+So how can we reduce the pressure on the broadcast nodes?
+
+44
+00:01:46,260 --> 00:01:47,940
+a very simple idea
+
+45
+00:01:47,940 --> 00:01:50,680
+that is, we send messages to other nodes and then
+
+46
+00:01:50,680 --> 00:01:53,160
+let other nodes help forward the message
+
+47
+00:01:53,160 --> 00:01:55,640
+spread the broadcast message like wildfire
+
+48
+00:01:55,640 --> 00:01:58,000
+In this way, each node makes good use of
+
+49
+00:01:58,000 --> 00:01:59,080
+its own outgoing bandwidth
+
+50
+00:01:59,080 --> 00:02:02,610
+The execution speed of the entire broadcast algorithm will not be too slow.
+
+51
+00:02:02,610 --> 00:02:07,900
+So how do you choose which nodes to broadcast to?
+
+52
+00:02:07,900 --> 00:02:11,200
+The UNIP algorithm answers by selecting randomly
+
+53
+00:02:11,200 --> 00:02:13,600
+You can select in the network
+
+54
+00:02:13,600 --> 00:02:17,300
+send data to any node you know
+
+55
+00:02:17,300 --> 00:02:21,020
+Then all nodes in the cluster perform similar actions
+
+56
+00:02:21,020 --> 00:02:23,590
+until the entire cluster receives the message
+
+57
+00:02:23,590 --> 00:02:24,430
+Hearing this
+
+58
+00:02:24,430 --> 00:02:26,070
+The audience might wonder
+
+59
+00:02:26,070 --> 00:02:28,530
+Is it possible for the propagation path to form a loop?
+
+60
+00:02:28,530 --> 00:02:31,519
+For example, A sends to B, and after B receives it, it sends back to A.
+
+61
+00:02:31,519 --> 00:02:31,999
+Exactly
+
+62
+00:02:31,999 --> 00:02:34,879
+To prevent information from being propagated indefinitely
+
+63
+00:02:34,879 --> 00:02:37,700
+We usually only process the first received message
+
+64
+00:02:37,700 --> 00:02:42,079
+In the diagram, the red lines actually represent redundant message propagation
+
+65
+00:02:42,079 --> 00:02:43,279
+In addition
+
+66
+00:02:43,279 --> 00:02:45,199
+If the message is prematurely completed
+
+67
+00:02:45,199 --> 00:02:49,690
+So, are some nodes destined to never receive the message?
+
+68
+00:02:50,010 --> 00:02:53,230
+Here we assume that each node after receiving the message
+
+69
+00:02:53,230 --> 00:02:54,690
+sent to K nodes
+
+70
+00:02:54,690 --> 00:02:56,950
+In this graph, this K is two
+
+71
+00:02:56,950 --> 00:02:58,410
+Based on probability calculation
+
+72
+00:02:58,410 --> 00:03:00,830
+When there are N nodes in the cluster
+
+73
+00:03:00,830 --> 00:03:02,730
+and K needs to be greater than log n
+
+74
+00:03:02,730 --> 00:03:05,829
+this type of message has a higher probability of being sent to all nodes
+
+75
+00:03:05,829 --> 00:03:08,130
+Doesn't it sound quite unreliable?
+
+76
+00:03:08,130 --> 00:03:08,730
+Exactly
+
+77
+00:03:08,730 --> 00:03:12,250
+This unreliable protocol is actually the most commonly used broadcast protocol today
+
+78
+00:03:12,250 --> 00:03:13,590
+Therefore, we find that
+
+79
+00:03:13,590 --> 00:03:18,220
+whether it's Consul, Redis, Cassandra, or DynamoDB
+
+80
+00:03:18,220 --> 00:03:20,180
+the gossip algorithm they use
+
+81
+00:03:20,180 --> 00:03:22,860
+are only used for metadata updates and service discovery
+
+82
+00:03:22,860 --> 00:03:24,820
+taking Redis as an example
+
+83
+00:03:24,820 --> 00:03:28,480
+The data replication between master and slave still adopts the flooding strategy
+
+84
+00:03:28,480 --> 00:03:31,670
+which means the master node sends all data to the slave nodes
+
+85
+00:03:31,670 --> 00:03:34,430
+Only the service discovery part uses gossip
+
+86
+00:03:34,430 --> 00:03:37,010
+In other words, they possess the following characteristics
+
+87
+00:03:37,010 --> 00:03:40,890
+First, the overall data volume is not too large
+
+88
+00:03:40,890 --> 00:03:43,750
+Secondly, there's no need to ensure message reliability.
+
+89
+00:03:43,750 --> 00:03:47,010
+3. Requires complete decentralization
+
+90
+00:03:47,740 --> 00:03:50,300
+For example, when you detect a node failure
+
+91
+00:03:50,300 --> 00:03:53,600
+You inform other nodes about this through gossip
+
+92
+00:03:53,600 --> 00:03:58,150
+However, some nodes were not notified of this in a timely manner
+
+93
+00:03:58,150 --> 00:03:59,190
+No problem
+
+94
+00:03:59,190 --> 00:04:03,230
+In the next round, other nodes may still send gossip
+
+95
+00:04:03,230 --> 00:04:06,910
+notify this overlooked node of the latest cluster status
+
+96
+00:04:13,220 --> 00:04:15,800
+actually, each node at fixed intervals
+
+97
+00:04:15,800 --> 00:04:18,539
+randomly select a group of nodes to exchange differential data
+
+98
+00:04:18,539 --> 00:04:21,419
+thus most nodes missed by the gossip
+
+99
+00:04:21,419 --> 00:04:24,289
+can reacquire the corresponding messages
+
+100
+00:04:24,289 --> 00:04:25,289
+but obviously
+
+101
+00:04:25,289 --> 00:04:28,369
+if your data volume involves a database with millions of records
+
+102
+00:04:28,369 --> 00:04:30,369
+This is clearly an unrealistic operation
+
+103
+00:04:30,369 --> 00:04:33,570
+After all, this is essentially a full data synchronization
+
+104
+00:04:33,570 --> 00:04:36,210
+Therefore, gossip currently cannot be applied to
+
+105
+00:04:36,210 --> 00:04:39,159
+database replication scenarios
+
+106
+00:04:39,159 --> 00:04:42,459
+there are many aspects of the gossip protocol that can be optimized
+
+107
+00:04:45,439 --> 00:04:47,039
+information that needs to be transmitted
+
+108
+00:04:47,039 --> 00:04:51,339
+You can also dynamically set the deletion of the get value based on the cluster size.
+
+109
+00:04:51,339 --> 00:04:53,159
+the gossip protocol is simple and easy to use
+
+110
+00:04:53,159 --> 00:04:56,280
+and it doesn't require you to store all the nodes in the cluster
+
+111
+00:04:56,280 --> 00:04:57,220
+can work
+
+112
+00:04:57,220 --> 00:05:00,440
+Therefore, it is also widely used in blockchain scenarios.
+
+113
+00:05:00,440 --> 00:05:03,229
+When you want to create a cluster
+
+114
+00:05:03,229 --> 00:05:05,709
+without relying on critical components like ETCD
+
+115
+00:05:05,709 --> 00:05:07,629
+you might use gossip for service discovery
+
+116
+00:05:07,629 --> 00:05:08,520
+discovery, um
+
+117
+00:05:08,520 --> 00:05:09,240
+you asked me
+
+118
+00:05:09,240 --> 00:05:10,980
+Ali's NEO
+
+119
+00:05:10,980 --> 00:05:14,280
+Why wasn't the DISCORE protocol mentioned in this video
+
+120
+00:05:14,280 --> 00:05:15,240
+Then let me ask you
+
+121
+00:05:15,240 --> 00:05:18,680
+Why would you refer to something without even published papers or specifications as
+
+122
+00:05:18,680 --> 00:05:21,130
+something referred to as a protocol
+
+123
+00:05:21,130 --> 00:05:23,810
+Do you expect me to use his Java code
+
+124
+00:05:23,810 --> 00:05:25,820
+calculate the convergence probability of messages

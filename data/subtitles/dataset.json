@@ -1,14 +1,14 @@
 {
   "name": "loop-bilibili/data/subtitles",
   "description": "Packed Bilibili UP subtitles (SRT + slim index)",
-  "packed_at": "2026-07-23T16:39:32.587322+00:00",
-  "up_count": 11,
-  "ok_total": 777,
-  "empty_total": 32,
+  "packed_at": "2026-07-23T16:58:11.352775+00:00",
+  "up_count": 13,
+  "ok_total": 862,
+  "empty_total": 77,
   "error_total": 12,
-  "cues_total": 266015,
-  "srt_bytes_total": 18924473,
-  "txt_bytes_total": 9618095,
+  "cues_total": 282594,
+  "srt_bytes_total": 20073120,
+  "txt_bytes_total": 10191974,
   "layout": {
     "ups": "ups/{mid}-{name}/",
     "index": "index.jsonl",
@@ -24,6 +24,15 @@
       "empty_count": 1,
       "total_cues": 18780,
       "path": "ups/1223644844-杜子源源"
+    },
+    {
+      "slug": "1595797-赵扶风-1942型",
+      "mid": "1595797",
+      "name": "赵扶风-1942型",
+      "ok_count": 32,
+      "empty_count": 39,
+      "total_cues": 8677,
+      "path": "ups/1595797-赵扶风-1942型"
     },
     {
       "slug": "2071007724-海安雨",
@@ -114,6 +123,15 @@
       "empty_count": 3,
       "total_cues": 22956,
       "path": "ups/499725296-AI扫地曾"
+    },
+    {
+      "slug": "79356601-随意Official",
+      "mid": "79356601",
+      "name": "随意Official",
+      "ok_count": 53,
+      "empty_count": 6,
+      "total_cues": 7902,
+      "path": "ups/79356601-随意Official"
     }
   ],
   "tool": "loop-bilibili",

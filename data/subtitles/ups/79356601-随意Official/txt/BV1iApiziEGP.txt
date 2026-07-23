@@ -1,0 +1,163 @@
+No mundo da computação,
+tudo é uma máquina de estados.
+Elas aceitam uma entrada
+que, com base em uma entrada, itera para o próximo estado.
+No entanto, no mundo físico,
+essa máquina de estados pode estar sujeita a falhas.
+Mas, quando programamos,
+quero que o meu programa funcione como uma máquina de estado única,
+que nunca falhe e esteja sempre disponível.
+estado iterativo de uma vez
+Neste vídeo, não vou aprofundar os detalhes dos algoritmos de consenso.
+Vou apenas explicar o que os algoritmos de consenso podem nos proporcionar.
+Permite que múltiplos nós executem simultaneamente ações pré-definidas pelo usuário.
+E garante a alta disponibilidade de cada uma dessas ações.
+A camada superior pode ser um mapa de hash, um banco de dados relacional ou qualquer outra estrutura.
+Hoje em dia, é impensável ter sistemas sem algoritmos de consenso.
+Vejamos, por exemplo, os três pilares da Google:
+o GFS (Google File System),
+Map
+Reduce e Bigtable
+Todos eles usam o Chubby.
+Como coordenador de nós ou serviço de bloqueio.
+Além disso,
+ETCD, Consul, Nacos, Kafka.
+Todos eles incorporam o Raft ou uma variação desse algoritmo.
+Até mesmo a tecnologia blockchain do Bitcoin é um tipo de algoritmo de consenso.
+Em 1999,
+Lamport escreveu o artigo "The Part-Time Parliament",
+que é o algoritmo Paxos.
+Mas foi rejeitado por ser difícil de entender e expressar.
+Isso mesmo.
+Até mesmo algoritmos revolucionários em sistemas distribuídos, como o Paxos,
+já foram rejeitados.
+Oito anos depois,
+o artigo foi revisado
+e republicado na ACM Transactions on Computer Systems.
+Mas aquele artigo ainda era complexo demais.
+Por isso, em 2001,
+Lamport publicou uma versão simplificada: o Paxos Made Simple.
+Hoje em dia, este algoritmo quase não é utilizado diretamente em ambientes de produção.
+Este algoritmo é o que chamamos de Paxos de deferimento único, também conhecido como Paxos de deferimento único.
+Nesta versão do Paxos,
+Cada nó pode propor um valor diferente para uma resolução
+E a decisão final é tomada por maioria
+E o consenso só pode ser alcançado para uma única resolução de cada vez
+A submissão do Paxos ocorre em duas fases.
+Em situações de alta concorrência,
+diferentes nós podem até entrar em um impasse.
+Ninguém consegue alcançar a maioria nesta fase.
+Além disso, ele só pode alcançar consenso distribuído em máquinas de estado de passo único.
+E em ambientes de produção,
+Tepixels
+O 'multi' nesse contexto significa multi-degree.
+Uma ideia simples é
+Podemos usar a resolução única do Paxos para eleger um nó líder.
+Enquanto os outros nós, após a eleição do líder,
+podem simplesmente seguir as decisões tomadas por ele.
+No entanto, no artigo "Paxos Made Simple",
+o algoritmo Multi-Paxos foi abordado de forma superficial,
+sem uma análise aprofundada.
+Em 2007,
+engenheiros do Google publicaram o artigo "Pixos Made a Leave",
+detalhando como usar o PAXOS em um ambiente de produção.
+Construir sistemas de alta disponibilidade.
+O artigo foca principalmente no Multi-Paxos.
+Apresentou um ponto bem interessante.
+Se o nó primário atual não tiver nenhum problema,
+ele pode continuar a funcionar como nó primário.
+E, em seguida, usar o "heartbeat" para detectar a atividade de outros nós.
+Se o nó mestre falhar,
+basta eleger um novo nó mestre.
+Entre eles, o Chubby foi o primeiro a implementar esse algoritmo.
+É também considerado o predecessor do Zookeeper.
+No entanto, a terminologia do Multi-Paxos é muito complexa,
+porque é uma extensão do Paxos de decisão única.
+incluía todos os papéis do Paxos de resolução única,
+como proposer, acceptor e learner.
+Cada nó no Paxos de resolução única podia assumir múltiplos papéis.
+Já no Multi-Paxos, foram adicionadas relações de mestre-escravo.
+Alguns preferem chamar de líder mestre.
+Outros preferem chamar de proponente.
+Alguns chamam os nós secundários de 'flower',
+enquanto outros preferem chamá-los de 'acceptor'.
+Por isso, a barreira para aprender PAXOS tornou-se infinitamente maior.
+tornando o Paxos muito difícil de implementar na prática.
+Foi então que veio a nossa salvação:
+em 2014.
+A pesquisa do algoritmo Raft foi publicada.
+Havia vários pontos no design do Raft onde tivemos que escolher entre abordagens alternativas.
+Em busca de um algoritmo de consenso compreensível.
+No algoritmo Raft,
+o nó possui apenas a função de líder
+ou a de "candidate flower".
+No algoritmo Raft, as mudanças nos nós são detalhadamente descritas.
+Curiosamente,
+o artigo sobre Raft não compara o desempenho com o algoritmo PAXOS.
+Em vez disso, a comparação com o algoritmo PAXOS foca na facilidade de aprendizado do PAXOS, na facilidade de aprendizado do algoritmo Paxos.
+Claro, a maior parte da dificuldade do PIXos reside na inconsistência de sua terminologia.
+Além disso, muitas estratégias permitem que os usuários façam ajustes em diferentes graus.
+No artigo "Paxos vs. Raft",
+descreve-se detalhadamente os dois algoritmos.
+Se forem descritos com termos semelhantes,
+Quais são as diferenças específicas?
+A conclusão é que a principal diferença entre eles reside na fase de eleição do líder.
+Outro trabalho interessante é
+Esta tese do IPADS da Universidade Jiao Tong de Xangai, de 2019,
+propôs um algoritmo
+que transferiu a semântica de Paxos para o Raft.
+Assim, quando estamos otimizando um algoritmo de consenso,
+podemos mapeá-lo diretamente para outro algoritmo.
+Antes do surgimento do algoritmo Raft,
+Devido à descrição confusa do Multi-Paxos
+e à falta de otimização na implementação de engenharia,
+o Zookeeper retirou o protocolo ZAB.
+Zookeeper
+transmissão atômica
+É estranho.
+Por que chamamos de transmissão atômica?
+Isso se deve ao fato de que, em sistemas distribuídos,
+implementar a transmissão atômica e resolver o problema de consenso são equivalentes.
+No entanto, devido ao design real do sistema,
+também descobrimos que
+os nós secundários podem aliviar parte da pressão sobre as operações de leitura.
+Isso é desejável em muitos negócios.
+Por exemplo, quando postamos no WeChat Moments,
+não precisamos ver imediatamente o conteúdo que acabamos de publicar.
+Mas, eventualmente, você o verá.
+Isso pode acontecer porque os nós secundários ainda não tiveram tempo de sincronizar os dados do nó principal.
+Portanto, também chamamos a esse modelo de modelo de consistência eventual.
+Em muitos casos,
+alguns programas têm suas próprias estratégias de replicação personalizadas,
+e os algoritmos de consenso são usados apenas para ajudar na coordenação dos metadados.
+Por exemplo, ao usar uma estratégia de replicação de banco de dados para armazenamento,
+podemos usar algoritmos de consenso para coordenação externa.
+Quando o nó principal fica offline,
+permitir que o registro de banco de dados realize a mudança de principal para
+para evitar a situação de "split-brain"
+Por exemplo, o Zebra da Meituan é usado para fazer esse tipo de coisa.
+Existem soluções semelhantes no Kafka, HDFS e no plano MHA do MySQL.
+O plano MHA do MyCircle.
+Eles podem usar coordenadores de terceiros, como o Zookeeper, para manter a alta disponibilidade.
+decisões cruciais disponíveis por quorum
+Em versões mais recentes,
+Kafka e Elasticsearch, embora ambos tenham o Raft integrado,
+Elimina a necessidade do ZooKeeper, elimina a necessidade do ZooKeeper, elimina a necessidade do ZooKeeper
+Mas o Raft é usado apenas para gerenciar metadados, porque um primário adiciona uma solicitação à sua lista confirmada; mas o Raft é usado apenas para gerenciar metadados
+E não para fazer o diário que acompanha o algoritmo de consenso.
+replicação de logs inerente ao algoritmo.
+Na maioria dos registros de serviço, considera-se que os nós internos são confiáveis.
+Portanto, todos os algoritmos mencionados acima são os chamados algoritmos de consenso não-bizantino.
+O consenso bizantino, por sua vez, lida com a situação em que alguns nós não são confiáveis,
+e busca alcançar um consenso mesmo assim.
+Obviamente, este é um problema ainda mais difícil.
+Um exemplo clássico é o blockchain, encabeçado pelo Bitcoin.
+O design do Bitcoin garante que
+quando a maioria dos nós do cluster são normais,
+o cluster ainda consegue funcionar normalmente.
+mas a eficiência está muito aquém dos algoritmos de consenso não-bizantinos.
+Então, já que assistiram ao vídeo até aqui,
+Lembre-se de curtir o vídeo.
+Se tiver mais de 3.000 curtidas e moedas,
+então faremos um vídeo sobre isso.
+Algoritmos de consenso modernos.

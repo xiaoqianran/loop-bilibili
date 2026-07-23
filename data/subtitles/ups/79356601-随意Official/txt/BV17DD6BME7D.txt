@@ -1,0 +1,63 @@
+To become a good backend or infrastructure developer,
+You absolutely have to read the research papers in your field.
+That's because 80% of the standard interview questions you'll face are actually derived from these very papers.
+So, the best way to learn is to go straight to the source material.
+Instead of just chewing on the leftovers that other people have already picked through.
+In this video, I'm going to share some papers that I personally think are really great.
+The paper is actually pretty straightforward.
+And chances are, you've heard of most of the real-world applications of these papers.
+You can grab them in the comment section after you like, coin, and favorite the video!
+Alright, first up we have HotRing, an optimization method for HashMap's chaining addressing proposed by Ali.
+This is done by constructing a circular linked list.
+Plus, it dynamically moves hot nodes to the front of the list to mitigate the performance drop caused by hash collisions.
+In fact, Ali's Tail has used this algorithm for optimization.
+Next up is RocksDB, the renowned embedded, on-disk key-value store.
+and some papers on the development history of RocksDB.
+For those interested in storage, you can also check out the WiscKey paper.
+The WiscKey paper.
+The paper on Vertical Paxos is one that I think is severely underrated.
+In my opinion, this is a paper whose influence has been seriously underestimated.
+The most common disaster recovery solution we see is actually just a service registry.
+and then add a master-slave synchronization mechanism for high availability.
+This paper essentially formalizes the master-slave synchronization as a type of consensus algorithm.
+I've taken a look at the underlying principles of High Availability in Kafka.
+And the design philosophy from this paper is likely what they're using.
+The lease mechanism was first defined in this very paper.
+It's now widely used in areas like heartbeat detection and the Kubernetes architecture.
+Next up, PacificA. This is the highly acclaimed high-availability algorithm used by Elasticsearch.
+But from a personal perspective,
+I think the algorithm in this paper shares some similarities with the Vertical Paxos we just mentioned.
+Unfortunately, the paper doesn't describe the connection between the two.
+SWIM is an algorithm that uses gossip for service discovery.
+Consul actually uses this algorithm under the hood.
+But compared to Redis's service discovery algorithm, which can't even handle a few thousand machines,
+I actually proposed a feature for Redis before, and the design was based on this very paper.
+Right.
+I'm sure you're all familiar with TiDB, the renowned masterpiece from PingCAP.
+the very pillar of the renowned HTAP.
+It talks about the engineering implementation of the Raft algorithm in HTAP systems.
+The paper, "Paxos vs. Raft," gives us...
+when describing the operations of Raft and Paxos using the same terminology,
+So, what exactly are the differences between Paxos and the more mainstream Raft?
+On the Parallels between Paxos and Raft
+This is a paper from the team at Shanghai Jiao Tong University.
+It establishes a formal correspondence between Paxos and Raft through a refinement mapping.
+That's because in academia, most of the research is on Paxos.
+But in the field of engineering, most people are actually implementing the Raft algorithm.
+This means that for any given paper on Paxos, you can use this one to map and optimize its concepts onto Raft.
+PolarFS is the distributed file system from Alibaba.
+The system also introduces the Parallel Raft algorithm.
+This solves the log hole problem in Raft that occurs during out-of-order commits.
+X-Engine is Alibaba's OLTP storage engine.
+This is the tech stack designed to handle massive traffic spikes like the Double 11 shopping festival.
+It addresses these challenges through optimizations at various levels.
+Dynamic Resource Allocation Using Virtual Machines for Cloud Computing Environment.
+Using virtual machines for cloud...
+Computing environment.
+It uses traditional, non-AI algorithms for resource scheduling.
+One paper that I'm personally a huge fan of is one from the team at Peking University.
+In this day and age, where it seems like every paper is about using AI to manage machine loads,
+I still find it to be a real breath of fresh air.
+So, the papers we're covering in this video are a bit more niche compared to the last batch.
+But they are all papers that I've personally read and found to be pretty good.
+If you enjoyed the video, don't forget to like, share, and subscribe to support the channel!

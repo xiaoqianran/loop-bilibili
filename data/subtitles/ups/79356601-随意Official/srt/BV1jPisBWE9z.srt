@@ -1,0 +1,627 @@
+1
+00:00:00,040 --> 00:00:02,580
+Virtual threads were introduced in Java 21
+
+2
+00:00:02,580 --> 00:00:04,800
+So what problems do virtual threads actually solve?
+
+3
+00:00:04,800 --> 00:00:06,200
+In what scenarios can it be used
+
+4
+00:00:06,200 --> 00:00:08,620
+What are the differences between virtual threads and Go's goroutines?
+
+5
+00:00:08,620 --> 00:00:10,320
+We learned in second grade
+
+6
+00:00:10,320 --> 00:00:12,080
+Before JDK 21
+
+7
+00:00:12,080 --> 00:00:14,190
+Java only has platform threads
+
+8
+00:00:14,190 --> 00:00:15,470
+so-called platform threads
+
+9
+00:00:15,470 --> 00:00:17,920
+which means all scheduling rights of the threads
+
+10
+00:00:20,420 --> 00:00:22,420
+The operating system employs time-sliced round-robin scheduling
+
+11
+00:00:22,420 --> 00:00:26,890
+mechanisms such as multi-level queues to determine which thread executes
+
+12
+00:00:26,890 --> 00:00:29,450
+This makes programmers feel
+
+13
+00:00:29,450 --> 00:00:32,470
+The readily available resources of the operating system are virtually unlimited.
+
+14
+00:00:32,470 --> 00:00:34,230
+So here lies the problem
+
+15
+00:00:34,230 --> 00:00:36,710
+The scheduling of the operating system comes at a cost.
+
+16
+00:00:36,710 --> 00:00:39,370
+the operating system kernel directly schedules
+
+17
+00:00:39,370 --> 00:00:43,200
+causing thread switching to require entering kernel mode
+
+18
+00:00:43,200 --> 00:00:45,880
+This involves a complete context switch in the system
+
+19
+00:00:45,880 --> 00:00:48,280
+need to save and restore registers
+
+20
+00:00:48,280 --> 00:00:50,349
+restore the context for scheduling decisions
+
+21
+00:00:50,349 --> 00:00:52,109
+This overhead is relatively significant
+
+22
+00:00:52,109 --> 00:00:53,829
+when the number of threads we create
+
+23
+00:00:53,829 --> 00:00:56,880
+far exceeds the actual number of CPU cores
+
+24
+00:00:56,880 --> 00:01:00,820
+the operating system aims to schedule these threads more fairly
+
+25
+00:01:00,820 --> 00:01:03,960
+must frequently suspend and resume threads
+
+26
+00:01:03,960 --> 00:01:06,580
+ensure that each task can progress normally
+
+27
+00:01:06,580 --> 00:01:09,300
+Modern operating systems all employ preemptive scheduling
+
+28
+00:01:09,300 --> 00:01:12,020
+The operating system can do so through interrupts
+
+29
+00:01:12,020 --> 00:01:14,919
+preempt the context switch of the currently running CPU
+
+30
+00:01:14,919 --> 00:01:17,039
+This switching is mandatory
+
+31
+00:01:17,039 --> 00:01:19,839
+referred to as the preemptive multitasking mode
+
+32
+00:01:19,839 --> 00:01:22,580
+Here we take a tomcat server as an example
+
+33
+00:01:22,580 --> 00:01:24,460
+If the CPU has ten cores
+
+34
+00:01:24,460 --> 00:01:28,230
+then this machine can only handle ten HTTP requests simultaneously
+
+35
+00:01:28,230 --> 00:01:29,970
+This is clearly unacceptable
+
+36
+00:01:29,970 --> 00:01:32,270
+but we found that this HTTP request
+
+37
+00:01:32,270 --> 00:01:35,140
+most of the time is not spent on CPU computation
+
+38
+00:01:35,140 --> 00:01:36,620
+this HTTP request
+
+39
+00:01:36,620 --> 00:01:38,900
+may call third-party interfaces during processing
+
+40
+00:01:38,900 --> 00:01:41,400
+or querying databases like REDIS
+
+41
+00:01:41,400 --> 00:01:43,160
+during the execution of these operations
+
+42
+00:01:43,160 --> 00:01:46,500
+we naturally expect the operating system to suspend these threads
+
+43
+00:01:46,500 --> 00:01:48,480
+switch to other threads for execution
+
+44
+00:01:48,480 --> 00:01:50,420
+Of course, handling too many threads simultaneously
+
+45
+00:01:50,420 --> 00:01:54,150
+the aforementioned CPU resources would still be exhausted
+
+46
+00:01:54,150 --> 00:01:56,750
+Therefore, Tomcat sets a default value
+
+47
+00:01:56,750 --> 00:01:59,350
+with a thread pool size of 200
+
+48
+00:01:59,350 --> 00:02:03,020
+which means a maximum of 200 requests can be scheduled and processed simultaneously
+
+49
+00:02:03,020 --> 00:02:07,820
+Specific parameters should be adjusted according to the CPU's load type and model
+
+50
+00:02:07,820 --> 00:02:08,560
+make adjustments
+
+51
+00:02:08,560 --> 00:02:10,440
+For example, if your configuration is excellent
+
+52
+00:02:10,440 --> 00:02:14,320
+or if the current service is purely a request forwarding service
+
+53
+00:02:14,320 --> 00:02:16,980
+we can adjust this parameter higher
+
+54
+00:02:16,980 --> 00:02:19,320
+Doesn't that sound very familiar
+
+55
+00:02:19,320 --> 00:02:19,900
+Exactly
+
+56
+00:02:19,900 --> 00:02:23,300
+This is the IO-intensive and CPU-intensive concept that our team often recites
+
+57
+00:02:23,300 --> 00:02:26,520
+the configuration logic for intensive thread pool resources
+
+58
+00:02:26,520 --> 00:02:29,360
+So the underlying meaning of so-called I/O-intensive
+
+59
+00:02:29,360 --> 00:02:31,810
+This service doesn't use the CPU much.
+
+60
+00:02:31,810 --> 00:02:35,829
+can frequently yield CPU resources to other threads
+
+61
+00:02:35,829 --> 00:02:39,529
+If the thread pool's thread count limit is set too high
+
+62
+00:02:39,529 --> 00:02:42,929
+can easily cause the operating system to frequently suspend
+
+63
+00:02:42,929 --> 00:02:44,649
+resulting in degraded program performance
+
+64
+00:02:44,649 --> 00:02:45,989
+set too low
+
+65
+00:02:45,989 --> 00:02:48,969
+can also lead to a situation where threads are fully occupied
+
+66
+00:02:48,969 --> 00:02:51,309
+the processor is still not running at full capacity
+
+67
+00:02:51,309 --> 00:02:52,519
+resulting in waste
+
+68
+00:02:52,519 --> 00:02:55,519
+So is there any way to solve this problem?
+
+69
+00:02:55,519 --> 00:02:56,979
+Yes, my bro, yes
+
+70
+00:02:56,979 --> 00:02:59,160
+That is Java's virtual threads
+
+71
+00:02:59,160 --> 00:03:02,100
+The solution adopted by virtual threads is very simple
+
+72
+00:03:02,100 --> 00:03:04,900
+Since the operating system's scheduling
+
+73
+00:03:04,900 --> 00:03:06,100
+such a waste of time
+
+74
+00:03:06,100 --> 00:03:08,930
+Why don't we just move this scheduling to user space?
+
+75
+00:03:08,930 --> 00:03:11,270
+JPM can schedule threads by itself
+
+76
+00:03:11,270 --> 00:03:14,570
+In Java, the scheduling approach adopted for virtual threads
+
+77
+00:03:14,570 --> 00:03:16,780
+called cooperative scheduling
+
+78
+00:03:16,780 --> 00:03:22,060
+Cooperative scheduling means when a program experiences hang-ups or blocking
+
+79
+00:03:22,060 --> 00:03:23,910
+such as the sleep function
+
+80
+00:03:23,910 --> 00:03:27,470
+then the current CPU resources will be automatically allocated to
+
+81
+00:03:27,470 --> 00:03:29,560
+another thread that needs to be executed
+
+82
+00:03:29,560 --> 00:03:33,260
+Since such blocking is usually caused by IO waits
+
+83
+00:03:33,260 --> 00:03:36,200
+Therefore, we need to frequently perform IO waits
+
+84
+00:03:36,200 --> 00:03:38,240
+while the CPU remains relatively idle
+
+85
+00:03:38,240 --> 00:03:40,000
+In this Java code snippet
+
+86
+00:03:40,000 --> 00:03:44,900
+The program created more threads than the currently schedulable number of threads in the system
+
+87
+00:03:44,900 --> 00:03:46,390
+one additional thread
+
+88
+00:03:46,390 --> 00:03:49,170
+the extra thread in this case
+
+89
+00:03:49,170 --> 00:03:51,660
+can still run normally
+
+90
+00:03:51,660 --> 00:03:53,780
+When running the following code
+
+91
+00:03:53,780 --> 00:03:58,410
+The program can still output the new virtual thread here
+
+92
+00:03:58,410 --> 00:04:01,610
+This is because in the loop of other threads
+
+93
+00:04:01,610 --> 00:04:06,380
+the sleep function will yield execution rights from other virtual threads
+
+94
+00:04:06,380 --> 00:04:08,750
+yield to this new thread
+
+95
+00:04:08,910 --> 00:04:10,970
+But if we make a slight change
+
+96
+00:04:10,970 --> 00:04:12,610
+remove the sleep
+
+97
+00:04:12,610 --> 00:04:14,520
+rerun this code
+
+98
+00:04:14,520 --> 00:04:18,240
+we will find that the 'new v show si' part never gets printed
+
+99
+00:04:18,240 --> 00:04:21,260
+This holds true for both JDK21 and JDK25.
+
+100
+00:04:21,260 --> 00:04:23,159
+This is cooperative scheduling
+
+101
+00:04:23,159 --> 00:04:24,999
+they need to negotiate with each other
+
+102
+00:04:24,999 --> 00:04:28,370
+when to yield resources to other threads
+
+103
+00:04:28,370 --> 00:04:29,830
+This scheduling mode
+
+104
+00:04:29,830 --> 00:04:33,410
+The advantage is that it eliminates the need for the JVM to periodically interrupt operations
+
+105
+00:04:33,410 --> 00:04:35,930
+because this would incur certain overhead
+
+106
+00:04:35,930 --> 00:04:39,770
+The drawback is if you have 11 non-stop tasks
+
+107
+00:04:39,770 --> 00:04:43,930
+which means 11 threads need to run on a 10-thread CPU
+
+108
+00:04:43,930 --> 00:04:47,890
+then one of the tasks will continuously fail to be scheduled
+
+109
+00:04:47,890 --> 00:04:52,010
+So what about the virtual threads in Go? We usually call them goroutines.
+
+110
+00:04:52,010 --> 00:04:55,050
+It actually chose a different approach.
+
+111
+00:04:55,050 --> 00:05:00,380
+We know that Go's threading is based on the GMP model.
+
+112
+00:05:00,380 --> 00:05:04,680
+Similarly, Go also brings scheduling into the user-space program.
+
+113
+00:05:04,680 --> 00:05:07,600
+We usually refer to goroutines as coroutines
+
+114
+00:05:07,600 --> 00:05:11,159
+Here, the '协' primarily refers to cooperative.
+
+115
+00:05:11,159 --> 00:05:14,559
+early versions of Go made choices similar to current Java
+
+116
+00:05:14,559 --> 00:05:16,859
+is purely cooperatively scheduled
+
+117
+00:05:16,859 --> 00:05:18,430
+which means
+
+118
+00:05:18,430 --> 00:05:24,520
+If you run similar code in Go 1.13
+
+119
+00:05:24,520 --> 00:05:27,560
+the final result would be the same as in Java
+
+120
+00:05:27,560 --> 00:05:29,260
+fails to output
+
+121
+00:05:29,260 --> 00:05:32,130
+You might even get stuck with goroutines.
+
+122
+00:05:32,130 --> 00:05:36,350
+but when running the same code in versions after 1.14G
+
+123
+00:05:36,350 --> 00:05:39,350
+Goroutines can successfully output the results again
+
+124
+00:05:39,350 --> 00:05:40,830
+Isn't it amazing?
+
+125
+00:05:40,830 --> 00:05:42,910
+it's because the subsequent versions
+
+126
+00:05:42,910 --> 00:05:46,890
+the Go language employs cooperative plus preemptive scheduling
+
+127
+00:05:46,890 --> 00:05:48,210
+if a go routine
+
+128
+00:05:48,210 --> 00:05:51,250
+running continuously on a logical processor for 10ms
+
+129
+00:05:51,250 --> 00:05:53,110
+it will be marked as preemptible
+
+130
+00:05:53,110 --> 00:05:54,610
+that is to say
+
+131
+00:05:54,610 --> 00:05:58,910
+In higher versions of Go, there are two possibilities that can lead to context switching
+
+132
+00:05:58,910 --> 00:06:02,420
+another is blocking or hanging
+
+133
+00:06:02,420 --> 00:06:06,659
+the other is that it will be preempted by other coroutines if it runs for too long
+
+134
+00:06:06,659 --> 00:06:07,579
+To summarize
+
+135
+00:06:07,579 --> 00:06:08,579
+we can easily conclude
+
+136
+00:06:08,579 --> 00:06:10,700
+The main advantage of virtual threads is
+
+137
+00:06:10,700 --> 00:06:13,700
+The overhead of creating and destroying thread pools is very small
+
+138
+00:06:13,700 --> 00:06:15,460
+and are all user-mode operations
+
+139
+00:06:15,460 --> 00:06:16,980
+Therefore, in most cases
+
+140
+00:06:16,980 --> 00:06:21,080
+it needs to petrify virtual threads just like platform threads
+
+141
+00:06:21,080 --> 00:06:25,280
+Therefore, we don't need to worry about specific thread pool parameter configurations
+
+142
+00:06:25,280 --> 00:06:29,440
+This was typically determined based on business attributes and stress testing in the past.
+
+143
+00:06:29,440 --> 00:06:32,270
+determine the switching overhead of virtual threads
+
+144
+00:06:32,270 --> 00:06:34,110
+is also a purely user-mode operation
+
+145
+00:06:34,110 --> 00:06:36,150
+compared to system-level trapping
+
+146
+00:06:36,150 --> 00:06:37,950
+can perform a thread switch
+
+147
+00:06:37,950 --> 00:06:41,230
+Virtual threads in scenarios requiring frequent thread switching
+
+148
+00:06:41,230 --> 00:06:42,640
+performance will be better
+
+149
+00:06:42,640 --> 00:06:44,420
+Now that we understand this principle,
+
+150
+00:06:46,679 --> 00:06:50,139
+the programmer occupies a thread each time the code is executed
+
+151
+00:06:50,139 --> 00:06:52,399
+All asynchronous operations are scheduled on a single thread
+
+152
+00:06:54,400 --> 00:06:56,800
+And if you want to use asynchronous event-driven
+
+153
+00:06:56,800 --> 00:06:59,830
+to avoid frequent context switching by the operating system
+
+154
+00:06:59,830 --> 00:07:03,830
+Then you have implemented the web flocks model in Spring Cloud Gateway
+
+155
+00:07:03,830 --> 00:07:05,990
+That's all for this video
+
+156
+00:07:05,990 --> 00:07:07,590
+If you enjoyed the video, remember to like it
+
+157
+00:07:07,590 --> 00:07:09,040
+don't forget to coin and triple-combo

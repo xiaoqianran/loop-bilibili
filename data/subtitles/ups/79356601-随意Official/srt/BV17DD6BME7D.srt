@@ -1,0 +1,251 @@
+1
+00:00:00,000 --> 00:00:02,960
+To become a good backend or infrastructure developer,
+
+2
+00:00:02,960 --> 00:00:05,340
+You absolutely have to read the research papers in your field.
+
+3
+00:00:05,340 --> 00:00:08,500
+That's because 80% of the standard interview questions you'll face are actually derived from these very papers.
+
+4
+00:00:08,500 --> 00:00:12,700
+So, the best way to learn is to go straight to the source material.
+
+5
+00:00:12,700 --> 00:00:15,610
+Instead of just chewing on the leftovers that other people have already picked through.
+
+6
+00:00:15,610 --> 00:00:19,530
+In this video, I'm going to share some papers that I personally think are really great.
+
+7
+00:00:19,530 --> 00:00:20,610
+The paper is actually pretty straightforward.
+
+8
+00:00:20,610 --> 00:00:23,610
+And chances are, you've heard of most of the real-world applications of these papers.
+
+9
+00:00:25,210 --> 00:00:27,910
+You can grab them in the comment section after you like, coin, and favorite the video!
+
+10
+00:00:27,910 --> 00:00:33,840
+Alright, first up we have HotRing, an optimization method for HashMap's chaining addressing proposed by Ali.
+
+11
+00:00:33,840 --> 00:00:36,080
+This is done by constructing a circular linked list.
+
+12
+00:00:36,080 --> 00:00:41,990
+Plus, it dynamically moves hot nodes to the front of the list to mitigate the performance drop caused by hash collisions.
+
+13
+00:00:41,990 --> 00:00:44,730
+In fact, Ali's Tail has used this algorithm for optimization.
+
+14
+00:00:44,730 --> 00:00:48,070
+Next up is RocksDB, the renowned embedded, on-disk key-value store.
+
+15
+00:00:48,070 --> 00:00:51,420
+and some papers on the development history of RocksDB.
+
+16
+00:00:51,420 --> 00:00:54,880
+For those interested in storage, you can also check out the WiscKey paper.
+
+17
+00:00:54,880 --> 00:00:56,830
+The WiscKey paper.
+
+18
+00:00:56,830 --> 00:00:58,630
+The paper on Vertical Paxos is one that I think is severely underrated.
+
+19
+00:00:58,630 --> 00:01:02,290
+In my opinion, this is a paper whose influence has been seriously underestimated.
+
+20
+00:01:02,290 --> 00:01:05,620
+The most common disaster recovery solution we see is actually just a service registry.
+
+21
+00:01:05,620 --> 00:01:07,980
+and then add a master-slave synchronization mechanism for high availability.
+
+22
+00:01:07,980 --> 00:01:12,259
+This paper essentially formalizes the master-slave synchronization as a type of consensus algorithm.
+
+23
+00:01:12,259 --> 00:01:15,179
+I've taken a look at the underlying principles of High Availability in Kafka.
+
+24
+00:01:15,179 --> 00:01:18,490
+And the design philosophy from this paper is likely what they're using.
+
+25
+00:01:18,490 --> 00:01:22,420
+The lease mechanism was first defined in this very paper.
+
+26
+00:01:22,420 --> 00:01:27,320
+It's now widely used in areas like heartbeat detection and the Kubernetes architecture.
+
+27
+00:01:27,320 --> 00:01:33,089
+Next up, PacificA. This is the highly acclaimed high-availability algorithm used by Elasticsearch.
+
+28
+00:01:33,089 --> 00:01:34,749
+But from a personal perspective,
+
+29
+00:01:34,749 --> 00:01:40,250
+I think the algorithm in this paper shares some similarities with the Vertical Paxos we just mentioned.
+
+30
+00:01:40,250 --> 00:01:43,850
+Unfortunately, the paper doesn't describe the connection between the two.
+
+31
+00:01:44,710 --> 00:01:46,970
+SWIM is an algorithm that uses gossip for service discovery.
+
+32
+00:01:46,970 --> 00:01:50,820
+Consul actually uses this algorithm under the hood.
+
+33
+00:01:50,820 --> 00:01:55,330
+But compared to Redis's service discovery algorithm, which can't even handle a few thousand machines,
+
+34
+00:01:55,330 --> 00:01:58,410
+I actually proposed a feature for Redis before, and the design was based on this very paper.
+
+35
+00:01:58,410 --> 00:02:01,770
+Right.
+
+36
+00:02:01,770 --> 00:02:04,210
+I'm sure you're all familiar with TiDB, the renowned masterpiece from PingCAP.
+
+37
+00:02:04,210 --> 00:02:06,259
+the very pillar of the renowned HTAP.
+
+38
+00:02:06,259 --> 00:02:11,179
+It talks about the engineering implementation of the Raft algorithm in HTAP systems.
+
+39
+00:02:11,179 --> 00:02:13,079
+The paper, "Paxos vs. Raft," gives us...
+
+40
+00:02:13,079 --> 00:02:19,870
+when describing the operations of Raft and Paxos using the same terminology,
+
+41
+00:02:19,870 --> 00:02:23,530
+So, what exactly are the differences between Paxos and the more mainstream Raft?
+
+42
+00:02:23,890 --> 00:02:28,070
+On the Parallels between Paxos and Raft
+
+43
+00:02:28,070 --> 00:02:30,050
+This is a paper from the team at Shanghai Jiao Tong University.
+
+44
+00:02:30,050 --> 00:02:36,780
+It establishes a formal correspondence between Paxos and Raft through a refinement mapping.
+
+45
+00:02:36,780 --> 00:02:39,940
+That's because in academia, most of the research is on Paxos.
+
+46
+00:02:39,940 --> 00:02:43,870
+But in the field of engineering, most people are actually implementing the Raft algorithm.
+
+47
+00:02:43,870 --> 00:02:51,689
+This means that for any given paper on Paxos, you can use this one to map and optimize its concepts onto Raft.
+
+48
+00:02:51,689 --> 00:02:54,969
+PolarFS is the distributed file system from Alibaba.
+
+49
+00:02:54,969 --> 00:03:00,230
+The system also introduces the Parallel Raft algorithm.
+
+50
+00:03:00,230 --> 00:03:03,910
+This solves the log hole problem in Raft that occurs during out-of-order commits.
+
+51
+00:03:04,700 --> 00:03:08,020
+X-Engine is Alibaba's OLTP storage engine.
+
+52
+00:03:08,020 --> 00:03:11,030
+This is the tech stack designed to handle massive traffic spikes like the Double 11 shopping festival.
+
+53
+00:03:11,030 --> 00:03:15,670
+It addresses these challenges through optimizations at various levels.
+
+54
+00:03:15,870 --> 00:03:18,210
+Dynamic Resource Allocation Using Virtual Machines for Cloud Computing Environment.
+
+55
+00:03:18,210 --> 00:03:20,430
+Using virtual machines for cloud...
+
+56
+00:03:20,430 --> 00:03:21,910
+Computing environment.
+
+57
+00:03:21,910 --> 00:03:25,310
+It uses traditional, non-AI algorithms for resource scheduling.
+
+58
+00:03:25,310 --> 00:03:28,830
+One paper that I'm personally a huge fan of is one from the team at Peking University.
+
+59
+00:03:28,830 --> 00:03:33,199
+In this day and age, where it seems like every paper is about using AI to manage machine loads,
+
+60
+00:03:33,199 --> 00:03:35,400
+I still find it to be a real breath of fresh air.
+
+61
+00:03:35,400 --> 00:03:39,300
+So, the papers we're covering in this video are a bit more niche compared to the last batch.
+
+62
+00:03:39,300 --> 00:03:42,200
+But they are all papers that I've personally read and found to be pretty good.
+
+63
+00:03:42,200 --> 00:03:44,300
+If you enjoyed the video, don't forget to like, share, and subscribe to support the channel!

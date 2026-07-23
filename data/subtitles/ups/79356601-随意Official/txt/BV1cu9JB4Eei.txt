@@ -1,0 +1,36 @@
+max dv是一个天力存储引擎
+和传统的数据库基于B加数不一样
+它是基于lsm tree面向SSD优化的进程内持久化存储引擎
+图中这些项目全都用到了rocks dB
+那么首先是主要状态数据
+使用ROCDV的my circle的mr dB中
+存在和inno dB相同的另一个存储引擎的选择叫my rocks
+底层就使用了ROCDV作为存储引擎
+那复杂的string默认是将持久化状态的中间计算结果都存储到rocks dB中
+Deki db
+tends s等等
+他们都兼容REDIS协议
+并且底层使用rocks dB作为持久化存储
+大名鼎鼎的泰迪比
+底层的IKV内部也是使用了ROXDV作为存储的实现呃
+FLINK的checkpoint可以选择通过使用rocks dB存储到本机嗯
+clink house也提供了叫一个embedded rocdv的表引擎
+可以让用户把一个表的数据存放在ROXDV的实例中
+并通过clink house circle访问NANOS
+这些底层依赖sofa giraft的框架都可以采用rocks dv作为存储引擎
+不过也允许切换其他的作为存储层的实现
+value了这个图数据库非常知名
+它底层也是采用了rocks bb来进行存储
+接下来是原数据使用了rocks bb的框架
+poser的底层存储
+也就是bookkeeper的默认存储
+实现rocks db1环维护lager原数据索引
+在ROKETMQ中
+broker端通过rocks dB来保存消费偏移量
+订阅组管理配置
+认证授权等元数据
+thief中使用了rocks dv来管理对象映射和磁盘分配记录
+DORIS在后端的be e存储中使用了rocks dB来保存原数据的键值对
+那么你还知道什么项目
+他们也用到了ROCDB呢
+欢迎在评论区中留言哦

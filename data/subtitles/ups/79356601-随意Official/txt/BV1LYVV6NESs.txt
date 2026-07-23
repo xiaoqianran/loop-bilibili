@@ -1,0 +1,168 @@
+He diseñado un algoritmo.
+que permite ejecutar algoritmos de consenso como Raft en sistemas de caché como Redis.
+Hace poco, estuve desarrollando un servicio de caché que no pierde datos.
+La forma más sencilla es usar el tiempo de un algoritmo obsoleto.
+Pero, al realizar la sincronización entre el maestro y los esclavos, me encontré con un problema.
+Es decir, la ejecución voluntaria del nodo maestro y el nodo esclavo.
+la misma operación puede generar resultados diferentes.
+Tomemos REDIS como ejemplo.
+Aquí tenemos dos comandos.
+que son los comandos "set key value px", utilizados para almacenar un par clave-valor con un tiempo de expiración.
+y se elimina periódicamente.
+Y la otra es set key value nx.
+Seguramente, al estudiar sobre el patrón de bloqueo distribuido, se han encontrado con este problema.
+Es decir, si no existe la clave, se establece el valor.
+y si la clave ya existe, no hace nada.
+Entonces, ¿qué pasaría si ejecutamos este comando tanto en el nodo maestro como en el esclavo?
+Entonces, en la práctica, debido a la desviación horaria que existe entre el nodo maestro y el nodo esclavo,
+el tiempo de expiración de este par clave-valor será diferente en ambos lados.
+Pero, según el principio de relatividad que todos aprendimos en segundo de primaria,
+Aquí, es absolutamente imposible sincronizar el tiempo entre el nodo maestro y el nodo esclavo.
+Supongamos que, en este momento, el nodo principal expira.
+el nodo rojo aún no ha expirado.
+Y entonces, llega un comando SET NX.
+se producirán resultados diferentes en los dos nodos.
+y los datos de ambos nodos quedarán inconsistentes de forma permanente.
+Esto se debe a que cualquier operación del reloj puede fallar.
+realizar una llamada al sistema,
+Pero las llamadas al sistema introducen inestabilidad.
+Y en las iteraciones de la máquina de estado del algoritmo Raft,
+todos dependen del mismo estado inicial.
+Además, cada iteración debe depender del estado anterior.
+para que la iteración sea determinista.
+Por ejemplo, la instrucción SET NX necesita leer el estado anterior.
+Pero la introducción del tiempo provoca que las iteraciones de las máquinas de estado en ambos lados...
+depende de factores inciertos.
+Primero, veamos cómo Redis soluciona este problema.
+En sistemas como Redis, etcd y ZooKeeper,
+cada vez que se realiza una eliminación programada,
+se debe iniciar una solicitud.
+para indicarle al nodo esclavo que realice la eliminación.
+Pero en los sistemas de caché,
+Podemos imaginarnos
+Más del 90% de las solicitudes son para eliminar datos de forma periódica.
+Además, cada vez hay que enviar una solicitud de eliminación.
+y se realiza un consenso.
+Este algoritmo afecta al rendimiento, ¿verdad?
+casi un desastre total.
+Pero, ¿por qué Redis utiliza este algoritmo?
+Esto se debe a que Redis no ejecuta un algoritmo de consenso.
+cuando el nodo esclavo envía un mensaje,
+No necesitas responder al nodo principal y puedes pasar directamente al siguiente paso.
+Es decir, Redis no tiene un mecanismo de backpressure.
+si el nodo esclavo se ejecuta con demasiada lentitud,
+tampoco afectará la velocidad a la que el nodo principal procesa las solicitudes.
+En cambio, en los algoritmos de consenso...
+El nodo secundario debe responder al nodo principal.
+para que el nodo principal pueda pasar a la siguiente operación.
+Sin embargo, las operaciones de eliminación periódica en etcd y ZooKeeper...
+no es lo habitual.
+Por lo tanto, el rendimiento de este tipo de solicitudes se reduce a la mitad.
+no tendrá un gran impacto.
+Pero aquí surge un problema adicional.
+Por ejemplo, los sistemas de caché como Redis suelen adoptar una combinación de dos métodos: la expiración por tiempo y la eliminación por demanda.
+Cuando se lee un dato que ha caducado,
+En el algoritmo Raft, primero es necesario iniciar una eliminación para alcanzar un consenso.
+y solo entonces se puede devolver la respuesta.
+Esto aumenta enormemente la latencia de la lectura.
+Ante esta necesidad,
+Así que, basándome en el HLC, diseñé la primera versión de la solución.
+Ya que no existe un reloj absoluto,
+Entonces, podemos considerar el reloj local como otro parámetro determinista.
+cada 10 milisegundos, el nodo remoto
+entonces, envía su propia hora como una resolución para ser comprometida.
+Originalmente, nuestra referencia para el tiempo de expiración...
+del tiempo local e incierto de cada nodo,
+Ahora, este se incorpora a la máquina de estados a través del algoritmo de consenso.
+un reloj lógico determinista.
+Además, esta solución también previene los retrocesos del reloj en la máquina física.
+Cuando el nodo principal genera una nueva marca de tiempo,
+se puede tomar el valor máximo entre este y el timestamp anterior.
+y luego se procede a la confirmación.
+Este algoritmo no presenta ningún problema en la gran mayoría de los casos.
+Una desviación de 10 milisegundos no es significativa.
+Después de todo, entre las propias máquinas también existe una desviación horaria.
+Cuando un clúster Raft está bien optimizado,
+es capaz de soportar cientos de miles de peticiones concurrentes.
+Tomar 100 decisiones por segundo no es para nada un problema.
+Pero, ¿qué pasa cuando el sistema está inactivo?
+Y es cierto que una resolución de 140 por segundo también malgasta el rendimiento de la CPU.
+Para presentar el nuevo algoritmo,
+Para ello, introducimos dos conceptos.
+Uno es la deriva y la desviación del reloj.
+El desvío del reloj se refiere a la diferencia entre dos relojes físicos en un momento determinado.
+Mi reloj marca la una.
+y el tuyo marca las dos.
+la diferencia entre nosotros es de una hora.
+Mientras que la deriva del reloj es una diferencia de tiempo relativa.
+mientras que en mi máquina pasa una hora,
+mientras que en tu máquina pasa una hora,
+tarda un segundo más.
+Esa es la diferencia horaria relativa.
+Supongamos que el desvío y la deriva del sistema siempre están acotados.
+La desviación de todas las máquinas no puede superar un segundo.
+Esto normalmente se puede hacer mediante sincronizaciones periódicas con NTP.
+Cada vez que se produce un cambio entre el nodo maestro y el esclavo,
+se configuran manualmente para que la solicitud de lectura tarde más de un segundo en completarse.
+no es necesario pasar por una resolución de consenso.
+se procesa directamente en el nodo local.
+Es decir, lo que se conoce como lectura con arrendamiento, algo que aprendimos en segundo de primaria.
+Entonces, cuando entramos en una operación de escritura,
+el nodo principal debe usar su hora local para la operación actual.
+Se genera una marca de tiempo lógica de escritura.
+Este timestamp lógico de escritura se obtiene del timestamp lógico de escritura actual.
+el valor máximo entre la marca de tiempo lógica de lectura y la hora física.
+Todas las operaciones llevarán asociada esta marca de tiempo.
+Una vez que el nodo esclavo recibe la información,
+necesita usar esta marca de tiempo para actualizar su propio reloj lógico local.
+para procesar las solicitudes.
+Evidentemente,
+Para todas las operaciones de escritura,
+el nodo principal y los nodos esclavos
+y se utiliza directamente esta marca de tiempo lógica para procesar las solicitudes.
+Además, la eliminación perezosa periódica de la caché también utiliza esta marca de tiempo.
+Es decir, todos los estados y sus iteraciones son deterministas.
+se ejecuta junto con el algoritmo Raft.
+Por lo tanto, no se produce ninguna ambigüedad en las operaciones.
+Entonces, ¿cómo determina una operación de lectura qué claves puede ver?
+Así que, cada vez que realizamos una lectura,
+también se genera una marca de tiempo lógica, similar a la de escritura.
+La forma de generarlo es la misma.
+Pero recuerda que la marca de tiempo lógica de lectura no se compromete a la máquina de estado.
+se mantiene únicamente en la memoria.
+Leer la hora lógica
+evitará que el pal se elimine de la memoria.
+Pero si el tiempo de expiración es menor que el tiempo lógico de lectura,
+entonces, la operación de lectura considerará que esa cola no existe.
+Pero, cuando no entran solicitudes de escritura,
+los nodos esclavo no podrán realizar la recolección de basura.
+Por lo tanto, podemos enviar un registro vacío cada minuto.
+para así activar manualmente la escritura de la marca de tiempo lógica en el nodo principal.
+y así activar el GC.
+Por supuesto, también puedes diseñar tu propio algoritmo.
+para asegurar que los registros solo se envíen cuando sea realmente necesario eliminarlos.
+Bueno, ya hemos terminado con la presentación del algoritmo.
+Entonces, ¿qué hay de la corrección del algoritmo Raft?
+Por ejemplo, ¿podría darse una situación en la que una operación de lectura...
+que considera que un dato ya ha sido procesado,
+y luego se procesa la siguiente operación de escritura.
+y vuelve a leer este mismo dato?
+La respuesta es que no.
+porque se produce un cambio entre el nodo maestro y el esclavo.
+Dado que el desvío del reloj es limitado,
+se elige un nuevo nodo,
+Ya sea leyendo el reloj o escribiendo en él,
+debe ser mayor que la última vez.
+ya sea en la lectura o en la escritura del reloj.
+Esto se mantiene incluso si se produce un cambio de nodo maestro.
+Y en las verificaciones posteriores se descubrió que...
+Cockroach, esta base de datos distribuida,
+también ha implementado un diseño de algoritmo similar.
+Este consiste en incorporar el HLC generado por cada operación de escritura en el registro.
+Y utilizó la misma suposición para garantizar que el reloj no retrocediera.
+para distinguir qué parte de cada operación de lectura y escritura es visible.
+y qué parte no es visible.
+Y bueno, hasta aquí el vídeo de hoy.
+Si hay alguna parte del algoritmo que no te haya quedado clara,
+o si has visto algún algoritmo similar,
+Pueden dejar sus comentarios para discutirlo y compartir sus ideas.

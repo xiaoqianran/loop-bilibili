@@ -1,0 +1,651 @@
+1
+00:00:00,000 --> 00:00:01,540
+No mundo da computação,
+
+2
+00:00:01,540 --> 00:00:03,530
+tudo é uma máquina de estados.
+
+3
+00:00:03,530 --> 00:00:05,270
+Elas aceitam uma entrada
+
+4
+00:00:05,270 --> 00:00:07,910
+que, com base em uma entrada, itera para o próximo estado.
+
+5
+00:00:07,910 --> 00:00:09,930
+No entanto, no mundo físico,
+
+6
+00:00:09,930 --> 00:00:12,520
+essa máquina de estados pode estar sujeita a falhas.
+
+7
+00:00:12,520 --> 00:00:14,720
+Mas, quando programamos,
+
+8
+00:00:14,720 --> 00:00:18,560
+quero que o meu programa funcione como uma máquina de estado única,
+
+9
+00:00:18,560 --> 00:00:21,900
+que nunca falhe e esteja sempre disponível.
+
+10
+00:00:21,900 --> 00:00:23,640
+estado iterativo de uma vez
+
+11
+00:00:23,640 --> 00:00:26,560
+Neste vídeo, não vou aprofundar os detalhes dos algoritmos de consenso.
+
+12
+00:00:26,560 --> 00:00:29,500
+Vou apenas explicar o que os algoritmos de consenso podem nos proporcionar.
+
+13
+00:00:30,500 --> 00:00:33,740
+Permite que múltiplos nós executem simultaneamente ações pré-definidas pelo usuário.
+
+14
+00:00:33,740 --> 00:00:36,700
+E garante a alta disponibilidade de cada uma dessas ações.
+
+15
+00:00:36,700 --> 00:00:41,780
+A camada superior pode ser um mapa de hash, um banco de dados relacional ou qualquer outra estrutura.
+
+16
+00:00:41,780 --> 00:00:44,840
+Hoje em dia, é impensável ter sistemas sem algoritmos de consenso.
+
+17
+00:00:44,840 --> 00:00:47,340
+Vejamos, por exemplo, os três pilares da Google:
+
+18
+00:00:47,340 --> 00:00:48,380
+o GFS (Google File System),
+
+19
+00:00:48,380 --> 00:00:48,740
+Map
+
+20
+00:00:48,740 --> 00:00:50,120
+Reduce e Bigtable
+
+21
+00:00:50,120 --> 00:00:51,600
+Todos eles usam o Chubby.
+
+22
+00:00:51,600 --> 00:00:54,790
+Como coordenador de nós ou serviço de bloqueio.
+
+23
+00:00:54,790 --> 00:00:55,830
+Além disso,
+
+24
+00:00:55,830 --> 00:00:58,870
+ETCD, Consul, Nacos, Kafka.
+
+25
+00:00:58,870 --> 00:01:02,090
+Todos eles incorporam o Raft ou uma variação desse algoritmo.
+
+26
+00:01:02,090 --> 00:01:05,780
+Até mesmo a tecnologia blockchain do Bitcoin é um tipo de algoritmo de consenso.
+
+27
+00:01:05,780 --> 00:01:06,940
+Em 1999,
+
+28
+00:01:06,940 --> 00:01:10,500
+Lamport escreveu o artigo "The Part-Time Parliament",
+
+29
+00:01:10,500 --> 00:01:12,180
+que é o algoritmo Paxos.
+
+30
+00:01:12,180 --> 00:01:15,420
+Mas foi rejeitado por ser difícil de entender e expressar.
+
+31
+00:01:15,420 --> 00:01:15,880
+Isso mesmo.
+
+32
+00:01:15,880 --> 00:01:19,380
+Até mesmo algoritmos revolucionários em sistemas distribuídos, como o Paxos,
+
+33
+00:01:19,380 --> 00:01:20,740
+já foram rejeitados.
+
+34
+00:01:20,740 --> 00:01:22,409
+Oito anos depois,
+
+35
+00:01:22,409 --> 00:01:24,209
+o artigo foi revisado
+
+36
+00:01:24,209 --> 00:01:28,149
+e republicado na ACM Transactions on Computer Systems.
+
+37
+00:01:28,149 --> 00:01:30,500
+Mas aquele artigo ainda era complexo demais.
+
+38
+00:01:30,500 --> 00:01:31,840
+Por isso, em 2001,
+
+39
+00:01:31,840 --> 00:01:35,550
+Lamport publicou uma versão simplificada: o Paxos Made Simple.
+
+40
+00:01:35,550 --> 00:01:39,550
+Hoje em dia, este algoritmo quase não é utilizado diretamente em ambientes de produção.
+
+41
+00:01:39,550 --> 00:01:43,840
+Este algoritmo é o que chamamos de Paxos de deferimento único, também conhecido como Paxos de deferimento único.
+
+42
+00:01:43,840 --> 00:01:45,480
+Nesta versão do Paxos,
+
+43
+00:01:45,480 --> 00:01:48,480
+Cada nó pode propor um valor diferente para uma resolução
+
+44
+00:01:48,480 --> 00:01:50,520
+E a decisão final é tomada por maioria
+
+45
+00:01:50,520 --> 00:01:53,670
+E o consenso só pode ser alcançado para uma única resolução de cada vez
+
+46
+00:01:53,670 --> 00:01:56,190
+A submissão do Paxos ocorre em duas fases.
+
+47
+00:01:56,190 --> 00:01:57,510
+Em situações de alta concorrência,
+
+48
+00:01:57,510 --> 00:02:00,120
+diferentes nós podem até entrar em um impasse.
+
+49
+00:02:00,120 --> 00:02:03,140
+Ninguém consegue alcançar a maioria nesta fase.
+
+50
+00:02:03,140 --> 00:02:07,560
+Além disso, ele só pode alcançar consenso distribuído em máquinas de estado de passo único.
+
+51
+00:02:07,560 --> 00:02:09,400
+E em ambientes de produção,
+
+52
+00:02:20,540 --> 00:02:21,620
+Tepixels
+
+53
+00:02:21,620 --> 00:02:24,329
+O 'multi' nesse contexto significa multi-degree.
+
+54
+00:02:24,329 --> 00:02:25,889
+Uma ideia simples é
+
+55
+00:02:25,889 --> 00:02:30,149
+Podemos usar a resolução única do Paxos para eleger um nó líder.
+
+56
+00:02:30,149 --> 00:02:33,289
+Enquanto os outros nós, após a eleição do líder,
+
+57
+00:02:33,289 --> 00:02:35,509
+podem simplesmente seguir as decisões tomadas por ele.
+
+58
+00:02:35,509 --> 00:02:38,340
+No entanto, no artigo "Paxos Made Simple",
+
+59
+00:02:38,340 --> 00:02:41,620
+o algoritmo Multi-Paxos foi abordado de forma superficial,
+
+60
+00:02:41,620 --> 00:02:42,840
+sem uma análise aprofundada.
+
+61
+00:02:42,840 --> 00:02:44,120
+Em 2007,
+
+62
+00:02:44,120 --> 00:02:48,040
+engenheiros do Google publicaram o artigo "Pixos Made a Leave",
+
+63
+00:02:48,040 --> 00:02:51,120
+detalhando como usar o PAXOS em um ambiente de produção.
+
+64
+00:02:51,120 --> 00:02:52,460
+Construir sistemas de alta disponibilidade.
+
+65
+00:02:52,460 --> 00:02:54,920
+O artigo foca principalmente no Multi-Paxos.
+
+66
+00:02:54,920 --> 00:02:56,320
+Apresentou um ponto bem interessante.
+
+67
+00:02:56,320 --> 00:02:58,520
+Se o nó primário atual não tiver nenhum problema,
+
+68
+00:02:58,520 --> 00:03:01,240
+ele pode continuar a funcionar como nó primário.
+
+69
+00:03:01,240 --> 00:03:04,140
+E, em seguida, usar o "heartbeat" para detectar a atividade de outros nós.
+
+70
+00:03:04,140 --> 00:03:05,700
+Se o nó mestre falhar,
+
+71
+00:03:05,700 --> 00:03:07,600
+basta eleger um novo nó mestre.
+
+72
+00:03:07,600 --> 00:03:10,160
+Entre eles, o Chubby foi o primeiro a implementar esse algoritmo.
+
+73
+00:03:10,160 --> 00:03:12,260
+É também considerado o predecessor do Zookeeper.
+
+74
+00:03:12,260 --> 00:03:15,360
+No entanto, a terminologia do Multi-Paxos é muito complexa,
+
+75
+00:03:15,360 --> 00:03:17,860
+porque é uma extensão do Paxos de decisão única.
+
+76
+00:03:17,860 --> 00:03:20,340
+incluía todos os papéis do Paxos de resolução única,
+
+77
+00:03:20,340 --> 00:03:23,280
+como proposer, acceptor e learner.
+
+78
+00:03:23,280 --> 00:03:26,960
+Cada nó no Paxos de resolução única podia assumir múltiplos papéis.
+
+79
+00:03:26,960 --> 00:03:30,060
+Já no Multi-Paxos, foram adicionadas relações de mestre-escravo.
+
+80
+00:03:30,060 --> 00:03:32,000
+Alguns preferem chamar de líder mestre.
+
+81
+00:03:32,000 --> 00:03:33,880
+Outros preferem chamar de proponente.
+
+82
+00:03:33,880 --> 00:03:36,100
+Alguns chamam os nós secundários de 'flower',
+
+83
+00:03:36,100 --> 00:03:38,290
+enquanto outros preferem chamá-los de 'acceptor'.
+
+84
+00:03:38,290 --> 00:03:41,330
+Por isso, a barreira para aprender PAXOS tornou-se infinitamente maior.
+
+85
+00:03:41,330 --> 00:03:43,830
+tornando o Paxos muito difícil de implementar na prática.
+
+86
+00:03:43,830 --> 00:03:45,210
+Foi então que veio a nossa salvação:
+
+87
+00:03:45,210 --> 00:03:46,050
+em 2014.
+
+88
+00:03:46,050 --> 00:03:47,860
+A pesquisa do algoritmo Raft foi publicada.
+
+89
+00:03:47,860 --> 00:03:49,900
+Havia vários pontos no design do Raft onde tivemos que escolher entre abordagens alternativas.
+
+90
+00:03:49,900 --> 00:03:51,860
+Em busca de um algoritmo de consenso compreensível.
+
+91
+00:03:51,860 --> 00:03:53,220
+No algoritmo Raft,
+
+92
+00:03:53,220 --> 00:03:54,200
+o nó possui apenas a função de líder
+
+93
+00:03:54,200 --> 00:03:56,340
+ou a de "candidate flower".
+
+94
+00:03:56,340 --> 00:03:59,740
+No algoritmo Raft, as mudanças nos nós são detalhadamente descritas.
+
+95
+00:03:59,740 --> 00:04:00,580
+Curiosamente,
+
+96
+00:04:00,580 --> 00:04:04,320
+o artigo sobre Raft não compara o desempenho com o algoritmo PAXOS.
+
+97
+00:04:04,320 --> 00:04:07,120
+Em vez disso, a comparação com o algoritmo PAXOS foca na facilidade de aprendizado do PAXOS, na facilidade de aprendizado do algoritmo Paxos.
+
+98
+00:04:07,120 --> 00:04:10,660
+Claro, a maior parte da dificuldade do PIXos reside na inconsistência de sua terminologia.
+
+99
+00:04:10,660 --> 00:04:13,520
+Além disso, muitas estratégias permitem que os usuários façam ajustes em diferentes graus.
+
+100
+00:04:13,520 --> 00:04:16,070
+No artigo "Paxos vs. Raft",
+
+101
+00:04:16,070 --> 00:04:17,870
+descreve-se detalhadamente os dois algoritmos.
+
+102
+00:04:17,870 --> 00:04:19,850
+Se forem descritos com termos semelhantes,
+
+103
+00:04:19,850 --> 00:04:21,370
+Quais são as diferenças específicas?
+
+104
+00:04:21,370 --> 00:04:24,600
+A conclusão é que a principal diferença entre eles reside na fase de eleição do líder.
+
+105
+00:04:24,600 --> 00:04:26,360
+Outro trabalho interessante é
+
+106
+00:04:26,360 --> 00:04:31,050
+Esta tese do IPADS da Universidade Jiao Tong de Xangai, de 2019,
+
+107
+00:04:31,050 --> 00:04:32,530
+propôs um algoritmo
+
+108
+00:04:32,530 --> 00:04:34,800
+que transferiu a semântica de Paxos para o Raft.
+
+109
+00:04:34,800 --> 00:04:38,080
+Assim, quando estamos otimizando um algoritmo de consenso,
+
+110
+00:04:38,080 --> 00:04:40,180
+podemos mapeá-lo diretamente para outro algoritmo.
+
+111
+00:04:40,180 --> 00:04:42,310
+Antes do surgimento do algoritmo Raft,
+
+112
+00:04:42,310 --> 00:04:45,830
+Devido à descrição confusa do Multi-Paxos
+
+113
+00:04:45,830 --> 00:04:48,370
+e à falta de otimização na implementação de engenharia,
+
+114
+00:04:48,370 --> 00:04:51,150
+o Zookeeper retirou o protocolo ZAB.
+
+115
+00:04:51,150 --> 00:04:52,050
+Zookeeper
+
+116
+00:04:52,050 --> 00:04:53,860
+transmissão atômica
+
+117
+00:04:53,860 --> 00:04:54,580
+É estranho.
+
+118
+00:04:54,580 --> 00:04:56,480
+Por que chamamos de transmissão atômica?
+
+119
+00:04:56,480 --> 00:04:58,420
+Isso se deve ao fato de que, em sistemas distribuídos,
+
+120
+00:04:58,420 --> 00:05:02,510
+implementar a transmissão atômica e resolver o problema de consenso são equivalentes.
+
+121
+00:05:02,510 --> 00:05:04,630
+No entanto, devido ao design real do sistema,
+
+122
+00:05:04,630 --> 00:05:05,600
+também descobrimos que
+
+123
+00:05:05,600 --> 00:05:09,720
+os nós secundários podem aliviar parte da pressão sobre as operações de leitura.
+
+124
+00:05:09,720 --> 00:05:12,090
+Isso é desejável em muitos negócios.
+
+125
+00:05:12,090 --> 00:05:13,650
+Por exemplo, quando postamos no WeChat Moments,
+
+126
+00:05:13,650 --> 00:05:16,870
+não precisamos ver imediatamente o conteúdo que acabamos de publicar.
+
+127
+00:05:16,870 --> 00:05:18,430
+Mas, eventualmente, você o verá.
+
+128
+00:05:18,430 --> 00:05:22,549
+Isso pode acontecer porque os nós secundários ainda não tiveram tempo de sincronizar os dados do nó principal.
+
+129
+00:05:22,549 --> 00:05:25,729
+Portanto, também chamamos a esse modelo de modelo de consistência eventual.
+
+130
+00:05:25,729 --> 00:05:26,949
+Em muitos casos,
+
+131
+00:05:26,949 --> 00:05:29,540
+alguns programas têm suas próprias estratégias de replicação personalizadas,
+
+132
+00:05:29,540 --> 00:05:33,120
+e os algoritmos de consenso são usados apenas para ajudar na coordenação dos metadados.
+
+133
+00:05:33,120 --> 00:05:35,920
+Por exemplo, ao usar uma estratégia de replicação de banco de dados para armazenamento,
+
+134
+00:05:35,920 --> 00:05:38,690
+podemos usar algoritmos de consenso para coordenação externa.
+
+135
+00:05:38,690 --> 00:05:40,010
+Quando o nó principal fica offline,
+
+136
+00:05:40,010 --> 00:05:43,950
+permitir que o registro de banco de dados realize a mudança de principal para
+
+137
+00:05:43,950 --> 00:05:45,970
+para evitar a situação de "split-brain"
+
+138
+00:05:45,970 --> 00:05:50,220
+Por exemplo, o Zebra da Meituan é usado para fazer esse tipo de coisa.
+
+139
+00:05:50,540 --> 00:05:53,260
+Existem soluções semelhantes no Kafka, HDFS e no plano MHA do MySQL.
+
+140
+00:05:53,260 --> 00:05:55,919
+O plano MHA do MyCircle.
+
+141
+00:05:55,919 --> 00:05:59,759
+Eles podem usar coordenadores de terceiros, como o Zookeeper, para manter a alta disponibilidade.
+
+142
+00:05:59,759 --> 00:06:02,419
+decisões cruciais disponíveis por quorum
+
+143
+00:06:02,419 --> 00:06:04,240
+Em versões mais recentes,
+
+144
+00:06:04,240 --> 00:06:08,160
+Kafka e Elasticsearch, embora ambos tenham o Raft integrado,
+
+145
+00:06:08,160 --> 00:06:10,280
+Elimina a necessidade do ZooKeeper, elimina a necessidade do ZooKeeper, elimina a necessidade do ZooKeeper
+
+146
+00:06:10,280 --> 00:06:13,220
+Mas o Raft é usado apenas para gerenciar metadados, porque um primário adiciona uma solicitação à sua lista confirmada; mas o Raft é usado apenas para gerenciar metadados
+
+147
+00:06:13,220 --> 00:06:15,080
+E não para fazer o diário que acompanha o algoritmo de consenso.
+
+148
+00:06:15,080 --> 00:06:17,280
+replicação de logs inerente ao algoritmo.
+
+149
+00:06:17,280 --> 00:06:21,480
+Na maioria dos registros de serviço, considera-se que os nós internos são confiáveis.
+
+150
+00:06:21,480 --> 00:06:24,940
+Portanto, todos os algoritmos mencionados acima são os chamados algoritmos de consenso não-bizantino.
+
+151
+00:06:24,940 --> 00:06:29,900
+O consenso bizantino, por sua vez, lida com a situação em que alguns nós não são confiáveis,
+
+152
+00:06:29,900 --> 00:06:32,100
+e busca alcançar um consenso mesmo assim.
+
+153
+00:06:32,100 --> 00:06:33,919
+Obviamente, este é um problema ainda mais difícil.
+
+154
+00:06:33,919 --> 00:06:36,859
+Um exemplo clássico é o blockchain, encabeçado pelo Bitcoin.
+
+155
+00:06:36,859 --> 00:06:38,659
+O design do Bitcoin garante que
+
+156
+00:06:38,659 --> 00:06:41,830
+quando a maioria dos nós do cluster são normais,
+
+157
+00:06:41,830 --> 00:06:43,929
+o cluster ainda consegue funcionar normalmente.
+
+158
+00:06:43,929 --> 00:06:47,089
+mas a eficiência está muito aquém dos algoritmos de consenso não-bizantinos.
+
+159
+00:06:47,089 --> 00:06:48,709
+Então, já que assistiram ao vídeo até aqui,
+
+160
+00:06:48,709 --> 00:06:50,449
+Lembre-se de curtir o vídeo.
+
+161
+00:06:50,449 --> 00:06:52,370
+Se tiver mais de 3.000 curtidas e moedas,
+
+162
+00:06:52,370 --> 00:06:53,930
+então faremos um vídeo sobre isso.
+
+163
+00:06:53,930 --> 00:06:55,240
+Algoritmos de consenso modernos.

@@ -1,0 +1,671 @@
+1
+00:00:00,000 --> 00:00:01,400
+He diseñado un algoritmo.
+
+2
+00:00:01,400 --> 00:00:05,870
+que permite ejecutar algoritmos de consenso como Raft en sistemas de caché como Redis.
+
+3
+00:00:05,870 --> 00:00:09,550
+Hace poco, estuve desarrollando un servicio de caché que no pierde datos.
+
+4
+00:00:09,550 --> 00:00:12,460
+La forma más sencilla es usar el tiempo de un algoritmo obsoleto.
+
+5
+00:00:12,460 --> 00:00:15,140
+Pero, al realizar la sincronización entre el maestro y los esclavos, me encontré con un problema.
+
+6
+00:00:15,140 --> 00:00:17,180
+Es decir, la ejecución voluntaria del nodo maestro y el nodo esclavo.
+
+7
+00:00:17,180 --> 00:00:19,909
+la misma operación puede generar resultados diferentes.
+
+8
+00:00:19,909 --> 00:00:21,249
+Tomemos REDIS como ejemplo.
+
+9
+00:00:21,249 --> 00:00:22,429
+Aquí tenemos dos comandos.
+
+10
+00:00:22,429 --> 00:00:26,269
+que son los comandos "set key value px", utilizados para almacenar un par clave-valor con un tiempo de expiración.
+
+11
+00:00:26,269 --> 00:00:27,650
+y se elimina periódicamente.
+
+12
+00:00:27,650 --> 00:00:29,970
+Y la otra es set key value nx.
+
+13
+00:00:29,970 --> 00:00:33,410
+Seguramente, al estudiar sobre el patrón de bloqueo distribuido, se han encontrado con este problema.
+
+14
+00:00:33,410 --> 00:00:35,450
+Es decir, si no existe la clave, se establece el valor.
+
+15
+00:00:35,450 --> 00:00:36,720
+y si la clave ya existe, no hace nada.
+
+16
+00:00:36,720 --> 00:00:40,000
+Entonces, ¿qué pasaría si ejecutamos este comando tanto en el nodo maestro como en el esclavo?
+
+17
+00:00:40,000 --> 00:00:45,040
+Entonces, en la práctica, debido a la desviación horaria que existe entre el nodo maestro y el nodo esclavo,
+
+18
+00:00:45,040 --> 00:00:48,220
+el tiempo de expiración de este par clave-valor será diferente en ambos lados.
+
+19
+00:00:48,220 --> 00:00:51,160
+Pero, según el principio de relatividad que todos aprendimos en segundo de primaria,
+
+20
+00:00:51,160 --> 00:00:54,670
+Aquí, es absolutamente imposible sincronizar el tiempo entre el nodo maestro y el nodo esclavo.
+
+21
+00:00:54,670 --> 00:00:57,430
+Supongamos que, en este momento, el nodo principal expira.
+
+22
+00:00:57,430 --> 00:00:59,110
+el nodo rojo aún no ha expirado.
+
+23
+00:00:59,110 --> 00:01:01,110
+Y entonces, llega un comando SET NX.
+
+24
+00:01:01,110 --> 00:01:04,629
+se producirán resultados diferentes en los dos nodos.
+
+25
+00:01:04,629 --> 00:01:07,880
+y los datos de ambos nodos quedarán inconsistentes de forma permanente.
+
+26
+00:01:07,880 --> 00:01:11,740
+Esto se debe a que cualquier operación del reloj puede fallar.
+
+27
+00:01:11,740 --> 00:01:13,340
+realizar una llamada al sistema,
+
+28
+00:01:13,340 --> 00:01:16,190
+Pero las llamadas al sistema introducen inestabilidad.
+
+29
+00:01:16,190 --> 00:01:18,910
+Y en las iteraciones de la máquina de estado del algoritmo Raft,
+
+30
+00:01:18,910 --> 00:01:21,380
+todos dependen del mismo estado inicial.
+
+31
+00:01:21,380 --> 00:01:24,400
+Además, cada iteración debe depender del estado anterior.
+
+32
+00:01:24,400 --> 00:01:25,930
+para que la iteración sea determinista.
+
+33
+00:01:25,930 --> 00:01:29,170
+Por ejemplo, la instrucción SET NX necesita leer el estado anterior.
+
+34
+00:01:29,170 --> 00:01:33,080
+Pero la introducción del tiempo provoca que las iteraciones de las máquinas de estado en ambos lados...
+
+35
+00:01:33,080 --> 00:01:34,640
+depende de factores inciertos.
+
+36
+00:01:34,640 --> 00:01:37,920
+Primero, veamos cómo Redis soluciona este problema.
+
+37
+00:01:37,920 --> 00:01:41,080
+En sistemas como Redis, etcd y ZooKeeper,
+
+38
+00:01:41,080 --> 00:01:42,800
+cada vez que se realiza una eliminación programada,
+
+39
+00:01:42,800 --> 00:01:44,560
+se debe iniciar una solicitud.
+
+40
+00:01:44,560 --> 00:01:46,699
+para indicarle al nodo esclavo que realice la eliminación.
+
+41
+00:01:46,699 --> 00:01:48,739
+Pero en los sistemas de caché,
+
+42
+00:01:48,739 --> 00:01:49,499
+Podemos imaginarnos
+
+43
+00:01:49,499 --> 00:01:52,820
+Más del 90% de las solicitudes son para eliminar datos de forma periódica.
+
+44
+00:01:52,820 --> 00:01:55,260
+Además, cada vez hay que enviar una solicitud de eliminación.
+
+45
+00:01:55,260 --> 00:01:56,240
+y se realiza un consenso.
+
+46
+00:01:56,240 --> 00:01:58,520
+Este algoritmo afecta al rendimiento, ¿verdad?
+
+47
+00:01:58,520 --> 00:01:59,560
+casi un desastre total.
+
+48
+00:01:59,560 --> 00:02:02,670
+Pero, ¿por qué Redis utiliza este algoritmo?
+
+49
+00:02:02,670 --> 00:02:05,290
+Esto se debe a que Redis no ejecuta un algoritmo de consenso.
+
+50
+00:02:05,290 --> 00:02:07,350
+cuando el nodo esclavo envía un mensaje,
+
+51
+00:02:07,350 --> 00:02:11,040
+No necesitas responder al nodo principal y puedes pasar directamente al siguiente paso.
+
+52
+00:02:11,040 --> 00:02:13,700
+Es decir, Redis no tiene un mecanismo de backpressure.
+
+53
+00:02:13,700 --> 00:02:15,260
+si el nodo esclavo se ejecuta con demasiada lentitud,
+
+54
+00:02:15,260 --> 00:02:18,570
+tampoco afectará la velocidad a la que el nodo principal procesa las solicitudes.
+
+55
+00:02:18,570 --> 00:02:20,670
+En cambio, en los algoritmos de consenso...
+
+56
+00:02:20,670 --> 00:02:23,330
+El nodo secundario debe responder al nodo principal.
+
+57
+00:02:23,330 --> 00:02:25,860
+para que el nodo principal pueda pasar a la siguiente operación.
+
+58
+00:02:25,860 --> 00:02:29,740
+Sin embargo, las operaciones de eliminación periódica en etcd y ZooKeeper...
+
+59
+00:02:29,740 --> 00:02:30,980
+no es lo habitual.
+
+60
+00:02:30,980 --> 00:02:34,080
+Por lo tanto, el rendimiento de este tipo de solicitudes se reduce a la mitad.
+
+61
+00:02:34,080 --> 00:02:36,209
+no tendrá un gran impacto.
+
+62
+00:02:36,209 --> 00:02:38,889
+Pero aquí surge un problema adicional.
+
+63
+00:02:38,889 --> 00:02:43,510
+Por ejemplo, los sistemas de caché como Redis suelen adoptar una combinación de dos métodos: la expiración por tiempo y la eliminación por demanda.
+
+64
+00:02:43,510 --> 00:02:46,250
+Cuando se lee un dato que ha caducado,
+
+65
+00:02:46,250 --> 00:02:50,350
+En el algoritmo Raft, primero es necesario iniciar una eliminación para alcanzar un consenso.
+
+66
+00:02:50,350 --> 00:02:51,790
+y solo entonces se puede devolver la respuesta.
+
+67
+00:02:51,790 --> 00:02:54,230
+Esto aumenta enormemente la latencia de la lectura.
+
+68
+00:02:54,230 --> 00:02:55,950
+Ante esta necesidad,
+
+69
+00:02:55,950 --> 00:02:58,649
+Así que, basándome en el HLC, diseñé la primera versión de la solución.
+
+70
+00:02:58,649 --> 00:03:00,369
+Ya que no existe un reloj absoluto,
+
+71
+00:03:00,369 --> 00:03:04,010
+Entonces, podemos considerar el reloj local como otro parámetro determinista.
+
+72
+00:03:04,010 --> 00:03:06,370
+cada 10 milisegundos, el nodo remoto
+
+73
+00:03:06,370 --> 00:03:10,720
+entonces, envía su propia hora como una resolución para ser comprometida.
+
+74
+00:03:10,960 --> 00:03:13,280
+Originalmente, nuestra referencia para el tiempo de expiración...
+
+75
+00:03:13,280 --> 00:03:15,620
+del tiempo local e incierto de cada nodo,
+
+76
+00:03:15,620 --> 00:03:18,860
+Ahora, este se incorpora a la máquina de estados a través del algoritmo de consenso.
+
+77
+00:03:18,860 --> 00:03:20,430
+un reloj lógico determinista.
+
+78
+00:03:20,430 --> 00:03:24,930
+Además, esta solución también previene los retrocesos del reloj en la máquina física.
+
+79
+00:03:25,250 --> 00:03:28,230
+Cuando el nodo principal genera una nueva marca de tiempo,
+
+80
+00:03:28,230 --> 00:03:31,970
+se puede tomar el valor máximo entre este y el timestamp anterior.
+
+81
+00:03:31,970 --> 00:03:33,610
+y luego se procede a la confirmación.
+
+82
+00:03:33,970 --> 00:03:37,940
+Este algoritmo no presenta ningún problema en la gran mayoría de los casos.
+
+83
+00:03:37,940 --> 00:03:40,220
+Una desviación de 10 milisegundos no es significativa.
+
+84
+00:03:40,220 --> 00:03:44,100
+Después de todo, entre las propias máquinas también existe una desviación horaria.
+
+85
+00:03:44,100 --> 00:03:46,620
+Cuando un clúster Raft está bien optimizado,
+
+86
+00:03:46,620 --> 00:03:48,280
+es capaz de soportar cientos de miles de peticiones concurrentes.
+
+87
+00:03:48,280 --> 00:03:51,180
+Tomar 100 decisiones por segundo no es para nada un problema.
+
+88
+00:03:51,180 --> 00:03:53,480
+Pero, ¿qué pasa cuando el sistema está inactivo?
+
+89
+00:03:53,480 --> 00:03:57,120
+Y es cierto que una resolución de 140 por segundo también malgasta el rendimiento de la CPU.
+
+90
+00:03:57,120 --> 00:03:58,560
+Para presentar el nuevo algoritmo,
+
+91
+00:03:58,560 --> 00:03:59,840
+Para ello, introducimos dos conceptos.
+
+92
+00:03:59,840 --> 00:04:03,209
+Uno es la deriva y la desviación del reloj.
+
+93
+00:04:03,209 --> 00:04:08,089
+El desvío del reloj se refiere a la diferencia entre dos relojes físicos en un momento determinado.
+
+94
+00:04:08,089 --> 00:04:09,449
+Mi reloj marca la una.
+
+95
+00:04:09,449 --> 00:04:10,129
+y el tuyo marca las dos.
+
+96
+00:04:10,129 --> 00:04:11,060
+la diferencia entre nosotros es de una hora.
+
+97
+00:04:11,060 --> 00:04:13,580
+Mientras que la deriva del reloj es una diferencia de tiempo relativa.
+
+98
+00:04:13,580 --> 00:04:15,560
+mientras que en mi máquina pasa una hora,
+
+99
+00:04:15,560 --> 00:04:18,300
+mientras que en tu máquina pasa una hora,
+
+100
+00:04:18,300 --> 00:04:19,060
+tarda un segundo más.
+
+101
+00:04:19,060 --> 00:04:21,180
+Esa es la diferencia horaria relativa.
+
+102
+00:04:21,180 --> 00:04:25,280
+Supongamos que el desvío y la deriva del sistema siempre están acotados.
+
+103
+00:04:25,280 --> 00:04:27,799
+La desviación de todas las máquinas no puede superar un segundo.
+
+104
+00:04:27,799 --> 00:04:31,290
+Esto normalmente se puede hacer mediante sincronizaciones periódicas con NTP.
+
+105
+00:04:31,570 --> 00:04:33,650
+Cada vez que se produce un cambio entre el nodo maestro y el esclavo,
+
+106
+00:04:33,650 --> 00:04:37,820
+se configuran manualmente para que la solicitud de lectura tarde más de un segundo en completarse.
+
+107
+00:04:37,820 --> 00:04:39,460
+no es necesario pasar por una resolución de consenso.
+
+108
+00:04:39,460 --> 00:04:41,580
+se procesa directamente en el nodo local.
+
+109
+00:04:41,580 --> 00:04:44,780
+Es decir, lo que se conoce como lectura con arrendamiento, algo que aprendimos en segundo de primaria.
+
+110
+00:04:44,780 --> 00:04:47,909
+Entonces, cuando entramos en una operación de escritura,
+
+111
+00:04:48,349 --> 00:04:52,489
+el nodo principal debe usar su hora local para la operación actual.
+
+112
+00:04:52,489 --> 00:04:54,930
+Se genera una marca de tiempo lógica de escritura.
+
+113
+00:04:54,930 --> 00:04:59,759
+Este timestamp lógico de escritura se obtiene del timestamp lógico de escritura actual.
+
+114
+00:04:59,759 --> 00:05:03,039
+el valor máximo entre la marca de tiempo lógica de lectura y la hora física.
+
+115
+00:05:03,039 --> 00:05:05,870
+Todas las operaciones llevarán asociada esta marca de tiempo.
+
+116
+00:05:05,870 --> 00:05:07,590
+Una vez que el nodo esclavo recibe la información,
+
+117
+00:05:07,590 --> 00:05:11,290
+necesita usar esta marca de tiempo para actualizar su propio reloj lógico local.
+
+118
+00:05:11,290 --> 00:05:12,890
+para procesar las solicitudes.
+
+119
+00:05:12,890 --> 00:05:13,830
+Evidentemente,
+
+120
+00:05:13,830 --> 00:05:15,410
+Para todas las operaciones de escritura,
+
+121
+00:05:15,410 --> 00:05:17,270
+el nodo principal y los nodos esclavos
+
+122
+00:05:17,270 --> 00:05:19,940
+y se utiliza directamente esta marca de tiempo lógica para procesar las solicitudes.
+
+123
+00:05:19,940 --> 00:05:24,110
+Además, la eliminación perezosa periódica de la caché también utiliza esta marca de tiempo.
+
+124
+00:05:24,110 --> 00:05:27,270
+Es decir, todos los estados y sus iteraciones son deterministas.
+
+125
+00:05:27,270 --> 00:05:29,440
+se ejecuta junto con el algoritmo Raft.
+
+126
+00:05:29,440 --> 00:05:31,860
+Por lo tanto, no se produce ninguna ambigüedad en las operaciones.
+
+127
+00:05:31,860 --> 00:05:34,960
+Entonces, ¿cómo determina una operación de lectura qué claves puede ver?
+
+128
+00:05:34,960 --> 00:05:37,020
+Así que, cada vez que realizamos una lectura,
+
+129
+00:05:37,020 --> 00:05:40,420
+también se genera una marca de tiempo lógica, similar a la de escritura.
+
+130
+00:05:40,420 --> 00:05:41,960
+La forma de generarlo es la misma.
+
+131
+00:05:41,960 --> 00:05:45,340
+Pero recuerda que la marca de tiempo lógica de lectura no se compromete a la máquina de estado.
+
+132
+00:05:45,340 --> 00:05:46,860
+se mantiene únicamente en la memoria.
+
+133
+00:05:46,860 --> 00:05:47,740
+Leer la hora lógica
+
+134
+00:05:47,740 --> 00:05:49,880
+evitará que el pal se elimine de la memoria.
+
+135
+00:05:49,880 --> 00:05:52,940
+Pero si el tiempo de expiración es menor que el tiempo lógico de lectura,
+
+136
+00:05:52,940 --> 00:05:55,680
+entonces, la operación de lectura considerará que esa cola no existe.
+
+137
+00:05:55,680 --> 00:05:57,920
+Pero, cuando no entran solicitudes de escritura,
+
+138
+00:05:57,920 --> 00:06:00,280
+los nodos esclavo no podrán realizar la recolección de basura.
+
+139
+00:06:00,280 --> 00:06:03,120
+Por lo tanto, podemos enviar un registro vacío cada minuto.
+
+140
+00:06:03,120 --> 00:06:06,740
+para así activar manualmente la escritura de la marca de tiempo lógica en el nodo principal.
+
+141
+00:06:06,740 --> 00:06:08,210
+y así activar el GC.
+
+142
+00:06:08,210 --> 00:06:11,210
+Por supuesto, también puedes diseñar tu propio algoritmo.
+
+143
+00:06:11,210 --> 00:06:16,350
+para asegurar que los registros solo se envíen cuando sea realmente necesario eliminarlos.
+
+144
+00:06:16,350 --> 00:06:17,470
+Bueno, ya hemos terminado con la presentación del algoritmo.
+
+145
+00:06:17,470 --> 00:06:19,610
+Entonces, ¿qué hay de la corrección del algoritmo Raft?
+
+146
+00:06:19,610 --> 00:06:21,550
+Por ejemplo, ¿podría darse una situación en la que una operación de lectura...
+
+147
+00:06:21,550 --> 00:06:23,790
+que considera que un dato ya ha sido procesado,
+
+148
+00:06:23,790 --> 00:06:25,970
+y luego se procesa la siguiente operación de escritura.
+
+149
+00:06:25,970 --> 00:06:27,250
+y vuelve a leer este mismo dato?
+
+150
+00:06:27,250 --> 00:06:28,110
+La respuesta es que no.
+
+151
+00:06:28,110 --> 00:06:30,210
+porque se produce un cambio entre el nodo maestro y el esclavo.
+
+152
+00:06:30,210 --> 00:06:32,610
+Dado que el desvío del reloj es limitado,
+
+153
+00:06:32,610 --> 00:06:33,830
+se elige un nuevo nodo,
+
+154
+00:06:33,830 --> 00:06:36,370
+Ya sea leyendo el reloj o escribiendo en él,
+
+155
+00:06:36,370 --> 00:06:39,160
+debe ser mayor que la última vez.
+
+156
+00:06:39,160 --> 00:06:40,560
+ya sea en la lectura o en la escritura del reloj.
+
+157
+00:06:40,560 --> 00:06:43,180
+Esto se mantiene incluso si se produce un cambio de nodo maestro.
+
+158
+00:06:43,180 --> 00:06:45,480
+Y en las verificaciones posteriores se descubrió que...
+
+159
+00:06:45,480 --> 00:06:47,560
+Cockroach, esta base de datos distribuida,
+
+160
+00:06:47,560 --> 00:06:49,580
+también ha implementado un diseño de algoritmo similar.
+
+161
+00:06:49,580 --> 00:06:53,440
+Este consiste en incorporar el HLC generado por cada operación de escritura en el registro.
+
+162
+00:06:53,440 --> 00:06:57,250
+Y utilizó la misma suposición para garantizar que el reloj no retrocediera.
+
+163
+00:06:57,250 --> 00:07:00,730
+para distinguir qué parte de cada operación de lectura y escritura es visible.
+
+164
+00:07:00,730 --> 00:07:01,770
+y qué parte no es visible.
+
+165
+00:07:01,770 --> 00:07:03,410
+Y bueno, hasta aquí el vídeo de hoy.
+
+166
+00:07:03,410 --> 00:07:06,020
+Si hay alguna parte del algoritmo que no te haya quedado clara,
+
+167
+00:07:06,020 --> 00:07:07,860
+o si has visto algún algoritmo similar,
+
+168
+00:07:07,860 --> 00:07:09,860
+Pueden dejar sus comentarios para discutirlo y compartir sus ideas.

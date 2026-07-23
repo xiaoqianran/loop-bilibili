@@ -1,0 +1,113 @@
+Duas equipes com dois exércitos.
+O Exército A está acampado à esquerda do vale.
+O Exército B está acampado à direita do vale.
+Há forças inimigas no meio do vale.
+Os dois exércitos devem atacar simultaneamente.
+Este é o famoso problema dos Dois Generais.
+Ambos os exércitos são mais fracos que o inimigo.
+Se apenas um dos exércitos atacar,
+então a derrota é certa.
+Por isso, as duas partes precisam agir ao mesmo tempo para alcançar a vitória.
+Mas os dois exércitos só podem depender de um mensageiro para confirmar se devem iniciar o ataque.
+No entanto, o mensageiro encarregado de entregar a mensagem deve passar pelo exército inimigo no meio.
+pode ser interceptado pelo inimigo.
+o que resulta na perda da mensagem.
+Então, como os dois exércitos devem se comunicar para garantir a vitória?
+A resposta é que, teoricamente, nunca conseguirão garantir a vitória.
+Primeiro, uma configuração importante:
+Um exército vai atacar.
+somente se o outro exército tiver certeza de que atacará.
+Então, vamos falar sobre as comunicações específicas.
+Suponha que A envie uma mensagem dizendo para atacar às oito da manhã de amanhã.
+B recebeu a mensagem aqui,
+mas A não sabe se B a recebeu ou não,
+então ele não ousa pegá-la.
+Então, o que fazer?
+Quem já estudou comunicação deve estar pensando na resposta.
+Então o B responde com um
+Receber o pedido e enviar para A não seria suficiente?
+Então, supondo que A tenha recebido o ACK de B, o problema
+é passado novamente para B.
+Como é que o B pode ter certeza de que o A recebeu a resposta?
+Será que o exército A deve enviar uma confirmação (ACK) para essa mensagem de ACK?
+Confirmar?
+nenhuma das partes pode ter certeza de que a outra recebeu
+a última carta de confirmação.
+fazendo com que nenhum dos dois tenha certeza de que o outro atacará.
+E não é difícil perceber
+que, não importa quantas mensagens sejam enviadas,
+a última mensagem sempre terá a incerteza de ter sido entregue ou não.
+É como se eu soubesse que você sabe que eu sei que você sabe que eu sei.
+Este é, na verdade, um problema clássico na comunicação em rede.
+Por exemplo, digamos que haja dois bancos de dados para sincronizar.
+Esse é, provavelmente, o cenário mais simples possível.
+Ambos os bancos de dados precisam ter certeza de que o outro gravou esses dados,
+para que possam prosseguir com a gravação.
+Então, obviamente, ambos ficarão presos em uma espera infinita.
+Nesse caso,
+a rede é o canal de comunicação entre os dois lados.
+O pacote de dados é o mensageiro.
+Mesmo em um data center,
+não conseguimos garantir a página.
+A rede é totalmente confiável.
+Ela não é garantida.
+Nesse momento, alguém pode perguntar:
+Será que o TCV, que aprendemos no segundo ano do ensino fundamental,
+conseguiria resolver esse problema?
+No entanto, de qualquer forma,
+encapsular os sinais da camada superior
+Sua essência se resume em enviar e receber dados, duas ações distintas.
+Assim, podemos abstrair o TCP como um estado de comunicação entre duas partes.
+Vamos dar uma olhada no mecanismo ACK do protocolo TCP
+como ele busca uma solução de engenharia para esse problema
+Ainda é a mensagem de A para B, dizendo que vamos atacar o imperador amanhã.
+Depois que B recebe a mensagem,
+ele pode retornar um ACK indicando que a recebeu.
+Nesse momento, se A receber o ACK,
+Então, se o outro lado recebeu a mensagem,
+não continuará enviando informações.
+Se B não receber mais nenhuma mensagem de A,
+Então, é como se A tivesse recebido sua própria resposta.
+Primeiro, A falhou no envio.
+B simplesmente não recebeu a mensagem enviada por A.
+Então, B não enviará uma confirmação (ACK).
+Nesse momento, A, após um certo período, não receberá o ACK de B.
+Então, A reenviará a mensagem repetidamente.
+só irá parar de enviar quando receber o ACK de B.
+Portanto, não haverá problemas.
+Outro cenário é se B falhar ao responder com o ACK.
+Nesse cenário,
+A também não receberá o ACK de B,
+fazendo com que A continue enviando mensagens para B.
+Então, toda vez que B recebe uma mensagem de A,
+ele responde com um ACK.
+No entanto, na realidade, a comunicação em rede é muito mais complicada do que o Problema dos Dois Generais.
+Além da perda de pacotes,
+os pacotes de dados também podem exceder o tempo limite.
+Para o TCP,
+Tempo limite e perda de pacotes, na verdade, não são muito diferentes.
+No problema dos dois exércitos,
+só precisamos transmitir um batimento.
+poderíamos indicar se vamos atacar ou não.
+Mas, na realidade,
+uma única imagem que carregamos já tem vários megabytes.
+Seja na perda de pacotes de dados, no tempo limite ou na perda de pacotes ACK e no tempo limite
+Tudo levará à retransmissão do chamado VO times.
+A importância da rede dispensa apresentações.
+Quanto maior a distância física entre dois nós, maior a dificuldade na comunicação.
+Quando precisamos armazenar dados,
+quanto mais distantes os dois nós estiverem,
+menor a probabilidade de falha simultânea.
+Embora o TCP ainda não consiga resolver perfeitamente o problema dos dois exércitos,
+seja em transações distribuídas ou algoritmos de consenso,
+na verdade, não conseguem garantir 100% a consistência dos dados entre dois nós.
+Isso nos força a esperar algoritmos melhores
+e infraestruturas mais avançadas no futuro.
+nem mesmo paradigmas de rede extraterrestres
+que tornam a comunicação entre diferentes locais tão natural quanto o acesso à memória local.
+Mas, pelo menos hoje,
+O verdadeiro encanto dos sistemas distribuídos reside precisamente no facto de que
+eles nunca prometem perfeição,
+mas, em vez disso, reconhecem a premissa de um mundo cheio de incertezas.
+ainda se esforça para construir a ordem.
+Então, nos vemos no próximo vídeo!

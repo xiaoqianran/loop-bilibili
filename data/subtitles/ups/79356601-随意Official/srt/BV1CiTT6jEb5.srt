@@ -1,0 +1,451 @@
+1
+00:00:00,160 --> 00:00:01,720
+Duas equipes com dois exércitos.
+
+2
+00:00:01,720 --> 00:00:03,640
+O Exército A está acampado à esquerda do vale.
+
+3
+00:00:03,640 --> 00:00:05,820
+O Exército B está acampado à direita do vale.
+
+4
+00:00:05,820 --> 00:00:07,520
+Há forças inimigas no meio do vale.
+
+5
+00:00:07,520 --> 00:00:09,420
+Os dois exércitos devem atacar simultaneamente.
+
+6
+00:00:09,420 --> 00:00:11,360
+Este é o famoso problema dos Dois Generais.
+
+7
+00:00:11,360 --> 00:00:13,610
+Ambos os exércitos são mais fracos que o inimigo.
+
+8
+00:00:13,610 --> 00:00:15,650
+Se apenas um dos exércitos atacar,
+
+9
+00:00:15,650 --> 00:00:16,470
+então a derrota é certa.
+
+10
+00:00:16,470 --> 00:00:19,660
+Por isso, as duas partes precisam agir ao mesmo tempo para alcançar a vitória.
+
+11
+00:00:19,660 --> 00:00:23,660
+Mas os dois exércitos só podem depender de um mensageiro para confirmar se devem iniciar o ataque.
+
+12
+00:00:23,660 --> 00:00:27,549
+No entanto, o mensageiro encarregado de entregar a mensagem deve passar pelo exército inimigo no meio.
+
+13
+00:00:27,549 --> 00:00:28,989
+pode ser interceptado pelo inimigo.
+
+14
+00:00:28,989 --> 00:00:30,069
+o que resulta na perda da mensagem.
+
+15
+00:00:30,069 --> 00:00:33,589
+Então, como os dois exércitos devem se comunicar para garantir a vitória?
+
+16
+00:00:33,589 --> 00:00:36,420
+A resposta é que, teoricamente, nunca conseguirão garantir a vitória.
+
+17
+00:00:36,420 --> 00:00:38,280
+Primeiro, uma configuração importante:
+
+18
+00:00:38,280 --> 00:00:39,740
+Um exército vai atacar.
+
+19
+00:00:39,740 --> 00:00:42,710
+somente se o outro exército tiver certeza de que atacará.
+
+20
+00:00:42,710 --> 00:00:45,250
+Então, vamos falar sobre as comunicações específicas.
+
+21
+00:00:45,250 --> 00:00:48,210
+Suponha que A envie uma mensagem dizendo para atacar às oito da manhã de amanhã.
+
+22
+00:00:48,210 --> 00:00:49,830
+B recebeu a mensagem aqui,
+
+23
+00:00:49,830 --> 00:00:51,810
+mas A não sabe se B a recebeu ou não,
+
+24
+00:00:51,810 --> 00:00:52,990
+então ele não ousa pegá-la.
+
+25
+00:00:52,990 --> 00:00:54,280
+Então, o que fazer?
+
+26
+00:00:54,280 --> 00:00:56,620
+Quem já estudou comunicação deve estar pensando na resposta.
+
+27
+00:00:56,620 --> 00:00:58,440
+Então o B responde com um
+
+28
+00:00:58,440 --> 00:01:01,210
+Receber o pedido e enviar para A não seria suficiente?
+
+29
+00:01:01,210 --> 00:01:04,330
+Então, supondo que A tenha recebido o ACK de B, o problema
+
+30
+00:01:04,330 --> 00:01:05,250
+é passado novamente para B.
+
+31
+00:01:05,250 --> 00:01:08,330
+Como é que o B pode ter certeza de que o A recebeu a resposta?
+
+32
+00:01:08,330 --> 00:01:11,970
+Será que o exército A deve enviar uma confirmação (ACK) para essa mensagem de ACK?
+
+33
+00:01:11,970 --> 00:01:13,160
+Confirmar?
+
+34
+00:01:13,160 --> 00:01:16,260
+nenhuma das partes pode ter certeza de que a outra recebeu
+
+35
+00:01:16,260 --> 00:01:18,100
+a última carta de confirmação.
+
+36
+00:01:18,100 --> 00:01:20,360
+fazendo com que nenhum dos dois tenha certeza de que o outro atacará.
+
+37
+00:01:20,360 --> 00:01:21,440
+E não é difícil perceber
+
+38
+00:01:21,440 --> 00:01:22,920
+que, não importa quantas mensagens sejam enviadas,
+
+39
+00:01:22,920 --> 00:01:26,300
+a última mensagem sempre terá a incerteza de ter sido entregue ou não.
+
+40
+00:01:26,300 --> 00:01:29,330
+É como se eu soubesse que você sabe que eu sei que você sabe que eu sei.
+
+41
+00:01:29,330 --> 00:01:32,090
+Este é, na verdade, um problema clássico na comunicação em rede.
+
+42
+00:01:32,090 --> 00:01:34,330
+Por exemplo, digamos que haja dois bancos de dados para sincronizar.
+
+43
+00:01:34,330 --> 00:01:36,620
+Esse é, provavelmente, o cenário mais simples possível.
+
+44
+00:01:36,620 --> 00:01:40,660
+Ambos os bancos de dados precisam ter certeza de que o outro gravou esses dados,
+
+45
+00:01:40,660 --> 00:01:42,140
+para que possam prosseguir com a gravação.
+
+46
+00:01:42,140 --> 00:01:45,150
+Então, obviamente, ambos ficarão presos em uma espera infinita.
+
+47
+00:01:45,150 --> 00:01:46,590
+Nesse caso,
+
+48
+00:01:46,590 --> 00:01:49,210
+a rede é o canal de comunicação entre os dois lados.
+
+49
+00:01:49,210 --> 00:01:50,660
+O pacote de dados é o mensageiro.
+
+50
+00:01:50,660 --> 00:01:52,100
+Mesmo em um data center,
+
+51
+00:01:52,100 --> 00:01:53,260
+não conseguimos garantir a página.
+
+52
+00:01:53,260 --> 00:01:54,420
+A rede é totalmente confiável.
+
+53
+00:01:54,420 --> 00:01:55,840
+Ela não é garantida.
+
+54
+00:01:56,040 --> 00:01:57,600
+Nesse momento, alguém pode perguntar:
+
+55
+00:01:57,600 --> 00:01:59,640
+Será que o TCV, que aprendemos no segundo ano do ensino fundamental,
+
+56
+00:01:59,640 --> 00:02:01,360
+conseguiria resolver esse problema?
+
+57
+00:02:01,360 --> 00:02:02,720
+No entanto, de qualquer forma,
+
+58
+00:02:02,720 --> 00:02:04,460
+encapsular os sinais da camada superior
+
+59
+00:02:04,460 --> 00:02:08,250
+Sua essência se resume em enviar e receber dados, duas ações distintas.
+
+60
+00:02:08,250 --> 00:02:12,530
+Assim, podemos abstrair o TCP como um estado de comunicação entre duas partes.
+
+61
+00:02:12,530 --> 00:02:14,890
+Vamos dar uma olhada no mecanismo ACK do protocolo TCP
+
+62
+00:02:14,890 --> 00:02:17,570
+como ele busca uma solução de engenharia para esse problema
+
+63
+00:02:17,570 --> 00:02:20,950
+Ainda é a mensagem de A para B, dizendo que vamos atacar o imperador amanhã.
+
+64
+00:02:20,950 --> 00:02:22,530
+Depois que B recebe a mensagem,
+
+65
+00:02:22,530 --> 00:02:24,579
+ele pode retornar um ACK indicando que a recebeu.
+
+66
+00:02:24,579 --> 00:02:26,379
+Nesse momento, se A receber o ACK,
+
+67
+00:02:26,379 --> 00:02:27,999
+Então, se o outro lado recebeu a mensagem,
+
+68
+00:02:27,999 --> 00:02:29,539
+não continuará enviando informações.
+
+69
+00:02:29,539 --> 00:02:32,900
+Se B não receber mais nenhuma mensagem de A,
+
+70
+00:02:32,900 --> 00:02:35,610
+Então, é como se A tivesse recebido sua própria resposta.
+
+71
+00:02:35,610 --> 00:02:37,810
+Primeiro, A falhou no envio.
+
+72
+00:02:37,810 --> 00:02:40,590
+B simplesmente não recebeu a mensagem enviada por A.
+
+73
+00:02:40,590 --> 00:02:42,910
+Então, B não enviará uma confirmação (ACK).
+
+74
+00:02:42,910 --> 00:02:45,670
+Nesse momento, A, após um certo período, não receberá o ACK de B.
+
+75
+00:02:45,670 --> 00:02:47,110
+Então, A reenviará a mensagem repetidamente.
+
+76
+00:02:47,110 --> 00:02:50,360
+só irá parar de enviar quando receber o ACK de B.
+
+77
+00:02:50,360 --> 00:02:52,920
+Portanto, não haverá problemas.
+
+78
+00:02:52,920 --> 00:02:55,769
+Outro cenário é se B falhar ao responder com o ACK.
+
+79
+00:02:55,769 --> 00:02:57,009
+Nesse cenário,
+
+80
+00:02:57,009 --> 00:02:58,449
+A também não receberá o ACK de B,
+
+81
+00:02:58,449 --> 00:03:00,289
+fazendo com que A continue enviando mensagens para B.
+
+82
+00:03:00,289 --> 00:03:02,729
+Então, toda vez que B recebe uma mensagem de A,
+
+83
+00:03:02,729 --> 00:03:04,929
+ele responde com um ACK.
+
+84
+00:03:05,399 --> 00:03:09,100
+No entanto, na realidade, a comunicação em rede é muito mais complicada do que o Problema dos Dois Generais.
+
+85
+00:03:09,100 --> 00:03:10,240
+Além da perda de pacotes,
+
+86
+00:03:10,240 --> 00:03:11,900
+os pacotes de dados também podem exceder o tempo limite.
+
+87
+00:03:11,900 --> 00:03:13,220
+Para o TCP,
+
+88
+00:03:13,220 --> 00:03:16,010
+Tempo limite e perda de pacotes, na verdade, não são muito diferentes.
+
+89
+00:03:16,010 --> 00:03:17,390
+No problema dos dois exércitos,
+
+90
+00:03:17,390 --> 00:03:19,010
+só precisamos transmitir um batimento.
+
+91
+00:03:19,010 --> 00:03:20,750
+poderíamos indicar se vamos atacar ou não.
+
+92
+00:03:20,750 --> 00:03:21,790
+Mas, na realidade,
+
+93
+00:03:21,790 --> 00:03:24,330
+uma única imagem que carregamos já tem vários megabytes.
+
+94
+00:03:24,330 --> 00:03:28,700
+Seja na perda de pacotes de dados, no tempo limite ou na perda de pacotes ACK e no tempo limite
+
+95
+00:03:28,700 --> 00:03:31,050
+Tudo levará à retransmissão do chamado VO times.
+
+96
+00:03:31,050 --> 00:03:33,190
+A importância da rede dispensa apresentações.
+
+97
+00:03:33,190 --> 00:03:37,160
+Quanto maior a distância física entre dois nós, maior a dificuldade na comunicação.
+
+98
+00:03:37,160 --> 00:03:38,980
+Quando precisamos armazenar dados,
+
+99
+00:03:38,980 --> 00:03:41,160
+quanto mais distantes os dois nós estiverem,
+
+100
+00:03:41,160 --> 00:03:43,390
+menor a probabilidade de falha simultânea.
+
+101
+00:03:43,390 --> 00:03:46,750
+Embora o TCP ainda não consiga resolver perfeitamente o problema dos dois exércitos,
+
+102
+00:03:46,750 --> 00:03:50,060
+seja em transações distribuídas ou algoritmos de consenso,
+
+103
+00:03:50,060 --> 00:03:54,190
+na verdade, não conseguem garantir 100% a consistência dos dados entre dois nós.
+
+104
+00:03:54,190 --> 00:03:56,510
+Isso nos força a esperar algoritmos melhores
+
+105
+00:03:56,510 --> 00:03:57,870
+e infraestruturas mais avançadas no futuro.
+
+106
+00:03:57,870 --> 00:03:59,500
+nem mesmo paradigmas de rede extraterrestres
+
+107
+00:03:59,500 --> 00:04:04,180
+que tornam a comunicação entre diferentes locais tão natural quanto o acesso à memória local.
+
+108
+00:04:04,180 --> 00:04:05,240
+Mas, pelo menos hoje,
+
+109
+00:04:05,240 --> 00:04:08,170
+O verdadeiro encanto dos sistemas distribuídos reside precisamente no facto de que
+
+110
+00:04:08,170 --> 00:04:09,640
+eles nunca prometem perfeição,
+
+111
+00:04:09,640 --> 00:04:12,760
+mas, em vez disso, reconhecem a premissa de um mundo cheio de incertezas.
+
+112
+00:04:12,760 --> 00:04:14,420
+ainda se esforça para construir a ordem.
+
+113
+00:04:14,420 --> 00:04:16,440
+Então, nos vemos no próximo vídeo!

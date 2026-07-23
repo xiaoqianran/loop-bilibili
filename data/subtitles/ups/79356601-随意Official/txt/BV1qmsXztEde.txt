@@ -1,0 +1,89 @@
+Esto ya lo sabíamos desde el segundo grado de primaria.
+Usando protocolos como Raft,
+se puede lograr una fuerte consistencia en sistemas distribuidos.
+Sin embargo, en protocolos como Raft, la lectura directa de los datos del nodo principal
+no garantiza una consistencia fuerte.
+Que Raft logre una consistencia fuerte puede sonar contraintuitivo al principio.
+Permítanme ilustrar con un escenario sencillo: Raft puede lograr una consistencia fuerte.
+Cuando el nodo líder de un clúster Raft
+todas sus operaciones, junto con su reloj, quedan suspendidas.
+Por ejemplo, cuando un nodo se ejecuta en esta máquina virtual,
+la pausa de la máquina virtual
+facilita la implementación de esta función. Raft puede lograr una consistencia fuerte.
+En este punto, los nodos Raft eligen un nuevo líder,
+y la replicación de registros continúa.
+En la imagen,
+Los registros 1, 2, 3 son los que ya se habían completado y enviado en el período anterior.
+El registro 4 es un registro enviado después de que el nuevo nodo principal fuera elegido.
+Raft puede lograr una consistencia fuerte, ya que solo necesita que la mitad de los nodos estén activos.
+se puede completar el envío.
+En esta situación,
+algunos clientes pueden actualizar continuamente el estado interno de Raft.
+En este momento, si un cliente accede a un nodo que se ha caído,
+y este nodo se recupera, Raft puede asegurar una fuerte consistencia.
+Sin embargo, el nodo que se cayó todavía se considera el nodo principal.
+Esto podría llevar a que el invocador de la operación
+lea datos antiguos
+en lugar de los últimos datos actualizados.
+Una solución sencilla es
+tratar cada lectura como una operación de escritura
+generando una entrada en el registro.
+Sin embargo, para optimizar el rendimiento,
+podríamos hacer que el nodo primario, tras recibir una solicitud de lectura,
+envíe latidos a los nodos secundarios.
+Si la mayoría de los nodos responden al latido,
+podemos considerar que el nodo actual no ha perdido su rol de líder.
+Otra opción es esperar a que las demás operaciones de escritura regresen.
+Así sabré que el nodo principal actual sigue manteniendo su identidad.
+Entonces, podemos volver a la solicitud de lectura anterior.
+¿Hay alguna forma más sencilla y con mejor rendimiento para manejarlo?
+Sí, Zookeeper utiliza esta solución.
+Cada vez que leo,
+¿no sería mejor leer directamente de un nodo secundario?
+Pero esto plantea un nuevo problema.
+Cuando una escritura es exitosa,
+se realiza inmediatamente una operación de lectura.
+Esta operación de lectura podría obtener datos antiguos.
+Esto se debe a que, cuando se lee de un nodo secundario,
+puede que aún no se haya sincronizado con el registro correspondiente del nodo principal.
+Entonces, la solución más sencilla sería...
+¿...esperar a que la escritura del nodo secundario tenga éxito, no?
+Y los algoritmos de consenso tienen una característica...
+es que el registro de eventos está ordenado globalmente.
+Por lo tanto, solo necesitamos asegurarnos de que la instrucción de lectura del cliente
+se ejecute después de las instrucciones de escritura del mismo cliente.
+Así que la situación con múltiples clientes parece complicarse.
+Si los múltiples clientes de ZooKeeper no se comunican entre sí,
+entonces en realidad no hay problema con el uso de esta solución.
+Observemos el siguiente gráfico:
+Es aceptable que cada lectura de otro cliente sea un mensaje anterior
+o un mensaje posterior.
+Aquí utilizamos diferentes colores para representar los registros de escritura de diferentes clientes.
+Esto se debe a que las llamadas de red también llevan tiempo.
+Es muy probable que, al enviar la solicitud, si la red no está congestionada, se lea el registro número 3.
+Si la red se congestiona,
+justo leerá el registro cuatro, porque cada cliente solo necesita asegurarse de que sus propias
+operaciones se realicen en orden.
+En el artículo de Zookeeper, esta característica se denomina "A-linealidad".
+A esta característica se la denomina "responsabilidad lineal a".
+Este es también el nivel predeterminado cuando Zookeeper realiza lecturas.
+En resumen, puedo leer lo que otros han escrito un poco más tarde.
+Pero mis propios escritos deben ser legibles de inmediato.
+Pero si el cliente B le dice al cliente A que su escritura fue exitosa
+Entonces, si el cliente A inicia inmediatamente una solicitud de lectura,
+y en ese momento no puede leer los datos,
+obviamente esto conduciría a un error lógico.
+Esto se debe a que el cliente A ha establecido una relación causal a través de la llamada del cliente B.
+En este caso,
+el nivel de aislamiento de consistencia predeterminado de ZooKeeper presentaría un problema.
+Para abordar este problema,
+Zookeeper ofrece la operación 'sync'.
+Cuando deseo realizar una lectura de consistencia fuerte,
+enviará un comando de sincronización (sync) al nodo líder.
+Cuando el nodo seguidor sincroniza este mensaje de 'sync',
+entonces el nodo seguidor podrá estar seguro de que
+Todos los registros anteriores ya han sido aplicados completamente a la máquina de estados.
+Para así devolver la operación de lectura.
+Bueno, el video de hoy termina aquí.
+Ya que han llegado hasta aquí,
+denle un "me gusta" y compartan.

@@ -1,0 +1,355 @@
+1
+00:00:00,160 --> 00:00:01,920
+Esto ya lo sabíamos desde el segundo grado de primaria.
+
+2
+00:00:01,920 --> 00:00:03,340
+Usando protocolos como Raft,
+
+3
+00:00:03,340 --> 00:00:05,740
+se puede lograr una fuerte consistencia en sistemas distribuidos.
+
+4
+00:00:05,740 --> 00:00:10,100
+Sin embargo, en protocolos como Raft, la lectura directa de los datos del nodo principal
+
+5
+00:00:10,100 --> 00:00:13,030
+no garantiza una consistencia fuerte.
+
+6
+00:00:13,030 --> 00:00:16,070
+Que Raft logre una consistencia fuerte puede sonar contraintuitivo al principio.
+
+7
+00:00:16,070 --> 00:00:18,050
+Permítanme ilustrar con un escenario sencillo: Raft puede lograr una consistencia fuerte.
+
+8
+00:00:18,050 --> 00:00:20,750
+Cuando el nodo líder de un clúster Raft
+
+9
+00:00:20,750 --> 00:00:24,530
+todas sus operaciones, junto con su reloj, quedan suspendidas.
+
+10
+00:00:24,530 --> 00:00:27,689
+Por ejemplo, cuando un nodo se ejecuta en esta máquina virtual,
+
+11
+00:00:27,689 --> 00:00:28,849
+la pausa de la máquina virtual
+
+12
+00:00:28,849 --> 00:00:31,409
+facilita la implementación de esta función. Raft puede lograr una consistencia fuerte.
+
+13
+00:00:31,409 --> 00:00:35,609
+En este punto, los nodos Raft eligen un nuevo líder,
+
+14
+00:00:36,540 --> 00:00:38,560
+y la replicación de registros continúa.
+
+15
+00:00:38,560 --> 00:00:39,620
+En la imagen,
+
+16
+00:00:39,620 --> 00:00:45,160
+Los registros 1, 2, 3 son los que ya se habían completado y enviado en el período anterior.
+
+17
+00:00:45,160 --> 00:00:49,650
+El registro 4 es un registro enviado después de que el nuevo nodo principal fuera elegido.
+
+18
+00:00:49,650 --> 00:00:51,970
+Raft puede lograr una consistencia fuerte, ya que solo necesita que la mitad de los nodos estén activos.
+
+19
+00:00:51,970 --> 00:00:53,070
+se puede completar el envío.
+
+20
+00:00:53,070 --> 00:00:54,370
+En esta situación,
+
+21
+00:00:54,370 --> 00:00:58,760
+algunos clientes pueden actualizar continuamente el estado interno de Raft.
+
+22
+00:00:59,000 --> 00:01:03,240
+En este momento, si un cliente accede a un nodo que se ha caído,
+
+23
+00:01:03,240 --> 00:01:06,410
+y este nodo se recupera, Raft puede asegurar una fuerte consistencia.
+
+24
+00:01:06,410 --> 00:01:10,410
+Sin embargo, el nodo que se cayó todavía se considera el nodo principal.
+
+25
+00:01:10,410 --> 00:01:12,730
+Esto podría llevar a que el invocador de la operación
+
+26
+00:01:12,730 --> 00:01:15,730
+lea datos antiguos
+
+27
+00:01:15,730 --> 00:01:17,960
+en lugar de los últimos datos actualizados.
+
+28
+00:01:17,960 --> 00:01:20,260
+Una solución sencilla es
+
+29
+00:01:20,260 --> 00:01:24,500
+tratar cada lectura como una operación de escritura
+
+30
+00:01:24,500 --> 00:01:25,920
+generando una entrada en el registro.
+
+31
+00:01:25,920 --> 00:01:27,560
+Sin embargo, para optimizar el rendimiento,
+
+32
+00:01:27,560 --> 00:01:31,580
+podríamos hacer que el nodo primario, tras recibir una solicitud de lectura,
+
+33
+00:01:31,580 --> 00:01:33,610
+envíe latidos a los nodos secundarios.
+
+34
+00:01:33,610 --> 00:01:35,690
+Si la mayoría de los nodos responden al latido,
+
+35
+00:01:35,690 --> 00:01:39,730
+podemos considerar que el nodo actual no ha perdido su rol de líder.
+
+36
+00:01:39,970 --> 00:01:44,080
+Otra opción es esperar a que las demás operaciones de escritura regresen.
+
+37
+00:01:44,080 --> 00:01:48,260
+Así sabré que el nodo principal actual sigue manteniendo su identidad.
+
+38
+00:01:48,260 --> 00:01:50,720
+Entonces, podemos volver a la solicitud de lectura anterior.
+
+39
+00:01:50,720 --> 00:01:54,960
+¿Hay alguna forma más sencilla y con mejor rendimiento para manejarlo?
+
+40
+00:01:54,960 --> 00:01:58,120
+Sí, Zookeeper utiliza esta solución.
+
+41
+00:01:58,120 --> 00:01:59,660
+Cada vez que leo,
+
+42
+00:01:59,660 --> 00:02:02,500
+¿no sería mejor leer directamente de un nodo secundario?
+
+43
+00:02:02,500 --> 00:02:05,120
+Pero esto plantea un nuevo problema.
+
+44
+00:02:05,120 --> 00:02:06,600
+Cuando una escritura es exitosa,
+
+45
+00:02:06,600 --> 00:02:09,160
+se realiza inmediatamente una operación de lectura.
+
+46
+00:02:09,160 --> 00:02:11,960
+Esta operación de lectura podría obtener datos antiguos.
+
+47
+00:02:11,960 --> 00:02:14,620
+Esto se debe a que, cuando se lee de un nodo secundario,
+
+48
+00:02:14,620 --> 00:02:18,190
+puede que aún no se haya sincronizado con el registro correspondiente del nodo principal.
+
+49
+00:02:18,190 --> 00:02:21,270
+Entonces, la solución más sencilla sería...
+
+50
+00:02:21,270 --> 00:02:24,940
+¿...esperar a que la escritura del nodo secundario tenga éxito, no?
+
+51
+00:02:25,100 --> 00:02:27,060
+Y los algoritmos de consenso tienen una característica...
+
+52
+00:02:27,060 --> 00:02:29,320
+es que el registro de eventos está ordenado globalmente.
+
+53
+00:02:29,320 --> 00:02:32,540
+Por lo tanto, solo necesitamos asegurarnos de que la instrucción de lectura del cliente
+
+54
+00:02:32,540 --> 00:02:37,680
+se ejecute después de las instrucciones de escritura del mismo cliente.
+
+55
+00:02:37,680 --> 00:02:41,740
+Así que la situación con múltiples clientes parece complicarse.
+
+56
+00:02:41,740 --> 00:02:46,110
+Si los múltiples clientes de ZooKeeper no se comunican entre sí,
+
+57
+00:02:46,110 --> 00:02:49,470
+entonces en realidad no hay problema con el uso de esta solución.
+
+58
+00:02:49,470 --> 00:02:51,250
+Observemos el siguiente gráfico:
+
+59
+00:02:51,250 --> 00:02:55,070
+Es aceptable que cada lectura de otro cliente sea un mensaje anterior
+
+60
+00:02:55,070 --> 00:02:57,870
+o un mensaje posterior.
+
+61
+00:02:57,870 --> 00:03:02,250
+Aquí utilizamos diferentes colores para representar los registros de escritura de diferentes clientes.
+
+62
+00:03:02,250 --> 00:03:05,890
+Esto se debe a que las llamadas de red también llevan tiempo.
+
+63
+00:03:05,890 --> 00:03:10,970
+Es muy probable que, al enviar la solicitud, si la red no está congestionada, se lea el registro número 3.
+
+64
+00:03:10,970 --> 00:03:15,760
+Si la red se congestiona,
+
+65
+00:03:15,760 --> 00:03:21,190
+justo leerá el registro cuatro, porque cada cliente solo necesita asegurarse de que sus propias
+
+66
+00:03:21,190 --> 00:03:23,610
+operaciones se realicen en orden.
+
+67
+00:03:23,610 --> 00:03:24,830
+En el artículo de Zookeeper, esta característica se denomina "A-linealidad".
+
+68
+00:03:24,830 --> 00:03:29,180
+A esta característica se la denomina "responsabilidad lineal a".
+
+69
+00:03:29,500 --> 00:03:33,790
+Este es también el nivel predeterminado cuando Zookeeper realiza lecturas.
+
+70
+00:03:33,790 --> 00:03:38,000
+En resumen, puedo leer lo que otros han escrito un poco más tarde.
+
+71
+00:03:38,000 --> 00:03:41,560
+Pero mis propios escritos deben ser legibles de inmediato.
+
+72
+00:03:41,560 --> 00:03:46,150
+Pero si el cliente B le dice al cliente A que su escritura fue exitosa
+
+73
+00:03:46,150 --> 00:03:49,610
+Entonces, si el cliente A inicia inmediatamente una solicitud de lectura,
+
+74
+00:03:49,610 --> 00:03:52,090
+y en ese momento no puede leer los datos,
+
+75
+00:03:52,090 --> 00:03:54,290
+obviamente esto conduciría a un error lógico.
+
+76
+00:03:54,290 --> 00:03:59,630
+Esto se debe a que el cliente A ha establecido una relación causal a través de la llamada del cliente B.
+
+77
+00:03:59,630 --> 00:04:00,230
+En este caso,
+
+78
+00:04:00,230 --> 00:04:03,720
+el nivel de aislamiento de consistencia predeterminado de ZooKeeper presentaría un problema.
+
+79
+00:04:03,720 --> 00:04:05,020
+Para abordar este problema,
+
+80
+00:04:05,020 --> 00:04:07,780
+Zookeeper ofrece la operación 'sync'.
+
+81
+00:04:07,780 --> 00:04:11,730
+Cuando deseo realizar una lectura de consistencia fuerte,
+
+82
+00:04:11,730 --> 00:04:14,390
+enviará un comando de sincronización (sync) al nodo líder.
+
+83
+00:04:14,390 --> 00:04:17,970
+Cuando el nodo seguidor sincroniza este mensaje de 'sync',
+
+84
+00:04:17,970 --> 00:04:20,250
+entonces el nodo seguidor podrá estar seguro de que
+
+85
+00:04:20,250 --> 00:04:24,150
+Todos los registros anteriores ya han sido aplicados completamente a la máquina de estados.
+
+86
+00:04:24,150 --> 00:04:26,310
+Para así devolver la operación de lectura.
+
+87
+00:04:26,310 --> 00:04:28,570
+Bueno, el video de hoy termina aquí.
+
+88
+00:04:28,570 --> 00:04:29,690
+Ya que han llegado hasta aquí,
+
+89
+00:04:29,690 --> 00:04:31,680
+denle un "me gusta" y compartan.

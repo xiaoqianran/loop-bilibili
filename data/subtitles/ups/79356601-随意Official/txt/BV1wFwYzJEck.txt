@@ -1,0 +1,122 @@
+El tema de este vídeo va a ser un poco controvertido.
+Y trata sobre por qué no recomiendo a los programadores
+aprender tecnología memorizando preguntas y respuestas estándar.
+Bajo mis vídeos hay muchos comentarios.
+Dirán que aprender estas cosas es solo por diversión.
+Si de verdad quieres encontrar trabajo, al final no te queda otra que ponerte a memorizar las preguntas y respuestas típicas de las entrevistas.
+Como programador backend de Java,
+Siendo un programador backend de Java,
+Algunos de los materiales de preparación que he visto incluyen JavaGuide,
+Xiao Lin Coding,
+Coding </think> Coding
+el sistema de conocimiento de desarrollo full-stack de Java, etcétera, etcétera.
+los artículos de muchísimos sitios web.
+Y no solo eso, he leído prácticamente todos y cada uno de los artículos de estas páginas web.
+Personalmente, también he tomado muchísimas notas de lectura.
+Entonces, ¿memorizar estas preguntas y respuestas de manual realmente puede ayudarte a encontrar trabajo?
+Mi respuesta es la siguiente:
+Si tienes mucha prisa,
+y necesitas encontrar trabajo en unos meses,
+entonces sí que deberías ponerte a memorizar las preguntas y respuestas típicas de las entrevistas.
+La mayoría de la gente se memoriza estas preguntas estándar, en realidad, solo para encontrar trabajo.
+Entonces, memorizar estas preguntas tipo examen...
+En realidad, es como hacer un simulacro final con exámenes de años anteriores justo antes de la prueba.
+Si de verdad te importa sacar una buena nota,
+Hacer algunos simulacros antes de un gran examen nunca está de más.
+Pues, con esto pasa lo mismo.
+Si de verdad quieres sacar una buena nota,
+Es muy probable que solo hagas los exámenes de práctica justo antes del examen final.
+Yo también tengo muchos amigos que son entrevistadores.
+El consenso que hemos alcanzado es que, cuanto más incompetente es un entrevistador...
+más preguntas de manual te harán.
+Cuando un entrevistador tiene un nivel técnico muy sólido,
+será perfectamente capaz de ajustar sus preguntas según el nivel y las capacidades del candidato,
+para plantear buenas preguntas.
+Pero si la experiencia del entrevistado en proyectos se limita a operaciones CRUD,
+o si ni siquiera es capaz de explicar con claridad sus propios proyectos,
+al entrevistador no le queda más remedio que hacerle preguntas de manual.
+Así que, a veces, puede que el entrevistador sea realmente malo.
+y no por falta de conocimiento técnico del candidato.
+Claro, para no tener mala suerte y encontrarse con un entrevistador inexperto,
+Así que, al final, sí, tenéis que memorizar esas preguntas y respuestas típicas.
+Además, a muchos entrevistadores en realidad no les gusta simplemente plantear una pregunta
+y el entrevistado se pone a recitar de memoria un párrafo.
+una respuesta que se puede encontrar fácilmente en internet.
+Déjame que te dé un ejemplo.
+Cuando el entrevistador te pregunte sobre las colisiones en las tablas hash,
+Puedes responder con algo que se aprende en segundo de primaria.
+un array, una lista enlazada y un árbol rojo-negro.
+cómo se gestionan las colisiones de hash.
+Bueno...
+Pero si no te has memorizado las preguntas típicas de las entrevistas,
+también puedes responder.
+el algoritmo HotRing que acabas de aprender en el artículo de Alibaba.
+Lo que hace es evitar los elementos de acceso frecuente, o "hotspot", moviendo aleatoriamente el elemento recién accedido a la cabecera de la lista.
+En caso de una colisión de hash,
+siempre hay que recorrerlo de forma iterativa.
+Estoy seguro de que esta última respuesta también impresionará al entrevistador.
+Incluso si no te has memorizado ninguna de estas preguntas típicas,
+Amigos,
+Si consideramos memorizar estas preguntas tipo examen como si fueran exámenes de años anteriores...
+Ahora bien, si todavía tienes tiempo suficiente para prepararte,
+o simplemente quieres mejorar tus habilidades,
+entonces memorizar estas preguntas y respuestas es lo menos eficiente que puedes hacer.
+No es diferente en absoluto a memorizar las respuestas de un examen.
+Pongamos un ejemplo.
+C se compila y ejecuta.
+Python se ejecuta de forma interpretada.
+y Java es de compilación semi...
+y la ejecución es seminterpretada.
+Seguro que muchos han memorizado preguntas y respuestas de este tipo.
+Pero si profundizas un poco más, te darás cuenta de que...
+Java utiliza la tecnología GraalVM,
+se puede ejecutar en modo puramente compilado.
+o desactivar el JIT para ejecutarlo de forma interpretada.
+De hecho, la comunidad de C también ha introducido métodos de ejecución interpretada.
+Si estudias los fundamentos,
+sino que te permitirá deducir muchos otros conceptos de nivel superior.
+Pondré como ejemplo el siguiente fragmento de código.
+En teoría, ya has aprendido este concepto de memoria.
+La función del código es muy sencilla.
+Es decir, el cliente le envía un archivo al servidor a través de TCP.
+Luego, el servidor genera un nombre de archivo aquí.
+Una vez guardado el archivo, se le envía el nombre de este al cliente.
+¿Qué les parece? ¿Creen que este código tiene algún problema?
+Si no entiendes de Java,
+no pasa nada.
+Porque he escrito comentarios muy completos.
+Entonces, no es difícil darse cuenta de que hay algo muy extraño en el código.
+Entonces, ¿por qué mi cliente ya ha iniciado el cierre de la conexión...
+y el servidor sigue ejecutando la lógica para recibir datos.
+¿Y si al otro lado tarda mucho tiempo en guardar el archivo?
+Bueno, la respuesta es que este código en realidad no tiene ningún problema.
+La función es correcta.
+Pero, ¿por qué?
+Entonces, ¿cuál es la razón?
+Aquellos que hayan estudiado el cierre de conexión en cuatro pasos de TCP, seguro que ya lo saben.
+¿Por qué la terminación de una conexión TCP requiere cuatro pasos, uno más que el establecimiento?
+Porque cuando el cliente solicita cerrar la conexión al servidor,
+es posible que todavía queden algunos datos por enviar.
+Por lo tanto, es necesario esperar a que se complete el envío de los datos.
+Por lo tanto, se añade un paquete de datos adicional.
+Esta función se llama shutdownOutput.
+En este caso, el cierre es en realidad un cierre parcial.
+Por lo tanto, aquí todavía se pueden seguir recibiendo los mensajes enviados por el servidor.
+pero el cliente ya no puede seguir enviando mensajes.
+Finalmente, el programa saldrá de este bloque try.
+y la conexión TCP se cierra de forma normal.
+Por lo tanto, este fragmento de código no presenta ningún problema en absoluto.
+Es básicamente enviar datos y recibir una respuesta.
+Y este estado de cierre parcial...
+De hecho, puede durar un tiempo indefinido.
+incluso un día entero.
+Además, esta característica es muy útil en este tipo de situaciones.
+Porque el cliente no necesita decirle al servidor
+la longitud de los datos que va a enviar a continuación.
+Solo hay que terminar de enviar todos los datos y luego enviar una solicitud de cierre semidúplex, y ya está.
+y enviar la solicitud de cierre parcial es suficiente.
+Además, este proceso de cierre por mitad es una característica que existe en el propio TCP.
+sin incurrir en el coste adicional de un RTT.
+Entonces, no sé si has logrado aplicar con éxito los conocimientos que memorizaste de esas preguntas típicas.
+Y hasta aquí el vídeo de hoy.
+Nos vemos en el próximo video.

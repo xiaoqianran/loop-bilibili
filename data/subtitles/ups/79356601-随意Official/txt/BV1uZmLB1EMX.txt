@@ -1,0 +1,124 @@
+Hello everyone
+I am Sui Yi
+This video discusses the gossip algorithm.
+This is the most renowned algorithm among broadcast algorithms.
+It is used in and applied to registration centers
+Consoredis
+as well as infrastructure like CASA database and Amazon's DOMO
+I found many incorrect statements about the Gossip algorithm online
+are all wrong
+First of all, it is not a consensus
+The algorithm also has nothing to do with eventual consistency
+even without any node failures
+data loss may also occur
+Let's first understand the broadcast algorithm
+As the name suggests, the broadcast algorithm
+is to distribute data from one node to multiple nodes
+For example, when I package a Docker image
+or distribute a Spark binary package
+or even sending a Messages to the lobby in a game
+These actions can be regarded as a broadcast algorithm
+Among them, the most common broadcast algorithm is a node
+send the value to all nodes
+From this perspective, the master-slave synchronization in databases
+synchronize messages from the master node of the keeper to the slave nodes
+can all be regarded as a type of gossip algorithm
+we refer to this one node
+a broadcast algorithm that sends messages to all other nodes
+collectively referred to as the gossip algorithm
+However, the problem with this algorithm is
+a bottleneck at a single node may occur
+When a node propagates messages to multiple nodes
+the deleted traffic is also the outgoing traffic from the server
+The traffic of messages is always the bottleneck
+after all, in the network
+Both uplink and downlink bandwidth are limited
+and the CPU copies the data to the network buffer in the kernel
+there will also be some overhead
+such as the Eureka we learned in second grade
+uses this algorithm
+That's why
+the performance of eureka is not very good
+a performance bottleneck may occur when there are too many nodes
+So how can we reduce the pressure on the broadcast nodes?
+a very simple idea
+that is, we send messages to other nodes and then
+let other nodes help forward the message
+spread the broadcast message like wildfire
+In this way, each node makes good use of
+its own outgoing bandwidth
+The execution speed of the entire broadcast algorithm will not be too slow.
+So how do you choose which nodes to broadcast to?
+The UNIP algorithm answers by selecting randomly
+You can select in the network
+send data to any node you know
+Then all nodes in the cluster perform similar actions
+until the entire cluster receives the message
+Hearing this
+The audience might wonder
+Is it possible for the propagation path to form a loop?
+For example, A sends to B, and after B receives it, it sends back to A.
+Exactly
+To prevent information from being propagated indefinitely
+We usually only process the first received message
+In the diagram, the red lines actually represent redundant message propagation
+In addition
+If the message is prematurely completed
+So, are some nodes destined to never receive the message?
+Here we assume that each node after receiving the message
+sent to K nodes
+In this graph, this K is two
+Based on probability calculation
+When there are N nodes in the cluster
+and K needs to be greater than log n
+this type of message has a higher probability of being sent to all nodes
+Doesn't it sound quite unreliable?
+Exactly
+This unreliable protocol is actually the most commonly used broadcast protocol today
+Therefore, we find that
+whether it's Consul, Redis, Cassandra, or DynamoDB
+the gossip algorithm they use
+are only used for metadata updates and service discovery
+taking Redis as an example
+The data replication between master and slave still adopts the flooding strategy
+which means the master node sends all data to the slave nodes
+Only the service discovery part uses gossip
+In other words, they possess the following characteristics
+First, the overall data volume is not too large
+Secondly, there's no need to ensure message reliability.
+3. Requires complete decentralization
+For example, when you detect a node failure
+You inform other nodes about this through gossip
+However, some nodes were not notified of this in a timely manner
+No problem
+In the next round, other nodes may still send gossip
+notify this overlooked node of the latest cluster status
+actually, each node at fixed intervals
+randomly select a group of nodes to exchange differential data
+thus most nodes missed by the gossip
+can reacquire the corresponding messages
+but obviously
+if your data volume involves a database with millions of records
+This is clearly an unrealistic operation
+After all, this is essentially a full data synchronization
+Therefore, gossip currently cannot be applied to
+database replication scenarios
+there are many aspects of the gossip protocol that can be optimized
+information that needs to be transmitted
+You can also dynamically set the deletion of the get value based on the cluster size.
+the gossip protocol is simple and easy to use
+and it doesn't require you to store all the nodes in the cluster
+can work
+Therefore, it is also widely used in blockchain scenarios.
+When you want to create a cluster
+without relying on critical components like ETCD
+you might use gossip for service discovery
+discovery, um
+you asked me
+Ali's NEO
+Why wasn't the DISCORE protocol mentioned in this video
+Then let me ask you
+Why would you refer to something without even published papers or specifications as
+something referred to as a protocol
+Do you expect me to use his Java code
+calculate the convergence probability of messages
