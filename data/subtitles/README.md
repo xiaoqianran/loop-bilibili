@@ -4,12 +4,12 @@ B 站 UP 字幕瘦归档，由 **loop-bilibili** `main.py pack-subtitles` 生成
 
 > **非官方**。字幕多为平台 AI/CC 轨；版权归原 UP / B 站。仅供个人学习、检索与研究。
 
-**怎么读（两个入口）：**
+**怎么读（两个入口，一般先目录）：**
 
-1. **本页** → 点进各 [ups/{mid}-名字/README.md](ups/)（字幕 hub：全量有序 + txt 预览 + srt/txt）
-2. **[catalogs/](../catalogs/)** → 各 UP 的 `catalogs/{mid}-名字/README.md`（顶栏字幕导航 + **系列一览每条 txt/srt**）
+1. **[catalogs/](../catalogs/)** → 各 `catalogs/{mid}-名字/README.md`（官方合集/系列 + 每条 **txt/srt**）
+2. **本页** → 点进各 [ups/{mid}-名字/README.md](ups/)（字幕 hub：全量有序 + **txt 预览** + srt/txt）
 
-不要只看 `srt/` 文件名对标题；优先用上面两种 README。
+不要只看 `srt/` 文件名对标题。
 
 完整方案见仓库 `docs/DATASET.md`。原始抓取工作区在 `data/subtitle/`（可 gitignore 大 JSON）。
 

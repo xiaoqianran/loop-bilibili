@@ -53,25 +53,25 @@ python3 main.py pack-subtitles --src-root data/subtitle -o data/subtitles --skip
 
 ## 字幕数据
 
-**两条入口都行，按习惯选：**
+**两条入口都行；一般先看目录，再下钻字幕：**
 
 | 去哪 | 链接 | 适合 |
 |------|------|------|
-| **★ 按 UP 读字幕（归档总表）** | **[data/subtitles/README.md](data/subtitles/README.md)** → `ups/{mid}-名字/README.md` | 直接进字幕 hub：全量有序 + **txt 预览** + srt/txt |
-| **★ 按 UP 从目录进（catalog）** | **[catalogs/](catalogs/)** → 各 `catalogs/{mid}-名字/README.md` | 顶栏字幕导航 + **系列一览里每条带 txt/srt 链接** |
+| **★ 按 UP 从目录进（catalog）** | **[catalogs/](catalogs/)** → 各 `catalogs/{mid}-名字/README.md` | **先看**：官方合集/系列 + 每条 **txt/srt** 链接 + 顶栏字幕导航 |
+| **★ 按 UP 读字幕（归档总表）** | **[data/subtitles/README.md](data/subtitles/README.md)** → `ups/{mid}-名字/README.md` | **再读**：全量有序 + **txt 预览** + srt/txt |
 | 方案说明 | [docs/DATASET.md](docs/DATASET.md) | 三层数据含义 |
 | 扩展路线 | [docs/ROADMAP.md](docs/ROADMAP.md) | pipeline / LLM / Actions |
 | 版权说明 | [data/subtitles/NOTICE](data/subtitles/NOTICE) | 非官方、学习研究用 |
 
 **同一 UP 双入口示例（北歌AIGC）：**
 
-- 字幕 hub：[data/subtitles/ups/3546588152597451-北歌AIGC/README.md](data/subtitles/ups/3546588152597451-北歌AIGC/README.md)
-- catalog 目录：[catalogs/3546588152597451-北歌AIGC/README.md](catalogs/3546588152597451-北歌AIGC/README.md)（系列表内也有 txt/srt）
+1. catalog 目录：[catalogs/3546588152597451-北歌AIGC/README.md](catalogs/3546588152597451-北歌AIGC/README.md)
+2. 字幕 hub：[data/subtitles/ups/3546588152597451-北歌AIGC/README.md](data/subtitles/ups/3546588152597451-北歌AIGC/README.md)
 
 ```bash
-# 本地
+# 本地：先目录，后字幕
+open catalogs/
 open data/subtitles/README.md
-open catalogs/   # 或直接打开某个 UP 的 catalogs/.../README.md
 ```
 
 ## 限速
