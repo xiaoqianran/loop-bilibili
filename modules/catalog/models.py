@@ -56,24 +56,54 @@ def normalize_video(it: dict) -> dict:
         m = BVID_RE.search(url) or BVID_RE.search(title)
         if m:
             bvid = m.group(0)
-    return {
+    # Prefer already-attached official collection; never invent unless asked.
+    series_source = str(it.get("series_source") or "")
+    if series_source in ("official", "none") and it.get("series"):
+        series = str(it.get("series"))
+    elif it.get("series") and series_source == "official":
+        series = str(it.get("series"))
+    elif it.get("series") and str(it.get("series")) not in ("", "未分类 / 其他"):
+        # keep explicit series from collections enrich / prior export
+        series = str(it.get("series"))
+        if not series_source:
+            series_source = str(it.get("series_source") or "legacy")
+    else:
+        # legacy title heuristic only if no official pass yet
+        series = str(it.get("series") or detect_series(title))
+        series_source = series_source or "title_heuristic"
+    out = {
         "title": title,
         "url": url or (f"https://www.bilibili.com/video/{bvid}" if bvid else ""),
         "bvid": bvid,
         "plays": it.get("plays") if it.get("plays") is not None else it.get("play"),
         "likes": it.get("likes") if it.get("likes") is not None else it.get("like"),
         "date": it.get("date") or it.get("pubdate") or it.get("created") or "",
-        "series": it.get("series") or detect_series(title),
+        "series": series,
+        "series_source": series_source,
         "number": it.get("number")
         if it.get("number") is not None
         else detect_number(title),
     }
+    if it.get("collection_kind"):
+        out["collection_kind"] = it.get("collection_kind")
+    if it.get("collection_id") is not None:
+        out["collection_id"] = it.get("collection_id")
+    if it.get("collections"):
+        out["collections"] = it.get("collections")
+    return out
 
 
 def group_by_series(videos: list[dict]) -> dict[str, list[dict]]:
     groups: dict[str, list[dict]] = defaultdict(list)
     for v in videos:
-        series = v.get("series") or detect_series(v.get("title") or "")
+        src = str(v.get("series_source") or "")
+        if src in ("official", "none") and v.get("series"):
+            series = str(v.get("series"))
+        elif v.get("series"):
+            series = str(v.get("series"))
+        else:
+            series = detect_series(v.get("title") or "")
+            v["series_source"] = "title_heuristic"
         v["series"] = series
         if v.get("number") is None:
             v["number"] = detect_number(v.get("title") or "")

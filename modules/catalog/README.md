@@ -11,7 +11,9 @@ opencli bilibili user-videos <uid> --limit 30 --page 1 --order pubdate -f json
 ## 行为
 
 - 串行分页拉取，默认 **conservative** 限速（约 1.5s/页、30 条/页）
-- 标题 `【系列】` → 分组写入 `series/*.md`
+- **合集和系列**：拉 B 站空间 Tab「合集和系列」
+  （`seasons_series_list` + 合集/系列 archives），写入 `collections.json`
+  与 `series/*.md`（不再用标题 `【】` 猜合集）
 - 失败退避 / 412 冷却 / `.progress.json` 断点续跑
 - 输出到 `catalogs/{uid}-{name}/`
 

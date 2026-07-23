@@ -132,17 +132,25 @@ def write_index_md(
     groups: dict[str, list[dict]],
     videos: list[dict],
     profile_name: str = "",
+    *,
+    lists_url: str = "",
+    series_source_note: str = "",
 ) -> None:
     def series_order(item: tuple[str, list]):
-        name, vs = item
-        if name.startswith("未分类"):
-            return (1, 0, name)
-        return (0, -len(vs), name)
+        name, _vs = item
+        if name in ("未入合集", "未分类 / 其他"):
+            return (1, name)
+        return (0, name)
 
-    ordered = sorted(groups.items(), key=series_order)
+    # Prefer insertion order from write_catalog_files (official list order).
+    ordered = list(groups.items())
+    if ordered and "未入合集" in groups and list(groups.keys())[0] == "未入合集" and len(groups) > 1:
+        ordered = sorted(groups.items(), key=series_order)
+
     catalog_folder = path.parent
     slug = catalog_folder.name
     hub_rel = f"../../data/subtitles/ups/{slug}/README.md"
+    lists_url = lists_url or f"https://space.bilibili.com/{uid}/lists"
 
     lines = [
         f"# {up_name} · 完整视频目录",
@@ -159,16 +167,16 @@ def write_index_md(
         "",
         "---",
         "",
-        "## 📚 系列一览（含每条视频的 txt / srt）",
+        "## 📚 合集和系列（含每条视频的 txt / srt）",
         "",
-        f"> 下列按系列展开**全部**视频；**字幕 txt/srt** 链到 "
-        f"`data/subtitles/ups/{slug}/`。"
-        f"总索引仍见上方 [字幕导航]({hub_rel})。",
+        f"> **数据来源**：{series_source_note or 'B站空间「合集和系列」'}  ",
+        f"> 官方页：[{lists_url}]({lists_url})  ",
+        f"> 字幕 txt/srt 链到 `data/subtitles/ups/{slug}/`；总索引见 [字幕导航]({hub_rel})。",
         "",
-        "### 系列速查",
+        "### 合集/系列速查",
         "",
-        "| 系列 | 条数 | 本页锚点 | 系列文件 |",
-        "|------|------|----------|----------|",
+        "| 合集/系列 | 条数 | 本页锚点 | 文件 |",
+        "|-----------|------|----------|------|",
     ]
 
     for series, vs in ordered:
@@ -182,13 +190,12 @@ def write_index_md(
 
     for series, vs in ordered:
         anchor = slugify(series)
-        # GitHub-style heading anchors: we use explicit HTML id for reliability with CJK
         lines.append(f'<a id="{anchor}"></a>')
         lines.append("")
         lines.append(f"### {series} · {len(vs)} 条")
         lines.append("")
         lines.append(
-            f"系列页（同表）：[series/{slugify(series)}.md](series/{slugify(series)}.md)"
+            f"分册页：[series/{slugify(series)}.md](series/{slugify(series)}.md)"
             f" · [全部字幕导航]({hub_rel})"
         )
         _append_series_video_table(lines, vs, catalog_folder)
@@ -198,10 +205,12 @@ def write_index_md(
         "",
         f"- **UID**: `{uid}`",
         f"- **空间**: {space_url}",
+        f"- **合集和系列页**: {lists_url}",
         f"- **投稿总数**: **{len(videos)}**",
-        f"- **系列数**: **{len(groups)}**",
+        f"- **合集/系列分组数**: **{len(groups)}**",
         f"- **导出时间**: {utc_now_display()}",
-        f"- **数据源**: `opencli bilibili user-videos`",
+        f"- **投稿列表**: `opencli bilibili user-videos`",
+        f"- **合集来源**: {series_source_note or 'official space lists'}",
     ]
     if profile_name:
         lines.append(f"- **限速 profile**: `{profile_name}`")
@@ -210,8 +219,8 @@ def write_index_md(
         "",
         "## 全站最新 20 条（仅摘要，非全文）",
         "",
-        "| 日期 | 标题 | 系列 | 播放 | 链接 | 字幕 |",
-        "|------|------|------|------|------|------|",
+        "| 日期 | 标题 | 合集/系列 | 播放 | 链接 | 字幕 |",
+        "|------|------|-----------|------|------|------|",
     ]
     latest = sorted(videos, key=lambda v: str(v.get("date") or ""), reverse=True)[:20]
     for v in latest:
@@ -227,8 +236,8 @@ def write_index_md(
         "",
         "## 播放量 Top 20（仅摘要，非全文）",
         "",
-        "| 播放 | 标题 | 系列 | 日期 | 链接 | 字幕 |",
-        "|------|------|------|------|------|------|",
+        "| 播放 | 标题 | 合集/系列 | 日期 | 链接 | 字幕 |",
+        "|------|------|-----------|------|------|------|",
     ]
     for v in sorted(videos, key=plays_int, reverse=True)[:20]:
         title = (v.get("title") or "").replace("|", "\\|")
@@ -245,9 +254,11 @@ def write_index_md(
         "",
         "- 全量 JSON: [all.json](all.json)",
         "- 全量 CSV: [all.csv](all.csv)",
-        "- 按系列 JSON: [by_series.json](by_series.json)",
+        "- 按合集/系列 JSON: [by_series.json](by_series.json)",
+        "- 官方合集原始: [collections.json](collections.json)",
         "- 元信息: [meta.json](meta.json)",
         f"- **字幕/全文导航（推荐）**: [{hub_rel}]({hub_rel})",
+        f"- **B站合集页**: {lists_url}",
         "",
         "---",
         "",
@@ -272,8 +283,10 @@ def write_catalog_files(
     up_name: str,
     videos: list[dict],
     profile_name: str = "",
+    collections: list | None = None,
 ) -> None:
     space_url = f"https://space.bilibili.com/{uid}"
+    lists_url = f"https://space.bilibili.com/{uid}/lists"
     series_dir = folder / "series"
     if series_dir.exists():
         for p in series_dir.glob("*.md"):
@@ -282,6 +295,18 @@ def write_catalog_files(
 
     videos = [normalize_video(v) for v in videos]
     groups = group_by_series(videos)
+
+    # Prefer official collection order: seasons/series from API, then 未入合集
+    if collections:
+        ordered_names: list[str] = []
+        for c in collections:
+            name = getattr(c, "name", None) or (c.get("name") if isinstance(c, dict) else None)
+            if name and name in groups and name not in ordered_names:
+                ordered_names.append(str(name))
+        for name in groups:
+            if name not in ordered_names:
+                ordered_names.append(name)
+        groups = {n: groups[n] for n in ordered_names if n in groups}
 
     for series, vs in groups.items():
         write_series_md(
@@ -301,6 +326,12 @@ def write_catalog_files(
         groups,
         videos,
         profile_name=profile_name,
+        lists_url=lists_url,
+        series_source_note=(
+            "B站官方「合集和系列」"
+            if collections
+            else "标题启发式（未拉到官方合集时）"
+        ),
     )
     write_csv(folder / "all.csv", videos)
     (folder / "all.json").write_text(
@@ -309,13 +340,29 @@ def write_catalog_files(
     (folder / "by_series.json").write_text(
         json.dumps(groups, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+    official_n = 0
+    if collections is not None:
+        official_n = len(collections)
+    elif (folder / "collections.json").exists():
+        try:
+            official_n = int(
+                json.loads((folder / "collections.json").read_text(encoding="utf-8")).get(
+                    "count"
+                )
+                or 0
+            )
+        except (json.JSONDecodeError, OSError, TypeError, ValueError):
+            official_n = 0
     meta = {
         "uid": uid,
         "name": up_name,
         "space_url": space_url,
+        "lists_url": lists_url,
         "total": len(videos),
         "series_count": len(groups),
         "series": {k: len(v) for k, v in groups.items()},
+        "official_collections_count": official_n,
+        "series_source": "official" if official_n else "title_heuristic_or_none",
         "exported_at": utc_now_iso(),
         "tool": "loop-bilibili",
         "module": "catalog",
