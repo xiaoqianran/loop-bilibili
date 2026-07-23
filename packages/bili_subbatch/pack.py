@@ -242,6 +242,10 @@ def pack_up(
     (dest_up / "meta.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+    # Human hub: full ordered list + txt preview + srt/txt links
+    from .hub import write_up_hub
+
+    write_up_hub(dest_up, catalogs=catalogs)
     return meta
 
 
@@ -280,12 +284,16 @@ def write_dataset_readme(out_root: Path, ups: list[dict[str, Any]]) -> None:
         "",
         "> **非官方**。字幕多为平台 AI/CC 轨；版权归原 UP / B 站。仅供个人学习、检索与研究。",
         "",
+        "**怎么读：** 不要只看 `srt/` 文件名。每个 UP 目录里的 **[README.md](ups/)** 是给人用的总索引——",
+        "按 catalog 顺序列出**全部**视频，带播放链接、字幕状态、`txt` 预览，以及相对路径的 srt/txt。",
+        "",
         "完整方案见仓库 `docs/DATASET.md`。原始抓取工作区在 `data/subtitle/`（可 gitignore 大 JSON）。",
         "",
         "## 布局",
         "",
         "```text",
         "ups/{mid}-{name}/",
+        "  README.md       # ★ 人类导航：全量有序列表 + txt 预览 + srt/txt 链接",
         "  meta.json       # UP 统计",
         "  index.jsonl     # 每行一个视频的瘦元数据（无 cue 正文）",
         "  srt/{bvid}.srt  # 带时间轴字幕",
@@ -293,28 +301,34 @@ def write_dataset_readme(out_root: Path, ups: list[dict[str, Any]]) -> None:
         "dataset.json      # 全局清单",
         "```",
         "",
-        "## 已收录",
+        "## 已收录 UP（点进 slug 看 README）",
         "",
-        "| slug | ok | empty | cues | srt |",
-        "|------|----|-------|------|-----|",
+        "| UP | 字幕 ok | empty | cues | srt | 导航 |",
+        "|----|---------|-------|------|-----|------|",
     ]
     for u in ups:
         srt_mb = (u.get("srt_bytes") or 0) / 1024 / 1024
+        slug = u.get("slug") or ""
+        name = u.get("name") or slug
         lines.append(
-            f"| `{u.get('slug')}` | {u.get('ok_count', 0)} | {u.get('empty_count', 0)} | "
-            f"{u.get('total_cues', 0)} | {srt_mb:.1f} MB |"
+            f"| {name} | {u.get('ok_count', 0)} | {u.get('empty_count', 0)} | "
+            f"{u.get('total_cues', 0)} | {srt_mb:.1f} MB | "
+            f"[README](ups/{slug}/README.md) |"
         )
     lines += [
         "",
         f"共 **{len(ups)}** 个 UP，打包时间见 `dataset.json`。",
         "",
-        "## 重新打包",
+        "## 重新打包 / 只重建导航",
         "",
         "```bash",
         "python3 main.py pack-subtitles \\",
         "  --src-root data/subtitle \\",
         "  --catalogs catalogs \\",
         "  -o data/subtitles",
+        "",
+        "# 不重新 pack 文件，只重写各 UP 的 README.md",
+        "python3 main.py rebuild-hubs --archive data/subtitles --catalogs catalogs",
         "```",
         "",
     ]

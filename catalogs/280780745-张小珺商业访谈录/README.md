@@ -4,7 +4,7 @@
 - **空间**: https://space.bilibili.com/280780745
 - **投稿总数**: **31**
 - **系列数**: **4**
-- **导出时间**: 2026-07-23 14:19 UTC
+- **导出时间**: 2026-07-23 17:38 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 
@@ -17,7 +17,15 @@
 | 独家对话奔驰全球CEO康林松 | 1 | [series/独家对话奔驰全球CEO康林松.md](series/独家对话奔驰全球CEO康林松.md) |
 | 未分类 / 其他 | 28 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 全站最新 20 条
+## 字幕与全文导航（推荐从这里读）
+
+抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
+**[张小珺商业访谈录 · 字幕导航](../../data/subtitles/ups/280780745-张小珺商业访谈录/README.md)**
+
+本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
+不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
+
+## 全站最新 20 条（摘要）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -42,7 +50,7 @@
 | 2025-08-08 | 对话禾赛李一帆：你仔细想行业的机会来自哪？是国家、民族的机会 | 未分类 / 其他 | 92,823 | [BV1vMtUzJEC7](https://www.bilibili.com/video/BV1vMtUzJEC7) |
 | 2025-07-31 | 逐段讲解Kimi K2报告并对照ChatGPT Agent、Qwen3-Coder等：“系统工程的力量” | 未分类 / 其他 | 33,675 | [BV1cc8kzmEBs](https://www.bilibili.com/video/BV1cc8kzmEBs) |
 
-## 播放量 Top 20
+## 播放量 Top 20（摘要）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -73,6 +81,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
+- 字幕导航: [../../data/subtitles/ups/280780745-张小珺商业访谈录/README.md](../../data/subtitles/ups/280780745-张小珺商业访谈录/README.md)
 
 ---
 

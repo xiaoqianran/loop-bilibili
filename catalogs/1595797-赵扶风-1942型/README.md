@@ -4,7 +4,7 @@
 - **空间**: https://space.bilibili.com/1595797
 - **投稿总数**: **71**
 - **系列数**: **3**
-- **导出时间**: 2026-07-23 16:56 UTC
+- **导出时间**: 2026-07-23 17:38 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 
@@ -16,7 +16,15 @@
 | 必剪试用 | 1 | [series/必剪试用.md](series/必剪试用.md) |
 | 未分类 / 其他 | 68 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 全站最新 20 条
+## 字幕与全文导航（推荐从这里读）
+
+抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
+**[赵扶风-1942型 · 字幕导航](../../data/subtitles/ups/1595797-赵扶风-1942型/README.md)**
+
+本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
+不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
+
+## 全站最新 20 条（摘要）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -41,7 +49,7 @@
 | 2024-02-13 | 关于我2024春节写代码跨年的视频纪念！ | 未分类 / 其他 | 832 | [BV1rm411D7Mo](https://www.bilibili.com/video/BV1rm411D7Mo) |
 | 2023-12-10 | 拍一下航天三院附近云岗森林公园里的轰5（H5-02202） | 未分类 / 其他 | 549 | [BV1uQ4y1G7Qg](https://www.bilibili.com/video/BV1uQ4y1G7Qg) |
 
-## 播放量 Top 20
+## 播放量 Top 20（摘要）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -72,6 +80,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
+- 字幕导航: [../../data/subtitles/ups/1595797-赵扶风-1942型/README.md](../../data/subtitles/ups/1595797-赵扶风-1942型/README.md)
 
 ---
 

@@ -4,7 +4,7 @@
 - **空间**: https://space.bilibili.com/61214429
 - **投稿总数**: **359**
 - **系列数**: **14**
-- **导出时间**: 2026-07-22 16:43 UTC
+- **导出时间**: 2026-07-23 17:38 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 
@@ -27,7 +27,15 @@
 | 设计规则：优秀UI设计的原则与实践 | 1 | [series/设计规则：优秀UI设计的原则与实践.md](series/设计规则：优秀UI设计的原则与实践.md) |
 | 未分类 / 其他 | 342 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 全站最新 20 条
+## 字幕与全文导航（推荐从这里读）
+
+抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
+**[明文传输不 · 字幕导航](../../data/subtitles/ups/61214429-明文传输不/README.md)**
+
+本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
+不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
+
+## 全站最新 20 条（摘要）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -52,7 +60,7 @@
 | 2026-05-16 | Blender 3D角色建模入门 （中文语音）2/2 | 未分类 / 其他 | 1,448 | [BV1QyDrBcEuu](https://www.bilibili.com/video/BV1QyDrBcEuu) |
 | 2026-05-15 | Cursor AI从入门到精通：使用AI构建生产级Web应用(中文语音) | 未分类 / 其他 | 2,224 | [BV1HYXUBzENk](https://www.bilibili.com/video/BV1HYXUBzENk) |
 
-## 播放量 Top 20
+## 播放量 Top 20（摘要）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -83,6 +91,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
+- 字幕导航: [../../data/subtitles/ups/61214429-明文传输不/README.md](../../data/subtitles/ups/61214429-明文传输不/README.md)
 
 ---
 

@@ -344,6 +344,25 @@ def cmd_pack_subtitles(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_rebuild_hubs(args: argparse.Namespace) -> int:
+    """Regenerate per-UP README hubs (full ordered list + txt preview + links)."""
+    from bili_subbatch.hub import rebuild_all_hubs
+
+    archive = Path(args.archive)
+    catalogs = Path(args.catalogs) if args.catalogs else None
+    written = rebuild_all_hubs(
+        archive,
+        catalogs=catalogs,
+        preview_chars=int(args.preview_chars),
+    )
+    print(f"rebuild-hubs: wrote {len(written)} README(s) under {archive / 'ups'}", flush=True)
+    for p in written[:5]:
+        print(f"  {p}", flush=True)
+    if len(written) > 5:
+        print(f"  ... +{len(written) - 5} more", flush=True)
+    return 0
+
+
 def cmd_comments(args: argparse.Namespace) -> int:
     profile = build_profile(args, default=ITEM_DEFAULT_PROFILE)
     bvids = resolve_bvids(args)
@@ -441,6 +460,23 @@ def build_parser() -> argparse.ArgumentParser:
     pk.add_argument("--skip-empty-up", action="store_true")
     pk.add_argument("--no-clean", action="store_true")
 
+    rh = sub.add_parser(
+        "rebuild-hubs",
+        help="重建 data/subtitles 各 UP 的 README 导航（全量有序+预览+链接）",
+    )
+    rh.add_argument(
+        "--archive",
+        default="data/subtitles",
+        help="pack 输出根（含 ups/）",
+    )
+    rh.add_argument("--catalogs", default="catalogs")
+    rh.add_argument(
+        "--preview-chars",
+        type=int,
+        default=180,
+        help="每条 txt 预览最大字符数",
+    )
+
     return p
 
 
@@ -466,6 +502,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         "subtitle": cmd_subtitle,
         "comments": cmd_comments,
         "pack-subtitles": cmd_pack_subtitles,
+        "rebuild-hubs": cmd_rebuild_hubs,
     }
     return handlers[args.command](args)
 

@@ -4,7 +4,7 @@
 - **空间**: https://space.bilibili.com/341376543
 - **投稿总数**: **7**
 - **系列数**: **2**
-- **导出时间**: 2026-07-22 15:11 UTC
+- **导出时间**: 2026-07-23 17:38 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 
@@ -15,7 +15,15 @@
 | 不本地也行 | 1 | [series/不本地也行.md](series/不本地也行.md) |
 | 未分类 / 其他 | 6 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 全站最新 20 条
+## 字幕与全文导航（推荐从这里读）
+
+抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
+**[堂吉诃德拉曼查的英豪 · 字幕导航](../../data/subtitles/ups/341376543-堂吉诃德拉曼查的英豪/README.md)**
+
+本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
+不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
+
+## 全站最新 20 条（摘要）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -27,7 +35,7 @@
 | 2025-02-26 | LoRA 算法论文解读 & 开发人员如何微调大模型并暴露可调用接口 | 未分类 / 其他 | 279,166 | [BV1R6P7eVEtd](https://www.bilibili.com/video/BV1R6P7eVEtd) |
 | 2025-02-05 | 【知识科普】【纯本地化搭建】【不本地也行】DeepSeek+RAGFlow构建个人知识库 | 不本地也行 | 855,269 | [BV1WiP2ezE5a](https://www.bilibili.com/video/BV1WiP2ezE5a) |
 
-## 播放量 Top 20
+## 播放量 Top 20（摘要）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -45,6 +53,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
+- 字幕导航: [../../data/subtitles/ups/341376543-堂吉诃德拉曼查的英豪/README.md](../../data/subtitles/ups/341376543-堂吉诃德拉曼查的英豪/README.md)
 
 ---
 

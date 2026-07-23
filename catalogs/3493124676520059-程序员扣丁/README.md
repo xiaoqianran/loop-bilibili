@@ -4,7 +4,7 @@
 - **空间**: https://space.bilibili.com/3493124676520059
 - **投稿总数**: **22**
 - **系列数**: **2**
-- **导出时间**: 2026-07-23 16:38 UTC
+- **导出时间**: 2026-07-23 17:38 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 
@@ -15,7 +15,15 @@
 | 无废话 | 1 | [series/无废话.md](series/无废话.md) |
 | 未分类 / 其他 | 21 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 全站最新 20 条
+## 字幕与全文导航（推荐从这里读）
+
+抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
+**[程序员扣丁 · 字幕导航](../../data/subtitles/ups/3493124676520059-程序员扣丁/README.md)**
+
+本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
+不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
+
+## 全站最新 20 条（摘要）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -40,7 +48,7 @@
 | 2024-08-29 | 后附30000字教程文档的SpringBoot3+Vue3权限管理系统确定不了解一下？ | 未分类 / 其他 | 4,050 | [BV1DGHMepEms](https://www.bilibili.com/video/BV1DGHMepEms) |
 | 2023-12-18 | 01-系统常见配置和关联数据表格处理 | 未分类 / 其他 | 2,095 | [BV1UC4y1Q76n](https://www.bilibili.com/video/BV1UC4y1Q76n) |
 
-## 播放量 Top 20
+## 播放量 Top 20（摘要）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -71,6 +79,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
+- 字幕导航: [../../data/subtitles/ups/3493124676520059-程序员扣丁/README.md](../../data/subtitles/ups/3493124676520059-程序员扣丁/README.md)
 
 ---
 

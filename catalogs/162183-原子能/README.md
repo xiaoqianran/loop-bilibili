@@ -4,7 +4,7 @@
 - **空间**: https://space.bilibili.com/162183
 - **投稿总数**: **84**
 - **系列数**: **66**
-- **导出时间**: 2026-07-23 11:39 UTC
+- **导出时间**: 2026-07-23 17:38 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 
@@ -79,7 +79,15 @@
 | 让阅读再次伟大#2 | 1 | [series/让阅读再次伟大#2.md](series/让阅读再次伟大#2.md) |
 | 未分类 / 其他 | 19 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 全站最新 20 条
+## 字幕与全文导航（推荐从这里读）
+
+抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
+**[原子能 · 字幕导航](../../data/subtitles/ups/162183-原子能/README.md)**
+
+本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
+不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
+
+## 全站最新 20 条（摘要）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -104,7 +112,7 @@
 | 2025-12-09 | 深度解读React满分漏洞，三个笨蛋合力炸掉半个互联网【让编程再次伟大#50】 | 让编程再次伟大#50 | 133,276 | [BV1uG2DBgEQ8](https://www.bilibili.com/video/BV1uG2DBgEQ8) |
 | 2025-12-05 | 人类史上最简单粗暴，也是最有用的算法 | 未分类 / 其他 | 169,124 | [BV1o32iBCE3x](https://www.bilibili.com/video/BV1o32iBCE3x) |
 
-## 播放量 Top 20
+## 播放量 Top 20（摘要）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -135,6 +143,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
+- 字幕导航: [../../data/subtitles/ups/162183-原子能/README.md](../../data/subtitles/ups/162183-原子能/README.md)
 
 ---
 

@@ -4,7 +4,7 @@
 - **空间**: https://space.bilibili.com/1223644844
 - **投稿总数**: **68**
 - **系列数**: **1**
-- **导出时间**: 2026-07-22 15:12 UTC
+- **导出时间**: 2026-07-23 17:38 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 
@@ -14,7 +14,15 @@
 |------|------|------|
 | 未分类 / 其他 | 68 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 全站最新 20 条
+## 字幕与全文导航（推荐从这里读）
+
+抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
+**[杜子源源 · 字幕导航](../../data/subtitles/ups/1223644844-杜子源源/README.md)**
+
+本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
+不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
+
+## 全站最新 20 条（摘要）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -39,7 +47,7 @@
 | 2026-04-09 | 吊打Vim和VSCode？Fresh编辑器或许有点香 | 未分类 / 其他 | 5,464 | [BV1NyDWBMETU](https://www.bilibili.com/video/BV1NyDWBMETU) |
 | 2026-02-16 | 山西的年味太浓啦，烟火，旺火，阳台灯火 | 未分类 / 其他 | 258 | [BV1yvZMBCEbb](https://www.bilibili.com/video/BV1yvZMBCEbb) |
 
-## 播放量 Top 20
+## 播放量 Top 20（摘要）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -70,6 +78,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
+- 字幕导航: [../../data/subtitles/ups/1223644844-杜子源源/README.md](../../data/subtitles/ups/1223644844-杜子源源/README.md)
 
 ---
 

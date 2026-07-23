@@ -92,9 +92,21 @@ def write_index_md(
         fname = f"series/{slugify(series)}.md"
         lines.append(f"| {series} | {len(vs)} | [{fname}]({fname}) |")
 
+    # Point humans to the subtitle hub (full list + txt preview + srt links).
+    # catalogs/ alone only carries metadata; subtitles live under data/subtitles.
+    slug = path.parent.name  # catalogs/{uid}-{name}/README.md
+    hub_rel = f"../../data/subtitles/ups/{slug}/README.md"
     lines += [
         "",
-        "## 全站最新 20 条",
+        "## 字幕与全文导航（推荐从这里读）",
+        "",
+        f"抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：",
+        f"**[{up_name} · 字幕导航]({hub_rel})**",
+        "",
+        "本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；",
+        "不要只靠 `data/subtitles/.../srt/` 文件名去对标题。",
+        "",
+        "## 全站最新 20 条（摘要）",
         "",
         "| 日期 | 标题 | 系列 | 播放 | 链接 |",
         "|------|------|------|------|------|",
@@ -110,7 +122,7 @@ def write_index_md(
 
     lines += [
         "",
-        "## 播放量 Top 20",
+        "## 播放量 Top 20（摘要）",
         "",
         "| 播放 | 标题 | 系列 | 日期 | 链接 |",
         "|------|------|------|------|------|",
@@ -131,6 +143,7 @@ def write_index_md(
         "- 全量 CSV: [all.csv](all.csv)",
         "- 按系列 JSON: [by_series.json](by_series.json)",
         "- 元信息: [meta.json](meta.json)",
+        f"- 字幕导航: [{hub_rel}]({hub_rel})",
         "",
         "---",
         "",

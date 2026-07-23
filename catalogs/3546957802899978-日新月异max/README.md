@@ -4,7 +4,7 @@
 - **空间**: https://space.bilibili.com/3546957802899978
 - **投稿总数**: **4**
 - **系列数**: **2**
-- **导出时间**: 2026-07-22 15:09 UTC
+- **导出时间**: 2026-07-23 17:38 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 
@@ -15,7 +15,15 @@
 | 代码解读 | 1 | [series/代码解读.md](series/代码解读.md) |
 | 未分类 / 其他 | 3 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 全站最新 20 条
+## 字幕与全文导航（推荐从这里读）
+
+抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
+**[日新月异max · 字幕导航](../../data/subtitles/ups/3546957802899978-日新月异max/README.md)**
+
+本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
+不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
+
+## 全站最新 20 条（摘要）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -24,7 +32,7 @@
 | 2026-05-16 | 用文件存储记忆，统一多模态记忆框架memU【代码解读】 | 代码解读 | 8,144 | [BV1zxL561EcM](https://www.bilibili.com/video/BV1zxL561EcM) |
 | 2026-04-18 | 从零实现Clude Code（最终章）——Claude Code | 未分类 / 其他 | 7,380 | [BV1BQSoBmE24](https://www.bilibili.com/video/BV1BQSoBmE24) |
 
-## 播放量 Top 20
+## 播放量 Top 20（摘要）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -39,6 +47,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
+- 字幕导航: [../../data/subtitles/ups/3546957802899978-日新月异max/README.md](../../data/subtitles/ups/3546957802899978-日新月异max/README.md)
 
 ---
 

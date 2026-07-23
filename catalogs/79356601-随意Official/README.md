@@ -4,7 +4,7 @@
 - **空间**: https://space.bilibili.com/79356601
 - **投稿总数**: **59**
 - **系列数**: **1**
-- **导出时间**: 2026-07-23 16:52 UTC
+- **导出时间**: 2026-07-23 17:38 UTC
 - **数据源**: `opencli bilibili user-videos`
 - **限速 profile**: `conservative`
 
@@ -14,7 +14,15 @@
 |------|------|------|
 | 未分类 / 其他 | 59 | [series/未分类-其他.md](series/未分类-其他.md) |
 
-## 全站最新 20 条
+## 字幕与全文导航（推荐从这里读）
+
+抓取并 pack 后，**全部视频按序 + 字幕 txt 预览 + srt/txt 链接** 在：
+**[随意Official · 字幕导航](../../data/subtitles/ups/79356601-随意Official/README.md)**
+
+本页下列表只是 catalog 摘要（最新/热门各 20 条）。完整投稿元数据见 `all.json`；
+不要只靠 `data/subtitles/.../srt/` 文件名去对标题。
+
+## 全站最新 20 条（摘要）
 
 | 日期 | 标题 | 系列 | 播放 | 链接 |
 |------|------|------|------|------|
@@ -39,7 +47,7 @@
 | 2025-01-27 | 讲的最好的服务发现教程  查阅上百篇文献制作 VTB带你吊打面试官 | 未分类 / 其他 | 18,008 | [BV1XBfUY7EoB](https://www.bilibili.com/video/BV1XBfUY7EoB) |
 | 2025-01-01 | 全网最好的spark论文解读 十分钟深入浅出spark | 未分类 / 其他 | 22,794 | [BV1BBkbYZEG8](https://www.bilibili.com/video/BV1BBkbYZEG8) |
 
-## 播放量 Top 20
+## 播放量 Top 20（摘要）
 
 | 播放 | 标题 | 系列 | 日期 | 链接 |
 |------|------|------|------|------|
@@ -70,6 +78,7 @@
 - 全量 CSV: [all.csv](all.csv)
 - 按系列 JSON: [by_series.json](by_series.json)
 - 元信息: [meta.json](meta.json)
+- 字幕导航: [../../data/subtitles/ups/79356601-随意Official/README.md](../../data/subtitles/ups/79356601-随意Official/README.md)
 
 ---
 
