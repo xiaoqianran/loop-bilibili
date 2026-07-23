@@ -1,14 +1,14 @@
 {
   "name": "loop-bilibili/data/subtitles",
   "description": "Packed Bilibili UP subtitles (SRT + slim index)",
-  "packed_at": "2026-07-23T16:23:35.262610+00:00",
-  "up_count": 10,
-  "ok_total": 755,
+  "packed_at": "2026-07-23T16:39:32.587322+00:00",
+  "up_count": 11,
+  "ok_total": 777,
   "empty_total": 32,
   "error_total": 12,
-  "cues_total": 263350,
-  "srt_bytes_total": 18741791,
-  "txt_bytes_total": 9526867,
+  "cues_total": 266015,
+  "srt_bytes_total": 18924473,
+  "txt_bytes_total": 9618095,
   "layout": {
     "ups": "ups/{mid}-{name}/",
     "index": "index.jsonl",
@@ -69,6 +69,15 @@
       "empty_count": 0,
       "total_cues": 7252,
       "path": "ups/341376543-堂吉诃德拉曼查的英豪"
+    },
+    {
+      "slug": "3493124676520059-程序员扣丁",
+      "mid": "3493124676520059",
+      "name": "程序员扣丁",
+      "ok_count": 22,
+      "empty_count": 0,
+      "total_cues": 2665,
+      "path": "ups/3493124676520059-程序员扣丁"
     },
     {
       "slug": "3546804396230870-码里奥Ziho",

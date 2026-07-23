@@ -1,0 +1,266 @@
+Hello everyone.
+Welcome to my channel.
+And just like that, it's graduation season again.
+First of all, let's give a warm congratulations to all the students of the Class of '26 who have successfully graduated.
+and extend our warmest congratulations.
+Congratulations on successfully completing your graduation projects.
+your thesis defense and all the academic tasks of your university journey.
+and are about to embark on a new chapter of your lives.
+And at the same time,
+And for all the students graduating in 2027,
+are also about to enter the topic selection phase.
+So, every year around this time...
+I get tons of DMs.
+For instance, someone might ask, "Hey, senior, is this topic doable?"
+Is this topic going to be too difficult?
+The professor gave us, like, dozens of topics to choose from.
+I have absolutely no idea how to even begin choosing.
+In fact, a lot of students are still in the topic selection phase,
+and don't even bother to seriously research their topic.
+So, after you've looked through the list of topics,
+and just randomly pick one.
+just because the name sounds fancy.
+and just lock it in.
+But when it's actually time to get started,
+that's when you realize you don't actually know how to develop it.
+can't write the thesis,
+can't draw the diagrams,
+don't know how to design a database,
+Don't know how to do system testing.
+and end up cramming at the last minute.
+At best, you'll be pulling all-nighters and grinding for a solid month.
+Or worse, you could end up spending a fortune and wasting a ton of time just to fix the problems.
+So, in this video, I'm going to draw from my years of experience...
+Let's do a deep dive into how you should actually choose a topic for your computer science capstone project.
+and which ones are total traps.
+and which ones are a guaranteed pass.
+and which topics will show a good amount of work without being too difficult to complete.
+And finally,
+I've also put together a list for you all.
+a list of recommended topics for the 2027 graduation projects.
+So, make sure to like and save this video.
+Alright, let's get started.
+First, let's talk about why so many students mess up their final projects.
+So, a lot of students wonder, 'Is the graduation project difficult or not?'
+depends entirely on their own development skills.
+But in reality, that's not the main reason why most graduation projects end in disaster at all.
+There's only one reason: you picked the wrong topic.
+If you pick the wrong topic,
+every single line of code you write after that will be pure agony.
+Let me give you a simple example.
+For instance, some students might come across a 'HarmonyOS-based Smart Campus System'.
+A blockchain-based logistics management system.
+or an industrial monitoring platform based on digital twins.
+A virtual lab for JXR
+Now, these names might sound super fancy and impressive,
+So, you picked it without a second thought.
+But when it was time to actually start developing, I realized there were no tutorials online.
+Plus, there are no open-source projects either.
+And there were no ready-made examples to follow either.
+technical documentation,
+And these are also extremely scarce.
+And you'll find basically no references to cite.
+In the end, you just have to bite the bullet and push through with it.
+So, the number one rule when it comes to picking a topic is...
+Don't pick a topic just to show off your skills.
+The most important thing about your thesis is to get you to graduation.
+It's not about pushing yourself to your absolute limits.
+Alright, so let's talk about the five core principles for choosing your graduation project topic.
+Alright, the first principle is all about your tech stack.
+Make sure it's mainstream.
+So, that's my first piece of advice for you all.
+So, when you're choosing your tech stack,
+If you can use Spring Boot, don't go for some obscure framework.
+And if you can use Vue, don't mess with some obscure front-end framework.
+And for the database, stick with MySQL.
+and don't mess around with some weird database.
+For the vast majority of undergraduates,
+So, for the tech stack, I recommend Vue plus Element Plus for the front-end.
+and for the backend, Spring Boot.
+For the database, go with MySQL, and for caching,
+and for permission management, use Redis.
+For tokens, you can use something like JWT or Spring Security. As for file storage,
+Yeah, you can use local uploads.
+Or, for the AI features, you could use MiniIO.
+You can use the OpenAI API,
+Or, you could use the API for our domestic large model, DeepSeek.
+This tech stack is already very mature.
+There are tons of tutorials and examples out there.
+Plus, there are tons of open-source projects you can turn to when you run into problems.
+and a quick search will usually solve it.
+On the other hand, for some of the more obscure technologies...
+For instance, developing for HarmonyOS, or using Flutter for desktop.
+or Rust.
+full-stack blockchain development, digital twins,
+Now, it's not that you can't do these projects.
+but rather, they aren't a good first choice for a graduation project.
+The reason is, there are very few tutorials for these things online.
+Plus, they're extremely demanding on your computer's performance.
+Take the HarmonyOS emulator, for example.
+Even with 32 gigs of RAM, my computer really struggles with it.
+And there are no tutorials.
+We can learn it step by step.
+But what if your computer isn't powerful enough?
+Then the only option is to spend some money.
+Just to finish a graduation project,
+and end up buying a computer that costs thousands, or even tens of thousands.
+It's really just not worth it.
+Plus, with the recent price hike in memory sticks,
+Plus, a lot of computers are seriously overpriced.
+So, I really wouldn't recommend you guys go out and buy a new computer.
+Just use the computer you've had for the past four years of college.
+Just focus on finishing our graduation project, and we'll be all set.
+The second principle is that your system's features must be up-to-date.
+The systems many students are building still look like they're from 10 years ago.
+User management,
+role management,
+menu management.
+And that's it for CRUD operations.
+It's getting really hard to make these kinds of systems stand out anymore.
+Now that we've entered the age of AI,
+So, you can totally add some modern features to your system.
+For example, an AI smart assistant.
+AI Q&A,
+AI customer service,
+AI Knowledge Base
+OCR Recognition
+Scheduled Tasks
+Push notifications
+Payment Module
+Data Visualization, Recommendation Algorithms, and File Management.
+Online preview
+Electronic signature.
+Workflow approval
+And honestly, implementing these features isn't actually that difficult.
+But when it comes to your thesis,
+This will really show off your strong innovative skills.
+For example,
+Let's say you were originally building a pet management system.
+what if you add an AI pet health consultation assistant?
+And just like that, the whole project's quality level instantly goes up.
+Let's say you have a news management system.
+Or, if you add an AI news summary generator,
+This will make it feel really modern and in line with current trends.
+So, I'd suggest that you don't let your project, you know...
+be just a simple CRUD system.
+Make sure to add at least one or two of these standout features.
+The third principle is to keep your role design from getting overly complex.
+For instance, some students design systems that include a 'merchant' role.
+agents,
+Operations staff,
+financial staff,
+Customer service staff.
+And in the end, you've got a whole dozen or so roles, which might look super impressive.
+But in reality, you're just making more work for yourself.
+Because the more roles you have,
+the more complex the permissions and menus become.
+Plus, the use case diagrams and all those flowcharts will be incredibly complex as well.
+And that makes the thesis incredibly difficult to write.
+My advice is actually pretty simple.
+For your undergraduate thesis,
+Basically, you just need two or three roles.
+For example, you could have an admin, a user, and a merchant, or maybe an admin and a teacher.
+and student would be more than enough.
+This way, you can showcase your permission management system,
+And you won't work yourself to death, right?
+The fourth principle is the database.
+The number of tables is also super important.
+Here's something a lot of people don't know.
+The thing is, most professors won't actually dive deep into your code.
+Because the truth is, they can't even understand your code.
+So, what's the first thing they look at?
+The amount of work you've put in.
+So, one of the most straightforward ways to show your workload is...
+is the database design.
+If your system only has things like user roles and menus,
+and just three business tables,
+Then, at first glance, the professor will think the project is too small.
+On the other hand, if your system includes features like user accounts, orders, and reviews,
+favorites, messages, and notifications.
+category logs, carousels,
+payment records,
+Audit Log
+Recommendation Records
+and so on.
+aim for a dozen, or even 20 tables.
+This will show your professor that you've put in a ton of work into the system.
+So, as long as it makes sense for the project,
+So, you can definitely beef up the number of business-related tables.
+Of course, this doesn't mean you should just randomly pile on tables.
+Instead, you should add modules as long as they make sense for your business logic.
+The fifth principle is to learn how to effectively leverage AI tools.
+We're already in 2026,
+If you're still not using AI at all,
+you're really putting yourself at a disadvantage.
+Look, AI isn't going to get you your diploma.
+But what it can do is help you be more efficient.
+For example, generating database table designs.
+help generate code,
+polishing your thesis,
+Generate test cases,
+Generate requirement analyses,
+optimizing abstracts, and so on.
+But there's one thing you all have to remember.
+AI is just a tool to help you.
+It's not a replacement.
+Ultimately, you still have to understand the implementation logic of your own project.
+Otherwise, during your defense, if the professor asks you a couple of simple questions,
+and you'll be completely stumped.
+Finally, let me recommend some project topics for your graduation thesis.
+For the AI track, you could go with Spring Boot.
+and a Vue.js-powered AI knowledge base Q&A system.
+Its main features include user login and registration.
+file upload for knowledge base management,
+vectorization processing,
+an AI-powered Q&A system, and so on.
+And then there's this GG Enterprise Knowledge Management Platform.
+An intelligent customer service system based on large models,
+An AI-based thesis writing assistant platform, and so on.
+So, for these project ideas...
+All of these incorporate AI and IG-related features.
+This will instantly take your graduation project to the next level.
+Now, when it comes to management systems,
+For example, there's the library management system.
+a lab reservation system, and so on.
+Now, I know what you're thinking about these management systems.
+I mean, they're a bit cliché at this point.
+But if you add some innovative features to them,
+Then it's 100% guaranteed to work.
+Take a library management system, for example.
+You could, for example, implement a timer.
+So, you can set the timer to trigger at midnight every day to run a query.
+to see who hasn't returned their books on time.
+And then, we'll just generate the fines and all that for them.
+For the recommendation system, you have a few options here.
+You can use collaborative filtering,
+or a knowledge graph for your recommendations.
+If I were to make recommendations for the Class of 2027,
+So, for topics that are easier to get a high score with, hmm...
+So, the top-tier choice is definitely an AI knowledge base system.
+IG, uh...
+and intelligent Q&A systems.
+knowledge graphs, and so on.
+Moving on to the second tier, we have recommendation systems.
+And for the third tier, we have e-commerce and rental platforms.
+and projects like campus management systems.
+They generally have complete features,
+and a large number of database tables.
+and clear innovative points.
+The thesis is easy to write,
+And the defense will be a breeze.
+These are perfect topics for your undergraduate thesis.
+Finally, let's do a quick quality check on your chosen topic.
+For example, can you actually build it yourself?
+Are there any reference materials available?
+Are there any open-source projects available?
+Is the paper going to be easy to write?
+And how easy it'll be to present during your defense.
+As long as you can get a clear handle on these few questions,
+and your graduation project is already halfway to success.
+So, if you're still not sure how to pick a topic,
+Feel free to follow and send me a DM.
+to get more project topic ideas.
+I'll be sharing more in my upcoming videos.
+and share more tips for your computer science capstone projects.
+Thanks for watching.
+See you in the next video!
