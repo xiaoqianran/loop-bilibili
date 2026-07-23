@@ -1,0 +1,230 @@
+大家好
+这里是狗哥书
+接上文啊
+我们继续rising wave的代码剖析
+那这次讲讲呢留作业提交到运行的这个流程
+那在这个内容中呢
+你不仅可以学习生产及rust的代码是怎么写的
+还可以学到一些实时计算相关的知识点
+那按照惯例呢
+我们这边先给出一个代码地图
+那今天我们就来看SOHO解析后一系列的转换流程
+那众所周知呢
+FLINK也有一层层的转换
+那为什么要做这么多分层转换呢
+相信你看完今天的视频会有自己的答案
+那这个时候可能就有人会说了
+啊啊你讲这个不讲SQL解析和优化的东西
+你再讲个锤子
+别急
+这个内容很大
+你忍一下啊
+之后呢我会单独出一期视频讲一讲
+那如果我们整体代码看下来
+我们可以看到大致是三个的分层
+第一层是plan reform
+然后是string fragment graph
+最后一层是screen job fragments
+那我们先来看看plan river
+那plan river的核心结构
+其实就是实建一个plan node的字段
+所以要搞清楚play refer的话
+我们得先看plan node的定义
+那这个注释写的比较清楚的
+这个trait是所有计划节点的公共接口
+它通过组合多个trait呢来实现复杂功能
+比如说数据结构操作啊
+克隆啊
+比较啊哈希啊
+debug啊等等等等
+那这些子脆呢可以让plan node
+在优化器框架中被更灵活的使用和扩展
+那这么说可能有点模糊啊
+所以接下来呢
+我们对每一个trait都来解释一下
+Plan
+TRAINNODE呢
+规定每个计划节点必须实现的方法啊
+包括获取输入节点和克隆节点
+那dynamic叉叉叉之类的就不说了
+顾名思义的这些就是为动态类型做的
+那DISTE里面包含两个方法
+DISTE和distal to screen
+Diste
+方法呢就是将实现该treat的对象
+转换成XML node类型
+而distill tostring方法呢
+则是进一步将XML node转换成格式化字符串
+来表示debug
+这个就太常见了啊
+用于格式化输出调试信息的down cast
+这个顾名思义要向下转换
+负责动态类型和any类型的转换
+Any i
+这个类型一般来说是表示所有类的子类啊
+type script里面其实也是这个样子
+prolong portable呢用于逻辑计划节点的列裁剪啊
+主要要做将计划节点输出限制为所需的列啊
+同时也会调整一些子节点的输出
+Expression reridable
+顾名思义就是用来重写表达式的
+这两个方法也很简单
+Has ridable expression
+默认返回false表示否包含一个可以重写的表达式
+write expression啊
+没有实现的方法啊
+一般来说就是用于重写表达式的
+Expression vegetable
+用于便利表达式啊
+这里面的方法呢是要自己去实现的啊
+这个可以理解啊
+毕竟我不知道你表达式是什么样子
+too batch啊
+用于将这个逻辑计划节点
+转换成批处理的物理节点
+那它提供了两种实验方式啊
+默认你实现to batch就好了
+那如果这个逻辑计划节点呢有一个排序需求
+然后你也有更好的时间了
+就去覆盖to batch with the older require to stream
+用于将逻辑计划节点转化成流式的物理节点
+并可以满足一些特定的分布要求
+然后主要有三个方法
+那第一个方法比较有意思啊
+logical rewrite for stream好
+它可以重写逻辑令
+以确保输出包含主键
+to stream就是一个默认实验
+跟前面to batch一样
+那比较有意思的是
+Two stream with distribution required
+根据分布的要求来做一个转换
+那里面这个参数很有意思
+我们来看一下它里面总共是有四个枚举啊
+any any shared cheer的by key
+还有physical distribution
+这么说下来有点懵哦
+我们直接往上看啊
+那我这里做过流处理
+同学应该很熟悉啊
+single就代表所有东西都放在一个分区里面
+SUSHELL可能就是种轮询的方式
+把数据放进去
+那有一个不同的话就是upstream hash share的
+那这个话其实用在物化视图里面
+根据上游的分发方式来做分发的
+broadcast就是广播嘛
+那相信很多人看到这里还是很懵逼啊
+那我们把代码往上拖
+那这里面就说的很明白了
+如果A指向B的话
+意味着A满足B
+这样看起来是不是就豁然开朗了啊
+比如说any shade
+它其实是满足any的single
+它是仅仅满足any的情况
+那这两个有什么区别呢
+啊一个是算子自己提供的分发属性
+另外一个话就是执行计划要求的分发属性
+执行计划
+其实他要根据不同的代价去选择
+最合适的算子嘛对吧
+那如果我的代价足够小
+并且能够满足分发条件
+那这肯定是最优解啊
+To distid batch
+它是将一个批处理的物理执行计划
+转换成分布式批处理计划啊
+注意啊
+这是物理计划面向物理计划
+然后呢它提供了两个方式啊
+你可以实现two distribute
+或者实现two distribute weather required
+那这里面的order和require distribution呢
+其实我们前面都讲过了
+这边就不重复展开了
+然后是two pb啊
+这里面其实包含了两个treat
+PB的全称叫pose body
+就是post
+这个护旗跟pto buffer是沾点边的
+所以这块我们就不展开了
+to local batch啊
+将批量物理执行计划转换成本地执行计划
+认真听讲的同学已经可以猜到里面的内容了
+那第一个方法就是to local
+还有一个就是我自order require
+这个也没什么好展开的
+predicate push down啊
+对数据库有点了解的同学都知道啊
+位次下推嘛
+那上面注释也写的很明白
+我这边就不展开讲了
+最后一个是any plan old metal
+它是所有plan NO的父类啊
+然后这里面有个很有意思的概念叫object safe
+这是什么意思呢
+如果你没写dynamic trade这种方式呢
+这意味着它的一些调用
+在编译器是可以确定的啊
+如果你是用dynamic trade
+它在编译器的话是没法确定的啊
+就跟C加加里面的虚函数一样
+那接下来我们来看plan node的具体实现啊
+可以看到实现有非常多
+我们随便跳转一下
+会发现跳转到这里啊
+一脸懵逼
+那这个four of plannotes加以感叹
+其实是一个红哦
+它用于迭代所有类型的计划节点啊
+并对每个节点呢实现employment and plan node
+这么说其实并不好理解
+我们把两个时间都给看一遍就行了
+我们先看一下这里面实现
+再看一看employment plan node的实现
+一下就恍然大悟了啊
+那这个宏呢是用于批量实现plan node trade啊
+它接受多个元组作为参数
+然后每个元组里面包含了两个参数啊
+conversion和name
+那这个红呢就会有每个组合生成对应的空方法
+那么话说回来啊
+for all plan notes里面方法如果通过代码来生成的
+那还是比较优雅的
+那如果是手写的话
+其实我觉得大可不必吧
+或者大差不差吧
+接下来我们来讲一下stream fragment graph
+那为了方便大家快速理解呢
+我这边直接讲一下spring fragment
+这个fragment
+可以理解为是一个独立的最小计算单元
+里面维护了上游
+还有本地表啊
+本地node的一些信息
+所以说spring freedom graph
+就是把这些计算单元组织起来的一张图
+接下来我们来看build stream job啊
+那在经过处理以后呢
+string freegraph会变成complete spring freem graph
+那在这里呢可以简单理解为
+它是根据集群的已有信息加强过的stream free graph
+比如考虑优化视图是否能够重用等等
+那这里提到的actor graph
+builder result用什么呢
+好那首先呢actor它是一个通信模型啊
+那这一层呢更加关注actor之间的关系
+actor和fragment之间的关系
+那最后一层就是string job fragments
+那到这一层呢
+其实已经非常接近运行态的数据结构了
+他会关注自身的一些状态
+以及一些并发的一些细节好
+那今天内容就到这里了
+那为了方便大家回应呢
+我把小杰给放上来
+那在后面的内容中呢
+我会和大家一起去剖析底层的执行细节
+大家有什么想法或者要求呢
+也可以在评论区留言讨论

@@ -1,0 +1,64 @@
+大家好
+这里是狗哥
+上期讲流计算里面状态处理啊
+有老粉能找到
+想让我讲讲count distinct
+也有粉丝呢想让我讲讲rising wave里面的实现
+不急我们一个个来
+今天先讲FLINK里面count distinct是怎么实现的
+那按照国际惯例呢
+我们先扔出简易版的代码地图
+那前面几个我们就不展开讲了
+有兴趣的同学可以自己翻阅
+或者大家可以多多三连支持
+我也会继续更新相关内容
+那如果好学同学实在等不住呢
+也可以加入我的星球
+这篇内容会在星球里面做更详细的加餐
+众所周知呢
+FLINK算子真正逻辑往放在什么什么function里面
+operator就是上面套一层啊
+那我们从代码上来看呢
+逻辑还是比较简单的
+不涉及一些复杂的状态变化
+这个时候就有机制的同学会说了
+可能逻辑在父类里面
+那我们点开看一下
+也不是那熟悉FLINK内部机制的同学肯定知道啊
+流数据是有不同类型的
+比如accumulator retract
+那真正的代码在这里啊
+所以这个aggregation的逻辑
+其实就是分了三层啊
+group agree function继承自key的processor function
+那这个access data呢就存储每个key的累加器内部类
+Think data
+group agree helper桥接到业务逻辑
+那group agree helper呢主要是聚合逻辑编排啊
+处理不同人看的输入
+决定输出消息类型
+管理状态更新和清理
+Agree handle function
+它就是做具体的聚合计算的哦
+比如他这里可以创建累加器
+也可以累加输入啊
+撤回输入以及去获取聚合的结果
+那柔看的这块大家应该都挺熟了
+我就不讲了
+record counter也挺有意思的
+它主要的就是用来判断当前key是否还有有效
+比如accumulation record counter啊
+它是appena only流的永远返回false啊
+记录数永不为零嘛
+Retraction record counter
+而包含撤回的流
+他会去检查累加器里面count星字段是否为零
+Index of counter stop
+指定count星在累加器中的位置
+那今天内容相当于带大家过了一遍代码啊
+并没有说的很深
+那如果大家希望我讲的更深的
+也可以多多三连鼓励我
+最后这里是狗哥一名热爱读源码的工程师
+关注我
+学习更多的硬核大数据知识

@@ -1,14 +1,14 @@
 {
   "name": "loop-bilibili/data/subtitles",
   "description": "Packed Bilibili UP subtitles (SRT + slim index)",
-  "packed_at": "2026-07-23T17:09:39.500903+00:00",
-  "up_count": 14,
-  "ok_total": 902,
-  "empty_total": 77,
+  "packed_at": "2026-07-23T18:59:35.207632+00:00",
+  "up_count": 17,
+  "ok_total": 1035,
+  "empty_total": 219,
   "error_total": 12,
-  "cues_total": 300555,
-  "srt_bytes_total": 21350119,
-  "txt_bytes_total": 10842129,
+  "cues_total": 316830,
+  "srt_bytes_total": 22466947,
+  "txt_bytes_total": 11401692,
   "layout": {
     "ups": "ups/{mid}-{name}/",
     "index": "index.jsonl",
@@ -33,6 +33,15 @@
       "empty_count": 39,
       "total_cues": 8677,
       "path": "ups/1595797-赵扶风-1942型"
+    },
+    {
+      "slug": "162183-原子能",
+      "mid": "162183",
+      "name": "原子能",
+      "ok_count": 0,
+      "empty_count": 84,
+      "total_cues": 0,
+      "path": "ups/162183-原子能"
     },
     {
       "slug": "2071007724-海安雨",
@@ -98,6 +107,15 @@
       "path": "ups/3546588152597451-北歌AIGC"
     },
     {
+      "slug": "3546739107695411-抽象狗哥",
+      "mid": "3546739107695411",
+      "name": "抽象狗哥",
+      "ok_count": 133,
+      "empty_count": 12,
+      "total_cues": 16275,
+      "path": "ups/3546739107695411-抽象狗哥"
+    },
+    {
       "slug": "3546804396230870-码里奥Ziho",
       "mid": "3546804396230870",
       "name": "码里奥Ziho",
@@ -132,6 +150,15 @@
       "empty_count": 3,
       "total_cues": 22956,
       "path": "ups/499725296-AI扫地曾"
+    },
+    {
+      "slug": "61214429-明文传输不",
+      "mid": "61214429",
+      "name": "明文传输不",
+      "ok_count": 0,
+      "empty_count": 46,
+      "total_cues": 0,
+      "path": "ups/61214429-明文传输不"
     },
     {
       "slug": "79356601-随意Official",
