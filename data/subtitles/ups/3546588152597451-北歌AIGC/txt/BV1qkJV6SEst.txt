@@ -1,0 +1,319 @@
+Bueno, permítanme que me presente primero.
+Y yo soy Ryan.
+Actualmente, me dedico a la construcción de las capacidades fundamentales de la IA para plataformas en la industria de los seguros.
+Y actualmente estoy en Pekín.
+Y bueno, en mi caso, quiero compartir un producto que he desarrollado.
+Es un producto del tipo mascota de escritorio.
+También en este campamento de vibe coding.
+que es lo que hice.
+Y bueno, la presentación de hoy...
+Principalmente, lo que voy a hacer es...
+Primero, lo haré desde la perspectiva de un análisis del producto.
+Y luego, principalmente, compartiré el proceso creativo detrás de esto.
+Y para terminar, vamos a ver una demostración en directo.
+Esta es la mascota de escritorio.
+y hacer una demostración en vivo.
+Entonces, ¿por qué existe una herramienta como esta?
+Bueno, es que yo, y sobre todo cuando estoy haciendo este tipo de tareas...
+Este Codex y este Claude Code,
+y al alternar entre ellos,
+Es posible que estén ejecutando tareas diferentes al mismo tiempo.
+Y en ese momento de transición,
+Es posible que justo acabe de cambiar de tarea.
+y entonces te aparecerá una ventana para que lo confirmes.
+Entonces, en una situación como esta,
+no sabes cuándo necesitas confirmar.
+Así que tienes que estar pendiente de él todo el tiempo.
+o tener que estar cambiando de ventana una y otra vez después de haberlas dejado.
+Y en medio de toda esta fricción,
+Es decir, se acaba generando una situación de mucha ansiedad.
+Así que mi idea es usar esta mascota de escritorio para, mmm, mediante esta forma de visualización...
+eh... mediante este método de visualización, eh...
+para solucionar este problema durante las tareas largas,
+este problema de los puntos ciegos en la percepción.
+Así que de ahí surgió este producto, la mascota de escritorio.
+Y en cuanto a sus usuarios...
+Mi objetivo son precisamente este tipo de profesionales, los que trabajamos de forma dinámica y multitarea.
+Es decir, tenemos muchas tareas de IA ejecutándose en segundo plano.
+y al mismo tiempo, tenemos que hacer otras cosas.
+mientras gestionamos otras ventanas.
+al hacer este tipo de cambio,
+Entonces, para eso necesitamos este...
+una herramienta de este tipo que lo visualiza todo
+para así reducir el coste de supervisión del estado en las multitareas.
+Así que, se trata de solucionar este problema de atención.
+Ah, y bueno, las notificaciones normales...
+Como por ejemplo, lo que acaba de lanzarse ahora mismo en Claude Code.
+Es decir, una vez que la tarea se ha completado,
+te aparecerá una notificación como esta en la esquina superior derecha.
+Además, este aviso está en inglés.
+Es decir, en un entorno donde el idioma es nuestro nativo,
+La verdad es que, al ver algo así,
+La primera reacción es no querer leerlo, esa es la situación.
+Por lo tanto, su capacidad de notificación es, digamos, bastante débil.
+Así que se me ocurrió la idea de crear algo como esto.
+Así, de un solo vistazo, podemos verlo.
+y que además te dé esa sensación de compañía.
+y que además pueda mejorar tu estado de ánimo.
+un producto de este tipo, una mascota de escritorio que te hace compañía.
+Por eso, no está en la barra de estado.
+o en forma de notificación para reflejar el estado de la tarea.
+Así que lo que hace es desglosar estos estados.
+y así reducir la carga cognitiva.
+Por lo tanto, nuestro producto se posiciona, en cuanto a la cantidad, de la siguiente manera.
+Por ahora, me he centrado en cuatro.
+Porque, por ejemplo, también está Codex.
+En sí mismo, ya viene con esta función integrada de mascota.
+Dentro de la aplicación, puedes elegir la mascota que más te guste.
+Y por ahora, puede que haya menos de 200 mascotas de este tipo.
+para que puedas elegir.
+Pero, en una situación de elección como esta,
+Todos son de un solo tipo.
+Entonces, en el caso de que sea una sola mascota,
+Cuando lo estás usando, sigues teniendo que...
+Tienes que confirmar.
+Es decir, distinguir su estado de funcionamiento actual.
+es decir, qué tipo de mensaje te está enviando.
+cuando estás trabajando con múltiples ventanas,
+cuando estás haciendo varias tareas a la vez,
+y además te distrae.
+Entonces, esto en realidad es también, o sea, um...
+pero en mi opinión, quizás no había ninguna que fuera realmente útil.
+Es una situación como esta.
+Así que, con nuestro producto,
+Es decir, el usuario solo tiene que ver cuál de ellos es,
+nuestra mascota se está moviendo,
+Así, podrá saber de inmediato qué está pasando.
+cuando una tarea larga está en curso.
+¿Qué ha pasado?
+Así que se nos ocurrió esta idea:
+Cuatro mascotas para cuatro estados diferentes.
+Entonces, el primero de ellos se encargará de...
+Veamos qué tarea está ejecutando nuestro Codex, o sea, Claude Code.
+Es decir, si está ejecutando una tarea,
+Es decir, este es el primero.
+El suricata te responderá con una acción.
+Cuando necesites confirmar algo,
+El segundo suricata te lo hará saber de esta forma, agitando una campana.
+Así que te lo recuerda para que confirmes.
+Luego, el tercero... bueno, en realidad el orden de estos dos está invertido.
+Es decir, el tercero debería celebrar que has terminado.
+Es decir, que nuestra tarea ha terminado.
+y te lanzará confeti.
+Y así te avisa de que hemos completado una tarea.
+Puedes volver directamente para comprobarlo.
+Y por último, está el tema de cuando estamos en el trabajo.
+incluida la empresa.
+Todos los días, cada dos horas, ponen una especie de aviso por los altavoces para hacer gimnasia.
+o para recordarte que te levantes a descansar un poco.
+Así que aquí también he configurado uno.
+Te recuerda que te levantes a beber agua cada 45 minutos.
+Así que, por ahora, tenemos cuatro suricatas.
+Y además de esta forma que tiene,
+Además de la cantidad, también hemos configurado para cada uno de ellos...
+eh...
+Es decir, cada uno tiene su propia personalidad.
+Por ejemplo, nuestro primer personaje, Scout, tiene...
+Es extremadamente responsable.
+Entonces, se mantendrá alerta.
+Su función es vigilar en todo momento el estado de nuestro Claude Code.
+Por eso, para este...
+Así que le hemos dado un accesorio como este, un súper-telescopio.
+Luego, en el caso del segundo,
+Es decir, cuando está esperando a que se confirme algo.
+Lleva una campana.
+Así que esto es lo que le hemos dado,
+le hemos asignado este aspecto específico.
+Es decir, la personalidad.
+Y bueno, esta personalidad... esta configuración, por ahora, se utiliza para...
+y así se genera la imagen que corresponde a su personaje.
+Y en cuanto al proceso creativo,
+Porque esto también es un proyecto de vibe coding.
+Entonces, lo que hicimos fue discutir con la IA sobre nuestro...
+Después del PRD,
+Necesitamos ponerlo en marcha para ver si funciona.
+Entonces, como se trata de un producto del tipo mascota de escritorio,
+En realidad, sus recursos gráficos son muy extensos.
+En la estructura de este producto,
+Por eso, mi primer paso fue usar marcadores de posición.
+para validar el flujo de trabajo.
+La idea es que los recursos gráficos no se conviertan en un obstáculo.
+que obstaculice el desarrollo de este producto.
+el paso clave
+Así que primero usé estos marcadores de posición para representar a las cuatro suricatas.
+Y luego, hice que pudiera leer el proceso de Claude Code.
+Y a través de los cambios en esta máquina de estados,
+para asegurarme de que la estructura principal de mi producto fuera viable.
+Es decir, este es el mecanismo que he programado para él.
+Es algo que se puede lograr.
+Entonces, el siguiente paso es...
+y luego invertir en él.
+Si esta cadena de procesos funciona,
+entonces invertiré en mis recursos de arte.
+Así que, a través de este principio de primeros principios,
+Tengo que hacer que este MVP funcione.
+Luego, el segundo paso
+Es decir, voy a reemplazarlo con los recursos gráficos reales.
+el marcador de posición que había configurado en el producto.
+Y los recursos gráficos no alteran la secuencia de eventos.
+Solo se reemplaza la capa visual.
+Entonces, esto significa que solo hay que reemplazar los recursos gráficos.
+Y con eso es suficiente.
+Y esta parte la hice a través de una "skill".
+Es a través de este Hatch Pet en Codex.
+Lo hice con una skill de este tipo.
+Y luego, a la izquierda,
+He pegado aquí algunas de las descripciones de esta skill.
+Es decir, cuando esta skill genera a la mascota,
+Por defecto, se dividirá en los siguientes aspectos.
+Por ejemplo, el estado IDLE es su estado básico.
+Luego tiene un gesto de saludar con la mano.
+o cuando hay un premio, que es la acción de saltar.
+y la animación de fracaso.
+Esperando a que se ejecute.
+incluida esta revisión.
+Es decir, estos estados están configurados por defecto en la 'skill'.
+Pero en realidad, como en nuestro primer paso,
+Lo que hicimos fue darle a cada suricata...
+A cada suricata se le ha asignado una personalidad diferente.
+Entonces, esta personalidad, en realidad, hará que tenga diferentes...
+el diseño de los movimientos de este personaje.
+Entonces, para eso, necesitamos valernos de esta habilidad.
+Pero no dependemos de esta habilidad.
+Es decir, vamos a integrar su 'soul' y la configuración de sus personajes de manera unificada.
+Pero sí hacemos que siga la lógica de esta habilidad para realizar la tarea.
+Pero, mmm, no lo dejamos...
+Es decir, lo integramos con nuestra 'soul' y sus acciones.
+para generar diferentes posturas.
+Así que, a través de este método...
+De esta manera, obtuvimos una gran cantidad de recursos gráficos.
+incluyendo la animación.
+Actualmente, contamos con recursos gráficos para una animación de aproximadamente 288 fotogramas.
+En esta mascota,
+Y así, cada movimiento se ajusta mejor a la personalidad de su personaje.
+El diseño de esta alma...
+Entonces, mientras está escaneando,
+Se pondrá a observar todo el tiempo con su súper-telescopio.
+Y cuando lo confirmas, te toca una campana.
+Si lo ignoras durante mucho tiempo,
+se pondrá a saltar sin parar.
+para volver a recordártelo.
+Y luego está este, Bubbles.
+Normalmente, su estado es durmiendo.
+Y cada 45 minutos, se levanta para beber agua.
+y te recuerda que tú también bebas agua.
+Y luego está Pip,
+Es decir, cuando se completa una tarea,
+y se pondrá a lanzar confeti y a bailar.
+Es decir, esto se corresponde con la personalidad que tiene asignada y sus acciones.
+Espera, dejemos eso para el final.
+Ahora vamos a hacer una demostración de todo el conjunto.
+Y bueno, vamos a ver cuál es el estado actual del proyecto.
+Eh, el estado...
+Bueno, y ahora mismo, la verdad es que todavía hay algunas cosas que no están del todo bien.
+Porque es un...
+Podríamos decir que esto es un resultado de una fase inicial.
+Bueno, esto es porque actualmente lo hemos configurado con dos tamaños.
+Es decir, hay un tamaño grande y uno pequeño.
+para adaptarse a los diferentes tamaños de pantalla.
+Así que, al hacer este ajuste de tamaño,
+A veces, puede aparecer esta ventana transparente.
+surge este problema con el fondo.
+Y luego, tenemos a nuestro suricata.
+Es un concepto basado en una familia.
+Así que, más adelante, cuando se añadan nuevas funciones,
+iremos incorporando nuevos personajes.
+Es decir, nuestra idea es que, al final, es posible que se quede en la parte inferior de tu escritorio.
+habrá toda una fila
+Y así formar este tipo de modelo, un modelo familiar.
+y así formar nuestra propia familia de suricatos.
+Y su valor reside en sí mismo. No se trata de la mascota de escritorio en sí, sino de demostrar este concepto.
+Eh...
+Es decir, podemos empezar desde una idea.
+Y luego, a través de una herramienta de IA como el "vibe coding".
+y luego ponerlo en línea.
+y luego, estar dispuesto a abrirlo.
+Y luego, dar un paso más allá.
+Así que, en realidad, esto es una especie de...
+No es solo una prueba,
+sino más bien un experimento en el camino de la IA.
+Y para terminar, como último punto de esta presentación...
+Bueno, me gustaría agradecer este tipo de...
+la orientación de todos los profesores.
+Y aquí me gustaría citar una frase del profesor icoder.
+Es decir, ¡aquí no hay pared!
+Así que espero que todos puedan ponerse en marcha lo antes posible para empezar a usarla.
+De esta forma, nuestro "vibe coding"...
+Y bueno, ahora les voy a mostrar nuestro...
+eh... para empezar.
+Por ejemplo, ahora mismo voy a iniciarlo.
+Vamos a echarle un vistazo, a probarlo.
+Y luego, está la monitorización.
+Ahora puede monitorear nuestro terminal.
+Y también funciona con nuestro escritorio.
+Y este es el estado de la conversación.
+También puede monitorizarlo.
+No se limita solo a la terminal.
+Y en cuanto a esto,
+Actualmente, he desarrollado algunas funciones.
+Por ejemplo, una función como la de acoplarse a los bordes.
+Es decir, cuando se acerca al borde del escritorio,
+o cuando se acerca a los bordes.
+Se adherirá automáticamente a la parte superior de este borde.
+De esta forma, no tenemos que hacerlo nosotros.
+y así satisfacer esa *** por la alineación.
+Luego, al arrastrarlo,
+Cuando lo arrastras hacia la izquierda o hacia la derecha,
+y tendrá una animación que se moverá hacia la izquierda y hacia la derecha.
+Y cuando haces doble clic,
+independientemente de la posición en la que se encuentre,
+Entonces se moverá hacia aquí, y todos nos reuniremos en este mismo lugar.
+Y luego se ordenan secuencialmente.
+Entonces, por ejemplo, podemos pedirle que ejecute alguna tarea.
+A ver, ¿qué tiempo hace hoy?
+Y bueno, en este momento, mientras se está ejecutando la tarea,
+incluida la versión para escritorio.
+Es capaz de detectarlo.
+Así que, como pueden ver, aquí tenemos al primero.
+Ya ha empezado a investigar.
+Mientras corre,
+realizará la acción correspondiente.
+Así que ya sabes
+Por ejemplo, si vuelvo a nuestra presentación de PowerPoint...
+Así ya no necesitas mirar.
+Así ya sabes en qué estado se encuentra.
+Y el segundo, ahora está tocando la campana.
+Así que solo es este el momento en el que necesitas confirmar algo.
+Entonces sabes, "Ah, ya puedo volver".
+Así, a través de esta figura visual,
+y de forma considerable
+reducir esa dispersión de tu atención.
+En cuanto a su uso,
+Así que, mmm, creo que esto podría ser el activo artístico y el...
+Así que, en cuanto a su uso, sí que tiene cierto valor, ¿no?
+Si tiene cierto valor,
+Se podría decir que...
+Y luego, el segundo te está avisando.
+Tengo una tarea que necesita tu confirmación.
+Y si no lo confirmas,
+Te estará diciendo que vayas a confirmar.
+Y luego, por ejemplo, cuando la tarea se completa,
+Y ahora, veamos el estado del tercer personaje.
+Y ahora ves que el segundo también está confirmando.
+Y bueno, actualmente, este proyecto ya está disponible de forma gratuita en GitHub.
+Así que pueden descargarlo para probarlo y jugar un poco con él.
+Porque ahora mismo, cada uno tiene unas 9 animaciones.
+Así que no voy a mostrar más detalles.
+Así que espero que lo usen y lo exploren por ustedes mismos.
+Y después de dos minutos...
+Si en tu Claude Code no se produce esta conversación,
+o si se ha quedado en silencio.
+Entonces, aparte del primero,
+las otras tres se pondrán a dormir juntas.
+Y luego, como puedes ver, el tercero empieza a lanzar confeti.
+Y así, de forma coordinada, te avisa de que tu tarea ha sido completada.
+Puedes volver para echar un vistazo.
+Bueno, por ahora...
+Y bueno, esta es a grandes rasgos la idea del producto.
+Y bueno, hasta aquí llega más o menos la presentación.
+Y bueno, eso es más o menos todo.

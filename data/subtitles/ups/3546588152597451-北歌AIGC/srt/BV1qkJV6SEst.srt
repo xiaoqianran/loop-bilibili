@@ -1,0 +1,1275 @@
+1
+00:00:00,460 --> 00:00:03,180
+Bueno, permítanme que me presente primero.
+
+2
+00:00:03,180 --> 00:00:03,900
+Y yo soy Ryan.
+
+3
+00:00:03,900 --> 00:00:09,309
+Actualmente, me dedico a la construcción de las capacidades fundamentales de la IA para plataformas en la industria de los seguros.
+
+4
+00:00:09,309 --> 00:00:10,820
+Y actualmente estoy en Pekín.
+
+5
+00:00:10,820 --> 00:00:13,320
+Y bueno, en mi caso, quiero compartir un producto que he desarrollado.
+
+6
+00:00:13,320 --> 00:00:15,620
+Es un producto del tipo mascota de escritorio.
+
+7
+00:00:15,620 --> 00:00:17,900
+También en este campamento de vibe coding.
+
+8
+00:00:17,900 --> 00:00:20,290
+que es lo que hice.
+
+9
+00:00:20,290 --> 00:00:22,490
+Y bueno, la presentación de hoy...
+
+10
+00:00:22,490 --> 00:00:23,910
+Principalmente, lo que voy a hacer es...
+
+11
+00:00:23,910 --> 00:00:27,790
+Primero, lo haré desde la perspectiva de un análisis del producto.
+
+12
+00:00:27,790 --> 00:00:30,870
+Y luego, principalmente, compartiré el proceso creativo detrás de esto.
+
+13
+00:00:30,870 --> 00:00:33,430
+Y para terminar, vamos a ver una demostración en directo.
+
+14
+00:00:33,430 --> 00:00:36,700
+Esta es la mascota de escritorio.
+
+15
+00:00:36,700 --> 00:00:39,019
+y hacer una demostración en vivo.
+
+16
+00:00:39,259 --> 00:00:41,259
+Entonces, ¿por qué existe una herramienta como esta?
+
+17
+00:00:41,259 --> 00:00:45,359
+Bueno, es que yo, y sobre todo cuando estoy haciendo este tipo de tareas...
+
+18
+00:00:45,359 --> 00:00:47,759
+Este Codex y este Claude Code,
+
+19
+00:00:47,759 --> 00:00:50,919
+y al alternar entre ellos,
+
+20
+00:00:50,919 --> 00:00:53,580
+Es posible que estén ejecutando tareas diferentes al mismo tiempo.
+
+21
+00:00:53,580 --> 00:00:55,940
+Y en ese momento de transición,
+
+22
+00:00:55,940 --> 00:00:57,340
+Es posible que justo acabe de cambiar de tarea.
+
+23
+00:00:57,340 --> 00:00:59,680
+y entonces te aparecerá una ventana para que lo confirmes.
+
+24
+00:00:59,680 --> 00:01:01,120
+Entonces, en una situación como esta,
+
+25
+00:01:01,120 --> 00:01:03,520
+no sabes cuándo necesitas confirmar.
+
+26
+00:01:03,520 --> 00:01:06,609
+Así que tienes que estar pendiente de él todo el tiempo.
+
+27
+00:01:06,609 --> 00:01:08,649
+o tener que estar cambiando de ventana una y otra vez después de haberlas dejado.
+
+28
+00:01:08,649 --> 00:01:11,049
+Y en medio de toda esta fricción,
+
+29
+00:01:11,049 --> 00:01:14,260
+Es decir, se acaba generando una situación de mucha ansiedad.
+
+30
+00:01:14,260 --> 00:01:18,360
+Así que mi idea es usar esta mascota de escritorio para, mmm, mediante esta forma de visualización...
+
+31
+00:01:18,360 --> 00:01:22,300
+eh... mediante este método de visualización, eh...
+
+32
+00:01:22,300 --> 00:01:25,199
+para solucionar este problema durante las tareas largas,
+
+33
+00:01:25,199 --> 00:01:27,119
+este problema de los puntos ciegos en la percepción.
+
+34
+00:01:27,119 --> 00:01:31,799
+Así que de ahí surgió este producto, la mascota de escritorio.
+
+35
+00:01:32,210 --> 00:01:36,010
+Y en cuanto a sus usuarios...
+
+36
+00:01:36,010 --> 00:01:39,750
+Mi objetivo son precisamente este tipo de profesionales, los que trabajamos de forma dinámica y multitarea.
+
+37
+00:01:39,750 --> 00:01:42,090
+Es decir, tenemos muchas tareas de IA ejecutándose en segundo plano.
+
+38
+00:01:42,090 --> 00:01:44,150
+y al mismo tiempo, tenemos que hacer otras cosas.
+
+39
+00:01:44,150 --> 00:01:46,750
+mientras gestionamos otras ventanas.
+
+40
+00:01:46,750 --> 00:01:48,750
+al hacer este tipo de cambio,
+
+41
+00:01:48,750 --> 00:01:51,420
+Entonces, para eso necesitamos este...
+
+42
+00:01:51,420 --> 00:01:52,880
+una herramienta de este tipo que lo visualiza todo
+
+43
+00:01:52,880 --> 00:01:58,020
+para así reducir el coste de supervisión del estado en las multitareas.
+
+44
+00:01:58,020 --> 00:02:01,560
+Así que, se trata de solucionar este problema de atención.
+
+45
+00:02:01,560 --> 00:02:03,200
+Ah, y bueno, las notificaciones normales...
+
+46
+00:02:03,200 --> 00:02:06,000
+Como por ejemplo, lo que acaba de lanzarse ahora mismo en Claude Code.
+
+47
+00:02:06,000 --> 00:02:07,640
+Es decir, una vez que la tarea se ha completado,
+
+48
+00:02:07,640 --> 00:02:10,160
+te aparecerá una notificación como esta en la esquina superior derecha.
+
+49
+00:02:10,160 --> 00:02:13,460
+Además, este aviso está en inglés.
+
+50
+00:02:13,460 --> 00:02:17,000
+Es decir, en un entorno donde el idioma es nuestro nativo,
+
+51
+00:02:17,000 --> 00:02:18,320
+La verdad es que, al ver algo así,
+
+52
+00:02:18,320 --> 00:02:21,600
+La primera reacción es no querer leerlo, esa es la situación.
+
+53
+00:02:21,600 --> 00:02:24,700
+Por lo tanto, su capacidad de notificación es, digamos, bastante débil.
+
+54
+00:02:24,700 --> 00:02:27,350
+Así que se me ocurrió la idea de crear algo como esto.
+
+55
+00:02:27,350 --> 00:02:29,310
+Así, de un solo vistazo, podemos verlo.
+
+56
+00:02:29,310 --> 00:02:32,120
+y que además te dé esa sensación de compañía.
+
+57
+00:02:32,120 --> 00:02:35,180
+y que además pueda mejorar tu estado de ánimo.
+
+58
+00:02:35,180 --> 00:02:40,050
+un producto de este tipo, una mascota de escritorio que te hace compañía.
+
+59
+00:02:40,050 --> 00:02:42,850
+Por eso, no está en la barra de estado.
+
+60
+00:02:42,850 --> 00:02:46,590
+o en forma de notificación para reflejar el estado de la tarea.
+
+61
+00:02:46,590 --> 00:02:50,250
+Así que lo que hace es desglosar estos estados.
+
+62
+00:02:50,250 --> 00:02:52,850
+y así reducir la carga cognitiva.
+
+63
+00:02:52,850 --> 00:02:57,230
+Por lo tanto, nuestro producto se posiciona, en cuanto a la cantidad, de la siguiente manera.
+
+64
+00:02:57,230 --> 00:03:00,090
+Por ahora, me he centrado en cuatro.
+
+65
+00:03:00,090 --> 00:03:02,240
+Porque, por ejemplo, también está Codex.
+
+66
+00:03:02,240 --> 00:03:05,940
+En sí mismo, ya viene con esta función integrada de mascota.
+
+67
+00:03:05,940 --> 00:03:08,660
+Dentro de la aplicación, puedes elegir la mascota que más te guste.
+
+68
+00:03:08,660 --> 00:03:11,580
+Y por ahora, puede que haya menos de 200 mascotas de este tipo.
+
+69
+00:03:11,580 --> 00:03:13,170
+para que puedas elegir.
+
+70
+00:03:13,170 --> 00:03:15,290
+Pero, en una situación de elección como esta,
+
+71
+00:03:15,290 --> 00:03:16,590
+Todos son de un solo tipo.
+
+72
+00:03:16,590 --> 00:03:19,490
+Entonces, en el caso de que sea una sola mascota,
+
+73
+00:03:19,490 --> 00:03:21,980
+Cuando lo estás usando, sigues teniendo que...
+
+74
+00:03:21,980 --> 00:03:23,780
+Tienes que confirmar.
+
+75
+00:03:23,780 --> 00:03:26,860
+Es decir, distinguir su estado de funcionamiento actual.
+
+76
+00:03:26,860 --> 00:03:28,520
+es decir, qué tipo de mensaje te está enviando.
+
+77
+00:03:28,520 --> 00:03:31,310
+cuando estás trabajando con múltiples ventanas,
+
+78
+00:03:31,310 --> 00:03:34,090
+cuando estás haciendo varias tareas a la vez,
+
+79
+00:03:34,090 --> 00:03:35,730
+y además te distrae.
+
+80
+00:03:35,730 --> 00:03:39,700
+Entonces, esto en realidad es también, o sea, um...
+
+81
+00:03:39,700 --> 00:03:42,980
+pero en mi opinión, quizás no había ninguna que fuera realmente útil.
+
+82
+00:03:42,980 --> 00:03:44,200
+Es una situación como esta.
+
+83
+00:03:44,200 --> 00:03:46,220
+Así que, con nuestro producto,
+
+84
+00:03:46,220 --> 00:03:48,780
+Es decir, el usuario solo tiene que ver cuál de ellos es,
+
+85
+00:03:48,780 --> 00:03:51,680
+nuestra mascota se está moviendo,
+
+86
+00:03:51,680 --> 00:03:54,460
+Así, podrá saber de inmediato qué está pasando.
+
+87
+00:03:54,460 --> 00:03:57,440
+cuando una tarea larga está en curso.
+
+88
+00:03:57,440 --> 00:03:58,880
+¿Qué ha pasado?
+
+89
+00:03:59,140 --> 00:04:01,480
+Así que se nos ocurrió esta idea:
+
+90
+00:04:01,480 --> 00:04:05,060
+Cuatro mascotas para cuatro estados diferentes.
+
+91
+00:04:05,060 --> 00:04:07,830
+Entonces, el primero de ellos se encargará de...
+
+92
+00:04:07,830 --> 00:04:12,500
+Veamos qué tarea está ejecutando nuestro Codex, o sea, Claude Code.
+
+93
+00:04:12,500 --> 00:04:14,620
+Es decir, si está ejecutando una tarea,
+
+94
+00:04:14,620 --> 00:04:16,940
+Es decir, este es el primero.
+
+95
+00:04:16,940 --> 00:04:19,820
+El suricata te responderá con una acción.
+
+96
+00:04:19,820 --> 00:04:21,220
+Cuando necesites confirmar algo,
+
+97
+00:04:21,220 --> 00:04:25,330
+El segundo suricata te lo hará saber de esta forma, agitando una campana.
+
+98
+00:04:25,330 --> 00:04:27,430
+Así que te lo recuerda para que confirmes.
+
+99
+00:04:27,430 --> 00:04:30,300
+Luego, el tercero... bueno, en realidad el orden de estos dos está invertido.
+
+100
+00:04:30,300 --> 00:04:32,780
+Es decir, el tercero debería celebrar que has terminado.
+
+101
+00:04:32,780 --> 00:04:34,020
+Es decir, que nuestra tarea ha terminado.
+
+102
+00:04:34,020 --> 00:04:35,190
+y te lanzará confeti.
+
+103
+00:04:35,190 --> 00:04:38,910
+Y así te avisa de que hemos completado una tarea.
+
+104
+00:04:38,910 --> 00:04:40,170
+Puedes volver directamente para comprobarlo.
+
+105
+00:04:40,170 --> 00:04:43,810
+Y por último, está el tema de cuando estamos en el trabajo.
+
+106
+00:04:43,810 --> 00:04:44,790
+incluida la empresa.
+
+107
+00:04:44,790 --> 00:04:48,780
+Todos los días, cada dos horas, ponen una especie de aviso por los altavoces para hacer gimnasia.
+
+108
+00:04:48,780 --> 00:04:51,700
+o para recordarte que te levantes a descansar un poco.
+
+109
+00:04:51,700 --> 00:04:53,480
+Así que aquí también he configurado uno.
+
+110
+00:04:53,480 --> 00:04:56,870
+Te recuerda que te levantes a beber agua cada 45 minutos.
+
+111
+00:04:56,870 --> 00:05:00,590
+Así que, por ahora, tenemos cuatro suricatas.
+
+112
+00:05:00,590 --> 00:05:04,870
+Y además de esta forma que tiene,
+
+113
+00:05:04,870 --> 00:05:07,720
+Además de la cantidad, también hemos configurado para cada uno de ellos...
+
+114
+00:05:07,720 --> 00:05:10,500
+eh...
+
+115
+00:05:10,500 --> 00:05:14,560
+Es decir, cada uno tiene su propia personalidad.
+
+116
+00:05:14,560 --> 00:05:16,740
+Por ejemplo, nuestro primer personaje, Scout, tiene...
+
+117
+00:05:16,740 --> 00:05:19,370
+Es extremadamente responsable.
+
+118
+00:05:19,370 --> 00:05:20,830
+Entonces, se mantendrá alerta.
+
+119
+00:05:20,830 --> 00:05:25,210
+Su función es vigilar en todo momento el estado de nuestro Claude Code.
+
+120
+00:05:25,210 --> 00:05:26,890
+Por eso, para este...
+
+121
+00:05:26,890 --> 00:05:29,350
+Así que le hemos dado un accesorio como este, un súper-telescopio.
+
+122
+00:05:29,350 --> 00:05:30,690
+Luego, en el caso del segundo,
+
+123
+00:05:30,690 --> 00:05:32,920
+Es decir, cuando está esperando a que se confirme algo.
+
+124
+00:05:32,920 --> 00:05:33,840
+Lleva una campana.
+
+125
+00:05:33,840 --> 00:05:35,820
+Así que esto es lo que le hemos dado,
+
+126
+00:05:35,820 --> 00:05:38,580
+le hemos asignado este aspecto específico.
+
+127
+00:05:38,580 --> 00:05:40,380
+Es decir, la personalidad.
+
+128
+00:05:40,380 --> 00:05:46,040
+Y bueno, esta personalidad... esta configuración, por ahora, se utiliza para...
+
+129
+00:05:46,040 --> 00:05:50,060
+y así se genera la imagen que corresponde a su personaje.
+
+130
+00:05:50,660 --> 00:05:52,780
+Y en cuanto al proceso creativo,
+
+131
+00:05:52,780 --> 00:05:56,620
+Porque esto también es un proyecto de vibe coding.
+
+132
+00:05:56,620 --> 00:06:01,270
+Entonces, lo que hicimos fue discutir con la IA sobre nuestro...
+
+133
+00:06:01,270 --> 00:06:03,150
+Después del PRD,
+
+134
+00:06:03,150 --> 00:06:05,230
+Necesitamos ponerlo en marcha para ver si funciona.
+
+135
+00:06:05,230 --> 00:06:09,010
+Entonces, como se trata de un producto del tipo mascota de escritorio,
+
+136
+00:06:09,010 --> 00:06:11,570
+En realidad, sus recursos gráficos son muy extensos.
+
+137
+00:06:11,570 --> 00:06:16,080
+En la estructura de este producto,
+
+138
+00:06:16,080 --> 00:06:20,509
+Por eso, mi primer paso fue usar marcadores de posición.
+
+139
+00:06:20,509 --> 00:06:21,689
+para validar el flujo de trabajo.
+
+140
+00:06:21,689 --> 00:06:26,030
+La idea es que los recursos gráficos no se conviertan en un obstáculo.
+
+141
+00:06:26,030 --> 00:06:28,250
+que obstaculice el desarrollo de este producto.
+
+142
+00:06:28,250 --> 00:06:31,060
+el paso clave
+
+143
+00:06:31,060 --> 00:06:35,600
+Así que primero usé estos marcadores de posición para representar a las cuatro suricatas.
+
+144
+00:06:35,600 --> 00:06:40,250
+Y luego, hice que pudiera leer el proceso de Claude Code.
+
+145
+00:06:40,250 --> 00:06:43,030
+Y a través de los cambios en esta máquina de estados,
+
+146
+00:06:43,030 --> 00:06:46,550
+para asegurarme de que la estructura principal de mi producto fuera viable.
+
+147
+00:06:46,550 --> 00:06:48,410
+Es decir, este es el mecanismo que he programado para él.
+
+148
+00:06:48,410 --> 00:06:49,750
+Es algo que se puede lograr.
+
+149
+00:06:49,750 --> 00:06:52,660
+Entonces, el siguiente paso es...
+
+150
+00:06:52,660 --> 00:06:54,280
+y luego invertir en él.
+
+151
+00:06:54,280 --> 00:06:55,780
+Si esta cadena de procesos funciona,
+
+152
+00:06:55,780 --> 00:06:57,760
+entonces invertiré en mis recursos de arte.
+
+153
+00:06:57,760 --> 00:07:00,140
+Así que, a través de este principio de primeros principios,
+
+154
+00:07:00,140 --> 00:07:02,679
+Tengo que hacer que este MVP funcione.
+
+155
+00:07:02,679 --> 00:07:03,919
+Luego, el segundo paso
+
+156
+00:07:03,919 --> 00:07:07,179
+Es decir, voy a reemplazarlo con los recursos gráficos reales.
+
+157
+00:07:07,179 --> 00:07:11,079
+el marcador de posición que había configurado en el producto.
+
+158
+00:07:11,079 --> 00:07:14,740
+Y los recursos gráficos no alteran la secuencia de eventos.
+
+159
+00:07:14,740 --> 00:07:16,600
+Solo se reemplaza la capa visual.
+
+160
+00:07:16,600 --> 00:07:19,820
+Entonces, esto significa que solo hay que reemplazar los recursos gráficos.
+
+161
+00:07:19,820 --> 00:07:21,890
+Y con eso es suficiente.
+
+162
+00:07:21,940 --> 00:07:27,150
+Y esta parte la hice a través de una "skill".
+
+163
+00:07:27,150 --> 00:07:29,990
+Es a través de este Hatch Pet en Codex.
+
+164
+00:07:29,990 --> 00:07:32,010
+Lo hice con una skill de este tipo.
+
+165
+00:07:32,010 --> 00:07:32,950
+Y luego, a la izquierda,
+
+166
+00:07:32,950 --> 00:07:36,520
+He pegado aquí algunas de las descripciones de esta skill.
+
+167
+00:07:36,520 --> 00:07:40,720
+Es decir, cuando esta skill genera a la mascota,
+
+168
+00:07:40,720 --> 00:07:43,660
+Por defecto, se dividirá en los siguientes aspectos.
+
+169
+00:07:43,660 --> 00:07:46,480
+Por ejemplo, el estado IDLE es su estado básico.
+
+170
+00:07:46,480 --> 00:07:48,460
+Luego tiene un gesto de saludar con la mano.
+
+171
+00:07:48,460 --> 00:07:51,780
+o cuando hay un premio, que es la acción de saltar.
+
+172
+00:07:51,780 --> 00:07:52,740
+y la animación de fracaso.
+
+173
+00:07:52,740 --> 00:07:54,140
+Esperando a que se ejecute.
+
+174
+00:07:54,140 --> 00:07:56,330
+incluida esta revisión.
+
+175
+00:07:56,330 --> 00:08:00,490
+Es decir, estos estados están configurados por defecto en la 'skill'.
+
+176
+00:08:00,490 --> 00:08:04,320
+Pero en realidad, como en nuestro primer paso,
+
+177
+00:08:04,320 --> 00:08:06,340
+Lo que hicimos fue darle a cada suricata...
+
+178
+00:08:06,340 --> 00:08:08,950
+A cada suricata se le ha asignado una personalidad diferente.
+
+179
+00:08:08,950 --> 00:08:12,670
+Entonces, esta personalidad, en realidad, hará que tenga diferentes...
+
+180
+00:08:12,670 --> 00:08:14,080
+el diseño de los movimientos de este personaje.
+
+181
+00:08:14,080 --> 00:08:17,400
+Entonces, para eso, necesitamos valernos de esta habilidad.
+
+182
+00:08:17,400 --> 00:08:19,000
+Pero no dependemos de esta habilidad.
+
+183
+00:08:19,000 --> 00:08:24,160
+Es decir, vamos a integrar su 'soul' y la configuración de sus personajes de manera unificada.
+
+184
+00:08:24,160 --> 00:08:28,220
+Pero sí hacemos que siga la lógica de esta habilidad para realizar la tarea.
+
+185
+00:08:28,220 --> 00:08:30,910
+Pero, mmm, no lo dejamos...
+
+186
+00:08:30,910 --> 00:08:33,750
+Es decir, lo integramos con nuestra 'soul' y sus acciones.
+
+187
+00:08:33,750 --> 00:08:37,600
+para generar diferentes posturas.
+
+188
+00:08:37,600 --> 00:08:41,359
+Así que, a través de este método...
+
+189
+00:08:41,359 --> 00:08:46,279
+De esta manera, obtuvimos una gran cantidad de recursos gráficos.
+
+190
+00:08:46,279 --> 00:08:48,260
+incluyendo la animación.
+
+191
+00:08:48,260 --> 00:08:54,080
+Actualmente, contamos con recursos gráficos para una animación de aproximadamente 288 fotogramas.
+
+192
+00:08:54,080 --> 00:08:57,000
+En esta mascota,
+
+193
+00:08:57,400 --> 00:09:01,200
+Y así, cada movimiento se ajusta mejor a la personalidad de su personaje.
+
+194
+00:09:01,200 --> 00:09:04,450
+El diseño de esta alma...
+
+195
+00:09:04,450 --> 00:09:06,830
+Entonces, mientras está escaneando,
+
+196
+00:09:06,830 --> 00:09:10,660
+Se pondrá a observar todo el tiempo con su súper-telescopio.
+
+197
+00:09:10,660 --> 00:09:13,440
+Y cuando lo confirmas, te toca una campana.
+
+198
+00:09:13,440 --> 00:09:15,060
+Si lo ignoras durante mucho tiempo,
+
+199
+00:09:15,060 --> 00:09:16,060
+se pondrá a saltar sin parar.
+
+200
+00:09:16,060 --> 00:09:17,880
+para volver a recordártelo.
+
+201
+00:09:17,880 --> 00:09:20,560
+Y luego está este, Bubbles.
+
+202
+00:09:20,560 --> 00:09:23,020
+Normalmente, su estado es durmiendo.
+
+203
+00:09:23,020 --> 00:09:25,460
+Y cada 45 minutos, se levanta para beber agua.
+
+204
+00:09:25,460 --> 00:09:27,950
+y te recuerda que tú también bebas agua.
+
+205
+00:09:27,950 --> 00:09:29,610
+Y luego está Pip,
+
+206
+00:09:29,610 --> 00:09:31,610
+Es decir, cuando se completa una tarea,
+
+207
+00:09:31,610 --> 00:09:33,880
+y se pondrá a lanzar confeti y a bailar.
+
+208
+00:09:33,880 --> 00:09:41,200
+Es decir, esto se corresponde con la personalidad que tiene asignada y sus acciones.
+
+209
+00:09:41,840 --> 00:09:43,960
+Espera, dejemos eso para el final.
+
+210
+00:09:43,960 --> 00:09:45,660
+Ahora vamos a hacer una demostración de todo el conjunto.
+
+211
+00:09:45,660 --> 00:09:49,320
+Y bueno, vamos a ver cuál es el estado actual del proyecto.
+
+212
+00:09:49,320 --> 00:09:51,440
+Eh, el estado...
+
+213
+00:09:51,440 --> 00:09:54,920
+Bueno, y ahora mismo, la verdad es que todavía hay algunas cosas que no están del todo bien.
+
+214
+00:09:54,920 --> 00:09:57,040
+Porque es un...
+
+215
+00:09:57,040 --> 00:10:00,860
+Podríamos decir que esto es un resultado de una fase inicial.
+
+216
+00:10:00,860 --> 00:10:05,719
+Bueno, esto es porque actualmente lo hemos configurado con dos tamaños.
+
+217
+00:10:05,719 --> 00:10:08,679
+Es decir, hay un tamaño grande y uno pequeño.
+
+218
+00:10:08,679 --> 00:10:11,970
+para adaptarse a los diferentes tamaños de pantalla.
+
+219
+00:10:11,970 --> 00:10:13,910
+Así que, al hacer este ajuste de tamaño,
+
+220
+00:10:13,910 --> 00:10:17,750
+A veces, puede aparecer esta ventana transparente.
+
+221
+00:10:17,750 --> 00:10:19,760
+surge este problema con el fondo.
+
+222
+00:10:19,760 --> 00:10:25,250
+Y luego, tenemos a nuestro suricata.
+
+223
+00:10:25,250 --> 00:10:27,370
+Es un concepto basado en una familia.
+
+224
+00:10:27,370 --> 00:10:30,670
+Así que, más adelante, cuando se añadan nuevas funciones,
+
+225
+00:10:30,670 --> 00:10:33,230
+iremos incorporando nuevos personajes.
+
+226
+00:10:33,230 --> 00:10:36,819
+Es decir, nuestra idea es que, al final, es posible que se quede en la parte inferior de tu escritorio.
+
+227
+00:10:36,819 --> 00:10:38,779
+habrá toda una fila
+
+228
+00:10:38,779 --> 00:10:42,910
+Y así formar este tipo de modelo, un modelo familiar.
+
+229
+00:10:42,910 --> 00:10:46,380
+y así formar nuestra propia familia de suricatos.
+
+230
+00:10:46,780 --> 00:10:51,440
+Y su valor reside en sí mismo. No se trata de la mascota de escritorio en sí, sino de demostrar este concepto.
+
+231
+00:10:51,440 --> 00:10:54,280
+Eh...
+
+232
+00:10:54,280 --> 00:10:57,830
+Es decir, podemos empezar desde una idea.
+
+233
+00:10:57,830 --> 00:11:01,330
+Y luego, a través de una herramienta de IA como el "vibe coding".
+
+234
+00:11:01,330 --> 00:11:03,829
+y luego ponerlo en línea.
+
+235
+00:11:03,829 --> 00:11:05,829
+y luego, estar dispuesto a abrirlo.
+
+236
+00:11:05,829 --> 00:11:07,649
+Y luego, dar un paso más allá.
+
+237
+00:11:07,649 --> 00:11:11,140
+Así que, en realidad, esto es una especie de...
+
+238
+00:11:11,140 --> 00:11:12,640
+No es solo una prueba,
+
+239
+00:11:12,640 --> 00:11:16,890
+sino más bien un experimento en el camino de la IA.
+
+240
+00:11:17,290 --> 00:11:18,930
+Y para terminar, como último punto de esta presentación...
+
+241
+00:11:18,930 --> 00:11:21,190
+Bueno, me gustaría agradecer este tipo de...
+
+242
+00:11:21,190 --> 00:11:23,030
+la orientación de todos los profesores.
+
+243
+00:11:23,030 --> 00:11:28,030
+Y aquí me gustaría citar una frase del profesor icoder.
+
+244
+00:11:28,030 --> 00:11:29,690
+Es decir, ¡aquí no hay pared!
+
+245
+00:11:29,690 --> 00:11:34,640
+Así que espero que todos puedan ponerse en marcha lo antes posible para empezar a usarla.
+
+246
+00:11:34,640 --> 00:11:36,220
+De esta forma, nuestro "vibe coding"...
+
+247
+00:11:36,220 --> 00:11:38,600
+Y bueno, ahora les voy a mostrar nuestro...
+
+248
+00:11:38,600 --> 00:11:40,640
+eh... para empezar.
+
+249
+00:11:40,640 --> 00:11:43,630
+Por ejemplo, ahora mismo voy a iniciarlo.
+
+250
+00:11:43,630 --> 00:11:45,950
+Vamos a echarle un vistazo, a probarlo.
+
+251
+00:11:45,950 --> 00:11:47,330
+Y luego, está la monitorización.
+
+252
+00:11:47,330 --> 00:11:49,670
+Ahora puede monitorear nuestro terminal.
+
+253
+00:11:49,670 --> 00:11:54,530
+Y también funciona con nuestro escritorio.
+
+254
+00:11:54,530 --> 00:11:56,910
+Y este es el estado de la conversación.
+
+255
+00:11:56,910 --> 00:11:58,410
+También puede monitorizarlo.
+
+256
+00:11:58,410 --> 00:12:00,494
+No se limita solo a la terminal.
+
+257
+00:12:00,960 --> 00:12:01,840
+Y en cuanto a esto,
+
+258
+00:12:01,840 --> 00:12:05,060
+Actualmente, he desarrollado algunas funciones.
+
+259
+00:12:05,060 --> 00:12:08,450
+Por ejemplo, una función como la de acoplarse a los bordes.
+
+260
+00:12:08,450 --> 00:12:12,710
+Es decir, cuando se acerca al borde del escritorio,
+
+261
+00:12:12,710 --> 00:12:14,010
+o cuando se acerca a los bordes.
+
+262
+00:12:14,010 --> 00:12:17,660
+Se adherirá automáticamente a la parte superior de este borde.
+
+263
+00:12:17,660 --> 00:12:19,760
+De esta forma, no tenemos que hacerlo nosotros.
+
+264
+00:12:19,760 --> 00:12:22,730
+y así satisfacer esa *** por la alineación.
+
+265
+00:12:22,730 --> 00:12:25,610
+Luego, al arrastrarlo,
+
+266
+00:12:25,610 --> 00:12:27,650
+Cuando lo arrastras hacia la izquierda o hacia la derecha,
+
+267
+00:12:27,650 --> 00:12:30,450
+y tendrá una animación que se moverá hacia la izquierda y hacia la derecha.
+
+268
+00:12:30,450 --> 00:12:31,890
+Y cuando haces doble clic,
+
+269
+00:12:31,890 --> 00:12:33,690
+independientemente de la posición en la que se encuentre,
+
+270
+00:12:33,690 --> 00:12:37,550
+Entonces se moverá hacia aquí, y todos nos reuniremos en este mismo lugar.
+
+271
+00:12:37,550 --> 00:12:39,170
+Y luego se ordenan secuencialmente.
+
+272
+00:12:39,170 --> 00:12:40,810
+Entonces, por ejemplo, podemos pedirle que ejecute alguna tarea.
+
+273
+00:12:40,810 --> 00:12:47,090
+A ver, ¿qué tiempo hace hoy?
+
+274
+00:12:47,370 --> 00:12:50,330
+Y bueno, en este momento, mientras se está ejecutando la tarea,
+
+275
+00:12:50,330 --> 00:12:51,370
+incluida la versión para escritorio.
+
+276
+00:12:51,370 --> 00:12:52,760
+Es capaz de detectarlo.
+
+277
+00:12:52,760 --> 00:12:54,760
+Así que, como pueden ver, aquí tenemos al primero.
+
+278
+00:12:54,760 --> 00:12:57,860
+Ya ha empezado a investigar.
+
+279
+00:12:57,860 --> 00:12:59,860
+Mientras corre,
+
+280
+00:12:59,860 --> 00:13:01,620
+realizará la acción correspondiente.
+
+281
+00:13:01,620 --> 00:13:03,429
+Así que ya sabes
+
+282
+00:13:03,429 --> 00:13:05,949
+Por ejemplo, si vuelvo a nuestra presentación de PowerPoint...
+
+283
+00:13:05,949 --> 00:13:08,470
+Así ya no necesitas mirar.
+
+284
+00:13:08,470 --> 00:13:10,830
+Así ya sabes en qué estado se encuentra.
+
+285
+00:13:10,830 --> 00:13:12,550
+Y el segundo, ahora está tocando la campana.
+
+286
+00:13:12,550 --> 00:13:15,540
+Así que solo es este el momento en el que necesitas confirmar algo.
+
+287
+00:13:15,540 --> 00:13:18,980
+Entonces sabes, "Ah, ya puedo volver".
+
+288
+00:13:18,980 --> 00:13:22,420
+Así, a través de esta figura visual,
+
+289
+00:13:22,420 --> 00:13:24,860
+y de forma considerable
+
+290
+00:13:24,860 --> 00:13:29,000
+reducir esa dispersión de tu atención.
+
+291
+00:13:29,000 --> 00:13:31,390
+En cuanto a su uso,
+
+292
+00:13:31,390 --> 00:13:35,810
+Así que, mmm, creo que esto podría ser el activo artístico y el...
+
+293
+00:13:35,810 --> 00:13:42,500
+Así que, en cuanto a su uso, sí que tiene cierto valor, ¿no?
+
+294
+00:13:42,500 --> 00:13:43,720
+Si tiene cierto valor,
+
+295
+00:13:43,720 --> 00:13:45,650
+Se podría decir que...
+
+296
+00:13:45,650 --> 00:13:48,410
+Y luego, el segundo te está avisando.
+
+297
+00:13:48,410 --> 00:13:50,590
+Tengo una tarea que necesita tu confirmación.
+
+298
+00:13:50,590 --> 00:13:52,410
+Y si no lo confirmas,
+
+299
+00:13:52,410 --> 00:13:54,454
+Te estará diciendo que vayas a confirmar.
+
+300
+00:13:57,220 --> 00:13:59,420
+Y luego, por ejemplo, cuando la tarea se completa,
+
+301
+00:13:59,420 --> 00:14:02,620
+Y ahora, veamos el estado del tercer personaje.
+
+302
+00:14:09,680 --> 00:14:13,480
+Y ahora ves que el segundo también está confirmando.
+
+303
+00:14:17,500 --> 00:14:21,550
+Y bueno, actualmente, este proyecto ya está disponible de forma gratuita en GitHub.
+
+304
+00:14:21,550 --> 00:14:24,650
+Así que pueden descargarlo para probarlo y jugar un poco con él.
+
+305
+00:14:24,650 --> 00:14:28,470
+Porque ahora mismo, cada uno tiene unas 9 animaciones.
+
+306
+00:14:28,470 --> 00:14:31,930
+Así que no voy a mostrar más detalles.
+
+307
+00:14:31,930 --> 00:14:39,250
+Así que espero que lo usen y lo exploren por ustedes mismos.
+
+308
+00:14:39,600 --> 00:14:40,680
+Y después de dos minutos...
+
+309
+00:14:40,680 --> 00:14:44,160
+Si en tu Claude Code no se produce esta conversación,
+
+310
+00:14:44,160 --> 00:14:45,480
+o si se ha quedado en silencio.
+
+311
+00:14:45,480 --> 00:14:48,290
+Entonces, aparte del primero,
+
+312
+00:14:48,290 --> 00:14:50,430
+las otras tres se pondrán a dormir juntas.
+
+313
+00:14:50,430 --> 00:14:53,380
+Y luego, como puedes ver, el tercero empieza a lanzar confeti.
+
+314
+00:14:53,380 --> 00:14:55,720
+Y así, de forma coordinada, te avisa de que tu tarea ha sido completada.
+
+315
+00:14:55,720 --> 00:14:58,079
+Puedes volver para echar un vistazo.
+
+316
+00:14:58,679 --> 00:15:01,079
+Bueno, por ahora...
+
+317
+00:15:01,079 --> 00:15:04,319
+Y bueno, esta es a grandes rasgos la idea del producto.
+
+318
+00:15:04,319 --> 00:15:07,230
+Y bueno, hasta aquí llega más o menos la presentación.
+
+319
+00:15:07,230 --> 00:15:08,620
+Y bueno, eso es más o menos todo.

@@ -1,14 +1,14 @@
 {
   "name": "loop-bilibili/data/subtitles",
   "description": "Packed Bilibili UP subtitles (SRT + slim index)",
-  "packed_at": "2026-07-23T16:58:11.352775+00:00",
-  "up_count": 13,
-  "ok_total": 862,
+  "packed_at": "2026-07-23T17:09:39.500903+00:00",
+  "up_count": 14,
+  "ok_total": 902,
   "empty_total": 77,
   "error_total": 12,
-  "cues_total": 282594,
-  "srt_bytes_total": 20073120,
-  "txt_bytes_total": 10191974,
+  "cues_total": 300555,
+  "srt_bytes_total": 21350119,
+  "txt_bytes_total": 10842129,
   "layout": {
     "ups": "ups/{mid}-{name}/",
     "index": "index.jsonl",
@@ -87,6 +87,15 @@
       "empty_count": 0,
       "total_cues": 2665,
       "path": "ups/3493124676520059-程序员扣丁"
+    },
+    {
+      "slug": "3546588152597451-北歌AIGC",
+      "mid": "3546588152597451",
+      "name": "北歌AIGC",
+      "ok_count": 40,
+      "empty_count": 0,
+      "total_cues": 17961,
+      "path": "ups/3546588152597451-北歌AIGC"
     },
     {
       "slug": "3546804396230870-码里奥Ziho",

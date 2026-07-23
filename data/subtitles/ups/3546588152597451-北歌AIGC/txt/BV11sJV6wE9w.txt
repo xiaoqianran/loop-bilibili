@@ -1,0 +1,438 @@
+Alright.
+And to all of you,
+I've put my materials for this pitch...
+and I've also posted it in the comment section.
+And you can also see what I'm sharing on the screen.
+Alright, I'll get started then.
+So, um, at the end of the day, I'm just a student myself.
+I'm just a month or two ahead of you all.
+And then, after going through this learning experience,
+and successfully launched this product.
+So really, today is more about having a conversation and learning from each other.
+So I thought this would be a great opportunity to share my entire journey with all of you.
+So, I want to show you the page I've got up today.
+It's a little different from your usual PowerPoint presentation.
+I also made this using Codex.
+It's an interactive webpage, you could say.
+And as it happened, I still had just a little bit of my quota left.
+and just went ahead and built it.
+So, today, what I mainly want to do is walk you through a...
+It was based on a real pain point that I, and I alone, had while studying for my exams.
+And then, how I gradually turned that into...
+into a publicly available, launched product that I can share with all of you.
+And now, let me walk you through the entire process.
+including the pitfalls I've run into,
+The detours I took and the methods I used.
+And the name of the product is 'Shua Ti Bao'.
+Its original name was Learn or Die.
+Basically, 'study or die.'
+Later on, during a product pitch event, I was talking with this expert, whose online handle is 'Product Meituan Sister'...
+So after I'd talked it over with the mentors,
+I mean, it wasn't just my product that needed to be streamlined.
+my product name should also, ideally, just tell people directly and objectively what it does.
+What problem is my product actually solving?
+It's basically all about solving the problem of practicing tons of questions.
+So, my idea was,
+You need to take all your scattered study materials,
+So, after you've tossed all your stuff in there—questions, textbooks, all of it,
+And this whole process forms a complete loop.
+and give you that motivation you need.
+So, it's like, um, you're running all that information through a quality check.
+And this entire process will help you get a clear picture of everything.
+to help you study for your exams.
+So, for everyone joining us today...
+I'm guessing you're also here to learn about the Vibe Coding method.
+or even create your own AI product.
+And I know this is gonna sound a bit shameless, but...
+Or maybe you'd like to try out my product.
+Or maybe, just maybe, you'd like to follow my journey too.
+So yeah, you can all go ahead and check it out for yourselves.
+Alright, let's get started.
+So first off, let me tell you why I decided to build this product.
+And the reason was crystal clear.
+So, the starting point for this product was simply the fact that I was preparing for an exam at the time.
+So, on May 23rd...
+I took the exam for the International Product Manager certification.
+the NPDP.
+And at that time, my work was incredibly hectic, so finding any time at all...
+So, whenever I did manage to squeeze in some time,
+any time I could squeeze in for studying was incredibly scarce.
+Especially for exams like the PMP,
+and the content for exams like NPDP.
+Actually, a lot of the content is extracted from...
+key points extracted from the textbooks.
+And some of them come with a question bank.
+Yeah, anyone who's actually taken the exam would know this.
+But the thing is, there are some problems with that.
+For instance, because the examination bodies are from overseas institutions,
+like the IMA in the US, for instance.
+When they translate the exam questions,
+you end up with some really forced, literal translations.
+So, for some questions, even if you understand every single Chinese character,
+you still can't figure out what the question is actually asking.
+So at this point, all you have on hand are these materials.
+or pre-recorded video lectures,
+Or you have, you know, those... what do you call them... question banks.
+But the thing is, even these question banks aren't always accurate.
+That's because they're often created by some of the top educators and scholars in the country.
+and then the explanations they write for them.
+Sometimes, they don't even have an answer key, let alone an explanation.
+So what you need is someone who really gets you,
+Whether it's an AI tutor,
+or even a senior who's been through it.
+to help you with quick memorization,
+or walk you through the reasoning behind this part, explaining why it's the correct answer.
+Or it can show you exactly which page in the textbook that question is on.
+This was incredibly important to me.
+something that could help me prepare for the exam quickly.
+Alright, so let me start by sharing a bit about my own situation.
+So, what I had were the PDFs of my textbooks saved in a cloud drive.
+And on my phone, I had...
+So, I had this study app from a platform called 'Xiao E Tong' for practicing questions.
+And for the questions I didn't get, there were no explanations for them either.
+So, I'd just take a screenshot and save it to my camera roll.
+And then, of course, I also had the physical textbooks on hand.
+So, it was basically all this stuff.
+And then you realize, 'Okay, I need to learn something.'
+It felt like I had to spread out all the maps at once.
+And what's even more brutal is what happens after you've finished all those problems.
+Or if you're just grinding through problems on one single app,
+or just on your browser finding questions to practice.
+Sometimes, the questions can be really similar.
+and you forget why you even picked that answer in the first place.
+What on earth is the right answer?
+Sometimes you just forget, you know?
+So, um, that's on top of what I was just telling you guys.
+I needed someone to walk me through the logic behind this particular analysis.
+So, after going through that entire process,
+Yeah, exactly. This entire process... you couldn't cover it with just one single product.
+or even a single phone, to tie it all together.
+So I thought to myself, what if I could build a product to solve this?
+my basic profile,
+Then, my PDF materials,
+My practice questions, or my mistakes,
+and even my AI tutor, all in one place.
+So I'd have to get dead serious, armed with just a textbook in one hand and my phone in the other.
+and I'd be all set for my exam prep.
+And so, this is how the idea for this product was born.
+Alright, so today, I'm going to share my experience with you all.
+So, when I was working on coding and the product,
+So, where should we start? What are the key things we need to focus on?
+First off, let's talk about this from a Product Manager's perspective.
+It's about defining the problem clearly.
+What we're doing here is clarifying the problem.
+So basically, you can think of it this way.
+So, let's say I come to you and tell you I want to build a product.
+And then, you might go to your boss and be like, 'Hey...'
+Hey, can you just handle that thing?
+But that's obviously not going to work.
+So, how can we know if we're on the right track?
+The key is to clearly define the problem.
+It's just like what I was explaining to you all a moment ago.
+What was the pain point for me?
+What problem am I trying to solve?
+Or, let's say, when you're talking to your friend.
+So, I thought, 'Hey, I want to build a product.'
+So that's basically the solution we came up with.
+If they get it,
+Well, I think when it comes to this problem for the AI...
+it's already able to comprehend it.
+Or, for us as individuals,
+He explained it clearly.
+The second point is to streamline your solutions.
+So, like the teacher mentioned in that screen recording just now, the product needs to be streamlined.
+In product development, there's a technical term for this called MVP.
+Which stands for Minimum Viable Product.
+So, why do I think this is so important?
+Basically, you need to define what you can cut out.
+It's like in our daily lives,
+I'm not sure if any of you have worked in the internet industry,
+or just other work experiences in general.
+You know, there are always these business folks who say, 'I want it all.'
+And then, the product manager would come along and say, 'You know, we can actually cut this part too.'
+or that we could trim down a bit.
+Because what they're after is getting something live as quickly as possible.
+a verifiable minimum viable product.
+So, in the same way, this 'Problem-Solving Pro' is also my personal...
+So, when I first started building the Problem-Solving Treasure...
+Well, it all started when I saw my instructor, iCoder.
+As he was teaching us,
+he shared the features of his own WeChat assistant.
+And the thing about me is, I'm the kind of person who really likes to...
+by leveraging the capabilities of other existing products,
+build other product features.
+So just like with my WeChat assistant,
+It can help me take a photo and then recognize the text.
+to store my basic learning profile,
+and the ability to answer my questions.
+So, I just took his code, copied and pasted the whole thing, no changes made.
+including building out the WeChat channel.
+I tried to do so much more, and... it all just failed spectacularly.
+This was the first step in my attempt.
+But luckily, I pulled the plug right away.
+I decided to build it from scratch.
+So, the second step is also super important.
+Alright, step three. This is, of course, the core of it all.
+Basically, you just let an AI handle it.
+When I was making it, I used, uh, CC—you know, Claude Code.
+Yeah, and the instructors are also there to guide you.
+So, it's about how to use Claude Code to do it.
+Well, I had actually looked into Claude Code on my own before.
+Codex is another one I've looked into on my own.
+So...
+Back then, I used Claude Code for the design and for the basic product setup.
+And then there's CC... or, what's it called again...
+As for Codex,
+I usually just use it to write up some of these materials, you know.
+Ah, like the materials I'm sharing with you all right now.
+And stuff for WeChat Official Accounts, and things like that.
+And it's a really interesting thing.
+So I wanted to share something with you all as well.
+So, Claude Code has a feature called Claude Design.
+which is for creating prototypes.
+It can generate both a wireframe and a high-fidelity prototype.
+So, back when I was designing the product,
+Didn't he just mention this to everyone?
+I mean, that was the problem I had, right?
+So, when you're designing a product like this,
+Something really important to keep in mind is,
+You need to know what the user is supposed to do, what they should click on, after they get into the product.
+And it's all about making sure every step just flows naturally.
+all the way until they log out and exit the app completely.
+The entire user flow of this product is seamless.
+But it's really hard to express that in words.
+to spell it all out clearly.
+And at this point, if you try to design this all by yourself,
+Whether it's Figma or something else,
+Specifically, drawing it without AI.
+it's definitely going to be very time-consuming.
+So, with design systems in place,
+or in the case of an A.I.-powered Figma,
+the prototype can be completed in no time.
+And the human-computer interaction also turns out to be really good.
+For example, think about the kind of product I want to create.
+This means the entire user flow can be finalized very quickly.
+So, you guys can go ahead and give it a try.
+Once you've got the prototype sorted out,
+And once you've ironed out the basic user flows,
+Then you can have your Coder do the job.
+everything will go very smoothly.
+And you'll know exactly what to expect from them.
+Now, the fourth part is actually where I spent the most time.
+which is acceptance testing.
+At my day job, we call this UAT, by the way.
+Or, as we call it, user acceptance testing, or UAT.
+So, why is that?
+Because at the earlier stage, I had already made sure the core, main workflow was functioning properly.
+And that's good enough.
+So, if you're on your phone and scrolling right now,
+or flipping through it on the web version.
+and flip all the way to the last page.
+You can go ahead and check out the product page.
+On the whole product page now, there are actually quite a few features.
+But in reality, when I first started building this feature,
+weren't that many.
+So, besides a user profile...
+After the profile was set up, there weren't many options for adding questions either.
+So the main focus is on practicing questions.
+Then, for the notebook of incorrect answers, and the purely chat-based content over here, they were all very...
+So it was, uh, very simple.
+It's so simple, it's basically just a few words and pictures.
+And all these iterative features? I didn't build any of them.
+And things like feedback channels,
+I didn't get around to those either.
+And that's something I added after I launched the product.
+and had some free time
+and gradually built it out.
+So, after the entire main workflow was all set up,
+So I went through it as fast as I could, completely in the user's shoes.
+Uh...
+For instance, did I run into any issues while importing?
+um, and then, when it's identifying the content, did it get anything wrong?
+Then I'd switch to a different textbook.
+Or did it just fail to import again?
+So I went through and addressed all of these kinds of issues.
+So basically, once you've gone through all these issues,
+The whole product was just a prototype.
+and you can get it launched. Alright?
+Right, so next up, I'm gonna start from, uh...
+So I'll just briefly touch on this.
+So, like I was just saying,
+So, I started with my own needs.
+And by the way, I didn't just copy my instructor's, you know, AI assistant project.
+I mean, the code for that WeChat assistant.
+So yeah, that's the thing. What do you guys think?
+It's best to just build it from scratch.
+and when it comes to just copying other people's code...
+And it's actually pretty tough, you know.
+And odds are, you're just going to break something.
+And for the most part, those of us who just work a nine-to-five can probably relate to this a little bit.
+So, when you take over someone else's project,
+You have to put in a lot more effort just to understand what the project is all about,
+So, the cost for that is just a little too high.
+And the third point, which I've actually just touched on,
+You should really try to get the prototype and user flow designed first.
+So once we've refined the product and narrowed down the scope,
+So, let's discuss what other crucial features I'm still missing—those P1 and P2 level requirements.
+and then we can slowly add them in.
+Then, we can gradually identify any pain points in the user experience.
+to get them done and fix them.
+Once that's all set, we can finally launch it.
+And then, I'd like to share a few things.
+So, here it is. You can just take a look, and that's it.
+So, there are a few things you can pay attention to.
+One thing is, when the product goes live,
+We need to make sure that the user experience at launch is actually viable.
+So, as we were just saying,
+And what I found during user testing was...
+So, when I import this PDF,
+Because, you know, the entire PDF might have, um...
+You could have over 200 questions.
+And when it tries to split them up,
+it would take a really long time to wait.
+And that's something I didn't take into account when I first started designing it.
+And I figured users wouldn't want to wait that long on this page either.
+If you exit, you have to re-import everything all over again.
+So, eventually,
+little by little, making this feature feel almost impossible to implement.
+And while it's importing, you can go ahead and do other things on the side.
+or just exit the app and do something else.
+And another thing is, I can import the question bank at the same time.
+and my study materials, all at the same time.
+And on top of that, there's one more thing.
+I don't think I've written this down here.
+And there's one more thing I want to mention.
+I think, when it comes to any AI product, the most important thing is honesty.
+So, for my product, that's also the most crucial part.
+Essentially, it's about giving the user a sense of security.
+So, when I'm importing a large batch of files,
+I can't just have the entire page freeze and do nothing.
+The best-case scenario is to have an interactive page.
+This lets everyone know that I'm actually working on it.
+It's just that you'll have to wait for, like, another...
+say, five or ten minutes.
+And also, keep your users in the loop on your overall progress.
+And I think this part is pretty important.
+If you're serious about actually launching a product,
+And another thing is, you know, injecting real-world scenarios into the mix.
+So, once the product is actually out there,
+So, what's its core competitive edge?
+My core competitive edge is: it's all on my phone.
+that can handle my entire exam prep process, from practice questions to the final test.
+And on top of that, it's basically an AI-powered solution, right?
+At the very least, you have this study coach right on your phone,
+and get a complete picture of your learning progress.
+For example, when I was setting up my profile,
+So it knows that my exam is on May 23rd.
+Then, as you're chatting with the AI coach,
+Now, since I've already been chatting with it for a bit here,
+And things like recording the screen, capturing questions, and so on.
+it'll give you an update on your current status.
+and which of your incorrect answers are still left to review.
+It even gets to this point... um, you can probably get a better idea from the screenshot.
+It even happens when you're just chatting with it about something fun.
+It'll tell you, "Hey, don't get distracted."
+So yeah, that's pretty much how it works.
+It does this by understanding the context.
+And then, by feeding it more real user data,
+This makes the AI feel like your own personal tutor.
+And that makes it feel even more real.
+And I think this is a pretty key point.
+a special touch, I'd say.
+And so, for my entire product development journey,
+You can go ahead and open it up to take a look.
+So, I've pulled up the corresponding screenshots for you here.
+So, I've broken down the entire product flow into six steps.
+The first step is to create a study profile.
+So once you're in, just register. It's super simple.
+Because, um, this is also something I need to work on going forward.
+So, first things first, once you've created your profile...
+go ahead and add the course materials.
+So, once you've entered the教材...
+you'll get a set of practice questions.
+You can either add them in, or you can just type them out manually.
+Or you can import photos.
+You can also take a photo with your phone, or import a PDF.
+and have the AI auto-generate it.
+And that creates a question bank for you to practice with.
+And this question bank even has a validation feature.
+And there's also the error notebook feature.
+So, this mistake book automatically adds questions whenever you answer them incorrectly,
+Or can you manually add them yourself.
+And it tracks how many times you've gotten it wrong.
+And what's the overall error rate?
+And for the questions you get wrong, you have to answer them correctly three times,
+and is removed after you get it right three times. It's these kinds of small, incremental features.
+It was all built up through gradual iteration.
+And then there's also the AI study-buddy chat feature.
+So, what this means is that the whole thing, you know, just looks very...
+It's a very clean and streamlined product line.
+Okay, so that's pretty much the whole picture.
+And for that, I'd also like to give a huge thank you.
+So, for our...
+The mentors from the AI bootcamp,
+And I want to give a special shout-out to icoder and Beige especially.
+And what impressed me the most was, well...
+So, from what I've gathered, on our end here...
+it's a team that has a really friendly, peer-to-peer vibe.
+And especially, um, I'm someone who tends to be a bit of a perfectionist when it comes to product ideas.
+Oh.
+And so,
+If I haven't figured out the entire user journey for the product, and what the first step should be,
+my second and third steps, and what its future direction would be,
+I honestly found it really hard to even get started.
+I just went for it.
+So, when I was talking to the instructors at Beige and iCoder about this idea,
+And the advice they gave me was, "Don't overthink it."
+The first step to success is just to get started.
+So, that night, when I was talking about my needs and my ideas...
+I think I had, like, five or six product ideas.
+For instance, I could make a supply chain platform.
+Because I was originally in the supply chain industry,
+and I probably wanted to build something that wasn't so dependent on...
+Well, something for generating surveys.
+a platform.
+But then, I'd also have to worry about issues like getting traffic from the survey and all that.
+So then, I had this idea for an app called 'Shuati Bao'—a 'Drill Master' for exam questions.
+Because I was in the middle of studying for an exam myself.
+I also wanted to create something that's like a pet.
+But then again, I had all these worries, like, what if this and that...
+Or maybe there are already similar things on the market,
+So, I had a ton of concerns.
+But at this point,
+The instructors would tell us to calm down, take a step back, and say...
+But anyway,
+So, building something from the ground up is a great place to start and get some experience.
+And then, after putting my own judgment into the mix,
+I wanted to build something real, something that could genuinely solve a user's problem.
+and it felt like a small victory in itself.
+So in the end, I decided to build a product that first and foremost, would solve my own problems.
+And, I was pretty happy about that.
+At the very least, I could get it launched.
+So, after going through the product requirement phase I just mentioned,
+And later on, there was even the whole website registration process.
+That whole process of registering the domain name and getting it all legal and stuff.
+So, going forward, I might gradually, um, let's say after you exit the current page...
+So for now,
+I don't have, like, all sorts of mobile verification checks and stuff like that.
+This is because I'm making it openly available for everyone to use.
+And later on, if I come up with other ideas or needs,
+and launch it on a real app store,
+And of course, I'll do my best to keep improving these features as well.
+And also, uh, this part here... let me click on it... this is the admin dashboard in the back-end.
+And for the long term,
+So, if we stick with it in the long run,
+I'll just check the user feedback.
+For instance, I've already addressed a few pieces of user feedback here.
+So, I've got a newly launched feature for you.
+Well, I still feel that, um, whether you're building an AI product or working as a...
+Once you've decided to get into this field, taking that first step is incredibly important.
+And persistence is also key.
+And we can all communicate with each other,
+and grow together.
+and go further on this journey.
+and find more inspiration.
+and help each other succeed.
+Growing together is also incredibly important.
+So I hope we can all communicate more with each other.
+So yeah, let's communicate more. That's all I have for now.
