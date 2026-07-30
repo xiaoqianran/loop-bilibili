@@ -4,7 +4,7 @@ B 站自动化与数据采集（**单仓**）。根目录 **`main.py`**；公共
 
 - **字幕（现行）**：`packages/bili_subbatch` — SubBatch HTTP/WBI，**不依赖 opencli**
 - **列表 / 总结 / 评论**：仍走 [opencli](https://github.com/jackwener/OpenCLI) `bilibili` adapter
-- **过世方案**：`legacy/opencli/`（旧 opencli 字幕）
+- **过时方案**：`legacy/opencli/`（旧 opencli 字幕）
 
 ## 架构
 
