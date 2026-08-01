@@ -2,9 +2,11 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.2.0）
+## `bili-subbatch.user.js`（v0.3.0）
 
-右下角 **CC** 浮层：识别当前页 → 扫描列表 → 勾选 → 批量 SRT/TXT。
+右侧 **Catppuccin Mocha** 玻璃边栏（透明 + 毛玻璃）；容器 `pointer-events: none`，**空白区域可穿透点击页面**，仅 FAB / 边栏本体可点。
+
+流程：右下角 **CC** → 识别当前页 → 扫描列表 → 勾选 → 批量 SRT/TXT。
 
 ### 支持的页面
 
@@ -31,8 +33,16 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.2.0**）
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.3.0**）
 3. 打开上表任一页面 → 右下角 **CC** → **扫描当前页** → 勾选 → 下载
+
+### UI
+
+| 项 | 说明 |
+|----|------|
+| 主题 | [Catppuccin Mocha](https://catppuccin.com/palette/) userstyle 变量 |
+| 穿透 | 根节点 `pointer-events: none`；`.bsb-fab` / `.bsb-sidebar` 为 `auto` |
+| 形态 | 右侧玻璃边栏 + 半透明 FAB，不挡页面操作 |
 
 ### 推荐用法
 
