@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.2.0
-// @description  B站字幕批量下载：单视频/选集/个人主页/收藏夹/合集/搜索页。协议对齐 packages/bili_subbatch
+// @version      0.3.0
+// @description  B站字幕批量下载：单视频/选集/个人主页/收藏夹/合集/搜索页。Catppuccin 透明可穿透边栏。协议对齐 packages/bili_subbatch
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -24,7 +24,8 @@
 // ==/UserScript==
 
 /**
- * v0.2 — multi-source list + batch, aligned with Chrome SubBatch + bili_subbatch.
+ * v0.3 — multi-source list + batch; Catppuccin Mocha glass sidebar (click-through).
+ * Aligned with Chrome SubBatch + packages/bili_subbatch.
  *
  * Sources:
  *   video / selection  — view/detail pages[]
@@ -34,6 +35,7 @@
  *   search             — /x/web-interface/wbi/search/type
  *
  * Subtitle: WBI → view/detail → player/wbi/v2 → (dm/view | ai_stat) → body → SRT/TXT
+ * UI: pointer-events 穿透空白区；仅 FAB / 边栏内容可点；Catppuccin Mocha userstyle
  */
 
 (function () {
@@ -944,100 +946,367 @@
     maxPages: DEFAULT_MAX_PAGES,
   };
 
-  // ─── UI ─────────────────────────────────────────────────────────────────
+  // ─── UI (Catppuccin Mocha glass sidebar, click-through) ─────────────────
   function injectStyles() {
+    // Catppuccin Mocha — https://catppuccin.com/palette/ (userstyle tokens)
     GM_addStyle(`
       #${PANEL_ID} {
-        position: fixed; right: 16px; bottom: 80px; z-index: 2147483646;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-          "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-        font-size: 12px; color: #1f2329; line-height: 1.4;
+        /* Catppuccin Mocha */
+        --ctp-rosewater: #f5e0dc;
+        --ctp-flamingo: #f2cdcd;
+        --ctp-pink: #f5c2e7;
+        --ctp-mauve: #cba6f7;
+        --ctp-red: #f38ba8;
+        --ctp-maroon: #eba0ac;
+        --ctp-peach: #fab387;
+        --ctp-yellow: #f9e2af;
+        --ctp-green: #a6e3a1;
+        --ctp-teal: #94e2d5;
+        --ctp-sky: #89dceb;
+        --ctp-sapphire: #74c7ec;
+        --ctp-blue: #89b4fa;
+        --ctp-lavender: #b4befe;
+        --ctp-text: #cdd6f4;
+        --ctp-subtext1: #bac2de;
+        --ctp-subtext0: #a6adc8;
+        --ctp-overlay2: #9399b2;
+        --ctp-overlay1: #7f849c;
+        --ctp-overlay0: #6c7086;
+        --ctp-surface2: #585b70;
+        --ctp-surface1: #45475a;
+        --ctp-surface0: #313244;
+        --ctp-base: #1e1e2e;
+        --ctp-mantle: #181825;
+        --ctp-crust: #11111b;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        z-index: 2147483646;
+        font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
+          "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 12px;
+        color: var(--ctp-text);
+        line-height: 1.45;
+        /* 整层默认穿透：不挡页面点击 */
+        pointer-events: none;
       }
       #${PANEL_ID} * { box-sizing: border-box; }
+
+      /* 仅 FAB / 边栏本体接收指针 */
+      #${PANEL_ID} .bsb-fab,
+      #${PANEL_ID} .bsb-sidebar {
+        pointer-events: auto;
+      }
+
       #${PANEL_ID} .bsb-fab {
-        width: 48px; height: 48px; border-radius: 50%; border: none; cursor: pointer;
-        background: linear-gradient(135deg, #00a1d6, #0b7eb8); color: #fff;
-        font-weight: 700; font-size: 12px;
-        box-shadow: 0 6px 20px rgba(0,161,214,.45);
-        display: flex; align-items: center; justify-content: center;
+        position: fixed;
+        right: 14px;
+        bottom: 88px;
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        border: 1px solid color-mix(in srgb, var(--ctp-lavender) 45%, transparent);
+        cursor: pointer;
+        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent);
+        color: var(--ctp-lavender);
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        box-shadow: 0 8px 28px color-mix(in srgb, var(--ctp-crust) 55%, transparent);
+        backdrop-filter: blur(14px) saturate(1.2);
+        -webkit-backdrop-filter: blur(14px) saturate(1.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform .15s ease, border-color .15s ease, color .15s ease,
+          background .15s ease;
       }
-      #${PANEL_ID} .bsb-fab:hover { filter: brightness(1.06); }
-      #${PANEL_ID} .bsb-card {
-        display: none; width: 380px; max-height: min(78vh, 640px);
-        margin-bottom: 10px; background: #fff; border-radius: 12px;
-        box-shadow: 0 12px 40px rgba(15,23,42,.2);
-        border: 1px solid rgba(0,0,0,.06); overflow: hidden;
+      #${PANEL_ID} .bsb-fab:hover {
+        transform: translateY(-1px);
+        color: var(--ctp-base);
+        background: color-mix(in srgb, var(--ctp-lavender) 88%, transparent);
+        border-color: var(--ctp-lavender);
+      }
+      #${PANEL_ID}.open .bsb-fab {
+        color: var(--ctp-base);
+        background: color-mix(in srgb, var(--ctp-mauve) 85%, transparent);
+        border-color: var(--ctp-mauve);
+      }
+
+      /* 右侧玻璃边栏：透明 + 毛玻璃；空白不遮挡（由 root pointer-events 控制） */
+      #${PANEL_ID} .bsb-sidebar {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: min(392px, calc(100vw - 24px));
+        display: flex;
         flex-direction: column;
+        overflow: hidden;
+        border-radius: 16px;
+        border: 1px solid color-mix(in srgb, var(--ctp-overlay0) 35%, transparent);
+        background: color-mix(in srgb, var(--ctp-base) 42%, transparent);
+        backdrop-filter: blur(18px) saturate(1.35);
+        -webkit-backdrop-filter: blur(18px) saturate(1.35);
+        box-shadow:
+          0 12px 48px color-mix(in srgb, var(--ctp-crust) 45%, transparent),
+          inset 0 1px 0 color-mix(in srgb, var(--ctp-overlay2) 18%, transparent);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(12px);
+        transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
       }
-      #${PANEL_ID}.open .bsb-card { display: flex; }
+      #${PANEL_ID}.open .bsb-sidebar {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+
       #${PANEL_ID} .bsb-head {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 10px 12px; color: #fff;
-        background: linear-gradient(135deg, #00a1d6, #0b7eb8); flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 14px;
+        flex-shrink: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface1) 55%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 40%, transparent);
       }
-      #${PANEL_ID} .bsb-head strong { font-size: 13px; }
-      #${PANEL_ID} .bsb-head .bsb-ver { opacity: .85; font-size: 11px; margin-left: 6px; }
+      #${PANEL_ID} .bsb-head strong {
+        font-size: 13px;
+        font-weight: 650;
+        color: var(--ctp-text);
+        letter-spacing: 0.02em;
+      }
+      #${PANEL_ID} .bsb-head .bsb-ver {
+        margin-left: 8px;
+        font-size: 11px;
+        color: var(--ctp-overlay1);
+        font-weight: 500;
+      }
+      #${PANEL_ID} .bsb-flavor {
+        display: inline-block;
+        margin-left: 8px;
+        padding: 1px 7px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--ctp-mauve);
+        background: color-mix(in srgb, var(--ctp-mauve) 16%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-mauve) 28%, transparent);
+        vertical-align: middle;
+      }
       #${PANEL_ID} .bsb-close {
-        background: transparent; border: none; color: #fff; cursor: pointer;
-        font-size: 18px; line-height: 1;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: color-mix(in srgb, var(--ctp-surface0) 55%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 60%, transparent);
+        color: var(--ctp-subtext0);
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 1;
+        transition: color .12s, background .12s, border-color .12s;
       }
+      #${PANEL_ID} .bsb-close:hover {
+        color: var(--ctp-red);
+        border-color: color-mix(in srgb, var(--ctp-red) 40%, transparent);
+        background: color-mix(in srgb, var(--ctp-red) 12%, transparent);
+      }
+
       #${PANEL_ID} .bsb-body {
-        padding: 10px 12px 12px; overflow: hidden;
-        display: flex; flex-direction: column; gap: 8px; min-height: 0;
+        padding: 12px 14px 14px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-height: 0;
+        flex: 1;
       }
+
       #${PANEL_ID} .bsb-badge {
-        display: inline-block; background: #e8f7fc; color: #0b7eb8;
-        border-radius: 999px; padding: 2px 8px; font-weight: 600; font-size: 11px;
+        display: inline-block;
+        background: color-mix(in srgb, var(--ctp-sapphire) 18%, transparent);
+        color: var(--ctp-sapphire);
+        border: 1px solid color-mix(in srgb, var(--ctp-sapphire) 32%, transparent);
+        border-radius: 999px;
+        padding: 2px 9px;
+        font-weight: 600;
+        font-size: 11px;
       }
-      #${PANEL_ID} .bsb-meta { color: #646a73; word-break: break-all; font-size: 11px; }
-      #${PANEL_ID} .bsb-toolbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-      #${PANEL_ID} .bsb-toolbar button, #${PANEL_ID} .bsb-actions button {
-        height: 28px; border-radius: 7px; border: 1px solid #d0d3d6;
-        background: #fff; cursor: pointer; font-size: 12px; padding: 0 10px; color: #1f2329;
+      #${PANEL_ID} .bsb-meta {
+        margin-top: 4px;
+        color: var(--ctp-subtext0);
+        word-break: break-all;
+        font-size: 11px;
       }
-      #${PANEL_ID} .bsb-toolbar button.primary, #${PANEL_ID} .bsb-actions button.primary {
-        background: #00a1d6; border-color: #00a1d6; color: #fff; font-weight: 600;
+
+      #${PANEL_ID} .bsb-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
       }
-      #${PANEL_ID} .bsb-toolbar button:disabled, #${PANEL_ID} .bsb-actions button:disabled {
-        opacity: .55; cursor: not-allowed;
+      #${PANEL_ID} .bsb-toolbar button,
+      #${PANEL_ID} .bsb-actions button {
+        height: 30px;
+        border-radius: 9px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 65%, transparent);
+        background: color-mix(in srgb, var(--ctp-surface0) 55%, transparent);
+        cursor: pointer;
+        font-size: 12px;
+        padding: 0 10px;
+        color: var(--ctp-text);
+        transition: background .12s, border-color .12s, color .12s;
       }
-      #${PANEL_ID} .bsb-toolbar button.danger { color: #c92a2a; border-color: #f1aeb5; }
+      #${PANEL_ID} .bsb-toolbar button:hover:not(:disabled),
+      #${PANEL_ID} .bsb-actions button:hover:not(:disabled) {
+        border-color: color-mix(in srgb, var(--ctp-lavender) 50%, transparent);
+        color: var(--ctp-lavender);
+        background: color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
+      }
+      #${PANEL_ID} .bsb-toolbar button.primary,
+      #${PANEL_ID} .bsb-actions button.primary {
+        background: color-mix(in srgb, var(--ctp-blue) 78%, transparent);
+        border-color: color-mix(in srgb, var(--ctp-blue) 55%, transparent);
+        color: var(--ctp-crust);
+        font-weight: 650;
+      }
+      #${PANEL_ID} .bsb-toolbar button.primary:hover:not(:disabled),
+      #${PANEL_ID} .bsb-actions button.primary:hover:not(:disabled) {
+        background: color-mix(in srgb, var(--ctp-lavender) 85%, transparent);
+        border-color: var(--ctp-lavender);
+        color: var(--ctp-crust);
+      }
+      #${PANEL_ID} .bsb-toolbar button:disabled,
+      #${PANEL_ID} .bsb-actions button:disabled {
+        opacity: .45;
+        cursor: not-allowed;
+      }
+      #${PANEL_ID} .bsb-toolbar button.danger {
+        color: var(--ctp-red);
+        border-color: color-mix(in srgb, var(--ctp-red) 40%, transparent);
+        background: color-mix(in srgb, var(--ctp-red) 10%, transparent);
+      }
+      #${PANEL_ID} .bsb-toolbar button.danger:hover:not(:disabled) {
+        background: color-mix(in srgb, var(--ctp-red) 22%, transparent);
+        color: var(--ctp-red);
+      }
+
       #${PANEL_ID} .bsb-opts {
-        display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: #4e5969;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: var(--ctp-subtext1);
       }
-      #${PANEL_ID} .bsb-opts label { display: inline-flex; align-items: center; gap: 4px; }
+      #${PANEL_ID} .bsb-opts label {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
       #${PANEL_ID} .bsb-opts input[type="number"] {
-        width: 56px; height: 24px; border: 1px solid #dee0e3; border-radius: 5px;
-        padding: 0 4px; font-size: 12px;
+        width: 58px;
+        height: 26px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 70%, transparent);
+        border-radius: 7px;
+        padding: 0 6px;
+        font-size: 12px;
+        color: var(--ctp-text);
+        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent);
+        outline: none;
       }
+      #${PANEL_ID} .bsb-opts input[type="number"]:focus {
+        border-color: color-mix(in srgb, var(--ctp-blue) 60%, transparent);
+        box-shadow: 0 0 0 2px color-mix(in srgb, var(--ctp-blue) 22%, transparent);
+      }
+      #${PANEL_ID} .bsb-opts input[type="checkbox"] {
+        accent-color: var(--ctp-mauve);
+      }
+
       #${PANEL_ID} .bsb-list {
-        border: 1px solid #e5e6eb; border-radius: 8px; overflow: auto;
-        max-height: 260px; min-height: 80px; background: #fafbfc;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 60%, transparent);
+        border-radius: 12px;
+        overflow: auto;
+        flex: 1;
+        min-height: 120px;
+        max-height: none;
+        background: color-mix(in srgb, var(--ctp-mantle) 48%, transparent);
       }
       #${PANEL_ID} .bsb-list table { width: 100%; border-collapse: collapse; }
-      #${PANEL_ID} .bsb-list th, #${PANEL_ID} .bsb-list td {
-        padding: 5px 6px; border-bottom: 1px solid #eef0f3; text-align: left;
+      #${PANEL_ID} .bsb-list th,
+      #${PANEL_ID} .bsb-list td {
+        padding: 6px 8px;
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 70%, transparent);
+        text-align: left;
         vertical-align: top;
       }
       #${PANEL_ID} .bsb-list th {
-        position: sticky; top: 0; background: #f2f3f5; font-weight: 600; z-index: 1;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        font-weight: 600;
+        color: var(--ctp-subtext1);
+        background: color-mix(in srgb, var(--ctp-surface0) 72%, transparent);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      #${PANEL_ID} .bsb-list tr:hover td {
+        background: color-mix(in srgb, var(--ctp-surface0) 35%, transparent);
       }
       #${PANEL_ID} .bsb-list .bsb-t {
-        max-width: 210px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: var(--ctp-text);
       }
-      #${PANEL_ID} .bsb-list .st-ok { color: #2b8a3e; }
-      #${PANEL_ID} .bsb-list .st-empty { color: #e67700; }
-      #${PANEL_ID} .bsb-list .st-err { color: #c92a2a; }
-      #${PANEL_ID} .bsb-list .st-wait { color: #8a919f; }
-      #${PANEL_ID} .bsb-actions { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+      #${PANEL_ID} .bsb-list .st-ok { color: var(--ctp-green); }
+      #${PANEL_ID} .bsb-list .st-empty { color: var(--ctp-peach); }
+      #${PANEL_ID} .bsb-list .st-err { color: var(--ctp-red); }
+      #${PANEL_ID} .bsb-list .st-wait { color: var(--ctp-overlay1); }
+      #${PANEL_ID} .bsb-list input[type="checkbox"] {
+        accent-color: var(--ctp-mauve);
+      }
+
+      #${PANEL_ID} .bsb-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+        flex-shrink: 0;
+      }
       #${PANEL_ID} .bsb-status {
-        font-size: 12px; color: #646a73; min-height: 16px; word-break: break-word;
+        font-size: 12px;
+        color: var(--ctp-subtext0);
+        min-height: 16px;
+        word-break: break-word;
       }
-      #${PANEL_ID} .bsb-status.ok { color: #2b8a3e; }
-      #${PANEL_ID} .bsb-status.err { color: #c92a2a; }
-      #${PANEL_ID} .bsb-foot { font-size: 10px; color: #8a919f; }
+      #${PANEL_ID} .bsb-status.ok { color: var(--ctp-green); }
+      #${PANEL_ID} .bsb-status.err { color: var(--ctp-red); }
+      #${PANEL_ID} .bsb-foot {
+        font-size: 10px;
+        color: var(--ctp-overlay0);
+        flex-shrink: 0;
+      }
       #${PANEL_ID} .bsb-empty {
-        padding: 20px 10px; text-align: center; color: #8a919f;
+        padding: 28px 12px;
+        text-align: center;
+        color: var(--ctp-overlay1);
+      }
+
+      /* 滚动条：Catppuccin surface */
+      #${PANEL_ID} .bsb-list::-webkit-scrollbar { width: 8px; height: 8px; }
+      #${PANEL_ID} .bsb-list::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      #${PANEL_ID} .bsb-list::-webkit-scrollbar-thumb {
+        background: color-mix(in srgb, var(--ctp-surface2) 70%, transparent);
+        border-radius: 8px;
+      }
+      #${PANEL_ID} .bsb-list::-webkit-scrollbar-thumb:hover {
+        background: var(--ctp-overlay0);
       }
     `);
   }
@@ -1048,11 +1317,16 @@
     injectStyles();
     root = document.createElement("div");
     root.id = PANEL_ID;
+    root.setAttribute("data-ctp-flavor", "mocha");
     root.innerHTML = `
-      <div class="bsb-card" role="dialog" aria-label="Bili SubBatch">
+      <aside class="bsb-sidebar" role="dialog" aria-label="Bili SubBatch" aria-hidden="true">
         <div class="bsb-head">
-          <div><strong>字幕下载</strong><span class="bsb-ver">v${SCRIPT_VERSION}</span></div>
-          <button type="button" class="bsb-close" title="关闭">×</button>
+          <div>
+            <strong>字幕下载</strong>
+            <span class="bsb-ver">v${SCRIPT_VERSION}</span>
+            <span class="bsb-flavor" title="Catppuccin Mocha">mocha</span>
+          </div>
+          <button type="button" class="bsb-close" title="关闭" aria-label="关闭">×</button>
         </div>
         <div class="bsb-body">
           <div>
@@ -1084,22 +1358,26 @@
             <button type="button" data-act="clear">清空列表</button>
           </div>
           <div class="bsb-status" data-role="status">就绪</div>
-          <div class="bsb-foot">对齐 SubBatch / bili_subbatch · 使用当前登录 Cookie · 请适度限速</div>
+          <div class="bsb-foot">Catppuccin Mocha · 透明可穿透 · 对齐 bili_subbatch · 请适度限速</div>
         </div>
-      </div>
-      <button type="button" class="bsb-fab" title="Bili SubBatch">CC</button>
+      </aside>
+      <button type="button" class="bsb-fab" title="Bili SubBatch（Catppuccin）" aria-expanded="false">CC</button>
     `;
     document.documentElement.appendChild(root);
 
-    root.querySelector(".bsb-fab").addEventListener("click", () => {
-      state.open = !state.open;
-      root.classList.toggle("open", state.open);
-      if (state.open) refreshContextUI();
-    });
-    root.querySelector(".bsb-close").addEventListener("click", () => {
-      state.open = false;
-      root.classList.remove("open");
-    });
+    const sidebar = root.querySelector(".bsb-sidebar");
+    const fab = root.querySelector(".bsb-fab");
+
+    function setOpen(open) {
+      state.open = open;
+      root.classList.toggle("open", open);
+      sidebar.setAttribute("aria-hidden", open ? "false" : "true");
+      fab.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) refreshContextUI();
+    }
+
+    fab.addEventListener("click", () => setOpen(!state.open));
+    root.querySelector(".bsb-close").addEventListener("click", () => setOpen(false));
 
     root.querySelector('[data-role="max-pages"]').addEventListener("change", (e) => {
       state.maxPages = Math.max(1, Math.min(100, Number(e.target.value) || DEFAULT_MAX_PAGES));
