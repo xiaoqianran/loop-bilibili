@@ -6,3 +6,5 @@
 | `bili_subbatch` | **字幕现行方案**：SubBatch HTTP/WBI、batch、SRT、pack |
 
 `main.py` 通过 `ensure_sys_path` 把本目录加入 `sys.path`。
+
+浏览器侧同协议工具见 [`../userscripts/`](../userscripts/)（Tampermonkey）。
