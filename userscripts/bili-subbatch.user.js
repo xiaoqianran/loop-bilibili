@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.3.0
-// @description  B站字幕批量下载：单视频/选集/个人主页/收藏夹/合集/搜索页。Catppuccin 透明可穿透边栏。协议对齐 packages/bili_subbatch
+// @version      0.4.0
+// @description  B站字幕批量下载：自动识别+可切换模式（默认单视频）。Catppuccin 透明边栏。对齐 packages/bili_subbatch
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -24,18 +24,9 @@
 // ==/UserScript==
 
 /**
- * v0.3 — multi-source list + batch; Catppuccin Mocha glass sidebar (click-through).
- * Aligned with Chrome SubBatch + packages/bili_subbatch.
- *
- * Sources:
- *   video / selection  — view/detail pages[]
- *   user               — /x/space/wbi/arc/search
- *   favorite           — /x/v3/fav/resource/list
- *   collection         — /x/polymer/web-space/seasons_archives_list
- *   search             — /x/web-interface/wbi/search/type
- *
- * Subtitle: WBI → view/detail → player/wbi/v2 → (dm/view | ai_stat) → body → SRT/TXT
- * UI: pointer-events 穿透空白区；仅 FAB / 边栏内容可点；Catppuccin Mocha userstyle
+ * v0.4 — multi-source + mode switch (auto / manual).
+ * Default mode: auto → prefers 单个视频; 选集/合集可手动切换。
+ * Catppuccin Mocha glass sidebar (click-through). Aligned with bili_subbatch.
  */
 
 (function () {
@@ -67,6 +58,17 @@
     search: "搜索页",
     unknown: "未知页面",
   };
+
+  /** 可手动切换的模式（auto 走识别；其余强制类型） */
+  const MODE_OPTIONS = [
+    "auto",
+    "video",
+    "selection",
+    "user",
+    "favorite",
+    "collection",
+    "search",
+  ];
 
   // ─── MD5 ────────────────────────────────────────────────────────────────
   function md5(str) {
@@ -469,20 +471,29 @@
   }
 
   // ─── page context detection ─────────────────────────────────────────────
+  /**
+   * 自动识别。约定：
+   * - 视频页默认 type=video（单个视频），不因多分P自动变 selection
+   * - /list + sid → collection；/list/ml → favorite
+   * - 合集列表页（space lists / collectiondetail）→ collection
+   * - 返回字段可被「手动模式」复用（mid/sid/bvid…）
+   */
   function detectContext(href) {
     let u;
     try {
       u = new URL(href || location.href);
     } catch (_) {
-      return { type: "unknown" };
+      return { type: "unknown", source: "auto" };
     }
     const host = u.hostname.toLowerCase();
     const path = u.pathname;
+    const hints = extractPageHints(u);
 
     // search
     if (/^search\.bilibili\.com$/i.test(host)) {
       if (/^\/(all|video)\/?$/i.test(path)) {
-        const keyword = (u.searchParams.get("keyword") || "").trim();
+        const keyword =
+          (u.searchParams.get("keyword") || "").trim() || hints.keyword;
         if (keyword) {
           const allowed = new Set([
             "totalrank",
@@ -495,88 +506,365 @@
           const order = (u.searchParams.get("order") || "totalrank")
             .trim()
             .toLowerCase();
-          const page = Math.max(1, parseInt(u.searchParams.get("page") || "1", 10) || 1);
+          const page = Math.max(
+            1,
+            parseInt(u.searchParams.get("page") || "1", 10) || 1,
+          );
           return {
             type: "search",
+            source: "auto",
             keyword,
             order: allowed.has(order) ? order : "totalrank",
             page,
           };
         }
       }
-      return { type: "unknown" };
+      return { type: "unknown", source: "auto" };
     }
 
     // space
     if (/^space\.bilibili\.com$/i.test(host)) {
-      // collection: /{mid}/lists/{sid}
       let m = path.match(/^\/(\d+)\/lists\/(\d+)\/?$/i);
       if (m) {
-        return { type: "collection", mid: m[1], season_id: m[2] };
+        return {
+          type: "collection",
+          source: "auto",
+          mid: m[1],
+          season_id: m[2],
+        };
       }
-      // collectiondetail?sid=
       m = path.match(/^\/(\d+)\/channel\/collectiondetail\/?$/i);
       if (m) {
-        const sid = u.searchParams.get("sid") || u.searchParams.get("season_id");
+        const sid =
+          u.searchParams.get("sid") ||
+          u.searchParams.get("season_id") ||
+          hints.season_id;
         if (sid && /^\d+$/.test(sid)) {
-          return { type: "collection", mid: m[1], season_id: sid };
+          return {
+            type: "collection",
+            source: "auto",
+            mid: m[1],
+            season_id: String(sid),
+          };
         }
       }
-      // favorite
-      const fid = (u.searchParams.get("fid") || "").trim();
-      if (fid && /^\d+$/.test(fid) && /\/favlist\/?$/i.test(path)) {
-        return { type: "favorite", media_id: fid };
+      // series / seasons 列表入口
+      m = path.match(/^\/(\d+)\/channel\/seriesdetail\/?$/i);
+      if (m) {
+        const sid =
+          u.searchParams.get("sid") ||
+          u.searchParams.get("season_id") ||
+          hints.season_id;
+        if (sid && /^\d+$/.test(sid)) {
+          return {
+            type: "collection",
+            source: "auto",
+            mid: m[1],
+            season_id: String(sid),
+          };
+        }
       }
-      // user homepage / video tab
-      m = path.match(/^\/(\d+)(?:\/(?:video|upload\/video)?)?\/?$/i);
+      const fid = (u.searchParams.get("fid") || hints.media_id || "").trim();
+      if (fid && /^\d+$/.test(fid) && /\/favlist\/?$/i.test(path)) {
+        return { type: "favorite", source: "auto", media_id: fid };
+      }
+      m = path.match(/^\/(\d+)/);
       if (m) {
         const segs = path.split("/").filter(Boolean);
+        const mid = m[1];
         if (
           segs.length === 1 ||
-          (segs.length === 2 && /^(video|upload)$/i.test(segs[1])) ||
+          (segs.length === 2 && /^(video|upload|dynamic|favlist)?$/i.test(segs[1])) ||
           (segs.length === 3 && segs[1] === "upload" && segs[2] === "video")
         ) {
-          return { type: "user", mid: m[1] };
+          // favlist without fid still unknown for fav; treat as user
+          if (segs[1] && /^favlist$/i.test(segs[1]) && !fid) {
+            return { type: "user", source: "auto", mid, note: "favlist_no_fid" };
+          }
+          return { type: "user", source: "auto", mid };
         }
+        // other space tabs: still expose mid for manual switch
+        return {
+          type: "user",
+          source: "auto",
+          mid,
+          note: "space_tab",
+          bvid: hints.bvid || undefined,
+        };
       }
-      // space root with only mid
-      m = path.match(/^\/(\d+)\/?$/);
-      if (m) return { type: "user", mid: m[1] };
-      return { type: "unknown" };
+      return { type: "unknown", source: "auto", ...pickHintIds(hints) };
     }
 
-    // www medialist / favlist
+    // www.bilibili.com
     if (/^(www\.)?bilibili\.com$/i.test(host)) {
       let m = path.match(/^\/medialist\/(?:detail|play)\/ml(\d+)\/?$/i);
-      if (m) return { type: "favorite", media_id: m[1] };
+      if (m) return { type: "favorite", source: "auto", media_id: m[1] };
+
+      // /list/ml{id} 收藏夹播放/详情
+      m = path.match(/^\/list\/ml(\d+)\/?/i);
+      if (m) return { type: "favorite", source: "auto", media_id: m[1] };
+
+      // /list/{mid}?sid= 合集播放页（常见误判为单视频）
+      m = path.match(/^\/list\/(\d+)\/?/i);
+      if (m) {
+        const mid = m[1];
+        const sid =
+          u.searchParams.get("sid") ||
+          u.searchParams.get("season_id") ||
+          hints.season_id;
+        const bvid =
+          extractBvid(href) ||
+          extractBvid(u.searchParams.get("bvid") || "") ||
+          hints.bvid;
+        if (sid && /^\d+$/.test(String(sid))) {
+          return {
+            type: "collection",
+            source: "auto",
+            mid,
+            season_id: String(sid),
+            bvid: bvid || undefined,
+            page: Math.max(1, parseInt(u.searchParams.get("p") || "1", 10) || 1),
+          };
+        }
+        // 无 sid 时：若有 BV 默认单视频，但带 mid 便于手动切合集
+        if (bvid) {
+          return {
+            type: "video",
+            source: "auto",
+            bvid,
+            mid,
+            page: Math.max(1, parseInt(u.searchParams.get("p") || "1", 10) || 1),
+            note: "list_without_sid",
+          };
+        }
+        return { type: "user", source: "auto", mid, note: "list_mid_only" };
+      }
+
       m = path.match(/^\/(?:fav|list)\/(?:ml)?(\d+)\/?$/i);
-      if (m) return { type: "favorite", media_id: m[1] };
+      if (m && !path.startsWith("/list/")) {
+        return { type: "favorite", source: "auto", media_id: m[1] };
+      }
       if (/^\/favlist\/?$/i.test(path)) {
-        const fid = (u.searchParams.get("fid") || "").trim();
-        if (fid && /^\d+$/.test(fid)) return { type: "favorite", media_id: fid };
+        const fid = (u.searchParams.get("fid") || hints.media_id || "").trim();
+        if (fid && /^\d+$/.test(fid)) {
+          return { type: "favorite", source: "auto", media_id: fid };
+        }
       }
 
-      // video
-      const bvid = extractBvid(path) || extractBvid(href);
-      if (bvid && /\/video\//i.test(path)) {
+      // 普通视频页：默认「单个视频」（不自动变选集）
+      const bvid =
+        extractBvid(path) || extractBvid(href) || hints.bvid;
+      if (bvid && (/\/video\//i.test(path) || hints.fromVideoPath)) {
         const p = Math.max(1, parseInt(u.searchParams.get("p") || "1", 10) || 1);
-        return { type: "video", bvid, page: p };
+        const ctx = {
+          type: "video",
+          source: "auto",
+          bvid,
+          page: p,
+        };
+        // 若页内能挖到合集信息，挂上供手动切换
+        if (hints.mid && hints.season_id) {
+          ctx.mid = hints.mid;
+          ctx.season_id = hints.season_id;
+          ctx.note = "video_has_ugc_season";
+        }
+        return ctx;
       }
 
-      // list multi collection play sometimes embeds BV
+      // 其它 list 形态
       if (/\/list\//i.test(path)) {
-        const bvid2 = extractBvid(href) || extractBvid(u.searchParams.get("bvid") || "");
+        const bvid2 =
+          extractBvid(href) ||
+          extractBvid(u.searchParams.get("bvid") || "") ||
+          hints.bvid;
         if (bvid2) {
           return {
             type: "video",
+            source: "auto",
             bvid: bvid2,
             page: Math.max(1, parseInt(u.searchParams.get("p") || "1", 10) || 1),
+            mid: hints.mid || undefined,
+            season_id: hints.season_id || undefined,
+            note: "list_fallback_video",
           };
         }
       }
     }
 
-    return { type: "unknown" };
+    // DOM 兜底
+    if (hints.bvid) {
+      return {
+        type: "video",
+        source: "auto",
+        bvid: hints.bvid,
+        page: 1,
+        mid: hints.mid || undefined,
+        season_id: hints.season_id || undefined,
+        note: "dom_bvid",
+      };
+    }
+    return { type: "unknown", source: "auto", ...pickHintIds(hints) };
+  }
+
+  function pickHintIds(hints) {
+    const o = {};
+    if (hints.mid) o.mid = hints.mid;
+    if (hints.season_id) o.season_id = hints.season_id;
+    if (hints.media_id) o.media_id = hints.media_id;
+    if (hints.bvid) o.bvid = hints.bvid;
+    if (hints.keyword) o.keyword = hints.keyword;
+    return o;
+  }
+
+  /** 从 URL / 页面链接尽量挖 mid、season_id、media_id、bvid */
+  function extractPageHints(u) {
+    const hints = {
+      bvid: "",
+      mid: "",
+      season_id: "",
+      media_id: "",
+      keyword: "",
+      fromVideoPath: false,
+    };
+    try {
+      if (!u) u = new URL(location.href);
+    } catch (_) {
+      return hints;
+    }
+    hints.bvid =
+      extractBvid(u.href) ||
+      extractBvid(u.searchParams.get("bvid") || "") ||
+      "";
+    hints.keyword = (u.searchParams.get("keyword") || "").trim();
+    const sid =
+      u.searchParams.get("sid") ||
+      u.searchParams.get("season_id") ||
+      u.searchParams.get("business_id") ||
+      "";
+    if (sid && /^\d+$/.test(String(sid))) hints.season_id = String(sid);
+    const fid = u.searchParams.get("fid") || "";
+    if (fid && /^\d+$/.test(fid)) hints.media_id = fid;
+    if (/\/video\//i.test(u.pathname)) hints.fromVideoPath = true;
+
+    // path mid
+    let m = u.pathname.match(/space\.bilibili\.com\/(\d+)/i);
+    if (!m) m = String(location.href).match(/space\.bilibili\.com\/(\d+)/i);
+    if (m) hints.mid = m[1];
+    m = u.pathname.match(/^\/list\/(\d+)/i);
+    if (m) hints.mid = m[1];
+    m = u.pathname.match(/^\/(\d+)(?:\/|$)/);
+    if (m && /space\.bilibili\.com/i.test(u.hostname)) hints.mid = m[1];
+
+    // DOM: 合集 / 列表链接
+    try {
+      const anchors = document.querySelectorAll(
+        'a[href*="lists/"], a[href*="collectiondetail"], a[href*="season_id"], a[href*="sid="], a[href*="/list/"]',
+      );
+      for (const a of anchors) {
+        const href = a.getAttribute("href") || a.href || "";
+        const lm = href.match(/\/(\d+)\/lists\/(\d+)/);
+        if (lm) {
+          if (!hints.mid) hints.mid = lm[1];
+          if (!hints.season_id) hints.season_id = lm[2];
+          break;
+        }
+        try {
+          const au = new URL(href, location.origin);
+          const sm =
+            au.searchParams.get("sid") || au.searchParams.get("season_id");
+          if (sm && /^\d+$/.test(sm)) {
+            if (!hints.season_id) hints.season_id = sm;
+            const mm = au.pathname.match(/\/(\d+)/);
+            if (mm && !hints.mid) hints.mid = mm[1];
+          }
+          const listMid = au.pathname.match(/\/list\/(\d+)/i);
+          if (listMid && !hints.mid) hints.mid = listMid[1];
+        } catch (_) {
+          /* ignore */
+        }
+      }
+      if (!hints.bvid) {
+        const b = extractBvid(
+          document.querySelector('meta[itemprop="url"]')?.content || "",
+        );
+        if (b) hints.bvid = b;
+      }
+      if (!hints.bvid) {
+        const og = document.querySelector('meta[property="og:url"]')?.content;
+        if (og) hints.bvid = extractBvid(og);
+      }
+    } catch (_) {
+      /* ignore */
+    }
+    return hints;
+  }
+
+  /**
+   * 根据模式选择器 + 自动识别 得到最终扫描上下文。
+   * mode=auto → 用 autoCtx；manual → 强制 type，参数从 auto/hints 填。
+   */
+  function resolveContext() {
+    const root = document.getElementById(PANEL_ID);
+    const modeSel = root?.querySelector('[data-role="mode"]');
+    const mode = (modeSel?.value || state.mode || "auto").trim();
+    state.mode = MODE_OPTIONS.includes(mode) ? mode : "auto";
+
+    const auto = detectContext(location.href);
+    state.autoCtx = auto;
+
+    if (state.mode === "auto") {
+      return { ...auto, source: "auto" };
+    }
+
+    const type = state.mode;
+    const hints = extractPageHints();
+    const base = { ...auto, ...pickHintIds(hints), type, source: "manual" };
+
+    if (type === "video" || type === "selection") {
+      base.bvid =
+        auto.bvid ||
+        hints.bvid ||
+        extractBvid(location.href) ||
+        "";
+      base.page =
+        auto.page ||
+        Math.max(
+          1,
+          parseInt(new URL(location.href).searchParams.get("p") || "1", 10) || 1,
+        );
+    }
+    if (type === "user") {
+      base.mid = auto.mid || hints.mid || "";
+    }
+    if (type === "collection") {
+      base.mid = auto.mid || hints.mid || "";
+      base.season_id = auto.season_id || hints.season_id || "";
+    }
+    if (type === "favorite") {
+      base.media_id = auto.media_id || hints.media_id || "";
+    }
+    if (type === "search") {
+      base.keyword = auto.keyword || hints.keyword || "";
+      base.order = auto.order || "totalrank";
+      base.page = auto.page || 1;
+    }
+    return base;
+  }
+
+  function formatCtxBits(ctx) {
+    const bits = [];
+    if (ctx.bvid) bits.push(ctx.bvid);
+    if (ctx.mid) bits.push(`mid=${ctx.mid}`);
+    if (ctx.season_id) bits.push(`season=${ctx.season_id}`);
+    if (ctx.media_id) bits.push(`fid=${ctx.media_id}`);
+    if (ctx.keyword) bits.push(`「${ctx.keyword}」`);
+    if (ctx.order && ctx.type === "search") bits.push(`order=${ctx.order}`);
+    if (ctx.page && (ctx.type === "video" || ctx.type === "selection")) {
+      bits.push(`p=${ctx.page}`);
+    }
+    if (ctx.note === "video_has_ugc_season") bits.push("页内含合集信息");
+    if (ctx.note === "list_without_sid") bits.push("list页无sid");
+    return bits.join(" · ") || location.href.slice(0, 80);
   }
 
   // ─── subtitle fetch (client.py) ─────────────────────────────────────────
@@ -899,8 +1187,8 @@
   }
 
   async function loadVideoAsItems(bvid, expandAllParts) {
+    // page=1 仅用于拿 View/pages 元信息；字幕在批量阶段再按 page 拉
     const r = await fetchSubtitle(bvid, 1);
-    // We only need meta; even empty subtitle is fine
     if (r.status === "error" && !r.pages?.length && !r.title) {
       throw new Error(r.error || "无法获取视频信息");
     }
@@ -916,9 +1204,29 @@
           part: p.part || "",
         })),
         meta: { title: r.title, author: r.author, multip: true },
+        pages,
       };
     }
-    const p = 1;
+    if (expandAllParts && pages.length <= 1) {
+      return {
+        items: [
+          {
+            bvid: r.bvid || bvid,
+            aid: r.aid,
+            title: r.title || bvid,
+            author: r.author || "",
+            page: 1,
+          },
+        ],
+        meta: {
+          title: r.title,
+          author: r.author,
+          multip: false,
+          hint: "该稿只有 1P，已按单视频处理",
+        },
+        pages,
+      };
+    }
     return {
       items: [
         {
@@ -926,7 +1234,7 @@
           aid: r.aid,
           title: r.title || bvid,
           author: r.author || "",
-          page: p,
+          page: 1,
         },
       ],
       meta: { title: r.title, author: r.author, multip: pages.length > 1 },
@@ -939,6 +1247,8 @@
     open: false,
     busy: false,
     cancel: false,
+    mode: "auto", // auto | video | selection | user | favorite | collection | search
+    autoCtx: null,
     ctx: null,
     items: [], // { bvid, title, author, page, selected, status?, cues?, error? }
     meta: {},
@@ -1136,11 +1446,54 @@
         font-weight: 600;
         font-size: 11px;
       }
+      #${PANEL_ID} .bsb-badge.manual {
+        background: color-mix(in srgb, var(--ctp-mauve) 18%, transparent);
+        color: var(--ctp-mauve);
+        border-color: color-mix(in srgb, var(--ctp-mauve) 32%, transparent);
+      }
       #${PANEL_ID} .bsb-meta {
         margin-top: 4px;
         color: var(--ctp-subtext0);
         word-break: break-all;
         font-size: 11px;
+      }
+      #${PANEL_ID} .bsb-mode-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+      #${PANEL_ID} .bsb-mode-row label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--ctp-subtext1);
+      }
+      #${PANEL_ID} .bsb-mode-row select {
+        height: 28px;
+        min-width: 128px;
+        border-radius: 8px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 65%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent);
+        color: var(--ctp-text);
+        padding: 0 8px;
+        font-size: 12px;
+        outline: none;
+        cursor: pointer;
+      }
+      #${PANEL_ID} .bsb-mode-row select:focus {
+        border-color: color-mix(in srgb, var(--ctp-mauve) 55%, transparent);
+        box-shadow: 0 0 0 2px color-mix(in srgb, var(--ctp-mauve) 20%, transparent);
+      }
+      #${PANEL_ID} .bsb-auto-hint {
+        font-size: 11px;
+        color: var(--ctp-overlay1);
+        flex: 1;
+        min-width: 120px;
+      }
+      #${PANEL_ID} .bsb-auto-hint strong {
+        color: var(--ctp-teal);
+        font-weight: 600;
       }
 
       #${PANEL_ID} .bsb-toolbar {
@@ -1333,6 +1686,20 @@
             <span class="bsb-badge" data-role="type">—</span>
             <div class="bsb-meta" data-role="ctx">—</div>
           </div>
+          <div class="bsb-mode-row">
+            <label>模式
+              <select data-role="mode" title="自动识别；也可强制指定类型（默认倾向单个视频）">
+                <option value="auto" selected>自动识别</option>
+                <option value="video">单个视频</option>
+                <option value="selection">视频选集</option>
+                <option value="user">个人主页</option>
+                <option value="favorite">收藏夹</option>
+                <option value="collection">合集</option>
+                <option value="search">搜索页</option>
+              </select>
+            </label>
+            <span class="bsb-auto-hint" data-role="auto-hint">识别：—</span>
+          </div>
           <div class="bsb-toolbar">
             <button type="button" class="primary" data-act="scan">扫描当前页</button>
             <button type="button" data-act="sel-all">全选</button>
@@ -1342,9 +1709,6 @@
           <div class="bsb-opts">
             <label>最多页 <input type="number" data-role="max-pages" min="1" max="100" value="${DEFAULT_MAX_PAGES}"></label>
             <label>间隔ms <input type="number" data-role="delay" min="0" max="5000" step="50" value="${DEFAULT_DELAY_MS}"></label>
-            <label class="bsb-expand-parts" style="display:none">
-              <input type="checkbox" data-role="expand-parts" checked> 展开全部分P
-            </label>
           </div>
           <div class="bsb-list" data-role="list">
             <div class="bsb-empty">点「扫描当前页」加载视频列表</div>
@@ -1385,6 +1749,15 @@
     root.querySelector('[data-role="delay"]').addEventListener("change", (e) => {
       state.delayMs = Math.max(0, Math.min(5000, Number(e.target.value) || DEFAULT_DELAY_MS));
     });
+    root.querySelector('[data-role="mode"]').addEventListener("change", (e) => {
+      state.mode = e.target.value || "auto";
+      refreshContextUI();
+      setStatus(
+        state.mode === "auto"
+          ? "已切回自动识别（默认偏单个视频）"
+          : `已手动指定：${TYPE_LABEL[state.mode] || state.mode}`,
+      );
+    });
 
     root.querySelectorAll("[data-act]").forEach((btn) => {
       btn.addEventListener("click", () => onAction(btn.getAttribute("data-act")));
@@ -1417,24 +1790,35 @@
 
   function refreshContextUI() {
     const root = ensurePanel();
-    state.ctx = detectContext(location.href);
-    const ctx = state.ctx;
-    root.querySelector('[data-role="type"]').textContent =
-      TYPE_LABEL[ctx.type] || ctx.type;
-    const bits = [];
-    if (ctx.bvid) bits.push(ctx.bvid);
-    if (ctx.mid) bits.push(`mid=${ctx.mid}`);
-    if (ctx.season_id) bits.push(`season=${ctx.season_id}`);
-    if (ctx.media_id) bits.push(`fid=${ctx.media_id}`);
-    if (ctx.keyword) bits.push(`「${ctx.keyword}」`);
-    if (ctx.order) bits.push(`order=${ctx.order}`);
-    if (ctx.page && ctx.type === "video") bits.push(`p=${ctx.page}`);
-    root.querySelector('[data-role="ctx"]').textContent =
-      bits.join(" · ") || location.href.slice(0, 80);
+    const modeSel = root.querySelector('[data-role="mode"]');
+    if (modeSel) {
+      // 下拉为源：用户手动选择会保留；非法值回退 state.mode
+      if (MODE_OPTIONS.includes(modeSel.value)) state.mode = modeSel.value;
+      else modeSel.value = state.mode || "auto";
+    }
 
-    const expandWrap = root.querySelector(".bsb-expand-parts");
-    expandWrap.style.display =
-      ctx.type === "video" || ctx.type === "selection" ? "" : "none";
+    const auto = detectContext(location.href);
+    state.autoCtx = auto;
+    const ctx = resolveContext();
+    state.ctx = ctx;
+
+    const badge = root.querySelector('[data-role="type"]');
+    badge.textContent =
+      (ctx.source === "manual" ? "手动 · " : "自动 · ") +
+      (TYPE_LABEL[ctx.type] || ctx.type);
+    badge.classList.toggle("manual", ctx.source === "manual");
+
+    root.querySelector('[data-role="ctx"]').textContent = formatCtxBits(ctx);
+
+    const hint = root.querySelector('[data-role="auto-hint"]');
+    if (hint) {
+      const autoLabel = TYPE_LABEL[auto.type] || auto.type;
+      if (state.mode === "auto") {
+        hint.innerHTML = `识别：<strong>${escapeHtml(autoLabel)}</strong>`;
+      } else {
+        hint.innerHTML = `自动本会是：<strong>${escapeHtml(autoLabel)}</strong>（已手动覆盖）`;
+      }
+    }
   }
 
   function renderList() {
@@ -1544,9 +1928,39 @@
     else if (navigator.clipboard) navigator.clipboard.writeText(text);
   }
 
+  function validateCtxForScan(ctx) {
+    if (ctx.type === "video" || ctx.type === "selection") {
+      if (!ctx.bvid) {
+        throw new Error("缺少 BV 号。请打开视频页，或切到「单个视频/视频选集」后重试");
+      }
+    } else if (ctx.type === "user") {
+      if (!ctx.mid) {
+        throw new Error("缺少 mid。请打开个人主页，或模式选「个人主页」");
+      }
+    } else if (ctx.type === "collection") {
+      if (!ctx.mid || !ctx.season_id) {
+        throw new Error(
+          "合集需要 mid + season_id。请打开合集页（space/lists 或 /list/{mid}?sid=），或从下拉切到「合集」",
+        );
+      }
+    } else if (ctx.type === "favorite") {
+      if (!ctx.media_id) {
+        throw new Error("收藏夹需要 fid/media_id。请打开带 fid 的收藏夹页");
+      }
+    } else if (ctx.type === "search") {
+      if (!ctx.keyword) {
+        throw new Error("搜索需要 keyword。请打开搜索结果页");
+      }
+    } else if (ctx.type === "unknown") {
+      throw new Error(
+        "未能识别页面。可手动选择模式：单个视频 / 视频选集 / 个人主页 / 收藏夹 / 合集 / 搜索页",
+      );
+    }
+  }
+
   async function doScan() {
     refreshContextUI();
-    const ctx = state.ctx || detectContext(location.href);
+    const ctx = resolveContext();
     state.ctx = ctx;
     state.cancel = false;
     setBusy(true);
@@ -1561,23 +1975,51 @@
         0,
         Math.min(5000, Number(root.querySelector('[data-role="delay"]').value) || DEFAULT_DELAY_MS),
       );
-      const expandParts = !!root.querySelector('[data-role="expand-parts"]')?.checked;
+
+      validateCtxForScan(ctx);
 
       let items = [];
       let meta = {};
 
+      // 单个视频 = 当前分P；视频选集 = 展开全部分P
       if (ctx.type === "video" || ctx.type === "selection") {
         const bvid = ctx.bvid || extractBvid(location.href);
         if (!bvid) throw new Error("未识别 BV 号");
-        setStatus(`读取视频 ${bvid}…`);
-        // Always probe pages; if multip and expand → selection list
+        const expandParts = ctx.type === "selection";
+        setStatus(
+          expandParts
+            ? `读取选集 ${bvid}（全部分P）…`
+            : `读取单个视频 ${bvid}${ctx.page > 1 ? " P" + ctx.page : ""}…`,
+        );
         const loaded = await loadVideoAsItems(bvid, expandParts);
-        items = loaded.items;
+        // 单个视频：只保留当前 p（loadVideoAsItems 非 expand 时已是 1 条；
+        // 若 expand=false 但我们要当前 p，需按 page 取）
+        if (!expandParts) {
+          const page = ctx.page || 1;
+          if (loaded.pages && loaded.pages.length && page > 1) {
+            // 重新按指定分P构造一条
+            const part = loaded.pages[page - 1];
+            items = [
+              {
+                bvid,
+                aid: loaded.items[0]?.aid,
+                title: part
+                  ? `${loaded.meta?.title || bvid} - P${page}【${part.part || ""}】`
+                  : loaded.meta?.title || bvid,
+                author: loaded.meta?.author || "",
+                page,
+                part: part?.part || "",
+              },
+            ];
+          } else {
+            items = loaded.items.map((it) => ({ ...it, page: page || 1 }));
+          }
+        } else {
+          items = loaded.items;
+        }
         meta = loaded.meta || {};
-        // If multip and not expand, still mark as video; if expand → selection feel
-        if (expandParts && items.length > 1) {
-          state.ctx = { ...ctx, type: "selection", bvid };
-          root.querySelector('[data-role="type"]').textContent = TYPE_LABEL.selection;
+        if (meta.multip && ctx.type === "video") {
+          meta.hint = "多分P视频：可切换模式「视频选集」拉全部分P";
         }
       } else if (
         ctx.type === "user" ||
@@ -1595,31 +2037,21 @@
         });
         items = res.items;
         meta = res.meta || {};
-        if (res.truncated) {
-          meta.truncated = true;
-        }
+        if (res.truncated) meta.truncated = true;
       } else {
-        // fallback: try BV on page / DOM harvest for search-like pages
-        const bvid = extractBvid(location.href);
-        if (bvid) {
-          const loaded = await loadVideoAsItems(bvid, expandParts);
-          items = loaded.items;
-          meta = loaded.meta || {};
+        const fromDom = harvestBvidsFromDom();
+        if (fromDom.length) {
+          items = fromDom.map((b) => ({
+            bvid: b,
+            title: b,
+            author: "",
+            page: 1,
+          }));
+          meta = { fromDom: true };
         } else {
-          const fromDom = harvestBvidsFromDom();
-          if (fromDom.length) {
-            items = fromDom.map((b) => ({
-              bvid: b,
-              title: b,
-              author: "",
-              page: 1,
-            }));
-            meta = { fromDom: true };
-          } else {
-            throw new Error(
-              "当前页未识别。请在 视频/个人主页/收藏夹/合集/搜索 页使用，或确认 URL 含 BV/mid/fid/keyword",
-            );
-          }
+          throw new Error(
+            "当前页未识别。请手动选择模式，或确认 URL 含 BV/mid/fid/keyword",
+          );
         }
       }
 
@@ -1633,11 +2065,21 @@
       }));
       state.meta = meta;
       renderList();
+      refreshContextUI();
       const trunc = meta.truncated ? "（已达页数上限，可调大「最多页」）" : "";
-      setStatus(`已加载 ${state.items.length} 条${trunc}`, "ok");
+      const modeTag =
+        ctx.source === "manual"
+          ? `手动·${TYPE_LABEL[ctx.type]}`
+          : `自动·${TYPE_LABEL[ctx.type]}`;
+      let msg = `[${modeTag}] 已加载 ${state.items.length} 条${trunc}`;
+      if (meta.hint) msg += ` · ${meta.hint}`;
+      setStatus(msg, "ok");
       if (meta.name || meta.title || meta.keyword) {
         const label = meta.name || meta.title || meta.keyword;
-        ensurePanel().querySelector('[data-role="ctx"]').textContent += ` · ${label}`;
+        const ctxEl = ensurePanel().querySelector('[data-role="ctx"]');
+        if (ctxEl && !ctxEl.textContent.includes(String(label))) {
+          ctxEl.textContent += ` · ${label}`;
+        }
       }
     } catch (e) {
       console.error("[bili-subbatch] scan", e);
