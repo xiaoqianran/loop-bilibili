@@ -2,11 +2,23 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.3.0）
+## `bili-subbatch.user.js`（v0.4.0）
 
 右侧 **Catppuccin Mocha** 玻璃边栏（透明 + 毛玻璃）；容器 `pointer-events: none`，**空白区域可穿透点击页面**，仅 FAB / 边栏本体可点。
 
-流程：右下角 **CC** → 识别当前页 → 扫描列表 → 勾选 → 批量 SRT/TXT。
+流程：右下角 **CC** →（自动识别或手动选模式）→ 扫描列表 → 勾选 → 批量 SRT/TXT。
+
+### 模式（自动 + 可切换）
+
+| 模式 | 行为 |
+|------|------|
+| **自动识别**（默认） | 按 URL/页内信息识别；**视频页默认「单个视频」**（不因多分P自动变选集） |
+| 单个视频 | 只处理当前分P（`?p=`） |
+| 视频选集 | 展开该稿全部分P |
+| 个人主页 / 收藏夹 / 合集 / 搜索页 | 分页拉列表 |
+
+合集播放页 `/list/{mid}?sid=` 会识别为**合集**（不再误判成单视频）。  
+若自动不准，用下拉框强制切换；状态区会显示「自动本会是：xxx（已手动覆盖）」。
 
 ### 支持的页面
 
@@ -33,8 +45,8 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.3.0**）
-3. 打开上表任一页面 → 右下角 **CC** → **扫描当前页** → 勾选 → 下载
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.4.0**）
+3. 打开上表任一页面 → 右下角 **CC** → 确认/切换模式 → **扫描当前页** → 勾选 → 下载
 
 ### UI
 
@@ -43,6 +55,7 @@
 | 主题 | [Catppuccin Mocha](https://catppuccin.com/palette/) userstyle 变量 |
 | 穿透 | 根节点 `pointer-events: none`；`.bsb-fab` / `.bsb-sidebar` 为 `auto` |
 | 形态 | 右侧玻璃边栏 + 半透明 FAB，不挡页面操作 |
+| 模式 | 下拉：自动识别 / 六种强制类型 |
 
 ### 推荐用法
 
