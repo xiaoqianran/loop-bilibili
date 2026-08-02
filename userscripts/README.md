@@ -61,17 +61,17 @@
 
 | 项 | 说明 |
 |----|------|
-| 主题 | [Catppuccin Mocha](https://catppuccin.com/palette/) userstyle 变量 |
+| 主题 | [Catppuccin Mocha](https://catppuccin.com/palette/) 玻璃拟态 |
+| 导航 | **AI 笔记**（默认全高画布）/ **字幕库** / **设置** |
 | 穿透 | 根节点 `pointer-events: none`；FAB / 面板 / 贴边标签可点 |
 | 拖拽 | 按住标题栏拖动；松手靠近左右边缘会**贴边收起** |
-| 拉伸 | 拖面板四边/四角调整大小（最小约 320×360） |
-| 贴边 | 标题栏「⧉」贴边 / 「—」收起；侧边 **字幕 CC** 标签展开；移出自动收 |
-| 记忆 | 位置/大小/贴边 → `localStorage` `bili-subbatch-ui-v1` |
-| 模式 | 下拉：自动识别 / 六种强制类型 |
+| 拉伸 | 拖面板四边/四角（最小约 420×520，默认约 560×820） |
+| 贴边 | 标题栏「⧉」/「—」；侧边 **AI · CC** 标签展开 |
+| 记忆 | 几何+工作区 → `bili-subbatch-ui-v2`；AI → `bili-subbatch-ai-v1` |
 
 ---
 
-## AI 分析（油猴 v0.6 重点）
+## AI 分析（油猴重点）
 
 把**已勾选视频的字幕**发给任意 **OpenAI 兼容** Chat Completions 接口，支持：
 
@@ -193,6 +193,7 @@ Content-Type: application/json
 | 0.5 | 拖拽 / 拉伸 / 贴边收起 |
 | **0.6** | **OpenAI 兼容 AI：提示词、流式、MD/高亮/Mermaid** |
 | **0.6.1** | **修复推理模型 reasoning 字段；默认非流式；SSE 行缓冲** |
+| **0.7.0** | **三工作区 UI：AI 全高画布 / 字幕库 / 设置** |
 
 ### 自检
 
