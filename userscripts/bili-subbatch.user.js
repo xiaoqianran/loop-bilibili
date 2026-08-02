@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.8.2
-// @description  B站字幕+AI：可自由滚动的流式阅读 + 宽松排版
+// @version      0.8.3
+// @description  B站字幕+AI：绝对定位阅读器、真·自由滚动、阅读排版
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -37,7 +37,7 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.2";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.3";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
   /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
@@ -1770,10 +1770,18 @@
         gap: 10px;
         padding: 12px 14px 10px;
         min-height: 0;
-        flex: 1;
+        flex: 1 1 0;
         overflow: hidden;
       }
       #${PANEL_ID} .bsb-view.active { display: flex; }
+      /* AI 页：画布吃掉剩余高度（给绝对定位阅读器当基准） */
+      #${PANEL_ID} .bsb-view[data-view-panel="ai"] {
+        gap: 8px;
+      }
+      #${PANEL_ID} .bsb-view[data-view-panel="ai"] .bsb-ai-canvas-wrap {
+        flex: 1 1 0;
+        min-height: 260px;
+      }
 
       #${PANEL_ID} .bsb-badge {
         display: inline-flex; align-items: center; gap: 4px;
@@ -1979,21 +1987,28 @@
       #${PANEL_ID} .bsb-chip.warn { color: var(--ctp-peach); }
 
       #${PANEL_ID} .bsb-ai-canvas-wrap {
-        flex: 1; min-height: 0; display: flex; flex-direction: column;
-        border-radius: 16px; overflow: hidden;
+        /* 关键：绝对填充，保证内部一定有固定高度可滚动 */
+        flex: 1 1 auto;
+        min-height: 280px;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
         border: 1px solid color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
         background:
           radial-gradient(120% 80% at 100% 0%,
             color-mix(in srgb, var(--ctp-mauve) 10%, transparent), transparent 55%),
-          color-mix(in srgb, var(--ctp-crust) 55%, transparent);
+          color-mix(in srgb, var(--ctp-crust) 62%, transparent);
         box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ctp-overlay2) 10%, transparent);
-        position: relative;
       }
       #${PANEL_ID} .bsb-ai-canvas-bar {
+        position: absolute; top: 0; left: 0; right: 0; height: 40px;
+        z-index: 2;
         display: flex; align-items: center; justify-content: space-between; gap: 8px;
-        padding: 8px 12px; flex-shrink: 0;
+        padding: 0 12px;
         border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 70%, transparent);
-        background: color-mix(in srgb, var(--ctp-mantle) 45%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 82%, transparent);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         font-size: 11px; color: var(--ctp-overlay1); font-weight: 600;
         letter-spacing: 0.04em; text-transform: uppercase;
       }
@@ -2028,39 +2043,53 @@
         background: color-mix(in srgb, var(--ctp-teal) 12%, transparent);
       }
       #${PANEL_ID} .bsb-ai-stream {
-        display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden;
-        position: relative;
+        position: absolute;
+        top: 40px; left: 0; right: 0; bottom: 0;
+        overflow: hidden;
       }
       #${PANEL_ID} .bsb-ai-stream .bsb-ai-raw { display: none !important; }
 
-      /* 唯一滚动容器：宽松阅读排版 */
+      /*
+       * 唯一滚动层：绝对定位铺满画布，height 明确，overflow-y: scroll
+       * （flex 链常导致“看起来能滚其实高度在变、滚动无效”）
+       */
       #${PANEL_ID} .bsb-ai-md {
-        flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden;
-        padding: 22px 22px 56px;
-        font-size: 15px;
-        line-height: 1.85;
-        letter-spacing: 0.02em;
+        position: absolute;
+        inset: 0;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
+        padding: 28px 26px 72px;
+        box-sizing: border-box;
+        font-size: 16px;
+        line-height: 2;
+        letter-spacing: 0.04em;
         color: var(--ctp-text);
         scroll-behavior: auto;
         overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
-        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-          "Noto Sans SC", system-ui, sans-serif;
+        touch-action: pan-y;
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
+          "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", system-ui, sans-serif;
       }
       #${PANEL_ID} .bsb-ai-content {
-        max-width: 42em;
+        max-width: 38em;
         margin: 0 auto;
+        min-height: min-content;
       }
       #${PANEL_ID} .bsb-ai-stream-body {
         margin: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
         white-space: pre-wrap;
         word-break: break-word;
         overflow-wrap: anywhere;
-        font-size: 15px;
-        line-height: 1.9;
-        letter-spacing: 0.03em;
+        font-size: 16px;
+        line-height: 2.05;
+        letter-spacing: 0.045em;
         color: var(--ctp-text);
         font-family: inherit;
+        display: block;
       }
       #${PANEL_ID} .bsb-ai-caret {
         display: inline-block;
@@ -2114,30 +2143,30 @@
         line-height: 1.35;
       }
       #${PANEL_ID} .bsb-ai-md h1 {
-        font-size: 1.45em; margin: 1.4em 0 0.65em;
-        padding-bottom: 0.35em;
+        font-size: 1.5em; margin: 1.6em 0 0.8em;
+        padding-bottom: 0.4em;
         border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface1) 50%, transparent);
       }
-      #${PANEL_ID} .bsb-ai-md h1:first-child { margin-top: 0.2em; }
+      #${PANEL_ID} .bsb-ai-md h1:first-child { margin-top: 0.15em; }
       #${PANEL_ID} .bsb-ai-md h2 {
-        font-size: 1.22em; margin: 1.35em 0 0.55em; color: var(--ctp-mauve);
+        font-size: 1.28em; margin: 1.55em 0 0.7em; color: var(--ctp-mauve);
       }
       #${PANEL_ID} .bsb-ai-md h3 {
-        font-size: 1.08em; margin: 1.2em 0 0.5em; color: var(--ctp-sapphire);
+        font-size: 1.12em; margin: 1.4em 0 0.6em; color: var(--ctp-sapphire);
       }
       #${PANEL_ID} .bsb-ai-md p {
-        margin: 0.85em 0;
-        line-height: 1.9;
+        margin: 1em 0;
+        line-height: 2;
       }
       #${PANEL_ID} .bsb-ai-md ul,
       #${PANEL_ID} .bsb-ai-md ol {
-        margin: 0.85em 0;
-        padding-left: 1.5em;
+        margin: 1em 0;
+        padding-left: 1.6em;
       }
       #${PANEL_ID} .bsb-ai-md li {
-        margin: 0.45em 0;
-        line-height: 1.85;
-        padding-left: 0.15em;
+        margin: 0.55em 0;
+        line-height: 2;
+        padding-left: 0.2em;
       }
       #${PANEL_ID} .bsb-ai-md li > p { margin: 0.35em 0; }
       #${PANEL_ID} .bsb-ai-md a { color: var(--ctp-blue); text-decoration: none; }
@@ -3253,50 +3282,63 @@
   }
 
   /**
-   * 自由滚动优先：
-   * - wheel/touch/指针上滑立刻取消粘底（不必等 scroll 阈值）
-   * - 仅当用户在底部附近才恢复粘底
-   * - 禁止 scrollIntoView（会带动父级/页面，像“锁死滚动”）
+   * 自由滚动（硬保证）：
+   * 1) 唯一滚动节点 .bsb-ai-md 绝对定位 + overflow-y:scroll
+   * 2) 用户任意 wheel/上滑 → 立刻 stick=false，后续 paint 绝不改 scrollTop
+   * 3) 流式只改 pre.textContent，不整段 innerHTML（避免滚动跳动）
+   * 4) 未跟随时显示「↓ 最新」
    */
   function bindAiScrollBehavior(root) {
     const box = root.querySelector('[data-role="ai-md"]');
     if (!box || box.dataset.bsbScrollBound === "1") return;
     box.dataset.bsbScrollBound = "1";
 
-    const onUserIntentLeaveBottom = () => {
-      if (!state.aiStickBottom) return;
+    const releaseStick = () => {
+      if (!state.aiStickBottom) {
+        updateJumpLatestBtn();
+        return;
+      }
       state.aiStickBottom = false;
       updateJumpLatestBtn();
     };
 
+    // 捕获阶段：任何向上滚动意图立即停跟（比 scroll 事件更早）
     box.addEventListener(
       "wheel",
       (e) => {
-        // 向上滚 = 想自由阅读
-        if (e.deltaY < 0) onUserIntentLeaveBottom();
+        if (e.deltaY < 0) releaseStick();
       },
-      { passive: true },
+      { passive: true, capture: true },
     );
     box.addEventListener(
-      "touchstart",
+      "pointerdown",
       () => {
-        // 触摸开始也视为用户接管
-        box._bsbTouchY = null;
+        // 用户点按阅读区准备拖/滑
+        box._bsbPtrY = null;
       },
       { passive: true },
     );
     box.addEventListener(
-      "touchmove",
+      "pointermove",
       (e) => {
-        const y = e.touches && e.touches[0] ? e.touches[0].clientY : null;
-        if (y == null) return;
-        if (box._bsbTouchY != null && y > box._bsbTouchY + 4) {
-          // finger down = content moves up = reading earlier text
-          onUserIntentLeaveBottom();
-        }
-        box._bsbTouchY = y;
+        if (e.buttons === 0 && e.pointerType === "mouse") return;
+        if (box._bsbPtrY != null && e.clientY - box._bsbPtrY > 6) releaseStick();
+        box._bsbPtrY = e.clientY;
       },
       { passive: true },
+    );
+    box.addEventListener(
+      "keydown",
+      (e) => {
+        if (
+          e.key === "ArrowUp" ||
+          e.key === "PageUp" ||
+          e.key === "Home"
+        ) {
+          releaseStick();
+        }
+      },
+      true,
     );
 
     box.addEventListener(
@@ -3306,9 +3348,8 @@
           box.scrollHeight,
           box.scrollTop,
           box.clientHeight,
-          64,
+          80,
         );
-        // 只有回到底部才自动重新粘底；上滑不会被强制拉回
         if (atBottom) state.aiStickBottom = true;
         else state.aiStickBottom = false;
         updateJumpLatestBtn();
@@ -3322,17 +3363,13 @@
       updateJumpLatestBtn();
       return;
     }
-    const root = document.getElementById(PANEL_ID);
-    if (!root) return;
-    const box = root.querySelector('[data-role="ai-md"]');
+    const box = document.querySelector(`#${PANEL_ID} [data-role="ai-md"]`);
     if (!box) return;
-    // 只用 scrollTop，避免 scrollIntoView 牵动外层
+    // 同步设一次 + rAF 再设，确保 layout 后到位
+    box.scrollTop = box.scrollHeight;
     requestAnimationFrame(() => {
       box.scrollTop = box.scrollHeight;
-      requestAnimationFrame(() => {
-        box.scrollTop = box.scrollHeight;
-        updateJumpLatestBtn();
-      });
+      updateJumpLatestBtn();
     });
   }
 
@@ -3343,7 +3380,7 @@
     updateJumpLatestBtn();
   }
 
-  /** 流式轻量绘制：保留 scrollTop 当用户自由阅读时不被重置 */
+  /** 流式绘制：只更新 text 节点，不销毁滚动容器 */
   function paintAiStreamText(full) {
     state.aiPendingText = full || "";
     if (state.aiPaintRaf) return;
@@ -3355,21 +3392,45 @@
       const content = root.querySelector('[data-role="ai-content"]');
       if (!content || !box) return;
 
+      const text = state.aiPendingText || "…";
+      let pre = content.querySelector(".bsb-ai-stream-body");
+      let caret = content.querySelector(".bsb-ai-caret");
+
+      // 首次：建结构；之后只改 textContent
+      if (!pre) {
+        content.textContent = "";
+        pre = document.createElement("pre");
+        pre.className = "bsb-ai-stream-body";
+        content.appendChild(pre);
+      }
+      if (state.aiBusy) {
+        if (!caret) {
+          caret = document.createElement("span");
+          caret.className = "bsb-ai-caret";
+          caret.setAttribute("aria-hidden", "true");
+          content.appendChild(caret);
+        }
+      } else if (caret) {
+        caret.remove();
+      }
+
       const prevTop = box.scrollTop;
       const prevHeight = box.scrollHeight;
-      const text = state.aiPendingText || "…";
+      const wasStick = state.aiStickBottom;
 
-      content.innerHTML =
-        `<pre class="bsb-ai-stream-body">${escapeHtml(text)}</pre>` +
-        (state.aiBusy ? `<span class="bsb-ai-caret" aria-hidden="true"></span>` : "");
+      pre.textContent = text;
 
-      if (state.aiStickBottom) {
+      if (wasStick) {
+        // 跟随最新
         box.scrollTop = box.scrollHeight;
       } else {
-        // 内容增高时保持视口内容稳定（不把用户拽走）
+        // 自由阅读：内容变高时保持相对视口（不跳动）
         const delta = box.scrollHeight - prevHeight;
-        if (delta > 0) box.scrollTop = prevTop;
-        else box.scrollTop = prevTop;
+        box.scrollTop = prevTop + (delta > 0 ? 0 : 0);
+        // 若浏览器把 scrollTop 钳到 0，强制写回
+        if (box.scrollTop !== prevTop && prevTop > 0) {
+          box.scrollTop = prevTop;
+        }
       }
       updateJumpLatestBtn();
     });
@@ -4156,8 +4217,7 @@
     state.cancel = false;
     state.aiRaw = "";
     state.aiStickBottom = true;
-    const stickBtn = root.querySelector('[data-act="ai-stick"]');
-    if (stickBtn) stickBtn.classList.add("on");
+    updateJumpLatestBtn();
     setAiBusy(true);
     setBusy(true);
     setStatus("准备字幕并连接 AI…");
