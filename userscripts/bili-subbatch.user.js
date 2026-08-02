@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.8.1
-// @description  B站字幕+AI：页内fetch优先、GM无并行请求、无硬编码密钥
+// @version      0.8.2
+// @description  B站字幕+AI：可自由滚动的流式阅读 + 宽松排版
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -37,7 +37,7 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.1";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.2";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
   /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
@@ -1987,6 +1987,7 @@
             color-mix(in srgb, var(--ctp-mauve) 10%, transparent), transparent 55%),
           color-mix(in srgb, var(--ctp-crust) 55%, transparent);
         box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ctp-overlay2) 10%, transparent);
+        position: relative;
       }
       #${PANEL_ID} .bsb-ai-canvas-bar {
         display: flex; align-items: center; justify-content: space-between; gap: 8px;
@@ -1997,11 +1998,11 @@
         letter-spacing: 0.04em; text-transform: uppercase;
       }
       #${PANEL_ID} .bsb-ai-canvas-bar .bsb-bar-left {
-        display: inline-flex; align-items: center; gap: 8px;
+        display: inline-flex; align-items: center; gap: 8px; min-width: 0;
       }
       #${PANEL_ID} .bsb-live-dot {
         width: 7px; height: 7px; border-radius: 50%;
-        background: var(--ctp-overlay0);
+        background: var(--ctp-overlay0); flex-shrink: 0;
       }
       #${PANEL_ID} .bsb-ai-stream.streaming .bsb-live-dot {
         background: var(--ctp-green);
@@ -2009,7 +2010,7 @@
         animation: bsb-pulse 1.1s ease-in-out infinite;
       }
       #${PANEL_ID} .bsb-ai-canvas-bar .bsb-bar-actions {
-        display: inline-flex; gap: 4px; align-items: center;
+        display: inline-flex; gap: 4px; align-items: center; flex-shrink: 0;
       }
       #${PANEL_ID} .bsb-ai-canvas-bar .bsb-mini {
         height: 24px; padding: 0 8px; border-radius: 7px; font-size: 10px;
@@ -2030,30 +2031,41 @@
         display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden;
         position: relative;
       }
-      /* 调试 raw 默认隐藏，避免抢滚动容器高度 */
-      #${PANEL_ID} .bsb-ai-stream .bsb-ai-raw {
-        display: none !important;
-      }
+      #${PANEL_ID} .bsb-ai-stream .bsb-ai-raw { display: none !important; }
+
+      /* 唯一滚动容器：宽松阅读排版 */
       #${PANEL_ID} .bsb-ai-md {
-        flex: 1; min-height: 0; overflow: auto;
-        padding: 16px 18px 28px;
-        font-size: 13.5px; line-height: 1.65; color: var(--ctp-text);
+        flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden;
+        padding: 22px 22px 56px;
+        font-size: 15px;
+        line-height: 1.85;
+        letter-spacing: 0.02em;
+        color: var(--ctp-text);
         scroll-behavior: auto;
         overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+          "Noto Sans SC", system-ui, sans-serif;
+      }
+      #${PANEL_ID} .bsb-ai-content {
+        max-width: 42em;
+        margin: 0 auto;
       }
       #${PANEL_ID} .bsb-ai-stream-body {
         margin: 0;
         white-space: pre-wrap;
         word-break: break-word;
-        font-size: 13.5px;
-        line-height: 1.65;
+        overflow-wrap: anywhere;
+        font-size: 15px;
+        line-height: 1.9;
+        letter-spacing: 0.03em;
         color: var(--ctp-text);
         font-family: inherit;
       }
       #${PANEL_ID} .bsb-ai-caret {
         display: inline-block;
-        width: 0.55em; height: 1.05em;
-        margin-left: 2px;
+        width: 0.5em; height: 1.1em;
+        margin-left: 3px;
         vertical-align: text-bottom;
         background: var(--ctp-lavender);
         border-radius: 1px;
@@ -2064,66 +2076,133 @@
         50% { opacity: 0; }
       }
       #${PANEL_ID} .bsb-ai-anchor {
-        height: 1px; width: 100%; pointer-events: none;
+        height: 24px; width: 100%; pointer-events: none; flex-shrink: 0;
       }
-      #${PANEL_ID} .bsb-ai-md h1, #${PANEL_ID} .bsb-ai-md h2, #${PANEL_ID} .bsb-ai-md h3 {
-        color: var(--ctp-lavender); margin: 0.85em 0 0.4em; font-weight: 700;
-        letter-spacing: -0.01em;
+      /* 浮层：不在底部时跳到最新（ChatGPT 风格） */
+      #${PANEL_ID} .bsb-jump-latest {
+        position: absolute;
+        right: 14px; bottom: 14px;
+        z-index: 5;
+        display: none;
+        align-items: center; gap: 6px;
+        height: 36px; padding: 0 14px;
+        border-radius: 999px;
+        border: 1px solid color-mix(in srgb, var(--ctp-lavender) 40%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 88%, transparent);
+        color: var(--ctp-lavender);
+        font-size: 12px; font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 8px 24px color-mix(in srgb, var(--ctp-crust) 45%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        pointer-events: auto;
       }
-      #${PANEL_ID} .bsb-ai-md h1 { font-size: 1.35em; }
-      #${PANEL_ID} .bsb-ai-md h2 { font-size: 1.18em; }
-      #${PANEL_ID} .bsb-ai-md h3 { font-size: 1.06em; color: var(--ctp-mauve); }
-      #${PANEL_ID} .bsb-ai-md p { margin: 0.5em 0; }
-      #${PANEL_ID} .bsb-ai-md ul, #${PANEL_ID} .bsb-ai-md ol { margin: 0.45em 0; padding-left: 1.35em; }
-      #${PANEL_ID} .bsb-ai-md li { margin: 0.2em 0; }
+      #${PANEL_ID} .bsb-jump-latest.show { display: inline-flex; }
+      #${PANEL_ID} .bsb-jump-latest:hover {
+        color: var(--ctp-crust);
+        background: color-mix(in srgb, var(--ctp-lavender) 88%, transparent);
+      }
+
+      /* Markdown 阅读优化：更大间距、更松段落 */
+      #${PANEL_ID} .bsb-ai-md h1,
+      #${PANEL_ID} .bsb-ai-md h2,
+      #${PANEL_ID} .bsb-ai-md h3,
+      #${PANEL_ID} .bsb-ai-md h4 {
+        color: var(--ctp-lavender);
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 1.35;
+      }
+      #${PANEL_ID} .bsb-ai-md h1 {
+        font-size: 1.45em; margin: 1.4em 0 0.65em;
+        padding-bottom: 0.35em;
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface1) 50%, transparent);
+      }
+      #${PANEL_ID} .bsb-ai-md h1:first-child { margin-top: 0.2em; }
+      #${PANEL_ID} .bsb-ai-md h2 {
+        font-size: 1.22em; margin: 1.35em 0 0.55em; color: var(--ctp-mauve);
+      }
+      #${PANEL_ID} .bsb-ai-md h3 {
+        font-size: 1.08em; margin: 1.2em 0 0.5em; color: var(--ctp-sapphire);
+      }
+      #${PANEL_ID} .bsb-ai-md p {
+        margin: 0.85em 0;
+        line-height: 1.9;
+      }
+      #${PANEL_ID} .bsb-ai-md ul,
+      #${PANEL_ID} .bsb-ai-md ol {
+        margin: 0.85em 0;
+        padding-left: 1.5em;
+      }
+      #${PANEL_ID} .bsb-ai-md li {
+        margin: 0.45em 0;
+        line-height: 1.85;
+        padding-left: 0.15em;
+      }
+      #${PANEL_ID} .bsb-ai-md li > p { margin: 0.35em 0; }
       #${PANEL_ID} .bsb-ai-md a { color: var(--ctp-blue); text-decoration: none; }
       #${PANEL_ID} .bsb-ai-md a:hover { text-decoration: underline; }
+      #${PANEL_ID} .bsb-ai-md strong { color: var(--ctp-rosewater); font-weight: 700; }
+      #${PANEL_ID} .bsb-ai-md em { color: var(--ctp-subtext1); }
       #${PANEL_ID} .bsb-ai-md blockquote {
-        margin: 0.7em 0; padding: 0.45em 0.95em;
+        margin: 1.1em 0;
+        padding: 0.75em 1.1em;
         border-left: 3px solid var(--ctp-mauve);
         color: var(--ctp-subtext0);
-        background: color-mix(in srgb, var(--ctp-surface0) 35%, transparent);
-        border-radius: 0 10px 10px 0;
+        background: color-mix(in srgb, var(--ctp-surface0) 28%, transparent);
+        border-radius: 0 12px 12px 0;
+        line-height: 1.85;
       }
       #${PANEL_ID} .bsb-ai-md table {
-        border-collapse: collapse; width: 100%; margin: 0.7em 0; font-size: 12.5px;
+        border-collapse: separate; border-spacing: 0;
+        width: 100%; margin: 1.1em 0; font-size: 13.5px;
+        overflow: hidden; border-radius: 12px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 55%, transparent);
       }
       #${PANEL_ID} .bsb-ai-md th, #${PANEL_ID} .bsb-ai-md td {
-        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 60%, transparent);
-        padding: 6px 10px;
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
+        padding: 10px 12px;
+        line-height: 1.55;
       }
+      #${PANEL_ID} .bsb-ai-md tr:last-child td { border-bottom: none; }
       #${PANEL_ID} .bsb-ai-md th {
         background: color-mix(in srgb, var(--ctp-surface0) 55%, transparent);
         color: var(--ctp-subtext1); font-weight: 650;
       }
       #${PANEL_ID} .bsb-ai-md pre {
-        margin: 0.7em 0; padding: 12px 14px; border-radius: 12px;
+        margin: 1.1em 0; padding: 14px 16px; border-radius: 14px;
         overflow: auto; max-height: 420px;
         background: #11111b;
-        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 40%, transparent);
+        line-height: 1.55;
       }
       #${PANEL_ID} .bsb-ai-md code {
         font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
-        font-size: 12px;
+        font-size: 0.9em;
       }
       #${PANEL_ID} .bsb-ai-md :not(pre) > code {
-        background: color-mix(in srgb, var(--ctp-surface0) 65%, transparent);
-        padding: 2px 6px; border-radius: 5px; color: var(--ctp-peach);
+        background: color-mix(in srgb, var(--ctp-surface0) 60%, transparent);
+        padding: 0.15em 0.4em; border-radius: 6px; color: var(--ctp-peach);
       }
       #${PANEL_ID} .bsb-ai-md .hljs { background: transparent; color: var(--ctp-text); }
       #${PANEL_ID} .bsb-ai-md .mermaid {
-        background: color-mix(in srgb, var(--ctp-base) 55%, transparent);
-        border-radius: 12px; padding: 14px; margin: 0.7em 0;
+        background: color-mix(in srgb, var(--ctp-base) 50%, transparent);
+        border-radius: 14px; padding: 18px; margin: 1.1em 0;
         text-align: center; overflow: auto;
-        border: 1px solid color-mix(in srgb, var(--ctp-surface0) 50%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-surface0) 45%, transparent);
       }
       #${PANEL_ID} .bsb-ai-md .bsb-code-lang {
         display: block; font-size: 10px; color: var(--ctp-overlay1);
-        margin-bottom: 8px; text-transform: lowercase; letter-spacing: 0.06em;
+        margin-bottom: 10px; text-transform: lowercase; letter-spacing: 0.06em;
       }
       #${PANEL_ID} .bsb-ai-md hr {
-        border: none; height: 1px; margin: 1.2em 0;
-        background: color-mix(in srgb, var(--ctp-surface1) 60%, transparent);
+        border: none; height: 1px; margin: 1.6em 0;
+        background: color-mix(in srgb, var(--ctp-surface1) 55%, transparent);
+      }
+      /* 思考过程更淡、更松 */
+      #${PANEL_ID} .bsb-ai-md h3:first-child {
+        color: var(--ctp-overlay1); font-size: 0.95em; font-weight: 650;
+        letter-spacing: 0.06em; text-transform: uppercase;
       }
 
       /* 设置页 */
@@ -2587,15 +2666,16 @@
               <div class="bsb-ai-stream" data-role="ai-stream">
                 <pre class="bsb-ai-raw" data-role="ai-raw" hidden></pre>
                 <div class="bsb-ai-md" data-role="ai-md">
-                  <div data-role="ai-content">
+                  <div class="bsb-ai-content" data-role="ai-content">
                     <div class="bsb-empty">
                       <div class="bsb-empty-ico">✦</div>
                       <strong>还没有分析结果</strong>
-                      <span>在「字幕库」扫描并勾选视频，回到这里点「开始分析」。输出会占满整块画布并自动滚动。</span>
+                      <span>在「字幕库」扫描并勾选，再点「开始分析」。生成时可自由上滑阅读；需要跟随时点右下角「↓ 最新」。</span>
                     </div>
                   </div>
                   <div class="bsb-ai-anchor" data-role="ai-anchor"></div>
                 </div>
+                <button type="button" class="bsb-jump-latest" data-act="ai-jump" title="跳到最新输出">↓ 最新</button>
               </div>
             </div>
           </section>
@@ -2952,10 +3032,19 @@
     }
     if (act === "ai-stick") {
       state.aiStickBottom = !state.aiStickBottom;
-      const btn = document.querySelector(`#${PANEL_ID} [data-act="ai-stick"]`);
-      if (btn) btn.classList.toggle("on", state.aiStickBottom);
       if (state.aiStickBottom) scrollAiToBottom(true);
-      setStatus(state.aiStickBottom ? "已开启粘底滚动" : "已关闭粘底（上滑阅读）");
+      else updateJumpLatestBtn();
+      setStatus(
+        state.aiStickBottom
+          ? "跟随最新输出"
+          : "已暂停跟随 · 可自由滚动 · 点「↓ 最新」回到底部",
+      );
+      return;
+    }
+    if (act === "ai-jump") {
+      state.aiStickBottom = true;
+      scrollAiToBottom(true);
+      setStatus("已跳到最新");
       return;
     }
     if (act === "ai-copy") {
@@ -3151,48 +3240,98 @@
     if (stream) stream.classList.toggle("streaming", busy);
   }
 
-  /** 流式输出粘底滚动：用户上滑则暂停，接近底部则恢复 */
+  function updateJumpLatestBtn() {
+    const root = document.getElementById(PANEL_ID);
+    if (!root) return;
+    const jump = root.querySelector('[data-act="ai-jump"]');
+    const stickBtn = root.querySelector('[data-act="ai-stick"]');
+    if (stickBtn) stickBtn.classList.toggle("on", !!state.aiStickBottom);
+    if (!jump) return;
+    // 未粘底且有内容时显示「↓ 最新」
+    const show = !state.aiStickBottom && !!(state.aiRaw || state.aiBusy);
+    jump.classList.toggle("show", show);
+  }
+
+  /**
+   * 自由滚动优先：
+   * - wheel/touch/指针上滑立刻取消粘底（不必等 scroll 阈值）
+   * - 仅当用户在底部附近才恢复粘底
+   * - 禁止 scrollIntoView（会带动父级/页面，像“锁死滚动”）
+   */
   function bindAiScrollBehavior(root) {
     const box = root.querySelector('[data-role="ai-md"]');
     if (!box || box.dataset.bsbScrollBound === "1") return;
     box.dataset.bsbScrollBound = "1";
+
+    const onUserIntentLeaveBottom = () => {
+      if (!state.aiStickBottom) return;
+      state.aiStickBottom = false;
+      updateJumpLatestBtn();
+    };
+
+    box.addEventListener(
+      "wheel",
+      (e) => {
+        // 向上滚 = 想自由阅读
+        if (e.deltaY < 0) onUserIntentLeaveBottom();
+      },
+      { passive: true },
+    );
+    box.addEventListener(
+      "touchstart",
+      () => {
+        // 触摸开始也视为用户接管
+        box._bsbTouchY = null;
+      },
+      { passive: true },
+    );
+    box.addEventListener(
+      "touchmove",
+      (e) => {
+        const y = e.touches && e.touches[0] ? e.touches[0].clientY : null;
+        if (y == null) return;
+        if (box._bsbTouchY != null && y > box._bsbTouchY + 4) {
+          // finger down = content moves up = reading earlier text
+          onUserIntentLeaveBottom();
+        }
+        box._bsbTouchY = y;
+      },
+      { passive: true },
+    );
+
     box.addEventListener(
       "scroll",
       () => {
-        state.aiStickBottom = shouldStickBottom(
+        const atBottom = shouldStickBottom(
           box.scrollHeight,
           box.scrollTop,
           box.clientHeight,
-          48,
+          64,
         );
-        const stickBtn = root.querySelector('[data-act="ai-stick"]');
-        if (stickBtn) stickBtn.classList.toggle("on", state.aiStickBottom);
+        // 只有回到底部才自动重新粘底；上滑不会被强制拉回
+        if (atBottom) state.aiStickBottom = true;
+        else state.aiStickBottom = false;
+        updateJumpLatestBtn();
       },
       { passive: true },
     );
   }
 
   function scrollAiToBottom(force) {
-    if (!force && !state.aiStickBottom) return;
+    if (!force && !state.aiStickBottom) {
+      updateJumpLatestBtn();
+      return;
+    }
     const root = document.getElementById(PANEL_ID);
     if (!root) return;
     const box = root.querySelector('[data-role="ai-md"]');
-    const anchor = root.querySelector('[data-role="ai-anchor"]');
     if (!box) return;
-    // 双 rAF：等 DOM 完成 layout 再滚
+    // 只用 scrollTop，避免 scrollIntoView 牵动外层
     requestAnimationFrame(() => {
+      box.scrollTop = box.scrollHeight;
       requestAnimationFrame(() => {
-        if (anchor && typeof anchor.scrollIntoView === "function") {
-          try {
-            anchor.scrollIntoView({ block: "end", behavior: "auto" });
-          } catch (_) {
-            box.scrollTop = box.scrollHeight;
-          }
-        } else {
-          box.scrollTop = box.scrollHeight + 9999;
-        }
-        // 兜底
         box.scrollTop = box.scrollHeight;
+        updateJumpLatestBtn();
       });
     });
   }
@@ -3201,11 +3340,10 @@
     const box = document.querySelector(`#${PANEL_ID} [data-role="ai-md"]`);
     if (box) box.scrollTop = 0;
     state.aiStickBottom = false;
-    const stickBtn = document.querySelector(`#${PANEL_ID} [data-act="ai-stick"]`);
-    if (stickBtn) stickBtn.classList.remove("on");
+    updateJumpLatestBtn();
   }
 
-  /** 流式轻量绘制（rAF 合并），带光标 + 粘底 */
+  /** 流式轻量绘制：保留 scrollTop 当用户自由阅读时不被重置 */
   function paintAiStreamText(full) {
     state.aiPendingText = full || "";
     if (state.aiPaintRaf) return;
@@ -3213,13 +3351,27 @@
       state.aiPaintRaf = 0;
       const root = document.getElementById(PANEL_ID);
       if (!root) return;
+      const box = root.querySelector('[data-role="ai-md"]');
       const content = root.querySelector('[data-role="ai-content"]');
-      if (!content) return;
+      if (!content || !box) return;
+
+      const prevTop = box.scrollTop;
+      const prevHeight = box.scrollHeight;
       const text = state.aiPendingText || "…";
+
       content.innerHTML =
         `<pre class="bsb-ai-stream-body">${escapeHtml(text)}</pre>` +
         (state.aiBusy ? `<span class="bsb-ai-caret" aria-hidden="true"></span>` : "");
-      scrollAiToBottom(false);
+
+      if (state.aiStickBottom) {
+        box.scrollTop = box.scrollHeight;
+      } else {
+        // 内容增高时保持视口内容稳定（不把用户拽走）
+        const delta = box.scrollHeight - prevHeight;
+        if (delta > 0) box.scrollTop = prevTop;
+        else box.scrollTop = prevTop;
+      }
+      updateJumpLatestBtn();
     });
   }
 
