@@ -2,7 +2,7 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.7.1）
+## `bili-subbatch.user.js`（v0.7.2）
 
 **世界级工作台 UI（v0.7）**：三栏导航，**AI 笔记默认占满主画布**；字幕库 / 设置各为独立页。Catppuccin Mocha 玻璃拟态、可拖拽/拉伸/贴边。
 
@@ -52,7 +52,7 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.7.1**）  
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.7.2**）  
 3. 右下角 **CC** 打开工作台（默认 **AI 笔记** 全高画布）  
 4. 切到 **字幕库** → 扫描 / 勾选 → 回 **AI 笔记** → **开始分析**  
 5. 首次用 AI：进 **设置**，填 Base URL / Key / Model → **保存配置**  
@@ -110,10 +110,13 @@
 修复：
 
 1. **默认强制 SSE 流式保活**（`stream: true`，配置键 `bili-subbatch-ai-v2`）  
-2. `timeout: 0` 禁用 GM 超时  
-3. 流式阶段只刷纯文本，结束后再 Markdown/高亮/Mermaid  
-4. 字幕超长截断（默认约 1.8 万字）控制 token  
-5. 停止 AI 只 abort 当前 XHR，不误伤其它逻辑
+2. **v0.7.2：完全不传 `timeout` 字段**  
+   - Tampermonkey 文档：设置 `timeout` 会 **enforce fetch mode**  
+   - Chrome 下 fetch 模式 **onprogress 不可用**，且 `timeout:0` 仍会触发 **ontimeout**  
+   - 这就是界面「请求超时（已禁用 timeout…）」的直接原因  
+3. ontimeout/onerror 若已有正文/思考 → **按成功结束**，不丢结果  
+4. 流式阶段只刷纯文本，结束后再 Markdown/高亮/Mermaid  
+5. 字幕超长截断（默认约 1.8 万字）控制 token
 
 配置持久化：`localStorage` 键 **`bili-subbatch-ai-v1`**（**不会**随 git 同步；请勿把真实 Key 提交进仓库）。
 
@@ -202,6 +205,7 @@ Content-Type: application/json
 | **0.6.1** | **修复推理模型 reasoning 字段；默认非流式；SSE 行缓冲** |
 | **0.7.0** | **三工作区 UI：AI 全高画布 / 字幕库 / 设置** |
 | **0.7.1** | **修复 client_gone：默认流式保活、timeout:0、字幕截断** |
+| **0.7.2** | **禁止设置 timeout（TM 会强制 fetch 并误触 ontimeout）** |
 
 ### 自检
 

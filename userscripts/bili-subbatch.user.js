@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.7.1
-// @description  B站字幕+AI 工作台：流式保活修复 client_gone、三栏导航、Catppuccin UI
+// @version      0.7.2
+// @description  B站字幕+AI：修复 TM timeout 强制 fetch 导致 ontimeout；流式保活
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -34,7 +34,7 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.7.1";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.7.2";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
   /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
@@ -3185,8 +3185,9 @@
    * - 网关日志 client_gone / context canceled = 客户端先断开
    * - 非流式要等整包，长推理 10s+ 无字节时，扩展/代理常会掐连接
    * - 默认必须用 stream=true 保活；onprogress 增量读 SSE
-   * - timeout:0 禁用超时；仅用户点「停止」才 abort
-   * - 兼容 content + reasoning / reasoning_content
+   * - 切勿设置 timeout：TM 文档写明 timeout 会 enforce fetch mode，
+   *   Chrome 下 fetch 模式 onprogress 不可用，且 timeout:0 仍会触发 ontimeout
+   * - 仅用户点「停止」才 abort；兼容 content + reasoning
    */
   function requestChatCompletion({
     baseUrl,
@@ -3224,6 +3225,20 @@
             reasoning: assembledReasoning,
           });
       }
+    };
+
+    const softFinishOrError = (label) => {
+      // 已有正文/思考则当成功；避免 TM 误报 ontimeout 毁掉结果
+      if (assembledContent || assembledReasoning) {
+        onStatus && onStatus(`${label}，但已收到内容，按成功结束`);
+        finish(null);
+        return;
+      }
+      finish(
+        new Error(
+          `${label}。请确认流式已开、油猴版本较新；勿在脚本里设置 timeout 字段`,
+        ),
+      );
     };
 
     const emit = () => {
@@ -3329,7 +3344,12 @@
       }
     }
 
-    xhrHandle = GM_xmlhttpRequest({
+    /**
+     * 关键：不要写 timeout / fetch:true。
+     * Tampermonkey: timeout 会 enforce fetch mode → Chrome 下 onprogress 失效，
+     * 且 timeout:0 仍可能立刻/异常触发 ontimeout（用户看到的「请求超时」）。
+     */
+    const details = {
       method: "POST",
       url,
       headers: {
@@ -3341,10 +3361,10 @@
       },
       data: JSON.stringify(body),
       responseType: "text",
-      // 0 = 不超时（TM/GM 文档）。切勿用短 timeout，否则会 client_gone
-      timeout: 0,
+      // 明确走 XHR 路径（若引擎支持该字段）
+      // fetch: false — 部分版本不识别则忽略
       onloadstart() {
-        onStatus && onStatus("已连接网关，等待首包…");
+        onStatus && onStatus("已连接网关，等待首包（流式）…");
       },
       onprogress(res) {
         if (state.aiAbort) {
@@ -3362,6 +3382,14 @@
           onStatus && onStatus(`非流式缓冲中… ${text.length}B（完成后才解析）`);
         }
       },
+      onreadystatechange(res) {
+        // readyState 3 = loading：部分 TM 在此才更新 responseText
+        if (state.aiAbort) return;
+        if (res.readyState === 3 && useStream) {
+          const text = res.responseText || "";
+          if (text) ingestSseText(text);
+        }
+      },
       onload(res) {
         if (state.aiAbort) {
           finish(new Error("用户停止"));
@@ -3369,6 +3397,11 @@
         }
         const text = res.responseText || "";
         if (res.status < 200 || res.status >= 300) {
+          // 若已流式收到内容，仍优先成功
+          if (assembledContent || assembledReasoning) {
+            softFinishOrError(`HTTP ${res.status}`);
+            return;
+          }
           finish(new Error(`HTTP ${res.status}: ${(text || "").slice(0, 300)}`));
           return;
         }
@@ -3388,6 +3421,10 @@
             parseNonStreamJson(text);
           }
         } catch (e) {
+          if (assembledContent || assembledReasoning) {
+            softFinishOrError("解析告警");
+            return;
+          }
           finish(
             new Error(
               (e && e.message) ||
@@ -3408,20 +3445,29 @@
         finish(null);
       },
       onerror() {
-        finish(
-          new Error(
-            "网络错误或连接被中断（client_gone）。请确认使用流式、@connect *，并重试",
-          ),
-        );
+        softFinishOrError("网络错误或连接中断");
       },
       ontimeout() {
-        finish(new Error("请求超时（已禁用 timeout 仍触发则请升级油猴）"));
+        // 不应依赖 timeout；若误触且已有内容则成功
+        softFinishOrError("油猴 ontimeout 误触");
       },
       onabort() {
+        if (assembledContent || assembledReasoning) {
+          softFinishOrError("请求中止");
+          return;
+        }
         finish(new Error(state.aiAbort ? "用户停止" : "请求被中止"));
       },
-    });
+    };
 
+    try {
+      // 部分引擎支持显式关闭 fetch 模式
+      details.fetch = false;
+    } catch (_) {
+      /* */
+    }
+
+    xhrHandle = GM_xmlhttpRequest(details);
     state.aiXhr = xhrHandle;
     return xhrHandle;
   }
