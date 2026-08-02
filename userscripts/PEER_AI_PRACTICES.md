@@ -21,9 +21,12 @@ Sources reviewed:
 
 2. **Streaming UI**  
    Coalesce paints with `requestAnimationFrame`.  
-   Stick-to-bottom while `scrollHeight - scrollTop - clientHeight < threshold` (≈48px).  
-   User scroll-up clears stick; explicit “粘底” re-enables.  
-   Bottom **anchor** + `scrollIntoView({ block: "end" })` (more reliable than raw `scrollTop` alone).
+   **Follow mode** only while not user-reading: paint may set `scrollTop = scrollHeight`.  
+   User wheel-up / scroll-away → **reading lock** (`aiUserReading`); paint must not touch `scrollTop`.  
+   Do **not** re-enable follow merely because gap-to-bottom &lt; 80px (that yanks users mid-read).  
+   Resume only via 「↓ 最新」/ 粘底, or user scroll to real bottom (gap ≤ 12).  
+   Mark programmatic scrolls (`aiProgScroll`) so `scroll` listeners ignore them.  
+   CSS: `overflow-anchor: none` on the reader to avoid browser anchoring fights.
 
 3. **Config storage**  
    Prefer `GM_setValue` / `GM_getValue` when granted (survives clearer isolation than page `localStorage` in some managers); fall back to `localStorage`.  

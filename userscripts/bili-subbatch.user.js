@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.8.3
-// @description  B站字幕+AI：绝对定位阅读器、真·自由滚动、阅读排版
+// @version      0.8.4
+// @description  B站字幕+AI：用户阅读锁自由滚动、流式不抢控、宽松排版
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -37,7 +37,7 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.3";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.4";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
   /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
@@ -331,6 +331,44 @@
   function shouldStickBottom(scrollHeight, scrollTop, clientHeight, threshold) {
     const th = threshold == null ? 48 : threshold;
     return scrollHeight - scrollTop - clientHeight < th;
+  }
+
+  /**
+   * 流式滚动状态机（纯函数，供离线测试）。
+   * 修 0.8.3：距底 <80 自动 stick=true 会把刚上滑的用户拽回。
+   *
+   * @param {object} s  { stick, userReading, progScroll }
+   * @param {object} ev { type: 'wheel-up'|'scroll'|'resume'|'start'|'paint', gap? }
+   * @returns {{ stick:boolean, userReading:boolean, allowPaintScroll:boolean }}
+   */
+  function resolveAiScrollState(s, ev) {
+    let stick = !!s.stick;
+    let userReading = !!s.userReading;
+    const prog = !!s.progScroll;
+    const type = (ev && ev.type) || "";
+    const gap = ev && typeof ev.gap === "number" ? ev.gap : null;
+
+    if (type === "start" || type === "resume") {
+      stick = true;
+      userReading = false;
+    } else if (type === "wheel-up" || type === "detach") {
+      stick = false;
+      userReading = true;
+    } else if (type === "scroll") {
+      if (prog) {
+        /* 程序化滚动：状态不变 */
+      } else if (gap != null && gap > 24) {
+        stick = false;
+        userReading = true;
+      } else if (gap != null && gap <= 12 && userReading) {
+        // 用户自己滚回贴底才恢复
+        stick = true;
+        userReading = false;
+      }
+    }
+
+    const allowPaintScroll = stick && !userReading;
+    return { stick, userReading, allowPaintScroll };
   }
 
   function parseSseDataLine(line) {
@@ -1383,7 +1421,9 @@
     aiRaw: "", // streaming markdown buffer
     aiXhr: null, // active GM_xmlhttpRequest handle
     aiAbortController: null, // page fetch AbortController
-    aiStickBottom: true, // 流式粘底；用户上滑后暂停
+    aiStickBottom: true, // 仅「跟随模式」时 paint 才改 scrollTop
+    aiUserReading: false, // 用户主动离开底部后锁住，禁止自动回粘
+    aiProgScroll: false, // 程序化滚动中，忽略 scroll 事件回写
     aiPaintRaf: 0,
     aiPendingText: "",
     renderLibsReady: false,
@@ -2058,23 +2098,25 @@
         inset: 0;
         overflow-y: scroll !important;
         overflow-x: hidden !important;
-        padding: 28px 26px 72px;
+        padding: 32px 28px 88px;
         box-sizing: border-box;
-        font-size: 16px;
-        line-height: 2;
-        letter-spacing: 0.04em;
+        font-size: 17px;
+        line-height: 1.9;
+        letter-spacing: 0.03em;
         color: var(--ctp-text);
         scroll-behavior: auto;
         overscroll-behavior: contain;
+        overflow-anchor: none; /* 禁止浏览器滚动锚定与 stick 互抢 */
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
         font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
           "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", system-ui, sans-serif;
       }
       #${PANEL_ID} .bsb-ai-content {
-        max-width: 38em;
+        max-width: 40em;
         margin: 0 auto;
         min-height: min-content;
+        overflow-anchor: none;
       }
       #${PANEL_ID} .bsb-ai-stream-body {
         margin: 0;
@@ -2084,12 +2126,13 @@
         white-space: pre-wrap;
         word-break: break-word;
         overflow-wrap: anywhere;
-        font-size: 16px;
-        line-height: 2.05;
-        letter-spacing: 0.045em;
+        font-size: 17px;
+        line-height: 2.15;
+        letter-spacing: 0.04em;
         color: var(--ctp-text);
         font-family: inherit;
         display: block;
+        overflow-anchor: none;
       }
       #${PANEL_ID} .bsb-ai-caret {
         display: inline-block;
@@ -2155,18 +2198,18 @@
         font-size: 1.12em; margin: 1.4em 0 0.6em; color: var(--ctp-sapphire);
       }
       #${PANEL_ID} .bsb-ai-md p {
-        margin: 1em 0;
-        line-height: 2;
+        margin: 1.15em 0;
+        line-height: 1.95;
       }
       #${PANEL_ID} .bsb-ai-md ul,
       #${PANEL_ID} .bsb-ai-md ol {
-        margin: 1em 0;
-        padding-left: 1.6em;
+        margin: 1.1em 0;
+        padding-left: 1.7em;
       }
       #${PANEL_ID} .bsb-ai-md li {
-        margin: 0.55em 0;
-        line-height: 2;
-        padding-left: 0.2em;
+        margin: 0.65em 0;
+        line-height: 1.95;
+        padding-left: 0.25em;
       }
       #${PANEL_ID} .bsb-ai-md li > p { margin: 0.35em 0; }
       #${PANEL_ID} .bsb-ai-md a { color: var(--ctp-blue); text-decoration: none; }
@@ -2687,7 +2730,7 @@
                   <span data-role="ai-canvas-meta">就绪</span>
                 </span>
                 <span class="bsb-bar-actions">
-                  <button type="button" class="bsb-mini on" data-act="ai-stick" title="流式时自动滚到底">粘底</button>
+                  <button type="button" class="bsb-mini on" data-act="ai-stick" title="跟随最新 / 暂停跟随（上滑也会自动暂停）">粘底</button>
                   <button type="button" class="bsb-mini" data-act="ai-copy" title="复制当前输出">复制</button>
                   <button type="button" class="bsb-mini" data-act="ai-top" title="回到顶部">顶部</button>
                 </span>
@@ -2699,7 +2742,7 @@
                     <div class="bsb-empty">
                       <div class="bsb-empty-ico">✦</div>
                       <strong>还没有分析结果</strong>
-                      <span>在「字幕库」扫描并勾选，再点「开始分析」。生成时可自由上滑阅读；需要跟随时点右下角「↓ 最新」。</span>
+                      <span>在「字幕库」扫描并勾选，再点「开始分析」。生成中上滑即可自由阅读（不会被拽回底部）；跟随时点「↓ 最新」。</span>
                     </div>
                   </div>
                   <div class="bsb-ai-anchor" data-role="ai-anchor"></div>
@@ -3060,19 +3103,18 @@
       return;
     }
     if (act === "ai-stick") {
-      state.aiStickBottom = !state.aiStickBottom;
-      if (state.aiStickBottom) scrollAiToBottom(true);
-      else updateJumpLatestBtn();
-      setStatus(
-        state.aiStickBottom
-          ? "跟随最新输出"
-          : "已暂停跟随 · 可自由滚动 · 点「↓ 最新」回到底部",
-      );
+      if (state.aiStickBottom && !state.aiUserReading) {
+        // 关跟随 → 进入阅读锁
+        detachAiFollow("toggle");
+        setStatus("已暂停跟随 · 可自由滚动 · 点「↓ 最新」回到底部");
+      } else {
+        resumeAiFollow();
+        setStatus("跟随最新输出");
+      }
       return;
     }
     if (act === "ai-jump") {
-      state.aiStickBottom = true;
-      scrollAiToBottom(true);
+      resumeAiFollow();
       setStatus("已跳到最新");
       return;
     }
@@ -3274,46 +3316,112 @@
     if (!root) return;
     const jump = root.querySelector('[data-act="ai-jump"]');
     const stickBtn = root.querySelector('[data-act="ai-stick"]');
-    if (stickBtn) stickBtn.classList.toggle("on", !!state.aiStickBottom);
+    // 粘底按钮：仅在真正跟随中亮
+    if (stickBtn) {
+      stickBtn.classList.toggle(
+        "on",
+        !!state.aiStickBottom && !state.aiUserReading,
+      );
+    }
     if (!jump) return;
-    // 未粘底且有内容时显示「↓ 最新」
-    const show = !state.aiStickBottom && !!(state.aiRaw || state.aiBusy);
+    // 用户阅读锁 或 未跟随时显示「↓ 最新」
+    const show =
+      (!state.aiStickBottom || state.aiUserReading) &&
+      !!(state.aiRaw || state.aiBusy);
     jump.classList.toggle("show", show);
   }
 
+  function applyAiScrollResolved(r) {
+    state.aiStickBottom = r.stick;
+    state.aiUserReading = r.userReading;
+    updateJumpLatestBtn();
+  }
+
+  /** 用户主动离开底部：进入阅读锁，后续 paint 绝对不改 scrollTop */
+  function detachAiFollow(_reason) {
+    applyAiScrollResolved(
+      resolveAiScrollState(
+        {
+          stick: state.aiStickBottom,
+          userReading: state.aiUserReading,
+          progScroll: state.aiProgScroll,
+        },
+        { type: "detach" },
+      ),
+    );
+  }
+
+  /** 仅按钮/开始分析：恢复跟随并滚到底 */
+  function resumeAiFollow() {
+    applyAiScrollResolved(
+      resolveAiScrollState(
+        {
+          stick: state.aiStickBottom,
+          userReading: state.aiUserReading,
+          progScroll: false,
+        },
+        { type: "resume" },
+      ),
+    );
+    scrollAiToBottom(true);
+  }
+
   /**
-   * 自由滚动（硬保证）：
-   * 1) 唯一滚动节点 .bsb-ai-md 绝对定位 + overflow-y:scroll
-   * 2) 用户任意 wheel/上滑 → 立刻 stick=false，后续 paint 绝不改 scrollTop
-   * 3) 流式只改 pre.textContent，不整段 innerHTML（避免滚动跳动）
-   * 4) 未跟随时显示「↓ 最新」
+   * v0.8.4 自由滚动硬模型（修「永远滚不动」）：
+   *
+   * 旧 bug：scroll 事件在距底 <80px 时自动 stick=true → 流式 paint 下一帧拽回底部。
+   * 用户刚上滑几像素就被重新粘底，体感永远「在原地」。
+   *
+   * 新规则：
+   * 1) 跟随只由：开始分析 / 「粘底」开 / 「↓ 最新」打开
+   * 2) 任意向上 wheel / 上滑 touch / PageUp → 立即 detach，加阅读锁
+   * 3) 程序化 scrollTop 带 aiProgScroll 标记，scroll 监听忽略
+   * 4) 阅读锁期间 paint **完全不碰** scrollTop
+   * 5) 用户自己滚到真正贴底（gap<=12）才解除阅读锁并恢复跟随
    */
   function bindAiScrollBehavior(root) {
     const box = root.querySelector('[data-role="ai-md"]');
     if (!box || box.dataset.bsbScrollBound === "1") return;
     box.dataset.bsbScrollBound = "1";
 
-    const releaseStick = () => {
-      if (!state.aiStickBottom) {
+    const onLeaveBottom = () => {
+      if (state.aiUserReading && !state.aiStickBottom) {
         updateJumpLatestBtn();
         return;
       }
-      state.aiStickBottom = false;
-      updateJumpLatestBtn();
+      detachAiFollow("gesture");
     };
 
-    // 捕获阶段：任何向上滚动意图立即停跟（比 scroll 事件更早）
+    // 捕获：向上意图优先于任何 paint
     box.addEventListener(
       "wheel",
       (e) => {
-        if (e.deltaY < 0) releaseStick();
+        if (e.deltaY < 0) onLeaveBottom();
+      },
+      { passive: true, capture: true },
+    );
+    // 触控板/手指：touchmove 向上
+    box.addEventListener(
+      "touchstart",
+      (e) => {
+        const t = e.touches && e.touches[0];
+        box._bsbTouchY = t ? t.clientY : null;
+      },
+      { passive: true, capture: true },
+    );
+    box.addEventListener(
+      "touchmove",
+      (e) => {
+        const t = e.touches && e.touches[0];
+        if (!t || box._bsbTouchY == null) return;
+        if (t.clientY - box._bsbTouchY > 8) onLeaveBottom();
+        box._bsbTouchY = t.clientY;
       },
       { passive: true, capture: true },
     );
     box.addEventListener(
       "pointerdown",
       () => {
-        // 用户点按阅读区准备拖/滑
         box._bsbPtrY = null;
       },
       { passive: true },
@@ -3322,7 +3430,9 @@
       "pointermove",
       (e) => {
         if (e.buttons === 0 && e.pointerType === "mouse") return;
-        if (box._bsbPtrY != null && e.clientY - box._bsbPtrY > 6) releaseStick();
+        if (box._bsbPtrY != null && e.clientY - box._bsbPtrY > 8) {
+          onLeaveBottom();
+        }
         box._bsbPtrY = e.clientY;
       },
       { passive: true },
@@ -3335,7 +3445,7 @@
           e.key === "PageUp" ||
           e.key === "Home"
         ) {
-          releaseStick();
+          onLeaveBottom();
         }
       },
       true,
@@ -3344,43 +3454,53 @@
     box.addEventListener(
       "scroll",
       () => {
-        const atBottom = shouldStickBottom(
-          box.scrollHeight,
-          box.scrollTop,
-          box.clientHeight,
-          80,
+        const gap = box.scrollHeight - box.scrollTop - box.clientHeight;
+        const r = resolveAiScrollState(
+          {
+            stick: state.aiStickBottom,
+            userReading: state.aiUserReading,
+            progScroll: state.aiProgScroll,
+          },
+          { type: "scroll", gap },
         );
-        if (atBottom) state.aiStickBottom = true;
-        else state.aiStickBottom = false;
-        updateJumpLatestBtn();
+        applyAiScrollResolved(r);
       },
       { passive: true },
     );
   }
 
   function scrollAiToBottom(force) {
-    if (!force && !state.aiStickBottom) {
+    if (!force && (!state.aiStickBottom || state.aiUserReading)) {
       updateJumpLatestBtn();
       return;
     }
     const box = document.querySelector(`#${PANEL_ID} [data-role="ai-md"]`);
     if (!box) return;
-    // 同步设一次 + rAF 再设，确保 layout 后到位
+    state.aiProgScroll = true;
     box.scrollTop = box.scrollHeight;
     requestAnimationFrame(() => {
       box.scrollTop = box.scrollHeight;
-      updateJumpLatestBtn();
+      // 再等一帧清标记，吞掉浏览器延迟的 scroll 事件
+      requestAnimationFrame(() => {
+        state.aiProgScroll = false;
+        updateJumpLatestBtn();
+      });
     });
   }
 
   function scrollAiToTop() {
     const box = document.querySelector(`#${PANEL_ID} [data-role="ai-md"]`);
-    if (box) box.scrollTop = 0;
-    state.aiStickBottom = false;
-    updateJumpLatestBtn();
+    if (box) {
+      state.aiProgScroll = true;
+      box.scrollTop = 0;
+      requestAnimationFrame(() => {
+        state.aiProgScroll = false;
+      });
+    }
+    detachAiFollow("top");
   }
 
-  /** 流式绘制：只更新 text 节点，不销毁滚动容器 */
+  /** 流式绘制：只更新 text；非跟随模式零碰 scrollTop */
   function paintAiStreamText(full) {
     state.aiPendingText = full || "";
     if (state.aiPaintRaf) return;
@@ -3396,7 +3516,6 @@
       let pre = content.querySelector(".bsb-ai-stream-body");
       let caret = content.querySelector(".bsb-ai-caret");
 
-      // 首次：建结构；之后只改 textContent
       if (!pre) {
         content.textContent = "";
         pre = document.createElement("pre");
@@ -3414,22 +3533,37 @@
         caret.remove();
       }
 
-      const prevTop = box.scrollTop;
-      const prevHeight = box.scrollHeight;
-      const wasStick = state.aiStickBottom;
+      // 关键：与 resolveAiScrollState.allowPaintScroll 一致
+      const follow = resolveAiScrollState(
+        {
+          stick: state.aiStickBottom,
+          userReading: state.aiUserReading,
+          progScroll: false,
+        },
+        { type: "paint" },
+      ).allowPaintScroll;
+
+      // 记录阅读位置；非跟随时绝对保留
+      const freezeTop = box.scrollTop;
 
       pre.textContent = text;
 
-      if (wasStick) {
-        // 跟随最新
+      if (follow) {
+        state.aiProgScroll = true;
         box.scrollTop = box.scrollHeight;
+        // 微任务/下一帧清标记
+        requestAnimationFrame(() => {
+          state.aiProgScroll = false;
+        });
       } else {
-        // 自由阅读：内容变高时保持相对视口（不跳动）
-        const delta = box.scrollHeight - prevHeight;
-        box.scrollTop = prevTop + (delta > 0 ? 0 : 0);
-        // 若浏览器把 scrollTop 钳到 0，强制写回
-        if (box.scrollTop !== prevTop && prevTop > 0) {
-          box.scrollTop = prevTop;
+        // ★ 核心：自由阅读时完全不要写 scrollTop（写了会和用户手势抢）
+        // 仅在浏览器异常把位置清零时救回
+        if (box.scrollTop !== freezeTop && freezeTop > 0) {
+          state.aiProgScroll = true;
+          box.scrollTop = freezeTop;
+          requestAnimationFrame(() => {
+            state.aiProgScroll = false;
+          });
         }
       }
       updateJumpLatestBtn();
@@ -3627,9 +3761,17 @@
       a.setAttribute("data-role", "ai-anchor");
       box.appendChild(a);
     }
-    // 完成后滚到顶部阅读
-    if (box) box.scrollTop = 0;
+    // 完成后滚到顶部阅读（程序化，不触发跟随逻辑）
+    if (box) {
+      state.aiProgScroll = true;
+      box.scrollTop = 0;
+      requestAnimationFrame(() => {
+        state.aiProgScroll = false;
+      });
+    }
     state.aiStickBottom = false;
+    state.aiUserReading = true;
+    updateJumpLatestBtn();
   }
 
   /**
@@ -4216,7 +4358,9 @@
     state.aiAbort = false;
     state.cancel = false;
     state.aiRaw = "";
+    state.aiUserReading = false;
     state.aiStickBottom = true;
+    state.aiProgScroll = false;
     updateJumpLatestBtn();
     setAiBusy(true);
     setBusy(true);
@@ -4226,7 +4370,7 @@
     if (contentHost) {
       contentHost.innerHTML =
         `<div class="bsb-empty"><div class="bsb-empty-ico">◌</div><strong>正在生成…</strong>` +
-        `<span>页内 fetch 流式 · 粘底自动滚动 · 可点「粘底」开关</span></div>`;
+        `<span>流式输出中 · 上滑可自由阅读（不会被拽回）· 点「↓ 最新」继续跟随</span></div>`;
     }
 
     try {

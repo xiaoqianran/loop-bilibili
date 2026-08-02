@@ -42,6 +42,7 @@ return {
   formatAiDisplay,
   truncateForAi,
   shouldStickBottom,
+  resolveAiScrollState,
   parseSseDataLine,
   md5,
   MIXIN_KEY_ENC_TAB,
@@ -130,6 +131,50 @@ check(
   "unstick when scrolled up",
   api.shouldStickBottom(1000, 100, 50, 48) === false,
 );
+
+// --- v0.8.4 scroll state machine（修「上滑被 80px 阈值拽回」）---
+{
+  let s = { stick: true, userReading: false, progScroll: false };
+  // 开始：允许 paint 滚底
+  let r = api.resolveAiScrollState(s, { type: "start" });
+  check("scroll: start allows paint", r.allowPaintScroll === true && r.stick && !r.userReading, r);
+
+  // 用户上滑：禁止 paint 滚底
+  r = api.resolveAiScrollState(r, { type: "wheel-up" });
+  check("scroll: wheel-up locks reading", r.allowPaintScroll === false && r.userReading, r);
+
+  // 流式内容增高、距底仍 <80 的假 scroll：不得恢复跟随
+  r = api.resolveAiScrollState(
+    { stick: r.stick, userReading: r.userReading, progScroll: false },
+    { type: "scroll", gap: 40 },
+  );
+  check(
+    "scroll: gap40 must NOT re-stick (old bug)",
+    r.allowPaintScroll === false && r.userReading === true,
+    r,
+  );
+
+  // 程序化滚底产生的 scroll：状态不变
+  r = api.resolveAiScrollState(
+    { stick: true, userReading: false, progScroll: true },
+    { type: "scroll", gap: 0 },
+  );
+  check("scroll: prog scroll ignored", r.allowPaintScroll === true && !r.userReading, r);
+
+  // 用户自己贴底：恢复
+  r = api.resolveAiScrollState(
+    { stick: false, userReading: true, progScroll: false },
+    { type: "scroll", gap: 5 },
+  );
+  check("scroll: user to bottom resumes", r.allowPaintScroll === true && !r.userReading, r);
+
+  // resume 按钮
+  r = api.resolveAiScrollState(
+    { stick: false, userReading: true, progScroll: false },
+    { type: "resume" },
+  );
+  check("scroll: resume button", r.allowPaintScroll === true, r);
+}
 
 // --- keyFromUrl ---
 check(
