@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.5.0
-// @description  B站字幕批量下载：可拖拽/拉伸/贴边收起的 Catppuccin 悬浮面板。对齐 packages/bili_subbatch
+// @version      0.6.0
+// @description  B站字幕批量下载 + OpenAI兼容 AI 流式分析（提示词/高亮/Mermaid）。Catppuccin 悬浮面板
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -15,6 +15,8 @@
 // @connect      aisubtitle.hdslb.com
 // @connect      *.hdslb.com
 // @connect      bilibili.com
+// @connect      *
+// @connect      cdn.jsdelivr.net
 // @grant        GM_xmlhttpRequest
 // @grant        GM_setClipboard
 // @grant        GM_addStyle
@@ -24,24 +26,45 @@
 // ==/UserScript==
 
 /**
- * v0.5 — floating: drag / resize / dock-to-edge auto-hide.
- * Modes: auto + manual (default 单个视频). Catppuccin Mocha, click-through root.
+ * v0.6 — AI: OpenAI-compatible chat, prompt inject, SSE stream,
+ *         markdown + highlight.js + mermaid render.
+ * UI: drag / resize / dock. Modes: auto + manual.
  */
 
 (function () {
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.5.0";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.6.0";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v1";
+  const AI_STORE_KEY = "bili-subbatch-ai-v1";
   const WBI_TTL_MS = 600_000;
   const DEFAULT_DELAY_MS = 400;
   const DEFAULT_MAX_PAGES = 20;
-  const MIN_W = 300;
-  const MIN_H = 280;
+  const MIN_W = 320;
+  const MIN_H = 360;
   const DOCK_EDGE_PX = 28;
   const DOCK_SNAP_PX = 36;
+
+  /** OpenAI 兼容默认值（密钥仅存 localStorage，可在面板修改） */
+  const AI_DEFAULTS = {
+    baseUrl: "https://newapi-jp1.202820.xyz/v1",
+    apiKey: "sk-iAeYCYaw6IGkDDfjVpu91QhY899wGMigJdTJvsXQVXaHp66P",
+    model: "openai/gpt-oss-120b",
+    temperature: 0.4,
+    maxTokens: 8192,
+    systemPrompt:
+      "你是资深内容分析助手。根据用户提供的 B 站视频字幕，输出结构清晰、可执行的中文笔记。" +
+      "需要时使用 Markdown：标题、列表、表格；代码用 fenced code block 并标注语言；" +
+      "流程/架构用 mermaid 代码块（```mermaid）。不要编造字幕中不存在的事实。",
+    userPromptTemplate:
+      "请分析以下字幕并输出：\n" +
+      "1. 一句话摘要\n2. 要点列表\n3. 关键概念/术语\n4. 若有步骤或架构，用 mermaid 图\n" +
+      "5. 可行动的后续建议\n\n" +
+      "【元信息】\n标题：{{title}}\nBV：{{bvid}}\nUP：{{author}}\n\n" +
+      "【字幕全文】\n{{subtitle}}\n",
+  };
   const UA =
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
     "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
@@ -1259,6 +1282,11 @@
     delayMs: DEFAULT_DELAY_MS,
     maxPages: DEFAULT_MAX_PAGES,
     ui: null, // geometry + dock
+    ai: null, // loaded config
+    aiBusy: false,
+    aiAbort: false,
+    aiRaw: "", // streaming markdown buffer
+    renderLibsReady: false,
   };
 
   // ─── UI geometry persistence ────────────────────────────────────────────
@@ -1822,6 +1850,139 @@
       #${PANEL_ID} .bsb-list::-webkit-scrollbar-thumb:hover {
         background: var(--ctp-overlay0);
       }
+
+      /* ── AI 区块 ── */
+      #${PANEL_ID} .bsb-ai-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      #${PANEL_ID} .bsb-ai-bar button.ai {
+        background: color-mix(in srgb, var(--ctp-mauve) 72%, transparent);
+        border-color: color-mix(in srgb, var(--ctp-mauve) 50%, transparent);
+        color: var(--ctp-crust);
+        font-weight: 650;
+      }
+      #${PANEL_ID} .bsb-ai-bar button.ai:hover:not(:disabled) {
+        background: color-mix(in srgb, var(--ctp-pink) 80%, transparent);
+        color: var(--ctp-crust);
+      }
+      #${PANEL_ID} .bsb-ai-panel {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1;
+        min-height: 160px;
+        border: 1px solid color-mix(in srgb, var(--ctp-mauve) 28%, transparent);
+        border-radius: 12px;
+        padding: 10px;
+        background: color-mix(in srgb, var(--ctp-mantle) 50%, transparent);
+        overflow: hidden;
+      }
+      #${PANEL_ID} .bsb-ai-panel.show { display: flex; }
+      #${PANEL_ID} .bsb-ai-tabs {
+        display: flex; gap: 4px; flex-shrink: 0;
+      }
+      #${PANEL_ID} .bsb-ai-tabs button {
+        height: 26px; padding: 0 10px; border-radius: 999px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 60%, transparent);
+        background: transparent; color: var(--ctp-subtext0); cursor: pointer; font-size: 11px;
+      }
+      #${PANEL_ID} .bsb-ai-tabs button.active {
+        background: color-mix(in srgb, var(--ctp-mauve) 22%, transparent);
+        color: var(--ctp-mauve);
+        border-color: color-mix(in srgb, var(--ctp-mauve) 40%, transparent);
+      }
+      #${PANEL_ID} .bsb-ai-config,
+      #${PANEL_ID} .bsb-ai-stream {
+        display: none; flex-direction: column; gap: 6px; flex: 1; min-height: 0; overflow: auto;
+      }
+      #${PANEL_ID} .bsb-ai-panel[data-tab="config"] .bsb-ai-config { display: flex; }
+      #${PANEL_ID} .bsb-ai-panel[data-tab="result"] .bsb-ai-stream { display: flex; }
+      #${PANEL_ID} .bsb-ai-config label {
+        display: flex; flex-direction: column; gap: 3px;
+        font-size: 11px; color: var(--ctp-subtext1);
+      }
+      #${PANEL_ID} .bsb-ai-config input,
+      #${PANEL_ID} .bsb-ai-config textarea,
+      #${PANEL_ID} .bsb-ai-config select {
+        width: 100%; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--ctp-surface2) 70%, transparent);
+        background: color-mix(in srgb, var(--ctp-base) 55%, transparent);
+        color: var(--ctp-text); padding: 6px 8px; font-size: 12px; font-family: inherit;
+      }
+      #${PANEL_ID} .bsb-ai-config textarea { min-height: 72px; resize: vertical; line-height: 1.4; }
+      #${PANEL_ID} .bsb-ai-config .row2 {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+      }
+      #${PANEL_ID} .bsb-ai-config .bsb-ai-cfg-actions {
+        display: flex; gap: 6px; flex-wrap: wrap;
+      }
+      #${PANEL_ID} .bsb-ai-stream .bsb-ai-raw {
+        display: none;
+        white-space: pre-wrap; word-break: break-word;
+        font-size: 12px; color: var(--ctp-subtext1);
+        max-height: 40%; overflow: auto;
+        padding: 8px; border-radius: 8px;
+        background: color-mix(in srgb, var(--ctp-crust) 40%, transparent);
+      }
+      #${PANEL_ID} .bsb-ai-stream.streaming .bsb-ai-raw { display: block; }
+      #${PANEL_ID} .bsb-ai-md {
+        flex: 1; min-height: 80px; overflow: auto;
+        padding: 8px 10px; border-radius: 8px;
+        background: color-mix(in srgb, var(--ctp-crust) 35%, transparent);
+        font-size: 12.5px; line-height: 1.55; color: var(--ctp-text);
+      }
+      #${PANEL_ID} .bsb-ai-md h1, #${PANEL_ID} .bsb-ai-md h2, #${PANEL_ID} .bsb-ai-md h3 {
+        color: var(--ctp-lavender); margin: 0.6em 0 0.35em; font-weight: 650;
+      }
+      #${PANEL_ID} .bsb-ai-md h1 { font-size: 1.25em; }
+      #${PANEL_ID} .bsb-ai-md h2 { font-size: 1.12em; }
+      #${PANEL_ID} .bsb-ai-md h3 { font-size: 1.05em; }
+      #${PANEL_ID} .bsb-ai-md p { margin: 0.4em 0; }
+      #${PANEL_ID} .bsb-ai-md ul, #${PANEL_ID} .bsb-ai-md ol { margin: 0.35em 0; padding-left: 1.3em; }
+      #${PANEL_ID} .bsb-ai-md a { color: var(--ctp-blue); }
+      #${PANEL_ID} .bsb-ai-md blockquote {
+        margin: 0.5em 0; padding: 0.3em 0.8em;
+        border-left: 3px solid var(--ctp-mauve);
+        color: var(--ctp-subtext0);
+        background: color-mix(in srgb, var(--ctp-surface0) 40%, transparent);
+      }
+      #${PANEL_ID} .bsb-ai-md table {
+        border-collapse: collapse; width: 100%; margin: 0.5em 0; font-size: 12px;
+      }
+      #${PANEL_ID} .bsb-ai-md th, #${PANEL_ID} .bsb-ai-md td {
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 70%, transparent);
+        padding: 4px 8px;
+      }
+      #${PANEL_ID} .bsb-ai-md th {
+        background: color-mix(in srgb, var(--ctp-surface0) 60%, transparent);
+        color: var(--ctp-subtext1);
+      }
+      #${PANEL_ID} .bsb-ai-md pre {
+        margin: 0.5em 0; padding: 10px 12px; border-radius: 10px;
+        overflow: auto; max-height: 320px;
+        background: #11111b;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 50%, transparent);
+      }
+      #${PANEL_ID} .bsb-ai-md code {
+        font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+        font-size: 11.5px;
+      }
+      #${PANEL_ID} .bsb-ai-md :not(pre) > code {
+        background: color-mix(in srgb, var(--ctp-surface0) 70%, transparent);
+        padding: 1px 5px; border-radius: 4px; color: var(--ctp-peach);
+      }
+      #${PANEL_ID} .bsb-ai-md .hljs { background: transparent; color: var(--ctp-text); }
+      #${PANEL_ID} .bsb-ai-md .mermaid {
+        background: color-mix(in srgb, var(--ctp-base) 50%, transparent);
+        border-radius: 10px; padding: 10px; margin: 0.5em 0;
+        text-align: center; overflow: auto;
+      }
+      #${PANEL_ID} .bsb-ai-md .bsb-code-lang {
+        display: block; font-size: 10px; color: var(--ctp-overlay1);
+        margin-bottom: 6px; text-transform: lowercase;
+      }
     `);
   }
 
@@ -2182,8 +2343,52 @@
             <button type="button" data-act="dl-ok-only" title="仅下载已成功项">再下成功项</button>
             <button type="button" data-act="clear">清空列表</button>
           </div>
+          <div class="bsb-ai-bar">
+            <button type="button" class="ai" data-act="ai-send" title="拉取勾选字幕并流式发送给 AI">AI 分析</button>
+            <button type="button" data-act="ai-toggle">AI 面板</button>
+            <button type="button" class="danger" data-act="ai-stop" style="display:none">停止 AI</button>
+          </div>
+          <div class="bsb-ai-panel" data-role="ai-panel" data-tab="result">
+            <div class="bsb-ai-tabs">
+              <button type="button" data-ai-tab="result" class="active">结果</button>
+              <button type="button" data-ai-tab="config">配置</button>
+            </div>
+            <div class="bsb-ai-config" data-role="ai-config">
+              <label>Base URL（OpenAI 兼容，含 /v1）
+                <input type="text" data-ai="baseUrl" placeholder="https://api.example.com/v1" autocomplete="off">
+              </label>
+              <label>API Key
+                <input type="password" data-ai="apiKey" placeholder="sk-..." autocomplete="off">
+              </label>
+              <label>Model
+                <input type="text" data-ai="model" placeholder="gpt-4o-mini" autocomplete="off">
+              </label>
+              <div class="row2">
+                <label>Temperature
+                  <input type="number" data-ai="temperature" min="0" max="2" step="0.1">
+                </label>
+                <label>Max tokens
+                  <input type="number" data-ai="maxTokens" min="256" max="128000" step="256">
+                </label>
+              </div>
+              <label>System 提示词（发送前注入）
+                <textarea data-ai="systemPrompt" rows="4"></textarea>
+              </label>
+              <label>User 模板（可用 {{title}} {{bvid}} {{author}} {{subtitle}}）
+                <textarea data-ai="userPromptTemplate" rows="5"></textarea>
+              </label>
+              <div class="bsb-ai-cfg-actions">
+                <button type="button" class="primary" data-act="ai-save">保存配置</button>
+                <button type="button" data-act="ai-reset">恢复默认</button>
+              </div>
+            </div>
+            <div class="bsb-ai-stream" data-role="ai-stream">
+              <pre class="bsb-ai-raw" data-role="ai-raw"></pre>
+              <div class="bsb-ai-md" data-role="ai-md"><p class="bsb-empty" style="padding:12px">AI 输出将流式显示于此，结束后渲染 Markdown / 代码高亮 / Mermaid</p></div>
+            </div>
+          </div>
           <div class="bsb-status" data-role="status">就绪 · 拖标题移动 · 拖边角拉伸 · 贴边自动收起</div>
-          <div class="bsb-foot">Catppuccin Mocha · 可拖拽/拉伸/贴边 · 对齐 bili_subbatch</div>
+          <div class="bsb-foot">v${SCRIPT_VERSION} · AI OpenAI兼容 · Catppuccin · 对齐 bili_subbatch</div>
         </div>
       </aside>
       <button type="button" class="bsb-fab" title="Bili SubBatch（Catppuccin）" aria-expanded="false">CC</button>
@@ -2213,6 +2418,18 @@
       btn.addEventListener("click", () => onAction(act));
     });
 
+    root.querySelectorAll("[data-ai-tab]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const tab = btn.getAttribute("data-ai-tab");
+        const panel = root.querySelector('[data-role="ai-panel"]');
+        panel.setAttribute("data-tab", tab);
+        root.querySelectorAll("[data-ai-tab]").forEach((b) => {
+          b.classList.toggle("active", b.getAttribute("data-ai-tab") === tab);
+        });
+      });
+    });
+
+    fillAiConfigForm(root);
     return root;
   }
 
@@ -2227,13 +2444,16 @@
   function setBusy(busy) {
     state.busy = busy;
     const root = ensurePanel();
+    const allow = new Set(["cancel", "ai-stop", "dock", "collapse"]);
     root.querySelectorAll("button[data-act]").forEach((b) => {
       const act = b.getAttribute("data-act");
       if (act === "cancel") {
-        b.style.display = busy ? "" : "none";
+        b.style.display = busy && !state.aiBusy ? "" : "none";
+        b.disabled = false;
+      } else if (allow.has(act)) {
         b.disabled = false;
       } else {
-        b.disabled = busy && act !== "cancel";
+        b.disabled = !!busy;
       }
     });
   }
@@ -2334,6 +2554,32 @@
       setStatus("正在停止…");
       return;
     }
+    if (act === "ai-stop") {
+      state.aiAbort = true;
+      state.cancel = true;
+      setStatus("正在停止 AI…");
+      return;
+    }
+    if (act === "ai-toggle") {
+      toggleAiPanel();
+      return;
+    }
+    if (act === "ai-save") {
+      saveAiConfigFromForm();
+      setStatus("AI 配置已保存到本机", "ok");
+      return;
+    }
+    if (act === "ai-reset") {
+      state.ai = { ...AI_DEFAULTS };
+      saveAiConfig(state.ai);
+      fillAiConfigForm(ensurePanel());
+      setStatus("已恢复 AI 默认配置", "ok");
+      return;
+    }
+    if (act === "ai-send") {
+      await doAiAnalyze();
+      return;
+    }
     if (state.busy && act !== "cancel") return;
 
     if (act === "clear") {
@@ -2376,6 +2622,579 @@
   function clipboardWrite(text) {
     if (typeof GM_setClipboard === "function") GM_setClipboard(text, "text");
     else if (navigator.clipboard) navigator.clipboard.writeText(text);
+  }
+
+  // ─── AI config / stream / render ────────────────────────────────────────
+  function loadAiConfig() {
+    try {
+      const raw = localStorage.getItem(AI_STORE_KEY);
+      if (!raw) return { ...AI_DEFAULTS };
+      const o = JSON.parse(raw);
+      return {
+        baseUrl: String(o.baseUrl || AI_DEFAULTS.baseUrl).replace(/\/+$/, ""),
+        apiKey: String(o.apiKey != null ? o.apiKey : AI_DEFAULTS.apiKey),
+        model: String(o.model || AI_DEFAULTS.model),
+        temperature: Number.isFinite(Number(o.temperature))
+          ? Number(o.temperature)
+          : AI_DEFAULTS.temperature,
+        maxTokens: Number(o.maxTokens) || AI_DEFAULTS.maxTokens,
+        systemPrompt: String(o.systemPrompt || AI_DEFAULTS.systemPrompt),
+        userPromptTemplate: String(
+          o.userPromptTemplate || AI_DEFAULTS.userPromptTemplate,
+        ),
+      };
+    } catch (_) {
+      return { ...AI_DEFAULTS };
+    }
+  }
+
+  function saveAiConfig(cfg) {
+    try {
+      localStorage.setItem(AI_STORE_KEY, JSON.stringify(cfg));
+    } catch (_) {
+      /* ignore */
+    }
+    state.ai = cfg;
+  }
+
+  function fillAiConfigForm(root) {
+    if (!root) return;
+    state.ai = loadAiConfig();
+    const cfg = state.ai;
+    const set = (k, v) => {
+      const el = root.querySelector(`[data-ai="${k}"]`);
+      if (el) el.value = v;
+    };
+    set("baseUrl", cfg.baseUrl);
+    set("apiKey", cfg.apiKey);
+    set("model", cfg.model);
+    set("temperature", cfg.temperature);
+    set("maxTokens", cfg.maxTokens);
+    set("systemPrompt", cfg.systemPrompt);
+    set("userPromptTemplate", cfg.userPromptTemplate);
+  }
+
+  function saveAiConfigFromForm() {
+    const root = ensurePanel();
+    const get = (k) => root.querySelector(`[data-ai="${k}"]`)?.value ?? "";
+    const cfg = {
+      baseUrl: String(get("baseUrl") || AI_DEFAULTS.baseUrl).replace(/\/+$/, ""),
+      apiKey: String(get("apiKey") || ""),
+      model: String(get("model") || AI_DEFAULTS.model),
+      temperature: Number(get("temperature")) || 0,
+      maxTokens: Number(get("maxTokens")) || AI_DEFAULTS.maxTokens,
+      systemPrompt: String(get("systemPrompt") || ""),
+      userPromptTemplate: String(get("userPromptTemplate") || "{{subtitle}}"),
+    };
+    saveAiConfig(cfg);
+    return cfg;
+  }
+
+  function toggleAiPanel(force) {
+    const root = ensurePanel();
+    const panel = root.querySelector('[data-role="ai-panel"]');
+    const show =
+      typeof force === "boolean" ? force : !panel.classList.contains("show");
+    panel.classList.toggle("show", show);
+    if (show) {
+      fillAiConfigForm(root);
+      // 面板打开时略增高更易用
+      if (state.ui && state.ui.h < 520) {
+        state.ui.h = Math.min(720, Math.max(520, state.ui.h));
+        clampUiToViewport(state.ui);
+        applyPanelGeometry();
+        saveUiGeom();
+      }
+    }
+  }
+
+  function setAiBusy(busy) {
+    state.aiBusy = busy;
+    const root = ensurePanel();
+    const stopBtn = root.querySelector('[data-act="ai-stop"]');
+    if (stopBtn) stopBtn.style.display = busy ? "" : "none";
+    root.querySelectorAll('[data-act="ai-send"]').forEach((b) => {
+      b.disabled = busy;
+    });
+    const stream = root.querySelector('[data-role="ai-stream"]');
+    if (stream) stream.classList.toggle("streaming", busy);
+  }
+
+  function applyPromptTemplate(tpl, vars) {
+    return String(tpl || "").replace(/\{\{(\w+)\}\}/g, (_, k) =>
+      vars[k] != null ? String(vars[k]) : "",
+    );
+  }
+
+  function buildSubtitlePayload(items) {
+    return items
+      .map((it) => {
+        const head = `=== ${it.bvid}${it.page > 1 ? " P" + it.page : ""} ${it.title || ""} ===`;
+        const body = cuesToTxt(it.data || []);
+        return head + "\n" + body;
+      })
+      .join("\n\n");
+  }
+
+  function loadScriptOnce(src, globalCheck) {
+    return new Promise((resolve, reject) => {
+      if (globalCheck && globalCheck()) {
+        resolve();
+        return;
+      }
+      const existed = document.querySelector(`script[data-bsb-src="${src}"]`);
+      if (existed) {
+        existed.addEventListener("load", () => resolve());
+        existed.addEventListener("error", () => reject(new Error("load " + src)));
+        if (globalCheck && globalCheck()) resolve();
+        return;
+      }
+      const s = document.createElement("script");
+      s.src = src;
+      s.async = true;
+      s.dataset.bsbSrc = src;
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error("failed to load " + src));
+      (document.head || document.documentElement).appendChild(s);
+    });
+  }
+
+  function loadCssOnce(href) {
+    if (document.querySelector(`link[data-bsb-href="${href}"]`)) return;
+    const l = document.createElement("link");
+    l.rel = "stylesheet";
+    l.href = href;
+    l.dataset.bsbHref = href;
+    (document.head || document.documentElement).appendChild(l);
+  }
+
+  async function ensureRenderLibs() {
+    if (state.renderLibsReady) return;
+    loadCssOnce(
+      "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css",
+    );
+    await loadScriptOnce(
+      "https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js",
+      () => typeof marked !== "undefined",
+    );
+    await loadScriptOnce(
+      "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js",
+      () => typeof hljs !== "undefined",
+    );
+    // common languages pack (full build already has many; languages min is extra)
+    try {
+      await loadScriptOnce(
+        "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js",
+        () => true,
+      );
+    } catch (_) {
+      /* optional */
+    }
+    await loadScriptOnce(
+      "https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js",
+      () => typeof mermaid !== "undefined",
+    );
+    if (typeof mermaid !== "undefined") {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: "dark",
+        securityLevel: "loose",
+        fontFamily: "JetBrains Mono, Fira Code, monospace",
+      });
+    }
+    if (typeof marked !== "undefined") {
+      marked.setOptions({
+        gfm: true,
+        breaks: true,
+        mangle: false,
+        headerIds: false,
+      });
+    }
+    state.renderLibsReady = true;
+  }
+
+  function simpleMarkdownFallback(md) {
+    // very small fallback if CDN blocked
+    let html = escapeHtml(md);
+    html = html.replace(
+      /```(\w*)\n([\s\S]*?)```/g,
+      (_, lang, code) =>
+        `<pre><span class="bsb-code-lang">${escapeHtml(lang || "text")}</span><code>${escapeHtml(code)}</code></pre>`,
+    );
+    html = html.replace(/^### (.+)$/gm, "<h3>$1</h3>");
+    html = html.replace(/^## (.+)$/gm, "<h2>$1</h2>");
+    html = html.replace(/^# (.+)$/gm, "<h1>$1</h1>");
+    html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
+    html = html.replace(/\n\n/g, "</p><p>");
+    return `<p>${html}</p>`;
+  }
+
+  async function renderAiMarkdown(md, { streaming } = {}) {
+    const root = ensurePanel();
+    const box = root.querySelector('[data-role="ai-md"]');
+    const raw = root.querySelector('[data-role="ai-raw"]');
+    if (raw) raw.textContent = md || "";
+    if (!box) return;
+
+    if (streaming) {
+      // 流式阶段：轻量渲染，避免频繁 mermaid
+      try {
+        await ensureRenderLibs();
+        if (typeof marked !== "undefined") {
+          box.innerHTML = marked.parse(md || "");
+          box.querySelectorAll("pre code").forEach((block) => {
+            if (typeof hljs !== "undefined") {
+              try {
+                hljs.highlightElement(block);
+              } catch (_) {
+                /* ignore */
+              }
+            }
+          });
+        } else {
+          box.innerHTML = simpleMarkdownFallback(md || "");
+        }
+      } catch (_) {
+        box.innerHTML = simpleMarkdownFallback(md || "");
+      }
+      box.scrollTop = box.scrollHeight;
+      return;
+    }
+
+    try {
+      await ensureRenderLibs();
+    } catch (e) {
+      box.innerHTML =
+        simpleMarkdownFallback(md || "") +
+        `<p style="color:var(--ctp-peach)">渲染库加载失败：${escapeHtml(e.message || e)}（已用简易 Markdown）</p>`;
+      return;
+    }
+
+    // 拆出 mermaid 块，避免 marked 破坏
+    const mermaidBlocks = [];
+    const md2 = String(md || "").replace(
+      /```mermaid\s*\n([\s\S]*?)```/gi,
+      (_, code) => {
+        const i = mermaidBlocks.length;
+        mermaidBlocks.push(code.trim());
+        return `\n\n<div class="mermaid" data-bsb-m="${i}">${escapeHtml(code.trim())}</div>\n\n`;
+      },
+    );
+
+    let html;
+    try {
+      html = marked.parse(md2);
+    } catch (_) {
+      html = simpleMarkdownFallback(md2);
+    }
+    box.innerHTML = html;
+
+    // 代码高亮
+    box.querySelectorAll("pre code").forEach((block) => {
+      const pre = block.parentElement;
+      const cls = block.className || "";
+      const m = cls.match(/language-([\w#+-]+)/i);
+      if (m && pre && !pre.querySelector(".bsb-code-lang")) {
+        const tag = document.createElement("span");
+        tag.className = "bsb-code-lang";
+        tag.textContent = m[1];
+        pre.insertBefore(tag, block);
+      }
+      if (typeof hljs !== "undefined") {
+        try {
+          hljs.highlightElement(block);
+        } catch (_) {
+          /* unknown lang */
+        }
+      }
+    });
+
+    // Mermaid
+    if (typeof mermaid !== "undefined" && mermaidBlocks.length) {
+      const nodes = box.querySelectorAll(".mermaid[data-bsb-m]");
+      for (const node of nodes) {
+        const idx = Number(node.getAttribute("data-bsb-m"));
+        const code = mermaidBlocks[idx];
+        if (!code) continue;
+        try {
+          const id = "bsb-mmd-" + Date.now() + "-" + idx;
+          const { svg } = await mermaid.render(id, code);
+          node.innerHTML = svg;
+        } catch (err) {
+          node.innerHTML =
+            `<pre class="bsb-code-lang">mermaid 渲染失败</pre><pre><code>${escapeHtml(code)}\n\n${escapeHtml(err.message || err)}</code></pre>`;
+        }
+      }
+    }
+  }
+
+  /**
+   * OpenAI-compatible chat.completions SSE via GM_xmlhttpRequest onprogress.
+   */
+  function streamChatCompletion({ baseUrl, apiKey, model, temperature, maxTokens, messages, onDelta, onDone, onError }) {
+    const url = baseUrl.replace(/\/+$/, "") + "/chat/completions";
+    let buffer = "";
+    let assembled = "";
+    let settled = false;
+
+    const finish = (err) => {
+      if (settled) return;
+      settled = true;
+      if (err) onError && onError(err);
+      else onDone && onDone(assembled);
+    };
+
+    const parseSseChunk = (text) => {
+      // process complete lines
+      const parts = text.split("\n");
+      // keep last incomplete line in buffer handled by caller
+      for (const line of parts) {
+        const t = line.trim();
+        if (!t.startsWith("data:")) continue;
+        const data = t.slice(5).trim();
+        if (!data) continue;
+        if (data === "[DONE]") {
+          finish(null);
+          return;
+        }
+        try {
+          const j = JSON.parse(data);
+          const delta =
+            j.choices?.[0]?.delta?.content ??
+            j.choices?.[0]?.message?.content ??
+            "";
+          if (delta) {
+            assembled += delta;
+            onDelta && onDelta(delta, assembled);
+          }
+        } catch (_) {
+          /* partial json */
+        }
+      }
+    };
+
+    const req = GM_xmlhttpRequest({
+      method: "POST",
+      url,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + apiKey,
+        Accept: "text/event-stream",
+      },
+      data: JSON.stringify({
+        model,
+        messages,
+        temperature,
+        max_tokens: maxTokens,
+        stream: true,
+      }),
+      responseType: "text",
+      onprogress(res) {
+        if (state.aiAbort) {
+          try {
+            req.abort && req.abort();
+          } catch (_) {
+            /* */
+          }
+          finish(new Error("用户停止"));
+          return;
+        }
+        const text = res.responseText || "";
+        // only parse new portion
+        const neu = text.slice(buffer.length);
+        buffer = text;
+        if (neu) parseSseChunk(neu);
+      },
+      onload(res) {
+        if (state.aiAbort) {
+          finish(new Error("用户停止"));
+          return;
+        }
+        const text = res.responseText || "";
+        if (text.length > buffer.length) parseSseChunk(text.slice(buffer.length));
+        // non-stream fallback
+        if (!assembled && text) {
+          try {
+            const j = JSON.parse(text);
+            const c =
+              j.choices?.[0]?.message?.content ||
+              j.choices?.[0]?.text ||
+              "";
+            if (c) {
+              assembled = c;
+              onDelta && onDelta(c, assembled);
+            } else if (j.error) {
+              finish(new Error(j.error.message || JSON.stringify(j.error)));
+              return;
+            }
+          } catch (_) {
+            // maybe pure SSE already parsed
+          }
+        }
+        if (res.status < 200 || res.status >= 300) {
+          finish(
+            new Error(
+              `HTTP ${res.status}: ${(text || "").slice(0, 240)}`,
+            ),
+          );
+          return;
+        }
+        finish(null);
+      },
+      onerror() {
+        finish(new Error("网络错误（检查 Base URL / @connect / CORS）"));
+      },
+      ontimeout() {
+        finish(new Error("请求超时"));
+      },
+      timeout: 0,
+    });
+
+    return req;
+  }
+
+  async function ensureSubtitlesForAi(targets) {
+    const delay = state.delayMs;
+    for (let i = 0; i < targets.length; i++) {
+      if (state.cancel || state.aiAbort) throw new Error("用户停止");
+      const it = targets[i];
+      if (it.subStatus === "ok" && it.data?.length) continue;
+      setStatus(`AI 准备字幕 ${i + 1}/${targets.length} · ${it.bvid}…`);
+      const r = await fetchSubtitle(it.bvid, it.page || 1);
+      it.subStatus = r.status;
+      it.cue_count = r.cue_count || 0;
+      it.data = r.data || null;
+      it.error = r.error || "";
+      if (!it.title && r.title) it.title = r.title;
+      if (!it.author && r.author) it.author = r.author;
+      renderList();
+      if (i < targets.length - 1) await sleep(delay);
+    }
+    return targets.filter((it) => it.subStatus === "ok" && it.data?.length);
+  }
+
+  async function doAiAnalyze() {
+    if (state.aiBusy) return;
+    const root = ensurePanel();
+    toggleAiPanel(true);
+    root.querySelector('[data-role="ai-panel"]').setAttribute("data-tab", "result");
+    root.querySelectorAll("[data-ai-tab]").forEach((b) => {
+      b.classList.toggle("active", b.getAttribute("data-ai-tab") === "result");
+    });
+
+    const cfg = saveAiConfigFromForm();
+    if (!cfg.apiKey) {
+      setStatus("请先在 AI 配置中填写 API Key", "err");
+      root.querySelector('[data-role="ai-panel"]').setAttribute("data-tab", "config");
+      return;
+    }
+    if (!cfg.baseUrl) {
+      setStatus("请填写 Base URL", "err");
+      return;
+    }
+
+    let targets = selectedItems();
+    if (!targets.length) {
+      // 无勾选：若列表空则扫当前页单视频
+      if (!state.items.length) {
+        try {
+          await doScan();
+        } catch (_) {
+          /* */
+        }
+      }
+      targets = selectedItems();
+    }
+    if (!targets.length) {
+      setStatus("请先扫描并勾选要分析的视频", "err");
+      return;
+    }
+
+    state.aiAbort = false;
+    state.cancel = false;
+    state.aiRaw = "";
+    setAiBusy(true);
+    setBusy(true);
+    setStatus("准备字幕并连接 AI…");
+
+    const mdEl = root.querySelector('[data-role="ai-md"]');
+    if (mdEl) mdEl.innerHTML = "<p>连接中…</p>";
+
+    try {
+      const ready = await ensureSubtitlesForAi(targets);
+      if (!ready.length) {
+        setStatus("勾选项均无字幕，无法发送 AI", "err");
+        return;
+      }
+
+      const subtitle = buildSubtitlePayload(ready);
+      const first = ready[0];
+      const vars = {
+        title: ready.map((x) => x.title).filter(Boolean).join(" / ") || first.title || "",
+        bvid: ready.map((x) => x.bvid).join(", "),
+        author: first.author || "",
+        subtitle,
+      };
+      const userContent = applyPromptTemplate(cfg.userPromptTemplate, vars);
+      const messages = [];
+      if (cfg.systemPrompt.trim()) {
+        messages.push({ role: "system", content: cfg.systemPrompt });
+      }
+      messages.push({ role: "user", content: userContent });
+
+      setStatus(`AI 流式生成中 · ${cfg.model} · ${ready.length} 条字幕…`);
+
+      let lastPaint = 0;
+      await new Promise((resolve, reject) => {
+        streamChatCompletion({
+          baseUrl: cfg.baseUrl,
+          apiKey: cfg.apiKey,
+          model: cfg.model,
+          temperature: cfg.temperature,
+          maxTokens: cfg.maxTokens,
+          messages,
+          onDelta(_d, full) {
+            state.aiRaw = full;
+            const now = Date.now();
+            if (now - lastPaint > 120) {
+              lastPaint = now;
+              renderAiMarkdown(full, { streaming: true });
+            }
+          },
+          onDone(full) {
+            state.aiRaw = full || state.aiRaw;
+            resolve(full);
+          },
+          onError(err) {
+            reject(err);
+          },
+        });
+      });
+
+      if (state.aiAbort) {
+        setStatus("AI 已停止", "err");
+        await renderAiMarkdown(state.aiRaw + "\n\n*(已停止)*", { streaming: false });
+        return;
+      }
+
+      setStatus("AI 完成 · 正在渲染 Markdown / 代码 / Mermaid…");
+      await renderAiMarkdown(state.aiRaw, { streaming: false });
+      setStatus(`AI 完成 · ${state.aiRaw.length} 字符 · ${cfg.model}`, "ok");
+    } catch (e) {
+      console.error("[bili-subbatch] ai", e);
+      setStatus(`AI 失败: ${e.message || e}`, "err");
+      if (state.aiRaw) {
+        await renderAiMarkdown(
+          state.aiRaw + `\n\n> 错误：${e.message || e}`,
+          { streaming: false },
+        );
+      }
+    } finally {
+      setAiBusy(false);
+      setBusy(false);
+      state.aiAbort = false;
+    }
   }
 
   function validateCtxForScan(ctx) {
