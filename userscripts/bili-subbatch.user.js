@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.8.4
-// @description  B站字幕+AI：用户阅读锁自由滚动、流式不抢控、宽松排版
+// @version      0.8.5
+// @description  B站字幕+AI：KaTeX 数学公式、自由滚动、宽松排版
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -37,7 +37,7 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.4";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.5";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
   /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
@@ -68,11 +68,13 @@
     systemPrompt:
       "你是资深内容分析助手。根据用户提供的 B 站视频字幕，输出结构清晰、可执行的中文笔记。" +
       "需要时使用 Markdown：标题、列表、表格；代码用 fenced code block 并标注语言；" +
-      "流程/架构用 mermaid 代码块（```mermaid）。不要编造字幕中不存在的事实。" +
-      "最终答案写在正文里，尽量简洁。",
+      "流程/架构用 mermaid 代码块（```mermaid）；" +
+      "数学公式用 LaTeX：行内 $E=mc^2$ 或 \\( \\ ），独立公式用 $$...$$ / \\[...\\] 或 ```math 代码块。" +
+      "不要编造字幕中不存在的事实。最终答案写在正文里，尽量简洁。",
     userPromptTemplate:
       "请分析以下字幕并输出：\n" +
-      "1. 一句话摘要\n2. 要点列表\n3. 关键概念/术语\n4. 若有步骤或架构，用 mermaid 图\n" +
+      "1. 一句话摘要\n2. 要点列表\n3. 关键概念/术语（含公式请用 LaTeX）\n" +
+      "4. 若有步骤或架构，用 mermaid 图\n" +
       "5. 可行动的后续建议\n\n" +
       "【元信息】\n标题：{{title}}\nBV：{{bvid}}\nUP：{{author}}\n\n" +
       "【字幕全文】\n{{subtitle}}\n",
@@ -369,6 +371,99 @@
 
     const allowPaintScroll = stick && !userReading;
     return { stick, userReading, allowPaintScroll };
+  }
+
+  /**
+   * 在 marked 之前抽出数学公式，避免 `_` `^` `\` 被 Markdown 拆坏。
+   * 支持：$$ $$ / \[ \] / \( \) / $ $ / ```math|latex|tex
+   * 代码块内公式不抽取；纯数字 $12.5 不当作公式。
+   * @returns {{ md: string, maths: Array<{tex:string, display:boolean}> }}
+   */
+  function prepareMarkdownMath(md) {
+    const maths = [];
+    let s = String(md || "");
+
+    // ```math / latex / tex → 独立公式
+    s = s.replace(/```(?:math|latex|tex)\s*\n([\s\S]*?)```/gi, (_, tex) => {
+      const i = maths.length;
+      maths.push({ tex: String(tex).trim(), display: true });
+      return `\n\n@@BSBMATH${i}@@\n\n`;
+    });
+
+    // 保护其余 fenced / inline code
+    const codes = [];
+    s = s.replace(/```[\s\S]*?```/g, (m) => {
+      const i = codes.length;
+      codes.push(m);
+      return `@@BSBCODE${i}@@`;
+    });
+    s = s.replace(/`[^`\n]+`/g, (m) => {
+      const i = codes.length;
+      codes.push(m);
+      return `@@BSBCODE${i}@@`;
+    });
+
+    // 独立公式 $$...$$
+    s = s.replace(/\$\$([\s\S]+?)\$\$/g, (_, tex) => {
+      const i = maths.length;
+      maths.push({ tex: String(tex).trim(), display: true });
+      return `\n\n@@BSBMATH${i}@@\n\n`;
+    });
+    // \[...\]
+    s = s.replace(/\\\[([\s\S]+?)\\\]/g, (_, tex) => {
+      const i = maths.length;
+      maths.push({ tex: String(tex).trim(), display: true });
+      return `\n\n@@BSBMATH${i}@@\n\n`;
+    });
+    // \(...\)
+    s = s.replace(/\\\(([\s\S]+?)\\\)/g, (_, tex) => {
+      const i = maths.length;
+      maths.push({ tex: String(tex).trim(), display: false });
+      return `@@BSBMATH${i}@@`;
+    });
+    // 行内 $...$（排除货币/纯数字）
+    s = s.replace(/\$((?:\\.|[^$\n])+?)\$/g, (match, tex) => {
+      const t = String(tex).trim();
+      if (!t) return match;
+      if (/^[\d,]+(?:\.\d+)?$/.test(t)) return match;
+      const i = maths.length;
+      maths.push({ tex: t, display: false });
+      return `@@BSBMATH${i}@@`;
+    });
+
+    s = s.replace(/@@BSBCODE(\d+)@@/g, (_, id) => {
+      const i = Number(id);
+      return codes[i] != null ? codes[i] : "";
+    });
+
+    return { md: s, maths };
+  }
+
+  /**
+   * 把 @@BSBMATHn@@ 换成 KaTeX HTML（或 fallback）。
+   * renderToString(tex, display) 可选；失败则转义原文。
+   */
+  function replaceMathPlaceholders(html, maths, renderToString) {
+    return String(html || "").replace(/@@BSBMATH(\d+)@@/g, (full, id) => {
+      const m = maths[Number(id)];
+      if (!m) return full;
+      if (typeof renderToString === "function") {
+        try {
+          const out = renderToString(m.tex, !!m.display);
+          if (out != null && out !== "") return out;
+        } catch (_) {
+          /* fall through */
+        }
+      }
+      const esc = String(m.tex)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+      return m.display
+        ? `<pre class="bsb-math-fallback">${esc}</pre>`
+        : `<code class="bsb-math-fallback">${esc}</code>`;
+    });
   }
 
   function parseSseDataLine(line) {
@@ -2263,6 +2358,45 @@
         text-align: center; overflow: auto;
         border: 1px solid color-mix(in srgb, var(--ctp-surface0) 45%, transparent);
       }
+      /* KaTeX 数学公式（深色面板） */
+      #${PANEL_ID} .bsb-ai-md .katex {
+        color: var(--ctp-text);
+        font-size: 1.12em;
+      }
+      #${PANEL_ID} .bsb-ai-md .bsb-katex-inline {
+        display: inline;
+        padding: 0 0.1em;
+      }
+      #${PANEL_ID} .bsb-ai-md .bsb-katex-display {
+        display: block;
+        margin: 1.2em 0;
+        padding: 14px 12px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        text-align: center;
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-surface0) 45%, transparent);
+      }
+      #${PANEL_ID} .bsb-ai-md .bsb-katex-display .katex-display {
+        margin: 0;
+      }
+      #${PANEL_ID} .bsb-ai-md .katex-error {
+        color: var(--ctp-red) !important;
+      }
+      #${PANEL_ID} .bsb-ai-md .bsb-math-fallback {
+        color: var(--ctp-peach);
+        white-space: pre-wrap;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 0.92em;
+      }
+      #${PANEL_ID} .bsb-ai-md pre.bsb-math-fallback {
+        margin: 1em 0;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-peach) 28%, transparent);
+      }
       #${PANEL_ID} .bsb-ai-md .bsb-code-lang {
         display: block; font-size: 10px; color: var(--ctp-overlay1);
         margin-bottom: 10px; text-transform: lowercase; letter-spacing: 0.06em;
@@ -3617,6 +3751,8 @@
     loadCssOnce(
       "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css",
     );
+    // KaTeX：数学公式（轻量、适合油猴；比 MathJax 小且快）
+    loadCssOnce("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css");
     await loadScriptOnce(
       "https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js",
       () => typeof marked !== "undefined",
@@ -3638,6 +3774,14 @@
       "https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js",
       () => typeof mermaid !== "undefined",
     );
+    try {
+      await loadScriptOnce(
+        "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js",
+        () => typeof katex !== "undefined",
+      );
+    } catch (e) {
+      console.warn("[bili-subbatch] KaTeX load failed, math will show as plain text", e);
+    }
     if (typeof mermaid !== "undefined") {
       mermaid.initialize({
         startOnLoad: false,
@@ -3655,6 +3799,26 @@
       });
     }
     state.renderLibsReady = true;
+  }
+
+  /** KaTeX → HTML；失败返回 null 走 fallback */
+  function katexToHtml(tex, display) {
+    if (typeof katex === "undefined" || !katex.renderToString) return null;
+    try {
+      const html = katex.renderToString(String(tex || ""), {
+        displayMode: !!display,
+        throwOnError: false,
+        strict: "ignore",
+        trust: false,
+        output: "html",
+      });
+      if (display) {
+        return `<div class="bsb-katex-display">${html}</div>`;
+      }
+      return `<span class="bsb-katex-inline">${html}</span>`;
+    } catch (_) {
+      return null;
+    }
   }
 
   function simpleMarkdownFallback(md) {
@@ -3698,9 +3862,12 @@
       return;
     }
 
-    // 拆出 mermaid 块，避免 marked 破坏
+    // 1) 数学公式占位（先于 marked，否则 _ ^ \ 会被拆）
+    const { md: mdMath, maths } = prepareMarkdownMath(md || "");
+
+    // 2) 拆出 mermaid 块，避免 marked 破坏
     const mermaidBlocks = [];
-    const md2 = String(md || "").replace(
+    const md2 = mdMath.replace(
       /```mermaid\s*\n([\s\S]*?)```/gi,
       (_, code) => {
         const i = mermaidBlocks.length;
@@ -3714,6 +3881,10 @@
       html = marked.parse(md2);
     } catch (_) {
       html = simpleMarkdownFallback(md2);
+    }
+    // 3) 占位符 → KaTeX HTML
+    if (maths.length) {
+      html = replaceMathPlaceholders(html, maths, katexToHtml);
     }
     host.innerHTML = html;
 

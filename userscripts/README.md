@@ -2,13 +2,14 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.8.4）
+## `bili-subbatch.user.js`（v0.8.5）
 
 **AI 工作台（v0.8）**：三栏导航，**AI 笔记默认全高画布**；对齐业界油猴 AI 脚本实践（见 [PEER_AI_PRACTICES.md](PEER_AI_PRACTICES.md)）。  
 
 - **v0.8.1**：不硬编码 API Key；GM 回退单飞  
 - **v0.8.2 / 0.8.3**：流式自由滚动尝试 + 绝对定位阅读层  
-- **v0.8.4（关键）**：修「上滑被拽回原地」——旧逻辑在距底 &lt;80px 时自动重新 stick，流式 paint 下一帧把用户拽回底部。现为 **用户阅读锁**：上滑后 paint **零碰 scrollTop**，只有「↓ 最新」/ 自己滚回贴底才恢复跟随；`overflow-anchor: none`；离线状态机 + 滚动仿真测试
+- **v0.8.4**：用户阅读锁——上滑后 paint 不拽回  
+- **v0.8.5**：**KaTeX 数学公式**（`$...$` / `$$...$$` / `\(...\)` / `\[...\]` / ` ```math `）；marked 前抽取占位，避免 LaTeX 被 Markdown 拆坏
 
 | 工作区 | 用途 |
 |--------|------|
@@ -56,7 +57,7 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版，版本 **0.8.4**）  
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版，版本 **0.8.5**）  
 3. 右下角 **CC** 打开工作台（默认 **AI 笔记**）  
 4. **字幕库** → 扫描 / 勾选 → **AI 笔记** → **开始分析**  
 5. **设置**：Base URL / Key / Model → **保存**（流式默认开）  
@@ -69,6 +70,7 @@
 | 导航 | **AI 笔记** / **字幕库** / **设置** |
 | 流式滚动 | 默认跟随；**上滑进入阅读锁**（流式增高也不会拽回）；**↓ 最新** / 滚回贴底才恢复；程序化滚动不触发 stick |
 | 阅读排版 | 17px / 行距 ~2.15（流式）、段距加大、内容限宽 ~40em、`overflow-anchor: none` |
+| 数学公式 | **KaTeX 0.16**（jsDelivr）；流式结束后渲染；CDN 失败时显示转义原文 |
 | 画布操作 | 粘底 / 复制 / 顶部 / ↓ 最新；流式光标 |
 | 穿透 / 拖拽 / 贴边 | 同 v0.7 |
 | 记忆 | UI `bili-subbatch-ui-v2`；AI `bili-subbatch-ai-v2`（GM_setValue 优先） |

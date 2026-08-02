@@ -43,6 +43,8 @@ return {
   truncateForAi,
   shouldStickBottom,
   resolveAiScrollState,
+  prepareMarkdownMath,
+  replaceMathPlaceholders,
   parseSseDataLine,
   md5,
   MIXIN_KEY_ENC_TAB,
@@ -181,6 +183,89 @@ check(
   "keyFromUrl",
   api.keyFromUrl("https://i0.hdslb.com/bfs/wbi/abc.png") === "abc",
 );
+
+// --- KaTeX math placeholders (v0.8.5) ---
+{
+  const sample = [
+    "行内 $E=mc^2$ 与货币 $12.5 美元",
+    "",
+    "$$",
+    "\\int_0^1 x^2\\,dx = \\frac{1}{3}",
+    "$$",
+    "",
+    "括号 \\(a+b\\) 与",
+    "\\[",
+    "\\sum_{i=1}^n i",
+    "\\]",
+    "",
+    "```math",
+    "\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}",
+    "```",
+    "",
+    "代码里不抽：`x = $1` 与",
+    "```js",
+    "const x = '$not_math$';",
+    "```",
+  ].join("\n");
+
+  const prep = api.prepareMarkdownMath(sample);
+  check("math: extracted count", prep.maths.length === 5, prep.maths);
+  check(
+    "math: has inline E=mc2",
+    prep.maths.some((m) => !m.display && m.tex.includes("E=mc")),
+    prep.maths,
+  );
+  check(
+    "math: has display integral",
+    prep.maths.some((m) => m.display && m.tex.includes("int_0")),
+    prep.maths,
+  );
+  check(
+    "math: has math fence",
+    prep.maths.some((m) => m.display && m.tex.includes("nabla")),
+    prep.maths,
+  );
+  check(
+    "math: placeholders in md",
+    /@@BSBMATH0@@/.test(prep.md) && /@@BSBMATH1@@/.test(prep.md),
+    prep.md.slice(0, 200),
+  );
+  check(
+    "math: code not extracted as math",
+    prep.md.includes("const x = '$not_math$'") ||
+      prep.md.includes("```js"),
+    prep.md,
+  );
+  check(
+    "math: currency $12.5 kept",
+    prep.md.includes("$12.5"),
+    prep.md,
+  );
+
+  const filled = api.replaceMathPlaceholders(
+    "<p>@@BSBMATH0@@</p><p>@@BSBMATH1@@</p>",
+    [
+      { tex: "a+b", display: false },
+      { tex: "c=d", display: true },
+    ],
+    (tex, display) =>
+      display ? `<div class="K">${tex}</div>` : `<span class="K">${tex}</span>`,
+  );
+  check(
+    "math: replace uses render",
+    filled.includes('<span class="K">a+b</span>') &&
+      filled.includes('<div class="K">c=d</div>'),
+    filled,
+  );
+  const fb = api.replaceMathPlaceholders("@@BSBMATH0@@", [
+    { tex: "x<y", display: false },
+  ]);
+  check(
+    "math: fallback escapes",
+    fb.includes("x&lt;y") && fb.includes("bsb-math-fallback"),
+    fb,
+  );
+}
 
 console.log(`\n${passed} assertions ok (shipped pure-logic region)`);
 if (process.exitCode) process.exit(1);

@@ -49,8 +49,9 @@ Sources reviewed:
 |----------|------|
 | Page fetch stream first | `requestChatViaPageFetch` |
 | GM fallback no timeout + stream reader | `requestChatViaGm` |
-| Stick-bottom + pause | `shouldStickBottom` / `bindAiScrollBehavior` / `scrollAiToBottom` |
+| Stick-bottom + pause | `resolveAiScrollState` / `bindAiScrollBehavior` / `scrollAiToBottom` |
 | rAF stream paint | `paintAiStreamText` |
+| Math (KaTeX) | `prepareMarkdownMath` + `replaceMathPlaceholders` + `katexToHtml` |
 | Storage | `loadAiConfig` / `saveAiConfig` with GM_* then localStorage |
 | Abort | `state.aiAbortController` + `state.aiXhr` |
 | Reasoning deltas | `extractAssistantText` / `extractFromChoice` |
