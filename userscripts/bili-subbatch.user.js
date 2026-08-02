@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.6.0
-// @description  B站字幕批量下载 + OpenAI兼容 AI 流式分析（提示词/高亮/Mermaid）。Catppuccin 悬浮面板
+// @version      0.6.1
+// @description  B站字幕批量下载 + OpenAI兼容 AI（兼容 reasoning 字段/可关流式）。Catppuccin 悬浮面板
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -35,7 +35,7 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.6.0";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.6.1";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v1";
   const AI_STORE_KEY = "bili-subbatch-ai-v1";
@@ -53,11 +53,14 @@
     apiKey: "sk-iAeYCYaw6IGkDDfjVpu91QhY899wGMigJdTJvsXQVXaHp66P",
     model: "openai/gpt-oss-120b",
     temperature: 0.4,
-    maxTokens: 8192,
+    maxTokens: 4096,
+    /** 推理模型流式时 content 常为空；默认 false 更稳。可在配置里打开 stream */
+    stream: false,
     systemPrompt:
       "你是资深内容分析助手。根据用户提供的 B 站视频字幕，输出结构清晰、可执行的中文笔记。" +
       "需要时使用 Markdown：标题、列表、表格；代码用 fenced code block 并标注语言；" +
-      "流程/架构用 mermaid 代码块（```mermaid）。不要编造字幕中不存在的事实。",
+      "流程/架构用 mermaid 代码块（```mermaid）。不要编造字幕中不存在的事实。" +
+      "最终答案写在正文里，尽量简洁。",
     userPromptTemplate:
       "请分析以下字幕并输出：\n" +
       "1. 一句话摘要\n2. 要点列表\n3. 关键概念/术语\n4. 若有步骤或架构，用 mermaid 图\n" +
@@ -2371,6 +2374,10 @@
                   <input type="number" data-ai="maxTokens" min="256" max="128000" step="256">
                 </label>
               </div>
+              <label style="flex-direction:row;align-items:center;gap:8px">
+                <input type="checkbox" data-ai="stream" style="width:auto">
+                流式输出（推理模型如 gpt-oss 建议关闭，更稳）
+              </label>
               <label>System 提示词（发送前注入）
                 <textarea data-ai="systemPrompt" rows="4"></textarea>
               </label>
@@ -2638,6 +2645,7 @@
           ? Number(o.temperature)
           : AI_DEFAULTS.temperature,
         maxTokens: Number(o.maxTokens) || AI_DEFAULTS.maxTokens,
+        stream: o.stream === true || o.stream === "true" || o.stream === 1,
         systemPrompt: String(o.systemPrompt || AI_DEFAULTS.systemPrompt),
         userPromptTemplate: String(
           o.userPromptTemplate || AI_DEFAULTS.userPromptTemplate,
@@ -2672,17 +2680,21 @@
     set("maxTokens", cfg.maxTokens);
     set("systemPrompt", cfg.systemPrompt);
     set("userPromptTemplate", cfg.userPromptTemplate);
+    const streamEl = root.querySelector('[data-ai="stream"]');
+    if (streamEl) streamEl.checked = !!cfg.stream;
   }
 
   function saveAiConfigFromForm() {
     const root = ensurePanel();
     const get = (k) => root.querySelector(`[data-ai="${k}"]`)?.value ?? "";
+    const streamEl = root.querySelector('[data-ai="stream"]');
     const cfg = {
       baseUrl: String(get("baseUrl") || AI_DEFAULTS.baseUrl).replace(/\/+$/, ""),
       apiKey: String(get("apiKey") || ""),
       model: String(get("model") || AI_DEFAULTS.model),
       temperature: Number(get("temperature")) || 0,
       maxTokens: Number(get("maxTokens")) || AI_DEFAULTS.maxTokens,
+      stream: !!(streamEl && streamEl.checked),
       systemPrompt: String(get("systemPrompt") || ""),
       userPromptTemplate: String(get("userPromptTemplate") || "{{subtitle}}"),
     };
@@ -2930,49 +2942,173 @@
   }
 
   /**
-   * OpenAI-compatible chat.completions SSE via GM_xmlhttpRequest onprogress.
+   * 兼容 OpenAI / 推理模型字段：
+   * - 普通：message.content / delta.content
+   * - gpt-oss 等：reasoning / reasoning_content（流式先推思考，content 可能长期为空）
    */
-  function streamChatCompletion({ baseUrl, apiKey, model, temperature, maxTokens, messages, onDelta, onDone, onError }) {
+  function extractAssistantText(piece) {
+    if (!piece || typeof piece !== "object") return { content: "", reasoning: "" };
+    const content =
+      (typeof piece.content === "string" && piece.content) ||
+      (typeof piece.text === "string" && piece.text) ||
+      "";
+    const reasoning =
+      (typeof piece.reasoning_content === "string" && piece.reasoning_content) ||
+      (typeof piece.reasoning === "string" && piece.reasoning) ||
+      "";
+    return { content, reasoning };
+  }
+
+  function extractFromChoice(choice) {
+    if (!choice) return { content: "", reasoning: "" };
+    const fromDelta = extractAssistantText(choice.delta);
+    const fromMsg = extractAssistantText(choice.message);
+    return {
+      content: fromDelta.content || fromMsg.content || "",
+      reasoning: fromDelta.reasoning || fromMsg.reasoning || "",
+    };
+  }
+
+  function formatAiDisplay(content, reasoning) {
+    const parts = [];
+    if (reasoning && reasoning.trim()) {
+      parts.push("### 思考过程\n\n" + reasoning.trim());
+    }
+    if (content && content.trim()) {
+      parts.push(content.trim());
+    }
+    return parts.join("\n\n---\n\n");
+  }
+
+  /**
+   * OpenAI-compatible chat.completions.
+   * stream=true：SSE + 行缓冲；stream=false：整包 JSON（更稳，默认推荐推理模型）。
+   * 兼容 content / reasoning / reasoning_content。
+   */
+  function requestChatCompletion({
+    baseUrl,
+    apiKey,
+    model,
+    temperature,
+    maxTokens,
+    messages,
+    stream,
+    onDelta,
+    onDone,
+    onError,
+    onStatus,
+  }) {
     const url = baseUrl.replace(/\/+$/, "") + "/chat/completions";
-    let buffer = "";
-    let assembled = "";
+    let assembledContent = "";
+    let assembledReasoning = "";
     let settled = false;
+    let rawAll = "";
+    let lineBuf = "";
+    let lastSeenLen = 0;
 
     const finish = (err) => {
       if (settled) return;
       settled = true;
       if (err) onError && onError(err);
-      else onDone && onDone(assembled);
-    };
-
-    const parseSseChunk = (text) => {
-      // process complete lines
-      const parts = text.split("\n");
-      // keep last incomplete line in buffer handled by caller
-      for (const line of parts) {
-        const t = line.trim();
-        if (!t.startsWith("data:")) continue;
-        const data = t.slice(5).trim();
-        if (!data) continue;
-        if (data === "[DONE]") {
-          finish(null);
-          return;
-        }
-        try {
-          const j = JSON.parse(data);
-          const delta =
-            j.choices?.[0]?.delta?.content ??
-            j.choices?.[0]?.message?.content ??
-            "";
-          if (delta) {
-            assembled += delta;
-            onDelta && onDelta(delta, assembled);
-          }
-        } catch (_) {
-          /* partial json */
-        }
+      else {
+        const display = formatAiDisplay(assembledContent, assembledReasoning);
+        onDone && onDone(display, {
+          content: assembledContent,
+          reasoning: assembledReasoning,
+        });
       }
     };
+
+    const emit = () => {
+      const display = formatAiDisplay(assembledContent, assembledReasoning);
+      onDelta &&
+        onDelta("", display, {
+          content: assembledContent,
+          reasoning: assembledReasoning,
+        });
+    };
+
+    const applyPiece = (contentDelta, reasoningDelta) => {
+      let changed = false;
+      if (contentDelta) {
+        assembledContent += contentDelta;
+        changed = true;
+      }
+      if (reasoningDelta) {
+        assembledReasoning += reasoningDelta;
+        changed = true;
+      }
+      if (changed) emit();
+    };
+
+    const handleSseLine = (line) => {
+      const t = line.trim();
+      if (!t || t.startsWith(":")) return; // comment / keepalive
+      if (!t.startsWith("data:")) return;
+      const data = t.slice(5).trim();
+      if (!data) return;
+      if (data === "[DONE]") {
+        finish(null);
+        return;
+      }
+      try {
+        const j = JSON.parse(data);
+        if (j.error) {
+          finish(new Error(j.error.message || JSON.stringify(j.error)));
+          return;
+        }
+        const { content, reasoning } = extractFromChoice(j.choices?.[0]);
+        applyPiece(content, reasoning);
+      } catch (_) {
+        /* incomplete json line should not reach here if line-buffered */
+      }
+    };
+
+    const ingestSseText = (fullText) => {
+      // only new bytes
+      if (fullText.length < lastSeenLen) lastSeenLen = 0;
+      const neu = fullText.slice(lastSeenLen);
+      lastSeenLen = fullText.length;
+      rawAll = fullText;
+      if (!neu) return;
+      lineBuf += neu;
+      const lines = lineBuf.split(/\r?\n/);
+      lineBuf = lines.pop() || "";
+      for (const line of lines) handleSseLine(line);
+      onStatus &&
+        onStatus(
+          `流式接收中… ${fullText.length}B · 正文 ${assembledContent.length} · 思考 ${assembledReasoning.length}`,
+        );
+    };
+
+    const parseNonStreamJson = (text) => {
+      const j = JSON.parse(text);
+      if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
+      const { content, reasoning } = extractFromChoice(j.choices?.[0]);
+      // non-stream: replace not append
+      assembledContent = content || "";
+      assembledReasoning = reasoning || "";
+      // some gateways only put final text in one of the fields
+      if (!assembledContent && !assembledReasoning) {
+        const alt =
+          j.choices?.[0]?.text ||
+          j.output_text ||
+          j.message ||
+          "";
+        if (typeof alt === "string") assembledContent = alt;
+      }
+      emit();
+    };
+
+    const body = {
+      model,
+      messages,
+      temperature,
+      max_tokens: maxTokens,
+      stream: !!stream,
+    };
+
+    onStatus && onStatus(stream ? "发起流式请求…" : "发起非流式请求…");
 
     const req = GM_xmlhttpRequest({
       method: "POST",
@@ -2980,20 +3116,14 @@
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + apiKey,
-        Accept: "text/event-stream",
+        Accept: stream ? "text/event-stream, application/json" : "application/json",
       },
-      data: JSON.stringify({
-        model,
-        messages,
-        temperature,
-        max_tokens: maxTokens,
-        stream: true,
-      }),
+      data: JSON.stringify(body),
       responseType: "text",
       onprogress(res) {
         if (state.aiAbort) {
           try {
-            req.abort && req.abort();
+            if (typeof req?.abort === "function") req.abort();
           } catch (_) {
             /* */
           }
@@ -3001,10 +3131,10 @@
           return;
         }
         const text = res.responseText || "";
-        // only parse new portion
-        const neu = text.slice(buffer.length);
-        buffer = text;
-        if (neu) parseSseChunk(neu);
+        if (stream) ingestSseText(text);
+        else if (text) {
+          onStatus && onStatus(`等待响应… 已缓冲 ${text.length}B`);
+        }
       },
       onload(res) {
         if (state.aiAbort) {
@@ -3012,30 +3142,40 @@
           return;
         }
         const text = res.responseText || "";
-        if (text.length > buffer.length) parseSseChunk(text.slice(buffer.length));
-        // non-stream fallback
-        if (!assembled && text) {
-          try {
-            const j = JSON.parse(text);
-            const c =
-              j.choices?.[0]?.message?.content ||
-              j.choices?.[0]?.text ||
-              "";
-            if (c) {
-              assembled = c;
-              onDelta && onDelta(c, assembled);
-            } else if (j.error) {
-              finish(new Error(j.error.message || JSON.stringify(j.error)));
-              return;
-            }
-          } catch (_) {
-            // maybe pure SSE already parsed
-          }
-        }
+        rawAll = text;
         if (res.status < 200 || res.status >= 300) {
           finish(
+            new Error(`HTTP ${res.status}: ${(text || "").slice(0, 300)}`),
+          );
+          return;
+        }
+        try {
+          if (stream) {
+            ingestSseText(text);
+            // flush last line
+            if (lineBuf.trim()) handleSseLine(lineBuf);
+            lineBuf = "";
+            // gateway 可能直接回 JSON 而非 SSE
+            if (!assembledContent && !assembledReasoning && text.trim().startsWith("{")) {
+              parseNonStreamJson(text);
+            }
+          } else {
+            parseNonStreamJson(text);
+          }
+        } catch (e) {
+          finish(
             new Error(
-              `HTTP ${res.status}: ${(text || "").slice(0, 240)}`,
+              (e && e.message) ||
+                "解析响应失败: " + (text || "").slice(0, 200),
+            ),
+          );
+          return;
+        }
+        if (!assembledContent && !assembledReasoning) {
+          finish(
+            new Error(
+              "响应无正文（content/reasoning 皆空）。原始: " +
+                (text || "").slice(0, 240),
             ),
           );
           return;
@@ -3043,12 +3183,12 @@
         finish(null);
       },
       onerror() {
-        finish(new Error("网络错误（检查 Base URL / @connect / CORS）"));
+        finish(new Error("网络错误（检查 Base URL / @connect / 扩展权限）"));
       },
       ontimeout() {
         finish(new Error("请求超时"));
       },
-      timeout: 0,
+      timeout: 300000, // 5 min — 推理模型可能较慢
     });
 
     return req;
@@ -3143,23 +3283,32 @@
       }
       messages.push({ role: "user", content: userContent });
 
-      setStatus(`AI 流式生成中 · ${cfg.model} · ${ready.length} 条字幕…`);
+      setStatus(
+        `AI 请求中 · ${cfg.model} · ${cfg.stream ? "SSE流式" : "非流式"} · ${ready.length} 条字幕…`,
+      );
+      if (mdEl) {
+        mdEl.innerHTML = `<p>请求 ${escapeHtml(cfg.baseUrl)}/chat/completions …</p><p style="color:var(--ctp-overlay1)">${cfg.stream ? "流式" : "非流式"} · 兼容 content/reasoning 字段</p>`;
+      }
 
       let lastPaint = 0;
       await new Promise((resolve, reject) => {
-        streamChatCompletion({
+        requestChatCompletion({
           baseUrl: cfg.baseUrl,
           apiKey: cfg.apiKey,
           model: cfg.model,
           temperature: cfg.temperature,
           maxTokens: cfg.maxTokens,
           messages,
+          stream: !!cfg.stream,
+          onStatus(msg) {
+            setStatus(msg);
+          },
           onDelta(_d, full) {
             state.aiRaw = full;
             const now = Date.now();
-            if (now - lastPaint > 120) {
+            if (now - lastPaint > 100) {
               lastPaint = now;
-              renderAiMarkdown(full, { streaming: true });
+              renderAiMarkdown(full || "…", { streaming: true });
             }
           },
           onDone(full) {
@@ -3174,7 +3323,10 @@
 
       if (state.aiAbort) {
         setStatus("AI 已停止", "err");
-        await renderAiMarkdown(state.aiRaw + "\n\n*(已停止)*", { streaming: false });
+        await renderAiMarkdown(
+          (state.aiRaw || "") + "\n\n*(已停止)*",
+          { streaming: false },
+        );
         return;
       }
 

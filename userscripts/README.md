@@ -2,7 +2,7 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.6.0）
+## `bili-subbatch.user.js`（v0.6.1）
 
 **Catppuccin Mocha** 悬浮玻璃面板：可拖拽、可拉伸、可贴边自动收起；支持 **OpenAI 兼容 AI 流式分析**（自定义 Base URL / Key / 模型 / 提示词，Markdown + 代码高亮 + Mermaid）。
 
@@ -48,9 +48,10 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.6.0**）
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.6.1**）
 3. 打开上表任一页面 → 右下角 **CC** → 确认/切换模式 → **扫描当前页** → 勾选 → 下载 / AI 分析  
-4. 首次用 AI：打开 **AI 面板 → 配置**，确认 Base URL / API Key / Model 后 **保存配置**
+4. 首次用 AI：打开 **AI 面板 → 配置**，确认 Base URL / API Key / Model 后 **保存配置**  
+5. **gpt-oss 等推理模型**：建议关闭「流式输出」；若本地曾保存过旧配置，在配置页点一次 **保存配置**（或恢复默认）
 
 ### UI
 
