@@ -2,13 +2,17 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.6.1）
+## `bili-subbatch.user.js`（v0.7.0）
 
-**Catppuccin Mocha** 悬浮玻璃面板：可拖拽、可拉伸、可贴边自动收起；支持 **OpenAI 兼容 AI 流式分析**（自定义 Base URL / Key / 模型 / 提示词，Markdown + 代码高亮 + Mermaid）。
+**世界级工作台 UI（v0.7）**：三栏导航，**AI 笔记默认占满主画布**；字幕库 / 设置各为独立页。Catppuccin Mocha 玻璃拟态、可拖拽/拉伸/贴边。
 
-容器 `pointer-events: none`，空白穿透；仅 FAB / 面板 / 贴边标签可点。
+| 工作区 | 用途 |
+|--------|------|
+| **AI 笔记**（默认） | 全高输出画布 + 一键「开始分析」 |
+| **字幕库** | 扫描、勾选、下载 SRT/TXT、送 AI |
+| **设置** | OpenAI 兼容 API / 提示词 / 流式开关 |
 
-流程：右下角 **CC** →（自动识别或手动选模式）→ 扫描列表 → 勾选 → 下载 **或 AI 分析**。
+容器 `pointer-events: none`，空白穿透。流程：CC → **字幕库**扫描勾选 → **AI 笔记**分析。
 
 ### 模式（自动 + 可切换）
 
@@ -48,10 +52,10 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.6.1**）
-3. 打开上表任一页面 → 右下角 **CC** → 确认/切换模式 → **扫描当前页** → 勾选 → 下载 / AI 分析  
-4. 首次用 AI：打开 **AI 面板 → 配置**，确认 Base URL / API Key / Model 后 **保存配置**  
-5. **gpt-oss 等推理模型**：建议关闭「流式输出」；若本地曾保存过旧配置，在配置页点一次 **保存配置**（或恢复默认）
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.7.0**）  
+3. 右下角 **CC** 打开工作台（默认 **AI 笔记** 全高画布）  
+4. 切到 **字幕库** → 扫描 / 勾选 → 回 **AI 笔记** → **开始分析**  
+5. 首次用 AI：进 **设置**，填 Base URL / Key / Model → **保存配置**（推理模型建议关流式）
 
 ### UI
 
@@ -85,9 +89,24 @@
 | API Key | `Authorization: Bearer …` | 面板内填写，**存本机** |
 | Model | 模型名 | 如 `openai/gpt-oss-120b` |
 | Temperature | 0–2 | `0.4` |
-| Max tokens | 生成上限 | `8192` |
+| Max tokens | 生成上限 | `4096` |
+| 流式输出 | SSE；推理模型先推 `reasoning` 时易误判为空 | **默认关**（更稳） |
 | System 提示词 | 角色与输出格式约束 | 中文笔记 + MD + mermaid |
 | User 模板 | 业务提示 + 字幕占位 | 见脚本默认 |
+
+#### v0.6.1 修复（「一直连接中」）
+
+实测 `openai/gpt-oss-120b` 返回字段：
+
+- 流式 chunk 里经常是 `delta.reasoning` / `reasoning_content`，`content` 为空字符串  
+- 非流式最终 `message.content` 有正文，同时带长 `reasoning`
+
+旧版只读 `delta.content`，界面一直停在「连接中…」。现已：
+
+1. 同时解析 `content` + `reasoning` / `reasoning_content`  
+2. SSE **按行缓冲**（避免半包 JSON 丢弃）  
+3. 默认 **非流式**；可选打开流式  
+4. 状态栏显示接收进度（字节 / 正文长度 / 思考长度）
 
 配置持久化：`localStorage` 键 **`bili-subbatch-ai-v1`**（**不会**随 git 同步；请勿把真实 Key 提交进仓库）。
 
@@ -173,6 +192,7 @@ Content-Type: application/json
 | 0.4 | 自动识别 + 手动模式 |
 | 0.5 | 拖拽 / 拉伸 / 贴边收起 |
 | **0.6** | **OpenAI 兼容 AI：提示词、流式、MD/高亮/Mermaid** |
+| **0.6.1** | **修复推理模型 reasoning 字段；默认非流式；SSE 行缓冲** |
 
 ### 自检
 

@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.6.1
-// @description  B站字幕批量下载 + OpenAI兼容 AI（兼容 reasoning 字段/可关流式）。Catppuccin 悬浮面板
+// @version      0.7.0
+// @description  B站字幕+AI 工作台：三栏导航、AI 全高画布、Catppuccin 世界级悬浮 UI
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -26,25 +26,24 @@
 // ==/UserScript==
 
 /**
- * v0.6 — AI: OpenAI-compatible chat, prompt inject, SSE stream,
- *         markdown + highlight.js + mermaid render.
- * UI: drag / resize / dock. Modes: auto + manual.
+ * v0.7 — World-class workspace UI: AI canvas (primary) | Subtitles | Settings.
+ * AI OpenAI-compatible + reasoning fields. Drag / resize / dock.
  */
 
 (function () {
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.6.1";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.7.0";
   const PANEL_ID = "bili-subbatch-panel";
-  const UI_STORE_KEY = "bili-subbatch-ui-v1";
+  const UI_STORE_KEY = "bili-subbatch-ui-v2";
   const AI_STORE_KEY = "bili-subbatch-ai-v1";
   const WBI_TTL_MS = 600_000;
   const DEFAULT_DELAY_MS = 400;
   const DEFAULT_MAX_PAGES = 20;
-  const MIN_W = 320;
-  const MIN_H = 360;
-  const DOCK_EDGE_PX = 28;
+  const MIN_W = 420;
+  const MIN_H = 520;
+  const DOCK_EDGE_PX = 32;
   const DOCK_SNAP_PX = 36;
 
   /** OpenAI 兼容默认值（密钥仅存 localStorage，可在面板修改） */
@@ -1294,15 +1293,16 @@
 
   // ─── UI geometry persistence ────────────────────────────────────────────
   function defaultUiGeom() {
-    const w = Math.min(392, Math.max(MIN_W, window.innerWidth - 24));
-    const h = Math.min(640, Math.max(MIN_H, window.innerHeight - 24));
+    const w = Math.min(560, Math.max(MIN_W, window.innerWidth - 32));
+    const h = Math.min(820, Math.max(MIN_H, window.innerHeight - 32));
     return {
-      x: Math.max(8, window.innerWidth - w - 12),
-      y: 12,
+      x: Math.max(8, window.innerWidth - w - 16),
+      y: Math.max(8, Math.floor((window.innerHeight - h) / 2)),
       w,
       h,
       dock: null, // null | 'left' | 'right'
       dockExpanded: false,
+      view: "ai", // ai | subs | settings
     };
   }
 
@@ -1319,6 +1319,7 @@
         h: Math.max(MIN_H, Number(o.h) || d.h),
         dock: o.dock === "left" || o.dock === "right" ? o.dock : null,
         dockExpanded: false,
+        view: ["ai", "subs", "settings"].includes(o.view) ? o.view : "ai",
       };
     } catch (_) {
       return defaultUiGeom();
@@ -1336,6 +1337,7 @@
           w: state.ui.w,
           h: state.ui.h,
           dock: state.ui.dock,
+          view: state.ui.view || "ai",
         }),
       );
     } catch (_) {
@@ -1443,21 +1445,21 @@
         pointer-events: none;
       }
 
-      /* 悬浮玻璃面板 */
+      /* 悬浮玻璃工作台 */
       #${PANEL_ID} .bsb-sidebar {
         position: fixed;
         display: none;
         flex-direction: column;
         overflow: hidden;
-        border-radius: 16px;
-        /* 供内部 absolute 拉伸手柄定位 */
-        border: 1px solid color-mix(in srgb, var(--ctp-overlay0) 35%, transparent);
-        background: color-mix(in srgb, var(--ctp-base) 42%, transparent);
-        backdrop-filter: blur(18px) saturate(1.35);
-        -webkit-backdrop-filter: blur(18px) saturate(1.35);
+        border-radius: 18px;
+        border: 1px solid color-mix(in srgb, var(--ctp-overlay0) 32%, transparent);
+        background: color-mix(in srgb, var(--ctp-base) 72%, transparent);
+        backdrop-filter: blur(22px) saturate(1.4);
+        -webkit-backdrop-filter: blur(22px) saturate(1.4);
         box-shadow:
-          0 12px 48px color-mix(in srgb, var(--ctp-crust) 45%, transparent),
-          inset 0 1px 0 color-mix(in srgb, var(--ctp-overlay2) 18%, transparent);
+          0 24px 64px color-mix(in srgb, var(--ctp-crust) 55%, transparent),
+          0 0 0 1px color-mix(in srgb, var(--ctp-lavender) 8%, transparent),
+          inset 0 1px 0 color-mix(in srgb, var(--ctp-overlay2) 22%, transparent);
         min-width: ${MIN_W}px;
         min-height: ${MIN_H}px;
       }
@@ -1512,11 +1514,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 12px;
+        padding: 12px 14px 10px;
         flex-shrink: 0;
-        gap: 8px;
-        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface1) 55%, transparent);
-        background: color-mix(in srgb, var(--ctp-mantle) 40%, transparent);
+        gap: 10px;
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 80%, transparent);
+        background:
+          linear-gradient(180deg,
+            color-mix(in srgb, var(--ctp-mantle) 70%, transparent) 0%,
+            color-mix(in srgb, var(--ctp-base) 35%, transparent) 100%);
         cursor: grab;
         user-select: none;
         touch-action: none;
@@ -1528,31 +1533,65 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 2px 0;
+        gap: 6px;
+      }
+      #${PANEL_ID} .bsb-logo {
+        width: 28px; height: 28px; border-radius: 9px;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 11px; font-weight: 800; letter-spacing: -0.02em;
+        color: var(--ctp-crust);
+        background: linear-gradient(135deg, var(--ctp-lavender), var(--ctp-mauve));
+        box-shadow: 0 4px 14px color-mix(in srgb, var(--ctp-mauve) 35%, transparent);
       }
       #${PANEL_ID} .bsb-head strong {
-        font-size: 13px;
-        font-weight: 650;
+        font-size: 14px;
+        font-weight: 700;
         color: var(--ctp-text);
-        letter-spacing: 0.02em;
+        letter-spacing: 0.01em;
       }
       #${PANEL_ID} .bsb-head .bsb-ver {
-        margin-left: 8px;
-        font-size: 11px;
+        font-size: 10px;
         color: var(--ctp-overlay1);
         font-weight: 500;
+        padding: 2px 7px;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--ctp-surface0) 55%, transparent);
       }
       #${PANEL_ID} .bsb-flavor {
-        display: inline-block;
-        margin-left: 8px;
-        padding: 1px 7px;
-        border-radius: 999px;
-        font-size: 10px;
-        font-weight: 600;
-        color: var(--ctp-mauve);
-        background: color-mix(in srgb, var(--ctp-mauve) 16%, transparent);
-        border: 1px solid color-mix(in srgb, var(--ctp-mauve) 28%, transparent);
-        vertical-align: middle;
+        display: none;
+      }
+      /* 主导航 */
+      #${PANEL_ID} .bsb-nav {
+        display: flex;
+        gap: 4px;
+        padding: 8px 12px;
+        flex-shrink: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 70%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 35%, transparent);
+      }
+      #${PANEL_ID} .bsb-nav button {
+        flex: 1;
+        height: 36px;
+        border: none;
+        border-radius: 11px;
+        cursor: pointer;
+        font-size: 12.5px;
+        font-weight: 650;
+        color: var(--ctp-subtext0);
+        background: transparent;
+        transition: background .15s, color .15s, box-shadow .15s;
+        letter-spacing: 0.01em;
+      }
+      #${PANEL_ID} .bsb-nav button:hover {
+        color: var(--ctp-text);
+        background: color-mix(in srgb, var(--ctp-surface0) 45%, transparent);
+      }
+      #${PANEL_ID} .bsb-nav button.active {
+        color: var(--ctp-crust);
+        background: linear-gradient(135deg,
+          color-mix(in srgb, var(--ctp-lavender) 92%, transparent),
+          color-mix(in srgb, var(--ctp-mauve) 88%, transparent));
+        box-shadow: 0 6px 18px color-mix(in srgb, var(--ctp-mauve) 28%, transparent);
       }
       #${PANEL_ID} .bsb-head-actions {
         display: flex;
@@ -1618,373 +1657,418 @@
         user-select: none;
       }
 
+      /* 内容区：三工作区切换 */
       #${PANEL_ID} .bsb-body {
-        padding: 12px 14px 14px;
+        padding: 0;
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        gap: 10px;
         min-height: 0;
         flex: 1;
       }
+      #${PANEL_ID} .bsb-view {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 14px 10px;
+        min-height: 0;
+        flex: 1;
+        overflow: hidden;
+      }
+      #${PANEL_ID} .bsb-view.active { display: flex; }
 
       #${PANEL_ID} .bsb-badge {
-        display: inline-block;
-        background: color-mix(in srgb, var(--ctp-sapphire) 18%, transparent);
+        display: inline-flex; align-items: center; gap: 4px;
+        background: color-mix(in srgb, var(--ctp-sapphire) 16%, transparent);
         color: var(--ctp-sapphire);
-        border: 1px solid color-mix(in srgb, var(--ctp-sapphire) 32%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-sapphire) 28%, transparent);
         border-radius: 999px;
-        padding: 2px 9px;
-        font-weight: 600;
+        padding: 3px 10px;
+        font-weight: 650;
         font-size: 11px;
       }
       #${PANEL_ID} .bsb-badge.manual {
-        background: color-mix(in srgb, var(--ctp-mauve) 18%, transparent);
+        background: color-mix(in srgb, var(--ctp-mauve) 16%, transparent);
         color: var(--ctp-mauve);
-        border-color: color-mix(in srgb, var(--ctp-mauve) 32%, transparent);
+        border-color: color-mix(in srgb, var(--ctp-mauve) 28%, transparent);
       }
       #${PANEL_ID} .bsb-meta {
-        margin-top: 4px;
+        margin-top: 3px;
         color: var(--ctp-subtext0);
         word-break: break-all;
         font-size: 11px;
+        line-height: 1.4;
       }
       #${PANEL_ID} .bsb-mode-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        align-items: center;
+        display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
       }
       #${PANEL_ID} .bsb-mode-row label {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        color: var(--ctp-subtext1);
+        display: inline-flex; align-items: center; gap: 6px; color: var(--ctp-subtext1);
       }
-      #${PANEL_ID} .bsb-mode-row select {
-        height: 28px;
-        min-width: 128px;
-        border-radius: 8px;
-        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 65%, transparent);
-        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent);
-        color: var(--ctp-text);
-        padding: 0 8px;
-        font-size: 12px;
-        outline: none;
-        cursor: pointer;
+      #${PANEL_ID} .bsb-mode-row select,
+      #${PANEL_ID} .bsb-field select {
+        height: 32px; min-width: 132px; border-radius: 10px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 55%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 65%, transparent);
+        color: var(--ctp-text); padding: 0 10px; font-size: 12px; outline: none; cursor: pointer;
       }
       #${PANEL_ID} .bsb-mode-row select:focus {
         border-color: color-mix(in srgb, var(--ctp-mauve) 55%, transparent);
-        box-shadow: 0 0 0 2px color-mix(in srgb, var(--ctp-mauve) 20%, transparent);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ctp-mauve) 18%, transparent);
       }
       #${PANEL_ID} .bsb-auto-hint {
-        font-size: 11px;
-        color: var(--ctp-overlay1);
-        flex: 1;
-        min-width: 120px;
+        font-size: 11px; color: var(--ctp-overlay1); flex: 1; min-width: 100px;
       }
-      #${PANEL_ID} .bsb-auto-hint strong {
-        color: var(--ctp-teal);
-        font-weight: 600;
-      }
+      #${PANEL_ID} .bsb-auto-hint strong { color: var(--ctp-teal); font-weight: 650; }
 
-      #${PANEL_ID} .bsb-toolbar {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        align-items: center;
+      /* 通用按钮 */
+      #${PANEL_ID} .bsb-btn {
+        height: 34px; border-radius: 10px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 55%, transparent);
+        background: color-mix(in srgb, var(--ctp-surface0) 50%, transparent);
+        cursor: pointer; font-size: 12.5px; padding: 0 12px; color: var(--ctp-text);
+        font-weight: 550; transition: background .12s, border-color .12s, color .12s, transform .12s;
+      }
+      #${PANEL_ID} .bsb-btn:hover:not(:disabled) {
+        border-color: color-mix(in srgb, var(--ctp-lavender) 45%, transparent);
+        color: var(--ctp-lavender);
+        background: color-mix(in srgb, var(--ctp-surface1) 40%, transparent);
+      }
+      #${PANEL_ID} .bsb-btn:active:not(:disabled) { transform: scale(0.98); }
+      #${PANEL_ID} .bsb-btn:disabled { opacity: .42; cursor: not-allowed; }
+      #${PANEL_ID} .bsb-btn.primary {
+        background: linear-gradient(135deg,
+          color-mix(in srgb, var(--ctp-blue) 90%, transparent),
+          color-mix(in srgb, var(--ctp-lavender) 85%, transparent));
+        border-color: transparent; color: var(--ctp-crust); font-weight: 700;
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--ctp-blue) 25%, transparent);
+      }
+      #${PANEL_ID} .bsb-btn.primary:hover:not(:disabled) {
+        filter: brightness(1.06); color: var(--ctp-crust);
+      }
+      #${PANEL_ID} .bsb-btn.accent {
+        background: linear-gradient(135deg, var(--ctp-mauve), var(--ctp-pink));
+        border-color: transparent; color: var(--ctp-crust); font-weight: 750;
+        box-shadow: 0 8px 22px color-mix(in srgb, var(--ctp-mauve) 32%, transparent);
+      }
+      #${PANEL_ID} .bsb-btn.accent:hover:not(:disabled) {
+        filter: brightness(1.05); color: var(--ctp-crust);
+      }
+      #${PANEL_ID} .bsb-btn.danger {
+        color: var(--ctp-red);
+        border-color: color-mix(in srgb, var(--ctp-red) 38%, transparent);
+        background: color-mix(in srgb, var(--ctp-red) 12%, transparent);
+      }
+      #${PANEL_ID} .bsb-btn.ghost {
+        background: transparent;
+        border-color: color-mix(in srgb, var(--ctp-surface1) 50%, transparent);
+      }
+      #${PANEL_ID} .bsb-toolbar,
+      #${PANEL_ID} .bsb-actions {
+        display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+      }
+      #${PANEL_ID} .bsb-actions {
+        display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; flex-shrink: 0;
       }
       #${PANEL_ID} .bsb-toolbar button,
       #${PANEL_ID} .bsb-actions button {
-        height: 30px;
-        border-radius: 9px;
-        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 65%, transparent);
-        background: color-mix(in srgb, var(--ctp-surface0) 55%, transparent);
-        cursor: pointer;
-        font-size: 12px;
-        padding: 0 10px;
-        color: var(--ctp-text);
-        transition: background .12s, border-color .12s, color .12s;
-      }
-      #${PANEL_ID} .bsb-toolbar button:hover:not(:disabled),
-      #${PANEL_ID} .bsb-actions button:hover:not(:disabled) {
-        border-color: color-mix(in srgb, var(--ctp-lavender) 50%, transparent);
-        color: var(--ctp-lavender);
-        background: color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
+        height: 34px; border-radius: 10px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 55%, transparent);
+        background: color-mix(in srgb, var(--ctp-surface0) 50%, transparent);
+        cursor: pointer; font-size: 12px; padding: 0 10px; color: var(--ctp-text);
       }
       #${PANEL_ID} .bsb-toolbar button.primary,
       #${PANEL_ID} .bsb-actions button.primary {
-        background: color-mix(in srgb, var(--ctp-blue) 78%, transparent);
-        border-color: color-mix(in srgb, var(--ctp-blue) 55%, transparent);
-        color: var(--ctp-crust);
-        font-weight: 650;
-      }
-      #${PANEL_ID} .bsb-toolbar button.primary:hover:not(:disabled),
-      #${PANEL_ID} .bsb-actions button.primary:hover:not(:disabled) {
-        background: color-mix(in srgb, var(--ctp-lavender) 85%, transparent);
-        border-color: var(--ctp-lavender);
-        color: var(--ctp-crust);
-      }
-      #${PANEL_ID} .bsb-toolbar button:disabled,
-      #${PANEL_ID} .bsb-actions button:disabled {
-        opacity: .45;
-        cursor: not-allowed;
+        background: color-mix(in srgb, var(--ctp-blue) 80%, transparent);
+        border-color: transparent; color: var(--ctp-crust); font-weight: 650;
       }
       #${PANEL_ID} .bsb-toolbar button.danger {
         color: var(--ctp-red);
         border-color: color-mix(in srgb, var(--ctp-red) 40%, transparent);
         background: color-mix(in srgb, var(--ctp-red) 10%, transparent);
       }
-      #${PANEL_ID} .bsb-toolbar button.danger:hover:not(:disabled) {
-        background: color-mix(in srgb, var(--ctp-red) 22%, transparent);
-        color: var(--ctp-red);
-      }
+      #${PANEL_ID} .bsb-toolbar button:disabled,
+      #${PANEL_ID} .bsb-actions button:disabled { opacity: .45; cursor: not-allowed; }
 
       #${PANEL_ID} .bsb-opts {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-        color: var(--ctp-subtext1);
+        display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--ctp-subtext1);
       }
-      #${PANEL_ID} .bsb-opts label {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-      }
+      #${PANEL_ID} .bsb-opts label { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; }
       #${PANEL_ID} .bsb-opts input[type="number"] {
-        width: 58px;
-        height: 26px;
-        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 70%, transparent);
-        border-radius: 7px;
-        padding: 0 6px;
-        font-size: 12px;
-        color: var(--ctp-text);
-        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent);
-        outline: none;
+        width: 58px; height: 28px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 60%, transparent);
+        border-radius: 8px; padding: 0 6px; font-size: 12px; color: var(--ctp-text);
+        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent); outline: none;
       }
-      #${PANEL_ID} .bsb-opts input[type="number"]:focus {
-        border-color: color-mix(in srgb, var(--ctp-blue) 60%, transparent);
-        box-shadow: 0 0 0 2px color-mix(in srgb, var(--ctp-blue) 22%, transparent);
-      }
-      #${PANEL_ID} .bsb-opts input[type="checkbox"] {
-        accent-color: var(--ctp-mauve);
-      }
+      #${PANEL_ID} .bsb-opts input[type="checkbox"] { accent-color: var(--ctp-mauve); }
 
       #${PANEL_ID} .bsb-list {
-        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 60%, transparent);
-        border-radius: 12px;
-        overflow: auto;
-        flex: 1;
-        min-height: 120px;
-        max-height: none;
-        background: color-mix(in srgb, var(--ctp-mantle) 48%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 50%, transparent);
+        border-radius: 14px; overflow: auto; flex: 1; min-height: 0;
+        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent);
       }
       #${PANEL_ID} .bsb-list table { width: 100%; border-collapse: collapse; }
-      #${PANEL_ID} .bsb-list th,
-      #${PANEL_ID} .bsb-list td {
-        padding: 6px 8px;
-        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 70%, transparent);
-        text-align: left;
-        vertical-align: top;
+      #${PANEL_ID} .bsb-list th, #${PANEL_ID} .bsb-list td {
+        padding: 8px 10px;
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 65%, transparent);
+        text-align: left; vertical-align: top;
       }
       #${PANEL_ID} .bsb-list th {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-        font-weight: 600;
+        position: sticky; top: 0; z-index: 1; font-weight: 650; font-size: 11px;
         color: var(--ctp-subtext1);
-        background: color-mix(in srgb, var(--ctp-surface0) 72%, transparent);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
+        background: color-mix(in srgb, var(--ctp-surface0) 85%, transparent);
+        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       }
       #${PANEL_ID} .bsb-list tr:hover td {
-        background: color-mix(in srgb, var(--ctp-surface0) 35%, transparent);
+        background: color-mix(in srgb, var(--ctp-surface0) 40%, transparent);
       }
       #${PANEL_ID} .bsb-list .bsb-t {
-        max-width: 200px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        color: var(--ctp-text);
+        max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        color: var(--ctp-text); font-weight: 500;
       }
-      #${PANEL_ID} .bsb-list .st-ok { color: var(--ctp-green); }
+      #${PANEL_ID} .bsb-list .st-ok { color: var(--ctp-green); font-weight: 650; }
       #${PANEL_ID} .bsb-list .st-empty { color: var(--ctp-peach); }
       #${PANEL_ID} .bsb-list .st-err { color: var(--ctp-red); }
       #${PANEL_ID} .bsb-list .st-wait { color: var(--ctp-overlay1); }
-      #${PANEL_ID} .bsb-list input[type="checkbox"] {
-        accent-color: var(--ctp-mauve);
-      }
+      #${PANEL_ID} .bsb-list input[type="checkbox"] { accent-color: var(--ctp-mauve); }
 
-      #${PANEL_ID} .bsb-actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 6px;
-        flex-shrink: 0;
-      }
-      #${PANEL_ID} .bsb-status {
-        font-size: 12px;
-        color: var(--ctp-subtext0);
-        min-height: 16px;
-        word-break: break-word;
-      }
-      #${PANEL_ID} .bsb-status.ok { color: var(--ctp-green); }
-      #${PANEL_ID} .bsb-status.err { color: var(--ctp-red); }
-      #${PANEL_ID} .bsb-foot {
-        font-size: 10px;
-        color: var(--ctp-overlay0);
-        flex-shrink: 0;
-      }
       #${PANEL_ID} .bsb-empty {
-        padding: 28px 12px;
-        text-align: center;
-        color: var(--ctp-overlay1);
+        padding: 36px 16px; text-align: center; color: var(--ctp-overlay1);
+        display: flex; flex-direction: column; align-items: center; gap: 8px;
       }
+      #${PANEL_ID} .bsb-empty .bsb-empty-ico {
+        width: 48px; height: 48px; border-radius: 16px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 22px;
+        background: color-mix(in srgb, var(--ctp-surface0) 55%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
+      }
+      #${PANEL_ID} .bsb-empty strong { color: var(--ctp-subtext1); font-size: 13px; }
+      #${PANEL_ID} .bsb-empty span { font-size: 12px; max-width: 280px; line-height: 1.45; }
 
-      /* 滚动条：Catppuccin surface */
-      #${PANEL_ID} .bsb-list::-webkit-scrollbar { width: 8px; height: 8px; }
-      #${PANEL_ID} .bsb-list::-webkit-scrollbar-track {
-        background: transparent;
+      /* ── AI 工作区（主画布） ── */
+      #${PANEL_ID} .bsb-ai-hero {
+        display: flex; align-items: flex-start; justify-content: space-between;
+        gap: 12px; flex-shrink: 0;
       }
-      #${PANEL_ID} .bsb-list::-webkit-scrollbar-thumb {
-        background: color-mix(in srgb, var(--ctp-surface2) 70%, transparent);
-        border-radius: 8px;
+      #${PANEL_ID} .bsb-ai-hero h2 {
+        margin: 0; font-size: 16px; font-weight: 750; color: var(--ctp-text);
+        letter-spacing: -0.01em;
       }
-      #${PANEL_ID} .bsb-list::-webkit-scrollbar-thumb:hover {
-        background: var(--ctp-overlay0);
+      #${PANEL_ID} .bsb-ai-hero p {
+        margin: 4px 0 0; font-size: 11.5px; color: var(--ctp-subtext0); line-height: 1.4;
       }
+      #${PANEL_ID} .bsb-ai-hero-actions {
+        display: flex; gap: 6px; flex-shrink: 0; align-items: center;
+      }
+      #${PANEL_ID} .bsb-ai-hero-actions .bsb-btn.accent {
+        height: 40px; padding: 0 16px; font-size: 13px; border-radius: 12px;
+      }
+      #${PANEL_ID} .bsb-chips {
+        display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0;
+      }
+      #${PANEL_ID} .bsb-chip {
+        display: inline-flex; align-items: center; gap: 5px;
+        height: 26px; padding: 0 10px; border-radius: 999px; font-size: 11px; font-weight: 600;
+        color: var(--ctp-subtext1);
+        background: color-mix(in srgb, var(--ctp-surface0) 55%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
+      }
+      #${PANEL_ID} .bsb-chip em {
+        font-style: normal; color: var(--ctp-lavender); font-weight: 700;
+      }
+      #${PANEL_ID} .bsb-chip.ok { color: var(--ctp-green); border-color: color-mix(in srgb, var(--ctp-green) 30%, transparent); }
+      #${PANEL_ID} .bsb-chip.warn { color: var(--ctp-peach); }
 
-      /* ── AI 区块 ── */
-      #${PANEL_ID} .bsb-ai-bar {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 6px;
-        flex-shrink: 0;
+      #${PANEL_ID} .bsb-ai-canvas-wrap {
+        flex: 1; min-height: 0; display: flex; flex-direction: column;
+        border-radius: 16px; overflow: hidden;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
+        background:
+          radial-gradient(120% 80% at 100% 0%,
+            color-mix(in srgb, var(--ctp-mauve) 10%, transparent), transparent 55%),
+          color-mix(in srgb, var(--ctp-crust) 55%, transparent);
+        box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ctp-overlay2) 10%, transparent);
       }
-      #${PANEL_ID} .bsb-ai-bar button.ai {
-        background: color-mix(in srgb, var(--ctp-mauve) 72%, transparent);
-        border-color: color-mix(in srgb, var(--ctp-mauve) 50%, transparent);
-        color: var(--ctp-crust);
-        font-weight: 650;
+      #${PANEL_ID} .bsb-ai-canvas-bar {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 8px 12px; flex-shrink: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 70%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 45%, transparent);
+        font-size: 11px; color: var(--ctp-overlay1); font-weight: 600;
+        letter-spacing: 0.04em; text-transform: uppercase;
       }
-      #${PANEL_ID} .bsb-ai-bar button.ai:hover:not(:disabled) {
-        background: color-mix(in srgb, var(--ctp-pink) 80%, transparent);
-        color: var(--ctp-crust);
-      }
-      #${PANEL_ID} .bsb-ai-panel {
-        display: none;
-        flex-direction: column;
-        gap: 8px;
-        flex: 1;
-        min-height: 160px;
-        border: 1px solid color-mix(in srgb, var(--ctp-mauve) 28%, transparent);
-        border-radius: 12px;
-        padding: 10px;
-        background: color-mix(in srgb, var(--ctp-mantle) 50%, transparent);
-        overflow: hidden;
-      }
-      #${PANEL_ID} .bsb-ai-panel.show { display: flex; }
-      #${PANEL_ID} .bsb-ai-tabs {
-        display: flex; gap: 4px; flex-shrink: 0;
-      }
-      #${PANEL_ID} .bsb-ai-tabs button {
-        height: 26px; padding: 0 10px; border-radius: 999px;
-        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 60%, transparent);
-        background: transparent; color: var(--ctp-subtext0); cursor: pointer; font-size: 11px;
-      }
-      #${PANEL_ID} .bsb-ai-tabs button.active {
-        background: color-mix(in srgb, var(--ctp-mauve) 22%, transparent);
-        color: var(--ctp-mauve);
-        border-color: color-mix(in srgb, var(--ctp-mauve) 40%, transparent);
-      }
-      #${PANEL_ID} .bsb-ai-config,
       #${PANEL_ID} .bsb-ai-stream {
-        display: none; flex-direction: column; gap: 6px; flex: 1; min-height: 0; overflow: auto;
-      }
-      #${PANEL_ID} .bsb-ai-panel[data-tab="config"] .bsb-ai-config { display: flex; }
-      #${PANEL_ID} .bsb-ai-panel[data-tab="result"] .bsb-ai-stream { display: flex; }
-      #${PANEL_ID} .bsb-ai-config label {
-        display: flex; flex-direction: column; gap: 3px;
-        font-size: 11px; color: var(--ctp-subtext1);
-      }
-      #${PANEL_ID} .bsb-ai-config input,
-      #${PANEL_ID} .bsb-ai-config textarea,
-      #${PANEL_ID} .bsb-ai-config select {
-        width: 100%; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--ctp-surface2) 70%, transparent);
-        background: color-mix(in srgb, var(--ctp-base) 55%, transparent);
-        color: var(--ctp-text); padding: 6px 8px; font-size: 12px; font-family: inherit;
-      }
-      #${PANEL_ID} .bsb-ai-config textarea { min-height: 72px; resize: vertical; line-height: 1.4; }
-      #${PANEL_ID} .bsb-ai-config .row2 {
-        display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
-      }
-      #${PANEL_ID} .bsb-ai-config .bsb-ai-cfg-actions {
-        display: flex; gap: 6px; flex-wrap: wrap;
+        display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden;
       }
       #${PANEL_ID} .bsb-ai-stream .bsb-ai-raw {
-        display: none;
-        white-space: pre-wrap; word-break: break-word;
-        font-size: 12px; color: var(--ctp-subtext1);
-        max-height: 40%; overflow: auto;
-        padding: 8px; border-radius: 8px;
-        background: color-mix(in srgb, var(--ctp-crust) 40%, transparent);
+        display: none; white-space: pre-wrap; word-break: break-word;
+        font-size: 11px; color: var(--ctp-overlay1); max-height: 72px; overflow: auto;
+        padding: 8px 12px; margin: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 60%, transparent);
+        background: color-mix(in srgb, var(--ctp-crust) 50%, transparent);
       }
       #${PANEL_ID} .bsb-ai-stream.streaming .bsb-ai-raw { display: block; }
       #${PANEL_ID} .bsb-ai-md {
-        flex: 1; min-height: 80px; overflow: auto;
-        padding: 8px 10px; border-radius: 8px;
-        background: color-mix(in srgb, var(--ctp-crust) 35%, transparent);
-        font-size: 12.5px; line-height: 1.55; color: var(--ctp-text);
+        flex: 1; min-height: 0; overflow: auto;
+        padding: 16px 18px 24px;
+        font-size: 13.5px; line-height: 1.65; color: var(--ctp-text);
       }
       #${PANEL_ID} .bsb-ai-md h1, #${PANEL_ID} .bsb-ai-md h2, #${PANEL_ID} .bsb-ai-md h3 {
-        color: var(--ctp-lavender); margin: 0.6em 0 0.35em; font-weight: 650;
+        color: var(--ctp-lavender); margin: 0.85em 0 0.4em; font-weight: 700;
+        letter-spacing: -0.01em;
       }
-      #${PANEL_ID} .bsb-ai-md h1 { font-size: 1.25em; }
-      #${PANEL_ID} .bsb-ai-md h2 { font-size: 1.12em; }
-      #${PANEL_ID} .bsb-ai-md h3 { font-size: 1.05em; }
-      #${PANEL_ID} .bsb-ai-md p { margin: 0.4em 0; }
-      #${PANEL_ID} .bsb-ai-md ul, #${PANEL_ID} .bsb-ai-md ol { margin: 0.35em 0; padding-left: 1.3em; }
-      #${PANEL_ID} .bsb-ai-md a { color: var(--ctp-blue); }
+      #${PANEL_ID} .bsb-ai-md h1 { font-size: 1.35em; }
+      #${PANEL_ID} .bsb-ai-md h2 { font-size: 1.18em; }
+      #${PANEL_ID} .bsb-ai-md h3 { font-size: 1.06em; color: var(--ctp-mauve); }
+      #${PANEL_ID} .bsb-ai-md p { margin: 0.5em 0; }
+      #${PANEL_ID} .bsb-ai-md ul, #${PANEL_ID} .bsb-ai-md ol { margin: 0.45em 0; padding-left: 1.35em; }
+      #${PANEL_ID} .bsb-ai-md li { margin: 0.2em 0; }
+      #${PANEL_ID} .bsb-ai-md a { color: var(--ctp-blue); text-decoration: none; }
+      #${PANEL_ID} .bsb-ai-md a:hover { text-decoration: underline; }
       #${PANEL_ID} .bsb-ai-md blockquote {
-        margin: 0.5em 0; padding: 0.3em 0.8em;
+        margin: 0.7em 0; padding: 0.45em 0.95em;
         border-left: 3px solid var(--ctp-mauve);
         color: var(--ctp-subtext0);
-        background: color-mix(in srgb, var(--ctp-surface0) 40%, transparent);
+        background: color-mix(in srgb, var(--ctp-surface0) 35%, transparent);
+        border-radius: 0 10px 10px 0;
       }
       #${PANEL_ID} .bsb-ai-md table {
-        border-collapse: collapse; width: 100%; margin: 0.5em 0; font-size: 12px;
+        border-collapse: collapse; width: 100%; margin: 0.7em 0; font-size: 12.5px;
       }
       #${PANEL_ID} .bsb-ai-md th, #${PANEL_ID} .bsb-ai-md td {
-        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 70%, transparent);
-        padding: 4px 8px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 60%, transparent);
+        padding: 6px 10px;
       }
       #${PANEL_ID} .bsb-ai-md th {
-        background: color-mix(in srgb, var(--ctp-surface0) 60%, transparent);
-        color: var(--ctp-subtext1);
+        background: color-mix(in srgb, var(--ctp-surface0) 55%, transparent);
+        color: var(--ctp-subtext1); font-weight: 650;
       }
       #${PANEL_ID} .bsb-ai-md pre {
-        margin: 0.5em 0; padding: 10px 12px; border-radius: 10px;
-        overflow: auto; max-height: 320px;
+        margin: 0.7em 0; padding: 12px 14px; border-radius: 12px;
+        overflow: auto; max-height: 420px;
         background: #11111b;
-        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 50%, transparent);
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
       }
       #${PANEL_ID} .bsb-ai-md code {
         font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
-        font-size: 11.5px;
+        font-size: 12px;
       }
       #${PANEL_ID} .bsb-ai-md :not(pre) > code {
-        background: color-mix(in srgb, var(--ctp-surface0) 70%, transparent);
-        padding: 1px 5px; border-radius: 4px; color: var(--ctp-peach);
+        background: color-mix(in srgb, var(--ctp-surface0) 65%, transparent);
+        padding: 2px 6px; border-radius: 5px; color: var(--ctp-peach);
       }
       #${PANEL_ID} .bsb-ai-md .hljs { background: transparent; color: var(--ctp-text); }
       #${PANEL_ID} .bsb-ai-md .mermaid {
-        background: color-mix(in srgb, var(--ctp-base) 50%, transparent);
-        border-radius: 10px; padding: 10px; margin: 0.5em 0;
+        background: color-mix(in srgb, var(--ctp-base) 55%, transparent);
+        border-radius: 12px; padding: 14px; margin: 0.7em 0;
         text-align: center; overflow: auto;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface0) 50%, transparent);
       }
       #${PANEL_ID} .bsb-ai-md .bsb-code-lang {
         display: block; font-size: 10px; color: var(--ctp-overlay1);
-        margin-bottom: 6px; text-transform: lowercase;
+        margin-bottom: 8px; text-transform: lowercase; letter-spacing: 0.06em;
+      }
+      #${PANEL_ID} .bsb-ai-md hr {
+        border: none; height: 1px; margin: 1.2em 0;
+        background: color-mix(in srgb, var(--ctp-surface1) 60%, transparent);
+      }
+
+      /* 设置页 */
+      #${PANEL_ID} .bsb-settings {
+        overflow: auto; flex: 1; min-height: 0;
+        display: flex; flex-direction: column; gap: 12px;
+        padding-right: 2px;
+      }
+      #${PANEL_ID} .bsb-card {
+        border-radius: 14px; padding: 12px 14px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 45%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 45%, transparent);
+      }
+      #${PANEL_ID} .bsb-card h3 {
+        margin: 0 0 10px; font-size: 12px; font-weight: 700;
+        color: var(--ctp-subtext1); letter-spacing: 0.04em; text-transform: uppercase;
+      }
+      #${PANEL_ID} .bsb-ai-config label,
+      #${PANEL_ID} .bsb-field label {
+        display: flex; flex-direction: column; gap: 4px;
+        font-size: 11.5px; color: var(--ctp-subtext1); margin-bottom: 8px;
+      }
+      #${PANEL_ID} .bsb-ai-config input,
+      #${PANEL_ID} .bsb-ai-config textarea,
+      #${PANEL_ID} .bsb-field input {
+        width: 100%; border-radius: 10px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 55%, transparent);
+        background: color-mix(in srgb, var(--ctp-base) 60%, transparent);
+        color: var(--ctp-text); padding: 8px 10px; font-size: 12.5px; font-family: inherit;
+        outline: none;
+      }
+      #${PANEL_ID} .bsb-ai-config input:focus,
+      #${PANEL_ID} .bsb-ai-config textarea:focus {
+        border-color: color-mix(in srgb, var(--ctp-mauve) 50%, transparent);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ctp-mauve) 16%, transparent);
+      }
+      #${PANEL_ID} .bsb-ai-config textarea {
+        min-height: 88px; resize: vertical; line-height: 1.45;
+      }
+      #${PANEL_ID} .bsb-ai-config .row2 {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      }
+      #${PANEL_ID} .bsb-ai-cfg-actions {
+        display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px;
+      }
+
+      /* 底栏状态 */
+      #${PANEL_ID} .bsb-statusbar {
+        flex-shrink: 0;
+        display: flex; align-items: center; gap: 8px;
+        padding: 8px 14px 10px;
+        border-top: 1px solid color-mix(in srgb, var(--ctp-surface0) 75%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 50%, transparent);
+        font-size: 11.5px; color: var(--ctp-subtext0);
+        min-height: 36px;
+      }
+      #${PANEL_ID} .bsb-status-dot {
+        width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+        background: var(--ctp-overlay0);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ctp-overlay0) 20%, transparent);
+      }
+      #${PANEL_ID} .bsb-status-dot.ok {
+        background: var(--ctp-green);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ctp-green) 22%, transparent);
+      }
+      #${PANEL_ID} .bsb-status-dot.err {
+        background: var(--ctp-red);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ctp-red) 22%, transparent);
+      }
+      #${PANEL_ID} .bsb-status-dot.busy {
+        background: var(--ctp-yellow);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ctp-yellow) 22%, transparent);
+        animation: bsb-pulse 1.2s ease-in-out infinite;
+      }
+      @keyframes bsb-pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.45; }
+      }
+      #${PANEL_ID} .bsb-status {
+        flex: 1; min-width: 0; word-break: break-word; line-height: 1.35;
+      }
+      #${PANEL_ID} .bsb-status.ok { color: var(--ctp-green); }
+      #${PANEL_ID} .bsb-status.err { color: var(--ctp-red); }
+
+      /* 滚动条 */
+      #${PANEL_ID} .bsb-list::-webkit-scrollbar,
+      #${PANEL_ID} .bsb-ai-md::-webkit-scrollbar,
+      #${PANEL_ID} .bsb-settings::-webkit-scrollbar { width: 8px; height: 8px; }
+      #${PANEL_ID} .bsb-list::-webkit-scrollbar-thumb,
+      #${PANEL_ID} .bsb-ai-md::-webkit-scrollbar-thumb,
+      #${PANEL_ID} .bsb-settings::-webkit-scrollbar-thumb {
+        background: color-mix(in srgb, var(--ctp-surface2) 65%, transparent);
+        border-radius: 8px;
+      }
+      #${PANEL_ID} .bsb-list::-webkit-scrollbar-thumb:hover,
+      #${PANEL_ID} .bsb-ai-md::-webkit-scrollbar-thumb:hover {
+        background: var(--ctp-overlay0);
       }
     `);
   }
@@ -2270,6 +2354,12 @@
       state.ui.dockExpanded = false;
     }
     applyPanelGeometry();
+    // 恢复工作区（AI / 字幕 / 设置）
+    try {
+      setWorkspace(state.ui.view || "ai", { silent: true });
+    } catch (_) {
+      /* ensurePanel may not be fully wired yet */
+    }
 
     // expose for external refresh
     root._bsbSetOpen = setOpen;
@@ -2284,8 +2374,8 @@
     root.id = PANEL_ID;
     root.setAttribute("data-ctp-flavor", "mocha");
     root.innerHTML = `
-      <button type="button" class="bsb-dock-tab" title="展开字幕面板">字幕 CC</button>
-      <aside class="bsb-sidebar" role="dialog" aria-label="Bili SubBatch" aria-hidden="true">
+      <button type="button" class="bsb-dock-tab" title="展开 SubBatch 工作台">AI · CC</button>
+      <aside class="bsb-sidebar" role="dialog" aria-label="Bili SubBatch Workspace" aria-hidden="true">
         <div class="bsb-resize n" data-dir="n"></div>
         <div class="bsb-resize s" data-dir="s"></div>
         <div class="bsb-resize e" data-dir="e"></div>
@@ -2296,112 +2386,167 @@
         <div class="bsb-resize sw" data-dir="sw"></div>
         <div class="bsb-head">
           <div class="bsb-head-title">
-            <strong>字幕下载</strong>
+            <span class="bsb-logo">CC</span>
+            <strong>SubBatch</strong>
             <span class="bsb-ver">v${SCRIPT_VERSION}</span>
-            <span class="bsb-flavor" title="Catppuccin Mocha">mocha</span>
           </div>
           <div class="bsb-head-actions">
-            <button type="button" class="bsb-icon-btn" data-act="dock" title="贴边收起 / 取消贴边">⧉</button>
+            <button type="button" class="bsb-icon-btn" data-act="dock" title="贴边收起">⧉</button>
             <button type="button" class="bsb-icon-btn" data-act="collapse" title="收起到侧边">—</button>
             <button type="button" class="bsb-icon-btn bsb-close" title="关闭" aria-label="关闭">×</button>
           </div>
         </div>
+        <nav class="bsb-nav" aria-label="工作区">
+          <button type="button" data-view="ai" class="active">AI 笔记</button>
+          <button type="button" data-view="subs">字幕库</button>
+          <button type="button" data-view="settings">设置</button>
+        </nav>
         <div class="bsb-body">
-          <div>
-            <span class="bsb-badge" data-role="type">—</span>
-            <div class="bsb-meta" data-role="ctx">—</div>
-          </div>
-          <div class="bsb-mode-row">
-            <label>模式
-              <select data-role="mode" title="自动识别；也可强制指定类型（默认倾向单个视频）">
-                <option value="auto" selected>自动识别</option>
-                <option value="video">单个视频</option>
-                <option value="selection">视频选集</option>
-                <option value="user">个人主页</option>
-                <option value="favorite">收藏夹</option>
-                <option value="collection">合集</option>
-                <option value="search">搜索页</option>
-              </select>
-            </label>
-            <span class="bsb-auto-hint" data-role="auto-hint">识别：—</span>
-          </div>
-          <div class="bsb-toolbar">
-            <button type="button" class="primary" data-act="scan">扫描当前页</button>
-            <button type="button" data-act="sel-all">全选</button>
-            <button type="button" data-act="sel-none">全不选</button>
-            <button type="button" class="danger" data-act="cancel" style="display:none">停止</button>
-          </div>
-          <div class="bsb-opts">
-            <label>最多页 <input type="number" data-role="max-pages" min="1" max="100" value="${DEFAULT_MAX_PAGES}"></label>
-            <label>间隔ms <input type="number" data-role="delay" min="0" max="5000" step="50" value="${DEFAULT_DELAY_MS}"></label>
-          </div>
-          <div class="bsb-list" data-role="list">
-            <div class="bsb-empty">点「扫描当前页」加载视频列表</div>
-          </div>
-          <div class="bsb-actions">
-            <button type="button" class="primary" data-act="dl-srt">下载 SRT</button>
-            <button type="button" data-act="dl-txt">下载 TXT</button>
-            <button type="button" data-act="copy">复制全文</button>
-            <button type="button" data-act="copy-bvid">复制 BV 列表</button>
-            <button type="button" data-act="dl-ok-only" title="仅下载已成功项">再下成功项</button>
-            <button type="button" data-act="clear">清空列表</button>
-          </div>
-          <div class="bsb-ai-bar">
-            <button type="button" class="ai" data-act="ai-send" title="拉取勾选字幕并流式发送给 AI">AI 分析</button>
-            <button type="button" data-act="ai-toggle">AI 面板</button>
-            <button type="button" class="danger" data-act="ai-stop" style="display:none">停止 AI</button>
-          </div>
-          <div class="bsb-ai-panel" data-role="ai-panel" data-tab="result">
-            <div class="bsb-ai-tabs">
-              <button type="button" data-ai-tab="result" class="active">结果</button>
-              <button type="button" data-ai-tab="config">配置</button>
-            </div>
-            <div class="bsb-ai-config" data-role="ai-config">
-              <label>Base URL（OpenAI 兼容，含 /v1）
-                <input type="text" data-ai="baseUrl" placeholder="https://api.example.com/v1" autocomplete="off">
-              </label>
-              <label>API Key
-                <input type="password" data-ai="apiKey" placeholder="sk-..." autocomplete="off">
-              </label>
-              <label>Model
-                <input type="text" data-ai="model" placeholder="gpt-4o-mini" autocomplete="off">
-              </label>
-              <div class="row2">
-                <label>Temperature
-                  <input type="number" data-ai="temperature" min="0" max="2" step="0.1">
-                </label>
-                <label>Max tokens
-                  <input type="number" data-ai="maxTokens" min="256" max="128000" step="256">
-                </label>
+          <!-- AI 主画布 -->
+          <section class="bsb-view active" data-view-panel="ai">
+            <div class="bsb-ai-hero">
+              <div>
+                <h2>AI 字幕笔记</h2>
+                <p>勾选字幕 → 一键分析 · Markdown / 代码高亮 / Mermaid</p>
               </div>
-              <label style="flex-direction:row;align-items:center;gap:8px">
-                <input type="checkbox" data-ai="stream" style="width:auto">
-                流式输出（推理模型如 gpt-oss 建议关闭，更稳）
-              </label>
-              <label>System 提示词（发送前注入）
-                <textarea data-ai="systemPrompt" rows="4"></textarea>
-              </label>
-              <label>User 模板（可用 {{title}} {{bvid}} {{author}} {{subtitle}}）
-                <textarea data-ai="userPromptTemplate" rows="5"></textarea>
-              </label>
-              <div class="bsb-ai-cfg-actions">
-                <button type="button" class="primary" data-act="ai-save">保存配置</button>
-                <button type="button" data-act="ai-reset">恢复默认</button>
+              <div class="bsb-ai-hero-actions">
+                <button type="button" class="bsb-btn danger" data-act="ai-stop" style="display:none">停止</button>
+                <button type="button" class="bsb-btn accent" data-act="ai-send" title="分析已勾选字幕">开始分析</button>
               </div>
             </div>
-            <div class="bsb-ai-stream" data-role="ai-stream">
-              <pre class="bsb-ai-raw" data-role="ai-raw"></pre>
-              <div class="bsb-ai-md" data-role="ai-md"><p class="bsb-empty" style="padding:12px">AI 输出将流式显示于此，结束后渲染 Markdown / 代码高亮 / Mermaid</p></div>
+            <div class="bsb-chips" data-role="ai-chips">
+              <span class="bsb-chip">选中 <em data-role="chip-sel">0</em></span>
+              <span class="bsb-chip">有字幕 <em data-role="chip-ok">0</em></span>
+              <span class="bsb-chip" data-role="chip-model">model</span>
             </div>
-          </div>
-          <div class="bsb-status" data-role="status">就绪 · 拖标题移动 · 拖边角拉伸 · 贴边自动收起</div>
-          <div class="bsb-foot">v${SCRIPT_VERSION} · AI OpenAI兼容 · Catppuccin · 对齐 bili_subbatch</div>
+            <div class="bsb-ai-canvas-wrap">
+              <div class="bsb-ai-canvas-bar">
+                <span>Output</span>
+                <span data-role="ai-canvas-meta">就绪</span>
+              </div>
+              <div class="bsb-ai-stream" data-role="ai-stream">
+                <pre class="bsb-ai-raw" data-role="ai-raw"></pre>
+                <div class="bsb-ai-md" data-role="ai-md">
+                  <div class="bsb-empty">
+                    <div class="bsb-empty-ico">✦</div>
+                    <strong>还没有分析结果</strong>
+                    <span>在「字幕库」扫描并勾选视频，回到这里点「开始分析」。输出会占满整块画布。</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 字幕库 -->
+          <section class="bsb-view" data-view-panel="subs">
+            <div>
+              <span class="bsb-badge" data-role="type">—</span>
+              <div class="bsb-meta" data-role="ctx">—</div>
+            </div>
+            <div class="bsb-mode-row">
+              <label>模式
+                <select data-role="mode" title="自动识别或强制类型">
+                  <option value="auto" selected>自动识别</option>
+                  <option value="video">单个视频</option>
+                  <option value="selection">视频选集</option>
+                  <option value="user">个人主页</option>
+                  <option value="favorite">收藏夹</option>
+                  <option value="collection">合集</option>
+                  <option value="search">搜索页</option>
+                </select>
+              </label>
+              <span class="bsb-auto-hint" data-role="auto-hint">识别：—</span>
+            </div>
+            <div class="bsb-toolbar">
+              <button type="button" class="primary" data-act="scan">扫描当前页</button>
+              <button type="button" data-act="sel-all">全选</button>
+              <button type="button" data-act="sel-none">全不选</button>
+              <button type="button" class="danger" data-act="cancel" style="display:none">停止</button>
+              <button type="button" data-act="ai-send" title="用勾选项跑 AI">送去 AI</button>
+            </div>
+            <div class="bsb-opts">
+              <label>最多页 <input type="number" data-role="max-pages" min="1" max="100" value="${DEFAULT_MAX_PAGES}"></label>
+              <label>间隔ms <input type="number" data-role="delay" min="0" max="5000" step="50" value="${DEFAULT_DELAY_MS}"></label>
+            </div>
+            <div class="bsb-list" data-role="list">
+              <div class="bsb-empty">
+                <div class="bsb-empty-ico">≡</div>
+                <strong>字幕库为空</strong>
+                <span>点「扫描当前页」加载列表，勾选后可下载或送 AI</span>
+              </div>
+            </div>
+            <div class="bsb-actions">
+              <button type="button" class="primary" data-act="dl-srt">下载 SRT</button>
+              <button type="button" data-act="dl-txt">下载 TXT</button>
+              <button type="button" data-act="copy">复制全文</button>
+              <button type="button" data-act="copy-bvid">复制 BV</button>
+              <button type="button" data-act="dl-ok-only">再下成功项</button>
+              <button type="button" data-act="clear">清空</button>
+            </div>
+          </section>
+
+          <!-- 设置 -->
+          <section class="bsb-view" data-view-panel="settings">
+            <div class="bsb-settings">
+              <div class="bsb-card">
+                <h3>OpenAI 兼容 API</h3>
+                <div class="bsb-ai-config" data-role="ai-config">
+                  <label>Base URL（含 /v1）
+                    <input type="text" data-ai="baseUrl" placeholder="https://api.example.com/v1" autocomplete="off">
+                  </label>
+                  <label>API Key
+                    <input type="password" data-ai="apiKey" placeholder="sk-..." autocomplete="off">
+                  </label>
+                  <label>Model
+                    <input type="text" data-ai="model" placeholder="gpt-4o-mini" autocomplete="off">
+                  </label>
+                  <div class="row2">
+                    <label>Temperature
+                      <input type="number" data-ai="temperature" min="0" max="2" step="0.1">
+                    </label>
+                    <label>Max tokens
+                      <input type="number" data-ai="maxTokens" min="256" max="128000" step="256">
+                    </label>
+                  </div>
+                  <label style="flex-direction:row;align-items:center;gap:8px;margin-bottom:10px">
+                    <input type="checkbox" data-ai="stream" style="width:auto">
+                    流式输出（推理模型建议关闭）
+                  </label>
+                  <label>System 提示词
+                    <textarea data-ai="systemPrompt" rows="4"></textarea>
+                  </label>
+                  <label>User 模板（{{title}} {{bvid}} {{author}} {{subtitle}}）
+                    <textarea data-ai="userPromptTemplate" rows="5"></textarea>
+                  </label>
+                  <div class="bsb-ai-cfg-actions">
+                    <button type="button" class="bsb-btn primary" data-act="ai-save">保存配置</button>
+                    <button type="button" class="bsb-btn ghost" data-act="ai-reset">恢复默认</button>
+                  </div>
+                </div>
+              </div>
+              <div class="bsb-card">
+                <h3>交互提示</h3>
+                <p style="margin:0;font-size:12px;color:var(--ctp-subtext0);line-height:1.55">
+                  拖标题栏移动 · 拖边角拉伸 · 贴左右边自动收起。<br>
+                  AI 笔记为主画布；字幕库负责扫描与导出；密钥只存本机 localStorage。
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="bsb-statusbar">
+          <span class="bsb-status-dot" data-role="status-dot"></span>
+          <div class="bsb-status" data-role="status">就绪 · AI 工作台</div>
         </div>
       </aside>
-      <button type="button" class="bsb-fab" title="Bili SubBatch（Catppuccin）" aria-expanded="false">CC</button>
+      <button type="button" class="bsb-fab" title="SubBatch 工作台" aria-expanded="false">CC</button>
     `;
     document.documentElement.appendChild(root);
     bindPanelChrome(root);
+
+    root.querySelectorAll("[data-view]").forEach((btn) => {
+      btn.addEventListener("click", () => setWorkspace(btn.getAttribute("data-view")));
+    });
 
     root.querySelector('[data-role="max-pages"]').addEventListener("change", (e) => {
       state.maxPages = Math.max(1, Math.min(100, Number(e.target.value) || DEFAULT_MAX_PAGES));
@@ -2421,23 +2566,47 @@
 
     root.querySelectorAll("button[data-act]").forEach((btn) => {
       const act = btn.getAttribute("data-act");
-      if (act === "dock" || act === "collapse") return; // bound in chrome
+      if (act === "dock" || act === "collapse") return;
       btn.addEventListener("click", () => onAction(act));
     });
 
-    root.querySelectorAll("[data-ai-tab]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const tab = btn.getAttribute("data-ai-tab");
-        const panel = root.querySelector('[data-role="ai-panel"]');
-        panel.setAttribute("data-tab", tab);
-        root.querySelectorAll("[data-ai-tab]").forEach((b) => {
-          b.classList.toggle("active", b.getAttribute("data-ai-tab") === tab);
-        });
-      });
-    });
-
     fillAiConfigForm(root);
+    setWorkspace((state.ui && state.ui.view) || "ai", { silent: true });
+    refreshAiChips();
     return root;
+  }
+
+  function setWorkspace(view, opts) {
+    const v = ["ai", "subs", "settings"].includes(view) ? view : "ai";
+    const root = ensurePanel();
+    if (state.ui) state.ui.view = v;
+    root.querySelectorAll(".bsb-nav [data-view]").forEach((b) => {
+      b.classList.toggle("active", b.getAttribute("data-view") === v);
+    });
+    root.querySelectorAll("[data-view-panel]").forEach((p) => {
+      p.classList.toggle("active", p.getAttribute("data-view-panel") === v);
+    });
+    if (!opts?.silent) {
+      saveUiGeom();
+      if (v === "ai") refreshAiChips();
+      if (v === "settings") fillAiConfigForm(root);
+    }
+  }
+
+  function refreshAiChips() {
+    const root = document.getElementById(PANEL_ID);
+    if (!root) return;
+    const sel = state.items.filter((it) => it.selected).length;
+    const ok = state.items.filter((it) => it.selected && it.subStatus === "ok").length;
+    const elSel = root.querySelector('[data-role="chip-sel"]');
+    const elOk = root.querySelector('[data-role="chip-ok"]');
+    const elModel = root.querySelector('[data-role="chip-model"]');
+    if (elSel) elSel.textContent = String(sel);
+    if (elOk) elOk.textContent = String(ok);
+    if (elModel) {
+      const cfg = state.ai || loadAiConfig();
+      elModel.textContent = (cfg.model || "model").slice(0, 28);
+    }
   }
 
   function setStatus(text, cls) {
@@ -2446,6 +2615,17 @@
     el.textContent = text;
     el.classList.remove("ok", "err");
     if (cls) el.classList.add(cls);
+    const dot = document.querySelector(`#${PANEL_ID} [data-role="status-dot"]`);
+    if (dot) {
+      dot.classList.remove("ok", "err", "busy");
+      if (cls === "ok") dot.classList.add("ok");
+      else if (cls === "err") dot.classList.add("err");
+      else if (state.busy || state.aiBusy) dot.classList.add("busy");
+    }
+    const meta = document.querySelector(`#${PANEL_ID} [data-role="ai-canvas-meta"]`);
+    if (meta && (state.ui?.view === "ai" || !state.ui)) {
+      meta.textContent = (text || "").slice(0, 48);
+    }
   }
 
   function setBusy(busy) {
@@ -2536,8 +2716,10 @@
       cb.addEventListener("change", () => {
         const i = Number(cb.getAttribute("data-i"));
         if (state.items[i]) state.items[i].selected = cb.checked;
+        refreshAiChips();
       });
     });
+    refreshAiChips();
   }
 
   function escapeHtml(s) {
@@ -2702,22 +2884,23 @@
     return cfg;
   }
 
-  function toggleAiPanel(force) {
+  function toggleAiPanel(forceShow) {
     const root = ensurePanel();
-    const panel = root.querySelector('[data-role="ai-panel"]');
-    const show =
-      typeof force === "boolean" ? force : !panel.classList.contains("show");
-    panel.classList.toggle("show", show);
-    if (show) {
-      fillAiConfigForm(root);
-      // 面板打开时略增高更易用
-      if (state.ui && state.ui.h < 520) {
-        state.ui.h = Math.min(720, Math.max(520, state.ui.h));
-        clampUiToViewport(state.ui);
-        applyPanelGeometry();
-        saveUiGeom();
-      }
+    // v0.7：AI 是独立全高工作区，不再挤在底部小条
+    if (forceShow === false) {
+      setWorkspace("subs");
+      return;
     }
+    setWorkspace("ai");
+    if (state.ui && state.ui.h < 640) {
+      state.ui.h = Math.min(860, Math.max(640, state.ui.h));
+      state.ui.w = Math.max(state.ui.w, 480);
+      clampUiToViewport(state.ui);
+      applyPanelGeometry();
+      saveUiGeom();
+    }
+    refreshAiChips();
+    fillAiConfigForm(root);
   }
 
   function setAiBusy(busy) {
@@ -3218,19 +3401,23 @@
     if (state.aiBusy) return;
     const root = ensurePanel();
     toggleAiPanel(true);
-    root.querySelector('[data-role="ai-panel"]').setAttribute("data-tab", "result");
-    root.querySelectorAll("[data-ai-tab]").forEach((b) => {
-      b.classList.toggle("active", b.getAttribute("data-ai-tab") === "result");
-    });
 
-    const cfg = saveAiConfigFromForm();
+    // 设置页表单优先；否则用已存配置
+    let cfg;
+    try {
+      cfg = saveAiConfigFromForm();
+    } catch (_) {
+      cfg = loadAiConfig();
+      state.ai = cfg;
+    }
     if (!cfg.apiKey) {
-      setStatus("请先在 AI 配置中填写 API Key", "err");
-      root.querySelector('[data-role="ai-panel"]').setAttribute("data-tab", "config");
+      setStatus("请先在「设置」中填写 API Key", "err");
+      setWorkspace("settings");
       return;
     }
     if (!cfg.baseUrl) {
       setStatus("请填写 Base URL", "err");
+      setWorkspace("settings");
       return;
     }
 
