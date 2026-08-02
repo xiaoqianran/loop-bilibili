@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.4.0
-// @description  B站字幕批量下载：自动识别+可切换模式（默认单视频）。Catppuccin 透明边栏。对齐 packages/bili_subbatch
+// @version      0.5.0
+// @description  B站字幕批量下载：可拖拽/拉伸/贴边收起的 Catppuccin 悬浮面板。对齐 packages/bili_subbatch
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -24,20 +24,24 @@
 // ==/UserScript==
 
 /**
- * v0.4 — multi-source + mode switch (auto / manual).
- * Default mode: auto → prefers 单个视频; 选集/合集可手动切换。
- * Catppuccin Mocha glass sidebar (click-through). Aligned with bili_subbatch.
+ * v0.5 — floating: drag / resize / dock-to-edge auto-hide.
+ * Modes: auto + manual (default 单个视频). Catppuccin Mocha, click-through root.
  */
 
 (function () {
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.2.0";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.5.0";
   const PANEL_ID = "bili-subbatch-panel";
+  const UI_STORE_KEY = "bili-subbatch-ui-v1";
   const WBI_TTL_MS = 600_000;
   const DEFAULT_DELAY_MS = 400;
   const DEFAULT_MAX_PAGES = 20;
+  const MIN_W = 300;
+  const MIN_H = 280;
+  const DOCK_EDGE_PX = 28;
+  const DOCK_SNAP_PX = 36;
   const UA =
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
     "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
@@ -1254,9 +1258,71 @@
     meta: {},
     delayMs: DEFAULT_DELAY_MS,
     maxPages: DEFAULT_MAX_PAGES,
+    ui: null, // geometry + dock
   };
 
-  // ─── UI (Catppuccin Mocha glass sidebar, click-through) ─────────────────
+  // ─── UI geometry persistence ────────────────────────────────────────────
+  function defaultUiGeom() {
+    const w = Math.min(392, Math.max(MIN_W, window.innerWidth - 24));
+    const h = Math.min(640, Math.max(MIN_H, window.innerHeight - 24));
+    return {
+      x: Math.max(8, window.innerWidth - w - 12),
+      y: 12,
+      w,
+      h,
+      dock: null, // null | 'left' | 'right'
+      dockExpanded: false,
+    };
+  }
+
+  function loadUiGeom() {
+    try {
+      const raw = localStorage.getItem(UI_STORE_KEY);
+      if (!raw) return defaultUiGeom();
+      const o = JSON.parse(raw);
+      const d = defaultUiGeom();
+      return {
+        x: Number.isFinite(o.x) ? o.x : d.x,
+        y: Number.isFinite(o.y) ? o.y : d.y,
+        w: Math.max(MIN_W, Number(o.w) || d.w),
+        h: Math.max(MIN_H, Number(o.h) || d.h),
+        dock: o.dock === "left" || o.dock === "right" ? o.dock : null,
+        dockExpanded: false,
+      };
+    } catch (_) {
+      return defaultUiGeom();
+    }
+  }
+
+  function saveUiGeom() {
+    if (!state.ui) return;
+    try {
+      localStorage.setItem(
+        UI_STORE_KEY,
+        JSON.stringify({
+          x: state.ui.x,
+          y: state.ui.y,
+          w: state.ui.w,
+          h: state.ui.h,
+          dock: state.ui.dock,
+        }),
+      );
+    } catch (_) {
+      /* ignore quota */
+    }
+  }
+
+  function clampUiToViewport(ui) {
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    ui.w = Math.min(Math.max(MIN_W, ui.w), Math.max(MIN_W, vw - 8));
+    ui.h = Math.min(Math.max(MIN_H, ui.h), Math.max(MIN_H, vh - 8));
+    ui.x = Math.min(Math.max(0, ui.x), Math.max(0, vw - ui.w));
+    ui.y = Math.min(Math.max(0, ui.y), Math.max(0, vh - 48));
+    return ui;
+  }
+
+  // ─── UI (Catppuccin Mocha floating panel) ───────────────────────────────
   function injectStyles() {
     // Catppuccin Mocha — https://catppuccin.com/palette/ (userstyle tokens)
     GM_addStyle(`
@@ -1291,23 +1357,22 @@
 
         position: fixed;
         top: 0;
-        right: 0;
-        bottom: 0;
+        left: 0;
         width: 0;
+        height: 0;
         z-index: 2147483646;
         font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
           "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
         font-size: 12px;
         color: var(--ctp-text);
         line-height: 1.45;
-        /* 整层默认穿透：不挡页面点击 */
         pointer-events: none;
       }
       #${PANEL_ID} * { box-sizing: border-box; }
 
-      /* 仅 FAB / 边栏本体接收指针 */
       #${PANEL_ID} .bsb-fab,
-      #${PANEL_ID} .bsb-sidebar {
+      #${PANEL_ID} .bsb-sidebar,
+      #${PANEL_ID} .bsb-dock-tab {
         pointer-events: auto;
       }
 
@@ -1332,7 +1397,7 @@
         align-items: center;
         justify-content: center;
         transition: transform .15s ease, border-color .15s ease, color .15s ease,
-          background .15s ease;
+          background .15s ease, opacity .15s ease;
       }
       #${PANEL_ID} .bsb-fab:hover {
         transform: translateY(-1px);
@@ -1340,23 +1405,21 @@
         background: color-mix(in srgb, var(--ctp-lavender) 88%, transparent);
         border-color: var(--ctp-lavender);
       }
-      #${PANEL_ID}.open .bsb-fab {
-        color: var(--ctp-base);
-        background: color-mix(in srgb, var(--ctp-mauve) 85%, transparent);
-        border-color: var(--ctp-mauve);
+      #${PANEL_ID}.open .bsb-fab,
+      #${PANEL_ID}.docked .bsb-fab {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
       }
 
-      /* 右侧玻璃边栏：透明 + 毛玻璃；空白不遮挡（由 root pointer-events 控制） */
+      /* 悬浮玻璃面板 */
       #${PANEL_ID} .bsb-sidebar {
         position: fixed;
-        top: 12px;
-        right: 12px;
-        bottom: 12px;
-        width: min(392px, calc(100vw - 24px));
-        display: flex;
+        display: none;
         flex-direction: column;
         overflow: hidden;
         border-radius: 16px;
+        /* 供内部 absolute 拉伸手柄定位 */
         border: 1px solid color-mix(in srgb, var(--ctp-overlay0) 35%, transparent);
         background: color-mix(in srgb, var(--ctp-base) 42%, transparent);
         backdrop-filter: blur(18px) saturate(1.35);
@@ -1364,25 +1427,77 @@
         box-shadow:
           0 12px 48px color-mix(in srgb, var(--ctp-crust) 45%, transparent),
           inset 0 1px 0 color-mix(in srgb, var(--ctp-overlay2) 18%, transparent);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(12px);
-        transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+        min-width: ${MIN_W}px;
+        min-height: ${MIN_H}px;
       }
-      #${PANEL_ID}.open .bsb-sidebar {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
+      #${PANEL_ID}.open:not(.docked) .bsb-sidebar {
+        display: flex;
+      }
+      /* 贴边收起时：主面板隐藏，只留 dock-tab；展开时显示 */
+      #${PANEL_ID}.docked.dock-expanded .bsb-sidebar {
+        display: flex;
+      }
+
+      /* 贴边标签 */
+      #${PANEL_ID} .bsb-dock-tab {
+        display: none;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        width: ${DOCK_EDGE_PX}px;
+        padding: 14px 0;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        font-weight: 650;
+        color: var(--ctp-lavender);
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid color-mix(in srgb, var(--ctp-lavender) 40%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 62%, transparent);
+        backdrop-filter: blur(14px) saturate(1.2);
+        -webkit-backdrop-filter: blur(14px) saturate(1.2);
+        box-shadow: 0 8px 28px color-mix(in srgb, var(--ctp-crust) 40%, transparent);
+        z-index: 1;
+      }
+      #${PANEL_ID}.docked .bsb-dock-tab { display: flex; align-items: center; justify-content: center; }
+      #${PANEL_ID}.docked[data-dock="right"] .bsb-dock-tab {
+        right: 0;
+        border-radius: 12px 0 0 12px;
+        border-right: none;
+      }
+      #${PANEL_ID}.docked[data-dock="left"] .bsb-dock-tab {
+        left: 0;
+        border-radius: 0 12px 12px 0;
+        border-left: none;
+      }
+      #${PANEL_ID} .bsb-dock-tab:hover {
+        color: var(--ctp-base);
+        background: color-mix(in srgb, var(--ctp-lavender) 85%, transparent);
       }
 
       #${PANEL_ID} .bsb-head {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 12px 14px;
+        padding: 10px 12px;
         flex-shrink: 0;
+        gap: 8px;
         border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface1) 55%, transparent);
         background: color-mix(in srgb, var(--ctp-mantle) 40%, transparent);
+        cursor: grab;
+        user-select: none;
+        touch-action: none;
+      }
+      #${PANEL_ID} .bsb-head:active { cursor: grabbing; }
+      #${PANEL_ID} .bsb-head .bsb-head-title {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2px 0;
       }
       #${PANEL_ID} .bsb-head strong {
         font-size: 13px;
@@ -1408,7 +1523,13 @@
         border: 1px solid color-mix(in srgb, var(--ctp-mauve) 28%, transparent);
         vertical-align: middle;
       }
-      #${PANEL_ID} .bsb-close {
+      #${PANEL_ID} .bsb-head-actions {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-shrink: 0;
+      }
+      #${PANEL_ID} .bsb-icon-btn {
         width: 28px;
         height: 28px;
         border-radius: 8px;
@@ -1416,14 +1537,54 @@
         border: 1px solid color-mix(in srgb, var(--ctp-surface1) 60%, transparent);
         color: var(--ctp-subtext0);
         cursor: pointer;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         transition: color .12s, background .12s, border-color .12s;
       }
-      #${PANEL_ID} .bsb-close:hover {
+      #${PANEL_ID} .bsb-icon-btn:hover {
+        color: var(--ctp-lavender);
+        border-color: color-mix(in srgb, var(--ctp-lavender) 40%, transparent);
+        background: color-mix(in srgb, var(--ctp-lavender) 12%, transparent);
+      }
+      #${PANEL_ID} .bsb-icon-btn.bsb-close:hover {
         color: var(--ctp-red);
         border-color: color-mix(in srgb, var(--ctp-red) 40%, transparent);
         background: color-mix(in srgb, var(--ctp-red) 12%, transparent);
+      }
+
+      /* 拉伸手柄 */
+      #${PANEL_ID} .bsb-resize {
+        position: absolute;
+        z-index: 3;
+        background: transparent;
+      }
+      #${PANEL_ID} .bsb-resize.n { top: 0; left: 10px; right: 10px; height: 6px; cursor: ns-resize; }
+      #${PANEL_ID} .bsb-resize.s { bottom: 0; left: 10px; right: 10px; height: 6px; cursor: ns-resize; }
+      #${PANEL_ID} .bsb-resize.e { right: 0; top: 10px; bottom: 10px; width: 6px; cursor: ew-resize; }
+      #${PANEL_ID} .bsb-resize.w { left: 0; top: 10px; bottom: 10px; width: 6px; cursor: ew-resize; }
+      #${PANEL_ID} .bsb-resize.ne { top: 0; right: 0; width: 12px; height: 12px; cursor: nesw-resize; }
+      #${PANEL_ID} .bsb-resize.nw { top: 0; left: 0; width: 12px; height: 12px; cursor: nwse-resize; }
+      #${PANEL_ID} .bsb-resize.se { bottom: 0; right: 0; width: 14px; height: 14px; cursor: nwse-resize; }
+      #${PANEL_ID} .bsb-resize.sw { bottom: 0; left: 0; width: 12px; height: 12px; cursor: nesw-resize; }
+      #${PANEL_ID} .bsb-resize.se::after {
+        content: "";
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid color-mix(in srgb, var(--ctp-overlay1) 70%, transparent);
+        border-bottom: 2px solid color-mix(in srgb, var(--ctp-overlay1) 70%, transparent);
+        border-radius: 0 0 2px 0;
+      }
+      #${PANEL_ID}.docked .bsb-resize { display: none; }
+      #${PANEL_ID} .bsb-sidebar.dragging,
+      #${PANEL_ID} .bsb-sidebar.resizing {
+        transition: none !important;
+        user-select: none;
       }
 
       #${PANEL_ID} .bsb-body {
@@ -1664,6 +1825,293 @@
     `);
   }
 
+  function applyPanelGeometry() {
+    const root = document.getElementById(PANEL_ID);
+    if (!root || !state.ui) return;
+    const sidebar = root.querySelector(".bsb-sidebar");
+    if (!sidebar) return;
+    const ui = clampUiToViewport(state.ui);
+
+    root.classList.toggle("open", !!state.open);
+    root.classList.toggle("docked", !!ui.dock);
+    root.classList.toggle("dock-expanded", !!(ui.dock && ui.dockExpanded));
+    if (ui.dock) root.setAttribute("data-dock", ui.dock);
+    else root.removeAttribute("data-dock");
+
+    if (ui.dock && !ui.dockExpanded) {
+      // 贴边收起：主面板不占位
+      sidebar.style.left = "";
+      sidebar.style.top = "";
+      sidebar.style.width = "";
+      sidebar.style.height = "";
+    } else {
+      // 悬浮 或 贴边展开
+      if (ui.dock === "right") {
+        sidebar.style.left = Math.max(0, window.innerWidth - ui.w - 8) + "px";
+        sidebar.style.top = Math.max(8, Math.min(ui.y, window.innerHeight - ui.h - 8)) + "px";
+      } else if (ui.dock === "left") {
+        sidebar.style.left = "8px";
+        sidebar.style.top = Math.max(8, Math.min(ui.y, window.innerHeight - ui.h - 8)) + "px";
+      } else {
+        sidebar.style.left = ui.x + "px";
+        sidebar.style.top = ui.y + "px";
+      }
+      sidebar.style.width = ui.w + "px";
+      sidebar.style.height = ui.h + "px";
+      sidebar.style.right = "auto";
+      sidebar.style.bottom = "auto";
+    }
+
+    sidebar.setAttribute(
+      "aria-hidden",
+      state.open && (!ui.dock || ui.dockExpanded) ? "false" : "true",
+    );
+    const fab = root.querySelector(".bsb-fab");
+    if (fab) fab.setAttribute("aria-expanded", state.open || !!ui.dock ? "true" : "false");
+  }
+
+  function bindPanelChrome(root) {
+    const sidebar = root.querySelector(".bsb-sidebar");
+    const fab = root.querySelector(".bsb-fab");
+    const head = root.querySelector(".bsb-head");
+    const dockTab = root.querySelector(".bsb-dock-tab");
+    let hideTimer = null;
+
+    state.ui = loadUiGeom();
+
+    function setOpen(open) {
+      state.open = open;
+      if (open) {
+        // 从收起打开时，若已 dock 则展开；否则悬浮
+        if (state.ui.dock) state.ui.dockExpanded = true;
+        refreshContextUI();
+      } else {
+        state.ui.dock = null;
+        state.ui.dockExpanded = false;
+      }
+      applyPanelGeometry();
+      saveUiGeom();
+    }
+
+    function setDock(side) {
+      // side: 'left' | 'right' | null
+      if (side) {
+        state.open = true;
+        state.ui.dock = side;
+        state.ui.dockExpanded = false;
+        if (side === "right") {
+          state.ui.x = Math.max(0, window.innerWidth - state.ui.w - 12);
+        } else {
+          state.ui.x = 12;
+        }
+      } else {
+        state.ui.dock = null;
+        state.ui.dockExpanded = false;
+        state.open = true;
+      }
+      applyPanelGeometry();
+      saveUiGeom();
+      setStatus(
+        side
+          ? `已贴边收起（${side === "right" ? "右" : "左"}侧）· 点标签展开`
+          : "已取消贴边 · 悬浮模式",
+      );
+    }
+
+    function toggleDockExpanded(force) {
+      if (!state.ui.dock) return;
+      state.ui.dockExpanded =
+        typeof force === "boolean" ? force : !state.ui.dockExpanded;
+      state.open = true;
+      applyPanelGeometry();
+      if (state.ui.dockExpanded) refreshContextUI();
+    }
+
+    function scheduleAutoHide() {
+      if (!state.ui.dock || !state.ui.dockExpanded) return;
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        if (!state.ui.dock) return;
+        // 指针仍在面板/标签上则不收
+        const hover = root.querySelector(".bsb-sidebar:hover, .bsb-dock-tab:hover");
+        if (hover) {
+          scheduleAutoHide();
+          return;
+        }
+        state.ui.dockExpanded = false;
+        applyPanelGeometry();
+      }, 700);
+    }
+
+    fab.addEventListener("click", () => {
+      if (state.ui.dock) {
+        toggleDockExpanded(true);
+      } else {
+        setOpen(!state.open);
+      }
+    });
+
+    root.querySelector(".bsb-close").addEventListener("click", (e) => {
+      e.stopPropagation();
+      setOpen(false);
+    });
+    root.querySelector('[data-act="dock"]').addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (state.ui.dock) {
+        setDock(null);
+      } else {
+        // 靠近哪边就贴哪边，默认右
+        const mid = state.ui.x + state.ui.w / 2;
+        setDock(mid < window.innerWidth / 2 ? "left" : "right");
+      }
+    });
+    root.querySelector('[data-act="collapse"]').addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (!state.ui.dock) {
+        const mid = state.ui.x + state.ui.w / 2;
+        setDock(mid < window.innerWidth / 2 ? "left" : "right");
+      } else {
+        toggleDockExpanded(false);
+      }
+    });
+
+    dockTab.addEventListener("click", () => toggleDockExpanded(true));
+    dockTab.addEventListener("mouseenter", () => {
+      clearTimeout(hideTimer);
+      if (state.ui.dock && !state.ui.dockExpanded) toggleDockExpanded(true);
+    });
+    sidebar.addEventListener("mouseenter", () => clearTimeout(hideTimer));
+    sidebar.addEventListener("mouseleave", () => scheduleAutoHide());
+    dockTab.addEventListener("mouseleave", () => scheduleAutoHide());
+
+    // ── drag ──
+    let drag = null;
+    head.addEventListener("pointerdown", (e) => {
+      if (e.button !== 0) return;
+      if (e.target.closest("button, select, input, a, label")) return;
+      if (state.ui.dock) {
+        // 贴边时拖标题：取消贴边进入悬浮
+        state.ui.dock = null;
+        state.ui.dockExpanded = false;
+        state.open = true;
+      }
+      drag = {
+        pid: e.pointerId,
+        ox: e.clientX - state.ui.x,
+        oy: e.clientY - state.ui.y,
+      };
+      head.setPointerCapture(e.pointerId);
+      sidebar.classList.add("dragging");
+      e.preventDefault();
+    });
+    head.addEventListener("pointermove", (e) => {
+      if (!drag || e.pointerId !== drag.pid) return;
+      state.ui.x = e.clientX - drag.ox;
+      state.ui.y = e.clientY - drag.oy;
+      clampUiToViewport(state.ui);
+      applyPanelGeometry();
+    });
+    function endDrag(e) {
+      if (!drag || (e && e.pointerId !== drag.pid)) return;
+      drag = null;
+      sidebar.classList.remove("dragging");
+      // 贴边吸附
+      if (state.ui.x <= DOCK_SNAP_PX) {
+        setDock("left");
+      } else if (state.ui.x + state.ui.w >= window.innerWidth - DOCK_SNAP_PX) {
+        setDock("right");
+      } else {
+        saveUiGeom();
+      }
+    }
+    head.addEventListener("pointerup", endDrag);
+    head.addEventListener("pointercancel", endDrag);
+
+    // ── resize ──
+    let resize = null;
+    root.querySelectorAll(".bsb-resize").forEach((handle) => {
+      handle.addEventListener("pointerdown", (e) => {
+        if (e.button !== 0 || state.ui.dock) return;
+        const dir = handle.getAttribute("data-dir");
+        resize = {
+          pid: e.pointerId,
+          dir,
+          sx: e.clientX,
+          sy: e.clientY,
+          ox: state.ui.x,
+          oy: state.ui.y,
+          ow: state.ui.w,
+          oh: state.ui.h,
+        };
+        handle.setPointerCapture(e.pointerId);
+        sidebar.classList.add("resizing");
+        e.preventDefault();
+        e.stopPropagation();
+      });
+      handle.addEventListener("pointermove", (e) => {
+        if (!resize || e.pointerId !== resize.pid) return;
+        const dx = e.clientX - resize.sx;
+        const dy = e.clientY - resize.sy;
+        let { x, y, w, h } = {
+          x: resize.ox,
+          y: resize.oy,
+          w: resize.ow,
+          h: resize.oh,
+        };
+        const d = resize.dir;
+        if (d.includes("e")) w = resize.ow + dx;
+        if (d.includes("s")) h = resize.oh + dy;
+        if (d.includes("w")) {
+          w = resize.ow - dx;
+          x = resize.ox + dx;
+        }
+        if (d.includes("n")) {
+          h = resize.oh - dy;
+          y = resize.oy + dy;
+        }
+        if (w < MIN_W) {
+          if (d.includes("w")) x = resize.ox + (resize.ow - MIN_W);
+          w = MIN_W;
+        }
+        if (h < MIN_H) {
+          if (d.includes("n")) y = resize.oy + (resize.oh - MIN_H);
+          h = MIN_H;
+        }
+        state.ui.x = x;
+        state.ui.y = y;
+        state.ui.w = w;
+        state.ui.h = h;
+        clampUiToViewport(state.ui);
+        applyPanelGeometry();
+      });
+      function endResize(e) {
+        if (!resize || (e && e.pointerId !== resize.pid)) return;
+        resize = null;
+        sidebar.classList.remove("resizing");
+        saveUiGeom();
+      }
+      handle.addEventListener("pointerup", endResize);
+      handle.addEventListener("pointercancel", endResize);
+    });
+
+    window.addEventListener("resize", () => {
+      if (!state.ui) return;
+      clampUiToViewport(state.ui);
+      applyPanelGeometry();
+    });
+
+    // 若上次是 dock，启动时只显示贴边标签
+    if (state.ui.dock) {
+      state.open = true;
+      state.ui.dockExpanded = false;
+    }
+    applyPanelGeometry();
+
+    // expose for external refresh
+    root._bsbSetOpen = setOpen;
+    root._bsbSetDock = setDock;
+  }
+
   function ensurePanel() {
     let root = document.getElementById(PANEL_ID);
     if (root) return root;
@@ -1672,14 +2120,27 @@
     root.id = PANEL_ID;
     root.setAttribute("data-ctp-flavor", "mocha");
     root.innerHTML = `
+      <button type="button" class="bsb-dock-tab" title="展开字幕面板">字幕 CC</button>
       <aside class="bsb-sidebar" role="dialog" aria-label="Bili SubBatch" aria-hidden="true">
+        <div class="bsb-resize n" data-dir="n"></div>
+        <div class="bsb-resize s" data-dir="s"></div>
+        <div class="bsb-resize e" data-dir="e"></div>
+        <div class="bsb-resize w" data-dir="w"></div>
+        <div class="bsb-resize ne" data-dir="ne"></div>
+        <div class="bsb-resize nw" data-dir="nw"></div>
+        <div class="bsb-resize se" data-dir="se"></div>
+        <div class="bsb-resize sw" data-dir="sw"></div>
         <div class="bsb-head">
-          <div>
+          <div class="bsb-head-title">
             <strong>字幕下载</strong>
             <span class="bsb-ver">v${SCRIPT_VERSION}</span>
             <span class="bsb-flavor" title="Catppuccin Mocha">mocha</span>
           </div>
-          <button type="button" class="bsb-close" title="关闭" aria-label="关闭">×</button>
+          <div class="bsb-head-actions">
+            <button type="button" class="bsb-icon-btn" data-act="dock" title="贴边收起 / 取消贴边">⧉</button>
+            <button type="button" class="bsb-icon-btn" data-act="collapse" title="收起到侧边">—</button>
+            <button type="button" class="bsb-icon-btn bsb-close" title="关闭" aria-label="关闭">×</button>
+          </div>
         </div>
         <div class="bsb-body">
           <div>
@@ -1721,27 +2182,14 @@
             <button type="button" data-act="dl-ok-only" title="仅下载已成功项">再下成功项</button>
             <button type="button" data-act="clear">清空列表</button>
           </div>
-          <div class="bsb-status" data-role="status">就绪</div>
-          <div class="bsb-foot">Catppuccin Mocha · 透明可穿透 · 对齐 bili_subbatch · 请适度限速</div>
+          <div class="bsb-status" data-role="status">就绪 · 拖标题移动 · 拖边角拉伸 · 贴边自动收起</div>
+          <div class="bsb-foot">Catppuccin Mocha · 可拖拽/拉伸/贴边 · 对齐 bili_subbatch</div>
         </div>
       </aside>
       <button type="button" class="bsb-fab" title="Bili SubBatch（Catppuccin）" aria-expanded="false">CC</button>
     `;
     document.documentElement.appendChild(root);
-
-    const sidebar = root.querySelector(".bsb-sidebar");
-    const fab = root.querySelector(".bsb-fab");
-
-    function setOpen(open) {
-      state.open = open;
-      root.classList.toggle("open", open);
-      sidebar.setAttribute("aria-hidden", open ? "false" : "true");
-      fab.setAttribute("aria-expanded", open ? "true" : "false");
-      if (open) refreshContextUI();
-    }
-
-    fab.addEventListener("click", () => setOpen(!state.open));
-    root.querySelector(".bsb-close").addEventListener("click", () => setOpen(false));
+    bindPanelChrome(root);
 
     root.querySelector('[data-role="max-pages"]').addEventListener("change", (e) => {
       state.maxPages = Math.max(1, Math.min(100, Number(e.target.value) || DEFAULT_MAX_PAGES));
@@ -1759,8 +2207,10 @@
       );
     });
 
-    root.querySelectorAll("[data-act]").forEach((btn) => {
-      btn.addEventListener("click", () => onAction(btn.getAttribute("data-act")));
+    root.querySelectorAll("button[data-act]").forEach((btn) => {
+      const act = btn.getAttribute("data-act");
+      if (act === "dock" || act === "collapse") return; // bound in chrome
+      btn.addEventListener("click", () => onAction(act));
     });
 
     return root;
