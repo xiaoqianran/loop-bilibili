@@ -2,7 +2,7 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.7.0）
+## `bili-subbatch.user.js`（v0.7.1）
 
 **世界级工作台 UI（v0.7）**：三栏导航，**AI 笔记默认占满主画布**；字幕库 / 设置各为独立页。Catppuccin Mocha 玻璃拟态、可拖拽/拉伸/贴边。
 
@@ -52,10 +52,11 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.7.0**）  
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.7.1**）  
 3. 右下角 **CC** 打开工作台（默认 **AI 笔记** 全高画布）  
 4. 切到 **字幕库** → 扫描 / 勾选 → 回 **AI 笔记** → **开始分析**  
-5. 首次用 AI：进 **设置**，填 Base URL / Key / Model → **保存配置**（推理模型建议关流式）
+5. 首次用 AI：进 **设置**，填 Base URL / Key / Model → **保存配置**  
+6. **流式输出默认开启**（防 `client_gone`）；勿随意关闭
 
 ### UI
 
@@ -94,19 +95,25 @@
 | System 提示词 | 角色与输出格式约束 | 中文笔记 + MD + mermaid |
 | User 模板 | 业务提示 + 字幕占位 | 见脚本默认 |
 
-#### v0.6.1 修复（「一直连接中」）
+#### v0.6.1 / v0.7.1 修复笔记
 
-实测 `openai/gpt-oss-120b` 返回字段：
+**「一直连接中」**（字段）：`gpt-oss` 流式先推 `reasoning`/`reasoning_content`，旧代码只读 `content`。
 
-- 流式 chunk 里经常是 `delta.reasoning` / `reasoning_content`，`content` 为空字符串  
-- 非流式最终 `message.content` 有正文，同时带长 `reasoning`
+**「client_gone / context canceled」**（你贴的日志，v0.7.1）：
 
-旧版只读 `delta.content`，界面一直停在「连接中…」。现已：
+| 现象 | 原因 |
+|------|------|
+| 状态 error · 结束原因 `client_gone` | **浏览器/油猴客户端先断开**，不是模型本身失败 |
+| 响应约 10.0s，已有输出 token | 非流式等整包；空闲无字节时中间层/扩展常在 ~10s 掐连接 |
+| 输入 13k tokens | 字幕过长，生成更慢，更容易断 |
 
-1. 同时解析 `content` + `reasoning` / `reasoning_content`  
-2. SSE **按行缓冲**（避免半包 JSON 丢弃）  
-3. 默认 **非流式**；可选打开流式  
-4. 状态栏显示接收进度（字节 / 正文长度 / 思考长度）
+修复：
+
+1. **默认强制 SSE 流式保活**（`stream: true`，配置键 `bili-subbatch-ai-v2`）  
+2. `timeout: 0` 禁用 GM 超时  
+3. 流式阶段只刷纯文本，结束后再 Markdown/高亮/Mermaid  
+4. 字幕超长截断（默认约 1.8 万字）控制 token  
+5. 停止 AI 只 abort 当前 XHR，不误伤其它逻辑
 
 配置持久化：`localStorage` 键 **`bili-subbatch-ai-v1`**（**不会**随 git 同步；请勿把真实 Key 提交进仓库）。
 
@@ -194,6 +201,7 @@ Content-Type: application/json
 | **0.6** | **OpenAI 兼容 AI：提示词、流式、MD/高亮/Mermaid** |
 | **0.6.1** | **修复推理模型 reasoning 字段；默认非流式；SSE 行缓冲** |
 | **0.7.0** | **三工作区 UI：AI 全高画布 / 字幕库 / 设置** |
+| **0.7.1** | **修复 client_gone：默认流式保活、timeout:0、字幕截断** |
 
 ### 自检
 

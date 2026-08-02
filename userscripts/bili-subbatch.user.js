@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.7.0
-// @description  B站字幕+AI 工作台：三栏导航、AI 全高画布、Catppuccin 世界级悬浮 UI
+// @version      0.7.1
+// @description  B站字幕+AI 工作台：流式保活修复 client_gone、三栏导航、Catppuccin UI
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -34,10 +34,12 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.7.0";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.7.1";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
-  const AI_STORE_KEY = "bili-subbatch-ai-v1";
+  /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
+  const AI_STORE_KEY = "bili-subbatch-ai-v2";
+  const MAX_SUBTITLE_CHARS = 18000;
   const WBI_TTL_MS = 600_000;
   const DEFAULT_DELAY_MS = 400;
   const DEFAULT_MAX_PAGES = 20;
@@ -53,8 +55,12 @@
     model: "openai/gpt-oss-120b",
     temperature: 0.4,
     maxTokens: 4096,
-    /** 推理模型流式时 content 常为空；默认 false 更稳。可在配置里打开 stream */
-    stream: false,
+    /**
+     * 必须默认 true：非流式要等整包，长请求常被扩展/代理 ~10s 空闲断开
+     * 网关日志表现为 client_gone / context canceled。
+     * 流式会先推 reasoning，已兼容 content+reasoning 字段。
+     */
+    stream: true,
     systemPrompt:
       "你是资深内容分析助手。根据用户提供的 B 站视频字幕，输出结构清晰、可执行的中文笔记。" +
       "需要时使用 Markdown：标题、列表、表格；代码用 fenced code block 并标注语言；" +
@@ -1288,6 +1294,7 @@
     aiBusy: false,
     aiAbort: false,
     aiRaw: "", // streaming markdown buffer
+    aiXhr: null, // active GM_xmlhttpRequest handle
     renderLibsReady: false,
   };
 
@@ -2509,8 +2516,8 @@
                     </label>
                   </div>
                   <label style="flex-direction:row;align-items:center;gap:8px;margin-bottom:10px">
-                    <input type="checkbox" data-ai="stream" style="width:auto">
-                    流式输出（推理模型建议关闭）
+                    <input type="checkbox" data-ai="stream" style="width:auto" checked>
+                    流式输出（默认开：防止 client_gone 断连；仅调试可关）
                   </label>
                   <label>System 提示词
                     <textarea data-ai="systemPrompt" rows="4"></textarea>
@@ -2745,7 +2752,14 @@
     }
     if (act === "ai-stop") {
       state.aiAbort = true;
-      state.cancel = true;
+      // 不要动 state.cancel（避免误伤字幕扫描）；只 abort AI xhr
+      try {
+        if (state.aiXhr && typeof state.aiXhr.abort === "function") {
+          state.aiXhr.abort();
+        }
+      } catch (_) {
+        /* */
+      }
       setStatus("正在停止 AI…");
       return;
     }
@@ -2827,7 +2841,8 @@
           ? Number(o.temperature)
           : AI_DEFAULTS.temperature,
         maxTokens: Number(o.maxTokens) || AI_DEFAULTS.maxTokens,
-        stream: o.stream === true || o.stream === "true" || o.stream === 1,
+        // 缺省 true；仅显式 false 才关
+        stream: !(o.stream === false || o.stream === "false" || o.stream === 0),
         systemPrompt: String(o.systemPrompt || AI_DEFAULTS.systemPrompt),
         userPromptTemplate: String(
           o.userPromptTemplate || AI_DEFAULTS.userPromptTemplate,
@@ -3165,8 +3180,13 @@
 
   /**
    * OpenAI-compatible chat.completions.
-   * stream=true：SSE + 行缓冲；stream=false：整包 JSON（更稳，默认推荐推理模型）。
-   * 兼容 content / reasoning / reasoning_content。
+   *
+   * 重要（v0.7.1）：
+   * - 网关日志 client_gone / context canceled = 客户端先断开
+   * - 非流式要等整包，长推理 10s+ 无字节时，扩展/代理常会掐连接
+   * - 默认必须用 stream=true 保活；onprogress 增量读 SSE
+   * - timeout:0 禁用超时；仅用户点「停止」才 abort
+   * - 兼容 content + reasoning / reasoning_content
    */
   function requestChatCompletion({
     baseUrl,
@@ -3185,20 +3205,24 @@
     let assembledContent = "";
     let assembledReasoning = "";
     let settled = false;
-    let rawAll = "";
     let lineBuf = "";
     let lastSeenLen = 0;
+    let lastStatusAt = 0;
+    /** @type {{ abort?: () => void } | null} */
+    let xhrHandle = null;
 
     const finish = (err) => {
       if (settled) return;
       settled = true;
+      if (state.aiXhr === xhrHandle) state.aiXhr = null;
       if (err) onError && onError(err);
       else {
         const display = formatAiDisplay(assembledContent, assembledReasoning);
-        onDone && onDone(display, {
-          content: assembledContent,
-          reasoning: assembledReasoning,
-        });
+        onDone &&
+          onDone(display, {
+            content: assembledContent,
+            reasoning: assembledReasoning,
+          });
       }
     };
 
@@ -3226,7 +3250,7 @@
 
     const handleSseLine = (line) => {
       const t = line.trim();
-      if (!t || t.startsWith(":")) return; // comment / keepalive
+      if (!t || t.startsWith(":")) return;
       if (!t.startsWith("data:")) return;
       const data = t.slice(5).trim();
       if (!data) return;
@@ -3243,70 +3267,89 @@
         const { content, reasoning } = extractFromChoice(j.choices?.[0]);
         applyPiece(content, reasoning);
       } catch (_) {
-        /* incomplete json line should not reach here if line-buffered */
+        /* skip bad line */
       }
     };
 
     const ingestSseText = (fullText) => {
-      // only new bytes
       if (fullText.length < lastSeenLen) lastSeenLen = 0;
       const neu = fullText.slice(lastSeenLen);
       lastSeenLen = fullText.length;
-      rawAll = fullText;
       if (!neu) return;
       lineBuf += neu;
       const lines = lineBuf.split(/\r?\n/);
       lineBuf = lines.pop() || "";
       for (const line of lines) handleSseLine(line);
-      onStatus &&
-        onStatus(
-          `流式接收中… ${fullText.length}B · 正文 ${assembledContent.length} · 思考 ${assembledReasoning.length}`,
-        );
+      const now = Date.now();
+      if (now - lastStatusAt > 400) {
+        lastStatusAt = now;
+        onStatus &&
+          onStatus(
+            `流式接收… ${fullText.length}B · 正文 ${assembledContent.length} · 思考 ${assembledReasoning.length}`,
+          );
+      }
     };
 
     const parseNonStreamJson = (text) => {
       const j = JSON.parse(text);
       if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
       const { content, reasoning } = extractFromChoice(j.choices?.[0]);
-      // non-stream: replace not append
       assembledContent = content || "";
       assembledReasoning = reasoning || "";
-      // some gateways only put final text in one of the fields
       if (!assembledContent && !assembledReasoning) {
         const alt =
-          j.choices?.[0]?.text ||
-          j.output_text ||
-          j.message ||
-          "";
+          j.choices?.[0]?.text || j.output_text || j.message || "";
         if (typeof alt === "string") assembledContent = alt;
       }
       emit();
     };
 
+    const useStream = stream !== false; // default true
     const body = {
       model,
       messages,
       temperature,
       max_tokens: maxTokens,
-      stream: !!stream,
+      stream: useStream,
     };
 
-    onStatus && onStatus(stream ? "发起流式请求…" : "发起非流式请求…");
+    onStatus &&
+      onStatus(
+        useStream
+          ? "发起流式请求（保活，避免 client_gone）…"
+          : "发起非流式请求（长任务可能被中断）…",
+      );
 
-    const req = GM_xmlhttpRequest({
+    // 取消上一次未完成的 AI 请求，避免双开互相 abort
+    if (state.aiXhr && typeof state.aiXhr.abort === "function") {
+      try {
+        state.aiXhr.abort();
+      } catch (_) {
+        /* */
+      }
+    }
+
+    xhrHandle = GM_xmlhttpRequest({
       method: "POST",
       url,
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + apiKey,
-        Accept: stream ? "text/event-stream, application/json" : "application/json",
+        Accept: useStream
+          ? "text/event-stream, application/json"
+          : "application/json",
       },
       data: JSON.stringify(body),
       responseType: "text",
+      // 0 = 不超时（TM/GM 文档）。切勿用短 timeout，否则会 client_gone
+      timeout: 0,
+      onloadstart() {
+        onStatus && onStatus("已连接网关，等待首包…");
+      },
       onprogress(res) {
         if (state.aiAbort) {
           try {
-            if (typeof req?.abort === "function") req.abort();
+            xhrHandle && xhrHandle.abort && xhrHandle.abort();
           } catch (_) {
             /* */
           }
@@ -3314,9 +3357,9 @@
           return;
         }
         const text = res.responseText || "";
-        if (stream) ingestSseText(text);
+        if (useStream) ingestSseText(text);
         else if (text) {
-          onStatus && onStatus(`等待响应… 已缓冲 ${text.length}B`);
+          onStatus && onStatus(`非流式缓冲中… ${text.length}B（完成后才解析）`);
         }
       },
       onload(res) {
@@ -3325,21 +3368,20 @@
           return;
         }
         const text = res.responseText || "";
-        rawAll = text;
         if (res.status < 200 || res.status >= 300) {
-          finish(
-            new Error(`HTTP ${res.status}: ${(text || "").slice(0, 300)}`),
-          );
+          finish(new Error(`HTTP ${res.status}: ${(text || "").slice(0, 300)}`));
           return;
         }
         try {
-          if (stream) {
+          if (useStream) {
             ingestSseText(text);
-            // flush last line
             if (lineBuf.trim()) handleSseLine(lineBuf);
             lineBuf = "";
-            // gateway 可能直接回 JSON 而非 SSE
-            if (!assembledContent && !assembledReasoning && text.trim().startsWith("{")) {
+            if (
+              !assembledContent &&
+              !assembledReasoning &&
+              text.trim().startsWith("{")
+            ) {
               parseNonStreamJson(text);
             }
           } else {
@@ -3366,15 +3408,35 @@
         finish(null);
       },
       onerror() {
-        finish(new Error("网络错误（检查 Base URL / @connect / 扩展权限）"));
+        finish(
+          new Error(
+            "网络错误或连接被中断（client_gone）。请确认使用流式、@connect *，并重试",
+          ),
+        );
       },
       ontimeout() {
-        finish(new Error("请求超时"));
+        finish(new Error("请求超时（已禁用 timeout 仍触发则请升级油猴）"));
       },
-      timeout: 300000, // 5 min — 推理模型可能较慢
+      onabort() {
+        finish(new Error(state.aiAbort ? "用户停止" : "请求被中止"));
+      },
     });
 
-    return req;
+    state.aiXhr = xhrHandle;
+    return xhrHandle;
+  }
+
+  function truncateForAi(text, maxChars) {
+    const s = String(text || "");
+    const lim = maxChars || MAX_SUBTITLE_CHARS;
+    if (s.length <= lim) return { text: s, truncated: false };
+    return {
+      text:
+        s.slice(0, lim) +
+        `\n\n…[字幕已截断 ${s.length - lim} 字，避免超长 token 导致超时/断连]`,
+      truncated: true,
+      originalLen: s.length,
+    };
   }
 
   async function ensureSubtitlesForAi(targets) {
@@ -3455,13 +3517,17 @@
         return;
       }
 
-      const subtitle = buildSubtitlePayload(ready);
+      const built = buildSubtitlePayload(ready);
+      const cut = truncateForAi(built, MAX_SUBTITLE_CHARS);
       const first = ready[0];
       const vars = {
-        title: ready.map((x) => x.title).filter(Boolean).join(" / ") || first.title || "",
+        title:
+          ready.map((x) => x.title).filter(Boolean).join(" / ") ||
+          first.title ||
+          "",
         bvid: ready.map((x) => x.bvid).join(", "),
         author: first.author || "",
-        subtitle,
+        subtitle: cut.text,
       };
       const userContent = applyPromptTemplate(cfg.userPromptTemplate, vars);
       const messages = [];
@@ -3470,11 +3536,14 @@
       }
       messages.push({ role: "user", content: userContent });
 
+      // 长任务强制建议流式；仅当用户明确关 stream 才非流式
+      const useStream = cfg.stream !== false;
       setStatus(
-        `AI 请求中 · ${cfg.model} · ${cfg.stream ? "SSE流式" : "非流式"} · ${ready.length} 条字幕…`,
+        `AI 请求中 · ${cfg.model} · ${useStream ? "SSE流式保活" : "非流式"} · ${ready.length} 条` +
+          (cut.truncated ? " · 字幕已截断" : ""),
       );
       if (mdEl) {
-        mdEl.innerHTML = `<p>请求 ${escapeHtml(cfg.baseUrl)}/chat/completions …</p><p style="color:var(--ctp-overlay1)">${cfg.stream ? "流式" : "非流式"} · 兼容 content/reasoning 字段</p>`;
+        mdEl.innerHTML = `<div class="bsb-empty"><div class="bsb-empty-ico">◌</div><strong>正在生成…</strong><span>${escapeHtml(cfg.baseUrl)}/chat/completions<br>${useStream ? "流式保活（防 client_gone）" : "非流式（长任务易断）"} · 兼容 reasoning</span></div>`;
       }
 
       let lastPaint = 0;
@@ -3486,16 +3555,25 @@
           temperature: cfg.temperature,
           maxTokens: cfg.maxTokens,
           messages,
-          stream: !!cfg.stream,
+          stream: useStream,
           onStatus(msg) {
             setStatus(msg);
           },
           onDelta(_d, full) {
             state.aiRaw = full;
             const now = Date.now();
-            if (now - lastPaint > 100) {
+            // 流式阶段只刷轻量文本，避免 marked/mermaid 卡死主线程导致断连
+            if (now - lastPaint > 200) {
               lastPaint = now;
-              renderAiMarkdown(full || "…", { streaming: true });
+              const rawEl = root.querySelector('[data-role="ai-raw"]');
+              const box = root.querySelector('[data-role="ai-md"]');
+              const streamEl = root.querySelector('[data-role="ai-stream"]');
+              if (streamEl) streamEl.classList.add("streaming");
+              if (rawEl) rawEl.textContent = (full || "").slice(-4000);
+              if (box) {
+                box.innerHTML = `<pre style="white-space:pre-wrap;word-break:break-word;margin:0;font-size:13px;line-height:1.55;color:var(--ctp-text)">${escapeHtml(full || "…")}</pre>`;
+                box.scrollTop = box.scrollHeight;
+              }
             }
           },
           onDone(full) {
