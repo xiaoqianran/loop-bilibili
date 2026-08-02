@@ -2,10 +2,12 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.8.1）
+## `bili-subbatch.user.js`（v0.8.2）
 
-**AI 工作台（v0.8）**：三栏导航，**AI 笔记默认全高画布**；对齐业界油猴 AI 脚本实践（见 [PEER_AI_PRACTICES.md](PEER_AI_PRACTICES.md)）。Catppuccin Mocha、可拖拽/拉伸/贴边。  
-**v0.8.1**：仓库内 **不** 硬编码 API Key；GM stream→text 回退 **不会** 并行双 POST。
+**AI 工作台（v0.8）**：三栏导航，**AI 笔记默认全高画布**；对齐业界油猴 AI 脚本实践（见 [PEER_AI_PRACTICES.md](PEER_AI_PRACTICES.md)）。  
+
+- **v0.8.1**：不硬编码 API Key；GM 回退单飞  
+- **v0.8.2**：流式**可自由上滑阅读**（上滑停跟随；「↓ 最新」跳回）；正文**宽松排版**（更大字号/行距/段距、限宽）
 
 | 工作区 | 用途 |
 |--------|------|
@@ -53,7 +55,7 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版，版本 **0.8.1**）  
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版，版本 **0.8.2**）  
 3. 右下角 **CC** 打开工作台（默认 **AI 笔记**）  
 4. **字幕库** → 扫描 / 勾选 → **AI 笔记** → **开始分析**  
 5. **设置**：Base URL / Key / Model → **保存**（流式默认开）  
