@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.7.2
-// @description  B站字幕+AI：修复 TM timeout 强制 fetch 导致 ontimeout；流式保活
+// @version      0.7.3
+// @description  B站字幕+AI：优先页内 fetch 流式（opencli 验证）；GM 回退
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -34,7 +34,7 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.7.2";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.7.3";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
   /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
@@ -1295,6 +1295,7 @@
     aiAbort: false,
     aiRaw: "", // streaming markdown buffer
     aiXhr: null, // active GM_xmlhttpRequest handle
+    aiAbortController: null, // page fetch AbortController
     renderLibsReady: false,
   };
 
@@ -2752,7 +2753,11 @@
     }
     if (act === "ai-stop") {
       state.aiAbort = true;
-      // 不要动 state.cancel（避免误伤字幕扫描）；只 abort AI xhr
+      try {
+        if (state.aiAbortController) state.aiAbortController.abort();
+      } catch (_) {
+        /* */
+      }
       try {
         if (state.aiXhr && typeof state.aiXhr.abort === "function") {
           state.aiXhr.abort();
@@ -3181,86 +3186,135 @@
   /**
    * OpenAI-compatible chat.completions.
    *
-   * 重要（v0.7.1）：
-   * - 网关日志 client_gone / context canceled = 客户端先断开
-   * - 非流式要等整包，长推理 10s+ 无字节时，扩展/代理常会掐连接
-   * - 默认必须用 stream=true 保活；onprogress 增量读 SSE
-   * - 切勿设置 timeout：TM 文档写明 timeout 会 enforce fetch mode，
-   *   Chrome 下 fetch 模式 onprogress 不可用，且 timeout:0 仍会触发 ontimeout
-   * - 仅用户点「停止」才 abort；兼容 content + reasoning
+   * 路径优先级（v0.7.3，opencli 浏览器实测）：
+   * 1) 页面原生 fetch + ReadableStream（B 站页面对 newapi CORS 可用，首包~1s）
+   * 2) GM_xmlhttpRequest 回退（勿设 timeout，避免 TM fetch 模式 + ontimeout）
    */
-  function requestChatCompletion({
-    baseUrl,
+  function requestChatCompletion(opts) {
+    const {
+      baseUrl,
+      apiKey,
+      model,
+      temperature,
+      maxTokens,
+      messages,
+      stream,
+      onDelta,
+      onDone,
+      onError,
+      onStatus,
+    } = opts;
+    const url = baseUrl.replace(/\/+$/, "") + "/chat/completions";
+    const useStream = stream !== false;
+    const body = {
+      model,
+      messages,
+      temperature,
+      max_tokens: maxTokens,
+      stream: useStream,
+    };
+
+    // cancel previous
+    try {
+      if (state.aiAbortController) state.aiAbortController.abort();
+    } catch (_) {
+      /* */
+    }
+    try {
+      if (state.aiXhr && typeof state.aiXhr.abort === "function") {
+        state.aiXhr.abort();
+      }
+    } catch (_) {
+      /* */
+    }
+    state.aiAbortController = null;
+    state.aiXhr = null;
+
+    // Prefer page fetch (validated via opencli browser eval)
+    requestChatViaPageFetch({
+      url,
+      apiKey,
+      body,
+      useStream,
+      onDelta,
+      onDone,
+      onError: (err) => {
+        // CORS / network → fall back to GM
+        const msg = String(err && err.message ? err.message : err);
+        if (
+          /cors|failed to fetch|networkerror|load failed|blocked/i.test(msg) ||
+          err?.name === "TypeError"
+        ) {
+          onStatus && onStatus(`页内 fetch 失败(${msg.slice(0, 60)})，改用 GM…`);
+          requestChatViaGm({
+            url,
+            apiKey,
+            body,
+            useStream,
+            onDelta,
+            onDone,
+            onError,
+            onStatus,
+          });
+        } else {
+          onError && onError(err);
+        }
+      },
+      onStatus,
+    });
+  }
+
+  function requestChatViaPageFetch({
+    url,
     apiKey,
-    model,
-    temperature,
-    maxTokens,
-    messages,
-    stream,
+    body,
+    useStream,
     onDelta,
     onDone,
     onError,
     onStatus,
   }) {
-    const url = baseUrl.replace(/\/+$/, "") + "/chat/completions";
     let assembledContent = "";
     let assembledReasoning = "";
     let settled = false;
     let lineBuf = "";
-    let lastSeenLen = 0;
     let lastStatusAt = 0;
-    /** @type {{ abort?: () => void } | null} */
-    let xhrHandle = null;
+    const ac = new AbortController();
+    state.aiAbortController = ac;
 
     const finish = (err) => {
       if (settled) return;
       settled = true;
-      if (state.aiXhr === xhrHandle) state.aiXhr = null;
+      if (state.aiAbortController === ac) state.aiAbortController = null;
       if (err) onError && onError(err);
       else {
-        const display = formatAiDisplay(assembledContent, assembledReasoning);
         onDone &&
-          onDone(display, {
+          onDone(formatAiDisplay(assembledContent, assembledReasoning), {
             content: assembledContent,
             reasoning: assembledReasoning,
           });
       }
     };
 
-    const softFinishOrError = (label) => {
-      // 已有正文/思考则当成功；避免 TM 误报 ontimeout 毁掉结果
-      if (assembledContent || assembledReasoning) {
-        onStatus && onStatus(`${label}，但已收到内容，按成功结束`);
-        finish(null);
-        return;
-      }
-      finish(
-        new Error(
-          `${label}。请确认流式已开、油猴版本较新；勿在脚本里设置 timeout 字段`,
-        ),
-      );
-    };
-
     const emit = () => {
-      const display = formatAiDisplay(assembledContent, assembledReasoning);
       onDelta &&
-        onDelta("", display, {
+        onDelta("", formatAiDisplay(assembledContent, assembledReasoning), {
           content: assembledContent,
           reasoning: assembledReasoning,
         });
     };
 
-    const applyPiece = (contentDelta, reasoningDelta) => {
-      let changed = false;
-      if (contentDelta) {
-        assembledContent += contentDelta;
-        changed = true;
+    const applyPiece = (c, r) => {
+      let ch = false;
+      if (c) {
+        assembledContent += c;
+        ch = true;
       }
-      if (reasoningDelta) {
-        assembledReasoning += reasoningDelta;
-        changed = true;
+      if (r) {
+        assembledReasoning += r;
+        ch = true;
       }
-      if (changed) emit();
+      if (ch) emit();
     };
 
     const handleSseLine = (line) => {
@@ -3269,10 +3323,177 @@
       if (!t.startsWith("data:")) return;
       const data = t.slice(5).trim();
       if (!data) return;
-      if (data === "[DONE]") {
+      if (data === "[DONE]") return;
+      try {
+        const j = JSON.parse(data);
+        if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
+        const { content, reasoning } = extractFromChoice(j.choices?.[0]);
+        applyPiece(content, reasoning);
+      } catch (e) {
+        if (e && e.message && !/JSON/.test(e.message)) throw e;
+      }
+    };
+
+    onStatus && onStatus("页内 fetch 流式请求（opencli 同款路径）…");
+
+    (async () => {
+      try {
+        if (state.aiAbort) throw new Error("用户停止");
+        const res = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + apiKey,
+            Accept: useStream
+              ? "text/event-stream, application/json"
+              : "application/json",
+          },
+          body: JSON.stringify(body),
+          signal: ac.signal,
+        });
+        if (!res.ok) {
+          const t = await res.text();
+          throw new Error(`HTTP ${res.status}: ${t.slice(0, 300)}`);
+        }
+
+        if (!useStream || !res.body || !res.body.getReader) {
+          const text = await res.text();
+          const j = JSON.parse(text);
+          if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
+          const { content, reasoning } = extractFromChoice(j.choices?.[0]);
+          assembledContent = content || "";
+          assembledReasoning = reasoning || "";
+          emit();
+          if (!assembledContent && !assembledReasoning) {
+            throw new Error("响应无正文: " + text.slice(0, 200));
+          }
+          finish(null);
+          return;
+        }
+
+        onStatus && onStatus("已连接，流式读取中…");
+        const reader = res.body.getReader();
+        const dec = new TextDecoder();
+        let totalBytes = 0;
+        while (true) {
+          if (state.aiAbort) {
+            try {
+              await reader.cancel();
+            } catch (_) {
+              /* */
+            }
+            throw new Error("用户停止");
+          }
+          const { done, value } = await reader.read();
+          if (done) break;
+          totalBytes += value ? value.length : 0;
+          lineBuf += dec.decode(value, { stream: true });
+          const lines = lineBuf.split(/\r?\n/);
+          lineBuf = lines.pop() || "";
+          for (const line of lines) handleSseLine(line);
+          const now = Date.now();
+          if (now - lastStatusAt > 400) {
+            lastStatusAt = now;
+            onStatus &&
+              onStatus(
+                `页内流式… ${totalBytes}B · 正文 ${assembledContent.length} · 思考 ${assembledReasoning.length}`,
+              );
+          }
+        }
+        if (lineBuf.trim()) handleSseLine(lineBuf);
+        if (!assembledContent && !assembledReasoning) {
+          throw new Error("流式结束但 content/reasoning 皆空");
+        }
+        finish(null);
+      } catch (e) {
+        if (state.aiAbort || (e && e.name === "AbortError")) {
+          if (assembledContent || assembledReasoning) {
+            onStatus && onStatus("已停止，保留已接收内容");
+            finish(null);
+          } else {
+            finish(new Error("用户停止"));
+          }
+          return;
+        }
+        // 有部分内容：不走 GM 回退以免重复计费，直接成功
+        if (assembledContent || assembledReasoning) {
+          onStatus && onStatus("连接中断，保留已接收内容");
+          finish(null);
+          return;
+        }
+        finish(e instanceof Error ? e : new Error(String(e)));
+      }
+    })();
+  }
+
+  function requestChatViaGm({
+    url,
+    apiKey,
+    body,
+    useStream,
+    onDelta,
+    onDone,
+    onError,
+    onStatus,
+  }) {
+    let assembledContent = "";
+    let assembledReasoning = "";
+    let settled = false;
+    let lineBuf = "";
+    let lastSeenLen = 0;
+    let lastStatusAt = 0;
+    let xhrHandle = null;
+
+    const finish = (err) => {
+      if (settled) return;
+      settled = true;
+      if (state.aiXhr === xhrHandle) state.aiXhr = null;
+      if (err) onError && onError(err);
+      else {
+        onDone &&
+          onDone(formatAiDisplay(assembledContent, assembledReasoning), {
+            content: assembledContent,
+            reasoning: assembledReasoning,
+          });
+      }
+    };
+
+    const softFinishOrError = (label) => {
+      if (assembledContent || assembledReasoning) {
+        onStatus && onStatus(`${label}，已收到内容，按成功结束`);
         finish(null);
         return;
       }
+      finish(new Error(label));
+    };
+
+    const emit = () => {
+      onDelta &&
+        onDelta("", formatAiDisplay(assembledContent, assembledReasoning), {
+          content: assembledContent,
+          reasoning: assembledReasoning,
+        });
+    };
+
+    const applyPiece = (c, r) => {
+      let ch = false;
+      if (c) {
+        assembledContent += c;
+        ch = true;
+      }
+      if (r) {
+        assembledReasoning += r;
+        ch = true;
+      }
+      if (ch) emit();
+    };
+
+    const handleSseLine = (line) => {
+      const t = line.trim();
+      if (!t || t.startsWith(":")) return;
+      if (!t.startsWith("data:")) return;
+      const data = t.slice(5).trim();
+      if (!data || data === "[DONE]") return;
       try {
         const j = JSON.parse(data);
         if (j.error) {
@@ -3282,7 +3503,7 @@
         const { content, reasoning } = extractFromChoice(j.choices?.[0]);
         applyPiece(content, reasoning);
       } catch (_) {
-        /* skip bad line */
+        /* */
       }
     };
 
@@ -3300,56 +3521,15 @@
         lastStatusAt = now;
         onStatus &&
           onStatus(
-            `流式接收… ${fullText.length}B · 正文 ${assembledContent.length} · 思考 ${assembledReasoning.length}`,
+            `GM流式… ${fullText.length}B · 正文 ${assembledContent.length} · 思考 ${assembledReasoning.length}`,
           );
       }
     };
 
-    const parseNonStreamJson = (text) => {
-      const j = JSON.parse(text);
-      if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
-      const { content, reasoning } = extractFromChoice(j.choices?.[0]);
-      assembledContent = content || "";
-      assembledReasoning = reasoning || "";
-      if (!assembledContent && !assembledReasoning) {
-        const alt =
-          j.choices?.[0]?.text || j.output_text || j.message || "";
-        if (typeof alt === "string") assembledContent = alt;
-      }
-      emit();
-    };
+    onStatus && onStatus("GM_xmlhttpRequest 回退请求（勿设 timeout）…");
 
-    const useStream = stream !== false; // default true
-    const body = {
-      model,
-      messages,
-      temperature,
-      max_tokens: maxTokens,
-      stream: useStream,
-    };
-
-    onStatus &&
-      onStatus(
-        useStream
-          ? "发起流式请求（保活，避免 client_gone）…"
-          : "发起非流式请求（长任务可能被中断）…",
-      );
-
-    // 取消上一次未完成的 AI 请求，避免双开互相 abort
-    if (state.aiXhr && typeof state.aiXhr.abort === "function") {
-      try {
-        state.aiXhr.abort();
-      } catch (_) {
-        /* */
-      }
-    }
-
-    /**
-     * 关键：不要写 timeout / fetch:true。
-     * Tampermonkey: timeout 会 enforce fetch mode → Chrome 下 onprogress 失效，
-     * 且 timeout:0 仍可能立刻/异常触发 ontimeout（用户看到的「请求超时」）。
-     */
-    const details = {
+    // 关键：不要写 timeout 字段（TM 会强制 fetch 并误触 ontimeout）
+    xhrHandle = GM_xmlhttpRequest({
       method: "POST",
       url,
       headers: {
@@ -3361,10 +3541,8 @@
       },
       data: JSON.stringify(body),
       responseType: "text",
-      // 明确走 XHR 路径（若引擎支持该字段）
-      // fetch: false — 部分版本不识别则忽略
       onloadstart() {
-        onStatus && onStatus("已连接网关，等待首包（流式）…");
+        onStatus && onStatus("GM 已连接，等待首包…");
       },
       onprogress(res) {
         if (state.aiAbort) {
@@ -3373,101 +3551,60 @@
           } catch (_) {
             /* */
           }
-          finish(new Error("用户停止"));
+          softFinishOrError("用户停止");
           return;
         }
         const text = res.responseText || "";
         if (useStream) ingestSseText(text);
-        else if (text) {
-          onStatus && onStatus(`非流式缓冲中… ${text.length}B（完成后才解析）`);
-        }
       },
       onreadystatechange(res) {
-        // readyState 3 = loading：部分 TM 在此才更新 responseText
         if (state.aiAbort) return;
-        if (res.readyState === 3 && useStream) {
-          const text = res.responseText || "";
-          if (text) ingestSseText(text);
+        if (res.readyState === 3 && useStream && res.responseText) {
+          ingestSseText(res.responseText);
         }
       },
       onload(res) {
         if (state.aiAbort) {
-          finish(new Error("用户停止"));
+          softFinishOrError("用户停止");
           return;
         }
         const text = res.responseText || "";
         if (res.status < 200 || res.status >= 300) {
-          // 若已流式收到内容，仍优先成功
-          if (assembledContent || assembledReasoning) {
-            softFinishOrError(`HTTP ${res.status}`);
-            return;
-          }
-          finish(new Error(`HTTP ${res.status}: ${(text || "").slice(0, 300)}`));
+          softFinishOrError(`HTTP ${res.status}: ${text.slice(0, 200)}`);
           return;
         }
         try {
           if (useStream) {
             ingestSseText(text);
             if (lineBuf.trim()) handleSseLine(lineBuf);
-            lineBuf = "";
-            if (
-              !assembledContent &&
-              !assembledReasoning &&
-              text.trim().startsWith("{")
-            ) {
-              parseNonStreamJson(text);
-            }
           } else {
-            parseNonStreamJson(text);
+            const j = JSON.parse(text);
+            if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
+            const { content, reasoning } = extractFromChoice(j.choices?.[0]);
+            assembledContent = content || "";
+            assembledReasoning = reasoning || "";
+            emit();
           }
         } catch (e) {
-          if (assembledContent || assembledReasoning) {
-            softFinishOrError("解析告警");
-            return;
-          }
-          finish(
-            new Error(
-              (e && e.message) ||
-                "解析响应失败: " + (text || "").slice(0, 200),
-            ),
-          );
+          softFinishOrError(e.message || String(e));
           return;
         }
         if (!assembledContent && !assembledReasoning) {
-          finish(
-            new Error(
-              "响应无正文（content/reasoning 皆空）。原始: " +
-                (text || "").slice(0, 240),
-            ),
-          );
+          softFinishOrError("GM 响应无正文");
           return;
         }
         finish(null);
       },
       onerror() {
-        softFinishOrError("网络错误或连接中断");
+        softFinishOrError("GM 网络错误");
       },
       ontimeout() {
-        // 不应依赖 timeout；若误触且已有内容则成功
-        softFinishOrError("油猴 ontimeout 误触");
+        softFinishOrError("GM ontimeout 误触");
       },
       onabort() {
-        if (assembledContent || assembledReasoning) {
-          softFinishOrError("请求中止");
-          return;
-        }
-        finish(new Error(state.aiAbort ? "用户停止" : "请求被中止"));
+        softFinishOrError(state.aiAbort ? "用户停止" : "GM 请求中止");
       },
-    };
-
-    try {
-      // 部分引擎支持显式关闭 fetch 模式
-      details.fetch = false;
-    } catch (_) {
-      /* */
-    }
-
-    xhrHandle = GM_xmlhttpRequest(details);
+    });
     state.aiXhr = xhrHandle;
     return xhrHandle;
   }
@@ -3589,7 +3726,7 @@
           (cut.truncated ? " · 字幕已截断" : ""),
       );
       if (mdEl) {
-        mdEl.innerHTML = `<div class="bsb-empty"><div class="bsb-empty-ico">◌</div><strong>正在生成…</strong><span>${escapeHtml(cfg.baseUrl)}/chat/completions<br>${useStream ? "流式保活（防 client_gone）" : "非流式（长任务易断）"} · 兼容 reasoning</span></div>`;
+        mdEl.innerHTML = `<div class="bsb-empty"><div class="bsb-empty-ico">◌</div><strong>正在生成…</strong><span>${escapeHtml(cfg.baseUrl)}/chat/completions<br>优先页内 fetch 流式（opencli 已验证）· 失败再 GM 回退</span></div>`;
       }
 
       let lastPaint = 0;
