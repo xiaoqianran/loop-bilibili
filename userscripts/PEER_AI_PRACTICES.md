@@ -27,11 +27,12 @@ Sources reviewed:
 
 3. **Config storage**  
    Prefer `GM_setValue` / `GM_getValue` when granted (survives clearer isolation than page `localStorage` in some managers); fall back to `localStorage`.  
-   Never require committing API keys; defaults optional.
+   **Never ship live API keys in the repo.** `AI_DEFAULTS.apiKey` is always `""`; “恢复默认” does not re-seed secrets (keeps any key already stored on-device only).
 
-4. **Abort**  
+4. **Abort / single-flight**  
    Single active request handle: page `AbortController` **or** GM `abort()`.  
-   Stop button only aborts AI request (does not cancel unrelated subtitle batch).
+   Stop button only aborts AI request (does not cancel unrelated subtitle batch).  
+   GM stream→text fallback: **abort the stream XHR first**, `textPathStarted` guard so only one text POST runs (no parallel completions/billing).
 
 5. **Delta fields**  
    Parse both `delta.content` and `delta.reasoning` / `reasoning_content` (reasoning models / NewAPI).

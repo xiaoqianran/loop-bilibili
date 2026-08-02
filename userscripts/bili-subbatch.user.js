@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.8.0
-// @description  B站字幕+AI：页内fetch优先、GM stream回退、粘底滚动、peer实践优化
+// @version      0.8.1
+// @description  B站字幕+AI：页内fetch优先、GM无并行请求、无硬编码密钥
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -37,7 +37,7 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.0";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.1";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
   /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
@@ -54,7 +54,8 @@
   /** OpenAI 兼容默认值（密钥仅存 localStorage，可在面板修改） */
   const AI_DEFAULTS = {
     baseUrl: "https://newapi-jp1.202820.xyz/v1",
-    apiKey: "sk-iAeYCYaw6IGkDDfjVpu91QhY899wGMigJdTJvsXQVXaHp66P",
+    // Never ship secrets in-repo; user fills in Settings (GM/local storage only)
+    apiKey: "",
     model: "openai/gpt-oss-120b",
     temperature: 0.4,
     maxTokens: 4096,
@@ -2933,10 +2934,16 @@
       return;
     }
     if (act === "ai-reset") {
-      state.ai = { ...AI_DEFAULTS };
+      // Restore defaults but never re-seed a secret key from the binary
+      const prev = loadAiConfig();
+      state.ai = {
+        ...AI_DEFAULTS,
+        // keep user's stored key if any; AI_DEFAULTS.apiKey is always ""
+        apiKey: prev.apiKey || "",
+      };
       saveAiConfig(state.ai);
       fillAiConfigForm(ensurePanel());
-      setStatus("已恢复 AI 默认配置", "ok");
+      setStatus("已恢复 AI 默认配置（API Key 保留本机已存值）", "ok");
       return;
     }
     if (act === "ai-send") {
@@ -3662,10 +3669,15 @@
     let lastStatusAt = 0;
     let xhrHandle = null;
     let usedStreamReader = false;
+    /** Only one text POST may start (prevents parallel billing) */
+    let textPathStarted = false;
+    /** When true, stream onabort is expected and must not finish/error */
+    let switchingToText = false;
 
     const finish = (err) => {
       if (settled) return;
       settled = true;
+      switchingToText = false;
       if (state.aiXhr === xhrHandle) state.aiXhr = null;
       if (err) onError && onError(err);
       else {
@@ -3732,6 +3744,15 @@
       }
     };
 
+    const abortXhr = (handle) => {
+      if (!handle) return;
+      try {
+        if (typeof handle.abort === "function") handle.abort();
+      } catch (_) {
+        /* */
+      }
+    };
+
     const commonHeaders = {
       "Content-Type": "application/json",
       Authorization: "Bearer " + apiKey,
@@ -3740,84 +3761,21 @@
         : "application/json",
     };
 
-    // Peer practice (GreasyFork 459997): responseType stream + getReader
-    if (useStream) {
-      onStatus && onStatus("GM stream reader 回退…");
-      xhrHandle = GM_xmlhttpRequest({
-        method: "POST",
-        url,
-        headers: commonHeaders,
-        data: JSON.stringify(body),
-        responseType: "stream",
-        onloadstart(streamRes) {
-          try {
-            const reader =
-              streamRes.response &&
-              streamRes.response.getReader &&
-              streamRes.response.getReader();
-            if (!reader) throw new Error("no stream reader");
-            usedStreamReader = true;
-            onStatus && onStatus("GM stream reader 已连接…");
-            const dec = new TextDecoder();
-            let buf = "";
-            const pump = () => {
-              if (state.aiAbort) {
-                try {
-                  reader.cancel();
-                } catch (_) {
-                  /* */
-                }
-                softFinishOrError("用户停止");
-                return;
-              }
-              reader
-                .read()
-                .then(({ done, value }) => {
-                  if (done) {
-                    if (buf.trim()) {
-                      buf.split(/\r?\n/).forEach(handleSseLine);
-                    }
-                    if (!assembledContent && !assembledReasoning) {
-                      softFinishOrError("GM stream 结束无正文");
-                    } else finish(null);
-                    return;
-                  }
-                  buf += dec.decode(value, { stream: true });
-                  const lines = buf.split(/\r?\n/);
-                  buf = lines.pop() || "";
-                  for (const line of lines) handleSseLine(line);
-                  onStatus &&
-                    onStatus(
-                      `GM stream… 正文 ${assembledContent.length} · 思考 ${assembledReasoning.length}`,
-                    );
-                  pump();
-                })
-                .catch((e) => softFinishOrError(e.message || String(e)));
-            };
-            pump();
-          } catch (_) {
-            // stream type unsupported → text path below if not yet settled
-            if (!settled && !usedStreamReader) {
-              onStatus && onStatus("GM stream 不可用，改 text+onprogress…");
-              startGmTextPath();
-            }
-          }
-        },
-        onerror() {
-          if (!usedStreamReader && !settled) startGmTextPath();
-          else softFinishOrError("GM stream 网络错误");
-        },
-        onabort() {
-          softFinishOrError(state.aiAbort ? "用户停止" : "GM stream 中止");
-        },
-      });
-      state.aiXhr = xhrHandle;
-      return xhrHandle;
-    }
-
-    function startGmTextPath() {
-      if (settled) return;
-      onStatus && onStatus("GM text/onprogress（无 timeout）…");
+    function startGmTextPath(reason) {
+      if (settled || textPathStarted) return;
+      textPathStarted = true;
+      // Abort any in-flight stream XHR before opening a second POST
+      if (xhrHandle) {
+        switchingToText = true;
+        const prev = xhrHandle;
+        xhrHandle = null;
+        abortXhr(prev);
+        switchingToText = false;
+      }
+      onStatus &&
+        onStatus(
+          `GM text/onprogress（无 timeout）${reason ? " · " + reason : ""}…`,
+        );
       xhrHandle = GM_xmlhttpRequest({
         method: "POST",
         url,
@@ -3829,11 +3787,7 @@
         },
         onprogress(res) {
           if (state.aiAbort) {
-            try {
-              xhrHandle && xhrHandle.abort && xhrHandle.abort();
-            } catch (_) {
-              /* */
-            }
+            abortXhr(xhrHandle);
             softFinishOrError("用户停止");
             return;
           }
@@ -3886,13 +3840,102 @@
           softFinishOrError("GM ontimeout 误触");
         },
         onabort() {
-          softFinishOrError(state.aiAbort ? "用户停止" : "GM 请求中止");
+          if (state.aiAbort) softFinishOrError("用户停止");
+          // ignore aborts while replacing handles
         },
       });
       state.aiXhr = xhrHandle;
     }
 
-    if (!useStream) startGmTextPath();
+    // Peer practice (GreasyFork 459997): responseType stream + getReader
+    if (useStream) {
+      onStatus && onStatus("GM stream reader 回退…");
+      xhrHandle = GM_xmlhttpRequest({
+        method: "POST",
+        url,
+        headers: commonHeaders,
+        data: JSON.stringify(body),
+        responseType: "stream",
+        onloadstart(streamRes) {
+          if (settled || textPathStarted) return;
+          try {
+            const reader =
+              streamRes.response &&
+              streamRes.response.getReader &&
+              streamRes.response.getReader();
+            if (!reader) throw new Error("no stream reader");
+            usedStreamReader = true;
+            onStatus && onStatus("GM stream reader 已连接…");
+            const dec = new TextDecoder();
+            let buf = "";
+            const pump = () => {
+              if (settled || textPathStarted) return;
+              if (state.aiAbort) {
+                try {
+                  reader.cancel();
+                } catch (_) {
+                  /* */
+                }
+                softFinishOrError("用户停止");
+                return;
+              }
+              reader
+                .read()
+                .then(({ done, value }) => {
+                  if (settled || textPathStarted) return;
+                  if (done) {
+                    if (buf.trim()) {
+                      buf.split(/\r?\n/).forEach(handleSseLine);
+                    }
+                    if (!assembledContent && !assembledReasoning) {
+                      softFinishOrError("GM stream 结束无正文");
+                    } else finish(null);
+                    return;
+                  }
+                  buf += dec.decode(value, { stream: true });
+                  const lines = buf.split(/\r?\n/);
+                  buf = lines.pop() || "";
+                  for (const line of lines) handleSseLine(line);
+                  onStatus &&
+                    onStatus(
+                      `GM stream… 正文 ${assembledContent.length} · 思考 ${assembledReasoning.length}`,
+                    );
+                  pump();
+                })
+                .catch((e) => {
+                  if (settled || textPathStarted) return;
+                  softFinishOrError(e.message || String(e));
+                });
+            };
+            pump();
+          } catch (_) {
+            // stream unsupported → single text POST after aborting this handle
+            if (!settled && !usedStreamReader && !textPathStarted) {
+              onStatus && onStatus("GM stream 不可用，改 text…");
+              startGmTextPath("stream unsupported");
+            }
+          }
+        },
+        onerror() {
+          if (settled || textPathStarted) return;
+          if (!usedStreamReader) {
+            startGmTextPath("stream onerror");
+          } else {
+            softFinishOrError("GM stream 网络错误");
+          }
+        },
+        onabort() {
+          // Intentional abort when switching to text path — do not finish
+          if (switchingToText || textPathStarted) return;
+          if (settled) return;
+          softFinishOrError(state.aiAbort ? "用户停止" : "GM stream 中止");
+        },
+      });
+      state.aiXhr = xhrHandle;
+      return xhrHandle;
+    }
+
+    startGmTextPath("non-stream");
     return xhrHandle;
   }
 
