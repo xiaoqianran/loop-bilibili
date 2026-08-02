@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.7.4
-// @description  B站字幕+AI：流式粘底自动滚动、体验与代码优化
+// @version      0.8.0
+// @description  B站字幕+AI：页内fetch优先、GM stream回退、粘底滚动、peer实践优化
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -21,20 +21,23 @@
 // @grant        GM_setClipboard
 // @grant        GM_addStyle
 // @grant        GM_info
+// @grant        GM_setValue
+// @grant        GM_getValue
 // @run-at       document-idle
 // @license      MIT
 // ==/UserScript==
 
 /**
- * v0.7 — World-class workspace UI: AI canvas (primary) | Subtitles | Settings.
- * AI OpenAI-compatible + reasoning fields. Drag / resize / dock.
+ * v0.8 — Peer AI-userscript practices: page fetch stream first,
+ * GM stream fallback (no timeout), stick-bottom scroll, GM storage.
+ * See PEER_AI_PRACTICES.md.
  */
 
 (function () {
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.7.4";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.0";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
   /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
@@ -236,7 +239,8 @@
     return wordsToHex([a0, b0, c0, d0]);
   }
 
-  // ─── WBI ────────────────────────────────────────────────────────────────
+  // ─── pure helpers (offline harness extracts // #region pure-logic) ─────
+  // #region pure-logic
   function keyFromUrl(url) {
     let name = String(url || "").split("/").pop() || "";
     if (name.includes(".")) name = name.split(".").slice(0, -1).join(".");
@@ -268,6 +272,88 @@
     const query = parts.join("&");
     return `${query}&w_rid=${md5(query + mixinKey(imgKey, subKey))}`;
   }
+
+  function applyPromptTemplate(tpl, vars) {
+    return String(tpl || "").replace(/\{\{(\w+)\}\}/g, (_, k) =>
+      vars && vars[k] != null ? String(vars[k]) : "",
+    );
+  }
+
+  function extractAssistantText(piece) {
+    if (!piece || typeof piece !== "object") return { content: "", reasoning: "" };
+    const content =
+      (typeof piece.content === "string" && piece.content) ||
+      (typeof piece.text === "string" && piece.text) ||
+      "";
+    const reasoning =
+      (typeof piece.reasoning_content === "string" && piece.reasoning_content) ||
+      (typeof piece.reasoning === "string" && piece.reasoning) ||
+      "";
+    return { content, reasoning };
+  }
+
+  function extractFromChoice(choice) {
+    if (!choice) return { content: "", reasoning: "" };
+    const fromDelta = extractAssistantText(choice.delta);
+    const fromMsg = extractAssistantText(choice.message);
+    return {
+      content: fromDelta.content || fromMsg.content || "",
+      reasoning: fromDelta.reasoning || fromMsg.reasoning || "",
+    };
+  }
+
+  function formatAiDisplay(content, reasoning) {
+    const parts = [];
+    if (reasoning && String(reasoning).trim()) {
+      parts.push("### 思考过程\n\n" + String(reasoning).trim());
+    }
+    if (content && String(content).trim()) {
+      parts.push(String(content).trim());
+    }
+    return parts.join("\n\n---\n\n");
+  }
+
+  function truncateForAi(text, maxChars) {
+    const s = String(text || "");
+    const lim = maxChars == null ? 18000 : maxChars;
+    if (s.length <= lim) return { text: s, truncated: false, originalLen: s.length };
+    return {
+      text:
+        s.slice(0, lim) +
+        `\n\n…[字幕已截断 ${s.length - lim} 字，避免超长 token 导致超时/断连]`,
+      truncated: true,
+      originalLen: s.length,
+    };
+  }
+
+  /** Peer scroll pattern: stick when distance-to-bottom < threshold */
+  function shouldStickBottom(scrollHeight, scrollTop, clientHeight, threshold) {
+    const th = threshold == null ? 48 : threshold;
+    return scrollHeight - scrollTop - clientHeight < th;
+  }
+
+  function parseSseDataLine(line) {
+    const t = String(line || "").trim();
+    if (!t || t.startsWith(":")) return { kind: "skip" };
+    if (!t.startsWith("data:")) return { kind: "skip" };
+    const data = t.slice(5).trim();
+    if (!data) return { kind: "skip" };
+    if (data === "[DONE]") return { kind: "done" };
+    try {
+      const j = JSON.parse(data);
+      if (j.error) {
+        return {
+          kind: "error",
+          message: j.error.message || JSON.stringify(j.error),
+        };
+      }
+      const piece = extractFromChoice(j.choices && j.choices[0]);
+      return { kind: "delta", ...piece };
+    } catch (_) {
+      return { kind: "skip" };
+    }
+  }
+  // #endregion pure-logic
 
   let wbiCache = { img: null, sub: null, at: 0 };
 
@@ -2925,11 +3011,42 @@
   }
 
   // ─── AI config / stream / render ────────────────────────────────────────
+  function storageGet(key, fallback) {
+    try {
+      if (typeof GM_getValue === "function") {
+        const v = GM_getValue(key, null);
+        if (v != null && v !== "") return v;
+      }
+    } catch (_) {
+      /* */
+    }
+    try {
+      const v = localStorage.getItem(key);
+      if (v != null) return v;
+    } catch (_) {
+      /* */
+    }
+    return fallback;
+  }
+
+  function storageSet(key, value) {
+    try {
+      if (typeof GM_setValue === "function") GM_setValue(key, value);
+    } catch (_) {
+      /* */
+    }
+    try {
+      localStorage.setItem(key, value);
+    } catch (_) {
+      /* */
+    }
+  }
+
   function loadAiConfig() {
     try {
-      const raw = localStorage.getItem(AI_STORE_KEY);
+      const raw = storageGet(AI_STORE_KEY, null);
       if (!raw) return { ...AI_DEFAULTS };
-      const o = JSON.parse(raw);
+      const o = typeof raw === "string" ? JSON.parse(raw) : raw;
       return {
         baseUrl: String(o.baseUrl || AI_DEFAULTS.baseUrl).replace(/\/+$/, ""),
         apiKey: String(o.apiKey != null ? o.apiKey : AI_DEFAULTS.apiKey),
@@ -2938,7 +3055,6 @@
           ? Number(o.temperature)
           : AI_DEFAULTS.temperature,
         maxTokens: Number(o.maxTokens) || AI_DEFAULTS.maxTokens,
-        // 缺省 true；仅显式 false 才关
         stream: !(o.stream === false || o.stream === "false" || o.stream === 0),
         systemPrompt: String(o.systemPrompt || AI_DEFAULTS.systemPrompt),
         userPromptTemplate: String(
@@ -2952,7 +3068,7 @@
 
   function saveAiConfig(cfg) {
     try {
-      localStorage.setItem(AI_STORE_KEY, JSON.stringify(cfg));
+      storageSet(AI_STORE_KEY, JSON.stringify(cfg));
     } catch (_) {
       /* ignore */
     }
@@ -3036,9 +3152,12 @@
     box.addEventListener(
       "scroll",
       () => {
-        const gap = box.scrollHeight - box.scrollTop - box.clientHeight;
-        // 距底 < 48px 视为粘底
-        state.aiStickBottom = gap < 48;
+        state.aiStickBottom = shouldStickBottom(
+          box.scrollHeight,
+          box.scrollTop,
+          box.clientHeight,
+          48,
+        );
         const stickBtn = root.querySelector('[data-act="ai-stick"]');
         if (stickBtn) stickBtn.classList.toggle("on", state.aiStickBottom);
       },
@@ -3095,12 +3214,6 @@
         (state.aiBusy ? `<span class="bsb-ai-caret" aria-hidden="true"></span>` : "");
       scrollAiToBottom(false);
     });
-  }
-
-  function applyPromptTemplate(tpl, vars) {
-    return String(tpl || "").replace(/\{\{(\w+)\}\}/g, (_, k) =>
-      vars[k] != null ? String(vars[k]) : "",
-    );
   }
 
   function buildSubtitlePayload(items) {
@@ -3300,50 +3413,11 @@
   }
 
   /**
-   * 兼容 OpenAI / 推理模型字段：
-   * - 普通：message.content / delta.content
-   * - gpt-oss 等：reasoning / reasoning_content（流式先推思考，content 可能长期为空）
-   */
-  function extractAssistantText(piece) {
-    if (!piece || typeof piece !== "object") return { content: "", reasoning: "" };
-    const content =
-      (typeof piece.content === "string" && piece.content) ||
-      (typeof piece.text === "string" && piece.text) ||
-      "";
-    const reasoning =
-      (typeof piece.reasoning_content === "string" && piece.reasoning_content) ||
-      (typeof piece.reasoning === "string" && piece.reasoning) ||
-      "";
-    return { content, reasoning };
-  }
-
-  function extractFromChoice(choice) {
-    if (!choice) return { content: "", reasoning: "" };
-    const fromDelta = extractAssistantText(choice.delta);
-    const fromMsg = extractAssistantText(choice.message);
-    return {
-      content: fromDelta.content || fromMsg.content || "",
-      reasoning: fromDelta.reasoning || fromMsg.reasoning || "",
-    };
-  }
-
-  function formatAiDisplay(content, reasoning) {
-    const parts = [];
-    if (reasoning && reasoning.trim()) {
-      parts.push("### 思考过程\n\n" + reasoning.trim());
-    }
-    if (content && content.trim()) {
-      parts.push(content.trim());
-    }
-    return parts.join("\n\n---\n\n");
-  }
-
-  /**
    * OpenAI-compatible chat.completions.
    *
-   * 路径优先级（v0.7.3，opencli 浏览器实测）：
-   * 1) 页面原生 fetch + ReadableStream（B 站页面对 newapi CORS 可用，首包~1s）
-   * 2) GM_xmlhttpRequest 回退（勿设 timeout，避免 TM fetch 模式 + ontimeout）
+   * 路径优先级（peer + opencli 实测）：
+   * 1) 页面原生 fetch + ReadableStream
+   * 2) GM_xmlhttpRequest 回退（无 timeout；优先 responseType stream + reader）
    */
   function requestChatCompletion(opts) {
     const {
@@ -3473,23 +3547,12 @@
     };
 
     const handleSseLine = (line) => {
-      const t = line.trim();
-      if (!t || t.startsWith(":")) return;
-      if (!t.startsWith("data:")) return;
-      const data = t.slice(5).trim();
-      if (!data) return;
-      if (data === "[DONE]") return;
-      try {
-        const j = JSON.parse(data);
-        if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
-        const { content, reasoning } = extractFromChoice(j.choices?.[0]);
-        applyPiece(content, reasoning);
-      } catch (e) {
-        if (e && e.message && !/JSON/.test(e.message)) throw e;
-      }
+      const parsed = parseSseDataLine(line);
+      if (parsed.kind === "delta") applyPiece(parsed.content, parsed.reasoning);
+      if (parsed.kind === "error") throw new Error(parsed.message);
     };
 
-    onStatus && onStatus("页内 fetch 流式请求（opencli 同款路径）…");
+    onStatus && onStatus("页内 fetch 流式请求（peer/opencli 路径）…");
 
     (async () => {
       try {
@@ -3598,6 +3661,7 @@
     let lastSeenLen = 0;
     let lastStatusAt = 0;
     let xhrHandle = null;
+    let usedStreamReader = false;
 
     const finish = (err) => {
       if (settled) return;
@@ -3644,22 +3708,9 @@
     };
 
     const handleSseLine = (line) => {
-      const t = line.trim();
-      if (!t || t.startsWith(":")) return;
-      if (!t.startsWith("data:")) return;
-      const data = t.slice(5).trim();
-      if (!data || data === "[DONE]") return;
-      try {
-        const j = JSON.parse(data);
-        if (j.error) {
-          finish(new Error(j.error.message || JSON.stringify(j.error)));
-          return;
-        }
-        const { content, reasoning } = extractFromChoice(j.choices?.[0]);
-        applyPiece(content, reasoning);
-      } catch (_) {
-        /* */
-      }
+      const parsed = parseSseDataLine(line);
+      if (parsed.kind === "delta") applyPiece(parsed.content, parsed.reasoning);
+      if (parsed.kind === "error") softFinishOrError(parsed.message);
     };
 
     const ingestSseText = (fullText) => {
@@ -3681,100 +3732,168 @@
       }
     };
 
-    onStatus && onStatus("GM_xmlhttpRequest 回退请求（勿设 timeout）…");
-
-    // 关键：不要写 timeout 字段（TM 会强制 fetch 并误触 ontimeout）
-    xhrHandle = GM_xmlhttpRequest({
-      method: "POST",
-      url,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + apiKey,
-        Accept: useStream
-          ? "text/event-stream, application/json"
-          : "application/json",
-      },
-      data: JSON.stringify(body),
-      responseType: "text",
-      onloadstart() {
-        onStatus && onStatus("GM 已连接，等待首包…");
-      },
-      onprogress(res) {
-        if (state.aiAbort) {
-          try {
-            xhrHandle && xhrHandle.abort && xhrHandle.abort();
-          } catch (_) {
-            /* */
-          }
-          softFinishOrError("用户停止");
-          return;
-        }
-        const text = res.responseText || "";
-        if (useStream) ingestSseText(text);
-      },
-      onreadystatechange(res) {
-        if (state.aiAbort) return;
-        if (res.readyState === 3 && useStream && res.responseText) {
-          ingestSseText(res.responseText);
-        }
-      },
-      onload(res) {
-        if (state.aiAbort) {
-          softFinishOrError("用户停止");
-          return;
-        }
-        const text = res.responseText || "";
-        if (res.status < 200 || res.status >= 300) {
-          softFinishOrError(`HTTP ${res.status}: ${text.slice(0, 200)}`);
-          return;
-        }
-        try {
-          if (useStream) {
-            ingestSseText(text);
-            if (lineBuf.trim()) handleSseLine(lineBuf);
-          } else {
-            const j = JSON.parse(text);
-            if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
-            const { content, reasoning } = extractFromChoice(j.choices?.[0]);
-            assembledContent = content || "";
-            assembledReasoning = reasoning || "";
-            emit();
-          }
-        } catch (e) {
-          softFinishOrError(e.message || String(e));
-          return;
-        }
-        if (!assembledContent && !assembledReasoning) {
-          softFinishOrError("GM 响应无正文");
-          return;
-        }
-        finish(null);
-      },
-      onerror() {
-        softFinishOrError("GM 网络错误");
-      },
-      ontimeout() {
-        softFinishOrError("GM ontimeout 误触");
-      },
-      onabort() {
-        softFinishOrError(state.aiAbort ? "用户停止" : "GM 请求中止");
-      },
-    });
-    state.aiXhr = xhrHandle;
-    return xhrHandle;
-  }
-
-  function truncateForAi(text, maxChars) {
-    const s = String(text || "");
-    const lim = maxChars || MAX_SUBTITLE_CHARS;
-    if (s.length <= lim) return { text: s, truncated: false };
-    return {
-      text:
-        s.slice(0, lim) +
-        `\n\n…[字幕已截断 ${s.length - lim} 字，避免超长 token 导致超时/断连]`,
-      truncated: true,
-      originalLen: s.length,
+    const commonHeaders = {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + apiKey,
+      Accept: useStream
+        ? "text/event-stream, application/json"
+        : "application/json",
     };
+
+    // Peer practice (GreasyFork 459997): responseType stream + getReader
+    if (useStream) {
+      onStatus && onStatus("GM stream reader 回退…");
+      xhrHandle = GM_xmlhttpRequest({
+        method: "POST",
+        url,
+        headers: commonHeaders,
+        data: JSON.stringify(body),
+        responseType: "stream",
+        onloadstart(streamRes) {
+          try {
+            const reader =
+              streamRes.response &&
+              streamRes.response.getReader &&
+              streamRes.response.getReader();
+            if (!reader) throw new Error("no stream reader");
+            usedStreamReader = true;
+            onStatus && onStatus("GM stream reader 已连接…");
+            const dec = new TextDecoder();
+            let buf = "";
+            const pump = () => {
+              if (state.aiAbort) {
+                try {
+                  reader.cancel();
+                } catch (_) {
+                  /* */
+                }
+                softFinishOrError("用户停止");
+                return;
+              }
+              reader
+                .read()
+                .then(({ done, value }) => {
+                  if (done) {
+                    if (buf.trim()) {
+                      buf.split(/\r?\n/).forEach(handleSseLine);
+                    }
+                    if (!assembledContent && !assembledReasoning) {
+                      softFinishOrError("GM stream 结束无正文");
+                    } else finish(null);
+                    return;
+                  }
+                  buf += dec.decode(value, { stream: true });
+                  const lines = buf.split(/\r?\n/);
+                  buf = lines.pop() || "";
+                  for (const line of lines) handleSseLine(line);
+                  onStatus &&
+                    onStatus(
+                      `GM stream… 正文 ${assembledContent.length} · 思考 ${assembledReasoning.length}`,
+                    );
+                  pump();
+                })
+                .catch((e) => softFinishOrError(e.message || String(e)));
+            };
+            pump();
+          } catch (_) {
+            // stream type unsupported → text path below if not yet settled
+            if (!settled && !usedStreamReader) {
+              onStatus && onStatus("GM stream 不可用，改 text+onprogress…");
+              startGmTextPath();
+            }
+          }
+        },
+        onerror() {
+          if (!usedStreamReader && !settled) startGmTextPath();
+          else softFinishOrError("GM stream 网络错误");
+        },
+        onabort() {
+          softFinishOrError(state.aiAbort ? "用户停止" : "GM stream 中止");
+        },
+      });
+      state.aiXhr = xhrHandle;
+      return xhrHandle;
+    }
+
+    function startGmTextPath() {
+      if (settled) return;
+      onStatus && onStatus("GM text/onprogress（无 timeout）…");
+      xhrHandle = GM_xmlhttpRequest({
+        method: "POST",
+        url,
+        headers: commonHeaders,
+        data: JSON.stringify(body),
+        responseType: "text",
+        onloadstart() {
+          onStatus && onStatus("GM text 已连接…");
+        },
+        onprogress(res) {
+          if (state.aiAbort) {
+            try {
+              xhrHandle && xhrHandle.abort && xhrHandle.abort();
+            } catch (_) {
+              /* */
+            }
+            softFinishOrError("用户停止");
+            return;
+          }
+          if (useStream) ingestSseText(res.responseText || "");
+        },
+        onreadystatechange(res) {
+          if (state.aiAbort) return;
+          if (res.readyState === 3 && useStream && res.responseText) {
+            ingestSseText(res.responseText);
+          }
+        },
+        onload(res) {
+          if (state.aiAbort) {
+            softFinishOrError("用户停止");
+            return;
+          }
+          const text = res.responseText || "";
+          if (res.status < 200 || res.status >= 300) {
+            softFinishOrError(`HTTP ${res.status}: ${text.slice(0, 200)}`);
+            return;
+          }
+          try {
+            if (useStream) {
+              ingestSseText(text);
+              if (lineBuf.trim()) handleSseLine(lineBuf);
+            } else {
+              const j = JSON.parse(text);
+              if (j.error) {
+                throw new Error(j.error.message || JSON.stringify(j.error));
+              }
+              const { content, reasoning } = extractFromChoice(j.choices?.[0]);
+              assembledContent = content || "";
+              assembledReasoning = reasoning || "";
+              emit();
+            }
+          } catch (e) {
+            softFinishOrError(e.message || String(e));
+            return;
+          }
+          if (!assembledContent && !assembledReasoning) {
+            softFinishOrError("GM 响应无正文");
+            return;
+          }
+          finish(null);
+        },
+        onerror() {
+          softFinishOrError("GM 网络错误");
+        },
+        ontimeout() {
+          softFinishOrError("GM ontimeout 误触");
+        },
+        onabort() {
+          softFinishOrError(state.aiAbort ? "用户停止" : "GM 请求中止");
+        },
+      });
+      state.aiXhr = xhrHandle;
+    }
+
+    if (!useStream) startGmTextPath();
+    return xhrHandle;
   }
 
   async function ensureSubtitlesForAi(targets) {

@@ -3,7 +3,7 @@
 B 站自动化与数据采集（**单仓**）。根目录 **`main.py`**；公共库在 **`packages/`**；业务在 **`modules/`**。
 
 - **字幕（现行）**：`packages/bili_subbatch` — SubBatch HTTP/WBI，**不依赖 opencli**
-- **浏览器（可选）**：[userscripts/](userscripts/) — 油猴 v0.7 工作台：AI 全高画布 + 字幕库 + OpenAI 兼容分析
+- **浏览器（可选）**：[userscripts/](userscripts/) — 油猴 v0.8 工作台：AI 全高画布 + 页内 fetch 流式 + peer 实践
 - **列表 / 总结 / 评论**：仍走 [opencli](https://github.com/jackwener/OpenCLI) `bilibili` adapter
 - **过时方案**：`legacy/opencli/`（旧 opencli 字幕）
 

@@ -2,9 +2,9 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.7.3）
+## `bili-subbatch.user.js`（v0.8.0）
 
-**世界级工作台 UI（v0.7）**：三栏导航，**AI 笔记默认占满主画布**；字幕库 / 设置各为独立页。Catppuccin Mocha 玻璃拟态、可拖拽/拉伸/贴边。
+**AI 工作台（v0.8）**：三栏导航，**AI 笔记默认全高画布**；对齐业界油猴 AI 脚本实践（见 [PEER_AI_PRACTICES.md](PEER_AI_PRACTICES.md)）。Catppuccin Mocha、可拖拽/拉伸/贴边。
 
 | 工作区 | 用途 |
 |--------|------|
@@ -47,28 +47,37 @@
 - **下载 SRT / TXT**、复制全文、复制 BV 列表
 - 批量中可 **停止**；限速默认 400ms
 - Cookie：当前浏览器登录态（`GM_xmlhttpRequest`）
-- **AI 分析**（v0.6，见下）
+- **AI 分析**（页内 fetch 流式优先 · 见下）
 
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.7.3**）  
-3. 右下角 **CC** 打开工作台（默认 **AI 笔记** 全高画布）  
-4. 切到 **字幕库** → 扫描 / 勾选 → 回 **AI 笔记** → **开始分析**  
-5. 首次用 AI：进 **设置**，填 Base URL / Key / Model → **保存配置**  
-6. **流式输出默认开启**（防 `client_gone`）；勿随意关闭
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版，版本 **0.8.0**）  
+3. 右下角 **CC** 打开工作台（默认 **AI 笔记**）  
+4. **字幕库** → 扫描 / 勾选 → **AI 笔记** → **开始分析**  
+5. **设置**：Base URL / Key / Model → **保存**（流式默认开）  
 
 ### UI
 
 | 项 | 说明 |
 |----|------|
 | 主题 | [Catppuccin Mocha](https://catppuccin.com/palette/) 玻璃拟态 |
-| 导航 | **AI 笔记**（默认全高画布）/ **字幕库** / **设置** |
-| 穿透 | 根节点 `pointer-events: none`；FAB / 面板 / 贴边标签可点 |
-| 拖拽 | 按住标题栏拖动；松手靠近左右边缘会**贴边收起** |
-| 拉伸 | 拖面板四边/四角（最小约 420×520，默认约 560×820） |
-| 贴边 | 标题栏「⧉」/「—」；侧边 **AI · CC** 标签展开 |
-| 记忆 | 几何+工作区 → `bili-subbatch-ui-v2`；AI → `bili-subbatch-ai-v1` |
+| 导航 | **AI 笔记** / **字幕库** / **设置** |
+| 流式滚动 | **粘底**默认开；上滑暂停；锚点 + 双 rAF |
+| 画布操作 | 粘底 / 复制 / 顶部；流式光标与 live 点 |
+| 穿透 / 拖拽 / 贴边 | 同 v0.7 |
+| 记忆 | UI `bili-subbatch-ui-v2`；AI `bili-subbatch-ai-v2`（GM_setValue 优先） |
+
+### Peer 实践（v0.8 采纳）
+
+详见 [PEER_AI_PRACTICES.md](PEER_AI_PRACTICES.md)。至少包括：
+
+1. **页内 `fetch` + stream reader 优先**（opencli 实测；失败再 GM）  
+2. **GM 不设 `timeout`**；支持 `responseType: "stream"` + `getReader`（GreasyFork 459997 风格）  
+3. **粘底阈值 + 用户上滑暂停** + rAF 合并绘制  
+4. **GM_setValue / localStorage** 双写配置  
+5. **AbortController / GM abort** 仅停 AI  
+6. **reasoning 字段**与字幕截断
 
 ---
 
@@ -104,9 +113,8 @@
 | Model | 模型名 | 如 `openai/gpt-oss-120b` |
 | Temperature | 0–2 | `0.4` |
 | Max tokens | 生成上限 | `4096` |
-| 流式输出 | SSE；推理模型先推 `reasoning` 时易误判为空 | **默认关**（更稳） |
-| System 提示词 | 角色与输出格式约束 | 中文笔记 + MD + mermaid |
-| User 模板 | 业务提示 + 字幕占位 | 见脚本默认 |
+| 流式输出 | 页内/SSE 保活 | **默认开** |
+| System / User 提示词 | 注入字幕变量 | `{{title}}` `{{bvid}}` `{{author}}` `{{subtitle}}` |
 
 #### v0.6.1 / v0.7.1 修复笔记
 
@@ -131,7 +139,7 @@
 4. 流式阶段只刷纯文本，结束后再 Markdown/高亮/Mermaid  
 5. 字幕超长截断（默认约 1.8 万字）控制 token
 
-配置持久化：`localStorage` 键 **`bili-subbatch-ai-v1`**（**不会**随 git 同步；请勿把真实 Key 提交进仓库）。
+配置持久化：`GM_setValue` + `localStorage` 键 **`bili-subbatch-ai-v2`**（勿把 Key 提交进仓库）。
 
 脚本声明 `@connect *`，可换成任意兼容地址（如 OpenAI / 自建 NewAPI / OneAPI / 本地 vLLM）。
 
@@ -220,11 +228,14 @@ Content-Type: application/json
 | **0.7.1** | **修复 client_gone：默认流式保活、timeout:0、字幕截断** |
 | **0.7.2** | **禁止设置 timeout（TM 会强制 fetch 并误触 ontimeout）** |
 | **0.7.3** | **opencli 验证后：页内 fetch 优先，GM 回退** |
+| **0.7.4** | **流式粘底滚动 / 光标 / 复制** |
+| **0.8.0** | **Peer 实践合入：GM stream reader、GM 存储、pure-logic 离线测试** |
 
 ### 自检
 
 ```bash
 node userscripts/_wbi_check.mjs
+node userscripts/_pure_logic_test.mjs   # 从 shipped 脚本提取 pure-logic 区域实测
 ```
 
 ### 注意
