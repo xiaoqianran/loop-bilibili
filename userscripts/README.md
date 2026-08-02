@@ -2,7 +2,7 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.7.2）
+## `bili-subbatch.user.js`（v0.7.3）
 
 **世界级工作台 UI（v0.7）**：三栏导航，**AI 笔记默认占满主画布**；字幕库 / 设置各为独立页。Catppuccin Mocha 玻璃拟态、可拖拽/拉伸/贴边。
 
@@ -52,7 +52,7 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.7.2**）  
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.7.3**）  
 3. 右下角 **CC** 打开工作台（默认 **AI 笔记** 全高画布）  
 4. 切到 **字幕库** → 扫描 / 勾选 → 回 **AI 笔记** → **开始分析**  
 5. 首次用 AI：进 **设置**，填 Base URL / Key / Model → **保存配置**  
@@ -71,6 +71,19 @@
 | 记忆 | 几何+工作区 → `bili-subbatch-ui-v2`；AI → `bili-subbatch-ai-v1` |
 
 ---
+
+## opencli 本地复现（2026-08-03）
+
+本机 `opencli doctor`：**Daemon + Extension 已连接**。
+
+在 B 站视频页 `eval` 页内 `fetch`：
+
+| 方式 | 结果 |
+|------|------|
+| 非流式 page fetch | HTTP 200，~1.3s（注意 content 可能先为 null、有 reasoning） |
+| **流式 page fetch + getReader** | **成功**：首包 ~0.96s，总 ~1.7s，正文+思考均有 |
+
+结论：API 与浏览器网络正常；问题在 **油猴 GM_xmlhttpRequest 路径**（timeout/fetch 模式/空闲断连），不在密钥或网关本身。
 
 ## AI 分析（油猴重点）
 
@@ -206,6 +219,7 @@ Content-Type: application/json
 | **0.7.0** | **三工作区 UI：AI 全高画布 / 字幕库 / 设置** |
 | **0.7.1** | **修复 client_gone：默认流式保活、timeout:0、字幕截断** |
 | **0.7.2** | **禁止设置 timeout（TM 会强制 fetch 并误触 ontimeout）** |
+| **0.7.3** | **opencli 验证后：页内 fetch 优先，GM 回退** |
 
 ### 自检
 
