@@ -2,9 +2,9 @@
 
 浏览器侧字幕工具，协议与 `packages/bili_subbatch` / Chrome SubBatch 对齐。
 
-## `bili-subbatch.user.js`（v0.4.0）
+## `bili-subbatch.user.js`（v0.5.0）
 
-右侧 **Catppuccin Mocha** 玻璃边栏（透明 + 毛玻璃）；容器 `pointer-events: none`，**空白区域可穿透点击页面**，仅 FAB / 边栏本体可点。
+**Catppuccin Mocha** 悬浮玻璃面板：可拖拽、可拉伸、可贴边自动收起。容器 `pointer-events: none`，空白穿透；仅 FAB / 面板 / 贴边标签可点。
 
 流程：右下角 **CC** →（自动识别或手动选模式）→ 扫描列表 → 勾选 → 批量 SRT/TXT。
 
@@ -45,7 +45,7 @@
 ### 安装
 
 1. [Tampermonkey](https://www.tampermonkey.net/)
-2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.4.0**）
+2. 导入或粘贴 `bili-subbatch.user.js`（覆盖旧版即可，版本 **0.5.0**）
 3. 打开上表任一页面 → 右下角 **CC** → 确认/切换模式 → **扫描当前页** → 勾选 → 下载
 
 ### UI
@@ -53,8 +53,11 @@
 | 项 | 说明 |
 |----|------|
 | 主题 | [Catppuccin Mocha](https://catppuccin.com/palette/) userstyle 变量 |
-| 穿透 | 根节点 `pointer-events: none`；`.bsb-fab` / `.bsb-sidebar` 为 `auto` |
-| 形态 | 右侧玻璃边栏 + 半透明 FAB，不挡页面操作 |
+| 穿透 | 根节点 `pointer-events: none`；FAB / 面板 / 贴边标签可点 |
+| 拖拽 | 按住标题栏拖动；松手靠近左右边缘会**贴边收起** |
+| 拉伸 | 拖面板四边/四角调整大小（最小约 300×280） |
+| 贴边 | 标题栏「⧉」贴边 / 「—」收起；侧边 **字幕 CC** 标签展开；移出自动收 |
+| 记忆 | 位置/大小/贴边写入 `localStorage`（`bili-subbatch-ui-v1`） |
 | 模式 | 下拉：自动识别 / 六种强制类型 |
 
 ### 推荐用法
