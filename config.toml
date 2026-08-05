@@ -1,0 +1,22 @@
+# loop-bilibili v2 configuration (read by the app)
+
+[database]
+path = "data/v2/loop.db"
+
+[sources]
+# Creator mids to poll (string or int). Empty = skip creator refresh.
+creators = []
+# Homepage personalized rcmd
+homepage_enabled = true
+homepage_pages = 1
+homepage_ps = 12
+
+[worker]
+# Seconds between job polls when idle
+poll_interval = 2.0
+# Default language key for subtitle rows
+subtitle_language = "zh"
+
+[runtime]
+# Cookie: prefer env BILI_COOKIE; this is a fallback only
+cookie = ""
