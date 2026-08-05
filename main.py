@@ -6,6 +6,8 @@
   python3 main.py status
   python3 main.py catalog 2071007724 --name 海安雨
   python3 main.py subtitle --catalog catalogs/UID-name --resume
+  python3 main.py homepage --limit 20 --pages 2
+  python3 main.py subtitle --bvids data/homepage/bvids.txt --resume
   python3 main.py pack-subtitles --src-root data/subtitle -o data/subtitles
   python3 main.py summary --bvid BV1xxx
   python3 main.py comments --bvid BV1xxx --comment-limit 10
@@ -47,6 +49,7 @@ from catalog.models import parse_target  # noqa: E402
 from comments.export import export_comments  # noqa: E402
 from discover.export import export_hot, export_ranking, export_search  # noqa: E402
 from feed.export import export_feed  # noqa: E402
+from homepage.export import export_homepage  # noqa: E402
 from subtitle.export import export_subtitles  # noqa: E402
 from summary.export import export_summaries  # noqa: E402
 
@@ -101,6 +104,13 @@ MODULE_CATALOG = {
         "desc": "批量字幕 SubBatch 协议（WBI+player/dm，非 opencli）",
         "path": "modules/subtitle/ + packages/bili_subbatch/",
         "rate": "item",
+    },
+    "homepage": {
+        "status": "implemented",
+        "opencli": "— (SubBatch HTTP WBI rcmd，非 opencli)",
+        "desc": "Web 推荐首页 feed/rcmd（个性化；fresh_idx 刷新）",
+        "path": "modules/homepage/ + packages/bili_subbatch/homepage.py",
+        "rate": "list",
     },
     "comments": {
         "status": "implemented",
@@ -158,20 +168,46 @@ def add_item_rate_args(p: argparse.ArgumentParser) -> None:
 def add_bvid_source_args(p: argparse.ArgumentParser) -> None:
     p.add_argument("--bvid", default="", help="单个 BV 号或链接")
     p.add_argument("--catalog", default="", help="catalog 目录或 all.json 路径")
+    p.add_argument(
+        "--bvids",
+        default="",
+        help="bvid 列表文件（一行一个，如 data/homepage/bvids.txt）",
+    )
     p.add_argument("--limit", type=int, default=None, help="最多处理多少个 bvid")
     p.add_argument("--resume", action="store_true", default=True, help="跳过已完成（默认开）")
     p.add_argument("--no-resume", action="store_true", help="忽略 done，全量重跑")
     p.add_argument("--out", default="data", help="输出根目录")
 
 
+def _load_bvids_file(path: Path) -> list[str]:
+    text = path.read_text(encoding="utf-8")
+    lines = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        lines.append(line)
+    return lines
+
+
 def resolve_bvids(args: argparse.Namespace) -> list[str]:
+    file_bvids: list[str] | None = None
+    bvids_path = getattr(args, "bvids", None) or ""
+    if bvids_path:
+        p = Path(bvids_path)
+        if not p.is_file():
+            raise SystemExit(f"--bvids 文件不存在: {p}")
+        file_bvids = _load_bvids_file(p)
     bvids = load_bvids_from_args(
         bvid=args.bvid or None,
+        bvids=file_bvids,
         catalog=args.catalog or None,
         limit=args.limit,
     )
     if not bvids:
-        raise SystemExit("需要 --bvid 或 --catalog（指向含 all.json 的目录）")
+        raise SystemExit(
+            "需要 --bvid / --bvids 文件 / --catalog（指向含 all.json 的目录）"
+        )
     return bvids
 
 
@@ -283,6 +319,55 @@ def cmd_feed(args: argparse.Namespace) -> int:
         pages=args.pages,
         feed_type=args.type,
     )
+    return 0
+
+
+def cmd_homepage(args: argparse.Namespace) -> int:
+    """Web 推荐首页 rcmd（bili_subbatch，非 opencli）。"""
+    profile = build_profile(args)
+    folder = export_homepage(
+        Path(args.out),
+        limit=args.limit,
+        pages=args.pages,
+        page_size=args.page_size if args.page_size is not None else 12,
+        fresh_idx=args.fresh_idx,
+        page_delay=float(
+            args.delay if args.delay is not None else profile.page_delay
+        ),
+        page_jitter=float(
+            args.jitter if args.jitter is not None else profile.page_jitter
+        ),
+        videos_only=not args.all_cards,
+        cookie=getattr(args, "cookie", None),
+        stamp_subdir=bool(args.stamp),
+    )
+    if getattr(args, "with_subtitles", False):
+        bvids_file = folder / "bvids.txt"
+        if not bvids_file.is_file() or not bvids_file.read_text(encoding="utf-8").strip():
+            print("homepage: no bvids to subtitle", flush=True)
+            return 0
+        # reuse subtitle pipeline
+        class _NS:
+            pass
+
+        ns = _NS()
+        ns.bvid = ""
+        ns.catalog = ""
+        ns.bvids = str(bvids_file)
+        ns.limit = args.limit
+        ns.no_resume = False
+        ns.out = args.out
+        ns.profile = args.profile
+        ns.page_size = None
+        ns.delay = None
+        ns.jitter = None
+        ns.retries = None
+        ns.max_pages = None
+        ns.cooldown_412 = None
+        ns.item_delay = getattr(args, "item_delay", None)
+        ns.item_jitter = getattr(args, "item_jitter", None)
+        ns.cookie = getattr(args, "cookie", None)
+        return cmd_subtitle(ns)
     return 0
 
 
@@ -423,6 +508,59 @@ def build_parser() -> argparse.ArgumentParser:
     feed.add_argument("--out", default="data")
     add_list_rate_args(feed)
 
+    hp = sub.add_parser(
+        "homepage",
+        help="Web 推荐首页 rcmd（个性化，非 opencli / 非 hot 热门）",
+    )
+    hp.add_argument("--limit", type=int, default=20, help="最多保留多少条视频卡")
+    hp.add_argument(
+        "--pages",
+        type=int,
+        default=1,
+        help="请求几轮推荐（每轮递增 fresh_idx，相当于刷新）",
+    )
+    hp.add_argument(
+        "--fresh-idx",
+        type=int,
+        default=1,
+        help="起始 fresh_idx（刷新序号）",
+    )
+    hp.add_argument("--out", default="data")
+    hp.add_argument(
+        "--cookie",
+        default=None,
+        help="B 站 Cookie；默认可读环境变量 BILI_COOKIE",
+    )
+    hp.add_argument(
+        "--all-cards",
+        action="store_true",
+        help="保留广告/直播等非 av 卡（默认只留视频）",
+    )
+    hp.add_argument(
+        "--stamp",
+        action="store_true",
+        help="写入 data/homepage/时间戳/ 避免覆盖",
+    )
+    hp.add_argument(
+        "--with-subtitles",
+        action="store_true",
+        help="拉完首页后立刻对 bvids 跑 subtitle",
+    )
+    hp.add_argument(
+        "--item-delay",
+        type=float,
+        default=None,
+        help="--with-subtitles 时的每视频间隔",
+    )
+    hp.add_argument(
+        "--item-jitter",
+        type=float,
+        default=None,
+        help="--with-subtitles 时的抖动",
+    )
+    add_list_rate_args(hp)
+    # list args 的 --page-size 在此表示 rcmd 的 ps（默认 12）
+
     for name, help_ in (
         ("summary", "批量 AI 总结（opencli）"),
         ("subtitle", "批量字幕（SubBatch HTTP，非 opencli）"),
@@ -498,6 +636,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         "ranking": cmd_ranking,
         "search": cmd_search,
         "feed": cmd_feed,
+        "homepage": cmd_homepage,
         "summary": cmd_summary,
         "subtitle": cmd_subtitle,
         "comments": cmd_comments,

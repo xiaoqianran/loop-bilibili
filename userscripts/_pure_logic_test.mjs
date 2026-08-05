@@ -109,20 +109,41 @@ check(
   ex,
 );
 
+// v2：有正文时只展示 content，不把 reasoning / CoT 暴露到界面
 const disp = api.formatAiDisplay("答案", "思考");
+check("formatAiDisplay body only", disp === "答案", disp);
+const dispRationalizing = api.formatAiDisplay("", "思考中");
 check(
-  "formatAiDisplay",
-  disp.includes("思考过程") && disp.includes("答案") && disp.includes("---"),
-  disp,
+  "formatAiDisplay reasoning placeholder",
+  dispRationalizing === "正在分析字幕并组织笔记…",
+  dispRationalizing,
 );
+const dispEmpty = api.formatAiDisplay("", "");
+check("formatAiDisplay empty", dispEmpty === "", dispEmpty);
 
 // --- truncate ---
-const long = "字".repeat(200);
-const tr = api.truncateForAi(long, 50);
-check("truncate flags", tr.truncated === true && tr.originalLen === 200, tr);
-check("truncate length", tr.text.length > 50 && tr.text.includes("截断"), tr.text.slice(0, 80));
+// lim = max(4000, maxChars)：短上限会被抬到 4000；需用更长文本验证截断
+const long = "字".repeat(12000);
+const tr = api.truncateForAi(long, 5000);
+check(
+  "truncate flags",
+  tr.truncated === true && tr.originalLen === 12000,
+  tr,
+);
+check(
+  "truncate samples middle",
+  tr.text.includes("中段采样") && tr.text.includes("省略") && tr.text.length < long.length,
+  tr.text.slice(0, 120),
+);
 const short = api.truncateForAi("短", 50);
 check("truncate short", short.truncated === false && short.text === "短", short);
+// 未截断：长度低于抬升后的下限
+const underFloor = api.truncateForAi("字".repeat(200), 50);
+check(
+  "truncate under floor keeps all",
+  underFloor.truncated === false && underFloor.originalLen === 200,
+  underFloor,
+);
 
 // --- stick bottom ---
 check(

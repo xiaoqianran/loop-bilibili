@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Bili SubBatch (loop-bilibili)
 // @namespace    https://github.com/loop-bilibili/bili-subbatch
-// @version      0.8.5
-// @description  B站字幕+AI：KaTeX 数学公式、自由滚动、宽松排版
+// @version      5.0.5
+// @description  B站字幕研究工作台 v2：四级缓存、字幕检索跳转、同步高亮、清晰可缩放 Mermaid 与 AI 笔记
 // @author       loop-bilibili
 // @match        *://www.bilibili.com/video/*
 // @match        *://www.bilibili.com/list/*
@@ -17,6 +17,7 @@
 // @connect      bilibili.com
 // @connect      *
 // @connect      cdn.jsdelivr.net
+// @grant        unsafeWindow
 // @grant        GM_xmlhttpRequest
 // @grant        GM_setClipboard
 // @grant        GM_addStyle
@@ -25,9 +26,15 @@
 // @grant        GM_getValue
 // @run-at       document-idle
 // @license      MIT
+// @downloadURL none
 // ==/UserScript==
 
 /**
+ * v2.0.3 — 新增「全 Mermaid 学习图谱」模式：多图拆解知识、流程、因果、学习路径与自测。
+ * v2.0.1 — Mermaid 高对比可读渲染：原始宽度、缩放工具栏与全屏查看。
+ * v2.0 — 四级缓存与 stale-while-revalidate；当前字幕全文检索、时间跳转、播放同步高亮。
+ * v1.1 — 当前视频自动抓字幕：页面直读优先、内存缓存、WBI 完整链路回退。
+ * v1.0 — 安全 Markdown、时间戳证据、按需渲染、追加式流输出、低功耗 UI。
  * v0.8 — Peer AI-userscript practices: page fetch stream first,
  * GM stream fallback (no timeout), stick-bottom scroll, GM storage.
  * See PEER_AI_PRACTICES.md.
@@ -37,12 +44,39 @@
   "use strict";
 
   const SCRIPT_VERSION =
-    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "0.8.5";
+    (typeof GM_info !== "undefined" && GM_info?.script?.version) || "5.0.5";
   const PANEL_ID = "bili-subbatch-panel";
   const UI_STORE_KEY = "bili-subbatch-ui-v2";
   /** v2：默认 stream=true，避免非流式长推理被中间层 10s 掐断 (client_gone) */
   const AI_STORE_KEY = "bili-subbatch-ai-v2";
-  const MAX_SUBTITLE_CHARS = 18000;
+  const AUTO_CAPTURE_STORE_KEY = "bili-subbatch-auto-capture-v1";
+  const AUTO_ANALYZE_STORE_KEY = "bili-subbatch-auto-analyze-v1";
+  const TRANSCRIPT_FOLLOW_STORE_KEY = "bili-subbatch-transcript-follow-v2";
+  const PLAYER_SUBTITLE_STORE_KEY = "bili-subbatch-player-subtitle-v2";
+  const PLAYER_SUBTITLE_SELECTORS = Object.freeze({
+    button: ".bpx-player-ctrl-subtitle",
+    panel: ".bpx-player-ctrl-subtitle-box",
+    item: ".bpx-player-ctrl-subtitle-language-item[data-lan]",
+    active: ".bpx-player-ctrl-subtitle-language-item.bpx-state-active",
+  });
+  const CACHE_DB_NAME = "bili-subbatch-cache-v2";
+  const CACHE_DB_VERSION = 1;
+  const CACHE_STORE_NAME = "records";
+  const CACHE_CHANNEL_NAME = "bili-subbatch-cache-v2";
+  const CACHE_SESSION_PREFIX = "bsb:v2:";
+  const MEMORY_CACHE_LIMIT = 32;
+  const VIEW_CACHE_TTL_MS = 30 * 60_000;
+  const TRACK_CACHE_TTL_MS = 10 * 60_000;
+  const SUBTITLE_CACHE_TTL_MS = 30 * 24 * 60 * 60_000;
+  const SUBTITLE_REVALIDATE_MS = 12 * 60 * 60_000;
+  const AUTO_CAPTURE_DELAY_MS = 420;
+  const AUTO_ANALYZE_DELAY_MS = 180;
+  const pageWindow = typeof unsafeWindow !== "undefined" ? unsafeWindow : window;
+  const MAX_SUBTITLE_CHARS = 160000;
+  const STREAM_PAINT_INTERVAL_MS = 48;
+  const RENDER_BATCH_SIZE = 24;
+  const NOTE_FONT_MIN = 14;
+  const NOTE_FONT_MAX = 22;
   const WBI_TTL_MS = 600_000;
   const DEFAULT_DELAY_MS = 400;
   const DEFAULT_MAX_PAGES = 20;
@@ -51,9 +85,9 @@
   const DOCK_EDGE_PX = 32;
   const DOCK_SNAP_PX = 36;
 
-  /** OpenAI 兼容默认值（密钥仅存 localStorage，可在面板修改） */
+  /** OpenAI 兼容默认值（密钥优先存入 userscript 隔离存储） */
   const AI_DEFAULTS = {
-    baseUrl: "https://newapi-jp1.202820.xyz/v1",
+    baseUrl: "",
     // Never ship secrets in-repo; user fills in Settings (GM/local storage only)
     apiKey: "",
     model: "openai/gpt-oss-120b",
@@ -66,22 +100,116 @@
      */
     stream: true,
     systemPrompt:
-      "你是资深内容分析助手。根据用户提供的 B 站视频字幕，输出结构清晰、可执行的中文笔记。" +
-      "需要时使用 Markdown：标题、列表、表格；代码用 fenced code block 并标注语言；" +
-      "流程/架构用 mermaid 代码块（```mermaid）；" +
-      "数学公式用 LaTeX：行内 $E=mc^2$ 或 \\( \\ ），独立公式用 $$...$$ / \\[...\\] 或 ```math 代码块。" +
-      "不要编造字幕中不存在的事实。最终答案写在正文里，尽量简洁。",
+      "你是严谨的视频研究笔记助手。只依据用户提供的带时间戳字幕写中文 Markdown 笔记。" +
+      "重要结论、步骤和定义尽可能附来源时间戳，格式为 [BV号 P号 mm:ss]；不要伪造时间戳。" +
+      "代码使用 fenced code block；确有结构关系时才使用 mermaid；公式使用 LaTeX。" +
+      "优先使用短段落、信息密度高的列表与清晰层级，不输出思考过程，不编造字幕外事实。",
     userPromptTemplate:
-      "请分析以下字幕并输出：\n" +
-      "1. 一句话摘要\n2. 要点列表\n3. 关键概念/术语（含公式请用 LaTeX）\n" +
-      "4. 若有步骤或架构，用 mermaid 图\n" +
-      "5. 可行动的后续建议\n\n" +
+      "{{modeInstruction}}\n\n" +
+      "请把以下字幕整理为可长期复习、可核查来源的研究笔记：\n" +
+      "1. 核心摘要（3—6 条）\n2. 结构化详细笔记\n3. 关键概念与术语\n" +
+      "4. 方法、流程或架构（确有必要时用 mermaid）\n5. 可执行事项与仍不确定之处\n\n" +
+      "引用关键内容时保留 [BV号 P号 mm:ss]。避免空泛套话和机械复述。\n\n" +
       "【元信息】\n标题：{{title}}\nBV：{{bvid}}\nUP：{{author}}\n\n" +
-      "【字幕全文】\n{{subtitle}}\n",
+      "【带时间戳字幕】\n{{subtitle}}\n",
   };
+  /**
+   * 「全 Mermaid 学习图谱」模式的附加系统约束。
+   * 与用户已保存的 systemPrompt 合并，避免旧配置中的普通笔记要求削弱专属模式。
+   */
+  const MERMAID_LEARNING_SYSTEM_PROMPT = [
+    "当前选择的是『全 Mermaid 学习图谱』模式。",
+    "除 Markdown 一级标题、每张图的二级标题和最多一句非实质性读图提示外，所有实质内容必须放入 Mermaid fenced code block；不要再用普通段落、项目符号、表格重复图中信息。",
+    "根据字幕内容生成 3—6 张可独立渲染的结构图；至少包括知识总览、概念关系或因果链、过程或论证链、学习路径与自测图。没有依据的类别不要硬编。",
+    "全部图表只使用 Mermaid 10.9.1 稳定语法：flowchart TD 或 flowchart LR。不要使用 mindmap、timeline、xychart、packet、architecture-beta、click、classDef、style、主题初始化指令或实验语法。",
+    "每个代码块必须独立完整，不跨代码块复用节点 ID。节点 ID 只使用 ASCII 字母与数字，例如 A1、B2；可见文本统一写入带双引号的节点标签，例如 A1[\"核心概念\"]。",
+    "节点标签保持简短，单图通常不超过 18 个节点；避免标签中的英文双引号、反引号、花括号和复杂 HTML，只允许必要的 <br/> 换行。",
+    "重要结论、定义、步骤和争议尽量在对应节点中保留字幕时间戳，格式继续使用 [BV号 P号 mm:ss]；不得伪造来源。",
+    "学习路径与自测图应把先修知识、理解顺序、易错点、复习问题和应用检查连接成可执行的学习闭环。",
+    "输出前自行检查每个 Mermaid 块的括号、引号、连线和节点 ID，确保可被 Mermaid 10.9.1 直接解析。",
+  ].join("\n");
+
   const UA =
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
     "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
+
+  function loadAutoCaptureSetting() {
+    const raw = storageGet(AUTO_CAPTURE_STORE_KEY, true);
+    return ![false, 0, "0", "false", "off"].includes(raw);
+  }
+
+  function saveAutoCaptureSetting(enabled) {
+    storageSet(AUTO_CAPTURE_STORE_KEY, enabled ? "true" : "false");
+  }
+
+  /** 默认开启：当前视频字幕抓取成功后，自动执行与“开始分析”按钮相同的流程。 */
+  function loadAutoAnalyzeSetting() {
+    const raw = storageGet(AUTO_ANALYZE_STORE_KEY, true);
+    return ![false, 0, "0", "false", "off"].includes(raw);
+  }
+
+  function saveAutoAnalyzeSetting(enabled) {
+    storageSet(AUTO_ANALYZE_STORE_KEY, enabled ? "true" : "false");
+  }
+
+  function loadTranscriptFollowSetting() {
+    const raw = storageGet(TRANSCRIPT_FOLLOW_STORE_KEY, true);
+    return ![false, 0, "0", "false", "off"].includes(raw);
+  }
+
+  function loadPlayerSubtitleSetting() {
+    const raw = storageGet(PLAYER_SUBTITLE_STORE_KEY, true);
+    return ![false, 0, "0", "false", "off"].includes(raw);
+  }
+
+  function debounce(fn, wait = 100) {
+    let timer = 0;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = window.setTimeout(() => fn.apply(this, args), wait);
+    };
+  }
+
+  function lruGet(map, key) {
+    if (!map.has(key)) return null;
+    const value = map.get(key);
+    map.delete(key);
+    map.set(key, value);
+    return value;
+  }
+
+  function lruSet(map, key, value, max = MEMORY_CACHE_LIMIT) {
+    if (map.has(key)) map.delete(key);
+    map.set(key, value);
+    while (map.size > max) map.delete(map.keys().next().value);
+    return value;
+  }
+
+  function sessionCacheRead(kind, key, ttlMs) {
+    try {
+      const raw = sessionStorage.getItem(`${CACHE_SESSION_PREFIX}${kind}:${key}`);
+      if (!raw) return null;
+      const record = JSON.parse(raw);
+      if (!record || Date.now() - Number(record.at || 0) > ttlMs) {
+        sessionStorage.removeItem(`${CACHE_SESSION_PREFIX}${kind}:${key}`);
+        return null;
+      }
+      return record.value;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function sessionCacheWrite(kind, key, value) {
+    try {
+      sessionStorage.setItem(
+        `${CACHE_SESSION_PREFIX}${kind}:${key}`,
+        JSON.stringify({ at: Date.now(), value }),
+      );
+    } catch (_) {
+      /* storage quota or privacy mode: memory/IDB still work */
+    }
+  }
 
   const MIXIN_KEY_ENC_TAB = [
     46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35, 27, 43, 5, 49,
@@ -110,6 +238,15 @@
     "collection",
     "search",
   ];
+
+  /** AI 笔记输出模式；集中维护，避免 UI 与持久化白名单不一致。 */
+  const NOTE_MODE_OPTIONS = Object.freeze([
+    "deep",
+    "concise",
+    "study",
+    "action",
+    "mermaid",
+  ]);
 
   // ─── MD5 ────────────────────────────────────────────────────────────────
   function md5(str) {
@@ -306,27 +443,37 @@
   }
 
   function formatAiDisplay(content, reasoning) {
-    const parts = [];
-    if (reasoning && String(reasoning).trim()) {
-      parts.push("### 思考过程\n\n" + String(reasoning).trim());
-    }
-    if (content && String(content).trim()) {
-      parts.push(String(content).trim());
-    }
-    return parts.join("\n\n---\n\n");
+    const body = String(content || "");
+    if (body.trim()) return body;
+    // 不把供应商返回的 reasoning / chain-of-thought 暴露到界面。
+    return reasoning && String(reasoning).trim() ? "正在分析字幕并组织笔记…" : "";
   }
 
   function truncateForAi(text, maxChars) {
     const s = String(text || "");
-    const lim = maxChars == null ? 18000 : maxChars;
+    const lim = maxChars == null ? MAX_SUBTITLE_CHARS : Math.max(4000, Number(maxChars));
     if (s.length <= lim) return { text: s, truncated: false, originalLen: s.length };
-    return {
-      text:
-        s.slice(0, lim) +
-        `\n\n…[字幕已截断 ${s.length - lim} 字，避免超长 token 导致超时/断连]`,
-      truncated: true,
-      originalLen: s.length,
-    };
+
+    // 比“只保留开头”更稳：保留首尾，并从中段均匀抽取连续窗口。
+    const markerBudget = 420;
+    const usable = Math.max(3000, lim - markerBudget);
+    const headLen = Math.floor(usable * 0.44);
+    const tailLen = Math.floor(usable * 0.24);
+    const middleBudget = usable - headLen - tailLen;
+    const windows = 3;
+    const winLen = Math.floor(middleBudget / windows);
+    const middleStart = headLen;
+    const middleEnd = s.length - tailLen;
+    const span = Math.max(1, middleEnd - middleStart - winLen);
+    const parts = [s.slice(0, headLen).replace(/[^\n]*$/, "")];
+    for (let i = 0; i < windows; i++) {
+      const at = middleStart + Math.floor((span * (i + 1)) / (windows + 1));
+      let piece = s.slice(at, at + winLen);
+      piece = piece.replace(/^[^\n]*\n?/, "").replace(/[^\n]*$/, "");
+      parts.push(`\n…[中段采样 ${i + 1}/${windows}]…\n${piece}`);
+    }
+    parts.push(`\n…[省略 ${s.length - usable} 字；保留结尾]…\n${s.slice(-tailLen).replace(/^[^\n]*\n?/, "")}`);
+    return { text: parts.join(""), truncated: true, originalLen: s.length };
   }
 
   /** Peer scroll pattern: stick when distance-to-bottom < threshold */
@@ -421,15 +568,49 @@
       maths.push({ tex: String(tex).trim(), display: false });
       return `@@BSBMATH${i}@@`;
     });
-    // 行内 $...$（排除货币/纯数字）
-    s = s.replace(/\$((?:\\.|[^$\n])+?)\$/g, (match, tex) => {
-      const t = String(tex).trim();
-      if (!t) return match;
-      if (/^[\d,]+(?:\.\d+)?$/.test(t)) return match;
-      const i = maths.length;
-      maths.push({ tex: t, display: false });
-      return `@@BSBMATH${i}@@`;
-    });
+    // 行内 $...$：手动扫描，避免“价格 $12.5，后文 $x^2$”跨段误配。
+    // 无效起始符只消耗自身，让后一个 $ 仍可作为真正公式的起点。
+    {
+      const input = s;
+      let out = "";
+      let cursor = 0;
+      const escapedAt = (idx) => {
+        let slashes = 0;
+        for (let j = idx - 1; j >= 0 && input[j] === "\\"; j--) slashes += 1;
+        return slashes % 2 === 1;
+      };
+      while (cursor < input.length) {
+        let open = input.indexOf("$", cursor);
+        while (open >= 0 && escapedAt(open)) open = input.indexOf("$", open + 1);
+        if (open < 0) {
+          out += input.slice(cursor);
+          break;
+        }
+        out += input.slice(cursor, open);
+        let close = input.indexOf("$", open + 1);
+        while (close >= 0 && escapedAt(close)) close = input.indexOf("$", close + 1);
+        if (close < 0) {
+          out += input.slice(open);
+          break;
+        }
+        const raw = input.slice(open + 1, close);
+        const t = raw.trim();
+        const hasBoundarySpace = raw !== t;
+        const pureNumber = /^[\d,]+(?:\.\d+)?$/.test(t);
+        const mathSignal = /[A-Za-z\\_^{}=+*/<>|]|[α-ωΑ-Ω]/.test(t);
+        const valid = !!t && !hasBoundarySpace && !pureNumber && mathSignal;
+        if (!valid) {
+          out += "$";
+          cursor = open + 1;
+          continue;
+        }
+        const i = maths.length;
+        maths.push({ tex: t, display: false });
+        out += `@@BSBMATH${i}@@`;
+        cursor = close + 1;
+      }
+      s = out;
+    }
 
     s = s.replace(/@@BSBCODE(\d+)@@/g, (_, id) => {
       const i = Number(id);
@@ -553,6 +734,36 @@
     });
   }
 
+  /**
+   * 当前视频快速链路：页面 fetch 优先，避免每次请求跨 userscript bridge。
+   * CORS、登录态或 CSP 不允许时再回退 GM_xmlhttpRequest。
+   */
+  async function requestJsonFast(url, { signal, headers } = {}) {
+    let fetchError = null;
+    try {
+      const fetchFn = pageWindow.fetch || window.fetch;
+      const res = await fetchFn.call(pageWindow, url, {
+        method: "GET",
+        credentials: "include",
+        cache: "no-store",
+        signal,
+        headers: Object.assign({ Accept: "application/json, text/plain, */*" }, headers || {}),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+      return await res.json();
+    } catch (error) {
+      if (error?.name === "AbortError") throw error;
+      fetchError = error;
+    }
+
+    if (signal?.aborted) throw new DOMException("操作已取消", "AbortError");
+    try {
+      return await httpJson(url, headers);
+    } catch (gmError) {
+      throw gmError || fetchError || new Error(`request failed: ${url}`);
+    }
+  }
+
   function formatSubtitleUrl(u) {
     if (!u) return "";
     u = String(u).trim();
@@ -626,6 +837,28 @@
     return out;
   }
 
+  function dedupeCues(cues) {
+    const out = [];
+    for (const cue of cues || []) {
+      const content = String(cue?.content || "").replace(/\s+/g, " ").trim();
+      if (!content) continue;
+      const normalized = content.toLocaleLowerCase();
+      const previous = out[out.length - 1];
+      if (previous && previous._normalized === normalized) {
+        const previousTo = Number(previous.to_sec ?? parseSeconds(previous.to));
+        const currentFrom = Number(cue.from_sec ?? parseSeconds(cue.from));
+        if (currentFrom - previousTo <= 1.25) {
+          const nextTo = Math.max(previousTo, Number(cue.to_sec ?? parseSeconds(cue.to)));
+          previous.to_sec = nextTo;
+          previous.to = `${nextTo.toFixed(2)}s`;
+          continue;
+        }
+      }
+      out.push({ ...cue, content, _normalized: normalized });
+    }
+    return out.map(({ _normalized, ...cue }) => cue);
+  }
+
   function parseSeconds(val) {
     if (val == null) return 0;
     if (typeof val === "number") return val;
@@ -681,6 +914,29 @@
       .map((c) => String(c.content || "").trim())
       .filter(Boolean)
       .join("\n");
+  }
+
+  function formatClock(sec) {
+    const total = Math.max(0, Math.floor(Number(sec) || 0));
+    const h = Math.floor(total / 3600);
+    const m = Math.floor((total % 3600) / 60);
+    const s = total % 60;
+    return h > 0
+      ? `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
+      : `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+  }
+
+  function cuesToAiText(cues, bvid, page) {
+    const rows = [];
+    let previous = "";
+    for (const cue of cues || []) {
+      const content = String(cue.content || "").replace(/\s+/g, " ").trim();
+      if (!content || content === previous) continue;
+      previous = content;
+      const sec = cue.from_sec != null ? cue.from_sec : parseSeconds(cue.from);
+      rows.push(`[${bvid || "BV"} P${Math.max(1, Number(page) || 1)} ${formatClock(sec)}] ${content}`);
+    }
+    return rows.join("\n");
   }
 
   function stripHtml(s) {
@@ -1194,6 +1450,334 @@
     return { url, source };
   }
 
+  function currentPageNumber() {
+    try {
+      return Math.max(1, parseInt(new URL(location.href).searchParams.get("p") || "1", 10) || 1);
+    } catch (_) {
+      return 1;
+    }
+  }
+
+  function routeVideoKey(bvid, page) {
+    return `${String(bvid || "").toUpperCase()}:P${Math.max(1, Number(page) || 1)}`;
+  }
+
+  function runtimeVideoView(bvid) {
+    const key = String(bvid || "").toUpperCase();
+    const candidates = [
+      pageWindow.__INITIAL_STATE__?.videoData,
+      pageWindow.__INITIAL_STATE__?.videoInfo,
+      pageWindow.__INITIAL_STATE__?.epInfo,
+    ];
+    for (const view of candidates) {
+      if (view && String(view.bvid || "").toUpperCase() === key && (view.cid || view.pages?.length)) {
+        return view;
+      }
+    }
+    return null;
+  }
+
+  function runtimeSubtitleTracks(meta) {
+    const roots = [pageWindow.__playinfo__, pageWindow.__PLAYINFO__, pageWindow.__PLAYER_CONFIG__];
+    for (let root of roots) {
+      if (!root) continue;
+      if (typeof root === "string") {
+        try { root = JSON.parse(root); } catch (_) { continue; }
+      }
+      const runtimeCid = Number(root?.data?.cid || root?.cid || pageWindow.__INITIAL_STATE__?.videoData?.cid || 0);
+      if (runtimeCid && meta?.cid && runtimeCid !== Number(meta.cid)) continue;
+      const candidates = [
+        root?.data?.subtitle?.subtitles,
+        root?.subtitle?.subtitles,
+        root?.data?.data?.subtitle?.subtitles,
+      ];
+      for (const tracks of candidates) {
+        if (!Array.isArray(tracks) || !tracks.length) continue;
+        return tracks.map((track) => ({
+          ...track,
+          subtitle_url: formatSubtitleUrl(track.subtitle_url || ""),
+        }));
+      }
+    }
+    return null;
+  }
+
+  function openCacheDatabase() {
+    if (state.cacheDbPromise) return state.cacheDbPromise;
+    state.cacheDbPromise = new Promise((resolve, reject) => {
+      if (!globalThis.indexedDB) return reject(new Error("IndexedDB unavailable"));
+      const req = indexedDB.open(CACHE_DB_NAME, CACHE_DB_VERSION);
+      req.onupgradeneeded = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains(CACHE_STORE_NAME)) {
+          db.createObjectStore(CACHE_STORE_NAME, { keyPath: "key" });
+        }
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error || new Error("cache database open failed"));
+    }).catch((error) => {
+      state.cacheDbPromise = null;
+      throw error;
+    });
+    return state.cacheDbPromise;
+  }
+
+  async function persistentCacheRead(key) {
+    try {
+      const db = await openCacheDatabase();
+      const record = await new Promise((resolve, reject) => {
+        const tx = db.transaction(CACHE_STORE_NAME, "readonly");
+        const req = tx.objectStore(CACHE_STORE_NAME).get(key);
+        req.onsuccess = () => resolve(req.result || null);
+        req.onerror = () => reject(req.error);
+      });
+      if (!record) return null;
+      if (Number(record.expiresAt || 0) < Date.now()) {
+        persistentCacheDelete(key).catch(() => {});
+        return null;
+      }
+      return record;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  async function persistentCacheWrite(key, value, ttlMs = SUBTITLE_CACHE_TTL_MS) {
+    const record = {
+      key,
+      value,
+      updatedAt: Date.now(),
+      expiresAt: Date.now() + ttlMs,
+    };
+    try {
+      const db = await openCacheDatabase();
+      await new Promise((resolve, reject) => {
+        const tx = db.transaction(CACHE_STORE_NAME, "readwrite");
+        tx.objectStore(CACHE_STORE_NAME).put(record);
+        tx.oncomplete = resolve;
+        tx.onerror = () => reject(tx.error);
+      });
+      state.cacheChannel?.postMessage({ type: "cache-updated", key, updatedAt: record.updatedAt });
+    } catch (_) {
+      /* private mode / quota: memory cache remains available */
+    }
+    return record;
+  }
+
+  async function persistentCacheDelete(key) {
+    try {
+      const db = await openCacheDatabase();
+      await new Promise((resolve, reject) => {
+        const tx = db.transaction(CACHE_STORE_NAME, "readwrite");
+        tx.objectStore(CACHE_STORE_NAME).delete(key);
+        tx.oncomplete = resolve;
+        tx.onerror = () => reject(tx.error);
+      });
+    } catch (_) { /* ignore */ }
+  }
+
+  function initCacheChannel() {
+    if (state.cacheChannel || typeof BroadcastChannel === "undefined") return;
+    try {
+      state.cacheChannel = new BroadcastChannel(CACHE_CHANNEL_NAME);
+      state.cacheChannel.addEventListener("message", (event) => {
+        const msg = event.data;
+        if (!msg || msg.type !== "cache-updated" || !String(msg.key).startsWith("subtitle:")) return;
+        const shortKey = String(msg.key).slice("subtitle:".length);
+        state.fastSubtitleCache.delete(shortKey);
+      });
+    } catch (_) { /* optional */ }
+  }
+
+  async function fetchVideoViewFast(bvid, signal, { forceNetwork = false } = {}) {
+    const key = String(bvid || "").toUpperCase();
+
+    if (!forceNetwork) {
+      const runtime = runtimeVideoView(key);
+      if (runtime) {
+        lruSet(state.fastViewCache, key, runtime);
+        sessionCacheWrite("view", key, runtime);
+        return { value: runtime, cacheLevel: "L0 页面态" };
+      }
+      const memory = lruGet(state.fastViewCache, key);
+      if (memory) return { value: memory, cacheLevel: "L1 内存" };
+      const session = sessionCacheRead("view", key, VIEW_CACHE_TTL_MS);
+      if (session) {
+        lruSet(state.fastViewCache, key, session);
+        return { value: session, cacheLevel: "L2 会话" };
+      }
+    }
+
+    const payload = await requestJsonFast(
+      `https://api.bilibili.com/x/web-interface/view?bvid=${encodeURIComponent(bvid)}`,
+      { signal },
+    );
+    if (payload?.code !== 0 || !payload?.data) {
+      throw new Error(payload?.message || "视频信息接口返回失败");
+    }
+    lruSet(state.fastViewCache, key, payload.data);
+    sessionCacheWrite("view", key, payload.data);
+    return { value: payload.data, cacheLevel: "NET 视频详情" };
+  }
+
+  async function fetchSubtitleTracksFast(meta, signal, { forceNetwork = false } = {}) {
+    const cacheKey = `${meta.bvid}:${meta.cid}`;
+    if (!forceNetwork) {
+      const runtime = runtimeSubtitleTracks(meta);
+      if (runtime) {
+        lruSet(state.fastTrackCache, cacheKey, runtime);
+        sessionCacheWrite("tracks", cacheKey, runtime);
+        return { tracks: runtime, cacheLevel: "L0 播放器态" };
+      }
+      const memory = lruGet(state.fastTrackCache, cacheKey);
+      if (memory) return { tracks: memory, cacheLevel: "L1 内存" };
+      const session = sessionCacheRead("tracks", cacheKey, TRACK_CACHE_TTL_MS);
+      if (session) {
+        lruSet(state.fastTrackCache, cacheKey, session);
+        return { tracks: session, cacheLevel: "L2 会话" };
+      }
+    }
+
+    const params = new URLSearchParams({ bvid: meta.bvid, cid: String(meta.cid) });
+    if (meta.aid) params.set("aid", String(meta.aid));
+    const endpoints = [
+      `https://api.bilibili.com/x/player/wbi/v2?${params}`,
+      `https://api.bilibili.com/x/player/v2?${params}`,
+    ];
+    let lastError = null;
+    for (const endpoint of endpoints) {
+      try {
+        const payload = await requestJsonFast(endpoint, { signal });
+        if (payload?.code === 0) {
+          const tracks = payload?.data?.subtitle?.subtitles;
+          if (Array.isArray(tracks)) {
+            const normalized = tracks.map((track) => ({
+              ...track,
+              subtitle_url: formatSubtitleUrl(track.subtitle_url || ""),
+            }));
+            lruSet(state.fastTrackCache, cacheKey, normalized);
+            sessionCacheWrite("tracks", cacheKey, normalized);
+            return { tracks: normalized, cacheLevel: "NET 字幕轨道" };
+          }
+        }
+        lastError = new Error(payload?.message || "字幕轨道接口返回失败");
+      } catch (error) {
+        if (error?.name === "AbortError") throw error;
+        lastError = error;
+      }
+    }
+    throw lastError || new Error("无法取得字幕轨道");
+  }
+
+  function preferredTrackIndex(tracks) {
+    const chosen = pickTrack(tracks);
+    const index = tracks.indexOf(chosen);
+    return index >= 0 ? index : 0;
+  }
+
+  async function fetchTrackBodyFast(base, tracks, trackIndex, signal, { forceNetwork = false } = {}) {
+    const track = tracks[trackIndex];
+    if (!track) throw new Error("字幕轨道不存在");
+    const langKey = String(track.lan || trackIndex || "default");
+    const cacheKey = `${base.bvid}:${base.cid}:${langKey}`;
+
+    if (!forceNetwork) {
+      const memory = lruGet(state.fastTrackBodyCache, cacheKey);
+      if (memory) return { ...memory, source: "L1 内存字幕", cacheLevel: "L1 内存" };
+      const persistent = await persistentCacheRead(`subtitle-track:${cacheKey}`);
+      if (persistent?.value) {
+        const result = { ...persistent.value, cacheStale: Date.now() - persistent.updatedAt > SUBTITLE_REVALIDATE_MS };
+        lruSet(state.fastTrackBodyCache, cacheKey, result);
+        return { ...result, source: "L3 持久字幕", cacheLevel: "L3 IndexedDB" };
+      }
+    }
+
+    const lan = String(track.lan || "");
+    let url = formatSubtitleUrl(track.subtitle_url || "");
+    if (!url && lan.startsWith("ai-") && base.aid) {
+      url = await aiSubtitleStat(base.aid, base.cid);
+    }
+    if (!url) return { ...base, status: "empty", lan, tracks, activeTrackIndex: trackIndex, source: "NET 无地址" };
+
+    const bodyJson = await requestJsonFast(url, { signal });
+    const body = bodyJson && typeof bodyJson === "object" ? bodyJson.body : null;
+    if (!Array.isArray(body) || !body.length) {
+      return { ...base, status: "empty", lan, tracks, activeTrackIndex: trackIndex, source: "NET 空字幕" };
+    }
+    const cues = dedupeCues(toCues(body));
+    const result = {
+      ...base,
+      status: "ok",
+      cue_count: cues.length,
+      lan,
+      lan_doc: track.lan_doc || lan,
+      data: cues,
+      tracks,
+      activeTrackIndex: trackIndex,
+      source: "NET 直读",
+      cacheLevel: "NET",
+      cacheStale: false,
+    };
+    lruSet(state.fastTrackBodyCache, cacheKey, result);
+    persistentCacheWrite(`subtitle-track:${cacheKey}`, result).catch(() => {});
+    return result;
+  }
+
+  async function fetchCurrentSubtitleFast(bvid, page = 1, signal, { forceNetwork = false } = {}) {
+    bvid = extractBvid(bvid) || String(bvid || "").trim();
+    if (!bvid) throw new Error("empty bvid");
+
+    const viewHit = await fetchVideoViewFast(bvid, signal, { forceNetwork });
+    const view = viewHit.value;
+    if (isChargeExclusiveBlocked(view)) {
+      return { bvid, status: "empty", error: "charge_exclusive_blocked", source: viewHit.cacheLevel };
+    }
+
+    const pages = Array.isArray(view.pages) ? view.pages : [];
+    const pageNo = Math.max(1, Math.min(Number(page) || 1, Math.max(1, pages.length)));
+    const part = pages[pageNo - 1] || null;
+    const cid = Number(part?.cid || view.cid) || null;
+    const aid = Number(view.aid) || null;
+    const title = part?.part && pages.length > 1
+      ? `${view.title || bvid} - P${pageNo}【${part.part}】`
+      : String(view.title || bvid);
+    const author = String(view.owner?.name || "");
+    const base = { bvid: view.bvid || bvid, aid, cid, title, author, pages, page: pageNo };
+    if (!cid) return { ...base, status: "error", error: "no cid", source: viewHit.cacheLevel };
+
+    const preferredKey = `${base.bvid}:${cid}`;
+    if (!forceNetwork) {
+      const memory = lruGet(state.fastSubtitleCache, preferredKey);
+      if (memory) return { ...memory, source: "L1 内存字幕", cacheLevel: "L1 内存" };
+      const persistent = await persistentCacheRead(`subtitle:${preferredKey}`);
+      if (persistent?.value) {
+        const result = {
+          ...persistent.value,
+          source: "L3 持久字幕",
+          cacheLevel: "L3 IndexedDB",
+          cacheStale: Date.now() - persistent.updatedAt > SUBTITLE_REVALIDATE_MS,
+        };
+        lruSet(state.fastSubtitleCache, preferredKey, result);
+        return result;
+      }
+    }
+
+    const trackHit = await fetchSubtitleTracksFast(base, signal, { forceNetwork });
+    const tracks = trackHit.tracks;
+    if (!tracks.length) return { ...base, status: "empty", tracks: [], source: trackHit.cacheLevel };
+    const activeTrackIndex = preferredTrackIndex(tracks);
+    const result = await fetchTrackBodyFast(base, tracks, activeTrackIndex, signal, { forceNetwork });
+    const finalResult = {
+      ...result,
+      cachePath: `${viewHit.cacheLevel} → ${trackHit.cacheLevel} → ${result.cacheLevel || result.source}`,
+    };
+    if (finalResult.status === "ok") {
+      lruSet(state.fastSubtitleCache, preferredKey, finalResult);
+      persistentCacheWrite(`subtitle:${preferredKey}`, finalResult).catch(() => {});
+    }
+    return finalResult;
+  }
+
   async function fetchSubtitle(bvid, page = 1) {
     bvid = extractBvid(bvid) || String(bvid || "").trim();
     if (!bvid) return { bvid: "", status: "error", error: "empty bvid" };
@@ -1520,8 +2104,44 @@
     aiUserReading: false, // 用户主动离开底部后锁住，禁止自动回粘
     aiProgScroll: false, // 程序化滚动中，忽略 scroll 事件回写
     aiPaintRaf: 0,
+    aiPaintTimer: 0,
     aiPendingText: "",
-    renderLibsReady: false,
+    aiRenderedText: "",
+    aiStreamTextNode: null,
+    renderEpoch: 0,
+    renderLibs: { core: false, highlight: false, mermaid: false, katex: false },
+    mermaidObserver: null,
+    mermaidRenderSeq: 0,
+    mermaidQueue: Promise.resolve(),
+    mermaidRepairing: false,
+    aiSourceBvids: [],
+    autoCaptureEnabled: loadAutoCaptureSetting(),
+    autoCaptureKey: "",
+    autoCaptureEpoch: 0,
+    autoCaptureTimer: 0,
+    autoCaptureAbortController: null,
+    autoAnalyzeEnabled: loadAutoAnalyzeSetting(),
+    autoAnalyzeKey: "",
+    autoAnalyzePendingKey: "",
+    autoAnalyzeTimer: 0,
+    fastViewCache: new Map(),
+    fastTrackCache: new Map(),
+    fastSubtitleCache: new Map(),
+    fastTrackBodyCache: new Map(),
+    cacheDbPromise: null,
+    cacheChannel: null,
+    transcriptItemKey: "",
+    transcriptQuery: "",
+    transcriptFilteredIndexes: null,
+    transcriptActiveCueIndex: -1,
+    transcriptTrackIndex: -1,
+    transcriptAutoFollow: loadTranscriptFollowSetting(),
+    autoEnablePlayerSubtitle: loadPlayerSubtitleSetting(),
+    playerSubtitleOperation: null,
+    transcriptUserScrollUntil: 0,
+    transcriptVideoAbort: null,
+    transcriptSwitchAbort: null,
+    transcriptRenderEpoch: 0,
   };
 
   // ─── UI geometry persistence ────────────────────────────────────────────
@@ -1536,6 +2156,8 @@
       dock: null, // null | 'left' | 'right'
       dockExpanded: false,
       view: "ai", // ai | subs | settings
+      noteFont: 17,
+      noteMode: "deep",
     };
   }
 
@@ -1553,6 +2175,8 @@
         dock: o.dock === "left" || o.dock === "right" ? o.dock : null,
         dockExpanded: false,
         view: ["ai", "subs", "settings"].includes(o.view) ? o.view : "ai",
+        noteFont: Math.max(NOTE_FONT_MIN, Math.min(NOTE_FONT_MAX, Number(o.noteFont) || 17)),
+        noteMode: NOTE_MODE_OPTIONS.includes(o.noteMode) ? o.noteMode : "deep",
       };
     } catch (_) {
       return defaultUiGeom();
@@ -1571,6 +2195,8 @@
           h: state.ui.h,
           dock: state.ui.dock,
           view: state.ui.view || "ai",
+          noteFont: state.ui.noteFont || 17,
+          noteMode: state.ui.noteMode || "deep",
         }),
       );
     } catch (_) {
@@ -1627,9 +2253,13 @@
         width: 0;
         height: 0;
         z-index: 2147483646;
-        font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
-          "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        --bsb-note-font: 17px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
         font-size: 12px;
+        font-synthesis: none;
+        isolation: isolate;
+        contain: style;
         color: var(--ctp-text);
         line-height: 1.45;
         pointer-events: none;
@@ -1695,6 +2325,7 @@
           inset 0 1px 0 color-mix(in srgb, var(--ctp-overlay2) 22%, transparent);
         min-width: ${MIN_W}px;
         min-height: ${MIN_H}px;
+        contain: layout paint style;
       }
       #${PANEL_ID}.open:not(.docked) .bsb-sidebar {
         display: flex;
@@ -2072,6 +2703,94 @@
       #${PANEL_ID} .bsb-list .st-err { color: var(--ctp-red); }
       #${PANEL_ID} .bsb-list .st-wait { color: var(--ctp-overlay1); }
       #${PANEL_ID} .bsb-list input[type="checkbox"] { accent-color: var(--ctp-mauve); }
+      #${PANEL_ID} .bsb-list .bsb-open-transcript {
+        height: 26px; padding: 0 8px; border-radius: 7px; cursor: pointer;
+        border: 1px solid color-mix(in srgb, var(--ctp-sapphire) 38%, transparent);
+        background: color-mix(in srgb, var(--ctp-sapphire) 12%, transparent);
+        color: var(--ctp-sapphire); font-size: 10.5px; white-space: nowrap;
+      }
+      #${PANEL_ID} .bsb-view[data-view-panel="subs"] {
+        overflow-y: auto; overscroll-behavior: contain;
+      }
+      #${PANEL_ID} .bsb-view[data-view-panel="subs"] .bsb-list {
+        flex: 0 0 auto; min-height: 82px; max-height: 150px;
+      }
+      #${PANEL_ID} .bsb-transcript-shell {
+        flex: 1 0 260px; min-height: 220px; overflow: hidden;
+        display: flex; flex-direction: column;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 55%, transparent);
+        border-radius: 14px; background: color-mix(in srgb, var(--ctp-base) 62%, transparent);
+        contain: layout paint style;
+      }
+      #${PANEL_ID} .bsb-transcript-head {
+        display: flex; align-items: center; justify-content: space-between; gap: 8px;
+        padding: 9px 10px 7px; border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 70%, transparent);
+      }
+      #${PANEL_ID} .bsb-transcript-title { min-width: 0; display: grid; gap: 2px; }
+      #${PANEL_ID} .bsb-transcript-title strong {
+        font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      }
+      #${PANEL_ID} .bsb-transcript-title span { font-size: 10px; color: var(--ctp-overlay1); }
+      #${PANEL_ID} .bsb-transcript-tools {
+        padding: 8px 10px; display: grid; grid-template-columns: minmax(120px,1fr) auto auto auto;
+        gap: 6px; align-items: center; border-bottom: 1px solid color-mix(in srgb, var(--ctp-surface0) 62%, transparent);
+      }
+      #${PANEL_ID} .bsb-transcript-search {
+        height: 31px; display: grid; grid-template-columns: auto minmax(0,1fr) auto;
+        align-items: center; gap: 6px; padding: 0 8px; border-radius: 9px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 58%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 60%, transparent);
+      }
+      #${PANEL_ID} .bsb-transcript-search input {
+        min-width: 0; width: 100%; border: 0; outline: 0; background: transparent;
+        color: var(--ctp-text); font-size: 11.5px;
+      }
+      #${PANEL_ID} .bsb-transcript-count { font-size: 10px; color: var(--ctp-overlay1); font-variant-numeric: tabular-nums; }
+      #${PANEL_ID} .bsb-transcript-track {
+        max-width: 118px; height: 31px; border-radius: 9px; padding: 0 7px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 58%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 60%, transparent); color: var(--ctp-text); font-size: 10.5px;
+      }
+      #${PANEL_ID} .bsb-transcript-follow { font-size: 10.5px; color: var(--ctp-subtext0); white-space: nowrap; }
+      #${PANEL_ID} .bsb-transcript-follow input { accent-color: var(--ctp-sapphire); }
+      #${PANEL_ID} .bsb-transcript-refresh {
+        height: 31px; padding: 0 8px; border-radius: 9px; cursor: pointer;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 58%, transparent);
+        background: color-mix(in srgb, var(--ctp-surface0) 50%, transparent); color: var(--ctp-text); font-size: 10.5px;
+      }
+      #${PANEL_ID} .bsb-transcript-list {
+        flex: 1 1 0; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+        padding: 4px 7px 14px; scroll-padding-block: 38%;
+      }
+      #${PANEL_ID} .bsb-transcript-row {
+        content-visibility: auto; contain-intrinsic-size: auto 58px; contain: layout paint style;
+        display: grid; grid-template-columns: 52px minmax(0,1fr); gap: 8px; align-items: start;
+        padding: 8px 7px; border-radius: 9px; border-left: 3px solid transparent;
+      }
+      #${PANEL_ID} .bsb-transcript-row:hover { background: color-mix(in srgb, var(--ctp-surface0) 45%, transparent); }
+      #${PANEL_ID} .bsb-transcript-row.active {
+        background: color-mix(in srgb, var(--ctp-sapphire) 12%, transparent);
+        border-left-color: var(--ctp-sapphire);
+      }
+      #${PANEL_ID} .bsb-transcript-time {
+        border: 0; background: transparent; color: var(--ctp-sapphire); cursor: pointer;
+        padding: 2px 0; text-align: left; font-size: 10.5px; font-variant-numeric: tabular-nums;
+      }
+      #${PANEL_ID} .bsb-transcript-text {
+        margin: 0; color: var(--ctp-subtext1); font-size: 12px; line-height: 1.62; overflow-wrap: anywhere;
+      }
+      #${PANEL_ID} .bsb-transcript-row.active .bsb-transcript-text { color: var(--ctp-text); font-weight: 600; }
+      #${PANEL_ID} .bsb-transcript-text mark {
+        background: color-mix(in srgb, var(--ctp-yellow) 48%, transparent); color: inherit; border-radius: 3px; padding: 0 .08em;
+      }
+      #${PANEL_ID} .bsb-transcript-empty {
+        min-height: 120px; display: grid; place-items: center; text-align: center;
+        color: var(--ctp-overlay1); font-size: 11.5px; line-height: 1.55; padding: 20px;
+      }
+      @media (max-width: 640px) {
+        #${PANEL_ID} .bsb-transcript-tools { grid-template-columns: minmax(0,1fr) auto; }
+        #${PANEL_ID} .bsb-transcript-follow { display: none; }
+      }
 
       #${PANEL_ID} .bsb-empty {
         padding: 36px 16px; text-align: center; color: var(--ctp-overlay1);
@@ -2195,7 +2914,7 @@
         overflow-x: hidden !important;
         padding: 32px 28px 88px;
         box-sizing: border-box;
-        font-size: 17px;
+        font-size: var(--bsb-note-font);
         line-height: 1.9;
         letter-spacing: 0.03em;
         color: var(--ctp-text);
@@ -2353,10 +3072,189 @@
       }
       #${PANEL_ID} .bsb-ai-md .hljs { background: transparent; color: var(--ctp-text); }
       #${PANEL_ID} .bsb-ai-md .mermaid {
-        background: color-mix(in srgb, var(--ctp-base) 50%, transparent);
-        border-radius: 14px; padding: 18px; margin: 1.1em 0;
-        text-align: center; overflow: auto;
-        border: 1px solid color-mix(in srgb, var(--ctp-surface0) 45%, transparent);
+        margin: 1.25em 0;
+        min-height: 86px;
+        text-align: left;
+      }
+      #${PANEL_ID} .bsb-mermaid-error {
+        overflow: hidden;
+        border: 1px solid color-mix(in srgb, var(--ctp-red) 42%, var(--ctp-surface1));
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--ctp-mantle) 78%, transparent);
+      }
+      #${PANEL_ID} .bsb-mermaid-error-head {
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 7px 10px 7px 13px;
+        color: var(--ctp-peach);
+        border-bottom: 1px solid color-mix(in srgb, var(--ctp-red) 24%, transparent);
+      }
+      #${PANEL_ID} .bsb-mermaid-error details { padding: 9px 12px 12px; }
+      #${PANEL_ID} .bsb-mermaid-error summary { cursor: pointer; color: var(--ctp-overlay1); }
+      #${PANEL_ID} .bsb-mermaid-error pre { margin: 10px 0 0; max-height: 280px; overflow: auto; }
+      #${PANEL_ID} .bsb-mermaid-card {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        min-width: 0;
+        overflow: hidden;
+        border-radius: 15px;
+        border: 1px solid color-mix(in srgb, var(--ctp-blue) 30%, var(--ctp-surface1));
+        background: #181825;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .22);
+        content-visibility: visible;
+        contain: layout paint style;
+      }
+      #${PANEL_ID} .bsb-mermaid-toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 6px 8px 6px 11px;
+        border-bottom: 1px solid rgba(137, 180, 250, .2);
+        background: rgba(24, 24, 37, .96);
+        color: #bac2de;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      #${PANEL_ID} .bsb-mermaid-title {
+        min-width: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #cdd6f4;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .03em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      #${PANEL_ID} .bsb-mermaid-title::before {
+        content: "◇";
+        color: #89b4fa;
+      }
+      #${PANEL_ID} .bsb-mermaid-card .bsb-mermaid-title {
+        font-variant-numeric: tabular-nums;
+      }
+      #${PANEL_ID} .bsb-mermaid-tools {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+      }
+      #${PANEL_ID} .bsb-mermaid-tool {
+        appearance: none;
+        min-width: 29px;
+        height: 28px;
+        padding: 0 7px;
+        border: 1px solid transparent;
+        border-radius: 7px;
+        background: transparent;
+        color: #a6adc8;
+        font: 650 11px/1 system-ui, sans-serif;
+        cursor: pointer;
+      }
+      #${PANEL_ID} .bsb-mermaid-tool:hover,
+      #${PANEL_ID} .bsb-mermaid-tool:focus-visible {
+        color: #f5e0dc;
+        background: #313244;
+        border-color: #45475a;
+        outline: none;
+      }
+      #${PANEL_ID} .bsb-mermaid-scale {
+        min-width: 42px;
+        color: #89b4fa;
+        text-align: center;
+        font: 700 10px/1 ui-monospace, monospace;
+        font-variant-numeric: tabular-nums;
+      }
+      #${PANEL_ID} .bsb-mermaid-viewport {
+        position: relative;
+        min-height: 220px;
+        max-height: min(68vh, 720px);
+        overflow: auto;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        padding: 18px;
+        background:
+          linear-gradient(rgba(69, 71, 90, .18) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(69, 71, 90, .18) 1px, transparent 1px),
+          #181825;
+        background-size: 24px 24px;
+      }
+      #${PANEL_ID} .bsb-mermaid-stage {
+        width: var(--bsb-mermaid-width, 760px);
+        min-width: 1px;
+        margin: 0 auto;
+        transform-origin: top left;
+      }
+      #${PANEL_ID} .bsb-mermaid-svg {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+        overflow: visible;
+        shape-rendering: geometricPrecision;
+        text-rendering: geometricPrecision;
+      }
+      #${PANEL_ID} .bsb-mermaid-svg text,
+      #${PANEL_ID} .bsb-mermaid-svg .label,
+      #${PANEL_ID} .bsb-mermaid-svg .nodeLabel,
+      #${PANEL_ID} .bsb-mermaid-svg .edgeLabel {
+        font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+      }
+      #${PANEL_ID} .bsb-mermaid-hint {
+        position: absolute;
+        right: 10px;
+        bottom: 8px;
+        z-index: 2;
+        pointer-events: none;
+        padding: 3px 7px;
+        border-radius: 6px;
+        background: rgba(17, 17, 27, .78);
+        color: #7f849c;
+        font-size: 9px;
+      }
+      #${PANEL_ID} .bsb-mermaid-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        pointer-events: auto;
+        display: grid;
+        place-items: stretch;
+        padding: 18px;
+        background: rgba(10, 10, 16, .88);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      #${PANEL_ID} .bsb-mermaid-modal .bsb-mermaid-card {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        border-radius: 14px;
+        box-shadow: 0 25px 90px rgba(0, 0, 0, .55);
+      }
+      #${PANEL_ID} .bsb-mermaid-modal .bsb-mermaid-viewport {
+        max-height: none;
+        min-height: 0;
+      }
+      #${PANEL_ID} .bsb-mermaid-card[data-fit="fit"] .bsb-mermaid-stage {
+        margin-inline: auto;
+      }
+      @media (max-width: 560px) {
+        #${PANEL_ID} .bsb-mermaid-viewport { padding: 12px; min-height: 190px; }
+        #${PANEL_ID} .bsb-mermaid-title { display: none; }
+        #${PANEL_ID} .bsb-mermaid-modal { padding: 0; }
+        #${PANEL_ID} .bsb-mermaid-modal .bsb-mermaid-card { border-radius: 0; }
       }
       /* KaTeX 数学公式（深色面板） */
       #${PANEL_ID} .bsb-ai-md .katex {
@@ -2405,10 +3303,81 @@
         border: none; height: 1px; margin: 1.6em 0;
         background: color-mix(in srgb, var(--ctp-surface1) 55%, transparent);
       }
-      /* 思考过程更淡、更松 */
-      #${PANEL_ID} .bsb-ai-md h3:first-child {
-        color: var(--ctp-overlay1); font-size: 0.95em; font-weight: 650;
-        letter-spacing: 0.06em; text-transform: uppercase;
+      /* 阅读与渲染优化 */
+      #${PANEL_ID}.ai-busy .bsb-sidebar,
+      #${PANEL_ID} .bsb-sidebar.dragging,
+      #${PANEL_ID} .bsb-sidebar.resizing {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+      #${PANEL_ID} .bsb-ai-mode-row {
+        display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+        margin: 0 0 10px;
+      }
+      #${PANEL_ID} .bsb-ai-mode-row label {
+        display: inline-flex; align-items: center; gap: 7px;
+        color: var(--ctp-subtext0); font-size: 11px;
+      }
+      #${PANEL_ID} .bsb-ai-mode-row select {
+        min-width: 108px; border-radius: 9px; padding: 6px 9px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface2) 55%, transparent);
+        background: var(--ctp-mantle); color: var(--ctp-text); outline: none;
+      }
+      #${PANEL_ID} .bsb-ai-content {
+        overflow-anchor: none;
+        text-rendering: optimizeLegibility;
+      }
+      #${PANEL_ID} .bsb-ai-content > :not(.bsb-toc) {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 160px;
+      }
+      #${PANEL_ID} .bsb-ai-md p,
+      #${PANEL_ID} .bsb-ai-md li { text-wrap: pretty; }
+      #${PANEL_ID} .bsb-time-link {
+        appearance: none; display: inline-flex; align-items: center;
+        margin: 0 .14em; padding: .12em .46em; border-radius: 999px;
+        border: 1px solid color-mix(in srgb, var(--ctp-blue) 35%, transparent);
+        background: color-mix(in srgb, var(--ctp-blue) 12%, transparent);
+        color: var(--ctp-blue); font: 600 .78em/1.5 ui-monospace, monospace;
+        cursor: pointer; vertical-align: .08em;
+      }
+      #${PANEL_ID} .bsb-time-link:hover,
+      #${PANEL_ID} .bsb-time-link:focus-visible {
+        background: color-mix(in srgb, var(--ctp-blue) 22%, transparent);
+        outline: 2px solid color-mix(in srgb, var(--ctp-blue) 32%, transparent);
+      }
+      #${PANEL_ID} .bsb-toc {
+        margin: 0 0 1.35em; padding: 10px 12px; border-radius: 12px;
+        border: 1px solid color-mix(in srgb, var(--ctp-surface1) 55%, transparent);
+        background: color-mix(in srgb, var(--ctp-mantle) 55%, transparent);
+        content-visibility: visible;
+      }
+      #${PANEL_ID} .bsb-toc summary {
+        cursor: pointer; color: var(--ctp-lavender); font-weight: 700;
+      }
+      #${PANEL_ID} .bsb-toc nav { display: grid; gap: 5px; margin-top: 9px; }
+      #${PANEL_ID} .bsb-toc button {
+        appearance: none; border: 0; background: transparent; color: var(--ctp-subtext1);
+        text-align: left; cursor: pointer; padding: 3px 5px; border-radius: 6px;
+        overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      }
+      #${PANEL_ID} .bsb-toc button[data-level="3"] { padding-left: 20px; }
+      #${PANEL_ID} .bsb-toc button:hover { color: var(--ctp-text); background: var(--ctp-surface0); }
+      #${PANEL_ID} .mermaid[data-bsb-state="pending"]::before {
+        content: "图表将在进入视区时渲染"; color: var(--ctp-overlay1); font-size: 11px;
+      }
+      @media (max-width: 560px) {
+        #${PANEL_ID}.open:not(.docked) .bsb-sidebar {
+          left: 0 !important; top: 0 !important; width: 100vw !important; height: 100dvh !important;
+          border-radius: 0;
+        }
+        #${PANEL_ID} .bsb-ai-hero { align-items: flex-start; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #${PANEL_ID} *, #${PANEL_ID} *::before, #${PANEL_ID} *::after {
+          animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+          transition-duration: .001ms !important; scroll-behavior: auto !important;
+        }
       }
 
       /* 设置页 */
@@ -2516,6 +3485,7 @@
     const sidebar = root.querySelector(".bsb-sidebar");
     if (!sidebar) return;
     const ui = clampUiToViewport(state.ui);
+    root.style.setProperty("--bsb-note-font", `${Math.max(NOTE_FONT_MIN, Math.min(NOTE_FONT_MAX, Number(ui.noteFont) || 17))}px`);
 
     root.classList.toggle("open", !!state.open);
     root.classList.toggle("docked", !!ui.dock);
@@ -2571,6 +3541,7 @@
         if (state.ui.dock) state.ui.dockExpanded = true;
         refreshContextUI();
       } else {
+        closeMermaidFullscreen();
         state.ui.dock = null;
         state.ui.dockExpanded = false;
       }
@@ -2581,6 +3552,7 @@
     function setDock(side) {
       // side: 'left' | 'right' | null
       if (side) {
+        closeMermaidFullscreen();
         state.open = true;
         state.ui.dock = side;
         state.ui.dockExpanded = false;
@@ -2812,7 +3784,7 @@
     root.setAttribute("data-ctp-flavor", "mocha");
     root.innerHTML = `
       <button type="button" class="bsb-dock-tab" title="展开 SubBatch 工作台">AI · CC</button>
-      <aside class="bsb-sidebar" role="dialog" aria-label="Bili SubBatch Workspace" aria-hidden="true">
+      <aside class="bsb-sidebar" role="complementary" aria-label="Bili SubBatch Workspace" aria-hidden="true">
         <div class="bsb-resize n" data-dir="n"></div>
         <div class="bsb-resize s" data-dir="s"></div>
         <div class="bsb-resize e" data-dir="e"></div>
@@ -2856,6 +3828,18 @@
               <span class="bsb-chip">有字幕 <em data-role="chip-ok">0</em></span>
               <span class="bsb-chip" data-role="chip-model">model</span>
             </div>
+            <div class="bsb-ai-mode-row">
+              <label>笔记模式
+                <select data-role="note-mode">
+                  <option value="deep" selected>深度笔记</option>
+                  <option value="concise">精炼摘要</option>
+                  <option value="study">学习指南</option>
+                  <option value="action">行动清单</option>
+                  <option value="mermaid">全 Mermaid 学习图谱</option>
+                </select>
+              </label>
+              <span class="bsb-chip" data-role="note-mode-hint">时间戳证据 · 安全渲染 · 按需图表</span>
+            </div>
             <div class="bsb-ai-canvas-wrap">
               <div class="bsb-ai-canvas-bar">
                 <span class="bsb-bar-left">
@@ -2866,13 +3850,16 @@
                 <span class="bsb-bar-actions">
                   <button type="button" class="bsb-mini on" data-act="ai-stick" title="跟随最新 / 暂停跟随（上滑也会自动暂停）">粘底</button>
                   <button type="button" class="bsb-mini" data-act="ai-copy" title="复制当前输出">复制</button>
+                  <button type="button" class="bsb-mini" data-act="ai-export" title="导出 Markdown">导出</button>
+                  <button type="button" class="bsb-mini" data-act="ai-font-dec" title="减小正文字号">A−</button>
+                  <button type="button" class="bsb-mini" data-act="ai-font-inc" title="增大正文字号">A+</button>
                   <button type="button" class="bsb-mini" data-act="ai-top" title="回到顶部">顶部</button>
                 </span>
               </div>
               <div class="bsb-ai-stream" data-role="ai-stream">
                 <pre class="bsb-ai-raw" data-role="ai-raw" hidden></pre>
                 <div class="bsb-ai-md" data-role="ai-md">
-                  <div class="bsb-ai-content" data-role="ai-content">
+                  <div class="bsb-ai-content" data-role="ai-content" aria-label="AI 笔记输出">
                     <div class="bsb-empty">
                       <div class="bsb-empty-ico">✦</div>
                       <strong>还没有分析结果</strong>
@@ -2914,6 +3901,9 @@
               <button type="button" data-act="ai-send" title="用勾选项跑 AI">送去 AI</button>
             </div>
             <div class="bsb-opts">
+              <label class="bsb-auto-capture"><input type="checkbox" data-role="auto-capture" checked> 打开视频自动抓字幕</label>
+              <label><input type="checkbox" data-role="auto-analyze" checked> 抓到字幕后自动分析</label>
+              <label><input type="checkbox" data-role="player-subtitle" checked> 自动开启播放器字幕</label>
               <label>最多页 <input type="number" data-role="max-pages" min="1" max="100" value="${DEFAULT_MAX_PAGES}"></label>
               <label>间隔ms <input type="number" data-role="delay" min="0" max="5000" step="50" value="${DEFAULT_DELAY_MS}"></label>
             </div>
@@ -2921,9 +3911,32 @@
               <div class="bsb-empty">
                 <div class="bsb-empty-ico">≡</div>
                 <strong>字幕库为空</strong>
-                <span>点「扫描当前页」加载列表，勾选后可下载或送 AI</span>
+                <span>视频页会自动抓取；其他页面点「扫描当前页」加载列表</span>
               </div>
             </div>
+            <section class="bsb-transcript-shell" aria-label="当前视频字幕时间轴">
+              <div class="bsb-transcript-head">
+                <div class="bsb-transcript-title">
+                  <strong data-role="transcript-title">当前视频字幕</strong>
+                  <span data-role="transcript-meta">等待自动读取 · 四级缓存已启用</span>
+                </div>
+              </div>
+              <div class="bsb-transcript-tools">
+                <label class="bsb-transcript-search" title="检索当前视频字幕">
+                  <span>⌕</span>
+                  <input type="search" data-role="transcript-search" placeholder="检索字幕…" autocomplete="off">
+                  <span class="bsb-transcript-count" data-role="transcript-count"></span>
+                </label>
+                <select class="bsb-transcript-track" data-role="transcript-track" aria-label="字幕语言" disabled>
+                  <option>自动</option>
+                </select>
+                <label class="bsb-transcript-follow"><input type="checkbox" data-role="transcript-follow" checked> 跟随播放</label>
+                <button type="button" class="bsb-transcript-refresh" data-act="transcript-refresh" title="忽略缓存重新读取">刷新</button>
+              </div>
+              <div class="bsb-transcript-list" data-role="transcript-list">
+                <div class="bsb-transcript-empty">打开有字幕的视频后会自动显示全文。<br>点击时间即可跳转到播放器对应位置。</div>
+              </div>
+            </section>
             <div class="bsb-actions">
               <button type="button" class="primary" data-act="dl-srt">下载 SRT</button>
               <button type="button" data-act="dl-txt">下载 TXT</button>
@@ -2964,7 +3977,7 @@
                   <label>System 提示词
                     <textarea data-ai="systemPrompt" rows="4"></textarea>
                   </label>
-                  <label>User 模板（{{title}} {{bvid}} {{author}} {{subtitle}}）
+                  <label>User 模板（{{modeInstruction}} {{title}} {{bvid}} {{author}} {{subtitle}}）
                     <textarea data-ai="userPromptTemplate" rows="5"></textarea>
                   </label>
                   <div class="bsb-ai-cfg-actions">
@@ -2977,7 +3990,7 @@
                 <h3>交互提示</h3>
                 <p style="margin:0;font-size:12px;color:var(--ctp-subtext0);line-height:1.55">
                   拖标题栏移动 · 拖边角拉伸 · 贴左右边自动收起。<br>
-                  AI 笔记为主画布；字幕库负责扫描与导出；密钥只存本机 localStorage。
+                  AI 笔记为主画布；字幕库负责扫描与导出；密钥优先存入油猴隔离存储。
                 </p>
               </div>
             </div>
@@ -2985,7 +3998,7 @@
         </div>
         <div class="bsb-statusbar">
           <span class="bsb-status-dot" data-role="status-dot"></span>
-          <div class="bsb-status" data-role="status">就绪 · AI 工作台</div>
+          <div class="bsb-status" data-role="status" role="status" aria-live="polite">就绪 · AI 工作台</div>
         </div>
       </aside>
       <button type="button" class="bsb-fab" title="SubBatch 工作台" aria-expanded="false">CC</button>
@@ -3003,6 +4016,53 @@
     root.querySelector('[data-role="delay"]').addEventListener("change", (e) => {
       state.delayMs = Math.max(0, Math.min(5000, Number(e.target.value) || DEFAULT_DELAY_MS));
     });
+    const autoCaptureInput = root.querySelector('[data-role="auto-capture"]');
+    if (autoCaptureInput) {
+      autoCaptureInput.checked = state.autoCaptureEnabled;
+      autoCaptureInput.addEventListener("change", (e) => {
+        state.autoCaptureEnabled = !!e.target.checked;
+        saveAutoCaptureSetting(state.autoCaptureEnabled);
+        if (state.autoCaptureEnabled) {
+          setStatus("已开启：打开视频自动抓字幕");
+          scheduleAutoCapture("setting-enabled", 0);
+        } else {
+          state.autoCaptureAbortController?.abort();
+          clearTimeout(state.autoCaptureTimer);
+          setStatus("已关闭自动抓取；仍可手动扫描", "ok");
+        }
+      });
+    }
+    const autoAnalyzeInput = root.querySelector('[data-role="auto-analyze"]');
+    if (autoAnalyzeInput) {
+      autoAnalyzeInput.checked = state.autoAnalyzeEnabled;
+      autoAnalyzeInput.addEventListener("change", (e) => {
+        state.autoAnalyzeEnabled = !!e.target.checked;
+        saveAutoAnalyzeSetting(state.autoAnalyzeEnabled);
+        clearTimeout(state.autoAnalyzeTimer);
+        state.autoAnalyzePendingKey = "";
+        if (state.autoAnalyzeEnabled) {
+          state.autoAnalyzeKey = "";
+          const item = currentTranscriptItem();
+          if (item?.subStatus === "ok" && item.data?.length) {
+            scheduleAutoAnalyze(item, routeVideoKey(item.bvid, item.page || 1), "setting-enabled", 0);
+          } else {
+            setStatus("已开启：抓到字幕后自动开始分析");
+          }
+        } else {
+          setStatus("已关闭自动分析；仍可点击“开始分析”", "ok");
+        }
+      });
+    }
+    const playerSubtitleInput = root.querySelector('[data-role="player-subtitle"]');
+    if (playerSubtitleInput) {
+      playerSubtitleInput.checked = state.autoEnablePlayerSubtitle;
+      playerSubtitleInput.addEventListener("change", (e) => {
+        state.autoEnablePlayerSubtitle = !!e.target.checked;
+        storageSet(PLAYER_SUBTITLE_STORE_KEY, state.autoEnablePlayerSubtitle ? "true" : "false");
+        if (state.autoEnablePlayerSubtitle) enablePlayerSubtitle(currentTranscriptItem()).catch(() => {});
+      });
+    }
+
     root.querySelector('[data-role="mode"]').addEventListener("change", (e) => {
       state.mode = e.target.value || "auto";
       refreshContextUI();
@@ -3011,6 +4071,99 @@
           ? "已切回自动识别（默认偏单个视频）"
           : `已手动指定：${TYPE_LABEL[state.mode] || state.mode}`,
       );
+    });
+
+    const noteModeSel = root.querySelector('[data-role="note-mode"]');
+    if (noteModeSel) {
+      const initialMode = NOTE_MODE_OPTIONS.includes(state.ui?.noteMode)
+        ? state.ui.noteMode
+        : "deep";
+      noteModeSel.value = initialMode;
+      updateNoteModeUi(root, initialMode);
+      noteModeSel.addEventListener("change", (e) => {
+        const mode = NOTE_MODE_OPTIONS.includes(e.target.value) ? e.target.value : "deep";
+        if (state.ui) state.ui.noteMode = mode;
+        updateNoteModeUi(root, mode);
+        saveUiGeom();
+        setStatus(`笔记模式：${noteModeLabel(mode)}`);
+      });
+    }
+
+    const listBox = root.querySelector('[data-role="list"]');
+    if (listBox) {
+      listBox.addEventListener("change", (e) => {
+        const cb = e.target.closest?.('input[type="checkbox"][data-i]');
+        if (!cb) return;
+        const i = Number(cb.getAttribute("data-i"));
+        if (state.items[i]) state.items[i].selected = cb.checked;
+        refreshAiChips();
+      });
+      listBox.addEventListener("click", (e) => {
+        const open = e.target.closest?.("[data-transcript-i]");
+        if (!open) return;
+        const item = state.items[Number(open.dataset.transcriptI)];
+        if (item) selectTranscriptItem(item, { focusSearch: true });
+      });
+    }
+
+    const transcriptSearch = root.querySelector('[data-role="transcript-search"]');
+    transcriptSearch?.addEventListener("input", debounce((e) => {
+      state.transcriptQuery = String(e.target.value || "").trim();
+      renderTranscriptPanel();
+    }, 80));
+    root.querySelector('[data-role="transcript-track"]')?.addEventListener("change", (e) => {
+      switchTranscriptTrack(Number(e.target.value)).catch((error) => {
+        if (error?.name !== "AbortError") setStatus(`切换字幕失败: ${error.message || error}`, "err");
+      });
+    });
+    const followInput = root.querySelector('[data-role="transcript-follow"]');
+    if (followInput) {
+      followInput.checked = state.transcriptAutoFollow;
+      followInput.addEventListener("change", (e) => {
+        state.transcriptAutoFollow = !!e.target.checked;
+        storageSet(TRANSCRIPT_FOLLOW_STORE_KEY, state.transcriptAutoFollow ? "true" : "false");
+        if (state.transcriptAutoFollow) updateTranscriptActiveCue(currentVideoTime(), true);
+      });
+    }
+    const transcriptList = root.querySelector('[data-role="transcript-list"]');
+    transcriptList?.addEventListener("click", (e) => {
+      const timeButton = e.target.closest?.("[data-transcript-time]");
+      if (!timeButton) return;
+      seekTranscriptTime(Number(timeButton.dataset.transcriptTime));
+    });
+    transcriptList?.addEventListener("wheel", () => {
+      state.transcriptUserScrollUntil = Date.now() + 3500;
+    }, { passive: true });
+    transcriptList?.addEventListener("touchmove", () => {
+      state.transcriptUserScrollUntil = Date.now() + 3500;
+    }, { passive: true });
+
+    root.addEventListener("click", (e) => {
+      const mermaidTool = e.target.closest?.("[data-mmd-act]");
+      if (mermaidTool) {
+        e.preventDefault();
+        handleMermaidTool(mermaidTool);
+        return;
+      }
+      const ts = e.target.closest?.(".bsb-time-link");
+      if (!ts) return;
+      e.preventDefault();
+      seekToVideoTimestamp(
+        Number(ts.dataset.seconds),
+        ts.dataset.bvid || "",
+        Number(ts.dataset.page) || 1,
+      );
+    });
+    root.addEventListener("wheel", (e) => {
+      const viewport = e.target.closest?.(".bsb-mermaid-viewport");
+      if (!viewport || !e.ctrlKey) return;
+      const card = viewport.closest(".bsb-mermaid-card");
+      if (!card) return;
+      e.preventDefault();
+      setMermaidScale(card, getMermaidScale(card) + (e.deltaY < 0 ? 0.12 : -0.12));
+    }, { passive: false });
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMermaidFullscreen();
     });
 
     root.querySelectorAll("button[data-act]").forEach((btn) => {
@@ -3039,6 +4192,10 @@
     if (!opts?.silent) {
       saveUiGeom();
       if (v === "ai") refreshAiChips();
+      if (v === "subs") {
+        renderTranscriptPanel();
+        bindTranscriptVideoEvents();
+      }
       if (v === "settings") fillAiConfigForm(root);
     }
   }
@@ -3132,7 +4289,8 @@
     const box = document.querySelector(`#${PANEL_ID} [data-role="list"]`);
     if (!box) return;
     if (!state.items.length) {
-      box.innerHTML = `<div class="bsb-empty">列表为空 · 点「扫描当前页」</div>`;
+      box.innerHTML = `<div class="bsb-empty">列表为空 · 视频页将自动抓取，其他页面可手动扫描</div>`;
+      renderTranscriptPanel();
       return;
     }
     const rows = state.items
@@ -3148,28 +4306,316 @@
               : st === "error"
                 ? "失败"
                 : "—";
+        const active = routeVideoKey(it.bvid, it.page || 1) === state.transcriptItemKey;
         return `<tr data-i="${i}">
           <td><input type="checkbox" data-i="${i}" ${it.selected ? "checked" : ""}></td>
           <td class="bsb-t" title="${escapeAttr(it.title)}">${escapeHtml(it.title || it.bvid)}</td>
           <td>${escapeHtml(it.bvid)}${it.page > 1 ? " P" + it.page : ""}</td>
           <td class="${stClass}">${stText}</td>
+          <td><button type="button" class="bsb-open-transcript" data-transcript-i="${i}" ${st !== "ok" ? "disabled" : ""}>${active ? "查看中" : "字幕"}</button></td>
         </tr>`;
       })
       .join("");
     box.innerHTML = `<table>
       <thead><tr>
-        <th style="width:28px"></th><th>标题</th><th style="width:96px">BV</th><th style="width:48px">状态</th>
+        <th style="width:28px"></th><th>标题</th><th style="width:96px">BV</th><th style="width:48px">状态</th><th style="width:56px"></th>
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>`;
-    box.querySelectorAll('input[type="checkbox"][data-i]').forEach((cb) => {
-      cb.addEventListener("change", () => {
-        const i = Number(cb.getAttribute("data-i"));
-        if (state.items[i]) state.items[i].selected = cb.checked;
-        refreshAiChips();
-      });
-    });
     refreshAiChips();
+    renderTranscriptPanel();
+  }
+
+  function waitForPlayerElement(selector, timeout = 8000) {
+    return new Promise((resolve, reject) => {
+      const existing = document.querySelector(selector);
+      if (existing) return resolve(existing);
+      const observer = new MutationObserver(() => {
+        const element = document.querySelector(selector);
+        if (!element) return;
+        observer.disconnect();
+        clearTimeout(timer);
+        resolve(element);
+      });
+      const timer = window.setTimeout(() => {
+        observer.disconnect();
+        reject(new Error(`等待播放器元素超时: ${selector}`));
+      }, timeout);
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+    });
+  }
+
+  async function enablePlayerSubtitle(item) {
+    if (!state.autoEnablePlayerSubtitle) return;
+    if (state.playerSubtitleOperation) return state.playerSubtitleOperation;
+    state.playerSubtitleOperation = (async () => {
+      const button = await waitForPlayerElement(PLAYER_SUBTITLE_SELECTORS.button, 9000);
+      let panel = document.querySelector(PLAYER_SUBTITLE_SELECTORS.panel);
+      if (!panel || panel.offsetParent === null) {
+        button.click();
+        panel = await waitForPlayerElement(PLAYER_SUBTITLE_SELECTORS.panel, 2500);
+        await sleep(100);
+      }
+      const active = panel.querySelector(PLAYER_SUBTITLE_SELECTORS.active);
+      if (!active) {
+        const items = Array.from(panel.querySelectorAll(PLAYER_SUBTITLE_SELECTORS.item));
+        if (!items.length) throw new Error("播放器没有可开启字幕");
+        const wanted = String(item?.lan || "");
+        const target = (wanted && items.find((node) => node.dataset.lan === wanted))
+          || items.find((node) => /^(ai-zh|zh-CN|zh-Hans|zh)$/i.test(node.dataset.lan || ""))
+          || items[0];
+        target.click();
+        await sleep(140);
+      }
+      if (panel.offsetParent !== null) button.click();
+    })().catch((error) => {
+      console.debug("[bili-subbatch] player subtitle not enabled", error?.message || error);
+    }).finally(() => {
+      state.playerSubtitleOperation = null;
+    });
+    return state.playerSubtitleOperation;
+  }
+
+  function formatTranscriptTime(seconds, withHours = false) {
+    const total = Math.max(0, Math.floor(Number(seconds) || 0));
+    const h = Math.floor(total / 3600);
+    const m = Math.floor((total % 3600) / 60);
+    const sec = total % 60;
+    if (withHours || h > 0) {
+      return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+    }
+    return `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+  }
+
+  function currentTranscriptItem() {
+    if (state.transcriptItemKey) {
+      const exact = state.items.find((item) => routeVideoKey(item.bvid, item.page || 1) === state.transcriptItemKey);
+      return exact || null;
+    }
+    return state.items.find((item) => item.subStatus === "ok" && item.data?.length) || null;
+  }
+
+  function selectTranscriptItem(item, { focusSearch = false } = {}) {
+    if (!item) return;
+    state.transcriptItemKey = routeVideoKey(item.bvid, item.page || 1);
+    state.transcriptQuery = "";
+    state.transcriptFilteredIndexes = null;
+    state.transcriptActiveCueIndex = -1;
+    const root = ensurePanel();
+    const input = root.querySelector('[data-role="transcript-search"]');
+    if (input) input.value = "";
+    renderList();
+    bindTranscriptVideoEvents();
+    updateTranscriptActiveCue(currentVideoTime(), true);
+    if (focusSearch) {
+      setWorkspace("subs");
+      input?.focus();
+    }
+  }
+
+  function appendTranscriptHighlightedText(container, text, query) {
+    if (!query) {
+      container.textContent = text;
+      return;
+    }
+    const source = String(text || "");
+    const lower = source.toLocaleLowerCase();
+    const needle = query.toLocaleLowerCase();
+    let cursor = 0;
+    let index = lower.indexOf(needle);
+    while (index >= 0) {
+      if (index > cursor) container.append(document.createTextNode(source.slice(cursor, index)));
+      const mark = document.createElement("mark");
+      mark.textContent = source.slice(index, index + query.length);
+      container.append(mark);
+      cursor = index + query.length;
+      index = lower.indexOf(needle, cursor);
+    }
+    if (cursor < source.length) container.append(document.createTextNode(source.slice(cursor)));
+  }
+
+  function populateTranscriptTrackSelect(item) {
+    const select = document.querySelector(`#${PANEL_ID} [data-role="transcript-track"]`);
+    if (!select) return;
+    const tracks = Array.isArray(item?.tracks) ? item.tracks : [];
+    select.replaceChildren();
+    if (!tracks.length) {
+      select.appendChild(new Option(item?.lan_doc || item?.lan || "默认字幕", "0"));
+      select.disabled = true;
+      return;
+    }
+    tracks.forEach((track, index) => {
+      select.appendChild(new Option(track.lan_doc || track.lan || `字幕 ${index + 1}`, String(index)));
+    });
+    const active = Number.isInteger(item.activeTrackIndex) ? item.activeTrackIndex : preferredTrackIndex(tracks);
+    state.transcriptTrackIndex = active;
+    select.value = String(Math.max(0, active));
+    select.disabled = tracks.length <= 1;
+  }
+
+  function filterTranscriptIndexes(cues, query) {
+    const needle = String(query || "").trim().toLocaleLowerCase();
+    const indexes = [];
+    (cues || []).forEach((cue, index) => {
+      if (!needle || String(cue?.content || "").toLocaleLowerCase().includes(needle)) indexes.push(index);
+    });
+    return indexes;
+  }
+
+  function renderTranscriptPanel() {
+    const root = document.getElementById(PANEL_ID);
+    if (!root) return;
+    const list = root.querySelector('[data-role="transcript-list"]');
+    const title = root.querySelector('[data-role="transcript-title"]');
+    const meta = root.querySelector('[data-role="transcript-meta"]');
+    const count = root.querySelector('[data-role="transcript-count"]');
+    if (!list || !title || !meta || !count) return;
+
+    const item = currentTranscriptItem();
+    if (!item || item.subStatus !== "ok" || !item.data?.length) {
+      title.textContent = "当前视频字幕";
+      meta.textContent = state.items.some((x) => x.subStatus === "wait")
+        ? "正在通过四级缓存与直读链路加载…"
+        : "等待有字幕的视频";
+      count.textContent = "";
+      populateTranscriptTrackSelect(null);
+      list.innerHTML = `<div class="bsb-transcript-empty">打开有字幕的视频后会自动显示全文。<br>点击时间即可跳转到播放器对应位置。</div>`;
+      return;
+    }
+
+    if (!state.transcriptItemKey) state.transcriptItemKey = routeVideoKey(item.bvid, item.page || 1);
+    title.textContent = item.title || `${item.bvid} 字幕`;
+    meta.textContent = `${item.cue_count || item.data.length} 条 · ${item.lan_doc || item.lan || "字幕"} · ${item.cachePath || item.source || "已加载"}`;
+    populateTranscriptTrackSelect(item);
+
+    const query = state.transcriptQuery.trim();
+    const indexes = filterTranscriptIndexes(item.data, query);
+    state.transcriptFilteredIndexes = query ? indexes : null;
+    count.textContent = query ? `${indexes.length}/${item.data.length}` : String(item.data.length);
+
+    const epoch = ++state.transcriptRenderEpoch;
+    const fragment = document.createDocumentFragment();
+    for (const index of indexes) {
+      const cue = item.data[index];
+      const row = document.createElement("div");
+      row.className = "bsb-transcript-row";
+      if (index === state.transcriptActiveCueIndex) row.classList.add("active");
+      row.dataset.cueIndex = String(index);
+
+      const time = document.createElement("button");
+      time.type = "button";
+      time.className = "bsb-transcript-time";
+      time.dataset.transcriptTime = String(cue.from_sec ?? parseSeconds(cue.from));
+      time.textContent = formatTranscriptTime(cue.from_sec ?? parseSeconds(cue.from));
+      time.title = `跳转到 ${formatTranscriptTime(cue.from_sec ?? parseSeconds(cue.from), true)}`;
+
+      const text = document.createElement("p");
+      text.className = "bsb-transcript-text";
+      appendTranscriptHighlightedText(text, cue.content || "", query);
+      row.append(time, text);
+      fragment.appendChild(row);
+    }
+    if (epoch !== state.transcriptRenderEpoch) return;
+    list.replaceChildren(fragment);
+    updateTranscriptActiveCue(currentVideoTime(), true);
+  }
+
+  function transcriptCueIndexAt(cues, time) {
+    let low = 0;
+    let high = cues.length - 1;
+    let candidate = -1;
+    while (low <= high) {
+      const mid = (low + high) >> 1;
+      const from = Number(cues[mid].from_sec ?? parseSeconds(cues[mid].from));
+      if (time < from) high = mid - 1;
+      else { candidate = mid; low = mid + 1; }
+    }
+    if (candidate < 0) return -1;
+    const cue = cues[candidate];
+    const to = Number(cue.to_sec ?? parseSeconds(cue.to));
+    return time <= to + 0.2 ? candidate : -1;
+  }
+
+  function currentVideoTime() {
+    return Number(document.querySelector("video")?.currentTime || 0);
+  }
+
+  function updateTranscriptActiveCue(time, force = false) {
+    const item = currentTranscriptItem();
+    if (!item?.data?.length) return;
+    const index = transcriptCueIndexAt(item.data, Number(time) || 0);
+    const root = document.getElementById(PANEL_ID);
+    if (index < 0) {
+      root?.querySelector(".bsb-transcript-row.active")?.classList.remove("active");
+      state.transcriptActiveCueIndex = -1;
+      return;
+    }
+    if (!force && index === state.transcriptActiveCueIndex) return;
+    root?.querySelector(".bsb-transcript-row.active")?.classList.remove("active");
+    state.transcriptActiveCueIndex = index;
+    const row = root?.querySelector(`.bsb-transcript-row[data-cue-index="${index}"]`);
+    row?.classList.add("active");
+    if (!row || !state.transcriptAutoFollow || state.ui?.view !== "subs") return;
+    if (!force && Date.now() < state.transcriptUserScrollUntil) return;
+    const behavior = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    row.scrollIntoView({ block: "center", behavior });
+  }
+
+  function bindTranscriptVideoEvents() {
+    state.transcriptVideoAbort?.abort();
+    const video = document.querySelector("video");
+    if (!video) return;
+    const controller = new AbortController();
+    state.transcriptVideoAbort = controller;
+    const update = () => updateTranscriptActiveCue(video.currentTime);
+    video.addEventListener("timeupdate", update, { passive: true, signal: controller.signal });
+    video.addEventListener("seeking", update, { passive: true, signal: controller.signal });
+    video.addEventListener("loadedmetadata", update, { passive: true, signal: controller.signal });
+    update();
+  }
+
+  function seekTranscriptTime(seconds) {
+    const item = currentTranscriptItem();
+    if (!item || !Number.isFinite(seconds)) return;
+    seekToVideoTimestamp(seconds, item.bvid, item.page || 1);
+    updateTranscriptActiveCue(seconds, true);
+  }
+
+  async function switchTranscriptTrack(index) {
+    const item = currentTranscriptItem();
+    if (!item?.tracks?.length || !item.tracks[index]) return;
+    state.transcriptSwitchAbort?.abort();
+    const controller = new AbortController();
+    state.transcriptSwitchAbort = controller;
+    setStatus(`正在切换到 ${item.tracks[index].lan_doc || item.tracks[index].lan || "字幕"}…`);
+    const base = {
+      bvid: item.bvid, aid: item.aid, cid: item.cid, title: item.title,
+      author: item.author, pages: item.pages || [], page: item.page || 1,
+    };
+    const result = await fetchTrackBodyFast(base, item.tracks, index, controller.signal);
+    if (controller.signal.aborted) return;
+    Object.assign(item, result, { selected: item.selected !== false });
+    lruSet(state.fastSubtitleCache, `${item.bvid}:${item.cid}`, item);
+    persistentCacheWrite(`subtitle:${item.bvid}:${item.cid}`, item).catch(() => {});
+    state.transcriptQuery = "";
+    const input = ensurePanel().querySelector('[data-role="transcript-search"]');
+    if (input) input.value = "";
+    renderList();
+    setStatus(`已切换 ${item.lan_doc || item.lan} · ${item.cue_count} 条`, "ok");
+  }
+
+  async function refreshCurrentTranscript() {
+    const item = currentTranscriptItem();
+    const ctx = detectContext(location.href);
+    const bvid = item?.bvid || ctx.bvid;
+    const page = item?.page || ctx.page || 1;
+    if (!bvid) return setStatus("当前页面没有可刷新的视频", "err");
+    state.autoCaptureKey = "";
+    state.autoAnalyzeKey = "";
+    state.autoAnalyzePendingKey = "";
+    clearTimeout(state.autoAnalyzeTimer);
+    state.fastSubtitleCache.delete(`${bvid}:${item?.cid || ""}`);
+    await autoCaptureCurrentVideo("manual-refresh", { forceNetwork: true, requestedBvid: bvid, requestedPage: page });
   }
 
   function escapeHtml(s) {
@@ -3217,6 +4663,13 @@
     if (act === "ai-save") {
       saveAiConfigFromForm();
       setStatus("AI 配置已保存到本机", "ok");
+      if (state.autoAnalyzeEnabled) {
+        const item = currentTranscriptItem();
+        if (item?.subStatus === "ok" && item.data?.length) {
+          state.autoAnalyzeKey = "";
+          scheduleAutoAnalyze(item, routeVideoKey(item.bvid, item.page || 1), "config-saved", 80);
+        }
+      }
       return;
     }
     if (act === "ai-reset") {
@@ -3262,9 +4715,30 @@
       setStatus("已复制 AI 输出", "ok");
       return;
     }
+    if (act === "ai-export") {
+      if (!state.aiRaw.trim()) return setStatus("没有可导出的笔记", "err");
+      const bvid = state.aiSourceBvids[0] || "bilibili";
+      downloadText(`${safeFilename(bvid + "_AI笔记")}.md`, state.aiRaw);
+      setStatus("已导出 Markdown", "ok");
+      return;
+    }
+    if (act === "ai-font-dec" || act === "ai-font-inc") {
+      const delta = act === "ai-font-inc" ? 1 : -1;
+      const current = Number(state.ui?.noteFont || 17);
+      const next = Math.max(NOTE_FONT_MIN, Math.min(NOTE_FONT_MAX, current + delta));
+      if (state.ui) state.ui.noteFont = next;
+      ensurePanel().style.setProperty("--bsb-note-font", `${next}px`);
+      saveUiGeom();
+      setStatus(`正文字号 ${next}px`);
+      return;
+    }
     if (act === "ai-top") {
       scrollAiToTop();
       setStatus("已回到顶部");
+      return;
+    }
+    if (act === "transcript-refresh") {
+      await refreshCurrentTranscript();
       return;
     }
     if (state.busy && act !== "cancel") return;
@@ -3272,6 +4746,9 @@
     if (act === "clear") {
       state.items = [];
       state.meta = {};
+      state.transcriptItemKey = "";
+      state.transcriptQuery = "";
+      state.transcriptActiveCueIndex = -1;
       renderList();
       setStatus("已清空");
       return;
@@ -3318,28 +4795,27 @@
         const v = GM_getValue(key, null);
         if (v != null && v !== "") return v;
       }
-    } catch (_) {
-      /* */
-    }
+    } catch (_) { /* ignore */ }
     try {
-      const v = localStorage.getItem(key);
-      if (v != null) return v;
-    } catch (_) {
-      /* */
-    }
+      const legacy = localStorage.getItem(key);
+      if (legacy != null) return legacy;
+    } catch (_) { /* ignore */ }
     return fallback;
   }
 
   function storageSet(key, value) {
+    let storedByGm = false;
     try {
-      if (typeof GM_setValue === "function") GM_setValue(key, value);
-    } catch (_) {
-      /* */
-    }
-    try {
-      localStorage.setItem(key, value);
-    } catch (_) {
-      /* */
+      if (typeof GM_setValue === "function") {
+        GM_setValue(key, value);
+        storedByGm = true;
+      }
+    } catch (_) { /* ignore */ }
+    // 密钥优先只进入 userscript 隔离存储；仅无 GM API 时才退回页面 localStorage。
+    if (!storedByGm) {
+      try { localStorage.setItem(key, value); } catch (_) { /* ignore */ }
+    } else {
+      try { localStorage.removeItem(key); } catch (_) { /* migrate legacy */ }
     }
   }
 
@@ -3435,6 +4911,7 @@
   function setAiBusy(busy) {
     state.aiBusy = busy;
     const root = ensurePanel();
+    root.classList.toggle("ai-busy", !!busy);
     root.querySelectorAll('[data-act="ai-stop"]').forEach((b) => {
       b.style.display = busy ? "" : "none";
     });
@@ -3636,101 +5113,130 @@
 
   /** 流式绘制：只更新 text；非跟随模式零碰 scrollTop */
   function paintAiStreamText(full) {
-    state.aiPendingText = full || "";
-    if (state.aiPaintRaf) return;
-    state.aiPaintRaf = requestAnimationFrame(() => {
-      state.aiPaintRaf = 0;
-      const root = document.getElementById(PANEL_ID);
-      if (!root) return;
-      const box = root.querySelector('[data-role="ai-md"]');
-      const content = root.querySelector('[data-role="ai-content"]');
-      if (!content || !box) return;
+    state.aiPendingText = String(full || "");
+    if (state.aiPaintRaf || state.aiPaintTimer) return;
 
-      const text = state.aiPendingText || "…";
-      let pre = content.querySelector(".bsb-ai-stream-body");
-      let caret = content.querySelector(".bsb-ai-caret");
-
-      if (!pre) {
-        content.textContent = "";
-        pre = document.createElement("pre");
-        pre.className = "bsb-ai-stream-body";
-        content.appendChild(pre);
-      }
-      if (state.aiBusy) {
-        if (!caret) {
+    const run = () => {
+      state.aiPaintTimer = 0;
+      state.aiPaintRaf = requestAnimationFrame(() => {
+        state.aiPaintRaf = 0;
+        const root = ensurePanel();
+        const box = root.querySelector('[data-role="ai-md"]');
+        const content = root.querySelector('[data-role="ai-content"]') || box;
+        if (!box || !content) return;
+        const text = state.aiPendingText || "…";
+        let pre = content.querySelector(".bsb-ai-stream-body");
+        let caret = content.querySelector(".bsb-ai-caret");
+        if (!pre) {
+          content.replaceChildren();
+          pre = document.createElement("pre");
+          pre.className = "bsb-ai-stream-body";
+          state.aiStreamTextNode = document.createTextNode("");
+          pre.appendChild(state.aiStreamTextNode);
+          content.appendChild(pre);
+          state.aiRenderedText = "";
+        }
+        if (!state.aiStreamTextNode || state.aiStreamTextNode.parentNode !== pre) {
+          state.aiStreamTextNode = pre.firstChild || pre.appendChild(document.createTextNode(""));
+          state.aiRenderedText = state.aiStreamTextNode.data || "";
+        }
+        if (state.aiBusy && !caret) {
           caret = document.createElement("span");
           caret.className = "bsb-ai-caret";
           caret.setAttribute("aria-hidden", "true");
           content.appendChild(caret);
+        } else if (!state.aiBusy && caret) caret.remove();
+
+        const follow = resolveAiScrollState(
+          { stick: state.aiStickBottom, userReading: state.aiUserReading, progScroll: false },
+          { type: "paint" },
+        ).allowPaintScroll;
+        const freezeTop = box.scrollTop;
+
+        // 追加尾部而不是每个 token 重写整段文本，避免累计 O(n²) DOM 写入。
+        if (text.startsWith(state.aiRenderedText)) {
+          state.aiStreamTextNode.appendData(text.slice(state.aiRenderedText.length));
+        } else {
+          state.aiStreamTextNode.data = text;
         }
-      } else if (caret) {
-        caret.remove();
-      }
+        state.aiRenderedText = text;
 
-      // 关键：与 resolveAiScrollState.allowPaintScroll 一致
-      const follow = resolveAiScrollState(
-        {
-          stick: state.aiStickBottom,
-          userReading: state.aiUserReading,
-          progScroll: false,
-        },
-        { type: "paint" },
-      ).allowPaintScroll;
-
-      // 记录阅读位置；非跟随时绝对保留
-      const freezeTop = box.scrollTop;
-
-      pre.textContent = text;
-
-      if (follow) {
-        state.aiProgScroll = true;
-        box.scrollTop = box.scrollHeight;
-        // 微任务/下一帧清标记
-        requestAnimationFrame(() => {
-          state.aiProgScroll = false;
-        });
-      } else {
-        // ★ 核心：自由阅读时完全不要写 scrollTop（写了会和用户手势抢）
-        // 仅在浏览器异常把位置清零时救回
-        if (box.scrollTop !== freezeTop && freezeTop > 0) {
+        if (follow) {
+          state.aiProgScroll = true;
+          box.scrollTop = box.scrollHeight;
+          requestAnimationFrame(() => { state.aiProgScroll = false; });
+        } else if (box.scrollTop !== freezeTop && freezeTop > 0) {
           state.aiProgScroll = true;
           box.scrollTop = freezeTop;
-          requestAnimationFrame(() => {
-            state.aiProgScroll = false;
-          });
+          requestAnimationFrame(() => { state.aiProgScroll = false; });
         }
-      }
-      updateJumpLatestBtn();
-    });
+        updateJumpLatestBtn();
+      });
+    };
+    state.aiPaintTimer = window.setTimeout(run, STREAM_PAINT_INTERVAL_MS);
   }
 
   function buildSubtitlePayload(items) {
     return items
       .map((it) => {
         const head = `=== ${it.bvid}${it.page > 1 ? " P" + it.page : ""} ${it.title || ""} ===`;
-        const body = cuesToTxt(it.data || []);
-        return head + "\n" + body;
+        return `${head}\n${cuesToAiText(it.data || [], it.bvid, it.page || 1)}`;
       })
       .join("\n\n");
   }
 
+  function noteModeLabel(mode) {
+    const labels = {
+      deep: "深度笔记",
+      concise: "精炼摘要",
+      study: "学习指南",
+      action: "行动清单",
+      mermaid: "全 Mermaid 学习图谱",
+    };
+    return labels[mode] || labels.deep;
+  }
+
+  function noteModeHint(mode) {
+    return mode === "mermaid"
+      ? "多图知识结构 · 学习路径 · 易错点 · 自测闭环"
+      : "时间戳证据 · 安全渲染 · 按需图表";
+  }
+
+  function updateNoteModeUi(root, mode) {
+    const hint = root?.querySelector('[data-role="note-mode-hint"]');
+    if (hint) hint.textContent = noteModeHint(mode);
+  }
+
+  function noteModeInstruction(mode) {
+    const map = {
+      concise: "模式：精炼摘要。控制篇幅，保留最重要结论、证据时间戳和少量行动项。",
+      study: "模式：学习指南。按先修知识、核心概念、例子、易错点、复习问题组织。",
+      action: "模式：行动清单。突出决策、步骤、工具、风险、检查项和下一步。",
+      deep: "模式：深度笔记。完整保留论证结构、关键细节、边界条件和可核查时间戳。",
+      mermaid: [
+        "模式：全 Mermaid 学习图谱。",
+        "本模式优先级高于后续模板中的普通摘要、详细笔记、术语、方法和行动清单格式；请把这些内容转化为 Mermaid 图，而不是继续输出普通列表或长段落。",
+        "请输出 3—6 个相互独立的 ```mermaid``` 代码块，以多图方式覆盖：全局知识地图、关键概念关系或因果链、方法流程或论证顺序、学习路径与自测闭环；有明确对比、风险或行动内容时再增加对应图。",
+        "每个 Mermaid 块前只写一个简短二级标题；除标题和最多一句读图提示外，所有实质信息都必须位于图内，不要在图后重复解释。",
+        "所有图只使用 flowchart TD 或 flowchart LR；节点 ID 使用 ASCII 字母和数字；节点文字使用带双引号的标签；每图通常不超过 18 个节点，并确保 Mermaid 10.9.1 可直接解析。",
+        "重要节点尽量包含可核查时间戳 [BV号 P号 mm:ss]。学习图必须体现先修知识、理解顺序、易错点、复习问题和应用检查，而不只是把句子机械排列成流程图。",
+      ].join("\n"),
+    };
+    return map[mode] || map.deep;
+  }
+
   function loadScriptOnce(src, globalCheck) {
     return new Promise((resolve, reject) => {
-      if (globalCheck && globalCheck()) {
-        resolve();
-        return;
-      }
+      if (globalCheck && globalCheck()) return resolve();
       const existed = document.querySelector(`script[data-bsb-src="${src}"]`);
       if (existed) {
-        existed.addEventListener("load", () => resolve());
-        existed.addEventListener("error", () => reject(new Error("load " + src)));
-        if (globalCheck && globalCheck()) resolve();
+        if (globalCheck && globalCheck()) return resolve();
+        existed.addEventListener("load", () => resolve(), { once: true });
+        existed.addEventListener("error", () => reject(new Error("load " + src)), { once: true });
         return;
       }
       const s = document.createElement("script");
-      s.src = src;
-      s.async = true;
-      s.dataset.bsbSrc = src;
+      s.src = src; s.async = true; s.dataset.bsbSrc = src;
       s.onload = () => resolve();
       s.onerror = () => reject(new Error("failed to load " + src));
       (document.head || document.documentElement).appendChild(s);
@@ -3740,65 +5246,129 @@
   function loadCssOnce(href) {
     if (document.querySelector(`link[data-bsb-href="${href}"]`)) return;
     const l = document.createElement("link");
-    l.rel = "stylesheet";
-    l.href = href;
-    l.dataset.bsbHref = href;
+    l.rel = "stylesheet"; l.href = href; l.dataset.bsbHref = href;
     (document.head || document.documentElement).appendChild(l);
   }
 
-  async function ensureRenderLibs() {
-    if (state.renderLibsReady) return;
-    loadCssOnce(
-      "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css",
-    );
-    // KaTeX：数学公式（轻量、适合油猴；比 MathJax 小且快）
+  async function ensureMarkdownCore() {
+    if (state.renderLibs.core) return;
+    await Promise.all([
+      loadScriptOnce("https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js", () => typeof marked !== "undefined"),
+      loadScriptOnce("https://cdn.jsdelivr.net/npm/dompurify@3.4.12/dist/purify.min.js", () => typeof DOMPurify !== "undefined"),
+    ]);
+    if (typeof marked !== "undefined") {
+      marked.setOptions({ gfm: true, breaks: true, mangle: false, headerIds: false });
+    }
+    state.renderLibs.core = true;
+  }
+
+  async function ensureHighlight() {
+    if (state.renderLibs.highlight) return;
+    loadCssOnce("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css");
+    await loadScriptOnce("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js", () => typeof hljs !== "undefined");
+    state.renderLibs.highlight = true;
+  }
+
+  async function ensureKatex() {
+    if (state.renderLibs.katex) return;
     loadCssOnce("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css");
-    await loadScriptOnce(
-      "https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js",
-      () => typeof marked !== "undefined",
-    );
-    await loadScriptOnce(
-      "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js",
-      () => typeof hljs !== "undefined",
-    );
-    // common languages pack (full build already has many; languages min is extra)
-    try {
-      await loadScriptOnce(
-        "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js",
-        () => true,
-      );
-    } catch (_) {
-      /* optional */
-    }
-    await loadScriptOnce(
-      "https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js",
-      () => typeof mermaid !== "undefined",
-    );
-    try {
-      await loadScriptOnce(
-        "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js",
-        () => typeof katex !== "undefined",
-      );
-    } catch (e) {
-      console.warn("[bili-subbatch] KaTeX load failed, math will show as plain text", e);
-    }
+    await loadScriptOnce("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js", () => typeof katex !== "undefined");
+    state.renderLibs.katex = true;
+  }
+
+  async function ensureMermaid() {
+    if (state.renderLibs.mermaid) return;
+    await loadScriptOnce("https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js", () => typeof mermaid !== "undefined");
     if (typeof mermaid !== "undefined") {
       mermaid.initialize({
         startOnLoad: false,
-        theme: "dark",
-        securityLevel: "loose",
-        fontFamily: "JetBrains Mono, Fira Code, monospace",
+        theme: "base",
+        securityLevel: "strict",
+        fontFamily: 'Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif',
+        suppressErrorRendering: true,
+        deterministicIds: false,
+        themeVariables: {
+          darkMode: true,
+          background: "#181825",
+          primaryColor: "#313244",
+          primaryTextColor: "#f5e0dc",
+          primaryBorderColor: "#89b4fa",
+          secondaryColor: "#45475a",
+          secondaryTextColor: "#cdd6f4",
+          secondaryBorderColor: "#a6e3a1",
+          tertiaryColor: "#1e1e2e",
+          tertiaryTextColor: "#cdd6f4",
+          tertiaryBorderColor: "#cba6f7",
+          lineColor: "#bac2de",
+          textColor: "#cdd6f4",
+          mainBkg: "#313244",
+          nodeBorder: "#89b4fa",
+          clusterBkg: "#1e1e2e",
+          clusterBorder: "#585b70",
+          edgeLabelBackground: "#181825",
+          actorBkg: "#313244",
+          actorBorder: "#89b4fa",
+          actorTextColor: "#f5e0dc",
+          signalColor: "#bac2de",
+          signalTextColor: "#cdd6f4",
+          labelBoxBkgColor: "#313244",
+          labelBoxBorderColor: "#89b4fa",
+          labelTextColor: "#f5e0dc",
+          loopTextColor: "#cdd6f4",
+          noteBkgColor: "#45475a",
+          noteBorderColor: "#f9e2af",
+          noteTextColor: "#f5e0dc",
+          fontSize: "16px",
+        },
+        themeCSS: `
+          .nodeLabel, .edgeLabel, .label, text { font-size: 16px !important; }
+          .edgeLabel rect { fill: #181825 !important; opacity: .96 !important; }
+          .flowchart-link { stroke-width: 2px !important; }
+          .marker { fill: #bac2de !important; stroke: #bac2de !important; }
+          .cluster rect { rx: 10px; ry: 10px; }
+        `,
+        flowchart: {
+          htmlLabels: false,
+          useMaxWidth: false,
+          curve: "basis",
+          nodeSpacing: 48,
+          rankSpacing: 64,
+          padding: 16,
+        },
+        sequence: {
+          useMaxWidth: false,
+          wrap: true,
+          diagramMarginX: 32,
+          diagramMarginY: 24,
+          actorMargin: 72,
+          width: 180,
+          height: 72,
+          boxMargin: 12,
+          messageMargin: 42,
+        },
       });
     }
-    if (typeof marked !== "undefined") {
-      marked.setOptions({
-        gfm: true,
-        breaks: true,
-        mangle: false,
-        headerIds: false,
-      });
+    state.renderLibs.mermaid = true;
+  }
+
+  function hasMathSyntax(md) {
+    return /```(?:math|latex|tex)|\$\$[\s\S]+?\$\$|\\\[|\\\(|\$[^\n$]+\$/.test(md);
+  }
+
+  function hasCodeSyntax(md) {
+    return /```(?!mermaid|math|latex|tex)[^\n]*\n/i.test(md);
+  }
+
+  function hasMermaidSyntax(md) {
+    return /```mermaid\s*\n/i.test(md);
+  }
+
+  async function yieldToMain() {
+    if (globalThis.scheduler && typeof globalThis.scheduler.yield === "function") {
+      await globalThis.scheduler.yield();
+    } else {
+      await new Promise((resolve) => setTimeout(resolve, 0));
     }
-    state.renderLibsReady = true;
   }
 
   /** KaTeX → HTML；失败返回 null 走 fallback */
@@ -3806,29 +5376,16 @@
     if (typeof katex === "undefined" || !katex.renderToString) return null;
     try {
       const html = katex.renderToString(String(tex || ""), {
-        displayMode: !!display,
-        throwOnError: false,
-        strict: "ignore",
-        trust: false,
-        output: "html",
+        displayMode: !!display, throwOnError: false, strict: "ignore", trust: false, output: "html",
       });
-      if (display) {
-        return `<div class="bsb-katex-display">${html}</div>`;
-      }
-      return `<span class="bsb-katex-inline">${html}</span>`;
-    } catch (_) {
-      return null;
-    }
+      return display ? `<div class="bsb-katex-display">${html}</div>` : `<span class="bsb-katex-inline">${html}</span>`;
+    } catch (_) { return null; }
   }
 
   function simpleMarkdownFallback(md) {
-    // very small fallback if CDN blocked
     let html = escapeHtml(md);
-    html = html.replace(
-      /```(\w*)\n([\s\S]*?)```/g,
-      (_, lang, code) =>
-        `<pre><span class="bsb-code-lang">${escapeHtml(lang || "text")}</span><code>${escapeHtml(code)}</code></pre>`,
-    );
+    html = html.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) =>
+      `<pre><span class="bsb-code-lang">${escapeHtml(lang || "text")}</span><code>${escapeHtml(code)}</code></pre>`);
     html = html.replace(/^### (.+)$/gm, "<h3>$1</h3>");
     html = html.replace(/^## (.+)$/gm, "<h2>$1</h2>");
     html = html.replace(/^# (.+)$/gm, "<h1>$1</h1>");
@@ -3838,111 +5395,641 @@
     return `<p>${html}</p>`;
   }
 
+  function sanitizeRenderedHtml(html) {
+    if (typeof DOMPurify === "undefined") return simpleMarkdownFallback(stripHtml(html));
+    return DOMPurify.sanitize(html, {
+      USE_PROFILES: { html: true },
+      SANITIZE_NAMED_PROPS: true,
+      FORBID_TAGS: ["script", "style", "iframe", "object", "embed", "form"],
+      ADD_ATTR: ["target", "rel", "aria-label", "data-bsb-m"],
+    });
+  }
+
+  async function replaceHostInBatches(host, html, epoch) {
+    const tpl = document.createElement("template");
+    tpl.innerHTML = html;
+    const nodes = Array.from(tpl.content.childNodes);
+    host.replaceChildren();
+    for (let i = 0; i < nodes.length; i += RENDER_BATCH_SIZE) {
+      if (epoch !== state.renderEpoch) return false;
+      const frag = document.createDocumentFragment();
+      nodes.slice(i, i + RENDER_BATCH_SIZE).forEach((node) => frag.appendChild(node));
+      host.appendChild(frag);
+      if (i + RENDER_BATCH_SIZE < nodes.length) await yieldToMain();
+    }
+    return true;
+  }
+
+  function linkifyTimestamps(host) {
+    const walker = document.createTreeWalker(host, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) {
+      const p = walker.currentNode.parentElement;
+      if (!p || p.closest("pre,code,a,button,.katex,.mermaid,.bsb-toc")) continue;
+      if (/\[(?:BV[\w]+\s+)?(?:P\d+\s+)?(?:\d{1,2}:)?\d{1,2}:\d{2}\]/i.test(walker.currentNode.data)) nodes.push(walker.currentNode);
+    }
+    const re = /\[((BV[\w]+)\s+)?(?:P(\d+)\s+)?((?:\d{1,2}:)?\d{1,2}:\d{2})\]/gi;
+    for (const node of nodes) {
+      const text = node.data; let last = 0; let m; const frag = document.createDocumentFragment();
+      while ((m = re.exec(text))) {
+        if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+        const parts = m[4].split(":").map(Number);
+        const sec = parts.length === 3 ? parts[0] * 3600 + parts[1] * 60 + parts[2] : parts[0] * 60 + parts[1];
+        const btn = document.createElement("button");
+        btn.type = "button"; btn.className = "bsb-time-link";
+        btn.dataset.seconds = String(sec); btn.dataset.bvid = m[2] || ""; btn.dataset.page = m[3] || "1";
+        btn.textContent = m[0]; btn.title = "跳到视频对应时间";
+        frag.appendChild(btn); last = m.index + m[0].length;
+      }
+      if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+      node.replaceWith(frag);
+    }
+  }
+
+  function seekToVideoTimestamp(seconds, bvid, page) {
+    if (!Number.isFinite(seconds)) return;
+    const currentBvid = extractBvid(location.href);
+    let currentPage = 1;
+    try { currentPage = Math.max(1, Number(new URL(location.href).searchParams.get("p")) || 1); } catch (_) { /* ignore */ }
+    const targetPage = Math.max(1, Number(page) || 1);
+    const sameVideo = !bvid || !currentBvid || bvid.toLowerCase() === currentBvid.toLowerCase();
+    const video = document.querySelector("video");
+    if (video && sameVideo && currentPage === targetPage) {
+      video.currentTime = Math.max(0, seconds);
+      if (video.paused) video.play().catch(() => {});
+      video.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    if (bvid) {
+      const u = new URL(`https://www.bilibili.com/video/${bvid}`);
+      u.searchParams.set("p", String(targetPage));
+      u.searchParams.set("t", String(Math.floor(seconds)));
+      window.open(u.toString(), "_blank", "noopener");
+    }
+  }
+
+  function buildToc(host) {
+    const headings = Array.from(host.querySelectorAll("h1,h2,h3")).filter((h) => !h.closest(".bsb-toc"));
+    if (headings.length < 2) return;
+    const details = document.createElement("details"); details.className = "bsb-toc"; details.open = true;
+    const summary = document.createElement("summary"); summary.textContent = `本页目录 · ${headings.length}`;
+    const nav = document.createElement("nav");
+    headings.forEach((h, i) => {
+      h.id = `bsb-note-h-${state.renderEpoch}-${i}`;
+      const b = document.createElement("button"); b.type = "button"; b.dataset.level = h.tagName.slice(1);
+      b.textContent = h.textContent.trim() || `章节 ${i + 1}`;
+      b.addEventListener("click", () => h.scrollIntoView({ behavior: "smooth", block: "start" }));
+      nav.appendChild(b);
+    });
+    details.append(summary, nav); host.prepend(details);
+  }
+
+  async function enhanceCodeBlocks(host, epoch) {
+    const blocks = Array.from(host.querySelectorAll("pre code"));
+    if (!blocks.length) return;
+    try { await ensureHighlight(); } catch (e) { console.warn("[bili-subbatch] highlight load", e); return; }
+    for (let i = 0; i < blocks.length; i++) {
+      if (epoch !== state.renderEpoch) return;
+      const block = blocks[i]; const pre = block.parentElement;
+      const m = (block.className || "").match(/language-([\w#+-]+)/i);
+      if (m && pre && !pre.querySelector(".bsb-code-lang")) {
+        const tag = document.createElement("span"); tag.className = "bsb-code-lang"; tag.textContent = m[1]; pre.insertBefore(tag, block);
+      }
+      try { if (typeof hljs !== "undefined") hljs.highlightElement(block); } catch (_) { /* unknown language */ }
+      if (i % 5 === 4) await yieldToMain();
+    }
+  }
+
+  function parseMermaidViewBox(svg) {
+    const raw = String(svg?.getAttribute("viewBox") || "").trim();
+    const values = raw.split(/[\s,]+/).map(Number);
+    if (values.length === 4 && values.every(Number.isFinite) && values[2] > 0 && values[3] > 0) {
+      return { x: values[0], y: values[1], width: values[2], height: values[3] };
+    }
+    const width = Number.parseFloat(svg?.getAttribute("width")) || 960;
+    const height = Number.parseFloat(svg?.getAttribute("height")) || 540;
+    return { x: 0, y: 0, width, height };
+  }
+
+  function getMermaidScale(card) {
+    const scale = Number(card?.dataset?.scale);
+    return Number.isFinite(scale) && scale > 0 ? scale : 1;
+  }
+
+  function updateMermaidScaleLabel(card) {
+    const label = card?.querySelector(".bsb-mermaid-scale");
+    if (label) label.textContent = `${Math.round(getMermaidScale(card) * 100)}%`;
+  }
+
+  function setMermaidScale(card, scale, mode = "manual") {
+    if (!card) return;
+    const stage = card.querySelector(".bsb-mermaid-stage");
+    if (!stage) return;
+    const baseWidth = Number(stage.dataset.baseWidth) || 760;
+    const next = Math.max(0.35, Math.min(3, Number(scale) || 1));
+    card.dataset.scale = String(next);
+    card.dataset.fit = mode;
+    stage.style.setProperty("--bsb-mermaid-width", `${Math.max(240, Math.round(baseWidth * next))}px`);
+    updateMermaidScaleLabel(card);
+  }
+
+  function fitMermaidToViewport(card) {
+    const viewport = card?.querySelector(".bsb-mermaid-viewport");
+    const stage = card?.querySelector(".bsb-mermaid-stage");
+    if (!viewport || !stage) return;
+    const baseWidth = Number(stage.dataset.baseWidth) || 760;
+    const available = Math.max(240, viewport.clientWidth - 36);
+    setMermaidScale(card, Math.min(1.5, available / baseWidth), "fit");
+    viewport.scrollLeft = 0;
+    viewport.scrollTop = 0;
+  }
+
+  function closeMermaidFullscreen() {
+    const root = document.getElementById(PANEL_ID);
+    const modal = root?.querySelector(".bsb-mermaid-modal");
+    if (!modal) return;
+    const card = modal.querySelector(".bsb-mermaid-card");
+    const placeholder = card?._bsbMermaidPlaceholder;
+    if (card && placeholder?.parentNode) {
+      card.classList.remove("is-fullscreen");
+      placeholder.replaceWith(card);
+      card._bsbMermaidPlaceholder = null;
+      const full = card.querySelector('[data-mmd-act="fullscreen"]');
+      if (full) { full.textContent = "全屏"; full.title = "全屏查看"; }
+    }
+    modal.remove();
+  }
+
+  function openMermaidFullscreen(card) {
+    if (!card || card.closest(".bsb-mermaid-modal")) return;
+    closeMermaidFullscreen();
+    const root = document.getElementById(PANEL_ID);
+    if (!root) return;
+    const placeholder = document.createComment("bsb-mermaid-placeholder");
+    card.before(placeholder);
+    card._bsbMermaidPlaceholder = placeholder;
+    const modal = document.createElement("div");
+    modal.className = "bsb-mermaid-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", "Mermaid 图表全屏查看");
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeMermaidFullscreen(); });
+    card.classList.add("is-fullscreen");
+    const full = card.querySelector('[data-mmd-act="fullscreen"]');
+    if (full) { full.textContent = "退出"; full.title = "退出全屏"; }
+    modal.appendChild(card);
+    root.appendChild(modal);
+    requestAnimationFrame(() => fitMermaidToViewport(card));
+  }
+
+  function extractMermaidCode(text) {
+    let source = String(text || "").trim();
+    const fenced = source.match(/```(?:mermaid)?[ \t]*\r?\n([\s\S]*?)```/i);
+    if (fenced) source = fenced[1];
+    source = source
+      .replace(/^\s*```(?:mermaid)?\s*/i, "")
+      .replace(/```\s*$/i, "")
+      .replace(/^\s*mermaid\s*\r?\n/i, "")
+      .trim();
+    return source;
+  }
+
+  function replaceMermaidBlockAt(markdown, targetIdx, nextCode) {
+    let current = -1;
+    let replaced = false;
+    const value = String(markdown || "").replace(
+      /```mermaid\s*\r?\n([\s\S]*?)```/gi,
+      (full) => {
+        current += 1;
+        if (current !== Number(targetIdx)) return full;
+        replaced = true;
+        return `\`\`\`mermaid\n${String(nextCode || "").trim()}\n\`\`\``;
+      },
+    );
+    return { value, replaced };
+  }
+
+  function persistRepairedMermaid(idx, nextCode) {
+    const result = replaceMermaidBlockAt(state.aiRaw, idx, nextCode);
+    if (!result.replaced) return false;
+    state.aiRaw = result.value;
+    // 防止已结束的流式缓冲区以后用旧源码覆盖当前 DOM。
+    state.aiRenderedText = state.aiRaw;
+    state.aiPendingText = state.aiRaw;
+    return true;
+  }
+
+  function requestMermaidCodeRepair(code, error, idx) {
+    const cfg = loadAiConfig();
+    if (!cfg.apiKey) throw new Error("AI 修复需要先在设置中填写 API Key");
+    if (!cfg.baseUrl) throw new Error("AI 修复需要先在设置中填写 Base URL");
+
+    const parseError = String(error?.message || error || "未知渲染错误").slice(0, 4000);
+    const originalCode = String(code || "").slice(0, 30000);
+    const messages = [
+      {
+        role: "system",
+        content:
+          "你是 Mermaid 10.9.1 语法修复器。只修复用户给出的单个 Mermaid 图代码。" +
+          "保持节点、关系、顺序、文字含义和信息量不变；不得添加字幕或原图中没有的事实。" +
+          "允许为兼容 Mermaid 10.9.1 改写引号、括号、节点 ID、换行、标签和箭头语法。" +
+          "最终只输出一个 ```mermaid 代码块，不输出解释。",
+      },
+      {
+        role: "user",
+        content:
+          `请修复第 ${Number(idx) + 1} 张 Mermaid 图。\n\n` +
+          `【渲染错误】\n${parseError}\n\n` +
+          `【原始 Mermaid】\n\`\`\`mermaid\n${originalCode}\n\`\`\``,
+      },
+    ];
+
+    return new Promise((resolve, reject) => {
+      let latest = "";
+      requestChatCompletion({
+        baseUrl: cfg.baseUrl,
+        apiKey: cfg.apiKey,
+        model: cfg.model,
+        temperature: 0.1,
+        maxTokens: Math.max(1200, Math.min(4096, Number(cfg.maxTokens) || 4096)),
+        messages,
+        stream: cfg.stream !== false,
+        onStatus(msg) {
+          setStatus(`Mermaid AI 修复 · ${msg}`);
+        },
+        onDelta(_delta, full, parts) {
+          latest = String(parts?.content || full || latest);
+        },
+        onDone(full, parts) {
+          const repaired = extractMermaidCode(parts?.content || full || latest);
+          if (!repaired) {
+            reject(new Error("AI 没有返回可用的 Mermaid 代码"));
+            return;
+          }
+          resolve(repaired);
+        },
+        onError(err) {
+          reject(err instanceof Error ? err : new Error(String(err || "AI 修复失败")));
+        },
+      });
+    });
+  }
+
+  async function handleMermaidTool(button) {
+    const action = button?.dataset?.mmdAct;
+    const card = button?.closest(".bsb-mermaid-card");
+
+    if (action === "retry") {
+      const host = button.closest?.(".mermaid[data-bsb-m]") || card?._bsbMermaidHost;
+      const job = host?._bsbMermaidJob || card?._bsbMermaidJob;
+      if (!host || !job) {
+        setStatus("重绘失败：没有找到该图对应的 Mermaid 源码", "err");
+        return;
+      }
+      if (state.aiBusy) {
+        setStatus("当前 AI 笔记仍在生成，请完成或停止后再修复 Mermaid", "err");
+        return;
+      }
+      if (state.mermaidRepairing) {
+        setStatus("已有 Mermaid 图正在重绘", "err");
+        return;
+      }
+
+      if (card?.closest(".bsb-mermaid-modal")) closeMermaidFullscreen();
+      state.mermaidRepairing = true;
+      button.disabled = true;
+      button.textContent = "重试中…";
+
+      const originalCode = String(job.code || "");
+      let activeCode = originalCode;
+      try {
+        // 第一步：原代码本地重试一次，解决偶发的库加载/并发问题，不消耗 AI。
+        setStatus(`Mermaid 图 ${job.idx + 1} · 正在用原代码重试…`);
+        const local = await renderMermaidNode(host, originalCode, job.idx, job.epoch, {
+          force: true,
+          maxAttempts: 1,
+          showError: false,
+          repaired: !!job.repaired,
+          originalCode: job.originalCode || originalCode,
+        });
+        if (local.ok) {
+          setStatus(`Mermaid 图 ${job.idx + 1} 已重新渲染；代码未改变`, "ok");
+          return;
+        }
+
+        // 第二步：原代码稳定失败，说明大概率是语法/兼容性问题；只让 AI 修复此代码块。
+        button.textContent = "AI 修复中…";
+        setStatus(`Mermaid 图 ${job.idx + 1} 本地重试失败，正在修复代码…`);
+        activeCode = await requestMermaidCodeRepair(originalCode, local.error, job.idx);
+        if (activeCode.trim() === originalCode.trim()) {
+          throw new Error("AI 返回的 Mermaid 代码与原代码相同，未完成修复");
+        }
+
+        // 第三步：只有修复后的代码真实通过 Mermaid 渲染，才写回完整笔记源码。
+        button.textContent = "验证中…";
+        const repairedResult = await renderMermaidNode(host, activeCode, job.idx, job.epoch, {
+          force: true,
+          maxAttempts: 2,
+          showError: false,
+          repaired: true,
+          originalCode,
+        });
+        if (!repairedResult.ok) throw repairedResult.error || new Error("修复后的代码仍无法渲染");
+
+        const persisted = persistRepairedMermaid(job.idx, activeCode);
+        const currentJob = host._bsbMermaidJob;
+        if (currentJob) {
+          currentJob.code = activeCode;
+          currentJob.repaired = true;
+          currentJob.originalCode = originalCode;
+          currentJob.persisted = persisted;
+        }
+        setStatus(
+          `Mermaid 图 ${job.idx + 1} 修复成功：代码已替换并重新渲染${persisted ? "，已写回笔记源码" : ""}`,
+          "ok",
+        );
+      } catch (err) {
+        console.error("[bili-subbatch] mermaid repair", err);
+        host.dataset.bsbState = "error";
+        host._bsbMermaidJob = {
+          code: originalCode,
+          idx: job.idx,
+          epoch: job.epoch,
+          originalCode: job.originalCode || originalCode,
+          repaired: false,
+        };
+        renderMermaidError(host, originalCode, err, job.idx);
+        setStatus(`Mermaid 图 ${job.idx + 1} 重绘失败：${err?.message || err}`, "err");
+      } finally {
+        state.mermaidRepairing = false;
+        if (button.isConnected) {
+          button.disabled = false;
+          button.textContent = "重绘";
+        }
+      }
+      return;
+    }
+
+    if (!card) return;
+    const viewport = card.querySelector(".bsb-mermaid-viewport");
+    if (action === "fit") fitMermaidToViewport(card);
+    else if (action === "actual") setMermaidScale(card, 1, "actual");
+    else if (action === "zoom-in") setMermaidScale(card, getMermaidScale(card) + 0.15);
+    else if (action === "zoom-out") setMermaidScale(card, getMermaidScale(card) - 0.15);
+    else if (action === "fullscreen") {
+      if (card.closest(".bsb-mermaid-modal")) closeMermaidFullscreen();
+      else openMermaidFullscreen(card);
+    }
+    if (viewport && action === "actual") { viewport.scrollLeft = 0; viewport.scrollTop = 0; }
+  }
+
+  function buildMermaidCard(svg, idx, host) {
+    svg.classList.add("bsb-mermaid-svg");
+    svg.removeAttribute("width");
+    svg.removeAttribute("height");
+    svg.setAttribute("preserveAspectRatio", "xMinYMin meet");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", `架构流程图 ${idx + 1}`);
+    const viewBox = parseMermaidViewBox(svg);
+    if (!svg.hasAttribute("viewBox")) svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
+
+    const baseWidth = Math.round(Math.max(760, Math.min(3600, viewBox.width)));
+    const card = document.createElement("section");
+    card.className = "bsb-mermaid-card";
+    card.dataset.scale = "1";
+    card.dataset.fit = "actual";
+
+    const toolbar = document.createElement("div");
+    toolbar.className = "bsb-mermaid-toolbar";
+    const title = document.createElement("span");
+    title.className = "bsb-mermaid-title";
+    const repaired = !!host?._bsbMermaidJob?.repaired;
+    title.textContent = `架构流程图 ${idx + 1}${repaired ? " · AI 已修复" : ""} · 可滚动查看`;
+    const tools = document.createElement("span");
+    tools.className = "bsb-mermaid-tools";
+    const makeButton = (toolAction, text, titleText) => {
+      const toolButton = document.createElement("button");
+      toolButton.type = "button";
+      toolButton.className = "bsb-mermaid-tool";
+      toolButton.dataset.mmdAct = toolAction;
+      toolButton.textContent = text;
+      toolButton.title = titleText;
+      toolButton.setAttribute("aria-label", titleText);
+      return toolButton;
+    };
+    tools.append(
+      makeButton("fit", "适宽", "适应可视区域宽度"),
+      makeButton("actual", "100%", "恢复清晰原始尺寸"),
+      makeButton("zoom-out", "−", "缩小图表"),
+    );
+    const scaleLabel = document.createElement("span");
+    scaleLabel.className = "bsb-mermaid-scale";
+    scaleLabel.textContent = "100%";
+    tools.append(
+      scaleLabel,
+      makeButton("zoom-in", "+", "放大图表"),
+      makeButton("retry", "重绘", "先重试渲染；若语法失败则只修复该 Mermaid 代码块"),
+      makeButton("fullscreen", "全屏", "全屏查看"),
+    );
+    toolbar.append(title, tools);
+
+    const viewport = document.createElement("div");
+    viewport.className = "bsb-mermaid-viewport";
+    viewport.tabIndex = 0;
+    viewport.setAttribute("aria-label", "可滚动和缩放的 Mermaid 图表");
+    const stage = document.createElement("div");
+    stage.className = "bsb-mermaid-stage";
+    stage.dataset.baseWidth = String(baseWidth);
+    stage.style.setProperty("--bsb-mermaid-width", `${baseWidth}px`);
+    stage.appendChild(svg);
+    const hint = document.createElement("span");
+    hint.className = "bsb-mermaid-hint";
+    hint.textContent = "Ctrl + 滚轮缩放";
+    viewport.append(stage, hint);
+    card.append(toolbar, viewport);
+    card._bsbMermaidHost = host || null;
+    card._bsbMermaidJob = host?._bsbMermaidJob || null;
+    return card;
+  }
+
+  function enqueueMermaidRender(task) {
+    const run = state.mermaidQueue.catch(() => undefined).then(task);
+    state.mermaidQueue = run.catch(() => undefined);
+    return run;
+  }
+
+  function renderMermaidError(node, code, err, idx) {
+    const message = String(err?.message || err || "未知错误");
+    node.replaceChildren();
+
+    const box = document.createElement("section");
+    box.className = "bsb-mermaid-error";
+    const head = document.createElement("div");
+    head.className = "bsb-mermaid-error-head";
+    const title = document.createElement("strong");
+    title.textContent = `架构流程图 ${idx + 1} 渲染失败`;
+    const retry = document.createElement("button");
+    retry.type = "button";
+    retry.className = "bsb-mermaid-tool";
+    retry.dataset.mmdAct = "retry";
+    retry.textContent = "重绘";
+    retry.title = "先用原代码重试；仍失败则调用现有 AI 配置修复此 Mermaid 代码块";
+    head.append(title, retry);
+
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.textContent = "查看 Mermaid 源码与错误";
+    const pre = document.createElement("pre");
+    const codeNode = document.createElement("code");
+    codeNode.textContent = `${code}\n\n${message}`;
+    pre.appendChild(codeNode);
+    details.append(summary, pre);
+    box.append(head, details);
+    node.appendChild(box);
+  }
+
+  async function renderMermaidNode(
+    node,
+    code,
+    idx,
+    epoch,
+    { force = false, maxAttempts, showError = true, repaired = false, originalCode = "" } = {},
+  ) {
+    if (!node || epoch !== state.renderEpoch) return { ok: false, aborted: true };
+    if (!force && node.dataset.bsbState === "done") return { ok: true, skipped: true };
+    if (node.dataset.bsbState === "rendering") return { ok: false, busy: true };
+
+    const previousState = node.dataset.bsbState || "pending";
+    const previousJob = node._bsbMermaidJob || null;
+    const job = {
+      code: String(code || ""),
+      idx,
+      epoch,
+      repaired: !!repaired,
+      originalCode: String(originalCode || previousJob?.originalCode || code || ""),
+    };
+    node._bsbMermaidJob = job;
+    node.dataset.bsbState = "rendering";
+    const attempts = Math.max(1, Number(maxAttempts) || (force ? 2 : 3));
+    let lastError = null;
+
+    for (let attempt = 0; attempt < attempts; attempt++) {
+      try {
+        const rendered = await enqueueMermaidRender(async () => {
+          await ensureMermaid();
+          if (attempt > 0 && typeof mermaid !== "undefined") {
+            // 只重新应用配置；不能把语法错误误认为 CDN/运行时故障。
+            state.renderLibs.mermaid = false;
+            await ensureMermaid();
+          }
+          if (epoch !== state.renderEpoch) return null;
+          const id = `bsb-mmd-${Date.now()}-${idx}-${++state.mermaidRenderSeq}`;
+          return mermaid.render(id, job.code);
+        });
+        if (!rendered || epoch !== state.renderEpoch) return { ok: false, aborted: true };
+        const { svg } = rendered;
+        const safeSvg = typeof DOMPurify !== "undefined"
+          ? DOMPurify.sanitize(svg, {
+              USE_PROFILES: { svg: true, svgFilters: true },
+              ADD_ATTR: ["class", "style", "viewBox", "preserveAspectRatio", "role", "aria-label"],
+            })
+          : svg;
+        const tpl = document.createElement("template");
+        tpl.innerHTML = safeSvg;
+        const svgNode = tpl.content.querySelector("svg");
+        if (!svgNode) throw new Error("Mermaid 未返回有效 SVG");
+
+        node.replaceChildren(buildMermaidCard(svgNode, idx, node));
+        node.dataset.bsbState = "done";
+        return { ok: true, code: job.code, repaired: job.repaired };
+      } catch (err) {
+        lastError = err;
+        if (epoch !== state.renderEpoch) return { ok: false, aborted: true, error: err };
+        if (attempt + 1 < attempts) await sleep(180 * (attempt + 1));
+      }
+    }
+
+    if (showError) {
+      node.dataset.bsbState = "error";
+      renderMermaidError(node, job.code, lastError, idx);
+    } else {
+      node.dataset.bsbState = previousState;
+      node._bsbMermaidJob = previousJob || job;
+    }
+    return { ok: false, error: lastError, code: job.code };
+  }
+
+  function scheduleMermaid(host, blocks, epoch, scrollRoot) {
+    const nodes = Array.from(host.querySelectorAll(".mermaid[data-bsb-m]"));
+    if (!nodes.length) return;
+    if (state.mermaidObserver) state.mermaidObserver.disconnect();
+    if ("IntersectionObserver" in window) {
+      state.mermaidObserver = new IntersectionObserver((entries, observer) => {
+        for (const entry of entries) if (entry.isIntersecting) {
+          observer.unobserve(entry.target);
+          const idx = Number(entry.target.dataset.bsbM);
+          renderMermaidNode(entry.target, blocks[idx] || "", idx, epoch);
+        }
+      }, { root: scrollRoot || null, rootMargin: "320px 0px", threshold: 0.01 });
+      nodes.forEach((node) => { node.dataset.bsbState = "pending"; state.mermaidObserver.observe(node); });
+    } else {
+      nodes.forEach((node, idx) => renderMermaidNode(node, blocks[idx] || "", idx, epoch));
+    }
+  }
+
   async function renderAiMarkdown(md, { streaming } = {}) {
     const root = ensurePanel();
     const box = root.querySelector('[data-role="ai-md"]');
-    const contentHost = root.querySelector('[data-role="ai-content"]');
-    const host = contentHost || box;
+    const host = root.querySelector('[data-role="ai-content"]') || box;
     if (!host) return;
+    if (streaming) return paintAiStreamText(md);
+    closeMermaidFullscreen();
 
-    if (streaming) {
-      paintAiStreamText(md);
-      return;
-    }
+    // 防止最后一个流式定时绘制在增强渲染完成后反向覆盖 DOM。
+    if (state.aiPaintTimer) { clearTimeout(state.aiPaintTimer); state.aiPaintTimer = 0; }
+    if (state.aiPaintRaf) { cancelAnimationFrame(state.aiPaintRaf); state.aiPaintRaf = 0; }
 
+    const epoch = ++state.renderEpoch;
+    const source = String(md || "");
+    const needsMath = hasMathSyntax(source);
+    const needsCode = hasCodeSyntax(source);
+    const needsMermaid = hasMermaidSyntax(source);
     try {
-      await ensureRenderLibs();
+      await ensureMarkdownCore();
+      if (needsMath) await ensureKatex();
     } catch (e) {
-      host.innerHTML =
-        simpleMarkdownFallback(md || "") +
-        `<p style="color:var(--ctp-peach)">渲染库加载失败：${escapeHtml(e.message || e)}（已用简易 Markdown）</p>` +
-        `<div class="bsb-ai-anchor" data-role="ai-anchor"></div>`;
-      // 完成后滚到顶部便于阅读
+      host.innerHTML = simpleMarkdownFallback(source) + `<p style="color:var(--ctp-peach)">增强渲染库加载失败，已使用安全简易渲染。</p>`;
       if (box) box.scrollTop = 0;
       return;
     }
+    if (epoch !== state.renderEpoch) return;
 
-    // 1) 数学公式占位（先于 marked，否则 _ ^ \ 会被拆）
-    const { md: mdMath, maths } = prepareMarkdownMath(md || "");
-
-    // 2) 拆出 mermaid 块，避免 marked 破坏
+    const { md: mdMath, maths } = prepareMarkdownMath(source);
     const mermaidBlocks = [];
-    const md2 = mdMath.replace(
-      /```mermaid\s*\n([\s\S]*?)```/gi,
-      (_, code) => {
-        const i = mermaidBlocks.length;
-        mermaidBlocks.push(code.trim());
-        return `\n\n<div class="mermaid" data-bsb-m="${i}">${escapeHtml(code.trim())}</div>\n\n`;
-      },
-    );
-
-    let html;
-    try {
-      html = marked.parse(md2);
-    } catch (_) {
-      html = simpleMarkdownFallback(md2);
-    }
-    // 3) 占位符 → KaTeX HTML
-    if (maths.length) {
-      html = replaceMathPlaceholders(html, maths, katexToHtml);
-    }
-    host.innerHTML = html;
-
-    // 代码高亮
-    host.querySelectorAll("pre code").forEach((block) => {
-      const pre = block.parentElement;
-      const cls = block.className || "";
-      const m = cls.match(/language-([\w#+-]+)/i);
-      if (m && pre && !pre.querySelector(".bsb-code-lang")) {
-        const tag = document.createElement("span");
-        tag.className = "bsb-code-lang";
-        tag.textContent = m[1];
-        pre.insertBefore(tag, block);
-      }
-      if (typeof hljs !== "undefined") {
-        try {
-          hljs.highlightElement(block);
-        } catch (_) {
-          /* unknown lang */
-        }
-      }
+    const md2 = mdMath.replace(/```mermaid\s*\n([\s\S]*?)```/gi, (_, code) => {
+      const i = mermaidBlocks.length; mermaidBlocks.push(code.trim());
+      return `\n\n<div class="mermaid" data-bsb-m="${i}">${escapeHtml(code.trim())}</div>\n\n`;
     });
+    let html;
+    try { html = marked.parse(md2); } catch (_) { html = simpleMarkdownFallback(md2); }
+    if (maths.length) html = replaceMathPlaceholders(html, maths, katexToHtml);
+    html = sanitizeRenderedHtml(html);
+    if (!(await replaceHostInBatches(host, html, epoch))) return;
 
-    // Mermaid
-    if (typeof mermaid !== "undefined" && mermaidBlocks.length) {
-      const nodes = host.querySelectorAll(".mermaid[data-bsb-m]");
-      for (const node of nodes) {
-        const idx = Number(node.getAttribute("data-bsb-m"));
-        const code = mermaidBlocks[idx];
-        if (!code) continue;
-        try {
-          const id = "bsb-mmd-" + Date.now() + "-" + idx;
-          const { svg } = await mermaid.render(id, code);
-          node.innerHTML = svg;
-        } catch (err) {
-          node.innerHTML =
-            `<pre class="bsb-code-lang">mermaid 渲染失败</pre><pre><code>${escapeHtml(code)}\n\n${escapeHtml(err.message || err)}</code></pre>`;
-        }
-      }
-    }
-    // 保证锚点仍在 md 底部（host 是 content 时 anchor 在兄弟节点）
+    host.querySelectorAll("a[href]").forEach((a) => { a.target = "_blank"; a.rel = "noopener noreferrer"; });
+    linkifyTimestamps(host);
+    buildToc(host);
+    if (needsMermaid) scheduleMermaid(host, mermaidBlocks, epoch, box);
+    if (needsCode) await enhanceCodeBlocks(host, epoch);
+
     if (box && !box.querySelector('[data-role="ai-anchor"]')) {
-      const a = document.createElement("div");
-      a.className = "bsb-ai-anchor";
-      a.setAttribute("data-role", "ai-anchor");
-      box.appendChild(a);
+      const a = document.createElement("div"); a.className = "bsb-ai-anchor"; a.dataset.role = "ai-anchor"; box.appendChild(a);
     }
-    // 完成后滚到顶部阅读（程序化，不触发跟随逻辑）
     if (box) {
-      state.aiProgScroll = true;
-      box.scrollTop = 0;
-      requestAnimationFrame(() => {
-        state.aiProgScroll = false;
-      });
+      state.aiProgScroll = true; box.scrollTop = 0;
+      requestAnimationFrame(() => { state.aiProgScroll = false; });
     }
-    state.aiStickBottom = false;
-    state.aiUserReading = true;
-    updateJumpLatestBtn();
+    state.aiStickBottom = false; state.aiUserReading = true; updateJumpLatestBtn();
   }
 
   /**
@@ -4529,6 +6616,8 @@
     state.aiAbort = false;
     state.cancel = false;
     state.aiRaw = "";
+    state.aiRenderedText = "";
+    state.aiStreamTextNode = null;
     state.aiUserReading = false;
     state.aiStickBottom = true;
     state.aiProgScroll = false;
@@ -4554,6 +6643,9 @@
       const built = buildSubtitlePayload(ready);
       const cut = truncateForAi(built, MAX_SUBTITLE_CHARS);
       const first = ready[0];
+      state.aiSourceBvids = ready.map((x) => x.bvid).filter(Boolean);
+      const selectedNoteMode = root.querySelector('[data-role="note-mode"]')?.value || state.ui?.noteMode || "deep";
+      const noteMode = NOTE_MODE_OPTIONS.includes(selectedNoteMode) ? selectedNoteMode : "deep";
       const vars = {
         title:
           ready.map((x) => x.title).filter(Boolean).join(" / ") ||
@@ -4562,17 +6654,28 @@
         bvid: ready.map((x) => x.bvid).join(", "),
         author: first.author || "",
         subtitle: cut.text,
+        modeInstruction: noteModeInstruction(noteMode),
       };
-      const userContent = applyPromptTemplate(cfg.userPromptTemplate, vars);
+      let userContent = applyPromptTemplate(cfg.userPromptTemplate, vars);
+      // 兼容旧版本已保存的自定义模板：没有新占位符时仍让模式选择生效。
+      if (!String(cfg.userPromptTemplate || "").includes("{{modeInstruction}}")) {
+        userContent = `${noteModeInstruction(noteMode)}\n\n${userContent}`;
+      }
       const messages = [];
-      if (cfg.systemPrompt.trim()) {
-        messages.push({ role: "system", content: cfg.systemPrompt });
+      const effectiveSystemPrompt = [
+        String(cfg.systemPrompt || "").trim(),
+        noteMode === "mermaid" ? MERMAID_LEARNING_SYSTEM_PROMPT : "",
+      ]
+        .filter(Boolean)
+        .join("\n\n");
+      if (effectiveSystemPrompt) {
+        messages.push({ role: "system", content: effectiveSystemPrompt });
       }
       messages.push({ role: "user", content: userContent });
 
       const useStream = cfg.stream !== false;
       setStatus(
-        `AI 请求中 · ${cfg.model} · ${useStream ? "SSE流式" : "非流式"} · ${ready.length} 条` +
+        `AI 请求中 · ${noteModeLabel(noteMode)} · ${cfg.model} · ${useStream ? "SSE流式" : "非流式"} · ${ready.length} 条` +
           (cut.truncated ? " · 字幕已截断" : ""),
       );
 
@@ -4611,7 +6714,7 @@
         return;
       }
 
-      setStatus("AI 完成 · 正在渲染 Markdown / 代码 / Mermaid…");
+      setStatus("AI 完成 · 正在安全渲染并按需增强…");
       await renderAiMarkdown(state.aiRaw, { streaming: false });
       setStatus(`AI 完成 · ${state.aiRaw.length} 字符 · ${cfg.model}`, "ok");
     } catch (e) {
@@ -4630,6 +6733,10 @@
       if (state.aiPaintRaf) {
         cancelAnimationFrame(state.aiPaintRaf);
         state.aiPaintRaf = 0;
+      }
+      if (state.aiPaintTimer) {
+        clearTimeout(state.aiPaintTimer);
+        state.aiPaintTimer = 0;
       }
     }
   }
@@ -4922,29 +7029,265 @@
     }
   }
 
+  /**
+   * 字幕抓取成功后的自动分析调度：
+   * - 默认开启，行为等同点击“开始分析”；
+   * - 同一路由只自动触发一次；
+   * - stale revalidate / 静默刷新不重复分析；
+   * - AI 配置尚未完成时等待用户保存配置，保存后自动续跑。
+   */
+  function scheduleAutoAnalyze(item, captureKey, reason = "capture", delay = AUTO_ANALYZE_DELAY_MS) {
+    if (!state.autoAnalyzeEnabled || !item || item.subStatus !== "ok" || !item.data?.length) return;
+    const key = captureKey || routeVideoKey(item.bvid, item.page || 1);
+    if (!key || state.autoAnalyzeKey === key || state.autoAnalyzePendingKey === key) return;
+
+    const cfg = loadAiConfig();
+    if (!cfg.apiKey || !cfg.baseUrl) {
+      setStatus(`已抓取 ${item.cue_count || item.data.length} 条字幕 · 保存 AI 配置后将自动分析`, "ok");
+      return;
+    }
+
+    clearTimeout(state.autoAnalyzeTimer);
+    state.autoAnalyzePendingKey = key;
+    state.autoAnalyzeTimer = window.setTimeout(async () => {
+      state.autoAnalyzePendingKey = "";
+      if (!state.autoAnalyzeEnabled || state.autoAnalyzeKey === key) return;
+
+      const current = detectContext(location.href);
+      if (current.type !== "video" || routeVideoKey(current.bvid, current.page || 1) !== key) return;
+      const target = state.items.find((x) => routeVideoKey(x.bvid, x.page || 1) === key);
+      if (!target || target.subStatus !== "ok" || !target.data?.length) return;
+
+      // 旧视频的 AI 请求正在收尾时稍后重试；不会并发启动第二个分析。
+      if (state.aiBusy) {
+        scheduleAutoAnalyze(target, key, reason, 500);
+        return;
+      }
+
+      state.autoAnalyzeKey = key;
+      setStatus(`字幕已就绪 · 正在自动开始分析（${reason}）…`);
+      try {
+        await doAiAnalyze();
+      } catch (error) {
+        // doAiAnalyze 内部通常已处理错误；这里只防止未捕获异常污染页面。
+        console.warn("[bili-subbatch] auto analyze", error);
+      }
+    }, Math.max(0, Number(delay) || 0));
+  }
+
+  function abortAiForAutoNavigation() {
+    if (!state.autoAnalyzeEnabled || !state.aiBusy) return;
+    state.aiAbort = true;
+    try {
+      state.aiAbortController?.abort();
+    } catch (_) {
+      /* noop */
+    }
+    try {
+      if (state.aiXhr && typeof state.aiXhr.abort === "function") state.aiXhr.abort();
+    } catch (_) {
+      /* noop */
+    }
+  }
+
+  function scheduleAutoCapture(reason, delay = AUTO_CAPTURE_DELAY_MS) {
+    clearTimeout(state.autoCaptureTimer);
+    if (!state.autoCaptureEnabled || document.hidden) return;
+    state.autoCaptureTimer = window.setTimeout(() => {
+      autoCaptureCurrentVideo(reason).catch((error) => {
+        if (error?.name !== "AbortError") {
+          console.warn("[bili-subbatch] auto capture", error);
+        }
+      });
+    }, Math.max(0, Number(delay) || 0));
+  }
+
+  async function autoCaptureCurrentVideo(reason = "route", options = {}) {
+    if (!state.autoCaptureEnabled && !options.forceNetwork) return;
+    const ctx = detectContext(location.href);
+    const bvid = options.requestedBvid || ctx.bvid;
+    if (!bvid || (!options.requestedBvid && ctx.type !== "video")) return;
+    const page = Math.max(1, Number(options.requestedPage || ctx.page || currentPageNumber()) || 1);
+    const captureKey = routeVideoKey(bvid, page);
+    const existing = state.items.find(
+      (item) => routeVideoKey(item.bvid, item.page || 1) === captureKey,
+    );
+    if (!options.forceNetwork && state.autoCaptureKey === captureKey && ["ok", "empty"].includes(existing?.subStatus)) {
+      if (existing?.subStatus === "ok") selectTranscriptItem(existing);
+      return;
+    }
+
+    const epoch = ++state.autoCaptureEpoch;
+    state.autoCaptureAbortController?.abort();
+    const controller = new AbortController();
+    state.autoCaptureAbortController = controller;
+    state.autoCaptureKey = captureKey;
+
+    const placeholder = options.silent && existing
+      ? { ...existing }
+      : {
+          bvid,
+          title: document.title.replace(/_哔哩哔哩_bilibili$/i, "") || bvid,
+          author: "",
+          page,
+          selected: true,
+          subStatus: "wait",
+          cue_count: 0,
+          data: null,
+          error: "",
+          autoCaptured: true,
+        };
+    if (!options.silent) {
+      state.items = [placeholder];
+      state.meta = { autoCaptured: true, reason };
+      renderList();
+      refreshContextUI();
+      setStatus(`自动读取 ${bvid}${page > 1 ? " P" + page : ""} 字幕…`);
+    }
+
+    let result = null;
+    let fastError = null;
+    try {
+      result = await fetchCurrentSubtitleFast(bvid, page, controller.signal, { forceNetwork: !!options.forceNetwork });
+    } catch (error) {
+      if (error?.name === "AbortError") throw error;
+      fastError = error;
+    }
+
+    // 快速接口无轨道、受限或发生变化时，继续使用原脚本的完整 WBI/DM/AI 回退链。
+    if (!result || result.status !== "ok") {
+      if (controller.signal.aborted) throw new DOMException("操作已取消", "AbortError");
+      try {
+        result = await fetchSubtitle(bvid, page);
+        if (result && result.status === "ok") result.source = "robust_fallback";
+      } catch (error) {
+        if (!result) result = { bvid, page, status: "error", error: error.message || String(error) };
+      }
+    }
+
+    if (epoch !== state.autoCaptureEpoch || controller.signal.aborted) return;
+    const nowCtx = detectContext(location.href);
+    if (nowCtx.type !== "video" || routeVideoKey(nowCtx.bvid, nowCtx.page || 1) !== captureKey) return;
+
+    const item = {
+      ...placeholder,
+      bvid: result?.bvid || bvid,
+      aid: result?.aid || null,
+      cid: result?.cid || null,
+      title: result?.title || placeholder.title,
+      author: result?.author || "",
+      page: result?.page || page,
+      pages: result?.pages || [],
+      selected: true,
+      subStatus: result?.status || "error",
+      cue_count: result?.cue_count || 0,
+      data: result?.data || null,
+      error: result?.error || fastError?.message || "",
+      lan: result?.lan || "",
+      lan_doc: result?.lan_doc || "",
+      tracks: result?.tracks || placeholder.tracks || [],
+      activeTrackIndex: Number.isInteger(result?.activeTrackIndex) ? result.activeTrackIndex : (placeholder.activeTrackIndex ?? -1),
+      cachePath: result?.cachePath || "",
+      cacheLevel: result?.cacheLevel || "",
+      cacheStale: !!result?.cacheStale,
+      source: result?.source || (fastError ? "fast_failed" : "fast"),
+      autoCaptured: true,
+    };
+    state.items = [item];
+    state.meta = {
+      autoCaptured: true,
+      title: item.title,
+      author: item.author,
+      source: item.source,
+    };
+    if (item.subStatus === "ok") {
+      state.transcriptItemKey = routeVideoKey(item.bvid, item.page || 1);
+    }
+    renderList();
+    bindTranscriptVideoEvents();
+
+    if (item.subStatus === "ok") {
+      if (state.autoEnablePlayerSubtitle) {
+        window.setTimeout(() => enablePlayerSubtitle(item).catch(() => {}), 280);
+      }
+      setStatus(`已自动抓取 ${item.cue_count} 条字幕 · ${item.cachePath || item.cacheLevel || item.source}`, "ok");
+      // 静默的 stale-while-revalidate 只更新字幕缓存，不重复消耗一次 AI 请求。
+      if (!options.silent && reason !== "stale-revalidate") {
+        scheduleAutoAnalyze(item, captureKey, reason);
+      }
+      if (item.cacheStale && !options.forceNetwork) {
+        window.setTimeout(() => {
+          const current = detectContext(location.href);
+          if (routeVideoKey(current.bvid, current.page || 1) === captureKey) {
+            autoCaptureCurrentVideo("stale-revalidate", { forceNetwork: true, silent: true, requestedBvid: item.bvid, requestedPage: item.page }).catch(() => {});
+          }
+        }, 80);
+      }
+    } else if (item.subStatus === "empty") {
+      setStatus("当前视频没有可读取字幕", "err");
+    } else {
+      setStatus(`自动抓取失败: ${item.error || "未知错误"}`, "err");
+    }
+  }
+
   // ─── SPA watch ──────────────────────────────────────────────────────────
   let lastHref = location.href;
   function onMaybeNavigate() {
     if (location.href === lastHref) return;
     lastHref = location.href;
-    if (state.open) refreshContextUI();
+    state.autoCaptureAbortController?.abort();
+    clearTimeout(state.autoAnalyzeTimer);
+    state.autoAnalyzePendingKey = "";
+    state.autoAnalyzeKey = "";
+    abortAiForAutoNavigation();
+    state.transcriptVideoAbort?.abort();
+    state.transcriptSwitchAbort?.abort();
+    state.transcriptActiveCueIndex = -1;
+    const nextCtx = detectContext(location.href);
+    state.transcriptItemKey = nextCtx.type === "video" && nextCtx.bvid
+      ? routeVideoKey(nextCtx.bvid, nextCtx.page || 1)
+      : "";
+    refreshContextUI();
+    renderTranscriptPanel();
+    scheduleAutoCapture("route-change");
   }
 
   function boot() {
+    initCacheChannel();
     ensurePanel();
     refreshContextUI();
-    const _push = history.pushState;
-    const _replace = history.replaceState;
-    history.pushState = function () {
-      _push.apply(this, arguments);
+    bindTranscriptVideoEvents();
+    const _push = pageWindow.history.pushState;
+    const _replace = pageWindow.history.replaceState;
+    pageWindow.history.pushState = function () {
+      const result = _push.apply(this, arguments);
       setTimeout(onMaybeNavigate, 0);
+      return result;
     };
-    history.replaceState = function () {
-      _replace.apply(this, arguments);
+    pageWindow.history.replaceState = function () {
+      const result = _replace.apply(this, arguments);
       setTimeout(onMaybeNavigate, 0);
+      return result;
     };
-    window.addEventListener("popstate", onMaybeNavigate);
-    setInterval(onMaybeNavigate, 1500);
+    pageWindow.addEventListener("popstate", onMaybeNavigate);
+    pageWindow.addEventListener("hashchange", onMaybeNavigate);
+    window.addEventListener("pageshow", () => {
+      onMaybeNavigate();
+      scheduleAutoCapture("pageshow", 120);
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        onMaybeNavigate();
+        scheduleAutoCapture("visible", 120);
+      }
+    });
+    // History hook 是主路径；低频 URL 比较只为处理少数 B 站站内切换。
+    setInterval(() => {
+      if (document.visibilityState === "visible") onMaybeNavigate();
+    }, 2000);
+
+    // 初次打开页面也默认抓取，不要求先打开面板或点击“扫描”。
+    scheduleAutoCapture("initial", 180);
   }
 
   if (document.readyState === "loading") {

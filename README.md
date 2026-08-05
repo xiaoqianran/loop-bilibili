@@ -3,8 +3,10 @@
 B 站自动化与数据采集（**单仓**）。根目录 **`main.py`**；公共库在 **`packages/`**；业务在 **`modules/`**。
 
 - **字幕（现行）**：`packages/bili_subbatch` — SubBatch HTTP/WBI，**不依赖 opencli**
-- **浏览器（可选）**：[userscripts/](userscripts/) — 油猴 v0.8 工作台：AI 全高画布 + 页内 fetch 流式 + peer 实践
-- **列表 / 总结 / 评论**：仍走 [opencli](https://github.com/jackwener/OpenCLI) `bilibili` adapter
+- **推荐首页（现行）**：`packages/bili_subbatch/homepage.py` — Web `feed/rcmd` + WBI，**不依赖 opencli**（与 `hot` 全站热门不同）
+- **浏览器（可选）**：[userscripts/](userscripts/) — 油猴 **v5.0.5** 研究工作台 v2：自动抓字幕、四级缓存、字幕检索跳转 / 同步高亮、可缩放 Mermaid + AI 笔记
+  - **安装（推荐）**：[Greasy Fork · Bili SubBatch (loop-bilibili)](https://greasyfork.org/zh-CN/scripts/589638-bili-subbatch-loop-bilibili)
+- **列表 / 总结 / 评论（部分）**：`catalog` / `hot` / `feed` 等仍可走 [opencli](https://github.com/jackwener/OpenCLI)；**字幕与推荐首页不依赖 opencli**
 - **过时方案**：`legacy/opencli/`（旧 opencli 字幕）
 
 ## 架构
@@ -14,9 +16,10 @@ loop-bilibili/
 ├── main.py
 ├── packages/
 │   ├── loop_core/          # opencli 运行器、限速、进度（列表/总结/评论）
-│   └── bili_subbatch/      # 字幕 HTTP 客户端 + pack
+│   └── bili_subbatch/      # 字幕 HTTP/WBI + 推荐首页 rcmd + pack
 ├── modules/
 │   ├── catalog/ discover/ feed/ summary/ comments/
+│   ├── homepage/           # → bili_subbatch.homepage（非 opencli）
 │   └── subtitle/           # → bili_subbatch
 ├── legacy/opencli/         # 过世：opencli 字幕
 ├── catalogs/               # UP 投稿目录（可提交）
@@ -29,14 +32,22 @@ loop-bilibili/
 ## 快速开始
 
 ```bash
-# 依赖：列表类仍需 opencli；字幕仅需 Python 3.10+
-opencli bilibili --help
+# 字幕 / 推荐首页：仅需 Python 3.10+ 与 Cookie（不依赖 opencli）
+export BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...'
 
 python3 main.py modules
-python3 main.py catalog 2071007724 --name 海安雨
+python3 main.py catalog 2071007724 --name 海安雨   # catalog 仍可走 opencli
 
-# 字幕（SubBatch，推荐 Cookie）
-export BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...'
+# 推荐首页（个性化 rcmd；--pages 递增 fresh_idx = 刷新）
+python3 main.py homepage --limit 20 --pages 2 --out data
+
+# 对首页 bvid 抓字幕
+python3 main.py subtitle --bvids data/homepage/bvids.txt -o data --resume
+
+# 或一条龙
+python3 main.py homepage --limit 10 --with-subtitles --out data
+
+# 字幕（SubBatch）
 python3 main.py subtitle --catalog catalogs/2071007724-海安雨 -o data --resume
 
 # 打包瘦数据并准备提交
@@ -47,8 +58,9 @@ python3 main.py pack-subtitles --src-root data/subtitle -o data/subtitles --skip
 
 | 模块 | 后端 | 说明 |
 |------|------|------|
-| catalog / hot / ranking / search / feed | opencli | 列表类，page_delay≈1.5s |
+| catalog / hot / ranking / search / feed | opencli | 列表类，page_delay≈1.5s；**hot=全站热门≠推荐首页** |
 | summary / comments | opencli | item 串行，默认 ~2s |
+| **homepage** | **bili_subbatch** | Web 推荐首页 rcmd + WBI，可刷新 |
 | **subtitle** | **bili_subbatch** | SubBatch，默认 ~0.4–0.5s |
 | pack-subtitles | bili_subbatch.pack | 工作区 → `data/subtitles` |
 
