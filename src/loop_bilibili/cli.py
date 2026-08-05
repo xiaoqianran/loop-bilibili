@@ -12,6 +12,7 @@ from .config import load_config
 from .database import Database
 from .ingest import refresh_source
 from .models import AppConfig
+from .sources._http import cookie_ready_for_batch, cookie_summary
 from .sources.creator_opencli import CreatorOpencliSource
 from .sources.homepage_rcmd import HomepageRcmdSource
 from .sources.subtitle_bilibili import BilibiliSubtitleSource
@@ -158,10 +159,54 @@ def _build_sources(
     return sources
 
 
+def _warn_cookie(cfg: AppConfig) -> int | None:
+    """Print cookie diagnostics; return exit code if require_cookie blocks."""
+    summary = cookie_summary(cfg.cookie)
+    print(
+        "cookie: "
+        f"len={summary['length']} SESSDATA={summary['has_SESSDATA']} "
+        f"bili_jct={summary['has_bili_jct']} buvid3={summary['has_buvid3']}",
+        flush=True,
+    )
+    if not cookie_ready_for_batch(cfg.cookie):
+        print(
+            "warn: no SESSDATA — bulk HTTP fetch will hit -352 quickly "
+            "(SubBatch always sends browser login cookie). "
+            "export BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...'",
+            file=sys.stderr,
+            flush=True,
+        )
+        if cfg.require_cookie:
+            print(
+                "error: runtime.require_cookie=true and SESSDATA missing",
+                file=sys.stderr,
+            )
+            return 2
+    print(
+        f"pace: job_delay={cfg.job_delay}s ±{cfg.job_jitter}s "
+        f"risk_backoff={cfg.risk_base_delay}..{cfg.risk_max_delay}s",
+        flush=True,
+    )
+    return None
+
+
+def _worker_kwargs(cfg: AppConfig) -> dict:
+    return dict(
+        language=cfg.subtitle_language,
+        job_delay=cfg.job_delay,
+        job_jitter=cfg.job_jitter,
+        retry_delay=cfg.retry_delay,
+        risk_base_delay=cfg.risk_base_delay,
+        risk_max_delay=cfg.risk_max_delay,
+    )
+
+
 def cmd_once(cfg: AppConfig, args: argparse.Namespace) -> int:
+    blocked = _warn_cookie(cfg)
+    if blocked is not None:
+        return blocked
     db = _open_db(cfg, args.db, init=True)
     try:
-        refresh_results = []
         if not args.skip_refresh:
             sources = _build_sources(cfg, no_homepage=args.no_homepage)
             if not sources:
@@ -169,7 +214,6 @@ def cmd_once(cfg: AppConfig, args: argparse.Namespace) -> int:
             for src in sources:
                 try:
                     summary = refresh_source(src, db)
-                    refresh_results.append(summary)
                     print(
                         f"refresh {summary['source']}: "
                         f"candidates={summary['candidates']} "
@@ -178,7 +222,6 @@ def cmd_once(cfg: AppConfig, args: argparse.Namespace) -> int:
                     )
                 except Exception as exc:
                     print(f"refresh {src.name} failed: {exc}", file=sys.stderr)
-                    # continue other sources / still process jobs
         sub_src = BilibiliSubtitleSource(
             cookie=cfg.cookie or None,
             default_language=cfg.subtitle_language,
@@ -186,14 +229,15 @@ def cmd_once(cfg: AppConfig, args: argparse.Namespace) -> int:
         stats = run_once(
             db,
             sub_src,
-            language=cfg.subtitle_language,
             max_jobs=max(0, int(args.max_jobs)),
+            **_worker_kwargs(cfg),
         )
         print(
             "jobs: "
             f"processed={stats['processed']} ok={stats['ok']} "
             f"empty={stats['empty']} retry={stats['retry']} "
-            f"failed={stats['failed']} analyze={stats['analyze']}"
+            f"failed={stats['failed']} analyze={stats['analyze']} "
+            f"slept_s={stats.get('slept_s', 0):.1f}"
         )
         snap = db.status_snapshot()
         print(f"schema: {snap['schema']}")
@@ -208,6 +252,9 @@ def cmd_once(cfg: AppConfig, args: argparse.Namespace) -> int:
 
 
 def cmd_worker(cfg: AppConfig, args: argparse.Namespace) -> int:
+    blocked = _warn_cookie(cfg)
+    if blocked is not None:
+        return blocked
     db = _open_db(cfg, args.db, init=True)
     try:
         sub_src = BilibiliSubtitleSource(
@@ -217,17 +264,18 @@ def cmd_worker(cfg: AppConfig, args: argparse.Namespace) -> int:
         stats = worker_loop(
             db,
             sub_src,
-            language=cfg.subtitle_language,
             poll_interval=cfg.poll_interval,
             max_jobs=max(0, int(args.max_jobs)),
             max_idle=max(0, int(args.max_idle)),
+            **_worker_kwargs(cfg),
         )
         print(
             "worker done: "
             f"processed={stats['processed']} ok={stats['ok']} "
             f"empty={stats['empty']} retry={stats['retry']} "
             f"failed={stats['failed']} analyze={stats['analyze']} "
-            f"idle_polls={stats['idle_polls']}"
+            f"idle_polls={stats['idle_polls']} "
+            f"slept_s={stats.get('slept_s', 0):.1f}"
         )
         _print_snapshot(db.status_snapshot())
         return 0

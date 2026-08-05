@@ -10,7 +10,13 @@ from typing import Any, Callable
 from loop_bilibili.database import dumps_cues
 from loop_bilibili.models import SubtitlePayload, SubtitleStatus
 
-from ._http import RetryableError, format_subtitle_url, get_cookie, http_json
+from ._http import (
+    HttpClient,
+    RetryableError,
+    format_subtitle_url,
+    get_cookie,
+    http_json,
+)
 from ._util import (
     cues_to_text,
     is_charge_exclusive_blocked,
@@ -97,9 +103,12 @@ class BilibiliSubtitleSource:
         http: HttpJsonFn | None = None,
         wbi_keys: GetWbiKeysFn | None = None,
         default_language: str = "zh",
+        client: HttpClient | None = None,
     ):
         self.cookie = get_cookie(cookie)
-        self.http = http or http_json
+        self._client = client or HttpClient(self.cookie)
+        # Prefer injectable http (tests); else session-backed client
+        self.http = http or self._client.get_json
         self._wbi_keys = wbi_keys
         self.default_language = default_language
 

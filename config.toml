@@ -16,7 +16,20 @@ homepage_ps = 12
 poll_interval = 2.0
 # Default language key for subtitle rows
 subtitle_language = "zh"
+# Inter-video pacing (v1 BatchConfig / SubBatch-safe defaults)
+# ~0.5s + jitter ⇒ roughly ≤2 videos/s worst case, usually slower with RTT
+job_delay = 0.5
+job_jitter = 0.15
+# Generic temporary failure requeue delay
+retry_delay = 60.0
+# -352 / -412 risk exponential backoff base & cap (seconds)
+risk_base_delay = 15.0
+risk_max_delay = 300.0
 
 [runtime]
-# Cookie: prefer env BILI_COOKIE; this is a fallback only
+# Cookie: prefer env BILI_COOKIE; this is a fallback only.
+# SubBatch always attaches SESSDATA (+ buvid*). Bulk fetch without SESSDATA
+# will trip -352 quickly — set cookie or export BILI_COOKIE.
 cookie = ""
+# If true, once/worker refuse to run subtitle jobs without SESSDATA
+require_cookie = false

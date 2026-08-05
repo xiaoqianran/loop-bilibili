@@ -10,7 +10,7 @@ from loop_bilibili.database import Database
 from loop_bilibili.ingest import refresh_source
 from loop_bilibili.models import Candidate, Video
 from loop_bilibili.sources.subtitle_bilibili import SubtitleFetchResult
-from loop_bilibili.worker import process_subtitle_job, run_once
+from loop_bilibili.worker import process_subtitle_job, run_once, risk_retry_delay
 
 
 class FakeVideoSource:
@@ -152,6 +152,59 @@ class RefreshAndWorkerTest(unittest.TestCase):
         self.assertEqual(self.db.get_subtitle("BVempty", "zh")["status"], "empty")
         self.assertEqual(self.db.get_subtitle("BVretry", "zh")["status"], "retry")
         self.assertEqual(self.db.get_subtitle("BVfail", "zh")["status"], "failed")
+
+    def test_risk_error_uses_long_backoff(self) -> None:
+        self.db.upsert_video(Video(bvid="BVrisk"))
+        self.db.enqueue_once("fetch_subtitle", "BVrisk")
+        job = self.db.claim_next_job()
+        assert job is not None
+        sub = FakeSubtitleSource(
+            {
+                "BVrisk": SubtitleFetchResult(
+                    bvid="BVrisk",
+                    status="retry",
+                    error="view/detail code=-352 风控校验失败",
+                )
+            }
+        )
+        outcome = process_subtitle_job(
+            job,
+            self.db,
+            sub,
+            risk_base_delay=15.0,
+            risk_max_delay=300.0,
+            retry_delay=5.0,
+        )
+        self.assertEqual(outcome, "retry")
+        retried = self.db.get_job("fetch_subtitle", "BVrisk")
+        assert retried is not None
+        self.assertEqual(retried.status, "pending")
+        # run_after should be well above "now" by ~15s risk base (not 5s generic)
+        import time
+
+        remaining = retried.run_after - time.time()
+        self.assertGreaterEqual(remaining, 14.0)
+
+    def test_run_once_paces_between_jobs(self) -> None:
+        for b in ("BVa", "BVb"):
+            self.db.upsert_video(Video(bvid=b))
+            self.db.enqueue_once("fetch_subtitle", b)
+        sub = FakeSubtitleSource(
+            {
+                "BVa": SubtitleFetchResult(bvid="BVa", status="empty"),
+                "BVb": SubtitleFetchResult(bvid="BVb", status="empty"),
+            }
+        )
+        stats = run_once(
+            self.db,
+            sub,
+            max_jobs=2,
+            job_delay=0.05,
+            job_jitter=0.0,
+            pace=True,
+        )
+        self.assertEqual(stats["empty"], 2)
+        self.assertGreaterEqual(stats["slept_s"], 0.04)
 
 
 if __name__ == "__main__":

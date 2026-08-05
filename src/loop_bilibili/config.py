@@ -59,6 +59,24 @@ def load_config(path: str | Path | None = None) -> AppConfig:
         homepage_ps=int(sources.get("homepage_ps") or 12),
         poll_interval=float(worker.get("poll_interval") or 2.0),
         subtitle_language=str(worker.get("subtitle_language") or "zh"),
+        job_delay=float(worker.get("job_delay") if worker.get("job_delay") is not None else 0.5),
+        job_jitter=float(
+            worker.get("job_jitter") if worker.get("job_jitter") is not None else 0.15
+        ),
+        retry_delay=float(
+            worker.get("retry_delay") if worker.get("retry_delay") is not None else 60.0
+        ),
+        risk_base_delay=float(
+            worker.get("risk_base_delay")
+            if worker.get("risk_base_delay") is not None
+            else 15.0
+        ),
+        risk_max_delay=float(
+            worker.get("risk_max_delay")
+            if worker.get("risk_max_delay") is not None
+            else 300.0
+        ),
+        require_cookie=bool(runtime.get("require_cookie", False)),
         cookie=cookie_env or cookie_cfg,
         raw=data,
     )

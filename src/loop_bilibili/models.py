@@ -71,5 +71,12 @@ class AppConfig:
     homepage_ps: int = 12
     poll_interval: float = 2.0
     subtitle_language: str = "zh"
+    # Inter-job pacing (SubBatch/v1 batch style)
+    job_delay: float = 0.5
+    job_jitter: float = 0.15
+    retry_delay: float = 60.0
+    risk_base_delay: float = 15.0
+    risk_max_delay: float = 300.0
+    require_cookie: bool = False
     cookie: str = ""
     raw: dict[str, Any] = field(default_factory=dict, repr=False)
