@@ -377,10 +377,34 @@ class Database:
             (kind, bvid, model or ""),
         )
 
+    def supersede_empty_analyze_stubs(self) -> int:
+        """
+        Mark legacy analyze jobs with empty model as done.
+
+        Those stubs were enqueued when AI was off; once multi-model AI is on
+        they would steal the queue and produce no diagrams.
+        """
+        with self.transaction():
+            cur = self._conn.execute(
+                """
+                UPDATE jobs
+                SET status = 'done',
+                    last_error = 'superseded: empty model stub (use model-tagged analyze)'
+                WHERE kind = 'analyze'
+                  AND status IN ('pending', 'running')
+                  AND (model IS NULL OR TRIM(model) = '')
+                """
+            )
+            return int(cur.rowcount or 0)
+
     def claim_next_job(
         self, kinds: Sequence[str] | None = None
     ) -> Job | None:
-        """Atomically claim the oldest ready pending job."""
+        """Atomically claim the oldest ready pending job.
+
+        Prefer model-tagged analyze jobs over empty-model stubs so LLM
+        post-process is not starved by legacy no-op analyze rows.
+        """
         now = time.time()
         kind_filter = ""
         params: list[Any] = [now]
@@ -390,11 +414,19 @@ class Database:
             params.extend(kinds)
 
         with self.transaction():
+            # Non-empty model first (analyze with LLM), then older jobs
             row = self._conn.execute(
                 f"""
                 SELECT * FROM jobs
                 WHERE status = 'pending' AND run_after <= ?{kind_filter}
-                ORDER BY id ASC
+                ORDER BY
+                  CASE
+                    WHEN kind = 'analyze' AND model IS NOT NULL AND TRIM(model) != ''
+                      THEN 0
+                    WHEN kind = 'fetch_subtitle' THEN 1
+                    ELSE 2
+                  END,
+                  id ASC
                 LIMIT 1
                 """,
                 params,

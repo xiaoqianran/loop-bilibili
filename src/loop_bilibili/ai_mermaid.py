@@ -163,6 +163,9 @@ def extract_mermaid_diagrams(markdown: str) -> list[dict[str, str]]:
             continue
         seen_codes.add(key)
         title = last_h2 or f"图 {len(diagrams) + 1}"
+        # H2 titles sometimes carry evidence timestamps — strip for clean UI labels
+        title = strip_mermaid_timestamp_citations(title)
+        title = re.sub(r"\s+", " ", title).strip() or f"图 {len(diagrams) + 1}"
         diagrams.append({"title": title, "code": code})
         last_h2 = ""
     return diagrams

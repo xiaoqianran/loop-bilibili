@@ -92,12 +92,15 @@ def scrape_one(
     cookie: str,
     job_delay: float = 0.55,
     max_pages: int = 50,
+    analyze: bool = True,
+    analyze_limit: int = 0,
 ) -> dict:
+    from loop_bilibili.config import load_config
     from loop_bilibili.database import Database
     from loop_bilibili.ingest import refresh_source
     from loop_bilibili.sources.creator_http import CreatorHttpSource
     from loop_bilibili.sources.subtitle_bilibili import BilibiliSubtitleSource
-    from loop_bilibili.worker import job_pace_sleep, process_subtitle_job
+    from loop_bilibili.worker import job_pace_sleep, process_subtitle_job, run_once
 
     db_path = ROOT / "data" / "v2" / f"{slug}.db"
     db_path.parent.mkdir(parents=True, exist_ok=True)
@@ -113,6 +116,28 @@ def scrape_one(
     log(f"=== scrape mid={mid} name={name} slug={slug} ===")
     db = Database(db_path)
     db.init_schema()
+
+    # AI Mermaid post-process (optional; needs AI_API_KEY)
+    ai = None
+    try:
+        cfg = load_config(ROOT / "config.toml")
+        if (
+            analyze
+            and cfg.ai.enabled
+            and cfg.ai.api_key
+            and cfg.ai.base_url
+            and cfg.ai.model_list()
+        ):
+            ai = cfg.ai
+            log(
+                f"ai mermaid: models={ai.model_list()} base={ai.base_url} "
+                f"(subtitle ok → enqueue analyze)"
+            )
+        elif analyze:
+            log("ai mermaid: skipped (no AI_API_KEY / disabled)")
+    except Exception as exc:
+        log(f"ai config load failed: {exc}")
+        ai = None
 
     # Prefer pure HTTP (CI-friendly); fall back to opencli if banned/412.
     src = CreatorHttpSource(
@@ -201,6 +226,7 @@ def scrape_one(
             retry_delay=45.0,
             risk_base_delay=20.0,
             risk_max_delay=180.0,
+            ai=ai,
         )
         stats[outcome] += 1
         if processed % 25 == 0 or outcome in ("ok", "empty"):
@@ -223,6 +249,45 @@ def scrape_one(
         else:
             risk_streak = 0
             job_pace_sleep(job_delay, 0.15)
+
+    # Drain Mermaid analyze queue (subtitle-ok → diagrams)
+    analyze_stats: dict = {}
+    if ai is not None:
+        from loop_bilibili.ai_worker import enqueue_analyze_for_models
+
+        # Ensure every ok subtitle has analyze jobs (idempotent)
+        ok_bvids = db.list_ok_subtitle_bvids(limit=0)
+        if analyze_limit and analyze_limit > 0:
+            ok_bvids = ok_bvids[: int(analyze_limit)]
+        enq = 0
+        for bvid in ok_bvids:
+            enq += enqueue_analyze_for_models(db, bvid, ai, force=False)
+        log(f"analyze enqueue: bvids={len(ok_bvids)} new_jobs={enq}")
+
+        class _NoSub:
+            def fetch(self, bvid: str) -> object:
+                raise RuntimeError("analyze phase must not fetch subtitles")
+
+        # Process all pending analyze jobs for this db
+        max_analyze = max(enq, 1) * 2 + 8
+        if analyze_limit and analyze_limit > 0:
+            max_analyze = min(max_analyze, int(analyze_limit) * max(1, len(ai.model_list())) * 2 + 4)
+        analyze_stats = run_once(
+            db,
+            _NoSub(),
+            max_jobs=max(0, max_analyze),
+            language="zh",
+            job_delay=max(0.3, job_delay),
+            job_jitter=0.1,
+            pace=True,
+            ai=ai,
+        )
+        log(
+            "analyze done: "
+            f"processed={analyze_stats.get('processed', 0)} "
+            f"ok={analyze_stats.get('analyze', 0)} "
+            f"failed={analyze_stats.get('failed', 0)}"
+        )
 
     # finalize counts
     rows = db._conn.execute(
@@ -261,6 +326,16 @@ def scrape_one(
     summary_path.write_text("\n".join(lines), encoding="utf-8")
 
     elapsed = time.time() - t0
+    analyses_ok = 0
+    try:
+        analyses_ok = int(
+            db._conn.execute(
+                "SELECT COUNT(*) FROM analyses WHERE status='ok'"
+            ).fetchone()[0]
+        )
+    except Exception:
+        analyses_ok = 0
+
     result = {
         "mid": mid,
         "name": name,
@@ -269,6 +344,8 @@ def scrape_one(
         "videos": len(rows),
         "breakdown": dict(by),
         "stats": dict(stats),
+        "analyze_stats": dict(analyze_stats) if analyze_stats else {},
+        "analyses_ok": analyses_ok,
         "elapsed_s": round(elapsed, 1),
         "txt_dir": str(txt_dir),
         "summary": str(summary_path),
@@ -321,6 +398,17 @@ def main(argv: list[str] | None = None) -> int:
     )
     p.add_argument("--job-delay", type=float, default=0.55)
     p.add_argument("--max-pages", type=int, default=50)
+    p.add_argument(
+        "--no-analyze",
+        action="store_true",
+        help="skip LLM Mermaid post-process even if AI_API_KEY is set",
+    )
+    p.add_argument(
+        "--analyze-limit",
+        type=int,
+        default=0,
+        help="only analyze first N ok subtitles (0 = all); useful for smoke tests",
+    )
     args = p.parse_args(argv)
 
     cookie = (os.environ.get("BILI_COOKIE") or "").strip()
@@ -366,6 +454,8 @@ def main(argv: list[str] | None = None) -> int:
             cookie=cookie,
             job_delay=args.job_delay,
             max_pages=args.max_pages,
+            analyze=not args.no_analyze,
+            analyze_limit=int(args.analyze_limit or 0),
         )
         results.append(r)
         if args.push_hf or args.push_ms:

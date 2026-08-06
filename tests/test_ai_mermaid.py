@@ -396,8 +396,8 @@ class DualModelTest(unittest.TestCase):
 
     def test_default_models_order(self) -> None:
         from loop_bilibili.models import DEFAULT_AI_MODELS
-        self.assertEqual(DEFAULT_AI_MODELS[0], "google/diffusiongemma-26b-a4b-it")
-        self.assertIn("openai/gpt-oss-120b", DEFAULT_AI_MODELS)
+        self.assertEqual(DEFAULT_AI_MODELS[0], "openai/gpt-oss-120b")
+        self.assertIn("google/diffusiongemma-26b-a4b-it", DEFAULT_AI_MODELS)
 
 
 if __name__ == "__main__":

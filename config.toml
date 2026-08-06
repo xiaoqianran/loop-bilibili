@@ -61,8 +61,8 @@ path = "preferences.toml"
 enabled = true
 base_url = "https://nim.202820.xyz/v1"
 models = [
-  "google/diffusiongemma-26b-a4b-it",
   "openai/gpt-oss-120b",
+  "google/diffusiongemma-26b-a4b-it",
 ]
 temperature = 0.4
 max_tokens = 8192

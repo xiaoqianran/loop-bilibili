@@ -11,10 +11,10 @@ JobStatus = Literal["pending", "running", "done", "failed"]
 SourceName = Literal["homepage", "creator"]
 AnalysisStatus = Literal["pending", "ok", "failed", "empty"]
 
-# Default dual-model stack (first = UI default)
+# Default dual-model stack (first = UI / list default)
 DEFAULT_AI_MODELS: tuple[str, ...] = (
-    "google/diffusiongemma-26b-a4b-it",
     "openai/gpt-oss-120b",
+    "google/diffusiongemma-26b-a4b-it",
 )
 
 

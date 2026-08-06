@@ -172,6 +172,12 @@ def run_once(
         "analyze": 0,
         "slept_s": 0.0,
     }
+    # AI multi-model path: drop legacy model-less analyze stubs so they
+    # cannot starve real Mermaid jobs.
+    if ai is not None and ai.enabled and ai.api_key and ai.model_list():
+        n = db.supersede_empty_analyze_stubs()
+        if n:
+            logger.info("superseded %s empty-model analyze stubs", n)
     for i in range(max(0, max_jobs)):
         job = db.claim_next_job(kinds=["fetch_subtitle", "analyze"])
         if job is None:
@@ -226,9 +232,21 @@ def worker_loop(
         "slept_s": 0.0,
     }
     idle = 0
+    cleaned_stubs = False
     while True:
         if max_jobs and total["processed"] >= max_jobs:
             break
+        if (
+            not cleaned_stubs
+            and ai is not None
+            and ai.enabled
+            and ai.api_key
+            and ai.model_list()
+        ):
+            n = db.supersede_empty_analyze_stubs()
+            if n:
+                logger.info("superseded %s empty-model analyze stubs", n)
+            cleaned_stubs = True
         job = db.claim_next_job(kinds=["fetch_subtitle", "analyze"])
         if job is None:
             idle += 1
