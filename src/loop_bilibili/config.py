@@ -61,6 +61,7 @@ def load_config(path: str | Path | None = None) -> AppConfig:
 
     cookie_env = (os.environ.get("BILI_COOKIE") or "").strip()
     cookie_cfg = str(runtime.get("cookie") or "").strip()
+    prefer = data.get("preference") or {}
 
     return AppConfig(
         database_path=str(db.get("path") or "data/v2/loop.db"),
@@ -89,5 +90,7 @@ def load_config(path: str | Path | None = None) -> AppConfig:
         ),
         require_cookie=bool(runtime.get("require_cookie", False)),
         cookie=cookie_env or cookie_cfg,
+        preference_enabled=bool(prefer.get("enabled", True)),
+        preference_path=str(prefer.get("path") or "preferences.toml"),
         raw=data,
     )

@@ -79,4 +79,7 @@ class AppConfig:
     risk_max_delay: float = 300.0
     require_cookie: bool = False
     cookie: str = ""
+    # Preference filter (keywords + related + soft n-grams)
+    preference_enabled: bool = True
+    preference_path: str = "preferences.toml"
     raw: dict[str, Any] = field(default_factory=dict, repr=False)

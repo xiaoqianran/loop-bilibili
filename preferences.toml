@@ -1,0 +1,78 @@
+# User preference profile for subtitle enqueue filtering.
+# Layer: keywords (core) + related (neighbor concepts) + soft CJK n-grams.
+# This is foundation scoring — not an LLM.
+
+[preference]
+threshold = 0.35
+related_weight = 0.65
+soft_weight = 0.40
+min_term_len = 2
+# hard reject if title contains these
+must_not = ["带货", "抽奖", "广告"]
+
+[[preference.interests]]
+id = "llm_agent"
+weight = 1.0
+keywords = [
+  "大模型", "LLM", "Agent", "智能体", "RAG", "微调", "transformers",
+  "prompt", "推理模型", "多模态",
+]
+related = [
+  "GPT", "Claude", "Qwen", "通义", "DeepSeek", "embedding", "向量",
+  "LoRA", "SFT", "蒸馏", "function calling", "工具调用", "工作流",
+  "langchain", "llamaindex", "ollama", "vllm", "推理", "对齐",
+]
+
+[[preference.interests]]
+id = "backend"
+weight = 0.95
+keywords = ["后端", "Java", "Go", "Golang", "Rust", "C++", "微服务", "并发"]
+related = [
+  "Spring", "Kafka", "gRPC", "分布式", "中间件", "数据库", "PostgreSQL",
+  "MySQL", "Redis", "性能优化", "架构", "高并发", "Netty", "Tokio",
+]
+
+[[preference.interests]]
+id = "frontend"
+weight = 0.75
+keywords = ["前端", "React", "Vue", "TypeScript", "JavaScript", "CSS"]
+related = [
+  "Next.js", "Vite", "Webpack", "浏览器", "Web", "UI", "组件化",
+  "工程化", "Node", "SSR", "Tailwind",
+]
+
+[[preference.interests]]
+id = "gamedev"
+weight = 1.0
+keywords = ["Godot", "Unity", "Unreal", "游戏开发", "Shader", "游戏引擎"]
+related = [
+  "UE5", "虚幻", "GDScript", "C#", "蓝图", "关卡", "像素", "3D",
+  "物理引擎", "动画", "材质", "渲染", "游戏编程",
+]
+
+[[preference.interests]]
+id = "reverse"
+weight = 0.9
+keywords = ["逆向", "逆向工程", "反编译", "漏洞", "二进制"]
+related = [
+  "IDA", "Ghidra", "调试", "脱壳", "加固", "CTF", "pwn", "exploit",
+  "协议分析", "Hook", "注入", "安全研究",
+]
+
+[[preference.interests]]
+id = "automation"
+weight = 0.85
+keywords = ["自动化", "爬虫", "RPA", "GitHub Actions", "脚本"]
+related = [
+  "CI", "CD", "workflow", "selenium", "playwright", "opencli",
+  "批量", "采集", "流水线", "定时任务",
+]
+
+[[preference.interests]]
+id = "algorithms"
+weight = 0.8
+keywords = ["算法", "数据结构", "LeetCode", "竞赛"]
+related = [
+  "动态规划", "图论", "复杂度", "面试", "OJ", "蓝桥", "ACM",
+  "贪心", "搜索", "数学",
+]

@@ -39,3 +39,8 @@ require_cookie = false
 [backup]
 namespace = "yuminghui"
 dataset = "loop-bilibili-v2"
+
+# Preference filter foundation (keywords + related + soft CJK n-grams)
+[preference]
+enabled = true
+path = "preferences.toml"

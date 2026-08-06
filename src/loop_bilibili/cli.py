@@ -12,6 +12,8 @@ from .config import load_config
 from .database import Database
 from .ingest import refresh_source
 from .models import AppConfig
+from .preference.loader import load_preference_profile
+from .preference.scorer import PreferenceScorer
 from .sources._http import cookie_ready_for_batch, cookie_summary
 from .sources.creator_opencli import CreatorOpencliSource
 from .sources.homepage_rcmd import HomepageRcmdSource
@@ -201,10 +203,29 @@ def _worker_kwargs(cfg: AppConfig) -> dict:
     )
 
 
+def _load_scorer(cfg: AppConfig) -> PreferenceScorer | None:
+    if not cfg.preference_enabled:
+        print("preference: disabled", flush=True)
+        return None
+    path = Path(cfg.preference_path)
+    if not path.is_file():
+        # try relative to cwd already; also next to config if needed later
+        print(f"preference: file missing ({path}) — enqueue all", flush=True)
+        return None
+    profile = load_preference_profile(path)
+    print(
+        f"preference: {path} interests={len(profile.interests)} "
+        f"threshold={profile.threshold}",
+        flush=True,
+    )
+    return PreferenceScorer(profile)
+
+
 def cmd_once(cfg: AppConfig, args: argparse.Namespace) -> int:
     blocked = _warn_cookie(cfg)
     if blocked is not None:
         return blocked
+    scorer = _load_scorer(cfg)
     db = _open_db(cfg, args.db, init=True)
     try:
         if not args.skip_refresh:
@@ -213,13 +234,27 @@ def cmd_once(cfg: AppConfig, args: argparse.Namespace) -> int:
                 print("refresh: no sources configured (skip)")
             for src in sources:
                 try:
-                    summary = refresh_source(src, db)
+                    summary = refresh_source(
+                        src,
+                        db,
+                        scorer=scorer,
+                        prefer_enabled=cfg.preference_enabled,
+                    )
                     print(
                         f"refresh {summary['source']}: "
                         f"candidates={summary['candidates']} "
                         f"enqueued={summary['enqueued']} "
+                        f"skipped={summary.get('skipped', 0)} "
+                        f"blocked={summary.get('blocked', 0)} "
                         f"run_id={summary['run_id']}"
                     )
+                    for sample in summary.get("samples") or []:
+                        print(
+                            f"  · {sample['decision']:7} "
+                            f"{sample['score']:.3f} {sample['bvid']} "
+                            f"{sample['title']}",
+                            flush=True,
+                        )
                 except Exception as exc:
                     print(f"refresh {src.name} failed: {exc}", file=sys.stderr)
         sub_src = BilibiliSubtitleSource(
