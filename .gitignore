@@ -4,7 +4,7 @@ config.yaml
 .env
 .env.*
 
-# Crawl workspace (full cue JSON bloat) — keep packed data/subtitles in git
+# Crawl workspace (full cue JSON bloat)
 /data/subtitle/
 /data/summary/
 /data/comments/
@@ -12,9 +12,9 @@ config.yaml
 /data/ranking/
 /data/search/
 /data/feed/
-# allow packed archive
-!/data/subtitles/
-!/data/subtitles/**
+
+# v1 packed subtitle dataset — archived only on branch `v1` (not on main)
+/data/subtitles/
 
 # Python
 __pycache__/
