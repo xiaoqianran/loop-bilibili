@@ -207,10 +207,21 @@ header .meta { color: var(--muted); font-size: .9rem; }
 footer { margin-top: 2rem; color: var(--muted); font-size: .8rem; border-top: 1px solid var(--border); padding-top: .8rem; }
 """
 
+# Paths are absolute from SITE_BASE (e.g. /loop-bilibili) so nested pages never break.
 JS = r"""
+const SITE_BASE = (window.SITE_BASE || '').replace(/\/$/, '');
+const ASSET_V = window.SITE_ASSET_V || '1';
+
+function url(path) {
+  if (!path) return SITE_BASE + '/';
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  return SITE_BASE + (path.startsWith('/') ? path : '/' + path);
+}
+
 async function loadJSON(path) {
-  const r = await fetch(path);
-  if (!r.ok) throw new Error('load failed: ' + path);
+  const full = url(path) + (path.includes('?') ? '&' : '?') + 'v=' + encodeURIComponent(ASSET_V);
+  const r = await fetch(full, { cache: 'no-cache' });
+  if (!r.ok) throw new Error('load failed: ' + full + ' (' + r.status + ')');
   return r.json();
 }
 
@@ -219,6 +230,7 @@ function el(tag, attrs = {}, children = []) {
   for (const [k, v] of Object.entries(attrs)) {
     if (k === 'className') n.className = v;
     else if (k === 'text') n.textContent = v;
+    else if (k === 'href') n.setAttribute('href', url(v));
     else if (k.startsWith('on') && typeof v === 'function') n.addEventListener(k.slice(2).toLowerCase(), v);
     else n.setAttribute(k, v);
   }
@@ -246,7 +258,7 @@ function filterList(items, q) {
 }
 
 async function renderHome() {
-  const catalog = await loadJSON('data/catalog.json');
+  const catalog = await loadJSON('/data/catalog.json');
   const root = document.getElementById('app');
   root.innerHTML = '';
   root.appendChild(el('header', {}, [
@@ -257,7 +269,7 @@ async function renderHome() {
   const grid = el('div', { className: 'grid' });
   for (const up of catalog.ups || []) {
     const card = el('div', { className: 'card' });
-    card.appendChild(el('h2', {}, [el('a', { href: 'ups/' + up.slug + '/', text: up.title })]));
+    card.appendChild(el('h2', {}, [el('a', { href: '/ups/' + up.slug + '/', text: up.title })]));
     card.appendChild(el('div', { className: 'sub', text: up.slug + (up.owner_mid ? ' · mid ' + up.owner_mid : '') }));
     card.appendChild(el('div', { className: 'stats' }, [
       el('span', { className: 'pill' }, [document.createTextNode('视频 '), el('b', { text: String(up.videos) })]),
@@ -266,16 +278,16 @@ async function renderHome() {
       el('span', { className: 'pill bad' }, [document.createTextNode('other '), el('b', { text: String(up.other) })]),
     ]));
     card.appendChild(el('div', { className: 'actions' }, [
-      el('a', { href: 'ups/' + up.slug + '/', text: '进入列表 →' }),
+      el('a', { href: '/ups/' + up.slug + '/', text: '进入列表 →' }),
     ]));
     grid.appendChild(card);
   }
   root.appendChild(grid);
-  root.appendChild(el('footer', { text: 'loop-bilibili v2 · GitHub Pages static export' }));
+  root.appendChild(el('footer', { text: 'loop-bilibili v2 · GitHub Pages · base=' + (SITE_BASE || '/') }));
 }
 
 async function renderUpList(slug) {
-  const base = '../../data/' + slug + '/';
+  const base = '/data/' + slug + '/';
   const [meta, videos] = await Promise.all([
     loadJSON(base + 'meta.json'),
     loadJSON(base + 'videos.json'),
@@ -283,7 +295,7 @@ async function renderUpList(slug) {
   const root = document.getElementById('app');
   root.innerHTML = '';
   root.appendChild(el('div', { className: 'nav' }, [
-    el('a', { href: '../../', text: '← 全部 UP' }),
+    el('a', { href: '/', text: '← 全部 UP' }),
   ]));
   root.appendChild(el('header', {}, [
     el('h1', { text: meta.title || slug }),
@@ -307,12 +319,12 @@ async function renderUpList(slug) {
       const card = el('div', { className: 'card', 'data-bvid': v.bvid }, [
         badge(v.status),
         el('h3', {}, [
-          el('a', { href: 'v/' + v.bvid + '.html', text: v.title || v.bvid }),
+          el('a', { href: '/ups/' + slug + '/v/' + v.bvid + '.html', text: v.title || v.bvid }),
         ]),
         el('div', { className: 'sub', text: v.bvid + (v.chars ? ' · ' + v.chars + ' 字' : '') + (v.published_at ? ' · ' + v.published_at : '') }),
         v.preview ? el('div', { className: 'preview', text: v.preview + (v.chars > 160 ? '…' : '') }) : null,
         el('div', { className: 'actions' }, [
-          el('a', { href: 'v/' + v.bvid + '.html', text: '看字幕' }),
+          el('a', { href: '/ups/' + slug + '/v/' + v.bvid + '.html', text: '看字幕' }),
           el('a', { href: v.url, target: '_blank', rel: 'noopener', text: 'B 站' }),
         ]),
       ]);
@@ -327,14 +339,13 @@ async function renderUpList(slug) {
 }
 
 async function renderVideo(slug, bvid) {
-  // page lives at ups/<slug>/v/<bvid>.html → need 3 levels up to site root
-  const data = await loadJSON('../../../data/' + slug + '/v/' + bvid + '.json');
+  const data = await loadJSON('/data/' + slug + '/v/' + bvid + '.json');
   const root = document.getElementById('app');
   root.innerHTML = '';
   root.appendChild(el('div', { className: 'nav' }, [
-    el('a', { href: '../', text: '← 返回列表' }),
+    el('a', { href: '/ups/' + slug + '/', text: '← 返回列表' }),
     document.createTextNode(' · '),
-    el('a', { href: '../../../', text: '全部 UP' }),
+    el('a', { href: '/', text: '全部 UP' }),
   ]));
   root.appendChild(el('header', {}, [
     el('h1', { text: data.title || bvid }),
@@ -353,80 +364,87 @@ async function renderVideo(slug, bvid) {
   }
 }
 
-window.SubtitleSite = { renderHome, renderUpList, renderVideo };
+window.SubtitleSite = { renderHome, renderUpList, renderVideo, url, SITE_BASE };
 """
 
 
-def video_html(slug: str, bvid: str, title: str) -> str:
-    safe_title = (
-        title.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-    )
-    return f"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{safe_title} · {bvid}</title>
-  <link rel="stylesheet" href="../../../assets/app.css" />
-</head>
-<body>
-  <div class="wrap" id="app">加载中…</div>
-  <script src="../../../assets/app.js"></script>
-  <script>
-    SubtitleSite.renderVideo({json.dumps(slug)}, {json.dumps(bvid)}).catch(e => {{
-      document.getElementById('app').textContent = String(e);
-    }});
-  </script>
-</body>
-</html>
-"""
-
-
-def up_index_html(slug: str, title: str) -> str:
+def _page_shell(
+    *,
+    title: str,
+    body_script: str,
+    base: str,
+    asset_v: str,
+) -> str:
+    """HTML shell with absolute asset URLs + SITE_BASE injection."""
+    base = (base or "").rstrip("/")
     safe = title.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{safe} · 字幕列表</title>
-  <link rel="stylesheet" href="../../assets/app.css" />
+  <meta name="site-base" content="{base}" />
+  <title>{safe}</title>
+  <link rel="stylesheet" href="{base}/assets/app.css?v={asset_v}" />
 </head>
 <body>
   <div class="wrap" id="app">加载中…</div>
-  <script src="../../assets/app.js"></script>
   <script>
+    window.SITE_BASE = {json.dumps(base)};
+    window.SITE_ASSET_V = {json.dumps(asset_v)};
+  </script>
+  <script src="{base}/assets/app.js?v={asset_v}"></script>
+  <script>
+    {body_script}
+  </script>
+</body>
+</html>
+"""
+
+
+def video_html(slug: str, bvid: str, title: str, *, base: str, asset_v: str) -> str:
+    script = f"""
+    SubtitleSite.renderVideo({json.dumps(slug)}, {json.dumps(bvid)}).catch(e => {{
+      document.getElementById('app').textContent = String(e);
+    }});
+    """
+    return _page_shell(
+        title=f"{title} · {bvid}",
+        body_script=script,
+        base=base,
+        asset_v=asset_v,
+    )
+
+
+def up_index_html(slug: str, title: str, *, base: str, asset_v: str) -> str:
+    script = f"""
     SubtitleSite.renderUpList({json.dumps(slug)}).catch(e => {{
       document.getElementById('app').textContent = String(e);
     }});
-  </script>
-</body>
-</html>
-"""
+    """
+    return _page_shell(
+        title=f"{title} · 字幕列表",
+        body_script=script,
+        base=base,
+        asset_v=asset_v,
+    )
 
 
-HOME_HTML = """<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>loop-bilibili 字幕浏览</title>
-  <link rel="stylesheet" href="assets/app.css" />
-</head>
-<body>
-  <div class="wrap" id="app">加载中…</div>
-  <script src="assets/app.js"></script>
-  <script>
+def home_html(*, base: str, asset_v: str) -> str:
+    script = """
     SubtitleSite.renderHome().catch(e => {
       document.getElementById('app').textContent = String(e);
     });
-  </script>
-</body>
-</html>
-"""
+    """
+    return _page_shell(
+        title="loop-bilibili 字幕浏览",
+        body_script=script,
+        base=base,
+        asset_v=asset_v,
+    )
 
 
-def build_up(out: Path, src: UpSource) -> dict:
+def build_up(out: Path, src: UpSource, *, base: str, asset_v: str) -> dict:
     videos = load_videos(src.db_path)
     ok = sum(1 for v in videos if v["status"] == "ok")
     empty = sum(1 for v in videos if v["status"] == "empty")
@@ -489,13 +507,17 @@ def build_up(out: Path, src: UpSource) -> dict:
     up_dir = out / "ups" / src.slug
     up_dir.mkdir(parents=True, exist_ok=True)
     (up_dir / "index.html").write_text(
-        up_index_html(src.slug, src.title), encoding="utf-8"
+        up_index_html(src.slug, src.title, base=base, asset_v=asset_v),
+        encoding="utf-8",
     )
     v_dir = up_dir / "v"
     v_dir.mkdir(exist_ok=True)
     for v in videos:
         (v_dir / f"{v['bvid']}.html").write_text(
-            video_html(src.slug, v["bvid"], v["title"]), encoding="utf-8"
+            video_html(
+                src.slug, v["bvid"], v["title"], base=base, asset_v=asset_v
+            ),
+            encoding="utf-8",
         )
 
     print(
@@ -514,8 +536,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--title", action="append", default=[], help="title for each --db")
     p.add_argument(
         "--base-url",
-        default="",
-        help="optional site base path e.g. /loop-bilibili/ (for project pages)",
+        default="/loop-bilibili",
+        help="site base path for project Pages (default: /loop-bilibili; use '' for local root)",
     )
     args = p.parse_args(argv)
 
@@ -537,6 +559,9 @@ def main(argv: list[str] | None = None) -> int:
         print("error: no databases found; pass --from-dir or --db", file=sys.stderr)
         return 2
 
+    base = (args.base_url or "").rstrip("/")
+    asset_v = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+
     out = Path(args.out)
     if out.exists():
         # clean only our generated tree content carefully
@@ -548,7 +573,9 @@ def main(argv: list[str] | None = None) -> int:
     (out / "assets").mkdir()
     (out / "assets" / "app.css").write_text(CSS, encoding="utf-8")
     (out / "assets" / "app.js").write_text(JS, encoding="utf-8")
-    (out / "index.html").write_text(HOME_HTML, encoding="utf-8")
+    (out / "index.html").write_text(
+        home_html(base=base, asset_v=asset_v), encoding="utf-8"
+    )
 
     ups_meta = []
     for src in sources:
@@ -556,18 +583,22 @@ def main(argv: list[str] | None = None) -> int:
             print(f"skip missing db: {src.db_path}", file=sys.stderr)
             continue
         print(f"building {src.slug} from {src.db_path}", flush=True)
-        meta = build_up(out, src)
+        meta = build_up(out, src, base=base, asset_v=asset_v)
         ups_meta.append(meta)
 
     catalog = {
         "built_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "ups": ups_meta,
-        "base_url": args.base_url,
+        "base_url": base,
+        "asset_v": asset_v,
     }
     write_json(out / "data" / "catalog.json", catalog)
     # nojekyll for GH pages
     (out / ".nojekyll").write_text("", encoding="utf-8")
-    print(f"done -> {out.resolve()} ({len(ups_meta)} ups)", flush=True)
+    print(
+        f"done -> {out.resolve()} ({len(ups_meta)} ups) base={base or '/'} v={asset_v}",
+        flush=True,
+    )
     return 0
 
 

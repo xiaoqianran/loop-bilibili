@@ -1,12 +1,17 @@
 name: Deploy subtitle site to GitHub Pages
 
 on:
+  # Manual rebuild
   workflow_dispatch:
     inputs:
       snapshots:
         description: 'Snapshot names (comma-separated), empty = all from ModelScope'
         required: false
         default: ''
+  # Daily rebuild from ModelScope (UTC 16:00 ≈ 北京时间 00:00)
+  schedule:
+    - cron: '0 16 * * *'
+  # Rebuild when site tooling changes
   push:
     branches: [main]
     paths:
@@ -64,7 +69,14 @@ jobs:
 
       - name: Build static site
         run: |
-          python scripts/build_subtitle_site.py --from-dir data/v2 --out site
+          # Project Pages live under /loop-bilibili/ — use absolute base paths
+          python scripts/build_subtitle_site.py \
+            --from-dir data/v2 \
+            --out site \
+            --base-url /loop-bilibili
+          # smoke: path helpers must use SITE_BASE + absolute /data/
+          grep -q 'SITE_BASE' site/assets/app.js
+          grep -q "loadJSON('/data/" site/assets/app.js
           find site -type f | wc -l
           du -sh site
 
