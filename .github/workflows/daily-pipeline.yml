@@ -1,10 +1,10 @@
 # Thin alias: same job as pages.yml (Hugging Face → Pages).
 # Kept so "Sync HF → Pages" stays discoverable in the Actions UI.
 #
-# 抓取请在本机/自有服务器跑（Actions 不需要 BILI_COOKIE）：
-#   PYTHONPATH=src python scripts/try_homepage_guest.py
-#   PYTHONPATH=src python3 -m loop_bilibili once
-#   python scripts/push_hf_v2.py --name <slug>
+# 抓取请在本机跑（Actions 不需要 BILI_COOKIE）：
+#   PYTHONPATH=src python3 -m loop_bilibili run
+#   python scripts/push_hf_v2.py --name loop
+#   python scripts/deploy_site.py --wait
 #
 name: Sync HF → Pages
 
@@ -14,12 +14,16 @@ on:
       snapshots:
         description: 'Snapshot names (comma-separated), empty = all'
         required: false
-        default: ''
+        default: 'loop,haianyu,xiaolaoshi'
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
 
 jobs:
   publish:

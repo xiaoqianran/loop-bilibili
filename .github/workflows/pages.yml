@@ -1,9 +1,10 @@
-# Hugging Face dataset → static site → GitHub Pages (Actions artifact deploy).
+# HF snapshots → static site → GitHub Pages
 #
-# Repo Pages source: Settings → Pages → Build and deployment → GitHub Actions
-# (NOT "Deploy from a branch" — branch deploy was stuck in deployment_queued.)
+# Publish path: Actions artifact + actions/deploy-pages (build_type=workflow).
+# Do NOT use branch/gh-pages pages-build-deployment — that queue was stuck/errored
+# for this repo (duration=0 "Page build failed" / multi-hour "building").
 #
-# Actions never scrape B 站 — only pull HF snapshots and publish HTML/JSON.
+# Actions never scrape B 站. Only: fetch HF → build HTML → deploy.
 name: Deploy subtitle site to GitHub Pages
 
 on:
@@ -21,14 +22,14 @@ on:
         type: string
         default: ''
   schedule:
-    # Daily UTC 16:00 ≈ 北京 00:00
+    # Daily UTC 16:00 ≈ 北京 00:00 — one rebuild/day is enough
     - cron: '0 16 * * *'
   push:
     branches: [main]
     paths:
       - 'scripts/build_subtitle_site.py'
       - 'scripts/fetch_hf_v2.py'
-      - 'scripts/push_hf_v2.py'
+      - 'scripts/deploy_site.py'
       - '.github/workflows/pages.yml'
       - '.github/workflows/daily-pipeline.yml'
 
@@ -37,15 +38,19 @@ permissions:
   pages: write
   id-token: write
 
-# Do not cancel in-flight deploys — canceling can leave the Pages deploy lock stuck.
+# One in-flight deploy only. Cancel older queued runs so they do not pile up
+# behind a dead lock (previous cancel-in-progress:false caused 15m queue cancels).
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages-deploy
+  cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -67,11 +72,11 @@ jobs:
         run: |
           set -euo pipefail
           if [ -z "${HF_TOKEN:-}" ]; then
-            echo "HF_TOKEN secret missing — add repo secret HF_TOKEN (Hugging Face write/read token)" >&2
+            echo "HF_TOKEN secret missing — add repo secret HF_TOKEN" >&2
             exit 1
           fi
           NAMES="${{ inputs.snapshots }}"
-          if [ -n "$NAMES" ]; then
+          if [ -n "${NAMES:-}" ]; then
             IFS=',' read -ra ARR <<< "$NAMES"
             ARGS=()
             for n in "${ARR[@]}"; do
@@ -80,7 +85,12 @@ jobs:
             done
             python scripts/fetch_hf_v2.py "${ARGS[@]}"
           else
-            python scripts/fetch_hf_v2.py --all
+            # Prefer product snapshots; fall back to all if empty
+            if python scripts/fetch_hf_v2.py --name loop --name haianyu --name xiaolaoshi 2>/dev/null; then
+              true
+            else
+              python scripts/fetch_hf_v2.py --all
+            fi
           fi
           ls -la data/v2/*.db || true
 
@@ -95,25 +105,32 @@ jobs:
           test -f site/assets/app.js
           grep -q 'SITE_BASE' site/assets/app.js
           grep -q "loadJSON('/data/" site/assets/app.js
+          # loop.db must be published when present (homepage feed + mermaid)
+          if [ -f data/v2/loop.db ]; then
+            test -f site/data/loop/meta.json
+          fi
           touch site/.nojekyll
           echo "files=$(find site -type f | wc -l) size=$(du -sh site | cut -f1)"
+          # smoke: at least one mermaid diagram if analyses exist
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          n = 0
+          for p in Path("site/data").rglob("v/*.json"):
+              d = json.loads(p.read_text(encoding="utf-8"))
+              if d.get("diagram_count") or d.get("diagrams"):
+                  n += 1
+          print(f"videos_with_mermaid={n}")
+          PY
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
