@@ -30,7 +30,31 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def _load_dotenv() -> None:
+    """Load KEY=VAL from gitignored .env files into os.environ (no overwrite)."""
+    candidates = [
+        ROOT / ".env",
+        Path.home() / ".config" / "loop-bilibili" / "env",
+    ]
+    for path in candidates:
+        if not path.is_file():
+            continue
+        try:
+            for raw in path.read_text(encoding="utf-8").splitlines():
+                line = raw.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, _, val = line.partition("=")
+                key = key.strip()
+                val = val.strip().strip("'").strip('"')
+                if key and key not in os.environ:
+                    os.environ[key] = val
+        except OSError:
+            continue
+
+
 def _token() -> str:
+    _load_dotenv()
     tok = (
         os.environ.get("MODELSCOPE_API_TOKEN")
         or os.environ.get("MODELSCOPE_SDK_TOKEN")
@@ -39,7 +63,8 @@ def _token() -> str:
     ).strip()
     if not tok:
         print(
-            "error: set MODELSCOPE_API_TOKEN (https://modelscope.cn/my/myaccesstoken)",
+            "error: set MODELSCOPE_API_TOKEN (https://modelscope.cn/my/myaccesstoken)\n"
+            "  or put it in loop-bilibili/.env (gitignored)",
             file=sys.stderr,
         )
         sys.exit(2)
