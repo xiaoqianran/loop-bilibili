@@ -90,6 +90,27 @@ class ScorerTest(unittest.TestCase):
         self.assertFalse(b.blocked)
         self.assertLess(b.score, 0.35)
 
+    def test_latin_token_boundary_avoids_reaction_false_positive(self) -> None:
+        # frontend interest keywords include React in repo profile; local profile has no React.
+        # Ensure bare short tokens do not match as arbitrary substrings when present as words only.
+        scorer = PreferenceScorer(
+            PreferenceProfile(
+                interests=(
+                    Interest(
+                        id="fe",
+                        weight=1.0,
+                        keywords=("React",),
+                        related=(),
+                    ),
+                ),
+                threshold=0.35,
+            )
+        )
+        miss = scorer.score_text("TWS SODA SODA MV Reaction")
+        self.assertFalse(miss.selected)
+        hit = scorer.score_text("React 18 concurrent features")
+        self.assertTrue(hit.selected)
+
     def test_must_not_blocks(self) -> None:
         b = self.scorer.score_text("Godot 游戏开发教程 关注抽奖")
         self.assertTrue(b.blocked)

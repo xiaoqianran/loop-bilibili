@@ -11,7 +11,7 @@ path = "data/v2/loop.db"
 homepage_enabled = true
 homepage_pages = 2
 homepage_ps = 12
-# 首页刷新间隔（秒）—— future worker loop 使用
+# 长跑 cadence（loop-bilibili run）：两次首页发现之间的最小间隔（秒）
 homepage_interval_s = 600
 
 # 可选：额外全量同步的博主（不是主路径；需要时再开）
@@ -29,11 +29,17 @@ job_jitter = 0.2
 retry_delay = 60.0
 risk_base_delay = 15.0
 risk_max_delay = 300.0
+# 每个发现周期后最多处理多少字幕/分析任务
+jobs_per_cycle = 50
 
 [runtime]
-# 可选。空 = 不登录，照常跑访客接口
+# 个性化首页：不要把 Cookie 写进本文件（会进 git）。
+# 请用环境变量或 gitignored .env：
+#   BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...; buvid3=...'
+# 有 SESSDATA 时 homepage rcmd / 字幕请求都会带 Cookie → 账号个性化推荐。
+# 空 = 访客态（也能刷，但不个性化）。
 cookie = ""
-# 永远不要因为缺 Cookie 拒绝启动
+# true = 没有 SESSDATA 直接退出（强制个性化）
 require_cookie = false
 
 [backup]

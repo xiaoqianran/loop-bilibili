@@ -60,9 +60,31 @@ def latin_tokens(text: str) -> frozenset[str]:
 
 
 def contains_phrase(haystack: str, needle: str) -> bool:
-    """Substring match on already-normalized strings."""
+    """
+    Match needle inside haystack (both already normalize_text'd).
+
+    CJK / mixed phrases: substring containment.
+    Pure Latin/code tokens (e.g. go, rust, react): whole-token match so
+    ``go`` does not hit inside random CJK+Latin mashups via accidental
+    bigram soft path alone, and ``react`` does not select ``reaction``.
+    """
     if not needle or not haystack:
         return False
+    # pure latin/code token → token boundary (avoids React⊂Reaction, go⊂mango)
+    if not _CJK_RUN.search(needle) and re.fullmatch(
+        r"[a-z0-9][a-z0-9+#.]*", needle, flags=re.IGNORECASE
+    ):
+        if needle in latin_tokens(haystack):
+            return True
+        # also allow spaced / punctuated boundaries in continuous text
+        return (
+            re.search(
+                rf"(?<![a-z0-9+#]){re.escape(needle)}(?![a-z0-9+#])",
+                haystack,
+                flags=re.IGNORECASE,
+            )
+            is not None
+        )
     return needle in haystack
 
 

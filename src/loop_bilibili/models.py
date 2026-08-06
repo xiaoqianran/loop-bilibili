@@ -69,6 +69,8 @@ class AppConfig:
     homepage_enabled: bool = True
     homepage_pages: int = 1
     homepage_ps: int = 12
+    # Seconds between homepage discovery refreshes in long-run cadence
+    homepage_interval_s: float = 600.0
     poll_interval: float = 2.0
     subtitle_language: str = "zh"
     # Inter-job pacing (SubBatch/v1 batch style)
@@ -77,6 +79,8 @@ class AppConfig:
     retry_delay: float = 60.0
     risk_base_delay: float = 15.0
     risk_max_delay: float = 300.0
+    # Max subtitle/analyze jobs to drain after each discovery cycle (0 = unlimited batch per cycle)
+    jobs_per_cycle: int = 50
     require_cookie: bool = False
     cookie: str = ""
     # Preference filter (keywords + related + soft n-grams)

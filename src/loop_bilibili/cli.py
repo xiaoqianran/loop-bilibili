@@ -1,4 +1,4 @@
-"""CLI entry: loop-bilibili init | once | worker | status."""
+"""CLI entry: loop-bilibili init | once | run | worker | status."""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 from typing import Sequence
 
+from .cadence import run_cadence
 from .config import load_config
 from .database import Database
 from .ingest import refresh_source
@@ -60,7 +61,50 @@ def build_parser() -> argparse.ArgumentParser:
         help="Max jobs to process after refresh (default 50)",
     )
 
-    w = sub.add_parser("worker", help="Long-running job worker loop")
+    run = sub.add_parser(
+        "run",
+        help=(
+            "Long-running cadence: homepage refresh on interval → "
+            "preference score → enqueue → paced subtitle jobs"
+        ),
+    )
+    run.add_argument(
+        "--no-homepage",
+        action="store_true",
+        help="Skip homepage rcmd (creators only if configured)",
+    )
+    run.add_argument(
+        "--max-cycles",
+        type=int,
+        default=0,
+        help="Stop after N discovery cycles (0 = unlimited)",
+    )
+    run.add_argument(
+        "--max-idle-cycles",
+        type=int,
+        default=0,
+        help="Stop after N consecutive idle discovery cycles (0 = unlimited)",
+    )
+    run.add_argument(
+        "--homepage-interval",
+        type=float,
+        default=None,
+        help="Override sources.homepage_interval_s (seconds between refreshes)",
+    )
+    run.add_argument(
+        "--jobs-per-cycle",
+        type=int,
+        default=None,
+        help="Override worker.jobs_per_cycle (jobs drained per cycle)",
+    )
+    run.add_argument(
+        "--max-jobs",
+        type=int,
+        default=None,
+        help="Alias for --jobs-per-cycle",
+    )
+
+    w = sub.add_parser("worker", help="Long-running job worker loop (no discovery)")
     w.add_argument(
         "--max-jobs",
         type=int,
@@ -170,11 +214,18 @@ def _warn_cookie(cfg: AppConfig) -> int | None:
         f"bili_jct={summary['has_bili_jct']} buvid3={summary['has_buvid3']}",
         flush=True,
     )
-    if not cookie_ready_for_batch(cfg.cookie):
+    if cookie_ready_for_batch(cfg.cookie):
         print(
-            "warn: no SESSDATA — bulk HTTP fetch will hit -352 quickly "
-            "(SubBatch always sends browser login cookie). "
-            "export BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...'",
+            "homepage: personalized mode (SESSDATA present — rcmd uses your account feed)",
+            flush=True,
+        )
+    else:
+        print(
+            "homepage: guest mode (no SESSDATA) — feed is not account-personalized.\n"
+            "  For personalized homepage: put login cookie in gitignored .env:\n"
+            "    BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...'\n"
+            "  Or: export BILI_COOKIE='...'  /  python scripts/set_bili_cookie.py\n"
+            "  Then re-run. Cookie is sent on every homepage + subtitle request.",
             file=sys.stderr,
             flush=True,
         )
@@ -318,6 +369,98 @@ def cmd_worker(cfg: AppConfig, args: argparse.Namespace) -> int:
         db.close()
 
 
+def _print_cycle(summary: dict) -> None:
+    print(
+        f"cycle {summary.get('cycle')}: "
+        f"candidates={summary.get('candidates', 0)} "
+        f"enqueued={summary.get('enqueued', 0)} "
+        f"skipped={summary.get('skipped', 0)} "
+        f"blocked={summary.get('blocked', 0)} "
+        f"processed={summary.get('processed', 0)} "
+        f"ok={summary.get('ok', 0)} "
+        f"empty={summary.get('empty', 0)} "
+        f"retry={summary.get('retry', 0)} "
+        f"failed={summary.get('failed', 0)}",
+        flush=True,
+    )
+    for src in summary.get("sources") or []:
+        if not isinstance(src, dict):
+            continue
+        for sample in (src.get("samples") or [])[:8]:
+            print(
+                f"  · {sample['decision']:7} "
+                f"{sample['score']:.3f} {sample['bvid']} "
+                f"{sample['title']}",
+                flush=True,
+            )
+
+
+def cmd_run(cfg: AppConfig, args: argparse.Namespace) -> int:
+    """Multi-cycle homepage → preference → paced subtitles (long-run entry)."""
+    blocked = _warn_cookie(cfg)
+    if blocked is not None:
+        return blocked
+    scorer = _load_scorer(cfg)
+    interval = (
+        float(args.homepage_interval)
+        if args.homepage_interval is not None
+        else float(cfg.homepage_interval_s)
+    )
+    jpc = cfg.jobs_per_cycle
+    if args.jobs_per_cycle is not None:
+        jpc = int(args.jobs_per_cycle)
+    elif args.max_jobs is not None:
+        jpc = int(args.max_jobs)
+
+    print(
+        f"cadence: interval={interval}s jobs_per_cycle={jpc} "
+        f"max_cycles={args.max_cycles} max_idle_cycles={args.max_idle_cycles}",
+        flush=True,
+    )
+    db = _open_db(cfg, args.db, init=True)
+    try:
+        sources = _build_sources(cfg, no_homepage=args.no_homepage)
+        if not sources:
+            print(
+                "error: no sources (enable homepage or add creators)",
+                file=sys.stderr,
+            )
+            return 2
+        sub_src = BilibiliSubtitleSource(
+            cookie=cfg.cookie or None,
+            default_language=cfg.subtitle_language,
+        )
+        stats = run_cadence(
+            db,
+            sources,
+            sub_src,
+            scorer=scorer,
+            prefer_enabled=cfg.preference_enabled,
+            homepage_interval_s=interval,
+            poll_interval=cfg.poll_interval,
+            jobs_per_cycle=max(0, jpc),
+            max_cycles=max(0, int(args.max_cycles)),
+            max_idle_cycles=max(0, int(args.max_idle_cycles)),
+            **_worker_kwargs(cfg),
+        )
+        for cyc in stats.get("cycle_summaries") or []:
+            _print_cycle(cyc)
+        print(
+            "cadence done: "
+            f"cycles={stats['cycles']} candidates={stats['candidates']} "
+            f"enqueued={stats['enqueued']} skipped={stats['skipped']} "
+            f"blocked={stats['blocked']} processed={stats['processed']} "
+            f"ok={stats['ok']} empty={stats['empty']} "
+            f"retry={stats['retry']} failed={stats['failed']} "
+            f"analyze={stats['analyze']} slept_s={stats.get('slept_s', 0):.1f}",
+            flush=True,
+        )
+        _print_snapshot(db.status_snapshot())
+        return 0
+    finally:
+        db.close()
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(list(argv) if argv is not None else None)
@@ -328,6 +471,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         return cmd_status(cfg, args)
     if args.command == "once":
         return cmd_once(cfg, args)
+    if args.command == "run":
+        return cmd_run(cfg, args)
     if args.command == "worker":
         return cmd_worker(cfg, args)
     parser.error(f"unknown command {args.command!r}")

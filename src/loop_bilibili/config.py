@@ -18,6 +18,45 @@ else:  # pragma: no cover
         tomllib = None  # type: ignore
 
 
+def load_dotenv_files(*extra: str | Path) -> None:
+    """
+    Load KEY=VAL from gitignored env files into os.environ (no overwrite).
+
+    Paths (first wins for a key):
+      1. explicit *extra
+      2. ./ .env  (cwd)
+      3. ~/.config/loop-bilibili/env
+    """
+    candidates: list[Path] = [Path(p) for p in extra if p]
+    candidates.extend(
+        [
+            Path.cwd() / ".env",
+            Path.home() / ".config" / "loop-bilibili" / "env",
+        ]
+    )
+    seen: set[Path] = set()
+    for path in candidates:
+        try:
+            path = path.resolve()
+        except OSError:
+            continue
+        if path in seen or not path.is_file():
+            continue
+        seen.add(path)
+        try:
+            for raw in path.read_text(encoding="utf-8").splitlines():
+                line = raw.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, _, val = line.partition("=")
+                key = key.strip()
+                val = val.strip().strip("'").strip('"')
+                if key and key not in os.environ:
+                    os.environ[key] = val
+        except OSError:
+            continue
+
+
 def _as_str_list(value: Any) -> list[str]:
     """Normalize creators: strings, ints, or [{mid=...}] tables → mid strings."""
     if value is None:
@@ -42,9 +81,18 @@ def load_config(path: str | Path | None = None) -> AppConfig:
     """
     Load AppConfig from TOML path.
 
-    Cookie resolution order: BILI_COOKIE env > config.runtime.cookie.
+    Cookie resolution order (first non-empty wins):
+      1. BILI_COOKIE environment variable
+      2. gitignored .env / ~/.config/loop-bilibili/env  (auto-loaded)
+      3. config.runtime.cookie
+
+    With SESSDATA present, homepage rcmd is personalized for that account.
     """
     cfg_path = Path(path) if path else Path("config.toml")
+    # .env next to config.toml + cwd defaults
+    env_near = cfg_path.resolve().parent / ".env" if cfg_path else None
+    load_dotenv_files(*( [env_near] if env_near else [] ))
+
     data: dict[str, Any] = {}
     if cfg_path.is_file():
         if tomllib is None:
@@ -69,6 +117,11 @@ def load_config(path: str | Path | None = None) -> AppConfig:
         homepage_enabled=bool(sources.get("homepage_enabled", True)),
         homepage_pages=int(sources.get("homepage_pages") or 1),
         homepage_ps=int(sources.get("homepage_ps") or 12),
+        homepage_interval_s=float(
+            sources.get("homepage_interval_s")
+            if sources.get("homepage_interval_s") is not None
+            else 600.0
+        ),
         poll_interval=float(worker.get("poll_interval") or 2.0),
         subtitle_language=str(worker.get("subtitle_language") or "zh"),
         job_delay=float(worker.get("job_delay") if worker.get("job_delay") is not None else 0.5),
@@ -87,6 +140,11 @@ def load_config(path: str | Path | None = None) -> AppConfig:
             worker.get("risk_max_delay")
             if worker.get("risk_max_delay") is not None
             else 300.0
+        ),
+        jobs_per_cycle=int(
+            worker.get("jobs_per_cycle")
+            if worker.get("jobs_per_cycle") is not None
+            else 50
         ),
         require_cookie=bool(runtime.get("require_cookie", False)),
         cookie=cookie_env or cookie_cfg,

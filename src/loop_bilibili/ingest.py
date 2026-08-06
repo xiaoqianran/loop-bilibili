@@ -95,6 +95,13 @@ def refresh_source(
                 if decision == "enqueue":
                     if db.enqueue_once("fetch_subtitle", video.bvid):
                         enqueued += 1
+                    else:
+                        # already has a job row (pending/running/done/failed) — durable dedupe
+                        decision = "dup"
+
+                # patch last sample decision if we just marked dup
+                if score_samples and score_samples[-1].get("bvid") == video.bvid:
+                    score_samples[-1]["decision"] = decision
 
         db.finish_run(run.id, "ok")
         return {
