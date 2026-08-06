@@ -327,13 +327,14 @@ async function renderUpList(slug) {
 }
 
 async function renderVideo(slug, bvid) {
-  const data = await loadJSON('../../data/' + slug + '/v/' + bvid + '.json');
+  // page lives at ups/<slug>/v/<bvid>.html → need 3 levels up to site root
+  const data = await loadJSON('../../../data/' + slug + '/v/' + bvid + '.json');
   const root = document.getElementById('app');
   root.innerHTML = '';
   root.appendChild(el('div', { className: 'nav' }, [
     el('a', { href: '../', text: '← 返回列表' }),
     document.createTextNode(' · '),
-    el('a', { href: '../../', text: '全部 UP' }),
+    el('a', { href: '../../../', text: '全部 UP' }),
   ]));
   root.appendChild(el('header', {}, [
     el('h1', { text: data.title || bvid }),
