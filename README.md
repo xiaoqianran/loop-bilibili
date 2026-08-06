@@ -49,10 +49,24 @@ loop-bilibili init
 
 ## 数据存在哪
 
-| 内容 | 位置 | GitHub |
-|------|------|--------|
-| v2 运行库 / 抓取结果 | `data/v2/*.db`、导出 txt | **否**（默认 ignore；可备份到 HF / 私有仓） |
-| v1 瘦字幕归档 srt/txt | 仅分支 **`v1`** 的 `data/subtitles/` | **是（仅 v1 分支）** |
+| 内容 | 位置 | 云端 |
+|------|------|------|
+| v2 运行库 / 抓取结果 | `data/v2/*.db`、导出 txt（gitignore） | **ModelScope 私有数据集**（冷备份） |
+| v1 瘦字幕归档 srt/txt | 仅分支 **`v1`** 的 `data/subtitles/` | GitHub 分支 `v1` |
+
+### ModelScope 备份（抓完推送）
+
+数据集：[`yuminghui/loop-bilibili-v2`](https://modelscope.cn/datasets/yuminghui/loop-bilibili-v2)（private）
+
+```bash
+# 一次性：安装 SDK + 配置 token（勿写入 git）
+pip install 'modelscope>=1.20'
+export MODELSCOPE_API_TOKEN='ms-...'   # https://modelscope.cn/my/myaccesstoken
+
+# 每次抓取完成后
+python scripts/push_modelscope_v2.py --name xiaolaoshi
+# 或默认 data/v2/<name>.db + data/v2/<name>_txt/
+```
 
 ## 文档
 
