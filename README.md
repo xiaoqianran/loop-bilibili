@@ -67,34 +67,37 @@ python scripts/push_modelscope_v2.py --name haianyu
 python scripts/push_modelscope_v2.py --name xiaolaoshi
 ```
 
-### 产品路径（不强制 Cookie）
+### 两条线（分开）
+
+**A. 本机/服务器抓取（0 Cookie 可用）**
 
 ```text
-常驻服务（本机/服务器）
-  定时刷首页推荐 (feed/rcmd，访客可用)
-       → 规则筛选（以后：标签/关键词/时长…）
-       → 入队抓字幕 (HTTP/WBI，串行限速)
-       → SQLite
-       → 可选 push ModelScope → Pages 展示
+刷首页推荐 (访客 feed/rcmd)
+  → 筛选（以后加）
+  → 抓字幕
+  → data/v2/*.db
+  → 可选：scripts/push_modelscope_v2.py
 ```
-
-**Cookie 不是必须的。**  
-空 Cookie = 访客态；接口照样能用。Cookie 只在你想要「登录后的个性化首页」或降低云机房 IP 风控时才有用。
-
-**真正必填的云端 Secret（若要备份/Pages）：** 只有 `MODELSCOPE_API_TOKEN`。
-
-**Pages：** Deploy from a branch → `gh-pages` / `/`  
-站点：https://xiaoqianran.github.io/loop-bilibili/
-
-**本地：**
 
 ```bash
-# 刷一轮首页并处理字幕队列（无需 Cookie）
-PYTHONPATH=src python3 -m loop_bilibili once --max-jobs 30
+# 0 Cookie 试首页（已实测可用）
+PYTHONPATH=src python scripts/try_homepage_guest.py --pages 2 --max-jobs 8
 
-# 可选：某博主全量（脚本，非主路径）
-PYTHONPATH=src python scripts/scrape_creator.py --mid 2071007724 --name 海安雨 --slug haianyu --push-ms
+# 正式一轮
+PYTHONPATH=src python3 -m loop_bilibili once --max-jobs 30
 ```
+
+**B. GitHub Actions = 只做可视化同步（不抓 B 站）**
+
+```text
+ModelScope 数据集 → 构建静态站 → gh-pages
+```
+
+- Secret 只需：`MODELSCOPE_API_TOKEN`
+- **不需要** `BILI_COOKIE`
+- 每天定时 / 手动 Run：`Sync ModelScope → Pages`
+- 站点：https://xiaoqianran.github.io/loop-bilibili/
+- Pages 设置：Deploy from a branch → **`gh-pages`** / **`/`**
 
 ## 文档
 

@@ -1,25 +1,23 @@
-# Daily: scrape (optional creators / later homepage) → ModelScope → Pages
+# Actions 的职责：只把 ModelScope 备份同步成 GitHub Pages 可视化站点。
+# 不在云端抓 B 站（不需要 BILI_COOKIE）。
 #
-# Secrets:
-#   MODELSCOPE_API_TOKEN  — push dataset (needed for backup/pages data)
-#   BILI_COOKIE           — NOT required. Only if you want logged-in personalization.
+# 抓取请在本机/自有服务器跑：
+#   PYTHONPATH=src python scripts/try_homepage_guest.py   # 0 cookie 试首页
+#   PYTHONPATH=src python3 -m loop_bilibili once
+#   python scripts/push_modelscope_v2.py --name <slug>
 #
-name: Daily scrape + ModelScope + Pages
+name: Sync ModelScope → Pages
 
 on:
   schedule:
-    # UTC 15:00 ≈ 北京时间 23:00 — scrape first
-    - cron: '0 15 * * *'
+    # 每天 UTC 16:00 ≈ 北京 00:00：从 ModelScope 拉最新快照并部署
+    - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
-      push_ms:
-        description: 'Push to ModelScope after scrape'
-        type: boolean
-        default: true
-      deploy_pages:
-        description: 'Rebuild GitHub Pages after push'
-        type: boolean
-        default: true
+      snapshots:
+        description: 'Snapshot names (comma-separated), empty = all'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -27,13 +25,13 @@ permissions:
   id-token: write
 
 concurrency:
-  group: daily-pipeline
-  cancel-in-progress: false
+  group: pages-sync
+  cancel-in-progress: true
 
 jobs:
-  scrape-and-publish:
+  sync-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,40 +46,38 @@ jobs:
           python -m pip install -U pip
           pip install 'modelscope>=1.20'
 
-      - name: Scrape configured creators (if any in config)
+      - name: Pull snapshots from ModelScope
         env:
-          # Cookie is optional — empty is fine for guest-mode APIs
-          BILI_COOKIE: ${{ secrets.BILI_COOKIE }}
           MODELSCOPE_API_TOKEN: ${{ secrets.MODELSCOPE_API_TOKEN }}
         run: |
-          set -euo pipefail
-          if [ -z "${BILI_COOKIE:-}" ]; then
-            echo "BILI_COOKIE not set — running guest mode (no login)"
+          if [ -z "$MODELSCOPE_API_TOKEN" ]; then
+            echo "MODELSCOPE_API_TOKEN secret missing" >&2
+            exit 1
           fi
-          PUSH_FLAG=()
-          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.push_ms }}" = "true" ]; then
-            PUSH_FLAG=(--push-ms)
-          fi
-          # If no creators configured, skip scrape (homepage-only server is the product path)
-          if grep -q '^\[\[sources.creators\]\]' config.toml; then
-            PYTHONPATH=src python scripts/scrape_creator.py --from-config "${PUSH_FLAG[@]}"
+          NAMES="${{ github.event.inputs.snapshots }}"
+          if [ -n "$NAMES" ]; then
+            IFS=',' read -ra ARR <<< "$NAMES"
+            ARGS=()
+            for n in "${ARR[@]}"; do
+              n="$(echo "$n" | xargs)"
+              [ -n "$n" ] && ARGS+=(--name "$n")
+            done
+            python scripts/fetch_modelscope_v2.py "${ARGS[@]}"
           else
-            echo "No [[sources.creators]] — skip bulk creator scrape (homepage path)"
+            python scripts/fetch_modelscope_v2.py --all
           fi
-          ls -lah data/v2/*.db 2>/dev/null || true
+          ls -la data/v2/*.db || true
 
       - name: Build static site
-        if: ${{ github.event_name == 'schedule' || inputs.deploy_pages }}
         run: |
-          PYTHONPATH=src python scripts/build_subtitle_site.py \
+          python scripts/build_subtitle_site.py \
             --from-dir data/v2 \
             --out site \
             --base-url /loop-bilibili
           grep -q 'SITE_BASE' site/assets/app.js
           du -sh site
 
-      - name: Deploy Pages (gh-pages)
-        if: ${{ github.event_name == 'schedule' || inputs.deploy_pages }}
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
