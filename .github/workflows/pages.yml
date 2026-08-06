@@ -13,10 +13,9 @@ on:
       - 'scripts/build_subtitle_site.py'
       - 'scripts/fetch_modelscope_v2.py'
       - '.github/workflows/pages.yml'
-  # Optional: after manual scrape, re-run this workflow
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -25,7 +24,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -66,23 +65,13 @@ jobs:
       - name: Build static site
         run: |
           python scripts/build_subtitle_site.py --from-dir data/v2 --out site
-          # project pages base (owner.github.io/repo/)
-          # assets use relative paths — OK for project site
           find site -type f | wc -l
           du -sh site
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_orphan: true
+          enable_jekyll: false
