@@ -136,16 +136,29 @@ def clear_pages_locks() -> int:
 
     n = 0
     try:
-        # ensure workflow mode
+        # Prefer branch publish from gh-pages (works without Actions runners).
+        # workflow mode remains available when Actions runners are healthy.
         try:
             api(
                 "PUT",
                 "https://api.github.com/repos/xiaoqianran/loop-bilibili/pages",
-                {"build_type": "workflow"},
+                {
+                    "build_type": "legacy",
+                    "source": {"branch": "gh-pages", "path": "/"},
+                },
             )
-            log("pages build_type=workflow")
+            log("pages build_type=legacy source=gh-pages")
         except Exception as exc:
             log(f"pages PUT note: {exc}")
+        try:
+            api(
+                "POST",
+                "https://api.github.com/repos/xiaoqianran/loop-bilibili/pages/builds",
+                None,
+            )
+            log("requested pages build")
+        except Exception as exc:
+            log(f"pages build request note: {exc}")
 
         status, deployments = api(
             "GET",
@@ -175,6 +188,68 @@ def clear_pages_locks() -> int:
         return 0
     log(f"cleared/attempted inactive on {n} deployments")
     return n
+
+
+def push_gh_pages(site_dir: Path) -> int:
+    """Force-push built site to origin/gh-pages (branch publish backup)."""
+    if not site_dir.is_dir() or not (site_dir / "index.html").is_file():
+        log(f"error: site not ready at {site_dir}")
+        return 2
+    try:
+        token = subprocess.check_output(["gh", "auth", "token"], text=True).strip()
+    except Exception as exc:
+        log(f"error: gh auth token: {exc}")
+        return 2
+    import shutil
+    import tempfile
+
+    tmp = Path(tempfile.mkdtemp(prefix="gp-deploy-"))
+    try:
+        # copy site
+        for item in site_dir.iterdir():
+            dest = tmp / item.name
+            if item.is_dir():
+                shutil.copytree(item, dest)
+            else:
+                shutil.copy2(item, dest)
+        (tmp / ".nojekyll").write_text("", encoding="utf-8")
+        (tmp / ".deploy-stamp").write_text(
+            time.strftime("%Y%m%d%H%M%S", time.gmtime()) + "\n", encoding="utf-8"
+        )
+        cmds = [
+            ["git", "init", "-b", "gh-pages"],
+            ["git", "add", "-A"],
+            [
+                "git",
+                "-c",
+                "user.email=bot@loop-bilibili.local",
+                "-c",
+                "user.name=loop-bilibili-bot",
+                "commit",
+                "-m",
+                f"publish: site {time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime())}",
+            ],
+            [
+                "git",
+                "remote",
+                "add",
+                "origin",
+                f"https://x-access-token:{token}@github.com/xiaoqianran/loop-bilibili.git",
+            ],
+            ["git", "push", "-f", "origin", "gh-pages"],
+        ]
+        for cmd in cmds:
+            # hide token in log
+            shown = " ".join(cmd).replace(token, "***")
+            log(f"$ {shown}")
+            p = subprocess.run(cmd, cwd=str(tmp), capture_output=True, text=True)
+            if p.returncode != 0:
+                log((p.stderr or p.stdout or "")[-500:])
+                return p.returncode
+        log("gh-pages force-pushed")
+        return 0
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
 
 
 def trigger_workflow(snapshots: str) -> str | None:
@@ -265,7 +340,12 @@ def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description="Build + publish loop-bilibili Pages")
     p.add_argument("--no-push-hf", action="store_true")
     p.add_argument("--no-build", action="store_true", help="skip local build smoke")
-    p.add_argument("--no-trigger", action="store_true", help="only build/push HF")
+    p.add_argument("--no-trigger", action="store_true", help="skip Actions workflow trigger")
+    p.add_argument(
+        "--no-gh-pages",
+        action="store_true",
+        help="skip force-push to gh-pages branch",
+    )
     p.add_argument("--no-clear-locks", action="store_true")
     p.add_argument(
         "--snapshots",
@@ -277,18 +357,27 @@ def main(argv: list[str] | None = None) -> int:
     args = p.parse_args(argv)
 
     names = [x.strip() for x in args.snapshots.split(",") if x.strip()]
+    out = Path(args.out)
 
     if not args.no_push_hf:
         push_hf_names(names)
 
     if not args.no_build:
-        build_local(Path(args.out))
+        build_local(out)
+
+    if not args.no_gh_pages:
+        rc = push_gh_pages(out if out.is_dir() else ROOT / "site")
+        if rc != 0:
+            log(f"warn: gh-pages push rc={rc}")
 
     if not args.no_clear_locks:
         clear_pages_locks()
 
     if args.no_trigger:
         log("done (no workflow trigger)")
+        log("CDN mirrors (usually instant):")
+        log("  https://cdn.jsdelivr.net/gh/xiaoqianran/loop-bilibili@gh-pages/index.html")
+        log("  https://raw.githack.com/xiaoqianran/loop-bilibili/gh-pages/index.html")
         return 0
 
     rid = trigger_workflow(",".join(names))
@@ -298,16 +387,18 @@ def main(argv: list[str] | None = None) -> int:
 
     if not args.wait:
         log(f"triggered run {rid} — check Actions UI or re-run with --wait")
+        log("instant preview via jsDelivr @gh-pages if Actions queue is slow")
         return 0
 
     conclusion = wait_run(rid)
     if conclusion != "success":
         log(f"workflow conclusion={conclusion}")
-        # show failed log tail
         subprocess.run(
             ["gh", "run", "view", rid, "-R", "xiaoqianran/loop-bilibili", "--log-failed"],
             check=False,
         )
+        log("fallback: open jsDelivr mirror (gh-pages branch content)")
+        log("  https://cdn.jsdelivr.net/gh/xiaoqianran/loop-bilibili@gh-pages/ups/loop/")
         return 1
 
     ok = wait_live()

@@ -464,9 +464,26 @@ footer { margin-top: 2rem; color: var(--muted); font-size: .8rem; border-top: 1p
 }
 """
 
-# Paths are absolute from SITE_BASE (e.g. /loop-bilibili) so nested pages never break.
+# Paths resolve from SITE_BASE so nested pages never break.
+# Auto-detect works on github.io/project, jsDelivr, raw.githack, and local servers.
 JS = r"""
-const SITE_BASE = (window.SITE_BASE || '').replace(/\/$/, '');
+function resolveSiteBase() {
+  const path = location.pathname || '';
+  // video: .../ups/{slug}/v/{bvid}.html
+  let m = path.match(/^(.*)\/ups\/[^/]+\/v\/[^/]+\.html?$/);
+  if (m) return (m[1] || '').replace(/\/$/, '');
+  // up list: .../ups/{slug}/ or .../ups/{slug}/index.html
+  m = path.match(/^(.*)\/ups\/[^/]+(?:\/index\.html)?$/);
+  if (m) return (m[1] || '').replace(/\/$/, '');
+  // site home index.html
+  m = path.match(/^(.*)\/index\.html$/);
+  if (m) return (m[1] || '').replace(/\/$/, '');
+  // directory URL ending with /
+  if (path.endsWith('/') && path !== '/') return path.slice(0, -1);
+  // injected fallback (build-time), e.g. /loop-bilibili
+  return String(window.SITE_BASE || '').replace(/\/$/, '');
+}
+const SITE_BASE = resolveSiteBase();
 const ASSET_V = window.SITE_ASSET_V || '1';
 let mermaidReady = null;
 
@@ -1074,10 +1091,22 @@ def _page_shell(
     body_script: str,
     base: str,
     asset_v: str,
+    asset_prefix: str = "",
 ) -> str:
-    """HTML shell with absolute asset URLs + SITE_BASE injection."""
+    """HTML shell.
+
+    - ``asset_prefix``: relative path to site root (``""``, ``../``, ``../../``…)
+      so CSS/JS load on github.io, jsDelivr, and local servers without host hardcoding.
+    - ``base``: injected SITE_BASE fallback (e.g. ``/loop-bilibili``); runtime
+      ``resolveSiteBase()`` prefers path auto-detection.
+    """
     base = (base or "").rstrip("/")
-    safe = title.replace("&", "&").replace("<", "<").replace(">", ">")
+    prefix = asset_prefix or ""
+    safe = (
+        title.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -1085,7 +1114,7 @@ def _page_shell(
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="site-base" content="{base}" />
   <title>{safe}</title>
-  <link rel="stylesheet" href="{base}/assets/app.css?v={asset_v}" />
+  <link rel="stylesheet" href="{prefix}assets/app.css?v={asset_v}" />
 </head>
 <body>
   <div class="wrap" id="app">加载中…</div>
@@ -1093,7 +1122,7 @@ def _page_shell(
     window.SITE_BASE = {json.dumps(base)};
     window.SITE_ASSET_V = {json.dumps(asset_v)};
   </script>
-  <script src="{base}/assets/app.js?v={asset_v}"></script>
+  <script src="{prefix}assets/app.js?v={asset_v}"></script>
   <script>
     {body_script}
   </script>
@@ -1113,6 +1142,7 @@ def video_html(slug: str, bvid: str, title: str, *, base: str, asset_v: str) -> 
         body_script=script,
         base=base,
         asset_v=asset_v,
+        asset_prefix="../../../",  # ups/{slug}/v/{bvid}.html
     )
 
 
@@ -1127,6 +1157,7 @@ def up_index_html(slug: str, title: str, *, base: str, asset_v: str) -> str:
         body_script=script,
         base=base,
         asset_v=asset_v,
+        asset_prefix="../../",  # ups/{slug}/index.html
     )
 
 
@@ -1141,6 +1172,7 @@ def home_html(*, base: str, asset_v: str) -> str:
         body_script=script,
         base=base,
         asset_v=asset_v,
+        asset_prefix="",  # index.html at site root
     )
 
 
