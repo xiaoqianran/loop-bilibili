@@ -8,12 +8,11 @@ import time
 from typing import Protocol
 
 from .database import Database
-from .models import Job, SubtitlePayload
+from .models import AiConfig, Job, SubtitlePayload
 from .sources._http import RetryableError, is_risk_text
 
 logger = logging.getLogger(__name__)
 
-# Defaults aligned with v1 BatchConfig + safer risk handling
 DEFAULT_JOB_DELAY = 0.5
 DEFAULT_JOB_JITTER = 0.15
 DEFAULT_RETRY_DELAY = 60.0
@@ -27,7 +26,6 @@ class SubtitleSource(Protocol):
 
 
 def _result_to_payload(result: object, *, language: str) -> SubtitlePayload:
-    """Accept SubtitleFetchResult or any object with the same attributes."""
     status = str(getattr(result, "status", "failed"))
     if status not in ("ok", "empty", "retry", "failed", "pending"):
         status = "failed"
@@ -57,11 +55,6 @@ def risk_retry_delay(
     base: float = DEFAULT_RISK_BASE_DELAY,
     maximum: float = DEFAULT_RISK_MAX_DELAY,
 ) -> float:
-    """
-    Exponential backoff for -352/-412 style risk.
-
-    attempt 1 → base, 2 → 2*base, ... capped at maximum, plus small jitter.
-    """
     exp = max(0, int(attempts) - 1)
     delay = min(maximum, base * (2**exp))
     jitter = random.uniform(0.0, min(3.0, delay * 0.1))
@@ -69,13 +62,23 @@ def risk_retry_delay(
 
 
 def job_pace_sleep(delay: float, jitter: float) -> float:
-    """Sleep between jobs (v1 BatchConfig style). Returns slept seconds."""
     if delay <= 0 and jitter <= 0:
         return 0.0
     sl = max(0.0, delay + random.uniform(-abs(jitter), abs(jitter)))
     if sl > 0:
         time.sleep(sl)
     return sl
+
+
+def _enqueue_analyze_jobs(db: Database, bvid: str, ai: AiConfig | None) -> None:
+    """After subtitle ok: one analyze job per configured model (or one stub job)."""
+    if ai is not None and ai.enabled and ai.api_key and ai.base_url and ai.model_list():
+        from .ai_worker import enqueue_analyze_for_models
+
+        enqueue_analyze_for_models(db, bvid, ai, force=False)
+        return
+    # offline / disabled: single model-less analyze stub
+    db.enqueue_once("analyze", bvid, model="")
 
 
 def process_subtitle_job(
@@ -87,12 +90,8 @@ def process_subtitle_job(
     retry_delay: float = DEFAULT_RETRY_DELAY,
     risk_base_delay: float = DEFAULT_RISK_BASE_DELAY,
     risk_max_delay: float = DEFAULT_RISK_MAX_DELAY,
+    ai: AiConfig | None = None,
 ) -> str:
-    """
-    Process one fetch_subtitle job.
-
-    Returns terminal-ish outcome label: ok|empty|retry|failed.
-    """
     try:
         result = source.fetch(job.bvid)
         payload = _result_to_payload(result, language=language)
@@ -102,7 +101,7 @@ def process_subtitle_job(
 
         if payload.status == "ok":
             db.complete_job(job.id)
-            db.enqueue_once("analyze", job.bvid)
+            _enqueue_analyze_jobs(db, job.bvid, ai)
             return "ok"
         if payload.status == "empty":
             db.complete_job(job.id)
@@ -136,20 +135,18 @@ def process_subtitle_job(
         return "failed"
 
 
-def process_analyze_job(job: Job, db: Database) -> str:
-    """No-op AI stub: mark analyze job done when subtitle is ok."""
-    sub = db.get_subtitle(job.bvid, "zh")
-    if sub is None:
-        row = db._conn.execute(
-            "SELECT * FROM subtitles WHERE bvid = ? AND status = 'ok' LIMIT 1",
-            (job.bvid,),
-        ).fetchone()
-        sub = dict(row) if row else None
-    if not sub or sub.get("status") != "ok":
-        db.fail_job(job.id, error="subtitle not ok for analyze")
-        return "failed"
-    db.complete_job(job.id)
-    return "ok"
+def process_analyze_job(
+    job: Job,
+    db: Database,
+    *,
+    ai: AiConfig | None = None,
+    language: str = "zh",
+) -> str:
+    from .ai_worker import analyze_stub, analyze_with_llm
+
+    if ai is not None and ai.enabled and ai.api_key and ai.base_url and ai.model_list():
+        return analyze_with_llm(job, db, ai, language=language)
+    return analyze_stub(job, db)
 
 
 def run_once(
@@ -164,8 +161,8 @@ def run_once(
     risk_base_delay: float = DEFAULT_RISK_BASE_DELAY,
     risk_max_delay: float = DEFAULT_RISK_MAX_DELAY,
     pace: bool = True,
+    ai: AiConfig | None = None,
 ) -> dict:
-    """Claim and process up to max_jobs pending jobs (subtitle then analyze)."""
     stats = {
         "processed": 0,
         "ok": 0,
@@ -181,7 +178,7 @@ def run_once(
             break
         stats["processed"] += 1
         if job.kind == "analyze":
-            outcome = process_analyze_job(job, db)
+            outcome = process_analyze_job(job, db, ai=ai, language=language)
             if outcome == "ok":
                 stats["analyze"] += 1
             else:
@@ -195,9 +192,9 @@ def run_once(
                 retry_delay=retry_delay,
                 risk_base_delay=risk_base_delay,
                 risk_max_delay=risk_max_delay,
+                ai=ai,
             )
             stats[outcome] = stats.get(outcome, 0) + 1
-        # Pace between jobs (not after last)
         if pace and i + 1 < max_jobs:
             stats["slept_s"] += job_pace_sleep(job_delay, job_jitter)
     return stats
@@ -216,13 +213,8 @@ def worker_loop(
     retry_delay: float = DEFAULT_RETRY_DELAY,
     risk_base_delay: float = DEFAULT_RISK_BASE_DELAY,
     risk_max_delay: float = DEFAULT_RISK_MAX_DELAY,
+    ai: AiConfig | None = None,
 ) -> dict:
-    """
-    Long-running serial worker.
-
-    max_jobs: stop after N processed jobs (0 = unlimited).
-    max_idle: stop after N idle polls (0 = unlimited).
-    """
     total = {
         "processed": 0,
         "ok": 0,
@@ -248,7 +240,7 @@ def worker_loop(
         idle = 0
         total["processed"] += 1
         if job.kind == "analyze":
-            outcome = process_analyze_job(job, db)
+            outcome = process_analyze_job(job, db, ai=ai, language=language)
             if outcome == "ok":
                 total["analyze"] += 1
             else:
@@ -262,9 +254,9 @@ def worker_loop(
                 retry_delay=retry_delay,
                 risk_base_delay=risk_base_delay,
                 risk_max_delay=risk_max_delay,
+                ai=ai,
             )
             total[outcome] = total.get(outcome, 0) + 1
-        # Always pace after a real job when more work may follow
         total["slept_s"] += job_pace_sleep(job_delay, job_jitter)
         if max_jobs and total["processed"] >= max_jobs:
             break

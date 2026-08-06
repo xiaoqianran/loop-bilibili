@@ -10,7 +10,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterator, Sequence
 
-from .models import Job, JobKind, JobStatus, Run, SubtitlePayload, SubtitleStatus, Video
+from .models import (
+    AnalysisPayload,
+    Job,
+    JobKind,
+    Run,
+    SubtitlePayload,
+    Video,
+)
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS videos (
@@ -47,15 +54,29 @@ CREATE TABLE IF NOT EXISTS subtitles (
     PRIMARY KEY (bvid, language)
 );
 
+CREATE TABLE IF NOT EXISTS analyses (
+    bvid TEXT NOT NULL,
+    model TEXT NOT NULL DEFAULT '',
+    status TEXT NOT NULL,
+    mode TEXT NOT NULL DEFAULT 'mermaid',
+    markdown TEXT NOT NULL DEFAULT '',
+    diagrams_json TEXT NOT NULL DEFAULT '[]',
+    error TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL DEFAULT '',
+    updated_at TEXT NOT NULL DEFAULT '',
+    PRIMARY KEY (bvid, model)
+);
+
 CREATE TABLE IF NOT EXISTS jobs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     kind TEXT NOT NULL,
     bvid TEXT NOT NULL,
+    model TEXT NOT NULL DEFAULT '',
     status TEXT NOT NULL,
     run_after REAL NOT NULL DEFAULT 0,
     attempts INTEGER NOT NULL DEFAULT 0,
     last_error TEXT NOT NULL DEFAULT '',
-    UNIQUE(kind, bvid)
+    UNIQUE(kind, bvid, model)
 );
 
 CREATE TABLE IF NOT EXISTS runs (
@@ -71,6 +92,10 @@ CREATE INDEX IF NOT EXISTS idx_jobs_pending
     ON jobs(status, run_after, id);
 CREATE INDEX IF NOT EXISTS idx_discoveries_run
     ON discoveries(run_id);
+CREATE INDEX IF NOT EXISTS idx_analyses_status
+    ON analyses(status);
+CREATE INDEX IF NOT EXISTS idx_analyses_bvid
+    ON analyses(bvid);
 """
 
 
@@ -111,6 +136,106 @@ class Database:
 
     def init_schema(self) -> None:
         self._conn.executescript(SCHEMA)
+        self._migrate_jobs_model()
+        self._migrate_analyses_pk()
+
+    def _table_cols(self, table: str) -> set[str]:
+        return {
+            r[1]
+            for r in self._conn.execute(f"PRAGMA table_info({table})").fetchall()
+        }
+
+    def _migrate_jobs_model(self) -> None:
+        """Add jobs.model + UNIQUE(kind,bvid,model) for multi-model analyze."""
+        cols = self._table_cols("jobs")
+        if not cols:
+            return
+        if "model" in cols:
+            return
+        self._conn.executescript(
+            """
+            CREATE TABLE IF NOT EXISTS jobs_mm (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                kind TEXT NOT NULL,
+                bvid TEXT NOT NULL,
+                model TEXT NOT NULL DEFAULT '',
+                status TEXT NOT NULL,
+                run_after REAL NOT NULL DEFAULT 0,
+                attempts INTEGER NOT NULL DEFAULT 0,
+                last_error TEXT NOT NULL DEFAULT '',
+                UNIQUE(kind, bvid, model)
+            );
+            INSERT OR IGNORE INTO jobs_mm (
+                id, kind, bvid, model, status, run_after, attempts, last_error
+            )
+            SELECT id, kind, bvid, '', status, run_after, attempts, last_error
+            FROM jobs;
+            DROP TABLE jobs;
+            ALTER TABLE jobs_mm RENAME TO jobs;
+            CREATE INDEX IF NOT EXISTS idx_jobs_pending
+                ON jobs(status, run_after, id);
+            """
+        )
+
+    def _migrate_analyses_pk(self) -> None:
+        """
+        Migrate analyses from PRIMARY KEY(bvid) → PRIMARY KEY(bvid, model).
+
+        Old single-row rows keep their model column value (or 'legacy').
+        """
+        cols = self._table_cols("analyses")
+        if not cols:
+            return
+        # detect old schema: bvid is PK and no composite — check via index list
+        # If model is already part of PK, sqlite master sql contains "PRIMARY KEY (bvid, model)"
+        row = self._conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type='table' AND name='analyses'"
+        ).fetchone()
+        sql = (row[0] if row else "") or ""
+        if "PRIMARY KEY (bvid, model)" in sql.replace("\n", " "):
+            return
+        # also accept without spaces variations
+        if "primary key (bvid, model)" in sql.lower().replace("\n", " "):
+            return
+
+        self._conn.executescript(
+            """
+            CREATE TABLE IF NOT EXISTS analyses_mm (
+                bvid TEXT NOT NULL,
+                model TEXT NOT NULL DEFAULT '',
+                status TEXT NOT NULL,
+                mode TEXT NOT NULL DEFAULT 'mermaid',
+                markdown TEXT NOT NULL DEFAULT '',
+                diagrams_json TEXT NOT NULL DEFAULT '[]',
+                error TEXT NOT NULL DEFAULT '',
+                created_at TEXT NOT NULL DEFAULT '',
+                updated_at TEXT NOT NULL DEFAULT '',
+                PRIMARY KEY (bvid, model)
+            );
+            INSERT OR IGNORE INTO analyses_mm (
+                bvid, model, status, mode, markdown, diagrams_json,
+                error, created_at, updated_at
+            )
+            SELECT
+                bvid,
+                CASE
+                  WHEN TRIM(COALESCE(model, '')) != '' THEN model
+                  ELSE 'legacy'
+                END,
+                status,
+                COALESCE(mode, 'mermaid'),
+                COALESCE(markdown, ''),
+                COALESCE(diagrams_json, '[]'),
+                COALESCE(error, ''),
+                COALESCE(created_at, ''),
+                COALESCE(updated_at, '')
+            FROM analyses;
+            DROP TABLE analyses;
+            ALTER TABLE analyses_mm RENAME TO analyses;
+            CREATE INDEX IF NOT EXISTS idx_analyses_status ON analyses(status);
+            CREATE INDEX IF NOT EXISTS idx_analyses_bvid ON analyses(bvid);
+            """
+        )
 
     # --- videos / discoveries ---
 
@@ -207,20 +332,50 @@ class Database:
 
     # --- jobs ---
 
-    def enqueue_once(self, kind: JobKind | str, bvid: str) -> bool:
+    def enqueue_once(
+        self,
+        kind: JobKind | str,
+        bvid: str,
+        *,
+        model: str = "",
+    ) -> bool:
         """
-        Insert a pending job if (kind, bvid) is new.
+        Insert a pending job if (kind, bvid, model) is new.
 
         Returns True if a row was inserted, False if it already existed.
         """
         cur = self._conn.execute(
             """
-            INSERT OR IGNORE INTO jobs (kind, bvid, status, run_after, attempts, last_error)
-            VALUES (?, ?, 'pending', 0, 0, '')
+            INSERT OR IGNORE INTO jobs (
+                kind, bvid, model, status, run_after, attempts, last_error
+            )
+            VALUES (?, ?, ?, 'pending', 0, 0, '')
             """,
-            (kind, bvid),
+            (kind, bvid, model or ""),
         )
         return cur.rowcount > 0
+
+    def requeue_job(
+        self,
+        kind: JobKind | str,
+        bvid: str,
+        *,
+        model: str = "",
+    ) -> None:
+        """Force (kind, bvid, model) back to pending (for re-analyze)."""
+        self._conn.execute(
+            """
+            INSERT INTO jobs (
+                kind, bvid, model, status, run_after, attempts, last_error
+            )
+            VALUES (?, ?, ?, 'pending', 0, 0, '')
+            ON CONFLICT(kind, bvid, model) DO UPDATE SET
+                status = 'pending',
+                run_after = 0,
+                last_error = ''
+            """,
+            (kind, bvid, model or ""),
+        )
 
     def claim_next_job(
         self, kinds: Sequence[str] | None = None
@@ -301,10 +456,16 @@ class Database:
             (error or "", job_id),
         )
 
-    def get_job(self, kind: str, bvid: str) -> Job | None:
+    def get_job(
+        self,
+        kind: str,
+        bvid: str,
+        *,
+        model: str = "",
+    ) -> Job | None:
         row = self._conn.execute(
-            "SELECT * FROM jobs WHERE kind = ? AND bvid = ?",
-            (kind, bvid),
+            "SELECT * FROM jobs WHERE kind = ? AND bvid = ? AND model = ?",
+            (kind, bvid, model or ""),
         ).fetchone()
         return self._row_to_job(row) if row else None
 
@@ -324,7 +485,6 @@ class Database:
         now = _utc_now_iso()
         retry_at = 0.0
         if payload.status == "empty":
-            # re-check in ~3 days
             retry_at = time.time() + 3 * 24 * 3600
         elif payload.status == "retry":
             retry_at = time.time() + 300
@@ -373,6 +533,109 @@ class Database:
             ).fetchone()
         return int(row["c"]) if row else 0
 
+    # --- analyses (Mermaid per model) ---
+
+    def save_analysis(self, payload: AnalysisPayload) -> None:
+        now = _utc_now_iso()
+        model = (payload.model or "").strip() or "unknown"
+        existing = self.get_analysis(payload.bvid, model=model)
+        created = (existing or {}).get("created_at") or now
+        self._conn.execute(
+            """
+            INSERT INTO analyses (
+                bvid, model, status, mode, markdown, diagrams_json,
+                error, created_at, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(bvid, model) DO UPDATE SET
+                status = excluded.status,
+                mode = excluded.mode,
+                markdown = excluded.markdown,
+                diagrams_json = excluded.diagrams_json,
+                error = excluded.error,
+                updated_at = excluded.updated_at
+            """,
+            (
+                payload.bvid,
+                model,
+                payload.status,
+                payload.mode or "mermaid",
+                payload.markdown or "",
+                payload.diagrams_json or "[]",
+                payload.error or "",
+                created,
+                now,
+            ),
+        )
+
+    def get_analysis(
+        self,
+        bvid: str,
+        *,
+        model: str | None = None,
+    ) -> dict[str, Any] | None:
+        """
+        Get analysis for (bvid, model).
+
+        If model is None: prefer any ok row, else latest updated.
+        """
+        if model is not None:
+            row = self._conn.execute(
+                "SELECT * FROM analyses WHERE bvid = ? AND model = ?",
+                (bvid, model),
+            ).fetchone()
+            return dict(row) if row else None
+        row = self._conn.execute(
+            """
+            SELECT * FROM analyses
+            WHERE bvid = ?
+            ORDER BY
+              CASE status WHEN 'ok' THEN 0 ELSE 1 END,
+              updated_at DESC
+            LIMIT 1
+            """,
+            (bvid,),
+        ).fetchone()
+        return dict(row) if row else None
+
+    def list_analyses_for_bvid(self, bvid: str) -> list[dict[str, Any]]:
+        rows = self._conn.execute(
+            """
+            SELECT * FROM analyses
+            WHERE bvid = ?
+            ORDER BY model ASC
+            """,
+            (bvid,),
+        ).fetchall()
+        return [dict(r) for r in rows]
+
+    def list_analyses(self) -> list[dict[str, Any]]:
+        rows = self._conn.execute(
+            "SELECT * FROM analyses ORDER BY bvid ASC, model ASC"
+        ).fetchall()
+        return [dict(r) for r in rows]
+
+    def count_analyses(self, status: str | None = None) -> int:
+        if status is None:
+            row = self._conn.execute("SELECT COUNT(*) AS c FROM analyses").fetchone()
+        else:
+            row = self._conn.execute(
+                "SELECT COUNT(*) AS c FROM analyses WHERE status = ?",
+                (status,),
+            ).fetchone()
+        return int(row["c"]) if row else 0
+
+    def list_ok_subtitle_bvids(self, *, limit: int = 0) -> list[str]:
+        sql = """
+            SELECT DISTINCT bvid FROM subtitles
+            WHERE status = 'ok'
+            ORDER BY fetched_at DESC, bvid DESC
+        """
+        if limit and limit > 0:
+            rows = self._conn.execute(sql + " LIMIT ?", (int(limit),)).fetchall()
+        else:
+            rows = self._conn.execute(sql).fetchall()
+        return [str(r["bvid"]) for r in rows]
+
     def count_videos(self) -> int:
         row = self._conn.execute("SELECT COUNT(*) AS c FROM videos").fetchone()
         return int(row["c"]) if row else 0
@@ -408,6 +671,10 @@ class Database:
             s: self.count_subtitles(s)
             for s in ("pending", "ok", "empty", "retry", "failed")
         }
+        analysis_by_status = {
+            s: self.count_analyses(s)
+            for s in ("ok", "failed", "pending", "empty")
+        }
         return {
             "database": str(self.path),
             "videos": self.count_videos(),
@@ -420,11 +687,17 @@ class Database:
                 "total": self.count_subtitles(),
                 **sub_by_status,
             },
+            "analyses": {
+                "total": self.count_analyses(),
+                **analysis_by_status,
+            },
             "schema": "ready",
         }
 
     @staticmethod
     def _row_to_job(row: sqlite3.Row) -> Job:
+        keys = row.keys()
+        model = str(row["model"] or "") if "model" in keys else ""
         return Job(
             id=int(row["id"]),
             kind=row["kind"],  # type: ignore[arg-type]
@@ -433,6 +706,7 @@ class Database:
             run_after=float(row["run_after"] or 0),
             attempts=int(row["attempts"] or 0),
             last_error=str(row["last_error"] or ""),
+            model=model,
         )
 
 

@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from .models import AppConfig
+from .models import DEFAULT_AI_MODELS, AiConfig, AppConfig
 
 if sys.version_info >= (3, 11):
     import tomllib
@@ -77,6 +77,150 @@ def _as_str_list(value: Any) -> list[str]:
     return [text] if text else []
 
 
+def _parse_models(ai: dict[str, Any]) -> list[str]:
+    """
+    Resolve ordered model list.
+
+    Priority for the *list*:
+      1. AI_MODELS env (comma / semicolon / newline separated)
+      2. [ai].models array in config.toml
+      3. DEFAULT_AI_MODELS dual stack
+
+    Preferred / default (first position) override:
+      AI_DEFAULT_MODEL | [ai].default_model
+      (AI_MODEL / LLM_MODEL only used when no multi-list is configured)
+    """
+    env_multi = (
+        (os.environ.get("AI_MODELS") or "").strip()
+        or (os.environ.get("LLM_MODELS") or "").strip()
+    )
+    models: list[str] = []
+    list_from_env = bool(env_multi)
+    list_from_cfg = isinstance(ai.get("models"), (list, tuple)) and bool(ai.get("models"))
+
+    if env_multi:
+        for part in re_split_models(env_multi):
+            if part:
+                models.append(part)
+    elif list_from_cfg:
+        for x in ai["models"]:
+            s = str(x).strip()
+            if s:
+                models.append(s)
+    else:
+        models = list(DEFAULT_AI_MODELS)
+
+    # Single-model env only when user did not specify a multi-list
+    env_one = (
+        (os.environ.get("AI_MODEL") or "").strip()
+        or (os.environ.get("LLM_MODEL") or "").strip()
+    )
+    default_override = (
+        (os.environ.get("AI_DEFAULT_MODEL") or "").strip()
+        or str(ai.get("default_model") or "").strip()
+    )
+
+    if not list_from_env and not list_from_cfg:
+        # legacy single AI_MODEL → put first (or sole custom)
+        preferred = default_override or env_one
+        if preferred:
+            if preferred in models:
+                models = [preferred] + [m for m in models if m != preferred]
+            else:
+                models = [preferred] + [m for m in DEFAULT_AI_MODELS if m != preferred]
+    else:
+        # multi-list present: only AI_DEFAULT_MODEL / [ai].default_model reorders
+        if default_override:
+            if default_override in models:
+                models = [default_override] + [m for m in models if m != default_override]
+            else:
+                models = [default_override] + models
+
+    seen: set[str] = set()
+    out: list[str] = []
+    for m in models:
+        if m not in seen:
+            out.append(m)
+            seen.add(m)
+    return out or list(DEFAULT_AI_MODELS)
+
+
+def re_split_models(text: str) -> list[str]:
+    parts: list[str] = []
+    for chunk in text.replace(";", ",").replace("\n", ",").split(","):
+        s = chunk.strip()
+        if s:
+            parts.append(s)
+    return parts
+
+
+def _load_ai_config(data: dict[str, Any]) -> AiConfig:
+    """
+    AI settings from [ai] + env.
+
+    API key resolution (first non-empty):
+      AI_API_KEY | LLM_API_KEY | OPENAI_API_KEY | NVIDIA_API_KEY
+    Base URL override: AI_BASE_URL | LLM_BASE_URL
+    Models: see _parse_models
+    Enable override: AI_ENABLED=true|false
+    """
+    ai = data.get("ai") or {}
+    key = (
+        (os.environ.get("AI_API_KEY") or "").strip()
+        or (os.environ.get("LLM_API_KEY") or "").strip()
+        or (os.environ.get("OPENAI_API_KEY") or "").strip()
+        or (os.environ.get("NVIDIA_API_KEY") or "").strip()
+        or str(ai.get("api_key") or "").strip()
+    )
+    base = (
+        (os.environ.get("AI_BASE_URL") or "").strip()
+        or (os.environ.get("LLM_BASE_URL") or "").strip()
+        or str(ai.get("base_url") or "").strip()
+    )
+    models = _parse_models(ai if isinstance(ai, dict) else {})
+
+    env_flag = (os.environ.get("AI_ENABLED") or "").strip().lower()
+    if env_flag in ("0", "false", "no", "off"):
+        enabled = False
+    elif env_flag in ("1", "true", "yes", "on"):
+        enabled = True
+    elif "enabled" in ai:
+        enabled = bool(ai.get("enabled"))
+    else:
+        enabled = False
+
+    return AiConfig(
+        enabled=enabled,
+        base_url=base.rstrip("/"),
+        api_key=key,
+        models=models,
+        temperature=float(
+            ai.get("temperature") if ai.get("temperature") is not None else 0.4
+        ),
+        max_tokens=int(ai.get("max_tokens") or 8192),
+        max_subtitle_chars=int(ai.get("max_subtitle_chars") or 80_000),
+        timeout_s=float(ai.get("timeout_s") or 180.0),
+        mode=str(ai.get("mode") or "mermaid"),
+        custom_instruction=str(ai.get("custom_instruction") or ""),
+        request_retries=int(
+            ai.get("request_retries")
+            if ai.get("request_retries") is not None
+            else 2
+        ),
+        request_retry_backoff_s=float(
+            ai.get("request_retry_backoff_s")
+            if ai.get("request_retry_backoff_s") is not None
+            else 2.0
+        ),
+        max_attempts=int(ai.get("max_attempts") if ai.get("max_attempts") is not None else 3),
+        job_retry_delay_s=float(
+            ai.get("job_retry_delay_s")
+            if ai.get("job_retry_delay_s") is not None
+            else 60.0
+        ),
+    )
+
+
 def load_config(path: str | Path | None = None) -> AppConfig:
     """
     Load AppConfig from TOML path.
@@ -89,7 +233,6 @@ def load_config(path: str | Path | None = None) -> AppConfig:
     With SESSDATA present, homepage rcmd is personalized for that account.
     """
     cfg_path = Path(path) if path else Path("config.toml")
-    # .env next to config.toml + cwd defaults
     env_near = cfg_path.resolve().parent / ".env" if cfg_path else None
     load_dotenv_files(*( [env_near] if env_near else [] ))
 
@@ -150,5 +293,6 @@ def load_config(path: str | Path | None = None) -> AppConfig:
         cookie=cookie_env or cookie_cfg,
         preference_enabled=bool(prefer.get("enabled", True)),
         preference_path=str(prefer.get("path") or "preferences.toml"),
+        ai=_load_ai_config(data),
         raw=data,
     )

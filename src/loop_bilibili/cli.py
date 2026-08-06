@@ -1,4 +1,4 @@
-"""CLI entry: loop-bilibili init | once | run | worker | status."""
+"""CLI entry: loop-bilibili init | once | run | worker | status | analyze."""
 
 from __future__ import annotations
 
@@ -124,6 +124,44 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Emit status snapshot as JSON",
     )
+
+    az = sub.add_parser(
+        "analyze",
+        help="Enqueue + run Mermaid AI post-process for ok subtitles",
+    )
+    az.add_argument(
+        "--bvid",
+        action="append",
+        default=[],
+        help="Specific BV id (repeatable). Default: all ok subtitles missing analysis",
+    )
+    az.add_argument(
+        "--limit",
+        type=int,
+        default=0,
+        help="Max videos to enqueue (0 = all)",
+    )
+    az.add_argument(
+        "--force",
+        action="store_true",
+        help="Re-queue even if analyze job already done / analysis exists",
+    )
+    az.add_argument(
+        "--max-jobs",
+        type=int,
+        default=0,
+        help="Process at most N analyze jobs this run (0 = all enqueued)",
+    )
+    az.add_argument(
+        "--enqueue-only",
+        action="store_true",
+        help="Only enqueue analyze jobs; do not process",
+    )
+    az.add_argument(
+        "--model",
+        default=None,
+        help="Only this model id (default: all models in [ai].models)",
+    )
     return p
 
 
@@ -162,7 +200,27 @@ def _print_snapshot(snap: dict, *, json_mode: bool = False) -> None:
         f"total={subs['total']} ok={subs['ok']} empty={subs['empty']} "
         f"retry={subs['retry']} failed={subs['failed']}"
     )
+    analyses = snap.get("analyses") or {}
+    if analyses:
+        print(
+            "analyses: "
+            f"total={analyses.get('total', 0)} ok={analyses.get('ok', 0)} "
+            f"failed={analyses.get('failed', 0)}"
+        )
     print(f"runs: {snap['runs']}")
+
+
+def _print_ai(cfg: AppConfig) -> None:
+    ai = cfg.ai
+    key_ok = bool(ai.api_key)
+    models = ai.model_list()
+    print(
+        f"ai: enabled={ai.enabled} models={models} "
+        f"default={ai.default_model or '-'} "
+        f"base={ai.base_url or '-'} key={'yes' if key_ok else 'no'} "
+        f"mode={ai.mode}",
+        flush=True,
+    )
 
 
 def cmd_init(cfg: AppConfig, args: argparse.Namespace) -> int:
@@ -183,6 +241,8 @@ def cmd_status(cfg: AppConfig, args: argparse.Namespace) -> int:
     db = _open_db(cfg, args.db)
     try:
         _print_snapshot(db.status_snapshot(), json_mode=getattr(args, "json", False))
+        if not getattr(args, "json", False):
+            _print_ai(cfg)
         return 0
     finally:
         db.close()
@@ -240,6 +300,7 @@ def _warn_cookie(cfg: AppConfig) -> int | None:
         f"risk_backoff={cfg.risk_base_delay}..{cfg.risk_max_delay}s",
         flush=True,
     )
+    _print_ai(cfg)
     return None
 
 
@@ -251,6 +312,7 @@ def _worker_kwargs(cfg: AppConfig) -> dict:
         retry_delay=cfg.retry_delay,
         risk_base_delay=cfg.risk_base_delay,
         risk_max_delay=cfg.risk_max_delay,
+        ai=cfg.ai,
     )
 
 
@@ -330,7 +392,8 @@ def cmd_once(cfg: AppConfig, args: argparse.Namespace) -> int:
         print(
             f"totals: videos={snap['videos']} "
             f"jobs_pending={snap['jobs']['pending']} "
-            f"jobs_done={snap['jobs']['done']}"
+            f"jobs_done={snap['jobs']['done']} "
+            f"analyses_ok={(snap.get('analyses') or {}).get('ok', 0)}"
         )
         return 0
     finally:
@@ -461,6 +524,81 @@ def cmd_run(cfg: AppConfig, args: argparse.Namespace) -> int:
         db.close()
 
 
+def cmd_analyze(cfg: AppConfig, args: argparse.Namespace) -> int:
+    """Enqueue + drain Mermaid analyze jobs (one job per model × bvid)."""
+    from .ai_worker import enqueue_analyze_for_models
+
+    _print_ai(cfg)
+    if not cfg.ai.enabled or not cfg.ai.api_key or not cfg.ai.base_url:
+        print(
+            "error: AI not configured. Set [ai] in config.toml and "
+            "AI_API_KEY in .env (see README).",
+            file=sys.stderr,
+        )
+        return 2
+    if not cfg.ai.model_list():
+        print("error: no AI models configured", file=sys.stderr)
+        return 2
+
+    db = _open_db(cfg, args.db, init=True)
+    try:
+        if args.bvid:
+            bvids = [str(b).strip() for b in args.bvid if str(b).strip()]
+        else:
+            bvids = db.list_ok_subtitle_bvids(limit=max(0, int(args.limit)))
+
+        # optional: only one model
+        models = cfg.ai.model_list()
+        if getattr(args, "model", None):
+            only = str(args.model).strip()
+            if only not in models:
+                # still allow explicit model id even if not in config list
+                models = [only]
+            else:
+                models = [only]
+            # temporarily narrow for enqueue helper
+            from dataclasses import replace
+            ai = replace(cfg.ai, models=models)
+        else:
+            ai = cfg.ai
+
+        enqueued = 0
+        for bvid in bvids:
+            enqueued += enqueue_analyze_for_models(
+                db, bvid, ai, force=bool(args.force)
+            )
+
+        print(
+            f"analyze enqueue: jobs={enqueued} pool_bvids={len(bvids)} "
+            f"models={ai.model_list()}",
+            flush=True,
+        )
+        if args.enqueue_only:
+            _print_snapshot(db.status_snapshot())
+            return 0
+
+        class _NoSub:
+            def fetch(self, bvid: str) -> object:
+                raise RuntimeError("analyze-only run should not fetch subtitles")
+
+        max_jobs = int(args.max_jobs) if args.max_jobs else max(enqueued, 1) * 2
+        stats = run_once(
+            db,
+            _NoSub(),
+            max_jobs=max(0, max_jobs),
+            **_worker_kwargs(cfg),
+        )
+        print(
+            "analyze jobs: "
+            f"processed={stats['processed']} analyze_ok={stats['analyze']} "
+            f"failed={stats['failed']}"
+        )
+        _print_snapshot(db.status_snapshot())
+        return 0
+    finally:
+        db.close()
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(list(argv) if argv is not None else None)
@@ -475,6 +613,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         return cmd_run(cfg, args)
     if args.command == "worker":
         return cmd_worker(cfg, args)
+    if args.command == "analyze":
+        return cmd_analyze(cfg, args)
     parser.error(f"unknown command {args.command!r}")
     return 2
 

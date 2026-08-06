@@ -20,6 +20,7 @@ from typing import Callable, Protocol, Sequence
 
 from .database import Database
 from .ingest import refresh_source
+from .models import AiConfig
 from .preference.scorer import PreferenceScorer
 from .worker import (
     DEFAULT_JOB_DELAY,
@@ -65,6 +66,7 @@ def run_cadence(
     sleep: SleepFn | None = None,
     clock: ClockFn | None = None,
     pace: bool = True,
+    ai: AiConfig | None = None,
 ) -> dict:
     """
     Multi-cycle discovery + paced subtitle processing.
@@ -78,19 +80,13 @@ def run_cadence(
         zero jobs processed (0 = unlimited). Useful for tests / clean shutdown
         when the feed is static and the queue is empty.
     homepage_interval_s:
-        Minimum seconds between discovery refreshes. 0 = refresh every cycle.
-    jobs_per_cycle:
-        Max jobs to process after each discovery tick (and between ticks when
-        jobs remain). 0 means process until queue empty once per cycle step.
-
-    Returns aggregate stats including per-cycle summaries.
+        Minimum seconds between discovery refreshes.
     """
     sleep_fn = sleep or time.sleep
     clock_fn = clock or time.time
-
     interval = max(0.0, float(homepage_interval_s))
     poll = max(0.0, float(poll_interval))
-    jpc = max(0, int(jobs_per_cycle))
+    jpc = int(jobs_per_cycle)
 
     totals: dict = {
         "cycles": 0,
@@ -104,28 +100,36 @@ def run_cadence(
         "retry": 0,
         "failed": 0,
         "analyze": 0,
-        "slept_s": 0.0,
         "idle_cycles": 0,
+        "slept_s": 0.0,
         "cycle_summaries": [],
     }
 
-    last_refresh = 0.0  # force refresh on first loop
+    last_refresh = 0.0  # force first refresh
     idle_streak = 0
 
-    while True:
-        if max_cycles and totals["cycles"] >= max_cycles:
-            break
+    def _worker_kwargs() -> dict:
+        return dict(
+            language=language,
+            job_delay=job_delay,
+            job_jitter=job_jitter,
+            retry_delay=retry_delay,
+            risk_base_delay=risk_base_delay,
+            risk_max_delay=risk_max_delay,
+            pace=pace,
+            ai=ai,
+        )
 
+    while True:
         now = clock_fn()
+        due = (now - last_refresh) >= interval
         did_refresh = False
         cycle_candidates = 0
         cycle_enqueued = 0
         cycle_skipped = 0
         cycle_blocked = 0
-        refresh_details: list[dict] = []
+        refresh_details: list = []
 
-        due = (now - last_refresh) >= interval or totals["cycles"] == 0
-        # always refresh on cycle boundary when max_cycles is used with interval 0
         if due and sources:
             did_refresh = True
             last_refresh = now
@@ -138,11 +142,11 @@ def run_cadence(
                         prefer_enabled=prefer_enabled,
                     )
                 except Exception as exc:
-                    logger.exception("cadence refresh %s failed", getattr(src, "name", "?"))
+                    logger.exception("refresh %s failed", getattr(src, "name", src))
                     refresh_details.append(
                         {
-                            "source": getattr(src, "name", "?"),
-                            "status": "failed",
+                            "source": getattr(src, "name", str(src)),
+                            "status": "error",
                             "error": str(exc),
                             "candidates": 0,
                             "enqueued": 0,
@@ -172,14 +176,8 @@ def run_cadence(
         job_stats = run_once(
             db,
             subtitle_source,
-            language=language,
             max_jobs=job_budget,
-            job_delay=job_delay,
-            job_jitter=job_jitter,
-            retry_delay=retry_delay,
-            risk_base_delay=risk_base_delay,
-            risk_max_delay=risk_max_delay,
-            pace=pace,
+            **_worker_kwargs(),
         )
         for key in ("processed", "ok", "empty", "retry", "failed", "analyze"):
             totals[key] = totals.get(key, 0) + int(job_stats.get(key) or 0)
@@ -252,14 +250,8 @@ def run_cadence(
                     mid = run_once(
                         db,
                         subtitle_source,
-                        language=language,
                         max_jobs=max(1, min(5, jpc)),
-                        job_delay=job_delay,
-                        job_jitter=job_jitter,
-                        retry_delay=retry_delay,
-                        risk_base_delay=risk_base_delay,
-                        risk_max_delay=risk_max_delay,
-                        pace=pace,
+                        **_worker_kwargs(),
                     )
                     for key in ("processed", "ok", "empty", "retry", "failed", "analyze"):
                         totals[key] = totals.get(key, 0) + int(mid.get(key) or 0)

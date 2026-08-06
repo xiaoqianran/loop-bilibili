@@ -50,3 +50,29 @@ dataset = "loop-bilibili-v2"
 [preference]
 enabled = true
 path = "preferences.toml"
+
+# LLM post-process: multi-model Mermaid learning graphs
+# API key NEVER in git — put in .env:
+#   AI_API_KEY=nvapi-...
+# 双模型：第一项 = 默认展示模型（Pages 默认 / 列表默认）
+#   google/diffusiongemma-26b-a4b-it  ← 默认
+#   openai/gpt-oss-120b              ← 可切换对照
+[ai]
+enabled = true
+base_url = "https://nim.202820.xyz/v1"
+models = [
+  "google/diffusiongemma-26b-a4b-it",
+  "openai/gpt-oss-120b",
+]
+temperature = 0.4
+max_tokens = 8192
+max_subtitle_chars = 80000
+timeout_s = 180
+mode = "mermaid"
+# 单次 HTTP 请求内：超时/429/5xx 自动再试（额外次数）
+request_retries = 2
+request_retry_backoff_s = 2.0
+# 任务队列：claim 失败后最多尝试次数，再永久 failed
+max_attempts = 3
+job_retry_delay_s = 60.0
+# custom_instruction = ""

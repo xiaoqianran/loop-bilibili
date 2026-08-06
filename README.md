@@ -114,6 +114,60 @@ require_cookie = true
   - `worker.job_delay` / `risk_*`：字幕限速与风控退避
   - `worker.jobs_per_cycle`：每发现周期最多处理多少任务
 
+### 3.5 Mermaid AI 后处理（字幕 → 学习图谱 · 双模型）
+
+字幕抓取成功后会 **按模型各入队一条** `analyze` 任务（默认双模型）。开启 AI 后，worker 用 OpenAI 兼容接口调用大模型，按 Bili SubBatch 的 **「全 Mermaid 学习图谱」** 协议生成 2–5 张 flowchart，按 `(bvid, model)` 写入 `analyses` 表。
+
+| 模型 | 角色 |
+|------|------|
+| `google/diffusiongemma-26b-a4b-it` | **默认**（Pages / 列表优先展示） |
+| `openai/gpt-oss-120b` | 对照模型，可批量或单视频切换 |
+
+**密钥只放 `.env`（已 gitignore），不要写进 `config.toml` / 不要提交：**
+
+```bash
+# .env
+AI_API_KEY=nvapi-xxxxxxxx
+# 可选覆盖（模型列表以 config.toml [ai].models 为准，第一项=默认）
+# AI_BASE_URL=https://nim.202820.xyz/v1
+# AI_DEFAULT_MODEL=google/diffusiongemma-26b-a4b-it
+# AI_MODELS=google/diffusiongemma-26b-a4b-it,openai/gpt-oss-120b
+# AI_ENABLED=true
+```
+
+```toml
+# config.toml
+[ai]
+enabled = true
+base_url = "https://nim.202820.xyz/v1"
+models = [
+  "google/diffusiongemma-26b-a4b-it",  # 默认
+  "openai/gpt-oss-120b",
+]
+temperature = 0.4
+max_tokens = 8192
+mode = "mermaid"
+```
+
+```bash
+# 字幕 ok 后自动 analyze（每个模型各一条 job）
+PYTHONPATH=src python3 -m loop_bilibili analyze --limit 20
+PYTHONPATH=src python3 -m loop_bilibili analyze --bvid BV1xxx --force
+# 只跑某一个模型：
+PYTHONPATH=src python3 -m loop_bilibili analyze --model google/diffusiongemma-26b-a4b-it
+
+# 构建含 Mermaid 的静态站（Pages）
+python scripts/build_subtitle_site.py --from-dir data/v2 --out site --base-url /loop-bilibili
+```
+
+**Pages 切换：**
+
+- **批量**：列表顶栏「模型」按钮 → 全局切换（`localStorage`），列表徽章按当前模型计数
+- **单个**：视频页图谱顶栏同样可切换模型，只看该视频在该模型下的图
+- 默认进入始终优先 **diffusiongemma**（若该模型尚无图，会回退到已有 ok 的模型）
+
+站点视频页默认优先展示 **Mermaid 图谱**（可切换「字幕正文」）；列表上有 `mermaid ×N` 标记。
+
 ### 4. 跑起来
 
 ```bash

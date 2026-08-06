@@ -28,17 +28,18 @@
 
 ## P2 — 对接 LLM 梳理字幕
 
-- [ ] **`processors/llm_summary.py`（接口先行）**  
-  输入：`plain_text` / srt；输出：`extras.summary`、`extras.keywords`、`summary.md`
-- [ ] **配置与密钥**  
-  `config.yaml`：`llm.provider` / `model` / `api_base`；密钥仅环境变量
+- [x] **Mermaid AI 后处理（v2 analyze job）**  
+  `ai_worker` + `ai_mermaid`：字幕 ok → `analyze` → OpenAI 兼容 API → `analyses` 表（markdown + diagrams_json）
+- [x] **配置与密钥**  
+  `config.toml [ai]` + `.env` 的 `AI_API_KEY` / `AI_BASE_URL` / `AI_MODEL`（密钥不进 git）
+- [x] **Pages 可视化**  
+  `build_subtitle_site.py` 导出 diagrams，前端 mermaid@10.9.1 渲染；视频页可切换图谱/字幕
+- [x] **CLI**  
+  `loop-bilibili analyze [--bvid] [--force] [--limit]`
 - [ ] **成本控制**  
-  仅 `cue_count > N` 或标题匹配才调 LLM；缓存 `items/{bvid}.llm.json`
-- [ ] **批量离线 reprocess**  
-  `main.py process-subtitles --src data/subtitle/UID --processors llm`  
-  不重新抓，只跑 processor 链
-- [ ] **结构化 schema**  
-  嘉宾 / 主题 / 时间线大纲 JSON schema，便于 NotebookLM / RAG
+  仅 `cue_count > N` 或标题匹配才调 LLM；缓存命中跳过
+- [ ] **结构化 schema 扩展**  
+  嘉宾 / 主题 / 时间线大纲（当前仅 mermaid mode）
 
 ## P3 — GitHub Actions 日更
 
