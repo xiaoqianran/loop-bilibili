@@ -19,10 +19,21 @@ else:  # pragma: no cover
 
 
 def _as_str_list(value: Any) -> list[str]:
+    """Normalize creators: strings, ints, or [{mid=...}] tables → mid strings."""
     if value is None:
         return []
     if isinstance(value, (list, tuple)):
-        return [str(x).strip() for x in value if str(x).strip()]
+        out: list[str] = []
+        for x in value:
+            if isinstance(x, dict):
+                mid = str(x.get("mid") or x.get("slug") or "").strip()
+                if mid:
+                    out.append(mid)
+            else:
+                s = str(x).strip()
+                if s:
+                    out.append(s)
+        return out
     text = str(value).strip()
     return [text] if text else []
 

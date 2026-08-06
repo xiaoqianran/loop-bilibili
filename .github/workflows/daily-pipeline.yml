@@ -1,0 +1,87 @@
+# Daily: scrape creators → push ModelScope → rebuild GitHub Pages
+#
+# Secrets required:
+#   MODELSCOPE_API_TOKEN  — ModelScope SDK token
+#   BILI_COOKIE           — optional but strongly recommended (SESSDATA=...; bili_jct=...)
+#
+name: Daily scrape + ModelScope + Pages
+
+on:
+  schedule:
+    # UTC 15:00 ≈ 北京时间 23:00 — scrape first
+    - cron: '0 15 * * *'
+  workflow_dispatch:
+    inputs:
+      push_ms:
+        description: 'Push to ModelScope after scrape'
+        type: boolean
+        default: true
+      deploy_pages:
+        description: 'Rebuild GitHub Pages after push'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-pipeline
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m pip install -U pip
+          pip install 'modelscope>=1.20'
+
+      - name: Scrape all configured creators
+        env:
+          BILI_COOKIE: ${{ secrets.BILI_COOKIE }}
+          MODELSCOPE_API_TOKEN: ${{ secrets.MODELSCOPE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          # Cookie optional but print warning status
+          if [ -z "${BILI_COOKIE:-}" ]; then
+            echo "WARN: BILI_COOKIE secret empty — may hit -352"
+          else
+            echo "BILI_COOKIE set (len=${#BILI_COOKIE})"
+          fi
+          PUSH_FLAG=()
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.push_ms }}" = "true" ]; then
+            PUSH_FLAG=(--push-ms)
+          fi
+          PYTHONPATH=src python scripts/scrape_creator.py --from-config "${PUSH_FLAG[@]}"
+          ls -lah data/v2/*.db || true
+
+      - name: Build static site
+        if: ${{ github.event_name == 'schedule' || inputs.deploy_pages }}
+        run: |
+          PYTHONPATH=src python scripts/build_subtitle_site.py \
+            --from-dir data/v2 \
+            --out site \
+            --base-url /loop-bilibili
+          grep -q 'SITE_BASE' site/assets/app.js
+          du -sh site
+
+      - name: Deploy Pages (gh-pages)
+        if: ${{ github.event_name == 'schedule' || inputs.deploy_pages }}
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_orphan: true
+          enable_jekyll: false

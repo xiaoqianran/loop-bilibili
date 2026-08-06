@@ -67,23 +67,46 @@ python scripts/push_modelscope_v2.py --name haianyu
 python scripts/push_modelscope_v2.py --name xiaolaoshi
 ```
 
-### GitHub Pages 字幕可视化
+### 自动抓取 → ModelScope → Pages（推荐日常）
 
-静态站由 Actions 从 ModelScope 拉快照 → 构建 → 部署：
-
-1. 仓库 **Settings → Secrets** 添加 `MODELSCOPE_API_TOKEN`
-2. **Settings → Pages** → Source 选 **GitHub Actions**
-3. 运行 workflow：**Actions → Deploy subtitle site to GitHub Pages → Run workflow**
-
-本地预览：
-
-```bash
-python scripts/build_subtitle_site.py --from-dir data/v2 --out site
-python -m http.server -d site 8080
-# 浏览器打开 http://127.0.0.1:8080/
+```text
+每天定时 (GitHub Actions)
+  1. scrape_creator.py --from-config --push-ms   # 抓 B 站 → 本地 db → 推 ModelScope
+  2. build_subtitle_site.py                      # 生成静态站
+  3. 部署 gh-pages                               # https://xiaoqianran.github.io/loop-bilibili/
 ```
 
-站点地址（开启后）：`https://xiaoqianran.github.io/loop-bilibili/`
+**Secrets（Settings → Secrets and variables → Actions）：**
+
+| Secret | 用途 |
+|--------|------|
+| `MODELSCOPE_API_TOKEN` | 推送/拉取数据集（必填） |
+| `BILI_COOKIE` | `SESSDATA=...; bili_jct=...; DedeUserID=...`（强烈建议，防 -352） |
+
+**Pages 设置：** Deploy from a branch → **`gh-pages`** / **`/`**
+
+**Workflows：**
+
+| 名称 | 作用 |
+|------|------|
+| `Daily scrape + ModelScope + Pages` | 每天自动抓取+备份+上线（也可手动 Run） |
+| `Deploy subtitle site to GitHub Pages` | 仅从 ModelScope 重建站点 |
+
+**本地手动跑一整轮：**
+
+```bash
+# .env 里已有 MODELSCOPE_API_TOKEN；另 export BILI_COOKIE=...
+export BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...'
+
+# 抓 config.toml 里所有 creators 并推 ModelScope
+PYTHONPATH=src python scripts/scrape_creator.py --from-config --push-ms
+
+# 本地预览站点
+python scripts/build_subtitle_site.py --from-dir data/v2 --out site --base-url /loop-bilibili
+python -m http.server -d site 8080
+```
+
+站点：https://xiaoqianran.github.io/loop-bilibili/
 
 ## 文档
 

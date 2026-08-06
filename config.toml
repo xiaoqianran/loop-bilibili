@@ -4,32 +4,36 @@
 path = "data/v2/loop.db"
 
 [sources]
-# Creator mids to poll (string or int). Empty = skip creator refresh.
-creators = []
-# Homepage personalized rcmd
-homepage_enabled = true
+# Homepage personalized rcmd (CLI once/worker)
+homepage_enabled = false
 homepage_pages = 1
 homepage_ps = 12
 
+# Creators to scrape (scripts/scrape_creator.py --from-config)
+[[sources.creators]]
+mid = "2071007724"
+name = "海安雨"
+slug = "haianyu"
+
+[[sources.creators]]
+mid = "346591207"
+name = "肖老师的退休生活"
+slug = "xiaolaoshi"
+
 [worker]
-# Seconds between job polls when idle
 poll_interval = 2.0
-# Default language key for subtitle rows
 subtitle_language = "zh"
-# Inter-video pacing (v1 BatchConfig / SubBatch-safe defaults)
-# ~0.5s + jitter ⇒ roughly ≤2 videos/s worst case, usually slower with RTT
-job_delay = 0.5
+job_delay = 0.55
 job_jitter = 0.15
-# Generic temporary failure requeue delay
 retry_delay = 60.0
-# -352 / -412 risk exponential backoff base & cap (seconds)
 risk_base_delay = 15.0
 risk_max_delay = 300.0
 
 [runtime]
-# Cookie: prefer env BILI_COOKIE; this is a fallback only.
-# SubBatch always attaches SESSDATA (+ buvid*). Bulk fetch without SESSDATA
-# will trip -352 quickly — set cookie or export BILI_COOKIE.
 cookie = ""
-# If true, once/worker refuse to run subtitle jobs without SESSDATA
 require_cookie = false
+
+[backup]
+# ModelScope private dataset (scripts/push_modelscope_v2.py)
+namespace = "yuminghui"
+dataset = "loop-bilibili-v2"

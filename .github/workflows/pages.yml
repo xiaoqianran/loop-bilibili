@@ -8,9 +8,10 @@ on:
         description: 'Snapshot names (comma-separated), empty = all from ModelScope'
         required: false
         default: ''
-  # Daily rebuild from ModelScope (UTC 16:00 ≈ 北京时间 00:00)
+  # Daily full scrape+publish is in daily-pipeline.yml (15:00 UTC).
+  # This workflow: rebuild site from ModelScope only (no B 站抓取).
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 17 * * *'  # ~1h after daily-pipeline; safety net if scrape job fails mid-way
   # Rebuild when site tooling changes
   push:
     branches: [main]
