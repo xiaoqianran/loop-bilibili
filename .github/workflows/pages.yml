@@ -1,0 +1,88 @@
+name: Deploy subtitle site to GitHub Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      snapshots:
+        description: 'Snapshot names (comma-separated), empty = all from ModelScope'
+        required: false
+        default: ''
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_subtitle_site.py'
+      - 'scripts/fetch_modelscope_v2.py'
+      - '.github/workflows/pages.yml'
+  # Optional: after manual scrape, re-run this workflow
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m pip install -U pip
+          pip install 'modelscope>=1.20'
+
+      - name: Fetch snapshots from ModelScope
+        env:
+          MODELSCOPE_API_TOKEN: ${{ secrets.MODELSCOPE_API_TOKEN }}
+        run: |
+          if [ -z "$MODELSCOPE_API_TOKEN" ]; then
+            echo "MODELSCOPE_API_TOKEN secret missing" >&2
+            exit 1
+          fi
+          NAMES="${{ github.event.inputs.snapshots }}"
+          if [ -n "$NAMES" ]; then
+            IFS=',' read -ra ARR <<< "$NAMES"
+            ARGS=()
+            for n in "${ARR[@]}"; do
+              n="$(echo "$n" | xargs)"
+              [ -n "$n" ] && ARGS+=(--name "$n")
+            done
+            python scripts/fetch_modelscope_v2.py "${ARGS[@]}"
+          else
+            python scripts/fetch_modelscope_v2.py --all
+          fi
+          ls -la data/v2/*.db || true
+
+      - name: Build static site
+        run: |
+          python scripts/build_subtitle_site.py --from-dir data/v2 --out site
+          # project pages base (owner.github.io/repo/)
+          # assets use relative paths — OK for project site
+          find site -type f | wc -l
+          du -sh site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

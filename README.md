@@ -59,14 +59,31 @@ loop-bilibili init
 数据集：[`yuminghui/loop-bilibili-v2`](https://modelscope.cn/datasets/yuminghui/loop-bilibili-v2)（private）
 
 ```bash
-# 一次性：安装 SDK + 配置 token（勿写入 git）
-pip install 'modelscope>=1.20'
-export MODELSCOPE_API_TOKEN='ms-...'   # https://modelscope.cn/my/myaccesstoken
+# token 放在本地 .env（gitignore）或环境变量
+# MODELSCOPE_API_TOKEN=ms-...
 
-# 每次抓取完成后
+# 每次抓取完成后推送备份
+python scripts/push_modelscope_v2.py --name haianyu
 python scripts/push_modelscope_v2.py --name xiaolaoshi
-# 或默认 data/v2/<name>.db + data/v2/<name>_txt/
 ```
+
+### GitHub Pages 字幕可视化
+
+静态站由 Actions 从 ModelScope 拉快照 → 构建 → 部署：
+
+1. 仓库 **Settings → Secrets** 添加 `MODELSCOPE_API_TOKEN`
+2. **Settings → Pages** → Source 选 **GitHub Actions**
+3. 运行 workflow：**Actions → Deploy subtitle site to GitHub Pages → Run workflow**
+
+本地预览：
+
+```bash
+python scripts/build_subtitle_site.py --from-dir data/v2 --out site
+python -m http.server -d site 8080
+# 浏览器打开 http://127.0.0.1:8080/
+```
+
+站点地址（开启后）：`https://xiaoqianran.github.io/loop-bilibili/`
 
 ## 文档
 
