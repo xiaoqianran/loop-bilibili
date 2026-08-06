@@ -1,86 +1,32 @@
-# Actions 的职责：只把 ModelScope 备份同步成 GitHub Pages 可视化站点。
-# 不在云端抓 B 站（不需要 BILI_COOKIE）。
+# Thin alias: same job as pages.yml (ModelScope → Pages).
+# Kept so the "Sync ModelScope → Pages" name stays discoverable in the Actions UI.
 #
-# 抓取请在本机/自有服务器跑：
-#   PYTHONPATH=src python scripts/try_homepage_guest.py   # 0 cookie 试首页
+# 抓取请在本机/自有服务器跑（Actions 不需要 BILI_COOKIE）：
+#   PYTHONPATH=src python scripts/try_homepage_guest.py
 #   PYTHONPATH=src python3 -m loop_bilibili once
 #   python scripts/push_modelscope_v2.py --name <slug>
 #
 name: Sync ModelScope → Pages
 
 on:
-  schedule:
-    # 每天 UTC 16:00 ≈ 北京 00:00：从 ModelScope 拉最新快照并部署
-    - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
       snapshots:
         description: 'Snapshot names (comma-separated), empty = all'
         required: false
         default: ''
+  # Daily schedule lives in pages.yml (single clock). Manual runs use this alias.
 
+# Concurrency is owned by pages.yml (group: pages). Do not set a second lock here
+# or the reusable call can wait on itself.
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: pages-sync
-  cancel-in-progress: true
-
 jobs:
-  sync-and-deploy:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install deps
-        run: |
-          python -m pip install -U pip
-          pip install 'modelscope>=1.20'
-
-      - name: Pull snapshots from ModelScope
-        env:
-          MODELSCOPE_API_TOKEN: ${{ secrets.MODELSCOPE_API_TOKEN }}
-        run: |
-          if [ -z "$MODELSCOPE_API_TOKEN" ]; then
-            echo "MODELSCOPE_API_TOKEN secret missing" >&2
-            exit 1
-          fi
-          NAMES="${{ github.event.inputs.snapshots }}"
-          if [ -n "$NAMES" ]; then
-            IFS=',' read -ra ARR <<< "$NAMES"
-            ARGS=()
-            for n in "${ARR[@]}"; do
-              n="$(echo "$n" | xargs)"
-              [ -n "$n" ] && ARGS+=(--name "$n")
-            done
-            python scripts/fetch_modelscope_v2.py "${ARGS[@]}"
-          else
-            python scripts/fetch_modelscope_v2.py --all
-          fi
-          ls -la data/v2/*.db || true
-
-      - name: Build static site
-        run: |
-          python scripts/build_subtitle_site.py \
-            --from-dir data/v2 \
-            --out site \
-            --base-url /loop-bilibili
-          grep -q 'SITE_BASE' site/assets/app.js
-          du -sh site
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
-          force_orphan: true
-          enable_jekyll: false
+  publish:
+    uses: ./.github/workflows/pages.yml
+    secrets: inherit
+    with:
+      snapshots: ${{ inputs.snapshots }}
