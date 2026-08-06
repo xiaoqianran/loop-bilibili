@@ -11,12 +11,12 @@ Usage:
   # one-off
   python scripts/scrape_creator.py --mid 2071007724 --name 海安雨 --slug haianyu
 
-  # scrape + push ModelScope
-  python scripts/scrape_creator.py --from-config --push-ms
+  # scrape + push Hugging Face
+  python scripts/scrape_creator.py --from-config --push-hf
 
 Env:
   BILI_COOKIE              recommended for bulk
-  MODELSCOPE_API_TOKEN     required if --push-ms (or .env)
+  HF_TOKEN                 required if --push-hf (or .env)
 """
 
 from __future__ import annotations
@@ -278,8 +278,8 @@ def scrape_one(
     return result
 
 
-def push_ms(slug: str) -> int:
-    script = ROOT / "scripts" / "push_modelscope_v2.py"
+def push_hf(slug: str) -> int:
+    script = ROOT / "scripts" / "push_hf_v2.py"
     cmd = [
         sys.executable,
         str(script),
@@ -292,8 +292,13 @@ def push_ms(slug: str) -> int:
         "--summary",
         str(ROOT / "data" / "v2" / f"{slug}_full_summary.md"),
     ]
-    print("push:", " ".join(cmd), flush=True)
+    print("push hf:", " ".join(cmd), flush=True)
     return subprocess.call(cmd, cwd=str(ROOT))
+
+
+def push_ms(slug: str) -> int:
+    # legacy name: ModelScope path deprecated — forward to Hugging Face
+    return push_hf(slug)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -304,7 +309,16 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--mid", default="")
     p.add_argument("--name", default="")
     p.add_argument("--slug", default="")
-    p.add_argument("--push-ms", action="store_true", help="push each finished slug to ModelScope")
+    p.add_argument(
+        "--push-hf",
+        action="store_true",
+        help="push each finished slug to Hugging Face dataset",
+    )
+    p.add_argument(
+        "--push-ms",
+        action="store_true",
+        help="(legacy alias) same as --push-hf",
+    )
     p.add_argument("--job-delay", type=float, default=0.55)
     p.add_argument("--max-pages", type=int, default=50)
     args = p.parse_args(argv)
@@ -354,10 +368,10 @@ def main(argv: list[str] | None = None) -> int:
             max_pages=args.max_pages,
         )
         results.append(r)
-        if args.push_ms:
-            rc = push_ms(c["slug"])
+        if args.push_hf or args.push_ms:
+            rc = push_hf(c["slug"])
             if rc != 0:
-                print(f"push-ms failed for {c['slug']} rc={rc}", file=sys.stderr)
+                print(f"push-hf failed for {c['slug']} rc={rc}", file=sys.stderr)
                 return rc
 
     print("ALL", results, flush=True)

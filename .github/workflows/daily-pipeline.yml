@@ -1,12 +1,12 @@
-# Thin alias: same job as pages.yml (ModelScope → Pages).
-# Kept so the "Sync ModelScope → Pages" name stays discoverable in the Actions UI.
+# Thin alias: same job as pages.yml (Hugging Face → Pages).
+# Kept so "Sync HF → Pages" stays discoverable in the Actions UI.
 #
 # 抓取请在本机/自有服务器跑（Actions 不需要 BILI_COOKIE）：
 #   PYTHONPATH=src python scripts/try_homepage_guest.py
 #   PYTHONPATH=src python3 -m loop_bilibili once
-#   python scripts/push_modelscope_v2.py --name <slug>
+#   python scripts/push_hf_v2.py --name <slug>
 #
-name: Sync ModelScope → Pages
+name: Sync HF → Pages
 
 on:
   workflow_dispatch:
@@ -15,10 +15,7 @@ on:
         description: 'Snapshot names (comma-separated), empty = all'
         required: false
         default: ''
-  # Daily schedule lives in pages.yml (single clock). Manual runs use this alias.
 
-# Concurrency is owned by pages.yml (group: pages). Do not set a second lock here
-# or the reusable call can wait on itself.
 permissions:
   contents: read
   pages: write

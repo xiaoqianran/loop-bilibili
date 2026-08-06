@@ -1,19 +1,18 @@
-# ModelScope → static site → GitHub Pages (Actions deploy, not gh-pages branch).
+# Hugging Face dataset → static site → GitHub Pages (Actions artifact deploy).
 #
-# Repo Pages source must be: Settings → Pages → Build and deployment → GitHub Actions
-# (NOT "Deploy from a branch". Branch deploy was stuck in deployment_queued timeouts.)
+# Repo Pages source: Settings → Pages → Build and deployment → GitHub Actions
+# (NOT "Deploy from a branch" — branch deploy was stuck in deployment_queued.)
 #
-# Actions never scrape B 站 — only pull ModelScope snapshots and publish HTML/JSON.
+# Actions never scrape B 站 — only pull HF snapshots and publish HTML/JSON.
 name: Deploy subtitle site to GitHub Pages
 
 on:
   workflow_dispatch:
     inputs:
       snapshots:
-        description: 'Snapshot names (comma-separated), empty = all from ModelScope'
+        description: 'Snapshot names (comma-separated), empty = all from Hugging Face'
         required: false
         default: ''
-  # reusable entry for daily-pipeline.yml
   workflow_call:
     inputs:
       snapshots:
@@ -28,11 +27,11 @@ on:
     branches: [main]
     paths:
       - 'scripts/build_subtitle_site.py'
-      - 'scripts/fetch_modelscope_v2.py'
+      - 'scripts/fetch_hf_v2.py'
+      - 'scripts/push_hf_v2.py'
       - '.github/workflows/pages.yml'
       - '.github/workflows/daily-pipeline.yml'
 
-# Official Pages deploy needs pages + id-token. contents:read is enough (no branch push).
 permissions:
   contents: read
   pages: write
@@ -46,7 +45,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -59,18 +58,18 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install -U pip
-          pip install 'modelscope>=1.20'
+          pip install 'huggingface_hub>=0.23'
 
-      - name: Fetch snapshots from ModelScope
+      - name: Fetch snapshots from Hugging Face
         env:
-          MODELSCOPE_API_TOKEN: ${{ secrets.MODELSCOPE_API_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_DATASET_REPO: seachen/loop-bilibili-v2
         run: |
           set -euo pipefail
-          if [ -z "${MODELSCOPE_API_TOKEN:-}" ]; then
-            echo "MODELSCOPE_API_TOKEN secret missing" >&2
+          if [ -z "${HF_TOKEN:-}" ]; then
+            echo "HF_TOKEN secret missing — add repo secret HF_TOKEN (Hugging Face write/read token)" >&2
             exit 1
           fi
-          # workflow_dispatch and workflow_call both expose inputs.snapshots
           NAMES="${{ inputs.snapshots }}"
           if [ -n "$NAMES" ]; then
             IFS=',' read -ra ARR <<< "$NAMES"
@@ -79,26 +78,23 @@ jobs:
               n="$(echo "$n" | xargs)"
               [ -n "$n" ] && ARGS+=(--name "$n")
             done
-            python scripts/fetch_modelscope_v2.py "${ARGS[@]}"
+            python scripts/fetch_hf_v2.py "${ARGS[@]}"
           else
-            python scripts/fetch_modelscope_v2.py --all
+            python scripts/fetch_hf_v2.py --all
           fi
           ls -la data/v2/*.db || true
 
       - name: Build static site
         run: |
           set -euo pipefail
-          # Project Pages live under /loop-bilibili/ — absolute SITE_BASE paths
           python scripts/build_subtitle_site.py \
             --from-dir data/v2 \
             --out site \
             --base-url /loop-bilibili
-          # smoke checks
           test -f site/index.html
           test -f site/assets/app.js
           grep -q 'SITE_BASE' site/assets/app.js
           grep -q "loadJSON('/data/" site/assets/app.js
-          # avoid Jekyll processing if anyone reverts to branch deploy
           touch site/.nojekyll
           echo "files=$(find site -type f | wc -l) size=$(du -sh site | cut -f1)"
 
