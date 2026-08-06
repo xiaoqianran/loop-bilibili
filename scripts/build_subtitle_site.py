@@ -46,11 +46,25 @@ def _slugify(name: str) -> str:
 
 
 def discover_dbs(data_dir: Path) -> list[UpSource]:
+    """Discover snapshot DBs for the static site.
+
+    Includes ``loop.db`` (homepage preference feed) as slug ``loop``.
+    Skips unit-test / scratch DBs only.
+    """
+    skip_names = {
+        "single_test.db",
+        "homepage_guest_test.db",
+        "prefer_guest_test.db",
+    }
     out: list[UpSource] = []
     for db in sorted(data_dir.glob("*.db")):
-        if db.name in ("single_test.db", "loop.db"):
+        if db.name in skip_names:
             continue
-        if db.name.startswith("_"):
+        if db.name.startswith("_") or "_test" in db.stem or db.stem.endswith("_test"):
+            continue
+        # Homepage runtime DB: mixed owners → fixed label
+        if db.stem == "loop":
+            out.append(UpSource(slug="loop", title="首页精选", db_path=db))
             continue
         slug = db.stem
         title = slug
