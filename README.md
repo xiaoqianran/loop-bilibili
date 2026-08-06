@@ -67,46 +67,34 @@ python scripts/push_modelscope_v2.py --name haianyu
 python scripts/push_modelscope_v2.py --name xiaolaoshi
 ```
 
-### 自动抓取 → ModelScope → Pages（推荐日常）
+### 产品路径（不强制 Cookie）
 
 ```text
-每天定时 (GitHub Actions)
-  1. scrape_creator.py --from-config --push-ms   # 抓 B 站 → 本地 db → 推 ModelScope
-  2. build_subtitle_site.py                      # 生成静态站
-  3. 部署 gh-pages                               # https://xiaoqianran.github.io/loop-bilibili/
+常驻服务（本机/服务器）
+  定时刷首页推荐 (feed/rcmd，访客可用)
+       → 规则筛选（以后：标签/关键词/时长…）
+       → 入队抓字幕 (HTTP/WBI，串行限速)
+       → SQLite
+       → 可选 push ModelScope → Pages 展示
 ```
 
-**Secrets（Settings → Secrets and variables → Actions）：**
+**Cookie 不是必须的。**  
+空 Cookie = 访客态；接口照样能用。Cookie 只在你想要「登录后的个性化首页」或降低云机房 IP 风控时才有用。
 
-| Secret | 用途 |
-|--------|------|
-| `MODELSCOPE_API_TOKEN` | 推送/拉取数据集（必填） |
-| `BILI_COOKIE` | `SESSDATA=...; bili_jct=...; DedeUserID=...`（强烈建议，防 -352） |
+**真正必填的云端 Secret（若要备份/Pages）：** 只有 `MODELSCOPE_API_TOKEN`。
 
-**Pages 设置：** Deploy from a branch → **`gh-pages`** / **`/`**
+**Pages：** Deploy from a branch → `gh-pages` / `/`  
+站点：https://xiaoqianran.github.io/loop-bilibili/
 
-**Workflows：**
-
-| 名称 | 作用 |
-|------|------|
-| `Daily scrape + ModelScope + Pages` | 每天自动抓取+备份+上线（也可手动 Run） |
-| `Deploy subtitle site to GitHub Pages` | 仅从 ModelScope 重建站点 |
-
-**本地手动跑一整轮：**
+**本地：**
 
 ```bash
-# .env 里已有 MODELSCOPE_API_TOKEN；另 export BILI_COOKIE=...
-export BILI_COOKIE='SESSDATA=...; bili_jct=...; DedeUserID=...'
+# 刷一轮首页并处理字幕队列（无需 Cookie）
+PYTHONPATH=src python3 -m loop_bilibili once --max-jobs 30
 
-# 抓 config.toml 里所有 creators 并推 ModelScope
-PYTHONPATH=src python scripts/scrape_creator.py --from-config --push-ms
-
-# 本地预览站点
-python scripts/build_subtitle_site.py --from-dir data/v2 --out site --base-url /loop-bilibili
-python -m http.server -d site 8080
+# 可选：某博主全量（脚本，非主路径）
+PYTHONPATH=src python scripts/scrape_creator.py --mid 2071007724 --name 海安雨 --slug haianyu --push-ms
 ```
-
-站点：https://xiaoqianran.github.io/loop-bilibili/
 
 ## 文档
 

@@ -1,39 +1,41 @@
 # loop-bilibili v2 configuration (read by the app)
+#
+# 产品主路径（规划中）：常驻刷首页推荐 → 规则筛选 → 入队抓字幕
+# Cookie 不是必须；无 Cookie = 访客态首页/接口，可能有频控，但不强制登录。
 
 [database]
 path = "data/v2/loop.db"
 
 [sources]
-# Homepage personalized rcmd (CLI once/worker)
-homepage_enabled = false
-homepage_pages = 1
+# 主路径：首页推荐（访客也可刷；登录态才是「个性化」）
+homepage_enabled = true
+homepage_pages = 2
 homepage_ps = 12
+# 首页刷新间隔（秒）—— future worker loop 使用
+homepage_interval_s = 600
 
-# Creators to scrape (scripts/scrape_creator.py --from-config)
-[[sources.creators]]
-mid = "2071007724"
-name = "海安雨"
-slug = "haianyu"
-
-[[sources.creators]]
-mid = "346591207"
-name = "肖老师的退休生活"
-slug = "xiaolaoshi"
+# 可选：额外全量同步的博主（不是主路径；需要时再开）
+# [[sources.creators]]
+# mid = "2071007724"
+# name = "海安雨"
+# slug = "haianyu"
 
 [worker]
 poll_interval = 2.0
 subtitle_language = "zh"
-job_delay = 0.55
-job_jitter = 0.15
+# 串行限速即可，不依赖 Cookie
+job_delay = 0.8
+job_jitter = 0.2
 retry_delay = 60.0
 risk_base_delay = 15.0
 risk_max_delay = 300.0
 
 [runtime]
+# 可选。空 = 不登录，照常跑访客接口
 cookie = ""
+# 永远不要因为缺 Cookie 拒绝启动
 require_cookie = false
 
 [backup]
-# ModelScope private dataset (scripts/push_modelscope_v2.py)
 namespace = "yuminghui"
 dataset = "loop-bilibili-v2"
