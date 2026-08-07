@@ -468,20 +468,31 @@ footer { margin-top: 2rem; color: var(--muted); font-size: .8rem; border-top: 1p
 # Auto-detect works on github.io/project, jsDelivr, raw.githack, and local servers.
 JS = r"""
 function resolveSiteBase() {
-  const path = location.pathname || '';
+  // Normalize: drop trailing slash and /index.html so directory URLs
+  // like /loop-bilibili/ups/haianyu/ do NOT become the site root.
+  let path = location.pathname || '';
+  if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1);
+  path = path.replace(/\/index\.html$/i, '');
+
   // video: .../ups/{slug}/v/{bvid}.html
-  let m = path.match(/^(.*)\/ups\/[^/]+\/v\/[^/]+\.html?$/);
+  let m = path.match(/^(.*)\/ups\/[^/]+\/v\/[^/]+(?:\.html)?$/i);
   if (m) return (m[1] || '').replace(/\/$/, '');
-  // up list: .../ups/{slug}/ or .../ups/{slug}/index.html
-  m = path.match(/^(.*)\/ups\/[^/]+(?:\/index\.html)?$/);
+
+  // up list: .../ups/{slug}
+  m = path.match(/^(.*)\/ups\/[^/]+$/);
   if (m) return (m[1] || '').replace(/\/$/, '');
-  // site home index.html
-  m = path.match(/^(.*)\/index\.html$/);
+
+  // home: .../index.html already stripped → path is site root
+  // e.g. /loop-bilibili or "" 
+  const injected = String(window.SITE_BASE || '').replace(/\/$/, '');
+  if (injected && (path === injected || path === '' || path === '/')) {
+    return injected;
+  }
+  // still under /ups/... somehow → strip to parent of ups
+  m = path.match(/^(.*)\/ups(?:\/.*)?$/);
   if (m) return (m[1] || '').replace(/\/$/, '');
-  // directory URL ending with /
-  if (path.endsWith('/') && path !== '/') return path.slice(0, -1);
-  // injected fallback (build-time), e.g. /loop-bilibili
-  return String(window.SITE_BASE || '').replace(/\/$/, '');
+
+  return injected;
 }
 const SITE_BASE = resolveSiteBase();
 const ASSET_V = window.SITE_ASSET_V || '1';
