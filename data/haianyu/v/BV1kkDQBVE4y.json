@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1kkDQBVE4y",
+  "title": "90. OBQ如何将最小化剪枝损失推广到量化？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 613,
+  "text": "今天的问题是\nOBQ是如何将最小化减值损失推广到最小化\n量化损失的\n如果理解了之前的OBS的推导\n会发现这个推导呢是比较简单的\n一分钟就能说完\n那么OBS的核心思想是\n他认为德尔塔L损失变化量等于这个东西\n那么我们要最小化损失变化量\n就是要最小化这里的F而它的约束是什么呢\n就是把WI减之了\n就是把它置零了\n也就意味着德尔塔WI就是这个权重的变化量\n它等于零\n就是减至之后的权重\n减去WI就减至之前的\n那么如果把它向量化\n就变成了这个形式\n那么这个就可以用一个拉格朗日乘子法\n梯度共线\n然后把这里的目标函数和约束函数的梯度\n给求出来\n然后一通推导就先求出来德尔塔W\n然后回带G然后求出兰达\n再回带德塔W\n然后最后再把它代入F\n就可以解出来OBS的最小化损失变化量\n而OBQ呢它的不同点在于什么\n在于它不是减值\n而是量化\n也就意味着他应该是把WI量化为了QIQI\n这里表示第I个权重量化之后的结果\n也意味着德尔塔WI就是这个权重的变化量\n它应该等于QI减去WI\n而它的最小化目标是一致的\n也就是要最小化损失变化量\n这个是不变的\n然后把这个条件给它限量化\n那么把这个地方抄过来一个线\n然后就变成了这个WI减去QI\n那么会发现这个的不同点只在这一项\n所以呢对这一项WI进行整体替换\n相当于在原来的这个WI的这里呢\n都减去一个QI\n减去QI减去QI\n这样就推导完了\n也就是说OBQ他要这样进行补偿\n并且它的最小化损失变化量至少是这么多",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1kkDQBVE4y",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:17:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

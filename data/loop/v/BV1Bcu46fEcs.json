@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1Bcu46fEcs",
+  "title": "27届 Unity游戏开发求职Demo",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 705,
+  "text": "打开服务器\n启动两个客户端\n点击联机模式\n客户端自动注册信息到服务器\n左边客户端为房主服务器分配map场景给房主\n右端根据UID信息加入目标房间场景\n完全加载后\n通知服务器\n服务器推送初始化消息给客户端\n同时注册聊天服务器\n角色采用FSM流线状态机\n攻击动画播放基于时间轴制作了动作编辑器\n普通攻击采用五连击特效\n分身等需要动态生成的\n都采用对象池或者引用池\n联机环境下造成攻击时\n本地只做表现\n服务器进行伤害判断和伤害计算\n成功造成伤害则通知附近的客户端\n打开聊天界面\n分为当前队伍和私聊\n私聊模式下\n网关服务器路由转发到聊天服务器\n然后聊天服务器进行发送\n队伍模式下\n网关服务器路由转发到Mac服务器\n然后Mac服务器进行发送\n背包系统存储采用本地JSON物品\n采用EGICO表进行配置\n角色采用属性组件\n使用道具后\n角色属性进行脏标记\n由于服务器进行伤害计算\n作弊道具无法生效\n打开任务界面\n内部有多个分类任务信息\n本地JSON存储任务\n具体信息采用excel进行配置\n追踪任务左侧UI显示任务信息\n对话完成后发送对话\n完成事件任务组件进行任务更新\n敌人运行采用行为树\n使用道具\n单机模式下则本地进行伤害计算\n普通挥砍采用射线检测\n可攻击目标\n挂载HT box脚本\n启动文件服务器\n先进行版本校验\n然后下载资源\n资源热更新采用ab包代码\n热更新采用hybrid cl2\n资源下载完成\n进行验证\n项目前端采用game framework框架进行开发\n服务器采用fantasy框架\n基于时间轨迹进行动画控制\n自由拓展所需属性\n服务器采用git chat map\n三个场景\n对话背包\n聊天输入等系统采用全局控制",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Bcu46fEcs",
+  "published_at": "1786085094",
+  "fetched_at": "2026-08-08T15:09:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T15:09:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T15:09:32+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1NgMd6pEVD",
+  "title": "基于Pi的桌面多智能体工具 CodingTo，优化更新一波！今天开发脑洞把农场小游戏改造为农场生态生存游戏！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 776,
+  "text": "Hello\n大家好\n今天继续给大家还是发一个视频\n然后这两天的话就是新增加的一些功能吧\n其实核心的主要还是修复一些\n我日常使用的一些bug\n包括这个A镜头的并发调用啊\n一些小的这个交互细节\n然后呢上一次上一期的话\n我们做了一些这个一个农场的小游戏\n嗯大概就是这样一个解说\n这个动物互相吃\n然后呢我就准备把它优化一下\n然后用deep seek配合这个open eye的LUNA\n这边的话\n配置还是一个入口\n然后配合这三个agent来协作\n嗯之前已经开发了一小时40分钟\n今天的话我们继续开发\n然后我们输入一个简单的提示词\n让它继续\n然后他继续的时候呢\n我们就来看一下那个这次更新的东西\n额首先的话是字体的大小\n然后上次是有一个B站的网友说\n这个字体有点小\n只加了三个档次\n然后这边的话菜单嫌少的话也可以拖\n然后呢是这个agent的运行的时候\n这个病发的A镜的上限最大的上限嗯\n一般的话我们掉个二或者三就行\n这就有点不太好\n然后加了一个工具\n调用单次的这个时长\n他这个单位是分钟\n最大一小时\n然后增加了一个这个刚才看到的\n有一个这个系统通知\n也就是说\n当AI申请计划或者是任务结束的时候呢\n我们这边的话会有一个会有一个通知\n当然了\n这边可以关掉啊\n然后看看他这个实施的计划\n嗯然后我们就直接让他确认执行了\n然后针对此agent的执行\n这里增加了一些快捷导航\n这是问题\n这边的话就是agent\n然后我们可以看一下这个\n这个里面是可以看到完整的他的进度的\n包括改的那个代码详情呢可以看到放大一点看\n其实是一样的\n然后底部的这个文件的变更啊\n增加了一个这个可以快捷的切换\n按箭头就可以快快捷的切换他那个查看的效果\n然后呢这个游戏呢等这两天它完成的时候\n我测一测\n到时候再发一个视频\n然后今天就先简单介绍一下版本的话\n我等一会就发布到这个GITHUB上\n0.14吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1NgMd6pEVD",
+  "published_at": "1785761544",
+  "fetched_at": "2026-08-08T13:49:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 基于Pi的桌面多智能体工具 CodingTo 更新知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A[\"CodingTo 0.14 版本\"] --> B[\"核心功能\"]\n    B --> C[\"多智能体协作 (3 agents)\"]\n    B --> D[\"界面改进\"]\n    B --> E[\"系统通知\"]\n    C --> F[\"deep seek + open eye LUNA\"]\n    D --> G[\"字体大小 3 档次\"]\n    D --> H[\"菜单可拖动\"]\n    D --> I[\"快捷导航 (进度/代码/文件)\"]\n    E --> J[\"任务结束通知 (可关闭)\"]\n    C --> K[\"A镜头并发调用上限设置\"]\n    K --> L[\"常用 2~3\"]\n    K --> M[\"单次调用时长 (分钟, 最大 1h)\"]\n```\n\n关键更新证据：  \n- 版本 0.14 发布至 GitHub [BV1NgMd6pEVD P1 04:32]  \n- 多智能体协作使用 deep seek 与 open eye LUNA [BV1NgMd6pEVD P1 00:59]、[BV1NgMd6pEVD P1 01:12]  \n- 字体大小三档次因用户反馈添加 [BV1NgMd6pEVD P1 02:00]、[BV1NgMd6pEVD P1 02:04]、[BV1NgMd6pEVD P1 02:07]  \n- 菜单可拖动 [BV1NgMd6pEVD P1 02:10]  \n- A镜头并发上限设置 [BV1NgMd6pEVD P1 02:21]、[BV1NgMd6pEVD P1 02:27]  \n- 单次调用时长（分钟，最大 1 h） [BV1NgMd6pEVD P1 02:35]、[BV1NgMd6pEVD P1 02:48]、[BV1NgMd6pEVD P1 02:53]  \n- 系统通知（任务/计划结束，可关闭） [BV1NgMd6pEVD P1 03:00]、[BV1NgMd6pEVD P1 03:05]、[BV1NgMd6pEVD P1 03:09]  \n- 快捷导航：进度、代码详情、文件变更、箭头键切换 [BV1NgMd6pEVD P1 03:35]、[BV1NgMd6pEVD P1 03:45]、[BV1NgMd6pEVD P1 04:06]\n\n---\n\n## Agent执行流程\n\n```mermaid\nflowchart TD\n    A[\"输入提示词\"] --> B[\"AI 生成计划\"]\n    B --> I[\"用户确认执行\"]\n    I --> C[\"任务执行 (Agent)\"]\n    C --> D[\"系统通知 (任务结束)\"]\n    D --> E[\"用户可关闭通知\"]\n    C --> F[\"进度显示\"]\n    F --> G[\"代码详情放大查看\"]\n    G --> H[\"文件变更快捷切换 (箭头)\"]\n```\n\n关键步骤证据：  \n- 输入提示词 [BV1NgMd6pEVD P1 01:42]  \n- AI 生成计划（隐含）  \n- 用户确认执行 [BV1NgMd6pEVD P1 03:22]  \n- 任务执行 [BV1NgMd6pEVD P1 01:51]  \n- 系统通知 [BV1NgMd6pEVD P1 03:00]、[BV1NgMd6pEVD P1 03:05]  \n- 进度显示 [BV1NgMd6pEVD P1 03:45]  \n- 代码详情放大查看 [BV1NgMd6pEVD P1 03:49]  \n- 文件变更快捷切换（箭头键） [BV1NgMd6pEVD P1 04:06]\n\n---\n\n## UI改进细节\n\n```mermaid\nflowchart LR\n    A[\"字体大小\"] --> B[\"3 档次 (小/中/大)\"]\n    A --> C[\"用户反馈: 字体太小 (B站网友)\"]\n    D[\"菜单\"] --> E[\"可拖动\"]\n    F[\"系统通知\"] --> G[\"任务/计划结束弹窗\"]\n    G --> H[\"可关闭\"]\n    I[\"快捷导航\"] --> J[\"进度面板\"]\n    I --> K[\"代码详情面板\"]\n    I --> L[\"文件变更面板\"]\n    L --> M[\"箭头键快速切换\"]\n```\n\n证据摘要：  \n- 字体大小三档次 [BV1NgMd6pEVD P1 02:00]、[BV1NgMd6pEVD P1 02:04]、[BV1NgMd6pEVD P1 02:07]  \n- 用户反馈 [BV1NgMd6pEVD P1 02:04]、[BV1NgMd6pEVD P1 02:07]  \n- 菜单可拖动 [BV1NgMd6pEVD P1 02:10]  \n- 系统通知弹窗 [BV1NgMd6pEVD P1 03:00]、[BV1NgMd6pEVD P1 03:05]、[BV1NgMd6pEVD P1 03:09]  \n- 快捷导航面板 [BV1NgMd6pEVD P1 03:35]、[BV1NgMd6pEVD P1 03:45]、[BV1NgMd6pEVD P1 03:49]、[BV1NgMd6pEVD P1 04:06]\n\n---\n\n## 开发进度与发布计划\n\n```mermaid\nflowchart TD\n    A[\"上期农场小游戏\"] --> B[\"生态生存游戏改造\"]\n    B --> C[\"上次开发时长 1h40m\"]\n    C --> D[\"本次继续开发\"]\n    D --> E[\"完成后测评\"]\n    E --> F[\"发布视频\"]\n    D --> G[\"版本 0.14\"]\n    G --> H[\"发布到 GitHub\"]\n```\n\n时间线证据：  \n- 上期农场小游戏 [BV1NgMd6pEVD P1 00:31]  \n- 生态生存游戏改造 [BV1NgMd6pEVD P1 00:56]  \n- 上次开发时长 [BV1NgMd6pEVD P1 01:18]  \n- 本次继续开发 [BV1NgMd6pEVD P1 01:23]  \n- 完成后测评 [BV1NgMd6pEVD P1 04:19]  \n- 发布视频 [BV1NgMd6pEVD P1 04:20]  \n- 版本 0.14 [BV1NgMd6pEVD P1 04:27]  \n- 发布到 GitHub [BV1NgMd6pEVD P1 04:32]",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"CodingTo 0.14 版本\"] --> B[\"核心功能\"]\n    B --> C[\"多智能体协作 (3 agents)\"]\n    B --> D[\"界面改进\"]\n    B --> E[\"系统通知\"]\n    C --> F[\"deep seek + open eye LUNA\"]\n    D --> G[\"字体大小 3 档次\"]\n    D --> H[\"菜单可拖动\"]\n    D --> I[\"快捷导航 (进度/代码/文件)\"]\n    E --> J[\"任务结束通知 (可关闭)\"]\n    C --> K[\"A镜头并发调用上限设置\"]\n    K --> L[\"常用 2~3\"]\n    K --> M[\"单次调用时长 (分钟, 最大 1h)\"]"
+        },
+        {
+          "title": "Agent执行流程",
+          "code": "flowchart TD\n    A[\"输入提示词\"] --> B[\"AI 生成计划\"]\n    B --> I[\"用户确认执行\"]\n    I --> C[\"任务执行 (Agent)\"]\n    C --> D[\"系统通知 (任务结束)\"]\n    D --> E[\"用户可关闭通知\"]\n    C --> F[\"进度显示\"]\n    F --> G[\"代码详情放大查看\"]\n    G --> H[\"文件变更快捷切换 (箭头)\"]"
+        },
+        {
+          "title": "UI改进细节",
+          "code": "flowchart LR\n    A[\"字体大小\"] --> B[\"3 档次 (小/中/大)\"]\n    A --> C[\"用户反馈: 字体太小 (B站网友)\"]\n    D[\"菜单\"] --> E[\"可拖动\"]\n    F[\"系统通知\"] --> G[\"任务/计划结束弹窗\"]\n    G --> H[\"可关闭\"]\n    I[\"快捷导航\"] --> J[\"进度面板\"]\n    I --> K[\"代码详情面板\"]\n    I --> L[\"文件变更面板\"]\n    L --> M[\"箭头键快速切换\"]"
+        },
+        {
+          "title": "开发进度与发布计划",
+          "code": "flowchart TD\n    A[\"上期农场小游戏\"] --> B[\"生态生存游戏改造\"]\n    B --> C[\"上次开发时长 1h40m\"]\n    C --> D[\"本次继续开发\"]\n    D --> E[\"完成后测评\"]\n    E --> F[\"发布视频\"]\n    D --> G[\"版本 0.14\"]\n    G --> H[\"发布到 GitHub\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T13:49:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 基于Pi的桌面多智能体工具 CodingTo 更新知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A[\"CodingTo 0.14 版本\"] --> B[\"核心功能\"]\n    B --> C[\"多智能体协作 (3 agents)\"]\n    B --> D[\"界面改进\"]\n    B --> E[\"系统通知\"]\n    C --> F[\"deep seek + open eye LUNA\"]\n    D --> G[\"字体大小 3 档次\"]\n    D --> H[\"菜单可拖动\"]\n    D --> I[\"快捷导航 (进度/代码/文件)\"]\n    E --> J[\"任务结束通知 (可关闭)\"]\n    C --> K[\"A镜头并发调用上限设置\"]\n    K --> L[\"常用 2~3\"]\n    K --> M[\"单次调用时长 (分钟, 最大 1h)\"]\n```\n\n关键更新证据：  \n- 版本 0.14 发布至 GitHub [BV1NgMd6pEVD P1 04:32]  \n- 多智能体协作使用 deep seek 与 open eye LUNA [BV1NgMd6pEVD P1 00:59]、[BV1NgMd6pEVD P1 01:12]  \n- 字体大小三档次因用户反馈添加 [BV1NgMd6pEVD P1 02:00]、[BV1NgMd6pEVD P1 02:04]、[BV1NgMd6pEVD P1 02:07]  \n- 菜单可拖动 [BV1NgMd6pEVD P1 02:10]  \n- A镜头并发上限设置 [BV1NgMd6pEVD P1 02:21]、[BV1NgMd6pEVD P1 02:27]  \n- 单次调用时长（分钟，最大 1 h） [BV1NgMd6pEVD P1 02:35]、[BV1NgMd6pEVD P1 02:48]、[BV1NgMd6pEVD P1 02:53]  \n- 系统通知（任务/计划结束，可关闭） [BV1NgMd6pEVD P1 03:00]、[BV1NgMd6pEVD P1 03:05]、[BV1NgMd6pEVD P1 03:09]  \n- 快捷导航：进度、代码详情、文件变更、箭头键切换 [BV1NgMd6pEVD P1 03:35]、[BV1NgMd6pEVD P1 03:45]、[BV1NgMd6pEVD P1 04:06]\n\n---\n\n## Agent执行流程\n\n```mermaid\nflowchart TD\n    A[\"输入提示词\"] --> B[\"AI 生成计划\"]\n    B --> I[\"用户确认执行\"]\n    I --> C[\"任务执行 (Agent)\"]\n    C --> D[\"系统通知 (任务结束)\"]\n    D --> E[\"用户可关闭通知\"]\n    C --> F[\"进度显示\"]\n    F --> G[\"代码详情放大查看\"]\n    G --> H[\"文件变更快捷切换 (箭头)\"]\n```\n\n关键步骤证据：  \n- 输入提示词 [BV1NgMd6pEVD P1 01:42]  \n- AI 生成计划（隐含）  \n- 用户确认执行 [BV1NgMd6pEVD P1 03:22]  \n- 任务执行 [BV1NgMd6pEVD P1 01:51]  \n- 系统通知 [BV1NgMd6pEVD P1 03:00]、[BV1NgMd6pEVD P1 03:05]  \n- 进度显示 [BV1NgMd6pEVD P1 03:45]  \n- 代码详情放大查看 [BV1NgMd6pEVD P1 03:49]  \n- 文件变更快捷切换（箭头键） [BV1NgMd6pEVD P1 04:06]\n\n---\n\n## UI改进细节\n\n```mermaid\nflowchart LR\n    A[\"字体大小\"] --> B[\"3 档次 (小/中/大)\"]\n    A --> C[\"用户反馈: 字体太小 (B站网友)\"]\n    D[\"菜单\"] --> E[\"可拖动\"]\n    F[\"系统通知\"] --> G[\"任务/计划结束弹窗\"]\n    G --> H[\"可关闭\"]\n    I[\"快捷导航\"] --> J[\"进度面板\"]\n    I --> K[\"代码详情面板\"]\n    I --> L[\"文件变更面板\"]\n    L --> M[\"箭头键快速切换\"]\n```\n\n证据摘要：  \n- 字体大小三档次 [BV1NgMd6pEVD P1 02:00]、[BV1NgMd6pEVD P1 02:04]、[BV1NgMd6pEVD P1 02:07]  \n- 用户反馈 [BV1NgMd6pEVD P1 02:04]、[BV1NgMd6pEVD P1 02:07]  \n- 菜单可拖动 [BV1NgMd6pEVD P1 02:10]  \n- 系统通知弹窗 [BV1NgMd6pEVD P1 03:00]、[BV1NgMd6pEVD P1 03:05]、[BV1NgMd6pEVD P1 03:09]  \n- 快捷导航面板 [BV1NgMd6pEVD P1 03:35]、[BV1NgMd6pEVD P1 03:45]、[BV1NgMd6pEVD P1 03:49]、[BV1NgMd6pEVD P1 04:06]\n\n---\n\n## 开发进度与发布计划\n\n```mermaid\nflowchart TD\n    A[\"上期农场小游戏\"] --> B[\"生态生存游戏改造\"]\n    B --> C[\"上次开发时长 1h40m\"]\n    C --> D[\"本次继续开发\"]\n    D --> E[\"完成后测评\"]\n    E --> F[\"发布视频\"]\n    D --> G[\"版本 0.14\"]\n    G --> H[\"发布到 GitHub\"]\n```\n\n时间线证据：  \n- 上期农场小游戏 [BV1NgMd6pEVD P1 00:31]  \n- 生态生存游戏改造 [BV1NgMd6pEVD P1 00:56]  \n- 上次开发时长 [BV1NgMd6pEVD P1 01:18]  \n- 本次继续开发 [BV1NgMd6pEVD P1 01:23]  \n- 完成后测评 [BV1NgMd6pEVD P1 04:19]  \n- 发布视频 [BV1NgMd6pEVD P1 04:20]  \n- 版本 0.14 [BV1NgMd6pEVD P1 04:27]  \n- 发布到 GitHub [BV1NgMd6pEVD P1 04:32]",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"CodingTo 0.14 版本\"] --> B[\"核心功能\"]\n    B --> C[\"多智能体协作 (3 agents)\"]\n    B --> D[\"界面改进\"]\n    B --> E[\"系统通知\"]\n    C --> F[\"deep seek + open eye LUNA\"]\n    D --> G[\"字体大小 3 档次\"]\n    D --> H[\"菜单可拖动\"]\n    D --> I[\"快捷导航 (进度/代码/文件)\"]\n    E --> J[\"任务结束通知 (可关闭)\"]\n    C --> K[\"A镜头并发调用上限设置\"]\n    K --> L[\"常用 2~3\"]\n    K --> M[\"单次调用时长 (分钟, 最大 1h)\"]"
+    },
+    {
+      "title": "Agent执行流程",
+      "code": "flowchart TD\n    A[\"输入提示词\"] --> B[\"AI 生成计划\"]\n    B --> I[\"用户确认执行\"]\n    I --> C[\"任务执行 (Agent)\"]\n    C --> D[\"系统通知 (任务结束)\"]\n    D --> E[\"用户可关闭通知\"]\n    C --> F[\"进度显示\"]\n    F --> G[\"代码详情放大查看\"]\n    G --> H[\"文件变更快捷切换 (箭头)\"]"
+    },
+    {
+      "title": "UI改进细节",
+      "code": "flowchart LR\n    A[\"字体大小\"] --> B[\"3 档次 (小/中/大)\"]\n    A --> C[\"用户反馈: 字体太小 (B站网友)\"]\n    D[\"菜单\"] --> E[\"可拖动\"]\n    F[\"系统通知\"] --> G[\"任务/计划结束弹窗\"]\n    G --> H[\"可关闭\"]\n    I[\"快捷导航\"] --> J[\"进度面板\"]\n    I --> K[\"代码详情面板\"]\n    I --> L[\"文件变更面板\"]\n    L --> M[\"箭头键快速切换\"]"
+    },
+    {
+      "title": "开发进度与发布计划",
+      "code": "flowchart TD\n    A[\"上期农场小游戏\"] --> B[\"生态生存游戏改造\"]\n    B --> C[\"上次开发时长 1h40m\"]\n    C --> D[\"本次继续开发\"]\n    D --> E[\"完成后测评\"]\n    E --> F[\"发布视频\"]\n    D --> G[\"版本 0.14\"]\n    G --> H[\"发布到 GitHub\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T13:49:36+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV14rMk69E6e",
+  "title": "vLLM-Omni v0.26.0 震撼发布 & MiniMax H3 同时上线",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 223,
+  "text": "Nothing beats a jet to holiday\n♪ The cofnba tia theme zone in the ♪\nTemper with a sis set to rap\n输一下现在的画面吗\n好的\n我现在看到一个戴着眼镜和口罩的年轻男子\n正坐在办公室里\n头上戴着一个黑色的头戴式耳机\n请你告诉我电影信条是谁导演的\n电影系调试\n由克里斯托弗诺兰导演的嗯\n他还导演过哪些其他的作品\n他还导演过到梦空间\n蝙蝠侠\n黑暗骑士三部曲等等",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14rMk69E6e",
+  "published_at": "1785915049",
+  "fetched_at": "2026-08-08T04:57:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# vLLM-Omni v0.26.0 震撼发布 & MiniMax H3 同时上线 知识图谱\n\n## Christopher Nolan 电影导演关系\n```mermaid\nflowchart TD\n    NL[\"克里斯托弗·诺兰（导演）\"]\n    T1[\"《信条》（Tenet）\"]\n    T2[\"《盗梦空间》（Inception）\"]\n    T3[\"《蝙蝠侠》系列\"]\n    T4[\"《黑暗骑士》三部曲\"]\n    NL --> T1\n    NL --> T2\n    NL --> T3\n    NL --> T4\n```\n\n## 场景描述\n```mermaid\nflowchart TD\n    SP[\"年轻男子\"]\n    GL[\"戴眼镜\"]\n    MS[\"戴口罩\"]\n    HC[\"黑色头戴式耳机\"]\n    OF[\"坐在办公室\"]\n    SP --> GL\n    SP --> MS\n    SP --> HC\n    SP --> OF\n```\n\n## 问答流程\n```mermaid\nflowchart TD\n    Q1[\"请你告诉我电影《信条》是谁导演的\"]\n    A1[\"克里斯托弗·诺兰导演\"]\n    Q2[\"他还导演过哪些其他的作品\"]\n    A2[\"《盗梦空间》《蝙蝠侠》《黑暗骑士》三部曲等\"]\n    Q1 --> A1\n    Q2 --> A2\n```",
+      "diagrams": [
+        {
+          "title": "Christopher Nolan 电影导演关系",
+          "code": "flowchart TD\n    NL[\"克里斯托弗·诺兰（导演）\"]\n    T1[\"《信条》（Tenet）\"]\n    T2[\"《盗梦空间》（Inception）\"]\n    T3[\"《蝙蝠侠》系列\"]\n    T4[\"《黑暗骑士》三部曲\"]\n    NL --> T1\n    NL --> T2\n    NL --> T3\n    NL --> T4"
+        },
+        {
+          "title": "场景描述",
+          "code": "flowchart TD\n    SP[\"年轻男子\"]\n    GL[\"戴眼镜\"]\n    MS[\"戴口罩\"]\n    HC[\"黑色头戴式耳机\"]\n    OF[\"坐在办公室\"]\n    SP --> GL\n    SP --> MS\n    SP --> HC\n    SP --> OF"
+        },
+        {
+          "title": "问答流程",
+          "code": "flowchart TD\n    Q1[\"请你告诉我电影《信条》是谁导演的\"]\n    A1[\"克里斯托弗·诺兰导演\"]\n    Q2[\"他还导演过哪些其他的作品\"]\n    A2[\"《盗梦空间》《蝙蝠侠》《黑暗骑士》三部曲等\"]\n    Q1 --> A1\n    Q2 --> A2"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T04:57:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# vLLM-Omni v0.26.0 震撼发布 & MiniMax H3 同时上线 知识图谱\n\n## Christopher Nolan 电影导演关系\n```mermaid\nflowchart TD\n    NL[\"克里斯托弗·诺兰（导演）\"]\n    T1[\"《信条》（Tenet）\"]\n    T2[\"《盗梦空间》（Inception）\"]\n    T3[\"《蝙蝠侠》系列\"]\n    T4[\"《黑暗骑士》三部曲\"]\n    NL --> T1\n    NL --> T2\n    NL --> T3\n    NL --> T4\n```\n\n## 场景描述\n```mermaid\nflowchart TD\n    SP[\"年轻男子\"]\n    GL[\"戴眼镜\"]\n    MS[\"戴口罩\"]\n    HC[\"黑色头戴式耳机\"]\n    OF[\"坐在办公室\"]\n    SP --> GL\n    SP --> MS\n    SP --> HC\n    SP --> OF\n```\n\n## 问答流程\n```mermaid\nflowchart TD\n    Q1[\"请你告诉我电影《信条》是谁导演的\"]\n    A1[\"克里斯托弗·诺兰导演\"]\n    Q2[\"他还导演过哪些其他的作品\"]\n    A2[\"《盗梦空间》《蝙蝠侠》《黑暗骑士》三部曲等\"]\n    Q1 --> A1\n    Q2 --> A2\n```",
+  "diagrams": [
+    {
+      "title": "Christopher Nolan 电影导演关系",
+      "code": "flowchart TD\n    NL[\"克里斯托弗·诺兰（导演）\"]\n    T1[\"《信条》（Tenet）\"]\n    T2[\"《盗梦空间》（Inception）\"]\n    T3[\"《蝙蝠侠》系列\"]\n    T4[\"《黑暗骑士》三部曲\"]\n    NL --> T1\n    NL --> T2\n    NL --> T3\n    NL --> T4"
+    },
+    {
+      "title": "场景描述",
+      "code": "flowchart TD\n    SP[\"年轻男子\"]\n    GL[\"戴眼镜\"]\n    MS[\"戴口罩\"]\n    HC[\"黑色头戴式耳机\"]\n    OF[\"坐在办公室\"]\n    SP --> GL\n    SP --> MS\n    SP --> HC\n    SP --> OF"
+    },
+    {
+      "title": "问答流程",
+      "code": "flowchart TD\n    Q1[\"请你告诉我电影《信条》是谁导演的\"]\n    A1[\"克里斯托弗·诺兰导演\"]\n    Q2[\"他还导演过哪些其他的作品\"]\n    A2[\"《盗梦空间》《蝙蝠侠》《黑暗骑士》三部曲等\"]\n    Q1 --> A1\n    Q2 --> A2"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T04:57:16+00:00"
+}

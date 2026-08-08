@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1tT7S6YEFF",
+  "title": "分享一个免费 API 中转站，Claude、gork、AI 工具都可以接入，各位天才程序员赶快蹬.....",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 142,
+  "text": "但能看到吧\n这个\n这个挺便宜哦\n生活感觉都挺便宜的\n这个呃\n这不是这个这个\n他这个是备用渠道\n这个是主要渠道\n还有这个\n还有我们最常用的\n哎对同一歌手啊\n就像一个jg\n哦日常用的这个\n然后还有这这个这些玩意儿都可以用\n适合于我感觉适合于大工作室干好吧\n大家说对不对\n便不便宜\n任你们选",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1tT7S6YEFF",
+  "published_at": "1780719929",
+  "fetched_at": "2026-08-08T00:25:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 免费 API 中转站知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"免费 API 中转站\"]\n    A2[\"可接入 Claude\"]\n    A3[\"可接入 gork\"]\n    A4[\"可接入其他 AI 工具\"]\n    A5[\"费用低廉\"]\n    A6[\"主要渠道\"]\n    A7[\"备用渠道\"]\n    A8[\"常用渠道\"]\n    A9[\"适用大工作室\"]\n    A10[\"用户自由选择\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A1 --> A5\n    A1 --> A6\n    A1 --> A7\n    A1 --> A8\n    A1 --> A9\n    A1 --> A10\n```\n\n## 使用流程\n```mermaid\nflowchart LR\n    B1[\"选择渠道\"]\n    B2[\"主要渠道\"]\n    B3[\"备用渠道\"]\n    B4[\"常用渠道\"]\n    B5[\"检查费用\"]\n    B6[\"低费用\"]\n    B7[\"高费用\"]\n    B8[\"适配工作室需求\"]\n    B9[\"接入 Claude\"]\n    B10[\"接入 gork\"]\n    B11[\"接入其他工具\"]\n    B12[\"完成使用\"]\n\n    B1 --> B2\n    B1 --> B3\n    B1 --> B4\n    B2 --> B5\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B6 --> B8\n    B8 --> B9\n    B8 --> B10\n    B8 --> B11\n    B9 --> B12\n    B10 --> B12\n    B11 --> B12\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"免费 API 中转站\"]\n    A2[\"可接入 Claude\"]\n    A3[\"可接入 gork\"]\n    A4[\"可接入其他 AI 工具\"]\n    A5[\"费用低廉\"]\n    A6[\"主要渠道\"]\n    A7[\"备用渠道\"]\n    A8[\"常用渠道\"]\n    A9[\"适用大工作室\"]\n    A10[\"用户自由选择\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A1 --> A5\n    A1 --> A6\n    A1 --> A7\n    A1 --> A8\n    A1 --> A9\n    A1 --> A10"
+        },
+        {
+          "title": "使用流程",
+          "code": "flowchart LR\n    B1[\"选择渠道\"]\n    B2[\"主要渠道\"]\n    B3[\"备用渠道\"]\n    B4[\"常用渠道\"]\n    B5[\"检查费用\"]\n    B6[\"低费用\"]\n    B7[\"高费用\"]\n    B8[\"适配工作室需求\"]\n    B9[\"接入 Claude\"]\n    B10[\"接入 gork\"]\n    B11[\"接入其他工具\"]\n    B12[\"完成使用\"]\n\n    B1 --> B2\n    B1 --> B3\n    B1 --> B4\n    B2 --> B5\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B6 --> B8\n    B8 --> B9\n    B8 --> B10\n    B8 --> B11\n    B9 --> B12\n    B10 --> B12\n    B11 --> B12"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-08T00:25:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 免费 API 中转站知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"免费 API 中转站\"]\n    A2[\"可接入 Claude\"]\n    A3[\"可接入 gork\"]\n    A4[\"可接入其他 AI 工具\"]\n    A5[\"费用低廉\"]\n    A6[\"主要渠道\"]\n    A7[\"备用渠道\"]\n    A8[\"常用渠道\"]\n    A9[\"适用大工作室\"]\n    A10[\"用户自由选择\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A1 --> A5\n    A1 --> A6\n    A1 --> A7\n    A1 --> A8\n    A1 --> A9\n    A1 --> A10\n```\n\n## 使用流程\n```mermaid\nflowchart LR\n    B1[\"选择渠道\"]\n    B2[\"主要渠道\"]\n    B3[\"备用渠道\"]\n    B4[\"常用渠道\"]\n    B5[\"检查费用\"]\n    B6[\"低费用\"]\n    B7[\"高费用\"]\n    B8[\"适配工作室需求\"]\n    B9[\"接入 Claude\"]\n    B10[\"接入 gork\"]\n    B11[\"接入其他工具\"]\n    B12[\"完成使用\"]\n\n    B1 --> B2\n    B1 --> B3\n    B1 --> B4\n    B2 --> B5\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B6 --> B8\n    B8 --> B9\n    B8 --> B10\n    B8 --> B11\n    B9 --> B12\n    B10 --> B12\n    B11 --> B12\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"免费 API 中转站\"]\n    A2[\"可接入 Claude\"]\n    A3[\"可接入 gork\"]\n    A4[\"可接入其他 AI 工具\"]\n    A5[\"费用低廉\"]\n    A6[\"主要渠道\"]\n    A7[\"备用渠道\"]\n    A8[\"常用渠道\"]\n    A9[\"适用大工作室\"]\n    A10[\"用户自由选择\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A1 --> A5\n    A1 --> A6\n    A1 --> A7\n    A1 --> A8\n    A1 --> A9\n    A1 --> A10"
+    },
+    {
+      "title": "使用流程",
+      "code": "flowchart LR\n    B1[\"选择渠道\"]\n    B2[\"主要渠道\"]\n    B3[\"备用渠道\"]\n    B4[\"常用渠道\"]\n    B5[\"检查费用\"]\n    B6[\"低费用\"]\n    B7[\"高费用\"]\n    B8[\"适配工作室需求\"]\n    B9[\"接入 Claude\"]\n    B10[\"接入 gork\"]\n    B11[\"接入其他工具\"]\n    B12[\"完成使用\"]\n\n    B1 --> B2\n    B1 --> B3\n    B1 --> B4\n    B2 --> B5\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B6 --> B8\n    B8 --> B9\n    B8 --> B10\n    B8 --> B11\n    B9 --> B12\n    B10 --> B12\n    B11 --> B12"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T00:25:19+00:00"
+}

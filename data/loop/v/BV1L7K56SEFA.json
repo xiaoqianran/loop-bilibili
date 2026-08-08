@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1L7K56SEFA",
+  "title": "Flax Engine 1.12正式发布 - 这款强大的C#/C++游戏引擎正变得越来越好！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4351,
+  "text": "女士们先生们大家好\n我是game from scratched mike\n今天我们要聊聊我最喜欢的冷门游戏引擎之一\n那就是flex\n我觉得flex有点像独立版的虚幻引擎\n它和虚幻引擎有很多相似的感觉\n比如类似蓝图的编程层\n实时C加加编程等等\n但显然它是一个更加简单的程序\n它的体积也只有虚幻引擎的1/10\n甚至1%\n你现在看到的就是flex的实际运行效果\n我们今天之所以要聊它\n是因为这个原因\n1.12版本刚刚发布\n严格来说他是在周一发布的\n但我在英联邦国家那天是为了纪念女王的假期\n所以今天我们要来看看flex editor1.12\n以及这个版本有哪些新内容\n那么让我们直接来看一下它的实际表现吧\n注意到它编译的速度有多快了吗\n这真的非常棒\n顺便说一下\n这个是KENNY的免费游戏演示\n它已经被编译并构建完成了\n这可以让你了解它的工作方式\n以及构建速度有多快\n在这方面它和虚幻引擎确实有很大的不同\n所以正如我之前提到的\n你可以用C加加作为你的编程语言\n在这里你可以看到这个家伙这辆载具呃\n我可以选让我回到编辑器模式\n我可以在这里选择这辆载具\n你会注意到它上面附加了很多东西\n比如说它附加了一个载具组件\n和一个刚体组件等等\n其实vehicle只是一个脚本\n一个C加加类型的脚本\n你可以在这里看到vehicle cp\n让我们把它加载出来看看\n这样你就可以看到呃\n它在这里是什么样子的\n这里有一段简单的代码和逻辑\n用来控制这个家伙在游戏世界里移动\n如你所见\n这是传统的回调方式\n所以在on update时\n每一帧都会被调用\n你可以在这里编写你的游戏逻辑\n现在如果你不想用C加加编程\n也不用担心\n因为你也可以用C来实现\n这里很酷的一点是\n你会注意到这里所有的东西\n比如模型\n车身轮子等等\n都被标记为API字段\n并且它们的值是在那边设置的\n在这里你可以看到有各种不同的选项可供选择\n但同样C加加并不是你唯一的选择\n你也可以用C来编写这些内容\n所以你有很多不同的选择\n你还可以制作游戏引擎插件等等\n另外还有一种可视化脚本语言\n实际上这次版本更新中\n可视化脚本语言也得到了很多关注\n所以在flex1.12中\n还有其他一些值得一提的内容\n其中有些内容虽然比较小\n但也很酷\n例如在这里你会注意到现在有这些导航工具\n可以显示各种不同的轴线\n然后如果你把它移开\n你会看到它会自动相应的旋转下来\n所以你可以快速对齐到各种不同的方向\n不过很遗憾\n我觉得你还不能进行自由旋转\n所以如果你想这么做\n还是得用传统的方法\n这就是这里新增的功能之一\n在这个版本中\n他们还加入了另一项功能呃\n我就不演示了\n因为我没有安装所有的前置条件\n但就是这个现在这里有了web平台的构建选项\n现在这个演示之所以用的是C加加\n是有原因的\nMSCRIPTION后端是实现这个功能的唯一方式\n所以你的C是无法使用\n目前如果要针对web目标平台\n你必须使用C加加\n不过既然我们已经在这里\n你可能会注意到一些事情\nPLAYSTATION5XBOXIOS啊\nMac o s s linux呃\n各种不同的微软平台\nandroid等等\n你可以用这个工具为各种主机和平台进行构建\n再说一次\n这里有一个很大的新增功能\n目前还处于实验阶段\n就是1.12版本内置了web GPU\n这非常不错\n此外这个版本还有其他一些新变化\n比如说这里我将进入后期特效\n然后我们往下滚动就会找到全局光照\n这个DDGI是一种实时光线追踪\n全局光照选项\n现在它已经被认为可以用于生产环境了\n你可以在这里控制它的效果\n比如全局光照的强度\n光线数量\n反弹次数等等\n当然你也可以关闭它\n因为比如在这种卡通风格下\nDDGI可能就不太适用了\n不过这个实时全局光照功能\n现在已经在这个版本中启用了\n所以这是一个非常棒的小版本更新\n他们在这个版本中做的另一件事\n是在这边有一个区域有很多新的变化\n就是让我到这里来看看哦\n我不能在那里创建它\n抱歉\n我刚才在脚本编写部分\n我们到内容部分\n这里回到内容跟目录\n你会注意到这里有个新建\n然后这里有这个可视化脚本语言\n你可以用它来做动画啊\n还有这里各种不同的小功能\n你也可以用它来实现游戏逻辑\n你可以像使用蓝图一样用它\n但也可以用来做动画树\n状态机之类的东西\n我们继续吧\n我们来创建一个新的角色\n然后砰这就是我们新建的脚本\n我把它叫做scripting\n其实这个名字没什么意义呃\n不过他们在这里做了一些改进\n真的提升了这个功能的实现方式\n现在对于银角有了新的拖放选项\n所以我们看到这里这一切的设置方式都是新的\n更加简洁\n基本上整个可视化脚本系统都经过了重新设计\n他们还给它起了一个专属的名字\n等我们切换到发布说明部分时\n我会再回到这个话题\n关于引脚的工作方式有很多更新\n比如快速对齐和固定\n还有视觉外观的重新设计\n所以现在看起来更加简洁\n所以如果你想用可视化语言来编写脚本\n这里也是有这个选项的\n而且实际上用起来并不难\n我记得GODOT也有一个可视化脚本语言\n但那真的挺麻烦的\n但在这个案例中\n他们其实做的相当不错\n所以如果你想了解flex\n可以像这样访问flex engineer com呃\n你会注意到它支持多个不同的平台\n所以你可以在linux Mac以及windows上获取编辑器工具\n这里有很多事例\n还有一些关于如何从其他游戏引擎\n迁移过来的指南\n在功能方面它有非常多\n再次强调\n我觉得最好的方式来形容flex\n就是它很像unity游戏引擎的一个轻量级\n后起之秀的版本\nunity是最相似的\n做法\n因为你可以使用像CC加加这样的脚本语言\n当然你也可以用C\n它支持多种不同的平台\n包括各种不同的主机\n它支持大世界\n比如64位精度\n可以创建极其庞大的世界\n然后你还有像布料模拟世界编辑工具\n用于创建地形\n植被等等\n动画工具也包含在其中\n它同样像errol engine一样源码可用\n所以这并不是像GOODLE那样的开源\n它是像default或unreal engine那样的源码可用\n更像unreal engine\n因为它也是一个商业游戏引擎\n这一点一定要注意\n但只有当你赚钱了才需要付费\n而且只有当你在一个季度内\n赚超过25万美元时才需要付费\n所以在三个月内\n如果你赚超过25万美元\n你需要支付四个百分点的版税\n在我看来这个政策非常宽松\n所有的源代码都是开放的\n还有视力等资源帮助你快速上手呃\n关于我们刚才提到的1.12版本发布\n他们有几项新内容正在进行中\n很酷的一点是\n他们确实有一款游戏已经上线了steam\n所以看到这个引擎有正式发行的作品\n还是挺不错的\n越来越多\n这样的成功案例总是一件令人高兴的事\n现在我们这里最大的亮点是对网页的支持\n所以你可以构建呃\n他们有一个用于绘图的外部GPU后端呃\n你可以把你的游戏导出\n然后在线上托管\n不过目前还是有一些限制\n比如说现在它只支持C加加脚本编写\n所以目前还不支持C\n我们这里还有其他一些新功能\n我们现在有了弹簧骨骼物理效果\n你可以看到它的实际效果\n比如在这里\n那家伙现在就在一个弹簧骨骼上呃\n这通常被称为抖动物理呃\n我也不知道为什么要叫它抖动物理\n或者你到底想让什么东西抖动\n但总之这是一个可选项呃\n你可以在这里看到\n同样你可以用他们的可视化设置\n来做动画相关的事情\n而且我们现在也加入了这个新的弹簧骨骼\n图形编辑器进行了全面升级\n所以现在更加直观可见了\n图表的可读性也得到了提升\n我们还增加了许多新功能\n比如根据内容自动调整大小\n增加了轻微阴影\n轮廓线变粗等等\n现在你可以通过按shift加F5之类的快捷键\n聚焦选中的节点\n这些都是为了提升可视化脚本方面的使用体验\n我们还有m s s sign\n抱歉\n多通道有符号距离场字体即将登陆flags\n这些字体更清晰\n效果直观可见\n有符号距离场的优势在于类似矢量图形\n你可以无限放大\n边缘依然锐利\nDDGI现在已经被认为可以用于生产环境了\n再次说明\n这就是他们的动态漫反射全局光照\n这带来了更快且更优的实时全局光照\n光线追踪效果呃\n呃所以现在它已经被认为可以用于生产环境\n此外他们还做了一些改进\n现在他们的图形演示套件在RTX2080上\n以4K分辨率无上采样的情况下\n可以达到150帧每秒\n这相当令人印象深刻呃\n我们还可以看到\n新的方向控制器已经加入进来了\n他们现在有了游戏模式\n所以在这里按下G\n你就可以去掉所有像网格之类的东西\n基本上就是美观模式嗯\n然后我们有了SDL平台后端\n所以这是一个抽象层\n他们还增加了用SDL3编译引擎的选项\n用于处理输入和窗口管理内容\n窗口中的树状视图\n现在采用了更紧凑的树状结构\n环境探针支持和投影\n你应该可以直接看到他们的实际效果\n还有对整个V进行了改进\n这个vs jack是他们用于所有节点和图形\n相关内容的后端工具\n所以现在可以更简洁的把各种东西拼接在一起\n然后你可以按住alt键\n再按住鼠标右键拖动到另一个节点上\n要使用它只需将鼠标光标悬停在某个节点附近\n按住alt键和鼠标右键\n然后拖动到另一个节点\n这样就可以实现懒连接\n此外节点连接方式本身也有一些改进\n线性色彩空间工作流的改进\n新的调试工具\n这就是本次的发布内容\n这就是flex1.12\n如果你还没有了解过这个游戏引擎\n我强烈建议你去试试看\n顺便说一下\nflex引擎是再次强调它不是开源的\n它采用的是自己的专有许可证\n它和虚幻引擎一样\n属于源码可用\n所以如果你想查看源码是可以的\n但请务必注意\n这不是一个开源的游戏引擎\n它有一些限制\n你不能随意构建自己的版本并使用\n除非在赚取25万美元之后\n支付4%的版税\n这只是需要注意的一点\n还有我们刚才看到的\n那个基于kennis ring key的演示已经被移植过来了\n如果你想找一个好的起点\n可以去看看他们把它作为web GPU的事例\n所以这里所有的逻辑都是用C加加源码实现的\n呃\n忽略那些cs文件\n那些只适用于构建项目的\n所以你可以看到这里所有不同的游戏逻辑等\n都是用C加加实现的\n如果你想了解如何用flex引擎和C加加\n来制作游戏\n这个经过修改的kennis racing版本\n绝对是你最好的选择之一\n而且它也可以获取\n我会在下方的相关文章中附上链接\n各位女士们\n先生们\n这就是flex\nflex引擎\n可以在flex engine dot com获取\n几乎支持所有主流平台\n再次强调\n作为一个小型引擎\n它的能力总是让我感到惊讶\n而且在很多方面\n它的打磨程度也非常高\n如果你还没有了解过flex\n我强烈建议你去试试看\n这是一款非常酷的引擎\n而且它还在不断进步\n好啦\n欢迎在下方告诉我\n你的看法\n请在评论区留言\n我们下次再聊再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1L7K56SEFA",
+  "published_at": "1784300400",
+  "fetched_at": "2026-08-06T23:42:06+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Flex Engine 1.12 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    Engine[\"Flex Engine\"] --> Version1_12[\"版本 1.12\"]\n    Engine --> SizeComp[\"体积约为 Unreal 1/10\"]\n    Engine --> SimilarUnreal[\"类似 Unreal 引擎\"]\n    Engine --> SimilarUnity[\"类似 Unity 引擎\"]\n    Engine --> License[\"专有许可证\"]\n    License --> SourceAvail[\"源码可用\"]\n    License --> Commercial[\"商业使用\"]\n```\n\n## 语言与脚本系统\n```mermaid\nflowchart TD\n    FlexEngine --> Cpp[\"C++ 支持\"]\n    FlexEngine --> C[\"C 支持\"]\n    FlexEngine --> VisualScript[\"可视化脚本\"]\n    VisualScript --> BlueprintLike[\"类 Blueprint\"]\n    VehicleScript[\"Vehicle 脚本\"] --> Cpp\n    OnUpdate[\"OnUpdate 回调\"] --> Frame[\"每帧调用\"]\n    APIFields[\"API 字段\"] --> Editor[\"编辑器可见\"]\n    DragDrop[\"拖拽创建\"] --> UIEnhance[\"UI 改进\"]\n    NodeAlign[\"快速对齐\"] --> UIEnhance\n    VisualScript --> VSRedesign[\"可视化脚本重新设计\"]\n```\n\n## 构建与平台支持\n```mermaid\nflowchart TD\n    Version1_12 --> WebGPU[\"内置 Web GPU\"]\n    WebGPU --> CppRequired[\"仅支持 C++ 脚本\"]\n    CppRequired --> Cpp\n    Platforms[\"支持平台\"] --> Linux\n    Platforms --> MacOS\n    Platforms --> Windows\n    Platforms --> PlayStation5\n    Platforms --> Xbox\n    Platforms --> iOS\n    Platforms --> Android\n    License --> Royalty[\"版税政策\"]\n    Royalty --> RevenueThresh[\"收入 > 25 万美元/季\"]\n    RevenueThresh --> RoyaltyRate[\"版税 4%\"]\n```\n\n## 渲染与全局光照\n```mermaid\nflowchart TD\n    DDGI[\"DDGI\"] --> RealTimeGI[\"实时全局光照\"]\n    RealTimeGI --> ProductionReady[\"已用于生产\"]\n    RealTimeGI --> IntensityCtrl[\"强度调节\"]\n    RealTimeGI --> RayCount[\"光线数量\"]\n    RealTimeGI --> BounceCount[\"反弹次数\"]\n    RealTimeGI --> Toggle[\"可开关\"]\n    GPUPerf[\"GPU 性能展示\"] --> RTX2080[\"RTX 2080\"]\n    RTX2080 --> FPS150[\"150 FPS\"]\n    FPS150 --> Res4K[\"4K 无上采样\"]\n```\n\n## UI 工具与交互\n```mermaid\nflowchart TD\n    NavGizmo[\"导航 Gizmo\"] --> AxisDisplay[\"显示轴线\"]\n    NavGizmo --> AutoRotate[\"自动旋转\"]\n    Align[\"快速对齐\"] --> NavGizmo\n    FreeRotate[\"自由旋转\"] --> TraditionalMethod[\"使用传统方式\"]\n    SpringBone[\"弹簧骨骼物理\"] --> Jiggle[\"抖动效果\"]\n    VisualScript --> Animation[\"动画制作\"]\n    Shortcut[\"Shift+F5\"] --> NodeFocus[\"聚焦选中节点\"]\n    AltDrag[\"Alt+右键拖拽\"] --> LazyConnect[\"懒连接\"]\n    TreeView[\"紧凑树形视图\"] --> VS_Jack[\"VS_Jack 后端\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    Engine[\"Flex Engine\"] --> Version1_12[\"版本 1.12\"]\n    Engine --> SizeComp[\"体积约为 Unreal 1/10\"]\n    Engine --> SimilarUnreal[\"类似 Unreal 引擎\"]\n    Engine --> SimilarUnity[\"类似 Unity 引擎\"]\n    Engine --> License[\"专有许可证\"]\n    License --> SourceAvail[\"源码可用\"]\n    License --> Commercial[\"商业使用\"]"
+        },
+        {
+          "title": "语言与脚本系统",
+          "code": "flowchart TD\n    FlexEngine --> Cpp[\"C++ 支持\"]\n    FlexEngine --> C[\"C 支持\"]\n    FlexEngine --> VisualScript[\"可视化脚本\"]\n    VisualScript --> BlueprintLike[\"类 Blueprint\"]\n    VehicleScript[\"Vehicle 脚本\"] --> Cpp\n    OnUpdate[\"OnUpdate 回调\"] --> Frame[\"每帧调用\"]\n    APIFields[\"API 字段\"] --> Editor[\"编辑器可见\"]\n    DragDrop[\"拖拽创建\"] --> UIEnhance[\"UI 改进\"]\n    NodeAlign[\"快速对齐\"] --> UIEnhance\n    VisualScript --> VSRedesign[\"可视化脚本重新设计\"]"
+        },
+        {
+          "title": "构建与平台支持",
+          "code": "flowchart TD\n    Version1_12 --> WebGPU[\"内置 Web GPU\"]\n    WebGPU --> CppRequired[\"仅支持 C++ 脚本\"]\n    CppRequired --> Cpp\n    Platforms[\"支持平台\"] --> Linux\n    Platforms --> MacOS\n    Platforms --> Windows\n    Platforms --> PlayStation5\n    Platforms --> Xbox\n    Platforms --> iOS\n    Platforms --> Android\n    License --> Royalty[\"版税政策\"]\n    Royalty --> RevenueThresh[\"收入 > 25 万美元/季\"]\n    RevenueThresh --> RoyaltyRate[\"版税 4%\"]"
+        },
+        {
+          "title": "渲染与全局光照",
+          "code": "flowchart TD\n    DDGI[\"DDGI\"] --> RealTimeGI[\"实时全局光照\"]\n    RealTimeGI --> ProductionReady[\"已用于生产\"]\n    RealTimeGI --> IntensityCtrl[\"强度调节\"]\n    RealTimeGI --> RayCount[\"光线数量\"]\n    RealTimeGI --> BounceCount[\"反弹次数\"]\n    RealTimeGI --> Toggle[\"可开关\"]\n    GPUPerf[\"GPU 性能展示\"] --> RTX2080[\"RTX 2080\"]\n    RTX2080 --> FPS150[\"150 FPS\"]\n    FPS150 --> Res4K[\"4K 无上采样\"]"
+        },
+        {
+          "title": "UI 工具与交互",
+          "code": "flowchart TD\n    NavGizmo[\"导航 Gizmo\"] --> AxisDisplay[\"显示轴线\"]\n    NavGizmo --> AutoRotate[\"自动旋转\"]\n    Align[\"快速对齐\"] --> NavGizmo\n    FreeRotate[\"自由旋转\"] --> TraditionalMethod[\"使用传统方式\"]\n    SpringBone[\"弹簧骨骼物理\"] --> Jiggle[\"抖动效果\"]\n    VisualScript --> Animation[\"动画制作\"]\n    Shortcut[\"Shift+F5\"] --> NodeFocus[\"聚焦选中节点\"]\n    AltDrag[\"Alt+右键拖拽\"] --> LazyConnect[\"懒连接\"]\n    TreeView[\"紧凑树形视图\"] --> VS_Jack[\"VS_Jack 后端\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T23:42:18+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Flex Engine 1.12 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    Engine[\"Flex Engine\"] --> Version1_12[\"版本 1.12\"]\n    Engine --> SizeComp[\"体积约为 Unreal 1/10\"]\n    Engine --> SimilarUnreal[\"类似 Unreal 引擎\"]\n    Engine --> SimilarUnity[\"类似 Unity 引擎\"]\n    Engine --> License[\"专有许可证\"]\n    License --> SourceAvail[\"源码可用\"]\n    License --> Commercial[\"商业使用\"]\n```\n\n## 语言与脚本系统\n```mermaid\nflowchart TD\n    FlexEngine --> Cpp[\"C++ 支持\"]\n    FlexEngine --> C[\"C 支持\"]\n    FlexEngine --> VisualScript[\"可视化脚本\"]\n    VisualScript --> BlueprintLike[\"类 Blueprint\"]\n    VehicleScript[\"Vehicle 脚本\"] --> Cpp\n    OnUpdate[\"OnUpdate 回调\"] --> Frame[\"每帧调用\"]\n    APIFields[\"API 字段\"] --> Editor[\"编辑器可见\"]\n    DragDrop[\"拖拽创建\"] --> UIEnhance[\"UI 改进\"]\n    NodeAlign[\"快速对齐\"] --> UIEnhance\n    VisualScript --> VSRedesign[\"可视化脚本重新设计\"]\n```\n\n## 构建与平台支持\n```mermaid\nflowchart TD\n    Version1_12 --> WebGPU[\"内置 Web GPU\"]\n    WebGPU --> CppRequired[\"仅支持 C++ 脚本\"]\n    CppRequired --> Cpp\n    Platforms[\"支持平台\"] --> Linux\n    Platforms --> MacOS\n    Platforms --> Windows\n    Platforms --> PlayStation5\n    Platforms --> Xbox\n    Platforms --> iOS\n    Platforms --> Android\n    License --> Royalty[\"版税政策\"]\n    Royalty --> RevenueThresh[\"收入 > 25 万美元/季\"]\n    RevenueThresh --> RoyaltyRate[\"版税 4%\"]\n```\n\n## 渲染与全局光照\n```mermaid\nflowchart TD\n    DDGI[\"DDGI\"] --> RealTimeGI[\"实时全局光照\"]\n    RealTimeGI --> ProductionReady[\"已用于生产\"]\n    RealTimeGI --> IntensityCtrl[\"强度调节\"]\n    RealTimeGI --> RayCount[\"光线数量\"]\n    RealTimeGI --> BounceCount[\"反弹次数\"]\n    RealTimeGI --> Toggle[\"可开关\"]\n    GPUPerf[\"GPU 性能展示\"] --> RTX2080[\"RTX 2080\"]\n    RTX2080 --> FPS150[\"150 FPS\"]\n    FPS150 --> Res4K[\"4K 无上采样\"]\n```\n\n## UI 工具与交互\n```mermaid\nflowchart TD\n    NavGizmo[\"导航 Gizmo\"] --> AxisDisplay[\"显示轴线\"]\n    NavGizmo --> AutoRotate[\"自动旋转\"]\n    Align[\"快速对齐\"] --> NavGizmo\n    FreeRotate[\"自由旋转\"] --> TraditionalMethod[\"使用传统方式\"]\n    SpringBone[\"弹簧骨骼物理\"] --> Jiggle[\"抖动效果\"]\n    VisualScript --> Animation[\"动画制作\"]\n    Shortcut[\"Shift+F5\"] --> NodeFocus[\"聚焦选中节点\"]\n    AltDrag[\"Alt+右键拖拽\"] --> LazyConnect[\"懒连接\"]\n    TreeView[\"紧凑树形视图\"] --> VS_Jack[\"VS_Jack 后端\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    Engine[\"Flex Engine\"] --> Version1_12[\"版本 1.12\"]\n    Engine --> SizeComp[\"体积约为 Unreal 1/10\"]\n    Engine --> SimilarUnreal[\"类似 Unreal 引擎\"]\n    Engine --> SimilarUnity[\"类似 Unity 引擎\"]\n    Engine --> License[\"专有许可证\"]\n    License --> SourceAvail[\"源码可用\"]\n    License --> Commercial[\"商业使用\"]"
+    },
+    {
+      "title": "语言与脚本系统",
+      "code": "flowchart TD\n    FlexEngine --> Cpp[\"C++ 支持\"]\n    FlexEngine --> C[\"C 支持\"]\n    FlexEngine --> VisualScript[\"可视化脚本\"]\n    VisualScript --> BlueprintLike[\"类 Blueprint\"]\n    VehicleScript[\"Vehicle 脚本\"] --> Cpp\n    OnUpdate[\"OnUpdate 回调\"] --> Frame[\"每帧调用\"]\n    APIFields[\"API 字段\"] --> Editor[\"编辑器可见\"]\n    DragDrop[\"拖拽创建\"] --> UIEnhance[\"UI 改进\"]\n    NodeAlign[\"快速对齐\"] --> UIEnhance\n    VisualScript --> VSRedesign[\"可视化脚本重新设计\"]"
+    },
+    {
+      "title": "构建与平台支持",
+      "code": "flowchart TD\n    Version1_12 --> WebGPU[\"内置 Web GPU\"]\n    WebGPU --> CppRequired[\"仅支持 C++ 脚本\"]\n    CppRequired --> Cpp\n    Platforms[\"支持平台\"] --> Linux\n    Platforms --> MacOS\n    Platforms --> Windows\n    Platforms --> PlayStation5\n    Platforms --> Xbox\n    Platforms --> iOS\n    Platforms --> Android\n    License --> Royalty[\"版税政策\"]\n    Royalty --> RevenueThresh[\"收入 > 25 万美元/季\"]\n    RevenueThresh --> RoyaltyRate[\"版税 4%\"]"
+    },
+    {
+      "title": "渲染与全局光照",
+      "code": "flowchart TD\n    DDGI[\"DDGI\"] --> RealTimeGI[\"实时全局光照\"]\n    RealTimeGI --> ProductionReady[\"已用于生产\"]\n    RealTimeGI --> IntensityCtrl[\"强度调节\"]\n    RealTimeGI --> RayCount[\"光线数量\"]\n    RealTimeGI --> BounceCount[\"反弹次数\"]\n    RealTimeGI --> Toggle[\"可开关\"]\n    GPUPerf[\"GPU 性能展示\"] --> RTX2080[\"RTX 2080\"]\n    RTX2080 --> FPS150[\"150 FPS\"]\n    FPS150 --> Res4K[\"4K 无上采样\"]"
+    },
+    {
+      "title": "UI 工具与交互",
+      "code": "flowchart TD\n    NavGizmo[\"导航 Gizmo\"] --> AxisDisplay[\"显示轴线\"]\n    NavGizmo --> AutoRotate[\"自动旋转\"]\n    Align[\"快速对齐\"] --> NavGizmo\n    FreeRotate[\"自由旋转\"] --> TraditionalMethod[\"使用传统方式\"]\n    SpringBone[\"弹簧骨骼物理\"] --> Jiggle[\"抖动效果\"]\n    VisualScript --> Animation[\"动画制作\"]\n    Shortcut[\"Shift+F5\"] --> NodeFocus[\"聚焦选中节点\"]\n    AltDrag[\"Alt+右键拖拽\"] --> LazyConnect[\"懒连接\"]\n    TreeView[\"紧凑树形视图\"] --> VS_Jack[\"VS_Jack 后端\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:42:18+00:00"
+}

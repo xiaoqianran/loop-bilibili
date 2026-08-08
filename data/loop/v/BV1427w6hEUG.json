@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1427w6hEUG",
+  "title": "Godot 4.7 炸裂更新！复制粘贴、顶点吸附、区域光…开发效率直接起飞 #Godot4.7 #游戏开发 #独立游戏 #引擎更新 #新功能 #游戏引擎 #开发",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3402,
+  "text": "你好\n女士们、先生们\n我是Mike，在游戏开发领域\n从零开始并带来好消息\nGodot粉丝们\n等待Godot的时代结束了\nKado四七现已上线\n我们即将深入查看\n此次发布的部分最酷新功能\n如果你是本频道的常客\n你可能一直关注各种开发版本\n我已逐步为大家介绍\n如果你还没关注请点赞并订阅\n如果你想及时获取游戏开发领域的最新动态\n但我们将从什么开始讲起\n我认为这是最酷的新功能\n这属于提升用户体验的功能\n但将极大影响日常使用\n假设你有一个这样的对象\n继承自Node3D\nD no三\nD非常常见的类\n假设你想复制该对象的变换值\n过去\n你需要逐个获取每个值\n现在\n你可以\n进入类别并选择复制类别值\n然后可以前往另一个拥有Node3D d的继承对象\n接着我可以粘贴并完成\n现在可以在整个类别间复制粘贴值\n正如我说的这虽是小功能\n但将产生巨大\n日常使用影响\n另一个功能\n虽小但很实用\n当你在树视图中选中某物时\n现在有了这个清晰的\n左侧白色条显示\n我们当前所在的区域\n更直观的拖拽操作\n当我们进入多层级区域时\n你可以理解我的意思\n现在开始\n当我拖动这个对象时\n可以轻松看到拖拽中的高度位置\n全新的拖拽功能\n我非常喜欢现在\n此次发布新增了将路径3D对齐碰撞形状的功能\n对碰撞形状进行路径3D对齐\n所以如果你在为物体进行AI路径追踪\n现在你可以轻松完成这些操作\n让我先放大到顶部视图\n在这里添加新类型为路径3D并向上移动\n我们可以创建我们的物体了\n你现在这里有了新物体\n命名为对碰撞体吸附\n它会吸附场景中的碰撞体\n所以在创建路径时\n比如为AI角色制作路径\n然后我们只需拖动通过这里\n接着向上移动到这边表面\n点击点击点击移动移动\n如果继续向下移动\n它会跟随表面向下延伸\n你可以看到这个轮廓\n如果我们在此路径中添加新节点\n所以\n它会自动定位\n再次吸附到表面\n这将使设置\n比如AI路径等操作\n变得超级简单\n现在还有一个酷炫的功能\n我先删除这里的路径3D\n现在我们有了新的吸附功能\n这是顶点吸附\n所以\n我这边有个物体\n先将这个物体移开一点\n我想调整这个接缝位置\n这里有个物体\n我想将一个角吸附到另一个角\n嗯\n现在你可以按B键\n你会看到\n出现一个小黄色\n选择框\n我将选择需要吸附的顶点\n比如这里要吸附的位置\n完成选择后\n像这样拖动就能看到绿色提示\n会自动吸附到场景中其他物体的顶点\n当你需要调整位置时\n现在又有了这些顶点吸附功能\n按住B键选择选择并吸附\n操作非常直观\n但新增了多项改进功能\n我们打开\n嗯\n甲虫机器人\n顺便说一句\n这是GD任务的一个场景\n如果你在寻找可以尝试的内容，这是个不错的入门选择\n所以这里我们看到有一个动画生物\n让我们看看这个生物的动画效果\n然后选择其中一个动画\n比如头槌动作\n接下来你会注意到\n现在可以折叠这些\n呃\n所有关键帧动画\n这会让组织多个动画变得整洁很多\n所以能够折叠这些\n如果你里面有多个元素\n很棒的新组织功能\n在动画轨道折叠功能上\n另一个我们正在实现的功能，我觉得这真的很酷\n这是新增的区域光源\n三维的，我们先到这里\n添加一个区域光源的新对象\n你可以在这里看到可视化效果\n我们直接拖动过去\n你会注意到它位于墙内\n让我们把它移出墙体\n这是一个矩形\n看到那边的矩形形状\n可以在这里调整区域光源大小\n比如将高度加倍\n像这样\n嗯\n相互关联的，所以我们可以更\n比如如果是屏幕\n可以横向拉宽\n这就是普通的光源\n所以\n我们可以旋转它，这样可以看到它在墙面的反射\n那边就是这样\n我稍微调整一下位置\n可以看到它对墙面的效果\n这个可以发出任何类型的光\n我们想要的话，比如\n发出蓝色光线\n可以看到效果就在那里，这没什么特别的\n这个光源能做什么\n我可以到这里进入光源类别\n我们进入区域类别这边\n你会注意到\n我们可以为其分配纹理\n我们选择一个彩色纹理\n比如这朵橙色花朵的效果，现在这个家伙要发出那种橙色光芒\n我们出发吧\n我们将这个灯光调回白色\n然后你可以看到场景中橙色花朵的效果就在那里\n所以继续调整，增大或减小范围像这样\n我们稍微增大范围像这样\n然后你可以看到这个纹理效果完成后的效果\n如果你像这样基本上是一种欺骗方法\n你可以在电视表面这样做\n让电视画面的反射用来照亮场景\n然后再次更换这个纹理为其他材质\n我们到这里快速加载\n选择Godot logo\n现在你可以看到Godot logo正在着色场景\n或者我们往下找\n让我们选完全不同的东西\n之前我们做了橙色\n现在用这个绿色纹理\n然后你看到它被应用到材质上了\n这赋予了你\n目前为止我们主要做单色处理\n但如果你需要\n最大的效果就是\n如果你有电视表面\n或者想在地板上反射\n在它前面\n可以使用区域灯光像3D效果来实现\n现在我们的新功能\n我觉得这很棒\n但有点疑问\n是否应该内置\n还是作为插件\n你们说说\n呃\n但确实很实用，大家会经常使用\n这就是新增的虚拟摇杆\n之前已有几个插件能实现这个功能\n这个是内置功能\n你可以看到顶部这里\n我们继续\n可以在场景中移动这个摇杆\n你可以来这里调整\n可以改变摇杆大小\n这是外圈尺寸\n也可以调整内部缩略图大小\n像这样设置死区等\n然后将其映射到操作\nUI左键右键\nUI上键\nUI下键\n你可以轻松将其更改为你定义的任何内容\n顺便说一句\n趁我们在这里，我可以展示另一个新功能\n你会注意到这里\n假设我需要搜索特定内容\n嗯\n现在可以了，你现在有了弹出窗口的动态搜索\n我喜欢这个，这确实是一个改进\n既然我们在这里处于2D模式\n我们也来展示另一个新功能\n这里有很多不同形状在海浪中\n哦\n我需要打开这个\n我先来操作\n打开它，等一下\n好的\n这是一个名为demo页面的项目\n我们打开它吧\n好的在这里\n我们现在处于2D模式\n这里是我们的demo页面\n你会发现这里有许多不同控件\n当你继承子控件时\n父控件会继承所有属性\n或将其所有控制设置传递给子控件\n这样移动子控件会更方便\n比如这里的摄像机\n有点复杂\n如果你移动父控件\n会重置这里的所有控件\n这里有一个新选项\n那就是偏移变换\n你可以启用这个功能\n然后可以覆盖位置设置\n比如\n旋转等操作\n你可以看到它在移动\n你还可以\n这仅是视觉效果\n如果你想更新\n使其实际影响位置\n所以你可以看到\n这里有碰撞框和更新选项\n但会是定位控制\n这适用于所有继承自控件类的内容\n子控件操作更简便\n嗯\n这个新选项将成为新控件\n偏移或偏移变换将非常实用\n我们之前看到了弹出式搜索结果\n你也可以在其他地方这样做\n现在让我们打开播放器\n我们往下看看这里\n播放器 uh 播放器 tcn\n现在打开这个场景并切换回3D模式\n你会注意到如果我来到这里说弹簧臂这里\n然后我选择形状\n并将这个向下拖动到这里出现的错误\n你还会发现这里有一个搜索功能\n它同样适用于弹出窗口和这类窗口\n我超爱这个小细节提升\n但确实是个改进\n这就是我实际演示的全部内容\n这次发布还有许多重大更新\n但视频中演示效果不佳\n我们现在支持所有平台的dr\n这很方便\n我们新增了可绘制纹理API\n同时还有网格库功能\n如果你现在使用网格地图\n现在可以直接在线编辑\n这是很棒的新功能\n但我要重点讲的是这个资源商店\n资源商店随Godot 4.7发布\n全新的资源商店界面\n这里有一个官方资源商店\n你会发现许多内容尚未迁移\n需要手动导入这些资源\n旧资源库已不再存在\n已被资源商店取代\n你确实\n当然有搜索等功能\n现在搜索“Tara”\n因为我确定Tara Brush在这里\n是的\n你可以看到点赞功能\n投票并打开资源\n这里有新的操作选项\n呃\n这里显示资源预览图\n可以查看资源详情\n不知道为什么\n我没有看到图片\n可能需要稍等一下\n毕竟还在开发中\n但你会发现\n这里能更直观查看资源\n同时还能回退到历史版本\n如果版本存在的话\n你可以查看最新版本的变更日志\n当然你也可以跳转到商店页面和查看源代码\n未来将会有商业素材陆续上线\n它们目前尚未发布\n但正如你在这里看到的\n你也可以跳转获取特定版本的素材\n又是令人愉悦的内容\n这个可能会有些成长中的问题\n你会发现许多熟悉的素材\n目前尚未在商店中它们需要迁移或审核\n或者类似情况\n这里有很多素材\n我们目前商店中已有大量优质内容\n但我们将会\n所有素材到位需要时间\n目前还没有商业素材\n正如刚才所说\n这一点需要注意\n女士们先生们\n你们要做四七\n请告诉我你的看法\n下方留言评论\n稍后与大家再见\n再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1427w6hEUG",
+  "published_at": "1782092565",
+  "fetched_at": "2026-08-07T05:51:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 4.7 新功能关系图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    C1[\"复制粘贴变换值\"] --> C0[\"Godot 4.7 新功能\"]\n    D1[\"增强拖拽 UI\"] --> C0\n    P1[\"路径 3D 对齐碰撞形状\"] --> C0\n    V1[\"顶点吸附\"] --> C0\n    A1[\"动画轨道折叠\"] --> C0\n    L1[\"区域光源（可贴图）\"] --> C0\n    J1[\"虚拟摇杆（内置）\"] --> C0\n    S1[\"动态搜索弹窗\"] --> C0\n    R1[\"资源商店 UI 更新\"] --> C0\n    M1[\"可绘制纹理 API 与网格库\"] --> C0\n```\n\n## 复制粘贴变换值工作流\n\n```mermaid\nflowchart TD\n    S[\"开始\"] --> SelSrc[\"选择源 Node3D 对象\"]\n    SelSrc --> OpenCat[\"打开类别面板\"]\n    OpenCat --> CopyVal[\"点击 “复制类别值”\"]\n    CopyVal --> SelTgt[\"切换至目标 Node3D 对象\"]\n    SelTgt --> PasteVal[\"点击 “粘贴类别值”\"]\n    PasteVal --> Apply[\"目标对象获得相同变换\"]\n    Apply --> End[\"完成\"]\n```\n\n## 顶点吸附操作流程\n\n```mermaid\nflowchart TD\n    S[\"开始\"] --> SelObj[\"在场景中选中对象\"]\n    SelObj --> Activate[\"按 B 键激活吸附模式\"]\n    Activate --> YellowBox[\"出现黄色选择框\"]\n    YellowBox --> ChooseVert[\"选择需要吸附的顶点\"]\n    ChooseVert --> DragGuide[\"拖动时出现绿色提示\"]\n    DragGuide --> AutoSnap[\"自动吸附到目标顶点\"]\n    AutoSnap --> End[\"完成位置对齐\"]\n```\n\n## 区域光源配置与纹理应用\n\n```mermaid\nflowchart TD\n    S[\"开始\"] --> AddLight[\"添加 AreaLight 节点\"]\n    AddLight --> AdjustShape[\"调整光源形状与大小\"]\n    AdjustShape --> ChooseTex[\"在属性面板选择纹理\"]\n    ChooseTex --> SetColor[\"设置纹理颜色/强度\"]\n    SetColor --> Preview[\"在场景中观察光照效果\"]\n    Preview --> End[\"完成配置\"]\n```\n\n## UI 增强功能集合\n\n```mermaid\nflowchart TD\n    VJ[\"虚拟摇杆（内置）\"] --> VJSize[\"调整外圈尺寸\"]\n    VJSize --> VJDead[\"设置内部死区与缩略图大小\"]\n    VJDead --> VJMap[\"映射至 UI 按键/操作\"]\n\n    OT[\"偏移变换选项\"] --> OTEnable[\"启用后覆盖位置/旋转\"]\n    OTEnable --> OTApply[\"对子控件的继承行为产生影响\"]\n\n    DS[\"动态搜索弹窗\"] --> DSOpen[\"打开搜索窗口\"]\n    DSOpen --> DSInput[\"输入关键词\"]\n    DSInput --> DSResult[\"实时显示匹配结果\"]\n\n    UI[\"UI 增强功能\"] --> VJ\n    UI --> OT\n    UI --> DS\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    C1[\"复制粘贴变换值\"] --> C0[\"Godot 4.7 新功能\"]\n    D1[\"增强拖拽 UI\"] --> C0\n    P1[\"路径 3D 对齐碰撞形状\"] --> C0\n    V1[\"顶点吸附\"] --> C0\n    A1[\"动画轨道折叠\"] --> C0\n    L1[\"区域光源（可贴图）\"] --> C0\n    J1[\"虚拟摇杆（内置）\"] --> C0\n    S1[\"动态搜索弹窗\"] --> C0\n    R1[\"资源商店 UI 更新\"] --> C0\n    M1[\"可绘制纹理 API 与网格库\"] --> C0"
+        },
+        {
+          "title": "复制粘贴变换值工作流",
+          "code": "flowchart TD\n    S[\"开始\"] --> SelSrc[\"选择源 Node3D 对象\"]\n    SelSrc --> OpenCat[\"打开类别面板\"]\n    OpenCat --> CopyVal[\"点击 “复制类别值”\"]\n    CopyVal --> SelTgt[\"切换至目标 Node3D 对象\"]\n    SelTgt --> PasteVal[\"点击 “粘贴类别值”\"]\n    PasteVal --> Apply[\"目标对象获得相同变换\"]\n    Apply --> End[\"完成\"]"
+        },
+        {
+          "title": "顶点吸附操作流程",
+          "code": "flowchart TD\n    S[\"开始\"] --> SelObj[\"在场景中选中对象\"]\n    SelObj --> Activate[\"按 B 键激活吸附模式\"]\n    Activate --> YellowBox[\"出现黄色选择框\"]\n    YellowBox --> ChooseVert[\"选择需要吸附的顶点\"]\n    ChooseVert --> DragGuide[\"拖动时出现绿色提示\"]\n    DragGuide --> AutoSnap[\"自动吸附到目标顶点\"]\n    AutoSnap --> End[\"完成位置对齐\"]"
+        },
+        {
+          "title": "区域光源配置与纹理应用",
+          "code": "flowchart TD\n    S[\"开始\"] --> AddLight[\"添加 AreaLight 节点\"]\n    AddLight --> AdjustShape[\"调整光源形状与大小\"]\n    AdjustShape --> ChooseTex[\"在属性面板选择纹理\"]\n    ChooseTex --> SetColor[\"设置纹理颜色/强度\"]\n    SetColor --> Preview[\"在场景中观察光照效果\"]\n    Preview --> End[\"完成配置\"]"
+        },
+        {
+          "title": "UI 增强功能集合",
+          "code": "flowchart TD\n    VJ[\"虚拟摇杆（内置）\"] --> VJSize[\"调整外圈尺寸\"]\n    VJSize --> VJDead[\"设置内部死区与缩略图大小\"]\n    VJDead --> VJMap[\"映射至 UI 按键/操作\"]\n\n    OT[\"偏移变换选项\"] --> OTEnable[\"启用后覆盖位置/旋转\"]\n    OTEnable --> OTApply[\"对子控件的继承行为产生影响\"]\n\n    DS[\"动态搜索弹窗\"] --> DSOpen[\"打开搜索窗口\"]\n    DSOpen --> DSInput[\"输入关键词\"]\n    DSInput --> DSResult[\"实时显示匹配结果\"]\n\n    UI[\"UI 增强功能\"] --> VJ\n    UI --> OT\n    UI --> DS"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T05:51:51+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 4.7 新功能关系图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    C1[\"复制粘贴变换值\"] --> C0[\"Godot 4.7 新功能\"]\n    D1[\"增强拖拽 UI\"] --> C0\n    P1[\"路径 3D 对齐碰撞形状\"] --> C0\n    V1[\"顶点吸附\"] --> C0\n    A1[\"动画轨道折叠\"] --> C0\n    L1[\"区域光源（可贴图）\"] --> C0\n    J1[\"虚拟摇杆（内置）\"] --> C0\n    S1[\"动态搜索弹窗\"] --> C0\n    R1[\"资源商店 UI 更新\"] --> C0\n    M1[\"可绘制纹理 API 与网格库\"] --> C0\n```\n\n## 复制粘贴变换值工作流\n\n```mermaid\nflowchart TD\n    S[\"开始\"] --> SelSrc[\"选择源 Node3D 对象\"]\n    SelSrc --> OpenCat[\"打开类别面板\"]\n    OpenCat --> CopyVal[\"点击 “复制类别值”\"]\n    CopyVal --> SelTgt[\"切换至目标 Node3D 对象\"]\n    SelTgt --> PasteVal[\"点击 “粘贴类别值”\"]\n    PasteVal --> Apply[\"目标对象获得相同变换\"]\n    Apply --> End[\"完成\"]\n```\n\n## 顶点吸附操作流程\n\n```mermaid\nflowchart TD\n    S[\"开始\"] --> SelObj[\"在场景中选中对象\"]\n    SelObj --> Activate[\"按 B 键激活吸附模式\"]\n    Activate --> YellowBox[\"出现黄色选择框\"]\n    YellowBox --> ChooseVert[\"选择需要吸附的顶点\"]\n    ChooseVert --> DragGuide[\"拖动时出现绿色提示\"]\n    DragGuide --> AutoSnap[\"自动吸附到目标顶点\"]\n    AutoSnap --> End[\"完成位置对齐\"]\n```\n\n## 区域光源配置与纹理应用\n\n```mermaid\nflowchart TD\n    S[\"开始\"] --> AddLight[\"添加 AreaLight 节点\"]\n    AddLight --> AdjustShape[\"调整光源形状与大小\"]\n    AdjustShape --> ChooseTex[\"在属性面板选择纹理\"]\n    ChooseTex --> SetColor[\"设置纹理颜色/强度\"]\n    SetColor --> Preview[\"在场景中观察光照效果\"]\n    Preview --> End[\"完成配置\"]\n```\n\n## UI 增强功能集合\n\n```mermaid\nflowchart TD\n    VJ[\"虚拟摇杆（内置）\"] --> VJSize[\"调整外圈尺寸\"]\n    VJSize --> VJDead[\"设置内部死区与缩略图大小\"]\n    VJDead --> VJMap[\"映射至 UI 按键/操作\"]\n\n    OT[\"偏移变换选项\"] --> OTEnable[\"启用后覆盖位置/旋转\"]\n    OTEnable --> OTApply[\"对子控件的继承行为产生影响\"]\n\n    DS[\"动态搜索弹窗\"] --> DSOpen[\"打开搜索窗口\"]\n    DSOpen --> DSInput[\"输入关键词\"]\n    DSInput --> DSResult[\"实时显示匹配结果\"]\n\n    UI[\"UI 增强功能\"] --> VJ\n    UI --> OT\n    UI --> DS\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    C1[\"复制粘贴变换值\"] --> C0[\"Godot 4.7 新功能\"]\n    D1[\"增强拖拽 UI\"] --> C0\n    P1[\"路径 3D 对齐碰撞形状\"] --> C0\n    V1[\"顶点吸附\"] --> C0\n    A1[\"动画轨道折叠\"] --> C0\n    L1[\"区域光源（可贴图）\"] --> C0\n    J1[\"虚拟摇杆（内置）\"] --> C0\n    S1[\"动态搜索弹窗\"] --> C0\n    R1[\"资源商店 UI 更新\"] --> C0\n    M1[\"可绘制纹理 API 与网格库\"] --> C0"
+    },
+    {
+      "title": "复制粘贴变换值工作流",
+      "code": "flowchart TD\n    S[\"开始\"] --> SelSrc[\"选择源 Node3D 对象\"]\n    SelSrc --> OpenCat[\"打开类别面板\"]\n    OpenCat --> CopyVal[\"点击 “复制类别值”\"]\n    CopyVal --> SelTgt[\"切换至目标 Node3D 对象\"]\n    SelTgt --> PasteVal[\"点击 “粘贴类别值”\"]\n    PasteVal --> Apply[\"目标对象获得相同变换\"]\n    Apply --> End[\"完成\"]"
+    },
+    {
+      "title": "顶点吸附操作流程",
+      "code": "flowchart TD\n    S[\"开始\"] --> SelObj[\"在场景中选中对象\"]\n    SelObj --> Activate[\"按 B 键激活吸附模式\"]\n    Activate --> YellowBox[\"出现黄色选择框\"]\n    YellowBox --> ChooseVert[\"选择需要吸附的顶点\"]\n    ChooseVert --> DragGuide[\"拖动时出现绿色提示\"]\n    DragGuide --> AutoSnap[\"自动吸附到目标顶点\"]\n    AutoSnap --> End[\"完成位置对齐\"]"
+    },
+    {
+      "title": "区域光源配置与纹理应用",
+      "code": "flowchart TD\n    S[\"开始\"] --> AddLight[\"添加 AreaLight 节点\"]\n    AddLight --> AdjustShape[\"调整光源形状与大小\"]\n    AdjustShape --> ChooseTex[\"在属性面板选择纹理\"]\n    ChooseTex --> SetColor[\"设置纹理颜色/强度\"]\n    SetColor --> Preview[\"在场景中观察光照效果\"]\n    Preview --> End[\"完成配置\"]"
+    },
+    {
+      "title": "UI 增强功能集合",
+      "code": "flowchart TD\n    VJ[\"虚拟摇杆（内置）\"] --> VJSize[\"调整外圈尺寸\"]\n    VJSize --> VJDead[\"设置内部死区与缩略图大小\"]\n    VJDead --> VJMap[\"映射至 UI 按键/操作\"]\n\n    OT[\"偏移变换选项\"] --> OTEnable[\"启用后覆盖位置/旋转\"]\n    OTEnable --> OTApply[\"对子控件的继承行为产生影响\"]\n\n    DS[\"动态搜索弹窗\"] --> DSOpen[\"打开搜索窗口\"]\n    DSOpen --> DSInput[\"输入关键词\"]\n    DSInput --> DSResult[\"实时显示匹配结果\"]\n\n    UI[\"UI 增强功能\"] --> VJ\n    UI --> OT\n    UI --> DS"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:51:51+00:00"
+}

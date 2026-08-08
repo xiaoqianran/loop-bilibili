@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1gSup66E4i",
+  "title": "【贾维斯时刻】DeepSeek V4 Flash 正式版实测：喊一声“贾维斯”，它把活全干完了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1601,
+  "text": "早上好先生\n我已分析完你的代码仓库\n发现了三个性能瓶颈\n修复补丁已生成\n正在部署到测试环境\n这不是电影\n这是今天deep sick v4flash正式版\n给我的贾维斯时刻\n上个月7月31号\ndeep sick低调上线了V4flash正式版\n官方就一句话\nagent能力大幅增强\n然后8月4号正式版开源发布\n直接登上open ra全球调用量第一的宝座\n说实话我一开始觉得也就是常规更新\n直到我亲眼看到他在终端里自己干活\n我决定这期视频带你们完整体验一次\n贾维斯时刻\n最后还有保姆级复线教程\n保证你能复刻\n先30秒看懂V4flash是什么\n他是deep sick v4系列里的快板\n总参数2840亿\n但激活参数只要130亿\nMOE架构主打低延迟\n低成本\n关键升级有三个\n第100万token上下文成标配\n一本书直接扔进去\n不用切\n第二用了DSAR稀疏注意力\n推理算力只有V3.2的110\nkv cash占用只有7%\n第三也是这次的重点\n正式版A镇的能力大幅增强\n官方基准终端操作\nterminal bench2.1达到82.7\n工具调用图\n爱豆龙70.3\n全站开发68.7\n网络安全攻防76.7\n价格更是杀手锏\n输入一块钱\n每百万token输出两块\n每百万token缓存命中只要两分钱\n这个价位agent的随便跑\n场景一\n我喊了一声\n贾维斯\n让他去我的仓库里找bug并修复\n注意看他不是给我一段建议\n而是自己打开终端读文件\n定位问题\n生成补丁\n跑测试一条龙\n全程不用我点一下鼠标\n这就是我理解的贾维斯\n时刻AI从回答问题变成了干活场景\n200万上下文\n我把一整本几百页的技术文档直接拖进去\n让他找矛盾\n写摘要\n翻译重点章节之前要么塞不下\n要么贵到离谱\n现在em上下文标配flash版本\n跑起来又快又便宜\n场景三工具调用\n我让他做个代前后端的代办应用\n他自己调API查数据\n建数据库\n写代码起服务\n最后浏览器里直接能跑\n官方说简单agent任务表现和V4pro相当\n我实测下来延迟体感是真的快\n想复刻三部\n第一步打开platform deep sick dot com\n注册账号\n充值几块钱\n创建一个API key\n第二步写代码\n它完全兼容OpenAI接口\n把base url换成官方地址就行\n注意模型名是deep seek v4\nflash新版还支持thinking mode参数\nnon thinking最快最省\nthinking会先思考再回答\n想要最强效果就开thinking max\n第三步\n让它变成贾维斯\n方法有三条\n一是工具调用标准OpenAI工具格式\n给他几个函数\n他自己决定什么时候调用\n二是接入codex v4\nflash是目前唯一原生支持responses API\n可以官方介入codex的V4模型\n2分钟就能配好\n三是开源方案基特Hope上\n像HOLOJAVIS这种项目\n本地语音识别加deep seek加工具调用\n喊一声贾维斯就行\nwindows和Mac os都能跑\n最后说几个避坑点很重要\n第18月5号\ndeep seek官方宣布\n计划近期上调API价格\n想低成本跑agent的\n趁现在第二正式版agent的能力目前只在API端\napp和网页端暂时还体验不到\n别被营销号带偏\n第3thinking max模式非常烧\nToken\n日常任务用non thinking就够了\n第四旧模型名deep sick chat\ndeep sick prisoner已经弃用\n记得迁移到V4的模型名\n我的结论\nV4flash不是智商妥协版\n而是工程上把速度\n成本和agent的能力做到了极致平衡\n如果说V3让中国大模型站稳了脚跟\nV4flash就是让人人都有贾维斯这件事\n第一次变得这么近\n如果这期视频帮到了你点赞\n投币收藏一键三连\n评论区告诉我\n如果给你一个贾维斯\n你第一件事让他干什么\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gSup66E4i",
+  "published_at": "1786051628",
+  "fetched_at": "2026-08-07T22:56:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

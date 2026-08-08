@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1K8M16fE9X",
+  "title": "无需第三方中转！DeepSeek 官方接口直连 Codex，一条命令搞定！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1557,
+  "text": "大家好\n我是超哥\n今天教大家codex原生直连deep sk API官方接口\n无需第三方中转配置一次即可\n长期使用电脑重启\n也无需重新配置\n整个过程非常简单\n我们直接开始\n我们第一步是首先要创建一个deep sea API k\n这是DPSK的官网\n我们点击打开\n打开热门\n点击这边的API开放平台\n因为我已经登录过了\n所以我们直接登录之后\n直接点这边的API case\n然后我们点这边的创建pk\n这边我们需要输入一个名称\n比如何止超哥\n然后我们输出完这边的创建\n然后就创建了一个APIK\n我们先放在这\n先不要管它\n我们再来到我的博客\n然后第二步是DEPSK接入库TEX配置步骤\n然后如果你是windows的话\n你就在pop shell里面执行下面这个命令就行了\n如果你是Mac os或者LINUX\n你就执行下面的命令\n因为我是windows\n我就执行这个命令\n我们需要先打开这个power shell\n我们来到windows图标这里\n然后开始按钮\n我们点击它在里面搜索power shell\n然后这个就是让我们点击打开它\n打开之后我们来到这边\n然后复制我这条命令\n点击这边的copy\n然后再来到power shell里面\n我们点击鼠标的右键\n然后按回车执行\n然后这边有三个选择\n第一个是选择deep sick为fall flash这个模型\n第二个是选择tipsv for pro这个模型\n现在pro这个模型还不能用\n第三个是之前如果你连用cortex连过DEPSG\n第三个就是你可以取消填三\n然后我们这边填一\n是连接到dave sic的VIVFLASH\n这个模型输入一之后\n我们按回车\n然后我们可以看到\n现在是让我们输入这个deep sick的APIK\n让我们来到我们的deep sic这边\n然后把刚创建的这个APIK我们给他点复制\n点复制之后\n我们再来到power shell这边给它粘贴进来\n按回车\n现在就已经好了\n让我们把这个给它关掉\n然后我们打开这个cortex\n我们可以看到\n现在它还是没有deep sick的这个模型的\n然后我们需要给它彻底退出掉\n然后点击鼠标的右键给他彻底退出掉\n然后我们再打开一次\n我来到我的电脑桌面\n双击打开\n打开之后我们可以到这边就有deep sick了\n这边是自定义\n它是没有模型选择的\n但是他已经选中了deep sk呃\n呃vile flash这个模型了\n我们可以随便输一下\n你好\n我们可以看到它是可以回复的\n他虽然说我是codex\n但它其实用的是deep sk\n让我们再来到我的博客\n这边是DEVC的官方说明\n大家可以看一下\n这是官方说明\n我们可以往下拉\n下面有个提示的\n然后这边我们看到这边有个提示呃\nwindows端显示为自定义或者deep sic Viper\nFlash\n显示为自定义时\n实际使用的就是你选择deep sec的模型\n就是它其实选择的是自定义\n也是使用的是deep deep sway for flash的这个模型\n这个大家注意一下\n不要以为是显示的自定义\n其实没选上\n其实已经选上了\n如果你是cortex\n不想连这个deep sect\n你也是用同样的命令给他取消掉的\n比如我在copy这个命令\n然后我再来到哦\nPol shell\nHoshell\n然后给它打开\n然后我们还是鼠标右键打输入命令\n然后按回车\n这还是三个选择\n第三条就是取消接入\n比如我们输入三输三之后\n我们这边是需要输入Y的\n这里输入Y给它取消接入\n输入Y现在就好了\n现在我们是需要把这个呃CORTECT给它彻底关掉\n让我们再去打开一下\n那我们看到现在这个模型就已经恢复到\ncortex自己的模型了\n好吧\n今天的教程比较简单\n如果大家碰到什么问题的话\n可以在呃评论区留言交流\n谢谢大家的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1K8M16fE9X",
+  "published_at": "1785951375",
+  "fetched_at": "2026-08-06T20:21:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek API直连Codex 知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"开始\"] --> A2[\"打开DeepSeek官网\"]\n    A2 --> A3[\"登录并进入API开放平台\"]\n    A3 --> A4[\"创建API Key（PK）\"]\n    A4 --> A5[\"记录生成的API Key\"]\n    A5 --> A6[\"打开Windows PowerShell\"]\n    A6 --> A7[\"复制官方配置命令\"]\n    A7 --> A8[\"粘贴并回车执行\"]\n    A8 --> A9[\"出现模型选择\"]\n    A9 --> A10[\"选择模型1：deepseek‑v1.5‑flash\"]\n    A10 --> A11[\"输入API Key\"]\n    A11 --> A12[\"完成DeepSeek接入\"]\n    A12 --> A13[\"打开Cortex客户端\"]\n    A13 --> A14[\"验证可回复（如输入‘你好’）\"]\n    A14 --> A15[\"结束\"]\n```\n\n## Windows PowerShell 配置细节\n```mermaid\nflowchart TD\n    B1[\"打开PowerShell\"] --> B2[\"复制官方提供的配置命令\"]\n    B2 --> B3[\"在PowerShell粘贴并回车\"]\n    B3 --> B4[\"出现三个选项\"]\n    B4 --> B5[\"1. 选择 deepseek‑v1.5‑flash 模型\"]\n    B5 --> B6[\"输入‘1’确认\"]\n    B6 --> B7[\"粘贴API Key 并回车\"]\n    B7 --> B8[\"配置完成，提示成功\"]\n    B8 --> B9[\"关闭PowerShell\"]\n```\n\n## 模型选择与取消接入\n```mermaid\nflowchart TD\n    C1[\"选项1：deepseek‑v1.5‑flash（可用）\"] --> C2[\"选项2：tipsv‑for‑pro（不可用）\"]\n    C1 --> C3[\"选项3：取消接入\"]\n    C3 --> C4[\"输入‘3’选择取消\"]\n    C4 --> C5[\"确认输入‘Y’\"]\n    C5 --> C6[\"取消成功，恢复Cortex默认模型\"]\n    C6 --> C7[\"完成\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"开始\"] --> A2[\"打开DeepSeek官网\"]\n    A2 --> A3[\"登录并进入API开放平台\"]\n    A3 --> A4[\"创建API Key（PK）\"]\n    A4 --> A5[\"记录生成的API Key\"]\n    A5 --> A6[\"打开Windows PowerShell\"]\n    A6 --> A7[\"复制官方配置命令\"]\n    A7 --> A8[\"粘贴并回车执行\"]\n    A8 --> A9[\"出现模型选择\"]\n    A9 --> A10[\"选择模型1：deepseek‑v1.5‑flash\"]\n    A10 --> A11[\"输入API Key\"]\n    A11 --> A12[\"完成DeepSeek接入\"]\n    A12 --> A13[\"打开Cortex客户端\"]\n    A13 --> A14[\"验证可回复（如输入‘你好’）\"]\n    A14 --> A15[\"结束\"]"
+        },
+        {
+          "title": "Windows PowerShell 配置细节",
+          "code": "flowchart TD\n    B1[\"打开PowerShell\"] --> B2[\"复制官方提供的配置命令\"]\n    B2 --> B3[\"在PowerShell粘贴并回车\"]\n    B3 --> B4[\"出现三个选项\"]\n    B4 --> B5[\"1. 选择 deepseek‑v1.5‑flash 模型\"]\n    B5 --> B6[\"输入‘1’确认\"]\n    B6 --> B7[\"粘贴API Key 并回车\"]\n    B7 --> B8[\"配置完成，提示成功\"]\n    B8 --> B9[\"关闭PowerShell\"]"
+        },
+        {
+          "title": "模型选择与取消接入",
+          "code": "flowchart TD\n    C1[\"选项1：deepseek‑v1.5‑flash（可用）\"] --> C2[\"选项2：tipsv‑for‑pro（不可用）\"]\n    C1 --> C3[\"选项3：取消接入\"]\n    C3 --> C4[\"输入‘3’选择取消\"]\n    C4 --> C5[\"确认输入‘Y’\"]\n    C5 --> C6[\"取消成功，恢复Cortex默认模型\"]\n    C6 --> C7[\"完成\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T20:21:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek API直连Codex 知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"开始\"] --> A2[\"打开DeepSeek官网\"]\n    A2 --> A3[\"登录并进入API开放平台\"]\n    A3 --> A4[\"创建API Key（PK）\"]\n    A4 --> A5[\"记录生成的API Key\"]\n    A5 --> A6[\"打开Windows PowerShell\"]\n    A6 --> A7[\"复制官方配置命令\"]\n    A7 --> A8[\"粘贴并回车执行\"]\n    A8 --> A9[\"出现模型选择\"]\n    A9 --> A10[\"选择模型1：deepseek‑v1.5‑flash\"]\n    A10 --> A11[\"输入API Key\"]\n    A11 --> A12[\"完成DeepSeek接入\"]\n    A12 --> A13[\"打开Cortex客户端\"]\n    A13 --> A14[\"验证可回复（如输入‘你好’）\"]\n    A14 --> A15[\"结束\"]\n```\n\n## Windows PowerShell 配置细节\n```mermaid\nflowchart TD\n    B1[\"打开PowerShell\"] --> B2[\"复制官方提供的配置命令\"]\n    B2 --> B3[\"在PowerShell粘贴并回车\"]\n    B3 --> B4[\"出现三个选项\"]\n    B4 --> B5[\"1. 选择 deepseek‑v1.5‑flash 模型\"]\n    B5 --> B6[\"输入‘1’确认\"]\n    B6 --> B7[\"粘贴API Key 并回车\"]\n    B7 --> B8[\"配置完成，提示成功\"]\n    B8 --> B9[\"关闭PowerShell\"]\n```\n\n## 模型选择与取消接入\n```mermaid\nflowchart TD\n    C1[\"选项1：deepseek‑v1.5‑flash（可用）\"] --> C2[\"选项2：tipsv‑for‑pro（不可用）\"]\n    C1 --> C3[\"选项3：取消接入\"]\n    C3 --> C4[\"输入‘3’选择取消\"]\n    C4 --> C5[\"确认输入‘Y’\"]\n    C5 --> C6[\"取消成功，恢复Cortex默认模型\"]\n    C6 --> C7[\"完成\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"开始\"] --> A2[\"打开DeepSeek官网\"]\n    A2 --> A3[\"登录并进入API开放平台\"]\n    A3 --> A4[\"创建API Key（PK）\"]\n    A4 --> A5[\"记录生成的API Key\"]\n    A5 --> A6[\"打开Windows PowerShell\"]\n    A6 --> A7[\"复制官方配置命令\"]\n    A7 --> A8[\"粘贴并回车执行\"]\n    A8 --> A9[\"出现模型选择\"]\n    A9 --> A10[\"选择模型1：deepseek‑v1.5‑flash\"]\n    A10 --> A11[\"输入API Key\"]\n    A11 --> A12[\"完成DeepSeek接入\"]\n    A12 --> A13[\"打开Cortex客户端\"]\n    A13 --> A14[\"验证可回复（如输入‘你好’）\"]\n    A14 --> A15[\"结束\"]"
+    },
+    {
+      "title": "Windows PowerShell 配置细节",
+      "code": "flowchart TD\n    B1[\"打开PowerShell\"] --> B2[\"复制官方提供的配置命令\"]\n    B2 --> B3[\"在PowerShell粘贴并回车\"]\n    B3 --> B4[\"出现三个选项\"]\n    B4 --> B5[\"1. 选择 deepseek‑v1.5‑flash 模型\"]\n    B5 --> B6[\"输入‘1’确认\"]\n    B6 --> B7[\"粘贴API Key 并回车\"]\n    B7 --> B8[\"配置完成，提示成功\"]\n    B8 --> B9[\"关闭PowerShell\"]"
+    },
+    {
+      "title": "模型选择与取消接入",
+      "code": "flowchart TD\n    C1[\"选项1：deepseek‑v1.5‑flash（可用）\"] --> C2[\"选项2：tipsv‑for‑pro（不可用）\"]\n    C1 --> C3[\"选项3：取消接入\"]\n    C3 --> C4[\"输入‘3’选择取消\"]\n    C4 --> C5[\"确认输入‘Y’\"]\n    C5 --> C6[\"取消成功，恢复Cortex默认模型\"]\n    C6 --> C7[\"完成\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:21:59+00:00"
+}

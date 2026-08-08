@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1cmTu6mEL3",
+  "title": "如何使用第三方模型驱动 Codex（无需 OpenAI 账号）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3765,
+  "text": "上次我发布了codex教学视频\n不少小伙伴反映没有办法订阅chi g b t\n所以根本用不了\n确实啊订阅chi g b t的门槛不低\n不过换个思路\n其实并不一定非得要用OpenAI的模型\n今天这期视频我就给大家演示一下\n如何使用国产模型来驱动codex\n全程不需要使用OPENAI的账号\n我以deep seek为例\n但原理是相通的\nGLMKIMI等等都可以照着做完\n看完这期视频呢就可以举一反三\n好话不多说\n让我们现在开始\n我们需要打开OPENAI的页面\n然后点击这个按钮来下载codex\n下载完成了之后\n我们按照正常的方法来安装codex就可以了\n安装好了之后\ncodex会提示我们登录它\ncodex呢一共是给了我们两个登录选项\n第一个是使用ChatGPT账号登录\n第二个呢是使用其他方法登录\n不过如果你点进去的话\n就会发现\n这所谓的其他方法其实就是使用OpenAI的API key\n因此无论是使用这两种方法中的哪一种方法\n你都需要有一个OPENAI的账号\n这个呢其实也就是难倒大部分的地方了\n我们今天就是要绕开它\n所以呢我们先把codex给关掉\n等后面配置好了之后\n我们再打开它\n下面我们来申请使用deep seek的API key\n首先我们打开deep sick的用量页面\n如果你从来没有充过值\n那这里面的余额显示的应该就是零\n这个时候你需要点击去充值\n充个五块钱基本就够了\n充完了之后\n我们进入到API keys页面\n然后点击这里面的创建API key\n这里我们需要给API key输入个名字\n我这里就叫做default就好了\n输完了之后我们点击创建按钮来创建这个API key\n然后deep sick就会把API key展示给我们看\n需要注意的是\ndeep sick后面再也不会给你展示这个API key了\n所以我们需要把它给复制下来\n然后找个地方存一下\n存完了之后我们点击关闭按钮\n把它给关掉\n呃那这样的话deep seek这边我们就配置好了\n下面我们来处理一下cc switch\ncc switch是什么呢\n简单来说它能够帮助我们配置codex\n让他去调用第三方的模型\n下面我就来演示一下如何安装和设置cc switch\n好让codex成功用上我们刚才创建的deep seek API key\n首先我们打开cc switch的官方网站\n点击这里面的免费下载\n之后呢我们就会被引导到对应的github releases页面\n我们把页面往下拖\n一直拖到这里面的SS部分\n然后我们点击这里面的show on twenty one assets\n之后\n我们就可以看到所有可用的下载选项了\n呃你可以根据你的需要下载\n比如说如果你用的是windows的话\n那你大概率要选的就是这个呃\n我这里用的是Mac os\n所以呢我要选择这个选项\n下载完了之后\n我们打开对应的文件夹\n然后呢再点击对应的文件嗯\n安装过程呢也跟普通软件一样\n像我就直接拖进去就好了\n安装完成了之后\n让我们打开cc switch\n进来之后\ncc switch会给我们显示出两个配置来\n这两个配置其实跟我们都没什么关系\n所以不用管它\n我们需要新增一个配置\n让我们点击右上角的加号按钮\n然后我们就在这个预设供应商里面选择deep seek\n再把页面往下拖\n在这里面呢\n粘贴上我们刚才复制好的API key\n然后再点击右下角的添加按钮\n这样我们一个新的配置就创建好了\n就是这个地方了之后\n我们要做的事情就是启用它\n让我们把鼠标移到这个配置上面\n点击这个启用按钮\n注意啊\n此时cc switch给我们提了一个警告\n说是子供应商使用openai chat机构格式\n需要路由服务才能够正常使用\n请先启动路由哦\n那这是什么意思呢\n具体说来啊\n就是codex使用的是一种叫做responses\n的接口格式\n而deep sk或者说是大部分的模型供应商\n只提供一种叫做cheat completions的格式\n两者互不兼容\n因此我们就需要使用c c switch的路由功能\n在这两种格式之间做转换\n这个路由功能呢会把codex发个模型的请求\n转换为模型所需要的chat completions格式\n也会把模型发给codex的响应\n转换为codex所需要的responses格式\n这样的话即使格式不同\ncodex和deep sk之间也可以互相交流了\n下面就让我们来打开这个路由功能\n首先点击上面的齿轮图标来到设置页面\n然后再点击这里面的路由\n再点击这里面的本地路由\n然后把这个开关打开\n这个其实就是在主页面里面显示\n这个格式转换的路由开关了\n这样的话我们后续开启这个开关就会方便很多\n然后我们返回\n可以看到开关已经显示在屏幕上面了\n我们剩下的任务呢就是直接点击它开启\n开启了之后\n一切就准备完毕了\n我们来打开codex\n你看我们直接进来了\n没有要求登录OPENAI的账号\n让我们随便发一个消息试一下\n看起来也很正常\n不过吧这里面其实有个问题\ndeep seek呢其实是有两个模型的\n分别是叫做deep seek v4flash和deep seek v4pro\n那我们现在用的到底是哪一个模型呢\ncodex这里面好像是看不出来啊\n他只是把模型标志成了custom\n要确认具体用的是哪一个模型\n我们得回到cc switch里面来看一下\n进入到cc switch之后\n我们点击这里面的编辑按钮\n然后往下拖\n这里面呢有这么一行话\n从这一行可以看出\ncodex目前所使用的模型是deep sk v4flash\n那假如说我们想把模型切换成deep sick\nV4pro的话\n该怎么办呢\n一般来说啊\n其实codex里面是可以做模型切换的\n大致呢应该就是在这个位置了\n不过你看这里面呢\ncodex既不显示当前所使用的是哪个模型\n也不提供模型切换按钮\n感觉就像是一个bug\n不过我也说不清楚\n这是cc switch的问题还是codex的问题\n也许等你看到这期视频的时候\n这个问题已经被修好了\n如果你还是遇到同样的情况\n这里面有一个临时的解决办法\n不过这里先说一句啊\n这个办法需要一个CHHBT账号\n当然我知道\n很多人就是因为没有账号才来看这期视频的\n没关系\n如果你没有chi g b t账号的话\n可以先跳过这段\n后面呢我会演示一个完全不需要账号的办法\n好如果你有chat bt账号的话\n可以点击这里面的settings\n然后再点击log out登出\n登出之后呢\ncodex会提示重新登录\n这里面我们选择第一项登录\n具体登录过程呢我就不演示了\n登录完成了之后\n我们再进入到codex\n就能够看到我们现在所使用的模型列表了\n我们还能够在flash和pro两个模型之间任意切换\n虽然我们刚才登录的时候使用的是OPENAI的账号\n但登录好了之后\n实际显示和使用的依然是deep sk的模型\n这步登录只是用来绕开那个bug的\n这个方法确实是能够行得通的\n不过呢它有些问题\n我相信很多人就是因为没有OPENAI的账号\n才转去使用第三方模型的\n所以呢这个方法对于他们来说肯定是用不上了\n而且这个办法也不是一直有效\n比如说当你重启cc switch和codex之后呢\n它就会失效\n模型呢会重新变成custom\n还得重新登录一遍\n其实挺麻烦的\n考虑到大部分人写代码的时候呢\n只会用到一个固定的模型\n所以一个更简单的办法就是在CSWITCH里面\n把默认模型改成固定的模型\n比如说我们就可以把它改成deep sk v4pro\n以后所有的对话都用这个模型\n具体来说我们就是要回到c switch这里\n然后点击编辑按钮\n在这里面呢\n我们就需要把默认的模型改成deep seek v4pro\n不过说实话我看了一圈\n目前c c switch好像并没有提供\n直接切换模型的选项\n不知道是不是我有所遗漏啊\n但我发现可以用一个小技巧来实现这个功能\n我们可以在这里面找到模型映射这一栏\n然后把里面的deep siv4flash这一项给删掉\n删完之后我们就剩pro这一项了\n我们再点击保存\n然后我们再回到编辑这个页面看一下\n可以看到这里面的model就变成了pro这个模型了\n这个时候呢还没完\n我们还需要重启cc switch和codex之后才能够生效\n我们可以先关掉cc switch\n然后呢回到codex这边\n把codex也给关掉\n全部都关掉之后\n我们再重新打开cc switch\n然后再打开codex\n这个时候呢我们的模型应该就改成pro模型了\n我们可以打开codex的配置文件验证一下\n我用的是Mac os\n配置文件呢是放在用户目录下面的\n点codex config\n点tom这个文件\n你看这个就是我们目前所使用的默认模型了\n就是deep sick with pro\n我们可以回到codex这里验证一下\n我们的这个模型是否可用\n让我们来新建一个绘画\n然后随便输入个请求\n可以看到codex正常回复了\n当然如果你想彻底的确认是否是pro模型的话\n可以去deep sk后台查一下\n不过这大概率是没什么问题的\n最后还是希望你看到这期视频的时候\n这个问题已经被修复了\n省得再折腾这么一大堆步骤好\n这期视频就到这里了\n我是马克\n我们下期再见\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cmTu6mEL3",
+  "published_at": "1782654280",
+  "fetched_at": "2026-08-06T22:51:56+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 第三方模型驱动 Codex 知识图谱\n\n## 整体流程概览 [BV1cmTu6mEL3 P1 00:34]\n```mermaid\nflowchart TD\n    A1[\"下载 Codex\"] --> A2[\"关闭 Codex\"]\n    A2 --> A3[\"获取 DeepSeek API Key\"]\n    A3 --> A4[\"安装 CC Switch\"]\n    A4 --> A5[\"在 CC Switch 新建 DeepSeek 配置\"]\n    A5 --> A6[\"启用路由功能\"]\n    A6 --> A7[\"打开 Codex（无需 OpenAI 登录）\"]\n    A7 --> A8[\"使用 DeepSeek 模型进行代码生成\"]\n```\n\n## CC Switch 配置与路由细节 [BV1cmTu6mEL3 P1 02:40]\n```mermaid\nflowchart TD\n    B1[\"下载 CC Switch\"] --> B2[\"安装 CC Switch\"]\n    B2 --> B3[\"打开 CC Switch\"]\n    B3 --> B4[\"点击右上角加号创建新配置\"]\n    B4 --> B5[\"选择供应商 DeepSeek\"]\n    B5 --> B6[\"粘贴获取的 API Key\"]\n    B6 --> B7[\"点击添加完成配置\"]\n    B7 --> B8[\"在配置列表启用该配置\"]\n    B8 --> B9[\"打开设置 → 路由 → 本地路由\"]\n    B9 --> B10[\"打开路由开关\"]\n    B10 --> B11[\"实现 responses ↔ chat completions 格式转换\"]\n```\n\n## 模型选择、显示问题与永久切换方案 [BV1cmTu6mEL3 P1 05:48]\n```mermaid\nflowchart TD\n    C1[\"Codex 中显示模型为 custom\"] --> C2[\"进入 CC Switch 编辑页面\"]\n    C2 --> C3[\"当前使用模型：DeepSeek v4flash\"]\n    C3 --> C4[\"欲切换至 DeepSeek v4pro\"]\n    C4 --> C5[\"在模型映射中删除 v4flash 项\"]\n    C5 --> C6[\"保存映射设置\"]\n    C6 --> C7[\"重启 CC Switch 与 Codex\"]\n    C7 --> C8[\"验证配置文件中的默认模型\"]\n    C8 --> C9[\"模型已切换为 DeepSeek v4pro 并生效\"]\n    C9 --> C10[\"如需绕过登录 bug，可临时使用 OpenAI 账号登录后退出\"]\n```",
+      "diagrams": [
+        {
+          "title": "整体流程概览",
+          "code": "flowchart TD\n    A1[\"下载 Codex\"] --> A2[\"关闭 Codex\"]\n    A2 --> A3[\"获取 DeepSeek API Key\"]\n    A3 --> A4[\"安装 CC Switch\"]\n    A4 --> A5[\"在 CC Switch 新建 DeepSeek 配置\"]\n    A5 --> A6[\"启用路由功能\"]\n    A6 --> A7[\"打开 Codex（无需 OpenAI 登录）\"]\n    A7 --> A8[\"使用 DeepSeek 模型进行代码生成\"]"
+        },
+        {
+          "title": "CC Switch 配置与路由细节",
+          "code": "flowchart TD\n    B1[\"下载 CC Switch\"] --> B2[\"安装 CC Switch\"]\n    B2 --> B3[\"打开 CC Switch\"]\n    B3 --> B4[\"点击右上角加号创建新配置\"]\n    B4 --> B5[\"选择供应商 DeepSeek\"]\n    B5 --> B6[\"粘贴获取的 API Key\"]\n    B6 --> B7[\"点击添加完成配置\"]\n    B7 --> B8[\"在配置列表启用该配置\"]\n    B8 --> B9[\"打开设置 → 路由 → 本地路由\"]\n    B9 --> B10[\"打开路由开关\"]\n    B10 --> B11[\"实现 responses ↔ chat completions 格式转换\"]"
+        },
+        {
+          "title": "模型选择、显示问题与永久切换方案",
+          "code": "flowchart TD\n    C1[\"Codex 中显示模型为 custom\"] --> C2[\"进入 CC Switch 编辑页面\"]\n    C2 --> C3[\"当前使用模型：DeepSeek v4flash\"]\n    C3 --> C4[\"欲切换至 DeepSeek v4pro\"]\n    C4 --> C5[\"在模型映射中删除 v4flash 项\"]\n    C5 --> C6[\"保存映射设置\"]\n    C6 --> C7[\"重启 CC Switch 与 Codex\"]\n    C7 --> C8[\"验证配置文件中的默认模型\"]\n    C8 --> C9[\"模型已切换为 DeepSeek v4pro 并生效\"]\n    C9 --> C10[\"如需绕过登录 bug，可临时使用 OpenAI 账号登录后退出\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T22:52:08+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 第三方模型驱动 Codex 知识图谱\n\n## 整体流程概览 [BV1cmTu6mEL3 P1 00:34]\n```mermaid\nflowchart TD\n    A1[\"下载 Codex\"] --> A2[\"关闭 Codex\"]\n    A2 --> A3[\"获取 DeepSeek API Key\"]\n    A3 --> A4[\"安装 CC Switch\"]\n    A4 --> A5[\"在 CC Switch 新建 DeepSeek 配置\"]\n    A5 --> A6[\"启用路由功能\"]\n    A6 --> A7[\"打开 Codex（无需 OpenAI 登录）\"]\n    A7 --> A8[\"使用 DeepSeek 模型进行代码生成\"]\n```\n\n## CC Switch 配置与路由细节 [BV1cmTu6mEL3 P1 02:40]\n```mermaid\nflowchart TD\n    B1[\"下载 CC Switch\"] --> B2[\"安装 CC Switch\"]\n    B2 --> B3[\"打开 CC Switch\"]\n    B3 --> B4[\"点击右上角加号创建新配置\"]\n    B4 --> B5[\"选择供应商 DeepSeek\"]\n    B5 --> B6[\"粘贴获取的 API Key\"]\n    B6 --> B7[\"点击添加完成配置\"]\n    B7 --> B8[\"在配置列表启用该配置\"]\n    B8 --> B9[\"打开设置 → 路由 → 本地路由\"]\n    B9 --> B10[\"打开路由开关\"]\n    B10 --> B11[\"实现 responses ↔ chat completions 格式转换\"]\n```\n\n## 模型选择、显示问题与永久切换方案 [BV1cmTu6mEL3 P1 05:48]\n```mermaid\nflowchart TD\n    C1[\"Codex 中显示模型为 custom\"] --> C2[\"进入 CC Switch 编辑页面\"]\n    C2 --> C3[\"当前使用模型：DeepSeek v4flash\"]\n    C3 --> C4[\"欲切换至 DeepSeek v4pro\"]\n    C4 --> C5[\"在模型映射中删除 v4flash 项\"]\n    C5 --> C6[\"保存映射设置\"]\n    C6 --> C7[\"重启 CC Switch 与 Codex\"]\n    C7 --> C8[\"验证配置文件中的默认模型\"]\n    C8 --> C9[\"模型已切换为 DeepSeek v4pro 并生效\"]\n    C9 --> C10[\"如需绕过登录 bug，可临时使用 OpenAI 账号登录后退出\"]\n```",
+  "diagrams": [
+    {
+      "title": "整体流程概览",
+      "code": "flowchart TD\n    A1[\"下载 Codex\"] --> A2[\"关闭 Codex\"]\n    A2 --> A3[\"获取 DeepSeek API Key\"]\n    A3 --> A4[\"安装 CC Switch\"]\n    A4 --> A5[\"在 CC Switch 新建 DeepSeek 配置\"]\n    A5 --> A6[\"启用路由功能\"]\n    A6 --> A7[\"打开 Codex（无需 OpenAI 登录）\"]\n    A7 --> A8[\"使用 DeepSeek 模型进行代码生成\"]"
+    },
+    {
+      "title": "CC Switch 配置与路由细节",
+      "code": "flowchart TD\n    B1[\"下载 CC Switch\"] --> B2[\"安装 CC Switch\"]\n    B2 --> B3[\"打开 CC Switch\"]\n    B3 --> B4[\"点击右上角加号创建新配置\"]\n    B4 --> B5[\"选择供应商 DeepSeek\"]\n    B5 --> B6[\"粘贴获取的 API Key\"]\n    B6 --> B7[\"点击添加完成配置\"]\n    B7 --> B8[\"在配置列表启用该配置\"]\n    B8 --> B9[\"打开设置 → 路由 → 本地路由\"]\n    B9 --> B10[\"打开路由开关\"]\n    B10 --> B11[\"实现 responses ↔ chat completions 格式转换\"]"
+    },
+    {
+      "title": "模型选择、显示问题与永久切换方案",
+      "code": "flowchart TD\n    C1[\"Codex 中显示模型为 custom\"] --> C2[\"进入 CC Switch 编辑页面\"]\n    C2 --> C3[\"当前使用模型：DeepSeek v4flash\"]\n    C3 --> C4[\"欲切换至 DeepSeek v4pro\"]\n    C4 --> C5[\"在模型映射中删除 v4flash 项\"]\n    C5 --> C6[\"保存映射设置\"]\n    C6 --> C7[\"重启 CC Switch 与 Codex\"]\n    C7 --> C8[\"验证配置文件中的默认模型\"]\n    C8 --> C9[\"模型已切换为 DeepSeek v4pro 并生效\"]\n    C9 --> C10[\"如需绕过登录 bug，可临时使用 OpenAI 账号登录后退出\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:52:08+00:00"
+}

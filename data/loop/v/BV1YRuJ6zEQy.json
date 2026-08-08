@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1YRuJ6zEQy",
+  "title": "从零开始！一个人花费三个月+150亿 GPT-5.6 + GPT5.5的Rust应用能做到什么程度？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1478,
+  "text": "1markdown所见即所得\nmarkdown文档默认打开就是预览状态\n也可以手动打开侧标签页\n显示原始格式\n支持直接在预览状态下进行编辑\nMD文档是AI大模型友好的文档格式\n但是对用户来说不太友好\n此功能可以打破人与AI沟通边界\n提高效率\n快捷键设置标题\n文本样式\n复制粘贴图片等功能都具备\n配合git仓库已经可以当笔记使用了\n右键快速添加到agent上下文\nAI在归档标记也都特别方便\n2l k s scope插件与AI联动演示\nscope插件做了原生界面\n嵌入适配\n查看数据波形更方便\n提供了MCP工具\n更可以直接用自然语言让AI进行分析数据\n可以看到AI对代码和波形数据进行了综合分析\n并总结\n3AI单步调试豆包豆包代码一开总中断\nMCU就崩\n怎么回事\n好豆包老先生\n收到问题\n开始搜集资料\n你再来逐一排查\n信息太少\n只能泛化排查\n当上下文信息和工具都到位\nAI能做到什么程度\nLKSAI里的deep sick\n在自己单步调试实际的工程代码\n精准排查定位问题\n解决问题并输出报告\n实机验证演示自然语言给AI指令即可\nAI会先熟悉代码\n工程结构\n接着AI调用插件编译烧录和进入单步调试\n观察并复现现象\nAI根据已知信息排查分析问题\nAI执行修复并验证\n最后总结并输出报告\n可以看到在信息足够多\n工具生态足够健全的情况下\nAI可以精准定位问题并解决\n能够有效帮助客户和工程师解决问题\n提高效率\n解决嵌入式工程AI难以介入的痛点\n4web coding演示\nAI编程这个基本功能自然也是支持的\n比如演示里使用自然语言描述功能需求\n需要做到什么程度\nAI便会根据已有的工具能力进行精准执行\n这里可以看到AI修改代码\n编译烧录并自动打开了l k s scope插件工具\n并调用串口调试插件发送报文\n检查scope是否打印对应的报文内容\n以及串口插件是否收到了MCU的真实回报\n内容是否一致\n最后也是总结并输出了报告\n五联网检索与手机端接续\n可以看到演示这里工作区是空的\n没有任何资料\nLKSAI提供了免费的联网检索服务\n可以赋能原生不具备联网检索的模型\n让模型查阅接入最新的公开信息\n并进行交叉核验\n不再被模型的陈旧知识库干扰而随意回答问题\n接着演示手机端远程接续这个绘画\n手机端也可以显示编程任务状态\n和下发新的编程需求\n六多文件预览演示\n除了markdown文档以外\nLKSAI还支持图片文件\noffice文件预览\nall in one只为更加方便快捷\n无需为了查看资料而反复切换软件\nPDF文件\nword文档\nexcel表格\nPPT文件思维导图都支持\n比如这里演示还支持选定PDF文件\n具体内容添加给AI agent进行无边界对话\n这样看起文档来都更方便了\n有没有哪里不懂点哪里的感觉呢\n甚至bin文件\nhex文件也支持拖进编辑器进行预览\nbin文件还支持编辑和比对\n七反馈和贡献上传\n点击导航栏帮助快速反馈\n可以进行问题反馈和功能建议\n可以上传附件\n快速附带对话信息\n也可以快速粘贴界面截图\n点击导航栏的上传贡献功能\n同样可以分享工作区内容\n好用的技能开发的插件等\n本软件不会主动上传您的任何工作区信息\n但您乐于分享的资源\n反馈的问题和建议\n一经采纳都可以获取贡献奖励\n期待您的使用与反馈\n八内部工具演示\n软件还集成了可以显示启用的内部工具\n可以点击agent面板的加号进行启用\n当然如果触发对应的场景\nAI也会自主判断决定是否启用\n以知识库举例\n工作区为空\n用户的提问也与LKS知识库有交集\n那么AI就会主动查询LKS的知识库进行回答\n感谢您的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YRuJ6zEQy",
+  "published_at": "1786013976",
+  "fetched_at": "2026-08-07T15:38:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# LKSAI 功能与 AI 工作流概览\n\n## 1. Markdown 与 AI 交互概览\n```mermaid\nflowchart TD\n    MDEditor[\"Markdown 编辑器\"] -->|默认打开| Preview[\"预览模式\"]\n    Preview -->|可手动切换| RawView[\"原始格式视图\"]\n    Preview -->|直接编辑| EditInPreview[\"在预览中编辑\"]\n    MDEditor -->|支持| Shortcut[\"快捷键（标题、样式）\"]\n    MDEditor -->|支持| ImgCopyPaste[\"图片复制粘贴\"]\n    MDEditor -->|集成| Git[\"Git 仓库同步\"]\n    MDEditor -->|右键| AddToAgent[\"添加到 AI Agent 上下文\"]\n    MDEditor -->|归档| ArchiveTag[\"归档标记\"]\n    MDEditor -->|文档格式| AIFormat[\"AI 大模型友好\"]\n    MDEditor -->|对用户| UserUnfriendly[\"用户不友好\"]\n    AIFormat -->|打破| Boundary[\"人与 AI 沟通边界\"]\n    Boundary -->|提升| Efficiency[\"工作效率\"]\n```\n00:15‑00:46\n\n## 2. AI 单步调试完整流程\n```mermaid\nflowchart TD\n    Issue[\"接收问题\"] --> Gather[\"搜集资料\"]\n    Gather --> ContextReady[\"上下文信息与工具就位\"]\n    ContextReady --> Familiarize[\"AI 熟悉代码与工程结构\"]\n    Familiarize --> CompileBurn[\"调用插件编译、烧录\"]\n    CompileBurn --> Debug[\"进入单步调试\"]\n    Debug --> Observe[\"观察并复现现象\"]\n    Observe --> Analyze[\"根据已知信息排查分析\"]\n    Analyze --> Fix[\"执行修复\"]\n    Fix --> Verify[\"验证修复效果\"]\n    Verify --> Report[\"总结并输出报告\"]\n```\n01:55‑02:48\n\n## 3. Web 编程与硬件联动流程\n```mermaid\nflowchart TD\n    Requirement[\"自然语言描述功能需求\"] --> Interpret[\"AI 解析需求\"]\n    Interpret --> Modify[\"AI 修改代码\"]\n    Modify --> CompileBurn[\"编译并烧录\"]\n    CompileBurn --> OpenScope[\"打开 LKS Scope 插件\"]\n    OpenScope --> Serial[\"调用串口调试插件发送报文\"]\n    Serial --> CheckScope[\"检查 Scope 打印的报文内容\"]\n    Serial --> CheckSerial[\"检查串口插件收到的 MCU 回报\"]\n    CheckScope --> Verify[\"内容是否一致\"]\n    Verify --> Report[\"总结并输出报告\"]\n```\n03:07‑03:38\n\n## 4. 多文件预览、编辑与反馈生态\n```mermaid\nflowchart TD\n    AllInOne[\"All‑in‑One 预览平台\"] --> MD[\"Markdown 文档\"]\n    AllInOne --> Img[\"图片文件\"]\n    AllInOne --> Office[\"Office 文件\"]\n    Office --> PDF[\"PDF 文件\"]\n    Office --> Word[\"Word 文档\"]\n    Office --> Excel[\"Excel 表格\"]\n    Office --> PPT[\"PPT 文件\"]\n    AllInOne --> BinHex[\"二进制/Hex 文件\"]\n    BinHex --> BinPreview[\"预览\"]\n    BinHex --> BinEdit[\"编辑与比对\"]\n    AllInOne --> NoSwitch[\"无需切换软件\"]\n    AllInOne --> Feedback[\"反馈与贡献\"]\n    Feedback --> Nav[\"导航栏快速反馈\"]\n    Nav --> Submit[\"提交问题/功能建议\"]\n    Submit --> Upload[\"上传附件（截图、对话）\"]\n    Upload --> Share[\"分享工作区内容\"]\n    Share --> NoAuto[\"软件不主动上传信息\"]\n    Share --> Reward[\"采纳后获取贡献奖励\"]\n```\n04:41‑06:28",
+      "diagrams": [
+        {
+          "title": "1. Markdown 与 AI 交互概览",
+          "code": "flowchart TD\n    MDEditor[\"Markdown 编辑器\"] -->|默认打开| Preview[\"预览模式\"]\n    Preview -->|可手动切换| RawView[\"原始格式视图\"]\n    Preview -->|直接编辑| EditInPreview[\"在预览中编辑\"]\n    MDEditor -->|支持| Shortcut[\"快捷键（标题、样式）\"]\n    MDEditor -->|支持| ImgCopyPaste[\"图片复制粘贴\"]\n    MDEditor -->|集成| Git[\"Git 仓库同步\"]\n    MDEditor -->|右键| AddToAgent[\"添加到 AI Agent 上下文\"]\n    MDEditor -->|归档| ArchiveTag[\"归档标记\"]\n    MDEditor -->|文档格式| AIFormat[\"AI 大模型友好\"]\n    MDEditor -->|对用户| UserUnfriendly[\"用户不友好\"]\n    AIFormat -->|打破| Boundary[\"人与 AI 沟通边界\"]\n    Boundary -->|提升| Efficiency[\"工作效率\"]"
+        },
+        {
+          "title": "2. AI 单步调试完整流程",
+          "code": "flowchart TD\n    Issue[\"接收问题\"] --> Gather[\"搜集资料\"]\n    Gather --> ContextReady[\"上下文信息与工具就位\"]\n    ContextReady --> Familiarize[\"AI 熟悉代码与工程结构\"]\n    Familiarize --> CompileBurn[\"调用插件编译、烧录\"]\n    CompileBurn --> Debug[\"进入单步调试\"]\n    Debug --> Observe[\"观察并复现现象\"]\n    Observe --> Analyze[\"根据已知信息排查分析\"]\n    Analyze --> Fix[\"执行修复\"]\n    Fix --> Verify[\"验证修复效果\"]\n    Verify --> Report[\"总结并输出报告\"]"
+        },
+        {
+          "title": "3. Web 编程与硬件联动流程",
+          "code": "flowchart TD\n    Requirement[\"自然语言描述功能需求\"] --> Interpret[\"AI 解析需求\"]\n    Interpret --> Modify[\"AI 修改代码\"]\n    Modify --> CompileBurn[\"编译并烧录\"]\n    CompileBurn --> OpenScope[\"打开 LKS Scope 插件\"]\n    OpenScope --> Serial[\"调用串口调试插件发送报文\"]\n    Serial --> CheckScope[\"检查 Scope 打印的报文内容\"]\n    Serial --> CheckSerial[\"检查串口插件收到的 MCU 回报\"]\n    CheckScope --> Verify[\"内容是否一致\"]\n    Verify --> Report[\"总结并输出报告\"]"
+        },
+        {
+          "title": "4. 多文件预览、编辑与反馈生态",
+          "code": "flowchart TD\n    AllInOne[\"All‑in‑One 预览平台\"] --> MD[\"Markdown 文档\"]\n    AllInOne --> Img[\"图片文件\"]\n    AllInOne --> Office[\"Office 文件\"]\n    Office --> PDF[\"PDF 文件\"]\n    Office --> Word[\"Word 文档\"]\n    Office --> Excel[\"Excel 表格\"]\n    Office --> PPT[\"PPT 文件\"]\n    AllInOne --> BinHex[\"二进制/Hex 文件\"]\n    BinHex --> BinPreview[\"预览\"]\n    BinHex --> BinEdit[\"编辑与比对\"]\n    AllInOne --> NoSwitch[\"无需切换软件\"]\n    AllInOne --> Feedback[\"反馈与贡献\"]\n    Feedback --> Nav[\"导航栏快速反馈\"]\n    Nav --> Submit[\"提交问题/功能建议\"]\n    Submit --> Upload[\"上传附件（截图、对话）\"]\n    Upload --> Share[\"分享工作区内容\"]\n    Share --> NoAuto[\"软件不主动上传信息\"]\n    Share --> Reward[\"采纳后获取贡献奖励\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T15:38:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# LKSAI 功能与 AI 工作流概览\n\n## 1. Markdown 与 AI 交互概览\n```mermaid\nflowchart TD\n    MDEditor[\"Markdown 编辑器\"] -->|默认打开| Preview[\"预览模式\"]\n    Preview -->|可手动切换| RawView[\"原始格式视图\"]\n    Preview -->|直接编辑| EditInPreview[\"在预览中编辑\"]\n    MDEditor -->|支持| Shortcut[\"快捷键（标题、样式）\"]\n    MDEditor -->|支持| ImgCopyPaste[\"图片复制粘贴\"]\n    MDEditor -->|集成| Git[\"Git 仓库同步\"]\n    MDEditor -->|右键| AddToAgent[\"添加到 AI Agent 上下文\"]\n    MDEditor -->|归档| ArchiveTag[\"归档标记\"]\n    MDEditor -->|文档格式| AIFormat[\"AI 大模型友好\"]\n    MDEditor -->|对用户| UserUnfriendly[\"用户不友好\"]\n    AIFormat -->|打破| Boundary[\"人与 AI 沟通边界\"]\n    Boundary -->|提升| Efficiency[\"工作效率\"]\n```\n00:15‑00:46\n\n## 2. AI 单步调试完整流程\n```mermaid\nflowchart TD\n    Issue[\"接收问题\"] --> Gather[\"搜集资料\"]\n    Gather --> ContextReady[\"上下文信息与工具就位\"]\n    ContextReady --> Familiarize[\"AI 熟悉代码与工程结构\"]\n    Familiarize --> CompileBurn[\"调用插件编译、烧录\"]\n    CompileBurn --> Debug[\"进入单步调试\"]\n    Debug --> Observe[\"观察并复现现象\"]\n    Observe --> Analyze[\"根据已知信息排查分析\"]\n    Analyze --> Fix[\"执行修复\"]\n    Fix --> Verify[\"验证修复效果\"]\n    Verify --> Report[\"总结并输出报告\"]\n```\n01:55‑02:48\n\n## 3. Web 编程与硬件联动流程\n```mermaid\nflowchart TD\n    Requirement[\"自然语言描述功能需求\"] --> Interpret[\"AI 解析需求\"]\n    Interpret --> Modify[\"AI 修改代码\"]\n    Modify --> CompileBurn[\"编译并烧录\"]\n    CompileBurn --> OpenScope[\"打开 LKS Scope 插件\"]\n    OpenScope --> Serial[\"调用串口调试插件发送报文\"]\n    Serial --> CheckScope[\"检查 Scope 打印的报文内容\"]\n    Serial --> CheckSerial[\"检查串口插件收到的 MCU 回报\"]\n    CheckScope --> Verify[\"内容是否一致\"]\n    Verify --> Report[\"总结并输出报告\"]\n```\n03:07‑03:38\n\n## 4. 多文件预览、编辑与反馈生态\n```mermaid\nflowchart TD\n    AllInOne[\"All‑in‑One 预览平台\"] --> MD[\"Markdown 文档\"]\n    AllInOne --> Img[\"图片文件\"]\n    AllInOne --> Office[\"Office 文件\"]\n    Office --> PDF[\"PDF 文件\"]\n    Office --> Word[\"Word 文档\"]\n    Office --> Excel[\"Excel 表格\"]\n    Office --> PPT[\"PPT 文件\"]\n    AllInOne --> BinHex[\"二进制/Hex 文件\"]\n    BinHex --> BinPreview[\"预览\"]\n    BinHex --> BinEdit[\"编辑与比对\"]\n    AllInOne --> NoSwitch[\"无需切换软件\"]\n    AllInOne --> Feedback[\"反馈与贡献\"]\n    Feedback --> Nav[\"导航栏快速反馈\"]\n    Nav --> Submit[\"提交问题/功能建议\"]\n    Submit --> Upload[\"上传附件（截图、对话）\"]\n    Upload --> Share[\"分享工作区内容\"]\n    Share --> NoAuto[\"软件不主动上传信息\"]\n    Share --> Reward[\"采纳后获取贡献奖励\"]\n```\n04:41‑06:28",
+  "diagrams": [
+    {
+      "title": "1. Markdown 与 AI 交互概览",
+      "code": "flowchart TD\n    MDEditor[\"Markdown 编辑器\"] -->|默认打开| Preview[\"预览模式\"]\n    Preview -->|可手动切换| RawView[\"原始格式视图\"]\n    Preview -->|直接编辑| EditInPreview[\"在预览中编辑\"]\n    MDEditor -->|支持| Shortcut[\"快捷键（标题、样式）\"]\n    MDEditor -->|支持| ImgCopyPaste[\"图片复制粘贴\"]\n    MDEditor -->|集成| Git[\"Git 仓库同步\"]\n    MDEditor -->|右键| AddToAgent[\"添加到 AI Agent 上下文\"]\n    MDEditor -->|归档| ArchiveTag[\"归档标记\"]\n    MDEditor -->|文档格式| AIFormat[\"AI 大模型友好\"]\n    MDEditor -->|对用户| UserUnfriendly[\"用户不友好\"]\n    AIFormat -->|打破| Boundary[\"人与 AI 沟通边界\"]\n    Boundary -->|提升| Efficiency[\"工作效率\"]"
+    },
+    {
+      "title": "2. AI 单步调试完整流程",
+      "code": "flowchart TD\n    Issue[\"接收问题\"] --> Gather[\"搜集资料\"]\n    Gather --> ContextReady[\"上下文信息与工具就位\"]\n    ContextReady --> Familiarize[\"AI 熟悉代码与工程结构\"]\n    Familiarize --> CompileBurn[\"调用插件编译、烧录\"]\n    CompileBurn --> Debug[\"进入单步调试\"]\n    Debug --> Observe[\"观察并复现现象\"]\n    Observe --> Analyze[\"根据已知信息排查分析\"]\n    Analyze --> Fix[\"执行修复\"]\n    Fix --> Verify[\"验证修复效果\"]\n    Verify --> Report[\"总结并输出报告\"]"
+    },
+    {
+      "title": "3. Web 编程与硬件联动流程",
+      "code": "flowchart TD\n    Requirement[\"自然语言描述功能需求\"] --> Interpret[\"AI 解析需求\"]\n    Interpret --> Modify[\"AI 修改代码\"]\n    Modify --> CompileBurn[\"编译并烧录\"]\n    CompileBurn --> OpenScope[\"打开 LKS Scope 插件\"]\n    OpenScope --> Serial[\"调用串口调试插件发送报文\"]\n    Serial --> CheckScope[\"检查 Scope 打印的报文内容\"]\n    Serial --> CheckSerial[\"检查串口插件收到的 MCU 回报\"]\n    CheckScope --> Verify[\"内容是否一致\"]\n    Verify --> Report[\"总结并输出报告\"]"
+    },
+    {
+      "title": "4. 多文件预览、编辑与反馈生态",
+      "code": "flowchart TD\n    AllInOne[\"All‑in‑One 预览平台\"] --> MD[\"Markdown 文档\"]\n    AllInOne --> Img[\"图片文件\"]\n    AllInOne --> Office[\"Office 文件\"]\n    Office --> PDF[\"PDF 文件\"]\n    Office --> Word[\"Word 文档\"]\n    Office --> Excel[\"Excel 表格\"]\n    Office --> PPT[\"PPT 文件\"]\n    AllInOne --> BinHex[\"二进制/Hex 文件\"]\n    BinHex --> BinPreview[\"预览\"]\n    BinHex --> BinEdit[\"编辑与比对\"]\n    AllInOne --> NoSwitch[\"无需切换软件\"]\n    AllInOne --> Feedback[\"反馈与贡献\"]\n    Feedback --> Nav[\"导航栏快速反馈\"]\n    Nav --> Submit[\"提交问题/功能建议\"]\n    Submit --> Upload[\"上传附件（截图、对话）\"]\n    Upload --> Share[\"分享工作区内容\"]\n    Share --> NoAuto[\"软件不主动上传信息\"]\n    Share --> Reward[\"采纳后获取贡献奖励\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:38:35+00:00"
+}

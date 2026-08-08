@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1M5M869E5m",
+  "title": "DeepSeek官方推荐的编程助手Deep Code太强了！接入MCP后离谱到没朋友",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 734,
+  "text": "好了\n兄弟们\n今天给大家推荐一款新出来的AICENI工具\nDeep code\n专门为deep seek v4系列模型深度适配的\nA政策工具\n我今天安装试用了下\n和前段时间出的deep seek t u i\n不是一个维度的东西\n并且deep code出现在DEFSK官网\n推荐的A政策工具中了\n如果你是DFSK用户的话\n这将是你最佳的编程搭档\n另外也支持vs code插件的形式来使用\n安装过程非常简单\n一个NPM命令全局安装就可以了\n安装完成之后需要配置3T点JSON文件\n就可以正常使用\n使用方法和其他CNI进程工具差不多\n我接入了我自己开发的林雨凡笔记的MCP\n先让他设计一个结算台的HTML页面\n能看到调用了林雨凡note create HTML配置的工具\n简单看一下设计的页面还凑合\n能看到这里说明MCP配置是没有问题的\n接下来让他查一下我今天的日程\n这个也没有问题\n再查下昨天的日程\n昨天的日程中有一条久坐提醒是和今天一样的\n让他把今天的日程汇总一个表格发给我\ndeep code显示表格是没有问题的\n而且他还调用创建网页工具\n生成了一个网页的汇总\n不过因为没有使用scale\n没有生成暗色模式下的页面显示有点问题\n接着让他汇总上周的日程给我能看到\n分别使用日程查询工具和创建页面的工具\n这个是林羽凡笔记的鸿蒙应用\n切换到待办页\n现在只有一条代办\n让他创建一条代办\n下午六点提醒我拿快递\n能看到这个代办创建也没问题\n在使用斜杠MCP查看配置的MCP接口\n能看到林雨凡note的工具全部都列出来了\n最后让他查一下兰州的天气\n能看到分别调用了web search\nA政策和web search两个工具来执行任务\n任务结果也是没有问题的\n非常nice\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1M5M869E5m",
+  "published_at": "1783421442",
+  "fetched_at": "2026-08-07T00:11:49+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deep Code 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    DC[\"Deep Code\"] -->|适配| DSv4[\"DeepSeek v4 系列模型\"]\n    DC -->|列于| DFSK[\"DFSK 官网 A政策工具\"]\n    DC -->|提供| VSPlugin[\"VS Code 插件形式\"]\n    Install[\"安装流程\"] --> NPM[\"NPM 全局安装\"]\n    Install --> JSONConf[\"配置 3T 点 JSON 文件\"]\n    NPM --> JSONConf\n    JSONConf --> Ready[\"可正常使用\"]\n    DC -->|可通过| MCP[\"MCP 集成\"]\n    MCP --> Tools[\"调用林雨凡笔记工具\"]\n```\n\n## 使用流程图\n```mermaid\nflowchart LR\n    MCP --> HTMLGen[\"HTML 页面生成\"]\n    HTMLGen --> HTMLPage[\"结算台 HTML 页面\"]\n    MCP --> ScheduleToday[\"查询今日日程\"]\n    MCP --> ScheduleYesterday[\"查询昨日日程\"]\n    ScheduleToday --> TableToday[\"生成今日日程表格\"]\n    ScheduleYesterday --> TableYesterday[\"生成昨日日程表格\"]\n    TableToday --> WebPage[\"创建网页汇总\"]\n    TableYesterday --> WebPage\n    WebPage -->|缺少 Scale| DarkModeIssue[\"暗色模式显示问题\"]\n    MCP --> WeeklySum[\"汇总上周日程\"]\n    WeeklySum --> TableWeekly[\"生成上周表格\"]\n    MCP --> TodoCreate[\"创建代办\"]\n    TodoCreate --> TodoItem[\"下午六点提醒取快递\"]\n    MCP --> Weather[\"查询兰州天气\"]\n    Weather -->|调用| WebSearch[\"Web Search 工具\"]\n    Weather -->|调用| PolicyTool[\"A政策工具\"]\n```\n\n## 限制与前置条件图\n```mermaid\nflowchart TD\n    InstallReq[\"安装前提\"] --> NPMCmd[\"NPM 全局安装命令\"]\n    NPMCmd --> ConfigReq[\"需配置 JSON 文件\"]\n    ConfigReq -->|正确| ReadyUse[\"正常使用 Deep Code\"]\n    ReadyUse -->|无 Scale 参数| DarkModeIssue[\"暗色模式页面显示异常\"]\n    ReadyUse -->|有 Scale 参数| DarkModeOK[\"暗色模式正常显示\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    DC[\"Deep Code\"] -->|适配| DSv4[\"DeepSeek v4 系列模型\"]\n    DC -->|列于| DFSK[\"DFSK 官网 A政策工具\"]\n    DC -->|提供| VSPlugin[\"VS Code 插件形式\"]\n    Install[\"安装流程\"] --> NPM[\"NPM 全局安装\"]\n    Install --> JSONConf[\"配置 3T 点 JSON 文件\"]\n    NPM --> JSONConf\n    JSONConf --> Ready[\"可正常使用\"]\n    DC -->|可通过| MCP[\"MCP 集成\"]\n    MCP --> Tools[\"调用林雨凡笔记工具\"]"
+        },
+        {
+          "title": "使用流程图",
+          "code": "flowchart LR\n    MCP --> HTMLGen[\"HTML 页面生成\"]\n    HTMLGen --> HTMLPage[\"结算台 HTML 页面\"]\n    MCP --> ScheduleToday[\"查询今日日程\"]\n    MCP --> ScheduleYesterday[\"查询昨日日程\"]\n    ScheduleToday --> TableToday[\"生成今日日程表格\"]\n    ScheduleYesterday --> TableYesterday[\"生成昨日日程表格\"]\n    TableToday --> WebPage[\"创建网页汇总\"]\n    TableYesterday --> WebPage\n    WebPage -->|缺少 Scale| DarkModeIssue[\"暗色模式显示问题\"]\n    MCP --> WeeklySum[\"汇总上周日程\"]\n    WeeklySum --> TableWeekly[\"生成上周表格\"]\n    MCP --> TodoCreate[\"创建代办\"]\n    TodoCreate --> TodoItem[\"下午六点提醒取快递\"]\n    MCP --> Weather[\"查询兰州天气\"]\n    Weather -->|调用| WebSearch[\"Web Search 工具\"]\n    Weather -->|调用| PolicyTool[\"A政策工具\"]"
+        },
+        {
+          "title": "限制与前置条件图",
+          "code": "flowchart TD\n    InstallReq[\"安装前提\"] --> NPMCmd[\"NPM 全局安装命令\"]\n    NPMCmd --> ConfigReq[\"需配置 JSON 文件\"]\n    ConfigReq -->|正确| ReadyUse[\"正常使用 Deep Code\"]\n    ReadyUse -->|无 Scale 参数| DarkModeIssue[\"暗色模式页面显示异常\"]\n    ReadyUse -->|有 Scale 参数| DarkModeOK[\"暗色模式正常显示\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T00:12:01+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deep Code 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    DC[\"Deep Code\"] -->|适配| DSv4[\"DeepSeek v4 系列模型\"]\n    DC -->|列于| DFSK[\"DFSK 官网 A政策工具\"]\n    DC -->|提供| VSPlugin[\"VS Code 插件形式\"]\n    Install[\"安装流程\"] --> NPM[\"NPM 全局安装\"]\n    Install --> JSONConf[\"配置 3T 点 JSON 文件\"]\n    NPM --> JSONConf\n    JSONConf --> Ready[\"可正常使用\"]\n    DC -->|可通过| MCP[\"MCP 集成\"]\n    MCP --> Tools[\"调用林雨凡笔记工具\"]\n```\n\n## 使用流程图\n```mermaid\nflowchart LR\n    MCP --> HTMLGen[\"HTML 页面生成\"]\n    HTMLGen --> HTMLPage[\"结算台 HTML 页面\"]\n    MCP --> ScheduleToday[\"查询今日日程\"]\n    MCP --> ScheduleYesterday[\"查询昨日日程\"]\n    ScheduleToday --> TableToday[\"生成今日日程表格\"]\n    ScheduleYesterday --> TableYesterday[\"生成昨日日程表格\"]\n    TableToday --> WebPage[\"创建网页汇总\"]\n    TableYesterday --> WebPage\n    WebPage -->|缺少 Scale| DarkModeIssue[\"暗色模式显示问题\"]\n    MCP --> WeeklySum[\"汇总上周日程\"]\n    WeeklySum --> TableWeekly[\"生成上周表格\"]\n    MCP --> TodoCreate[\"创建代办\"]\n    TodoCreate --> TodoItem[\"下午六点提醒取快递\"]\n    MCP --> Weather[\"查询兰州天气\"]\n    Weather -->|调用| WebSearch[\"Web Search 工具\"]\n    Weather -->|调用| PolicyTool[\"A政策工具\"]\n```\n\n## 限制与前置条件图\n```mermaid\nflowchart TD\n    InstallReq[\"安装前提\"] --> NPMCmd[\"NPM 全局安装命令\"]\n    NPMCmd --> ConfigReq[\"需配置 JSON 文件\"]\n    ConfigReq -->|正确| ReadyUse[\"正常使用 Deep Code\"]\n    ReadyUse -->|无 Scale 参数| DarkModeIssue[\"暗色模式页面显示异常\"]\n    ReadyUse -->|有 Scale 参数| DarkModeOK[\"暗色模式正常显示\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    DC[\"Deep Code\"] -->|适配| DSv4[\"DeepSeek v4 系列模型\"]\n    DC -->|列于| DFSK[\"DFSK 官网 A政策工具\"]\n    DC -->|提供| VSPlugin[\"VS Code 插件形式\"]\n    Install[\"安装流程\"] --> NPM[\"NPM 全局安装\"]\n    Install --> JSONConf[\"配置 3T 点 JSON 文件\"]\n    NPM --> JSONConf\n    JSONConf --> Ready[\"可正常使用\"]\n    DC -->|可通过| MCP[\"MCP 集成\"]\n    MCP --> Tools[\"调用林雨凡笔记工具\"]"
+    },
+    {
+      "title": "使用流程图",
+      "code": "flowchart LR\n    MCP --> HTMLGen[\"HTML 页面生成\"]\n    HTMLGen --> HTMLPage[\"结算台 HTML 页面\"]\n    MCP --> ScheduleToday[\"查询今日日程\"]\n    MCP --> ScheduleYesterday[\"查询昨日日程\"]\n    ScheduleToday --> TableToday[\"生成今日日程表格\"]\n    ScheduleYesterday --> TableYesterday[\"生成昨日日程表格\"]\n    TableToday --> WebPage[\"创建网页汇总\"]\n    TableYesterday --> WebPage\n    WebPage -->|缺少 Scale| DarkModeIssue[\"暗色模式显示问题\"]\n    MCP --> WeeklySum[\"汇总上周日程\"]\n    WeeklySum --> TableWeekly[\"生成上周表格\"]\n    MCP --> TodoCreate[\"创建代办\"]\n    TodoCreate --> TodoItem[\"下午六点提醒取快递\"]\n    MCP --> Weather[\"查询兰州天气\"]\n    Weather -->|调用| WebSearch[\"Web Search 工具\"]\n    Weather -->|调用| PolicyTool[\"A政策工具\"]"
+    },
+    {
+      "title": "限制与前置条件图",
+      "code": "flowchart TD\n    InstallReq[\"安装前提\"] --> NPMCmd[\"NPM 全局安装命令\"]\n    NPMCmd --> ConfigReq[\"需配置 JSON 文件\"]\n    ConfigReq -->|正确| ReadyUse[\"正常使用 Deep Code\"]\n    ReadyUse -->|无 Scale 参数| DarkModeIssue[\"暗色模式页面显示异常\"]\n    ReadyUse -->|有 Scale 参数| DarkModeOK[\"暗色模式正常显示\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T00:12:01+00:00"
+}

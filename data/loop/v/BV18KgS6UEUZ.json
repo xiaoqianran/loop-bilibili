@@ -1,0 +1,40 @@
+{
+  "bvid": "BV18KgS6UEUZ",
+  "title": "面试官问：Codex和Claude Code的本质区别是什么？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1507,
+  "text": "面试官问code x和cloud code的区别是什么\n这题你要是只说一个是OpenAI的\n一个是ANTHROPIC的\n面试官直接给你划水标签\n大家好\n我是jack\n今天把这道AI编程助手选型题\n从产品定位\n工作方式到落地场景一次性讲透\n先给一个总体判断\n你听完就能直接拿去用\n如果把它们都放在AI编程助手这个赛道里看\ncode x更像一个偏任务委托\n偏云端异步执行的agent\n它的核心能力是让你能同时派出去好几个活\n最后回来统一收结果\n而color code更像一个偏深度协作\n偏代码库理解和长链路执行的系统\n他擅长接住一个完整目标\n自己拆步骤\n自己跨文件改\n自己跑测试\n直到通过两边都能读代码\n改代码跑测试\n但产品气质和典型打开方式完全不同\n下面我从四个维度拆给你看\n第一定位侧重不一样\nopen night给code x的官方定位极其明确\n就强调一件事\n把定义清楚\n边界明确的开发任务并行丢给他做\n比如写feature\n修bug跑测试\n回答代码库的问题\n这些全可以在独立的云端沙箱里异步跑\n它非常像一个你可以随时派活的云端工程代理\n而cloud code更强调能读懂整个代码库\n跨多个文件规划和执行\n反复跑测试直到通过\n所以cloud code给我的感觉\n更像一个在你旁边长期协作的高级工程搭子\n一个是远程帮你干零活的\n一个是坐你身边陪你啃硬骨头的\n第二工作方式有明显差异\ncode x非常强调任务隔离和并行处理\n你可以同时把几个互相独立的问题甩给他\n一个修测试\n一个做重构\n一个写文档\n最后回来统一review\n它的价值模型在于吞吐量\n而cloud code更强调在完整项目上下文里持续推进\n它会自己搜索目录结构\n理解模块之间的依赖关系\n跨文件做关联改动\n所以cloud code更像是擅长接触\n一个比较完整的业务目标\n然后自己拆成步骤\n一步一步往下推\n中间遇到测试报错还能自己修回来\n一个重病型分发\n一个重创型生推\n第三也是最关键的一句话\n判断code x是任务分发平台\ncloud code是代码库协作伙伴\ncode x的一个典型价值是\n减少工程师被琐碎任务打断的频率\nopen来自己也反复提\n他特别适合把重构重命名\n写测试\n这类会打断心流的国外包出去\n让工程师专注高价值决策\n而cloud code的强项更多在于理解陌生代码库\n以及跨全仓执行复杂改造\nASAP官方一直在强调\n它不是传统代码补全工具\n不是帮你补一两行的事儿\n而是站在项目级别去理解和执行\n所以如果用一句话区分\ncode x向能并行派攻的远程小组\ncloud code向能陪你深度结队的资深开发助手\n第四从产品经理视角\n我会特别关注落地场景怎么选\n如果一个团队更需要提效型场景\n大量重复开发\n批量修bug\n多人并行推进\n我会更容易想到code x\n因为它的云端沙箱加并行委托的模型\n天然契合高吞吐需求\n但如果一个团队需要高上下文的深度协作\n比如面对一个复杂的老代码库\n新人on boarding\n想快速理解项目结构或者跨模块的大范围改造\n我会更偏向cloud code\n因为他在理解全局和持续迭代这件事上\n的产品表达明显更强\n选哪个\n本质上是看你的团队\n当前最痛的是吞吐量还是上下文深度\n最后补一个动态视角\n别把结论说死\n目前两者的能力边界都在快速演进\ncode x也在不断提升长上下文理解能力\ncloud code也可以通过MCP等机制扩展\n执行更多异步操作\n但就现阶段产品形态而言\n刚才这个差异框架依然是最贴近第一性原理的\n解释面试官听你从定位到工作方式\n从场景选型到动态演进\n全讲完就知道你不是背对比表格的\n是真用过甄选过型的人",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18KgS6UEUZ",
+  "published_at": "1784790398",
+  "fetched_at": "2026-08-07T12:51:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T12:54:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T12:54:54+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1oZLQ6EEc4",
+  "title": "使用 Godot 实现 BongoCat 桌宠",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2993,
+  "text": "大家好\n本期视频教大家使用GOODA加c shop\n实现bgo cat捉宠\n视频中的素材以及项目文件已经开源到GITHUB\n各位可以自行下载\n首先创建主场景\n命名为main main场景\n以control类型的节点作为根节点\n项目中的所有场景都统一存放在新词目录下\n接下来创建猫猫场景\n新建一个control类型的场景\n将其命名为cat\n然后保存\n在节点下方创建两个text direct节点\n分别表示猫猫的身体与猫猫的左手胳膊\nText trick\n保持默认的大小缩放\n拉伸模式也保持默认的缩放拉伸\n为场景根节点添加一个c#脚本\n将脚本保存在scripts目录下\n在顶部导航栏找到项目\n随后找到工具\n单击创建c#解决方案\n在文件管理器中打开项目根目录\n双击使用visual studio打开SLN解决方案\n在根节点脚本中\ndirect节点\n回到编辑器\n点击左上角工具栏中的编译按钮\n这样属性检查器就会更新导出字段\n指定对应的猫猫精灵节点即可\n接下来编写输入处理和动画效果的脚本代码\n逻辑从写input\n输入回调函数\n检测鼠标事件\n判断输入的事件类型是否为input vmouse事件\n如果不是\n则转换会失败\n只为now\n判断按钮事件类型是否为鼠标按下\n如果按下\n则调用动画函数\n通过导出变量获取猫猫的精灵纹理资源\n包括待机状态和击打状态\n声明一个私有变量类型为整数\n记录左右手臂交替状态\n播放动画时若状态为零\n则播放右手臂击打动作\n否则播放左手臂击打动作\n声明一个set cut press函数用于设置击打状态\nCat buddy texture act\n关联猫猫右手臂\n将其设置为body texture press\n就是进入动画\n同理将cat arm text react\n左手臂设置为arm texpress\n则相当于左手动画\n根据status这个字段\n判断是显示右手动画还是左手动画\n右手击打时我们将左手还原\n反之亦然\n最后切换ct状态\n让函数下次触发时自动走另一条分支\n切换另一只手臂动画\n当鼠标不属于按下事件时\n我们恢复动画状态\n给函数添加一个布尔值参数\n表示是否按下\n如果没有按下\n则恢复动画状态\n别忘记指定文理资源\n接下来打开项目设置\n找到显示窗口\n调节窗口\n视口宽高为长宽256像素\n启用窗口无边框窗口\n置顶窗口透明关闭\n可调整大小选项\n将拉伸比例调整为AGONOR2\n同时启用像素及透明选项\n随后重启编辑器\n找到渲染渲染器\n将渲染方法调整为GL兼容模式\n回到窗口找到垂直同步模式\n关闭垂直同步\n这样游戏窗口就会显示为透明状态\n接下来我们实现鼠标拖拽效果\n新建一个节点\n命名为drag processor\n添加一个脚本\n在脚本中响应鼠标输入\n将脚本保存在scripts下的call文件夹下\n声明一个布尔变量下划线\nas dragon表示拖拽状态\n再声明一个vector AI类型的变量保存点击窗口时\n鼠标距离窗口远点的相对坐标\n当点击事件触发时\n我们记录相对坐标\n随后在拖动时让鼠标坐标减去相对坐标\n这个新的坐标就是拖拽窗口的最终坐标\n判断鼠标按钮事件响应\n左键单击\n左键单击时将i is dragon设置为true\n表示开始拖拽\n相对坐标通过获取鼠标位于显示器的坐标\n让这个坐标减去窗口原点坐标即可计算偏移量\n在process回调中\n若处于拖拽状态\n则更新窗口位置\n接下来我们实现鼠标点击穿透\n我们可以通过创建一个collection poly杠2D节点\n在编辑器中手动编辑窗口有效范围\n在编辑器中编辑collection polly杠2D的多边形\n可以将节点锁定\n避免误操作\n修改节点\n在场景根节点新建脚本\n通过display server的window seat mouth face trace方法\n指定接收窗口事件的多边形\n获取克里轩POLLYGUID节点\n将多边形节点的POLYON属性作为函数参数传递\n这样窗口只有指定区域才会响应输入事件\n接下来时存档机制通过依尼格式保存窗口位置\n下一次打开时还原窗口位置\n对于配置类\n我们可以实现单例方便外部读取数据\n这里可以忽略不做\n声明一个victor AI类型变量保存窗口位置\n我们监听节点进入数与离开数的回调函数\n进入数时读档\n退出时存档\n使用config file实现存档与读档\n存档时将window position写入config file\n添加一个字符串常量\n表示固定的存档路径\n我们这里将配置保存在user目录\n保存前记得获取到真实的窗口位置\n然后是读取存档\n将window position读取后赋值给当前窗口位置\n默认存档文件不存在\n因此我们还需判断存档是否加载成功\n当程序以常规方式退出时\n就会执行保存\n最后我们实现托盘窗口功能\n创建一个status syndicator节点\n这个节点会添加一个托盘图标\n点击托盘图标后需要显示菜单窗口\n因此还需创建一个pop menu节点\n在项目设置显示窗口页面\n找到并关闭嵌入式子窗口\n设置pop拍mu节点的preferative menu为true\n启用原生菜单\n然后添加一个菜单\n项目id为零\n填写text显示文本\n将pop menu节点指定为start syndicate节点的menu属性\n这样单击系统托盘图标时就会显示这个pop menu\n在根节点脚本中获取pop menu节点响应事件\n连接purple menu的id press事件\n为其指定一个函数或匿名委托\n委托接收一个long类型的变量\n表示按下的菜单项的id\n点击id为零的菜单项对应关闭我们获取场景数\n调用quit方法结束进程\n我们可以通过额外引入一个new je包\n实现全局输入监听\n找到依赖项右键包\n打开NGA管理面板\nGODOT并没有提供全局输入监听的接口\n因此我们需要安装一个名为SHAPOKE的new je\n安装成功后必须右键解决方案清理\n重新生成解决方案\n在猫猫的根节点脚本中\n移除goat自带的事件监听代码\n我们在main场景跟节点的脚本中控制猫猫的动画\n将猫猫跟节点脚本指定为global class全局类名场景\n通过export引入节点\n接下来引入纱布库命名空间\n声明一个类型为eglobal hook接口类型的变量\nHook\n编写一个独立的函数\nINIT特可用于初始化事件钩子\n并执行异步监听\n创建一个event loop lobal hook实例\n这个类是全局键盘和鼠标钩子类\n监听钩子类的key press事件\n事件传递两个参数\n一个是消息发送方\n一个是对应事件\n对应的我们也可以这样来监听键盘释放的事件\n最后调用hook的runner sing开始监听\n将INIT特方法改为异步方法\n当然如果不异步调用runner sc\n这里就不需要改\n下一步响应钩子事件\n注意这里存在一个问题\nspark hook会开启一个子线程处理输入事件\n因此如果直接在钩子函数内访问cat\n这个场景数节点会引发线程安全问题\n所以我们需要编写一个独立函数\n间接调用cat的set catappress方法\n然后在钩子函数内部使用cody for2代\n在安全的时机调用这个函数\n同理我们也可以监听全局的鼠标输入事件\n这样一来程序就可以监听外部输入了\n好的\n本期视频就到这里\n大家拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1oZLQ6EEc4",
+  "published_at": "1781693522",
+  "fetched_at": "2026-08-07T17:12:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T17:30:31+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T17:30:31+00:00"
+}

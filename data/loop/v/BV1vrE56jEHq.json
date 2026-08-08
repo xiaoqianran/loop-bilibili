@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1vrE56jEHq",
+  "title": "XBOX x Godot：微软突然开源，PC游戏秒变主机生态 #Godot #XBOX #游戏开发 #微软 #免费工具 #GDK #PlayFab #独立游戏开",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2680,
+  "text": "你好\n女士们、先生们\n我是Mike，来自Game from Scratch\n如果世上有一个超级简单的工作\n那一定是微软的品牌管理顾问\n特别是他们的游戏部门\n因为他们可以为所欲为，甚至做出最蠢的事\n我们继续吧\n他们刚刚完成了一次品牌重塑\nXbox现在有了全新的大胆名称\n现在正式命名为Xbox\n不是Bix\n啊\n是的\n全大写\nXbox\n我们还有一款与之配套的全新标志\n你可以看到Xbox标志随时间的演变\n而我们现在正走向复古风格\n几乎像是他们回归了这两个标志的设计美学\n并将它们融合在一起\n但品牌背后还有更多内容\n目前Xbox世界正在发生很多事情\n但我想提醒大家\nXbox的品牌非常混乱\n因为他们曾有一段时间真的使用过标语\n万物皆Xbox\n随后他们又说不\n不不\n我们希望将所有产品统一为\n微软\nXbox微软游戏\n大部分PC游戏\n而这与Xbox在PC上的发展密切相关\n更具体地说是关于Godot引擎\n这让人感到困惑\n对此我深表歉意\n但核心是微软刚刚发布了示例\n包含四个不同的GD扩展，展示如何在PC上使用Xbox\n这并非针对Xbox主机\n非常明确\n这不是针对主机\n专为PC版Xbox设计\n不包含对Xbox Series的支持\nX或S或Xbox One\n你需要许可证才能获取这些\n但会展示如何整合\n这些生态系统中最关键的API\n因此仍在快速迭代中\n但好消息是微软发布了MIT许可的示例\n哪些节目能教开发者使用各种不同的工具\n这些不同的工具是微软GDK平台服务\nXbox服务\nPlay Fab加核心服务\n多人游戏\n他们正在游说\n匹配系统和游戏存档\n以及游戏输入\n顺便说一句\n很多这些功能都是跨平台的\n因此不局限于Xbox生态\n尤其是PlayFab部分\n这是跨游戏引擎的在线云共享服务\n这一切的核心就是微软游戏开发套件\n而这里变得更加复杂\n因为他们将游戏开发套件封装成\n一个GD扩展\n这非常酷\nGDK旨在为开发者提供核心工具和资源\n用于打造Xbox生态的精彩游戏\n无论目标是PC、主机还是云游戏\nGDK都能满足需求\n是的\n虽然这是针对PC上的Xbox\n如果你拥有该许可证\n同样适用于主机上的Xbox\n这就是我在这里想说的\n所以GDK\n涵盖广泛工具和API支持\n游戏开发\n跨平台开发\nWindows PC\nXbox主机\n云游戏等\n并完全文档化\n详情见此处\n这是在微软平台进行游戏开发的核心SDK\n此外我们还有PlayFab\n这是统一SDK覆盖各类云服务\n包括在线匹配\n大厅功能\n成就系统等\n但如你所见\n支持Windows\nXbox\n甚至Steam Deck\nPS4和PS5\n任天堂Switch等\n嗯\n虽然使用不同SDK，再次说明\n所以你看这里你看\n当你处理窗口和Xbox时\n你正在使用的是GDK\n是的\n这有点令人困惑\n但你能大概理解\n这些都是可用的功能\n所以这些内容实际上非常跨平台\n他们在Play Services部分进行了封装\n所以所有Play Fab相关内容\n这些本质上都是跨平台的\n然后Game Input是他们的新一代输入API，用于抽象化\n底层输入\n比如手柄和键盘\n鼠标等等\n这以前被称为X输入\n本质上这是一个跨平台SDK用于处理\n输入开发\n他们将所有这些整合到一个名为Xbox Godot示例的工具中\n此内容采用MIT许可证\n如果你想继续构建它\n这里提供了详细说明\n你需要在此基础上安装C++工具链\n你也需要使用PowerShell来构建\n构建指南在此处的入门部分\n他们详细说明了实际构建流程\n过程相当直接\n只要配置正确\n所以只需克隆仓库并构建\n再次希望你的平台已正确配置\nMIT许可证\n这非常酷\n但这个部分的关键内容在这里\n所以你要添加扩展\n就在这里\n这里共有四组扩展\n这些都是GD扩展\n这些是用C++编写的\n我们有这个\n这是处理的\n输入处理\n所以你可以看到\n嗯\n这是用于映射的\n嗯Direct Input\n或者抱歉\n将Game Input转换为Godot方式\n然后我们还有\n围绕所有GDK的封装\n再次使用C++，这展示了如何获取成就\n或者我们的匹配在此显示处理UI层\n所有你需要做游戏的内容\n大部分功能已在此封装\n这是Xbox在PC上的主要游戏SDK\n但也适用于Xbox主机\n总的来说所有内容均已在此封装\n可作为GD扩展使用\n但再次强调要在Xbox上使用\n你需要拥有许可证\n当然我们还有PlayFab相关组件\n这是在线多人排行榜等功能\n若想使用他们的服务提供此类功能可在此操作\n这就是他们创建的三个GD扩展集\n然后是这个\n说实话\n我真的不知道它做什么\n除了可能需要一个特定组件\n我不确定他们是否诚实\n所以我不告诉你任何信息\n关键点在于\n如果你想查看这个\n可以打开示例项目\n现在你需要先构建项目才能操作\n然后我们得到第一个\n这是一个展示如何实现\n登录成就\n排行榜\n游戏安全与组队功能\n等等关于这个项目\n你需要设置并验证\n使用服务器端密钥\n这些我都没有\n所以我无法演示\n然后我们有另一个项目\n更加简单直接\n这是处理底层输入的映射\n名为Game Input的SDK\n我已经打开了该项目\n为此\n你在这里看到\n可以看到非常简单的游戏层级\n让我运行这个\n你会注意到这里\n运行后它已\n已加载\n所有不同的输入设备\n我有五个设备\n让我在这里开启控制器\n你会注意到它\nBoom\n就在那里捡起它\n有趣的是\n作为键盘\n可能因为它属于精英级\n等一下\n它也会识别为控制器\n所以你看左右状态的处理\n然后我们还处理了跳跃状态的按钮预处理\n这是使用微软的底层输入处理\n同样也是为了跳跃\n我按下了A键\n就像你看到的那样\n这映射回Godot的输入处理方式\n现在\n为什么需要使用游戏输入而非内置逻辑\n在Godot内部\n说实话我只能想到这一点\n如果你想处理热重载\n这些底层功能\n你会看到\n它有GD扩展注册\n这些会在设备连接时触发的回调事件\n当你连接设备时\n提供更底层的细节\n我不确定为何需要使用游戏输入而非Godot逻辑\n除了我认为\nGodot默认支持热插拔可能\n不过我不完全确定\n但这是其中一个示例\n这能给你一个概念\n至少了解它的能力范围\n但归根结底\n这就是全部了\n这里最有趣的部分\n我认为微软注意到Godot生态\n并为此提供工具\n我觉得这很酷\n我们有几位Xbox成员\n共有五人参与了此项目\n大部分代码是C++且采用MIT协议\n嗯再次提醒\n请注意\n这并非专为Xbox设计\n这是Xbox PC版\n这世界最让人困惑\nXbox在这方面一直很糟糕\n总之\n告诉我你的看法\n下方评论区\n我稍后和大家再聊\n再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1vrE56jEHq",
+  "published_at": "1780965574",
+  "fetched_at": "2026-08-07T02:40:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Xbox 与 Godot 集成知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A[\"Xbox 品牌\"] --> B[\"Xbox PC SDK (GDK)\"]\n    B --> C[\"核心工具 & API\"]\n    B --> D[\"PlayFab 云服务\"]\n    D --> E[\"匹配、排行榜、成就\"]\n    B --> F[\"GD 扩展 (Godot)\"]\n    F --> G[\"在 Godot 中使用 Xbox 功能\"]\n    H[\"MIT 示例项目\"] --> F\n    I[\"开发者\"] --> H\n    I --> B\n    I --> G\n    J[\"跨平台目标\"] --> K[\"PC\"]\n    J --> L[\"Xbox 主机\"]\n    J --> M[\"云游戏\"]\n    K --> G\n    L --> G\n    M --> G\n```\n\n## 构建流程图\n```mermaid\nflowchart TD\n    A[\"克隆示例仓库\"] --> B[\"安装 C++ 工具链\"]\n    B --> C[\"安装 PowerShell\"]\n    C --> D[\"阅读构建指南（入门章节）\"]\n    D --> E[\"配置构建设置\"]\n    E --> F[\"执行构建\"]\n    F --> G[\"生成 GD 扩展\"]\n    G --> H[\"在 Godot 中导入并测试\"]\n    H --> I[\"部署到 PC / Xbox 主机（需许可证）\"]\n```\n\n## GD 扩展组件图\n```mermaid\nflowchart TD\n    A[\"GD 扩展集合（4 组）\"] --> B[\"输入映射扩展\"]\n    A --> C[\"成就 & 排行榜扩展\"]\n    A --> D[\"匹配 UI 扩展\"]\n    A --> E[\"未知/第三扩展\"]\n    B --> F[\"Game Input API\"]\n    F --> G[\"Direct Input 映射\"]\n    C --> H[\"PlayFab 集成\"]\n    D --> H\n    E --> I[\"可能的特定组件（待确认）\"]\n    B --> J[\"底层 C++ 实现\"]\n    C --> J\n    D --> J\n    H --> K[\"跨平台云服务\"]\n    K --> L[\"支持 Windows、Xbox、Steam Deck、PS4/5、Switch\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A[\"Xbox 品牌\"] --> B[\"Xbox PC SDK (GDK)\"]\n    B --> C[\"核心工具 & API\"]\n    B --> D[\"PlayFab 云服务\"]\n    D --> E[\"匹配、排行榜、成就\"]\n    B --> F[\"GD 扩展 (Godot)\"]\n    F --> G[\"在 Godot 中使用 Xbox 功能\"]\n    H[\"MIT 示例项目\"] --> F\n    I[\"开发者\"] --> H\n    I --> B\n    I --> G\n    J[\"跨平台目标\"] --> K[\"PC\"]\n    J --> L[\"Xbox 主机\"]\n    J --> M[\"云游戏\"]\n    K --> G\n    L --> G\n    M --> G"
+        },
+        {
+          "title": "构建流程图",
+          "code": "flowchart TD\n    A[\"克隆示例仓库\"] --> B[\"安装 C++ 工具链\"]\n    B --> C[\"安装 PowerShell\"]\n    C --> D[\"阅读构建指南（入门章节）\"]\n    D --> E[\"配置构建设置\"]\n    E --> F[\"执行构建\"]\n    F --> G[\"生成 GD 扩展\"]\n    G --> H[\"在 Godot 中导入并测试\"]\n    H --> I[\"部署到 PC / Xbox 主机（需许可证）\"]"
+        },
+        {
+          "title": "GD 扩展组件图",
+          "code": "flowchart TD\n    A[\"GD 扩展集合（4 组）\"] --> B[\"输入映射扩展\"]\n    A --> C[\"成就 & 排行榜扩展\"]\n    A --> D[\"匹配 UI 扩展\"]\n    A --> E[\"未知/第三扩展\"]\n    B --> F[\"Game Input API\"]\n    F --> G[\"Direct Input 映射\"]\n    C --> H[\"PlayFab 集成\"]\n    D --> H\n    E --> I[\"可能的特定组件（待确认）\"]\n    B --> J[\"底层 C++ 实现\"]\n    C --> J\n    D --> J\n    H --> K[\"跨平台云服务\"]\n    K --> L[\"支持 Windows、Xbox、Steam Deck、PS4/5、Switch\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T02:40:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Xbox 与 Godot 集成知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A[\"Xbox 品牌\"] --> B[\"Xbox PC SDK (GDK)\"]\n    B --> C[\"核心工具 & API\"]\n    B --> D[\"PlayFab 云服务\"]\n    D --> E[\"匹配、排行榜、成就\"]\n    B --> F[\"GD 扩展 (Godot)\"]\n    F --> G[\"在 Godot 中使用 Xbox 功能\"]\n    H[\"MIT 示例项目\"] --> F\n    I[\"开发者\"] --> H\n    I --> B\n    I --> G\n    J[\"跨平台目标\"] --> K[\"PC\"]\n    J --> L[\"Xbox 主机\"]\n    J --> M[\"云游戏\"]\n    K --> G\n    L --> G\n    M --> G\n```\n\n## 构建流程图\n```mermaid\nflowchart TD\n    A[\"克隆示例仓库\"] --> B[\"安装 C++ 工具链\"]\n    B --> C[\"安装 PowerShell\"]\n    C --> D[\"阅读构建指南（入门章节）\"]\n    D --> E[\"配置构建设置\"]\n    E --> F[\"执行构建\"]\n    F --> G[\"生成 GD 扩展\"]\n    G --> H[\"在 Godot 中导入并测试\"]\n    H --> I[\"部署到 PC / Xbox 主机（需许可证）\"]\n```\n\n## GD 扩展组件图\n```mermaid\nflowchart TD\n    A[\"GD 扩展集合（4 组）\"] --> B[\"输入映射扩展\"]\n    A --> C[\"成就 & 排行榜扩展\"]\n    A --> D[\"匹配 UI 扩展\"]\n    A --> E[\"未知/第三扩展\"]\n    B --> F[\"Game Input API\"]\n    F --> G[\"Direct Input 映射\"]\n    C --> H[\"PlayFab 集成\"]\n    D --> H\n    E --> I[\"可能的特定组件（待确认）\"]\n    B --> J[\"底层 C++ 实现\"]\n    C --> J\n    D --> J\n    H --> K[\"跨平台云服务\"]\n    K --> L[\"支持 Windows、Xbox、Steam Deck、PS4/5、Switch\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A[\"Xbox 品牌\"] --> B[\"Xbox PC SDK (GDK)\"]\n    B --> C[\"核心工具 & API\"]\n    B --> D[\"PlayFab 云服务\"]\n    D --> E[\"匹配、排行榜、成就\"]\n    B --> F[\"GD 扩展 (Godot)\"]\n    F --> G[\"在 Godot 中使用 Xbox 功能\"]\n    H[\"MIT 示例项目\"] --> F\n    I[\"开发者\"] --> H\n    I --> B\n    I --> G\n    J[\"跨平台目标\"] --> K[\"PC\"]\n    J --> L[\"Xbox 主机\"]\n    J --> M[\"云游戏\"]\n    K --> G\n    L --> G\n    M --> G"
+    },
+    {
+      "title": "构建流程图",
+      "code": "flowchart TD\n    A[\"克隆示例仓库\"] --> B[\"安装 C++ 工具链\"]\n    B --> C[\"安装 PowerShell\"]\n    C --> D[\"阅读构建指南（入门章节）\"]\n    D --> E[\"配置构建设置\"]\n    E --> F[\"执行构建\"]\n    F --> G[\"生成 GD 扩展\"]\n    G --> H[\"在 Godot 中导入并测试\"]\n    H --> I[\"部署到 PC / Xbox 主机（需许可证）\"]"
+    },
+    {
+      "title": "GD 扩展组件图",
+      "code": "flowchart TD\n    A[\"GD 扩展集合（4 组）\"] --> B[\"输入映射扩展\"]\n    A --> C[\"成就 & 排行榜扩展\"]\n    A --> D[\"匹配 UI 扩展\"]\n    A --> E[\"未知/第三扩展\"]\n    B --> F[\"Game Input API\"]\n    F --> G[\"Direct Input 映射\"]\n    C --> H[\"PlayFab 集成\"]\n    D --> H\n    E --> I[\"可能的特定组件（待确认）\"]\n    B --> J[\"底层 C++ 实现\"]\n    C --> J\n    D --> J\n    H --> K[\"跨平台云服务\"]\n    K --> L[\"支持 Windows、Xbox、Steam Deck、PS4/5、Switch\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:40:59+00:00"
+}

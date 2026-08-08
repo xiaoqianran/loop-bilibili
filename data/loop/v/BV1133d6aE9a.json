@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1133d6aE9a",
+  "title": "[Unity]28届程序向个人作品集展示",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2236,
+  "text": "大家好\n本视频将会展示我独立开发的RPG demo\n希望可以找到相关实习\n首先完成账号登录\n后续有详细讲解\n关掉切回正题\n游戏启动界面\n通过自研相机管理组件接收输入驱动镜头\n在限定机位状态之间完成切换过渡\n点击开始游戏加载\n执行封装在SCRIPLYBT中的timeline动作资源之后\n由异步加载管理器负责场景的过渡与加载工作\n设置面板基于unity新输入系统input tection\n做按键数据缓存\n调用对应接口实现按键绑定\n重新配置功能\n支持按键自动识别\n扩展性良好\n游戏存档模块则采用JSON格式\n进行数据持久化存储\n所有UI面板统一由自研面板管理器管控\n基于鸡肋脚本规范继承\n通过dot问统一调度显影动画\n支持个性化关闭动画拓展性极高\n小地图采用俯视相机实时纹理投射\n实现结合NEMESH动态路径计算与流动材质\n完成游戏内智能导航指引功能\n整套剧情任务系统以base quest作为任务\nSOO机类衍生出战斗\n拾取对话三类任务\n配置资源对话任务可区分任务剧情与自由闲聊\n方便拓展NPC日常对话\n全部任务数据按篇章层级挂载到对应so资源中\n交由自研故事管理器统一驱动任务进度\n刷新逻辑与奖励\n发放对话配置\nSOO可以挂载和战斗动作共用的xx so资源\n支持NPC在对话期间播放动画\n执行镜头\n运镜位移\n播放特效音效乃至攻击行为\n强化剧情表现力\n这里仅演示了一段镜头动画效果\n交易系统基于事件管理器game event\n完成逻辑分发校验\n金币背包容量\n商品库存状态\n通过item sl配置资源\n实现物品发放\n整体模块依靠事件解耦\n完成各项业务判断合成功能同理\n角色动作采用timeline\n配合action nel配置资源封装\n搭配自研动作编辑器\n统一管理动作位移\n攻击\n判定特效\n音效与镜头变化等行为\n游戏内全部物品的生成与回收\n交由自研对象池统一管理\n针对不同使用场景提供多态调用接口\n这个任务要我们去战斗\n我们上来试探一下\n指\n直接放大弹刀触发瞬间\n将双方角色纳入同一条时间轴控制\n便于统一调度\n保证双方动画同步协调\n啊这怪好难打啊\n其实就是想展示死亡和复活动画\n怪物动作同样基于timeline与action soo配置驱动\n脚本和玩家相互独立\n玩家不单独缓存零散动作资源\n而是将整套动作归集到characteriso so\n总配置内\n每个角色拥有专属的character SEO\n切换角色时直接替换这份配置文件\n怪物同理\n这段不知道为什么主播打的时候\n后台来电话了\n有点卡\n但是录出来是正常的\n提交任务\n这里捡起任务生成的掉落物\n来完成食物类型的任务\n消耗品类型的道具可以点击装配到快捷栏\n来在战斗中使用\n这里使用一瓶能量饮料来演示\n先空放几个技能\n消耗一下\n消耗类道具拓展了Buff的相关SOO数据\n和可对怪物玩家等角色施加效果\nBuff可在背包查看\n作者玩自己的游戏\n给自己发一个满级武器\n不过分吧\n这树枝有力气\n集中展示一下交易和合成表现\n药王来的说是\n项目内置time manag者时间管理器\n统一管控面板\n开启时的时间暂停\n完美闪避慢动作\n受击卡肉等各类时间缩放效果\n不打了跑路\n任务完成\n又给了一件武器位置的装备\n接下来讲解背包相关\n背包系统核心实现了异形物品不规则摆放逻辑\n支持不同尺寸道具占用多个位置放置\n同时具备堆叠换位功能模块稳定性高\n易于扩展背包格子数量可灵活配置武器与材料\n道具分栏管理\n还能按物品大小价格一键排序\n太急了\n有点整理不过来\n丢几个物品就好了\n接下来是社交方面\n社交相关数据全部在云端做持久化存储\n依托pay fab接口与自定义云脚本\n实现聊天通讯id检索好友\n好友申请处理等整套社交功能\n这里因为早就添加了\n所以就不展示\n同意了\n最后来讲动作编辑器\n动作编辑器基于timeline扩展\n新增特效\n音效攻击判定和位移镜头机位等自定义轨道\n各类配置轨道均支持可视化编辑\n位移轨道可直接拖拽调整起止点位\n系统会根据路径长度与片段时长\n自动反推速度参数\n支持匀速变速瞬移\n多种运动模式\n攻击和音效特效轨道\n同样能够可视化调整作用范围\n相机轨道可编辑机位移动路径与速度\n也可设置\n围绕目标物体\n环绕运镜\n接下来是我在上一个作品之前做的练手作\n一个2D像素风格的非对称对战\ndemo联机功能还在制作中\n采用静态脚本缓存对局前角色数量配置\n数据切换场景后\n完成对局初始化\n项目预先封装各类交互物件\n脚本包含密码机\n可推导木板\n可翻越障碍物等交互组件\n同时针对两大阵营实现差异化交互逻辑\n双阵营角色均采用FSM有限状态机管理全部行为\n状态\n规范待机移动交互追击等逻辑\n保证行为切换稳定可控\nAI角色\n在此基础上\n结合A星寻路算法动态规划路径\n实现智能自主走位与对局决策\n这里因为加了八个人机队友的缘故\n密码机修的飞快\n人类队友打开大门跑了出去\n超过对局人类总数的一半\n判定为人类获胜\n同时屠夫击杀超过这个数量是屠夫获胜\n再来把屠夫体验一下\n音频系统沿用前作架构\n由全局音效管理器统一调度管控\n角色受击碎裂效果\n运行时采样角色纹理\n像素数据生成不规则碎片粒子\n实现散落\n动画角色移动时同步播放\n草地粒子作为脚步视觉反馈\n美味的抓起身\n人类AI基于A星寻路做策略扩展检测场内木板\n窗户等交互点位\n动态调整路径规划权重\n将板窗交互纳入行动路线\n在拉开与屠夫距离的同时\n优先利用地形交互完成牵制逃生\n感谢观看\n希望各位也能点赞\n投币支持一下",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1133d6aE9a",
+  "published_at": "1785686499",
+  "fetched_at": "2026-08-07T03:52:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Unity 28届程序向个人作品集展示 知识图谱\n\n## 总体架构总览\n```mermaid\nflowchart TD\n    StartGame[\"游戏启动界面\"] --> CameraMgr[\"自研相机管理组件\"]\n    CameraMgr --> InputSys[\"Unity 新输入系统\"]\n    StartGame --> SceneLoader[\"异步加载管理器\"]\n    SceneLoader --> UIManager[\"自研面板管理器\"]\n    UIManager --> TimelineMgr[\"SCRIPLYBT Timeline 动作资源\"]\n    TimelineMgr --> EventMgr[\"事件管理器 (Game Event)\"]\n    EventMgr --> QuestMgr[\"自研故事管理器\"]\n    QuestMgr --> InventoryMgr[\"背包系统\"]\n    InventoryMgr --> SocialMgr[\"社交云端持久化\"]\n    TimelineMgr --> AudioMgr[\"全局音效管理器\"]\n    UIManager --> TimeMgr[\"时间管理器\"]\n    ActionEditor[\"自研动作编辑器\"] --> TimelineMgr\n```\n\n## 角色动作与动画系统\n```mermaid\nflowchart TD\n    CharSO[\"character ISO SO (角色配置)\"] --> ActionSO[\"action SO (动作资源)\"]\n    ActionSO --> Timeline[\"Timeline 动作\"]\n    Timeline --> Animation[\"动画位移\"]\n    Timeline --> HitDetect[\"判定特效\"]\n    Timeline --> SoundEffect[\"音效\"]\n    Timeline --> CameraShot[\"镜头变化\"]\n    ActionEditor --> Timeline\n    CombatMgr[\"战斗系统\"] --> Timeline\n    ObjectPool[\"自研对象池\"] --> BuffSO[\"Buff SO (增益)\"]\n    BuffSO --> CombatMgr\n```\n\n## 背包与物品管理系统\n```mermaid\nflowchart TD\n    InventoryMgr[\"背包系统核心\"] --> ItemSO[\"item SO (物品配置)\"]\n    ItemSO --> JSONStorage[\"JSON 持久化\"]\n    InventoryMgr --> ObjectPool[\"自研对象池\"]\n    InventoryMgr --> GridSlot[\"背包格子\"]\n    GridSlot --> SizeLogic[\"不规则摆放\"]\n    GridSlot --> StackSwap[\"堆叠换位\"]\n    InventoryMgr --> QuickSort[\"一键排序\"]\n    Consumable[\"消耗品道具\"] --> BuffSO[\"Buff SO\"]\n    BuffSO --> QuickBar[\"快捷栏\"]\n    TradeSys[\"交易系统\"] --> InventoryMgr\n    CraftSys[\"合成系统\"] --> InventoryMgr\n```",
+      "diagrams": [
+        {
+          "title": "总体架构总览",
+          "code": "flowchart TD\n    StartGame[\"游戏启动界面\"] --> CameraMgr[\"自研相机管理组件\"]\n    CameraMgr --> InputSys[\"Unity 新输入系统\"]\n    StartGame --> SceneLoader[\"异步加载管理器\"]\n    SceneLoader --> UIManager[\"自研面板管理器\"]\n    UIManager --> TimelineMgr[\"SCRIPLYBT Timeline 动作资源\"]\n    TimelineMgr --> EventMgr[\"事件管理器 (Game Event)\"]\n    EventMgr --> QuestMgr[\"自研故事管理器\"]\n    QuestMgr --> InventoryMgr[\"背包系统\"]\n    InventoryMgr --> SocialMgr[\"社交云端持久化\"]\n    TimelineMgr --> AudioMgr[\"全局音效管理器\"]\n    UIManager --> TimeMgr[\"时间管理器\"]\n    ActionEditor[\"自研动作编辑器\"] --> TimelineMgr"
+        },
+        {
+          "title": "角色动作与动画系统",
+          "code": "flowchart TD\n    CharSO[\"character ISO SO (角色配置)\"] --> ActionSO[\"action SO (动作资源)\"]\n    ActionSO --> Timeline[\"Timeline 动作\"]\n    Timeline --> Animation[\"动画位移\"]\n    Timeline --> HitDetect[\"判定特效\"]\n    Timeline --> SoundEffect[\"音效\"]\n    Timeline --> CameraShot[\"镜头变化\"]\n    ActionEditor --> Timeline\n    CombatMgr[\"战斗系统\"] --> Timeline\n    ObjectPool[\"自研对象池\"] --> BuffSO[\"Buff SO (增益)\"]\n    BuffSO --> CombatMgr"
+        },
+        {
+          "title": "背包与物品管理系统",
+          "code": "flowchart TD\n    InventoryMgr[\"背包系统核心\"] --> ItemSO[\"item SO (物品配置)\"]\n    ItemSO --> JSONStorage[\"JSON 持久化\"]\n    InventoryMgr --> ObjectPool[\"自研对象池\"]\n    InventoryMgr --> GridSlot[\"背包格子\"]\n    GridSlot --> SizeLogic[\"不规则摆放\"]\n    GridSlot --> StackSwap[\"堆叠换位\"]\n    InventoryMgr --> QuickSort[\"一键排序\"]\n    Consumable[\"消耗品道具\"] --> BuffSO[\"Buff SO\"]\n    BuffSO --> QuickBar[\"快捷栏\"]\n    TradeSys[\"交易系统\"] --> InventoryMgr\n    CraftSys[\"合成系统\"] --> InventoryMgr"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T04:00:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Unity 28届程序向个人作品集展示 知识图谱\n\n## 总体架构总览\n```mermaid\nflowchart TD\n    StartGame[\"游戏启动界面\"] --> CameraMgr[\"自研相机管理组件\"]\n    CameraMgr --> InputSys[\"Unity 新输入系统\"]\n    StartGame --> SceneLoader[\"异步加载管理器\"]\n    SceneLoader --> UIManager[\"自研面板管理器\"]\n    UIManager --> TimelineMgr[\"SCRIPLYBT Timeline 动作资源\"]\n    TimelineMgr --> EventMgr[\"事件管理器 (Game Event)\"]\n    EventMgr --> QuestMgr[\"自研故事管理器\"]\n    QuestMgr --> InventoryMgr[\"背包系统\"]\n    InventoryMgr --> SocialMgr[\"社交云端持久化\"]\n    TimelineMgr --> AudioMgr[\"全局音效管理器\"]\n    UIManager --> TimeMgr[\"时间管理器\"]\n    ActionEditor[\"自研动作编辑器\"] --> TimelineMgr\n```\n\n## 角色动作与动画系统\n```mermaid\nflowchart TD\n    CharSO[\"character ISO SO (角色配置)\"] --> ActionSO[\"action SO (动作资源)\"]\n    ActionSO --> Timeline[\"Timeline 动作\"]\n    Timeline --> Animation[\"动画位移\"]\n    Timeline --> HitDetect[\"判定特效\"]\n    Timeline --> SoundEffect[\"音效\"]\n    Timeline --> CameraShot[\"镜头变化\"]\n    ActionEditor --> Timeline\n    CombatMgr[\"战斗系统\"] --> Timeline\n    ObjectPool[\"自研对象池\"] --> BuffSO[\"Buff SO (增益)\"]\n    BuffSO --> CombatMgr\n```\n\n## 背包与物品管理系统\n```mermaid\nflowchart TD\n    InventoryMgr[\"背包系统核心\"] --> ItemSO[\"item SO (物品配置)\"]\n    ItemSO --> JSONStorage[\"JSON 持久化\"]\n    InventoryMgr --> ObjectPool[\"自研对象池\"]\n    InventoryMgr --> GridSlot[\"背包格子\"]\n    GridSlot --> SizeLogic[\"不规则摆放\"]\n    GridSlot --> StackSwap[\"堆叠换位\"]\n    InventoryMgr --> QuickSort[\"一键排序\"]\n    Consumable[\"消耗品道具\"] --> BuffSO[\"Buff SO\"]\n    BuffSO --> QuickBar[\"快捷栏\"]\n    TradeSys[\"交易系统\"] --> InventoryMgr\n    CraftSys[\"合成系统\"] --> InventoryMgr\n```",
+  "diagrams": [
+    {
+      "title": "总体架构总览",
+      "code": "flowchart TD\n    StartGame[\"游戏启动界面\"] --> CameraMgr[\"自研相机管理组件\"]\n    CameraMgr --> InputSys[\"Unity 新输入系统\"]\n    StartGame --> SceneLoader[\"异步加载管理器\"]\n    SceneLoader --> UIManager[\"自研面板管理器\"]\n    UIManager --> TimelineMgr[\"SCRIPLYBT Timeline 动作资源\"]\n    TimelineMgr --> EventMgr[\"事件管理器 (Game Event)\"]\n    EventMgr --> QuestMgr[\"自研故事管理器\"]\n    QuestMgr --> InventoryMgr[\"背包系统\"]\n    InventoryMgr --> SocialMgr[\"社交云端持久化\"]\n    TimelineMgr --> AudioMgr[\"全局音效管理器\"]\n    UIManager --> TimeMgr[\"时间管理器\"]\n    ActionEditor[\"自研动作编辑器\"] --> TimelineMgr"
+    },
+    {
+      "title": "角色动作与动画系统",
+      "code": "flowchart TD\n    CharSO[\"character ISO SO (角色配置)\"] --> ActionSO[\"action SO (动作资源)\"]\n    ActionSO --> Timeline[\"Timeline 动作\"]\n    Timeline --> Animation[\"动画位移\"]\n    Timeline --> HitDetect[\"判定特效\"]\n    Timeline --> SoundEffect[\"音效\"]\n    Timeline --> CameraShot[\"镜头变化\"]\n    ActionEditor --> Timeline\n    CombatMgr[\"战斗系统\"] --> Timeline\n    ObjectPool[\"自研对象池\"] --> BuffSO[\"Buff SO (增益)\"]\n    BuffSO --> CombatMgr"
+    },
+    {
+      "title": "背包与物品管理系统",
+      "code": "flowchart TD\n    InventoryMgr[\"背包系统核心\"] --> ItemSO[\"item SO (物品配置)\"]\n    ItemSO --> JSONStorage[\"JSON 持久化\"]\n    InventoryMgr --> ObjectPool[\"自研对象池\"]\n    InventoryMgr --> GridSlot[\"背包格子\"]\n    GridSlot --> SizeLogic[\"不规则摆放\"]\n    GridSlot --> StackSwap[\"堆叠换位\"]\n    InventoryMgr --> QuickSort[\"一键排序\"]\n    Consumable[\"消耗品道具\"] --> BuffSO[\"Buff SO\"]\n    BuffSO --> QuickBar[\"快捷栏\"]\n    TradeSys[\"交易系统\"] --> InventoryMgr\n    CraftSys[\"合成系统\"] --> InventoryMgr"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T04:00:50+00:00"
+}

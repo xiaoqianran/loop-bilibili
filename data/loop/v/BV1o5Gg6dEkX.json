@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1o5Gg6dEkX",
+  "title": "【deepseek正式版】30元200亿token，教你如何实现token自由",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 464,
+  "text": "大家好啊\n这期来做一期AI token的消费自由的一期教程\n攻略视频啊\n呃我们先说结论好吧\n良胜伟大无需多言\n这个是我们就是我一晚上就是开多个agent\n特跑长任务就睡一觉起来\n跑了差不多13个亿的token\n看上去是花了几\n如果是用官方的API的话\n这个是大概是要花一百一百左右\n但是如果大家去open code go订阅的话\n他首页是充五美刀就能够订阅一个月\n然后他这个一个月的用量呢\n呃我们看它的官方文档\n用deep sick flash模型可以调用十十五万次\n然后最近deep seek flash也是出正式版\n模型效果我感觉出奇的好\n而且非常的丝滑\n嗯根据额我的token1开始的消耗\n和这个嗯官方文档的调用数据来看的话\nopen code够一个月的消耗总量\n差不多是嗯快20000000000token\n也就是说你订阅一个月\nopen code go是能够使用接近20000000000token的\n几乎就相当于token自由了\n随便嗯做一些长任务\n随便搞并发\n还有多线程之类的好了\n这期视频就到这里了下谢谢大家观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1o5Gg6dEkX",
+  "published_at": "1785547934",
+  "fetched_at": "2026-08-06T19:02:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek Token 消费自由概览\n\n## 成本与订阅比较\n```mermaid\nflowchart TD\n    A[\"官方 API\"] --> B[\"约 100‑110 USD\"]\n    A --> C[\"13B token 消耗\"]\n    D[\"OpenCode Go 订阅\"] --> E[\"5 USD / 月\"]\n    D --> F[\"约 20B token / 月\"]\n    B --> G[\"性价比\"]\n    E --> G\n    G --> H[\"适合长任务/并发\"]\n    C --> H\n    F --> H\n```\n\n## Token 消耗与任务规模\n```mermaid\nflowchart TD\n    A[\"一夜运行多个 agent\"] --> B[\"长任务\"]\n    A --> C[\"并发\"]\n    A --> D[\"多线程\"]\n    A --> E[\"13B token 已消耗\"]\n    E --> F[\"官方 API 成本 100‑110 USD\"]\n    E --> G[\"OpenCode Go 可用 20B token\"]\n    G --> H[\"实现 token 自由\"]\n    H --> I[\"随意执行长任务\"]\n    H --> J[\"成本低\"]\n```\n\n## 使用场景决策\n```mermaid\nflowchart TD\n    A[\"需求: 短期小量\"] --> C[\"预算有限\"]\n    A --> E[\"选 官方 API\"]\n    B[\"需求: 长期大规模\"] --> D[\"预算充足\"]\n    B --> F[\"选 OpenCode Go\"]\n    C --> E\n    D --> F\n    E --> I[\"成本约 100‑110 USD\"]\n    F --> J[\"成本约 5 USD / 月\"]\n    F --> G[\"可并发/多线程\"]\n    E --> H[\"不需要并发\"]\n```",
+      "diagrams": [
+        {
+          "title": "成本与订阅比较",
+          "code": "flowchart TD\n    A[\"官方 API\"] --> B[\"约 100‑110 USD\"]\n    A --> C[\"13B token 消耗\"]\n    D[\"OpenCode Go 订阅\"] --> E[\"5 USD / 月\"]\n    D --> F[\"约 20B token / 月\"]\n    B --> G[\"性价比\"]\n    E --> G\n    G --> H[\"适合长任务/并发\"]\n    C --> H\n    F --> H"
+        },
+        {
+          "title": "Token 消耗与任务规模",
+          "code": "flowchart TD\n    A[\"一夜运行多个 agent\"] --> B[\"长任务\"]\n    A --> C[\"并发\"]\n    A --> D[\"多线程\"]\n    A --> E[\"13B token 已消耗\"]\n    E --> F[\"官方 API 成本 100‑110 USD\"]\n    E --> G[\"OpenCode Go 可用 20B token\"]\n    G --> H[\"实现 token 自由\"]\n    H --> I[\"随意执行长任务\"]\n    H --> J[\"成本低\"]"
+        },
+        {
+          "title": "使用场景决策",
+          "code": "flowchart TD\n    A[\"需求: 短期小量\"] --> C[\"预算有限\"]\n    A --> E[\"选 官方 API\"]\n    B[\"需求: 长期大规模\"] --> D[\"预算充足\"]\n    B --> F[\"选 OpenCode Go\"]\n    C --> E\n    D --> F\n    E --> I[\"成本约 100‑110 USD\"]\n    F --> J[\"成本约 5 USD / 月\"]\n    F --> G[\"可并发/多线程\"]\n    E --> H[\"不需要并发\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T19:02:18+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek Token 消费自由概览\n\n## 成本与订阅比较\n```mermaid\nflowchart TD\n    A[\"官方 API\"] --> B[\"约 100‑110 USD\"]\n    A --> C[\"13B token 消耗\"]\n    D[\"OpenCode Go 订阅\"] --> E[\"5 USD / 月\"]\n    D --> F[\"约 20B token / 月\"]\n    B --> G[\"性价比\"]\n    E --> G\n    G --> H[\"适合长任务/并发\"]\n    C --> H\n    F --> H\n```\n\n## Token 消耗与任务规模\n```mermaid\nflowchart TD\n    A[\"一夜运行多个 agent\"] --> B[\"长任务\"]\n    A --> C[\"并发\"]\n    A --> D[\"多线程\"]\n    A --> E[\"13B token 已消耗\"]\n    E --> F[\"官方 API 成本 100‑110 USD\"]\n    E --> G[\"OpenCode Go 可用 20B token\"]\n    G --> H[\"实现 token 自由\"]\n    H --> I[\"随意执行长任务\"]\n    H --> J[\"成本低\"]\n```\n\n## 使用场景决策\n```mermaid\nflowchart TD\n    A[\"需求: 短期小量\"] --> C[\"预算有限\"]\n    A --> E[\"选 官方 API\"]\n    B[\"需求: 长期大规模\"] --> D[\"预算充足\"]\n    B --> F[\"选 OpenCode Go\"]\n    C --> E\n    D --> F\n    E --> I[\"成本约 100‑110 USD\"]\n    F --> J[\"成本约 5 USD / 月\"]\n    F --> G[\"可并发/多线程\"]\n    E --> H[\"不需要并发\"]\n```",
+  "diagrams": [
+    {
+      "title": "成本与订阅比较",
+      "code": "flowchart TD\n    A[\"官方 API\"] --> B[\"约 100‑110 USD\"]\n    A --> C[\"13B token 消耗\"]\n    D[\"OpenCode Go 订阅\"] --> E[\"5 USD / 月\"]\n    D --> F[\"约 20B token / 月\"]\n    B --> G[\"性价比\"]\n    E --> G\n    G --> H[\"适合长任务/并发\"]\n    C --> H\n    F --> H"
+    },
+    {
+      "title": "Token 消耗与任务规模",
+      "code": "flowchart TD\n    A[\"一夜运行多个 agent\"] --> B[\"长任务\"]\n    A --> C[\"并发\"]\n    A --> D[\"多线程\"]\n    A --> E[\"13B token 已消耗\"]\n    E --> F[\"官方 API 成本 100‑110 USD\"]\n    E --> G[\"OpenCode Go 可用 20B token\"]\n    G --> H[\"实现 token 自由\"]\n    H --> I[\"随意执行长任务\"]\n    H --> J[\"成本低\"]"
+    },
+    {
+      "title": "使用场景决策",
+      "code": "flowchart TD\n    A[\"需求: 短期小量\"] --> C[\"预算有限\"]\n    A --> E[\"选 官方 API\"]\n    B[\"需求: 长期大规模\"] --> D[\"预算充足\"]\n    B --> F[\"选 OpenCode Go\"]\n    C --> E\n    D --> F\n    E --> I[\"成本约 100‑110 USD\"]\n    F --> J[\"成本约 5 USD / 月\"]\n    F --> G[\"可并发/多线程\"]\n    E --> H[\"不需要并发\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:02:18+00:00"
+}

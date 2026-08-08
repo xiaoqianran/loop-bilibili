@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1WzArzUEdr",
+  "title": "41 Flash Attention之前的那种N^2注意力不好在哪里？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1004,
+  "text": "今天的问题是\nflash亚探险之前的那种N方级的注意力\n不好在哪里\n那么既然要说flash特性\n它好\n就得分析一下之前的为什么不好\n结论先行不好就不好\n在他把A这个注意力矩阵写回hp m了\n而一旦做这件事情\n就会导致有N方级的显存占用\n再来说明一下为什么是这样的\n首先来看一下这个可视化\n可视化呢用了一个竖着的矩阵\n乘一个横着的矩阵\n而不是反之\n那么为什么要这么可视化呢\n我们就得明确一下这个N是什么\nN指的就是这个token数\n那么对于一个长上下文的token可能有几千几万\n而这个D是什么呢\nD是这个分头之后的维度\n其实分了之后呢\n他其实没有很大\n它可能128\n那么对于这个QK矩阵呢\n它本身来讲没有那么的大\n他可能就是比如说1万的128\n但是这个A矩阵呢是很大的\n为什么呢\n因为它是1万的1万\n那么如果我们把这个A矩阵写回HBM\n它就会很占显存\n但是如果把这个Q和K在HBM当中\n它是没有很占显存的\n所以就解释了之前的这个注意力实现\n有什么不好呢\n他把A写回来\n所以他这很占显存好\n还有一个问题就是这个flash attention\n它为什么好\n那么首先要明确一下\n就FLASHTON他是怎么切这个tile的\n一个tile通常会包含多个token\n那么具体来说呢\n他是把Q横着切\n然后K本来是横着切\n但它转置了之后呢\n就是竖着切\n就像这样\n那么为什么不把这个Q也像这样就这样切呢\n那么第一个问题就是这样切的话\n可能会导致缓存爆炸\n就它没有足够的缓存去装\n这样长的一个就是N这个级别的一个快\n其次就是要有token的完整性\n就是在计算这个注意力分数的时候呢\n需要有完整的token\n然后flash attention\n它的操作呢就是把这个q tile和这个K太有\n搬入到s ram当中\n然后会算出来一个A的小块\n但这个A小块虽然它对应着这个小块\n但他不会写出HBM\n那么我们分析一下\n这样不写回就会导致它的显存节省\n具体来说呢\n它其实就只有这个QKVO放在显存里面去\n而这个A它是不占显存的\n就是它是暂存在这个缓存当中的\n那么也就意味着它的显存占用呢\n就是ND这个级别的\n那么之前说的这个显存占用\n从平方级降阶到线性级\n指的是什么呢\n指的是这个N的\n因为主要要关注这个N\n就原来这个是N方解的\n现在转成了ND了\n但是这个D呢它其实来讲是比较小的\n相对于N更小\n所以呢我们可以说是降低到了\n对于N是线性级的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1WzArzUEdr",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:18:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

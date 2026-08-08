@@ -1,0 +1,66 @@
+{
+  "bvid": "BV12F716QE1P",
+  "title": "Harness是啥？为啥DeepSeek也要做Harness",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2754,
+  "text": "170AA专业名词科普\n今天是harness\n它不是模型本身\n像deep seek cloud g p t豆包\n这些才是模型\n模型呢就像让大脑负责理解推理\n生成答案\n塔尼斯也不是某一个工具\n像我们终端啊\n文件系统搜索数据库\n代码执行器\n这些都是工具\nHAR尼斯更像什么\n它更像是一个工作台\n就像一个人\n光有脑子\n他不能直接完成公司里所有工作\n你得有电脑键盘\n你还得有权限\n然后还得有制定任务列表\n有测试环境\n有审批流程\n你也得知道文件在哪\n能不能改\n改完怎么检查出错\n怎么退回\n模型也是一样\n如果一个再强大的模型只能被关在聊天框里\n他最多也就是告诉你建议这样写代码\n而哈尼斯做的这个事儿\n就是把模型从聊天框放到了我们的工作环境里\n他负责把模型接到上下文工具文件终端反馈\n权限日志和任务循环里\n模型负责思考\n哈尼斯负责让这个思考真的落到现实环境里\n那我们听到这啊\n会觉得哎这是不是就是codex cloud code\n像codex cloud code这类的AI编程工具\n它就不能只理解为一个模型\n它更像是模型\n加上一整套的honeys模型\n负责理解需求\nhoneys负责把模型接到代码库文件\n终端测试权限和反馈里\n所以harness不是和cloud和codex平级的产品名\n更准确的说\ncodex和cloud code这一类的产品\n背后都需要一套类似harness的东西在支撑\n但这里也有一个特别容易误解的点\n之前我们也会以为\n哈里斯是不是就是一套特别复杂的PRONT呀\n哎也不是PRONT呢\n是你告诉模型该怎么说\n怎么想\n该遵守什么规则\n它主要发生在语言层\n而哈尼式发生在执行层\n它不只是告诉魔神你要小心\n而是真的限制他能不能写这个文件\n不是说我告诉模型\n你要检查结果\n而是真的要把测试结果拿回来\n举个例子\n比如说你在print里写\n请不要删除重要文件\n这个是属于一句提醒\n但harness士可以做的是\n如果模型想要删除文件\n系统会直接拦住\n要求用户确认\n所以PRONT像我们给AI定的口头规矩\nharness就是真正的门禁操作台和审批系统\n这也就是为什么\n他不是说只靠写一段系统提示词就能搞定的\n它需要工程实现\n需要产品设计\n需要定好安全边界\n也需要和模型不断的去配合融合\n那一个完整的harness士里面到底要有什么\n我们大体不用记复杂的架构\n只需要记这七件事\n第一个管上下文\n项目里文件很多\n聊天记录很长\n模型窗口有限\n哈尼斯是要决定哪些文件该放进上下文\n哪些历史要保留\n哪些信息要压缩成摘要或者模型\n看不全项目就很容易乱改\n第二个管工具AI读文件\n查资料\n跑命令\n调用搜索连接数据库\n这些都不是模型本体自带的能力\n哈尼是要告诉模型你现在有哪些工具\n每个工具能干什么\n什么时候能用\n第三个管文件\nAI编程最核心的动作就是改文件\nharness是要让模型能看到文件内容\n也要控制它怎么写入\n直接让模型随便覆盖文件很危险\n所以很多工具会生成path或者先让你确认再应用\n第四管终端跑测试装依赖启动服务\n查看git状态\n都需要终端命令\n哈尼斯要决定哪些命令能直接跑\n哪些命令必须要让用户批准\n那些命令根本不应该考\n第五管反馈\nAI改完以后不能只说我觉得好了\n他要看测试结果\n构建结果报错而止\n哈尼是要把这些结果拿回来\n交给模型继续做判断\n第六管权限\n只读项目和修改项目可不是一回事\n改一个本地文件和删除整个目录也不是一回事\n好的\nHAR尼斯会设置好边界\n能读哪里写哪里\n什么时候要确认操作\n哪些要静止\n第七个管循环\n我们一直在说的真正的A侦查\n不是说一步完成任务\n他往往是观察计划行动\n看反馈再做行动\n而哈尼斯要把这个循环彻底的跑起来\n也要在循环失控时停下来\n所以harness不是一个小的插件\n它更像是AI agent的操作系统雏形\n它把模型\n工具环境和人类监督放在同一个工作回路里\n那为什么最近这个哈尼是越来越火\n原因也很简单\n我们模型越来越强以后\n差距就开始出现在模型外面\ndeep seek如果只发布一个很强的模型\n那用户呢还要自己想办法把它接到终端里面\n这样就是这个模型就算再强\n也只是一个API后面的一个大脑\n但如果deep seek自己有了harness\n他就可以把模型变成一个完整的AI编程助手\n用户打开工具\n直接让他读项目\n改代码\n跑测试查报错\n这个就不是我们所谓的卖模型\n而是把整个的工作流程都给改变了\n但同时讲到这儿\n我们也可能会把这几个词混在一起啊\nA侦探啊\nTall use\n子MCP呀\nharness这几个词有关\n但它不是平级关\nagent是你看到的最终形态\n一个AI能不能像助理一样连续完成任务\n能不能自己判断下一步能不能看结果再行动\n这叫agent\n他的表现\nto use只是其中的一项能力\nA能读文件\n跑命令\n查资料\n调用搜索\n这些都属于使用工具\n没有to use agent\n基本也就只能停留在基础的对话上\nMCP是一种把工具接进来的方式\n你可以把它理解为统一的插线板儿\n不同工具原本接口不一样\nMCP让这些工具更标准的暴露给了\n模型或者A神的系统\n那harness斯则是一个更大的外壳\n它不止接工具\n还要管上下文权限文件\n终端循环日志和安全边界\n那我们举一个实际的场景啊\n来串一下流程\n假设我们对一个AI编程助手说\n帮我咻一下\n登录按钮点了没反应的问题\n那这个流程大体是这样\n用户发起任务哎\n登录按钮点了没反应\n帮我修一下\n到我模型理解目标\n他会先判断啊\n这不是纯聊天问题\n我必须看一下项目\n那再来harness斯拉通上下文哦\n读取项目结构相关文件\n历史对话和当前的权限哦\n这个时候to use子开始出现了\nAI需要到读文件搜索代码\n运行测试\n查看报错\n那如果这些工具是通过MCP接入的\nMCP就负责把可用的工具标准化的罗列给系统\n然后再由harness来执行动作\n比如说读文件呐\n生成配置啊\n运行测试命令\n再反馈到模型模型\n看测试结果或者报错\n再判断下一步\n如果一次就做完了整套流程\n那这可能就是一次的工具调用\n这个就是我们说的to use\n如果他是反复观察行动\n再看这个反馈结果\n然后再做了几步行动\n最后呈现出来的这个效果\n这个就像一个agent的整个流程\n这也就是说agent是结果\nhoneys是底盘\nto use是能力\nMCP是连接方式\n最后一句话做个总结\n哈尼斯只是模型外面那套\n让AI真正进入工作环境的执行系统\n模型决定他会不会响\n而哈尼是决定他能不能做\n能不能做完\n能不能安全的做完\n这就是为什么deep seek也要做harness\n这也是为什么AI编程工具的下一场竞争\n并不只是模型之争\n而是harness斯之间的正别关注我\n带你了解更多的AI知识",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV12F716QE1P",
+  "published_at": "1780664017",
+  "fetched_at": "2026-08-06T20:32:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Harness 知识图谱\n\n## 总览 [BV12F716QE1P P1 00:02] [BV12F716QE1P P1 00:45]\n\n```mermaid\nflowchart TD\n    M[\"模型 (Model)\"] -->|思考| H[\"Harness 工作台\"]\n    H -->|调用| T[\"工具 (Tools)\"]\n    H -->|管理| C[\"上下文、权限、文件等环境\"]\n    H -->|记录| L[\"日志、审批、循环\"]\n    H -->|提供| E[\"执行系统雏形\"]\n    A[\"AI Agent (模型+Harness+循环)\"] -->|使用| M\n    A -->|依赖| H\n```\n\n## 七大职责 [BV12F716QE1P P1 02:27] [BV12F716QE1P P1 03:46]\n\n```mermaid\nflowchart TD\n    H[\"Harness\"]\n    R1[\"上下文管理\"] --> H\n    R2[\"工具管理\"] --> H\n    R3[\"文件读写管理\"] --> H\n    R4[\"终端/测试管理\"] --> H\n    R5[\"反馈处理\"] --> H\n    R6[\"权限与安全边界\"] --> H\n    R7[\"循环控制\"] --> H\n    H --> R1\n    H --> R2\n    H --> R3\n    H --> R4\n    H --> R5\n    H --> R6\n    H --> R7\n```\n\n## 架构层次关系 [BV12F716QE1P P1 05:08] [BV12F716QE1P P1 06:45]\n\n```mermaid\nflowchart LR\n    Model[\"模型\"]\n    Harness[\"Harness 外壳\"]\n    MCP[\"MCP (工具接入方式)\"]\n    ToUse[\"To Use (工具使用能力)\"]\n    Agent[\"Agent (连续任务执行体)\"]\n    Shell[\"Harness Shell (管理上下文、权限、文件、终端、循环)\"]\n\n    Model -->|思考| Harness\n    MCP -->|标准化工具接入| ToUse\n    ToUse -->|提供能力给| Harness\n    Harness -->|实现| Shell\n    Shell -->|支撑| Agent\n    Agent -->|组合| Model\n    Agent -->|组合| Shell\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    M[\"模型 (Model)\"] -->|思考| H[\"Harness 工作台\"]\n    H -->|调用| T[\"工具 (Tools)\"]\n    H -->|管理| C[\"上下文、权限、文件等环境\"]\n    H -->|记录| L[\"日志、审批、循环\"]\n    H -->|提供| E[\"执行系统雏形\"]\n    A[\"AI Agent (模型+Harness+循环)\"] -->|使用| M\n    A -->|依赖| H"
+        },
+        {
+          "title": "七大职责",
+          "code": "flowchart TD\n    H[\"Harness\"]\n    R1[\"上下文管理\"] --> H\n    R2[\"工具管理\"] --> H\n    R3[\"文件读写管理\"] --> H\n    R4[\"终端/测试管理\"] --> H\n    R5[\"反馈处理\"] --> H\n    R6[\"权限与安全边界\"] --> H\n    R7[\"循环控制\"] --> H\n    H --> R1\n    H --> R2\n    H --> R3\n    H --> R4\n    H --> R5\n    H --> R6\n    H --> R7"
+        },
+        {
+          "title": "架构层次关系",
+          "code": "flowchart LR\n    Model[\"模型\"]\n    Harness[\"Harness 外壳\"]\n    MCP[\"MCP (工具接入方式)\"]\n    ToUse[\"To Use (工具使用能力)\"]\n    Agent[\"Agent (连续任务执行体)\"]\n    Shell[\"Harness Shell (管理上下文、权限、文件、终端、循环)\"]\n\n    Model -->|思考| Harness\n    MCP -->|标准化工具接入| ToUse\n    ToUse -->|提供能力给| Harness\n    Harness -->|实现| Shell\n    Shell -->|支撑| Agent\n    Agent -->|组合| Model\n    Agent -->|组合| Shell"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T20:32:37+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Harness 知识图谱\n\n## 总览 [BV12F716QE1P P1 00:02] [BV12F716QE1P P1 00:45]\n\n```mermaid\nflowchart TD\n    M[\"模型 (Model)\"] -->|思考| H[\"Harness 工作台\"]\n    H -->|调用| T[\"工具 (Tools)\"]\n    H -->|管理| C[\"上下文、权限、文件等环境\"]\n    H -->|记录| L[\"日志、审批、循环\"]\n    H -->|提供| E[\"执行系统雏形\"]\n    A[\"AI Agent (模型+Harness+循环)\"] -->|使用| M\n    A -->|依赖| H\n```\n\n## 七大职责 [BV12F716QE1P P1 02:27] [BV12F716QE1P P1 03:46]\n\n```mermaid\nflowchart TD\n    H[\"Harness\"]\n    R1[\"上下文管理\"] --> H\n    R2[\"工具管理\"] --> H\n    R3[\"文件读写管理\"] --> H\n    R4[\"终端/测试管理\"] --> H\n    R5[\"反馈处理\"] --> H\n    R6[\"权限与安全边界\"] --> H\n    R7[\"循环控制\"] --> H\n    H --> R1\n    H --> R2\n    H --> R3\n    H --> R4\n    H --> R5\n    H --> R6\n    H --> R7\n```\n\n## 架构层次关系 [BV12F716QE1P P1 05:08] [BV12F716QE1P P1 06:45]\n\n```mermaid\nflowchart LR\n    Model[\"模型\"]\n    Harness[\"Harness 外壳\"]\n    MCP[\"MCP (工具接入方式)\"]\n    ToUse[\"To Use (工具使用能力)\"]\n    Agent[\"Agent (连续任务执行体)\"]\n    Shell[\"Harness Shell (管理上下文、权限、文件、终端、循环)\"]\n\n    Model -->|思考| Harness\n    MCP -->|标准化工具接入| ToUse\n    ToUse -->|提供能力给| Harness\n    Harness -->|实现| Shell\n    Shell -->|支撑| Agent\n    Agent -->|组合| Model\n    Agent -->|组合| Shell\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    M[\"模型 (Model)\"] -->|思考| H[\"Harness 工作台\"]\n    H -->|调用| T[\"工具 (Tools)\"]\n    H -->|管理| C[\"上下文、权限、文件等环境\"]\n    H -->|记录| L[\"日志、审批、循环\"]\n    H -->|提供| E[\"执行系统雏形\"]\n    A[\"AI Agent (模型+Harness+循环)\"] -->|使用| M\n    A -->|依赖| H"
+    },
+    {
+      "title": "七大职责",
+      "code": "flowchart TD\n    H[\"Harness\"]\n    R1[\"上下文管理\"] --> H\n    R2[\"工具管理\"] --> H\n    R3[\"文件读写管理\"] --> H\n    R4[\"终端/测试管理\"] --> H\n    R5[\"反馈处理\"] --> H\n    R6[\"权限与安全边界\"] --> H\n    R7[\"循环控制\"] --> H\n    H --> R1\n    H --> R2\n    H --> R3\n    H --> R4\n    H --> R5\n    H --> R6\n    H --> R7"
+    },
+    {
+      "title": "架构层次关系",
+      "code": "flowchart LR\n    Model[\"模型\"]\n    Harness[\"Harness 外壳\"]\n    MCP[\"MCP (工具接入方式)\"]\n    ToUse[\"To Use (工具使用能力)\"]\n    Agent[\"Agent (连续任务执行体)\"]\n    Shell[\"Harness Shell (管理上下文、权限、文件、终端、循环)\"]\n\n    Model -->|思考| Harness\n    MCP -->|标准化工具接入| ToUse\n    ToUse -->|提供能力给| Harness\n    Harness -->|实现| Shell\n    Shell -->|支撑| Agent\n    Agent -->|组合| Model\n    Agent -->|组合| Shell"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:32:37+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1TUPWzkEgW",
+  "title": "52 简单的梯度算子是如何定义的【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 727,
+  "text": "今天的问题是简单的梯度算子是如何定义的\n先来看一下简单的\n就比如说REALLUU和SIGMMOID\n那么复杂的\n比如说矩阵乘\n就后面再说\n先来看一下RELUDE梯度算子\n那么算子库当中会有一个类似于reload grad\n这样的一个梯度算子\n它的输入是这三个张量\n分别是XY呃\nD y\n然后输出张量叫做DX\n其实这里的这个DIY它指的就是L对Y的梯度\n然后DX指的就是L对X的梯度\n其中梯度呢是把多个偏导数把它组合在一起\n所以打包起来\n然后接下来来看一下他怎么求\n那么由于链式法则呢\n就是先拿L对Y进行一个梯度\n然后乘以Y对X的梯度\n那么Y对X的梯度怎么求呢\n我们要去求一下它的导数\n那么RELU的定义是这样的\n就是X大于等于零的时候呢\n是他自己\n否则的话是零\n所以它的导数呢就是要么是一\n要么是零\n然后呢存在一起的话\n就是这个解释一下\n就是这个DY呢它是一个张量\n然后X呢它本来是个张量\n然后这个的意思就是说\n对于它其中大于等于零的那一部分数呢\n把它填成一或者填成零\n然后呢这两个东西瞎扯\n然后最后我会返回一个输出张量\n然后西格MOY的梯度算子呢是类似的\n还是用这个链式法则\n就是拿L对Y的梯度记作DY\n然后LY对X的梯度记作这个\n那么为什么是这个呢\n因为西格MOID他有个性质\n就他的这个导数呢是等于西格摩id的乘以一减\n西格摩\n那么就是这个\n那接下来看一个不一样的\n就是这个逐元素乘的铁度算子\n那么它的不同点在于它的输出张量有两个\n这里X1和X2\n那么先来看对X1的\n就L对X1的梯度\n它是由L对Y的梯度乘以Y对X1的梯度\n那么Y对X1梯度他怎么求呢\n答案是等于X2\n因为这个是乘法的这个导数的性质\n那么就把它存在一起就可以了\n相当于这两个张量相乘",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TUPWzkEgW",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:18:31+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

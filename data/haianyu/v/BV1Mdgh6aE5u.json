@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1Mdgh6aE5u",
+  "title": "[121]. CNN，卷积网络经典重温：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3032,
+  "text": "今天我们来介绍一篇关于文档识别中\n梯度学习的工作\n标题叫做gradient based learning\nApply to document recognition\n在本项目中简称为CNN\n这篇论文主要研究\n如何用基于梯度的学习方法\n来构建文档识别系统\n核心内容可以总结为三点\n第一多层神经网络配合反向传播\n是处理高维模式识别的有效工具\n第二卷积神经网络land ne5\n通过局部感受野全职共享和子采样等结构\n对手写字符等二维形状变化具有很强的适应性\n第三图片换网络GTN\n把多个模块组合成一个可全局训练的系统\n并应用到了支票识别等真实场景中\n最终the net5\n在EMINNEST手写数字识别上\n取得了低于大多数对比方法的错误率\n下面看一下摘要\n翻译\n用反向传播算法训练的多层神经网络是成功的\n基于梯度学习技术的范例\n只要网络结构合适\n基于梯度的学习算法就能合成复杂的决策曲面\n从而对高维模式进行分类\n例如手写字符\n并且只需要最少的预处理\n本文综述了用于手写字符识别的各种方法\n并在标准手写数字识别任务上\n对它们进行了比较\n专为处理二维形状变化而设计的卷积神经网络\n被证明优于其他技术\n现实中的文档识别系统由多个模块组成\n包括字段提取\n分割识别和语言建模\n本文介绍了一种新的学习范式\n称为图变换网络GTN\n它允许这种多模块系统\n使用基于梯度的方法进行全局训练\n以最小化整体性能指标\n文中还描述了两个在线手写识别系统\n实验\n展示了全局训练的优势\n以及图变换网络的灵活性\n此外还描述了一个用于读取银行支票的\n图变换网络\n它将卷积神经网络字符识别器\n与全局训练技术相结合\n在商业和个人支票上达到了很低的错误率\n并已投入商业应用\n下面看一下这张图\n这张图展示了传统模式识别系统的基本结构\n系统由两个模块组成\n下面是特征提取模块\n它从原始输入中抽取特征向量\n上面是可训练的分类器模块\n根据特征向量输出类别分数\n在早期的系统中\n特征提取模块往往需要手工设计\n而分类器模块则通过训练得到这种分工\n带来一个问题\n特征的好坏几乎完全取决于设计者的经验\n而且每次换任务都要重新设计特征\n本文的思路是把更多学习引入特征提取本身\n并用卷积神经网络来实现可学习的特征提取\n下面看一下这个公式\n这个公式描述了\n测试误差与训练误差之间的差距\n随训练样本数量的变化关系\n公式左边是测试误差减去训练误差\n右边等于K乘以H除以P的阿尔法次方\n其中P是训练样本数量\nH表示模型的有效容量或复杂度\nalpha是一个介于0.5到1.0之间的数\nK是常数\n它的含义是训练样本越多\n测试误差和训练误差的差距越小\n但模型容量越大\n这个差距可能越大\n因此设计模型时\n需要在容量和训练数据量之间做权衡\n这也是为什么卷积神经网络通过全职共享\n来限制容量\n同时保持性能的关键原因\n下面看一下这个公式\n这个公式给出了一般模块化系统中\n反向传播梯度的递推关系\n如果已知损失对第N个模块输出XN的偏导数\n那么可以依次算出损失对模块参数one\n以及上一层输入XN减一的偏导数\n公式中\n用到的是函数F对权重和输入的雅可比矩阵\n这个递推关系的意义在于\n它把多层网络中的反向传播\n推广到了由任意可微模块组成的系统\n只要模块之间是前向连接的\n就可以用同样的方式计算整体损失\n对每个模块参数的梯度\n从而进行端到端的训练\n下面看一下这张图\n这张图是line net5的网络架构示意图\n输入是一幅32×32的灰度图像\n网络从左到右依次包含卷积层子采样层\n卷积层子采样层\n然后是全连接层\n最后通过高斯连接输出十个类别的分数\n具体来看\n第一层卷积C1\n产生六张28×28的特征图\n接着S2子采样\n把尺寸降到14×14\n同时保持六张特征图\n然后C3卷积得到16张1010的特征图\nS4子采样进一步降到55\n最后C5F6是全连接层\n输出层\n有十个单元\n整个网络通过局部感受也全职共享和子采样\n实现了对平移和局部形变的鲁棒性\n同时大幅减少了参数数量\n下面看一下这个表\n这张表展示了line net5中\nC3卷积层的每个特征图\n与S2子采样层哪些特征图相连\n行代表S2的六个特征图\n列代表C3的16个特征\n图\n表中的X表示存在连接\n可以看到C3的前六个特征图\n分别连接到S2中每三个连续特征图的组合\n接下来的六个连接到每四个连续特征图\n再往后的三个连接到某些不连续的组合\n最后一个则连接全部六个S2特征图\n这样设计有两个目的\n一是减少连接数和参数量\n二是打破对称性\n让不同特征图学到不同的局部特征\n从而增强网络的表达能力\n下面看一下这张图\n这张图展示了输出层镜像机函数\nRBF的初始参数模板\n用于识别完整的可打印ASSK字符集\n每个小方格对应一个字符类\n黑色和白色分别表示RBF参数为一和正一\n输出层不是普通的soft max\n而是计算输入向量\n与每个字符模板之间的欧式距离\n距离越小\n表示越匹配\n这种分布式编码的好处是相似字符\n例如大写O\n小写O和数字零会拥有相近的输出编码\n便于后续的语言模型或后处理模块进行消齐\n下面看一下这张图\n这张图展示了linnet5\n在MNIST训练集上训练时\n训练误差和测试误差随迭代次数的变化\n横轴是便利训练集的次数\n纵轴是错误率百分比\n可以看到训练误差用红色曲线表示\n迅速下降并接近零\n测试误差用蓝色曲线表示\n在大约10~12次便利后趋于平稳\n最终稳定在一个很低的水平\n这说明网络收敛较快\n而且没有出现严重的过拟合\n需要注意的是\n图中的训练误差是训练过程中实时测量的\n所以看起来略高于测试误差\n下面看一下这张图\n这张图对比了多种分类方法\n在MINNEST的测试集上的错误率\n图中横向是错误率百分比\n条形越短表示性能越好\n可以看到线性分类器成对\n线性分类器以及K近零等简单方法\n错误率较高\n经过变形增强后\nLANNET5的错误率降到了约0.8%\nboosted lannet4的错误率更低\n约为0.7%\n支持向量机和切空间距离分类器也表现不错\n但通常计算和内存开销更大\n总体来看\n卷积神经网络及其组合变体\n在这项任务上达到了最低的错误率\n下面看一下这张图\n这张图展示了linnet5\n对一些异常扭曲和噪声字符的正确识别结果\n每一行对应一个输入样本\n从左到右依次显示原始输入网络\n逐层产生的特征图以及最终输出\n可以看到\n即使字符存在形变\n噪声或部分缺失\n网络\n仍然能够根据学到的局部特征作出正确判断\n这直观地说明了\n卷积神经网络对几何变化和噪声\n具有一定的容忍能力\n下面看一下这张图\n这张图比较了传统神经网络和图变换网络\nGTN的区别\n左边是传统神经网络\n层与层之间传递固定长度的向量\n右边是GTN模块之间传递的是图结构\n图中的节点和边都携带数值信息\nGTN把每个模块看作一个图变换器\n输入一个或多个图输出另一个图\n这样系统可以处理长度可变\n结构复杂的数据\n例如手写单词或语音序列\n并且多个模块可以联合起来进行全局训练\n以优化整体目标\n下面看一下这张图\n这张图展示了一个用GTN识别字符串\n的完整流程\n最底层是分割图\n它由启发式过分割算法生成\n表示所有可能的分割位置\n接着识别变换器\n把分割图中的每个片段送入卷积神经网络\n字符识别器生成解释图\n其中每条边对应一个候选字符及其惩罚分数\n最后维特比变换器在解释图中\n寻找总惩罚最小的路径\n输出最优的字符序列\n这个流程把分割和识别耦合在一起\n避免了单独做硬分割可能带来的错误",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Mdgh6aE5u",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:12:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Gradient‑based Learning for Document Recognition – 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    GBL[\"GradientBasedLearning\"] --> MLN[\"Multi‑Layer NN\"]\n    MLN --> BP[\"Backpropagation\"]\n    GBL --> CNN[\"Convolutional NN\"]\n    CNN --> LR[\"Local Receptive Field\"]\n    CNN --> WS[\"Weight Sharing\"]\n    CNN --> SS[\"Subsampling\"]\n    GBL --> GTN[\"Graph Transform Network (GTN)\"]\n    GTN --> MC[\"Module Combination\"]\n    MC --> GT[\"Global Training\"]\n    GT --> DR[\"Document Recognition\"]\n    DR --> CR[\"Check Recognition\"]\n```\n关键概念来源: [BV1Mdgh6aE5u P1 00:12]、[BV1Mdgh6aE5u P1 00:19]、[BV1Mdgh6aE5u P1 00:28]、[BV1Mdgh6aE5u P1 01:35]、[BV1Mdgh6aE5u P1 01:58]、[BV1Mdgh6aE5u P1 02:03]\n\n## 传统流水线 vs GTN 流程\n```mermaid\nflowchart TD\n    TP[\"Traditional Pipeline\"] --> FE[\"Feature Extraction\"]\n    FE --> HF[\"Handcrafted Features\"]\n    HF --> CL[\"Classifier\"]\n    CL --> OUT[\"Output\"]\n    GTNP[\"GTN Pipeline\"] --> MOD[\"Modules as Graphs\"]\n    MOD --> VLD[\"Variable‑Length Data\"]\n    VLD --> GT[\"Global Training\"]\n    GT --> OBJ[\"Overall Objective Minimization\"]\n    TP -. 对比 .-> GTNP\n```\n对比说明来源: [BV1Mdgh6aE5u P1 02:10]、[BV1Mdgh6aE5u P1 02:28]、[BV1Mdgh6aE5u P1 08:25]、[BV1Mdgh6aE5u P1 08:38]\n\n## LineNet5 网络结构\n```mermaid\nflowchart TD\n    IN[\"Input 32×32 Gray Image\"] --> C1[\"Conv C1: 6×28×28\"]\n    C1 --> S2[\"Subsample S2: 6×14×14\"]\n    S2 --> C3[\"Conv C3: 16×10×10\"]\n    C3 --> S4[\"Subsample S4: 16×5×5\"]\n    S4 --> FC[\"Fully Connected C5F6\"]\n    FC --> OUT[\"Output: 10 Class Scores\"]\n    C1 --> LR[\"Local Receptive Field\"]\n    C1 --> WS[\"Weight Sharing\"]\n    C1 --> PR[\"Parameter Reduction\"]\n```\n结构细节来源: [BV1Mdgh6aE5u P1 04:21]、[BV1Mdgh6aE5u P1 04:36]、[BV1Mdgh6aE5u P1 04:40]、[BV1Mdgh6aE5u P1 04:46]、[BV1Mdgh6aE5u P1 04:50]、[BV1Mdgh6aE5u P1 04:57]\n\n## 误差‑容量‑样本 关系公式\n```mermaid\nflowchart TD\n    TE[\"TestError − TrainError\"] --> REL[\"= K·H / P^α\"]\n    REL --> K[\"K (constant)\"]\n    REL --> H[\"Model Capacity H\"]\n    REL --> P[\"Sample Count P\"]\n    REL --> A[\"α (0.5‑1.0)\"]\n    P --> LP[\"Larger P → Smaller Gap\"]\n    H --> LH[\"Larger H → Larger Gap\"]\n    LP & LH --> DT[\"Design Trade‑off\"]\n    DT --> REL\n```\n公式与解释来源: [BV1Mdgh6aE5u P1 02:52]、[BV1Mdgh6aE5u P1 03:02]、[BV1Mdgh6aE5u P1 03:16]、[BV1Mdgh6aE5u P1 03:18]",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    GBL[\"GradientBasedLearning\"] --> MLN[\"Multi‑Layer NN\"]\n    MLN --> BP[\"Backpropagation\"]\n    GBL --> CNN[\"Convolutional NN\"]\n    CNN --> LR[\"Local Receptive Field\"]\n    CNN --> WS[\"Weight Sharing\"]\n    CNN --> SS[\"Subsampling\"]\n    GBL --> GTN[\"Graph Transform Network (GTN)\"]\n    GTN --> MC[\"Module Combination\"]\n    MC --> GT[\"Global Training\"]\n    GT --> DR[\"Document Recognition\"]\n    DR --> CR[\"Check Recognition\"]"
+        },
+        {
+          "title": "传统流水线 vs GTN 流程",
+          "code": "flowchart TD\n    TP[\"Traditional Pipeline\"] --> FE[\"Feature Extraction\"]\n    FE --> HF[\"Handcrafted Features\"]\n    HF --> CL[\"Classifier\"]\n    CL --> OUT[\"Output\"]\n    GTNP[\"GTN Pipeline\"] --> MOD[\"Modules as Graphs\"]\n    MOD --> VLD[\"Variable‑Length Data\"]\n    VLD --> GT[\"Global Training\"]\n    GT --> OBJ[\"Overall Objective Minimization\"]\n    TP -. 对比 .-> GTNP"
+        },
+        {
+          "title": "LineNet5 网络结构",
+          "code": "flowchart TD\n    IN[\"Input 32×32 Gray Image\"] --> C1[\"Conv C1: 6×28×28\"]\n    C1 --> S2[\"Subsample S2: 6×14×14\"]\n    S2 --> C3[\"Conv C3: 16×10×10\"]\n    C3 --> S4[\"Subsample S4: 16×5×5\"]\n    S4 --> FC[\"Fully Connected C5F6\"]\n    FC --> OUT[\"Output: 10 Class Scores\"]\n    C1 --> LR[\"Local Receptive Field\"]\n    C1 --> WS[\"Weight Sharing\"]\n    C1 --> PR[\"Parameter Reduction\"]"
+        },
+        {
+          "title": "误差‑容量‑样本 关系公式",
+          "code": "flowchart TD\n    TE[\"TestError − TrainError\"] --> REL[\"= K·H / P^α\"]\n    REL --> K[\"K (constant)\"]\n    REL --> H[\"Model Capacity H\"]\n    REL --> P[\"Sample Count P\"]\n    REL --> A[\"α (0.5‑1.0)\"]\n    P --> LP[\"Larger P → Smaller Gap\"]\n    H --> LH[\"Larger H → Larger Gap\"]\n    LP & LH --> DT[\"Design Trade‑off\"]\n    DT --> REL"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T18:16:18+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Gradient‑based Learning for Document Recognition – 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    GBL[\"GradientBasedLearning\"] --> MLN[\"Multi‑Layer NN\"]\n    MLN --> BP[\"Backpropagation\"]\n    GBL --> CNN[\"Convolutional NN\"]\n    CNN --> LR[\"Local Receptive Field\"]\n    CNN --> WS[\"Weight Sharing\"]\n    CNN --> SS[\"Subsampling\"]\n    GBL --> GTN[\"Graph Transform Network (GTN)\"]\n    GTN --> MC[\"Module Combination\"]\n    MC --> GT[\"Global Training\"]\n    GT --> DR[\"Document Recognition\"]\n    DR --> CR[\"Check Recognition\"]\n```\n关键概念来源: [BV1Mdgh6aE5u P1 00:12]、[BV1Mdgh6aE5u P1 00:19]、[BV1Mdgh6aE5u P1 00:28]、[BV1Mdgh6aE5u P1 01:35]、[BV1Mdgh6aE5u P1 01:58]、[BV1Mdgh6aE5u P1 02:03]\n\n## 传统流水线 vs GTN 流程\n```mermaid\nflowchart TD\n    TP[\"Traditional Pipeline\"] --> FE[\"Feature Extraction\"]\n    FE --> HF[\"Handcrafted Features\"]\n    HF --> CL[\"Classifier\"]\n    CL --> OUT[\"Output\"]\n    GTNP[\"GTN Pipeline\"] --> MOD[\"Modules as Graphs\"]\n    MOD --> VLD[\"Variable‑Length Data\"]\n    VLD --> GT[\"Global Training\"]\n    GT --> OBJ[\"Overall Objective Minimization\"]\n    TP -. 对比 .-> GTNP\n```\n对比说明来源: [BV1Mdgh6aE5u P1 02:10]、[BV1Mdgh6aE5u P1 02:28]、[BV1Mdgh6aE5u P1 08:25]、[BV1Mdgh6aE5u P1 08:38]\n\n## LineNet5 网络结构\n```mermaid\nflowchart TD\n    IN[\"Input 32×32 Gray Image\"] --> C1[\"Conv C1: 6×28×28\"]\n    C1 --> S2[\"Subsample S2: 6×14×14\"]\n    S2 --> C3[\"Conv C3: 16×10×10\"]\n    C3 --> S4[\"Subsample S4: 16×5×5\"]\n    S4 --> FC[\"Fully Connected C5F6\"]\n    FC --> OUT[\"Output: 10 Class Scores\"]\n    C1 --> LR[\"Local Receptive Field\"]\n    C1 --> WS[\"Weight Sharing\"]\n    C1 --> PR[\"Parameter Reduction\"]\n```\n结构细节来源: [BV1Mdgh6aE5u P1 04:21]、[BV1Mdgh6aE5u P1 04:36]、[BV1Mdgh6aE5u P1 04:40]、[BV1Mdgh6aE5u P1 04:46]、[BV1Mdgh6aE5u P1 04:50]、[BV1Mdgh6aE5u P1 04:57]\n\n## 误差‑容量‑样本 关系公式\n```mermaid\nflowchart TD\n    TE[\"TestError − TrainError\"] --> REL[\"= K·H / P^α\"]\n    REL --> K[\"K (constant)\"]\n    REL --> H[\"Model Capacity H\"]\n    REL --> P[\"Sample Count P\"]\n    REL --> A[\"α (0.5‑1.0)\"]\n    P --> LP[\"Larger P → Smaller Gap\"]\n    H --> LH[\"Larger H → Larger Gap\"]\n    LP & LH --> DT[\"Design Trade‑off\"]\n    DT --> REL\n```\n公式与解释来源: [BV1Mdgh6aE5u P1 02:52]、[BV1Mdgh6aE5u P1 03:02]、[BV1Mdgh6aE5u P1 03:16]、[BV1Mdgh6aE5u P1 03:18]",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    GBL[\"GradientBasedLearning\"] --> MLN[\"Multi‑Layer NN\"]\n    MLN --> BP[\"Backpropagation\"]\n    GBL --> CNN[\"Convolutional NN\"]\n    CNN --> LR[\"Local Receptive Field\"]\n    CNN --> WS[\"Weight Sharing\"]\n    CNN --> SS[\"Subsampling\"]\n    GBL --> GTN[\"Graph Transform Network (GTN)\"]\n    GTN --> MC[\"Module Combination\"]\n    MC --> GT[\"Global Training\"]\n    GT --> DR[\"Document Recognition\"]\n    DR --> CR[\"Check Recognition\"]"
+    },
+    {
+      "title": "传统流水线 vs GTN 流程",
+      "code": "flowchart TD\n    TP[\"Traditional Pipeline\"] --> FE[\"Feature Extraction\"]\n    FE --> HF[\"Handcrafted Features\"]\n    HF --> CL[\"Classifier\"]\n    CL --> OUT[\"Output\"]\n    GTNP[\"GTN Pipeline\"] --> MOD[\"Modules as Graphs\"]\n    MOD --> VLD[\"Variable‑Length Data\"]\n    VLD --> GT[\"Global Training\"]\n    GT --> OBJ[\"Overall Objective Minimization\"]\n    TP -. 对比 .-> GTNP"
+    },
+    {
+      "title": "LineNet5 网络结构",
+      "code": "flowchart TD\n    IN[\"Input 32×32 Gray Image\"] --> C1[\"Conv C1: 6×28×28\"]\n    C1 --> S2[\"Subsample S2: 6×14×14\"]\n    S2 --> C3[\"Conv C3: 16×10×10\"]\n    C3 --> S4[\"Subsample S4: 16×5×5\"]\n    S4 --> FC[\"Fully Connected C5F6\"]\n    FC --> OUT[\"Output: 10 Class Scores\"]\n    C1 --> LR[\"Local Receptive Field\"]\n    C1 --> WS[\"Weight Sharing\"]\n    C1 --> PR[\"Parameter Reduction\"]"
+    },
+    {
+      "title": "误差‑容量‑样本 关系公式",
+      "code": "flowchart TD\n    TE[\"TestError − TrainError\"] --> REL[\"= K·H / P^α\"]\n    REL --> K[\"K (constant)\"]\n    REL --> H[\"Model Capacity H\"]\n    REL --> P[\"Sample Count P\"]\n    REL --> A[\"α (0.5‑1.0)\"]\n    P --> LP[\"Larger P → Smaller Gap\"]\n    H --> LH[\"Larger H → Larger Gap\"]\n    LP & LH --> DT[\"Design Trade‑off\"]\n    DT --> REL"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:16:18+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1gyM26MEWG",
+  "title": "在Deepseek-v4-flash的帮助下，更新manim-strokes支持中文啦",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1277,
+  "text": "Hello\n大家好呀\n那在上个星期我开源了一个有关于minimal呃\n课堂手绘批注的一个库\n叫做minimals choose呃\n在之前呢它只支持一个英文手写\n还有课堂标记啊\n比如说打圈呀什么之类的\n那在昨天我就尝试了一下\n就能不能支持中文嘛\n后来我发现好像啊这个算法上是支持的\n然后也刚好有那种中文的笔画资源\n于是我就和那个TIPSV4flash一起呢\n嗯试着进行了一个拓展\n诶\n我没有想到这一个小模型的发挥还是挺好的\n最后呢就支持了中文的一个笔触\n我们可以看一下\n嗯就像就像是好像有个人在写一样\n但是其实它的背后只是一行代码\n是机器生成的这样的一个笔画\n嗯然后它也会有一个倾斜\n有一个歪扭就很适合嗯\n可能你想完全用机器来代替\n代替你的讲解\n代替你的笔画啊\n从而做一些可能是讲解式的视频\n嗯嗯这个还是有一点啊\n没那么好看\n然后我这里有一首另外一首诗\n我们可以看一下\n嗯他大概写的就是比较细一点\n加速一下\n就像一笔一笔的那个那个呃\n小毛笔写出来的字\n然后在这个过程中\n我之所以想用那个deep seek v4flash来开发呢\n是因为我想试一下他的能力\n是不是真的和官方宣传的一样\n嗯那么其实很让我喜出望外吧\n因为它只是一个flash模型\n然后他在这个过程中\n像这里的视频\n这个demo视频也是他做的\n他在这个过程中呢会有一个问题\n就是他的知识量不是很丰富\n就是他有的东西你让他做一些决策\n他可能会决策歪\n然后你让他写\n他可能会犯很多错误\n但是嗯这都没有关系\n他最大的一个优点的就是呢\n只要是他能做的东西\n他就会做的很优秀\n做的很好啊\n执行的很不错\n就像一个牛马模型\n说起来我觉得很有趣\n就是嗯现在好像大家的这种\n国内厂商的各种模型都变成了一个牛马模型\n那什么叫牛马模型呢\n我自己的我自己认为是这样子的\n就是嗯像以前的模型\n它他就有一种偷懒的感觉啊\n你告诉他你要完成这个任务啊\n比如说要把我这篇文章写成什么样\n什么什么什么样嗯完了以后呢\n他可能就偷懒\n他说哎呀这个包也没有\n那个包\n也没有那个参考材料也没有\n我写不了\n我做不了\n但是现在国内厂商出来一些啊这种牛马模型呢\n比如说现在最新出的一个deep seed模型\n还有或者是那个GRAN呐\n或者是嗯千问呐\n他们的模型就有一种很拼命的感觉\n不是这个任务无论如何我都要拼命的去完成\n哎我读不了图是吧\n那我就去找这种啊这个PON库\n然后呢把这张图给像素画\n然后我来读这个像素化之后的这个图片\n他就会使尽各种手段去做这些事情啊\n然后所以他能执行的一个长度呢变得非常的长\n所以他在我这个任务当中\n也可以说是碰了很多的币\n但是最后还是比较优秀的\n完成了这样的一个任务嗯\n那其实我还是就是很看好国内模型的\n一个一个未来的\n那也很开心嗯\n这个库可以在DEBC的帮助下呢进行一个更新\n然后呢这里的手写这个中文嘛\n他其实是呃有很多讲究\n有可能说速度呀\n还有各种笔画的倾斜呀\n这些东西都要有一定的算法去支撑嗯\n那它背后有9000多个汉字\n常用汉字都是支持的\n如果大家感兴趣的话\n可以试一下好\n那么今天的视频就到这里\n谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gyM26MEWG",
+  "published_at": "1785939197",
+  "fetched_at": "2026-08-06T18:51:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deepseek‑v4‑flash 与 minimal 库中文笔画支持概览\n\n## 总体演进概览\n```mermaid\nflowchart TD\n    LibInit[\"minimals choose (仅英文手写/标记)\"]\n    Attempt[\"尝试中文支持\"]\n    Model[\"Deepseek‑v4‑flash 参与\"]\n    Result[\"实现中文笔画支持\"]\n    Observation[\"手写效果带倾斜\"]\n    Limitation[\"美观度不足\"]\n\n    LibInit --> Attempt --> Model --> Result --> Observation --> Limitation\n```\n[BV1gyM26MEWG P1 00:10] minimal 库最初仅支持英文手写与课堂标记。  \n[BV1gyM26MEWG P1 00:24] 开始尝试加入中文支持。  \n[BV1gyM26MEWG P1 00:32] 与 Deepseek‑v4‑flash 合作进行扩展。  \n[BV1gyM26MEWG P1 00:47] 成功实现中文笔画生成。  \n[BV1gyM26MEWG P1 01:01] 生成的笔画带有倾斜、歪扭。  \n[BV1gyM26MEWG P1 01:23] 效果在美观度上仍有不足。\n\n## 中文笔画生成工作流\n```mermaid\nflowchart TD\n    Resource[\"中文笔画资源（9000+ 常用汉字）\"]\n    Code[\"单行代码实现\"]\n    Generate[\"机器生成笔画\"]\n    Tilt[\"倾斜 / 歪扭\"]\n    UseCase[\"用于生成讲解视频\"]\n    Evaluation[\"效果评估\"]\n\n    Resource --> Code --> Generate --> Tilt --> UseCase --> Evaluation\n```\n[BV1gyM26MEWG P1 04:35] 中文笔画资源覆盖 9000 多个常用汉字。  \n[BV1gyM26MEWG P1 00:55] 只需一行代码即可调用。  \n[BV1gyM26MEWG P1 01:01] 机器生成的笔画。  \n[BV1gyM26MEWG P1 01:03] 伴随倾斜、歪扭效果。  \n[BV1gyM26MEWG P1 01:13] 用于制作讲解式视频。  \n[BV1gyM26MEWG P1 01:23] 评估显示美观度仍有提升空间。\n\n## 模型特性对比：牛马模型 vs 拼命模型\n```mermaid\nflowchart TD\n    BullHorse[\"牛马模型（倾向偷懒）\"]\n    Diligent[\"拼命模型（全力完成）\"]\n    KnowledgeLimit[\"知识量有限\"]\n    DecisionError[\"决策可能歪\"]\n    Strength[\"擅长可做任务\"]\n    Observation[\"表现优秀\"]\n    Comparison[\"国内模型发展趋势\"]\n\n    BullHorse --> KnowledgeLimit\n    BullHorse --> DecisionError\n    Diligent --> KnowledgeLimit\n    Diligent --> Strength\n    Strength --> Observation\n    Observation --> Comparison\n```\n[BV1gyM26MEWG P1 02:41] “牛马模型”表现为偷懒倾向。  \n[BV1gyM26MEWG P1 03:19] 国内新模型呈现“拼命”特性。  \n[BV1gyM26MEWG P1 02:16] 所有模型均受限于知识量。  \n[BV1gyM26MEWG P1 02:22] 决策时可能出现错误。  \n[BV1gyM26MEWG P1 02:30] 在可做任务上表现出色。  \n[BV1gyM26MEWG P1 02:36] 执行效果优秀。  \n[BV1gyM26MEWG P1 04:06] 作者对国内模型的未来持乐观态度。",
+      "diagrams": [
+        {
+          "title": "总体演进概览",
+          "code": "flowchart TD\n    LibInit[\"minimals choose (仅英文手写/标记)\"]\n    Attempt[\"尝试中文支持\"]\n    Model[\"Deepseek‑v4‑flash 参与\"]\n    Result[\"实现中文笔画支持\"]\n    Observation[\"手写效果带倾斜\"]\n    Limitation[\"美观度不足\"]\n\n    LibInit --> Attempt --> Model --> Result --> Observation --> Limitation"
+        },
+        {
+          "title": "中文笔画生成工作流",
+          "code": "flowchart TD\n    Resource[\"中文笔画资源（9000+ 常用汉字）\"]\n    Code[\"单行代码实现\"]\n    Generate[\"机器生成笔画\"]\n    Tilt[\"倾斜 / 歪扭\"]\n    UseCase[\"用于生成讲解视频\"]\n    Evaluation[\"效果评估\"]\n\n    Resource --> Code --> Generate --> Tilt --> UseCase --> Evaluation"
+        },
+        {
+          "title": "模型特性对比：牛马模型 vs 拼命模型",
+          "code": "flowchart TD\n    BullHorse[\"牛马模型（倾向偷懒）\"]\n    Diligent[\"拼命模型（全力完成）\"]\n    KnowledgeLimit[\"知识量有限\"]\n    DecisionError[\"决策可能歪\"]\n    Strength[\"擅长可做任务\"]\n    Observation[\"表现优秀\"]\n    Comparison[\"国内模型发展趋势\"]\n\n    BullHorse --> KnowledgeLimit\n    BullHorse --> DecisionError\n    Diligent --> KnowledgeLimit\n    Diligent --> Strength\n    Strength --> Observation\n    Observation --> Comparison"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T18:52:11+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deepseek‑v4‑flash 与 minimal 库中文笔画支持概览\n\n## 总体演进概览\n```mermaid\nflowchart TD\n    LibInit[\"minimals choose (仅英文手写/标记)\"]\n    Attempt[\"尝试中文支持\"]\n    Model[\"Deepseek‑v4‑flash 参与\"]\n    Result[\"实现中文笔画支持\"]\n    Observation[\"手写效果带倾斜\"]\n    Limitation[\"美观度不足\"]\n\n    LibInit --> Attempt --> Model --> Result --> Observation --> Limitation\n```\n[BV1gyM26MEWG P1 00:10] minimal 库最初仅支持英文手写与课堂标记。  \n[BV1gyM26MEWG P1 00:24] 开始尝试加入中文支持。  \n[BV1gyM26MEWG P1 00:32] 与 Deepseek‑v4‑flash 合作进行扩展。  \n[BV1gyM26MEWG P1 00:47] 成功实现中文笔画生成。  \n[BV1gyM26MEWG P1 01:01] 生成的笔画带有倾斜、歪扭。  \n[BV1gyM26MEWG P1 01:23] 效果在美观度上仍有不足。\n\n## 中文笔画生成工作流\n```mermaid\nflowchart TD\n    Resource[\"中文笔画资源（9000+ 常用汉字）\"]\n    Code[\"单行代码实现\"]\n    Generate[\"机器生成笔画\"]\n    Tilt[\"倾斜 / 歪扭\"]\n    UseCase[\"用于生成讲解视频\"]\n    Evaluation[\"效果评估\"]\n\n    Resource --> Code --> Generate --> Tilt --> UseCase --> Evaluation\n```\n[BV1gyM26MEWG P1 04:35] 中文笔画资源覆盖 9000 多个常用汉字。  \n[BV1gyM26MEWG P1 00:55] 只需一行代码即可调用。  \n[BV1gyM26MEWG P1 01:01] 机器生成的笔画。  \n[BV1gyM26MEWG P1 01:03] 伴随倾斜、歪扭效果。  \n[BV1gyM26MEWG P1 01:13] 用于制作讲解式视频。  \n[BV1gyM26MEWG P1 01:23] 评估显示美观度仍有提升空间。\n\n## 模型特性对比：牛马模型 vs 拼命模型\n```mermaid\nflowchart TD\n    BullHorse[\"牛马模型（倾向偷懒）\"]\n    Diligent[\"拼命模型（全力完成）\"]\n    KnowledgeLimit[\"知识量有限\"]\n    DecisionError[\"决策可能歪\"]\n    Strength[\"擅长可做任务\"]\n    Observation[\"表现优秀\"]\n    Comparison[\"国内模型发展趋势\"]\n\n    BullHorse --> KnowledgeLimit\n    BullHorse --> DecisionError\n    Diligent --> KnowledgeLimit\n    Diligent --> Strength\n    Strength --> Observation\n    Observation --> Comparison\n```\n[BV1gyM26MEWG P1 02:41] “牛马模型”表现为偷懒倾向。  \n[BV1gyM26MEWG P1 03:19] 国内新模型呈现“拼命”特性。  \n[BV1gyM26MEWG P1 02:16] 所有模型均受限于知识量。  \n[BV1gyM26MEWG P1 02:22] 决策时可能出现错误。  \n[BV1gyM26MEWG P1 02:30] 在可做任务上表现出色。  \n[BV1gyM26MEWG P1 02:36] 执行效果优秀。  \n[BV1gyM26MEWG P1 04:06] 作者对国内模型的未来持乐观态度。",
+  "diagrams": [
+    {
+      "title": "总体演进概览",
+      "code": "flowchart TD\n    LibInit[\"minimals choose (仅英文手写/标记)\"]\n    Attempt[\"尝试中文支持\"]\n    Model[\"Deepseek‑v4‑flash 参与\"]\n    Result[\"实现中文笔画支持\"]\n    Observation[\"手写效果带倾斜\"]\n    Limitation[\"美观度不足\"]\n\n    LibInit --> Attempt --> Model --> Result --> Observation --> Limitation"
+    },
+    {
+      "title": "中文笔画生成工作流",
+      "code": "flowchart TD\n    Resource[\"中文笔画资源（9000+ 常用汉字）\"]\n    Code[\"单行代码实现\"]\n    Generate[\"机器生成笔画\"]\n    Tilt[\"倾斜 / 歪扭\"]\n    UseCase[\"用于生成讲解视频\"]\n    Evaluation[\"效果评估\"]\n\n    Resource --> Code --> Generate --> Tilt --> UseCase --> Evaluation"
+    },
+    {
+      "title": "模型特性对比：牛马模型 vs 拼命模型",
+      "code": "flowchart TD\n    BullHorse[\"牛马模型（倾向偷懒）\"]\n    Diligent[\"拼命模型（全力完成）\"]\n    KnowledgeLimit[\"知识量有限\"]\n    DecisionError[\"决策可能歪\"]\n    Strength[\"擅长可做任务\"]\n    Observation[\"表现优秀\"]\n    Comparison[\"国内模型发展趋势\"]\n\n    BullHorse --> KnowledgeLimit\n    BullHorse --> DecisionError\n    Diligent --> KnowledgeLimit\n    Diligent --> Strength\n    Strength --> Observation\n    Observation --> Comparison"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:52:11+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1XvT46UEBM",
+  "title": "GODOT湖泊场景制作",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4813,
+  "text": "大家好\n这里是麦克金伟\n我又来做游戏啦\n这次我们恢复一下之前丢失的钓鱼的场景\n我们来讲一下这个场景里面素材的视差\n贴图的层次\n包括前景\n中景\n还有远景\n他们的层次分布\n贴图我已经全部都画好\n其中包括我们这个陆地后面的这个树林\n各个层次的树林帐篷\n远处的几个小岛桥\n还有我们最近的这棵大树\n以及场景里面的一些草丛\n接下来我们进行拼装\n我们新建一个场景\n叫做湖泊\n那么场景的搭建我们分为几个层次\n其中一个是远景\n中景\n和近景\n那我们玩家呢再给他一个独立的玩家成\n我们保存一下\n素材我们已经放进这里了\n接着我们先在这个玩家层啊去建立可以与玩家互动的一些物体\n我们这里直接\n选取这个素材\n存起这个地面\n分辨率我们设置的是960和540\n然后再通过放大把它变成1080P\n我们把它放在这个\n左下角\n同时我们加载我们在这个玩家层这里面去加载\n我们之前做好的这个玩家\n这个玩家是带了这个摄像头的\n这个地面他应该是在玩家城的背后\n这个叫做地面\n我们现在试试着运行\n我们可以看到看到玩家在这个地上行走\n也可以跑到外面去\n我们现在给摄像头固定一下\n我们展开玩家的这个子节点里面有个摄像机\n在这个限制里面\n我们限制它的最高\n也就是top这里为零\n摄像机它不会超过这上面最左边呢我们也设置为零\n摄像机移到这里的话\n他就不会往左过去了\n我们试一下\n当我们往左的时候\n摄像机不会动\n我们往右它是可以动的\n往上到这个程度它也不会动\n但是往下我们吗\n我们没有设置\n往下我们还要设置一下\n下的话是540\n那么现在我们就只能够往右扩展\n我们就可以往右扩展\n往左边\n我们以后会在这里做一个传送啊\n传到下一个地图\n接下来我们继续搭建场景的贴图\n我们继续在玩家层这里再增加\n把它依然放在这个\n地面的上面\n选择桥\n把它移动到适合的位置\n也就是我们如果是走这条路直过来的话\n那就与这个桥面对齐\n我们可以直接复制再重命名帐篷\n这里换成帐篷\n我们把帐篷放到合适的位置\n然后还有桌子\n我们继续复制\n桌子\n不要挡着这个路啊\n我们放上面一点就可以了\n我们运行一下\n现在可以跑到外面去呃\n我们还没有做碰撞区\n这些是我们的这个玩家成的贴图\n接下来我们做近景近景\n我们做近景近景\n这里同样我们又把它放到近景这层里面去\n大树\n我们把它贴合这个最左边\n再过来两个像素\n这个时候按照这个层次\n他是可以遮挡住玩家的\n我们给这个大树加上一个动态的着色器\n植物摇摆\n这个时候我们可以看到这个植物呢是会晃动的\n所以左上角这里我们往左几个像素\n让它这里不要露出破绽来\n这里加载了着色器呃\n关掉的时候会比较卡\n我们可以暂时先清清空\n后面再添加\n近景这里呢除了大树\n我们还有\n前面的草丛\n有两个草丛\n草丛一草丛二\n我们把一放到最前面去\n二的话我们选择\n这个\n它放在大树的后面\n把它放到这个位置\n草丛一\n啊我使用的是这一个\n它主要是遮住树头的这部分\n你不用全部挡住一个角就可以了\n我们可以给它裁剪一下\n我们看一下大概这个树叶到这个这片树叶的位置\n也就是这里我们可以给它移过来\n下面的话这个位置大概是这个小黄花\n小花在这里\nOK我们同样啊左边移多几个像素\n前景我们做好了\n但是现在他们\n是不会动的\n我们先给它加上这个视差效果\n我们右键新建复节点\n选择这个\n呃这里三层它是不一样的\n所以我们每一个都给它添加一个\n复节点\n一的话他就是不会动\n零点前面的话我们是往小了些\n0.9\nY轴0.92\n因为我们只是左右动\n上下\n不需要\n1.8\n0.7\n我们试一下效果\n我们现在往左它是动不了的\n因为摄像机卡住了\n我们现在往右呃\n感觉这个最前面的这个草丛跑的有点快\n大树也跑的有点快\n这些都比较快\n我们给他设置小一点\n0.95\n我们把把把这个递增缩小一点\n变成0.5\n这个就是0.85\n我们可以实实时看到效果\n啊现在只有前面\n你感觉他有点收缩呃\n有点奇怪\n等我们把后面做好了\n看起来就比较合理了\n我们现在开始增加中中层的中景\n你直接拖进来吧\n放到中景\n这个是\n前面的草丛\n草丛一\n二三\n我们这个数字小的在前面啊\n那我就把它反过来\n换回这个自动裁剪\n我们主要是这三个草丛\n最前面最前面的话\n其实三个是平行的\n没有关系\n我们选这个大的\n把它放到这个位置\n桌子的和帐篷之间\n我们二的话就\n选这个中等的\n放在帐篷的背后\n这里不用压到下面去\n压到下面去\n到时候动起来会奇怪呃\n留一个一点点缝隙\n这个缝隙我们有其他的素材去遮挡\n第三个我们选用的是这个小的\n但最小的也可以用到其他地方去啊\n比如这边啊\n都是可以重复用的\n这里我把它放到这个\n这个位置来\n然后分额全部给他们\n同一个\n视差他这里应该是\n比这个一要大\n我们先用0.1看看效果\n1.1看下效果\n啊这个贴的比较近\n所以他现在移动速度比较快\n这有点看起来不太对\n我们0.5\n好暂时先用这个\n我们中景还中景还要继续添加添加子节点\n继续加在上面\n我可以直接复制一个上去\n叫做竖\n这个数呢我们选用\n这几颗123456\n啊六棵树\n我们做\n这个是前面的这个前面的这个前面的这三个的\n在后面一点点做两个层次\n我们先选前面的\n我们暂时先放这个位置\n放在桌子的背后\n我们继续添加\n复制\n这个放在这里\n他在刚才那棵树的背后\n被刚才这棵树遮挡\n这边还有一颗\n你再复制一个过来给他换成这个小的\n这个在帐篷的背后\n嗯他可以挡住刚才那个\n刚才是1.05\n我们这个就一点一吧\n我们看一下效果\n有点快\n好我们继续添加\n待会再整体调整\n中层还要再加\n我们直接把这个复制一下\n顺序换一下\n把这个Z123\n我们直接用这个数据来命名吧\n现在是1.05\n这个是一点一\n这个我们1.2\n刚才那个\n0.95\n0.9\n0.85\n我们在1.2这里这个三棵树我们也换一下\n因为他是在背后的\n这里的数一\n也就是最右边那颗\n我们采用的是是这个\n我们放到这个位置\n上去一点\n先放这里吧\n数三是左边的\n竖二是中间的\n换一下位置\n数二我们也换一下数二\n我们用的是这个\n换了就可以了\n数三\n至少我们用的是那个松树林\n它主要是衔接与左边过去的那个树林\n我数二了\n移过来一下\n给它稍微放大一点\n因为他在背后实际上也看的不太清楚\n我们这个层次设置好了\n我们再试一下效果\n好我们把远景弄一下\n远景\n看下是1.2\n这个就一点\n三\n就这两个1.41.5\n我们可以看到三的话\n我们是有三个三个岛屿\n这个是离我们最近的\n第二个是在树林背后\n第三个是最远的\n那我们这里三个这个第一个\n倒\n选择最近的这个岛\n我们先把它放到这个位置来\n给他复制一个\n放到1.4\n第二个是这个\n我们选择它按着alt alt键移动啊\n移动到这这边\n我们还需要一个背景层\n要复制一个CTRL加D1复制\n这个是倒三\n这个\n把它移动到这个位置来\n我们再把这个\n背景层\n背景\n安宁\n把这个背景直接拖进来\n大小我们设置一下\n把它放到\n第一个\n摄像机背后就可以\n它是不需要移动的\n所以我们把它放到远景的\n最上面加这个视差贴图啊\n误节点\n零之后它就会跟着走\n它就不会移动了\n它跟着镜头走\n然后我们这里顺便把这个导的这些调一下\n我们中景的最后是1.2啊\n1.11.1\n这个是1.2\n他是1.3\n1.4\n所以我们用这个视差来命名也是非常关键的\n不然就很容易搞乱\n好我们现在看一下后面的导会\n非\n啊转的太快了\n感觉有点头晕\n这个岛我们一个来这个岛移动太快了\n第一个岛我们还原到1.2\n因为它其实跟这个数这一排树是同一个层次的\n然后呢1.2\n这里就1.25\n应该是1.3\n先把1.3的这个岛的位置\n移一下\n就当我们走到这个桥的\n镜头这里时候风景应该是最好的\n这个时候他的前面的这个导\n这里的风景是最好的\n我们给它移到这里\n移右右边一点\n然后左边的这个把它露出来\n嗯弄出来\n最远的那个岛往右移\n其实在之前的那个版本\n我远处这里还有一个小岛\n在远处的\n我们后面再慢慢去补\n那么这样的话他这个中间的河流就形成一个S形\n后面移动的还是太快了\n继续缩小一点\n这个1.21.2\n1.282328\n我们好像搞坏了\n我们来看一点\n我们应该是上面是零点几\n下面是一点几\n你搞反了\n没有这个模板\n再放一块\n0.95\n1.11.2\n1.3\n啊接下来是桥的影子和这个陆地的影子\n然后还有这个树丛\n下面这片草地\n这里的倒影呢他是跟着这个岸边不会动的\n桥呢也是跟着不会动的\n我们先把层\n我们先把这个贴图拉进来\n然后是\n桥\n桥的倒影以及\n其他的倒影我们选择桥下面的这个二面的倒影\n我们选择这一个\n我们给它放到合适的位置\n可以稍微上去一点点\n啊就比这个缝还要上去一点点\n然后他们两个在哪个城呢\n他们是需要被这个桥和岸边挡住的\n他们是可以在这个最里面\n我们看一下效果\n好可以\n我们在这增加这个背后的草地\n草地的话\n他实际上他就是\n中层里面的\n我们需要在这个中层的二和中层的三加上草地就够了\n就这两个\n我们直接给他复制吧\n复制一个草地\n草地的话\n它往往是挡住这个树的树根\n就树头的位置\n我们把它移到最下面这里一样\n我们选择这个长的\n这个选好之后呢\n有点大啊\n我们可以缩小一点\n我们先放到这里\n先把它放到这个位置啊\n把这空白的位置挡住来\n这个同样\n它是属于第第三层\n你在这里\n图片缩小一点\n我们在进行测试的时候\n再去微调\n那这里他挡住了\n但是这个草有点大\n我们还可以再缩小一点\n这里三个平棋嗯\n非常丑\n我们给它往右移出来一点下\n尽量遮住\n这里也有一点\n这里一点点\n这个我们只要把这个草丛给往下移就可以了\n这个草丛是在最前面的层次的\n第一\n挡一下\n我们走动一下啊\n没有问题\n然后背后这里呢我们能看到远处的海面啊\n如果说我们想营造这个\n非常多数的生灵的效果的话\n我们就可以给他呃\n用这颗用这个素材\n这个本来就是看不到它的叶子的素材\n放在背后给它完全遮挡住\n如果说你想做这种诶\n就是能够能够看到海的效果\n那就留着这留着它\n接下来我们制作水面的效果\n水面的话它的效果呢就是新建一个\n新建一个\n啊这个颜色的这个层\n齿轮\n在他的着色器里面\n把我们这个水波纹放上去\n把它给覆盖到我们需要的区域\n可以到这个石头的下面\n这边呢我们尽量把这个水完全盖完\n然后呢给他调一下这个\n数值\n透明度\n我们不需要\n我们先看这个位置啊\n这个位置的水波纹是正常的\n我们把这个背景\n这里\nX轴\n960\n给他\n复制一块出来\n然后我们看这里位置\n嗯可以的\n然后这里呢怎么办呢\n看这个桥我们只是沉积的问题\n我们把它换到这个倒影前面\n对吧\n因为倒影是会动的嘛\n那就合理了\n远处的啊\n如果需要细致的话\n我们在远处的话\n这里还可以增加一层嗯\n但是从我们视觉效果来讲\n远处的水波纹我们是看不到的\n太远了\n看起来就像平静一样\n所以呢我们这里能看到一些动物\n其实也是OK的啦\n现在给树加些摇摆呃\n这个大树我们看到他的这个着色器\n把这个植物摇摆放进去好\n他就可以动了\n前面那个草丛呃一样把这个放进去啊\n但是这个着色器呢\n因为我们的贴图是一大张的\n所以我们需要记住它这个Y轴的起点303\n然后在这里输入这个Y轴303坐着它会才会摇摆起来\n和这个一样\n我们看一下23\n接下来是这个数的\n这个数1502\n然后他晃动只要一半\n它不需要像前面的物体晃动这么厉害\n我们给它增加一个\n我们看到树是可以动的\n这里有一片白色的叶子\n我们在\n这里证明一下应该是抠图抠漏的\n人物的倒影啊也是同样啊\n到时候在后面再换一个跟着移动的就可以了\n嗯现在我们可以跑到其他地方去\n那主要是建立这个塑造体限制一下就可以了\n基本上这个场景的\n这些层次呢就这么设定\n我后面再去做这个人物的钓鱼的动画状态机\n笔记后面再继续制作了\n我还要做一些这个例子\n做这个落叶飘下来\n或者一些啊竹笛啊\n风平啊\n我做那个\n有细节啊\n增加丰富的场景\n后面的远景还要在室外看\n这个国外生成的\n它没有以前的那个效果那么好\n然后再去继续工作好了\n今天视频就到这里\n谢谢大家观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1XvT46UEBM",
+  "published_at": "1783075630",
+  "fetched_at": "2026-08-07T17:52:25+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GODOT湖泊场景制作知识图谱\n\n## 场景层级与视差结构\n```mermaid\nflowchart TD\n    S[\"场景\"] --> PL[\"玩家层 (PlayerLayer)\"]\n    PL --> G[\"地面 (Ground)\"]\n    S --> NL[\"近景层 (NearLayer)\"]\n    S --> ML[\"中景层 (MidLayer)\"]\n    S --> FL[\"远景层 (FarLayer)\"]\n    S --> BG[\"背景层 (Background)\"]\n    NL --> BT[\"大树 (BigTree)\"]\n    NL --> GP1[\"草丛1 (GrassPatch1)\"]\n    NL --> GP2[\"草丛2 (GrassPatch2)\"]\n    ML --> T[\"帐篷 (Tent)\"]\n    ML --> TB[\"桌子 (Table)\"]\n    FL --> BR[\"桥 (Bridge)\"]\n    FL --> IS[\"小岛 (Island)\"]\n    BG --> W[\"水面 (Water)\"]\n    PL --> CAM[\"摄像机 (Camera)\"]\n    subgraph Parallax[\"视差节点\"]\n        PN[\"ParallaxNode\"]\n    end\n    PN --> NL\n    PN --> ML\n    PN --> FL\n    PN --> BG\n```\n\n## 摄像机约束逻辑\n```mermaid\nflowchart TD\n    CAM[\"摄像机\"] --> PL[\"玩家层\"]\n    CAM --> CL[\"摄像机限制 (CameraLimits)\"]\n    CL --> TL[\"上限 Top = 0\"]\n    CL --> LL[\"左限 Left = 0\"]\n    CL --> RL[\"右限 Right (未设定)\"]\n    CL --> BL[\"下限 Bottom (未设定)\"]\n    CAM --> CF[\"跟随玩家 (FollowPlayer)\"]\n    CAM --> CE[\"约束启用 (ConstraintEnabled)\"]\n```\n\n## 资源放置工作流\n```mermaid\nflowchart TD\n    AL[\"资源库 (AssetLibrary)\"] --> GT[\"地面贴图 (GroundTexture)\"]\n    AL --> BR[\"桥 (Bridge)\"]\n    AL --> T[\"帐篷 (Tent)\"]\n    AL --> TB[\"桌子 (Table)\"]\n    AL --> BT[\"大树 (BigTree)\"]\n    AL --> GP[\"草丛 (GrassPatch)\"]\n    subgraph 放置步骤\n        AD[\"AddAsset\"] --> PA[\"PositionAdjust\"]\n        PA --> DR[\"DuplicateRename\"]\n    end\n    GT --> AD\n    BR --> AD\n    T --> AD\n    TB --> AD\n    BT --> AD\n    GP --> AD\n    DR --> PL[\"玩家层\"]\n```\n\n## 视差速度设置\n```mermaid\nflowchart TD\n    PN[\"ParallaxNode\"] --> NL[\"近景层\"]\n    PN --> ML[\"中景层\"]\n    PN --> FL[\"远景层\"]\n    NL --> NS[\"速度 Near = 0.5~0.85\"]\n    ML --> MS[\"速度 Mid = 0.9~1.2\"]\n    FL --> FS[\"速度 Far = 1.1~1.5\"]\n    NS --> SV1[\"示例值 0.85\"]\n    MS --> SV2[\"示例值 1.2\"]\n    FS --> SV3[\"示例值 1.4\"]\n```\n\n## 水面效果实现\n```mermaid\nflowchart TD\n    WL[\"水面层 (WaterLayer)\"] --> WS[\"水面着色器 (WaterShader)\"]\n    WS --> WT[\"波纹纹理 (WaveTexture)\"]\n    WS --> OP[\"透明度 (Opacity)\"]\n    WS --> CV[\"覆盖区域 (CoverageArea)\"]\n    CV --> UB[\"桥下 (UnderBridge)\"]\n    CV --> UR[\"岩石下 (UnderRock)\"]\n    OP --> AD[\"AdjustTransparency\"]\n    AD --> WL\n```",
+      "diagrams": [
+        {
+          "title": "场景层级与视差结构",
+          "code": "flowchart TD\n    S[\"场景\"] --> PL[\"玩家层 (PlayerLayer)\"]\n    PL --> G[\"地面 (Ground)\"]\n    S --> NL[\"近景层 (NearLayer)\"]\n    S --> ML[\"中景层 (MidLayer)\"]\n    S --> FL[\"远景层 (FarLayer)\"]\n    S --> BG[\"背景层 (Background)\"]\n    NL --> BT[\"大树 (BigTree)\"]\n    NL --> GP1[\"草丛1 (GrassPatch1)\"]\n    NL --> GP2[\"草丛2 (GrassPatch2)\"]\n    ML --> T[\"帐篷 (Tent)\"]\n    ML --> TB[\"桌子 (Table)\"]\n    FL --> BR[\"桥 (Bridge)\"]\n    FL --> IS[\"小岛 (Island)\"]\n    BG --> W[\"水面 (Water)\"]\n    PL --> CAM[\"摄像机 (Camera)\"]\n    subgraph Parallax[\"视差节点\"]\n        PN[\"ParallaxNode\"]\n    end\n    PN --> NL\n    PN --> ML\n    PN --> FL\n    PN --> BG"
+        },
+        {
+          "title": "摄像机约束逻辑",
+          "code": "flowchart TD\n    CAM[\"摄像机\"] --> PL[\"玩家层\"]\n    CAM --> CL[\"摄像机限制 (CameraLimits)\"]\n    CL --> TL[\"上限 Top = 0\"]\n    CL --> LL[\"左限 Left = 0\"]\n    CL --> RL[\"右限 Right (未设定)\"]\n    CL --> BL[\"下限 Bottom (未设定)\"]\n    CAM --> CF[\"跟随玩家 (FollowPlayer)\"]\n    CAM --> CE[\"约束启用 (ConstraintEnabled)\"]"
+        },
+        {
+          "title": "资源放置工作流",
+          "code": "flowchart TD\n    AL[\"资源库 (AssetLibrary)\"] --> GT[\"地面贴图 (GroundTexture)\"]\n    AL --> BR[\"桥 (Bridge)\"]\n    AL --> T[\"帐篷 (Tent)\"]\n    AL --> TB[\"桌子 (Table)\"]\n    AL --> BT[\"大树 (BigTree)\"]\n    AL --> GP[\"草丛 (GrassPatch)\"]\n    subgraph 放置步骤\n        AD[\"AddAsset\"] --> PA[\"PositionAdjust\"]\n        PA --> DR[\"DuplicateRename\"]\n    end\n    GT --> AD\n    BR --> AD\n    T --> AD\n    TB --> AD\n    BT --> AD\n    GP --> AD\n    DR --> PL[\"玩家层\"]"
+        },
+        {
+          "title": "视差速度设置",
+          "code": "flowchart TD\n    PN[\"ParallaxNode\"] --> NL[\"近景层\"]\n    PN --> ML[\"中景层\"]\n    PN --> FL[\"远景层\"]\n    NL --> NS[\"速度 Near = 0.5~0.85\"]\n    ML --> MS[\"速度 Mid = 0.9~1.2\"]\n    FL --> FS[\"速度 Far = 1.1~1.5\"]\n    NS --> SV1[\"示例值 0.85\"]\n    MS --> SV2[\"示例值 1.2\"]\n    FS --> SV3[\"示例值 1.4\"]"
+        },
+        {
+          "title": "水面效果实现",
+          "code": "flowchart TD\n    WL[\"水面层 (WaterLayer)\"] --> WS[\"水面着色器 (WaterShader)\"]\n    WS --> WT[\"波纹纹理 (WaveTexture)\"]\n    WS --> OP[\"透明度 (Opacity)\"]\n    WS --> CV[\"覆盖区域 (CoverageArea)\"]\n    CV --> UB[\"桥下 (UnderBridge)\"]\n    CV --> UR[\"岩石下 (UnderRock)\"]\n    OP --> AD[\"AdjustTransparency\"]\n    AD --> WL"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T17:53:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GODOT湖泊场景制作知识图谱\n\n## 场景层级与视差结构\n```mermaid\nflowchart TD\n    S[\"场景\"] --> PL[\"玩家层 (PlayerLayer)\"]\n    PL --> G[\"地面 (Ground)\"]\n    S --> NL[\"近景层 (NearLayer)\"]\n    S --> ML[\"中景层 (MidLayer)\"]\n    S --> FL[\"远景层 (FarLayer)\"]\n    S --> BG[\"背景层 (Background)\"]\n    NL --> BT[\"大树 (BigTree)\"]\n    NL --> GP1[\"草丛1 (GrassPatch1)\"]\n    NL --> GP2[\"草丛2 (GrassPatch2)\"]\n    ML --> T[\"帐篷 (Tent)\"]\n    ML --> TB[\"桌子 (Table)\"]\n    FL --> BR[\"桥 (Bridge)\"]\n    FL --> IS[\"小岛 (Island)\"]\n    BG --> W[\"水面 (Water)\"]\n    PL --> CAM[\"摄像机 (Camera)\"]\n    subgraph Parallax[\"视差节点\"]\n        PN[\"ParallaxNode\"]\n    end\n    PN --> NL\n    PN --> ML\n    PN --> FL\n    PN --> BG\n```\n\n## 摄像机约束逻辑\n```mermaid\nflowchart TD\n    CAM[\"摄像机\"] --> PL[\"玩家层\"]\n    CAM --> CL[\"摄像机限制 (CameraLimits)\"]\n    CL --> TL[\"上限 Top = 0\"]\n    CL --> LL[\"左限 Left = 0\"]\n    CL --> RL[\"右限 Right (未设定)\"]\n    CL --> BL[\"下限 Bottom (未设定)\"]\n    CAM --> CF[\"跟随玩家 (FollowPlayer)\"]\n    CAM --> CE[\"约束启用 (ConstraintEnabled)\"]\n```\n\n## 资源放置工作流\n```mermaid\nflowchart TD\n    AL[\"资源库 (AssetLibrary)\"] --> GT[\"地面贴图 (GroundTexture)\"]\n    AL --> BR[\"桥 (Bridge)\"]\n    AL --> T[\"帐篷 (Tent)\"]\n    AL --> TB[\"桌子 (Table)\"]\n    AL --> BT[\"大树 (BigTree)\"]\n    AL --> GP[\"草丛 (GrassPatch)\"]\n    subgraph 放置步骤\n        AD[\"AddAsset\"] --> PA[\"PositionAdjust\"]\n        PA --> DR[\"DuplicateRename\"]\n    end\n    GT --> AD\n    BR --> AD\n    T --> AD\n    TB --> AD\n    BT --> AD\n    GP --> AD\n    DR --> PL[\"玩家层\"]\n```\n\n## 视差速度设置\n```mermaid\nflowchart TD\n    PN[\"ParallaxNode\"] --> NL[\"近景层\"]\n    PN --> ML[\"中景层\"]\n    PN --> FL[\"远景层\"]\n    NL --> NS[\"速度 Near = 0.5~0.85\"]\n    ML --> MS[\"速度 Mid = 0.9~1.2\"]\n    FL --> FS[\"速度 Far = 1.1~1.5\"]\n    NS --> SV1[\"示例值 0.85\"]\n    MS --> SV2[\"示例值 1.2\"]\n    FS --> SV3[\"示例值 1.4\"]\n```\n\n## 水面效果实现\n```mermaid\nflowchart TD\n    WL[\"水面层 (WaterLayer)\"] --> WS[\"水面着色器 (WaterShader)\"]\n    WS --> WT[\"波纹纹理 (WaveTexture)\"]\n    WS --> OP[\"透明度 (Opacity)\"]\n    WS --> CV[\"覆盖区域 (CoverageArea)\"]\n    CV --> UB[\"桥下 (UnderBridge)\"]\n    CV --> UR[\"岩石下 (UnderRock)\"]\n    OP --> AD[\"AdjustTransparency\"]\n    AD --> WL\n```",
+  "diagrams": [
+    {
+      "title": "场景层级与视差结构",
+      "code": "flowchart TD\n    S[\"场景\"] --> PL[\"玩家层 (PlayerLayer)\"]\n    PL --> G[\"地面 (Ground)\"]\n    S --> NL[\"近景层 (NearLayer)\"]\n    S --> ML[\"中景层 (MidLayer)\"]\n    S --> FL[\"远景层 (FarLayer)\"]\n    S --> BG[\"背景层 (Background)\"]\n    NL --> BT[\"大树 (BigTree)\"]\n    NL --> GP1[\"草丛1 (GrassPatch1)\"]\n    NL --> GP2[\"草丛2 (GrassPatch2)\"]\n    ML --> T[\"帐篷 (Tent)\"]\n    ML --> TB[\"桌子 (Table)\"]\n    FL --> BR[\"桥 (Bridge)\"]\n    FL --> IS[\"小岛 (Island)\"]\n    BG --> W[\"水面 (Water)\"]\n    PL --> CAM[\"摄像机 (Camera)\"]\n    subgraph Parallax[\"视差节点\"]\n        PN[\"ParallaxNode\"]\n    end\n    PN --> NL\n    PN --> ML\n    PN --> FL\n    PN --> BG"
+    },
+    {
+      "title": "摄像机约束逻辑",
+      "code": "flowchart TD\n    CAM[\"摄像机\"] --> PL[\"玩家层\"]\n    CAM --> CL[\"摄像机限制 (CameraLimits)\"]\n    CL --> TL[\"上限 Top = 0\"]\n    CL --> LL[\"左限 Left = 0\"]\n    CL --> RL[\"右限 Right (未设定)\"]\n    CL --> BL[\"下限 Bottom (未设定)\"]\n    CAM --> CF[\"跟随玩家 (FollowPlayer)\"]\n    CAM --> CE[\"约束启用 (ConstraintEnabled)\"]"
+    },
+    {
+      "title": "资源放置工作流",
+      "code": "flowchart TD\n    AL[\"资源库 (AssetLibrary)\"] --> GT[\"地面贴图 (GroundTexture)\"]\n    AL --> BR[\"桥 (Bridge)\"]\n    AL --> T[\"帐篷 (Tent)\"]\n    AL --> TB[\"桌子 (Table)\"]\n    AL --> BT[\"大树 (BigTree)\"]\n    AL --> GP[\"草丛 (GrassPatch)\"]\n    subgraph 放置步骤\n        AD[\"AddAsset\"] --> PA[\"PositionAdjust\"]\n        PA --> DR[\"DuplicateRename\"]\n    end\n    GT --> AD\n    BR --> AD\n    T --> AD\n    TB --> AD\n    BT --> AD\n    GP --> AD\n    DR --> PL[\"玩家层\"]"
+    },
+    {
+      "title": "视差速度设置",
+      "code": "flowchart TD\n    PN[\"ParallaxNode\"] --> NL[\"近景层\"]\n    PN --> ML[\"中景层\"]\n    PN --> FL[\"远景层\"]\n    NL --> NS[\"速度 Near = 0.5~0.85\"]\n    ML --> MS[\"速度 Mid = 0.9~1.2\"]\n    FL --> FS[\"速度 Far = 1.1~1.5\"]\n    NS --> SV1[\"示例值 0.85\"]\n    MS --> SV2[\"示例值 1.2\"]\n    FS --> SV3[\"示例值 1.4\"]"
+    },
+    {
+      "title": "水面效果实现",
+      "code": "flowchart TD\n    WL[\"水面层 (WaterLayer)\"] --> WS[\"水面着色器 (WaterShader)\"]\n    WS --> WT[\"波纹纹理 (WaveTexture)\"]\n    WS --> OP[\"透明度 (Opacity)\"]\n    WS --> CV[\"覆盖区域 (CoverageArea)\"]\n    CV --> UB[\"桥下 (UnderBridge)\"]\n    CV --> UR[\"岩石下 (UnderRock)\"]\n    OP --> AD[\"AdjustTransparency\"]\n    AD --> WL"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T17:53:03+00:00"
+}

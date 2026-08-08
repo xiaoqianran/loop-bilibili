@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1Zx7L6HE13",
+  "title": "3080 20G + 9070 16G 混合推理实测！CUDA-ROCm llama.cpp 长上下文预处理速度惊人｜Qwen3.6 35B",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2612,
+  "text": "那好啊\n现在是2026年6月26日的晚上\n10.50分\n那这个视频呢就是我们来看一个游戏\n有意思的内容\n实际上是啊\n前一段时间的时候\n有一位群友加群之后\n询问A卡和N卡混合推理的问题\n这个是当时对话\n然后他问A卡和N卡混合推理效率高吗\n有有有些人说肯定不行吧\n他说我现在用l m studio跑work on\n后端MTP的27\nB可以跑40tokens每秒左右\n我看up有机讲了AN混合推理\n都有群友说A卡N卡用的软件都不一样\n咋混合\n要么强行用一样的软件\n那N卡的优势都没了吧\n然后这位群友发出来了\n我曾经发布过的这个多后多后端加载实测\nA卡加N卡混合推理真的实现了嗯\n好\n然后我们来看这个这个对话的后半部分\n这这位加群的群友问有没有有没有教程啊\n然后我就问他\n你的A卡和N卡分别是什么\n那A卡是呃907016G\n他的N卡是30802十G\n然后我就让他加我个好友\n然后使用他的设备来部署了一下啊\nKAROO3M的WCPP\n使用30802十G和907016G\n这两张显卡来跑向3.6\n35BA3BQ四km\n点击9F这个模型的结果啊\n这个图片中所显示出来的这个折线图\n是平均值之后\n结果这个我是测了五次取的平均值\n这个为什么要测五次呢\n就是我们看这个散点图像\n散点图像\n我们就可以看到他这个变化是非常大的\n对这个原因是什么\n我不太清楚\n就是这个库大ROSM的拉玛CP\n所表现出来的一个特征\n就是他这个呃比较波折\n不像WAKA那么平稳\n这个可能是同时使用扩大和ROSM两个后端\n进行推理\n它所造成的这样一个111种啊表现形式吧\n咳其中这一条呃\n红线和这条黄线就是平均值之后得到的结果\n绘制成的折线图\n我们可以看到\n在上下文长度在32768以内的情况\n他的预处理他的预处理速度是很高的\n虽然在这一个图片当中看到\n他平均速度可能就是3500\n3000~3500左右\n他的输出速度可能是在啊\n七十七十token每秒左右\n这是根据这张图片来观察到的结果\n但实际上真实的情况并非如此\n就是使用扩大OOSM的LOVECP\n来进行额来进行推理\n会得到其他更更啊更喜人的情况\n这个是我将上下文长度从32768\n扩展到65535之后测量得到的结果\n可以看到它的上下文长度非常厉害\n就是使用这个LCM扩大的拉拉CP来推理的话\n它的预处理速度随着上下文长度的增加\n几乎没有缩\n几乎没有衰减\n它是呈现这种态势\n就是上下文短时预处理速度小\n然后随着上下文长度的增加\n预处理预处理速度会增大\n然后增大到一定的值\n它会维持在这一个值啊\n使用work on后端来进行推理的时候\n他这个最开始的时候预处理速度是很高的\n那么随着上下文长度的增加\n它的预处理速度会逐渐的降低\n就这样\n这个是使用KAOCM的拉姆CP所啊\n比较喜人的一种情况\n然后这一点来了\n就是我把这个上下文长度扩展到了8万\n这上下文长度\n它的预处理速度看衰减非常缓慢\n如果把上原文长度扩展到这么长\n就可以看到\n最开始我们所得出的那个预处理速度的平均值\n大概在啊3500左右\n那个就非常的荒谬\n可以看到\n当上下文长度扩展到8万上下文长度的时候\n它的预处理速度大概在4000左右\n是这样\n这个输出速度和welcome比起来\n和welcome的后端推理比起来\n这输出速度就没有welcome的高了\n就是说这个扩大OSM的拉姆CP啊\n他的更多的优势在于预处理速度这方面\n而不在于输出速度这方面\n这个视频就先录到这了\n这个呃\n其实这个是花费了非常大的精力去进行测试的\n我讲一下为什么花费了非常大的精力\n嗯这个是原本想要与walking的来进行一下对比\n最开始我是希望在乌邦图下来安装lm studio\n但实际上在乌邦图下的这个lm studio\n它就有非常多的奇奇怪怪的问题\n使用l m studio的worker来进行推理的时候\n没有办法写入到3080和这个9070的\n这个显存里面\n什么原因\n最后没太找到\n然后我又编译了一个\n我看到拉姆斯VP\n这个时候他可以写入到3080的显存里面\n却没有办法写入到9070的显存里面\n这个实在是不知道的情况是什么\n然后后面就这个就暂告一段落了\n就是我已经拿到了一些个数据\n后面就没有再继续测下去了\n那个就需要进行啊\n排错了那个就要花的时间\n精力就很多很多\n这个视频我们就简单的看了一下\n千万3点六\n35BA3B这个模型的推理效果\n至于这个图例当中所显示出来的中间这一长串\n什么什么这一大堆\n这个其实是一个呃破线的啊\n35B模型\n但实际上它是否破线啊\n它这个推理的数据几乎是差不太多的啊\n所以这几乎可以看作是纤维36和35\nBA3BQ4km点击UF这个模型的推理数据\n今天我们看了千万306\n35BA3B这个模型的推理情况\n明天我们来看一下啊\n使用库大OCM拉巴CVP来对纤维3.6\n27B这个模型来进行推理的效果是如何的\n我们也可以看到\n对于可以开启MTP的27B的模型\nMTP的最优值是多少\n这个是明天的视频当中的内容\n今天先录到这了\n这个视频我还是会把B站小店的那个M50的\n拉马CP的docker镜像的链接附在下面\n大家有需要的话可以下单支持一下\n其实这个小店里面所写的这个名称\n它不一定的\n就是这个M50的拉拉CP的docker镜像\n实际上其他的A卡也可以使用\n是这样\n这个拉姆斯VP的docker镜像\n里面使用的是ROCM720\n是这样\n其他的A卡也同样可以使用这个镜像\n而且这个镜像也就是我所提到的KALCM\n拉姆CP\n也就是说这个镜像也可以供100使用\n也可以供其他的N卡来使用\n甚至可以N卡和A卡来进行混合推理\n对此其实我还整理了一份嗯\n对于非M50这类A卡\n比如说9070这类A卡\n来进行乌邦图\nLINUX系统当中的LOCM环境的安装的这个流程\n一个PDF我也整理好了\n我发布这个视频出来\n一方面是嗯讲解一下这个所测得的数据\n另外一方面是看家看大家对这方面感不感兴趣\n或者是对我所总结整理出来的\n这些个东西感不感兴趣啊\n如果大家感兴趣的话\n那我就那我也就不再去整理这方面的资料了\n因为受众太小了嘛\n感兴趣的人太少了\n这样其实我所发布的这些视频\n一方面是啊分享一些内容\n另一方面是看大家对这些东西感不感冒\n大家可以在视频评论区呃\n相对于呃视频当中所讲解的内容来进行评论\n或者对自己感兴趣的方面来进行评论\n或者是想要了解哪方面的内容\n这个视频就先录到这了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Zx7L6HE13",
+  "published_at": "1782489103",
+  "fetched_at": "2026-08-08T02:25:58+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 混合推理知识图谱\n\n## 系统架构概览\n```mermaid\nflowchart TD\n    A1[\"A卡 (AMD) 9070 16G\"] --> HW[\"混合推理系统\"]\n    N1[\"N卡 (NVIDIA) 3080 20G\"] --> HW\n    HW --> SW1[\"llama.cpp 前端\"]\n    SW1 --> SW2[\"ROCM 后端\"]\n    SW1 --> SW3[\"MTP 后端\"]\n    SW1 --> SW4[\"WorkOn 后端\"]\n    SW2 --> IMG1[\"M50 Llamacpp Docker 镜像\"]\n    SW3 --> IMG1\n    SW4 --> IMG1\n    IMG1 --> ROCM720[\"ROCM720 运行时\"]\n    ROCM720 --> SupportsA[\"支持 A 卡\"]\n    ROCM720 --> SupportsN[\"支持 N 卡\"]\n    SupportsA --> Mixed[\"可混合推理\"]\n    SupportsN --> Mixed\n```\n\n## 性能表现与上下文长度关系\n```mermaid\nflowchart TD\n    C1[\"上下文长度 32768\"] --> Pre1[\"预处理速度 ≈ 3500 tokens/s\"]\n    C2[\"上下文长度 65535\"] --> Pre2[\"预处理速度 ≈ 3500~4000 tokens/s\"]\n    C3[\"上下文长度 80000\"] --> Pre3[\"预处理速度 ≈ 4000 tokens/s\"]\n    Pre1 --> Out1[\"输出速度 70‑80 tokens/s\"]\n    Pre2 --> Out2[\"输出速度 < welcome\"]\n    Pre3 --> Out2\n    Backend1[\"ROCM 扩大后端\"] --> Pre1\n    Backend1 --> Pre2\n    Backend1 --> Pre3\n    Backend2[\"WorkOn 后端\"] --> Pre1\n    Backend2 --> Out1\n    Backend2 --> Out2\n```\n\n## 测试方法与数据处理\n```mermaid\nflowchart TD\n    T1[\"执行 5 次测量\"] --> T2[\"计算平均值\"]\n    T2 --> T3[\"记录预处理速度\"]\n    T2 --> T4[\"记录输出速度\"]\n    T3 --> T5[\"绘制折线图（红线）\"]\n    T4 --> T5\n    T5 --> T6[\"红线 = 平均预处理\"]\n    T5 --> T7[\"黄线 = 平均输出\"]\n    T6 --> Result[\"分析性能趋势\"]\n    T7 --> Result\n```\n\n## 软件兼容性与部署选项\n```mermaid\nflowchart TD\n    LMStudio[\"LM Studio\"] --> Issue1[\"无法写入 3080 & 9070 显存\"]\n    Issue1 --> Issue2[\"Ubuntu 环境下异常\"]\n    Issue2 --> Docker[\"使用 M50 Llamacpp Docker 镜像\"]\n    Docker --> ROCM720[\"基于 ROCM720\"]\n    ROCM720 --> SupportsA[\"支持 A 卡（如 9070）\"]\n    ROCM720 --> SupportsN[\"支持 N 卡（如 3080）\"]\n    SupportsA --> Mixed[\"可进行混合推理\"]\n    SupportsN --> Mixed\n    Mixed --> Deploy[\"部署混合推理工作流\"]\n```",
+      "diagrams": [
+        {
+          "title": "系统架构概览",
+          "code": "flowchart TD\n    A1[\"A卡 (AMD) 9070 16G\"] --> HW[\"混合推理系统\"]\n    N1[\"N卡 (NVIDIA) 3080 20G\"] --> HW\n    HW --> SW1[\"llama.cpp 前端\"]\n    SW1 --> SW2[\"ROCM 后端\"]\n    SW1 --> SW3[\"MTP 后端\"]\n    SW1 --> SW4[\"WorkOn 后端\"]\n    SW2 --> IMG1[\"M50 Llamacpp Docker 镜像\"]\n    SW3 --> IMG1\n    SW4 --> IMG1\n    IMG1 --> ROCM720[\"ROCM720 运行时\"]\n    ROCM720 --> SupportsA[\"支持 A 卡\"]\n    ROCM720 --> SupportsN[\"支持 N 卡\"]\n    SupportsA --> Mixed[\"可混合推理\"]\n    SupportsN --> Mixed"
+        },
+        {
+          "title": "性能表现与上下文长度关系",
+          "code": "flowchart TD\n    C1[\"上下文长度 32768\"] --> Pre1[\"预处理速度 ≈ 3500 tokens/s\"]\n    C2[\"上下文长度 65535\"] --> Pre2[\"预处理速度 ≈ 3500~4000 tokens/s\"]\n    C3[\"上下文长度 80000\"] --> Pre3[\"预处理速度 ≈ 4000 tokens/s\"]\n    Pre1 --> Out1[\"输出速度 70‑80 tokens/s\"]\n    Pre2 --> Out2[\"输出速度 < welcome\"]\n    Pre3 --> Out2\n    Backend1[\"ROCM 扩大后端\"] --> Pre1\n    Backend1 --> Pre2\n    Backend1 --> Pre3\n    Backend2[\"WorkOn 后端\"] --> Pre1\n    Backend2 --> Out1\n    Backend2 --> Out2"
+        },
+        {
+          "title": "测试方法与数据处理",
+          "code": "flowchart TD\n    T1[\"执行 5 次测量\"] --> T2[\"计算平均值\"]\n    T2 --> T3[\"记录预处理速度\"]\n    T2 --> T4[\"记录输出速度\"]\n    T3 --> T5[\"绘制折线图（红线）\"]\n    T4 --> T5\n    T5 --> T6[\"红线 = 平均预处理\"]\n    T5 --> T7[\"黄线 = 平均输出\"]\n    T6 --> Result[\"分析性能趋势\"]\n    T7 --> Result"
+        },
+        {
+          "title": "软件兼容性与部署选项",
+          "code": "flowchart TD\n    LMStudio[\"LM Studio\"] --> Issue1[\"无法写入 3080 & 9070 显存\"]\n    Issue1 --> Issue2[\"Ubuntu 环境下异常\"]\n    Issue2 --> Docker[\"使用 M50 Llamacpp Docker 镜像\"]\n    Docker --> ROCM720[\"基于 ROCM720\"]\n    ROCM720 --> SupportsA[\"支持 A 卡（如 9070）\"]\n    ROCM720 --> SupportsN[\"支持 N 卡（如 3080）\"]\n    SupportsA --> Mixed[\"可进行混合推理\"]\n    SupportsN --> Mixed\n    Mixed --> Deploy[\"部署混合推理工作流\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T02:26:09+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 混合推理知识图谱\n\n## 系统架构概览\n```mermaid\nflowchart TD\n    A1[\"A卡 (AMD) 9070 16G\"] --> HW[\"混合推理系统\"]\n    N1[\"N卡 (NVIDIA) 3080 20G\"] --> HW\n    HW --> SW1[\"llama.cpp 前端\"]\n    SW1 --> SW2[\"ROCM 后端\"]\n    SW1 --> SW3[\"MTP 后端\"]\n    SW1 --> SW4[\"WorkOn 后端\"]\n    SW2 --> IMG1[\"M50 Llamacpp Docker 镜像\"]\n    SW3 --> IMG1\n    SW4 --> IMG1\n    IMG1 --> ROCM720[\"ROCM720 运行时\"]\n    ROCM720 --> SupportsA[\"支持 A 卡\"]\n    ROCM720 --> SupportsN[\"支持 N 卡\"]\n    SupportsA --> Mixed[\"可混合推理\"]\n    SupportsN --> Mixed\n```\n\n## 性能表现与上下文长度关系\n```mermaid\nflowchart TD\n    C1[\"上下文长度 32768\"] --> Pre1[\"预处理速度 ≈ 3500 tokens/s\"]\n    C2[\"上下文长度 65535\"] --> Pre2[\"预处理速度 ≈ 3500~4000 tokens/s\"]\n    C3[\"上下文长度 80000\"] --> Pre3[\"预处理速度 ≈ 4000 tokens/s\"]\n    Pre1 --> Out1[\"输出速度 70‑80 tokens/s\"]\n    Pre2 --> Out2[\"输出速度 < welcome\"]\n    Pre3 --> Out2\n    Backend1[\"ROCM 扩大后端\"] --> Pre1\n    Backend1 --> Pre2\n    Backend1 --> Pre3\n    Backend2[\"WorkOn 后端\"] --> Pre1\n    Backend2 --> Out1\n    Backend2 --> Out2\n```\n\n## 测试方法与数据处理\n```mermaid\nflowchart TD\n    T1[\"执行 5 次测量\"] --> T2[\"计算平均值\"]\n    T2 --> T3[\"记录预处理速度\"]\n    T2 --> T4[\"记录输出速度\"]\n    T3 --> T5[\"绘制折线图（红线）\"]\n    T4 --> T5\n    T5 --> T6[\"红线 = 平均预处理\"]\n    T5 --> T7[\"黄线 = 平均输出\"]\n    T6 --> Result[\"分析性能趋势\"]\n    T7 --> Result\n```\n\n## 软件兼容性与部署选项\n```mermaid\nflowchart TD\n    LMStudio[\"LM Studio\"] --> Issue1[\"无法写入 3080 & 9070 显存\"]\n    Issue1 --> Issue2[\"Ubuntu 环境下异常\"]\n    Issue2 --> Docker[\"使用 M50 Llamacpp Docker 镜像\"]\n    Docker --> ROCM720[\"基于 ROCM720\"]\n    ROCM720 --> SupportsA[\"支持 A 卡（如 9070）\"]\n    ROCM720 --> SupportsN[\"支持 N 卡（如 3080）\"]\n    SupportsA --> Mixed[\"可进行混合推理\"]\n    SupportsN --> Mixed\n    Mixed --> Deploy[\"部署混合推理工作流\"]\n```",
+  "diagrams": [
+    {
+      "title": "系统架构概览",
+      "code": "flowchart TD\n    A1[\"A卡 (AMD) 9070 16G\"] --> HW[\"混合推理系统\"]\n    N1[\"N卡 (NVIDIA) 3080 20G\"] --> HW\n    HW --> SW1[\"llama.cpp 前端\"]\n    SW1 --> SW2[\"ROCM 后端\"]\n    SW1 --> SW3[\"MTP 后端\"]\n    SW1 --> SW4[\"WorkOn 后端\"]\n    SW2 --> IMG1[\"M50 Llamacpp Docker 镜像\"]\n    SW3 --> IMG1\n    SW4 --> IMG1\n    IMG1 --> ROCM720[\"ROCM720 运行时\"]\n    ROCM720 --> SupportsA[\"支持 A 卡\"]\n    ROCM720 --> SupportsN[\"支持 N 卡\"]\n    SupportsA --> Mixed[\"可混合推理\"]\n    SupportsN --> Mixed"
+    },
+    {
+      "title": "性能表现与上下文长度关系",
+      "code": "flowchart TD\n    C1[\"上下文长度 32768\"] --> Pre1[\"预处理速度 ≈ 3500 tokens/s\"]\n    C2[\"上下文长度 65535\"] --> Pre2[\"预处理速度 ≈ 3500~4000 tokens/s\"]\n    C3[\"上下文长度 80000\"] --> Pre3[\"预处理速度 ≈ 4000 tokens/s\"]\n    Pre1 --> Out1[\"输出速度 70‑80 tokens/s\"]\n    Pre2 --> Out2[\"输出速度 < welcome\"]\n    Pre3 --> Out2\n    Backend1[\"ROCM 扩大后端\"] --> Pre1\n    Backend1 --> Pre2\n    Backend1 --> Pre3\n    Backend2[\"WorkOn 后端\"] --> Pre1\n    Backend2 --> Out1\n    Backend2 --> Out2"
+    },
+    {
+      "title": "测试方法与数据处理",
+      "code": "flowchart TD\n    T1[\"执行 5 次测量\"] --> T2[\"计算平均值\"]\n    T2 --> T3[\"记录预处理速度\"]\n    T2 --> T4[\"记录输出速度\"]\n    T3 --> T5[\"绘制折线图（红线）\"]\n    T4 --> T5\n    T5 --> T6[\"红线 = 平均预处理\"]\n    T5 --> T7[\"黄线 = 平均输出\"]\n    T6 --> Result[\"分析性能趋势\"]\n    T7 --> Result"
+    },
+    {
+      "title": "软件兼容性与部署选项",
+      "code": "flowchart TD\n    LMStudio[\"LM Studio\"] --> Issue1[\"无法写入 3080 & 9070 显存\"]\n    Issue1 --> Issue2[\"Ubuntu 环境下异常\"]\n    Issue2 --> Docker[\"使用 M50 Llamacpp Docker 镜像\"]\n    Docker --> ROCM720[\"基于 ROCM720\"]\n    ROCM720 --> SupportsA[\"支持 A 卡（如 9070）\"]\n    ROCM720 --> SupportsN[\"支持 N 卡（如 3080）\"]\n    SupportsA --> Mixed[\"可进行混合推理\"]\n    SupportsN --> Mixed\n    Mixed --> Deploy[\"部署混合推理工作流\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T02:26:09+00:00"
+}

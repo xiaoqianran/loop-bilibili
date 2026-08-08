@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1gQKB6CEWm",
+  "title": "在 Claude Code 中免费使用 GLM-5.2，无限访问",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2225,
+  "text": "GAI推出的新模型GLM5.2最近很受关注\n而且确实有他的道理\n他的表现竟然非常接近cloud opus4.8\n从这些图表可以看到\n在多项基准测试中都是如此\n而且GLM5.2的代码能力真的很强\n另外它的价格还不到cloud opus4.8的19\n但如果我说你不需要花一分钱\n就能使用GLM5.2呢\n所以这期视频我就来教你\n怎么在cloud code里完全免费用上GLM5.2\n那我们开始吧\n想在cloud code里免费用GLM5.2\n只需要准备三样东西\n首先是cloud code\n其次是免费的NVIDIAMAPI密钥\n第三是light LLM或JAI这类代理服务器\n你可能会问为什么还要用代理服务器\n因为cloud code走的是ANTHROPICAPI\n而nvidia name提供的是OpenAI兼容API\n两边不能直接对接\n所以就需要一个代理服务器\n用来在两者之间做转换好\n首先我们来安装cloud code\n直接在google搜索cloud code\n然后进入官网\n这里有cloud code的安装说明\n它支持Mac windows和LINUX\n我用的是windows11\n所以我直接复制这条命令\n然后打开终端\n然后粘贴刚才的命令\n按回车\n接下来安装cloud code\n会花点时间\n如果你已经装好了cloud code\n那就可以跳过\n没有的话就先安装\n注意不要用ANTHROPIC账号登录cloud code\n如果你已经登录了cloud code\n就运行logout命令退出登录\n这样就准备好了\n接着打开build\n首页就能看到GLM5.2\n如果没看到就进入models选项\n这里也能找到GLM5.2可以看到它支持下载\n也提供免费的API端点\n点进去之后就能看到免费API端点的使用说明\n不过这些内容我们用不上\n我们只需要拿到NVIDIANAPI密钥\n如果还没有账号\n就注册一个\n然后按页面提示操作\n要使用这个API还需要用手机号验证\n账号验证完成后\n点击头像进入API kiss页面\n然后在这里生成API密钥\n名字随便填就行\n需要的话设置有效期\n然后点击生成密钥\n这样就能拿到你的NVIDIANAPI密钥\n把这个密钥复制下来\n找个地方保存好\n因为之后它不会再显示了\n接下来是代理服务器\n这里有两个选项\nlight LLM和JAI\n这两个我都试过\n说实话\n光配置和排查light LLM就花了我快一个小时\n因为每一项都得手动配置\n所以不值得花时间折腾\n我们会用JAI来做代理服务器\n接下来打开google搜索\nJAI链接也放在视频简介里了\n在这里根据你的设备下载对应版本\n它支持Mac windows和LINUX\n下载并安装到你的设备上\n完成后你会看到这个界面\n这里不用安装它的模型\n直接跳过这里进入设置\n向下滚动\n找到NVD选项并点进去\n确认顶部的nvidia name已启用\n此选项应处于开启状态\n然后把NVIDIANMAPI密钥粘贴到这里\n现在去获取API密钥\n我之前那个找不到了\n所以我再生成一个随便起个名字\n再选个过期时间\n生成密钥后复制下来\n再粘贴到JENAI这里\n接着直接点击这个刷新按钮\n可以看到已经添加了NVIDIA的120一个新模型\n接下来找一下PLM\n5.2往下滚到底部\n可以看到JI的GLM5.2已经出现在这里了\n下一步在集成选项里点击cloud code\n然后在大模型这里选择GLM5.2\n点一下搜索GLM\n注意不要选GLM5\n我们要用GLM5.2\n中等模型也一样\n搜索GLM选择GLM5.2小模型\n这里你也可以选别的模型\n不过我这里也选GLM5.2\n然后保存并启用\n可以看到它显示正在启动服务器\n为cloud code做准备\n接着会弹出几个这样的终端窗口\n环境变量也会随之更新\n请重新启动cloud code\n现在打开本地API服务器选项\n然后可以看到本地API服务器已经运行\n不要关闭这个服务器\n到这里就全部完成了\n接下来重启终端\n把终端关掉\n再重新打开\n然后在这里输入cloud\n然后按回车\n这里是首次设置\n如果之前设置过就不会看到这个选项\n我来选择主题\n再按enter继续\n选择是我信任此文件夹\n这里可以看到cloud code用的就是GLM5.2\n如果我输入model\n再按enter\n就能看到默认模型已经设为该GLM5.2\n其他模型也都设成了GLM5.2\n比如opus sonnet和haiku\n都指向同一个自定义模型\n也就是GLM5.2好了\n现在试着和这个模型聊一下\n打个招呼\n他大概三秒就回复了\n现在看看他用的是哪个模型\n这次回复用了大概十秒\n因为这是第一次调用\n可以看到这里显示运行的是cloud code\n不过模型是GLM5.2\n这样就配置好了\n也能正常运行\n现在试着在项目文件夹里运行cloud code\n我先在这个项目文件夹里打开终端\n输入cloud\n然后再追问一下\n比如我的web应用跑不起来\n问题在哪\n他会尝试修复问题\n你看现在已经跑起来了\n他正在调试我的代码\n并尝试修复问题\n他还在自动写代码\n基本就搞定了\n现在运行的很正常\n我已经在cloud code里免费用上GLM5.2了\n这就是在cloud code里免费使用GLM5.2的方法\n好了\n本期视频就到这里\n希望对你有帮助\n如果你是新来的\n我这个频道主要分享电脑软件\n还有AI相关内容\n觉得有帮助的话\n可以订阅\n那我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gQKB6CEWm",
+  "published_at": "1784461245",
+  "fetched_at": "2026-08-06T20:51:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GLM5.2 在 Cloud Code 免费使用全流程图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"目标：在 Cloud Code 免费使用 GLM5.2\"] --> B1[\"准备三样东西\"]\n    B1 --> C1[\"Cloud Code 平台\"]\n    B1 --> D1[\"免费 NVIDIA API 密钥\"]\n    B1 --> E1[\"代理服务器（JAI）\"]\n    C1 --> F1[\"安装 Cloud Code 客户端\"]\n    D1 --> G1[\"注册 NVIDIA 账号并生成 API 密钥\"]\n    E1 --> H1[\"下载并安装 JAI 代理\"]\n    F1 --> I1[\"登录 Cloud Code（使用非 ANTHROPIC 账号）\"]\n    G1 --> J1[\"在 JAI 中配置 NVIDIA API 密钥\"]\n    H1 --> J1\n    J1 --> K1[\"在 Cloud Code 中选择 GLM5.2 模型\"]\n    K1 --> L1[\"启动服务器并验证\"]\n```\n\n## Cloud Code 安装与登录流程\n```mermaid\nflowchart TD\n    A2[\"搜索并访问 Cloud Code 官网\"] --> B2[\"下载对应平台的安装脚本\"]\n    B2 --> C2[\"在终端粘贴并执行安装命令\"]\n    C2 --> D2[\"等待安装完成\"]\n    D2 --> E2[\"检查是否已登录\"]\n    E2 -->|已登录| F2[\"执行 logout 命令退出\"]\n    E2 -->|未登录| G2[\"直接进入下一步\"]\n    F2 --> G2\n    G2 --> H2[\"使用非 ANTHROPIC 账号登录 Cloud Code\"]\n    H2 --> I2[\"登录成功，进入 Cloud Code 主界面\"]\n```\n\n## JAI 代理服务器配置\n```mermaid\nflowchart TD\n    A3[\"下载 JAI 客户端（对应 OS）\"] --> B3[\"安装并启动 JAI\"]\n    B3 --> C3[\"进入设置界面\"]\n    C3 --> D3[\"找到 NVIDIA 选项并启用\"]\n    D3 --> E3[\"粘贴已获取的 NVIDIA API 密钥\"]\n    E3 --> F3[\"保存设置并刷新代理列表\"]\n    F3 --> G3[\"确认已添加 NVIDIA 模型（如 120）\"]\n    G3 --> H3[\"在模型列表中找到 GLM5.2\"]\n    H3 --> I3[\"准备将 GLM5.2 暴露给 Cloud Code\"]\n```\n\n## 在 Cloud Code 中集成 GLM5.2\n```mermaid\nflowchart TD\n    A4[\"打开 Cloud Code 项目\"] --> B4[\"进入集成选项\"]\n    B4 --> C4[\"选择 Cloud Code 作为目标平台\"]\n    C4 --> D4[\"在大模型列表搜索并选择 GLM5.2\"]\n    D4 --> E4[\"同样在中等模型和小模型列表选择 GLM5.2\"]\n    E4 --> F4[\"保存并启用模型配置\"]\n    F4 --> G4[\"系统显示正在启动服务器\"]\n    G4 --> H4[\"弹出终端窗口并更新环境变量\"]\n    H4 --> I4[\"重新启动 Cloud Code 以加载新模型\"]\n```\n\n## 使用验证与日常交互\n```mermaid\nflowchart TD\n    A5[\"打开本地终端并输入 cloud 命令\"] --> B5[\"首次设置选择信任文件夹\"]\n    B5 --> C5[\"确认使用的模型为 GLM5.2\"]\n    C5 --> D5[\"发送测试对话（如打招呼）\"]\n    D5 --> E5[\"模型在几秒内回复\"]\n    E5 --> F5[\"检查返回信息显示的模型名称\"]\n    F5 --> G5[\"确认运行环境为 Cloud Code，模型为 GLM5.2\"]\n    G5 --> H5[\"在项目文件夹中使用 cloud 命令调试代码\"]\n    H5 --> I5[\"模型自动分析并尝试修复问题\"]\n    I5 --> J5[\"验证项目成功运行，完成全部配置\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"目标：在 Cloud Code 免费使用 GLM5.2\"] --> B1[\"准备三样东西\"]\n    B1 --> C1[\"Cloud Code 平台\"]\n    B1 --> D1[\"免费 NVIDIA API 密钥\"]\n    B1 --> E1[\"代理服务器（JAI）\"]\n    C1 --> F1[\"安装 Cloud Code 客户端\"]\n    D1 --> G1[\"注册 NVIDIA 账号并生成 API 密钥\"]\n    E1 --> H1[\"下载并安装 JAI 代理\"]\n    F1 --> I1[\"登录 Cloud Code（使用非 ANTHROPIC 账号）\"]\n    G1 --> J1[\"在 JAI 中配置 NVIDIA API 密钥\"]\n    H1 --> J1\n    J1 --> K1[\"在 Cloud Code 中选择 GLM5.2 模型\"]\n    K1 --> L1[\"启动服务器并验证\"]"
+        },
+        {
+          "title": "Cloud Code 安装与登录流程",
+          "code": "flowchart TD\n    A2[\"搜索并访问 Cloud Code 官网\"] --> B2[\"下载对应平台的安装脚本\"]\n    B2 --> C2[\"在终端粘贴并执行安装命令\"]\n    C2 --> D2[\"等待安装完成\"]\n    D2 --> E2[\"检查是否已登录\"]\n    E2 -->|已登录| F2[\"执行 logout 命令退出\"]\n    E2 -->|未登录| G2[\"直接进入下一步\"]\n    F2 --> G2\n    G2 --> H2[\"使用非 ANTHROPIC 账号登录 Cloud Code\"]\n    H2 --> I2[\"登录成功，进入 Cloud Code 主界面\"]"
+        },
+        {
+          "title": "JAI 代理服务器配置",
+          "code": "flowchart TD\n    A3[\"下载 JAI 客户端（对应 OS）\"] --> B3[\"安装并启动 JAI\"]\n    B3 --> C3[\"进入设置界面\"]\n    C3 --> D3[\"找到 NVIDIA 选项并启用\"]\n    D3 --> E3[\"粘贴已获取的 NVIDIA API 密钥\"]\n    E3 --> F3[\"保存设置并刷新代理列表\"]\n    F3 --> G3[\"确认已添加 NVIDIA 模型（如 120）\"]\n    G3 --> H3[\"在模型列表中找到 GLM5.2\"]\n    H3 --> I3[\"准备将 GLM5.2 暴露给 Cloud Code\"]"
+        },
+        {
+          "title": "在 Cloud Code 中集成 GLM5.2",
+          "code": "flowchart TD\n    A4[\"打开 Cloud Code 项目\"] --> B4[\"进入集成选项\"]\n    B4 --> C4[\"选择 Cloud Code 作为目标平台\"]\n    C4 --> D4[\"在大模型列表搜索并选择 GLM5.2\"]\n    D4 --> E4[\"同样在中等模型和小模型列表选择 GLM5.2\"]\n    E4 --> F4[\"保存并启用模型配置\"]\n    F4 --> G4[\"系统显示正在启动服务器\"]\n    G4 --> H4[\"弹出终端窗口并更新环境变量\"]\n    H4 --> I4[\"重新启动 Cloud Code 以加载新模型\"]"
+        },
+        {
+          "title": "使用验证与日常交互",
+          "code": "flowchart TD\n    A5[\"打开本地终端并输入 cloud 命令\"] --> B5[\"首次设置选择信任文件夹\"]\n    B5 --> C5[\"确认使用的模型为 GLM5.2\"]\n    C5 --> D5[\"发送测试对话（如打招呼）\"]\n    D5 --> E5[\"模型在几秒内回复\"]\n    E5 --> F5[\"检查返回信息显示的模型名称\"]\n    F5 --> G5[\"确认运行环境为 Cloud Code，模型为 GLM5.2\"]\n    G5 --> H5[\"在项目文件夹中使用 cloud 命令调试代码\"]\n    H5 --> I5[\"模型自动分析并尝试修复问题\"]\n    I5 --> J5[\"验证项目成功运行，完成全部配置\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T20:51:33+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GLM5.2 在 Cloud Code 免费使用全流程图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"目标：在 Cloud Code 免费使用 GLM5.2\"] --> B1[\"准备三样东西\"]\n    B1 --> C1[\"Cloud Code 平台\"]\n    B1 --> D1[\"免费 NVIDIA API 密钥\"]\n    B1 --> E1[\"代理服务器（JAI）\"]\n    C1 --> F1[\"安装 Cloud Code 客户端\"]\n    D1 --> G1[\"注册 NVIDIA 账号并生成 API 密钥\"]\n    E1 --> H1[\"下载并安装 JAI 代理\"]\n    F1 --> I1[\"登录 Cloud Code（使用非 ANTHROPIC 账号）\"]\n    G1 --> J1[\"在 JAI 中配置 NVIDIA API 密钥\"]\n    H1 --> J1\n    J1 --> K1[\"在 Cloud Code 中选择 GLM5.2 模型\"]\n    K1 --> L1[\"启动服务器并验证\"]\n```\n\n## Cloud Code 安装与登录流程\n```mermaid\nflowchart TD\n    A2[\"搜索并访问 Cloud Code 官网\"] --> B2[\"下载对应平台的安装脚本\"]\n    B2 --> C2[\"在终端粘贴并执行安装命令\"]\n    C2 --> D2[\"等待安装完成\"]\n    D2 --> E2[\"检查是否已登录\"]\n    E2 -->|已登录| F2[\"执行 logout 命令退出\"]\n    E2 -->|未登录| G2[\"直接进入下一步\"]\n    F2 --> G2\n    G2 --> H2[\"使用非 ANTHROPIC 账号登录 Cloud Code\"]\n    H2 --> I2[\"登录成功，进入 Cloud Code 主界面\"]\n```\n\n## JAI 代理服务器配置\n```mermaid\nflowchart TD\n    A3[\"下载 JAI 客户端（对应 OS）\"] --> B3[\"安装并启动 JAI\"]\n    B3 --> C3[\"进入设置界面\"]\n    C3 --> D3[\"找到 NVIDIA 选项并启用\"]\n    D3 --> E3[\"粘贴已获取的 NVIDIA API 密钥\"]\n    E3 --> F3[\"保存设置并刷新代理列表\"]\n    F3 --> G3[\"确认已添加 NVIDIA 模型（如 120）\"]\n    G3 --> H3[\"在模型列表中找到 GLM5.2\"]\n    H3 --> I3[\"准备将 GLM5.2 暴露给 Cloud Code\"]\n```\n\n## 在 Cloud Code 中集成 GLM5.2\n```mermaid\nflowchart TD\n    A4[\"打开 Cloud Code 项目\"] --> B4[\"进入集成选项\"]\n    B4 --> C4[\"选择 Cloud Code 作为目标平台\"]\n    C4 --> D4[\"在大模型列表搜索并选择 GLM5.2\"]\n    D4 --> E4[\"同样在中等模型和小模型列表选择 GLM5.2\"]\n    E4 --> F4[\"保存并启用模型配置\"]\n    F4 --> G4[\"系统显示正在启动服务器\"]\n    G4 --> H4[\"弹出终端窗口并更新环境变量\"]\n    H4 --> I4[\"重新启动 Cloud Code 以加载新模型\"]\n```\n\n## 使用验证与日常交互\n```mermaid\nflowchart TD\n    A5[\"打开本地终端并输入 cloud 命令\"] --> B5[\"首次设置选择信任文件夹\"]\n    B5 --> C5[\"确认使用的模型为 GLM5.2\"]\n    C5 --> D5[\"发送测试对话（如打招呼）\"]\n    D5 --> E5[\"模型在几秒内回复\"]\n    E5 --> F5[\"检查返回信息显示的模型名称\"]\n    F5 --> G5[\"确认运行环境为 Cloud Code，模型为 GLM5.2\"]\n    G5 --> H5[\"在项目文件夹中使用 cloud 命令调试代码\"]\n    H5 --> I5[\"模型自动分析并尝试修复问题\"]\n    I5 --> J5[\"验证项目成功运行，完成全部配置\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"目标：在 Cloud Code 免费使用 GLM5.2\"] --> B1[\"准备三样东西\"]\n    B1 --> C1[\"Cloud Code 平台\"]\n    B1 --> D1[\"免费 NVIDIA API 密钥\"]\n    B1 --> E1[\"代理服务器（JAI）\"]\n    C1 --> F1[\"安装 Cloud Code 客户端\"]\n    D1 --> G1[\"注册 NVIDIA 账号并生成 API 密钥\"]\n    E1 --> H1[\"下载并安装 JAI 代理\"]\n    F1 --> I1[\"登录 Cloud Code（使用非 ANTHROPIC 账号）\"]\n    G1 --> J1[\"在 JAI 中配置 NVIDIA API 密钥\"]\n    H1 --> J1\n    J1 --> K1[\"在 Cloud Code 中选择 GLM5.2 模型\"]\n    K1 --> L1[\"启动服务器并验证\"]"
+    },
+    {
+      "title": "Cloud Code 安装与登录流程",
+      "code": "flowchart TD\n    A2[\"搜索并访问 Cloud Code 官网\"] --> B2[\"下载对应平台的安装脚本\"]\n    B2 --> C2[\"在终端粘贴并执行安装命令\"]\n    C2 --> D2[\"等待安装完成\"]\n    D2 --> E2[\"检查是否已登录\"]\n    E2 -->|已登录| F2[\"执行 logout 命令退出\"]\n    E2 -->|未登录| G2[\"直接进入下一步\"]\n    F2 --> G2\n    G2 --> H2[\"使用非 ANTHROPIC 账号登录 Cloud Code\"]\n    H2 --> I2[\"登录成功，进入 Cloud Code 主界面\"]"
+    },
+    {
+      "title": "JAI 代理服务器配置",
+      "code": "flowchart TD\n    A3[\"下载 JAI 客户端（对应 OS）\"] --> B3[\"安装并启动 JAI\"]\n    B3 --> C3[\"进入设置界面\"]\n    C3 --> D3[\"找到 NVIDIA 选项并启用\"]\n    D3 --> E3[\"粘贴已获取的 NVIDIA API 密钥\"]\n    E3 --> F3[\"保存设置并刷新代理列表\"]\n    F3 --> G3[\"确认已添加 NVIDIA 模型（如 120）\"]\n    G3 --> H3[\"在模型列表中找到 GLM5.2\"]\n    H3 --> I3[\"准备将 GLM5.2 暴露给 Cloud Code\"]"
+    },
+    {
+      "title": "在 Cloud Code 中集成 GLM5.2",
+      "code": "flowchart TD\n    A4[\"打开 Cloud Code 项目\"] --> B4[\"进入集成选项\"]\n    B4 --> C4[\"选择 Cloud Code 作为目标平台\"]\n    C4 --> D4[\"在大模型列表搜索并选择 GLM5.2\"]\n    D4 --> E4[\"同样在中等模型和小模型列表选择 GLM5.2\"]\n    E4 --> F4[\"保存并启用模型配置\"]\n    F4 --> G4[\"系统显示正在启动服务器\"]\n    G4 --> H4[\"弹出终端窗口并更新环境变量\"]\n    H4 --> I4[\"重新启动 Cloud Code 以加载新模型\"]"
+    },
+    {
+      "title": "使用验证与日常交互",
+      "code": "flowchart TD\n    A5[\"打开本地终端并输入 cloud 命令\"] --> B5[\"首次设置选择信任文件夹\"]\n    B5 --> C5[\"确认使用的模型为 GLM5.2\"]\n    C5 --> D5[\"发送测试对话（如打招呼）\"]\n    D5 --> E5[\"模型在几秒内回复\"]\n    E5 --> F5[\"检查返回信息显示的模型名称\"]\n    F5 --> G5[\"确认运行环境为 Cloud Code，模型为 GLM5.2\"]\n    G5 --> H5[\"在项目文件夹中使用 cloud 命令调试代码\"]\n    H5 --> I5[\"模型自动分析并尝试修复问题\"]\n    I5 --> J5[\"验证项目成功运行，完成全部配置\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:51:33+00:00"
+}

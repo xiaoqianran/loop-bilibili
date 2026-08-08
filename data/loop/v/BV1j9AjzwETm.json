@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1j9AjzwETm",
+  "title": "Claude Code 必装插件！实时显示 Context 用量、工具状态、Agent 进度 | Claude HUD",
+  "status": "ok",
+  "language": "zh",
+  "chars": 1471,
+  "text": "用ClaudeCode写代码的时候，你知道context还剩多少吗\n工具在后台跑了什么？Agent执行到哪一步了\n如果你也有这些困惑，今天这个插件，你一定要装\n先说三个痛点。第一，context用完了才发现\nClaudeCode的上下文窗口是有限的，一旦用完\n要么自动压缩丢失信息，要么整个会话报废，之前的工作全白费\n第二，不知道工具在干嘛。Claude在后台调用了哪些文件、编辑了什么代码\n你完全看不到。第三，Agent在后台跑，进度全靠猜\n派出去的子Agent到底是还在运行，还是早就完成了\n你只能干等着。今天介绍的这个插件叫ClaudeHUD\nHUD就是HeadsUpDisplay，抬头显示的意思\n它在终端底部加了一个实时状态栏，让你对整个编程会话一目了然\n这个项目由澳大利亚开发者JarrodWatts创建\n在GitHub上已经拿到了八千五百个Star，三百五十三个Fork\n它完全开源，MIT协议，零运行时依赖\n最关键的是，它使用ClaudeCode原生的statuslineAPI\n不需要额外的tmux或者分屏窗口，安装即用\nClaudeHUD有六大核心功能\n第一个是Context用量监控\n它用一个进度条实时显示你的token消耗百分比，颜色会随着消耗量从绿色变成\n黄色再变成红色，让你提前做好准备，避免context突然用完\n第二个是工具活动追踪。当前正在读哪个文件、编辑哪段代码、搜索什么内容\n全部实时显示。每个工具的运行状态一目了然，是正在执行、已完成、还是报错了\n第三个是Agent监控。如果你派出了多个子Agent并行工作\nHUD会显示每个Agent的名称、使用的模型、当前任务描述\n以及已经运行了多长时间。第四个是Todo进度追踪\n当Claude创建了任务列表，HUD会用进度条显示完成了几个、还剩几个\n比如三分之七这样的进度。第五个是API限额显示\n如果你是Pro或Max订阅用户，HUD会实时显示你的速率限额消耗情况\n包括五小时窗口和七天窗口的用量，让你合理安排使用节奏\n第六个是Git状态集成。当前分支名、是否有未提交的更改、领先或落后远程仓库\n几个提交，都会在状态栏中直接展示\n安装只需要三步。第一步，在ClaudeCode里输入斜杠pluginmarketplace\nadd，空格，jarrodwatts斜杠claude-hud\n回车。这一步是添加插件市场源。第二步，输入斜杠plugininstall\n空格，claude-hud，回车\n等待插件下载和安装。第三步，输入斜杠claude-hud冒号setup\n回车。这个命令会自动配置状态栏，安装完成后HUD立即生效\n不需要重启ClaudeCode\n整个过程不到一分钟。插件提供三种预设模式\nFull模式显示所有信息，包括context、工具、Agent、Todo\nAPI限额和Git状态，适合需要完整监控的用户\nEssential模式保留核心指标，显示context用量和Git状态\n隐藏工具和Agent细节，适合日常开发\nMinimal模式只显示模型名称和context进度条\n一行搞定，适合追求极简界面的用户\n你也可以通过斜杠claude-hud冒号configure命令\n自定义三十多个配置项，包括颜色、布局、显示内容，打造专属于你的HUD\nClaudeHUD，让你的AI编程不再盲人摸象\n三步安装，实时可视化，八千五百个Star的社区认可\n链接放在简介里，感兴趣的话，现在就去试试吧\n感谢观看！觉得有用的话，别忘了点赞投币收藏，关注我\n下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1j9AjzwETm",
+  "published_at": "1773966537",
+  "fetched_at": "2026-08-08T10:55:39+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# ClaudeHUD 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"ClaudeHUD\"] --> A9[\"实时状态栏 (HUD)\"]\n    A9 --> A10[\"终端底部显示\"]\n    A1 --> A2[\"六大核心功能\"]\n    A2 --> A3[\"Context 用量监控\"]\n    A2 --> A4[\"工具活动追踪\"]\n    A2 --> A5[\"Agent 监控\"]\n    A2 --> A6[\"Todo 进度追踪\"]\n    A2 --> A7[\"API 限额显示\"]\n    A2 --> A8[\"Git 状态集成\"]\n    A1 --> A11[\"使用 statusline API\"]\n    A1 --> A12[\"零运行时依赖\"]\n    A1 --> A13[\"MIT 开源协议\"]\n    A1 --> A14[\"作者: JarrodWatts (澳大利亚)\"]\n```\n\n## 安装流程\n```mermaid\nflowchart TD\n    B1[\"安装 ClaudeHUD\"] --> B2[\"步骤1: 插件市场 add\"]\n    B2 --> B3[\"/pluginmarketplace add jarrodwatts/claude-hud\"]\n    B1 --> B4[\"步骤2: 安装插件\"]\n    B4 --> B5[\"/plugininstall claude-hud\"]\n    B1 --> B6[\"步骤3: 配置并启动\"]\n    B6 --> B7[\"/claude-hud:setup\"]\n    B7 --> B8[\"完成, HUD 生效\"]\n    B8 --> B9[\"无需重启\"]\n    B8 --> B10[\"全程 < 1 分钟\"]\n```\n\n## HUD 显示模式\n```mermaid\nflowchart TD\n    C1[\"HUD 模式\"] --> C2[\"Full 模式\"]\n    C2 --> C3[\"显示: Context, 工具, Agent, Todo, API 限额, Git\"]\n    C1 --> C4[\"Essential 模式\"]\n    C4 --> C5[\"显示: Context 用量, Git 状态\"]\n    C1 --> C6[\"Minimal 模式\"]\n    C6 --> C7[\"显示: 模型名称, Context 进度条\"]\n```\n\n## Context 用量监控逻辑\n```mermaid\nflowchart TD\n    D1[\"Context 用量监控\"] --> D2[\"实时 token 消耗百分比\"]\n    D2 --> D3[\"进度条颜色: 绿→黄→红\"]\n    D3 --> D4[\"提前预警\"]\n    D4 --> D5[\"避免 context 用完导致会话报废\"]\n    D5 --> D6[\"上下文窗口有限\"]\n    D6 --> D7[\"自动压缩或会话报废风险\"]\n```\n",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"ClaudeHUD\"] --> A9[\"实时状态栏 (HUD)\"]\n    A9 --> A10[\"终端底部显示\"]\n    A1 --> A2[\"六大核心功能\"]\n    A2 --> A3[\"Context 用量监控\"]\n    A2 --> A4[\"工具活动追踪\"]\n    A2 --> A5[\"Agent 监控\"]\n    A2 --> A6[\"Todo 进度追踪\"]\n    A2 --> A7[\"API 限额显示\"]\n    A2 --> A8[\"Git 状态集成\"]\n    A1 --> A11[\"使用 statusline API\"]\n    A1 --> A12[\"零运行时依赖\"]\n    A1 --> A13[\"MIT 开源协议\"]\n    A1 --> A14[\"作者: JarrodWatts (澳大利亚)\"]"
+        },
+        {
+          "title": "安装流程",
+          "code": "flowchart TD\n    B1[\"安装 ClaudeHUD\"] --> B2[\"步骤1: 插件市场 add\"]\n    B2 --> B3[\"/pluginmarketplace add jarrodwatts/claude-hud\"]\n    B1 --> B4[\"步骤2: 安装插件\"]\n    B4 --> B5[\"/plugininstall claude-hud\"]\n    B1 --> B6[\"步骤3: 配置并启动\"]\n    B6 --> B7[\"/claude-hud:setup\"]\n    B7 --> B8[\"完成, HUD 生效\"]\n    B8 --> B9[\"无需重启\"]\n    B8 --> B10[\"全程 < 1 分钟\"]"
+        },
+        {
+          "title": "HUD 显示模式",
+          "code": "flowchart TD\n    C1[\"HUD 模式\"] --> C2[\"Full 模式\"]\n    C2 --> C3[\"显示: Context, 工具, Agent, Todo, API 限额, Git\"]\n    C1 --> C4[\"Essential 模式\"]\n    C4 --> C5[\"显示: Context 用量, Git 状态\"]\n    C1 --> C6[\"Minimal 模式\"]\n    C6 --> C7[\"显示: 模型名称, Context 进度条\"]"
+        },
+        {
+          "title": "Context 用量监控逻辑",
+          "code": "flowchart TD\n    D1[\"Context 用量监控\"] --> D2[\"实时 token 消耗百分比\"]\n    D2 --> D3[\"进度条颜色: 绿→黄→红\"]\n    D3 --> D4[\"提前预警\"]\n    D4 --> D5[\"避免 context 用完导致会话报废\"]\n    D5 --> D6[\"上下文窗口有限\"]\n    D6 --> D7[\"自动压缩或会话报废风险\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T10:55:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# ClaudeHUD 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"ClaudeHUD\"] --> A9[\"实时状态栏 (HUD)\"]\n    A9 --> A10[\"终端底部显示\"]\n    A1 --> A2[\"六大核心功能\"]\n    A2 --> A3[\"Context 用量监控\"]\n    A2 --> A4[\"工具活动追踪\"]\n    A2 --> A5[\"Agent 监控\"]\n    A2 --> A6[\"Todo 进度追踪\"]\n    A2 --> A7[\"API 限额显示\"]\n    A2 --> A8[\"Git 状态集成\"]\n    A1 --> A11[\"使用 statusline API\"]\n    A1 --> A12[\"零运行时依赖\"]\n    A1 --> A13[\"MIT 开源协议\"]\n    A1 --> A14[\"作者: JarrodWatts (澳大利亚)\"]\n```\n\n## 安装流程\n```mermaid\nflowchart TD\n    B1[\"安装 ClaudeHUD\"] --> B2[\"步骤1: 插件市场 add\"]\n    B2 --> B3[\"/pluginmarketplace add jarrodwatts/claude-hud\"]\n    B1 --> B4[\"步骤2: 安装插件\"]\n    B4 --> B5[\"/plugininstall claude-hud\"]\n    B1 --> B6[\"步骤3: 配置并启动\"]\n    B6 --> B7[\"/claude-hud:setup\"]\n    B7 --> B8[\"完成, HUD 生效\"]\n    B8 --> B9[\"无需重启\"]\n    B8 --> B10[\"全程 < 1 分钟\"]\n```\n\n## HUD 显示模式\n```mermaid\nflowchart TD\n    C1[\"HUD 模式\"] --> C2[\"Full 模式\"]\n    C2 --> C3[\"显示: Context, 工具, Agent, Todo, API 限额, Git\"]\n    C1 --> C4[\"Essential 模式\"]\n    C4 --> C5[\"显示: Context 用量, Git 状态\"]\n    C1 --> C6[\"Minimal 模式\"]\n    C6 --> C7[\"显示: 模型名称, Context 进度条\"]\n```\n\n## Context 用量监控逻辑\n```mermaid\nflowchart TD\n    D1[\"Context 用量监控\"] --> D2[\"实时 token 消耗百分比\"]\n    D2 --> D3[\"进度条颜色: 绿→黄→红\"]\n    D3 --> D4[\"提前预警\"]\n    D4 --> D5[\"避免 context 用完导致会话报废\"]\n    D5 --> D6[\"上下文窗口有限\"]\n    D6 --> D7[\"自动压缩或会话报废风险\"]\n```\n",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"ClaudeHUD\"] --> A9[\"实时状态栏 (HUD)\"]\n    A9 --> A10[\"终端底部显示\"]\n    A1 --> A2[\"六大核心功能\"]\n    A2 --> A3[\"Context 用量监控\"]\n    A2 --> A4[\"工具活动追踪\"]\n    A2 --> A5[\"Agent 监控\"]\n    A2 --> A6[\"Todo 进度追踪\"]\n    A2 --> A7[\"API 限额显示\"]\n    A2 --> A8[\"Git 状态集成\"]\n    A1 --> A11[\"使用 statusline API\"]\n    A1 --> A12[\"零运行时依赖\"]\n    A1 --> A13[\"MIT 开源协议\"]\n    A1 --> A14[\"作者: JarrodWatts (澳大利亚)\"]"
+    },
+    {
+      "title": "安装流程",
+      "code": "flowchart TD\n    B1[\"安装 ClaudeHUD\"] --> B2[\"步骤1: 插件市场 add\"]\n    B2 --> B3[\"/pluginmarketplace add jarrodwatts/claude-hud\"]\n    B1 --> B4[\"步骤2: 安装插件\"]\n    B4 --> B5[\"/plugininstall claude-hud\"]\n    B1 --> B6[\"步骤3: 配置并启动\"]\n    B6 --> B7[\"/claude-hud:setup\"]\n    B7 --> B8[\"完成, HUD 生效\"]\n    B8 --> B9[\"无需重启\"]\n    B8 --> B10[\"全程 < 1 分钟\"]"
+    },
+    {
+      "title": "HUD 显示模式",
+      "code": "flowchart TD\n    C1[\"HUD 模式\"] --> C2[\"Full 模式\"]\n    C2 --> C3[\"显示: Context, 工具, Agent, Todo, API 限额, Git\"]\n    C1 --> C4[\"Essential 模式\"]\n    C4 --> C5[\"显示: Context 用量, Git 状态\"]\n    C1 --> C6[\"Minimal 模式\"]\n    C6 --> C7[\"显示: 模型名称, Context 进度条\"]"
+    },
+    {
+      "title": "Context 用量监控逻辑",
+      "code": "flowchart TD\n    D1[\"Context 用量监控\"] --> D2[\"实时 token 消耗百分比\"]\n    D2 --> D3[\"进度条颜色: 绿→黄→红\"]\n    D3 --> D4[\"提前预警\"]\n    D4 --> D5[\"避免 context 用完导致会话报废\"]\n    D5 --> D6[\"上下文窗口有限\"]\n    D6 --> D7[\"自动压缩或会话报废风险\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T10:55:57+00:00"
+}

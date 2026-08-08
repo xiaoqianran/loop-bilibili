@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1LVMP6bEga",
+  "title": "CUDA-ROCm 在 27B 上最快，在 35B 上却最慢？V100/R9700 三后端推理性能实测",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1790,
+  "text": "大家好啊\n现在是2026年七月四日的晚上11.10分\n录这个视频\n录这个视频是继昨天所发布的视频\n6月30日发布了这个KAWAKAN与WAAWAKA\n性能对比\n昨天我们发布了这个KAWAKAN的呃\nco大OSM的效果\n并且使用的是啊\n并且对比了一下LCM7.2和LCM\n7.13这两个来进行一下对比\n我们已经确定了就是7.13效果好\n然后今天我们来试一下work can l c m这种类型\n绘制成图片\n就是这样的\n这个其实就大概看一下就可以了\n我看了一下\n好像并不能够得出什么确切的结论来\n这一张图片是推理纤维3.62107B\n这个模型的效果\n你看他的输出速度\n这个折线几乎都是重叠的\n那就这都没什么看头\n我们就主要看这个预处理速度\n可以看到大体上分为两足\n上面的蓝线和绿线\n明显比下方的橙线和红线要高出许多倍来\n这个速度最快的是这个蓝线是扩大\n加上ROSM\n其次是这个绿线是这个库大\n加上WALKAN\n也就是说\n对于这个千分3.6R7B模型的推理\nN卡的扩大和walking效能差别非常大\n这个就看完了\n这个看完之后\n我们来看这个千万3点六三十五B\n这个千万30\n千万千万3点六三十五BA3B\n这个他输出速度其实是简单的区分开了的\n但实际上差别也并不大\n也就十个tokens这样的区别\n我们还是主要来看这个预处理速度\n他这个预处理速度并不能够有明确的区分\n你看有一些它是啊预处理速度快\n但是下降的衰减比较快\n有一些是最开始的预处理速度比较慢\n但是它衰减的慢\n所以他是没有办法得出一个确切的哪一个\n哪一个更优的结论来的\n就比如说\n但是很神奇的一点是\n这个扩大加上ROCM\n在二十二十七B的推理当中是最快的\n可是在35B的推理当中却是最慢的\n单预处理速度而言\n这个就不知道是为什么了\n其实刚才也并不能够得出这个对于N卡来说\n推理27B模型库达比work can的效能要高很多\n它很有可能是指数为100\n是这样的\n如果是别的显卡\n它可能库达和沃坎之间的差别又不会这么大\n所以这个就只能大概看一下\n这个显卡使用的还是V100\n32G和R9700这两个这两张显卡\n所以这个又并不是对于多种N卡和A卡的组合\n来进行测试\n并不能够得出普遍的结论来\n就是或者说只测了27B\n还有35B模型\n并没有涉及到其他的稠密模型\n还有怎样吧\n那么他就是没有办法得出普遍的结论来的\n这个大家就简单的看一看就可以了\n还有就是是不是需要为了这一点点的性能提升\n而去而去花很多时间去鼓捣他一下\n这个也是值得思考的一个问题\n这个昨天给看过了\n就是这个多GPU支持容器部署教程里面\n还有他支持扩大LSM和work卡三后端\n然后这个PF里面是讲了一下\n这个镜像是如何使用的\n这个其实挺复杂的\n至于说值不值得\n为了这样一点点的性能提升去鼓捣鼓捣他一下\n可能是不太值得\n我觉得\n不过对于像27B这样有非常大的性能提升\n这还是挺值得的\n可以从几百提升到1000多\n这个还是挺值得的\n这个就看个人吧\n这个视频就先录到这儿了\n看一下哦\n继5月7号以来\n5月7号3000粉丝\n那个时候我说后面就可能不发布\nM250和V100相关内容了\n因为做内容都差不多了\n嗯发布了MTP相关的一些个视频\n然后就开始做赫尔墨斯相关的\n赫尔墨斯持续了大概一个月左右\n然后后面这些个其实是额\n其实并不和M50相关了\n后面这些个发表这些个啊测速相关的\n这个其实是因为6月25号的时候\n然后后面是去是去帮一个弟弟报志愿了啊\n哈其实是帮很多人报志愿了\n然后后面他后面之所以一直测下来\n这个其实是在水视频\n这个是不是具备多大的价值\n就见仁见智了\n其实从6月份后面这些视频都是和V100\n还有M50没有太大关系的\n这个我看了一下这个呃\n这一段时间后台就没有什么下单的人了\n后面我应该会把小店里面的M50\n还有V100相关的这若干个项合并一下\n就是上架两个\n可能是上架两个卡片吧\n一个是M50资料包\n一个是V100资料包啊\n这个就先这样做\n打算\n后面应该也很少有和M250和V1版\n相关的视频内容了\n这个确实是做的内容太多了太多了\n已经枯竭了\n就是我也想不到M50和V版还能做什么\n就无非是后面逐渐的有这个one cat\nVLLM这个推理框架的啊\n不断的更新\n这个可能会出一些个视频来看看速度怎么样\nmi50我真的想不到还有什么可出的视频了\n这个视频就先录到这了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1LVMP6bEga",
+  "published_at": "1783180420",
+  "fetched_at": "2026-08-08T03:44:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# CUDA‑ROCm 与其他后端在 27B / 35B 推理性能图谱\n\n## 总览：模型、后端与性能维度  \n```mermaid\nflowchart TD\n    M27[\"27B 模型\"] --> B1[\"Expand + ROCm\"]\n    M27 --> B2[\"KAWAKAN\"]\n    M27 --> B3[\"WALKAN\"]\n    M35[\"35B 模型\"] --> B1\n    M35 --> B2\n    M35 --> B3\n\n    B1 --> O1[\"输出速度\"]\n    B1 --> P1[\"预处理速度\"]\n    B2 --> O2[\"输出速度\"]\n    B2 --> P2[\"预处理速度\"]\n    B3 --> O3[\"输出速度\"]\n    B3 --> P3[\"预处理速度\"]\n\n    O1 -->|27B: 最快| Fast27[\"27B 输出最快\"]\n    P1 -->|27B: 最快| FastPre27[\"27B 预处理最快\"]\n    O1 -->|35B: 最慢| Slow35[\"35B 输出最慢\"]\n    P1 -->|35B: 最慢| SlowPre35[\"35B 预处理最慢\"]\n```\n\n## 关键观察：Expand + ROCm 在不同模型的表现  \n```mermaid\nflowchart LR\n    ExpROCM[\"Expand + ROCm\"]\n    Fast27[\"27B 推理最快\"]\n    Slow35[\"35B 推理最慢\"]\n    Blue[\"蓝线（预处理）\"]\n    Green[\"绿线（预处理）\"]\n    Orange[\"橙线（输出）\"]\n    Red[\"红线（输出）\"]\n\n    ExpROCM -->|最快| Fast27\n    ExpROCM -->|最慢| Slow35\n    ExpROCM --> Blue\n    ExpROCM --> Green\n    ExpROCM --> Orange\n    ExpROCM --> Red\n```\n\n## 决策考量：性能提升 vs. 投入成本  \n```mermaid\nflowchart TD\n    Gain[\"性能提升\"]\n    Effort[\"调优投入\"]\n    Size[\"模型规模\"]\n    Magnitude[\"提升幅度\"]\n    Worth[\"是否值得\"]\n\n    Gain --> Magnitude\n    Size --> Magnitude\n    Effort --> Worth\n    Magnitude --> Worth\n```\n\n## 测试范围与局限性  \n```mermaid\nflowchart TD\n    HWV100[\"V100 32G\"]\n    HWR9700[\"R9700\"]\n    Cards[\"仅限两张显卡\"]\n    Models[\"27B、35B\"]\n    Scope[\"测试范围\"]\n    Limit[\"结论不可泛化\"]\n    Others[\"未测其他模型/显卡\"]\n\n    HWV100 --> Cards\n    HWR9700 --> Cards\n    Models --> Scope\n    Scope --> Limit\n    Limit --> Others\n```",
+      "diagrams": [
+        {
+          "title": "总览：模型、后端与性能维度",
+          "code": "flowchart TD\n    M27[\"27B 模型\"] --> B1[\"Expand + ROCm\"]\n    M27 --> B2[\"KAWAKAN\"]\n    M27 --> B3[\"WALKAN\"]\n    M35[\"35B 模型\"] --> B1\n    M35 --> B2\n    M35 --> B3\n\n    B1 --> O1[\"输出速度\"]\n    B1 --> P1[\"预处理速度\"]\n    B2 --> O2[\"输出速度\"]\n    B2 --> P2[\"预处理速度\"]\n    B3 --> O3[\"输出速度\"]\n    B3 --> P3[\"预处理速度\"]\n\n    O1 -->|27B: 最快| Fast27[\"27B 输出最快\"]\n    P1 -->|27B: 最快| FastPre27[\"27B 预处理最快\"]\n    O1 -->|35B: 最慢| Slow35[\"35B 输出最慢\"]\n    P1 -->|35B: 最慢| SlowPre35[\"35B 预处理最慢\"]"
+        },
+        {
+          "title": "关键观察：Expand + ROCm 在不同模型的表现",
+          "code": "flowchart LR\n    ExpROCM[\"Expand + ROCm\"]\n    Fast27[\"27B 推理最快\"]\n    Slow35[\"35B 推理最慢\"]\n    Blue[\"蓝线（预处理）\"]\n    Green[\"绿线（预处理）\"]\n    Orange[\"橙线（输出）\"]\n    Red[\"红线（输出）\"]\n\n    ExpROCM -->|最快| Fast27\n    ExpROCM -->|最慢| Slow35\n    ExpROCM --> Blue\n    ExpROCM --> Green\n    ExpROCM --> Orange\n    ExpROCM --> Red"
+        },
+        {
+          "title": "决策考量：性能提升 vs. 投入成本",
+          "code": "flowchart TD\n    Gain[\"性能提升\"]\n    Effort[\"调优投入\"]\n    Size[\"模型规模\"]\n    Magnitude[\"提升幅度\"]\n    Worth[\"是否值得\"]\n\n    Gain --> Magnitude\n    Size --> Magnitude\n    Effort --> Worth\n    Magnitude --> Worth"
+        },
+        {
+          "title": "测试范围与局限性",
+          "code": "flowchart TD\n    HWV100[\"V100 32G\"]\n    HWR9700[\"R9700\"]\n    Cards[\"仅限两张显卡\"]\n    Models[\"27B、35B\"]\n    Scope[\"测试范围\"]\n    Limit[\"结论不可泛化\"]\n    Others[\"未测其他模型/显卡\"]\n\n    HWV100 --> Cards\n    HWR9700 --> Cards\n    Models --> Scope\n    Scope --> Limit\n    Limit --> Others"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T03:45:12+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# CUDA‑ROCm 与其他后端在 27B / 35B 推理性能图谱\n\n## 总览：模型、后端与性能维度  \n```mermaid\nflowchart TD\n    M27[\"27B 模型\"] --> B1[\"Expand + ROCm\"]\n    M27 --> B2[\"KAWAKAN\"]\n    M27 --> B3[\"WALKAN\"]\n    M35[\"35B 模型\"] --> B1\n    M35 --> B2\n    M35 --> B3\n\n    B1 --> O1[\"输出速度\"]\n    B1 --> P1[\"预处理速度\"]\n    B2 --> O2[\"输出速度\"]\n    B2 --> P2[\"预处理速度\"]\n    B3 --> O3[\"输出速度\"]\n    B3 --> P3[\"预处理速度\"]\n\n    O1 -->|27B: 最快| Fast27[\"27B 输出最快\"]\n    P1 -->|27B: 最快| FastPre27[\"27B 预处理最快\"]\n    O1 -->|35B: 最慢| Slow35[\"35B 输出最慢\"]\n    P1 -->|35B: 最慢| SlowPre35[\"35B 预处理最慢\"]\n```\n\n## 关键观察：Expand + ROCm 在不同模型的表现  \n```mermaid\nflowchart LR\n    ExpROCM[\"Expand + ROCm\"]\n    Fast27[\"27B 推理最快\"]\n    Slow35[\"35B 推理最慢\"]\n    Blue[\"蓝线（预处理）\"]\n    Green[\"绿线（预处理）\"]\n    Orange[\"橙线（输出）\"]\n    Red[\"红线（输出）\"]\n\n    ExpROCM -->|最快| Fast27\n    ExpROCM -->|最慢| Slow35\n    ExpROCM --> Blue\n    ExpROCM --> Green\n    ExpROCM --> Orange\n    ExpROCM --> Red\n```\n\n## 决策考量：性能提升 vs. 投入成本  \n```mermaid\nflowchart TD\n    Gain[\"性能提升\"]\n    Effort[\"调优投入\"]\n    Size[\"模型规模\"]\n    Magnitude[\"提升幅度\"]\n    Worth[\"是否值得\"]\n\n    Gain --> Magnitude\n    Size --> Magnitude\n    Effort --> Worth\n    Magnitude --> Worth\n```\n\n## 测试范围与局限性  \n```mermaid\nflowchart TD\n    HWV100[\"V100 32G\"]\n    HWR9700[\"R9700\"]\n    Cards[\"仅限两张显卡\"]\n    Models[\"27B、35B\"]\n    Scope[\"测试范围\"]\n    Limit[\"结论不可泛化\"]\n    Others[\"未测其他模型/显卡\"]\n\n    HWV100 --> Cards\n    HWR9700 --> Cards\n    Models --> Scope\n    Scope --> Limit\n    Limit --> Others\n```",
+  "diagrams": [
+    {
+      "title": "总览：模型、后端与性能维度",
+      "code": "flowchart TD\n    M27[\"27B 模型\"] --> B1[\"Expand + ROCm\"]\n    M27 --> B2[\"KAWAKAN\"]\n    M27 --> B3[\"WALKAN\"]\n    M35[\"35B 模型\"] --> B1\n    M35 --> B2\n    M35 --> B3\n\n    B1 --> O1[\"输出速度\"]\n    B1 --> P1[\"预处理速度\"]\n    B2 --> O2[\"输出速度\"]\n    B2 --> P2[\"预处理速度\"]\n    B3 --> O3[\"输出速度\"]\n    B3 --> P3[\"预处理速度\"]\n\n    O1 -->|27B: 最快| Fast27[\"27B 输出最快\"]\n    P1 -->|27B: 最快| FastPre27[\"27B 预处理最快\"]\n    O1 -->|35B: 最慢| Slow35[\"35B 输出最慢\"]\n    P1 -->|35B: 最慢| SlowPre35[\"35B 预处理最慢\"]"
+    },
+    {
+      "title": "关键观察：Expand + ROCm 在不同模型的表现",
+      "code": "flowchart LR\n    ExpROCM[\"Expand + ROCm\"]\n    Fast27[\"27B 推理最快\"]\n    Slow35[\"35B 推理最慢\"]\n    Blue[\"蓝线（预处理）\"]\n    Green[\"绿线（预处理）\"]\n    Orange[\"橙线（输出）\"]\n    Red[\"红线（输出）\"]\n\n    ExpROCM -->|最快| Fast27\n    ExpROCM -->|最慢| Slow35\n    ExpROCM --> Blue\n    ExpROCM --> Green\n    ExpROCM --> Orange\n    ExpROCM --> Red"
+    },
+    {
+      "title": "决策考量：性能提升 vs. 投入成本",
+      "code": "flowchart TD\n    Gain[\"性能提升\"]\n    Effort[\"调优投入\"]\n    Size[\"模型规模\"]\n    Magnitude[\"提升幅度\"]\n    Worth[\"是否值得\"]\n\n    Gain --> Magnitude\n    Size --> Magnitude\n    Effort --> Worth\n    Magnitude --> Worth"
+    },
+    {
+      "title": "测试范围与局限性",
+      "code": "flowchart TD\n    HWV100[\"V100 32G\"]\n    HWR9700[\"R9700\"]\n    Cards[\"仅限两张显卡\"]\n    Models[\"27B、35B\"]\n    Scope[\"测试范围\"]\n    Limit[\"结论不可泛化\"]\n    Others[\"未测其他模型/显卡\"]\n\n    HWV100 --> Cards\n    HWR9700 --> Cards\n    Models --> Scope\n    Scope --> Limit\n    Limit --> Others"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T03:45:12+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1RVKG6CEhW",
+  "title": "176. 如何可视化交叉注意力【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1187,
+  "text": "今天的问题是如何可视化交叉注意力\n在开始今天的视频前\n需要明确\n今天之前\n所有的可视化都是encoder only或decoder only的\n而今天我们要可视化的是encoder\nDecoder\ntransformer结构中的decoder某一层\n以图像描述任务为例\n假设有一个图像编码器输出了五个图像token\n而文本解码器输入了三个文本token\n比如一只猫分别用T1T2T三来表示\n首先把视线移到第一行\n掩码自注意力\n这里的输入X就是那三个文本token\nX需要分别乘以WQ\nwk和WV这三个自注意力专用的投影矩阵\n从而得到QK和V自注意力\n顾名思义\n就是QKV的源头都是这同一个输入X\n接着Q和K的转置相乘\n就得到了注意力矩阵A因为文本token只有三个\n所以这里的A是一个三行三列的矩阵\n右上角浅蓝色标注了英国野马\n因为最终加入预测头\n预测下一个词时需要防止信息泄露\n自注意力计算完成后会得到输出\nO同样也是三行\n这时候注意看右侧的橙色字\n提示FFN每层仅在最后有一个\n也就是说自注意力做完之后\n不需要马上接前馈网络FFN\n而是立刻开始做交叉注意力\n现在视线来到了第二行\n无掩码交叉注意力\n这里的输入X其实就是刚才第一行\n自注意力的输出结果\n仔细看这里的投影过程\n我们的Q是通过把中间输入X乘以WQ\n得到的行数依然是三行\n但是K的转置和V它们的源头变了\n它们来自于手稿上\n那五条蓝色横线\n代表的来自encoder最后一层的五个图像\nToken\n这里的交叉意思就是Q和KV的源头不同\n交叉使用了图像和文本两处信息\n需要强调的是\n虽然decoder的每一层\n都有自己独特的wk和WV\n但它们提取的源头都是encoder的最后一层\n而不是对应层\n而且自注意力的WQ和交叉注意力的WQ\n权重是不同的\n再看维度\n由于图像token有五个\n所以投影出来的K的转置有五列\n手稿里特意画了五个竖条\n而投影出的V有五行手稿里也画了五个横条\n当三行的Q与五列的K的转置相乘\n得到的注意力矩阵A就是一个三行五列的矩阵\n请注意这里的因果\n野马四个字被画上了一个大大的叉\n这是因为在交叉注意力中\n我们不需要任何因果掩码\n每一个文本token都必须能够无死角的观察\n图像中\n这全部的五个token神奇的维度变换就在下一步\n当我们用三行\n五列的矩阵A乘以五行的矩阵V时\n五这个维度在矩阵乘法中被消掉了\n乘积结果O又重新变回了三行\n这个三行的输出O完全匹配了文本token的数量\n最后视线顺着箭头来到右边三行的输出\nO经过前馈网络FFN\n最后输出X依然保持三行\n并作为当前decoder层的最终输出传递给下一层\n作为下一层的输入\n下一层又会经历一模一样的\n自注意力加交叉注意力加FFN的过程\n训练时在最后一层可加预测头\n并行预测下一个token\n在第一个位置预测T2\n第二位置预测T3\n以此类推",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RVKG6CEhW",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:04+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

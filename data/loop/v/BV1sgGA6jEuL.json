@@ -1,0 +1,50 @@
+{
+  "bvid": "BV1sgGA6jEuL",
+  "title": "DeepSeek V4 正式版性能有多强悍？！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 50,
+  "text": "♪ 你若三冬来 ♪\n♪ 冰封一生所爱 ♪\n♪ 梦过子时回首你不在 ♪\n♪ 每逢落叶过回首难掩期盼 ♪",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1sgGA6jEuL",
+  "published_at": "1785483763",
+  "fetched_at": "2026-08-07T20:24:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 正式版性能有多强悍？！字幕知识图谱\n\n## 歌词顺序\n```mermaid\nflowchart TD\n    L1[\"♪ 你若三冬来 ♪\"]\n    L2[\"♪ 冰封一生所爱 ♪\"]\n    L3[\"♪ 梦过子时回首你不在 ♪\"]\n    L4[\"♪ 每逢落叶过回首难掩期盼 ♪\"]\n    L1 --> L2 --> L3 --> L4\n```",
+      "diagrams": [
+        {
+          "title": "歌词顺序",
+          "code": "flowchart TD\n    L1[\"♪ 你若三冬来 ♪\"]\n    L2[\"♪ 冰封一生所爱 ♪\"]\n    L3[\"♪ 梦过子时回首你不在 ♪\"]\n    L4[\"♪ 每逢落叶过回首难掩期盼 ♪\"]\n    L1 --> L2 --> L3 --> L4"
+        }
+      ],
+      "diagram_count": 1,
+      "error": "",
+      "updated_at": "2026-08-07T20:33:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 1
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 正式版性能有多强悍？！字幕知识图谱\n\n## 歌词顺序\n```mermaid\nflowchart TD\n    L1[\"♪ 你若三冬来 ♪\"]\n    L2[\"♪ 冰封一生所爱 ♪\"]\n    L3[\"♪ 梦过子时回首你不在 ♪\"]\n    L4[\"♪ 每逢落叶过回首难掩期盼 ♪\"]\n    L1 --> L2 --> L3 --> L4\n```",
+  "diagrams": [
+    {
+      "title": "歌词顺序",
+      "code": "flowchart TD\n    L1[\"♪ 你若三冬来 ♪\"]\n    L2[\"♪ 冰封一生所爱 ♪\"]\n    L3[\"♪ 梦过子时回首你不在 ♪\"]\n    L4[\"♪ 每逢落叶过回首难掩期盼 ♪\"]\n    L1 --> L2 --> L3 --> L4"
+    }
+  ],
+  "diagram_count": 1,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T20:33:30+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1qYDTBrEVo",
+  "title": "300年前的数学，让AI学会了说话？| 算法的数学基础 04",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1692,
+  "text": "XGPT刚出生的时候说的话是这样的\n纯粹的胡说八道\n但经过训练\n他变成了这样\n没有人逐字教他语法\n他是怎么从胡说八道变成说人话的\n答案是他不断的犯错\n然后每次往错的少一点的方向走一小步\n走了几10亿步之后\n他学会了说话\n这个往错的少一点的方向走一步\n需要回答一个问题\n往哪个方向走\n能让错误减少的最快\n这个问题的答案藏在一个300年前的数学里\n微积分往期我们讲了向量矩阵概率\n今天讲最后一块拼图\n怎么让机器从错误中学习\n看完这期你会搞懂四件事\n微积分的核心直觉是什么\n导数和梯度到底在说什么\nAI训练等于在山谷里找最低点\n还有为什么我们频道叫过拟合青年\n先说一个简单的问题\n一辆车匀速60km\n每小时\n开了两小时\n走了多远\n60×2=120公里\n太简单了\n但现实中速度不是恒定的\n你会加速减速\n停车再加速\n曲线下面的面积你不能直接算\n微积分的核心思想\n把它切成无穷多个无穷小的薄片\n每个薄片都是一个极窄的矩形\n高乘以宽等于FX乘以DX\n全部加起来就是曲线下面的面积\n这就是微积分最本质的直觉\n把不能直接算的东西切成无穷小的碎片\n每个碎片简单到能直接算\n然后全部加起来\n这个切碎再加起来叫积分\n但今天更重要的是另一半\n如果我知道距离关于时间的曲线\n某一瞬间你的速度是多少\n这个问题的答案叫导数\n假设你在骑车路线是一条起伏的曲线\n在曲线上选一个点\n你想知道这一刻你的速度是多少\n速度等于距离变化除以时间变化\n两个点之间连一条线线的斜率等于平均变化率\n但我要的是这一瞬间的速度怎么办\n把蓝点往红点靠\n两个点越来越近\n割线越来越像一条切线\n当两点之间的距离趋近于零\n割线变成切线\n斜率变成倒数\n换一种方式理解\n把曲线放大放大再放大\n在无穷小的尺度上\n任何光滑的曲线都是直线\n这条直线的斜率就是导数\n换一个具体的Y等于X的平方\n在X等于三的位置\n把X往前动一点点\nDX面积变化等于2X乘以DX加上DX的平方\n当DX趋近于零\nDX的平方消失了\n剩下2X所以X的平方的导数等于2X1维很好\n只有一个方向\n但真实世界变量不止一个\n想象\n你站在一座山上\n东边抖还是北边抖\n往东走一步高度变多少\n叫对东的偏导数\n往北走一步高度变多少\n叫对北的偏导数\n把所有方向的偏导数拼在一起\n就是一个向量\n叫梯度\n梯度有一个神奇的性质\n它永远指向增长最快的方向\n反过来梯度的反方向就是下降最快的方向\n如果你蒙着眼站在山上\n用脚试探最陡的方向\n然后迈一步\n每走一步重新试探\n重新走\n最终走到山谷最低点\n这就是梯度下降\n但你在什么山上走\nAI训练的时候\n这座山叫损失函数\n损失等于你的预测\n离正确答案有多远\n谷底等于完美预测\n山顶等于错误百出\n训练的目标\n从山顶走到谷底\n来看梯度下降的实际过程\n每一步算梯度\n走一步算梯度\n走一步直到到达谷底\n但这里有个关键参数\n每步走多远\n这叫学习率\n学习率太大\n步子太大\n直接翻过山谷\n来回震荡\n永远到不了底\n学习率太小\n步子太小\n走了100步\n还在半山腰训练到天荒地\n老\n不大不小\n稳稳走到谷底\n还有一个问题\n神经网络有很多层\n预测错了锅怎么分\n就像多米诺骨牌\n第三块倒了\n谁推的\n往回追\n每层该调多少\n用链式法则一层一层算\n这就是反向传播\n本质等于链式法则\n加上从后往前算\n为什么GPU擅长这个\n因为每层都是矩阵运算\n一堆矩阵乘来乘去好\n现在有一个陷阱\n你找到的谷底是在训练数据上的\n谷底不一定是真实世界的谷底\n就像考试前\n你把往年真题的答案全背下来了\n模拟考满分\n但换一套新题完全不会\n因为你背的是答案\n不是方法\n这就叫过拟合\n我们频道为什么叫过拟合青年\n因为每个学新东西的人都在和过拟合作斗争\n学了公式不会变\n通过拟合背了八股文\n面试翻车过拟合训练集99%\n测试集50%\n过拟合好拉回来\n微积分把不能直接算的切成无穷小碎片\n导数动一点点\n结果变多少\n曲线放大变直线梯度\n所有方向的导数拼成向量\n指向最陡梯度下降\n沿着反方向一步步到谷底\n从向量到矩阵到概率到梯度\n你已经有了理解深度学习的全部数学基础\n下期我们把这四块拼在一起\n看看transformer到底是怎么工作的\n下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qYDTBrEVo",
+  "published_at": "1775297106",
+  "fetched_at": "2026-08-08T05:16:23+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 300年前的数学在AI中的应用关系图谱\n\n## 微积分核心直觉 [BV1qYDTBrEVo P1 01:17]\n```mermaid\nflowchart TD\n    CALC[\"微积分\"]\n    INTEGRAL[\"积分<br/>(切碎再加)\"]\n    DERIV[\"导数<br/>(瞬时变化)\"]\n    GRAD[\"梯度<br/>(多方向导数)\"]\n    LOSS[\"损失函数<br/>(预测误差)\"]\n    GD[\"梯度下降\"]\n    LR[\"学习率\"]\n    OVER[\"过拟合\"]\n    TRAIN[\"训练集表现\"]\n    TEST[\"测试集表现\"]\n\n    CALC --> INTEGRAL\n    CALC --> DERIV\n    DERIV --> GRAD\n    GRAD --> GD\n    GD --> LOSS\n    LR --> GD\n    TRAIN --> LOSS\n    TEST --> LOSS\n    OVER --> TRAIN\n    OVER --> TEST\n```\n\n## 导数与梯度的几何解释 [BV1qYDTBrEVo P1 01:47]\n```mermaid\nflowchart TD\n    POINT[\"曲线上的点\"]\n    SECANT[\"割线\"]\n    TANGENT[\"切线\"]\n    DERIV[\"导数\"]\n    PARTX[\"对X的偏导\"]\n    PARTY[\"对Y的偏导\"]\n    GRAD[\"梯度向量\"]\n    STEEP[\"增长最快方向\"]\n    DESC[\"下降最快方向\"]\n\n    POINT --> SECANT\n    SECANT --> TANGENT\n    TANGENT --> DERIV\n    DERIV --> PARTX\n    DERIV --> PARTY\n    PARTX --> GRAD\n    PARTY --> GRAD\n    GRAD --> STEEP\n    GRAD --> DESC\n```\n\n## 梯度下降过程与学习率影响 [BV1qYDTBrEVo P1 03:35]  \n### 学习率太大 [BV1qYDTBrEVo P1 04:16]\n```mermaid\nflowchart TD\n    MOUNTAIN[\"损失函数山\"]\n    GRAD[\"梯度\"]\n    STEP[\"一步\"]\n    LR_LARGE[\"学习率大\"]\n    OSCILLATE[\"来回震荡\"]\n    NO_CONVERGE[\"无法收敛\"]\n\n    MOUNTAIN --> GRAD\n    GRAD --> STEP\n    STEP --> LR_LARGE\n    LR_LARGE --> OSCILLATE\n    OSCILLATE --> NO_CONVERGE\n```\n\n### 学习率适中 [BV1qYDTBrEVo P1 04:27]\n```mermaid\nflowchart TD\n    MOUNTAIN[\"损失函数山\"]\n    GRAD[\"梯度\"]\n    STEP[\"一步\"]\n    LR_OK[\"学习率适中\"]\n    CONVERGE[\"稳步收敛到谷底\"]\n\n    MOUNTAIN --> GRAD\n    GRAD --> STEP\n    STEP --> LR_OK\n    LR_OK --> CONVERGE\n```\n\n## 过拟合与泛化的关系 [BV1qYDTBrEVo P1 05:09]\n```mermaid\nflowchart TD\n    TRAIN_DATA[\"训练数据谷底\"]\n    TEST_DATA[\"测试数据谷底\"]\n    OVERFIT[\"过拟合\"]\n    MEMORIZE[\"记答案\"]\n    METHOD[\"掌握方法\"]\n    GENERALIZE[\"泛化能力\"]\n\n    TRAIN_DATA --> OVERFIT\n    OVERFIT --> MEMORIZE\n    MEMORIZE --> TEST_DATA\n    METHOD --> GENERALIZE\n    GENERALIZE --> TEST_DATA\n```",
+      "diagrams": [
+        {
+          "title": "微积分核心直觉",
+          "code": "flowchart TD\n    CALC[\"微积分\"]\n    INTEGRAL[\"积分<br/>(切碎再加)\"]\n    DERIV[\"导数<br/>(瞬时变化)\"]\n    GRAD[\"梯度<br/>(多方向导数)\"]\n    LOSS[\"损失函数<br/>(预测误差)\"]\n    GD[\"梯度下降\"]\n    LR[\"学习率\"]\n    OVER[\"过拟合\"]\n    TRAIN[\"训练集表现\"]\n    TEST[\"测试集表现\"]\n\n    CALC --> INTEGRAL\n    CALC --> DERIV\n    DERIV --> GRAD\n    GRAD --> GD\n    GD --> LOSS\n    LR --> GD\n    TRAIN --> LOSS\n    TEST --> LOSS\n    OVER --> TRAIN\n    OVER --> TEST"
+        },
+        {
+          "title": "导数与梯度的几何解释",
+          "code": "flowchart TD\n    POINT[\"曲线上的点\"]\n    SECANT[\"割线\"]\n    TANGENT[\"切线\"]\n    DERIV[\"导数\"]\n    PARTX[\"对X的偏导\"]\n    PARTY[\"对Y的偏导\"]\n    GRAD[\"梯度向量\"]\n    STEEP[\"增长最快方向\"]\n    DESC[\"下降最快方向\"]\n\n    POINT --> SECANT\n    SECANT --> TANGENT\n    TANGENT --> DERIV\n    DERIV --> PARTX\n    DERIV --> PARTY\n    PARTX --> GRAD\n    PARTY --> GRAD\n    GRAD --> STEEP\n    GRAD --> DESC"
+        },
+        {
+          "title": "梯度下降过程与学习率影响",
+          "code": "flowchart TD\n    MOUNTAIN[\"损失函数山\"]\n    GRAD[\"梯度\"]\n    STEP[\"一步\"]\n    LR_LARGE[\"学习率大\"]\n    OSCILLATE[\"来回震荡\"]\n    NO_CONVERGE[\"无法收敛\"]\n\n    MOUNTAIN --> GRAD\n    GRAD --> STEP\n    STEP --> LR_LARGE\n    LR_LARGE --> OSCILLATE\n    OSCILLATE --> NO_CONVERGE"
+        },
+        {
+          "title": "图 4",
+          "code": "flowchart TD\n    MOUNTAIN[\"损失函数山\"]\n    GRAD[\"梯度\"]\n    STEP[\"一步\"]\n    LR_OK[\"学习率适中\"]\n    CONVERGE[\"稳步收敛到谷底\"]\n\n    MOUNTAIN --> GRAD\n    GRAD --> STEP\n    STEP --> LR_OK\n    LR_OK --> CONVERGE"
+        },
+        {
+          "title": "过拟合与泛化的关系",
+          "code": "flowchart TD\n    TRAIN_DATA[\"训练数据谷底\"]\n    TEST_DATA[\"测试数据谷底\"]\n    OVERFIT[\"过拟合\"]\n    MEMORIZE[\"记答案\"]\n    METHOD[\"掌握方法\"]\n    GENERALIZE[\"泛化能力\"]\n\n    TRAIN_DATA --> OVERFIT\n    OVERFIT --> MEMORIZE\n    MEMORIZE --> TEST_DATA\n    METHOD --> GENERALIZE\n    GENERALIZE --> TEST_DATA"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T05:16:38+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 300年前的数学在AI中的应用关系图谱\n\n## 微积分核心直觉 [BV1qYDTBrEVo P1 01:17]\n```mermaid\nflowchart TD\n    CALC[\"微积分\"]\n    INTEGRAL[\"积分<br/>(切碎再加)\"]\n    DERIV[\"导数<br/>(瞬时变化)\"]\n    GRAD[\"梯度<br/>(多方向导数)\"]\n    LOSS[\"损失函数<br/>(预测误差)\"]\n    GD[\"梯度下降\"]\n    LR[\"学习率\"]\n    OVER[\"过拟合\"]\n    TRAIN[\"训练集表现\"]\n    TEST[\"测试集表现\"]\n\n    CALC --> INTEGRAL\n    CALC --> DERIV\n    DERIV --> GRAD\n    GRAD --> GD\n    GD --> LOSS\n    LR --> GD\n    TRAIN --> LOSS\n    TEST --> LOSS\n    OVER --> TRAIN\n    OVER --> TEST\n```\n\n## 导数与梯度的几何解释 [BV1qYDTBrEVo P1 01:47]\n```mermaid\nflowchart TD\n    POINT[\"曲线上的点\"]\n    SECANT[\"割线\"]\n    TANGENT[\"切线\"]\n    DERIV[\"导数\"]\n    PARTX[\"对X的偏导\"]\n    PARTY[\"对Y的偏导\"]\n    GRAD[\"梯度向量\"]\n    STEEP[\"增长最快方向\"]\n    DESC[\"下降最快方向\"]\n\n    POINT --> SECANT\n    SECANT --> TANGENT\n    TANGENT --> DERIV\n    DERIV --> PARTX\n    DERIV --> PARTY\n    PARTX --> GRAD\n    PARTY --> GRAD\n    GRAD --> STEEP\n    GRAD --> DESC\n```\n\n## 梯度下降过程与学习率影响 [BV1qYDTBrEVo P1 03:35]  \n### 学习率太大 [BV1qYDTBrEVo P1 04:16]\n```mermaid\nflowchart TD\n    MOUNTAIN[\"损失函数山\"]\n    GRAD[\"梯度\"]\n    STEP[\"一步\"]\n    LR_LARGE[\"学习率大\"]\n    OSCILLATE[\"来回震荡\"]\n    NO_CONVERGE[\"无法收敛\"]\n\n    MOUNTAIN --> GRAD\n    GRAD --> STEP\n    STEP --> LR_LARGE\n    LR_LARGE --> OSCILLATE\n    OSCILLATE --> NO_CONVERGE\n```\n\n### 学习率适中 [BV1qYDTBrEVo P1 04:27]\n```mermaid\nflowchart TD\n    MOUNTAIN[\"损失函数山\"]\n    GRAD[\"梯度\"]\n    STEP[\"一步\"]\n    LR_OK[\"学习率适中\"]\n    CONVERGE[\"稳步收敛到谷底\"]\n\n    MOUNTAIN --> GRAD\n    GRAD --> STEP\n    STEP --> LR_OK\n    LR_OK --> CONVERGE\n```\n\n## 过拟合与泛化的关系 [BV1qYDTBrEVo P1 05:09]\n```mermaid\nflowchart TD\n    TRAIN_DATA[\"训练数据谷底\"]\n    TEST_DATA[\"测试数据谷底\"]\n    OVERFIT[\"过拟合\"]\n    MEMORIZE[\"记答案\"]\n    METHOD[\"掌握方法\"]\n    GENERALIZE[\"泛化能力\"]\n\n    TRAIN_DATA --> OVERFIT\n    OVERFIT --> MEMORIZE\n    MEMORIZE --> TEST_DATA\n    METHOD --> GENERALIZE\n    GENERALIZE --> TEST_DATA\n```",
+  "diagrams": [
+    {
+      "title": "微积分核心直觉",
+      "code": "flowchart TD\n    CALC[\"微积分\"]\n    INTEGRAL[\"积分<br/>(切碎再加)\"]\n    DERIV[\"导数<br/>(瞬时变化)\"]\n    GRAD[\"梯度<br/>(多方向导数)\"]\n    LOSS[\"损失函数<br/>(预测误差)\"]\n    GD[\"梯度下降\"]\n    LR[\"学习率\"]\n    OVER[\"过拟合\"]\n    TRAIN[\"训练集表现\"]\n    TEST[\"测试集表现\"]\n\n    CALC --> INTEGRAL\n    CALC --> DERIV\n    DERIV --> GRAD\n    GRAD --> GD\n    GD --> LOSS\n    LR --> GD\n    TRAIN --> LOSS\n    TEST --> LOSS\n    OVER --> TRAIN\n    OVER --> TEST"
+    },
+    {
+      "title": "导数与梯度的几何解释",
+      "code": "flowchart TD\n    POINT[\"曲线上的点\"]\n    SECANT[\"割线\"]\n    TANGENT[\"切线\"]\n    DERIV[\"导数\"]\n    PARTX[\"对X的偏导\"]\n    PARTY[\"对Y的偏导\"]\n    GRAD[\"梯度向量\"]\n    STEEP[\"增长最快方向\"]\n    DESC[\"下降最快方向\"]\n\n    POINT --> SECANT\n    SECANT --> TANGENT\n    TANGENT --> DERIV\n    DERIV --> PARTX\n    DERIV --> PARTY\n    PARTX --> GRAD\n    PARTY --> GRAD\n    GRAD --> STEEP\n    GRAD --> DESC"
+    },
+    {
+      "title": "梯度下降过程与学习率影响",
+      "code": "flowchart TD\n    MOUNTAIN[\"损失函数山\"]\n    GRAD[\"梯度\"]\n    STEP[\"一步\"]\n    LR_LARGE[\"学习率大\"]\n    OSCILLATE[\"来回震荡\"]\n    NO_CONVERGE[\"无法收敛\"]\n\n    MOUNTAIN --> GRAD\n    GRAD --> STEP\n    STEP --> LR_LARGE\n    LR_LARGE --> OSCILLATE\n    OSCILLATE --> NO_CONVERGE"
+    },
+    {
+      "title": "图 4",
+      "code": "flowchart TD\n    MOUNTAIN[\"损失函数山\"]\n    GRAD[\"梯度\"]\n    STEP[\"一步\"]\n    LR_OK[\"学习率适中\"]\n    CONVERGE[\"稳步收敛到谷底\"]\n\n    MOUNTAIN --> GRAD\n    GRAD --> STEP\n    STEP --> LR_OK\n    LR_OK --> CONVERGE"
+    },
+    {
+      "title": "过拟合与泛化的关系",
+      "code": "flowchart TD\n    TRAIN_DATA[\"训练数据谷底\"]\n    TEST_DATA[\"测试数据谷底\"]\n    OVERFIT[\"过拟合\"]\n    MEMORIZE[\"记答案\"]\n    METHOD[\"掌握方法\"]\n    GENERALIZE[\"泛化能力\"]\n\n    TRAIN_DATA --> OVERFIT\n    OVERFIT --> MEMORIZE\n    MEMORIZE --> TEST_DATA\n    METHOD --> GENERALIZE\n    GENERALIZE --> TEST_DATA"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T05:16:38+00:00"
+}

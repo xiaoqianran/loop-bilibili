@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1b9us61ESi",
+  "title": "《Godot 游戏开发：HD2D 回合制 JRPG》1.5 主角A 流程 | Godot 4.8+ | GDScript | 游戏开发 | 独立游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1677,
+  "text": "然后呢是按键输入的label和console label\n那这些呢我们也需要写成这样的一个函数\n或者说是一个方法哈\n不过我们先开始编写这个流程\n编写流程之后呢\n根据流程中需要的东西\n我们再逐个去实现啊\n嗯首先我们要在日志上输出一个开始战斗\n那直接在console label点text\n那我们在ready的时候给清空\n清空之后呢\nconsole label点text\n让它等于直接等于进入战斗就可以了\n运行进入战斗显示了\n然后我们要用await\ngo out里面的await和谐号两种模式呢\n去逐个去实现这个流程哈\n那先是进入战战斗\n我们写enter battle\n那在这里写enter battle\n进入战斗设置\n这个进入战斗\n进入战斗之后呢\n最开始是己方\n然后先是敌主角A哈\n我们这里写start player a或者叫turn player a也行哈\n得写console label\n点text\n让它等于主角A杠N加原来的console label加text\n叫做轮到主角A好看一下\n进入战斗\n然后是轮到主角A轮到主角A呢\n它需要有一些输入哈\n这里需要监听输入\n要选择动作啊\n那我这里写player a select action\n选择动作\n直接调用player a select action\n选择动作\n选择动作呢是在key input label里边\n我们需要设置text这些请选择动作\n一呢是攻击\n那目前我们只有一个攻击哈\n先做一个攻击\n然后在这里呢我们需要等待一个按键的输入\n那按键输入呢我们需要在process里面去监听\n那这个时候我们先把这个按输入映射\n给配置一下\n添加新动作\n1234\n那四个就足够了哈\n然后加号按数字一\n这个按数字二\n按数字三\n这个按数字四\n然后在这里呢是需要去监听\n选择动作的一个操作哈\n那我们在这里先process里边去写\nif input点get key嗯\nAction just press1\n先把这四个都写了\nelse这些if input点is action just press\n二\n直接复制粘贴吧\n这写三和四好\n那这里有按键输入的监听\n直接在这里await就可以哈\n去等待await的一个按键输入\n那这里先写个信号\nSignal\n这个叫key input\n然后要传一个数字\n这些number int\n然后这些key input点AMMIT1\nkey input点AMIT2\nkey input点AMIT3\nkey input点AMIT4\n然后这里写await key input\n这样的话能得到一个结果\nNumber\n让我们输出一下这个number print number\n运行呃\n进入战斗\n然后请选择动作\n我按一一的话\n它就会输出一哈\n这个是没问题的\n选择动作之后我们判断if number等等\n一我们就跳转到请选择敌人哈\nPlayer a select target\n选择这个具体是哪个敌人\nkey input改成一敌人A2\n敌人B那还是同样等这个number等于await\n这个key input\n如果number等等于一\n这里写enemy a dead等于true\n然后update capital studies\n然后如果是number等于二\nenemy b dead可写true\n然后写update character studies\n选择动作一之后\n我这里要调用player select target\n这是要调用一下运行\n我选一之后\n请选择动作\nDJA1是敌人A\n二是敌人B那我点二\n那敌人B呢就消失了\n好这个不是请选择敌人或者是目标\n这样这样的话就使用这个文本的方式\n走了一遍这个主角攻击的这个流程哈\n看一下呃\n选择动作\n选择敌人\n然后去执行动作\n然后是要判断一下敌人是否全部死亡\n如果否的话\n就到主角B哈\n但是这部分呢如果是一直这么写下去的话呢\n这个代码量会多很多哈\n所以我们需要边分析\n然后边去整理这个代码\n比如说像这个p input label\n我们需要做一个简单的封装哈\n好",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1b9us61ESi",
+  "published_at": "1786063484",
+  "fetched_at": "2026-08-08T14:49:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 战斗回合制流程图谱\n\n## 总体战斗流程\n```mermaid\nflowchart TD\n    A1[\"Ready: 清空 console label\"] --> A2[\"EnterBattle: 输出‘进入战斗’\"]\n    A2 --> B1[\"PlayerA_Turn\"]\n    B1 --> B2[\"SelectAction\"]\n    B2 --> B3[\"AwaitKeyInput (动作)\"]\n    B3 --> B4[\"ProcessAction\"]\n    B4 --> C1[\"SelectTarget\"]\n    C1 --> C2[\"AwaitKeyInput (目标)\"]\n    C2 --> C3[\"ApplyDamage\"]\n    C3 --> D1[\"UpdateState\"]\n    D1 --> D2[\"CheckAllEnemiesDead\"]\n    D2 -->|全部死亡| E1[\"EndBattle\"]\n    D2 -->|未全部死亡| E2[\"NextTurn\"]\n    E2 -->|若还有玩家| B1\n    E2 -->|若玩家结束| E1\n```\n\n## 按键输入与信号处理\n```mermaid\nflowchart TD\n    I1[\"定义 Signal key_input(number:int)\"] --> I2[\"在 process 中监听 Input.get_key\"]\n    I2 --> I3[\"匹配数字 1‑4 对应 Action1‑Action4\"]\n    I3 --> I4[\"触发 key_input 信号\"]\n    I4 --> I5[\"await key_input\"]\n    I5 --> I6[\"返回按键数字\"]\n    I6 --> I7[\"用于后续判断 (SelectAction / SelectTarget)\"]\n```\n\n## 动作选择与目标选择\n```mermaid\nflowchart TD\n    S1[\"SelectAction: 显示‘请选择动作’\"] --> S2[\"await key_input (动作)\"]\n    S2 --> S3[\"判断 number\"]\n    S3 -->|1: Attack| S4[\"Proceed to SelectTarget\"]\n    S3 -->|其他: 未实现| S5[\"待扩展\"]\n    S4 --> T1[\"SelectTarget: 显示‘请选择敌人’\"]\n    T1 --> T2[\"await key_input (目标)\"]\n    T2 --> T3[\"判断 target number\"]\n    T3 -->|1: EnemyA| T4[\"Set enemy_a_dead = true\"]\n    T3 -->|2: EnemyB| T5[\"Set enemy_b_dead = true\"]\n    T4 --> T6[\"UpdateCharacterStudies\"]\n    T5 --> T6\n```\n\n## 回合切换与结束判定\n```mermaid\nflowchart TD\n    R1[\"回合结束后\"] --> R2[\"CheckAllEnemiesDead\"]\n    R2 -->|全部死亡| R3[\"结束战斗 (EndBattle)\"]\n    R2 -->|未全部死亡| R4[\"切换到下一个玩家回合\"]\n    R4 --> R5[\"若还有玩家A/B 则重复 SelectAction 流程\"]\n    R5 --> R1\n```",
+      "diagrams": [
+        {
+          "title": "总体战斗流程",
+          "code": "flowchart TD\n    A1[\"Ready: 清空 console label\"] --> A2[\"EnterBattle: 输出‘进入战斗’\"]\n    A2 --> B1[\"PlayerA_Turn\"]\n    B1 --> B2[\"SelectAction\"]\n    B2 --> B3[\"AwaitKeyInput (动作)\"]\n    B3 --> B4[\"ProcessAction\"]\n    B4 --> C1[\"SelectTarget\"]\n    C1 --> C2[\"AwaitKeyInput (目标)\"]\n    C2 --> C3[\"ApplyDamage\"]\n    C3 --> D1[\"UpdateState\"]\n    D1 --> D2[\"CheckAllEnemiesDead\"]\n    D2 -->|全部死亡| E1[\"EndBattle\"]\n    D2 -->|未全部死亡| E2[\"NextTurn\"]\n    E2 -->|若还有玩家| B1\n    E2 -->|若玩家结束| E1"
+        },
+        {
+          "title": "按键输入与信号处理",
+          "code": "flowchart TD\n    I1[\"定义 Signal key_input(number:int)\"] --> I2[\"在 process 中监听 Input.get_key\"]\n    I2 --> I3[\"匹配数字 1‑4 对应 Action1‑Action4\"]\n    I3 --> I4[\"触发 key_input 信号\"]\n    I4 --> I5[\"await key_input\"]\n    I5 --> I6[\"返回按键数字\"]\n    I6 --> I7[\"用于后续判断 (SelectAction / SelectTarget)\"]"
+        },
+        {
+          "title": "动作选择与目标选择",
+          "code": "flowchart TD\n    S1[\"SelectAction: 显示‘请选择动作’\"] --> S2[\"await key_input (动作)\"]\n    S2 --> S3[\"判断 number\"]\n    S3 -->|1: Attack| S4[\"Proceed to SelectTarget\"]\n    S3 -->|其他: 未实现| S5[\"待扩展\"]\n    S4 --> T1[\"SelectTarget: 显示‘请选择敌人’\"]\n    T1 --> T2[\"await key_input (目标)\"]\n    T2 --> T3[\"判断 target number\"]\n    T3 -->|1: EnemyA| T4[\"Set enemy_a_dead = true\"]\n    T3 -->|2: EnemyB| T5[\"Set enemy_b_dead = true\"]\n    T4 --> T6[\"UpdateCharacterStudies\"]\n    T5 --> T6"
+        },
+        {
+          "title": "回合切换与结束判定",
+          "code": "flowchart TD\n    R1[\"回合结束后\"] --> R2[\"CheckAllEnemiesDead\"]\n    R2 -->|全部死亡| R3[\"结束战斗 (EndBattle)\"]\n    R2 -->|未全部死亡| R4[\"切换到下一个玩家回合\"]\n    R4 --> R5[\"若还有玩家A/B 则重复 SelectAction 流程\"]\n    R5 --> R1"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T14:49:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 战斗回合制流程图谱\n\n## 总体战斗流程\n```mermaid\nflowchart TD\n    A1[\"Ready: 清空 console label\"] --> A2[\"EnterBattle: 输出‘进入战斗’\"]\n    A2 --> B1[\"PlayerA_Turn\"]\n    B1 --> B2[\"SelectAction\"]\n    B2 --> B3[\"AwaitKeyInput (动作)\"]\n    B3 --> B4[\"ProcessAction\"]\n    B4 --> C1[\"SelectTarget\"]\n    C1 --> C2[\"AwaitKeyInput (目标)\"]\n    C2 --> C3[\"ApplyDamage\"]\n    C3 --> D1[\"UpdateState\"]\n    D1 --> D2[\"CheckAllEnemiesDead\"]\n    D2 -->|全部死亡| E1[\"EndBattle\"]\n    D2 -->|未全部死亡| E2[\"NextTurn\"]\n    E2 -->|若还有玩家| B1\n    E2 -->|若玩家结束| E1\n```\n\n## 按键输入与信号处理\n```mermaid\nflowchart TD\n    I1[\"定义 Signal key_input(number:int)\"] --> I2[\"在 process 中监听 Input.get_key\"]\n    I2 --> I3[\"匹配数字 1‑4 对应 Action1‑Action4\"]\n    I3 --> I4[\"触发 key_input 信号\"]\n    I4 --> I5[\"await key_input\"]\n    I5 --> I6[\"返回按键数字\"]\n    I6 --> I7[\"用于后续判断 (SelectAction / SelectTarget)\"]\n```\n\n## 动作选择与目标选择\n```mermaid\nflowchart TD\n    S1[\"SelectAction: 显示‘请选择动作’\"] --> S2[\"await key_input (动作)\"]\n    S2 --> S3[\"判断 number\"]\n    S3 -->|1: Attack| S4[\"Proceed to SelectTarget\"]\n    S3 -->|其他: 未实现| S5[\"待扩展\"]\n    S4 --> T1[\"SelectTarget: 显示‘请选择敌人’\"]\n    T1 --> T2[\"await key_input (目标)\"]\n    T2 --> T3[\"判断 target number\"]\n    T3 -->|1: EnemyA| T4[\"Set enemy_a_dead = true\"]\n    T3 -->|2: EnemyB| T5[\"Set enemy_b_dead = true\"]\n    T4 --> T6[\"UpdateCharacterStudies\"]\n    T5 --> T6\n```\n\n## 回合切换与结束判定\n```mermaid\nflowchart TD\n    R1[\"回合结束后\"] --> R2[\"CheckAllEnemiesDead\"]\n    R2 -->|全部死亡| R3[\"结束战斗 (EndBattle)\"]\n    R2 -->|未全部死亡| R4[\"切换到下一个玩家回合\"]\n    R4 --> R5[\"若还有玩家A/B 则重复 SelectAction 流程\"]\n    R5 --> R1\n```",
+  "diagrams": [
+    {
+      "title": "总体战斗流程",
+      "code": "flowchart TD\n    A1[\"Ready: 清空 console label\"] --> A2[\"EnterBattle: 输出‘进入战斗’\"]\n    A2 --> B1[\"PlayerA_Turn\"]\n    B1 --> B2[\"SelectAction\"]\n    B2 --> B3[\"AwaitKeyInput (动作)\"]\n    B3 --> B4[\"ProcessAction\"]\n    B4 --> C1[\"SelectTarget\"]\n    C1 --> C2[\"AwaitKeyInput (目标)\"]\n    C2 --> C3[\"ApplyDamage\"]\n    C3 --> D1[\"UpdateState\"]\n    D1 --> D2[\"CheckAllEnemiesDead\"]\n    D2 -->|全部死亡| E1[\"EndBattle\"]\n    D2 -->|未全部死亡| E2[\"NextTurn\"]\n    E2 -->|若还有玩家| B1\n    E2 -->|若玩家结束| E1"
+    },
+    {
+      "title": "按键输入与信号处理",
+      "code": "flowchart TD\n    I1[\"定义 Signal key_input(number:int)\"] --> I2[\"在 process 中监听 Input.get_key\"]\n    I2 --> I3[\"匹配数字 1‑4 对应 Action1‑Action4\"]\n    I3 --> I4[\"触发 key_input 信号\"]\n    I4 --> I5[\"await key_input\"]\n    I5 --> I6[\"返回按键数字\"]\n    I6 --> I7[\"用于后续判断 (SelectAction / SelectTarget)\"]"
+    },
+    {
+      "title": "动作选择与目标选择",
+      "code": "flowchart TD\n    S1[\"SelectAction: 显示‘请选择动作’\"] --> S2[\"await key_input (动作)\"]\n    S2 --> S3[\"判断 number\"]\n    S3 -->|1: Attack| S4[\"Proceed to SelectTarget\"]\n    S3 -->|其他: 未实现| S5[\"待扩展\"]\n    S4 --> T1[\"SelectTarget: 显示‘请选择敌人’\"]\n    T1 --> T2[\"await key_input (目标)\"]\n    T2 --> T3[\"判断 target number\"]\n    T3 -->|1: EnemyA| T4[\"Set enemy_a_dead = true\"]\n    T3 -->|2: EnemyB| T5[\"Set enemy_b_dead = true\"]\n    T4 --> T6[\"UpdateCharacterStudies\"]\n    T5 --> T6"
+    },
+    {
+      "title": "回合切换与结束判定",
+      "code": "flowchart TD\n    R1[\"回合结束后\"] --> R2[\"CheckAllEnemiesDead\"]\n    R2 -->|全部死亡| R3[\"结束战斗 (EndBattle)\"]\n    R2 -->|未全部死亡| R4[\"切换到下一个玩家回合\"]\n    R4 --> R5[\"若还有玩家A/B 则重复 SelectAction 流程\"]\n    R5 --> R1"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T14:49:41+00:00"
+}

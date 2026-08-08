@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1C9QCBdE1U",
+  "title": "【Godot教程】伤害数字生成器：暴击变色、随机漂浮、可复用，一看就会 #Godot #Godot教程 #游戏开发 #伤害数字 #独立游戏 #游戏编程 #自定义",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3224,
+  "text": "你可以通过视频描述中的免费链接下载r资源\n但这些简单的伤害数值可以轻松添加到游戏中的任何敌人\n我们将创建自定义节点，通过添加节点窗口像其他节点一样添加\n该节点将包含生成伤害数值标签的所有逻辑\n我们这样做请前往脚本标签\n然后前往文件新建脚本\n将其命名为伤害数值生成器并点击创建\n首先确保它继承自no two d\n这是因为我们需要获取节点td的位置值\n这就是我们添加自定义节点的时候\n它将包含所有继承属性\n允许我们将这个生物定位到数值出现的位置\n我们将类名定义为伤害数值生成器\n这将使脚本在添加节点窗口中变为节点\n右侧名称是自定义节点的名称\n因此这是我们搜索的目标\n当我们下次向场景添加此节点时\n我们将建立两个导出变量\n标签设置将保存生成标签的所有参数\n因为标签设置资源包含多种数据\n例如字体、字体大小\n字体颜色、描边\n而关键命中颜色是击中时字体的颜色\n我们将默认值设为红色\n不过这里建议改为常用颜色\n可以通过color点加颜色名称\n或使用十六进制字符串\n如果\n你这样做的话\n点击颜色可更方便选择\n此外\n我们将这两个导出变量\n以便每个添加的节点有不同的值\n允许不同敌人显示不同外观的伤害标签\n这在需要为对手伤害使用不同颜色时尤其有用\n与对方造成的伤害形成对比\n此外\n可以自由添加所需导出变量\n用于设置后续脚本的各种属性\n我们将创建自定义函数spawn_label\n该函数有两个参数\nnumber是标签需要显示的数值\ncritical_hit\n用于判断是否切换为关键命中颜色\n此参数默认值设为false\n这样如果某些敌人无法受击\n只需调用函数并传入数值即可\n首先定义new_label变量\n保存新创建的标签节点\n然后设置标签的文本属性\n我们使用str将数字转换为可用于文本属性的字符串\n对于这个\n我们还使用三元if语句来使用精确的数字\n如果括号中的数字的小数位为零\n否则我们将使用数字的小数位版本，小数位简单等于一个数字\n根据需要达到非零小数位所需的小数位数\n所以如果数字等于十点零\n它返回零\n因为没有非零小数\n如果数字等于十点五\n则返回一\n这避免了标签显示十点零\n而是以整数形式显示数字\n意味着只显示十\n我们将设置标签的标签设置\n为标签设置导出变量的副本\n这是为了确保如果我们将颜色更改为致命打击颜色\n不会在所有层级上更改\n使用此层级设置\n然后我将z轴索引设置为一千左右\n以便标签出现在游戏内容之上\n不过你可能需要调整这个值\n更高的数值\n根据你的游戏z轴索引的设置\nz轴索引最重要的部分是确保标签显示在最上层\n所有其他内容之上\n我们将对齐方式设为标签的底部中心\n这样当我们改变并动画化标签的缩放\n原点将位于底部中心\n另外我们没有设置标签节点的全局位置\n我们将添加一个标签作为生成器的子节点\n这会使标签的零零位置等于生成器的精确位置\n我们将\n然而\n需要添加轻微偏移以对齐偏移量到零\n生成器的零点\n这将在后续步骤中完成\n如果我们触发致命打击\n则获取标签的层级设置\n更改其字体颜色为致命打击颜色\n同时确保你在编辑层级\n层级设置而非层级设置导出变量\n此外如果游戏中有任何光照\n且不希望标签受二维光照影响\n可以创建一个变量保存新层级材质\n将其应用到新画布项\n材质的光照模式\n光照模式设为无光照\n然后将该层级材质应用到层级节点的材质\n这将忽略来自二维光照节点的光照和阴影\n虽然这场火完全是可选的\n最后我们添加一个名为生成器子节点的标签\n并使用call deferred在当前帧末尾添加标签节点\n这样我们可以对调整信号使用权重\n当标签因文本设置改变尺寸时会自然触发\n从而可以设置标签节点位置的偏移量\n基于标签的尺寸\n使标签底部中间定位在生成点为零\n零\n通过使用call deferred\n确保事件顺序正确避免潜在错误\n此外\n如果您希望标签生成位置有轻微偏移\n也可以添加这行代码\n现在会在x轴和y轴各添加-5到5的随机值\n对于标签节点的动画\n我们将建立三个变量来帮助定位目标位置\n使其看起来像是上升效果\n这将等于当前标签的位置\ny轴随机值在-2到-16之间\n使其通过不同数值实现上升效果\n看起来动画以不同速度上升\n同时对目标位置的水平位置添加轻微随机性\n但数值不会直接垂直上升\n让玩家能区分同时出现的多个伤害标签\nWilength是动画的总时长\n由于动画需要持续一定时间\n因此会营造出某些层级需要更快上升的错觉\n因为它们需要到达更高位置\n这也是我们为垂直位置提供随机性的原因\n要实际执行这个动画\n我们创建一个名为level tween的变量\n将保存新创建的tween对象\ntween简单地获取节点的属性\n并在指定时间内移动到目标值\n默认情况下tween使用线性方式接近目标值\n为了提供更平滑的动画效果\n我将使用set transition将tween设为回弹过渡\n设置缓动函数\n使用ease out\n您可以根据需要调整这些值\n以改变动画效果\n现在调整动画外观\n要激活tween并提供必要数据\n我们将使用tween属性函数三次获取标签节点\n要影响的目标属性\n最后是动画的总时长\n我们使用twin length变量，对于第一个tween\n将位置移动到目标上升位置，第二个\n将缩放改为1.35x1.35的向量\n然后我们将向量二点乘一乘以一点三五以便简化计算\n如果你想之后修改这个值\n你只需编辑一个数字即可同时修改两个轴上的值\n最后\n我们移动模数\n将标签的透明度调整至零使其不可见\n另外请注意我们使用冒号而非点\n当你处于字符串中时\n属性操作时务必使用冒号而非点\n使用三个缓动属性函数于同一缓动变量的问题\n是我们需要告知Godot同时运行这些操作\n可通过在缓动属性函数前调用parallel函数实现\n我们无需为第一个函数添加此操作\n因为我们正在让Godot同时运行这两个属性函数\n与已调用的第一个函数并行执行\n最后\n我们需要找到在动画完成后删除此标签的方法\n我们这样做\n使用connect连接内置的缓动完成信号\n该信号在缓动属性函数完成时触发\n并连接到标签节点的free函数\n当模数值达到零时调用free\n使节点在不可见时自动删除以添加此伤害数字系统\n前往游戏中的任意敌人\n点击加号并添加伤害数字\n生成我们创建的场景\n请注意这是脚本中先前定义的类名\n如果未显示\n确保类名拼写与之前一致\n如果仍不显示\n保存Godot项目并重新打开选中的节点\n添加到场景后点击创建\n可自由调整节点位置\n到你希望标签生成的位置\n我将我的移动到Y轴两处\n接下来设置导出变量\n设置你想要的暴击颜色\n选择标签设置中的空对象\n导出并创建新的层级设置\n你可以自由调整任何数值\n设置字体\n字体大小\n描边大小和颜色\n以及其他更多参数\n如果不同场景中的不同敌人\n所有标签都将使用相同属性\n选择下拉菜单点击保存命名为我的伤害标签基础\n现在当我需要添加新层级设置时\n点击文件夹图标选择刚创建的伤害标签基础\n若仅需使用典型标签设置的大部分参数\n你可能想针对特定敌人调整几个参数\n再次选择下拉菜单并点击生成唯一项\n这样后续修改不会影响我们刚刚保存的标签设置文件\n当所有参数设置完成后\n按照你的需求\n对于生成标签的视觉效果\n我们可以前往敌人的脚本\n我们需要做的就是获取伤害数值\n我们刚创建的生成器节点\n调用生成标签函数\n传入想要造成的伤害数值\n你可以在这里直接输入数字\n如果需要的话\n是否为暴击判定\n你可以在这里输入true或false\n同样需要的话\n需要注意的是，如果某个敌人或物体\n无法受到暴击伤害\n可以直接传递伤害数值\nGoda将使用我们之前设置的暴击变量默认值\n该默认值为false，再次强调\n为避免混淆\n你无需为伤害或暴击单独创建变量\n可以直接传递整数或带小数的数值\n并配合true或false作为暴击参数\n现在你已拥有一个简单的伤害数值生成器\n之后可以将其添加到任意敌人的两个解码游戏中\n别忘了在描述中分享项目文件",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1C9QCBdE1U",
+  "published_at": "1774399034",
+  "fetched_at": "2026-08-07T02:30:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 伤害数字生成器知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"DamageNumberGenerator（自定义节点）\"]\n    A2[\"Export Variables（颜色、字体、尺寸等）\"]\n    A3[\"LabelSettings Resource\"]\n    A4[\"spawn_label() 函数\"]\n    A5[\"Critical Hit Color（关键命中颜色）\"]\n    A6[\"Z‑Index 设置\"]\n    A7[\"Deferred 添加标签节点\"]\n    A8[\"Tween 动画系统\"]\n    A9[\"Cleanup（Tween 完成后 free）\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A2 --> A5\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A4 --> A7\n    A7 --> A8\n    A8 --> A9\n```\n\n## spawn_label 流程\n```mermaid\nflowchart TD\n    S1[\"调用 spawn_label(number, critical_hit)\"]\n    S2[\"创建 new_label 节点\"]\n    S3[\"设置文本：数字 → 字符串（处理小数位）\"]\n    S4[\"复制 LabelSettings（防止全局修改）\"]\n    S5[\"设置 Z‑Index（约 1000）\"]\n    S6[\"将标签作为子节点并添加轻微偏移\"]\n    S7[\"若 critical_hit 为 true → 设置字体颜色为 Critical Hit Color\"]\n    S8[\"可选：创建 No‑Light 材质并应用于标签\"]\n    S9[\"使用 call_deferred 将标签加入场景\"]\n    S10[\"返回 new_label（供后续动画使用）\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7\n    S7 --> S8 --> S9 --> S10\n    S6 --> S8\n```\n\n## 动画与清理链路\n```mermaid\nflowchart TD\n    T1[\"初始化 Tween 对象\"]\n    T2[\"计算目标位置：Y 随机 -2~‑16，X 随机 -5~5\"]\n    T3[\"设置位置 Tween（线性 → Bounce 过渡）\"]\n    T4[\"设置缩放 Tween（目标 1.35×1.35）\"]\n    T5[\"设置透明度 Tween（从 1 渐变至 0）\"]\n    T6[\"使用 ease_out 缓动函数\"]\n    T7[\"并行执行位置、缩放、透明度 Tween\"]\n    T8[\"连接 tween_completed 信号 → 标签 free()\"]\n    T9[\"动画结束后标签自动删除\"]\n\n    T1 --> T2 --> T3\n    T1 --> T4\n    T1 --> T5\n    T3 --> T6\n    T4 --> T6\n    T5 --> T6\n    T6 --> T7\n    T7 --> T8 --> T9\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"DamageNumberGenerator（自定义节点）\"]\n    A2[\"Export Variables（颜色、字体、尺寸等）\"]\n    A3[\"LabelSettings Resource\"]\n    A4[\"spawn_label() 函数\"]\n    A5[\"Critical Hit Color（关键命中颜色）\"]\n    A6[\"Z‑Index 设置\"]\n    A7[\"Deferred 添加标签节点\"]\n    A8[\"Tween 动画系统\"]\n    A9[\"Cleanup（Tween 完成后 free）\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A2 --> A5\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A4 --> A7\n    A7 --> A8\n    A8 --> A9"
+        },
+        {
+          "title": "spawn_label 流程",
+          "code": "flowchart TD\n    S1[\"调用 spawn_label(number, critical_hit)\"]\n    S2[\"创建 new_label 节点\"]\n    S3[\"设置文本：数字 → 字符串（处理小数位）\"]\n    S4[\"复制 LabelSettings（防止全局修改）\"]\n    S5[\"设置 Z‑Index（约 1000）\"]\n    S6[\"将标签作为子节点并添加轻微偏移\"]\n    S7[\"若 critical_hit 为 true → 设置字体颜色为 Critical Hit Color\"]\n    S8[\"可选：创建 No‑Light 材质并应用于标签\"]\n    S9[\"使用 call_deferred 将标签加入场景\"]\n    S10[\"返回 new_label（供后续动画使用）\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7\n    S7 --> S8 --> S9 --> S10\n    S6 --> S8"
+        },
+        {
+          "title": "动画与清理链路",
+          "code": "flowchart TD\n    T1[\"初始化 Tween 对象\"]\n    T2[\"计算目标位置：Y 随机 -2~‑16，X 随机 -5~5\"]\n    T3[\"设置位置 Tween（线性 → Bounce 过渡）\"]\n    T4[\"设置缩放 Tween（目标 1.35×1.35）\"]\n    T5[\"设置透明度 Tween（从 1 渐变至 0）\"]\n    T6[\"使用 ease_out 缓动函数\"]\n    T7[\"并行执行位置、缩放、透明度 Tween\"]\n    T8[\"连接 tween_completed 信号 → 标签 free()\"]\n    T9[\"动画结束后标签自动删除\"]\n\n    T1 --> T2 --> T3\n    T1 --> T4\n    T1 --> T5\n    T3 --> T6\n    T4 --> T6\n    T5 --> T6\n    T6 --> T7\n    T7 --> T8 --> T9"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T02:30:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 伤害数字生成器知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"DamageNumberGenerator（自定义节点）\"]\n    A2[\"Export Variables（颜色、字体、尺寸等）\"]\n    A3[\"LabelSettings Resource\"]\n    A4[\"spawn_label() 函数\"]\n    A5[\"Critical Hit Color（关键命中颜色）\"]\n    A6[\"Z‑Index 设置\"]\n    A7[\"Deferred 添加标签节点\"]\n    A8[\"Tween 动画系统\"]\n    A9[\"Cleanup（Tween 完成后 free）\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A2 --> A5\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A4 --> A7\n    A7 --> A8\n    A8 --> A9\n```\n\n## spawn_label 流程\n```mermaid\nflowchart TD\n    S1[\"调用 spawn_label(number, critical_hit)\"]\n    S2[\"创建 new_label 节点\"]\n    S3[\"设置文本：数字 → 字符串（处理小数位）\"]\n    S4[\"复制 LabelSettings（防止全局修改）\"]\n    S5[\"设置 Z‑Index（约 1000）\"]\n    S6[\"将标签作为子节点并添加轻微偏移\"]\n    S7[\"若 critical_hit 为 true → 设置字体颜色为 Critical Hit Color\"]\n    S8[\"可选：创建 No‑Light 材质并应用于标签\"]\n    S9[\"使用 call_deferred 将标签加入场景\"]\n    S10[\"返回 new_label（供后续动画使用）\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7\n    S7 --> S8 --> S9 --> S10\n    S6 --> S8\n```\n\n## 动画与清理链路\n```mermaid\nflowchart TD\n    T1[\"初始化 Tween 对象\"]\n    T2[\"计算目标位置：Y 随机 -2~‑16，X 随机 -5~5\"]\n    T3[\"设置位置 Tween（线性 → Bounce 过渡）\"]\n    T4[\"设置缩放 Tween（目标 1.35×1.35）\"]\n    T5[\"设置透明度 Tween（从 1 渐变至 0）\"]\n    T6[\"使用 ease_out 缓动函数\"]\n    T7[\"并行执行位置、缩放、透明度 Tween\"]\n    T8[\"连接 tween_completed 信号 → 标签 free()\"]\n    T9[\"动画结束后标签自动删除\"]\n\n    T1 --> T2 --> T3\n    T1 --> T4\n    T1 --> T5\n    T3 --> T6\n    T4 --> T6\n    T5 --> T6\n    T6 --> T7\n    T7 --> T8 --> T9\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"DamageNumberGenerator（自定义节点）\"]\n    A2[\"Export Variables（颜色、字体、尺寸等）\"]\n    A3[\"LabelSettings Resource\"]\n    A4[\"spawn_label() 函数\"]\n    A5[\"Critical Hit Color（关键命中颜色）\"]\n    A6[\"Z‑Index 设置\"]\n    A7[\"Deferred 添加标签节点\"]\n    A8[\"Tween 动画系统\"]\n    A9[\"Cleanup（Tween 完成后 free）\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A2 --> A5\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A4 --> A7\n    A7 --> A8\n    A8 --> A9"
+    },
+    {
+      "title": "spawn_label 流程",
+      "code": "flowchart TD\n    S1[\"调用 spawn_label(number, critical_hit)\"]\n    S2[\"创建 new_label 节点\"]\n    S3[\"设置文本：数字 → 字符串（处理小数位）\"]\n    S4[\"复制 LabelSettings（防止全局修改）\"]\n    S5[\"设置 Z‑Index（约 1000）\"]\n    S6[\"将标签作为子节点并添加轻微偏移\"]\n    S7[\"若 critical_hit 为 true → 设置字体颜色为 Critical Hit Color\"]\n    S8[\"可选：创建 No‑Light 材质并应用于标签\"]\n    S9[\"使用 call_deferred 将标签加入场景\"]\n    S10[\"返回 new_label（供后续动画使用）\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7\n    S7 --> S8 --> S9 --> S10\n    S6 --> S8"
+    },
+    {
+      "title": "动画与清理链路",
+      "code": "flowchart TD\n    T1[\"初始化 Tween 对象\"]\n    T2[\"计算目标位置：Y 随机 -2~‑16，X 随机 -5~5\"]\n    T3[\"设置位置 Tween（线性 → Bounce 过渡）\"]\n    T4[\"设置缩放 Tween（目标 1.35×1.35）\"]\n    T5[\"设置透明度 Tween（从 1 渐变至 0）\"]\n    T6[\"使用 ease_out 缓动函数\"]\n    T7[\"并行执行位置、缩放、透明度 Tween\"]\n    T8[\"连接 tween_completed 信号 → 标签 free()\"]\n    T9[\"动画结束后标签自动删除\"]\n\n    T1 --> T2 --> T3\n    T1 --> T4\n    T1 --> T5\n    T3 --> T6\n    T4 --> T6\n    T5 --> T6\n    T6 --> T7\n    T7 --> T8 --> T9"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:30:48+00:00"
+}

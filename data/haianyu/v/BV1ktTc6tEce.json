@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1ktTc6tEce",
+  "title": "[101]. H2O：KV缓存压缩论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3457,
+  "text": "今天我们来介绍一篇关于大语言模型\nKV缓存压缩的工作\n标题叫做H2O\n全称是heavy hater\nOracle for efficient generative\nInfluence of large language models\n这篇论文关注的问题是\n大语言模型在生成较长文本时\nKV缓存会随序列长度线性增长\n带来很高的显存开销\n论文的核心发现可以总结为三点\n第一注意力矩阵在推理时非常稀疏\n只用很少一部分KV就能维持效果\n第二真正重要的是一小部分\n被称为heavy haters的token\n第三可以用一个低成本的贪心策略\n同时保留最近token和heavy haters\n从而在压缩KV缓存的同时保持生成质量\n在多个模型和任务上的实验表明\nH2O能把KV缓存压缩到原来的20%\n并显著提升推理吞吐\n降低延迟\n下面看一下摘要\n翻译大语言模型虽然取得了令人瞩目的成就\n但部署成本很高\n尤其是在对话系统和故事写作等\n长内容生成应用中\n除了模型参数外\nKB缓存这种瞬态状态信息\n也会随序列长度和batch size线性增长\n占用大量GPU显存\n本文提出了一种新的KV缓存实现方式\n能够显著减少显存占用\n该方法基于一个关键观察\n在计算注意力分数时\n只有一小部分token贡献了大部分数值\n论文将这些token称为heavy haters\n简称H2\n通过系统分析\n作者发现H2的出现是自然的\n并且与文本中token的频繁贡献高度相关\n同时去掉这些token会导致性能显著下降\n基于这些发现\n论文提出了heavy hater oracle\n也就是H2O\n这是一种KV缓存逐出策略动态的同时\n保留最近token和H2token\n论文将KV缓存逐出问题建模为动态子模问题\n并在温和假设下给出了新逐出算法的理论保证\n作者在opp t la和GPTNEX上的大量任务中\n验证了算法精度\nh two o在只保留twenty percent\nheavy haters的情况下相比\nDeep speed zero\nInfluence\nHacking\nFace\naccelerate和flex gen3个推理系统\n在OPT6.7B和opp t30B上\n分别实现了最高29倍\n29倍和三倍的吞吐提升\n在相同batch size下延迟最高可降低1.9倍\n下面看一下这张图\n这张图展示了hr o的整体框架\n以及与几种典型稀疏策略的对比\n上方从左到右分别是动态稀疏\n静态步进稀疏\n静态局部稀疏以及H2O的静态稀疏模式\n可以看到\n动态稀疏需要存储任意位置的KV缓存\n压力大\n静态步进稀疏\n按照固定间隔保留\ntoken可能会丢掉关键信息\n静态局部稀疏只保留最近的token\n长城依赖会受损\n而hr o把缓存分成两部分\n一部分留给最近的token\n另一部分留给历史中出现频率高\n注意力分数大的heavy haters\n下方\n左侧展示了HRO在单个解码步骤中的操作\nquery与缓存中的key计算注意力分数\n然后根据累计分数决定哪些KV保留\n哪些可以逐出右侧的曲线\n则对比了不同稀疏策略\n在显存缩减比例增加时的准确率变化\nH2O在很大程度的压缩下\n仍能保持接近完整的性能\n下面看一下这张图\n这张图呈现了论文的两个核心观察子图\nA显示在预训练好的大语言模型中\n注意力矩阵非常稀疏\n把每行中绝对值小于最大值1%的元素\n视为零后\n几乎各层的稀疏度都超过95%\n这说明推理时并不需要保留所有KV子图\nB展示了累计注意力分数与词贡献次数的关系\n红色散点是每个词的累计注意力分数\n灰色曲线是词在数据中的贡献频次\n两者高度吻合\n子图C\n对比了完整KV基线\n与去掉heavy haters后的性能\n去掉后准确率明显下降\n说明heavy haters对维持模型能力很关键\n子徒D则进一步比较了\n只用局部统计\n只用全局统计以及H2O的组合策略验证了\n同时考虑heavy haters和最近token效果最好\n下面看一下这个公式\n这个公式是论文对待缓存限制的生成过程\n的形式化\n给定一个固定的KB缓存预算\nK每一轮解码时\n缓存中保留的token集合即为SI\n由于缓存容量有限\n在预测第I个token时\n我们只能看到SI里的key和value\n公式中\noi表示基于当前可用缓存计算出的归一化\n注意力向量DI是相应的归一化系数被逐出的\nKV在计算时被置为零\n同时在分母里也要把他们的影响减掉\n把SI替换成全部历史token的集合\n就退化为标准的无缓存限制的生成过程\n这个形式化的意义在于\n它把问题转化为寻找一个逐出策略\n使得带缓存限制的生成输出\n与完整KV缓存的输出尽可能接近\n下面看一下这个公式\n这个公式定义了论文提出的动态子模框架函数\nF输入两个集合\n如果固定其中一个集合Z\n那么F关于另一个变量是子模函数\n直观理解是\n当缓存中已经保留的集合X越大时\n再增加一个新的token所带来的边际收益越小\n这个性质被称为收益递减\n它是贪心算法\n能够获得近似保证的关键论文\n把KB缓存逐出问题放到这个动态子模框架下\n从而可以用贪心策略来选择要保留的token\n而不需要遍历所有可能的缓存组合\n这样就在理论上说明\n为什么在每一步简单地保留累计注意力\n分数最高的token能够得到接近最优的缓存配置\n下面看一下这段伪代码\n这段算法描述了hr的核心主出流程\n算法输入query矩阵\nQK矩阵K以及缓存预算K初始化时\n缓存集合S0为空\n对于每一个生成步骤I\n如果当前token总数还没有超过缓存预算\n就直接把新token加入缓存\n否则先基于当前缓存SI减一计算\n归一化注意力oi\n然后定义一个分数函数f score\n它把集合T中所有token的注意力分数求和\n接下来构造候选集合GI\n也就是把新token加入后的缓存\n然后从中找出那个移除后\n能使剩余集合分数最大的token u把他逐出\n这样每一步只逐出一个得分最低的token\n并保持缓存大小恒定为K\n整个算法不需要看到\n未来token只依赖当前和历史的局部统计\n因此实现成本低\n适合在线推理\n下面看一下这张图\n这张图展示了ho在不同模型和任务上的端到端\n准确率\n横轴是KV缓存预算占完整缓存的百分比\n纵轴是任务指标\n图中蓝色线代表HRO\n橙色线代表只保留最近token的local策略\n黑色虚线代表保留完整KB的基线\n可以明显看出\n当缓存预算从100%\n逐渐下降到20%甚至更低时\nlocal策略在很多任务上迅速崩溃\n而H2O在大幅压缩缓存的情况下\n仍然紧贴完整极限\n这个结果覆盖了xm m CNN daily mail\nOpen book q a copa\nMASQA和RTE等多个任务\n涉及拉马opt和gt neo x等不同模型规模\n说明H2O具有较好的泛化能力\n下面看一下这个表\n这个表比较了H2O与几个主流推理系统\n在T4GPU上的生成吞吐单位是token\n每秒表中512+32\n表示提示长度为512\n生成长度为32\n其余类似括号里的数字表示有效\nbatch size和最低存储层级\nC代表CPU卸载\nG代表纯GPU\n可以看到在多个序列长度和模型规模组合下\nHRO的吞吐都明显高于accelerate\ndeep speed和flex jin\n例如在512+512\nOPT6.7B的设置下\n而flex gen为16.8\naccelerate为15.5\ndeep speed为9.6\n表中最后一行还显示在更长序列\n512+1024\nbatch size为64时\nflex gen已经出现显存不足OOM\n而H2O仍能以每秒1000\n160一个token运行\n这说明H2O通过释放KV缓存空间\n能够支持更大的batch size和更长的序列\n下面看一下这张图\n这张图展示了\nH2O在超长序列场景下的能力上\n方子图的横轴是输入长度\n从零到400万token\n纵轴是负对数\n自然曲线没有出现明显发散\n说明H2O能够稳定处理\n长度达到400万的流失\n输入下方子图\n对比了原始stream LLM和加入hr o后的stream LLM\n在不同缓存大小下的困惑度\n红色三角形代表加入hr o后的方法\n黑色星号代表原始stream LLM\n可以看到\n在250到2000的缓存大小范围内\n加入H2O后的困惑度始终低于原始方法\n缓存越小时优势越明显\n这意味着\n即使在与流式推理方法结合时\n保留heavy haters\n仍然能够提升模型对长上下文的建模能力",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ktTc6tEce",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

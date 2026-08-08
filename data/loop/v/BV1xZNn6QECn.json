@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1xZNn6QECn",
+  "title": "两分钟教你在Godot用Shader创建爆炸范围显示",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 644,
+  "text": "在上一期视频中\n我们演示了一个吃汉堡的游戏\n在两分半内\n我将教会你怎么做爆炸范围指示\n进入格斗\n我们可以看到爆炸范围其实是由三个部分组成\n底色FU部分外圈\n另部分波动\nwave部分\n打开一个新的项目\n根据你的需要创建根节点\n然后添加一个spite\n创建一个max节点\n作为C的容器\n给max类型选择方形\nQuad mesh\n调整一下方形大小作为SHADER范围\n在material中选择SHADER\nMaterial\n新建一个C的脚本\n打开C的脚本\n填入我们事先写好的脚本\n在脚本中前两行表示2dc的不走光照\n这部分是范围指示器的参数\n我们一会演示留余量\n防止被边缘裁切\n这部分先做坐标\n中间转换\n再自适应压缩\n最后定义颜色渐变\n随urgency变量变化\nFU部分核心逻辑inside把范围限制在边界内\nradio控制中心\n但边缘浓\n最后呈urgency紧\n坡度越高\n内部越亮\n外圈论部分核心逻辑\n外圈先做细环\n再用角度切虚线\n最后让圆环转起来波动\nwave部分核心逻辑T在0~1循环W\n把波前从中心推到边界\n到边界时\n弹出范围限制在inside内\n避免跑到圈外\n紧迫度越高\nPOSB越快\n视觉压迫感越强\n最后将三层合成即可\n调节默认的范围大小和比例\n产生伪3D的感觉\n调整默认的SHADER参数\nHPX控制边缘宽度\nDash count\n控制虚线段数\nspin控制转速\nFALPHA控制底色透明度\n最后你可以用脚本驱动urgency\n已达成爆炸紧迫程度的渐变\n至此你已学会我们评论区再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1xZNn6QECn",
+  "published_at": "1783735200",
+  "fetched_at": "2026-08-06T16:19:49+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

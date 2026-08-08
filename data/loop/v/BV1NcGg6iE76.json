@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1NcGg6iE76",
+  "title": "DeepSeek V4 Flash正式版发布！依旧测试《我的世界》",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 655,
+  "text": "昨天体验了一下迪普斯克V4flash正式版\n根据群友的说法\n目前很多的agent都不太适配\n效果都不太理想\n尤其是open code\n我们呃认为综合来说\n效果最好的应该是这个agent ronics x\n我也是新下载的REYNX\n发现\n也没有什么其他地方又要调的\n就是昨天试测试了一些任务之后\n发现最好的是\n首先这里执行方式我们要选择目标持续推进\n然后工作模式的话选择这个交付完整验证\n权限的话就是他会询问你权限的时候\n你是手动确认还是我是选择yellow\n就是直接给\n就是把所有权限都给他\n模型选择V4flash\n思考强度选择max还是那一段话提示词\n我现在以前是一句话\n现在是一段话提示词\n毕竟vs flash他只是一个不到300B的模型\n不能把它当做许愿机来用\n好的他也是嗯第一遍就写完了\n然后我让他修了一个bug\n他有一个bug\n我让他修好了\n我们来看一下成果\n那可以看到进来了之后\n现在他这个高亮是呃放置方块的那个\n一方崩溃\n地面上有花和草\n然后雾的话\n物化做的稍微有点怪哦\n对\n鬼灭的话\n他是他是做了浮力的\n已放置下方块\n说实话他是一个300B的模型吧\n所以说能写出这个我还其实还是比较满意的\n一开始的时候测试我不太懂那些设置啊\n所以说没有正确的设置RESNEX\n然后他写出来的东西效果就一般了\n我们往下挖一下\n看看能不能挖到矿石啊\n他的所有矿石都做了吧\n哦没有挖到矿石\n这个是煤矿\n好吧\n他的矿石密度很低啊\n没有办法也懒得让他修改了\n好的暂时就先到这里吧\n毕竟他是小模型嘛\n能到这个水平就是不错了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1NcGg6iE76",
+  "published_at": "1785546151",
+  "fetched_at": "2026-08-06T22:31:16+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 使用与评测图谱\n\n## 知识总览\n```mermaid\nflowchart TD\n    A1[\"DeepSeek V4 Flash 正式版\"]\n    B1[\"模型大小约300B\"]\n    C1[\"非许愿机，功能有限\"]\n    D1[\"多数 agent 不兼容\"]\n    E1[\"效果不理想\"]\n    F1[\"尤其是 open code\"]\n    G1[\"表现最佳的 agent: Ronics X\"]\n    H1[\"REYNX 下载使用\"]\n    I1[\"无需额外调参\"]\n    A1 --> B1\n    B1 --> C1\n    A1 --> D1\n    D1 --> E1\n    D1 --> F1\n    A1 --> G1\n    A1 --> H1\n    H1 --> I1\n```\n- DeepSeek V4 Flash 正式版 【BV1NcGg6iE76 P1 00:01】  \n- 多数 agent 不兼容 【BV1NcGg6iE76 P1 00:11】  \n- 效果不理想 【BV1NcGg6iE76 P1 00:15】  \n- 尤其是 open code 【BV1NcGg6iE76 P1 00:17】  \n- 最佳 agent Ronics X 【BV1NcGg6iE76 P1 00:26】  \n- REYNX 下载使用 【BV1NcGg6iE76 P1 00:33】  \n- 无需额外调参 【BV1NcGg6iE76 P1 00:41】  \n- 模型大小约300B 【BV1NcGg6iE76 P1 01:25】  \n- 非许愿机，功能有限 【BV1NcGg6iE76 P1 01:29】\n\n## REYNX 配置流程\n```mermaid\nflowchart LR\n    S1[\"选择执行方式\"]\n    S2[\"目标持续推进\"]\n    S3[\"工作模式: 交付完整验证\"]\n    S4[\"权限处理\"]\n    S5[\"询问权限\"]\n    S6[\"手动确认或选择 Yellow\"]\n    S7[\"直接授予全部权限\"]\n    S8[\"模型选择\"]\n    S9[\"DeepSeek V4 Flash\"]\n    S10[\"思考强度\"]\n    S11[\"Max 或 提示词段落\"]\n    S12[\"提示词形式\"]\n    S13[\"单句 → 段落\"]\n    S1 --> S2\n    S1 --> S3\n    S4 --> S5\n    S5 --> S6\n    S5 --> S7\n    S8 --> S9\n    S10 --> S11\n    S12 --> S13\n    S9 --> S10\n    S9 --> S12\n```\n- 选择执行方式：目标持续推进 【BV1NcGg6iE76 P1 00:49】  \n- 工作模式：交付完整验证 【BV1NcGg6iE76 P1 00:54】  \n- 权限询问 【BV1NcGg6iE76 P1 01:02】  \n- 手动确认或选择 Yellow 【BV1NcGg6iE76 P1 01:05】  \n- 直接授予全部权限 【BV1NcGg6iE76 P1 01:09】  \n- 模型选择 V4 Flash 【BV1NcGg6iE76 P1 01:14】  \n- 思考强度：Max 或 提示词段落 【BV1NcGg6iE76 P1 01:17】  \n- 提示词形式：单句 → 段落 【BV1NcGg6iE76 P1 01:22】\n\n## 结果与局限\n```mermaid\nflowchart TD\n    R1[\"Bug 修复\"]\n    R2[\"功能正常\"]\n    R3[\"方块放置高亮显示\"]\n    R4[\"地面出现花草\"]\n    R5[\"物理表现稍怪\"]\n    R6[\"实现浮力\"]\n    R7[\"模型约300B\"]\n    R8[\"整体满意度较高\"]\n    R9[\"初始设置不当\"]\n    R10[\"效果一般\"]\n    R11[\"尝试挖矿\"]\n    R12[\"未发现矿石\"]\n    R13[\"仅有煤矿\"]\n    R14[\"矿石密度低\"]\n    R15[\"放弃进一步修改\"]\n    R16[\"模型小，已达可接受水平\"]\n    R1 --> R2\n    R2 --> R3\n    R3 --> R4\n    R3 --> R5\n    R5 --> R6\n    R2 --> R7\n    R7 --> R8\n    R9 --> R10\n    R10 --> R11\n    R11 --> R12\n    R12 --> R13\n    R13 --> R14\n    R14 --> R15\n    R15 --> R16\n```\n- Bug 修复后功能正常 【BV1NcGg6iE76 P1 01:40】  \n- 方块放置高亮显示 【BV1NcGg6iE76 P1 01:54】  \n- 地面出现花草 【BV1NcGg6iE76 P1 02:13】  \n- 物理表现稍怪 【BV1NcGg6iE76 P1 02:21】  \n- 实现浮力 【BV1NcGg6iE76 P1 02:28】  \n- 模型约300B 【BV1NcGg6iE76 P1 02:45】  \n- 整体满意度较高 【BV1NcGg6iE76 P1 02:48】  \n- 初始设置不当导致效果一般 【BV1NcGg6iE76 P1 03:00】  \n- 尝试挖矿未发现矿石 【BV1NcGg6iE76 P1 03:24】、【BV1NcGg6iE76 P1 03:30】  \n- 煤矿显示，矿石密度低 【BV1NcGg6iE76 P1 03:57】、【BV1NcGg6iE76 P1 04:12】  \n- 放弃进一步修改，认可模型小的局限 【BV1NcGg6iE76 P1 04:20】、【BV1NcGg6iE76 P1 04:23】、【BV1NcGg6iE76 P1 04:25】",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    A1[\"DeepSeek V4 Flash 正式版\"]\n    B1[\"模型大小约300B\"]\n    C1[\"非许愿机，功能有限\"]\n    D1[\"多数 agent 不兼容\"]\n    E1[\"效果不理想\"]\n    F1[\"尤其是 open code\"]\n    G1[\"表现最佳的 agent: Ronics X\"]\n    H1[\"REYNX 下载使用\"]\n    I1[\"无需额外调参\"]\n    A1 --> B1\n    B1 --> C1\n    A1 --> D1\n    D1 --> E1\n    D1 --> F1\n    A1 --> G1\n    A1 --> H1\n    H1 --> I1"
+        },
+        {
+          "title": "REYNX 配置流程",
+          "code": "flowchart LR\n    S1[\"选择执行方式\"]\n    S2[\"目标持续推进\"]\n    S3[\"工作模式: 交付完整验证\"]\n    S4[\"权限处理\"]\n    S5[\"询问权限\"]\n    S6[\"手动确认或选择 Yellow\"]\n    S7[\"直接授予全部权限\"]\n    S8[\"模型选择\"]\n    S9[\"DeepSeek V4 Flash\"]\n    S10[\"思考强度\"]\n    S11[\"Max 或 提示词段落\"]\n    S12[\"提示词形式\"]\n    S13[\"单句 → 段落\"]\n    S1 --> S2\n    S1 --> S3\n    S4 --> S5\n    S5 --> S6\n    S5 --> S7\n    S8 --> S9\n    S10 --> S11\n    S12 --> S13\n    S9 --> S10\n    S9 --> S12"
+        },
+        {
+          "title": "结果与局限",
+          "code": "flowchart TD\n    R1[\"Bug 修复\"]\n    R2[\"功能正常\"]\n    R3[\"方块放置高亮显示\"]\n    R4[\"地面出现花草\"]\n    R5[\"物理表现稍怪\"]\n    R6[\"实现浮力\"]\n    R7[\"模型约300B\"]\n    R8[\"整体满意度较高\"]\n    R9[\"初始设置不当\"]\n    R10[\"效果一般\"]\n    R11[\"尝试挖矿\"]\n    R12[\"未发现矿石\"]\n    R13[\"仅有煤矿\"]\n    R14[\"矿石密度低\"]\n    R15[\"放弃进一步修改\"]\n    R16[\"模型小，已达可接受水平\"]\n    R1 --> R2\n    R2 --> R3\n    R3 --> R4\n    R3 --> R5\n    R5 --> R6\n    R2 --> R7\n    R7 --> R8\n    R9 --> R10\n    R10 --> R11\n    R11 --> R12\n    R12 --> R13\n    R13 --> R14\n    R14 --> R15\n    R15 --> R16"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T22:31:40+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 使用与评测图谱\n\n## 知识总览\n```mermaid\nflowchart TD\n    A1[\"DeepSeek V4 Flash 正式版\"]\n    B1[\"模型大小约300B\"]\n    C1[\"非许愿机，功能有限\"]\n    D1[\"多数 agent 不兼容\"]\n    E1[\"效果不理想\"]\n    F1[\"尤其是 open code\"]\n    G1[\"表现最佳的 agent: Ronics X\"]\n    H1[\"REYNX 下载使用\"]\n    I1[\"无需额外调参\"]\n    A1 --> B1\n    B1 --> C1\n    A1 --> D1\n    D1 --> E1\n    D1 --> F1\n    A1 --> G1\n    A1 --> H1\n    H1 --> I1\n```\n- DeepSeek V4 Flash 正式版 【BV1NcGg6iE76 P1 00:01】  \n- 多数 agent 不兼容 【BV1NcGg6iE76 P1 00:11】  \n- 效果不理想 【BV1NcGg6iE76 P1 00:15】  \n- 尤其是 open code 【BV1NcGg6iE76 P1 00:17】  \n- 最佳 agent Ronics X 【BV1NcGg6iE76 P1 00:26】  \n- REYNX 下载使用 【BV1NcGg6iE76 P1 00:33】  \n- 无需额外调参 【BV1NcGg6iE76 P1 00:41】  \n- 模型大小约300B 【BV1NcGg6iE76 P1 01:25】  \n- 非许愿机，功能有限 【BV1NcGg6iE76 P1 01:29】\n\n## REYNX 配置流程\n```mermaid\nflowchart LR\n    S1[\"选择执行方式\"]\n    S2[\"目标持续推进\"]\n    S3[\"工作模式: 交付完整验证\"]\n    S4[\"权限处理\"]\n    S5[\"询问权限\"]\n    S6[\"手动确认或选择 Yellow\"]\n    S7[\"直接授予全部权限\"]\n    S8[\"模型选择\"]\n    S9[\"DeepSeek V4 Flash\"]\n    S10[\"思考强度\"]\n    S11[\"Max 或 提示词段落\"]\n    S12[\"提示词形式\"]\n    S13[\"单句 → 段落\"]\n    S1 --> S2\n    S1 --> S3\n    S4 --> S5\n    S5 --> S6\n    S5 --> S7\n    S8 --> S9\n    S10 --> S11\n    S12 --> S13\n    S9 --> S10\n    S9 --> S12\n```\n- 选择执行方式：目标持续推进 【BV1NcGg6iE76 P1 00:49】  \n- 工作模式：交付完整验证 【BV1NcGg6iE76 P1 00:54】  \n- 权限询问 【BV1NcGg6iE76 P1 01:02】  \n- 手动确认或选择 Yellow 【BV1NcGg6iE76 P1 01:05】  \n- 直接授予全部权限 【BV1NcGg6iE76 P1 01:09】  \n- 模型选择 V4 Flash 【BV1NcGg6iE76 P1 01:14】  \n- 思考强度：Max 或 提示词段落 【BV1NcGg6iE76 P1 01:17】  \n- 提示词形式：单句 → 段落 【BV1NcGg6iE76 P1 01:22】\n\n## 结果与局限\n```mermaid\nflowchart TD\n    R1[\"Bug 修复\"]\n    R2[\"功能正常\"]\n    R3[\"方块放置高亮显示\"]\n    R4[\"地面出现花草\"]\n    R5[\"物理表现稍怪\"]\n    R6[\"实现浮力\"]\n    R7[\"模型约300B\"]\n    R8[\"整体满意度较高\"]\n    R9[\"初始设置不当\"]\n    R10[\"效果一般\"]\n    R11[\"尝试挖矿\"]\n    R12[\"未发现矿石\"]\n    R13[\"仅有煤矿\"]\n    R14[\"矿石密度低\"]\n    R15[\"放弃进一步修改\"]\n    R16[\"模型小，已达可接受水平\"]\n    R1 --> R2\n    R2 --> R3\n    R3 --> R4\n    R3 --> R5\n    R5 --> R6\n    R2 --> R7\n    R7 --> R8\n    R9 --> R10\n    R10 --> R11\n    R11 --> R12\n    R12 --> R13\n    R13 --> R14\n    R14 --> R15\n    R15 --> R16\n```\n- Bug 修复后功能正常 【BV1NcGg6iE76 P1 01:40】  \n- 方块放置高亮显示 【BV1NcGg6iE76 P1 01:54】  \n- 地面出现花草 【BV1NcGg6iE76 P1 02:13】  \n- 物理表现稍怪 【BV1NcGg6iE76 P1 02:21】  \n- 实现浮力 【BV1NcGg6iE76 P1 02:28】  \n- 模型约300B 【BV1NcGg6iE76 P1 02:45】  \n- 整体满意度较高 【BV1NcGg6iE76 P1 02:48】  \n- 初始设置不当导致效果一般 【BV1NcGg6iE76 P1 03:00】  \n- 尝试挖矿未发现矿石 【BV1NcGg6iE76 P1 03:24】、【BV1NcGg6iE76 P1 03:30】  \n- 煤矿显示，矿石密度低 【BV1NcGg6iE76 P1 03:57】、【BV1NcGg6iE76 P1 04:12】  \n- 放弃进一步修改，认可模型小的局限 【BV1NcGg6iE76 P1 04:20】、【BV1NcGg6iE76 P1 04:23】、【BV1NcGg6iE76 P1 04:25】",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    A1[\"DeepSeek V4 Flash 正式版\"]\n    B1[\"模型大小约300B\"]\n    C1[\"非许愿机，功能有限\"]\n    D1[\"多数 agent 不兼容\"]\n    E1[\"效果不理想\"]\n    F1[\"尤其是 open code\"]\n    G1[\"表现最佳的 agent: Ronics X\"]\n    H1[\"REYNX 下载使用\"]\n    I1[\"无需额外调参\"]\n    A1 --> B1\n    B1 --> C1\n    A1 --> D1\n    D1 --> E1\n    D1 --> F1\n    A1 --> G1\n    A1 --> H1\n    H1 --> I1"
+    },
+    {
+      "title": "REYNX 配置流程",
+      "code": "flowchart LR\n    S1[\"选择执行方式\"]\n    S2[\"目标持续推进\"]\n    S3[\"工作模式: 交付完整验证\"]\n    S4[\"权限处理\"]\n    S5[\"询问权限\"]\n    S6[\"手动确认或选择 Yellow\"]\n    S7[\"直接授予全部权限\"]\n    S8[\"模型选择\"]\n    S9[\"DeepSeek V4 Flash\"]\n    S10[\"思考强度\"]\n    S11[\"Max 或 提示词段落\"]\n    S12[\"提示词形式\"]\n    S13[\"单句 → 段落\"]\n    S1 --> S2\n    S1 --> S3\n    S4 --> S5\n    S5 --> S6\n    S5 --> S7\n    S8 --> S9\n    S10 --> S11\n    S12 --> S13\n    S9 --> S10\n    S9 --> S12"
+    },
+    {
+      "title": "结果与局限",
+      "code": "flowchart TD\n    R1[\"Bug 修复\"]\n    R2[\"功能正常\"]\n    R3[\"方块放置高亮显示\"]\n    R4[\"地面出现花草\"]\n    R5[\"物理表现稍怪\"]\n    R6[\"实现浮力\"]\n    R7[\"模型约300B\"]\n    R8[\"整体满意度较高\"]\n    R9[\"初始设置不当\"]\n    R10[\"效果一般\"]\n    R11[\"尝试挖矿\"]\n    R12[\"未发现矿石\"]\n    R13[\"仅有煤矿\"]\n    R14[\"矿石密度低\"]\n    R15[\"放弃进一步修改\"]\n    R16[\"模型小，已达可接受水平\"]\n    R1 --> R2\n    R2 --> R3\n    R3 --> R4\n    R3 --> R5\n    R5 --> R6\n    R2 --> R7\n    R7 --> R8\n    R9 --> R10\n    R10 --> R11\n    R11 --> R12\n    R12 --> R13\n    R13 --> R14\n    R14 --> R15\n    R15 --> R16"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:31:40+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1hrKp6NEj5",
+  "title": "[118]. Rectified Flow：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2566,
+  "text": "今天我们来介绍一篇\n关于生成模型与领域迁移的工作\n标题叫做rectified flow\n全称是flow straight and fast learning to generate\nAnd transfer data with rectified flow\n这篇论文研究\n如何用常微分方程\n把两个数据分布之间的映射路径变得尽量值\n它的核心做法可以总结为三点\n第一用样本对之间的线性差值方向\n来训练一个速度场网络\n第二通过REFLOW反复迭代\n让运输路径越来越直\n第三可以再用蒸馏把多步流压缩成一部模型\n实验表明\n在图像生成和图像到图像翻译等任务上\nRectified flow\n用很少的采样步数就能取得不错的效果\n下面看一下摘要翻译\n我们提出了rectified flow\n一种出奇简单的学习神经常微分方程\n模型的方法\n用于在两个经验观测分布之间进行运输\n从而为生成建模领域迁移\n以及其他设计分部运输的任务\n提供统一解决方案\nreactified flow的核心思想是\n让常微分方程\n尽量沿着连接两个分布采样点的直线路径前进\n这通过求解一个简单的非线性最小\n二乘优化问题来实现\n该问题易于扩展到大型模型\n且不引入标准监督学习之外的额外参数\n直线路径受到青睐\n因为两点之间线段最短\n并且可以在没有时间离散化的情况下\n被精确模拟\n从而得到计算高效的模型\n我们证明\n从数据中学习rectified flow的过程称为rectification\n它可以把分布之间的任由和转化为\n一个新的确定性耦合\n并且对所有to运输成本都不增\n此外递归地应用rectification\n可以得到一系列路径越来越直的流\n在推理阶段用粗力度时间离散化就能精确模拟\n在实证研究中\nrectified flow在图像生成\n图像到图像翻译和领域自适应上表现出色\n特别是在图像生成和翻译任务上\n我们的方法产生了接近直线的流\n即使只用一个欧拉离散化布\n也能得到高质量结果\n下面看一下这张图\n这张图用二维玩具例子解释了\nratified flow和直接线性差值的区别\n图A是原始的线性差值\n每个样本对X0和X1之间用直线连接\n但这些直线会在中间区域交叉\n由于交叉给定中间某个点XT时\n它可能来自不同的样本对\n导致线性差值过程是非因果的\n也就是说\n预测未来位置时\n需要知道终点X1to b展示了rectified的flow\ninduced by x0和X1留在交叉点处\n重新连接了轨迹\n从而避免了路径相交\n形成了一种新的确定性映射\nto c和to d进一步说明\n对rectified flow\n得到的端点Z0和Z1再做一次线性差值时\n路径已经基本不再交叉\n再次应用REACTIFICATION后\n轨迹几乎变成直线\n下面看一下这个公式\n这是rectify的flow的核心训练目标\n公式中\n对速度场V在0~1时间区间上做最小化\n最小化的对象是X1减X0\n这个真实直线方向\n与网络输出V在XT处取值之间的平方误差\n其中XT等于T乘以X1\n加上一减T乘以X0\n也就是X0和X1的线性差值\n直观理解网络学习的是在当前点XT处\n应该沿着哪个方向走\n才能尽量笔直的到达终点X1\n用这种方式训练出的速度场\n可以把原本需要知道终点才能计算的方向\n转化为一个只依赖当前状态和时间T的因果\nO de\n从而可以被数值求解器逐步模拟\n下面看一下这段伪代码\n这是rectified flow的主算法\n输入是从两个分布中采样得到的配对\nX0和X1以及一个带参数SETA的速度网络\nVSETA训练阶段\n算法从0~1均匀采样时间T\n然后最小化X1减X0与V\n在TX11减TX0处输出之间的平方误差\n得到训练好的速度场\n采样阶段从初始分布中取出Z0\n沿着常微分方程DZT等于V\nZTTD积分到T等于一\n就得到目标分布中的Z1\n也可以反向从Z1出发\n反向积分得到Z0\n算法还提供了两个可选步骤\nREFLOW是把已经得到的Z0和Z1当做新的配对\n再次调用react or flow\n使路径更直\nDISTIL则是用一个神经网络直接学习\n从Z0到Z1的映射\n从而把多步推理压缩成单步\n下面看一下这张图\n这张图展示了反复应用REFLOW之后\n路径如何变得越来越直\n图A是第一次rectified flow\n可以看到不同模态之间的轨迹还比较弯曲\n互相缠绕\nto b经过一次REFLOW之后\n轨迹明显变得更加规整\n图C经过两次REFLOW之后\n大部分轨迹已经近似直线\n图D的曲线量化了这一现象\n横轴是REFLOW部署\n可以看到\n随着REFLOW次数增加\n运输成本和平直度都迅速下降并趋于稳定\n这说明递归REACTIFICATION确实能让流的路径越来越直\n从而只需要很少的离散化步数就能精确模拟\n下面看一下这张图\n这张图展示了rectified flow\n在真实图像任务上的效果\n上半部分是高斯噪声到猫脸图像的生成任务\n下半部分是人脸到猫脸的图像迁移任务\n每一行从左到右依次是初始状态\n用N等于125十一千个欧拉布模拟的结果\n以及蒸馏后单步生成的结果\n可以看到对于1rectified flow\n当N大于等于二时\n已经能得到可接受的图像\n而经过一次REFLOW得到的2rectified flow\n即使只用N等于一\n也能生成清晰的猫脸\n或完成人脸到猫脸的迁移\n这说明REFLOW之后路径接近直线\n单步欧拉离散化就足以产生高质量结果\n下面看一下这张图\n这张图把rectified flow和两种现有的概率流\nO de e\n也就是VPODE和sub VP o d e\n在不同离散化步数N下做了对比\n第一列是rectified flow\n采用线性差值参数\n阿尔法T等于T贝塔T等于一减T\n可以看到它的轨迹几乎始终是直线\n并且从N等于一开始就能直接到达目标分布\nN等于20就已经覆盖整个目标\n中间两列是VPODE和sub VP o d e\n它们的轨迹是弯曲的\n而且在前期更新很慢\n后期更新很快\n导致用少步数离散化时效果不佳\n最后一列说明\n如果给VPODE也加上线性阿尔法的参数\n可以在保持相同连续时间轨迹的同时\n获得更均匀的速度\n这个对比说明\nRectified flow\n通过简单的线性差值设计\n就同时实现了直线路径和均匀更新速度",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hrKp6NEj5",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:12:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

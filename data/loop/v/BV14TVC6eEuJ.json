@@ -1,0 +1,66 @@
+{
+  "bvid": "BV14TVC6eEuJ",
+  "title": "构建 agent 的基础组件: pi-mono",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1899,
+  "text": "piano是一个开源的AI编程助手框架\ntypescript写的MIT协议\n跟cloud code cursor不一样的是\n它是模块化的\n每一层都能单独拿出来用\n也能拼在一起\n大出你自己的编程助手\n一个编程助手\n不管他是cloud code还是cursor还是别的\n拆到底就是三个东西\n一个能跟大模型对话的接口\n一个能让模型调用工具的循环\n一个能让用户看到结果能操作的界面\n这三件事互相之间其实没什么关系\n所以piano把它拆成了四层\n从下到上\npi t u i管的事\n怎么在终端里画出漂亮的东西\npi AI管的事怎么跟不同的大模型说话\npagent CORE管的是怎么让模型和工具来回对话\npycoding agent管的是哪些工具\n是编程用的\n用户怎么交互\n下面三层不知道上面在干什么\npi t u i不知道有模型\npi AI不知道有agent\nPagent core\n不知道自己在写代码\n每一层只管自己的事\n因为不想把所有东西耦合在一起\n比如只想搭一个客服机器人\n不需要文件读写\n不需要终端界面\n只需要PIAI加pagent CORE\n再比如想换一个终端UI方案\npi AI和ph CORE异形都不用改\n拆开之后每层都能单独用\n也能换掉\n跟搭积木一样\n拍AI解决一个问题\n每家模型的AAPI都不一样\nopera i是completions和responses两种\nANTHROPIC是messages\ngoogle是generative AI\nAWS bedrock是converse stream参数格式\n流式协议\nthinking的表示方式全都不同\nPIAI在上面盖了一层\n对外只有一个string函数和一个complete函数\n调用的时候传一个字符串\n指定用哪个模型\n他自己去路由到正确的API\n30多家厂商写一次代码\npagent CORE是整个项目的核心\n他做的事情用一个循环就能讲清楚\n第一步\n把用户的请求和系统提示词拼成一段消息\n发给模型\n第二步模型返回文本\n可能还会返回工具调用\n如果只有文本循环结束\n把结果给用户\n如果有工具调用\n进入第三步\n第三步执行这些工具\n拿到结果\n第四步把工具结果作为新消息发回给模型\n然后回到第二步\n就这么转模型\n要工具就给工具\n给了就继续\n直到模型说我做完了为止\n这个循环本身很简单\n但围绕他有几件事必须处理\n一是状态管理\n对话历史越来越长\n不能无脑全发\n要有压缩策略\n二是绘画持久化\n用户关了终端\n下次打开对话还在\n三是工具执行的权限和安全模型\n让你跑RM rf不能真跑\n这些脏活都是pagent CORE干的\n这层不知道自己在写代码\n不知道终端长什么样\n他就是个通用的循环引擎\npycoding agent在上面加了编程用的东西\n文件读写命令\n执行搜索编辑\n这些工具还有一个扩展系统扩展能做什么呢\n在循环的每个节点上插一个钩子模型\n调用工具之前能看到他要调什么\n能改参数\n甚至能拦住\n不让它掉\n模型返回结果之后能改结果再未回去\n用户输入的时候能改输入再发给模型\n整个循环的每一步都是可拦截\n可修改的扩展\n就是在循环上打了26个洞\n每个洞是一个钩子\n把逻辑挂上去就行\n最简单的例子模型想执行git push force\n在to下划线call钩子里看到这个命令\n直接拦住\n返回一条不允许force push模型就知道了\n换别的方式\n再比如想加一个新工具\n写一个type script文件\n调一下register tool\n下次循环模型就能调用这个新工具了\n不用重启\n不用重新编译\n整个系统的入口\n不是一个CLI命令\n是一个函数\n调用create agent session传进去\n想用的模型\n想开的工具\n想加载的扩展\n它返回一个session对象\n调session prompt循环就开始转subscribe事件流\n就能拿到每一步的输出\n就这么简单\ncl i只是这个函数外面套了一层终端界面\nRPC模式是套了一层网络接口\n打印模式是套了一层文本格式化\n核心都是同一个session\n从头走一遍\n用户打开终端输入\n帮我改一下read me creation session\n创建会话加载系统提示词\n工具列表扩展用户输入\n进入pagent cord循环拼成消息发给模型\n模型说我要读一下read me\n返回一个read工具\n调用pycoding agent执行read\n把文件内容拿回来\n内容作为新消息发回模型\n模型说我要编辑这一行\n返回edit工具\n调用执行edit文件\n改好了\n结果发回模型模型说改好了\n循环结束\n整个过程里\n扩展可以拦截任何一部",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14TVC6eEuJ",
+  "published_at": "1780416661",
+  "fetched_at": "2026-08-07T20:08:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Piano 框架知识图谱\n\n## 架构总览\n```mermaid\nflowchart TD\n    TUI[\"pi-tui<br/>终端 UI\"] --> AI[\"pi-AI<br/>模型对话接口\"]\n    AI --> CORE[\"pagent CORE<br/>模型↔工具循环引擎\"]\n    CORE --> AGENT[\"pycoding agent<br/>编程工具集\"]\n    subgraph User[\"用户交互层\"]\n        UI[\"用户输入/输出\"]\n    end\n    UI --> TUI\n    classDef layer fill:#f9f,stroke:#333,stroke-width:1px;\n    class TUI,AI,CORE,AGENT layer;\n```\n<!-- [BV14TVC6eEuJ P1 00:38] -->\n<!-- [BV14TVC6eEuJ P1 00:46] -->\n<!-- [BV14TVC6eEuJ P1 00:49] -->\n<!-- [BV14TVC6eEuJ P1 00:51] -->\n\n## Pagent CORE 循环流程\n```mermaid\nflowchart TD\n    Start[\"开始: 用户请求 + 系统提示\"] --> Send[\"发送给模型\"]\n    Send --> ModelResp[\"模型返回<br/>文本或工具调用\"]\n    ModelResp -->|文本| Output[\"返回文本给用户\"]\n    ModelResp -->|工具调用| ExecTool[\"执行工具\"]\n    ExecTool --> ToolResult[\"获取工具结果\"]\n    ToolResult --> NewMsg[\"将结果作为新消息发送给模型\"]\n    NewMsg --> Send\n    Output --> End[\"循环结束\"]\n    classDef step fill:#ccf,stroke:#333,stroke-width:1px;\n    class Start,Send,ModelResp,Output,ExecTool,ToolResult,NewMsg,End step;\n```\n<!-- [BV14TVC6eEuJ P1 02:07] -->\n<!-- [BV14TVC6eEuJ P1 02:15] -->\n<!-- [BV14TVC6eEuJ P1 02:22] -->\n<!-- [BV14TVC6eEuJ P1 02:30] -->\n<!-- [BV14TVC6eEuJ P1 02:36] -->\n\n## 扩展钩子机制\n```mermaid\nflowchart LR\n    Hook1[\"调用模型前钩子\"] --> SendModel[\"发送给模型\"]\n    SendModel --> Hook2[\"模型返回前钩子\"]\n    Hook2 --> ModelResp[\"模型返回\"]\n    ModelResp --> Hook3[\"工具调用前钩子\"]\n    Hook3 --> ExecTool[\"执行工具\"]\n    ExecTool --> Hook4[\"工具结果后钩子\"]\n    Hook4 --> NewMsg[\"新消息发送给模型\"]\n    NewMsg --> Hook5[\"模型返回后钩子\"]\n    Hook5 --> LoopBack[\"回到模型发送\"]\n    classDef hook fill:#cfc,stroke:#333,stroke-width:1px;\n    class Hook1,Hook2,Hook3,Hook4,Hook5 hook;\n```\n<!-- [BV14TVC6eEuJ P1 03:21] -->\n<!-- [BV14TVC6eEuJ P1 03:33] -->\n<!-- [BV14TVC6eEuJ P1 03:42] -->\n<!-- [BV14TVC6eEuJ P1 03:46] -->",
+      "diagrams": [
+        {
+          "title": "架构总览",
+          "code": "flowchart TD\n    TUI[\"pi-tui<br/>终端 UI\"] --> AI[\"pi-AI<br/>模型对话接口\"]\n    AI --> CORE[\"pagent CORE<br/>模型↔工具循环引擎\"]\n    CORE --> AGENT[\"pycoding agent<br/>编程工具集\"]\n    subgraph User[\"用户交互层\"]\n        UI[\"用户输入/输出\"]\n    end\n    UI --> TUI\n    classDef layer fill:#f9f,stroke:#333,stroke-width:1px;\n    class TUI,AI,CORE,AGENT layer;"
+        },
+        {
+          "title": "Pagent CORE 循环流程",
+          "code": "flowchart TD\n    Start[\"开始: 用户请求 + 系统提示\"] --> Send[\"发送给模型\"]\n    Send --> ModelResp[\"模型返回<br/>文本或工具调用\"]\n    ModelResp -->|文本| Output[\"返回文本给用户\"]\n    ModelResp -->|工具调用| ExecTool[\"执行工具\"]\n    ExecTool --> ToolResult[\"获取工具结果\"]\n    ToolResult --> NewMsg[\"将结果作为新消息发送给模型\"]\n    NewMsg --> Send\n    Output --> End[\"循环结束\"]\n    classDef step fill:#ccf,stroke:#333,stroke-width:1px;\n    class Start,Send,ModelResp,Output,ExecTool,ToolResult,NewMsg,End step;"
+        },
+        {
+          "title": "扩展钩子机制",
+          "code": "flowchart LR\n    Hook1[\"调用模型前钩子\"] --> SendModel[\"发送给模型\"]\n    SendModel --> Hook2[\"模型返回前钩子\"]\n    Hook2 --> ModelResp[\"模型返回\"]\n    ModelResp --> Hook3[\"工具调用前钩子\"]\n    Hook3 --> ExecTool[\"执行工具\"]\n    ExecTool --> Hook4[\"工具结果后钩子\"]\n    Hook4 --> NewMsg[\"新消息发送给模型\"]\n    NewMsg --> Hook5[\"模型返回后钩子\"]\n    Hook5 --> LoopBack[\"回到模型发送\"]\n    classDef hook fill:#cfc,stroke:#333,stroke-width:1px;\n    class Hook1,Hook2,Hook3,Hook4,Hook5 hook;"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T20:08:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Piano 框架知识图谱\n\n## 架构总览\n```mermaid\nflowchart TD\n    TUI[\"pi-tui<br/>终端 UI\"] --> AI[\"pi-AI<br/>模型对话接口\"]\n    AI --> CORE[\"pagent CORE<br/>模型↔工具循环引擎\"]\n    CORE --> AGENT[\"pycoding agent<br/>编程工具集\"]\n    subgraph User[\"用户交互层\"]\n        UI[\"用户输入/输出\"]\n    end\n    UI --> TUI\n    classDef layer fill:#f9f,stroke:#333,stroke-width:1px;\n    class TUI,AI,CORE,AGENT layer;\n```\n<!-- [BV14TVC6eEuJ P1 00:38] -->\n<!-- [BV14TVC6eEuJ P1 00:46] -->\n<!-- [BV14TVC6eEuJ P1 00:49] -->\n<!-- [BV14TVC6eEuJ P1 00:51] -->\n\n## Pagent CORE 循环流程\n```mermaid\nflowchart TD\n    Start[\"开始: 用户请求 + 系统提示\"] --> Send[\"发送给模型\"]\n    Send --> ModelResp[\"模型返回<br/>文本或工具调用\"]\n    ModelResp -->|文本| Output[\"返回文本给用户\"]\n    ModelResp -->|工具调用| ExecTool[\"执行工具\"]\n    ExecTool --> ToolResult[\"获取工具结果\"]\n    ToolResult --> NewMsg[\"将结果作为新消息发送给模型\"]\n    NewMsg --> Send\n    Output --> End[\"循环结束\"]\n    classDef step fill:#ccf,stroke:#333,stroke-width:1px;\n    class Start,Send,ModelResp,Output,ExecTool,ToolResult,NewMsg,End step;\n```\n<!-- [BV14TVC6eEuJ P1 02:07] -->\n<!-- [BV14TVC6eEuJ P1 02:15] -->\n<!-- [BV14TVC6eEuJ P1 02:22] -->\n<!-- [BV14TVC6eEuJ P1 02:30] -->\n<!-- [BV14TVC6eEuJ P1 02:36] -->\n\n## 扩展钩子机制\n```mermaid\nflowchart LR\n    Hook1[\"调用模型前钩子\"] --> SendModel[\"发送给模型\"]\n    SendModel --> Hook2[\"模型返回前钩子\"]\n    Hook2 --> ModelResp[\"模型返回\"]\n    ModelResp --> Hook3[\"工具调用前钩子\"]\n    Hook3 --> ExecTool[\"执行工具\"]\n    ExecTool --> Hook4[\"工具结果后钩子\"]\n    Hook4 --> NewMsg[\"新消息发送给模型\"]\n    NewMsg --> Hook5[\"模型返回后钩子\"]\n    Hook5 --> LoopBack[\"回到模型发送\"]\n    classDef hook fill:#cfc,stroke:#333,stroke-width:1px;\n    class Hook1,Hook2,Hook3,Hook4,Hook5 hook;\n```\n<!-- [BV14TVC6eEuJ P1 03:21] -->\n<!-- [BV14TVC6eEuJ P1 03:33] -->\n<!-- [BV14TVC6eEuJ P1 03:42] -->\n<!-- [BV14TVC6eEuJ P1 03:46] -->",
+  "diagrams": [
+    {
+      "title": "架构总览",
+      "code": "flowchart TD\n    TUI[\"pi-tui<br/>终端 UI\"] --> AI[\"pi-AI<br/>模型对话接口\"]\n    AI --> CORE[\"pagent CORE<br/>模型↔工具循环引擎\"]\n    CORE --> AGENT[\"pycoding agent<br/>编程工具集\"]\n    subgraph User[\"用户交互层\"]\n        UI[\"用户输入/输出\"]\n    end\n    UI --> TUI\n    classDef layer fill:#f9f,stroke:#333,stroke-width:1px;\n    class TUI,AI,CORE,AGENT layer;"
+    },
+    {
+      "title": "Pagent CORE 循环流程",
+      "code": "flowchart TD\n    Start[\"开始: 用户请求 + 系统提示\"] --> Send[\"发送给模型\"]\n    Send --> ModelResp[\"模型返回<br/>文本或工具调用\"]\n    ModelResp -->|文本| Output[\"返回文本给用户\"]\n    ModelResp -->|工具调用| ExecTool[\"执行工具\"]\n    ExecTool --> ToolResult[\"获取工具结果\"]\n    ToolResult --> NewMsg[\"将结果作为新消息发送给模型\"]\n    NewMsg --> Send\n    Output --> End[\"循环结束\"]\n    classDef step fill:#ccf,stroke:#333,stroke-width:1px;\n    class Start,Send,ModelResp,Output,ExecTool,ToolResult,NewMsg,End step;"
+    },
+    {
+      "title": "扩展钩子机制",
+      "code": "flowchart LR\n    Hook1[\"调用模型前钩子\"] --> SendModel[\"发送给模型\"]\n    SendModel --> Hook2[\"模型返回前钩子\"]\n    Hook2 --> ModelResp[\"模型返回\"]\n    ModelResp --> Hook3[\"工具调用前钩子\"]\n    Hook3 --> ExecTool[\"执行工具\"]\n    ExecTool --> Hook4[\"工具结果后钩子\"]\n    Hook4 --> NewMsg[\"新消息发送给模型\"]\n    NewMsg --> Hook5[\"模型返回后钩子\"]\n    Hook5 --> LoopBack[\"回到模型发送\"]\n    classDef hook fill:#cfc,stroke:#333,stroke-width:1px;\n    class Hook1,Hook2,Hook3,Hook4,Hook5 hook;"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T20:08:16+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1CZ396pEP6",
+  "title": "deepseek-v4-flash正式版已发布，新增支持Codex",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2513,
+  "text": "这几天最令人让人振奋的AI界的消息\n恐怕就是这个DPC和V4正式上线的\nV4flash正式版了\n呃之前大家伙都可能就好多\n好久以前听过\n就是他们第一次V4V4已经上线了\n但是之前是预览版\n优拉网正式版还是一定一定差别的\n后面我会给大家解释一下\n首先的话就是他这次的一个亮点的话\n就是说在7月31号上线\n然后API公测\n那是亮点的话\n就是原生支持resource API格式\n就是大家会支持\n待会可能不知道这个原生支持这个格式有啥特\n有啥要求\n或者有啥特点\n有啥优势呢\n后面也会跟大家说一下\n并且完成了一个对code差的一个全面适配\n我们现在的一类\n也就是这次发布的一个正式版有何神秘之处\n具体的可以看一下官方说明嗯\n第一点的话就是我们先来整理一下\n就是V4系列现在的整体产品矩阵\n现在的话应该就是V4pro和V4flash\n正式版正式版出来之后\n预览版可能就几乎没人用了是吧\n肯定的\n然后的话他原生之MOE专家互坑专家架构\n然后医生100万的一个脱困的上下文\n然后就是呃全面适配一个MIT协议\n开源可以免费商用\n然后截止到今天的话\n这两款模型大家可以对比一下哦\n参数级别激活参数量级别训练量\n比如说vs pro它的有预训练是33t token\n然后上下文的token单论最大的话是多少\n最大输出多少\n然后专家网络是多少啊\n然后哦这也就是说的就是说同架构训练体系\n就是说架构代码几乎一样\n但是呃几乎一样是啥意思\n就是说呃就相当于盖房子一样\n你家买了实际地电楼楼里面的13层\n然后比如说1304那家买的是14层\n1404\n所以你们的房子是一样\n但是里面的软装是不一样的\n软装就体现在这里是吧\n这就体现在这里啊\n还有一个发布状态\n还有以及呃核心定位等等这些\n第二的话咱们看下核心技术\n比如V4\n它的一系列的话没有走那种参数堆叠的模式\n而是通过架构设计\n想实上了一个低算力消耗\n高实用性能的一个架构\n比如说第一个混合长下上下文机制\n100万偷课上下文\n依靠依靠CSR就是压缩吸收注意力\n还有HHCA有个重度压缩注意力\n混合注意力的方案\n第二就是M1架构和训练优化\nM1架构在很多行业都有用到\n比如说广费行业\n或者说建筑大模型行业都用到的特别多啊\n他们还呃引入了一个叫MHC的一个流行约束\n超链接和默认那个优化器哦\n还有就是国产适配V4系列\n是首个明确深度适配\n就我明确知识\n我说我就适配华为生腾啊\n比方说之前那个话呃\n美团的那个long cat2那个模型吧\n就说了他是国产全适配训练\n然后加推理\n但是他没有说是哪一款啊\n这个就有点有点大伙都懂是吧\n所以这款是它是明确说明了这个东西就是它的\n所以它的可信度是非常高的\n第三点的话就是V4flash正式版\n就是本次的更新亮点\n就是说这个四V4fly正式版\n是此次V4系列里面首个落智与正式模型\n结构和预览版完全一致\n结构意思就前面那个我说的房\n你的房子和软装是一模一样的啊\n就整体是那个住\n比如说这个正式版可能住过了十十个人\n然后预览版可能住过一个人\n他的所以他的一个房子的一个呃\n在风水上的来说就会相对来说更好一些\n就这种意思\n所以说仅仅通过了后深度的后训练打磨\n就实现了AI能力的跨越式提升\n同时完成了一个生态层面的一个兼容呃\n呃这就是我最开始前面给大家说的\n为什么\n就是说它呃它相对于那个适配版有什么区别\n就在这里\n还有就是这个A制\n它的agent能力全面反超了pro版pro的那个买卖模型\n就是说官方显示的话\nwith splash在九项agent和代码测试之中\n然后得分全面超过了三个月前发布的V4\npro预览版\n部分人以及指标\n已经逼近了全球的闭源顶尖模型\n可以说是说在deep sick\n在后续的阶段和质朴之呢是有的一拼\n大伙知道就是deep sick它的一个呃\n在他之前V3模型出来的时候\n他这个预训练是最牛逼的\n那现在的话他是除了预训练还行的之外\n它后续呢和制服这块是基本上是一个阶段的\n然后KI的话在预训练阶段也很牛逼\n所以咱们国产人气大模型每个都有每个的特点\n这就是他们一些指标啊\n还原生和response API的话\n主要是指有啥解决了大部分输出结构化\n输出不稳定\n杰克森那个衍生失败的痛点\n因为过去大模型压力\n大家可能知道就是他是一个字一呃一个token\n一个都token的\n往回吐也有一些优化\n它可能会变性去偷去吐吐这些token\n但是他有一个特点的话\n就是说他吐的永远都是这种呃token级别的\n或者自己别的\n它不是一个固定的格式的\n只有支持了原细胞COPPI\n他们一直支持个response API\n所以他在工程上的叫做\n它就能支持固定的格式输出\n出出来JSON格式每次都是百分之百都是JASON\n但是以前DC这种不行\n所以这一直是公呃工业化里面\n或者说是生生产环境里面\n最最受痛点的一个东西\n这次呃他们把它只解决掉了\n第三就是全面适配以后的差\n此次是从模型层面上完成\n对测试它的一个原生适配\n开发者可以用open i cos x开发的代码\nA政策自动化工具链极低成本迁移到flash flash\n还有就完全兼容open i Python SDK\n几乎无赖不逊算法就可以切换模型了啊\n开发者实测说在相同agent的任务下freeze flash啊\n这跟就说了白说一样\n还有就是官根据官方说明\n就是V4pro正式版也在将在8月初完成适配\n所以到时候正式版肯定在AH能力上\n肯定有一个大幅度的提升\n可能就能够接近国内第一生产梯队了吧\n应该是后续情况\n咱们看看\n就说DC位置在agent的赛道的一个生态布局\n就已经比较清晰了\n后续可能会做出这样几个东西来\n比如说这seek r r呃\nharness agent的测试框架\n提供一个标准版的code智能体的减轻\n或者说其他智能体的一个减评能力\n不60版正式上线\n然后补上一个高端产品线\n还有配置的工具调用呀\n函数调用能力也会持续打磨下去\n所以整体来看\nDB CD flash的一个真正意义不是榜单上的提\n而是尊重从价格能力速度适配上\n把自己的能力往工作级别前移\n做到了企业里面跟生产的能力\n大规模生产落地的一个程度",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1CZ396pEP6",
+  "published_at": "1785665274",
+  "fetched_at": "2026-08-07T04:22:42+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 系列知识图谱\n\n## 产品矩阵概览 [BV1CZ396pEP6 P1 00:21]\n```mermaid\nflowchart TD\n    V4Series[\"V4 系列\"]\n    V4Pro[\"V4 Pro\"]\n    V4Flash[\"V4 Flash\"]\n    Preview[\"V4 Flash 预览版\"]\n    Official[\"V4 Flash 正式版\"]\n    API_Test[\"API 公测\"]\n    NativeResAPI[\"原生 Resource API 支持\"]\n    Deprecated[\"已弃用\"]\n\n    V4Series --> V4Pro\n    V4Series --> V4Flash\n    V4Flash --> Official\n    Official --> API_Test\n    Official --> NativeResAPI\n    V4Flash --> Preview\n    Preview --> Deprecated\n```\n\n## 核心技术创新 [BV1CZ396pEP6 P1 01:46]\n```mermaid\nflowchart TD\n    ArchDesign[\"架构设计\"]\n    HybridLongCtx[\"混合长上下文机制\"]\n    CSR[\"CSR（压缩自注意力）\"]\n    HHCA[\"HHCA（重度压缩注意力）\"]\n    MixedAttn[\"混合注意力方案\"]\n    M1Arch[\"M1 架构\"]\n    MHC[\"MHC 约束\"]\n    HyperOpt[\"超链接默认优化器\"]\n    Industry[\"行业应用（广告、建筑等）\"]\n\n    ArchDesign --> HybridLongCtx\n    HybridLongCtx --> CSR\n    HybridLongCtx --> HHCA\n    HybridLongCtx --> MixedAttn\n    ArchDesign --> M1Arch\n    M1Arch --> MHC\n    M1Arch --> HyperOpt\n    M1Arch --> Industry\n```\n\n## 能力对比与提升 [BV1CZ396pEP6 P1 02:45]\n```mermaid\nflowchart TD\n    FlashOfficial[\"V4 Flash 正式版\"]\n    FlashPreview[\"V4 Flash 预览版\"]\n    V4Pro[\"V4 Pro\"]\n    Params[\"参数规模\"]\n    Tokens[\"预训练 Tokens（33T）\"]\n    Context[\"上下文长度（1M token）\"]\n    OutputMax[\"最大输出\"]\n    ExpertNet[\"专家网络\"]\n    AgentPerf[\"Agent 能力\"]\n    CodeScore[\"代码测试得分\"]\n\n    FlashOfficial --> Params\n    FlashOfficial --> Tokens\n    FlashOfficial --> Context\n    FlashOfficial --> AgentPerf\n    FlashOfficial --> CodeScore\n\n    V4Pro --> Params\n    V4Pro --> Tokens\n\n    FlashPreview --> Params\n    FlashPreview --> Tokens\n    FlashPreview --> Context\n\n    AgentPerf --> CodeScore\n```\n\n## 接口兼容与工业化输出 [BV1CZ396pEP6 P1 04:05]\n```mermaid\nflowchart TD\n    NativeResAPI[\"原生 Resource API\"]\n    NativeRespAPI[\"原生 Response API\"]\n    JSONOut[\"JSON 格式输出\"]\n    StableOut[\"输出稳定\"]\n    Industrial[\"工业化生产环境\"]\n    OpenAI_SDK[\"兼容 OpenAI Python SDK\"]\n    OpenI_COSX[\"OpenI COSX 开发代码\"]\n    LowCostMig[\"低成本迁移\"]\n\n    NativeResAPI --> NativeRespAPI\n    NativeRespAPI --> JSONOut\n    JSONOut --> StableOut\n    StableOut --> Industrial\n\n    OpenAI_SDK --> LowCostMig\n    LowCostMig --> NativeResAPI\n    OpenI_COSX --> LowCostMig\n```\n\n## 未来路线图与生态布局 [BV1CZ396pEP6 P1 05:23]\n```mermaid\nflowchart TD\n    SeekR[\"SeekR 项目\"]\n    HarnessTest[\"Harness Agent 测试框架\"]\n    CodeAgent[\"Code 智能体改进\"]\n    FuncCall[\"函数调用能力持续打磨\"]\n    HighEndProd[\"高端产品线\"]\n    V4ProAdapt[\"V4 Pro 8 月初适配\"]\n    CapBoost[\"能力大幅提升\"]\n    DomesticTop[\"接近国内第一生产梯队\"]\n\n    SeekR --> HarnessTest\n    HarnessTest --> CodeAgent\n    CodeAgent --> FuncCall\n    HighEndProd --> FuncCall\n\n    V4ProAdapt --> CapBoost\n    CapBoost --> DomesticTop\n```",
+      "diagrams": [
+        {
+          "title": "产品矩阵概览",
+          "code": "flowchart TD\n    V4Series[\"V4 系列\"]\n    V4Pro[\"V4 Pro\"]\n    V4Flash[\"V4 Flash\"]\n    Preview[\"V4 Flash 预览版\"]\n    Official[\"V4 Flash 正式版\"]\n    API_Test[\"API 公测\"]\n    NativeResAPI[\"原生 Resource API 支持\"]\n    Deprecated[\"已弃用\"]\n\n    V4Series --> V4Pro\n    V4Series --> V4Flash\n    V4Flash --> Official\n    Official --> API_Test\n    Official --> NativeResAPI\n    V4Flash --> Preview\n    Preview --> Deprecated"
+        },
+        {
+          "title": "核心技术创新",
+          "code": "flowchart TD\n    ArchDesign[\"架构设计\"]\n    HybridLongCtx[\"混合长上下文机制\"]\n    CSR[\"CSR（压缩自注意力）\"]\n    HHCA[\"HHCA（重度压缩注意力）\"]\n    MixedAttn[\"混合注意力方案\"]\n    M1Arch[\"M1 架构\"]\n    MHC[\"MHC 约束\"]\n    HyperOpt[\"超链接默认优化器\"]\n    Industry[\"行业应用（广告、建筑等）\"]\n\n    ArchDesign --> HybridLongCtx\n    HybridLongCtx --> CSR\n    HybridLongCtx --> HHCA\n    HybridLongCtx --> MixedAttn\n    ArchDesign --> M1Arch\n    M1Arch --> MHC\n    M1Arch --> HyperOpt\n    M1Arch --> Industry"
+        },
+        {
+          "title": "能力对比与提升",
+          "code": "flowchart TD\n    FlashOfficial[\"V4 Flash 正式版\"]\n    FlashPreview[\"V4 Flash 预览版\"]\n    V4Pro[\"V4 Pro\"]\n    Params[\"参数规模\"]\n    Tokens[\"预训练 Tokens（33T）\"]\n    Context[\"上下文长度（1M token）\"]\n    OutputMax[\"最大输出\"]\n    ExpertNet[\"专家网络\"]\n    AgentPerf[\"Agent 能力\"]\n    CodeScore[\"代码测试得分\"]\n\n    FlashOfficial --> Params\n    FlashOfficial --> Tokens\n    FlashOfficial --> Context\n    FlashOfficial --> AgentPerf\n    FlashOfficial --> CodeScore\n\n    V4Pro --> Params\n    V4Pro --> Tokens\n\n    FlashPreview --> Params\n    FlashPreview --> Tokens\n    FlashPreview --> Context\n\n    AgentPerf --> CodeScore"
+        },
+        {
+          "title": "接口兼容与工业化输出",
+          "code": "flowchart TD\n    NativeResAPI[\"原生 Resource API\"]\n    NativeRespAPI[\"原生 Response API\"]\n    JSONOut[\"JSON 格式输出\"]\n    StableOut[\"输出稳定\"]\n    Industrial[\"工业化生产环境\"]\n    OpenAI_SDK[\"兼容 OpenAI Python SDK\"]\n    OpenI_COSX[\"OpenI COSX 开发代码\"]\n    LowCostMig[\"低成本迁移\"]\n\n    NativeResAPI --> NativeRespAPI\n    NativeRespAPI --> JSONOut\n    JSONOut --> StableOut\n    StableOut --> Industrial\n\n    OpenAI_SDK --> LowCostMig\n    LowCostMig --> NativeResAPI\n    OpenI_COSX --> LowCostMig"
+        },
+        {
+          "title": "未来路线图与生态布局",
+          "code": "flowchart TD\n    SeekR[\"SeekR 项目\"]\n    HarnessTest[\"Harness Agent 测试框架\"]\n    CodeAgent[\"Code 智能体改进\"]\n    FuncCall[\"函数调用能力持续打磨\"]\n    HighEndProd[\"高端产品线\"]\n    V4ProAdapt[\"V4 Pro 8 月初适配\"]\n    CapBoost[\"能力大幅提升\"]\n    DomesticTop[\"接近国内第一生产梯队\"]\n\n    SeekR --> HarnessTest\n    HarnessTest --> CodeAgent\n    CodeAgent --> FuncCall\n    HighEndProd --> FuncCall\n\n    V4ProAdapt --> CapBoost\n    CapBoost --> DomesticTop"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T04:23:04+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 系列知识图谱\n\n## 产品矩阵概览 [BV1CZ396pEP6 P1 00:21]\n```mermaid\nflowchart TD\n    V4Series[\"V4 系列\"]\n    V4Pro[\"V4 Pro\"]\n    V4Flash[\"V4 Flash\"]\n    Preview[\"V4 Flash 预览版\"]\n    Official[\"V4 Flash 正式版\"]\n    API_Test[\"API 公测\"]\n    NativeResAPI[\"原生 Resource API 支持\"]\n    Deprecated[\"已弃用\"]\n\n    V4Series --> V4Pro\n    V4Series --> V4Flash\n    V4Flash --> Official\n    Official --> API_Test\n    Official --> NativeResAPI\n    V4Flash --> Preview\n    Preview --> Deprecated\n```\n\n## 核心技术创新 [BV1CZ396pEP6 P1 01:46]\n```mermaid\nflowchart TD\n    ArchDesign[\"架构设计\"]\n    HybridLongCtx[\"混合长上下文机制\"]\n    CSR[\"CSR（压缩自注意力）\"]\n    HHCA[\"HHCA（重度压缩注意力）\"]\n    MixedAttn[\"混合注意力方案\"]\n    M1Arch[\"M1 架构\"]\n    MHC[\"MHC 约束\"]\n    HyperOpt[\"超链接默认优化器\"]\n    Industry[\"行业应用（广告、建筑等）\"]\n\n    ArchDesign --> HybridLongCtx\n    HybridLongCtx --> CSR\n    HybridLongCtx --> HHCA\n    HybridLongCtx --> MixedAttn\n    ArchDesign --> M1Arch\n    M1Arch --> MHC\n    M1Arch --> HyperOpt\n    M1Arch --> Industry\n```\n\n## 能力对比与提升 [BV1CZ396pEP6 P1 02:45]\n```mermaid\nflowchart TD\n    FlashOfficial[\"V4 Flash 正式版\"]\n    FlashPreview[\"V4 Flash 预览版\"]\n    V4Pro[\"V4 Pro\"]\n    Params[\"参数规模\"]\n    Tokens[\"预训练 Tokens（33T）\"]\n    Context[\"上下文长度（1M token）\"]\n    OutputMax[\"最大输出\"]\n    ExpertNet[\"专家网络\"]\n    AgentPerf[\"Agent 能力\"]\n    CodeScore[\"代码测试得分\"]\n\n    FlashOfficial --> Params\n    FlashOfficial --> Tokens\n    FlashOfficial --> Context\n    FlashOfficial --> AgentPerf\n    FlashOfficial --> CodeScore\n\n    V4Pro --> Params\n    V4Pro --> Tokens\n\n    FlashPreview --> Params\n    FlashPreview --> Tokens\n    FlashPreview --> Context\n\n    AgentPerf --> CodeScore\n```\n\n## 接口兼容与工业化输出 [BV1CZ396pEP6 P1 04:05]\n```mermaid\nflowchart TD\n    NativeResAPI[\"原生 Resource API\"]\n    NativeRespAPI[\"原生 Response API\"]\n    JSONOut[\"JSON 格式输出\"]\n    StableOut[\"输出稳定\"]\n    Industrial[\"工业化生产环境\"]\n    OpenAI_SDK[\"兼容 OpenAI Python SDK\"]\n    OpenI_COSX[\"OpenI COSX 开发代码\"]\n    LowCostMig[\"低成本迁移\"]\n\n    NativeResAPI --> NativeRespAPI\n    NativeRespAPI --> JSONOut\n    JSONOut --> StableOut\n    StableOut --> Industrial\n\n    OpenAI_SDK --> LowCostMig\n    LowCostMig --> NativeResAPI\n    OpenI_COSX --> LowCostMig\n```\n\n## 未来路线图与生态布局 [BV1CZ396pEP6 P1 05:23]\n```mermaid\nflowchart TD\n    SeekR[\"SeekR 项目\"]\n    HarnessTest[\"Harness Agent 测试框架\"]\n    CodeAgent[\"Code 智能体改进\"]\n    FuncCall[\"函数调用能力持续打磨\"]\n    HighEndProd[\"高端产品线\"]\n    V4ProAdapt[\"V4 Pro 8 月初适配\"]\n    CapBoost[\"能力大幅提升\"]\n    DomesticTop[\"接近国内第一生产梯队\"]\n\n    SeekR --> HarnessTest\n    HarnessTest --> CodeAgent\n    CodeAgent --> FuncCall\n    HighEndProd --> FuncCall\n\n    V4ProAdapt --> CapBoost\n    CapBoost --> DomesticTop\n```",
+  "diagrams": [
+    {
+      "title": "产品矩阵概览",
+      "code": "flowchart TD\n    V4Series[\"V4 系列\"]\n    V4Pro[\"V4 Pro\"]\n    V4Flash[\"V4 Flash\"]\n    Preview[\"V4 Flash 预览版\"]\n    Official[\"V4 Flash 正式版\"]\n    API_Test[\"API 公测\"]\n    NativeResAPI[\"原生 Resource API 支持\"]\n    Deprecated[\"已弃用\"]\n\n    V4Series --> V4Pro\n    V4Series --> V4Flash\n    V4Flash --> Official\n    Official --> API_Test\n    Official --> NativeResAPI\n    V4Flash --> Preview\n    Preview --> Deprecated"
+    },
+    {
+      "title": "核心技术创新",
+      "code": "flowchart TD\n    ArchDesign[\"架构设计\"]\n    HybridLongCtx[\"混合长上下文机制\"]\n    CSR[\"CSR（压缩自注意力）\"]\n    HHCA[\"HHCA（重度压缩注意力）\"]\n    MixedAttn[\"混合注意力方案\"]\n    M1Arch[\"M1 架构\"]\n    MHC[\"MHC 约束\"]\n    HyperOpt[\"超链接默认优化器\"]\n    Industry[\"行业应用（广告、建筑等）\"]\n\n    ArchDesign --> HybridLongCtx\n    HybridLongCtx --> CSR\n    HybridLongCtx --> HHCA\n    HybridLongCtx --> MixedAttn\n    ArchDesign --> M1Arch\n    M1Arch --> MHC\n    M1Arch --> HyperOpt\n    M1Arch --> Industry"
+    },
+    {
+      "title": "能力对比与提升",
+      "code": "flowchart TD\n    FlashOfficial[\"V4 Flash 正式版\"]\n    FlashPreview[\"V4 Flash 预览版\"]\n    V4Pro[\"V4 Pro\"]\n    Params[\"参数规模\"]\n    Tokens[\"预训练 Tokens（33T）\"]\n    Context[\"上下文长度（1M token）\"]\n    OutputMax[\"最大输出\"]\n    ExpertNet[\"专家网络\"]\n    AgentPerf[\"Agent 能力\"]\n    CodeScore[\"代码测试得分\"]\n\n    FlashOfficial --> Params\n    FlashOfficial --> Tokens\n    FlashOfficial --> Context\n    FlashOfficial --> AgentPerf\n    FlashOfficial --> CodeScore\n\n    V4Pro --> Params\n    V4Pro --> Tokens\n\n    FlashPreview --> Params\n    FlashPreview --> Tokens\n    FlashPreview --> Context\n\n    AgentPerf --> CodeScore"
+    },
+    {
+      "title": "接口兼容与工业化输出",
+      "code": "flowchart TD\n    NativeResAPI[\"原生 Resource API\"]\n    NativeRespAPI[\"原生 Response API\"]\n    JSONOut[\"JSON 格式输出\"]\n    StableOut[\"输出稳定\"]\n    Industrial[\"工业化生产环境\"]\n    OpenAI_SDK[\"兼容 OpenAI Python SDK\"]\n    OpenI_COSX[\"OpenI COSX 开发代码\"]\n    LowCostMig[\"低成本迁移\"]\n\n    NativeResAPI --> NativeRespAPI\n    NativeRespAPI --> JSONOut\n    JSONOut --> StableOut\n    StableOut --> Industrial\n\n    OpenAI_SDK --> LowCostMig\n    LowCostMig --> NativeResAPI\n    OpenI_COSX --> LowCostMig"
+    },
+    {
+      "title": "未来路线图与生态布局",
+      "code": "flowchart TD\n    SeekR[\"SeekR 项目\"]\n    HarnessTest[\"Harness Agent 测试框架\"]\n    CodeAgent[\"Code 智能体改进\"]\n    FuncCall[\"函数调用能力持续打磨\"]\n    HighEndProd[\"高端产品线\"]\n    V4ProAdapt[\"V4 Pro 8 月初适配\"]\n    CapBoost[\"能力大幅提升\"]\n    DomesticTop[\"接近国内第一生产梯队\"]\n\n    SeekR --> HarnessTest\n    HarnessTest --> CodeAgent\n    CodeAgent --> FuncCall\n    HighEndProd --> FuncCall\n\n    V4ProAdapt --> CapBoost\n    CapBoost --> DomesticTop"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T04:23:04+00:00"
+}

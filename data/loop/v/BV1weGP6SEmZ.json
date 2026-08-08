@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1weGP6SEmZ",
+  "title": "DeepSeek-V4 正式版发布，官方已经适配 Codex。",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 524,
+  "text": "deep sick这次有点倒反天罡\n刚开始公测的V4flash正式版\nAPI agent的成绩反而超过了三个月前的V4pro预览版\n他没换架构\n也没加参数\n只重新做了一遍后训练\nterminal bench2.1不是模型版本\n而是一套专门看AI能不能在命令行里把任务做完的测试\nflash的官方成绩是82.7\n按百分之判就是超过八成\n不过这个分数是deep sick用自家的harness跑出来的\nminimal mode还没公开\n所以先把它当官方成绩看\n不能直接等同于第三方实测flash\n现在原生支持responses API\ncodex也适配好了\n不用再套一层协议转换codex至少要0.144版之前\n停在0.143版的\n要先升级flash的价格没变\n缓存未命中的输入每百万token0.14美元\n输出0.28美元代码agent不是问一句答一句\n他要读仓库改文件\n测试报错了还得接着修token\n就这样一轮一轮花掉\n不过这次只更新了API\n网页和app没变\n现在还不能传图片和文件\nMCP和电脑操作也用不了\nD4pro接入codex\n预计要等到8月初\nflash接近codex以后\n如果改了不该改的文件或者测试一报错就卡住\n82.7也救不了他",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1weGP6SEmZ",
+  "published_at": "1785507555",
+  "fetched_at": "2026-08-06T23:41:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"V4 Flash 官方版发布\"]\n    A2[\"未更换架构\"]\n    A3[\"未新增参数\"]\n    A4[\"仅重新后训练\"]\n    A5[\"API Agent 成绩 > V4 Pro 预览\"]\n    A6[\"官方成绩 82.7\"]\n    A7[\"Terminal Bench 2.1 定义\"]\n    A8[\"Bench 2.1 非模型版本\"]\n    A9[\"Minimal Mode 未公开\"]\n    A10[\"成绩来源 DeepSeek Harness\"]\n    A11[\"官方成绩 ≠ 第三方实测\"]\n    A12[\"成绩超过 80%\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A12\n    A7 --> A8\n    A6 --> A10\n    A10 --> A11\n    A9 --> A10\n```\n\n- V4 Flash 官方版发布 [BV1weGP6SEmZ P1 00:02]  \n- 未更换架构 [BV1weGP6SEmZ P1 00:07]  \n- 未新增参数 [BV1weGP6SEmZ P1 00:09]  \n- 仅重新后训练 [BV1weGP6SEmZ P1 00:10]  \n- API Agent 成绩 > V4 Pro 预览版 [BV1weGP6SEmZ P1 00:04]  \n- 官方成绩 82.7 [BV1weGP6SEmZ P1 00:19]  \n- 成绩超过 80% [BV1weGP6SEmZ P1 00:21]  \n- Terminal Bench 2.1 为测试套件，非模型版本 [BV1weGP6SEmZ P1 00:12]  \n- Minimal Mode 未公开 [BV1weGP6SEmZ P1 00:28]  \n- 成绩来源 DeepSeek 自家 Harness [BV1weGP6SEmZ P1 00:24]  \n- 官方成绩不等同于第三方实测 [BV1weGP6SEmZ P1 00:32]  \n\n## 兼容性与集成\n\n```mermaid\nflowchart TD\n    B1[\"原生支持 Responses API\"]\n    B2[\"Codex 已适配\"]\n    B3[\"Codex 需求 >= 0.144 版\"]\n    B4[\"当前 Codex 0.143 版\"]\n    B5[\"需升级 Flash\"]\n    B6[\"Flash 价格未变\"]\n    B7[\"D4Pro 接入 Codex\"]\n    B8[\"预计 8 月初 完成\"]\n    B9[\"仍不支持 图片/文件 传输\"]\n    B10[\"MCP 与电脑操作不可用\"]\n    B11[\"Flash 接近 Codex 后的风险\"]\n    B12[\"错误文件修改或测试报错导致卡住\"]\n    B13[\"官方成绩 82.7 仍无法拯救\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B3 --> B5\n    B5 --> B6\n    B5 --> B7\n    B7 --> B8\n    B1 --> B9\n    B1 --> B10\n    B7 --> B11\n    B11 --> B12\n    B12 --> B13\n```\n\n- 原生支持 Responses API [BV1weGP6SEmZ P1 00:35]  \n- Codex 已适配 [BV1weGP6SEmZ P1 00:37]  \n- Codex 至少需要 0.144 版以上 [BV1weGP6SEmZ P1 00:38]  \n- 当前停留在 0.143 版 [BV1weGP6SEmZ P1 00:43]  \n- 需先升级 Flash，价格未变 [BV1weGP6SEmZ P1 00:44]  \n- D4Pro 接入 Codex 计划 [BV1weGP6SEmZ P1 01:08]  \n- 预计 8 月初完成 [BV1weGP6SEmZ P1 01:10]  \n- 仍不支持图片/文件传输 [BV1weGP6SEmZ P1 01:04]  \n- MCP 与电脑操作不可用 [BV1weGP6SEmZ P1 01:06]  \n- Flash 接近 Codex 后的风险：错误文件或测试报错会卡住 [BV1weGP6SEmZ P1 01:12][BV1weGP6SEmZ P1 01:14]  \n- 官方成绩 82.7 仍无法拯救卡住的情况 [BV1weGP6SEmZ P1 01:17]  \n\n## 成本结构\n\n```mermaid\nflowchart TD\n    C1[\"输入缓存未命中成本\"]\n    C2[\"每百万 token $0.14\"]\n    C3[\"输出成本\"]\n    C4[\"每百万 token $0.28\"]\n    C5[\"代码 Agent 工作流\"]\n    C6[\"读取仓库并修改文件\"]\n    C7[\"测试报错需修复 token\"]\n    C8[\"迭代消耗累计\"]\n    C9[\"仅更新 API，网页/APP 未变\"]\n\n    C1 --> C2\n    C3 --> C4\n    C5 --> C6\n    C5 --> C7\n    C6 --> C8\n    C7 --> C8\n    C8 --> C9\n```\n\n- 输入缓存未命中成本 $0.14/百万 token [BV1weGP6SEmZ P1 00:47]  \n- 输出成本 $0.28/百万 token [BV1weGP6SEmZ P1 00:50]  \n- 代码 Agent 需要读取仓库并修改文件 [BV1weGP6SEmZ P1 00:54]  \n- 测试报错时需继续修复 token [BV1weGP6SEmZ P1 00:56]  \n- 成本随每轮迭代累计 [BV1weGP6SEmZ P1 00:58]  \n- 本次仅更新 API，网页和 App 未变 [BV1weGP6SEmZ P1 01:00]  ",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"V4 Flash 官方版发布\"]\n    A2[\"未更换架构\"]\n    A3[\"未新增参数\"]\n    A4[\"仅重新后训练\"]\n    A5[\"API Agent 成绩 > V4 Pro 预览\"]\n    A6[\"官方成绩 82.7\"]\n    A7[\"Terminal Bench 2.1 定义\"]\n    A8[\"Bench 2.1 非模型版本\"]\n    A9[\"Minimal Mode 未公开\"]\n    A10[\"成绩来源 DeepSeek Harness\"]\n    A11[\"官方成绩 ≠ 第三方实测\"]\n    A12[\"成绩超过 80%\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A12\n    A7 --> A8\n    A6 --> A10\n    A10 --> A11\n    A9 --> A10"
+        },
+        {
+          "title": "兼容性与集成",
+          "code": "flowchart TD\n    B1[\"原生支持 Responses API\"]\n    B2[\"Codex 已适配\"]\n    B3[\"Codex 需求 >= 0.144 版\"]\n    B4[\"当前 Codex 0.143 版\"]\n    B5[\"需升级 Flash\"]\n    B6[\"Flash 价格未变\"]\n    B7[\"D4Pro 接入 Codex\"]\n    B8[\"预计 8 月初 完成\"]\n    B9[\"仍不支持 图片/文件 传输\"]\n    B10[\"MCP 与电脑操作不可用\"]\n    B11[\"Flash 接近 Codex 后的风险\"]\n    B12[\"错误文件修改或测试报错导致卡住\"]\n    B13[\"官方成绩 82.7 仍无法拯救\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B3 --> B5\n    B5 --> B6\n    B5 --> B7\n    B7 --> B8\n    B1 --> B9\n    B1 --> B10\n    B7 --> B11\n    B11 --> B12\n    B12 --> B13"
+        },
+        {
+          "title": "成本结构",
+          "code": "flowchart TD\n    C1[\"输入缓存未命中成本\"]\n    C2[\"每百万 token $0.14\"]\n    C3[\"输出成本\"]\n    C4[\"每百万 token $0.28\"]\n    C5[\"代码 Agent 工作流\"]\n    C6[\"读取仓库并修改文件\"]\n    C7[\"测试报错需修复 token\"]\n    C8[\"迭代消耗累计\"]\n    C9[\"仅更新 API，网页/APP 未变\"]\n\n    C1 --> C2\n    C3 --> C4\n    C5 --> C6\n    C5 --> C7\n    C6 --> C8\n    C7 --> C8\n    C8 --> C9"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T23:41:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"V4 Flash 官方版发布\"]\n    A2[\"未更换架构\"]\n    A3[\"未新增参数\"]\n    A4[\"仅重新后训练\"]\n    A5[\"API Agent 成绩 > V4 Pro 预览\"]\n    A6[\"官方成绩 82.7\"]\n    A7[\"Terminal Bench 2.1 定义\"]\n    A8[\"Bench 2.1 非模型版本\"]\n    A9[\"Minimal Mode 未公开\"]\n    A10[\"成绩来源 DeepSeek Harness\"]\n    A11[\"官方成绩 ≠ 第三方实测\"]\n    A12[\"成绩超过 80%\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A12\n    A7 --> A8\n    A6 --> A10\n    A10 --> A11\n    A9 --> A10\n```\n\n- V4 Flash 官方版发布 [BV1weGP6SEmZ P1 00:02]  \n- 未更换架构 [BV1weGP6SEmZ P1 00:07]  \n- 未新增参数 [BV1weGP6SEmZ P1 00:09]  \n- 仅重新后训练 [BV1weGP6SEmZ P1 00:10]  \n- API Agent 成绩 > V4 Pro 预览版 [BV1weGP6SEmZ P1 00:04]  \n- 官方成绩 82.7 [BV1weGP6SEmZ P1 00:19]  \n- 成绩超过 80% [BV1weGP6SEmZ P1 00:21]  \n- Terminal Bench 2.1 为测试套件，非模型版本 [BV1weGP6SEmZ P1 00:12]  \n- Minimal Mode 未公开 [BV1weGP6SEmZ P1 00:28]  \n- 成绩来源 DeepSeek 自家 Harness [BV1weGP6SEmZ P1 00:24]  \n- 官方成绩不等同于第三方实测 [BV1weGP6SEmZ P1 00:32]  \n\n## 兼容性与集成\n\n```mermaid\nflowchart TD\n    B1[\"原生支持 Responses API\"]\n    B2[\"Codex 已适配\"]\n    B3[\"Codex 需求 >= 0.144 版\"]\n    B4[\"当前 Codex 0.143 版\"]\n    B5[\"需升级 Flash\"]\n    B6[\"Flash 价格未变\"]\n    B7[\"D4Pro 接入 Codex\"]\n    B8[\"预计 8 月初 完成\"]\n    B9[\"仍不支持 图片/文件 传输\"]\n    B10[\"MCP 与电脑操作不可用\"]\n    B11[\"Flash 接近 Codex 后的风险\"]\n    B12[\"错误文件修改或测试报错导致卡住\"]\n    B13[\"官方成绩 82.7 仍无法拯救\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B3 --> B5\n    B5 --> B6\n    B5 --> B7\n    B7 --> B8\n    B1 --> B9\n    B1 --> B10\n    B7 --> B11\n    B11 --> B12\n    B12 --> B13\n```\n\n- 原生支持 Responses API [BV1weGP6SEmZ P1 00:35]  \n- Codex 已适配 [BV1weGP6SEmZ P1 00:37]  \n- Codex 至少需要 0.144 版以上 [BV1weGP6SEmZ P1 00:38]  \n- 当前停留在 0.143 版 [BV1weGP6SEmZ P1 00:43]  \n- 需先升级 Flash，价格未变 [BV1weGP6SEmZ P1 00:44]  \n- D4Pro 接入 Codex 计划 [BV1weGP6SEmZ P1 01:08]  \n- 预计 8 月初完成 [BV1weGP6SEmZ P1 01:10]  \n- 仍不支持图片/文件传输 [BV1weGP6SEmZ P1 01:04]  \n- MCP 与电脑操作不可用 [BV1weGP6SEmZ P1 01:06]  \n- Flash 接近 Codex 后的风险：错误文件或测试报错会卡住 [BV1weGP6SEmZ P1 01:12][BV1weGP6SEmZ P1 01:14]  \n- 官方成绩 82.7 仍无法拯救卡住的情况 [BV1weGP6SEmZ P1 01:17]  \n\n## 成本结构\n\n```mermaid\nflowchart TD\n    C1[\"输入缓存未命中成本\"]\n    C2[\"每百万 token $0.14\"]\n    C3[\"输出成本\"]\n    C4[\"每百万 token $0.28\"]\n    C5[\"代码 Agent 工作流\"]\n    C6[\"读取仓库并修改文件\"]\n    C7[\"测试报错需修复 token\"]\n    C8[\"迭代消耗累计\"]\n    C9[\"仅更新 API，网页/APP 未变\"]\n\n    C1 --> C2\n    C3 --> C4\n    C5 --> C6\n    C5 --> C7\n    C6 --> C8\n    C7 --> C8\n    C8 --> C9\n```\n\n- 输入缓存未命中成本 $0.14/百万 token [BV1weGP6SEmZ P1 00:47]  \n- 输出成本 $0.28/百万 token [BV1weGP6SEmZ P1 00:50]  \n- 代码 Agent 需要读取仓库并修改文件 [BV1weGP6SEmZ P1 00:54]  \n- 测试报错时需继续修复 token [BV1weGP6SEmZ P1 00:56]  \n- 成本随每轮迭代累计 [BV1weGP6SEmZ P1 00:58]  \n- 本次仅更新 API，网页和 App 未变 [BV1weGP6SEmZ P1 01:00]  ",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"V4 Flash 官方版发布\"]\n    A2[\"未更换架构\"]\n    A3[\"未新增参数\"]\n    A4[\"仅重新后训练\"]\n    A5[\"API Agent 成绩 > V4 Pro 预览\"]\n    A6[\"官方成绩 82.7\"]\n    A7[\"Terminal Bench 2.1 定义\"]\n    A8[\"Bench 2.1 非模型版本\"]\n    A9[\"Minimal Mode 未公开\"]\n    A10[\"成绩来源 DeepSeek Harness\"]\n    A11[\"官方成绩 ≠ 第三方实测\"]\n    A12[\"成绩超过 80%\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A12\n    A7 --> A8\n    A6 --> A10\n    A10 --> A11\n    A9 --> A10"
+    },
+    {
+      "title": "兼容性与集成",
+      "code": "flowchart TD\n    B1[\"原生支持 Responses API\"]\n    B2[\"Codex 已适配\"]\n    B3[\"Codex 需求 >= 0.144 版\"]\n    B4[\"当前 Codex 0.143 版\"]\n    B5[\"需升级 Flash\"]\n    B6[\"Flash 价格未变\"]\n    B7[\"D4Pro 接入 Codex\"]\n    B8[\"预计 8 月初 完成\"]\n    B9[\"仍不支持 图片/文件 传输\"]\n    B10[\"MCP 与电脑操作不可用\"]\n    B11[\"Flash 接近 Codex 后的风险\"]\n    B12[\"错误文件修改或测试报错导致卡住\"]\n    B13[\"官方成绩 82.7 仍无法拯救\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B3 --> B5\n    B5 --> B6\n    B5 --> B7\n    B7 --> B8\n    B1 --> B9\n    B1 --> B10\n    B7 --> B11\n    B11 --> B12\n    B12 --> B13"
+    },
+    {
+      "title": "成本结构",
+      "code": "flowchart TD\n    C1[\"输入缓存未命中成本\"]\n    C2[\"每百万 token $0.14\"]\n    C3[\"输出成本\"]\n    C4[\"每百万 token $0.28\"]\n    C5[\"代码 Agent 工作流\"]\n    C6[\"读取仓库并修改文件\"]\n    C7[\"测试报错需修复 token\"]\n    C8[\"迭代消耗累计\"]\n    C9[\"仅更新 API，网页/APP 未变\"]\n\n    C1 --> C2\n    C3 --> C4\n    C5 --> C6\n    C5 --> C7\n    C6 --> C8\n    C7 --> C8\n    C8 --> C9"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:41:28+00:00"
+}

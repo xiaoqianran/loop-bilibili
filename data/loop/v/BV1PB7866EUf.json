@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1PB7866EUf",
+  "title": "双卡H20测速deepseek v4 flash!",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 955,
+  "text": "大家好\n我是研磨派\n今天我们来做一期H2096G双卡运行\ndeep sk v4flash的测速分享\n我们先看一下我们所用的工作站\n还有我们的显卡吧\n我们采用的是两张pro6000\n还有两张H20显卡\nH22张之间用三个mv link桥接器相连\n这样的话可以让它们之间的互联带宽大大提高\n那我们现在就开始吧\n现在我们首先运行这个NDDASMI\n来看一下我们的显卡的参数情况\n现在我们的序号的第一张和第二张是H20\n然后我们就用这两个计算卡运行一下LILLM\n这个运行参数大家可以看一下\n参考一下\n好的\n我们现在已经运行起来了\n两张H20916G就可以加载完整的deep seek\nV4flash的权重\n因为原版是150多GB\n而两张H二十九六G加一起就是192G\n现在我们正在加载\n因为我们使用了instant tensl技术\n所以说加载的速度还是比较快的\n很快就把模型都加载到了显存当中\n对了\n192G是可以支持完整\n256K上下文的\n现在他在做哭打图方面的准备\nOK我们已经加载好了\n那让我们就来试一下吧\n我们打开cherry studio\n这是一个比较流行好用的客户端\n我们把模型调整到deep sick\n第4flash\n然后随便输入一些文字\n看他会有什么反应\n第一次运行的时候\n它的首次输出速度会慢一些\n如果我们再运行一下\n它就会快很多了\n再次运行它由于有kd cash的作用\n有一些缓存在\n所以说它可能速度会啊变得特别快哈\n我们现在就在这里随便问一下问题\n逗一逗他\n这不就是我们本地运行大模型的一大乐趣吗\n现在我们在用啊\nDP和B上\n一个热心的开源网友提供的这个测速程序\n来测一下我们deep sick flash的\n在各个上下文下的这个测速\n这个程序还不错啊\n他有输出很多的参数\n卧槽我都没想到他这么快\n而且上下文越高越快\n总体就是在120token每秒左右\nprefer也很快\n4000多\n不过他到128K上下文就截止了\n因为上下文上限就是256K\n输入256K就会报错\n因为没有空间输出了\n我们把测试的输入\n上下文从256K改小一点\n单独测速25万\n2144\ntoken输入的情况\n卧槽接近256K输入时\n他输出竟然变得这么快了\n也不确定是什么情况\n今天就测到这里\n我们以后再多测测\n咱们下期见啊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1PB7866EUf",
+  "published_at": "1782379695",
+  "fetched_at": "2026-08-06T23:43:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 双卡H20测速deepseek v4 flash!\n\n## 硬件配置与互联 [BV1PB7866EUf P1 00:14] [BV1PB7866EUf P1 00:17] [BV1PB7866EUf P1 00:19] [BV1PB7866EUf P1 00:25]\n\n```mermaid\nflowchart TD\n    WS[\"工作站\"]\n    P1[\"Pro6000 GPU 1\"]\n    P2[\"Pro6000 GPU 2\"]\n    H1[\"H20 GPU 1\"]\n    H2[\"H20 GPU 2\"]\n    M1[\"MVLink 桥接器 1\"]\n    M2[\"MVLink 桥接器 2\"]\n    M3[\"MVLink 桥接器 3\"]\n    WS --> P1\n    WS --> P2\n    WS --> H1\n    WS --> H2\n    H1 --桥接--> M1\n    H2 --桥接--> M1\n    H1 --桥接--> M2\n    H2 --桥接--> M2\n    H1 --桥接--> M3\n    H2 --桥接--> M3\n    M1 & M2 & M3 -->|提升互联带宽| WS\n```\n\n## 模型加载与显存需求 [BV1PB7866EUf P1 01:09] [BV1PB7866EUf P1 01:19] [BV1PB7866EUf P1 01:21] [BV1PB7866EUf P1 01:32] [BV1PB7866EUf P1 01:44]\n\n```mermaid\nflowchart TD\n    M[\"DeepSeek V4Flash 模型\"]\n    Size[\"原始大小 ~150GB\"]\n    VRAM[\"两张 H20 96G 显存 合计 192GB\"]\n    Inst[\"Instant Tensl 技术\"]\n    Load[\"加载速度快\"]\n    Full[\"完整模型已加载\"]\n    Context[\"支持 256K 上下文\"]\n    M --> Size\n    M --> Full\n    VRAM --> Full\n    Inst --> Load\n    Load --> Full\n    Full --> Context\n```\n\n## 性能测试流程与缓存效应 [BV1PB7866EUf P1 02:33] [BV1PB7866EUf P1 02:50] [BV1PB7866EUf P1 02:56] [BV1PB7866EUf P1 03:01]\n\n```mermaid\nflowchart TD\n    CS[\"Cherry Studio 客户端\"]\n    Model[\"DeepSeek V4Flash\"]\n    Input[\"输入文字\"]\n    Run1[\"首次运行（慢）\"]\n    Cold[\"冷启动\"]\n    Cache[\"KD Cache\"]\n    Run2[\"后续运行（快）\"]\n    Throughput[\"约 120 token/s\"]\n    CS --> Model\n    Model --> Input\n    Input --> Run1\n    Run1 --> Cold\n    Cold --> Cache\n    Cache --> Run2\n    Run2 --> Throughput\n```\n\n## 上下文长度与吞吐速率关系 [BV1PB7866EUf P1 04:39] [BV1PB7866EUf P1 04:50] [BV1PB7866EUf P1 05:03] [BV1PB7866EUf P1 05:10] [BV1PB7866EUf P1 05:44]\n\n```mermaid\nflowchart TD\n    CLen[\"上下文长度\"]\n    Speed[\"吞吐速率\"]\n    Trend[\"上下文越高越快\"]\n    Limit128[\"128K 上下文上限\"]\n    Limit256[\"256K 上下文上限\"]\n    Error[\"输入 256K 报错\"]\n    Near256[\"接近 256K 时输出异常快\"]\n    Pref[\"Prefer 4000+ token/s\"]\n    CLen --> Speed\n    CLen --> Trend\n    Trend --> Speed\n    CLen --> Limit128\n    CLen --> Limit256\n    Limit256 --> Error\n    Near256 --> Pref\n```",
+      "diagrams": [
+        {
+          "title": "硬件配置与互联",
+          "code": "flowchart TD\n    WS[\"工作站\"]\n    P1[\"Pro6000 GPU 1\"]\n    P2[\"Pro6000 GPU 2\"]\n    H1[\"H20 GPU 1\"]\n    H2[\"H20 GPU 2\"]\n    M1[\"MVLink 桥接器 1\"]\n    M2[\"MVLink 桥接器 2\"]\n    M3[\"MVLink 桥接器 3\"]\n    WS --> P1\n    WS --> P2\n    WS --> H1\n    WS --> H2\n    H1 --桥接--> M1\n    H2 --桥接--> M1\n    H1 --桥接--> M2\n    H2 --桥接--> M2\n    H1 --桥接--> M3\n    H2 --桥接--> M3\n    M1 & M2 & M3 -->|提升互联带宽| WS"
+        },
+        {
+          "title": "模型加载与显存需求",
+          "code": "flowchart TD\n    M[\"DeepSeek V4Flash 模型\"]\n    Size[\"原始大小 ~150GB\"]\n    VRAM[\"两张 H20 96G 显存 合计 192GB\"]\n    Inst[\"Instant Tensl 技术\"]\n    Load[\"加载速度快\"]\n    Full[\"完整模型已加载\"]\n    Context[\"支持 256K 上下文\"]\n    M --> Size\n    M --> Full\n    VRAM --> Full\n    Inst --> Load\n    Load --> Full\n    Full --> Context"
+        },
+        {
+          "title": "性能测试流程与缓存效应",
+          "code": "flowchart TD\n    CS[\"Cherry Studio 客户端\"]\n    Model[\"DeepSeek V4Flash\"]\n    Input[\"输入文字\"]\n    Run1[\"首次运行（慢）\"]\n    Cold[\"冷启动\"]\n    Cache[\"KD Cache\"]\n    Run2[\"后续运行（快）\"]\n    Throughput[\"约 120 token/s\"]\n    CS --> Model\n    Model --> Input\n    Input --> Run1\n    Run1 --> Cold\n    Cold --> Cache\n    Cache --> Run2\n    Run2 --> Throughput"
+        },
+        {
+          "title": "上下文长度与吞吐速率关系",
+          "code": "flowchart TD\n    CLen[\"上下文长度\"]\n    Speed[\"吞吐速率\"]\n    Trend[\"上下文越高越快\"]\n    Limit128[\"128K 上下文上限\"]\n    Limit256[\"256K 上下文上限\"]\n    Error[\"输入 256K 报错\"]\n    Near256[\"接近 256K 时输出异常快\"]\n    Pref[\"Prefer 4000+ token/s\"]\n    CLen --> Speed\n    CLen --> Trend\n    Trend --> Speed\n    CLen --> Limit128\n    CLen --> Limit256\n    Limit256 --> Error\n    Near256 --> Pref"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T23:43:29+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 双卡H20测速deepseek v4 flash!\n\n## 硬件配置与互联 [BV1PB7866EUf P1 00:14] [BV1PB7866EUf P1 00:17] [BV1PB7866EUf P1 00:19] [BV1PB7866EUf P1 00:25]\n\n```mermaid\nflowchart TD\n    WS[\"工作站\"]\n    P1[\"Pro6000 GPU 1\"]\n    P2[\"Pro6000 GPU 2\"]\n    H1[\"H20 GPU 1\"]\n    H2[\"H20 GPU 2\"]\n    M1[\"MVLink 桥接器 1\"]\n    M2[\"MVLink 桥接器 2\"]\n    M3[\"MVLink 桥接器 3\"]\n    WS --> P1\n    WS --> P2\n    WS --> H1\n    WS --> H2\n    H1 --桥接--> M1\n    H2 --桥接--> M1\n    H1 --桥接--> M2\n    H2 --桥接--> M2\n    H1 --桥接--> M3\n    H2 --桥接--> M3\n    M1 & M2 & M3 -->|提升互联带宽| WS\n```\n\n## 模型加载与显存需求 [BV1PB7866EUf P1 01:09] [BV1PB7866EUf P1 01:19] [BV1PB7866EUf P1 01:21] [BV1PB7866EUf P1 01:32] [BV1PB7866EUf P1 01:44]\n\n```mermaid\nflowchart TD\n    M[\"DeepSeek V4Flash 模型\"]\n    Size[\"原始大小 ~150GB\"]\n    VRAM[\"两张 H20 96G 显存 合计 192GB\"]\n    Inst[\"Instant Tensl 技术\"]\n    Load[\"加载速度快\"]\n    Full[\"完整模型已加载\"]\n    Context[\"支持 256K 上下文\"]\n    M --> Size\n    M --> Full\n    VRAM --> Full\n    Inst --> Load\n    Load --> Full\n    Full --> Context\n```\n\n## 性能测试流程与缓存效应 [BV1PB7866EUf P1 02:33] [BV1PB7866EUf P1 02:50] [BV1PB7866EUf P1 02:56] [BV1PB7866EUf P1 03:01]\n\n```mermaid\nflowchart TD\n    CS[\"Cherry Studio 客户端\"]\n    Model[\"DeepSeek V4Flash\"]\n    Input[\"输入文字\"]\n    Run1[\"首次运行（慢）\"]\n    Cold[\"冷启动\"]\n    Cache[\"KD Cache\"]\n    Run2[\"后续运行（快）\"]\n    Throughput[\"约 120 token/s\"]\n    CS --> Model\n    Model --> Input\n    Input --> Run1\n    Run1 --> Cold\n    Cold --> Cache\n    Cache --> Run2\n    Run2 --> Throughput\n```\n\n## 上下文长度与吞吐速率关系 [BV1PB7866EUf P1 04:39] [BV1PB7866EUf P1 04:50] [BV1PB7866EUf P1 05:03] [BV1PB7866EUf P1 05:10] [BV1PB7866EUf P1 05:44]\n\n```mermaid\nflowchart TD\n    CLen[\"上下文长度\"]\n    Speed[\"吞吐速率\"]\n    Trend[\"上下文越高越快\"]\n    Limit128[\"128K 上下文上限\"]\n    Limit256[\"256K 上下文上限\"]\n    Error[\"输入 256K 报错\"]\n    Near256[\"接近 256K 时输出异常快\"]\n    Pref[\"Prefer 4000+ token/s\"]\n    CLen --> Speed\n    CLen --> Trend\n    Trend --> Speed\n    CLen --> Limit128\n    CLen --> Limit256\n    Limit256 --> Error\n    Near256 --> Pref\n```",
+  "diagrams": [
+    {
+      "title": "硬件配置与互联",
+      "code": "flowchart TD\n    WS[\"工作站\"]\n    P1[\"Pro6000 GPU 1\"]\n    P2[\"Pro6000 GPU 2\"]\n    H1[\"H20 GPU 1\"]\n    H2[\"H20 GPU 2\"]\n    M1[\"MVLink 桥接器 1\"]\n    M2[\"MVLink 桥接器 2\"]\n    M3[\"MVLink 桥接器 3\"]\n    WS --> P1\n    WS --> P2\n    WS --> H1\n    WS --> H2\n    H1 --桥接--> M1\n    H2 --桥接--> M1\n    H1 --桥接--> M2\n    H2 --桥接--> M2\n    H1 --桥接--> M3\n    H2 --桥接--> M3\n    M1 & M2 & M3 -->|提升互联带宽| WS"
+    },
+    {
+      "title": "模型加载与显存需求",
+      "code": "flowchart TD\n    M[\"DeepSeek V4Flash 模型\"]\n    Size[\"原始大小 ~150GB\"]\n    VRAM[\"两张 H20 96G 显存 合计 192GB\"]\n    Inst[\"Instant Tensl 技术\"]\n    Load[\"加载速度快\"]\n    Full[\"完整模型已加载\"]\n    Context[\"支持 256K 上下文\"]\n    M --> Size\n    M --> Full\n    VRAM --> Full\n    Inst --> Load\n    Load --> Full\n    Full --> Context"
+    },
+    {
+      "title": "性能测试流程与缓存效应",
+      "code": "flowchart TD\n    CS[\"Cherry Studio 客户端\"]\n    Model[\"DeepSeek V4Flash\"]\n    Input[\"输入文字\"]\n    Run1[\"首次运行（慢）\"]\n    Cold[\"冷启动\"]\n    Cache[\"KD Cache\"]\n    Run2[\"后续运行（快）\"]\n    Throughput[\"约 120 token/s\"]\n    CS --> Model\n    Model --> Input\n    Input --> Run1\n    Run1 --> Cold\n    Cold --> Cache\n    Cache --> Run2\n    Run2 --> Throughput"
+    },
+    {
+      "title": "上下文长度与吞吐速率关系",
+      "code": "flowchart TD\n    CLen[\"上下文长度\"]\n    Speed[\"吞吐速率\"]\n    Trend[\"上下文越高越快\"]\n    Limit128[\"128K 上下文上限\"]\n    Limit256[\"256K 上下文上限\"]\n    Error[\"输入 256K 报错\"]\n    Near256[\"接近 256K 时输出异常快\"]\n    Pref[\"Prefer 4000+ token/s\"]\n    CLen --> Speed\n    CLen --> Trend\n    Trend --> Speed\n    CLen --> Limit128\n    CLen --> Limit256\n    Limit256 --> Error\n    Near256 --> Pref"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:43:29+00:00"
+}

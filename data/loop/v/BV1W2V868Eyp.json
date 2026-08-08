@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1W2V868Eyp",
+  "title": "很多人测试大模型价格的方法是错的 不是说打了个你好看花了多少钱，就能测出来价格贵不贵的",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 569,
+  "text": "最近看到很多人说小米的大模型\n还有DEPC的大模型很贵\n打个你好就要花不少钱\n但我不是这样的\n我某天用deep sk跑了1.11个token\n花费13.23元\n算下来\n每百万token只要0.119元\n还有一次用小米的大模型花了35000000token\n按照小米MIO月卡\n最低档34块多的价格来算\n这35000000token花费4.8元\n每百万token0.137元\n确实是大降价\n我花一分钟把这个事说清楚\nAI大模型收钱分三块缓存\n未命中\n输出缓存命中\n你第一次发一段内容给AI\n他得从头读一遍\n完整算一次\n这个过程叫缓存为民众\n价格是三块钱每百万token\n但同一段内容你再发第二次\n第三次的时候\n系统发现你发的东西和之前一模一样\n它就不重新算了\n直接从缓存里调\n结果\n这个过程叫缓存命中\n缓存命中的价格是多少\n0.025元\n每百万token3块\n对比0.025差了120倍\n所以那些说打个你好就花了多少钱的人\n测试的是什么场景\n第一次调API发一句你好\nAI回复全程缓存未命中\n这当然很贵\n简单来说就是你让AIKMM输\nAI第一次读会花不少钱\n因为这对AI来说是新内容\n每百万token3块钱\n但之后再让AI根据这本书的内容和你交流\n就是旧内容了\n每百万token0.025元\n现在你明白了吗\n打个泥好测试\n花了多少钱没有意义",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1W2V868Eyp",
+  "published_at": "1780049825",
+  "fetched_at": "2026-08-07T07:58:03+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

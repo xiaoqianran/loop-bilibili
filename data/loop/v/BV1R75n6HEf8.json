@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1R75n6HEf8",
+  "title": "GPU粒子性能有多强？Unity粒子转GPUParticle插件实测演示 ParticleSystem一键转GPU粒子 性能拉满 粒子优化",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1928,
+  "text": "给大家分享一个有趣的尝试\n好大家都知道在游戏开发中\n粒子特效是一个非常常用的功能\n尽管这个particle system已经进行了合批优化处理\n但是呢它仍然是一个主线程计算的组件\n比如说他要在主线程进行计算\n粒子的发射以及速度等等\n好因此呢他也无法支持非常多的实例\n好我们今天尝试的优化呢\n就是彻底的干掉粒子特效的\nCPU的计算完全转成GPU\n可以直接把这个particle system\n直接一键转换成GPU粒子啊\n这样呢它就有了超高的性能可以看到啊\n这里我们渲染1万个不同的粒子特效啊\n我们来看一下它的性能对比\n好当然了\n这里我们是把这个GPU粒子特效\n用我们万人同屏插件里的高性能渲染器\nECS graphics进行渲染好\n他的帧数呢也非常高\n如果打包之后呢\n帧数可能也会翻倍\n让我们来看一下直接使用GPU粒子的game object渲染好\n它也有100多帧\n好大家可以看到啊\n这边其实他没有合批\n可以看到\n如果我们是用ECS graphics\n他是有合批的啊\n这里呢其实可以走动态合批\n也可以走这个GPUINSTINING进行合批\n如果使用的是unity6的话\n直接勾选一项那个合批的功能\n它也会进行合批\n它的帧数呢也会直接翻几倍\n好我们再看一下啊\n这是game object的传统的形式进行渲染\n我们再看一下它的原始粒子\n好可以看到啊\n原始粒子的它的性能已经个位数了\n非常卡\n随着这个粒子的发射啊\n直接又增加了超过1万啊2万\n而我们使用这个GPU particle是把每一个粒子\n无论它嵌套了多少层粒子\n都会给它合批到一个\n哦这个原始的particle呢它非常的卡\n我们来看一下\n因为这个每个particle\n它可能还需要几个子particle进行渲染\n所以呢它就非常卡\n然后我们切到这个GPU卡提克\n它瞬间就帧数就上来了啊\n我们其实它还是以这个game object好\n我们可以看到啊\n转换成这个GPU particle之后呢\n他就只需要一个mesh\n一个mesh render就可以渲染了\n他没有挂任何的脚本好\n当然我们也可以非常好的去控制\n比如说我们可以控制它的发射速度好\n他就可以发射的比较高\n我们来演示一下这个GPU粒子它的构建过程啊\n比如说我们这里导入了一个粒子特效包\n然后呢我们就可以选中这个粒子特效\n去创建一个构建文件\n好然后呢直接就开始构建\n好我们就可以直接进行预览\n由于是这个纯GPU的实现\n我们的场景不需要运行啊\n它只要刷新这个sin场景\n它就会播放\n好我们可以做一个对比啊\n啊这就是原粒子和GPU粒子的一个效果对比\n大家能看出区别吗\n当然了\nGPU粒子肯定是相比原版粒子肯定是要有区别的\n因为有得必有舍\n不可能把所有的事情都兼顾到好\n由于我们把这个粒子呢进行GPU化了\n所以说它仅仅通过SHADER中的获取上一帧的矩阵\n没有办法实现拖尾的效果啊\n当然实现它也容易啊\n但是必须要在主线程做点什么\n做点计算才能实现这个完整的拖尾效果\n运行发射的时候可以看到它是从先从无到有\n有一个缓慢的发射过程啊\n这些粒子特效呢肯定是都需要有的\n然后呢我们还支持它的循环的阶段\n比如说我们循环的时候\n我们从刚开始就进行循环\n从零到结束整个粒子发射生命周期\n进行循环的话\n它每次都会有一个刚发射的这个阶段啊\n就导致首尾针无法衔接好\n这就是一个穿帮\n所以呢就支持一个调整它的循环阶段\n好\n这样呢它刚开始发射的时候\n也有一个逐渐发射的过程\n同时呢它也会进行循环\n好当然我们也可以关闭循环\n这个数值为负数\n就是关闭循环\n好我们再尝试一下其他的粒子特效\n我随便构建一下\n啊这种爆炸带有拖尾的\n可以看到啊\n这里它爆炸的时候\n拖尾都可以正常的显示\n但是呢我们移动的时候\n它不会这个进行\n有一个拖尾的效果\n还有一个随机性\n当然随机性也是可以做的啊\n但是我觉得没有这个必要可以看到啊\n它这个例子呢每次爆炸\n它的发射方向都是一样的\n啊这个例子就比较复杂了\n比如它发射的是模型\n我这也是支持的\n但是对于发射模型的粒子呢\n它也有一个坏处\n就是它需要把这个发射的模型给烘焙进去\n可以看到啊\n它发射的其实是一个\n斯菲尔的模型\n好可以看到它发射的一个sphere模型\n然后呢我们就需要把这个模型给烘焙进去啊\n它的顶点数呢就比较高\n而其他的模型呢我们可以看到啊\n其他的它的顶点数呢都非常的低\n其实就是一个面片就可以进行渲染\n嗯大概测试了一下啊\n这一个粒子包其实大大小小的粒子啊\n包括嵌套的粒子\n大概有4000多种例子\n我们只是简单尝试实现了一下\n这个GPU粒子的简单的功能\n就已经覆盖了90%以上啊\n现在呢主要就是拖尾还没有支持\n啊这就是GPU粒子的初步尝试\n感谢大家的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1R75n6HEf8",
+  "published_at": "1778420125",
+  "fetched_at": "2026-08-07T06:21:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GPU粒子技术知识图谱\n\n## 性能与特性概览 [BV1R75n6HEf8 P1 01:01]\n```mermaid\nflowchart TD\n    CPU_Particle[\"CPU粒子系统\"] --> MainThread[\"主线程计算\"]\n    CPU_Particle --> Batch[\"合批优化\"]\n    CPU_Particle --> InstanceLimit[\"实例数量受限\"]\n    GPU_Particle[\"GPU粒子系统\"] --> HighPerformance[\"高帧率\"]\n    GPU_Particle --> DrawCall[\"仅1个Mesh Render\"]\n    GPU_Particle --> Limitations[\"功能限制（如拖尾）\"]\n    GPU_Particle --> ShaderMatrix[\"Shader获取前帧矩阵\"]\n    GPU_Particle --> Batch\n    GPU_Benefit[\"GPU计算优势\"] --> HighPerformance\n    GPU_Benefit --> DrawCall\n```\n\n## 构建与渲染流程 [BV1R75n6HEf8 P1 03:32]\n```mermaid\nflowchart TD\n    Import[\"导入粒子特效包\"] --> Select[\"选中粒子特效\"]\n    Select --> BuildFile[\"创建构建文件\"]\n    BuildFile --> BuildProcess[\"开始构建\"]\n    BuildProcess --> Preview[\"预览\"]\n    BuildProcess --> NoRuntime[\"无需运行场景\"]\n    NoRuntime --> Refresh[\"刷新场景\"]\n    Refresh --> Play[\"播放\"]\n    Play --> Render[\"GPU渲染 (Mesh Render)\"]\n```\n\n## 限制与实现细节 [BV1R75n6HEf8 P1 05:09]\n```mermaid\nflowchart TD\n    NoTrail[\"无拖尾效果\"] --> TrailWorkaround[\"需主线程计算实现拖尾\"]\n    LoopIssue[\"循环首尾不衔接\"] --> LoopAdjust[\"支持循环阶段调整\"]\n    LoopAdjust --> NegativeLoop[\"负数值关闭循环\"]\n    Randomness[\"随机性可实现\"] --> Randomness\n    ModelEmission[\"模型发射\"] --> BakeModel[\"模型需烘焙\"]\n    BakeModel --> VertexCount[\"顶点数影响性能\"]\n    GPUInstancing[\"GPUInstancing合批\"] --> ECSGraphics[\"ECS Graphics渲染\"]\n```",
+      "diagrams": [
+        {
+          "title": "性能与特性概览",
+          "code": "flowchart TD\n    CPU_Particle[\"CPU粒子系统\"] --> MainThread[\"主线程计算\"]\n    CPU_Particle --> Batch[\"合批优化\"]\n    CPU_Particle --> InstanceLimit[\"实例数量受限\"]\n    GPU_Particle[\"GPU粒子系统\"] --> HighPerformance[\"高帧率\"]\n    GPU_Particle --> DrawCall[\"仅1个Mesh Render\"]\n    GPU_Particle --> Limitations[\"功能限制（如拖尾）\"]\n    GPU_Particle --> ShaderMatrix[\"Shader获取前帧矩阵\"]\n    GPU_Particle --> Batch\n    GPU_Benefit[\"GPU计算优势\"] --> HighPerformance\n    GPU_Benefit --> DrawCall"
+        },
+        {
+          "title": "构建与渲染流程",
+          "code": "flowchart TD\n    Import[\"导入粒子特效包\"] --> Select[\"选中粒子特效\"]\n    Select --> BuildFile[\"创建构建文件\"]\n    BuildFile --> BuildProcess[\"开始构建\"]\n    BuildProcess --> Preview[\"预览\"]\n    BuildProcess --> NoRuntime[\"无需运行场景\"]\n    NoRuntime --> Refresh[\"刷新场景\"]\n    Refresh --> Play[\"播放\"]\n    Play --> Render[\"GPU渲染 (Mesh Render)\"]"
+        },
+        {
+          "title": "限制与实现细节",
+          "code": "flowchart TD\n    NoTrail[\"无拖尾效果\"] --> TrailWorkaround[\"需主线程计算实现拖尾\"]\n    LoopIssue[\"循环首尾不衔接\"] --> LoopAdjust[\"支持循环阶段调整\"]\n    LoopAdjust --> NegativeLoop[\"负数值关闭循环\"]\n    Randomness[\"随机性可实现\"] --> Randomness\n    ModelEmission[\"模型发射\"] --> BakeModel[\"模型需烘焙\"]\n    BakeModel --> VertexCount[\"顶点数影响性能\"]\n    GPUInstancing[\"GPUInstancing合批\"] --> ECSGraphics[\"ECS Graphics渲染\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T06:21:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GPU粒子技术知识图谱\n\n## 性能与特性概览 [BV1R75n6HEf8 P1 01:01]\n```mermaid\nflowchart TD\n    CPU_Particle[\"CPU粒子系统\"] --> MainThread[\"主线程计算\"]\n    CPU_Particle --> Batch[\"合批优化\"]\n    CPU_Particle --> InstanceLimit[\"实例数量受限\"]\n    GPU_Particle[\"GPU粒子系统\"] --> HighPerformance[\"高帧率\"]\n    GPU_Particle --> DrawCall[\"仅1个Mesh Render\"]\n    GPU_Particle --> Limitations[\"功能限制（如拖尾）\"]\n    GPU_Particle --> ShaderMatrix[\"Shader获取前帧矩阵\"]\n    GPU_Particle --> Batch\n    GPU_Benefit[\"GPU计算优势\"] --> HighPerformance\n    GPU_Benefit --> DrawCall\n```\n\n## 构建与渲染流程 [BV1R75n6HEf8 P1 03:32]\n```mermaid\nflowchart TD\n    Import[\"导入粒子特效包\"] --> Select[\"选中粒子特效\"]\n    Select --> BuildFile[\"创建构建文件\"]\n    BuildFile --> BuildProcess[\"开始构建\"]\n    BuildProcess --> Preview[\"预览\"]\n    BuildProcess --> NoRuntime[\"无需运行场景\"]\n    NoRuntime --> Refresh[\"刷新场景\"]\n    Refresh --> Play[\"播放\"]\n    Play --> Render[\"GPU渲染 (Mesh Render)\"]\n```\n\n## 限制与实现细节 [BV1R75n6HEf8 P1 05:09]\n```mermaid\nflowchart TD\n    NoTrail[\"无拖尾效果\"] --> TrailWorkaround[\"需主线程计算实现拖尾\"]\n    LoopIssue[\"循环首尾不衔接\"] --> LoopAdjust[\"支持循环阶段调整\"]\n    LoopAdjust --> NegativeLoop[\"负数值关闭循环\"]\n    Randomness[\"随机性可实现\"] --> Randomness\n    ModelEmission[\"模型发射\"] --> BakeModel[\"模型需烘焙\"]\n    BakeModel --> VertexCount[\"顶点数影响性能\"]\n    GPUInstancing[\"GPUInstancing合批\"] --> ECSGraphics[\"ECS Graphics渲染\"]\n```",
+  "diagrams": [
+    {
+      "title": "性能与特性概览",
+      "code": "flowchart TD\n    CPU_Particle[\"CPU粒子系统\"] --> MainThread[\"主线程计算\"]\n    CPU_Particle --> Batch[\"合批优化\"]\n    CPU_Particle --> InstanceLimit[\"实例数量受限\"]\n    GPU_Particle[\"GPU粒子系统\"] --> HighPerformance[\"高帧率\"]\n    GPU_Particle --> DrawCall[\"仅1个Mesh Render\"]\n    GPU_Particle --> Limitations[\"功能限制（如拖尾）\"]\n    GPU_Particle --> ShaderMatrix[\"Shader获取前帧矩阵\"]\n    GPU_Particle --> Batch\n    GPU_Benefit[\"GPU计算优势\"] --> HighPerformance\n    GPU_Benefit --> DrawCall"
+    },
+    {
+      "title": "构建与渲染流程",
+      "code": "flowchart TD\n    Import[\"导入粒子特效包\"] --> Select[\"选中粒子特效\"]\n    Select --> BuildFile[\"创建构建文件\"]\n    BuildFile --> BuildProcess[\"开始构建\"]\n    BuildProcess --> Preview[\"预览\"]\n    BuildProcess --> NoRuntime[\"无需运行场景\"]\n    NoRuntime --> Refresh[\"刷新场景\"]\n    Refresh --> Play[\"播放\"]\n    Play --> Render[\"GPU渲染 (Mesh Render)\"]"
+    },
+    {
+      "title": "限制与实现细节",
+      "code": "flowchart TD\n    NoTrail[\"无拖尾效果\"] --> TrailWorkaround[\"需主线程计算实现拖尾\"]\n    LoopIssue[\"循环首尾不衔接\"] --> LoopAdjust[\"支持循环阶段调整\"]\n    LoopAdjust --> NegativeLoop[\"负数值关闭循环\"]\n    Randomness[\"随机性可实现\"] --> Randomness\n    ModelEmission[\"模型发射\"] --> BakeModel[\"模型需烘焙\"]\n    BakeModel --> VertexCount[\"顶点数影响性能\"]\n    GPUInstancing[\"GPUInstancing合批\"] --> ECSGraphics[\"ECS Graphics渲染\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:21:19+00:00"
+}

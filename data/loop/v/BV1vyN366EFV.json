@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1vyN366EFV",
+  "title": "AI真的能帮做游戏吗？我用 UE5.8 + Codex 10天做了个跑酷闯关游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 661,
+  "text": "这是一个奇幻森林主题的第三人称跑酷闯关\n游戏\n开发方式是我主导设计和集成agent\n你辅助C加加代码实现\n差GPT辅助我拆解需求和梳理方案\n具体分工上\ncodex agent主要负责C加加层的核心系统实现\n比如账号与本地存档血量组建背包和任务\n组建关卡胜负\n判定敌人行为逻辑黑雾和触发器\nui bridge等代码\n每一轮我都会先给agent明确需求和限制\n他先输出implementation plan\n我审核后再让他修改代码并build差GPT\n主要是我的开发顾问\n帮助我把课程要求拆成系统模块\n审查agent的实现方案\n设计测试步骤\n分析U1里遇到的问题\n并帮助我整理开发报告和最终展示思路\n我自己负责最终项目落地\n包括游戏主题和关卡流程\n设计关卡白盒\n搭建UE1蓝图\n绑定om界面\n制作美术资产替换机关和敌人的实际摆放\n音频系统接入测试验证和问题调试\n也就是说AI主要辅助代码和方案推演\n最终的玩法整合关卡体验\n蓝图实现和提交效果\n是我在U1里完成和验证的\n接下来是实机演示\n没注册账号\n登录失败\n注册账号\n验证密码\n进入主菜单\n进入关卡\n选择配置关卡\n目标玩家血量\n通关时间\n黑雾速度\n开始第一个关卡\nHUD显示时间血量通关目标治疗物\n在开头放了三个教学\n哦机关造成伤害\n不不\n使用治疗物回血加特效\n蹲下躲避敌人\n这上面还有一条路\n设置了一个伪终点\n敌人发现并追击\n黑雾镜头引导黑雾追逐\n持续扣血\n不不不\n奖励结算\n背包奖励更新使用奖励\n下面是失败的情况\n失败情况有血量为零\n不\n会完成收集目标\n不不不不\n调出平台",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1vyN366EFV",
+  "published_at": "1783864825",
+  "fetched_at": "2026-08-06T20:02:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI辅助UE5跑酷游戏开发知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    H[\"人类设计师\"] --> C[\"Codex Agent\"]\n    H --> G[\"ChatGPT（差GPT）\"]\n    C --> S[\"核心系统实现\"]\n    G --> D[\"开发顾问（审查、拆解）\"]\n    D --> H\n    S --> U[\"UE5 引擎\"]\n    B[\"蓝图实现\"] --> U\n    A[\"美术资产\"] --> U\n    U --> P[\"项目落地与最终展示\"]\n```\n\n## 迭代开发流程\n```mermaid\nflowchart TD\n    R[\"需求与限制\"] --> PL[\"Implementation Plan\"]\n    PL --> RV[\"人工审查\"]\n    RV --> CG[\"代码生成\"]\n    CG --> BD[\"Build\"]\n    BD --> TS[\"测试\"]\n    TS --> FB[\"反馈与迭代\"]\n    FB --> PL\n    TD[\"测试步骤设计\"] --> TS\n    PA[\"问题分析\"] --> FB\n    FB --> CI[\"最终提交\"]\n```\n\n## 系统模块分工\n```mermaid\nflowchart TD\n    CA[\"Codex Agent\"] --> AC[\"账号系统\"]\n    CA --> SS[\"本地存档\"]\n    CA --> HC[\"血量组件\"]\n    CA --> IB[\"背包系统\"]\n    CA --> QT[\"任务系统\"]\n    CA --> LL[\"关卡逻辑\"]\n    CA --> EA[\"敌人行为逻辑\"]\n    CA --> BF[\"黑雾系统\"]\n    CA --> TR[\"触发器\"]\n    CA --> UI[\"UI Bridge\"]\n\n    H[\"人类开发者\"] --> BP[\"蓝图实现\"]\n    H --> AR[\"美术资产\"]\n    H --> AU[\"音频系统\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    H[\"人类设计师\"] --> C[\"Codex Agent\"]\n    H --> G[\"ChatGPT（差GPT）\"]\n    C --> S[\"核心系统实现\"]\n    G --> D[\"开发顾问（审查、拆解）\"]\n    D --> H\n    S --> U[\"UE5 引擎\"]\n    B[\"蓝图实现\"] --> U\n    A[\"美术资产\"] --> U\n    U --> P[\"项目落地与最终展示\"]"
+        },
+        {
+          "title": "迭代开发流程",
+          "code": "flowchart TD\n    R[\"需求与限制\"] --> PL[\"Implementation Plan\"]\n    PL --> RV[\"人工审查\"]\n    RV --> CG[\"代码生成\"]\n    CG --> BD[\"Build\"]\n    BD --> TS[\"测试\"]\n    TS --> FB[\"反馈与迭代\"]\n    FB --> PL\n    TD[\"测试步骤设计\"] --> TS\n    PA[\"问题分析\"] --> FB\n    FB --> CI[\"最终提交\"]"
+        },
+        {
+          "title": "系统模块分工",
+          "code": "flowchart TD\n    CA[\"Codex Agent\"] --> AC[\"账号系统\"]\n    CA --> SS[\"本地存档\"]\n    CA --> HC[\"血量组件\"]\n    CA --> IB[\"背包系统\"]\n    CA --> QT[\"任务系统\"]\n    CA --> LL[\"关卡逻辑\"]\n    CA --> EA[\"敌人行为逻辑\"]\n    CA --> BF[\"黑雾系统\"]\n    CA --> TR[\"触发器\"]\n    CA --> UI[\"UI Bridge\"]\n\n    H[\"人类开发者\"] --> BP[\"蓝图实现\"]\n    H --> AR[\"美术资产\"]\n    H --> AU[\"音频系统\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T20:02:33+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI辅助UE5跑酷游戏开发知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    H[\"人类设计师\"] --> C[\"Codex Agent\"]\n    H --> G[\"ChatGPT（差GPT）\"]\n    C --> S[\"核心系统实现\"]\n    G --> D[\"开发顾问（审查、拆解）\"]\n    D --> H\n    S --> U[\"UE5 引擎\"]\n    B[\"蓝图实现\"] --> U\n    A[\"美术资产\"] --> U\n    U --> P[\"项目落地与最终展示\"]\n```\n\n## 迭代开发流程\n```mermaid\nflowchart TD\n    R[\"需求与限制\"] --> PL[\"Implementation Plan\"]\n    PL --> RV[\"人工审查\"]\n    RV --> CG[\"代码生成\"]\n    CG --> BD[\"Build\"]\n    BD --> TS[\"测试\"]\n    TS --> FB[\"反馈与迭代\"]\n    FB --> PL\n    TD[\"测试步骤设计\"] --> TS\n    PA[\"问题分析\"] --> FB\n    FB --> CI[\"最终提交\"]\n```\n\n## 系统模块分工\n```mermaid\nflowchart TD\n    CA[\"Codex Agent\"] --> AC[\"账号系统\"]\n    CA --> SS[\"本地存档\"]\n    CA --> HC[\"血量组件\"]\n    CA --> IB[\"背包系统\"]\n    CA --> QT[\"任务系统\"]\n    CA --> LL[\"关卡逻辑\"]\n    CA --> EA[\"敌人行为逻辑\"]\n    CA --> BF[\"黑雾系统\"]\n    CA --> TR[\"触发器\"]\n    CA --> UI[\"UI Bridge\"]\n\n    H[\"人类开发者\"] --> BP[\"蓝图实现\"]\n    H --> AR[\"美术资产\"]\n    H --> AU[\"音频系统\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    H[\"人类设计师\"] --> C[\"Codex Agent\"]\n    H --> G[\"ChatGPT（差GPT）\"]\n    C --> S[\"核心系统实现\"]\n    G --> D[\"开发顾问（审查、拆解）\"]\n    D --> H\n    S --> U[\"UE5 引擎\"]\n    B[\"蓝图实现\"] --> U\n    A[\"美术资产\"] --> U\n    U --> P[\"项目落地与最终展示\"]"
+    },
+    {
+      "title": "迭代开发流程",
+      "code": "flowchart TD\n    R[\"需求与限制\"] --> PL[\"Implementation Plan\"]\n    PL --> RV[\"人工审查\"]\n    RV --> CG[\"代码生成\"]\n    CG --> BD[\"Build\"]\n    BD --> TS[\"测试\"]\n    TS --> FB[\"反馈与迭代\"]\n    FB --> PL\n    TD[\"测试步骤设计\"] --> TS\n    PA[\"问题分析\"] --> FB\n    FB --> CI[\"最终提交\"]"
+    },
+    {
+      "title": "系统模块分工",
+      "code": "flowchart TD\n    CA[\"Codex Agent\"] --> AC[\"账号系统\"]\n    CA --> SS[\"本地存档\"]\n    CA --> HC[\"血量组件\"]\n    CA --> IB[\"背包系统\"]\n    CA --> QT[\"任务系统\"]\n    CA --> LL[\"关卡逻辑\"]\n    CA --> EA[\"敌人行为逻辑\"]\n    CA --> BF[\"黑雾系统\"]\n    CA --> TR[\"触发器\"]\n    CA --> UI[\"UI Bridge\"]\n\n    H[\"人类开发者\"] --> BP[\"蓝图实现\"]\n    H --> AR[\"美术资产\"]\n    H --> AU[\"音频系统\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:02:33+00:00"
+}

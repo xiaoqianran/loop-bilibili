@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1tgVs6SE4C",
+  "title": "Python自动扫描5000只股票，一键找出支撑位压力位【附全套源码】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3068,
+  "text": "哈喽大家好\n我是carol\n今天我们分享的是Python量化实战项目的\n密集成交区的数据分析\n这不是什么付费软件\n这个是我用Python纯手写的一个数据分析系统\n作用其实很简单\n自动扫描几千条数据\n告诉你哪些位置值得关注\n这里共有六个标签页\n分别是概览决策支持分析图表\n市场扫描板块\n热力以及交易记录\n概览的下面是六张数据卡片\n分别是总收益\n夏普比率\n最大回撤胜率\n盈亏比以及R2评级\n中间主图是K线蜡烛图\n绿色的支撑带和红色的压力带\n直接叠在K线上面\n成交量柱状图在下面哪个价位人气最旺\n一目了然\n右侧是密集区\n详情卡片列出了每个区域的中心价区间范围\n强度系数和距离百分比\n决策支持\n这个页面回答了三个核心问题\n第一块是综合风险评估\n大号评分\n一句话操作建议\n加进度条\n告诉你当前的位置值不值得关注\n第二块是触及预警\n每个区域都有一条进度条\n距离小于3%的时候就会变成黄色警告\n小于1%的时候就会变成红色紧急\n第三块是回测置信度\n一张收益分布柱状图\n右边绿色柱是盈利区间\n红色柱是亏损区间\n顶部标注了胜率均值和知性\n硬度评级是高中或低\n最下面是历史胜率表\n每个区域在历史上被挑战了多少次\n守住了多少次\n守住率是多少\n还有星级评价\ntab3分析图表\n这个页面总共有八张图\n首先盈亏分布\n环形饼图盈利多少钱\n亏损多少笔\n一眼可以看得清\n10×10\n成交密度\n热力图颜色越亮的位置\n密度级越高\n五维雷达图把每个区域的强度距离\n重叠数量占比\n区间宽度画在一张极坐标上进行对比\n策略权益曲线\n绿色线是你的本金变化\n灰色虚线是买入持有的对比成交密度\n剖面曲线平滑后的密度曲线加峰值\n标记3D价格曲面\n三维视角看价格波动形态\n区域强度\n牌型水平柱状图\n日历是月度收益热力图\n红的是跌\n绿的是涨一整年的冷暖\n一眼看得清\n全部可交互\n鼠标悬停出数据\n能拖拽\n能缩放tab4市场扫描\n这个不需要你一只一只翻股票\n系统自动扫描了100只A股\n告诉你今天哪些值得关注\n顶部五张统计卡片总共扫了多少只\n附近支撑了多少只\n压力附近多少只R最优多少支\n以及平均的盈亏比\n下面三张排序表格\n首先是支撑位附近\n按距离从近到远的排\n压力位附近是同样的排序逻辑\n盈亏比最优是按RR从高到低的排序\ntab5板块热力按申万十九个一节行业分组聚合\n每个行业一张卡片\n绿色条是支撑区占比\n红色条是压力区占比\n下面的状态标签\n告诉你哪个行业是整体偏多还是偏空\n上面是plot tee交互式柱状图\n两个柱子并排对比\n市场格局一目了然\n菜谱六交易记录完整回测交易流水表\n每一笔的入场日期\n出厂日期盈亏百分比\n绿色赚\n红色亏\n出场原因是止盈\n止损时间\n退出以及持仓天数\n底部统计了总比数\n盈利比数和胜率\n通过一条命令\n五个步骤跑出330KB的交互式网页\n不需要会编程\n我连安装步骤都写好了\n全部代码免费分享\n点赞关注截图私信我\n秘籍直接发给你好\n现在我们来看看这个系统到底是怎么做出来的\n首先对于传统的数据分析\n其实它是有三个致命的缺陷\n第一极度主观\n十个人能画出十条线\n没有量化标准就不是科学的方法\n第二无法规模化\n没法批量化\n人工繁5000只需要几个月\n但计算机告诉我只需要60秒\n第三缺乏验证\n闭环画完也不知道准不准\n没有回测就没有验证\n当我们去除手工之后\n本系统的核心思想就是\n每一根K线都是一张投票\n这一天的价格范围从最低价到最高价\n覆盖了哪些价格水平\n哪些就得票\n被越多的K线覆盖的位置\n成交量越集中\n这里就越关键\n而我们不只是数数高\n成交量的那天投票权更大\n所以引入了成交量加权\n你看右边的这个图\n中间绿色的带子就是重叠最多的部分\n系统算法共分四步\n分箱加权平滑和检测\n每一步都是Python数据科学生态的标准组件\n首先用number派进行分享\n用塞pad做了平滑和峰值检测\n而核心代码只有30行\n我全贴在这里了\n你可以直接使用\n这时候你可能会问\n为什么不直接用均线或者是布林带\n均线的问题就是滞后太严重\n布林带假设价格服从正态分布\n但实际根本就不是我们的\n这个方法的优势就是不做分布\n假设纯数据驱动\n直接测成交量加权的价格重叠\n而设计哲学就一句话\n不预测方向\n只识别在哪里\n100块有人大量的进出过\n那这个事实不会因为你看多或看空而发生变化\n整个项目有3600行代码分成了三层\n首先数据层负责免费数据获取\n算法层做核心计算和回测\n应用层做数据扫描和可视化\n全部用的是Python数据分析的标准组件\nNumber five pandas\nCPIPATLY和HTML\n具体仪表盘功能详情在视频开头已经介绍\n感兴趣的话\n大家可以跳转至开头\n再次查看代码部分呢\n先说一下数据是怎么来的\n这段代码主要就是做了三件事情\n第一个就是用boss stock免费数据源\n然后加上PICO的本地缓存以及指数推B重试\n第一次下载慢一点\n第二次就直接秒开\n再看一下回测引擎\n这是最核心的一点\n就是防止未来信息泄露\n这里有三道防线\n第一只用当天之前的数据计算区域\n第二交易执行用次日开盘价\n第3T加一约束\n今天买\n明天才能卖\n这三点可以保证你的回测结果不是作弊\n以及相应的绩效指标和配置化参数管理\n很多分析工具只告诉你位置在哪里\n我们这个还会告诉你靠不靠谱\n首先就是历史胜利追踪板块\n每个区域被挑战了多少次\n守住了多少次\n以及三级初级预警\n从danger warning normal距离一目了然\n还有回测置信度\n基于所有历史数据统计\n整体表现给出高中低的评级\n在这里呢我们不止分析一只股票\n还能批量跑\nmarket scanner do派扫描100只\n自动筛选支撑或压力附近的sector hemp\n按申万十九个一级行业聚合\n告诉你板块级别的格局\n而这套系统在实际中能做什么呢\n首先就是一个教学场景\n一个项目\n它覆盖了七大技术站\n从数据获取到可视化全流程\n还有研究的场景\n量化分析\n自动化替代手工划线支持策略回测等等\n大家都可以按需学习并使用\n那我们的核心价值就是把主观判断变成可量化\n可复现\n可验证的数据分析流程\n目前我们这个系统还是会有一些进化的方向\n比如说算法的增强\n可以做自适应窗口\n多资产关联以及持续的注意力\n在工程上可以做实时推送\nSQL item存储并行加速以及外部服务化\n在可视化上的升级\n可以做STREAMLIN在线交互\n实时行情叠加导出专业报告\n每一个方向都可以作为一个独立的一课\n我们本系统所有的参数都集中在config dot pi\n82行全中文注释的这个文件里\n如果你想调窗口大小\n改止损比例\n这就是配置驱动的威力\n拿到源码之后\n如何三步跑起来\n首先安装依赖运行命令\n最后打开dashboard网页即可\n一个项目掌握了六项Python数据分析核心能力\n包括boss stock\n数据获取\nPandas\n数据处理\nNumber pie\n数值计算\n塞派科学计算\nply可视化HTMLCSSJS仪表盘\n在这里我们可以彻底领悟\n只有带着真实的项目\n我们才能一次性的练会整个工具链\n在这里总结一下\n在思维层面\n我们学会了如何把模糊直觉转化为精确的算法\n如何建立从数据到角色的闭环\n在技术层面的话\n你实战了南派三派plot tely\n不再只是看教程的demo\n真正的学会了是从拿到代码跑通到理解每一行\n再到加入自己的新功能\n这一整个过程\n如果你看到这里觉得有用\n点赞关注截图私信我\n我把全套源码发给你\n哪怕你是第一次写Python\n照着文档也能跑好\n今天我们就到这里\n我们下期见拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1tgVs6SE4C",
+  "published_at": "1779976318",
+  "fetched_at": "2026-08-06T21:01:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Python 自动扫描密集成交区系统知识图谱\n\n## 系统整体结构概览 [BV1tgVs6SE4C P1 05:00]\n```mermaid\nflowchart TD\n    DL[Data Layer] --> AL[Algorithm Layer]\n    AL --> AP[Application Layer]\n    DL --> BS[Boss Stock 数据源]\n    AL --> PD[Pandas]\n    AL --> NP[Numpy]\n    AP --> PL[Plotly 可视化]\n    AP --> HD[HTML Dashboard]\n    AP --> CF[Config File (config.py)]\n    CF --> DL\n    CF --> AL\n    CF --> AP\n    AP --> IW[Interactive Web 页面]\n    IW --> DL\n    IW --> AL\n    IW --> AP\n    AP --> MS[Market Scanner]\n    MS --> DL\n```\n\n## 密集成交区算法流程 [BV1tgVs6SE4C P1 04:17]\n```mermaid\nflowchart LR\n    K1[K线] --> PR[价格区间]\n    PR --> VWV[成交量加权投票]\n    VWV --> BA[分箱聚合]\n    BA --> SM[平滑处理]\n    SM --> PD[峰值检测]\n    PD --> OD[重叠密度]\n    OD --> SB[支撑带]\n    OD --> RB[压力带]\n    SB --> FZ[最终支撑区间]\n    RB --> FZ\n```\n\n## 决策支持模块核心功能 [BV1tgVs6SE4C P1 00:48]\n```mermaid\nflowchart TD\n    DSP[决策支持页面] --> RA[综合风险评估]\n    DSP --> TW[触及预警]\n    DSP --> BC[回测置信度]\n    RA --> CS[大号评分]\n    RA --> AS[一句话操作建议]\n    RA --> PB[进度条显示]\n    TW --> DM[距离百分比]\n    DM --> YA[黄色警告 (<3%)]\n    DM --> RA2[红色紧急 (<1%)]\n    BC --> PLD[盈亏分布柱状图]\n    PLD --> GP[绿色盈利区间]\n    PLD --> RP[红色亏损区间]\n    BC --> WM[胜率均值]\n    BC --> HR[硬度评级（高/中/低）]\n    BC --> HS[历史守住率]\n    BC --> SR[星级评价]\n```",
+      "diagrams": [
+        {
+          "title": "系统整体结构概览",
+          "code": "flowchart TD\n    DL[Data Layer] --> AL[Algorithm Layer]\n    AL --> AP[Application Layer]\n    DL --> BS[Boss Stock 数据源]\n    AL --> PD[Pandas]\n    AL --> NP[Numpy]\n    AP --> PL[Plotly 可视化]\n    AP --> HD[HTML Dashboard]\n    AP --> CF[Config File (config.py)]\n    CF --> DL\n    CF --> AL\n    CF --> AP\n    AP --> IW[Interactive Web 页面]\n    IW --> DL\n    IW --> AL\n    IW --> AP\n    AP --> MS[Market Scanner]\n    MS --> DL"
+        },
+        {
+          "title": "密集成交区算法流程",
+          "code": "flowchart LR\n    K1[K线] --> PR[价格区间]\n    PR --> VWV[成交量加权投票]\n    VWV --> BA[分箱聚合]\n    BA --> SM[平滑处理]\n    SM --> PD[峰值检测]\n    PD --> OD[重叠密度]\n    OD --> SB[支撑带]\n    OD --> RB[压力带]\n    SB --> FZ[最终支撑区间]\n    RB --> FZ"
+        },
+        {
+          "title": "决策支持模块核心功能",
+          "code": "flowchart TD\n    DSP[决策支持页面] --> RA[综合风险评估]\n    DSP --> TW[触及预警]\n    DSP --> BC[回测置信度]\n    RA --> CS[大号评分]\n    RA --> AS[一句话操作建议]\n    RA --> PB[进度条显示]\n    TW --> DM[距离百分比]\n    DM --> YA[黄色警告 (<3%)]\n    DM --> RA2[红色紧急 (<1%)]\n    BC --> PLD[盈亏分布柱状图]\n    PLD --> GP[绿色盈利区间]\n    PLD --> RP[红色亏损区间]\n    BC --> WM[胜率均值]\n    BC --> HR[硬度评级（高/中/低）]\n    BC --> HS[历史守住率]\n    BC --> SR[星级评价]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T21:01:46+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Python 自动扫描密集成交区系统知识图谱\n\n## 系统整体结构概览 [BV1tgVs6SE4C P1 05:00]\n```mermaid\nflowchart TD\n    DL[Data Layer] --> AL[Algorithm Layer]\n    AL --> AP[Application Layer]\n    DL --> BS[Boss Stock 数据源]\n    AL --> PD[Pandas]\n    AL --> NP[Numpy]\n    AP --> PL[Plotly 可视化]\n    AP --> HD[HTML Dashboard]\n    AP --> CF[Config File (config.py)]\n    CF --> DL\n    CF --> AL\n    CF --> AP\n    AP --> IW[Interactive Web 页面]\n    IW --> DL\n    IW --> AL\n    IW --> AP\n    AP --> MS[Market Scanner]\n    MS --> DL\n```\n\n## 密集成交区算法流程 [BV1tgVs6SE4C P1 04:17]\n```mermaid\nflowchart LR\n    K1[K线] --> PR[价格区间]\n    PR --> VWV[成交量加权投票]\n    VWV --> BA[分箱聚合]\n    BA --> SM[平滑处理]\n    SM --> PD[峰值检测]\n    PD --> OD[重叠密度]\n    OD --> SB[支撑带]\n    OD --> RB[压力带]\n    SB --> FZ[最终支撑区间]\n    RB --> FZ\n```\n\n## 决策支持模块核心功能 [BV1tgVs6SE4C P1 00:48]\n```mermaid\nflowchart TD\n    DSP[决策支持页面] --> RA[综合风险评估]\n    DSP --> TW[触及预警]\n    DSP --> BC[回测置信度]\n    RA --> CS[大号评分]\n    RA --> AS[一句话操作建议]\n    RA --> PB[进度条显示]\n    TW --> DM[距离百分比]\n    DM --> YA[黄色警告 (<3%)]\n    DM --> RA2[红色紧急 (<1%)]\n    BC --> PLD[盈亏分布柱状图]\n    PLD --> GP[绿色盈利区间]\n    PLD --> RP[红色亏损区间]\n    BC --> WM[胜率均值]\n    BC --> HR[硬度评级（高/中/低）]\n    BC --> HS[历史守住率]\n    BC --> SR[星级评价]\n```",
+  "diagrams": [
+    {
+      "title": "系统整体结构概览",
+      "code": "flowchart TD\n    DL[Data Layer] --> AL[Algorithm Layer]\n    AL --> AP[Application Layer]\n    DL --> BS[Boss Stock 数据源]\n    AL --> PD[Pandas]\n    AL --> NP[Numpy]\n    AP --> PL[Plotly 可视化]\n    AP --> HD[HTML Dashboard]\n    AP --> CF[Config File (config.py)]\n    CF --> DL\n    CF --> AL\n    CF --> AP\n    AP --> IW[Interactive Web 页面]\n    IW --> DL\n    IW --> AL\n    IW --> AP\n    AP --> MS[Market Scanner]\n    MS --> DL"
+    },
+    {
+      "title": "密集成交区算法流程",
+      "code": "flowchart LR\n    K1[K线] --> PR[价格区间]\n    PR --> VWV[成交量加权投票]\n    VWV --> BA[分箱聚合]\n    BA --> SM[平滑处理]\n    SM --> PD[峰值检测]\n    PD --> OD[重叠密度]\n    OD --> SB[支撑带]\n    OD --> RB[压力带]\n    SB --> FZ[最终支撑区间]\n    RB --> FZ"
+    },
+    {
+      "title": "决策支持模块核心功能",
+      "code": "flowchart TD\n    DSP[决策支持页面] --> RA[综合风险评估]\n    DSP --> TW[触及预警]\n    DSP --> BC[回测置信度]\n    RA --> CS[大号评分]\n    RA --> AS[一句话操作建议]\n    RA --> PB[进度条显示]\n    TW --> DM[距离百分比]\n    DM --> YA[黄色警告 (<3%)]\n    DM --> RA2[红色紧急 (<1%)]\n    BC --> PLD[盈亏分布柱状图]\n    PLD --> GP[绿色盈利区间]\n    PLD --> RP[红色亏损区间]\n    BC --> WM[胜率均值]\n    BC --> HR[硬度评级（高/中/低）]\n    BC --> HS[历史守住率]\n    BC --> SR[星级评价]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:01:46+00:00"
+}

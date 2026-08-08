@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1SoL36oEqC",
+  "title": "Seedance2.0搞定游戏角色序列帧|懒人白模AI动画",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 406,
+  "text": "上期CDAS2.0生成游戏角色序列\n帧路化的视频爆了\n今天分享一种懒人思路\n专门解决白膜渲染法中动作难搭的问题\n打开AI工具\n选择agent模式\n输入提示词\n他会先进行一轮需求确认\n我们回答他一下\n这一步不消耗任何积分\n不满意可以无限修改\n生成好了\n我们看一下它的方案\n接下来我们使用任意白模工具\n搭建人物初始动作\n并截图\n在AI给的方案里指定一套连招\n输入提示词\n并且上传白膜截图\n生成好了\n生成白魔动画的这一步\n有时候需要抽卡\n但是一次生存可以永久复用\n效果还不错\n在展现的视频\n我们上传内幕背景的角色图片和白魔视频\n并且输入提示词\n生成好了嗯\n动作完美\n参考生成好之后可以直接点击这个进入编辑\n选择画面抠下\n使用取色器点击绿色背景的部分导出\n选择RLE编码的MOV格式\n等出透明底视频后再进行拆帧工作就好了好了\n本期视频就到这里\n提示词和白魔动画我都会分享\n如果你觉得这期视频有帮助的话\n点赞来支持我更新吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1SoL36oEqC",
+  "published_at": "1778935540",
+  "fetched_at": "2026-08-07T17:10:40+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T17:20:18+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T17:20:18+00:00"
+}

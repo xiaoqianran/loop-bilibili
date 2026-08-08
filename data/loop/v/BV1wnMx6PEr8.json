@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1wnMx6PEr8",
+  "title": "GitHub 热榜第50期：系统提示词资料库登顶，AI Agent 技能包也爆了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1539,
+  "text": "今天GITHUB热榜第一名是SSSKT\nSlash system\n下划线\nprompts下划线\nleaks累计51637star\n今天新增1378star\n它是一个系统提示词\n资料库集中整理\nCloud chat\nGp t gemini brock\nCursor\nCopilot vs code copilot\nagent和perplexity等AI产品的提示词\n用来研究模型行为和产品边界\n第五名\nLeononslash taste skill\n累计59026star\n今天新增1458star\n它是一组让AI编程助手更会做前端设计的agent\nSkills\n关注布局字体动效间距和视觉密度\n还包含image to code\n现有项目重设计\n极简风格和更严格的GPT codex版本\n它解决的是AI生成界面容易模板化\n缺少设计层级的问题\n适合用codex cursor或cloud code\n做页面和产品原型的人\n第四名\nRpnet slash revie\n累计77564star\n今天新增470star\n他把普通WIFI信号变成空间感知系统\n用低成本esp32节点读取CSI信号\n做房间存在检测\n运动识别\n呼吸和心率趋势\n睡眠监测和跌倒风险提醒\n它解决的是摄像头和可穿戴设备\n在隐私部署和佩戴上的限制\n适合智能家居\n养老看护\n楼宇安全边缘\nAR和无线感知项目\n第三名\nThat cresolution slash metei\n累计19469star\n今天新增2494star\n他是隐私优先的开源AI会议助手\n支持whisper或packet本地转写\n用二维码做本地总结\n也可以接入cloud brock\nopen router或OpenAI兼容端点\n它解决的是会议录音转写和纪要上云\n带来的隐私与合规风险\n适合企业会议\n法律咨询\n医疗沟通和任何需要本地会议纪要的团队\n第二名\nideals many slash agent skills累计70900star\n今天新增1112star\n它是一套面向AI coding agent的工程技能包\n用spect plan build test review\nWeappers\nCode\nsimplify和ship\n这些命令覆盖软件开发生命周期\n它解决的是AI写代码时容易跳过需求\n澄清任务\n拆分测试和上线检查的问题\n适合用codex\nCloud\nCode cursor\ncopilot等工具做真实项目交付的团队\n第一名\nExert slive system\n下划线\nPROMP下划线\nleads累计51637star\n今天新增1378star\n他整理anthropic OpenAI\nGoogle x ai\nMicrosoft cursor\nperplexity等产品的系统提示词\n并标注最近更新和版本差异\n它解决的是AI产品和模型行为研究\n缺少可对比样本的问题\n适合提示词\n工程师\nAI产品经理\n安全研究者和agent设计人员\n今天前五的关键词是系统提示词\n研究工程技能包\n本地隐私\nAIWIFI空间感知和AI前端设计技能\n研究AI产品边界\n先看system下划线\nprompts下划线\nleaks想给cody agent建立工程流程\n看agent skills需要本地会议\n既要看MEI\n做无摄像头空间感知\n看RUV想提升AI生成界面质量\n看taste kill\n今天最值得先看的三个项目\nsystem下划线\nPrompts\n下划线\nleaks适合研究AI产品提示词\nagent skills适合把工程流程交给coding agent\nMetey\n适合把会议纪要留在本地\n这里是GITHUB推荐官\n今天的热门开源项目就看到这里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wnMx6PEr8",
+  "published_at": "1783392022",
+  "fetched_at": "2026-08-07T08:21:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GitHub 热榜第50期 项目关系图谱\n\n## Overview\n```mermaid\nflowchart TD\n    A1[\"系统提示词库<br/>leaks\"] -->|属于| C1[\"系统提示词\"]\n    A2[\"前端设计 Agent<br/>Leononslash taste skill\"] -->|属于| C2[\"AI 前端设计\"]\n    A3[\"AI 空间感知<br/>Rpnet revie\"] -->|属于| C3[\"AI 传感/隐私感知\"]\n    A4[\"本地隐私会议助手<br/>That cresolution metei\"] -->|属于| C4[\"AI 会议纪要\"]\n    A5[\"AI Coding Agent 技能包<br/>ideals many agent skills\"] -->|属于| C5[\"AI 开发工具\"]\n    C1 --> D[\"研究模型行为/产品边界\"]\n    C2 --> D\n    C3 --> D\n    C4 --> D\n    C5 --> D\n    D --> E[\"适用人群: 提示词工程师、前端设计师、智能家居开发者、企业会议组织者、开发团队\"]\n```\n\n## 系统提示词库 (leaks)\n```mermaid\nflowchart TD\n    L1[\"leaks\"] --> L2[\"累计 51637 ★\"]\n    L1 --> L3[\"今日新增 1378 ★\"]\n    L1 --> L4[\"整理 Anthropic、OpenAI、Google、Microsoft 等提示词\"]\n    L4 --> L5[\"标注最近更新 & 版本差异\"]\n    L1 --> L6[\"解决缺少可对比样本的问题\"]\n    L1 --> L7[\"适用: 提示词工程师、AI 产品经理、安全研究者、agent 设计人员\"]\n```\n\n## 前端设计 Agent (Leononslash taste skill)\n```mermaid\nflowchart TD\n    T1[\"Leononslash taste skill\"] --> T2[\"累计 59026 ★\"]\n    T1 --> T3[\"今日新增 1458 ★\"]\n    T1 --> T4[\"关注布局、字体、动效、间距、视觉密度\"]\n    T4 --> T5[\"包含 image‑to‑code\"]\n    T1 --> T6[\"解决 AI 生成界面模板化、缺少设计层级\"]\n    T1 --> T7[\"适用: codex、cursor、cloud code 使用者\"]\n    T1 --> T8[\"适用: 页面/产品原型设计者\"]\n```\n\n## AI 空间感知 (Rpnet revie)\n```mermaid\nflowchart TD\n    R1[\"Rpnet revie\"] --> R2[\"累计 77564 ★\"]\n    R1 --> R3[\"今日新增 470 ★\"]\n    R1 --> R4[\"使用 ESP32 读取 CSI 信号\"]\n    R4 --> R5[\"实现 房间存在检测、运动识别、呼吸/心率趋势、睡眠监测、跌倒风险提醒\"]\n    R1 --> R6[\"解决摄像头、可穿戴设备的隐私部署限制\"]\n    R1 --> R7[\"适用: 智能家居、养老看护、楼宇安全、AR、无线感知项目\"]\n```\n\n## 本地隐私会议助手 (That cresolution metei)\n```mermaid\nflowchart TD\n    M1[\"That cresolution metei\"] --> M2[\"累计 19469 ★\"]\n    M1 --> M3[\"今日新增 2494 ★\"]\n    M1 --> M4[\"支持 Whisper 或 Packet 本地转写\"]\n    M1 --> M5[\"使用二维码做本地总结\"]\n    M1 --> M6[\"可接入 cloud broker、Open Router、OpenAI 兼容端点\"]\n    M1 --> M7[\"解决会议录音转写与上云的隐私合规风险\"]\n    M1 --> M8[\"适用: 企业会议、法律咨询、医疗沟通、本地会议纪要团队\"]\n```",
+      "diagrams": [
+        {
+          "title": "Overview",
+          "code": "flowchart TD\n    A1[\"系统提示词库<br/>leaks\"] -->|属于| C1[\"系统提示词\"]\n    A2[\"前端设计 Agent<br/>Leononslash taste skill\"] -->|属于| C2[\"AI 前端设计\"]\n    A3[\"AI 空间感知<br/>Rpnet revie\"] -->|属于| C3[\"AI 传感/隐私感知\"]\n    A4[\"本地隐私会议助手<br/>That cresolution metei\"] -->|属于| C4[\"AI 会议纪要\"]\n    A5[\"AI Coding Agent 技能包<br/>ideals many agent skills\"] -->|属于| C5[\"AI 开发工具\"]\n    C1 --> D[\"研究模型行为/产品边界\"]\n    C2 --> D\n    C3 --> D\n    C4 --> D\n    C5 --> D\n    D --> E[\"适用人群: 提示词工程师、前端设计师、智能家居开发者、企业会议组织者、开发团队\"]"
+        },
+        {
+          "title": "系统提示词库 (leaks)",
+          "code": "flowchart TD\n    L1[\"leaks\"] --> L2[\"累计 51637 ★\"]\n    L1 --> L3[\"今日新增 1378 ★\"]\n    L1 --> L4[\"整理 Anthropic、OpenAI、Google、Microsoft 等提示词\"]\n    L4 --> L5[\"标注最近更新 & 版本差异\"]\n    L1 --> L6[\"解决缺少可对比样本的问题\"]\n    L1 --> L7[\"适用: 提示词工程师、AI 产品经理、安全研究者、agent 设计人员\"]"
+        },
+        {
+          "title": "前端设计 Agent (Leononslash taste skill)",
+          "code": "flowchart TD\n    T1[\"Leononslash taste skill\"] --> T2[\"累计 59026 ★\"]\n    T1 --> T3[\"今日新增 1458 ★\"]\n    T1 --> T4[\"关注布局、字体、动效、间距、视觉密度\"]\n    T4 --> T5[\"包含 image‑to‑code\"]\n    T1 --> T6[\"解决 AI 生成界面模板化、缺少设计层级\"]\n    T1 --> T7[\"适用: codex、cursor、cloud code 使用者\"]\n    T1 --> T8[\"适用: 页面/产品原型设计者\"]"
+        },
+        {
+          "title": "AI 空间感知 (Rpnet revie)",
+          "code": "flowchart TD\n    R1[\"Rpnet revie\"] --> R2[\"累计 77564 ★\"]\n    R1 --> R3[\"今日新增 470 ★\"]\n    R1 --> R4[\"使用 ESP32 读取 CSI 信号\"]\n    R4 --> R5[\"实现 房间存在检测、运动识别、呼吸/心率趋势、睡眠监测、跌倒风险提醒\"]\n    R1 --> R6[\"解决摄像头、可穿戴设备的隐私部署限制\"]\n    R1 --> R7[\"适用: 智能家居、养老看护、楼宇安全、AR、无线感知项目\"]"
+        },
+        {
+          "title": "本地隐私会议助手 (That cresolution metei)",
+          "code": "flowchart TD\n    M1[\"That cresolution metei\"] --> M2[\"累计 19469 ★\"]\n    M1 --> M3[\"今日新增 2494 ★\"]\n    M1 --> M4[\"支持 Whisper 或 Packet 本地转写\"]\n    M1 --> M5[\"使用二维码做本地总结\"]\n    M1 --> M6[\"可接入 cloud broker、Open Router、OpenAI 兼容端点\"]\n    M1 --> M7[\"解决会议录音转写与上云的隐私合规风险\"]\n    M1 --> M8[\"适用: 企业会议、法律咨询、医疗沟通、本地会议纪要团队\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T08:22:04+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GitHub 热榜第50期 项目关系图谱\n\n## Overview\n```mermaid\nflowchart TD\n    A1[\"系统提示词库<br/>leaks\"] -->|属于| C1[\"系统提示词\"]\n    A2[\"前端设计 Agent<br/>Leononslash taste skill\"] -->|属于| C2[\"AI 前端设计\"]\n    A3[\"AI 空间感知<br/>Rpnet revie\"] -->|属于| C3[\"AI 传感/隐私感知\"]\n    A4[\"本地隐私会议助手<br/>That cresolution metei\"] -->|属于| C4[\"AI 会议纪要\"]\n    A5[\"AI Coding Agent 技能包<br/>ideals many agent skills\"] -->|属于| C5[\"AI 开发工具\"]\n    C1 --> D[\"研究模型行为/产品边界\"]\n    C2 --> D\n    C3 --> D\n    C4 --> D\n    C5 --> D\n    D --> E[\"适用人群: 提示词工程师、前端设计师、智能家居开发者、企业会议组织者、开发团队\"]\n```\n\n## 系统提示词库 (leaks)\n```mermaid\nflowchart TD\n    L1[\"leaks\"] --> L2[\"累计 51637 ★\"]\n    L1 --> L3[\"今日新增 1378 ★\"]\n    L1 --> L4[\"整理 Anthropic、OpenAI、Google、Microsoft 等提示词\"]\n    L4 --> L5[\"标注最近更新 & 版本差异\"]\n    L1 --> L6[\"解决缺少可对比样本的问题\"]\n    L1 --> L7[\"适用: 提示词工程师、AI 产品经理、安全研究者、agent 设计人员\"]\n```\n\n## 前端设计 Agent (Leononslash taste skill)\n```mermaid\nflowchart TD\n    T1[\"Leononslash taste skill\"] --> T2[\"累计 59026 ★\"]\n    T1 --> T3[\"今日新增 1458 ★\"]\n    T1 --> T4[\"关注布局、字体、动效、间距、视觉密度\"]\n    T4 --> T5[\"包含 image‑to‑code\"]\n    T1 --> T6[\"解决 AI 生成界面模板化、缺少设计层级\"]\n    T1 --> T7[\"适用: codex、cursor、cloud code 使用者\"]\n    T1 --> T8[\"适用: 页面/产品原型设计者\"]\n```\n\n## AI 空间感知 (Rpnet revie)\n```mermaid\nflowchart TD\n    R1[\"Rpnet revie\"] --> R2[\"累计 77564 ★\"]\n    R1 --> R3[\"今日新增 470 ★\"]\n    R1 --> R4[\"使用 ESP32 读取 CSI 信号\"]\n    R4 --> R5[\"实现 房间存在检测、运动识别、呼吸/心率趋势、睡眠监测、跌倒风险提醒\"]\n    R1 --> R6[\"解决摄像头、可穿戴设备的隐私部署限制\"]\n    R1 --> R7[\"适用: 智能家居、养老看护、楼宇安全、AR、无线感知项目\"]\n```\n\n## 本地隐私会议助手 (That cresolution metei)\n```mermaid\nflowchart TD\n    M1[\"That cresolution metei\"] --> M2[\"累计 19469 ★\"]\n    M1 --> M3[\"今日新增 2494 ★\"]\n    M1 --> M4[\"支持 Whisper 或 Packet 本地转写\"]\n    M1 --> M5[\"使用二维码做本地总结\"]\n    M1 --> M6[\"可接入 cloud broker、Open Router、OpenAI 兼容端点\"]\n    M1 --> M7[\"解决会议录音转写与上云的隐私合规风险\"]\n    M1 --> M8[\"适用: 企业会议、法律咨询、医疗沟通、本地会议纪要团队\"]\n```",
+  "diagrams": [
+    {
+      "title": "Overview",
+      "code": "flowchart TD\n    A1[\"系统提示词库<br/>leaks\"] -->|属于| C1[\"系统提示词\"]\n    A2[\"前端设计 Agent<br/>Leononslash taste skill\"] -->|属于| C2[\"AI 前端设计\"]\n    A3[\"AI 空间感知<br/>Rpnet revie\"] -->|属于| C3[\"AI 传感/隐私感知\"]\n    A4[\"本地隐私会议助手<br/>That cresolution metei\"] -->|属于| C4[\"AI 会议纪要\"]\n    A5[\"AI Coding Agent 技能包<br/>ideals many agent skills\"] -->|属于| C5[\"AI 开发工具\"]\n    C1 --> D[\"研究模型行为/产品边界\"]\n    C2 --> D\n    C3 --> D\n    C4 --> D\n    C5 --> D\n    D --> E[\"适用人群: 提示词工程师、前端设计师、智能家居开发者、企业会议组织者、开发团队\"]"
+    },
+    {
+      "title": "系统提示词库 (leaks)",
+      "code": "flowchart TD\n    L1[\"leaks\"] --> L2[\"累计 51637 ★\"]\n    L1 --> L3[\"今日新增 1378 ★\"]\n    L1 --> L4[\"整理 Anthropic、OpenAI、Google、Microsoft 等提示词\"]\n    L4 --> L5[\"标注最近更新 & 版本差异\"]\n    L1 --> L6[\"解决缺少可对比样本的问题\"]\n    L1 --> L7[\"适用: 提示词工程师、AI 产品经理、安全研究者、agent 设计人员\"]"
+    },
+    {
+      "title": "前端设计 Agent (Leononslash taste skill)",
+      "code": "flowchart TD\n    T1[\"Leononslash taste skill\"] --> T2[\"累计 59026 ★\"]\n    T1 --> T3[\"今日新增 1458 ★\"]\n    T1 --> T4[\"关注布局、字体、动效、间距、视觉密度\"]\n    T4 --> T5[\"包含 image‑to‑code\"]\n    T1 --> T6[\"解决 AI 生成界面模板化、缺少设计层级\"]\n    T1 --> T7[\"适用: codex、cursor、cloud code 使用者\"]\n    T1 --> T8[\"适用: 页面/产品原型设计者\"]"
+    },
+    {
+      "title": "AI 空间感知 (Rpnet revie)",
+      "code": "flowchart TD\n    R1[\"Rpnet revie\"] --> R2[\"累计 77564 ★\"]\n    R1 --> R3[\"今日新增 470 ★\"]\n    R1 --> R4[\"使用 ESP32 读取 CSI 信号\"]\n    R4 --> R5[\"实现 房间存在检测、运动识别、呼吸/心率趋势、睡眠监测、跌倒风险提醒\"]\n    R1 --> R6[\"解决摄像头、可穿戴设备的隐私部署限制\"]\n    R1 --> R7[\"适用: 智能家居、养老看护、楼宇安全、AR、无线感知项目\"]"
+    },
+    {
+      "title": "本地隐私会议助手 (That cresolution metei)",
+      "code": "flowchart TD\n    M1[\"That cresolution metei\"] --> M2[\"累计 19469 ★\"]\n    M1 --> M3[\"今日新增 2494 ★\"]\n    M1 --> M4[\"支持 Whisper 或 Packet 本地转写\"]\n    M1 --> M5[\"使用二维码做本地总结\"]\n    M1 --> M6[\"可接入 cloud broker、Open Router、OpenAI 兼容端点\"]\n    M1 --> M7[\"解决会议录音转写与上云的隐私合规风险\"]\n    M1 --> M8[\"适用: 企业会议、法律咨询、医疗沟通、本地会议纪要团队\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:22:04+00:00"
+}

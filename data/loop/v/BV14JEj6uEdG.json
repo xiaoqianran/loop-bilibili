@@ -1,0 +1,82 @@
+{
+  "bvid": "BV14JEj6uEdG",
+  "title": "国内爽用 Claude Code + Codex，2分钟搞定！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1008,
+  "text": "不要再说国内用不了cloud code和codex了\n2分钟教你搞定\n傻子都能看懂\n帮你节省上百块订阅费\n首先通过一行命令下载安装cloud code\n然后打开\n正常来说需要国外的订阅账号\n否则登录都登录不上\n解决方案很简单\n我们只需要使用cc switch这段免费开源的神器\n它可以通过傻瓜式的界面\n让我们自由切换模型\n集中管理各种AI工具的配置\n点击下载到GITHUB上\n找到对应操作系统的安装包就可以了\n安装成功并打开选择cloud code工具\n点击添加模型供应商\n你有条件可以用国外模型\n那我这里以deep set为例\n选中后下拉需要填写deep set的APIK\n我们到deep set的API开放平台创建一个就好了\n然后粘贴过来\n接下来选择模型\n你会发现cc switch给我们预设好了\n对接各种大模型的配置\n基本都不用带\n开启100万上下文\n最后你会看到修改好的配置文件\n其实这个工具的本质就是帮你可视化的修改\nAI工具的配置文件\n保存模型\n然后点击启用\n重新打开cloud code\n这次就可以愉快的对话使用了\n可怕国内使用codex也是同理\n正常来说\ncodex需要国外的订阅账号或APIK\n否则根本用不了\n使用cc switch\n选择codex工具\n点击添加模型供应商跟前面步骤一样\n完成一个大模型的配置并保存\n但是要注意\ncodex和deep set等国内模型使用的API格式不同\n所以如果想让codex接国内模型\n关键在于中间得有一个翻译\n把PROTEX发出的请求转换成deep set能听懂的格式\n好在cc switch提供了本地路由功能\n会帮我们把请求进行转换\n只要进入设置\n在路由设置中开启本地路由\n并且选中codex模型\n然后重启codex\n选择使用APIK登录\n随便填个APIK进到主界面就可以愉快的使用了\n量大管饱\n完全不用怕被封号爽\n有同学可能会质疑这么做的意义\n给国外AI工具接非官方的模型\n何必呢\n首先我相信大多数同学是没办法直接用的\n对不对\n但肯定也想学习先进的AI工具\n怎么能因为账号的门槛\n把自己的学习热情浇灭呢\n另外AI的效果等于模型加工具\n即使是同一个模型\n你用更好的工具效果可能也会上升一个level\n那我之前出过cloud code和codex的保姆级教程\n放到了我免费开源的AI编程零基础教程上\n大家可以自行学习\n有帮助的话\n记得点赞收藏三连支持\n谢谢拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14JEj6uEdG",
+  "published_at": "1780981926",
+  "fetched_at": "2026-08-06T20:10:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 国内使用 Claude Code + Codex 快速上手图谱\n\n## 概览\n```mermaid\nflowchart TD\n    A1[\"开始\"] --> A2[\"下载并安装 cc-switch\"]\n    A2 --> A3[\"下载并安装 Cloud Code\"]\n    A3 --> A4[\"打开 Cloud Code\"]\n    A4 --> A5[\"添加模型供应商\"]\n    A5 --> A6[\"配置模型 API Key\"]\n    A6 --> A7[\"保存并启用模型\"]\n    A7 --> A8[\"使用 Cloud Code 对话\"]\n    A8 --> A9[\"同理配置 Codex 并使用\"]\n```\n\n## 安装与启动流程\n```mermaid\nflowchart TD\n    B1[\"访问 GitHub 下载 cc-switch\"] --> B2[\"选择对应操作系统的安装包\"]\n    B2 --> B3[\"执行安装命令\"]\n    B3 --> B4[\"打开 cc-switch 界面\"]\n    B4 --> B5[\"访问 GitHub 下载 Cloud Code\"]\n    B5 --> B6[\"运行 Cloud Code 安装脚本\"]\n    B6 --> B7[\"打开 Cloud Code\"]\n    B7 --> B8[\"尝试登录（需国外账号）\"]\n    B8 -->|无账号| B9[\"使用 cc-switch 代理登录\"]\n    B9 --> B10[\"登录成功，进入主界面\"]\n```\n\n## 模型供应商配置\n```mermaid\nflowchart TD\n    C1[\"选择工具：Cloud Code / Codex\"] --> C2[\"点击‘添加模型供应商’\"]\n    C2 --> C3[\"在下拉框中选择模型（如 DeepSet）\"]\n    C3 --> C4[\"在弹窗中填写对应的 API Key\"]\n    C4 --> C5[\"在模型列表中选择模型\"]\n    C5 --> C6[\"开启 100 万上下文（可选）\"]\n    C6 --> C7[\"保存配置文件\"]\n    C7 --> C8[\"点击‘启用’\"]\n    C8 --> C9[\"重新打开工具，开始对话\"]\n```\n\n## 本地路由与 API 转换\n```mermaid\nflowchart TD\n    D1[\"进入 cc-switch 设置\"] --> D2[\"打开‘路由设置’\"]\n    D2 --> D3[\"开启本地路由功能\"]\n    D3 --> D4[\"勾选 Codex 模型\"]\n    D4 --> D5[\"重启 Codex\"]\n    D5 --> D6[\"使用 API Key 登录 Codex\"]\n    D6 --> D7[\"Codex 发出请求\"]\n    D7 --> D8[\"本地路由将请求转换为 DeepSet 可识别的格式\"]\n    D8 --> D9[\"DeepSet 处理并返回响应\"]\n    D9 --> D10[\"响应经路由返回给 Codex，完成对话\"]\n```\n\n## 使用动机与收益\n```mermaid\nflowchart TD\n    E1[\"国外 AI 工具需订阅账号\"] --> E2[\"国内用户受限\"]\n    E2 --> E3[\"使用 cc-switch 绕过账号限制\"]\n    E3 --> E4[\"免费使用 Cloud Code / Codex\"]\n    E4 --> E5[\"接入国内模型（DeepSet 等）\"]\n    E5 --> E6[\"提升工具使用体验\"]\n    E6 --> E7[\"无需担心封号风险\"]\n    E7 --> E8[\"实现高并发（量大管饱）\"]\n```",
+      "diagrams": [
+        {
+          "title": "概览",
+          "code": "flowchart TD\n    A1[\"开始\"] --> A2[\"下载并安装 cc-switch\"]\n    A2 --> A3[\"下载并安装 Cloud Code\"]\n    A3 --> A4[\"打开 Cloud Code\"]\n    A4 --> A5[\"添加模型供应商\"]\n    A5 --> A6[\"配置模型 API Key\"]\n    A6 --> A7[\"保存并启用模型\"]\n    A7 --> A8[\"使用 Cloud Code 对话\"]\n    A8 --> A9[\"同理配置 Codex 并使用\"]"
+        },
+        {
+          "title": "安装与启动流程",
+          "code": "flowchart TD\n    B1[\"访问 GitHub 下载 cc-switch\"] --> B2[\"选择对应操作系统的安装包\"]\n    B2 --> B3[\"执行安装命令\"]\n    B3 --> B4[\"打开 cc-switch 界面\"]\n    B4 --> B5[\"访问 GitHub 下载 Cloud Code\"]\n    B5 --> B6[\"运行 Cloud Code 安装脚本\"]\n    B6 --> B7[\"打开 Cloud Code\"]\n    B7 --> B8[\"尝试登录（需国外账号）\"]\n    B8 -->|无账号| B9[\"使用 cc-switch 代理登录\"]\n    B9 --> B10[\"登录成功，进入主界面\"]"
+        },
+        {
+          "title": "模型供应商配置",
+          "code": "flowchart TD\n    C1[\"选择工具：Cloud Code / Codex\"] --> C2[\"点击‘添加模型供应商’\"]\n    C2 --> C3[\"在下拉框中选择模型（如 DeepSet）\"]\n    C3 --> C4[\"在弹窗中填写对应的 API Key\"]\n    C4 --> C5[\"在模型列表中选择模型\"]\n    C5 --> C6[\"开启 100 万上下文（可选）\"]\n    C6 --> C7[\"保存配置文件\"]\n    C7 --> C8[\"点击‘启用’\"]\n    C8 --> C9[\"重新打开工具，开始对话\"]"
+        },
+        {
+          "title": "本地路由与 API 转换",
+          "code": "flowchart TD\n    D1[\"进入 cc-switch 设置\"] --> D2[\"打开‘路由设置’\"]\n    D2 --> D3[\"开启本地路由功能\"]\n    D3 --> D4[\"勾选 Codex 模型\"]\n    D4 --> D5[\"重启 Codex\"]\n    D5 --> D6[\"使用 API Key 登录 Codex\"]\n    D6 --> D7[\"Codex 发出请求\"]\n    D7 --> D8[\"本地路由将请求转换为 DeepSet 可识别的格式\"]\n    D8 --> D9[\"DeepSet 处理并返回响应\"]\n    D9 --> D10[\"响应经路由返回给 Codex，完成对话\"]"
+        },
+        {
+          "title": "使用动机与收益",
+          "code": "flowchart TD\n    E1[\"国外 AI 工具需订阅账号\"] --> E2[\"国内用户受限\"]\n    E2 --> E3[\"使用 cc-switch 绕过账号限制\"]\n    E3 --> E4[\"免费使用 Cloud Code / Codex\"]\n    E4 --> E5[\"接入国内模型（DeepSet 等）\"]\n    E5 --> E6[\"提升工具使用体验\"]\n    E6 --> E7[\"无需担心封号风险\"]\n    E7 --> E8[\"实现高并发（量大管饱）\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T20:11:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 国内使用 Claude Code + Codex 快速上手图谱\n\n## 概览\n```mermaid\nflowchart TD\n    A1[\"开始\"] --> A2[\"下载并安装 cc-switch\"]\n    A2 --> A3[\"下载并安装 Cloud Code\"]\n    A3 --> A4[\"打开 Cloud Code\"]\n    A4 --> A5[\"添加模型供应商\"]\n    A5 --> A6[\"配置模型 API Key\"]\n    A6 --> A7[\"保存并启用模型\"]\n    A7 --> A8[\"使用 Cloud Code 对话\"]\n    A8 --> A9[\"同理配置 Codex 并使用\"]\n```\n\n## 安装与启动流程\n```mermaid\nflowchart TD\n    B1[\"访问 GitHub 下载 cc-switch\"] --> B2[\"选择对应操作系统的安装包\"]\n    B2 --> B3[\"执行安装命令\"]\n    B3 --> B4[\"打开 cc-switch 界面\"]\n    B4 --> B5[\"访问 GitHub 下载 Cloud Code\"]\n    B5 --> B6[\"运行 Cloud Code 安装脚本\"]\n    B6 --> B7[\"打开 Cloud Code\"]\n    B7 --> B8[\"尝试登录（需国外账号）\"]\n    B8 -->|无账号| B9[\"使用 cc-switch 代理登录\"]\n    B9 --> B10[\"登录成功，进入主界面\"]\n```\n\n## 模型供应商配置\n```mermaid\nflowchart TD\n    C1[\"选择工具：Cloud Code / Codex\"] --> C2[\"点击‘添加模型供应商’\"]\n    C2 --> C3[\"在下拉框中选择模型（如 DeepSet）\"]\n    C3 --> C4[\"在弹窗中填写对应的 API Key\"]\n    C4 --> C5[\"在模型列表中选择模型\"]\n    C5 --> C6[\"开启 100 万上下文（可选）\"]\n    C6 --> C7[\"保存配置文件\"]\n    C7 --> C8[\"点击‘启用’\"]\n    C8 --> C9[\"重新打开工具，开始对话\"]\n```\n\n## 本地路由与 API 转换\n```mermaid\nflowchart TD\n    D1[\"进入 cc-switch 设置\"] --> D2[\"打开‘路由设置’\"]\n    D2 --> D3[\"开启本地路由功能\"]\n    D3 --> D4[\"勾选 Codex 模型\"]\n    D4 --> D5[\"重启 Codex\"]\n    D5 --> D6[\"使用 API Key 登录 Codex\"]\n    D6 --> D7[\"Codex 发出请求\"]\n    D7 --> D8[\"本地路由将请求转换为 DeepSet 可识别的格式\"]\n    D8 --> D9[\"DeepSet 处理并返回响应\"]\n    D9 --> D10[\"响应经路由返回给 Codex，完成对话\"]\n```\n\n## 使用动机与收益\n```mermaid\nflowchart TD\n    E1[\"国外 AI 工具需订阅账号\"] --> E2[\"国内用户受限\"]\n    E2 --> E3[\"使用 cc-switch 绕过账号限制\"]\n    E3 --> E4[\"免费使用 Cloud Code / Codex\"]\n    E4 --> E5[\"接入国内模型（DeepSet 等）\"]\n    E5 --> E6[\"提升工具使用体验\"]\n    E6 --> E7[\"无需担心封号风险\"]\n    E7 --> E8[\"实现高并发（量大管饱）\"]\n```",
+  "diagrams": [
+    {
+      "title": "概览",
+      "code": "flowchart TD\n    A1[\"开始\"] --> A2[\"下载并安装 cc-switch\"]\n    A2 --> A3[\"下载并安装 Cloud Code\"]\n    A3 --> A4[\"打开 Cloud Code\"]\n    A4 --> A5[\"添加模型供应商\"]\n    A5 --> A6[\"配置模型 API Key\"]\n    A6 --> A7[\"保存并启用模型\"]\n    A7 --> A8[\"使用 Cloud Code 对话\"]\n    A8 --> A9[\"同理配置 Codex 并使用\"]"
+    },
+    {
+      "title": "安装与启动流程",
+      "code": "flowchart TD\n    B1[\"访问 GitHub 下载 cc-switch\"] --> B2[\"选择对应操作系统的安装包\"]\n    B2 --> B3[\"执行安装命令\"]\n    B3 --> B4[\"打开 cc-switch 界面\"]\n    B4 --> B5[\"访问 GitHub 下载 Cloud Code\"]\n    B5 --> B6[\"运行 Cloud Code 安装脚本\"]\n    B6 --> B7[\"打开 Cloud Code\"]\n    B7 --> B8[\"尝试登录（需国外账号）\"]\n    B8 -->|无账号| B9[\"使用 cc-switch 代理登录\"]\n    B9 --> B10[\"登录成功，进入主界面\"]"
+    },
+    {
+      "title": "模型供应商配置",
+      "code": "flowchart TD\n    C1[\"选择工具：Cloud Code / Codex\"] --> C2[\"点击‘添加模型供应商’\"]\n    C2 --> C3[\"在下拉框中选择模型（如 DeepSet）\"]\n    C3 --> C4[\"在弹窗中填写对应的 API Key\"]\n    C4 --> C5[\"在模型列表中选择模型\"]\n    C5 --> C6[\"开启 100 万上下文（可选）\"]\n    C6 --> C7[\"保存配置文件\"]\n    C7 --> C8[\"点击‘启用’\"]\n    C8 --> C9[\"重新打开工具，开始对话\"]"
+    },
+    {
+      "title": "本地路由与 API 转换",
+      "code": "flowchart TD\n    D1[\"进入 cc-switch 设置\"] --> D2[\"打开‘路由设置’\"]\n    D2 --> D3[\"开启本地路由功能\"]\n    D3 --> D4[\"勾选 Codex 模型\"]\n    D4 --> D5[\"重启 Codex\"]\n    D5 --> D6[\"使用 API Key 登录 Codex\"]\n    D6 --> D7[\"Codex 发出请求\"]\n    D7 --> D8[\"本地路由将请求转换为 DeepSet 可识别的格式\"]\n    D8 --> D9[\"DeepSet 处理并返回响应\"]\n    D9 --> D10[\"响应经路由返回给 Codex，完成对话\"]"
+    },
+    {
+      "title": "使用动机与收益",
+      "code": "flowchart TD\n    E1[\"国外 AI 工具需订阅账号\"] --> E2[\"国内用户受限\"]\n    E2 --> E3[\"使用 cc-switch 绕过账号限制\"]\n    E3 --> E4[\"免费使用 Cloud Code / Codex\"]\n    E4 --> E5[\"接入国内模型（DeepSet 等）\"]\n    E5 --> E6[\"提升工具使用体验\"]\n    E6 --> E7[\"无需担心封号风险\"]\n    E7 --> E8[\"实现高并发（量大管饱）\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:11:03+00:00"
+}

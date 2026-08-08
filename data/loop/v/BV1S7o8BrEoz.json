@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1S7o8BrEoz",
+  "title": "Godot光照保姆级教学！3分钟让你的2D游戏氛围感拉满 #Godot4 #Godot教程 #游戏开发 #独立游戏 #2D光照 #游戏特效 #点光源",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 320,
+  "text": "今天我将向你展示我是如何在我的场景中调整灯光的\n从常规主题切换到更暗的风格\n更具吸引力的主题\n使用\n画布调制节点遮挡和指向节点\n在我的场景层级的根节点\n我添加了一个调制节点来改变灯光颜色\n你可以自由调整\n以达到理想效果\n我在渲染下的时间层选择了暗色调\n我创建了一个新的遮挡层\n光照遮罩何时生效\n绘制\n选择属性或关键图层\n并突出场景中的物体\n我想要光线反射的物体\n你可以按C取消选中图层\n你已高亮\n确保你的点光源启用了阴影\n我希望我的火球有发光效果，就像火焰通常那样\n与暗色调场景相比\n我在火球场景中设置的\n我在\n将其缩放到火球尺寸的0.5倍，强度设为2.0\n我也为HP拾取道具做了相同操作\n理查德说\n为添加了一个点光源到\n并调整了缩放和强度",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1S7o8BrEoz",
+  "published_at": "1776922200",
+  "fetched_at": "2026-08-08T08:58:17+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 2D 光照设置图谱\n\n## 总览工作流\n```mermaid\nflowchart TD\n    A[\"选择主题：常规 → 暗色调\"] --> B[\"在根节点添加 Canvas Modulate 节点\"]\n    B --> C[\"调整颜色以改变灯光色彩\"]\n    C --> D[\"创建遮挡层（Occlusion Layer）\"]\n    D --> E[\"设置光照遮罩，突出场景对象\"]\n    E --> F[\"添加点光源\"]\n    F --> G[\"确保点光源启用阴影\"]\n    G --> H[\"调整点光源：缩放 0.5、强度 2.0\"]\n    H --> I[\"实现特效：火球、HP 拾取道具的发光\"]\n```\n\n## 点光源配置步骤\n```mermaid\nflowchart LR\n    A[\"添加 Point Light 节点\"] --> B[\"启用 Shadows（阴影）\"]\n    B --> C[\"设置 Scale = 0.5（相对于目标尺寸）\"]\n    C --> D[\"设置 Intensity = 2.0\"]\n    D --> E[\"应用于火球\"]\n    D --> F[\"应用于 HP 拾取道具\"]\n```\n\n## Canvas Modulate 使用\n```mermaid\nflowchart TD\n    A[\"根节点\"] --> B[\"Canvas Modulate 节点\"]\n    B --> C[\"调节颜色属性\"]\n    C --> D[\"实现暗色调场景氛围\"]\n```\n\n## 遮挡层与光照遮罩\n```mermaid\nflowchart LR\n    A[\"创建 Occlusion Layer（遮挡层）\"] --> B[\"在属性/关键图层中选择\"]\n    B --> C[\"光照遮罩生效，突出目标对象\"]\n    C --> D[\"按 C 取消选中图层，恢复高亮\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览工作流",
+          "code": "flowchart TD\n    A[\"选择主题：常规 → 暗色调\"] --> B[\"在根节点添加 Canvas Modulate 节点\"]\n    B --> C[\"调整颜色以改变灯光色彩\"]\n    C --> D[\"创建遮挡层（Occlusion Layer）\"]\n    D --> E[\"设置光照遮罩，突出场景对象\"]\n    E --> F[\"添加点光源\"]\n    F --> G[\"确保点光源启用阴影\"]\n    G --> H[\"调整点光源：缩放 0.5、强度 2.0\"]\n    H --> I[\"实现特效：火球、HP 拾取道具的发光\"]"
+        },
+        {
+          "title": "点光源配置步骤",
+          "code": "flowchart LR\n    A[\"添加 Point Light 节点\"] --> B[\"启用 Shadows（阴影）\"]\n    B --> C[\"设置 Scale = 0.5（相对于目标尺寸）\"]\n    C --> D[\"设置 Intensity = 2.0\"]\n    D --> E[\"应用于火球\"]\n    D --> F[\"应用于 HP 拾取道具\"]"
+        },
+        {
+          "title": "Canvas Modulate 使用",
+          "code": "flowchart TD\n    A[\"根节点\"] --> B[\"Canvas Modulate 节点\"]\n    B --> C[\"调节颜色属性\"]\n    C --> D[\"实现暗色调场景氛围\"]"
+        },
+        {
+          "title": "遮挡层与光照遮罩",
+          "code": "flowchart LR\n    A[\"创建 Occlusion Layer（遮挡层）\"] --> B[\"在属性/关键图层中选择\"]\n    B --> C[\"光照遮罩生效，突出目标对象\"]\n    C --> D[\"按 C 取消选中图层，恢复高亮\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T09:01:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 2D 光照设置图谱\n\n## 总览工作流\n```mermaid\nflowchart TD\n    A[\"选择主题：常规 → 暗色调\"] --> B[\"在根节点添加 Canvas Modulate 节点\"]\n    B --> C[\"调整颜色以改变灯光色彩\"]\n    C --> D[\"创建遮挡层（Occlusion Layer）\"]\n    D --> E[\"设置光照遮罩，突出场景对象\"]\n    E --> F[\"添加点光源\"]\n    F --> G[\"确保点光源启用阴影\"]\n    G --> H[\"调整点光源：缩放 0.5、强度 2.0\"]\n    H --> I[\"实现特效：火球、HP 拾取道具的发光\"]\n```\n\n## 点光源配置步骤\n```mermaid\nflowchart LR\n    A[\"添加 Point Light 节点\"] --> B[\"启用 Shadows（阴影）\"]\n    B --> C[\"设置 Scale = 0.5（相对于目标尺寸）\"]\n    C --> D[\"设置 Intensity = 2.0\"]\n    D --> E[\"应用于火球\"]\n    D --> F[\"应用于 HP 拾取道具\"]\n```\n\n## Canvas Modulate 使用\n```mermaid\nflowchart TD\n    A[\"根节点\"] --> B[\"Canvas Modulate 节点\"]\n    B --> C[\"调节颜色属性\"]\n    C --> D[\"实现暗色调场景氛围\"]\n```\n\n## 遮挡层与光照遮罩\n```mermaid\nflowchart LR\n    A[\"创建 Occlusion Layer（遮挡层）\"] --> B[\"在属性/关键图层中选择\"]\n    B --> C[\"光照遮罩生效，突出目标对象\"]\n    C --> D[\"按 C 取消选中图层，恢复高亮\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览工作流",
+      "code": "flowchart TD\n    A[\"选择主题：常规 → 暗色调\"] --> B[\"在根节点添加 Canvas Modulate 节点\"]\n    B --> C[\"调整颜色以改变灯光色彩\"]\n    C --> D[\"创建遮挡层（Occlusion Layer）\"]\n    D --> E[\"设置光照遮罩，突出场景对象\"]\n    E --> F[\"添加点光源\"]\n    F --> G[\"确保点光源启用阴影\"]\n    G --> H[\"调整点光源：缩放 0.5、强度 2.0\"]\n    H --> I[\"实现特效：火球、HP 拾取道具的发光\"]"
+    },
+    {
+      "title": "点光源配置步骤",
+      "code": "flowchart LR\n    A[\"添加 Point Light 节点\"] --> B[\"启用 Shadows（阴影）\"]\n    B --> C[\"设置 Scale = 0.5（相对于目标尺寸）\"]\n    C --> D[\"设置 Intensity = 2.0\"]\n    D --> E[\"应用于火球\"]\n    D --> F[\"应用于 HP 拾取道具\"]"
+    },
+    {
+      "title": "Canvas Modulate 使用",
+      "code": "flowchart TD\n    A[\"根节点\"] --> B[\"Canvas Modulate 节点\"]\n    B --> C[\"调节颜色属性\"]\n    C --> D[\"实现暗色调场景氛围\"]"
+    },
+    {
+      "title": "遮挡层与光照遮罩",
+      "code": "flowchart LR\n    A[\"创建 Occlusion Layer（遮挡层）\"] --> B[\"在属性/关键图层中选择\"]\n    B --> C[\"光照遮罩生效，突出目标对象\"]\n    C --> D[\"按 C 取消选中图层，恢复高亮\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T09:01:45+00:00"
+}

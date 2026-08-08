@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1zPEe6VEmd",
+  "title": "【国语】Godot 引擎 - 别再做枯燥的菜单了！把它们做得更专业",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1766,
+  "text": "想象一下\n你第一次启动一款游戏\n你第一眼看到时会有什么期待\n如果你觉得是菜单\n那你就说对了\n如果你的菜单长这样\n这就是第一个危险信号\n说明你应该避开这款游戏\n这意味着开发者并不重视玩家启动游戏时\n第一眼看到的东西啊\n所以今天我们来看看如何解决这个问题\n如你所见\n这个菜单看起来真的很糟糕\n这里没有任何吸引人的地方\n没有弹出效果\n没有动画\n非常基础\n就是按钮之类的\n我创建了两个场景\n一个是坏菜单\n另一个是好菜单\n我们待会儿会看到\n那么坏菜单里有什么呢\n背景是灰色的\n然后我们有一个v box容器\n在这个容器里\n你可以认为所有按钮和标题都在里面\n所以我们只有游戏标题和几个按钮\n你可以看到这些按钮没有任何样式\n就像GODOT默认的那样\n如果对默认设置做了一些修改\n你会问代码做了什么\n他在ready i函数里做了非常基础的事情\n我们只是把所有按钮连接到它们对应的函数\n这里\n我们只是把每个按钮连接到正确的场景\n我只有游戏场景\n我没有继续或选项场景\n因为这个视频只是简单展示坏和好\n只有新游戏场景\n而对于退出按钮\n我们只是退出\n所以我想这时候你很好奇\n在这种情况下\n什么是好的菜单\n从一开始你就能看到几个动画颜色在变化\n我们可以看到按钮动画悬停时\n比我们之前看到的要有趣得多\n那么这个场景下面隐藏着什么\n让我们看看结构彩色背景\n这次我们选了一个更好的颜色\n当然对每个人来说\n颜色可以因为个人品味而不同\n之后我们有一个center container\n这是坏菜单缺少的东西\ncenter container能帮你把菜单精确的居中在游戏里\n在center container下面\n我们已经有了v box container\n它包含了所有其他元素\n你可以看到我们有好几个\n节点当然我们有副标题\n标题这里有一个分隔线\n它只是一个color rect\n它不可见\n因为反照率是51\n他在Y轴上设置了自定义最小尺寸为一像素\n它只是刚好足够看到这条小线\n这是创建线条的方法之一\n当然你也可以用line2D节点或其他节点\n我选择了correct3之后\n我们有一个另一个节点\n它只是一个在Y轴上自定义\n最小尺寸为24像素的空格\n这也是为了做间距之后\n我们有两个按钮\n新游戏和继续按钮\n它们代表游戏本身是与游戏交互的部分\n我们希望它成为那样\n把它和其他菜单按钮区分开之后\n我们有选项和退出\n在最底部\n我们有版本号\n这个你可以加也可以不加\n让新游戏信号连接到按钮上\n然后我们来看看代码\n首先这里是我们使用的颜色常亮\n这一步也可以做\n也可以不做\n这是一种你可以采用的方法\n我们有一个按钮数组\n在ready i函数中\n我们将所有按钮添加到数组中\n当然这也可以在ready i函数之前完成\n我们也可以在这里的数组中声明所有按钮\n但这是另一种方法\n你可以在ready函数中采用我们便利按钮数组\n为每个按钮连接\nMouse entered\nexited和press函数\n所有这些都会用到twin\n以便我们调整modulate属性\n实现悬停动画等效果\n我们还连接了退出按钮\n这样点击时就会退出游戏\n在ready i函数中\n我们还会调整场景本身的modulate\n这样菜单会淡入\n而不是在游戏启动后立即出现\n所以我们将modulate的A值设为零\n并创建一个twin\n使用is out类型的twin\n我们将modulate值恢复为一\n即百分之百不透明度之后\n我们有正如我提到的\n用于悬停按钮\n退出和按下的函数\n它们都只是调整不同的属性\n例如对于悬停和退出\n我们使用的是位置属性position x\n而对于按下\n我们调整的是缩放比例\n所以当我们按下按钮时\n我们先放大再缩小\n然后再放大\n同样在新游戏按下时\n我们也希望推动画先播放完毕\n然后我们才以相反的方式切换到场景\n否则我们看不到动画播放\n就会直接跳转到场景\n所以这里我们创建twin\n然后等待它完成\n之后我们再将文件切换到同步模式\n就是这样\n总而言之非常简单\n非常有用\n这些技巧和工具\n能让你的游戏从第一秒就吸引人\n顺便说一下我最近发现的一个最酷的菜单之一\n是游戏bonanza中的菜单\n我下周会在频道上传这个游戏\n这样你就能看到一些游戏画面\n所以请订阅频道点赞这个视频\n留下评论\n期待新的有趣内容\n谢谢愿上帝保佑你们所有",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zPEe6VEmd",
+  "published_at": "1781141841",
+  "fetched_at": "2026-08-08T04:46:05+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 菜单设计知识图谱\n\n## 菜单质量概览\n\n```mermaid\nflowchart TD\n    BadMenu[\"坏菜单\"] --> NoPopup[\"无弹出效果\"]\n    BadMenu --> NoAnim[\"无动画\"]\n    BadMenu --> GrayBG[\"背景灰色\"]\n    BadMenu --> DefaultStyle[\"按钮默认样式\"]\n    GoodMenu[\"好菜单\"] --> AnimColors[\"动画颜色变化\"]\n    GoodMenu --> HoverAnim[\"按钮悬停动画\"]\n    GoodMenu --> Centered[\"居中布局 (CenterContainer)\"]\n    GoodMenu --> ColorChoice[\"更佳配色\"]\n    GoodMenu --> Spacing[\"间距与分隔线\"]\n```\n\n- 坏菜单缺少弹出效果、动画、使用灰色背景且按钮保持默认样式。  \n  【[BV1zPEe6VEmd P1 00:36]】【[BV1zPEe6VEmd P1 00:38]】【[BV1zPEe6VEmd P1 00:50]】【[BV1zPEe6VEmd P1 01:04]】【[BV1zPEe6VEmd P1 01:07]】\n\n- 好菜单从一开始就展示动画颜色变化、按钮悬停动画，并使用 CenterContainer 使菜单居中。  \n  【[BV1zPEe6VEmd P1 01:54]】【[BV1zPEe6VEmd P1 01:59]】【[BV1zPEe6VEmd P1 02:27]】【[BV1zPEe6VEmd P1 02:13]】\n\n- 好菜单通过分隔线、间距等细节提升可读性。  \n  【[BV1zPEe6VEmd P1 02:44]】【[BV1zPEe6VEmd P1 02:47]】【[BV1zPEe6VEmd P1 03:21]】\n\n## 好菜单节点层级\n\n```mermaid\nflowchart TD\n    GoodScene[\"好菜单场景\"]\n    GoodScene --> CenterC[\"CenterContainer\"]\n    CenterC --> VBox[\"VBoxContainer\"]\n    VBox --> Title[\"标题\"]\n    VBox --> Subtitle[\"副标题\"]\n    VBox --> Divider[\"分隔线 (ColorRect)\"]\n    VBox --> Spacer[\"间距 (空白节点)\"]\n    VBox --> Buttons[\"按钮组\"]\n    Buttons --> NewGame[\"新游戏\"]\n    Buttons --> Continue[\"继续\"]\n    Buttons --> Options[\"选项\"]\n    Buttons --> Quit[\"退出\"]\n    VBox --> Version[\"版本号（可选）\"]\n```\n\n- 场景使用 CenterContainer 将整体居中；内部通过 VBoxContainer 组织标题、副标题、分隔线、间距和按钮。  \n  【[BV1zPEe6VEmd P1 02:22]】【[BV1zPEe6VEmd P1 02:27]】【[BV1zPEe6VEmd P1 02:39]】\n\n- 分隔线实现方式为不可见的 ColorRect，最小高度 1 像素。  \n  【[BV1zPEe6VEmd P1 02:52]】【[BV1zPEe6VEmd P1 02:55]】\n\n- 间距通过自定义最小尺寸的空白节点实现。  \n  【[BV1zPEe6VEmd P1 03:21]】【[BV1zPEe6VEmd P1 03:27]】\n\n- 按钮包括新游戏、继续、选项、退出，底部可添加版本号。  \n  【[BV1zPEe6VEmd P1 03:30]】【[BV1zPEe6VEmd P1 03:45]】【[BV1zPEe6VEmd P1 03:46]】\n\n## 菜单交互代码流程\n\n```mermaid\nflowchart TD\n    Ready[\"_ready()\"] --> InitArray[\"初始化按钮数组\"]\n    InitArray --> Connect[\"为每个按钮连接信号\"]\n    Connect --> Hover[\"mouse_entered / mouse_exited → 调整 modulate / position\"]\n    Connect --> Press[\"pressed → 调整 scale\"]\n    Ready --> FadeIn[\"Tween 调整 modulate 实现淡入\"]\n    FadeIn --> Hover\n    Hover --> Press\n    Press --> NewGameAnim[\"新游戏按钮按下动画\"]\n    NewGameAnim --> WaitTween[\"等待 Tween 完成\"]\n    WaitTween --> SwitchScene[\"切换到游戏场景\"]\n    QuitBtn[\"退出按钮\"] --> QuitAction[\"调用 get_tree().quit()\"]\n```\n\n- 在 `_ready()` 中创建按钮数组并连接 `mouse_entered`、`mouse_exited`、`pressed` 信号。  \n  【[BV1zPEe6VEmd P1 04:12]】【[BV1zPEe6VEmd P1 04:30]】【[BV1zPEe6VEmd P1 04:32]】\n\n- 使用 Tween 将 `modulate` 的 A 值设为 0，随后淡入至 1，实现菜单淡入效果。  \n  【[BV1zPEe6VEmd P1 05:02]】【[BV1zPEe6VEmd P1 05:08]】【[BV1zPEe6VEmd P1 04:58]】\n\n- 悬停和退出动画通过修改 `position.x` 实现；按下动画通过修改 `scale` 实现，按下时先放大再缩小再放大。  \n  【[BV1zPEe6VEmd P1 05:25]】【[BV1zPEe6VEmd P1 05:31]】【[BV1zPEe6VEmd P1 05:37]】\n\n- 新游戏按钮按下后播放动画，等待 Tween 完成后再切换场景，避免动画被跳过。  \n  【[BV1zPEe6VEmd P1 05:45]】【[BV1zPEe6VEmd P1 05:55]】【[BV1zPEe6VEmd P1 06:01]】\n\n- 退出按钮直接调用 `get_tree().quit()` 退出游戏。  \n  【[BV1zPEe6VEmd P1 01:44]】",
+      "diagrams": [
+        {
+          "title": "菜单质量概览",
+          "code": "flowchart TD\n    BadMenu[\"坏菜单\"] --> NoPopup[\"无弹出效果\"]\n    BadMenu --> NoAnim[\"无动画\"]\n    BadMenu --> GrayBG[\"背景灰色\"]\n    BadMenu --> DefaultStyle[\"按钮默认样式\"]\n    GoodMenu[\"好菜单\"] --> AnimColors[\"动画颜色变化\"]\n    GoodMenu --> HoverAnim[\"按钮悬停动画\"]\n    GoodMenu --> Centered[\"居中布局 (CenterContainer)\"]\n    GoodMenu --> ColorChoice[\"更佳配色\"]\n    GoodMenu --> Spacing[\"间距与分隔线\"]"
+        },
+        {
+          "title": "好菜单节点层级",
+          "code": "flowchart TD\n    GoodScene[\"好菜单场景\"]\n    GoodScene --> CenterC[\"CenterContainer\"]\n    CenterC --> VBox[\"VBoxContainer\"]\n    VBox --> Title[\"标题\"]\n    VBox --> Subtitle[\"副标题\"]\n    VBox --> Divider[\"分隔线 (ColorRect)\"]\n    VBox --> Spacer[\"间距 (空白节点)\"]\n    VBox --> Buttons[\"按钮组\"]\n    Buttons --> NewGame[\"新游戏\"]\n    Buttons --> Continue[\"继续\"]\n    Buttons --> Options[\"选项\"]\n    Buttons --> Quit[\"退出\"]\n    VBox --> Version[\"版本号（可选）\"]"
+        },
+        {
+          "title": "菜单交互代码流程",
+          "code": "flowchart TD\n    Ready[\"_ready()\"] --> InitArray[\"初始化按钮数组\"]\n    InitArray --> Connect[\"为每个按钮连接信号\"]\n    Connect --> Hover[\"mouse_entered / mouse_exited → 调整 modulate / position\"]\n    Connect --> Press[\"pressed → 调整 scale\"]\n    Ready --> FadeIn[\"Tween 调整 modulate 实现淡入\"]\n    FadeIn --> Hover\n    Hover --> Press\n    Press --> NewGameAnim[\"新游戏按钮按下动画\"]\n    NewGameAnim --> WaitTween[\"等待 Tween 完成\"]\n    WaitTween --> SwitchScene[\"切换到游戏场景\"]\n    QuitBtn[\"退出按钮\"] --> QuitAction[\"调用 get_tree().quit()\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T04:46:46+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 菜单设计知识图谱\n\n## 菜单质量概览\n\n```mermaid\nflowchart TD\n    BadMenu[\"坏菜单\"] --> NoPopup[\"无弹出效果\"]\n    BadMenu --> NoAnim[\"无动画\"]\n    BadMenu --> GrayBG[\"背景灰色\"]\n    BadMenu --> DefaultStyle[\"按钮默认样式\"]\n    GoodMenu[\"好菜单\"] --> AnimColors[\"动画颜色变化\"]\n    GoodMenu --> HoverAnim[\"按钮悬停动画\"]\n    GoodMenu --> Centered[\"居中布局 (CenterContainer)\"]\n    GoodMenu --> ColorChoice[\"更佳配色\"]\n    GoodMenu --> Spacing[\"间距与分隔线\"]\n```\n\n- 坏菜单缺少弹出效果、动画、使用灰色背景且按钮保持默认样式。  \n  【[BV1zPEe6VEmd P1 00:36]】【[BV1zPEe6VEmd P1 00:38]】【[BV1zPEe6VEmd P1 00:50]】【[BV1zPEe6VEmd P1 01:04]】【[BV1zPEe6VEmd P1 01:07]】\n\n- 好菜单从一开始就展示动画颜色变化、按钮悬停动画，并使用 CenterContainer 使菜单居中。  \n  【[BV1zPEe6VEmd P1 01:54]】【[BV1zPEe6VEmd P1 01:59]】【[BV1zPEe6VEmd P1 02:27]】【[BV1zPEe6VEmd P1 02:13]】\n\n- 好菜单通过分隔线、间距等细节提升可读性。  \n  【[BV1zPEe6VEmd P1 02:44]】【[BV1zPEe6VEmd P1 02:47]】【[BV1zPEe6VEmd P1 03:21]】\n\n## 好菜单节点层级\n\n```mermaid\nflowchart TD\n    GoodScene[\"好菜单场景\"]\n    GoodScene --> CenterC[\"CenterContainer\"]\n    CenterC --> VBox[\"VBoxContainer\"]\n    VBox --> Title[\"标题\"]\n    VBox --> Subtitle[\"副标题\"]\n    VBox --> Divider[\"分隔线 (ColorRect)\"]\n    VBox --> Spacer[\"间距 (空白节点)\"]\n    VBox --> Buttons[\"按钮组\"]\n    Buttons --> NewGame[\"新游戏\"]\n    Buttons --> Continue[\"继续\"]\n    Buttons --> Options[\"选项\"]\n    Buttons --> Quit[\"退出\"]\n    VBox --> Version[\"版本号（可选）\"]\n```\n\n- 场景使用 CenterContainer 将整体居中；内部通过 VBoxContainer 组织标题、副标题、分隔线、间距和按钮。  \n  【[BV1zPEe6VEmd P1 02:22]】【[BV1zPEe6VEmd P1 02:27]】【[BV1zPEe6VEmd P1 02:39]】\n\n- 分隔线实现方式为不可见的 ColorRect，最小高度 1 像素。  \n  【[BV1zPEe6VEmd P1 02:52]】【[BV1zPEe6VEmd P1 02:55]】\n\n- 间距通过自定义最小尺寸的空白节点实现。  \n  【[BV1zPEe6VEmd P1 03:21]】【[BV1zPEe6VEmd P1 03:27]】\n\n- 按钮包括新游戏、继续、选项、退出，底部可添加版本号。  \n  【[BV1zPEe6VEmd P1 03:30]】【[BV1zPEe6VEmd P1 03:45]】【[BV1zPEe6VEmd P1 03:46]】\n\n## 菜单交互代码流程\n\n```mermaid\nflowchart TD\n    Ready[\"_ready()\"] --> InitArray[\"初始化按钮数组\"]\n    InitArray --> Connect[\"为每个按钮连接信号\"]\n    Connect --> Hover[\"mouse_entered / mouse_exited → 调整 modulate / position\"]\n    Connect --> Press[\"pressed → 调整 scale\"]\n    Ready --> FadeIn[\"Tween 调整 modulate 实现淡入\"]\n    FadeIn --> Hover\n    Hover --> Press\n    Press --> NewGameAnim[\"新游戏按钮按下动画\"]\n    NewGameAnim --> WaitTween[\"等待 Tween 完成\"]\n    WaitTween --> SwitchScene[\"切换到游戏场景\"]\n    QuitBtn[\"退出按钮\"] --> QuitAction[\"调用 get_tree().quit()\"]\n```\n\n- 在 `_ready()` 中创建按钮数组并连接 `mouse_entered`、`mouse_exited`、`pressed` 信号。  \n  【[BV1zPEe6VEmd P1 04:12]】【[BV1zPEe6VEmd P1 04:30]】【[BV1zPEe6VEmd P1 04:32]】\n\n- 使用 Tween 将 `modulate` 的 A 值设为 0，随后淡入至 1，实现菜单淡入效果。  \n  【[BV1zPEe6VEmd P1 05:02]】【[BV1zPEe6VEmd P1 05:08]】【[BV1zPEe6VEmd P1 04:58]】\n\n- 悬停和退出动画通过修改 `position.x` 实现；按下动画通过修改 `scale` 实现，按下时先放大再缩小再放大。  \n  【[BV1zPEe6VEmd P1 05:25]】【[BV1zPEe6VEmd P1 05:31]】【[BV1zPEe6VEmd P1 05:37]】\n\n- 新游戏按钮按下后播放动画，等待 Tween 完成后再切换场景，避免动画被跳过。  \n  【[BV1zPEe6VEmd P1 05:45]】【[BV1zPEe6VEmd P1 05:55]】【[BV1zPEe6VEmd P1 06:01]】\n\n- 退出按钮直接调用 `get_tree().quit()` 退出游戏。  \n  【[BV1zPEe6VEmd P1 01:44]】",
+  "diagrams": [
+    {
+      "title": "菜单质量概览",
+      "code": "flowchart TD\n    BadMenu[\"坏菜单\"] --> NoPopup[\"无弹出效果\"]\n    BadMenu --> NoAnim[\"无动画\"]\n    BadMenu --> GrayBG[\"背景灰色\"]\n    BadMenu --> DefaultStyle[\"按钮默认样式\"]\n    GoodMenu[\"好菜单\"] --> AnimColors[\"动画颜色变化\"]\n    GoodMenu --> HoverAnim[\"按钮悬停动画\"]\n    GoodMenu --> Centered[\"居中布局 (CenterContainer)\"]\n    GoodMenu --> ColorChoice[\"更佳配色\"]\n    GoodMenu --> Spacing[\"间距与分隔线\"]"
+    },
+    {
+      "title": "好菜单节点层级",
+      "code": "flowchart TD\n    GoodScene[\"好菜单场景\"]\n    GoodScene --> CenterC[\"CenterContainer\"]\n    CenterC --> VBox[\"VBoxContainer\"]\n    VBox --> Title[\"标题\"]\n    VBox --> Subtitle[\"副标题\"]\n    VBox --> Divider[\"分隔线 (ColorRect)\"]\n    VBox --> Spacer[\"间距 (空白节点)\"]\n    VBox --> Buttons[\"按钮组\"]\n    Buttons --> NewGame[\"新游戏\"]\n    Buttons --> Continue[\"继续\"]\n    Buttons --> Options[\"选项\"]\n    Buttons --> Quit[\"退出\"]\n    VBox --> Version[\"版本号（可选）\"]"
+    },
+    {
+      "title": "菜单交互代码流程",
+      "code": "flowchart TD\n    Ready[\"_ready()\"] --> InitArray[\"初始化按钮数组\"]\n    InitArray --> Connect[\"为每个按钮连接信号\"]\n    Connect --> Hover[\"mouse_entered / mouse_exited → 调整 modulate / position\"]\n    Connect --> Press[\"pressed → 调整 scale\"]\n    Ready --> FadeIn[\"Tween 调整 modulate 实现淡入\"]\n    FadeIn --> Hover\n    Hover --> Press\n    Press --> NewGameAnim[\"新游戏按钮按下动画\"]\n    NewGameAnim --> WaitTween[\"等待 Tween 完成\"]\n    WaitTween --> SwitchScene[\"切换到游戏场景\"]\n    QuitBtn[\"退出按钮\"] --> QuitAction[\"调用 get_tree().quit()\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T04:46:46+00:00"
+}

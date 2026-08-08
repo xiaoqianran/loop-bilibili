@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1TUKp6hEi6",
+  "title": "[117]. Kimi 的混合线性注意力：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3494,
+  "text": "今天我们来介绍一篇\n关于高效线性注意力架构的工作\n标题叫做kimi linear\n全称是一种表达力强\n效率高的注意力架构\n随着大语言模型被用于越来越复杂的智能体\n任务和推理式缩放标准\nSoft max\n注意力的二次复杂度和线性增长的KV缓存\n逐渐成为瓶颈\nkm linear的核心思路可以总结为三点\n第一提出一种新的线性注意力模块\n叫做kimi delta attention\n简称KDA\n他在gated delta net的基础上\n引入更细粒度的通道及门控机制\n从而更精确地控制有限循环记忆的更新与遗忘\n第二为KDA设计了一套硬件友好的分块\n并行算法\n通过特殊形式的DPLR转移矩阵减少计算量\n第三把\nKDA与全注意力的MLA按三比一的比例\n交错叠加\n构建混合架构\n实验表明\n在相同的1.4t token训练配方下\nkimi linear在短上下文\n长上下文和强化学习任务上\n超过了全注意力极限\n同时KV缓存最多可减少75%\n在百万token上下文上解码吞吐最高可提升六倍\n下面看一下摘要\n翻译我们介绍kimi linear1种混合线性注意力架构\n它在多种场景下的公平对比中\n首次超过了全注意力\n这些场景包括短上下文\n长上下文和强化学习缩放\n其核心是kimi delta attention\n简称KDA\n这是一种表达能力强的线性注意力模块\n他在git的delta net的基础上\n引入了更细粒度的门控机制\n能够更有效地利用有限的有限状态\n循环神经网络记忆\n我们定制的分块算法\n通过一种特殊形式的DPLR\n也就是对角加低质转移矩阵\n实现了很高的硬件效率\n与普通DPLR形式相比\n大幅减少了计算量\n同时仍然保持与经典delta规则的一致性\n我们预训练了一个具有30亿激活参数\n和480亿总参数的kimi linear模型\n采用KDA与MLA逐层混合的方式\n实验表明\n在相同训练配方下\nkimi linear在所有评估任务上都以较大优势\n超过全注意力m la\n同时KV缓存使用最多减少75%\n在百万token上下文上解码吞吐最高提升六倍\n这些结果表明\nkimi linear可以作为全注意力架构的直接替代方案\n在更长输入和更长输出的任务上\n同时取得更优的性能和效率\n为了支持进一步研究\n我们开源了KDA内核和VLLM\n实现并发布了预训练和指令微调模型\n检查点\n下面看一下这张图\n这张图展示了KMILLINEAR\n在性能和效率两个维度上的总体表现\n左图是性能与解码加速的关系\n在m m l u pro4K上下文上\nkimi linear在速度相近的情况下\n得分51.0\n高于MLA的47.2和GDNH的47.9\n在ruler128K长上下文评测上\nkimi linear得分84.3\n同样高于m la的81.3\n和GDNH的80.5\n位于帕雷托最优位置\n右图是不同解码长度下\n每个输出token的时间\n也就是TPOT\n随着上下文长度从4K增加到em\nMLA的teapot急剧上升\n而kimi linear保持较低增长\n在em token处相比MLA实现了约6.3倍的加速\n这说明kimi linear在长序列解码场景下\n具有明显的效率优势\n下面看一下这张图\n这张图展示了kimi linear的整体模型架构\n整个模型由重复的块堆叠而成\n每个块包含token混合层和通道混合层\n左侧是宏观结构\n大部分块使用KDA作为token混合层\n每N个KDA块之后插入一个m la全注意力块\n论文实现中文取三\n也就是三比一的混合比例\n右上角是MOE通道混合层的细节\n包含共享专家和路由专家\n右下角是KDA模块的内部结构输入\n经过线性投影短卷积L2归一化等处理\n分别生成query key value以及门控信号alpha和贝塔\n然后送入KDA进行计算\n这种混合设计\n既保留了线性注意力的内存和计算效率\n又通过周期性的全注意力层补充全局信息流动\n下面看一下这个公式\n这个公式是KDA的核心递推式状态\nST由两部分组成\n左边是上一时刻状态s st1经过一个对角门控\n带个奥法T和一个质疑修正项\nI减去贝塔T乘以k t kt转制之后的更新\n右边是新来的key value\n对贝塔TKTVT转制的写入输出\nOT则是当前状态与query的乘积\n与传统git delta net使用标量遗忘门不同\nKDA把门控从标量扩展到对角矩阵\n也就是按通道进行衰减\n这样每个维度可以独立控制自己的记忆\n保留和遗忘\n从而更精细地管理有限状态容量\n同时仍然保持高效的硬件实现\n下面看一下这个公式\n这个公式把KDA的递推式展开成块级别的形式\n将整个序列分成多个长度为C的块\n在每个块内部状态更新被写成初始状态\nST0经过一个累积转移矩阵PTR\n再加上块内各个位置贡献的HTR之和\n通过这种方式\n原本按token顺序执行的循环计算\n可以在块内并行化\n每个块只需要维护一个紧凑的状态传递\n这是KDA能够高效利用tensor CORE\n并减少IO开销的关键步骤\n下面看一下这个公式\n这个公式描述了KDA的输出阶段\n如何同时利用快间循环和快内并行输出\nOT由两部分组成\n第一部分是INTECHUNK项\n把query经过累积衰减后\n与上一块传递过来的状态ST相乘\n得到来自历史快的贡献\n第二部分是intro chunk项\n通过下三角矩阵chill\n捕捉块内位置之间的局部依赖\n再乘以一个伪value项\n这样设计的好处是\n块与块之间只需要传递固定大小的状态\n而块内部可以充分利用矩阵乘法并行\n兼顾了长序列建模能力和硬件效率\n下面看一下这段伪代码\n这段代码描述了chunk wise\nKDA的PYTORCH风格实现大致可以分为三部\n首先对输入序列按块重排\n并计算门控信号的累积和\n然后在每个块内预先计算若干中间矩阵\n包括query与key的聚合\nkey与key的聚合等\n为后续输出做准备\n最后逐块便利\n先用预计算的中间量得到当前块的输出\n再用key value对更新状态S并传递给下一个快\n整个算法的关键在于把原本顺序的状态更新\n转化为会计并行\n同时通过对角门控和质疑修正\n保持表达能力\n下面看一下这张图\n这张图展示了kimi linear和m la的缩放率曲线\n横轴是训练计算量\n单位是PFLOP每秒天\n纵轴是验证损失\n在相同的训练计算预算下\nkimi linear的损失曲线整体位于m la下方\n拟合结果显示\nKIMINIA达到相同损失\n大约只需要m la约86%的计算量\n也就是具有约1.16倍的计算效率优势\n这说明kimi linear在模型规模扩大时\n仍然保持良好的缩放特性\n下面看一下这个表\n这个表对比了kimi linear全注意力\nMLA和混合GDNH\n在短上下文预训练评测上的表现\n三组模型都使用1.4\nt token和相同的训练配方\n在通用任务上\nkimi linear在hellas wag arc challenge\nWinner ground\nB\nBh\nM m l u\nM\nM l u pro\n和trivia q a上的得分都高于两个极限\n在数学和代码任务上\nkimi linear在GSM\n8K和c r u s evil等指标上也取得更好结果\n总体来看\n提米莉莉娅在绝大多数短上下文评测上\n超过了全注意力m la\n下面看一下这个表\n这个表展示了kimmy linear\n在长上下文基准上的表现\n对比对象包括MLAGDNH\n以及使用ROP的kim linear变体\n在Ruler helmet i c l\nrapper q a和长代码竞技场等任务上\nkimi linear都取得了最高得分\n其中Ruler达到84.3\nrapper q a达到68.5\n平均分为54.5\n高于ml类的52.2和GDNH的51.2\n这表明混合架构在长文本理\n解和检索任务上具有优势\n下面看一下这张图\n这张图对比了MLAGDNH和kimi linear\n的推理延迟\n左图是预填充时间\n随上下文长度的变化\n右图是解码阶段每个输出token的时间\nTPOT在预填充阶段\nkimi linear与GDNH的曲线几乎重合\n开销可以忽略\n在解码阶段\n随着序列长度增加\n到em token m l a的TPOT显著上升\n而kimi linear保持较低水平\n在em长度处TPOT约为MLA的2.2倍快\n并且由于节省的KV缓存\n可以支持更大的batch\n实际吞吐提升可以达到六倍左右\n这张图说明kimi linear在超长上下文推理时\n能够同时保持低延迟和高吞吐",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TUKp6hEi6",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:12:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

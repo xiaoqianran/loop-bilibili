@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1nE3M6pE5t",
+  "title": "Godot制作UI，用好容器布局",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1597,
+  "text": "今天我想和大家聊一下\n格斗UI系统里面非常重要的一个节点容器\nContainer\n容器的作用在于\n帮助我们自动的对常规的UI组件进行排版布局\n让我以下面的例子来看一下容器是如何使用的\n首先我们这里有两个按钮\n我们希望他们两个居中并且垂直方向的排列\n那我们可以通过修改它们的锚点\n并且再加一点偏移\n就达到我们想要的效果了\n但实际上这种做法是低效且难以扩展的\n比如说我们现在要加一个按钮在这个队列中\n那我们又得重新操作一遍\n或者说如果我们想要调整按钮之间的间距\n那我们又得再去偏移每一个按钮的位置\n所以这个时候容器的作用就体现出来了\n当我们新添加一个容器节点时\n我们会看到这里有许多不同的容器\n他们有各自的布局规则和应用场景\n而现在我要用的就是webox container\n垂直方向排列容器\n添加好该容器的场景后\n我们只需要将需要排列的UI元素拖到它下面\n作为子节点即可生效\n如果我们要调整这些按钮之间的间距\n那我们就可以在SCORIZE里面的separation\n进行统一调整\n如果我们对容器进行大小的调整\n我们会发现内部按钮也随之拉升\n这是容器的一个特点\n在一些有输入框或者图片的UI界面下\n这个的作用会尤为明显\n话说回来\n我们现在不希望这些按钮\n跟随父节点进行大小变化\n那我同样可以进行调整\n我们可以在这些子节点的layout下的container\nsize里面进行处理\n这个数值只有在节点被放在容器里面时\n才可见的\n通过修改该节点的填充形式\n例如我选择shrink center\n让它保持在区域的中心\n而不进行大小变化\n这里涉及的参数较多\n具体可以参考官方文档对这块的解释\n这里我想重点说一下expand的作用\n我们来看这样一个例子\n在这个容器里面有三个按钮\n每个的高度都是100像素\n而我们容器的高度是500像素\n所以还有额外200像素的空间可以使用\n如果我们把某个按钮expand打勾\n所以意味着这个子节点想要容器里剩余的空间\n而选了expand的优先级\n高于没有选择expand优先级的节点\n所以他就会把其他的给挤开\n独自占有剩余的空间\n如果我们有两个节点都选择expand\n那么他们就会共同瓜分剩余的空间\n而是stress ratio的作用\n就是决定expand的子节点之间如何分配\n剩余空间的比例\n比例为二的子节点\n获得的空间是比例为一的直接点的两倍\n在这个画面上我想再添加一个游戏标题\n我会选择再加一个容器\nV box container\n这是因为我会把整个画面划分为两个部分\n上面是显示标题\n下面是按钮部分\n同时我会将这两块设为expand\n然后再调整它们的比例\n来改变这两块的空间大小\n正如之前所说\n还有其他不同功能的容器\n而他们不仅有自己独有的数值要调整\n而且子节点的container sign\n也在他们下面也会有些变化\n这里就不一一介绍\n最后我想通过拆解一个更复杂的UI界面\n来展示我对容器的理解\n这个页面我首先分为三个部分\n顶部中部以及底部\n所以在这里用了一个垂直排列v box container\n这三个部分我都用了margin container\n是因为我希望里面的内容和屏幕边缘\n有一定的编剧\n在顶部我有两个按钮是水平排列的\n所以用的是h box container\n我希望他们两个一左一右\n所以我把它们都设为了expand\n这样整个空间都被他们瓜分了\n然后再设置一个靠左\n一个靠右\n中间的部分比较复杂\n我的做法是把一页做成单独的场景\n然后会根据关卡数量生成相应的页数\n由于每一页是水平滑动\n所以用score container加h box container的组合处理\n而每一页的关卡展示\n就是用grad container来组织的\n最后底部就比较简单\n程序会根据页数生成对应数量的圆形点击按钮\n所以用h box container进行一个简单的排序就行了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1nE3M6pE5t",
+  "published_at": "1784980800",
+  "fetched_at": "2026-08-07T01:11:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot UI 容器布局知识图谱\n\n## 容器类型总览\n```mermaid\nflowchart TD\n    C1[\"Container（自动排版布局）\"]\n    VT[\"VBoxContainer（垂直排列）\"]\n    HT[\"HBoxContainer（水平排列）\"]\n    MT[\"MarginContainer（边距）\"]\n    ST[\"ScoreContainer（分页）\"]\n    GT[\"GridContainer（网格）\"]\n    SA[\"SizeAdjustment（容器大小影响子节点）\"]\n    EX[\"Expand（子节点占用剩余空间）\"]\n    C1 --> VT\n    C1 --> HT\n    C1 --> MT\n    C1 --> ST\n    C1 --> GT\n    C1 --> SA\n    C1 --> EX\n```\n- Container 作用：自动排版布局 [BV1nE3M6pE5t P1 00:07]  \n- 使用的垂直容器：VBoxContainer [BV1nE3M6pE5t P1 01:03]  \n- 使用的水平容器：HBoxContainer [BV1nE3M6pE5t P1 04:30]  \n- 用于添加边距的容器：MarginContainer [BV1nE3M6pE5t P1 04:18]  \n- 用于分页的容器：ScoreContainer [BV1nE3M6pE5t P1 04:53]  \n- 用于网格布局的容器：GridContainer [BV1nE3M6pE5t P1 05:02]  \n- 调整容器大小会拉伸子节点 [BV1nE3M6pE5t P1 01:29]  \n- 子节点可通过 Expand 占用剩余空间 [BV1nE3M6pE5t P1 02:14]\n\n## 容器布局工作流\n```mermaid\nflowchart TD\n    A1[\"Add Container 节点\"]\n    A2[\"Drag UI 元素为子节点\"]\n    A3[\"设置 Separation（间距）\"]\n    A4[\"调整 Container Size（大小）\"]\n    A5[\"设置子节点 Fill Mode（如 shrink center）\"]\n    A6[\"勾选 Expand（占用剩余空间）\"]\n    A7[\"确认布局生效\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7\n```\n- 添加容器后将 UI 元素拖入 [BV1nE3M6pE5t P1 01:05]  \n- 调整间距使用 separation 参数 [BV1nE3M6pE5t P1 01:13]  \n- 容器大小变化会同步拉伸子节点 [BV1nE3M6pE5t P1 01:29]  \n- 通过 shrink center 保持子节点居中且不变形 [BV1nE3M6pE5t P1 02:03]  \n- 勾选 Expand 让子节点占用剩余空间 [BV1nE3M6pE5t P1 02:14]  \n\n## Expand 行为与 Stress Ratio 机制\n```mermaid\nflowchart TD\n    E1[\"容器总高度 500px\"]\n    E2[\"每个按钮高度 100px\"]\n    E3[\"剩余空间 200px\"]\n    E4[\"勾选 Expand 的按钮\"]\n    E5[\"优先级高于未勾选节点\"]\n    E6[\"单节点占用全部剩余空间\"]\n    E7[\"多个 Expand 节点共享剩余空间\"]\n    E8[\"通过 Stress Ratio 分配比例\"]\n    E9[\"比例 2:1 时，节点获得的空间是比例 1 的两倍\"]\n    E1 --> E2 --> E3\n    E3 --> E4\n    E4 --> E5\n    E5 --> E6\n    E5 --> E7 --> E8 --> E9\n```\n- 三个按钮高度 100px，容器高度 500px，剩余 200px [BV1nE3M6pE5t P1 02:22]  \n- 勾选 Expand 后该按钮占用剩余空间 [BV1nE3M6pE5t P1 02:31]  \n- 多个 Expand 节点按 Stress Ratio 分配 [BV1nE3M6pE5t P1 02:57]  \n- 比例 2:1 时空间分配为 2 倍 [BV1nE3M6pE5t P1 03:05]  \n\n## 复杂 UI 层级示例\n```mermaid\nflowchart TD\n    UIRoot[\"UI Root\"]\n    TitleSec[\"标题区（上）\"]\n    BtnSec[\"按钮区（中）\"]\n    BottomSec[\"底部区（下）\"]\n    TitleVBox[\"VBoxContainer（垂直）\"]\n    TitleMargin[\"MarginContainer（标题边距）\"]\n    TopHBox[\"HBoxContainer（水平）\"]\n    TopBtn1[\"Button A\"]\n    TopBtn2[\"Button B\"]\n    TopBtn1 -->|expand| TopHBox\n    TopBtn2 -->|expand| TopHBox\n    TopHBox --> TitleVBox\n    BtnVBox[\"VBoxContainer（按钮整体）\"]\n    BtnMargin[\"MarginContainer（按钮区边距）\"]\n    PageScore[\"ScoreContainer（分页）\"]\n    PageHBox[\"HBoxContainer（每页水平）\"]\n    LevelGrid[\"GridContainer（关卡展示）\"]\n    BottomHBox[\"HBoxContainer（底部按钮）\"]\n    UIRoot --> TitleSec --> TitleVBox --> TitleMargin\n    UIRoot --> BtnSec --> BtnVBox --> BtnMargin --> PageScore --> PageHBox --> LevelGrid\n    UIRoot --> BottomSec --> BottomHBox\n```\n- 页面分为顶部、按钮区、底部三部分 [BV1nE3M6pE5t P1 04:09]  \n- 顶部使用 HBoxContainer 并设为 expand [BV1nE3M6pE5t P1 04:30]  \n- 中部按钮区使用 ScoreContainer + HBox 组合处理分页 [BV1nE3M6pE5t P1 04:53]  \n- 关卡展示使用 GridContainer [BV1nE3M6pE5t P1 05:02]  \n- 底部使用 HBoxContainer 简单排序 [BV1nE3M6pE5t P1 05:07]  ",
+      "diagrams": [
+        {
+          "title": "容器类型总览",
+          "code": "flowchart TD\n    C1[\"Container（自动排版布局）\"]\n    VT[\"VBoxContainer（垂直排列）\"]\n    HT[\"HBoxContainer（水平排列）\"]\n    MT[\"MarginContainer（边距）\"]\n    ST[\"ScoreContainer（分页）\"]\n    GT[\"GridContainer（网格）\"]\n    SA[\"SizeAdjustment（容器大小影响子节点）\"]\n    EX[\"Expand（子节点占用剩余空间）\"]\n    C1 --> VT\n    C1 --> HT\n    C1 --> MT\n    C1 --> ST\n    C1 --> GT\n    C1 --> SA\n    C1 --> EX"
+        },
+        {
+          "title": "容器布局工作流",
+          "code": "flowchart TD\n    A1[\"Add Container 节点\"]\n    A2[\"Drag UI 元素为子节点\"]\n    A3[\"设置 Separation（间距）\"]\n    A4[\"调整 Container Size（大小）\"]\n    A5[\"设置子节点 Fill Mode（如 shrink center）\"]\n    A6[\"勾选 Expand（占用剩余空间）\"]\n    A7[\"确认布局生效\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7"
+        },
+        {
+          "title": "Expand 行为与 Stress Ratio 机制",
+          "code": "flowchart TD\n    E1[\"容器总高度 500px\"]\n    E2[\"每个按钮高度 100px\"]\n    E3[\"剩余空间 200px\"]\n    E4[\"勾选 Expand 的按钮\"]\n    E5[\"优先级高于未勾选节点\"]\n    E6[\"单节点占用全部剩余空间\"]\n    E7[\"多个 Expand 节点共享剩余空间\"]\n    E8[\"通过 Stress Ratio 分配比例\"]\n    E9[\"比例 2:1 时，节点获得的空间是比例 1 的两倍\"]\n    E1 --> E2 --> E3\n    E3 --> E4\n    E4 --> E5\n    E5 --> E6\n    E5 --> E7 --> E8 --> E9"
+        },
+        {
+          "title": "复杂 UI 层级示例",
+          "code": "flowchart TD\n    UIRoot[\"UI Root\"]\n    TitleSec[\"标题区（上）\"]\n    BtnSec[\"按钮区（中）\"]\n    BottomSec[\"底部区（下）\"]\n    TitleVBox[\"VBoxContainer（垂直）\"]\n    TitleMargin[\"MarginContainer（标题边距）\"]\n    TopHBox[\"HBoxContainer（水平）\"]\n    TopBtn1[\"Button A\"]\n    TopBtn2[\"Button B\"]\n    TopBtn1 -->|expand| TopHBox\n    TopBtn2 -->|expand| TopHBox\n    TopHBox --> TitleVBox\n    BtnVBox[\"VBoxContainer（按钮整体）\"]\n    BtnMargin[\"MarginContainer（按钮区边距）\"]\n    PageScore[\"ScoreContainer（分页）\"]\n    PageHBox[\"HBoxContainer（每页水平）\"]\n    LevelGrid[\"GridContainer（关卡展示）\"]\n    BottomHBox[\"HBoxContainer（底部按钮）\"]\n    UIRoot --> TitleSec --> TitleVBox --> TitleMargin\n    UIRoot --> BtnSec --> BtnVBox --> BtnMargin --> PageScore --> PageHBox --> LevelGrid\n    UIRoot --> BottomSec --> BottomHBox"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T01:11:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot UI 容器布局知识图谱\n\n## 容器类型总览\n```mermaid\nflowchart TD\n    C1[\"Container（自动排版布局）\"]\n    VT[\"VBoxContainer（垂直排列）\"]\n    HT[\"HBoxContainer（水平排列）\"]\n    MT[\"MarginContainer（边距）\"]\n    ST[\"ScoreContainer（分页）\"]\n    GT[\"GridContainer（网格）\"]\n    SA[\"SizeAdjustment（容器大小影响子节点）\"]\n    EX[\"Expand（子节点占用剩余空间）\"]\n    C1 --> VT\n    C1 --> HT\n    C1 --> MT\n    C1 --> ST\n    C1 --> GT\n    C1 --> SA\n    C1 --> EX\n```\n- Container 作用：自动排版布局 [BV1nE3M6pE5t P1 00:07]  \n- 使用的垂直容器：VBoxContainer [BV1nE3M6pE5t P1 01:03]  \n- 使用的水平容器：HBoxContainer [BV1nE3M6pE5t P1 04:30]  \n- 用于添加边距的容器：MarginContainer [BV1nE3M6pE5t P1 04:18]  \n- 用于分页的容器：ScoreContainer [BV1nE3M6pE5t P1 04:53]  \n- 用于网格布局的容器：GridContainer [BV1nE3M6pE5t P1 05:02]  \n- 调整容器大小会拉伸子节点 [BV1nE3M6pE5t P1 01:29]  \n- 子节点可通过 Expand 占用剩余空间 [BV1nE3M6pE5t P1 02:14]\n\n## 容器布局工作流\n```mermaid\nflowchart TD\n    A1[\"Add Container 节点\"]\n    A2[\"Drag UI 元素为子节点\"]\n    A3[\"设置 Separation（间距）\"]\n    A4[\"调整 Container Size（大小）\"]\n    A5[\"设置子节点 Fill Mode（如 shrink center）\"]\n    A6[\"勾选 Expand（占用剩余空间）\"]\n    A7[\"确认布局生效\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7\n```\n- 添加容器后将 UI 元素拖入 [BV1nE3M6pE5t P1 01:05]  \n- 调整间距使用 separation 参数 [BV1nE3M6pE5t P1 01:13]  \n- 容器大小变化会同步拉伸子节点 [BV1nE3M6pE5t P1 01:29]  \n- 通过 shrink center 保持子节点居中且不变形 [BV1nE3M6pE5t P1 02:03]  \n- 勾选 Expand 让子节点占用剩余空间 [BV1nE3M6pE5t P1 02:14]  \n\n## Expand 行为与 Stress Ratio 机制\n```mermaid\nflowchart TD\n    E1[\"容器总高度 500px\"]\n    E2[\"每个按钮高度 100px\"]\n    E3[\"剩余空间 200px\"]\n    E4[\"勾选 Expand 的按钮\"]\n    E5[\"优先级高于未勾选节点\"]\n    E6[\"单节点占用全部剩余空间\"]\n    E7[\"多个 Expand 节点共享剩余空间\"]\n    E8[\"通过 Stress Ratio 分配比例\"]\n    E9[\"比例 2:1 时，节点获得的空间是比例 1 的两倍\"]\n    E1 --> E2 --> E3\n    E3 --> E4\n    E4 --> E5\n    E5 --> E6\n    E5 --> E7 --> E8 --> E9\n```\n- 三个按钮高度 100px，容器高度 500px，剩余 200px [BV1nE3M6pE5t P1 02:22]  \n- 勾选 Expand 后该按钮占用剩余空间 [BV1nE3M6pE5t P1 02:31]  \n- 多个 Expand 节点按 Stress Ratio 分配 [BV1nE3M6pE5t P1 02:57]  \n- 比例 2:1 时空间分配为 2 倍 [BV1nE3M6pE5t P1 03:05]  \n\n## 复杂 UI 层级示例\n```mermaid\nflowchart TD\n    UIRoot[\"UI Root\"]\n    TitleSec[\"标题区（上）\"]\n    BtnSec[\"按钮区（中）\"]\n    BottomSec[\"底部区（下）\"]\n    TitleVBox[\"VBoxContainer（垂直）\"]\n    TitleMargin[\"MarginContainer（标题边距）\"]\n    TopHBox[\"HBoxContainer（水平）\"]\n    TopBtn1[\"Button A\"]\n    TopBtn2[\"Button B\"]\n    TopBtn1 -->|expand| TopHBox\n    TopBtn2 -->|expand| TopHBox\n    TopHBox --> TitleVBox\n    BtnVBox[\"VBoxContainer（按钮整体）\"]\n    BtnMargin[\"MarginContainer（按钮区边距）\"]\n    PageScore[\"ScoreContainer（分页）\"]\n    PageHBox[\"HBoxContainer（每页水平）\"]\n    LevelGrid[\"GridContainer（关卡展示）\"]\n    BottomHBox[\"HBoxContainer（底部按钮）\"]\n    UIRoot --> TitleSec --> TitleVBox --> TitleMargin\n    UIRoot --> BtnSec --> BtnVBox --> BtnMargin --> PageScore --> PageHBox --> LevelGrid\n    UIRoot --> BottomSec --> BottomHBox\n```\n- 页面分为顶部、按钮区、底部三部分 [BV1nE3M6pE5t P1 04:09]  \n- 顶部使用 HBoxContainer 并设为 expand [BV1nE3M6pE5t P1 04:30]  \n- 中部按钮区使用 ScoreContainer + HBox 组合处理分页 [BV1nE3M6pE5t P1 04:53]  \n- 关卡展示使用 GridContainer [BV1nE3M6pE5t P1 05:02]  \n- 底部使用 HBoxContainer 简单排序 [BV1nE3M6pE5t P1 05:07]  ",
+  "diagrams": [
+    {
+      "title": "容器类型总览",
+      "code": "flowchart TD\n    C1[\"Container（自动排版布局）\"]\n    VT[\"VBoxContainer（垂直排列）\"]\n    HT[\"HBoxContainer（水平排列）\"]\n    MT[\"MarginContainer（边距）\"]\n    ST[\"ScoreContainer（分页）\"]\n    GT[\"GridContainer（网格）\"]\n    SA[\"SizeAdjustment（容器大小影响子节点）\"]\n    EX[\"Expand（子节点占用剩余空间）\"]\n    C1 --> VT\n    C1 --> HT\n    C1 --> MT\n    C1 --> ST\n    C1 --> GT\n    C1 --> SA\n    C1 --> EX"
+    },
+    {
+      "title": "容器布局工作流",
+      "code": "flowchart TD\n    A1[\"Add Container 节点\"]\n    A2[\"Drag UI 元素为子节点\"]\n    A3[\"设置 Separation（间距）\"]\n    A4[\"调整 Container Size（大小）\"]\n    A5[\"设置子节点 Fill Mode（如 shrink center）\"]\n    A6[\"勾选 Expand（占用剩余空间）\"]\n    A7[\"确认布局生效\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7"
+    },
+    {
+      "title": "Expand 行为与 Stress Ratio 机制",
+      "code": "flowchart TD\n    E1[\"容器总高度 500px\"]\n    E2[\"每个按钮高度 100px\"]\n    E3[\"剩余空间 200px\"]\n    E4[\"勾选 Expand 的按钮\"]\n    E5[\"优先级高于未勾选节点\"]\n    E6[\"单节点占用全部剩余空间\"]\n    E7[\"多个 Expand 节点共享剩余空间\"]\n    E8[\"通过 Stress Ratio 分配比例\"]\n    E9[\"比例 2:1 时，节点获得的空间是比例 1 的两倍\"]\n    E1 --> E2 --> E3\n    E3 --> E4\n    E4 --> E5\n    E5 --> E6\n    E5 --> E7 --> E8 --> E9"
+    },
+    {
+      "title": "复杂 UI 层级示例",
+      "code": "flowchart TD\n    UIRoot[\"UI Root\"]\n    TitleSec[\"标题区（上）\"]\n    BtnSec[\"按钮区（中）\"]\n    BottomSec[\"底部区（下）\"]\n    TitleVBox[\"VBoxContainer（垂直）\"]\n    TitleMargin[\"MarginContainer（标题边距）\"]\n    TopHBox[\"HBoxContainer（水平）\"]\n    TopBtn1[\"Button A\"]\n    TopBtn2[\"Button B\"]\n    TopBtn1 -->|expand| TopHBox\n    TopBtn2 -->|expand| TopHBox\n    TopHBox --> TitleVBox\n    BtnVBox[\"VBoxContainer（按钮整体）\"]\n    BtnMargin[\"MarginContainer（按钮区边距）\"]\n    PageScore[\"ScoreContainer（分页）\"]\n    PageHBox[\"HBoxContainer（每页水平）\"]\n    LevelGrid[\"GridContainer（关卡展示）\"]\n    BottomHBox[\"HBoxContainer（底部按钮）\"]\n    UIRoot --> TitleSec --> TitleVBox --> TitleMargin\n    UIRoot --> BtnSec --> BtnVBox --> BtnMargin --> PageScore --> PageHBox --> LevelGrid\n    UIRoot --> BottomSec --> BottomHBox"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:11:28+00:00"
+}

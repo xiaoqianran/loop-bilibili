@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1VMTv6gEBj",
+  "title": "【游戏引擎】C++23 纯手工 3D 游戏引擎《太阳引擎》发布",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3020,
+  "text": "大家好\n我想展示一下我自己做的一个游戏引擎\n然后这个引擎我差不多做了一年多的时间吧\n然后这是登录界面\n你可以选择这里创建project\n名字是随便填的\n然后你去输入一个路径就可以了\n如果你是输入一个普通的空空白路径的话\n他就会在那里创建文件夹\n然后如果你路径你已经有项目了的\n它就会自动绑定到那个项目\n但是注意这里填已经存在的路径就行了\n然后这里我们打开一个我已经创建好的文件\n进来之后\n大致窗口有四个区域吧\n中间的话是场景视图\n然后这里显示游戏场景\n还有这里的东西\n这是一个最主要的区域\n右侧的话是一个heritage\n这里显示的场景树\n还有场景中这些物体的名字\n当你选中一个物体的时候\n左侧的话\ninspect的窗口里就会显示出这个物体\n包含的组件\n还有它的相关信息\n呃这里我们新建一个\n我们把这个test先删除了\n如果右键delete就可以删除就行\n然后我们新建一个空的对象\n改名叫test test b\n然后它默认会有个transform组件\n你可以给它添加一个网格渲染器组件\n当前主要支持两个组件\n一个是网格渲染器\n还有LUA脚本\n网格渲染器负责添加网格和\n然后LUA脚本我是可以写一些game play的逻辑啊\n然后你选中一个网格\n比如说这个cube\n把这个cube给算了\n不要用Q用这个爆吧\n把这个爆发下\n这个时候我们还看不到这个对象\n我们选中它会看到一个js mod\n但是没有看到对象\n这是因为我们需要给它加一个材质啊\n然后加材质我们会看到一个黑色的球体啊\n因为现在它没有纹理\n他裁到颜色是黑色\n所以我们给它添加一个纹理\ntext愿意添加一个纹理就会显示出来\n然后你可以通过这个技术膜来移动它的位置\n然后通过键盘的移动键\n你可以去在有场景里面去导航\n通过F键可以快速聚焦到这个物体\n然后我们看一下它的材质信息啊\n材质信息里有两个实的\n一个顶点和一个片段式的\n在资产浏览器里我们可以找到对应的sheet\n你通过右键的话啊\n点击open with excel editor的话\n如果你的额外部编辑器路径设置正确的话\n就会打开这个编辑器\n然后你可以去修改这里面的shader demo\n当你修改好了保存之后\n你直接在这里点击一个RECOMPI\n就可以立刻生效了\n除了这个网格的渲染能力之外\n我们还可以给这里的对象添加脚本\n我们选中cube的话\n我们发现这里会有一个lua script组件\n我们可以把这个组件给删了之后\n它显示库\n然后我们找到脚本\n这里看到有个player control脚本\n是我之前已经写好的脚本\n我把它拖进来就绑定了这个对象\n然后我们也可以右键通过编辑器打开这个脚本\n来看一下它的代码逻辑\n我们可以看到这个脚本里大概有三个函数\nAttach update\n还有一个destroy\n当前主要支持这三个函数\n而touch是你帮把脚本给\n而touch到这里的时候\n我也触发一次调用\nupdate的话是每帧调用\n然后destroy是在你删除对象时候\n会调用这个脚本的逻辑\n大概就是如果你按下空格键或者K键\n它就会进行一个跳跃\n然后你如果按下键盘的A键\n它就向左移动\nD键就向右移动\n同时如果你按下键盘的J键\n它就会播放一个音乐\n整个都是一个LUA的脚本\n如果你对LUA比较熟悉的话\n你可以这样\n这个脚本也是可以随时改的\n我们看一下这里第一播放音乐的时候\n是写了一个rise的一个路径的这种路径表述\n它\n它表示相对于根目录项目的根目录\n这种rise的表示法是参考这do dot a级\n因为我觉得这个表示方法比较有道理\n比较好\n所以就借鉴了他的这种文件路径表达方式\n然后这个脚本的话\n我们已经IPAD之后\n这个时候他是不会生效的\n我们先把这个当前场景\n支持2D和3D两种显示模式\n如果你选择2D的话\n它就会变成一个平面状态\n这样的话你只能在一个平面上去移动\nOK然后如果我们点击play按钮\n所有的脚本就会生效\n我们点击play之后\n再按一下左右键\n然后按下跳跃键\n发现这个立方体就会跳远\n同时会左右移动了\n如果我们按下捷键的话\n它就会播放一个小音乐\n这样的话他这个引擎可以支持一些\n简单的脚本能力\n目前的话它还不支持物理方面的能力\n后续可能会加入\n但是当前的话渲染了脚本能力是有关\nOK看完了脚本之后\n我们再看一下场景的一些渲染的图样\n还是切换到3D视角\n当时当前的相机也是支持透视投影和\n正交投影两种模式\n这是正交投影\n然后看起来比较奇怪\n我们再切回透视投影嘶场景里的对象\n你是可以把它隐藏起来\n害人的话就不见了\nshow的话会显示出来\n然后场景的话是有一个定向光源\n这个光源的话我们是可以修改它的方向体系\n我们看修改框样信息的话\n场景就会有相应的效果\n目前只支持定向光源\n后续可能加入点光源或者一些其他的光源效果\n然后的话背景是一个sky sky\n我们把它隐藏起来\n变成这样子\n然后地面的网格也是通过C的来实现的\n也就是说这里的所有人的除了这些object之外\n还有这些网格的效果\n还有背景的填充\n都是通过C表来实现的\n我们看一下这里C的C的里大概有GREE的C的\n还有红时光的黑道和sky\n谁的这些物体的话是用红时光的写的来上色的\n然后天空寿司改\n还有网格是5V的SHI\n你可以去查看它的源码\n也可以去自由的修改它\n然后都可以实时热更新\n咳咳啧\n还有支持一个AABD模式啊\n他可以把这些对象的ADB编辑框给显示\n这在一些特定场合可能会有用\n同时也支持显示一些渲染的信息\n比如说每帧帧率是多少多少次\n就要靠set set passport的个数\n还有一些函数的耗时\n你也可以让它停下来呃\nSquid shot\nsquid shot的一个状态\n然后让他继续跑\n还有场景进行关于信息\n然后这个场景的这边也是支持场景树的功能\n你可以让一个对象是另外一个对象的子对象\n这样当你移动一个冰箱时\n另外的就会跟着他一起走\n也可以拖出来\n不对\n基本的功能就是你的\n然后这里你也可以去创建文件夹\n创建脚本什么的东西\n创建C的\n还可以创建文件\n当然你也可以把外部的创建好的东西\n直接拖进来\n当前的资源管理器是用了一个叫manta的呃\n管理方法\n每个文件都会给它生成一个对应的点MANTOR文件\n这个metal文件里主要记录了一个GOD的信息\n这样的好处是你当你移动这个文件的时候\n只要你跟着manor一起移动的话\n那么项目你对这个文件的引用\n还是可以正常工作的\n相当于实现了一个资源管理系统\n这部分是参考已经明显的整个界面操作\n没有什么特别的\n除了你键盘移动之外\n然后切换视角时\n通过按下鼠标中键来移动\n你也可以去点击来修改一下物体的位置啊\n跟基本的游戏引擎是一样的\n然后的话这个引擎现在正准备试用版\n正准备开放给大家来免费试用\n然后如果你想对我进行一些支持的话\n也可以通过加入我提供的爱发电的链接\n来给我提供一些支持\n然后这个引擎开发还是非常不容易的嗯\n做这个引擎一开始的时候我是做了一个版本\n没有编辑器\n也没有脚本呃\n做了一个可以3D漫游的版本\n然后在场景里做了一些特效吧\n但是感觉完全不像一个影集啊\n然后开发就停滞了\n中间也经历了一些波折吧\n然后不知道什么原因\n最后又把它拾起来\n最后到今天\n也就基本上已经基本可用的一个版本啊\n虽然功能还缺很多\n但是它基本的功能一定有基本的价值就有\n然后希望大家来支持吧\n希望大家支持\n谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VMTv6gEBj",
+  "published_at": "1782905791",
+  "fetched_at": "2026-08-08T06:54:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 太阳引擎知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    UI[\"用户界面\"]\n    PM[\"项目管理\"]\n    SE[\"场景编辑器\"]\n    AB[\"资产浏览器\"]\n    RN[\"渲染器\"]\n    SC[\"脚本系统\"]\n    RM[\"资源管理\"]\n    IS[\"输入系统\"]\n    LS[\"光照系统\"]\n    CS[\"相机系统\"]\n\n    UI --> PM\n    UI --> SE\n    UI --> AB\n    SE --> RN\n    SE --> SC\n    RN --> LS\n    RN --> CS\n    SC --> IS\n    AB --> RM\n    RM --> Asset[\"资产 (Shader/纹理/网格)\"]\n```\n\n\n## 对象与组件关系\n```mermaid\nflowchart TD\n    GO[\"GameObject\"]\n    TF[\"Transform\"]\n    MR[\"MeshRenderer\"]\n    LS[\"LuaScript\"]\n    MT[\"Material\"]\n    TX[\"Texture\"]\n    SH[\"Shader\"]\n    MK[\"Mesh\"]\n\n    GO --> TF\n    GO --> MR\n    GO --> LS\n    MR --> MK\n    MR --> MT\n    MT --> SH\n    MT --> TX\n```\n\n\n## 脚本生命周期与输入映射\n```mermaid\nflowchart TD\n    LS[\"LuaScript\"]\n    AT[\"Attach\"]\n    UP[\"Update\"]\n    DT[\"Destroy\"]\n    PB[\"Play按钮\"]\n    IS[\"输入系统\"]\n    JA[\"跳跃动作\"]\n    ML[\"左移\"]\n    MR[\"右移\"]\n    PM[\"播放音乐\"]\n    KS[\"KeySpace\"]\n    KK[\"KeyK\"]\n    KA[\"KeyA\"]\n    KD[\"KeyD\"]\n    KJ[\"KeyJ\"]\n\n    PB --> LS\n    LS --> AT\n    LS --> UP\n    LS --> DT\n    IS --> KS\n    IS --> KK\n    IS --> KA\n    IS --> KD\n    IS --> KJ\n    KS --> JA\n    KK --> JA\n    KA --> ML\n    KD --> MR\n    KJ --> PM\n    UP --> JA\n    UP --> ML\n    UP --> MR\n    UP --> PM\n```\n\n\n## 渲染与视图模式\n```mermaid\nflowchart TD\n    CAM[\"Camera\"]\n    PP[\"透视投影\"]\n    OP[\"正交投影\"]\n    DL[\"定向光源\"]\n    MAT[\"Material\"]\n    SHD[\"Shader\"]\n    VS[\"Vertex Shader\"]\n    FS[\"Fragment Shader\"]\n    MSH[\"Mesh\"]\n    AABB[\"AABB模式\"]\n    FPS[\"帧率显示\"]\n    SKY[\"Skybox\"]\n\n    CAM --> PP\n    CAM --> OP\n    RN[\"Renderer\"] --> DL\n    RN --> MAT\n    MAT --> SHD\n    SHD --> VS\n    SHD --> FS\n    MSH --> MAT\n    CAM --> AABB\n    RN --> FPS\n    RN --> SKY\n```\n\n\n## 资源管理与热更新\n```mermaid\nflowchart TD\n    AB[\"资产浏览器\"]\n    META[\"Manta .meta 文件\"]\n    AF[\"资产文件\"]\n    SHF[\"Shader 文件\"]\n    TXF[\"Texture 文件\"]\n    EE[\"外部编辑器\"]\n    RC[\"Recompile 按钮\"]\n    HR[\"热更新\"]\n    SF[\"Script 文件\"]\n    SCF[\"Scene 文件\"]\n\n    AB --> AF\n    AF --> META\n    META --> AF\n    SHF --> EE\n    EE --> RC\n    RC --> HR\n    HR --> SHF\n    HR --> SF\n    SCF --> AB\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    UI[\"用户界面\"]\n    PM[\"项目管理\"]\n    SE[\"场景编辑器\"]\n    AB[\"资产浏览器\"]\n    RN[\"渲染器\"]\n    SC[\"脚本系统\"]\n    RM[\"资源管理\"]\n    IS[\"输入系统\"]\n    LS[\"光照系统\"]\n    CS[\"相机系统\"]\n\n    UI --> PM\n    UI --> SE\n    UI --> AB\n    SE --> RN\n    SE --> SC\n    RN --> LS\n    RN --> CS\n    SC --> IS\n    AB --> RM\n    RM --> Asset[\"资产 (Shader/纹理/网格)\"]"
+        },
+        {
+          "title": "对象与组件关系",
+          "code": "flowchart TD\n    GO[\"GameObject\"]\n    TF[\"Transform\"]\n    MR[\"MeshRenderer\"]\n    LS[\"LuaScript\"]\n    MT[\"Material\"]\n    TX[\"Texture\"]\n    SH[\"Shader\"]\n    MK[\"Mesh\"]\n\n    GO --> TF\n    GO --> MR\n    GO --> LS\n    MR --> MK\n    MR --> MT\n    MT --> SH\n    MT --> TX"
+        },
+        {
+          "title": "脚本生命周期与输入映射",
+          "code": "flowchart TD\n    LS[\"LuaScript\"]\n    AT[\"Attach\"]\n    UP[\"Update\"]\n    DT[\"Destroy\"]\n    PB[\"Play按钮\"]\n    IS[\"输入系统\"]\n    JA[\"跳跃动作\"]\n    ML[\"左移\"]\n    MR[\"右移\"]\n    PM[\"播放音乐\"]\n    KS[\"KeySpace\"]\n    KK[\"KeyK\"]\n    KA[\"KeyA\"]\n    KD[\"KeyD\"]\n    KJ[\"KeyJ\"]\n\n    PB --> LS\n    LS --> AT\n    LS --> UP\n    LS --> DT\n    IS --> KS\n    IS --> KK\n    IS --> KA\n    IS --> KD\n    IS --> KJ\n    KS --> JA\n    KK --> JA\n    KA --> ML\n    KD --> MR\n    KJ --> PM\n    UP --> JA\n    UP --> ML\n    UP --> MR\n    UP --> PM"
+        },
+        {
+          "title": "渲染与视图模式",
+          "code": "flowchart TD\n    CAM[\"Camera\"]\n    PP[\"透视投影\"]\n    OP[\"正交投影\"]\n    DL[\"定向光源\"]\n    MAT[\"Material\"]\n    SHD[\"Shader\"]\n    VS[\"Vertex Shader\"]\n    FS[\"Fragment Shader\"]\n    MSH[\"Mesh\"]\n    AABB[\"AABB模式\"]\n    FPS[\"帧率显示\"]\n    SKY[\"Skybox\"]\n\n    CAM --> PP\n    CAM --> OP\n    RN[\"Renderer\"] --> DL\n    RN --> MAT\n    MAT --> SHD\n    SHD --> VS\n    SHD --> FS\n    MSH --> MAT\n    CAM --> AABB\n    RN --> FPS\n    RN --> SKY"
+        },
+        {
+          "title": "资源管理与热更新",
+          "code": "flowchart TD\n    AB[\"资产浏览器\"]\n    META[\"Manta .meta 文件\"]\n    AF[\"资产文件\"]\n    SHF[\"Shader 文件\"]\n    TXF[\"Texture 文件\"]\n    EE[\"外部编辑器\"]\n    RC[\"Recompile 按钮\"]\n    HR[\"热更新\"]\n    SF[\"Script 文件\"]\n    SCF[\"Scene 文件\"]\n\n    AB --> AF\n    AF --> META\n    META --> AF\n    SHF --> EE\n    EE --> RC\n    RC --> HR\n    HR --> SHF\n    HR --> SF\n    SCF --> AB"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T06:54:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 太阳引擎知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    UI[\"用户界面\"]\n    PM[\"项目管理\"]\n    SE[\"场景编辑器\"]\n    AB[\"资产浏览器\"]\n    RN[\"渲染器\"]\n    SC[\"脚本系统\"]\n    RM[\"资源管理\"]\n    IS[\"输入系统\"]\n    LS[\"光照系统\"]\n    CS[\"相机系统\"]\n\n    UI --> PM\n    UI --> SE\n    UI --> AB\n    SE --> RN\n    SE --> SC\n    RN --> LS\n    RN --> CS\n    SC --> IS\n    AB --> RM\n    RM --> Asset[\"资产 (Shader/纹理/网格)\"]\n```\n\n\n## 对象与组件关系\n```mermaid\nflowchart TD\n    GO[\"GameObject\"]\n    TF[\"Transform\"]\n    MR[\"MeshRenderer\"]\n    LS[\"LuaScript\"]\n    MT[\"Material\"]\n    TX[\"Texture\"]\n    SH[\"Shader\"]\n    MK[\"Mesh\"]\n\n    GO --> TF\n    GO --> MR\n    GO --> LS\n    MR --> MK\n    MR --> MT\n    MT --> SH\n    MT --> TX\n```\n\n\n## 脚本生命周期与输入映射\n```mermaid\nflowchart TD\n    LS[\"LuaScript\"]\n    AT[\"Attach\"]\n    UP[\"Update\"]\n    DT[\"Destroy\"]\n    PB[\"Play按钮\"]\n    IS[\"输入系统\"]\n    JA[\"跳跃动作\"]\n    ML[\"左移\"]\n    MR[\"右移\"]\n    PM[\"播放音乐\"]\n    KS[\"KeySpace\"]\n    KK[\"KeyK\"]\n    KA[\"KeyA\"]\n    KD[\"KeyD\"]\n    KJ[\"KeyJ\"]\n\n    PB --> LS\n    LS --> AT\n    LS --> UP\n    LS --> DT\n    IS --> KS\n    IS --> KK\n    IS --> KA\n    IS --> KD\n    IS --> KJ\n    KS --> JA\n    KK --> JA\n    KA --> ML\n    KD --> MR\n    KJ --> PM\n    UP --> JA\n    UP --> ML\n    UP --> MR\n    UP --> PM\n```\n\n\n## 渲染与视图模式\n```mermaid\nflowchart TD\n    CAM[\"Camera\"]\n    PP[\"透视投影\"]\n    OP[\"正交投影\"]\n    DL[\"定向光源\"]\n    MAT[\"Material\"]\n    SHD[\"Shader\"]\n    VS[\"Vertex Shader\"]\n    FS[\"Fragment Shader\"]\n    MSH[\"Mesh\"]\n    AABB[\"AABB模式\"]\n    FPS[\"帧率显示\"]\n    SKY[\"Skybox\"]\n\n    CAM --> PP\n    CAM --> OP\n    RN[\"Renderer\"] --> DL\n    RN --> MAT\n    MAT --> SHD\n    SHD --> VS\n    SHD --> FS\n    MSH --> MAT\n    CAM --> AABB\n    RN --> FPS\n    RN --> SKY\n```\n\n\n## 资源管理与热更新\n```mermaid\nflowchart TD\n    AB[\"资产浏览器\"]\n    META[\"Manta .meta 文件\"]\n    AF[\"资产文件\"]\n    SHF[\"Shader 文件\"]\n    TXF[\"Texture 文件\"]\n    EE[\"外部编辑器\"]\n    RC[\"Recompile 按钮\"]\n    HR[\"热更新\"]\n    SF[\"Script 文件\"]\n    SCF[\"Scene 文件\"]\n\n    AB --> AF\n    AF --> META\n    META --> AF\n    SHF --> EE\n    EE --> RC\n    RC --> HR\n    HR --> SHF\n    HR --> SF\n    SCF --> AB\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    UI[\"用户界面\"]\n    PM[\"项目管理\"]\n    SE[\"场景编辑器\"]\n    AB[\"资产浏览器\"]\n    RN[\"渲染器\"]\n    SC[\"脚本系统\"]\n    RM[\"资源管理\"]\n    IS[\"输入系统\"]\n    LS[\"光照系统\"]\n    CS[\"相机系统\"]\n\n    UI --> PM\n    UI --> SE\n    UI --> AB\n    SE --> RN\n    SE --> SC\n    RN --> LS\n    RN --> CS\n    SC --> IS\n    AB --> RM\n    RM --> Asset[\"资产 (Shader/纹理/网格)\"]"
+    },
+    {
+      "title": "对象与组件关系",
+      "code": "flowchart TD\n    GO[\"GameObject\"]\n    TF[\"Transform\"]\n    MR[\"MeshRenderer\"]\n    LS[\"LuaScript\"]\n    MT[\"Material\"]\n    TX[\"Texture\"]\n    SH[\"Shader\"]\n    MK[\"Mesh\"]\n\n    GO --> TF\n    GO --> MR\n    GO --> LS\n    MR --> MK\n    MR --> MT\n    MT --> SH\n    MT --> TX"
+    },
+    {
+      "title": "脚本生命周期与输入映射",
+      "code": "flowchart TD\n    LS[\"LuaScript\"]\n    AT[\"Attach\"]\n    UP[\"Update\"]\n    DT[\"Destroy\"]\n    PB[\"Play按钮\"]\n    IS[\"输入系统\"]\n    JA[\"跳跃动作\"]\n    ML[\"左移\"]\n    MR[\"右移\"]\n    PM[\"播放音乐\"]\n    KS[\"KeySpace\"]\n    KK[\"KeyK\"]\n    KA[\"KeyA\"]\n    KD[\"KeyD\"]\n    KJ[\"KeyJ\"]\n\n    PB --> LS\n    LS --> AT\n    LS --> UP\n    LS --> DT\n    IS --> KS\n    IS --> KK\n    IS --> KA\n    IS --> KD\n    IS --> KJ\n    KS --> JA\n    KK --> JA\n    KA --> ML\n    KD --> MR\n    KJ --> PM\n    UP --> JA\n    UP --> ML\n    UP --> MR\n    UP --> PM"
+    },
+    {
+      "title": "渲染与视图模式",
+      "code": "flowchart TD\n    CAM[\"Camera\"]\n    PP[\"透视投影\"]\n    OP[\"正交投影\"]\n    DL[\"定向光源\"]\n    MAT[\"Material\"]\n    SHD[\"Shader\"]\n    VS[\"Vertex Shader\"]\n    FS[\"Fragment Shader\"]\n    MSH[\"Mesh\"]\n    AABB[\"AABB模式\"]\n    FPS[\"帧率显示\"]\n    SKY[\"Skybox\"]\n\n    CAM --> PP\n    CAM --> OP\n    RN[\"Renderer\"] --> DL\n    RN --> MAT\n    MAT --> SHD\n    SHD --> VS\n    SHD --> FS\n    MSH --> MAT\n    CAM --> AABB\n    RN --> FPS\n    RN --> SKY"
+    },
+    {
+      "title": "资源管理与热更新",
+      "code": "flowchart TD\n    AB[\"资产浏览器\"]\n    META[\"Manta .meta 文件\"]\n    AF[\"资产文件\"]\n    SHF[\"Shader 文件\"]\n    TXF[\"Texture 文件\"]\n    EE[\"外部编辑器\"]\n    RC[\"Recompile 按钮\"]\n    HR[\"热更新\"]\n    SF[\"Script 文件\"]\n    SCF[\"Scene 文件\"]\n\n    AB --> AF\n    AF --> META\n    META --> AF\n    SHF --> EE\n    EE --> RC\n    RC --> HR\n    HR --> SHF\n    HR --> SF\n    SCF --> AB"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T06:54:16+00:00"
+}

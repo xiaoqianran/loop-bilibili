@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1k7RuBPEqt",
+  "title": "110. 为什么激活值per channel量化比per token量化难加速得多？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1018,
+  "text": "今天的问题是\n为什么激活指PATERNEL量化比激活指PROTOKEN\n量化难加速的多\n那么smooth quet论文中就指出\npaternal量化本身\n其实就足以克服力群主的问题了\n但是呢它很难以加速\n导致之前的工作要么就是PROTOKEN\n要么就是pretension\n那么来理解一下第一点\n为什么它足以克服利群居的问题\n因为离群值它是在哪一个维度分布的呢\n他是在迁诺维度\n就是在列上分布的\n而不是在行\n就是这个token维度\n那么对channel进行量化\n它是比较合理的\n就比如说原来的这些0.2\n0.4他是正常值\n这个时候呢它们放在一起量化\n比如说放了量化到二和四\nOK然后呢这个比较大的这个离群值六十七十\n它放在一起量化可能有点问题\n但影响没有那么大\n但是如果做PROTOKEN量化问题就很大了\n比如说是这样的一行\n然后它里面有一些离群值\n60和70\n对于正常值而言\n这些值实在是太大了\n以至于比如说0.4和0.3\n它就和零没什么区别\n所以他就量化到比如说零\n然后60~70\n电化到比如说127\n那这样的话就废掉了\n那么为什么它切诺量化本身就可以克服\n离群值的问题\n他却这样难以加速呢\n这本质上是由于缩放因子难以和int8GMM\n很好的做算子融合\n那么我们来分析一下\n如果是PROTOKEN量化\n他为什么就能很好的做算子融合呢\n比如说现在的X他是这个0.1乘以这个\n然后呢W是0.3乘以这个\n那么现在要做一个矩阵乘法怎么做呢\n就是相当于是内积\n那这个时候会发现\n可以把它的缩放因子给提取出来\n就这个00.1乘以0.3\n然后乘以括号中间的这个部分\n相当于整数的内积\n那么这个时候就会发现要做这两个矩阵乘法\n只需要我们先做这个整数的部分\n就是int8GMM算出来里面的这个部分\n然后再乘以一个缩放因子之积就可以了\n就相当于是拿缩放因子\n一个是列\n然后一个是含存下得到一个外机\n那这个外机逐元素存到这里的INT8\nGMM的结果上就可以了\n那么这样的话INT8它就是纯粹的INT8\n它是比较快的\n而且呢就能很好的做这个算子融合\n但是如果X是portal量化的\n就做不到这一点\n为什么呢\n因为如果X是PERTURAL量化的\n比如说他是像这样一列一列的\n那么我们分析一下结果\n矩阵的第一个元素是什么\n就是这里的0.1×10\n再乘以0.3×50\n就这个\n那再加上这一坨\n那么会发现他没法把收发音字提取出来\n他就没法做到很好的trance融合",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1k7RuBPEqt",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:16:10+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

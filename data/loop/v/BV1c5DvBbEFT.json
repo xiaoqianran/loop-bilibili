@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1c5DvBbEFT",
+  "title": "【全163集】游戏逆向零基础到实战教程，从浅入深讲解（全程干货）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1209,
+  "text": "大家好\n这节课呢我们来讲工具的下载与安装\n我们这里呢给大家推荐三款工具啊\n其中呢两款呢逆向工具\n一款呢是程序开发工具\n那么这三款工具呢\n也是我们课程当中使用频率最高的啊\n我们课程当中肯定会还会使用到其他的工具啊\n只是说我们这这个几个工具的使用频率特别高\n所以我们给大家稍微做一个简单的介绍\n然后这三款工具呢也是目前市面上啊\n做程序开发呀\n做逆向啊啊用的特别多的\n那么我们来简单的介绍一下\n首先第一款工具还在engine啊\n简称C1啊\n叫什么作弊引擎对吧\n作弊引擎这样工具呢常用于什么数据扫描对吧\n啊\n代码定位啊\n就是定位代码的地址对吧\n代码定位\n然后呢以及啊简单的脚本测试啊\n这款工具呢就是说哎用到那个啊写脚本啊对吧\n写八卦的用的比较多是吧啊\n我相信大家听过的最多的也是这个什么\n用于什么游戏作弊\n对不对\n当然当然我们用逆向\n在这个里面也是非常有用的啊\n好下一个呢是这个什么插这debug\n他这个debug呢\n它是一款非常强大的动态调试工具啊\n动态调试工具\n那么它名称叫X64debug\n并不是说它只支持啊64位啊\n他只是叫了个名字啊\n他同时呢支持64位和32位的啊\n那么我们以前使用的这个动态调试工具呢\n那叫做叫啥\n叫那个什么already debug\n对不对啊\n那个工具也是很强大\n那么那个工具和这个工具呢两人长得特像啊\n两长得特像啊\n有可能就是说那个工具就是这个工具的前身啊\n好下一个工具呢是我们这个什么程序的这个啊\n开发工具是吧\n一款IDA\n还有一款IDE对吧\nIDE程序开发工具叫vs2022好\n首先我们来下载\n我们先复制网址\n然后打开网页\n然后呢我们把这个地址呢输入进去诶\n你看它就会跳入到这个界面\n对不对\n你只要点击download是吧\n然后下载啊\n他就会把这个安装程序给下载下来\n好那么在下载的时候呢\n啊下载完之后哎我们就可以了\n对不对\n我们等一会呢\n后面我们会给大家讲这个安装啊\n好下一个是这个什么啊\nX 64debug\n哎也很简单\n你把这个网址当复制是吧\n然后粘贴啊\n然后直接点这个download啊\n那么它就会下载啊\n它就会下载啊\n它就会跳转两个网页啊\n不是说马上就下载\n你根据他的提示\n然后去下啊\n你看我点击它这个半天不出来哎\n出来了\n然后点击这个是吧\ndownload last vision是吧\n点一下他这里人就会弹出这个啊\n等会弹出这个下载框\n我们看一下啊\n哎出来了对不对\n我们已经下载了\n所以我就不去再下载了啊\n好下一个呢是我们这个啊vs2022\n对不对\n复制网址\n然后呢也跳转进来诶\n然后去下载啊\n我相信学过这个程序开发的这些这个下载都会\n对不对\n那么只要那么这里我们只下载这个啊\ncommunicate这个版本就可以\n是不是啊\n因为这个是免费的嘛\n然后其他的其实差不多是吧\n好下载完了对吧\n好下载完了之后呢\n哎那我们下一节课呢\n就来专门讲他的这个安装好\n那么这一节课呢我们就讲到这里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1c5DvBbEFT",
+  "published_at": "1775558664",
+  "fetched_at": "2026-08-08T12:14:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 工具概览与下载流程\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"三款核心工具\"] --> B[\"作弊引擎 (C1)\"]\n    A --> C[\"动态调试工具 X64debug\"]\n    A --> D[\"程序开发 IDE VS2022\"]\n    B --> E[\"功能：代码定位、脚本测试\"]\n    B --> F[\"常用于游戏作弊与逆向\"]\n    C --> G[\"支持 32 位 & 64 位\"]\n    C --> H[\"功能：动态调试\"]\n    D --> I[\"基于 Visual Studio 2022\"]\n    D --> J[\"用于程序开发与逆向\"]\n```\n\n## 下载步骤通用流程\n```mermaid\nflowchart TD\n    Start[\"开始：获取工具下载链接\"] --> Copy[\"复制网址\"]\n    Copy --> Open[\"打开浏览器并粘贴链接\"]\n    Open --> Nav[\"页面跳转至下载页面\"]\n    Nav --> Click[\"点击 Download 按钮\"]\n    Click --> Wait[\"等待下载完成\"]\n    Wait --> End[\"下载完成，准备安装\"]\n```\n\n## 工具特性对比\n```mermaid\nflowchart LR\n    C1[\"作弊引擎 (C1)\"] -- \"代码定位、脚本测试\" --> Feature1[\"定位代码地址\"]\n    X64debug[\"X64debug\"] -- \"动态调试\" --> Feature2[\"支持 32/64 位\"]\n    VS2022[\"VS2022 IDE\"] -- \"程序开发\" --> Feature3[\"免费社区版\"]\n    C1 -- \"常用于游戏作弊\" --> Use1[\"游戏逆向\"]\n    X64debug -- \"前身可能是 already debug\" --> Use2[\"旧版调试工具\"]\n    VS2022 -- \"IDE for C/C++ 等\" --> Use3[\"程序开发\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"三款核心工具\"] --> B[\"作弊引擎 (C1)\"]\n    A --> C[\"动态调试工具 X64debug\"]\n    A --> D[\"程序开发 IDE VS2022\"]\n    B --> E[\"功能：代码定位、脚本测试\"]\n    B --> F[\"常用于游戏作弊与逆向\"]\n    C --> G[\"支持 32 位 & 64 位\"]\n    C --> H[\"功能：动态调试\"]\n    D --> I[\"基于 Visual Studio 2022\"]\n    D --> J[\"用于程序开发与逆向\"]"
+        },
+        {
+          "title": "下载步骤通用流程",
+          "code": "flowchart TD\n    Start[\"开始：获取工具下载链接\"] --> Copy[\"复制网址\"]\n    Copy --> Open[\"打开浏览器并粘贴链接\"]\n    Open --> Nav[\"页面跳转至下载页面\"]\n    Nav --> Click[\"点击 Download 按钮\"]\n    Click --> Wait[\"等待下载完成\"]\n    Wait --> End[\"下载完成，准备安装\"]"
+        },
+        {
+          "title": "工具特性对比",
+          "code": "flowchart LR\n    C1[\"作弊引擎 (C1)\"] -- \"代码定位、脚本测试\" --> Feature1[\"定位代码地址\"]\n    X64debug[\"X64debug\"] -- \"动态调试\" --> Feature2[\"支持 32/64 位\"]\n    VS2022[\"VS2022 IDE\"] -- \"程序开发\" --> Feature3[\"免费社区版\"]\n    C1 -- \"常用于游戏作弊\" --> Use1[\"游戏逆向\"]\n    X64debug -- \"前身可能是 already debug\" --> Use2[\"旧版调试工具\"]\n    VS2022 -- \"IDE for C/C++ 等\" --> Use3[\"程序开发\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T12:14:33+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 工具概览与下载流程\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"三款核心工具\"] --> B[\"作弊引擎 (C1)\"]\n    A --> C[\"动态调试工具 X64debug\"]\n    A --> D[\"程序开发 IDE VS2022\"]\n    B --> E[\"功能：代码定位、脚本测试\"]\n    B --> F[\"常用于游戏作弊与逆向\"]\n    C --> G[\"支持 32 位 & 64 位\"]\n    C --> H[\"功能：动态调试\"]\n    D --> I[\"基于 Visual Studio 2022\"]\n    D --> J[\"用于程序开发与逆向\"]\n```\n\n## 下载步骤通用流程\n```mermaid\nflowchart TD\n    Start[\"开始：获取工具下载链接\"] --> Copy[\"复制网址\"]\n    Copy --> Open[\"打开浏览器并粘贴链接\"]\n    Open --> Nav[\"页面跳转至下载页面\"]\n    Nav --> Click[\"点击 Download 按钮\"]\n    Click --> Wait[\"等待下载完成\"]\n    Wait --> End[\"下载完成，准备安装\"]\n```\n\n## 工具特性对比\n```mermaid\nflowchart LR\n    C1[\"作弊引擎 (C1)\"] -- \"代码定位、脚本测试\" --> Feature1[\"定位代码地址\"]\n    X64debug[\"X64debug\"] -- \"动态调试\" --> Feature2[\"支持 32/64 位\"]\n    VS2022[\"VS2022 IDE\"] -- \"程序开发\" --> Feature3[\"免费社区版\"]\n    C1 -- \"常用于游戏作弊\" --> Use1[\"游戏逆向\"]\n    X64debug -- \"前身可能是 already debug\" --> Use2[\"旧版调试工具\"]\n    VS2022 -- \"IDE for C/C++ 等\" --> Use3[\"程序开发\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"三款核心工具\"] --> B[\"作弊引擎 (C1)\"]\n    A --> C[\"动态调试工具 X64debug\"]\n    A --> D[\"程序开发 IDE VS2022\"]\n    B --> E[\"功能：代码定位、脚本测试\"]\n    B --> F[\"常用于游戏作弊与逆向\"]\n    C --> G[\"支持 32 位 & 64 位\"]\n    C --> H[\"功能：动态调试\"]\n    D --> I[\"基于 Visual Studio 2022\"]\n    D --> J[\"用于程序开发与逆向\"]"
+    },
+    {
+      "title": "下载步骤通用流程",
+      "code": "flowchart TD\n    Start[\"开始：获取工具下载链接\"] --> Copy[\"复制网址\"]\n    Copy --> Open[\"打开浏览器并粘贴链接\"]\n    Open --> Nav[\"页面跳转至下载页面\"]\n    Nav --> Click[\"点击 Download 按钮\"]\n    Click --> Wait[\"等待下载完成\"]\n    Wait --> End[\"下载完成，准备安装\"]"
+    },
+    {
+      "title": "工具特性对比",
+      "code": "flowchart LR\n    C1[\"作弊引擎 (C1)\"] -- \"代码定位、脚本测试\" --> Feature1[\"定位代码地址\"]\n    X64debug[\"X64debug\"] -- \"动态调试\" --> Feature2[\"支持 32/64 位\"]\n    VS2022[\"VS2022 IDE\"] -- \"程序开发\" --> Feature3[\"免费社区版\"]\n    C1 -- \"常用于游戏作弊\" --> Use1[\"游戏逆向\"]\n    X64debug -- \"前身可能是 already debug\" --> Use2[\"旧版调试工具\"]\n    VS2022 -- \"IDE for C/C++ 等\" --> Use3[\"程序开发\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T12:14:33+00:00"
+}

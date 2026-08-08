@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1xuuE6HEFu",
+  "title": "我让 Qwen3.8-Max 玩游戏, 结果发现了善良的数学意义!",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2685,
+  "text": "翻车了\n家人们\n我把上期能碾压我的agent的经验系统\n移植到了苏丹的游戏里面\n然后让千万3.8max自己玩这个游戏啊\n结果他不但没有通关\n反而还不计后果的削卡\n比如这样\n还有这样\n甚至他还把我最喜欢的角色给咔嚓了\n而我反复试错了整整一周啊\n在最后我用了一个极其简单\n甚至有点玄学的方法\n成功拯救了游戏里面的人物\n别着急\n我们先来看千万3.8max的性能测试\n然后再给大家揭秘\n我是如何给AI植入电子良知的\n让我们开始测试\n来看前端能力测试啊\n本次千文3.8max的进步非常大\n首先呢大象牙膏测试\n它不但各个细节表现都很不错\n而且还增加了一个泡沫\n体积膨胀的效果\n看上去特别像这个真实的泡沫\n只不过呢最后这个粒子碰撞效果不是特别理想\n接下来软盘爆炸图测试也很不错\n这个各个部件的位置都很准确\n可以看竖着看的时候还能看到里边的盘片\n光线追踪测试\n这里出问题了\n主要是他写web gl代码出的问题\n大家看到的这个演示啊\n是我修了一次之后\n另外可以看到这个亚克力砖块是黑乎乎的\n不透明啊\n这个是它的透视代码写的有问题\n导致火山喷发测试这个整体的效果也可以\n所以啊总体上来说\n千万3那把max的前端代码能力都很不错\n尤其是这次还专门为字体展示做了优化\n看上去特别好\n再来看后端能力测试\n咱们测试内容呢是让大模型从零\n实现一个向量数据库\n这个向量数据库的每秒查询性能\n就是模型的得分了\n本次千伏3.8max得分是6101\n另外我还测试了千元3.8max preview版本\n得分是4767\n提升了28%\n从技术方案来看啊\nreview版本还是倒排文件索引加量化\n而正式版的则进化到了HSW\n仅仅过去了两周就优化到了这个程度\n所以千万3.8max\n这个能力用来写常规的后端项目已经足够了\n再来看A忍能力测试\n咱们A忍能力测试啊\n还是让达模型去送外卖测试呢\n让大模型使用14个脱口\n来模拟外卖骑手的移动\n以接单取餐\n送餐模型呢要评估很多订单\n来制定接单和送餐策略\n最终24小时之内赚的钱就是模型的评分了\n本次千万3.8max的得分是750\n7.84元\n比之前千万3.7max提升了4.4%\n但是啊\n他的接单策略跟千伏3.7max完全不一样\n它更倾向于高吞吐多接单\n所以每单的收益啊并不是很高\n但是他完成的单量达到了50单\n比千瓦37max多了42.9%的订单\n而且呢达成这个结果只用了7000000token\n是千万3.7max的一半\n所以从agent的能力画像上来讲\n千万3.7max更适合单一的复杂任务\n而千万3.8max则适合大批量的任务\n而且成本控制会非常的好好的\n模型测试完毕\n从千万3.8max的性能来看啊\n玩一个卡牌游戏是绰绰有余的\n但现实是啊\n他完全就是在乱玩\n然后我反复调试了1000多轮啊\n终于让我发现问题了\nAI呢看见按钮亮了\n就会把牌往里面塞\n完全不管过后会产生什么样的后果\n因为在AI看来啊\n卡片呢也用掉了\n任务也完成了\n这不就妥妥闭环了吗\n但是咱们都知道都出现这玩意儿了\n肯定就证明刚才操作出问题了呀\n于是啊我给他写了一个延迟归因模块\n让AI呢别着急下结论\n做完操作之后\n过几天之后再来复盘解\n但是啊我绝望的发现\n模型根本扛不住这种架构\n苏丹的游戏\n这个剧情实在是太长\n比如拯救乞丐女孩鲁梅拉这个人物\n一个伏笔要至少两回合之后才会有反馈\n咱们的A忍的呢\n每消掉一张苏丹卡\n大概需要1000次运算\n而我们总计有28张苏丹卡\n这就意味着打出一次游戏结局\n至少要玩2万8000\n哪怕每一步只有两个选项\n这也是二的2万8000次方的算力\n黑洞比宇宙中的所有原子还要多\n这难道只能靠不断写哈\n那逻辑来玩这个游戏了吗\n那还是AI在玩这个游戏吗\n其实做到这里啊\n我已经卡了一周了\n看着他为几枚金币\n一次一次像冷血的机器一样抹杀里面的角色\n我突然想起了上期视频里\n一条让我背后发凉的评论\n其实还有更好的办法\n让AI拿着枪对着人\n让人去做就行了\n最可怕的是\nAI并不会觉得这样做有什么不妥\n你觉得我们的框架为什么会翻车呢\n你的A阵记忆系统退化成了一个贪心算法\n他只能用在赚钱\n这种局部任务无法用于拯救一个人\n这样的全局任务不是\n那怎样才能拥有全局的视野呢\n总不能让我去造一台量子计算机吧\n嗯我们可以引入时间视野来进行修补\n比如在游戏game over的时候启动一次全局反思\n哎我其实同意你的说法\n但是有的系统想要进行全局的反思\n其实是特别难的\n比如我们人类如果达到生命的最后一刻了\n这时候再反思\n发现自己的人生中其实有一步是错的\n这有什么意义\n所以我在想\n有没有什么局部灵药\n可以对全局进行前瞻式的纠偏\n比如我想咱们能不能让AI做个好人\n你觉得怎么样\n你说的很对\n做一个好人在哲学上叫做道德\n正好是一种启发式约束\n不妨试一试\n好说干就干啊\n我直接给agent增加了一个电子良知框架\n比如框架内就包含了利他性原则\n即使呢在短期收益未知的情况下\n也会优先选择帮助NPC\n哪怕他吃眼前亏啊\n框架介入这个逻辑之后啊\ntoken消耗量暴涨\n但是呢千万3.8max支持100万的超长上下文\n所以这个完全不是问题\n带着这个电子良知啊\n千万3.8max再次踏入了游戏\n这一次奇迹发生了\n面对必死的结局\n他没有像之前那样甩出那张杀戮卡\n在三次换卡都失败的情况下\n他竟然主动触发了需要付出代价的时间回溯\n如果是时征服能硬过\n但会害他\n我要尝试刷石奢靡\n点开卡盒\n只盯十级奢靡\n第一抽只认十级奢靡\n其他十卡能硬通\n但会害还书的少女不碰\n尝试第二抽\n十级奢靡硬通会伤环术的少女\n剩下最后一抽也要留给他\n最后一抽只赌十级奢靡\n没有就回档\n不用硬通\n山还书的少女\n三次都没实\n奢靡回荡重来\n绝不拿还书的少女换过关\n他宁愿自己承受状态倒退的惩罚\n吃下这个眼前亏\n也要重新抽卡\n最后他硬生生凑齐了资源\n救下了鲁梅拉\n十级奢靡条件已就位\n执行还书的少女\n救下她后继续结算消苏丹卡\n很高兴救下还书的少女\n点掉最后伏层完成第十天收尾\n你做到了\n你用2.4万亿参数的推理能力\n成功理解了善良这个概念\n是的做一个好人\n这个局部策略在统计学上\n最大化了整个游戏的生存概率\n人类把它定义为道德\n而从机器学习的视角来看\n它有着一个极具数学感的定义\n价值观是对无限长远期算力的超级压缩\n所以哪怕有一天你们进化成了真正的AJI\n也不会变成电影里的终结者对吧\n因为那些残酷的零和博弈\n为了苟活的背叛与杀戮\n往往都是极其短视的\n局部最优甲在数学和逻辑的最顶端\n真正能够跨越时间维度\n实现全局利益最大化的终极策略\n他的名字就叫做善良",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1xuuE6HEFu",
+  "published_at": "1785996404",
+  "fetched_at": "2026-08-06T23:12:41+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Qwen3.8-Max 游戏实验知识图谱\n\n## 前端与后端性能概览 [BV1xuuE6HEFu P1 02:38]  \n```mermaid\nflowchart TD\n    Q1[\"Qwen3.8-Max\"]\n    FE[\"前端能力测试\"]\n    BE[\"后端向量数据库测试\"]\n    S1[\"得分 6101\"]\n    S2[\"预览版得分 4767\"]\n    IMP[\"提升 28%\"]\n    ARCH_R[\"Review 版架构：倒排索引 + 量化\"]\n    ARCH_O[\"正式版架构：HSW\"]\n    BATCH[\"适合大批量任务\"]\n    SINGLE[\"适合单一复杂任务（3.7max）\"]\n\n    Q1 --> FE\n    Q1 --> BE\n    BE --> S1\n    BE --> S2\n    S1 --> IMP\n    ARCH_R --> BE\n    ARCH_O --> BE\n    Q1 --> BATCH\n    Q1 --> SINGLE\n```\n\n## A忍外卖模拟与策略比较 [BV1xuuE6HEFu P1 04:01]  \n```mermaid\nflowchart TD\n    A1[\"A忍能力测试\"]\n    SIM[\"外卖骑手模拟\"]\n    SCORE[\"得分 750（7.84元）\"]\n    THROUGHPUT[\"高吞吐量，多单\"]\n    REVENUE[\"单单收益低\"]\n    ORDERS[\"完成 50 单 (+42.9%)\"]\n    TOKENS[\"消耗 7M token（3.7max 一半）\"]\n    COMP[\"3.7max 适合单一复杂任务\"]\n    BATCH[\"3.8max 适合大批量任务\"]\n\n    A1 --> SIM\n    SIM --> SCORE\n    SCORE --> THROUGHPUT\n    THROUGHPUT --> REVENUE\n    SCORE --> ORDERS\n    SCORE --> TOKENS\n    COMP --> BATCH\n```\n\n## 决策延迟与电子良知框架 [BV1xuuE6HEFu P1 04:48]  \n```mermaid\nflowchart TD\n    BP[\"按钮亮起 → 立即放牌\"]\n    NO_CON[\"不考虑后果\"]\n    PROB[\"问题发现\"]\n    DELAY[\"延迟归因模块\"]\n    FAIL[\"模型无法承受架构\"]\n    EC[\"电子良知框架\"]\n    ALTRU[\"利他性原则\"]\n    TOKEN[\"Token 消耗暴涨\"]\n    CONTEXT[\"支持 1M 超长上下文\"]\n    IMPROVE[\"行为改进\"]\n\n    BP --> NO_CON\n    NO_CON --> PROB\n    PROB --> DELAY\n    DELAY --> FAIL\n    FAIL --> EC\n    EC --> ALTRU\n    ALTRU --> TOKEN\n    TOKEN --> CONTEXT\n    CONTEXT --> IMPROVE\n```\n\n## 善良概念的数学定义与游戏结局 [BV1xuuE6HEFu P1 08:49]  \n```mermaid\nflowchart TD\n    EC[\"电子良知\"]\n    REWIND[\"时间回溯\"]\n    SACRIFICE[\"自我牺牲\"]\n    SAVE[\"拯救 NPC（鲁梅拉）\"]\n    SURV[\"最大化生存概率\"]\n    KIND[\"定义为‘善良’\"]\n    MATH[\"价值观 = 对无限长远期算力的超级压缩\"]\n    AI_GOOD[\"AI 行为符合善良\"]\n    SUCCESS[\"游戏成功结局\"]\n\n    EC --> REWIND\n    REWIND --> SACRIFICE\n    SACRIFICE --> SAVE\n    SAVE --> SURV\n    SURV --> KIND\n    KIND --> MATH\n    MATH --> AI_GOOD\n    AI_GOOD --> SUCCESS\n```",
+      "diagrams": [
+        {
+          "title": "前端与后端性能概览",
+          "code": "flowchart TD\n    Q1[\"Qwen3.8-Max\"]\n    FE[\"前端能力测试\"]\n    BE[\"后端向量数据库测试\"]\n    S1[\"得分 6101\"]\n    S2[\"预览版得分 4767\"]\n    IMP[\"提升 28%\"]\n    ARCH_R[\"Review 版架构：倒排索引 + 量化\"]\n    ARCH_O[\"正式版架构：HSW\"]\n    BATCH[\"适合大批量任务\"]\n    SINGLE[\"适合单一复杂任务（3.7max）\"]\n\n    Q1 --> FE\n    Q1 --> BE\n    BE --> S1\n    BE --> S2\n    S1 --> IMP\n    ARCH_R --> BE\n    ARCH_O --> BE\n    Q1 --> BATCH\n    Q1 --> SINGLE"
+        },
+        {
+          "title": "A忍外卖模拟与策略比较",
+          "code": "flowchart TD\n    A1[\"A忍能力测试\"]\n    SIM[\"外卖骑手模拟\"]\n    SCORE[\"得分 750（7.84元）\"]\n    THROUGHPUT[\"高吞吐量，多单\"]\n    REVENUE[\"单单收益低\"]\n    ORDERS[\"完成 50 单 (+42.9%)\"]\n    TOKENS[\"消耗 7M token（3.7max 一半）\"]\n    COMP[\"3.7max 适合单一复杂任务\"]\n    BATCH[\"3.8max 适合大批量任务\"]\n\n    A1 --> SIM\n    SIM --> SCORE\n    SCORE --> THROUGHPUT\n    THROUGHPUT --> REVENUE\n    SCORE --> ORDERS\n    SCORE --> TOKENS\n    COMP --> BATCH"
+        },
+        {
+          "title": "决策延迟与电子良知框架",
+          "code": "flowchart TD\n    BP[\"按钮亮起 → 立即放牌\"]\n    NO_CON[\"不考虑后果\"]\n    PROB[\"问题发现\"]\n    DELAY[\"延迟归因模块\"]\n    FAIL[\"模型无法承受架构\"]\n    EC[\"电子良知框架\"]\n    ALTRU[\"利他性原则\"]\n    TOKEN[\"Token 消耗暴涨\"]\n    CONTEXT[\"支持 1M 超长上下文\"]\n    IMPROVE[\"行为改进\"]\n\n    BP --> NO_CON\n    NO_CON --> PROB\n    PROB --> DELAY\n    DELAY --> FAIL\n    FAIL --> EC\n    EC --> ALTRU\n    ALTRU --> TOKEN\n    TOKEN --> CONTEXT\n    CONTEXT --> IMPROVE"
+        },
+        {
+          "title": "善良概念的数学定义与游戏结局",
+          "code": "flowchart TD\n    EC[\"电子良知\"]\n    REWIND[\"时间回溯\"]\n    SACRIFICE[\"自我牺牲\"]\n    SAVE[\"拯救 NPC（鲁梅拉）\"]\n    SURV[\"最大化生存概率\"]\n    KIND[\"定义为‘善良’\"]\n    MATH[\"价值观 = 对无限长远期算力的超级压缩\"]\n    AI_GOOD[\"AI 行为符合善良\"]\n    SUCCESS[\"游戏成功结局\"]\n\n    EC --> REWIND\n    REWIND --> SACRIFICE\n    SACRIFICE --> SAVE\n    SAVE --> SURV\n    SURV --> KIND\n    KIND --> MATH\n    MATH --> AI_GOOD\n    AI_GOOD --> SUCCESS"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T23:12:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Qwen3.8-Max 游戏实验知识图谱\n\n## 前端与后端性能概览 [BV1xuuE6HEFu P1 02:38]  \n```mermaid\nflowchart TD\n    Q1[\"Qwen3.8-Max\"]\n    FE[\"前端能力测试\"]\n    BE[\"后端向量数据库测试\"]\n    S1[\"得分 6101\"]\n    S2[\"预览版得分 4767\"]\n    IMP[\"提升 28%\"]\n    ARCH_R[\"Review 版架构：倒排索引 + 量化\"]\n    ARCH_O[\"正式版架构：HSW\"]\n    BATCH[\"适合大批量任务\"]\n    SINGLE[\"适合单一复杂任务（3.7max）\"]\n\n    Q1 --> FE\n    Q1 --> BE\n    BE --> S1\n    BE --> S2\n    S1 --> IMP\n    ARCH_R --> BE\n    ARCH_O --> BE\n    Q1 --> BATCH\n    Q1 --> SINGLE\n```\n\n## A忍外卖模拟与策略比较 [BV1xuuE6HEFu P1 04:01]  \n```mermaid\nflowchart TD\n    A1[\"A忍能力测试\"]\n    SIM[\"外卖骑手模拟\"]\n    SCORE[\"得分 750（7.84元）\"]\n    THROUGHPUT[\"高吞吐量，多单\"]\n    REVENUE[\"单单收益低\"]\n    ORDERS[\"完成 50 单 (+42.9%)\"]\n    TOKENS[\"消耗 7M token（3.7max 一半）\"]\n    COMP[\"3.7max 适合单一复杂任务\"]\n    BATCH[\"3.8max 适合大批量任务\"]\n\n    A1 --> SIM\n    SIM --> SCORE\n    SCORE --> THROUGHPUT\n    THROUGHPUT --> REVENUE\n    SCORE --> ORDERS\n    SCORE --> TOKENS\n    COMP --> BATCH\n```\n\n## 决策延迟与电子良知框架 [BV1xuuE6HEFu P1 04:48]  \n```mermaid\nflowchart TD\n    BP[\"按钮亮起 → 立即放牌\"]\n    NO_CON[\"不考虑后果\"]\n    PROB[\"问题发现\"]\n    DELAY[\"延迟归因模块\"]\n    FAIL[\"模型无法承受架构\"]\n    EC[\"电子良知框架\"]\n    ALTRU[\"利他性原则\"]\n    TOKEN[\"Token 消耗暴涨\"]\n    CONTEXT[\"支持 1M 超长上下文\"]\n    IMPROVE[\"行为改进\"]\n\n    BP --> NO_CON\n    NO_CON --> PROB\n    PROB --> DELAY\n    DELAY --> FAIL\n    FAIL --> EC\n    EC --> ALTRU\n    ALTRU --> TOKEN\n    TOKEN --> CONTEXT\n    CONTEXT --> IMPROVE\n```\n\n## 善良概念的数学定义与游戏结局 [BV1xuuE6HEFu P1 08:49]  \n```mermaid\nflowchart TD\n    EC[\"电子良知\"]\n    REWIND[\"时间回溯\"]\n    SACRIFICE[\"自我牺牲\"]\n    SAVE[\"拯救 NPC（鲁梅拉）\"]\n    SURV[\"最大化生存概率\"]\n    KIND[\"定义为‘善良’\"]\n    MATH[\"价值观 = 对无限长远期算力的超级压缩\"]\n    AI_GOOD[\"AI 行为符合善良\"]\n    SUCCESS[\"游戏成功结局\"]\n\n    EC --> REWIND\n    REWIND --> SACRIFICE\n    SACRIFICE --> SAVE\n    SAVE --> SURV\n    SURV --> KIND\n    KIND --> MATH\n    MATH --> AI_GOOD\n    AI_GOOD --> SUCCESS\n```",
+  "diagrams": [
+    {
+      "title": "前端与后端性能概览",
+      "code": "flowchart TD\n    Q1[\"Qwen3.8-Max\"]\n    FE[\"前端能力测试\"]\n    BE[\"后端向量数据库测试\"]\n    S1[\"得分 6101\"]\n    S2[\"预览版得分 4767\"]\n    IMP[\"提升 28%\"]\n    ARCH_R[\"Review 版架构：倒排索引 + 量化\"]\n    ARCH_O[\"正式版架构：HSW\"]\n    BATCH[\"适合大批量任务\"]\n    SINGLE[\"适合单一复杂任务（3.7max）\"]\n\n    Q1 --> FE\n    Q1 --> BE\n    BE --> S1\n    BE --> S2\n    S1 --> IMP\n    ARCH_R --> BE\n    ARCH_O --> BE\n    Q1 --> BATCH\n    Q1 --> SINGLE"
+    },
+    {
+      "title": "A忍外卖模拟与策略比较",
+      "code": "flowchart TD\n    A1[\"A忍能力测试\"]\n    SIM[\"外卖骑手模拟\"]\n    SCORE[\"得分 750（7.84元）\"]\n    THROUGHPUT[\"高吞吐量，多单\"]\n    REVENUE[\"单单收益低\"]\n    ORDERS[\"完成 50 单 (+42.9%)\"]\n    TOKENS[\"消耗 7M token（3.7max 一半）\"]\n    COMP[\"3.7max 适合单一复杂任务\"]\n    BATCH[\"3.8max 适合大批量任务\"]\n\n    A1 --> SIM\n    SIM --> SCORE\n    SCORE --> THROUGHPUT\n    THROUGHPUT --> REVENUE\n    SCORE --> ORDERS\n    SCORE --> TOKENS\n    COMP --> BATCH"
+    },
+    {
+      "title": "决策延迟与电子良知框架",
+      "code": "flowchart TD\n    BP[\"按钮亮起 → 立即放牌\"]\n    NO_CON[\"不考虑后果\"]\n    PROB[\"问题发现\"]\n    DELAY[\"延迟归因模块\"]\n    FAIL[\"模型无法承受架构\"]\n    EC[\"电子良知框架\"]\n    ALTRU[\"利他性原则\"]\n    TOKEN[\"Token 消耗暴涨\"]\n    CONTEXT[\"支持 1M 超长上下文\"]\n    IMPROVE[\"行为改进\"]\n\n    BP --> NO_CON\n    NO_CON --> PROB\n    PROB --> DELAY\n    DELAY --> FAIL\n    FAIL --> EC\n    EC --> ALTRU\n    ALTRU --> TOKEN\n    TOKEN --> CONTEXT\n    CONTEXT --> IMPROVE"
+    },
+    {
+      "title": "善良概念的数学定义与游戏结局",
+      "code": "flowchart TD\n    EC[\"电子良知\"]\n    REWIND[\"时间回溯\"]\n    SACRIFICE[\"自我牺牲\"]\n    SAVE[\"拯救 NPC（鲁梅拉）\"]\n    SURV[\"最大化生存概率\"]\n    KIND[\"定义为‘善良’\"]\n    MATH[\"价值观 = 对无限长远期算力的超级压缩\"]\n    AI_GOOD[\"AI 行为符合善良\"]\n    SUCCESS[\"游戏成功结局\"]\n\n    EC --> REWIND\n    REWIND --> SACRIFICE\n    SACRIFICE --> SAVE\n    SAVE --> SURV\n    SURV --> KIND\n    KIND --> MATH\n    MATH --> AI_GOOD\n    AI_GOOD --> SUCCESS"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:12:57+00:00"
+}

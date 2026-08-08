@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1iyR4BzEgo",
+  "title": "AI逆向：mcp个锤子，直接命令行一把梭哈",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 517,
+  "text": "AI可以进行逆向分析吗\n那么AI应该如何的高效进行逆向分析\n回顾一下传统的方法\n传统的方法的话\n我们是使用MCP工具\n比如说我们在吹里面的话\n我们可以配置i d a pro MCP工具\n以及rada to的MCP工具\n那现在呢我不推荐你们使用MCP工具了\n因为哎通过一个插件的形式呢\n去调用我们的IDA\n它是需要一个通信的\n通信就会有一定的延迟\n并且的话如果你需要分析一个非常复杂的一个\n二进制文件的时候呢\n你使用MCP\n很容易会出现卡顿或者是卡死的情况\n这样的话是非常糟糕的\n今天的话就给大家推荐一种\n非常全新的一种方式\n我们直接就是用命令行去分析\n在这里的话我们先新建一个终端\n我们直接使用R2这个命令行工具\nR2的话它是一个开源的逆向攻击\n这是开源的地址\n他也是非常强大的\n支持多平台\n我们这里R2直接来分析这个C文件\n像这样的话\n我们就可以通过命令行来进行分析\n那么我们这里的话主要是要让AI来操作\n命令行来分析\n比如说我提示词已经写好了\n我就先问\n请你们仔细看\n他初步分析的话\n就能够帮我们把加密的字符串解密了\n接下来我们继续来写提示词\n让他帮我们去恢复被混淆的函数名\n啧啧啧啧啧\n最后呢我们也就是成功的逆向完了这个so文件",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1iyR4BzEgo",
+  "published_at": "1778061460",
+  "fetched_at": "2026-08-07T03:40:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI逆向学习图谱\n\n## 传统方法 vs 新方法 对比 [BV1iyR4BzEgo P1 00:13‑00:23, 00:30‑00:36]\n```mermaid\nflowchart TD\n    T1[\"传统方法\"] --> MCP[\"MCP工具\"]\n    MCP --> Plugin[\"插件调用IDA\"]\n    Plugin --> Comm[\"通信延迟\"]\n    Comm --> Lag[\"卡顿/卡死\"]\n    T2[\"新方法\"] --> R2[\"R2 命令行工具\"]\n    R2 --> OpenSource[\"开源\"]\n    OpenSource --> Multi[\"多平台支持\"]\n    R2 --> AI[\"AI 操作命令行\"]\n    Lag -.-> T2\n```\n\n## AI 驱动逆向流程 [BV1iyR4BzEgo P1 00:45‑01:18]\n```mermaid\nflowchart TD\n    P1[\"编写提示词\"] --> P2[\"初步分析并解密字符串\"]\n    P2 --> P3[\"恢复混淆的函数名\"]\n    P3 --> P4[\"完成 .so 文件逆向\"]\n```\n\n## R2 命令行使用要点 [BV1iyR4BzEgo P1 00:30‑00:36]\n```mermaid\nflowchart TD\n    I1[\"安装 R2\"] --> C1[\"使用 R2 命令行\"]\n    C1 --> A1[\"分析 C 文件\"]\n    A1 --> O1[\"获取分析结果\"]\n    O1 --> B1[\"强大且跨平台\"]\n```",
+      "diagrams": [
+        {
+          "title": "传统方法 vs 新方法 对比 [BV1iyR4BzEgo P1 00:13‑00:23, 00:30‑00:36]",
+          "code": "flowchart TD\n    T1[\"传统方法\"] --> MCP[\"MCP工具\"]\n    MCP --> Plugin[\"插件调用IDA\"]\n    Plugin --> Comm[\"通信延迟\"]\n    Comm --> Lag[\"卡顿/卡死\"]\n    T2[\"新方法\"] --> R2[\"R2 命令行工具\"]\n    R2 --> OpenSource[\"开源\"]\n    OpenSource --> Multi[\"多平台支持\"]\n    R2 --> AI[\"AI 操作命令行\"]\n    Lag -.-> T2"
+        },
+        {
+          "title": "AI 驱动逆向流程 [BV1iyR4BzEgo P1 00:45‑01:18]",
+          "code": "flowchart TD\n    P1[\"编写提示词\"] --> P2[\"初步分析并解密字符串\"]\n    P2 --> P3[\"恢复混淆的函数名\"]\n    P3 --> P4[\"完成 .so 文件逆向\"]"
+        },
+        {
+          "title": "R2 命令行使用要点 [BV1iyR4BzEgo P1 00:30‑00:36]",
+          "code": "flowchart TD\n    I1[\"安装 R2\"] --> C1[\"使用 R2 命令行\"]\n    C1 --> A1[\"分析 C 文件\"]\n    A1 --> O1[\"获取分析结果\"]\n    O1 --> B1[\"强大且跨平台\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T03:40:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI逆向学习图谱\n\n## 传统方法 vs 新方法 对比 [BV1iyR4BzEgo P1 00:13‑00:23, 00:30‑00:36]\n```mermaid\nflowchart TD\n    T1[\"传统方法\"] --> MCP[\"MCP工具\"]\n    MCP --> Plugin[\"插件调用IDA\"]\n    Plugin --> Comm[\"通信延迟\"]\n    Comm --> Lag[\"卡顿/卡死\"]\n    T2[\"新方法\"] --> R2[\"R2 命令行工具\"]\n    R2 --> OpenSource[\"开源\"]\n    OpenSource --> Multi[\"多平台支持\"]\n    R2 --> AI[\"AI 操作命令行\"]\n    Lag -.-> T2\n```\n\n## AI 驱动逆向流程 [BV1iyR4BzEgo P1 00:45‑01:18]\n```mermaid\nflowchart TD\n    P1[\"编写提示词\"] --> P2[\"初步分析并解密字符串\"]\n    P2 --> P3[\"恢复混淆的函数名\"]\n    P3 --> P4[\"完成 .so 文件逆向\"]\n```\n\n## R2 命令行使用要点 [BV1iyR4BzEgo P1 00:30‑00:36]\n```mermaid\nflowchart TD\n    I1[\"安装 R2\"] --> C1[\"使用 R2 命令行\"]\n    C1 --> A1[\"分析 C 文件\"]\n    A1 --> O1[\"获取分析结果\"]\n    O1 --> B1[\"强大且跨平台\"]\n```",
+  "diagrams": [
+    {
+      "title": "传统方法 vs 新方法 对比 [BV1iyR4BzEgo P1 00:13‑00:23, 00:30‑00:36]",
+      "code": "flowchart TD\n    T1[\"传统方法\"] --> MCP[\"MCP工具\"]\n    MCP --> Plugin[\"插件调用IDA\"]\n    Plugin --> Comm[\"通信延迟\"]\n    Comm --> Lag[\"卡顿/卡死\"]\n    T2[\"新方法\"] --> R2[\"R2 命令行工具\"]\n    R2 --> OpenSource[\"开源\"]\n    OpenSource --> Multi[\"多平台支持\"]\n    R2 --> AI[\"AI 操作命令行\"]\n    Lag -.-> T2"
+    },
+    {
+      "title": "AI 驱动逆向流程 [BV1iyR4BzEgo P1 00:45‑01:18]",
+      "code": "flowchart TD\n    P1[\"编写提示词\"] --> P2[\"初步分析并解密字符串\"]\n    P2 --> P3[\"恢复混淆的函数名\"]\n    P3 --> P4[\"完成 .so 文件逆向\"]"
+    },
+    {
+      "title": "R2 命令行使用要点 [BV1iyR4BzEgo P1 00:30‑00:36]",
+      "code": "flowchart TD\n    I1[\"安装 R2\"] --> C1[\"使用 R2 命令行\"]\n    C1 --> A1[\"分析 C 文件\"]\n    A1 --> O1[\"获取分析结果\"]\n    O1 --> B1[\"强大且跨平台\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:40:50+00:00"
+}

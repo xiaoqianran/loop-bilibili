@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1ykSfBaEfh",
+  "title": "二进制安全 摄像头0day漏洞挖掘入门第三课（本系列最后一课）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3345,
+  "text": "Hello\n大家好\n我是pm bug\n欢迎来到IOT安全实战分享系列的第三节课\n也就是最后一课\n今天我们这节课的话\n将会把我们上节课所调试debug payload\n转化为我们实战\n我们在靶场环境中可用的这么一个远程的payload\n然后啊在我这里\n我这里已经购买了一个DCS\n935的这么一个设备\n并且我已经将它连接在了我自己的电脑内网\n那么很多同学可能就会对此产生疑问\n那个debug pao的\n不就是由这个HTTP请求转化而来的吗\n那么为什么一定要开第三节课呢\n我们直接import request\n然后request post再把我们那上节课录的那些环境变量\n再粘贴到request header里面\n那不就得了吗\n那么这里我要给大家提醒一下的\n就是在我们的HTTP1.1的标准中\nheader是不允许包含任何的二进制字节的\n包括由HTTP1.1标准衍生出来request库\n我们的request点post\n他在post的时候\nheaders它是一个\n我们可以清晰的看到它是一个字符串的键值\n对的这么一个字典\n它的键和值都必须得是字符串才行\n那么很多人就有问题啊\n上节课我们讲的h lab os是占一出点了\n我们已经根据了h h lab os打了一个占一处\n利用链\n还记得吧\n各位同学\n那么很多同学就会有疑问了\n我们在调试的时候\n我们的HNAOS是怎么通过我们的C加验证的\n我们的那个IOT设备的服务端\n它为什么又能接收我们的二进制字节呢\n那么我们要知道了一个前提\n就是我们的大部分IOT设备\n它的无论是HTTP服务器也好\n还是C加自己的校验也好\n他都不完全的遵守我们的HTTP的标准\n在常规情况下\n在那种比较标准的基于HTTP的服务端的情况下\n我们向headers里面植入一个\n带有二进制字符的数据\n那么服务端是肯定不会收的\n但是我们现在这个IOT服务器\n由于他是自己写的这么一个HTTP服\n它是比较简陋的这么一个东西\n所以说我们是可以在HTTP headers里面\n插入我们的二进制字节流\n然后的话再成功打通这个new链\n那么现在我们是反正根据这个AI的说法\n我们肯定是无法用Python的request库来发送我们的payload\n那么我们现在最好是怎么做的\n我们现在最好就是直接在基于socket的TCP请求上\n自己把这个HTTP报文完整的模拟出来\n不依靠其他的\n比如像request还有URLNE之类的工具\n我们就开始我们的模拟过程\n然后这节课的话\n我们将会介入pound tools这个工具啊\n我们都知道呃\nPontus\n比如像我在这里from pong in p import的星号\n然后remote r等于remote\n这这个IP和port我就暂时先省略\n然后R点send\n我们就可以向目标发送我们自己的HT TCP数据\n那么我们现在要发送的就是一段\n完整的HTP报文\n那么可能有些同学就发现了\n无论我们是使用PTUS里面的remote\n还是使用我们我们的那个原生的socket\n来发送我们的TCP流的话\n它都是单纯的没有SSL的\n而我们现在这个地方它是有SSL的\n我们必须先手动的给它SSL交换公钥\n以及一些必要的信息以后才能发送\n我们的配合的\n当然这个地方的话其实不用那么手动\n这个地方的话\n我这里也是问的AI\n它这个地方已经写好了\n这个地方就是先创建一个SSSSSL上下文\n将check host name\n还有什么校验模式什么的\n全部设置为无\n相当于是我们是不用校验证书它的真假吗\n我们在这个自己的IP上\n其实也无法校验证书对吧\n当然你看这他把这个s so contest也作为这个参数\n放到了这个remote中去调用\n那么这个地方的话\n其实我们就不用细究\n我们因为这个地方其实我也是问的AI嗯\n大家也可以尝试一下\n用AI去解决一些问题\n那么我们如何构造HTTP报文呢\nHTTP报文的格式在第一节课\n其实我已经给大家简单的梳理了一遍\n我们现在将会先试一下目标的服务\n它能不能防通\n我们现在先get方法\n先看一下吧\nHh nap h h nap h nap os\n然后这里的话写ATTP1.1\n然后注意了我们的这个自己发\n自己构造的这个HT报文状\n它最好是加上一个host的字段\n呃\n我不知道打错没有啊\n这这个地方缺一个那个杠R杠反斜杠\nR反斜杠嘛\n我们都知道标准的H标温\n它是能握杠R杠N来换行了\n所以说我们这个地方也要注意一下\n然后我们这里选择1.11288080杠\nR杠n piano的\n杠R杠\n那么最后的话就是我们的这个上面的headers\n和下面的bodies隔开的话\n它需要一个多余的杠R杠N\n当我们get的方法的话\n是不是没有保底的\n那么我们这儿我们先试一下它行不行\n如果我们这里是可以访问请求成功\n并且能够返回这些东西的话\n那么我们就可以根据我们当前的这么一个呃\npose headers和bodies来改成我们的payload\n那我们现在试一下\n案例还有some example等于零\nExample\n点PY\n这个路径我写错了哦\n这个是service啊\n不好意思不好意思\n然后这个地方我们先还剩一个两炮给P完啊\n我们可以看到它返回的也是我们的HTV豹纹\n然后我们是可以看到他这这边的特征\n其实是跟我们在浏览器看到的简直是一模一样\n那么我们就从我们现在的这个基础上\n我们来改改造它\n我们能将它改造成一个post方法\n并且包含我们的PAYLO\n那么首先我们先将我们的这个get方法\n这个先去掉一下\nsingle的\n先去掉一下\n然后我们先构造请求的报文行啊\n报文行是个比较官方的说法\n就是包含method和路径\n还有写意版本的那一节\nPost h neh nap service h tp\n1.1点\n那么我们进而在构造我们的htp header\n我们只需要把我们之前调试那个htp headers\n粘过来就行\n然后这我们粘贴一下\n哦不要忘记我们的杠R杠N\n然后还有我们的一个比较特殊的host\n呃呃我们先我们先把h a body先粘贴到那个地方\n吧对吧\n我们先把hp包粘贴到粘贴到header的上面\n因为我们的这个content length\n它是会计算我们的HU玻璃长度的\n所以说我们不太好方便\n那么我们再写这个content length\nP content length\n再等\n当然我们这里是也是直接粘贴就行了\n然后cookie的话我们可能也要粘贴一下\n然后最后来到了我们的这个重量级\n然后PALO的嘛肯定就是我们的htp content\n加htp header\n然后加htp body了\n然后不要忘了在我们的h lab os里面\n后面有两个杠二杠二\n因为h lab os它是我们的body和hater\n之间的最后一个header\n它它需要两个杠R杠N\n来来分解我们的cater和body哦\n然后我发现我的这个hr b vers写错了\nHLABOS它是大写的\n你只有大写h f boss\n他那个环境里面才能获取到我们的h f boss\n然后我们这里构造完毕以后\n直接直接运行\n它就运行它看一下会发生什么事情\n啊close的close的话\n这个问题就可能比较复杂\n那我们就得一行行的检测一下\n到底发生了什么问题啊\n我们先看一下\n然后我找半天的话\n其实发现一个小问题啊\n就是我这个其实是因为我的content length这个地方\n他写成了一个下划线\n而不是这个标准的这么一个杠\n所以说呃他在那边解析的话\n就会出现一些问题\n好我们现在直接运行一下\n哎我们可以看到啊\n这里其实已经打印出当前界面\n当前web路径\n它的一些信息了\n这说明我们其实已经RC成功了\n我们再来试一下什么嗯\nIOS根路径的命令呢\n我们再来试一下\n哎我们可以看到啊\n这些病什么的目录他已经全部出来了\n这说明我们已经完整的把这个靶场和脚本\n转化为了我们的自己的实战脚本了\n我们可以在靶机上去测试了\n然后本节课就到此结束了\n就是嗯下一个系列的话我会讲就是关于路由器\n我们是怎么自定义它的固件\n我们是怎么通过逆向内核的方式\n把它的文件系统重打包之类的方法\n然后希望大家的话有美好的一天",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ykSfBaEfh",
+  "published_at": "1775472991",
+  "fetched_at": "2026-08-08T11:23:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 二进制安全摄像头0day漏洞挖掘入门第三课知识图谱\n\n## HTTP 标准 vs IoT 设备实现 [BV1ykSfBaEfh P1 01:03-02:44]\n```mermaid\nflowchart TD\n    A[\"HTTP/1.1 标准\"] --> B[\"Headers 不允许二进制字节\"]\n    B --> C[\"Python requests 库 post 时 headers 必须为字符串键值\"]\n    D[\"IoT 设备自实现 HTTP 服务器\"] --> E[\"实现简陋，可在 Headers 中插入二进制字节流\"]\n    E --> F[\"利用二进制 Header 触发漏洞链\"]\n    C -.->|限制| E\n```\n\n## Payload 发送流程：从调试 Payload 到 Socket 发送 [BV1ykSfBaEfh P1 03:05-03:11]\n```mermaid\nflowchart TD\n    A[\"调试得到的二进制 Payload (上节课)\"] --> B[\"HTTP 标准限制导致 requests 无法直接发送\"]\n    B --> C[\"决定使用基于 socket 的 TCP 请求\"]\n    C --> D[\"手动构造完整 HTTP 报文（含二进制 Header）\"]\n    D --> E[\"若目标使用 SSL/TLS，则先建立 SSL 上下文\"]\n    E --> F[\"通过 socket/SSL 发送报文\"]\n    F --> G[\"接收响应并验证 RC 成功\"]\n```\n\n## 手动构造 HTTP 报文步骤 [BV1ykSfBaEfh P1 05:20-06:44]\n```mermaid\nflowchart TD\n    A[\"Step 1: 使用 GET 检测服务可达性\"] --> B[\"确认返回正常页面\"]\n    B --> C[\"Step 2: 构造请求行：POST /service HTTP/1.1\"]\n    C --> D[\"Step 3: 添加 Host Header\"]\n    D --> E[\"Step 4: 插入自定义二进制 Header\"]\n    E --> F[\"Step 5: 计算并写入 Content-Length\"]\n    F --> G[\"Step 6: 添加空行 (CRLF) 分隔 Header 与 Body\"]\n    G --> H[\"Step 7: 填充 Body 为实际 Payload\"]\n    H --> I[\"Step 8: 发送完整报文并等待响应\"]\n```\n\n## SSL 上下文配置与使用 [BV1ykSfBaEfh P1 04:27-04:41]\n```mermaid\nflowchart LR\n    A[\"创建 SSLContext\"] --> B[\"set_verify_mode(CERT_NONE)\"]\n    B --> C[\"set_check_hostname(False)\"]\n    C --> D[\"将 SSLContext 包装到原始 socket\"]\n    D --> E[\"完成 TLS 握手后发送 HTTP 报文\"]\n```",
+      "diagrams": [
+        {
+          "title": "HTTP 标准 vs IoT 设备实现 [BV1ykSfBaEfh P1 01:03-02:44]",
+          "code": "flowchart TD\n    A[\"HTTP/1.1 标准\"] --> B[\"Headers 不允许二进制字节\"]\n    B --> C[\"Python requests 库 post 时 headers 必须为字符串键值\"]\n    D[\"IoT 设备自实现 HTTP 服务器\"] --> E[\"实现简陋，可在 Headers 中插入二进制字节流\"]\n    E --> F[\"利用二进制 Header 触发漏洞链\"]\n    C -.->|限制| E"
+        },
+        {
+          "title": "Payload 发送流程：从调试 Payload 到 Socket 发送 [BV1ykSfBaEfh P1 03:05-03:11]",
+          "code": "flowchart TD\n    A[\"调试得到的二进制 Payload (上节课)\"] --> B[\"HTTP 标准限制导致 requests 无法直接发送\"]\n    B --> C[\"决定使用基于 socket 的 TCP 请求\"]\n    C --> D[\"手动构造完整 HTTP 报文（含二进制 Header）\"]\n    D --> E[\"若目标使用 SSL/TLS，则先建立 SSL 上下文\"]\n    E --> F[\"通过 socket/SSL 发送报文\"]\n    F --> G[\"接收响应并验证 RC 成功\"]"
+        },
+        {
+          "title": "手动构造 HTTP 报文步骤 [BV1ykSfBaEfh P1 05:20-06:44]",
+          "code": "flowchart TD\n    A[\"Step 1: 使用 GET 检测服务可达性\"] --> B[\"确认返回正常页面\"]\n    B --> C[\"Step 2: 构造请求行：POST /service HTTP/1.1\"]\n    C --> D[\"Step 3: 添加 Host Header\"]\n    D --> E[\"Step 4: 插入自定义二进制 Header\"]\n    E --> F[\"Step 5: 计算并写入 Content-Length\"]\n    F --> G[\"Step 6: 添加空行 (CRLF) 分隔 Header 与 Body\"]\n    G --> H[\"Step 7: 填充 Body 为实际 Payload\"]\n    H --> I[\"Step 8: 发送完整报文并等待响应\"]"
+        },
+        {
+          "title": "SSL 上下文配置与使用 [BV1ykSfBaEfh P1 04:27-04:41]",
+          "code": "flowchart LR\n    A[\"创建 SSLContext\"] --> B[\"set_verify_mode(CERT_NONE)\"]\n    B --> C[\"set_check_hostname(False)\"]\n    C --> D[\"将 SSLContext 包装到原始 socket\"]\n    D --> E[\"完成 TLS 握手后发送 HTTP 报文\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T11:24:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 二进制安全摄像头0day漏洞挖掘入门第三课知识图谱\n\n## HTTP 标准 vs IoT 设备实现 [BV1ykSfBaEfh P1 01:03-02:44]\n```mermaid\nflowchart TD\n    A[\"HTTP/1.1 标准\"] --> B[\"Headers 不允许二进制字节\"]\n    B --> C[\"Python requests 库 post 时 headers 必须为字符串键值\"]\n    D[\"IoT 设备自实现 HTTP 服务器\"] --> E[\"实现简陋，可在 Headers 中插入二进制字节流\"]\n    E --> F[\"利用二进制 Header 触发漏洞链\"]\n    C -.->|限制| E\n```\n\n## Payload 发送流程：从调试 Payload 到 Socket 发送 [BV1ykSfBaEfh P1 03:05-03:11]\n```mermaid\nflowchart TD\n    A[\"调试得到的二进制 Payload (上节课)\"] --> B[\"HTTP 标准限制导致 requests 无法直接发送\"]\n    B --> C[\"决定使用基于 socket 的 TCP 请求\"]\n    C --> D[\"手动构造完整 HTTP 报文（含二进制 Header）\"]\n    D --> E[\"若目标使用 SSL/TLS，则先建立 SSL 上下文\"]\n    E --> F[\"通过 socket/SSL 发送报文\"]\n    F --> G[\"接收响应并验证 RC 成功\"]\n```\n\n## 手动构造 HTTP 报文步骤 [BV1ykSfBaEfh P1 05:20-06:44]\n```mermaid\nflowchart TD\n    A[\"Step 1: 使用 GET 检测服务可达性\"] --> B[\"确认返回正常页面\"]\n    B --> C[\"Step 2: 构造请求行：POST /service HTTP/1.1\"]\n    C --> D[\"Step 3: 添加 Host Header\"]\n    D --> E[\"Step 4: 插入自定义二进制 Header\"]\n    E --> F[\"Step 5: 计算并写入 Content-Length\"]\n    F --> G[\"Step 6: 添加空行 (CRLF) 分隔 Header 与 Body\"]\n    G --> H[\"Step 7: 填充 Body 为实际 Payload\"]\n    H --> I[\"Step 8: 发送完整报文并等待响应\"]\n```\n\n## SSL 上下文配置与使用 [BV1ykSfBaEfh P1 04:27-04:41]\n```mermaid\nflowchart LR\n    A[\"创建 SSLContext\"] --> B[\"set_verify_mode(CERT_NONE)\"]\n    B --> C[\"set_check_hostname(False)\"]\n    C --> D[\"将 SSLContext 包装到原始 socket\"]\n    D --> E[\"完成 TLS 握手后发送 HTTP 报文\"]\n```",
+  "diagrams": [
+    {
+      "title": "HTTP 标准 vs IoT 设备实现 [BV1ykSfBaEfh P1 01:03-02:44]",
+      "code": "flowchart TD\n    A[\"HTTP/1.1 标准\"] --> B[\"Headers 不允许二进制字节\"]\n    B --> C[\"Python requests 库 post 时 headers 必须为字符串键值\"]\n    D[\"IoT 设备自实现 HTTP 服务器\"] --> E[\"实现简陋，可在 Headers 中插入二进制字节流\"]\n    E --> F[\"利用二进制 Header 触发漏洞链\"]\n    C -.->|限制| E"
+    },
+    {
+      "title": "Payload 发送流程：从调试 Payload 到 Socket 发送 [BV1ykSfBaEfh P1 03:05-03:11]",
+      "code": "flowchart TD\n    A[\"调试得到的二进制 Payload (上节课)\"] --> B[\"HTTP 标准限制导致 requests 无法直接发送\"]\n    B --> C[\"决定使用基于 socket 的 TCP 请求\"]\n    C --> D[\"手动构造完整 HTTP 报文（含二进制 Header）\"]\n    D --> E[\"若目标使用 SSL/TLS，则先建立 SSL 上下文\"]\n    E --> F[\"通过 socket/SSL 发送报文\"]\n    F --> G[\"接收响应并验证 RC 成功\"]"
+    },
+    {
+      "title": "手动构造 HTTP 报文步骤 [BV1ykSfBaEfh P1 05:20-06:44]",
+      "code": "flowchart TD\n    A[\"Step 1: 使用 GET 检测服务可达性\"] --> B[\"确认返回正常页面\"]\n    B --> C[\"Step 2: 构造请求行：POST /service HTTP/1.1\"]\n    C --> D[\"Step 3: 添加 Host Header\"]\n    D --> E[\"Step 4: 插入自定义二进制 Header\"]\n    E --> F[\"Step 5: 计算并写入 Content-Length\"]\n    F --> G[\"Step 6: 添加空行 (CRLF) 分隔 Header 与 Body\"]\n    G --> H[\"Step 7: 填充 Body 为实际 Payload\"]\n    H --> I[\"Step 8: 发送完整报文并等待响应\"]"
+    },
+    {
+      "title": "SSL 上下文配置与使用 [BV1ykSfBaEfh P1 04:27-04:41]",
+      "code": "flowchart LR\n    A[\"创建 SSLContext\"] --> B[\"set_verify_mode(CERT_NONE)\"]\n    B --> C[\"set_check_hostname(False)\"]\n    C --> D[\"将 SSLContext 包装到原始 socket\"]\n    D --> E[\"完成 TLS 握手后发送 HTTP 报文\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T11:24:05+00:00"
+}

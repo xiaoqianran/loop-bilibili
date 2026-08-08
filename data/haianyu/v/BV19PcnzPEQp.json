@@ -1,0 +1,26 @@
+{
+  "bvid": "BV19PcnzPEQp",
+  "title": "29. 以逐元素乘加为例，算子融合为什么能提高计算效率？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 613,
+  "text": "今天的问题是算子融合为什么能提高计算效率\n就以逐元素乘加为例\n简单理解一下\n假设我们现在要算A和B向量的逐元素乘法\n然后再加上C向量\n一开始AB\nC向量都放在一个大案慢的存储设备\n而计算的时候把它搬到这个小额快的存储设备\n虽然它具体存储设备的名称可能有差异\n不过简单来说就可以理解为大慢的和小额快的\n然后我们假设有一个at kernel\n就是逐元素加法算子\n那么它的实现要考虑第一点\n就是有多个计算单元并行\n也就意味着每个计算单元\n他要去分其中的一部分任务\n第二点就是有这个大慢的和小额快的\n所以要进行数据的搬运\n把它从这个大慢的搬入到这个小额快的\n然后把它加起来\n算完寸回\n那么他不是一个单元在算\n是多个单元并行\n就意味着另外一个单元也在做同样的操作\nOK那么考虑一下\n如果不用算子融合\n我们就要调两个函数\n就是把它分开\n首先进行逐元素乘法\n把这个A和B向量进行逐元素乘\n算出来这个tap\n那么具体来说呢\n他依然要进行这样的搬运\n就是把它从大慢的搬入到这个小额快的\n然后呢把它存回\n然后再调用一个ADD tempc\n就是先把它搬运到这个小额快的\n然后相加\n然后再把它重回\n那么这样的话就是比较慢的\n而算子融合呢\n我们就可以调用一个融合之后的算子\n就是这个multiply ADD\n那么它同时传入ABC\n然后效果就是把A帮助到这个小块的B也一样\nC也一样\n然后一口气给他算了\n算了之后呢重回\n那么它的搬运就减少了\n就会更快一些",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19PcnzPEQp",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:17+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

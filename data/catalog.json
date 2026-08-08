@@ -1,0 +1,60 @@
+{
+  "built_at": "2026-08-08T15:50:43+00:00",
+  "ups": [
+    {
+      "slug": "haianyu",
+      "title": "海安雨",
+      "owner_mid": "2071007724",
+      "videos": 313,
+      "ok": 308,
+      "empty": 5,
+      "other": 0,
+      "mermaid": 10,
+      "total_chars": 563597,
+      "source_db": "haianyu.db",
+      "models": [
+        "openai/gpt-oss-120b"
+      ],
+      "default_model": "openai/gpt-oss-120b",
+      "model_labels": {
+        "openai/gpt-oss-120b": "gpt-oss-120b"
+      }
+    },
+    {
+      "slug": "loop",
+      "title": "首页精选",
+      "owner_mid": "3493082576193678",
+      "videos": 5600,
+      "ok": 1336,
+      "empty": 377,
+      "other": 3887,
+      "mermaid": 1112,
+      "total_chars": 4035118,
+      "source_db": "loop.db",
+      "models": [
+        "openai/gpt-oss-120b"
+      ],
+      "default_model": "openai/gpt-oss-120b",
+      "model_labels": {
+        "openai/gpt-oss-120b": "gpt-oss-120b"
+      }
+    },
+    {
+      "slug": "xiaolaoshi",
+      "title": "肖老师的退休生活",
+      "owner_mid": "346591207",
+      "videos": 162,
+      "ok": 154,
+      "empty": 8,
+      "other": 0,
+      "mermaid": 0,
+      "total_chars": 563113,
+      "source_db": "xiaolaoshi.db",
+      "models": [],
+      "default_model": "google/diffusiongemma-26b-a4b-it",
+      "model_labels": {}
+    }
+  ],
+  "base_url": "/loop-bilibili",
+  "asset_v": "20260808155041"
+}

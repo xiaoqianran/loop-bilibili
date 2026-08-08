@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1TZG36jEqz",
+  "title": "好用的AI自动识谱！mp3直出简谱五线谱【B站AI创造公开赛】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 211,
+  "text": "♪ 说要替我保管 ♪\n♪ 是你教我勇敢 ♪\n♪ 让我输在原地 ♪\n♪ 不看看你 ♪\n♪ 我怎么两清 ♪\n♪ 怎么任性 ♪\n♪ 怎么作为 ♪\n♪ 假以丙丁 ♪\n♪ 难道非要耗尽所有委屈 ♪\n♪ 才配上这一条烂命 ♪\n♪ 爱情这张复兴叫人看清爱与不爱之间的差距 ♪\n♪ 若问我想离你 ♪\n♪ 能否换来一点同情 ♪\n♪ 你我怎么两清 ♪\n怎么任性\n♪ 怎么做 ♪\n♪ 会假以丙丁 ♪\n♪ 难道非要耗尽所有委屈才配上这一条烂命 ♪",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TZG36jEqz",
+  "published_at": "1785563530",
+  "fetched_at": "2026-08-08T06:52:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 自动识谱歌词概念图谱\n\n## 歌词主题概览\n```mermaid\nflowchart TD\n    A1[\"保管\"] -->|被请求| A2[\"勇敢\"]\n    A2 -->|导致| A3[\"输在原地\"]\n    A3 -->|伴随| A4[\"任性\"]\n    A4 -->|关联| A5[\"假以丙丁\"]\n    A5 -->|触发| A6[\"耗尽所有委屈\"]\n    A6 -->|结果| A7[\"烂命\"]\n    A7 -->|映射| A8[\"爱情差距\"]\n    A8 -->|引发| A9[\"想离开\"]\n    A9 -->|期望| A10[\"同情\"]\n```\n- 保管 [BV1TZG36jEqz P1 00:00]  \n- 勇敢 [BV1TZG36jEqz P1 00:03]  \n- 输在原地 [BV1TZG36jEqz P1 00:05]  \n- 任性 [BV1TZG36jEqz P1 00:10]  \n- 假以丙丁 [BV1TZG36jEqz P1 00:13]  \n- 耗尽所有委屈 [BV1TZG36jEqz P1 00:15]  \n- 烂命 [BV1TZG36jEqz P1 00:19]  \n- 爱情差距 [BV1TZG36jEqz P1 00:23]  \n- 想离开 [BV1TZG36jEqz P1 00:31]  \n- 同情 [BV1TZG36jEqz P1 00:33]  \n\n## 情感因果链\n```mermaid\nflowchart TD\n    B1[\"耗尽所有委屈\"] -->|导致| B2[\"配上烂命\"]\n    B2 -->|反映| B3[\"爱情差距\"]\n    B3 -->|促使| B4[\"想离开\"]\n    B4 -->|寻求| B5[\"同情\"]\n    B5 -->|可能导致| B6[\"两清\"]\n    B6 -->|伴随| B7[\"任性\"]\n    B7 -->|表现为| B8[\"做\"]\n```\n- 耗尽所有委屈 [BV1TZG36jEqz P1 00:15]  \n- 烂命 [BV1TZG36jEqz P1 00:19]  \n- 爱情差距 [BV1TZG36jEqz P1 00:23]  \n- 想离开 [BV1TZG36jEqz P1 00:31]  \n- 同情 [BV1TZG36jEqz P1 00:33]  \n- 两清 [BV1TZG36jEqz P1 00:38]  \n- 任性 [BV1TZG36jEqz P1 00:40]  \n- 做 [BV1TZG36jEqz P1 00:41]  \n\n## 行为与自我评价\n```mermaid\nflowchart LR\n    C1[\"怎么任性\"] --> C2[\"怎么做\"]\n    C2 --> C3[\"会假以丙丁\"]\n    C3 --> C4[\"难道非要耗尽所有委屈\"]\n    C4 --> C5[\"才配上烂命\"]\n    C5 --> C6[\"爱情这张复兴\"]\n    C6 --> C7[\"看清爱与不爱之间的差距\"]\n    C7 --> C8[\"两清\"]\n```\n- 任性 [BV1TZG36jEqz P1 00:10]  \n- 做 [BV1TZG36jEqz P1 00:41]  \n- 假以丙丁 [BV1TZG36jEqz P1 00:42]  \n- 耗尽所有委屈 [BV1TZG36jEqz P1 00:45]  \n- 烂命 [BV1TZG36jEqz P1 00:45]  \n- 爱情这张复兴 [BV1TZG36jEqz P1 00:23]  \n- 爱情差距 [BV1TZG36jEqz P1 00:23]  \n- 两清 [BV1TZG36jEqz P1 00:38]  ",
+      "diagrams": [
+        {
+          "title": "歌词主题概览",
+          "code": "flowchart TD\n    A1[\"保管\"] -->|被请求| A2[\"勇敢\"]\n    A2 -->|导致| A3[\"输在原地\"]\n    A3 -->|伴随| A4[\"任性\"]\n    A4 -->|关联| A5[\"假以丙丁\"]\n    A5 -->|触发| A6[\"耗尽所有委屈\"]\n    A6 -->|结果| A7[\"烂命\"]\n    A7 -->|映射| A8[\"爱情差距\"]\n    A8 -->|引发| A9[\"想离开\"]\n    A9 -->|期望| A10[\"同情\"]"
+        },
+        {
+          "title": "情感因果链",
+          "code": "flowchart TD\n    B1[\"耗尽所有委屈\"] -->|导致| B2[\"配上烂命\"]\n    B2 -->|反映| B3[\"爱情差距\"]\n    B3 -->|促使| B4[\"想离开\"]\n    B4 -->|寻求| B5[\"同情\"]\n    B5 -->|可能导致| B6[\"两清\"]\n    B6 -->|伴随| B7[\"任性\"]\n    B7 -->|表现为| B8[\"做\"]"
+        },
+        {
+          "title": "行为与自我评价",
+          "code": "flowchart LR\n    C1[\"怎么任性\"] --> C2[\"怎么做\"]\n    C2 --> C3[\"会假以丙丁\"]\n    C3 --> C4[\"难道非要耗尽所有委屈\"]\n    C4 --> C5[\"才配上烂命\"]\n    C5 --> C6[\"爱情这张复兴\"]\n    C6 --> C7[\"看清爱与不爱之间的差距\"]\n    C7 --> C8[\"两清\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T06:53:46+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 自动识谱歌词概念图谱\n\n## 歌词主题概览\n```mermaid\nflowchart TD\n    A1[\"保管\"] -->|被请求| A2[\"勇敢\"]\n    A2 -->|导致| A3[\"输在原地\"]\n    A3 -->|伴随| A4[\"任性\"]\n    A4 -->|关联| A5[\"假以丙丁\"]\n    A5 -->|触发| A6[\"耗尽所有委屈\"]\n    A6 -->|结果| A7[\"烂命\"]\n    A7 -->|映射| A8[\"爱情差距\"]\n    A8 -->|引发| A9[\"想离开\"]\n    A9 -->|期望| A10[\"同情\"]\n```\n- 保管 [BV1TZG36jEqz P1 00:00]  \n- 勇敢 [BV1TZG36jEqz P1 00:03]  \n- 输在原地 [BV1TZG36jEqz P1 00:05]  \n- 任性 [BV1TZG36jEqz P1 00:10]  \n- 假以丙丁 [BV1TZG36jEqz P1 00:13]  \n- 耗尽所有委屈 [BV1TZG36jEqz P1 00:15]  \n- 烂命 [BV1TZG36jEqz P1 00:19]  \n- 爱情差距 [BV1TZG36jEqz P1 00:23]  \n- 想离开 [BV1TZG36jEqz P1 00:31]  \n- 同情 [BV1TZG36jEqz P1 00:33]  \n\n## 情感因果链\n```mermaid\nflowchart TD\n    B1[\"耗尽所有委屈\"] -->|导致| B2[\"配上烂命\"]\n    B2 -->|反映| B3[\"爱情差距\"]\n    B3 -->|促使| B4[\"想离开\"]\n    B4 -->|寻求| B5[\"同情\"]\n    B5 -->|可能导致| B6[\"两清\"]\n    B6 -->|伴随| B7[\"任性\"]\n    B7 -->|表现为| B8[\"做\"]\n```\n- 耗尽所有委屈 [BV1TZG36jEqz P1 00:15]  \n- 烂命 [BV1TZG36jEqz P1 00:19]  \n- 爱情差距 [BV1TZG36jEqz P1 00:23]  \n- 想离开 [BV1TZG36jEqz P1 00:31]  \n- 同情 [BV1TZG36jEqz P1 00:33]  \n- 两清 [BV1TZG36jEqz P1 00:38]  \n- 任性 [BV1TZG36jEqz P1 00:40]  \n- 做 [BV1TZG36jEqz P1 00:41]  \n\n## 行为与自我评价\n```mermaid\nflowchart LR\n    C1[\"怎么任性\"] --> C2[\"怎么做\"]\n    C2 --> C3[\"会假以丙丁\"]\n    C3 --> C4[\"难道非要耗尽所有委屈\"]\n    C4 --> C5[\"才配上烂命\"]\n    C5 --> C6[\"爱情这张复兴\"]\n    C6 --> C7[\"看清爱与不爱之间的差距\"]\n    C7 --> C8[\"两清\"]\n```\n- 任性 [BV1TZG36jEqz P1 00:10]  \n- 做 [BV1TZG36jEqz P1 00:41]  \n- 假以丙丁 [BV1TZG36jEqz P1 00:42]  \n- 耗尽所有委屈 [BV1TZG36jEqz P1 00:45]  \n- 烂命 [BV1TZG36jEqz P1 00:45]  \n- 爱情这张复兴 [BV1TZG36jEqz P1 00:23]  \n- 爱情差距 [BV1TZG36jEqz P1 00:23]  \n- 两清 [BV1TZG36jEqz P1 00:38]  ",
+  "diagrams": [
+    {
+      "title": "歌词主题概览",
+      "code": "flowchart TD\n    A1[\"保管\"] -->|被请求| A2[\"勇敢\"]\n    A2 -->|导致| A3[\"输在原地\"]\n    A3 -->|伴随| A4[\"任性\"]\n    A4 -->|关联| A5[\"假以丙丁\"]\n    A5 -->|触发| A6[\"耗尽所有委屈\"]\n    A6 -->|结果| A7[\"烂命\"]\n    A7 -->|映射| A8[\"爱情差距\"]\n    A8 -->|引发| A9[\"想离开\"]\n    A9 -->|期望| A10[\"同情\"]"
+    },
+    {
+      "title": "情感因果链",
+      "code": "flowchart TD\n    B1[\"耗尽所有委屈\"] -->|导致| B2[\"配上烂命\"]\n    B2 -->|反映| B3[\"爱情差距\"]\n    B3 -->|促使| B4[\"想离开\"]\n    B4 -->|寻求| B5[\"同情\"]\n    B5 -->|可能导致| B6[\"两清\"]\n    B6 -->|伴随| B7[\"任性\"]\n    B7 -->|表现为| B8[\"做\"]"
+    },
+    {
+      "title": "行为与自我评价",
+      "code": "flowchart LR\n    C1[\"怎么任性\"] --> C2[\"怎么做\"]\n    C2 --> C3[\"会假以丙丁\"]\n    C3 --> C4[\"难道非要耗尽所有委屈\"]\n    C4 --> C5[\"才配上烂命\"]\n    C5 --> C6[\"爱情这张复兴\"]\n    C6 --> C7[\"看清爱与不爱之间的差距\"]\n    C7 --> C8[\"两清\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T06:53:46+00:00"
+}

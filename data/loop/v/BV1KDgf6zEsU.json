@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1KDgf6zEsU",
+  "title": "豆包自动绘制CAD",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 349,
+  "text": "大家好\n本期使用豆包办公模式加skill\n只需要一句话就能自动重绘复杂工程图纸\n左图是胶圈XY做的原始零件图\n右图是豆包自动重绘完成的图纸\n整张图纸包含650一个实体\n五个图层\n轮廓线\n中心线和标注线全部分层绘制\n下面我们来看一下自动重绘过程\n好绘制完成了\n下面给大家说一下具体怎么操作\n首先点击技能调用本地安装好的skill\n然后导入你想要重绘的DWG源文件\n接下来豆包会自动分析图纸\n指纹\n提取全部实体数据\n并分十个阶段完成逐线重绘\n重点是最终生成的并不是一张普通截图\n原图中的图层线形\n标注样式以及快定义全部都会保留下来\n最终得到的是可以直接打开\n并继续修改和编辑的auto cad源文件\n本期教程就到这里\n感谢各位小伙伴看到\n最后需要scale详细教程和完整提示词的\n可以告诉我\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1KDgf6zEsU",
+  "published_at": "1785147618",
+  "fetched_at": "2026-08-07T14:41:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 豆包自动绘制CAD 知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"原始DWG文件\"] --> A2[\"自动分析图纸\"]\n    A2 --> A3[\"提取全部实体数据\"]\n    A3 --> A4[\"十个阶段逐线重绘\"]\n    A4 --> A5[\"可编辑AutoCAD源文件\"]\n```\n- 原始DWG文件 (00:07)  \n- 自动分析图纸 (01:01)  \n- 提取全部实体数据 (01:02)  \n- 十个阶段逐线重绘 (01:04)  \n- 可编辑AutoCAD源文件 (01:18)  \n\n## 保留特性\n```mermaid\nflowchart TD\n    B1[\"输出文件保留信息\"] --> B2[\"图层线形\"]\n    B1 --> B3[\"标注样式\"]\n    B1 --> B4[\"块定义\"]\n    B1 --> B5[\"可直接打开并编辑\"]\n```\n- 图层线形 (01:10)  \n- 标注样式 (01:10)  \n- 块定义 (01:12)  \n- 可直接打开并编辑 (01:16)  \n\n## 用户操作步骤\n```mermaid\nflowchart TD\n    C1[\"点击skill\"] --> C2[\"导入DWG源文件\"]\n    C2 --> C3[\"自动分析并重绘\"]\n    C3 --> C4[\"绘制完成\"]\n    C4 --> C5[\"得到可编辑文件\"]\n```\n- 点击skill (00:53)  \n- 导入DWG源文件 (00:56)  \n- 自动分析并重绘 (01:01‑01:04)  \n- 绘制完成 (00:49)  \n- 得到可编辑文件 (01:18)  ",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"原始DWG文件\"] --> A2[\"自动分析图纸\"]\n    A2 --> A3[\"提取全部实体数据\"]\n    A3 --> A4[\"十个阶段逐线重绘\"]\n    A4 --> A5[\"可编辑AutoCAD源文件\"]"
+        },
+        {
+          "title": "保留特性",
+          "code": "flowchart TD\n    B1[\"输出文件保留信息\"] --> B2[\"图层线形\"]\n    B1 --> B3[\"标注样式\"]\n    B1 --> B4[\"块定义\"]\n    B1 --> B5[\"可直接打开并编辑\"]"
+        },
+        {
+          "title": "用户操作步骤",
+          "code": "flowchart TD\n    C1[\"点击skill\"] --> C2[\"导入DWG源文件\"]\n    C2 --> C3[\"自动分析并重绘\"]\n    C3 --> C4[\"绘制完成\"]\n    C4 --> C5[\"得到可编辑文件\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T14:41:49+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 豆包自动绘制CAD 知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"原始DWG文件\"] --> A2[\"自动分析图纸\"]\n    A2 --> A3[\"提取全部实体数据\"]\n    A3 --> A4[\"十个阶段逐线重绘\"]\n    A4 --> A5[\"可编辑AutoCAD源文件\"]\n```\n- 原始DWG文件 (00:07)  \n- 自动分析图纸 (01:01)  \n- 提取全部实体数据 (01:02)  \n- 十个阶段逐线重绘 (01:04)  \n- 可编辑AutoCAD源文件 (01:18)  \n\n## 保留特性\n```mermaid\nflowchart TD\n    B1[\"输出文件保留信息\"] --> B2[\"图层线形\"]\n    B1 --> B3[\"标注样式\"]\n    B1 --> B4[\"块定义\"]\n    B1 --> B5[\"可直接打开并编辑\"]\n```\n- 图层线形 (01:10)  \n- 标注样式 (01:10)  \n- 块定义 (01:12)  \n- 可直接打开并编辑 (01:16)  \n\n## 用户操作步骤\n```mermaid\nflowchart TD\n    C1[\"点击skill\"] --> C2[\"导入DWG源文件\"]\n    C2 --> C3[\"自动分析并重绘\"]\n    C3 --> C4[\"绘制完成\"]\n    C4 --> C5[\"得到可编辑文件\"]\n```\n- 点击skill (00:53)  \n- 导入DWG源文件 (00:56)  \n- 自动分析并重绘 (01:01‑01:04)  \n- 绘制完成 (00:49)  \n- 得到可编辑文件 (01:18)  ",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"原始DWG文件\"] --> A2[\"自动分析图纸\"]\n    A2 --> A3[\"提取全部实体数据\"]\n    A3 --> A4[\"十个阶段逐线重绘\"]\n    A4 --> A5[\"可编辑AutoCAD源文件\"]"
+    },
+    {
+      "title": "保留特性",
+      "code": "flowchart TD\n    B1[\"输出文件保留信息\"] --> B2[\"图层线形\"]\n    B1 --> B3[\"标注样式\"]\n    B1 --> B4[\"块定义\"]\n    B1 --> B5[\"可直接打开并编辑\"]"
+    },
+    {
+      "title": "用户操作步骤",
+      "code": "flowchart TD\n    C1[\"点击skill\"] --> C2[\"导入DWG源文件\"]\n    C2 --> C3[\"自动分析并重绘\"]\n    C3 --> C4[\"绘制完成\"]\n    C4 --> C5[\"得到可编辑文件\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T14:41:49+00:00"
+}

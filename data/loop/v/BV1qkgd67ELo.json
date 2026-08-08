@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1qkgd67ELo",
+  "title": "[课程]虚幻5 PCG快速生成卡通渲染街道",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 868,
+  "text": "大家好\n我是思思先生\n很高兴给大家带来我们第一期的PC机的线上课\n然后本次课程的话给大家带来的是\n就是我们如何通过虚幻五来制作\n我们这样的一个程序化生成的一个内容\n程序化生成就是我们所说的这样的一个PCG\n它能够快速的去生成我们这样的一个建筑\n然后通过快速生成的建筑\n我们给它构建这样的一个街道\n然后如果大家能够看到的\n我们整个建筑它都是由我们这样的一个PCG\n对它进行一个程序化生成的\n我们可以通过调整我们这个样条线\n来动态的去调整我们这样的一个建筑\n它的一个外形\n然后还可以去调整\n还可以去通过我们制作好了\n这样的一个外观预设\n我们可以去随时的去替换掉\n我们这样的一个外观\n可以看到这个也是非常的一个方便的\n本次课程的话\n我们不仅仅是要去学\n就是我们如何通过AI来辅助我们去生成\n我们这样的一个代码\n还需要去学习\n就是我们如何通过AI来辅助\n我们进行一个美术资产的一个制作\n比如说像我们这个角哦\n像我们这个场景它的一个模型\n它的一个贴图\n它的一个材质\n这都是需要我们从零开始去对它进行一\n个制作的\n然后这个制作过程中呢\n我们也会去使用到我们这样的一个AI\n让他来辅助我们\n对于针对于我们资产进行一个制作\n这样的话能够极大的去提升我们这样的一个\n创作的一个效率\n我们整个课程的重点\n就是在我们的一个PCG的一个程序化生成\n还有一个就是我们模块化模型它的一个制作\n然后再次在课程最后的话\n我会给大家去讲\n就是我们整个场景\n它的一个材质球是怎么去进行一个制作的\n然后还有我们这样的一个卡通渲染风格\n光照是怎么对它进行一个布置的\n包括我们这些一些特效\n这些光源的一些效果\n还有我们虚幻5.8的一个tour bsdf\n这套卡通渲染系统\n我们怎么去进行一个制作的\n然后本次课程的话\n其实它的难度并不是很高\n大家只需要有一定的一个软件操作的基础\n大家就可以跟着我去进行一个学习\n然后制作出同样类似的一个效果\n通过本次课程的学习\n无论你是进互联网大厂\n还是作为一个独立创作者\n你都有就是你都能够去很好的去通过PCG来\n从来快速的去生成自己的一套资产",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qkgd67ELo",
+  "published_at": "1785118642",
+  "fetched_at": "2026-08-07T14:42:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 虚幻5 PCG 卡通渲染学习图谱\n\n## 总体概览\n```mermaid\nflowchart TD\n    PCG[\"程序化生成 (PCG)\"]\n    BuildingGen[\"建筑生成\"]\n    SplineAdjust[\"样条线调整外形\"]\n    AppearanceSwap[\"外观预设切换\"]\n    AIAsset[\"AI 辅助资产制作\"]\n    ModularModel[\"模块化模型制作\"]\n    MaterialBall[\"材质球制作\"]\n    CartoonLighting[\"卡通渲染光照布置\"]\n    Effects[\"特效添加\"]\n    UE5BSDF[\"UE5.8 tour BSDF 系统\"]\n    Audience[\"适用对象：大厂/独立创作者\"]\n    Prereq[\"学习前提：软件操作基础\"]\n\n    PCG --> BuildingGen\n    BuildingGen --> SplineAdjust\n    SplineAdjust --> AppearanceSwap\n    PCG --> AIAsset\n    AIAsset --> ModularModel\n    PCG --> ModularModel\n    PCG --> MaterialBall\n    MaterialBall --> CartoonLighting\n    CartoonLighting --> Effects\n    Effects --> UE5BSDF\n    PCG --> Audience\n    PCG --> Prereq\n```\n\n## PCG 生成流程\n```mermaid\nflowchart TD\n    Start[\"开始\"]\n    GenerateBuilding[\"生成建筑模型\"]\n    AdjustSpline[\"调整样条线形状\"]\n    SwapAppearance[\"替换外观预设\"]\n    LayoutStreet[\"生成街道布局\"]\n    ExportAssets[\"导出资产\"]\n    End[\"完成\"]\n\n    Start --> GenerateBuilding --> AdjustSpline --> SwapAppearance --> LayoutStreet --> ExportAssets --> End\n```\n\n## AI 在资产制作中的角色\n```mermaid\nflowchart TD\n    AI[\"AI 辅助\"]\n    GenerateModel[\"生成模型\"]\n    GenerateTexture[\"生成贴图\"]\n    GenerateMaterial[\"生成材质\"]\n    IncreaseEfficiency[\"提升创作效率\"]\n\n    AI --> GenerateModel\n    AI --> GenerateTexture\n    AI --> GenerateMaterial\n    GenerateModel --> IncreaseEfficiency\n    GenerateTexture --> IncreaseEfficiency\n    GenerateMaterial --> IncreaseEfficiency\n```\n\n## 卡通渲染系统要素\n```mermaid\nflowchart TD\n    MaterialBall[\"材质球制作\"]\n    LightingSetup[\"光照布置\"]\n    Effects[\"特效\"]\n    UE5BSDF[\"UE5.8 tour BSDF\"]\n    FinalRender[\"最终渲染效果\"]\n\n    MaterialBall --> LightingSetup --> Effects --> UE5BSDF --> FinalRender\n```",
+      "diagrams": [
+        {
+          "title": "总体概览",
+          "code": "flowchart TD\n    PCG[\"程序化生成 (PCG)\"]\n    BuildingGen[\"建筑生成\"]\n    SplineAdjust[\"样条线调整外形\"]\n    AppearanceSwap[\"外观预设切换\"]\n    AIAsset[\"AI 辅助资产制作\"]\n    ModularModel[\"模块化模型制作\"]\n    MaterialBall[\"材质球制作\"]\n    CartoonLighting[\"卡通渲染光照布置\"]\n    Effects[\"特效添加\"]\n    UE5BSDF[\"UE5.8 tour BSDF 系统\"]\n    Audience[\"适用对象：大厂/独立创作者\"]\n    Prereq[\"学习前提：软件操作基础\"]\n\n    PCG --> BuildingGen\n    BuildingGen --> SplineAdjust\n    SplineAdjust --> AppearanceSwap\n    PCG --> AIAsset\n    AIAsset --> ModularModel\n    PCG --> ModularModel\n    PCG --> MaterialBall\n    MaterialBall --> CartoonLighting\n    CartoonLighting --> Effects\n    Effects --> UE5BSDF\n    PCG --> Audience\n    PCG --> Prereq"
+        },
+        {
+          "title": "PCG 生成流程",
+          "code": "flowchart TD\n    Start[\"开始\"]\n    GenerateBuilding[\"生成建筑模型\"]\n    AdjustSpline[\"调整样条线形状\"]\n    SwapAppearance[\"替换外观预设\"]\n    LayoutStreet[\"生成街道布局\"]\n    ExportAssets[\"导出资产\"]\n    End[\"完成\"]\n\n    Start --> GenerateBuilding --> AdjustSpline --> SwapAppearance --> LayoutStreet --> ExportAssets --> End"
+        },
+        {
+          "title": "AI 在资产制作中的角色",
+          "code": "flowchart TD\n    AI[\"AI 辅助\"]\n    GenerateModel[\"生成模型\"]\n    GenerateTexture[\"生成贴图\"]\n    GenerateMaterial[\"生成材质\"]\n    IncreaseEfficiency[\"提升创作效率\"]\n\n    AI --> GenerateModel\n    AI --> GenerateTexture\n    AI --> GenerateMaterial\n    GenerateModel --> IncreaseEfficiency\n    GenerateTexture --> IncreaseEfficiency\n    GenerateMaterial --> IncreaseEfficiency"
+        },
+        {
+          "title": "卡通渲染系统要素",
+          "code": "flowchart TD\n    MaterialBall[\"材质球制作\"]\n    LightingSetup[\"光照布置\"]\n    Effects[\"特效\"]\n    UE5BSDF[\"UE5.8 tour BSDF\"]\n    FinalRender[\"最终渲染效果\"]\n\n    MaterialBall --> LightingSetup --> Effects --> UE5BSDF --> FinalRender"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T14:42:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 虚幻5 PCG 卡通渲染学习图谱\n\n## 总体概览\n```mermaid\nflowchart TD\n    PCG[\"程序化生成 (PCG)\"]\n    BuildingGen[\"建筑生成\"]\n    SplineAdjust[\"样条线调整外形\"]\n    AppearanceSwap[\"外观预设切换\"]\n    AIAsset[\"AI 辅助资产制作\"]\n    ModularModel[\"模块化模型制作\"]\n    MaterialBall[\"材质球制作\"]\n    CartoonLighting[\"卡通渲染光照布置\"]\n    Effects[\"特效添加\"]\n    UE5BSDF[\"UE5.8 tour BSDF 系统\"]\n    Audience[\"适用对象：大厂/独立创作者\"]\n    Prereq[\"学习前提：软件操作基础\"]\n\n    PCG --> BuildingGen\n    BuildingGen --> SplineAdjust\n    SplineAdjust --> AppearanceSwap\n    PCG --> AIAsset\n    AIAsset --> ModularModel\n    PCG --> ModularModel\n    PCG --> MaterialBall\n    MaterialBall --> CartoonLighting\n    CartoonLighting --> Effects\n    Effects --> UE5BSDF\n    PCG --> Audience\n    PCG --> Prereq\n```\n\n## PCG 生成流程\n```mermaid\nflowchart TD\n    Start[\"开始\"]\n    GenerateBuilding[\"生成建筑模型\"]\n    AdjustSpline[\"调整样条线形状\"]\n    SwapAppearance[\"替换外观预设\"]\n    LayoutStreet[\"生成街道布局\"]\n    ExportAssets[\"导出资产\"]\n    End[\"完成\"]\n\n    Start --> GenerateBuilding --> AdjustSpline --> SwapAppearance --> LayoutStreet --> ExportAssets --> End\n```\n\n## AI 在资产制作中的角色\n```mermaid\nflowchart TD\n    AI[\"AI 辅助\"]\n    GenerateModel[\"生成模型\"]\n    GenerateTexture[\"生成贴图\"]\n    GenerateMaterial[\"生成材质\"]\n    IncreaseEfficiency[\"提升创作效率\"]\n\n    AI --> GenerateModel\n    AI --> GenerateTexture\n    AI --> GenerateMaterial\n    GenerateModel --> IncreaseEfficiency\n    GenerateTexture --> IncreaseEfficiency\n    GenerateMaterial --> IncreaseEfficiency\n```\n\n## 卡通渲染系统要素\n```mermaid\nflowchart TD\n    MaterialBall[\"材质球制作\"]\n    LightingSetup[\"光照布置\"]\n    Effects[\"特效\"]\n    UE5BSDF[\"UE5.8 tour BSDF\"]\n    FinalRender[\"最终渲染效果\"]\n\n    MaterialBall --> LightingSetup --> Effects --> UE5BSDF --> FinalRender\n```",
+  "diagrams": [
+    {
+      "title": "总体概览",
+      "code": "flowchart TD\n    PCG[\"程序化生成 (PCG)\"]\n    BuildingGen[\"建筑生成\"]\n    SplineAdjust[\"样条线调整外形\"]\n    AppearanceSwap[\"外观预设切换\"]\n    AIAsset[\"AI 辅助资产制作\"]\n    ModularModel[\"模块化模型制作\"]\n    MaterialBall[\"材质球制作\"]\n    CartoonLighting[\"卡通渲染光照布置\"]\n    Effects[\"特效添加\"]\n    UE5BSDF[\"UE5.8 tour BSDF 系统\"]\n    Audience[\"适用对象：大厂/独立创作者\"]\n    Prereq[\"学习前提：软件操作基础\"]\n\n    PCG --> BuildingGen\n    BuildingGen --> SplineAdjust\n    SplineAdjust --> AppearanceSwap\n    PCG --> AIAsset\n    AIAsset --> ModularModel\n    PCG --> ModularModel\n    PCG --> MaterialBall\n    MaterialBall --> CartoonLighting\n    CartoonLighting --> Effects\n    Effects --> UE5BSDF\n    PCG --> Audience\n    PCG --> Prereq"
+    },
+    {
+      "title": "PCG 生成流程",
+      "code": "flowchart TD\n    Start[\"开始\"]\n    GenerateBuilding[\"生成建筑模型\"]\n    AdjustSpline[\"调整样条线形状\"]\n    SwapAppearance[\"替换外观预设\"]\n    LayoutStreet[\"生成街道布局\"]\n    ExportAssets[\"导出资产\"]\n    End[\"完成\"]\n\n    Start --> GenerateBuilding --> AdjustSpline --> SwapAppearance --> LayoutStreet --> ExportAssets --> End"
+    },
+    {
+      "title": "AI 在资产制作中的角色",
+      "code": "flowchart TD\n    AI[\"AI 辅助\"]\n    GenerateModel[\"生成模型\"]\n    GenerateTexture[\"生成贴图\"]\n    GenerateMaterial[\"生成材质\"]\n    IncreaseEfficiency[\"提升创作效率\"]\n\n    AI --> GenerateModel\n    AI --> GenerateTexture\n    AI --> GenerateMaterial\n    GenerateModel --> IncreaseEfficiency\n    GenerateTexture --> IncreaseEfficiency\n    GenerateMaterial --> IncreaseEfficiency"
+    },
+    {
+      "title": "卡通渲染系统要素",
+      "code": "flowchart TD\n    MaterialBall[\"材质球制作\"]\n    LightingSetup[\"光照布置\"]\n    Effects[\"特效\"]\n    UE5BSDF[\"UE5.8 tour BSDF\"]\n    FinalRender[\"最终渲染效果\"]\n\n    MaterialBall --> LightingSetup --> Effects --> UE5BSDF --> FinalRender"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T14:42:28+00:00"
+}

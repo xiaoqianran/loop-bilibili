@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1cgKj6AEP4",
+  "title": "Deepseek v4 + Claude code生成的坦克大战网页版（花了三分钟三毛钱）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 149,
+  "text": "agent的真好玩\n3分钟就能出个小游戏\n安还计花了三毛\n为了测试A键使用GITHUB搞的效果不错\n♪ 子不忘记发朋友 ♪\n♪ 河南人在笔墨寒风中 ♪\n♪ 花絮里 ♪\n马马路玩起来也凑合\n和定风起\n♪ 大风车2万哈 ♪\n♪ 有子男人偷偷自己而怀疑 ♪\n叮叮叮叮叮游玩链接放简介啦\nBb\n啊啊啊一点点",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cgKj6AEP4",
+  "published_at": "1784219650",
+  "fetched_at": "2026-08-07T17:51:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deepseek v4 + Claude 生成的坦克大战网页版知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"Agent（真好玩）\"]\n    A2[\"小游戏\"]\n    A3[\"开发时长 3分钟\"]\n    A4[\"成本 0.3元\"]\n    A5[\"A键测试\"]\n    A6[\"使用 GitHub\"]\n    A7[\"效果不错\"]\n    A8[\"链接放简介\"]\n\n    A1 --> A2\n    A2 --> A3\n    A2 --> A4\n    A2 --> A5\n    A5 --> A6\n    A5 --> A7\n    A2 --> A8\n```\n- A1 [BV1cgKj6AEP4 P1 00:00]  \n- A2 [BV1cgKj6AEP4 P1 00:01]  \n- A3 [BV1cgKj6AEP4 P1 00:01]  \n- A4 [BV1cgKj6AEP4 P1 00:03]  \n- A5 [BV1cgKj6AEP4 P1 00:10]  \n- A6 [BV1cgKj6AEP4 P1 00:10]  \n- A7 [BV1cgKj6AEP4 P1 00:10]  \n- A8 [BV1cgKj6AEP4 P1 00:51]  \n\n## 开发流程图\n```mermaid\nflowchart LR\n    B1[\"构思\"]\n    B2[\"调用 Agent 生成代码\"]\n    B3[\"部署为网页\"]\n    B4[\"使用 GitHub 进行 A键 测试\"]\n    B5[\"评估效果\"]\n    B6[\"发布链接至简介\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6\n```\n- B4 [BV1cgKj6AEP4 P1 00:10]  \n- B6 [BV1cgKj6AEP4 P1 00:51]  \n\n## 可玩性评价因素图\n```mermaid\nflowchart TD\n    C1[\"开发时长 3分钟\"]\n    C2[\"成本 0.3元\"]\n    C3[\"测试效果 好\"]\n    C4[\"可玩性 高\"]\n    C5[\"发布渠道 简介链接\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C5 --> C4\n```\n- C1 [BV1cgKj6AEP4 P1 00:01]  \n- C2 [BV1cgKj6AEP4 P1 00:03]  \n- C3 [BV1cgKj6AEP4 P1 00:10]  \n- C5 [BV1cgKj6AEP4 P1 00:51]  ",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A1[\"Agent（真好玩）\"]\n    A2[\"小游戏\"]\n    A3[\"开发时长 3分钟\"]\n    A4[\"成本 0.3元\"]\n    A5[\"A键测试\"]\n    A6[\"使用 GitHub\"]\n    A7[\"效果不错\"]\n    A8[\"链接放简介\"]\n\n    A1 --> A2\n    A2 --> A3\n    A2 --> A4\n    A2 --> A5\n    A5 --> A6\n    A5 --> A7\n    A2 --> A8"
+        },
+        {
+          "title": "开发流程图",
+          "code": "flowchart LR\n    B1[\"构思\"]\n    B2[\"调用 Agent 生成代码\"]\n    B3[\"部署为网页\"]\n    B4[\"使用 GitHub 进行 A键 测试\"]\n    B5[\"评估效果\"]\n    B6[\"发布链接至简介\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6"
+        },
+        {
+          "title": "可玩性评价因素图",
+          "code": "flowchart TD\n    C1[\"开发时长 3分钟\"]\n    C2[\"成本 0.3元\"]\n    C3[\"测试效果 好\"]\n    C4[\"可玩性 高\"]\n    C5[\"发布渠道 简介链接\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C5 --> C4"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T17:52:23+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deepseek v4 + Claude 生成的坦克大战网页版知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"Agent（真好玩）\"]\n    A2[\"小游戏\"]\n    A3[\"开发时长 3分钟\"]\n    A4[\"成本 0.3元\"]\n    A5[\"A键测试\"]\n    A6[\"使用 GitHub\"]\n    A7[\"效果不错\"]\n    A8[\"链接放简介\"]\n\n    A1 --> A2\n    A2 --> A3\n    A2 --> A4\n    A2 --> A5\n    A5 --> A6\n    A5 --> A7\n    A2 --> A8\n```\n- A1 [BV1cgKj6AEP4 P1 00:00]  \n- A2 [BV1cgKj6AEP4 P1 00:01]  \n- A3 [BV1cgKj6AEP4 P1 00:01]  \n- A4 [BV1cgKj6AEP4 P1 00:03]  \n- A5 [BV1cgKj6AEP4 P1 00:10]  \n- A6 [BV1cgKj6AEP4 P1 00:10]  \n- A7 [BV1cgKj6AEP4 P1 00:10]  \n- A8 [BV1cgKj6AEP4 P1 00:51]  \n\n## 开发流程图\n```mermaid\nflowchart LR\n    B1[\"构思\"]\n    B2[\"调用 Agent 生成代码\"]\n    B3[\"部署为网页\"]\n    B4[\"使用 GitHub 进行 A键 测试\"]\n    B5[\"评估效果\"]\n    B6[\"发布链接至简介\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6\n```\n- B4 [BV1cgKj6AEP4 P1 00:10]  \n- B6 [BV1cgKj6AEP4 P1 00:51]  \n\n## 可玩性评价因素图\n```mermaid\nflowchart TD\n    C1[\"开发时长 3分钟\"]\n    C2[\"成本 0.3元\"]\n    C3[\"测试效果 好\"]\n    C4[\"可玩性 高\"]\n    C5[\"发布渠道 简介链接\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C5 --> C4\n```\n- C1 [BV1cgKj6AEP4 P1 00:01]  \n- C2 [BV1cgKj6AEP4 P1 00:03]  \n- C3 [BV1cgKj6AEP4 P1 00:10]  \n- C5 [BV1cgKj6AEP4 P1 00:51]  ",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A1[\"Agent（真好玩）\"]\n    A2[\"小游戏\"]\n    A3[\"开发时长 3分钟\"]\n    A4[\"成本 0.3元\"]\n    A5[\"A键测试\"]\n    A6[\"使用 GitHub\"]\n    A7[\"效果不错\"]\n    A8[\"链接放简介\"]\n\n    A1 --> A2\n    A2 --> A3\n    A2 --> A4\n    A2 --> A5\n    A5 --> A6\n    A5 --> A7\n    A2 --> A8"
+    },
+    {
+      "title": "开发流程图",
+      "code": "flowchart LR\n    B1[\"构思\"]\n    B2[\"调用 Agent 生成代码\"]\n    B3[\"部署为网页\"]\n    B4[\"使用 GitHub 进行 A键 测试\"]\n    B5[\"评估效果\"]\n    B6[\"发布链接至简介\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6"
+    },
+    {
+      "title": "可玩性评价因素图",
+      "code": "flowchart TD\n    C1[\"开发时长 3分钟\"]\n    C2[\"成本 0.3元\"]\n    C3[\"测试效果 好\"]\n    C4[\"可玩性 高\"]\n    C5[\"发布渠道 简介链接\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C5 --> C4"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T17:52:23+00:00"
+}

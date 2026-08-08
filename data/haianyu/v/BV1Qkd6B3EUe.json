@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1Qkd6B3EUe",
+  "title": "[21] 在线softmax：论文解读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2274,
+  "text": "今天我们来介绍一篇关于salt max\n在线规一化计算的工作\n标题叫做online normalizer calculation for soft max\n作者是MVIDIA的maxim miracles f和natalia gmail shine\nsalt max函数在机器学习中非常常见\n从语言模型到语音识别都会用到\n它\n之前的研究大多聚焦于寻找更快的替代方案\n来取代soft max\n但这篇论文的思路不同\n他研究的是如何直接加速经典soft max本身的计算\n核心思路是通过在线归一化计算\n把原本需要多轮遍历输入向量的操作\n压缩到更少的轮次\n从而减少内存访问次数\n实验表明\n单独使用该方法可以让soft max加速最多1.3倍\n而与top gay操作融合后\n整体可以加速最多五倍\n下面看一下摘要\n翻译soft max函数在机器学习中无处不在\n此前有多项工作提出了更快的替代方案\n本文提出了一种减少内存访问次数\n来计算经典soft max的方法\n并假设这种内存访问的减少\n能够提升soft max在实际硬件上的性能\n基准测试验证了这一假设\n单独的soft max加速了最多1.3倍\n而soft max与top k组合并融合后\n加速了最多五倍\n下面看一下这个公式\n这个公式是soft max函数的标准定义\n对于输入向量X中的每个元素\nsoft max的输出\nYI等于E的xi次方除以\n所有输入元素对应的E的XG次方之和\n这个定义很直观\n但在实际实现中\n朴素的实现需要对输入向量练力两次\n第一次计算归一画像\n也就是分母的总和\n第二次计算每个输出值\n这样每个向量元素实际上需要三次内存访问\n两次读取和一次写入\n下面看一下这段伪代码\n这段伪代码展示的是safe soft max算法\n之所以需要safe版本\n是\n因为朴素实现在计算指数时\n可能发生溢出或下移\nsafe soft max的做法是\n先用一轮循环找出输入向量的最大值M\n再用一轮循环计算\n每个元素减去最大值后的指数\n和得到归一化向D\n最后用一轮循环计算输出\n这样总共需要三轮便利\n每个元素需要四次内存访问\n这篇论文的目标就是在这个基础上\n进一步减少便利次数和内存访问\n下面看一下这段伪代码\n算法的核心思想是\n在单次遍历输入向量的过程中\n同时维护两个运行状态量\n一个是当前见过的最大值M\n另一个是归一化向D\n具体来说在遍历每个元素时\n算法首先更新运行最大值MJ\n然后根据新的最大值去调整之前的归一化像DJ\n如果新元素比之前的最大值还大\n就需要把之前累积的归一画像\n乘以一个缩放因子\n再加上当前元素的贡献\n这样一轮循环结束后\n就同时得到了全局最大值和正确的归一画像\n第二轮循环再用这两个值计算最终的soft max输出\n整个算法把内存访问从每个元素四次\n降低到了三次\n下面看一下这个公式\n这个公式定义了在线归一化计算的并行版本\n现代GPU可以并发运行大量线程\n所以需要一个能并行化的规划计算方法\n论文定义了一个二维运算\n输入是两个二维向量\n每个向量包含一个局部最大值\nM和一个局部归一划像\nD这个二维运算的输出是一个新的二维向量\n其最大值取两个输入的最大值\n其归一画像则是根据两个输入的最大值差异\n进行缩放后的\n和这个二元运算满足结合律和交换律\n这意味着可以用并行规约的方式\n在多个线程上同时计算\n最后再合并\n结果非常适合在GPU上高效实现\n下面看一下这段伪代码\n这段算法展示了如何将online\nsoft max与top k操作融合成单个函数\n在实际推理场景中\nsoft max后面往往跟着一个top k操作\n来选取概率最大的K歌词\n如果分开执行\n需要多次遍历输入数据\n融合后的算法\n在单次便利中同时维护三个运行状态\n最大值M归一化向D\n以及一个长度为K加一的运行\ntop k值数组U和对应的下标数组P\n每读入一个新元素算法就更新M和D\n同时把新元素插入到top k数组中的正确位置\n便利结束后\n直接用最终的M和D对top k数组中的cake值\n做soft max规划\n这样整个soft max加top k的组合操作\n对每个输入元素只需要一次内存访问\n相比分开执行有了显著的内存访问减少\n下面看一下这张图\n这张图展示了在NVIDIATESLAV100GPU上\n对soft max单独做基准测试的结果\n测试使用的是大批量4000个向量\n图中三条线分别代表朴素算法\nsafe算法和online算法\n柱状图表示online相对于safe的性能提升倍数\n可以看到\n当向量尺寸V达到1000以上时\nonline算法开始明显快于safe算法\n最高可以达到约1.3倍的加速\n这个结果与理论上的内存访问减少比例\n1.33倍相当接近\n说明性能提升主要来自于内存访问次数的降低\n下面看一下这张图\n这张图展示了soft max与top k融合后的性能对比\n同样是在TESLAV100上大批量4000个向量K取五\n图中有三条曲线\nsafe soft max加top k分开执行\nsafe soft max加top k融合执行\n以及unline soft max加top k融合执行\n柱状图\n表示\nonline融合版本\n相对于safe分开执行版本的加速倍数\n可以看到\n随着向量尺寸增大\n加速效果越来越明显\n在V等于2万5000时接近五倍加速\n论文分析指出\n这五倍加速中约2.5倍来自函数融合\n约两倍来自online soft max本身的内存访问减少\n这说明online归一化计算不仅自身有效\n还能与操作融合形成叠加效应",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Qkd6B3EUe",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:17:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

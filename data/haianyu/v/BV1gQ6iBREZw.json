@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1gQ6iBREZw",
+  "title": "12. RoPE：通过旋转矩阵让注意力只取决于相对位置【每天一个宝藏名词】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 171,
+  "text": "rope旋转位置编码\n由苏建林老师在2021年提出\n它是目前大模型位置编码的主流方案\n也是lama deep seek等主流模型的标配\n它的核心原理非常巧妙\n通过旋转矩阵让注意力只取决于相对位置\n旋转位置编码不仅在数学原理上巧妙\n而且只需要修改自注意力层的数行代码\n即可实现旋转位置编码在GITHUB上开源\n目前已经超过了1000多个star",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gQ6iBREZw",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

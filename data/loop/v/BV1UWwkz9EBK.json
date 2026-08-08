@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1UWwkz9EBK",
+  "title": "【2026精选】102个Python实战项目，从入门到进阶，练完即可就业，活该你进大厂，基础到框架，建议码住！新学期卷死同学丨毕设？面试实战？统统不是问题！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 318,
+  "text": "啊，张红\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n这里有一道光芒\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n♪ 音乐 ♪\n音乐\n我恨你\n我想要你\n♪ 音乐 ♪\n♪ 音乐 ♪",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UWwkz9EBK",
+  "published_at": "1773910088",
+  "fetched_at": "2026-08-08T07:31:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 视频内容关系图谱\n\n## 场景要素\n```mermaid\nflowchart TD\n    S1[\"张红\"] --> M1[\"音乐\"]\n    L1[\"光芒\"] --> S1\n    E1[\"恨\"] --> S1\n    E2[\"想要\"] --> S1\n    M1 --> L1\n    M1 --> E1\n    M1 --> E2\n```\n<!-- 张红 [BV1UWwkz9EBK P1 00:09] -->\n<!-- 音乐 [BV1UWwkz9EBK P1 01:15] -->\n<!-- 光芒 [BV1UWwkz9EBK P1 02:38] -->\n<!-- 恨 [BV1UWwkz9EBK P1 04:21] -->\n<!-- 想要 [BV1UWwkz9EBK P1 04:22] -->\n\n## 情感表达链\n```mermaid\nflowchart LR\n    E1[\"恨\"] -->|表达| S1[\"张红\"]\n    E2[\"想要\"] -->|表达| S1\n    E1 -->|对比| E2\n```\n<!-- 恨 [BV1UWwkz9EBK P1 04:21] -->\n<!-- 想要 [BV1UWwkz9EBK P1 04:22] -->",
+      "diagrams": [
+        {
+          "title": "场景要素",
+          "code": "flowchart TD\n    S1[\"张红\"] --> M1[\"音乐\"]\n    L1[\"光芒\"] --> S1\n    E1[\"恨\"] --> S1\n    E2[\"想要\"] --> S1\n    M1 --> L1\n    M1 --> E1\n    M1 --> E2"
+        },
+        {
+          "title": "情感表达链",
+          "code": "flowchart LR\n    E1[\"恨\"] -->|表达| S1[\"张红\"]\n    E2[\"想要\"] -->|表达| S1\n    E1 -->|对比| E2"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-08T07:31:44+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 视频内容关系图谱\n\n## 场景要素\n```mermaid\nflowchart TD\n    S1[\"张红\"] --> M1[\"音乐\"]\n    L1[\"光芒\"] --> S1\n    E1[\"恨\"] --> S1\n    E2[\"想要\"] --> S1\n    M1 --> L1\n    M1 --> E1\n    M1 --> E2\n```\n<!-- 张红 [BV1UWwkz9EBK P1 00:09] -->\n<!-- 音乐 [BV1UWwkz9EBK P1 01:15] -->\n<!-- 光芒 [BV1UWwkz9EBK P1 02:38] -->\n<!-- 恨 [BV1UWwkz9EBK P1 04:21] -->\n<!-- 想要 [BV1UWwkz9EBK P1 04:22] -->\n\n## 情感表达链\n```mermaid\nflowchart LR\n    E1[\"恨\"] -->|表达| S1[\"张红\"]\n    E2[\"想要\"] -->|表达| S1\n    E1 -->|对比| E2\n```\n<!-- 恨 [BV1UWwkz9EBK P1 04:21] -->\n<!-- 想要 [BV1UWwkz9EBK P1 04:22] -->",
+  "diagrams": [
+    {
+      "title": "场景要素",
+      "code": "flowchart TD\n    S1[\"张红\"] --> M1[\"音乐\"]\n    L1[\"光芒\"] --> S1\n    E1[\"恨\"] --> S1\n    E2[\"想要\"] --> S1\n    M1 --> L1\n    M1 --> E1\n    M1 --> E2"
+    },
+    {
+      "title": "情感表达链",
+      "code": "flowchart LR\n    E1[\"恨\"] -->|表达| S1[\"张红\"]\n    E2[\"想要\"] -->|表达| S1\n    E1 -->|对比| E2"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T07:31:44+00:00"
+}

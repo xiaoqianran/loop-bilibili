@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1xgM26hEfT",
+  "title": "不用Mac M3 Ultra了！AI TOP ATOM本地跑DeepSeek V4 Flash！128G内存塞满，512K上下文实测20～48 Tokens/s",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3109,
+  "text": "各位朋友大家好\n欢迎大家关注鲲鹏套\n那今天给大家介绍一下这个啊\ndeep sk v4flash在本地部署的一个情况\n那大家都知道我之前发的所有的视频呢\n都是基于我的那个Mac m3ultra\n512G的那个在本地区部署的\n那今天呢换了个设备叫啊\n用的呃英伟达的d j x spark\n然后128G统一内存的单台呢\n去部署的一个情况\n那我先说一下\n那这个设备呢是啊\n上周的时候\n我们参加那个英伟达和那个技嘉联合举办的\n线下的黑客松\n然后拿到了一等奖\n然后呢他们送了一台这个设备\n那这个设备呢其实啊我早就拿到手了\n而且呢DSK也哎\n应该是好几天之前都跑了一个版本\n那为什么现在才开始来发这个视频呢\n哎第一个原因呢是因为啊最近确实比较忙啊\n事情比较多\n第二个呢最主要的原因是\n前天跑那个deep stick with flash的时候速度比较慢\n他只有十几投过每秒\n这个跟我想要的一个呃还是有一个差距的\n那经过我的优化呢\n它目前能达到一个啊\n我们可以看一下\n它目前能达到一个48token的每秒\n然后呢但是呢这个呢也不是一个常规的速度\n它是一个峰值\n因为我测了很长时间\n它大部分呢是稳定在20多头分左右每秒\n那我们来看一下\n那目前呢因为它只有128G\n所以呢它当它现在呢呃在这个里面呃\n内存呢基本上已经占了那个95%了啊\n空呃空余的内存呢只有2.7个G\n然后呢缓存里面有2.7个G呃\n目前呢它的整个的一个温度呢也还算可以\n然后呢啊磁盘利用率呢也非常的低哈\n那我们给大家看一下\n就是他现在在诶本地运行的一个效果\n那我现在呢是通过啊我们的time scale的这个呃啊\n这个主机并没有在我身边哈\n是在另外一个地方\n然后我们通过啊\n我们搭建了一个啊\n就是私有的一个局域网来进行访问的\n所以说这个网络呢稍微有一点点慢\n那我们来看一下哈\n那目前呢我们是用的cherry studio来配置的\n然后呢在这个里面配置的是一个内网的地址\n然后配的D呃disc with flash\n那我们回到这个里面来\n然后在这里面选的时候选这个模型\n然后选dj s spark\n然后这样的话确定是我们本地的一个模型\n然后我们给他打个招呼\n然后呢正常情况下呢\n嗯它的速度呢整个呢还可以呃\n我们看下15呃\n这个我看看我们的这个停没停啊啊啊\n因为我已经把它配到我们的open code里面来跑了\n所以呢他现在这个整体的一个额\n你是什么模型\n然后呢他的而而且呢因为我们用的是那个呃\n呃这个TENSSCALE\n他这个网络本身就有一定的问题啊\n就经常不稳定\n所以说他的这个速度比较慢\n但实际上呢是20多个token每秒吧\n就目前而且我说一下啊\n现在是运行的一个情况\n就是目前呢我是在呃嗯用的DS4呃\n就是那个REDIS大神\n然后开展一个专门呃用呃其他设备去运行\ndeep sk v4的啊这个模型啊\n能够加速的推进加速的\n那我目前呢也是用了它啊来去部署的\n但是呢呃它里面是有一个DISPARK投机解码的\n一个加速的一个呃草稿啊模型\n但是呢啊因为我的这个显存不够\n所以我把它卸了啊\n原来是我第一次启动起来的时候\n我是把它部署了啊\n我们可以看一下他现在占用的话\n其实利用率就是就是剩余的这个空间\n这看的可能不是很方便啊\n在网页上看就几乎是没有可以用的这个空间了\n就是呃磁盘空间完全不足了\n然后呢\n因为我开了512G的那个\n那个那个那个上下文\n为什么开五百一十二二兆的啊\n512K的一个上下文\n是因为啊我刚开始啊用它来写一个项目\n然后感觉他写的非常费劲\n就动不动就压缩\n动不动就压缩\n我们来看一下哈\n应该是在就是这个项目我们来看一下\n我们让他切到另外一个session里面去\n稍等一下\n我们可以看一下啊\n我们让他开发了一个网站\n我们可以看一下它\n它每隔一段时间就进行压缩一下\n当然也有网络请求报错的一个情况哈\n不断的压缩\n大家看到的这个横杠就是带压缩\n就是它的默认的上文太长太短了\n所以我把它改成512\n那也也让大家来看一下它的模型\n生成的一个效果\n那我让他开发了个信托的一个网站\n然后有产品的中心可以看到产品\n然后呢可以去申购啊\n就说啊你点提交\nOK从我的订单\n那这个呢是本地的V4flash做的一个呃网站哈\n就整个的一个效果就长这样\n嗯怎么说呢\n中规中矩吧\n啊而且呢它是一个量化的一个模型啊\n目前的啊如果有两台的话啊\n你就可以不用量化的版本\n可以直接用原声去跑\n那大概是一个什么样的一个速度\n也给大家看一下\n那可以看一下\n这是它大概的一个啊运行的一个速度\n嗯也是在open code里面来去跑的啊\n整个那速度呢我觉得还可以接受哈\n大概是40多个token左右每秒\n然后呢这个是他开发的一个小游戏\n当然了\n这个不是我开发的\n是啊一个朋友他们啊内部在测第四个vic flash\n在两台dj x spark上去跑的一个效果\n然后整体感觉说啊我感觉还是非常不错的啊\n那目前呢它的一个速度呢\n额头机解码开了之后呢\n是20多个token的每秒啊\n当然你写代码的话呃可能开不了\n所以说呢单台呢还是有点嗯哎有点慢哈\n整个的一个速度\n然后呢虽然是量化的\n然后呢呃\n我们来看一下啊\n我们让他写个落地介绍一下自己\n在这个页面上可以感受一下它的一个速度啊\n怎么说呢\n我感觉这个速度呢嗯也还行\n嗯就是反正呢可以用了\n你毕竟这个价格在这摆着\n它目前呢只要啊3万多块钱这一台设备呃\n呃京东上3万6\n然后呃如果大家想买的话啊\n上次我们参加活动的时候\n他们有个3000块钱的优惠券\n如果有需要的话啊\n可以联系我\n我可以联系他们\n看看能不能把这个3000块钱的优惠券\n给大家发一下额\n理论上是可以打折优惠的\n呃目前的TPC和V4flash的这个模型的能力呢\n我就不做过多的介绍了啊\n我现在把我的主力模型全部放到这上面来了啊\n效果呢非常不错\n嗯让大家感受一下它的一个输出的速度\n说实话哈这个单台的啊\n这个速度我是可以接受的\n呃目前呢我们可以从这能看到它的一个效果哈\n嗯在回复的过程当中啊\n然后呢我们稍等一下\nOK我们看一下他已经写完了\n然后呢啊我们新版的70CD6\n它里面啊有这个啊在线预览的这个功能\n当然呢我们也可以通过这来看一下\n这个是本地的deep sick一个效果\n那呃这是在这里面一个效果\n然后呢呃我们也是在呃cloud code里面啊\nopen code里面去配了\n然后是这样的一个效果\n目前呢它能够实现512K的一个速度\n啊啊啊上下文\n然后来去做一些开发\n然后开发就是刚才那个内容\n那整体的感觉呢我觉得还是非常不错的\n然后在本地啊能有这样的一个效果\n有这样的一个速度是非常嗯不错的\n然后目前呢我们可以看稳定输出\n大概是20token左右每秒啊\n我测的时候反正40多\n然后十呃20多啊\n大不大概在20~40多之间吧\n反正嗯不太稳定\n然后呢基本上就是这么个情况\n然后呢感兴趣的话呢可以来诶去本地部署\n当然呢\n呃这个设备呢价格呢目前还是稍微有点贵\n当然了看你是呃想要怎么用\n如果你想找一个啊在本地不限量\n然后无限量token的一个deep sk v4的flash\n那我觉得买这个呢是可以的\n当然了\n如果你单纯的去啊考虑成本\n就说我充啊\n把这3万块钱充到deep sk里面去\n能用多长时间呢\n其实我觉得呃差不多也能用一年\n但是这个设备呢你可以跑个3年\n5年是没问题的\n反正呢呃看你自己的去一个抉择哈\n就是目前我整个的体验下来\n感觉还是非常不错的\n那如果想要啊交流dj spark的呢\n也可以在评论区留言\n然后呢也可以算群\n不说了\n就是啊我们可以相互交流啊\n在大模型本地部署好的\n今天就介绍到这\n谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1xgM26hEfT",
+  "published_at": "1785949949",
+  "fetched_at": "2026-08-08T06:57:36+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 本地部署知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"DeepSeek V4 Flash Model\"]\n    A2[\"NVIDIA DJ X Spark (128GB)\"]\n    A3[\"Local Deployment\"]\n    A4[\"Cherry Studio UI\"]\n    A5[\"Private LAN Access\"]\n    A6[\"OpenCode Integration\"]\n    A7[\"Quantized Model\"]\n    A8[\"Performance Metrics\"]\n    A9[\"Use Cases (Web, Game)\"]\n    A10[\"User Interaction\"]\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A1\n    A1 --> A8\n    A1 --> A7\n    A7 --> A8\n    A8 --> A9\n    A9 --> A10\n```\n\n## 性能指标\n```mermaid\nflowchart TD\n    B1[\"Peak Token Rate 48 token/s\"]\n    B2[\"Stable Rate 20-40 token/s\"]\n    B3[\"Memory Usage 95% (≈125GB)\"]\n    B4[\"Free Memory 2.7GB\"]\n    B5[\"Disk Space Exhausted\"]\n    B6[\"Temperature Acceptable\"]\n    B7[\"Network Latency (LAN)\"]\n    B8[\"Quantization Impact\"]\n    B9[\"Context Window 512K\"]\n    B10[\"Variability (unstable)\"]\n    B1 --> B2\n    B2 --> B10\n    B3 --> B4\n    B3 --> B5\n    B6 --> B2\n    B7 --> B2\n    B8 --> B2\n    B9 --> B2\n    B9 --> B8\n```\n\n## 成本与收益\n```mermaid\nflowchart TD\n    C1[\"Device Price ~36,000 CNY\"]\n    C2[\"3000 CNY Coupon\"]\n    C3[\"Hardware Longevity 3-5 years\"]\n    C4[\"Token Limit Unlimited (Flash)\"]\n    C5[\"Quantized Model (lower cost)\"]\n    C6[\"Single Device Performance\"]\n    C7[\"Alternative: Cloud API\"]\n    C8[\"Cost per Year\"]\n    C9[\"Use Cases Justify Cost\"]\n    C10[\"Purchase Decision Factors\"]\n    C1 --> C2\n    C1 --> C3\n    C4 --> C6\n    C5 --> C6\n    C6 --> C8\n    C8 --> C9\n    C9 --> C10\n    C7 --> C10\n    C2 --> C10\n```\n\n## 部署工作流\n```mermaid\nflowchart TD\n    D1[\"Receive Device (Prize)\"]\n    D2[\"Install NVIDIA Drivers\"]\n    D3[\"Configure Cherry Studio\"]\n    D4[\"Set Private LAN IP\"]\n    D5[\"Select Model DeepSeek V4 Flash\"]\n    D6[\"Run Model via OpenCode\"]\n    D7[\"Monitor Memory & Temperature\"]\n    D8[\"Adjust Context (512K)\"]\n    D9[\"Optimize (Quantization)\"]\n    D10[\"Deploy Application (Web/Game)\"]\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5\n    D5 --> D6\n    D6 --> D7\n    D7 --> D8\n    D8 --> D9\n    D9 --> D10\n```\n\n## 限制与考虑\n```mermaid\nflowchart TD\n    E1[\"128GB Memory Constraint\"]\n    E2[\"High Memory Usage (95%)\"]\n    E3[\"Disk Space Shortage\"]\n    E4[\"Network Latency\"]\n    E5[\"Model Quantization\"]\n    E6[\"Stability Variability\"]\n    E7[\"Context Window Size\"]\n    E8[\"Performance Trade-offs\"]\n    E9[\"Potential Need for Second Device\"]\n    E10[\"Future Scalability\"]\n    E1 --> E2\n    E2 --> E3\n    E1 --> E4\n    E5 --> E6\n    E6 --> E8\n    E7 --> E8\n    E8 --> E9\n    E9 --> E10\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"DeepSeek V4 Flash Model\"]\n    A2[\"NVIDIA DJ X Spark (128GB)\"]\n    A3[\"Local Deployment\"]\n    A4[\"Cherry Studio UI\"]\n    A5[\"Private LAN Access\"]\n    A6[\"OpenCode Integration\"]\n    A7[\"Quantized Model\"]\n    A8[\"Performance Metrics\"]\n    A9[\"Use Cases (Web, Game)\"]\n    A10[\"User Interaction\"]\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A1\n    A1 --> A8\n    A1 --> A7\n    A7 --> A8\n    A8 --> A9\n    A9 --> A10"
+        },
+        {
+          "title": "性能指标",
+          "code": "flowchart TD\n    B1[\"Peak Token Rate 48 token/s\"]\n    B2[\"Stable Rate 20-40 token/s\"]\n    B3[\"Memory Usage 95% (≈125GB)\"]\n    B4[\"Free Memory 2.7GB\"]\n    B5[\"Disk Space Exhausted\"]\n    B6[\"Temperature Acceptable\"]\n    B7[\"Network Latency (LAN)\"]\n    B8[\"Quantization Impact\"]\n    B9[\"Context Window 512K\"]\n    B10[\"Variability (unstable)\"]\n    B1 --> B2\n    B2 --> B10\n    B3 --> B4\n    B3 --> B5\n    B6 --> B2\n    B7 --> B2\n    B8 --> B2\n    B9 --> B2\n    B9 --> B8"
+        },
+        {
+          "title": "成本与收益",
+          "code": "flowchart TD\n    C1[\"Device Price ~36,000 CNY\"]\n    C2[\"3000 CNY Coupon\"]\n    C3[\"Hardware Longevity 3-5 years\"]\n    C4[\"Token Limit Unlimited (Flash)\"]\n    C5[\"Quantized Model (lower cost)\"]\n    C6[\"Single Device Performance\"]\n    C7[\"Alternative: Cloud API\"]\n    C8[\"Cost per Year\"]\n    C9[\"Use Cases Justify Cost\"]\n    C10[\"Purchase Decision Factors\"]\n    C1 --> C2\n    C1 --> C3\n    C4 --> C6\n    C5 --> C6\n    C6 --> C8\n    C8 --> C9\n    C9 --> C10\n    C7 --> C10\n    C2 --> C10"
+        },
+        {
+          "title": "部署工作流",
+          "code": "flowchart TD\n    D1[\"Receive Device (Prize)\"]\n    D2[\"Install NVIDIA Drivers\"]\n    D3[\"Configure Cherry Studio\"]\n    D4[\"Set Private LAN IP\"]\n    D5[\"Select Model DeepSeek V4 Flash\"]\n    D6[\"Run Model via OpenCode\"]\n    D7[\"Monitor Memory & Temperature\"]\n    D8[\"Adjust Context (512K)\"]\n    D9[\"Optimize (Quantization)\"]\n    D10[\"Deploy Application (Web/Game)\"]\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5\n    D5 --> D6\n    D6 --> D7\n    D7 --> D8\n    D8 --> D9\n    D9 --> D10"
+        },
+        {
+          "title": "限制与考虑",
+          "code": "flowchart TD\n    E1[\"128GB Memory Constraint\"]\n    E2[\"High Memory Usage (95%)\"]\n    E3[\"Disk Space Shortage\"]\n    E4[\"Network Latency\"]\n    E5[\"Model Quantization\"]\n    E6[\"Stability Variability\"]\n    E7[\"Context Window Size\"]\n    E8[\"Performance Trade-offs\"]\n    E9[\"Potential Need for Second Device\"]\n    E10[\"Future Scalability\"]\n    E1 --> E2\n    E2 --> E3\n    E1 --> E4\n    E5 --> E6\n    E6 --> E8\n    E7 --> E8\n    E8 --> E9\n    E9 --> E10"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T06:57:56+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 本地部署知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"DeepSeek V4 Flash Model\"]\n    A2[\"NVIDIA DJ X Spark (128GB)\"]\n    A3[\"Local Deployment\"]\n    A4[\"Cherry Studio UI\"]\n    A5[\"Private LAN Access\"]\n    A6[\"OpenCode Integration\"]\n    A7[\"Quantized Model\"]\n    A8[\"Performance Metrics\"]\n    A9[\"Use Cases (Web, Game)\"]\n    A10[\"User Interaction\"]\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A1\n    A1 --> A8\n    A1 --> A7\n    A7 --> A8\n    A8 --> A9\n    A9 --> A10\n```\n\n## 性能指标\n```mermaid\nflowchart TD\n    B1[\"Peak Token Rate 48 token/s\"]\n    B2[\"Stable Rate 20-40 token/s\"]\n    B3[\"Memory Usage 95% (≈125GB)\"]\n    B4[\"Free Memory 2.7GB\"]\n    B5[\"Disk Space Exhausted\"]\n    B6[\"Temperature Acceptable\"]\n    B7[\"Network Latency (LAN)\"]\n    B8[\"Quantization Impact\"]\n    B9[\"Context Window 512K\"]\n    B10[\"Variability (unstable)\"]\n    B1 --> B2\n    B2 --> B10\n    B3 --> B4\n    B3 --> B5\n    B6 --> B2\n    B7 --> B2\n    B8 --> B2\n    B9 --> B2\n    B9 --> B8\n```\n\n## 成本与收益\n```mermaid\nflowchart TD\n    C1[\"Device Price ~36,000 CNY\"]\n    C2[\"3000 CNY Coupon\"]\n    C3[\"Hardware Longevity 3-5 years\"]\n    C4[\"Token Limit Unlimited (Flash)\"]\n    C5[\"Quantized Model (lower cost)\"]\n    C6[\"Single Device Performance\"]\n    C7[\"Alternative: Cloud API\"]\n    C8[\"Cost per Year\"]\n    C9[\"Use Cases Justify Cost\"]\n    C10[\"Purchase Decision Factors\"]\n    C1 --> C2\n    C1 --> C3\n    C4 --> C6\n    C5 --> C6\n    C6 --> C8\n    C8 --> C9\n    C9 --> C10\n    C7 --> C10\n    C2 --> C10\n```\n\n## 部署工作流\n```mermaid\nflowchart TD\n    D1[\"Receive Device (Prize)\"]\n    D2[\"Install NVIDIA Drivers\"]\n    D3[\"Configure Cherry Studio\"]\n    D4[\"Set Private LAN IP\"]\n    D5[\"Select Model DeepSeek V4 Flash\"]\n    D6[\"Run Model via OpenCode\"]\n    D7[\"Monitor Memory & Temperature\"]\n    D8[\"Adjust Context (512K)\"]\n    D9[\"Optimize (Quantization)\"]\n    D10[\"Deploy Application (Web/Game)\"]\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5\n    D5 --> D6\n    D6 --> D7\n    D7 --> D8\n    D8 --> D9\n    D9 --> D10\n```\n\n## 限制与考虑\n```mermaid\nflowchart TD\n    E1[\"128GB Memory Constraint\"]\n    E2[\"High Memory Usage (95%)\"]\n    E3[\"Disk Space Shortage\"]\n    E4[\"Network Latency\"]\n    E5[\"Model Quantization\"]\n    E6[\"Stability Variability\"]\n    E7[\"Context Window Size\"]\n    E8[\"Performance Trade-offs\"]\n    E9[\"Potential Need for Second Device\"]\n    E10[\"Future Scalability\"]\n    E1 --> E2\n    E2 --> E3\n    E1 --> E4\n    E5 --> E6\n    E6 --> E8\n    E7 --> E8\n    E8 --> E9\n    E9 --> E10\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"DeepSeek V4 Flash Model\"]\n    A2[\"NVIDIA DJ X Spark (128GB)\"]\n    A3[\"Local Deployment\"]\n    A4[\"Cherry Studio UI\"]\n    A5[\"Private LAN Access\"]\n    A6[\"OpenCode Integration\"]\n    A7[\"Quantized Model\"]\n    A8[\"Performance Metrics\"]\n    A9[\"Use Cases (Web, Game)\"]\n    A10[\"User Interaction\"]\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A1\n    A1 --> A8\n    A1 --> A7\n    A7 --> A8\n    A8 --> A9\n    A9 --> A10"
+    },
+    {
+      "title": "性能指标",
+      "code": "flowchart TD\n    B1[\"Peak Token Rate 48 token/s\"]\n    B2[\"Stable Rate 20-40 token/s\"]\n    B3[\"Memory Usage 95% (≈125GB)\"]\n    B4[\"Free Memory 2.7GB\"]\n    B5[\"Disk Space Exhausted\"]\n    B6[\"Temperature Acceptable\"]\n    B7[\"Network Latency (LAN)\"]\n    B8[\"Quantization Impact\"]\n    B9[\"Context Window 512K\"]\n    B10[\"Variability (unstable)\"]\n    B1 --> B2\n    B2 --> B10\n    B3 --> B4\n    B3 --> B5\n    B6 --> B2\n    B7 --> B2\n    B8 --> B2\n    B9 --> B2\n    B9 --> B8"
+    },
+    {
+      "title": "成本与收益",
+      "code": "flowchart TD\n    C1[\"Device Price ~36,000 CNY\"]\n    C2[\"3000 CNY Coupon\"]\n    C3[\"Hardware Longevity 3-5 years\"]\n    C4[\"Token Limit Unlimited (Flash)\"]\n    C5[\"Quantized Model (lower cost)\"]\n    C6[\"Single Device Performance\"]\n    C7[\"Alternative: Cloud API\"]\n    C8[\"Cost per Year\"]\n    C9[\"Use Cases Justify Cost\"]\n    C10[\"Purchase Decision Factors\"]\n    C1 --> C2\n    C1 --> C3\n    C4 --> C6\n    C5 --> C6\n    C6 --> C8\n    C8 --> C9\n    C9 --> C10\n    C7 --> C10\n    C2 --> C10"
+    },
+    {
+      "title": "部署工作流",
+      "code": "flowchart TD\n    D1[\"Receive Device (Prize)\"]\n    D2[\"Install NVIDIA Drivers\"]\n    D3[\"Configure Cherry Studio\"]\n    D4[\"Set Private LAN IP\"]\n    D5[\"Select Model DeepSeek V4 Flash\"]\n    D6[\"Run Model via OpenCode\"]\n    D7[\"Monitor Memory & Temperature\"]\n    D8[\"Adjust Context (512K)\"]\n    D9[\"Optimize (Quantization)\"]\n    D10[\"Deploy Application (Web/Game)\"]\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5\n    D5 --> D6\n    D6 --> D7\n    D7 --> D8\n    D8 --> D9\n    D9 --> D10"
+    },
+    {
+      "title": "限制与考虑",
+      "code": "flowchart TD\n    E1[\"128GB Memory Constraint\"]\n    E2[\"High Memory Usage (95%)\"]\n    E3[\"Disk Space Shortage\"]\n    E4[\"Network Latency\"]\n    E5[\"Model Quantization\"]\n    E6[\"Stability Variability\"]\n    E7[\"Context Window Size\"]\n    E8[\"Performance Trade-offs\"]\n    E9[\"Potential Need for Second Device\"]\n    E10[\"Future Scalability\"]\n    E1 --> E2\n    E2 --> E3\n    E1 --> E4\n    E5 --> E6\n    E6 --> E8\n    E7 --> E8\n    E8 --> E9\n    E9 --> E10"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T06:57:56+00:00"
+}

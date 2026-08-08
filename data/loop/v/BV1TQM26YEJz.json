@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1TQM26YEJz",
+  "title": "[中配]本地运行 Deepseek V4 Flash（无需 GPU？） - Code Bear",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3114,
+  "text": "DPC发布其最新模型后不到五小时\n就有人让他在笔记本电脑上运行\n不是精简版小模型\n不是暗中调用在线API的演示\n而是真正的开放权重模型\n当首批性能数据出现时\n看起来几乎不可能实现\n一个包含数千亿参数的模型\n竟以真正可用速度生成代码\n但头条背后藏着问题\n下载错误的版本可能消耗超过100GB存储\n导致系统崩溃或最终得到技术上能运行却慢的无用的模型\n那么deep seek到底发布了什么\n是什么让如此庞大的模型能离开数据中心\n你的笔记本真的能运行它吗\n要理解这一点\n我们得回到7月31日\ndeep seek在UTC时间上午07:30上传了官方模型权重\n随后下午12.24分\nUNSLOTH发布了为本地推理准备的版本\n间隔仅四小时54分钟\n该模型是deep seek vi for flash\n7月31日构建版本\n也就是v four flash\n0731\n此版本保留了与4月模型相同的基本架构和参数数量\ndeep s e two并非从头构建全新模型\n而是重复了后训练阶段\n以改进推理编码工具使用和智能体行为\n根据DPSEQ的说法\n这些改动让flash能够与其更大的旗舰模型deep sq v4pro的部分能力竞争\nV4pro总参数约1.6万亿\n每个token激活约490亿参数\nV4flash总参数2840亿\n但每个token仅激活约130亿\n总参数与激活参数的差异是解释其本地运行能力的首个线索\ndeep si q5for fl是一个专家混合模型\n模型\n不是对每个token使用整个网络\n而是包含数百个专业专家\n网络路由器检查每个token并选择处理它的专家\nV4flash有256个路由专家\n加一个共享专家\n每个token仅选择六个路由\n专家想象一个拥有众多专业部门的公司\n整个公司可能庞大\n但每个问题只会被发送到能理解他的部门\n这就是为什么模型虽存储2840亿参数\n却执行约130亿参数量的激活计算\n这减少了生成每个token所需的计算量\n但并未解决内存问题\n当前未激活的专家仍需存放某处\n因为路由器可能为下一个token选中它们\n因此笔记本仍需足够内存来容纳几乎整个模型\n这就是量化变得重要的原因\n量化用更少的比特存储模型\n权重更低\n精度意味着文件更小\n内存占用更低\n但极端压缩也可能降低准确性\non sloth发布了13个deep sea visa flash的GGUF版本\n最小的一比特构建约为82.5GB\n二比特版本约91~97GB\n三比特版本约104~128GB\n四比特版本接近155GB\n八比特版本约162GB\n通常八比特模型应远大于四比特模型\n但deep cq已用四比特格式MXFP4存储了大部分路由专家权重\n这意味着原始检查点的大部分已被高度压缩\nENSLAUGHT表示\n其巴比特GGUF保持这些打包专家不变\n因此称该版本为无损\n这是ENSLAFT的说法\n尚未得到独立验证\n现在我们可回答硬件问题了\n具备128GB统一内存的Mac可实际运行一个二比特版本\n但模型本身可能占用约96G\n剩余内存需容纳Mac os la cpp应用程序和模型的上下文缓存\n因此128GB是入门门槛\n而非理想配置192或256GB\n则可为更好的量化和更大上下文窗口留出空间\n常规十六三十二或64GB的笔记本无法实际运行此模型\n这也就解释了无需GPU的说法为何略有误导\n你不需要独立NVIDIA显卡\n在apple silicon上CPU和集成GPU共享统一统一内存池\nlama cpp可使用metal\n通过apple集成显卡加速模型\n你也可以用带足够系统ram的传统CPU\n但生成速度通常会慢得多\n发布初期测试报告\n128GBM5max上二比特构建约每秒34个token\nM3mac据称约每秒26个token\n512gb Mac studio运行四比特版本约每秒35个token\n这些速度可用\n但不该视为通用结果\n性能随处理器内存带宽量化\n上下文长度及推理软件版本而变化\n生成速度仅是体验一半\n模型生成第一token前需处理你的提示对话和代码\n这一阶段称为预填充模型\n读完提示后或能以每秒30token生成\n但处理大型代码库仍可能耗时\n上下文也消耗内存\nDeep s c two v4 flash\n官方支持最多1000000token的上下文窗口输出可达38点40000token\n但这是托管模型的架构\n能力不意味着你的128gb Mac能加载模型并本地处理1000000token\n本地设置中1.6万或三点20000token是更现实的起点\nDPSQ使用压缩稀疏注意力和重压缩注意力来提高长上下文效率\n模型不是对所有旧token1视同仁\n而是压缩上下文\n并将计算集中于最有用的信息发布内容\n还包括一个叫d s spark的较小草稿模型\nd s spark提议token组主模型一并检查\nDPCEQ表示\n这种投机解码系统可提升每个用户生成速度\n约60%至85%\n这也解释了为什么HuggingFace仓库看似有约3040亿参数\nV4flash本身描述为2840亿参数\n额外ds spark草稿模型增加约200亿\n要本地运行模型需最新版lama cpp和对应的on sloth g gf文件\n加载后\nlama cpp可提供本地兼容open人工智能的服务器\n它还支持可连接编码工具的端点\n你的编码智能体向自己机器上的服务器发送请求\n而不是把代码库上传给外部服务商\n大多数本地工作负载请使用普通高推理模式\n最大推理模式期望极大的上下文预算\n对多数128GB系统不实际\n还有值得了解的兼容性问题\nDeep seek vii4\n不使用完全标准的聊天模板\nOn slothway\nlama cpp重建了模板\n并在数千次对话中测试\n因此若模型首条消息正常\n几轮后产生乱码\n先更新lama cpp和模型文件\n再判断模型本身是否有问题\n现在我们来看基准测试的宣称\ndeep c报告在terminal bench2.1上得分82.7\n这将使visa flash接近一些最强编码智能体\n但deep sea to用未发布的内部智能体框架获得该分数\n智能体基准衡量不止底层模型的智能工具\n提示重视逻辑\n所以该基准有趣\n但尚无法独立复现\n最佳测试是你自己的代码库\n给模型十个真实任务\n让它定位bug\n解释复杂模块\n编写测试遵循现有代码模式\n并修改多个关联文件\n然后对比本地版本与托管模型\n这也会让你看到激进二比特量化损失了多少质量\n这就到了最终决定DCQ托管的V4flash API价格约为每百万\n输入token0.14美元\n每百万输token0.28美元\n为避开API费用而购买昂贵的高内存\nMac几乎不划算\n本地版本的价值在于其他方面\n你的私有代码留在自己的机器上\n无需互联网连接也可工作\n没有外部速率限制\n你测试的确切模型版本不会突然从API消失\n托管版本在便利性最大\n上下文模型质量和设置时间上胜出\n使用答案很简单\n十六三十二或64GB内存\n请用API或选较小的本地模型\n128GB可尝试二比特构建\n并从中等上下文窗口开始\n192或256GB可测试更高质量版本和更大上下文\ndeep s e t via s flash并未突然变成小模型\n它仍是2840亿参数\n但稀疏专家陆游减少了计算量\n低精度训练\n缩小了检查点量化\n进一步压缩了它的lama cpp\n增加了本地支持\n统一内存\n让集成GPU可访问巨大内存池\n结果不是能在所有笔记本上运行的前沿模型\n而是能在本地运行的前沿模型\n在合适的硬件上\n而在deep seek上传后不到五小时\n就有人已在证明它确实可以",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TQM26YEJz",
+  "published_at": "1785939110",
+  "fetched_at": "2026-08-07T04:10:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 本地运行知识图谱\n\n## 模型概览 [BV1TQM26YEJz P1 01:15]\n```mermaid\nflowchart TD\n    A1[\"DeepSeek V4 Flash\"] --> B1[\"发布于 2023‑07‑31\"]\n    A1 --> C1[\"保持 4 月模型基本架构\"]\n    A1 --> D1[\"总参数 2840 亿\"]\n    A1 --> E1[\"每 token 激活约 130 亿参数\"]\n    A1 --> F1[\"稀疏专家混合模型\"]\n    F1 --> G1[\"256 路由专家 + 1 共享专家\"]\n    A1 --> H1[\"对比 V4Pro：1.6 万亿总参数，490 亿激活\"]\n    A1 --> I1[\"大存储需求\"]\n```\n\n## 专家路由机制 [BV1TQM26YEJz P1 01:37]\n```mermaid\nflowchart TD\n    T1[\"输入 token\"] --> R1[\"网络路由器\"]\n    R1 --> EP1[\"256 路由专家 + 1 共享专家\"]\n    R1 --> SE1[\"为每 token 选择 6 专家\"]\n    SE1 --> A1[\"约 130 亿参数激活\"]\n    A1 --> CR1[\"计算量显著降低\"]\n    FM1[\"2840 亿参数全模型\"] --> MN1[\"仍需大内存存放未激活专家\"]\n    SE1 --> MN1\n```\n\n## 量化版本与存储需求 [BV1TQM26YEJz P1 02:34]\n```mermaid\nflowchart TD\n    Q1[\"模型量化\"] --> B1[\"1‑bit 约 82.5 GB\"]\n    Q1 --> B2[\"2‑bit 约 91‑97 GB\"]\n    Q1 --> B3[\"3‑bit 约 104‑128 GB\"]\n    Q1 --> B4[\"4‑bit 约 155 GB\"]\n    Q1 --> B5[\"8‑bit 约 162 GB\"]\n    B1 --> SI1[\"文件更小，内存占用降低\"]\n    B2 --> SI1\n    B3 --> SI1\n    B4 --> SI1\n    B5 --> SI1\n    SI1 --> CT1[\"极端压缩可能降低准确性\"]\n    Q1 --> V1[\"OnSloth 提供 13 种 GGUF 版本\"]\n```\n\n## 硬件需求与性能基准 [BV1TQM26YEJz P1 03:21]\n```mermaid\nflowchart TD\n    RAM[\"统一内存\"] --> MIN[\"最低 128 GB\"]\n    RAM --> REC[\"推荐 192‑256 GB\"]\n    MIN --> S1[\"可运行 2‑bit 版本\"]\n    REC --> S2[\"可运行 4‑bit 版本，质量更佳\"]\n    CPU[\"Apple Silicon CPU\"] --> T1[\"2‑bit 约 34 token/s (M5 Max)\"]\n    GPU[\"集成 GPU (Metal)\"] --> T1\n    T1 --> LF1[\"受 CPU/GPU 带宽、量化、上下文长度影响\"]\n    S2 --> T2[\"4‑bit 约 35 token/s (Mac Studio 512 GB)\"]\n    T2 --> LF1\n    PRE[\"预填充阶段\"] --> GEN[\"生成 token\"]\n    GEN --> LF1\n    MIN --> NOT[\"不适用于 16/32/64 GB 笔记本\"]\n```\n\n## 本地运行 vs 托管 API 决策 [BV1TQM26YEJz P1 07:58]\n```mermaid\nflowchart TD\n    LR[\"本地运行\"] --> PR[\"私有代码留在本机\"]\n    LR --> NI[\"无需互联网\"]\n    LR --> EC[\"避免每百万 token 费用\"]\n    LR --> HC[\"需高内存硬件\"]\n    API[\"托管 API\"] --> QC[\"更高质量、更多上下文\"]\n    API --> EC\n    QC --> QD[\"量化可能导致质量下降\"]\n    HC --> DEC[\"根据预算与需求选择\"]\n    PR --> DEC\n    NI --> DEC\n    QD --> DEC\n    DEC --> RE[\"128 GB 可尝试 2‑bit；192‑256 GB 试更高质量\"]\n```",
+      "diagrams": [
+        {
+          "title": "模型概览",
+          "code": "flowchart TD\n    A1[\"DeepSeek V4 Flash\"] --> B1[\"发布于 2023‑07‑31\"]\n    A1 --> C1[\"保持 4 月模型基本架构\"]\n    A1 --> D1[\"总参数 2840 亿\"]\n    A1 --> E1[\"每 token 激活约 130 亿参数\"]\n    A1 --> F1[\"稀疏专家混合模型\"]\n    F1 --> G1[\"256 路由专家 + 1 共享专家\"]\n    A1 --> H1[\"对比 V4Pro：1.6 万亿总参数，490 亿激活\"]\n    A1 --> I1[\"大存储需求\"]"
+        },
+        {
+          "title": "专家路由机制",
+          "code": "flowchart TD\n    T1[\"输入 token\"] --> R1[\"网络路由器\"]\n    R1 --> EP1[\"256 路由专家 + 1 共享专家\"]\n    R1 --> SE1[\"为每 token 选择 6 专家\"]\n    SE1 --> A1[\"约 130 亿参数激活\"]\n    A1 --> CR1[\"计算量显著降低\"]\n    FM1[\"2840 亿参数全模型\"] --> MN1[\"仍需大内存存放未激活专家\"]\n    SE1 --> MN1"
+        },
+        {
+          "title": "量化版本与存储需求",
+          "code": "flowchart TD\n    Q1[\"模型量化\"] --> B1[\"1‑bit 约 82.5 GB\"]\n    Q1 --> B2[\"2‑bit 约 91‑97 GB\"]\n    Q1 --> B3[\"3‑bit 约 104‑128 GB\"]\n    Q1 --> B4[\"4‑bit 约 155 GB\"]\n    Q1 --> B5[\"8‑bit 约 162 GB\"]\n    B1 --> SI1[\"文件更小，内存占用降低\"]\n    B2 --> SI1\n    B3 --> SI1\n    B4 --> SI1\n    B5 --> SI1\n    SI1 --> CT1[\"极端压缩可能降低准确性\"]\n    Q1 --> V1[\"OnSloth 提供 13 种 GGUF 版本\"]"
+        },
+        {
+          "title": "硬件需求与性能基准",
+          "code": "flowchart TD\n    RAM[\"统一内存\"] --> MIN[\"最低 128 GB\"]\n    RAM --> REC[\"推荐 192‑256 GB\"]\n    MIN --> S1[\"可运行 2‑bit 版本\"]\n    REC --> S2[\"可运行 4‑bit 版本，质量更佳\"]\n    CPU[\"Apple Silicon CPU\"] --> T1[\"2‑bit 约 34 token/s (M5 Max)\"]\n    GPU[\"集成 GPU (Metal)\"] --> T1\n    T1 --> LF1[\"受 CPU/GPU 带宽、量化、上下文长度影响\"]\n    S2 --> T2[\"4‑bit 约 35 token/s (Mac Studio 512 GB)\"]\n    T2 --> LF1\n    PRE[\"预填充阶段\"] --> GEN[\"生成 token\"]\n    GEN --> LF1\n    MIN --> NOT[\"不适用于 16/32/64 GB 笔记本\"]"
+        },
+        {
+          "title": "本地运行 vs 托管 API 决策",
+          "code": "flowchart TD\n    LR[\"本地运行\"] --> PR[\"私有代码留在本机\"]\n    LR --> NI[\"无需互联网\"]\n    LR --> EC[\"避免每百万 token 费用\"]\n    LR --> HC[\"需高内存硬件\"]\n    API[\"托管 API\"] --> QC[\"更高质量、更多上下文\"]\n    API --> EC\n    QC --> QD[\"量化可能导致质量下降\"]\n    HC --> DEC[\"根据预算与需求选择\"]\n    PR --> DEC\n    NI --> DEC\n    QD --> DEC\n    DEC --> RE[\"128 GB 可尝试 2‑bit；192‑256 GB 试更高质量\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T04:21:14+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 本地运行知识图谱\n\n## 模型概览 [BV1TQM26YEJz P1 01:15]\n```mermaid\nflowchart TD\n    A1[\"DeepSeek V4 Flash\"] --> B1[\"发布于 2023‑07‑31\"]\n    A1 --> C1[\"保持 4 月模型基本架构\"]\n    A1 --> D1[\"总参数 2840 亿\"]\n    A1 --> E1[\"每 token 激活约 130 亿参数\"]\n    A1 --> F1[\"稀疏专家混合模型\"]\n    F1 --> G1[\"256 路由专家 + 1 共享专家\"]\n    A1 --> H1[\"对比 V4Pro：1.6 万亿总参数，490 亿激活\"]\n    A1 --> I1[\"大存储需求\"]\n```\n\n## 专家路由机制 [BV1TQM26YEJz P1 01:37]\n```mermaid\nflowchart TD\n    T1[\"输入 token\"] --> R1[\"网络路由器\"]\n    R1 --> EP1[\"256 路由专家 + 1 共享专家\"]\n    R1 --> SE1[\"为每 token 选择 6 专家\"]\n    SE1 --> A1[\"约 130 亿参数激活\"]\n    A1 --> CR1[\"计算量显著降低\"]\n    FM1[\"2840 亿参数全模型\"] --> MN1[\"仍需大内存存放未激活专家\"]\n    SE1 --> MN1\n```\n\n## 量化版本与存储需求 [BV1TQM26YEJz P1 02:34]\n```mermaid\nflowchart TD\n    Q1[\"模型量化\"] --> B1[\"1‑bit 约 82.5 GB\"]\n    Q1 --> B2[\"2‑bit 约 91‑97 GB\"]\n    Q1 --> B3[\"3‑bit 约 104‑128 GB\"]\n    Q1 --> B4[\"4‑bit 约 155 GB\"]\n    Q1 --> B5[\"8‑bit 约 162 GB\"]\n    B1 --> SI1[\"文件更小，内存占用降低\"]\n    B2 --> SI1\n    B3 --> SI1\n    B4 --> SI1\n    B5 --> SI1\n    SI1 --> CT1[\"极端压缩可能降低准确性\"]\n    Q1 --> V1[\"OnSloth 提供 13 种 GGUF 版本\"]\n```\n\n## 硬件需求与性能基准 [BV1TQM26YEJz P1 03:21]\n```mermaid\nflowchart TD\n    RAM[\"统一内存\"] --> MIN[\"最低 128 GB\"]\n    RAM --> REC[\"推荐 192‑256 GB\"]\n    MIN --> S1[\"可运行 2‑bit 版本\"]\n    REC --> S2[\"可运行 4‑bit 版本，质量更佳\"]\n    CPU[\"Apple Silicon CPU\"] --> T1[\"2‑bit 约 34 token/s (M5 Max)\"]\n    GPU[\"集成 GPU (Metal)\"] --> T1\n    T1 --> LF1[\"受 CPU/GPU 带宽、量化、上下文长度影响\"]\n    S2 --> T2[\"4‑bit 约 35 token/s (Mac Studio 512 GB)\"]\n    T2 --> LF1\n    PRE[\"预填充阶段\"] --> GEN[\"生成 token\"]\n    GEN --> LF1\n    MIN --> NOT[\"不适用于 16/32/64 GB 笔记本\"]\n```\n\n## 本地运行 vs 托管 API 决策 [BV1TQM26YEJz P1 07:58]\n```mermaid\nflowchart TD\n    LR[\"本地运行\"] --> PR[\"私有代码留在本机\"]\n    LR --> NI[\"无需互联网\"]\n    LR --> EC[\"避免每百万 token 费用\"]\n    LR --> HC[\"需高内存硬件\"]\n    API[\"托管 API\"] --> QC[\"更高质量、更多上下文\"]\n    API --> EC\n    QC --> QD[\"量化可能导致质量下降\"]\n    HC --> DEC[\"根据预算与需求选择\"]\n    PR --> DEC\n    NI --> DEC\n    QD --> DEC\n    DEC --> RE[\"128 GB 可尝试 2‑bit；192‑256 GB 试更高质量\"]\n```",
+  "diagrams": [
+    {
+      "title": "模型概览",
+      "code": "flowchart TD\n    A1[\"DeepSeek V4 Flash\"] --> B1[\"发布于 2023‑07‑31\"]\n    A1 --> C1[\"保持 4 月模型基本架构\"]\n    A1 --> D1[\"总参数 2840 亿\"]\n    A1 --> E1[\"每 token 激活约 130 亿参数\"]\n    A1 --> F1[\"稀疏专家混合模型\"]\n    F1 --> G1[\"256 路由专家 + 1 共享专家\"]\n    A1 --> H1[\"对比 V4Pro：1.6 万亿总参数，490 亿激活\"]\n    A1 --> I1[\"大存储需求\"]"
+    },
+    {
+      "title": "专家路由机制",
+      "code": "flowchart TD\n    T1[\"输入 token\"] --> R1[\"网络路由器\"]\n    R1 --> EP1[\"256 路由专家 + 1 共享专家\"]\n    R1 --> SE1[\"为每 token 选择 6 专家\"]\n    SE1 --> A1[\"约 130 亿参数激活\"]\n    A1 --> CR1[\"计算量显著降低\"]\n    FM1[\"2840 亿参数全模型\"] --> MN1[\"仍需大内存存放未激活专家\"]\n    SE1 --> MN1"
+    },
+    {
+      "title": "量化版本与存储需求",
+      "code": "flowchart TD\n    Q1[\"模型量化\"] --> B1[\"1‑bit 约 82.5 GB\"]\n    Q1 --> B2[\"2‑bit 约 91‑97 GB\"]\n    Q1 --> B3[\"3‑bit 约 104‑128 GB\"]\n    Q1 --> B4[\"4‑bit 约 155 GB\"]\n    Q1 --> B5[\"8‑bit 约 162 GB\"]\n    B1 --> SI1[\"文件更小，内存占用降低\"]\n    B2 --> SI1\n    B3 --> SI1\n    B4 --> SI1\n    B5 --> SI1\n    SI1 --> CT1[\"极端压缩可能降低准确性\"]\n    Q1 --> V1[\"OnSloth 提供 13 种 GGUF 版本\"]"
+    },
+    {
+      "title": "硬件需求与性能基准",
+      "code": "flowchart TD\n    RAM[\"统一内存\"] --> MIN[\"最低 128 GB\"]\n    RAM --> REC[\"推荐 192‑256 GB\"]\n    MIN --> S1[\"可运行 2‑bit 版本\"]\n    REC --> S2[\"可运行 4‑bit 版本，质量更佳\"]\n    CPU[\"Apple Silicon CPU\"] --> T1[\"2‑bit 约 34 token/s (M5 Max)\"]\n    GPU[\"集成 GPU (Metal)\"] --> T1\n    T1 --> LF1[\"受 CPU/GPU 带宽、量化、上下文长度影响\"]\n    S2 --> T2[\"4‑bit 约 35 token/s (Mac Studio 512 GB)\"]\n    T2 --> LF1\n    PRE[\"预填充阶段\"] --> GEN[\"生成 token\"]\n    GEN --> LF1\n    MIN --> NOT[\"不适用于 16/32/64 GB 笔记本\"]"
+    },
+    {
+      "title": "本地运行 vs 托管 API 决策",
+      "code": "flowchart TD\n    LR[\"本地运行\"] --> PR[\"私有代码留在本机\"]\n    LR --> NI[\"无需互联网\"]\n    LR --> EC[\"避免每百万 token 费用\"]\n    LR --> HC[\"需高内存硬件\"]\n    API[\"托管 API\"] --> QC[\"更高质量、更多上下文\"]\n    API --> EC\n    QC --> QD[\"量化可能导致质量下降\"]\n    HC --> DEC[\"根据预算与需求选择\"]\n    PR --> DEC\n    NI --> DEC\n    QD --> DEC\n    DEC --> RE[\"128 GB 可尝试 2‑bit；192‑256 GB 试更高质量\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T04:21:14+00:00"
+}

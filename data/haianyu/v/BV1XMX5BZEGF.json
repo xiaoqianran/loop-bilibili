@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1XMX5BZEGF",
+  "title": "[13] AutoDL上部署龙虾，它能帮忙测试算子性能吗？【每周一个宝藏实验】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1168,
+  "text": "本周的实验室auto dio上能部署龙虾吗\n如果可以的话\n就可以让他帮忙测试一下扇子的性能\n环境是auto雕上短坐的RTX5090\n单卡方法是先用指令一键安装KIMI\n然后一键让KIMI安装龙虾\n它确实也安上了\n效果是龙虾测试的flash infbench\n单个算子在不同batch size下的性能核对\n手动运行了一下\n发现结果和实验报告中的数字是可以对得上的\n没有发现龙虾下面数字虽然耗时四个小时\n从做服务器开始\n那么首先要安装KIMI\n然后要部署龙虾\n还有tech life\n之后呢\n龙虾会用tag lab生成一份报告去报告一下\n在不同batch size下的性能参考的就是flash infbench\n然后接下来看一下实验配置\n那么和之前一样\n还是经典5090经典配置\n那么还是和之前一样\n就是直接安装一个KIMI\n就是我们先远程登录云服务器\n这样这样登录进来\n然后呢用这个指令就可以一键安装KIMI\n这个我试了一下\n它是非常的稳\n然后呢进行一个登录\n他会要浏览器登录一下KIMI\n然后不在这个位置领取一下所有的权限\n就是在这个root这个目录下面选择一下这个KIMI\n就这个\n然后里面它会有一个选项\n就这个改成true\n就可以自动允许权限\nOK然后接下来呢安装一下tech life\n因为我们让它自动的写实验报告\nOK那这个怎么安装呢\n当然是也把这个任务分发给KIMI\n就是给他写个提示词\n请帮我把tech live安装在这个服务器上面\n然后呢就是临时使用安装一个基础版\n那么这个时候呢他就帮我们安装了一个tech life\n就是这个这个OK那这个呢也就安好了\n可能要花一两个小时\n这个还是有点慢的\n然后呢要安装open CD\n那么也直接让KIMI帮我安装\n然后呢然后他就把它安装好了好\n然后接下来呢就把open cloud给它召唤出来\n这个就是我们的open cloud\n然后把这个实验任务给他分发下去\n那他就给我们运行了一个结果\n就他测试了一下\n在不同batch模式下\n就是这个BESIZE等于一四十六六十四\n那么我们就可以去运行一下他写好的这个脚本\n就应该是位于这个位置\n就他写好了一个\n就他的效果就是去对比了一下\n就是在不同batch size上的一个效果\nOK然后呢给我们写了一个实验报告\n那这个就是他写的这个实验报告\n那么他还是会很诚实的把这些都记录下来的\n那么还有一个问题就是龙虾\n他报告的数字对不对呢\n有没有可能是他瞎编的呢\n那么就对了一下\n发现是对得上的\n比如说是显卡的型号\n显存的大小\nGITHUB仓库的链接以及实验的时间\n还有不同batch size下算子的延时\n比如说我们刚才手动又跑了一遍\n那么这一次跑出来的结果和他的这个报告呢\n数字是很接近的\n那么可以看到它是比较诚实的\n当然可能还是需要手动合一下",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1XMX5BZEGF",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:18:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

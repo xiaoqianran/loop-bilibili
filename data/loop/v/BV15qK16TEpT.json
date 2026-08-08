@@ -1,0 +1,66 @@
+{
+  "bvid": "BV15qK16TEpT",
+  "title": "DeepSeek V4 Flash Dspark 每秒43t/s [两张3090，双路epyc7642 推测解码]",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2555,
+  "text": "好的\n今天我们来快速的讲一下如何本地部署呃\ndeep sec v4flash dispark这个版本用两张3090\n现在的话三零系\n四零系\n五零的系的显卡都支持了呃\n首先我们来装安装\n安装的话呃\n首先是要装KDA13.2.1\n然后装一个康A的运行环境\n然后再装一个pip的发布的安装包\n那第一步的话\n安装CONDA以及这个KDA13.2.1的话\n来到LVM的主页上\n有有这两个安装步骤\n照着做一下就行了\n这个很简单的\n你如果已经装过的话\n就不用重复重新开一个抗大运行环境可以\n然后接着的话这两个项目的话呃\n带X的JS4杠X的是支持通用的版本\n四零系\n五零系\n三零系都可以\n这个不带X的是只支持五零系的\n然后我们进到带X这个版本\n这里面发布了一个最新的版本\n2.3.8呃\n我们进来以后的话呃\n可以看到下面这里有个WHL的包\n我们把它下载下来\n下载下来的话用w get命令也可以\n或者你用其他方式\n然后下载好以后用pip\n这个是第三个步骤\npip安装一下list\n好现在我们这个安装的话\n第一次他会下载一些包呃\n设置一下清华的镜像源的话\n就会下载的比较快\n这个装好了以后\n我们这个显示successful\n然后就可以复制我们的运行命令\n运行命令在这里跟着版本一起发布的\n这个是针对3090的两张3090\n所以说你的配置不一样的话\n可以改一下\n像4090的话\n嗯显存多一点就可以把一些参数设置大一些\n好现在命令正在运行\n我们看一下呃\n显存的占用情况和内存占用情况嗯\n现在的话我的显显卡是这两张3090\n拉宽一点啊\n两个3090就0号卡和3号卡\n这显存的话\n165G等加载完毕应该是190吧\n显存的话\n一开始模型加载用了额\n总共用了13个G\n这个是模型占用的显存这一部分\n那后面肯定还有什么kv catch啊\n这些全部占用加起来\n我设置的是80%\n这个启动速度应该是挺快的\n加载完以后\n可以看到你的QQ开启的大小\n好现在总的内存又又往上涨了一些\n总共应该是模型占了160多G\n哦现在已经在在预热了\n在在做这个预热处理\n好内存和显存占用的情况大家应该清楚了\n就是内存不齐\n就是190GQ的操作系统的\n20多G的话就一百一百六十G左右\n然后的话我当前这个配置的话呃\nkv catch的话还剩53K\n还有53K的kv patch就上下文的长度\n但这个这个配置的话额还是比较符呃\n为了速度占用了很多显存\n然后现在我们先做一个测试\n然后边测边跟大家说一下这个配置参数要调\n可以调整的地方\n在在版本发布说明里面其实已经写的有了\n然后第一次这个做请求的话\n他这个会慢一点\n慢是慢\n在这个做编译\n他在做这个有些代码的动态编译train啊\n有些一些内核的动态的编译好\n现在我们来看一下这个GPU的占用情况\n26%\n这个GPU的占用的话比较低的话\n是因为我们开启了这个推测解码\n在推测解码的时候\n它可以合并请求\n所以对这个显卡的占用率会降低的\n如果不开启推测解码的话\n这里应该是30%多\n30多\n我们看一下这个速度\n这个速度还是可以的\n比我开启投机解码以后的话\n这个速度是明显快了很多的\n好我们看呃\n这个没办法用那个测试工具测\n但是可以看到这个这里有个average av机\n大家记好了\nav机生成速度\n我们就看AVG\n这里是四十一四十四十二\n42.6\n41.7\n41.8\n这个版本我发现在3090这个版本上跑的话\n这个接受接受率很高啊\n90%几的接受率啊\n而且这个接受率一高\n我的这个速度就上来了\n就40多\n原来我用呃5060系\n5060ti两张跑的时候\n这个接受率没有这么高的\n当时的速度最高也就是百呃\n35还是36通\n更是每秒\n现在是达到了最高\n已经来到43了\n而且基本上不会掉速\n80%几的接受率基本上不会掉\n我们看一下前台\n这个在这种编程的问题里面\n包括前面的文字部分\n他都不会掉速\n这个这个就很很漂亮了\n呃所以说的话嗯这个已已经有点实用价值了\n然后这个prefer速度的话\n呃在我的机器上\n我的我的机器的配置是啊对\n正好给你说说一下\n是两张EPYC7642双路的EPYC\n76422代的EPYC也是10年前的CPU了\n然后呃行内存的话比较多\n内存我16个通道全部占满了\n然后两张3090用的是呃VMDS4杠X\n这个版本杠X\n应该是V2.3.8\n这个版本这个大概是这么个情况\n在这个测速的话\n如果是不开推测解码可以测速\n我这个不开推测解码就是二十六二十六通ken\n然后开启推测解码就是42\n然后这个的话呃prefer速度的话\n我的配置没没没没好好的调呃\n现在是600不到一点\n当然如果配置好的话\n肯定是可以到两千一两千的\n这3000我们呃一张pro\n一张RTX pro\n6000的话\n那个可以来到3000的prefer\n所以说这个一个是参数\n一个是硬件好\n现在我们来说一下呃\n这个测速的话\n现在你看这个接受率还是可以的\n都保持在40个通ken以上\n很稳非常稳\n那现在我们看一下配置要注意的地方呃\n这个确实要注意了\n这个不太一样\n一个是这个分配位的分配的这个显显存大小\n百分比啊\n给kv catch的要留出一部分来\n不能用百分之\n不能再写\n0.95写了肯定跑不起来的\n因为要留出一部分给这个train\n他一个动态编译呃\n这个以后再优化吧\n所以这部分要留留出来给动态编译呃\n这个是否则跑不起来\n然后第二个的话呃\n就关于你是要选择上下文大的话\n还是选择速度\n目前这个命令给出来的话就开启了GPU prefer\n是为了这个prefer速度的\n如果你不开的话\nprefer就会很可怜的速度呃\n所以开不开是决定于这两个参数嗯\n一个mini batch size和prefetch window\n如果不开的话\n就把这两个环境变量删掉就可以了\n删掉就不开了\n不开的话上下文就可以长出很多来\n然后还有第第三个点\n第三个优化点的话就是呃\n如果你确实显存紧张的话\n就把这个max number batch tokins\n我现在设的8192\n这个也是为了prefer速度设置的\n那可以改小一点\n改成512\n那也可以省出不少显存来\n那么特别特别对于单显卡\n单显卡的话\n大家就可以参照上面的方式\n来做一些节省显存的操作\n好的我们现在看这个已经是跑跑完一遍了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV15qK16TEpT",
+  "published_at": "1784528424",
+  "fetched_at": "2026-08-08T02:15:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash Dspark 本地部署知识图谱\n\n## 部署步骤概览 [BV15qK16TEpT P1 00:05]\n```mermaid\nflowchart TD\n    A1[\"GPU兼容性: 30/40/50 系列\"]\n    A2[\"安装 Conda\"]\n    A3[\"安装 CUDA 13.2.1\"]\n    A4[\"安装运行时环境 (Kernels)\"]\n    A5[\"下载 WHL 包 (v2.3.8)\"]\n    A6[\"pip 安装 WHL\"]\n    A7[\"设置清华镜像源\"]\n    A8[\"运行启动命令 (针对两张3090)\"]\n    A9[\"根据硬件调整参数 (如 4090)\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9\n```\n\n## 性能影响因素与调优 [BV15qK16TEpT P1 04:08]\n```mermaid\nflowchart TD\n    B1[\"开启推测解码\"]\n    B2[\"合并请求，降低 GPU 占用\"]\n    B3[\"GPU 占用率 26%（开启） vs 30%+（未开）\"]\n    B4[\"接受率 ~90%\"]\n    B5[\"吞吐速度 40+ token/s\"]\n    B6[\"影响因素: kv cache 分配, batch size, prefetch window\"]\n    B7[\"调优: 调整 mini batch size, prefetch window, max batch tokens\"]\n    B1 --> B2 --> B3\n    B4 --> B5\n    B4 --> B6 --> B7\n```\n\n## 显存分配与参数配置 [BV15qK16TEpT P1 02:35]\n```mermaid\nflowchart TD\n    C1[\"显存总量约 165-190 GB\"]\n    C2[\"模型加载占用 13 GB\"]\n    C3[\"kv cache 预留 80%\"]\n    C4[\"实际 kv cache 可用 53K（上下文长度）\"]\n    C5[\"动态编译占用显存\"]\n    C6[\"显存分配比例不能设 0.95（会导致启动失败）\"]\n    C7[\"参数: max_number_batch_tokens (8192 → 512)\"]\n    C8[\"单卡显存节省策略\"]\n    C1 --> C2\n    C1 --> C3 --> C4\n    C1 --> C5\n    C3 --> C6\n    C7 --> C8\n    C6 --> C8\n```",
+      "diagrams": [
+        {
+          "title": "部署步骤概览",
+          "code": "flowchart TD\n    A1[\"GPU兼容性: 30/40/50 系列\"]\n    A2[\"安装 Conda\"]\n    A3[\"安装 CUDA 13.2.1\"]\n    A4[\"安装运行时环境 (Kernels)\"]\n    A5[\"下载 WHL 包 (v2.3.8)\"]\n    A6[\"pip 安装 WHL\"]\n    A7[\"设置清华镜像源\"]\n    A8[\"运行启动命令 (针对两张3090)\"]\n    A9[\"根据硬件调整参数 (如 4090)\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9"
+        },
+        {
+          "title": "性能影响因素与调优",
+          "code": "flowchart TD\n    B1[\"开启推测解码\"]\n    B2[\"合并请求，降低 GPU 占用\"]\n    B3[\"GPU 占用率 26%（开启） vs 30%+（未开）\"]\n    B4[\"接受率 ~90%\"]\n    B5[\"吞吐速度 40+ token/s\"]\n    B6[\"影响因素: kv cache 分配, batch size, prefetch window\"]\n    B7[\"调优: 调整 mini batch size, prefetch window, max batch tokens\"]\n    B1 --> B2 --> B3\n    B4 --> B5\n    B4 --> B6 --> B7"
+        },
+        {
+          "title": "显存分配与参数配置",
+          "code": "flowchart TD\n    C1[\"显存总量约 165-190 GB\"]\n    C2[\"模型加载占用 13 GB\"]\n    C3[\"kv cache 预留 80%\"]\n    C4[\"实际 kv cache 可用 53K（上下文长度）\"]\n    C5[\"动态编译占用显存\"]\n    C6[\"显存分配比例不能设 0.95（会导致启动失败）\"]\n    C7[\"参数: max_number_batch_tokens (8192 → 512)\"]\n    C8[\"单卡显存节省策略\"]\n    C1 --> C2\n    C1 --> C3 --> C4\n    C1 --> C5\n    C3 --> C6\n    C7 --> C8\n    C6 --> C8"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T02:15:26+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash Dspark 本地部署知识图谱\n\n## 部署步骤概览 [BV15qK16TEpT P1 00:05]\n```mermaid\nflowchart TD\n    A1[\"GPU兼容性: 30/40/50 系列\"]\n    A2[\"安装 Conda\"]\n    A3[\"安装 CUDA 13.2.1\"]\n    A4[\"安装运行时环境 (Kernels)\"]\n    A5[\"下载 WHL 包 (v2.3.8)\"]\n    A6[\"pip 安装 WHL\"]\n    A7[\"设置清华镜像源\"]\n    A8[\"运行启动命令 (针对两张3090)\"]\n    A9[\"根据硬件调整参数 (如 4090)\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9\n```\n\n## 性能影响因素与调优 [BV15qK16TEpT P1 04:08]\n```mermaid\nflowchart TD\n    B1[\"开启推测解码\"]\n    B2[\"合并请求，降低 GPU 占用\"]\n    B3[\"GPU 占用率 26%（开启） vs 30%+（未开）\"]\n    B4[\"接受率 ~90%\"]\n    B5[\"吞吐速度 40+ token/s\"]\n    B6[\"影响因素: kv cache 分配, batch size, prefetch window\"]\n    B7[\"调优: 调整 mini batch size, prefetch window, max batch tokens\"]\n    B1 --> B2 --> B3\n    B4 --> B5\n    B4 --> B6 --> B7\n```\n\n## 显存分配与参数配置 [BV15qK16TEpT P1 02:35]\n```mermaid\nflowchart TD\n    C1[\"显存总量约 165-190 GB\"]\n    C2[\"模型加载占用 13 GB\"]\n    C3[\"kv cache 预留 80%\"]\n    C4[\"实际 kv cache 可用 53K（上下文长度）\"]\n    C5[\"动态编译占用显存\"]\n    C6[\"显存分配比例不能设 0.95（会导致启动失败）\"]\n    C7[\"参数: max_number_batch_tokens (8192 → 512)\"]\n    C8[\"单卡显存节省策略\"]\n    C1 --> C2\n    C1 --> C3 --> C4\n    C1 --> C5\n    C3 --> C6\n    C7 --> C8\n    C6 --> C8\n```",
+  "diagrams": [
+    {
+      "title": "部署步骤概览",
+      "code": "flowchart TD\n    A1[\"GPU兼容性: 30/40/50 系列\"]\n    A2[\"安装 Conda\"]\n    A3[\"安装 CUDA 13.2.1\"]\n    A4[\"安装运行时环境 (Kernels)\"]\n    A5[\"下载 WHL 包 (v2.3.8)\"]\n    A6[\"pip 安装 WHL\"]\n    A7[\"设置清华镜像源\"]\n    A8[\"运行启动命令 (针对两张3090)\"]\n    A9[\"根据硬件调整参数 (如 4090)\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9"
+    },
+    {
+      "title": "性能影响因素与调优",
+      "code": "flowchart TD\n    B1[\"开启推测解码\"]\n    B2[\"合并请求，降低 GPU 占用\"]\n    B3[\"GPU 占用率 26%（开启） vs 30%+（未开）\"]\n    B4[\"接受率 ~90%\"]\n    B5[\"吞吐速度 40+ token/s\"]\n    B6[\"影响因素: kv cache 分配, batch size, prefetch window\"]\n    B7[\"调优: 调整 mini batch size, prefetch window, max batch tokens\"]\n    B1 --> B2 --> B3\n    B4 --> B5\n    B4 --> B6 --> B7"
+    },
+    {
+      "title": "显存分配与参数配置",
+      "code": "flowchart TD\n    C1[\"显存总量约 165-190 GB\"]\n    C2[\"模型加载占用 13 GB\"]\n    C3[\"kv cache 预留 80%\"]\n    C4[\"实际 kv cache 可用 53K（上下文长度）\"]\n    C5[\"动态编译占用显存\"]\n    C6[\"显存分配比例不能设 0.95（会导致启动失败）\"]\n    C7[\"参数: max_number_batch_tokens (8192 → 512)\"]\n    C8[\"单卡显存节省策略\"]\n    C1 --> C2\n    C1 --> C3 --> C4\n    C1 --> C5\n    C3 --> C6\n    C7 --> C8\n    C6 --> C8"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T02:15:26+00:00"
+}

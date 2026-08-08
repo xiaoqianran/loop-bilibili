@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1djjc6MEba",
+  "title": "为什么说UE5.8 是游戏规则的改变者？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3943,
+  "text": "虚幻引擎5.8最新版发布\n刚上线\n真正颠覆体验关键在于全新的网格地形系统\n还有强大的LUMIN探针遮蔽功能\n虚幻引擎的地形系统自右翼三起就没怎么变过\n虽然能用\n让我们能在一个大块上随意雕琢\n却没法自由调整\n能雕的细节也有限\n还只能上下雕\n没法在地里挖洞\n也雕不出天然的悬崖\n悬壁\n就大自然里本该有的那种地貌\n所以大多数虚幻场景地形更像是关卡的地基\n真正细节基本都靠静态模型来实现\n我们从没用地形系统挖过洞\n也没用来做过复杂造型\n全靠独立于地形的物件拼凑出来\n借助虚拟纹理混合等手法\n让这些物件看上去就跟地形浑然一体\n其实地形根本撑不住这么多细节\n虚幻引擎5.8里\n这终于变了\n全新网格地形系统登场\n让我们能随心所欲地雕琢细节\n在大范围连贯地形上创作\n自由度比以往任何时候都高\n现在能真正用3D方式雕刻地形\n轻松打造洞穴系统和自然地貌\n如果我你用过过blender或ZBRUSH\n这两件雕刻过模型\n对对这新工具就一定都陌生\n不过这次不是雕一个物件\n而是直接在雕整个世界\n靠的就是这个智能图层系统\n让你随时保存雕刻好的地貌\n如果你做出喜欢的造型\n能复制粘贴到地图的任意位置\n就跟拖拽普通物件一样方便\n要是不满意某个改动\n还能一键删掉\n不影响原结构\n和旧版地形工具不一样\n全地图都得用一样的精细度\n以前现在每块区域都能自定义细节程度\n比如地图里平坦又简单的部分\n用少量多边形就够了\n而地图另一部分你雕刻出复杂地貌的区域\n可使用更高密度的多边形\n得益于NNIGHT再也也不操心细节层次\n场景自动降低多边形密度\n离摄像机越远\n这很重要\n意味着你在设计环境时\n能直接在虚幻引擎里完成更多工作\n不必再转到其他软件\n任何模型都能直接变成网格\n地形过去受受限于技术瓶颈\n许多自定义地形\n都得先在其他建模软件里做出来\n接着导入虚幻引擎\n当成网格使用\n现在你就能在引擎里直接创建地形了\n或者你你可以先开始创建地形网格的流程\n在其他软件中完成地形网格的构建\n再导入虚幻引擎\n直接转成地形网格之后还能继续雕刻和上色\n做游戏场景时特别方便嗯\n如果需要根据玩法快速改一下地形\n不不用切到blender或MAYA\n直接在场景里改就行\nmesh training早就有一堆实用工具\n比如纹理调整器\n要是你手头有常规高程图\n直接拖进世界里\n想怎么调就怎么调\n想要真实按地貌\n还能把任意静态模型无缝接上去\n用布尔修改器\n这是我在blender里做的一块地貌\n再用个布尔操作就能和地形完美融合\n如果觉得mastering还缺啥功能\n直接用PCG和蓝图自己造工具就行\nmastering就是虚幻引擎\n造地形的未来前景无限\n想怎么玩就怎么玩\n想掌握打造前沿地形的技巧\n还能免费领取我专为他设计的主材质包\n忘了看看我上周发在频道里的mashering in\n入门教程\n从零开始的所有购要点\n这里全都有\n接下来的出场更新是lumen的全新光照系统\n核心就是优化性能\n它基于带探针遮蔽的辐照\n听上去复杂\n其实不难\n但真上手了你就懂了\n这个系统叫lumin light\n不过我更愿意叫它lumen探针\n如果还不清楚\nLUMIN是U1的照明系统\n它能实时计算照明\n也就是说\n一旦世界变化或光源移动\n照明就会随之计时变化\n这在硬件上代价不低\n因为每帧都要计算全局光照\n也就是间接光光不是撞上物体就停了\n而是从物体表面反弹照亮周围环境\n这就是光线追踪\n因为它是通过追踪光线传播路径实现的\n虚幻引擎\n四推出lumen前\n那时我们靠光照烘焙来获取全局光照\n他一次性算出场景中所有光线的传播\n再将光照数据烘焙进光照贴图里面\n记录了所有间接光照和阴影效果\n最后直接叠加到场景中\n模拟出全局光照\n它通过看似真实的光影效果\n实际上这只是张教光照贴图的纹理\n烘焙光照只需计算一次光线追踪\n无需每帧重算\n这正是现代光线追踪的实现方式\n但仅烘焙光照贴图只对静态物体有效\n众所周周知\n游戏中有很多动态元素\n这些元素无法获取烘焙好的光照贴图\n为突破这一限制\nUE4中除了烘焙纹理\n还会额外烘焙一张体积光照贴图\n这些是记录间接光照信息的空间点\n这正是物体处于该位置时所接收到的光照\n当移动物体靠近这些点时\n就会把对应的光照信息应用到告该物体上\n我们用探针来呈现这些点采集的光照数据\n在UV4中环境烘焙完成后\n这里就创建了两个探针\n当我把物体靠近探针时\n你能看到每一个探针的光照数据\n都投射到了移动物体上\n但问题是\n一旦环境发生变动\n光探针无法实时更新\n它们固定不动\n所以得重新烘焙光照贴图和体积光照贴图\n才能更新探针数据\n回到虚幻引擎五的场景\n虽然lumen能够的大幅加速全局光照计算\n凭借独特优化\n但对硬件仍是巨大负担\n老款电脑或像switch2这类移动设备\n基本无法在流畅帧率下运行行语本\n如今U5.8正式推出lumen探针遮蔽技术\n本质上与E4的体积光照贴图一致\n但光照探针不再固定\n不变也不再仅生成一次\n而是实时生成\n并随环境实时刷新\n一旦物体或灯光移动\n光照探针会自动调整\n性能提升至LUMA高画质模式的两倍\n主要原因在于光照数据被存储于3D空间中\n仅在需要时计算\n无需每帧处理\n专为实现高效选设计性能较低的设备\n比如switch2也能用上lumen全局光照\n不过每种方案都有各自的取舍\n当然当lumen设置为高画质时\n硬件光线追踪的画面表现依旧更出色\n真实感也远胜于lumen\n探针龙门现在已不只是单一的全局光照技术\n而是一套涵盖多种光照方案的体系\n涵盖从画面最逼真\n但性能开销最大\n高性能硬件光线追踪到性能更优\n但精度稍逊\n软件光线追踪直至最低\n画质设定缺性能最强\n画面依然不错\n正正是lumen探针开启中等全局光照后\nlumen探针会自动启用\n设置全局光照为中等\n即可让U15在switch2上流畅运行至关重要\n因为任天堂正越来越依赖虚幻引擎\n马力欧与路易吉兄弟传皮克敏四\n还有耀西的手工世界\n也都是用虚幻引擎打造的\n但他们仍用的是UE4\n否则用UE5没必要\n除非能用上lumen这类新功能\nlumen探针将助力更多U15功能登录switch\n二和手机\nMAD human创造者自发布以来迎来最大更新\n只要外形接近真人\n就能一键生成完整MAD human\n现在我们可在blender或zebra里自由塑造角色\n直接导入unreal引擎\n自动转为高精度角色\n即可投入动画与游戏制作\n无论网格结构如何都能处理\nMea human creator\n会自动自动将其转为可动的骨骼结构\n这太惊人了\n只要试过从头建模角色\n就知道就知道要花的时间\n之前为其他MATTHEMAN做的动画和行走动作\n全都能复用\n现在在还能直接操控网格来动画了\n这是种能直接选中并调整网格的动画方式\n这是一种能直接选中并调整网格的动画方式\n某些情况下直接操控更高效\n不用再选预设控制了\n直接在网格上做动画\n还有一个贴心的小改进\n时间轴多了个小巧的版本\n感觉更像blender的时间轴了\n既留出更多显示空间\n又不宜影响使用\n新增了名为屏幕空间物散射的雾效系统\n让物感更真实地融入环境\n柔化远距离景物\n让远端景物自然晕染\n融为一体\n带来更朦胧\n更具电影感的视觉层次\n开启前先选中指数型高物\n再开启体积物\n需配合体积物一起使用\n并在实验功能中打开\n开启前画面太清晰\n开启后则截然不同\n留意远处物体被雾气逐渐遮挡的效果\n这就是浓雾该有的样子\nMEGALIZE已正式上线\n开机即启用\n现在不用再纠结灯光数量了\n还能到处随意点上消\n自由勾勒光影\n次表面散射和水这类半透材质现在都能玩\n完美适配\nMegalits\n现在有了专为卡通着色打造的底层材质系统\n特别适合风格化\n非写实的角色\n颜色渐变也能随心掌控光线怎么跟材质互动\n对动漫角色来说简直是量身定做\nblender早就玩转卡通着色了\n用他作出的精彩动漫作品多到让人瞠目\n虽然虚幻引擎早就有\n风格化的卡通类游戏和动画\n比如漫威争锋\n但过去得靠高难度着色器开发才能实现\n现在这些效果直接内置于引擎里了\n所以今后虚幻引擎会涌现出更多风格化作品\n现在我们能对生成后的程序化内容直接修改\n真正做到了随心所欲的操控\n做大气型场景时\nPCG简直是神器\n因为能设定规则\n自动随机生成事件\n我日常创作中几乎离不开它\n不过有个关键问题\n就是对单个物件的位置基本没法掌控\n或生成效果也基本无法控制\n如果不喜欢PCG里某个物件的位置\n直接进编辑区挪一下就行\n还能随时手动加东西或删掉\n这个游戏设计太关键了\n比如你建了个森林\n可后来发现有些树正好挡在房子\n这类玩法元素中间\n不用再重跑一次\nPCG就只能靠碰运气\n看能不能出个好位置\n也可以直接加更多节点\n直接改就行\n这个小改动省时又实用\n让PCG更顺手了\n说到省事\n现在有了个新操控柄\n用起来比圆顺多了\n界面更清爽\n占的地方也小\n还新增了受blender启发的移动方式\n按住CTRL加鼠标不用碰操控柄也能移动物体\n按alt加方向键就能逐格微调物体位置\n按住CTRL可进行微调\n操作更精准\n这些快捷键也支持旋转和缩放\n携手valve EPIC首发支持steam frame\n即steam的新一代VR平台\n终于看到EPIC加入VR支持\nunreal还率先适配了valve新头显\n未来将有更多unreal VR游戏陆续上线\n这些只是部分新功能上路路线图\n看看全貌一目了然\n别忘了\n订阅以后还有更多精彩3D资讯和教程哦\n想学unreal的话\n我我这里有两门免费课程\n就在YOUTUBE上\n手把手带你入门\nunreal第一门入门课里\n你会学到怎么把大厨眼前这座城堡场景\n第二期教程里亲手做出你的第一个游戏\n点开下方简介\n两个都去试试吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1djjc6MEba",
+  "published_at": "1781775313",
+  "fetched_at": "2026-08-07T21:44:41+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# UE5.8 关键特性关系图谱\n\n## 总览\n```mermaid\nflowchart TD\n    UE58[\"UE5.8\"]\n    MeshTerrain[\"全新网格地形系统\"]\n    LumenProbe[\"Lumen 探针遮蔽\"]\n    SSSubscatter[\"屏幕空间物散射（雾效）\"]\n    MaterialSys[\"新材质系统（卡通/风格化）\"]\n    PCGTools[\"程序化内容生成工具\"]\n    VRSupport[\"VR 与 Steam VR 支持\"]\n    UIImprov[\"界面与操作改进\"]\n\n    UE58 --> MeshTerrain\n    UE58 --> LumenProbe\n    UE58 --> SSSubscatter\n    UE58 --> MaterialSys\n    UE58 --> PCGTools\n    UE58 --> VRSupport\n    UE58 --> UIImprov\n```\n\n## 网格地形系统工作流\n```mermaid\nflowchart TD\n    OldLimits[\"旧地形系统限制\"]\n    NewSystem[\"全新网格地形系统\"]\n    Sculpt3D[\"3D 方式雕刻\"]\n    HoleCreation[\"洞穴/孔洞创建\"]\n    CliffGen[\"自然悬崖/悬壁生成\"]\n    VariableDensity[\"区域可变多边形密度\"]\n    AutoLOD[\"自动 LOD / 多边形降密\"]\n    SmartLayer[\"智能图层系统（保存/复制/粘贴）\"]\n    UndoRedo[\"一键撤销/删除\"]\n    CopyPaste[\"复制粘贴至任意位置\"]\n\n    OldLimits --> NewSystem\n    NewSystem --> Sculpt3D\n    NewSystem --> HoleCreation\n    NewSystem --> CliffGen\n    NewSystem --> VariableDensity\n    VariableDensity --> AutoLOD\n    NewSystem --> SmartLayer\n    SmartLayer --> CopyPaste\n    SmartLayer --> UndoRedo\n```\n\n## Lumen 照明演进与性能\n```mermaid\nflowchart TD\n    Baked[\"烘焙光照（UE4）\"]\n    ProbeStatic[\"体积光照探针（一次性）\"]\n    UE5Lumen[\"UE5 Lumen 系统\"]\n    DynamicProbe[\"实时生成 & 刷新探针\"]\n    RealTime[\"实时全局光照计算\"]\n    HWConstraints[\"硬件性能限制\"]\n    MobileGain[\"移动设备（如 Switch2）性能提升\"]\n    QualityTrade[\"画质 vs 性能权衡\"]\n    RayTrace[\"硬件光线追踪（高画质）\"]\n\n    Baked --> ProbeStatic\n    ProbeStatic --> UE5Lumen\n    UE5Lumen --> DynamicProbe\n    DynamicProbe --> RealTime\n    RealTime --> HWConstraints\n    HWConstraints --> MobileGain\n    HWConstraints --> QualityTrade\n    QualityTrade --> RayTrace\n```\n\n## 程序化内容生成与手动调节\n```mermaid\nflowchart TD\n    PCGRules[\"PCG 规则设定\"]\n    AutoGen[\"随机生成内容\"]\n    Scene[\"生成的场景对象\"]\n    ManualEdit[\"手动编辑模式\"]\n    PosAdjust[\"位置微调（Ctrl/Alt）\"]\n    NodeAdd[\"添加新节点\"]\n    NodeDelete[\"删除节点\"]\n    ImmediateFeedback[\"即时可视化反馈\"]\n    SaveChanges[\"保存/应用更改\"]\n\n    PCGRules --> AutoGen\n    AutoGen --> Scene\n    Scene --> ManualEdit\n    ManualEdit --> PosAdjust\n    ManualEdit --> NodeAdd\n    ManualEdit --> NodeDelete\n    ManualEdit --> ImmediateFeedback\n    ImmediateFeedback --> SaveChanges\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    UE58[\"UE5.8\"]\n    MeshTerrain[\"全新网格地形系统\"]\n    LumenProbe[\"Lumen 探针遮蔽\"]\n    SSSubscatter[\"屏幕空间物散射（雾效）\"]\n    MaterialSys[\"新材质系统（卡通/风格化）\"]\n    PCGTools[\"程序化内容生成工具\"]\n    VRSupport[\"VR 与 Steam VR 支持\"]\n    UIImprov[\"界面与操作改进\"]\n\n    UE58 --> MeshTerrain\n    UE58 --> LumenProbe\n    UE58 --> SSSubscatter\n    UE58 --> MaterialSys\n    UE58 --> PCGTools\n    UE58 --> VRSupport\n    UE58 --> UIImprov"
+        },
+        {
+          "title": "网格地形系统工作流",
+          "code": "flowchart TD\n    OldLimits[\"旧地形系统限制\"]\n    NewSystem[\"全新网格地形系统\"]\n    Sculpt3D[\"3D 方式雕刻\"]\n    HoleCreation[\"洞穴/孔洞创建\"]\n    CliffGen[\"自然悬崖/悬壁生成\"]\n    VariableDensity[\"区域可变多边形密度\"]\n    AutoLOD[\"自动 LOD / 多边形降密\"]\n    SmartLayer[\"智能图层系统（保存/复制/粘贴）\"]\n    UndoRedo[\"一键撤销/删除\"]\n    CopyPaste[\"复制粘贴至任意位置\"]\n\n    OldLimits --> NewSystem\n    NewSystem --> Sculpt3D\n    NewSystem --> HoleCreation\n    NewSystem --> CliffGen\n    NewSystem --> VariableDensity\n    VariableDensity --> AutoLOD\n    NewSystem --> SmartLayer\n    SmartLayer --> CopyPaste\n    SmartLayer --> UndoRedo"
+        },
+        {
+          "title": "Lumen 照明演进与性能",
+          "code": "flowchart TD\n    Baked[\"烘焙光照（UE4）\"]\n    ProbeStatic[\"体积光照探针（一次性）\"]\n    UE5Lumen[\"UE5 Lumen 系统\"]\n    DynamicProbe[\"实时生成 & 刷新探针\"]\n    RealTime[\"实时全局光照计算\"]\n    HWConstraints[\"硬件性能限制\"]\n    MobileGain[\"移动设备（如 Switch2）性能提升\"]\n    QualityTrade[\"画质 vs 性能权衡\"]\n    RayTrace[\"硬件光线追踪（高画质）\"]\n\n    Baked --> ProbeStatic\n    ProbeStatic --> UE5Lumen\n    UE5Lumen --> DynamicProbe\n    DynamicProbe --> RealTime\n    RealTime --> HWConstraints\n    HWConstraints --> MobileGain\n    HWConstraints --> QualityTrade\n    QualityTrade --> RayTrace"
+        },
+        {
+          "title": "程序化内容生成与手动调节",
+          "code": "flowchart TD\n    PCGRules[\"PCG 规则设定\"]\n    AutoGen[\"随机生成内容\"]\n    Scene[\"生成的场景对象\"]\n    ManualEdit[\"手动编辑模式\"]\n    PosAdjust[\"位置微调（Ctrl/Alt）\"]\n    NodeAdd[\"添加新节点\"]\n    NodeDelete[\"删除节点\"]\n    ImmediateFeedback[\"即时可视化反馈\"]\n    SaveChanges[\"保存/应用更改\"]\n\n    PCGRules --> AutoGen\n    AutoGen --> Scene\n    Scene --> ManualEdit\n    ManualEdit --> PosAdjust\n    ManualEdit --> NodeAdd\n    ManualEdit --> NodeDelete\n    ManualEdit --> ImmediateFeedback\n    ImmediateFeedback --> SaveChanges"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T21:49:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# UE5.8 关键特性关系图谱\n\n## 总览\n```mermaid\nflowchart TD\n    UE58[\"UE5.8\"]\n    MeshTerrain[\"全新网格地形系统\"]\n    LumenProbe[\"Lumen 探针遮蔽\"]\n    SSSubscatter[\"屏幕空间物散射（雾效）\"]\n    MaterialSys[\"新材质系统（卡通/风格化）\"]\n    PCGTools[\"程序化内容生成工具\"]\n    VRSupport[\"VR 与 Steam VR 支持\"]\n    UIImprov[\"界面与操作改进\"]\n\n    UE58 --> MeshTerrain\n    UE58 --> LumenProbe\n    UE58 --> SSSubscatter\n    UE58 --> MaterialSys\n    UE58 --> PCGTools\n    UE58 --> VRSupport\n    UE58 --> UIImprov\n```\n\n## 网格地形系统工作流\n```mermaid\nflowchart TD\n    OldLimits[\"旧地形系统限制\"]\n    NewSystem[\"全新网格地形系统\"]\n    Sculpt3D[\"3D 方式雕刻\"]\n    HoleCreation[\"洞穴/孔洞创建\"]\n    CliffGen[\"自然悬崖/悬壁生成\"]\n    VariableDensity[\"区域可变多边形密度\"]\n    AutoLOD[\"自动 LOD / 多边形降密\"]\n    SmartLayer[\"智能图层系统（保存/复制/粘贴）\"]\n    UndoRedo[\"一键撤销/删除\"]\n    CopyPaste[\"复制粘贴至任意位置\"]\n\n    OldLimits --> NewSystem\n    NewSystem --> Sculpt3D\n    NewSystem --> HoleCreation\n    NewSystem --> CliffGen\n    NewSystem --> VariableDensity\n    VariableDensity --> AutoLOD\n    NewSystem --> SmartLayer\n    SmartLayer --> CopyPaste\n    SmartLayer --> UndoRedo\n```\n\n## Lumen 照明演进与性能\n```mermaid\nflowchart TD\n    Baked[\"烘焙光照（UE4）\"]\n    ProbeStatic[\"体积光照探针（一次性）\"]\n    UE5Lumen[\"UE5 Lumen 系统\"]\n    DynamicProbe[\"实时生成 & 刷新探针\"]\n    RealTime[\"实时全局光照计算\"]\n    HWConstraints[\"硬件性能限制\"]\n    MobileGain[\"移动设备（如 Switch2）性能提升\"]\n    QualityTrade[\"画质 vs 性能权衡\"]\n    RayTrace[\"硬件光线追踪（高画质）\"]\n\n    Baked --> ProbeStatic\n    ProbeStatic --> UE5Lumen\n    UE5Lumen --> DynamicProbe\n    DynamicProbe --> RealTime\n    RealTime --> HWConstraints\n    HWConstraints --> MobileGain\n    HWConstraints --> QualityTrade\n    QualityTrade --> RayTrace\n```\n\n## 程序化内容生成与手动调节\n```mermaid\nflowchart TD\n    PCGRules[\"PCG 规则设定\"]\n    AutoGen[\"随机生成内容\"]\n    Scene[\"生成的场景对象\"]\n    ManualEdit[\"手动编辑模式\"]\n    PosAdjust[\"位置微调（Ctrl/Alt）\"]\n    NodeAdd[\"添加新节点\"]\n    NodeDelete[\"删除节点\"]\n    ImmediateFeedback[\"即时可视化反馈\"]\n    SaveChanges[\"保存/应用更改\"]\n\n    PCGRules --> AutoGen\n    AutoGen --> Scene\n    Scene --> ManualEdit\n    ManualEdit --> PosAdjust\n    ManualEdit --> NodeAdd\n    ManualEdit --> NodeDelete\n    ManualEdit --> ImmediateFeedback\n    ImmediateFeedback --> SaveChanges\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    UE58[\"UE5.8\"]\n    MeshTerrain[\"全新网格地形系统\"]\n    LumenProbe[\"Lumen 探针遮蔽\"]\n    SSSubscatter[\"屏幕空间物散射（雾效）\"]\n    MaterialSys[\"新材质系统（卡通/风格化）\"]\n    PCGTools[\"程序化内容生成工具\"]\n    VRSupport[\"VR 与 Steam VR 支持\"]\n    UIImprov[\"界面与操作改进\"]\n\n    UE58 --> MeshTerrain\n    UE58 --> LumenProbe\n    UE58 --> SSSubscatter\n    UE58 --> MaterialSys\n    UE58 --> PCGTools\n    UE58 --> VRSupport\n    UE58 --> UIImprov"
+    },
+    {
+      "title": "网格地形系统工作流",
+      "code": "flowchart TD\n    OldLimits[\"旧地形系统限制\"]\n    NewSystem[\"全新网格地形系统\"]\n    Sculpt3D[\"3D 方式雕刻\"]\n    HoleCreation[\"洞穴/孔洞创建\"]\n    CliffGen[\"自然悬崖/悬壁生成\"]\n    VariableDensity[\"区域可变多边形密度\"]\n    AutoLOD[\"自动 LOD / 多边形降密\"]\n    SmartLayer[\"智能图层系统（保存/复制/粘贴）\"]\n    UndoRedo[\"一键撤销/删除\"]\n    CopyPaste[\"复制粘贴至任意位置\"]\n\n    OldLimits --> NewSystem\n    NewSystem --> Sculpt3D\n    NewSystem --> HoleCreation\n    NewSystem --> CliffGen\n    NewSystem --> VariableDensity\n    VariableDensity --> AutoLOD\n    NewSystem --> SmartLayer\n    SmartLayer --> CopyPaste\n    SmartLayer --> UndoRedo"
+    },
+    {
+      "title": "Lumen 照明演进与性能",
+      "code": "flowchart TD\n    Baked[\"烘焙光照（UE4）\"]\n    ProbeStatic[\"体积光照探针（一次性）\"]\n    UE5Lumen[\"UE5 Lumen 系统\"]\n    DynamicProbe[\"实时生成 & 刷新探针\"]\n    RealTime[\"实时全局光照计算\"]\n    HWConstraints[\"硬件性能限制\"]\n    MobileGain[\"移动设备（如 Switch2）性能提升\"]\n    QualityTrade[\"画质 vs 性能权衡\"]\n    RayTrace[\"硬件光线追踪（高画质）\"]\n\n    Baked --> ProbeStatic\n    ProbeStatic --> UE5Lumen\n    UE5Lumen --> DynamicProbe\n    DynamicProbe --> RealTime\n    RealTime --> HWConstraints\n    HWConstraints --> MobileGain\n    HWConstraints --> QualityTrade\n    QualityTrade --> RayTrace"
+    },
+    {
+      "title": "程序化内容生成与手动调节",
+      "code": "flowchart TD\n    PCGRules[\"PCG 规则设定\"]\n    AutoGen[\"随机生成内容\"]\n    Scene[\"生成的场景对象\"]\n    ManualEdit[\"手动编辑模式\"]\n    PosAdjust[\"位置微调（Ctrl/Alt）\"]\n    NodeAdd[\"添加新节点\"]\n    NodeDelete[\"删除节点\"]\n    ImmediateFeedback[\"即时可视化反馈\"]\n    SaveChanges[\"保存/应用更改\"]\n\n    PCGRules --> AutoGen\n    AutoGen --> Scene\n    Scene --> ManualEdit\n    ManualEdit --> PosAdjust\n    ManualEdit --> NodeAdd\n    ManualEdit --> NodeDelete\n    ManualEdit --> ImmediateFeedback\n    ImmediateFeedback --> SaveChanges"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T21:49:43+00:00"
+}

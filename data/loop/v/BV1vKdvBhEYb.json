@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1vKdvBhEYb",
+  "title": "别再一帧帧抠动画了！教你10分钟搞定游戏序列帧制作",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1063,
+  "text": "大家好\n这个视频我来分享一下\n用AI来进行真动画制作的一种工作流\n通过这套工作流\n我们可以完全实现单人完成\n一般2D游戏的美术和动画资产制作\n先用豆包生成原始视频素材\n再对视频进行真提取和精修\n这样就得到了我们需要的帧动画\n也可以用它扩展到表情包\nGIF工作演示\n游戏mod等一切需要将视频抽取为真动画的场景\n现在我们先来进入游戏视频资产的制作\n在整个制作过程中\n我们基本上只会使用两个工具来进行演示\n一个是豆包\n另一个是我们的frame packer\n首先呢对我们一些美术基础比较薄弱的同学\n我们可以找一些参考素材\n例如说我们想创作一个饥荒风格的角色\n那我们就可以先找到它的参考图\n然后我们就可以拿这张参考图\n让豆包来帮我们反推一下提示词\n当我们拿到这个提示词之后呢\n我们就可以在这个基础上进行一些\n我们自己的修改\n比如说我们想要在美术风格上做出哪些差异化\n我们想要做出怎样的角色\n有什么特点\n例如说我现在要制作一只苍老的牛仔猫\n腰上带着配件\n那我就可以结合AI给的提示词去描述\n我想要生成的这个特定风格的角色\n当然其实在你拿到提示词之后\n你可以使用任何工具去生成这个原画\n例如mid journey sd或者banana等\n这些都是没问题的\n当然了\n现在豆包其实也是能满足大部分的需求了\n你可以尝试用不同的工具来多次尝试\n最后得到一个符合自己需求的角色形象\n然后现在假设我们就拿第一章为例\n进行下一步的制作\n现在我们需要将这个原画去掉背景\n这里有个坑\n要讲一下图片\n去背景的时候\n一定要让它用纯色来填充\n最好是与主体内容的颜色相差比较大的颜色\n但一定不要跟他说用透明填充\n因为这样他有可能会直接生成一个\n带有棋盘格背景的图片和视频\n这样反而更不方便后面的操作\n那我们有了这个形象之后呢\n我们还可以在这个基础上再去制作一些变体\n例如说拿着加特林的牛仔猫\n或者拿着其他武器的牛仔猫\n然后我们也可以按照这个风格\n去创作一些新的角色\n例如说老鼠牧师等等\n当然了\n如果说豆包生成出来的效果不是很满意的话\n我们也可以尝试使用banana和GERMANY奶\n去尝试一下变体的生成\n接下来我们就可以用刚刚得到的原画\n作为参考图去生成角色的动画视频\n这里要在提示词中强调一下\n在生成动画视频的时候\n告诉他镜头一定不要有变化\n否则它生成出来的视频可能会带有运镜\n视频生成好之后\n我们就可以用这个视频来提取出我们的帧动画\n提取帧动画的操作可以通过多种方式来实现\n在这里我会在下一批中介绍\n如何利用frame packer来进行真动画的提取和编辑",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1vKdvBhEYb",
+  "published_at": "1776426600",
+  "fetched_at": "2026-08-07T20:42:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T20:50:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T20:50:00+00:00"
+}

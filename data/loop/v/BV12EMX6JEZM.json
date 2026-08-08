@@ -1,0 +1,66 @@
+{
+  "bvid": "BV12EMX6JEZM",
+  "title": "关于deepseek近期更新内容",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1018,
+  "text": "欢迎来到KK的频道\n7月30日之后\ndeep sick又有了新消息\n这次值得关注的不只是一个新的模型名字\n而是V4flash在多项agent的基准上的表现明显抬升\n今天我们就结合官方模型卡\n动态榜单和公开案例\n看看这次更新到底说明了什么\n官方模型卡能确定两件事\n第10731与d spark预览版采用相同模型结构\n第二更新后的模型在多项agent的基准上明显提升\n至于具体训练机制\n官方页面没有展开\n所以这里不把猜测写成确定结论\n看数据更直观\nTerminal bench\n2.1从61.8提升到82.7\nNL2report从39.4提升到54.2\ndeep stars w e从7.3提升到54.4\nTwo athon verified\n从49.7提升到70.3\n四项基准同时上涨\n说明变化不是一个孤立跑分代码agent的任务\n使用代发布的deep sick harness minimal mode\n并采用max effort temperature\n1.0和top p0.95\n再看用户提供的front end code\narena截图V4flash high在截图当时一度排到第七\n分数是1586\n不过arena是动态榜单\n排名会随着投票变化\n而且原始截图时间未知\n所以这里把它当做一个阶段性信号\n不把第七名说成永久结论\n接下来这段第三方四模型视频更适合观察\n♪ 画面的视觉完整度 ♪\n多元素协同以及镜头和交互有没有一起出现\n因为原始提示词模型配置和验收条件没有核验\n所以不能只看这一条成片\n就判断谁真正完成了全部需求\n另一段第三方案例\n把V4flash和GPT5.6LUNA并排展示\n画面里能看到两边的视觉风格\n以及所示的tokens和成本不同\n但原始提示词配置和计费口径没有核验\n所以这里只描述画面差异\n不把它包装成公平评测\n把这些证据放在一起\n可以得出三个相对稳妥的判断\n多项agent基准同步上升\n第三方案例显示出一定的视觉潜力\n模型结构与预览版保持一致\n但他们不能证明所有任务都稳定领先一次\n成本\n也不能代表长期价格动态榜单更不是最终结论\n所以这次更新真正值得测试的不只是单轮回答\n而是完整的agent的工作流\n他能不能理解任务能不能稳定调用工具\n能不能把结果做完并交付\n实测时至少看四项真实任务完成率\n工具调用成功率\n多次运行稳定性以及token和成本分布\n你也可以拿自己的真实任务跑几轮\n再决定它是不是适合长期使用",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV12EMX6JEZM",
+  "published_at": "1785757331",
+  "fetched_at": "2026-08-07T08:36:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 更新知识图谱\n\n## 更新概览 [BV12EMX6JEZM P1 00:06] [BV12EMX6JEZM P1 00:19] [BV12EMX6JEZM P1 00:36]\n```mermaid\nflowchart TD\n    V4Flash[\"V4Flash 模型\"] --> Arch[\"与 10731 / d‑spark 预览版相同结构\"]\n    V4Flash --> Settings[\"评估设置：deepseek harness minimal mode、temperature 1.0、top p 0.95\"]\n    Settings --> BenchImp[\"多项 Agent 基准同步提升\"]\n    BenchImp --> TB[\"Terminal bench 61.8 → 82.7\"]\n    BenchImp --> NL[\"NL2Report 39.4 → 54.2\"]\n    BenchImp --> DS[\"DeepStarsWE 7.3 → 54.4\"]\n    BenchImp --> TA[\"TwoAthlon verified 49.7 → 70.3\"]\n```\n\n## 证据链与判断 [BV12EMX6JEZM P1 00:19] [BV12EMX6JEZM P1 00:36] [BV12EMX6JEZM P1 01:04] [BV12EMX6JEZM P1 01:36]\n```mermaid\nflowchart LR\n    ModelCard[\"官方模型卡\"] --> StructSame[\"模型结构与预览版保持一致\"]\n    ModelCard --> BenchData[\"基准数据提升\"]\n    BenchData --> J1[\"判断 1：多项 Agent 基准同步上升\"]\n    ArenaSnap[\"Arena 动态榜单截图（第 7 名，分数 1586）\"] --> J1\n    VideoVis[\"第三方视频（V4Flash vs GPT‑5.6 LUNA）\"] --> J2[\"判断 2：展示一定视觉潜力\"]\n    ModelCard --> J3[\"判断 3：结构保持一致\"]\n    Limit[\"未公开训练机制、计费口径、提示词配置\"] -->|限制| J1\n    Limit -->|限制| J2\n```\n\n## 完整 Agent 工作流测试要点 [BV12EMX6JEZM P1 02:14] [BV12EMX6JEZM P1 02:21] [BV12EMX6JEZM P1 02:25] [BV12EMX6JEZM P1 02:30]\n```mermaid\nflowchart TD\n    TA[\"任务理解\"] --> TC[\"工具调用\"]\n    TC --> RD[\"结果交付\"]\n    RD --> CR[\"真实任务完成率\"]\n    RD --> TSR[\"工具调用成功率\"]\n    RD --> RS[\"多次运行稳定性\"]\n    RD --> TCD[\"Token 与成本分布\"]\n    CR --> Decision[\"决定是否适合长期使用\"]\n    TSR --> Decision\n    RS --> Decision\n    TCD --> Decision\n    User[\"使用自有真实任务跑几轮\"] --> Decision\n```",
+      "diagrams": [
+        {
+          "title": "更新概览",
+          "code": "flowchart TD\n    V4Flash[\"V4Flash 模型\"] --> Arch[\"与 10731 / d‑spark 预览版相同结构\"]\n    V4Flash --> Settings[\"评估设置：deepseek harness minimal mode、temperature 1.0、top p 0.95\"]\n    Settings --> BenchImp[\"多项 Agent 基准同步提升\"]\n    BenchImp --> TB[\"Terminal bench 61.8 → 82.7\"]\n    BenchImp --> NL[\"NL2Report 39.4 → 54.2\"]\n    BenchImp --> DS[\"DeepStarsWE 7.3 → 54.4\"]\n    BenchImp --> TA[\"TwoAthlon verified 49.7 → 70.3\"]"
+        },
+        {
+          "title": "证据链与判断",
+          "code": "flowchart LR\n    ModelCard[\"官方模型卡\"] --> StructSame[\"模型结构与预览版保持一致\"]\n    ModelCard --> BenchData[\"基准数据提升\"]\n    BenchData --> J1[\"判断 1：多项 Agent 基准同步上升\"]\n    ArenaSnap[\"Arena 动态榜单截图（第 7 名，分数 1586）\"] --> J1\n    VideoVis[\"第三方视频（V4Flash vs GPT‑5.6 LUNA）\"] --> J2[\"判断 2：展示一定视觉潜力\"]\n    ModelCard --> J3[\"判断 3：结构保持一致\"]\n    Limit[\"未公开训练机制、计费口径、提示词配置\"] -->|限制| J1\n    Limit -->|限制| J2"
+        },
+        {
+          "title": "完整 Agent 工作流测试要点",
+          "code": "flowchart TD\n    TA[\"任务理解\"] --> TC[\"工具调用\"]\n    TC --> RD[\"结果交付\"]\n    RD --> CR[\"真实任务完成率\"]\n    RD --> TSR[\"工具调用成功率\"]\n    RD --> RS[\"多次运行稳定性\"]\n    RD --> TCD[\"Token 与成本分布\"]\n    CR --> Decision[\"决定是否适合长期使用\"]\n    TSR --> Decision\n    RS --> Decision\n    TCD --> Decision\n    User[\"使用自有真实任务跑几轮\"] --> Decision"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T08:36:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 更新知识图谱\n\n## 更新概览 [BV12EMX6JEZM P1 00:06] [BV12EMX6JEZM P1 00:19] [BV12EMX6JEZM P1 00:36]\n```mermaid\nflowchart TD\n    V4Flash[\"V4Flash 模型\"] --> Arch[\"与 10731 / d‑spark 预览版相同结构\"]\n    V4Flash --> Settings[\"评估设置：deepseek harness minimal mode、temperature 1.0、top p 0.95\"]\n    Settings --> BenchImp[\"多项 Agent 基准同步提升\"]\n    BenchImp --> TB[\"Terminal bench 61.8 → 82.7\"]\n    BenchImp --> NL[\"NL2Report 39.4 → 54.2\"]\n    BenchImp --> DS[\"DeepStarsWE 7.3 → 54.4\"]\n    BenchImp --> TA[\"TwoAthlon verified 49.7 → 70.3\"]\n```\n\n## 证据链与判断 [BV12EMX6JEZM P1 00:19] [BV12EMX6JEZM P1 00:36] [BV12EMX6JEZM P1 01:04] [BV12EMX6JEZM P1 01:36]\n```mermaid\nflowchart LR\n    ModelCard[\"官方模型卡\"] --> StructSame[\"模型结构与预览版保持一致\"]\n    ModelCard --> BenchData[\"基准数据提升\"]\n    BenchData --> J1[\"判断 1：多项 Agent 基准同步上升\"]\n    ArenaSnap[\"Arena 动态榜单截图（第 7 名，分数 1586）\"] --> J1\n    VideoVis[\"第三方视频（V4Flash vs GPT‑5.6 LUNA）\"] --> J2[\"判断 2：展示一定视觉潜力\"]\n    ModelCard --> J3[\"判断 3：结构保持一致\"]\n    Limit[\"未公开训练机制、计费口径、提示词配置\"] -->|限制| J1\n    Limit -->|限制| J2\n```\n\n## 完整 Agent 工作流测试要点 [BV12EMX6JEZM P1 02:14] [BV12EMX6JEZM P1 02:21] [BV12EMX6JEZM P1 02:25] [BV12EMX6JEZM P1 02:30]\n```mermaid\nflowchart TD\n    TA[\"任务理解\"] --> TC[\"工具调用\"]\n    TC --> RD[\"结果交付\"]\n    RD --> CR[\"真实任务完成率\"]\n    RD --> TSR[\"工具调用成功率\"]\n    RD --> RS[\"多次运行稳定性\"]\n    RD --> TCD[\"Token 与成本分布\"]\n    CR --> Decision[\"决定是否适合长期使用\"]\n    TSR --> Decision\n    RS --> Decision\n    TCD --> Decision\n    User[\"使用自有真实任务跑几轮\"] --> Decision\n```",
+  "diagrams": [
+    {
+      "title": "更新概览",
+      "code": "flowchart TD\n    V4Flash[\"V4Flash 模型\"] --> Arch[\"与 10731 / d‑spark 预览版相同结构\"]\n    V4Flash --> Settings[\"评估设置：deepseek harness minimal mode、temperature 1.0、top p 0.95\"]\n    Settings --> BenchImp[\"多项 Agent 基准同步提升\"]\n    BenchImp --> TB[\"Terminal bench 61.8 → 82.7\"]\n    BenchImp --> NL[\"NL2Report 39.4 → 54.2\"]\n    BenchImp --> DS[\"DeepStarsWE 7.3 → 54.4\"]\n    BenchImp --> TA[\"TwoAthlon verified 49.7 → 70.3\"]"
+    },
+    {
+      "title": "证据链与判断",
+      "code": "flowchart LR\n    ModelCard[\"官方模型卡\"] --> StructSame[\"模型结构与预览版保持一致\"]\n    ModelCard --> BenchData[\"基准数据提升\"]\n    BenchData --> J1[\"判断 1：多项 Agent 基准同步上升\"]\n    ArenaSnap[\"Arena 动态榜单截图（第 7 名，分数 1586）\"] --> J1\n    VideoVis[\"第三方视频（V4Flash vs GPT‑5.6 LUNA）\"] --> J2[\"判断 2：展示一定视觉潜力\"]\n    ModelCard --> J3[\"判断 3：结构保持一致\"]\n    Limit[\"未公开训练机制、计费口径、提示词配置\"] -->|限制| J1\n    Limit -->|限制| J2"
+    },
+    {
+      "title": "完整 Agent 工作流测试要点",
+      "code": "flowchart TD\n    TA[\"任务理解\"] --> TC[\"工具调用\"]\n    TC --> RD[\"结果交付\"]\n    RD --> CR[\"真实任务完成率\"]\n    RD --> TSR[\"工具调用成功率\"]\n    RD --> RS[\"多次运行稳定性\"]\n    RD --> TCD[\"Token 与成本分布\"]\n    CR --> Decision[\"决定是否适合长期使用\"]\n    TSR --> Decision\n    RS --> Decision\n    TCD --> Decision\n    User[\"使用自有真实任务跑几轮\"] --> Decision"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:36:35+00:00"
+}

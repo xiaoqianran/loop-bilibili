@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1oV3w6hEV1",
+  "title": "大厂的Agent开发岗到底在做什么",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 832,
+  "text": "上个月有个粉丝入职\n字节两周私信我说心态崩了\n我以为进去是做agent的架构的\n结果天天就是写skill\n砸workflow\n感觉像在打螺丝\n我回他恭喜你\n这才是大厂agent开发的正经货\nA镇开发这几个月确实爆火\n各大平台都在吹\n招聘需求井喷\n市面上的学习资料也在狂推\n怎么设计架构\n怎么做\n记忆管理怎么做上下文压缩\n怎么接入MCP\n怎么搞多agent的协作\n看得人热血沸腾\n以为进去就是要亲手造一个agent出来\n但真相是什么\n面试造火箭进去打螺丝\n这句话很多人听过\n但放到agent的领域\n可能比你想的更彻底\n最近我分别跟字节和阿里的朋友聊了聊\n发现两家做法出奇一致\n字节这边的组日常就靠三个现成的agent\nCodex\ncloud code i加T口字节自研的agent\n阿里那边一模一样\n只不过自研那款换成了阿里内部的coder\n根本没有人再从零搭\n一个属于自己业务场景的agent\n所有人做的事情就两件\n提炼skill\n编排workflow\n这是不是很颠覆认知\n但其实也好理解\n大厂最注重的就是效益\n自己从头造agent\n意味着要养一整个懂底层架构的团队\n投入巨大的人力和时间\n还不一定比市面上现成的方案好用\n最优解是什么\n直接用成熟的agent底座\n把左力的业务经验灌进去\n6skill和RIG达work flow\n把重复性工作自动化提效\n这才是效益最大化的一个方式\n所以互联网大厂里大部分部门所谓的agent开发\n本质上就是写skill加w workflow\n不管字节还是阿里\n大家都是同一套思路\n很多新人刚进去会觉得怎么天天吃\n写skill和workflow\n这有什么成长\n干几个月才发现\n原来这就是大厂定义的agent的开发\n压根就不需要你对agent有多复杂深刻的理解\n你只需要会写skill就行了\n当然如果你想系统的学习一下agent的开发\n去进中小厂的话\n我这里也整理好了\n完整的学习路线\n包含知识点讲解以及实操代码\n需要的留下agent",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1oV3w6hEV1",
+  "published_at": "1785157393",
+  "fetched_at": "2026-08-07T06:21:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 大厂Agent开发知识图谱\n\n## 大厂Agent开发概览\n```mermaid\nflowchart TD\n    A1[\"行业需求激增\"] --> A2[\"招聘需求井喷\"]\n    A2 --> A3[\"使用现成Agent底座\"]\n    A3 --> A4[\"提炼Skill\"]\n    A4 --> A5[\"编排Workflow\"]\n    A5 --> A6[\"自动化重复工作\"]\n    A6 --> A7[\"效益最大化\"]\n    A3 --> A8[\"不需要深度Agent理解\"]\n```\n\n## 构建Agent的决策路径\n```mermaid\nflowchart TD\n    B1[\"是否从零构建Agent？\"]\n    B2[\"需要底层架构团队\"]\n    B3[\"高人力时间投入\"]\n    B4[\"风险：效能不一定好\"]\n    B5[\"使用成熟Agent底座\"]\n    B6[\"注入业务经验\"]\n    B7[\"快速提效\"]\n    B8[\"最佳方案\"]\n\n    B1 -->|是| B2\n    B2 --> B3\n    B3 --> B4\n    B1 -->|否| B5\n    B5 --> B6\n    B6 --> B7\n    B7 --> B8\n    B4 --> B8\n```\n\n## Skill与Workflow的开发流程\n```mermaid\nflowchart TD\n    C1[\"业务场景需求\"]\n    C2[\"提炼Skill\"]\n    C3[\"设计Skill代码\"]\n    C4[\"测试Skill\"]\n    C5[\"编排Workflow\"]\n    C6[\"集成Skill到Workflow\"]\n    C7[\"部署与监控\"]\n    C8[\"持续优化\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8\n```",
+      "diagrams": [
+        {
+          "title": "大厂Agent开发概览",
+          "code": "flowchart TD\n    A1[\"行业需求激增\"] --> A2[\"招聘需求井喷\"]\n    A2 --> A3[\"使用现成Agent底座\"]\n    A3 --> A4[\"提炼Skill\"]\n    A4 --> A5[\"编排Workflow\"]\n    A5 --> A6[\"自动化重复工作\"]\n    A6 --> A7[\"效益最大化\"]\n    A3 --> A8[\"不需要深度Agent理解\"]"
+        },
+        {
+          "title": "构建Agent的决策路径",
+          "code": "flowchart TD\n    B1[\"是否从零构建Agent？\"]\n    B2[\"需要底层架构团队\"]\n    B3[\"高人力时间投入\"]\n    B4[\"风险：效能不一定好\"]\n    B5[\"使用成熟Agent底座\"]\n    B6[\"注入业务经验\"]\n    B7[\"快速提效\"]\n    B8[\"最佳方案\"]\n\n    B1 -->|是| B2\n    B2 --> B3\n    B3 --> B4\n    B1 -->|否| B5\n    B5 --> B6\n    B6 --> B7\n    B7 --> B8\n    B4 --> B8"
+        },
+        {
+          "title": "Skill与Workflow的开发流程",
+          "code": "flowchart TD\n    C1[\"业务场景需求\"]\n    C2[\"提炼Skill\"]\n    C3[\"设计Skill代码\"]\n    C4[\"测试Skill\"]\n    C5[\"编排Workflow\"]\n    C6[\"集成Skill到Workflow\"]\n    C7[\"部署与监控\"]\n    C8[\"持续优化\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T06:21:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 大厂Agent开发知识图谱\n\n## 大厂Agent开发概览\n```mermaid\nflowchart TD\n    A1[\"行业需求激增\"] --> A2[\"招聘需求井喷\"]\n    A2 --> A3[\"使用现成Agent底座\"]\n    A3 --> A4[\"提炼Skill\"]\n    A4 --> A5[\"编排Workflow\"]\n    A5 --> A6[\"自动化重复工作\"]\n    A6 --> A7[\"效益最大化\"]\n    A3 --> A8[\"不需要深度Agent理解\"]\n```\n\n## 构建Agent的决策路径\n```mermaid\nflowchart TD\n    B1[\"是否从零构建Agent？\"]\n    B2[\"需要底层架构团队\"]\n    B3[\"高人力时间投入\"]\n    B4[\"风险：效能不一定好\"]\n    B5[\"使用成熟Agent底座\"]\n    B6[\"注入业务经验\"]\n    B7[\"快速提效\"]\n    B8[\"最佳方案\"]\n\n    B1 -->|是| B2\n    B2 --> B3\n    B3 --> B4\n    B1 -->|否| B5\n    B5 --> B6\n    B6 --> B7\n    B7 --> B8\n    B4 --> B8\n```\n\n## Skill与Workflow的开发流程\n```mermaid\nflowchart TD\n    C1[\"业务场景需求\"]\n    C2[\"提炼Skill\"]\n    C3[\"设计Skill代码\"]\n    C4[\"测试Skill\"]\n    C5[\"编排Workflow\"]\n    C6[\"集成Skill到Workflow\"]\n    C7[\"部署与监控\"]\n    C8[\"持续优化\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8\n```",
+  "diagrams": [
+    {
+      "title": "大厂Agent开发概览",
+      "code": "flowchart TD\n    A1[\"行业需求激增\"] --> A2[\"招聘需求井喷\"]\n    A2 --> A3[\"使用现成Agent底座\"]\n    A3 --> A4[\"提炼Skill\"]\n    A4 --> A5[\"编排Workflow\"]\n    A5 --> A6[\"自动化重复工作\"]\n    A6 --> A7[\"效益最大化\"]\n    A3 --> A8[\"不需要深度Agent理解\"]"
+    },
+    {
+      "title": "构建Agent的决策路径",
+      "code": "flowchart TD\n    B1[\"是否从零构建Agent？\"]\n    B2[\"需要底层架构团队\"]\n    B3[\"高人力时间投入\"]\n    B4[\"风险：效能不一定好\"]\n    B5[\"使用成熟Agent底座\"]\n    B6[\"注入业务经验\"]\n    B7[\"快速提效\"]\n    B8[\"最佳方案\"]\n\n    B1 -->|是| B2\n    B2 --> B3\n    B3 --> B4\n    B1 -->|否| B5\n    B5 --> B6\n    B6 --> B7\n    B7 --> B8\n    B4 --> B8"
+    },
+    {
+      "title": "Skill与Workflow的开发流程",
+      "code": "flowchart TD\n    C1[\"业务场景需求\"]\n    C2[\"提炼Skill\"]\n    C3[\"设计Skill代码\"]\n    C4[\"测试Skill\"]\n    C5[\"编排Workflow\"]\n    C6[\"集成Skill到Workflow\"]\n    C7[\"部署与监控\"]\n    C8[\"持续优化\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:21:54+00:00"
+}

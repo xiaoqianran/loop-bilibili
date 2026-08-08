@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1AmSSBMErT",
+  "title": "放弃RAG吧 ！LLM知识库新范式 | Karpathy的新思路",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2750,
+  "text": "大家好\n我是为什么叫QQ\n你以为rag就是现在最好的知识库方案\n你以为把一堆PDF扔给大模型\n让他帮你检索\n这就是AI时代的知识管理\n错得离谱\n最近前特斯拉AI总监\nOpenAI创始成员ANDREWCARPATHY\n分享了他自己构建个人知识库的方法\n看完他的方案\n我倒吸一口凉气\n因为他根本不用传统的rag\n他用大模型构建了一个会自己生长的持久化wiki\n这个方法\n直接把现在市面上90%的知识库产品\n按在地上摩擦\n你可能会问\n为什么rad虽然能检索\n但是总觉得不够聪明\n你有没有遇到过这种情况\n你存了一年的资料\n问一个需要综合五篇文章的复杂问题\n结果大模型总是漏掉关键信息\n或者给你一个似是而非的答案\n为什么\n因为在传统的rag系统里\n大模型每次回答你的问题都是在重新发现知识\n它没有记忆\n没有积累\n你的知识库用了一年\n本质上还是一堆散乱的文件\n他从来没有真正变成你的知识\n我们先来看看现在的知识库是怎么工作的\n不管是notebook lm m还是ChatGPT的文件上传\n本质上都是rag\n你上传文件系统把文件切成小块\n你提问系统找出最相关的几块扔给大模型\n让他总结这套逻辑跑得通\n但有一个致命缺陷\n知识没有复利\nCARBOT发现了这个问题\n他最近把大量的精力从写代码\n转移到了处理知识上\n他发现最新的大模型能力已经强到\n可以做一件更伟大的事\n他们不仅能检索知识\n还能编译和维护知识\n这个思路其实可以追溯到1945年\nwhenever bush提出的my max构想\n只不过当年MAMAX解决不了\n谁来维护这些知识链接的问题\n现在KPOY找到了完美的苦力大模型\n关键点一持久wiki vs临时检索\n传统的RAG每次查询都是临时的\n就像你每次遇到问题\n都要重新去图书馆翻一遍书\n找出几页纸\n临时拼凑一个答案\n看完就扔了\n下次遇到类似问题还得重来一遍\n但CARPY的方法完全不同\n它让大模型增量构建和维护一个持久的wiki\n这是一个由markdown文件组成的\n结构化相互链接的集合\n当你添加一篇新文章时\n大模型不是简单的把它存起来\n等以后检索它是去阅读这篇文章\n提取关键信息\n然后把它整合到现有的wiki里\n更新实体页面\n修改主题摘要\n甚至标记出新数据和旧观点的矛盾\n关键来了\n知识被编译了一次\n然后保持更新\n交叉引用已经存在了\n矛盾已经被标记了\n你的每一次阅读都在让这个wiki变得更丰富\n这才是真正的知识复利关键点二\n优雅的三层架构\nCARPATHY把这个系统设计成了\n非常优雅的三层架构\n第一层是row sources原始数据层\n这里放着你收集的所有文章论文图片\n这一层是不可变的\n大模型只能读不能改\n这是你的真理之源\n第二层是the wiki知识库层\n这里全是大模型生成的markdown文件摘要\n概念对比分析\n这一层大模型完全拥有它\n创建页面维护链接保持一致性\n你只管读大模型\n负责写\n第三层是the schema规则层\n这是一个配置文件\n告诉大模型这个wiki的结构是什么\n遇到新文章该怎么处理\n但这里有个很离谱的地方\n这个分离的设计彻底改变了人机协作的模式\n原始数据保持纯净\n大模型有了明确的工作边界\n你不再是一个整理资料的苦力\n你变成了一个知识架构师\n关键点三大模型做记账\n人类做策划\n维护一个知识库最痛苦的是什么\n不是阅读\n不是思考\n是记账\n是更新\n交叉引用\n是保持摘要\n最新是发现两篇文章观点冲突时去打个补丁\n人类之所以总是放弃维护WIK\n就是因为维护成本远远大于收益\n大模型简直就是天生的记账员\n他不会觉得无聊\n他不会忘记更新链接\n它可以一次性处理15个文件\n在CARPY的工作流里\n人类的工作只剩下挑选高质量的信息源\n指导分析方向\n提出好问题\n剩下的所有脏活累活全部交给大模型\nobsidian是IDE\n大模型是程序员\nVICKY就是你的代码库\n很多人会觉得\nrag现在的痛点是因为检索算法不够好\n只要我用了更牛的向量数据库\n用了更复杂的RERANK算法\n问题就解决了\n但真相是检索再好\n也解决不了知识不积累的根本问题\n即使你的检索准确率达到100%\n大模型依然是在临时拼凑答案\n为什么会这样\n因为知识的本质不是信息的堆砌\n而是信息之间的连接\ncarpet的实验证明了这一点\n他的个人wiki已经积累了大约100篇文章\n将近40万字\n在这个规模下\n他根本不需要什么复杂的REGGIE基础设施\n就靠简单的索引文件\n加上大模型自动维护的摘要\n就能回答极其复杂的问题\n大道至简\n看到这里你可能会想\n这套方法听起来很牛\n但我该怎么落地\n我的答案是\n你需要建立一套基于大模型的知识编译工作流\n它包含四个核心动作\n第一摄入ingest\n看到好文章\n用obsidian web clipper抓取下来\n让大模型阅读和你讨论要点\n然后让他去更新相关的wiki页面\n一篇文章可能会触及10~15个wiki页面\n第二查询query向你的wiki提问\n大模型会搜索相关页面合成答案\n它可以给你输出markdown\n可以给你画map plot lab图表\n甚至可以直接生成map幻灯片\n把你的wiki当成一个可以交互的知识图谱\n第三归档filing\n这是最重要的一步\n大模型给你生成的精彩回答\n对比表格深度分析\n不要看完就关掉\n把它们作为新的页面存回wiki里\n让你的每一次探索都成为知识库的新资产\n你的问题也在给wiki增值\n第四体检LT定期让大模型给wiki做健康检查\n找出矛盾的数据\n找出没有链接的孤岛页面\n甚至让他联网搜索补充缺失的信息\n大模型还特别擅长\n建议你下一步应该研究什么\n换一个角度来看\n你不是在用一个工具\n你是在雇佣一个不知疲倦的知识管家\n开源社区已经有人实现了这套引擎\n比如GITHUB上的agent memory项目\n这套模式完全可以开箱即用\n接下来会发生什么\n短期内会有越来越多人意识到rag的局限性\n大家会开始从临时检索转向持久编译\n我们会看到更多专门为这套工作流设计的\nobsidian插件和本地工具\n中期来看\n这套模式会杀入企业市场\nCARVERT说了一句非常扎心的话\n每个企业都有一个ROM目录\n但从来没有人编译过它\n这就是产品\n未来的企业知识库\n不再是员工手动填写的confluence\n而是由大模型自动从slack会议记录\n客户反馈中编译出来的活体wiki\n长期来看\n这会改变大模型本身的形态\n随着合成数据生成和微调技术的发展\n你的个人知识库最终会融入到大模型的权重里\n它不再需要通过上下文窗口来读取你的知识\n他会真正记住你的知识\n到那时每个人都会拥有一个真正懂你的数字\n分身好了\n这就是今天的全部内容\n我是为什么叫QQ\n如果觉得对你有帮助\n可以一键三连\n谢谢",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1AmSSBMErT",
+  "published_at": "1775399712",
+  "fetched_at": "2026-08-07T22:14:42+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 放弃RAG吧！LLM知识库新范式\n\n## 总览概览 [BV1AmSSBMErT P1 00:01]\n```mermaid\nflowchart TD\n    RAG[\"传统RAG<br/>临时检索\"] --> Issues[\"问题<br/>- 无记忆<br/>- 信息碎片<br/>- 缺乏复利\"]\n    Issues --> PersistentWiki[\"持久化Wiki<br/>增量构建\"]\n    PersistentWiki --> Benefits[\"优势<br/>- 知识复利<br/>- 自动维护<br/>- 跨页链接\"]\n    PersistentWiki -->|使用大模型| LLM[\"大模型\"]\n    LLM --> Benefits\n```\n\n## 三层架构设计 [BV1AmSSBMErT P1 02:40]\n```mermaid\nflowchart TD\n    Raw[\"Raw Sources<br/>原始数据层\"] -->|只读| Wiki[\"Wiki层<br/>markdown摘要与链接\"]\n    Wiki -->|受Schema约束| Schema[\"Schema层<br/>规则配置\"]\n    Raw -->|提供真理之源| LLM[\"大模型\"]\n    LLM --> Wiki\n    LLM --> Schema\n```\n\n## 四步工作流 [BV1AmSSBMErT P1 05:06]\n```mermaid\nflowchart TD\n    Ingest[\"第一步：摄入<br/>使用Obsidian Clip抓取文章\"] --> Update[\"大模型阅读并更新Wiki\"]\n    Update --> Query[\"第二步：查询<br/>向Wiki提问，合成答案\"]\n    Query --> Output[\"输出markdown/图表/幻灯片\"]\n    Output --> Archive[\"第三步：归档<br/>将精彩回答存回Wiki\"]\n    Archive --> Health[\"第四步：体检<br/>定期健康检查、矛盾检测、孤岛修复\"]\n    Health --> Ingest\n```\n\n## 知识复利循环 [BV1AmSSBMErT P1 02:27]\n```mermaid\nflowchart LR\n    NewArt[\"新文章\"] --> Extract[\"提取关键信息\"]\n    Extract --> Integrate[\"整合进现有Wiki\"]\n    Integrate --> UpdatePage[\"更新实体页面<br/>修改摘要\"]\n    UpdatePage --> CrossLink[\"交叉引用已存在\"]\n    CrossLink --> Contradiction[\"标记矛盾\"]\n    Contradiction --> Enrich[\"每次阅读使Wiki更丰富\"]\n    Enrich --> QueryCycle[\"后续查询受益\"]\n    QueryCycle --> NewArt\n```",
+      "diagrams": [
+        {
+          "title": "总览概览",
+          "code": "flowchart TD\n    RAG[\"传统RAG<br/>临时检索\"] --> Issues[\"问题<br/>- 无记忆<br/>- 信息碎片<br/>- 缺乏复利\"]\n    Issues --> PersistentWiki[\"持久化Wiki<br/>增量构建\"]\n    PersistentWiki --> Benefits[\"优势<br/>- 知识复利<br/>- 自动维护<br/>- 跨页链接\"]\n    PersistentWiki -->|使用大模型| LLM[\"大模型\"]\n    LLM --> Benefits"
+        },
+        {
+          "title": "三层架构设计",
+          "code": "flowchart TD\n    Raw[\"Raw Sources<br/>原始数据层\"] -->|只读| Wiki[\"Wiki层<br/>markdown摘要与链接\"]\n    Wiki -->|受Schema约束| Schema[\"Schema层<br/>规则配置\"]\n    Raw -->|提供真理之源| LLM[\"大模型\"]\n    LLM --> Wiki\n    LLM --> Schema"
+        },
+        {
+          "title": "四步工作流",
+          "code": "flowchart TD\n    Ingest[\"第一步：摄入<br/>使用Obsidian Clip抓取文章\"] --> Update[\"大模型阅读并更新Wiki\"]\n    Update --> Query[\"第二步：查询<br/>向Wiki提问，合成答案\"]\n    Query --> Output[\"输出markdown/图表/幻灯片\"]\n    Output --> Archive[\"第三步：归档<br/>将精彩回答存回Wiki\"]\n    Archive --> Health[\"第四步：体检<br/>定期健康检查、矛盾检测、孤岛修复\"]\n    Health --> Ingest"
+        },
+        {
+          "title": "知识复利循环",
+          "code": "flowchart LR\n    NewArt[\"新文章\"] --> Extract[\"提取关键信息\"]\n    Extract --> Integrate[\"整合进现有Wiki\"]\n    Integrate --> UpdatePage[\"更新实体页面<br/>修改摘要\"]\n    UpdatePage --> CrossLink[\"交叉引用已存在\"]\n    CrossLink --> Contradiction[\"标记矛盾\"]\n    Contradiction --> Enrich[\"每次阅读使Wiki更丰富\"]\n    Enrich --> QueryCycle[\"后续查询受益\"]\n    QueryCycle --> NewArt"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T22:15:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 放弃RAG吧！LLM知识库新范式\n\n## 总览概览 [BV1AmSSBMErT P1 00:01]\n```mermaid\nflowchart TD\n    RAG[\"传统RAG<br/>临时检索\"] --> Issues[\"问题<br/>- 无记忆<br/>- 信息碎片<br/>- 缺乏复利\"]\n    Issues --> PersistentWiki[\"持久化Wiki<br/>增量构建\"]\n    PersistentWiki --> Benefits[\"优势<br/>- 知识复利<br/>- 自动维护<br/>- 跨页链接\"]\n    PersistentWiki -->|使用大模型| LLM[\"大模型\"]\n    LLM --> Benefits\n```\n\n## 三层架构设计 [BV1AmSSBMErT P1 02:40]\n```mermaid\nflowchart TD\n    Raw[\"Raw Sources<br/>原始数据层\"] -->|只读| Wiki[\"Wiki层<br/>markdown摘要与链接\"]\n    Wiki -->|受Schema约束| Schema[\"Schema层<br/>规则配置\"]\n    Raw -->|提供真理之源| LLM[\"大模型\"]\n    LLM --> Wiki\n    LLM --> Schema\n```\n\n## 四步工作流 [BV1AmSSBMErT P1 05:06]\n```mermaid\nflowchart TD\n    Ingest[\"第一步：摄入<br/>使用Obsidian Clip抓取文章\"] --> Update[\"大模型阅读并更新Wiki\"]\n    Update --> Query[\"第二步：查询<br/>向Wiki提问，合成答案\"]\n    Query --> Output[\"输出markdown/图表/幻灯片\"]\n    Output --> Archive[\"第三步：归档<br/>将精彩回答存回Wiki\"]\n    Archive --> Health[\"第四步：体检<br/>定期健康检查、矛盾检测、孤岛修复\"]\n    Health --> Ingest\n```\n\n## 知识复利循环 [BV1AmSSBMErT P1 02:27]\n```mermaid\nflowchart LR\n    NewArt[\"新文章\"] --> Extract[\"提取关键信息\"]\n    Extract --> Integrate[\"整合进现有Wiki\"]\n    Integrate --> UpdatePage[\"更新实体页面<br/>修改摘要\"]\n    UpdatePage --> CrossLink[\"交叉引用已存在\"]\n    CrossLink --> Contradiction[\"标记矛盾\"]\n    Contradiction --> Enrich[\"每次阅读使Wiki更丰富\"]\n    Enrich --> QueryCycle[\"后续查询受益\"]\n    QueryCycle --> NewArt\n```",
+  "diagrams": [
+    {
+      "title": "总览概览",
+      "code": "flowchart TD\n    RAG[\"传统RAG<br/>临时检索\"] --> Issues[\"问题<br/>- 无记忆<br/>- 信息碎片<br/>- 缺乏复利\"]\n    Issues --> PersistentWiki[\"持久化Wiki<br/>增量构建\"]\n    PersistentWiki --> Benefits[\"优势<br/>- 知识复利<br/>- 自动维护<br/>- 跨页链接\"]\n    PersistentWiki -->|使用大模型| LLM[\"大模型\"]\n    LLM --> Benefits"
+    },
+    {
+      "title": "三层架构设计",
+      "code": "flowchart TD\n    Raw[\"Raw Sources<br/>原始数据层\"] -->|只读| Wiki[\"Wiki层<br/>markdown摘要与链接\"]\n    Wiki -->|受Schema约束| Schema[\"Schema层<br/>规则配置\"]\n    Raw -->|提供真理之源| LLM[\"大模型\"]\n    LLM --> Wiki\n    LLM --> Schema"
+    },
+    {
+      "title": "四步工作流",
+      "code": "flowchart TD\n    Ingest[\"第一步：摄入<br/>使用Obsidian Clip抓取文章\"] --> Update[\"大模型阅读并更新Wiki\"]\n    Update --> Query[\"第二步：查询<br/>向Wiki提问，合成答案\"]\n    Query --> Output[\"输出markdown/图表/幻灯片\"]\n    Output --> Archive[\"第三步：归档<br/>将精彩回答存回Wiki\"]\n    Archive --> Health[\"第四步：体检<br/>定期健康检查、矛盾检测、孤岛修复\"]\n    Health --> Ingest"
+    },
+    {
+      "title": "知识复利循环",
+      "code": "flowchart LR\n    NewArt[\"新文章\"] --> Extract[\"提取关键信息\"]\n    Extract --> Integrate[\"整合进现有Wiki\"]\n    Integrate --> UpdatePage[\"更新实体页面<br/>修改摘要\"]\n    UpdatePage --> CrossLink[\"交叉引用已存在\"]\n    CrossLink --> Contradiction[\"标记矛盾\"]\n    Contradiction --> Enrich[\"每次阅读使Wiki更丰富\"]\n    Enrich --> QueryCycle[\"后续查询受益\"]\n    QueryCycle --> NewArt"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T22:15:19+00:00"
+}

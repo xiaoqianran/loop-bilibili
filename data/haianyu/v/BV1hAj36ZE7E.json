@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1hAj36ZE7E",
+  "title": "145. 从prefill和decode角度理解投机解码何以加速？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1128,
+  "text": "今天的问题是从PREFILE和decode的角度理解\n投机解码为什么能加速\n投机解码会让小模型串行的打草稿\n相当于decode\n会让大模型进行并行的验证\n相当于增量的PREFAIL\n而由于PREFIL天生的并行性\n让大模型去做增量的pref\n比起串行地区decode要快得多\n这是因为大模型做并行的PREFL\n主要是较大的矩阵计算\n能够充分利用GPU的算力\n它一次增量PREFILE的用时\n几乎等同于只生成单个token\n接下来看一下投机解码的流程\n假设用户发来的提示是海安语\n首先要做pref\n并且小模型和大模型都要做PREFW\n为什么呢\n因为必须把kv cash给生成出来\n才能做后面的计算\n假设现在大小模型都做了PREFU\n也就是把海安语这三个token做了词\n嵌入投影得到QKV\n经过注意力层和前馈网络层\n算出了最后一层的隐藏状态\n就这个\n然后拿最后一行的隐藏状态投影到此表\n得到一个概率预测\n再采样出首token\n问题来了\n首token是由小模型猜测\n还是由大模型直接采样呢\n结论先行\n直接让大模型采样得到首token\n不要让小模型去猜\n为什么呢\n因为大模型在prefer之后\n已经得到最后一个token的隐藏状态了\n就这个他很轻易就能得到下一个词的概率预测\n如果让小模型去猜测\n还要进行验证\n那就多此一举了\n小模型拿大模型采样得到的这个手token\n就是这个是会去做DECO的\n具体来说先把它作词嵌入\n然后投影到QKV把K和V并入kv cash\n拿着一条Q去查询\n当前的K以及之前生成的所有的K\n得到注意力分数\n就这一条\n然后和V加权平均得到一条O\n不断计算在最后一层的隐藏状态\n投影到此表维度就能得到一个预测\n这个预测表示\n小模型针对这个式子给出了下一个token是谁\n就是一名的预测70%\n然后在里面采样出来一名同理在作词嵌入\n再算kv cash\n最后会得出来B站这个token的预测\n那么小模型就得到了一名和B站两个草稿token\n加上大模型直接采样出来的首token\n就是总共有三个token\n2+1\n现在把这三个token做一个增量的pref\n大模型会把它们作词嵌入\n然后投影到QKVKV并入k v cash\n计算计算计算\n最后在这里会得到三条概率预测\n第一条对应的是一名\n也就是说next token就是这个艺名\n他要对小模型的艺名进行校验\n这里的第二条对应着B站\n他要对小模型的B站进行校验\n如果这两个校验都通过了\n他还能拿这个末尾的隐藏状态再做一个预测\n这个就是u up主\n他会额外得到一个奖励的token\n就是这个u up主\n那么由于是艺名B站\n这三个token都可以做并行的增量\nPREFU1把就完成了\n所以投机解码可以加速",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hAj36ZE7E",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:31+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

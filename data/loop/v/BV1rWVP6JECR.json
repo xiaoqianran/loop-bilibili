@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1rWVP6JECR",
+  "title": "你的动画工作流程即将变得快得多",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2374,
+  "text": "大家好\n我是p r design的皮ERRICK\n在进行三维动画时\n我们总会遇到这样的时候\n很难找到下一个动作姿势\n我们该如何制作中间真分解动作\n或者如何强化一个姿势\n我们如何从这个阻塞阶段\n过渡到像这样更细致的动画\n幸运的是\nblender自带了一个专门的工具\n可以简化这个过程\n让我们一起来看看吧\n这个神奇的工具叫做BREAKDOWNER\n它可以帮助你创建中间帧\n强化姿势\n放松动作\n或者将当前姿势与下一个或\n上一个姿势进行混合\n请注意它只适用于骨骼动画\n你只能在姿势模式下使用它\n你可以在工具面板中找到它\n但我建议你学习几个快捷键\n以便快速使用它的不同功能\n你可以在姿势菜单下的中间帧选项中\n找到这些快捷键\n让我们看看如何在这个动画中使用这些功能\n诀窍是在阻塞阶段尽可能多地创建姿势\n一旦我的动画细节足够丰富\n我就可以切换到样条模式\n也就是blender中的贝塞尔差值\n另外你可能已经注意到\n我越来越多地使用了这种分布动画风格\n比如在蜘蛛侠平行宇宙电影中非常流行的那种\n而breakdown这工具对于这种动画风格非常有用\n但让我们回到教程本身\n当我们将插值方式切换为贝塞尔\n并在时间轴上拖动时\nblender会自动在关键帧之间\n为角色的姿势进行插值\n让我切换回常量差值\n现在当我按下shift加E时\n就会触发breakdown的工具\n激活后\n我只需要拖动鼠标就可以创建一个新的姿势\n这个姿势会是前一个关键帧和\n下一个关键帧之间的差值\n我可以通过3D视图顶部出现的滑块\n看到我正在应用的差值程度\n目前在第一帧和第12帧之间\n我没有任何关键帧\n每当触发breakdown的时\n它会通过在这两个关键帧之间差值\n来为我创建关键帧\n你可能会认为我可以直接切换到样条差值\n但有趣的是\n我可以通过选择特定的骨骼\n只对它们使用BREAKDOWNER\n除此之外\n我还可以通过常用的快捷键\nGRSXY和Z将工具限制在特定的变换上\n比如位置旋转和缩放以及特定的轴\n它同样适用于B骨骼变换\n使用B键和自定义属性\n使用C键\n像其他变换工具一样\n我们可以通过按住shift或control\n来实现精确和递增操作\n每当你触发这个工具时\n所有的快捷键都会显示在底部栏中\n让我们用这个工具创建一个中间帧角色\n即将进入一个预备动作的姿势\n此时他正抬起前腿\n把全部重量都压在后腿上\n双腿会是最后离开地面的部分\n所以我可以对除了前腿以外的所有骨骼\n使用breakdown的工具\n然后再对前脚使用该工具并加以限制\n让它在地面上稍微滑动一下\n这样我就有了一个不错的基础\n可以通过稍微降低手臂和手的位置\n让他们产生拖拽感来进一步完善\n现在让我们来看下一个工具\n每当我们达到一个极端姿势时\n进一步推动它\n以便更顺畅地过渡到一个更极端的姿势\n总是很有趣的\n你可以使用快捷键CTRL加E来实现这一点\nblender会根据下一个姿势对当前姿势进行外推\n在这里你可以看到\n在当前姿势和下一个姿势之间\n角色会降低他的前脚和手臂\n当我激活推姿势功能时\n它会将控制器向相反的方向移动\n这样在预备动作中就会产生一种很好的张力\n更好地体现即将释放的力量感\n我们还可以进一步推动这个姿势\n比如在这种情况下\n通过按下CTRL加E激活推姿势\n然后再按一次E来实现超越\n从而推动躯干控制器\n它基本上允许我们突破零到一百百分之的界限\n这样我就可以选择把角色的重心稍微推高一点\n然后像之前一样\n我对这个姿势做了一些微调\n接下来我测试了我的动画效果\n我决定将这个姿势稍微错开两帧\n然后为了让这个缓动更加平滑\n我按下shift加E添加了一个过渡帧\n激活了我们之前看到的经典breakdown的功能\n我必须坦白的说\n我查了一些关于relax工具的资料\n但我实在不明白他到底是做什么的\n在我看来\n它和经典的BREAKDOWNER非常相似\n只是范围或增量更小一些\n它可能在微调姿势时会有用\n另外我注意到它在不同的差值模式下\n表现略有不同\n但我也说不太清楚\n所以我就跳过了\n如果你能准确解释它的作用\n我很乐意在下方评论区阅读你的解释\n如果你到目前为止喜欢这个视频\n记得像往常一样点个赞并留下友好的评论\n正如之前所说\n所有的功能或工具在激活时都可以通过按E键\n使用超调选项\n所以我可以用它来作弊\n我可以在第一个和第二个姿势之间\n使用relax工具\n并将数值调到负值\n它会产生一个比下一个预期更小的预期动作\n现在我可以说我至少用过一次relax工具\n最后一个功能是blend to neighbor\n与相邻帧混合\n从第26帧开始\n让我们看看当前的姿势\n并与前一帧和后一帧进行比较\n如果我在这个姿势上使用BREAKDOWNER工具\n它会玩全破坏这个姿势\n因为blender会在前一帧和后一帧之间\n创建一个过渡\n而不管当前的姿势\n如果我使用alt加shift加E\n它就会与相邻帧进行混合\n当前的姿势会被保留\n我可以选择向前一帧或后一帧进行混合\n所以这个工具不是用来创建新姿势的\n而是用来微调现有姿势\n让它更偏向前一帧或后一帧\n我认为这就是你需要了解的\n关于break donner工具的全部内容了\n我不会骗你\n我一直在用这个工具\n但是如果你没有关键姿势\n这个工具就无法生成好的过渡帧\n所以别忘了先练好你的动画基础\n你可以在我的YOUTUBE频道上找到大量免费的内容\n如果你想要更深入的内容\n也可以看看我的动画课程alive\n另外你可以在pr design\nacademy dot com上免费获取我所有的绑定模型\n所以你没有任何理由不去练习动画\n也没有理由不了解BREAKDOWNER工具\n顺便告诉你\n我只花了14分钟就完成了这段动画\n而且我还加了一个拖影针\n因为你知道我很喜欢他们\n这也就结束了\n本期视频\n希望你喜欢这期内容\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1rWVP6JECR",
+  "published_at": "1779894000",
+  "fetched_at": "2026-08-08T07:30:58+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# BREAKDOWNER 工具知识图谱\n\n## 总览工作流程  \n关键结论：BREAKDOWNER 通过 Shift + E 在阻塞阶段创建中间姿势，并可在样条模式下进一步细化。[BV1rWVP6JECR P1 02:01]  \n\n```mermaid\nflowchart TD\n    A1[\"阻塞阶段\"] --> A2[\"创建多个姿势\"]\n    A2 --> A3[\"切换到样条模式 (Bezier)\"]\n    A2 --> A4[\"使用 BREAKDOWNER (Shift+E)\"]\n    A4 --> A5[\"拖动创建中间姿势\"]\n    A5 --> A6[\"滑块调节插值程度\"]\n    A6 --> A7[\"生成关键帧\"]\n    A7 --> A8[\"使用 Relax 工具微调\"]\n    A8 --> A9[\"使用 Push Pose (Ctrl+E)\"]\n    A9 --> A10[\"使用 Blend to Neighbor (Alt+Shift+E)\"]\n    A10 --> A11[\"完成动画\"]\n    A1 --> A12[\"需要关键姿势\"]\n    A12 -->|若缺少| A13[\"先练好动画基础\"]\n    A13 --> A1\n```\n\n## 快捷键映射表  \n关键结论：Shift + E 激活 BREAKDOWNER，Ctrl + E 推动姿势，Alt + Shift + E 混合相邻帧。[BV1rWVP6JECR P1 04:06]  \n\n```mermaid\nflowchart LR\n    K1[\"Shift+E\"] --> F1[\"激活 BREAKDOWNER\"]\n    K2[\"G / R / S\"] --> L1[\"限制到特定轴\"]\n    L1 --> X[\"X 轴\"]\n    L1 --> Y[\"Y 轴\"]\n    L1 --> Z[\"Z 轴\"]\n    K3[\"Ctrl+E\"] --> F2[\"Push Pose\"]\n    K4[\"Alt+Shift+E\"] --> F3[\"Blend to Neighbor\"]\n    K5[\"B\"] --> F4[\"B 骨骼变换\"]\n    K6[\"C\"] --> F5[\"自定义属性\"]\n    K7[\"Shift / Ctrl\"] --> F6[\"精确 / 递增操作\"]\n```\n\n## 姿势细化流程  \n关键结论：使用 BREAKDOWNER 创建中间帧后，可依次使用 Relax、Push Pose、Blend to Neighbor 完成平滑过渡。[BV1rWVP6JECR P1 05:18]  \n\n```mermaid\nflowchart TD\n    P1[\"使用 BREAKDOWNER 创建中间帧\"] --> P2[\"使用 Relax 微调姿势\"]\n    P2 --> P3[\"使用 Push Pose 推动姿势\"]\n    P3 --> P4[\"使用 Blend to Neighbor 混合相邻帧\"]\n    P4 --> P5[\"得到平滑过渡\"]\n    P5 --> P6[\"检查关键姿势是否足够\"]\n    P6 -->|不足| P7[\"返回 BREAKDOWNER 创建更多帧\"]\n    P7 --> P1\n    P6 -->|足够| P8[\"完成\"]\n```\n\n## 工具选择决策树  \n关键结论：根据是否需要新姿势、微调、推动或混合，选择相应的 BREAKDOWNER 子功能。[BV1rWVP6JECR P1 07:11]  \n\n```mermaid\nflowchart TD\n    D1[\"是否需要创建新姿势？\"] -->|是| D2[\"使用 BREAKDOWNER (Shift+E)\"]\n    D1 -->|否| D3[\"是否需要微调现有姿势？\"]\n    D2 --> D4[\"是否需要推动姿势强度？\"]\n    D3 -->|是| D5[\"使用 Relax\"]\n    D3 -->|否| D6[\"是否需要混合相邻帧？\"]\n    D4 -->|是| D7[\"使用 Push Pose (Ctrl+E)\"]\n    D4 -->|否| D6\n    D5 --> D7\n    D6 -->|是| D8[\"使用 Blend to Neighbor (Alt+Shift+E)\"]\n    D6 -->|否| D9[\"完成\"]\n    D8 --> D9\n    D9 --> D10[\"检查关键姿势是否足够\"]\n    D10 -->|不足| D11[\"先练好动画基础\"]\n    D11 --> D1\n```",
+      "diagrams": [
+        {
+          "title": "总览工作流程",
+          "code": "flowchart TD\n    A1[\"阻塞阶段\"] --> A2[\"创建多个姿势\"]\n    A2 --> A3[\"切换到样条模式 (Bezier)\"]\n    A2 --> A4[\"使用 BREAKDOWNER (Shift+E)\"]\n    A4 --> A5[\"拖动创建中间姿势\"]\n    A5 --> A6[\"滑块调节插值程度\"]\n    A6 --> A7[\"生成关键帧\"]\n    A7 --> A8[\"使用 Relax 工具微调\"]\n    A8 --> A9[\"使用 Push Pose (Ctrl+E)\"]\n    A9 --> A10[\"使用 Blend to Neighbor (Alt+Shift+E)\"]\n    A10 --> A11[\"完成动画\"]\n    A1 --> A12[\"需要关键姿势\"]\n    A12 -->|若缺少| A13[\"先练好动画基础\"]\n    A13 --> A1"
+        },
+        {
+          "title": "快捷键映射表",
+          "code": "flowchart LR\n    K1[\"Shift+E\"] --> F1[\"激活 BREAKDOWNER\"]\n    K2[\"G / R / S\"] --> L1[\"限制到特定轴\"]\n    L1 --> X[\"X 轴\"]\n    L1 --> Y[\"Y 轴\"]\n    L1 --> Z[\"Z 轴\"]\n    K3[\"Ctrl+E\"] --> F2[\"Push Pose\"]\n    K4[\"Alt+Shift+E\"] --> F3[\"Blend to Neighbor\"]\n    K5[\"B\"] --> F4[\"B 骨骼变换\"]\n    K6[\"C\"] --> F5[\"自定义属性\"]\n    K7[\"Shift / Ctrl\"] --> F6[\"精确 / 递增操作\"]"
+        },
+        {
+          "title": "姿势细化流程",
+          "code": "flowchart TD\n    P1[\"使用 BREAKDOWNER 创建中间帧\"] --> P2[\"使用 Relax 微调姿势\"]\n    P2 --> P3[\"使用 Push Pose 推动姿势\"]\n    P3 --> P4[\"使用 Blend to Neighbor 混合相邻帧\"]\n    P4 --> P5[\"得到平滑过渡\"]\n    P5 --> P6[\"检查关键姿势是否足够\"]\n    P6 -->|不足| P7[\"返回 BREAKDOWNER 创建更多帧\"]\n    P7 --> P1\n    P6 -->|足够| P8[\"完成\"]"
+        },
+        {
+          "title": "工具选择决策树",
+          "code": "flowchart TD\n    D1[\"是否需要创建新姿势？\"] -->|是| D2[\"使用 BREAKDOWNER (Shift+E)\"]\n    D1 -->|否| D3[\"是否需要微调现有姿势？\"]\n    D2 --> D4[\"是否需要推动姿势强度？\"]\n    D3 -->|是| D5[\"使用 Relax\"]\n    D3 -->|否| D6[\"是否需要混合相邻帧？\"]\n    D4 -->|是| D7[\"使用 Push Pose (Ctrl+E)\"]\n    D4 -->|否| D6\n    D5 --> D7\n    D6 -->|是| D8[\"使用 Blend to Neighbor (Alt+Shift+E)\"]\n    D6 -->|否| D9[\"完成\"]\n    D8 --> D9\n    D9 --> D10[\"检查关键姿势是否足够\"]\n    D10 -->|不足| D11[\"先练好动画基础\"]\n    D11 --> D1"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T07:31:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# BREAKDOWNER 工具知识图谱\n\n## 总览工作流程  \n关键结论：BREAKDOWNER 通过 Shift + E 在阻塞阶段创建中间姿势，并可在样条模式下进一步细化。[BV1rWVP6JECR P1 02:01]  \n\n```mermaid\nflowchart TD\n    A1[\"阻塞阶段\"] --> A2[\"创建多个姿势\"]\n    A2 --> A3[\"切换到样条模式 (Bezier)\"]\n    A2 --> A4[\"使用 BREAKDOWNER (Shift+E)\"]\n    A4 --> A5[\"拖动创建中间姿势\"]\n    A5 --> A6[\"滑块调节插值程度\"]\n    A6 --> A7[\"生成关键帧\"]\n    A7 --> A8[\"使用 Relax 工具微调\"]\n    A8 --> A9[\"使用 Push Pose (Ctrl+E)\"]\n    A9 --> A10[\"使用 Blend to Neighbor (Alt+Shift+E)\"]\n    A10 --> A11[\"完成动画\"]\n    A1 --> A12[\"需要关键姿势\"]\n    A12 -->|若缺少| A13[\"先练好动画基础\"]\n    A13 --> A1\n```\n\n## 快捷键映射表  \n关键结论：Shift + E 激活 BREAKDOWNER，Ctrl + E 推动姿势，Alt + Shift + E 混合相邻帧。[BV1rWVP6JECR P1 04:06]  \n\n```mermaid\nflowchart LR\n    K1[\"Shift+E\"] --> F1[\"激活 BREAKDOWNER\"]\n    K2[\"G / R / S\"] --> L1[\"限制到特定轴\"]\n    L1 --> X[\"X 轴\"]\n    L1 --> Y[\"Y 轴\"]\n    L1 --> Z[\"Z 轴\"]\n    K3[\"Ctrl+E\"] --> F2[\"Push Pose\"]\n    K4[\"Alt+Shift+E\"] --> F3[\"Blend to Neighbor\"]\n    K5[\"B\"] --> F4[\"B 骨骼变换\"]\n    K6[\"C\"] --> F5[\"自定义属性\"]\n    K7[\"Shift / Ctrl\"] --> F6[\"精确 / 递增操作\"]\n```\n\n## 姿势细化流程  \n关键结论：使用 BREAKDOWNER 创建中间帧后，可依次使用 Relax、Push Pose、Blend to Neighbor 完成平滑过渡。[BV1rWVP6JECR P1 05:18]  \n\n```mermaid\nflowchart TD\n    P1[\"使用 BREAKDOWNER 创建中间帧\"] --> P2[\"使用 Relax 微调姿势\"]\n    P2 --> P3[\"使用 Push Pose 推动姿势\"]\n    P3 --> P4[\"使用 Blend to Neighbor 混合相邻帧\"]\n    P4 --> P5[\"得到平滑过渡\"]\n    P5 --> P6[\"检查关键姿势是否足够\"]\n    P6 -->|不足| P7[\"返回 BREAKDOWNER 创建更多帧\"]\n    P7 --> P1\n    P6 -->|足够| P8[\"完成\"]\n```\n\n## 工具选择决策树  \n关键结论：根据是否需要新姿势、微调、推动或混合，选择相应的 BREAKDOWNER 子功能。[BV1rWVP6JECR P1 07:11]  \n\n```mermaid\nflowchart TD\n    D1[\"是否需要创建新姿势？\"] -->|是| D2[\"使用 BREAKDOWNER (Shift+E)\"]\n    D1 -->|否| D3[\"是否需要微调现有姿势？\"]\n    D2 --> D4[\"是否需要推动姿势强度？\"]\n    D3 -->|是| D5[\"使用 Relax\"]\n    D3 -->|否| D6[\"是否需要混合相邻帧？\"]\n    D4 -->|是| D7[\"使用 Push Pose (Ctrl+E)\"]\n    D4 -->|否| D6\n    D5 --> D7\n    D6 -->|是| D8[\"使用 Blend to Neighbor (Alt+Shift+E)\"]\n    D6 -->|否| D9[\"完成\"]\n    D8 --> D9\n    D9 --> D10[\"检查关键姿势是否足够\"]\n    D10 -->|不足| D11[\"先练好动画基础\"]\n    D11 --> D1\n```",
+  "diagrams": [
+    {
+      "title": "总览工作流程",
+      "code": "flowchart TD\n    A1[\"阻塞阶段\"] --> A2[\"创建多个姿势\"]\n    A2 --> A3[\"切换到样条模式 (Bezier)\"]\n    A2 --> A4[\"使用 BREAKDOWNER (Shift+E)\"]\n    A4 --> A5[\"拖动创建中间姿势\"]\n    A5 --> A6[\"滑块调节插值程度\"]\n    A6 --> A7[\"生成关键帧\"]\n    A7 --> A8[\"使用 Relax 工具微调\"]\n    A8 --> A9[\"使用 Push Pose (Ctrl+E)\"]\n    A9 --> A10[\"使用 Blend to Neighbor (Alt+Shift+E)\"]\n    A10 --> A11[\"完成动画\"]\n    A1 --> A12[\"需要关键姿势\"]\n    A12 -->|若缺少| A13[\"先练好动画基础\"]\n    A13 --> A1"
+    },
+    {
+      "title": "快捷键映射表",
+      "code": "flowchart LR\n    K1[\"Shift+E\"] --> F1[\"激活 BREAKDOWNER\"]\n    K2[\"G / R / S\"] --> L1[\"限制到特定轴\"]\n    L1 --> X[\"X 轴\"]\n    L1 --> Y[\"Y 轴\"]\n    L1 --> Z[\"Z 轴\"]\n    K3[\"Ctrl+E\"] --> F2[\"Push Pose\"]\n    K4[\"Alt+Shift+E\"] --> F3[\"Blend to Neighbor\"]\n    K5[\"B\"] --> F4[\"B 骨骼变换\"]\n    K6[\"C\"] --> F5[\"自定义属性\"]\n    K7[\"Shift / Ctrl\"] --> F6[\"精确 / 递增操作\"]"
+    },
+    {
+      "title": "姿势细化流程",
+      "code": "flowchart TD\n    P1[\"使用 BREAKDOWNER 创建中间帧\"] --> P2[\"使用 Relax 微调姿势\"]\n    P2 --> P3[\"使用 Push Pose 推动姿势\"]\n    P3 --> P4[\"使用 Blend to Neighbor 混合相邻帧\"]\n    P4 --> P5[\"得到平滑过渡\"]\n    P5 --> P6[\"检查关键姿势是否足够\"]\n    P6 -->|不足| P7[\"返回 BREAKDOWNER 创建更多帧\"]\n    P7 --> P1\n    P6 -->|足够| P8[\"完成\"]"
+    },
+    {
+      "title": "工具选择决策树",
+      "code": "flowchart TD\n    D1[\"是否需要创建新姿势？\"] -->|是| D2[\"使用 BREAKDOWNER (Shift+E)\"]\n    D1 -->|否| D3[\"是否需要微调现有姿势？\"]\n    D2 --> D4[\"是否需要推动姿势强度？\"]\n    D3 -->|是| D5[\"使用 Relax\"]\n    D3 -->|否| D6[\"是否需要混合相邻帧？\"]\n    D4 -->|是| D7[\"使用 Push Pose (Ctrl+E)\"]\n    D4 -->|否| D6\n    D5 --> D7\n    D6 -->|是| D8[\"使用 Blend to Neighbor (Alt+Shift+E)\"]\n    D6 -->|否| D9[\"完成\"]\n    D8 --> D9\n    D9 --> D10[\"检查关键姿势是否足够\"]\n    D10 -->|不足| D11[\"先练好动画基础\"]\n    D11 --> D1"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T07:31:30+00:00"
+}

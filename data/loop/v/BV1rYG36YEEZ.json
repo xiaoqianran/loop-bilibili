@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1rYG36YEEZ",
+  "title": "【比金铲铲还爽】室友推荐的Python编程游戏网站，瞬间对Python的喜爱程度达到了10000%！！！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 711,
+  "text": "谁懂啊\n家人们我才发现原来室友每天凌晨不打游戏\n居然是在偷偷卷Python\n最近我真的挖到宝了\n发现一个超有趣的编程自学平台\n直接颠覆了我对敲代码很枯燥的刻板印象\n他把Python java\nJavascript\n这些编程语言全都做成了\n像打游戏升级一样的沉浸式体验\n我这种典型的3分钟热度选手\n居然硬生生坚持学了两个月\n这哪里是学习呀\n这分明就是一一场编程冒险\n一打开界面\n我就被惊艳到了\n每个编程知识点都是一个可以解锁的副本\n完成练习就能拿到经验值和成就徽章\n就连错误提示都特别可爱\n比如哎呀\n这段代码被小怪兽吃掉了\n学习路线设计的跟游戏任务一样清晰\n从最基础的HTMLCSS\n新手村到高级的魔王城机器学习\n每个阶段都有对应的挑战和奖励\n做完一个小练习\n立刻就能看到反馈\n不再是冷冰冰的报错\n而是超友好的游戏化指引\n还有每日签到\n连续学习加成平台的讨论区\n就像游戏公会大佬会耐心带萌新\n还能组队一起做项目\n刷每周副本完全可以按照自己的节奏自由学\n最后再给大家掏一个压箱底的宝贝\n连DBC可都推荐的Python\n小白必备的字典来了\n就是这本Python背记手册\n他把所有常用的基础知识点和语法\n全都整理进去了\n通俗易懂\n只要你识字就能看懂\n全书只保留干货\n重点的运算逻辑运算符都讲的特别细\n一目了然\n超好记\n而且每一章之前都会先把要用到的单词列出来\n先记单词再学语法\n效率直接翻倍\n可以说\n这是一本把全面内容加高效学习方法\n结合的特别好的Python入门教程\nPDF电子版\n配套学习资源和路线图我都已经整理好了\n想学Python的朋友真的可以冲零基础入门\n真的没那么难\nWork go work\n说着我过了肯尼\n我也对他",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1rYG36YEEZ",
+  "published_at": "1785567653",
+  "fetched_at": "2026-08-07T04:53:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Python学习平台与配套教材全景图谱\n\n## 平台概览\n\n```mermaid\nflowchart TD\n    P[\"Gameified Python学习平台\"]\n    L[\"支持语言: Python、Java、JavaScript\"]\n    G[\"游戏化玩法\"]\n    S[\"学习路线设计\"]\n    C[\"互动功能\"]\n    R[\"学习成果与反馈\"]\n    P --> L\n    P --> G\n    P --> S\n    P --> C\n    P --> R\n    G -->|副本解锁| G1[\"知识点副本\"]\n    G -->|经验值/徽章| G2[\"奖励系统\"]\n    G1 --> G2\n    S -->|新手村: HTML/CSS| S1[\"基础阶段\"]\n    S -->|魔王城: 机器学习| S2[\"高级阶段\"]\n    S1 --> S2\n    C -->|每日签到| C1[\"学习加成\"]\n    C -->|讨论区| C2[\"大佬带萌新\"]\n    C -->|组队项目| C3[\"合作副本\"]\n    R -->|即时反馈| R1[\"可爱错误提示\"]\n    R -->|成就展示| R2[\"徽章墙\"]\n```\n\n## 学习流程\n\n```mermaid\nflowchart LR\n    Start[\"开始学习\"] --> Choose[\"选择知识点副本\"]\n    Choose --> Practice[\"完成练习\"]\n    Practice --> Reward[\"获得经验值/徽章\"]\n    Reward --> Unlock[\"解锁下一级副本\"]\n    Unlock --> Continue[\"继续学习\"]\n    Continue --> End[\"完成学习路线\"]\n    End --> Achievement[\"获取成就\"]\n```\n\n## 社区与激励机制\n\n```mermaid\nflowchart TD\n    Community[\"平台社区\"]\n    SignIn[\"每日签到\"]\n    Forum[\"讨论区\"]\n    Team[\"组队项目\"]\n    Feedback[\"可爱错误提示\"]\n    Mentor[\"大佬带萌新\"]\n    Bonus[\"连续学习加成\"]\n    Cooperation[\"合作完成副本\"]\n    Community --> SignIn\n    Community --> Forum\n    Community --> Team\n    SignIn --> Bonus\n    Forum --> Mentor\n    Team --> Cooperation\n    Cooperation --> Feedback\n```\n\n## Python背记手册结构\n\n```mermaid\nflowchart TD\n    Handbook[\"Python背记手册\"]\n    Basics[\"基础知识点 & 语法\"]\n    Vocab[\"单词列表\"]\n    Logic[\"逻辑运算符细讲\"]\n    PDF[\"PDF电子版 + 配套资源\"]\n    Learn[\"先记单词 → 学习语法\"]\n    Efficiency[\"学习效率翻倍\"]\n    Entry[\"零基础入门\"]\n    Handbook --> Basics\n    Handbook --> Vocab\n    Handbook --> Logic\n    Handbook --> PDF\n    Vocab --> Learn\n    Learn --> Efficiency\n    Basics --> Entry\n    Logic --> Entry\n```",
+      "diagrams": [
+        {
+          "title": "平台概览",
+          "code": "flowchart TD\n    P[\"Gameified Python学习平台\"]\n    L[\"支持语言: Python、Java、JavaScript\"]\n    G[\"游戏化玩法\"]\n    S[\"学习路线设计\"]\n    C[\"互动功能\"]\n    R[\"学习成果与反馈\"]\n    P --> L\n    P --> G\n    P --> S\n    P --> C\n    P --> R\n    G -->|副本解锁| G1[\"知识点副本\"]\n    G -->|经验值/徽章| G2[\"奖励系统\"]\n    G1 --> G2\n    S -->|新手村: HTML/CSS| S1[\"基础阶段\"]\n    S -->|魔王城: 机器学习| S2[\"高级阶段\"]\n    S1 --> S2\n    C -->|每日签到| C1[\"学习加成\"]\n    C -->|讨论区| C2[\"大佬带萌新\"]\n    C -->|组队项目| C3[\"合作副本\"]\n    R -->|即时反馈| R1[\"可爱错误提示\"]\n    R -->|成就展示| R2[\"徽章墙\"]"
+        },
+        {
+          "title": "学习流程",
+          "code": "flowchart LR\n    Start[\"开始学习\"] --> Choose[\"选择知识点副本\"]\n    Choose --> Practice[\"完成练习\"]\n    Practice --> Reward[\"获得经验值/徽章\"]\n    Reward --> Unlock[\"解锁下一级副本\"]\n    Unlock --> Continue[\"继续学习\"]\n    Continue --> End[\"完成学习路线\"]\n    End --> Achievement[\"获取成就\"]"
+        },
+        {
+          "title": "社区与激励机制",
+          "code": "flowchart TD\n    Community[\"平台社区\"]\n    SignIn[\"每日签到\"]\n    Forum[\"讨论区\"]\n    Team[\"组队项目\"]\n    Feedback[\"可爱错误提示\"]\n    Mentor[\"大佬带萌新\"]\n    Bonus[\"连续学习加成\"]\n    Cooperation[\"合作完成副本\"]\n    Community --> SignIn\n    Community --> Forum\n    Community --> Team\n    SignIn --> Bonus\n    Forum --> Mentor\n    Team --> Cooperation\n    Cooperation --> Feedback"
+        },
+        {
+          "title": "Python背记手册结构",
+          "code": "flowchart TD\n    Handbook[\"Python背记手册\"]\n    Basics[\"基础知识点 & 语法\"]\n    Vocab[\"单词列表\"]\n    Logic[\"逻辑运算符细讲\"]\n    PDF[\"PDF电子版 + 配套资源\"]\n    Learn[\"先记单词 → 学习语法\"]\n    Efficiency[\"学习效率翻倍\"]\n    Entry[\"零基础入门\"]\n    Handbook --> Basics\n    Handbook --> Vocab\n    Handbook --> Logic\n    Handbook --> PDF\n    Vocab --> Learn\n    Learn --> Efficiency\n    Basics --> Entry\n    Logic --> Entry"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T05:00:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Python学习平台与配套教材全景图谱\n\n## 平台概览\n\n```mermaid\nflowchart TD\n    P[\"Gameified Python学习平台\"]\n    L[\"支持语言: Python、Java、JavaScript\"]\n    G[\"游戏化玩法\"]\n    S[\"学习路线设计\"]\n    C[\"互动功能\"]\n    R[\"学习成果与反馈\"]\n    P --> L\n    P --> G\n    P --> S\n    P --> C\n    P --> R\n    G -->|副本解锁| G1[\"知识点副本\"]\n    G -->|经验值/徽章| G2[\"奖励系统\"]\n    G1 --> G2\n    S -->|新手村: HTML/CSS| S1[\"基础阶段\"]\n    S -->|魔王城: 机器学习| S2[\"高级阶段\"]\n    S1 --> S2\n    C -->|每日签到| C1[\"学习加成\"]\n    C -->|讨论区| C2[\"大佬带萌新\"]\n    C -->|组队项目| C3[\"合作副本\"]\n    R -->|即时反馈| R1[\"可爱错误提示\"]\n    R -->|成就展示| R2[\"徽章墙\"]\n```\n\n## 学习流程\n\n```mermaid\nflowchart LR\n    Start[\"开始学习\"] --> Choose[\"选择知识点副本\"]\n    Choose --> Practice[\"完成练习\"]\n    Practice --> Reward[\"获得经验值/徽章\"]\n    Reward --> Unlock[\"解锁下一级副本\"]\n    Unlock --> Continue[\"继续学习\"]\n    Continue --> End[\"完成学习路线\"]\n    End --> Achievement[\"获取成就\"]\n```\n\n## 社区与激励机制\n\n```mermaid\nflowchart TD\n    Community[\"平台社区\"]\n    SignIn[\"每日签到\"]\n    Forum[\"讨论区\"]\n    Team[\"组队项目\"]\n    Feedback[\"可爱错误提示\"]\n    Mentor[\"大佬带萌新\"]\n    Bonus[\"连续学习加成\"]\n    Cooperation[\"合作完成副本\"]\n    Community --> SignIn\n    Community --> Forum\n    Community --> Team\n    SignIn --> Bonus\n    Forum --> Mentor\n    Team --> Cooperation\n    Cooperation --> Feedback\n```\n\n## Python背记手册结构\n\n```mermaid\nflowchart TD\n    Handbook[\"Python背记手册\"]\n    Basics[\"基础知识点 & 语法\"]\n    Vocab[\"单词列表\"]\n    Logic[\"逻辑运算符细讲\"]\n    PDF[\"PDF电子版 + 配套资源\"]\n    Learn[\"先记单词 → 学习语法\"]\n    Efficiency[\"学习效率翻倍\"]\n    Entry[\"零基础入门\"]\n    Handbook --> Basics\n    Handbook --> Vocab\n    Handbook --> Logic\n    Handbook --> PDF\n    Vocab --> Learn\n    Learn --> Efficiency\n    Basics --> Entry\n    Logic --> Entry\n```",
+  "diagrams": [
+    {
+      "title": "平台概览",
+      "code": "flowchart TD\n    P[\"Gameified Python学习平台\"]\n    L[\"支持语言: Python、Java、JavaScript\"]\n    G[\"游戏化玩法\"]\n    S[\"学习路线设计\"]\n    C[\"互动功能\"]\n    R[\"学习成果与反馈\"]\n    P --> L\n    P --> G\n    P --> S\n    P --> C\n    P --> R\n    G -->|副本解锁| G1[\"知识点副本\"]\n    G -->|经验值/徽章| G2[\"奖励系统\"]\n    G1 --> G2\n    S -->|新手村: HTML/CSS| S1[\"基础阶段\"]\n    S -->|魔王城: 机器学习| S2[\"高级阶段\"]\n    S1 --> S2\n    C -->|每日签到| C1[\"学习加成\"]\n    C -->|讨论区| C2[\"大佬带萌新\"]\n    C -->|组队项目| C3[\"合作副本\"]\n    R -->|即时反馈| R1[\"可爱错误提示\"]\n    R -->|成就展示| R2[\"徽章墙\"]"
+    },
+    {
+      "title": "学习流程",
+      "code": "flowchart LR\n    Start[\"开始学习\"] --> Choose[\"选择知识点副本\"]\n    Choose --> Practice[\"完成练习\"]\n    Practice --> Reward[\"获得经验值/徽章\"]\n    Reward --> Unlock[\"解锁下一级副本\"]\n    Unlock --> Continue[\"继续学习\"]\n    Continue --> End[\"完成学习路线\"]\n    End --> Achievement[\"获取成就\"]"
+    },
+    {
+      "title": "社区与激励机制",
+      "code": "flowchart TD\n    Community[\"平台社区\"]\n    SignIn[\"每日签到\"]\n    Forum[\"讨论区\"]\n    Team[\"组队项目\"]\n    Feedback[\"可爱错误提示\"]\n    Mentor[\"大佬带萌新\"]\n    Bonus[\"连续学习加成\"]\n    Cooperation[\"合作完成副本\"]\n    Community --> SignIn\n    Community --> Forum\n    Community --> Team\n    SignIn --> Bonus\n    Forum --> Mentor\n    Team --> Cooperation\n    Cooperation --> Feedback"
+    },
+    {
+      "title": "Python背记手册结构",
+      "code": "flowchart TD\n    Handbook[\"Python背记手册\"]\n    Basics[\"基础知识点 & 语法\"]\n    Vocab[\"单词列表\"]\n    Logic[\"逻辑运算符细讲\"]\n    PDF[\"PDF电子版 + 配套资源\"]\n    Learn[\"先记单词 → 学习语法\"]\n    Efficiency[\"学习效率翻倍\"]\n    Entry[\"零基础入门\"]\n    Handbook --> Basics\n    Handbook --> Vocab\n    Handbook --> Logic\n    Handbook --> PDF\n    Vocab --> Learn\n    Learn --> Efficiency\n    Basics --> Entry\n    Logic --> Entry"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:00:48+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1rbKm6nEwt",
+  "title": "开源闲鱼自动卖会员agent，大家赚钱是我快乐",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1031,
+  "text": "搞咸鱼不怕赚钱\n就怕发现了\n但赚钱跟不上速度\n咸鱼是一个拼手速\n拼网速的二手交易平台\n你只要能掌握到哪些品供给暴增\n你就能赚钱\n而对于我们做卡券会员推广来说\n只有频繁上架才能带来订单量\n频繁的上架有三种方式\n招大量的人来上架\n要么花一个人花大量的时间拼命上架更新品类\n要么选择我这样的AI自动上架\n最优解肯定是AI自动上架\n我最近就在研究这个\n我做了一个闲鱼自动上架卡券的A准\n只要对着A准起一个命令\n而且通通都有完美的主图\n完美的标题\n还有闲鱼商品介绍\n你如果手动上架100个商品\n大概会花掉你的五个小时以上\n我这个A准就解决了这个问题\n这里简单科普一下skill和A准\nskill是帮你做某件事的工具\n而A准就是直接帮你达成目标的AI技能\n我这个咸鱼自动上架影视会员的A准\n就是组合了自动写标题\nskill自动生成主图\nskill自动写闲鱼商品介绍\nskill以及登录闲鱼自动化操作流程\n说白了就是脚本加自动化网页\n点击好\n那我来介绍一下主要功能\n这个咸鱼自动上架A准能做什么\n不能做什么\n能做这几个\n整套自动化上架加定价运营全套方案\n整套系统支持全自动批量铺货\n148款商品流程实测稳定可用\nAI独立为每款商品生成专属主图\n标准化自动产出标题详情\n售价根据卡世界拿货底价\n搭配阶梯利润自动核算\n商品串衡间隔3分钟分批发布\n上新省心安全\n价格方面覆盖25个品牌S8种规格的卡令\n真实底价一键查询\n阶梯差异化加价模式\n兼顾低价走\n量高价稳利润底价数据可导出excel矩阵\n表格\n对账清晰透明\n定价逻辑很合理\n文案全部标准化\n自动产出\n自带卖点描述版本对比\n充值时效与售后说明\n不用人工反复修改打磨\n同时系统自动识别商品属性\n精准归类六大类目\n完全省去手动选分类的麻烦\n整体大幅压缩人工操作\n运营效率提升非常明显\n不能做自动回复\n有人咨询一定要自己去回复\n也不能自动下架\n如果上架太多了\n需要手动下架\n另外还不能跳过咸鱼的检测\n违规系统一分钟内不能超过五个商品\n纠结很久之后\n最终选择把自研的skill完全开源出去\n做这个工具的初衷本是自用\n解决自己闲鱼上架的繁琐问题\n打磨了完整可用的逻辑后\n没有选择闭源商用\n而是公开全部代码\n一方面希望有同样需求的人可以直接拿来使用\n二次改造\n减少重复造轮子\n另一方面也期待同行一起迭代优化\n发现我没考虑到的bug和拓展方向\n开源不算牺牲\n更像是把个人成果变成公共可用资产\n比起独自持有\n能被更多人用上\n持续迭代价值反而更大",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1rbKm6nEwt",
+  "published_at": "1784537386",
+  "fetched_at": "2026-08-07T06:40:50+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 开源闲鱼自动卖会员Agent 知识图谱\n\n## 上架方式比较 [BV1rbKm6nEwt P1 00:17] [BV1rbKm6nEwt P1 00:19] [BV1rbKm6nEwt P1 00:20] [BV1rbKm6nEwt P1 00:25] [BV1rbKm6nEwt P1 00:28]\n```mermaid\nflowchart TD\n    D[\"频繁上架需求\"]\n    M1[\"大量人工上架\"]\n    M2[\"单人大量时间上架\"]\n    M3[\"AI自动上架\"]\n    C1[\"成本高、效率低\"]\n    C2[\"单人负担重\"]\n    C3[\"效率高、成本低\"]\n    Opt[\"最优解\"]\n\n    D --> M1\n    D --> M2\n    D --> M3\n    M1 --> C1\n    M2 --> C2\n    M3 --> C3\n    C3 --> Opt\n    Opt --> M3\n```\n\n## AI自动上架系统功能总览 [BV1rbKm6nEwt P1 01:02] [BV1rbKm6nEwt P1 01:08] [BV1rbKm6nEwt P1 01:10] [BV1rbKm6nEwt P1 01:12] [BV1rbKm6nEwt P1 01:27] [BV1rbKm6nEwt P1 01:31] [BV1rbKm6nEwt P1 01:36] [BV1rbKm6nEwt P1 01:40] [BV1rbKm6nEwt P1 01:42] [BV1rbKm6nEwt P1 01:44] [BV1rbKm6nEwt P1 01:46] [BV1rbKm6nEwt P1 01:52] [BV1rbKm6nEwt P1 01:56] [BV1rbKm6nEwt P1 02:27] [BV1rbKm6nEwt P1 02:30] [BV1rbKm6nEwt P1 02:34] [BV1rbKm6nEwt P1 02:37]\n```mermaid\nflowchart TD\n    A1[\"自动生成主图\"]\n    A2[\"自动产出标题\"]\n    A3[\"自动写商品介绍\"]\n    A4[\"登录闲鱼自动化\"]\n    A5[\"批量铺货（全自动）\"]\n    A6[\"定价与阶梯利润核算\"]\n    A7[\"商品属性识别 & 分类\"]\n    A8[\"价格查询 & 底价一键获取\"]\n    A9[\"数据导出（Excel） & 对账\"]\n    L1[\"不支持自动回复\"]\n    L2[\"不支持自动下架\"]\n    L3[\"不跳过平台检测\"]\n    L4[\"违规：1分钟内≤5商品\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n\n    L1 -.-> A4\n    L2 -.-> A5\n    L3 -.-> A4\n    L4 -.-> A5\n```\n\n## 开源动机与社区贡献 [BV1rbKm6nEwt P1 02:40] [BV1rbKm6nEwt P1 02:45] [BV1rbKm6nEwt P1 02:47] [BV1rbKm6nEwt P1 02:50] [BV1rbKm6nEwt P1 02:53] [BV1rbKm6nEwt P1 02:55] [BV1rbKm6nEwt P1 02:59] [BV1rbKm6nEwt P1 03:02] [BV1rbKm6nEwt P1 03:05] [BV1rbKm6nEwt P1 03:08] [BV1rbKm6nEwt P1 03:15]\n```mermaid\nflowchart LR\n    M1[\"自用需求：解决上架繁琐\"]\n    M2[\"打磨完整逻辑\"]\n    M3[\"决定不开源商用\"]\n    M4[\"公开全部代码\"]\n    M5[\"便于同类需求直接使用\"]\n    M6[\"支持二次改造\"]\n    M7[\"期待同行迭代优化\"]\n    M8[\"发现未考虑的Bug & 拓展方向\"]\n    M9[\"开源视为公共资产\"]\n    M10[\"持续迭代提升价值\"]\n\n    M1 --> M2\n    M2 --> M3\n    M3 --> M4\n    M4 --> M5\n    M5 --> M6\n    M6 --> M7\n    M7 --> M8\n    M8 --> M9\n    M9 --> M10\n```",
+      "diagrams": [
+        {
+          "title": "上架方式比较",
+          "code": "flowchart TD\n    D[\"频繁上架需求\"]\n    M1[\"大量人工上架\"]\n    M2[\"单人大量时间上架\"]\n    M3[\"AI自动上架\"]\n    C1[\"成本高、效率低\"]\n    C2[\"单人负担重\"]\n    C3[\"效率高、成本低\"]\n    Opt[\"最优解\"]\n\n    D --> M1\n    D --> M2\n    D --> M3\n    M1 --> C1\n    M2 --> C2\n    M3 --> C3\n    C3 --> Opt\n    Opt --> M3"
+        },
+        {
+          "title": "AI自动上架系统功能总览",
+          "code": "flowchart TD\n    A1[\"自动生成主图\"]\n    A2[\"自动产出标题\"]\n    A3[\"自动写商品介绍\"]\n    A4[\"登录闲鱼自动化\"]\n    A5[\"批量铺货（全自动）\"]\n    A6[\"定价与阶梯利润核算\"]\n    A7[\"商品属性识别 & 分类\"]\n    A8[\"价格查询 & 底价一键获取\"]\n    A9[\"数据导出（Excel） & 对账\"]\n    L1[\"不支持自动回复\"]\n    L2[\"不支持自动下架\"]\n    L3[\"不跳过平台检测\"]\n    L4[\"违规：1分钟内≤5商品\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n\n    L1 -.-> A4\n    L2 -.-> A5\n    L3 -.-> A4\n    L4 -.-> A5"
+        },
+        {
+          "title": "开源动机与社区贡献",
+          "code": "flowchart LR\n    M1[\"自用需求：解决上架繁琐\"]\n    M2[\"打磨完整逻辑\"]\n    M3[\"决定不开源商用\"]\n    M4[\"公开全部代码\"]\n    M5[\"便于同类需求直接使用\"]\n    M6[\"支持二次改造\"]\n    M7[\"期待同行迭代优化\"]\n    M8[\"发现未考虑的Bug & 拓展方向\"]\n    M9[\"开源视为公共资产\"]\n    M10[\"持续迭代提升价值\"]\n\n    M1 --> M2\n    M2 --> M3\n    M3 --> M4\n    M4 --> M5\n    M5 --> M6\n    M6 --> M7\n    M7 --> M8\n    M8 --> M9\n    M9 --> M10"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T06:41:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 开源闲鱼自动卖会员Agent 知识图谱\n\n## 上架方式比较 [BV1rbKm6nEwt P1 00:17] [BV1rbKm6nEwt P1 00:19] [BV1rbKm6nEwt P1 00:20] [BV1rbKm6nEwt P1 00:25] [BV1rbKm6nEwt P1 00:28]\n```mermaid\nflowchart TD\n    D[\"频繁上架需求\"]\n    M1[\"大量人工上架\"]\n    M2[\"单人大量时间上架\"]\n    M3[\"AI自动上架\"]\n    C1[\"成本高、效率低\"]\n    C2[\"单人负担重\"]\n    C3[\"效率高、成本低\"]\n    Opt[\"最优解\"]\n\n    D --> M1\n    D --> M2\n    D --> M3\n    M1 --> C1\n    M2 --> C2\n    M3 --> C3\n    C3 --> Opt\n    Opt --> M3\n```\n\n## AI自动上架系统功能总览 [BV1rbKm6nEwt P1 01:02] [BV1rbKm6nEwt P1 01:08] [BV1rbKm6nEwt P1 01:10] [BV1rbKm6nEwt P1 01:12] [BV1rbKm6nEwt P1 01:27] [BV1rbKm6nEwt P1 01:31] [BV1rbKm6nEwt P1 01:36] [BV1rbKm6nEwt P1 01:40] [BV1rbKm6nEwt P1 01:42] [BV1rbKm6nEwt P1 01:44] [BV1rbKm6nEwt P1 01:46] [BV1rbKm6nEwt P1 01:52] [BV1rbKm6nEwt P1 01:56] [BV1rbKm6nEwt P1 02:27] [BV1rbKm6nEwt P1 02:30] [BV1rbKm6nEwt P1 02:34] [BV1rbKm6nEwt P1 02:37]\n```mermaid\nflowchart TD\n    A1[\"自动生成主图\"]\n    A2[\"自动产出标题\"]\n    A3[\"自动写商品介绍\"]\n    A4[\"登录闲鱼自动化\"]\n    A5[\"批量铺货（全自动）\"]\n    A6[\"定价与阶梯利润核算\"]\n    A7[\"商品属性识别 & 分类\"]\n    A8[\"价格查询 & 底价一键获取\"]\n    A9[\"数据导出（Excel） & 对账\"]\n    L1[\"不支持自动回复\"]\n    L2[\"不支持自动下架\"]\n    L3[\"不跳过平台检测\"]\n    L4[\"违规：1分钟内≤5商品\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n\n    L1 -.-> A4\n    L2 -.-> A5\n    L3 -.-> A4\n    L4 -.-> A5\n```\n\n## 开源动机与社区贡献 [BV1rbKm6nEwt P1 02:40] [BV1rbKm6nEwt P1 02:45] [BV1rbKm6nEwt P1 02:47] [BV1rbKm6nEwt P1 02:50] [BV1rbKm6nEwt P1 02:53] [BV1rbKm6nEwt P1 02:55] [BV1rbKm6nEwt P1 02:59] [BV1rbKm6nEwt P1 03:02] [BV1rbKm6nEwt P1 03:05] [BV1rbKm6nEwt P1 03:08] [BV1rbKm6nEwt P1 03:15]\n```mermaid\nflowchart LR\n    M1[\"自用需求：解决上架繁琐\"]\n    M2[\"打磨完整逻辑\"]\n    M3[\"决定不开源商用\"]\n    M4[\"公开全部代码\"]\n    M5[\"便于同类需求直接使用\"]\n    M6[\"支持二次改造\"]\n    M7[\"期待同行迭代优化\"]\n    M8[\"发现未考虑的Bug & 拓展方向\"]\n    M9[\"开源视为公共资产\"]\n    M10[\"持续迭代提升价值\"]\n\n    M1 --> M2\n    M2 --> M3\n    M3 --> M4\n    M4 --> M5\n    M5 --> M6\n    M6 --> M7\n    M7 --> M8\n    M8 --> M9\n    M9 --> M10\n```",
+  "diagrams": [
+    {
+      "title": "上架方式比较",
+      "code": "flowchart TD\n    D[\"频繁上架需求\"]\n    M1[\"大量人工上架\"]\n    M2[\"单人大量时间上架\"]\n    M3[\"AI自动上架\"]\n    C1[\"成本高、效率低\"]\n    C2[\"单人负担重\"]\n    C3[\"效率高、成本低\"]\n    Opt[\"最优解\"]\n\n    D --> M1\n    D --> M2\n    D --> M3\n    M1 --> C1\n    M2 --> C2\n    M3 --> C3\n    C3 --> Opt\n    Opt --> M3"
+    },
+    {
+      "title": "AI自动上架系统功能总览",
+      "code": "flowchart TD\n    A1[\"自动生成主图\"]\n    A2[\"自动产出标题\"]\n    A3[\"自动写商品介绍\"]\n    A4[\"登录闲鱼自动化\"]\n    A5[\"批量铺货（全自动）\"]\n    A6[\"定价与阶梯利润核算\"]\n    A7[\"商品属性识别 & 分类\"]\n    A8[\"价格查询 & 底价一键获取\"]\n    A9[\"数据导出（Excel） & 对账\"]\n    L1[\"不支持自动回复\"]\n    L2[\"不支持自动下架\"]\n    L3[\"不跳过平台检测\"]\n    L4[\"违规：1分钟内≤5商品\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n\n    L1 -.-> A4\n    L2 -.-> A5\n    L3 -.-> A4\n    L4 -.-> A5"
+    },
+    {
+      "title": "开源动机与社区贡献",
+      "code": "flowchart LR\n    M1[\"自用需求：解决上架繁琐\"]\n    M2[\"打磨完整逻辑\"]\n    M3[\"决定不开源商用\"]\n    M4[\"公开全部代码\"]\n    M5[\"便于同类需求直接使用\"]\n    M6[\"支持二次改造\"]\n    M7[\"期待同行迭代优化\"]\n    M8[\"发现未考虑的Bug & 拓展方向\"]\n    M9[\"开源视为公共资产\"]\n    M10[\"持续迭代提升价值\"]\n\n    M1 --> M2\n    M2 --> M3\n    M3 --> M4\n    M4 --> M5\n    M5 --> M6\n    M6 --> M7\n    M7 --> M8\n    M8 --> M9\n    M9 --> M10"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:41:16+00:00"
+}

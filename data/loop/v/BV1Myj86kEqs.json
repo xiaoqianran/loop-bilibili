@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Myj86kEqs",
+  "title": "26届unity客户端独游demo求职",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1081,
+  "text": "该项目由我独立完成\n首先我采用了多场景叠加的方式来管理UI方面\n使用动静分离\n减少draw call和网格刷新\n本项目使用MVC框架的变体模块内流程图如上\n以上是部分模块之间的依赖关系\n杜绝单利的相互依赖\n模块之间沟通\n主要使用事件进行解耦\n接下来来看一下架构相关代码\n事件中心对象池\n游戏设置拓展方法\n枚举详情\n接下来我将展示家具模块的效果\n家具模块主要包含预显示分类清除旋转功能\n这里预显示出问题是因为缺少对应的美术素材\n以上是预显示到放置的功能流程图\n我想使用二维数组来定义家具形状\n因为二维数组无法序列化\n我创建一个新的数据结构来存储岛屿生成模块\n每次进入岛屿地形地貌\n可收集物动物都不同\n岛屿生成全流程如右上图所示\n该功能主要是泛洪算法的运用\n本项目使用ESTHER算法来实现宠物跟随\nNPC和动物移动\n为实现NPC跨场景移动\n我根据BFS算法的思路写了该代码\n因为ESTHER算法的访问量很多\n所以我使用多线程实现\nNPC对话可以实现金币增加物品\n增加解锁图纸以及打开商店面板\n接下来介绍工具模块流程图\n右上角在麦扣老师的教程中有类似模块\n但是该模块和教程有本质区别\n且由我独立完成\n灯笼的放置显示复用了家具放置代码\n接下来商店模块\n商店的打开都是基于对话选项实现\n且商店货物每五天更新出售功能\n添加了一个特价回收的小特性\n接下看打造模块\n打造的图纸\n通过NPC对话解锁\n接下来看存储模块\n主要内容是物品移动整理\n分类仓库移动到物品栏\n需要判断是不是工具\n副本背包也有类似功能\n排序使用list内置的salt排序\nNPC的日常受一天内的时间和天气的影响\n除此之外\n岛屿生成的动物以及背景音乐也会随之变化\n家园场景随着时间生成\n可采集物\n宠物在岛屿场景在一定时间内会找宝藏\n本项目做了家具可采集物等场景切换的保存\n同时也实现了保存模块\n本视频以家具为例\n本功能主要参照教程内容\n所以不进行对该项目代码亮点的分析\n工具类展示\n工具类相关的都是我借助AI或教程完成的\n第一从XL导入对话文本\n第二使用YOUTUCKET更新item数据\n第三制作一个家具形状绘制的特性\n方便策划编辑\n接下来进行代码质量展示\n每个模块会有特定的命名空间\n而且字段会尽量使用特性\n封装方法会使用预处理指令分类\n本项目总共1.7万行代码\n有19个模块\n花费62天时间独立完成\n在本视频中没有介绍great和item等项目\n基石模块\n例如ESTHER算法和家具模块\n都基于grade模块的数据传入\n但是我在这基石模块也花费了大量时间\n最后这是我真正意义上的第一款游戏\n也谢谢你的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Myj86kEqs",
+  "published_at": "1782046336",
+  "fetched_at": "2026-08-07T06:22:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 26届unity客户端独游demo知识图谱\n\n## Architecture Overview\n```mermaid\nflowchart TD\n    P[\"项目（独立完成）\"]\n    UI[\"UI管理：多场景叠加\"]\n    DR[\"DrawCall/网格刷新降低（动静分离）\"]\n    MVC[\"MVC 变体框架\"]\n    DEP[\"模块依赖（杜绝单例相互依赖）\"]\n    EV[\"事件中心（解耦）\"]\n    CQ[\"代码质量：命名空间、特性、预处理指令\"]\n    CB[\"代码规模：1.7万行、19模块、62天\"]\n\n    P --> UI\n    UI --> DR\n    P --> MVC\n    MVC --> DEP\n    DEP --> EV\n    EV --> CQ\n    CQ --> CB\n```\n\n## Furniture Module Flow\n```mermaid\nflowchart TD\n    FM[\"家具模块\"]\n    PRE[\"预显示\"]\n    PL[\"放置\"]\n    ROT[\"旋转功能\"]\n    CLR[\"分类清除\"]\n    MISSING[\"缺少美术素材\"]\n    ARRAY2D[\"二维数组定义家具形状\"]\n    NEWDS[\"新数据结构（存储）\"]\n    LANT[\"灯笼放置复用家具代码\"]\n    FLOW[\"预显示→放置流程图\"]\n\n    FM --> PRE\n    PRE --> MISSING\n    PRE --> PL\n    PL --> ROT\n    PL --> CLR\n    FM --> ARRAY2D\n    ARRAY2D --> NEWDS\n    FM --> LANT\n    PRE --> FLOW\n```\n\n## Island Generation & NPC/Pet System\n```mermaid\nflowchart TD\n    ISL[\"岛屿生成\"]\n    FLOOD[\"泛洪算法\"]\n    NEWDS[\"新数据结构（岛屿生成）\"]\n    TERR[\"地形/地貌\"]\n    COLLECT[\"可采集物\"]\n    ANIMALS[\"动物（多样）\"]\n    BGM[\"背景音乐随时间变化\"]\n    TIME[\"时间与天气影响\"]\n    NPC[\"NPC 日常行为\"]\n    ESTHER[\"ESTHER 算法（宠物跟随）\"]\n    BFS[\"BFS 跨场景移动\"]\n    MT[\"多线程实现\"]\n    DIALOG[\"NPC 对话（解锁图纸、增金）\"]\n    PET[\"宠物宝藏寻找\"]\n    STORE[\"商店面板打开\"]\n    CRAFT[\"打造模块（图纸解锁）\"]\n\n    ISL --> FLOOD\n    ISL --> NEWDS\n    NEWDS --> TERR\n    TERR --> COLLECT\n    TERR --> ANIMALS\n    ANIMALS --> BGM\n    TIME --> BGM\n    TIME --> NPC\n    NPC --> DIALOG\n    DIALOG --> CRAFT\n    ESTHER --> PET\n    BFS --> MT\n    NPC --> BFS\n    PET --> STORE\n```",
+      "diagrams": [
+        {
+          "title": "Architecture Overview",
+          "code": "flowchart TD\n    P[\"项目（独立完成）\"]\n    UI[\"UI管理：多场景叠加\"]\n    DR[\"DrawCall/网格刷新降低（动静分离）\"]\n    MVC[\"MVC 变体框架\"]\n    DEP[\"模块依赖（杜绝单例相互依赖）\"]\n    EV[\"事件中心（解耦）\"]\n    CQ[\"代码质量：命名空间、特性、预处理指令\"]\n    CB[\"代码规模：1.7万行、19模块、62天\"]\n\n    P --> UI\n    UI --> DR\n    P --> MVC\n    MVC --> DEP\n    DEP --> EV\n    EV --> CQ\n    CQ --> CB"
+        },
+        {
+          "title": "Furniture Module Flow",
+          "code": "flowchart TD\n    FM[\"家具模块\"]\n    PRE[\"预显示\"]\n    PL[\"放置\"]\n    ROT[\"旋转功能\"]\n    CLR[\"分类清除\"]\n    MISSING[\"缺少美术素材\"]\n    ARRAY2D[\"二维数组定义家具形状\"]\n    NEWDS[\"新数据结构（存储）\"]\n    LANT[\"灯笼放置复用家具代码\"]\n    FLOW[\"预显示→放置流程图\"]\n\n    FM --> PRE\n    PRE --> MISSING\n    PRE --> PL\n    PL --> ROT\n    PL --> CLR\n    FM --> ARRAY2D\n    ARRAY2D --> NEWDS\n    FM --> LANT\n    PRE --> FLOW"
+        },
+        {
+          "title": "Island Generation & NPC/Pet System",
+          "code": "flowchart TD\n    ISL[\"岛屿生成\"]\n    FLOOD[\"泛洪算法\"]\n    NEWDS[\"新数据结构（岛屿生成）\"]\n    TERR[\"地形/地貌\"]\n    COLLECT[\"可采集物\"]\n    ANIMALS[\"动物（多样）\"]\n    BGM[\"背景音乐随时间变化\"]\n    TIME[\"时间与天气影响\"]\n    NPC[\"NPC 日常行为\"]\n    ESTHER[\"ESTHER 算法（宠物跟随）\"]\n    BFS[\"BFS 跨场景移动\"]\n    MT[\"多线程实现\"]\n    DIALOG[\"NPC 对话（解锁图纸、增金）\"]\n    PET[\"宠物宝藏寻找\"]\n    STORE[\"商店面板打开\"]\n    CRAFT[\"打造模块（图纸解锁）\"]\n\n    ISL --> FLOOD\n    ISL --> NEWDS\n    NEWDS --> TERR\n    TERR --> COLLECT\n    TERR --> ANIMALS\n    ANIMALS --> BGM\n    TIME --> BGM\n    TIME --> NPC\n    NPC --> DIALOG\n    DIALOG --> CRAFT\n    ESTHER --> PET\n    BFS --> MT\n    NPC --> BFS\n    PET --> STORE"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T06:22:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 26届unity客户端独游demo知识图谱\n\n## Architecture Overview\n```mermaid\nflowchart TD\n    P[\"项目（独立完成）\"]\n    UI[\"UI管理：多场景叠加\"]\n    DR[\"DrawCall/网格刷新降低（动静分离）\"]\n    MVC[\"MVC 变体框架\"]\n    DEP[\"模块依赖（杜绝单例相互依赖）\"]\n    EV[\"事件中心（解耦）\"]\n    CQ[\"代码质量：命名空间、特性、预处理指令\"]\n    CB[\"代码规模：1.7万行、19模块、62天\"]\n\n    P --> UI\n    UI --> DR\n    P --> MVC\n    MVC --> DEP\n    DEP --> EV\n    EV --> CQ\n    CQ --> CB\n```\n\n## Furniture Module Flow\n```mermaid\nflowchart TD\n    FM[\"家具模块\"]\n    PRE[\"预显示\"]\n    PL[\"放置\"]\n    ROT[\"旋转功能\"]\n    CLR[\"分类清除\"]\n    MISSING[\"缺少美术素材\"]\n    ARRAY2D[\"二维数组定义家具形状\"]\n    NEWDS[\"新数据结构（存储）\"]\n    LANT[\"灯笼放置复用家具代码\"]\n    FLOW[\"预显示→放置流程图\"]\n\n    FM --> PRE\n    PRE --> MISSING\n    PRE --> PL\n    PL --> ROT\n    PL --> CLR\n    FM --> ARRAY2D\n    ARRAY2D --> NEWDS\n    FM --> LANT\n    PRE --> FLOW\n```\n\n## Island Generation & NPC/Pet System\n```mermaid\nflowchart TD\n    ISL[\"岛屿生成\"]\n    FLOOD[\"泛洪算法\"]\n    NEWDS[\"新数据结构（岛屿生成）\"]\n    TERR[\"地形/地貌\"]\n    COLLECT[\"可采集物\"]\n    ANIMALS[\"动物（多样）\"]\n    BGM[\"背景音乐随时间变化\"]\n    TIME[\"时间与天气影响\"]\n    NPC[\"NPC 日常行为\"]\n    ESTHER[\"ESTHER 算法（宠物跟随）\"]\n    BFS[\"BFS 跨场景移动\"]\n    MT[\"多线程实现\"]\n    DIALOG[\"NPC 对话（解锁图纸、增金）\"]\n    PET[\"宠物宝藏寻找\"]\n    STORE[\"商店面板打开\"]\n    CRAFT[\"打造模块（图纸解锁）\"]\n\n    ISL --> FLOOD\n    ISL --> NEWDS\n    NEWDS --> TERR\n    TERR --> COLLECT\n    TERR --> ANIMALS\n    ANIMALS --> BGM\n    TIME --> BGM\n    TIME --> NPC\n    NPC --> DIALOG\n    DIALOG --> CRAFT\n    ESTHER --> PET\n    BFS --> MT\n    NPC --> BFS\n    PET --> STORE\n```",
+  "diagrams": [
+    {
+      "title": "Architecture Overview",
+      "code": "flowchart TD\n    P[\"项目（独立完成）\"]\n    UI[\"UI管理：多场景叠加\"]\n    DR[\"DrawCall/网格刷新降低（动静分离）\"]\n    MVC[\"MVC 变体框架\"]\n    DEP[\"模块依赖（杜绝单例相互依赖）\"]\n    EV[\"事件中心（解耦）\"]\n    CQ[\"代码质量：命名空间、特性、预处理指令\"]\n    CB[\"代码规模：1.7万行、19模块、62天\"]\n\n    P --> UI\n    UI --> DR\n    P --> MVC\n    MVC --> DEP\n    DEP --> EV\n    EV --> CQ\n    CQ --> CB"
+    },
+    {
+      "title": "Furniture Module Flow",
+      "code": "flowchart TD\n    FM[\"家具模块\"]\n    PRE[\"预显示\"]\n    PL[\"放置\"]\n    ROT[\"旋转功能\"]\n    CLR[\"分类清除\"]\n    MISSING[\"缺少美术素材\"]\n    ARRAY2D[\"二维数组定义家具形状\"]\n    NEWDS[\"新数据结构（存储）\"]\n    LANT[\"灯笼放置复用家具代码\"]\n    FLOW[\"预显示→放置流程图\"]\n\n    FM --> PRE\n    PRE --> MISSING\n    PRE --> PL\n    PL --> ROT\n    PL --> CLR\n    FM --> ARRAY2D\n    ARRAY2D --> NEWDS\n    FM --> LANT\n    PRE --> FLOW"
+    },
+    {
+      "title": "Island Generation & NPC/Pet System",
+      "code": "flowchart TD\n    ISL[\"岛屿生成\"]\n    FLOOD[\"泛洪算法\"]\n    NEWDS[\"新数据结构（岛屿生成）\"]\n    TERR[\"地形/地貌\"]\n    COLLECT[\"可采集物\"]\n    ANIMALS[\"动物（多样）\"]\n    BGM[\"背景音乐随时间变化\"]\n    TIME[\"时间与天气影响\"]\n    NPC[\"NPC 日常行为\"]\n    ESTHER[\"ESTHER 算法（宠物跟随）\"]\n    BFS[\"BFS 跨场景移动\"]\n    MT[\"多线程实现\"]\n    DIALOG[\"NPC 对话（解锁图纸、增金）\"]\n    PET[\"宠物宝藏寻找\"]\n    STORE[\"商店面板打开\"]\n    CRAFT[\"打造模块（图纸解锁）\"]\n\n    ISL --> FLOOD\n    ISL --> NEWDS\n    NEWDS --> TERR\n    TERR --> COLLECT\n    TERR --> ANIMALS\n    ANIMALS --> BGM\n    TIME --> BGM\n    TIME --> NPC\n    NPC --> DIALOG\n    DIALOG --> CRAFT\n    ESTHER --> PET\n    BFS --> MT\n    NPC --> BFS\n    PET --> STORE"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:22:48+00:00"
+}

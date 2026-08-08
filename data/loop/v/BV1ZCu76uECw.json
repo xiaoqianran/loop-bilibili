@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1ZCu76uECw",
+  "title": "DeepSeek V4 Flash × Pi｜382万字符极限测试，会翻车吗？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4667,
+  "text": "deep seek v4flash正式版\n终于发布了这个最便宜的flash版\n但复杂工作能力已经超过了\n他家最贵的旗舰V4pro了\n而且一分钱没有涨价\n还有呢说他的能力啊已经逼近了OPPA4.8\n这两天呢一定刷到了非常多的测评哈\n大部分都是测他写代码\n写游戏\n写网站\n但咱是做内容的呀\n不是写代码的\n我天天要处理的就是笔记资料文章这些东西\n当然我们的测评就要不一样了\n这次呢我把它放进了OBSETTING里面来测\n就干一些真实的工作场景\n如果你的日常也有很多的本地文档\n知识库的管理需求\n那今天内容啊一定要点一个收藏了\n肯定可以帮到你\n我们来看看哈\nV4flash到底能不能干活到底有多便宜\n这个呢是我充值的页面余额呢\n还有30多\n你记得这个数字哈\n最后我们来看一下今天到底会花多少钱\n点好关注与收藏\n咱们这就发车\n这次V4flash正式版官方给出的核心提升很明显\n多步骤复杂任务的表现大幅提升\n同时呢支持100万的上下文\n价格保持不变\n模型架构和参数规模都没有调整\n主要呢是在训练对齐上做了优化\n说白了就是说硬件不变\n仅仅是通过调校\n让整个产品的性能大幅度的提升\n但不能看广告哈\n还得看疗效\nBPSKV4只是一个大模型\n而且它只提供了API模式\n也就是说按量付费用多少算多少\n所以说呢必须它得有一个壳\n也就是agent来运行它\n这一次我们选择的agent叫做派\n它的热度非常的高哈\n目前呢已经有8万多的四大了\n它主打的就是小内核和极简工作流\n通常呢会比较节省\ntoken社区开发者还做了一个插件\n叫做PIVI\n这个插件呢是把派集成进了obsidian的里面\n当然pad不是今天的主角哈\n如果说你有兴趣的话呢\n之后可以考虑单独来做一期这个pai vi插件啊\n目前不一定在社区市场能搜得到\n安装不难啊\n咱们打开它的项目地址\n点这里进来以后呢\n下载这三个文件文件都很小啊\n下载会很快的到你的笔记库下面的\n点obsidian文件夹下面找到plugin\n新建一个pai vi文件夹\n从你的下载目录\n把三个文件拷贝到这个p i vi文件夹里面\n就好了\n重启OCD点齿轮\n在第三方插件里头就能看到它了\n把后面的开关打开\n左侧面板就多出来这么一个图标\n打开之后呢\n右侧就是PIVI的对话面板\n我们打开deep sick的API面板\n你可以先充个十块20的哈\n这个可以用很久了\n点创建API key\n顺便取个名字\n这个K呢只会显示这一次你点复制\n把它复制到你的剪贴板\n回到obsession\n还是点这个齿轮\n在最下面选中PIVI\n顺手把语言设置为中文\n点第二个模型面板\n你看到啊\nDEPSG是默认的大模型\n点一下它在这里把刚才复制的密钥粘贴进来\n一定要点这个保存按钮\n这时候呢你测试提供商能看到就绪的提示\n表示呢就已经把deep sig连接成功了\n发个你好\n他能正常的回答\n说明这个派就已经调通了\n咱们就开始第一关\n我有一个clip文件夹\n专门来放采集到的各种长文\n大部分的都是AI测评啊\n行业观点啊啥的\n这两个月呢又攒了60多篇了\n都没有读过\n我们来看一下哈\nDepsk v4 flash\n到底能不能把里面的内容做好整合与归纳\n我给他的提示词是这么写的\n送出命令之后啊\n他开始查看文件夹的全部文章\n然后开始规划任务\n67篇文章\n115万字符\n然后它自动拆成了三个子任务\n每一个子任务都可以打开\n大概6分钟\n提示三个子任务跑完了\n覆盖了全部的67篇文章\n开始创建索引\n整个任务跑了七分多钟哈\n他在笔记库的根下创建了一个素材索引文件\n67篇文章做了一张表\n全部写好了100字以内的摘要\n然后呢提炼了19个标签\n给出了值得做的五个选题方向\n基本呢就是AI生产系统\n第二大脑AI生图\n这样一些平时我关心的内容\n这个索引啊一共有3万多字\n满分十分的话\n你可以打几分呢\n这下咱们加点难度哈\n开始第二关\n这60多篇文章的内容还是比较杂乱的\n什么AI工作流选题写作运营起号\n做封面\n啥啥都有\n全部都是零散的\n单篇的同一个环节呢\n不同的人可能还有不同的说法\n甚至啊还有冲突的地方\n你们的收藏家大概也是一样的吧\n如果说真的要大它一套内容生产流程\n你得一篇一篇的翻\n特别的费时间\n这关呢咱们过分一点哈\n让他帮我整理出一整套内容生产sop提示词\n我是这么写的\n送出命令之后啊\n他开始思考了\n大概一分钟之后\n他给出了反馈\n每个方法都能溯源\n靠摘要是不够的\n需要精读每一篇文章\n很快呢他又拆成了三个子任务\n分别是找选题\n写文章和做封面\n5分钟的时候呢\n第一个子任务提示完成了\n点开之后可以看到啊\n这个子任务一共读了12篇文章\n能看到他的结论\n做封面\n这个任务三是跑的最慢的\n在细节里面呢还能看到一些失败的提示\n很可能啊是多模态的问题\n8分钟左右啊\n三个任务就跑完了\n他提示啊信息量很大\n还要抽查三篇内容\n核对一下\n12分钟左右了\n本来sop文件已经写完了\n结果呢他检查的时候发现了格式问题\n又开始修改\n总共花了13分多\n终于啊提示做完了\n打开sop总览里面的这个链条\n排版还是有一点小问题哈\n整个笔记呢又是2万5000多字\n从账号定位开始到最后一步发布\n全部都是做成了表格\n每个环节都总结了很多的方法要点\n还链接上了来源\n下面呢还总结了冲突与缺口\n像是发布这个命令啊\n是我们缺口最多的分发工具\n没有复盘\n也没有量化等等\n最后呢做出了一个工具链汇总的表格\n你可以仔细看看这个文档哈\n看看是不是能够真正的指导你的工作了\n满分十分的话\n这一关你能打几分呢\n顺便我们看一下余额\n刚才的两关无论输入还是输出啊\n都还是算比较重的\n我刷新了一下页面\n31.89\n也就是一共花了不到两块钱\n你觉得价格怎么样哈\n前两关呢都是处理素材的\n第三关呢就是你们最关心的写作\n很多人都跟我说哈\nAI写出来的东西完全没法用\nAI味儿太重了\ndeep sd呢是用中文语料养出来的大模型\n那咱们来看一下V4的写作能力到底能不能打\n为了考核写作啊\n就给个题目\n让他直接写\n纯考核他的写作能力本身\n我希望呢给一篇有深度的文章\n大概呢就是讲哈为什么我们老是在收集信息\n但总是在吃灰\n到底怎么样才能提高我们的学习能力\n把收集到我的信息\n用到自己的内容里\n然后艾特了他这条笔记\n让他自己去读\n按照里面的内容要求直接写就行了\n这次响应非常快哈\n瞬间反馈就开始阅读了\n思考了一分多钟\n反馈没有问题\n开始写又很快哈\n几乎就是一瞬间\n中间编辑区的文字就开始长出来了\n1850个字\n算不算满足咱们2000字左右的要求呢\n先看一下他的答复哈\n他说文章一共有四个层次\n从现象开始到三个心态\n然后是解法\n最后收尾写作说明里\n他主动调用了我们内容sop里面的去A的方法\n看来啊咱们应该先测写作才对哈\n不管了哈\n文章呢会打包好\n你可以自己打开看\n开篇就是凌晨一点\n又是老套路\n用一个他认为的真实场景来开篇\n然后讲收藏家的现状\n836条有零有整\n引入了三个心态\n奖励机制\n囤积心态和理想中的自己\n然后提出了方案\n就是三条规矩\n还故意的加了一句\n他认为有人味儿的话很土\n但管用\n最后呢结尾简短升华又是惯用的排比\n再用一句\n我先去把那个视频看完\n这个具体的倡导句来收尾\n哎一言难尽啊\n这个是一次性生成的哈\n我半个字都没有改\n算了哈\n这一轮你觉得能打几分呢\n最后一关咱们上硬菜\n这个是英伟达的官网\n他们发布了自己连续非常多年的财报\n我下载了2021~2026年\n连续6年的六份都是PDF文件\n有文字\n有图片\n有表格\n非常的复杂\n而且里面的文字呢全部都是英文\n我把它们全都放进了resource下面的\n英伟达财报这个文件夹里面六个文件1000多页\n体积有200多兆\n你可以自己试一下哈\n如果咱们自己看\n光是把这些字看完啊\n估计都得多少天了\n也不知道你的英语好不好哈\n更别说找那些具体的数字了\n最后一关呢咱们让V4继续上难度\n看看他这百万上下文到底是不是真能打对了啊\n这个时候咱们先看一下额度\n刷新一下嗯\n刚才那个文章才花了四分钱\n所以说呢写一篇文章啊\n这样的事其实是非常节约token的哈\n回到主题\n我这次呢主要是想了解两个问题\n第一个这6年英伟达的拐点到底在哪里\n第二个黄老板的前瞻性到底在哪里\n拐点呢是考察模型能否从6年的材料当中\n识别到结构性的变化\n而不是简单的捕捉一个数字\n前瞻性呢是考察模型能否按照时间顺序\n把早期的判断\n实际投入和后来的结果连接起来\n我给他的提示词呢也放到了project之下\n我让他阅读提示词之后\n直接按要求完成任务\n反馈很快哈\n他说要先查看财报文件\n发现啊\n全部都是16~54兆的大文件\n准备测一下读取工具诶\n能读\n发现文件都很大\n所以说呢必须要定位关键段落\n结果呢又不行了\n我都准备要停了\n哎又来一个反转\n他说虽然不能读\n但是任务啊可以完成\n因为他能在网上搜到HTML的版本\n你看他这个时候调用了web search的工具啊\n比我想象的快很多\n四分半\n这个时候就做完了两个\n核心的判断是拐点是2023年\n黄老板的前瞻性是两件事\n包括未来属于加速计算和AI\n需要的是全站加速计算平台\n不过问题来了呀\n咱们不管这个结论是不是正确哈\n这次呢我们考的是他的上下文能力\n结果呢他自己偷懒去网上找答案\n显然不符合我们的要求哈\n简单呢我把全部的六份财报转成了markdown格式\n然后我让他再次执行任务\n而且呢不允许去网上搜了\n必须基于咱们提供的六份markdown文件来做\n他读到了六份文件\n一共有382万字\n当然哈这个超过百万上下文的级别了\n他又把它拆成了三个子任务\n每一个通读两份年报\n这可是真正的重活儿哈\n直到第18分钟左右\n才完成了第一个子任务的读取\n所有的子任务跑完\n一共花了36分钟\n不过这个时候问题来了\n报错了\n他说在压缩上下文的时候报网络错误\n我让他继续\n结果呢他这样说了\n任务太大\n这就是报上下文了\n咱们来换个方式吧\n我新开了一个对话\n让他获取刚才会话的内容\n确实哈上下文太大\n这个绘画的JS文件就超过了八兆\n做了很多尝试啊\n他还是准备派出子代理去重读文件\n不行啊\n我不能等它了\n先看一下额度\n31块多\n这样变成了26块多\n一共花了五块钱\n所以你觉得这一关到底算成功还是算失败呢\n三个子确实跑完了\n但是最终的结果没有回到主任务里面\n模型把活儿干到了最后一步\n但整个绘画县城爆了\n真正出问题的是六份财报的原文\n再加上前面三观留下来的对话\n全部都堆进了同一个绘画里头\n整个任务啊已经大到了\n连下一轮消息都发不出去了\n百万上下文\n并不是给了你一个可以无限塞东西的仓库\n咱们今天是一个极限测试哈\n其实真实的工作场景呢\n一定不能让三个子任务\n把大段的结果全部返回到主对话\n第四关的真实结论呢\n就是说V4flash上下文没有问题\n最后的失败啊\n更多的是agent\n也就是派还没有能力稳定的管理\n这么长的任务模型\n决定了他能不能理解和判断agent\n决定了他会不会找文件\n拆任务\n调用工具\n把结果写出来\n而工作流呢决定了它怎么运作\n这三个东西少一个都不是真正的生产力\n整体来说呢\n今天的结论就是哈塑料整理提炼方法\n查找证据\n这些这些又重又碎的工作\n已经可以完全的放心交给AI了\n但是写作审美判断\n至少今天我还是会把决定权留在我自己的手里\nAI真正替我们的是那些消耗了大量的时间\n却不值得我们亲自从头做到尾的事\nOK今天用到的所有的提示词\n素材索引\n内容生产sop和文章成稿\n全部都会整理好\n老规矩\n评论区来踢我船长\n下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ZCu76uECw",
+  "published_at": "1786019400",
+  "fetched_at": "2026-08-07T17:23:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 实验知识图谱\n\n## V4Flash 概览\n```mermaid\nflowchart TD\nV4Release[\"V4Flash 官方发布\"] --> Cheap[\"价格极低\"]\nCheap --> NoIncrease[\"未涨价\"]\nV4Release --> Perf[\"性能大幅提升\"]\nPerf --> MultiStep[\"多步骤复杂任务表现提升\"]\nPerf --> Context[\"支持 100 万上下文\"]\nPerf --> SameArch[\"模型架构/参数未变\"]\nSameArch --> AlignOpt[\"训练对齐优化\"]\nPerf --> ComparedV4Pro[\"超越 V4Pro\"]\nPerf --> ComparedOPPA[\"逼近 OPPA 4.8\"]\n```\n\n## 集成栈：从 API 到 Obsidian\n```mermaid\nflowchart TD\nAPI[\"DeepSeek V4Flash API\"] --> Agent[\"Agent: Pai\"]\nAgent --> Plugin[\"插件: PIVI\"]\nPlugin --> Obsidian[\"Obsidian 应用\"]\nObsidian --> Install[\"安装步骤\"]\nInstall --> APIKey[\"创建 API Key\"]\nAPIKey --> Lang[\"设置语言为中文\"]\nLang --> Activate[\"激活插件\"]\nActivate --> Use[\"在 Obsidian 中使用\"]\nUse --> Test[\"测试连接并发送‘你好’\"]\n```\n\n## 素材索引工作流（第一关）\n```mermaid\nflowchart TD\nClipFolder[\"Clip 文件夹（长文）\"] --> Load[\"加载 67 篇文章\"]\nLoad --> Prompt[\"发送索引提示词\"]\nPrompt --> Split[\"拆分为 3 个子任务\"]\nSplit --> Sub1[\"子任务 1：阅读 12 篇\"]\nSplit --> Sub2[\"子任务 2：阅读 12 篇\"]\nSplit --> Sub3[\"子任务 3：阅读 12 篇\"]\nSub1 --> IndexFile[\"创建素材索引文件\"]\nSub2 --> IndexFile\nSub3 --> IndexFile\nIndexFile --> Summary[\"生成 100 字以内摘要\"]\nSummary --> Tags[\"提炼 19 个标签\"]\nTags --> Topics[\"给出 5 条选题方向\"]\nTopics --> Time[\"总耗时约 7 分钟\"]\n```\n\n## SOP 生成工作流（第二关）\n```mermaid\nflowchart TD\nPromptSOP[\"发送 SOP 提示词\"] --> SplitSOP[\"拆分为 3 子任务\"]\nSplitSOP --> FindTopic[\"子任务 1：寻找选题\"]\nSplitSOP --> WriteArt[\"子任务 2：撰写文章\"]\nSplitSOP --> DesignCover[\"子任务 3：设计封面\"]\nFindTopic --> Complete1[\"选题完成\"]\nWriteArt --> Complete2[\"文章完成\"]\nDesignCover --> Complete3[\"封面完成\"]\nComplete1 --> Review[\"审查并发现格式问题\"]\nReview --> Modify[\"修改 SOP\"]\nModify --> FinalDoc[\"生成最终文档（约 2.5 万字）\"]\nFinalDoc --> TimeSOP[\"总耗时约 13 分钟\"]\n```\n\n## 大上下文极限测试与限制\n```mermaid\nflowchart TD\nNvidia[\"Nvidia 2021‑2026 财报（PDF）\"] --> Convert[\"转为 Markdown（382 万字）\"]\nConvert --> TotalChars[\"总字符数 382 万\"]\nTotalChars --> SubRead[\"拆分为 3 子任务读取\"]\nSubRead --> TooLarge[\"上下文超出 1M 限制\"]\nTooLarge --> AgentFail[\"Agent (Pai) 任务失败\"]\nAgentFail --> WebFallback[\"尝试 Web 搜索（被禁止）\"]\nWebFallback --> NoWeb[\"重新执行，禁止网络\"]\nNoWeb --> CompressError[\"压缩上下文时报网络错误\"]\nCompressError --> Cost[\"累计费用约 5 元\"]\nCost --> Conclusion[\"上下文容量正常\"]\nAgentFail --> AgentIssue[\"Agent 稳定性不足\"]\n```",
+      "diagrams": [
+        {
+          "title": "V4Flash 概览",
+          "code": "flowchart TD\nV4Release[\"V4Flash 官方发布\"] --> Cheap[\"价格极低\"]\nCheap --> NoIncrease[\"未涨价\"]\nV4Release --> Perf[\"性能大幅提升\"]\nPerf --> MultiStep[\"多步骤复杂任务表现提升\"]\nPerf --> Context[\"支持 100 万上下文\"]\nPerf --> SameArch[\"模型架构/参数未变\"]\nSameArch --> AlignOpt[\"训练对齐优化\"]\nPerf --> ComparedV4Pro[\"超越 V4Pro\"]\nPerf --> ComparedOPPA[\"逼近 OPPA 4.8\"]"
+        },
+        {
+          "title": "集成栈：从 API 到 Obsidian",
+          "code": "flowchart TD\nAPI[\"DeepSeek V4Flash API\"] --> Agent[\"Agent: Pai\"]\nAgent --> Plugin[\"插件: PIVI\"]\nPlugin --> Obsidian[\"Obsidian 应用\"]\nObsidian --> Install[\"安装步骤\"]\nInstall --> APIKey[\"创建 API Key\"]\nAPIKey --> Lang[\"设置语言为中文\"]\nLang --> Activate[\"激活插件\"]\nActivate --> Use[\"在 Obsidian 中使用\"]\nUse --> Test[\"测试连接并发送‘你好’\"]"
+        },
+        {
+          "title": "素材索引工作流（第一关）",
+          "code": "flowchart TD\nClipFolder[\"Clip 文件夹（长文）\"] --> Load[\"加载 67 篇文章\"]\nLoad --> Prompt[\"发送索引提示词\"]\nPrompt --> Split[\"拆分为 3 个子任务\"]\nSplit --> Sub1[\"子任务 1：阅读 12 篇\"]\nSplit --> Sub2[\"子任务 2：阅读 12 篇\"]\nSplit --> Sub3[\"子任务 3：阅读 12 篇\"]\nSub1 --> IndexFile[\"创建素材索引文件\"]\nSub2 --> IndexFile\nSub3 --> IndexFile\nIndexFile --> Summary[\"生成 100 字以内摘要\"]\nSummary --> Tags[\"提炼 19 个标签\"]\nTags --> Topics[\"给出 5 条选题方向\"]\nTopics --> Time[\"总耗时约 7 分钟\"]"
+        },
+        {
+          "title": "SOP 生成工作流（第二关）",
+          "code": "flowchart TD\nPromptSOP[\"发送 SOP 提示词\"] --> SplitSOP[\"拆分为 3 子任务\"]\nSplitSOP --> FindTopic[\"子任务 1：寻找选题\"]\nSplitSOP --> WriteArt[\"子任务 2：撰写文章\"]\nSplitSOP --> DesignCover[\"子任务 3：设计封面\"]\nFindTopic --> Complete1[\"选题完成\"]\nWriteArt --> Complete2[\"文章完成\"]\nDesignCover --> Complete3[\"封面完成\"]\nComplete1 --> Review[\"审查并发现格式问题\"]\nReview --> Modify[\"修改 SOP\"]\nModify --> FinalDoc[\"生成最终文档（约 2.5 万字）\"]\nFinalDoc --> TimeSOP[\"总耗时约 13 分钟\"]"
+        },
+        {
+          "title": "大上下文极限测试与限制",
+          "code": "flowchart TD\nNvidia[\"Nvidia 2021‑2026 财报（PDF）\"] --> Convert[\"转为 Markdown（382 万字）\"]\nConvert --> TotalChars[\"总字符数 382 万\"]\nTotalChars --> SubRead[\"拆分为 3 子任务读取\"]\nSubRead --> TooLarge[\"上下文超出 1M 限制\"]\nTooLarge --> AgentFail[\"Agent (Pai) 任务失败\"]\nAgentFail --> WebFallback[\"尝试 Web 搜索（被禁止）\"]\nWebFallback --> NoWeb[\"重新执行，禁止网络\"]\nNoWeb --> CompressError[\"压缩上下文时报网络错误\"]\nCompressError --> Cost[\"累计费用约 5 元\"]\nCost --> Conclusion[\"上下文容量正常\"]\nAgentFail --> AgentIssue[\"Agent 稳定性不足\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T17:27:14+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 实验知识图谱\n\n## V4Flash 概览\n```mermaid\nflowchart TD\nV4Release[\"V4Flash 官方发布\"] --> Cheap[\"价格极低\"]\nCheap --> NoIncrease[\"未涨价\"]\nV4Release --> Perf[\"性能大幅提升\"]\nPerf --> MultiStep[\"多步骤复杂任务表现提升\"]\nPerf --> Context[\"支持 100 万上下文\"]\nPerf --> SameArch[\"模型架构/参数未变\"]\nSameArch --> AlignOpt[\"训练对齐优化\"]\nPerf --> ComparedV4Pro[\"超越 V4Pro\"]\nPerf --> ComparedOPPA[\"逼近 OPPA 4.8\"]\n```\n\n## 集成栈：从 API 到 Obsidian\n```mermaid\nflowchart TD\nAPI[\"DeepSeek V4Flash API\"] --> Agent[\"Agent: Pai\"]\nAgent --> Plugin[\"插件: PIVI\"]\nPlugin --> Obsidian[\"Obsidian 应用\"]\nObsidian --> Install[\"安装步骤\"]\nInstall --> APIKey[\"创建 API Key\"]\nAPIKey --> Lang[\"设置语言为中文\"]\nLang --> Activate[\"激活插件\"]\nActivate --> Use[\"在 Obsidian 中使用\"]\nUse --> Test[\"测试连接并发送‘你好’\"]\n```\n\n## 素材索引工作流（第一关）\n```mermaid\nflowchart TD\nClipFolder[\"Clip 文件夹（长文）\"] --> Load[\"加载 67 篇文章\"]\nLoad --> Prompt[\"发送索引提示词\"]\nPrompt --> Split[\"拆分为 3 个子任务\"]\nSplit --> Sub1[\"子任务 1：阅读 12 篇\"]\nSplit --> Sub2[\"子任务 2：阅读 12 篇\"]\nSplit --> Sub3[\"子任务 3：阅读 12 篇\"]\nSub1 --> IndexFile[\"创建素材索引文件\"]\nSub2 --> IndexFile\nSub3 --> IndexFile\nIndexFile --> Summary[\"生成 100 字以内摘要\"]\nSummary --> Tags[\"提炼 19 个标签\"]\nTags --> Topics[\"给出 5 条选题方向\"]\nTopics --> Time[\"总耗时约 7 分钟\"]\n```\n\n## SOP 生成工作流（第二关）\n```mermaid\nflowchart TD\nPromptSOP[\"发送 SOP 提示词\"] --> SplitSOP[\"拆分为 3 子任务\"]\nSplitSOP --> FindTopic[\"子任务 1：寻找选题\"]\nSplitSOP --> WriteArt[\"子任务 2：撰写文章\"]\nSplitSOP --> DesignCover[\"子任务 3：设计封面\"]\nFindTopic --> Complete1[\"选题完成\"]\nWriteArt --> Complete2[\"文章完成\"]\nDesignCover --> Complete3[\"封面完成\"]\nComplete1 --> Review[\"审查并发现格式问题\"]\nReview --> Modify[\"修改 SOP\"]\nModify --> FinalDoc[\"生成最终文档（约 2.5 万字）\"]\nFinalDoc --> TimeSOP[\"总耗时约 13 分钟\"]\n```\n\n## 大上下文极限测试与限制\n```mermaid\nflowchart TD\nNvidia[\"Nvidia 2021‑2026 财报（PDF）\"] --> Convert[\"转为 Markdown（382 万字）\"]\nConvert --> TotalChars[\"总字符数 382 万\"]\nTotalChars --> SubRead[\"拆分为 3 子任务读取\"]\nSubRead --> TooLarge[\"上下文超出 1M 限制\"]\nTooLarge --> AgentFail[\"Agent (Pai) 任务失败\"]\nAgentFail --> WebFallback[\"尝试 Web 搜索（被禁止）\"]\nWebFallback --> NoWeb[\"重新执行，禁止网络\"]\nNoWeb --> CompressError[\"压缩上下文时报网络错误\"]\nCompressError --> Cost[\"累计费用约 5 元\"]\nCost --> Conclusion[\"上下文容量正常\"]\nAgentFail --> AgentIssue[\"Agent 稳定性不足\"]\n```",
+  "diagrams": [
+    {
+      "title": "V4Flash 概览",
+      "code": "flowchart TD\nV4Release[\"V4Flash 官方发布\"] --> Cheap[\"价格极低\"]\nCheap --> NoIncrease[\"未涨价\"]\nV4Release --> Perf[\"性能大幅提升\"]\nPerf --> MultiStep[\"多步骤复杂任务表现提升\"]\nPerf --> Context[\"支持 100 万上下文\"]\nPerf --> SameArch[\"模型架构/参数未变\"]\nSameArch --> AlignOpt[\"训练对齐优化\"]\nPerf --> ComparedV4Pro[\"超越 V4Pro\"]\nPerf --> ComparedOPPA[\"逼近 OPPA 4.8\"]"
+    },
+    {
+      "title": "集成栈：从 API 到 Obsidian",
+      "code": "flowchart TD\nAPI[\"DeepSeek V4Flash API\"] --> Agent[\"Agent: Pai\"]\nAgent --> Plugin[\"插件: PIVI\"]\nPlugin --> Obsidian[\"Obsidian 应用\"]\nObsidian --> Install[\"安装步骤\"]\nInstall --> APIKey[\"创建 API Key\"]\nAPIKey --> Lang[\"设置语言为中文\"]\nLang --> Activate[\"激活插件\"]\nActivate --> Use[\"在 Obsidian 中使用\"]\nUse --> Test[\"测试连接并发送‘你好’\"]"
+    },
+    {
+      "title": "素材索引工作流（第一关）",
+      "code": "flowchart TD\nClipFolder[\"Clip 文件夹（长文）\"] --> Load[\"加载 67 篇文章\"]\nLoad --> Prompt[\"发送索引提示词\"]\nPrompt --> Split[\"拆分为 3 个子任务\"]\nSplit --> Sub1[\"子任务 1：阅读 12 篇\"]\nSplit --> Sub2[\"子任务 2：阅读 12 篇\"]\nSplit --> Sub3[\"子任务 3：阅读 12 篇\"]\nSub1 --> IndexFile[\"创建素材索引文件\"]\nSub2 --> IndexFile\nSub3 --> IndexFile\nIndexFile --> Summary[\"生成 100 字以内摘要\"]\nSummary --> Tags[\"提炼 19 个标签\"]\nTags --> Topics[\"给出 5 条选题方向\"]\nTopics --> Time[\"总耗时约 7 分钟\"]"
+    },
+    {
+      "title": "SOP 生成工作流（第二关）",
+      "code": "flowchart TD\nPromptSOP[\"发送 SOP 提示词\"] --> SplitSOP[\"拆分为 3 子任务\"]\nSplitSOP --> FindTopic[\"子任务 1：寻找选题\"]\nSplitSOP --> WriteArt[\"子任务 2：撰写文章\"]\nSplitSOP --> DesignCover[\"子任务 3：设计封面\"]\nFindTopic --> Complete1[\"选题完成\"]\nWriteArt --> Complete2[\"文章完成\"]\nDesignCover --> Complete3[\"封面完成\"]\nComplete1 --> Review[\"审查并发现格式问题\"]\nReview --> Modify[\"修改 SOP\"]\nModify --> FinalDoc[\"生成最终文档（约 2.5 万字）\"]\nFinalDoc --> TimeSOP[\"总耗时约 13 分钟\"]"
+    },
+    {
+      "title": "大上下文极限测试与限制",
+      "code": "flowchart TD\nNvidia[\"Nvidia 2021‑2026 财报（PDF）\"] --> Convert[\"转为 Markdown（382 万字）\"]\nConvert --> TotalChars[\"总字符数 382 万\"]\nTotalChars --> SubRead[\"拆分为 3 子任务读取\"]\nSubRead --> TooLarge[\"上下文超出 1M 限制\"]\nTooLarge --> AgentFail[\"Agent (Pai) 任务失败\"]\nAgentFail --> WebFallback[\"尝试 Web 搜索（被禁止）\"]\nWebFallback --> NoWeb[\"重新执行，禁止网络\"]\nNoWeb --> CompressError[\"压缩上下文时报网络错误\"]\nCompressError --> Cost[\"累计费用约 5 元\"]\nCost --> Conclusion[\"上下文容量正常\"]\nAgentFail --> AgentIssue[\"Agent 稳定性不足\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T17:27:14+00:00"
+}

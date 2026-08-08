@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1HJuE6yEEF",
+  "title": "如何去除虚幻引擎味儿",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 882,
+  "text": "你一定很熟悉各种画面风格\n略显泛白\n带有塑料质感的光泽\n明亮的火焰看起来扁平且发黄\n而不是那种极度炽热的感觉\n饱和的霓虹灯光则变成奇怪不自然的颜色\n这就是臭名昭著的虚幻引擎风格\n多年来\n开发者一直在为灯光和后期处理而苦恼\n总觉得是自己哪里做的不对\n其实这不是开发者的问题\n而是U引擎的问题\n在高光区域色相偏移明显\n色彩还原不够精确\n随着亮度增加\n右侧和下面的两个ass的颜色渐变不那么平滑\n左上角X的颜色渐变更平滑一些\n颜色也更合理\n第一排左边那个是ACS\n可以看到当亮度增加时\n它的饱和度会降低一些\n而第一排右侧和第二排两个\n还有第三排右侧那个球\n饱和度没有随亮度增加而变小\n而实际上你应该随亮度变化而变得更白\n这就是测调映射器TOMMAPPER要处理的\n不同色调映射器\n在处理颜色和渐变方面有巨大的差异\n也就导致了所谓的虚幻引擎位耳\n那么怎么让U引擎X色调映射器呢\n今天给大家介绍这个插件\nEx turn map rocket\n在窗口的右上角能看到当前用的是哪个tom mapper\n在窗口中间一键点击选择你想要应用的tom mapper\n再点击应用按钮即可\n一键应用工具会自动调用编译SHA导\n编完就能看到画面的变化了\n看示例图片上左上角是U风格的tom mapper\n右上角是X默认tm mapper\n左下角是x golden风格的tm mapper\n右下侧是XPUNCHI风格的tom mapper\n能看到golden明显的把整个场景变成了金黄色\npunch风格色彩很鲜艳\n还有另外两个场景的几个tom mapper的对比\n我们安装上插件\n在U里具体看一下效果吧\n在windows菜单下拉框找XTMAPTRKET\n点击打开插件窗口\n选择x default\n点击应用按钮\n应用编译一段时间后\n看到场景变亮了\n我们切回U的对比一下\n再看看golden类型的\n场景变成了金色\n再看看punch类型\n场景变得鲜亮\n色彩绚烂起来啦\n对比左侧是x default\n右侧是x punch\n对比U和X攀起\n如果您感觉我的分享不错\n请一键三连吧\n我会继续给您分享有用的内容",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HJuE6yEEF",
+  "published_at": "1785998284",
+  "fetched_at": "2026-08-07T11:40:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 如何去除虚幻引擎味儿\n\n## 总览：虚幻引擎视觉问题与根源\n<!-- [BV1HJuE6yEEF P1 00:00] 你一定很熟悉各种画面风格 … [BV1HJuE6yEEF P1 00:31] 而是U引擎的问题 -->\n```mermaid\nflowchart TD\n    A[\"虚幻引擎视觉特征\"] --> B[\"泛白、塑料光泽\"]\n    A --> C[\"扁平黄火焰\"]\n    A --> D[\"不自然霓虹色\"]\n    E[\"开发者困惑\"] --> F[\"认为自己设置错误\"]\n    G[\"根本原因\"] --> H[\"U引擎的色彩处理问题\"]\n    H --> I[\"高光色相偏移\"]\n    H --> J[\"色彩还原不精确\"]\n    H --> K[\"亮度提升导致饱和度下降\"]\n    K --> L[\"梯度不平滑\"]\n    I --> M[\"视觉上显得不自然\"]\n```\n\n## 色调映射（Tone Mapping）概念与作用\n<!-- [BV1HJuE6yEEF P1 01:10] 这就是测调映射器TOMMAPPER要处理的 … [BV1HJuE6yEEF P1 01:21] 在处理颜色和渐变方面有巨大的差异 -->\n```mermaid\nflowchart TD\n    A[\"Tone Mapper (TOMMAPPER)\"] --> B[\"调节亮度与饱和度关系\"]\n    B --> C[\"随亮度增加饱和度降低\"]\n    C --> D[\"实现更自然的颜色渐变\"]\n    E[\"不同Tone Mapper类型\"] --> F[\"U风格\"]\n    E --> G[\"X默认\"]\n    E --> H[\"X Golden\"]\n    E --> I[\"XPUNCHI\"]\n    F --> J[\"保持原有问题\"]\n    G --> K[\"标准表现\"]\n    H --> L[\"金黄色调\"]\n    I --> M[\"鲜艳色彩\"]\n```\n\n## 插件使用工作流\n<!-- [BV1HJuE6yEEF P1 02:16] 我们安装上插件 … [BV1HJuE6yEEF P1 02:37] 看到场景变亮了 -->\n```mermaid\nflowchart LR\n    A[\"打开Windows菜单\"] --> B[\"选择XTMAPTRKET\"]\n    B --> C[\"打开插件窗口\"]\n    C --> D[\"在右上角查看当前Tone Mapper\"]\n    D --> E[\"在中间列表选择目标Tone Mapper\"]\n    E --> F[\"点击‘应用’按钮\"]\n    F --> G[\"自动调用编译SHA\"]\n    G --> H[\"编译完成后场景更新\"]\n    H --> I[\"观察颜色/亮度变化\"]\n```\n\n## 各Tone Mapper效果对比\n<!-- [BV1HJuE6yEEF P1 01:56] 看示例图片上左上角是U风格的tom mapper … [BV1HJuE6yEEF P1 03:14] 对比左侧是x default，右侧是x punch -->\n```mermaid\nflowchart TD\n    A[\"U风格 Tone Mapper\"] --> B[\"场景偏暗、颜色不自然\"]\n    C[\"X默认 Tone Mapper\"] --> D[\"场景正常亮度\"]\n    E[\"X Golden Tone Mapper\"] --> F[\"场景整体金黄色\"]\n    G[\"XPUNCHI Tone Mapper\"] --> H[\"场景鲜亮、色彩绚烂\"]\n    B --> I[\"对比左侧\"]\n    D --> I\n    F --> I\n    H --> I\n    I --> J[\"选择合适Tone Mapper以去除虚幻引擎味儿\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览：虚幻引擎视觉问题与根源",
+          "code": "flowchart TD\n    A[\"虚幻引擎视觉特征\"] --> B[\"泛白、塑料光泽\"]\n    A --> C[\"扁平黄火焰\"]\n    A --> D[\"不自然霓虹色\"]\n    E[\"开发者困惑\"] --> F[\"认为自己设置错误\"]\n    G[\"根本原因\"] --> H[\"U引擎的色彩处理问题\"]\n    H --> I[\"高光色相偏移\"]\n    H --> J[\"色彩还原不精确\"]\n    H --> K[\"亮度提升导致饱和度下降\"]\n    K --> L[\"梯度不平滑\"]\n    I --> M[\"视觉上显得不自然\"]"
+        },
+        {
+          "title": "色调映射（Tone Mapping）概念与作用",
+          "code": "flowchart TD\n    A[\"Tone Mapper (TOMMAPPER)\"] --> B[\"调节亮度与饱和度关系\"]\n    B --> C[\"随亮度增加饱和度降低\"]\n    C --> D[\"实现更自然的颜色渐变\"]\n    E[\"不同Tone Mapper类型\"] --> F[\"U风格\"]\n    E --> G[\"X默认\"]\n    E --> H[\"X Golden\"]\n    E --> I[\"XPUNCHI\"]\n    F --> J[\"保持原有问题\"]\n    G --> K[\"标准表现\"]\n    H --> L[\"金黄色调\"]\n    I --> M[\"鲜艳色彩\"]"
+        },
+        {
+          "title": "插件使用工作流",
+          "code": "flowchart LR\n    A[\"打开Windows菜单\"] --> B[\"选择XTMAPTRKET\"]\n    B --> C[\"打开插件窗口\"]\n    C --> D[\"在右上角查看当前Tone Mapper\"]\n    D --> E[\"在中间列表选择目标Tone Mapper\"]\n    E --> F[\"点击‘应用’按钮\"]\n    F --> G[\"自动调用编译SHA\"]\n    G --> H[\"编译完成后场景更新\"]\n    H --> I[\"观察颜色/亮度变化\"]"
+        },
+        {
+          "title": "各Tone Mapper效果对比",
+          "code": "flowchart TD\n    A[\"U风格 Tone Mapper\"] --> B[\"场景偏暗、颜色不自然\"]\n    C[\"X默认 Tone Mapper\"] --> D[\"场景正常亮度\"]\n    E[\"X Golden Tone Mapper\"] --> F[\"场景整体金黄色\"]\n    G[\"XPUNCHI Tone Mapper\"] --> H[\"场景鲜亮、色彩绚烂\"]\n    B --> I[\"对比左侧\"]\n    D --> I\n    F --> I\n    H --> I\n    I --> J[\"选择合适Tone Mapper以去除虚幻引擎味儿\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T11:41:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 如何去除虚幻引擎味儿\n\n## 总览：虚幻引擎视觉问题与根源\n<!-- [BV1HJuE6yEEF P1 00:00] 你一定很熟悉各种画面风格 … [BV1HJuE6yEEF P1 00:31] 而是U引擎的问题 -->\n```mermaid\nflowchart TD\n    A[\"虚幻引擎视觉特征\"] --> B[\"泛白、塑料光泽\"]\n    A --> C[\"扁平黄火焰\"]\n    A --> D[\"不自然霓虹色\"]\n    E[\"开发者困惑\"] --> F[\"认为自己设置错误\"]\n    G[\"根本原因\"] --> H[\"U引擎的色彩处理问题\"]\n    H --> I[\"高光色相偏移\"]\n    H --> J[\"色彩还原不精确\"]\n    H --> K[\"亮度提升导致饱和度下降\"]\n    K --> L[\"梯度不平滑\"]\n    I --> M[\"视觉上显得不自然\"]\n```\n\n## 色调映射（Tone Mapping）概念与作用\n<!-- [BV1HJuE6yEEF P1 01:10] 这就是测调映射器TOMMAPPER要处理的 … [BV1HJuE6yEEF P1 01:21] 在处理颜色和渐变方面有巨大的差异 -->\n```mermaid\nflowchart TD\n    A[\"Tone Mapper (TOMMAPPER)\"] --> B[\"调节亮度与饱和度关系\"]\n    B --> C[\"随亮度增加饱和度降低\"]\n    C --> D[\"实现更自然的颜色渐变\"]\n    E[\"不同Tone Mapper类型\"] --> F[\"U风格\"]\n    E --> G[\"X默认\"]\n    E --> H[\"X Golden\"]\n    E --> I[\"XPUNCHI\"]\n    F --> J[\"保持原有问题\"]\n    G --> K[\"标准表现\"]\n    H --> L[\"金黄色调\"]\n    I --> M[\"鲜艳色彩\"]\n```\n\n## 插件使用工作流\n<!-- [BV1HJuE6yEEF P1 02:16] 我们安装上插件 … [BV1HJuE6yEEF P1 02:37] 看到场景变亮了 -->\n```mermaid\nflowchart LR\n    A[\"打开Windows菜单\"] --> B[\"选择XTMAPTRKET\"]\n    B --> C[\"打开插件窗口\"]\n    C --> D[\"在右上角查看当前Tone Mapper\"]\n    D --> E[\"在中间列表选择目标Tone Mapper\"]\n    E --> F[\"点击‘应用’按钮\"]\n    F --> G[\"自动调用编译SHA\"]\n    G --> H[\"编译完成后场景更新\"]\n    H --> I[\"观察颜色/亮度变化\"]\n```\n\n## 各Tone Mapper效果对比\n<!-- [BV1HJuE6yEEF P1 01:56] 看示例图片上左上角是U风格的tom mapper … [BV1HJuE6yEEF P1 03:14] 对比左侧是x default，右侧是x punch -->\n```mermaid\nflowchart TD\n    A[\"U风格 Tone Mapper\"] --> B[\"场景偏暗、颜色不自然\"]\n    C[\"X默认 Tone Mapper\"] --> D[\"场景正常亮度\"]\n    E[\"X Golden Tone Mapper\"] --> F[\"场景整体金黄色\"]\n    G[\"XPUNCHI Tone Mapper\"] --> H[\"场景鲜亮、色彩绚烂\"]\n    B --> I[\"对比左侧\"]\n    D --> I\n    F --> I\n    H --> I\n    I --> J[\"选择合适Tone Mapper以去除虚幻引擎味儿\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览：虚幻引擎视觉问题与根源",
+      "code": "flowchart TD\n    A[\"虚幻引擎视觉特征\"] --> B[\"泛白、塑料光泽\"]\n    A --> C[\"扁平黄火焰\"]\n    A --> D[\"不自然霓虹色\"]\n    E[\"开发者困惑\"] --> F[\"认为自己设置错误\"]\n    G[\"根本原因\"] --> H[\"U引擎的色彩处理问题\"]\n    H --> I[\"高光色相偏移\"]\n    H --> J[\"色彩还原不精确\"]\n    H --> K[\"亮度提升导致饱和度下降\"]\n    K --> L[\"梯度不平滑\"]\n    I --> M[\"视觉上显得不自然\"]"
+    },
+    {
+      "title": "色调映射（Tone Mapping）概念与作用",
+      "code": "flowchart TD\n    A[\"Tone Mapper (TOMMAPPER)\"] --> B[\"调节亮度与饱和度关系\"]\n    B --> C[\"随亮度增加饱和度降低\"]\n    C --> D[\"实现更自然的颜色渐变\"]\n    E[\"不同Tone Mapper类型\"] --> F[\"U风格\"]\n    E --> G[\"X默认\"]\n    E --> H[\"X Golden\"]\n    E --> I[\"XPUNCHI\"]\n    F --> J[\"保持原有问题\"]\n    G --> K[\"标准表现\"]\n    H --> L[\"金黄色调\"]\n    I --> M[\"鲜艳色彩\"]"
+    },
+    {
+      "title": "插件使用工作流",
+      "code": "flowchart LR\n    A[\"打开Windows菜单\"] --> B[\"选择XTMAPTRKET\"]\n    B --> C[\"打开插件窗口\"]\n    C --> D[\"在右上角查看当前Tone Mapper\"]\n    D --> E[\"在中间列表选择目标Tone Mapper\"]\n    E --> F[\"点击‘应用’按钮\"]\n    F --> G[\"自动调用编译SHA\"]\n    G --> H[\"编译完成后场景更新\"]\n    H --> I[\"观察颜色/亮度变化\"]"
+    },
+    {
+      "title": "各Tone Mapper效果对比",
+      "code": "flowchart TD\n    A[\"U风格 Tone Mapper\"] --> B[\"场景偏暗、颜色不自然\"]\n    C[\"X默认 Tone Mapper\"] --> D[\"场景正常亮度\"]\n    E[\"X Golden Tone Mapper\"] --> F[\"场景整体金黄色\"]\n    G[\"XPUNCHI Tone Mapper\"] --> H[\"场景鲜亮、色彩绚烂\"]\n    B --> I[\"对比左侧\"]\n    D --> I\n    F --> I\n    H --> I\n    I --> J[\"选择合适Tone Mapper以去除虚幻引擎味儿\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T11:41:16+00:00"
+}

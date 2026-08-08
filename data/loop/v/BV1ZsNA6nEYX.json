@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1ZsNA6nEYX",
+  "title": "Voidmatrix-Godot开发挑战",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 872,
+  "text": "大家好啊\n今天来提交一下第一届wider matrix\n游戏开发挑战赛的作业\n先展示一下我项目的简易代码\n因为本人是小白\n所以采取的是比较简单的反应式\nAI并没有使用寻路等复杂的方案\n我们主要分为了感知层\n决策层和执行层三个模块\n感知层的作用是每帧第一步\n完成环境信息的采集\n过滤掉无效的数据\n预计算后续的所有需要的信息\n并将其存入字典\n其又被划分为敌人扫描道具\n扫描状态检测三个子模块\n然后是决策层\n决策层是我们本子代码最核心的部分\n这算是AI的大脑\n我们采用了评分的方式\n将地图360度离散为16个\n间隔为22.5度的方向\n对每个方向独立计算分数\n选出分数最高的方向作为移动方向\n我们的核心是趋利避害\n如不撞墙\n不碰撞敌人\n然后适当的去捡取道具和输出\n尽量收获更长的时间\n我们给我们需要的各种角色\n都设置了各自的权重\n最后权重相加得到相应的分数\n我们会挑选分数最高的方向向该方向进行移动\n其中根据该游戏的性质\n我们给一些角色也设置了更特殊的权重\n比如自爆敌人相当危险\n我们应该更加去远离自爆\n敌人和他死后的自爆范围\n又比如螺旋射击特别的强力\n因此我们要更优先考虑去遇见螺旋射击的道具\n所以对于他们俩权终会有所更改\n我们还发现\n如果角色被两边的敌人同时包围\n角色会一直后退\n卡在边界墙上一动不动\n因此我们还设计了一个反包围的代码\n如果角色被包围\n他会优先向敌人密度更小的地方移动\n而不是一直往后退\n同时我们还注意到了游戏内的墙体\n如果角色和敌人之间有墙体的话\n我们就先忽略墙体后面的敌人\n防止角色一直对墙体进行射击\n最后是执行层\n角色场中输出的原始方向\n我们并不直接使用\n避免机械抖动\n其中蛇的方法包括线性差值\n让它的移动方向连续变化\n没有瞬时间的转向抽搐\n留在射击逻辑中\n如果我们处于旋转模式下\n我们并不需要瞄准\n或者如果自爆敌人过近\n我们优先移动\n而不是站桩输出\n那其实我们该项目还有很多可以优化的地方\n比如说更改各项决策的权重\n使其更加合理\n又或者是锁定道具目标后\n我们需持续追踪\n避免多道具时方向摇摆\n那最后是我们的完整效果展示\n哪里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ZsNA6nEYX",
+  "published_at": "1783781478",
+  "fetched_at": "2026-08-06T21:31:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Voidmatrix AI 结构图谱\n\n## 系统总体架构\n```mermaid\nflowchart TD\n    P[\"感知层\"] --> D[\"决策层\"]\n    D --> E[\"执行层\"]\n    subgraph 感知子模块\n        ES[\"敌人扫描\"] --> SD[\"状态检测\"]\n        IS[\"道具扫描\"] --> SD\n    end\n    P --> ES\n    P --> IS\n    subgraph 决策子模块\n        S[\"方向评分\"] --> W[\"权重加权\"]\n        W --> CH[\"选择最高分方向\"]\n    end\n    D --> S\n    subgraph 执行子模块\n        RD[\"原始方向输出\"] --> LI[\"线性插值\"]\n        LI --> SM[\"平滑移动\"]\n    end\n    E --> RD\n```\n关键时间戳: [BV1ZsNA6nEYX P1 00:24] [BV1ZsNA6nEYX P1 00:44] [BV1ZsNA6nEYX P1 02:14]\n\n## 决策层评分流程\n```mermaid\nflowchart LR\n    D360[\"360°离散为16方向<br/>(22.5°间隔)\"] --> DIR[\"每方向独立计算分数\"]\n    DIR --> F1[\"避墙\"]\n    DIR --> F2[\"避敌\"]\n    DIR --> F3[\"收集道具\"]\n    DIR --> F4[\"输出射击\"]\n    subgraph 权重\n        R1[\"角色A权重\"] --> SUM[\"累计权重\"]\n        R2[\"角色B权重\"] --> SUM\n        R3[\"特殊角色权重\"] --> SUM\n    end\n    SUM --> SCORE[\"方向总分\"]\n    SCORE --> CH[\"选最高分方向\"]\n```\n关键时间戳: [BV1ZsNA6nEYX P1 00:51] [BV1ZsNA6nEYX P1 01:00] [BV1ZsNA6nEYX P1 01:15] [BV1ZsNA6nEYX P1 01:30]\n\n## 反包围与墙体处理\n```mermaid\nflowchart TD\n    ENC[\"检测角色被双侧敌人包围\"] --> RE[\"设计反包围逻辑\"]\n    RE --> MD[\"向敌人密度更小方向移动\"]\n    WALL[\"检测角色与敌人之间有墙体\"] --> IGN[\"忽略墙体后敌人\"]\n    IGN --> NO_SHOOT[\"防止射向墙体\"]\n    ENC --> WALL\n```\n关键时间戳: [BV1ZsNA6nEYX P1 01:46] [BV1ZsNA6nEYX P1 02:01] [BV1ZsNA6nEYX P1 02:03] [BV1ZsNA6nEYX P1 02:12]\n\n## 执行层移动平滑\n```mermaid\nflowchart LR\n    RAW[\"角色原始输出方向\"] --> SMO[\"线性差值处理\"]\n    SMO --> CONT[\"连续方向变化\"]\n    CONT --> NO_JERK[\"避免瞬时转向抽搐\"]\n    NO_JERK --> FINAL[\"平滑移动效果\"]\n```\n关键时间戳: [BV1ZsNA6nEYX P1 02:16] [BV1ZsNA6nEYX P1 02:23] [BV1ZsNA6nEYX P1 02:27]",
+      "diagrams": [
+        {
+          "title": "系统总体架构",
+          "code": "flowchart TD\n    P[\"感知层\"] --> D[\"决策层\"]\n    D --> E[\"执行层\"]\n    subgraph 感知子模块\n        ES[\"敌人扫描\"] --> SD[\"状态检测\"]\n        IS[\"道具扫描\"] --> SD\n    end\n    P --> ES\n    P --> IS\n    subgraph 决策子模块\n        S[\"方向评分\"] --> W[\"权重加权\"]\n        W --> CH[\"选择最高分方向\"]\n    end\n    D --> S\n    subgraph 执行子模块\n        RD[\"原始方向输出\"] --> LI[\"线性插值\"]\n        LI --> SM[\"平滑移动\"]\n    end\n    E --> RD"
+        },
+        {
+          "title": "决策层评分流程",
+          "code": "flowchart LR\n    D360[\"360°离散为16方向<br/>(22.5°间隔)\"] --> DIR[\"每方向独立计算分数\"]\n    DIR --> F1[\"避墙\"]\n    DIR --> F2[\"避敌\"]\n    DIR --> F3[\"收集道具\"]\n    DIR --> F4[\"输出射击\"]\n    subgraph 权重\n        R1[\"角色A权重\"] --> SUM[\"累计权重\"]\n        R2[\"角色B权重\"] --> SUM\n        R3[\"特殊角色权重\"] --> SUM\n    end\n    SUM --> SCORE[\"方向总分\"]\n    SCORE --> CH[\"选最高分方向\"]"
+        },
+        {
+          "title": "反包围与墙体处理",
+          "code": "flowchart TD\n    ENC[\"检测角色被双侧敌人包围\"] --> RE[\"设计反包围逻辑\"]\n    RE --> MD[\"向敌人密度更小方向移动\"]\n    WALL[\"检测角色与敌人之间有墙体\"] --> IGN[\"忽略墙体后敌人\"]\n    IGN --> NO_SHOOT[\"防止射向墙体\"]\n    ENC --> WALL"
+        },
+        {
+          "title": "执行层移动平滑",
+          "code": "flowchart LR\n    RAW[\"角色原始输出方向\"] --> SMO[\"线性差值处理\"]\n    SMO --> CONT[\"连续方向变化\"]\n    CONT --> NO_JERK[\"避免瞬时转向抽搐\"]\n    NO_JERK --> FINAL[\"平滑移动效果\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T21:31:38+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Voidmatrix AI 结构图谱\n\n## 系统总体架构\n```mermaid\nflowchart TD\n    P[\"感知层\"] --> D[\"决策层\"]\n    D --> E[\"执行层\"]\n    subgraph 感知子模块\n        ES[\"敌人扫描\"] --> SD[\"状态检测\"]\n        IS[\"道具扫描\"] --> SD\n    end\n    P --> ES\n    P --> IS\n    subgraph 决策子模块\n        S[\"方向评分\"] --> W[\"权重加权\"]\n        W --> CH[\"选择最高分方向\"]\n    end\n    D --> S\n    subgraph 执行子模块\n        RD[\"原始方向输出\"] --> LI[\"线性插值\"]\n        LI --> SM[\"平滑移动\"]\n    end\n    E --> RD\n```\n关键时间戳: [BV1ZsNA6nEYX P1 00:24] [BV1ZsNA6nEYX P1 00:44] [BV1ZsNA6nEYX P1 02:14]\n\n## 决策层评分流程\n```mermaid\nflowchart LR\n    D360[\"360°离散为16方向<br/>(22.5°间隔)\"] --> DIR[\"每方向独立计算分数\"]\n    DIR --> F1[\"避墙\"]\n    DIR --> F2[\"避敌\"]\n    DIR --> F3[\"收集道具\"]\n    DIR --> F4[\"输出射击\"]\n    subgraph 权重\n        R1[\"角色A权重\"] --> SUM[\"累计权重\"]\n        R2[\"角色B权重\"] --> SUM\n        R3[\"特殊角色权重\"] --> SUM\n    end\n    SUM --> SCORE[\"方向总分\"]\n    SCORE --> CH[\"选最高分方向\"]\n```\n关键时间戳: [BV1ZsNA6nEYX P1 00:51] [BV1ZsNA6nEYX P1 01:00] [BV1ZsNA6nEYX P1 01:15] [BV1ZsNA6nEYX P1 01:30]\n\n## 反包围与墙体处理\n```mermaid\nflowchart TD\n    ENC[\"检测角色被双侧敌人包围\"] --> RE[\"设计反包围逻辑\"]\n    RE --> MD[\"向敌人密度更小方向移动\"]\n    WALL[\"检测角色与敌人之间有墙体\"] --> IGN[\"忽略墙体后敌人\"]\n    IGN --> NO_SHOOT[\"防止射向墙体\"]\n    ENC --> WALL\n```\n关键时间戳: [BV1ZsNA6nEYX P1 01:46] [BV1ZsNA6nEYX P1 02:01] [BV1ZsNA6nEYX P1 02:03] [BV1ZsNA6nEYX P1 02:12]\n\n## 执行层移动平滑\n```mermaid\nflowchart LR\n    RAW[\"角色原始输出方向\"] --> SMO[\"线性差值处理\"]\n    SMO --> CONT[\"连续方向变化\"]\n    CONT --> NO_JERK[\"避免瞬时转向抽搐\"]\n    NO_JERK --> FINAL[\"平滑移动效果\"]\n```\n关键时间戳: [BV1ZsNA6nEYX P1 02:16] [BV1ZsNA6nEYX P1 02:23] [BV1ZsNA6nEYX P1 02:27]",
+  "diagrams": [
+    {
+      "title": "系统总体架构",
+      "code": "flowchart TD\n    P[\"感知层\"] --> D[\"决策层\"]\n    D --> E[\"执行层\"]\n    subgraph 感知子模块\n        ES[\"敌人扫描\"] --> SD[\"状态检测\"]\n        IS[\"道具扫描\"] --> SD\n    end\n    P --> ES\n    P --> IS\n    subgraph 决策子模块\n        S[\"方向评分\"] --> W[\"权重加权\"]\n        W --> CH[\"选择最高分方向\"]\n    end\n    D --> S\n    subgraph 执行子模块\n        RD[\"原始方向输出\"] --> LI[\"线性插值\"]\n        LI --> SM[\"平滑移动\"]\n    end\n    E --> RD"
+    },
+    {
+      "title": "决策层评分流程",
+      "code": "flowchart LR\n    D360[\"360°离散为16方向<br/>(22.5°间隔)\"] --> DIR[\"每方向独立计算分数\"]\n    DIR --> F1[\"避墙\"]\n    DIR --> F2[\"避敌\"]\n    DIR --> F3[\"收集道具\"]\n    DIR --> F4[\"输出射击\"]\n    subgraph 权重\n        R1[\"角色A权重\"] --> SUM[\"累计权重\"]\n        R2[\"角色B权重\"] --> SUM\n        R3[\"特殊角色权重\"] --> SUM\n    end\n    SUM --> SCORE[\"方向总分\"]\n    SCORE --> CH[\"选最高分方向\"]"
+    },
+    {
+      "title": "反包围与墙体处理",
+      "code": "flowchart TD\n    ENC[\"检测角色被双侧敌人包围\"] --> RE[\"设计反包围逻辑\"]\n    RE --> MD[\"向敌人密度更小方向移动\"]\n    WALL[\"检测角色与敌人之间有墙体\"] --> IGN[\"忽略墙体后敌人\"]\n    IGN --> NO_SHOOT[\"防止射向墙体\"]\n    ENC --> WALL"
+    },
+    {
+      "title": "执行层移动平滑",
+      "code": "flowchart LR\n    RAW[\"角色原始输出方向\"] --> SMO[\"线性差值处理\"]\n    SMO --> CONT[\"连续方向变化\"]\n    CONT --> NO_JERK[\"避免瞬时转向抽搐\"]\n    NO_JERK --> FINAL[\"平滑移动效果\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:31:38+00:00"
+}

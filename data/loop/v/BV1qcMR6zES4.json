@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1qcMR6zES4",
+  "title": "DeepSeek V4 Flash 0731/ Qwen3.6 27B / gpt-5.6 sol工程与小说实测",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1488,
+  "text": "这轮测试先把所有题目的输出上限\n统一提高到65536token\n发现flash在万实例题写满6万4000仍没结束后\n我又把这道题单独追到13万\n1072token\n结果更夸张\n同样参数一次3000多token自然停止\n另一次写满128K仍然没完\n参与对比的是deep seek v4flash\n当前尚未升级的deep seek pro v4\nqueen领六二十七B以及codex5.6\nso前三个走实际API\ncodex在当前代理环境完成同题参考\n实现只比较质量\n不进入API延迟排名\n七道题包括d edge并发调度\nthree js one实例\n三维空间数学\nreact静态复杂\nSQLSWR缓存和中文科幻短片\n六道工程题温度为零\n短篇温度为0.7\n每次调用都保存实际token和finish reason\n已经in length结束的流不能原地续写\n所以128K是两次同参数重新生成\n而不是把旧答案接着写\n先看综合成绩\n满分70分\ndeep seek pro v四五十.2分\n成为三条AAPI第一quin点六二十七\nB43.4分\nflash41.8分\ncodex参考实现70分\n但他不是同一API链路\n成绩不能直接参与速度比较\n重点看three js10000个实例\n64K样本写满6万5536\ntoken耗时308秒\n仍是length\n第一次128K复测\n却只用3229\ntoken17.7秒\n自然停止审计后六分\n第二次复测再次失控\n写满131072token\n42万2000多个字符\n耗时632秒\nFinish reason\n还是length\n结尾仍在反复讨论怎样停止动画\npro和queen则分别用4060一个和\n2070一个token自然完成并拿到十分\n六道工程题合计pro41分\nqueen37分\nflash36分\npro在DIJ调度和万事例题拿到满分\nflash与pro在react静态满分\n三维空间数学仍是flash5分领先\nSWR缓存则由queen6分领先\n开放输出后\npro的完整工程能力明显被释放出来\n延迟更要分两面看七题\n耗时中位数flash5.65秒\npro16.03秒\nqueen18.98秒\nflash的典型响应仍然最快\n但它在同一道万实例题里可以17.7秒\n自然结束\n也可以连续生成632秒\n并撞上131072token\n短任务快不代表长输出可控\n文本生成题\n要求写一篇木卫二冰下海洋战的科幻短片\n限制1200~1600字\n还必须包含3.17分\n报警三次不同作用的红色扳手\n两位说话者分别说出别回头\n并用最后一句重释开头硬约数占四成\n四篇作品匿名后\n由三条API按科学结构\n人物语言和结尾五项王评占六成\n科幻短片里pro的文学盲评十分综合\n09:02分成为API第一queen\n6.4分\nflash5.8分\n三条API都超过了1600字限制\n只有codex参考实现控制在1254字\n并得到十分\n需要说明文学评分本身具有主观性\n而且参测模型同时担任匿名评委\n所以他只作为创作质量参考\n不等同于客观真理\n最终结论是综合工程和文本生成\n当前pro v4是这轮API第一queen\n在万石例题最省token也最早完整交卷\nflash的问题不是64K上限不够\n而是输出稳定性失控\n同样参数会在3000token\n自然结束\n和写满128K仍不结束之间剧烈摆动\ncodex的参考实现最完整\n但不进入API延迟榜\n完整提示词\n三个flash样本\nFinish reason\n逐项得分和匿名评审都已经保存\n后续还需要加入真实编译\n浏览器运行和WEBGL交互验证",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qcMR6zES4",
+  "published_at": "1785816000",
+  "fetched_at": "2026-08-07T03:50:36+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 等模型测试关系图谱\n\n## 模型与测试配置\n```mermaid\nflowchart TD\n    A1[\"测试输出上限 65536 token\"] --> B1[\"模型\"]\n    B1 --> C1[\"DeepSeek V4 Flash\"]\n    B1 --> C2[\"DeepSeek Pro V4\"]\n    B1 --> C3[\"Qwen 3.6 27B (queen)\"]\n    B1 --> C4[\"codex 5.6 (参考实现)\"]\n    A1 --> D1[\"七道工程题\"]\n    D1 --> D2[\"three.js 10000实例\"]\n    D1 --> D3[\"三维空间数学\"]\n    D1 --> D4[\"react 静态复杂\"]\n    D1 --> D5[\"SQL SWR 缓存\"]\n    D1 --> D6[\"科幻短篇 1200~1600字\"]\n    D1 --> D7[\"其他任务\"]\n```\n\n## 成绩与评分概览\n```mermaid\nflowchart TD\n    M1[\"满分 70 分\"]\n    M1 --> M2[\"DeepSeek Pro V4 45.2 分\"]\n    M1 --> M3[\"Flash 41.8 分\"]\n    M1 --> M4[\"queen 43.4 分\"]\n    M1 --> M5[\"codex 参考实现 70 分\"]\n    M2 --> S1[\"工程题合计 41 分\"]\n    M3 --> S2[\"工程题合计 36 分\"]\n    M4 --> S3[\"工程题合计 37 分\"]\n    M5 --> S4[\"参考实现 70 分 (不计入 API 延迟)\"]\n```\n\n## Flash 输出行为\n```mermaid\nflowchart TD\n    F1[\"Flash 参数统一\"]\n    F1 --> F2[\"3000 token 自然停止\"]\n    F1 --> F3[\"写满 64K 仍未结束\"]\n    F1 --> F4[\"写满 128K 仍未结束\"]\n    F2 --> F5[\"Finish reason: length\"]\n    F3 --> F6[\"两次同参数重新生成\"]\n    F4 --> F7[\"第二次复测 131072 token 632 秒\"]\n    F6 --> F8[\"旧答案不续写\"]\n    F7 --> F9[\"仍出现 length 结束\"]\n```\n\n## 延迟与效率比较\n```mermaid\nflowchart TD\n    L1[\"中位响应时间\"]\n    L1 --> L2[\"Flash 5.65 秒\"]\n    L1 --> L3[\"Pro 16.03 秒\"]\n    L1 --> L4[\"queen 18.98 秒\"]\n    L2 --> L5[\"短任务最快\"]\n    L2 --> L6[\"长输出不稳定\"]\n    L3 --> L7[\"在万实例题中表现稳定\"]\n    L4 --> L8[\"SWR 缓存得分领先\"]\n```\n\n## 综合结论与推荐\n```mermaid\nflowchart TD\n    C1[\"综合工程与文本生成\"]\n    C1 --> C2[\"Pro V4 为 API 第一 (queen)\"]\n    C2 --> C3[\"在万实例题 token 最省且最早交卷\"]\n    C1 --> C4[\"Flash 速度快但输出失控\"]\n    C4 --> C5[\"不适合长输出任务\"]\n    C1 --> C6[\"codex 参考实现质量最高\"]\n    C6 --> C7[\"不计入 API 延迟榜\"]\n    C1 --> C8[\"推荐使用 Pro V4 进行综合任务\"]\n```",
+      "diagrams": [
+        {
+          "title": "模型与测试配置",
+          "code": "flowchart TD\n    A1[\"测试输出上限 65536 token\"] --> B1[\"模型\"]\n    B1 --> C1[\"DeepSeek V4 Flash\"]\n    B1 --> C2[\"DeepSeek Pro V4\"]\n    B1 --> C3[\"Qwen 3.6 27B (queen)\"]\n    B1 --> C4[\"codex 5.6 (参考实现)\"]\n    A1 --> D1[\"七道工程题\"]\n    D1 --> D2[\"three.js 10000实例\"]\n    D1 --> D3[\"三维空间数学\"]\n    D1 --> D4[\"react 静态复杂\"]\n    D1 --> D5[\"SQL SWR 缓存\"]\n    D1 --> D6[\"科幻短篇 1200~1600字\"]\n    D1 --> D7[\"其他任务\"]"
+        },
+        {
+          "title": "成绩与评分概览",
+          "code": "flowchart TD\n    M1[\"满分 70 分\"]\n    M1 --> M2[\"DeepSeek Pro V4 45.2 分\"]\n    M1 --> M3[\"Flash 41.8 分\"]\n    M1 --> M4[\"queen 43.4 分\"]\n    M1 --> M5[\"codex 参考实现 70 分\"]\n    M2 --> S1[\"工程题合计 41 分\"]\n    M3 --> S2[\"工程题合计 36 分\"]\n    M4 --> S3[\"工程题合计 37 分\"]\n    M5 --> S4[\"参考实现 70 分 (不计入 API 延迟)\"]"
+        },
+        {
+          "title": "Flash 输出行为",
+          "code": "flowchart TD\n    F1[\"Flash 参数统一\"]\n    F1 --> F2[\"3000 token 自然停止\"]\n    F1 --> F3[\"写满 64K 仍未结束\"]\n    F1 --> F4[\"写满 128K 仍未结束\"]\n    F2 --> F5[\"Finish reason: length\"]\n    F3 --> F6[\"两次同参数重新生成\"]\n    F4 --> F7[\"第二次复测 131072 token 632 秒\"]\n    F6 --> F8[\"旧答案不续写\"]\n    F7 --> F9[\"仍出现 length 结束\"]"
+        },
+        {
+          "title": "延迟与效率比较",
+          "code": "flowchart TD\n    L1[\"中位响应时间\"]\n    L1 --> L2[\"Flash 5.65 秒\"]\n    L1 --> L3[\"Pro 16.03 秒\"]\n    L1 --> L4[\"queen 18.98 秒\"]\n    L2 --> L5[\"短任务最快\"]\n    L2 --> L6[\"长输出不稳定\"]\n    L3 --> L7[\"在万实例题中表现稳定\"]\n    L4 --> L8[\"SWR 缓存得分领先\"]"
+        },
+        {
+          "title": "综合结论与推荐",
+          "code": "flowchart TD\n    C1[\"综合工程与文本生成\"]\n    C1 --> C2[\"Pro V4 为 API 第一 (queen)\"]\n    C2 --> C3[\"在万实例题 token 最省且最早交卷\"]\n    C1 --> C4[\"Flash 速度快但输出失控\"]\n    C4 --> C5[\"不适合长输出任务\"]\n    C1 --> C6[\"codex 参考实现质量最高\"]\n    C6 --> C7[\"不计入 API 延迟榜\"]\n    C1 --> C8[\"推荐使用 Pro V4 进行综合任务\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T03:50:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 等模型测试关系图谱\n\n## 模型与测试配置\n```mermaid\nflowchart TD\n    A1[\"测试输出上限 65536 token\"] --> B1[\"模型\"]\n    B1 --> C1[\"DeepSeek V4 Flash\"]\n    B1 --> C2[\"DeepSeek Pro V4\"]\n    B1 --> C3[\"Qwen 3.6 27B (queen)\"]\n    B1 --> C4[\"codex 5.6 (参考实现)\"]\n    A1 --> D1[\"七道工程题\"]\n    D1 --> D2[\"three.js 10000实例\"]\n    D1 --> D3[\"三维空间数学\"]\n    D1 --> D4[\"react 静态复杂\"]\n    D1 --> D5[\"SQL SWR 缓存\"]\n    D1 --> D6[\"科幻短篇 1200~1600字\"]\n    D1 --> D7[\"其他任务\"]\n```\n\n## 成绩与评分概览\n```mermaid\nflowchart TD\n    M1[\"满分 70 分\"]\n    M1 --> M2[\"DeepSeek Pro V4 45.2 分\"]\n    M1 --> M3[\"Flash 41.8 分\"]\n    M1 --> M4[\"queen 43.4 分\"]\n    M1 --> M5[\"codex 参考实现 70 分\"]\n    M2 --> S1[\"工程题合计 41 分\"]\n    M3 --> S2[\"工程题合计 36 分\"]\n    M4 --> S3[\"工程题合计 37 分\"]\n    M5 --> S4[\"参考实现 70 分 (不计入 API 延迟)\"]\n```\n\n## Flash 输出行为\n```mermaid\nflowchart TD\n    F1[\"Flash 参数统一\"]\n    F1 --> F2[\"3000 token 自然停止\"]\n    F1 --> F3[\"写满 64K 仍未结束\"]\n    F1 --> F4[\"写满 128K 仍未结束\"]\n    F2 --> F5[\"Finish reason: length\"]\n    F3 --> F6[\"两次同参数重新生成\"]\n    F4 --> F7[\"第二次复测 131072 token 632 秒\"]\n    F6 --> F8[\"旧答案不续写\"]\n    F7 --> F9[\"仍出现 length 结束\"]\n```\n\n## 延迟与效率比较\n```mermaid\nflowchart TD\n    L1[\"中位响应时间\"]\n    L1 --> L2[\"Flash 5.65 秒\"]\n    L1 --> L3[\"Pro 16.03 秒\"]\n    L1 --> L4[\"queen 18.98 秒\"]\n    L2 --> L5[\"短任务最快\"]\n    L2 --> L6[\"长输出不稳定\"]\n    L3 --> L7[\"在万实例题中表现稳定\"]\n    L4 --> L8[\"SWR 缓存得分领先\"]\n```\n\n## 综合结论与推荐\n```mermaid\nflowchart TD\n    C1[\"综合工程与文本生成\"]\n    C1 --> C2[\"Pro V4 为 API 第一 (queen)\"]\n    C2 --> C3[\"在万实例题 token 最省且最早交卷\"]\n    C1 --> C4[\"Flash 速度快但输出失控\"]\n    C4 --> C5[\"不适合长输出任务\"]\n    C1 --> C6[\"codex 参考实现质量最高\"]\n    C6 --> C7[\"不计入 API 延迟榜\"]\n    C1 --> C8[\"推荐使用 Pro V4 进行综合任务\"]\n```",
+  "diagrams": [
+    {
+      "title": "模型与测试配置",
+      "code": "flowchart TD\n    A1[\"测试输出上限 65536 token\"] --> B1[\"模型\"]\n    B1 --> C1[\"DeepSeek V4 Flash\"]\n    B1 --> C2[\"DeepSeek Pro V4\"]\n    B1 --> C3[\"Qwen 3.6 27B (queen)\"]\n    B1 --> C4[\"codex 5.6 (参考实现)\"]\n    A1 --> D1[\"七道工程题\"]\n    D1 --> D2[\"three.js 10000实例\"]\n    D1 --> D3[\"三维空间数学\"]\n    D1 --> D4[\"react 静态复杂\"]\n    D1 --> D5[\"SQL SWR 缓存\"]\n    D1 --> D6[\"科幻短篇 1200~1600字\"]\n    D1 --> D7[\"其他任务\"]"
+    },
+    {
+      "title": "成绩与评分概览",
+      "code": "flowchart TD\n    M1[\"满分 70 分\"]\n    M1 --> M2[\"DeepSeek Pro V4 45.2 分\"]\n    M1 --> M3[\"Flash 41.8 分\"]\n    M1 --> M4[\"queen 43.4 分\"]\n    M1 --> M5[\"codex 参考实现 70 分\"]\n    M2 --> S1[\"工程题合计 41 分\"]\n    M3 --> S2[\"工程题合计 36 分\"]\n    M4 --> S3[\"工程题合计 37 分\"]\n    M5 --> S4[\"参考实现 70 分 (不计入 API 延迟)\"]"
+    },
+    {
+      "title": "Flash 输出行为",
+      "code": "flowchart TD\n    F1[\"Flash 参数统一\"]\n    F1 --> F2[\"3000 token 自然停止\"]\n    F1 --> F3[\"写满 64K 仍未结束\"]\n    F1 --> F4[\"写满 128K 仍未结束\"]\n    F2 --> F5[\"Finish reason: length\"]\n    F3 --> F6[\"两次同参数重新生成\"]\n    F4 --> F7[\"第二次复测 131072 token 632 秒\"]\n    F6 --> F8[\"旧答案不续写\"]\n    F7 --> F9[\"仍出现 length 结束\"]"
+    },
+    {
+      "title": "延迟与效率比较",
+      "code": "flowchart TD\n    L1[\"中位响应时间\"]\n    L1 --> L2[\"Flash 5.65 秒\"]\n    L1 --> L3[\"Pro 16.03 秒\"]\n    L1 --> L4[\"queen 18.98 秒\"]\n    L2 --> L5[\"短任务最快\"]\n    L2 --> L6[\"长输出不稳定\"]\n    L3 --> L7[\"在万实例题中表现稳定\"]\n    L4 --> L8[\"SWR 缓存得分领先\"]"
+    },
+    {
+      "title": "综合结论与推荐",
+      "code": "flowchart TD\n    C1[\"综合工程与文本生成\"]\n    C1 --> C2[\"Pro V4 为 API 第一 (queen)\"]\n    C2 --> C3[\"在万实例题 token 最省且最早交卷\"]\n    C1 --> C4[\"Flash 速度快但输出失控\"]\n    C4 --> C5[\"不适合长输出任务\"]\n    C1 --> C6[\"codex 参考实现质量最高\"]\n    C6 --> C7[\"不计入 API 延迟榜\"]\n    C1 --> C8[\"推荐使用 Pro V4 进行综合任务\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:50:50+00:00"
+}

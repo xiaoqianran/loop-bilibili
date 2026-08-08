@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1DvcyzcEa4",
+  "title": "58. 如何根据答案倒推合成思维链做SFT？以AscendKernelGen为例【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 649,
+  "text": "今天的问题是\n如何根据答案倒推合成数量做SFT\n为什么问这个问题\n因为我们可能会面临这样的一种情况\n就是我们有答案的语料\n还有题目的预料\n但是没有思维链的预料\n但是题目是没法直接推出答案的\n在这种情况下\n怎么样去合成词汇量做SFT呢\n那么就以华为2026年asset的cl卷为例\n那么谷歌在202年呢就有这个思路\n假设我们现在的资源\n赚的就是有一些硬件的技术文档\n比如说是缓存大小\n但它太放了\n还有一些专家算子的代码\n比如说是ECO算子\n这个就是那个答案\n现在的目标是要监督微调一个模型\n能够根据题目\n比如说要写一个算子去生存指定的算子\n但难点在于题目\n比如说要写一个算子\n是没法直接推导出答案的\n比如他为什么要这么分\n那个tale为什么要这么搬数据\n很有可能是和这个技术文档相关的\n那么怎么合成这个思维链呢\n那么思路就是先让一个强力的模型\n根据这个技术文档去概述专家算子的思路啊\n比如说英柜缓存这么大\n所以只能这么搬数据\n然后呢把这个思路作为思维链和题目\n就是要写这个卷积算子\n答案就是这个转卷积算子的代码拼在一起\n对一个小模型做SFT\n那么为什么要用一个强力的模型呢\n啊不能直接用小模型吗\n那么小模型它可能都还没有训练好\n就不太适合去它宣传思维链\nOK那么做SFT是怎么做呢\n就是把词汇量和答案给它蒙起来\n然后去预测里面的next token\n就可以让小模型学会先想再说\n最后呢再做一个强化学习\n就是先让一个小模型他去写算子\n然后呢真的去跑下那个算子\n看看他写的对不对\n性能好不好\n得到一个反馈",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1DvcyzcEa4",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:18:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

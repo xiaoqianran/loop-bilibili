@@ -1,0 +1,26 @@
+{
+  "bvid": "BV13Aj36ZEcC",
+  "title": "143. 如何可视化SGLang中的KV Cache？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 419,
+  "text": "今天的问题是如何可视化sg land的kv cash\n假设现在有一个系统提示词\n你是一个有用的助手\n有两个用户\n第一个用户的请求是你好吗\n第二个用户的请求是你好呀\n之前从数学的角度证明过\n为什么两个用户的公共前缀\n可以共享相同的kv cash\n而从第一个不同的token开始\n就会有不同的kv cash\n关键的问题是如何可视化它\n一个重要的理解是\nkv cash是多层的transformer\n当中每一层都有自己的kv cash\n所以一个token\n比如说你他挂着的是一串kv catch\n而不只是挂着一个KV向量\n你这个token对应第一层的KV和第二层的KV\n每层都有\n并且每层的值是不一样的\n从不共享的部分开始\nk v cash就不一样了\n还要考虑sg land page size\n比如page size为十六十\nkv cash按每16个token一个块存储\n存在逻辑快到物理块的映射\n请求长度不正好是16的倍数时\n就会有对齐问题",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV13Aj36ZEcC",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:36+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1Sjgd6NEKD",
+  "title": "自学Godot一个月的小小骑士哟！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 374,
+  "text": "展示下我这个月跟玩breaks\n还有N工坊的教程\n基础上做的平台跳跃游戏\n短短一分半的内容做了一个月\n功能包含了标题界面\nUI动效\n玩家移动地图构建战斗机制\n收集物和拾取掉落物\n血条\n死亡机制\n定点传送视差\n背景音效\n音乐存档读档对话过场cg的内容视频很短\n从零开始搭建\n慢慢完善并拓展新的功能\n现在有些像个游戏了\n看起来内容很多\n但有些相对独立\n容易滋生bug\n本来我想继续制作背包系统\n但发现这个功能涉及到的东西太多了\n字典交互\n数值变化\n还有功能之间的连接\n我没有学明白\n在做了一天的无用功后\n我打算先停下来\n从头把我学会的东西尽量用自己的语言复刻\n锻炼独立写脚本的能力\n这是一场持久的攀登\n我会慢慢把现阶段学到的内容\n整理成教程和笔记\n输出是最好的输入\n在梳理的过程中也能更加巩固\n如果你也在学习GODOT有疑问或者制作小技巧\n欢迎评论留言",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Sjgd6NEKD",
+  "published_at": "1785089061",
+  "fetched_at": "2026-08-07T02:41:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot自学一个月知识图谱\n\n## 游戏功能概览\n```mermaid\nflowchart TD\n    G1_Game[\"平台跳跃游戏\"]\n    G1_TitleScreen[\"标题界面\"]\n    G1_UIAnim[\"UI 动效\"]\n    G1_PlayerMove[\"玩家移动\"]\n    G1_Map[\"地图构建\"]\n    G1_Combat[\"战斗机制\"]\n    G1_Collect[\"收集物\"]\n    G1_Drop[\"掉落物\"]\n    G1_HealthBar[\"血条\"]\n    G1_Death[\"死亡机制\"]\n    G1_Teleport[\"定点传送\"]\n    G1_Parallax[\"视差\"]\n    G1_BGSound[\"背景音效\"]\n    G1_Music[\"音乐\"]\n    G1_SaveLoad[\"存档/读档\"]\n    G1_DialogueCG[\"对话/过场 CG\"]\n    G1_Game --> G1_TitleScreen\n    G1_Game --> G1_UIAnim\n    G1_Game --> G1_PlayerMove\n    G1_Game --> G1_Map\n    G1_Game --> G1_Combat\n    G1_Game --> G1_Collect\n    G1_Game --> G1_Drop\n    G1_Game --> G1_HealthBar\n    G1_Game --> G1_Death\n    G1_Game --> G1_Teleport\n    G1_Game --> G1_Parallax\n    G1_Game --> G1_BGSound\n    G1_Game --> G1_Music\n    G1_Game --> G1_SaveLoad\n    G1_Game --> G1_DialogueCG\n```\n<!--\nG1_TitleScreen: [BV1Sjgd6NEKD P1 00:11]\nG1_UIAnim: [BV1Sjgd6NEKD P1 00:13]\nG1_PlayerMove: [BV1Sjgd6NEKD P1 00:14]\nG1_Map: [BV1Sjgd6NEKD P1 00:14]\nG1_Combat: [BV1Sjgd6NEKD P1 00:14]\nG1_Collect: [BV1Sjgd6NEKD P1 00:17]\nG1_Drop: [BV1Sjgd6NEKD P1 00:17]\nG1_HealthBar: [BV1Sjgd6NEKD P1 00:19]\nG1_Death: [BV1Sjgd6NEKD P1 00:19]\nG1_Teleport: [BV1Sjgd6NEKD P1 00:21]\nG1_Parallax: [BV1Sjgd6NEKD P1 00:21]\nG1_BGSound: [BV1Sjgd6NEKD P1 00:23]\nG1_Music: [BV1Sjgd6NEKD P1 00:24]\nG1_SaveLoad: [BV1Sjgd6NEKD P1 00:24]\nG1_DialogueCG: [BV1Sjgd6NEKD P1 00:24]\n-->\n\n## 学习与开发流程\n```mermaid\nflowchart TD\n    G2_StartZero[\"从零开始搭建\"]\n    G2_GradualImprove[\"慢慢完善\"]\n    G2_FeatureAdd[\"新增功能\"]\n    G2_BugRisk[\"易产生 Bug\"]\n    G2_ComplexityReal[\"功能复杂度提升\"]\n    G2_Pause[\"决定暂停\"]\n    G2_Reimplement[\"用自己的语言复刻\"]\n    G2_ScriptTraining[\"锻炼独立写脚本能力\"]\n    G2_LongClimb[\"持久的攀登\"]\n    G2_OutputInput[\"输出是最好的输入\"]\n    G2_StartZero --> G2_GradualImprove --> G2_FeatureAdd --> G2_BugRisk --> G2_ComplexityReal --> G2_Pause --> G2_Reimplement --> G2_ScriptTraining --> G2_LongClimb --> G2_OutputInput\n```\n<!--\nG2_StartZero: [BV1Sjgd6NEKD P1 00:30]\nG2_GradualImprove: [BV1Sjgd6NEKD P1 00:32]\nG2_FeatureAdd: [BV1Sjgd6NEKD P1 00:35]\nG2_BugRisk: [BV1Sjgd6NEKD P1 00:40]\nG2_ComplexityReal: [BV1Sjgd6NEKD P1 00:45]\nG2_Pause: [BV1Sjgd6NEKD P1 00:57]\nG2_Reimplement: [BV1Sjgd6NEKD P1 00:59]\nG2_ScriptTraining: [BV1Sjgd6NEKD P1 01:04]\nG2_LongClimb: [BV1Sjgd6NEKD P1 01:06]\nG2_OutputInput: [BV1Sjgd6NEKD P1 01:14]\n-->\n\n## 背包系统复杂度因素\n```mermaid\nflowchart TD\n    G3_Backpack[\"背包系统\"]\n    G3_DictInteraction[\"字典交互\"]\n    G3_NumericChange[\"数值变化\"]\n    G3_FunctionConnect[\"功能之间的连接\"]\n    G3_HighComplex[\"高复杂度\"]\n    G3_NotReady[\"暂不实现\"]\n    G3_Backpack --> G3_DictInteraction\n    G3_Backpack --> G3_NumericChange\n    G3_Backpack --> G3_FunctionConnect\n    G3_DictInteraction --> G3_HighComplex\n    G3_NumericChange --> G3_HighComplex\n    G3_FunctionConnect --> G3_HighComplex\n    G3_HighComplex --> G3_NotReady\n```\n<!--\nG3_Backpack: [BV1Sjgd6NEKD P1 00:45]\nG3_DictInteraction: [BV1Sjgd6NEKD P1 00:49]\nG3_NumericChange: [BV1Sjgd6NEKD P1 00:50]\nG3_FunctionConnect: [BV1Sjgd6NEKD P1 00:51]\nG3_HighComplex: [BV1Sjgd6NEKD P1 00:55]\nG3_NotReady: [BV1Sjgd6NEKD P1 00:57]\n-->\n\n## 决定暂停的因果链\n```mermaid\nflowchart TD\n    G4_UselessDay[\"一天的无用功\"]\n    G4_RealizeComplex[\"认识到功能复杂\"]\n    G4_DecidePause[\"决定先停下来\"]\n    G4_Rebuild[\"从头复刻已学内容\"]\n    G4_StrengthenScript[\"强化脚本独立写作\"]\n    G4_LongClimb[\"视为持久的攀登\"]\n    G4_UselessDay --> G4_RealizeComplex --> G4_DecidePause --> G4_Rebuild --> G4_StrengthenScript --> G4_LongClimb\n```\n<!--\nG4_UselessDay: [BV1Sjgd6NEKD P1 00:55]\nG4_RealizeComplex: [BV1Sjgd6NEKD P1 00:55]\nG4_DecidePause: [BV1Sjgd6NEKD P1 00:57]\nG4_Rebuild: [BV1Sjgd6NEKD P1 00:59]\nG4_StrengthenScript: [BV1Sjgd6NEKD P1 01:04]\nG4_LongClimb: [BV1Sjgd6NEKD P1 01:06]\n-->",
+      "diagrams": [
+        {
+          "title": "游戏功能概览",
+          "code": "flowchart TD\n    G1_Game[\"平台跳跃游戏\"]\n    G1_TitleScreen[\"标题界面\"]\n    G1_UIAnim[\"UI 动效\"]\n    G1_PlayerMove[\"玩家移动\"]\n    G1_Map[\"地图构建\"]\n    G1_Combat[\"战斗机制\"]\n    G1_Collect[\"收集物\"]\n    G1_Drop[\"掉落物\"]\n    G1_HealthBar[\"血条\"]\n    G1_Death[\"死亡机制\"]\n    G1_Teleport[\"定点传送\"]\n    G1_Parallax[\"视差\"]\n    G1_BGSound[\"背景音效\"]\n    G1_Music[\"音乐\"]\n    G1_SaveLoad[\"存档/读档\"]\n    G1_DialogueCG[\"对话/过场 CG\"]\n    G1_Game --> G1_TitleScreen\n    G1_Game --> G1_UIAnim\n    G1_Game --> G1_PlayerMove\n    G1_Game --> G1_Map\n    G1_Game --> G1_Combat\n    G1_Game --> G1_Collect\n    G1_Game --> G1_Drop\n    G1_Game --> G1_HealthBar\n    G1_Game --> G1_Death\n    G1_Game --> G1_Teleport\n    G1_Game --> G1_Parallax\n    G1_Game --> G1_BGSound\n    G1_Game --> G1_Music\n    G1_Game --> G1_SaveLoad\n    G1_Game --> G1_DialogueCG"
+        },
+        {
+          "title": "学习与开发流程",
+          "code": "flowchart TD\n    G2_StartZero[\"从零开始搭建\"]\n    G2_GradualImprove[\"慢慢完善\"]\n    G2_FeatureAdd[\"新增功能\"]\n    G2_BugRisk[\"易产生 Bug\"]\n    G2_ComplexityReal[\"功能复杂度提升\"]\n    G2_Pause[\"决定暂停\"]\n    G2_Reimplement[\"用自己的语言复刻\"]\n    G2_ScriptTraining[\"锻炼独立写脚本能力\"]\n    G2_LongClimb[\"持久的攀登\"]\n    G2_OutputInput[\"输出是最好的输入\"]\n    G2_StartZero --> G2_GradualImprove --> G2_FeatureAdd --> G2_BugRisk --> G2_ComplexityReal --> G2_Pause --> G2_Reimplement --> G2_ScriptTraining --> G2_LongClimb --> G2_OutputInput"
+        },
+        {
+          "title": "背包系统复杂度因素",
+          "code": "flowchart TD\n    G3_Backpack[\"背包系统\"]\n    G3_DictInteraction[\"字典交互\"]\n    G3_NumericChange[\"数值变化\"]\n    G3_FunctionConnect[\"功能之间的连接\"]\n    G3_HighComplex[\"高复杂度\"]\n    G3_NotReady[\"暂不实现\"]\n    G3_Backpack --> G3_DictInteraction\n    G3_Backpack --> G3_NumericChange\n    G3_Backpack --> G3_FunctionConnect\n    G3_DictInteraction --> G3_HighComplex\n    G3_NumericChange --> G3_HighComplex\n    G3_FunctionConnect --> G3_HighComplex\n    G3_HighComplex --> G3_NotReady"
+        },
+        {
+          "title": "决定暂停的因果链",
+          "code": "flowchart TD\n    G4_UselessDay[\"一天的无用功\"]\n    G4_RealizeComplex[\"认识到功能复杂\"]\n    G4_DecidePause[\"决定先停下来\"]\n    G4_Rebuild[\"从头复刻已学内容\"]\n    G4_StrengthenScript[\"强化脚本独立写作\"]\n    G4_LongClimb[\"视为持久的攀登\"]\n    G4_UselessDay --> G4_RealizeComplex --> G4_DecidePause --> G4_Rebuild --> G4_StrengthenScript --> G4_LongClimb"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T02:42:29+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot自学一个月知识图谱\n\n## 游戏功能概览\n```mermaid\nflowchart TD\n    G1_Game[\"平台跳跃游戏\"]\n    G1_TitleScreen[\"标题界面\"]\n    G1_UIAnim[\"UI 动效\"]\n    G1_PlayerMove[\"玩家移动\"]\n    G1_Map[\"地图构建\"]\n    G1_Combat[\"战斗机制\"]\n    G1_Collect[\"收集物\"]\n    G1_Drop[\"掉落物\"]\n    G1_HealthBar[\"血条\"]\n    G1_Death[\"死亡机制\"]\n    G1_Teleport[\"定点传送\"]\n    G1_Parallax[\"视差\"]\n    G1_BGSound[\"背景音效\"]\n    G1_Music[\"音乐\"]\n    G1_SaveLoad[\"存档/读档\"]\n    G1_DialogueCG[\"对话/过场 CG\"]\n    G1_Game --> G1_TitleScreen\n    G1_Game --> G1_UIAnim\n    G1_Game --> G1_PlayerMove\n    G1_Game --> G1_Map\n    G1_Game --> G1_Combat\n    G1_Game --> G1_Collect\n    G1_Game --> G1_Drop\n    G1_Game --> G1_HealthBar\n    G1_Game --> G1_Death\n    G1_Game --> G1_Teleport\n    G1_Game --> G1_Parallax\n    G1_Game --> G1_BGSound\n    G1_Game --> G1_Music\n    G1_Game --> G1_SaveLoad\n    G1_Game --> G1_DialogueCG\n```\n<!--\nG1_TitleScreen: [BV1Sjgd6NEKD P1 00:11]\nG1_UIAnim: [BV1Sjgd6NEKD P1 00:13]\nG1_PlayerMove: [BV1Sjgd6NEKD P1 00:14]\nG1_Map: [BV1Sjgd6NEKD P1 00:14]\nG1_Combat: [BV1Sjgd6NEKD P1 00:14]\nG1_Collect: [BV1Sjgd6NEKD P1 00:17]\nG1_Drop: [BV1Sjgd6NEKD P1 00:17]\nG1_HealthBar: [BV1Sjgd6NEKD P1 00:19]\nG1_Death: [BV1Sjgd6NEKD P1 00:19]\nG1_Teleport: [BV1Sjgd6NEKD P1 00:21]\nG1_Parallax: [BV1Sjgd6NEKD P1 00:21]\nG1_BGSound: [BV1Sjgd6NEKD P1 00:23]\nG1_Music: [BV1Sjgd6NEKD P1 00:24]\nG1_SaveLoad: [BV1Sjgd6NEKD P1 00:24]\nG1_DialogueCG: [BV1Sjgd6NEKD P1 00:24]\n-->\n\n## 学习与开发流程\n```mermaid\nflowchart TD\n    G2_StartZero[\"从零开始搭建\"]\n    G2_GradualImprove[\"慢慢完善\"]\n    G2_FeatureAdd[\"新增功能\"]\n    G2_BugRisk[\"易产生 Bug\"]\n    G2_ComplexityReal[\"功能复杂度提升\"]\n    G2_Pause[\"决定暂停\"]\n    G2_Reimplement[\"用自己的语言复刻\"]\n    G2_ScriptTraining[\"锻炼独立写脚本能力\"]\n    G2_LongClimb[\"持久的攀登\"]\n    G2_OutputInput[\"输出是最好的输入\"]\n    G2_StartZero --> G2_GradualImprove --> G2_FeatureAdd --> G2_BugRisk --> G2_ComplexityReal --> G2_Pause --> G2_Reimplement --> G2_ScriptTraining --> G2_LongClimb --> G2_OutputInput\n```\n<!--\nG2_StartZero: [BV1Sjgd6NEKD P1 00:30]\nG2_GradualImprove: [BV1Sjgd6NEKD P1 00:32]\nG2_FeatureAdd: [BV1Sjgd6NEKD P1 00:35]\nG2_BugRisk: [BV1Sjgd6NEKD P1 00:40]\nG2_ComplexityReal: [BV1Sjgd6NEKD P1 00:45]\nG2_Pause: [BV1Sjgd6NEKD P1 00:57]\nG2_Reimplement: [BV1Sjgd6NEKD P1 00:59]\nG2_ScriptTraining: [BV1Sjgd6NEKD P1 01:04]\nG2_LongClimb: [BV1Sjgd6NEKD P1 01:06]\nG2_OutputInput: [BV1Sjgd6NEKD P1 01:14]\n-->\n\n## 背包系统复杂度因素\n```mermaid\nflowchart TD\n    G3_Backpack[\"背包系统\"]\n    G3_DictInteraction[\"字典交互\"]\n    G3_NumericChange[\"数值变化\"]\n    G3_FunctionConnect[\"功能之间的连接\"]\n    G3_HighComplex[\"高复杂度\"]\n    G3_NotReady[\"暂不实现\"]\n    G3_Backpack --> G3_DictInteraction\n    G3_Backpack --> G3_NumericChange\n    G3_Backpack --> G3_FunctionConnect\n    G3_DictInteraction --> G3_HighComplex\n    G3_NumericChange --> G3_HighComplex\n    G3_FunctionConnect --> G3_HighComplex\n    G3_HighComplex --> G3_NotReady\n```\n<!--\nG3_Backpack: [BV1Sjgd6NEKD P1 00:45]\nG3_DictInteraction: [BV1Sjgd6NEKD P1 00:49]\nG3_NumericChange: [BV1Sjgd6NEKD P1 00:50]\nG3_FunctionConnect: [BV1Sjgd6NEKD P1 00:51]\nG3_HighComplex: [BV1Sjgd6NEKD P1 00:55]\nG3_NotReady: [BV1Sjgd6NEKD P1 00:57]\n-->\n\n## 决定暂停的因果链\n```mermaid\nflowchart TD\n    G4_UselessDay[\"一天的无用功\"]\n    G4_RealizeComplex[\"认识到功能复杂\"]\n    G4_DecidePause[\"决定先停下来\"]\n    G4_Rebuild[\"从头复刻已学内容\"]\n    G4_StrengthenScript[\"强化脚本独立写作\"]\n    G4_LongClimb[\"视为持久的攀登\"]\n    G4_UselessDay --> G4_RealizeComplex --> G4_DecidePause --> G4_Rebuild --> G4_StrengthenScript --> G4_LongClimb\n```\n<!--\nG4_UselessDay: [BV1Sjgd6NEKD P1 00:55]\nG4_RealizeComplex: [BV1Sjgd6NEKD P1 00:55]\nG4_DecidePause: [BV1Sjgd6NEKD P1 00:57]\nG4_Rebuild: [BV1Sjgd6NEKD P1 00:59]\nG4_StrengthenScript: [BV1Sjgd6NEKD P1 01:04]\nG4_LongClimb: [BV1Sjgd6NEKD P1 01:06]\n-->",
+  "diagrams": [
+    {
+      "title": "游戏功能概览",
+      "code": "flowchart TD\n    G1_Game[\"平台跳跃游戏\"]\n    G1_TitleScreen[\"标题界面\"]\n    G1_UIAnim[\"UI 动效\"]\n    G1_PlayerMove[\"玩家移动\"]\n    G1_Map[\"地图构建\"]\n    G1_Combat[\"战斗机制\"]\n    G1_Collect[\"收集物\"]\n    G1_Drop[\"掉落物\"]\n    G1_HealthBar[\"血条\"]\n    G1_Death[\"死亡机制\"]\n    G1_Teleport[\"定点传送\"]\n    G1_Parallax[\"视差\"]\n    G1_BGSound[\"背景音效\"]\n    G1_Music[\"音乐\"]\n    G1_SaveLoad[\"存档/读档\"]\n    G1_DialogueCG[\"对话/过场 CG\"]\n    G1_Game --> G1_TitleScreen\n    G1_Game --> G1_UIAnim\n    G1_Game --> G1_PlayerMove\n    G1_Game --> G1_Map\n    G1_Game --> G1_Combat\n    G1_Game --> G1_Collect\n    G1_Game --> G1_Drop\n    G1_Game --> G1_HealthBar\n    G1_Game --> G1_Death\n    G1_Game --> G1_Teleport\n    G1_Game --> G1_Parallax\n    G1_Game --> G1_BGSound\n    G1_Game --> G1_Music\n    G1_Game --> G1_SaveLoad\n    G1_Game --> G1_DialogueCG"
+    },
+    {
+      "title": "学习与开发流程",
+      "code": "flowchart TD\n    G2_StartZero[\"从零开始搭建\"]\n    G2_GradualImprove[\"慢慢完善\"]\n    G2_FeatureAdd[\"新增功能\"]\n    G2_BugRisk[\"易产生 Bug\"]\n    G2_ComplexityReal[\"功能复杂度提升\"]\n    G2_Pause[\"决定暂停\"]\n    G2_Reimplement[\"用自己的语言复刻\"]\n    G2_ScriptTraining[\"锻炼独立写脚本能力\"]\n    G2_LongClimb[\"持久的攀登\"]\n    G2_OutputInput[\"输出是最好的输入\"]\n    G2_StartZero --> G2_GradualImprove --> G2_FeatureAdd --> G2_BugRisk --> G2_ComplexityReal --> G2_Pause --> G2_Reimplement --> G2_ScriptTraining --> G2_LongClimb --> G2_OutputInput"
+    },
+    {
+      "title": "背包系统复杂度因素",
+      "code": "flowchart TD\n    G3_Backpack[\"背包系统\"]\n    G3_DictInteraction[\"字典交互\"]\n    G3_NumericChange[\"数值变化\"]\n    G3_FunctionConnect[\"功能之间的连接\"]\n    G3_HighComplex[\"高复杂度\"]\n    G3_NotReady[\"暂不实现\"]\n    G3_Backpack --> G3_DictInteraction\n    G3_Backpack --> G3_NumericChange\n    G3_Backpack --> G3_FunctionConnect\n    G3_DictInteraction --> G3_HighComplex\n    G3_NumericChange --> G3_HighComplex\n    G3_FunctionConnect --> G3_HighComplex\n    G3_HighComplex --> G3_NotReady"
+    },
+    {
+      "title": "决定暂停的因果链",
+      "code": "flowchart TD\n    G4_UselessDay[\"一天的无用功\"]\n    G4_RealizeComplex[\"认识到功能复杂\"]\n    G4_DecidePause[\"决定先停下来\"]\n    G4_Rebuild[\"从头复刻已学内容\"]\n    G4_StrengthenScript[\"强化脚本独立写作\"]\n    G4_LongClimb[\"视为持久的攀登\"]\n    G4_UselessDay --> G4_RealizeComplex --> G4_DecidePause --> G4_Rebuild --> G4_StrengthenScript --> G4_LongClimb"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:42:29+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1E49ZBbE2o",
+  "title": "DeepSeekv4接入Claude桌面版增加MCP工具",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1084,
+  "text": "我们回到cloud桌面版的登录界面\n注意这里不要点get it started\n我们左上角点击have trouble shooting enable\nDevelop mode\n在弹出的对话框中选enable\n这里还是不要登录\n点击developer configure\nThird party inference\n进入第三方模型配置\n这里可以按照我的方式填写\n这里填写DB c c API t BeryL\n默认不要动\n剩下的地方先空着\nskip logg mode user打开\n点击apply local里\n在弹出的对话框选relaunch now\n等三秒\n我们可以对话测试下是否可以正常对话\n没有问题\n再试试联网搜索也成功了\n再测试一下代码能力\n我让他写段游戏代码\n这里弹出了选项\n那就写个贪吃蛇的吧\n技术实现\n我们就用Python试试好\n他写完了\n右边可以看到代码\n他给了一个终端运行命令打不开\n但是看他的代码确实是写出来了\n这个show in folder打开也是代码\n我跟他要了一个打开方式\n他给了我一个HTML的打开方式\n来我们试一下\n可以玩\n那我们来试一下好不好玩\nwhere you are啊不好\n代码能力验收\n通过关于访问网页和识图\n如果你只是想让cloud访问网页\n就改白名单\n把要访问的网站域名加到KEVACRYSTALLOWS\n彩礼改完以后重启cloud deskscope\n最好新建一个COWORD绘画再测试\n但注意白名单只解决网页访问\n他解决不了图片识别\n如果你想让cloud看截图\n读图片识别界面\n就需要MCP工具\nMCP可以理解成给cloudy加一个本地助手\ncloud负责聊天界面\ndeep sic负责文本和代码\nMCP负责把图片网页文件这些内容取出来\n图片识别可以接支持视觉输入的模型\nAPI也可以先走OCRMCP配置大概长这样\n配置好以后重启cod\n然后在对话里直接让他调用工具\n比如调用vision reader识别这张截图\n或者调用web reader读取这个网页\n最后总结一下\n只想用DISTICK写代码接API就够了\n只想让他访问网页\n改白名单就够了\n想让他看图读文件\n处理复杂网页就加MCP\n可是有这里\n我配置好后截一张图片试试视觉识别效果\n调用这个MCP工具识别图片\n在弹出的交互选allow ones\n可以看到识别成功了\n再试一下web废去访问网页能力\n给他一个链接\n让他调用另一个MCP试一下\n也成功了\n以上就是本期视频的全部内容了\n如果有用的话\n记得点赞关注这期内容的MCP工具\n我全都会免费送给大家\n欢迎来拿",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1E49ZBbE2o",
+  "published_at": "1777784113",
+  "fetched_at": "2026-08-07T03:52:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeekv4 接入 Claude 桌面版 增加 MCP 工具\n\n## 系统整体架构\n\n```mermaid\nflowchart TD\n    A1[\"Cloud 桌面版 UI\"] --> A2[\"启用 Developer Mode\"]\n    A2 --> A3[\"第三方模型配置\"]\n    A3 --> A4[\"MCP 本地助手\"]\n    A4 --> A5[\"Vision Reader (图片识别)\"]\n    A4 --> A6[\"Web Reader (网页读取)\"]\n    A5 --> A7[\"支持视觉输入模型\"]\n    A6 --> A8[\"调用外部网页\"]\n    A1 --> B1[\"DeepSeek 文本/代码引擎\"]\n    B1 --> A5\n    B1 --> A6\n    A3 --> B2[\"白名单 KEVACRYSTALLOWS\"]\n    B2 --> A6\n    style A4 fill:#f9f,stroke:#333,stroke-width:2px\n```\n\n## 配置与启用步骤\n\n```mermaid\nflowchart LR\n    S1[\"打开 Cloud 桌面版登录界面\"] --> S2[\"点击左上角 'Have trouble shooting' → Enable\"]\n    S2 --> S3[\"进入 Developer Configure\"]\n    S3 --> S4[\"选择 Third Party Inference\"]\n    S4 --> S5[\"填写 DB c c API t BeryL（保持默认）\"]\n    S5 --> S6[\"其余字段留空\"]\n    S6 --> S7[\"打开 Skip Login Mode\"]\n    S7 --> S8[\"点击 Apply Local 并选择 Relaunch Now\"]\n    S8 --> S9[\"重启后测试对话、联网搜索、代码生成\"]\n    S9 --> S10[\"如需网页访问：修改 KEVACRYSTALLOWS 白名单并重启\"]\n    S10 --> S11[\"如需图片/文件识别：配置 MCP 并重启\"]\n```\n\n## 能力选择决策图\n\n```mermaid\nflowchart TD\n    C1[\"用户需求\"] -->|写代码| C2[\"使用 DISTICK 调用 API\"]\n    C1 -->|访问网页| C3[\"修改白名单 KEVACRYSTALLOWS\"]\n    C1 -->|识别图片/读取文件| C4[\"启用 MCP 工具\"]\n    C2 --> C5[\"仅需文本/代码能力\"]\n    C3 --> C6[\"仅解决网页访问\"]\n    C4 --> C7[\"调用 Vision Reader 或 Web Reader\"]\n    C5 --> C8[\"无需额外配置\"]\n    C6 --> C8\n    C7 --> C8\n    style C8 fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## 使用 MCP 进行视觉/网页读取流程\n\n```mermaid\nflowchart LR\n    U1[\"在对话中请求图片识别\"] --> U2[\"调用 MCP 的 Vision Reader\"]\n    U2 --> U3[\"弹出授权对话框，选择 Allow\"]\n    U3 --> U4[\"MCP 提取图片内容并返回识别结果\"]\n    U1 --> V1[\"在对话中请求网页读取\"] --> V2[\"调用 MCP 的 Web Reader\"]\n    V2 --> V3[\"提供目标链接\"]\n    V3 --> V4[\"MCP 抓取网页内容并返回\"]\n    U4 --> End[\"结果用于后续对话或处理\"]\n    V4 --> End\n```",
+      "diagrams": [
+        {
+          "title": "系统整体架构",
+          "code": "flowchart TD\n    A1[\"Cloud 桌面版 UI\"] --> A2[\"启用 Developer Mode\"]\n    A2 --> A3[\"第三方模型配置\"]\n    A3 --> A4[\"MCP 本地助手\"]\n    A4 --> A5[\"Vision Reader (图片识别)\"]\n    A4 --> A6[\"Web Reader (网页读取)\"]\n    A5 --> A7[\"支持视觉输入模型\"]\n    A6 --> A8[\"调用外部网页\"]\n    A1 --> B1[\"DeepSeek 文本/代码引擎\"]\n    B1 --> A5\n    B1 --> A6\n    A3 --> B2[\"白名单 KEVACRYSTALLOWS\"]\n    B2 --> A6\n    style A4 fill:#f9f,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "配置与启用步骤",
+          "code": "flowchart LR\n    S1[\"打开 Cloud 桌面版登录界面\"] --> S2[\"点击左上角 'Have trouble shooting' → Enable\"]\n    S2 --> S3[\"进入 Developer Configure\"]\n    S3 --> S4[\"选择 Third Party Inference\"]\n    S4 --> S5[\"填写 DB c c API t BeryL（保持默认）\"]\n    S5 --> S6[\"其余字段留空\"]\n    S6 --> S7[\"打开 Skip Login Mode\"]\n    S7 --> S8[\"点击 Apply Local 并选择 Relaunch Now\"]\n    S8 --> S9[\"重启后测试对话、联网搜索、代码生成\"]\n    S9 --> S10[\"如需网页访问：修改 KEVACRYSTALLOWS 白名单并重启\"]\n    S10 --> S11[\"如需图片/文件识别：配置 MCP 并重启\"]"
+        },
+        {
+          "title": "能力选择决策图",
+          "code": "flowchart TD\n    C1[\"用户需求\"] -->|写代码| C2[\"使用 DISTICK 调用 API\"]\n    C1 -->|访问网页| C3[\"修改白名单 KEVACRYSTALLOWS\"]\n    C1 -->|识别图片/读取文件| C4[\"启用 MCP 工具\"]\n    C2 --> C5[\"仅需文本/代码能力\"]\n    C3 --> C6[\"仅解决网页访问\"]\n    C4 --> C7[\"调用 Vision Reader 或 Web Reader\"]\n    C5 --> C8[\"无需额外配置\"]\n    C6 --> C8\n    C7 --> C8\n    style C8 fill:#bbf,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "使用 MCP 进行视觉/网页读取流程",
+          "code": "flowchart LR\n    U1[\"在对话中请求图片识别\"] --> U2[\"调用 MCP 的 Vision Reader\"]\n    U2 --> U3[\"弹出授权对话框，选择 Allow\"]\n    U3 --> U4[\"MCP 提取图片内容并返回识别结果\"]\n    U1 --> V1[\"在对话中请求网页读取\"] --> V2[\"调用 MCP 的 Web Reader\"]\n    V2 --> V3[\"提供目标链接\"]\n    V3 --> V4[\"MCP 抓取网页内容并返回\"]\n    U4 --> End[\"结果用于后续对话或处理\"]\n    V4 --> End"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T03:52:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeekv4 接入 Claude 桌面版 增加 MCP 工具\n\n## 系统整体架构\n\n```mermaid\nflowchart TD\n    A1[\"Cloud 桌面版 UI\"] --> A2[\"启用 Developer Mode\"]\n    A2 --> A3[\"第三方模型配置\"]\n    A3 --> A4[\"MCP 本地助手\"]\n    A4 --> A5[\"Vision Reader (图片识别)\"]\n    A4 --> A6[\"Web Reader (网页读取)\"]\n    A5 --> A7[\"支持视觉输入模型\"]\n    A6 --> A8[\"调用外部网页\"]\n    A1 --> B1[\"DeepSeek 文本/代码引擎\"]\n    B1 --> A5\n    B1 --> A6\n    A3 --> B2[\"白名单 KEVACRYSTALLOWS\"]\n    B2 --> A6\n    style A4 fill:#f9f,stroke:#333,stroke-width:2px\n```\n\n## 配置与启用步骤\n\n```mermaid\nflowchart LR\n    S1[\"打开 Cloud 桌面版登录界面\"] --> S2[\"点击左上角 'Have trouble shooting' → Enable\"]\n    S2 --> S3[\"进入 Developer Configure\"]\n    S3 --> S4[\"选择 Third Party Inference\"]\n    S4 --> S5[\"填写 DB c c API t BeryL（保持默认）\"]\n    S5 --> S6[\"其余字段留空\"]\n    S6 --> S7[\"打开 Skip Login Mode\"]\n    S7 --> S8[\"点击 Apply Local 并选择 Relaunch Now\"]\n    S8 --> S9[\"重启后测试对话、联网搜索、代码生成\"]\n    S9 --> S10[\"如需网页访问：修改 KEVACRYSTALLOWS 白名单并重启\"]\n    S10 --> S11[\"如需图片/文件识别：配置 MCP 并重启\"]\n```\n\n## 能力选择决策图\n\n```mermaid\nflowchart TD\n    C1[\"用户需求\"] -->|写代码| C2[\"使用 DISTICK 调用 API\"]\n    C1 -->|访问网页| C3[\"修改白名单 KEVACRYSTALLOWS\"]\n    C1 -->|识别图片/读取文件| C4[\"启用 MCP 工具\"]\n    C2 --> C5[\"仅需文本/代码能力\"]\n    C3 --> C6[\"仅解决网页访问\"]\n    C4 --> C7[\"调用 Vision Reader 或 Web Reader\"]\n    C5 --> C8[\"无需额外配置\"]\n    C6 --> C8\n    C7 --> C8\n    style C8 fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## 使用 MCP 进行视觉/网页读取流程\n\n```mermaid\nflowchart LR\n    U1[\"在对话中请求图片识别\"] --> U2[\"调用 MCP 的 Vision Reader\"]\n    U2 --> U3[\"弹出授权对话框，选择 Allow\"]\n    U3 --> U4[\"MCP 提取图片内容并返回识别结果\"]\n    U1 --> V1[\"在对话中请求网页读取\"] --> V2[\"调用 MCP 的 Web Reader\"]\n    V2 --> V3[\"提供目标链接\"]\n    V3 --> V4[\"MCP 抓取网页内容并返回\"]\n    U4 --> End[\"结果用于后续对话或处理\"]\n    V4 --> End\n```",
+  "diagrams": [
+    {
+      "title": "系统整体架构",
+      "code": "flowchart TD\n    A1[\"Cloud 桌面版 UI\"] --> A2[\"启用 Developer Mode\"]\n    A2 --> A3[\"第三方模型配置\"]\n    A3 --> A4[\"MCP 本地助手\"]\n    A4 --> A5[\"Vision Reader (图片识别)\"]\n    A4 --> A6[\"Web Reader (网页读取)\"]\n    A5 --> A7[\"支持视觉输入模型\"]\n    A6 --> A8[\"调用外部网页\"]\n    A1 --> B1[\"DeepSeek 文本/代码引擎\"]\n    B1 --> A5\n    B1 --> A6\n    A3 --> B2[\"白名单 KEVACRYSTALLOWS\"]\n    B2 --> A6\n    style A4 fill:#f9f,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "配置与启用步骤",
+      "code": "flowchart LR\n    S1[\"打开 Cloud 桌面版登录界面\"] --> S2[\"点击左上角 'Have trouble shooting' → Enable\"]\n    S2 --> S3[\"进入 Developer Configure\"]\n    S3 --> S4[\"选择 Third Party Inference\"]\n    S4 --> S5[\"填写 DB c c API t BeryL（保持默认）\"]\n    S5 --> S6[\"其余字段留空\"]\n    S6 --> S7[\"打开 Skip Login Mode\"]\n    S7 --> S8[\"点击 Apply Local 并选择 Relaunch Now\"]\n    S8 --> S9[\"重启后测试对话、联网搜索、代码生成\"]\n    S9 --> S10[\"如需网页访问：修改 KEVACRYSTALLOWS 白名单并重启\"]\n    S10 --> S11[\"如需图片/文件识别：配置 MCP 并重启\"]"
+    },
+    {
+      "title": "能力选择决策图",
+      "code": "flowchart TD\n    C1[\"用户需求\"] -->|写代码| C2[\"使用 DISTICK 调用 API\"]\n    C1 -->|访问网页| C3[\"修改白名单 KEVACRYSTALLOWS\"]\n    C1 -->|识别图片/读取文件| C4[\"启用 MCP 工具\"]\n    C2 --> C5[\"仅需文本/代码能力\"]\n    C3 --> C6[\"仅解决网页访问\"]\n    C4 --> C7[\"调用 Vision Reader 或 Web Reader\"]\n    C5 --> C8[\"无需额外配置\"]\n    C6 --> C8\n    C7 --> C8\n    style C8 fill:#bbf,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "使用 MCP 进行视觉/网页读取流程",
+      "code": "flowchart LR\n    U1[\"在对话中请求图片识别\"] --> U2[\"调用 MCP 的 Vision Reader\"]\n    U2 --> U3[\"弹出授权对话框，选择 Allow\"]\n    U3 --> U4[\"MCP 提取图片内容并返回识别结果\"]\n    U1 --> V1[\"在对话中请求网页读取\"] --> V2[\"调用 MCP 的 Web Reader\"]\n    V2 --> V3[\"提供目标链接\"]\n    V3 --> V4[\"MCP 抓取网页内容并返回\"]\n    U4 --> End[\"结果用于后续对话或处理\"]\n    V4 --> End"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:52:43+00:00"
+}

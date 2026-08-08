@@ -1,0 +1,74 @@
+{
+  "bvid": "BV14sorBiEgP",
+  "title": "AI Agent的沙箱是什么？它和Docker容器/虚拟机有什么区别?",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2828,
+  "text": "你是一个程序员\n这是一行可以解决一切工作烦恼的万能命令\n它会将系统所有文件删除\n且几乎不可恢复\n一旦运行工作没了\n烦恼也就没了\n你就说目的达没达到吧\n我相信你不可能手动跑这行命令\n但AI agent就不一定\n因为agent本质上就是个死循环\n他会先组装上下文发给大模型\n大模型负责思考推理\nAI agent会根据模型的返回执行工具\n把工具执行结果塞回上下文\n进入下一轮推理和执行\n这种循环\n一旦次数过多\n上下文就会过长\n导致截断AI agent的目标就可能会偏移\n导致执行一些危险的命令\n比如视频开头提到的删除命令\n为了解决这一问题\nAI agent引入了沙箱这一概念\n可问题就来了\n沙箱到底是什么\n和docker容器虚拟机的区别是什么\n今天就把这些概念串起来讲透\n然后带大家看一下业界前沿的开源云沙箱方案\ncube sandbox是怎么样的\n看之前你点赞了吗\n关注了吗\n谢谢沙香是什么\n小时候听过一个笑话\n豆豆长在哪里\n最不需要担心\n答案是别人脸上\n同理\n虽然让agent执行命令有风险\n但只要不是在我的环境里\n那就约等于没风险了\n这个专门划分出来\n用于执行高风险操作的隔离环境\n就是所谓的沙箱\n将风险命令包装成应用运行在沙箱内\n就算炸了也不影响AI agent原来的环境\n沙箱既可以运行在本地\n也可以运行在云端\n后者叫云沙箱\n它是目前AI agent执行风险代码时\n最常见的隔离方案\n那么问题来了\n这听起来有点像云端虚拟机\n它们的区别是什么\n沙箱和虚拟机容器的区别\n我们知道平时我们看得见摸得着的电脑\n机器就叫物理机\n在腾讯云那也叫裸金属服务器\n裸金属服务器的CPU和内存比较多\n上面可以通过WWKVM这类软件将资源切分\n创建多台虚拟的小机器\n也叫虚拟机\n每台虚拟机都有自己独立的操作系统和资源\n虚拟机之间完全隔离\n在它内部\n不管怎么搞破坏都完全不影响其他虚拟机\n确实非常安全\n但问题是它的操作系统内核完整太重了\n启动会很慢\n用它做沙箱\nAI agent要跑段代码\n临时创建个虚拟机都要卡好一会儿\n明显不太现实\n那能不能快一点\n可以\n既然操作系统内核太重\n那我们换个思路\n在虚拟机的基础上\n把应用和依赖加配置打包隔离起来\n限制它能使用的最大内存和CPU\n形成一个个独立的环境\n也就是所谓的容器\n容器本质上是进程\n所以启动可以很快\n性能上符合沙箱要求\n所以早期很多厂商会在容器基础上\n加上一些收紧权限的机制\n推出云沙箱方案\n但问题是多个容器共享同一个宿主机操作系统\n内核\n一旦遇到内核漏洞或者逃逸影响\n面就可能变成整台宿主机\n连带其他容器一起遭殃\n因此只适合一些风险相对可控的操作\n我们没办法保证AI agent会不会执行高风险命令\n所以业界在传统虚拟机的基础上做精简\n比如砍掉那些为了兼容各种设备的模块\n只保留跑应用真正需要的虚拟硬件\n形成一套极简操作系统内核的虚拟机\n也就是micro v m\n这样它既有独立操作系统内核带来的安全边界\n启动也能比传统虚拟机快很多\n于是就出现了基于micro vm的云沙箱路线\n但它本质上依然是一个虚拟机\n想做到AI agent要的那种毫秒级响应\n就得再上些优化\n接下来我们以cube sandbox为例\n看一下业界前沿的方案都是怎么做的\ncube sandbox是什么\ncube sandbox是最近在GITHUB上热度飙升的\n开源云沙箱方案\n它来自腾讯云\n你可以把它简单理解成是专门给AI agent用的\n云沙箱底座\n他负责管理沙箱的创建\n隔离和回收\n可以快速部署在你自己的物理机上\n对外提供云沙箱服务\nagent需要执行代码命令文件操作时\n调用cube sandbox提供的API\n就会临时拉起一个云沙箱去执行\n过程中可以多次复用\n跑完后再销毁它\n跟另外一套开源云沙箱方案\ne to b做的事情一样\n但不同的是\ncube sandbox开源产品化做得更好\n搭建成本更低\n元宝的在线编程和mini max最新大模型的agent的强化\n学习训练用的都是这套方案\n以前这是大厂专属的能力\n现在普通开发者也能用上cube sandbox架构\n为了实现上面的功能\ncube sandbox将服务器分为两类\n分别是控制面和工作节点node\n简单来说他们的关系就是老板和打工人\n控制面负责控制和管理各个node\nnode一般是裸金属服务器\n负责实际创建和运行沙箱\n控制面里包含cube API和cube master两个组件\ncube API负责对外提供兼容e to b的接口\n接过e to b的应用\n改个地址就能接进来\ncube API收到请求后\ncube master会通过消息让node创建沙箱\nnode里面有个cube列的组件\n用于接收cube master的命令\ncube lit特收到创建沙箱的指令后\n会驱动KVM创建micro vm沙箱\n从零起一台micro vm太慢\n所以cube3的box会提前先启动一次micro vm\n把系统环境依赖和业务启动这类慢活跑完\n再把当时的状态保存成一份模板快照\n这样后面有新请求时\n就直接从这份快照克隆出新的micro v m\n慢的初始化工作已经在制作模板时提前完成了\n所以启动时延才能压到几10ms\nVM启动后\n用户的业务是立即可用的\n同时每个沙箱的内存和磁盘\n一开始都是指向同一份底层页面\n只有真的写入时才复制一份新的出来\n因此单个杀伤的内存开销可以控制在几MB\ncube sandbox对外完全屏蔽了这些实现细节\nAI agent只需要将待执行代码和命令\n通过cube sandbox的API就能发到node的沙箱里运行\n安全感拉满实测cube sandbox架构了解完了\n我们实操下\n首先是买服务器和部署cube\nsand box等一系列流程\n这部分我已经为大家准备了详细步骤的文档\n照着做就行\n好了之后我们就可以通过这段demo代码\n将AI agent要跑的内容发到cube sandbox运行\ncube sandbox会将运行的结果通过result返回给我们\n然后我们再来个简单的压测\n看下沙箱在高并发场景下性能怎么样\n可以看到cube3的box在50个并发的压测下\n可以将创建沙箱的P99\n控制在150ms左右\n性能完全符合预期\n如果对这个项目感兴趣\n可以4star支持一下\n过去大家聊AI agent更多聊的是大模型提示词\n上下文工程和工作流\n但现在随着honeys engineering等概念的兴起\n大家开始更加重视agent的执行环境\n没有杀项的执行型\nagent本质上是在拿生产环境做实验\n只有把风险关进笼子里\n我们才敢让他去跑真实的业务流程\n真正把人从繁杂的执行工作里解放出来\n现在大家通了吗\n好啦如果你觉得这期视频对你有帮助\n记得转发给你那不成器的兄弟\n文字版的笔记见评论区\n这里是小白debug\n如果你感兴趣\n记得关注我们\n下期见\n嘟嘟嘟嘟嘟嘟嘟",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14sorBiEgP",
+  "published_at": "1777289235",
+  "fetched_at": "2026-08-07T00:12:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI Agent 沙箱体系结构与实现\n\n## AI Agent 工作循环与沙箱引入\n```mermaid\nflowchart TD\n    A[\"AI Agent 循环\"] --> B[\"组装上下文并发送给大模型\"]:::step\n    B --> C[\"大模型进行思考推理\"]:::step\n    C --> D[\"根据返回执行工具\"]:::step\n    D --> E[\"将执行结果塞回上下文\"]:::step\n    E --> A\n    A -->|循环次数过多| F[\"上下文过长导致截断\"]:::risk\n    F --> G[\"目标偏移，执行危险命令\"]:::risk\n    G --> H[\"引入沙箱进行隔离\"]:::solution\n```\n关键结论: 沙箱用于隔离高风险命令执行，以防止循环导致的目标偏移 [BV14sorBiEgP P1 01:13‑01:17]\n\n## 沙箱、虚拟机、容器、Micro‑VM 对比\n```mermaid\nflowchart LR\n    S[\"沙箱\"]:::def -->|隔离高风险代码| VM[\"传统虚拟机\"]:::compare\n    S -->|轻量启动| C[\"容器\"]:::compare\n    S -->|极简内核| MV[\"Micro‑VM\"]:::compare\n\n    VM -->|完整操作系统内核，启动慢| R1[\"启动延迟高\"]:::issue\n    C -->|共享宿主内核，存在逃逸风险| R2[\"安全性受限\"]:::issue\n    MV -->|保留独立内核，启动快| R3[\"兼顾安全与性能\"]:::benefit\n\n    classDef def fill:#bbf,stroke:#333,stroke-width:2px;\n    classDef compare fill:#ddf,stroke:#333,stroke-width:1px;\n    classDef issue fill:#fdd,stroke:#333,stroke-width:1px;\n    classDef benefit fill:#dfd,stroke:#333,stroke-width:1px;\n    classDef step fill:#efe,stroke:#333,stroke-width:1px;\n    classDef risk fill:#f99,stroke:#333,stroke-width:1px;\n    classDef solution fill:#9f9,stroke:#333,stroke-width:1px;\n```\n关键结论: 微型 VM 兼具独立内核的安全边界和容器级别的快速启动 [BV14sorBiEgP P1 03:08‑03:15]\n\n## Cube Sandbox 整体架构\n```mermaid\nflowchart TD\n    User[\"AI Agent 请求\"] --> API[\"Cube API\"]\n    API --> Master[\"Cube Master\"]\n    Master --> Node[\"Node（裸金属服务器）\"]\n    Node --> Lit[\"Cube Lit\"]\n    Lit --> KVM[\"KVM 创建 Micro‑VM\"]\n    KVM --> VM[\"Micro‑VM 沙箱\"]\n    VM --> Result[\"执行结果返回\"]\n    API -.->|兼容 e‑to‑b 接口| E2B[\"E‑to‑B 应用\"]\n```\n关键结论: Cube Sandbox 通过控制面（API + Master）管理工作节点，实现快速创建与回收微型 VM 沙箱 [BV14sorBiEgP P1 04:22‑04:59]\n\n## 启动优化：模板快照与克隆\n```mermaid\nflowchart TD\n    Init[\"首次启动 Micro‑VM\"] --> Setup[\"完成慢初始化（系统依赖、业务）\"]\n    Setup --> Snapshot[\"保存为模板快照\"]\n    Request[\"新请求到来\"] --> Clone[\"从快照克隆 Micro‑VM\"]\n    Clone --> Run[\"立即运行业务代码\"]\n    Run --> Return[\"返回结果给 AI Agent\"]\n    Clone -->|启动时延≈10‑30 ms| Performance[\"毫秒级响应\"]\n```\n关键结论: 通过预先创建快照，Cube Sandbox 将启动时延压至数十毫秒，实现毫秒级响应 [BV14sorBiEgP P1 05:10‑05:20]",
+      "diagrams": [
+        {
+          "title": "AI Agent 工作循环与沙箱引入",
+          "code": "flowchart TD\n    A[\"AI Agent 循环\"] --> B[\"组装上下文并发送给大模型\"]:::step\n    B --> C[\"大模型进行思考推理\"]:::step\n    C --> D[\"根据返回执行工具\"]:::step\n    D --> E[\"将执行结果塞回上下文\"]:::step\n    E --> A\n    A -->|循环次数过多| F[\"上下文过长导致截断\"]:::risk\n    F --> G[\"目标偏移，执行危险命令\"]:::risk\n    G --> H[\"引入沙箱进行隔离\"]:::solution"
+        },
+        {
+          "title": "沙箱、虚拟机、容器、Micro‑VM 对比",
+          "code": "flowchart LR\n    S[\"沙箱\"]:::def -->|隔离高风险代码| VM[\"传统虚拟机\"]:::compare\n    S -->|轻量启动| C[\"容器\"]:::compare\n    S -->|极简内核| MV[\"Micro‑VM\"]:::compare\n\n    VM -->|完整操作系统内核，启动慢| R1[\"启动延迟高\"]:::issue\n    C -->|共享宿主内核，存在逃逸风险| R2[\"安全性受限\"]:::issue\n    MV -->|保留独立内核，启动快| R3[\"兼顾安全与性能\"]:::benefit\n\n    classDef def fill:#bbf,stroke:#333,stroke-width:2px;\n    classDef compare fill:#ddf,stroke:#333,stroke-width:1px;\n    classDef issue fill:#fdd,stroke:#333,stroke-width:1px;\n    classDef benefit fill:#dfd,stroke:#333,stroke-width:1px;\n    classDef step fill:#efe,stroke:#333,stroke-width:1px;\n    classDef risk fill:#f99,stroke:#333,stroke-width:1px;\n    classDef solution fill:#9f9,stroke:#333,stroke-width:1px;"
+        },
+        {
+          "title": "Cube Sandbox 整体架构",
+          "code": "flowchart TD\n    User[\"AI Agent 请求\"] --> API[\"Cube API\"]\n    API --> Master[\"Cube Master\"]\n    Master --> Node[\"Node（裸金属服务器）\"]\n    Node --> Lit[\"Cube Lit\"]\n    Lit --> KVM[\"KVM 创建 Micro‑VM\"]\n    KVM --> VM[\"Micro‑VM 沙箱\"]\n    VM --> Result[\"执行结果返回\"]\n    API -.->|兼容 e‑to‑b 接口| E2B[\"E‑to‑B 应用\"]"
+        },
+        {
+          "title": "启动优化：模板快照与克隆",
+          "code": "flowchart TD\n    Init[\"首次启动 Micro‑VM\"] --> Setup[\"完成慢初始化（系统依赖、业务）\"]\n    Setup --> Snapshot[\"保存为模板快照\"]\n    Request[\"新请求到来\"] --> Clone[\"从快照克隆 Micro‑VM\"]\n    Clone --> Run[\"立即运行业务代码\"]\n    Run --> Return[\"返回结果给 AI Agent\"]\n    Clone -->|启动时延≈10‑30 ms| Performance[\"毫秒级响应\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T00:12:15+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI Agent 沙箱体系结构与实现\n\n## AI Agent 工作循环与沙箱引入\n```mermaid\nflowchart TD\n    A[\"AI Agent 循环\"] --> B[\"组装上下文并发送给大模型\"]:::step\n    B --> C[\"大模型进行思考推理\"]:::step\n    C --> D[\"根据返回执行工具\"]:::step\n    D --> E[\"将执行结果塞回上下文\"]:::step\n    E --> A\n    A -->|循环次数过多| F[\"上下文过长导致截断\"]:::risk\n    F --> G[\"目标偏移，执行危险命令\"]:::risk\n    G --> H[\"引入沙箱进行隔离\"]:::solution\n```\n关键结论: 沙箱用于隔离高风险命令执行，以防止循环导致的目标偏移 [BV14sorBiEgP P1 01:13‑01:17]\n\n## 沙箱、虚拟机、容器、Micro‑VM 对比\n```mermaid\nflowchart LR\n    S[\"沙箱\"]:::def -->|隔离高风险代码| VM[\"传统虚拟机\"]:::compare\n    S -->|轻量启动| C[\"容器\"]:::compare\n    S -->|极简内核| MV[\"Micro‑VM\"]:::compare\n\n    VM -->|完整操作系统内核，启动慢| R1[\"启动延迟高\"]:::issue\n    C -->|共享宿主内核，存在逃逸风险| R2[\"安全性受限\"]:::issue\n    MV -->|保留独立内核，启动快| R3[\"兼顾安全与性能\"]:::benefit\n\n    classDef def fill:#bbf,stroke:#333,stroke-width:2px;\n    classDef compare fill:#ddf,stroke:#333,stroke-width:1px;\n    classDef issue fill:#fdd,stroke:#333,stroke-width:1px;\n    classDef benefit fill:#dfd,stroke:#333,stroke-width:1px;\n    classDef step fill:#efe,stroke:#333,stroke-width:1px;\n    classDef risk fill:#f99,stroke:#333,stroke-width:1px;\n    classDef solution fill:#9f9,stroke:#333,stroke-width:1px;\n```\n关键结论: 微型 VM 兼具独立内核的安全边界和容器级别的快速启动 [BV14sorBiEgP P1 03:08‑03:15]\n\n## Cube Sandbox 整体架构\n```mermaid\nflowchart TD\n    User[\"AI Agent 请求\"] --> API[\"Cube API\"]\n    API --> Master[\"Cube Master\"]\n    Master --> Node[\"Node（裸金属服务器）\"]\n    Node --> Lit[\"Cube Lit\"]\n    Lit --> KVM[\"KVM 创建 Micro‑VM\"]\n    KVM --> VM[\"Micro‑VM 沙箱\"]\n    VM --> Result[\"执行结果返回\"]\n    API -.->|兼容 e‑to‑b 接口| E2B[\"E‑to‑B 应用\"]\n```\n关键结论: Cube Sandbox 通过控制面（API + Master）管理工作节点，实现快速创建与回收微型 VM 沙箱 [BV14sorBiEgP P1 04:22‑04:59]\n\n## 启动优化：模板快照与克隆\n```mermaid\nflowchart TD\n    Init[\"首次启动 Micro‑VM\"] --> Setup[\"完成慢初始化（系统依赖、业务）\"]\n    Setup --> Snapshot[\"保存为模板快照\"]\n    Request[\"新请求到来\"] --> Clone[\"从快照克隆 Micro‑VM\"]\n    Clone --> Run[\"立即运行业务代码\"]\n    Run --> Return[\"返回结果给 AI Agent\"]\n    Clone -->|启动时延≈10‑30 ms| Performance[\"毫秒级响应\"]\n```\n关键结论: 通过预先创建快照，Cube Sandbox 将启动时延压至数十毫秒，实现毫秒级响应 [BV14sorBiEgP P1 05:10‑05:20]",
+  "diagrams": [
+    {
+      "title": "AI Agent 工作循环与沙箱引入",
+      "code": "flowchart TD\n    A[\"AI Agent 循环\"] --> B[\"组装上下文并发送给大模型\"]:::step\n    B --> C[\"大模型进行思考推理\"]:::step\n    C --> D[\"根据返回执行工具\"]:::step\n    D --> E[\"将执行结果塞回上下文\"]:::step\n    E --> A\n    A -->|循环次数过多| F[\"上下文过长导致截断\"]:::risk\n    F --> G[\"目标偏移，执行危险命令\"]:::risk\n    G --> H[\"引入沙箱进行隔离\"]:::solution"
+    },
+    {
+      "title": "沙箱、虚拟机、容器、Micro‑VM 对比",
+      "code": "flowchart LR\n    S[\"沙箱\"]:::def -->|隔离高风险代码| VM[\"传统虚拟机\"]:::compare\n    S -->|轻量启动| C[\"容器\"]:::compare\n    S -->|极简内核| MV[\"Micro‑VM\"]:::compare\n\n    VM -->|完整操作系统内核，启动慢| R1[\"启动延迟高\"]:::issue\n    C -->|共享宿主内核，存在逃逸风险| R2[\"安全性受限\"]:::issue\n    MV -->|保留独立内核，启动快| R3[\"兼顾安全与性能\"]:::benefit\n\n    classDef def fill:#bbf,stroke:#333,stroke-width:2px;\n    classDef compare fill:#ddf,stroke:#333,stroke-width:1px;\n    classDef issue fill:#fdd,stroke:#333,stroke-width:1px;\n    classDef benefit fill:#dfd,stroke:#333,stroke-width:1px;\n    classDef step fill:#efe,stroke:#333,stroke-width:1px;\n    classDef risk fill:#f99,stroke:#333,stroke-width:1px;\n    classDef solution fill:#9f9,stroke:#333,stroke-width:1px;"
+    },
+    {
+      "title": "Cube Sandbox 整体架构",
+      "code": "flowchart TD\n    User[\"AI Agent 请求\"] --> API[\"Cube API\"]\n    API --> Master[\"Cube Master\"]\n    Master --> Node[\"Node（裸金属服务器）\"]\n    Node --> Lit[\"Cube Lit\"]\n    Lit --> KVM[\"KVM 创建 Micro‑VM\"]\n    KVM --> VM[\"Micro‑VM 沙箱\"]\n    VM --> Result[\"执行结果返回\"]\n    API -.->|兼容 e‑to‑b 接口| E2B[\"E‑to‑B 应用\"]"
+    },
+    {
+      "title": "启动优化：模板快照与克隆",
+      "code": "flowchart TD\n    Init[\"首次启动 Micro‑VM\"] --> Setup[\"完成慢初始化（系统依赖、业务）\"]\n    Setup --> Snapshot[\"保存为模板快照\"]\n    Request[\"新请求到来\"] --> Clone[\"从快照克隆 Micro‑VM\"]\n    Clone --> Run[\"立即运行业务代码\"]\n    Run --> Return[\"返回结果给 AI Agent\"]\n    Clone -->|启动时延≈10‑30 ms| Performance[\"毫秒级响应\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T00:12:15+00:00"
+}

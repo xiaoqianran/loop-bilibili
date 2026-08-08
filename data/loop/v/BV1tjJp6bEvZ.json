@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1tjJp6bEvZ",
+  "title": "在校生用DeepSeek耗费百元做出桌面端智能体？[CodeDash使用介绍]",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1054,
+  "text": "在校大学生利用deep seek斥资百元\n耗费8亿\ntoken堆出了这个技能\n体\n现在已经构建好了定时任务\n目标是做当前获取B站热榜\n并构建HTML文件业务\n构建好后\n定时启动执行\n当前项目处于clean模式加速中\n任务开始执行\n自动创建会话\n或在绑定的会画上执行\n跳过等待过程\nJDC编辑定时任务界面\n第一个任务点已经完成\n现在我们等第二个任务点\n也就是构建HML文件\n这里展示第一个业务点的执行过程\n这里再补充\n让他最后打开这个文件\n我们可以在右侧区域看到当前的完全状态\n右侧区域也可以打开当前项目文件\n现在任务执行完了\n也是自动打开了这个文件\n可以看到当前最热视频为我的儿子是个gay\n让我们平静一下\n现在我们切换到标准模式的项目\n把输出模式切换为chain\n这里依旧创建一个简单HTML页面来演示\n选择了AI自动生成任务列\ngm模式\n就是用plan模式执行小的任务点\n执行完毕后自动触发对话以进行下一个任务\n而不许把不同类型的任务硬塞到同一次plan\n这里自动打开了当前正在执行的plan文件\n可以细细看到plan的进度\n旧利希大模型自己打开了正在编写的文件\n做完了\n但是太简略了\n我们让它继续丰富一下\n任务完成\n可以看到地基倒有点偷懒了\n现在他把顶部的two杠DOS标记为结束\n让我们看一下设计界面\nSkill rose\n外观等各种选项\n你都能设计\n文件打开后\n右侧会展示全集小地图框\n选的区域可以直接提问或给位\n寄到对话框\n测试一下\n向他提问\n请输入文本\n测试一下\n直接提问\n中心区域是可以打开浏览器的\n也许进入我即将报废的个人网站了\nV4杠pro对我这种穷学生而言还是太贵了\n这里展示token消耗量\n换个主题继续解析info摩西的项目\ninfo模式跟标准模式的唯一区别\n就是把向量化对象从SS改为普通文本\n这里让他把服务器打开\n这是他第一次打开\n所以比较慢\n游戏启动成功了\n接下来测试语义检索功能\ninfo模式就当成普通机械库即可\n也许找到相关的位置了\n最后补充一下\n创建绘画\n如果选择异步模式的话\n是能够不进行阻塞压缩的\n但之前的细节也可以回忆出来\n而回忆速度是很快的\n通常比攻击调用还快\n除了记忆的处理\n其他很多地方都参考了\n诸如any box cursor\nChe codex\nKimi work\nCloud code\n先进yank文本编辑器\n这些项目都如同艺术品一样\n提高了我们的生产力\n但也让我快到暑假了\n还找不到大厂实习\n也有可能是我还是太菜了\n总之这期视频就到这里\n感谢您的收看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1tjJp6bEvZ",
+  "published_at": "1781431200",
+  "fetched_at": "2026-08-06T19:13:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 桌面端智能体项目知识图谱\n\n## 项目整体流程概览 [BV1tjJp6bEvZ P1 00:06‑01:20]\n```mermaid\nflowchart TD\n    A1[\"启动项目\"] --> A2[\"构建定时任务\"]\n    A2 --> A3[\"获取 B 站热榜\"]\n    A3 --> A4[\"生成 HTML 文件\"]\n    A4 --> A5[\"自动打开生成文件\"]\n    A5 --> A6[\"展示最热视频标题\"]\n    A2 --> A7[\"clean 模式加速\"]\n    A4 --> A8[\"切换到 standard 模式\"]\n    A8 --> A9[\"输出模式切换为 chain\"]\n```\n\n## 任务模式与执行细节 [BV1tjJp6bEvZ P1 01:41‑02:16]\n```mermaid\nflowchart TD\n    B1[\"plan 模式\"] --> B2[\"执行小任务点\"]\n    B2 --> B3[\"完成后自动触发下一个任务\"]\n    B1 --> B4[\"不混合不同类型任务\"]\n    B5[\"gm 模式\"] --> B6[\"AI 自动生成任务列\"]\n    B7[\"chain 输出模式\"] --> B8[\"生成简易 HTML 页面\"]\n    B9[\"异步模式 (绘画)\"] --> B10[\"非阻塞压缩\"]\n    B10 --> B11[\"快速回忆细节\"]\n```\n\n## 资源、成本与工具生态 [BV1tjJp6bEvZ P1 00:00‑04:53]\n```mermaid\nflowchart TD\n    C1[\"DeepSeek 大模型\"] --> C2[\"token 消耗 8 亿\"]\n    C2 --> C3[\"费用约 百元\"]\n    C1 --> C4[\"V4 pro 价格高\"]\n    C5[\"info 模式\"] --> C6[\"向量化对象改为普通文本\"]\n    C7[\"外部工具\"] --> C8[\"any box cursor\"]\n    C7 --> C9[\"Che codex\"]\n    C7 --> C10[\"Kimi work\"]\n    C7 --> C11[\"Cloud code\"]\n    C7 --> C12[\"yank 文本编辑器\"]\n    C13[\"生产力提升\"] --> C14[\"项目如艺术品\"]\n```",
+      "diagrams": [
+        {
+          "title": "项目整体流程概览 [BV1tjJp6bEvZ P1 00:06‑01:20]",
+          "code": "flowchart TD\n    A1[\"启动项目\"] --> A2[\"构建定时任务\"]\n    A2 --> A3[\"获取 B 站热榜\"]\n    A3 --> A4[\"生成 HTML 文件\"]\n    A4 --> A5[\"自动打开生成文件\"]\n    A5 --> A6[\"展示最热视频标题\"]\n    A2 --> A7[\"clean 模式加速\"]\n    A4 --> A8[\"切换到 standard 模式\"]\n    A8 --> A9[\"输出模式切换为 chain\"]"
+        },
+        {
+          "title": "任务模式与执行细节 [BV1tjJp6bEvZ P1 01:41‑02:16]",
+          "code": "flowchart TD\n    B1[\"plan 模式\"] --> B2[\"执行小任务点\"]\n    B2 --> B3[\"完成后自动触发下一个任务\"]\n    B1 --> B4[\"不混合不同类型任务\"]\n    B5[\"gm 模式\"] --> B6[\"AI 自动生成任务列\"]\n    B7[\"chain 输出模式\"] --> B8[\"生成简易 HTML 页面\"]\n    B9[\"异步模式 (绘画)\"] --> B10[\"非阻塞压缩\"]\n    B10 --> B11[\"快速回忆细节\"]"
+        },
+        {
+          "title": "资源、成本与工具生态 [BV1tjJp6bEvZ P1 00:00‑04:53]",
+          "code": "flowchart TD\n    C1[\"DeepSeek 大模型\"] --> C2[\"token 消耗 8 亿\"]\n    C2 --> C3[\"费用约 百元\"]\n    C1 --> C4[\"V4 pro 价格高\"]\n    C5[\"info 模式\"] --> C6[\"向量化对象改为普通文本\"]\n    C7[\"外部工具\"] --> C8[\"any box cursor\"]\n    C7 --> C9[\"Che codex\"]\n    C7 --> C10[\"Kimi work\"]\n    C7 --> C11[\"Cloud code\"]\n    C7 --> C12[\"yank 文本编辑器\"]\n    C13[\"生产力提升\"] --> C14[\"项目如艺术品\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T19:13:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 桌面端智能体项目知识图谱\n\n## 项目整体流程概览 [BV1tjJp6bEvZ P1 00:06‑01:20]\n```mermaid\nflowchart TD\n    A1[\"启动项目\"] --> A2[\"构建定时任务\"]\n    A2 --> A3[\"获取 B 站热榜\"]\n    A3 --> A4[\"生成 HTML 文件\"]\n    A4 --> A5[\"自动打开生成文件\"]\n    A5 --> A6[\"展示最热视频标题\"]\n    A2 --> A7[\"clean 模式加速\"]\n    A4 --> A8[\"切换到 standard 模式\"]\n    A8 --> A9[\"输出模式切换为 chain\"]\n```\n\n## 任务模式与执行细节 [BV1tjJp6bEvZ P1 01:41‑02:16]\n```mermaid\nflowchart TD\n    B1[\"plan 模式\"] --> B2[\"执行小任务点\"]\n    B2 --> B3[\"完成后自动触发下一个任务\"]\n    B1 --> B4[\"不混合不同类型任务\"]\n    B5[\"gm 模式\"] --> B6[\"AI 自动生成任务列\"]\n    B7[\"chain 输出模式\"] --> B8[\"生成简易 HTML 页面\"]\n    B9[\"异步模式 (绘画)\"] --> B10[\"非阻塞压缩\"]\n    B10 --> B11[\"快速回忆细节\"]\n```\n\n## 资源、成本与工具生态 [BV1tjJp6bEvZ P1 00:00‑04:53]\n```mermaid\nflowchart TD\n    C1[\"DeepSeek 大模型\"] --> C2[\"token 消耗 8 亿\"]\n    C2 --> C3[\"费用约 百元\"]\n    C1 --> C4[\"V4 pro 价格高\"]\n    C5[\"info 模式\"] --> C6[\"向量化对象改为普通文本\"]\n    C7[\"外部工具\"] --> C8[\"any box cursor\"]\n    C7 --> C9[\"Che codex\"]\n    C7 --> C10[\"Kimi work\"]\n    C7 --> C11[\"Cloud code\"]\n    C7 --> C12[\"yank 文本编辑器\"]\n    C13[\"生产力提升\"] --> C14[\"项目如艺术品\"]\n```",
+  "diagrams": [
+    {
+      "title": "项目整体流程概览 [BV1tjJp6bEvZ P1 00:06‑01:20]",
+      "code": "flowchart TD\n    A1[\"启动项目\"] --> A2[\"构建定时任务\"]\n    A2 --> A3[\"获取 B 站热榜\"]\n    A3 --> A4[\"生成 HTML 文件\"]\n    A4 --> A5[\"自动打开生成文件\"]\n    A5 --> A6[\"展示最热视频标题\"]\n    A2 --> A7[\"clean 模式加速\"]\n    A4 --> A8[\"切换到 standard 模式\"]\n    A8 --> A9[\"输出模式切换为 chain\"]"
+    },
+    {
+      "title": "任务模式与执行细节 [BV1tjJp6bEvZ P1 01:41‑02:16]",
+      "code": "flowchart TD\n    B1[\"plan 模式\"] --> B2[\"执行小任务点\"]\n    B2 --> B3[\"完成后自动触发下一个任务\"]\n    B1 --> B4[\"不混合不同类型任务\"]\n    B5[\"gm 模式\"] --> B6[\"AI 自动生成任务列\"]\n    B7[\"chain 输出模式\"] --> B8[\"生成简易 HTML 页面\"]\n    B9[\"异步模式 (绘画)\"] --> B10[\"非阻塞压缩\"]\n    B10 --> B11[\"快速回忆细节\"]"
+    },
+    {
+      "title": "资源、成本与工具生态 [BV1tjJp6bEvZ P1 00:00‑04:53]",
+      "code": "flowchart TD\n    C1[\"DeepSeek 大模型\"] --> C2[\"token 消耗 8 亿\"]\n    C2 --> C3[\"费用约 百元\"]\n    C1 --> C4[\"V4 pro 价格高\"]\n    C5[\"info 模式\"] --> C6[\"向量化对象改为普通文本\"]\n    C7[\"外部工具\"] --> C8[\"any box cursor\"]\n    C7 --> C9[\"Che codex\"]\n    C7 --> C10[\"Kimi work\"]\n    C7 --> C11[\"Cloud code\"]\n    C7 --> C12[\"yank 文本编辑器\"]\n    C13[\"生产力提升\"] --> C14[\"项目如艺术品\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:13:24+00:00"
+}

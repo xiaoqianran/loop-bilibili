@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1axMB6EEQG",
+  "title": "Minimax H3 测试视频，其他模型都可以准备吃灰吧！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 111,
+  "text": "♪ We were rin ♪\n♪ High if the sun in the stars ♪\nShine walking\n♪ 风微荡里旧时光 ♪\n♪ 先生里藏过往 ♪\n♪ 一瓣花 ♪\n♪ 一缕光 ♪\n♪ 岁月轻轻晃 ♪",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1axMB6EEQG",
+  "published_at": "1785862516",
+  "fetched_at": "2026-08-08T10:54:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Minimax H3 测试视频字幕知识图谱\n\n## 开场英文歌词序列\n```mermaid\nflowchart TD\n    A1[\"We were rin\"] --> A2[\"High if the sun in the stars\"]\n    A2 --> A3[\"Shine walking\"]\n```\n- 章节来源: [BV1axMB6EEQG P1 00:00]、[BV1axMB6EEQG P1 00:14]、[BV1axMB6EEQG P1 00:18]\n\n## 中文歌词意象与主题归类\n```mermaid\nflowchart TD\n    B1[\"风微荡里旧时光\"] -->|属于| B4[\"时间意象\"]\n    B2[\"先生里藏过往\"] -->|属于| B5[\"人物/情感\"]\n    B3[\"一瓣花\"] -->|属于| B6[\"自然意象\"]\n    B4[\"岁月轻轻晃\"] -->|属于| B4\n    B5 --> B6\n    B3 --> B6\n    B1 --> B6\n    B4 --> B6\n```\n- 章节来源: [BV1axMB6EEQG P1 01:34]、[BV1axMB6EEQG P1 01:36]、[BV1axMB6EEQG P1 01:38]、[BV1axMB6EEQG P1 01:40]",
+      "diagrams": [
+        {
+          "title": "开场英文歌词序列",
+          "code": "flowchart TD\n    A1[\"We were rin\"] --> A2[\"High if the sun in the stars\"]\n    A2 --> A3[\"Shine walking\"]"
+        },
+        {
+          "title": "中文歌词意象与主题归类",
+          "code": "flowchart TD\n    B1[\"风微荡里旧时光\"] -->|属于| B4[\"时间意象\"]\n    B2[\"先生里藏过往\"] -->|属于| B5[\"人物/情感\"]\n    B3[\"一瓣花\"] -->|属于| B6[\"自然意象\"]\n    B4[\"岁月轻轻晃\"] -->|属于| B4\n    B5 --> B6\n    B3 --> B6\n    B1 --> B6\n    B4 --> B6"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-08T10:54:42+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Minimax H3 测试视频字幕知识图谱\n\n## 开场英文歌词序列\n```mermaid\nflowchart TD\n    A1[\"We were rin\"] --> A2[\"High if the sun in the stars\"]\n    A2 --> A3[\"Shine walking\"]\n```\n- 章节来源: [BV1axMB6EEQG P1 00:00]、[BV1axMB6EEQG P1 00:14]、[BV1axMB6EEQG P1 00:18]\n\n## 中文歌词意象与主题归类\n```mermaid\nflowchart TD\n    B1[\"风微荡里旧时光\"] -->|属于| B4[\"时间意象\"]\n    B2[\"先生里藏过往\"] -->|属于| B5[\"人物/情感\"]\n    B3[\"一瓣花\"] -->|属于| B6[\"自然意象\"]\n    B4[\"岁月轻轻晃\"] -->|属于| B4\n    B5 --> B6\n    B3 --> B6\n    B1 --> B6\n    B4 --> B6\n```\n- 章节来源: [BV1axMB6EEQG P1 01:34]、[BV1axMB6EEQG P1 01:36]、[BV1axMB6EEQG P1 01:38]、[BV1axMB6EEQG P1 01:40]",
+  "diagrams": [
+    {
+      "title": "开场英文歌词序列",
+      "code": "flowchart TD\n    A1[\"We were rin\"] --> A2[\"High if the sun in the stars\"]\n    A2 --> A3[\"Shine walking\"]"
+    },
+    {
+      "title": "中文歌词意象与主题归类",
+      "code": "flowchart TD\n    B1[\"风微荡里旧时光\"] -->|属于| B4[\"时间意象\"]\n    B2[\"先生里藏过往\"] -->|属于| B5[\"人物/情感\"]\n    B3[\"一瓣花\"] -->|属于| B6[\"自然意象\"]\n    B4[\"岁月轻轻晃\"] -->|属于| B4\n    B5 --> B6\n    B3 --> B6\n    B1 --> B6\n    B4 --> B6"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T10:54:42+00:00"
+}

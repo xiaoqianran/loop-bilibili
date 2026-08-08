@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1PELq6SEP3",
+  "title": "【实测】单张2080Ti 22G + 256G内存运行DeepSeek-V4-Flash！FastLLM混合推理速度到底有多快？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1556,
+  "text": "大家好\n我是玩科技的书\n欢迎来到我的频道\n本期视频跟大家分享一下\n单张2080ti22G魔改显卡\n加256G内存运行deep sk v4\nflash fp8Q四模型的速度和推理表现\n首先我介绍一下本次测试用到的设备\n这台设备呢是我在往期的视频中有介绍过的\n搭载了四张2080ti\n22G魔改显卡的二手服务器\n内存是256G\n相当于是32G的内存条\n我一共是插了八根\n由于deep sk v4\nflash f p8Q四这个模型\n光模型文件就有160G的大小\n所以我们没有办法在2080ti\n这种消费级的显卡服务器上\n用传统的威拉姆或者是SG浪推理框架\n来进行推理\nfast拉姆\n这是一个支持CPU加GPU加内存的混合推理框架\n在传统GPU推理中\n模型权重大多需要放进显存里\n显存越大\n能运行的模型越大\n但fast拉姆的思路不同\n它可以把大模型中的大量权重\n尤其是MOE模型里的expert权重\n放在服务器内存中\n再用CPU和LUA参与计算\n同时让显卡负责库达主干计算和PREFU加速\n也就是说\n在这套方案里\n显卡负责部分高频计算和GPU加速\nCPU负责m o e expert推理计算\n内存条负责存放和高速读取大模型权重\n因此160G的模型\n几乎全部都放进了内存里面\n所以如果你是打算运行同一个模型\ndeep seek v4flash f p八Q四\n那么你机器的内存至少要保证\n在160G以上\n加上系统开销\n200G以上的内存是一个最低的安全阈值\n下面我们来观察一下deep seek v4\nflash f p8Q四模型\n在这套二手乌班图服务器上的推理速度\n并且注意观察final shell中\n左上角显示的服务器资源消耗的实时情况\n以及第一张显卡运行的实时数据\n从刚才的视频中我们可以观察到如下的情况\nCPU的使用大概在40%以上\n内存的使用在200G左右\n显卡的显存使用大概在10G左右\n推理速度稳定在11加到12\n加tokens每秒之间\n在fast拉姆混合推理框架中\n内存带宽决定推理速度上限\nMOE模型每生成一个token\n都需要读取一部分expert权重\n这些权重主要在CPU内存中\n所以推理速度会很吃内存带宽\n简单说就是内存带宽越高\nCPU读取expert权重越快\n每秒生成token越多\nCPU的主频会影响单token计算延迟\n但对于deep seek v4flash这类MOE大模型来说\n真正的瓶颈通常不是单纯CPU算力\n而是CPU从内存中读取m o e expert权重的速度\n因此CPU代际内存控制器\n内存通道数DDR4DDR5\n撸码架构和指令集往往比单纯主频更重要\n像我手中的二手老平台\n即使核心数不少\n但是由于内存带宽有限\n也会在推理时遇到瓶颈\n新一代服务器CPU配合更多\nDDDR5内存通道\n通常能显著提高fast拉姆的推理速度\n因此可以得出如下的结论\n一内存代际越新越有利于提高模型的推理速度\nDDDR5的内存一定优于DDDR4的内存\n二内存的通道数越多\n越有利于提高模型的推理速度\n三内存的总容量大小\n决定了是否能装下整个模型\n根据FA斯拉姆官方的数据\n双路90049005服务器加单显卡部署\ndeep seek满血满精度\n原版模型单并发20tokens\n每秒英特四量化模型单并发30tokens\n每秒多并发可达60家\n如果对deep seek本地部署有执念的小伙伴\n可以根据官方推荐配置去尝试\n而像博主手中的这种二手低成本服务器\n跑千问3.6\n27B这样的小体积多模态的模型\n依然是本地部署的最佳推荐选择\n视频中模型部署的步骤和方法\n草凡博客的会员\n都可以在博客中找到详细的文字教程\n本期分享就到这里\n我是玩科技的书\n如果对我的频道感兴趣\n欢迎订阅评论\n点赞和转发\n我们下期视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1PELq6SEP3",
+  "published_at": "1779186020",
+  "fetched_at": "2026-08-07T08:22:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek‑V4‑Flash FastLlama 混合推理知识图谱\n\n## 1 FastLlama 混合推理架构\n```mermaid\nflowchart TD\n    A1[\"FastLlama混合推理框架\"] -->|分配计算| B1[\"GPU (显卡)\"]\n    A1 -->|分配计算| C1[\"CPU\"]\n    A1 -->|分配存储| D1[\"服务器内存\"]\n    D1 -->|存放| E1[\"模型权重 160 GB\"]\n    E1 -->|包括| F1[\"MOE expert 权重\"]\n    B1 -->|负责| G1[\"GPU高频计算 & 主干加速\"]\n    C1 -->|负责| H1[\"CPU MOE expert 推理\"]\n    D1 -->|负责| I1[\"内存高速读取权重\"]\n    F1 -->|读取自| I1\n    G1 -->|使用| J1[\"显存约 10 GB\"]\n    H1 -->|使用| K1[\"CPU 主频影响单 token 延迟\"]\n```\n\n## 2 观测资源使用与性能\n```mermaid\nflowchart TD\n    L1[\"实验平台：单张 2080Ti 22 GB + 256 GB DDR4\"] --> M1[\"CPU 使用率 ≈ 40%\"]\n    L1 --> N1[\"内存使用 ≈ 200 GB\"]\n    L1 --> O1[\"显存使用 ≈ 10 GB\"]\n    M1 --> P1[\"CPU 读取 MOE expert 权重\"]\n    N1 --> Q1[\"内存带宽决定推理上限\"]\n    O1 --> R1[\"GPU 负责高频计算\"]\n    P1 --> S1[\"Token 生成速率 11‑12 tokens/s\"]\n    Q1 --> S1\n    R1 --> S1\n    S1 --> T1[\"瓶颈：内存带宽\"]\n```\n\n## 3 DeepSeek‑V4‑Flash 内存需求\n```mermaid\nflowchart TD\n    U1[\"模型文件大小 160 GB\"] --> V1[\"全部权重需放入内存\"]\n    V1 --> W1[\"系统开销 + 其它进程\"]\n    W1 --> X1[\"推荐最小内存 ≥ 200 GB\"]\n    X1 --> Y1[\"确保模型完整装载\"]\n    Y1 --> Z1[\"避免显存不足导致传统推理失败\"]\n```\n\n## 4 影响 MOE 大模型推理速度的因素\n```mermaid\nflowchart TD\n    AA1[\"内存带宽\"] --> AB1[\"CPU 读取 expert 权重速度\"]\n    AB1 --> AC1[\"每秒生成 token 数\"]\n    AD1[\"CPU 主频\"] --> AC1\n    AE1[\"内存通道数\"] --> AA1\n    AF1[\"DDR 代际 (DDR4 vs DDR5)\"] --> AE1\n    AG1[\"CPU 代际内存控制器\"] --> AA1\n    AA1 --> AH1[\"带宽越高 → 速度越快\"]\n    AD1 --> AI1[\"主频越高 → 单 token 延迟越低\"]\n    AH1 --> AJ1[\"整体推理性能提升\"]\n    AI1 --> AJ1\n```\n\n## 5 推荐硬件配置与预期性能\n```mermaid\nflowchart TD\n    AK1[\"双路服务器 (CPU代际新, DDR5)\"] --> AL1[\"内存 ≥ 200 GB, 多通道\"]\n    AK1 --> AM1[\"单显卡 2080Ti 22 GB\"]\n    AL1 --> AN1[\"模型完整装载\"]\n    AM1 --> AO1[\"显存约 10 GB 使用\"]\n    AN1 --> AP1[\"单并发 20‑30 tokens/s (官方数据)\"]\n    AP1 --> AQ1[\"适合本地部署小体积模型 (如千问3.6 27B)\"]\n    AQ1 --> AR1[\"低成本二手服务器仍可实现可接受性能\"]\n```",
+      "diagrams": [
+        {
+          "title": "1 FastLlama 混合推理架构",
+          "code": "flowchart TD\n    A1[\"FastLlama混合推理框架\"] -->|分配计算| B1[\"GPU (显卡)\"]\n    A1 -->|分配计算| C1[\"CPU\"]\n    A1 -->|分配存储| D1[\"服务器内存\"]\n    D1 -->|存放| E1[\"模型权重 160 GB\"]\n    E1 -->|包括| F1[\"MOE expert 权重\"]\n    B1 -->|负责| G1[\"GPU高频计算 & 主干加速\"]\n    C1 -->|负责| H1[\"CPU MOE expert 推理\"]\n    D1 -->|负责| I1[\"内存高速读取权重\"]\n    F1 -->|读取自| I1\n    G1 -->|使用| J1[\"显存约 10 GB\"]\n    H1 -->|使用| K1[\"CPU 主频影响单 token 延迟\"]"
+        },
+        {
+          "title": "2 观测资源使用与性能",
+          "code": "flowchart TD\n    L1[\"实验平台：单张 2080Ti 22 GB + 256 GB DDR4\"] --> M1[\"CPU 使用率 ≈ 40%\"]\n    L1 --> N1[\"内存使用 ≈ 200 GB\"]\n    L1 --> O1[\"显存使用 ≈ 10 GB\"]\n    M1 --> P1[\"CPU 读取 MOE expert 权重\"]\n    N1 --> Q1[\"内存带宽决定推理上限\"]\n    O1 --> R1[\"GPU 负责高频计算\"]\n    P1 --> S1[\"Token 生成速率 11‑12 tokens/s\"]\n    Q1 --> S1\n    R1 --> S1\n    S1 --> T1[\"瓶颈：内存带宽\"]"
+        },
+        {
+          "title": "3 DeepSeek‑V4‑Flash 内存需求",
+          "code": "flowchart TD\n    U1[\"模型文件大小 160 GB\"] --> V1[\"全部权重需放入内存\"]\n    V1 --> W1[\"系统开销 + 其它进程\"]\n    W1 --> X1[\"推荐最小内存 ≥ 200 GB\"]\n    X1 --> Y1[\"确保模型完整装载\"]\n    Y1 --> Z1[\"避免显存不足导致传统推理失败\"]"
+        },
+        {
+          "title": "4 影响 MOE 大模型推理速度的因素",
+          "code": "flowchart TD\n    AA1[\"内存带宽\"] --> AB1[\"CPU 读取 expert 权重速度\"]\n    AB1 --> AC1[\"每秒生成 token 数\"]\n    AD1[\"CPU 主频\"] --> AC1\n    AE1[\"内存通道数\"] --> AA1\n    AF1[\"DDR 代际 (DDR4 vs DDR5)\"] --> AE1\n    AG1[\"CPU 代际内存控制器\"] --> AA1\n    AA1 --> AH1[\"带宽越高 → 速度越快\"]\n    AD1 --> AI1[\"主频越高 → 单 token 延迟越低\"]\n    AH1 --> AJ1[\"整体推理性能提升\"]\n    AI1 --> AJ1"
+        },
+        {
+          "title": "5 推荐硬件配置与预期性能",
+          "code": "flowchart TD\n    AK1[\"双路服务器 (CPU代际新, DDR5)\"] --> AL1[\"内存 ≥ 200 GB, 多通道\"]\n    AK1 --> AM1[\"单显卡 2080Ti 22 GB\"]\n    AL1 --> AN1[\"模型完整装载\"]\n    AM1 --> AO1[\"显存约 10 GB 使用\"]\n    AN1 --> AP1[\"单并发 20‑30 tokens/s (官方数据)\"]\n    AP1 --> AQ1[\"适合本地部署小体积模型 (如千问3.6 27B)\"]\n    AQ1 --> AR1[\"低成本二手服务器仍可实现可接受性能\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T08:22:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek‑V4‑Flash FastLlama 混合推理知识图谱\n\n## 1 FastLlama 混合推理架构\n```mermaid\nflowchart TD\n    A1[\"FastLlama混合推理框架\"] -->|分配计算| B1[\"GPU (显卡)\"]\n    A1 -->|分配计算| C1[\"CPU\"]\n    A1 -->|分配存储| D1[\"服务器内存\"]\n    D1 -->|存放| E1[\"模型权重 160 GB\"]\n    E1 -->|包括| F1[\"MOE expert 权重\"]\n    B1 -->|负责| G1[\"GPU高频计算 & 主干加速\"]\n    C1 -->|负责| H1[\"CPU MOE expert 推理\"]\n    D1 -->|负责| I1[\"内存高速读取权重\"]\n    F1 -->|读取自| I1\n    G1 -->|使用| J1[\"显存约 10 GB\"]\n    H1 -->|使用| K1[\"CPU 主频影响单 token 延迟\"]\n```\n\n## 2 观测资源使用与性能\n```mermaid\nflowchart TD\n    L1[\"实验平台：单张 2080Ti 22 GB + 256 GB DDR4\"] --> M1[\"CPU 使用率 ≈ 40%\"]\n    L1 --> N1[\"内存使用 ≈ 200 GB\"]\n    L1 --> O1[\"显存使用 ≈ 10 GB\"]\n    M1 --> P1[\"CPU 读取 MOE expert 权重\"]\n    N1 --> Q1[\"内存带宽决定推理上限\"]\n    O1 --> R1[\"GPU 负责高频计算\"]\n    P1 --> S1[\"Token 生成速率 11‑12 tokens/s\"]\n    Q1 --> S1\n    R1 --> S1\n    S1 --> T1[\"瓶颈：内存带宽\"]\n```\n\n## 3 DeepSeek‑V4‑Flash 内存需求\n```mermaid\nflowchart TD\n    U1[\"模型文件大小 160 GB\"] --> V1[\"全部权重需放入内存\"]\n    V1 --> W1[\"系统开销 + 其它进程\"]\n    W1 --> X1[\"推荐最小内存 ≥ 200 GB\"]\n    X1 --> Y1[\"确保模型完整装载\"]\n    Y1 --> Z1[\"避免显存不足导致传统推理失败\"]\n```\n\n## 4 影响 MOE 大模型推理速度的因素\n```mermaid\nflowchart TD\n    AA1[\"内存带宽\"] --> AB1[\"CPU 读取 expert 权重速度\"]\n    AB1 --> AC1[\"每秒生成 token 数\"]\n    AD1[\"CPU 主频\"] --> AC1\n    AE1[\"内存通道数\"] --> AA1\n    AF1[\"DDR 代际 (DDR4 vs DDR5)\"] --> AE1\n    AG1[\"CPU 代际内存控制器\"] --> AA1\n    AA1 --> AH1[\"带宽越高 → 速度越快\"]\n    AD1 --> AI1[\"主频越高 → 单 token 延迟越低\"]\n    AH1 --> AJ1[\"整体推理性能提升\"]\n    AI1 --> AJ1\n```\n\n## 5 推荐硬件配置与预期性能\n```mermaid\nflowchart TD\n    AK1[\"双路服务器 (CPU代际新, DDR5)\"] --> AL1[\"内存 ≥ 200 GB, 多通道\"]\n    AK1 --> AM1[\"单显卡 2080Ti 22 GB\"]\n    AL1 --> AN1[\"模型完整装载\"]\n    AM1 --> AO1[\"显存约 10 GB 使用\"]\n    AN1 --> AP1[\"单并发 20‑30 tokens/s (官方数据)\"]\n    AP1 --> AQ1[\"适合本地部署小体积模型 (如千问3.6 27B)\"]\n    AQ1 --> AR1[\"低成本二手服务器仍可实现可接受性能\"]\n```",
+  "diagrams": [
+    {
+      "title": "1 FastLlama 混合推理架构",
+      "code": "flowchart TD\n    A1[\"FastLlama混合推理框架\"] -->|分配计算| B1[\"GPU (显卡)\"]\n    A1 -->|分配计算| C1[\"CPU\"]\n    A1 -->|分配存储| D1[\"服务器内存\"]\n    D1 -->|存放| E1[\"模型权重 160 GB\"]\n    E1 -->|包括| F1[\"MOE expert 权重\"]\n    B1 -->|负责| G1[\"GPU高频计算 & 主干加速\"]\n    C1 -->|负责| H1[\"CPU MOE expert 推理\"]\n    D1 -->|负责| I1[\"内存高速读取权重\"]\n    F1 -->|读取自| I1\n    G1 -->|使用| J1[\"显存约 10 GB\"]\n    H1 -->|使用| K1[\"CPU 主频影响单 token 延迟\"]"
+    },
+    {
+      "title": "2 观测资源使用与性能",
+      "code": "flowchart TD\n    L1[\"实验平台：单张 2080Ti 22 GB + 256 GB DDR4\"] --> M1[\"CPU 使用率 ≈ 40%\"]\n    L1 --> N1[\"内存使用 ≈ 200 GB\"]\n    L1 --> O1[\"显存使用 ≈ 10 GB\"]\n    M1 --> P1[\"CPU 读取 MOE expert 权重\"]\n    N1 --> Q1[\"内存带宽决定推理上限\"]\n    O1 --> R1[\"GPU 负责高频计算\"]\n    P1 --> S1[\"Token 生成速率 11‑12 tokens/s\"]\n    Q1 --> S1\n    R1 --> S1\n    S1 --> T1[\"瓶颈：内存带宽\"]"
+    },
+    {
+      "title": "3 DeepSeek‑V4‑Flash 内存需求",
+      "code": "flowchart TD\n    U1[\"模型文件大小 160 GB\"] --> V1[\"全部权重需放入内存\"]\n    V1 --> W1[\"系统开销 + 其它进程\"]\n    W1 --> X1[\"推荐最小内存 ≥ 200 GB\"]\n    X1 --> Y1[\"确保模型完整装载\"]\n    Y1 --> Z1[\"避免显存不足导致传统推理失败\"]"
+    },
+    {
+      "title": "4 影响 MOE 大模型推理速度的因素",
+      "code": "flowchart TD\n    AA1[\"内存带宽\"] --> AB1[\"CPU 读取 expert 权重速度\"]\n    AB1 --> AC1[\"每秒生成 token 数\"]\n    AD1[\"CPU 主频\"] --> AC1\n    AE1[\"内存通道数\"] --> AA1\n    AF1[\"DDR 代际 (DDR4 vs DDR5)\"] --> AE1\n    AG1[\"CPU 代际内存控制器\"] --> AA1\n    AA1 --> AH1[\"带宽越高 → 速度越快\"]\n    AD1 --> AI1[\"主频越高 → 单 token 延迟越低\"]\n    AH1 --> AJ1[\"整体推理性能提升\"]\n    AI1 --> AJ1"
+    },
+    {
+      "title": "5 推荐硬件配置与预期性能",
+      "code": "flowchart TD\n    AK1[\"双路服务器 (CPU代际新, DDR5)\"] --> AL1[\"内存 ≥ 200 GB, 多通道\"]\n    AK1 --> AM1[\"单显卡 2080Ti 22 GB\"]\n    AL1 --> AN1[\"模型完整装载\"]\n    AM1 --> AO1[\"显存约 10 GB 使用\"]\n    AN1 --> AP1[\"单并发 20‑30 tokens/s (官方数据)\"]\n    AP1 --> AQ1[\"适合本地部署小体积模型 (如千问3.6 27B)\"]\n    AQ1 --> AR1[\"低成本二手服务器仍可实现可接受性能\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:22:32+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1d8MZ6jEm3",
+  "title": "微软扔出“核弹级”开源工具！Agent开发从此不用“教”，只要“做”！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 319,
+  "text": "这是一条足以改变AI agent开发范式的重磅消息\n微软刚刚扔出一枚核弹级开源工具\nSkill recorder\n从此开发agent不再需要绞尽脑汁写提示词\n反复调参\n你只需要亲自上手\n完整的把任务操作一遍\nskill recorder会默默记录下你的屏幕画面\n终端命令\n剪贴板内容等全流程操作数据\n接下来\ncopilot会自动分析这些动作背后的真实意图\n并一键生成标准化的agent技能文档\n更颠覆性的是\n他彻底告别了传统RPA那种死记硬背\n鼠标坐标的笨办法\n而是优先将操作抽象为稳定的API\n调用和终端命令\n这意味着A镇开发迎来全新范式\n不用再教AI该怎么做\n直接做给AI看就够了\n让AI通过观察一次完整演示\n就能理解并复现整个工作流",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1d8MZ6jEm3",
+  "published_at": "1785799443",
+  "fetched_at": "2026-08-08T15:46:17+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 微软 Skill Recorder 与 AI Agent 开发新范式\n\n## 知识总览\n```mermaid\nflowchart TD\n    A[\"Skill Recorder\"] --> B[\"记录屏幕、终端、剪贴板等操作\"]\n    B --> C[\"Copilot 自动分析意图\"]\n    C --> D[\"生成标准化 Agent 技能文档\"]\n    D --> E[\"抽象为稳定 API 与终端调用\"]\n    E --> F[\"AI 通过一次演示学习工作流\"]\n    F --> G[\"无需手写提示词或调参\"]\n    G --> H[\"突破传统 RPA 笨办法\"]\n```\n\n## 工作流步骤\n```mermaid\nflowchart LR\n    S1[\"执行任务并录制 (Skill Recorder)\"] --> S2[\"收集屏幕、终端、剪贴板数据\"]\n    S2 --> S3[\"Copilot 解析动作背后意图\"]\n    S3 --> S4[\"一键生成 Agent 技能文档\"]\n    S4 --> S5[\"抽象为 API/终端调用\"]\n    S5 --> S6[\"AI 复现完整工作流\"]\n```\n\n## 与传统 RPA 对比\n```mermaid\nflowchart TD\n    RPA[\"传统 RPA\"] --> R1[\"基于鼠标坐标硬编码\"]\n    RPA --> R2[\"需手动编写脚本\"]\n    RPA --> R3[\"缺乏语义理解\"]\n    SR[\"Skill Recorder 方案\"] --> S1[\"抽象为 API/终端调用\"]\n    SR --> S2[\"自动意图分析\"]\n    SR --> S3[\"生成标准化文档\"]\n    R1 -.-> SR\n    R2 -.-> SR\n    R3 -.-> SR\n```",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    A[\"Skill Recorder\"] --> B[\"记录屏幕、终端、剪贴板等操作\"]\n    B --> C[\"Copilot 自动分析意图\"]\n    C --> D[\"生成标准化 Agent 技能文档\"]\n    D --> E[\"抽象为稳定 API 与终端调用\"]\n    E --> F[\"AI 通过一次演示学习工作流\"]\n    F --> G[\"无需手写提示词或调参\"]\n    G --> H[\"突破传统 RPA 笨办法\"]"
+        },
+        {
+          "title": "工作流步骤",
+          "code": "flowchart LR\n    S1[\"执行任务并录制 (Skill Recorder)\"] --> S2[\"收集屏幕、终端、剪贴板数据\"]\n    S2 --> S3[\"Copilot 解析动作背后意图\"]\n    S3 --> S4[\"一键生成 Agent 技能文档\"]\n    S4 --> S5[\"抽象为 API/终端调用\"]\n    S5 --> S6[\"AI 复现完整工作流\"]"
+        },
+        {
+          "title": "与传统 RPA 对比",
+          "code": "flowchart TD\n    RPA[\"传统 RPA\"] --> R1[\"基于鼠标坐标硬编码\"]\n    RPA --> R2[\"需手动编写脚本\"]\n    RPA --> R3[\"缺乏语义理解\"]\n    SR[\"Skill Recorder 方案\"] --> S1[\"抽象为 API/终端调用\"]\n    SR --> S2[\"自动意图分析\"]\n    SR --> S3[\"生成标准化文档\"]\n    R1 -.-> SR\n    R2 -.-> SR\n    R3 -.-> SR"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T15:47:18+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 微软 Skill Recorder 与 AI Agent 开发新范式\n\n## 知识总览\n```mermaid\nflowchart TD\n    A[\"Skill Recorder\"] --> B[\"记录屏幕、终端、剪贴板等操作\"]\n    B --> C[\"Copilot 自动分析意图\"]\n    C --> D[\"生成标准化 Agent 技能文档\"]\n    D --> E[\"抽象为稳定 API 与终端调用\"]\n    E --> F[\"AI 通过一次演示学习工作流\"]\n    F --> G[\"无需手写提示词或调参\"]\n    G --> H[\"突破传统 RPA 笨办法\"]\n```\n\n## 工作流步骤\n```mermaid\nflowchart LR\n    S1[\"执行任务并录制 (Skill Recorder)\"] --> S2[\"收集屏幕、终端、剪贴板数据\"]\n    S2 --> S3[\"Copilot 解析动作背后意图\"]\n    S3 --> S4[\"一键生成 Agent 技能文档\"]\n    S4 --> S5[\"抽象为 API/终端调用\"]\n    S5 --> S6[\"AI 复现完整工作流\"]\n```\n\n## 与传统 RPA 对比\n```mermaid\nflowchart TD\n    RPA[\"传统 RPA\"] --> R1[\"基于鼠标坐标硬编码\"]\n    RPA --> R2[\"需手动编写脚本\"]\n    RPA --> R3[\"缺乏语义理解\"]\n    SR[\"Skill Recorder 方案\"] --> S1[\"抽象为 API/终端调用\"]\n    SR --> S2[\"自动意图分析\"]\n    SR --> S3[\"生成标准化文档\"]\n    R1 -.-> SR\n    R2 -.-> SR\n    R3 -.-> SR\n```",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    A[\"Skill Recorder\"] --> B[\"记录屏幕、终端、剪贴板等操作\"]\n    B --> C[\"Copilot 自动分析意图\"]\n    C --> D[\"生成标准化 Agent 技能文档\"]\n    D --> E[\"抽象为稳定 API 与终端调用\"]\n    E --> F[\"AI 通过一次演示学习工作流\"]\n    F --> G[\"无需手写提示词或调参\"]\n    G --> H[\"突破传统 RPA 笨办法\"]"
+    },
+    {
+      "title": "工作流步骤",
+      "code": "flowchart LR\n    S1[\"执行任务并录制 (Skill Recorder)\"] --> S2[\"收集屏幕、终端、剪贴板数据\"]\n    S2 --> S3[\"Copilot 解析动作背后意图\"]\n    S3 --> S4[\"一键生成 Agent 技能文档\"]\n    S4 --> S5[\"抽象为 API/终端调用\"]\n    S5 --> S6[\"AI 复现完整工作流\"]"
+    },
+    {
+      "title": "与传统 RPA 对比",
+      "code": "flowchart TD\n    RPA[\"传统 RPA\"] --> R1[\"基于鼠标坐标硬编码\"]\n    RPA --> R2[\"需手动编写脚本\"]\n    RPA --> R3[\"缺乏语义理解\"]\n    SR[\"Skill Recorder 方案\"] --> S1[\"抽象为 API/终端调用\"]\n    SR --> S2[\"自动意图分析\"]\n    SR --> S3[\"生成标准化文档\"]\n    R1 -.-> SR\n    R2 -.-> SR\n    R3 -.-> SR"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T15:47:18+00:00"
+}

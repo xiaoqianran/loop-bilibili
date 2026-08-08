@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1YH3m6XEtw",
+  "title": "deepseek-v4flash正式版4次对话生成模拟飞行游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 217,
+  "text": "最近deep seek v4flash正式版上线了\n我就搭了个view框架\n让他创作了一个模拟飞行的游戏\n现在你看到的界面是一句话生成的\n但是一开始存在渲染和操作box\n所以又进行了三次对话\n总体消耗不超过一元\n这也说明当前模型生成的代码质量还差一些\n但是实际能力提升很大\n期待后续的pro版本能够有较大的提升\n我对模拟飞行这一块不是很了解\n主要是检验他写渲染和物理逻辑的能力\n目前玩下来没问题\n懂行的大佬可以直接在评论区发表你的意见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YH3m6XEtw",
+  "published_at": "1785599038",
+  "fetched_at": "2026-08-07T03:11:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# deepseek‑v4flash 正式版模拟飞行游戏生成概览\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"deepseek v4flash 正式版上线\"]\n    A2[\"搭建 view 框架\"]\n    A3[\"生成模拟飞行游戏\"]\n    A4[\"界面由一句话生成\"]\n    A5[\"初始渲染和操作 box 存在问题\"]\n    A6[\"通过三次对话迭代改进\"]\n    A7[\"总体成本 < 1 元\"]\n    A8[\"代码质量仍有不足\"]\n    A9[\"实际能力提升显著\"]\n    A10[\"期待 pro 版本进一步提升\"]\n\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7\n    A6 --> A8\n    A6 --> A9 --> A10\n```\n- deepseek v4flash 正式版上线 [BV1YH3m6XEtw P1 00:00]  \n- 搭建 view 框架 [BV1YH3m6XEtw P1 00:03]  \n- 生成模拟飞行游戏 [BV1YH3m6XEtw P1 00:04]  \n- 界面由一句话生成 [BV1YH3m6XEtw P1 00:07]  \n- 初始渲染和操作 box 存在问题 [BV1YH3m6XEtw P1 00:10]  \n- 通过三次对话迭代改进 [BV1YH3m6XEtw P1 00:13]  \n- 总体成本 < 1 元 [BV1YH3m6XEtw P1 00:15]  \n- 代码质量仍有不足 [BV1YH3m6XEtw P1 00:17]  \n- 实际能力提升显著 [BV1YH3m6XEtw P1 00:20]  \n- 期待 pro 版本进一步提升 [BV1YH3m6XEtw P1 00:23]  \n\n## 生成流程图\n```mermaid\nflowchart TD\n    B1[\"搭建 view 框架\"]\n    B2[\"指示生成模拟飞行游戏\"]\n    B3[\"生成初始渲染/操作 box\"]\n    B4[\"发现渲染/操作问题\"]\n    B5[\"第一次对话：提出改进需求\"]\n    B6[\"改进渲染逻辑\"]\n    B7[\"第二次对话：细化操作\"]\n    B8[\"改进操作逻辑\"]\n    B9[\"第三次对话：整体优化\"]\n    B10[\"完成游戏界面\"]\n    B11[\"成本控制 < 1 元\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10 --> B11\n```\n- 搭建 view 框架 [BV1YH3m6XEtw P1 00:03]  \n- 指示生成模拟飞行游戏 [BV1YH3m6XEtw P1 00:04]  \n- 生成初始渲染/操作 box [BV1YH3m6XEtw P1 00:10]  \n- 发现渲染/操作问题 [BV1YH3m6XEtw P1 00:10]  \n- 第一次对话（提出改进需求） [BV1YH3m6XEtw P1 00:13]  \n- 改进渲染逻辑 [BV1YH3m6XEtw P1 00:13]  \n- 第二次对话（细化操作） [BV1YH3m6XEtw P1 00:13]  \n- 改进操作逻辑 [BV1YH3m6XEtw P1 00:13]  \n- 第三次对话（整体优化） [BV1YH3m6XEtw P1 00:13]  \n- 完成游戏界面 [BV1YH3m6XEtw P1 00:07]  \n- 成本控制 < 1 元 [BV1YH3m6XEtw P1 00:15]  \n\n## 能力评估与期望图\n```mermaid\nflowchart TD\n    C1[\"代码质量仍有不足\"]\n    C2[\"渲染逻辑能力\"]\n    C3[\"物理逻辑能力\"]\n    C4[\"实际体验无问题\"]\n    C5[\"成本低廉\"]\n    C6[\"对模型的整体提升\"]\n    C7[\"期待 pro 版本提升\"]\n    C8[\"社区反馈（评论区）\"]\n\n    C1 --> C2\n    C1 --> C3\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C5 --> C6\n    C6 --> C7\n    C6 --> C8\n```\n- 代码质量仍有不足 [BV1YH3m6XEtw P1 00:17]  \n- 渲染逻辑能力 [BV1YH3m6XEtw P1 00:28]  \n- 物理逻辑能力 [BV1YH3m6XEtw P1 00:28]  \n- 实际体验无问题 [BV1YH3m6XEtw P1 00:31]  \n- 成本低廉 [BV1YH3m6XEtw P1 00:15]  \n- 对模型的整体提升 [BV1YH3m6XEtw P1 00:20]  \n- 期待 pro 版本提升 [BV1YH3m6XEtw P1 00:23]  \n- 社区反馈（评论区） [BV1YH3m6XEtw P1 00:33]  ",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A1[\"deepseek v4flash 正式版上线\"]\n    A2[\"搭建 view 框架\"]\n    A3[\"生成模拟飞行游戏\"]\n    A4[\"界面由一句话生成\"]\n    A5[\"初始渲染和操作 box 存在问题\"]\n    A6[\"通过三次对话迭代改进\"]\n    A7[\"总体成本 < 1 元\"]\n    A8[\"代码质量仍有不足\"]\n    A9[\"实际能力提升显著\"]\n    A10[\"期待 pro 版本进一步提升\"]\n\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7\n    A6 --> A8\n    A6 --> A9 --> A10"
+        },
+        {
+          "title": "生成流程图",
+          "code": "flowchart TD\n    B1[\"搭建 view 框架\"]\n    B2[\"指示生成模拟飞行游戏\"]\n    B3[\"生成初始渲染/操作 box\"]\n    B4[\"发现渲染/操作问题\"]\n    B5[\"第一次对话：提出改进需求\"]\n    B6[\"改进渲染逻辑\"]\n    B7[\"第二次对话：细化操作\"]\n    B8[\"改进操作逻辑\"]\n    B9[\"第三次对话：整体优化\"]\n    B10[\"完成游戏界面\"]\n    B11[\"成本控制 < 1 元\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10 --> B11"
+        },
+        {
+          "title": "能力评估与期望图",
+          "code": "flowchart TD\n    C1[\"代码质量仍有不足\"]\n    C2[\"渲染逻辑能力\"]\n    C3[\"物理逻辑能力\"]\n    C4[\"实际体验无问题\"]\n    C5[\"成本低廉\"]\n    C6[\"对模型的整体提升\"]\n    C7[\"期待 pro 版本提升\"]\n    C8[\"社区反馈（评论区）\"]\n\n    C1 --> C2\n    C1 --> C3\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C5 --> C6\n    C6 --> C7\n    C6 --> C8"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T03:21:07+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# deepseek‑v4flash 正式版模拟飞行游戏生成概览\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"deepseek v4flash 正式版上线\"]\n    A2[\"搭建 view 框架\"]\n    A3[\"生成模拟飞行游戏\"]\n    A4[\"界面由一句话生成\"]\n    A5[\"初始渲染和操作 box 存在问题\"]\n    A6[\"通过三次对话迭代改进\"]\n    A7[\"总体成本 < 1 元\"]\n    A8[\"代码质量仍有不足\"]\n    A9[\"实际能力提升显著\"]\n    A10[\"期待 pro 版本进一步提升\"]\n\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7\n    A6 --> A8\n    A6 --> A9 --> A10\n```\n- deepseek v4flash 正式版上线 [BV1YH3m6XEtw P1 00:00]  \n- 搭建 view 框架 [BV1YH3m6XEtw P1 00:03]  \n- 生成模拟飞行游戏 [BV1YH3m6XEtw P1 00:04]  \n- 界面由一句话生成 [BV1YH3m6XEtw P1 00:07]  \n- 初始渲染和操作 box 存在问题 [BV1YH3m6XEtw P1 00:10]  \n- 通过三次对话迭代改进 [BV1YH3m6XEtw P1 00:13]  \n- 总体成本 < 1 元 [BV1YH3m6XEtw P1 00:15]  \n- 代码质量仍有不足 [BV1YH3m6XEtw P1 00:17]  \n- 实际能力提升显著 [BV1YH3m6XEtw P1 00:20]  \n- 期待 pro 版本进一步提升 [BV1YH3m6XEtw P1 00:23]  \n\n## 生成流程图\n```mermaid\nflowchart TD\n    B1[\"搭建 view 框架\"]\n    B2[\"指示生成模拟飞行游戏\"]\n    B3[\"生成初始渲染/操作 box\"]\n    B4[\"发现渲染/操作问题\"]\n    B5[\"第一次对话：提出改进需求\"]\n    B6[\"改进渲染逻辑\"]\n    B7[\"第二次对话：细化操作\"]\n    B8[\"改进操作逻辑\"]\n    B9[\"第三次对话：整体优化\"]\n    B10[\"完成游戏界面\"]\n    B11[\"成本控制 < 1 元\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10 --> B11\n```\n- 搭建 view 框架 [BV1YH3m6XEtw P1 00:03]  \n- 指示生成模拟飞行游戏 [BV1YH3m6XEtw P1 00:04]  \n- 生成初始渲染/操作 box [BV1YH3m6XEtw P1 00:10]  \n- 发现渲染/操作问题 [BV1YH3m6XEtw P1 00:10]  \n- 第一次对话（提出改进需求） [BV1YH3m6XEtw P1 00:13]  \n- 改进渲染逻辑 [BV1YH3m6XEtw P1 00:13]  \n- 第二次对话（细化操作） [BV1YH3m6XEtw P1 00:13]  \n- 改进操作逻辑 [BV1YH3m6XEtw P1 00:13]  \n- 第三次对话（整体优化） [BV1YH3m6XEtw P1 00:13]  \n- 完成游戏界面 [BV1YH3m6XEtw P1 00:07]  \n- 成本控制 < 1 元 [BV1YH3m6XEtw P1 00:15]  \n\n## 能力评估与期望图\n```mermaid\nflowchart TD\n    C1[\"代码质量仍有不足\"]\n    C2[\"渲染逻辑能力\"]\n    C3[\"物理逻辑能力\"]\n    C4[\"实际体验无问题\"]\n    C5[\"成本低廉\"]\n    C6[\"对模型的整体提升\"]\n    C7[\"期待 pro 版本提升\"]\n    C8[\"社区反馈（评论区）\"]\n\n    C1 --> C2\n    C1 --> C3\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C5 --> C6\n    C6 --> C7\n    C6 --> C8\n```\n- 代码质量仍有不足 [BV1YH3m6XEtw P1 00:17]  \n- 渲染逻辑能力 [BV1YH3m6XEtw P1 00:28]  \n- 物理逻辑能力 [BV1YH3m6XEtw P1 00:28]  \n- 实际体验无问题 [BV1YH3m6XEtw P1 00:31]  \n- 成本低廉 [BV1YH3m6XEtw P1 00:15]  \n- 对模型的整体提升 [BV1YH3m6XEtw P1 00:20]  \n- 期待 pro 版本提升 [BV1YH3m6XEtw P1 00:23]  \n- 社区反馈（评论区） [BV1YH3m6XEtw P1 00:33]  ",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A1[\"deepseek v4flash 正式版上线\"]\n    A2[\"搭建 view 框架\"]\n    A3[\"生成模拟飞行游戏\"]\n    A4[\"界面由一句话生成\"]\n    A5[\"初始渲染和操作 box 存在问题\"]\n    A6[\"通过三次对话迭代改进\"]\n    A7[\"总体成本 < 1 元\"]\n    A8[\"代码质量仍有不足\"]\n    A9[\"实际能力提升显著\"]\n    A10[\"期待 pro 版本进一步提升\"]\n\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7\n    A6 --> A8\n    A6 --> A9 --> A10"
+    },
+    {
+      "title": "生成流程图",
+      "code": "flowchart TD\n    B1[\"搭建 view 框架\"]\n    B2[\"指示生成模拟飞行游戏\"]\n    B3[\"生成初始渲染/操作 box\"]\n    B4[\"发现渲染/操作问题\"]\n    B5[\"第一次对话：提出改进需求\"]\n    B6[\"改进渲染逻辑\"]\n    B7[\"第二次对话：细化操作\"]\n    B8[\"改进操作逻辑\"]\n    B9[\"第三次对话：整体优化\"]\n    B10[\"完成游戏界面\"]\n    B11[\"成本控制 < 1 元\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10 --> B11"
+    },
+    {
+      "title": "能力评估与期望图",
+      "code": "flowchart TD\n    C1[\"代码质量仍有不足\"]\n    C2[\"渲染逻辑能力\"]\n    C3[\"物理逻辑能力\"]\n    C4[\"实际体验无问题\"]\n    C5[\"成本低廉\"]\n    C6[\"对模型的整体提升\"]\n    C7[\"期待 pro 版本提升\"]\n    C8[\"社区反馈（评论区）\"]\n\n    C1 --> C2\n    C1 --> C3\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C5 --> C6\n    C6 --> C7\n    C6 --> C8"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:21:07+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1jYRRBDExF",
+  "title": "让AI直接操作godot开发游戏，免费开源MCP插件",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1118,
+  "text": "想让AI直接理解和编辑你的嘎斗项目吗\n欢迎了解嘎豆ncp native\n一个强大的GTO引擎插件\n通过模型上下文协议\n让AI助手直接访问你的项目\n传统开发方式下\nAI无法理解你的GLE项目结构\n你需要手动复制粘贴代码\nvi看不到完整上下文建议往往不准确\n这大大降低了开发效率\n嘎豆mc p native5彻底改变了这个现状\n它完全原生实现\n无需任何外部依赖\n提供43个以上的专业工具\n覆盖节点\n脚本场景和编辑器的所有操作\nAI的建议可以直接在编辑器中实时生效\n让我们看看它的核心功能\n完整项目访问AI可以读取和修改脚本场景\n节点和资源原声\n实现完全在GA中运行\n不需要安装NO js实时编辑\nAI的修改建议可以直接在编辑器中应用\n还有全面的工具集\n43个以上的工具覆盖开发全流程\ngado mc p native f提供了六大类\n43个以上的专业工具\n节点工具\n让你可以创建修改复制移动任何节点\n还能管理信号和组脚本工具\n可以读取分析和修改以及WAV文件场景工具\n让你列出读取\n创建和保存场景编辑器工具可以控制项目运行\n获取选中节点调试工具\n可以查看日志\n执行脚本\n获取性能数据\n项目工具可以访问项目设置和目录结构\n只需要五步\n你就可以开始使用\n第一步安装插件\n可以从GTO的i set live直接安装\n或者手动复制到EDENS目录\n第二步在项目设置的插件页面启用它\n第三步配置连接\n选择AATTP模式\n设置端口和身份验证\n第四步\n在cloud desktop的配置文件中添加MCP服务器\n第五步开始使用\n用自然语言与你的嘎斗项目交互\n连接成功后\n你可以用自然语言与嘎斗项目交互\n比如让AI读取当前脚本\n并优化你的玩家移动代码\n或者让AI在场景中间添加一个立方体\n并创建一个相机看向它\n你还可以让AI创建一个主菜单\n包含开始选项和退出按钮\n甚至让AI实现一个\n带有动态光照的昼夜循环系统\ngto MCP native采用简洁高效的三层架构\n最上层是AI客户端\n比如cloud通过按CP协议与嘎do通信\n中间层是gto uncp native\n五插件完全原生实现\n不需要note真儿子底层直接调用gto editor i API\n实现所有编辑器功能\n支持IHTTP传输模式\n默认端口9080可选\ntoken认证\n完全兼容MCP1.0协议\n嘎do mc p ntm\n让AI成为你的GLE开发助手\n原生实现\n无需依赖43个以上的专业工具\n立即安装体验吧\n可以在嘎斗的affect live中搜索嘎斗mc p native\n或者访问GITHUB仓库下载这个项目采用ni it许可证\n有认为那口气三开发\n让AI驱动的GTO开发新体验\n从现在开始",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1jYRRBDExF",
+  "published_at": "1778382000",
+  "fetched_at": "2026-08-07T06:42:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 让AI直接操作Godot开发游戏的MCP插件知识图谱\n\n## 核心功能总览 [BV1jYRRBDExF P1 00:31]\n\n```mermaid\nflowchart TD\n    Plugin[\"嘎豆ncp native<br/>(插件)\"]\n    FullAccess[\"完整项目访问<br/>(读取/修改脚本、场景、节点、资源)\"]\n    NodeTools[\"节点工具<br/>(创建/修改/复制/移动/信号/组)\"]\n    ScriptTools[\"脚本工具<br/>(读取/分析/修改)\"]\n    SceneTools[\"场景工具<br/>(列出/读取/创建/保存)\"]\n    EditorTools[\"编辑器控制工具<br/>(运行/调试)\"]\n    DebugTools[\"调试工具<br/>(获取选中节点/日志/执行脚本/性能数据)\"]\n    ProjectTools[\"项目工具<br/>(项目设置/目录结构)\"]\n    RealTime[\"AI建议实时生效\"]\n    NoDeps[\"无需外部依赖\"]\n    ToolCount[\">43 个专业工具\"]\n\n    Plugin --> FullAccess\n    Plugin --> NodeTools\n    Plugin --> ScriptTools\n    Plugin --> SceneTools\n    Plugin --> EditorTools\n    Plugin --> DebugTools\n    Plugin --> ProjectTools\n    Plugin --> RealTime\n    Plugin --> NoDeps\n    Plugin --> ToolCount\n```\n\n## 使用流程步骤 [BV1jYRRBDExF P1 01:14]\n\n```mermaid\nflowchart TD\n    Install[\"安装插件\"]\n    AssetLib[\"从 Godot Asset Library 安装\"]\n    ManualCopy[\"手动复制到 addons 目录\"]\n    Enable[\"在项目设置‑插件页面启用\"]\n    Config[\"配置连接\"]\n    ChooseMode[\"选择 AATTP 模式\"]\n    SetPortAuth[\"设置端口和身份验证\"]\n    AddServer[\"在 Cloud Desktop 配置文件中添加 MCP 服务器\"]\n    Start[\"开始使用\"]\n    NLInteraction[\"自然语言交互\"]\n\n    Install --> Enable\n    Install --> AssetLib\n    Install --> ManualCopy\n    Enable --> Config\n    Config --> ChooseMode\n    ChooseMode --> SetPortAuth\n    SetPortAuth --> AddServer\n    AddServer --> Start\n    Start --> NLInteraction\n```\n\n## 三层架构概览 [BV1jYRRBDExF P1 01:55]\n\n```mermaid\nflowchart TD\n    AIClient[\"AI 客户端<br/>(如 Cloud)\"]\n    CPProto[\"CP 协议\"]\n    Middle[\"gto uncp native<br/>(插件层)\"]\n    Bottom[\"Godot Editor API\"]\n    HTTP[\"IHTTP 传输模式\"]\n    Port[\"默认端口 9080\"]\n    Token[\"Token 认证\"]\n    Compat[\"兼容 MCP 1.0 协议\"]\n\n    AIClient --> CPProto\n    CPProto --> Middle\n    Middle --> Bottom\n    Middle --> HTTP\n    HTTP --> Port\n    HTTP --> Token\n    Middle --> Compat\n```\n\n## 示例交互场景 [BV1jYRRBDExF P1 01:36]\n\n```mermaid\nflowchart TD\n    NLCommand[\"自然语言指令\"]\n    ReadScript[\"读取当前脚本\"]\n    Optimize[\"优化玩家移动代码\"]\n    AddCube[\"在场景中添加立方体\"]\n    CreateCam[\"创建相机并指向立方体\"]\n    CreateMenu[\"创建主菜单（开始/退出）\"]\n    DayNight[\"实现带动态光照的昼夜循环系统\"]\n    AIExec[\"AI 执行并修改项目\"]\n    Apply[\"修改实时生效于编辑器\"]\n\n    NLCommand --> ReadScript\n    NLCommand --> Optimize\n    NLCommand --> AddCube\n    NLCommand --> CreateCam\n    NLCommand --> CreateMenu\n    NLCommand --> DayNight\n    ReadScript --> AIExec\n    Optimize --> AIExec\n    AddCube --> AIExec\n    CreateCam --> AIExec\n    CreateMenu --> AIExec\n    DayNight --> AIExec\n    AIExec --> Apply\n```",
+      "diagrams": [
+        {
+          "title": "核心功能总览",
+          "code": "flowchart TD\n    Plugin[\"嘎豆ncp native<br/>(插件)\"]\n    FullAccess[\"完整项目访问<br/>(读取/修改脚本、场景、节点、资源)\"]\n    NodeTools[\"节点工具<br/>(创建/修改/复制/移动/信号/组)\"]\n    ScriptTools[\"脚本工具<br/>(读取/分析/修改)\"]\n    SceneTools[\"场景工具<br/>(列出/读取/创建/保存)\"]\n    EditorTools[\"编辑器控制工具<br/>(运行/调试)\"]\n    DebugTools[\"调试工具<br/>(获取选中节点/日志/执行脚本/性能数据)\"]\n    ProjectTools[\"项目工具<br/>(项目设置/目录结构)\"]\n    RealTime[\"AI建议实时生效\"]\n    NoDeps[\"无需外部依赖\"]\n    ToolCount[\">43 个专业工具\"]\n\n    Plugin --> FullAccess\n    Plugin --> NodeTools\n    Plugin --> ScriptTools\n    Plugin --> SceneTools\n    Plugin --> EditorTools\n    Plugin --> DebugTools\n    Plugin --> ProjectTools\n    Plugin --> RealTime\n    Plugin --> NoDeps\n    Plugin --> ToolCount"
+        },
+        {
+          "title": "使用流程步骤",
+          "code": "flowchart TD\n    Install[\"安装插件\"]\n    AssetLib[\"从 Godot Asset Library 安装\"]\n    ManualCopy[\"手动复制到 addons 目录\"]\n    Enable[\"在项目设置‑插件页面启用\"]\n    Config[\"配置连接\"]\n    ChooseMode[\"选择 AATTP 模式\"]\n    SetPortAuth[\"设置端口和身份验证\"]\n    AddServer[\"在 Cloud Desktop 配置文件中添加 MCP 服务器\"]\n    Start[\"开始使用\"]\n    NLInteraction[\"自然语言交互\"]\n\n    Install --> Enable\n    Install --> AssetLib\n    Install --> ManualCopy\n    Enable --> Config\n    Config --> ChooseMode\n    ChooseMode --> SetPortAuth\n    SetPortAuth --> AddServer\n    AddServer --> Start\n    Start --> NLInteraction"
+        },
+        {
+          "title": "三层架构概览",
+          "code": "flowchart TD\n    AIClient[\"AI 客户端<br/>(如 Cloud)\"]\n    CPProto[\"CP 协议\"]\n    Middle[\"gto uncp native<br/>(插件层)\"]\n    Bottom[\"Godot Editor API\"]\n    HTTP[\"IHTTP 传输模式\"]\n    Port[\"默认端口 9080\"]\n    Token[\"Token 认证\"]\n    Compat[\"兼容 MCP 1.0 协议\"]\n\n    AIClient --> CPProto\n    CPProto --> Middle\n    Middle --> Bottom\n    Middle --> HTTP\n    HTTP --> Port\n    HTTP --> Token\n    Middle --> Compat"
+        },
+        {
+          "title": "示例交互场景",
+          "code": "flowchart TD\n    NLCommand[\"自然语言指令\"]\n    ReadScript[\"读取当前脚本\"]\n    Optimize[\"优化玩家移动代码\"]\n    AddCube[\"在场景中添加立方体\"]\n    CreateCam[\"创建相机并指向立方体\"]\n    CreateMenu[\"创建主菜单（开始/退出）\"]\n    DayNight[\"实现带动态光照的昼夜循环系统\"]\n    AIExec[\"AI 执行并修改项目\"]\n    Apply[\"修改实时生效于编辑器\"]\n\n    NLCommand --> ReadScript\n    NLCommand --> Optimize\n    NLCommand --> AddCube\n    NLCommand --> CreateCam\n    NLCommand --> CreateMenu\n    NLCommand --> DayNight\n    ReadScript --> AIExec\n    Optimize --> AIExec\n    AddCube --> AIExec\n    CreateCam --> AIExec\n    CreateMenu --> AIExec\n    DayNight --> AIExec\n    AIExec --> Apply"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T06:43:08+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 让AI直接操作Godot开发游戏的MCP插件知识图谱\n\n## 核心功能总览 [BV1jYRRBDExF P1 00:31]\n\n```mermaid\nflowchart TD\n    Plugin[\"嘎豆ncp native<br/>(插件)\"]\n    FullAccess[\"完整项目访问<br/>(读取/修改脚本、场景、节点、资源)\"]\n    NodeTools[\"节点工具<br/>(创建/修改/复制/移动/信号/组)\"]\n    ScriptTools[\"脚本工具<br/>(读取/分析/修改)\"]\n    SceneTools[\"场景工具<br/>(列出/读取/创建/保存)\"]\n    EditorTools[\"编辑器控制工具<br/>(运行/调试)\"]\n    DebugTools[\"调试工具<br/>(获取选中节点/日志/执行脚本/性能数据)\"]\n    ProjectTools[\"项目工具<br/>(项目设置/目录结构)\"]\n    RealTime[\"AI建议实时生效\"]\n    NoDeps[\"无需外部依赖\"]\n    ToolCount[\">43 个专业工具\"]\n\n    Plugin --> FullAccess\n    Plugin --> NodeTools\n    Plugin --> ScriptTools\n    Plugin --> SceneTools\n    Plugin --> EditorTools\n    Plugin --> DebugTools\n    Plugin --> ProjectTools\n    Plugin --> RealTime\n    Plugin --> NoDeps\n    Plugin --> ToolCount\n```\n\n## 使用流程步骤 [BV1jYRRBDExF P1 01:14]\n\n```mermaid\nflowchart TD\n    Install[\"安装插件\"]\n    AssetLib[\"从 Godot Asset Library 安装\"]\n    ManualCopy[\"手动复制到 addons 目录\"]\n    Enable[\"在项目设置‑插件页面启用\"]\n    Config[\"配置连接\"]\n    ChooseMode[\"选择 AATTP 模式\"]\n    SetPortAuth[\"设置端口和身份验证\"]\n    AddServer[\"在 Cloud Desktop 配置文件中添加 MCP 服务器\"]\n    Start[\"开始使用\"]\n    NLInteraction[\"自然语言交互\"]\n\n    Install --> Enable\n    Install --> AssetLib\n    Install --> ManualCopy\n    Enable --> Config\n    Config --> ChooseMode\n    ChooseMode --> SetPortAuth\n    SetPortAuth --> AddServer\n    AddServer --> Start\n    Start --> NLInteraction\n```\n\n## 三层架构概览 [BV1jYRRBDExF P1 01:55]\n\n```mermaid\nflowchart TD\n    AIClient[\"AI 客户端<br/>(如 Cloud)\"]\n    CPProto[\"CP 协议\"]\n    Middle[\"gto uncp native<br/>(插件层)\"]\n    Bottom[\"Godot Editor API\"]\n    HTTP[\"IHTTP 传输模式\"]\n    Port[\"默认端口 9080\"]\n    Token[\"Token 认证\"]\n    Compat[\"兼容 MCP 1.0 协议\"]\n\n    AIClient --> CPProto\n    CPProto --> Middle\n    Middle --> Bottom\n    Middle --> HTTP\n    HTTP --> Port\n    HTTP --> Token\n    Middle --> Compat\n```\n\n## 示例交互场景 [BV1jYRRBDExF P1 01:36]\n\n```mermaid\nflowchart TD\n    NLCommand[\"自然语言指令\"]\n    ReadScript[\"读取当前脚本\"]\n    Optimize[\"优化玩家移动代码\"]\n    AddCube[\"在场景中添加立方体\"]\n    CreateCam[\"创建相机并指向立方体\"]\n    CreateMenu[\"创建主菜单（开始/退出）\"]\n    DayNight[\"实现带动态光照的昼夜循环系统\"]\n    AIExec[\"AI 执行并修改项目\"]\n    Apply[\"修改实时生效于编辑器\"]\n\n    NLCommand --> ReadScript\n    NLCommand --> Optimize\n    NLCommand --> AddCube\n    NLCommand --> CreateCam\n    NLCommand --> CreateMenu\n    NLCommand --> DayNight\n    ReadScript --> AIExec\n    Optimize --> AIExec\n    AddCube --> AIExec\n    CreateCam --> AIExec\n    CreateMenu --> AIExec\n    DayNight --> AIExec\n    AIExec --> Apply\n```",
+  "diagrams": [
+    {
+      "title": "核心功能总览",
+      "code": "flowchart TD\n    Plugin[\"嘎豆ncp native<br/>(插件)\"]\n    FullAccess[\"完整项目访问<br/>(读取/修改脚本、场景、节点、资源)\"]\n    NodeTools[\"节点工具<br/>(创建/修改/复制/移动/信号/组)\"]\n    ScriptTools[\"脚本工具<br/>(读取/分析/修改)\"]\n    SceneTools[\"场景工具<br/>(列出/读取/创建/保存)\"]\n    EditorTools[\"编辑器控制工具<br/>(运行/调试)\"]\n    DebugTools[\"调试工具<br/>(获取选中节点/日志/执行脚本/性能数据)\"]\n    ProjectTools[\"项目工具<br/>(项目设置/目录结构)\"]\n    RealTime[\"AI建议实时生效\"]\n    NoDeps[\"无需外部依赖\"]\n    ToolCount[\">43 个专业工具\"]\n\n    Plugin --> FullAccess\n    Plugin --> NodeTools\n    Plugin --> ScriptTools\n    Plugin --> SceneTools\n    Plugin --> EditorTools\n    Plugin --> DebugTools\n    Plugin --> ProjectTools\n    Plugin --> RealTime\n    Plugin --> NoDeps\n    Plugin --> ToolCount"
+    },
+    {
+      "title": "使用流程步骤",
+      "code": "flowchart TD\n    Install[\"安装插件\"]\n    AssetLib[\"从 Godot Asset Library 安装\"]\n    ManualCopy[\"手动复制到 addons 目录\"]\n    Enable[\"在项目设置‑插件页面启用\"]\n    Config[\"配置连接\"]\n    ChooseMode[\"选择 AATTP 模式\"]\n    SetPortAuth[\"设置端口和身份验证\"]\n    AddServer[\"在 Cloud Desktop 配置文件中添加 MCP 服务器\"]\n    Start[\"开始使用\"]\n    NLInteraction[\"自然语言交互\"]\n\n    Install --> Enable\n    Install --> AssetLib\n    Install --> ManualCopy\n    Enable --> Config\n    Config --> ChooseMode\n    ChooseMode --> SetPortAuth\n    SetPortAuth --> AddServer\n    AddServer --> Start\n    Start --> NLInteraction"
+    },
+    {
+      "title": "三层架构概览",
+      "code": "flowchart TD\n    AIClient[\"AI 客户端<br/>(如 Cloud)\"]\n    CPProto[\"CP 协议\"]\n    Middle[\"gto uncp native<br/>(插件层)\"]\n    Bottom[\"Godot Editor API\"]\n    HTTP[\"IHTTP 传输模式\"]\n    Port[\"默认端口 9080\"]\n    Token[\"Token 认证\"]\n    Compat[\"兼容 MCP 1.0 协议\"]\n\n    AIClient --> CPProto\n    CPProto --> Middle\n    Middle --> Bottom\n    Middle --> HTTP\n    HTTP --> Port\n    HTTP --> Token\n    Middle --> Compat"
+    },
+    {
+      "title": "示例交互场景",
+      "code": "flowchart TD\n    NLCommand[\"自然语言指令\"]\n    ReadScript[\"读取当前脚本\"]\n    Optimize[\"优化玩家移动代码\"]\n    AddCube[\"在场景中添加立方体\"]\n    CreateCam[\"创建相机并指向立方体\"]\n    CreateMenu[\"创建主菜单（开始/退出）\"]\n    DayNight[\"实现带动态光照的昼夜循环系统\"]\n    AIExec[\"AI 执行并修改项目\"]\n    Apply[\"修改实时生效于编辑器\"]\n\n    NLCommand --> ReadScript\n    NLCommand --> Optimize\n    NLCommand --> AddCube\n    NLCommand --> CreateCam\n    NLCommand --> CreateMenu\n    NLCommand --> DayNight\n    ReadScript --> AIExec\n    Optimize --> AIExec\n    AddCube --> AIExec\n    CreateCam --> AIExec\n    CreateMenu --> AIExec\n    DayNight --> AIExec\n    AIExec --> Apply"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:43:08+00:00"
+}

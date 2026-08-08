@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1RnTC6AEMG",
+  "title": "28届Unity客户端开发实习作品集",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1834,
+  "text": "大家好\n下面是我的几个unity项目演示\n第三人称控制器基于input system绑定移动与攻击\n输入角色移动采用动画驱动位移\n移动方向\n以相机为参考系转换\n将输入向量从屏幕空间映射至世界空间\ninput system与animate的参数接口解耦\n通过设定animate参数\n间接控制移动状态\n实现输入层与表现层的分离\n每段攻击后都会播放相应的结束动画\n通过animation event配置攻击判定窗口与联机\n输入窗口控制碰撞和开启时机\n与下一段攻击的触发条件\n联机数据通过script oblivic\n独立配置每段攻击的动画名称\n伤害判定起始与结束时间\n对于编队系统\n按数字键一杠三可以切换当前操控角色\n切换时通过instantiate和SETTIVE\n管理角色预制体的实例化与激活状态\n相机通过camera control set target\n记录当前相对目标的偏移向量\n切换目标后\n保持原有偏移量\n角色数据通过scriply baked独立配置\n包含角色名称\n立绘模型\n预制体引用以及基础生命值\n攻击力\n防御力等属性字段\n新增角色只需创建对应的SOO资源文件\n无需修改任何脚本武器\n通过script or player baked or配置继承自物品积累装备\n武器时\ncharacter stats读取武器数据叠加至角色属性\n卸下武器系统里恢复至装备前数值\n背包中武器数量不受影响\n武器界面读取武器背包数据动态载入\n按星级排序展示\n点击后显示武器详情与属性预览\n对于背包系统\n背包和物品数据通过script blibit配置运行时\n通过英文to item载入物品与当前数量\n背包按物品类型分页管理UI曾通过link过滤\n并按星级降序排序后\n动态生成slut\n不同品质显示对应背景框与星级图标\n对于抽卡系统逻辑生成随机数\n依次判定是否命中\n五星四星均为命中\n则落入三星区间\n保底计数器每抽一次自增\n抽到五星时归零\n达到配置阈值时\n跳过概率判定\n直接返回五星十连\n也同理\n通过搜配置卡池中的角色与武器\n抽到的武器会同步到背包中\n任务数据通过script oblivic配置\n每个任务可以包含多个子目标\n每个子目标记录任务类型与所需数量\n调用接口递增对应任务的进度计数器\n庆典烟花和少女\n一款3D视觉小说风格的游戏\n玩家以第一人称视角探索场景\n与少女NPC互动\n推进剧情场景切换\n使用c manager lucy nein ke\n不加载canvas group\n渐变过渡\n角色控制\n基于character control\n实现基础的移动跳跃与视角旋转\n鼠标控制视角旋转\n少女NPC通过状态机管理行为\n基于vector3distance判定跟随距离\nquery slp实现平滑转向\n打气球小游戏\n使用recast从屏幕中心发射射线检测目标\n气球每轮随机标记目标\n击中后计分\n捕鱼小游戏\n通过recast加plane\n在水面交点处生成渔网\nEnttrigger enter\n检测鱼类入网\n配合slider完成捕获qt e\n之后通过对话推动剧情发展\n古剑匠心记是一款3D解谜游戏\n过场动画使用timeline加playable director\n驱动关卡节点处播放或暂停时间线\n实现剧情演出与关卡衔接\n按tab键开合物件栏\n从预设物品列表中选取目标\n选中后阴森去at实时生成对应的手持模型\n对于对话系统\n对话数据通过script oblivic的独立配置\n每段对话包含名字内容与选项\n新增对话只需创建资源文件\n无需修改脚\n本场景中\n通过enttrigger enter或通过recast检测玩家交互\n触发对话\n开始文本显示\n使用携程实现打字机效果逐字显示\n并可配置打字速度\n对话末尾若有选项\n分支动态生成选项按钮\n玩家选择后跳转至对应后续对话\n或触发unity vt与关卡逻辑联动\n网格拼图\n通过ib ginja candler\nI jc candler\ni n jc candler接口实现方块的拖拽\n交互拖拽时每个子块使用event system recastle\n检测下方网格占位状态\n画笔涂色\n通过ib inja candler\nI drag candler\ni pointer down handler接口实现拖拽绘画\n直接在texture2D像素数组上执行读写操作\n屏幕坐标映射至纹理局部坐标后写入颜色统计\n需涂色像素总数\n以上就是我的项目展示\n感谢观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RnTC6AEMG",
+  "published_at": "1783249513",
+  "fetched_at": "2026-08-07T09:55:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T10:16:04+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T10:16:04+00:00"
+}

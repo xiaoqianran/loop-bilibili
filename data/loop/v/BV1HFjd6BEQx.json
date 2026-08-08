@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1HFjd6BEQx",
+  "title": "UE5 连招系统",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1338,
+  "text": "大家好\n本次将介绍基于ja as实现的连招系统\n该系统依靠按键派生打出连段\n主要为轻重派生\n我将逐步展示我的设计思路\n每种武器都有专属的连招表现\n♪ 且可以拥有多套连招 ♪\n一段基本连招可以看作有项链表为线性结构\n称为连招练\n每一招都按顺序执行\n形成连招\n由于需要派生招式分支\n所以演变为树形结构\n称为连招术\n这样从根节点出发\n根据不同边就能产生许多条连招链\n每一个节点代表一个招式\n每一条边代表推进条件\n一把武器通常需要多套连招\n也就是多颗连招术\n不同树的节点之间又可以支持相互派生\n所以演变为图\n每棵树的根节点变为图的起始节点\n代表了每套招式的起手招\n同时还需要保证招式单向推进和\n避免陷入连招循环\n嗯最终得到了有向无环图及连招图\n包含了该武器的所有连招\n这个数据资产也相当于一个简易的连招编辑器\n可以在此为武器编辑配套的连招\n连招推进条件\n已输入标签和状态标签\n这两类标签的组合构成\n能形成非常多的派生方式\n至此连招框架也就介绍完毕了\n接下来是招式的基本区间划分\n每一招基本包含前摇攻击帧\n后摇攻击碰撞检测动画通知覆盖整个攻击帧\n主要负责攻击检测\n手机反馈等相关配置\n包括卡肉\n抖动\n攻击强度\n手机特效等\n效果演示\n慢放细节演示\n打击感表现一般因为音效特效\n手机反馈等都很重要\n目前处于学习阶段\n资源和时间有限\n就不过多打磨了\n毕竟还有更多有意思的功能和难点等着解决\n大家简单看看就好\n转向动画通知放置于攻击帧前面\n具体表现为吸附朝向目标\n支持通过输入手动控制朝向\n转向和吸附的范围均为圆环\n可根据需要调整大小\n由于能通过移动输入手动更改朝向目标\n所以也称为软锁定\n在面对多名敌人的时候\n可以不用硬锁定\n实现快速接近目标\n算是对群战体验的其中一种优化方式\n这里体验不算太流畅\n因为每一招都用的默认范围为\n每一招都仔细设计的话\n效果应该会更好\n接下来是取消窗口\n取消窗口用于减少攻击\n后摇可以优化手感\n目前只做了取消窗口\n期间移动取消后摇并未做过多设计\n后续扩展更多\n取消后摇的方式都可以通过这个窗口实现\n然后是连招窗口和预输入窗口\n连招窗口位于攻击针之后\n收招动作之前\n预输入窗口位于连招窗口之前\n负责缓存最新的输入\n在连招窗口开启时及时响应\n这样快速点击两下也能连招\n能很好的优化连招手感提升\n容错\n通过连招窗口\n实现了按键派生外的另外两种特殊派生方式\n及停顿派生和目压派生\n下面演示一下大剑的停顿\n派生通过1A停顿直接派升至最后1A\n只要不成还想怎么派生都行\n进一步提升了连招的可玩性\n接下来展示一下匕首的木压\n派生需要借助预输入窗口\n需要严格在连招窗口内输入\n提前输入也会导致连招终止\n这里设计的是起手招后三次目压连续攻击\n♪ 触发最后的突刺 ♪\n尝试中\n失败了\n也是成功了\n难为自己这一块哈哈最后就是空联了\n做的不多\n主要处理空联次数\n每次重置连招时取消普攻\n目前还是当走地鸡好\n三至此连招基本就展示到这里了\n还有很多不足\n继续学习格挡\n上挑攻击\n下落攻击\n前冲攻击等\n这些算是技能篇了\n还有相机系统\nAI行为\n手机反馈\n超多武器等\n继续挖坑\n想做的还有很多要学的\n还有更多\n相信即使做的再差\n也总比不做好\n感谢各位能看到这里\n如有工作机会\n请随时联系\n再次感谢",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HFjd6BEQx",
+  "published_at": "1782294727",
+  "fetched_at": "2026-08-07T15:30:03+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# UE5 连招系统知识图谱\n\n## 总览\n[BV1HFjd6BEQx P1 00:12] 每种武器都有专属的连招表现，可拥有多套连招  \n[BV1HFjd6BEQx P1 00:31] 连招演变为树形结构（连招术）并进一步形成图（有向无环图）  \n\n```mermaid\nflowchart TD\n    W[\"武器\"] --> CS[\"多套连招 (多颗连招术)\"]\n    CS --> CT[\"连招树 (连招术)\"]\n    CT --> N[\"招式节点\"]\n    N --> E[\"推进条件 (输入标签/状态标签)\"]\n    CT --> G[\"连招图 (有向无环图)\"]\n    G --> N\n    G --> S[\"软锁定 (转向)\"]\n    G --> CW[\"取消窗口\"]\n    G --> CWB[\"连招窗口\"]\n    G --> PIW[\"预输入窗口\"]\n```\n\n## 连招结构演进\n[BV1HFjd6BEQx P1 00:17] 基本连招为线性链表（连招练）  \n[BV1HFjd6BEQx P1 00:29] 为支持分支演变为树形结构（连招术）  \n[BV1HFjd6BEQx P1 01:04] 多树相连形成有向无环图（连招图），保证单向推进并避免循环  \n\n```mermaid\nflowchart LR\n    LL[\"线性连招 (连招练)\"] -->|需要分支| T[\"树形结构 (连招术)\"]\n    T -->|多树相连| G[\"有向无环图 (连招图)\"]\n    G -->|根节点| Start[\"起手招\"]\n    G -->|避免循环| Acyclic[\"单向推进\"]\n```\n\n## 窗口机制与时序\n[BV1HFjd6BEQx P1 03:39] 实现取消窗口以减少攻击后摇并优化手感  \n[BV1HFjd6BEQx P1 04:08] 连招窗口位于攻击后、收招前，预输入窗口位于连招窗口之前，缓存最新输入  \n\n```mermaid\nflowchart TD\n    AF[\"攻击帧\"] --> CW[\"取消窗口\"]\n    CW --> AF\n    AF --> CWB[\"连招窗口\"]\n    CWB --> AF\n    CWB --> PIW[\"预输入窗口\"]\n    PIW --> CWB\n    subgraph \"时序\"\n        direction LR\n        Pre[\"前摇\"] --> AF\n        AF --> Post[\"后摇\"]\n    end\n```\n\n## 派生方式\n[BV1HFjd6BEQx P1 00:07] 主要为轻重派生  \n[BV1HFjd6BEQx P1 04:38] 通过连招窗口实现停顿派生和目压派生  \n[BV1HFjd6BEQx P1 04:45] 大剑停顿派生示例：1A 停顿直接派升至最后 1A  \n[BV1HFjd6BEQx P1 05:05] 匕首目压派生需在连招窗口内使用预输入窗口，提前输入会终止连招  \n\n```mermaid\nflowchart TD\n    Base[\"基础招式\"] --> Light[\"轻派生\"]\n    Base --> Heavy[\"重派生\"]\n    Base --> Pause[\"停顿派生\"]\n    Base --> Press[\"目压派生\"]\n    Pause -->|1A停顿| Final[\"最终1A\"]\n    Press -->|预输入窗口内| Combo[\"连招\"]\n```\n\n## 关键要素与未来扩展\n[BV1HFjd6BEQx P1 01:21] 连招推进条件由输入标签和状态标签组合决定  \n[BV1HFjd6BEQx P1 01:36] 每招包含前摇、攻击帧、后摇，负责攻击检测、手机反馈、特效等  \n[BV1HFjd6BEQx P1 02:46] 转向动画通知放置于攻击帧前，支持软锁定（圆环范围）  \n[BV1HFjd6BEQx P1 06:10] 未来计划包括格挡、上挑、下落、前冲等技能，及相机系统、AI 行为、更多武器等  \n\n```mermaid\nflowchart LR\n    Tags[\"输入标签\"] --> Cond[\"推进条件\"]\n    State[\"状态标签\"] --> Cond\n    Cond --> Move[\"招式\"]\n    Move --> Feedback[\"手机反馈/特效\"]\n    Move --> Camera[\"相机系统\"]\n    Move --> AI[\"AI 行为\"]\n    Move --> Block[\"格挡/上挑/下落/前冲\"]\n    Future[\"后续功能\"] --> Block\n    Future --> Camera\n    Future --> AI\n    Future --> Feedback\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    W[\"武器\"] --> CS[\"多套连招 (多颗连招术)\"]\n    CS --> CT[\"连招树 (连招术)\"]\n    CT --> N[\"招式节点\"]\n    N --> E[\"推进条件 (输入标签/状态标签)\"]\n    CT --> G[\"连招图 (有向无环图)\"]\n    G --> N\n    G --> S[\"软锁定 (转向)\"]\n    G --> CW[\"取消窗口\"]\n    G --> CWB[\"连招窗口\"]\n    G --> PIW[\"预输入窗口\"]"
+        },
+        {
+          "title": "连招结构演进",
+          "code": "flowchart LR\n    LL[\"线性连招 (连招练)\"] -->|需要分支| T[\"树形结构 (连招术)\"]\n    T -->|多树相连| G[\"有向无环图 (连招图)\"]\n    G -->|根节点| Start[\"起手招\"]\n    G -->|避免循环| Acyclic[\"单向推进\"]"
+        },
+        {
+          "title": "窗口机制与时序",
+          "code": "flowchart TD\n    AF[\"攻击帧\"] --> CW[\"取消窗口\"]\n    CW --> AF\n    AF --> CWB[\"连招窗口\"]\n    CWB --> AF\n    CWB --> PIW[\"预输入窗口\"]\n    PIW --> CWB\n    subgraph \"时序\"\n        direction LR\n        Pre[\"前摇\"] --> AF\n        AF --> Post[\"后摇\"]\n    end"
+        },
+        {
+          "title": "派生方式",
+          "code": "flowchart TD\n    Base[\"基础招式\"] --> Light[\"轻派生\"]\n    Base --> Heavy[\"重派生\"]\n    Base --> Pause[\"停顿派生\"]\n    Base --> Press[\"目压派生\"]\n    Pause -->|1A停顿| Final[\"最终1A\"]\n    Press -->|预输入窗口内| Combo[\"连招\"]"
+        },
+        {
+          "title": "关键要素与未来扩展",
+          "code": "flowchart LR\n    Tags[\"输入标签\"] --> Cond[\"推进条件\"]\n    State[\"状态标签\"] --> Cond\n    Cond --> Move[\"招式\"]\n    Move --> Feedback[\"手机反馈/特效\"]\n    Move --> Camera[\"相机系统\"]\n    Move --> AI[\"AI 行为\"]\n    Move --> Block[\"格挡/上挑/下落/前冲\"]\n    Future[\"后续功能\"] --> Block\n    Future --> Camera\n    Future --> AI\n    Future --> Feedback"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T15:30:20+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# UE5 连招系统知识图谱\n\n## 总览\n[BV1HFjd6BEQx P1 00:12] 每种武器都有专属的连招表现，可拥有多套连招  \n[BV1HFjd6BEQx P1 00:31] 连招演变为树形结构（连招术）并进一步形成图（有向无环图）  \n\n```mermaid\nflowchart TD\n    W[\"武器\"] --> CS[\"多套连招 (多颗连招术)\"]\n    CS --> CT[\"连招树 (连招术)\"]\n    CT --> N[\"招式节点\"]\n    N --> E[\"推进条件 (输入标签/状态标签)\"]\n    CT --> G[\"连招图 (有向无环图)\"]\n    G --> N\n    G --> S[\"软锁定 (转向)\"]\n    G --> CW[\"取消窗口\"]\n    G --> CWB[\"连招窗口\"]\n    G --> PIW[\"预输入窗口\"]\n```\n\n## 连招结构演进\n[BV1HFjd6BEQx P1 00:17] 基本连招为线性链表（连招练）  \n[BV1HFjd6BEQx P1 00:29] 为支持分支演变为树形结构（连招术）  \n[BV1HFjd6BEQx P1 01:04] 多树相连形成有向无环图（连招图），保证单向推进并避免循环  \n\n```mermaid\nflowchart LR\n    LL[\"线性连招 (连招练)\"] -->|需要分支| T[\"树形结构 (连招术)\"]\n    T -->|多树相连| G[\"有向无环图 (连招图)\"]\n    G -->|根节点| Start[\"起手招\"]\n    G -->|避免循环| Acyclic[\"单向推进\"]\n```\n\n## 窗口机制与时序\n[BV1HFjd6BEQx P1 03:39] 实现取消窗口以减少攻击后摇并优化手感  \n[BV1HFjd6BEQx P1 04:08] 连招窗口位于攻击后、收招前，预输入窗口位于连招窗口之前，缓存最新输入  \n\n```mermaid\nflowchart TD\n    AF[\"攻击帧\"] --> CW[\"取消窗口\"]\n    CW --> AF\n    AF --> CWB[\"连招窗口\"]\n    CWB --> AF\n    CWB --> PIW[\"预输入窗口\"]\n    PIW --> CWB\n    subgraph \"时序\"\n        direction LR\n        Pre[\"前摇\"] --> AF\n        AF --> Post[\"后摇\"]\n    end\n```\n\n## 派生方式\n[BV1HFjd6BEQx P1 00:07] 主要为轻重派生  \n[BV1HFjd6BEQx P1 04:38] 通过连招窗口实现停顿派生和目压派生  \n[BV1HFjd6BEQx P1 04:45] 大剑停顿派生示例：1A 停顿直接派升至最后 1A  \n[BV1HFjd6BEQx P1 05:05] 匕首目压派生需在连招窗口内使用预输入窗口，提前输入会终止连招  \n\n```mermaid\nflowchart TD\n    Base[\"基础招式\"] --> Light[\"轻派生\"]\n    Base --> Heavy[\"重派生\"]\n    Base --> Pause[\"停顿派生\"]\n    Base --> Press[\"目压派生\"]\n    Pause -->|1A停顿| Final[\"最终1A\"]\n    Press -->|预输入窗口内| Combo[\"连招\"]\n```\n\n## 关键要素与未来扩展\n[BV1HFjd6BEQx P1 01:21] 连招推进条件由输入标签和状态标签组合决定  \n[BV1HFjd6BEQx P1 01:36] 每招包含前摇、攻击帧、后摇，负责攻击检测、手机反馈、特效等  \n[BV1HFjd6BEQx P1 02:46] 转向动画通知放置于攻击帧前，支持软锁定（圆环范围）  \n[BV1HFjd6BEQx P1 06:10] 未来计划包括格挡、上挑、下落、前冲等技能，及相机系统、AI 行为、更多武器等  \n\n```mermaid\nflowchart LR\n    Tags[\"输入标签\"] --> Cond[\"推进条件\"]\n    State[\"状态标签\"] --> Cond\n    Cond --> Move[\"招式\"]\n    Move --> Feedback[\"手机反馈/特效\"]\n    Move --> Camera[\"相机系统\"]\n    Move --> AI[\"AI 行为\"]\n    Move --> Block[\"格挡/上挑/下落/前冲\"]\n    Future[\"后续功能\"] --> Block\n    Future --> Camera\n    Future --> AI\n    Future --> Feedback\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    W[\"武器\"] --> CS[\"多套连招 (多颗连招术)\"]\n    CS --> CT[\"连招树 (连招术)\"]\n    CT --> N[\"招式节点\"]\n    N --> E[\"推进条件 (输入标签/状态标签)\"]\n    CT --> G[\"连招图 (有向无环图)\"]\n    G --> N\n    G --> S[\"软锁定 (转向)\"]\n    G --> CW[\"取消窗口\"]\n    G --> CWB[\"连招窗口\"]\n    G --> PIW[\"预输入窗口\"]"
+    },
+    {
+      "title": "连招结构演进",
+      "code": "flowchart LR\n    LL[\"线性连招 (连招练)\"] -->|需要分支| T[\"树形结构 (连招术)\"]\n    T -->|多树相连| G[\"有向无环图 (连招图)\"]\n    G -->|根节点| Start[\"起手招\"]\n    G -->|避免循环| Acyclic[\"单向推进\"]"
+    },
+    {
+      "title": "窗口机制与时序",
+      "code": "flowchart TD\n    AF[\"攻击帧\"] --> CW[\"取消窗口\"]\n    CW --> AF\n    AF --> CWB[\"连招窗口\"]\n    CWB --> AF\n    CWB --> PIW[\"预输入窗口\"]\n    PIW --> CWB\n    subgraph \"时序\"\n        direction LR\n        Pre[\"前摇\"] --> AF\n        AF --> Post[\"后摇\"]\n    end"
+    },
+    {
+      "title": "派生方式",
+      "code": "flowchart TD\n    Base[\"基础招式\"] --> Light[\"轻派生\"]\n    Base --> Heavy[\"重派生\"]\n    Base --> Pause[\"停顿派生\"]\n    Base --> Press[\"目压派生\"]\n    Pause -->|1A停顿| Final[\"最终1A\"]\n    Press -->|预输入窗口内| Combo[\"连招\"]"
+    },
+    {
+      "title": "关键要素与未来扩展",
+      "code": "flowchart LR\n    Tags[\"输入标签\"] --> Cond[\"推进条件\"]\n    State[\"状态标签\"] --> Cond\n    Cond --> Move[\"招式\"]\n    Move --> Feedback[\"手机反馈/特效\"]\n    Move --> Camera[\"相机系统\"]\n    Move --> AI[\"AI 行为\"]\n    Move --> Block[\"格挡/上挑/下落/前冲\"]\n    Future[\"后续功能\"] --> Block\n    Future --> Camera\n    Future --> AI\n    Future --> Feedback"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:30:20+00:00"
+}

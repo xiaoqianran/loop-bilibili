@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1qiTk6PETR",
+  "title": "【图形学 | 引擎渲染实战】Godot 4 Shader特效全集：从视觉入门到数学硬核 · 从零写出任何效果",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4822,
+  "text": "嗨大家好\n我来给大家演示\n如何在GODO4中创建简单的2D着色器\n并应用到游戏背景或UI元素上\n你还会学到一些GODOT着色语言的知识\n以及如何用它来创建画布像着色器嗯\n大家可能知道着色器是一种独特的程序\n专为在GPU上运行而设计\n你可以用它们来控制引擎绘制的方式\n几何图形和像素在屏幕上\n从而制作出各种特效\n接下来我来演示如何实现其中一种效果\n和往常一样\n我会讲解每一步操作好\n我准备了一个简单的2D场景\n场景中有一个子节点\n节点类型是surprise2D\n因为我们要做的是CANVCUM类型的2D着色器\n我好像在网上见过这种着色器\n好像是在shader toy杠上\n但代码完全没注释\n所以弄懂它的原理应该挺有用\n这样你就能举一反三\n做出自己的着色器版本\n这个精灵就是一个黑色纹理\n我把它拉伸到了全屏\n现在要创建一个着色器资源\n然后付给精灵的材质开始操作\n我在这里右键新建资源\n选着色器\n商机模式\n要选画布\n像给它起个名字\n比如嗯我们先创建一个新的着色器\n创建一个新的着色器\n命名为waves\n然后我们进入这里\n打开这个精灵的材质\n创建一个新的着色器材质\n点击材质\n把着色器代码拖到这里\n好双击这里打开着色器编辑器\n好了\n准备工作完成\n我们先从简单的开始\n可以看到格斗自动生成了标准的fragment函数\n它对属于这个元素的每个像素都会调用\n要设置这些像素的颜色\n我们给内置变量color复个新制\n先在这里准备好\ncolor就是我们简单写一下\ncolor是一个四维向量\n有红绿蓝和alpha分量\n这些分量的值在0~1之间\n比如我要把这个精灵的每个像素变成红色\n我们写vector4红色为一\n蓝色为零\n零是绿色\n一是alpha让它不透明\n来看一下好了\n现在全是绿色\n我缩小一点\n方便看到整个精灵\n不错\n但有点没意思\n我打算根据像素坐标来修改颜色\n再用一个内置变量UV\n它其实就是这个精灵的像素坐标\n所以我们不直接加常量值\n而是用UVX\n你们看\n颜色只出现在左上角的一个小方块内\n因为一旦UV坐标达到一\n颜色就超出了最大值\n来看看加入周期函数会怎样\n比如取模运算\n那我们加上mod\n然后重复这个模式\n每经过一个单位\n第一个参数和模数都设为一\n现在整个矩形都填满了这个图案\n我们还可以进一步改进\n比如结合两个坐标来生成所有RGB分量\n好了\n那能做什么呢\n比如可以对外做加法\n现在我们来做个减法\n最后给绿色分量赋个值怎么样\n做个乘法\n和UY\n好了\n如果想稍微放大呢\n我再加个变量\n让代码更好读\nUV是个二维向量\n所以我们要把它复制给YCR\n那就用VXC2\n我们把它命名为courts\n有点像坐标UV\n然后放大十倍\n现在当然了\n要把这里出现的UV都替换成courts\n还有234不对\n五和六\n好啦\n好了\n相信大家现在明白get dot\n如何在CHE马M着色器里处理像素了\n删除片段函数的内容\n重新来过\n这次我们先从灰色调开始\n为了让数值更有趣\n我们会引入三角函数\n正弦和余弦\n我再写一遍着色器的开头几行\n我们用VC2向量来存储UV坐标\n即V2\nUV等于UV\n再定义一个向量变量来存放计算用的值\n这里用YX等于YXC2\n先用X坐标试试\n还有COSY\n当然也可以直接把这个参数整个传进去\n因为它会自动转换成vector2\n但既然打算在这个函数里做更多变换\n就保持这样吧\n而这个算法的结果就是每个像素的颜色\n那我们来定义一下\n我们知道这是个四维向量\n红绿蓝和alpha通道\n所以我们就叫它color类型是YX4\n然后用前面算出的向量长度\n所以就是length乘以这个向量\n好的\n最后我们把颜色赋给内部变量color\n注意着色语言区分大小写\n所以color和color不同\n和go都不同\n每行结尾必须加分号\n好的\n所以这只是个开始\n这里能看到一个很小的1/4远\n因为我们还没使用周期函数\n我们现在来改进一下\n所以不再直接用坐标\n而是应用正弦函数\n还有余弦\n已经可以看到一些图案了\n怎么了啊\n当然少了一个括号好了\n另外后续计算中\n颜色最终值可能超出最大值\n所以加个保险这样做\n我们用了前置方法\n确保数值不超出给定范围\n基本图案就完成了\n由于正弦和余弦函数是周期循环的\n图案便在画布上自动重复\n但我们总不能只用灰度色调\n最好能让着色器自定义背景\n颜色与计算结果结合\n添加第一个uniform变量就在开头这里\n这跟我们在gd script中用的差不多\n带有export注解\n这种变量会显示出来\n在检查器中作为着色器参数可以直接修改\n现在我们用个小技巧\n如果把它设为原颜色\n就会自动创建一个颜色选择器\n在检查器中我们可以选择所有颜色方法\n非常方便\n就像四我们先从黑色开始\n所以所有值都会设为零\n顺便说一句\n如果这里用整数呢\n没影响\n好的\n看起来没问题\n当然没变\n我们只是声明了一个变量\n点击这里的着色器在哪里打开它不对\n当然不是要在材质着色器参数这里选择它\n颜色选择器那里已经有背景了\n但既然还没用到它\n改这个值不会影响图案\n很好\n我们把它加到最终颜色之上\n再加上背景\n好了看看会怎样嗯\n做了点小修改\n方向是对的\n很好\n现在效果更暗了些\n但图案本身有点单调\n再加点三角函数\n计算线段亮度嗯\n先加个浮点变量就叫bright\n名字别太长\n从最大值开始\n其实从一开始再加入计算值的分数会更有意思\n最后再从别的常量减去一些好了\n现在我们来添加更多计算\n不赋值给向量直接增加坐标值\n看起来有点怪\n因为坐标本应是常量\n但稍后我们会引入另一个变量来改变它\n向量的每个部分不再只用一个三角函数\n而是用两个\n这里改成course加上scene\n同样这里从sin加cos开始处理Y坐标\n当然我们需要重新定义向量\n因为那里已经没有向量了\n重新声明Y和两伏特ECT\n这就是我刚才提到的第二个变换\n我们对变换后的坐标取正弦\n坐标X和余弦Y和正余弦\n现在看起来如何\n嗯变了确实比之前的斜方块好看多了\n好我们用最终向量的长度来增加亮度\n增加量由向量长度决定\n但这个数值实际上太大了\n如果用倒数啊\n像这样效果会更有趣\n当然更安全的做法是确保向量长度不为零\n否则会出现除令错误\n这个检查我们稍后再加\n还没完\n正如我说的\n我们要从一个更高值中减去这个值\n比如一个更高常亮的亮度\n1.2减去亮度\n当然你可以试试这些知\n效果会更丰富\n最后要应用它\n我们在这里加上bright\n稍等一下\n确实变了有进展了\n多亏了三角函数和亮度调整好啦\n我放大一点\n让大家看到完整代码图案有意思多了\n但我们还能做点别的\n再加一个正弦和余弦计算\n这部分不变\n但先把值付给一个临时向量\n像这样嗯\n最终向量是前两个向量的合成\n来试试吧\nVON等于VE\n二参数为cox除以t m p x cos除以TMPY\n嗯现在我们得到了更细的线条\n越来越接近效果了\n就是视频开头看到的效果\n但颜色似乎还可以稍微调整一下\n我们把它乘以0.5试试\n也就是将向量的两个分量都乘以0.5\n所以这只是表示这个部分相乘的简写\n然后在括号里乘另一个部分好\n我们试试更小的数值\n等等\n这挺有意思\n再加一个零\n如何\n没错\n线条变细了完美\n好了\n咱们让线条更有变化\n形成动态波浪效果\n要做到这一点\n我们需要反复计算多次\n并将每次迭代的结果叠加起来\n我们也会让迭代次数可调\n作为第二个uniform变量\n回到代码中添加上这个逻辑\n比如这里用一个uniform int变量\nIterations\n我们先从三次迭代开始\n然后把它用到片段函数里\n所以这里我先定义vector\n迭代是VCR\n部队是courts\n为啥要这样\n原因在于\n我们不想改动courts的值\n因为它应该是常量\n我们想要的是\n我们想复用当前迭代的当前值\n然后重复多次迭代\n这里不对\nVisitor vector course\n哦对\n问题是我们需要先定义和弦\n所以正确的写法应该在这里\n好了\n现在该迭代了\n所以创建一个循环int n从零开始\nN小于迭代次数目前是三\n所以是三次循环\n零一和二嗯\n在着色语言中有点不同\n因为如果不加花括号循环只作用于第一行\n但我们要迭代整个代码块\n所以这样写\n我们给他一个整数来看看循环体\n很好\n但这里几乎什么都看不到\n因为U位置太小\n看不到效果\n我们稍微调整一下\n比如在这加个250看看效果不错\n效果开始出现\n内部结构缩放后\n它会变成重要细节\n但最好创建一个新向量来存储当前迭代值\n其实我们做过了\n但要在计算中更多地方用到它\n就写在这里吧\n诸如此类\n他是courts对\n当然EER不对\n抱歉\nEER是courts\n加上这个\n现在我们用它了哦\n有点意思\n我们得到了完全平方\n为什么即使我们调整迭代参数\n方块还是老样子\n我换个参数试试\n456还是方块\n因为第二次计算没用新向量适应\n现在是常量了\n改一下\n首先这里要改\n因为我们要用迭代后的值来计算\n这里也要改\n没错\n图案回来了\n好了\n网状图案又出现了\n但太暗了\n想让线条更亮一些\n这亮度值归一化\n在指数级增强\n突出峰值回到函数\n先把亮度最终值除以迭代次数\n现在亮度的值我们需要我是说修改\n把它变成\n那个词怎么说来着\n哎呀把整数转成浮点数\n不然会报错\n好了\n现在画面变白了\n看来我们可以调一下颜色\n增强明暗区域的对比度\n这里用颜色相亮\n而不是亮度向量\n我们用幂函数\n哦不对\n这样幂函数的话用绝对值更稳妥\n以防出现负值\n这样就能变量第二个参数设为八括号结尾\n好啦我喜欢\n当然再亮一点就更好了\n我们来改一下这个值\n再给它做个指数运算\n比如1.5次方亮度的1.5次方\n这样不错\n快好了\n但效果看起来还是有规律的花纹嗯\n我们想要至少看起来不太规则的效果\n我们来添加缩放参数\n和之前一样\n我们希望缩放是可调节的\n所以把它作为第三个uniform变量添加进来\n这次uniform是浮点数类型\n代表缩放\n好我们先从五开始\n我们再添加一个uniform变量\n因为我们要去掉这个常量\n它本应是参数\n它有点像光照强度或亮度\n所以最好也能在着色器参数里调整它\n现在就来操作\n用float类型命名为power\n默认值设为0.5\n因为如果保持0.005\n将很难用滑块调节其他值\n所以直接把它作为乘数\n然后乘以100\n关于uniform变量暂时就这些\n先写代码\n计算强度\n强度等于功率乘以呃\n不是100还是100\n现在将这些坐标除以缩放因子\n看好出来了\n非常棒\n这就是产生的波形\n但还缺了关键东西\n对没错\n它不动\n我们用另一个内置变量time来实现运动\n所以回到脚本\n定义一个依赖于哪个变量\n第五个uniform变量及speed\n这样就能动态调整运动速度和效果\n运动浮动速度\n设为0.1\n我想这是最后一个uniform变量\n现在来计算flow time是内部时间\n即从着色器开始计算经过的时间\n速度当然还要用到时间\n我们把它加到两个三角函数里\n从这里开始\n用time减去ex\n好了已经动起来了\n但这还不够\n我们想让它更有变化一些\n所以我们在三角函数的参数里混合加减\n然后正弦用time加ITER\n也许减ITER更好\n其实无所谓\n你可以随意改变这些符号\n效果基本一样\n不过我发现时不时切换一下\n觉得挺有意思\n最后我们在临时向量计算这里操作\n时间分别加上X和Y\n好啦好啦\n我们到这一步了\n现在来修改着色器参数\n比如增加迭代次数\n让它更亮\n我们来调整缩放\n缩小再放大\n我们把强度降低一点\n别那么亮\n迭代次数可能也要减少\n当然也可以让它跑得更快\n挺酷的\n那如果我们不想要纯黑背景呢\n比如说试试绿色\n很棒或者橙色\n随便什么颜色\n直接用取色器试试看吧\n当然你也可以加入更复杂的函数\n让线条的形状和运动更加奇特\n那我先恢复默认值\n以上就是全部内容\n感谢观看\n希望你们也觉得go dots着色器很有趣\n下次我打算尝试更复杂的内容\n比如一个能读取并操作底层纹理的着色器\n下个视频见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qiTk6PETR",
+  "published_at": "1782986880",
+  "fetched_at": "2026-08-08T04:37:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 4 Shader 特效学习图谱\n\n## Shader 创建流程概览 [BV1qiTk6PETR P1 00:54‑02:08]\n```mermaid\nflowchart TD\n    A1[\"Sprite2D 节点\"] --> A2[\"创建 Shader 资源\"]\n    A2 --> A3[\"创建 ShaderMaterial\"]\n    A3 --> A4[\"将 Shader 赋给 Material\"]\n    A4 --> A5[\"将 Material 绑定到 Sprite\"]\n    A5 --> A6[\"打开 Shader 编辑器\"]\n    A6 --> A7[\"fragment() 函数\"]\n    A7 --> A8[\"内置变量 COLOR\"]\n    A7 --> A9[\"内置变量 UV\"]\n    A8 --> A10[\"在 fragment 中设置 COLOR\"]\n    A10 --> A11[\"保存并预览效果\"]\n```\n\n## 基于 UV 的颜色生成与参数化 [BV1qiTk6PETR P1 04:23‑10:38]\n```mermaid\nflowchart TD\n    B1[\"UV 坐标 (vector2)\"] --> B3[\"scaledUV = UV * factor\"]\n    B2[\"Uniform 缩放 factor (float)\"] --> B3\n    B3 --> B4[\"mod 运算 (mod(scaledUV, 1.0))\"]\n    B4 --> B5[\"sin(…) 与 cos(…) 生成波形\"]\n    B5 --> B6[\"组合生成 RGB 各分量\"]\n    B7[\"Uniform 亮度 factor (float)\"] --> B8[\"brightness 调整\"]\n    B8 --> B6\n    B9[\"Uniform time (float) 用于动画\"] --> B10[\"将 time 加入 sin/cos 参数\"]\n    B10 --> B5\n    B6 --> B11[\"最终颜色 = vec4(RGB, 1.0)\"]\n    B11 --> B12[\"输出到 COLOR\"]\n```\n\n## 迭代式图案生成与可调参数 [BV1qiTk6PETR P1 18:17‑22:11]\n```mermaid\nflowchart TD\n    C1[\"Uniform int iterations\"] --> C3[\"循环 for n = 0..iterations‑1\"]\n    C2[\"复制 UV 为 courts (常量)\"] --> C3\n    C3 --> C4[\"在每次迭代中计算变换向量\"]\n    C4 --> C5[\"累加到临时颜色 accumulator\"]\n    C5 --> C6[\"避免除零检查 (length > 0)\"]\n    C6 --> C7[\"循环结束后归一化颜色\"]\n    C7 --> C8[\"将结果赋给 COLOR\"]\n    C1 --> C9[\"可调节迭代次数影响细节\"]\n    C10[\"Uniform float speed (动画速率)\"] --> C11[\"time 变量参与每次迭代\"]\n    C11 --> C4\n    C8 --> C12[\"最终图案呈现波纹/网格\"]\n```)",
+      "diagrams": [
+        {
+          "title": "Shader 创建流程概览 [BV1qiTk6PETR P1 00:54‑02:08]",
+          "code": "flowchart TD\n    A1[\"Sprite2D 节点\"] --> A2[\"创建 Shader 资源\"]\n    A2 --> A3[\"创建 ShaderMaterial\"]\n    A3 --> A4[\"将 Shader 赋给 Material\"]\n    A4 --> A5[\"将 Material 绑定到 Sprite\"]\n    A5 --> A6[\"打开 Shader 编辑器\"]\n    A6 --> A7[\"fragment() 函数\"]\n    A7 --> A8[\"内置变量 COLOR\"]\n    A7 --> A9[\"内置变量 UV\"]\n    A8 --> A10[\"在 fragment 中设置 COLOR\"]\n    A10 --> A11[\"保存并预览效果\"]"
+        },
+        {
+          "title": "基于 UV 的颜色生成与参数化 [BV1qiTk6PETR P1 04:23‑10:38]",
+          "code": "flowchart TD\n    B1[\"UV 坐标 (vector2)\"] --> B3[\"scaledUV = UV * factor\"]\n    B2[\"Uniform 缩放 factor (float)\"] --> B3\n    B3 --> B4[\"mod 运算 (mod(scaledUV, 1.0))\"]\n    B4 --> B5[\"sin(…) 与 cos(…) 生成波形\"]\n    B5 --> B6[\"组合生成 RGB 各分量\"]\n    B7[\"Uniform 亮度 factor (float)\"] --> B8[\"brightness 调整\"]\n    B8 --> B6\n    B9[\"Uniform time (float) 用于动画\"] --> B10[\"将 time 加入 sin/cos 参数\"]\n    B10 --> B5\n    B6 --> B11[\"最终颜色 = vec4(RGB, 1.0)\"]\n    B11 --> B12[\"输出到 COLOR\"]"
+        },
+        {
+          "title": "迭代式图案生成与可调参数 [BV1qiTk6PETR P1 18:17‑22:11]",
+          "code": "flowchart TD\n    C1[\"Uniform int iterations\"] --> C3[\"循环 for n = 0..iterations‑1\"]\n    C2[\"复制 UV 为 courts (常量)\"] --> C3\n    C3 --> C4[\"在每次迭代中计算变换向量\"]\n    C4 --> C5[\"累加到临时颜色 accumulator\"]\n    C5 --> C6[\"避免除零检查 (length > 0)\"]\n    C6 --> C7[\"循环结束后归一化颜色\"]\n    C7 --> C8[\"将结果赋给 COLOR\"]\n    C1 --> C9[\"可调节迭代次数影响细节\"]\n    C10[\"Uniform float speed (动画速率)\"] --> C11[\"time 变量参与每次迭代\"]\n    C11 --> C4\n    C8 --> C12[\"最终图案呈现波纹/网格\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T04:47:02+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 4 Shader 特效学习图谱\n\n## Shader 创建流程概览 [BV1qiTk6PETR P1 00:54‑02:08]\n```mermaid\nflowchart TD\n    A1[\"Sprite2D 节点\"] --> A2[\"创建 Shader 资源\"]\n    A2 --> A3[\"创建 ShaderMaterial\"]\n    A3 --> A4[\"将 Shader 赋给 Material\"]\n    A4 --> A5[\"将 Material 绑定到 Sprite\"]\n    A5 --> A6[\"打开 Shader 编辑器\"]\n    A6 --> A7[\"fragment() 函数\"]\n    A7 --> A8[\"内置变量 COLOR\"]\n    A7 --> A9[\"内置变量 UV\"]\n    A8 --> A10[\"在 fragment 中设置 COLOR\"]\n    A10 --> A11[\"保存并预览效果\"]\n```\n\n## 基于 UV 的颜色生成与参数化 [BV1qiTk6PETR P1 04:23‑10:38]\n```mermaid\nflowchart TD\n    B1[\"UV 坐标 (vector2)\"] --> B3[\"scaledUV = UV * factor\"]\n    B2[\"Uniform 缩放 factor (float)\"] --> B3\n    B3 --> B4[\"mod 运算 (mod(scaledUV, 1.0))\"]\n    B4 --> B5[\"sin(…) 与 cos(…) 生成波形\"]\n    B5 --> B6[\"组合生成 RGB 各分量\"]\n    B7[\"Uniform 亮度 factor (float)\"] --> B8[\"brightness 调整\"]\n    B8 --> B6\n    B9[\"Uniform time (float) 用于动画\"] --> B10[\"将 time 加入 sin/cos 参数\"]\n    B10 --> B5\n    B6 --> B11[\"最终颜色 = vec4(RGB, 1.0)\"]\n    B11 --> B12[\"输出到 COLOR\"]\n```\n\n## 迭代式图案生成与可调参数 [BV1qiTk6PETR P1 18:17‑22:11]\n```mermaid\nflowchart TD\n    C1[\"Uniform int iterations\"] --> C3[\"循环 for n = 0..iterations‑1\"]\n    C2[\"复制 UV 为 courts (常量)\"] --> C3\n    C3 --> C4[\"在每次迭代中计算变换向量\"]\n    C4 --> C5[\"累加到临时颜色 accumulator\"]\n    C5 --> C6[\"避免除零检查 (length > 0)\"]\n    C6 --> C7[\"循环结束后归一化颜色\"]\n    C7 --> C8[\"将结果赋给 COLOR\"]\n    C1 --> C9[\"可调节迭代次数影响细节\"]\n    C10[\"Uniform float speed (动画速率)\"] --> C11[\"time 变量参与每次迭代\"]\n    C11 --> C4\n    C8 --> C12[\"最终图案呈现波纹/网格\"]\n```)",
+  "diagrams": [
+    {
+      "title": "Shader 创建流程概览 [BV1qiTk6PETR P1 00:54‑02:08]",
+      "code": "flowchart TD\n    A1[\"Sprite2D 节点\"] --> A2[\"创建 Shader 资源\"]\n    A2 --> A3[\"创建 ShaderMaterial\"]\n    A3 --> A4[\"将 Shader 赋给 Material\"]\n    A4 --> A5[\"将 Material 绑定到 Sprite\"]\n    A5 --> A6[\"打开 Shader 编辑器\"]\n    A6 --> A7[\"fragment() 函数\"]\n    A7 --> A8[\"内置变量 COLOR\"]\n    A7 --> A9[\"内置变量 UV\"]\n    A8 --> A10[\"在 fragment 中设置 COLOR\"]\n    A10 --> A11[\"保存并预览效果\"]"
+    },
+    {
+      "title": "基于 UV 的颜色生成与参数化 [BV1qiTk6PETR P1 04:23‑10:38]",
+      "code": "flowchart TD\n    B1[\"UV 坐标 (vector2)\"] --> B3[\"scaledUV = UV * factor\"]\n    B2[\"Uniform 缩放 factor (float)\"] --> B3\n    B3 --> B4[\"mod 运算 (mod(scaledUV, 1.0))\"]\n    B4 --> B5[\"sin(…) 与 cos(…) 生成波形\"]\n    B5 --> B6[\"组合生成 RGB 各分量\"]\n    B7[\"Uniform 亮度 factor (float)\"] --> B8[\"brightness 调整\"]\n    B8 --> B6\n    B9[\"Uniform time (float) 用于动画\"] --> B10[\"将 time 加入 sin/cos 参数\"]\n    B10 --> B5\n    B6 --> B11[\"最终颜色 = vec4(RGB, 1.0)\"]\n    B11 --> B12[\"输出到 COLOR\"]"
+    },
+    {
+      "title": "迭代式图案生成与可调参数 [BV1qiTk6PETR P1 18:17‑22:11]",
+      "code": "flowchart TD\n    C1[\"Uniform int iterations\"] --> C3[\"循环 for n = 0..iterations‑1\"]\n    C2[\"复制 UV 为 courts (常量)\"] --> C3\n    C3 --> C4[\"在每次迭代中计算变换向量\"]\n    C4 --> C5[\"累加到临时颜色 accumulator\"]\n    C5 --> C6[\"避免除零检查 (length > 0)\"]\n    C6 --> C7[\"循环结束后归一化颜色\"]\n    C7 --> C8[\"将结果赋给 COLOR\"]\n    C1 --> C9[\"可调节迭代次数影响细节\"]\n    C10[\"Uniform float speed (动画速率)\"] --> C11[\"time 变量参与每次迭代\"]\n    C11 --> C4\n    C8 --> C12[\"最终图案呈现波纹/网格\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T04:47:02+00:00"
+}

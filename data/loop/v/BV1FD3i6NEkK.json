@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1FD3i6NEkK",
+  "title": "当代Agent开发必备！LangChain智能体开发工业实战！核心API+记忆管理系统+Agentic RAG+Langfuse监控+工业级实践经验全栈精讲！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2459,
+  "text": "在智能体技术大爆发的当下\n如果要选取一项agent开发框架进行学习和使用\n毫无疑问\n那肯定是long ch long term\n凭借其丰富的API功能\n完善的技术生态以及开元4年来工业级应用的稳定性\n已经成为当下几乎所有大模型开发岗位求职必备的基础技能了\n同时它也是国内外无数顶尖工业项目背后的核心框架\n在我们团队过往的研发历史中\n如f f CORE worker\n数字员工\nF f open clock\n智能文档审核与多模态\nOCR文档检索等各个热门项目也都是基于long chain进行的开发\n本期怪客完整三小时技术精讲\n带你一站式快速掌握long cha全站开发体系讲解\nlong cha1.3最新版本核心API create agent的使用方法\n以及整个long cha技术生态体系最核心的七大项功能\n分别是agent的结构化输出策略\nMiddle while\n中间件系统\n智能体\n持久化记忆仍在闭环实现方法\nlong fuse运维管理功能\nAggtic rag\n以及最新的long unchain harness agent框架\ndeep agents的上手使用方法\n同时公开课还将结合团队自研的open cloud项目\n介绍真实工业环境下long chain智能体开发流程\nf f open CD是基于long cha最新意见X版本\n对于open cloud的全功能复刻即可用于open cloud高并发定制化私有化部署\n同时也是绝佳的long cha工业级项目开发模板\n当然了\n在web puding时代\n与AI协同开发已经成了常态\n因此为了更好的让你和你的agent都能同时掌握long unchain agent开发技术体系\n那么公开课的形式呢也是大幅升级\n所以公开课提供给大家的不仅有能让你学会的\n非常完备的long chain知识体系讲解\n同时还包含能让你的agent也学会的\n我们团队独家制作的long unchain完整技术体系的MVICKI知识库\n包含七大功能板块\n将你载入cloud code或者codex\n即可让你的AI立刻拥有long chain全套的最新知识记忆\n同时公开课还将提供13项long unchain agent开发专属skills\n包含了从环境安装到记忆状态管理\n再到长城任务全部开发所需核心skills\n同样将其在recloud code或者codex即可让你的AI立刻拥有工业级long unchain\n开发实战技巧和开发经验\n目前long chan全套公开课资料都已经上线至复办AI社区\n大家扫描现在屏幕上的二维码即可免费领取\n在公开课正式开始之前\n我们先快速为大家详细介绍一下最新long unchain的整体技术体系\n其实啊在web coin时代\n很多细节的编程工作都可以让AI来完成\n但AI永远无法做到我们自己认知之外的事情\n所以在公开课的最开始\n先帮大家快速梳理目前long unchain整体技术体系\n认知\nlong cha最早于2022年正式开园上线\n其开源时间甚至早于ChatGPT上线事件\n其早期最核心的功能是一套所谓的LCL的编程语法体系\n用于大模型工作流的编排\n这是一套非常稳定\n但同时也非常繁琐的工作流编排方式啊\n而伴随着大模型A证的能力不断提升\n让模型自主反思\n自主选取工具\n自主规划执行路径就成了常态\n因此在去年的10月\nlong cha正式推出1.0大版本更新\n放弃了LCL语法\n全面推行create agent API体系\n自此EDGM开发就简单了很多呀\n开发者只需要设置好模型系统提示和工具组合到一块即可\n一键创建能够多步并行调用工具的复杂A证\n而这也是沿用至今的long uncha最核心的技术体系\n当然也是本次公开课讲解的核心内容\n而在create agent的API基础上\n我们还可以通过设置每次请求的状态来灵活的设置整个agent的持久级\n例如我们可以通过线程id来隔离存储绘画记忆\n通过checkpoint检查点来规定具体绘画记忆的存储形式等等\n与此同时\n基于long unchain非常灵活的API生态\n我们还可以非常高效率的将rap知识库检索流程封装为create agent\nAPI中的一个工具\n从而快速实现根据实际需求来灵活检索知识库的agent tic rap流程\n当然如果想要能够更加精准\n更加细粒度的控制agent的行为\n我们还可以借助long chain agent中间件meter war功能\n这是一个基于钩子的插件系统吧\n借助中间件\n开发者可以非常便捷的在模型调用前后\n工具调用前后等各个环节注入特定功能的代码脚本\n从而影响agent整实际运行流程\n进而实现如上下文压缩仍在闭环审核\n模型提示词\n动态选取等各项当代H的使用功能\n而更关键的是\n伴随着agent的开发技术的飞速发展\nlong chain技术生态也在飞速变化\n就在前不久\nLUNCHAIN正式开源了一整套agent的运维和监控系统\nLong fills\n这是long on smith的开源版本实现啊\n可以用于监控agent实际运行过程中\n每一次绘画的运行状态\n并且进行持续的数据统计和信息汇总\n是当代long unch agent运维的最佳工具\n与此同时\nlong cha还拥有完善的agent1键部署上线的功能\n以及在线观测agent内部top架构\n并进行实时对话测试等各项功能\n如今的long chain技术体系已经能够完整的覆盖\n从agent的设计开发测试到部署运维评估优化等\nA正在开发的全部生命周期管理以及外课\n就带你一站式深入系统\n彻底学懂当圈2026年大模型A政策技术发展势头异常迅猛\n未将持续为大家提供最前沿实用的技术教学\n感谢大家的关注和三连支持\nlong chain公开课完整课件知识库skills都已经上线至付款\nAI社区大扫描屏幕中的二维码即可领取\n我是九天\n专注为大家提供最扎实优质的技术内容\n公开课马上开始",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1FD3i6NEkK",
+  "published_at": "1785247756",
+  "fetched_at": "2026-08-07T08:26:04+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# LangChain（LongChain）智能体技术体系图谱\n\n## 总览图 – 核心功能模块【BV1FD3i6NEkK P1 00:49】\n```mermaid\nflowchart TD\n    A[\"LongChain 框架\"]\n    B[\"CreateAgent API\"]\n    C[\"结构化输出策略\"]\n    D[\"中间件系统\"]\n    E[\"持久化记忆\"]\n    F[\"LangFuse 监控\"]\n    G[\"Agentic RAG\"]\n    H[\"Unchain Harness Agent\"]\n    I[\"DeepAgents 使用方法\"]\n\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    A --> G\n    A --> H\n    A --> I\n```\n\n## Agent 创建与执行流程【BV1FD3i6NEkK P1 03:22】\n```mermaid\nflowchart TD\n    A[\"定义模型系统提示 & 工具集合\"]\n    B[\"CreateAgent 实例化\"]\n    C[\"中间件 Hook（前置/后置）\"]\n    D[\"工具调用执行\"]\n    E[\"持久化记忆更新\"]\n    F[\"生成最终响应\"]\n    G[\"监控与日志记录（LangFuse）\"]\n    H[\"Agent 执行循环\"]\n    I[\"上下文压缩 & 动态提示词\"]\n\n    A --> B\n    B --> C\n    C --> D\n    D --> E\n    E --> F\n    F --> G\n    G --> H\n    H --> D\n    C --> I\n    I --> D\n```\n\n## 持久化记忆管理策略【BV1FD3i6NEkK P1 03:34】\n```mermaid\nflowchart TD\n    A[\"持久化记忆系统\"]\n    B[\"Thread ID 隔离\"]\n    C[\"Checkpoint 检查点存储\"]\n    D[\"记忆检索\"]\n    E[\"记忆更新\"]\n    F[\"记忆删除\"]\n    G[\"Agent 读取记忆\"]\n    H[\"Agent 写入记忆\"]\n\n    A --> B\n    A --> C\n    B --> D\n    B --> E\n    C --> D\n    C --> E\n    D --> G\n    E --> H\n    H --> A\n    F --> A\n```",
+      "diagrams": [
+        {
+          "title": "总览图 – 核心功能模块【BV1FD3i6NEkK P1 00:49】",
+          "code": "flowchart TD\n    A[\"LongChain 框架\"]\n    B[\"CreateAgent API\"]\n    C[\"结构化输出策略\"]\n    D[\"中间件系统\"]\n    E[\"持久化记忆\"]\n    F[\"LangFuse 监控\"]\n    G[\"Agentic RAG\"]\n    H[\"Unchain Harness Agent\"]\n    I[\"DeepAgents 使用方法\"]\n\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    A --> G\n    A --> H\n    A --> I"
+        },
+        {
+          "title": "Agent 创建与执行流程【BV1FD3i6NEkK P1 03:22】",
+          "code": "flowchart TD\n    A[\"定义模型系统提示 & 工具集合\"]\n    B[\"CreateAgent 实例化\"]\n    C[\"中间件 Hook（前置/后置）\"]\n    D[\"工具调用执行\"]\n    E[\"持久化记忆更新\"]\n    F[\"生成最终响应\"]\n    G[\"监控与日志记录（LangFuse）\"]\n    H[\"Agent 执行循环\"]\n    I[\"上下文压缩 & 动态提示词\"]\n\n    A --> B\n    B --> C\n    C --> D\n    D --> E\n    E --> F\n    F --> G\n    G --> H\n    H --> D\n    C --> I\n    I --> D"
+        },
+        {
+          "title": "持久化记忆管理策略【BV1FD3i6NEkK P1 03:34】",
+          "code": "flowchart TD\n    A[\"持久化记忆系统\"]\n    B[\"Thread ID 隔离\"]\n    C[\"Checkpoint 检查点存储\"]\n    D[\"记忆检索\"]\n    E[\"记忆更新\"]\n    F[\"记忆删除\"]\n    G[\"Agent 读取记忆\"]\n    H[\"Agent 写入记忆\"]\n\n    A --> B\n    A --> C\n    B --> D\n    B --> E\n    C --> D\n    C --> E\n    D --> G\n    E --> H\n    H --> A\n    F --> A"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T08:26:15+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# LangChain（LongChain）智能体技术体系图谱\n\n## 总览图 – 核心功能模块【BV1FD3i6NEkK P1 00:49】\n```mermaid\nflowchart TD\n    A[\"LongChain 框架\"]\n    B[\"CreateAgent API\"]\n    C[\"结构化输出策略\"]\n    D[\"中间件系统\"]\n    E[\"持久化记忆\"]\n    F[\"LangFuse 监控\"]\n    G[\"Agentic RAG\"]\n    H[\"Unchain Harness Agent\"]\n    I[\"DeepAgents 使用方法\"]\n\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    A --> G\n    A --> H\n    A --> I\n```\n\n## Agent 创建与执行流程【BV1FD3i6NEkK P1 03:22】\n```mermaid\nflowchart TD\n    A[\"定义模型系统提示 & 工具集合\"]\n    B[\"CreateAgent 实例化\"]\n    C[\"中间件 Hook（前置/后置）\"]\n    D[\"工具调用执行\"]\n    E[\"持久化记忆更新\"]\n    F[\"生成最终响应\"]\n    G[\"监控与日志记录（LangFuse）\"]\n    H[\"Agent 执行循环\"]\n    I[\"上下文压缩 & 动态提示词\"]\n\n    A --> B\n    B --> C\n    C --> D\n    D --> E\n    E --> F\n    F --> G\n    G --> H\n    H --> D\n    C --> I\n    I --> D\n```\n\n## 持久化记忆管理策略【BV1FD3i6NEkK P1 03:34】\n```mermaid\nflowchart TD\n    A[\"持久化记忆系统\"]\n    B[\"Thread ID 隔离\"]\n    C[\"Checkpoint 检查点存储\"]\n    D[\"记忆检索\"]\n    E[\"记忆更新\"]\n    F[\"记忆删除\"]\n    G[\"Agent 读取记忆\"]\n    H[\"Agent 写入记忆\"]\n\n    A --> B\n    A --> C\n    B --> D\n    B --> E\n    C --> D\n    C --> E\n    D --> G\n    E --> H\n    H --> A\n    F --> A\n```",
+  "diagrams": [
+    {
+      "title": "总览图 – 核心功能模块【BV1FD3i6NEkK P1 00:49】",
+      "code": "flowchart TD\n    A[\"LongChain 框架\"]\n    B[\"CreateAgent API\"]\n    C[\"结构化输出策略\"]\n    D[\"中间件系统\"]\n    E[\"持久化记忆\"]\n    F[\"LangFuse 监控\"]\n    G[\"Agentic RAG\"]\n    H[\"Unchain Harness Agent\"]\n    I[\"DeepAgents 使用方法\"]\n\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    A --> G\n    A --> H\n    A --> I"
+    },
+    {
+      "title": "Agent 创建与执行流程【BV1FD3i6NEkK P1 03:22】",
+      "code": "flowchart TD\n    A[\"定义模型系统提示 & 工具集合\"]\n    B[\"CreateAgent 实例化\"]\n    C[\"中间件 Hook（前置/后置）\"]\n    D[\"工具调用执行\"]\n    E[\"持久化记忆更新\"]\n    F[\"生成最终响应\"]\n    G[\"监控与日志记录（LangFuse）\"]\n    H[\"Agent 执行循环\"]\n    I[\"上下文压缩 & 动态提示词\"]\n\n    A --> B\n    B --> C\n    C --> D\n    D --> E\n    E --> F\n    F --> G\n    G --> H\n    H --> D\n    C --> I\n    I --> D"
+    },
+    {
+      "title": "持久化记忆管理策略【BV1FD3i6NEkK P1 03:34】",
+      "code": "flowchart TD\n    A[\"持久化记忆系统\"]\n    B[\"Thread ID 隔离\"]\n    C[\"Checkpoint 检查点存储\"]\n    D[\"记忆检索\"]\n    E[\"记忆更新\"]\n    F[\"记忆删除\"]\n    G[\"Agent 读取记忆\"]\n    H[\"Agent 写入记忆\"]\n\n    A --> B\n    A --> C\n    B --> D\n    B --> E\n    C --> D\n    C --> E\n    D --> G\n    E --> H\n    H --> A\n    F --> A"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:26:15+00:00"
+}

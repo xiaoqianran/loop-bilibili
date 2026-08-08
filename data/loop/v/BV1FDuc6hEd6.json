@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1FDuc6hEd6",
+  "title": "实测Max+395双机运行DeepSeek v4 Flash 0731正式版编码性能与质量",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1079,
+  "text": "deep sick发布了deep seek v4flash0731正式版\n相较于预览版各方面提升很大\n今天咱们就来利用两台max加395主机\n组成集群\n来双击运行Q8量化后的deep sik v4flash\n0731正式版\n部署完之后\n我们让他来写一款打砖块的经典游戏\n来看看它的运行速度以及生成代码的质量\n首先介绍一下我的软硬件环境\n硬件是两台max加395主机\n通过USB4V二相连\n软件环境\n操作系统是wo to24.04\n推理用的LEMACPPB10253\n后端使用的是最新的VCN\n1.4.357.0\n这里需要多说一句\n我测试了rock more\n7.14\n7.15和7.2.4\n在双击运行时\n模型在输出到4000以上token时会出现崩溃\n所以改用VOCON后端\n我已经通过RPC完成了部署\n我们看一下两台机器的显存消耗\n从节点消耗了大约52G显存\n无力人能对面为主节点\n消耗了大约111G显存\n我这里使用的是Q8量化模型\ndeep seek v4flash0731正式版\n对量化精度非常敏感\n我也测试了低精度\n量化版给我的感觉就像换了一个模型一样\n差异很大\n所以如果自己部署\n建议大家采用Q8这样的高精度量化\n接下来我们让他用HTML5写一个打砖块游戏\n我们可以看到TG的速度稳定在9~10个token\n每秒\n♪ 何清风给云墨色 ♪\n♪ 秋天默默向昏黑 ♪\n♪ 无情多难 ♪\n♪ 弄死铁娇而不 ♪\n接下来我们测试一下他写好的游戏\n♪ 你风头落甘处 ♪\n♪ 绿脚如麻未断绝 ♪\n♪ 紫金双乱 ♪\n♪ 少睡眠 ♪\n长夜沾湿和油车\n接下来我们把生成的代码反向提交给他\n来实测一下它的pp性能\n♪ 大庇天下寒士 ♪\n通过测试处理5800个token的提示词\n约70个token每秒\n等rock more崩溃问题修复以后\n使用rock more的性能应该可以进一步提升\n通过我这几天的测试和使用\n建议大家\n如果自己本地部署deep sick v4flash\n0731正式版\n优先Q8量化精度\n双max加395\n使用VN可以正常运行\ndeep sick v4flash0731正式版\n但是性能有限\n这样的性能无法搭载open claw或者HERMES\n这样的智能体使用\n更适合有本地部署需求的非专业公司\n本地问答使用双max加395\n能够解决能不能运行的问题\n解决不了运行性能的问题\n这与产品定位也是吻合的\n期待尽快修复rock more崩溃问题\n为设备带来进一步的性能提升\n今天的分享就到这里了\n大家如果有什么问题可以在评论区给我留言\n大家一起友好的交流",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1FDuc6hEd6",
+  "published_at": "1785834688",
+  "fetched_at": "2026-08-06T19:31:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek v4 Flash 0731 实测与部署知识图谱\n\n## 环境概览\n```mermaid\nflowchart TD\n    HW1[\"两台 Max + 395 主机\"]\n    HW2[\"通过 USB4V 双机互连\"]\n    OS[\"操作系统：Ubuntu 24.04\"]\n    INF[\"推理引擎：LEMACPPB10253\"]\n    BE[\"后端：VCN 1.4.357.0\"]\n    QNT[\"模型量化：Q8（高精度）\"]\n    DEP[\"部署方式：RPC\"]\n    MEM1[\"节点显存消耗≈52 GB\"]\n    MEM2[\"主节点显存消耗≈111 GB\"]\n    HW1 --> HW2\n    HW1 --> MEM1\n    HW2 --> MEM2\n    OS --> INF\n    INF --> BE\n    BE --> QNT\n    QNT --> DEP\n```\n\n## 部署与运行流程\n```mermaid\nflowchart TD\n    START[\"开始：RPC 完成部署\"]\n    CODE[\"生成 HTML5 打砖块游戏代码\"]\n    RUN[\"双机集群双击运行\"]\n    SPEED[\"生成速率 9~10 token/秒\"]\n    TEST[\"处理 5800 token 提示词\"]\n    PERF[\"约 70 token/秒\"]\n    ROCK[\"rockmore 7.14/7.15/7.2.4 在 4000 token 以上崩溃\"]\n    VOCON[\"改用 VOCON 后端规避崩溃\"]\n    START --> CODE --> RUN --> SPEED\n    RUN --> TEST --> PERF\n    RUN --> ROCK --> VOCON\n```\n\n## 量化精度建议\n```mermaid\nflowchart TD\n    SENS[\"DeepSeek v4 Flash 对量化精度敏感\"]\n    HIGH[\"Q8 高精度量化\"]\n    LOW[\"低精度量化\"]\n    DIFF[\"生成质量差异显著\"]\n    RECOMM[\"建议采用 Q8 量化\"]\n    SENS --> HIGH\n    SENS --> LOW\n    HIGH --> DIFF\n    LOW --> DIFF\n    DIFF --> RECOMM\n```\n\n## 性能与适用场景\n```mermaid\nflowchart TD\n    LIMIT[\"性能有限\"]\n    CANNOT[\"无法运行 OpenClaw / HERMES 等大型智能体\"]\n    SUITABLE[\"更适合本地部署需求的非专业公司\"]\n    QA[\"本地问答可使用双 Max + 395 解决可运行性\"]\n    GAP[\"仍无法解决运行性能瓶颈\"]\n    ALIGN[\"与产品定位吻合\"]\n    LIMIT --> CANNOT\n    LIMIT --> GAP\n    CANNOT --> SUITABLE\n    QA --> ALIGN\n    GAP --> ALIGN\n```\n\n## 未来改进与期待\n```mermaid\nflowchart TD\n    ISSUE[\"rockmore 崩溃问题\"]\n    FIX[\"期待尽快修复\"]\n    BOOST[\"修复后性能可进一步提升\"]\n    DEV[\"为设备带来更高吞吐\"]\n    FUTURE[\"持续关注更新，提升本地部署体验\"]\n    ISSUE --> FIX --> BOOST --> DEV --> FUTURE\n```",
+      "diagrams": [
+        {
+          "title": "环境概览",
+          "code": "flowchart TD\n    HW1[\"两台 Max + 395 主机\"]\n    HW2[\"通过 USB4V 双机互连\"]\n    OS[\"操作系统：Ubuntu 24.04\"]\n    INF[\"推理引擎：LEMACPPB10253\"]\n    BE[\"后端：VCN 1.4.357.0\"]\n    QNT[\"模型量化：Q8（高精度）\"]\n    DEP[\"部署方式：RPC\"]\n    MEM1[\"节点显存消耗≈52 GB\"]\n    MEM2[\"主节点显存消耗≈111 GB\"]\n    HW1 --> HW2\n    HW1 --> MEM1\n    HW2 --> MEM2\n    OS --> INF\n    INF --> BE\n    BE --> QNT\n    QNT --> DEP"
+        },
+        {
+          "title": "部署与运行流程",
+          "code": "flowchart TD\n    START[\"开始：RPC 完成部署\"]\n    CODE[\"生成 HTML5 打砖块游戏代码\"]\n    RUN[\"双机集群双击运行\"]\n    SPEED[\"生成速率 9~10 token/秒\"]\n    TEST[\"处理 5800 token 提示词\"]\n    PERF[\"约 70 token/秒\"]\n    ROCK[\"rockmore 7.14/7.15/7.2.4 在 4000 token 以上崩溃\"]\n    VOCON[\"改用 VOCON 后端规避崩溃\"]\n    START --> CODE --> RUN --> SPEED\n    RUN --> TEST --> PERF\n    RUN --> ROCK --> VOCON"
+        },
+        {
+          "title": "量化精度建议",
+          "code": "flowchart TD\n    SENS[\"DeepSeek v4 Flash 对量化精度敏感\"]\n    HIGH[\"Q8 高精度量化\"]\n    LOW[\"低精度量化\"]\n    DIFF[\"生成质量差异显著\"]\n    RECOMM[\"建议采用 Q8 量化\"]\n    SENS --> HIGH\n    SENS --> LOW\n    HIGH --> DIFF\n    LOW --> DIFF\n    DIFF --> RECOMM"
+        },
+        {
+          "title": "性能与适用场景",
+          "code": "flowchart TD\n    LIMIT[\"性能有限\"]\n    CANNOT[\"无法运行 OpenClaw / HERMES 等大型智能体\"]\n    SUITABLE[\"更适合本地部署需求的非专业公司\"]\n    QA[\"本地问答可使用双 Max + 395 解决可运行性\"]\n    GAP[\"仍无法解决运行性能瓶颈\"]\n    ALIGN[\"与产品定位吻合\"]\n    LIMIT --> CANNOT\n    LIMIT --> GAP\n    CANNOT --> SUITABLE\n    QA --> ALIGN\n    GAP --> ALIGN"
+        },
+        {
+          "title": "未来改进与期待",
+          "code": "flowchart TD\n    ISSUE[\"rockmore 崩溃问题\"]\n    FIX[\"期待尽快修复\"]\n    BOOST[\"修复后性能可进一步提升\"]\n    DEV[\"为设备带来更高吞吐\"]\n    FUTURE[\"持续关注更新，提升本地部署体验\"]\n    ISSUE --> FIX --> BOOST --> DEV --> FUTURE"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T19:31:44+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek v4 Flash 0731 实测与部署知识图谱\n\n## 环境概览\n```mermaid\nflowchart TD\n    HW1[\"两台 Max + 395 主机\"]\n    HW2[\"通过 USB4V 双机互连\"]\n    OS[\"操作系统：Ubuntu 24.04\"]\n    INF[\"推理引擎：LEMACPPB10253\"]\n    BE[\"后端：VCN 1.4.357.0\"]\n    QNT[\"模型量化：Q8（高精度）\"]\n    DEP[\"部署方式：RPC\"]\n    MEM1[\"节点显存消耗≈52 GB\"]\n    MEM2[\"主节点显存消耗≈111 GB\"]\n    HW1 --> HW2\n    HW1 --> MEM1\n    HW2 --> MEM2\n    OS --> INF\n    INF --> BE\n    BE --> QNT\n    QNT --> DEP\n```\n\n## 部署与运行流程\n```mermaid\nflowchart TD\n    START[\"开始：RPC 完成部署\"]\n    CODE[\"生成 HTML5 打砖块游戏代码\"]\n    RUN[\"双机集群双击运行\"]\n    SPEED[\"生成速率 9~10 token/秒\"]\n    TEST[\"处理 5800 token 提示词\"]\n    PERF[\"约 70 token/秒\"]\n    ROCK[\"rockmore 7.14/7.15/7.2.4 在 4000 token 以上崩溃\"]\n    VOCON[\"改用 VOCON 后端规避崩溃\"]\n    START --> CODE --> RUN --> SPEED\n    RUN --> TEST --> PERF\n    RUN --> ROCK --> VOCON\n```\n\n## 量化精度建议\n```mermaid\nflowchart TD\n    SENS[\"DeepSeek v4 Flash 对量化精度敏感\"]\n    HIGH[\"Q8 高精度量化\"]\n    LOW[\"低精度量化\"]\n    DIFF[\"生成质量差异显著\"]\n    RECOMM[\"建议采用 Q8 量化\"]\n    SENS --> HIGH\n    SENS --> LOW\n    HIGH --> DIFF\n    LOW --> DIFF\n    DIFF --> RECOMM\n```\n\n## 性能与适用场景\n```mermaid\nflowchart TD\n    LIMIT[\"性能有限\"]\n    CANNOT[\"无法运行 OpenClaw / HERMES 等大型智能体\"]\n    SUITABLE[\"更适合本地部署需求的非专业公司\"]\n    QA[\"本地问答可使用双 Max + 395 解决可运行性\"]\n    GAP[\"仍无法解决运行性能瓶颈\"]\n    ALIGN[\"与产品定位吻合\"]\n    LIMIT --> CANNOT\n    LIMIT --> GAP\n    CANNOT --> SUITABLE\n    QA --> ALIGN\n    GAP --> ALIGN\n```\n\n## 未来改进与期待\n```mermaid\nflowchart TD\n    ISSUE[\"rockmore 崩溃问题\"]\n    FIX[\"期待尽快修复\"]\n    BOOST[\"修复后性能可进一步提升\"]\n    DEV[\"为设备带来更高吞吐\"]\n    FUTURE[\"持续关注更新，提升本地部署体验\"]\n    ISSUE --> FIX --> BOOST --> DEV --> FUTURE\n```",
+  "diagrams": [
+    {
+      "title": "环境概览",
+      "code": "flowchart TD\n    HW1[\"两台 Max + 395 主机\"]\n    HW2[\"通过 USB4V 双机互连\"]\n    OS[\"操作系统：Ubuntu 24.04\"]\n    INF[\"推理引擎：LEMACPPB10253\"]\n    BE[\"后端：VCN 1.4.357.0\"]\n    QNT[\"模型量化：Q8（高精度）\"]\n    DEP[\"部署方式：RPC\"]\n    MEM1[\"节点显存消耗≈52 GB\"]\n    MEM2[\"主节点显存消耗≈111 GB\"]\n    HW1 --> HW2\n    HW1 --> MEM1\n    HW2 --> MEM2\n    OS --> INF\n    INF --> BE\n    BE --> QNT\n    QNT --> DEP"
+    },
+    {
+      "title": "部署与运行流程",
+      "code": "flowchart TD\n    START[\"开始：RPC 完成部署\"]\n    CODE[\"生成 HTML5 打砖块游戏代码\"]\n    RUN[\"双机集群双击运行\"]\n    SPEED[\"生成速率 9~10 token/秒\"]\n    TEST[\"处理 5800 token 提示词\"]\n    PERF[\"约 70 token/秒\"]\n    ROCK[\"rockmore 7.14/7.15/7.2.4 在 4000 token 以上崩溃\"]\n    VOCON[\"改用 VOCON 后端规避崩溃\"]\n    START --> CODE --> RUN --> SPEED\n    RUN --> TEST --> PERF\n    RUN --> ROCK --> VOCON"
+    },
+    {
+      "title": "量化精度建议",
+      "code": "flowchart TD\n    SENS[\"DeepSeek v4 Flash 对量化精度敏感\"]\n    HIGH[\"Q8 高精度量化\"]\n    LOW[\"低精度量化\"]\n    DIFF[\"生成质量差异显著\"]\n    RECOMM[\"建议采用 Q8 量化\"]\n    SENS --> HIGH\n    SENS --> LOW\n    HIGH --> DIFF\n    LOW --> DIFF\n    DIFF --> RECOMM"
+    },
+    {
+      "title": "性能与适用场景",
+      "code": "flowchart TD\n    LIMIT[\"性能有限\"]\n    CANNOT[\"无法运行 OpenClaw / HERMES 等大型智能体\"]\n    SUITABLE[\"更适合本地部署需求的非专业公司\"]\n    QA[\"本地问答可使用双 Max + 395 解决可运行性\"]\n    GAP[\"仍无法解决运行性能瓶颈\"]\n    ALIGN[\"与产品定位吻合\"]\n    LIMIT --> CANNOT\n    LIMIT --> GAP\n    CANNOT --> SUITABLE\n    QA --> ALIGN\n    GAP --> ALIGN"
+    },
+    {
+      "title": "未来改进与期待",
+      "code": "flowchart TD\n    ISSUE[\"rockmore 崩溃问题\"]\n    FIX[\"期待尽快修复\"]\n    BOOST[\"修复后性能可进一步提升\"]\n    DEV[\"为设备带来更高吞吐\"]\n    FUTURE[\"持续关注更新，提升本地部署体验\"]\n    ISSUE --> FIX --> BOOST --> DEV --> FUTURE"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:31:44+00:00"
+}

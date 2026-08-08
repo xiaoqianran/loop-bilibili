@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1zCjg6rE9F",
+  "title": "141. 多轮对话中Decode之后还要增量Prefill，那新的KV如何并入KV Cache？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1022,
+  "text": "今天的问题是多轮对话中\ndecode之后还要增量PREFL\n那么新的KV要如何并入kv cash之前分析过\n如果是单轮对话\n用户先把提示发给模型\n模型先做PREFU\n然后decode生成回复\n但在多轮对话中\n模型生成回复之后\n用户会继续发来一大段新的提示词\n模型又要进行回复\n那么模型收到的这一段新提示词\n相当于要做一次增量的PREFILE\n此时增量PREFILE的KV要怎么并入KV开始呢\n结论先行\n之前的decode每次只并入一小条KB\n而增量的PREFU会并入多条KB\n先来看一下pref的可视化\n这里的三行指的是用户发来了三个token\n投影得到QKV\n然后Q和K的转置相乘\n相当于做内积\n算出注意力分数矩阵A\n由于gt的右上角有因果掩码\n这里用紫色表示\n再乘以V相当于加权平均算出OFFN\n先让维度变长\n再让维度变短\n这就是prefl decode的Q是没有cash的\n怎么可视化呢\n用虚线表示\n原来这里应该有一个Q\n但重复计算是没有必要的\n所以Q不需要cash模型\n把新生成的那个词投影到QKV\n注意新生成出来的是一个向量\n而不是一个大的矩阵\n这就是decode\n然后把这条KV并入kv cash\n就是这个再拿新生成的这个Q去查询\n之前所有的K注意是之前所有的\n也包括现在刚刚加入的\n相当于做内机算出A它也是一个小条\n然后A再和V加权平均算出O它也是一个小条\nFFN先变长后变短\n相当于矩阵乘向量\n如果是增量的PREFU\n此时用户新发来的提示词\n比如这里也是三个token\n那么同理Q是没有cash的\n之前这部分也没有\n然后KV有三个向量\n把它们并入到之前的k v cash\n同理用这多条的Q去查询所有的K\n就这一些\n所有的也包括现在的K会算出来这里的这个A\n然后和V加权平均\n以此类推\n值得注意的是\nPREFLE是需要因果掩码的\n这些都得有\n包括这个增量的PREFILE在这里也有\n为什么呢\n因为PREFL一次能看到未来的token\n所以要防止信息泄露\n但decode这里不需要显示画出来\n为什么呢\n因为decode的因果掩码是内禀的\ndecode本来就看不到未来\n所以它的因果性天然成立\n还要注意\n如果把decode的这一段拼在这个下面\n它正好会构成一个楼梯形\n像这样\n那么上面的部分就被遮住了\n同理这个增量的PREFILE也这样\n如果把这个给它拼在这里\n像这样\n那它也会构成一个楼梯形\n像这样\n右上角都是码住的\n也就是看不到的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zCjg6rE9F",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:42+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

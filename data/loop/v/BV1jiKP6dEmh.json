@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1jiKP6dEmh",
+  "title": "用deepseek，一天开发游戏的进度（新游戏开发中：末日堡垒对抗）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 25,
+  "text": "一号一号请到我三点钟方向\n一号一号请到我前面10米",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1jiKP6dEmh",
+  "published_at": "1784372050",
+  "fetched_at": "2026-08-07T08:19:24+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 用deepseek，一天开发游戏的进度（新游戏开发中：末日堡垒对抗）\n\n## 指令概览\n```mermaid\nflowchart TD\n    A[\"接收指令\"] --> B[\"目标标识：'一号'\"]\n    B --> C[\"动作：请到\"]\n    C --> D[\"方向：三点钟方向\"]\n    C --> E[\"距离：前面10米\"]\n```\n\n## 指令执行流程\n```mermaid\nflowchart TD\n    A[\"接收指令\"] --> B[\"解析目标\"]\n    B --> C[\"解析方向/距离\"]\n    C --> D[\"计算目标坐标\"]\n    D --> E[\"指挥单位移动\"]\n```\n\n**证据**  \n- 一号一号请到我三点钟方向 [BV1jiKP6dEmh P1 00:15]  \n- 一号一号请到我前面10米 [BV1jiKP6dEmh P1 00:34]",
+      "diagrams": [
+        {
+          "title": "指令概览",
+          "code": "flowchart TD\n    A[\"接收指令\"] --> B[\"目标标识：'一号'\"]\n    B --> C[\"动作：请到\"]\n    C --> D[\"方向：三点钟方向\"]\n    C --> E[\"距离：前面10米\"]"
+        },
+        {
+          "title": "指令执行流程",
+          "code": "flowchart TD\n    A[\"接收指令\"] --> B[\"解析目标\"]\n    B --> C[\"解析方向/距离\"]\n    C --> D[\"计算目标坐标\"]\n    D --> E[\"指挥单位移动\"]"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-07T08:20:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 用deepseek，一天开发游戏的进度（新游戏开发中：末日堡垒对抗）\n\n## 指令概览\n```mermaid\nflowchart TD\n    A[\"接收指令\"] --> B[\"目标标识：'一号'\"]\n    B --> C[\"动作：请到\"]\n    C --> D[\"方向：三点钟方向\"]\n    C --> E[\"距离：前面10米\"]\n```\n\n## 指令执行流程\n```mermaid\nflowchart TD\n    A[\"接收指令\"] --> B[\"解析目标\"]\n    B --> C[\"解析方向/距离\"]\n    C --> D[\"计算目标坐标\"]\n    D --> E[\"指挥单位移动\"]\n```\n\n**证据**  \n- 一号一号请到我三点钟方向 [BV1jiKP6dEmh P1 00:15]  \n- 一号一号请到我前面10米 [BV1jiKP6dEmh P1 00:34]",
+  "diagrams": [
+    {
+      "title": "指令概览",
+      "code": "flowchart TD\n    A[\"接收指令\"] --> B[\"目标标识：'一号'\"]\n    B --> C[\"动作：请到\"]\n    C --> D[\"方向：三点钟方向\"]\n    C --> E[\"距离：前面10米\"]"
+    },
+    {
+      "title": "指令执行流程",
+      "code": "flowchart TD\n    A[\"接收指令\"] --> B[\"解析目标\"]\n    B --> C[\"解析方向/距离\"]\n    C --> D[\"计算目标坐标\"]\n    D --> E[\"指挥单位移动\"]"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:20:32+00:00"
+}

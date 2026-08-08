@@ -1,0 +1,66 @@
+{
+  "bvid": "BV144gq61Emo",
+  "title": "用 Godot 4 制作HD2D地下城RPG：完整项目实战开发课程(上)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 507,
+  "text": "欢迎来到爱在一毛钱频道\n如果能在使用GODOT游戏引擎的同时\n继续使用c#\n是不是很酷\n这正是我们在这门课程中要做的\n你的指导老师是路易斯拉米雷斯\n在编写高质量结构清晰的代码方面\n他堪称真正的专家\n路易斯\n我们在这门课程中能学到什么呢\n这门课程将教你如何使用c#和GODOT\n游戏引擎开发一款动作角色扮演游戏\n我们将要开发的这款游戏\n是一款经典的地下城角色扮演游戏\n它结合了2D和3D图形技术\n我们的英雄\n将与那些由状态机控制的敌人进行战斗\n还能投掷炸弹\n在进行连招攻击时\n更会获得闪电攻击作为奖励\n这门课程适合已具备c#入门知识\n并希望继续学习抽象类观察者模式\nLINQ等中高级编程概念的学习者\n除此之外\n我们还将学习如何利用这些控制节点来\n正确实现像素及精确的用户界面设计\n在课程的最后阶段\n我们还会学习着色器和粒子系统等相关内容\n从而让我们的游戏更具吸引力\n更加令人印象深刻\n这里是爱在一毛钱频道\n一年多来\n我帮助了许多学生深入了解游戏开发技术\n我们所有的课程都提供相应的教程素材\n确保你在学习过程中永远不会遇到困难\n我们非常期待你的加入\n也很好奇\n你能在高DOTA中创造出什么令人惊喜的作品\n我们在那里见吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV144gq61Emo",
+  "published_at": "1785020640",
+  "fetched_at": "2026-08-08T04:15:56+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 4 HD2D 地下城 RPG 课程知识图谱\n\n## 课程总体结构\n\n[00:01] 使用 Godot 引擎  \n[00:03] 使用 C#  \n[00:20] 开发动作角色扮演游戏  \n[00:26] 经典地下城 RPG  \n[00:29] 结合 2D 与 3D 图形  \n[00:44] 适合已具备 C# 入门的学习者  \n\n```mermaid\nflowchart TD\n    Intro[\"课程简介\"] --> Teacher[\"指导老师：路易斯·拉米雷斯\"]\n    Intro --> Language[\"使用语言：C#\"]\n    Intro --> Engine[\"游戏引擎：Godot 4\"]\n    Engine --> GameType[\"游戏类型：动作角色扮演\"]\n    GameType --> CoreFeatures[\"核心功能\"]\n    CoreFeatures --> Graphics[\"2D + 3D 图形技术\"]\n    CoreFeatures --> Enemy[\"状态机控制的敌人\"]\n    CoreFeatures --> Combat[\"投掷炸弹、连招攻击\"]\n    Combat --> Reward[\"闪电攻击奖励\"]\n    Intro --> Audience[\"目标受众：具备 C# 基础\"]\n    Audience --> Topics[\"学习主题\"]\n    Topics --> OOP[\"抽象类、观察者模式\"]\n    Topics --> LINQ[\"LINQ 等中高级概念\"]\n    Topics --> UI[\"像素级 UI 设计\"]\n    Topics --> Visual[\"着色器、粒子系统\"]\n```\n\n## 学习路径与关键概念\n\n[00:47] 抽象类、观察者模式  \n[00:49] LINQ  \n[01:01] 像素及精确 UI 设计  \n[01:09] 着色器和粒子系统提升视觉  \n\n```mermaid\nflowchart TD\n    Start[\"课程开始\"] --> CSharp[\"C# 基础复习\"]\n    CSharp --> OOP[\"抽象类 & 观察者模式\"]\n    OOP --> LINQ[\"LINQ 使用\"]\n    LINQ --> StateMachine[\"状态机实现\"]\n    StateMachine --> UI[\"像素级 UI 设计\"]\n    UI --> Shader[\"着色器基础\"]\n    Shader --> Particles[\"粒子系统\"]\n    Particles --> Project[\"完整项目实战\"]\n    Project --> End[\"课程结束\"]\n```\n\n## 游戏核心功能实现\n\n[00:33] 状态机控制的敌人  \n[00:36] 投掷炸弹  \n[00:39] 连招攻击获得闪电奖励  \n[01:09] 着色器与粒子系统提升视觉  \n\n```mermaid\nflowchart TD\n    Hero[\"玩家角色\"]\n    Enemy[\"状态机控制的敌人\"]\n    Bomb[\"投掷炸弹\"]\n    Combo[\"连招攻击\"]\n    Lightning[\"闪电攻击奖励\"]\n    Graphics2D[\"2D 图形\"]\n    Graphics3D[\"3D 图形\"]\n    UI[\"像素级 UI\"]\n    Shader[\"着色器\"]\n    Particles[\"粒子系统\"]\n\n    Hero --> Enemy\n    Hero --> Bomb\n    Hero --> Combo\n    Combo --> Lightning\n    Hero --> UI\n    Graphics2D --> UI\n    Graphics3D --> UI\n    UI --> Shader\n    Shader --> Particles\n```",
+      "diagrams": [
+        {
+          "title": "课程总体结构",
+          "code": "flowchart TD\n    Intro[\"课程简介\"] --> Teacher[\"指导老师：路易斯·拉米雷斯\"]\n    Intro --> Language[\"使用语言：C#\"]\n    Intro --> Engine[\"游戏引擎：Godot 4\"]\n    Engine --> GameType[\"游戏类型：动作角色扮演\"]\n    GameType --> CoreFeatures[\"核心功能\"]\n    CoreFeatures --> Graphics[\"2D + 3D 图形技术\"]\n    CoreFeatures --> Enemy[\"状态机控制的敌人\"]\n    CoreFeatures --> Combat[\"投掷炸弹、连招攻击\"]\n    Combat --> Reward[\"闪电攻击奖励\"]\n    Intro --> Audience[\"目标受众：具备 C# 基础\"]\n    Audience --> Topics[\"学习主题\"]\n    Topics --> OOP[\"抽象类、观察者模式\"]\n    Topics --> LINQ[\"LINQ 等中高级概念\"]\n    Topics --> UI[\"像素级 UI 设计\"]\n    Topics --> Visual[\"着色器、粒子系统\"]"
+        },
+        {
+          "title": "学习路径与关键概念",
+          "code": "flowchart TD\n    Start[\"课程开始\"] --> CSharp[\"C# 基础复习\"]\n    CSharp --> OOP[\"抽象类 & 观察者模式\"]\n    OOP --> LINQ[\"LINQ 使用\"]\n    LINQ --> StateMachine[\"状态机实现\"]\n    StateMachine --> UI[\"像素级 UI 设计\"]\n    UI --> Shader[\"着色器基础\"]\n    Shader --> Particles[\"粒子系统\"]\n    Particles --> Project[\"完整项目实战\"]\n    Project --> End[\"课程结束\"]"
+        },
+        {
+          "title": "游戏核心功能实现",
+          "code": "flowchart TD\n    Hero[\"玩家角色\"]\n    Enemy[\"状态机控制的敌人\"]\n    Bomb[\"投掷炸弹\"]\n    Combo[\"连招攻击\"]\n    Lightning[\"闪电攻击奖励\"]\n    Graphics2D[\"2D 图形\"]\n    Graphics3D[\"3D 图形\"]\n    UI[\"像素级 UI\"]\n    Shader[\"着色器\"]\n    Particles[\"粒子系统\"]\n\n    Hero --> Enemy\n    Hero --> Bomb\n    Hero --> Combo\n    Combo --> Lightning\n    Hero --> UI\n    Graphics2D --> UI\n    Graphics3D --> UI\n    UI --> Shader\n    Shader --> Particles"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T04:26:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 4 HD2D 地下城 RPG 课程知识图谱\n\n## 课程总体结构\n\n[00:01] 使用 Godot 引擎  \n[00:03] 使用 C#  \n[00:20] 开发动作角色扮演游戏  \n[00:26] 经典地下城 RPG  \n[00:29] 结合 2D 与 3D 图形  \n[00:44] 适合已具备 C# 入门的学习者  \n\n```mermaid\nflowchart TD\n    Intro[\"课程简介\"] --> Teacher[\"指导老师：路易斯·拉米雷斯\"]\n    Intro --> Language[\"使用语言：C#\"]\n    Intro --> Engine[\"游戏引擎：Godot 4\"]\n    Engine --> GameType[\"游戏类型：动作角色扮演\"]\n    GameType --> CoreFeatures[\"核心功能\"]\n    CoreFeatures --> Graphics[\"2D + 3D 图形技术\"]\n    CoreFeatures --> Enemy[\"状态机控制的敌人\"]\n    CoreFeatures --> Combat[\"投掷炸弹、连招攻击\"]\n    Combat --> Reward[\"闪电攻击奖励\"]\n    Intro --> Audience[\"目标受众：具备 C# 基础\"]\n    Audience --> Topics[\"学习主题\"]\n    Topics --> OOP[\"抽象类、观察者模式\"]\n    Topics --> LINQ[\"LINQ 等中高级概念\"]\n    Topics --> UI[\"像素级 UI 设计\"]\n    Topics --> Visual[\"着色器、粒子系统\"]\n```\n\n## 学习路径与关键概念\n\n[00:47] 抽象类、观察者模式  \n[00:49] LINQ  \n[01:01] 像素及精确 UI 设计  \n[01:09] 着色器和粒子系统提升视觉  \n\n```mermaid\nflowchart TD\n    Start[\"课程开始\"] --> CSharp[\"C# 基础复习\"]\n    CSharp --> OOP[\"抽象类 & 观察者模式\"]\n    OOP --> LINQ[\"LINQ 使用\"]\n    LINQ --> StateMachine[\"状态机实现\"]\n    StateMachine --> UI[\"像素级 UI 设计\"]\n    UI --> Shader[\"着色器基础\"]\n    Shader --> Particles[\"粒子系统\"]\n    Particles --> Project[\"完整项目实战\"]\n    Project --> End[\"课程结束\"]\n```\n\n## 游戏核心功能实现\n\n[00:33] 状态机控制的敌人  \n[00:36] 投掷炸弹  \n[00:39] 连招攻击获得闪电奖励  \n[01:09] 着色器与粒子系统提升视觉  \n\n```mermaid\nflowchart TD\n    Hero[\"玩家角色\"]\n    Enemy[\"状态机控制的敌人\"]\n    Bomb[\"投掷炸弹\"]\n    Combo[\"连招攻击\"]\n    Lightning[\"闪电攻击奖励\"]\n    Graphics2D[\"2D 图形\"]\n    Graphics3D[\"3D 图形\"]\n    UI[\"像素级 UI\"]\n    Shader[\"着色器\"]\n    Particles[\"粒子系统\"]\n\n    Hero --> Enemy\n    Hero --> Bomb\n    Hero --> Combo\n    Combo --> Lightning\n    Hero --> UI\n    Graphics2D --> UI\n    Graphics3D --> UI\n    UI --> Shader\n    Shader --> Particles\n```",
+  "diagrams": [
+    {
+      "title": "课程总体结构",
+      "code": "flowchart TD\n    Intro[\"课程简介\"] --> Teacher[\"指导老师：路易斯·拉米雷斯\"]\n    Intro --> Language[\"使用语言：C#\"]\n    Intro --> Engine[\"游戏引擎：Godot 4\"]\n    Engine --> GameType[\"游戏类型：动作角色扮演\"]\n    GameType --> CoreFeatures[\"核心功能\"]\n    CoreFeatures --> Graphics[\"2D + 3D 图形技术\"]\n    CoreFeatures --> Enemy[\"状态机控制的敌人\"]\n    CoreFeatures --> Combat[\"投掷炸弹、连招攻击\"]\n    Combat --> Reward[\"闪电攻击奖励\"]\n    Intro --> Audience[\"目标受众：具备 C# 基础\"]\n    Audience --> Topics[\"学习主题\"]\n    Topics --> OOP[\"抽象类、观察者模式\"]\n    Topics --> LINQ[\"LINQ 等中高级概念\"]\n    Topics --> UI[\"像素级 UI 设计\"]\n    Topics --> Visual[\"着色器、粒子系统\"]"
+    },
+    {
+      "title": "学习路径与关键概念",
+      "code": "flowchart TD\n    Start[\"课程开始\"] --> CSharp[\"C# 基础复习\"]\n    CSharp --> OOP[\"抽象类 & 观察者模式\"]\n    OOP --> LINQ[\"LINQ 使用\"]\n    LINQ --> StateMachine[\"状态机实现\"]\n    StateMachine --> UI[\"像素级 UI 设计\"]\n    UI --> Shader[\"着色器基础\"]\n    Shader --> Particles[\"粒子系统\"]\n    Particles --> Project[\"完整项目实战\"]\n    Project --> End[\"课程结束\"]"
+    },
+    {
+      "title": "游戏核心功能实现",
+      "code": "flowchart TD\n    Hero[\"玩家角色\"]\n    Enemy[\"状态机控制的敌人\"]\n    Bomb[\"投掷炸弹\"]\n    Combo[\"连招攻击\"]\n    Lightning[\"闪电攻击奖励\"]\n    Graphics2D[\"2D 图形\"]\n    Graphics3D[\"3D 图形\"]\n    UI[\"像素级 UI\"]\n    Shader[\"着色器\"]\n    Particles[\"粒子系统\"]\n\n    Hero --> Enemy\n    Hero --> Bomb\n    Hero --> Combo\n    Combo --> Lightning\n    Hero --> UI\n    Graphics2D --> UI\n    Graphics3D --> UI\n    UI --> Shader\n    Shader --> Particles"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T04:26:24+00:00"
+}

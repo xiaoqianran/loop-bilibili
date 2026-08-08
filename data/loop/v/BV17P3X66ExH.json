@@ -1,0 +1,74 @@
+{
+  "bvid": "BV17P3X66ExH",
+  "title": "DeepSeek完整使用助手-2",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 510,
+  "text": "一块钱能买到什么\n在deep seek\n一块钱就是1000000token的输入成本\nDeep seek api\n两大模型\n极速轻量的flash旗舰\n深度的pro双档位\n各司其职\nflash模型\n支持JSON输出工具调用与responses API并发\n上限2500\n轻量高速全能\npro模型旗舰推理能力\n深度思考复杂任务\n并发上限500\n为关键业务而生\n先看输入价格\n缓存命中时\nflash每百万token只要两分钱\npro也只要两分五厘\n那没命中呢\nflash1元pro3元每百万token价格依旧能打\n再看输出价格\nflash每百万token两元\npro6元\n按量计费\n质量与价格成正比\n规格更是拉满双模型都支持100万上下文\n最大输出38万\n4000token长文一次到位\n接入零门槛\nOpenAI与ANTHROPIC两种格式\n通通支持一套密钥无缝迁移\n功能一个不少\nJSON输出工具\n调用responses API anthropic接口\n对话续写与FIM补全思考模式\n默认开启\n注意服务采用峰谷定价\n北京时间早九点到12点\n下午两点到六点\n高峰价格为平时两倍\n错峰更省\n开启你的deep seek API之旅",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV17P3X66ExH",
+  "published_at": "1785664800",
+  "fetched_at": "2026-08-07T03:22:49+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek API 知识图谱\n\n## 模型概览\n```mermaid\nflowchart TD\n    FlashModel[\"Flash 模型\"]\n    ProModel[\"Pro 模型\"]\n    FlashFeatures[\"轻量高速全能<br/>支持 JSON 输出、工具调用、Responses API 并发\"]\n    ProFeatures[\"深度思考复杂任务<br/>关键业务专用\"]\n    FlashConcurrency[\"并发上限 2500\"]\n    ProConcurrency[\"并发上限 500\"]\n    FlashUseCase[\"适合高并发、低延迟场景\"]\n    ProUseCase[\"适合关键业务、复杂推理\"]\n\n    FlashModel --> FlashFeatures\n    FlashModel --> FlashConcurrency\n    FlashModel --> FlashUseCase\n    ProModel --> ProFeatures\n    ProModel --> ProConcurrency\n    ProModel --> ProUseCase\n```\n\n## 计费结构\n```mermaid\nflowchart TD\n    InputCacheHit[\"缓存命中时<br/>Flash: 0.02 元/百万 token\"]\n    InputCacheMiss[\"未命中时<br/>Flash: 1 元/百万 token\"]\n    ProInputMiss[\"未命中时<br/>Pro: 3 元/百万 token\"]\n    OutputFlash[\"Flash 输出<br/>2 元/百万 token\"]\n    OutputPro[\"Pro 输出<br/>6 元/百万 token\"]\n    PeakPeriod[\"高峰期（北京 9-12, 14-18）\"]\n    OffPeakPeriod[\"低峰期\"]\n    PeakMultiplier[\"高峰价格 = 平时 × 2\"]\n    TotalCost[\"总费用 = 输入费用 + 输出费用\"]\n\n    InputCacheHit --> InputCacheMiss\n    InputCacheMiss --> ProInputMiss\n    InputCacheMiss --> OutputFlash\n    ProInputMiss --> OutputPro\n    PeakPeriod --> PeakMultiplier\n    OffPeakPeriod --> PeakMultiplier\n    PeakMultiplier --> TotalCost\n    InputCacheHit --> TotalCost\n    OutputFlash --> TotalCost\n    OutputPro --> TotalCost\n```\n\n## 能力与限制\n```mermaid\nflowchart TD\n    ContextLength[\"支持约 100 万 token 上下文\"]\n    MaxOutputTokens[\"最大输出 38 万 token\"]\n    LongDocHandling[\"一次性处理 4000 token 长文\"]\n    FlashConcurrencyLimit[\"Flash 并发上限 2500\"]\n    ProConcurrencyLimit[\"Pro 并发上限 500\"]\n    JSONOutput[\"支持 JSON 输出\"]\n    ResponsesAPI[\"支持 responses API（Anthropic 接口）\"]\n    FIMMode[\"默认开启对话续写与 FIM 补全\"]\n\n    ContextLength --> MaxOutputTokens\n    MaxOutputTokens --> LongDocHandling\n    FlashConcurrencyLimit --> JSONOutput\n    ProConcurrencyLimit --> ResponsesAPI\n    JSONOutput --> FIMMode\n    ResponsesAPI --> FIMMode\n```\n\n## 接入与兼容\n```mermaid\nflowchart TD\n    OpenAIFormat[\"兼容 OpenAI 格式\"]\n    AnthropicFormat[\"兼容 Anthropic 格式\"]\n    UnifiedKey[\"一套密钥无缝迁移\"]\n    ZeroBarrier[\"接入零门槛\"]\n    APIEndpoints[\"统一 API 入口\"]\n    ToolCalls[\"支持工具调用\"]\n    MigrationPath[\"从旧系统迁移指南\"]\n\n    OpenAIFormat --> UnifiedKey\n    AnthropicFormat --> UnifiedKey\n    UnifiedKey --> ZeroBarrier\n    ZeroBarrier --> APIEndpoints\n    APIEndpoints --> ToolCalls\n    ToolCalls --> MigrationPath\n```",
+      "diagrams": [
+        {
+          "title": "模型概览",
+          "code": "flowchart TD\n    FlashModel[\"Flash 模型\"]\n    ProModel[\"Pro 模型\"]\n    FlashFeatures[\"轻量高速全能<br/>支持 JSON 输出、工具调用、Responses API 并发\"]\n    ProFeatures[\"深度思考复杂任务<br/>关键业务专用\"]\n    FlashConcurrency[\"并发上限 2500\"]\n    ProConcurrency[\"并发上限 500\"]\n    FlashUseCase[\"适合高并发、低延迟场景\"]\n    ProUseCase[\"适合关键业务、复杂推理\"]\n\n    FlashModel --> FlashFeatures\n    FlashModel --> FlashConcurrency\n    FlashModel --> FlashUseCase\n    ProModel --> ProFeatures\n    ProModel --> ProConcurrency\n    ProModel --> ProUseCase"
+        },
+        {
+          "title": "计费结构",
+          "code": "flowchart TD\n    InputCacheHit[\"缓存命中时<br/>Flash: 0.02 元/百万 token\"]\n    InputCacheMiss[\"未命中时<br/>Flash: 1 元/百万 token\"]\n    ProInputMiss[\"未命中时<br/>Pro: 3 元/百万 token\"]\n    OutputFlash[\"Flash 输出<br/>2 元/百万 token\"]\n    OutputPro[\"Pro 输出<br/>6 元/百万 token\"]\n    PeakPeriod[\"高峰期（北京 9-12, 14-18）\"]\n    OffPeakPeriod[\"低峰期\"]\n    PeakMultiplier[\"高峰价格 = 平时 × 2\"]\n    TotalCost[\"总费用 = 输入费用 + 输出费用\"]\n\n    InputCacheHit --> InputCacheMiss\n    InputCacheMiss --> ProInputMiss\n    InputCacheMiss --> OutputFlash\n    ProInputMiss --> OutputPro\n    PeakPeriod --> PeakMultiplier\n    OffPeakPeriod --> PeakMultiplier\n    PeakMultiplier --> TotalCost\n    InputCacheHit --> TotalCost\n    OutputFlash --> TotalCost\n    OutputPro --> TotalCost"
+        },
+        {
+          "title": "能力与限制",
+          "code": "flowchart TD\n    ContextLength[\"支持约 100 万 token 上下文\"]\n    MaxOutputTokens[\"最大输出 38 万 token\"]\n    LongDocHandling[\"一次性处理 4000 token 长文\"]\n    FlashConcurrencyLimit[\"Flash 并发上限 2500\"]\n    ProConcurrencyLimit[\"Pro 并发上限 500\"]\n    JSONOutput[\"支持 JSON 输出\"]\n    ResponsesAPI[\"支持 responses API（Anthropic 接口）\"]\n    FIMMode[\"默认开启对话续写与 FIM 补全\"]\n\n    ContextLength --> MaxOutputTokens\n    MaxOutputTokens --> LongDocHandling\n    FlashConcurrencyLimit --> JSONOutput\n    ProConcurrencyLimit --> ResponsesAPI\n    JSONOutput --> FIMMode\n    ResponsesAPI --> FIMMode"
+        },
+        {
+          "title": "接入与兼容",
+          "code": "flowchart TD\n    OpenAIFormat[\"兼容 OpenAI 格式\"]\n    AnthropicFormat[\"兼容 Anthropic 格式\"]\n    UnifiedKey[\"一套密钥无缝迁移\"]\n    ZeroBarrier[\"接入零门槛\"]\n    APIEndpoints[\"统一 API 入口\"]\n    ToolCalls[\"支持工具调用\"]\n    MigrationPath[\"从旧系统迁移指南\"]\n\n    OpenAIFormat --> UnifiedKey\n    AnthropicFormat --> UnifiedKey\n    UnifiedKey --> ZeroBarrier\n    ZeroBarrier --> APIEndpoints\n    APIEndpoints --> ToolCalls\n    ToolCalls --> MigrationPath"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T03:23:01+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek API 知识图谱\n\n## 模型概览\n```mermaid\nflowchart TD\n    FlashModel[\"Flash 模型\"]\n    ProModel[\"Pro 模型\"]\n    FlashFeatures[\"轻量高速全能<br/>支持 JSON 输出、工具调用、Responses API 并发\"]\n    ProFeatures[\"深度思考复杂任务<br/>关键业务专用\"]\n    FlashConcurrency[\"并发上限 2500\"]\n    ProConcurrency[\"并发上限 500\"]\n    FlashUseCase[\"适合高并发、低延迟场景\"]\n    ProUseCase[\"适合关键业务、复杂推理\"]\n\n    FlashModel --> FlashFeatures\n    FlashModel --> FlashConcurrency\n    FlashModel --> FlashUseCase\n    ProModel --> ProFeatures\n    ProModel --> ProConcurrency\n    ProModel --> ProUseCase\n```\n\n## 计费结构\n```mermaid\nflowchart TD\n    InputCacheHit[\"缓存命中时<br/>Flash: 0.02 元/百万 token\"]\n    InputCacheMiss[\"未命中时<br/>Flash: 1 元/百万 token\"]\n    ProInputMiss[\"未命中时<br/>Pro: 3 元/百万 token\"]\n    OutputFlash[\"Flash 输出<br/>2 元/百万 token\"]\n    OutputPro[\"Pro 输出<br/>6 元/百万 token\"]\n    PeakPeriod[\"高峰期（北京 9-12, 14-18）\"]\n    OffPeakPeriod[\"低峰期\"]\n    PeakMultiplier[\"高峰价格 = 平时 × 2\"]\n    TotalCost[\"总费用 = 输入费用 + 输出费用\"]\n\n    InputCacheHit --> InputCacheMiss\n    InputCacheMiss --> ProInputMiss\n    InputCacheMiss --> OutputFlash\n    ProInputMiss --> OutputPro\n    PeakPeriod --> PeakMultiplier\n    OffPeakPeriod --> PeakMultiplier\n    PeakMultiplier --> TotalCost\n    InputCacheHit --> TotalCost\n    OutputFlash --> TotalCost\n    OutputPro --> TotalCost\n```\n\n## 能力与限制\n```mermaid\nflowchart TD\n    ContextLength[\"支持约 100 万 token 上下文\"]\n    MaxOutputTokens[\"最大输出 38 万 token\"]\n    LongDocHandling[\"一次性处理 4000 token 长文\"]\n    FlashConcurrencyLimit[\"Flash 并发上限 2500\"]\n    ProConcurrencyLimit[\"Pro 并发上限 500\"]\n    JSONOutput[\"支持 JSON 输出\"]\n    ResponsesAPI[\"支持 responses API（Anthropic 接口）\"]\n    FIMMode[\"默认开启对话续写与 FIM 补全\"]\n\n    ContextLength --> MaxOutputTokens\n    MaxOutputTokens --> LongDocHandling\n    FlashConcurrencyLimit --> JSONOutput\n    ProConcurrencyLimit --> ResponsesAPI\n    JSONOutput --> FIMMode\n    ResponsesAPI --> FIMMode\n```\n\n## 接入与兼容\n```mermaid\nflowchart TD\n    OpenAIFormat[\"兼容 OpenAI 格式\"]\n    AnthropicFormat[\"兼容 Anthropic 格式\"]\n    UnifiedKey[\"一套密钥无缝迁移\"]\n    ZeroBarrier[\"接入零门槛\"]\n    APIEndpoints[\"统一 API 入口\"]\n    ToolCalls[\"支持工具调用\"]\n    MigrationPath[\"从旧系统迁移指南\"]\n\n    OpenAIFormat --> UnifiedKey\n    AnthropicFormat --> UnifiedKey\n    UnifiedKey --> ZeroBarrier\n    ZeroBarrier --> APIEndpoints\n    APIEndpoints --> ToolCalls\n    ToolCalls --> MigrationPath\n```",
+  "diagrams": [
+    {
+      "title": "模型概览",
+      "code": "flowchart TD\n    FlashModel[\"Flash 模型\"]\n    ProModel[\"Pro 模型\"]\n    FlashFeatures[\"轻量高速全能<br/>支持 JSON 输出、工具调用、Responses API 并发\"]\n    ProFeatures[\"深度思考复杂任务<br/>关键业务专用\"]\n    FlashConcurrency[\"并发上限 2500\"]\n    ProConcurrency[\"并发上限 500\"]\n    FlashUseCase[\"适合高并发、低延迟场景\"]\n    ProUseCase[\"适合关键业务、复杂推理\"]\n\n    FlashModel --> FlashFeatures\n    FlashModel --> FlashConcurrency\n    FlashModel --> FlashUseCase\n    ProModel --> ProFeatures\n    ProModel --> ProConcurrency\n    ProModel --> ProUseCase"
+    },
+    {
+      "title": "计费结构",
+      "code": "flowchart TD\n    InputCacheHit[\"缓存命中时<br/>Flash: 0.02 元/百万 token\"]\n    InputCacheMiss[\"未命中时<br/>Flash: 1 元/百万 token\"]\n    ProInputMiss[\"未命中时<br/>Pro: 3 元/百万 token\"]\n    OutputFlash[\"Flash 输出<br/>2 元/百万 token\"]\n    OutputPro[\"Pro 输出<br/>6 元/百万 token\"]\n    PeakPeriod[\"高峰期（北京 9-12, 14-18）\"]\n    OffPeakPeriod[\"低峰期\"]\n    PeakMultiplier[\"高峰价格 = 平时 × 2\"]\n    TotalCost[\"总费用 = 输入费用 + 输出费用\"]\n\n    InputCacheHit --> InputCacheMiss\n    InputCacheMiss --> ProInputMiss\n    InputCacheMiss --> OutputFlash\n    ProInputMiss --> OutputPro\n    PeakPeriod --> PeakMultiplier\n    OffPeakPeriod --> PeakMultiplier\n    PeakMultiplier --> TotalCost\n    InputCacheHit --> TotalCost\n    OutputFlash --> TotalCost\n    OutputPro --> TotalCost"
+    },
+    {
+      "title": "能力与限制",
+      "code": "flowchart TD\n    ContextLength[\"支持约 100 万 token 上下文\"]\n    MaxOutputTokens[\"最大输出 38 万 token\"]\n    LongDocHandling[\"一次性处理 4000 token 长文\"]\n    FlashConcurrencyLimit[\"Flash 并发上限 2500\"]\n    ProConcurrencyLimit[\"Pro 并发上限 500\"]\n    JSONOutput[\"支持 JSON 输出\"]\n    ResponsesAPI[\"支持 responses API（Anthropic 接口）\"]\n    FIMMode[\"默认开启对话续写与 FIM 补全\"]\n\n    ContextLength --> MaxOutputTokens\n    MaxOutputTokens --> LongDocHandling\n    FlashConcurrencyLimit --> JSONOutput\n    ProConcurrencyLimit --> ResponsesAPI\n    JSONOutput --> FIMMode\n    ResponsesAPI --> FIMMode"
+    },
+    {
+      "title": "接入与兼容",
+      "code": "flowchart TD\n    OpenAIFormat[\"兼容 OpenAI 格式\"]\n    AnthropicFormat[\"兼容 Anthropic 格式\"]\n    UnifiedKey[\"一套密钥无缝迁移\"]\n    ZeroBarrier[\"接入零门槛\"]\n    APIEndpoints[\"统一 API 入口\"]\n    ToolCalls[\"支持工具调用\"]\n    MigrationPath[\"从旧系统迁移指南\"]\n\n    OpenAIFormat --> UnifiedKey\n    AnthropicFormat --> UnifiedKey\n    UnifiedKey --> ZeroBarrier\n    ZeroBarrier --> APIEndpoints\n    APIEndpoints --> ToolCalls\n    ToolCalls --> MigrationPath"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:23:01+00:00"
+}

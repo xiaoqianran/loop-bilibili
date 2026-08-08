@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1HWKm69EPh",
+  "title": "【ComfyUI】Anima 8步模型对比 MiaoMiao 8-Step &Anima Turbo实测  能否替代官方Turbo？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3625,
+  "text": "各位观众朋友们大家好\n这里是左为\n本期视频呢依旧是一期模型的测评\n我们上期视频呢已经测过官方推出的美学模型\nV1.1的版本\n得出的结论呢也是非常显而易见\n就是V1.1呢\n它修复了之前V1.0模型存在的唯一问题\n也就是说呢它现在呢算是一个可用的模型\n我也是比较推荐大家去尝试使用的\n但是总体上看下来\n对比贝斯模型V1的话\n它提升不是特别大\n另外如果你本地硬盘空间紧张的话\n你可以接着用你原先的那个贝斯模型为一\n如果你想尝试一些微调模型的话\n你可以尝试这个喵喵12模型\n喵喵12模型是喵卡大佬\n他自己微调的一个模型\n嗯这个模型呢在社区中评价也是非常高的\n在C站呢也算是众多阿尼玛微调模型中\n下载量排行第一的一个模型了\n所以这里呢我是非常推荐你来用喵卡大佬的\n这些模型的\n呃最近呢喵凯大佬呢\n他也是新推出了他的这个八部蒸馏模型\n就是这个喵喵八部蒸馏基础版\n这个模型后续应该还是会更新的\n一切呢还要以后续最终版本的效果为准\n这里呢我仅做一个简单的测评\n测试过程呢也不算特别严谨\n仅作为一个参考\n首先呢我们介绍一下这个模型吧\n这个模型是喵喵阿尼玛八部基础蒸馏版\n这个模型它应该类似于官方的那个阿尼玛\nturbo模型\n也是一个蒸馏模型\n使用这两个模型都一样\n使用的时候呢\n只需要把这个生成步数调整为8~12\n或者你还可以调的更高一些\n但是我感觉调高步数之后呢没有什么意义\n因为我们使用这些蒸馏模型呢\n本身呢就希望它生成速度比较快\n如果你去使用这些模型\n你还把他的步数呢调的比较高的话\n我觉得意义不是特别大\n所以呢这里我们就设置为12步\n然后CFG值默认全都保持为一\n因为你即使调高的CFG值\n对于这些蒸馏模型来说呢\n也是没有什么效果的\n所以默认保持为一\n然后对于蒸馏模型来说呢\n它的负面提示词呢当然也是不生效的\n如果你想让你的负面提示词生效的话\n你可能需要搭配一些特殊的插件\n或者节点来使用\n才可以让这些负面提示词生效\n这里呢我就不展开来讲了\n我们直接跳转到我们的对比结果这里呃\n首先呢正式开始对比之前呢\n我们先介绍一下我们的这个工作流呢\n依旧是在running hub上进行搭建的\n这个平台的一大特色\n就是它这个平台上的所有的工作流\n都是可以直接免费打开进行查看的\n然后使用评论区的链接注册的话\n可以获得1000点积分\n每日登录呢还可以获得100点积分\n询问这些积分可以用来运行这些工作流\n来生成各种各样精彩的内容的\n好的\n我们回到测试结果\n这里正式的开始我们的对比\n正式对比之前呢\n我们先讲一下规则\n跟前两期的视频的规则是一样的\n我们本期视频呢依旧是使用这15套提示词\n说是15套\n其实严格算下来呢是30套A\n只不过呢这30套呢一半是有化石标签的\n一半是没有化石标签的\n有画式标签的呢测的就是他对化石标签的能力\n没有画师标签的呢\n就是他模型的原生的审美能力\n然后呢我们这次参与测试的模型呢一共是四个\n分别呢是喵喵12\n还有喵喵的八部模型\n以及呢之前的阿尼玛turbo模型\n以及喵喵12加上turbo加速LUA的一个对比\n然后对比的目的呢\n主要呢还是测试这个喵喵八部\n跟turbo模型的一些区别\n当然我们还要对比喵喵12加上turbo加速\nla和前面这两个加速模型的对比\n喵喵12本体的话\n它算是一个参照\n不参与直接对比啊\n所以呢我们正式的开始对比吧\n我们挑一些有代表性的来说\n一些差距不大的\n我们就先略过\n首先呢看第一组啊\n这里有画师版本的\n这里整体看下来呢\n我个人还是更喜欢喵喵12\n加上turbo加速度二的这个组合\n嗯这里呢跟原版的喵喵12要更接近一些\n至于这个turbo模型啊\n他可能跟原版的贝斯模型要接近一些\n然后turbo模型跟喵喵八部对比\n我更喜欢喵喵八部的这个美学效果\n然后呢看但底下这个没有化石标签的\n没有化石标签的呢\n我更喜欢这个turbo模型的它的美学效果\n我个人感觉他的墨尔美学\n可能就是继承于那个美学模型的\n所以他这个墨尔美学确实是感觉要好一些\n然后呢我们看第二组啊\n第二组依旧是一个3D风格的效果\n那这里呢我们看下来的\n依旧是感觉这个喵喵12加上turbo加速的话\n它的效果呢要更好一些\n然后这个喵喵八部\n他对这个3D效果呢确实是感觉有一定影响的\n像喵喵13或者14那样\n对这个3D效果的影响力过于大了\n然后这个turbo模型的话\n他这个效果可能跟贝斯模型有点像\n但是他这里具体的细节的话\n我感觉肯定是要比贝斯模型跑出来的细节\n少不少的\n然后喵喵八部这里他虽然没有还原3D效果\n但是它的细节呢没有损失那么多\n然后呢看底下这个没有画师的版本啊\n没有画师的版本依旧是turbo模型\n它的墨尔美学要高一筹的\n所以你如果不使用这个化石标签的话\n这个turbo模型的话其实也是值得一试的\n然后呢看这一组啊\n这一组的话是一个角色加背景的组合\n这里喵喵12加上turbo加速\n果然它的效果呢确实是要更好一些的\n但是如果加上背景的对比的话\n就可以看出来\n那就是喵喵八部\n这个感觉要好一些\n至于这个turbo模型\n它这里呢就感觉没太体现出\n那个画师的那个风格\n这里turbo模型好像表现的不太行\n然后呢我们看底下这个没有画师的标签\n这里这里只看人物的话\n我更喜欢turbo模型的效果\n如果加上背景的话\n我喜欢这个喵喵八部\n然后我们看这一组有画师的\n这里我感觉呢是喵喵八部\n这个它的效果要更好一些\n甚至单就这一张\n我感觉比喵喵12的美学还要好一些\n然后底下这个没有画师的版本的话\n整体看下来差距并不大\n硬要说哪个更好的话\n我感觉还是喵喵这个八部要好一些\n然后这里3D这个整体看下来的话\n我更喜欢喵喵12加上turbo加速这个效果\n底下这个没有画师的版本的\n我们更喜欢turbo模型的美学\nturbo模型呢没有那么油啊\n但是呢他这里只提出问题\n偶尔的话这些模型具体都会出问题\n可能是恰好这个准则他遇到的问题\n可能我们换一个种子\n他这里肢体就不会出问题了\n如果忽视这里的肢体问题的话\n我们肯定是更喜欢这个turbo模型的\n然后呢我们看这一组啊\n这里有画师的\n这里呢我个人更喜欢turbo模型呃\n这个喵喵八部\n他这里表现的就稍微有一些差了\n他这里的肢体也出问题了\n他这里的皮肤呢确实是有一些油腻了\n跟我这里的化石标签有些不搭了\n已经他这里对化石标签的影响\n确实是有一些大的啊\n然后呢看底下这个没有化石标签\n在这里这里呢依旧是更喜欢turbo模型的\n1TP模型的话\n他的墨尔美学确实是有些接近那个美学模型的\n至少我自己是比较喜欢这个墨尔美学风格的\n然后看这一组啊\n这一组的话呃这个喵喵八部呢他总是有种倾向\n就是生成这种自带光影的这种图片\n有时候呢它确实是正面效果\n但是有时候呢你想生成一种纯2D动漫效果\n图片的时候呢\n它这个效果呢反而会起反作用\n所以这里呢我可能更喜欢turbo模型一些\n以及喵喵12加上turbo加速的话\n它这里的效果也是非常不错的\n底下这个没有化石标签的\n这里呢就更不用说了\n也就是更喜欢turbo模型一些\n然后来到最后一大组的第一小组\n第一小组这里呢这两个蒸馏模型对比的话\n我更喜欢turbo的美学\n如果这里加上喵12加turbo laura的话\n那我更喜欢这个底下这个没有画师的\n这里\n我更喜欢喵12加turbo加索ROA这两个蒸馏模型\n感觉他们效果都挺一般的\n然后呢我们跳到这一组啊\n这组的话算是一个比较有代表性的一组了\n这里可能就显示出了喵喵模型的一个优势了\n就是他的光影确实是比较好的\n可能再跑一些自带光影的画师的图片的时候\n他这里的自带一些加成\n这里呢整体上看下来\n我更喜欢喵喵八部的这个效果\n这个turbo模型呢它更接近于一个原始手绘的效果\n他这里的光影呢不太符合这个化石的效果\n当然如果加上这个喵12加turbo laura的话\n肯定是更喜欢喵12加turbo罗尔的效果\n然后底下这个没有画师的\n这里呢整体看下来效果差不多\n你要说更喜欢的话\n那肯定是更喜欢喵喵八部的这个这个的话\n他的眼睛呢没有像其他的这三个这么趋同\n好的我们的对比正式结束了\n总体看下来这个喵喵最新的八部模型的话\n它现阶段的\n我感觉他还算是一个比较早期的版本\n所以它目前的效果呢\n只能说领先turbo模型并不算太多\n甚至有时候可能表现并不如turbo模型\n但好在的这个模型后续应该还是会继续更新的\n所以我们可以给他一个未来可期的一个评价\n然后这里的生成结果呢\n我只挑了一些我我觉得有代表性的进行了讲解\n其他的没有说的呢\n你可以自己自己来这个工作流中看一看\n自己来判断自己选择自己喜欢的模型\n我这里呢是以我自己的审美来做结论的\n最后呢还要以你自己的审美来做判断\n我这里的结论仅当做一个参考吧\n好的\n本期视频的测评呢差不多就到这里了\n如果你觉得这期测评对你有帮助的话\n你可以给我的视频点一个赞\n如果能给我点个关注\n那就更好了\n非常感谢您的支持\n大家下期视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HWKm69EPh",
+  "published_at": "1784538296",
+  "fetched_at": "2026-08-08T14:38:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 【ComfyUI】Anima 8步模型对比 知识图谱\n\n## 图1：模型概览与关系\n```mermaid\nflowchart TD\n    A1[\"官方贝斯 V1.0\"] --> A2[\"官方贝斯 V1.1（已修复唯一问题）\"]\n    A2 --> A3[\"官方 Turbo（蒸馏模型）\"]\n    A3 --> A4[\"喵喵 8部基础蒸馏版\"]\n    A4 --> A5[\"喵喵 12（微调模型）\"]\n    A5 --> A6[\"喵喵 12 + Turbo 加速（LUA）\"]\n    style A1 fill:#f9f,stroke:#333,stroke-width:1px\n    style A2 fill:#bbf,stroke:#333,stroke-width:1px\n    style A3 fill:#bbf,stroke:#333,stroke-width:1px\n    style A4 fill:#bbf,stroke:#333,stroke-width:1px\n    style A5 fill:#f9f,stroke:#333,stroke-width:1px\n    style A6 fill:#f9f,stroke:#333,stroke-width:1px\n```\n\n## 图2：评测工作流与设置要点\n```mermaid\nflowchart LR\n    W1[\"Running Hub 平台\"] --> W2[\"免费打开工作流\"]\n    W2 --> W3[\"注册获取 1000 点积分\"]\n    W3 --> W4[\"每日登录 +100 点\"]\n    W4 --> W5[\"积分用于运行工作流\"]\n    P1[\"提示词 15 套（30 套）\"] --> P2[\"有化石标签\"]\n    P1 --> P3[\"无化石标签\"]\n    S1[\"生成步数 8~12（默认 12）\"] --> S2[\"CFG 值 1（调高无效）\"]\n    S2 --> S3[\"负面提示词对蒸馏模型无效\"]\n    S3 --> S4[\"需插件/节点使负面提示词生效\"]\n    style W1 fill:#ddf,stroke:#333,stroke-width:1px\n    style P1 fill:#ddf,stroke:#333,stroke-width:1px\n    style S1 fill:#ddf,stroke:#333,stroke-width:1px\n```\n\n## 图3：对比结果偏好映射\n```mermaid\nflowchart TD\n    G1[\"有化石标签（画师）\"] -->|更喜欢| M1[\"喵喵 12 + Turbo 加速\"]\n    G1 -->|更喜欢| M2[\"喵喵 8部（美学）\"]\n    G2[\"无化石标签（无画师）\"] -->|更喜欢| T1[\"Turbo 模型\"]\n    G2 -->|次选| M3[\"喵喵 8部\"]\n    G3[\"3D 风格\"] -->|更好| M4[\"喵喵 12 + Turbo 加速\"]\n    G3 -->|细节稍逊| T2[\"Turbo（细节少）\"]\n    G4[\"光影/自带光影\"] -->|优势| M5[\"喵喵 8部（光影好）\"]\n    G4 -->|次选| T3[\"Turbo（原始手绘感）\"]\n    style G1 fill:#cfc,stroke:#333,stroke-width:1px\n    style G2 fill:#cfc,stroke:#333,stroke-width:1px\n    style G3 fill:#cfc,stroke:#333,stroke-width:1px\n    style G4 fill:#cfc,stroke:#333,stroke-width:1px\n```\n\n## 图4：未来展望与结论\n```mermaid\nflowchart TD\n    F1[\"喵喵 8部模型（早期版）\"] --> F2[\"当前效果略优于 Turbo，领先不大\"]\n    F2 --> F3[\"部分场景仍不如 Turbo\"]\n    F3 --> F4[\"后续预计持续更新\"]\n    F4 --> F5[\"未来可期的潜力\"]\n    style F1 fill:#ffe,stroke:#333,stroke-width:1px\n    style F5 fill:#ffe,stroke:#333,stroke-width:1px\n```",
+      "diagrams": [
+        {
+          "title": "图1：模型概览与关系",
+          "code": "flowchart TD\n    A1[\"官方贝斯 V1.0\"] --> A2[\"官方贝斯 V1.1（已修复唯一问题）\"]\n    A2 --> A3[\"官方 Turbo（蒸馏模型）\"]\n    A3 --> A4[\"喵喵 8部基础蒸馏版\"]\n    A4 --> A5[\"喵喵 12（微调模型）\"]\n    A5 --> A6[\"喵喵 12 + Turbo 加速（LUA）\"]\n    style A1 fill:#f9f,stroke:#333,stroke-width:1px\n    style A2 fill:#bbf,stroke:#333,stroke-width:1px\n    style A3 fill:#bbf,stroke:#333,stroke-width:1px\n    style A4 fill:#bbf,stroke:#333,stroke-width:1px\n    style A5 fill:#f9f,stroke:#333,stroke-width:1px\n    style A6 fill:#f9f,stroke:#333,stroke-width:1px"
+        },
+        {
+          "title": "图2：评测工作流与设置要点",
+          "code": "flowchart LR\n    W1[\"Running Hub 平台\"] --> W2[\"免费打开工作流\"]\n    W2 --> W3[\"注册获取 1000 点积分\"]\n    W3 --> W4[\"每日登录 +100 点\"]\n    W4 --> W5[\"积分用于运行工作流\"]\n    P1[\"提示词 15 套（30 套）\"] --> P2[\"有化石标签\"]\n    P1 --> P3[\"无化石标签\"]\n    S1[\"生成步数 8~12（默认 12）\"] --> S2[\"CFG 值 1（调高无效）\"]\n    S2 --> S3[\"负面提示词对蒸馏模型无效\"]\n    S3 --> S4[\"需插件/节点使负面提示词生效\"]\n    style W1 fill:#ddf,stroke:#333,stroke-width:1px\n    style P1 fill:#ddf,stroke:#333,stroke-width:1px\n    style S1 fill:#ddf,stroke:#333,stroke-width:1px"
+        },
+        {
+          "title": "图3：对比结果偏好映射",
+          "code": "flowchart TD\n    G1[\"有化石标签（画师）\"] -->|更喜欢| M1[\"喵喵 12 + Turbo 加速\"]\n    G1 -->|更喜欢| M2[\"喵喵 8部（美学）\"]\n    G2[\"无化石标签（无画师）\"] -->|更喜欢| T1[\"Turbo 模型\"]\n    G2 -->|次选| M3[\"喵喵 8部\"]\n    G3[\"3D 风格\"] -->|更好| M4[\"喵喵 12 + Turbo 加速\"]\n    G3 -->|细节稍逊| T2[\"Turbo（细节少）\"]\n    G4[\"光影/自带光影\"] -->|优势| M5[\"喵喵 8部（光影好）\"]\n    G4 -->|次选| T3[\"Turbo（原始手绘感）\"]\n    style G1 fill:#cfc,stroke:#333,stroke-width:1px\n    style G2 fill:#cfc,stroke:#333,stroke-width:1px\n    style G3 fill:#cfc,stroke:#333,stroke-width:1px\n    style G4 fill:#cfc,stroke:#333,stroke-width:1px"
+        },
+        {
+          "title": "图4：未来展望与结论",
+          "code": "flowchart TD\n    F1[\"喵喵 8部模型（早期版）\"] --> F2[\"当前效果略优于 Turbo，领先不大\"]\n    F2 --> F3[\"部分场景仍不如 Turbo\"]\n    F3 --> F4[\"后续预计持续更新\"]\n    F4 --> F5[\"未来可期的潜力\"]\n    style F1 fill:#ffe,stroke:#333,stroke-width:1px\n    style F5 fill:#ffe,stroke:#333,stroke-width:1px"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T14:38:42+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 【ComfyUI】Anima 8步模型对比 知识图谱\n\n## 图1：模型概览与关系\n```mermaid\nflowchart TD\n    A1[\"官方贝斯 V1.0\"] --> A2[\"官方贝斯 V1.1（已修复唯一问题）\"]\n    A2 --> A3[\"官方 Turbo（蒸馏模型）\"]\n    A3 --> A4[\"喵喵 8部基础蒸馏版\"]\n    A4 --> A5[\"喵喵 12（微调模型）\"]\n    A5 --> A6[\"喵喵 12 + Turbo 加速（LUA）\"]\n    style A1 fill:#f9f,stroke:#333,stroke-width:1px\n    style A2 fill:#bbf,stroke:#333,stroke-width:1px\n    style A3 fill:#bbf,stroke:#333,stroke-width:1px\n    style A4 fill:#bbf,stroke:#333,stroke-width:1px\n    style A5 fill:#f9f,stroke:#333,stroke-width:1px\n    style A6 fill:#f9f,stroke:#333,stroke-width:1px\n```\n\n## 图2：评测工作流与设置要点\n```mermaid\nflowchart LR\n    W1[\"Running Hub 平台\"] --> W2[\"免费打开工作流\"]\n    W2 --> W3[\"注册获取 1000 点积分\"]\n    W3 --> W4[\"每日登录 +100 点\"]\n    W4 --> W5[\"积分用于运行工作流\"]\n    P1[\"提示词 15 套（30 套）\"] --> P2[\"有化石标签\"]\n    P1 --> P3[\"无化石标签\"]\n    S1[\"生成步数 8~12（默认 12）\"] --> S2[\"CFG 值 1（调高无效）\"]\n    S2 --> S3[\"负面提示词对蒸馏模型无效\"]\n    S3 --> S4[\"需插件/节点使负面提示词生效\"]\n    style W1 fill:#ddf,stroke:#333,stroke-width:1px\n    style P1 fill:#ddf,stroke:#333,stroke-width:1px\n    style S1 fill:#ddf,stroke:#333,stroke-width:1px\n```\n\n## 图3：对比结果偏好映射\n```mermaid\nflowchart TD\n    G1[\"有化石标签（画师）\"] -->|更喜欢| M1[\"喵喵 12 + Turbo 加速\"]\n    G1 -->|更喜欢| M2[\"喵喵 8部（美学）\"]\n    G2[\"无化石标签（无画师）\"] -->|更喜欢| T1[\"Turbo 模型\"]\n    G2 -->|次选| M3[\"喵喵 8部\"]\n    G3[\"3D 风格\"] -->|更好| M4[\"喵喵 12 + Turbo 加速\"]\n    G3 -->|细节稍逊| T2[\"Turbo（细节少）\"]\n    G4[\"光影/自带光影\"] -->|优势| M5[\"喵喵 8部（光影好）\"]\n    G4 -->|次选| T3[\"Turbo（原始手绘感）\"]\n    style G1 fill:#cfc,stroke:#333,stroke-width:1px\n    style G2 fill:#cfc,stroke:#333,stroke-width:1px\n    style G3 fill:#cfc,stroke:#333,stroke-width:1px\n    style G4 fill:#cfc,stroke:#333,stroke-width:1px\n```\n\n## 图4：未来展望与结论\n```mermaid\nflowchart TD\n    F1[\"喵喵 8部模型（早期版）\"] --> F2[\"当前效果略优于 Turbo，领先不大\"]\n    F2 --> F3[\"部分场景仍不如 Turbo\"]\n    F3 --> F4[\"后续预计持续更新\"]\n    F4 --> F5[\"未来可期的潜力\"]\n    style F1 fill:#ffe,stroke:#333,stroke-width:1px\n    style F5 fill:#ffe,stroke:#333,stroke-width:1px\n```",
+  "diagrams": [
+    {
+      "title": "图1：模型概览与关系",
+      "code": "flowchart TD\n    A1[\"官方贝斯 V1.0\"] --> A2[\"官方贝斯 V1.1（已修复唯一问题）\"]\n    A2 --> A3[\"官方 Turbo（蒸馏模型）\"]\n    A3 --> A4[\"喵喵 8部基础蒸馏版\"]\n    A4 --> A5[\"喵喵 12（微调模型）\"]\n    A5 --> A6[\"喵喵 12 + Turbo 加速（LUA）\"]\n    style A1 fill:#f9f,stroke:#333,stroke-width:1px\n    style A2 fill:#bbf,stroke:#333,stroke-width:1px\n    style A3 fill:#bbf,stroke:#333,stroke-width:1px\n    style A4 fill:#bbf,stroke:#333,stroke-width:1px\n    style A5 fill:#f9f,stroke:#333,stroke-width:1px\n    style A6 fill:#f9f,stroke:#333,stroke-width:1px"
+    },
+    {
+      "title": "图2：评测工作流与设置要点",
+      "code": "flowchart LR\n    W1[\"Running Hub 平台\"] --> W2[\"免费打开工作流\"]\n    W2 --> W3[\"注册获取 1000 点积分\"]\n    W3 --> W4[\"每日登录 +100 点\"]\n    W4 --> W5[\"积分用于运行工作流\"]\n    P1[\"提示词 15 套（30 套）\"] --> P2[\"有化石标签\"]\n    P1 --> P3[\"无化石标签\"]\n    S1[\"生成步数 8~12（默认 12）\"] --> S2[\"CFG 值 1（调高无效）\"]\n    S2 --> S3[\"负面提示词对蒸馏模型无效\"]\n    S3 --> S4[\"需插件/节点使负面提示词生效\"]\n    style W1 fill:#ddf,stroke:#333,stroke-width:1px\n    style P1 fill:#ddf,stroke:#333,stroke-width:1px\n    style S1 fill:#ddf,stroke:#333,stroke-width:1px"
+    },
+    {
+      "title": "图3：对比结果偏好映射",
+      "code": "flowchart TD\n    G1[\"有化石标签（画师）\"] -->|更喜欢| M1[\"喵喵 12 + Turbo 加速\"]\n    G1 -->|更喜欢| M2[\"喵喵 8部（美学）\"]\n    G2[\"无化石标签（无画师）\"] -->|更喜欢| T1[\"Turbo 模型\"]\n    G2 -->|次选| M3[\"喵喵 8部\"]\n    G3[\"3D 风格\"] -->|更好| M4[\"喵喵 12 + Turbo 加速\"]\n    G3 -->|细节稍逊| T2[\"Turbo（细节少）\"]\n    G4[\"光影/自带光影\"] -->|优势| M5[\"喵喵 8部（光影好）\"]\n    G4 -->|次选| T3[\"Turbo（原始手绘感）\"]\n    style G1 fill:#cfc,stroke:#333,stroke-width:1px\n    style G2 fill:#cfc,stroke:#333,stroke-width:1px\n    style G3 fill:#cfc,stroke:#333,stroke-width:1px\n    style G4 fill:#cfc,stroke:#333,stroke-width:1px"
+    },
+    {
+      "title": "图4：未来展望与结论",
+      "code": "flowchart TD\n    F1[\"喵喵 8部模型（早期版）\"] --> F2[\"当前效果略优于 Turbo，领先不大\"]\n    F2 --> F3[\"部分场景仍不如 Turbo\"]\n    F3 --> F4[\"后续预计持续更新\"]\n    F4 --> F5[\"未来可期的潜力\"]\n    style F1 fill:#ffe,stroke:#333,stroke-width:1px\n    style F5 fill:#ffe,stroke:#333,stroke-width:1px"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T14:38:42+00:00"
+}

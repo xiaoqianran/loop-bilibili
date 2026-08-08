@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1wPuH6pEpF",
+  "title": "【Godot】RTS 游戏必备——从零开始制作简单的矩形选框工具 (2D)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 5288,
+  "text": "每天5分钟简单又轻松\nHello\n大家好\n欢迎来到我的频道\n我是VO\n那么今天呢跟大家分享一个在格斗引擎里面去实现的\n一个简单的一个选框选区的一个工具\n那么就类似像我们的PHOTOSHOP里面的一些框选的工具\n那么今天实现的这个原理呢也是非常简单\n主要是用我们的line to d和我们的polygon to d这两个节点\n那么简单的来\n在开始之前呢\n我想简单的先讲一下我们这实现的一个简单的逻辑\n就是\n首先的话呢我们是希望他如果选区的话呢\n我们会有一个框\n那么它会有一四个点\n那么我们把这里比如说叫P1point two\n我还是用打字吧\n我们这里是point on1\n然后这里是point two\n然后从这里连过来\n因为它是连续的\n所以它的序序号的话不会是这样连贯过来的\n那么这里就是我的point four\n然后就是这四个点的话呢\n我们会用一个我们的line in two d将它们去连接起来\n就会形成一个外面的一个高亮的线\n或者是说蚂蚁线的这种\n然后里面的话呢我这里就我们用我的polly on two d\n那么这个颜色有点刺眼啊\n换一对颜色比较浅一点\n然后就制作里面的这么一个矩形的部分\n当然你也可以用我们的color director来做\n或者是用其他的一些矩形工具来做也是可以的\n那么这里呢我只分享我这种嗯比较简单的一个思路\n那么这就是它的一个基础的原理\nOK那么我们一起来具体看一下是怎么做的\n那么这里的话呢代码也是非常少啊\n那我带那我从头做一遍演示一下吧\n我们可以把这个代码关掉\n然后首先呢假设我们的这个也被关掉了\n然后首先呢假设这是我们的一个空的场景哈\n我这里先保存一下\n我是随便命名啊\n大家要根据自己的那种习惯来命名啊\n首先呢我们需要两个节点\n一个就是我们的在我们那个node to d里面去找我们的line in two d\n还有我们的一个我们的polygon to d\n这两个节点\n那么这个呢就是我们刚刚讲到的组成外面的一圈线\n蚂蚁线\n高亮线\n然后里面的这个呢就是做我们那个矩形\n那么大家可以简单的看一下啊\n它是有一个pointer的组\n一个紧凑的数组\n然后我们可以在这里去\n或者是使用这边的一个工具去去\n这样子就可以做它的一个一个边框的线\n然后我们的point in polygon to dinner\n可以去在这里也有一个date data里面去\n这里也有POLYON的一个数组\n然后这里我们也可以添加一些点\n我们也可以在这里去添加\n然后如果它闭合的话呢\n就会形成我们的一个选区\n一个一个矩形\n一个任意形状的一个一个多边形或者是矩形\n然后我们就用这两个来实现我们的简单的选区功能\n我们在这里\n然后我把这些先清清空一下\n然后记得把他的都归零就OK了\n然后这里呢我们去先去添加一个脚本\nOK然后我们先对他们持有一个把我们创建变量\n然后呢我们首先我们需要一个开始的位置来记录它\n那么我们在这里去创建一个变量\nDt position\n我这里就简单的写pos position\n那么我们偷懒的话\n用这种它自动识别我们的类型\n我们首先在创创建这个时候\n我们赋予它初始的一个值\n就是我们的零\n就让它在零零点原点\n然后我们还需要一个嗯判断它是否是选中的一个状态\n那么我们需要一个布尔值来判断它\n我们可以使用SELETING\n用这个来表示它是否为选中的状态哈\n我们默认的话让他不选中\n就给他一个false\nOK然后这里的话我们在呃这里的话我们需要一个input\n或者是一个那个输入都可以\n那我这里选择用input\n然后首先呢我们要去判断这个他是不是我们的鼠标的一个按键\n我们这里input mouse button\n然后我们可以去判断他按下的一个键是不是我们的鼠标左键哈\n然后我们也是ten的in index\n我们的mouse left\n这样子就可以了\n然后OK然后我们还可以对它进行一个判断\n就是我们我们的这个是不是按一下\n当然你也可以把这两个写到一行啊\n或者像这样子\n用一个用一个那个\n这种这样子的这样子方式来写它\n这样的话可能会有点长\n我还是改成这种\n可以写到一起\n也可以也可以分开写\n这个看你的个人习惯\n那么我们现在需要用到我们的这个\n我们可以从这里去\n我们的开始的位置的话呢\n我们嗯如果点击了的话呢\n我们就让它是我们这个英文事件的这个\n这个的position\n那么然后还这个时候呢\n我们就需要把它的选中状态设设置为为true\n因为我们已经已经选中了对吧\n那么我们这里有\n然后呢我们在他松开的时候呢\n我们可以去把他的需要\n把他的设置为false\n哎哟这个键盘哦老是不好用\n我们为让它变成一个false\n然后这个时候呢我们还需要我们有了起始点的位置\n那么我们还需要一个结束的位置\n这样的话他才会形成这种这种选框的形态\n因为我们会有一个起始的位置\n有一个结束的位置\n假设是这里就可以了\n其实我们只需要两个两个点的位置的话呢\n就可以去定位到它\n那么我们这里呢也是我们这里就是使用我们\nmouse motion吧\n有嗯\nput mouse模型就是我们鼠标移动移动的这个事件的话就会传出来\n然后我们还需要嗯\n因为我们在开始的时候呢\n就是当我们没有按下那个鼠标的时候呢\n他可能在原点的时候呢\n需要判断一下我们是不是为选中状态\n如果是呃\n如果是我们是在选择的情况下呢\n那么我们就去才会去更新它的那个结束的位置\n如果我们当我们没有按下的时候\n那么我们不会去更新它结束的位置\n那么我们这里也可以添加一个将它们做一个\n做一个and去判断我们selecting\n当我们鼠标在移动的时候\n而且又是在这种选中状态的情况下呢\n那么我们就可以去更新\n那么这里呢我暂时写一个占位符\n因为我们接下来要写一个\n写一个函数\n写一个函数的话\n那我们就命名额更新吧\n更新我们的VOR\n然后这里呢我们需要传一个值\n那么我们给它起名叫做我们的end position\n然后它的类型呢也是我们的我们的victor two\n然后更新的话呢\n那么我们这里有刚刚讲到的四个点的话呢\n那么我们这里来定义四个点\n那么我们创建第一个变量\n它的坐标可能是我们的起始位置\n然后第二个点\n然后第三个点\n然后第四个点\n然后我们来为他们一一赋值\n然后我们刚刚讲到了第一个点的话呢\n是就是我们鼠标按下的位置\n就是我们的起始的位置\n这个点\n那么第二个点呢\n第二个点和第一个点呢那个X是一样的\n额一个额那个Y值是一样的\n第一个点它的X值不一样\n然后是Y值\n就是这个高度是一致的\n那么我们就可以让他呃它的Y那个开始的Y项等于我们的这个\n然后第三个点的话\n那就是我们的就是我们传到了传入了这个end的position的位置\n那么我们的point4呢\n就是我们的跟我们的初始的我们的start port\nstart position的一个X和我们的结束的end position的一个Y它们是相等的\n那么我这里简单的标一下\n假设说我们我们刚刚已经定义了\n声明了一个我们的这个就是我们的position star prostation\n就是我们的\n起始的位置\n然后这个位置的话呢它的一个坐标呢就是我们的嗯\n首先是我们的end的position\n我们先先这样子吧\n先这样子end的position\n这样子要记住他们的都是那个moon victor to\n就是它有一个量\n就是有一个XY\n1XY嘛\n我们先这样代替\n那么这里的话呢就是这里第二个点呢就是我们的N的position的X\n那么这个point two\n那么我们可以也\n那么我们可以在这里标注一下\n这是position\n你这是呃\n这是point one\n然后这是point three\n然后这是pointing point four\n然后呢这样的话呢就是我们就比较清晰清楚了\n然后我们的这个坐标\n这个X和这个N的position的这个也就是我们的point three的这个X相等\n它的Y呢是跟它的相等的\n那么这个就显而易见了\n我们就可以如何去去呃\n给他们赋值了\n那么这里我们有\nVector two\n然后是这个的话我们使用end position的一个X的坐标\n然后这里呢我们要start zation的一个Y坐标\n然后第三个点的话呢\n我们用的就是end position\n然后第四个的第四个的话\n这里有重了哈\n第四个的点的话呢\n我们还是用的vex to的\n他的是\n它的是我们开始的一个点的一个X和我们的end position的一个Y\n然后就这样子\n这里的话这里黄色框的话呢\n就是说他们声明了\n但是没有使用这些变量\n这不用担心\n然后的话呢在这里的话我们会定义一个我们刚刚提到的\n它有一个我们的point\n一个数组\n这是一个package的\n我们的那个victor就是我们的紧凑型的输入\n那么我们在这里的话呢也可以去\n嗯将他的这个position\n然后这个point我们在这里定义一个point point\n它的一个这个package\n哎不对\n哦选择我们的第三个一定要和他的这个这个数据类型一致哈\n然后我们就可以在这里去填写我们的\n填写我们刚刚的我们可以把这个数组里面填我们刚刚那四个点哈\nP1我们的point two\n然后我们的point three\n然后我们的point four这四个点\n然后填写的话\n然后我们就可以嗯\n这里这个也是声明了没有使用哈\n然后我们就可以在这里去调用它\n就是使用它\n我们就是我们刚刚那个learn to\nline to d的话\nthe point就填我们刚刚这个声明的\n然后这里的话呢就填我们的POLYON\n我们的POLYGTOD的话呢\n我们的我们需要填他的这个我们去调用它的这个属性\n是我们的这个\n额然后调用它的话\n它也是他填写的话\n也是我们这个数组\n我们这个点我们这样子去填\n这样的话它也会生成我们的一个投影\n他根据我们这个points去就是也会生成我们的那个\n我们来跑测试一下\n看一下\n呃不对\n应该是测试这个嗯\n这里我们看没有任何反应哈\n这是为什么呢\n因为我们这个函数我们创建了\n但是没有使用它\n我们刚刚在这里写了个占位符\n那么这里的话我们就需要把它的参数传进来\n然后传参的话呢\n我们就传我们刚刚这个鼠标的这个这个位置的一个position\n把它传进来就作为我们的end opposition\n然后我们现在去嗯嗯调用它\n这样的话就会有一个选框\n当然他因为边框的线嗯好像是看不见哈\n这为什么呢\n因为边框的线哈我们刚刚默认的也是白色\n那么里面的选区框的也是白色\n那么它们就融为一一体\n那么我们可以让线变成一个红色的\n然后边框的话我们也可以给一个淡蓝色呃\n呃蓝色蓝色使用这个蓝色吧\nOk\n那么我们现在呃我们又发现了一个新的问题哈\n就是我们的这里好像左边的这根线好像没有啊\n嗯这个问题呢非常简单\n就是我们去打开我们的这个line in two d\n这里有一个close\n就是我们的闭合\n我们把它启用的话呢\n这个线他就闭合了\n这样的话我们框出来的地方就是闭合的\n然后嗯我觉得这个有点扎眼\n然后我把它调成一个暗暗色高亮\n或者是把这个我还可以去对它进行一个不透明度的调整哈\n这就是为什么我们要这样子来做它的原因\n就是我们可以有很方便的控制\n那么这样的话呢我就可以做到一个嗯有点透透的这么一个框\n选的一个心态\n当然我现在的话呢\n我现在松开鼠标的话\n它是还是停留在这上面的\n那么这个效果如果我不想要的话\n那么我们看还可以在这里边去写一个我们的一个清除的一个函数\n就是嘶清除他的一个\n一个那个数组就可以了\n我们准备行\n然后我们可以在这里面就是很简单啊\n就就line to line to d\n然后就clean它的清楚它的点\n或者是除了清除他的点的话呢\n还可以就是选择它的point\n然后给他一个空的空的数组也也可以\n那么记得记得要给的零的\n你这样子\n那么我们直接就用它调用它这个清清空的\n他有个清空的方法\n那么这个polly gun的话呢\n我们也可以去这样子去清空\n那因为我然后这里还是他的一个\nLuggage to the area\n在这里面我们给它一个空的就可以了\n然后这个方法的话呢\n我们在哪里去调用呢\n当我们松开这个鼠标的时候\n在这里哈\n记得我们刚刚写的按下的时候\n然后这里否则就是松开的情况下\n以及其他情况下呢\n我们就让他清理这个selection\n那么这样去运行的话\n当我们松开过后\n它就全部都消失了\n那么全部消失\n那么的话我们就看不见它渲染的这块区域了\n当然你也可以去使用我们的一些我们的color director\n或者去嗯动态获取它的一个一个尺寸\n一个一个size\n然后去做这个选框也可以\n当然我这种方法的话可能比较笨拙\n但是比较原始吧\n然后但是他比较理解起来比较直观\n那么以后你可以根据这个原型呢去衍生出更多的一些想法\nOK这就是我们今天分享的这么一个简单的tips啊\n然后希望大家多多点赞\n支持转发\n多多支持我\n我们下期视频再见吧\n谢谢大家啊\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wPuH6pEpF",
+  "published_at": "1786063500",
+  "fetched_at": "2026-08-08T04:37:55+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 2D 选框工具知识图谱\n\n## 总体结构概览\n```mermaid\nflowchart TD\n    A[\"Scene\"] --> B[\"Line2D (边框)\"]\n    A --> C[\"Polygon2D (填充)\"]\n    A --> D[\"变量集合\"]\n    D --> D1[\"startPos: Vector2\"]\n    D --> D2[\"endPos: Vector2\"]\n    D --> D3[\"selecting: bool\"]\n    B --> E[\"显示高亮/蚂蚁线\"]\n    C --> F[\"显示选区颜色\"]\n    D3 --> G[\"控制输入响应\"]\n    G --> H[\"InputEventMouseButton\"]\n    G --> I[\"InputEventMouseMotion\"]\n    H --> J[\"记录 startPos 并设为 selecting\"]\n    I --> K[\"更新 endPos 并调用 updateRectangle()\"]\n    J --> L[\"鼠标释放时调用 ClearSelection()\"]\n```\n\n## 输入处理流程\n```mermaid\nflowchart LR\n    A1[\"MouseButtonPressed\"] --> B1[\"记录 startPos\"]\n    B1 --> C1[\"selecting = true\"]\n    A2[\"MouseMotion\"] --> D1[\"若 selecting 为 true\"]\n    D1 --> E1[\"更新 endPos\"]\n    E1 --> F1[\"调用 updateRectangle()\"]\n    A3[\"MouseButtonReleased\"] --> G1[\"selecting = false\"]\n    G1 --> H1[\"调用 ClearSelection()\"]\n```\n\n## 矩形点计算与渲染\n```mermaid\nflowchart TD\n    S[\"startPos\"] --> P1[\"point1 = startPos\"]\n    S --> P2[\"point2 = (startPos.x, endPos.y)\"]\n    E[\"endPos\"] --> P3[\"point3 = endPos\"]\n    E --> P4[\"point4 = (endPos.x, startPos.y)\"]\n    P1 --> L[\"Line2D.points\"]\n    P2 --> L\n    P3 --> L\n    P4 --> L\n    P1 --> G[\"Polygon2D.polygon\"]\n    P2 --> G\n    P3 --> G\n    P4 --> G\n```",
+      "diagrams": [
+        {
+          "title": "总体结构概览",
+          "code": "flowchart TD\n    A[\"Scene\"] --> B[\"Line2D (边框)\"]\n    A --> C[\"Polygon2D (填充)\"]\n    A --> D[\"变量集合\"]\n    D --> D1[\"startPos: Vector2\"]\n    D --> D2[\"endPos: Vector2\"]\n    D --> D3[\"selecting: bool\"]\n    B --> E[\"显示高亮/蚂蚁线\"]\n    C --> F[\"显示选区颜色\"]\n    D3 --> G[\"控制输入响应\"]\n    G --> H[\"InputEventMouseButton\"]\n    G --> I[\"InputEventMouseMotion\"]\n    H --> J[\"记录 startPos 并设为 selecting\"]\n    I --> K[\"更新 endPos 并调用 updateRectangle()\"]\n    J --> L[\"鼠标释放时调用 ClearSelection()\"]"
+        },
+        {
+          "title": "输入处理流程",
+          "code": "flowchart LR\n    A1[\"MouseButtonPressed\"] --> B1[\"记录 startPos\"]\n    B1 --> C1[\"selecting = true\"]\n    A2[\"MouseMotion\"] --> D1[\"若 selecting 为 true\"]\n    D1 --> E1[\"更新 endPos\"]\n    E1 --> F1[\"调用 updateRectangle()\"]\n    A3[\"MouseButtonReleased\"] --> G1[\"selecting = false\"]\n    G1 --> H1[\"调用 ClearSelection()\"]"
+        },
+        {
+          "title": "矩形点计算与渲染",
+          "code": "flowchart TD\n    S[\"startPos\"] --> P1[\"point1 = startPos\"]\n    S --> P2[\"point2 = (startPos.x, endPos.y)\"]\n    E[\"endPos\"] --> P3[\"point3 = endPos\"]\n    E --> P4[\"point4 = (endPos.x, startPos.y)\"]\n    P1 --> L[\"Line2D.points\"]\n    P2 --> L\n    P3 --> L\n    P4 --> L\n    P1 --> G[\"Polygon2D.polygon\"]\n    P2 --> G\n    P3 --> G\n    P4 --> G"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T04:45:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 2D 选框工具知识图谱\n\n## 总体结构概览\n```mermaid\nflowchart TD\n    A[\"Scene\"] --> B[\"Line2D (边框)\"]\n    A --> C[\"Polygon2D (填充)\"]\n    A --> D[\"变量集合\"]\n    D --> D1[\"startPos: Vector2\"]\n    D --> D2[\"endPos: Vector2\"]\n    D --> D3[\"selecting: bool\"]\n    B --> E[\"显示高亮/蚂蚁线\"]\n    C --> F[\"显示选区颜色\"]\n    D3 --> G[\"控制输入响应\"]\n    G --> H[\"InputEventMouseButton\"]\n    G --> I[\"InputEventMouseMotion\"]\n    H --> J[\"记录 startPos 并设为 selecting\"]\n    I --> K[\"更新 endPos 并调用 updateRectangle()\"]\n    J --> L[\"鼠标释放时调用 ClearSelection()\"]\n```\n\n## 输入处理流程\n```mermaid\nflowchart LR\n    A1[\"MouseButtonPressed\"] --> B1[\"记录 startPos\"]\n    B1 --> C1[\"selecting = true\"]\n    A2[\"MouseMotion\"] --> D1[\"若 selecting 为 true\"]\n    D1 --> E1[\"更新 endPos\"]\n    E1 --> F1[\"调用 updateRectangle()\"]\n    A3[\"MouseButtonReleased\"] --> G1[\"selecting = false\"]\n    G1 --> H1[\"调用 ClearSelection()\"]\n```\n\n## 矩形点计算与渲染\n```mermaid\nflowchart TD\n    S[\"startPos\"] --> P1[\"point1 = startPos\"]\n    S --> P2[\"point2 = (startPos.x, endPos.y)\"]\n    E[\"endPos\"] --> P3[\"point3 = endPos\"]\n    E --> P4[\"point4 = (endPos.x, startPos.y)\"]\n    P1 --> L[\"Line2D.points\"]\n    P2 --> L\n    P3 --> L\n    P4 --> L\n    P1 --> G[\"Polygon2D.polygon\"]\n    P2 --> G\n    P3 --> G\n    P4 --> G\n```",
+  "diagrams": [
+    {
+      "title": "总体结构概览",
+      "code": "flowchart TD\n    A[\"Scene\"] --> B[\"Line2D (边框)\"]\n    A --> C[\"Polygon2D (填充)\"]\n    A --> D[\"变量集合\"]\n    D --> D1[\"startPos: Vector2\"]\n    D --> D2[\"endPos: Vector2\"]\n    D --> D3[\"selecting: bool\"]\n    B --> E[\"显示高亮/蚂蚁线\"]\n    C --> F[\"显示选区颜色\"]\n    D3 --> G[\"控制输入响应\"]\n    G --> H[\"InputEventMouseButton\"]\n    G --> I[\"InputEventMouseMotion\"]\n    H --> J[\"记录 startPos 并设为 selecting\"]\n    I --> K[\"更新 endPos 并调用 updateRectangle()\"]\n    J --> L[\"鼠标释放时调用 ClearSelection()\"]"
+    },
+    {
+      "title": "输入处理流程",
+      "code": "flowchart LR\n    A1[\"MouseButtonPressed\"] --> B1[\"记录 startPos\"]\n    B1 --> C1[\"selecting = true\"]\n    A2[\"MouseMotion\"] --> D1[\"若 selecting 为 true\"]\n    D1 --> E1[\"更新 endPos\"]\n    E1 --> F1[\"调用 updateRectangle()\"]\n    A3[\"MouseButtonReleased\"] --> G1[\"selecting = false\"]\n    G1 --> H1[\"调用 ClearSelection()\"]"
+    },
+    {
+      "title": "矩形点计算与渲染",
+      "code": "flowchart TD\n    S[\"startPos\"] --> P1[\"point1 = startPos\"]\n    S --> P2[\"point2 = (startPos.x, endPos.y)\"]\n    E[\"endPos\"] --> P3[\"point3 = endPos\"]\n    E --> P4[\"point4 = (endPos.x, startPos.y)\"]\n    P1 --> L[\"Line2D.points\"]\n    P2 --> L\n    P3 --> L\n    P4 --> L\n    P1 --> G[\"Polygon2D.polygon\"]\n    P2 --> G\n    P3 --> G\n    P4 --> G"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T04:45:45+00:00"
+}

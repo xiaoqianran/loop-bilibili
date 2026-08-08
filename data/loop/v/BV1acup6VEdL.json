@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1acup6VEdL",
+  "title": "DeepSeek预计大幅涨价",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 24,
+  "text": "API怎么又崩溃了\n服务器不堪重负了\n明天涨价吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1acup6VEdL",
+  "published_at": "1786026995",
+  "fetched_at": "2026-08-08T14:47:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T14:49:14+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T14:49:14+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1wR7V6RELF",
+  "title": "【Meowa】AI生成游戏UI，能不能真正用在项目里？从生成到接入完整演示【B站AI创造公开赛】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1104,
+  "text": "我们的AI游戏素材生成工具MUA最近上线了\nUI生成功能\n生成便捷\n而且能满足各种要求\n这期视频就来演示一下\n如何用MIOR生成游戏UI\n并把它实际接入到游戏里\n首先进入工作区\n点击对话框左下角的齿轮\n打开设置\n左上角切换到UI生成\n这里有两个模式\n一个是直接生成新UI的生成UI\n另一个是从已有图片中提取素材的提取UI\n选好模式后\n还可以继续调整生成参数\n先选择比例\n生成的UI会尽量占满对应比例的画布\n接下来是三个用来处理生成结果的设置\n首先是UI背景色\n默认会使用灰色背景\n方便后续抠图\n但如果UI本身也偏灰和背景区分不明显\n抠图时就容易被一起移除\n这时就需要换成对比更强的背景色之后\n默认开启的移除背景就会把UI抠成透明底\n自动拆分\n会继续将移除了背景的UI\n拆分成可以单独下载的PNG\n设置完成后就可以直接描述需要的UI并生成\n还可以根据需要添加参考图\n会结合文字描述一起生成\n比如把缺少UI的游戏画面作为参考模型\n就能根据画面风格和游戏信息\n生成更匹配的UI素材\n除了直接生成UI\n提取UI模式\n也能获取UI素材\n这个模式需要先上传至少一张带有UI的参考图\n再在描述里提出要求\n需要保留哪些组件\n或者希望做哪些改动\n提交后就能直接从参考图中提取出UI素材\n接下来就用MIUA的战旗游戏示例项目演示一下\n如何把刚刚生成的UI实际接入到游戏里\n示例项目的源码\n可以在首页的MIA游戏入口获取\n我们正在制作更多的示例项目\n这些游戏的音乐美术动画地图\nUI全部由MIUAI生成\n接入游戏时\n交互元素会需要进一步处理\n比如按钮就需要考虑不同状态\n默认选中和按下\n我们可以将原按钮作为参考图\n生成不同的变体\n也可以只用一张按钮图\n再通过代码控制变暗或高亮效果\n除按钮外\n还有血量\n这类会随着游戏状态变化的内容\n需要交给代码实时绘制\n不过网站生成的UI通常是未拆分的\nPNG为了方便接入游戏\n可以把生成结果作为参考图\n把血条拆成静态外框和会随血量变化的红心\n这样接入游戏后的血条才能根据状态实时变化\n另外还有进度条开关\n这些动态UI都可以这么处理\n除此之外\n一些初次生成不满意的部件\n同样可以添加为参考图\n在原图基础上改进\n修改时还有一个节省积分的小妙招\n我们可以把要修改的组件组装起来\n然后再添加为参考图\n并逐条描述修改要求\n多次修改只需要花费一次积分\n以上就是使用MIRUI生成功能\n制作并接入游戏UI的流程\n先用MUR生成或提取UI素材\n再把素材编辑成适合游戏使用的PNG\n最后在游戏里用代码控制动态内容\n心动了吗\n现在就打开MIOR\n一键生成满屏好看的游戏UI吧\n我们正在派送试用额度\n三连私信即可获取",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wR7V6RELF",
+  "published_at": "1782476834",
+  "fetched_at": "2026-08-07T19:36:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# MUA UI 生成与接入知识图谱\n\n## UI 生成总览 [BV1wR7V6RELF P1 00:13] [BV1wR7V6RELF P1 00:24]\n```mermaid\nflowchart TD\n    Start[\"打开工作区\"] --> Settings[\"点击左下齿轮打开设置\"]\n    Settings --> Switch[\"左上角切换到 UI 生成\"]\n    Switch --> ModeChoice[\"选择模式：生成 UI / 提取 UI\"]\n    ModeChoice --> Params[\"设置生成参数\"]\n    Params --> Ratio[\"选择比例\"]\n    Params --> BgColor[\"设置 UI 背景色（默认灰）\"]\n    Params --> AutoSplit[\"开启自动拆分 PNG\"]\n    Params --> RefImg[\"可添加参考图\"]\n    RefImg --> Describe[\"文字描述 + 参考图\"]\n    Describe --> Generate[\"点击生成 UI\"]\n    Generate --> Result[\"生成结果（可下载 PNG）\"]\n    Result --> Integrate[\"在游戏中使用代码控制动态内容\"]\n```\n\n## 动态 UI 处理流程 [BV1wR7V6RELF P1 01:42] [BV1wR7V6RELF P1 02:06]\n```mermaid\nflowchart TD\n    DynUI[\"动态 UI 元素\"] --> Button[\"按钮\"]\n    DynUI --> HealthBar[\"血条\"]\n    DynUI --> ProgressBar[\"进度条\"]\n    Button --> VariantGen[\"生成不同状态变体（正常、悬停、按下）\"]\n    Button --> CodeShade[\"单张图 + 代码调暗/高亮\"]\n    HealthBar --> Split[\"拆分为静态框 + 动态红心\"]\n    ProgressBar --> Split2[\"拆分为静态框 + 动态进度\"]\n    VariantGen --> IntegrateBtn[\"在游戏中使用对应 PNG\"]\n    CodeShade --> IntegrateBtn2[\"在游戏中用代码调节状态\"]\n    Split --> IntegrateHB[\"在游戏中实时绘制红心\"]\n    Split2 --> IntegratePB[\"在游戏中实时绘制进度\"]\n```\n\n## 积分节省的修改技巧 [BV1wR7V6RELF P1 02:23] [BV1wR7V6RELF P1 02:33]\n```mermaid\nflowchart TD\n    Modify[\"需要修改 UI 组件\"] --> Assemble[\"将待修改组件组装\"]\n    Assemble --> AddRef[\"添加为参考图\"]\n    AddRef --> DescribeMod[\"逐条描述修改要求\"]\n    DescribeMod --> Submit[\"提交修改请求\"]\n    Submit --> Cost[\"一次积分消耗多次修改\"]\n    Cost --> Updated[\"获取更新后的 UI 组件\"]\n```",
+      "diagrams": [
+        {
+          "title": "UI 生成总览",
+          "code": "flowchart TD\n    Start[\"打开工作区\"] --> Settings[\"点击左下齿轮打开设置\"]\n    Settings --> Switch[\"左上角切换到 UI 生成\"]\n    Switch --> ModeChoice[\"选择模式：生成 UI / 提取 UI\"]\n    ModeChoice --> Params[\"设置生成参数\"]\n    Params --> Ratio[\"选择比例\"]\n    Params --> BgColor[\"设置 UI 背景色（默认灰）\"]\n    Params --> AutoSplit[\"开启自动拆分 PNG\"]\n    Params --> RefImg[\"可添加参考图\"]\n    RefImg --> Describe[\"文字描述 + 参考图\"]\n    Describe --> Generate[\"点击生成 UI\"]\n    Generate --> Result[\"生成结果（可下载 PNG）\"]\n    Result --> Integrate[\"在游戏中使用代码控制动态内容\"]"
+        },
+        {
+          "title": "动态 UI 处理流程",
+          "code": "flowchart TD\n    DynUI[\"动态 UI 元素\"] --> Button[\"按钮\"]\n    DynUI --> HealthBar[\"血条\"]\n    DynUI --> ProgressBar[\"进度条\"]\n    Button --> VariantGen[\"生成不同状态变体（正常、悬停、按下）\"]\n    Button --> CodeShade[\"单张图 + 代码调暗/高亮\"]\n    HealthBar --> Split[\"拆分为静态框 + 动态红心\"]\n    ProgressBar --> Split2[\"拆分为静态框 + 动态进度\"]\n    VariantGen --> IntegrateBtn[\"在游戏中使用对应 PNG\"]\n    CodeShade --> IntegrateBtn2[\"在游戏中用代码调节状态\"]\n    Split --> IntegrateHB[\"在游戏中实时绘制红心\"]\n    Split2 --> IntegratePB[\"在游戏中实时绘制进度\"]"
+        },
+        {
+          "title": "积分节省的修改技巧",
+          "code": "flowchart TD\n    Modify[\"需要修改 UI 组件\"] --> Assemble[\"将待修改组件组装\"]\n    Assemble --> AddRef[\"添加为参考图\"]\n    AddRef --> DescribeMod[\"逐条描述修改要求\"]\n    DescribeMod --> Submit[\"提交修改请求\"]\n    Submit --> Cost[\"一次积分消耗多次修改\"]\n    Cost --> Updated[\"获取更新后的 UI 组件\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T19:37:26+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# MUA UI 生成与接入知识图谱\n\n## UI 生成总览 [BV1wR7V6RELF P1 00:13] [BV1wR7V6RELF P1 00:24]\n```mermaid\nflowchart TD\n    Start[\"打开工作区\"] --> Settings[\"点击左下齿轮打开设置\"]\n    Settings --> Switch[\"左上角切换到 UI 生成\"]\n    Switch --> ModeChoice[\"选择模式：生成 UI / 提取 UI\"]\n    ModeChoice --> Params[\"设置生成参数\"]\n    Params --> Ratio[\"选择比例\"]\n    Params --> BgColor[\"设置 UI 背景色（默认灰）\"]\n    Params --> AutoSplit[\"开启自动拆分 PNG\"]\n    Params --> RefImg[\"可添加参考图\"]\n    RefImg --> Describe[\"文字描述 + 参考图\"]\n    Describe --> Generate[\"点击生成 UI\"]\n    Generate --> Result[\"生成结果（可下载 PNG）\"]\n    Result --> Integrate[\"在游戏中使用代码控制动态内容\"]\n```\n\n## 动态 UI 处理流程 [BV1wR7V6RELF P1 01:42] [BV1wR7V6RELF P1 02:06]\n```mermaid\nflowchart TD\n    DynUI[\"动态 UI 元素\"] --> Button[\"按钮\"]\n    DynUI --> HealthBar[\"血条\"]\n    DynUI --> ProgressBar[\"进度条\"]\n    Button --> VariantGen[\"生成不同状态变体（正常、悬停、按下）\"]\n    Button --> CodeShade[\"单张图 + 代码调暗/高亮\"]\n    HealthBar --> Split[\"拆分为静态框 + 动态红心\"]\n    ProgressBar --> Split2[\"拆分为静态框 + 动态进度\"]\n    VariantGen --> IntegrateBtn[\"在游戏中使用对应 PNG\"]\n    CodeShade --> IntegrateBtn2[\"在游戏中用代码调节状态\"]\n    Split --> IntegrateHB[\"在游戏中实时绘制红心\"]\n    Split2 --> IntegratePB[\"在游戏中实时绘制进度\"]\n```\n\n## 积分节省的修改技巧 [BV1wR7V6RELF P1 02:23] [BV1wR7V6RELF P1 02:33]\n```mermaid\nflowchart TD\n    Modify[\"需要修改 UI 组件\"] --> Assemble[\"将待修改组件组装\"]\n    Assemble --> AddRef[\"添加为参考图\"]\n    AddRef --> DescribeMod[\"逐条描述修改要求\"]\n    DescribeMod --> Submit[\"提交修改请求\"]\n    Submit --> Cost[\"一次积分消耗多次修改\"]\n    Cost --> Updated[\"获取更新后的 UI 组件\"]\n```",
+  "diagrams": [
+    {
+      "title": "UI 生成总览",
+      "code": "flowchart TD\n    Start[\"打开工作区\"] --> Settings[\"点击左下齿轮打开设置\"]\n    Settings --> Switch[\"左上角切换到 UI 生成\"]\n    Switch --> ModeChoice[\"选择模式：生成 UI / 提取 UI\"]\n    ModeChoice --> Params[\"设置生成参数\"]\n    Params --> Ratio[\"选择比例\"]\n    Params --> BgColor[\"设置 UI 背景色（默认灰）\"]\n    Params --> AutoSplit[\"开启自动拆分 PNG\"]\n    Params --> RefImg[\"可添加参考图\"]\n    RefImg --> Describe[\"文字描述 + 参考图\"]\n    Describe --> Generate[\"点击生成 UI\"]\n    Generate --> Result[\"生成结果（可下载 PNG）\"]\n    Result --> Integrate[\"在游戏中使用代码控制动态内容\"]"
+    },
+    {
+      "title": "动态 UI 处理流程",
+      "code": "flowchart TD\n    DynUI[\"动态 UI 元素\"] --> Button[\"按钮\"]\n    DynUI --> HealthBar[\"血条\"]\n    DynUI --> ProgressBar[\"进度条\"]\n    Button --> VariantGen[\"生成不同状态变体（正常、悬停、按下）\"]\n    Button --> CodeShade[\"单张图 + 代码调暗/高亮\"]\n    HealthBar --> Split[\"拆分为静态框 + 动态红心\"]\n    ProgressBar --> Split2[\"拆分为静态框 + 动态进度\"]\n    VariantGen --> IntegrateBtn[\"在游戏中使用对应 PNG\"]\n    CodeShade --> IntegrateBtn2[\"在游戏中用代码调节状态\"]\n    Split --> IntegrateHB[\"在游戏中实时绘制红心\"]\n    Split2 --> IntegratePB[\"在游戏中实时绘制进度\"]"
+    },
+    {
+      "title": "积分节省的修改技巧",
+      "code": "flowchart TD\n    Modify[\"需要修改 UI 组件\"] --> Assemble[\"将待修改组件组装\"]\n    Assemble --> AddRef[\"添加为参考图\"]\n    AddRef --> DescribeMod[\"逐条描述修改要求\"]\n    DescribeMod --> Submit[\"提交修改请求\"]\n    Submit --> Cost[\"一次积分消耗多次修改\"]\n    Cost --> Updated[\"获取更新后的 UI 组件\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T19:37:26+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV18i3Q6fEf7",
+  "title": "codex接入deepseek后无法切换回chatGPT官方登陆，以及codex登陆时短信验证问题解决方法分享！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 815,
+  "text": "最近很多兄弟反馈给codex\n接入deep sick等第三方API后\n无法切换回chat gbt官方登录\n打开codex后\n点击左下角设置\n没有退出登录的按键\n其实这是因为你的API控制台调错了\n本期视频就手把手教你切换回chat gbt\n官方登录\n并解决大家最头疼的短信验证问题\n先说切换方法\n首先确定你的codex已经完全关闭\n右下角小三角也需要关闭\n接着打开你接入第三方API使用的控制台\n我这边使用的是爆喵AI管家\n当然cc switch也一样\n打开后点击左边的模型管理\n找到codex\n把codex接入的模型切换为这个官方的配置模型\n也就是OpenAI official\n并且关闭本地路由点右上角这里一键关闭即可\n关闭后我们再完全关闭报喵AI管家\n最后打开codex\n它就会自动进入登录界面\n此时只需要点击继续登录进行登录就可以了\n说完切换问题再说\n大家在登录时一定会遇到的问题\n短信验证\n这是因为OpenAI最近风控收紧导致的\n但解决方法也很简单\n使用带有解码功能的报喵AI管家进行解码即可\n我们搜索报喵AI管家\n找到后\n根据自己的系统下载相应的版本\n安装完成后打开\n打开后先点击右上角兑换码\n输入111领取操作时长\n然后在主页找到ChatGPT进去后\n点击下面的解码功能\n点击立即解码就可以进行解码了\n为了防止大家不会操作\n这边带大家走一下验证流程\n首先打开codex\n点击注册或登录进去后\n选择自己要登录的账号\n接着就会弹出手机号验证\n这时候我们来到报喵打开解码功能\n先获取一个手机号\n接着复制复制后回到codex输入手机号\n然后点击继续获取验证码\n获取后再打开报喵获取一下验证码\n然后输入进去\n点击继续\n最后看到这个页面就代表你已经注册成功了\n这时候我们打开codex就可以看到已经登录\n并且可以正常使用GPT5.6LUNA模型\n以上就是本期视频的全部内容了\n大家还有什么问题可以在评论区留言\n下期视频为大家解决",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18i3Q6fEf7",
+  "published_at": "1785656178",
+  "fetched_at": "2026-08-07T16:09:25+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Codex 切换与短信验证流程图\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"关闭 Codex（包括右下角小三角）\"] --> A2[\"打开第三方 API 控制台（如爆喵AI管家）\"]\n    A2 --> A3[\"模型管理 → 找到 Codex\"]\n    A3 --> A4[\"切换模型为 OpenAI official\"]\n    A4 --> A5[\"关闭本地路由（右上角）\"]\n    A5 --> A6[\"完全关闭 API 控制台\"]\n    A6 --> A7[\"重新打开 Codex\"]\n    A7 --> A8[\"自动进入登录界面 → 点击继续登录\"]\n    A8 --> A9[\"如需短信验证 → 使用报喵AI管家解码获取验证码\"]\n    A9 --> A10[\"输入验证码完成登录\"]\n```\n\n- 关闭 Codex 完全关闭 [BV18i3Q6fEf7 P1 00:19]  \n- 切换模型为 OpenAI official [BV18i3Q6fEf7 P1 00:33]  \n- 重新打开 Codex 自动进入登录界面 [BV18i3Q6fEf7 P1 00:45]  \n\n## 切换回官方登录详细流程\n\n```mermaid\nflowchart LR\n    S1[\"确认 Codex 已完全关闭（含右下角小三角）\"] --> S2[\"打开 API 控制台（爆喵AI管家 / cc switch）\"]\n    S2 --> S3[\"左侧模型管理 → 选中 Codex\"]\n    S3 --> S4[\"切换模型为 OpenAI official 配置\"]\n    S4 --> S5[\"右上角一键关闭本地路由\"]\n    S5 --> S6[\"关闭 API 控制台\"]\n    S6 --> S7[\"启动 Codex\"]\n    S7 --> S8[\"出现登录页面 → 点击继续登录\"]\n```\n\n- 确认 Codex 完全关闭 [BV18i3Q6fEf7 P1 00:19]  \n- 打开 API 控制台并切换模型 [BV18i3Q6fEf7 P1 00:30-00:37]  \n- 关闭本地路由并重新打开 Codex [BV18i3Q6fEf7 P1 00:39-00:48]  \n\n## 短信验证与解码流程\n\n```mermaid\nflowchart TD\n    V1[\"在 Codex 登录时弹出手机号验证\"] --> V2[\"打开 报喵AI管家 → 兑换码输入 111\"]\n    V2 --> V3[\"获取临时手机号\"]\n    V3 --> V4[\"复制手机号回 Codex 并点击获取验证码\"]\n    V4 --> V5[\"在 报喵AI管家 中使用解码功能获取验证码\"]\n    V5 --> V6[\"将验证码输入 Codex\"]\n    V6 --> V7[\"完成注册/登录，进入 GPT5.6LUNA 模型使用界面\"]\n```\n\n- 短信验证因 OpenAI 风控收紧 [BV18i3Q6fEf7 P1 00:57]  \n- 使用报喵AI管家解码功能获取验证码 [BV18i3Q6fEf7 P1 01:01-01:18]  \n- 登录成功后可使用 GPT5.6LUNA 模型 [BV18i3Q6fEf7 P1 01:53]",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"关闭 Codex（包括右下角小三角）\"] --> A2[\"打开第三方 API 控制台（如爆喵AI管家）\"]\n    A2 --> A3[\"模型管理 → 找到 Codex\"]\n    A3 --> A4[\"切换模型为 OpenAI official\"]\n    A4 --> A5[\"关闭本地路由（右上角）\"]\n    A5 --> A6[\"完全关闭 API 控制台\"]\n    A6 --> A7[\"重新打开 Codex\"]\n    A7 --> A8[\"自动进入登录界面 → 点击继续登录\"]\n    A8 --> A9[\"如需短信验证 → 使用报喵AI管家解码获取验证码\"]\n    A9 --> A10[\"输入验证码完成登录\"]"
+        },
+        {
+          "title": "切换回官方登录详细流程",
+          "code": "flowchart LR\n    S1[\"确认 Codex 已完全关闭（含右下角小三角）\"] --> S2[\"打开 API 控制台（爆喵AI管家 / cc switch）\"]\n    S2 --> S3[\"左侧模型管理 → 选中 Codex\"]\n    S3 --> S4[\"切换模型为 OpenAI official 配置\"]\n    S4 --> S5[\"右上角一键关闭本地路由\"]\n    S5 --> S6[\"关闭 API 控制台\"]\n    S6 --> S7[\"启动 Codex\"]\n    S7 --> S8[\"出现登录页面 → 点击继续登录\"]"
+        },
+        {
+          "title": "短信验证与解码流程",
+          "code": "flowchart TD\n    V1[\"在 Codex 登录时弹出手机号验证\"] --> V2[\"打开 报喵AI管家 → 兑换码输入 111\"]\n    V2 --> V3[\"获取临时手机号\"]\n    V3 --> V4[\"复制手机号回 Codex 并点击获取验证码\"]\n    V4 --> V5[\"在 报喵AI管家 中使用解码功能获取验证码\"]\n    V5 --> V6[\"将验证码输入 Codex\"]\n    V6 --> V7[\"完成注册/登录，进入 GPT5.6LUNA 模型使用界面\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T16:09:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Codex 切换与短信验证流程图\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"关闭 Codex（包括右下角小三角）\"] --> A2[\"打开第三方 API 控制台（如爆喵AI管家）\"]\n    A2 --> A3[\"模型管理 → 找到 Codex\"]\n    A3 --> A4[\"切换模型为 OpenAI official\"]\n    A4 --> A5[\"关闭本地路由（右上角）\"]\n    A5 --> A6[\"完全关闭 API 控制台\"]\n    A6 --> A7[\"重新打开 Codex\"]\n    A7 --> A8[\"自动进入登录界面 → 点击继续登录\"]\n    A8 --> A9[\"如需短信验证 → 使用报喵AI管家解码获取验证码\"]\n    A9 --> A10[\"输入验证码完成登录\"]\n```\n\n- 关闭 Codex 完全关闭 [BV18i3Q6fEf7 P1 00:19]  \n- 切换模型为 OpenAI official [BV18i3Q6fEf7 P1 00:33]  \n- 重新打开 Codex 自动进入登录界面 [BV18i3Q6fEf7 P1 00:45]  \n\n## 切换回官方登录详细流程\n\n```mermaid\nflowchart LR\n    S1[\"确认 Codex 已完全关闭（含右下角小三角）\"] --> S2[\"打开 API 控制台（爆喵AI管家 / cc switch）\"]\n    S2 --> S3[\"左侧模型管理 → 选中 Codex\"]\n    S3 --> S4[\"切换模型为 OpenAI official 配置\"]\n    S4 --> S5[\"右上角一键关闭本地路由\"]\n    S5 --> S6[\"关闭 API 控制台\"]\n    S6 --> S7[\"启动 Codex\"]\n    S7 --> S8[\"出现登录页面 → 点击继续登录\"]\n```\n\n- 确认 Codex 完全关闭 [BV18i3Q6fEf7 P1 00:19]  \n- 打开 API 控制台并切换模型 [BV18i3Q6fEf7 P1 00:30-00:37]  \n- 关闭本地路由并重新打开 Codex [BV18i3Q6fEf7 P1 00:39-00:48]  \n\n## 短信验证与解码流程\n\n```mermaid\nflowchart TD\n    V1[\"在 Codex 登录时弹出手机号验证\"] --> V2[\"打开 报喵AI管家 → 兑换码输入 111\"]\n    V2 --> V3[\"获取临时手机号\"]\n    V3 --> V4[\"复制手机号回 Codex 并点击获取验证码\"]\n    V4 --> V5[\"在 报喵AI管家 中使用解码功能获取验证码\"]\n    V5 --> V6[\"将验证码输入 Codex\"]\n    V6 --> V7[\"完成注册/登录，进入 GPT5.6LUNA 模型使用界面\"]\n```\n\n- 短信验证因 OpenAI 风控收紧 [BV18i3Q6fEf7 P1 00:57]  \n- 使用报喵AI管家解码功能获取验证码 [BV18i3Q6fEf7 P1 01:01-01:18]  \n- 登录成功后可使用 GPT5.6LUNA 模型 [BV18i3Q6fEf7 P1 01:53]",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"关闭 Codex（包括右下角小三角）\"] --> A2[\"打开第三方 API 控制台（如爆喵AI管家）\"]\n    A2 --> A3[\"模型管理 → 找到 Codex\"]\n    A3 --> A4[\"切换模型为 OpenAI official\"]\n    A4 --> A5[\"关闭本地路由（右上角）\"]\n    A5 --> A6[\"完全关闭 API 控制台\"]\n    A6 --> A7[\"重新打开 Codex\"]\n    A7 --> A8[\"自动进入登录界面 → 点击继续登录\"]\n    A8 --> A9[\"如需短信验证 → 使用报喵AI管家解码获取验证码\"]\n    A9 --> A10[\"输入验证码完成登录\"]"
+    },
+    {
+      "title": "切换回官方登录详细流程",
+      "code": "flowchart LR\n    S1[\"确认 Codex 已完全关闭（含右下角小三角）\"] --> S2[\"打开 API 控制台（爆喵AI管家 / cc switch）\"]\n    S2 --> S3[\"左侧模型管理 → 选中 Codex\"]\n    S3 --> S4[\"切换模型为 OpenAI official 配置\"]\n    S4 --> S5[\"右上角一键关闭本地路由\"]\n    S5 --> S6[\"关闭 API 控制台\"]\n    S6 --> S7[\"启动 Codex\"]\n    S7 --> S8[\"出现登录页面 → 点击继续登录\"]"
+    },
+    {
+      "title": "短信验证与解码流程",
+      "code": "flowchart TD\n    V1[\"在 Codex 登录时弹出手机号验证\"] --> V2[\"打开 报喵AI管家 → 兑换码输入 111\"]\n    V2 --> V3[\"获取临时手机号\"]\n    V3 --> V4[\"复制手机号回 Codex 并点击获取验证码\"]\n    V4 --> V5[\"在 报喵AI管家 中使用解码功能获取验证码\"]\n    V5 --> V6[\"将验证码输入 Codex\"]\n    V6 --> V7[\"完成注册/登录，进入 GPT5.6LUNA 模型使用界面\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T16:09:47+00:00"
+}

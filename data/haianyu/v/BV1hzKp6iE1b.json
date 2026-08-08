@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1hzKp6iE1b",
+  "title": "[120]. Performer，线性注意力：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3388,
+  "text": "今天我们来介绍一篇关于transformer\n高效注意力机制的工作\n标题叫做rethinking attention with performance\n简称performer\n发表在ICLR2021\ntransformer模型在自然语言处理\n计算机\n视觉和生物信息学等领域取得了广泛应用\n但其核心组件自注意力机制的计算复杂度\n与输入序列长度的平方成正比\n也就是L的平方复杂度\n这使得处理长序列时计算和内存开销非常大\nPerformer\n这篇论文提出了一种叫做菲薄加的方法\n全称是基于正交随机特征的快速注意力机制\n它通过随机特征映射来近似soft max注意力和函数\n将时间和空间复杂度从二次降低到线性\n与此同时\nperformer与标准transformer完全兼容\n可以通过少量微调进行迁移\n并在文本建模\n图像生成和\n蛋白质序列建模等多个任务上进行了验证\n下面看一下摘要翻译\n我们介绍了performer\n这是一种transformer架构\n能够以可证明的精度估计常规的soft max\n全制注意力transformer\n但仅使用线性的时间和空间复杂度\n而不是二次复杂度\n且不依赖于任何先验假设\n如稀疏性或低质性\n为了近似soft max注意力和performer\n使用了一种新颖的\n基于正交随机特征的快速注意力方法\n简称fable加\n该方法对于可扩展的核方法\n可能具有独立的研究价值\nFAVOR加还可以用于高效建模\nsoft max以外的可核化注意力机制\n这种表示能力\n对于首次在大规模任务上准确比较\nsoft max与其他核函数\n并研究最优注意力和函数至关重要\n这些任务超出了常规transformer的能力范围\nperformer是与常规transformer完全兼容的\n线性架构\n具有严格的理论保证\n对注意力矩阵的无偏或近似\n无偏估计一致\n收敛性和低估计方差\n我们在从像素预测到文本模型\n再到蛋白质序列建模的一系列任务上\n测试了performer\n展示了与其他已考察的高效\n稀疏和稠密注意力方法相比\n具有竞争力的结果\n体现了performer所采用的新\n引注意力学习范式的作用\n下面看一下这个公式\n这个公式展示了标准transformer中的双向点击\n注意力机制\n输入是查询矩阵Q键\n矩阵K和值矩阵V他们的维度都是L乘D\n其中L是序列长度\nD是隐藏维度\n注意力矩阵A的计算方式是\n先对Q和K的转置做矩阵乘法\n再除以根号D进行缩放\n然后对每个元素取指数\n接着用A乘以V\n再通过一个对角矩阵D进行归一化\nD的对角线元素是A的每行之和\n这个计算过程的时间复杂度是L平方乘以D\n空间复杂度是L平方加上L乘D\n因为必须显示存储大小为L乘L的注意力矩阵\nA当序列长度L很大时\n这种二次复杂度会使得长序列处理\n在计算资源受限的情况下变得不可行\n下面看一下这张图\n这张图直观地展示了FAVOR加\n如何将二次复杂度的注意力计算\n转化为线性复杂度\n左边是标准注意力机制\n需要计算并存储一个L乘L的注意力矩阵\nA再与L乘D的V矩阵相乘\n时间复杂度为L平方乘D\n右边是FAVOR加的近似方案\n首先通过随机特征映射\n将查询矩阵Q和键\n矩阵K分别映射到低维的Q撇和K撇\n维度变为L乘R\n其中R是随机特征的数量远小于L\n然后计算顺序被重新组织\n先计算K撇的转置与V的乘积\n得到一个R乘D的矩阵\n再用Q撇与之相乘\n得到最终输出\n整个过程的时间复杂度变为L乘R乘D\n空间复杂度也大幅降低\n因为不再需要显示存储L乘L的注意力矩阵\n下面看一下这个公式\n这个公式是FAO加的核心近似公式\n也就是公式四\n它定义了近似注意力的计算方式\n首先用归一化矩阵d hat的逆矩阵乘以Q撇\nK撇转置和V的乘积\n其中d heat的对角线元素由Q撇乘以K撇转置\n再乘以全一向量\n得到括号\n表示了计算的优先顺序\n这意味着可以先计算K撇转置与B的乘积\n避免直接构造L乘L的注意力矩阵\n通过这样的计算顺序\n重组空间复杂度变为L乘二加L乘D加R乘D\n时间复杂度变为L乘二乘D\n这与标准注意力的L平方加L乘D\n和L平方乘D相比\n在R远小于L时\n实现了显著的效率提升\n下面看一下这段伪代码\n这段算法描述了FAVOR加的核心计算流程\n支持双向和单向两种模式\n输入是查询矩阵Q键矩阵\nK值\n矩阵V以及一个标志位\n表示是否为双向注意力\n首先根据前面章节的方法计算Q撇和K撇\n并构造增广矩阵\nC由V和一个全一向量拼接而成\n如果是双向注意力算法\n先计算K撇转置与C的乘积存入buff1\n再计算Q撇与buff1的乘积存入buff2\n如果是单向注意力\n则计算张量计及其前缀和张量计的P\n然后根据公式11构造buff2\n最后将buff2拆分为buff3和Buff四两部分\n返回buff4\n对角化后的逆矩阵乘以buff3\n整个算法的时间复杂度为L乘M乘D\n其中M是随机特征数\n远低于标准注意力的L平方乘D\n下面看一下这张图\n这张图对比了transformer和performer\n在前向传播和反向传播中的速度\n以及最大可处理序列长度\n左图是前向传播时间\n右图是反向传播时间\n纵轴是对数刻度的时间\n横轴是序列长度的对数\n不同颜色的实线代表不同批处理大小\n下的performer\n黑色实线代表transformer\n虚线代表理论最优加速\n叉号代表最优情况下的实际测量值\n可以看到\n随着序列长度增加\ntransformer的速度呈二次增长\n而performer几乎呈线性增长\n在实际测试中\n当使用16级字节显存的V100GPU时\ntransformer在处理较长序列时\n会因显存不足而报错\n而performer能够处理更长的序列\n下面看一下这张图\n这张图展示了favor加近似误差的消融实验\n结果包含两个子图\n左图比较了正交随机特征与独立同分布\n随机特征的近似误差\n右图比较了正弦\n余弦随机特征与正随机特征的近似误差\n纵轴都是输出均方误差的对数刻度\n横轴是随机特征数量\n从左图可以看出\n当随机特征数量超过100后\n正交特征的误差迅速下降到接近十的二次方\n而独立同分布特征的误差\n始终维持在十的二次方以上\n说明正交化能显著降低近似误差\n从右图可以看出\n正随机特征的误差\n始终保持在十的一次方以下\n而正弦余弦特征的误差高达十的三次方左右\n这说明在soft max和近似中\n正随机特征比传统的三角函数\n随机特征稳定的多\n下面看一下这张图\n这张图展示了performer\n在文本建模任务上的训练表现\n左图是在LM1B数据集上的向后兼容性实验\n作者将预训练transformer的权重\n迁移到performer上\n初始准确率约为0.07\n用虚线表示\n但经过少量梯度部署后\n就能快速恢复到接近transformer的水平\n右图是在pg19数据集上的困惑度曲线\n比较了多种近似策略\n可以看到\n基于正弦\n余弦近似的performer在训练过程中非常不稳定\n困惑度剧烈波动\n而使用正随机特征的performer\n即使不重新采样\n也能保持稳定\n配合特征重采样后效果更好\n进一步加入SMREG正则化可以加速收敛\n最终使用正随机特征加重采样的performer\n能够匹配标准transformer的困惑度水平\n下面看一下这张图\n这张图展示了performer\n在蛋白质序列建模任务上的实验结果\n包含双向和单向两种设置\n使用tremble数据集模型为36层\n左图是单向设置下的训练曲线\n比较了performer review\ntransformer和reformer\n可以看到\nreformer在蛋白质数据上准确率显著下降\n而performer review和transformer表现接近\nperformer re路略高\n右图是双向设置下的结果\n比较了performer\nRelue\nPerformer\nSoft max\ntransformer和LINFORMER\nperformer value取得了最高的准确率\nperformer soft max与transformer表现相当\n而informer的准确率明显更低\n这些结果表明\nperformer不仅在文本任务上有效\n在蛋白质序列建模\n这类生物信息学任务上也具有竞争力\n且其广义注意力机制\n能够使用soft max以外的核函数",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hzKp6iE1b",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:12:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Performer 与线性注意力概览\n\n## 图1：Transformer 与 Performer 的核心差异\n```mermaid\nflowchart TD\n    A1[\"Transformer\"] --> A2[\"自注意力\"]\n    A2 --> A3[\"计算复杂度 O(L²·D)\"]\n    A2 --> A4[\"内存 O(L²)\"]\n    A3 --> A5[\"难以处理长序列\"]\n    A4 --> A5\n    B1[\"Performer\"] --> B2[\"FAVOR+ 近似\"]\n    B2 --> B3[\"线性复杂度 O(L·R·D)\"]\n    B1 --> B4[\"兼容标准 Transformer\"]\n    B4 --> B5[\"少量微调迁移\"]\n    B1 --> B6[\"适用于多任务\"]\n```\n\n## 图2：FAVOR+ 近似计算流程\n```mermaid\nflowchart TD\n    Q[\"查询矩阵 Q (L×D)\"] --> RF[\"随机特征映射 φ\"]\n    K[\"键矩阵 K (L×D)\"] --> RF\n    V[\"值矩阵 V (L×D)\"] --> KV[\"K'ᵀ·V (R×D)\"]\n    RF --> Qp[\"Q' = φ(Q) (L×R)\"]\n    RF --> Kp[\"K' = φ(K) (L×R)\"]\n    Kp --> KV\n    V --> KV\n    Qp --> Out[\"输出 = Q'·(K'ᵀ·V) (L×D)\"]\n    Out --> Norm[\"归一化 d̂⁻¹\"]\n    Norm --> Final[\"最终注意力输出\"]\n```\n\n## 图3：随机特征类型对近似误差的影响\n```mermaid\nflowchart TD\n    Feature[\"随机特征类型\"] --> Orth[\"正交随机特征\"]\n    Feature --> IID[\"独立同分布特征\"]\n    Feature --> SinCos[\"正弦/余弦特征\"]\n    Orth --> Error[\"近似误差 (MSE)\"]\n    IID --> Error\n    SinCos --> Error\n    Count[\"特征数量 R\"] --> Trend[\"误差随 R 下降\"]\n    Trend --> OrthBest[\"正交误差最低\"]\n    Trend --> SinCosWorse[\"正弦余弦误差较高\"]\n```\n\n## 图4：性能与可扩展性比较\n```mermaid\nflowchart TD\n    Length[\"序列长度 L\"] --> Std[\"标准 Transformer\"]\n    Length --> Perf[\"Performer\"]\n    Std --> StdTime[\"时间 O(L²·D)\"]\n    Std --> StdMem[\"内存 O(L²)\"]\n    StdTime --> StdSpeed[\"速度二次增长\"]\n    Perf --> PerfTime[\"时间 O(L·R·D)\"]\n    Perf --> PerfMem[\"内存 O(L·R + D)\"]\n    PerfTime --> PerfSpeed[\"速度线性增长\"]\n    GPU[\"GPU 显存限制\"] --> OOM[\"显存不足报错\"]\n    OOM --> Std\n    PerfSpeed --> Able[\"可处理更长序列\"]\n```\n\n## 图5：应用场景与实验结果\n```mermaid\nflowchart TD\n    Task[\"任务\"] --> Text[\"文本建模 (LM1B)\"]\n    Task --> Image[\"图像生成\"]\n    Task --> Protein[\"蛋白质序列建模\"]\n    Text --> Transfer[\"权重迁移\"]\n    Transfer --> FineTune[\"少量微调\"]\n    FineTune --> PerfAcc[\"Performer 准确率≈Transformer\"]\n    Protein --> ReformerAcc[\"Reformer 准确率下降\"]\n    Protein --> PerfAcc\n    PerfAcc --> Result[\"在所有任务上竞争力\"]\n    ReformerAcc --> Result\n    PerfAcc --> Stable[\"使用正随机特征 + 重采样 稳定\"]\n    Stable --> Result\n    Reg[\"加入 SMREG 加速收敛\"] --> Result\n```",
+      "diagrams": [
+        {
+          "title": "图1：Transformer 与 Performer 的核心差异",
+          "code": "flowchart TD\n    A1[\"Transformer\"] --> A2[\"自注意力\"]\n    A2 --> A3[\"计算复杂度 O(L²·D)\"]\n    A2 --> A4[\"内存 O(L²)\"]\n    A3 --> A5[\"难以处理长序列\"]\n    A4 --> A5\n    B1[\"Performer\"] --> B2[\"FAVOR+ 近似\"]\n    B2 --> B3[\"线性复杂度 O(L·R·D)\"]\n    B1 --> B4[\"兼容标准 Transformer\"]\n    B4 --> B5[\"少量微调迁移\"]\n    B1 --> B6[\"适用于多任务\"]"
+        },
+        {
+          "title": "图2：FAVOR+ 近似计算流程",
+          "code": "flowchart TD\n    Q[\"查询矩阵 Q (L×D)\"] --> RF[\"随机特征映射 φ\"]\n    K[\"键矩阵 K (L×D)\"] --> RF\n    V[\"值矩阵 V (L×D)\"] --> KV[\"K'ᵀ·V (R×D)\"]\n    RF --> Qp[\"Q' = φ(Q) (L×R)\"]\n    RF --> Kp[\"K' = φ(K) (L×R)\"]\n    Kp --> KV\n    V --> KV\n    Qp --> Out[\"输出 = Q'·(K'ᵀ·V) (L×D)\"]\n    Out --> Norm[\"归一化 d̂⁻¹\"]\n    Norm --> Final[\"最终注意力输出\"]"
+        },
+        {
+          "title": "图3：随机特征类型对近似误差的影响",
+          "code": "flowchart TD\n    Feature[\"随机特征类型\"] --> Orth[\"正交随机特征\"]\n    Feature --> IID[\"独立同分布特征\"]\n    Feature --> SinCos[\"正弦/余弦特征\"]\n    Orth --> Error[\"近似误差 (MSE)\"]\n    IID --> Error\n    SinCos --> Error\n    Count[\"特征数量 R\"] --> Trend[\"误差随 R 下降\"]\n    Trend --> OrthBest[\"正交误差最低\"]\n    Trend --> SinCosWorse[\"正弦余弦误差较高\"]"
+        },
+        {
+          "title": "图4：性能与可扩展性比较",
+          "code": "flowchart TD\n    Length[\"序列长度 L\"] --> Std[\"标准 Transformer\"]\n    Length --> Perf[\"Performer\"]\n    Std --> StdTime[\"时间 O(L²·D)\"]\n    Std --> StdMem[\"内存 O(L²)\"]\n    StdTime --> StdSpeed[\"速度二次增长\"]\n    Perf --> PerfTime[\"时间 O(L·R·D)\"]\n    Perf --> PerfMem[\"内存 O(L·R + D)\"]\n    PerfTime --> PerfSpeed[\"速度线性增长\"]\n    GPU[\"GPU 显存限制\"] --> OOM[\"显存不足报错\"]\n    OOM --> Std\n    PerfSpeed --> Able[\"可处理更长序列\"]"
+        },
+        {
+          "title": "图5：应用场景与实验结果",
+          "code": "flowchart TD\n    Task[\"任务\"] --> Text[\"文本建模 (LM1B)\"]\n    Task --> Image[\"图像生成\"]\n    Task --> Protein[\"蛋白质序列建模\"]\n    Text --> Transfer[\"权重迁移\"]\n    Transfer --> FineTune[\"少量微调\"]\n    FineTune --> PerfAcc[\"Performer 准确率≈Transformer\"]\n    Protein --> ReformerAcc[\"Reformer 准确率下降\"]\n    Protein --> PerfAcc\n    PerfAcc --> Result[\"在所有任务上竞争力\"]\n    ReformerAcc --> Result\n    PerfAcc --> Stable[\"使用正随机特征 + 重采样 稳定\"]\n    Stable --> Result\n    Reg[\"加入 SMREG 加速收敛\"] --> Result"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T18:16:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Performer 与线性注意力概览\n\n## 图1：Transformer 与 Performer 的核心差异\n```mermaid\nflowchart TD\n    A1[\"Transformer\"] --> A2[\"自注意力\"]\n    A2 --> A3[\"计算复杂度 O(L²·D)\"]\n    A2 --> A4[\"内存 O(L²)\"]\n    A3 --> A5[\"难以处理长序列\"]\n    A4 --> A5\n    B1[\"Performer\"] --> B2[\"FAVOR+ 近似\"]\n    B2 --> B3[\"线性复杂度 O(L·R·D)\"]\n    B1 --> B4[\"兼容标准 Transformer\"]\n    B4 --> B5[\"少量微调迁移\"]\n    B1 --> B6[\"适用于多任务\"]\n```\n\n## 图2：FAVOR+ 近似计算流程\n```mermaid\nflowchart TD\n    Q[\"查询矩阵 Q (L×D)\"] --> RF[\"随机特征映射 φ\"]\n    K[\"键矩阵 K (L×D)\"] --> RF\n    V[\"值矩阵 V (L×D)\"] --> KV[\"K'ᵀ·V (R×D)\"]\n    RF --> Qp[\"Q' = φ(Q) (L×R)\"]\n    RF --> Kp[\"K' = φ(K) (L×R)\"]\n    Kp --> KV\n    V --> KV\n    Qp --> Out[\"输出 = Q'·(K'ᵀ·V) (L×D)\"]\n    Out --> Norm[\"归一化 d̂⁻¹\"]\n    Norm --> Final[\"最终注意力输出\"]\n```\n\n## 图3：随机特征类型对近似误差的影响\n```mermaid\nflowchart TD\n    Feature[\"随机特征类型\"] --> Orth[\"正交随机特征\"]\n    Feature --> IID[\"独立同分布特征\"]\n    Feature --> SinCos[\"正弦/余弦特征\"]\n    Orth --> Error[\"近似误差 (MSE)\"]\n    IID --> Error\n    SinCos --> Error\n    Count[\"特征数量 R\"] --> Trend[\"误差随 R 下降\"]\n    Trend --> OrthBest[\"正交误差最低\"]\n    Trend --> SinCosWorse[\"正弦余弦误差较高\"]\n```\n\n## 图4：性能与可扩展性比较\n```mermaid\nflowchart TD\n    Length[\"序列长度 L\"] --> Std[\"标准 Transformer\"]\n    Length --> Perf[\"Performer\"]\n    Std --> StdTime[\"时间 O(L²·D)\"]\n    Std --> StdMem[\"内存 O(L²)\"]\n    StdTime --> StdSpeed[\"速度二次增长\"]\n    Perf --> PerfTime[\"时间 O(L·R·D)\"]\n    Perf --> PerfMem[\"内存 O(L·R + D)\"]\n    PerfTime --> PerfSpeed[\"速度线性增长\"]\n    GPU[\"GPU 显存限制\"] --> OOM[\"显存不足报错\"]\n    OOM --> Std\n    PerfSpeed --> Able[\"可处理更长序列\"]\n```\n\n## 图5：应用场景与实验结果\n```mermaid\nflowchart TD\n    Task[\"任务\"] --> Text[\"文本建模 (LM1B)\"]\n    Task --> Image[\"图像生成\"]\n    Task --> Protein[\"蛋白质序列建模\"]\n    Text --> Transfer[\"权重迁移\"]\n    Transfer --> FineTune[\"少量微调\"]\n    FineTune --> PerfAcc[\"Performer 准确率≈Transformer\"]\n    Protein --> ReformerAcc[\"Reformer 准确率下降\"]\n    Protein --> PerfAcc\n    PerfAcc --> Result[\"在所有任务上竞争力\"]\n    ReformerAcc --> Result\n    PerfAcc --> Stable[\"使用正随机特征 + 重采样 稳定\"]\n    Stable --> Result\n    Reg[\"加入 SMREG 加速收敛\"] --> Result\n```",
+  "diagrams": [
+    {
+      "title": "图1：Transformer 与 Performer 的核心差异",
+      "code": "flowchart TD\n    A1[\"Transformer\"] --> A2[\"自注意力\"]\n    A2 --> A3[\"计算复杂度 O(L²·D)\"]\n    A2 --> A4[\"内存 O(L²)\"]\n    A3 --> A5[\"难以处理长序列\"]\n    A4 --> A5\n    B1[\"Performer\"] --> B2[\"FAVOR+ 近似\"]\n    B2 --> B3[\"线性复杂度 O(L·R·D)\"]\n    B1 --> B4[\"兼容标准 Transformer\"]\n    B4 --> B5[\"少量微调迁移\"]\n    B1 --> B6[\"适用于多任务\"]"
+    },
+    {
+      "title": "图2：FAVOR+ 近似计算流程",
+      "code": "flowchart TD\n    Q[\"查询矩阵 Q (L×D)\"] --> RF[\"随机特征映射 φ\"]\n    K[\"键矩阵 K (L×D)\"] --> RF\n    V[\"值矩阵 V (L×D)\"] --> KV[\"K'ᵀ·V (R×D)\"]\n    RF --> Qp[\"Q' = φ(Q) (L×R)\"]\n    RF --> Kp[\"K' = φ(K) (L×R)\"]\n    Kp --> KV\n    V --> KV\n    Qp --> Out[\"输出 = Q'·(K'ᵀ·V) (L×D)\"]\n    Out --> Norm[\"归一化 d̂⁻¹\"]\n    Norm --> Final[\"最终注意力输出\"]"
+    },
+    {
+      "title": "图3：随机特征类型对近似误差的影响",
+      "code": "flowchart TD\n    Feature[\"随机特征类型\"] --> Orth[\"正交随机特征\"]\n    Feature --> IID[\"独立同分布特征\"]\n    Feature --> SinCos[\"正弦/余弦特征\"]\n    Orth --> Error[\"近似误差 (MSE)\"]\n    IID --> Error\n    SinCos --> Error\n    Count[\"特征数量 R\"] --> Trend[\"误差随 R 下降\"]\n    Trend --> OrthBest[\"正交误差最低\"]\n    Trend --> SinCosWorse[\"正弦余弦误差较高\"]"
+    },
+    {
+      "title": "图4：性能与可扩展性比较",
+      "code": "flowchart TD\n    Length[\"序列长度 L\"] --> Std[\"标准 Transformer\"]\n    Length --> Perf[\"Performer\"]\n    Std --> StdTime[\"时间 O(L²·D)\"]\n    Std --> StdMem[\"内存 O(L²)\"]\n    StdTime --> StdSpeed[\"速度二次增长\"]\n    Perf --> PerfTime[\"时间 O(L·R·D)\"]\n    Perf --> PerfMem[\"内存 O(L·R + D)\"]\n    PerfTime --> PerfSpeed[\"速度线性增长\"]\n    GPU[\"GPU 显存限制\"] --> OOM[\"显存不足报错\"]\n    OOM --> Std\n    PerfSpeed --> Able[\"可处理更长序列\"]"
+    },
+    {
+      "title": "图5：应用场景与实验结果",
+      "code": "flowchart TD\n    Task[\"任务\"] --> Text[\"文本建模 (LM1B)\"]\n    Task --> Image[\"图像生成\"]\n    Task --> Protein[\"蛋白质序列建模\"]\n    Text --> Transfer[\"权重迁移\"]\n    Transfer --> FineTune[\"少量微调\"]\n    FineTune --> PerfAcc[\"Performer 准确率≈Transformer\"]\n    Protein --> ReformerAcc[\"Reformer 准确率下降\"]\n    Protein --> PerfAcc\n    PerfAcc --> Result[\"在所有任务上竞争力\"]\n    ReformerAcc --> Result\n    PerfAcc --> Stable[\"使用正随机特征 + 重采样 稳定\"]\n    Stable --> Result\n    Reg[\"加入 SMREG 加速收敛\"] --> Result"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:16:50+00:00"
+}

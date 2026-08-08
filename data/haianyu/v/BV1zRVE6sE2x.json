@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1zRVE6sE2x",
+  "title": "137. HC=？会让超连接退化为preNorm传统残差连接？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 679,
+  "text": "今天的问题是超链接中的HC等于什么\n会让超连接退化为PRENORM的传统残差连接\n甲状先行\n当它等于这个0111的时候会发生退化\n而且这个结论是比较显而易见的\n如果按我们之前的这个可视化的话\n首先我分析一下偷连接是怎么连的\n首先它会把这个token的残差流\n这里以扩展率等于三为例\n也是有三个敞开流通道\n就这样三个小条先把它汇聚\n汇聚了呢\n就得到了这个前馈网络层的输入\n得到前馈网络层的输出\n然后把它分散分散写回常差流\n并且常差流和常差流通道之间也是有连接的\n转转\n那么这里的矩阵对应关系这样的\n就是紫色的这个AR它对应什么呢\n它又对应着矩阵当中这一块\n那么它是个矩阵\n这是由于它相当于一种全连接\n然后这里的am对应着这个它相当于是个向量\n因为它是把多个条连到一个条\n然后这个B就是把它分散的时候\n这个B也是个向量\n它对应这个它是行向量和列向量\n因为它是一个调变成多个条\nOK那么很明显可以看出来\n就把这些边形简化\n就是AR等于一\na am也等于一\nB也等于一的时候\n它就会退化为传统的反差链接\n就这样\n就是说这里的这个O1\n经过相关网络得到FFNO1\n然后呢和这个长差连接相加\n那么这个是明显的\n但问题是为什么他突然坏出来的是PRENORE\n而不是post norm呢\n这是由于PRENORM\n它其实相当于是在这个平面里面的\n这个地方做的\n那么它就可以进行一个退化\na post norm的问题是\n它是在残差加回来之后\n相当于说在这个平面的外部做的\n所以呢他没法进行直接的退化\n那么能不能有个公式说\n把PERSNORM也给它退化呢\n当然是有的\n这个后面再说",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zRVE6sE2x",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

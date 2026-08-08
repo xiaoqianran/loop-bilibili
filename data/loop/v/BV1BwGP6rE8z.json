@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1BwGP6rE8z",
+  "title": "DeepSeek V4 Flash 接入 ChatGPT / Codex 🐳",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3434,
+  "text": "Hello\n大家好\n我是温特喵\n今天deep seek v4flash迎来重磅更新啊\n他的一个正式版API上线了\n然后调用方式的话呢还是保持不变\n依然是deep sig杠V4flash就可以了\n他的一个agent能力大幅增强\n然后它的基准测试呢是远远超过V4pro的一个\n预览版本啊\n我今天用下来呢也确实如此\n并且正式版的一个V4flash还原生\n支持OpenAI加的responses API格式\n然后他还针对性的适配了一下code x\n所以的话呢我就我就用code x啊\n接入deep sic v4普flash来测试了一下\n发现它确实很强大啊\n大家看啊\n这个小程序嗯\n我们之前有用code x做过\n然后今天的话呢我是用code x结合deep sc\nV4flash来实现的\n它的一个实现效果就是\n和设计稿几乎是一模一样的啊\n你看这是设计稿啊\n和设计稿几乎一模一样\n并且还给他接入了一个后端API\n然后为了对比啊\n因为V4flash你可以接入codex app\n你也可以选择接入这个cloud code app嘛\n啊为了对比的话\n我还用CLOUDER接入deep seek v4flash\n来重新实现了一下这个小程序\n发现就是非常出乎我的意料啊\n发现额\ncode x这边的一个实现效果比这个cloud要好很多啊\n所以的话呢今天就带大家来看一下\n到底怎么在codex里面来使用deep sc v4flash啊\n啊如果你想在CLOUDER里面来使用\n也是一样的\nOK那我们来看一下吧\n啊第一步的话呢\n当然就是要来下载一下code x a p p啊\n现在的话已经集成在chat GB t里面\n也就是下载一下chat GB t app\n它的一个网址\n它的一个网址是OpenAI\n然后你点击下载就可以了\n它是支持Mac os\n也支持windows的啊\n你在你的电脑上打开的话呢\n它这边显示的会是你你电脑的那个版本\n点击下载\n下载好了之后呢\n安装就可以了\n然后你安装了之后呢\n打开啊ChatGPT app\n它可能需要让你登录啊\n这个时候你不用管\n你不需要登录啊\n因为我们要用它来接deep sc v4\nOK嗯那接下来呢我们啊嗯有两种方案啊\n第一种的话呢是走cc switch啊\n走这种中转中转工具\n还有一种呢就是你可以直接嗯通过在\n在deep sc的这个官方文档里面\n它也提供了直接在CODX中使用啊\n但是这样子的话不够灵活\n所以的话我今天给大家推荐的还是走cc switch啊\nOK嗯然后这是cc switch的一个链接\n它的一个GITHUB的一个链接\n然后这么个链接啊\n你进来之后呢也不用管太多\n你直接去他的官网就可以了\n他的官网是c c switch\n点IO\n到了他的一个官方网站之后呢\n这边啊点击免费下载\n然后它就可以来下载适合你的电脑的一个版本\n你给它安装一下\n安装好了之后呢\n它大概就是长这个样子啊\n那OK我们就差不多已经把需要下载的东西\n已经全部搞定了啊\n那接下来的话呢我们打开cc switch啊\n打开cc switch嗯\ncc switch给它打开啊\n打开了之后呢\n比如说我们想给它接入到CODX啊\n也就是chat gbt里面\n那你就选这个啊\n选这么个\n这要切了几BT啊\n如果你想接到CLO的的桌面版里面\n就是在选这个啊\n如果你想接到CLOLOUDER的CALI里面\n那就选这个啊\n那我们今天的话呢是接嗯char g b d啊\n那就选这个就可以了\nOK拉开啊\n选了这个之后呢\n你需要去把这个deep sick给它加上去啊\n它默认的话是是在这里啊\n默认是没有配置的\n那我们要配置一下\n配置一下的话\n来加个deep sick\n怎么加呢\n你点这个加号啊\n如果你没有看到这个加号的话\n可能是被收藏起来了啊\n那你给他拉开一点点点着加号\n然后你找到deep sick啊\n这不seek在哪里\n我我找一下啊\n这里还有KIMI啊\n如果你要是加走KIMIAPI的话\n你走KIMI也可以啊\n你要是走\n走其他的API也都可以啊\n啊比如说mini max就走这里\n然后我们今天的话呢是要来找一下deep sick\n我还找不到\n我搜一下算了\ndeep seek啊\n找到了\n在这里选中啊\n选中了之后呢\n嗯我们就可以来看一下它的一个配置\n这个这边的话呢需要来好\n我先给他加上去啊\n添加添加好了之后再来配置一下\n应该是在这里啊啊然后官方链接啊\n没问题\nAPI key啊\n这里需要填一个API key\na API key怎么来呢\nAPI key的话呢\n我们直接去deep sick的一个嗯\n开发者平台就可以了啊\n他的一个链接在这里\nPlatform\n然后我们先去在这个top up里面去充点钱啊\n充个十块钱\n二块十块钱或者20块钱就可以了啊\n很耐用的\n然后在这个APIKE里面点添加一个APIKE\n名称的话呢就是我建议大家的话呢\n就写写你用在哪里啊\n比如说我是用在cc switch里面的\n然后是给code x用的\n然后就这样子写\nOK然后把这个API key拷贝一下啊\n啊这个key你不要泄露\n泄露了\n人家也可以用的啊\n我这个key我等一下会去删除的啊\n拷贝一下\n拷贝一下之后呢\n再回到cc switch把这key填进来\n填进来了之后呢\nOK看这边测一下速啊\n测一下速没问题啊\n填进来了之后呢\n这地方大家注意啊\n这边啊默认模型你这边可以默认获取的啊\n这边最重要的地方到了啊\n这个上游格式啊\n因为deep seek v4flash已经支持responses了啊\n也就是原声OpenAI的一个原生API格式啊\n它是不需要开启路由的\n所以我们就选这个responses就可以了啊\n嗯然后目前的话威斯pro还不支持啊\n但是接下来威斯pro正式版发布之后\n也会支持的啊\n所以大家不用考虑啊\n并且就是威斯普鲁没有发布之前\nV4flash的正式版\n已经强过威斯普鲁的一个预览版啊\n所以我们这里直接选择原声就可以了\nOK然后这边模型映射也给我们映射好了啊\n如果他没有映射好的话\n你点一下获取\n他给你更新好\n你这边可以选啊\n啊默认已经验证好了\n那保存就可以了\n保存好了之后呢\n你就选中这个就可以了啊\n比如说我我也不知道刚刚保存的是哪个啊\n随便选一个\n你要选中这个的话也可以啊\n启用啊\n这两个我都是配置好了的\n那接下来怎么办呢\n啊你这个路由是不用开的啊\n不用开的\n你甚至可以把cc switch这个APP关掉啊\n因为它不需要走路\n由我们刚刚走的一个配置\n它相当于改了chat GB t啊\n以及code x它的一个配置文件\n所以它的配置文件已经改好了\n我们这cs witch\n你把它关掉也没关系啊\n关掉的话\n你code x重重启一下\n重启一下\nchat gbt啊\nCHE了\nG b t code x\nOK那这样的话呢我们就已经是deep seek了哈\n大家看一下啊\n你进来之后就已经是deep seek了啊\n然后我你看我就是之前让他帮我\n来完成了这个项目啊\n完成的也是非常顺利啊\n就就现在的话我们已经是deep seek了\n我我还可以跟他聊聊天啊\n嗯你好\n你是什么模型\n问一下他啊\n他这边他会说他是扣点X模型啊\n没关系的啊\n但他已经是deep sick了\nOK啊\n那你看他本绘画工具中列出两种可用的模型\n那就OK了\n那最后再给大家那个看一下\n就是我想用回code chat gbt官方的一个模型\n怎么办啊\n就是我想用回去啊\n那也那也很简单\n我们再在c c switch里面来配置一下就可以了啊\nCswitch\n你继续找到这个OpenAI这个地方啊\n然后你要选中一下\n选中这个没有配置的\nOK启用一下\n启用一下\n然后你重启一下这个code x a p p啊\n现在也是ChatGPT\n重启一下\nOK你看我这边的话又回到了我的一个\ncode x里面了啊\n我的chat gbt的code x里面\n我又回到了我的chat GB d code x了啊\n你看我这边是5.6\n然后我的这个\n刚刚这个deep sick的这个聊天记录也没有了啊\n然后我之前的之前的chat gbt的一个聊天记录\n又回来啦啊又回来啦\nOK啦啊我的今天分享就到这里啊\n就是cloud code也是同理啊啊但目前cloud code的话呢\n你是得得把那个路由得打开才可以啊\n就是codex的话呢\n目前是不需要开路由的\n那感谢大家的一个观看\n我们下期再见\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1BwGP6rE8z",
+  "published_at": "1785508775",
+  "fetched_at": "2026-08-07T01:50:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 与 CodeX 集成学习图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"DeepSeek V4Flash 正式版 API\"] --> A2[\"保持调用方式不变 (deepseek‑v4flash)\"]\n    A2 --> A3[\"Agent 能力大幅增强\"]\n    A3 --> A4[\"基准测试超 V4Pro 预览版\"]\n    A4 --> A5[\"原生支持 OpenAI responses API 格式\"]\n    A5 --> A6[\"适配 CodeX\"]\n    A6 --> A7[\"可接入 CodeX\"]\n    A6 --> A8[\"可接入 Cloud Code\"]\n    A6 --> A9[\"可通过 cc‑switch 中转\"]\n    A7 --> A10[\"CodeX 实现效果几乎与设计稿一致，优于 Cloud\"]\n```\n证据: [BV1BwGP6rE8z P1 00:08]、[BV1BwGP6rE8z P1 00:11]、[BV1BwGP6rE8z P1 00:18]、[BV1BwGP6rE8z P1 00:21]、[BV1BwGP6rE8z P1 00:36]、[BV1BwGP6rE8z P1 00:44]、[BV1BwGP6rE8z P1 01:27]、[BV1BwGP6rE8z P1 01:52]\n\n## 安装与准备流程\n```mermaid\nflowchart TD\n    B1[\"下载 ChatGPT App（支持 macOS & Windows）\"] --> B2[\"安装 App\"]\n    B2 --> B3[\"打开 ChatGPT\"]\n    B3 --> B4[\"无需登录（用于接入 DeepSeek V4Flash）\"]\n    B4 --> B5[\"选择集成方案：cc‑switch 或 直接使用官方文档\"]\n    B5 --> B6[\"推荐使用 cc‑switch\"]\n    B6 --> B7[\"获取 cc‑switch 下载链接（GitHub）\"]\n    B7 --> B8[\"下载并安装 cc‑switch\"]\n```\n证据: [BV1BwGP6rE8z P1 02:20]、[BV1BwGP6rE8z P1 02:44]、[BV1BwGP6rE8z P1 03:03]、[BV1BwGP6rE8z P1 03:14]、[BV1BwGP6rE8z P1 03:22]、[BV1BwGP6rE8z P1 03:50]、[BV1BwGP6rE8z P1 04:21]\n\n## cc‑switch 配置流程\n```mermaid\nflowchart TD\n    C1[\"打开 cc‑switch\"] --> C2[\"添加 DeepSeek\"]\n    C2 --> C3[\"获取 DeepSeek API Key（开发者平台）\"]\n    C3 --> C4[\"在 cc‑switch 填入 API Key\"]\n    C4 --> C5[\"选择模型（responses 格式）\"]\n    C5 --> C6[\"保存配置\"]\n    C6 --> C7[\"无需开启路由\"]\n    C7 --> C8[\"配置完成，可直接使用 DeepSeek V4Flash\"]\n```\n证据: [BV1BwGP6rE8z P1 05:24]、[BV1BwGP6rE8z P1 05:36]、[BV1BwGP6rE8z P1 06:41]、[BV1BwGP6rE8z P1 07:30]、[BV1BwGP6rE8z P1 08:12]、[BV1BwGP6rE8z P1 09:01]、[BV1BwGP6rE8z P1 09:17]\n\n## 切换回 OpenAI 官方模型\n```mermaid\nflowchart TD\n    D1[\"在 cc‑switch 中选择 OpenAI（OpenAI）\"] --> D2[\"启用 OpenAI 模型\"]\n    D2 --> D3[\"重启 CodeX\"]\n    D3 --> D4[\"恢复 ChatGPT 官方模型\"]\n    D4 --> D5[\"仍可使用 DeepSeek 其他功能\"]\n```\n证据: [BV1BwGP6rE8z P1 10:55]、[BV1BwGP6rE8z P1 11:02]、[BV1BwGP6rE8z P1 11:08]、[BV1BwGP6rE8z P1 11:14]",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A1[\"DeepSeek V4Flash 正式版 API\"] --> A2[\"保持调用方式不变 (deepseek‑v4flash)\"]\n    A2 --> A3[\"Agent 能力大幅增强\"]\n    A3 --> A4[\"基准测试超 V4Pro 预览版\"]\n    A4 --> A5[\"原生支持 OpenAI responses API 格式\"]\n    A5 --> A6[\"适配 CodeX\"]\n    A6 --> A7[\"可接入 CodeX\"]\n    A6 --> A8[\"可接入 Cloud Code\"]\n    A6 --> A9[\"可通过 cc‑switch 中转\"]\n    A7 --> A10[\"CodeX 实现效果几乎与设计稿一致，优于 Cloud\"]"
+        },
+        {
+          "title": "安装与准备流程",
+          "code": "flowchart TD\n    B1[\"下载 ChatGPT App（支持 macOS & Windows）\"] --> B2[\"安装 App\"]\n    B2 --> B3[\"打开 ChatGPT\"]\n    B3 --> B4[\"无需登录（用于接入 DeepSeek V4Flash）\"]\n    B4 --> B5[\"选择集成方案：cc‑switch 或 直接使用官方文档\"]\n    B5 --> B6[\"推荐使用 cc‑switch\"]\n    B6 --> B7[\"获取 cc‑switch 下载链接（GitHub）\"]\n    B7 --> B8[\"下载并安装 cc‑switch\"]"
+        },
+        {
+          "title": "cc‑switch 配置流程",
+          "code": "flowchart TD\n    C1[\"打开 cc‑switch\"] --> C2[\"添加 DeepSeek\"]\n    C2 --> C3[\"获取 DeepSeek API Key（开发者平台）\"]\n    C3 --> C4[\"在 cc‑switch 填入 API Key\"]\n    C4 --> C5[\"选择模型（responses 格式）\"]\n    C5 --> C6[\"保存配置\"]\n    C6 --> C7[\"无需开启路由\"]\n    C7 --> C8[\"配置完成，可直接使用 DeepSeek V4Flash\"]"
+        },
+        {
+          "title": "切换回 OpenAI 官方模型",
+          "code": "flowchart TD\n    D1[\"在 cc‑switch 中选择 OpenAI（OpenAI）\"] --> D2[\"启用 OpenAI 模型\"]\n    D2 --> D3[\"重启 CodeX\"]\n    D3 --> D4[\"恢复 ChatGPT 官方模型\"]\n    D4 --> D5[\"仍可使用 DeepSeek 其他功能\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T01:50:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 与 CodeX 集成学习图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"DeepSeek V4Flash 正式版 API\"] --> A2[\"保持调用方式不变 (deepseek‑v4flash)\"]\n    A2 --> A3[\"Agent 能力大幅增强\"]\n    A3 --> A4[\"基准测试超 V4Pro 预览版\"]\n    A4 --> A5[\"原生支持 OpenAI responses API 格式\"]\n    A5 --> A6[\"适配 CodeX\"]\n    A6 --> A7[\"可接入 CodeX\"]\n    A6 --> A8[\"可接入 Cloud Code\"]\n    A6 --> A9[\"可通过 cc‑switch 中转\"]\n    A7 --> A10[\"CodeX 实现效果几乎与设计稿一致，优于 Cloud\"]\n```\n证据: [BV1BwGP6rE8z P1 00:08]、[BV1BwGP6rE8z P1 00:11]、[BV1BwGP6rE8z P1 00:18]、[BV1BwGP6rE8z P1 00:21]、[BV1BwGP6rE8z P1 00:36]、[BV1BwGP6rE8z P1 00:44]、[BV1BwGP6rE8z P1 01:27]、[BV1BwGP6rE8z P1 01:52]\n\n## 安装与准备流程\n```mermaid\nflowchart TD\n    B1[\"下载 ChatGPT App（支持 macOS & Windows）\"] --> B2[\"安装 App\"]\n    B2 --> B3[\"打开 ChatGPT\"]\n    B3 --> B4[\"无需登录（用于接入 DeepSeek V4Flash）\"]\n    B4 --> B5[\"选择集成方案：cc‑switch 或 直接使用官方文档\"]\n    B5 --> B6[\"推荐使用 cc‑switch\"]\n    B6 --> B7[\"获取 cc‑switch 下载链接（GitHub）\"]\n    B7 --> B8[\"下载并安装 cc‑switch\"]\n```\n证据: [BV1BwGP6rE8z P1 02:20]、[BV1BwGP6rE8z P1 02:44]、[BV1BwGP6rE8z P1 03:03]、[BV1BwGP6rE8z P1 03:14]、[BV1BwGP6rE8z P1 03:22]、[BV1BwGP6rE8z P1 03:50]、[BV1BwGP6rE8z P1 04:21]\n\n## cc‑switch 配置流程\n```mermaid\nflowchart TD\n    C1[\"打开 cc‑switch\"] --> C2[\"添加 DeepSeek\"]\n    C2 --> C3[\"获取 DeepSeek API Key（开发者平台）\"]\n    C3 --> C4[\"在 cc‑switch 填入 API Key\"]\n    C4 --> C5[\"选择模型（responses 格式）\"]\n    C5 --> C6[\"保存配置\"]\n    C6 --> C7[\"无需开启路由\"]\n    C7 --> C8[\"配置完成，可直接使用 DeepSeek V4Flash\"]\n```\n证据: [BV1BwGP6rE8z P1 05:24]、[BV1BwGP6rE8z P1 05:36]、[BV1BwGP6rE8z P1 06:41]、[BV1BwGP6rE8z P1 07:30]、[BV1BwGP6rE8z P1 08:12]、[BV1BwGP6rE8z P1 09:01]、[BV1BwGP6rE8z P1 09:17]\n\n## 切换回 OpenAI 官方模型\n```mermaid\nflowchart TD\n    D1[\"在 cc‑switch 中选择 OpenAI（OpenAI）\"] --> D2[\"启用 OpenAI 模型\"]\n    D2 --> D3[\"重启 CodeX\"]\n    D3 --> D4[\"恢复 ChatGPT 官方模型\"]\n    D4 --> D5[\"仍可使用 DeepSeek 其他功能\"]\n```\n证据: [BV1BwGP6rE8z P1 10:55]、[BV1BwGP6rE8z P1 11:02]、[BV1BwGP6rE8z P1 11:08]、[BV1BwGP6rE8z P1 11:14]",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A1[\"DeepSeek V4Flash 正式版 API\"] --> A2[\"保持调用方式不变 (deepseek‑v4flash)\"]\n    A2 --> A3[\"Agent 能力大幅增强\"]\n    A3 --> A4[\"基准测试超 V4Pro 预览版\"]\n    A4 --> A5[\"原生支持 OpenAI responses API 格式\"]\n    A5 --> A6[\"适配 CodeX\"]\n    A6 --> A7[\"可接入 CodeX\"]\n    A6 --> A8[\"可接入 Cloud Code\"]\n    A6 --> A9[\"可通过 cc‑switch 中转\"]\n    A7 --> A10[\"CodeX 实现效果几乎与设计稿一致，优于 Cloud\"]"
+    },
+    {
+      "title": "安装与准备流程",
+      "code": "flowchart TD\n    B1[\"下载 ChatGPT App（支持 macOS & Windows）\"] --> B2[\"安装 App\"]\n    B2 --> B3[\"打开 ChatGPT\"]\n    B3 --> B4[\"无需登录（用于接入 DeepSeek V4Flash）\"]\n    B4 --> B5[\"选择集成方案：cc‑switch 或 直接使用官方文档\"]\n    B5 --> B6[\"推荐使用 cc‑switch\"]\n    B6 --> B7[\"获取 cc‑switch 下载链接（GitHub）\"]\n    B7 --> B8[\"下载并安装 cc‑switch\"]"
+    },
+    {
+      "title": "cc‑switch 配置流程",
+      "code": "flowchart TD\n    C1[\"打开 cc‑switch\"] --> C2[\"添加 DeepSeek\"]\n    C2 --> C3[\"获取 DeepSeek API Key（开发者平台）\"]\n    C3 --> C4[\"在 cc‑switch 填入 API Key\"]\n    C4 --> C5[\"选择模型（responses 格式）\"]\n    C5 --> C6[\"保存配置\"]\n    C6 --> C7[\"无需开启路由\"]\n    C7 --> C8[\"配置完成，可直接使用 DeepSeek V4Flash\"]"
+    },
+    {
+      "title": "切换回 OpenAI 官方模型",
+      "code": "flowchart TD\n    D1[\"在 cc‑switch 中选择 OpenAI（OpenAI）\"] --> D2[\"启用 OpenAI 模型\"]\n    D2 --> D3[\"重启 CodeX\"]\n    D3 --> D4[\"恢复 ChatGPT 官方模型\"]\n    D4 --> D5[\"仍可使用 DeepSeek 其他功能\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:50:54+00:00"
+}

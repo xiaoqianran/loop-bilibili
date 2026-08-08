@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1ouEp6gETM",
+  "title": "让Agent能力暴涨的Harness，到底是什么？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2841,
+  "text": "2026年3月31日的一个深夜\nAnthropy\n一位程序员意外泄露了co的全部源码\n1900多个文件\n51万行代码一夜之间全部曝光\n发布后的短短八个小时内\n这份源码在GITHUB上拿下了80000star\n创下了GITHUB历史记录\n而随着这份源码一起爆火的\n还有一个全新的概念\nHoneys engineering\n驾驭工程\n一个让cloud code成为最好的coding agent之一的关键\n从此honey这个概念迅速普及\n但它到底是个啥\n为什么一个工程名词对于所有开发agent的\n甚至只会web code的小白来说\n都是一个必学的课题\n那么今天这期视频\n我就想用小学生都能听懂的方式来和您讲讲\n什么是harness\n什么是harness\n他的本意是马的缰绳\n而缰绳的用途就是用来控制奔跑的马匹\n假如我们把大禹模型当成一匹\n可以日行千里的马\n而若是没有缰绳\n骑手就没有办法控制它的方向\n掌握它的速度\n马会乱跑\n骑手也无法到达目的地\n根据ANTHROPI的描述\nharness的定义就是agent加model\n在一个agent系统里面\n除了模型之外都是harness\n他的目的并不是让AI变得更聪明\n而是用规矩加检查加边界\n把它拴在一个使用者的目标上\n让他的每一步都不跑偏\n那么一套设计好的harness\n和一个设计不好的harness\n可以让同一个模型在执行同一个任务时\n呈现出巨大的差别\n那么为什么在执行任务的时候需要harness呢\n这个事情就需要我们回到模型的本质来看\n当我们和模型对话时\n模型其实并不理解自己生成的答案\n而是一个一个的预测\n下一个词\n它会根据前文计算下一个词的概率分布\n然后从中采样\n所以你获得答案其实是在限定概率下猜出来的\n那为了能让模型更好地预测\n人们在2023年的cheat报阶段\n提出了一个概念叫prom engineering\n通过限定的提示词来激发模型的正确概率\n本质上是通过上下文条件约束模型\n预测时的概率空间\n防止他漫无目的的发散采样\n那到了A战时代情况又不一样了\n模型学会了用工具\n那这意味着概率的战场从纯文本空间\n扩展到了决策空间\n模型不仅要猜下一个词是什么\n还要猜现在该不该调用工具\n调哪个工具参数怎么填\n每一次工具调用的决策本身也是一次概率采样\n调对了概率被确定性工具锁死\n调错了一步\n错步步错\n工具返回的结果\n反而把模型带进更深的沟\n所以harness这个概念就出现了\n而要更加深入的理解harness\n至于agent的意义\n我们还需要了解一个\n由康奈尔大学发布的这篇论文中提出的新概念\n叫做开发流与技术债权衡\n那我相信看我视频的不少观众\n是纯粹使用web coding来搭建agent\n那你或许会意识到\n当agent真正落地的时候\n效果并没有那么好\n那这篇论文对web coding引发的技术负面效应\n进行了深刻反省\n当开发者进入大模型\n通过自然语言描述\n就可以立刻获得大段可运行代码时\n就很容易跳过软件工程的关键步骤\n那这些被跳过的原则并不会消失\n而是转化为技术债\n在代码库中无声堆积\n当架构熵增到一定程度\n系统的可维护性\n可理解性就会崩塌\n那技术债在agent里面是怎么被放大的\n答案就藏在agent的执行过程中\n因为agent不是一次性跑完任务\n他会反复循环调用工具\n检查结果\n再调用\n再检查技术债\n一旦被写进代码或规则里\n就会在每一次循环中被反复执行\n反复确认\n甚至越滚越大\n这个反复循环的结构其实就是agent loop\n而harness的核心正是通过这个loop来运转的\n你只要把harness拆开\n看到的就是这一圈\n又一圈的循环\n如果你只看到最终结果不对劲\n却不懂这个loop内部发生了什么\n你就没有办法设计harness来拦住债务\n纠正偏差\n想要了解harness\n就让我们从一个用户发出一个问题开始\n用户问起模型思考\n给出答案\n交付用户\n这是一个模型在回答你问题时的线性工作流\n如果我们把这个线性方式通用在HARNE上\n那么它呈现出来的工作方式将会是\n用户输入问题模型思考\n调用工具一\n完成part1\n调用工具二\n完成跑二交付给用户\n这也是大部分用户在web coding时呈现出来的架构\n它能完美运行的前提是每一步都能完美执行\n并且不需要回头\n但实际情况是不同层级的工具调用可能失败\n中间结果可能偏离初中\n上下文越长\n模型就会忘了\n最开始的问题\n就像在一条没有质检的传送带上\n直到最后交给你一个报废品\n那么真实的agent loop是如何开始循环的\n我们再从一个用户的问题开始\n第一步不是为给模型\n而是给到context\n目的是组装上下文\n它包含了用户的任务\n历史的对话\ncloud点md agent点MD这些文件是项目给自己定的规矩\n什么能碰什么不能碰\n代码风格是什么\n以及什么样的结果才可以验收\n把需求变成需求加边界\n第二步才是把这份组装好的上下文送行模型\n模型拿到这份文档之后\n第一个动作不是干活\n而是确认计划\n为了完成这个任务\n我们需要拆分多少步\n每一步需要调用哪一种工具\n清晰的列出来\n还有什么样的标准才可以验收\n当他想清楚之后\nagent才正式开始工作\n第三步\n模型开始思考\n第一步需要哪些工具\n然后向agent发出调用工具的指令\n在调用工具之后\n第四步是检查各项系统权限\n判断这个工具能不能用\n这个命令能不能跑\n是否需要用户确认\n当权限通过之后\n第五步才是调用工具开始干\n当第一步工作执行完之后\nagent会把工具输出包装成一个two result jason\n这就代表了工具调用是否成功\n那这时候第一层的循环结束\n就开始了第二层循环\n第一次循环的to result\n等结果信息重新发给上下文进行组装\n然后再发给大模型进行验收\n那如果验证通过\n就会执行下一步调用工具完成任务\n然后再进入新的循环\n如果验证不通过\n就开始调用修补工具\n进入修补循环\n填补那些未完成或者失败的漏洞\n等完成后才会进入新循环模型\n就在这样一步一步的循环中完成了任务\n这就是一个A证\n这一圈就是大于模型\n而agent model等于harness\n那么把模型拿掉\n外面这一圈就是harness了\n在这个循环里面\n包含了ANTHROI在3月底发出的技术解读中\nharness设计里面最重要的三个条件\n一规划器\n二生成期\n三检验起harness\nthe workflow可以简化为需求到规划到生成到验证\n它的info包含了沙箱记忆\nSkill\n绘画状态\n权限控制和hook等模块\n这就是一个完整的aj loop中\nharness workflow和harness infa\n相信上述描述中\n也让你对harness的工作和harness所包含的元素\n有了清晰的认知\n他虽然这次源码的泄露是个意外\n但意外地把一个最重要的工程思维\n推到了所有人面前\n好了本期视频就到这里\n如果这期视频对你有帮助\n麻烦一键三连\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ouEp6gETM",
+  "published_at": "1780801500",
+  "fetched_at": "2026-08-06T21:22:10+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Harness 知识图谱\n\n## 总览：Agent Loop 与 Harness\n\n```mermaid\nflowchart TD\n    UQ[\"用户提问\"] --> CA[\"上下文组装\"]\n    CA --> PL[\"规划器<br/>拆分步骤、选工具\"]\n    PL --> PC[\"权限检查\"]\n    PC --> TE[\"工具执行\"]\n    TE --> RP[\"结果包装\"]\n    RP --> VR[\"验证/检验\"]\n    VR -->|通过| NS[\"进入下一步\"]\n    VR -->|失败| RL[\"修补循环\"]\n    RL --> PL\n    NS --> TE\n    TE --> TD[\"技术债累积\"]\n    TD --> HBD[\"Harness 边界<br/>规则、约束\"]\n    HBD --> M[\"模型\"]\n    M --> A[\"Agent\"]\n    A --> UQ\n```\n\n## Harness 核心要素\n\n```mermaid\nflowchart TD\n    H[\"Harness\"] --> PL[\"规划器\"]\n    H --> GN[\"生成器\"]\n    H --> VF[\"验证器\"]\n    PL --> SG[\"沙箱记忆\"]\n    GN --> SK[\"Skill 模块\"]\n    VF --> ST[\"状态追踪\"]\n    VF --> PC[\"权限控制\"]\n    VF --> HK[\"Hook 模块\"]\n    SG --> H\n    SK --> H\n    ST --> H\n    PC --> H\n    HK --> H\n```\n\n## 从 Prompt Engineering 到 Harness 的演进\n\n```mermaid\nflowchart LR\n    PE[\"Prompt Engineering\"] --> PC[\"概率约束\"]\n    PC --> MP[\"模型预测\"]\n    MP --> TU[\"工具使用\"]\n    TU --> DS[\"决策空间\"]\n    DS --> H[\"Harness\"]\n    H --> AL[\"Agent Loop\"]\n    AL --> TD[\"技术债放大\"]\n    TD --> PE\n```",
+      "diagrams": [
+        {
+          "title": "总览：Agent Loop 与 Harness",
+          "code": "flowchart TD\n    UQ[\"用户提问\"] --> CA[\"上下文组装\"]\n    CA --> PL[\"规划器<br/>拆分步骤、选工具\"]\n    PL --> PC[\"权限检查\"]\n    PC --> TE[\"工具执行\"]\n    TE --> RP[\"结果包装\"]\n    RP --> VR[\"验证/检验\"]\n    VR -->|通过| NS[\"进入下一步\"]\n    VR -->|失败| RL[\"修补循环\"]\n    RL --> PL\n    NS --> TE\n    TE --> TD[\"技术债累积\"]\n    TD --> HBD[\"Harness 边界<br/>规则、约束\"]\n    HBD --> M[\"模型\"]\n    M --> A[\"Agent\"]\n    A --> UQ"
+        },
+        {
+          "title": "Harness 核心要素",
+          "code": "flowchart TD\n    H[\"Harness\"] --> PL[\"规划器\"]\n    H --> GN[\"生成器\"]\n    H --> VF[\"验证器\"]\n    PL --> SG[\"沙箱记忆\"]\n    GN --> SK[\"Skill 模块\"]\n    VF --> ST[\"状态追踪\"]\n    VF --> PC[\"权限控制\"]\n    VF --> HK[\"Hook 模块\"]\n    SG --> H\n    SK --> H\n    ST --> H\n    PC --> H\n    HK --> H"
+        },
+        {
+          "title": "从 Prompt Engineering 到 Harness 的演进",
+          "code": "flowchart LR\n    PE[\"Prompt Engineering\"] --> PC[\"概率约束\"]\n    PC --> MP[\"模型预测\"]\n    MP --> TU[\"工具使用\"]\n    TU --> DS[\"决策空间\"]\n    DS --> H[\"Harness\"]\n    H --> AL[\"Agent Loop\"]\n    AL --> TD[\"技术债放大\"]\n    TD --> PE"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T21:22:21+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Harness 知识图谱\n\n## 总览：Agent Loop 与 Harness\n\n```mermaid\nflowchart TD\n    UQ[\"用户提问\"] --> CA[\"上下文组装\"]\n    CA --> PL[\"规划器<br/>拆分步骤、选工具\"]\n    PL --> PC[\"权限检查\"]\n    PC --> TE[\"工具执行\"]\n    TE --> RP[\"结果包装\"]\n    RP --> VR[\"验证/检验\"]\n    VR -->|通过| NS[\"进入下一步\"]\n    VR -->|失败| RL[\"修补循环\"]\n    RL --> PL\n    NS --> TE\n    TE --> TD[\"技术债累积\"]\n    TD --> HBD[\"Harness 边界<br/>规则、约束\"]\n    HBD --> M[\"模型\"]\n    M --> A[\"Agent\"]\n    A --> UQ\n```\n\n## Harness 核心要素\n\n```mermaid\nflowchart TD\n    H[\"Harness\"] --> PL[\"规划器\"]\n    H --> GN[\"生成器\"]\n    H --> VF[\"验证器\"]\n    PL --> SG[\"沙箱记忆\"]\n    GN --> SK[\"Skill 模块\"]\n    VF --> ST[\"状态追踪\"]\n    VF --> PC[\"权限控制\"]\n    VF --> HK[\"Hook 模块\"]\n    SG --> H\n    SK --> H\n    ST --> H\n    PC --> H\n    HK --> H\n```\n\n## 从 Prompt Engineering 到 Harness 的演进\n\n```mermaid\nflowchart LR\n    PE[\"Prompt Engineering\"] --> PC[\"概率约束\"]\n    PC --> MP[\"模型预测\"]\n    MP --> TU[\"工具使用\"]\n    TU --> DS[\"决策空间\"]\n    DS --> H[\"Harness\"]\n    H --> AL[\"Agent Loop\"]\n    AL --> TD[\"技术债放大\"]\n    TD --> PE\n```",
+  "diagrams": [
+    {
+      "title": "总览：Agent Loop 与 Harness",
+      "code": "flowchart TD\n    UQ[\"用户提问\"] --> CA[\"上下文组装\"]\n    CA --> PL[\"规划器<br/>拆分步骤、选工具\"]\n    PL --> PC[\"权限检查\"]\n    PC --> TE[\"工具执行\"]\n    TE --> RP[\"结果包装\"]\n    RP --> VR[\"验证/检验\"]\n    VR -->|通过| NS[\"进入下一步\"]\n    VR -->|失败| RL[\"修补循环\"]\n    RL --> PL\n    NS --> TE\n    TE --> TD[\"技术债累积\"]\n    TD --> HBD[\"Harness 边界<br/>规则、约束\"]\n    HBD --> M[\"模型\"]\n    M --> A[\"Agent\"]\n    A --> UQ"
+    },
+    {
+      "title": "Harness 核心要素",
+      "code": "flowchart TD\n    H[\"Harness\"] --> PL[\"规划器\"]\n    H --> GN[\"生成器\"]\n    H --> VF[\"验证器\"]\n    PL --> SG[\"沙箱记忆\"]\n    GN --> SK[\"Skill 模块\"]\n    VF --> ST[\"状态追踪\"]\n    VF --> PC[\"权限控制\"]\n    VF --> HK[\"Hook 模块\"]\n    SG --> H\n    SK --> H\n    ST --> H\n    PC --> H\n    HK --> H"
+    },
+    {
+      "title": "从 Prompt Engineering 到 Harness 的演进",
+      "code": "flowchart LR\n    PE[\"Prompt Engineering\"] --> PC[\"概率约束\"]\n    PC --> MP[\"模型预测\"]\n    MP --> TU[\"工具使用\"]\n    TU --> DS[\"决策空间\"]\n    DS --> H[\"Harness\"]\n    H --> AL[\"Agent Loop\"]\n    AL --> TD[\"技术债放大\"]\n    TD --> PE"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:22:21+00:00"
+}

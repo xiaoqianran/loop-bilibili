@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1DX9EBMEec",
+  "title": "【数学】一杯奶茶教会你什么是向量 | 算法的数学基础01",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2377,
+  "text": "你拿起手机看一眼\n0.1秒解锁几亿张脸里\n他一眼就认出了你\n你打开B站搜奶茶测评几百万条视频\n0.3秒就找到了\n网易云给你推了一首歌\n你没搜过没提过\n他就是知道三件完全不同的事\n但底层都在做同一步操作\n把东西变成一组数字\n然后比谁和谁更像这组数字有个名字叫向量\n今天开始一个新系列算法的数学基础\n第一期从最基础的概念讲起\n向量看完这期你会搞懂三件事\n向量到底是什么\n文字图片甚至基因怎么变成向量\n变成向量之后能干嘛\n先忘掉数学课本\n你点一杯奶茶\n三分糖去冰\n正常茶味\n甜度三\n冰量零茶味五\n你刚才做了什么\n你用三个数字完整描述了一杯奶茶\n这三个数字放在一起就是一个向量\n你每次点奶茶其实都在给一个向量\n只是没人告诉你\n为了看清向量长什么样\n先简化一下\n只看两个维度\n甜度和茶味\n你的奶茶三五在平面上就是这个点\n从原点画一条箭头指过去\n这条箭头就是课本里的向量\n但跟课本不一样\n这次你能感受到它的意思\n方向是你偏好什么口味\n长度是你的口味有多极端\n你朋友的奶茶七三\n另一个箭头\n两个人的口味差多少\n一眼就看出来了\n但这只是两个维度\n加上冰量\n就是三维空间里的箭头\n四个维度呢五个你画不出来了\n但数学不在乎一个词\n300维一张图\n512位\n一个人的基因\n2万位维度高到你完全无法想象\n但数学照算不误\n光知道向量长什么样没用\n你得会用它\n向量有三个最基本的运算加法数乘\n还有一个叫点击\n前两个简单到你可能不信\n一个外卖骑手先往东骑三个路口\n往北骑两个路口\n第一段路三二取完餐\n再往东骑一个路口\n往北齐四个路口\n第二段路142段路加起来3+12加四等于四六\n怎么加对应位置的数\n各自加各自的画出来就是两条箭头首尾接起来\n这就是向量加法\n如果骑手今天跑了三趟\n同样的路呢\n3×32=96乘一个数\n方向不变\n箭头拉长乘0.5\n箭头缩短一半乘一个负数呢\n方向反过来掉头了\n就这两个操作\n加法数乘听起来像小学数学\n但整个线性代数都建在这两块砖上以后\n你听到线性组合\n线性变换里面的线性说的就是这两件事\n不用现在记住\n先有个印象\n加法能拼\n数乘能缩\n但你还是回答不了最关键的问题\n你和你朋友的口味到底有多像\n别小看这个问题\n它只有一行公式\n但搜索引擎推荐系统\n还有cheat GB t的核心都靠它\n你的口味A等于三五\n微甜冲茶\n朋友的口味B等于四六\n也是微甜冲茶\n点击等于3×4加5×6=12\n加30等于42\n对应位置乘起来再全部加起来\n得到一个数字\n这个数字在说什么\n两个向量的夹角越小\n点击越大\n方向完全一样\n点击最大垂直点击等于零\n完全没关系\n方向相反\n点击是负数\n所以点击衡量的是两个向量在方向上有多一致\n但这里有个bug\n你的奶茶偏好三五\n你朋友跟你口味一模一样\n但他每天喝三杯\n偏好变成95\n方向完全一样\n但点击差了三倍\n这不对\n口味明明一样\n点击却说不一样\n怎么办\n换个思路\n不管你喝了几杯\n只看你的口味指向哪个方向\n想象两个人站在路口\n各自指向想去的地方\n一个人手臂长\n一个人手臂短\n但指的方向一样\n那口味就是一样的\n数学上就是把长度消掉\n只比方向\n结果一定在-1~1之间\n这个东西叫余弦相似度\n搜索引擎用它找相关内容推荐系统\n用它匹配你和内容大语言模型的attention核心也是它\n记住这个名字\n后面会反\n复出现好到这里\n你手上有了三个工具\n加法数乘点击\n但说实话\n到目前为止\n我们一直在聊奶茶\n奶茶当然不是向量真正的用武之地\n接下来这部分才是向量改变世界的地方\n先看文字\n猫这个词怎么变成一个向量\n最朴素的思路\n一个词是什么意思\n看它和谁混在一起就知道了\n猫常跟喵抓铲屎官一起出现\n狗常跟汪遛铲屎官一起出现\n汽车跟这些词都不沾边儿\n把每个词的语境统计出来\n变成一组数字\n意思相近的词向量就靠近\n意思无关的词向量就远离\n这就是词向量\nWord embedding\n但最让研究者震惊的不是相近的词靠在一起\n而是向量之间的方向居然能编码语义关系\n马斯克减去美国加上中国约等于雷军把马斯克身上的美国成分去掉\n换成中国模型告诉你\n雷军再来一个\n乔布斯减去美国加上中国约等于罗永浩\n同样的操作减去美国加上中国\n这次出来的是罗永浩\n没有人写过这条规则\n是模型从几10亿个句子里自己学出来的\n向量的加减法\n居然能做类比推理\n再看图片\n一张256×256的彩色图片\n每个像素有红绿蓝三个值\n256×256乘三等于19万6608个数字\n把它们排成一行将近20万维的向量\n但这个向量太蠢了\n同一只猫往左挪几个像素向量就完全不一样了\n怎么办\n用神经网络提炼一下\n输入一张图\n输出一个512维的向量\n这512个数字不再是像素\n而是特征轮廓纹理语义\n同一只猫不管怎么挪\n特征向量几乎不变\n猫和狗靠得近\n猫和汽车离得远\n你用图片搜相似图\n背后比的不是像素\n是特征向量的余弦相似度\n最后看一个\n你可能没想到的基因医院抽一管血\n做一次RNNA测序\n测的不是你有什么基因\n而是每个基因此刻有多活跃\n2万多个基因\n每个给一个活跃度数值\n有的在拼命干活\n有的在摸鱼\n有的直接躺平\n一个病人的基因表达谱就是一个2万多维的向量\n把几千个病人的向量放在一起\n直接画\n画不了2万维\n你画不出来\n但你可以用数学把它压到二维\n这个操作叫降维\n后面的系列会讲\n癌症病人聚在一起\n健康人聚在一起\n甚至不同亚型的癌症自动分成了不同的醋\n没有人写过规则\n没有人告诉他什么是癌症\n研究者只做了一件事\n把每个人变成一个向量\n然后数学自己告诉你谁和谁相似\n好拉回来看一眼文字\n图片基因三个完全不同的世界变成向量之后用的是同一套数学\n这就是向量\n真正的力量不是那条箭头\n不是那个公式\n而是一种思维方式\n任何东西只要你能用一组数字描述\n它\n就能计算\n就能比较\n就能理解\n这是算法世界的起点\n也是这个系列的起点\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1DX9EBMEec",
+  "published_at": "1775049826",
+  "fetched_at": "2026-08-08T05:26:06+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 向量学习图谱\n\n## 向量概念总览\n```mermaid\nflowchart TD\n    VDef[\"向量：一组数字\"] --> NumRep[\"数值化表示\"]\n    NumRep --> Dim[\"维度（可任意）\"]\n    Dim --> ArrowVis[\"箭头可视化\"]\n    VDef --> Ops[\"基本运算\"]\n    Ops --> Add[\"加法（对应位置相加）\"]\n    Ops --> Scale[\"数乘（长度伸缩）\"]\n    Ops --> Dot[\"点积（对应位置相乘再求和）\"]\n    Dot --> CosSim[\"余弦相似度\"]\n    CosSim --> Apps[\"应用\"]\n    Apps --> FaceRec[\"人脸识别\"]\n    Apps --> RecSys[\"推荐系统\"]\n    Apps --> WordEmb[\"词向量\"]\n    Apps --> ImgEmb[\"图像特征向量\"]\n    Apps --> GeneVec[\"基因表达向量\"]\n```\n\n## 向量基本运算\n```mermaid\nflowchart TD\n    VA[\"向量 A\"] --> AddComp[\"对应位置相加\"]\n    VB[\"向量 B\"] --> AddComp\n    AddComp --> VAdd[\"向量 A + B\"]\n    VA --> ScaleComp[\"数乘 × k\"]\n    Scale[\"标量 k\"] --> ScaleComp\n    ScaleComp --> VScale[\"k·A\"]\n    VA --> DotComp[\"对应位置相乘\"]\n    VB --> DotComp\n    DotComp --> DotRes[\"点积 = Σ(ai·bi)\"]\n    VAdd --> CosCalc[\"余弦相似度 = Dot / (|A||B|)\"]\n    VScale --> CosCalc\n    CosCalc --> CosRes[\"相似度 ∈ [-1,1]\"]\n```\n\n## 向量在不同数据类型的映射\n```mermaid\nflowchart TD\n    Text[\"文本数据\"] --> Stat[\"上下文共现统计\"]\n    Stat --> WordEmb[\"词向量（Word Embedding）\"]\n    Image[\"图像数据\"] --> NN[\"卷积神经网络\"]\n    NN --> ImgEmb[\"图像特征向量（高维）\"]\n    Gene[\"基因表达数据\"] --> Expr[\"每基因活跃度\"]\n    Expr --> GeneVec[\"基因表达向量（高维）\"]\n    WordEmb --> HighDim[\"高维向量\"]\n    ImgEmb --> HighDim\n    GeneVec --> HighDim\n    HighDim --> DimRed[\"降维（可视化/压缩）\"]\n    DimRed --> SimMeasure[\"相似度度量（余弦）\"]\n```\n\n## 奶茶偏好向量示例\n```mermaid\nflowchart TD\n    Order[\"奶茶点单\"] --> PrefVec[\"偏好向量\"]\n    PrefVec --> DimSugar[\"甜度\"]\n    PrefVec --> DimTea[\"茶味\"]\n    PrefVec --> DimIce[\"冰量\"]\n    UserA[\"你\"] --> VecA[\"向量 (3,5,0)\"]\n    UserB[\"朋友\"] --> VecB[\"向量 (4,6,0)\"]\n    VecA --> DotAB[\"点积 = 3×4+5×6\"]\n    VecB --> DotAB\n    DotAB --> CosAB[\"余弦相似度 = Dot / (|A||B|)\"]\n    CosAB --> Compare[\"偏好相似度\"]\n    VecA --> MagA[\"长度 |A|\"]\n    VecB --> MagB[\"长度 |B|\"]\n    MagA --> Issue[\"仅看长度会误判\"]\n    Issue --> Norm[\"长度归一化（只比较方向）\"]\n    Norm --> CosAB\n```",
+      "diagrams": [
+        {
+          "title": "向量概念总览",
+          "code": "flowchart TD\n    VDef[\"向量：一组数字\"] --> NumRep[\"数值化表示\"]\n    NumRep --> Dim[\"维度（可任意）\"]\n    Dim --> ArrowVis[\"箭头可视化\"]\n    VDef --> Ops[\"基本运算\"]\n    Ops --> Add[\"加法（对应位置相加）\"]\n    Ops --> Scale[\"数乘（长度伸缩）\"]\n    Ops --> Dot[\"点积（对应位置相乘再求和）\"]\n    Dot --> CosSim[\"余弦相似度\"]\n    CosSim --> Apps[\"应用\"]\n    Apps --> FaceRec[\"人脸识别\"]\n    Apps --> RecSys[\"推荐系统\"]\n    Apps --> WordEmb[\"词向量\"]\n    Apps --> ImgEmb[\"图像特征向量\"]\n    Apps --> GeneVec[\"基因表达向量\"]"
+        },
+        {
+          "title": "向量基本运算",
+          "code": "flowchart TD\n    VA[\"向量 A\"] --> AddComp[\"对应位置相加\"]\n    VB[\"向量 B\"] --> AddComp\n    AddComp --> VAdd[\"向量 A + B\"]\n    VA --> ScaleComp[\"数乘 × k\"]\n    Scale[\"标量 k\"] --> ScaleComp\n    ScaleComp --> VScale[\"k·A\"]\n    VA --> DotComp[\"对应位置相乘\"]\n    VB --> DotComp\n    DotComp --> DotRes[\"点积 = Σ(ai·bi)\"]\n    VAdd --> CosCalc[\"余弦相似度 = Dot / (|A||B|)\"]\n    VScale --> CosCalc\n    CosCalc --> CosRes[\"相似度 ∈ [-1,1]\"]"
+        },
+        {
+          "title": "向量在不同数据类型的映射",
+          "code": "flowchart TD\n    Text[\"文本数据\"] --> Stat[\"上下文共现统计\"]\n    Stat --> WordEmb[\"词向量（Word Embedding）\"]\n    Image[\"图像数据\"] --> NN[\"卷积神经网络\"]\n    NN --> ImgEmb[\"图像特征向量（高维）\"]\n    Gene[\"基因表达数据\"] --> Expr[\"每基因活跃度\"]\n    Expr --> GeneVec[\"基因表达向量（高维）\"]\n    WordEmb --> HighDim[\"高维向量\"]\n    ImgEmb --> HighDim\n    GeneVec --> HighDim\n    HighDim --> DimRed[\"降维（可视化/压缩）\"]\n    DimRed --> SimMeasure[\"相似度度量（余弦）\"]"
+        },
+        {
+          "title": "奶茶偏好向量示例",
+          "code": "flowchart TD\n    Order[\"奶茶点单\"] --> PrefVec[\"偏好向量\"]\n    PrefVec --> DimSugar[\"甜度\"]\n    PrefVec --> DimTea[\"茶味\"]\n    PrefVec --> DimIce[\"冰量\"]\n    UserA[\"你\"] --> VecA[\"向量 (3,5,0)\"]\n    UserB[\"朋友\"] --> VecB[\"向量 (4,6,0)\"]\n    VecA --> DotAB[\"点积 = 3×4+5×6\"]\n    VecB --> DotAB\n    DotAB --> CosAB[\"余弦相似度 = Dot / (|A||B|)\"]\n    CosAB --> Compare[\"偏好相似度\"]\n    VecA --> MagA[\"长度 |A|\"]\n    VecB --> MagB[\"长度 |B|\"]\n    MagA --> Issue[\"仅看长度会误判\"]\n    Issue --> Norm[\"长度归一化（只比较方向）\"]\n    Norm --> CosAB"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T05:26:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 向量学习图谱\n\n## 向量概念总览\n```mermaid\nflowchart TD\n    VDef[\"向量：一组数字\"] --> NumRep[\"数值化表示\"]\n    NumRep --> Dim[\"维度（可任意）\"]\n    Dim --> ArrowVis[\"箭头可视化\"]\n    VDef --> Ops[\"基本运算\"]\n    Ops --> Add[\"加法（对应位置相加）\"]\n    Ops --> Scale[\"数乘（长度伸缩）\"]\n    Ops --> Dot[\"点积（对应位置相乘再求和）\"]\n    Dot --> CosSim[\"余弦相似度\"]\n    CosSim --> Apps[\"应用\"]\n    Apps --> FaceRec[\"人脸识别\"]\n    Apps --> RecSys[\"推荐系统\"]\n    Apps --> WordEmb[\"词向量\"]\n    Apps --> ImgEmb[\"图像特征向量\"]\n    Apps --> GeneVec[\"基因表达向量\"]\n```\n\n## 向量基本运算\n```mermaid\nflowchart TD\n    VA[\"向量 A\"] --> AddComp[\"对应位置相加\"]\n    VB[\"向量 B\"] --> AddComp\n    AddComp --> VAdd[\"向量 A + B\"]\n    VA --> ScaleComp[\"数乘 × k\"]\n    Scale[\"标量 k\"] --> ScaleComp\n    ScaleComp --> VScale[\"k·A\"]\n    VA --> DotComp[\"对应位置相乘\"]\n    VB --> DotComp\n    DotComp --> DotRes[\"点积 = Σ(ai·bi)\"]\n    VAdd --> CosCalc[\"余弦相似度 = Dot / (|A||B|)\"]\n    VScale --> CosCalc\n    CosCalc --> CosRes[\"相似度 ∈ [-1,1]\"]\n```\n\n## 向量在不同数据类型的映射\n```mermaid\nflowchart TD\n    Text[\"文本数据\"] --> Stat[\"上下文共现统计\"]\n    Stat --> WordEmb[\"词向量（Word Embedding）\"]\n    Image[\"图像数据\"] --> NN[\"卷积神经网络\"]\n    NN --> ImgEmb[\"图像特征向量（高维）\"]\n    Gene[\"基因表达数据\"] --> Expr[\"每基因活跃度\"]\n    Expr --> GeneVec[\"基因表达向量（高维）\"]\n    WordEmb --> HighDim[\"高维向量\"]\n    ImgEmb --> HighDim\n    GeneVec --> HighDim\n    HighDim --> DimRed[\"降维（可视化/压缩）\"]\n    DimRed --> SimMeasure[\"相似度度量（余弦）\"]\n```\n\n## 奶茶偏好向量示例\n```mermaid\nflowchart TD\n    Order[\"奶茶点单\"] --> PrefVec[\"偏好向量\"]\n    PrefVec --> DimSugar[\"甜度\"]\n    PrefVec --> DimTea[\"茶味\"]\n    PrefVec --> DimIce[\"冰量\"]\n    UserA[\"你\"] --> VecA[\"向量 (3,5,0)\"]\n    UserB[\"朋友\"] --> VecB[\"向量 (4,6,0)\"]\n    VecA --> DotAB[\"点积 = 3×4+5×6\"]\n    VecB --> DotAB\n    DotAB --> CosAB[\"余弦相似度 = Dot / (|A||B|)\"]\n    CosAB --> Compare[\"偏好相似度\"]\n    VecA --> MagA[\"长度 |A|\"]\n    VecB --> MagB[\"长度 |B|\"]\n    MagA --> Issue[\"仅看长度会误判\"]\n    Issue --> Norm[\"长度归一化（只比较方向）\"]\n    Norm --> CosAB\n```",
+  "diagrams": [
+    {
+      "title": "向量概念总览",
+      "code": "flowchart TD\n    VDef[\"向量：一组数字\"] --> NumRep[\"数值化表示\"]\n    NumRep --> Dim[\"维度（可任意）\"]\n    Dim --> ArrowVis[\"箭头可视化\"]\n    VDef --> Ops[\"基本运算\"]\n    Ops --> Add[\"加法（对应位置相加）\"]\n    Ops --> Scale[\"数乘（长度伸缩）\"]\n    Ops --> Dot[\"点积（对应位置相乘再求和）\"]\n    Dot --> CosSim[\"余弦相似度\"]\n    CosSim --> Apps[\"应用\"]\n    Apps --> FaceRec[\"人脸识别\"]\n    Apps --> RecSys[\"推荐系统\"]\n    Apps --> WordEmb[\"词向量\"]\n    Apps --> ImgEmb[\"图像特征向量\"]\n    Apps --> GeneVec[\"基因表达向量\"]"
+    },
+    {
+      "title": "向量基本运算",
+      "code": "flowchart TD\n    VA[\"向量 A\"] --> AddComp[\"对应位置相加\"]\n    VB[\"向量 B\"] --> AddComp\n    AddComp --> VAdd[\"向量 A + B\"]\n    VA --> ScaleComp[\"数乘 × k\"]\n    Scale[\"标量 k\"] --> ScaleComp\n    ScaleComp --> VScale[\"k·A\"]\n    VA --> DotComp[\"对应位置相乘\"]\n    VB --> DotComp\n    DotComp --> DotRes[\"点积 = Σ(ai·bi)\"]\n    VAdd --> CosCalc[\"余弦相似度 = Dot / (|A||B|)\"]\n    VScale --> CosCalc\n    CosCalc --> CosRes[\"相似度 ∈ [-1,1]\"]"
+    },
+    {
+      "title": "向量在不同数据类型的映射",
+      "code": "flowchart TD\n    Text[\"文本数据\"] --> Stat[\"上下文共现统计\"]\n    Stat --> WordEmb[\"词向量（Word Embedding）\"]\n    Image[\"图像数据\"] --> NN[\"卷积神经网络\"]\n    NN --> ImgEmb[\"图像特征向量（高维）\"]\n    Gene[\"基因表达数据\"] --> Expr[\"每基因活跃度\"]\n    Expr --> GeneVec[\"基因表达向量（高维）\"]\n    WordEmb --> HighDim[\"高维向量\"]\n    ImgEmb --> HighDim\n    GeneVec --> HighDim\n    HighDim --> DimRed[\"降维（可视化/压缩）\"]\n    DimRed --> SimMeasure[\"相似度度量（余弦）\"]"
+    },
+    {
+      "title": "奶茶偏好向量示例",
+      "code": "flowchart TD\n    Order[\"奶茶点单\"] --> PrefVec[\"偏好向量\"]\n    PrefVec --> DimSugar[\"甜度\"]\n    PrefVec --> DimTea[\"茶味\"]\n    PrefVec --> DimIce[\"冰量\"]\n    UserA[\"你\"] --> VecA[\"向量 (3,5,0)\"]\n    UserB[\"朋友\"] --> VecB[\"向量 (4,6,0)\"]\n    VecA --> DotAB[\"点积 = 3×4+5×6\"]\n    VecB --> DotAB\n    DotAB --> CosAB[\"余弦相似度 = Dot / (|A||B|)\"]\n    CosAB --> Compare[\"偏好相似度\"]\n    VecA --> MagA[\"长度 |A|\"]\n    VecB --> MagB[\"长度 |B|\"]\n    MagA --> Issue[\"仅看长度会误判\"]\n    Issue --> Norm[\"长度归一化（只比较方向）\"]\n    Norm --> CosAB"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T05:26:19+00:00"
+}

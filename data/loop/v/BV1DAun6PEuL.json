@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1DAun6PEuL",
+  "title": "《自作多情的DeepSeek》",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 34,
+  "text": "这里我正常提问\n也没说什么特别的东西\n正片开始\n还给我点赞呢\n真的完",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1DAun6PEuL",
+  "published_at": "1786008886",
+  "fetched_at": "2026-08-08T15:10:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 自作多情的DeepSeek 知识图谱\n\n## 视频结构概览\n```mermaid\nflowchart TD\n    A1[\"开场\"] --> A2[\"正常提问\"]\n    A2 --> A3[\"未提及特殊内容\"]\n    A3 --> A4[\"正片开始\"]\n    A4 --> A5[\"观众点赞\"]\n    A5 --> A6[\"观众期待\"]\n    A6 --> A7[\"情感表达\"]\n    A7 --> A8[\"视频结束\"]\n    A4 --> A9[\"内容主体\"]\n    A9 --> A5\n```\n\n## 互动与反馈链\n```mermaid\nflowchart LR\n    B1[\"提问环节\"] --> B2[\"观众观看\"]\n    B2 --> B3[\"点赞反馈\"]\n    B3 --> B4[\"正片继续\"]\n    B4 --> B5[\"观众情绪\"]\n    B5 --> B6[\"结束感受\"]\n    B1 --> B7[\"未提供细节\"]\n    B7 --> B3\n    B2 --> B8[\"期待更多\"]\n    B8 --> B4\n```",
+      "diagrams": [
+        {
+          "title": "视频结构概览",
+          "code": "flowchart TD\n    A1[\"开场\"] --> A2[\"正常提问\"]\n    A2 --> A3[\"未提及特殊内容\"]\n    A3 --> A4[\"正片开始\"]\n    A4 --> A5[\"观众点赞\"]\n    A5 --> A6[\"观众期待\"]\n    A6 --> A7[\"情感表达\"]\n    A7 --> A8[\"视频结束\"]\n    A4 --> A9[\"内容主体\"]\n    A9 --> A5"
+        },
+        {
+          "title": "互动与反馈链",
+          "code": "flowchart LR\n    B1[\"提问环节\"] --> B2[\"观众观看\"]\n    B2 --> B3[\"点赞反馈\"]\n    B3 --> B4[\"正片继续\"]\n    B4 --> B5[\"观众情绪\"]\n    B5 --> B6[\"结束感受\"]\n    B1 --> B7[\"未提供细节\"]\n    B7 --> B3\n    B2 --> B8[\"期待更多\"]\n    B8 --> B4"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-08T15:38:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 自作多情的DeepSeek 知识图谱\n\n## 视频结构概览\n```mermaid\nflowchart TD\n    A1[\"开场\"] --> A2[\"正常提问\"]\n    A2 --> A3[\"未提及特殊内容\"]\n    A3 --> A4[\"正片开始\"]\n    A4 --> A5[\"观众点赞\"]\n    A5 --> A6[\"观众期待\"]\n    A6 --> A7[\"情感表达\"]\n    A7 --> A8[\"视频结束\"]\n    A4 --> A9[\"内容主体\"]\n    A9 --> A5\n```\n\n## 互动与反馈链\n```mermaid\nflowchart LR\n    B1[\"提问环节\"] --> B2[\"观众观看\"]\n    B2 --> B3[\"点赞反馈\"]\n    B3 --> B4[\"正片继续\"]\n    B4 --> B5[\"观众情绪\"]\n    B5 --> B6[\"结束感受\"]\n    B1 --> B7[\"未提供细节\"]\n    B7 --> B3\n    B2 --> B8[\"期待更多\"]\n    B8 --> B4\n```",
+  "diagrams": [
+    {
+      "title": "视频结构概览",
+      "code": "flowchart TD\n    A1[\"开场\"] --> A2[\"正常提问\"]\n    A2 --> A3[\"未提及特殊内容\"]\n    A3 --> A4[\"正片开始\"]\n    A4 --> A5[\"观众点赞\"]\n    A5 --> A6[\"观众期待\"]\n    A6 --> A7[\"情感表达\"]\n    A7 --> A8[\"视频结束\"]\n    A4 --> A9[\"内容主体\"]\n    A9 --> A5"
+    },
+    {
+      "title": "互动与反馈链",
+      "code": "flowchart LR\n    B1[\"提问环节\"] --> B2[\"观众观看\"]\n    B2 --> B3[\"点赞反馈\"]\n    B3 --> B4[\"正片继续\"]\n    B4 --> B5[\"观众情绪\"]\n    B5 --> B6[\"结束感受\"]\n    B1 --> B7[\"未提供细节\"]\n    B7 --> B3\n    B2 --> B8[\"期待更多\"]\n    B8 --> B4"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T15:38:28+00:00"
+}

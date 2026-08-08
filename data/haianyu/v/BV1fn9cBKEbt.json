@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1fn9cBKEbt",
+  "title": "79. 为什么基于权重大小剪枝是特殊的OBD、OBS、OBQ？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 630,
+  "text": "今天的问题是\n为什么基于权重大小的减脂是特殊的OBD减脂\n而OBD减值是特殊的OBS减值\n而OBS减值可以看作特殊的OBQ量化\n那么之前已经分析过了\n再来分析一遍\n那么这四个东西看似不同\n但它本质上都在同问同一个问题\n就是第I个权重WI它对于减值或者量化它是否是重要的\n都有一个重要性得分公式\n而这个得分公式的那个得分越大是越重要\n越不能去轻易的动它\n那么这四个东西他认为一个传统是否重要\n分别取决于这四个公式\n那么我们先来看一下最广义的就是这个OBQ量化\n他认为一个权重WI是否重要\n属于这个\n所以这个QI就是把WI量化之后的结果\n然后H呢是那个海森矩阵\nOK然后如果我们让QI等于零\n会发现它正好就退化到了这个OBS减之\n相当于是说如果我们把减值看作是一种特殊的量化\n怎么特殊法呢\n就是无论权重大小都把它量化到零\n那这样的话减值也可以看作是量化\n那这样的话OBS简直就是一种特殊的OBQ量化\n而OBS减值呢\n他认为这个H矩阵呢它是比较任意的\n不一定是对角的\n而如果认为H矩阵一定是对角的\n那这样的话他又会进行一个退化\n它会退化到OBD减距\n这种情况下呢\n它主要表达更加的简单了\n而如果在OBD检测当中呢\n认为所有的海参矩阵对角线元素都是相同的\n这这个山谷是一个圆形山谷\n或者是说海森矩阵\n它可以写作一个单位阵乘一个常数\n那在这种情况下呢\n我们去比较这个重要性公式就相当于是在比较这个W比I的平方\n那就相当于比较W比的绝对值\n那它就会退化为基于权重大小的减脂",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1fn9cBKEbt",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:17:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

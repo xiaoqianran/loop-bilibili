@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1uoFxzgEWz",
+  "title": "14. 旋转位置编码和高中三角函数和差角公式有什么关系？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 923,
+  "text": "今天的问题是\n旋转位置编码和高中的三角函数和差角公式\n有什么关系\n结论先行\n用旋转位置编码的核心公式\n就是这个可以很容易的证明和差角公式\n首先我们来回顾一下\n旋转位置编码的核心公式是这一个\n如果我们想要将一个向量XY旋转西塔度\n注意这里是逆时针旋转\n根据上一个视频的证明\n我们用欧拉公式证明了\n他只需要去乘以这个矩阵即可\n那么这个是旋转位置编码\n而高中三角函数的和差角公式用一个口诀\n就是sin阿尔法加贝塔等于sin co加cos\n让cos阿尔法加贝塔等于coco减cs就是这个\n而接下来我们要证明的就是\n用上面的这个可以退出下面的这个\n而这个推出呢其实是显而易见的\n只需要从两条路径\n一条路径是几何路径\n一条路径是代数路径\n接下来先来看几何路径\n现在假设要将一个复数\n这里的E的I阿尔法次方\n它对应的这个向量是cos in阿尔法\nsin阿尔法旋转贝塔度\n只需要去乘以一个负数E的I贝塔次方\n就是这个\n那么由于指数的性质\n它应该会等于E的I阿尔法加贝塔次方\n这是指数的性质\n又由于欧拉公式\n这里的EI阿尔法次方对应的就是这个向量\ncos阿尔法\nsin阿尔法\n这里的EI阿尔法加贝塔次方\n对应的就是这个向量\n就是cos阿尔法加贝塔\nsin阿尔法加贝塔\n那么这个是从几何的角度去理解\n如果想要将一个向量旋转贝塔度\n它会得到什么呢\n它会得到这个东西\n接下来再来从代数的角度去理解一下\n之前说过\n如果想要将一个向量cos阿尔法\nsin阿尔法旋转贝塔度\n只需要乘以旋转矩阵\n就是这个\n而我们只需要把它展开\n用一个很简单的矩阵运算\n得到的就是cos贝塔cos阿尔法\nsin贝塔\nsin阿尔法\n这里还有个负号\n这是第一个分量\n然后sin阿sin贝塔\ncos in阿尔法\n就是这里\n然后cos贝塔sin阿尔法\n就是这个有个正好\n那么这个是代数的角度\n由于代数和几何都在表示将向量旋转贝塔度\n因此这两个东西是相等的\n因此它的每一个分量都是相等的\n因此第一个分量cos in\n阿尔法加贝塔应该等于coco减cs\n第二个分量sin\n阿尔法加贝塔应该等于sin co加cos\n所以和差角公式得正\n因此我们从旋转位置编码的角度\n一个更高的视角去理解了\n高中的三角函数的证明",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1uoFxzgEWz",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

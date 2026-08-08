@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1gdTZ6iEdQ",
+  "title": "手搓AI夜视婴儿看护器，80亿参数大模型帮我熬夜带娃",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2574,
+  "text": "大家好\n这是俺的baby\n张开尚\n他的名字取自苏东坡的词\n酒酣胸胆尚开\n张鬓微霜又何妨\n虽然名字很豪放\n但是他非常的弱小粘人\n浅睡眠落地醒\n怕噪音\n半夜醒来要立即安抚才能继续接叫\n为了在宝宝醒来的时候及时摇醒我\n我用AI手搓了一台红外夜视婴儿看护器\n辅助我熬夜盯娃\n配合ESP32手环和蓝牙\n整下音响\n同步播放音乐\n在不吵醒我老婆的前提下\n把我自己吵醒\n它背后用到的AI算法\n是京东最新开源的多模态实时视频理解大模型\nJoy ai vr interaction\n让AI724小时持续盯梢\n实时监测\n半夜惊醒惊跳婴儿正在动口\n鼻\n是否遮挡看护人操作是否正确\n这个AI最神奇的就是边看边说和主动触发能力\n非常适合接入到监控摄像头\n直播游戏画面中做实时理解\n让人轻轻搓揉宝宝的小手\n像是在给她暖手\n宝宝正在哭\n宝宝开始活动了\n手臂抬起来了\n你可能要问为啥不直接用豆包打视频呢\n首先是夜视问题\n晚上手机相机什么都拍不到\n然后是隐私问题\n不能把喂奶和宝宝裸体画面发到网上\n其次是成本问题\n实时视频通话堪称token核弹\n每天都是白花花的影子\n所以我想要的是一个完全开源本地部署\n实时推理无限调用\n没有token焦虑能接入红外夜视摄像头\n通过代码获取模型输出\n并主动触发交互的多模态实时视频\n理解AI大模型\n我全都要\n我在哈根face视频理解穿订榜单上\n发现了新登顶的冠军\n京东开源的joy AI VR interaction\n它正好完美契合我的所有需求\n京东全站开源了训练方法\n数据集\n80亿参数的模型权重文件\n以及一整套基于VRMOMI作为推理引擎\n带完整前后端和web ui的本地部署系统\n它和豆包一问一答的回合制对话很不一样\n人类只需要提供初始指令\n它就可以边看边说\n持续实时理解视频画面\n给它接入任意的摄像头或者直播视频流\nAI就能任劳任怨\n盯到天荒地老\n同时AI自主决定是要说话\n闭嘴还是委派智能体干活\n非常有眼力见儿\n当事件发生时\n总是能及时触发提醒\n而且在多项能力测试的成功率都超过了豆包\n视频通话\n我试了好几个场景\n效果都很不错\n一比如叔叔\n我做了几个深蹲健身动作\n二\n三看监控画面中有没有发生火灾\n现场发现异常\n已确认为厨房火灾\n明火正在灶台区域燃烧\n请立即启动应急预案\n并疏散人员\n帮钓鱼佬看漂\n判断有没有上鱼咬钩\n鱼漂下沉了\n有鱼上钩\n赶紧提竿\n刺鱼\n看游戏直播发解说弹幕\n欢迎回来\n各位今天这一期咱们继续讲潜水员戴夫\n欢迎收看\n我们在上一期视频里\n聊过一个叫冰冻通道的地方\n那个地方就在我们前面这个区域的右侧\n鲨鱼紧咬不放\n这种近距离闪避\n算是把紧张感给彻底点燃了\n漂亮连续过弯\n强行撕开包围圈\n又要出事了\n大鲨鱼直接冲进狭缝\n玩家只剩下一口气在飘\n哇哦就在千钧一发之际\n反向冲刺撞回安全区\n这操作简直逆天改命\n鱼竿直接抽进嘴里了\n现在我要赶紧跑路了\n没死我没死\n一看道路监控数\n车流量二\n三放在以前\n你需要苦哈哈\n写目标检测和追踪的计算机视觉算法\n现在两句提示词搞定\n本地部署开源大模型有八大好处\n免费隐私安全\n超低延迟\n私人定制\n就是有点吃端测算力\n我家里正好有一台\n在京东花3万买的技嘉AI top item迷你主机\n其实就是英伟达老黄送给马斯克的同款\nD g x spark\n换壳\nDGX spark有128G统一内存和显存端\n测跑这种token核弹也不在话下\n完全没有token焦虑\n先从GITHUB上把drive AI VR interaction的代码库克隆下来\n第一个命令安装依赖包\n第二个命令下载模型\n权重文件\n包括主交互模型摘要模型\n语音识别ASR模型\n语音合成TTS模型\n第三个命令启动推理服务\n访问这个8099端口的本地链接\n就可以直接用了\n既可以连摄像头\n也可以指定RT sp视频流\n来看看婴儿监护器的实战效果\n检测到蒙脸\n检测到萌脸\n检测到萌脸\n检测到萌脸\n检测到萌脸\n第二个场景是随时监控宝宝的日常\n有人拿着纸片\n似乎准备给宝宝擦拭脸部\n大人将摇铃拿到婴儿面前\n近距离逗弄宝宝\nAI盯得比亲爹还上心\n仿佛有无数个花开富贵正在赶来的路上\n曾子曰\n十目所视\n十手所指\n其严乎\n第三个场景是婴儿睡眠监控\n也是我的重点刚需场景\n我下达的指令是保持睡眠\n回复A惊醒扭动回复B口鼻遮挡\n回复C在宝宝安睡的时候\nAI持续输出A让我放心\n也表示AI并没有遗忘上下文\n这个技巧是受网友让cloud code\n在每次回复都要叫老公的启发\n一旦不叫老公\n就说明模型遗忘了上下文\n宝宝扭动身体\nAI立即输出B\n哪怕宝宝口鼻可能疑似遮挡\nAI立即输出C实际效果远远超出了我的预期\nJoy ai vr interaction\n在自然光画面\n红外夜视\n黑白画面以及婴儿床多个角度都能很好泛化\n而且我用的就是京东开源的原版模型\n并没有做任何微调训练\n我让codex写了一个代码\n获取模型输出的ABC触发蓝牙手环震动\n这个手环使用了CD科技的小开发板\n它只有指甲盖大\n内置乐鑫的esp32C六芯片\n自带蓝牙和WIFI\n通过PWM信号驱动y w robot的振动马达模块\n实现多级渐变振动\n红外夜视\n我选择了中文奥科的红外夜视模组\n它自带光敏电阻\nled红外补光灯\n镜头下边有air cut双滤光片\n这玩意儿竟然只卖100多块钱\n简直是深圳华强北的工业克苏鲁\n白天光线充分时\n红外截止滤光片工作\n拦截自然光中的红外线\n只让可见光进入镜头\n还原真实色彩\n晚上光线昏暗时\nled红外补光灯启动\n发射940NM波长的红外光\n红外通光滤光片工作\n允许补光红外线进入镜头\n实现黑白夜视\n此时如果用另一台红外相机看宝宝的脸\n被红外补光灯完全照亮\n每一根毛都看得清清楚楚\n天亮之后自动切换回白天彩色模式\n如果用手挡住光敏电阻\n就能听到双滤光片咔嗒切换的声音\n加个外壳\n通过14螺孔固定在ER床上方就齐活了\n当然现在的AI有的时候还是会误报\n产生幻觉\n仍然要靠人类判断兜底\n比如有时候婴儿明明没动\n它也会误报\n甚至没有婴儿也会误报诶\n但joy AI VR interaction这类模型的开源\n意味着世界上海量的摄像头\n电视游戏直播都可以免费接入多模态AI\n做实时理解\n这也许就是token经济的下一站\n人类对海量视频流的数据挖掘\n即将进入一个全新的维度哈",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gdTZ6iEdQ",
+  "published_at": "1783137600",
+  "fetched_at": "2026-08-08T06:55:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 手搓AI夜视婴儿看护器知识图谱\n\n## Overview\n```mermaid\nflowchart TD\n    B1[\"婴儿（弱小粘人）\"] --> N1[\"需要及时安抚\"]\n    N1 --> N2[\"红外夜视监护器\"]\n    N2 --> A1[\"京东Joy AI VR Interaction（80亿参数）\"]\n    A1 --> L1[\"本地开源部署\"]\n    A1 --> A2[\"实时提醒与交互\"]\n    A1 --> P1[\"隐私安全\"]\n    A1 --> C1[\"低成本无token焦虑\"]\n```\n\n## System Architecture\n```mermaid\nflowchart LR\n    C1[\"红外摄像头\"] --> AI[\"AI 推理服务 (8099)\"]\n    ESP[\"ESP32 手环\"] --> BT[\"蓝牙模块\"]\n    BT --> AI\n    SP[\"音响\"] --> AI\n    HS[\"本地服务器 (DGX Spark)\"] --> AI\n    HS --> PW[\"电源\"]\n    AI --> UI[\"Web UI\"]\n```\n\n## AI 功能流程\n```mermaid\nflowchart TD\n    VC[\"视频捕获\"] --> PR[\"预处理（红外/光敏）\"]\n    PR --> INF[\"实时推理\"]\n    INF --> ED[\"事件检测（哭声、动作）\"]\n    ED --> DEC[\"决策生成（A/B/C）\"]\n    DEC --> SP[\"语音输出\"]\n    DEC --> TRG[\"触发蓝牙手环\"]\n    TRG --> FB[\"持续上下文保持\"]\n    FB --> INF\n```\n\n## 硬件组件\n```mermaid\nflowchart TD\n    IRM[\"红外夜视模组\"] --> LS[\"光敏电阻\"]\n    IRM --> LED[\"红外补光灯 (940nm)\"]\n    LED --> DF[\"双滤光片 (Air Cut)\"]\n    DF --> ESP[\"ESP32‑C6 开发板\"]\n    ESP --> VM[\"振动马达 (PWM)\"]\n    ESP --> BAT[\"电池\"]\n    ESP --> ENC[\"外壳 (14螺孔)\"]\n```\n\n## 使用场景与触发逻辑\n```mermaid\nflowchart LR\n    CRY[\"婴儿哭泣\"] --> PA[\"A：惊醒扭动\"]\n    MOT[\"婴儿动作\"] --> PA\n    PA --> VIB[\"手环震动\"]\n    FACE[\"面部遮挡\"] --> PB[\"B：口鼻遮挡\"]\n    PB --> SA[\"语音提醒\"]\n    NONE[\"无异常\"] --> PC[\"C：安睡维持\"]\n```",
+      "diagrams": [
+        {
+          "title": "Overview",
+          "code": "flowchart TD\n    B1[\"婴儿（弱小粘人）\"] --> N1[\"需要及时安抚\"]\n    N1 --> N2[\"红外夜视监护器\"]\n    N2 --> A1[\"京东Joy AI VR Interaction（80亿参数）\"]\n    A1 --> L1[\"本地开源部署\"]\n    A1 --> A2[\"实时提醒与交互\"]\n    A1 --> P1[\"隐私安全\"]\n    A1 --> C1[\"低成本无token焦虑\"]"
+        },
+        {
+          "title": "System Architecture",
+          "code": "flowchart LR\n    C1[\"红外摄像头\"] --> AI[\"AI 推理服务 (8099)\"]\n    ESP[\"ESP32 手环\"] --> BT[\"蓝牙模块\"]\n    BT --> AI\n    SP[\"音响\"] --> AI\n    HS[\"本地服务器 (DGX Spark)\"] --> AI\n    HS --> PW[\"电源\"]\n    AI --> UI[\"Web UI\"]"
+        },
+        {
+          "title": "AI 功能流程",
+          "code": "flowchart TD\n    VC[\"视频捕获\"] --> PR[\"预处理（红外/光敏）\"]\n    PR --> INF[\"实时推理\"]\n    INF --> ED[\"事件检测（哭声、动作）\"]\n    ED --> DEC[\"决策生成（A/B/C）\"]\n    DEC --> SP[\"语音输出\"]\n    DEC --> TRG[\"触发蓝牙手环\"]\n    TRG --> FB[\"持续上下文保持\"]\n    FB --> INF"
+        },
+        {
+          "title": "硬件组件",
+          "code": "flowchart TD\n    IRM[\"红外夜视模组\"] --> LS[\"光敏电阻\"]\n    IRM --> LED[\"红外补光灯 (940nm)\"]\n    LED --> DF[\"双滤光片 (Air Cut)\"]\n    DF --> ESP[\"ESP32‑C6 开发板\"]\n    ESP --> VM[\"振动马达 (PWM)\"]\n    ESP --> BAT[\"电池\"]\n    ESP --> ENC[\"外壳 (14螺孔)\"]"
+        },
+        {
+          "title": "使用场景与触发逻辑",
+          "code": "flowchart LR\n    CRY[\"婴儿哭泣\"] --> PA[\"A：惊醒扭动\"]\n    MOT[\"婴儿动作\"] --> PA\n    PA --> VIB[\"手环震动\"]\n    FACE[\"面部遮挡\"] --> PB[\"B：口鼻遮挡\"]\n    PB --> SA[\"语音提醒\"]\n    NONE[\"无异常\"] --> PC[\"C：安睡维持\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T06:55:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 手搓AI夜视婴儿看护器知识图谱\n\n## Overview\n```mermaid\nflowchart TD\n    B1[\"婴儿（弱小粘人）\"] --> N1[\"需要及时安抚\"]\n    N1 --> N2[\"红外夜视监护器\"]\n    N2 --> A1[\"京东Joy AI VR Interaction（80亿参数）\"]\n    A1 --> L1[\"本地开源部署\"]\n    A1 --> A2[\"实时提醒与交互\"]\n    A1 --> P1[\"隐私安全\"]\n    A1 --> C1[\"低成本无token焦虑\"]\n```\n\n## System Architecture\n```mermaid\nflowchart LR\n    C1[\"红外摄像头\"] --> AI[\"AI 推理服务 (8099)\"]\n    ESP[\"ESP32 手环\"] --> BT[\"蓝牙模块\"]\n    BT --> AI\n    SP[\"音响\"] --> AI\n    HS[\"本地服务器 (DGX Spark)\"] --> AI\n    HS --> PW[\"电源\"]\n    AI --> UI[\"Web UI\"]\n```\n\n## AI 功能流程\n```mermaid\nflowchart TD\n    VC[\"视频捕获\"] --> PR[\"预处理（红外/光敏）\"]\n    PR --> INF[\"实时推理\"]\n    INF --> ED[\"事件检测（哭声、动作）\"]\n    ED --> DEC[\"决策生成（A/B/C）\"]\n    DEC --> SP[\"语音输出\"]\n    DEC --> TRG[\"触发蓝牙手环\"]\n    TRG --> FB[\"持续上下文保持\"]\n    FB --> INF\n```\n\n## 硬件组件\n```mermaid\nflowchart TD\n    IRM[\"红外夜视模组\"] --> LS[\"光敏电阻\"]\n    IRM --> LED[\"红外补光灯 (940nm)\"]\n    LED --> DF[\"双滤光片 (Air Cut)\"]\n    DF --> ESP[\"ESP32‑C6 开发板\"]\n    ESP --> VM[\"振动马达 (PWM)\"]\n    ESP --> BAT[\"电池\"]\n    ESP --> ENC[\"外壳 (14螺孔)\"]\n```\n\n## 使用场景与触发逻辑\n```mermaid\nflowchart LR\n    CRY[\"婴儿哭泣\"] --> PA[\"A：惊醒扭动\"]\n    MOT[\"婴儿动作\"] --> PA\n    PA --> VIB[\"手环震动\"]\n    FACE[\"面部遮挡\"] --> PB[\"B：口鼻遮挡\"]\n    PB --> SA[\"语音提醒\"]\n    NONE[\"无异常\"] --> PC[\"C：安睡维持\"]\n```",
+  "diagrams": [
+    {
+      "title": "Overview",
+      "code": "flowchart TD\n    B1[\"婴儿（弱小粘人）\"] --> N1[\"需要及时安抚\"]\n    N1 --> N2[\"红外夜视监护器\"]\n    N2 --> A1[\"京东Joy AI VR Interaction（80亿参数）\"]\n    A1 --> L1[\"本地开源部署\"]\n    A1 --> A2[\"实时提醒与交互\"]\n    A1 --> P1[\"隐私安全\"]\n    A1 --> C1[\"低成本无token焦虑\"]"
+    },
+    {
+      "title": "System Architecture",
+      "code": "flowchart LR\n    C1[\"红外摄像头\"] --> AI[\"AI 推理服务 (8099)\"]\n    ESP[\"ESP32 手环\"] --> BT[\"蓝牙模块\"]\n    BT --> AI\n    SP[\"音响\"] --> AI\n    HS[\"本地服务器 (DGX Spark)\"] --> AI\n    HS --> PW[\"电源\"]\n    AI --> UI[\"Web UI\"]"
+    },
+    {
+      "title": "AI 功能流程",
+      "code": "flowchart TD\n    VC[\"视频捕获\"] --> PR[\"预处理（红外/光敏）\"]\n    PR --> INF[\"实时推理\"]\n    INF --> ED[\"事件检测（哭声、动作）\"]\n    ED --> DEC[\"决策生成（A/B/C）\"]\n    DEC --> SP[\"语音输出\"]\n    DEC --> TRG[\"触发蓝牙手环\"]\n    TRG --> FB[\"持续上下文保持\"]\n    FB --> INF"
+    },
+    {
+      "title": "硬件组件",
+      "code": "flowchart TD\n    IRM[\"红外夜视模组\"] --> LS[\"光敏电阻\"]\n    IRM --> LED[\"红外补光灯 (940nm)\"]\n    LED --> DF[\"双滤光片 (Air Cut)\"]\n    DF --> ESP[\"ESP32‑C6 开发板\"]\n    ESP --> VM[\"振动马达 (PWM)\"]\n    ESP --> BAT[\"电池\"]\n    ESP --> ENC[\"外壳 (14螺孔)\"]"
+    },
+    {
+      "title": "使用场景与触发逻辑",
+      "code": "flowchart LR\n    CRY[\"婴儿哭泣\"] --> PA[\"A：惊醒扭动\"]\n    MOT[\"婴儿动作\"] --> PA\n    PA --> VIB[\"手环震动\"]\n    FACE[\"面部遮挡\"] --> PB[\"B：口鼻遮挡\"]\n    PB --> SA[\"语音提醒\"]\n    NONE[\"无异常\"] --> PC[\"C：安睡维持\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T06:55:47+00:00"
+}

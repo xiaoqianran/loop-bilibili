@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1EJ3b6GEVd",
+  "title": "英语写作也能像写代码？按 Tab 自动补全，还不用 AI｜开发日记 #2(1)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 277,
+  "text": "如果写英语也能像写代码一样按一下tab就自动补全\n会是什么体验\n昨天主包用AI实现了一个英文自动补全的写作软件\n但每补全一次都需要消耗token\n所以今天我先把高频表达搬到了本地\n像这些常用表达不用联网\n也不再需要AI\n我还把它从补全工具丰富成了英语写作挨答\n让他能像代码编辑器一样展示修改错误\n修改以后哪里增加了哪里删除了\n都能如此看清\n恢复前会再次确认\n恢复后也能撤销\nAI没有被删除\n只是不再接管\n每一次补全高频任务留在本地复杂语义\n再按需交给AI源码\nroad map和下载都放在仓库里\n如果你对本地英语写作工具感兴趣\n欢迎来看看\n也欢迎star",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1EJ3b6GEVd",
+  "published_at": "1785424515",
+  "fetched_at": "2026-08-07T05:11:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 英语写作自动补全系统知识图谱\n\n## 系统概览\n```mermaid\nflowchart TD\n    A[\"用户输入\"] --> C[\"本地补全 (Tab)\"]\n    C --> B[\"本地高频表达库\"]\n    B --> C\n    C --> G[\"修改错误展示\"]\n    G --> H[\"增删标记\"]\n    G --> I[\"恢复前确认\"]\n    I --> J[\"撤销功能\"]\n    C --> D[\"AI补全服务\"]\n    D --> E[\"Token 消耗\"]\n    D --> F[\"需要联网\"]\n    D --> M[\"复杂语义交给 AI\"]\n    M --> K[\"AI 仍在系统\"]\n    K --> L[\"AI 不再接管\"]\n    A --> N[\"road map & 下载仓库\"]\n```\n\n## 工作流程\n```mermaid\nflowchart TD\n    S[\"输入文本\"] --> T[\"检查本地库\"]\n    T --> U[\"本地匹配成功?\"]\n    U -->|是| V[\"返回本地补全\"]\n    V --> W[\"本地补全展示\"]\n    W --> X[\"确认使用\"]\n    X -->|否| Y[\"提交给 AI\"]\n    Y --> Z[\"AI 返回补全\"]\n    Z --> AA[\"消耗 Token\"]\n    Z --> AB[\"展示 AI 补全\"]\n    AB --> AC[\"用户接受/拒绝\"]\n    AC --> AD[\"完成写作\"]\n```\n\n## 本地 vs AI 功能对比\n```mermaid\nflowchart LR\n    L1[\"本地高频表达\"] --> L2[\"无需联网\"]\n    L1 --> L3[\"无 Token 消耗\"]\n    L1 --> L4[\"快速响应\"]\n    R1[\"AI 补全\"] --> R2[\"需要联网\"]\n    R1 --> R3[\"消耗 Token\"]\n    R1 --> R4[\"处理复杂语义\"]\n    L1 -- 对比 --> R1\n```",
+      "diagrams": [
+        {
+          "title": "系统概览",
+          "code": "flowchart TD\n    A[\"用户输入\"] --> C[\"本地补全 (Tab)\"]\n    C --> B[\"本地高频表达库\"]\n    B --> C\n    C --> G[\"修改错误展示\"]\n    G --> H[\"增删标记\"]\n    G --> I[\"恢复前确认\"]\n    I --> J[\"撤销功能\"]\n    C --> D[\"AI补全服务\"]\n    D --> E[\"Token 消耗\"]\n    D --> F[\"需要联网\"]\n    D --> M[\"复杂语义交给 AI\"]\n    M --> K[\"AI 仍在系统\"]\n    K --> L[\"AI 不再接管\"]\n    A --> N[\"road map & 下载仓库\"]"
+        },
+        {
+          "title": "工作流程",
+          "code": "flowchart TD\n    S[\"输入文本\"] --> T[\"检查本地库\"]\n    T --> U[\"本地匹配成功?\"]\n    U -->|是| V[\"返回本地补全\"]\n    V --> W[\"本地补全展示\"]\n    W --> X[\"确认使用\"]\n    X -->|否| Y[\"提交给 AI\"]\n    Y --> Z[\"AI 返回补全\"]\n    Z --> AA[\"消耗 Token\"]\n    Z --> AB[\"展示 AI 补全\"]\n    AB --> AC[\"用户接受/拒绝\"]\n    AC --> AD[\"完成写作\"]"
+        },
+        {
+          "title": "本地 vs AI 功能对比",
+          "code": "flowchart LR\n    L1[\"本地高频表达\"] --> L2[\"无需联网\"]\n    L1 --> L3[\"无 Token 消耗\"]\n    L1 --> L4[\"快速响应\"]\n    R1[\"AI 补全\"] --> R2[\"需要联网\"]\n    R1 --> R3[\"消耗 Token\"]\n    R1 --> R4[\"处理复杂语义\"]\n    L1 -- 对比 --> R1"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T05:11:33+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 英语写作自动补全系统知识图谱\n\n## 系统概览\n```mermaid\nflowchart TD\n    A[\"用户输入\"] --> C[\"本地补全 (Tab)\"]\n    C --> B[\"本地高频表达库\"]\n    B --> C\n    C --> G[\"修改错误展示\"]\n    G --> H[\"增删标记\"]\n    G --> I[\"恢复前确认\"]\n    I --> J[\"撤销功能\"]\n    C --> D[\"AI补全服务\"]\n    D --> E[\"Token 消耗\"]\n    D --> F[\"需要联网\"]\n    D --> M[\"复杂语义交给 AI\"]\n    M --> K[\"AI 仍在系统\"]\n    K --> L[\"AI 不再接管\"]\n    A --> N[\"road map & 下载仓库\"]\n```\n\n## 工作流程\n```mermaid\nflowchart TD\n    S[\"输入文本\"] --> T[\"检查本地库\"]\n    T --> U[\"本地匹配成功?\"]\n    U -->|是| V[\"返回本地补全\"]\n    V --> W[\"本地补全展示\"]\n    W --> X[\"确认使用\"]\n    X -->|否| Y[\"提交给 AI\"]\n    Y --> Z[\"AI 返回补全\"]\n    Z --> AA[\"消耗 Token\"]\n    Z --> AB[\"展示 AI 补全\"]\n    AB --> AC[\"用户接受/拒绝\"]\n    AC --> AD[\"完成写作\"]\n```\n\n## 本地 vs AI 功能对比\n```mermaid\nflowchart LR\n    L1[\"本地高频表达\"] --> L2[\"无需联网\"]\n    L1 --> L3[\"无 Token 消耗\"]\n    L1 --> L4[\"快速响应\"]\n    R1[\"AI 补全\"] --> R2[\"需要联网\"]\n    R1 --> R3[\"消耗 Token\"]\n    R1 --> R4[\"处理复杂语义\"]\n    L1 -- 对比 --> R1\n```",
+  "diagrams": [
+    {
+      "title": "系统概览",
+      "code": "flowchart TD\n    A[\"用户输入\"] --> C[\"本地补全 (Tab)\"]\n    C --> B[\"本地高频表达库\"]\n    B --> C\n    C --> G[\"修改错误展示\"]\n    G --> H[\"增删标记\"]\n    G --> I[\"恢复前确认\"]\n    I --> J[\"撤销功能\"]\n    C --> D[\"AI补全服务\"]\n    D --> E[\"Token 消耗\"]\n    D --> F[\"需要联网\"]\n    D --> M[\"复杂语义交给 AI\"]\n    M --> K[\"AI 仍在系统\"]\n    K --> L[\"AI 不再接管\"]\n    A --> N[\"road map & 下载仓库\"]"
+    },
+    {
+      "title": "工作流程",
+      "code": "flowchart TD\n    S[\"输入文本\"] --> T[\"检查本地库\"]\n    T --> U[\"本地匹配成功?\"]\n    U -->|是| V[\"返回本地补全\"]\n    V --> W[\"本地补全展示\"]\n    W --> X[\"确认使用\"]\n    X -->|否| Y[\"提交给 AI\"]\n    Y --> Z[\"AI 返回补全\"]\n    Z --> AA[\"消耗 Token\"]\n    Z --> AB[\"展示 AI 补全\"]\n    AB --> AC[\"用户接受/拒绝\"]\n    AC --> AD[\"完成写作\"]"
+    },
+    {
+      "title": "本地 vs AI 功能对比",
+      "code": "flowchart LR\n    L1[\"本地高频表达\"] --> L2[\"无需联网\"]\n    L1 --> L3[\"无 Token 消耗\"]\n    L1 --> L4[\"快速响应\"]\n    R1[\"AI 补全\"] --> R2[\"需要联网\"]\n    R1 --> R3[\"消耗 Token\"]\n    R1 --> R4[\"处理复杂语义\"]\n    L1 -- 对比 --> R1"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:11:33+00:00"
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="site-base" content="/loop-bilibili" />
+  <title>来自民间开发的APP，一款电脑端游戏全自动汉化翻译软件，解决大家在玩各种外语生肉游戏时，由于游戏没有官方中文、到处找不到汉化补丁等问题 · BV1N43E6oETT</title>
+  <link rel="stylesheet" href="../../../assets/app.css?v=20260808155041" />
+</head>
+<body>
+  <div class="wrap" id="app">加载中…</div>
+  <script>
+    window.SITE_BASE = "/loop-bilibili";
+    window.SITE_ASSET_V = "20260808155041";
+  </script>
+  <script src="../../../assets/app.js?v=20260808155041"></script>
+  <script>
+    
+    SubtitleSite.renderVideo("loop", "BV1N43E6oETT").catch(e => {
+      document.getElementById('app').textContent = String(e);
+    });
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1VmTd6PE26",
+  "title": "AI 生成！真·美像素序列帧",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 118,
+  "text": "OK我为大家演示一下\n我们PIXFORGE的序列帧生成功能\n先输入一个主体\n然后对动作进行描述\n把我们的循环动作给他勾上\n因为我们制作的是一个向右行走的动作\n然后选择尺寸颜色输边缘处理生成\nOK现在看到上传成功了\n看一下效果\n下载创意费",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VmTd6PE26",
+  "published_at": "1783350148",
+  "fetched_at": "2026-08-07T15:38:49+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 生成！真·美像素序列帧\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"输入主体\"] --> A2[\"描述动作\"]\n    A2 --> A3[\"勾选循环\"]\n    A3 --> A4[\"设定方向: 向右\"]\n    A4 --> A5[\"选择尺寸/颜色/边缘处理\"]\n    A5 --> A6[\"生成序列帧\"]\n    A6 --> A7[\"上传成功\"]\n    A7 --> A8[\"查看效果\"]\n    A8 --> A9[\"下载结果\"]\n```\n\n## 循环动作细节\n```mermaid\nflowchart TD\n    B1[\"描述动作\"] --> B2[\"向右行走\"]\n    B2 --> B3[\"勾选循环\"]\n    B3 --> B4[\"循环生效\"]\n```\n\n## 参数选择与生成\n```mermaid\nflowchart TD\n    C1[\"选择尺寸\"] --> C2[\"选择颜色\"]\n    C2 --> C3[\"边缘处理\"]\n    C3 --> C4[\"生成序列帧\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"输入主体\"] --> A2[\"描述动作\"]\n    A2 --> A3[\"勾选循环\"]\n    A3 --> A4[\"设定方向: 向右\"]\n    A4 --> A5[\"选择尺寸/颜色/边缘处理\"]\n    A5 --> A6[\"生成序列帧\"]\n    A6 --> A7[\"上传成功\"]\n    A7 --> A8[\"查看效果\"]\n    A8 --> A9[\"下载结果\"]"
+        },
+        {
+          "title": "循环动作细节",
+          "code": "flowchart TD\n    B1[\"描述动作\"] --> B2[\"向右行走\"]\n    B2 --> B3[\"勾选循环\"]\n    B3 --> B4[\"循环生效\"]"
+        },
+        {
+          "title": "参数选择与生成",
+          "code": "flowchart TD\n    C1[\"选择尺寸\"] --> C2[\"选择颜色\"]\n    C2 --> C3[\"边缘处理\"]\n    C3 --> C4[\"生成序列帧\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T15:39:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 生成！真·美像素序列帧\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"输入主体\"] --> A2[\"描述动作\"]\n    A2 --> A3[\"勾选循环\"]\n    A3 --> A4[\"设定方向: 向右\"]\n    A4 --> A5[\"选择尺寸/颜色/边缘处理\"]\n    A5 --> A6[\"生成序列帧\"]\n    A6 --> A7[\"上传成功\"]\n    A7 --> A8[\"查看效果\"]\n    A8 --> A9[\"下载结果\"]\n```\n\n## 循环动作细节\n```mermaid\nflowchart TD\n    B1[\"描述动作\"] --> B2[\"向右行走\"]\n    B2 --> B3[\"勾选循环\"]\n    B3 --> B4[\"循环生效\"]\n```\n\n## 参数选择与生成\n```mermaid\nflowchart TD\n    C1[\"选择尺寸\"] --> C2[\"选择颜色\"]\n    C2 --> C3[\"边缘处理\"]\n    C3 --> C4[\"生成序列帧\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"输入主体\"] --> A2[\"描述动作\"]\n    A2 --> A3[\"勾选循环\"]\n    A3 --> A4[\"设定方向: 向右\"]\n    A4 --> A5[\"选择尺寸/颜色/边缘处理\"]\n    A5 --> A6[\"生成序列帧\"]\n    A6 --> A7[\"上传成功\"]\n    A7 --> A8[\"查看效果\"]\n    A8 --> A9[\"下载结果\"]"
+    },
+    {
+      "title": "循环动作细节",
+      "code": "flowchart TD\n    B1[\"描述动作\"] --> B2[\"向右行走\"]\n    B2 --> B3[\"勾选循环\"]\n    B3 --> B4[\"循环生效\"]"
+    },
+    {
+      "title": "参数选择与生成",
+      "code": "flowchart TD\n    C1[\"选择尺寸\"] --> C2[\"选择颜色\"]\n    C2 --> C3[\"边缘处理\"]\n    C3 --> C4[\"生成序列帧\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:39:00+00:00"
+}

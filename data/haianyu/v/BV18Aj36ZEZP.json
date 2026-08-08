@@ -1,0 +1,26 @@
+{
+  "bvid": "BV18Aj36ZEZP",
+  "title": "147. 如何直观理解RoPE的平移不变性【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 576,
+  "text": "今天的问题是\n如何直观理解旋转位置编码的平移不变性\n先说什么是平移不变性\n比如这是太阳\n这是地球\n它们之间有一个引力\n这个引力只取决于相对距离\n置于绝对位置并不重要\n把太阳和地球看作一个整体平移一下\n只要中间距离不变\n引力大小就不变\n这就是平移不变性\n旋转位置编码可以类比这个性质\n现在有一个Q向量\n还有一个K向量\n算注意力分数时\n之前说过一个性质\n可以写成Q向量和K向量做内积\n但中间插入一个RN减M\nRN减M是什么呢\n就是两个token的距离\n把N减M记作小R也就是token的距离\n那注意力分数就是QRR\n然后K这就像万有引力公式一样\n那么这个东西是怎么来的\n关键在于旋转位置编码有两个性质\n第一RM的转置等于R负M\n第二乘积可以合并RM的转置\n乘RN可以写成RN减M\n自然就能推导出这个性质\n把N减M记作小R\n也就是token的距离\n那它就像万有引力公式一样\n这是从万有引力的视角理解平移不变性\n还有另一个视角就是注意力分数矩阵\n之前分析过\n如果把注意力分数矩阵写出来\n在这条对角线上\nR0等于单位阵I\n因为距离为零\n不旋转\n这条对角线距离为一\n所以要乘R1\n这条对角线是R2\n这条是r-1\n如果用一个颜色表示某一条对角线\n就会发现像这样一个颜色\n一个颜色的这个也体现了平移不变性\n就是说在同一条斜线上相对距离相同\n比如这条斜线上的元素都用R2",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18Aj36ZEZP",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:25+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

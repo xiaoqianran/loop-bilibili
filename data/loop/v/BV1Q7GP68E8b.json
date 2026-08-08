@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1Q7GP68E8b",
+  "title": "使用deepseek-v4-flash正式版一句话生成的8bit音乐",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 34,
+  "text": "UP使用DEEPSAEEKV4flash\n一句话制作的8BIT的音乐",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Q7GP68E8b",
+  "published_at": "1785505189",
+  "fetched_at": "2026-08-06T19:22:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DEEPSAEEKV4flash 生成 8BIT 音乐知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    UP[\"UP\"] -->|使用| Model[\"DEEPSAEEKV4flash\"]\n    Sentence[\"一句话描述\"] -->|输入给| Model\n    Model -->|生成| Music[\"8BIT 音乐\"]\n```\n\n- UP 使用 DEEPSAEEKV4flash [BV1Q7GP68E8b P1 00:00]  \n- 一句话制作的 8BIT 音乐 [BV1Q7GP68E8b P1 00:05]\n\n## 生成步骤\n```mermaid\nflowchart LR\n    Step1[\"准备一句话描述\"] --> Step2[\"调用 DEEPSAEEKV4flash\"]\n    Step2 --> Step3[\"输出 8BIT 音乐文件\"]\n```\n\n- 准备一句话描述 [BV1Q7GP68E8b P1 00:05]  \n- 调用 DEEPSAEEKV4flash [BV1Q7GP68E8b P1 00:00]  \n- 输出 8BIT 音乐文件 [BV1Q7GP68E8b P1 00:05]",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    UP[\"UP\"] -->|使用| Model[\"DEEPSAEEKV4flash\"]\n    Sentence[\"一句话描述\"] -->|输入给| Model\n    Model -->|生成| Music[\"8BIT 音乐\"]"
+        },
+        {
+          "title": "生成步骤",
+          "code": "flowchart LR\n    Step1[\"准备一句话描述\"] --> Step2[\"调用 DEEPSAEEKV4flash\"]\n    Step2 --> Step3[\"输出 8BIT 音乐文件\"]"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-06T19:23:10+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DEEPSAEEKV4flash 生成 8BIT 音乐知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    UP[\"UP\"] -->|使用| Model[\"DEEPSAEEKV4flash\"]\n    Sentence[\"一句话描述\"] -->|输入给| Model\n    Model -->|生成| Music[\"8BIT 音乐\"]\n```\n\n- UP 使用 DEEPSAEEKV4flash [BV1Q7GP68E8b P1 00:00]  \n- 一句话制作的 8BIT 音乐 [BV1Q7GP68E8b P1 00:05]\n\n## 生成步骤\n```mermaid\nflowchart LR\n    Step1[\"准备一句话描述\"] --> Step2[\"调用 DEEPSAEEKV4flash\"]\n    Step2 --> Step3[\"输出 8BIT 音乐文件\"]\n```\n\n- 准备一句话描述 [BV1Q7GP68E8b P1 00:05]  \n- 调用 DEEPSAEEKV4flash [BV1Q7GP68E8b P1 00:00]  \n- 输出 8BIT 音乐文件 [BV1Q7GP68E8b P1 00:05]",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    UP[\"UP\"] -->|使用| Model[\"DEEPSAEEKV4flash\"]\n    Sentence[\"一句话描述\"] -->|输入给| Model\n    Model -->|生成| Music[\"8BIT 音乐\"]"
+    },
+    {
+      "title": "生成步骤",
+      "code": "flowchart LR\n    Step1[\"准备一句话描述\"] --> Step2[\"调用 DEEPSAEEKV4flash\"]\n    Step2 --> Step3[\"输出 8BIT 音乐文件\"]"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:23:10+00:00"
+}

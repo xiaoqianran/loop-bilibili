@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1Ugup6TEvv",
+  "title": "【2D游戏渲染】一个验证失败的骚操作",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 380,
+  "text": "这是我研究出来\n用一个三角形网格来渲染一个精灵的骚操作\n现在场景中有两个三角形和六个顶点\n然后我们看下空场景的情况下\n有几个三角形和几个顶点\n空场景下也有一个三角形和三个顶点\n因为用batch renderer group渲染的网格\n无法显示线框模式\n所以我们用frame debug来看下网格数据\n这里可以看到只有三个顶点和三个索引\n也就是一个三角形的数据\nMesh\n这里也显示只有一个三角形\n说明我们成功用一个三角形渲染出了一个精灵\n然后再复制一个不同的精灵\n现在这里变成六个顶点和六个索引\n但是mesh还是一个三角形\n再对比下普通的spread renderer\n渲染三个精灵的数据\n可以看到有12个顶点跟18个索引\n不过很遗憾这个骚操作虽然实现了\n但是我渲染1万个精灵\n对比了下\n用一个三角形渲染的帧率\n会比常规渲染低个30帧左右\n所以这个骚操作失败了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Ugup6TEvv",
+  "published_at": "1786020224",
+  "fetched_at": "2026-08-08T06:06:40+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T06:41:31+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T06:41:31+00:00"
+}

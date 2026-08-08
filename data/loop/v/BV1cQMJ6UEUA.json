@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1cQMJ6UEUA",
+  "title": "8分钟带你吃透12个Agent核心原理，从messages到Multi-Agent，全程通俗易懂，小白也能轻松学会，少走99%的弯路！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3311,
+  "text": "AI agent的流行一年\n竟然没有人真正讲底层的方法\n这期12个最重要的原理全部压缩成一期\n一口气给你讲完\n学习AI的一天天一口气学12个agent的底层原理\n第一个问题啊\nAI1来一回的对话\n底层到底是啥样的\n你给它一组参数\n参数里装的是你跟他来回的对话\n他读完这个参数接着写下一句\n这就是message数组AIV1的对话通道\n空的数组发过去呢\n他一个字都说不出来\n实际上你发过去的是一的格式的\n数组里面包含了各个参数\n大模型\n那一侧呢收到了这个数组的格式是这样的\n那大模型收到了这个东西呢\n它就可以返回消息给你了\n这个就是你和AI对话之间的底层的数据格式\nAI怎么记住你刚才说过的话呢\n我告诉你一个真相\n他根本就没有任何的记忆\nAI跟金鱼一样\n每每接一次请求\n都是重新开始\n把上下文再喂给它\n把全部的历史对话重新塞回去给他\n这个就是上下文的窗口\n所以AI的记忆实际上没有任何记忆\n所谓的记忆就是上下文\n下面是一个例子\n把两轮的请求拉出来\n你看一下\n那第一轮请求是这样的\n我养了只猫叫小花\n然后AI回复小花是什么品种\n然后你第二次再问的时候呢\n他会把你之前的所有的历史对话呢塞回去\n再发给AI1遍\n重新发一次\n他记得这个小花\n完全是因为你把这段话又塞给他了一遍\n所以他才知道这就是上下文\n这就是记忆\nOK是不是看起来有点有点扯哈\n但是现在就是这样\nOK那下一个问题是\n你怎么让AI去演一个角色呢\n你可以在请求前面加一句\n你是一个抠门的老板\n你是一个挑剔的hr\n那同一个问题\n他的画风就立刻就会变化\n这就是system prompt系统提示词\nsystem prompt就是长这个样子的\n左边是不加system提示词\n然后右边是加了system提示词\n他们的输出的结果是完全风格是不一样的\n右边能看到system等于你是一个抠门的老板\n就给这个AI加了人设了\n那他就会按照这个人设来回复你的消息\n这就是system from\nOK下一个AI在计算数字的时候呢\n大概率情况下它是错的\n比如AI算1234512345\n他为什么老错呢\n大模型它完全是通过概率来推测下一个数字\n加下一个文字来来回复你的\n那他大概率会蒙一个数字给你\n所以数字是不准的\n那怎么在不调用工具的情况下\n提高AI的输出的准确率呢\n答案就是你只要加一句话\n想一步一步算\n那他就会按照一一步一步的步骤呢去计算\n然后最终的结果就是正确的\n大概率是正确的\n你千万不要小看这一个小小的技能\n它能够让准确率暴涨\n那这个也叫思维链提示\nOK下一个是AI不按照你的格式输出怎么办\n如果这个都不能完成的话\n那就不用谈agent\nagent是无法创建的\n比如你跟他说一大堆要求怎么输出\n最后还是他就是不合理\n那输出的就是错的\n你的agent它就一直是有各种各样的bug\n所以不能光说要求你可以给它\n直接给他两三个例子输入\n这样输出是这样再输入\n这样再输出是这样\nAI1看这样就懂了啊\n格式就可以锁死\n这个也叫few shot\n多样本提示一个具体的例子\n顶十行抽象说明你只要给他一个例子\n顶你说十句话\n那这也是提示词工程的一部分方法\n千万别小看这些小技巧\nOK第六点\nAI总是说一些废话\n比如说好的\n这是你想要的\n但是我们并不想要这些废话\n怎么治呢\n你只想要一个干干净净的一个答案\n不掺杂任何其他的信息\n怎么做呢\n这个也是A镇的建设的纲需\n没有这个技能的话\n也是不可能做出agent的\n所以你在他要回答的位置\n替他把第一个字提前写好\n比如直接写一个大括号\n然后AI没办法从头开始写\n因为你已经预填充了\n只要接着这个大括号继续往下写\n它就可以直接吐出JASON\n然后一句废话都没有\n那这个就叫预预填充\n就是你帮他开头了\n他已经没有开头的机会了\n也就是说你把格式已经定死了\n这叫预填充\n这也是做agent的一个必会的一个技能\nOK第七点\n怎么让agent在你想要的地方停止呢\n这个也是制作agent的一个刚需啊\n你给它设一个停止符号\n比如观察那AI写到这两个字的时候呢\n他立马就停了\n然后把控制权再交给你\n这个叫停止序列\n写A阵的循环必备\n如果不设置停止序列的话\nAI可能会顺手把工具的返回结果自己编出来\n也就是说他自己去幻想这个工具的结果\n所以你的agent呢可能会出现一些bug\n那左边是有停止符号的输出结果\n那右边是没有停止符号的输出\n结果可以对比看一下\nOK第八点\nAI真的会调用工具吗\n我必须告诉你啊\n他AI根本就不会调用任何的工具\nAI实际上永远只做一件事情\n就是吐字符串\n只不过我们在大模型外部搭了一个壳子\n然后告诉大模型输出指定格式的字符串\n即可完成工具的调用\n假如我们想要北京的天气\n那我们可以告诉AI\n你只要输出这一段JASON的JSON格式的参数\n然后外部的框架收到了这串字符串\n就可以去调用天气的API\n然后把这个26度晴\n这几个结果返回给大模型\n然后你就可以收到这个北京的天气了\n这就是to use协议\n就是工具调用的协议\n实际上就就是这么简单的一个事情\n这就是调用工具\n这也是agent的必备的一个技能\n实际上有很多看似高深的技术在背后\n其实是原理上来看\n其实非常非常简单\nOK第九点\nAI怎么懂你公司内部的专业知识呢\n实际上AI他并不懂你公司内部的一些一些信息\n你提问他之前\n先用程序去文档库里查线段的段落\n把这些段落塞进prompt里\n跟问题一起发给言\n所以他并不是懂\n他是现读现答\n那这个就是rag\n比如你问一个问题\nrag会提前去库里头找相关的碎片\n塞到你的提示词里\n基本而言rag就是检索增强生成\n这是检索吗\n但是补充一句就是\nrag是2024年的一个主流\n实际上现在主流上像cloud gdcloud和GDP这些模型\n上下文越来越大\n自己就可以去读文档了\n一小段一小段的去读\n就像人一样\n对rag这条路未来怎么走\n行业内还在分化\nOK第十点\nagent是怎么自主决策的呢\n拆开看其实简单到离谱\n一个while循环加一个固定模板\n模板就长这样的\n思考加行动加观察\nAI就按照这个格式来吐\n你的代码呢去识别去执行\n然后再把结果再返回回来\n转几圈就可以得出答案了\n那咱可以参考我之前在第13天已经揭露过的\nagent的框架的原理图\n大家可以再看一下\n这个就是react模式agent的自主\nOK第11点\nAI为什么动不动就瞎编幻觉\n那我们现在都知道它的本质是根据你前面的字\n然后猜出下一个最可能的主\n他没有知道和不知道的概念\n你问他什么\n他都可以答出来一段话\n这个就是自回归生成幻觉是机制\n它并不是一个bug\n它就是AI目前的AI它就是这种机制\n所以重要的决策永远要让他给你依据\n就是让他根据事实来回复你\n然后你自己要核实一遍\n就是你问李白在1985年发表过什么著作\n然后AI回复\n1985年发表了一个什么什么绿光集\n但是压根儿他压根儿不知道\n李白已经死了1000多年了\n所以说AI他没有说我不知道这个这个事情\n他永远只是接着猜下一个字\n那我通常的做法就是跟AI说\n你去网上查一下子\n李白在1985年发表过什么著作\n那这样的话他就可以基于事实去做一些搜索\n结果他就会查出来哦\n李白已经死了1000多年\n是不可能的事情\n所以要让AI永远基于事实去说话\n这样可以减少错误\n最后一点第12点\n多个AI是怎么配合干一件大事的呢\n就是你让一个大模型去当老板啊\n接到任务之后呢\n先去拆火\n把每个活拆给一个小弟\n拆了一个紫agent\n然后比如说一个查机票\n一个查酒店\n一个查行程\n然后把这个总的结果汇报给一个总的大模型\n结果汇报给你\n这就是多agent的编排\n那下面就是cloud code的agent\nteams的工作方式\n一个主的agent\n然后下面有多个子agent\n然后再把这个结果汇总给主的agent\nOK那以上就是12个原理\n从message到多agent串起来\n就是agent的全部灵魂\n少一个都不行\n看完这期视频呢\n你们应该对agent才有一个最基本的一个了解\n其实agent就是这些小小的技巧\n多个小技巧全部都合并到一起\n就可以做出agent",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cQMJ6UEUA",
+  "published_at": "1783580825",
+  "fetched_at": "2026-08-07T03:51:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI Agent 核心原理图谱\n\n## 总览\n```mermaid\nflowchart TD\n    M[\"Message 数组 (对话通道)\"] --> C[\"Context 窗口 (上下文)\"]\n    C --> S[\"System Prompt (角色设定)\"]\n    S --> T[\"Tool 调用协议 (to-use)\"]\n    C --> R[\"RAG 检索增强生成\"]\n    S --> F[\"Few‑shot 示例\"]\n    S --> CH[\"Chain‑of‑Thought (思维链)\"]\n    S --> PF[\"Pre‑fill (预填充)\"]\n    S --> ST[\"Stop Sequence (停止符号)\"]\n    T --> A[\"Agent 循环 (React 模式)\"]\n    A --> MA[\"Multi‑Agent 编排\"]\n```\n<!-- [BV1cQMJ6UEUA P1 00:18] [BV1cQMJ6UEUA P1 00:53] [BV1cQMJ6UEUA P1 01:27] [BV1cQMJ6UEUA P1 04:39] [BV1cQMJ6UEUA P1 05:32] [BV1cQMJ6UEUA P1 02:54] [BV1cQMJ6UEUA P1 02:13] [BV1cQMJ6UEUA P1 03:22] [BV1cQMJ6UEUA P1 04:01] [BV1cQMJ6UEUA P1 06:01] [BV1cQMJ6UEUA P1 07:22] -->\n\n## Prompt Engineering（提示词工程）\n```mermaid\nflowchart LR\n    SP[\"System Prompt<br/>角色设定\"] --> CH[\"Chain‑of‑Thought<br/>一步步推理\"]\n    SP --> FS[\"Few‑shot 示例<br/>示例驱动\"]\n    SP --> PF[\"Pre‑fill<br/>格式锁定\"]\n    CH --> FS\n    FS --> PF\n```\n<!-- [BV1cQMJ6UEUA P1 01:27] [BV1cQMJ6UEUA P1 02:13] [BV1cQMJ6UEUA P1 02:54] [BV1cQMJ6UEUA P1 03:22] -->\n\n## Context & Memory（上下文记忆）\n```mermaid\nflowchart TD\n    MA[\"Message 数组\"] --> CW[\"Context Window\"]\n    CW --> AI[\"AI 生成回复\"]\n    AI --> CM[\"记忆（实际为上下文）\"]\n```\n<!-- [BV1cQMJ6UEUA P1 00:18] [BV1cQMJ6UEUA P1 00:53] [BV1cQMJ6UEUA P1 00:49] -->\n\n## Agent 循环与多 Agent 编排\n```mermaid\nflowchart TD\n    LOOP[\"while 循环 + 固定模板\"] --> THINK[\"思考\"]\n    THINK --> ACT[\"行动\"]\n    ACT --> OBS[\"观察\"]\n    OBS --> LOOP\n    LOOP --> TOU[\"输出 (JSON/文本)\"]\n    TOU --> EXT[\"外部框架调用工具\"]\n    EXT --> RESULT[\"工具结果\"]\n    RESULT --> LOOP\n    LOOP --> MA[\"Multi‑Agent 编排\"]\n    MA --> BOSS[\"主 Agent (老板)\"]\n    BOSS --> SUB[\"子 Agent (任务执行)\"]\n```\n<!-- [BV1cQMJ6UEUA P1 06:01] [BV1cQMJ6UEUA P1 04:33] [BV1cQMJ6UEUA P1 04:39] [BV1cQMJ6UEUA P1 07:22] -->",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    M[\"Message 数组 (对话通道)\"] --> C[\"Context 窗口 (上下文)\"]\n    C --> S[\"System Prompt (角色设定)\"]\n    S --> T[\"Tool 调用协议 (to-use)\"]\n    C --> R[\"RAG 检索增强生成\"]\n    S --> F[\"Few‑shot 示例\"]\n    S --> CH[\"Chain‑of‑Thought (思维链)\"]\n    S --> PF[\"Pre‑fill (预填充)\"]\n    S --> ST[\"Stop Sequence (停止符号)\"]\n    T --> A[\"Agent 循环 (React 模式)\"]\n    A --> MA[\"Multi‑Agent 编排\"]"
+        },
+        {
+          "title": "Prompt Engineering（提示词工程）",
+          "code": "flowchart LR\n    SP[\"System Prompt<br/>角色设定\"] --> CH[\"Chain‑of‑Thought<br/>一步步推理\"]\n    SP --> FS[\"Few‑shot 示例<br/>示例驱动\"]\n    SP --> PF[\"Pre‑fill<br/>格式锁定\"]\n    CH --> FS\n    FS --> PF"
+        },
+        {
+          "title": "Context & Memory（上下文记忆）",
+          "code": "flowchart TD\n    MA[\"Message 数组\"] --> CW[\"Context Window\"]\n    CW --> AI[\"AI 生成回复\"]\n    AI --> CM[\"记忆（实际为上下文）\"]"
+        },
+        {
+          "title": "Agent 循环与多 Agent 编排",
+          "code": "flowchart TD\n    LOOP[\"while 循环 + 固定模板\"] --> THINK[\"思考\"]\n    THINK --> ACT[\"行动\"]\n    ACT --> OBS[\"观察\"]\n    OBS --> LOOP\n    LOOP --> TOU[\"输出 (JSON/文本)\"]\n    TOU --> EXT[\"外部框架调用工具\"]\n    EXT --> RESULT[\"工具结果\"]\n    RESULT --> LOOP\n    LOOP --> MA[\"Multi‑Agent 编排\"]\n    MA --> BOSS[\"主 Agent (老板)\"]\n    BOSS --> SUB[\"子 Agent (任务执行)\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T03:52:11+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI Agent 核心原理图谱\n\n## 总览\n```mermaid\nflowchart TD\n    M[\"Message 数组 (对话通道)\"] --> C[\"Context 窗口 (上下文)\"]\n    C --> S[\"System Prompt (角色设定)\"]\n    S --> T[\"Tool 调用协议 (to-use)\"]\n    C --> R[\"RAG 检索增强生成\"]\n    S --> F[\"Few‑shot 示例\"]\n    S --> CH[\"Chain‑of‑Thought (思维链)\"]\n    S --> PF[\"Pre‑fill (预填充)\"]\n    S --> ST[\"Stop Sequence (停止符号)\"]\n    T --> A[\"Agent 循环 (React 模式)\"]\n    A --> MA[\"Multi‑Agent 编排\"]\n```\n<!-- [BV1cQMJ6UEUA P1 00:18] [BV1cQMJ6UEUA P1 00:53] [BV1cQMJ6UEUA P1 01:27] [BV1cQMJ6UEUA P1 04:39] [BV1cQMJ6UEUA P1 05:32] [BV1cQMJ6UEUA P1 02:54] [BV1cQMJ6UEUA P1 02:13] [BV1cQMJ6UEUA P1 03:22] [BV1cQMJ6UEUA P1 04:01] [BV1cQMJ6UEUA P1 06:01] [BV1cQMJ6UEUA P1 07:22] -->\n\n## Prompt Engineering（提示词工程）\n```mermaid\nflowchart LR\n    SP[\"System Prompt<br/>角色设定\"] --> CH[\"Chain‑of‑Thought<br/>一步步推理\"]\n    SP --> FS[\"Few‑shot 示例<br/>示例驱动\"]\n    SP --> PF[\"Pre‑fill<br/>格式锁定\"]\n    CH --> FS\n    FS --> PF\n```\n<!-- [BV1cQMJ6UEUA P1 01:27] [BV1cQMJ6UEUA P1 02:13] [BV1cQMJ6UEUA P1 02:54] [BV1cQMJ6UEUA P1 03:22] -->\n\n## Context & Memory（上下文记忆）\n```mermaid\nflowchart TD\n    MA[\"Message 数组\"] --> CW[\"Context Window\"]\n    CW --> AI[\"AI 生成回复\"]\n    AI --> CM[\"记忆（实际为上下文）\"]\n```\n<!-- [BV1cQMJ6UEUA P1 00:18] [BV1cQMJ6UEUA P1 00:53] [BV1cQMJ6UEUA P1 00:49] -->\n\n## Agent 循环与多 Agent 编排\n```mermaid\nflowchart TD\n    LOOP[\"while 循环 + 固定模板\"] --> THINK[\"思考\"]\n    THINK --> ACT[\"行动\"]\n    ACT --> OBS[\"观察\"]\n    OBS --> LOOP\n    LOOP --> TOU[\"输出 (JSON/文本)\"]\n    TOU --> EXT[\"外部框架调用工具\"]\n    EXT --> RESULT[\"工具结果\"]\n    RESULT --> LOOP\n    LOOP --> MA[\"Multi‑Agent 编排\"]\n    MA --> BOSS[\"主 Agent (老板)\"]\n    BOSS --> SUB[\"子 Agent (任务执行)\"]\n```\n<!-- [BV1cQMJ6UEUA P1 06:01] [BV1cQMJ6UEUA P1 04:33] [BV1cQMJ6UEUA P1 04:39] [BV1cQMJ6UEUA P1 07:22] -->",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    M[\"Message 数组 (对话通道)\"] --> C[\"Context 窗口 (上下文)\"]\n    C --> S[\"System Prompt (角色设定)\"]\n    S --> T[\"Tool 调用协议 (to-use)\"]\n    C --> R[\"RAG 检索增强生成\"]\n    S --> F[\"Few‑shot 示例\"]\n    S --> CH[\"Chain‑of‑Thought (思维链)\"]\n    S --> PF[\"Pre‑fill (预填充)\"]\n    S --> ST[\"Stop Sequence (停止符号)\"]\n    T --> A[\"Agent 循环 (React 模式)\"]\n    A --> MA[\"Multi‑Agent 编排\"]"
+    },
+    {
+      "title": "Prompt Engineering（提示词工程）",
+      "code": "flowchart LR\n    SP[\"System Prompt<br/>角色设定\"] --> CH[\"Chain‑of‑Thought<br/>一步步推理\"]\n    SP --> FS[\"Few‑shot 示例<br/>示例驱动\"]\n    SP --> PF[\"Pre‑fill<br/>格式锁定\"]\n    CH --> FS\n    FS --> PF"
+    },
+    {
+      "title": "Context & Memory（上下文记忆）",
+      "code": "flowchart TD\n    MA[\"Message 数组\"] --> CW[\"Context Window\"]\n    CW --> AI[\"AI 生成回复\"]\n    AI --> CM[\"记忆（实际为上下文）\"]"
+    },
+    {
+      "title": "Agent 循环与多 Agent 编排",
+      "code": "flowchart TD\n    LOOP[\"while 循环 + 固定模板\"] --> THINK[\"思考\"]\n    THINK --> ACT[\"行动\"]\n    ACT --> OBS[\"观察\"]\n    OBS --> LOOP\n    LOOP --> TOU[\"输出 (JSON/文本)\"]\n    TOU --> EXT[\"外部框架调用工具\"]\n    EXT --> RESULT[\"工具结果\"]\n    RESULT --> LOOP\n    LOOP --> MA[\"Multi‑Agent 编排\"]\n    MA --> BOSS[\"主 Agent (老板)\"]\n    BOSS --> SUB[\"子 Agent (任务执行)\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:52:11+00:00"
+}

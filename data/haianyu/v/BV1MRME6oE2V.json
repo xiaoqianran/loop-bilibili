@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1MRME6oE2V",
+  "title": "[106]. RWKV，一种序列模型：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2731,
+  "text": "今天我们来介绍一篇关于序列建模的工作\n标题叫做RWKV\n全称是RWKV\nReinventing rn for the transformer error\n这篇论文关注的问题是\ntransformer在长序列上的内存和计算复杂度\n会随序列长度二次增长\n而RNN虽然复杂度低\n但训练难以并行\n论文的要点可以总结为三点\n第一提出一种叫做receptance weighted key value的架构\n简称RWKV\n第二通过线性注意力机制\n让模型既能像transformer一样并行训练\n又能像RNN一样\n在推理时保持较低的计算和内存开销\n第三在140亿参数规模下\nRWKV在多个NLP任务上\n与同等规模的transformer表现接近\n下面看一下摘要翻译\ntransformer已经深刻改变了\n几乎所有自然语言处理任务\n但其内存和计算复杂度随序列长度二次增长\n相比之下\n循环神经网络在内存和计算需求上呈线性缩放\n但由于并行化和可扩展性的限制\n难以达到与transformer相当的性能\n我们提出了一种新的模型架构\n即receptance weighted key value\n简称RWKV\n它结合了transformer的高效可并行化训练\n和RNN的高效推理\n我们的方法利用线性注意力机制\n使我们能够将模型表示为transformer或RNN\n从而在训练期间并行化计算\n并在推理期间保持恒定的计算和内存复杂度\n我们将模型扩展到140亿参数\n这是迄今训练过的最大密集RN\n并发现RWKV的性能\n与同等规模的transformer相当\n这表明未来的工作\n可以利用这种架构来构建更高效的模型\n这项工作代表了在序列处理任务中\n协调计算效率和模型性能权衡的一部\n下面看一下这个表\n这张表\n对比了不同模型在推理时的时间和空间复杂度\ntransformer的时间和空间复杂度\n分别是T的平方乘以D\n以及T的平方加T乘以D\nReformer\nPerformer\nLinear\ntransformer等变体\n虽然降低了复杂度\n但仍然包含T的对数项或D的平方项\nAFT负的时间复杂度仍然是T的平方乘以D\nRWKV的时间复杂度是T乘以D\n空间复杂度是D这意味着在推理时\nRWKV的计算量随序列长度线性增长\n而内存开销与序列长度无关\n只取决于模型维度\n下面看一下这张图\n这张图展示了RWK为块内部的元素\n以及完整的残差块结构\n左侧详细展示了块内的两个子模块\n下面是时间混合模块\n包含RKV3个向量和一个wk v操作\n上面是通道混合模块\n包含R1撇\nK1撇\nV1撇\n右侧展示了完整的RWKV残差块输入\n先经过层规一化进入时间混合模块\n残差连接后\n再经过层规一化进入通道混合模块\n最后再经过语言模型头输出概率\nR对应RECEPTANCE\n用于接收过去信息\nK对应KEV对应value w是位置权重衰减向量\n这是模型中的可训练参数\n下面看一下这个公式\n这组公式描述了token shift的机制\nRWKV中所有线性投影向量\n包括时间混合里的RKV和\n通道混合里的R1撇\nK1撇\n都是通过当前时间部输入和\n上一时间部输入的线性差值得到的\n具体来说RT等于WR乘上括号内\nMR与XT的逐元素乘积\n加上一减MR与XT减一的主元素乘积\nkt和VT的形式类似\n这种设计\n让每个token在计算时都能融入相邻token的信息\n相当于一种简单的token偏移\n下面看一下这个公式\n这个公式定义了wk v操作\n它是RWKV时间混合的核心\n公\n式\n中\nwk v t的分子\n是对过去所有时间部的vi进行加权求和权重\n由时间衰减因子E的负T减一\n减I乘以W加KI次方决定\n再加上当前token的E的U加kt次方乘以VT\n分母则是相应权重的求和\n这里W是一个通道级的时间衰减\n向量随相对位置增长而衰减\nU是一个额外向量\n用于单独关注当前token\n这个操作本质上是用指数衰减的方式\n对历史信息进行加权聚合\n避免了传统transformer中\n完整的二次注意力矩阵\n下面看一下这张图\n这张图展示了\nRWKV用于语言建模式的多层展开结构\n图中从左到右是三个连续的时间步\n每个时间步的输入先经过层规一化\n然后进入时间混合模块\n模块的输出状态会传递到下一个时间部\n时间混合的输出再经过层规一化\n进入通道混合模块\n通道混合的输出通过残差连接向上传递\n最终经过语言模型头得到下一个token的预测\n图中的token shift和states传递\n表明了RWKV的循环特性\n它不需要像transformer那样同时看到整个序列\n而是可以逐步处理\n下面看一下这个公式\n这组公式把RWKV的时间混合模块\n写成了RNA的递归形式\n初始状态A0和B0都设为零\n在每个时间步外\nVT等于T减一\n加上E的U加kt次方乘以VT\n再除以BT减一\n加上E的U加KT次方\n然后状态AT更新为E的负W次方\n乘以AT减一\n加上E的kt次方乘以VT状态\nBT更新为E的负W次方乘以BT减一\n加上E的kt次方\n由于只需要保存这两个状态\nRWKV在推理时的内存开销是恒定的\n不随序列长度增加\n下面看一下这张图\n这张图展示了RWKV的缩放定律\n曲线横轴是计算量\n单位是ec flop\n纵轴是损失\n图中黑色点是未达到最优配置的训练\n红色点是最优配置\n蓝色点是测试点\n蓝线是拟合的趋势线\nRWKV在训练范围内的拟合\nR平方达到了0.994\n即使外推一个数量级后\nR平方仍然达到0.875\n这说明RWKV遵循与transformer\n类似的缩放规律\n模型性能随计算量增加而稳定提升\n下面看一下这张图\n这张图展示了RWKV在六个常见语言建模\n评估基准上的零样本性能\n包括arc challenge\nHellas\nSwag\nLambada\nOpen book\nq a record和winner grand\n图中比较了RWKV与bloom\nPython opp t3个transformer模型\n总体趋势是在相同的计算预算下\nRWKV与这些transformer模型的表现接近\n在部分任务上略有优劣\n这表明RWKV在保持较低推理复杂度的同时\n能够达到与现有transformer模型可比的语言\n理解能力\n下面看一下这张图\n这张图展示了\n大型语言模型在文本生成时的累积时间\n随token数量的变化\n横轴是生成的token数\n纵轴是累积时间\n图中四条曲线属于不同的transformer模型\n他们都呈现出随token数增加而加速上升的趋势\n反映了二次复杂度\n而RWKV的曲线几乎是一条直线\n说明它的生成时间随token数线性增长\n这意味着在处理长序列时\nRWKV的推理效率优势明显",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1MRME6oE2V",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

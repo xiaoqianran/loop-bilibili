@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="site-base" content="/loop-bilibili" />
+  <title>不会导入和使用预设？｜后续插件配置与角色卡的导入？｜一期视频教你搭建完酒馆后如何开玩！ · BV1mXReBjEqJ</title>
+  <link rel="stylesheet" href="../../../assets/app.css?v=20260808155041" />
+</head>
+<body>
+  <div class="wrap" id="app">加载中…</div>
+  <script>
+    window.SITE_BASE = "/loop-bilibili";
+    window.SITE_ASSET_V = "20260808155041";
+  </script>
+  <script src="../../../assets/app.js?v=20260808155041"></script>
+  <script>
+    
+    SubtitleSite.renderVideo("loop", "BV1mXReBjEqJ").catch(e => {
+      document.getElementById('app').textContent = String(e);
+    });
+    
+  </script>
+</body>
+</html>

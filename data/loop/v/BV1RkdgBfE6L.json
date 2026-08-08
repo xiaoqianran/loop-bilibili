@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1RkdgBfE6L",
+  "title": "Godot 4.7终于迎来真正的HDR！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3697,
+  "text": "大家好\n女士们\n先生们\n我是game from scratch的mike\n今天我们要聊的是GODOT\n4.7即将推出的一个重大新功能\n我相信我们刚刚完成了所有的开发者版本发布\n这些版本发布时我都有跟进报道\n开发者一二版我做了视频\n三四版也是第五版则没做\n我打算等到测试版出来再做介绍\n应该很快就会发布了\n不过在所有这些版本中有一个共同的新功能\n你会注意到在开发者版本一中\n我们往下滚动到本次发布新增内容的最底部\n你会发现他们为windows设备添加了HDR输出支持\n如果我们回到开发者版本二\n往下滚动到最底部\n你会看到他们为苹果设备添加了HDR支持\n然后我们再来看开发者版本三\n你猜这次轮到谁了没错\n往下滚动\n你会发现类UNIX系统现在也加入进来了呃\n这个双关完全不是故意的\n所以你会看到\n这里新增了对LINUX和BSD的HDR输出支持\n所以现在所有主流平台都支持HDR输出了呃\n除了android\n目前还在开发中\n但这里还是有一些明显的限制\n比如你现在看到的你需要使用win的显示服务器\n所以这是其中一个要求\n这里不支持X1\n你必须使用van\n我们还迎来了开发者版本四的发布\n不过开发者版本四和HDR没有任何关系\n所以和本视频的主题并不完全相关\n另外我们还发布了开发者版本五\n不过我没有专门做一期视频介绍\n它里面有一些很酷的新内容\n但就像我说的\n我打算等到测试版出来再说\n他们还重新设计了导出模板\n可能最酷的新功能就是这个矩形区域\n光源被加入进来了\n这真的很棒\n不过这不是我们今天要讨论的内容\n因为我们关注的是HDR输出在各个平台上的加入\n现在我得坦白说\n我其实并不太喜欢HDR\n我有全新的电视\n我开启HDR后\n结果并不让我满意\n在windows电脑上\nHDR效果甚至更差\n但这只是我的看法\n有些人却非常推崇他\nHDR可以让你拥有更广阔的色域\n所以你可以实现更深的黑色\n更好的色彩范围等等\n唯一的缺点是\n它有点依赖于一整条很长的依赖链\n比如说在windows上\n你显然得确保你的显示器支持HDR\n你还得确保你的软件也开启了HDR等等\n所以如果你用的是windows\n你要做的是进入设置\n确保你的显示器支持HDR\n并且你已经打开了HDR\n完成这些之后\n我们来看看GODOT游戏引擎\n我们现在就在这里\n这是我今天要用的一个演示\n让我把它切换到全屏\n顺便说一下\n我用的这个演示关卡其实和主题没有任何关系\n它只是一些漂亮的视觉效果\n不过它包含在一个新的高档的环境包里\n链接在下方\n另外还有新的unreal和unity环境包\n所以如果你想为GODOT游戏引擎\n获取一些原生的三维环境\n这个环境包也可以选择\n请查看下方的链接\n顺便说一句\n点击这些链接也能支持game from scratch\n但你现在要做的是进入你的项目设置\n你需要确保已经在你的本机上启用了HDR\n接下来你需要到显示设置这边窗口\n然后开启HDR\n往下拉\n你会找到HDR分类\n勾选请求HDR输出\n不过除非你已经做了特定的设置\n否则你是无法开启这个选项的\n所以再说一次\n如果你用的是LINUX\n你需要确保你使用的是微软\n另外你还需要满足一些渲染方面的要求\n所以你的渲染器需要被正确设置\n首先你需要使用forward plus或mobile作为你的渲染器\n另外你还需要设置你的驱动程序\n在这种情况下\n如果驱动设置为win\n在windows上是无法工作的\n对于windows\n如果你想要支持HDR\n你需要选择Direct3D twelve\n而如果你在linux bx d上工作\n那就必须选择VN\n有趣的是\n如果你在MACOS上也需要选择win metal是无法使用的\n所以这里有几个要求需要注意嗯\n我觉得大致就是这些了\n再次强调\n在windows上务必确保你选择的是Direct3D twelve\n然后当你完成这些设置后\n再次回到显示窗口设置界面\n就像这样\n然后向下找到HDR设置\n直接把它切换打开\n如果你没有正确设置\n是无法进行这个切换的\n你还会注意到\n它会自动把HDR2D也设置好嗯\n你当然可以把它关掉\n但我不太明白你为什么要这么做\n现在你已经完成这些设置了\n你就处于HDR模式了\n所以当你去运行你的游戏时\n你会发现有些不同\n我们现在就来运行游戏\n你会看到它弹出了分辨率设置\n然后在这里它显示已经处于HDR模式\n并且有最大线性值\n参考亮度和最大亮度\n这些数值会根据你的显示器质量而有所不同\n也许我不喜欢在这台设备上使用HDR的部分\n原因是这台显示器的HDR效果并不是特别好\n不过你可以通过这里看到它确实在运行\n并且这里有一个选项可以关闭它\n所以如果你想切换回SDR\n也可以在这里进行更改\n实际上\n这就是让HDR正常运行\n所需要做的全部操作了\n所以这还是挺酷的\n现在有一点需要注意\n其实还有另一个项目\n这个项目视觉效果没那么炫酷\n但它确实展示了HDR的功能\n所以这个已经在运行了\n是一个小演示\n向你展示各种不同的显示选项\n比如这里比如色调映射\n颜色渐变和设置说明等等\n我还可以回到这里\n然后完全关闭它\n再重新打开\n我可以调整\n比如说亮度和最大亮度之间的关系等等\n我们可以看到这些更改后的最终效果\n所以你确实有这样一个测试应用\n可以实际展示HDR的效果\n因为你需要为HDR创作内容\n才能发挥它的最大效果\n但这个工具是可用的\n当然它也能展示你的渲染器是否正常工作\n或者你的设置是否正确\n但请记住\n你确实需要在这里正确设置这些参数\n其中有些选项可能隐藏在高级设置里\n但最重要的显然就是那个HDR设置\n你需要把它设置为请求HDR输出\n如果你无法开启这个选项\n那基本上就是因为你遇到了某些限制\n要么你在LINUX上运行的是x eleven\n要么你没有运行directory d twelve\n或者你的设备本身不支持\n当然也有可能你没有在操作系统层面启用HDR\n这些都是你需要了解的事项之一\n关于HDR其实有很多依赖条件\n所以这就是你在这里一定要注意的事情之一\n女士们\n先生们就是这些内容了\n不过文档里还有一些内容\n让我试着把它重新调出来哦\n找到了他们发布了一篇新的博客\n文章介绍了通往HDR4.7的历程\n以及它的全部内容\n还有他支持的平台\n所以目前它支持的平台有windows Mac\nIos\nvision os和LINUX\n但LINUX只支持win x eleven不支持它\n在windows上只支持Direct3D twelve\n此外它只适用于FORWORD加和移动端渲染器\n所以延迟渲染器无法使用\n你可以在这里看到它的效果\n所以这就是模拟出来的效果\n有趣的是\n你在这个视频里其实看不到HDR\n主要是因为如果我要让HDR在YOUTUBE视频中正常显示\n我需要用非常特定的编码格式来处理\n说实话HDR的处理确实挺麻烦的\n不过这里有开启HDR的相关说明\n这里也有详细的信息可以查看\n更有意思的是\n他们实际上有一份关于HDR的文档\n里面涵盖了各种不同的内容\n它也只适用于特定的色调映射模式\n比如filmia aces色调映射\n这也是你需要注意的另一个点嗯\n就是这样\n我们可以看到各种不同设置的详细信息\nHDR的基本原理以及如何为HDR设计你的内容\n所以这里有非常棒的文档\n还有一些关于实际实现和处理代码的内容\n比如色调映射是如何与他配合工作的\n以及它与SDR的对比等等\n我强烈推荐大家去看看这份文档\n相关链接会放在下方的相关文章中\n另外我用到的演示项目其实是一个拉取请求\n由IANWP创建\n他fork了高到他的演示项目\n所以你需要前往下载他的仓库\n然后查找HDR output分支\n这样最终会新增一个新版本呃\n让我看看我这边还有没有\n它是在miss目录下\n在砸向miscellaneous部分\n你会注意到只需要进入仓库的miss laneus目录\n然后你会在里面找到一个名为h draw\noutput的项目\n这就是我们在视频中实际演示过的那个项目\n所以如果你想自己动手试一试的话\n呃这个最终会被合并到高dot的下载项目中\n到时候你就不需要单独下载那个特定分支了\n另外再次提醒一下\n现在有一个新的三维资源包\n这就是我们刚才实际演示过的内容\n那就是高招的春季资源包\n如果你想获取这个资源包\n你可以为GODOT游戏引擎获得大量环境资源\n只要记得在结账时使用代码SP60\n这样价格就会从99美元\n降到大约39美元额\n另外里面还有unreal engine和unity的资源包\n所有相关链接都在下方\n如果你有兴趣支持game from scratch\n这也是一个很好的方式\n所以女士们\n先生们\n这就是全部内容了\nGODOT游戏引擎现在已经支持HDR了\n最后我想问一下你们怎么看待HDR\n说实话这个视频一结束呃\n我就会把它关掉\n然后好好享受一下我的呃\n呃这个事件我也不知道刚才那样做\n对我的视频录制有什么影响\n可能不是个好主意\n所以如果你刚才看到黑屏\n那是因为我关闭了HDR支持\n我个人不是很喜欢\n但我很好奇你们怎么看\n告诉我吧\n在下方评论区留言\n我们下次再聊再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RkdgBfE6L",
+  "published_at": "1778284800",
+  "fetched_at": "2026-08-07T02:11:56+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 4.7 HDR 知识图谱\n\n## HDR 平台支持概览\n```mermaid\nflowchart TD\n    A[\"Godot 4.7 HDR 支持\"] --> B[\"开发者版本 1：Windows HDR\"]\n    A --> C[\"开发者版本 2：Apple (iOS/visionOS) HDR\"]\n    A --> D[\"开发者版本 3：Linux & BSD HDR\"]\n    A --> E[\"开发者版本 4：无 HDR 相关\"]\n    A --> F[\"开发者版本 5：待测/未来\"]\n    B --> G[\"Android HDR 开发中\"]\n    D --> H[\"Linux 仅在 Win X11 环境下不支持\"]\n    C --> I[\"macOS 不支持 win metal\"]\n```\n\n## 启用 HDR 的步骤与前置条件\n```mermaid\nflowchart TD\n    S1[\"确认显示器支持 HDR\"] --> S2[\"在操作系统层面开启 HDR\"]\n    S2 --> S3[\"打开 Godot 项目设置\"]\n    S3 --> S4[\"进入 Display → HDR\"]\n    S4 --> S5[\"勾选 “Request HDR Output”\"]\n    S5 --> S6[\"满足平台特定要求\"]\n    S6 -->|Windows| W1[\"使用 Direct3D 12 渲染后端\"]\n    S6 -->|Linux| L1[\"使用 Forward+ 或 Mobile 渲染器\"]\n    S6 -->|macOS| M1[\"不使用 win metal（不支持）\"]\n    S6 -->|Android| A1[\"仍在开发中，暂不可用\"]\n```\n\n## 渲染后端与 HDR 兼容性约束\n```mermaid\nflowchart TD\n    R0[\"HDR 兼容渲染后端\"] --> R1[\"Forward+\"]\n    R0 --> R2[\"Mobile\"]\n    R0 -.-> R3[\"Deferred（不支持）\"]\n    R1 --> R4[\"Windows → Direct3D 12\"]\n    R2 --> R5[\"Linux → Vulkan (Win X11)\"]\n    R4 -.-> R6[\"X11 环境下不可用\"]\n    R5 -.-> R7[\"macOS → 不支持 win metal\"]\n```",
+      "diagrams": [
+        {
+          "title": "HDR 平台支持概览",
+          "code": "flowchart TD\n    A[\"Godot 4.7 HDR 支持\"] --> B[\"开发者版本 1：Windows HDR\"]\n    A --> C[\"开发者版本 2：Apple (iOS/visionOS) HDR\"]\n    A --> D[\"开发者版本 3：Linux & BSD HDR\"]\n    A --> E[\"开发者版本 4：无 HDR 相关\"]\n    A --> F[\"开发者版本 5：待测/未来\"]\n    B --> G[\"Android HDR 开发中\"]\n    D --> H[\"Linux 仅在 Win X11 环境下不支持\"]\n    C --> I[\"macOS 不支持 win metal\"]"
+        },
+        {
+          "title": "启用 HDR 的步骤与前置条件",
+          "code": "flowchart TD\n    S1[\"确认显示器支持 HDR\"] --> S2[\"在操作系统层面开启 HDR\"]\n    S2 --> S3[\"打开 Godot 项目设置\"]\n    S3 --> S4[\"进入 Display → HDR\"]\n    S4 --> S5[\"勾选 “Request HDR Output”\"]\n    S5 --> S6[\"满足平台特定要求\"]\n    S6 -->|Windows| W1[\"使用 Direct3D 12 渲染后端\"]\n    S6 -->|Linux| L1[\"使用 Forward+ 或 Mobile 渲染器\"]\n    S6 -->|macOS| M1[\"不使用 win metal（不支持）\"]\n    S6 -->|Android| A1[\"仍在开发中，暂不可用\"]"
+        },
+        {
+          "title": "渲染后端与 HDR 兼容性约束",
+          "code": "flowchart TD\n    R0[\"HDR 兼容渲染后端\"] --> R1[\"Forward+\"]\n    R0 --> R2[\"Mobile\"]\n    R0 -.-> R3[\"Deferred（不支持）\"]\n    R1 --> R4[\"Windows → Direct3D 12\"]\n    R2 --> R5[\"Linux → Vulkan (Win X11)\"]\n    R4 -.-> R6[\"X11 环境下不可用\"]\n    R5 -.-> R7[\"macOS → 不支持 win metal\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T02:12:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 4.7 HDR 知识图谱\n\n## HDR 平台支持概览\n```mermaid\nflowchart TD\n    A[\"Godot 4.7 HDR 支持\"] --> B[\"开发者版本 1：Windows HDR\"]\n    A --> C[\"开发者版本 2：Apple (iOS/visionOS) HDR\"]\n    A --> D[\"开发者版本 3：Linux & BSD HDR\"]\n    A --> E[\"开发者版本 4：无 HDR 相关\"]\n    A --> F[\"开发者版本 5：待测/未来\"]\n    B --> G[\"Android HDR 开发中\"]\n    D --> H[\"Linux 仅在 Win X11 环境下不支持\"]\n    C --> I[\"macOS 不支持 win metal\"]\n```\n\n## 启用 HDR 的步骤与前置条件\n```mermaid\nflowchart TD\n    S1[\"确认显示器支持 HDR\"] --> S2[\"在操作系统层面开启 HDR\"]\n    S2 --> S3[\"打开 Godot 项目设置\"]\n    S3 --> S4[\"进入 Display → HDR\"]\n    S4 --> S5[\"勾选 “Request HDR Output”\"]\n    S5 --> S6[\"满足平台特定要求\"]\n    S6 -->|Windows| W1[\"使用 Direct3D 12 渲染后端\"]\n    S6 -->|Linux| L1[\"使用 Forward+ 或 Mobile 渲染器\"]\n    S6 -->|macOS| M1[\"不使用 win metal（不支持）\"]\n    S6 -->|Android| A1[\"仍在开发中，暂不可用\"]\n```\n\n## 渲染后端与 HDR 兼容性约束\n```mermaid\nflowchart TD\n    R0[\"HDR 兼容渲染后端\"] --> R1[\"Forward+\"]\n    R0 --> R2[\"Mobile\"]\n    R0 -.-> R3[\"Deferred（不支持）\"]\n    R1 --> R4[\"Windows → Direct3D 12\"]\n    R2 --> R5[\"Linux → Vulkan (Win X11)\"]\n    R4 -.-> R6[\"X11 环境下不可用\"]\n    R5 -.-> R7[\"macOS → 不支持 win metal\"]\n```",
+  "diagrams": [
+    {
+      "title": "HDR 平台支持概览",
+      "code": "flowchart TD\n    A[\"Godot 4.7 HDR 支持\"] --> B[\"开发者版本 1：Windows HDR\"]\n    A --> C[\"开发者版本 2：Apple (iOS/visionOS) HDR\"]\n    A --> D[\"开发者版本 3：Linux & BSD HDR\"]\n    A --> E[\"开发者版本 4：无 HDR 相关\"]\n    A --> F[\"开发者版本 5：待测/未来\"]\n    B --> G[\"Android HDR 开发中\"]\n    D --> H[\"Linux 仅在 Win X11 环境下不支持\"]\n    C --> I[\"macOS 不支持 win metal\"]"
+    },
+    {
+      "title": "启用 HDR 的步骤与前置条件",
+      "code": "flowchart TD\n    S1[\"确认显示器支持 HDR\"] --> S2[\"在操作系统层面开启 HDR\"]\n    S2 --> S3[\"打开 Godot 项目设置\"]\n    S3 --> S4[\"进入 Display → HDR\"]\n    S4 --> S5[\"勾选 “Request HDR Output”\"]\n    S5 --> S6[\"满足平台特定要求\"]\n    S6 -->|Windows| W1[\"使用 Direct3D 12 渲染后端\"]\n    S6 -->|Linux| L1[\"使用 Forward+ 或 Mobile 渲染器\"]\n    S6 -->|macOS| M1[\"不使用 win metal（不支持）\"]\n    S6 -->|Android| A1[\"仍在开发中，暂不可用\"]"
+    },
+    {
+      "title": "渲染后端与 HDR 兼容性约束",
+      "code": "flowchart TD\n    R0[\"HDR 兼容渲染后端\"] --> R1[\"Forward+\"]\n    R0 --> R2[\"Mobile\"]\n    R0 -.-> R3[\"Deferred（不支持）\"]\n    R1 --> R4[\"Windows → Direct3D 12\"]\n    R2 --> R5[\"Linux → Vulkan (Win X11)\"]\n    R4 -.-> R6[\"X11 环境下不可用\"]\n    R5 -.-> R7[\"macOS → 不支持 win metal\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:12:05+00:00"
+}

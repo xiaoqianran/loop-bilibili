@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1yZd6BcE3b",
+  "title": "[23] flash-attention-v3：论文解读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3788,
+  "text": "今天我们来介绍一篇关于GPU注意力计算\n加速的工作\n标题是flash tension3\n全称是利用异步性和低精度\n实现快速且精确的注意力计算\n这篇论文发表于2024年7月\n注意力机制是transformer的核心\n也是大语言模型的主要计算瓶颈\n此前的flash tension2\n通过减少内存读写提升了效率\n但在英伟达H100GPU上\n只能达到约35%的硬件利用率\n没有充分发挥新硬件的能力\nFlash attension3\n针对HARPER架构的GPU提出了三项技术\n第一通过wap specialization实现生产者\n消费者异步把数据搬运和计算重叠起来\n第二在两组wap group之间做乒乓调度\n并在单个wap group内做两阶段的game\nsoft max流水线\n进一步隐藏soft max的开销\n第三利用FP8低精度探测\n扩加速矩阵乘法\n同时通过快量化和非相干处理来控制精度损失\n实验显示在H100GPU上\nflash tension3的FP16前向传播\n比flash tension2快1.5到2.0倍\n峰值达到740\nclubs每秒利用率提升到75%\nFP8则接近1.2flops每秒\n此外FP8版本的数值误差比标准FP8\n实现低2.6倍\n下面看一下摘要\n翻译注意力\n作为transformer架构的核心层\n是大语言模型和长上下文应用的瓶颈\nFlash tension\n通过减少内存读写来加速GPU上的注意力计算\n然而他尚未充分利用新硬件的能力\nFlash tension2\n在HEPU上仅达到35%的利用率\n我们开发了三种主要技术\n来加速HOBGPU上的注意力\n利用tensor course和TMA的异步性\n第一通过web specialization\n来重叠整体计算和数据移动\n第二交错快级别的矩阵乘法和soft max操作\n第三快量化和非相干处理\n利用硬件对FP8低精度的支持\n实验证明\nFlash attention3\n在H100GPU上实现1.5到2.0倍的加速\nFP16达到最高740TOPPS每秒\n即75%的利用率\nFP8接近1.2\nflops每秒\n我们验证FP8\nflash tension3的数值误差比基线FP8\n注意力低2.6倍\n下面看一下这个公式\n这个公式描述了标准的多头注意力计算流程\n给定查询矩阵Q见矩阵K和值矩阵V\n首先计算注意力分数S它等于缩放因子\n埃尔法乘以Q和K的转置相乘\n得到一个N乘N的矩阵\n然后对S逐行做soft max得到注意力权重P2\n最后把P和V相乘得到输出O\n这是transformer中最基本的计算模式\nflash tension3的目标就是\n在保持这个计算结果完全正确的前提下\n用更少的内存访问和更高的硬件利用率\n来加速它\n下面看一下这段伪代码\n这段算法描述了flash attention3\n前向传播的基础版本\n不包含消费者内部的流水线重叠\n算法的核心思想是\n把一个现成块内的WPS分成两类角色\n生产者和消费者\n生产者负责从HBM全局内存\n把QKV的块搬运到共享内存\n消费者则负责在寄存器里做实际的矩阵\n乘法和soft max计算\n具体来说\n生产者先加载查询快key\n然后在循环中依次加载建快KJ和直快VJ\n到多阶段的环形SMEM缓冲区\n消费者等待数据就绪后\n先用SSGEMM计算分数矩阵C\n再更新行最大值米和指数合力\n接着用RSGEMM\n把加权后的值累加到输出OE\n每一轮迭代结束后\n释放对应的缓冲区阶段\n让生产者可以继续加载下一轮数据\n这种分工让数据搬运和计算可以并行进行\n减少了等待时间\n下面看一下这张图\n这张图展示了两个warp group之间的乒乓调度机\n制\n图中的每一行代表一个warp group的时间线\n矩形块代表正在执行的操作\nGEMM0表示第一个矩阵乘法\nQ乘K转制\nGEMM1表示第二个矩阵乘法\nP乘v soft max表示soft max计算\n可以看到\n当web group1在执行gm m0或gm m1时\nwap group2正在执行soft max\n反之亦然\n也就是说一个web group做soft max的时候\n另一个web group做矩阵乘法\n之所以这样做\n是因为在H100上\nsoft max涉及的指数运算等特殊函数\n吞吐量很低\n只有约3.9特lopes\n而FP16矩阵乘法\n可以达到989特lopes\n通过乒乓调度\n把低吞吐量的soft max隐藏在高吞吐量的GMM\n执行期间\n从而提升整体效率\n图中相同颜色代表同一次迭代\n下面看一下这张图\n这张图展示了两阶段WGMMA到soft max流水线\n这是在单个wap group内部做的进一步重叠\n图中有三条时间线\n从上到下分别是WGMMA0\nsoft max和WGMMAE\nWGMA是HARPER架构上\n异步矩阵乘指令的简称\n在迭代零中\nWGMA领先执行\n当soft Mac在处理迭代零的中间结果时\nw g ma1开始执行迭代零的第二个矩阵乘法\n与此同时\nWGMA0已经开始执行\n迭代一的第一个矩阵乘法\n也就是说\n相邻迭代之间的WGMA和当前迭代的soft max\n被重叠在一起\n通过额外的寄存器缓冲区\n保存跨迭代的中间状态\n算法打破了原本的顺序依赖\n让硬件可以同时执行多个操作\n这使得在单个work group内部也能隐藏soft max的延迟\n下面看一下这段伪代码\n这段算法描述了带两阶段流水线的消费者\nwarp graph前向传播\n它替换了算法一中的消费者路径\n与算法一的关键区别在于\n算法二在消费者的主循环中\n引入了异步执行和跨迭代的重叠\n具体来说\n在循环内部\n算法先启动下一个迭代的WGMMA计算\nQ乘K转制\n也就是s next\n但这次提交后不等待完成\n接着等待前一个值快微加载到共享内存\n然后启动当前迭代的第二个WGMMA计算\nP乘V同样提交后不等待\n等到前一个WGMA的Q乘K转制完成后\n再基于SNEX做soft max更新\n注soft max更新底层V的WGMMA完成\n并对输出O做缩放\n通过这种方式迭代J的第二个WGMA\n和迭代J加一的soft max被重叠执行\n算法在循环末尾把s next的复制到SKR\n为下一轮做准备\n这种流水线设计显著提升了tensor CORE的利用率\n下面看一下这张图\n这张图展示了在H100GPU上\n不同注意力实现的前向传播速度对比\n使用FP16或bf16精度\n图中共有六个子图\n分别对应头维度64\n128\n256\n以及有无因果掩码的情况\n横轴是序列长度\n从512~16K纵轴是速度\n单位是TILOPS每秒\n紫色柱子代表flash tension3\n橙色代表flash tension2\n绿色是TRI等实现\n红色是CODN囊\n蓝色是标准注意力\n可以看到flash attention3的紫色柱子\n在几乎所有配置下\n都高于flash attention2的橙色柱子\n对于头围度128\n无因果野马的情况\n在序列长度8K时\nflash attention3达到约646TLAPSE每秒\n而flash attention2约为392\n对于头围度256\n无因果野马的情况\nflash tension3在序列长度16K时\n达到756特拉普每秒\n即使在有因果野马的情况下\nflash attention3也保持领先优势\n这说明flash attention3在各种实际配置下\n都能取得速度提升\n下面看一下这个表\n这个表展示了流水线消融实验的结果\n用来验证各项技术改进的实际贡献\n实验配置时固定参数by设为四序列\n长度八千四百四十八十六个头\n头围度128\n第一行是完整的flash attension\n三\n耗时3.538ms\n吞吐量661特lobes每秒\n第二行去掉了gm m soft max流水线\n只保留wb specialization\n耗时增加到4.021ms\n吞吐量降到582t lopes每秒\n第三行保留流水线\n但去掉wars specialization\n耗时4.105ms\n吞吐量570特洛普斯每秒\n从数据可以看出\nweb specialization和gm m soft max流水线\n各自都能带来明显的加速\n而两者结合后\n吞吐量达到最高值\n这验证了论文中异步和流水线设计\n对性能的实际贡献\n下面看一下这个表\n这个表对比了FP16和FP8\n精度下的数值误差\n使用均方根误差IMSE作为指标\n上半部分是FP16\n结果基线标准注意力的IMSE是3.2亿四\nflash attention2和flash attention3\n都达到了1.9亿亿四\n说明flash attention3在FP16下\n保持了和flash attention2相同的精度\n且优于基线\n下半部分是FP8\n结果基线FP8的RMSE是2.4亿二\nflash attention3FP八降低到9.11亿三\n误差约为基线的38%\n如果去掉快量化误差略微上升到9.3亿-3\n如果去掉非相干处理误差\n则大幅回升到2.4亿-2\n和基线差不多\n这说明非相干处理\n对控制FP8误差起到了关键作用\n而快量化也有小幅贡献\n两者结合是flash tension3\n在FP8下的数值误差\n比基线FP8注意力低约2.6倍",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1yZd6BcE3b",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:17:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

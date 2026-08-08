@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1wMgr6LEvY",
+  "title": "我和CherryStudio一起蒸馏了我的评论区，发现...",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2140,
+  "text": "我做了这么多期视频\n却一直不知道一件事\n就是你们到底还想看什么\n其实答案一直都在评论区\n但这些评论散落在几十个视频下\n靠我一条一条看几乎不可能\n所以这次我准备做一件有点疯狂的事情\n让AI把我的整个B站评论区蒸馏一遍\n他不仅要读完这些评论\n还要告诉我我的观众是谁\n大家正遇到什么问题\n以及我下期视频应该拍什么\n而且这个工具我不准备从零开始写\n我准备把它交给cherry studio\nV2最新上线的agent\ncherry studio一直是我在用的一款AI桌面客户端\n它本身就是一个非常优秀的开源产品\n客户端开源免费\n在GITHUB上已经获得了超过48K的stars\n这个数字至少说明了一件事儿\n它不是一个突然冒出来的AI套壳工具\n而是已经经过大量用户使用和验证的成熟项目\n而最新的V2版本最吸引我的变化\n就是加入了以agent为主体的工作模式\n以前使用AI通常是我问一句\n他回答一句\n但这次我要完成的不是一个简单回答\n他需要获取视频列表\n收集公开评论\n清洗数据\n编写分析工具\n最后生成一份真正可以指导内容创作的报告\n而这正是agent和普通聊天最大的区别\n我负责告诉他最终要完成什么\n具体怎么拆解\n怎么执行\n遇到问题怎么解决\n由它持续推进\n我先把需求整理成了四个部分\n第一获取我账号下所有公开视频和公开评论\n第二根据评论内容整理观众的兴趣画像\n第三为值得回复的评论生成回复建议\n第四把观众反复提到的问题\n整理成下一个阶段的内容选题\n最终我希望得到的不是一堆杂乱的数据\n而是一个可以直接使用的观众需求数据库\n而接下来我进入cherry studio的工作\ntab把完整需求交给agent\n我没有让他直接开始写代码\n而是让他先理解需求\n列出实施方案\n同时告诉我还需要准备哪些信息\n因为真正能干活的agent\n不应该拿到需求就立刻乱写\n而是应该先理解目标\n然后再确定数据结构和执行步骤\n确定方案之后\n我让他正式开始\n首先我和他一起探讨了一下技术方案\n因为要获取我的数据\n最好的办法就是给他\n我的身份就是类似于cookie啊这种数据\n我和他交流验证一下\n然后确认可行\n他做agent的能力的\n他做agent的这个能力就体现了开始自己干活儿了\n它首先搭建项目\n然后分别实现视频获取评论\n收集数据\n清洗和分析数据报告\n整个过程中我没有逐行告诉他代码应该怎么写\n我主要负责确认几个关键决策\n数据范围是什么\n我在意什么\n成品应该是什么样子的\n这个成品做完了\n我们来体验一下\n但是报了一个错\n抓不了这个数据诶\n这时候也不用慌\n你截一个图\n回到cherry studio\n直接丢给他\n让他来修复就可以了\n过了一会儿\n它修复完成了\n这个过程完全不用我去看这个非常小白\n修完这些问题之后呢\n这个工具终于可以正常运行了\n现在大家看到的就是我和cherry studio v2版本的agent\n从零开始做出来的B站评论工作台\n它可以完成评论采集\n数据查询和观众需求分析\n我们用它的话\n首先要选择采集范围\n比如这次我选择播放量最高的20条视频\n并尽可能获取这些视频下面的全部公开评论\n点击开始之后\n它会自动读取视频列表\n并依次采集每条视频下的评论\n一共采集了2000多条评论\n原本散落在不同视频下的内容\n现在全部进入了一个本地数据库\n在评论数据里\n我可以按照用户名\n评论内容或者视频标题进行搜索\n也可以查看评论来自哪条视频\n以后\n想回看的某一个问题\n就不用再到几十条视频下面逐个翻找\n更重要的是\n这些分析并不是AI凭空猜出来的\n每一条数据都保留了原始的这个评论\n以及视频来源\n后面得到的结论也可以随时追溯回来\n接下来才是真正的评论区蒸馏\n我让他把大量零散评论重新聚类\n找出大家反复提到的问题内容\n兴趣以及值得优先回复的评论\n更新完成后呢\n这里会形成一份观众需求数据库\n这个样例分析了2000多条评论\n并筛选出30条待回复内容\n再往下还能看到入门与教程呀\n功能与体验呀等高频兴趣方向\n从这些原始评论中可以看到\n很多人真正关心的不是工具有多强\n而是普通人怎么开始使用\n成本是多少\n以及遇到问题之后该怎么解决\n这些被反复提到的问题\n本身就是非常直接的内容选题\n对于值得交流的评论还会生成回复建议\n与此同时\n高频需求也可以转化成未来选题\n并按照讨论次数来决定优先级\n所以这套工具真正有价值的地方\n不只是帮我总结评论\n而是把评论变成了一套\n我可以直接使用的一个流程\n先收集想法数据\n在提炼需求\n最后转化成回复内容和内容选题\n更重要的是\n这个实际运行的工具是我和cherry studio\n从一个想法开始一步一步完成的\n另外cherry studio对于技能的支持也也非常完善\n你可以很方便的在线搜索各种skills技能\n它支持多种安装原\n比如我安装一个git的这个技能\n很快就安装完了\n然后你可以直接在任务界面调用就可以了\n这就是我和cherry studio\n完成评论采集和评论区蒸馏的整个过程\n接下来我也会根据这份需求数据库规划\n我后面的内容\n如果你还有特别想看的方向\n可以继续在评论区留下你的评论\n真的可能会成为我的下一期视频\n好这就是本期视频的所有内容了\n如果帮到你的话\n记得给我一个一键三连\n我们下期视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wMgr6LEvY",
+  "published_at": "1785931200",
+  "fetched_at": "2026-08-07T19:04:42+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Cherry Studio V2 Agent 在 B 站评论蒸馏中的整体结构\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"观众需求未知\"] --> B[\"目标：获取观众兴趣、问题、内容需求\"]\n    B --> C[\"使用 Cherry Studio V2 Agent\"]\n    C --> D[\"定义四大需求\"]\n    D --> D1[\"1. 获取所有公开视频与评论\"]\n    D --> D2[\"2. 整理观众兴趣画像\"]\n    D --> D3[\"3. 生成值得回复的评论建议\"]\n    D --> D4[\"4. 汇总高频问题形成内容选题\"]\n    D1 --> E[\"视频列表 → 评论抓取\"]\n    D2 --> F[\"评论聚类 → 兴趣画像\"]\n    D3 --> G[\"筛选高价值评论 → 回复建议\"]\n    D4 --> H[\"高频问题 → 内容选题库\"]\n    E --> I[\"本地数据库\"]\n    F --> I\n    G --> I\n    H --> I\n    I --> J[\"可直接使用的观众需求数据库\"]\n```\n\n## Agent 工作流\n```mermaid\nflowchart LR\n    R[\"用户提交完整需求\"] --> U[\"Agent 理解需求\"]\n    U --> P[\"Agent 列出实施方案\"]\n    P --> Q[\"Agent 说明所需信息/资源\"]\n    Q --> V[\"用户提供身份凭证（如 cookie）\"]\n    V --> S[\"Agent 验证可行性\"]\n    S --> T[\"Agent 开始搭建项目\"]\n    T --> A1[\"实现视频获取模块\"]\n    T --> A2[\"实现评论采集模块\"]\n    T --> A3[\"实现数据清洗与分析模块\"]\n    A1 --> A2 --> A3 --> O[\"生成报告与需求数据库\"]\n    O --> F[\"用户审阅并提供反馈\"]\n    F -->|需要改进| U\n    F -->|满意| END[\"流程结束\"]\n```\n\n## 评论数据处理流水线\n```mermaid\nflowchart TD\n    Vlist[\"获取视频列表\"]\n    Cmt[\"采集公开评论\"]\n    Clean[\"清洗原始评论数据\"]\n    Cluster[\"评论聚类与主题抽取\"]\n    Analyze[\"兴趣画像与问题统计\"]\n    Report[\"生成观众需求报告\"]\n    DB[\"存入本地数据库\"]\n\n    Vlist --> Cmt\n    Cmt --> Clean\n    Clean --> Cluster\n    Cluster --> Analyze\n    Analyze --> Report\n    Report --> DB\n```\n\n## 内容选题与优先级决策\n```mermaid\nflowchart TD\n    Issues[\"高频提及的问题\"]\n    Topics[\"聚类得到的主题\"]\n    Count[\"讨论次数计数\"]\n    Score[\"计算优先级分数\"]\n    Select[\"筛选优先制作的选题\"]\n    Plan[\"制定下期视频计划\"]\n    Produce[\"实际制作视频\"]\n\n    Issues --> Topics\n    Topics --> Count\n    Count --> Score\n    Score --> Select\n    Select --> Plan\n    Plan --> Produce\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"观众需求未知\"] --> B[\"目标：获取观众兴趣、问题、内容需求\"]\n    B --> C[\"使用 Cherry Studio V2 Agent\"]\n    C --> D[\"定义四大需求\"]\n    D --> D1[\"1. 获取所有公开视频与评论\"]\n    D --> D2[\"2. 整理观众兴趣画像\"]\n    D --> D3[\"3. 生成值得回复的评论建议\"]\n    D --> D4[\"4. 汇总高频问题形成内容选题\"]\n    D1 --> E[\"视频列表 → 评论抓取\"]\n    D2 --> F[\"评论聚类 → 兴趣画像\"]\n    D3 --> G[\"筛选高价值评论 → 回复建议\"]\n    D4 --> H[\"高频问题 → 内容选题库\"]\n    E --> I[\"本地数据库\"]\n    F --> I\n    G --> I\n    H --> I\n    I --> J[\"可直接使用的观众需求数据库\"]"
+        },
+        {
+          "title": "Agent 工作流",
+          "code": "flowchart LR\n    R[\"用户提交完整需求\"] --> U[\"Agent 理解需求\"]\n    U --> P[\"Agent 列出实施方案\"]\n    P --> Q[\"Agent 说明所需信息/资源\"]\n    Q --> V[\"用户提供身份凭证（如 cookie）\"]\n    V --> S[\"Agent 验证可行性\"]\n    S --> T[\"Agent 开始搭建项目\"]\n    T --> A1[\"实现视频获取模块\"]\n    T --> A2[\"实现评论采集模块\"]\n    T --> A3[\"实现数据清洗与分析模块\"]\n    A1 --> A2 --> A3 --> O[\"生成报告与需求数据库\"]\n    O --> F[\"用户审阅并提供反馈\"]\n    F -->|需要改进| U\n    F -->|满意| END[\"流程结束\"]"
+        },
+        {
+          "title": "评论数据处理流水线",
+          "code": "flowchart TD\n    Vlist[\"获取视频列表\"]\n    Cmt[\"采集公开评论\"]\n    Clean[\"清洗原始评论数据\"]\n    Cluster[\"评论聚类与主题抽取\"]\n    Analyze[\"兴趣画像与问题统计\"]\n    Report[\"生成观众需求报告\"]\n    DB[\"存入本地数据库\"]\n\n    Vlist --> Cmt\n    Cmt --> Clean\n    Clean --> Cluster\n    Cluster --> Analyze\n    Analyze --> Report\n    Report --> DB"
+        },
+        {
+          "title": "内容选题与优先级决策",
+          "code": "flowchart TD\n    Issues[\"高频提及的问题\"]\n    Topics[\"聚类得到的主题\"]\n    Count[\"讨论次数计数\"]\n    Score[\"计算优先级分数\"]\n    Select[\"筛选优先制作的选题\"]\n    Plan[\"制定下期视频计划\"]\n    Produce[\"实际制作视频\"]\n\n    Issues --> Topics\n    Topics --> Count\n    Count --> Score\n    Score --> Select\n    Select --> Plan\n    Plan --> Produce"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T19:06:29+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Cherry Studio V2 Agent 在 B 站评论蒸馏中的整体结构\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"观众需求未知\"] --> B[\"目标：获取观众兴趣、问题、内容需求\"]\n    B --> C[\"使用 Cherry Studio V2 Agent\"]\n    C --> D[\"定义四大需求\"]\n    D --> D1[\"1. 获取所有公开视频与评论\"]\n    D --> D2[\"2. 整理观众兴趣画像\"]\n    D --> D3[\"3. 生成值得回复的评论建议\"]\n    D --> D4[\"4. 汇总高频问题形成内容选题\"]\n    D1 --> E[\"视频列表 → 评论抓取\"]\n    D2 --> F[\"评论聚类 → 兴趣画像\"]\n    D3 --> G[\"筛选高价值评论 → 回复建议\"]\n    D4 --> H[\"高频问题 → 内容选题库\"]\n    E --> I[\"本地数据库\"]\n    F --> I\n    G --> I\n    H --> I\n    I --> J[\"可直接使用的观众需求数据库\"]\n```\n\n## Agent 工作流\n```mermaid\nflowchart LR\n    R[\"用户提交完整需求\"] --> U[\"Agent 理解需求\"]\n    U --> P[\"Agent 列出实施方案\"]\n    P --> Q[\"Agent 说明所需信息/资源\"]\n    Q --> V[\"用户提供身份凭证（如 cookie）\"]\n    V --> S[\"Agent 验证可行性\"]\n    S --> T[\"Agent 开始搭建项目\"]\n    T --> A1[\"实现视频获取模块\"]\n    T --> A2[\"实现评论采集模块\"]\n    T --> A3[\"实现数据清洗与分析模块\"]\n    A1 --> A2 --> A3 --> O[\"生成报告与需求数据库\"]\n    O --> F[\"用户审阅并提供反馈\"]\n    F -->|需要改进| U\n    F -->|满意| END[\"流程结束\"]\n```\n\n## 评论数据处理流水线\n```mermaid\nflowchart TD\n    Vlist[\"获取视频列表\"]\n    Cmt[\"采集公开评论\"]\n    Clean[\"清洗原始评论数据\"]\n    Cluster[\"评论聚类与主题抽取\"]\n    Analyze[\"兴趣画像与问题统计\"]\n    Report[\"生成观众需求报告\"]\n    DB[\"存入本地数据库\"]\n\n    Vlist --> Cmt\n    Cmt --> Clean\n    Clean --> Cluster\n    Cluster --> Analyze\n    Analyze --> Report\n    Report --> DB\n```\n\n## 内容选题与优先级决策\n```mermaid\nflowchart TD\n    Issues[\"高频提及的问题\"]\n    Topics[\"聚类得到的主题\"]\n    Count[\"讨论次数计数\"]\n    Score[\"计算优先级分数\"]\n    Select[\"筛选优先制作的选题\"]\n    Plan[\"制定下期视频计划\"]\n    Produce[\"实际制作视频\"]\n\n    Issues --> Topics\n    Topics --> Count\n    Count --> Score\n    Score --> Select\n    Select --> Plan\n    Plan --> Produce\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"观众需求未知\"] --> B[\"目标：获取观众兴趣、问题、内容需求\"]\n    B --> C[\"使用 Cherry Studio V2 Agent\"]\n    C --> D[\"定义四大需求\"]\n    D --> D1[\"1. 获取所有公开视频与评论\"]\n    D --> D2[\"2. 整理观众兴趣画像\"]\n    D --> D3[\"3. 生成值得回复的评论建议\"]\n    D --> D4[\"4. 汇总高频问题形成内容选题\"]\n    D1 --> E[\"视频列表 → 评论抓取\"]\n    D2 --> F[\"评论聚类 → 兴趣画像\"]\n    D3 --> G[\"筛选高价值评论 → 回复建议\"]\n    D4 --> H[\"高频问题 → 内容选题库\"]\n    E --> I[\"本地数据库\"]\n    F --> I\n    G --> I\n    H --> I\n    I --> J[\"可直接使用的观众需求数据库\"]"
+    },
+    {
+      "title": "Agent 工作流",
+      "code": "flowchart LR\n    R[\"用户提交完整需求\"] --> U[\"Agent 理解需求\"]\n    U --> P[\"Agent 列出实施方案\"]\n    P --> Q[\"Agent 说明所需信息/资源\"]\n    Q --> V[\"用户提供身份凭证（如 cookie）\"]\n    V --> S[\"Agent 验证可行性\"]\n    S --> T[\"Agent 开始搭建项目\"]\n    T --> A1[\"实现视频获取模块\"]\n    T --> A2[\"实现评论采集模块\"]\n    T --> A3[\"实现数据清洗与分析模块\"]\n    A1 --> A2 --> A3 --> O[\"生成报告与需求数据库\"]\n    O --> F[\"用户审阅并提供反馈\"]\n    F -->|需要改进| U\n    F -->|满意| END[\"流程结束\"]"
+    },
+    {
+      "title": "评论数据处理流水线",
+      "code": "flowchart TD\n    Vlist[\"获取视频列表\"]\n    Cmt[\"采集公开评论\"]\n    Clean[\"清洗原始评论数据\"]\n    Cluster[\"评论聚类与主题抽取\"]\n    Analyze[\"兴趣画像与问题统计\"]\n    Report[\"生成观众需求报告\"]\n    DB[\"存入本地数据库\"]\n\n    Vlist --> Cmt\n    Cmt --> Clean\n    Clean --> Cluster\n    Cluster --> Analyze\n    Analyze --> Report\n    Report --> DB"
+    },
+    {
+      "title": "内容选题与优先级决策",
+      "code": "flowchart TD\n    Issues[\"高频提及的问题\"]\n    Topics[\"聚类得到的主题\"]\n    Count[\"讨论次数计数\"]\n    Score[\"计算优先级分数\"]\n    Select[\"筛选优先制作的选题\"]\n    Plan[\"制定下期视频计划\"]\n    Produce[\"实际制作视频\"]\n\n    Issues --> Topics\n    Topics --> Count\n    Count --> Score\n    Score --> Select\n    Select --> Plan\n    Plan --> Produce"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T19:06:29+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1hxTn6hEDq",
+  "title": "【中配】为什么你永远不应该使用Godot（一个警告）#游戏开发",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1137,
+  "text": "这是为所有想要踏入游戏开发领域的人\n准备的序章\n别急着下结论\n你现在可以克制自己\n以后再行动也不迟\n事情就是这样的\n那天夜里\n我独自在办公室里取暖\n突然脑海中闪过一个念头\n如果我开始制作一款游戏会怎样\n也许我也能做出一款游戏\n在找到方向之后\n我开始着手调研\n寻找最适合的开发引擎\n我的筛选标准很简单\n不是unity\n因为他从一开始就不讨我喜欢\n也不是click team\n必须是开源的\n所以没过多久我就点下了go dote的下载按钮\n出乎意料的是\n下载只花了几秒钟\n也就200MB左右\n下载完成后\n我打开GODOT创建了一个新项目\n就是这样\n又一次只花了几秒钟之后\n我才明白这个项目当然是你知道\n就是那种需要你深思熟虑的项目\n就这样我开始沉浸在GODOT的世界里\n学习创作\n动手实践\n我最早用GODOT完成的项目之一是一个个人助手\n原型运行在树莓派上\n使用got out和rust开发嘿电脑\n这便是我游戏开发之路的开端\n因为没过多久\n这个项目就被搁置了\n转而投入其他工作\n但即便如此\n热爱游戏的种子已经埋下\n它生根发芽\n茁壮成长\n于是没过多久\n我又一次打开了编辑器\n开始另一个项目\n这一次是一款名为grade sweeper\n3D的扫雷游戏改编版\n专为移动端开发\n我在app store和google play上发布了这款游戏\n但它离我心目中的理想作品还差得远\n尽管两个平台都收获了数千次下载\n无数个夜晚变得无眠\n因为我满脑子都是新项目\n新游戏\n想着接下来要做什么\n圣光指挥官\n指挥官复制体已经开始系统性地\n我开始一个接一个地做原型\n一轮又一轮的测试\n在学习渴望与放弃之间循环往复\n什么都不够\n我想要更多学更多做更多创造更多\n就这样我开始发布更多的游戏\n比如trivia fight ninja\n一款移动端多人问答游戏\n还是不够\n我必须把GODOT运用到所有事情上\n于是开始在app store和google play上发布\n用GODOT开发的应用\n比如toxic scanner\n一款产品信息扫描应用\n但什么什么都不够\n我需要更多的原型\n更多的游戏\n更多的测试\n更多的测试\n我的日常几乎变成了GODOT游戏开发\n但我开始明白\n总有新的东西值得我们去学习\n永远如此\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要\n什么都不需要什么都不需要\n什么都不需要\nFleet hunters\n一款经典游戏的新诠释\nfleet hunters现已上架steam\n喜欢的话就去看看吧\n但等等回到游戏开发这件事上来",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hxTn6hEDq",
+  "published_at": "1783006221",
+  "fetched_at": "2026-08-08T00:24:25+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 使用与开发路径图谱\n\n## 引擎选择决策\n```mermaid\nflowchart TD\n    A[\"不喜欢 Unity\"] --> B[\"排除 Unity\"]\n    C[\"不喜欢 Click Team\"] --> D[\"排除 Click Team\"]\n    E[\"必须开源\"] --> F[\"满足开源要求\"]\n    B --> G[\"考虑 Godot\"]\n    D --> G\n    F --> G\n    G --> H[\"下载 Godot\"]\n```\n<!--\n- 不喜欢 Unity: [BV1hxTn6hEDq P1 00:34]\n- 不喜欢 Click Team: [BV1hxTn6hEDq P1 00:38]\n- 必须开源: [BV1hxTn6hEDq P1 00:40]\n- 下载 Godot: [BV1hxTn6hEDq P1 00:41]\n-->\n\n## 开发循环与项目迭代\n```mermaid\nflowchart TD\n    A[\"创建新项目\"] --> B[\"原型：个人助手 (Raspberry Pi)\"]\n    B --> C[\"项目搁置\"]\n    C --> D[\"重新打开编辑器\"]\n    D --> E[\"原型：Grade Sweeper (3D 扫雷)\"]\n    E --> F[\"发布至 App Store / Google Play\"]\n    F --> G[\"下载量数千，但不满意\"]\n    G --> H[\"启动新原型循环\"]\n    H --> I[\"发布更多游戏 (Trivia Fight Ninja)\"]\n    I --> J[\"发布应用 (Toxic Scanner)\"]\n    J --> K[\"日常几乎全是 Godot 开发\"]\n    K --> L[\"意识到永远有新东西可学\"]\n```\n<!--\n- 创建新项目: [BV1hxTn6hEDq P1 00:57]\n- 个人助手原型: [BV1hxTn6hEDq P1 01:15-01:21]\n- 项目搁置: [BV1hxTn6hEDq P1 01:26-01:29]\n- Grade Sweeper 原型: [BV1hxTn6hEDq P1 02:07-02:13]\n- 发布至平台: [BV1hxTn6hEDq P1 02:17]\n- 下载量数千但不满意: [BV1hxTn6hEDq P1 02:24-02:29]\n- 新原型循环: [BV1hxTn6hEDq P1 02:47-03:01]\n- Trivia Fight Ninja: [BV1hxTn6hEDq P1 03:10-03:16]\n- Toxic Scanner: [BV1hxTn6hEDq P1 03:33-03:35]\n- 日常 Godot 开发: [BV1hxTn6hEDq P1 03:58]\n- 永远有新东西可学: [BV1hxTn6hEDq P1 04:07-04:11]\n-->\n\n## 项目时间线\n```mermaid\nflowchart LR\n    A[\"个人助手 (Raspberry Pi)\"] --> B[\"Grade Sweeper\"]\n    B --> C[\"Trivia Fight Ninja\"]\n    C --> D[\"Toxic Scanner\"]\n    D --> E[\"Fleet Hunters (Steam)\"]\n```\n<!--\n- 个人助手: [BV1hxTn6hEDq P1 01:15-01:21]\n- Grade Sweeper: [BV1hxTn6hEDq P1 02:07-02:13]\n- Trivia Fight Ninja: [BV1hxTn6hEDq P1 03:10-03:16]\n- Toxic Scanner: [BV1hxTn6hEDq P1 03:33-03:35]\n- Fleet Hunters: [BV1hxTn6hEDq P1 04:33-04:41]\n-->",
+      "diagrams": [
+        {
+          "title": "引擎选择决策",
+          "code": "flowchart TD\n    A[\"不喜欢 Unity\"] --> B[\"排除 Unity\"]\n    C[\"不喜欢 Click Team\"] --> D[\"排除 Click Team\"]\n    E[\"必须开源\"] --> F[\"满足开源要求\"]\n    B --> G[\"考虑 Godot\"]\n    D --> G\n    F --> G\n    G --> H[\"下载 Godot\"]"
+        },
+        {
+          "title": "开发循环与项目迭代",
+          "code": "flowchart TD\n    A[\"创建新项目\"] --> B[\"原型：个人助手 (Raspberry Pi)\"]\n    B --> C[\"项目搁置\"]\n    C --> D[\"重新打开编辑器\"]\n    D --> E[\"原型：Grade Sweeper (3D 扫雷)\"]\n    E --> F[\"发布至 App Store / Google Play\"]\n    F --> G[\"下载量数千，但不满意\"]\n    G --> H[\"启动新原型循环\"]\n    H --> I[\"发布更多游戏 (Trivia Fight Ninja)\"]\n    I --> J[\"发布应用 (Toxic Scanner)\"]\n    J --> K[\"日常几乎全是 Godot 开发\"]\n    K --> L[\"意识到永远有新东西可学\"]"
+        },
+        {
+          "title": "项目时间线",
+          "code": "flowchart LR\n    A[\"个人助手 (Raspberry Pi)\"] --> B[\"Grade Sweeper\"]\n    B --> C[\"Trivia Fight Ninja\"]\n    C --> D[\"Toxic Scanner\"]\n    D --> E[\"Fleet Hunters (Steam)\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T00:24:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 使用与开发路径图谱\n\n## 引擎选择决策\n```mermaid\nflowchart TD\n    A[\"不喜欢 Unity\"] --> B[\"排除 Unity\"]\n    C[\"不喜欢 Click Team\"] --> D[\"排除 Click Team\"]\n    E[\"必须开源\"] --> F[\"满足开源要求\"]\n    B --> G[\"考虑 Godot\"]\n    D --> G\n    F --> G\n    G --> H[\"下载 Godot\"]\n```\n<!--\n- 不喜欢 Unity: [BV1hxTn6hEDq P1 00:34]\n- 不喜欢 Click Team: [BV1hxTn6hEDq P1 00:38]\n- 必须开源: [BV1hxTn6hEDq P1 00:40]\n- 下载 Godot: [BV1hxTn6hEDq P1 00:41]\n-->\n\n## 开发循环与项目迭代\n```mermaid\nflowchart TD\n    A[\"创建新项目\"] --> B[\"原型：个人助手 (Raspberry Pi)\"]\n    B --> C[\"项目搁置\"]\n    C --> D[\"重新打开编辑器\"]\n    D --> E[\"原型：Grade Sweeper (3D 扫雷)\"]\n    E --> F[\"发布至 App Store / Google Play\"]\n    F --> G[\"下载量数千，但不满意\"]\n    G --> H[\"启动新原型循环\"]\n    H --> I[\"发布更多游戏 (Trivia Fight Ninja)\"]\n    I --> J[\"发布应用 (Toxic Scanner)\"]\n    J --> K[\"日常几乎全是 Godot 开发\"]\n    K --> L[\"意识到永远有新东西可学\"]\n```\n<!--\n- 创建新项目: [BV1hxTn6hEDq P1 00:57]\n- 个人助手原型: [BV1hxTn6hEDq P1 01:15-01:21]\n- 项目搁置: [BV1hxTn6hEDq P1 01:26-01:29]\n- Grade Sweeper 原型: [BV1hxTn6hEDq P1 02:07-02:13]\n- 发布至平台: [BV1hxTn6hEDq P1 02:17]\n- 下载量数千但不满意: [BV1hxTn6hEDq P1 02:24-02:29]\n- 新原型循环: [BV1hxTn6hEDq P1 02:47-03:01]\n- Trivia Fight Ninja: [BV1hxTn6hEDq P1 03:10-03:16]\n- Toxic Scanner: [BV1hxTn6hEDq P1 03:33-03:35]\n- 日常 Godot 开发: [BV1hxTn6hEDq P1 03:58]\n- 永远有新东西可学: [BV1hxTn6hEDq P1 04:07-04:11]\n-->\n\n## 项目时间线\n```mermaid\nflowchart LR\n    A[\"个人助手 (Raspberry Pi)\"] --> B[\"Grade Sweeper\"]\n    B --> C[\"Trivia Fight Ninja\"]\n    C --> D[\"Toxic Scanner\"]\n    D --> E[\"Fleet Hunters (Steam)\"]\n```\n<!--\n- 个人助手: [BV1hxTn6hEDq P1 01:15-01:21]\n- Grade Sweeper: [BV1hxTn6hEDq P1 02:07-02:13]\n- Trivia Fight Ninja: [BV1hxTn6hEDq P1 03:10-03:16]\n- Toxic Scanner: [BV1hxTn6hEDq P1 03:33-03:35]\n- Fleet Hunters: [BV1hxTn6hEDq P1 04:33-04:41]\n-->",
+  "diagrams": [
+    {
+      "title": "引擎选择决策",
+      "code": "flowchart TD\n    A[\"不喜欢 Unity\"] --> B[\"排除 Unity\"]\n    C[\"不喜欢 Click Team\"] --> D[\"排除 Click Team\"]\n    E[\"必须开源\"] --> F[\"满足开源要求\"]\n    B --> G[\"考虑 Godot\"]\n    D --> G\n    F --> G\n    G --> H[\"下载 Godot\"]"
+    },
+    {
+      "title": "开发循环与项目迭代",
+      "code": "flowchart TD\n    A[\"创建新项目\"] --> B[\"原型：个人助手 (Raspberry Pi)\"]\n    B --> C[\"项目搁置\"]\n    C --> D[\"重新打开编辑器\"]\n    D --> E[\"原型：Grade Sweeper (3D 扫雷)\"]\n    E --> F[\"发布至 App Store / Google Play\"]\n    F --> G[\"下载量数千，但不满意\"]\n    G --> H[\"启动新原型循环\"]\n    H --> I[\"发布更多游戏 (Trivia Fight Ninja)\"]\n    I --> J[\"发布应用 (Toxic Scanner)\"]\n    J --> K[\"日常几乎全是 Godot 开发\"]\n    K --> L[\"意识到永远有新东西可学\"]"
+    },
+    {
+      "title": "项目时间线",
+      "code": "flowchart LR\n    A[\"个人助手 (Raspberry Pi)\"] --> B[\"Grade Sweeper\"]\n    B --> C[\"Trivia Fight Ninja\"]\n    C --> D[\"Toxic Scanner\"]\n    D --> E[\"Fleet Hunters (Steam)\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T00:24:45+00:00"
+}

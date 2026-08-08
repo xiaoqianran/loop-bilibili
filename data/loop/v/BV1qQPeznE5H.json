@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1qQPeznE5H",
+  "title": "【像素角色自由】GODOT像素角色跟随功能展示及场景素材生成",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1278,
+  "text": "2026年3月4号啊\n简单演示一下最近的成果\n那我把这个所有生成的角色都放在了go dota里面\n有这个老版本生成的呃\n一比1.5的\n也有新版本的二比一的啊\n那么写了一套角色跟随的算法\n以及自动化额角色动作的一个脚本\n用了狗肉的引擎啊\n啊\n那么以及这个地图和地形用\n也是用JMEI生成的啊\n那么下面开始讲怎么去用这个东西啊\n那首先这套东西的话是基于一个呃全局脚本\n全局脚本的话在这个地方啊\n项目项目设置\n然后是全全局\n有个叫spirit sheet generator\n也就是说这个实际上是呃\n自定义的一个暴露的接口\n那么这个接口里面你只要把这个图片拖进去\nfollow了\nFollower\n就是老版本的话\n这个老版本的图片都拖进去\n设定跟player的距离\n那么他就会跟着player走\n那新版本的话是o c c h a follower\n然后也是把这个图片一拖拖进去\n那么就会生成\n可以看到我后面有三个二比一的角色\n就是这三个放在最后面\n那么也就是说他的一个follow distance是比较长的\n352好\n那利用这样的机制呢\n就是让角色跟随移动\n也可以实时的去查看自己生成的角色\n一个效果啊\n额这个就是在GODOT里面的一个情呃开发\n那么这个地形怎么做的呢\n下面着重说一下\n我们主要还是用这个色度键抠图啊\n那首先我们啊呃利用这个BLANOBANA\n生成了这张图片啊\n我们先呃看一下这张一个像素的\n一个工业废弃小镇啊\n但是呢这个nano banana的那个建筑呢\n是不能分层的\n我们呢要把这个建筑分层\n那我呢没有太多时间精力去做美工的事情啊\n所以说呢研究了一下\n你跟难道本ANA说要把所有的地形\n非建筑物用一个纯色填充\n那最后兰州BANA会变成这个变成这个东西\n他把所有的地形变成了这个纯色\n然后呢利用这个工具啊\n蓝绿幕抠好\n你点一下这个绿幕好\n他就把这个地形全部扣掉了\n只留下了建筑啊\n只留下了建筑\n那利用这种机制\n你可以去调整边缘啊\n边缘侵蚀唉\n边缘平滑\n你可以稍微调整一点点\n调整到什么程度呢\n你看不见明显的绿边为止啊\n哎对我觉得还可以再平滑一点\n还是看不到绿边啊\n好好这样效果就很好了\n然后你就下载\n这样以后我把这个图片导到狗头的里面唉\n就可以实现这个建筑物的分层\n那么如果你追求一个完美的话\n你可以一个个抠下来\n用这格斗特的Y轴前后逻辑\n来让建筑更加完美啊\n那就在这个地方哎\n看这个连这个烟雾都有点抠\n但是这个烟雾还是有一点点绿啊\n那有点绿就能过得去嘛\n嗯这个烟雾都能抠出来\n那具体的话如果你呃做的好一点的话\n可能还是要精雕细琢一下的\n但是工具的话能满足你的很多要求\n哎做像素游戏的话还是挺有用的啊\n那这就是一个呃工具的更新\n那包括后面的扩图跟缩图\n如果你的对这个图片的\n每个像素的要求跟我不一样\n你可以通过\n比如说我现在选择这个呃\n啊\n这债券一张\n这个吧好\n那么是5×5的\n5×5的\n然后你可以把基于你的要求把这个格子变大\n比如说我要变成40×40的好\n那我就处理好\n那么他就会把这个每一个单帧处理成\n40×40来适合你的游戏的分辨率啊啊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qQPeznE5H",
+  "published_at": "1772626941",
+  "fetched_at": "2026-08-07T11:20:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 像素角色自由：GODOT 角色跟随与场景生成知识图谱\n\n## 角色跟随系统概览\n```mermaid\nflowchart TD\n    GS[\"全局脚本\"] --> SS[\"SpiritSheetGenerator 接口\"]\n    SS --> DI[\"拖入角色图片\"]\n    DI --> OD[\"老版本 Follower\"]\n    DI --> ND[\"新版本 OCCAFollower\"]\n    OD --> FD[\"设定跟随距离\"]\n    ND --> FD\n    FD --> PB[\"关联 Player\"]\n    PB --> FB[\"角色跟随 Player 移动\"]\n    FB --> RV[\"实时预览生成角色\"]\n    RV --> MC[\"多个角色实例（1:5, 2:1）\"]\n```\n\n## 地形分层与抠图流程\n```mermaid\nflowchart TD\n    SI[\"像素小镇原始图片\"] --> BT[\"BLANOBANA 生成\"]\n    BT --> CK[\"颜色键抠图（蓝/绿幕）\"]\n    CK --> PC[\"非建筑区域纯色填充\"]\n    PC --> GR[\"绿幕去除\"]\n    GR --> BR[\"仅保留建筑\"]\n    BR --> EE[\"边缘侵蚀\"]\n    EE --> ES[\"边缘平滑\"]\n    ES --> AD[\"调整至无明显绿边\"]\n    AD --> ET[\"导出至 Godot\"]\n    ET --> LT[\"得到分层地形\"]\n```\n\n## 像素图像分辨率适配流程\n```mermaid\nflowchart TD\n    OG[\"原始 5×5 网格\"] --> SR[\"设定目标分辨率 40×40\"]\n    SR --> ST[\"使用缩放工具\"]\n    ST --> AG[\"调整网格大小\"]\n    AG --> PF[\"处理每帧像素\"]\n    PF --> OF[\"输出 40×40 帧\"]\n    OF --> AGM[\"应用于游戏\"]\n    AGM --> FT[\"可选细节微调\"]\n```",
+      "diagrams": [
+        {
+          "title": "角色跟随系统概览",
+          "code": "flowchart TD\n    GS[\"全局脚本\"] --> SS[\"SpiritSheetGenerator 接口\"]\n    SS --> DI[\"拖入角色图片\"]\n    DI --> OD[\"老版本 Follower\"]\n    DI --> ND[\"新版本 OCCAFollower\"]\n    OD --> FD[\"设定跟随距离\"]\n    ND --> FD\n    FD --> PB[\"关联 Player\"]\n    PB --> FB[\"角色跟随 Player 移动\"]\n    FB --> RV[\"实时预览生成角色\"]\n    RV --> MC[\"多个角色实例（1:5, 2:1）\"]"
+        },
+        {
+          "title": "地形分层与抠图流程",
+          "code": "flowchart TD\n    SI[\"像素小镇原始图片\"] --> BT[\"BLANOBANA 生成\"]\n    BT --> CK[\"颜色键抠图（蓝/绿幕）\"]\n    CK --> PC[\"非建筑区域纯色填充\"]\n    PC --> GR[\"绿幕去除\"]\n    GR --> BR[\"仅保留建筑\"]\n    BR --> EE[\"边缘侵蚀\"]\n    EE --> ES[\"边缘平滑\"]\n    ES --> AD[\"调整至无明显绿边\"]\n    AD --> ET[\"导出至 Godot\"]\n    ET --> LT[\"得到分层地形\"]"
+        },
+        {
+          "title": "像素图像分辨率适配流程",
+          "code": "flowchart TD\n    OG[\"原始 5×5 网格\"] --> SR[\"设定目标分辨率 40×40\"]\n    SR --> ST[\"使用缩放工具\"]\n    ST --> AG[\"调整网格大小\"]\n    AG --> PF[\"处理每帧像素\"]\n    PF --> OF[\"输出 40×40 帧\"]\n    OF --> AGM[\"应用于游戏\"]\n    AGM --> FT[\"可选细节微调\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T11:21:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 像素角色自由：GODOT 角色跟随与场景生成知识图谱\n\n## 角色跟随系统概览\n```mermaid\nflowchart TD\n    GS[\"全局脚本\"] --> SS[\"SpiritSheetGenerator 接口\"]\n    SS --> DI[\"拖入角色图片\"]\n    DI --> OD[\"老版本 Follower\"]\n    DI --> ND[\"新版本 OCCAFollower\"]\n    OD --> FD[\"设定跟随距离\"]\n    ND --> FD\n    FD --> PB[\"关联 Player\"]\n    PB --> FB[\"角色跟随 Player 移动\"]\n    FB --> RV[\"实时预览生成角色\"]\n    RV --> MC[\"多个角色实例（1:5, 2:1）\"]\n```\n\n## 地形分层与抠图流程\n```mermaid\nflowchart TD\n    SI[\"像素小镇原始图片\"] --> BT[\"BLANOBANA 生成\"]\n    BT --> CK[\"颜色键抠图（蓝/绿幕）\"]\n    CK --> PC[\"非建筑区域纯色填充\"]\n    PC --> GR[\"绿幕去除\"]\n    GR --> BR[\"仅保留建筑\"]\n    BR --> EE[\"边缘侵蚀\"]\n    EE --> ES[\"边缘平滑\"]\n    ES --> AD[\"调整至无明显绿边\"]\n    AD --> ET[\"导出至 Godot\"]\n    ET --> LT[\"得到分层地形\"]\n```\n\n## 像素图像分辨率适配流程\n```mermaid\nflowchart TD\n    OG[\"原始 5×5 网格\"] --> SR[\"设定目标分辨率 40×40\"]\n    SR --> ST[\"使用缩放工具\"]\n    ST --> AG[\"调整网格大小\"]\n    AG --> PF[\"处理每帧像素\"]\n    PF --> OF[\"输出 40×40 帧\"]\n    OF --> AGM[\"应用于游戏\"]\n    AGM --> FT[\"可选细节微调\"]\n```",
+  "diagrams": [
+    {
+      "title": "角色跟随系统概览",
+      "code": "flowchart TD\n    GS[\"全局脚本\"] --> SS[\"SpiritSheetGenerator 接口\"]\n    SS --> DI[\"拖入角色图片\"]\n    DI --> OD[\"老版本 Follower\"]\n    DI --> ND[\"新版本 OCCAFollower\"]\n    OD --> FD[\"设定跟随距离\"]\n    ND --> FD\n    FD --> PB[\"关联 Player\"]\n    PB --> FB[\"角色跟随 Player 移动\"]\n    FB --> RV[\"实时预览生成角色\"]\n    RV --> MC[\"多个角色实例（1:5, 2:1）\"]"
+    },
+    {
+      "title": "地形分层与抠图流程",
+      "code": "flowchart TD\n    SI[\"像素小镇原始图片\"] --> BT[\"BLANOBANA 生成\"]\n    BT --> CK[\"颜色键抠图（蓝/绿幕）\"]\n    CK --> PC[\"非建筑区域纯色填充\"]\n    PC --> GR[\"绿幕去除\"]\n    GR --> BR[\"仅保留建筑\"]\n    BR --> EE[\"边缘侵蚀\"]\n    EE --> ES[\"边缘平滑\"]\n    ES --> AD[\"调整至无明显绿边\"]\n    AD --> ET[\"导出至 Godot\"]\n    ET --> LT[\"得到分层地形\"]"
+    },
+    {
+      "title": "像素图像分辨率适配流程",
+      "code": "flowchart TD\n    OG[\"原始 5×5 网格\"] --> SR[\"设定目标分辨率 40×40\"]\n    SR --> ST[\"使用缩放工具\"]\n    ST --> AG[\"调整网格大小\"]\n    AG --> PF[\"处理每帧像素\"]\n    PF --> OF[\"输出 40×40 帧\"]\n    OF --> AGM[\"应用于游戏\"]\n    AGM --> FT[\"可选细节微调\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T11:21:05+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV13bKz6EEUT",
+  "title": "洛克王国最新自动化工具自动跑图采矿+一键捕捉工具v2.0现已上线！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 898,
+  "text": "Hello\n大家好\n这里是阿四\n今天继续给大家带来我们的roco pilot\n专为洛克王国打造的减负程序\n这次我们更新到了2.0版本\n主要的更新是自动跑图功能\n里面内置了15条已经完善的路线\n基本包含了全地图\n在这里我们可以选择自动采矿\n多路线跑图\n实时跑图浮窗\n还有使用冲刺\n还有两种匹配模式供我们选择\n大家可以根据自己电脑的配置自行选择\n接下来我就选择这条路线给大家示范一下\n选择路线后点击开始跑图\n软件会等待一会加载小地图\n然后会切到游戏窗口\n打开地图\n选择传送点进行传送\n传送完成后会骑上一号位的精灵\n然后朝我们设定好的路线走去\n它会自动调整视角\n往指定位置走过去\n如果遇到障碍物被卡住\n也会进行脱离操作\n接下来大家沉浸式的欣赏\n一会儿跑图吧\n像这里被卡在一个位置\n一直不动\n就会下坐骑往前面走进行脱困\n接下来我们来看看他的采矿功能\n到达矿点之后\n就会自动下坐骑\n然后进行360度转动视角\n当屏幕中识别到矿物\n就会调整视角对准矿物\n扔出精灵\n然后再扫视一圈\n检查有没有漏掉的矿物\n没有矿物之后就会继续往下一个路点赶过去\n我们再来看一遍采矿过程\n像如果在跑图过程中进入战斗了\n他也会自己逃跑\n当然逃跑完成后也还会接着采矿\n然后呢就是这次游戏更新已经修复了访问庇护所刷炫彩\n所以我删除了互访炫彩功能\n然后就是我们的智能战斗新增了个模式\n现在的是正常模式\n还有个是双开模式\n并且新增了一键捕捉功能\n只要在战斗中识别到可以捕捉的目标\n就会直接丢球进行捕捉\n我们再来看看双开模式\n可以选择大号的战斗按键\n大号呢就是最上面这个绑定的窗口\n小号和大号的窗口不能绑定同一个要分清楚\n还有个功能呢就是我们的路线绘制\n可以在这里面绘制你想要自动跑的路线\n然后使用数字键123可以切换采集点\n传送点和采矿点\n大家可以自行研究一下\n目前呢还没有更新S3的地图\n等过段时间会完善的\n现在里面总共有16条路线\n有15条已经测试过\n可以跑通了\n还有一条没有标好点位\n并且该路线推荐使用是波罗单人进行跑图\n因为有些地方需要下坐骑才能经过\n大家需要同行的话\n需要自己开发一下路线\n这一期的视频就到这里结束了\n感谢各位的收看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV13bKz6EEUT",
+  "published_at": "1784458977",
+  "fetched_at": "2026-08-07T14:42:45+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 洛克王国自动化工具功能图谱\n\n## 自动跑图功能概览\n```mermaid\nflowchart TD\n    A[\"版本 2.0\"]\n    B[\"自动跑图功能\"]\n    C[\"15 条已完善路线\"]\n    D[\"全地图覆盖\"]\n    E[\"自动采矿选项\"]\n    F[\"多路线跑图\"]\n    G[\"实时跑图浮窗\"]\n    H[\"使用冲刺\"]\n    I[\"两种匹配模式\"]\n    J[\"根据电脑配置选择\"]\n    A --> B\n    B --> C --> D\n    B --> E\n    B --> F\n    B --> G\n    B --> H\n    B --> I --> J\n```\n- A: [BV13bKz6EEUT P1 00:07]  \n- B: [BV13bKz6EEUT P1 00:09]  \n- C: [BV13bKz6EEUT P1 00:11]  \n- D: [BV13bKz6EEUT P1 00:13]  \n- E: [BV13bKz6EEUT P1 00:15]  \n- F: [BV13bKz6EEUT P1 00:17]  \n- G: [BV13bKz6EEUT P1 00:18]  \n- H: [BV13bKz6EEUT P1 00:19]  \n- I: [BV13bKz6EEUT P1 00:20]  \n- J: [BV13bKz6EEUT P1 00:23]  \n\n## 跑图流程\n```mermaid\nflowchart TD\n    A[\"选择路线\"]\n    B[\"点击开始跑图\"]\n    C[\"加载小地图\"]\n    D[\"切换到游戏窗口\"]\n    E[\"打开地图并选择传送点\"]\n    F[\"传送完成，骑上1号精灵\"]\n    G[\"沿设定路线前进\"]\n    H[\"自动调整视角\"]\n    I[\"前往指定位置\"]\n    J[\"障碍物卡住检测\"]\n    K[\"脱离操作\"]\n    L[\"卡住位置示例\"]\n    M[\"下坐骑前进脱困\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K\n    L --> M --> K\n```\n- A: [BV13bKz6EEUT P1 00:26]  \n- B: [BV13bKz6EEUT P1 00:29]  \n- C: [BV13bKz6EEUT P1 00:31]  \n- D: [BV13bKz6EEUT P1 00:33]  \n- E: [BV13bKz6EEUT P1 00:35]  \n- F: [BV13bKz6EEUT P1 00:39]  \n- G: [BV13bKz6EEUT P1 00:42]  \n- H: [BV13bKz6EEUT P1 00:44]  \n- I: [BV13bKz6EEUT P1 00:46]  \n- J: [BV13bKz6EEUT P1 00:47]  \n- K: [BV13bKz6EEUT P1 00:49]  \n- L: [BV13bKz6EEUT P1 01:01]  \n- M: [BV13bKz6EEUT P1 01:03]  \n\n## 采矿功能流程\n```mermaid\nflowchart TD\n    A[\"到达矿点\"]\n    B[\"自动下坐骑\"]\n    C[\"360度转动视角\"]\n    D[\"识别矿物\"]\n    E[\"调整视角对准矿物\"]\n    F[\"投掷精灵\"]\n    G[\"再次扫视\"]\n    H[\"检查漏掉的矿物\"]\n    I[\"无矿物，前往下一个路点\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I\n```\n- A: [BV13bKz6EEUT P1 01:08]  \n- B: [BV13bKz6EEUT P1 01:09]  \n- C: [BV13bKz6EEUT P1 01:11]  \n- D: [BV13bKz6EEUT P1 01:15]  \n- E: [BV13bKz6EEUT P1 01:17]  \n- F: [BV13bKz6EEUT P1 01:19]  \n- G: [BV13bKz6EEUT P1 01:20]  \n- H: [BV13bKz6EEUT P1 01:22]  \n- I: [BV13bKz6EEUT P1 01:25]  \n\n## 智能战斗与捕捉功能\n```mermaid\nflowchart TD\n    A[\"智能战斗新增模式\"]\n    B[\"正常模式\"]\n    C[\"双开模式\"]\n    D[\"一键捕捉功能\"]\n    E[\"战斗中识别可捕捉目标\"]\n    F[\"自动投球捕捉\"]\n    G[\"战斗中自动逃跑\"]\n    H[\"逃跑后继续采矿\"]\n    A --> B\n    A --> C\n    A --> D --> E --> F\n    G --> H\n```\n- A: [BV13bKz6EEUT P1 02:05]  \n- B: [BV13bKz6EEUT P1 02:08]  \n- C: [BV13bKz6EEUT P1 02:10]  \n- D: [BV13bKz6EEUT P1 02:11]  \n- E: [BV13bKz6EEUT P1 02:13]  \n- F: [BV13bKz6EEUT P1 02:13]  \n- G: [BV13bKz6EEUT P1 01:46]  \n- H: [BV13bKz6EEUT P1 01:52]  \n\n## 路线绘制与配置\n```mermaid\nflowchart TD\n    A[\"路线绘制功能\"]\n    B[\"在此绘制自定义路线\"]\n    C[\"使用数字键1-3切换点位\"]\n    D[\"传送点\"]\n    E[\"采矿点\"]\n    F[\"不支持S3地图\"]\n    G[\"总计16条路线\"]\n    H[\"已测试15条\"]\n    I[\"未标点位路线推荐单人\"]\n    J[\"需要自行开发路线\"]\n    K[\"部分需下坐骑\"]\n    A --> B --> C\n    C --> D\n    C --> E\n    A --> F\n    A --> G --> H\n    H --> I\n    I --> J\n    I --> K\n```\n- A: [BV13bKz6EEUT P1 02:30]  \n- B: [BV13bKz6EEUT P1 02:33]  \n- C: [BV13bKz6EEUT P1 02:42]  \n- D: [BV13bKz6EEUT P1 02:46]  \n- E: [BV13bKz6EEUT P1 02:46]  \n- F: [BV13bKz6EEUT P1 02:51]  \n- G: [BV13bKz6EEUT P1 02:56]  \n- H: [BV13bKz6EEUT P1 02:58]  \n- I: [BV13bKz6EEUT P1 03:01]  \n- J: [BV13bKz6EEUT P1 03:11]  \n- K: [BV13bKz6EEUT P1 03:07]",
+      "diagrams": [
+        {
+          "title": "自动跑图功能概览",
+          "code": "flowchart TD\n    A[\"版本 2.0\"]\n    B[\"自动跑图功能\"]\n    C[\"15 条已完善路线\"]\n    D[\"全地图覆盖\"]\n    E[\"自动采矿选项\"]\n    F[\"多路线跑图\"]\n    G[\"实时跑图浮窗\"]\n    H[\"使用冲刺\"]\n    I[\"两种匹配模式\"]\n    J[\"根据电脑配置选择\"]\n    A --> B\n    B --> C --> D\n    B --> E\n    B --> F\n    B --> G\n    B --> H\n    B --> I --> J"
+        },
+        {
+          "title": "跑图流程",
+          "code": "flowchart TD\n    A[\"选择路线\"]\n    B[\"点击开始跑图\"]\n    C[\"加载小地图\"]\n    D[\"切换到游戏窗口\"]\n    E[\"打开地图并选择传送点\"]\n    F[\"传送完成，骑上1号精灵\"]\n    G[\"沿设定路线前进\"]\n    H[\"自动调整视角\"]\n    I[\"前往指定位置\"]\n    J[\"障碍物卡住检测\"]\n    K[\"脱离操作\"]\n    L[\"卡住位置示例\"]\n    M[\"下坐骑前进脱困\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K\n    L --> M --> K"
+        },
+        {
+          "title": "采矿功能流程",
+          "code": "flowchart TD\n    A[\"到达矿点\"]\n    B[\"自动下坐骑\"]\n    C[\"360度转动视角\"]\n    D[\"识别矿物\"]\n    E[\"调整视角对准矿物\"]\n    F[\"投掷精灵\"]\n    G[\"再次扫视\"]\n    H[\"检查漏掉的矿物\"]\n    I[\"无矿物，前往下一个路点\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I"
+        },
+        {
+          "title": "智能战斗与捕捉功能",
+          "code": "flowchart TD\n    A[\"智能战斗新增模式\"]\n    B[\"正常模式\"]\n    C[\"双开模式\"]\n    D[\"一键捕捉功能\"]\n    E[\"战斗中识别可捕捉目标\"]\n    F[\"自动投球捕捉\"]\n    G[\"战斗中自动逃跑\"]\n    H[\"逃跑后继续采矿\"]\n    A --> B\n    A --> C\n    A --> D --> E --> F\n    G --> H"
+        },
+        {
+          "title": "路线绘制与配置",
+          "code": "flowchart TD\n    A[\"路线绘制功能\"]\n    B[\"在此绘制自定义路线\"]\n    C[\"使用数字键1-3切换点位\"]\n    D[\"传送点\"]\n    E[\"采矿点\"]\n    F[\"不支持S3地图\"]\n    G[\"总计16条路线\"]\n    H[\"已测试15条\"]\n    I[\"未标点位路线推荐单人\"]\n    J[\"需要自行开发路线\"]\n    K[\"部分需下坐骑\"]\n    A --> B --> C\n    C --> D\n    C --> E\n    A --> F\n    A --> G --> H\n    H --> I\n    I --> J\n    I --> K"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T14:43:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 洛克王国自动化工具功能图谱\n\n## 自动跑图功能概览\n```mermaid\nflowchart TD\n    A[\"版本 2.0\"]\n    B[\"自动跑图功能\"]\n    C[\"15 条已完善路线\"]\n    D[\"全地图覆盖\"]\n    E[\"自动采矿选项\"]\n    F[\"多路线跑图\"]\n    G[\"实时跑图浮窗\"]\n    H[\"使用冲刺\"]\n    I[\"两种匹配模式\"]\n    J[\"根据电脑配置选择\"]\n    A --> B\n    B --> C --> D\n    B --> E\n    B --> F\n    B --> G\n    B --> H\n    B --> I --> J\n```\n- A: [BV13bKz6EEUT P1 00:07]  \n- B: [BV13bKz6EEUT P1 00:09]  \n- C: [BV13bKz6EEUT P1 00:11]  \n- D: [BV13bKz6EEUT P1 00:13]  \n- E: [BV13bKz6EEUT P1 00:15]  \n- F: [BV13bKz6EEUT P1 00:17]  \n- G: [BV13bKz6EEUT P1 00:18]  \n- H: [BV13bKz6EEUT P1 00:19]  \n- I: [BV13bKz6EEUT P1 00:20]  \n- J: [BV13bKz6EEUT P1 00:23]  \n\n## 跑图流程\n```mermaid\nflowchart TD\n    A[\"选择路线\"]\n    B[\"点击开始跑图\"]\n    C[\"加载小地图\"]\n    D[\"切换到游戏窗口\"]\n    E[\"打开地图并选择传送点\"]\n    F[\"传送完成，骑上1号精灵\"]\n    G[\"沿设定路线前进\"]\n    H[\"自动调整视角\"]\n    I[\"前往指定位置\"]\n    J[\"障碍物卡住检测\"]\n    K[\"脱离操作\"]\n    L[\"卡住位置示例\"]\n    M[\"下坐骑前进脱困\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K\n    L --> M --> K\n```\n- A: [BV13bKz6EEUT P1 00:26]  \n- B: [BV13bKz6EEUT P1 00:29]  \n- C: [BV13bKz6EEUT P1 00:31]  \n- D: [BV13bKz6EEUT P1 00:33]  \n- E: [BV13bKz6EEUT P1 00:35]  \n- F: [BV13bKz6EEUT P1 00:39]  \n- G: [BV13bKz6EEUT P1 00:42]  \n- H: [BV13bKz6EEUT P1 00:44]  \n- I: [BV13bKz6EEUT P1 00:46]  \n- J: [BV13bKz6EEUT P1 00:47]  \n- K: [BV13bKz6EEUT P1 00:49]  \n- L: [BV13bKz6EEUT P1 01:01]  \n- M: [BV13bKz6EEUT P1 01:03]  \n\n## 采矿功能流程\n```mermaid\nflowchart TD\n    A[\"到达矿点\"]\n    B[\"自动下坐骑\"]\n    C[\"360度转动视角\"]\n    D[\"识别矿物\"]\n    E[\"调整视角对准矿物\"]\n    F[\"投掷精灵\"]\n    G[\"再次扫视\"]\n    H[\"检查漏掉的矿物\"]\n    I[\"无矿物，前往下一个路点\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I\n```\n- A: [BV13bKz6EEUT P1 01:08]  \n- B: [BV13bKz6EEUT P1 01:09]  \n- C: [BV13bKz6EEUT P1 01:11]  \n- D: [BV13bKz6EEUT P1 01:15]  \n- E: [BV13bKz6EEUT P1 01:17]  \n- F: [BV13bKz6EEUT P1 01:19]  \n- G: [BV13bKz6EEUT P1 01:20]  \n- H: [BV13bKz6EEUT P1 01:22]  \n- I: [BV13bKz6EEUT P1 01:25]  \n\n## 智能战斗与捕捉功能\n```mermaid\nflowchart TD\n    A[\"智能战斗新增模式\"]\n    B[\"正常模式\"]\n    C[\"双开模式\"]\n    D[\"一键捕捉功能\"]\n    E[\"战斗中识别可捕捉目标\"]\n    F[\"自动投球捕捉\"]\n    G[\"战斗中自动逃跑\"]\n    H[\"逃跑后继续采矿\"]\n    A --> B\n    A --> C\n    A --> D --> E --> F\n    G --> H\n```\n- A: [BV13bKz6EEUT P1 02:05]  \n- B: [BV13bKz6EEUT P1 02:08]  \n- C: [BV13bKz6EEUT P1 02:10]  \n- D: [BV13bKz6EEUT P1 02:11]  \n- E: [BV13bKz6EEUT P1 02:13]  \n- F: [BV13bKz6EEUT P1 02:13]  \n- G: [BV13bKz6EEUT P1 01:46]  \n- H: [BV13bKz6EEUT P1 01:52]  \n\n## 路线绘制与配置\n```mermaid\nflowchart TD\n    A[\"路线绘制功能\"]\n    B[\"在此绘制自定义路线\"]\n    C[\"使用数字键1-3切换点位\"]\n    D[\"传送点\"]\n    E[\"采矿点\"]\n    F[\"不支持S3地图\"]\n    G[\"总计16条路线\"]\n    H[\"已测试15条\"]\n    I[\"未标点位路线推荐单人\"]\n    J[\"需要自行开发路线\"]\n    K[\"部分需下坐骑\"]\n    A --> B --> C\n    C --> D\n    C --> E\n    A --> F\n    A --> G --> H\n    H --> I\n    I --> J\n    I --> K\n```\n- A: [BV13bKz6EEUT P1 02:30]  \n- B: [BV13bKz6EEUT P1 02:33]  \n- C: [BV13bKz6EEUT P1 02:42]  \n- D: [BV13bKz6EEUT P1 02:46]  \n- E: [BV13bKz6EEUT P1 02:46]  \n- F: [BV13bKz6EEUT P1 02:51]  \n- G: [BV13bKz6EEUT P1 02:56]  \n- H: [BV13bKz6EEUT P1 02:58]  \n- I: [BV13bKz6EEUT P1 03:01]  \n- J: [BV13bKz6EEUT P1 03:11]  \n- K: [BV13bKz6EEUT P1 03:07]",
+  "diagrams": [
+    {
+      "title": "自动跑图功能概览",
+      "code": "flowchart TD\n    A[\"版本 2.0\"]\n    B[\"自动跑图功能\"]\n    C[\"15 条已完善路线\"]\n    D[\"全地图覆盖\"]\n    E[\"自动采矿选项\"]\n    F[\"多路线跑图\"]\n    G[\"实时跑图浮窗\"]\n    H[\"使用冲刺\"]\n    I[\"两种匹配模式\"]\n    J[\"根据电脑配置选择\"]\n    A --> B\n    B --> C --> D\n    B --> E\n    B --> F\n    B --> G\n    B --> H\n    B --> I --> J"
+    },
+    {
+      "title": "跑图流程",
+      "code": "flowchart TD\n    A[\"选择路线\"]\n    B[\"点击开始跑图\"]\n    C[\"加载小地图\"]\n    D[\"切换到游戏窗口\"]\n    E[\"打开地图并选择传送点\"]\n    F[\"传送完成，骑上1号精灵\"]\n    G[\"沿设定路线前进\"]\n    H[\"自动调整视角\"]\n    I[\"前往指定位置\"]\n    J[\"障碍物卡住检测\"]\n    K[\"脱离操作\"]\n    L[\"卡住位置示例\"]\n    M[\"下坐骑前进脱困\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K\n    L --> M --> K"
+    },
+    {
+      "title": "采矿功能流程",
+      "code": "flowchart TD\n    A[\"到达矿点\"]\n    B[\"自动下坐骑\"]\n    C[\"360度转动视角\"]\n    D[\"识别矿物\"]\n    E[\"调整视角对准矿物\"]\n    F[\"投掷精灵\"]\n    G[\"再次扫视\"]\n    H[\"检查漏掉的矿物\"]\n    I[\"无矿物，前往下一个路点\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I"
+    },
+    {
+      "title": "智能战斗与捕捉功能",
+      "code": "flowchart TD\n    A[\"智能战斗新增模式\"]\n    B[\"正常模式\"]\n    C[\"双开模式\"]\n    D[\"一键捕捉功能\"]\n    E[\"战斗中识别可捕捉目标\"]\n    F[\"自动投球捕捉\"]\n    G[\"战斗中自动逃跑\"]\n    H[\"逃跑后继续采矿\"]\n    A --> B\n    A --> C\n    A --> D --> E --> F\n    G --> H"
+    },
+    {
+      "title": "路线绘制与配置",
+      "code": "flowchart TD\n    A[\"路线绘制功能\"]\n    B[\"在此绘制自定义路线\"]\n    C[\"使用数字键1-3切换点位\"]\n    D[\"传送点\"]\n    E[\"采矿点\"]\n    F[\"不支持S3地图\"]\n    G[\"总计16条路线\"]\n    H[\"已测试15条\"]\n    I[\"未标点位路线推荐单人\"]\n    J[\"需要自行开发路线\"]\n    K[\"部分需下坐骑\"]\n    A --> B --> C\n    C --> D\n    C --> E\n    A --> F\n    A --> G --> H\n    H --> I\n    I --> J\n    I --> K"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T14:43:28+00:00"
+}

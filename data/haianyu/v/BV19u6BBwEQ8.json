@@ -1,0 +1,26 @@
+{
+  "bvid": "BV19u6BBwEQ8",
+  "title": "11. GQA：介于MHA和MQA之间，键值共享查询分组【每天一个宝藏名词】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 184,
+  "text": "GQAGQA级\nGroup query attention\n是谷歌提出的一种高效注意力机制\n它介于MHA和MQA之间\n多个查询头共享一组键值\n对K和V向量比Q向量更短\n从而降低了kv cash的显存占用\nGQA被la等模型广泛采用\n目前拉玛三在GITHUB上已经有了接近3万个st\n可以通过hagfist transformers库中的拉马源码\n去查看GQA的射线方法",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19u6BBwEQ8",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

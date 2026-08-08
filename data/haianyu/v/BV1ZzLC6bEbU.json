@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1ZzLC6bEbU",
+  "title": "128. 为什么4D并行的四个任务划分维度是正交的？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 325,
+  "text": "今天的问题是\n为什么4D并行的四个任务划分维度是正交的\n或者说如何直观理解4D并行\n像要说什么叫正交\n这就是多个向量彼此垂直\n还要明确一下这里可视化是啥意思\n之前给了一个超简单穿SM可视化\n就这个\n但它是一个二维的\n如果按照layer就是这个高度给它垒起来\n把这个矩阵垒成一个长方体\n像这样\n那这样的话就是一个三维的长方体\n但这个只是单个上下文\n如果把多个上下文的长方体全画出来\n就多个长方体\n就多个三维的变成了一个四维的\n那这个就是4D\n然后说什么是DP数据并行\n简单理解就是给它分成不同的长方体\n什么是pp流水线变形\n简单理解就是按层给它切开\n什么是CP上下文并行\n简单理解就是一个超长向下文\n给它分成多个段\n什么是TP\n简单理解就是按特征维度切",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ZzLC6bEbU",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:15:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

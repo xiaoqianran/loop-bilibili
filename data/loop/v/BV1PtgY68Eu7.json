@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1PtgY68Eu7",
+  "title": "【详细教程】完全免费部署最适合您的AI模型，低配流畅可用，永久免费，还能帮你写代码！",
+  "status": "ok",
+  "language": "zh",
+  "chars": 2763,
+  "text": "本期视频将教您免费本地部署最适合您电脑配置的AI模型\n让您实现Token自由\n即使您是非常烂非常低配的那种电脑都可以跟着我的教程来\n高配电脑也同样能发挥出您电脑的能力\n那我们直接就开始喽\n这里是本期教程的所有资源链接\n我会放在视频下方供大家自行跳转\n同时我也会将所有文件打包到我的社群当中\n好的 我们首先开始第一步\n第一步我们要下载Ollama\n我们复制链接粘贴到浏览器的地址框当中\n然后选择自己对应的系统\n如果你是Windows\n就选择Windows复制链接\n然后我们右键开始菜单\n找到终端（管理员）\n打开\n在终端窗口当中\n我们右键鼠标粘贴这条命令\n点击回车\n它就会自动在后台给我们进行下载Ollama\n我们稍等它下载完毕\n现在它已经开始安装了\n好的 它现在已经提示安装完成了\n我们继续来到视频下方简介\n这里我给大家推荐了不同的电脑配置所适合的模型\n想要查看您电脑的配置的话呢\n可以打开文件资源管理器\n找到此电脑 右键 属性\n然后就可以看到您电脑的使用情况\n我就以这台12GB内存 8GB显存的电脑为例\n供大家演示\n如果你只有4GB内存的话\n你同样是可以安装的\n这些模型的下载代码就在这里\nollama run 后面的就是模型它的名称了\n当然越往后\n这个模型就越强\n对于配置的要求呢\n也就越高\n当然这里要注意的是\n针对于16GB内存的用户\n你有两个选择\n如果你比较偏向于综合技能的话\n那么就使用Qwen3的8B模型\n如果你专注于写代码的话\n那你还可以尝试一下DeepSeek R1的8B模型\n如果你有24GB内存或者更高的话\n那么你就可以选择Qwen3.6系列模型\n当然Qwen3.6系列模型\n它是分普通芯片和苹果的M芯片的\n如果你是Mac电脑\n并且使用的是苹果的M芯片\n就复制M芯片所对应的代码进行运行\n当然针对于32GB内存的用户\n如果你专注于代码的话\n那么你同样可以使用Qwen3-coder模型\n它是一个非常强大的专注于代码开发的模型\n由于我的电脑内存为12GB\n所以我下载Qwen3:4B的这个模型\n我们复制这条代码\n然后我们右键开始菜单 终端（管理员）\n直接粘贴到终端当中回车运行\n它就会自动下载模型\n然后在下载过程中\n我发现一个非常有趣的现象\n就是说下载到后面的时候\n它会越下越慢\n这时候你就不要干等着了\n你就直接关闭终端\n如果你是macOS用户\n你也同样这样操作\n然后你再重新打开终端\n再重新输入代码回车运行\n然后它就会直接接着你刚才的进度继续下载\n并且速度也会提上来\n好的\n现在就已经安装成功了\n我们现在打开开始菜单\n我们就可以找到我们刚才安装的Ollama软件\n我们将它打开\n我们点击New Chat\n在右边这里可以选择模型\n这些都是它内置的一些模型\n只不过我们选择我们最下面\n刚才本地部署好的Qwen3:4B模型\n然后我们可以发送一条信息测试一下\n只不过我们稍等\nOK\n它已经给了回复\n如果你只是想和它聊聊天\n你直接用Ollama这个软件是没有问题的\n但是你如果有更加进阶的需求\n比如说你想让它控制电脑\n直接帮你完成项目的话\n那么这个Ollama的软件\n它的功能就特别有限了\n所以我们就需要安装另外一款\n提供图形化聊天界面的软件\n它的名字叫做Cherry Studio\n我们打开它的官网\n然后它这里就会有很多版本的客户端下载\n我这边更推荐大家的是\n选择线路3进行下载\n非常快速就能下载完毕\n点击保留\n然后我们点击打开文件\n点击运行\n这里根据自己的情况选择\n我们点击继续\n继续\n好的我们点击完成\n它会自动打开\n我们在这里点击允许\n当然我们打开软件之后\n首次打开它会提示要求登录\n我们可以点击右上角的跳过\n然后我们进入软件之后\n如果界面是英文的话\n可以点击右上角的设置\n找到通用设置\n点击\n这边有语言选项\n我们选择中文\n然后我们还有一些东西需要设置\n我们点击左侧的模型服务\n找到Ollama\n首先打开开关\n然后呢\n在下面的模型这里\n我们点击获取模型列表\n然后点击这个我们刚才部署的\nQwen3模型的加号\n就已经添加成功了\n然后API密钥留空\n因为我们是本地部署\n其他的呢\n都不需要进行修改了\n然后我们直接回到首页\n然后我们可以尝试给它发一条消息\n不出所料\n它会提示发生了一个错误\n因为我们没有选择我们刚才部署的模型\n他会默认使用他Cherry AI内置的模型\n但是这个模型呢\n它是需要你登录账户才能够使用的\n我们选择我们刚才部署的Ollama模型\n然后呢\n我们再输入hello\nOK\n他开始思考了\nWhat\n这感觉有点......\n这感觉有点奇怪啊\n我从来没有提到过\n我想要一个3D房子\n这有问题\n这有问题\n这有问题\n我直接用中文跟他聊呢\nOK\n这次他正常了\nOK\n这就是他最终的答复了\n好的\n那我们如果想让他完成整个项目\n或者是操控我们的电脑的话\n其实这还不够\n其实你单单在这个里面\n他是没有这个权限的\n你需要到软件上方右侧的智能体当中进行配置\n我们点击加号 智能体\n然后名字随便命名\n模型就选择我们刚才本地部署的模型\n当然他这个智能体要求你下载这个Git-Bash\n所以呢\n我们回到视频下方链接打开Git-Bash的下载链接\n然后选择自己对应系统版本的Git-Bash\n比如说我是Windows\n然后继续下载\n然后选择自己的对应架构\n我们点击打开文件\n选择运行\n点击继续\n这一路会让你设置很多东西\n但是你全部点继续就可以了\n然后安装完成之后呢\n我们点击完成\n然后呢\n你需要找到它的路径\n我们打开开始菜单\n我们右键Git Bash\n然后打开本地文件路径\n打开本地文件之后呢\n它还是一个快捷方式\n我们继续右键\n继续打开文件的根目录\n然后我们就找到了这个文件\n我们复制它上面的目录\n复制\n然后我们点击选择\n在上面粘贴\n然后呢\n我们选择git-bash.exe\n点击打开\n然后呢\n下面权限设置\n我这里就选择全自动\n可以执行任何操作\n点击添加\nOK\n现在我们的AI助手\n就已经添加成功了\n我们继续发一个问候\n其实如果你使用这一类模型的话\n它是深度思考类的模型\n所以你不管问任何问题\n它都会思考一小会儿\n然后呢\n因为这个是智能体\n所以你可以直接上传你的工程\n让它来自动帮你完成\n最后当软件彻底关闭之后\n你想用Cherry Studio\n来运行您的本地模型的时候\n您需要同时打开Cherry Studio\n和Ollama这两款软件\n才可以使它们之间连接起来\n那好的\n以上就是本期视频的全部内容了\n所有文件我都会本地打包到我的社群当中\n如果你有任何问题\n欢迎加入我的社群\n我会亲自为您答疑解惑\n如果您有任何建议的话\n也欢迎加入\n与我一起交流\n如果这期视频对你有帮助的话\n别忘了点赞三连投币转发关注\n那我们下期再见\n谢谢",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1PtgY68Eu7",
+  "published_at": "1784877419",
+  "fetched_at": "2026-08-07T20:21:17+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 本地部署学习图谱\n\n## 本地部署全流程\n```mermaid\nflowchart TD\n    S[\"开始\"] --> C[\"检查电脑配置\"]\n    C --> D[\"下载 Ollama 安装包\"]\n    D --> I[\"在管理员终端粘贴并回车安装 Ollama\"]\n    I --> M[\"选择并下载适配模型\"]\n    M --> DL[\"模型下载过程\"]\n    DL --> CS[\"安装 Cherry Studio\"]\n    CS --> L[\"设置 Cherry Studio 界面语言为中文\"]\n    L --> LS[\"在 Cherry Studio 中打开模型服务并链接 Ollama\"]\n    LS --> AM[\"添加已下载的本地模型\"]\n    AM --> AI[\"添加智能体并关联本地模型\"]\n    AI --> GB[\"配置 Git‑Bash 路径\"]\n    GB --> P[\"设置 Git‑Bash 权限为全自动\"]\n    P --> F[\"完成部署，可开始使用\"]\n```\n\n## 模型选择依据\n```mermaid\nflowchart TD\n    R4[\"4 GB 内存\"] -->|可安装| M4[\"Qwen3‑4B\"]\n    R12[\"12 GB 内存\"] -->|可安装| M4\n    R16[\"16 GB 内存\"] --> G[\"综合技能需求\"]\n    R16 --> C[\"编码需求\"]\n    G --> Q8[\"Qwen3‑8B\"]\n    C --> D8[\"DeepSeek‑R1‑8B\"]\n    R24[\"24 GB+ 内存\"] --> Q36[\"Qwen3.6 系列\"]\n    R32[\"32 GB 内存\"] --> C2[\"编码需求\"]\n    C2 --> QC[\"Qwen3‑coder\"]\n    M[\"平台\"] -->|Windows| W[\"使用对应 Windows 版 Ollama\"]\n    M -->|macOS M 芯片| MAC[\"使用 M 芯片对应代码\"]\n    Q8 -->|适用于| G\n    D8 -->|适用于| C\n    Q36 -->|适用于| R24\n    QC -->|适用于| R32\n```\n\n## 模型下载与中断处理\n```mermaid\nflowchart TD\n    DS[\"开始下载模型\"] --> SP[\"下载进度变慢\"]\n    SP --> CT[\"关闭终端\"]\n    CT --> OT[\"重新打开终端\"]\n    OT --> RC[\"重新运行下载命令\"]\n    RC --> CD[\"继续下载\"]\n    CD --> SP2[\"下载速度提升\"]\n    SP2 --> FD[\"完成模型下载\"]\n```\n\n## Cherry Studio 使用限制与扩展\n```mermaid\nflowchart TD\n    CS[\"Cherry Studio 基础聊天功能\"] --> LIM[\"功能有限，无法控制电脑\"]\n    LIM --> REQ[\"需要高级需求时安装 Cherry Studio\"]\n    REQ --> CFG[\"打开模型服务并链接 Ollama\"]\n    CFG --> AI[\"添加智能体\"]\n    AI --> GIT[\"下载并配置 Git‑Bash\"]\n    GIT --> PERM[\"设置 Git‑Bash 权限为全自动\"]\n    PERM --> AUTO[\"实现项目自动化与代码生成\"]\n```",
+      "diagrams": [
+        {
+          "title": "本地部署全流程",
+          "code": "flowchart TD\n    S[\"开始\"] --> C[\"检查电脑配置\"]\n    C --> D[\"下载 Ollama 安装包\"]\n    D --> I[\"在管理员终端粘贴并回车安装 Ollama\"]\n    I --> M[\"选择并下载适配模型\"]\n    M --> DL[\"模型下载过程\"]\n    DL --> CS[\"安装 Cherry Studio\"]\n    CS --> L[\"设置 Cherry Studio 界面语言为中文\"]\n    L --> LS[\"在 Cherry Studio 中打开模型服务并链接 Ollama\"]\n    LS --> AM[\"添加已下载的本地模型\"]\n    AM --> AI[\"添加智能体并关联本地模型\"]\n    AI --> GB[\"配置 Git‑Bash 路径\"]\n    GB --> P[\"设置 Git‑Bash 权限为全自动\"]\n    P --> F[\"完成部署，可开始使用\"]"
+        },
+        {
+          "title": "模型选择依据",
+          "code": "flowchart TD\n    R4[\"4 GB 内存\"] -->|可安装| M4[\"Qwen3‑4B\"]\n    R12[\"12 GB 内存\"] -->|可安装| M4\n    R16[\"16 GB 内存\"] --> G[\"综合技能需求\"]\n    R16 --> C[\"编码需求\"]\n    G --> Q8[\"Qwen3‑8B\"]\n    C --> D8[\"DeepSeek‑R1‑8B\"]\n    R24[\"24 GB+ 内存\"] --> Q36[\"Qwen3.6 系列\"]\n    R32[\"32 GB 内存\"] --> C2[\"编码需求\"]\n    C2 --> QC[\"Qwen3‑coder\"]\n    M[\"平台\"] -->|Windows| W[\"使用对应 Windows 版 Ollama\"]\n    M -->|macOS M 芯片| MAC[\"使用 M 芯片对应代码\"]\n    Q8 -->|适用于| G\n    D8 -->|适用于| C\n    Q36 -->|适用于| R24\n    QC -->|适用于| R32"
+        },
+        {
+          "title": "模型下载与中断处理",
+          "code": "flowchart TD\n    DS[\"开始下载模型\"] --> SP[\"下载进度变慢\"]\n    SP --> CT[\"关闭终端\"]\n    CT --> OT[\"重新打开终端\"]\n    OT --> RC[\"重新运行下载命令\"]\n    RC --> CD[\"继续下载\"]\n    CD --> SP2[\"下载速度提升\"]\n    SP2 --> FD[\"完成模型下载\"]"
+        },
+        {
+          "title": "Cherry Studio 使用限制与扩展",
+          "code": "flowchart TD\n    CS[\"Cherry Studio 基础聊天功能\"] --> LIM[\"功能有限，无法控制电脑\"]\n    LIM --> REQ[\"需要高级需求时安装 Cherry Studio\"]\n    REQ --> CFG[\"打开模型服务并链接 Ollama\"]\n    CFG --> AI[\"添加智能体\"]\n    AI --> GIT[\"下载并配置 Git‑Bash\"]\n    GIT --> PERM[\"设置 Git‑Bash 权限为全自动\"]\n    PERM --> AUTO[\"实现项目自动化与代码生成\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T20:33:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 本地部署学习图谱\n\n## 本地部署全流程\n```mermaid\nflowchart TD\n    S[\"开始\"] --> C[\"检查电脑配置\"]\n    C --> D[\"下载 Ollama 安装包\"]\n    D --> I[\"在管理员终端粘贴并回车安装 Ollama\"]\n    I --> M[\"选择并下载适配模型\"]\n    M --> DL[\"模型下载过程\"]\n    DL --> CS[\"安装 Cherry Studio\"]\n    CS --> L[\"设置 Cherry Studio 界面语言为中文\"]\n    L --> LS[\"在 Cherry Studio 中打开模型服务并链接 Ollama\"]\n    LS --> AM[\"添加已下载的本地模型\"]\n    AM --> AI[\"添加智能体并关联本地模型\"]\n    AI --> GB[\"配置 Git‑Bash 路径\"]\n    GB --> P[\"设置 Git‑Bash 权限为全自动\"]\n    P --> F[\"完成部署，可开始使用\"]\n```\n\n## 模型选择依据\n```mermaid\nflowchart TD\n    R4[\"4 GB 内存\"] -->|可安装| M4[\"Qwen3‑4B\"]\n    R12[\"12 GB 内存\"] -->|可安装| M4\n    R16[\"16 GB 内存\"] --> G[\"综合技能需求\"]\n    R16 --> C[\"编码需求\"]\n    G --> Q8[\"Qwen3‑8B\"]\n    C --> D8[\"DeepSeek‑R1‑8B\"]\n    R24[\"24 GB+ 内存\"] --> Q36[\"Qwen3.6 系列\"]\n    R32[\"32 GB 内存\"] --> C2[\"编码需求\"]\n    C2 --> QC[\"Qwen3‑coder\"]\n    M[\"平台\"] -->|Windows| W[\"使用对应 Windows 版 Ollama\"]\n    M -->|macOS M 芯片| MAC[\"使用 M 芯片对应代码\"]\n    Q8 -->|适用于| G\n    D8 -->|适用于| C\n    Q36 -->|适用于| R24\n    QC -->|适用于| R32\n```\n\n## 模型下载与中断处理\n```mermaid\nflowchart TD\n    DS[\"开始下载模型\"] --> SP[\"下载进度变慢\"]\n    SP --> CT[\"关闭终端\"]\n    CT --> OT[\"重新打开终端\"]\n    OT --> RC[\"重新运行下载命令\"]\n    RC --> CD[\"继续下载\"]\n    CD --> SP2[\"下载速度提升\"]\n    SP2 --> FD[\"完成模型下载\"]\n```\n\n## Cherry Studio 使用限制与扩展\n```mermaid\nflowchart TD\n    CS[\"Cherry Studio 基础聊天功能\"] --> LIM[\"功能有限，无法控制电脑\"]\n    LIM --> REQ[\"需要高级需求时安装 Cherry Studio\"]\n    REQ --> CFG[\"打开模型服务并链接 Ollama\"]\n    CFG --> AI[\"添加智能体\"]\n    AI --> GIT[\"下载并配置 Git‑Bash\"]\n    GIT --> PERM[\"设置 Git‑Bash 权限为全自动\"]\n    PERM --> AUTO[\"实现项目自动化与代码生成\"]\n```",
+  "diagrams": [
+    {
+      "title": "本地部署全流程",
+      "code": "flowchart TD\n    S[\"开始\"] --> C[\"检查电脑配置\"]\n    C --> D[\"下载 Ollama 安装包\"]\n    D --> I[\"在管理员终端粘贴并回车安装 Ollama\"]\n    I --> M[\"选择并下载适配模型\"]\n    M --> DL[\"模型下载过程\"]\n    DL --> CS[\"安装 Cherry Studio\"]\n    CS --> L[\"设置 Cherry Studio 界面语言为中文\"]\n    L --> LS[\"在 Cherry Studio 中打开模型服务并链接 Ollama\"]\n    LS --> AM[\"添加已下载的本地模型\"]\n    AM --> AI[\"添加智能体并关联本地模型\"]\n    AI --> GB[\"配置 Git‑Bash 路径\"]\n    GB --> P[\"设置 Git‑Bash 权限为全自动\"]\n    P --> F[\"完成部署，可开始使用\"]"
+    },
+    {
+      "title": "模型选择依据",
+      "code": "flowchart TD\n    R4[\"4 GB 内存\"] -->|可安装| M4[\"Qwen3‑4B\"]\n    R12[\"12 GB 内存\"] -->|可安装| M4\n    R16[\"16 GB 内存\"] --> G[\"综合技能需求\"]\n    R16 --> C[\"编码需求\"]\n    G --> Q8[\"Qwen3‑8B\"]\n    C --> D8[\"DeepSeek‑R1‑8B\"]\n    R24[\"24 GB+ 内存\"] --> Q36[\"Qwen3.6 系列\"]\n    R32[\"32 GB 内存\"] --> C2[\"编码需求\"]\n    C2 --> QC[\"Qwen3‑coder\"]\n    M[\"平台\"] -->|Windows| W[\"使用对应 Windows 版 Ollama\"]\n    M -->|macOS M 芯片| MAC[\"使用 M 芯片对应代码\"]\n    Q8 -->|适用于| G\n    D8 -->|适用于| C\n    Q36 -->|适用于| R24\n    QC -->|适用于| R32"
+    },
+    {
+      "title": "模型下载与中断处理",
+      "code": "flowchart TD\n    DS[\"开始下载模型\"] --> SP[\"下载进度变慢\"]\n    SP --> CT[\"关闭终端\"]\n    CT --> OT[\"重新打开终端\"]\n    OT --> RC[\"重新运行下载命令\"]\n    RC --> CD[\"继续下载\"]\n    CD --> SP2[\"下载速度提升\"]\n    SP2 --> FD[\"完成模型下载\"]"
+    },
+    {
+      "title": "Cherry Studio 使用限制与扩展",
+      "code": "flowchart TD\n    CS[\"Cherry Studio 基础聊天功能\"] --> LIM[\"功能有限，无法控制电脑\"]\n    LIM --> REQ[\"需要高级需求时安装 Cherry Studio\"]\n    REQ --> CFG[\"打开模型服务并链接 Ollama\"]\n    CFG --> AI[\"添加智能体\"]\n    AI --> GIT[\"下载并配置 Git‑Bash\"]\n    GIT --> PERM[\"设置 Git‑Bash 权限为全自动\"]\n    PERM --> AUTO[\"实现项目自动化与代码生成\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T20:33:05+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV18auc6kETG",
+  "title": "给纯文本大模型装一双眼睛!DeepSeek 网页的识图模式,被我做成了 CLI",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 404,
+  "text": "你的大模型看不懂图片\ndeep seek API没有视觉能力\n今天介绍一个工具\n让任何纯文本模型都能看图\ndeep seek官方API只支持纯文本\n但它网页版隐藏着一个真正的识图模式\n能理解图片内容\n不是简单的文字提取\nDsv\n一个命令行工具自动驱动浏览器进入识图模式\n把图片变成文字描述\n任何AI都能直接调用\n第一零安装\n不需要下载几百兆的浏览器内核\n直接用系统内置浏览器驱动开箱即用\n第二不破解反爬验证\ndeep sk前端会自动计算工作量\n证明我们不需要逆向它的加密算法\n安全稳定\n第三登录验证码全自动用open CV图像分析描解\n点击图中最小的黄色六棱柱\n这类数美验证无需人工实测效果\n识别动物品种\n认出照片里的人物\n分析K线形态\n理解几何图形\n每次识图完成自动删除会话\n不留垃圾项目\n已开源搜索dsv deep sick vision c y\n给纯文本大模型加上一双眼睛\n如果帮到你\n记得点个star",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18auc6kETG",
+  "published_at": "1785837767",
+  "fetched_at": "2026-08-07T03:32:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 视觉模式工具知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"模型缺乏视觉能力\"] --> A2[\"DeepSeek API 仅文本\"]\n    A2 --> A3[\"网页版隐藏识图模式\"]\n    A3 --> A4[\"DSV CLI 工具\"]\n    A4 --> A5[\"系统内置浏览器驱动\"]\n    A4 --> A6[\"图片转文字描述\"]\n    A6 --> A7[\"任意 AI 可直接调用\"]\n```\n- A1: [BV18auc6kETG P1 00:00]  \n- A2: [BV18auc6kETG P1 00:01]  \n- A3: [BV18auc6kETG P1 00:12]  \n- A4: [BV18auc6kETG P1 00:21]  \n- A5: [BV18auc6kETG P1 00:34]  \n- A6: [BV18auc6kETG P1 00:25]  \n- A7: [BV18auc6kETG P1 00:26]  \n\n## 安装与安全特性\n```mermaid\nflowchart TD\n    B1[\"零安装\"] --> B2[\"无需下载浏览器内核\"]\n    B2 --> B3[\"使用系统浏览器驱动\"]\n    B4[\"不破解反爬验证\"] --> B5[\"前端自动计算工作量\"]\n    B5 --> B6[\"无需逆向加密算法\"]\n    B6 --> B7[\"安全稳定\"]\n    B8[\"验证码全自动 OpenCV 识别\"] --> B9[\"点击最小黄色六棱柱\"]\n    B9 --> B10[\"无需人工实测\"]\n```\n- B1: [BV18auc6kETG P1 00:30]  \n- B2: [BV18auc6kETG P1 00:32]  \n- B3: [BV18auc6kETG P1 00:34]  \n- B4: [BV18auc6kETG P1 00:39]  \n- B5: [BV18auc6kETG P1 00:41]  \n- B6: [BV18auc6kETG P1 00:44]  \n- B7: [BV18auc6kETG P1 00:47]  \n- B8: [BV18auc6kETG P1 00:49]  \n- B9: [BV18auc6kETG P1 00:55]  \n- B10: [BV18auc6kETG P1 00:57]  \n\n## 识图能力与会话清理\n```mermaid\nflowchart TD\n    C1[\"识别动物品种\"] --> C4[\"自动删除会话\"]\n    C2[\"识别人物\"] --> C4\n    C3[\"分析 K 线形态\"] --> C4\n    C5[\"理解几何图形\"] --> C4\n    C4 --> C6[\"不留垃圾项目\"]\n```\n- C1: [BV18auc6kETG P1 01:02]  \n- C2: [BV18auc6kETG P1 01:03]  \n- C3: [BV18auc6kETG P1 01:05]  \n- C5: [BV18auc6kETG P1 01:06]  \n- C4: [BV18auc6kETG P1 01:08]  \n- C6: [BV18auc6kETG P1 01:11]  ",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"模型缺乏视觉能力\"] --> A2[\"DeepSeek API 仅文本\"]\n    A2 --> A3[\"网页版隐藏识图模式\"]\n    A3 --> A4[\"DSV CLI 工具\"]\n    A4 --> A5[\"系统内置浏览器驱动\"]\n    A4 --> A6[\"图片转文字描述\"]\n    A6 --> A7[\"任意 AI 可直接调用\"]"
+        },
+        {
+          "title": "安装与安全特性",
+          "code": "flowchart TD\n    B1[\"零安装\"] --> B2[\"无需下载浏览器内核\"]\n    B2 --> B3[\"使用系统浏览器驱动\"]\n    B4[\"不破解反爬验证\"] --> B5[\"前端自动计算工作量\"]\n    B5 --> B6[\"无需逆向加密算法\"]\n    B6 --> B7[\"安全稳定\"]\n    B8[\"验证码全自动 OpenCV 识别\"] --> B9[\"点击最小黄色六棱柱\"]\n    B9 --> B10[\"无需人工实测\"]"
+        },
+        {
+          "title": "识图能力与会话清理",
+          "code": "flowchart TD\n    C1[\"识别动物品种\"] --> C4[\"自动删除会话\"]\n    C2[\"识别人物\"] --> C4\n    C3[\"分析 K 线形态\"] --> C4\n    C5[\"理解几何图形\"] --> C4\n    C4 --> C6[\"不留垃圾项目\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T03:32:17+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 视觉模式工具知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"模型缺乏视觉能力\"] --> A2[\"DeepSeek API 仅文本\"]\n    A2 --> A3[\"网页版隐藏识图模式\"]\n    A3 --> A4[\"DSV CLI 工具\"]\n    A4 --> A5[\"系统内置浏览器驱动\"]\n    A4 --> A6[\"图片转文字描述\"]\n    A6 --> A7[\"任意 AI 可直接调用\"]\n```\n- A1: [BV18auc6kETG P1 00:00]  \n- A2: [BV18auc6kETG P1 00:01]  \n- A3: [BV18auc6kETG P1 00:12]  \n- A4: [BV18auc6kETG P1 00:21]  \n- A5: [BV18auc6kETG P1 00:34]  \n- A6: [BV18auc6kETG P1 00:25]  \n- A7: [BV18auc6kETG P1 00:26]  \n\n## 安装与安全特性\n```mermaid\nflowchart TD\n    B1[\"零安装\"] --> B2[\"无需下载浏览器内核\"]\n    B2 --> B3[\"使用系统浏览器驱动\"]\n    B4[\"不破解反爬验证\"] --> B5[\"前端自动计算工作量\"]\n    B5 --> B6[\"无需逆向加密算法\"]\n    B6 --> B7[\"安全稳定\"]\n    B8[\"验证码全自动 OpenCV 识别\"] --> B9[\"点击最小黄色六棱柱\"]\n    B9 --> B10[\"无需人工实测\"]\n```\n- B1: [BV18auc6kETG P1 00:30]  \n- B2: [BV18auc6kETG P1 00:32]  \n- B3: [BV18auc6kETG P1 00:34]  \n- B4: [BV18auc6kETG P1 00:39]  \n- B5: [BV18auc6kETG P1 00:41]  \n- B6: [BV18auc6kETG P1 00:44]  \n- B7: [BV18auc6kETG P1 00:47]  \n- B8: [BV18auc6kETG P1 00:49]  \n- B9: [BV18auc6kETG P1 00:55]  \n- B10: [BV18auc6kETG P1 00:57]  \n\n## 识图能力与会话清理\n```mermaid\nflowchart TD\n    C1[\"识别动物品种\"] --> C4[\"自动删除会话\"]\n    C2[\"识别人物\"] --> C4\n    C3[\"分析 K 线形态\"] --> C4\n    C5[\"理解几何图形\"] --> C4\n    C4 --> C6[\"不留垃圾项目\"]\n```\n- C1: [BV18auc6kETG P1 01:02]  \n- C2: [BV18auc6kETG P1 01:03]  \n- C3: [BV18auc6kETG P1 01:05]  \n- C5: [BV18auc6kETG P1 01:06]  \n- C4: [BV18auc6kETG P1 01:08]  \n- C6: [BV18auc6kETG P1 01:11]  ",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"模型缺乏视觉能力\"] --> A2[\"DeepSeek API 仅文本\"]\n    A2 --> A3[\"网页版隐藏识图模式\"]\n    A3 --> A4[\"DSV CLI 工具\"]\n    A4 --> A5[\"系统内置浏览器驱动\"]\n    A4 --> A6[\"图片转文字描述\"]\n    A6 --> A7[\"任意 AI 可直接调用\"]"
+    },
+    {
+      "title": "安装与安全特性",
+      "code": "flowchart TD\n    B1[\"零安装\"] --> B2[\"无需下载浏览器内核\"]\n    B2 --> B3[\"使用系统浏览器驱动\"]\n    B4[\"不破解反爬验证\"] --> B5[\"前端自动计算工作量\"]\n    B5 --> B6[\"无需逆向加密算法\"]\n    B6 --> B7[\"安全稳定\"]\n    B8[\"验证码全自动 OpenCV 识别\"] --> B9[\"点击最小黄色六棱柱\"]\n    B9 --> B10[\"无需人工实测\"]"
+    },
+    {
+      "title": "识图能力与会话清理",
+      "code": "flowchart TD\n    C1[\"识别动物品种\"] --> C4[\"自动删除会话\"]\n    C2[\"识别人物\"] --> C4\n    C3[\"分析 K 线形态\"] --> C4\n    C5[\"理解几何图形\"] --> C4\n    C4 --> C6[\"不留垃圾项目\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:32:17+00:00"
+}

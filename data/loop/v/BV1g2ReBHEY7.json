@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1g2ReBHEY7",
+  "title": "我给 DeepSeek 做了一套专属武装，它更完美了！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2242,
+  "text": "我给deep sick v4量身定做了一套衣服\n现在它不仅完美适配max思考模式\n还能让纯文本的大号模型也拥有视觉能力\n另外操作电脑编辑文件\n连接社交平台\n这些都不在话下\n这只小金鱼发布已经一周多了\n网友实测它重回开原第一\n甚至能跟贵几十倍的对手掰掰手腕\n但随之而来的是争论\n这个天才好像有点偏科\n视觉和聪明\n二选一\nAPI接入频频报错\n配置麻烦\n这好比你可以花500块买一个新款IPHONE\n想要正常使用\n却得折腾一番\n所以过去一周\n我给deep seek做了超多的优化\n补齐了短板\nNo one knows deep seek better than\n这个视频就给大家分享分享\n我这几天都做了什么\n也许你还记得去年梁老板手动做空美股\nDeep sick r\n一能打出那个声量\n思考模式是最大的功臣\nV4把这个能力又往前推了一步\n新的max思考模式变得更聪明了\n可是打开官网并没有这个开关要用\n只能接API\n但是API的思考格式特别难伺候\ncloud code龙虾动不动就抛400错误\n社区里一堆人在问怎么回事\n原因在于开了思考模式之后\n每轮对话都要把上一次的思考过程\n原封不动发回去\n哪怕是空的也得发\n但大部分客户端会把空的直接扔掉\n导致报错对话断掉\n有人测过复现概率最高能到59%\n这些问题\n我这几天在open henacle里基本都处理好了\n现在接上API就能直接用上最聪明的小金鱼\n这次deep sick官方主打的另一个更新是100万的\n长上下文\n就算聊很久\n他都不会忘记你说了什么\n不过上下文一长\n钱就花的更快了\n业界普遍会用一个技术叫kv cash\n原理很简单\n前文不变的部分不需要重新计算\n一般缓存价格不到正常输入的1/5\n而deep sick做的更狠\n缓存命中只要原价的1%\n几乎是白送了\n所以我也对HANEO做了缓存优化\n把不怎么变的系统指令放前面\n容易变的时间记忆放后面\n保证命中率\n配合deep sick使用效果最佳\n开头说了\ndeep sick v4发布之初\n视觉是最大的短板\n在大家人均多模态能看图的今天\n确实影响榜一这个名号\n前几天我为了让deep sk看见\n给他开发了一个辅助视觉的功能\n原理是用别的多模态模型视图\n再把结果喂给deep sick pro去推理\n调整几天\n终于稳定跑起来了\n思考链和输出结果都很像原生的多模态模型\n结果官方直接上了多模态版本\n还发了个论文\n那我这周岂不是白干了吗\n并没有白干\n而且很有意义\n官方的多模态走的是小号模型\n看图和聪明只能二选一\n而在HANNA克里pro也能借助外置视觉看图\n而且我读了那篇论文之后\n唠叨了一个很好的思路\n很多外接视觉方案\n本质上是先把图片翻译成文字\n再去推理\n说左边那个中间偏上\n说着说着自己都指不清了\n论文的做法是把对象和位置变成坐标锚点\n让模型指着坐标去想\n我就把这个思路用到了外接视觉方案里\n让识图模型按坐标格式输出\n关键区域再交给pro推理\n空间关系理得更清楚\n这也是我觉得开源社区最有价值的地方\n成果一发布\n立刻就能给别人新的工程启发\n这套方案也不只是给deep sick\n用任何没有视觉能力的模型\n接上就能看图\n到这里\n思考模式拉满了百万\n上下文也跑通了\n视觉补上了这只小金鱼\n在open hanna o平台上基本没有短板了\n那问题来了\n旧的模型要怎么处理呢\n爱怎么处理\n怎么处理\n哼说到这儿\n我也想跟大家分享一下\nOpen henacle\n这个软件本身除了给deep sk扩展性能之外\n我觉得它可能是东半球最适合中国宝宝的AI agent\n在开发过程中\n我发现一个AI助手对环境的感知\n会影响运行的结果\n他得知道自己是谁\n用户是谁\n最近在忙什么\n身边有谁可以帮忙\n不然就像一个高材生被空投到陌生的办公室\n能力再强也手忙脚乱\n所以我在HENACLE里做了花名册和记忆系统\n在这个平台上agent知道彼此的存在\n比如小花知道毛毛是一个擅长创意发散\n用MIO模型的助手\n他就会在审稿阶段主动寻求毛毛的帮助\n而非擅长第一性原理与数学\n用GPT模型的名\n这能让模型潜力发挥到最大\n极大减少幻觉产生\n当然啦\n如果你创建了自定义助手\n那么系统中别的agent也会立刻知道它的存在\n更有意思的是\n你甚至还可以拉个群\n让他们互相聊天\nHere is one\n我的整个青春期都在成都度过\n那个地方一年有2/3的时间都是阴天\n所以我喜欢斑驳树荫间透过的丁达尔光\n喜欢春天窗台前的盗铃纸\n笔记本的墨香与温润\n而这些触感都随着数字化\n消失在我们的生活中了\n但有一天我偶然发现\n这几年\n已经有不少人尝试做这种有阳光感的网页了\n我想把那个夏天的青草味和蝉鸣搬到屏幕上来\n所以我也给哈娜口做了晴天模式\n大家试试看吧\nCould you please hear my voice that hungers for\n做软件开发的时候\n难免会遇到一个矛盾\n那就是无法兼顾易用性与专业性\n而我觉得理想的AI助手\n应该兼具温暖的人文情怀\n和钢铁一样的工作能力\n下限和上限都应该保证\n所以小花在拥有绝大多数龙虾\nhermes agent的功能的同时\n不需要自己去配置复杂的命令行\n此外对于有一些动手能力的朋友\n我也做了一套健全的插件系统\n让它完全可以按你自己的想法定制化\n已经有不少小伙伴基于这个软件做了很多\n很有意思\n很棒的东西\n我看到的时候特别开心\n完全没想过他会被这样用\n或许这就是开源社区的魅力\n只是我第一次感受到",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1g2ReBHEY7",
+  "published_at": "1777891580",
+  "fetched_at": "2026-08-06T23:02:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 与 OpenHenacle 知识图谱\n\n## 总体能力概览\n```mermaid\nflowchart TD\n    V4[\"DeepSeek V4 基础模型\"]\n    MAX[\"Max 思考模式\"]\n    VIS[\"视觉能力（原短板）\"]\n    TEXT[\"纯文本大模型\"]\n    API[\"API 接入\"]\n    ERR[\"频繁报错 / 400\"]\n    CONF[\"配置复杂\"]\n    OPT[\"作者优化（补齐短板）\"]\n    IMP[\"性能提升：更聪明 + 视觉\"]\n\n    V4 --> MAX\n    V4 --> VIS\n    V4 --> TEXT\n    V4 --> API\n    MAX --> CONF\n    API --> ERR\n    CONF --> ERR\n    OPT --> V4\n    OPT --> IMP\n    IMP --> MAX\n    IMP --> VIS\n```\n\n## API 交互问题与解决方案\n```mermaid\nflowchart TD\n    EN_MAX[\"开启 Max 思考模式\"]\n    PREV[\"每轮需发送上一次思考过程\"]\n    SEND[\"原封不动回传（即使为空）\"]\n    DROP[\"多数客户端直接丢弃空内容\"]\n    ERR400[\"导致 400 错误，对话中断\"]\n    REPRO[\"复现概率最高约 59%\"]\n    FIX[\"作者在 OpenHenacle 中修复\"]\n    DIRECT[\"现在可直接使用 API\"]\n    SMART[\"最聪明的小金鱼模型可用\"]\n\n    EN_MAX --> PREV\n    PREV --> SEND\n    SEND --> DROP\n    DROP --> ERR400\n    ERR400 --> REPRO\n    FIX --> DIRECT\n    DIRECT --> SMART\n    EN_MAX --> FIX\n```\n\n## 外接视觉方案与社区价值\n```mermaid\nflowchart TD\n    VIS_SHORT[\"视觉能力缺失\"]\n    AUX_VIS[\"辅助视觉功能（作者实现）\"]\n    OTHER_MM[\"其他多模态模型\"]\n    IMG2TXT[\"图片转文字\"]\n    COORD[\"文字转坐标锚点\"]\n    FEED[\"坐标喂给 DeepSeek Pro 推理\"]\n    REASON[\"思考链与输出类似原生多模态\"]\n    OFFICIAL[\"官方多模态版本（小号模型）\"]\n    LIMIT[\"看图与聪明二选一的限制\"]\n    COORD_ANCHOR[\"论文：对象位置坐标锚点\"]\n    SPATIAL[\"空间关系更清晰\"]\n    COMMUNITY[\"开源社区价值：方案可复用\"]\n\n    VIS_SHORT --> AUX_VIS\n    AUX_VIS --> OTHER_MM\n    OTHER_MM --> IMG2TXT\n    IMG2TXT --> COORD\n    COORD --> FEED\n    FEED --> REASON\n    REASON --> OFFICIAL\n    OFFICIAL --> LIMIT\n    COORD --> COORD_ANCHOR\n    COORD_ANCHOR --> SPATIAL\n    SPATIAL --> COMMUNITY\n    AUX_VIS --> COMMUNITY\n```\n\n## OpenHenacle 代理人生态系统\n```mermaid\nflowchart TD\n    OHA[\"OpenHenacle 平台\"]\n    ROSTER[\"花名册（代理人列表）\"]\n    MEMORY[\"记忆系统\"]\n    SELF_KNOW[\"代理人知道自己是谁\"]\n    USER_KNOW[\"代理人知道用户信息\"]\n    CONTEXT[\"感知当前任务、环境、协作者\"]\n    PLUGIN[\"插件系统（自定义功能）\"]\n    CUSTOM[\"创建自定义助手\"]\n    COMM[\"代理人间即时通信\"]\n    ROLE[\"角色示例：小花、毛毛\"]\n    ASSIST[\"基于角色分配任务（创意/数学）\"]\n    HALLUC[\"降低幻觉产生\"]\n    HUMAN[\"兼具人文情怀\"]\n    STEEL[\"具备钢铁般工作能力\"]\n\n    OHA --> ROSTER\n    OHA --> MEMORY\n    ROSTER --> SELF_KNOW\n    ROSTER --> USER_KNOW\n    MEMORY --> CONTEXT\n    CONTEXT --> PLUGIN\n    PLUGIN --> CUSTOM\n    CUSTOM --> COMM\n    ROLE --> ASSIST\n    ASSIST --> HALLUC\n    HALLUC --> HUMAN\n    HUMAN --> STEEL\n    OHA --> ROLE\n```",
+      "diagrams": [
+        {
+          "title": "总体能力概览",
+          "code": "flowchart TD\n    V4[\"DeepSeek V4 基础模型\"]\n    MAX[\"Max 思考模式\"]\n    VIS[\"视觉能力（原短板）\"]\n    TEXT[\"纯文本大模型\"]\n    API[\"API 接入\"]\n    ERR[\"频繁报错 / 400\"]\n    CONF[\"配置复杂\"]\n    OPT[\"作者优化（补齐短板）\"]\n    IMP[\"性能提升：更聪明 + 视觉\"]\n\n    V4 --> MAX\n    V4 --> VIS\n    V4 --> TEXT\n    V4 --> API\n    MAX --> CONF\n    API --> ERR\n    CONF --> ERR\n    OPT --> V4\n    OPT --> IMP\n    IMP --> MAX\n    IMP --> VIS"
+        },
+        {
+          "title": "API 交互问题与解决方案",
+          "code": "flowchart TD\n    EN_MAX[\"开启 Max 思考模式\"]\n    PREV[\"每轮需发送上一次思考过程\"]\n    SEND[\"原封不动回传（即使为空）\"]\n    DROP[\"多数客户端直接丢弃空内容\"]\n    ERR400[\"导致 400 错误，对话中断\"]\n    REPRO[\"复现概率最高约 59%\"]\n    FIX[\"作者在 OpenHenacle 中修复\"]\n    DIRECT[\"现在可直接使用 API\"]\n    SMART[\"最聪明的小金鱼模型可用\"]\n\n    EN_MAX --> PREV\n    PREV --> SEND\n    SEND --> DROP\n    DROP --> ERR400\n    ERR400 --> REPRO\n    FIX --> DIRECT\n    DIRECT --> SMART\n    EN_MAX --> FIX"
+        },
+        {
+          "title": "外接视觉方案与社区价值",
+          "code": "flowchart TD\n    VIS_SHORT[\"视觉能力缺失\"]\n    AUX_VIS[\"辅助视觉功能（作者实现）\"]\n    OTHER_MM[\"其他多模态模型\"]\n    IMG2TXT[\"图片转文字\"]\n    COORD[\"文字转坐标锚点\"]\n    FEED[\"坐标喂给 DeepSeek Pro 推理\"]\n    REASON[\"思考链与输出类似原生多模态\"]\n    OFFICIAL[\"官方多模态版本（小号模型）\"]\n    LIMIT[\"看图与聪明二选一的限制\"]\n    COORD_ANCHOR[\"论文：对象位置坐标锚点\"]\n    SPATIAL[\"空间关系更清晰\"]\n    COMMUNITY[\"开源社区价值：方案可复用\"]\n\n    VIS_SHORT --> AUX_VIS\n    AUX_VIS --> OTHER_MM\n    OTHER_MM --> IMG2TXT\n    IMG2TXT --> COORD\n    COORD --> FEED\n    FEED --> REASON\n    REASON --> OFFICIAL\n    OFFICIAL --> LIMIT\n    COORD --> COORD_ANCHOR\n    COORD_ANCHOR --> SPATIAL\n    SPATIAL --> COMMUNITY\n    AUX_VIS --> COMMUNITY"
+        },
+        {
+          "title": "OpenHenacle 代理人生态系统",
+          "code": "flowchart TD\n    OHA[\"OpenHenacle 平台\"]\n    ROSTER[\"花名册（代理人列表）\"]\n    MEMORY[\"记忆系统\"]\n    SELF_KNOW[\"代理人知道自己是谁\"]\n    USER_KNOW[\"代理人知道用户信息\"]\n    CONTEXT[\"感知当前任务、环境、协作者\"]\n    PLUGIN[\"插件系统（自定义功能）\"]\n    CUSTOM[\"创建自定义助手\"]\n    COMM[\"代理人间即时通信\"]\n    ROLE[\"角色示例：小花、毛毛\"]\n    ASSIST[\"基于角色分配任务（创意/数学）\"]\n    HALLUC[\"降低幻觉产生\"]\n    HUMAN[\"兼具人文情怀\"]\n    STEEL[\"具备钢铁般工作能力\"]\n\n    OHA --> ROSTER\n    OHA --> MEMORY\n    ROSTER --> SELF_KNOW\n    ROSTER --> USER_KNOW\n    MEMORY --> CONTEXT\n    CONTEXT --> PLUGIN\n    PLUGIN --> CUSTOM\n    CUSTOM --> COMM\n    ROLE --> ASSIST\n    ASSIST --> HALLUC\n    HALLUC --> HUMAN\n    HUMAN --> STEEL\n    OHA --> ROLE"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T23:10:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 与 OpenHenacle 知识图谱\n\n## 总体能力概览\n```mermaid\nflowchart TD\n    V4[\"DeepSeek V4 基础模型\"]\n    MAX[\"Max 思考模式\"]\n    VIS[\"视觉能力（原短板）\"]\n    TEXT[\"纯文本大模型\"]\n    API[\"API 接入\"]\n    ERR[\"频繁报错 / 400\"]\n    CONF[\"配置复杂\"]\n    OPT[\"作者优化（补齐短板）\"]\n    IMP[\"性能提升：更聪明 + 视觉\"]\n\n    V4 --> MAX\n    V4 --> VIS\n    V4 --> TEXT\n    V4 --> API\n    MAX --> CONF\n    API --> ERR\n    CONF --> ERR\n    OPT --> V4\n    OPT --> IMP\n    IMP --> MAX\n    IMP --> VIS\n```\n\n## API 交互问题与解决方案\n```mermaid\nflowchart TD\n    EN_MAX[\"开启 Max 思考模式\"]\n    PREV[\"每轮需发送上一次思考过程\"]\n    SEND[\"原封不动回传（即使为空）\"]\n    DROP[\"多数客户端直接丢弃空内容\"]\n    ERR400[\"导致 400 错误，对话中断\"]\n    REPRO[\"复现概率最高约 59%\"]\n    FIX[\"作者在 OpenHenacle 中修复\"]\n    DIRECT[\"现在可直接使用 API\"]\n    SMART[\"最聪明的小金鱼模型可用\"]\n\n    EN_MAX --> PREV\n    PREV --> SEND\n    SEND --> DROP\n    DROP --> ERR400\n    ERR400 --> REPRO\n    FIX --> DIRECT\n    DIRECT --> SMART\n    EN_MAX --> FIX\n```\n\n## 外接视觉方案与社区价值\n```mermaid\nflowchart TD\n    VIS_SHORT[\"视觉能力缺失\"]\n    AUX_VIS[\"辅助视觉功能（作者实现）\"]\n    OTHER_MM[\"其他多模态模型\"]\n    IMG2TXT[\"图片转文字\"]\n    COORD[\"文字转坐标锚点\"]\n    FEED[\"坐标喂给 DeepSeek Pro 推理\"]\n    REASON[\"思考链与输出类似原生多模态\"]\n    OFFICIAL[\"官方多模态版本（小号模型）\"]\n    LIMIT[\"看图与聪明二选一的限制\"]\n    COORD_ANCHOR[\"论文：对象位置坐标锚点\"]\n    SPATIAL[\"空间关系更清晰\"]\n    COMMUNITY[\"开源社区价值：方案可复用\"]\n\n    VIS_SHORT --> AUX_VIS\n    AUX_VIS --> OTHER_MM\n    OTHER_MM --> IMG2TXT\n    IMG2TXT --> COORD\n    COORD --> FEED\n    FEED --> REASON\n    REASON --> OFFICIAL\n    OFFICIAL --> LIMIT\n    COORD --> COORD_ANCHOR\n    COORD_ANCHOR --> SPATIAL\n    SPATIAL --> COMMUNITY\n    AUX_VIS --> COMMUNITY\n```\n\n## OpenHenacle 代理人生态系统\n```mermaid\nflowchart TD\n    OHA[\"OpenHenacle 平台\"]\n    ROSTER[\"花名册（代理人列表）\"]\n    MEMORY[\"记忆系统\"]\n    SELF_KNOW[\"代理人知道自己是谁\"]\n    USER_KNOW[\"代理人知道用户信息\"]\n    CONTEXT[\"感知当前任务、环境、协作者\"]\n    PLUGIN[\"插件系统（自定义功能）\"]\n    CUSTOM[\"创建自定义助手\"]\n    COMM[\"代理人间即时通信\"]\n    ROLE[\"角色示例：小花、毛毛\"]\n    ASSIST[\"基于角色分配任务（创意/数学）\"]\n    HALLUC[\"降低幻觉产生\"]\n    HUMAN[\"兼具人文情怀\"]\n    STEEL[\"具备钢铁般工作能力\"]\n\n    OHA --> ROSTER\n    OHA --> MEMORY\n    ROSTER --> SELF_KNOW\n    ROSTER --> USER_KNOW\n    MEMORY --> CONTEXT\n    CONTEXT --> PLUGIN\n    PLUGIN --> CUSTOM\n    CUSTOM --> COMM\n    ROLE --> ASSIST\n    ASSIST --> HALLUC\n    HALLUC --> HUMAN\n    HUMAN --> STEEL\n    OHA --> ROLE\n```",
+  "diagrams": [
+    {
+      "title": "总体能力概览",
+      "code": "flowchart TD\n    V4[\"DeepSeek V4 基础模型\"]\n    MAX[\"Max 思考模式\"]\n    VIS[\"视觉能力（原短板）\"]\n    TEXT[\"纯文本大模型\"]\n    API[\"API 接入\"]\n    ERR[\"频繁报错 / 400\"]\n    CONF[\"配置复杂\"]\n    OPT[\"作者优化（补齐短板）\"]\n    IMP[\"性能提升：更聪明 + 视觉\"]\n\n    V4 --> MAX\n    V4 --> VIS\n    V4 --> TEXT\n    V4 --> API\n    MAX --> CONF\n    API --> ERR\n    CONF --> ERR\n    OPT --> V4\n    OPT --> IMP\n    IMP --> MAX\n    IMP --> VIS"
+    },
+    {
+      "title": "API 交互问题与解决方案",
+      "code": "flowchart TD\n    EN_MAX[\"开启 Max 思考模式\"]\n    PREV[\"每轮需发送上一次思考过程\"]\n    SEND[\"原封不动回传（即使为空）\"]\n    DROP[\"多数客户端直接丢弃空内容\"]\n    ERR400[\"导致 400 错误，对话中断\"]\n    REPRO[\"复现概率最高约 59%\"]\n    FIX[\"作者在 OpenHenacle 中修复\"]\n    DIRECT[\"现在可直接使用 API\"]\n    SMART[\"最聪明的小金鱼模型可用\"]\n\n    EN_MAX --> PREV\n    PREV --> SEND\n    SEND --> DROP\n    DROP --> ERR400\n    ERR400 --> REPRO\n    FIX --> DIRECT\n    DIRECT --> SMART\n    EN_MAX --> FIX"
+    },
+    {
+      "title": "外接视觉方案与社区价值",
+      "code": "flowchart TD\n    VIS_SHORT[\"视觉能力缺失\"]\n    AUX_VIS[\"辅助视觉功能（作者实现）\"]\n    OTHER_MM[\"其他多模态模型\"]\n    IMG2TXT[\"图片转文字\"]\n    COORD[\"文字转坐标锚点\"]\n    FEED[\"坐标喂给 DeepSeek Pro 推理\"]\n    REASON[\"思考链与输出类似原生多模态\"]\n    OFFICIAL[\"官方多模态版本（小号模型）\"]\n    LIMIT[\"看图与聪明二选一的限制\"]\n    COORD_ANCHOR[\"论文：对象位置坐标锚点\"]\n    SPATIAL[\"空间关系更清晰\"]\n    COMMUNITY[\"开源社区价值：方案可复用\"]\n\n    VIS_SHORT --> AUX_VIS\n    AUX_VIS --> OTHER_MM\n    OTHER_MM --> IMG2TXT\n    IMG2TXT --> COORD\n    COORD --> FEED\n    FEED --> REASON\n    REASON --> OFFICIAL\n    OFFICIAL --> LIMIT\n    COORD --> COORD_ANCHOR\n    COORD_ANCHOR --> SPATIAL\n    SPATIAL --> COMMUNITY\n    AUX_VIS --> COMMUNITY"
+    },
+    {
+      "title": "OpenHenacle 代理人生态系统",
+      "code": "flowchart TD\n    OHA[\"OpenHenacle 平台\"]\n    ROSTER[\"花名册（代理人列表）\"]\n    MEMORY[\"记忆系统\"]\n    SELF_KNOW[\"代理人知道自己是谁\"]\n    USER_KNOW[\"代理人知道用户信息\"]\n    CONTEXT[\"感知当前任务、环境、协作者\"]\n    PLUGIN[\"插件系统（自定义功能）\"]\n    CUSTOM[\"创建自定义助手\"]\n    COMM[\"代理人间即时通信\"]\n    ROLE[\"角色示例：小花、毛毛\"]\n    ASSIST[\"基于角色分配任务（创意/数学）\"]\n    HALLUC[\"降低幻觉产生\"]\n    HUMAN[\"兼具人文情怀\"]\n    STEEL[\"具备钢铁般工作能力\"]\n\n    OHA --> ROSTER\n    OHA --> MEMORY\n    ROSTER --> SELF_KNOW\n    ROSTER --> USER_KNOW\n    MEMORY --> CONTEXT\n    CONTEXT --> PLUGIN\n    PLUGIN --> CUSTOM\n    CUSTOM --> COMM\n    ROLE --> ASSIST\n    ASSIST --> HALLUC\n    HALLUC --> HUMAN\n    HUMAN --> STEEL\n    OHA --> ROLE"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:10:48+00:00"
+}

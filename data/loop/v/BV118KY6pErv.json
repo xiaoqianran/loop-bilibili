@@ -1,0 +1,66 @@
+{
+  "bvid": "BV118KY6pErv",
+  "title": "免费Token Plan 支持 deepseek v4 flash",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 698,
+  "text": "想使用cloud code\n但token费用又高\n其实很多使用者都面临同样的问题\n昂贵的token订阅又让人望而却步\n今天为大家推荐一款免费的token plan\n里面包含deep seat v4flash模型\n已经可以让我们愉快地享受\ncloud code带来的效率提升\n现在开始第一步\n日日新式商汤科技的大模型平台\n他们提供了免费token plan\n包含了多种大语言模型\n无需付费\n灵活调用\n适合AI编程助手\n智能对话\n代码分析等场景\n我们先打开浏览器访问日日新大模型平台官网\n进入用户登录页面\n新用户输入手机号和验证码后登录进入控制台\n找到APIT管理页面\n创建一个新的APIT并复制保存\n用于后续配置c c switch\n我们再打开cc switch应用程序\n进入提供商管理界面\n选择自定义提供商\n供应商名称\n可以自定义\n我们填入日日新\n然后在base u RL输入框中填入HTTPS\n冒号斜杠\n斜杠token点\nSENSNOVA点CN\n将之前创建的APIT粘贴到输入框中\n然后点击获取模型\n并选择deep seek v4flash模型\n点击确认保存\n完成配置\n第四部\n在cloud code中使用\n先在命令行中输入cloud命令\n启动cc switch\n会自动使用日日新作为提供商\n现在你可以使用deep seek v4flash模型了\n向clock code提问\n体验AI编程助手的强大功能\n恭喜你\n已经成功配置了日日新的免费token plan\n现在你可以在cloud code中使用deep seat v4flash模型\n来提升你的开发效率了\n感谢观看\n点赞转发\n点个关注再走吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV118KY6pErv",
+  "published_at": "1784644740",
+  "fetched_at": "2026-08-06T19:42:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 免费Token Plan 使用流程图谱\n\n## 整体流程概览\n```mermaid\nflowchart TD\n    A1[\"访问日日新大模型平台\"] --> A2[\"登录/新用户注册\"]\n    A2 --> A3[\"创建 API Token 并复制\"]\n    A3 --> A4[\"打开 cc switch 应用\"]\n    A4 --> A5[\"在提供商管理中选择自定义提供商\"]\n    A5 --> A6[\"填写供应商名称、Base URL、粘贴 Token\"]\n    A6 --> A7[\"获取模型并选择 deepseek v4flash\"]\n    A7 --> A8[\"确认保存配置\"]\n    A8 --> A9[\"在 cloud code 中启动 cc switch\"]\n    A9 --> A10[\"使用 deepseek v4flash 模型进行提问\"]\n```\n\n## cc switch 配置细节\n```mermaid\nflowchart TD\n    B1[\"进入提供商管理界面\"] --> B2[\"选择自定义提供商\"]\n    B2 --> B3[\"设置供应商名称为‘日日新’\"]\n    B3 --> B4[\"在 Base URL 输入框填入 HTTPS://SENSNOVA.CN\"]\n    B4 --> B5[\"粘贴之前创建的 API Token\"]\n    B5 --> B6[\"点击‘获取模型’\"]\n    B6 --> B7[\"在模型列表中选择 deepseek v4flash\"]\n    B7 --> B8[\"点击‘确认保存’完成配置\"]\n```\n\n## cloud code 使用路径\n```mermaid\nflowchart TD\n    C1[\"在命令行输入 cloud 命令\"] --> C2[\"启动 cc switch\"]\n    C2 --> C3[\"自动使用‘日日新’作为提供商\"]\n    C3 --> C4[\"可直接调用 deepseek v4flash 模型\"]\n    C4 --> C5[\"向 cloud code 提问，获取 AI 编程助手响应\"]\n```",
+      "diagrams": [
+        {
+          "title": "整体流程概览",
+          "code": "flowchart TD\n    A1[\"访问日日新大模型平台\"] --> A2[\"登录/新用户注册\"]\n    A2 --> A3[\"创建 API Token 并复制\"]\n    A3 --> A4[\"打开 cc switch 应用\"]\n    A4 --> A5[\"在提供商管理中选择自定义提供商\"]\n    A5 --> A6[\"填写供应商名称、Base URL、粘贴 Token\"]\n    A6 --> A7[\"获取模型并选择 deepseek v4flash\"]\n    A7 --> A8[\"确认保存配置\"]\n    A8 --> A9[\"在 cloud code 中启动 cc switch\"]\n    A9 --> A10[\"使用 deepseek v4flash 模型进行提问\"]"
+        },
+        {
+          "title": "cc switch 配置细节",
+          "code": "flowchart TD\n    B1[\"进入提供商管理界面\"] --> B2[\"选择自定义提供商\"]\n    B2 --> B3[\"设置供应商名称为‘日日新’\"]\n    B3 --> B4[\"在 Base URL 输入框填入 HTTPS://SENSNOVA.CN\"]\n    B4 --> B5[\"粘贴之前创建的 API Token\"]\n    B5 --> B6[\"点击‘获取模型’\"]\n    B6 --> B7[\"在模型列表中选择 deepseek v4flash\"]\n    B7 --> B8[\"点击‘确认保存’完成配置\"]"
+        },
+        {
+          "title": "cloud code 使用路径",
+          "code": "flowchart TD\n    C1[\"在命令行输入 cloud 命令\"] --> C2[\"启动 cc switch\"]\n    C2 --> C3[\"自动使用‘日日新’作为提供商\"]\n    C3 --> C4[\"可直接调用 deepseek v4flash 模型\"]\n    C4 --> C5[\"向 cloud code 提问，获取 AI 编程助手响应\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T19:42:42+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 免费Token Plan 使用流程图谱\n\n## 整体流程概览\n```mermaid\nflowchart TD\n    A1[\"访问日日新大模型平台\"] --> A2[\"登录/新用户注册\"]\n    A2 --> A3[\"创建 API Token 并复制\"]\n    A3 --> A4[\"打开 cc switch 应用\"]\n    A4 --> A5[\"在提供商管理中选择自定义提供商\"]\n    A5 --> A6[\"填写供应商名称、Base URL、粘贴 Token\"]\n    A6 --> A7[\"获取模型并选择 deepseek v4flash\"]\n    A7 --> A8[\"确认保存配置\"]\n    A8 --> A9[\"在 cloud code 中启动 cc switch\"]\n    A9 --> A10[\"使用 deepseek v4flash 模型进行提问\"]\n```\n\n## cc switch 配置细节\n```mermaid\nflowchart TD\n    B1[\"进入提供商管理界面\"] --> B2[\"选择自定义提供商\"]\n    B2 --> B3[\"设置供应商名称为‘日日新’\"]\n    B3 --> B4[\"在 Base URL 输入框填入 HTTPS://SENSNOVA.CN\"]\n    B4 --> B5[\"粘贴之前创建的 API Token\"]\n    B5 --> B6[\"点击‘获取模型’\"]\n    B6 --> B7[\"在模型列表中选择 deepseek v4flash\"]\n    B7 --> B8[\"点击‘确认保存’完成配置\"]\n```\n\n## cloud code 使用路径\n```mermaid\nflowchart TD\n    C1[\"在命令行输入 cloud 命令\"] --> C2[\"启动 cc switch\"]\n    C2 --> C3[\"自动使用‘日日新’作为提供商\"]\n    C3 --> C4[\"可直接调用 deepseek v4flash 模型\"]\n    C4 --> C5[\"向 cloud code 提问，获取 AI 编程助手响应\"]\n```",
+  "diagrams": [
+    {
+      "title": "整体流程概览",
+      "code": "flowchart TD\n    A1[\"访问日日新大模型平台\"] --> A2[\"登录/新用户注册\"]\n    A2 --> A3[\"创建 API Token 并复制\"]\n    A3 --> A4[\"打开 cc switch 应用\"]\n    A4 --> A5[\"在提供商管理中选择自定义提供商\"]\n    A5 --> A6[\"填写供应商名称、Base URL、粘贴 Token\"]\n    A6 --> A7[\"获取模型并选择 deepseek v4flash\"]\n    A7 --> A8[\"确认保存配置\"]\n    A8 --> A9[\"在 cloud code 中启动 cc switch\"]\n    A9 --> A10[\"使用 deepseek v4flash 模型进行提问\"]"
+    },
+    {
+      "title": "cc switch 配置细节",
+      "code": "flowchart TD\n    B1[\"进入提供商管理界面\"] --> B2[\"选择自定义提供商\"]\n    B2 --> B3[\"设置供应商名称为‘日日新’\"]\n    B3 --> B4[\"在 Base URL 输入框填入 HTTPS://SENSNOVA.CN\"]\n    B4 --> B5[\"粘贴之前创建的 API Token\"]\n    B5 --> B6[\"点击‘获取模型’\"]\n    B6 --> B7[\"在模型列表中选择 deepseek v4flash\"]\n    B7 --> B8[\"点击‘确认保存’完成配置\"]"
+    },
+    {
+      "title": "cloud code 使用路径",
+      "code": "flowchart TD\n    C1[\"在命令行输入 cloud 命令\"] --> C2[\"启动 cc switch\"]\n    C2 --> C3[\"自动使用‘日日新’作为提供商\"]\n    C3 --> C4[\"可直接调用 deepseek v4flash 模型\"]\n    C4 --> C5[\"向 cloud code 提问，获取 AI 编程助手响应\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:42:42+00:00"
+}

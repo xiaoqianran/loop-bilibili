@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1zqMu67E6Z",
+  "title": "5款用Godot制作的游戏，激发你的灵感（2026.05.12）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1248,
+  "text": "一觉巨人归来\n腐化正在蔓延\n幕后似乎有些可疑的事情正在发生\n这就是stack order的背景设定\n这是一款叙事类ROGUELIKE卡牌构筑游戏\n而它的卡牌系统本身也有独特之处\n你不是一次只打出一张牌\n而是把它们叠加起来\n卡牌之间的顺序和相对位置会触发协同效果\n并改变技能\n因此在本回合堆叠卡牌的同时\n为下回合设置连招\n成为了这里真正的战术层面\nboss会提前预告每一步动作\n所以挑战从应对突发状况转变为在数据不利时\n如何设计出解决方案\n拥有100多张卡牌\n30个独特遭遇\n多位可操作角色\n以及通过全手绘动画角色讲述的故事\n第二点\nmass paint的整个概念其实就在他的名字里\n你不仅仅是在通关关卡\n而是在编辑他们\n这是一款设定在怀旧电脑界面中的\n解谜平台游戏\n你的工具正是那些经典图像软件里的工具\n旋转调整大小\n复制移动矩形\n目标是让max paint到达绿色区域\n但屏幕上的每种颜色都有不同的行为方式\n绿色可以收集\n蓝色无法编辑\n橙色会让你失败\n如何重新塑造关卡\n以创造一条安全的路径\n就是这个游戏的谜题所在\nsteam创意工坊的支持意味着也有自定义关卡\n所以内容远远超出了主线战役\n第三个一个夜晚\n一座被围困的城市\n以及一场可能在黎明前打开城门的阴谋\n陈语言墨客之战\n是一部设定在黑暗低魔\n奇幻中世纪世界的互动叙事作品\n讲述了城市守卫队的曼德雷克下士与时间赛跑\n揭开一个险恶阴谋的故事\n他的玩法类似于游戏书故事文本\n一张城市地图以及不断分支的选择\n你要收集证据\n审视嫌疑人\n识破谎言\n并穿梭于酒馆\n神庙\n地牢和阴暗小巷\n拼凑出事情的真相\n它本身设计的较短\n大约一个半小时\n非常适合战斗\n奇幻和选择你自己的冒险类型的粉丝\n第四个\n在一个残酷的反乌托邦宇宙中\n噪音就是力量\n混乱就是法则\n你扮演的是斧头弹手\n一个不死的自然之力\n他的武器就是吉他\n斧头弹手是一款节奏极快的ROGUELIKE\n第一人称射击游戏\n移动至关重要\n目标很简单\n成为已知宇宙中最强大的吉他手\n你将在精心打造的地牢中横冲直撞\n对抗成群的敌人\n搜刮升级道具\n挑战强大的boss\n所有这些都融合了复古美学和街机风格的\n计分系统\n它将高速移动射击的能量\n与地牢探索的成长机制相结合\n还加入了一些非常酷炫的吉他独奏\n在我们介绍最后一个之前\n记得在评论区投票\n选出你最喜欢的游戏\n让他们有机会入选今年的get to游戏大奖\n第五名\n如果你对祖玛或卢克索有任何怀旧情节\nORBEN绝对值得一试\n他在弹珠消除的基础玩法上\n加入了完整的ROGUELIKE构筑系统\n你需要将弹珠射入敌方ORBENCE的链条中\n推动他们前进到轨道终点\n通过匹配颜色来造成伤害\n获得护盾或者赚取金币来扩展你的卡组\n在经典的弹珠消除玩法之上\nAUBUEN还加入了boss战\n你需要一边管理弹珠链\n一边主动躲避飞来的弹幕\n锚点弹珠\n炸弹弹珠\n屠戮弹珠和冰冻弹珠等特殊类型\n为决策增添了更多层次\n大量可选角色和自定义职业选项\n也让每一次开局都能从完全不同的角度展开",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zqMu67E6Z",
+  "published_at": "1783310400",
+  "fetched_at": "2026-08-06T19:24:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 制作的 5 款游戏知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    G1[\"游戏1：Stack Order\"] --> NG1[\"叙事类 Roguelike 卡牌构筑\"]\n    G2[\"游戏2：Mass Paint\"] --> NG2[\"怀旧电脑界面解谜平台\"]\n    G3[\"游戏3：陈语言墨客之战\"] --> NG3[\"互动叙事·低魔奇幻\"]\n    G4[\"游戏4：斧头弹手\"] --> NG4[\"节奏快枪 Roguelike\"]\n    G5[\"游戏5：ORBEN\"] --> NG5[\"弹珠消除 + Roguelike 构筑\"]\n    classDef game fill:#f9f,stroke:#333,stroke-width:2px;\n    class G1,G2,G3,G4,G5 game;\n```\n\n## Stack Order 的卡牌叠加机制\n```mermaid\nflowchart TD\n    C1[\"叠加卡牌\"] --> C2[\"卡牌顺序触发协同效果\"]\n    C2 --> C3[\"改变技能属性\"]\n    C3 --> C4[\"本回合完成堆叠\"]\n    C4 --> C5[\"为下回合设置连招\"]\n    C5 --> C6[\"Boss 提前预告每一步动作\"]\n    C6 --> C7[\"玩家在数据不利时设计解决方案\"]\n    C7 --> C8[\"形成核心战术层面\"]\n    classDef step fill:#ccf,stroke:#333,stroke-width:1px;\n    class C1,C2,C3,C4,C5,C6,C7,C8 step;\n```\n\n## Mass Paint 的关卡编辑与颜色行为\n```mermaid\nflowchart LR\n    M1[\"怀旧电脑界面\"] --> M2[\"工具：旋转 / 调整大小\"]\n    M1 --> M3[\"工具：复制 / 移动矩形\"]\n    M2 --> M4[\"目标：让 max paint 到达绿色区域\"]\n    M3 --> M4\n    M4 --> M5[\"绿色 → 可收集\"]\n    M4 --> M6[\"蓝色 → 无法编辑\"]\n    M4 --> M7[\"橙色 → 触发失败\"]\n    M5 & M6 & M7 --> M8[\"重新塑造关卡\"]\n    M8 --> M9[\"创造安全路径\"]\n    M9 --> M10[\"Steam 创意工坊自定义关卡\"]\n    M10 --> M11[\"内容远超主线战役\"]\n    classDef tool fill:#cfc,stroke:#333,stroke-width:1px;\n    class M2,M3 tool;\n```\n\n## 斧头弹手的节奏 Roguelike 玩法\n```mermaid\nflowchart TD\n    R1[\"斧头弹手：第一人称射击\"] --> R2[\"节奏极快\"]\n    R2 --> R3[\"移动至关重要\"]\n    R3 --> R4[\"目标：成为宇宙最强吉他手\"]\n    R4 --> R5[\"在地牢中横冲直撞\"]\n    R5 --> R6[\"高速射击能量\"]\n    R6 --> R7[\"复古美学 + 街机计分系统\"]\n    R7 --> R8[\"搜刮升级道具\"]\n    R8 --> R9[\"挑战强大 Boss\"]\n    R9 --> R10[\"加入炫酷吉他独奏\"]\n    R3 --> R11[\"噪音 = 力量\"]\n    R3 --> R12[\"混乱 = 法则\"]\n    classDef core fill:#fc9,stroke:#333,stroke-width:1px;\n    class R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12 core;\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    G1[\"游戏1：Stack Order\"] --> NG1[\"叙事类 Roguelike 卡牌构筑\"]\n    G2[\"游戏2：Mass Paint\"] --> NG2[\"怀旧电脑界面解谜平台\"]\n    G3[\"游戏3：陈语言墨客之战\"] --> NG3[\"互动叙事·低魔奇幻\"]\n    G4[\"游戏4：斧头弹手\"] --> NG4[\"节奏快枪 Roguelike\"]\n    G5[\"游戏5：ORBEN\"] --> NG5[\"弹珠消除 + Roguelike 构筑\"]\n    classDef game fill:#f9f,stroke:#333,stroke-width:2px;\n    class G1,G2,G3,G4,G5 game;"
+        },
+        {
+          "title": "Stack Order 的卡牌叠加机制",
+          "code": "flowchart TD\n    C1[\"叠加卡牌\"] --> C2[\"卡牌顺序触发协同效果\"]\n    C2 --> C3[\"改变技能属性\"]\n    C3 --> C4[\"本回合完成堆叠\"]\n    C4 --> C5[\"为下回合设置连招\"]\n    C5 --> C6[\"Boss 提前预告每一步动作\"]\n    C6 --> C7[\"玩家在数据不利时设计解决方案\"]\n    C7 --> C8[\"形成核心战术层面\"]\n    classDef step fill:#ccf,stroke:#333,stroke-width:1px;\n    class C1,C2,C3,C4,C5,C6,C7,C8 step;"
+        },
+        {
+          "title": "Mass Paint 的关卡编辑与颜色行为",
+          "code": "flowchart LR\n    M1[\"怀旧电脑界面\"] --> M2[\"工具：旋转 / 调整大小\"]\n    M1 --> M3[\"工具：复制 / 移动矩形\"]\n    M2 --> M4[\"目标：让 max paint 到达绿色区域\"]\n    M3 --> M4\n    M4 --> M5[\"绿色 → 可收集\"]\n    M4 --> M6[\"蓝色 → 无法编辑\"]\n    M4 --> M7[\"橙色 → 触发失败\"]\n    M5 & M6 & M7 --> M8[\"重新塑造关卡\"]\n    M8 --> M9[\"创造安全路径\"]\n    M9 --> M10[\"Steam 创意工坊自定义关卡\"]\n    M10 --> M11[\"内容远超主线战役\"]\n    classDef tool fill:#cfc,stroke:#333,stroke-width:1px;\n    class M2,M3 tool;"
+        },
+        {
+          "title": "斧头弹手的节奏 Roguelike 玩法",
+          "code": "flowchart TD\n    R1[\"斧头弹手：第一人称射击\"] --> R2[\"节奏极快\"]\n    R2 --> R3[\"移动至关重要\"]\n    R3 --> R4[\"目标：成为宇宙最强吉他手\"]\n    R4 --> R5[\"在地牢中横冲直撞\"]\n    R5 --> R6[\"高速射击能量\"]\n    R6 --> R7[\"复古美学 + 街机计分系统\"]\n    R7 --> R8[\"搜刮升级道具\"]\n    R8 --> R9[\"挑战强大 Boss\"]\n    R9 --> R10[\"加入炫酷吉他独奏\"]\n    R3 --> R11[\"噪音 = 力量\"]\n    R3 --> R12[\"混乱 = 法则\"]\n    classDef core fill:#fc9,stroke:#333,stroke-width:1px;\n    class R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12 core;"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T19:24:13+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 制作的 5 款游戏知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    G1[\"游戏1：Stack Order\"] --> NG1[\"叙事类 Roguelike 卡牌构筑\"]\n    G2[\"游戏2：Mass Paint\"] --> NG2[\"怀旧电脑界面解谜平台\"]\n    G3[\"游戏3：陈语言墨客之战\"] --> NG3[\"互动叙事·低魔奇幻\"]\n    G4[\"游戏4：斧头弹手\"] --> NG4[\"节奏快枪 Roguelike\"]\n    G5[\"游戏5：ORBEN\"] --> NG5[\"弹珠消除 + Roguelike 构筑\"]\n    classDef game fill:#f9f,stroke:#333,stroke-width:2px;\n    class G1,G2,G3,G4,G5 game;\n```\n\n## Stack Order 的卡牌叠加机制\n```mermaid\nflowchart TD\n    C1[\"叠加卡牌\"] --> C2[\"卡牌顺序触发协同效果\"]\n    C2 --> C3[\"改变技能属性\"]\n    C3 --> C4[\"本回合完成堆叠\"]\n    C4 --> C5[\"为下回合设置连招\"]\n    C5 --> C6[\"Boss 提前预告每一步动作\"]\n    C6 --> C7[\"玩家在数据不利时设计解决方案\"]\n    C7 --> C8[\"形成核心战术层面\"]\n    classDef step fill:#ccf,stroke:#333,stroke-width:1px;\n    class C1,C2,C3,C4,C5,C6,C7,C8 step;\n```\n\n## Mass Paint 的关卡编辑与颜色行为\n```mermaid\nflowchart LR\n    M1[\"怀旧电脑界面\"] --> M2[\"工具：旋转 / 调整大小\"]\n    M1 --> M3[\"工具：复制 / 移动矩形\"]\n    M2 --> M4[\"目标：让 max paint 到达绿色区域\"]\n    M3 --> M4\n    M4 --> M5[\"绿色 → 可收集\"]\n    M4 --> M6[\"蓝色 → 无法编辑\"]\n    M4 --> M7[\"橙色 → 触发失败\"]\n    M5 & M6 & M7 --> M8[\"重新塑造关卡\"]\n    M8 --> M9[\"创造安全路径\"]\n    M9 --> M10[\"Steam 创意工坊自定义关卡\"]\n    M10 --> M11[\"内容远超主线战役\"]\n    classDef tool fill:#cfc,stroke:#333,stroke-width:1px;\n    class M2,M3 tool;\n```\n\n## 斧头弹手的节奏 Roguelike 玩法\n```mermaid\nflowchart TD\n    R1[\"斧头弹手：第一人称射击\"] --> R2[\"节奏极快\"]\n    R2 --> R3[\"移动至关重要\"]\n    R3 --> R4[\"目标：成为宇宙最强吉他手\"]\n    R4 --> R5[\"在地牢中横冲直撞\"]\n    R5 --> R6[\"高速射击能量\"]\n    R6 --> R7[\"复古美学 + 街机计分系统\"]\n    R7 --> R8[\"搜刮升级道具\"]\n    R8 --> R9[\"挑战强大 Boss\"]\n    R9 --> R10[\"加入炫酷吉他独奏\"]\n    R3 --> R11[\"噪音 = 力量\"]\n    R3 --> R12[\"混乱 = 法则\"]\n    classDef core fill:#fc9,stroke:#333,stroke-width:1px;\n    class R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12 core;\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    G1[\"游戏1：Stack Order\"] --> NG1[\"叙事类 Roguelike 卡牌构筑\"]\n    G2[\"游戏2：Mass Paint\"] --> NG2[\"怀旧电脑界面解谜平台\"]\n    G3[\"游戏3：陈语言墨客之战\"] --> NG3[\"互动叙事·低魔奇幻\"]\n    G4[\"游戏4：斧头弹手\"] --> NG4[\"节奏快枪 Roguelike\"]\n    G5[\"游戏5：ORBEN\"] --> NG5[\"弹珠消除 + Roguelike 构筑\"]\n    classDef game fill:#f9f,stroke:#333,stroke-width:2px;\n    class G1,G2,G3,G4,G5 game;"
+    },
+    {
+      "title": "Stack Order 的卡牌叠加机制",
+      "code": "flowchart TD\n    C1[\"叠加卡牌\"] --> C2[\"卡牌顺序触发协同效果\"]\n    C2 --> C3[\"改变技能属性\"]\n    C3 --> C4[\"本回合完成堆叠\"]\n    C4 --> C5[\"为下回合设置连招\"]\n    C5 --> C6[\"Boss 提前预告每一步动作\"]\n    C6 --> C7[\"玩家在数据不利时设计解决方案\"]\n    C7 --> C8[\"形成核心战术层面\"]\n    classDef step fill:#ccf,stroke:#333,stroke-width:1px;\n    class C1,C2,C3,C4,C5,C6,C7,C8 step;"
+    },
+    {
+      "title": "Mass Paint 的关卡编辑与颜色行为",
+      "code": "flowchart LR\n    M1[\"怀旧电脑界面\"] --> M2[\"工具：旋转 / 调整大小\"]\n    M1 --> M3[\"工具：复制 / 移动矩形\"]\n    M2 --> M4[\"目标：让 max paint 到达绿色区域\"]\n    M3 --> M4\n    M4 --> M5[\"绿色 → 可收集\"]\n    M4 --> M6[\"蓝色 → 无法编辑\"]\n    M4 --> M7[\"橙色 → 触发失败\"]\n    M5 & M6 & M7 --> M8[\"重新塑造关卡\"]\n    M8 --> M9[\"创造安全路径\"]\n    M9 --> M10[\"Steam 创意工坊自定义关卡\"]\n    M10 --> M11[\"内容远超主线战役\"]\n    classDef tool fill:#cfc,stroke:#333,stroke-width:1px;\n    class M2,M3 tool;"
+    },
+    {
+      "title": "斧头弹手的节奏 Roguelike 玩法",
+      "code": "flowchart TD\n    R1[\"斧头弹手：第一人称射击\"] --> R2[\"节奏极快\"]\n    R2 --> R3[\"移动至关重要\"]\n    R3 --> R4[\"目标：成为宇宙最强吉他手\"]\n    R4 --> R5[\"在地牢中横冲直撞\"]\n    R5 --> R6[\"高速射击能量\"]\n    R6 --> R7[\"复古美学 + 街机计分系统\"]\n    R7 --> R8[\"搜刮升级道具\"]\n    R8 --> R9[\"挑战强大 Boss\"]\n    R9 --> R10[\"加入炫酷吉他独奏\"]\n    R3 --> R11[\"噪音 = 力量\"]\n    R3 --> R12[\"混乱 = 法则\"]\n    classDef core fill:#fc9,stroke:#333,stroke-width:1px;\n    class R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12 core;"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:24:13+00:00"
+}

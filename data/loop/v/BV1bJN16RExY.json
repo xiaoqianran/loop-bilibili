@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1bJN16RExY",
+  "title": "独立游戏开发素材生产工具Holopix使用教程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1024,
+  "text": "Hello\n大家好\n我是一名独立游戏开发者\n在开发一款像素风独立游戏\n今天给大家介绍一下\n我的美术素材是怎么制作的\n我发现独立游戏开发对美术素材的需求量很大\n特别是游戏角色以及UI等方面\n我没有美术基础\n找人手绘\n价格非常高\n都不合适\n不过最近我在网上发现一个很好用的工具网站\nHello pix\n我现在对话的这个村民的立绘\n以及我的主角的立绘和UI\n都是用这个网站生成的\n这个网站主打的就是AI游戏的美术素材制作\n接下来我演示一下\n我是怎么用这个工具制作这些UI和立绘的\n我先简单的用我的绘画工具画了几个矩形\n对应我想要的UI的大小形状\n这里我就简单画了三个\n因为我就是想要一个对话框立绘框\n然后再给他画一个\n那边这样一张参考图就完成了\n然后我们回到hello pix首页\n打开自由画布功能\n放入参考图\n再输入一段简单的提示词\n就可以开始生产各种风格的意外\n我这里也是抽一个蒸汽朋克风格的\n可以看到很快就生成了一套非常不错的对话框\n其实我已经生成了好多不同风格的了\n用了holo pix这个工具完全实现UI自由了\n然后是角色立绘的生成\n我这里用我的像素角色的一帧作为参考图\n简单输了一段提示词\n我比较喜欢八方旅人那个风格\n就在提示词里提到了\n可以看到生成的效果很好\n特别有八方旅人里那种立绘的感觉\n然后再生成一个村民的例会流程也是一样\n选一帧作为参考图\nHello\npix生成的立绘一致性很好\n可以看到这两个角色不会出现画风突变\n生成好立绘之后\n我们还可以用他的一键抠图功能\n直接把背景去掉\n这样这个人物立绘的素材就做好了\n这个抠图功能还是很不错的\n没有白边\n效率也很高\n接下来我们再去选一个刚刚生成的UI\n同样去掉背景\n这样一组对话框和角色立绘就完成了\n使用holo pix这个工具后\n在开发中\n那些美术素材方面的问题一下子变得轻松很多\n可以看到这些UI和立绘做好\n就可以直接用到游戏里\n并且效果非常好\n这里我的对话框和人物头像\n都是刚刚制作出来的效果\n如果你也是独立开发者\n正在被UI立绘风格统一这些问题卡住\n真的可以试试\nHello pix\nUI能按参考图控布局\n立绘\n能跟像素角色对齐\n风格还能一键抠图\n直接进引擎\n从没有美术到游戏里有完整对话\n演出门槛低了很多\n有兴趣的小伙伴可以去体验一下\n这是主播的邀请码\n填写邀请码可以白嫖算力哦\n那么这期视频就到这里了\n感谢hello pix在游戏美术素材上的助力\n有问题欢迎评论区交流\n下期见啦",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1bJN16RExY",
+  "published_at": "1784023200",
+  "fetched_at": "2026-08-07T12:42:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Holopix 使用教程知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"独立开发者需求美术素材\"] --> A2[\"无美术基础，手绘成本高\"]\n    A2 --> A3[\"发现 Holopix 工具\"]\n    A3 --> A4[\"上传参考图（UI/角色）\"]\n    A4 --> A5[\"输入提示词\"]\n    A5 --> A6[\"生成多风格 UI 与立绘\"]\n    A6 --> A7[\"一键抠图去除背景\"]\n    A7 --> A8[\"导入游戏引擎使用\"]\n    A8 --> A9[\"降低开发门槛，统一风格\"]\n```\n<!-- [BV1bJN16RExY P1 00:09] [BV1bJN16RExY P1 00:16] [BV1bJN16RExY P1 00:20] [BV1bJN16RExY P1 00:40] [BV1bJN16RExY P1 01:01] [BV1bJN16RExY P1 01:07] [BV1bJN16RExY P1 01:45] [BV1bJN16RExY P1 02:09] -->\n\n## UI 生成流程\n```mermaid\nflowchart LR\n    UI1[\"绘制矩形参考图（尺寸/形状）\"] --> UI2[\"打开 Holopix 自由画布\"]\n    UI2 --> UI3[\"放入参考图\"]\n    UI3 --> UI4[\"输入提示词（如蒸汽朋克）\"]\n    UI4 --> UI5[\"AI 生成 UI 套件\"]\n    UI5 --> UI6[\"一键抠图去除背景\"]\n    UI6 --> UI7[\"完成对话框 UI\"]\n```\n<!-- [BV1bJN16RExY P1 00:40] [BV1bJN16RExY P1 00:55] [BV1bJN16RExY P1 00:57] [BV1bJN16RExY P1 01:01] [BV1bJN16RExY P1 01:07] [BV1bJN16RExY P1 01:45] -->\n\n## 角色立绘生成与风格一致性\n```mermaid\nflowchart TD\n    C1[\"准备像素角色帧参考图\"] --> C2[\"输入提示词（八方旅人风格）\"]\n    C2 --> C3[\"AI 生成角色立绘\"]\n    C3 --> C4[\"生成其他角色立绘（保持同一风格）\"]\n    C4 --> C5[\"一键抠图去除背景\"]\n    C5 --> C6[\"得到一致性角色立绘\"]\n```\n<!-- [BV1bJN16RExY P1 01:19] [BV1bJN16RExY P1 01:24] [BV1bJN16RExY P1 01:28] [BV1bJN16RExY P1 01:38] [BV1bJN16RExY P1 01:45] -->\n\n## 传统外包 vs Holopix 对比\n```mermaid\nflowchart LR\n    O1[\"手绘外包\"] --> O2[\"高成本\"]\n    O1 --> O3[\"周期长\"]\n    H1[\"Holopix AI 生成\"] --> H2[\"低成本\"]\n    H1 --> H3[\"快速迭代\"]\n    O2 -.-> H2\n    O3 -.-> H3\n    H2 --> H4[\"统一风格、无白边\"]\n    H3 --> H4\n```\n<!-- [BV1bJN16RExY P1 00:16] [BV1bJN16RExY P1 00:18] [BV1bJN16RExY P1 00:20] [BV1bJN16RExY P1 01:45] -->",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"独立开发者需求美术素材\"] --> A2[\"无美术基础，手绘成本高\"]\n    A2 --> A3[\"发现 Holopix 工具\"]\n    A3 --> A4[\"上传参考图（UI/角色）\"]\n    A4 --> A5[\"输入提示词\"]\n    A5 --> A6[\"生成多风格 UI 与立绘\"]\n    A6 --> A7[\"一键抠图去除背景\"]\n    A7 --> A8[\"导入游戏引擎使用\"]\n    A8 --> A9[\"降低开发门槛，统一风格\"]"
+        },
+        {
+          "title": "UI 生成流程",
+          "code": "flowchart LR\n    UI1[\"绘制矩形参考图（尺寸/形状）\"] --> UI2[\"打开 Holopix 自由画布\"]\n    UI2 --> UI3[\"放入参考图\"]\n    UI3 --> UI4[\"输入提示词（如蒸汽朋克）\"]\n    UI4 --> UI5[\"AI 生成 UI 套件\"]\n    UI5 --> UI6[\"一键抠图去除背景\"]\n    UI6 --> UI7[\"完成对话框 UI\"]"
+        },
+        {
+          "title": "角色立绘生成与风格一致性",
+          "code": "flowchart TD\n    C1[\"准备像素角色帧参考图\"] --> C2[\"输入提示词（八方旅人风格）\"]\n    C2 --> C3[\"AI 生成角色立绘\"]\n    C3 --> C4[\"生成其他角色立绘（保持同一风格）\"]\n    C4 --> C5[\"一键抠图去除背景\"]\n    C5 --> C6[\"得到一致性角色立绘\"]"
+        },
+        {
+          "title": "传统外包 vs Holopix 对比",
+          "code": "flowchart LR\n    O1[\"手绘外包\"] --> O2[\"高成本\"]\n    O1 --> O3[\"周期长\"]\n    H1[\"Holopix AI 生成\"] --> H2[\"低成本\"]\n    H1 --> H3[\"快速迭代\"]\n    O2 -.-> H2\n    O3 -.-> H3\n    H2 --> H4[\"统一风格、无白边\"]\n    H3 --> H4"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T12:43:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Holopix 使用教程知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"独立开发者需求美术素材\"] --> A2[\"无美术基础，手绘成本高\"]\n    A2 --> A3[\"发现 Holopix 工具\"]\n    A3 --> A4[\"上传参考图（UI/角色）\"]\n    A4 --> A5[\"输入提示词\"]\n    A5 --> A6[\"生成多风格 UI 与立绘\"]\n    A6 --> A7[\"一键抠图去除背景\"]\n    A7 --> A8[\"导入游戏引擎使用\"]\n    A8 --> A9[\"降低开发门槛，统一风格\"]\n```\n<!-- [BV1bJN16RExY P1 00:09] [BV1bJN16RExY P1 00:16] [BV1bJN16RExY P1 00:20] [BV1bJN16RExY P1 00:40] [BV1bJN16RExY P1 01:01] [BV1bJN16RExY P1 01:07] [BV1bJN16RExY P1 01:45] [BV1bJN16RExY P1 02:09] -->\n\n## UI 生成流程\n```mermaid\nflowchart LR\n    UI1[\"绘制矩形参考图（尺寸/形状）\"] --> UI2[\"打开 Holopix 自由画布\"]\n    UI2 --> UI3[\"放入参考图\"]\n    UI3 --> UI4[\"输入提示词（如蒸汽朋克）\"]\n    UI4 --> UI5[\"AI 生成 UI 套件\"]\n    UI5 --> UI6[\"一键抠图去除背景\"]\n    UI6 --> UI7[\"完成对话框 UI\"]\n```\n<!-- [BV1bJN16RExY P1 00:40] [BV1bJN16RExY P1 00:55] [BV1bJN16RExY P1 00:57] [BV1bJN16RExY P1 01:01] [BV1bJN16RExY P1 01:07] [BV1bJN16RExY P1 01:45] -->\n\n## 角色立绘生成与风格一致性\n```mermaid\nflowchart TD\n    C1[\"准备像素角色帧参考图\"] --> C2[\"输入提示词（八方旅人风格）\"]\n    C2 --> C3[\"AI 生成角色立绘\"]\n    C3 --> C4[\"生成其他角色立绘（保持同一风格）\"]\n    C4 --> C5[\"一键抠图去除背景\"]\n    C5 --> C6[\"得到一致性角色立绘\"]\n```\n<!-- [BV1bJN16RExY P1 01:19] [BV1bJN16RExY P1 01:24] [BV1bJN16RExY P1 01:28] [BV1bJN16RExY P1 01:38] [BV1bJN16RExY P1 01:45] -->\n\n## 传统外包 vs Holopix 对比\n```mermaid\nflowchart LR\n    O1[\"手绘外包\"] --> O2[\"高成本\"]\n    O1 --> O3[\"周期长\"]\n    H1[\"Holopix AI 生成\"] --> H2[\"低成本\"]\n    H1 --> H3[\"快速迭代\"]\n    O2 -.-> H2\n    O3 -.-> H3\n    H2 --> H4[\"统一风格、无白边\"]\n    H3 --> H4\n```\n<!-- [BV1bJN16RExY P1 00:16] [BV1bJN16RExY P1 00:18] [BV1bJN16RExY P1 00:20] [BV1bJN16RExY P1 01:45] -->",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"独立开发者需求美术素材\"] --> A2[\"无美术基础，手绘成本高\"]\n    A2 --> A3[\"发现 Holopix 工具\"]\n    A3 --> A4[\"上传参考图（UI/角色）\"]\n    A4 --> A5[\"输入提示词\"]\n    A5 --> A6[\"生成多风格 UI 与立绘\"]\n    A6 --> A7[\"一键抠图去除背景\"]\n    A7 --> A8[\"导入游戏引擎使用\"]\n    A8 --> A9[\"降低开发门槛，统一风格\"]"
+    },
+    {
+      "title": "UI 生成流程",
+      "code": "flowchart LR\n    UI1[\"绘制矩形参考图（尺寸/形状）\"] --> UI2[\"打开 Holopix 自由画布\"]\n    UI2 --> UI3[\"放入参考图\"]\n    UI3 --> UI4[\"输入提示词（如蒸汽朋克）\"]\n    UI4 --> UI5[\"AI 生成 UI 套件\"]\n    UI5 --> UI6[\"一键抠图去除背景\"]\n    UI6 --> UI7[\"完成对话框 UI\"]"
+    },
+    {
+      "title": "角色立绘生成与风格一致性",
+      "code": "flowchart TD\n    C1[\"准备像素角色帧参考图\"] --> C2[\"输入提示词（八方旅人风格）\"]\n    C2 --> C3[\"AI 生成角色立绘\"]\n    C3 --> C4[\"生成其他角色立绘（保持同一风格）\"]\n    C4 --> C5[\"一键抠图去除背景\"]\n    C5 --> C6[\"得到一致性角色立绘\"]"
+    },
+    {
+      "title": "传统外包 vs Holopix 对比",
+      "code": "flowchart LR\n    O1[\"手绘外包\"] --> O2[\"高成本\"]\n    O1 --> O3[\"周期长\"]\n    H1[\"Holopix AI 生成\"] --> H2[\"低成本\"]\n    H1 --> H3[\"快速迭代\"]\n    O2 -.-> H2\n    O3 -.-> H3\n    H2 --> H4[\"统一风格、无白边\"]\n    H3 --> H4"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T12:43:25+00:00"
+}

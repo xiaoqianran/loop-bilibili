@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1r7Eg6jEvH",
+  "title": "Deepseek开源桌面版终于来了！直接对标Codex！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 896,
+  "text": "兄弟们扶稳了\ndeep seek桌面版来了\n长期关注我的老粉\n应该知道\n现在大模型厂商没有个desk top app\n都不好意思出来跟人家打招呼\n而AI开发环境最近确实也正在经历一场大洗盘\n每个大模型大厂都在出自己的桌面端\nAI编程智能体\nOpenAI有codex app\nAnthropic\n有cloud desk top\n连谷歌也把原来的ANTIGRAVITY\n强制升级成codex那样的AI开发智能体app\n把原来的id改名成antigravity id\n来给AI编程智能t app让路\n反观我们的deep seek\n大有一副一任群芳妒\n无意苦争春的高冷开源社区\n这时就坐不住了\n但起码别人有的我们也应该有啊\n所以立刻甩出个叫做deep sick GUI的\ndeep sick desktop app给大家看一下\n支持平台的话\n当然是全平台覆盖了Mac windows linux\n你爱装哪个装哪个\n安装好后界面可谓相当的清新\n正式哥喜欢的类型简约而不落俗套\n当然我们首先要做的是去到设置这里\n把我们的API key给填一下\n毕竟不是官方的嘛\ndeep seek好像也没有做OOS服务吧\n完了后回到主界面下方\n这里大家就可以选择自己想要的思考深度\n以及deep sk v for flash和pro的模型了\n接着大家就可以愉快地玩耍了\n简要介绍一下吧\n左边菜单栏上方\n这里大家明显可以看到它支持code\n也就是编码模式以及写作模式\n编码模式当然就是对应cloud desk top里面的cloud code\n是我们的AI编程智能体了\n而写作模式当然就是我们日常对话\n写作等用的了\n而code模式呢除了常用的功能\n这里还有一个插件\n点进去后可以看到这里支持MCP和skill\n定时任务\n一看就是对标open克洛小龙虾的定时任务功能了\n下面还有个链接手机功能\n点进去看一下\n可以链接飞书海外版\n飞书luck\n还有微信扫下码就能搞定\n很明显灵感肯定也是来自open color\n小龙虾的channels功能的好\n剩下的就留给大家自己慢慢玩吧\nAI产品狙击手\n每天分享免费AI工具和技巧\n关注我",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1r7Eg6jEvH",
+  "published_at": "1780915456",
+  "fetched_at": "2026-08-06T22:32:45+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deepseek 桌面版知识图谱\n\n## 产品概览 [BV1r7Eg6jEvH P1 00:01]\n```mermaid\nflowchart TD\n    A[\"Deepseek Desktop App\"] --> B[\"全平台支持<br/>Mac / Windows / Linux\"]\n    A --> C[\"需填写 API Key\"]\n    A --> D[\"模型选择\"]\n    D --> D1[\"Flash 模型\"]\n    D --> D2[\"Pro 模型\"]\n    A --> E[\"工作模式\"]\n    E --> E1[\"Code 模式\"]\n    E --> E2[\"Writing 模式\"]\n    E1 --> F[\"AI 编程智能体<br/>对应 Cloud Code\"]\n    E1 --> G[\"插件\"]\n    G --> G1[\"MCP\"]\n    G --> G2[\"Skill\"]\n    G --> G3[\"定时任务\"]\n    E1 --> H[\"手机链接功能\"]\n    H --> H1[\"飞书海外版\"]\n    H --> H2[\"微信扫码\"]\n    A --> I[\"竞争对手对标\"]\n    I --> I1[\"OpenAI Codex App\"]\n    I --> I2[\"Anthropic Cloud Desktop\"]\n    I --> I3[\"Google Antigravity 升级\"]\n```\n\n## 安装与配置流程 [BV1r7Eg6jEvH P1 00:46]\n```mermaid\nflowchart TD\n    S[\"开始：下载对应平台版本\"] --> I1[\"安装应用\"]\n    I1 --> I2[\"打开设置页面\"]\n    I2 --> I3[\"填写 API Key\"]\n    I3 --> I4[\"保存设置\"]\n    I4 --> M[\"返回主界面\"]\n    M --> D[\"选择思考深度\"]\n    D --> Mdl[\"选择模型<br/>(Flash / Pro)\"]\n    Mdl --> Mo[\"选择工作模式<br/>(Code / Writing)\"]\n    Mo --> U[\"开始使用\"]\n```\n\n## 功能模块与模式细节 [BV1r7Eg6jEvH P1 01:20]\n```mermaid\nflowchart LR\n    Mode[\"工作模式\"] --> Code[\"Code 模式\"]\n    Mode --> Write[\"Writing 模式\"]\n    Code --> AI[\"AI 编程智能体<br/>对应 Cloud Code\"]\n    Code --> Plugin[\"插件\"]\n    Plugin --> MCP[\"MCP 功能\"]\n    Plugin --> Skill[\"Skill 功能\"]\n    Plugin --> Schedule[\"定时任务\"]\n    Schedule --> OpenAI[\"对标 OpenAI 定时任务\"]\n    Code --> PhoneLink[\"手机链接\"]\n    PhoneLink --> Feishu[\"飞书海外版\"]\n    PhoneLink --> WeChat[\"微信扫码\"]\n    Write --> Chat[\"日常对话/写作\"]\n```",
+      "diagrams": [
+        {
+          "title": "产品概览",
+          "code": "flowchart TD\n    A[\"Deepseek Desktop App\"] --> B[\"全平台支持<br/>Mac / Windows / Linux\"]\n    A --> C[\"需填写 API Key\"]\n    A --> D[\"模型选择\"]\n    D --> D1[\"Flash 模型\"]\n    D --> D2[\"Pro 模型\"]\n    A --> E[\"工作模式\"]\n    E --> E1[\"Code 模式\"]\n    E --> E2[\"Writing 模式\"]\n    E1 --> F[\"AI 编程智能体<br/>对应 Cloud Code\"]\n    E1 --> G[\"插件\"]\n    G --> G1[\"MCP\"]\n    G --> G2[\"Skill\"]\n    G --> G3[\"定时任务\"]\n    E1 --> H[\"手机链接功能\"]\n    H --> H1[\"飞书海外版\"]\n    H --> H2[\"微信扫码\"]\n    A --> I[\"竞争对手对标\"]\n    I --> I1[\"OpenAI Codex App\"]\n    I --> I2[\"Anthropic Cloud Desktop\"]\n    I --> I3[\"Google Antigravity 升级\"]"
+        },
+        {
+          "title": "安装与配置流程",
+          "code": "flowchart TD\n    S[\"开始：下载对应平台版本\"] --> I1[\"安装应用\"]\n    I1 --> I2[\"打开设置页面\"]\n    I2 --> I3[\"填写 API Key\"]\n    I3 --> I4[\"保存设置\"]\n    I4 --> M[\"返回主界面\"]\n    M --> D[\"选择思考深度\"]\n    D --> Mdl[\"选择模型<br/>(Flash / Pro)\"]\n    Mdl --> Mo[\"选择工作模式<br/>(Code / Writing)\"]\n    Mo --> U[\"开始使用\"]"
+        },
+        {
+          "title": "功能模块与模式细节",
+          "code": "flowchart LR\n    Mode[\"工作模式\"] --> Code[\"Code 模式\"]\n    Mode --> Write[\"Writing 模式\"]\n    Code --> AI[\"AI 编程智能体<br/>对应 Cloud Code\"]\n    Code --> Plugin[\"插件\"]\n    Plugin --> MCP[\"MCP 功能\"]\n    Plugin --> Skill[\"Skill 功能\"]\n    Plugin --> Schedule[\"定时任务\"]\n    Schedule --> OpenAI[\"对标 OpenAI 定时任务\"]\n    Code --> PhoneLink[\"手机链接\"]\n    PhoneLink --> Feishu[\"飞书海外版\"]\n    PhoneLink --> WeChat[\"微信扫码\"]\n    Write --> Chat[\"日常对话/写作\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T22:32:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deepseek 桌面版知识图谱\n\n## 产品概览 [BV1r7Eg6jEvH P1 00:01]\n```mermaid\nflowchart TD\n    A[\"Deepseek Desktop App\"] --> B[\"全平台支持<br/>Mac / Windows / Linux\"]\n    A --> C[\"需填写 API Key\"]\n    A --> D[\"模型选择\"]\n    D --> D1[\"Flash 模型\"]\n    D --> D2[\"Pro 模型\"]\n    A --> E[\"工作模式\"]\n    E --> E1[\"Code 模式\"]\n    E --> E2[\"Writing 模式\"]\n    E1 --> F[\"AI 编程智能体<br/>对应 Cloud Code\"]\n    E1 --> G[\"插件\"]\n    G --> G1[\"MCP\"]\n    G --> G2[\"Skill\"]\n    G --> G3[\"定时任务\"]\n    E1 --> H[\"手机链接功能\"]\n    H --> H1[\"飞书海外版\"]\n    H --> H2[\"微信扫码\"]\n    A --> I[\"竞争对手对标\"]\n    I --> I1[\"OpenAI Codex App\"]\n    I --> I2[\"Anthropic Cloud Desktop\"]\n    I --> I3[\"Google Antigravity 升级\"]\n```\n\n## 安装与配置流程 [BV1r7Eg6jEvH P1 00:46]\n```mermaid\nflowchart TD\n    S[\"开始：下载对应平台版本\"] --> I1[\"安装应用\"]\n    I1 --> I2[\"打开设置页面\"]\n    I2 --> I3[\"填写 API Key\"]\n    I3 --> I4[\"保存设置\"]\n    I4 --> M[\"返回主界面\"]\n    M --> D[\"选择思考深度\"]\n    D --> Mdl[\"选择模型<br/>(Flash / Pro)\"]\n    Mdl --> Mo[\"选择工作模式<br/>(Code / Writing)\"]\n    Mo --> U[\"开始使用\"]\n```\n\n## 功能模块与模式细节 [BV1r7Eg6jEvH P1 01:20]\n```mermaid\nflowchart LR\n    Mode[\"工作模式\"] --> Code[\"Code 模式\"]\n    Mode --> Write[\"Writing 模式\"]\n    Code --> AI[\"AI 编程智能体<br/>对应 Cloud Code\"]\n    Code --> Plugin[\"插件\"]\n    Plugin --> MCP[\"MCP 功能\"]\n    Plugin --> Skill[\"Skill 功能\"]\n    Plugin --> Schedule[\"定时任务\"]\n    Schedule --> OpenAI[\"对标 OpenAI 定时任务\"]\n    Code --> PhoneLink[\"手机链接\"]\n    PhoneLink --> Feishu[\"飞书海外版\"]\n    PhoneLink --> WeChat[\"微信扫码\"]\n    Write --> Chat[\"日常对话/写作\"]\n```",
+  "diagrams": [
+    {
+      "title": "产品概览",
+      "code": "flowchart TD\n    A[\"Deepseek Desktop App\"] --> B[\"全平台支持<br/>Mac / Windows / Linux\"]\n    A --> C[\"需填写 API Key\"]\n    A --> D[\"模型选择\"]\n    D --> D1[\"Flash 模型\"]\n    D --> D2[\"Pro 模型\"]\n    A --> E[\"工作模式\"]\n    E --> E1[\"Code 模式\"]\n    E --> E2[\"Writing 模式\"]\n    E1 --> F[\"AI 编程智能体<br/>对应 Cloud Code\"]\n    E1 --> G[\"插件\"]\n    G --> G1[\"MCP\"]\n    G --> G2[\"Skill\"]\n    G --> G3[\"定时任务\"]\n    E1 --> H[\"手机链接功能\"]\n    H --> H1[\"飞书海外版\"]\n    H --> H2[\"微信扫码\"]\n    A --> I[\"竞争对手对标\"]\n    I --> I1[\"OpenAI Codex App\"]\n    I --> I2[\"Anthropic Cloud Desktop\"]\n    I --> I3[\"Google Antigravity 升级\"]"
+    },
+    {
+      "title": "安装与配置流程",
+      "code": "flowchart TD\n    S[\"开始：下载对应平台版本\"] --> I1[\"安装应用\"]\n    I1 --> I2[\"打开设置页面\"]\n    I2 --> I3[\"填写 API Key\"]\n    I3 --> I4[\"保存设置\"]\n    I4 --> M[\"返回主界面\"]\n    M --> D[\"选择思考深度\"]\n    D --> Mdl[\"选择模型<br/>(Flash / Pro)\"]\n    Mdl --> Mo[\"选择工作模式<br/>(Code / Writing)\"]\n    Mo --> U[\"开始使用\"]"
+    },
+    {
+      "title": "功能模块与模式细节",
+      "code": "flowchart LR\n    Mode[\"工作模式\"] --> Code[\"Code 模式\"]\n    Mode --> Write[\"Writing 模式\"]\n    Code --> AI[\"AI 编程智能体<br/>对应 Cloud Code\"]\n    Code --> Plugin[\"插件\"]\n    Plugin --> MCP[\"MCP 功能\"]\n    Plugin --> Skill[\"Skill 功能\"]\n    Plugin --> Schedule[\"定时任务\"]\n    Schedule --> OpenAI[\"对标 OpenAI 定时任务\"]\n    Code --> PhoneLink[\"手机链接\"]\n    PhoneLink --> Feishu[\"飞书海外版\"]\n    PhoneLink --> WeChat[\"微信扫码\"]\n    Write --> Chat[\"日常对话/写作\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:32:57+00:00"
+}

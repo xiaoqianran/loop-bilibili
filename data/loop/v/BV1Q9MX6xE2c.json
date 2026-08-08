@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Q9MX6xE2c",
+  "title": "Token 成本低到离谱！Codex 接入 DeepSeek V4 Flash｜手机控制 Codex 保姆级教程｜OpenCodex",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 5779,
+  "text": "这个就是cortex的软件界面\n我们可以看到这边是演示的cortex\n让我们来到这边的模型\n我们可以看到我已经介入了deep sc的deep sic\nv for flash的模型\n比如说我们来到这个日志这边\n有没看到调用的都是daisiv for flash的API接口\n比如我再发一条\n呃你好\n我们看到他回复了\n然后现在是时间是呃8.48分\n然后这边显示的也是08:48分发布发布的\n它调用的是deep sect\nwe fall flash的呃模型\n然后我们再来到这个cortex\n然后我让他执行一条命令\n比如说让他用谷歌浏览器打开啊\n百度这个首页\n看他能不能调用呃cortex的工具\n它只要能调用cortex的工具\n它就可以执行各种命令给agent控制电脑\n让我们先打开这个谷歌浏览器\n然后给他发送\n我们看到他现在就已经在调用cortex的工具了\n现在已经打开了\n我们来到cortex\n我们再来到cortex\n没看到他已经打开了\n然后这边是额调用了工具\n然后这是打开了网址\n而且它也可以用手机控制cortex\n让我们来到我的手机\n我们现在就来到了手机端的codex\n我们看到上面显示是cortex\n下面是电脑名称\n然后再下面是项目\n下面下面的项目是跟我电脑端的一模一样\n他是直接把电脑端的项目同步过来了\n比如说我点击这个你好\n你号里面的对话是跟电脑端的呃\n对话是一模一样的\n它是直接同步过来的\n然后我们点击下面的对话框\n然后点开之后\n我们可以到下面也是可以选择这个模型的\n点击这个模型\n点开之后我们可以到这是模型列表\n我们可以在这边直接切换模型\n现在它显示的是deep sk v for flash\n这个模型我直接还是用这个模型\n我用手机端呃\n执行呃\n调用工具\n然后用谷歌打开另外一个网站\n我们看他能不能打开\n给它粘贴\n这个网址啊\n它会跳到我的另外一个网址是直接跳转的\n我们给他发送\n我们看电脑端能不能执行这个任务\n我们看到手机端发动之后\n电脑端直接把我的这个博客的网址打开了\n我们看到已经打开了\n这边是这个对话内容\n他直接是手机端操作\n电脑端执行\n非常方便\n大家好\n我是超哥\n今天给大家分享codex接入deep sk we fall flash教程\n不仅token成本低到离谱\n还支持deep sk API调用A进的自动执行任务\n并且可以直接用手机控制codex\n随时随地接管AI任务\n让你不在电脑前也能远程操作cortex\n下面我会手把手带大家完成全部配置\n我们开始教程\n我会把所有用到材料\n放到我的这个博客的网址里\n我们首先来到第一步是下载安装cortex\n然后这是它的下载地址\n我们点击打开\n然后点击之后\n这边有个下载windows版\n让我们同意一下\n已经下载好了\n然后直接点击安装它\n然后已经安装好了\n我们点这边的继续登录\n我就用chat gtp账号登录\n然后就选一个账号进行登录\n然后这边点继续\n已经登录成功了\n这是开始向导\n这边点继续\n然后我这边直接点跳过啊\n这边点前往切GDP这边给它勾掉\n然后这边点跳过\n然后这边点完成设置\n然后我们现在看到就进入了cortex\n然后这里可以切换\n这边是切的GDP\n这是聊天的\n然后这边是cortex切换\n然后可以切换到cortex\n然后执行任务\n然后我们就先不管它\n让我们看一下这个模型模型\n这里我们我们点这边的高级\n然后再点这个模型\n我们看到现在这些模型都是额cortex它的模型\n然后我们看一下怎么接入DEPSK\n然后这给它关掉\n然后我们来到第二步是配置安装open cortex\n它可以让dav sic接入cortex\n然后这是他的HUP项目地址\n我们点击打开\n打开着门也拉\n这边有一个中文简介\n简体中文在这点击\n有兴趣的朋友可以看一下他的介绍\n然后我们要安装它\n先安装这个node js环境\n这是它的下载地址\n我们点击打开\n打开之后\n我们点击下面的这个windows安装程序\n然后现在已经下载好了\n我们点击安装\n这边我们点下一步\n然后这边给他勾上\n然后我们点下一步\n全部下一步就行了\n然后我们这边点完成就已经安装成功了\n然后下面是呃打开电脑CMD\n然后执行安装成功检测命令\n就是检测一下这个node js有没有安装成功\n这两个命令是需要检测一下\n我们来到CMD\n然后打开这个点击这个windows图标开始图标\n然后在这边搜索CMD\n让我们找到这边的打开点击就行了\n然后点开之后就是CMD的界面\n然后我们点这边的copy copy这边的命令\n然后来到CMD\n然后给它粘贴\n右击鼠标的右键\n然后给它粘贴过来\n然后下面还有一条命令\n让我们在这边按回车\n我们可以看到两条命令是都有版本号\n说明安装成功了\n让我们来到第二个是安装open cortex\n然后也是打开电脑CMD\n执行下面的命令进行安装\n这是他的命令\n我们点击这边的copy\n然后我们来到CMD\n然后一样给他鼠标右击\n给它粘贴进去\n按回车进行安装\n现在就已经安装好了\n如果是你有报这个错的话\n额说明他是有问题的\n然后你执行下面的命令进行安装就行了\n然后我没碰到\n我就不用执行这条命令了\n然后第三个是启动open codex\n然后也是在CMD里面执行下面的启动命令\n然后这是他的命令\n我们点击这边的copy\n然后还是来到CMD\n然后右击鼠标右键\n然后给他按回车执行命令\n看到这个界面\n我们说明已经打开了\n这边有个链接\n我们可以按住呃\n键盘的左下角的CTRL键\n然后按鼠标的左键\n然后我们就能打开了\n这就是open cortex\n然后你也可以来到这边\n这边我就写的\n启动完成后\n浏览器里面打开控制面板面URLL\n然后直接点击它一样的可以来到open cortex\n然后这是它的控制面板是这样长这个样\n让我们再来到我的博客\n然后如果是你们不用open cortex的\n不想用了\n然后这是他的下载命令\n让我们来到第三个是呃\n接入deep sick呃\nwe fall flash模型API\n然后我们先来到deep sc的官网\n点击这个让我们点击这个API开放平台\n我已经登录过了\n然后我直接点这边的APIK获取个API\n然后点击这边的创建APIKE\n然后这个名称我们就随便选\n随便填\n比如ALX超哥\n然后点这边的创建\n然后他就创建了一个APIK\n我们点击复制\n然后我们来到刚刚的这个open cortex的控制面板\n我们点击这边的提供方\n让我们在这边添加提供方\n然后我们来到这边的付费这里\n我们在这边搜索DEPSK\n啊这个就是我们点击它\n点击之后上面的都是他自己已经填好了\n我们直接把刚刚复制的APIK\n粘贴到这个API密钥这里\n然后给它粘贴过来\n就是刚刚的这个APIK给他复制过来\n粘贴到这里就行了\n然后我们填完之后\n我们点这边的添加提供方就行了\n然后添加完之后\n这边就有一个deep sick\n然后显示是两个模型\n我们可以点击看一下\n然后这有deep sick的一些信息\n然后这边有个模型\n我们点击它\n我们可以看到下面是有两个模型可以用的\n一个是呃DEVSCVFFLASH\n一个是dev sick with fpro\n这两个模型都是可以用的\n现在这个模型呃\ndeep sea API已经添加好了\n我们来到哦\nCortex\n这是这是OPENCORTEX的这个终端\n我们不要关掉它\n关掉就用不了了\n让我们找到切尔GP\n这个就是cortex\n这个cortex\n这边我们可以切换这个切尔GB跟库TEX\n然后我们来到这边的模型这里啊\n选这边的模型\n我们可以看到它是没有添加这个dev sic的\n这个模型的\n然后我们需要给他退出\n完全的退出掉\n然后点击找到这个切点GP\n然后给它右击\n然后点这边的退出\n剔除之后\n我们再重新进入这个chat GDP\n点击打开\n这个给它关掉\n打开之后我们再点这边的模型\n然后再找到这个模型\n我们看看现在就有deep sick的两个模型了\n一个是we for flash\n一个是we fall pro\n我选中这个dev sic viva flash\n然后选中之后\n这边就显示的是dev sic的模型啊\n比如说我发一个问题\n你好\n你是什么大模型\n他没有说他是deep sg\n其实他调用的是deep sk的API\n然后我们来到网页\n这个open cortex的控制面板\n我们找到这边有一个日志与调试\n然后我们可以看到这边它调用的日志\n这里显示的是调用的deep stick vivflash\n我再发一条\n再发个\n你好\n那我们看到他这边又增加了一条\n显示的也是deep sick\nwe fall flash的这个模型\n它就能调用的是dev sick的API\n然后因为我们呃用deep sg\n我们是需要执行各种任务的\n然后所以我们会用到呃各种插件\n比如说我就用这个这个谷歌浏览器的插件\n我们安装一下\n安装一下\n看他能不能调取到这个工具\n然后添加之后我们点这边的打开\n就要添加这个插件到groom添加\n然后这边再点添加\n那现在已经添加好了\n我们可以看到这边是切7V的\n这这个扩展程序经添加好了\n然后我们再来到这边\n我这边给它关掉\n然后我们再来到这边的项目这里\n然后添加添加个项目名称\n比如X超哥\n然后这边点创建项目\n然后再来这个就是刚创建的项目\n然后点这个呃书写的这个小图标\n然后新建一个对话\n因为我们要测试它的呃能不能调用工具\n它能调用工具\n我们就可以执行各种任务\n还有这边这这边那个插件\n点击我们这个呃computer user\n然后这个呃\n我们如果你想要想要\n更更好的控制这个电脑的话\n我们也是需要安装的\n我添加这个呃谷歌浏览器的插件\n只是控制谷歌浏览器\n因为我只是演示嘛\n如果你需要的话\n在这里安装一下这个控制电脑的就行了\n那我们还是来到这个聊天这里\n我们看他能不能呃调用到这个插件的工具\n比如说发个\n比如说让他用谷歌浏览器打开3W点百度点com\n我们看到能不能调用工具\n然后呃通过谷歌浏览器打开这个百度的网址\n然后点发送\n打开一下这个谷歌浏览器\n我们可以看到他现在是已经在调用工具了\n因为有些模型呃它是没办法调用工具的\n就是它只能对话\n不能调用工具\n然后不能执行任务\n这个呃DAVC的这个模型它是可以的\n这个API它只要能够调用模型\n我们就可以执行各种任务\n让我这边给他允许一下\n我们可以看到它已经通过调用工具\n在谷歌浏览器里面打开了百度的首页\n然后它显示已经执行完成了\n看到已经完成了\n就是在就是呃dusk的这个API\n可以在codex执行调用工具的任务呢\n它可以执行各种agent的任务\n然后我们再来到我的博客\n让我们再来到第四步\n我们看一下怎么把手机接入到cortex\n用手机控制电脑端的cortex执行各种任务\n我们来到我们的手机\n点击这个app store\n点击打开它\n我是IPHONE手机\n然后我们在搜索管理员输入切的GDP\n然后进行搜索\n然后我们找到这个七的GDP\n然后点击下载\n然后我们可以看到已经下载好了\n我们点击进入这边无线局域网与蜂窝网络\n我们都给他启用吧\n让我点直接点这个切尔GDP的账号进行登录\n然后这边点允许\n因为你要做任务嘛\n他有时候会通知\n然后这就是切了吉利的账号\n然后我们点击左上角的这个两个横杠\n然后我们点击这个呃cortex\n点击它\n然后这就来了cortex\n它是让我们呃匹配到电脑\n因为手机端这个切7p cortex\n他就是为了连电脑的cortex呃准备的\n我们点这边的\n我有配对码\n点击它\n然后这个需要访问相机\n我们点允许\n然后我们再来到我们电脑端的呃\nCHEGDP就是cortex这边\n让我们点这边的这边要选上cortex\n然后这里我们点这边的名称\n让我们点这边的设置\n让我们往下拉\n这边有一个连接\n这个点击它\n然后这边有一个添加设备\n以远程控制此电脑\n我们点添加\n然后这边我们点开始设置\n然后这边点允许\n然后我们看到它现在显示的是一个二维码\n我们直接用手机上面的这个摄像头\n我们对着这个二维码扫一下\n显示正在配对\n我们可以看到现在已经配对成功了啊\n我刚刚在电脑上创建的这个\n用谷歌浏览器打开3W点\n还有一个我要说的就是你这个想要配对成功\n你必须你这个手机的切尔GB账号\n跟你这个电脑端的切尔GB账号\n登录的是同一个账号\n不能是不同的账号\n不同的账号你是呃配对不成功的\n然后我们看到电脑这边\n电脑端这边是已连接这个三个选项\n我都给他启用一下吧\n然后这边点完成这三个都给他勾上\n然后点完成\n那现在就已经配配对成功了\n这边显示是我的IPHONE手机\n然后这边是允许连接给他勾上了\n已经这边使此保持此电脑保持幻影\n也给他勾上\n然后我们再来到我们的任务\n这边\n我们看到这边是艾特超哥\n然后这个是刚刚的任务\n然后我现在用手机端\n我给他也给他执行一条命令\n看他能不能执行\n比如说我还是执行这个\n用谷歌浏览器打开3W点百度点com\n换成X超哥吧\n我让他呃在手机端\n让它在电脑端用谷歌浏览器打开3W点X\n我们看可以看到这个手机端\n我们也可以看到这个模型选择的也是可以选择\n在这边前面有个模型\n我们一样可以在这边选择的也可以\n我们现在选择的就是deep sick的we fall flash\n然后我们给它返回这边\n直接给他发送\n我们看电脑端会不会执行\n我们可以看到电脑端这边我们点发送之后\n他这边就已经开始执行了\n然后这边我一样是允许一次\n因为刚刚我是只允许一次\n然后我们理论上是应该是允许此类命令\n他就会不会再提醒了\n你就是你在手机端就是直接发送\n它就直接执行了\n他不会再提醒\n让让你允许了\n然后我们直接点这个允许类似命令下\n下次就不用再点了\n他直接执行\n我们同意\n我没看到他直接在我的谷歌浏览器\n电脑端的谷歌浏览器里面打开了X超哥的博客\n然后我在手机端我再返回\n然后这边有个项目\n这个项目就是同步我们电脑端的项目\n我们看到我们这个项目跟电脑端的\n是一模一样的\n他这个手机端的codex它就是同步电脑端的\nCool dex\n是可以让你在手机上操作你的cortex\n执行各种任务\n各种命令用起来真的是非常方便的\n好吧\n今天的教程就到这吧\n如果大家有什么问题的话\n可以在视频下方的评论区交流\n谢谢大家的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Q9MX6xE2c",
+  "published_at": "1785747468",
+  "fetched_at": "2026-08-06T19:33:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Token 成本低到离谱！Codex 接入 DeepSeek V4 Flash 教程图谱\n\n## 系统架构概览\n\n```mermaid\nflowchart TD\n    A1[\"Cortex Desktop UI\"] --> A2[\"OpenCortex Server\"]\n    A2 --> A3[\"DeepSeek V4 Flash API\"]\n    A4[\"Codex Mobile App\"] --> A2\n    A4 --> A1\n    A2 --> A5[\"Browser Control Tool\"]\n    A5 --> A6[\"Agent (command executor)\"]\n```\n\n## 配置步骤流程\n\n```mermaid\nflowchart TD\n    B1[\"下载并安装 Cortex\"] --> B2[\"安装 Node.js 环境\"]\n    B2 --> B3[\"通过 npm 安装 OpenCortex\"]\n    B3 --> B4[\"获取 DeepSeek API Key\"]\n    B4 --> B5[\"在 OpenCortex 添加 Provider 并粘贴 API Key\"]\n    B5 --> B6[\"在 OpenCortex 选择 DeepSeek V4 Flash 模型\"]\n    B6 --> B7[\"在 OpenCortex 启用浏览器插件等工具\"]\n    B7 --> B8[\"发送测试指令验证工具调用\"]\n```\n\n## 手机端指令执行链路\n\n```mermaid\nflowchart TD\n    C1[\"在手机端发送指令\"] --> C2[\"选择使用的模型\"]\n    C2 --> C3[\"项目同步至桌面 Cortex\"]\n    C3 --> C4[\"Cortex 调用工具执行指令\"]\n    C4 --> C5[\"浏览器打开指定 URL\"]\n    C5 --> C6[\"在手机端显示执行结果\"]\n    C4 --> C7[\"首次执行弹出允许提示\"]\n    C7 --> C8[\"用户点击允许一次\"]\n    C4 --> C9[\"记录日志条目\"]\n    C4 --> C10[\"若未授权则弹出错误提示\"]\n```",
+      "diagrams": [
+        {
+          "title": "系统架构概览",
+          "code": "flowchart TD\n    A1[\"Cortex Desktop UI\"] --> A2[\"OpenCortex Server\"]\n    A2 --> A3[\"DeepSeek V4 Flash API\"]\n    A4[\"Codex Mobile App\"] --> A2\n    A4 --> A1\n    A2 --> A5[\"Browser Control Tool\"]\n    A5 --> A6[\"Agent (command executor)\"]"
+        },
+        {
+          "title": "配置步骤流程",
+          "code": "flowchart TD\n    B1[\"下载并安装 Cortex\"] --> B2[\"安装 Node.js 环境\"]\n    B2 --> B3[\"通过 npm 安装 OpenCortex\"]\n    B3 --> B4[\"获取 DeepSeek API Key\"]\n    B4 --> B5[\"在 OpenCortex 添加 Provider 并粘贴 API Key\"]\n    B5 --> B6[\"在 OpenCortex 选择 DeepSeek V4 Flash 模型\"]\n    B6 --> B7[\"在 OpenCortex 启用浏览器插件等工具\"]\n    B7 --> B8[\"发送测试指令验证工具调用\"]"
+        },
+        {
+          "title": "手机端指令执行链路",
+          "code": "flowchart TD\n    C1[\"在手机端发送指令\"] --> C2[\"选择使用的模型\"]\n    C2 --> C3[\"项目同步至桌面 Cortex\"]\n    C3 --> C4[\"Cortex 调用工具执行指令\"]\n    C4 --> C5[\"浏览器打开指定 URL\"]\n    C5 --> C6[\"在手机端显示执行结果\"]\n    C4 --> C7[\"首次执行弹出允许提示\"]\n    C7 --> C8[\"用户点击允许一次\"]\n    C4 --> C9[\"记录日志条目\"]\n    C4 --> C10[\"若未授权则弹出错误提示\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T19:40:49+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Token 成本低到离谱！Codex 接入 DeepSeek V4 Flash 教程图谱\n\n## 系统架构概览\n\n```mermaid\nflowchart TD\n    A1[\"Cortex Desktop UI\"] --> A2[\"OpenCortex Server\"]\n    A2 --> A3[\"DeepSeek V4 Flash API\"]\n    A4[\"Codex Mobile App\"] --> A2\n    A4 --> A1\n    A2 --> A5[\"Browser Control Tool\"]\n    A5 --> A6[\"Agent (command executor)\"]\n```\n\n## 配置步骤流程\n\n```mermaid\nflowchart TD\n    B1[\"下载并安装 Cortex\"] --> B2[\"安装 Node.js 环境\"]\n    B2 --> B3[\"通过 npm 安装 OpenCortex\"]\n    B3 --> B4[\"获取 DeepSeek API Key\"]\n    B4 --> B5[\"在 OpenCortex 添加 Provider 并粘贴 API Key\"]\n    B5 --> B6[\"在 OpenCortex 选择 DeepSeek V4 Flash 模型\"]\n    B6 --> B7[\"在 OpenCortex 启用浏览器插件等工具\"]\n    B7 --> B8[\"发送测试指令验证工具调用\"]\n```\n\n## 手机端指令执行链路\n\n```mermaid\nflowchart TD\n    C1[\"在手机端发送指令\"] --> C2[\"选择使用的模型\"]\n    C2 --> C3[\"项目同步至桌面 Cortex\"]\n    C3 --> C4[\"Cortex 调用工具执行指令\"]\n    C4 --> C5[\"浏览器打开指定 URL\"]\n    C5 --> C6[\"在手机端显示执行结果\"]\n    C4 --> C7[\"首次执行弹出允许提示\"]\n    C7 --> C8[\"用户点击允许一次\"]\n    C4 --> C9[\"记录日志条目\"]\n    C4 --> C10[\"若未授权则弹出错误提示\"]\n```",
+  "diagrams": [
+    {
+      "title": "系统架构概览",
+      "code": "flowchart TD\n    A1[\"Cortex Desktop UI\"] --> A2[\"OpenCortex Server\"]\n    A2 --> A3[\"DeepSeek V4 Flash API\"]\n    A4[\"Codex Mobile App\"] --> A2\n    A4 --> A1\n    A2 --> A5[\"Browser Control Tool\"]\n    A5 --> A6[\"Agent (command executor)\"]"
+    },
+    {
+      "title": "配置步骤流程",
+      "code": "flowchart TD\n    B1[\"下载并安装 Cortex\"] --> B2[\"安装 Node.js 环境\"]\n    B2 --> B3[\"通过 npm 安装 OpenCortex\"]\n    B3 --> B4[\"获取 DeepSeek API Key\"]\n    B4 --> B5[\"在 OpenCortex 添加 Provider 并粘贴 API Key\"]\n    B5 --> B6[\"在 OpenCortex 选择 DeepSeek V4 Flash 模型\"]\n    B6 --> B7[\"在 OpenCortex 启用浏览器插件等工具\"]\n    B7 --> B8[\"发送测试指令验证工具调用\"]"
+    },
+    {
+      "title": "手机端指令执行链路",
+      "code": "flowchart TD\n    C1[\"在手机端发送指令\"] --> C2[\"选择使用的模型\"]\n    C2 --> C3[\"项目同步至桌面 Cortex\"]\n    C3 --> C4[\"Cortex 调用工具执行指令\"]\n    C4 --> C5[\"浏览器打开指定 URL\"]\n    C5 --> C6[\"在手机端显示执行结果\"]\n    C4 --> C7[\"首次执行弹出允许提示\"]\n    C7 --> C8[\"用户点击允许一次\"]\n    C4 --> C9[\"记录日志条目\"]\n    C4 --> C10[\"若未授权则弹出错误提示\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:40:49+00:00"
+}

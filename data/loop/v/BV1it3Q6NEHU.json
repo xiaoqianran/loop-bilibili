@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1it3Q6NEHU",
+  "title": "【科技杂谈番外】一杯奶茶钱，让deepseek一键汉化galgame，瘫坐核爆，梁圣的恩情还不完",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1015,
+  "text": "兄弟们\n真的核弹爆炸了\n真真的瘫坐在椅子上\n真的头晕目眩了\n看一下\n就是我是从昨天开始用deep sick v4flash正式版\n我用了11块钱\n不到十块多\n你喝奶茶\n你都只能喝蜜雪冰城的\n就这么多钱\n我干什么呢\n我用它来做了大概70多万字的日文机翻\n然后他最近不是说出了一个正式版吗\n正式版\n然后我之前一直在用chat box\nTrap box\n最新更新更新完了以后\n他有一个工作模式\n工作模式以后他就可以更方便的去\n就类似于一个编写编写代码\n一个cod模式\n然后我就试着之前是用DEPSCAPI\n我主要是做翻译\n然后我就想他既然有这个编程能力\n我就试了一下\n我说能不能让他帮我写一个软件\n写个软件就是说直接一键汉化\n就是这个这个老的这个这个引擎的gala game\n你能不能给我写一个一键汉化那个东西出来\n一开始\n然后他就给我写了一个这个\n这个是我叠了四个代之后的产物\n一开始我的要求是他给我分析\n分析完了以后给我手动导出日文文本\n然后导出完了以后我自己去跑\n再放到这上面去\n让他跑deep sick API汉化\n汉化完了以后\n我再手动的封去\n就手动的导出来\n手动解包\n然后手动封包\n然后后来我就想\n那反正我汉化不是翻译的过程\n也是找deep sk来做积分\n那我直接让他给我提个\n要给他提个要求\n就说你直接能不能帮我直接解包\n翻译封包\n你就一键帮我汉化了\n然后我给你那个复制那个API密钥\n然后你自己去调模型\n然后那啥你看我现在我获取模型\n然后里面选一个flash测试一下\n测试一下\n然后我就点个一汉化\n点完一汉化以后跑个30分钟\n跑个30分钟\n一开始出来是乱码\n我跑了好几次都乱码\n然后后来我自己想通了\n就是他的gala game引擎\n本来这个日日文引擎它里面没有中文字库\n那没有中文字库跑出来可不就乱码吗\n那什么样的方法能够让他跑中文字库呢\n安卓模拟器\n啊也就是说这玩意他在电脑上面跑\n他没有智库\n他是乱码的\n然后我把他扔到了安卓手机\n然后那个模拟器上面大家都看到\n这个就是汉化出来的效果哇\n真的就一句话\n真的就一句话\n然后你就给我写一个呃\n也没有说一句话了\n我前前后后可能叠了好几代\n就是说差不多一个半小时\n这个差不多一半一个半小时的成果\n然后再跑\n然后跑这个一键汉化\n跑了半个小时\n然后就就可以出这样的效果\n关键是我跑了那么多以上的种种\n我跑了那么多\n总共花了十块钱哇\n梁胜的恩情还不完\n我靠AI真的太变态了\n我的天啊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1it3Q6NEHU",
+  "published_at": "1785656384",
+  "fetched_at": "2026-08-07T02:01:10+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 一键汉化 Galgame 知识图谱\n\n## 总览\n```mermaid\nflowchart LR\n    D1[\"DeepSeek V4Flash\"] --> D2[\"DeepSeek API\"]\n    D2 --> T1[\"日文文本（约70万字）\"]\n    T1 --> T2[\"中文翻译文本\"]\n    T2 --> A1[\"Android 模拟器\"]\n    A1 --> R1[\"正确显示的汉化游戏\"]\n    C1[\"成本约 10 元\"] --> D1\n    T3[\"总时长约 1.5 小时\"] --> D1\n```\n\n## 一键汉化工作流程\n```mermaid\nflowchart TD\n    S1[\"启动 DeepSeek V4Flash（工作/代码模式）\"]\n    S2[\"使用 DeepSeek API 翻译日文\"]\n    S3[\"手动导出日文文本\"]\n    S4[\"运行翻译 API 生成中文文本\"]\n    S5[\"手动解包游戏资源\"]\n    S6[\"替换为中文文本\"]\n    S7[\"手动封包\"]\n    S8[\"在 Android 模拟器上运行\"]\n    S9[\"得到汉化后的游戏\"]\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9\n```\n\n## 乱码问题与解决方案\n```mermaid\nflowchart TD\n    P1[\"原 galgame 引擎缺少中文字库\"]\n    P2[\"翻译后出现乱码\"]\n    S1[\"识别乱码原因\"]\n    S2[\"将游戏移植至 Android 模拟器\"]\n    S3[\"Android 系统自带中文字库\"]\n    S4[\"乱码消除，显示正常\"]\n    P1 --> P2 --> S1 --> S2 --> S3 --> S4\n```\n\n## 成本与时间投入\n```mermaid\nflowchart LR\n    C1[\"费用：约 10 元（相当于一杯奶茶）\"]\n    T1[\"使用 DeepSeek V4Flash 1.5 小时\"]\n    E1[\"产出：一键汉化的 Galgame\"]\n    C1 --> E1\n    T1 --> E1\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart LR\n    D1[\"DeepSeek V4Flash\"] --> D2[\"DeepSeek API\"]\n    D2 --> T1[\"日文文本（约70万字）\"]\n    T1 --> T2[\"中文翻译文本\"]\n    T2 --> A1[\"Android 模拟器\"]\n    A1 --> R1[\"正确显示的汉化游戏\"]\n    C1[\"成本约 10 元\"] --> D1\n    T3[\"总时长约 1.5 小时\"] --> D1"
+        },
+        {
+          "title": "一键汉化工作流程",
+          "code": "flowchart TD\n    S1[\"启动 DeepSeek V4Flash（工作/代码模式）\"]\n    S2[\"使用 DeepSeek API 翻译日文\"]\n    S3[\"手动导出日文文本\"]\n    S4[\"运行翻译 API 生成中文文本\"]\n    S5[\"手动解包游戏资源\"]\n    S6[\"替换为中文文本\"]\n    S7[\"手动封包\"]\n    S8[\"在 Android 模拟器上运行\"]\n    S9[\"得到汉化后的游戏\"]\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9"
+        },
+        {
+          "title": "乱码问题与解决方案",
+          "code": "flowchart TD\n    P1[\"原 galgame 引擎缺少中文字库\"]\n    P2[\"翻译后出现乱码\"]\n    S1[\"识别乱码原因\"]\n    S2[\"将游戏移植至 Android 模拟器\"]\n    S3[\"Android 系统自带中文字库\"]\n    S4[\"乱码消除，显示正常\"]\n    P1 --> P2 --> S1 --> S2 --> S3 --> S4"
+        },
+        {
+          "title": "成本与时间投入",
+          "code": "flowchart LR\n    C1[\"费用：约 10 元（相当于一杯奶茶）\"]\n    T1[\"使用 DeepSeek V4Flash 1.5 小时\"]\n    E1[\"产出：一键汉化的 Galgame\"]\n    C1 --> E1\n    T1 --> E1"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T02:01:20+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 一键汉化 Galgame 知识图谱\n\n## 总览\n```mermaid\nflowchart LR\n    D1[\"DeepSeek V4Flash\"] --> D2[\"DeepSeek API\"]\n    D2 --> T1[\"日文文本（约70万字）\"]\n    T1 --> T2[\"中文翻译文本\"]\n    T2 --> A1[\"Android 模拟器\"]\n    A1 --> R1[\"正确显示的汉化游戏\"]\n    C1[\"成本约 10 元\"] --> D1\n    T3[\"总时长约 1.5 小时\"] --> D1\n```\n\n## 一键汉化工作流程\n```mermaid\nflowchart TD\n    S1[\"启动 DeepSeek V4Flash（工作/代码模式）\"]\n    S2[\"使用 DeepSeek API 翻译日文\"]\n    S3[\"手动导出日文文本\"]\n    S4[\"运行翻译 API 生成中文文本\"]\n    S5[\"手动解包游戏资源\"]\n    S6[\"替换为中文文本\"]\n    S7[\"手动封包\"]\n    S8[\"在 Android 模拟器上运行\"]\n    S9[\"得到汉化后的游戏\"]\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9\n```\n\n## 乱码问题与解决方案\n```mermaid\nflowchart TD\n    P1[\"原 galgame 引擎缺少中文字库\"]\n    P2[\"翻译后出现乱码\"]\n    S1[\"识别乱码原因\"]\n    S2[\"将游戏移植至 Android 模拟器\"]\n    S3[\"Android 系统自带中文字库\"]\n    S4[\"乱码消除，显示正常\"]\n    P1 --> P2 --> S1 --> S2 --> S3 --> S4\n```\n\n## 成本与时间投入\n```mermaid\nflowchart LR\n    C1[\"费用：约 10 元（相当于一杯奶茶）\"]\n    T1[\"使用 DeepSeek V4Flash 1.5 小时\"]\n    E1[\"产出：一键汉化的 Galgame\"]\n    C1 --> E1\n    T1 --> E1\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart LR\n    D1[\"DeepSeek V4Flash\"] --> D2[\"DeepSeek API\"]\n    D2 --> T1[\"日文文本（约70万字）\"]\n    T1 --> T2[\"中文翻译文本\"]\n    T2 --> A1[\"Android 模拟器\"]\n    A1 --> R1[\"正确显示的汉化游戏\"]\n    C1[\"成本约 10 元\"] --> D1\n    T3[\"总时长约 1.5 小时\"] --> D1"
+    },
+    {
+      "title": "一键汉化工作流程",
+      "code": "flowchart TD\n    S1[\"启动 DeepSeek V4Flash（工作/代码模式）\"]\n    S2[\"使用 DeepSeek API 翻译日文\"]\n    S3[\"手动导出日文文本\"]\n    S4[\"运行翻译 API 生成中文文本\"]\n    S5[\"手动解包游戏资源\"]\n    S6[\"替换为中文文本\"]\n    S7[\"手动封包\"]\n    S8[\"在 Android 模拟器上运行\"]\n    S9[\"得到汉化后的游戏\"]\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9"
+    },
+    {
+      "title": "乱码问题与解决方案",
+      "code": "flowchart TD\n    P1[\"原 galgame 引擎缺少中文字库\"]\n    P2[\"翻译后出现乱码\"]\n    S1[\"识别乱码原因\"]\n    S2[\"将游戏移植至 Android 模拟器\"]\n    S3[\"Android 系统自带中文字库\"]\n    S4[\"乱码消除，显示正常\"]\n    P1 --> P2 --> S1 --> S2 --> S3 --> S4"
+    },
+    {
+      "title": "成本与时间投入",
+      "code": "flowchart LR\n    C1[\"费用：约 10 元（相当于一杯奶茶）\"]\n    T1[\"使用 DeepSeek V4Flash 1.5 小时\"]\n    E1[\"产出：一键汉化的 Galgame\"]\n    C1 --> E1\n    T1 --> E1"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:01:20+00:00"
+}

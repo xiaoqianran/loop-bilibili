@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="site-base" content="/loop-bilibili" />
+  <title>Godot必备！别再手写生成代码了，这个万能组件一招搞定 #Godot #Godot4 #游戏开发 #独立游戏 #组件化开发 #场景生成器 #游戏编程 #解耦 · BV1EYPUzfE7F</title>
+  <link rel="stylesheet" href="../../../assets/app.css?v=20260808155041" />
+</head>
+<body>
+  <div class="wrap" id="app">加载中…</div>
+  <script>
+    window.SITE_BASE = "/loop-bilibili";
+    window.SITE_ASSET_V = "20260808155041";
+  </script>
+  <script src="../../../assets/app.js?v=20260808155041"></script>
+  <script>
+    
+    SubtitleSite.renderVideo("loop", "BV1EYPUzfE7F").catch(e => {
+      document.getElementById('app').textContent = String(e);
+    });
+    
+  </script>
+</body>
+</html>

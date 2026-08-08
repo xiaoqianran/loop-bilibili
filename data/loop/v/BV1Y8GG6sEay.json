@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1Y8GG6sEay",
+  "title": "deepseek flash正式版对比composer2.5 依旧grok神了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 431,
+  "text": "deep sick杠V4杠flash正式版已经上线\n然后今天来测一下\n对比一个同样性价比的模型\nGrow k gun composer\n杠2.5杠fast\n翻一下同样的提示词去完成一个任务\n我们从功能完整情况\ntoken消耗时间这几个反面来比较\n我们这边快进一下\n看到这边已经完成了\ndeep seek耗时半小时左右\ncomposer耗时16分钟左右\ntoken消耗量\ndeep seek是composer两倍左右\n下面来看效果\n先看一下deep seek的\n首先基本功能是完成的\n但是筛选框是没有渲染的\n然后停止对话按钮需一级\n可以点击\n确是两个问题\n然后看一下composer的这边考虑比较全面\n没有提到的功能也做了\n然后他这个markdown渲染有问题\n但是基本要求还是达到了费用对比\n由于deep sick没有coding plan\n这边消耗是两块五\n然后crook是50一个月的套餐\n就算消耗是二毛钱左右\n只用了旧套餐的1%左右\n大家可以看一下效果如何",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Y8GG6sEay",
+  "published_at": "1785586855",
+  "fetched_at": "2026-08-07T13:01:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deepseek Flash 正式版 vs Composer 2.5 Fast 对比图谱\n\n## 总览比较\n\n```mermaid\nflowchart TD\n    DS[\"Deepseek Flash 正式版\"] --> FUNC[\"功能完整性\"]\n    CP[\"Composer 2.5 Fast\"] --> FUNC\n    DS --> TIME[\"时间消耗\"]\n    CP --> TIME\n    DS --> TOKEN[\"Token 消耗\"]\n    CP --> TOKEN\n    DS --> COST[\"费用\"]\n    CP --> COST\n    FUNC --> RESULT[\"效果质量\"]\n    TIME --> RESULT\n    TOKEN --> RESULT\n    COST --> RESULT\n```\n\n- Deepseek Flash 正式版上线 [BV1Y8GG6sEay P1 00:00]  \n- Composer 2.5 Fast 对比模型 [BV1Y8GG6sEay P1 00:09]  \n- 对比维度：功能完整性、时间消耗、Token 消耗、费用 [BV1Y8GG6sEay P1 00:14]  \n- 效果质量为综合评估结果 （无直接时间戳，依据整体对比）\n\n## 性能指标\n\n```mermaid\nflowchart TD\n    DS_TIME[\"Deepseek 耗时 ≈ 30 min\"] --> DS\n    CP_TIME[\"Composer 耗时 ≈ 16 min\"] --> CP\n    DS_TOKEN[\"Deepseek Token ≈ 2× Composer\"] --> DS\n    CP_TOKEN[\"Composer Token\"] --> CP\n    DS_COST[\"Deepseek 费用 ≈ 2.5 元\"] --> DS\n    CP_COST[\"Composer 费用 50 元/月套餐\"] --> CP\n    DS --> DS_TIME\n    DS --> DS_TOKEN\n    DS --> DS_COST\n    CP --> CP_TIME\n    CP --> CP_TOKEN\n    CP --> CP_COST\n```\n\n- Deepseek 耗时约半小时 [BV1Y8GG6sEay P1 00:38]  \n- Composer 耗时约 16 分钟 [BV1Y8GG6sEay P1 00:40]  \n- Deepseek Token 消耗约为 Composer 的两倍 [BV1Y8GG6sEay P1 00:44]  \n- Deepseek 费用约 2.5 元（无 coding plan） [BV1Y8GG6sEay P1 01:15‑01:17]  \n- Composer 费用 50 元/月套餐，实际消耗约 0.2 元 [BV1Y8GG6sEay P1 01:19‑01:22]  \n\n## 功能差异\n\n```mermaid\nflowchart TD\n    DS_BASIC[\"Deepseek 基本功能完成\"] --> DS\n    DS_FILTER[\"筛选框未渲染\"] --> DS_BASIC\n    DS_STOP[\"停止对话按钮需一级可点击\"] --> DS_BASIC\n    CP_FULL[\"Composer 功能更全面\"] --> CP\n    CP_MD[\"Composer Markdown 渲染有问题\"] --> CP_FULL\n    DS --> DS_BASIC\n    CP --> CP_FULL\n```\n\n- Deepseek 基本功能完成 [BV1Y8GG6sEay P1 00:53]  \n- Deepseek 筛选框未渲染 [BV1Y8GG6sEay P1 00:55]  \n- Deepseek 停止对话按钮需一级可点击 [BV1Y8GG6sEay P1 00:57‑01:00]  \n- Composer 功能更全面（包括未提及的功能） [BV1Y8GG6sEay P1 01:07]  \n- Composer Markdown 渲染存在问题 [BV1Y8GG6sEay P1 01:09]  \n\n## 成本结构与使用比例\n\n```mermaid\nflowchart TD\n    DS_PRICE[\"Deepseek 费用 2.5 元\"] --> DS\n    CP_PLAN[\"Composer 套餐 50 元/月\"] --> CP\n    DS_USAGE[\"Deepseek 消耗约 0.02 元（约 1% 旧套餐）\"] --> DS_PRICE\n    CP_USAGE[\"Composer 消耗约 0.02 元\"] --> CP_PLAN\n    DS --> DS_USAGE\n    CP --> CP_USAGE\n```\n\n- Deepseek 费用 2.5 元（无 coding plan） [BV1Y8GG6sEay P1 01:15‑01:17]  \n- Composer 套餐 50 元/月 [BV1Y8GG6sEay P1 01:19]  \n- Deepseek 实际消耗约 0.02 元，仅使用旧套餐的 1% [BV1Y8GG6sEay P1 01:22‑01:24]  \n- Composer 实际消耗约 0.02 元 [BV1Y8GG6sEay P1 01:22]  ",
+      "diagrams": [
+        {
+          "title": "总览比较",
+          "code": "flowchart TD\n    DS[\"Deepseek Flash 正式版\"] --> FUNC[\"功能完整性\"]\n    CP[\"Composer 2.5 Fast\"] --> FUNC\n    DS --> TIME[\"时间消耗\"]\n    CP --> TIME\n    DS --> TOKEN[\"Token 消耗\"]\n    CP --> TOKEN\n    DS --> COST[\"费用\"]\n    CP --> COST\n    FUNC --> RESULT[\"效果质量\"]\n    TIME --> RESULT\n    TOKEN --> RESULT\n    COST --> RESULT"
+        },
+        {
+          "title": "性能指标",
+          "code": "flowchart TD\n    DS_TIME[\"Deepseek 耗时 ≈ 30 min\"] --> DS\n    CP_TIME[\"Composer 耗时 ≈ 16 min\"] --> CP\n    DS_TOKEN[\"Deepseek Token ≈ 2× Composer\"] --> DS\n    CP_TOKEN[\"Composer Token\"] --> CP\n    DS_COST[\"Deepseek 费用 ≈ 2.5 元\"] --> DS\n    CP_COST[\"Composer 费用 50 元/月套餐\"] --> CP\n    DS --> DS_TIME\n    DS --> DS_TOKEN\n    DS --> DS_COST\n    CP --> CP_TIME\n    CP --> CP_TOKEN\n    CP --> CP_COST"
+        },
+        {
+          "title": "功能差异",
+          "code": "flowchart TD\n    DS_BASIC[\"Deepseek 基本功能完成\"] --> DS\n    DS_FILTER[\"筛选框未渲染\"] --> DS_BASIC\n    DS_STOP[\"停止对话按钮需一级可点击\"] --> DS_BASIC\n    CP_FULL[\"Composer 功能更全面\"] --> CP\n    CP_MD[\"Composer Markdown 渲染有问题\"] --> CP_FULL\n    DS --> DS_BASIC\n    CP --> CP_FULL"
+        },
+        {
+          "title": "成本结构与使用比例",
+          "code": "flowchart TD\n    DS_PRICE[\"Deepseek 费用 2.5 元\"] --> DS\n    CP_PLAN[\"Composer 套餐 50 元/月\"] --> CP\n    DS_USAGE[\"Deepseek 消耗约 0.02 元（约 1% 旧套餐）\"] --> DS_PRICE\n    CP_USAGE[\"Composer 消耗约 0.02 元\"] --> CP_PLAN\n    DS --> DS_USAGE\n    CP --> CP_USAGE"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T13:02:53+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deepseek Flash 正式版 vs Composer 2.5 Fast 对比图谱\n\n## 总览比较\n\n```mermaid\nflowchart TD\n    DS[\"Deepseek Flash 正式版\"] --> FUNC[\"功能完整性\"]\n    CP[\"Composer 2.5 Fast\"] --> FUNC\n    DS --> TIME[\"时间消耗\"]\n    CP --> TIME\n    DS --> TOKEN[\"Token 消耗\"]\n    CP --> TOKEN\n    DS --> COST[\"费用\"]\n    CP --> COST\n    FUNC --> RESULT[\"效果质量\"]\n    TIME --> RESULT\n    TOKEN --> RESULT\n    COST --> RESULT\n```\n\n- Deepseek Flash 正式版上线 [BV1Y8GG6sEay P1 00:00]  \n- Composer 2.5 Fast 对比模型 [BV1Y8GG6sEay P1 00:09]  \n- 对比维度：功能完整性、时间消耗、Token 消耗、费用 [BV1Y8GG6sEay P1 00:14]  \n- 效果质量为综合评估结果 （无直接时间戳，依据整体对比）\n\n## 性能指标\n\n```mermaid\nflowchart TD\n    DS_TIME[\"Deepseek 耗时 ≈ 30 min\"] --> DS\n    CP_TIME[\"Composer 耗时 ≈ 16 min\"] --> CP\n    DS_TOKEN[\"Deepseek Token ≈ 2× Composer\"] --> DS\n    CP_TOKEN[\"Composer Token\"] --> CP\n    DS_COST[\"Deepseek 费用 ≈ 2.5 元\"] --> DS\n    CP_COST[\"Composer 费用 50 元/月套餐\"] --> CP\n    DS --> DS_TIME\n    DS --> DS_TOKEN\n    DS --> DS_COST\n    CP --> CP_TIME\n    CP --> CP_TOKEN\n    CP --> CP_COST\n```\n\n- Deepseek 耗时约半小时 [BV1Y8GG6sEay P1 00:38]  \n- Composer 耗时约 16 分钟 [BV1Y8GG6sEay P1 00:40]  \n- Deepseek Token 消耗约为 Composer 的两倍 [BV1Y8GG6sEay P1 00:44]  \n- Deepseek 费用约 2.5 元（无 coding plan） [BV1Y8GG6sEay P1 01:15‑01:17]  \n- Composer 费用 50 元/月套餐，实际消耗约 0.2 元 [BV1Y8GG6sEay P1 01:19‑01:22]  \n\n## 功能差异\n\n```mermaid\nflowchart TD\n    DS_BASIC[\"Deepseek 基本功能完成\"] --> DS\n    DS_FILTER[\"筛选框未渲染\"] --> DS_BASIC\n    DS_STOP[\"停止对话按钮需一级可点击\"] --> DS_BASIC\n    CP_FULL[\"Composer 功能更全面\"] --> CP\n    CP_MD[\"Composer Markdown 渲染有问题\"] --> CP_FULL\n    DS --> DS_BASIC\n    CP --> CP_FULL\n```\n\n- Deepseek 基本功能完成 [BV1Y8GG6sEay P1 00:53]  \n- Deepseek 筛选框未渲染 [BV1Y8GG6sEay P1 00:55]  \n- Deepseek 停止对话按钮需一级可点击 [BV1Y8GG6sEay P1 00:57‑01:00]  \n- Composer 功能更全面（包括未提及的功能） [BV1Y8GG6sEay P1 01:07]  \n- Composer Markdown 渲染存在问题 [BV1Y8GG6sEay P1 01:09]  \n\n## 成本结构与使用比例\n\n```mermaid\nflowchart TD\n    DS_PRICE[\"Deepseek 费用 2.5 元\"] --> DS\n    CP_PLAN[\"Composer 套餐 50 元/月\"] --> CP\n    DS_USAGE[\"Deepseek 消耗约 0.02 元（约 1% 旧套餐）\"] --> DS_PRICE\n    CP_USAGE[\"Composer 消耗约 0.02 元\"] --> CP_PLAN\n    DS --> DS_USAGE\n    CP --> CP_USAGE\n```\n\n- Deepseek 费用 2.5 元（无 coding plan） [BV1Y8GG6sEay P1 01:15‑01:17]  \n- Composer 套餐 50 元/月 [BV1Y8GG6sEay P1 01:19]  \n- Deepseek 实际消耗约 0.02 元，仅使用旧套餐的 1% [BV1Y8GG6sEay P1 01:22‑01:24]  \n- Composer 实际消耗约 0.02 元 [BV1Y8GG6sEay P1 01:22]  ",
+  "diagrams": [
+    {
+      "title": "总览比较",
+      "code": "flowchart TD\n    DS[\"Deepseek Flash 正式版\"] --> FUNC[\"功能完整性\"]\n    CP[\"Composer 2.5 Fast\"] --> FUNC\n    DS --> TIME[\"时间消耗\"]\n    CP --> TIME\n    DS --> TOKEN[\"Token 消耗\"]\n    CP --> TOKEN\n    DS --> COST[\"费用\"]\n    CP --> COST\n    FUNC --> RESULT[\"效果质量\"]\n    TIME --> RESULT\n    TOKEN --> RESULT\n    COST --> RESULT"
+    },
+    {
+      "title": "性能指标",
+      "code": "flowchart TD\n    DS_TIME[\"Deepseek 耗时 ≈ 30 min\"] --> DS\n    CP_TIME[\"Composer 耗时 ≈ 16 min\"] --> CP\n    DS_TOKEN[\"Deepseek Token ≈ 2× Composer\"] --> DS\n    CP_TOKEN[\"Composer Token\"] --> CP\n    DS_COST[\"Deepseek 费用 ≈ 2.5 元\"] --> DS\n    CP_COST[\"Composer 费用 50 元/月套餐\"] --> CP\n    DS --> DS_TIME\n    DS --> DS_TOKEN\n    DS --> DS_COST\n    CP --> CP_TIME\n    CP --> CP_TOKEN\n    CP --> CP_COST"
+    },
+    {
+      "title": "功能差异",
+      "code": "flowchart TD\n    DS_BASIC[\"Deepseek 基本功能完成\"] --> DS\n    DS_FILTER[\"筛选框未渲染\"] --> DS_BASIC\n    DS_STOP[\"停止对话按钮需一级可点击\"] --> DS_BASIC\n    CP_FULL[\"Composer 功能更全面\"] --> CP\n    CP_MD[\"Composer Markdown 渲染有问题\"] --> CP_FULL\n    DS --> DS_BASIC\n    CP --> CP_FULL"
+    },
+    {
+      "title": "成本结构与使用比例",
+      "code": "flowchart TD\n    DS_PRICE[\"Deepseek 费用 2.5 元\"] --> DS\n    CP_PLAN[\"Composer 套餐 50 元/月\"] --> CP\n    DS_USAGE[\"Deepseek 消耗约 0.02 元（约 1% 旧套餐）\"] --> DS_PRICE\n    CP_USAGE[\"Composer 消耗约 0.02 元\"] --> CP_PLAN\n    DS --> DS_USAGE\n    CP --> CP_USAGE"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T13:02:53+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Qx3i6nEQ7",
+  "title": "最简单 Codex接入DeepSeek保姆级教程，无需GPT账户也能用！Codex里面使用国产大模型！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1632,
+  "text": "大家好\n这里是CLAIRE\n这期主要讲讲deep sick怎么接入codex\n可以让ChatGPT账号\n有问题的小伙伴也能快速使用codex\n这次主要是用接入deep sick做演示\n用了本期视频的办法\n你也可以接入其他的模型\n例如KIMI千问mini max质谱等等\n那我们废话不多说\n一键三连加关注\n我们马上开始\n首先简单说一下怎么安装codex\n输入网址\nChat gp t com cga dex\n来到codex的官网\n点击这里下载下来\n下载好好后打开文件所在位置\n双击它它就会自动安装codex了\n安装好后就是这个登录界面\n如果你有ChatGPT的账号\n可以直接点击这里登录\n关于怎么注册CHHPT账号和海外手机号\n二次验证\n我的这个视频讲解的很清楚\n大家可以去看一看\n或者你没有ChatGPT的账号\n可以到我视频下方\n我的小店里面购买一个plus的成品号\n价格两位数很实惠\n里面也有codex2次验证的实体海外手机号\n如果你有差GPT的API\n也可以点击使用其他方式登录\n把你的API密钥粘贴进来就可以使用了\n这次我们直接调用deep seek\n新建一个标签页\n输入cc switch IO\n进入cc switch的官网\n右上角可以切换中文\n点击免费下载\n这里我们下载windows版本的\n点击这两个地方都可以下载\n下载一下\n这里的安装包我也会放在我的网盘里面\n大家也可以去自行下载\n下载好后打开本地文件\n双击这个安装包\n点击下一步\n这里的安装目录\n默认安装C盘\n如果你不想安装C盘\n也可以自行改一下\n例如我这里就改到D盘\n点击下一步\n点击install安装\n装安装好了\n点击finish\n它就会自动打开cc switch\n到这里界面就说明安装成功了\n然后一定要选中这里的ChatGPT图标\n点击这里的加号\n这里有很多供应商可以选择\n除了deep sick\n你也可以选择kimi mini max质谱等等\n我这里就选择deep sick\n往下翻\n这里链接地址都已经填好了\n我们需要输入API key\n我们去获取一下\n直接复制这里的官网链接\n在浏览器粘贴过来\n这里登录一下deep seek\n注意要保证这里有一定的余额\n没有的话去充值十块也可以用好久了\n然后点击API密钥\n点击创建API密钥\n起个密钥的名字\n点击创建API密钥\n创建好后\n记得复制下来保存好\n这个密钥只会出现一次\n后面就无法再次查看了\n回到cc switch粘贴到API key里面\n下面就保持默认点\n点击添加\n这里就有deep sick了\n这里显示需要路由\n点击设置\n点击路由\n打开本地路由\n把这里的两个开关都打开\n这些选择应用\n我们使用的是codex\n就选择so dex\n点击返回\n点击这里的启动\n然后需要把codex完全退出\n重启已在任务栏右下角找到codex\n右键点击退出\n点击任务栏启动键\n注意搜索chat gt\n不要搜索SCODEX\n因为codex现在已经统一改名为chat g了\n点击打开\n它就不会有登录界面\n直接进入到SEDEX里面了\n例如我问他\n你是什么模型\n他说自己是GPT five\n是因为codex一般都有个系统提示词\n其实我们调用的是deep sick的模型\n点击左下角也可以看到deep sick的标识\n具体用的什么模型\n可以回到cc switch\n点击这里的编辑\n这里可以看到具体调用的模型\n接下来讲讲如果你要登录ChatGPT的账号\n该怎么退出接入的deep sick\n回到cc switch的首页\n点击这里关掉路由\n然后点找到第一个OpenAI\n点击启用\n退出codex\n重启一下\n然后点击左下角的设置\n点击退出登录\n这里就可以直接登录ChatGPT账号了\n跳转页面登录一下\n到这里就登录成功了\n点击左下角也可以看到账号信息和剩余用量\n这里也可以查看chat gt的模型\n就可以正常使用了\n这期视频就先到这里了\n麻烦给个三连加关注\n然后我们下期视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Qx3i6nEQ7",
+  "published_at": "1785217368",
+  "fetched_at": "2026-08-07T14:31:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 接入 Codex 教程知识图谱\n\n## Codex 安装与登录概览\n```mermaid\nflowchart TD\n    A1[\"开始：准备安装 Codex\"] --> A2[\"访问 codex 官网 (chatgpt.com/cgadec)\"]\n    A2 --> A3[\"下载 Codex 安装包\"]\n    A3 --> A4[\"双击安装包，自动安装\"]\n    A4 --> A5[\"出现登录界面\"]\n    A5 -->|有 ChatGPT 账号| A6[\"点击登录，使用账号密码\"]\n    A5 -->|无 ChatGPT 账号| A7[\"购买 Plus 成品号或使用 API 密钥\"]\n    A7 --> A8[\"粘贴 API 密钥登录\"]\n    A6 --> A9[\"登录成功，进入 Codex 主界面\"]\n    A8 --> A9\n```\n\n## DeepSeek 接入 cc.switch 步骤\n```mermaid\nflowchart TD\n    B1[\"打开 cc.switch 官网\"] --> B2[\"切换中文界面\"]\n    B2 --> B3[\"下载 Windows 版安装包\"]\n    B3 --> B4[\"双击安装包，按默认或自定义路径安装\"]\n    B4 --> B5[\"完成安装，自动打开 cc.switch\"]\n    B5 --> B6[\"在左侧选择 ChatGPT 图标\"]\n    B6 --> B7[\"点击加号添加供应商\"]\n    B7 --> B8[\"选择 DeepSeek（可选 KIMI、MiniMax 等）\"]\n    B8 --> B9[\"获取 DeepSeek API Key\"]\n    B9 --> B10[\"登录 DeepSeek 官网，创建 API Key\"]\n    B10 --> B11[\"复制一次性显示的 API Key\"]\n    B11 --> B12[\"在 cc.switch 粘贴到 API Key 输入框\"]\n    B12 --> B13[\"点击添加，出现 DeepSeek 供应商\"]\n    B13 --> B14[\"设置路由：打开本地路由，开启两项开关\"]\n    B14 --> B15[\"返回并点击启动 Codex\"]\n```\n\n## 切换模型与登录方式\n```mermaid\nflowchart TD\n    C1[\"当前使用 DeepSeek 模型\"] --> C2[\"若需切换至 OpenAI\"]\n    C2 --> C3[\"在 cc.switch 首页关闭 DeepSeek 路由\"]\n    C3 --> C4[\"启用 OpenAI 供应商\"]\n    C4 --> C5[\"退出 Codex 并重启\"]\n    C5 --> C6[\"在 Codex 界面点击设置 → 退出登录\"]\n    C6 --> C7[\"使用 ChatGPT 账号登录\"]\n    C7 --> C8[\"登录成功，显示账号信息与剩余用量\"]\n    C8 --> C9[\"可在左下角查看当前模型\"]\n```",
+      "diagrams": [
+        {
+          "title": "Codex 安装与登录概览",
+          "code": "flowchart TD\n    A1[\"开始：准备安装 Codex\"] --> A2[\"访问 codex 官网 (chatgpt.com/cgadec)\"]\n    A2 --> A3[\"下载 Codex 安装包\"]\n    A3 --> A4[\"双击安装包，自动安装\"]\n    A4 --> A5[\"出现登录界面\"]\n    A5 -->|有 ChatGPT 账号| A6[\"点击登录，使用账号密码\"]\n    A5 -->|无 ChatGPT 账号| A7[\"购买 Plus 成品号或使用 API 密钥\"]\n    A7 --> A8[\"粘贴 API 密钥登录\"]\n    A6 --> A9[\"登录成功，进入 Codex 主界面\"]\n    A8 --> A9"
+        },
+        {
+          "title": "DeepSeek 接入 cc.switch 步骤",
+          "code": "flowchart TD\n    B1[\"打开 cc.switch 官网\"] --> B2[\"切换中文界面\"]\n    B2 --> B3[\"下载 Windows 版安装包\"]\n    B3 --> B4[\"双击安装包，按默认或自定义路径安装\"]\n    B4 --> B5[\"完成安装，自动打开 cc.switch\"]\n    B5 --> B6[\"在左侧选择 ChatGPT 图标\"]\n    B6 --> B7[\"点击加号添加供应商\"]\n    B7 --> B8[\"选择 DeepSeek（可选 KIMI、MiniMax 等）\"]\n    B8 --> B9[\"获取 DeepSeek API Key\"]\n    B9 --> B10[\"登录 DeepSeek 官网，创建 API Key\"]\n    B10 --> B11[\"复制一次性显示的 API Key\"]\n    B11 --> B12[\"在 cc.switch 粘贴到 API Key 输入框\"]\n    B12 --> B13[\"点击添加，出现 DeepSeek 供应商\"]\n    B13 --> B14[\"设置路由：打开本地路由，开启两项开关\"]\n    B14 --> B15[\"返回并点击启动 Codex\"]"
+        },
+        {
+          "title": "切换模型与登录方式",
+          "code": "flowchart TD\n    C1[\"当前使用 DeepSeek 模型\"] --> C2[\"若需切换至 OpenAI\"]\n    C2 --> C3[\"在 cc.switch 首页关闭 DeepSeek 路由\"]\n    C3 --> C4[\"启用 OpenAI 供应商\"]\n    C4 --> C5[\"退出 Codex 并重启\"]\n    C5 --> C6[\"在 Codex 界面点击设置 → 退出登录\"]\n    C6 --> C7[\"使用 ChatGPT 账号登录\"]\n    C7 --> C8[\"登录成功，显示账号信息与剩余用量\"]\n    C8 --> C9[\"可在左下角查看当前模型\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T14:39:10+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 接入 Codex 教程知识图谱\n\n## Codex 安装与登录概览\n```mermaid\nflowchart TD\n    A1[\"开始：准备安装 Codex\"] --> A2[\"访问 codex 官网 (chatgpt.com/cgadec)\"]\n    A2 --> A3[\"下载 Codex 安装包\"]\n    A3 --> A4[\"双击安装包，自动安装\"]\n    A4 --> A5[\"出现登录界面\"]\n    A5 -->|有 ChatGPT 账号| A6[\"点击登录，使用账号密码\"]\n    A5 -->|无 ChatGPT 账号| A7[\"购买 Plus 成品号或使用 API 密钥\"]\n    A7 --> A8[\"粘贴 API 密钥登录\"]\n    A6 --> A9[\"登录成功，进入 Codex 主界面\"]\n    A8 --> A9\n```\n\n## DeepSeek 接入 cc.switch 步骤\n```mermaid\nflowchart TD\n    B1[\"打开 cc.switch 官网\"] --> B2[\"切换中文界面\"]\n    B2 --> B3[\"下载 Windows 版安装包\"]\n    B3 --> B4[\"双击安装包，按默认或自定义路径安装\"]\n    B4 --> B5[\"完成安装，自动打开 cc.switch\"]\n    B5 --> B6[\"在左侧选择 ChatGPT 图标\"]\n    B6 --> B7[\"点击加号添加供应商\"]\n    B7 --> B8[\"选择 DeepSeek（可选 KIMI、MiniMax 等）\"]\n    B8 --> B9[\"获取 DeepSeek API Key\"]\n    B9 --> B10[\"登录 DeepSeek 官网，创建 API Key\"]\n    B10 --> B11[\"复制一次性显示的 API Key\"]\n    B11 --> B12[\"在 cc.switch 粘贴到 API Key 输入框\"]\n    B12 --> B13[\"点击添加，出现 DeepSeek 供应商\"]\n    B13 --> B14[\"设置路由：打开本地路由，开启两项开关\"]\n    B14 --> B15[\"返回并点击启动 Codex\"]\n```\n\n## 切换模型与登录方式\n```mermaid\nflowchart TD\n    C1[\"当前使用 DeepSeek 模型\"] --> C2[\"若需切换至 OpenAI\"]\n    C2 --> C3[\"在 cc.switch 首页关闭 DeepSeek 路由\"]\n    C3 --> C4[\"启用 OpenAI 供应商\"]\n    C4 --> C5[\"退出 Codex 并重启\"]\n    C5 --> C6[\"在 Codex 界面点击设置 → 退出登录\"]\n    C6 --> C7[\"使用 ChatGPT 账号登录\"]\n    C7 --> C8[\"登录成功，显示账号信息与剩余用量\"]\n    C8 --> C9[\"可在左下角查看当前模型\"]\n```",
+  "diagrams": [
+    {
+      "title": "Codex 安装与登录概览",
+      "code": "flowchart TD\n    A1[\"开始：准备安装 Codex\"] --> A2[\"访问 codex 官网 (chatgpt.com/cgadec)\"]\n    A2 --> A3[\"下载 Codex 安装包\"]\n    A3 --> A4[\"双击安装包，自动安装\"]\n    A4 --> A5[\"出现登录界面\"]\n    A5 -->|有 ChatGPT 账号| A6[\"点击登录，使用账号密码\"]\n    A5 -->|无 ChatGPT 账号| A7[\"购买 Plus 成品号或使用 API 密钥\"]\n    A7 --> A8[\"粘贴 API 密钥登录\"]\n    A6 --> A9[\"登录成功，进入 Codex 主界面\"]\n    A8 --> A9"
+    },
+    {
+      "title": "DeepSeek 接入 cc.switch 步骤",
+      "code": "flowchart TD\n    B1[\"打开 cc.switch 官网\"] --> B2[\"切换中文界面\"]\n    B2 --> B3[\"下载 Windows 版安装包\"]\n    B3 --> B4[\"双击安装包，按默认或自定义路径安装\"]\n    B4 --> B5[\"完成安装，自动打开 cc.switch\"]\n    B5 --> B6[\"在左侧选择 ChatGPT 图标\"]\n    B6 --> B7[\"点击加号添加供应商\"]\n    B7 --> B8[\"选择 DeepSeek（可选 KIMI、MiniMax 等）\"]\n    B8 --> B9[\"获取 DeepSeek API Key\"]\n    B9 --> B10[\"登录 DeepSeek 官网，创建 API Key\"]\n    B10 --> B11[\"复制一次性显示的 API Key\"]\n    B11 --> B12[\"在 cc.switch 粘贴到 API Key 输入框\"]\n    B12 --> B13[\"点击添加，出现 DeepSeek 供应商\"]\n    B13 --> B14[\"设置路由：打开本地路由，开启两项开关\"]\n    B14 --> B15[\"返回并点击启动 Codex\"]"
+    },
+    {
+      "title": "切换模型与登录方式",
+      "code": "flowchart TD\n    C1[\"当前使用 DeepSeek 模型\"] --> C2[\"若需切换至 OpenAI\"]\n    C2 --> C3[\"在 cc.switch 首页关闭 DeepSeek 路由\"]\n    C3 --> C4[\"启用 OpenAI 供应商\"]\n    C4 --> C5[\"退出 Codex 并重启\"]\n    C5 --> C6[\"在 Codex 界面点击设置 → 退出登录\"]\n    C6 --> C7[\"使用 ChatGPT 账号登录\"]\n    C7 --> C8[\"登录成功，显示账号信息与剩余用量\"]\n    C8 --> C9[\"可在左下角查看当前模型\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T14:39:10+00:00"
+}

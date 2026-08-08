@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1f1DQBgEZh",
+  "title": "【聊聊】爱马仕agent是否在营销？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2136,
+  "text": "大家好啊\n这两周这个让这个爱马仕agent又刷屏了\n他主要强调自己是一个自进化的agent\n不像龙虾那样错过的事情还会做错\n经常稀里糊涂的不太好可控\n他就说他自己能自进化啊\n把错误的经验沉淀一下\n说是一个伴随你成长的agent啊\n我不知道这个大家信不信啊\n这个代码一看就是AI coding的\n也也在GITHUB上开源了\n这是他官网啊\n这是他的文档\n我看了功能没有什么太特殊的都一样\n然后git git上面在这里呃\nPython写的啊\n你去看代码\n我感觉AI味是很重的\n写的太太风骚了\n然后我就下回来\n然后呃用呃IDE跑了一下\n里边东西都差不多啊\n什么外边是gateway\n接各种china啊\n借19个平台的聊天工具\n下面呢就是run agent跑loop的\n再往下是工具层\n也是有一堆tools\n呃什么skill什么的\n它里边呢呃讲的那几个核心概念\n我都瞅了一下啊\n我我我找一下啊\n第一个就是他所谓的自净化啊\n是自进化的原理是什么\n就是他搞了一个to叫skill manager\n说白了就是管理skill的一个to\n和咱原先用文件的write\nread edit那种to直接操作文件系统不一样是吧\n他是做了个工具啊\n这工具叫skill manage\n他的入参就是create edit patch\n就去修改这个skill content\n就是skill的正文啊\nscale的目录\n然后scale写在什么盘下边\n就是他就是把它做成一个scale专门的tooth啊\n这个没有什么要说的\n然后它在代码里对应的就是一个叫做tools\n下面有一个就tooth\n下面有一个skill manager to的实现\n额基本就是刚才说的action是什么\n创建还是修改这个skill是吧\ncontent是正文\n然后下面是对于这个scale的schema描述\n就是function call的那个name啊\nDescription\n还有parameter这类描述\n最后就就注册注册到工具集上\n然后我还让他翻译了一下这个工具的描述\n嗯在这里要找一下啊\n完了翻译了一下\n大家一起看一下\n这工具是管理技能的创建更新\n删除的技能是处理重复任务的可复用方法\n保存在这个目录下\n然后有各种操作类型\n然后他主要讲了创建技能\n更新技能时机嘛\n创建什么时候创建的就复杂\n任务完成的时候克服了错误是吧\n用用户纠正的方法\n有效发现了非平凡的工作流程\n哎你就可以调这个工具创建一下\n什么时候更新呢\n指令过时或错误是吧\n使用中发现有些缺陷等等\n应该立即修复它\n最佳实践是什么\n在完成一些困难任务后\n主动提议保存为技能\n简单的任务就不要保存了\n创建删除前要问用户确认一下\n优秀的技能应该是带触发条件的\n带有什么什么什么的\n下面就是它的使用示例\n如果调创建的话\n就这样子\n然后下面是正文\n修复的话就patch\n然后替换什么字符串啊\n删除就是这样\n这就是所谓的自进化\n就是多了个to\n这是第一个骗局啊\n第二个我们再找一下啊\n这里边还有些所谓的概念\n我都让他看了一下嗯\n第二个概念叫智能路由啊\n智能路由的话他就是说调这个大模型的时候\n有这个呃ANTHROPIC的cloud\n这种比较贵的顶级模型是吧\n还有一些便宜模型\n比如说国产的是吧\n那怎么去区分说这次要用贵的还是便宜的呢啊\n他做了一个规则啊\n纯规则的基于用户输入的消息啊\n然后把它这个消息呢判断一下\n大于160个字儿\n或者是嗯换行符比较多\n或者是里边有代码块\n或者是有URL的啊\n这种呢就什么\n就就就return n是什么来着哦\nreturn n是走走复杂模型啊\n只要只要内容比较长\n有代码的是吧\n就什么的就走复杂模型\n还有什么走复杂模型呢\n就这个啊\n他会去里边找关键字\n就是这这一段啊\n找关键字\n如果里面带有调试类的啊\n这些英文单词开发类的\n什么分析类的\n性能类的工具类的\n只要但凡显得复杂的一些提问就走走SOTA模型\n其他走便宜模型啊\n他就这么调度的\n配的时候呢\n你就配这个chip model啊\n就是比如他在他眼里\nopen i的GB t four o是cheap model\nANTHROPIC的cloud是贵的\nModel\n就这么区分的\n再就是工具的安全执行\ntools的approve这块呢\n就每次工具执行前都要人工确认嘛\n那他判断逻辑就是关键字匹配\n比如说里边有remove啊\n有DD啊\nSQL啊\ncl啊\n反正带有危险的文本的这样一个to的入餐\n就就要过人工审核\n同时呢如果你有些那个skill\n就是你你不是上面有个skill manager吗\n这样一个to吗\n当你生成skill的时候\n它会掉一些这个一个库吧\n好像是Python的一个开源项目\n用这个工具去扫那个skill\n然后就能发现里边那些安全的风险\n如果有风险\n那个scale就不创建了\n就是这样一个security的一个开源项目啊\n安全扫描二进制工具与这个上面那些正则匹配\n这些命令相辅相辅相成吧\n呃这个\n就是这样子对其他的就没有了呃\n都是噱头了\n我觉得大家去看这个还不如去看阿里的call炮\n那个还是基于aj scope做的\n比这些要好一些\n这些都是纯纯外部coding出来啊\n这期视频就到这里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1f1DQBgEZh",
+  "published_at": "1775977801",
+  "fetched_at": "2026-08-07T23:34:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 爱马仕Agent 知识图谱\n\n## 系统整体结构概览\n```mermaid\nflowchart TD\n    G1[\"Gateway\"] --> A1[\"Agent Loop\"]\n    A1 --> T1[\"Tool Layer\"]\n    T1 --> SM[\"Skill Manager\"]\n    T1 --> SR[\"Smart Routing\"]\n    T1 --> SA[\"Security Approve\"]\n```\n证据: [BV1f1DQBgEZh P1 01:08]、[BV1f1DQBgEZh P1 01:16]、[BV1f1DQBgEZh P1 01:22]、[BV1f1DQBgEZh P1 01:49]、[BV1f1DQBgEZh P1 04:44]、[BV1f1DQBgEZh P1 06:26]\n\n## 自我进化机制（Skill Manager）\n```mermaid\nflowchart TD\n    SM[\"Skill Manager\"] --> C1[\"Create / Edit / Patch\"]\n    C1 --> SC[\"Skill Content\"]\n    SC --> R1[\"Register to Toolset\"]\n    R1 --> UP[\"Update on Error\"]\n    UP --> CP[\"User Confirmation\"]\n```\n证据: [BV1f1DQBgEZh P1 01:49]、[BV1f1DQBgEZh P1 02:11]、[BV1f1DQBgEZh P1 02:17]、[BV1f1DQBgEZh P1 02:57]、[BV1f1DQBgEZh P1 03:40]、[BV1f1DQBgEZh P1 04:05]\n\n## 智能路由模型选择\n```mermaid\nflowchart TD\n    MSG[\"User Message\"] --> RULE[\"Routing Rules\"]\n    RULE --> LONG[\"Length > 160\"]\n    RULE --> NL[\"Many Newlines\"]\n    RULE --> CODE[\"Contains Code Block\"]\n    RULE --> URL[\"Contains URL\"]\n    LONG --> COMPLEX[\"Complex Model (Anthropic)\"]\n    NL --> COMPLEX\n    CODE --> COMPLEX\n    URL --> COMPLEX\n    RULE --> CHEAP[\"Cheap Model\"]\n```\n证据: [BV1f1DQBgEZh P1 05:10]、[BV1f1DQBgEZh P1 05:16]、[BV1f1DQBgEZh P1 05:21]、[BV1f1DQBgEZh P1 05:23]、[BV1f1DQBgEZh P1 05:34]、[BV1f1DQBgEZh P1 06:05]\n\n## 工具安全执行审批\n```mermaid\nflowchart TD\n    TOOL[\"Tool Execution\"] --> APPROVE[\"Approve Check\"]\n    APPROVE --> KEY[\"Keyword Matching\"]\n    KEY --> RISK[\"Risky Keywords\"]\n    RISK --> HUMAN[\"Human Confirmation\"]\n    HUMAN --> EXEC[\"Execute\"]\n    KEY --> EXEC\n    RISK --> BLOCK[\"Block Execution\"]\n```\n证据: [BV1f1DQBgEZh P1 06:26]、[BV1f1DQBgEZh P1 06:32]、[BV1f1DQBgEZh P1 06:35]、[BV1f1DQBgEZh P1 06:42]",
+      "diagrams": [
+        {
+          "title": "系统整体结构概览",
+          "code": "flowchart TD\n    G1[\"Gateway\"] --> A1[\"Agent Loop\"]\n    A1 --> T1[\"Tool Layer\"]\n    T1 --> SM[\"Skill Manager\"]\n    T1 --> SR[\"Smart Routing\"]\n    T1 --> SA[\"Security Approve\"]"
+        },
+        {
+          "title": "自我进化机制（Skill Manager）",
+          "code": "flowchart TD\n    SM[\"Skill Manager\"] --> C1[\"Create / Edit / Patch\"]\n    C1 --> SC[\"Skill Content\"]\n    SC --> R1[\"Register to Toolset\"]\n    R1 --> UP[\"Update on Error\"]\n    UP --> CP[\"User Confirmation\"]"
+        },
+        {
+          "title": "智能路由模型选择",
+          "code": "flowchart TD\n    MSG[\"User Message\"] --> RULE[\"Routing Rules\"]\n    RULE --> LONG[\"Length > 160\"]\n    RULE --> NL[\"Many Newlines\"]\n    RULE --> CODE[\"Contains Code Block\"]\n    RULE --> URL[\"Contains URL\"]\n    LONG --> COMPLEX[\"Complex Model (Anthropic)\"]\n    NL --> COMPLEX\n    CODE --> COMPLEX\n    URL --> COMPLEX\n    RULE --> CHEAP[\"Cheap Model\"]"
+        },
+        {
+          "title": "工具安全执行审批",
+          "code": "flowchart TD\n    TOOL[\"Tool Execution\"] --> APPROVE[\"Approve Check\"]\n    APPROVE --> KEY[\"Keyword Matching\"]\n    KEY --> RISK[\"Risky Keywords\"]\n    RISK --> HUMAN[\"Human Confirmation\"]\n    HUMAN --> EXEC[\"Execute\"]\n    KEY --> EXEC\n    RISK --> BLOCK[\"Block Execution\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T23:35:02+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 爱马仕Agent 知识图谱\n\n## 系统整体结构概览\n```mermaid\nflowchart TD\n    G1[\"Gateway\"] --> A1[\"Agent Loop\"]\n    A1 --> T1[\"Tool Layer\"]\n    T1 --> SM[\"Skill Manager\"]\n    T1 --> SR[\"Smart Routing\"]\n    T1 --> SA[\"Security Approve\"]\n```\n证据: [BV1f1DQBgEZh P1 01:08]、[BV1f1DQBgEZh P1 01:16]、[BV1f1DQBgEZh P1 01:22]、[BV1f1DQBgEZh P1 01:49]、[BV1f1DQBgEZh P1 04:44]、[BV1f1DQBgEZh P1 06:26]\n\n## 自我进化机制（Skill Manager）\n```mermaid\nflowchart TD\n    SM[\"Skill Manager\"] --> C1[\"Create / Edit / Patch\"]\n    C1 --> SC[\"Skill Content\"]\n    SC --> R1[\"Register to Toolset\"]\n    R1 --> UP[\"Update on Error\"]\n    UP --> CP[\"User Confirmation\"]\n```\n证据: [BV1f1DQBgEZh P1 01:49]、[BV1f1DQBgEZh P1 02:11]、[BV1f1DQBgEZh P1 02:17]、[BV1f1DQBgEZh P1 02:57]、[BV1f1DQBgEZh P1 03:40]、[BV1f1DQBgEZh P1 04:05]\n\n## 智能路由模型选择\n```mermaid\nflowchart TD\n    MSG[\"User Message\"] --> RULE[\"Routing Rules\"]\n    RULE --> LONG[\"Length > 160\"]\n    RULE --> NL[\"Many Newlines\"]\n    RULE --> CODE[\"Contains Code Block\"]\n    RULE --> URL[\"Contains URL\"]\n    LONG --> COMPLEX[\"Complex Model (Anthropic)\"]\n    NL --> COMPLEX\n    CODE --> COMPLEX\n    URL --> COMPLEX\n    RULE --> CHEAP[\"Cheap Model\"]\n```\n证据: [BV1f1DQBgEZh P1 05:10]、[BV1f1DQBgEZh P1 05:16]、[BV1f1DQBgEZh P1 05:21]、[BV1f1DQBgEZh P1 05:23]、[BV1f1DQBgEZh P1 05:34]、[BV1f1DQBgEZh P1 06:05]\n\n## 工具安全执行审批\n```mermaid\nflowchart TD\n    TOOL[\"Tool Execution\"] --> APPROVE[\"Approve Check\"]\n    APPROVE --> KEY[\"Keyword Matching\"]\n    KEY --> RISK[\"Risky Keywords\"]\n    RISK --> HUMAN[\"Human Confirmation\"]\n    HUMAN --> EXEC[\"Execute\"]\n    KEY --> EXEC\n    RISK --> BLOCK[\"Block Execution\"]\n```\n证据: [BV1f1DQBgEZh P1 06:26]、[BV1f1DQBgEZh P1 06:32]、[BV1f1DQBgEZh P1 06:35]、[BV1f1DQBgEZh P1 06:42]",
+  "diagrams": [
+    {
+      "title": "系统整体结构概览",
+      "code": "flowchart TD\n    G1[\"Gateway\"] --> A1[\"Agent Loop\"]\n    A1 --> T1[\"Tool Layer\"]\n    T1 --> SM[\"Skill Manager\"]\n    T1 --> SR[\"Smart Routing\"]\n    T1 --> SA[\"Security Approve\"]"
+    },
+    {
+      "title": "自我进化机制（Skill Manager）",
+      "code": "flowchart TD\n    SM[\"Skill Manager\"] --> C1[\"Create / Edit / Patch\"]\n    C1 --> SC[\"Skill Content\"]\n    SC --> R1[\"Register to Toolset\"]\n    R1 --> UP[\"Update on Error\"]\n    UP --> CP[\"User Confirmation\"]"
+    },
+    {
+      "title": "智能路由模型选择",
+      "code": "flowchart TD\n    MSG[\"User Message\"] --> RULE[\"Routing Rules\"]\n    RULE --> LONG[\"Length > 160\"]\n    RULE --> NL[\"Many Newlines\"]\n    RULE --> CODE[\"Contains Code Block\"]\n    RULE --> URL[\"Contains URL\"]\n    LONG --> COMPLEX[\"Complex Model (Anthropic)\"]\n    NL --> COMPLEX\n    CODE --> COMPLEX\n    URL --> COMPLEX\n    RULE --> CHEAP[\"Cheap Model\"]"
+    },
+    {
+      "title": "工具安全执行审批",
+      "code": "flowchart TD\n    TOOL[\"Tool Execution\"] --> APPROVE[\"Approve Check\"]\n    APPROVE --> KEY[\"Keyword Matching\"]\n    KEY --> RISK[\"Risky Keywords\"]\n    RISK --> HUMAN[\"Human Confirmation\"]\n    HUMAN --> EXEC[\"Execute\"]\n    KEY --> EXEC\n    RISK --> BLOCK[\"Block Execution\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T23:35:02+00:00"
+}

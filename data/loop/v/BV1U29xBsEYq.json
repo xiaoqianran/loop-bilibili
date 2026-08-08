@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1U29xBsEYq",
+  "title": "独立游戏开发被ai坑",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1112,
+  "text": "今天用AI开发\n被AI坑惨了\n浪费了大量的时间\n今天先给大家展示下\n我独立开发游戏一个多月的成果\n后面再说被AI坑的过程\n由于主播比较懒\n这个项目一直断断续续的在写\n虽然从1月份就创建了文件夹\n但是实际开发项目的时间只有一个半月\n今天我也是把玩家信息的前后端同步功能\n开发完毕了\n现在游戏支持多人在线模式了\n只是还缺少玩家间的交互功能\n这个交互功能明天再继续开发了\n今天用HTTP的网络请求方式\n实现了玩家位置的同步\n后续再把玩家的输入操作的TCP请求功能写好\n整个前后端玩家与玩家的交互\n就差不多开发完毕了\n最后就是把之前的一些前端数据\n转移到后端处理\n这一个半月的开发\n也是把整个RPG的核心功能写的差不多了\n任务系统\n解密系统等都把框架写出来了\n后续就用写好的模块\n往游戏里面像搭积木的方式完成拼装就可以了\n这两天我也在尝试用AI来提升效率\n结果效率反而还降低了\n就比如今天玩家位置同步信息的交互功能\nAI给的方案代码简直辣眼睛\n刚给出的bug比较多\n然后经过一番调教\nbug修复了\n到我检查验收的环节\n我发现AI给的代码时间复杂度太高了\n真的离谱到家\n先是后端玩家数据的处理\nAI是通过便利筛选剔除当前玩家的数据\n然后发送到前端\n这个网络请求是100ms一次\n要是每个玩家都通过这样的方式来处理\n这个后端服务器的算力也会呈指数的上升\n在线玩家越多\nCPU开销就越大\n然后我又自己写了一个把数据全部发给前端\n让前端来做一次过滤操作\n因为前端拿到数据本来就要便利一次\n在便利的过程当中就可以顺便剔除自己的数据\n然后我就让AI给我一个前端数据处理的方案\n我看到AI写的代码\n我瞬间人傻了\nAI又是给出一个时间复杂度很高的处理方案\n虽然没bug\n游戏也能跑\n但是前端会把一个新数据和一个旧数据\n同时遍历两次\n来删除已下线玩家的缓存\n然后我就又自己写了一个旧\n只遍历一个旧数据\n然后用旧数据的键来读取新数据的值\n如果这个键值不存在\n就证明这个玩家已下线\n需要做节点销毁和缓存清除处理\n最后再把新数据覆盖到旧数据\n这样就把CPU的性能开销节省了一大半\n因为这几天我也刷到了deep sk v4的功能很强大\n就试了一下\n结果反而浪费了很多时间\n有时AI给的代码的确是能用\n生成的效率也很快\n但是在性能上也有很多缺陷\n用AI来制作demo的效率很快\n但是要全靠AI制作一个工业级的项目\n还是需要一个懂框架的程序员\n因为一个可商用的项目\n是需要可扩展性和易维护性的\n懂代码的人\n靠AI开发一些简单的应用和web\n以及微信小程序的前端还是可以的\n但是要做到上限\n还是要自己懂代码\n复杂的项目就需要架构能力了\n单靠AI独立完成也是不现实的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1U29xBsEYq",
+  "published_at": "1777468354",
+  "fetched_at": "2026-08-07T21:55:06+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T21:58:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T21:58:30+00:00"
+}

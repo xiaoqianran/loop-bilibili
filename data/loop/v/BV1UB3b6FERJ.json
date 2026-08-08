@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1UB3b6FERJ",
+  "title": "Codex的Sol Terra Luna三个模型到底怎么用？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 811,
+  "text": "一条视频教你用明白GBT5.6的三个模型\nSOTERRALUNA什么时候用哪个给DA推理\n怎么让他们分工\n看完这条\n你不用再纠结该挂哪个\n先给结论\n不是挑一个最强的一直用\n而是分层调度\n便宜的先上\n做不动了再往上升\n所以别把这三个理解成好中差\n理解成三个岗位\nsoul是大脑\n他负责判断和规划长任务复杂难题\n指挥一堆子智能体\nTARA是主力\n执行一半的价钱\n拿到大部分智能还快一点\nLUNA是默认项\n最快最便宜\n日常活他接得住\n价钱正好是一比1/2\n比1/5\n因为LUNA不弱\n截至7月30号\n把推理开到最高档\n他在artificial analysis智能指数上排第15\n是全部586个模型里的第15\n所以默认从LUNA起步\n不是将就是他本来就够用\n升级的信号很具体\nagent开始转圈\n改了几轮都没改\n对话题开始跑偏\n这时候才换TARA\n再不行才上骚\n注意一点\n这个决定必须在他开始生成之前做\n中途换模型\n前面的推理就白烧了\n高手不是二选一\n是让他们分工骚\n想清楚要怎么做\n把方案交给TERRA去实现大脑规划\n努力执行会的模型\n只花在判断上\n还有一种叫advisor的配法\n单独拍一个agent\n只干一件事\n通读全场\n盯住目标和约束\n一发现干活的那个跑偏\n我把他拽回来\n选模型只是一个维度\n还有一个同样重要的旋钮\n推理档位五档\n从light到ultra找文件仓库\n这种艾特不够\n日常默认medium复杂调试架构\n决策大重构\n还轮到海ultra留给你非常清楚要什么约束\n也写的很细的活儿\n按artificial analysis\n7月17号的测试\n每往上推一档任务\n平均成本大约多五成\n所以真正的选择是二维的\n哪个模型乘以给多少推理缓存过的输入先输入\n便宜九成\n只活大概30分钟\n所以同一件事尽量待在一个绘画里做\n每个任务都新开一个框之一条\n能省下不少一句话\n记住都当大脑\n偶尔当主力\n那当默认从便宜的开始\n除了再往上走",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UB3b6FERJ",
+  "published_at": "1785421350",
+  "fetched_at": "2026-08-08T02:35:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Codex的Sol Terra Luna模型使用指南\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"模型体系\"] --> B[\"SOUL（大脑）\"]\n    A --> C[\"TARA（主力）\"]\n    A --> D[\"LUNA（默认）\"]\n    B --> B1[\"负责长任务规划与判断\"]\n    C --> C1[\"执行一半成本，速度快\"]\n    D --> D1[\"最快、最便宜，日常任务\"]\n    E[\"两维选择\"] --> F[\"模型维度\"]\n    E --> G[\"推理档位维度\"]\n    F --> B\n    F --> C\n    F --> D\n    G --> H[\"light\"]\n    G --> I[\"medium\"]\n    G --> J[\"ultra\"]\n```\n\n## 分层调度流程\n```mermaid\nflowchart TD\n    Start[\"任务开始\"] --> CheckLUNA[\"使用LUNA（默认）\"]\n    CheckLUNA -->|正常| End[\"完成\"]\n    CheckLUNA -->|出现信号| Signal[\"检测到信号\"]\n    Signal -->|agent循环| Loop[\"agent开始转圈\"]\n    Loop -->|对话跑偏| Drift[\"对话题跑偏\"]\n    Drift --> SwitchTARA[\"切换到TARA\"]\n    SwitchTARA -->|仍不行| SwitchSao[\"切换到骚（最高档）\"]\n    SwitchSao --> End\n    Note[\"决定必须在生成前完成\"]:::note\n    classDef note fill:#f9f,stroke:#333,stroke-width:1px;\n```\n\n## 选择维度\n```mermaid\nflowchart LR\n    Model[\"模型选择\"] -->|SOUL| Brain[\"SOUL\"]\n    Model -->|TARA| Main[\"TARA\"]\n    Model -->|LUNA| Default[\"LUNA\"]\n    Tier[\"推理档位\"] --> Light[\"light\"]\n    Tier --> Medium[\"medium\"]\n    Tier --> Ultra[\"ultra\"]\n    Brain --> Combine1[\"组合：SOUL + 档位\"]\n    Main --> Combine2[\"组合：TARA + 档位\"]\n    Default --> Combine3[\"组合：LUNA + 档位\"]\n    Combine1 --> CostPerf1[\"成本/性能\"]\n    Combine2 --> CostPerf2[\"成本/性能\"]\n    Combine3 --> CostPerf3[\"成本/性能\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"模型体系\"] --> B[\"SOUL（大脑）\"]\n    A --> C[\"TARA（主力）\"]\n    A --> D[\"LUNA（默认）\"]\n    B --> B1[\"负责长任务规划与判断\"]\n    C --> C1[\"执行一半成本，速度快\"]\n    D --> D1[\"最快、最便宜，日常任务\"]\n    E[\"两维选择\"] --> F[\"模型维度\"]\n    E --> G[\"推理档位维度\"]\n    F --> B\n    F --> C\n    F --> D\n    G --> H[\"light\"]\n    G --> I[\"medium\"]\n    G --> J[\"ultra\"]"
+        },
+        {
+          "title": "分层调度流程",
+          "code": "flowchart TD\n    Start[\"任务开始\"] --> CheckLUNA[\"使用LUNA（默认）\"]\n    CheckLUNA -->|正常| End[\"完成\"]\n    CheckLUNA -->|出现信号| Signal[\"检测到信号\"]\n    Signal -->|agent循环| Loop[\"agent开始转圈\"]\n    Loop -->|对话跑偏| Drift[\"对话题跑偏\"]\n    Drift --> SwitchTARA[\"切换到TARA\"]\n    SwitchTARA -->|仍不行| SwitchSao[\"切换到骚（最高档）\"]\n    SwitchSao --> End\n    Note[\"决定必须在生成前完成\"]:::note\n    classDef note fill:#f9f,stroke:#333,stroke-width:1px;"
+        },
+        {
+          "title": "选择维度",
+          "code": "flowchart LR\n    Model[\"模型选择\"] -->|SOUL| Brain[\"SOUL\"]\n    Model -->|TARA| Main[\"TARA\"]\n    Model -->|LUNA| Default[\"LUNA\"]\n    Tier[\"推理档位\"] --> Light[\"light\"]\n    Tier --> Medium[\"medium\"]\n    Tier --> Ultra[\"ultra\"]\n    Brain --> Combine1[\"组合：SOUL + 档位\"]\n    Main --> Combine2[\"组合：TARA + 档位\"]\n    Default --> Combine3[\"组合：LUNA + 档位\"]\n    Combine1 --> CostPerf1[\"成本/性能\"]\n    Combine2 --> CostPerf2[\"成本/性能\"]\n    Combine3 --> CostPerf3[\"成本/性能\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T02:35:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Codex的Sol Terra Luna模型使用指南\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"模型体系\"] --> B[\"SOUL（大脑）\"]\n    A --> C[\"TARA（主力）\"]\n    A --> D[\"LUNA（默认）\"]\n    B --> B1[\"负责长任务规划与判断\"]\n    C --> C1[\"执行一半成本，速度快\"]\n    D --> D1[\"最快、最便宜，日常任务\"]\n    E[\"两维选择\"] --> F[\"模型维度\"]\n    E --> G[\"推理档位维度\"]\n    F --> B\n    F --> C\n    F --> D\n    G --> H[\"light\"]\n    G --> I[\"medium\"]\n    G --> J[\"ultra\"]\n```\n\n## 分层调度流程\n```mermaid\nflowchart TD\n    Start[\"任务开始\"] --> CheckLUNA[\"使用LUNA（默认）\"]\n    CheckLUNA -->|正常| End[\"完成\"]\n    CheckLUNA -->|出现信号| Signal[\"检测到信号\"]\n    Signal -->|agent循环| Loop[\"agent开始转圈\"]\n    Loop -->|对话跑偏| Drift[\"对话题跑偏\"]\n    Drift --> SwitchTARA[\"切换到TARA\"]\n    SwitchTARA -->|仍不行| SwitchSao[\"切换到骚（最高档）\"]\n    SwitchSao --> End\n    Note[\"决定必须在生成前完成\"]:::note\n    classDef note fill:#f9f,stroke:#333,stroke-width:1px;\n```\n\n## 选择维度\n```mermaid\nflowchart LR\n    Model[\"模型选择\"] -->|SOUL| Brain[\"SOUL\"]\n    Model -->|TARA| Main[\"TARA\"]\n    Model -->|LUNA| Default[\"LUNA\"]\n    Tier[\"推理档位\"] --> Light[\"light\"]\n    Tier --> Medium[\"medium\"]\n    Tier --> Ultra[\"ultra\"]\n    Brain --> Combine1[\"组合：SOUL + 档位\"]\n    Main --> Combine2[\"组合：TARA + 档位\"]\n    Default --> Combine3[\"组合：LUNA + 档位\"]\n    Combine1 --> CostPerf1[\"成本/性能\"]\n    Combine2 --> CostPerf2[\"成本/性能\"]\n    Combine3 --> CostPerf3[\"成本/性能\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"模型体系\"] --> B[\"SOUL（大脑）\"]\n    A --> C[\"TARA（主力）\"]\n    A --> D[\"LUNA（默认）\"]\n    B --> B1[\"负责长任务规划与判断\"]\n    C --> C1[\"执行一半成本，速度快\"]\n    D --> D1[\"最快、最便宜，日常任务\"]\n    E[\"两维选择\"] --> F[\"模型维度\"]\n    E --> G[\"推理档位维度\"]\n    F --> B\n    F --> C\n    F --> D\n    G --> H[\"light\"]\n    G --> I[\"medium\"]\n    G --> J[\"ultra\"]"
+    },
+    {
+      "title": "分层调度流程",
+      "code": "flowchart TD\n    Start[\"任务开始\"] --> CheckLUNA[\"使用LUNA（默认）\"]\n    CheckLUNA -->|正常| End[\"完成\"]\n    CheckLUNA -->|出现信号| Signal[\"检测到信号\"]\n    Signal -->|agent循环| Loop[\"agent开始转圈\"]\n    Loop -->|对话跑偏| Drift[\"对话题跑偏\"]\n    Drift --> SwitchTARA[\"切换到TARA\"]\n    SwitchTARA -->|仍不行| SwitchSao[\"切换到骚（最高档）\"]\n    SwitchSao --> End\n    Note[\"决定必须在生成前完成\"]:::note\n    classDef note fill:#f9f,stroke:#333,stroke-width:1px;"
+    },
+    {
+      "title": "选择维度",
+      "code": "flowchart LR\n    Model[\"模型选择\"] -->|SOUL| Brain[\"SOUL\"]\n    Model -->|TARA| Main[\"TARA\"]\n    Model -->|LUNA| Default[\"LUNA\"]\n    Tier[\"推理档位\"] --> Light[\"light\"]\n    Tier --> Medium[\"medium\"]\n    Tier --> Ultra[\"ultra\"]\n    Brain --> Combine1[\"组合：SOUL + 档位\"]\n    Main --> Combine2[\"组合：TARA + 档位\"]\n    Default --> Combine3[\"组合：LUNA + 档位\"]\n    Combine1 --> CostPerf1[\"成本/性能\"]\n    Combine2 --> CostPerf2[\"成本/性能\"]\n    Combine3 --> CostPerf3[\"成本/性能\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T02:35:45+00:00"
+}

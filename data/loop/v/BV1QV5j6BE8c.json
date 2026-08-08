@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1QV5j6BE8c",
+  "title": "我终于找到我的下一个游戏了吗？｜Godot开发日志",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 5553,
+  "text": "我开始担心自己可能有点痴迷于做原型了\n说实话\n在所有这些游戏创作马拉松之间\n我一直都有这种冲劲\n但不知为什么\n总有一些小想法悄悄钻进我的脑海\n让我很难摆脱它们\n最近我一直在做一个回合制RPG的原型\n他想成为暗黑地牢和精灵宝可梦的结合体\n但实际上两者都比他好得多\n这个项目让我做了很多更复杂的系统\n而这并不是凭空出现的\n因为你可能知道\n也可能不知道\n其实我一直都不是个擅长编程的人\n我讨厌编程\n编程很蠢\n让我的大脑疼\n但这个项目比我做过的任何东西都要复杂得多\n而这部分原因是因为我一直在对你们撒谎\n在我放下发gun frontier\n并沉迷于这个公路旅行迷幻游戏之间\n其实还有一个神秘的游戏\n是我自己起的一个小项目呃\n叫做学习技能术\n这是个很简单的想法\n我最喜欢的游戏一直是暗黑破坏神二\n有一天我在想\n我到底最想学什么\n答案总是反复出现\n我想要重现那种在老式RPG游戏中升级\n选择下一个技能时的神奇感觉\n好吧\n这听起来很简单\n那我们从哪里开始呢\n很明显我们需要画一个小人\n所以我们就画了这个家伙\n并给他做了动画\n他有点让人记不住\n你知道怎么才能让我记住他吗\n如果他有一根法杖就好\n谁会忘记甘道夫和哈利波特的爸爸呢等等\n等一下\n我给他画了一根小法杖\n但我们开始往后考虑\n我们的目标是创造一个可自定义的沙盒\n里面有各种不同的施法选项\n比如快速施法和缓慢但更强力的施法\n或者像蓄力效果之类的\n所有这些都需要不同的动画\n我们没在PHOTOSHOP里傻傻的画这些\n图个安逸\n而是直接在高德里做动画\n这样想再画根法杖一针就行\n我是不是又画了一根法杖\n其实重点不是\n这不是重点\n但如果我想的话\n我可以再画一根\n它很灵活\n这就是你应该从这部分视频中学到的\n所以我们现在有了一个基础角色\n拿着他的法杖\n配上那些奇怪的小动画\n而这些动画在goat里制作起来其实出奇的简单\n我还复刻了很多RPG游戏里都有的球体\n不只是暗黑破坏神二\n这些球体用来显示生命值和法力值\n我相信我们本来可以用一些很酷的着色器\n特效来做\n但我还是回到了我那个安全的小天地\nPHOTOSHOP画了这四个小动画\n我挺喜欢的呃\n这就是我所谓的够用了\n没必要搞得太复杂\n说到复杂\n你看看这些小钻石形状的东西\n这些应该算是技能槽吧\n肯定得有技能才能往里面放\n因为我灵机一动\n把它们做成了钻石形状\n所以他们非常不巧的\n并不适配高大的网格系统\n这还挺遗憾的\n但现在我有了自己的自定义技能背包\n这就是我说的游戏开发里没有什么是容易的\n我本来只是想做一个技能术\n但在那之前\n我得先确保我们有办法释放这些法术\n也就是说需要一个可自定义的快捷栏\n你看所有事情都会不断扩展下去\n不过话说回来\n我觉得这个看起来还挺酷的\n好了\n我觉得我们终于有了制作技能树所需的一切\n所以我会像之前一样打开PHOTOSHOP\n开始照搬暗黑破坏神I\n我会用重制版的截图在上面描绘\n做出一个算是属于我自己的东西\n我开始有意识地减少在PHOTOSHOP里的工作\n多在GODOT里完成\n所以我没有去规划需要遵循的技能数\n而是直接制作这些组件\n技能本身以及连接到下一个技能的这条线\n这样当我把所有东西保存好\n导入到格斗的之后\n我们只需要把它们锁定在网格上\n现在我们随时都可以自定义技能数\n而不需要重新绘制任何内容\n另有个挺有趣的地方\n我们用aria2D和碰撞来设置\n从一个技能到另一个技能的进度条\n毕竟这就是一棵技能树\n它必须沿着分支向下延伸\n这听起来可能有点傻\n也很简单\n但这是我做过最简洁的系统\n总之一\n我对此感到非常自豪\n而且能够随时随地搭建技能树\n这种感觉真的很自由\n你猜怎么着\n现在就是时候了\n我已经准备好去制作一些技能了\n说到提升技能\n作为一名有志成为游戏开发者的人\n总有无数技能需要学习\n敬语的是有很多外部帮助\n比如今天视频的赞助商brilliant dot org\n进入游戏开发领域\n并不仅仅是学会一项技能\n对我们来说\n不幸的是\n这个爱好的知识面太广了\n感觉你得精通十几种技能才行\n所以在学习的时候\n确保学到的内容是正确的\n非常重要\n幸运的是\n这正是brilliant真正出色的地方\n与其在不同视频之间来回切换\n指望自己能记住其中的知识\n不如选择brilliant且极具互动性的课程\n它会带你从入门级的理解\n逐步深入到真正掌握一切运作背后的深层概念\n这在我所从事的游戏开发领域尤其重要\n因为让东西能运行固然不错\n但更重要的是要明白它为什么会那样运行\n有一门课程一直让我印象深刻\n那就是Python编程\n虽然GDA使用的是他自己的编程语言\nG descript\n但我一直被告知他和Python非常相似\n而当我开始学习brilliant这门课程时\n我立刻明白了原因\n它们确实非常相似\n这对我来说是个好消息\n而且这门课程极大的帮助我\n理解了编程的基础知识\n但brilliant远不止于编程\n从科学逻辑与推理到大型语言模型\n他们有着令人惊叹的课程选择\n如果你想试一试\n可以前往brilliant dot org mz\n在那里你可以获得前30天的完全免费体验\n并享受年度高级订阅八折优惠\n非常感谢brilliant对本视频的赞助\n接下来让我们继续回到正题\n好啦\n现在终于到了添加一些技能的时候了\n我觉得我们就从最基础的开始\n我能想到的最基础的投射物\n我们就叫它冰霜剑吧\n一个超级简单的投射物\n这是我在做far aron frontier时学到的\n不过这次我会在幕后加上一些复杂性\n因为我很清楚自己想要什么\n首先每个技能都必须是一个资源\n说实话\n一开始我其实并不认同资源这个概念\n因为我没看到它的意义\n我记得我问过COOPPLOT\n我为什么需要一个资源\n难道我不能直接把相关信息\n从一个节点传到另一个节点吗\n有了资源到底能带来什么\n坦白说\nAI并没有说服我\n我只是因为很多人都说这是个好主意\n所以决定照做了\n直到我真正下定决心去做了之后\n我才意识到\n其实我早该这么做了\n原因如下\n假设我们在技能树上解锁了一个技能\n这时候我需要在快捷栏上\n有这个技能的一个副本\n这样你就可以选择它\n并且移动它\n而在我的情况下\n我就是从快捷栏上释放技能\n因为它包含了所有的信息\n但假设我只是把信息从技能数传递到快捷栏\n对吧\n那么呃随着你升级\n你可以想象同一个技能会被反复投资\n比如在同一个技能上加了1.2.3.4点\n这里真正有用的一点是作为一个资源\n他们都是一样的\n如果我在技能树上提升了技能等级\n快捷栏上的那个技能的数据也是一样的\n他会立刻知道\n嘿我们现在是二级了\n我们会造成额外伤害\n或者生成一个额外的弹幕\n无论你想要每个技能等级带来什么\n疯狂的增益效果都可以\n当然从技术上讲\n每次你更新时\n你仍然可以传递所有这些信息\n但根据你想要传递的内容\n这可能会变得非常复杂\n例如在快捷栏设置技能时\n我只传递了资源\n这就够了好了\n资源就讲到这还能说什么呢\n我就是个坚定的支持者\n除了每个技能都必须是一个资源之外\n我还很早就意识到我想要大量使用继承\n所以我们创建了一个弹幕类\n让它实现我们认为弹幕需要做的所有事情\n然后再组合出冰霜剑\n在PHOTOSHOP里画出来\n其实很简单\n它有点像一颗冰冷的子弹好了\n第一个技能完成了\n尝试做点什么\n提前规划游戏的运作方式\n所以我们让这个技能在你用它击中敌人时\n为你生成法力值\n顺便说一句\n我觉得冰霜剑\n实际上可能出现在暗黑破坏神IE里\n从现在开始\n你就假设我做的所有东西\n都是从暗黑破坏神IE里偷来的吧\n哦有一次我做了这个环境美术非常简单\n在PHOTOSHOP里画好\n然后导入到GODA里\n加了一个粒子特效\n还有一些灯光\n这样他就从原来的样子变成了现在这样\n我们每个游戏都这么做\n并不特别\n冰霜剑后\n我想如果有个微型弹体呢\n叫它冰川碎片\n像个精致的小碎片\n我也不清楚\n这个技能直接来自死灵法师的牙齿技能\n那个技能的机制是\n你每加一点就会多发射一枚碎片\n还能形成一种范围波动的效果\n超级酷\n就这样吧\n我们搞定了\n接下来我想做点不是投射物的东西\n于是我创建了一个叫做召唤的类\n但这不是你想的那种\n它只是用来生成存在于世界中的静态物体\n我觉得我没时间做一个完整的伙伴系统\n这个更像是你召唤出一个巨大的冰柱\n存在于世界中\n而我们用这个做的第一个技能就是冰霜之柱\n冰霜之柱就是一个存在于世界中的巨大冰柱\n它非常简单\n没什么太大变化\n但我在技能资源里加入了一些可调选项\n比如我们希望法术在鼠标所在的位置生成\n而不是像投射物那样从法杖的施法点生成\n另外也是在这个时候\n我尝试加入了蓄力机制\n施法类型是资源上的一个导出变量\n我设置成当我们选择蓄力时会发生几件事\n那个小界面会弹出来\n显示我们蓄力的多少\n通常来说\n法术蓄力时间越长\n体积越大\n伤害也越高\n不知为何\n我觉得让每个技能都能这样做很重要\n我也不知道为什么\n这只是我做的东西有点沙盒性质罢了\n这样是平衡的\n我对此并不担心\n你也不需要担心\n我很喜欢这样\n我们继续往下讲\n到目前为止\n这些都是我称之为主动技能的东西\n也就是说你必须选择它们\n然后释放\n但如果我们想要被动技能呢\n就是在某些事件发生时自动触发的技能\n这种有趣的机制其实很容易失控\n所以我意识到最好的做法就是做一个事件总线\n而且其实很简单\n每当我们遇到可能触发被动技能的事情\n比如说有一个召唤物被创建时\n在准备好后\n他会告诉事件总线发出这个信号\n同时把召唤物的信息一起发送过去\n其中最重要的就是技能数据\n接下来我只需要有一个被动技能管理器\n它会连接到所有这些信号上\n每当我们解锁一个被动技能时\n就把它添加到被动技能管理器里\n真的就是这么简单\n为了测试这个机制\n我做了一个叫做冰霜陷阱的技能\n它的效果是每当你召唤一个单位时\n会同时召唤出这些迷你冰霜柱\n而且冰霜陷阱技能等级越高\n召唤出的柱子就越多\n而且这个效果其实非常酷\n还能完全兼容我之前做的蓄力施法类型\n所以所有东西都会变大\n造成更多伤害\n后来我又加了一个小小的冰霜水洼\n我挺喜欢这个的\n他虽然没用\n但我喜欢再召唤一个\n这技能能做成召唤或投射物\n但听过暗黑二吗\n有个技能叫冰霜新星\n我做个类似的叫冰霜震荡\n会在玩家周围造成小范围AOE\n其实这个技能完全可以做成一个\n速度为零的投射物\n但因为我们把它做成了召唤\n现在他就能和那个被动技能联动了\n我不知道为什么\n总觉得暗黑破坏神里的那个技能释放的特别快\n所以我也尝试做了一些可以瞬发的法术\n这还挺有意思的\n因为它不需要用法杖释放\n也就是说你可以同时释放两个法术\n而且看起来也不会很奇怪\n所以我这或许是个不错的点子\n好到目前为止\n我们做的每个技能都是进攻型的\n所以我觉得现在可以尝试做一些防御型技能了\n第一个我们就做一个冰盾\n基本上他就是提升玩家的防御力\n还有冰属性防御\n这些其实都还只是设想\n假设我们有会造成冰属性伤害的敌人\n这个技能就能让他们造成的冰伤害变少\n这也意味着我得做一个增益效果类\n所以以后如果我们想做\n像石肤或者其他奇怪的东西\n都会放在这个类里\n这个冰霜护盾在暗黑破坏神ii里也有\n不过他后续的技能都挺无聊的\n他们其实没怎么变\n基本上只是提升了属性\n我就想如果你后面技能树里能有更好的版本\n为什么还要给同一个技能设定\n不同的等级呢\n所以我开始跳出框架思考\n觉得如果角色能直接变成一块冰块\n在一段时间内完全免疫伤害\n这样其实挺酷的对吧\n这样是不是很酷\n但是呃你知道如果这块冰能冻呢\n我们可以把这个编进去\n没错对\n不用再做更多了对\n但如果他能动\n还能撞到敌人\n然后你像弹珠一样弹来弹去\n你就像这就是我忙不完的原因\n游戏里没敌人\n我在打箱子\n这还有个弹珠高手\n了解我的话\n这很符合我风格\n我只想做一些最蠢的东西\n后来我又做了一个被动技能\n内容是每当一个状态或召唤物死亡时\n触发一次冰霜震荡\n这感觉非常随机\n我其实没指望这些被动能正常工作\n我倒是想这肯定会出问题吧\n结果居然能用\n我之前说过\n我不想做伙伴召唤\n所以很自然的我们又加了一个伙伴召唤\n叫他奥瑞克凝视\n这名字就是我随便编的\n他叫凝视\n是因为他就像个小眼球\n一开始我以为他只是漂在空中\n但后来我画了它跳来跳去\n说实话我开始有点喜欢上他了\n幸运的是\n伙伴的类代码非常简单\n据我了解\n在暗黑破坏神二里\n伙伴就是跟着玩家走\n直到看到敌人\n他们会有点无脑的站着和敌人战斗\n但如果玩家离开了\n他们就会跟着玩家走\n我几分钟就把这些都加进游戏里了\n因为现在是2026年\n这种东西现在很容易做\n我设定的技能等级越高\n能召唤的数量就越多\n说实话\n我很喜欢那种\n召唤一支由各种奇怪角色组成的军队的感觉\n当你试图召唤超过最大数量时\n系统会把最早召唤出来的那个干掉\n也就是在这个时候\n我意识到所有被动技能都能和伙伴类正确互动\n也许这是一团混乱的垃圾堆\n但这是属于我的混乱垃圾堆\n而且他正如预期那样运作\n这就是我在那个垃圾堆上停下来的地方\n你可能已经注意到技能树上有五个技能\n我还没有做\n我确实为这些技能有过想法和计划\n但这只是一个原型\n不幸的是\n在有其他事情叫走我之前\n我只做到这里\n不过在做完这个视频之后\n我得诚实的说\n我不太确定我当初是否应该放弃这个项目\n总是过于注重打磨细节\n却没有做出一个小的游戏循环\n但我觉得如果我花上一周时间做几个敌人\n再做一个非常基础的房间推进\n我觉得这里很有可能能找到\n值得继续深挖的东西\n在我现在开始的这两个项目之间\n我真的很好奇\n你们觉得我应该继续做哪一个\n或者也许两个都不做\n因为就目前来看\n我觉得他们都是很酷的机会好了\n这期视频就到这里\n欢迎大家在评论区告诉我\n你们的想法\n我真的很感兴趣\n非常感谢大家的观看\n我们下次再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1QV5j6BE8c",
+  "published_at": "1778457600",
+  "fetched_at": "2026-08-07T02:42:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot技能系统知识图谱\n\n## 技能系统总览\n```mermaid\nflowchart TD\n    SR[SkillResource] --> SB[SkillBar]\n    SR --> ST[SkillTree]\n    SB --> UI[UI (quick slot)]\n    ST --> AS[ActiveSkill]\n    ST --> PS[PassiveSkill]\n    AS --> AN[Animation]\n    PS --> EB[EventBus]\n    EB --> PS\n    IN[Inheritance] --> SR\n    AN --> IN\n```\n[BV1QV5j6BE8c P1 02:31] 自定义技能栏概念  \n[BV1QV5j6BE8c P1 05:06] 技能作为资源的讨论  \n[BV1QV5j6BE8c P1 08:34] 被动技能使用事件总线  \n\n## 新技能创建流程\n```mermaid\nflowchart TD\n    I[Idea] --> D[Design]\n    D --> RC[Create Skill Resource]\n    RC --> AC[Create Animation]\n    AC --> AB[Add to Skill Bar]\n    AB --> IT[Integrate into Skill Tree]\n    IT --> T[Test in Game]\n    T --> DP[Deploy]\n```\n[BV1QV5j6BE8c P1 01:02] 开始设计新技能  \n[BV1QV5j6BE8c P1 05:06] 创建技能资源  \n[BV1QV5j6BE8c P1 06:30] 使用类继承  \n[BV1QV5j6BE8c P1 06:40] 测试技能  \n\n## 主动与被动技能机制\n```mermaid\nflowchart TD\n    PI[Player Input] --> AS[ActiveSkill]\n    AS --> AE[Skill Effect]\n    AE --> CD[Cooldown]\n    GE[Game Event] --> PS[PassiveSkill]\n    PS --> EB[EventBus]\n    EB --> PE[Skill Effect]\n```\n[BV1QV5j6BE8c P1 08:20] 主动技能触发  \n[BV1QV5j6BE8c P1 08:31] 被动技能通过事件总线  \n[BV1QV5j6BE8c P1 08:56] 被动技能测试  \n\n## Godot技能系统学习路径\n```mermaid\nflowchart TD\n    GB[Godot Basics] --> RE[Resources]\n    RE --> IN[Inheritance]\n    IN --> UI[Custom Skill Bar UI]\n    UI --> EV[Event Bus System]\n    EV --> AN[Animation Creation]\n    AN --> TE[Testing Skills]\n    TE --> DP[Deploying]\n```\n[BV1QV5j6BE8c P1 02:52] 从Godot基础转向实现  \n[BV1QV5j6BE8c P1 05:06] 理解资源概念  \n[BV1QV5j6BE8c P1 06:27] 掌握类继承  \n[BV1QV5j6BE8c P1 08:34] 学习事件总线  \n[BV1QV5j6BE8c P1 06:40] 进行技能测试",
+      "diagrams": [
+        {
+          "title": "技能系统总览",
+          "code": "flowchart TD\n    SR[SkillResource] --> SB[SkillBar]\n    SR --> ST[SkillTree]\n    SB --> UI[UI (quick slot)]\n    ST --> AS[ActiveSkill]\n    ST --> PS[PassiveSkill]\n    AS --> AN[Animation]\n    PS --> EB[EventBus]\n    EB --> PS\n    IN[Inheritance] --> SR\n    AN --> IN"
+        },
+        {
+          "title": "新技能创建流程",
+          "code": "flowchart TD\n    I[Idea] --> D[Design]\n    D --> RC[Create Skill Resource]\n    RC --> AC[Create Animation]\n    AC --> AB[Add to Skill Bar]\n    AB --> IT[Integrate into Skill Tree]\n    IT --> T[Test in Game]\n    T --> DP[Deploy]"
+        },
+        {
+          "title": "主动与被动技能机制",
+          "code": "flowchart TD\n    PI[Player Input] --> AS[ActiveSkill]\n    AS --> AE[Skill Effect]\n    AE --> CD[Cooldown]\n    GE[Game Event] --> PS[PassiveSkill]\n    PS --> EB[EventBus]\n    EB --> PE[Skill Effect]"
+        },
+        {
+          "title": "Godot技能系统学习路径",
+          "code": "flowchart TD\n    GB[Godot Basics] --> RE[Resources]\n    RE --> IN[Inheritance]\n    IN --> UI[Custom Skill Bar UI]\n    UI --> EV[Event Bus System]\n    EV --> AN[Animation Creation]\n    AN --> TE[Testing Skills]\n    TE --> DP[Deploying]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T02:42:52+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot技能系统知识图谱\n\n## 技能系统总览\n```mermaid\nflowchart TD\n    SR[SkillResource] --> SB[SkillBar]\n    SR --> ST[SkillTree]\n    SB --> UI[UI (quick slot)]\n    ST --> AS[ActiveSkill]\n    ST --> PS[PassiveSkill]\n    AS --> AN[Animation]\n    PS --> EB[EventBus]\n    EB --> PS\n    IN[Inheritance] --> SR\n    AN --> IN\n```\n[BV1QV5j6BE8c P1 02:31] 自定义技能栏概念  \n[BV1QV5j6BE8c P1 05:06] 技能作为资源的讨论  \n[BV1QV5j6BE8c P1 08:34] 被动技能使用事件总线  \n\n## 新技能创建流程\n```mermaid\nflowchart TD\n    I[Idea] --> D[Design]\n    D --> RC[Create Skill Resource]\n    RC --> AC[Create Animation]\n    AC --> AB[Add to Skill Bar]\n    AB --> IT[Integrate into Skill Tree]\n    IT --> T[Test in Game]\n    T --> DP[Deploy]\n```\n[BV1QV5j6BE8c P1 01:02] 开始设计新技能  \n[BV1QV5j6BE8c P1 05:06] 创建技能资源  \n[BV1QV5j6BE8c P1 06:30] 使用类继承  \n[BV1QV5j6BE8c P1 06:40] 测试技能  \n\n## 主动与被动技能机制\n```mermaid\nflowchart TD\n    PI[Player Input] --> AS[ActiveSkill]\n    AS --> AE[Skill Effect]\n    AE --> CD[Cooldown]\n    GE[Game Event] --> PS[PassiveSkill]\n    PS --> EB[EventBus]\n    EB --> PE[Skill Effect]\n```\n[BV1QV5j6BE8c P1 08:20] 主动技能触发  \n[BV1QV5j6BE8c P1 08:31] 被动技能通过事件总线  \n[BV1QV5j6BE8c P1 08:56] 被动技能测试  \n\n## Godot技能系统学习路径\n```mermaid\nflowchart TD\n    GB[Godot Basics] --> RE[Resources]\n    RE --> IN[Inheritance]\n    IN --> UI[Custom Skill Bar UI]\n    UI --> EV[Event Bus System]\n    EV --> AN[Animation Creation]\n    AN --> TE[Testing Skills]\n    TE --> DP[Deploying]\n```\n[BV1QV5j6BE8c P1 02:52] 从Godot基础转向实现  \n[BV1QV5j6BE8c P1 05:06] 理解资源概念  \n[BV1QV5j6BE8c P1 06:27] 掌握类继承  \n[BV1QV5j6BE8c P1 08:34] 学习事件总线  \n[BV1QV5j6BE8c P1 06:40] 进行技能测试",
+  "diagrams": [
+    {
+      "title": "技能系统总览",
+      "code": "flowchart TD\n    SR[SkillResource] --> SB[SkillBar]\n    SR --> ST[SkillTree]\n    SB --> UI[UI (quick slot)]\n    ST --> AS[ActiveSkill]\n    ST --> PS[PassiveSkill]\n    AS --> AN[Animation]\n    PS --> EB[EventBus]\n    EB --> PS\n    IN[Inheritance] --> SR\n    AN --> IN"
+    },
+    {
+      "title": "新技能创建流程",
+      "code": "flowchart TD\n    I[Idea] --> D[Design]\n    D --> RC[Create Skill Resource]\n    RC --> AC[Create Animation]\n    AC --> AB[Add to Skill Bar]\n    AB --> IT[Integrate into Skill Tree]\n    IT --> T[Test in Game]\n    T --> DP[Deploy]"
+    },
+    {
+      "title": "主动与被动技能机制",
+      "code": "flowchart TD\n    PI[Player Input] --> AS[ActiveSkill]\n    AS --> AE[Skill Effect]\n    AE --> CD[Cooldown]\n    GE[Game Event] --> PS[PassiveSkill]\n    PS --> EB[EventBus]\n    EB --> PE[Skill Effect]"
+    },
+    {
+      "title": "Godot技能系统学习路径",
+      "code": "flowchart TD\n    GB[Godot Basics] --> RE[Resources]\n    RE --> IN[Inheritance]\n    IN --> UI[Custom Skill Bar UI]\n    UI --> EV[Event Bus System]\n    EV --> AN[Animation Creation]\n    AN --> TE[Testing Skills]\n    TE --> DP[Deploying]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:42:52+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1zHuE6VE8R",
+  "title": "4卡170HX跑Deepseek！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 135,
+  "text": "大家好\n我是阎魔派\n今天带来四卡170HX\n64G测速VLLM\n运行DPCV4flash0731\n先简单看看加载日志\n再看看聊天速度\n最后重新测个速\n感觉还不错啊\n一开始55\n后来都上到60了\nPREFO也是越跑越快\n四卡170H差\n这项目我投了\n我是炎魔派\n咱们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zHuE6VE8R",
+  "published_at": "1785998010",
+  "fetched_at": "2026-08-06T21:42:06+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 四卡170HX Deepseek 性能概览\n\n## 硬件与软件概览\n```mermaid\nflowchart TD\n    GPU[\"4×170HX\"]\n    MEM[\"64GB\"]\n    MODEL[\"VLLM\"]\n    FW[\"DPCV4 flash 0731\"]\n    PROJ[\"Deepseek 项目\"]\n    GPU --> MEM\n    GPU --> MODEL\n    GPU --> FW\n    MODEL --> PROJ\n```\n- 配置概述: [BV1zHuE6VE8R P1 00:02], [BV1zHuE6VE8R P1 00:04], [BV1zHuE6VE8R P1 00:05]\n\n## 性能测评流程\n```mermaid\nflowchart TD\n    LOG[\"加载日志检查\"]\n    CHAT[\"聊天速度测试\"]\n    RE[\"重新测速\"]\n    RES[\"性能结果\"]\n    LOG --> CHAT --> RE --> RES\n```\n- 步骤顺序: 加载日志 [BV1zHuE6VE8R P1 00:09] → 聊天速度 [BV1zHuE6VE8R P1 00:14] → 重新测速 [BV1zHuE6VE8R P1 00:21]\n\n## 观察到的性能指标\n```mermaid\nflowchart TD\n    S1[\"初始速度 55\"]\n    S2[\"后期速度 60\"]\n    PREFO[\"PREFO 越跑越快\"]\n    IMP[\"整体感觉不错\"]\n    S1 --> S2 --> PREFO --> IMP\n```\n- 初始速度 55: [BV1zHuE6VE8R P1 01:19]  \n- 后期速度 60: [BV1zHuE6VE8R P1 01:20]  \n- PREFO 加速: [BV1zHuE6VE8R P1 01:22]  \n- 整体感受: [BV1zHuE6VE8R P1 01:17]",
+      "diagrams": [
+        {
+          "title": "硬件与软件概览",
+          "code": "flowchart TD\n    GPU[\"4×170HX\"]\n    MEM[\"64GB\"]\n    MODEL[\"VLLM\"]\n    FW[\"DPCV4 flash 0731\"]\n    PROJ[\"Deepseek 项目\"]\n    GPU --> MEM\n    GPU --> MODEL\n    GPU --> FW\n    MODEL --> PROJ"
+        },
+        {
+          "title": "性能测评流程",
+          "code": "flowchart TD\n    LOG[\"加载日志检查\"]\n    CHAT[\"聊天速度测试\"]\n    RE[\"重新测速\"]\n    RES[\"性能结果\"]\n    LOG --> CHAT --> RE --> RES"
+        },
+        {
+          "title": "观察到的性能指标",
+          "code": "flowchart TD\n    S1[\"初始速度 55\"]\n    S2[\"后期速度 60\"]\n    PREFO[\"PREFO 越跑越快\"]\n    IMP[\"整体感觉不错\"]\n    S1 --> S2 --> PREFO --> IMP"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T21:42:18+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 四卡170HX Deepseek 性能概览\n\n## 硬件与软件概览\n```mermaid\nflowchart TD\n    GPU[\"4×170HX\"]\n    MEM[\"64GB\"]\n    MODEL[\"VLLM\"]\n    FW[\"DPCV4 flash 0731\"]\n    PROJ[\"Deepseek 项目\"]\n    GPU --> MEM\n    GPU --> MODEL\n    GPU --> FW\n    MODEL --> PROJ\n```\n- 配置概述: [BV1zHuE6VE8R P1 00:02], [BV1zHuE6VE8R P1 00:04], [BV1zHuE6VE8R P1 00:05]\n\n## 性能测评流程\n```mermaid\nflowchart TD\n    LOG[\"加载日志检查\"]\n    CHAT[\"聊天速度测试\"]\n    RE[\"重新测速\"]\n    RES[\"性能结果\"]\n    LOG --> CHAT --> RE --> RES\n```\n- 步骤顺序: 加载日志 [BV1zHuE6VE8R P1 00:09] → 聊天速度 [BV1zHuE6VE8R P1 00:14] → 重新测速 [BV1zHuE6VE8R P1 00:21]\n\n## 观察到的性能指标\n```mermaid\nflowchart TD\n    S1[\"初始速度 55\"]\n    S2[\"后期速度 60\"]\n    PREFO[\"PREFO 越跑越快\"]\n    IMP[\"整体感觉不错\"]\n    S1 --> S2 --> PREFO --> IMP\n```\n- 初始速度 55: [BV1zHuE6VE8R P1 01:19]  \n- 后期速度 60: [BV1zHuE6VE8R P1 01:20]  \n- PREFO 加速: [BV1zHuE6VE8R P1 01:22]  \n- 整体感受: [BV1zHuE6VE8R P1 01:17]",
+  "diagrams": [
+    {
+      "title": "硬件与软件概览",
+      "code": "flowchart TD\n    GPU[\"4×170HX\"]\n    MEM[\"64GB\"]\n    MODEL[\"VLLM\"]\n    FW[\"DPCV4 flash 0731\"]\n    PROJ[\"Deepseek 项目\"]\n    GPU --> MEM\n    GPU --> MODEL\n    GPU --> FW\n    MODEL --> PROJ"
+    },
+    {
+      "title": "性能测评流程",
+      "code": "flowchart TD\n    LOG[\"加载日志检查\"]\n    CHAT[\"聊天速度测试\"]\n    RE[\"重新测速\"]\n    RES[\"性能结果\"]\n    LOG --> CHAT --> RE --> RES"
+    },
+    {
+      "title": "观察到的性能指标",
+      "code": "flowchart TD\n    S1[\"初始速度 55\"]\n    S2[\"后期速度 60\"]\n    PREFO[\"PREFO 越跑越快\"]\n    IMP[\"整体感觉不错\"]\n    S1 --> S2 --> PREFO --> IMP"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:42:18+00:00"
+}

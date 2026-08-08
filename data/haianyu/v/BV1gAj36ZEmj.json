@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1gAj36ZEmj",
+  "title": "151. 如何可视化MQA？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 465,
+  "text": "今天的问题是如何可视化MQA\n先说如何可视化多头注意力\n把QKV砍成多个头\n第一个头放在前面\n第二个头放在背后\n第三个头再往后以此类推\n计算时各个头独立计算\n互不干扰\n第一个Q头和第一个K转制头算出来\n第一个A头再和第一个V头加权平均算出来\n第一个OTO头和头之间独立不干扰\nMQA的核心思想是为了节省kv catch\n把K和V砍到只有一个十的头\n其他头都由这个头广播而来\n相当于是虚拟头逻辑上存在\n但不占用额外内存\n计算时依然是各个头独立计算\n比如这里的实的第二个Q头\n和这里的虚的第二个K头算出来\n这里的第二个A头\n再和第二个虚的V头加权平均算出来\n第二个O头\n头和头之间仍然独立\n彼此互不干扰\n分析一下各个头是相同还是不同\n这里的四个Q头彼此不同\n因为没有广播操作\n这里的四个K头彼此相同\n因为它们由一个头广播而来\n这里的四个A头彼此不同\n这是由于投独立计算\n并且这里的四个Q头不同\n就导致这里的四个A头不同\n这里的四个V头彼此相同\n因为广播操作\n这里的四个O头彼此不同\n这是由于头独立计算\n并且这里的A头不同\n导致O头不同",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gAj36ZEmj",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

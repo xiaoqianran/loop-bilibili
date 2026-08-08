@@ -1,0 +1,74 @@
+{
+  "bvid": "BV19QNs6GESg",
+  "title": "17.Godot建造系统：建造ui，鼠标拖放游戏对象",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2678,
+  "text": "回到2D视图\n来到building节点\n把他的building id设为building one\nBuilding id\ntwo给house\nTwo\nBuilding id\nthree给house\nThree\n每个建筑都这么设\n后面你就知道有什么用\n到building manager节点挂载脚本\n脚本要保存到新建文件夹\n文件夹命名为building manager\n点击create之后再编写代码\n先找到这个十字节点图标\n我们要为building manager系统创建若干基础组件\n首先创建一个叫ghost的东西\n在building manager里建一个文件夹\n改个颜色就叫ghost\n标成红色\n添加一个area2D节点\n第一个就叫archy ghost\n给它加个子节点\n添加animated sprite\n2D重命名一下\n继续添加子节点\n选用collision onship\n3D完成后保存场景\n把场景存到building manager的ghost文件夹里\n现在来添加新的spread frame\n打开这个文件夹\n找一找素材\n因为是弓箭手\n我家这个construct动画\n这就是建造动画的样子\n其实这是个bug\n所以你能看到背景里的水\n在背景里好像是两个场景叠在一起了\n我的level场景和artery ghost场景互相重叠\n试着重放也不行\n唯一的解决办法是关掉go to重开\n我已经重启好了\n回到正题\nghost预览图与碰撞体制作完成后\n碰撞形状尺寸要比贴图图像略小一圈\n要比animated sprite显示的贴图再缩小一些\n差不多这么小\n锁定它\n现在到ENEM上挂个脚本\nArtery ghost\nAnimated sprite rd\n在FAREAD函数里调一下modulate的alpha值\nmodulate设为color1110\n代表白色半透明透明度\n数值设置为0.6\n接下来给每个建筑都创建对应的ghost\n从BARRY开始复制一份他的ghost\n给每个建筑都做一个\n我已经在后台做好了\n兵营ghost已经制作完成\n关闭网格\n完成节点配置\ntower和monastery也照做\n然后隐藏掉\n关掉这些ghost场景保存\n隐藏掉\n把整个系统移到building manager内部\n好往下拖到unit resource里删掉它\n把这个节点删除之后\n运行游戏测试\nunit construction面板\n运行游戏检查一下嗯\n确实没了\n已经没了\n回到2D视图\n到building manager脚本这里\n回到2D视图\n关掉网格\n给unit construction panel节点挂载脚本\n保存到building manager目录下\n点击create\n关掉脚本窗口\n把节点往下拖\n再给unit construction添加子节点\n编写脚本前\n先给unit construction panel节点添加sprite2D\n重命名为selector\n需要一个选择器来显示\n当前选中的是哪个建筑的按钮\n这个选择器素材是pixel frog做的\n包含在素材包里\n调一下大小来匹配tile map的尺寸\n刚好合适\n回到脚本里\n把selector拖进来\n我会在FERRD函数中统一处理所有按钮\n这段我快进一下\n但还是有必要说说代码的逻辑\n简单说就是创建一个系统\n点击建筑按钮时\n按钮颜色变绿\n尺寸稍微放大\n能看到那种缩放效果\n同时选择器定位到你点击的那个按钮上\n好快进\nUnit construction\n脚本写好了\ncontrol s保存\n回到2D视图\n关掉网格\n运行游戏\n看看点击建筑按钮时确实有那种缩放效果\n缩放效果非常完美\n再调大一点\n差不多这个大小完美\n现在让按钮半透明一点\n选中selector节点\n将modulate透明度先设为200\n再调整数值改为180\nselector有点大\n缩放到差不多\n这样恰到好处\n更好看了\n再运行一次\n点击建筑按钮效果很漂亮\n关掉\n回到building manager\n在building manager里创建新系统\n点击建筑按钮时\n建筑会实例化到鼠标位置\n拖拽放置完成后\n建筑会播放建造动画\n说起来简单\n但你大概明白我的意思了\n点击建造系统对游戏玩法非常有用\n我希望玩家点击unit construction里已经做好的图标\n点击之后建筑就实例化到鼠标位置\n我快速搞定\n最后给你看效果\nbuilding manager脚本写好了\n到按钮这里演示怎么关联\n点击assign\n把building manager关联上去\n可能还不太明白\n但跟着我的步骤做一遍就会知道\nBuilding manager\n需要手动关联到每个按钮\n我快速过一遍\n每个按钮都要手动关联\n挺烦的\n但这是必要的\n同时保证塔楼id参数匹配\n兵营按钮依次绑定到building manager节点\nArcher tower manager\nBuilding manager\n好保存\n回到2D视图\n关掉网格\n先回脚本\n在global里把变量改成50\n运行游戏全屏\n结果发现有个小问题\n控制台报错提示不存在\nget sales这个可用函数\n报错根源是变量名称写错\n我写成了idol source\n正确写法是id source\n点击按钮后\n建筑预览能够生成\n但生成位置和鼠标光标偏差极大\n偏的很厉害\n可能是偏移量的问题\n挺烦人的\n如果不能放到鼠标位置\n那就很难用了\n关掉快速修复一下\n可能是鼠标偏移的问题\n但我感觉偏移量没这么大\n找到放置建筑的地方\n代码逻辑全部正确\n我来排查究竟是什么造成建筑错位重叠的问题\n问题在哪\n嗯我觉得从建筑这里查起\n到place building看看到底是什么导致了这个问题\nGlobal fit position\n写的没错\n看看ghost\n可能是ghost的问题\n但我不这么认为\n我先移除父节点下其中两个子节点\n先测试这个方案\n还是有延迟\n没有完全跟随鼠标位置\n那问题不在\n这建筑比我想要的大\n但应该不是这个原因\n问题也有可能来自ghost预览图的缩放参数\n我来手动修改每个ghost场景\n也可以用脚本来做\n但我习惯手动\n因为子节点的脚本里改不了父节点\n而且我也不想给每个area2D都单独写脚本\n手动调整全部ghost缩放参数\n修改后可以改善鼠标拖拽时的位置偏移\n保存一下运行游戏\n拖拽预览时尺寸正常\n但画面跟随鼠标存在明显延迟\n再运行一次嗯\n好像搞定了\n我在后台调过了\n别担心\n最后会提供完整脚本\n问题出在鼠标延迟上",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19QNs6GESg",
+  "published_at": "1783733306",
+  "fetched_at": "2026-08-07T10:35:28+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 建造系统知识图谱\n\n## 建筑 ID 与 Ghost 关联概览 [BV19QNs6GESg P1 00:04] [BV19QNs6GESg P1 00:28] [BV19QNs6GESg P1 01:01]\n```mermaid\nflowchart TD\n    B1[\"建筑节点\"] -->|设定| B2[\"Building ID (one/two/three)\"]\n    B2 --> B3[\"BuildingManager 脚本挂载\"]\n    B3 --> B4[\"创建 Ghost 模板文件夹\"]\n    B4 --> B5[\"Ghost 节点\"]\n    B5 --> B6[\"设置颜色为红色\"]\n    B5 --> B7[\"添加 Area2D\"]\n    B5 --> B8[\"添加 AnimatedSprite\"]\n    B5 --> B9[\"添加 CollisionShape (onship)\"]\n    B9 --> B10[\"保存为 Ghost 场景\"]\n```\n\n## Ghost 预览与碰撞体尺寸调整 [BV19QNs6GESg P1 02:22] [BV19QNs6GESg P1 02:58] [BV19QNs6GESg P1 03:13]\n```mermaid\nflowchart TD\n    G1[\"Ghost 预览图\"] --> G2[\"AnimatedSprite\"]\n    G2 --> G3[\"在 _process/_ready 调整 modulate\"]\n    G3 --> G4[\"设定 alpha = 0.6 (白色半透明)\"]\n    G1 --> G5[\"CollisionShape\"]\n    G5 --> G6[\"尺寸比 Sprite 小一圈\"]\n    G6 --> G7[\"锁定节点\"]\n    G7 --> G8[\"挂载脚本至 ENEMY\"]\n    G8 --> G9[\"最终 Ghost 完成\"]\n```\n\n## UI 按钮交互与选择器视觉反馈 [BV19QNs6GESg P1 06:19] [BV19QNs6GESg P1 07:21] [BV19QNs6GESg P1 07:43]\n```mermaid\nflowchart TD\n    UI1[\"Unit Construction Panel\"] --> UI2[\"建筑按钮\"]\n    UI2 --> UI3[\"点击按钮触发\"]\n    UI3 --> UI4[\"按钮颜色变绿\"]\n    UI3 --> UI5[\"按钮尺寸放大 (缩放效果)\"]\n    UI3 --> UI6[\"Selector 节点定位\"]\n    UI6 --> UI7[\"Selector Sprite (pixel frog)\"]\n    UI7 --> UI8[\"modulate 透明度 200 → 180\"]\n    UI7 --> UI9[\"根据 TileMap 调整大小\"]\n    UI4 & UI5 & UI8 --> UI10[\"视觉反馈 完成\"]\n```\n\n## 建筑放置流程、偏移调试与最终实现 [BV19QNs6GESg P1 08:05] [BV19QNs6GESg P1 11:41] [BV19QNs6GESg P1 14:27]\n```mermaid\nflowchart TD\n    P1[\"点击建筑按钮\"] --> P2[\"实例化建筑于鼠标位置\"]\n    P2 --> P3[\"播放建造动画\"]\n    P3 --> P4[\"出现 Ghost 预览\"]\n    P4 --> P5[\"检测到位置偏差\"]\n    P5 --> P6[\"检查 Ghost 缩放参数\"]\n    P6 --> P7[\"手动/脚本 调整 Ghost 缩放\"]\n    P7 --> P8[\"重新测试拖拽预览\"]\n    P8 --> P9[\"发现鼠标跟随延迟\"]\n    P9 --> P10[\"优化更新逻辑或延迟处理\"]\n    P10 --> P11[\"最终建筑准确放置，动画流畅\"]\n```",
+      "diagrams": [
+        {
+          "title": "建筑 ID 与 Ghost 关联概览",
+          "code": "flowchart TD\n    B1[\"建筑节点\"] -->|设定| B2[\"Building ID (one/two/three)\"]\n    B2 --> B3[\"BuildingManager 脚本挂载\"]\n    B3 --> B4[\"创建 Ghost 模板文件夹\"]\n    B4 --> B5[\"Ghost 节点\"]\n    B5 --> B6[\"设置颜色为红色\"]\n    B5 --> B7[\"添加 Area2D\"]\n    B5 --> B8[\"添加 AnimatedSprite\"]\n    B5 --> B9[\"添加 CollisionShape (onship)\"]\n    B9 --> B10[\"保存为 Ghost 场景\"]"
+        },
+        {
+          "title": "Ghost 预览与碰撞体尺寸调整",
+          "code": "flowchart TD\n    G1[\"Ghost 预览图\"] --> G2[\"AnimatedSprite\"]\n    G2 --> G3[\"在 _process/_ready 调整 modulate\"]\n    G3 --> G4[\"设定 alpha = 0.6 (白色半透明)\"]\n    G1 --> G5[\"CollisionShape\"]\n    G5 --> G6[\"尺寸比 Sprite 小一圈\"]\n    G6 --> G7[\"锁定节点\"]\n    G7 --> G8[\"挂载脚本至 ENEMY\"]\n    G8 --> G9[\"最终 Ghost 完成\"]"
+        },
+        {
+          "title": "UI 按钮交互与选择器视觉反馈",
+          "code": "flowchart TD\n    UI1[\"Unit Construction Panel\"] --> UI2[\"建筑按钮\"]\n    UI2 --> UI3[\"点击按钮触发\"]\n    UI3 --> UI4[\"按钮颜色变绿\"]\n    UI3 --> UI5[\"按钮尺寸放大 (缩放效果)\"]\n    UI3 --> UI6[\"Selector 节点定位\"]\n    UI6 --> UI7[\"Selector Sprite (pixel frog)\"]\n    UI7 --> UI8[\"modulate 透明度 200 → 180\"]\n    UI7 --> UI9[\"根据 TileMap 调整大小\"]\n    UI4 & UI5 & UI8 --> UI10[\"视觉反馈 完成\"]"
+        },
+        {
+          "title": "建筑放置流程、偏移调试与最终实现",
+          "code": "flowchart TD\n    P1[\"点击建筑按钮\"] --> P2[\"实例化建筑于鼠标位置\"]\n    P2 --> P3[\"播放建造动画\"]\n    P3 --> P4[\"出现 Ghost 预览\"]\n    P4 --> P5[\"检测到位置偏差\"]\n    P5 --> P6[\"检查 Ghost 缩放参数\"]\n    P6 --> P7[\"手动/脚本 调整 Ghost 缩放\"]\n    P7 --> P8[\"重新测试拖拽预览\"]\n    P8 --> P9[\"发现鼠标跟随延迟\"]\n    P9 --> P10[\"优化更新逻辑或延迟处理\"]\n    P10 --> P11[\"最终建筑准确放置，动画流畅\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T10:36:22+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 建造系统知识图谱\n\n## 建筑 ID 与 Ghost 关联概览 [BV19QNs6GESg P1 00:04] [BV19QNs6GESg P1 00:28] [BV19QNs6GESg P1 01:01]\n```mermaid\nflowchart TD\n    B1[\"建筑节点\"] -->|设定| B2[\"Building ID (one/two/three)\"]\n    B2 --> B3[\"BuildingManager 脚本挂载\"]\n    B3 --> B4[\"创建 Ghost 模板文件夹\"]\n    B4 --> B5[\"Ghost 节点\"]\n    B5 --> B6[\"设置颜色为红色\"]\n    B5 --> B7[\"添加 Area2D\"]\n    B5 --> B8[\"添加 AnimatedSprite\"]\n    B5 --> B9[\"添加 CollisionShape (onship)\"]\n    B9 --> B10[\"保存为 Ghost 场景\"]\n```\n\n## Ghost 预览与碰撞体尺寸调整 [BV19QNs6GESg P1 02:22] [BV19QNs6GESg P1 02:58] [BV19QNs6GESg P1 03:13]\n```mermaid\nflowchart TD\n    G1[\"Ghost 预览图\"] --> G2[\"AnimatedSprite\"]\n    G2 --> G3[\"在 _process/_ready 调整 modulate\"]\n    G3 --> G4[\"设定 alpha = 0.6 (白色半透明)\"]\n    G1 --> G5[\"CollisionShape\"]\n    G5 --> G6[\"尺寸比 Sprite 小一圈\"]\n    G6 --> G7[\"锁定节点\"]\n    G7 --> G8[\"挂载脚本至 ENEMY\"]\n    G8 --> G9[\"最终 Ghost 完成\"]\n```\n\n## UI 按钮交互与选择器视觉反馈 [BV19QNs6GESg P1 06:19] [BV19QNs6GESg P1 07:21] [BV19QNs6GESg P1 07:43]\n```mermaid\nflowchart TD\n    UI1[\"Unit Construction Panel\"] --> UI2[\"建筑按钮\"]\n    UI2 --> UI3[\"点击按钮触发\"]\n    UI3 --> UI4[\"按钮颜色变绿\"]\n    UI3 --> UI5[\"按钮尺寸放大 (缩放效果)\"]\n    UI3 --> UI6[\"Selector 节点定位\"]\n    UI6 --> UI7[\"Selector Sprite (pixel frog)\"]\n    UI7 --> UI8[\"modulate 透明度 200 → 180\"]\n    UI7 --> UI9[\"根据 TileMap 调整大小\"]\n    UI4 & UI5 & UI8 --> UI10[\"视觉反馈 完成\"]\n```\n\n## 建筑放置流程、偏移调试与最终实现 [BV19QNs6GESg P1 08:05] [BV19QNs6GESg P1 11:41] [BV19QNs6GESg P1 14:27]\n```mermaid\nflowchart TD\n    P1[\"点击建筑按钮\"] --> P2[\"实例化建筑于鼠标位置\"]\n    P2 --> P3[\"播放建造动画\"]\n    P3 --> P4[\"出现 Ghost 预览\"]\n    P4 --> P5[\"检测到位置偏差\"]\n    P5 --> P6[\"检查 Ghost 缩放参数\"]\n    P6 --> P7[\"手动/脚本 调整 Ghost 缩放\"]\n    P7 --> P8[\"重新测试拖拽预览\"]\n    P8 --> P9[\"发现鼠标跟随延迟\"]\n    P9 --> P10[\"优化更新逻辑或延迟处理\"]\n    P10 --> P11[\"最终建筑准确放置，动画流畅\"]\n```",
+  "diagrams": [
+    {
+      "title": "建筑 ID 与 Ghost 关联概览",
+      "code": "flowchart TD\n    B1[\"建筑节点\"] -->|设定| B2[\"Building ID (one/two/three)\"]\n    B2 --> B3[\"BuildingManager 脚本挂载\"]\n    B3 --> B4[\"创建 Ghost 模板文件夹\"]\n    B4 --> B5[\"Ghost 节点\"]\n    B5 --> B6[\"设置颜色为红色\"]\n    B5 --> B7[\"添加 Area2D\"]\n    B5 --> B8[\"添加 AnimatedSprite\"]\n    B5 --> B9[\"添加 CollisionShape (onship)\"]\n    B9 --> B10[\"保存为 Ghost 场景\"]"
+    },
+    {
+      "title": "Ghost 预览与碰撞体尺寸调整",
+      "code": "flowchart TD\n    G1[\"Ghost 预览图\"] --> G2[\"AnimatedSprite\"]\n    G2 --> G3[\"在 _process/_ready 调整 modulate\"]\n    G3 --> G4[\"设定 alpha = 0.6 (白色半透明)\"]\n    G1 --> G5[\"CollisionShape\"]\n    G5 --> G6[\"尺寸比 Sprite 小一圈\"]\n    G6 --> G7[\"锁定节点\"]\n    G7 --> G8[\"挂载脚本至 ENEMY\"]\n    G8 --> G9[\"最终 Ghost 完成\"]"
+    },
+    {
+      "title": "UI 按钮交互与选择器视觉反馈",
+      "code": "flowchart TD\n    UI1[\"Unit Construction Panel\"] --> UI2[\"建筑按钮\"]\n    UI2 --> UI3[\"点击按钮触发\"]\n    UI3 --> UI4[\"按钮颜色变绿\"]\n    UI3 --> UI5[\"按钮尺寸放大 (缩放效果)\"]\n    UI3 --> UI6[\"Selector 节点定位\"]\n    UI6 --> UI7[\"Selector Sprite (pixel frog)\"]\n    UI7 --> UI8[\"modulate 透明度 200 → 180\"]\n    UI7 --> UI9[\"根据 TileMap 调整大小\"]\n    UI4 & UI5 & UI8 --> UI10[\"视觉反馈 完成\"]"
+    },
+    {
+      "title": "建筑放置流程、偏移调试与最终实现",
+      "code": "flowchart TD\n    P1[\"点击建筑按钮\"] --> P2[\"实例化建筑于鼠标位置\"]\n    P2 --> P3[\"播放建造动画\"]\n    P3 --> P4[\"出现 Ghost 预览\"]\n    P4 --> P5[\"检测到位置偏差\"]\n    P5 --> P6[\"检查 Ghost 缩放参数\"]\n    P6 --> P7[\"手动/脚本 调整 Ghost 缩放\"]\n    P7 --> P8[\"重新测试拖拽预览\"]\n    P8 --> P9[\"发现鼠标跟随延迟\"]\n    P9 --> P10[\"优化更新逻辑或延迟处理\"]\n    P10 --> P11[\"最终建筑准确放置，动画流畅\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T10:36:22+00:00"
+}

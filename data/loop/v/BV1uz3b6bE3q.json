@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1uz3b6bE3q",
+  "title": "50页，8万token，0.12元，deepseek -flash模型，pdf解析（免费）+沉浸式翻译（deepseek api收费）。",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 331,
+  "text": "好了\n根据网友的要求对我的史诗代码进行了更新\n主要就是针对低性能电脑进行远程解析\n利用open i格式的模型去进行翻译\n一开始用的pro单段去解析\n非常消耗token\n后来进行了一下优化\n乘P去解析\n然后再拆分成单段插入下方用的是dev sic flash\n消耗了80000token\n将近50页的样子吧\n然后消耗了一毛二\n总体来说还是挺可观的\n一开始测试的时候花钱还是比较多的\n大家可以看看具体的时间段\n然后上下文长度和mask token决定解析的长度\n就是说你是需要多少段\n是一段一块送一次还是十段送一次\n这样的话可能会更省一些\n后面下一步就是进行轻量化的本地PDF解析\n就是离线状态下可以凑或者将就用\n功能肯定没有其他的软件强\n当然啦推荐其他up主的软件",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1uz3b6bE3q",
+  "published_at": "1785420249",
+  "fetched_at": "2026-08-08T01:45:05+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

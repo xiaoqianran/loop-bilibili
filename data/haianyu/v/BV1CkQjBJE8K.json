@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1CkQjBJE8K",
+  "title": "93. 为什么Transformer的核心公式是在做加权平均？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 665,
+  "text": "今天的问题是\n为什么transformer的核心公式是在做加权平均\n什么是平均呢\n小学的时候就知道语文数学\n英语三门课成绩加一起\n然后除以三\n这个就是平均\n什么是加权平均呢\n比如说现在有体育高数大物三门课的成绩\n但问题是它的重要性是不一样的\n学分也是不一样的\n所以要乘以一个权重再加在一起\n这个就是加权平均\n那什么是加权之和呢\n比如说强化学习当中\n当前时刻的回报等于未来奖励的加权之和\n这里为什么不用加权平均这个词呢\n因为它的前面的这个系数通常加在一起\n是不唯一的\n也就意味着不太适合用加权平均\n而应该用加权之和\n也就是说广义的加权平均可以写成圈圈\n星星加圈圈星星\n其中这里的星星是可以相加的\n这里的圈圈是范围在0~1之间的\n小数总和是为一的\n那么为什么transformer是在做加权平均呢\n因为他也蛮符合这种圈圈新星加圈圈新星\n就以decode为例\n当然了\nencode也是在做加权平均\n比如说现在的这个注意力权重矩阵去乘以\n这里的V就T在做加权平均\n首先这里的V1V2它是可以相加的\n因为它是一个行向量\n此外比如说0.2乘以V1\n加上0.8乘以V2\n这个过程就相当于是在做加权平均\n为什么这里的0.2+0.8\n它的合为一呢\n这是由于soft max所保证的\n那么为什么这里的0.7比较大呢\n这是由于第三个token\n认为第二个token和他关系更大\n或者说这个内积就是Q3\n查询K2得到的内积是更大的\n它在语义空间上是更相关的\n也就是说第三个token注意到了第二个token\n这个就是transformer当中注意力的含义",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1CkQjBJE8K",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:17:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

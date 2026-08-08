@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1BM3169EUS",
+  "title": "【ICML 2026】🏆MRAgent — 记忆是重建而非检索：面向LLM Agent的图记忆系统 — LLM在图记忆中主动推理导航",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 5537,
+  "text": "大家好\n欢迎收看本期论文分享\n今天我们要介绍的论文题为记忆是重建\n而非检索面向LLM agent的图记忆系统\n作者是来自新加坡国立大学的技术李一博和brian hi\n发表于CML2026mr r agent\n在GEMINI主干上实现了23.3%的LLM judge相对增益\n令牌消耗仅118K比最强机械降低超过一半\n理论证明\n主动检索策略严格超越被动策略\n核心设计是q tag content\n关联记忆图在local amble和long m e m e l双基准上得到验证\n附录部分包含oral信号分析\n命中了审计扭转负载假设和替换算子两大创新模式\n以及从认知神经科学角度的历史定位\n一句话概括M2agent\n将记忆检索从被动检索推理范式升级为主动多步重建\n让LLM在记忆图中推理导航\n证据驱动减脂\n本频道每日更新物理AI与智能体论文三连关注不迷路\n本文译作技硕是新加坡国立大学2025年入学的博士生\n研究方向为LLM agent的记忆机制\n强化学习和agent安全\n它以m r agent\ngt RL和zombie agents3项工作著称\n其中GRL同获CML2026spotlight通讯作者李一博\n同为news博士生\n北邮本硕背景\n以gt RL和web agent guard闻名\n两人均由BRIANHUI教授指导\nhi是news计算机学院助理教授\nCMU博士\n斯坦福本硕研究方向包括图挖掘异常检测和可信AI\n曾获KDD2016最佳论文奖\nn u s hi课题组从图异常检测出发\n近年系统性的转向LLM agent的可信记忆与持续学习\nMr r agent\ngt RL和zombie agents构成了记忆学习安全三位一体的研究版图\nmr r agent提出了一个基于q tab content图记忆的主动记忆重建框架\n核心创新在于将LLM推理直接嵌入记忆访问循环\n不是先检索再推理\n而是边检索边推理\n逐步探索检知积累证据\n这项工作覆盖了两个基准数据集\nlocal mo长对话记忆评测和long m e m e l多绘画长记忆评测\n理论贡献方面\nM2agent严格证明了主动检索策略严格超越被动检索\n用数学语言来说是Python hypothesis class\n被active hypothesis class严格包含在GEMINI主干上\n实现了23.3%的LLM judge相对提升\n令牌消耗仅118k token效率提升2~8倍\n这幅图对比了被动检索和主动记忆重建两种范式\n左图展示了传统的被动检索流程\n给定一个查询系统\n通过固定的相似度匹配或预定意邻域扩展来检索记忆\n然后一次性返回结果给LLM进行推理\n这种方法的问题在于\n检索策略无法根据中间证据动态调整\n如果检索到的内容不相关\nLLM没有机会修正检索方向\n右图展示了m r agent的主动重建流程\nLLM在记忆图中进行多步推理导航\n每一步检索到的证据都会反馈到下一步的检索决策中\n形成证据驱动的自适应便利\n这种设计使得agent能够发现被动检索无法触及的关联记忆\n现有LLM agent记忆系统可以归为三大类\n第一类是rag检索增强生成\n基于向量相似度的TOKK检索\n后续发展为graph r a g在图上做社区摘要\n第二类是基于图的记忆系统\n如AMEM构建记忆笔记图\n并通过淋浴扩展检索zip维护双时序知识图谱\n第三类是层级持久记忆\nmemory os采用短中长三层分级架构\nM 1m0\n通过LLM驱动的增删改操作维护事实集合\nLM1M压缩对话历史为记忆摘要\n所有这些系统的共同问题在于检索策略是被动的\n要么固定top k要么预定一领域扩展\n无法根据中间证据动态调整检索方向\nm r agent首次将LLM推理直接嵌入检索循环\n实现了证据驱动的主动便利\n这是与所有基线的关键差异\nMR2agent的方法核心是四个设计层次\n第一关联记忆图采用q tag content\n三层异构结构\n其中text作为语义桥梁\n连接细粒度的cues与具体的记忆内容\n第二多层记忆组织分为episodic\n事件层存储\n具体经历\nsemantic语义层存储\n稳定的抽象知识\ntopic抽象层总结跨事件的共性模式\n支持不同力度的推理需求\n第三显示的重建状态\n每一步维护active set作为候选便利集合\n同时累积reconstructed context作为已收集的证据\n第四可组合的便利动作空间\n包含前向探索\n从Q到tag再到content以及反向激活\n从content反向发现新的Q和tag\n下一张图展示了完整的系统架构\n这张图展示了M2agent的完整系统架构\n分为两大部分\n图A展示了关联记忆系统的构建流程\n从原始对话中通过LLM提取和生成记忆元素\n包括细粒度的cues\n关联性的text以及具体的episodic和semantic内容\n然后组织成q tag content\n三层图结构\nto b展示了查询时的主动记忆重建过程\n给定一个用户查询系统\n首先提取查询中的cues并初始化重建状态\n然后进入迭代循环\n每一步由LLM推理当前状态\n选择便利方向\n执行图\n便利操作获取候选节点\n通过LOLM路由减脂筛选相关内容\n更新证据积累\n直到LOLM判定证据充足后输出最终答案\n核心设计包含四个关键机制\n第一LOLM推理驱动的动作选择函数F下划线select\n基于当前查询和已积累的证据\n从可组合的动作空间中选择下一步的便利方向\n实现语义引导\n而非随机扩展\n第二受控图便利仅在LLM选择的方向上展开\n而非像AMEM那样全图扩展\n有效避免组合爆炸\n第3LOLM路由减脂函数F下划线RT\n评估新检索内容与查询和已有证据的语义关联\n只保留相关信息\n持续减除无关分支\n第四自适应终止\nLOLM自主判断证据是否充足\n充足时进入answer模式输出答案\n否则继续navigate模式探索前向探索与反向激活的组合\n使得每次便利都可能发现新线索\n并调整搜索方向\n实验覆盖了两个互补的评测基准\nlocal mo包含50段长对话\n每段最多35个会话\n约300轮对话\n附带约200对问答\n涵盖单跳多跳时序和开放域四类问题\nlong m1M一L包含约500个问题\n每个问题配对的对话历史约115k tokens覆盖多会话\n单用户时序推理和偏好四类问题\n基线方法选择了五大代表性系统\nred相似度检索AMEM图扩展\nmemory os3层分级\nLM1M压缩摘要和M1M0增量适时维护\n覆盖了当前被动检索的全部范式\n评测使用GEMINI2.5flash和cloud sonnet\n4.52个LLM主干采用F1和LLM judge双指标\nGPT4欧mini作为评判模型\n温度设为零\n每个方法独立运行三次取均值\n以保证统计可靠性\n这幅图通过一个具体案例解释为什么被动检索无法解决多跳查询\n以查询NT的视频游戏比赛为例\n图A展示了基于相似度的检索系统\n检索到大量与视频游戏比赛表面相关的事件\n但这些事件中混杂了大量噪声\n且完全遗漏了关键人物CAROLINE的相关信息\nto b展示了基于图的检索\n虽然通过邻域扩展引入了更多邻居节点\n但检索到的额外信息仍然是无关的\n同样无法找到\nCaroline\n图C展示了主动重建M2agent\n从初始检索结果中推断出关键的时间线索7月\n然后基于这个新线索进一步检索\n最终发现了CAROLINE在7月的相关活动\n这个例子直观地说明了中间证据驱动的新线索\n发现是主动重建的核心优势\n在local mo基准的GEMINI主干上\nM2agent取得了全面的最优结果\n在最具挑战性的多跳查询上\nM2agent的LLM judge达到75.17\n远超第二名的M1M0的68.79\n在时序查询上更是达到了80.37\n比M1M0的61.68高出近19个百分点\n在开放域问题上也有近27个百分点的领先\n综合来看\noverall j从M1M0的68.31提升到了84.21\n相对增益达到23.3%\n在cloud主干上\nM8agent更达到了88.32的OVERLAG\n验证了跨模型的鲁棒性\n这张主表清晰地证明了\n主动记忆重建在所有查询类型上都显著优于被动检索\n机械消融实验\n在cloud主干上针对多跳查询展开从两个维度拆解贡献结构维度\n比较了三种记忆\n表示C是Q直接索引\nepisode c t e增加了tag作为中介\nCCTC是完整的q tag content\n结构推理维度\n对比了无推理的纯结构检索和带推理的主动重建\n结果清楚显示带raising的蓝色柱在所有结构上都显著高于绿色柱\n证明主动多步推理是最主要的增益来源\n在结构维度上\n从C1到CT1\n再到CTC性能单调提升\n证明TX提供了有效的语义引导\n同时移除语义记忆组件会导致明显的性能下降\n说明episodic和semantic两层是互补的\n从实验结果中可以提炼四个关键发现\n第一主动多步推理是主要增益来源\n带reasoning的变体\n在所有记忆结构上一致优于纯结构\n对比消融实验直接证实了这一点\n第2associative text提供有效的语义引导\n从C1到CT1\n再到CCTC\n性能单调提升\ntext通过语义路由显著减少了无关检索的引入\n第三多轮推理的深度不可替代\n增加推理轮次\n持续提升性能\n但增加每轮的平行检索预算很快\n饱和深度比广度更重要\n第4token效率是M2agent的另一个亮点\n每样本仅消耗118k tokens\n相比M1M0的245K降低了52%\n相比AM1M的632K更是降低了81%\n这种效率来自轻量化的记忆构造和按需的查询时检索\n多轮推理分析从两个角度展示了主动重建的动态特性\n图A展示了累积证据\nrecall随推理论数的变化曲线\n单挑查询在约三轮内就达到近完美的recall\n持续查询也类似\n但多跳查询的recall在连续多轮中持续增长\n超过30个百分点\n充分证明了多部重建对于解决组合性和长距离依赖问题是不可或缺的\nto b展示了收敛轮次的统计\n最大有效轮次与平均收敛轮次非常接近\n说明LLM能够有效的自主判断何时继续搜索\n何时停止\n避免了冗余探索\n此外附录中的预算敏感性分析进一步证明\n增加每轮平行检索预算不能替代更深的推理轮次\nMR2agent的核心贡献可以归纳为四点\n第一他将记忆访问从被动的检索推理范式升级为主动的多部重建\nLLM在记忆图中推理导航\n基于证据驱动的方式进行减脂\n第2q tag content图结构搭配episodic semantic和topic3层多层记忆\n实现了语义引导的有空便利\n第三理论上严格证明了主动检索策略严格超越被动策略\npassive hypothesis class是active hypothesis class的严格子集\n第四在local amble和long m e m e l两个基准上取得一致\n最优性能\ntoken效率提升52%到81%\n从认知神经科学的视角来看\n人类记忆本质上是一个重建过程\n而非简单检索\nmr r agent首次将这个原理落地于LLM agent g系统的工程实现\nMR2agent当前存在三个主要局限\n第一重建深度与延迟之间的权衡复杂\n多跳查询需要多轮便利推理\n成本随深度线性增长\n第二目前的记忆图是静态构造的\n缺乏记忆更新和遗忘机制\n随着交互持续累积\n存储开销会单调增长\n第三便利策略高度依赖LLM的推理质量\n较弱的基础模型可能导致次优的路径选择或过早终止探索\n作者提出的未来方向\n包括自适应记忆构造\n轻量级记忆维护机制以及更鲁棒的便利策略\n已将主动重建推广到更广泛的长城应用场景\nmr r agent建立在多项基础工作之上\n最核心的是LEWIS等人在NIPS2020提出的rap检索增强生成框架\n奠定了外部记忆检索的基础\na m e m memory os和M1M0分别代表了图扩展层级\n分级和增量事实\n三种被动记忆范式\n本文正是在这些基线之上证明了主动重建的显著优势\n以上就是本期M2agent论文分享的全部内容\n主动记忆重建这一范式\n将LLM agent的记忆系统从被动检索带入了认知重建的新阶段\n感谢您的收看\n欢迎在评论区讨论交流\n以下是附录内容\n附录C从oral信号角度分析了m r agent的创新模式\n附录H则梳理了主动记忆重建的历史贡献脉络\nmr r agent命中了两大创新模式模式\n一是审计并扭转负载\n假设审计了记忆检索\n必须遵循检索推理\n固定管线这一领域默认假设证明在被动策略下无法解决\n需要中间证据的多跳查询\n然后通过将LLM推理嵌入检索循环实现扭转\noral验证是theorem1严格证明了active与passive的不可约误差\ngap通过二元素分离构造给出了形式化证明模式\n二是替换算子\n或表示将记忆检索的核心算子从固定的相似度匹配和邻域扩展\n替换为LLM推理驱动的可组合便利动作\noral验证来自消融实验和工具覆盖率分析\n整体来看\n理论紧度证明加上消融验证构成了结构性洞察与执行质量的双保险\nPC偏好为PC主动记忆重建的技术脉络可以追溯到2026年\nm r agent在CML2026首次提出这一范式\n并给出严格理论证明\n同组的gt RL在同年的ICML上以spotlight论文发表\n将主动决策思想从记忆扩展到了持续强化学习\n在更广泛的下游领域\n主动记忆检索的思想正被VLA视觉语言动作模型如ram vi类世界模型\n如A的JEEPA核聚深智能系统采纳\n这一技术路线\n从LLM agent记忆出发\n正朝着通用agent认知架构的方向演进",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1BM3169EUS",
+  "published_at": "1785331744",
+  "fetched_at": "2026-08-07T13:45:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T13:47:09+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T13:47:09+00:00"
+}

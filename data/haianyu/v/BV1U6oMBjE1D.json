@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1U6oMBjE1D",
+  "title": "99. MOE中先求Top K后Softmax，与先求Softmax后重归一化能一样？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 655,
+  "text": "今天的问题是MOE中先求top k\n然后soft max和先for max\n然后top k再重新规划\n这两种方法是否是一样的\n当然不止MOE\n其实含有这个top k和soft max\n都可能会面临这个问题\n问题的动机就是说MOE当中选专家的时候\n如何去计算每个专家的门控权重\n比如说我们假设现在有四个专家\n然后呢要选择其中的两个专家\n假设现在他的这个logic是这样的\n就是1235\n那么第一种做法呢就是先top k\n如果是两个专家的话\n我们就是top2\n那这样的话就把这个三和五给挑选出来\n然后再来一个soft max\n这样就会得到一个分数\n就相当于那个门控的权重\n但是如果先做了这个soft max\n就得到了一个概率向量\n像这样就相当于是每一个就1235\n各自对应一个概率向量\n那在这种情况下\n还能去得到一个相同的能控权重吗\n当然是可以的\n当然是在这个基础上再做一个top k\n就是取两个最大的\n那就是这两个最大的这个时候能重新归一化\n或者说它是一个线性的归一化\n也就是说那其中的每一个数去除\n以所有数的总和\n所以这里呢是总和\n就这里不需要再额外的说max\n那这样的话就会发现诶\n把这个下面的这个星星给约掉了\n他得到的这个结果正好和之前的这个是对应的\n或者说这种线性性质呢\n可以提前把这里的这个星星给它缩放掉\n就得到了这个E的三次方和E的五次方\n那么重新归一化它\n这个线性操作就会得到这样的相同的结果\n简单的说就说是先top k\n然后soft max和先soft max\n然后top c再重新归一化是一样的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1U6oMBjE1D",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:16:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

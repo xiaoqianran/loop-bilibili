@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1aZuJ6qEtn",
+  "title": "【极低成本】5060ti也要部署deepseek-v4-flash正式版！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 933,
+  "text": "大家好啊\n我是friendship panda\n最近很火的deep sk v4flash正式版也是推出了\n我也是火速去魔大平台下载了一下他们的模型\n那看着我这电脑只有5060ti的显卡\n16G的显存\n感觉跑这个好像挺难啊\n嗯我先让它运行一下吧\n我这是花了一个通宵\n总算是把参数调的比较可以了\n差不多也就是十图克每秒的速度\n我这边的系统信息就是这样\n单位大家各位可以自己开\n这就是阿玛写CPP的这个页面了\n现在他这边还是显示正在加载模型\n这就是原始的模型文件\n我在下的时候\n我看他其实有很多个量化版本\n要16位\n八位Q8的就是八位\nQ6的是六位\nQ4的是四位\n之前我也加载过很多模型\n一般就是下Q4和Q6的就可以\n感觉再小的精度就有点损失了\n但是DPC和这个模型实在太大了\n没办法\n只能下精度很低的Q2的这个版本了\n这也是S劳斯ISL推出的\n自己去的GGUS版本\n原版的其实更大\n更难加载\n就这个这个Q2量化版\n它居然都有90个G\n看来这边模型已经加载好了\nNV点SMI这边也可以看好了\n那咱们是发一个\n你好试一下ESIC维斯flash\n他这个回答还挺简单的\n至于token每秒\n我从下面看\n他这边是7~8\ntoken每秒\n这边我也是让他跑了一下代码测试\n让他写个圆周率程序吧\n因为显存告急\n他这个极致词输入也是很慢的\n嗯就等着\n先试试1000位\n看一下对不对\n他最后是2164201989\n看来是对的\n再试试\n多一点10万位\n啊居然卡了嗯\n之前用J84的时候也用那个写了一个\n当时用的是JA4的26BA4D模型\n这个好像是可以算出来的\n所以这个就可以算出来\n看来deep seek嗯\n本地的这个还是精度不太够\n我这边也是用cherry studio这个软件\n就是这个软件跑了一下\n他自我介绍的时候\n他竟然说自己是别家的模型\n好奇怪的\n这\n而且cherry studio\n他的这个初始加载提示词也是很慢的\n不知道是什么原因\n估计是cherry studio他又自己加提示词的\n我这边是没有给cherry studio提任何提示词的\n下面这个框隐约可以看到这个生成速度\n对面的信息\n哎这里他就出bug了\n他居然说自己是cloud\n我估计与他这里面的内置隐藏提示词有点关系",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1aZuJ6qEtn",
+  "published_at": "1786014717",
+  "fetched_at": "2026-08-07T04:22:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek‑v4‑Flash 在 RTX 5060 Ti 上的低成本部署知识图谱\n\n## 量化版本与精度‑体积权衡\n```mermaid\nflowchart TD\n    Q8[\"Q8 8‑bit 量化\"] --> Size8[\"相对较大\"]\n    Q8 --> Prec8[\"精度较高\"]\n    Q6[\"Q6 6‑bit 量化\"] --> Size6[\"中等大小\"]\n    Q6 --> Prec6[\"略有精度下降\"]\n    Q4[\"Q4 4‑bit 量化\"] --> Size4[\"较小\"]\n    Q4 --> Prec4[\"可接受的精度\"]\n    Q2[\"Q2 2‑bit 量化\"] --> Size2[\"极小\"]\n    Q2 --> Prec2[\"精度明显下降\"]\n    ModelHuge[\"原始模型体积巨大\"] --> Q2\n    ModelHuge --> Q4\n    ModelHuge --> Q6\n    ModelHuge --> Q8\n    Prec8 --> TradeOff[\"高精度 ↔ 大显存\"]\n    Prec6 --> TradeOff\n    Prec4 --> TradeOff\n    Prec2 --> TradeOff\n    Size8 --> TradeOff\n    Size6 --> TradeOff\n    Size4 --> TradeOff\n    Size2 --> TradeOff\n```\n\n## 部署流程概览\n```mermaid\nflowchart LR\n    D1[\"从魔大平台下载模型\"] --> D2[\"选择合适的量化版本\"]\n    D2 --> D3[\"调节运行参数\"]\n    D3 --> D4[\"启动模型加载\"]\n    D4 --> D5[\"使用 nvidia‑smi 监控显存\"]\n    D5 --> D6[\"执行功能测试（π 计算）\"]\n    D6 --> D7[\"记录输出与耗时\"]\n    D7 --> D8[\"评估性能与稳定性\"]\n    D8 --> D9[\"若出现问题，检查提示词与软件设置\"]\n```\n\n## 性能表现与遇到的问题\n```mermaid\nflowchart TD\n    P1[\"Token 生成速率 7~8 token/s\"] --> P2[\"适用于对话生成\"]\n    P1 --> P3[\"图像生成速率约 10 图/秒\"]\n    Test1[\"π 计算 1000 位成功\"] --> Test2[\"结果 2164201989 正确\"]\n    Test1 --> Test3[\"尝试 100k 位导致卡死\"]\n    Issue1[\"Cherry Studio 初始化慢\"] --> Issue2[\"可能因内置隐藏提示词\"]\n    Issue2 --> Issue3[\"模型自述为 cloud，疑似 bug\"]\n    P2 --> Observation[\"整体可用但受显存限制\"]\n    P3 --> Observation\n    Test2 --> Observation\n    Test3 --> Observation\n    Issue3 --> Observation\n```",
+      "diagrams": [
+        {
+          "title": "量化版本与精度‑体积权衡",
+          "code": "flowchart TD\n    Q8[\"Q8 8‑bit 量化\"] --> Size8[\"相对较大\"]\n    Q8 --> Prec8[\"精度较高\"]\n    Q6[\"Q6 6‑bit 量化\"] --> Size6[\"中等大小\"]\n    Q6 --> Prec6[\"略有精度下降\"]\n    Q4[\"Q4 4‑bit 量化\"] --> Size4[\"较小\"]\n    Q4 --> Prec4[\"可接受的精度\"]\n    Q2[\"Q2 2‑bit 量化\"] --> Size2[\"极小\"]\n    Q2 --> Prec2[\"精度明显下降\"]\n    ModelHuge[\"原始模型体积巨大\"] --> Q2\n    ModelHuge --> Q4\n    ModelHuge --> Q6\n    ModelHuge --> Q8\n    Prec8 --> TradeOff[\"高精度 ↔ 大显存\"]\n    Prec6 --> TradeOff\n    Prec4 --> TradeOff\n    Prec2 --> TradeOff\n    Size8 --> TradeOff\n    Size6 --> TradeOff\n    Size4 --> TradeOff\n    Size2 --> TradeOff"
+        },
+        {
+          "title": "部署流程概览",
+          "code": "flowchart LR\n    D1[\"从魔大平台下载模型\"] --> D2[\"选择合适的量化版本\"]\n    D2 --> D3[\"调节运行参数\"]\n    D3 --> D4[\"启动模型加载\"]\n    D4 --> D5[\"使用 nvidia‑smi 监控显存\"]\n    D5 --> D6[\"执行功能测试（π 计算）\"]\n    D6 --> D7[\"记录输出与耗时\"]\n    D7 --> D8[\"评估性能与稳定性\"]\n    D8 --> D9[\"若出现问题，检查提示词与软件设置\"]"
+        },
+        {
+          "title": "性能表现与遇到的问题",
+          "code": "flowchart TD\n    P1[\"Token 生成速率 7~8 token/s\"] --> P2[\"适用于对话生成\"]\n    P1 --> P3[\"图像生成速率约 10 图/秒\"]\n    Test1[\"π 计算 1000 位成功\"] --> Test2[\"结果 2164201989 正确\"]\n    Test1 --> Test3[\"尝试 100k 位导致卡死\"]\n    Issue1[\"Cherry Studio 初始化慢\"] --> Issue2[\"可能因内置隐藏提示词\"]\n    Issue2 --> Issue3[\"模型自述为 cloud，疑似 bug\"]\n    P2 --> Observation[\"整体可用但受显存限制\"]\n    P3 --> Observation\n    Test2 --> Observation\n    Test3 --> Observation\n    Issue3 --> Observation"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T04:22:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek‑v4‑Flash 在 RTX 5060 Ti 上的低成本部署知识图谱\n\n## 量化版本与精度‑体积权衡\n```mermaid\nflowchart TD\n    Q8[\"Q8 8‑bit 量化\"] --> Size8[\"相对较大\"]\n    Q8 --> Prec8[\"精度较高\"]\n    Q6[\"Q6 6‑bit 量化\"] --> Size6[\"中等大小\"]\n    Q6 --> Prec6[\"略有精度下降\"]\n    Q4[\"Q4 4‑bit 量化\"] --> Size4[\"较小\"]\n    Q4 --> Prec4[\"可接受的精度\"]\n    Q2[\"Q2 2‑bit 量化\"] --> Size2[\"极小\"]\n    Q2 --> Prec2[\"精度明显下降\"]\n    ModelHuge[\"原始模型体积巨大\"] --> Q2\n    ModelHuge --> Q4\n    ModelHuge --> Q6\n    ModelHuge --> Q8\n    Prec8 --> TradeOff[\"高精度 ↔ 大显存\"]\n    Prec6 --> TradeOff\n    Prec4 --> TradeOff\n    Prec2 --> TradeOff\n    Size8 --> TradeOff\n    Size6 --> TradeOff\n    Size4 --> TradeOff\n    Size2 --> TradeOff\n```\n\n## 部署流程概览\n```mermaid\nflowchart LR\n    D1[\"从魔大平台下载模型\"] --> D2[\"选择合适的量化版本\"]\n    D2 --> D3[\"调节运行参数\"]\n    D3 --> D4[\"启动模型加载\"]\n    D4 --> D5[\"使用 nvidia‑smi 监控显存\"]\n    D5 --> D6[\"执行功能测试（π 计算）\"]\n    D6 --> D7[\"记录输出与耗时\"]\n    D7 --> D8[\"评估性能与稳定性\"]\n    D8 --> D9[\"若出现问题，检查提示词与软件设置\"]\n```\n\n## 性能表现与遇到的问题\n```mermaid\nflowchart TD\n    P1[\"Token 生成速率 7~8 token/s\"] --> P2[\"适用于对话生成\"]\n    P1 --> P3[\"图像生成速率约 10 图/秒\"]\n    Test1[\"π 计算 1000 位成功\"] --> Test2[\"结果 2164201989 正确\"]\n    Test1 --> Test3[\"尝试 100k 位导致卡死\"]\n    Issue1[\"Cherry Studio 初始化慢\"] --> Issue2[\"可能因内置隐藏提示词\"]\n    Issue2 --> Issue3[\"模型自述为 cloud，疑似 bug\"]\n    P2 --> Observation[\"整体可用但受显存限制\"]\n    P3 --> Observation\n    Test2 --> Observation\n    Test3 --> Observation\n    Issue3 --> Observation\n```",
+  "diagrams": [
+    {
+      "title": "量化版本与精度‑体积权衡",
+      "code": "flowchart TD\n    Q8[\"Q8 8‑bit 量化\"] --> Size8[\"相对较大\"]\n    Q8 --> Prec8[\"精度较高\"]\n    Q6[\"Q6 6‑bit 量化\"] --> Size6[\"中等大小\"]\n    Q6 --> Prec6[\"略有精度下降\"]\n    Q4[\"Q4 4‑bit 量化\"] --> Size4[\"较小\"]\n    Q4 --> Prec4[\"可接受的精度\"]\n    Q2[\"Q2 2‑bit 量化\"] --> Size2[\"极小\"]\n    Q2 --> Prec2[\"精度明显下降\"]\n    ModelHuge[\"原始模型体积巨大\"] --> Q2\n    ModelHuge --> Q4\n    ModelHuge --> Q6\n    ModelHuge --> Q8\n    Prec8 --> TradeOff[\"高精度 ↔ 大显存\"]\n    Prec6 --> TradeOff\n    Prec4 --> TradeOff\n    Prec2 --> TradeOff\n    Size8 --> TradeOff\n    Size6 --> TradeOff\n    Size4 --> TradeOff\n    Size2 --> TradeOff"
+    },
+    {
+      "title": "部署流程概览",
+      "code": "flowchart LR\n    D1[\"从魔大平台下载模型\"] --> D2[\"选择合适的量化版本\"]\n    D2 --> D3[\"调节运行参数\"]\n    D3 --> D4[\"启动模型加载\"]\n    D4 --> D5[\"使用 nvidia‑smi 监控显存\"]\n    D5 --> D6[\"执行功能测试（π 计算）\"]\n    D6 --> D7[\"记录输出与耗时\"]\n    D7 --> D8[\"评估性能与稳定性\"]\n    D8 --> D9[\"若出现问题，检查提示词与软件设置\"]"
+    },
+    {
+      "title": "性能表现与遇到的问题",
+      "code": "flowchart TD\n    P1[\"Token 生成速率 7~8 token/s\"] --> P2[\"适用于对话生成\"]\n    P1 --> P3[\"图像生成速率约 10 图/秒\"]\n    Test1[\"π 计算 1000 位成功\"] --> Test2[\"结果 2164201989 正确\"]\n    Test1 --> Test3[\"尝试 100k 位导致卡死\"]\n    Issue1[\"Cherry Studio 初始化慢\"] --> Issue2[\"可能因内置隐藏提示词\"]\n    Issue2 --> Issue3[\"模型自述为 cloud，疑似 bug\"]\n    P2 --> Observation[\"整体可用但受显存限制\"]\n    P3 --> Observation\n    Test2 --> Observation\n    Test3 --> Observation\n    Issue3 --> Observation"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T04:22:25+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV18uuw67Eto",
+  "title": "我用7天做了一款游戏（零基础）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1424,
+  "text": "这是我第一天做的游戏的样子\n而这是第七天的样子\n所以接下来我会讲讲\n我是如何在完全没有经验的情况下\n仅用七天就做出一款游戏的\n从第一天开始\n关于这个游戏其实没什么好说的\n除了它很烂\n我对这个游戏的想法是\n做一个3D自动卷轴游戏\n有点像cool max games里的run\n但不是跑步\n而是驾驶一艘飞船\n目前我已经做到这样了\n哥是你真的只能坐在那里看着这些形状\n在艰难的第一天之后\n我第二天花时间学习了如何控制玩家\n并设置了一个可以用方向键移动的方块\n和第一天比起来\n这绝对算是不错的进步\n但还是挺\n而且不是会撞到其他形状\n而是直接穿过去\n所以在能称之为游戏之前\n我显然还有很多工作要做\n第三天\n我把玩家从一个立方体改成了圆柱体\n因为我想让玩家驾驶一艘火箭飞船\n我创建了一个带有目标和一些障碍物的\n基础地图\n并且加入了物理效果\n这样撞到物体时真的会受到影响\n最后我编写了代码\n让玩家碰到红色物体会重置\n碰到绿色物体则会完成关卡并进入下一关\n显然现在游戏还非常简陋\n但一定要坚持到第七天\n那时一切都会被打磨的很精致\n游戏也会真正焕发光彩\n此时我的时间已经过了一半\n但游戏还远未完成\n所以我做了一些打磨\n比如在玩家撞击时加入音效\n还有一些背景音乐\n我还制作了一些非常基础的火焰粒子效果\n当你按住空格键时\n飞船会喷出火焰\n之后\n我把第四天剩下的时间都用来练习制作地图\n而我确实需要这些练习\n因为第五天我有一个大计划\n你可能已经注意到\n到目前为止\n我做的每一关都是二维的\n但在视频开头我说过\n我对这个游戏的想法是\n做一个三维自动卷轴游戏\n所以今天我尝试编写代码\n让玩家能够在三维空间中自由飞行哇\n这比我想象的要难得多\n我花了几个小时\n结果还是没弄好\n所以我告诉自己\n明天再试一次\n我真的很不想这样做\n因为我已经快没时间了\n而且游戏还很不完善\n所以在睡觉前我又做了一下玩家模型\n并且告诉自己\n明天一定要专注投入\n我想在七天内完成一款游戏\n但现在我连玩家的移动都还没搞定\n我还有很多工作要做\n今天我几乎一整天都在研究玩家的移动\n好消息是我最终让它运行起来了\n但坏消息是\n等我搞定的时候\n已经是第七天了\n所有的代码都写完了\n但我还得制作关卡\n而且必须得快点\n我想要有点创意\n所以第一个关卡我做了一个洞穴\n我先做了一个水晶模型\n然后给地面和墙壁导入了一种岩石材质\n我加了一些彩色灯光\n让水晶看起来在发光\n然后我把整个关卡的灯光调得非常暗\n接着我给终点线加了一个材质\n这样它就不再是一个大绿色方块\n而是真正的终点线了\n我还用了一些爆炸粒子效果\n当玩家撞车时应用上去\n这样看起来更真实一些\n最后的效果就是这样\n我其实对这个结果非常满意\n我觉得灯光真的起了很大的作用\n但我的目标是做出三个关卡\n所以我们还有很多工作要做\n接下来我做的关卡是在太空里\n在这里障碍物要难得多\n因为它们会移动\n我还加了一个太阳\n既作为障碍物\n也能帮助照亮区域\n我从谷歌上找了一张星空的图片\n把它贴在了墙上\n天花板和地板上\n这样你就真的有身处太空的感觉\n至于第三关\n也是最后一关\n我想让它变得很难\n这就是为什么我尽可能的做了一个\n视觉上最让人困惑的关卡\n在这一关里\n所有东西都和终点线用了同样的材质\n所以你根本不知道自己要往哪里走\n而且和其他关卡不同\n这里没有任何光源\n所以判断物体距离就更难了\n到这里我的游戏就完成了\n虽然它并不完美\n但和第一天相比\n我对最终的成果真的很满意\n看到这里\n感谢观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18uuw67Eto",
+  "published_at": "1785888000",
+  "fetched_at": "2026-08-07T13:13:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 7天游戏开发知识图谱\n\n## 项目概览 【BV18uuw67Eto P1 00:07】\n\n```mermaid\nflowchart TD\n    Goal[\"目标：7天完成游戏\"]\n    Genre[\"3D 自动卷轴\"]\n    Player[\"玩家：飞船（圆柱体）\"]\n    Controls[\"方向键移动\"]\n    Collision[\"红色重置 / 绿色通关\"]\n    Effects[\"音效 + 粒子 + 灯光\"]\n    Levels[\"3 个关卡：洞穴、太空、迷惑关卡\"]\n    Result[\"满意度：高（相较第一天）\"]\n\n    Goal --> Genre\n    Genre --> Player\n    Player --> Controls\n    Controls --> Collision\n    Collision --> Effects\n    Effects --> Levels\n    Levels --> Result\n```\n\n## 开发日程流程 【BV18uuw67Eto P1 00:00‑02:28】\n\n```mermaid\nflowchart LR\n    D1[\"第1天：初始形状\"]\n    D2[\"第2天：玩家方块 + 方向键\"]\n    D3[\"第3天：玩家圆柱体、地图、物理、红绿触发\"]\n    D4[\"第4天：地图练习、火焰粒子、音效\"]\n    D5[\"第5天：尝试3D自由飞行（未成功）\"]\n    D6[\"第6天：玩家移动完成，代码全部写完\"]\n    D7[\"第7天：关卡制作（洞穴、太空、迷惑）\"]\n    Finish[\"完成游戏（虽不完美）\"]\n\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6 --> D7 --> Finish\n```\n\n## 关键玩法机制 【BV18uuw67Eto P1 00:32‑03:04】\n\n```mermaid\nflowchart TD\n    Shape[\"玩家形状：圆柱体\"]\n    Move[\"移动方式：方向键（空格键喷火）\"]\n    Physics[\"物理碰撞\"]\n    RedTrigger[\"红色物体 → 关卡重置\"]\n    GreenTrigger[\"绿色物体 → 关卡完成\"]\n    Sound[\"碰撞音效 + 背景音乐\"]\n    Particle[\"火焰粒子 + 爆炸粒子\"]\n    Lighting[\"灯光与材质\"]\n    Goal[\"到达终点线\"]\n\n    Shape --> Move\n    Move --> Physics\n    Physics --> RedTrigger\n    Physics --> GreenTrigger\n    RedTrigger --> Sound\n    GreenTrigger --> Sound\n    Sound --> Particle\n    Particle --> Lighting\n    Lighting --> Goal\n```",
+      "diagrams": [
+        {
+          "title": "项目概览 【BV18uuw67Eto P1 00:07】",
+          "code": "flowchart TD\n    Goal[\"目标：7天完成游戏\"]\n    Genre[\"3D 自动卷轴\"]\n    Player[\"玩家：飞船（圆柱体）\"]\n    Controls[\"方向键移动\"]\n    Collision[\"红色重置 / 绿色通关\"]\n    Effects[\"音效 + 粒子 + 灯光\"]\n    Levels[\"3 个关卡：洞穴、太空、迷惑关卡\"]\n    Result[\"满意度：高（相较第一天）\"]\n\n    Goal --> Genre\n    Genre --> Player\n    Player --> Controls\n    Controls --> Collision\n    Collision --> Effects\n    Effects --> Levels\n    Levels --> Result"
+        },
+        {
+          "title": "开发日程流程 【BV18uuw67Eto P1 00:00‑02:28】",
+          "code": "flowchart LR\n    D1[\"第1天：初始形状\"]\n    D2[\"第2天：玩家方块 + 方向键\"]\n    D3[\"第3天：玩家圆柱体、地图、物理、红绿触发\"]\n    D4[\"第4天：地图练习、火焰粒子、音效\"]\n    D5[\"第5天：尝试3D自由飞行（未成功）\"]\n    D6[\"第6天：玩家移动完成，代码全部写完\"]\n    D7[\"第7天：关卡制作（洞穴、太空、迷惑）\"]\n    Finish[\"完成游戏（虽不完美）\"]\n\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6 --> D7 --> Finish"
+        },
+        {
+          "title": "关键玩法机制 【BV18uuw67Eto P1 00:32‑03:04】",
+          "code": "flowchart TD\n    Shape[\"玩家形状：圆柱体\"]\n    Move[\"移动方式：方向键（空格键喷火）\"]\n    Physics[\"物理碰撞\"]\n    RedTrigger[\"红色物体 → 关卡重置\"]\n    GreenTrigger[\"绿色物体 → 关卡完成\"]\n    Sound[\"碰撞音效 + 背景音乐\"]\n    Particle[\"火焰粒子 + 爆炸粒子\"]\n    Lighting[\"灯光与材质\"]\n    Goal[\"到达终点线\"]\n\n    Shape --> Move\n    Move --> Physics\n    Physics --> RedTrigger\n    Physics --> GreenTrigger\n    RedTrigger --> Sound\n    GreenTrigger --> Sound\n    Sound --> Particle\n    Particle --> Lighting\n    Lighting --> Goal"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T13:15:08+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 7天游戏开发知识图谱\n\n## 项目概览 【BV18uuw67Eto P1 00:07】\n\n```mermaid\nflowchart TD\n    Goal[\"目标：7天完成游戏\"]\n    Genre[\"3D 自动卷轴\"]\n    Player[\"玩家：飞船（圆柱体）\"]\n    Controls[\"方向键移动\"]\n    Collision[\"红色重置 / 绿色通关\"]\n    Effects[\"音效 + 粒子 + 灯光\"]\n    Levels[\"3 个关卡：洞穴、太空、迷惑关卡\"]\n    Result[\"满意度：高（相较第一天）\"]\n\n    Goal --> Genre\n    Genre --> Player\n    Player --> Controls\n    Controls --> Collision\n    Collision --> Effects\n    Effects --> Levels\n    Levels --> Result\n```\n\n## 开发日程流程 【BV18uuw67Eto P1 00:00‑02:28】\n\n```mermaid\nflowchart LR\n    D1[\"第1天：初始形状\"]\n    D2[\"第2天：玩家方块 + 方向键\"]\n    D3[\"第3天：玩家圆柱体、地图、物理、红绿触发\"]\n    D4[\"第4天：地图练习、火焰粒子、音效\"]\n    D5[\"第5天：尝试3D自由飞行（未成功）\"]\n    D6[\"第6天：玩家移动完成，代码全部写完\"]\n    D7[\"第7天：关卡制作（洞穴、太空、迷惑）\"]\n    Finish[\"完成游戏（虽不完美）\"]\n\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6 --> D7 --> Finish\n```\n\n## 关键玩法机制 【BV18uuw67Eto P1 00:32‑03:04】\n\n```mermaid\nflowchart TD\n    Shape[\"玩家形状：圆柱体\"]\n    Move[\"移动方式：方向键（空格键喷火）\"]\n    Physics[\"物理碰撞\"]\n    RedTrigger[\"红色物体 → 关卡重置\"]\n    GreenTrigger[\"绿色物体 → 关卡完成\"]\n    Sound[\"碰撞音效 + 背景音乐\"]\n    Particle[\"火焰粒子 + 爆炸粒子\"]\n    Lighting[\"灯光与材质\"]\n    Goal[\"到达终点线\"]\n\n    Shape --> Move\n    Move --> Physics\n    Physics --> RedTrigger\n    Physics --> GreenTrigger\n    RedTrigger --> Sound\n    GreenTrigger --> Sound\n    Sound --> Particle\n    Particle --> Lighting\n    Lighting --> Goal\n```",
+  "diagrams": [
+    {
+      "title": "项目概览 【BV18uuw67Eto P1 00:07】",
+      "code": "flowchart TD\n    Goal[\"目标：7天完成游戏\"]\n    Genre[\"3D 自动卷轴\"]\n    Player[\"玩家：飞船（圆柱体）\"]\n    Controls[\"方向键移动\"]\n    Collision[\"红色重置 / 绿色通关\"]\n    Effects[\"音效 + 粒子 + 灯光\"]\n    Levels[\"3 个关卡：洞穴、太空、迷惑关卡\"]\n    Result[\"满意度：高（相较第一天）\"]\n\n    Goal --> Genre\n    Genre --> Player\n    Player --> Controls\n    Controls --> Collision\n    Collision --> Effects\n    Effects --> Levels\n    Levels --> Result"
+    },
+    {
+      "title": "开发日程流程 【BV18uuw67Eto P1 00:00‑02:28】",
+      "code": "flowchart LR\n    D1[\"第1天：初始形状\"]\n    D2[\"第2天：玩家方块 + 方向键\"]\n    D3[\"第3天：玩家圆柱体、地图、物理、红绿触发\"]\n    D4[\"第4天：地图练习、火焰粒子、音效\"]\n    D5[\"第5天：尝试3D自由飞行（未成功）\"]\n    D6[\"第6天：玩家移动完成，代码全部写完\"]\n    D7[\"第7天：关卡制作（洞穴、太空、迷惑）\"]\n    Finish[\"完成游戏（虽不完美）\"]\n\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6 --> D7 --> Finish"
+    },
+    {
+      "title": "关键玩法机制 【BV18uuw67Eto P1 00:32‑03:04】",
+      "code": "flowchart TD\n    Shape[\"玩家形状：圆柱体\"]\n    Move[\"移动方式：方向键（空格键喷火）\"]\n    Physics[\"物理碰撞\"]\n    RedTrigger[\"红色物体 → 关卡重置\"]\n    GreenTrigger[\"绿色物体 → 关卡完成\"]\n    Sound[\"碰撞音效 + 背景音乐\"]\n    Particle[\"火焰粒子 + 爆炸粒子\"]\n    Lighting[\"灯光与材质\"]\n    Goal[\"到达终点线\"]\n\n    Shape --> Move\n    Move --> Physics\n    Physics --> RedTrigger\n    Physics --> GreenTrigger\n    RedTrigger --> Sound\n    GreenTrigger --> Sound\n    Sound --> Particle\n    Particle --> Lighting\n    Lighting --> Goal"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T13:15:08+00:00"
+}

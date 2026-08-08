@@ -1,0 +1,66 @@
+{
+  "bvid": "BV11n7k66EZK",
+  "title": "玩酒馆用deepseek的玩家，API最好用自定义来源，不要用内置的！（SillyTavern）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 439,
+  "text": "话不多说\n直入主题\n如果你玩酒馆\nsilly taven接入的是deep sk v4\n注意不要用它自带的那个deep seek提供箱\n用自定义的\n接下来告诉你为什么这里我们用自定义的API提供\n可以看到他是用第一人称直接内心独白的方式思考的\n当然这个还不是最理想的\n我们换一拨\n现在这个带圆括号的就是deep seek的角色扮演专用思维链吧\n这个模式下deep seek会最大限度带入角色视角去思考\n然后我们换成酒馆预先准备的deep seek提供\n走一波\n可以看到他输出的就是一毫的开席的思维链\n这个是deep seek的续写思维链\n好的说明酒馆遇记的deep seek有提示词\n让他执行续写任务\n可以看到输出内容更接近小说或者剧本\n谢谢但这个思维链不适合搞角色扮演\n因为他会抢你台词\n可以看到这类角色行为描述会超长一大串\n更多偏向剧情描写\n而不是情景描写\n而自定义版的就更偏向情节描写了\n比较简洁\n所以角色扮演酒馆要用自定义来人\n而不是直接用提供箱\n我想说的就这么多了\n散会",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV11n7k66EZK",
+  "published_at": "1780661881",
+  "fetched_at": "2026-08-07T12:51:56+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 酒馆使用 DeepSeek API 选择指南\n\n## 知识总览\n\n```mermaid\nflowchart TD\n    A[\"使用酒馆 (Tavern)\"]\n    B[\"DeepSeek v4\"]\n    C[\"内置 DeepSeek 提供箱\"]\n    D[\"自定义 API\"]\n    E[\"角色扮演思维链\"]\n    F[\"续写思维链\"]\n    G[\"情节描写 (简洁)\"]\n    H[\"剧情描写 (冗长)\"]\n    I[\"适合角色扮演\"]\n    J[\"不适合角色扮演\"]\n    K[\"建议使用自定义 API\"]\n    L[\"避免使用内置提供箱\"]\n    A --> B\n    B --> C\n    B --> D\n    C --> F\n    D --> E\n    E --> G\n    F --> H\n    G --> I\n    H --> J\n    I --> K\n    J --> L\n```\n\n## API 选择决策流\n\n```mermaid\nflowchart TD\n    S1[\"需要角色扮演?\"]\n    S2[\"是\"]\n    S3[\"否\"]\n    S4[\"使用自定义 API\"]\n    S5[\"使用内置 DeepSeek 提供箱\"]\n    S6[\"获得情节描写\"]\n    S7[\"获得剧情/续写描写\"]\n    S8[\"适合角色扮演\"]\n    S9[\"不适合角色扮演\"]\n    S1 --> S2\n    S1 --> S3\n    S2 --> S4\n    S3 --> S5\n    S4 --> S6\n    S5 --> S7\n    S6 --> S8\n    S7 --> S9\n```\n\n## 输出风格比较\n\n```mermaid\nflowchart TD\n    O1[\"自定义 API 输出\"]\n    O2[\"情节描写 (简洁)\"]\n    O3[\"适合角色扮演\"]\n    O4[\"内置提供箱输出\"]\n    O5[\"剧情描写 (冗长)\"]\n    O6[\"不适合角色扮演\"]\n    O7[\"抢台词\"]\n    O8[\"超长行为描述\"]\n    O1 --> O2\n    O2 --> O3\n    O4 --> O5\n    O5 --> O6\n    O6 --> O7\n    O6 --> O8\n```",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    A[\"使用酒馆 (Tavern)\"]\n    B[\"DeepSeek v4\"]\n    C[\"内置 DeepSeek 提供箱\"]\n    D[\"自定义 API\"]\n    E[\"角色扮演思维链\"]\n    F[\"续写思维链\"]\n    G[\"情节描写 (简洁)\"]\n    H[\"剧情描写 (冗长)\"]\n    I[\"适合角色扮演\"]\n    J[\"不适合角色扮演\"]\n    K[\"建议使用自定义 API\"]\n    L[\"避免使用内置提供箱\"]\n    A --> B\n    B --> C\n    B --> D\n    C --> F\n    D --> E\n    E --> G\n    F --> H\n    G --> I\n    H --> J\n    I --> K\n    J --> L"
+        },
+        {
+          "title": "API 选择决策流",
+          "code": "flowchart TD\n    S1[\"需要角色扮演?\"]\n    S2[\"是\"]\n    S3[\"否\"]\n    S4[\"使用自定义 API\"]\n    S5[\"使用内置 DeepSeek 提供箱\"]\n    S6[\"获得情节描写\"]\n    S7[\"获得剧情/续写描写\"]\n    S8[\"适合角色扮演\"]\n    S9[\"不适合角色扮演\"]\n    S1 --> S2\n    S1 --> S3\n    S2 --> S4\n    S3 --> S5\n    S4 --> S6\n    S5 --> S7\n    S6 --> S8\n    S7 --> S9"
+        },
+        {
+          "title": "输出风格比较",
+          "code": "flowchart TD\n    O1[\"自定义 API 输出\"]\n    O2[\"情节描写 (简洁)\"]\n    O3[\"适合角色扮演\"]\n    O4[\"内置提供箱输出\"]\n    O5[\"剧情描写 (冗长)\"]\n    O6[\"不适合角色扮演\"]\n    O7[\"抢台词\"]\n    O8[\"超长行为描述\"]\n    O1 --> O2\n    O2 --> O3\n    O4 --> O5\n    O5 --> O6\n    O6 --> O7\n    O6 --> O8"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T12:55:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 酒馆使用 DeepSeek API 选择指南\n\n## 知识总览\n\n```mermaid\nflowchart TD\n    A[\"使用酒馆 (Tavern)\"]\n    B[\"DeepSeek v4\"]\n    C[\"内置 DeepSeek 提供箱\"]\n    D[\"自定义 API\"]\n    E[\"角色扮演思维链\"]\n    F[\"续写思维链\"]\n    G[\"情节描写 (简洁)\"]\n    H[\"剧情描写 (冗长)\"]\n    I[\"适合角色扮演\"]\n    J[\"不适合角色扮演\"]\n    K[\"建议使用自定义 API\"]\n    L[\"避免使用内置提供箱\"]\n    A --> B\n    B --> C\n    B --> D\n    C --> F\n    D --> E\n    E --> G\n    F --> H\n    G --> I\n    H --> J\n    I --> K\n    J --> L\n```\n\n## API 选择决策流\n\n```mermaid\nflowchart TD\n    S1[\"需要角色扮演?\"]\n    S2[\"是\"]\n    S3[\"否\"]\n    S4[\"使用自定义 API\"]\n    S5[\"使用内置 DeepSeek 提供箱\"]\n    S6[\"获得情节描写\"]\n    S7[\"获得剧情/续写描写\"]\n    S8[\"适合角色扮演\"]\n    S9[\"不适合角色扮演\"]\n    S1 --> S2\n    S1 --> S3\n    S2 --> S4\n    S3 --> S5\n    S4 --> S6\n    S5 --> S7\n    S6 --> S8\n    S7 --> S9\n```\n\n## 输出风格比较\n\n```mermaid\nflowchart TD\n    O1[\"自定义 API 输出\"]\n    O2[\"情节描写 (简洁)\"]\n    O3[\"适合角色扮演\"]\n    O4[\"内置提供箱输出\"]\n    O5[\"剧情描写 (冗长)\"]\n    O6[\"不适合角色扮演\"]\n    O7[\"抢台词\"]\n    O8[\"超长行为描述\"]\n    O1 --> O2\n    O2 --> O3\n    O4 --> O5\n    O5 --> O6\n    O6 --> O7\n    O6 --> O8\n```",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    A[\"使用酒馆 (Tavern)\"]\n    B[\"DeepSeek v4\"]\n    C[\"内置 DeepSeek 提供箱\"]\n    D[\"自定义 API\"]\n    E[\"角色扮演思维链\"]\n    F[\"续写思维链\"]\n    G[\"情节描写 (简洁)\"]\n    H[\"剧情描写 (冗长)\"]\n    I[\"适合角色扮演\"]\n    J[\"不适合角色扮演\"]\n    K[\"建议使用自定义 API\"]\n    L[\"避免使用内置提供箱\"]\n    A --> B\n    B --> C\n    B --> D\n    C --> F\n    D --> E\n    E --> G\n    F --> H\n    G --> I\n    H --> J\n    I --> K\n    J --> L"
+    },
+    {
+      "title": "API 选择决策流",
+      "code": "flowchart TD\n    S1[\"需要角色扮演?\"]\n    S2[\"是\"]\n    S3[\"否\"]\n    S4[\"使用自定义 API\"]\n    S5[\"使用内置 DeepSeek 提供箱\"]\n    S6[\"获得情节描写\"]\n    S7[\"获得剧情/续写描写\"]\n    S8[\"适合角色扮演\"]\n    S9[\"不适合角色扮演\"]\n    S1 --> S2\n    S1 --> S3\n    S2 --> S4\n    S3 --> S5\n    S4 --> S6\n    S5 --> S7\n    S6 --> S8\n    S7 --> S9"
+    },
+    {
+      "title": "输出风格比较",
+      "code": "flowchart TD\n    O1[\"自定义 API 输出\"]\n    O2[\"情节描写 (简洁)\"]\n    O3[\"适合角色扮演\"]\n    O4[\"内置提供箱输出\"]\n    O5[\"剧情描写 (冗长)\"]\n    O6[\"不适合角色扮演\"]\n    O7[\"抢台词\"]\n    O8[\"超长行为描述\"]\n    O1 --> O2\n    O2 --> O3\n    O4 --> O5\n    O5 --> O6\n    O6 --> O7\n    O6 --> O8"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T12:55:47+00:00"
+}

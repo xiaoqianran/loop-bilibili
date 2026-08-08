@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1C49uBPEyj",
+  "title": "10分钟AI游戏开发课|AI生成全套像素风游戏场景",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1016,
+  "text": "本期视频我将教大家用AI\n生成全套木屋内的美术资产\n并且分层提取物件\n最后调整为适合导入unity项目的格式\n我们开始吧\n首先进入到HOLOPEX网站\n我们会用到它最新出的自由画布功能\n这次的holy px重磅更新\n添加了非常多适配游戏开发场景的模板\n上传一个小木屋的截图\n输入提示词\n点击生成\n之前没有注册过的朋友也可以使用我的邀请码\n567253注册一下\n这样双方都有免费的算力\n效果很不错\n但是我想把黑烟和青苔去掉\n点击快速编辑收入提示词\n这样整个房间就干净整洁了很多\n接下来我们再拿场景背景\n让AI把整个场景清空\n很好清空了\n接下来我们把之前这张图片作为参考图\n使用模板\n这里的场景元素拆分\n它会自动帮我们把场景元素拆分出来\n如果觉得这批不够的话\n可以使用AI再生成几批出来\n输入这种提示词\n点击生成\n生成了一些可以使用的素材\n把这些元素以及AI生成的空场景都下载下来\n回到holo pigs的敌键抠图功能\n给元素去除一下\n背景素材都准备好了\n还有之前的空场集也要记得去除背景\n进入GMP的官网\n点击下载\n这个是完全免费的软件\n也可以选择使用PS\n然后打开GIMP\n把生成好的透明底素材拖动进来\n视图这里显示网格\n点击图像配置网格根据像素去调整\n我们选择256\n然后我们在这里把图片的不透明度\n调整为50%左右\n使用矩形或者套索工具\n选中物件\nCTRL加X剪出\nCTRL加V粘贴到新的图层\n按M进入移动模式\n拨动到合适的位置\n然后再回到原来的图层\n进行下一个物件的选择和拖动\n根据网格来规划物件的位置\n处理好之后\n把原始图片隐藏\n选择文件导出为\n再把导出的文件拖动到unity\n这张图的像素密度是原始素材的四倍\n这里设置2566\n这里设置multiple\n进入spread editor slides\n这里grade by cell size\n我feel这样子我们就可以把素材做切分\n当然你也可以选择在图像处理工具中\n压缩到和原素材相同的大小\n处理好后\n我们新开一个画板\n把这个拖动进来\n装进元素就准备好了\n之前的工场景也拖动进来\n进行相同的处理\n这美术素材就都准备好了\n可以按照之前视频里面教的方法进行配置了\nPOOPPX的自由画布功能\n真的使用起来非常方便\n涵盖了游戏角色设计\n游戏场景设计\n界面UI等各个游戏研发的场景\n其中我试了几个比较常用的模板\n效果也非常好\n大家可以多试试\n如果大家感兴趣\n我可以再出一期相关视频",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1C49uBPEyj",
+  "published_at": "1775210686",
+  "fetched_at": "2026-08-08T10:21:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T10:21:29+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T10:21:29+00:00"
+}

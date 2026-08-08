@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1jzuw6oEXd",
+  "title": "Deepseek v4+codex配置教程+CAD重绘实战",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 564,
+  "text": "本期我们讲解deep sk v4\nflash正式版加codex的详细配置步骤\n并且使用它读取一个复杂的DWG文件\n实现cad图纸重绘\n从完成结果来说\n实现效果堪比gt5.6\n下面我们先看一下重绘过程\n后面再讲解详细的配置教程\n绘制结束了\n让我们看一下具体操作\n首先需要把deep sk v4flash配置到codex中\n目前只有deep sick v4flash正式版可以接入codex\nwindows用户打开power shell\n输入deep sick官方提供的一键配置命令\n运行之后粘贴刚才创建的deep sick API ke\n并在模型列表中输入数字\n一看到模型显示为自定义\n就说明配置完成了\n接下来进行CAAD重绘\n首先把需要重绘的DWG文件放到codex\n可以访问的项目文件夹中\n然后调用auto cad重绘skill\n输入原始文件路径\n输出文件路径和绘制要求\ncodex收到任务后\n会先分析原始图纸的结构\n再自动控制auto cad\n按照图层和实体类型逐步完成重绘\n最终输出的是一份可以在auto cad中继续修改尺寸\n的完整工程文件\n本期教程结束啦\n感谢各位小伙伴看到这里\n如果需要deep seek加codex的详细配置教程\nauto caa d重绘skill\n以及本期使用的完整提示词\n可以告诉我\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1jzuw6oEXd",
+  "published_at": "1785826368",
+  "fetched_at": "2026-08-07T05:51:23+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek v4 Flash 与 Codex CAD 重绘流程图谱\n\n## 总体概览\n```mermaid\nflowchart TD\n    DS[\"DeepSeek v4 Flash\"] --> COD[\"Codex\"]\n    DWG[\"DWG 文件\"] --> COD\n    COD --> AC[\"AutoCAD\"]\n    AC --> OUT[\"完整 AutoCAD 工程文件\"]\n```\n\n## 配置步骤\n```mermaid\nflowchart TD\n    USER[\"Windows 用户\"] --> PS[\"PowerShell\"]\n    PS --> CMD[\"一键配置命令\"]\n    CMD --> API[\"粘贴 DeepSeek API Key\"]\n    API --> SEL[\"在模型列表中输入数字\"]\n    SEL --> CHECK[\"模型显示为自定义\"]\n    CHECK --> DONE[\"配置完成\"]\n```\n\n## 重绘流程\n```mermaid\nflowchart TD\n    PLACE[\"将 DWG 放入 Codex 可访问的项目文件夹\"] --> CALL[\"调用 AutoCAD 重绘 skill\"]\n    CALL --> SRC[\"输入原始文件路径\"]\n    CALL --> OUTREQ[\"输入输出路径和绘制要求\"]\n    SRC & OUTREQ --> ANALYZE[\"Codex 分析原始图纸结构\"]\n    ANALYZE --> CONTROL[\"Codex 自动控制 AutoCAD\"]\n    CONTROL --> REDRAW[\"AutoCAD 按图层和实体类型逐步重绘\"]\n    REDRAW --> RESULT[\"输出可在 AutoCAD 中继续修改的完整工程文件\"]\n```",
+      "diagrams": [
+        {
+          "title": "总体概览",
+          "code": "flowchart TD\n    DS[\"DeepSeek v4 Flash\"] --> COD[\"Codex\"]\n    DWG[\"DWG 文件\"] --> COD\n    COD --> AC[\"AutoCAD\"]\n    AC --> OUT[\"完整 AutoCAD 工程文件\"]"
+        },
+        {
+          "title": "配置步骤",
+          "code": "flowchart TD\n    USER[\"Windows 用户\"] --> PS[\"PowerShell\"]\n    PS --> CMD[\"一键配置命令\"]\n    CMD --> API[\"粘贴 DeepSeek API Key\"]\n    API --> SEL[\"在模型列表中输入数字\"]\n    SEL --> CHECK[\"模型显示为自定义\"]\n    CHECK --> DONE[\"配置完成\"]"
+        },
+        {
+          "title": "重绘流程",
+          "code": "flowchart TD\n    PLACE[\"将 DWG 放入 Codex 可访问的项目文件夹\"] --> CALL[\"调用 AutoCAD 重绘 skill\"]\n    CALL --> SRC[\"输入原始文件路径\"]\n    CALL --> OUTREQ[\"输入输出路径和绘制要求\"]\n    SRC & OUTREQ --> ANALYZE[\"Codex 分析原始图纸结构\"]\n    ANALYZE --> CONTROL[\"Codex 自动控制 AutoCAD\"]\n    CONTROL --> REDRAW[\"AutoCAD 按图层和实体类型逐步重绘\"]\n    REDRAW --> RESULT[\"输出可在 AutoCAD 中继续修改的完整工程文件\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T05:51:31+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek v4 Flash 与 Codex CAD 重绘流程图谱\n\n## 总体概览\n```mermaid\nflowchart TD\n    DS[\"DeepSeek v4 Flash\"] --> COD[\"Codex\"]\n    DWG[\"DWG 文件\"] --> COD\n    COD --> AC[\"AutoCAD\"]\n    AC --> OUT[\"完整 AutoCAD 工程文件\"]\n```\n\n## 配置步骤\n```mermaid\nflowchart TD\n    USER[\"Windows 用户\"] --> PS[\"PowerShell\"]\n    PS --> CMD[\"一键配置命令\"]\n    CMD --> API[\"粘贴 DeepSeek API Key\"]\n    API --> SEL[\"在模型列表中输入数字\"]\n    SEL --> CHECK[\"模型显示为自定义\"]\n    CHECK --> DONE[\"配置完成\"]\n```\n\n## 重绘流程\n```mermaid\nflowchart TD\n    PLACE[\"将 DWG 放入 Codex 可访问的项目文件夹\"] --> CALL[\"调用 AutoCAD 重绘 skill\"]\n    CALL --> SRC[\"输入原始文件路径\"]\n    CALL --> OUTREQ[\"输入输出路径和绘制要求\"]\n    SRC & OUTREQ --> ANALYZE[\"Codex 分析原始图纸结构\"]\n    ANALYZE --> CONTROL[\"Codex 自动控制 AutoCAD\"]\n    CONTROL --> REDRAW[\"AutoCAD 按图层和实体类型逐步重绘\"]\n    REDRAW --> RESULT[\"输出可在 AutoCAD 中继续修改的完整工程文件\"]\n```",
+  "diagrams": [
+    {
+      "title": "总体概览",
+      "code": "flowchart TD\n    DS[\"DeepSeek v4 Flash\"] --> COD[\"Codex\"]\n    DWG[\"DWG 文件\"] --> COD\n    COD --> AC[\"AutoCAD\"]\n    AC --> OUT[\"完整 AutoCAD 工程文件\"]"
+    },
+    {
+      "title": "配置步骤",
+      "code": "flowchart TD\n    USER[\"Windows 用户\"] --> PS[\"PowerShell\"]\n    PS --> CMD[\"一键配置命令\"]\n    CMD --> API[\"粘贴 DeepSeek API Key\"]\n    API --> SEL[\"在模型列表中输入数字\"]\n    SEL --> CHECK[\"模型显示为自定义\"]\n    CHECK --> DONE[\"配置完成\"]"
+    },
+    {
+      "title": "重绘流程",
+      "code": "flowchart TD\n    PLACE[\"将 DWG 放入 Codex 可访问的项目文件夹\"] --> CALL[\"调用 AutoCAD 重绘 skill\"]\n    CALL --> SRC[\"输入原始文件路径\"]\n    CALL --> OUTREQ[\"输入输出路径和绘制要求\"]\n    SRC & OUTREQ --> ANALYZE[\"Codex 分析原始图纸结构\"]\n    ANALYZE --> CONTROL[\"Codex 自动控制 AutoCAD\"]\n    CONTROL --> REDRAW[\"AutoCAD 按图层和实体类型逐步重绘\"]\n    REDRAW --> RESULT[\"输出可在 AutoCAD 中继续修改的完整工程文件\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:51:31+00:00"
+}

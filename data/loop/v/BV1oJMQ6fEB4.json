@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1oJMQ6fEB4",
+  "title": "在KayingCodex中用免费的deepseek-v4-flash-0731制作游戏并发布到taptap.",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 40,
+  "text": "用免费deep seek token制作游戏\n登录client账号\n选中免费模型",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1oJMQ6fEB4",
+  "published_at": "1785729254",
+  "fetched_at": "2026-08-07T07:21:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# KayingCodex 使用免费 deepseek‑v4‑flash‑0731 制作游戏流程\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"获取免费 deepseek token\"] --> B[\"登录 client 账号\"]\n    B --> C[\"选中免费模型\"]\n    C --> D[\"制作游戏\"]\n```\n\n## 步骤细化\n```mermaid\nflowchart LR\n    T[\"用免费 deepseek token 制作游戏\"] --> L[\"登录 client 账号\"]\n    L --> M[\"选中免费模型\"]\n```\n\n- 用免费 deepseek token 制作游戏 [BV1oJMQ6fEB4 P1 00:00]  \n- 登录 client 账号 [BV1oJMQ6fEB4 P1 00:03]  \n- 选中免费模型 [BV1oJMQ6fEB4 P1 00:06]",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"获取免费 deepseek token\"] --> B[\"登录 client 账号\"]\n    B --> C[\"选中免费模型\"]\n    C --> D[\"制作游戏\"]"
+        },
+        {
+          "title": "步骤细化",
+          "code": "flowchart LR\n    T[\"用免费 deepseek token 制作游戏\"] --> L[\"登录 client 账号\"]\n    L --> M[\"选中免费模型\"]"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-07T07:22:56+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# KayingCodex 使用免费 deepseek‑v4‑flash‑0731 制作游戏流程\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"获取免费 deepseek token\"] --> B[\"登录 client 账号\"]\n    B --> C[\"选中免费模型\"]\n    C --> D[\"制作游戏\"]\n```\n\n## 步骤细化\n```mermaid\nflowchart LR\n    T[\"用免费 deepseek token 制作游戏\"] --> L[\"登录 client 账号\"]\n    L --> M[\"选中免费模型\"]\n```\n\n- 用免费 deepseek token 制作游戏 [BV1oJMQ6fEB4 P1 00:00]  \n- 登录 client 账号 [BV1oJMQ6fEB4 P1 00:03]  \n- 选中免费模型 [BV1oJMQ6fEB4 P1 00:06]",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"获取免费 deepseek token\"] --> B[\"登录 client 账号\"]\n    B --> C[\"选中免费模型\"]\n    C --> D[\"制作游戏\"]"
+    },
+    {
+      "title": "步骤细化",
+      "code": "flowchart LR\n    T[\"用免费 deepseek token 制作游戏\"] --> L[\"登录 client 账号\"]\n    L --> M[\"选中免费模型\"]"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T07:22:56+00:00"
+}

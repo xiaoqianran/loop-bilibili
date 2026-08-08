@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1ePKK6xEn4",
+  "title": "游戏开发不要过度学习",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 935,
+  "text": "这期视频呢也是给大家提个醒\n可能你也从其他地方听到过类似的建议\n也说不定\n那就是不要过度学习游戏这个东西\n你要深究的话\n它所涉及的广度和深度都是极其恐怖的\n第九艺术的这个概念可不是随便说说的\n如果有人拍着胸脯说\n他精通游戏开发的所有内容\n那你可以直接认定为他是在吹牛逼\n吹牛逼呢吧\nOK说回正题\n你是来做游戏的\n那么最核心的内容是根据你的想法\n用工具去落实你的功能和玩法\n所以你是有了特定的功能需求了\n然后针对的去搜索相应的内容\n去学习\n同时也不需要太过深入的学习\n能足够支撑你完成当前的功能就行了\n当然如果你对它的底层很感兴趣的话除外\n毕竟每个人做游戏的目的是不一样的\n有的人就是享受这个学习新知的过程\n做不做成游戏并不是人家在意的事情\n也说不定\n当然这个也不是让你上来什么都不去了解\n就直接蛮干\n你得对现有的内容具有一定的认知\n就比如说你现在所用的游戏引擎\n它具备了哪些功能模块\n利用这些功能模块\n你能制作出什么东西\n有这样一个大致的认知就可以了\n这个通常是可以翻看官方的文档\n或者看一些视频\n对于功能模块的介绍就行了\n比如有一些比较系统化的教程\n你可以点开人家专门介绍\n对应系统的介绍视频啊\n了解一下这个系统可以做些什么事情\n就可以了啊\n如果你会写代码的话\n那么接下来就是动手干\nJust do it\n不用管实现的方法优不优雅\n效率高不高\n你先做出来就行了啊\n如果你不会写代码的话\n那那可能得补一点基础的编程知识\n这块的话也是可以找一些基础的教程过一下\n简单的学习一个demo啊\n不用太复杂的那种\n当然你要是能找到跟你项目契合的教程\n作为长期的参考对象的话\n那自然是最好的\n然后就也是\n生命生命补充一下\n千万不要跟着教程\n他做一步\n你做一步一比一的完全复刻\n那没有任何意义\n要多问自己几个\n为什么它是基于什么做的\n这个东西为什么这么做\n这么做的好处是什么\n我有没有接触过类似的东西\n它们之间的区别又是什么\n以及我自己要去做这个东西\n我会怎么做\n带上这些思考去实现一遍\n并验证自己的思考\n这样才能让这些东西真正的属于你自己\n最后再说一句\n万事开头难\n所以你先把头给开了\n新建项目直接开整\n在做中学\n在学中做\n希望我说的这些对你有帮助\n这里是game03\n我们有缘再会",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ePKK6xEn4",
+  "published_at": "1784433600",
+  "fetched_at": "2026-08-07T02:20:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 游戏开发不过度学习的知识图谱\n\n## 图1：知识总览 [BV1ePKK6xEn4 P1 00:14]\n```mermaid\nflowchart TD\n    OverlearningRisk[\"过度学习风险\"] --> BreadthDepth[\"广度 & 深度 极大\"]\n    BreadthDepth --> NinthArt[\"第九艺术概念\"]\n    ClaimMastery[\"声称精通全部\"] --> Bluff[\"可能在吹牛\"]\n    CoreGoal[\"实现功能与玩法\"] --> Requirement[\"明确功能需求\"]\n    Requirement --> Search[\"搜索对应内容\"]\n    Search --> LearnEnough[\"学习足够支撑实现\"]\n    LearnEnough --> OptionalDeepDive[\"对底层感兴趣可深入\"]\n    PersonalGoal[\"个人目的不同\"] --> EnjoyLearning[\"享受学习过程\"]\n    PersonalGoal --> OutcomeIrrelevant[\"是否完成游戏不一定重要\"]\n```\n\n## 图2：实现流程 [BV1ePKK6xEn4 P1 01:49]\n```mermaid\nflowchart TD\n    CanCode[\"会写代码\"] --> DoIt[\"动手实现\"]\n    DoIt --> Prototype[\"先做出原型\"]\n    Prototype --> NoElegance[\"不要求优雅\"]\n    Prototype --> NoEfficiency[\"不要求高效\"]\n    CannotCode[\"不会写代码\"] --> BasicProgramming[\"补基础编程\"]\n    BasicProgramming --> SimpleDemo[\"学习简单Demo\"]\n    SimpleDemo --> DoIt\n    FindTutorial[\"找项目契合教程\"] --> LongTermReference[\"长期参考对象\"]\n    FindTutorial --> AvoidCopy[\"避免完全复刻\"]\n```\n\n## 图3：教程思考清单 [BV1ePKK6xEn4 P1 02:36]\n```mermaid\nflowchart TD\n    TutorialStep[\"教程一步\"] --> QuestionBase[\"自问\"]\n    QuestionBase --> WhyBase[\"为什么基于此\"]\n    QuestionBase --> WhyDesign[\"为什么这么做\"]\n    QuestionBase --> Benefit[\"这么做的好处\"]\n    QuestionBase --> PriorExperience[\"我是否接触过类似\"]\n    QuestionBase --> Difference[\"它们的区别\"]\n    QuestionBase --> MyApproach[\"我会怎么做\"]\n    MyApproach --> Implement[\"带思考实现\"]\n    Implement --> Validate[\"验证思考\"]\n    Validate --> Ownership[\"属于自己\"]\n```\n\n## 图4：学习心态与起步 [BV1ePKK6xEn4 P1 03:03]\n```mermaid\nflowchart TD\n    StartDifficulty[\"万事开头难\"] --> OpenHead[\"先把头开了\"]\n    OpenHead --> NewProject[\"新建项目\"]\n    NewProject --> DoAndLearn[\"在做中学\"]\n    DoAndLearn --> LearnAndDo[\"在学中做\"]\n    LearnAndDo --> HopeHelp[\"希望有帮助\"]\n    HopeHelp --> End[\"再会\"]\n```",
+      "diagrams": [
+        {
+          "title": "图1：知识总览",
+          "code": "flowchart TD\n    OverlearningRisk[\"过度学习风险\"] --> BreadthDepth[\"广度 & 深度 极大\"]\n    BreadthDepth --> NinthArt[\"第九艺术概念\"]\n    ClaimMastery[\"声称精通全部\"] --> Bluff[\"可能在吹牛\"]\n    CoreGoal[\"实现功能与玩法\"] --> Requirement[\"明确功能需求\"]\n    Requirement --> Search[\"搜索对应内容\"]\n    Search --> LearnEnough[\"学习足够支撑实现\"]\n    LearnEnough --> OptionalDeepDive[\"对底层感兴趣可深入\"]\n    PersonalGoal[\"个人目的不同\"] --> EnjoyLearning[\"享受学习过程\"]\n    PersonalGoal --> OutcomeIrrelevant[\"是否完成游戏不一定重要\"]"
+        },
+        {
+          "title": "图2：实现流程",
+          "code": "flowchart TD\n    CanCode[\"会写代码\"] --> DoIt[\"动手实现\"]\n    DoIt --> Prototype[\"先做出原型\"]\n    Prototype --> NoElegance[\"不要求优雅\"]\n    Prototype --> NoEfficiency[\"不要求高效\"]\n    CannotCode[\"不会写代码\"] --> BasicProgramming[\"补基础编程\"]\n    BasicProgramming --> SimpleDemo[\"学习简单Demo\"]\n    SimpleDemo --> DoIt\n    FindTutorial[\"找项目契合教程\"] --> LongTermReference[\"长期参考对象\"]\n    FindTutorial --> AvoidCopy[\"避免完全复刻\"]"
+        },
+        {
+          "title": "图3：教程思考清单",
+          "code": "flowchart TD\n    TutorialStep[\"教程一步\"] --> QuestionBase[\"自问\"]\n    QuestionBase --> WhyBase[\"为什么基于此\"]\n    QuestionBase --> WhyDesign[\"为什么这么做\"]\n    QuestionBase --> Benefit[\"这么做的好处\"]\n    QuestionBase --> PriorExperience[\"我是否接触过类似\"]\n    QuestionBase --> Difference[\"它们的区别\"]\n    QuestionBase --> MyApproach[\"我会怎么做\"]\n    MyApproach --> Implement[\"带思考实现\"]\n    Implement --> Validate[\"验证思考\"]\n    Validate --> Ownership[\"属于自己\"]"
+        },
+        {
+          "title": "图4：学习心态与起步",
+          "code": "flowchart TD\n    StartDifficulty[\"万事开头难\"] --> OpenHead[\"先把头开了\"]\n    OpenHead --> NewProject[\"新建项目\"]\n    NewProject --> DoAndLearn[\"在做中学\"]\n    DoAndLearn --> LearnAndDo[\"在学中做\"]\n    LearnAndDo --> HopeHelp[\"希望有帮助\"]\n    HopeHelp --> End[\"再会\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T02:20:52+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 游戏开发不过度学习的知识图谱\n\n## 图1：知识总览 [BV1ePKK6xEn4 P1 00:14]\n```mermaid\nflowchart TD\n    OverlearningRisk[\"过度学习风险\"] --> BreadthDepth[\"广度 & 深度 极大\"]\n    BreadthDepth --> NinthArt[\"第九艺术概念\"]\n    ClaimMastery[\"声称精通全部\"] --> Bluff[\"可能在吹牛\"]\n    CoreGoal[\"实现功能与玩法\"] --> Requirement[\"明确功能需求\"]\n    Requirement --> Search[\"搜索对应内容\"]\n    Search --> LearnEnough[\"学习足够支撑实现\"]\n    LearnEnough --> OptionalDeepDive[\"对底层感兴趣可深入\"]\n    PersonalGoal[\"个人目的不同\"] --> EnjoyLearning[\"享受学习过程\"]\n    PersonalGoal --> OutcomeIrrelevant[\"是否完成游戏不一定重要\"]\n```\n\n## 图2：实现流程 [BV1ePKK6xEn4 P1 01:49]\n```mermaid\nflowchart TD\n    CanCode[\"会写代码\"] --> DoIt[\"动手实现\"]\n    DoIt --> Prototype[\"先做出原型\"]\n    Prototype --> NoElegance[\"不要求优雅\"]\n    Prototype --> NoEfficiency[\"不要求高效\"]\n    CannotCode[\"不会写代码\"] --> BasicProgramming[\"补基础编程\"]\n    BasicProgramming --> SimpleDemo[\"学习简单Demo\"]\n    SimpleDemo --> DoIt\n    FindTutorial[\"找项目契合教程\"] --> LongTermReference[\"长期参考对象\"]\n    FindTutorial --> AvoidCopy[\"避免完全复刻\"]\n```\n\n## 图3：教程思考清单 [BV1ePKK6xEn4 P1 02:36]\n```mermaid\nflowchart TD\n    TutorialStep[\"教程一步\"] --> QuestionBase[\"自问\"]\n    QuestionBase --> WhyBase[\"为什么基于此\"]\n    QuestionBase --> WhyDesign[\"为什么这么做\"]\n    QuestionBase --> Benefit[\"这么做的好处\"]\n    QuestionBase --> PriorExperience[\"我是否接触过类似\"]\n    QuestionBase --> Difference[\"它们的区别\"]\n    QuestionBase --> MyApproach[\"我会怎么做\"]\n    MyApproach --> Implement[\"带思考实现\"]\n    Implement --> Validate[\"验证思考\"]\n    Validate --> Ownership[\"属于自己\"]\n```\n\n## 图4：学习心态与起步 [BV1ePKK6xEn4 P1 03:03]\n```mermaid\nflowchart TD\n    StartDifficulty[\"万事开头难\"] --> OpenHead[\"先把头开了\"]\n    OpenHead --> NewProject[\"新建项目\"]\n    NewProject --> DoAndLearn[\"在做中学\"]\n    DoAndLearn --> LearnAndDo[\"在学中做\"]\n    LearnAndDo --> HopeHelp[\"希望有帮助\"]\n    HopeHelp --> End[\"再会\"]\n```",
+  "diagrams": [
+    {
+      "title": "图1：知识总览",
+      "code": "flowchart TD\n    OverlearningRisk[\"过度学习风险\"] --> BreadthDepth[\"广度 & 深度 极大\"]\n    BreadthDepth --> NinthArt[\"第九艺术概念\"]\n    ClaimMastery[\"声称精通全部\"] --> Bluff[\"可能在吹牛\"]\n    CoreGoal[\"实现功能与玩法\"] --> Requirement[\"明确功能需求\"]\n    Requirement --> Search[\"搜索对应内容\"]\n    Search --> LearnEnough[\"学习足够支撑实现\"]\n    LearnEnough --> OptionalDeepDive[\"对底层感兴趣可深入\"]\n    PersonalGoal[\"个人目的不同\"] --> EnjoyLearning[\"享受学习过程\"]\n    PersonalGoal --> OutcomeIrrelevant[\"是否完成游戏不一定重要\"]"
+    },
+    {
+      "title": "图2：实现流程",
+      "code": "flowchart TD\n    CanCode[\"会写代码\"] --> DoIt[\"动手实现\"]\n    DoIt --> Prototype[\"先做出原型\"]\n    Prototype --> NoElegance[\"不要求优雅\"]\n    Prototype --> NoEfficiency[\"不要求高效\"]\n    CannotCode[\"不会写代码\"] --> BasicProgramming[\"补基础编程\"]\n    BasicProgramming --> SimpleDemo[\"学习简单Demo\"]\n    SimpleDemo --> DoIt\n    FindTutorial[\"找项目契合教程\"] --> LongTermReference[\"长期参考对象\"]\n    FindTutorial --> AvoidCopy[\"避免完全复刻\"]"
+    },
+    {
+      "title": "图3：教程思考清单",
+      "code": "flowchart TD\n    TutorialStep[\"教程一步\"] --> QuestionBase[\"自问\"]\n    QuestionBase --> WhyBase[\"为什么基于此\"]\n    QuestionBase --> WhyDesign[\"为什么这么做\"]\n    QuestionBase --> Benefit[\"这么做的好处\"]\n    QuestionBase --> PriorExperience[\"我是否接触过类似\"]\n    QuestionBase --> Difference[\"它们的区别\"]\n    QuestionBase --> MyApproach[\"我会怎么做\"]\n    MyApproach --> Implement[\"带思考实现\"]\n    Implement --> Validate[\"验证思考\"]\n    Validate --> Ownership[\"属于自己\"]"
+    },
+    {
+      "title": "图4：学习心态与起步",
+      "code": "flowchart TD\n    StartDifficulty[\"万事开头难\"] --> OpenHead[\"先把头开了\"]\n    OpenHead --> NewProject[\"新建项目\"]\n    NewProject --> DoAndLearn[\"在做中学\"]\n    DoAndLearn --> LearnAndDo[\"在学中做\"]\n    LearnAndDo --> HopeHelp[\"希望有帮助\"]\n    HopeHelp --> End[\"再会\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:20:52+00:00"
+}

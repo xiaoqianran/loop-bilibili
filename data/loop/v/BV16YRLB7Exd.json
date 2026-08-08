@@ -1,0 +1,74 @@
+{
+  "bvid": "BV16YRLB7Exd",
+  "title": "5分钟安装ClaudeCode并接入DeepSeek",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1672,
+  "text": "5分钟安装cloud code\n并接入国产大模型\nDeep sk v4\ncloud code是一款命令行工具\n它内置了很多skills插件\n通过不同的组合能完成许多AI做不到的事\n来提升工作和生活的效率\n比如说构建一套个人机器库\n用于自动化整理学习笔记\n方便增删改查\n还有根据预设的内容\n或将按时搜集行业相关咨询整理成文稿\n并自动发布到各大社交媒体平台\n第一步安装cloud code运行环境\n打开浏览器搜索node js\n点击官网\n点击获取node js\n在页面中下滑\n选择左侧的windows安装程序\n获取安装包\n双击安装包之后\n一路点击下一步安装\n下面我们验证是否安装成功\n按win键搜索CNI\n右键选择管理员身份运行\n输入这段命令\n点击回车\n然后再输入这段命令回车\n当显示以下内容\n就说明安装成功\n接下来我们设计国内镜像园\n方便国内网络安装\n输入以下命令\n点击回车\n我们继续安装git浏览器\n搜索git打开官网往下滑到在windows下安装\n点击链接进入\n选择自己电脑的安装包\n我这里选择windows x64\n点击下载\n下载之后双击安装\n还是一路点击下一步\n安装之后我们重新打开CMD\n输入这条命令\n嫌弃版本号就说明安装成功了之后\n还需要安装一个软件cc sch\n通过这个软件\n我们可以把自己的模型接入到cloud code\n打开GITHUB搜索cc杠switch\n选择这个仓库下滑\n点击右侧的release\n在列表中选择对应版本的安装包\n我选择的是windows m s i\n点击下载\n下载完成之后双击安装\n一路下一步\n第二步安装cloud code\n在命令行中输入这个命令\n点击回车\n显示以下内容\n就说明安装成功了之后\n我们关闭掉cm b重新打开\n输入以下命令\n验证是否生效\n输出版本号就说明成功了\n接下来输入cloud启动cloud code控制台\n输出以下内容\n我们还需要修改一下配置文件\n跳过登录步骤\n打开资源管理器\n在地址栏中输入你的用户名\n然后回车\n可能大家的页面和我不一样\n看不到一些隐藏文件\n在工具栏中选择查看\n选择显示\n勾选文件扩展名和隐藏文件之后\n加到cloud jason文件\n右键选择使用记事本打开\n在文件增加以下内容\n注意要使用英文标点符号\n校方自带后也要加一个英文逗号间隔\n这很重要\n有些人不生效\n就是因为没有加标点符号\n或者使用了中文标点之后保存\n然后关闭\n再回到CNB中\n再次输入cloud\n启动会弹出一个选项\n让你选择是否相信该文件夹\n选择相信即可\n这样我们就跳过了登录步骤\n第三步接入deep seek\n我们打开deep seek官网\n选择API开放平台注册登录\n需注意的是\n要保证有一定余额\n选择右侧的API keys画到最底下\n选择创建ABIT会让你输入蜜月名称\n随便取个名字就行\n之后点击创建\n弹出新的页面之后\n点击复制密页\n一定要复制\n蜜月关闭之后就无法再次获取\n这个蜜月需要重新创建\n还有你的蜜月\n千万不要分享给他人使用\n不然花的是你的钱\n之后我们返回cc sch\n点击右上角加号\n在模型预设相继栏选择deep sick\n下滑填入刚才获取的API key\n其后将下方的模型全换成这个\nem表示上下文100万不加\n这个cloud code会默认是128K\n配置完毕之后\n点击右下角的添加按钮\n重新打开CMD\n输入cloud启动\n在对话框中输入这个命令\n可以查看到我们刚才配置的deep seek\n也可以直接在对话框中问他当前是什么模型\n第四步\n使用cloud code做项目\n桌面新建一个文件夹\n随便取什么名字\n打开文件夹\n在上方地址栏中输入CMD\n打开提示符\n在CMD中输入cloud启动\n选择信任当前文件夹\n在对话框中让它使用HTML加JS加cs\n做一个to do软件回车发送\n它在运行途中会向你申请各种工具权限\n点击yes即可\n等待一会他完成之后会通知你\n叫他帮你打开就可以查看了\n做出来的页面只能休息\n能看\n如果后续添加相关的skills\n效果会更好\n关注我\n学习更多AI使用技巧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16YRLB7Exd",
+  "published_at": "1777709652",
+  "fetched_at": "2026-08-06T22:42:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# ClaudeCode 与 DeepSeek 集成流程图\n\n## 总览概览 [BV16YRLB7Exd P1 00:29]\n```mermaid\nflowchart TD\n    A1[\"安装 Node.js\"] --> A2[\"安装 Git\"]\n    A2 --> A3[\"安装 cc-switch\"]\n    A3 --> A4[\"安装 cloud code\"]\n    A4 --> A5[\"编辑 cloud.json 配置\"]\n    A5 --> A6[\"跳过登录步骤\"]\n    A6 --> A7[\"注册 DeepSeek 并获取 API Key\"]\n    A7 --> A8[\"在 cc-switch 中添加 DeepSeek 模型\"]\n    A8 --> A9[\"启动 cloud 控制台\"]\n    A9 --> A10[\"创建项目文件夹并启动\"]\n    A10 --> A11[\"运行 to‑do 示例并授权\"]\n    A11 --> A12[\"完成集成\"]\n```\n\n## 环境安装细节 [BV16YRLB7Exd P1 01:03]\n```mermaid\nflowchart TD\n    B1[\"打开浏览器搜索 Node.js\"] --> B2[\"下载 Windows 安装程序\"]\n    B2 --> B3[\"双击安装并一路下一步\"]\n    B3 --> B4[\"在 CMD 中验证 node 版本\"]\n    B4 --> B5[\"配置国内镜像源\"]\n    B5 --> B6[\"搜索 Git 并下载 Windows x64 安装包\"]\n    B6 --> B7[\"安装 Git 并验证版本\"]\n    B7 --> B8[\"在 GitHub 搜索 cc-switch 项目\"]\n    B8 --> B9[\"下载对应 Windows MSI 安装包\"]\n    B9 --> B10[\"安装 cc-switch 并完成\"]\n```\n\n## DeepSeek 接入配置 [BV16YRLB7Exd P1 03:21]\n```mermaid\nflowchart TD\n    C1[\"打开 DeepSeek 官网\"] --> C2[\"登录或注册账号\"]\n    C2 --> C3[\"进入 API Keys 页面\"]\n    C3 --> C4[\"创建新 API Key（随意命名）\"]\n    C4 --> C5[\"复制生成的密钥\"]\n    C5 --> C6[\"返回 cc-switch 界面\"]\n    C6 --> C7[\"点击右上角加号添加模型\"]\n    C7 --> C8[\"选择 DeepSeek 预设模型\"]\n    C8 --> C9[\"在对应字段粘贴 API Key\"]\n    C9 --> C10[\"将所有模型切换为 DeepSeek\"]\n    C10 --> C11[\"点击添加按钮保存配置\"]\n```\n\n## 项目使用流程 [BV16YRLB7Exd P1 04:40]\n```mermaid\nflowchart TD\n    D1[\"在桌面新建项目文件夹\"] --> D2[\"在文件夹地址栏输入 CMD 打开终端\"]\n    D2 --> D3[\"执行 cloud 启动命令\"]\n    D3 --> D4[\"弹出信任文件夹提示并确认\"]\n    D4 --> D5[\"选择使用 HTML + JS + CSS 模板\"]\n    D5 --> D6[\"输入 to‑do 示例代码并回车\"]\n    D6 --> D7[\"系统请求工具权限，点击 Yes\"]\n    D7 --> D8[\"等待运行完成并收到通知\"]\n    D8 --> D9[\"使用 cloud 打开生成的页面查看结果\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览概览",
+          "code": "flowchart TD\n    A1[\"安装 Node.js\"] --> A2[\"安装 Git\"]\n    A2 --> A3[\"安装 cc-switch\"]\n    A3 --> A4[\"安装 cloud code\"]\n    A4 --> A5[\"编辑 cloud.json 配置\"]\n    A5 --> A6[\"跳过登录步骤\"]\n    A6 --> A7[\"注册 DeepSeek 并获取 API Key\"]\n    A7 --> A8[\"在 cc-switch 中添加 DeepSeek 模型\"]\n    A8 --> A9[\"启动 cloud 控制台\"]\n    A9 --> A10[\"创建项目文件夹并启动\"]\n    A10 --> A11[\"运行 to‑do 示例并授权\"]\n    A11 --> A12[\"完成集成\"]"
+        },
+        {
+          "title": "环境安装细节",
+          "code": "flowchart TD\n    B1[\"打开浏览器搜索 Node.js\"] --> B2[\"下载 Windows 安装程序\"]\n    B2 --> B3[\"双击安装并一路下一步\"]\n    B3 --> B4[\"在 CMD 中验证 node 版本\"]\n    B4 --> B5[\"配置国内镜像源\"]\n    B5 --> B6[\"搜索 Git 并下载 Windows x64 安装包\"]\n    B6 --> B7[\"安装 Git 并验证版本\"]\n    B7 --> B8[\"在 GitHub 搜索 cc-switch 项目\"]\n    B8 --> B9[\"下载对应 Windows MSI 安装包\"]\n    B9 --> B10[\"安装 cc-switch 并完成\"]"
+        },
+        {
+          "title": "DeepSeek 接入配置",
+          "code": "flowchart TD\n    C1[\"打开 DeepSeek 官网\"] --> C2[\"登录或注册账号\"]\n    C2 --> C3[\"进入 API Keys 页面\"]\n    C3 --> C4[\"创建新 API Key（随意命名）\"]\n    C4 --> C5[\"复制生成的密钥\"]\n    C5 --> C6[\"返回 cc-switch 界面\"]\n    C6 --> C7[\"点击右上角加号添加模型\"]\n    C7 --> C8[\"选择 DeepSeek 预设模型\"]\n    C8 --> C9[\"在对应字段粘贴 API Key\"]\n    C9 --> C10[\"将所有模型切换为 DeepSeek\"]\n    C10 --> C11[\"点击添加按钮保存配置\"]"
+        },
+        {
+          "title": "项目使用流程",
+          "code": "flowchart TD\n    D1[\"在桌面新建项目文件夹\"] --> D2[\"在文件夹地址栏输入 CMD 打开终端\"]\n    D2 --> D3[\"执行 cloud 启动命令\"]\n    D3 --> D4[\"弹出信任文件夹提示并确认\"]\n    D4 --> D5[\"选择使用 HTML + JS + CSS 模板\"]\n    D5 --> D6[\"输入 to‑do 示例代码并回车\"]\n    D6 --> D7[\"系统请求工具权限，点击 Yes\"]\n    D7 --> D8[\"等待运行完成并收到通知\"]\n    D8 --> D9[\"使用 cloud 打开生成的页面查看结果\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T22:42:58+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# ClaudeCode 与 DeepSeek 集成流程图\n\n## 总览概览 [BV16YRLB7Exd P1 00:29]\n```mermaid\nflowchart TD\n    A1[\"安装 Node.js\"] --> A2[\"安装 Git\"]\n    A2 --> A3[\"安装 cc-switch\"]\n    A3 --> A4[\"安装 cloud code\"]\n    A4 --> A5[\"编辑 cloud.json 配置\"]\n    A5 --> A6[\"跳过登录步骤\"]\n    A6 --> A7[\"注册 DeepSeek 并获取 API Key\"]\n    A7 --> A8[\"在 cc-switch 中添加 DeepSeek 模型\"]\n    A8 --> A9[\"启动 cloud 控制台\"]\n    A9 --> A10[\"创建项目文件夹并启动\"]\n    A10 --> A11[\"运行 to‑do 示例并授权\"]\n    A11 --> A12[\"完成集成\"]\n```\n\n## 环境安装细节 [BV16YRLB7Exd P1 01:03]\n```mermaid\nflowchart TD\n    B1[\"打开浏览器搜索 Node.js\"] --> B2[\"下载 Windows 安装程序\"]\n    B2 --> B3[\"双击安装并一路下一步\"]\n    B3 --> B4[\"在 CMD 中验证 node 版本\"]\n    B4 --> B5[\"配置国内镜像源\"]\n    B5 --> B6[\"搜索 Git 并下载 Windows x64 安装包\"]\n    B6 --> B7[\"安装 Git 并验证版本\"]\n    B7 --> B8[\"在 GitHub 搜索 cc-switch 项目\"]\n    B8 --> B9[\"下载对应 Windows MSI 安装包\"]\n    B9 --> B10[\"安装 cc-switch 并完成\"]\n```\n\n## DeepSeek 接入配置 [BV16YRLB7Exd P1 03:21]\n```mermaid\nflowchart TD\n    C1[\"打开 DeepSeek 官网\"] --> C2[\"登录或注册账号\"]\n    C2 --> C3[\"进入 API Keys 页面\"]\n    C3 --> C4[\"创建新 API Key（随意命名）\"]\n    C4 --> C5[\"复制生成的密钥\"]\n    C5 --> C6[\"返回 cc-switch 界面\"]\n    C6 --> C7[\"点击右上角加号添加模型\"]\n    C7 --> C8[\"选择 DeepSeek 预设模型\"]\n    C8 --> C9[\"在对应字段粘贴 API Key\"]\n    C9 --> C10[\"将所有模型切换为 DeepSeek\"]\n    C10 --> C11[\"点击添加按钮保存配置\"]\n```\n\n## 项目使用流程 [BV16YRLB7Exd P1 04:40]\n```mermaid\nflowchart TD\n    D1[\"在桌面新建项目文件夹\"] --> D2[\"在文件夹地址栏输入 CMD 打开终端\"]\n    D2 --> D3[\"执行 cloud 启动命令\"]\n    D3 --> D4[\"弹出信任文件夹提示并确认\"]\n    D4 --> D5[\"选择使用 HTML + JS + CSS 模板\"]\n    D5 --> D6[\"输入 to‑do 示例代码并回车\"]\n    D6 --> D7[\"系统请求工具权限，点击 Yes\"]\n    D7 --> D8[\"等待运行完成并收到通知\"]\n    D8 --> D9[\"使用 cloud 打开生成的页面查看结果\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览概览",
+      "code": "flowchart TD\n    A1[\"安装 Node.js\"] --> A2[\"安装 Git\"]\n    A2 --> A3[\"安装 cc-switch\"]\n    A3 --> A4[\"安装 cloud code\"]\n    A4 --> A5[\"编辑 cloud.json 配置\"]\n    A5 --> A6[\"跳过登录步骤\"]\n    A6 --> A7[\"注册 DeepSeek 并获取 API Key\"]\n    A7 --> A8[\"在 cc-switch 中添加 DeepSeek 模型\"]\n    A8 --> A9[\"启动 cloud 控制台\"]\n    A9 --> A10[\"创建项目文件夹并启动\"]\n    A10 --> A11[\"运行 to‑do 示例并授权\"]\n    A11 --> A12[\"完成集成\"]"
+    },
+    {
+      "title": "环境安装细节",
+      "code": "flowchart TD\n    B1[\"打开浏览器搜索 Node.js\"] --> B2[\"下载 Windows 安装程序\"]\n    B2 --> B3[\"双击安装并一路下一步\"]\n    B3 --> B4[\"在 CMD 中验证 node 版本\"]\n    B4 --> B5[\"配置国内镜像源\"]\n    B5 --> B6[\"搜索 Git 并下载 Windows x64 安装包\"]\n    B6 --> B7[\"安装 Git 并验证版本\"]\n    B7 --> B8[\"在 GitHub 搜索 cc-switch 项目\"]\n    B8 --> B9[\"下载对应 Windows MSI 安装包\"]\n    B9 --> B10[\"安装 cc-switch 并完成\"]"
+    },
+    {
+      "title": "DeepSeek 接入配置",
+      "code": "flowchart TD\n    C1[\"打开 DeepSeek 官网\"] --> C2[\"登录或注册账号\"]\n    C2 --> C3[\"进入 API Keys 页面\"]\n    C3 --> C4[\"创建新 API Key（随意命名）\"]\n    C4 --> C5[\"复制生成的密钥\"]\n    C5 --> C6[\"返回 cc-switch 界面\"]\n    C6 --> C7[\"点击右上角加号添加模型\"]\n    C7 --> C8[\"选择 DeepSeek 预设模型\"]\n    C8 --> C9[\"在对应字段粘贴 API Key\"]\n    C9 --> C10[\"将所有模型切换为 DeepSeek\"]\n    C10 --> C11[\"点击添加按钮保存配置\"]"
+    },
+    {
+      "title": "项目使用流程",
+      "code": "flowchart TD\n    D1[\"在桌面新建项目文件夹\"] --> D2[\"在文件夹地址栏输入 CMD 打开终端\"]\n    D2 --> D3[\"执行 cloud 启动命令\"]\n    D3 --> D4[\"弹出信任文件夹提示并确认\"]\n    D4 --> D5[\"选择使用 HTML + JS + CSS 模板\"]\n    D5 --> D6[\"输入 to‑do 示例代码并回车\"]\n    D6 --> D7[\"系统请求工具权限，点击 Yes\"]\n    D7 --> D8[\"等待运行完成并收到通知\"]\n    D8 --> D9[\"使用 cloud 打开生成的页面查看结果\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:42:58+00:00"
+}

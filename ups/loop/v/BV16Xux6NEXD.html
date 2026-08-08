@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="site-base" content="/loop-bilibili" />
+  <title>【MiniMaxH3一键懒人整合包】15秒视频+2K画质+24FPS+全能参考模式，支持30 40 50显卡，ComfyUI整合包安装部署！最低8g显存也能跑！ · BV16Xux6NEXD</title>
+  <link rel="stylesheet" href="../../../assets/app.css?v=20260808155041" />
+</head>
+<body>
+  <div class="wrap" id="app">加载中…</div>
+  <script>
+    window.SITE_BASE = "/loop-bilibili";
+    window.SITE_ASSET_V = "20260808155041";
+  </script>
+  <script src="../../../assets/app.js?v=20260808155041"></script>
+  <script>
+    
+    SubtitleSite.renderVideo("loop", "BV16Xux6NEXD").catch(e => {
+      document.getElementById('app').textContent = String(e);
+    });
+    
+  </script>
+</body>
+</html>

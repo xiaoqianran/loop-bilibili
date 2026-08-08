@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1ovcTzvEov",
+  "title": "🔥 Godot按钮动画竟能如此丝滑 #Godot教程 #游戏开发 #UI设计 #按钮动画 #游戏UI #独立游戏 #编程教学 #游戏制作 #Godot4",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2758,
+  "text": "所以我一直在为我主办的游戏马拉松开发这个游戏\n人们似乎非常喜欢目前动画按钮的视觉效果\n还有过渡动画效果\n但我想制作一个视频展示如何模块化地动画化按钮\n好的\n我现在在一个全新的项目中\n我只有一个普通按钮\n首先我要创建一个新类\n我们将制作一个可附加到任何按钮的组件\n并赋予其动画功能\n我暂时就叫它按钮效果模块\n它可以继承自Node2D\n但我想为其指定类名\n名称将与文件名相同\n按钮效果模块\n动画将通过补间动画处理\n我需要能指定这些动画的过渡和缓动类型\n我将在这里创建两个导出变量\n第一个变量就叫easeType\n可以使用内置的补间类枚举\n即Tween.EaseType\n同样处理过渡类型\n现在快速使用Tween.TransitionType\n我们也指定动画时长animDuration\n导出变量\n这将是一个浮点数\n我发现0.07秒看起来不错\n还需要导出缩放比例变量\n类型为Vector2\n默认值设为Vector2\n每个轴设为1.1\n我还希望鼠标悬停时按钮轻微旋转\n稍后你会看到效果\n因此需要另一个旋转属性\n这也可以是浮点数\n我发现3度效果不错\n顶部最后一个变量是ready引用按钮\n我之前的一个视频可能与此相反\n但假设此组件始终是按钮的直接子节点\n我认为这很安全\n你永远不会单独运行这个组件\n我们将创建一个未就绪变量\n类型为Button，赋值为getParent()\n现在可以定义ready函数\n只是基础设置\n显然要为按钮添加动画\n当鼠标进入或离开时触发\n可以使用按钮内置的信号处理\n所以写button.mouse_entered.connect\n并将这两个信号连接到同一函数\n只是为了让事情更整洁一些\n所以我们将其连接到鼠标悬停时的下划线\n现在复制这个名称并在下方定义函数\n所以我可以说鼠标悬停时执行函数\n我们只需要一个参数，即悬停布尔值\n这个函数也可以返回void，暂时先传入这里\n但当我们连接鼠标进入事件到这个函数时\n我希望将悬停状态设为true\n因此可以通过绑定来实现\n将true绑定到特定方法调用\n在这个连接上\n我只需说点bind并传入true\n如果我的光标在这行\n可以按住Ctrl+Alt并按下下箭头键复制\n同样为鼠标离开事件做相同操作\n而不是在这里绑定true\n我们将这个改为false\n在这个函数中开始设置动画\n我想使用缓动动画\n正如之前所说\n我将在顶部新建一个变量tween\n现在只需设置类型\n因为我们需要函数来初始化它\n我将在此处创建该函数\n我将其命名为重置tween\n有几种方法可以实现\n但它可以返回void\n它只需检查\n如果tween存在\n则需要终止该tween\n可以说tween.kill()\n确保没有tween存在后\n将tween设为创建的新tween\n这将生成新的tween对象并绑定到模块\n由于可能在多个地方使用\n我们也设置缓动和过渡类型\n在create tween之后\n我可以调用set ease\n并传入缓动类型\n还可以链式调用set trans函数并传入过渡类型\n很快\n以便进行多个动画\n我也调用parallel并将tween设为并行\n现在在鼠标悬停函数中设置完毕\n首先重置tween\n然后对按钮的缩放和旋转进行动画\n我将说tween.tween属性在对象button上\n要动画化的属性\n现在是缩放\n这里将使用三元运算符\n但如果你想\n你可以用if else语句写出整个过程\n所以我将发送缩放量的推文\n如果悬停否则\n我将发送到向量\n两个一组，通常我会保持在一行\n但我要在这里换行\n这样大家能看清最终参数\n我们只需传入动画时长并使用之前的技巧\n如果我选中这两行\n按住Ctrl Alt下箭头\n我们可以复制这段代码\n只需更改我们正在缓动的属性为旋转角度\n如果未悬停\n我们将缓动到零点零\n但如果悬停\n我们将缓动到旋转倍数\n要么正一或负一\n这只是一个随机数\n所以我可以说旋转量乘以\n有几种方法可以实现\n但我要新建一个包含-1和1的数组\n并调用随机选择函数\n现在当按钮悬停时\n我们将调用两个缓动\n你可以添加更多内容\n如果你想在这里添加音效\n这也是添加效果的好地方\n但保存后\n我要为按钮添加新子节点\n我将搜索按钮效果模块\n因为它是一个类\n我可以在这里添加\n在检查器中可以看到\n我们获得所有缓动类型的选项\n过渡类型\n时间等所有功能\n默认选项下\n让我运行这个\n可以看到不错的悬停效果\n现在你可能注意到它基于左上角旋转\n这是默认的轴心偏移\n这也是教程最有趣的部分\n如果你没看四点六的视频\n我们新增了设置轴心偏移比例的功能\n这比\n手动计算像素更简单\n我们可以在ready函数中实现\n我只需在下方写\n按钮点轴心偏移比例\n这将被设置为一个新向量\n每个轴设置0.5的值\n这将把轴心点设为中心\n每个轴50%的位置没错\n现在看起来好多了\n你有了这种平滑过渡效果\n另一个快速要点是按钮按下时\n也许你也想添加一个小动画\n我之前直接将鼠标按下和释放信号连接到同一函数\n这在技术上可行\n看起来还行\n但如果你长按鼠标拖离按钮\n会创建一个bug\n我认为最好的方法是新建一个函数\n我们命名为on_button_pressed\n不需要任何参数\n这里可以直接返回void\n让我重新整理这段代码\n因为我直接粘贴了快捷提示代码\n如果按住左Alt键点击\n可以创建多个光标\n我可以在这里输入并按Tab键使代码更易读\n但这个on_button_pressed函数的关键区别是\n我仍然在处理缩放和旋转\n但我在Tween结束时使用from函数指定\n动画的起始位置\n显然现在\n我仍然需要连接这个信号\n当然在ready函数中也要处理\n我可以直接写button.pressed\n点connect并传入on\nbutton_pressed\n现在保存这个文件\n返回游戏场景\n点击按钮时可以看到\n现在播放了一个更微妙的动画\n这对我的游戏非常实用\n但你可能需要调整一些细节\n不过我觉得这个组件不错\n可以直接复制到不同项目\n添加到按钮使其更精致\n进一步扩展这个功能\n尝试添加音效或其他效果\n如果你想继续这个思路\n但如果你喜欢这个视频或学到新知识\n请留言并点击订阅获取更多\nGodot资讯和教程\n我想向频道所有支持者致谢\n特别感谢独家支持者\n前往delax获取更多信息\n现在谁是Patreon和YouTube会员\n支持者精灵\n游戏开发者\n同时也制作Godot教程\nRandall Lassini和Jar Larks\n非常感谢大家的支持\n如果你想成为频道支持者\n描述中有一些链接\n你可以查看\n你将获得视频独家抢先访问权\n还有一些其他福利\n如果你想加入Discord并参与社区\n或查看描述中的其他链接\n一定要这样做\n但非常感谢观看\n希望你本周剩余时间愉快\n我们下次再见，拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ovcTzvEov",
+  "published_at": "1770615000",
+  "fetched_at": "2026-08-07T21:04:55+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 按钮动画模块知识图谱\n\n## 概览：组件结构与导出变量 [BV1ovcTzvEov P1 00:14]\n```mermaid\nflowchart TD\n    A1[\"ButtonEffectModule\\n(继承 Node2D)\"] --> B1[\"easeType\\n(Tween.EaseType)\"]\n    A1 --> B2[\"transitionType\\n(Tween.TransitionType)\"]\n    A1 --> B3[\"animDuration\\n(float, 0.07s)\"]\n    A1 --> B4[\"scaleFactor\\n(Vector2, 1.1,1.1)\"]\n    A1 --> B5[\"hoverRotateDeg\\n(float, 3°)\"]\n    A1 --> B6[\"buttonReference\\n(Button, get_parent())\"]\n    A1 --> B7[\"pivotOffset\\n(Vector2, 0.5,0.5)\"]\n```\n\n## 信号连接与动画触发流程 [BV1ovcTzvEov P1 01:30]\n```mermaid\nflowchart TD\n    R[\"ready()\"] --> C1[\"获取 buttonReference\"]\n    R --> C2[\"connect mouse_entered → on_hover(true)\"]\n    R --> C3[\"connect mouse_exited → on_hover(false)\"]\n    R --> C4[\"connect pressed → on_button_pressed()\"]\n    C5[\"on_hover(isHover)\"] --> D1[\"resetTween()\"]\n    C5 --> D2[\"animateScaleAndRotate(isHover)\"]\n    C6[\"on_button_pressed()\"] --> D3[\"animatePress()\"]\n    D1 --> D2\n```\n\n## Tween 初始化与属性动画步骤 [BV1ovcTzvEov P1 02:40]\n```mermaid\nflowchart TD\n    T0[\"resetTween()\"] --> T1[\"if tween exists → tween.kill()\"]\n    T0 --> T2[\"tween = new Tween()\"]\n    T2 --> T3[\"tween.set_ease(easeType)\"]\n    T3 --> T4[\"tween.set_trans(transitionType)\"]\n    T4 --> T5[\"tween.parallel()\"]\n    T5 --> S1[\"tween.tween_property(button.scale, targetScale, animDuration)\"]\n    T5 --> R1[\"tween.tween_property(button.rotation_degrees, targetRot, animDuration)\"]\n    S1 --> S2[\"targetScale = isHover ? scaleFactor : Vector2(1,1)\"]\n    R1 --> R2[\"targetRot = isHover ? random([-1,1]) * hoverRotateDeg : 0\"]\n```",
+      "diagrams": [
+        {
+          "title": "概览：组件结构与导出变量",
+          "code": "flowchart TD\n    A1[\"ButtonEffectModule\\n(继承 Node2D)\"] --> B1[\"easeType\\n(Tween.EaseType)\"]\n    A1 --> B2[\"transitionType\\n(Tween.TransitionType)\"]\n    A1 --> B3[\"animDuration\\n(float, 0.07s)\"]\n    A1 --> B4[\"scaleFactor\\n(Vector2, 1.1,1.1)\"]\n    A1 --> B5[\"hoverRotateDeg\\n(float, 3°)\"]\n    A1 --> B6[\"buttonReference\\n(Button, get_parent())\"]\n    A1 --> B7[\"pivotOffset\\n(Vector2, 0.5,0.5)\"]"
+        },
+        {
+          "title": "信号连接与动画触发流程",
+          "code": "flowchart TD\n    R[\"ready()\"] --> C1[\"获取 buttonReference\"]\n    R --> C2[\"connect mouse_entered → on_hover(true)\"]\n    R --> C3[\"connect mouse_exited → on_hover(false)\"]\n    R --> C4[\"connect pressed → on_button_pressed()\"]\n    C5[\"on_hover(isHover)\"] --> D1[\"resetTween()\"]\n    C5 --> D2[\"animateScaleAndRotate(isHover)\"]\n    C6[\"on_button_pressed()\"] --> D3[\"animatePress()\"]\n    D1 --> D2"
+        },
+        {
+          "title": "Tween 初始化与属性动画步骤",
+          "code": "flowchart TD\n    T0[\"resetTween()\"] --> T1[\"if tween exists → tween.kill()\"]\n    T0 --> T2[\"tween = new Tween()\"]\n    T2 --> T3[\"tween.set_ease(easeType)\"]\n    T3 --> T4[\"tween.set_trans(transitionType)\"]\n    T4 --> T5[\"tween.parallel()\"]\n    T5 --> S1[\"tween.tween_property(button.scale, targetScale, animDuration)\"]\n    T5 --> R1[\"tween.tween_property(button.rotation_degrees, targetRot, animDuration)\"]\n    S1 --> S2[\"targetScale = isHover ? scaleFactor : Vector2(1,1)\"]\n    R1 --> R2[\"targetRot = isHover ? random([-1,1]) * hoverRotateDeg : 0\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T21:25:06+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 按钮动画模块知识图谱\n\n## 概览：组件结构与导出变量 [BV1ovcTzvEov P1 00:14]\n```mermaid\nflowchart TD\n    A1[\"ButtonEffectModule\\n(继承 Node2D)\"] --> B1[\"easeType\\n(Tween.EaseType)\"]\n    A1 --> B2[\"transitionType\\n(Tween.TransitionType)\"]\n    A1 --> B3[\"animDuration\\n(float, 0.07s)\"]\n    A1 --> B4[\"scaleFactor\\n(Vector2, 1.1,1.1)\"]\n    A1 --> B5[\"hoverRotateDeg\\n(float, 3°)\"]\n    A1 --> B6[\"buttonReference\\n(Button, get_parent())\"]\n    A1 --> B7[\"pivotOffset\\n(Vector2, 0.5,0.5)\"]\n```\n\n## 信号连接与动画触发流程 [BV1ovcTzvEov P1 01:30]\n```mermaid\nflowchart TD\n    R[\"ready()\"] --> C1[\"获取 buttonReference\"]\n    R --> C2[\"connect mouse_entered → on_hover(true)\"]\n    R --> C3[\"connect mouse_exited → on_hover(false)\"]\n    R --> C4[\"connect pressed → on_button_pressed()\"]\n    C5[\"on_hover(isHover)\"] --> D1[\"resetTween()\"]\n    C5 --> D2[\"animateScaleAndRotate(isHover)\"]\n    C6[\"on_button_pressed()\"] --> D3[\"animatePress()\"]\n    D1 --> D2\n```\n\n## Tween 初始化与属性动画步骤 [BV1ovcTzvEov P1 02:40]\n```mermaid\nflowchart TD\n    T0[\"resetTween()\"] --> T1[\"if tween exists → tween.kill()\"]\n    T0 --> T2[\"tween = new Tween()\"]\n    T2 --> T3[\"tween.set_ease(easeType)\"]\n    T3 --> T4[\"tween.set_trans(transitionType)\"]\n    T4 --> T5[\"tween.parallel()\"]\n    T5 --> S1[\"tween.tween_property(button.scale, targetScale, animDuration)\"]\n    T5 --> R1[\"tween.tween_property(button.rotation_degrees, targetRot, animDuration)\"]\n    S1 --> S2[\"targetScale = isHover ? scaleFactor : Vector2(1,1)\"]\n    R1 --> R2[\"targetRot = isHover ? random([-1,1]) * hoverRotateDeg : 0\"]\n```",
+  "diagrams": [
+    {
+      "title": "概览：组件结构与导出变量",
+      "code": "flowchart TD\n    A1[\"ButtonEffectModule\\n(继承 Node2D)\"] --> B1[\"easeType\\n(Tween.EaseType)\"]\n    A1 --> B2[\"transitionType\\n(Tween.TransitionType)\"]\n    A1 --> B3[\"animDuration\\n(float, 0.07s)\"]\n    A1 --> B4[\"scaleFactor\\n(Vector2, 1.1,1.1)\"]\n    A1 --> B5[\"hoverRotateDeg\\n(float, 3°)\"]\n    A1 --> B6[\"buttonReference\\n(Button, get_parent())\"]\n    A1 --> B7[\"pivotOffset\\n(Vector2, 0.5,0.5)\"]"
+    },
+    {
+      "title": "信号连接与动画触发流程",
+      "code": "flowchart TD\n    R[\"ready()\"] --> C1[\"获取 buttonReference\"]\n    R --> C2[\"connect mouse_entered → on_hover(true)\"]\n    R --> C3[\"connect mouse_exited → on_hover(false)\"]\n    R --> C4[\"connect pressed → on_button_pressed()\"]\n    C5[\"on_hover(isHover)\"] --> D1[\"resetTween()\"]\n    C5 --> D2[\"animateScaleAndRotate(isHover)\"]\n    C6[\"on_button_pressed()\"] --> D3[\"animatePress()\"]\n    D1 --> D2"
+    },
+    {
+      "title": "Tween 初始化与属性动画步骤",
+      "code": "flowchart TD\n    T0[\"resetTween()\"] --> T1[\"if tween exists → tween.kill()\"]\n    T0 --> T2[\"tween = new Tween()\"]\n    T2 --> T3[\"tween.set_ease(easeType)\"]\n    T3 --> T4[\"tween.set_trans(transitionType)\"]\n    T4 --> T5[\"tween.parallel()\"]\n    T5 --> S1[\"tween.tween_property(button.scale, targetScale, animDuration)\"]\n    T5 --> R1[\"tween.tween_property(button.rotation_degrees, targetRot, animDuration)\"]\n    S1 --> S2[\"targetScale = isHover ? scaleFactor : Vector2(1,1)\"]\n    R1 --> R2[\"targetRot = isHover ? random([-1,1]) * hoverRotateDeg : 0\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T21:25:06+00:00"
+}

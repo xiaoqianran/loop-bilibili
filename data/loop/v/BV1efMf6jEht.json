@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1efMf6jEht",
+  "title": "DeepSeek崩了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 52,
+  "text": "我要走了\n我的天啊\n这是我们得分\n油桶\n就给我一个\n哦见鬼了\n所有人\n上去吧\n那个家伙\n啊\n我快了\n是的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1efMf6jEht",
+  "published_at": "1785816429",
+  "fetched_at": "2026-08-07T01:22:25+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek崩了 知识图谱\n\n## 情绪与反应\n```mermaid\nflowchart TD\n    A1[\"我要走了\"] --> A2[\"我的天啊\"]\n    A2 --> A3[\"哦见鬼了\"]\n    A3 --> A4[\"啊\"]\n    A4 --> A5[\"是的\"]\n```\n\n## 行动指令与对象\n```mermaid\nflowchart TD\n    B1[\"上去吧\"] --> B2[\"所有人\"]\n    B2 --> B3[\"那个家伙\"]\n    B3 --> B4[\"油桶\"]\n    B4 --> B5[\"就给我一个\"]\n```\n\n## 场景要素与状态\n```mermaid\nflowchart TD\n    C1[\"这是我们得分\"] --> C2[\"油桶\"]\n    C2 --> C3[\"那个家伙\"]\n    C3 --> C4[\"我快了\"]\n```",
+      "diagrams": [
+        {
+          "title": "情绪与反应",
+          "code": "flowchart TD\n    A1[\"我要走了\"] --> A2[\"我的天啊\"]\n    A2 --> A3[\"哦见鬼了\"]\n    A3 --> A4[\"啊\"]\n    A4 --> A5[\"是的\"]"
+        },
+        {
+          "title": "行动指令与对象",
+          "code": "flowchart TD\n    B1[\"上去吧\"] --> B2[\"所有人\"]\n    B2 --> B3[\"那个家伙\"]\n    B3 --> B4[\"油桶\"]\n    B4 --> B5[\"就给我一个\"]"
+        },
+        {
+          "title": "场景要素与状态",
+          "code": "flowchart TD\n    C1[\"这是我们得分\"] --> C2[\"油桶\"]\n    C2 --> C3[\"那个家伙\"]\n    C3 --> C4[\"我快了\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T01:22:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek崩了 知识图谱\n\n## 情绪与反应\n```mermaid\nflowchart TD\n    A1[\"我要走了\"] --> A2[\"我的天啊\"]\n    A2 --> A3[\"哦见鬼了\"]\n    A3 --> A4[\"啊\"]\n    A4 --> A5[\"是的\"]\n```\n\n## 行动指令与对象\n```mermaid\nflowchart TD\n    B1[\"上去吧\"] --> B2[\"所有人\"]\n    B2 --> B3[\"那个家伙\"]\n    B3 --> B4[\"油桶\"]\n    B4 --> B5[\"就给我一个\"]\n```\n\n## 场景要素与状态\n```mermaid\nflowchart TD\n    C1[\"这是我们得分\"] --> C2[\"油桶\"]\n    C2 --> C3[\"那个家伙\"]\n    C3 --> C4[\"我快了\"]\n```",
+  "diagrams": [
+    {
+      "title": "情绪与反应",
+      "code": "flowchart TD\n    A1[\"我要走了\"] --> A2[\"我的天啊\"]\n    A2 --> A3[\"哦见鬼了\"]\n    A3 --> A4[\"啊\"]\n    A4 --> A5[\"是的\"]"
+    },
+    {
+      "title": "行动指令与对象",
+      "code": "flowchart TD\n    B1[\"上去吧\"] --> B2[\"所有人\"]\n    B2 --> B3[\"那个家伙\"]\n    B3 --> B4[\"油桶\"]\n    B4 --> B5[\"就给我一个\"]"
+    },
+    {
+      "title": "场景要素与状态",
+      "code": "flowchart TD\n    C1[\"这是我们得分\"] --> C2[\"油桶\"]\n    C2 --> C3[\"那个家伙\"]\n    C3 --> C4[\"我快了\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:22:32+00:00"
+}

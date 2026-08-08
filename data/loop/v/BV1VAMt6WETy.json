@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1VAMt6WETy",
+  "title": "Godot 游戏开发：集成 Steamworks 实现多人联机功能 | Steamworks / 网络同步 / 联机架构",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4917,
+  "text": "格斗提供了多种网络工具\n比如多人同步节点\nspanner节点\n还有RPC系统\n但在我们用这些工具做游戏之前\n得先告诉格斗用什么库来处理网络连接\n更准确的说是创建一个多人通信对等对象\n并用它来初始化GOODLE的多人网络API\n这个多人对等对象可以通过多种网络库创建\n内置的是ANIT\n我们在之前的视频里就是用这个库搭建多人的\n不过本期视频我们重点讲\n怎么用steam SDK来创建多人对等对象\n这个是靠一个叫goodle steam的插件来提供的\n看完这个视频\n你就能搭建起一个能用的点对点网络\n你的朋友们可以直接通过steam加入你的游戏\n完全不用搞端口转发\n新开一个项目\n首先我们要在编辑器里安装goole steam\n找到资源商店\n在里面搜索good dosteam\n录这个视频的时候\n最新版本是4.19.1下载\n有时候会花点时间\n不过下载完直接安装就好完事儿\n如果一切顺利\n你现在应该能看到一个名为ADAMS的文件夹\n里面就有goodle steam的插件\n接下来我们要在项目里正确的初始化goodle steam\n打开项目设置\n在最底部找到steam和initialization选项\n在这个窗口里\n我们需要填写app id\n这是steam运行所必需的\nsteam为开发中的游戏预留了一个app id\n就是480\n现在先用这个没问题\n但等你游戏正式发布\n就得换成自己的app id了\n下面我们勾选initialize on startup\n然后保持embedded call backs\n不勾选\n因为之后我们会自己来处理这些回调\n现在可以关掉这个窗口了\n新建一个2D场景\n命名为main\n这样我们就能运行项目了\n在运行场景之前\n记得要确保后台开着steam\n如果格斗steam正确初始化了\n你应该能看到steam的界面弹出来\n按下shift tab\nsteam界面就打开了\n现在你就可以使用goodle steam提供的所有功能了\n我们先在文件系统里创建一个网络相关的类\n新建一个脚本\n命名为network manager\n在这里我们会初始化网络\n创建一个函数来托管steam大厅\n并连接那些尝试加入大厅的玩家\n前面我提到了\n我们要建立点对点连接\n如果你不太了解点对点是什么意思\n简单说就是所有客户端实例互相直接连接\n不需要一个中心服务器\n取而代之的是\n所有客户端都连接到一个作为主机的玩家身上\n这个玩家也参与游戏\n注意所有客户端都只连接到主机\n玩家客户端之间互不连接\n所以任何玩家发给其他人的消息\n都会通过主机中转\n我们想在不使用端口转发的情况下\n建立这些连接\n端口转发是把你网络上的一个端口\n开放到互联网\n让别人能连到你的系统\n这会有安全风险\n所以另一种方法是通过一种叫中继网络的东西\n来建立这些连接\n我们可以调用steam init relay network access\n来初始化访问权限\n在项目设置的ready函数里\n我们没勾选嵌入回调\n因为我们会自己用process函数来运行那些回调\n只要在每一帧调用steam wrong call backs就行了\n这是接受任何steam works回调的必要步骤\n接下来我们来创建主机房间函数\n这需要两个新常量\n一个是房间类型\n另一个是可以加入房间的人数上限\n包括我们自己要创建实际的房间\n我们调用steam the create lobby函数\n并传入房间类型和最大允许成员数\n创建房间会发出两个信号\nlobby created和lobby joint\n在我们的ready函数里\n让我们把这些信号连接到COLLAB\n这会产生一个错误\n因为我们还没声明那些COLLAB\n但等会儿我们就补上\n首先添加signal host created和变量\nPeer\npeer的类型是steam multiplayer\nPeer\nLobby created\n信号只会在主机的那台机器上被调用\n声明连接的COLLAB叫unlobby created\n并且一定要加上通过悬停\n在原始信号上可以找到的信号参数\n然后初始化主机\n让其他玩家可以连接进来\n在底部发出host created信号\nlobby joint信号会被所有加入房间的玩家调用\n包括我们自己\n因为我们在创建房间后会直接加入自己的房间\n当我们以房间拥有者身份运行这段代码时\n我们可以通过比较房间拥有者的steam id\n和我们自己的steam id来判断\n如果身份匹配\n我们只需要忽略这个函数的剩余部分\n在这段代码下面\n我们会建立与房间拥有者的连接\n注意在两个函数中\n我们都创建并复制了一个steam multiplayer peer对象\n给multiplayer\nMultiplayer peer\n这实际上是在告诉gold网络功能已启用\n我们可以开始使用GOODLE的网络API了\n将server rellay设置为true\n是为了实现我之前提到的点对点设置\n也就是所有客户端只连接到主机\n玩家任何形式的通信都通过主机中继\n回到我们的ready函数\n让我们把一个COLLAB连接到join the requested信号\n这个信号在玩家尝试通过steam界面加入好友时\n我们只需要用提供的房间id调用steam join lobby\n我们的网络脚本就这些内容\n我们来把它做成一个自动加载项\n进入项目设置\n然后点全局在文件系统中找到脚本\n把它添加到列表中\n这会将网络脚本作为一个节点\n自动添加到顶层运行项目时\n场景树里的内容\n它能让我们在主场景的其它脚本中\n访问网络相关的内容\n我们还需要设置一些东西\n需要一个按钮\n让玩家可以创建大厅\n一个出生点\n以及通过网络同步玩家生成的方法\n首先在一个新的画布层上\n我们来添加这个按钮\n我把按钮重命名为创建游戏\n并把文本也设置成创建游戏\n然后添加一个二维节点作为出生点\n直接把它拖到屏幕中央附近\n最后我们再添加一个多人生成器节点\n把生成路径设置成主节点\n多人生成器节点的工作原理是\n当主机将外部生成列表中的某个对象\n生成到生成路径节点上时\n该对象会自动在所有连接的实例上生成\n因为我们要生成玩家控制器\n所以得先创建一个\n我们在文件系统中添加一个新的角色\n身体二维节点\n我就叫他玩家控制器\n然后点击并把这个新创建的场景\n拖到多人生成器的的外部生成列表里\n给主场景挂载一个新脚本\n我们希望在主机创建完成后生成主机玩家\n并在其他玩家连接到我们的大厅时\n生成它们就绪函数给网络脚本里\n我们创建的主机\n以创建信号连接一个可调用对象\n然后创建这个可调用对象\n命名为unhost creator\n在这个函数里我们会调用一个spawn player函数\n我们还没声明这个函数用来直接生成主机玩家\n我们还会把spm player连接到multiplayer peer\n已连接信号上\n这个信号会在每个玩家连接到我们时触发\n要实例化一个新玩家\n我们需要引用文件系统中的玩家控制器\n把我们在外部生成列表里\n引用的那个玩家控制器节点拖进\n把玩家节点拖到脚本里时\n按住CTRL键\n可以自动把这个场景预加载成一个新常量\n记住当主机生成这个玩家时\n所有连接的客户端也会生成这个玩家\n为了生成刚连接上的玩家\nSPN player函数\n需要一个该玩家的对等节点id\n在这个函数里\n我们会创建一个玩家控制器的实例\n并将其添加为场景的子节点\n在生成玩家之前\n我们将其名称改为给定的对等节点id\n多人生成器\n节点会在生成对象时同步它们的名称\n通过将名称改为对等节点id\n我们可以赋予正确的客户端\n对玩家控制器的控制权\n在底部\n我们将调用另一个函数来初始化玩家控制器\n同样这个函数我们待会儿再创建\n但首先让我们在脚本里添加一个数组\n用来追踪所有已有的玩家控制器\n放在一个新函数里\nInitialize player\n这个函数需要一个角色身体节点\n把玩家位置设置到出生点\n添加与所有现有关玩家控制器的碰撞例外\n然后将新的玩家实例追加到玩家列表中\n添加碰撞例外是可选的\n但我记得以前视频里有人问过\n为什么他们的玩家角色被弹出了屏幕\n原因就是碰撞\n当一个玩家生成在另一个玩家上面时\n它们会互相往外推\n所以我们这次添加碰撞例外\n来防止这种情况发生在主场景中\n最后要做的事情是\n将主机按钮发射的信号连接到脚本上\n当按钮被按下时\n我们希望通过联网托管大厅\n这样按按下主机按钮就能托管一个大厅\n然后我们还需要将多人游戏扳手的生成信号\n连接到脚本上\n这个信号只在已连接的客户端上触发\n当主机从外部生成列表中生成物体时\n当这发生时\n检查它是否是一个角色体2D节点\n并初始化为一个新的玩家\n下一步是创建玩家控制器\n我来创建一个简单的角色体2D场景\n带有一个精灵和一个碰撞器\n对于控制器的联网部分\n我们要添加多人同步器节点\n选中它后会打开复制选项卡\n在那里我们可以选择要在网络上同步的属性\n我们要同步玩家的位置\n所以添加一个新属性\n选择角色体节点\n在选择为多人同步器\n节点会自动同步列表中配置的属性\n对根路径中指定的节点拥有所谓权威的用户\n会将自己所列属性的状态复制给其他玩家\n明确指定并分配\n哪个玩家对哪个节点拥有权威至关重要\n针对每一个现有实例而言\n包括主机在内列出的属性\n还有一些额外设置\n生成时复制设置\n如果勾选\n会直接在生成时复制该属性的当前状态\n如果不勾选\n则会使用默认值\n通过复制设置\n我们可以指定何时复制一个属性\n然后我们继续为玩家控制器编写一个新脚本\n第一键需要评估的事情是\n每个新生成的玩家控制器的权威属于谁\n请记住\n在主机场景中生成玩家之前\n我们将对等id指定为它的名称\n这是由多人游戏扳手同步的\n所以在进入数函数中\n我们现在可以通过名称\n将权威设置给正确的玩家\n现在我们可以使用权威\n来判断我们的本地客户端\n是否允许更改此节点的状态\n在物理过程函数中\n我们可以使用s multiplayer authority\n来检查我们是否拥有权威\n这相当于将权威与本地唯一id进行比较\n如果我们的本地客户没有权威\n我们就直接忽略函数\n剩下的部分在那下面\n我们可以像平时一样定义任何移动代码\n我们就简单点根据键盘输入来改变速度\n测试一下这个设置是否管用\n你需要两个系统分别运行不同的steam账号\n在后台运行左边屏幕上登录的是s engine的steam账号\n右边的是i c engineer的steam账号\n你可以构建并导出游戏到另一个系统\n或者直接用git运行同一个项目配置\n我们用i c engine来创建大厅\n然后让i c engineer通过steam覆盖层加入游戏来连接\n看两个客户端都连上了\n并且都可以移动一个玩家角色\n我创建了一个小的WSY\n是\n来进一步演示我们设置网络属性的速度有多快\n我添加了一个名为head的2D节点\n里面包含一个带有头部纹理的精灵节点\n头部的底部与这个2D头部节点的轴心对齐\n这样当我们缩放头部节点时\n它就会变大或缩小\n思路是玩家能够改变头部大小\n并且这个改变会通过网络同步\n为此我们可以给多人同步器节点\n添加一个新属性\n复制选项卡下\n选中我们的头部节点\n然后选择缩放\n我只想在值发生变化时才同步\n所以我们可以将复制值设置为在更改时\n然后在玩家脚本里我添加了一些逻辑\n当按下G键时头部变大\n按下S键时\n头部缩小就这样改变头部大小就成为可能\n并且其他玩家也能看到\n最后还想提一点\n如果你想同步一个脚本里的自定义属性\n需要使用export来导出该属性\n否则它对同步器节点不可见\n然后像往常一样\n把这个属性添加到同步列表里就行\n多人扳手和多人同步器节点的存在\n是为了方便D网络同步玩家属性之类的东西\n但除此之外\n用它来同步按钮\n按下或发送聊天消息就不太方便了\n为了给我们的网络游戏添加更多功能\n我们可以使用远程过程调用简称RPC\n如果你有兴趣了解RPC\n请在下面留言\n这样我以后可能会专门讲一期\n与此同时\n你可以看我最新的开发日志里面\n我正在构建一个多人恐怖游戏\n并且实际使用了GODOSTEAM来负责网络功能",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VAMt6WETy",
+  "published_at": "1783641300",
+  "fetched_at": "2026-08-07T18:32:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 与 Steamworks 多人联机知识图谱\n\n## 图1：Steamworks 集成步骤概览\n```mermaid\nflowchart TD\n    S0[\"开始：新建 Godot 项目\"] --> S1[\"在资源商店搜索并安装 GoodleSteam 插件\"]\n    S1 --> S2[\"打开项目设置 → Steam → Initialization\"]\n    S2 --> S3[\"填写 App ID（示例 480）\"]\n    S3 --> S4[\"勾选 Initialize on Startup\"]\n    S4 --> S5[\"取消勾选 Embedded Callbacks\"]\n    S5 --> S6[\"在 Ready 函数中调用 Steam.init_relay_network_access\"]\n    S6 --> S7[\"创建大厅：调用 Steam.create_lobby(类型, 最大成员数)\"]\n    S7 --> S8[\"连接 lobby_created 与 lobby_joined 信号\"]\n    S8 --> S9[\"在信号回调中实例化 SteamMultiplayerPeer 并设置 server_relay = true\"]\n    S9 --> S10[\"网络 API 初始化完成，可使用 GoodleSteam 功能\"]\n```\n\n## 图2：点对点连接模型\n```mermaid\nflowchart TD\n    C1[\"所有客户端实例\"] --> H1[\"连接到 Host（房间拥有者）\"]\n    H1 --> H2[\"Host 维护 SteamMultiplayerPeer\"]\n    H2 --> M1[\"所有消息经 Host 中继\"]\n    M1 --> C2[\"客户端接收并处理转发的消息\"]\n    C1 -->|不直接连接| C3[\"客户端之间无直接网络路径\"]\n    H2 -->|无需| P1[\"端口转发\"]\n    H2 --> R1[\"使用 Steam 中继网络实现 NAT 穿透\"]\n    R1 --> M1\n```\n\n## 图3：玩家生成与权威分配流程\n```mermaid\nflowchart TD\n    L0[\"Host 创建大厅\"] --> L1[\"Host 调用 spawn_player() 创建玩家控制器实例\"]\n    L1 --> L2[\"为实例设置名称为对应的 Peer ID\"]\n    L2 --> L3[\"在 MultiplayerSpawner 中注册生成对象\"]\n    L3 --> L4[\"Spawner 同步实例到所有已连接客户端\"]\n    L4 --> L5[\"客户端收到实例后创建对应节点\"]\n    L5 --> L6[\"根据节点名称匹配 Peer ID，确定权威所有者\"]\n    L6 --> L7[\"在 _physics_process 中检查 s_multiplayer_authority\"]\n    L7 --> L8[\"拥有权威的客户端执行输入与移动逻辑\"]\n    L8 --> L9[\"非权威客户端跳过本地控制，仅接受同步数据\"]\n```\n\n## 图4：属性同步设置流程\n```mermaid\nflowchart TD\n    P0[\"玩家控制器场景\"] --> P1[\"添加 MultiplayerSync 节点\"]\n    P1 --> P2[\"在同步面板选择要同步的属性（位置、缩放等）\"]\n    P2 --> P3[\"为每个属性设置复制模式（如 on_change）\"]\n    P3 --> P4[\"若属性为自定义，使用 export 关键字暴露\"]\n    P4 --> P5[\"将属性加入同步列表\"]\n    P5 --> P6[\"运行时，权威客户端写入属性值\"]\n    P6 --> P7[\"同步节点将属性值复制给非权威客户端\"]\n    P7 --> P8[\"非权威客户端更新本地属性显示\"]\n```",
+      "diagrams": [
+        {
+          "title": "图1：Steamworks 集成步骤概览",
+          "code": "flowchart TD\n    S0[\"开始：新建 Godot 项目\"] --> S1[\"在资源商店搜索并安装 GoodleSteam 插件\"]\n    S1 --> S2[\"打开项目设置 → Steam → Initialization\"]\n    S2 --> S3[\"填写 App ID（示例 480）\"]\n    S3 --> S4[\"勾选 Initialize on Startup\"]\n    S4 --> S5[\"取消勾选 Embedded Callbacks\"]\n    S5 --> S6[\"在 Ready 函数中调用 Steam.init_relay_network_access\"]\n    S6 --> S7[\"创建大厅：调用 Steam.create_lobby(类型, 最大成员数)\"]\n    S7 --> S8[\"连接 lobby_created 与 lobby_joined 信号\"]\n    S8 --> S9[\"在信号回调中实例化 SteamMultiplayerPeer 并设置 server_relay = true\"]\n    S9 --> S10[\"网络 API 初始化完成，可使用 GoodleSteam 功能\"]"
+        },
+        {
+          "title": "图2：点对点连接模型",
+          "code": "flowchart TD\n    C1[\"所有客户端实例\"] --> H1[\"连接到 Host（房间拥有者）\"]\n    H1 --> H2[\"Host 维护 SteamMultiplayerPeer\"]\n    H2 --> M1[\"所有消息经 Host 中继\"]\n    M1 --> C2[\"客户端接收并处理转发的消息\"]\n    C1 -->|不直接连接| C3[\"客户端之间无直接网络路径\"]\n    H2 -->|无需| P1[\"端口转发\"]\n    H2 --> R1[\"使用 Steam 中继网络实现 NAT 穿透\"]\n    R1 --> M1"
+        },
+        {
+          "title": "图3：玩家生成与权威分配流程",
+          "code": "flowchart TD\n    L0[\"Host 创建大厅\"] --> L1[\"Host 调用 spawn_player() 创建玩家控制器实例\"]\n    L1 --> L2[\"为实例设置名称为对应的 Peer ID\"]\n    L2 --> L3[\"在 MultiplayerSpawner 中注册生成对象\"]\n    L3 --> L4[\"Spawner 同步实例到所有已连接客户端\"]\n    L4 --> L5[\"客户端收到实例后创建对应节点\"]\n    L5 --> L6[\"根据节点名称匹配 Peer ID，确定权威所有者\"]\n    L6 --> L7[\"在 _physics_process 中检查 s_multiplayer_authority\"]\n    L7 --> L8[\"拥有权威的客户端执行输入与移动逻辑\"]\n    L8 --> L9[\"非权威客户端跳过本地控制，仅接受同步数据\"]"
+        },
+        {
+          "title": "图4：属性同步设置流程",
+          "code": "flowchart TD\n    P0[\"玩家控制器场景\"] --> P1[\"添加 MultiplayerSync 节点\"]\n    P1 --> P2[\"在同步面板选择要同步的属性（位置、缩放等）\"]\n    P2 --> P3[\"为每个属性设置复制模式（如 on_change）\"]\n    P3 --> P4[\"若属性为自定义，使用 export 关键字暴露\"]\n    P4 --> P5[\"将属性加入同步列表\"]\n    P5 --> P6[\"运行时，权威客户端写入属性值\"]\n    P6 --> P7[\"同步节点将属性值复制给非权威客户端\"]\n    P7 --> P8[\"非权威客户端更新本地属性显示\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T18:33:08+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 与 Steamworks 多人联机知识图谱\n\n## 图1：Steamworks 集成步骤概览\n```mermaid\nflowchart TD\n    S0[\"开始：新建 Godot 项目\"] --> S1[\"在资源商店搜索并安装 GoodleSteam 插件\"]\n    S1 --> S2[\"打开项目设置 → Steam → Initialization\"]\n    S2 --> S3[\"填写 App ID（示例 480）\"]\n    S3 --> S4[\"勾选 Initialize on Startup\"]\n    S4 --> S5[\"取消勾选 Embedded Callbacks\"]\n    S5 --> S6[\"在 Ready 函数中调用 Steam.init_relay_network_access\"]\n    S6 --> S7[\"创建大厅：调用 Steam.create_lobby(类型, 最大成员数)\"]\n    S7 --> S8[\"连接 lobby_created 与 lobby_joined 信号\"]\n    S8 --> S9[\"在信号回调中实例化 SteamMultiplayerPeer 并设置 server_relay = true\"]\n    S9 --> S10[\"网络 API 初始化完成，可使用 GoodleSteam 功能\"]\n```\n\n## 图2：点对点连接模型\n```mermaid\nflowchart TD\n    C1[\"所有客户端实例\"] --> H1[\"连接到 Host（房间拥有者）\"]\n    H1 --> H2[\"Host 维护 SteamMultiplayerPeer\"]\n    H2 --> M1[\"所有消息经 Host 中继\"]\n    M1 --> C2[\"客户端接收并处理转发的消息\"]\n    C1 -->|不直接连接| C3[\"客户端之间无直接网络路径\"]\n    H2 -->|无需| P1[\"端口转发\"]\n    H2 --> R1[\"使用 Steam 中继网络实现 NAT 穿透\"]\n    R1 --> M1\n```\n\n## 图3：玩家生成与权威分配流程\n```mermaid\nflowchart TD\n    L0[\"Host 创建大厅\"] --> L1[\"Host 调用 spawn_player() 创建玩家控制器实例\"]\n    L1 --> L2[\"为实例设置名称为对应的 Peer ID\"]\n    L2 --> L3[\"在 MultiplayerSpawner 中注册生成对象\"]\n    L3 --> L4[\"Spawner 同步实例到所有已连接客户端\"]\n    L4 --> L5[\"客户端收到实例后创建对应节点\"]\n    L5 --> L6[\"根据节点名称匹配 Peer ID，确定权威所有者\"]\n    L6 --> L7[\"在 _physics_process 中检查 s_multiplayer_authority\"]\n    L7 --> L8[\"拥有权威的客户端执行输入与移动逻辑\"]\n    L8 --> L9[\"非权威客户端跳过本地控制，仅接受同步数据\"]\n```\n\n## 图4：属性同步设置流程\n```mermaid\nflowchart TD\n    P0[\"玩家控制器场景\"] --> P1[\"添加 MultiplayerSync 节点\"]\n    P1 --> P2[\"在同步面板选择要同步的属性（位置、缩放等）\"]\n    P2 --> P3[\"为每个属性设置复制模式（如 on_change）\"]\n    P3 --> P4[\"若属性为自定义，使用 export 关键字暴露\"]\n    P4 --> P5[\"将属性加入同步列表\"]\n    P5 --> P6[\"运行时，权威客户端写入属性值\"]\n    P6 --> P7[\"同步节点将属性值复制给非权威客户端\"]\n    P7 --> P8[\"非权威客户端更新本地属性显示\"]\n```",
+  "diagrams": [
+    {
+      "title": "图1：Steamworks 集成步骤概览",
+      "code": "flowchart TD\n    S0[\"开始：新建 Godot 项目\"] --> S1[\"在资源商店搜索并安装 GoodleSteam 插件\"]\n    S1 --> S2[\"打开项目设置 → Steam → Initialization\"]\n    S2 --> S3[\"填写 App ID（示例 480）\"]\n    S3 --> S4[\"勾选 Initialize on Startup\"]\n    S4 --> S5[\"取消勾选 Embedded Callbacks\"]\n    S5 --> S6[\"在 Ready 函数中调用 Steam.init_relay_network_access\"]\n    S6 --> S7[\"创建大厅：调用 Steam.create_lobby(类型, 最大成员数)\"]\n    S7 --> S8[\"连接 lobby_created 与 lobby_joined 信号\"]\n    S8 --> S9[\"在信号回调中实例化 SteamMultiplayerPeer 并设置 server_relay = true\"]\n    S9 --> S10[\"网络 API 初始化完成，可使用 GoodleSteam 功能\"]"
+    },
+    {
+      "title": "图2：点对点连接模型",
+      "code": "flowchart TD\n    C1[\"所有客户端实例\"] --> H1[\"连接到 Host（房间拥有者）\"]\n    H1 --> H2[\"Host 维护 SteamMultiplayerPeer\"]\n    H2 --> M1[\"所有消息经 Host 中继\"]\n    M1 --> C2[\"客户端接收并处理转发的消息\"]\n    C1 -->|不直接连接| C3[\"客户端之间无直接网络路径\"]\n    H2 -->|无需| P1[\"端口转发\"]\n    H2 --> R1[\"使用 Steam 中继网络实现 NAT 穿透\"]\n    R1 --> M1"
+    },
+    {
+      "title": "图3：玩家生成与权威分配流程",
+      "code": "flowchart TD\n    L0[\"Host 创建大厅\"] --> L1[\"Host 调用 spawn_player() 创建玩家控制器实例\"]\n    L1 --> L2[\"为实例设置名称为对应的 Peer ID\"]\n    L2 --> L3[\"在 MultiplayerSpawner 中注册生成对象\"]\n    L3 --> L4[\"Spawner 同步实例到所有已连接客户端\"]\n    L4 --> L5[\"客户端收到实例后创建对应节点\"]\n    L5 --> L6[\"根据节点名称匹配 Peer ID，确定权威所有者\"]\n    L6 --> L7[\"在 _physics_process 中检查 s_multiplayer_authority\"]\n    L7 --> L8[\"拥有权威的客户端执行输入与移动逻辑\"]\n    L8 --> L9[\"非权威客户端跳过本地控制，仅接受同步数据\"]"
+    },
+    {
+      "title": "图4：属性同步设置流程",
+      "code": "flowchart TD\n    P0[\"玩家控制器场景\"] --> P1[\"添加 MultiplayerSync 节点\"]\n    P1 --> P2[\"在同步面板选择要同步的属性（位置、缩放等）\"]\n    P2 --> P3[\"为每个属性设置复制模式（如 on_change）\"]\n    P3 --> P4[\"若属性为自定义，使用 export 关键字暴露\"]\n    P4 --> P5[\"将属性加入同步列表\"]\n    P5 --> P6[\"运行时，权威客户端写入属性值\"]\n    P6 --> P7[\"同步节点将属性值复制给非权威客户端\"]\n    P7 --> P8[\"非权威客户端更新本地属性显示\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T18:33:08+00:00"
+}

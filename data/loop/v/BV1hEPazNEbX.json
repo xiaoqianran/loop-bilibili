@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1hEPazNEbX",
+  "title": "《蓝图写到头秃？试试这款 Blueprint AI，对话间完成逻辑构建！》",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1676,
+  "text": "如果你在虚幻引擎等REO中使用蓝图\n但你一定深有体会\n你开始构建一个蓝图\n从逻辑开始修改节点\n清理内容\n突然之间他花费的时间比你预期的要多得多\n所以我发现了一个叫BOPRINTEL的插件\n它可以帮我们制作蓝图\n添加逻辑\n甚至修改它们\n只需点击几次\n我们就能给这个AI下达指令\n他会自己完成所有工作\n所以在本视频中\n我将向你展示如何使用book print\n以及如何使用该工具创建真正实用的蓝图\n首先打开你常用的浏览器\n然后进入这个网站\n我会在视频描述中提供链接\n在这里点击开始使用get started创建你的账号\n然后登录\n这里显示了我之前的一项购买记录的\n直接进入下载页面\n这里有BOOPINTEI插件\n我打算使用虚幻引擎5.7\n所以我会点击下载\n如果你看这里\n我几分钟前已经下载好了\n所以只需点击下载\n选择你想要的版本\n这里我会选择第三人称模板\n我将把我的项目命名为book print\n首先进入插件管理\nMani coins\n在这里搜索bb print\n然后点击是yes\n并重启引擎\n他已经启用了\n现在点击窗口WW菜单\n这里有bop intel窗口\n直接打开它就在这里\n我们可以把它放在布局中的任何位置啊\n要使用BOOPRINTE\n首先我们必须将其连接到一个AI代理agent\n在我的案例中\n我使用的是codex杯\n但如果你更喜欢clock a或GEMINI\n只需点击安装即可\n然后他会为你安装那个代理\n并且它将使用默认模型\n让我们直接开始吧\n我正在使用JPG5.3codex版本\n你可以选择5.2\n但5.3当然会更好\n因为它是最新版本\n当我打招呼hello时\n他问我\n我能为您的虚幻项目提供什么帮助\n所以我打算让他把我的天空颜色改成深蓝色\n让我们看看他会如何更改\n大家请记住\n这个工具不只是给你指令\n他会为你完成所有操作\n现在你可以看到天空变成了深蓝色\n现在他问我们是否想要更暗的深夜效果\n得他可以快速调整数值\n让我们看看它是否能在几秒钟内完成\n现在他会更改方向光\n然而看上欧莱和天空光skylight的强度\n这真的很棒\n如你所见\n天空看起来它添加了一些停靠点\n以及所有的设置\n现在我会让他制作一个带有四个按钮的游戏\n开始菜单按钮分别是开始新游戏\n或者我搜索新游戏\n另一个是加载之类的\n这已经足够好了\n让我们看看他能否做出来\n他创建了一个名为UI的新文件夹\n我想他将在这里创建我们的菜单\n这里显示主菜单\n新游戏加载游戏设置\n我们可以编译compiler菜单\n看起来不错\n边角是圆形的\n我们还可以让它添加一个背景\n但由于我目前还没有任何游戏背景之类的资源\n得他在这方面实际上做得相当出色\n举个例子\n现在这部分完成了\n现在让我再展示一件事\n这里我有一个基础蓝图\n用于为我的关卡创建定序器sequence\n如果我打开它\n这里只有三个节点\n而且我还有一个编辑器\n使用工具控件enter utility vg\n我想大多数人和开发者都知道\n这个让我展示一下它的功能\n如果我打开它\n这里有一个名为添加序列SEQUENS按钮\n如果我点击添加序列\n它就会为我的关卡创建一个序列对吧\n所以我准备做的事\n让boy prin台来修改它\n首先我会像往常一样打个招呼\n让我们在上面花点点数price\n或者我也不知道这会不会消耗点数\n现在让我们开始输入提示词PROMPP\n我必须告诉他蓝图在哪里\n例如你能修改我名为NHSA文件夹里的蓝图吗\n名为bonk q to的蓝图\n带有下划线的那个\n他是添加关卡序列的\n我直接告诉他该怎么做\n他要做的就是在向关卡添加序列时\n顺便添加一个电影摄像机\n3camera\n将蓝图修改为好的\n我给了他提示词\n现在我们等待他修改这个蓝图\n等待中\n现在他添加了一个名为short time的电影摄像机\n所以如果你遇到任何错误\n你可以告诉boe print\n他能修复所有这些错误\n这个工具非常神奇\n我倾向于在未来的视频和项目中使用它\n因为它节省了大量时间\n这就是使用它的核心原因好了\n这就是book print i\n坦白说这只是这个工具功能的冰山一角",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hEPazNEbX",
+  "published_at": "1772849118",
+  "fetched_at": "2026-08-07T16:07:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Blueprint AI（BOPRINTEL）知识图谱\n\n## 总览概览 [BV1hEPazNEbX P1 00:14] [BV1hEPazNEbX P1 01:53] [BV1hEPazNEbX P1 02:21]\n```mermaid\nflowchart TD\n    UE5[\"Unreal Engine 5\"] --> Plugin[\"BOPRINTEL 插件\"]\n    Plugin --> AI_Agent[\"AI Agent（Codex / Claude / Gemini）\"]\n    Plugin --> UI_Window[\"BOPRINTEL 窗口\"]\n    UI_Window --> User_Command[\"用户指令（Prompt）\"]\n    User_Command --> AI_Agent\n    AI_Agent --> Result[\"自动化修改\"]\n    Result --> Blueprint[\"Blueprint（逻辑）\"]\n```\n\n## 安装与初始化流程 [BV1hEPazNEbX P1 00:35] [BV1hEPazNEbX P1 01:01] [BV1hEPazNEbX P1 01:49] [BV1hEPazNEbX P1 01:36]\n```mermaid\nflowchart TD\n    Browser[\"打开浏览器\"] --> Site[\"访问插件官网\"]\n    Site --> GetStarted[\"点击 Get Started 创建账号\"]\n    GetStarted --> Login[\"登录账号\"]\n    Login --> Download[\"下载 BOPRINTEL 插件\"]\n    Download --> Choose_Version[\"选择 UE5.7 版本\"]\n    Choose_Version --> Choose_Template[\"选择 第三人称 模板\"]\n    Choose_Template --> Enable[\"在插件管理中启用插件\"]\n    Enable --> Restart[\"重启 Unreal Engine\"]\n    Restart --> OpenWindow[\"打开 BOPRINTEL 窗口\"]\n    OpenWindow --> ConnectAI[\"连接 AI 代理（Codex / Claude / Gemini）\"]\n    ConnectAI --> Ready[\"插件准备就绪，可下达指令\"]\n```\n\n## 对话式操作示例：天空颜色修改 [BV1hEPazNEbX P1 02:21] [BV1hEPazNEbX P1 02:29] [BV1hEPazNEbX P1 02:55] [BV1hEPazNEbX P1 03:04]\n```mermaid\nflowchart TD\n    Greeting[\"用户：Hello\"] --> AI_Ask[\"AI：我能为您的虚幻项目提供什么帮助？\"]\n    AI_Ask --> Request[\"用户：把天空颜色改成深蓝色\"]\n    Request --> AI_ChangeSky[\"AI 修改 Sky 颜色\"]\n    AI_ChangeSky --> ShowResult[\"显示：天空变为深蓝色\"]\n    ShowResult --> Prompt_Darker[\"AI：是否需要更暗的深夜效果？\"]\n    Prompt_Darker --> User_Confirm[\"用户：是\"]\n    User_Confirm --> AI_Adjust[\"AI 调整 Skylight 与 Directional Light 强度\"]\n    AI_Adjust --> Result_Darker[\"显示：更暗的夜间效果\"]\n```\n\n## Blueprint 自动化修改案例：添加序列与摄像机 [BV1hEPazNEbX P1 04:22] [BV1hEPazNEbX P1 04:46] [BV1hEPazNEbX P1 05:00] [BV1hEPazNEbX P1 06:07]\n```mermaid\nflowchart TD\n    BaseBlueprint[\"已有 Blueprint（关卡序列）\"]\n    Prompt_AddSeq[\"用户提示：添加序列\"]\n    AI_AddSeq[\"AI 在关卡添加 Sequence 节点\"]\n    Prompt_AddCam[\"用户提示：在序列中添加电影摄像机\"]\n    AI_AddCam[\"AI 添加名为 short time 的 Cinematic Camera\"]\n    FinalBlueprint[\"修改后的 Blueprint（含 Sequence 与 Camera）\"]\n\n    BaseBlueprint --> Prompt_AddSeq --> AI_AddSeq --> Prompt_AddCam --> AI_AddCam --> FinalBlueprint\n```",
+      "diagrams": [
+        {
+          "title": "总览概览",
+          "code": "flowchart TD\n    UE5[\"Unreal Engine 5\"] --> Plugin[\"BOPRINTEL 插件\"]\n    Plugin --> AI_Agent[\"AI Agent（Codex / Claude / Gemini）\"]\n    Plugin --> UI_Window[\"BOPRINTEL 窗口\"]\n    UI_Window --> User_Command[\"用户指令（Prompt）\"]\n    User_Command --> AI_Agent\n    AI_Agent --> Result[\"自动化修改\"]\n    Result --> Blueprint[\"Blueprint（逻辑）\"]"
+        },
+        {
+          "title": "安装与初始化流程",
+          "code": "flowchart TD\n    Browser[\"打开浏览器\"] --> Site[\"访问插件官网\"]\n    Site --> GetStarted[\"点击 Get Started 创建账号\"]\n    GetStarted --> Login[\"登录账号\"]\n    Login --> Download[\"下载 BOPRINTEL 插件\"]\n    Download --> Choose_Version[\"选择 UE5.7 版本\"]\n    Choose_Version --> Choose_Template[\"选择 第三人称 模板\"]\n    Choose_Template --> Enable[\"在插件管理中启用插件\"]\n    Enable --> Restart[\"重启 Unreal Engine\"]\n    Restart --> OpenWindow[\"打开 BOPRINTEL 窗口\"]\n    OpenWindow --> ConnectAI[\"连接 AI 代理（Codex / Claude / Gemini）\"]\n    ConnectAI --> Ready[\"插件准备就绪，可下达指令\"]"
+        },
+        {
+          "title": "对话式操作示例：天空颜色修改",
+          "code": "flowchart TD\n    Greeting[\"用户：Hello\"] --> AI_Ask[\"AI：我能为您的虚幻项目提供什么帮助？\"]\n    AI_Ask --> Request[\"用户：把天空颜色改成深蓝色\"]\n    Request --> AI_ChangeSky[\"AI 修改 Sky 颜色\"]\n    AI_ChangeSky --> ShowResult[\"显示：天空变为深蓝色\"]\n    ShowResult --> Prompt_Darker[\"AI：是否需要更暗的深夜效果？\"]\n    Prompt_Darker --> User_Confirm[\"用户：是\"]\n    User_Confirm --> AI_Adjust[\"AI 调整 Skylight 与 Directional Light 强度\"]\n    AI_Adjust --> Result_Darker[\"显示：更暗的夜间效果\"]"
+        },
+        {
+          "title": "Blueprint 自动化修改案例：添加序列与摄像机",
+          "code": "flowchart TD\n    BaseBlueprint[\"已有 Blueprint（关卡序列）\"]\n    Prompt_AddSeq[\"用户提示：添加序列\"]\n    AI_AddSeq[\"AI 在关卡添加 Sequence 节点\"]\n    Prompt_AddCam[\"用户提示：在序列中添加电影摄像机\"]\n    AI_AddCam[\"AI 添加名为 short time 的 Cinematic Camera\"]\n    FinalBlueprint[\"修改后的 Blueprint（含 Sequence 与 Camera）\"]\n\n    BaseBlueprint --> Prompt_AddSeq --> AI_AddSeq --> Prompt_AddCam --> AI_AddCam --> FinalBlueprint"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T16:07:49+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Blueprint AI（BOPRINTEL）知识图谱\n\n## 总览概览 [BV1hEPazNEbX P1 00:14] [BV1hEPazNEbX P1 01:53] [BV1hEPazNEbX P1 02:21]\n```mermaid\nflowchart TD\n    UE5[\"Unreal Engine 5\"] --> Plugin[\"BOPRINTEL 插件\"]\n    Plugin --> AI_Agent[\"AI Agent（Codex / Claude / Gemini）\"]\n    Plugin --> UI_Window[\"BOPRINTEL 窗口\"]\n    UI_Window --> User_Command[\"用户指令（Prompt）\"]\n    User_Command --> AI_Agent\n    AI_Agent --> Result[\"自动化修改\"]\n    Result --> Blueprint[\"Blueprint（逻辑）\"]\n```\n\n## 安装与初始化流程 [BV1hEPazNEbX P1 00:35] [BV1hEPazNEbX P1 01:01] [BV1hEPazNEbX P1 01:49] [BV1hEPazNEbX P1 01:36]\n```mermaid\nflowchart TD\n    Browser[\"打开浏览器\"] --> Site[\"访问插件官网\"]\n    Site --> GetStarted[\"点击 Get Started 创建账号\"]\n    GetStarted --> Login[\"登录账号\"]\n    Login --> Download[\"下载 BOPRINTEL 插件\"]\n    Download --> Choose_Version[\"选择 UE5.7 版本\"]\n    Choose_Version --> Choose_Template[\"选择 第三人称 模板\"]\n    Choose_Template --> Enable[\"在插件管理中启用插件\"]\n    Enable --> Restart[\"重启 Unreal Engine\"]\n    Restart --> OpenWindow[\"打开 BOPRINTEL 窗口\"]\n    OpenWindow --> ConnectAI[\"连接 AI 代理（Codex / Claude / Gemini）\"]\n    ConnectAI --> Ready[\"插件准备就绪，可下达指令\"]\n```\n\n## 对话式操作示例：天空颜色修改 [BV1hEPazNEbX P1 02:21] [BV1hEPazNEbX P1 02:29] [BV1hEPazNEbX P1 02:55] [BV1hEPazNEbX P1 03:04]\n```mermaid\nflowchart TD\n    Greeting[\"用户：Hello\"] --> AI_Ask[\"AI：我能为您的虚幻项目提供什么帮助？\"]\n    AI_Ask --> Request[\"用户：把天空颜色改成深蓝色\"]\n    Request --> AI_ChangeSky[\"AI 修改 Sky 颜色\"]\n    AI_ChangeSky --> ShowResult[\"显示：天空变为深蓝色\"]\n    ShowResult --> Prompt_Darker[\"AI：是否需要更暗的深夜效果？\"]\n    Prompt_Darker --> User_Confirm[\"用户：是\"]\n    User_Confirm --> AI_Adjust[\"AI 调整 Skylight 与 Directional Light 强度\"]\n    AI_Adjust --> Result_Darker[\"显示：更暗的夜间效果\"]\n```\n\n## Blueprint 自动化修改案例：添加序列与摄像机 [BV1hEPazNEbX P1 04:22] [BV1hEPazNEbX P1 04:46] [BV1hEPazNEbX P1 05:00] [BV1hEPazNEbX P1 06:07]\n```mermaid\nflowchart TD\n    BaseBlueprint[\"已有 Blueprint（关卡序列）\"]\n    Prompt_AddSeq[\"用户提示：添加序列\"]\n    AI_AddSeq[\"AI 在关卡添加 Sequence 节点\"]\n    Prompt_AddCam[\"用户提示：在序列中添加电影摄像机\"]\n    AI_AddCam[\"AI 添加名为 short time 的 Cinematic Camera\"]\n    FinalBlueprint[\"修改后的 Blueprint（含 Sequence 与 Camera）\"]\n\n    BaseBlueprint --> Prompt_AddSeq --> AI_AddSeq --> Prompt_AddCam --> AI_AddCam --> FinalBlueprint\n```",
+  "diagrams": [
+    {
+      "title": "总览概览",
+      "code": "flowchart TD\n    UE5[\"Unreal Engine 5\"] --> Plugin[\"BOPRINTEL 插件\"]\n    Plugin --> AI_Agent[\"AI Agent（Codex / Claude / Gemini）\"]\n    Plugin --> UI_Window[\"BOPRINTEL 窗口\"]\n    UI_Window --> User_Command[\"用户指令（Prompt）\"]\n    User_Command --> AI_Agent\n    AI_Agent --> Result[\"自动化修改\"]\n    Result --> Blueprint[\"Blueprint（逻辑）\"]"
+    },
+    {
+      "title": "安装与初始化流程",
+      "code": "flowchart TD\n    Browser[\"打开浏览器\"] --> Site[\"访问插件官网\"]\n    Site --> GetStarted[\"点击 Get Started 创建账号\"]\n    GetStarted --> Login[\"登录账号\"]\n    Login --> Download[\"下载 BOPRINTEL 插件\"]\n    Download --> Choose_Version[\"选择 UE5.7 版本\"]\n    Choose_Version --> Choose_Template[\"选择 第三人称 模板\"]\n    Choose_Template --> Enable[\"在插件管理中启用插件\"]\n    Enable --> Restart[\"重启 Unreal Engine\"]\n    Restart --> OpenWindow[\"打开 BOPRINTEL 窗口\"]\n    OpenWindow --> ConnectAI[\"连接 AI 代理（Codex / Claude / Gemini）\"]\n    ConnectAI --> Ready[\"插件准备就绪，可下达指令\"]"
+    },
+    {
+      "title": "对话式操作示例：天空颜色修改",
+      "code": "flowchart TD\n    Greeting[\"用户：Hello\"] --> AI_Ask[\"AI：我能为您的虚幻项目提供什么帮助？\"]\n    AI_Ask --> Request[\"用户：把天空颜色改成深蓝色\"]\n    Request --> AI_ChangeSky[\"AI 修改 Sky 颜色\"]\n    AI_ChangeSky --> ShowResult[\"显示：天空变为深蓝色\"]\n    ShowResult --> Prompt_Darker[\"AI：是否需要更暗的深夜效果？\"]\n    Prompt_Darker --> User_Confirm[\"用户：是\"]\n    User_Confirm --> AI_Adjust[\"AI 调整 Skylight 与 Directional Light 强度\"]\n    AI_Adjust --> Result_Darker[\"显示：更暗的夜间效果\"]"
+    },
+    {
+      "title": "Blueprint 自动化修改案例：添加序列与摄像机",
+      "code": "flowchart TD\n    BaseBlueprint[\"已有 Blueprint（关卡序列）\"]\n    Prompt_AddSeq[\"用户提示：添加序列\"]\n    AI_AddSeq[\"AI 在关卡添加 Sequence 节点\"]\n    Prompt_AddCam[\"用户提示：在序列中添加电影摄像机\"]\n    AI_AddCam[\"AI 添加名为 short time 的 Cinematic Camera\"]\n    FinalBlueprint[\"修改后的 Blueprint（含 Sequence 与 Camera）\"]\n\n    BaseBlueprint --> Prompt_AddSeq --> AI_AddSeq --> Prompt_AddCam --> AI_AddCam --> FinalBlueprint"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T16:07:49+00:00"
+}

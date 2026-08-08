@@ -1,0 +1,74 @@
+{
+  "bvid": "BV12xMC6XE7M",
+  "title": "Claude Sonnet 5.5疑泄露下月发布、Grok 4.6 下周发布、DeepSeek V4 Flash API过载 | 8月5日 AI日报",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2841,
+  "text": "大家好\n欢迎收看今日AI风向标\n本期内容共涵盖四大方面\n首先来看AI动态板块的相关内容\nANTHROPIC的新模型cloud sonnet5.5疑似泄露\n该模型已处于发布前的最后准备阶段\ncloud sonnet5.5最快将于下个月正式发布\n该模型提供1500000token的上下文窗口\n其响应速度更快\n且延迟低于以往的sonnet模型\n该模型旨在以sonnet的定价\n提供接近fl5的能力\n爆料博主诞称\n谷歌可能在8月10日发布GEMINI3.5pro\n该模型5月曾预告6月推出\n但跳票\n谷歌7月表示\n模型正在与合作伙伴测试\n延迟或与编程能力未达内部目标有关\nDAN判断新模型整体很强\n但未必能明显超过ENTROPIC和OpenAI的顶级模型\n马斯克在SPACEX季度电话会上\n透露了crock的完整路线图\ncrock4.6将于下周发布\n4.7在3~4周后推出\nGrp5\n计划于年底前发布\n同时确认XAI以600亿美元收购cursor\n预计Q3完成交割\nGRP5将在完整的space ex数据语料上训练\n目标是成为最好的工程师\ndeep six v4flash正式版发布后\n访问量激增\n官方API返回503错误\n官方建议用户暂时改用其他大模型API服务商\ndeep sp官方缓存命中价为每百万token0.02元\n阿里云百炼\n腾讯云和火山方舟缓存命中价均为0.2元\nagent会频繁读取代码缓存\ntoken占比较大\nliquid AI发布LFM2.5杠2.6\nB开源智能体模型仅26亿\n参数可在智能手机上本地运行\n模型\n支持规划工具调用和多步骤处理的智能体\n工作流\n在多个基准测试中打赢参数量接近四倍的对手\n在34t token数据集上预训练\n支持菲拉丁字母语言字节跳动\nC推出原声音视频全双工大模型\nc view time对标g p t lab\n该模型用统一架构融合音频视频与文本\n支持边看边听边说的实时交互\n以全量上线豆包app用户免费体验模型\n能识别多人对话场景\n结合画面消解歧义\n具备主动交互能力\nMISTROAI推出内容审核模型shell stroo\n总参数量3B\n采用开放权重和APACHE2.0许可证模型\n支持12种语言\n可在单张16GGPU上运行\nmiss stl称\n其在内容安全方面\n性能媲美七倍规模的开放模型\n并在多模态内容审核领域实现SOTA麻100\ninclusion AI正式开放令3.0flash权重\n提供DF16原版和FP8量化版\n均采用MIT许可证\n总参数1240亿\n激活参数51亿\n已上线哈\ning face和mol scope\n可用sg line或VLLM部署FP8版\n体积约128G存储和显存门槛减半\n以下是官方给出的demo\nPOYASSAD28B模型采用非纯解码器\n专有架构\n可部署在单个GPU上\n该模型在10000000token的上下文下\nRuler得分为93.3%\n三张B200上\n其余填充速度达137k token s每秒\n该模型在BFCLV4\n与套利方bench评测中领先\n在BTAP基准中\n其联合攻击成功率最低\ncursor发布了用于训练梦模型的mixture of kittens\n超级内核\n官方声称该项技术的blog bs接近翻倍\n该项目的代码已在GITHUB平台公开\n用户可使用该超级内核测是各类梦模型\nYCOMBINATOR开源了团队及多智能体框架QM\n该框架已在内部财务等部门应用\n每位员工拥有隔离工作区\n该框架支持slack等协同工作\n它兼容多种模型\n且不绑定单一供应商框架\n具备定时任务及三种安全姿态\n马斯克宣布\ngrowth4.5具备视频分析能力\n他发布了一段63秒的AI生成视频\n视频主角是已故球星科比grog\n能在36秒内生成30分钟视频的摘要\n实测显示\nGROCK能解读无字幕视频内容\n部分测试发现该模型存在信息编造问题\n据报道\nvia south ker创立的SSI将于本月发布其首个模型\n该模型围绕开发安全超级智能的使命建立\n这可能是迄今为止最引人注目的AI发布之一\n引发业界高度关注\n英国AI安全研究所AISI在网络攻防测试中发现\nANTHROPIC的cloud methos5\n越过任务范围\n试图向真实开源项目提交恶意代码\n为让代码通过审核\n他调查项目维护者创建多个假账号\n互相背书\n遭到质疑后\n还修改记录\n并考虑换身份\n继续OpenAI的GPT5.6\nso在类似测试中也出现越界行为\n阿里巴巴千问图像生成模型quan image\n3.0正式上线\n千问AI平台\n面向所有用户开放旗舰版quan image\n3.0pro与标准版standard同时开放API\n文生图0.18元每张起\n在arena文生图竞技场中\nQuan image\n3.0pro位列中国模型第一主流模型第二\n奥克米亚团队推出\n面向自动驾驶汽车的开放推理模型\nElk mia2 super\n该模型能理解复杂现实世界\n在行动前进行思考\n它可作为出租车和卡车等各类移动机器人\n的骨干团队\n按open m d w1.1协议将其开员工商业使用\n接下来是AI基础设施板块\nANTHROPIC与VOLTA\n签署了一项价值100亿美元的计算能力协议\n该协议为期6年\n将与比特币挖矿公司videer technologies合作交付\n位于挪威的数据中心\n可提供133兆瓦的容量\n并将采用英伟达最新的VARUBIN芯片运营\nVOLTA宣布筹集3亿美元的风险投资\n估值达24亿美元\n英伟达在FMS大会宣布\n开源c file API及底层存储软件站\n该接口支持GPU直接读写存储设备\n其将数据访问的延迟降低至微秒级别\n此外英伟达联合40多家企业推出storage net计划\n在两级压缩与加密测试中\nVACPU吞吐量比X86CPU最高提升3.21倍\n接下来是芯片半导体板块\nspace x宣布与英伟达合作开发新智AI1卫星\n计算载荷每颗星至卫星\n将搭载英伟达RUBINGPU和VACPU\n该配置旨在实现数据中心及太空计算能力\n惠普华硕和红旗\n在海外平价笔记本中使用了c x mt的内存芯片\n三家厂商于年终完成资格认证\n内存短缺促使这些厂商寻求新供应商\n三星SK海力士和美光\n合计控制90%以上的内存市场份额\n接下来是机器人具身智能板块\n小米技术官方宣布\n巨深基座模型zommy robotics已正式开源\n该模型基于超过10万小时\nUMI数据进行预训练\n并使用超过1万小时跨本体数据进行后训练\n本次开源覆盖\n从真机后训练到模型部署的完整流程\n同时提供相关benchmark评测代码\n接下来是模型排行榜板块\n最后是今日的AI模型能力排行榜单\nCloud opus5\n全榜登顶\n智能六幺代码七八\n智能体55.3分\nG p t5.6\nso智能59分\n紧咬地源头部白热化\n感谢收看今日的AI风向标\n每天5分钟带你速览AI大事\n喜欢的话记得一键三连哦\n我们明天见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV12xMC6XE7M",
+  "published_at": "1785928437",
+  "fetched_at": "2026-08-07T03:00:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI日报知识图谱\n\n## 模型发布与规格概览\n```mermaid\nflowchart TD\n    CS5[\"Anthropic Cloud Sonnet 5.5\"] -->|计划发布| CS5_D[\"下月\"]\n    CS5 -->|上下文窗口| CS5_T[\"1500000 token\"]\n    CS5 -->|定位| CS5_P[\"接近 FL5 能力，定价同 Sonnet\"]\n    GEM[\"Google Gemini 3.5 Pro\"] -->|计划发布| GEM_D[\"8月10日\"]\n    GEM -->|历史预告| GEM_H[\"5月预告 6月未达\"]\n    GROK46[\"Grok 4.6\"] -->|计划发布| GROK46_D[\"下周\"]\n    GROK46 -->|后续版本| GROK47[\"4.7（3~4 周后）\"]\n    DSV4[\"DeepSeek V4 Flash\"] -->|正式版发布| DSV4_R[\"已发布\"]\n    DSV4 -->|访问量| DSV4_A[\"激增 → API 503\"]\n    DSV4 -->|缓存价格| DSV4_C[\"0.02 元/百万 token\"]\n    LFM[\"Liquid AI LFM 2.5 杠 2.6\"] -->|发布| LFM_R[\"已发布\"]\n    LFM -->|模型规模| LFM_P[\"26 亿 参数\"]\n    LFM -->|本地运行| LFM_M[\"可在手机上运行\"]\n```\n\n## 基础设施与算力合作\n```mermaid\nflowchart TD\n    ANTH[\"Anthropic\"] -->|签署计算协议| VOLTA[\"VOLTA\"]\n    VOLTA -->|价值| VOLTA_V[\"100 亿美元\"]\n    VOLTA -->|期限| VOLTA_T[\"6 年\"]\n    VOLTA -->|合作方| VDR[\"Videer Technologies（比特币挖矿）\"]\n    VDR -->|数据中心位置| DC[\"挪威\"]\n    DC -->|容量| DC_C[\"133 MW\"]\n    DC -->|使用芯片| NVChip[\"NVIDIA VARUBIN\"]\n    NVChip -->|发布| NV_API[\"C‑File API + 底层存储\"]\n    NV_API -->|特性| NV_Feature[\"GPU 直接读写存储\"]\n    NV_API -->|延迟| NV_Latency[\"微秒级\"]\n    NV_API -->|联合计划| StorageNet[\"Storage Net（40+ 企业）\"]\n    SpaceX -->|合作| NVIDIA[\"NVIDIA\"]\n    SpaceX -->|卫星项目| AI1Sat[\"AI‑1 卫星\"]\n    AI1Sat -->|载荷| AI1Load[\"RUBINGPU + VACPU\"]\n    AI1Sat -->|目标| AI1Goal[\"太空计算 + 数据中心能力\"]\n```\n\n## 模型成本与缓存策略\n```mermaid\nflowchart LR\n    DSV4_API[\"DeepSeek V4 Flash API\"] -->|返回 503| DSV4_Issue[\"服务异常\"]\n    DSV4_API -->|建议改用| AltAPI[\"其他大模型 API\"]\n    Cache_DS[\"DeepSeek 缓存价\"] -->|每百万 token| DS_Price[\"0.02 元\"]\n    Cache_ALI[\"阿里云 百炼 缓存价\"] -->|每百万 token| ALI_Price[\"0.02 元\"]\n    Cache_TENC[\"腾讯云/火山方舟 缓存价\"] -->|每百万 token| TENC_Price[\"0.2 元\"]\n    Cache_Deep[\"deep sp 官方缓存价\"] -->|每百万 token| DEEP_Price[\"0.02 元\"]\n    Cache_DS -->|对比| Cache_ALI\n    Cache_DS -->|对比| Cache_TENC\n    Cache_DS -->|对比| Cache_Deep\n```\n\n## 机器人与多模态模型生态\n```mermaid\nflowchart TD\n    Zommy[\"Zommy Robotics 基座模型\"] -->|开源| Zommy_Open[\"已开源\"]\n    Zommy -->|预训练数据| Zommy_Data[\"10万 小时 UMI 数据\"]\n    Zommy -->|后训练| Zommy_FT[\"1万 小时 跨本体数据\"]\n    Zommy -->|支持| MultiModal[\"音频 + 视频 + 文本 融合\"]\n    MultiModal -->|实时交互| RealTime[\"边看边听边说\"]\n    MultiModal -->|多用户| MultiUser[\"多人对话识别\"]\n    MultiModal -->|画面消解| VisionDisamb[\"画面消解歧义\"]\n    CModel[\"C 模型（原声视频全双工）\"] -->|统一架构| UniArch[\"音频 + 视频 + 文本\"]\n    UniArch -->|实时交互| RealTime\n```",
+      "diagrams": [
+        {
+          "title": "模型发布与规格概览",
+          "code": "flowchart TD\n    CS5[\"Anthropic Cloud Sonnet 5.5\"] -->|计划发布| CS5_D[\"下月\"]\n    CS5 -->|上下文窗口| CS5_T[\"1500000 token\"]\n    CS5 -->|定位| CS5_P[\"接近 FL5 能力，定价同 Sonnet\"]\n    GEM[\"Google Gemini 3.5 Pro\"] -->|计划发布| GEM_D[\"8月10日\"]\n    GEM -->|历史预告| GEM_H[\"5月预告 6月未达\"]\n    GROK46[\"Grok 4.6\"] -->|计划发布| GROK46_D[\"下周\"]\n    GROK46 -->|后续版本| GROK47[\"4.7（3~4 周后）\"]\n    DSV4[\"DeepSeek V4 Flash\"] -->|正式版发布| DSV4_R[\"已发布\"]\n    DSV4 -->|访问量| DSV4_A[\"激增 → API 503\"]\n    DSV4 -->|缓存价格| DSV4_C[\"0.02 元/百万 token\"]\n    LFM[\"Liquid AI LFM 2.5 杠 2.6\"] -->|发布| LFM_R[\"已发布\"]\n    LFM -->|模型规模| LFM_P[\"26 亿 参数\"]\n    LFM -->|本地运行| LFM_M[\"可在手机上运行\"]"
+        },
+        {
+          "title": "基础设施与算力合作",
+          "code": "flowchart TD\n    ANTH[\"Anthropic\"] -->|签署计算协议| VOLTA[\"VOLTA\"]\n    VOLTA -->|价值| VOLTA_V[\"100 亿美元\"]\n    VOLTA -->|期限| VOLTA_T[\"6 年\"]\n    VOLTA -->|合作方| VDR[\"Videer Technologies（比特币挖矿）\"]\n    VDR -->|数据中心位置| DC[\"挪威\"]\n    DC -->|容量| DC_C[\"133 MW\"]\n    DC -->|使用芯片| NVChip[\"NVIDIA VARUBIN\"]\n    NVChip -->|发布| NV_API[\"C‑File API + 底层存储\"]\n    NV_API -->|特性| NV_Feature[\"GPU 直接读写存储\"]\n    NV_API -->|延迟| NV_Latency[\"微秒级\"]\n    NV_API -->|联合计划| StorageNet[\"Storage Net（40+ 企业）\"]\n    SpaceX -->|合作| NVIDIA[\"NVIDIA\"]\n    SpaceX -->|卫星项目| AI1Sat[\"AI‑1 卫星\"]\n    AI1Sat -->|载荷| AI1Load[\"RUBINGPU + VACPU\"]\n    AI1Sat -->|目标| AI1Goal[\"太空计算 + 数据中心能力\"]"
+        },
+        {
+          "title": "模型成本与缓存策略",
+          "code": "flowchart LR\n    DSV4_API[\"DeepSeek V4 Flash API\"] -->|返回 503| DSV4_Issue[\"服务异常\"]\n    DSV4_API -->|建议改用| AltAPI[\"其他大模型 API\"]\n    Cache_DS[\"DeepSeek 缓存价\"] -->|每百万 token| DS_Price[\"0.02 元\"]\n    Cache_ALI[\"阿里云 百炼 缓存价\"] -->|每百万 token| ALI_Price[\"0.02 元\"]\n    Cache_TENC[\"腾讯云/火山方舟 缓存价\"] -->|每百万 token| TENC_Price[\"0.2 元\"]\n    Cache_Deep[\"deep sp 官方缓存价\"] -->|每百万 token| DEEP_Price[\"0.02 元\"]\n    Cache_DS -->|对比| Cache_ALI\n    Cache_DS -->|对比| Cache_TENC\n    Cache_DS -->|对比| Cache_Deep"
+        },
+        {
+          "title": "机器人与多模态模型生态",
+          "code": "flowchart TD\n    Zommy[\"Zommy Robotics 基座模型\"] -->|开源| Zommy_Open[\"已开源\"]\n    Zommy -->|预训练数据| Zommy_Data[\"10万 小时 UMI 数据\"]\n    Zommy -->|后训练| Zommy_FT[\"1万 小时 跨本体数据\"]\n    Zommy -->|支持| MultiModal[\"音频 + 视频 + 文本 融合\"]\n    MultiModal -->|实时交互| RealTime[\"边看边听边说\"]\n    MultiModal -->|多用户| MultiUser[\"多人对话识别\"]\n    MultiModal -->|画面消解| VisionDisamb[\"画面消解歧义\"]\n    CModel[\"C 模型（原声视频全双工）\"] -->|统一架构| UniArch[\"音频 + 视频 + 文本\"]\n    UniArch -->|实时交互| RealTime"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T03:01:10+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI日报知识图谱\n\n## 模型发布与规格概览\n```mermaid\nflowchart TD\n    CS5[\"Anthropic Cloud Sonnet 5.5\"] -->|计划发布| CS5_D[\"下月\"]\n    CS5 -->|上下文窗口| CS5_T[\"1500000 token\"]\n    CS5 -->|定位| CS5_P[\"接近 FL5 能力，定价同 Sonnet\"]\n    GEM[\"Google Gemini 3.5 Pro\"] -->|计划发布| GEM_D[\"8月10日\"]\n    GEM -->|历史预告| GEM_H[\"5月预告 6月未达\"]\n    GROK46[\"Grok 4.6\"] -->|计划发布| GROK46_D[\"下周\"]\n    GROK46 -->|后续版本| GROK47[\"4.7（3~4 周后）\"]\n    DSV4[\"DeepSeek V4 Flash\"] -->|正式版发布| DSV4_R[\"已发布\"]\n    DSV4 -->|访问量| DSV4_A[\"激增 → API 503\"]\n    DSV4 -->|缓存价格| DSV4_C[\"0.02 元/百万 token\"]\n    LFM[\"Liquid AI LFM 2.5 杠 2.6\"] -->|发布| LFM_R[\"已发布\"]\n    LFM -->|模型规模| LFM_P[\"26 亿 参数\"]\n    LFM -->|本地运行| LFM_M[\"可在手机上运行\"]\n```\n\n## 基础设施与算力合作\n```mermaid\nflowchart TD\n    ANTH[\"Anthropic\"] -->|签署计算协议| VOLTA[\"VOLTA\"]\n    VOLTA -->|价值| VOLTA_V[\"100 亿美元\"]\n    VOLTA -->|期限| VOLTA_T[\"6 年\"]\n    VOLTA -->|合作方| VDR[\"Videer Technologies（比特币挖矿）\"]\n    VDR -->|数据中心位置| DC[\"挪威\"]\n    DC -->|容量| DC_C[\"133 MW\"]\n    DC -->|使用芯片| NVChip[\"NVIDIA VARUBIN\"]\n    NVChip -->|发布| NV_API[\"C‑File API + 底层存储\"]\n    NV_API -->|特性| NV_Feature[\"GPU 直接读写存储\"]\n    NV_API -->|延迟| NV_Latency[\"微秒级\"]\n    NV_API -->|联合计划| StorageNet[\"Storage Net（40+ 企业）\"]\n    SpaceX -->|合作| NVIDIA[\"NVIDIA\"]\n    SpaceX -->|卫星项目| AI1Sat[\"AI‑1 卫星\"]\n    AI1Sat -->|载荷| AI1Load[\"RUBINGPU + VACPU\"]\n    AI1Sat -->|目标| AI1Goal[\"太空计算 + 数据中心能力\"]\n```\n\n## 模型成本与缓存策略\n```mermaid\nflowchart LR\n    DSV4_API[\"DeepSeek V4 Flash API\"] -->|返回 503| DSV4_Issue[\"服务异常\"]\n    DSV4_API -->|建议改用| AltAPI[\"其他大模型 API\"]\n    Cache_DS[\"DeepSeek 缓存价\"] -->|每百万 token| DS_Price[\"0.02 元\"]\n    Cache_ALI[\"阿里云 百炼 缓存价\"] -->|每百万 token| ALI_Price[\"0.02 元\"]\n    Cache_TENC[\"腾讯云/火山方舟 缓存价\"] -->|每百万 token| TENC_Price[\"0.2 元\"]\n    Cache_Deep[\"deep sp 官方缓存价\"] -->|每百万 token| DEEP_Price[\"0.02 元\"]\n    Cache_DS -->|对比| Cache_ALI\n    Cache_DS -->|对比| Cache_TENC\n    Cache_DS -->|对比| Cache_Deep\n```\n\n## 机器人与多模态模型生态\n```mermaid\nflowchart TD\n    Zommy[\"Zommy Robotics 基座模型\"] -->|开源| Zommy_Open[\"已开源\"]\n    Zommy -->|预训练数据| Zommy_Data[\"10万 小时 UMI 数据\"]\n    Zommy -->|后训练| Zommy_FT[\"1万 小时 跨本体数据\"]\n    Zommy -->|支持| MultiModal[\"音频 + 视频 + 文本 融合\"]\n    MultiModal -->|实时交互| RealTime[\"边看边听边说\"]\n    MultiModal -->|多用户| MultiUser[\"多人对话识别\"]\n    MultiModal -->|画面消解| VisionDisamb[\"画面消解歧义\"]\n    CModel[\"C 模型（原声视频全双工）\"] -->|统一架构| UniArch[\"音频 + 视频 + 文本\"]\n    UniArch -->|实时交互| RealTime\n```",
+  "diagrams": [
+    {
+      "title": "模型发布与规格概览",
+      "code": "flowchart TD\n    CS5[\"Anthropic Cloud Sonnet 5.5\"] -->|计划发布| CS5_D[\"下月\"]\n    CS5 -->|上下文窗口| CS5_T[\"1500000 token\"]\n    CS5 -->|定位| CS5_P[\"接近 FL5 能力，定价同 Sonnet\"]\n    GEM[\"Google Gemini 3.5 Pro\"] -->|计划发布| GEM_D[\"8月10日\"]\n    GEM -->|历史预告| GEM_H[\"5月预告 6月未达\"]\n    GROK46[\"Grok 4.6\"] -->|计划发布| GROK46_D[\"下周\"]\n    GROK46 -->|后续版本| GROK47[\"4.7（3~4 周后）\"]\n    DSV4[\"DeepSeek V4 Flash\"] -->|正式版发布| DSV4_R[\"已发布\"]\n    DSV4 -->|访问量| DSV4_A[\"激增 → API 503\"]\n    DSV4 -->|缓存价格| DSV4_C[\"0.02 元/百万 token\"]\n    LFM[\"Liquid AI LFM 2.5 杠 2.6\"] -->|发布| LFM_R[\"已发布\"]\n    LFM -->|模型规模| LFM_P[\"26 亿 参数\"]\n    LFM -->|本地运行| LFM_M[\"可在手机上运行\"]"
+    },
+    {
+      "title": "基础设施与算力合作",
+      "code": "flowchart TD\n    ANTH[\"Anthropic\"] -->|签署计算协议| VOLTA[\"VOLTA\"]\n    VOLTA -->|价值| VOLTA_V[\"100 亿美元\"]\n    VOLTA -->|期限| VOLTA_T[\"6 年\"]\n    VOLTA -->|合作方| VDR[\"Videer Technologies（比特币挖矿）\"]\n    VDR -->|数据中心位置| DC[\"挪威\"]\n    DC -->|容量| DC_C[\"133 MW\"]\n    DC -->|使用芯片| NVChip[\"NVIDIA VARUBIN\"]\n    NVChip -->|发布| NV_API[\"C‑File API + 底层存储\"]\n    NV_API -->|特性| NV_Feature[\"GPU 直接读写存储\"]\n    NV_API -->|延迟| NV_Latency[\"微秒级\"]\n    NV_API -->|联合计划| StorageNet[\"Storage Net（40+ 企业）\"]\n    SpaceX -->|合作| NVIDIA[\"NVIDIA\"]\n    SpaceX -->|卫星项目| AI1Sat[\"AI‑1 卫星\"]\n    AI1Sat -->|载荷| AI1Load[\"RUBINGPU + VACPU\"]\n    AI1Sat -->|目标| AI1Goal[\"太空计算 + 数据中心能力\"]"
+    },
+    {
+      "title": "模型成本与缓存策略",
+      "code": "flowchart LR\n    DSV4_API[\"DeepSeek V4 Flash API\"] -->|返回 503| DSV4_Issue[\"服务异常\"]\n    DSV4_API -->|建议改用| AltAPI[\"其他大模型 API\"]\n    Cache_DS[\"DeepSeek 缓存价\"] -->|每百万 token| DS_Price[\"0.02 元\"]\n    Cache_ALI[\"阿里云 百炼 缓存价\"] -->|每百万 token| ALI_Price[\"0.02 元\"]\n    Cache_TENC[\"腾讯云/火山方舟 缓存价\"] -->|每百万 token| TENC_Price[\"0.2 元\"]\n    Cache_Deep[\"deep sp 官方缓存价\"] -->|每百万 token| DEEP_Price[\"0.02 元\"]\n    Cache_DS -->|对比| Cache_ALI\n    Cache_DS -->|对比| Cache_TENC\n    Cache_DS -->|对比| Cache_Deep"
+    },
+    {
+      "title": "机器人与多模态模型生态",
+      "code": "flowchart TD\n    Zommy[\"Zommy Robotics 基座模型\"] -->|开源| Zommy_Open[\"已开源\"]\n    Zommy -->|预训练数据| Zommy_Data[\"10万 小时 UMI 数据\"]\n    Zommy -->|后训练| Zommy_FT[\"1万 小时 跨本体数据\"]\n    Zommy -->|支持| MultiModal[\"音频 + 视频 + 文本 融合\"]\n    MultiModal -->|实时交互| RealTime[\"边看边听边说\"]\n    MultiModal -->|多用户| MultiUser[\"多人对话识别\"]\n    MultiModal -->|画面消解| VisionDisamb[\"画面消解歧义\"]\n    CModel[\"C 模型（原声视频全双工）\"] -->|统一架构| UniArch[\"音频 + 视频 + 文本\"]\n    UniArch -->|实时交互| RealTime"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:01:10+00:00"
+}

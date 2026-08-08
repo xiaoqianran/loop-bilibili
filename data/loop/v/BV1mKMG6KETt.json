@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1mKMG6KETt",
+  "title": "我用 GPT 5.6 做星际争霸，对比 GPT 5.5 后差距很明显",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1295,
+  "text": "这不是我手写的游戏项目\n这是我让GPT5.6\n基于GOA做出来的RTSS原型\n注意它不是一张截图\n也不是只能移动一个单位的小demo\n你现在看到的是一个真的能跑起来的\n星际争霸风格运行时\n但这不是我第一次让AI做RTS\n之前我用GPT5.5也做过一个gold版2DRTS\n他其实已经能做出很多基础东西\n地图单位资源战争迷雾\n小地图HUD还有基础战斗\n所以GPT5.5不是完全做不出来\n但他最后的问题是\n它更像一个通用RTS模板\n你能看出来这里有系统\n有单位\n有资源\n有操作\n可是你很难说他已经接近星际争霸\n因为他的单位还是worker soldier\nEnemy dummy\n这种通用角色画面也更像功能验证\n每个模块都有一点\n但没有形成一个完整的游戏质感\n而这次GPT5.6的差异就在这里\n他不是只把一个功能做出来\n他开始把星际争霸里的关键感觉接起来了\n你看现在这个画面\n这里有地形\n有战争迷雾\n有小地图\n有资源栏\n有底部HUD\n这些东西单独做一个都不算离谱\n真正难的是\n他们要在同一个游戏状态里一起工作\n比如我选中一个单位\n底部面板会立刻变化名字头像\n血量命令按钮都会跟着当前选择同步\n这说明GPT5.6做通的不只是UI\n而是从模拟层的单位状态到goat里的表现层\n再到玩家看到的HUD已经连成了一条链路\n再看右边这个debug roster\n它可以快速生成不同单位\nturn这边有s CV marine tank\nGlaz\nDrug ship\nBattle closer\nSir\n这边也能看到circling hydralist\nMeitalist\nGuardian\n这就不是一个通用RTS模板了\n他已经开始往星际争霸的单位体系靠近\n接下来重点看战斗画面里\nTERRAN和ZERK单位已经开始混战\n你能看到血条变化\n单位开火\n空中单位移动\n建筑燃烧死亡残骸\n还有地面上的反馈效果\n这些不是简单播放一个动画\n它背后要先判断目标\n再判断射程\n再处理武器冷却\n再结算伤害\n最后还要把死亡\n燃烧残骸这些事件交给GODA表现出来\n也就是说\nGPP5.6做出来的不是看起来像游戏的表层\n而是让一套游戏运行时真的转起来\n这就是GPT5.5和GPT5.6\n在这个项目里的区别\nGPT5.5可以把RTS的基础模块列出来\n也可以做出一个可运行模板\n但GPT5.6更强的地方\n使它更能维持一个复杂项目的上下文\n把多个系统持续接起来\n单位系统\n战斗系统\nUI系统\n战争迷雾地图表现\n空中单位\n地面单位建筑状态\n这些东西不是孤立存在的\n它们要在同一场景里同时工作\n而且互相不能打架\n当然这还不是完整的星际争霸经济系统\n完整AI战役流程\n平衡性性能优化都还没有到产品级\n但这段录屏已经能说明一件事\nGPT5.6已经不只是能写代码片段了\n只要给它清晰目标工程边界和可验证的小步骤\n他可以把一个复杂游戏项目一层一层推进到\n能运行\n能展示还能继续迭代的状态\n所以这期我想展示的不是AI1键做游戏\n而是GPT5.6\n现在已经具备了参与复杂游戏开发的能力\n他做出来的不是游戏截图\n而是一个可以继续长大的\nget到RTSS原型",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1mKMG6KETt",
+  "published_at": "1783646866",
+  "fetched_at": "2026-08-07T08:56:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GPT5.6 在星际争霸 RTSS 原型中的知识图谱\n\n## Overview of GPT5.5 vs GPT5.6\n```mermaid\nflowchart LR\n    G5_5[\"GPT‑5.5\"] --> M1[\"基础 RTS 模块 (地图、单位、资源、雾、HUD)\"]\n    M1 --> T1[\"可运行的 RTS 模板\"]\n    G5_6[\"GPT‑5.6\"] --> M1\n    G5_6 --> C1[\"维持复杂项目上下文\"]\n    C1 --> I1[\"系统联动的完整运行时\"]\n    I1 --> C2[\"多系统持续接合 (单位、战斗、UI、雾、空/地单位)\"]\n    T1 --> O1[\"产出：模块化模板\"]\n    C2 --> O1[\"产出：可运行且可迭代的原型\"]\n```\n\n## System Integration Chain\n```mermaid\nflowchart LR\n    U1[\"单位状态 (模拟层)\"] --> G1[\"GOA 表现层\"]\n    G1 --> H1[\"玩家 HUD\"]\n    S1[\"选中单位\"] --> P1[\"底部面板同步 (名字、头像)\"]\n    P1 --> H1\n    D1[\"Debug roster 生成单位\"] --> U1\n    C1[\"战斗系统\"] --> H1\n    F1[\"战争迷雾\"] --> I1[\"系统联动链路\"]\n    M1[\"小地图\"] --> I1\n    R1[\"资源栏\"] --> I1\n    H1 --> I1\n```\n\n## Combat Processing Pipeline\n```mermaid\nflowchart TD\n    D1[\"目标判定\"] --> R1[\"射程检查\"]\n    R1 --> C1[\"武器冷却判断\"]\n    C1 --> D2[\"伤害结算\"]\n    D2 --> DE[\"死亡/燃烧残骸\"]\n    DE --> V1[\"GODA 表现\"]\n    V1 --> CP[\"战斗处理流程\"]\n```\n\n## UI Update on Unit Selection\n```mermaid\nflowchart LR\n    SU[\"选中单位\"] --> UP[\"底部面板显示 (名字、头像)\"]\n    UP --> SC[\"指令按钮同步\"]\n    SC --> HR[\"HUD 刷新\"]\n    HR --> US[\"UI 状态\"]\n    US --> PF[\"玩家可见反馈\"]\n```",
+      "diagrams": [
+        {
+          "title": "Overview of GPT5.5 vs GPT5.6",
+          "code": "flowchart LR\n    G5_5[\"GPT‑5.5\"] --> M1[\"基础 RTS 模块 (地图、单位、资源、雾、HUD)\"]\n    M1 --> T1[\"可运行的 RTS 模板\"]\n    G5_6[\"GPT‑5.6\"] --> M1\n    G5_6 --> C1[\"维持复杂项目上下文\"]\n    C1 --> I1[\"系统联动的完整运行时\"]\n    I1 --> C2[\"多系统持续接合 (单位、战斗、UI、雾、空/地单位)\"]\n    T1 --> O1[\"产出：模块化模板\"]\n    C2 --> O1[\"产出：可运行且可迭代的原型\"]"
+        },
+        {
+          "title": "System Integration Chain",
+          "code": "flowchart LR\n    U1[\"单位状态 (模拟层)\"] --> G1[\"GOA 表现层\"]\n    G1 --> H1[\"玩家 HUD\"]\n    S1[\"选中单位\"] --> P1[\"底部面板同步 (名字、头像)\"]\n    P1 --> H1\n    D1[\"Debug roster 生成单位\"] --> U1\n    C1[\"战斗系统\"] --> H1\n    F1[\"战争迷雾\"] --> I1[\"系统联动链路\"]\n    M1[\"小地图\"] --> I1\n    R1[\"资源栏\"] --> I1\n    H1 --> I1"
+        },
+        {
+          "title": "Combat Processing Pipeline",
+          "code": "flowchart TD\n    D1[\"目标判定\"] --> R1[\"射程检查\"]\n    R1 --> C1[\"武器冷却判断\"]\n    C1 --> D2[\"伤害结算\"]\n    D2 --> DE[\"死亡/燃烧残骸\"]\n    DE --> V1[\"GODA 表现\"]\n    V1 --> CP[\"战斗处理流程\"]"
+        },
+        {
+          "title": "UI Update on Unit Selection",
+          "code": "flowchart LR\n    SU[\"选中单位\"] --> UP[\"底部面板显示 (名字、头像)\"]\n    UP --> SC[\"指令按钮同步\"]\n    SC --> HR[\"HUD 刷新\"]\n    HR --> US[\"UI 状态\"]\n    US --> PF[\"玩家可见反馈\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T08:57:15+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GPT5.6 在星际争霸 RTSS 原型中的知识图谱\n\n## Overview of GPT5.5 vs GPT5.6\n```mermaid\nflowchart LR\n    G5_5[\"GPT‑5.5\"] --> M1[\"基础 RTS 模块 (地图、单位、资源、雾、HUD)\"]\n    M1 --> T1[\"可运行的 RTS 模板\"]\n    G5_6[\"GPT‑5.6\"] --> M1\n    G5_6 --> C1[\"维持复杂项目上下文\"]\n    C1 --> I1[\"系统联动的完整运行时\"]\n    I1 --> C2[\"多系统持续接合 (单位、战斗、UI、雾、空/地单位)\"]\n    T1 --> O1[\"产出：模块化模板\"]\n    C2 --> O1[\"产出：可运行且可迭代的原型\"]\n```\n\n## System Integration Chain\n```mermaid\nflowchart LR\n    U1[\"单位状态 (模拟层)\"] --> G1[\"GOA 表现层\"]\n    G1 --> H1[\"玩家 HUD\"]\n    S1[\"选中单位\"] --> P1[\"底部面板同步 (名字、头像)\"]\n    P1 --> H1\n    D1[\"Debug roster 生成单位\"] --> U1\n    C1[\"战斗系统\"] --> H1\n    F1[\"战争迷雾\"] --> I1[\"系统联动链路\"]\n    M1[\"小地图\"] --> I1\n    R1[\"资源栏\"] --> I1\n    H1 --> I1\n```\n\n## Combat Processing Pipeline\n```mermaid\nflowchart TD\n    D1[\"目标判定\"] --> R1[\"射程检查\"]\n    R1 --> C1[\"武器冷却判断\"]\n    C1 --> D2[\"伤害结算\"]\n    D2 --> DE[\"死亡/燃烧残骸\"]\n    DE --> V1[\"GODA 表现\"]\n    V1 --> CP[\"战斗处理流程\"]\n```\n\n## UI Update on Unit Selection\n```mermaid\nflowchart LR\n    SU[\"选中单位\"] --> UP[\"底部面板显示 (名字、头像)\"]\n    UP --> SC[\"指令按钮同步\"]\n    SC --> HR[\"HUD 刷新\"]\n    HR --> US[\"UI 状态\"]\n    US --> PF[\"玩家可见反馈\"]\n```",
+  "diagrams": [
+    {
+      "title": "Overview of GPT5.5 vs GPT5.6",
+      "code": "flowchart LR\n    G5_5[\"GPT‑5.5\"] --> M1[\"基础 RTS 模块 (地图、单位、资源、雾、HUD)\"]\n    M1 --> T1[\"可运行的 RTS 模板\"]\n    G5_6[\"GPT‑5.6\"] --> M1\n    G5_6 --> C1[\"维持复杂项目上下文\"]\n    C1 --> I1[\"系统联动的完整运行时\"]\n    I1 --> C2[\"多系统持续接合 (单位、战斗、UI、雾、空/地单位)\"]\n    T1 --> O1[\"产出：模块化模板\"]\n    C2 --> O1[\"产出：可运行且可迭代的原型\"]"
+    },
+    {
+      "title": "System Integration Chain",
+      "code": "flowchart LR\n    U1[\"单位状态 (模拟层)\"] --> G1[\"GOA 表现层\"]\n    G1 --> H1[\"玩家 HUD\"]\n    S1[\"选中单位\"] --> P1[\"底部面板同步 (名字、头像)\"]\n    P1 --> H1\n    D1[\"Debug roster 生成单位\"] --> U1\n    C1[\"战斗系统\"] --> H1\n    F1[\"战争迷雾\"] --> I1[\"系统联动链路\"]\n    M1[\"小地图\"] --> I1\n    R1[\"资源栏\"] --> I1\n    H1 --> I1"
+    },
+    {
+      "title": "Combat Processing Pipeline",
+      "code": "flowchart TD\n    D1[\"目标判定\"] --> R1[\"射程检查\"]\n    R1 --> C1[\"武器冷却判断\"]\n    C1 --> D2[\"伤害结算\"]\n    D2 --> DE[\"死亡/燃烧残骸\"]\n    DE --> V1[\"GODA 表现\"]\n    V1 --> CP[\"战斗处理流程\"]"
+    },
+    {
+      "title": "UI Update on Unit Selection",
+      "code": "flowchart LR\n    SU[\"选中单位\"] --> UP[\"底部面板显示 (名字、头像)\"]\n    UP --> SC[\"指令按钮同步\"]\n    SC --> HR[\"HUD 刷新\"]\n    HR --> US[\"UI 状态\"]\n    US --> PF[\"玩家可见反馈\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:57:15+00:00"
+}

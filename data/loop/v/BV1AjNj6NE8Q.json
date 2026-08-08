@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1AjNj6NE8Q",
+  "title": "精通 Godot 2D 着色器 | Shader 游戏特效大师课",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1313,
+  "text": "好我们来聊聊SHADER着色器\n用最简单的话来讲\nSHADER是一段代码\n能够更改像素的位置\n色彩alpha数值\n还有光照表现\n还能调整大量其他属性\n但那些属性没那么关键\n说的再细致一点\n要渲染图形\n需要执行大量运算处理\n这套流程叫做graphics pipeline图形管线\n而SHA可以自定义其中部分流程\n在vertex阶段\n你可以更改单个像素的位置\nfragment阶段则能调整像素的色彩透明度\n还有像素处理光照的方式\n不过所有这些代码都在GPU上运行\n这会让整套逻辑变得复杂不少\n只要你用过任意一款传统编程语言\n写代码时都是依托CPU完成\nCPU会逐行读取你的代码\n按先后次序依次执行\n反观GPU\n它的设计初衷就是并行运算\nGPU内置数千个运算能力偏弱的核心\n全部同步工作\n如果任务包含大量简单运算\nGPU能给出极快的运算结果\n计算机图形渲染就是它最主要的应用场景\n要给每个像素算出正确画面\n得出色彩位置\n透明度等各类参数\n这套运算本身难度不高\n但我们要在极短时间内\n给数百万个像素全部完成计算\n正因如此\nSHADER代码不会只运行\n单次代码会同步作用于每一个像素\n举个例子\n假设你想用gd script绘制原型\n依托CPU的实现方式就是调用draw circle\n这个简易方法需要传入位置半径\n色彩三类参数\n随后就能生成圆形图案\n换到SHADER\n也就是GPU端的逻辑\n我们会载入texture给每一个像素执行代码\n所以我们没法直接生成圆形\n取而代之\n我们要设定一个中心点\n再算出当前像素坐标到中心点的距离\n如果距离小于设定阈值\n就显示这个像素不满足条件\n就隐藏该像素对应的计算公式\n如下所示\n刚接触这类运算逻辑时\n很容易感到受挫\n也常常理不清思路\n单单看原型的计算公式就能体会\n我们仅靠定义一个float数值就生成了圆形\n这种实现方式会让人觉得别扭\n你需要花时间适应这套思维\n我们再来实操另外两组案例\n第一个案例塞尔达风格耐力进度条\n这个案例的基底素材用的是GL图标\n本课程里多数SHADER案例都是如此\n我们先清除原有色彩\n再分别定义大圆和小圆\n把大圆内部剔除掉\n小圆对应的图案就能得到圆环\n下一步我们借助三角运算\n按角度裁掉一块区域\n把两段逻辑合并再填充色彩\n案例就完成了下一个案例火焰特效\n这个案例同样以got up图标作为基底\n当然任意texture都能替代使用\n我们依旧先清除原有色彩\n再套用数学公式生成胶囊样式的轮廓\n接着载入noise texture\n噪波纹理做滚动偏移处理\n合并两段运算结果\n在裁切数值区间就能得到火焰的主体轮廓\n最后填充对应色彩特效\n制作完毕\n两组SHADER成品视觉效果出色\n但只需要少量代码就能实现\n等你熟悉这套逻辑后\n编写起来会十分简单\n不过熟悉过程确实需要耗费一定时间\n大家不用担心课程会带大家拆解大量实操案例\n正式开始学习前\n我前面给出的SHADER定义做了大量简化\n并不完全严谨准确\n我会在第一大部分内容收尾时\n完整修正这套定义\n现阶段暂时不用深究完整概念\n入门阶段\n你只需要清楚SHADER能够更改全部像素的位置\n透明度色彩\n还有光照表现\n且全部像素的运算会同步执行",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1AjNj6NE8Q",
+  "published_at": "1783655584",
+  "fetched_at": "2026-08-07T07:10:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 精通 Godot 2D 着色器 – 知识关系图谱\n\n## Shader 基础概念 [BV1AjNj6NE8Q P1 00:03]\n\n```mermaid\nflowchart TD\n    S[\"Shader\"] --> C[\"代码\"]\n    C --> MP[\"修改像素位置\"]\n    C --> MC[\"修改颜色/Alpha\"]\n    C --> ML[\"修改光照表现\"]\n    C --> OA[\"其他属性\"]\n    C --> GPU[\"运行于 GPU\"]\n    GPU --> Par[\"GPU 并行\"]\n    Par --> Cores[\"数千弱核\"]\n    Par --> Fast[\"对大量简单运算极快\"]\n    CPU[\"运行于 CPU\"] --> Seq[\"逐行读取并顺序执行\"]\n    S --> Pipe[\"Graphics Pipeline\"]\n    Pipe --> VS[\"Vertex 阶段\"]\n    Pipe --> FS[\"Fragment 阶段\"]\n    VS --> MP\n    FS --> MC\n    FS --> ML\n```\n\n## Graphics Pipeline 与 Shader 插入点 [BV1AjNj6NE8Q P1 00:17]\n\n```mermaid\nflowchart TD\n    GP[\"Graphics Pipeline\"] --> VS[\"Vertex Stage\"]\n    GP --> FS[\"Fragment Stage\"]\n    VS --> SV[\"Shader Vertex\"]\n    FS --> SF[\"Shader Fragment\"]\n    SV --> Exec[\"GPU 执行\"]\n    SF --> Exec\n    Exec --> RS[\"Rasterization\"]\n    RS --> OUT[\"最终输出\"]\n```\n\n## Shader 圆形绘制逻辑 [BV1AjNj6NE8Q P1 01:44]\n\n```mermaid\nflowchart TD\n    CE[\"圆形示例\"] --> Center[\"设定中心点\"]\n    CE --> Uniform[\"float 参数\"]\n    Center --> Dist[\"计算像素到中心距离\"]\n    Dist --> Thresh[\"阈值比较\"]\n    Thresh --> Show[\"显示像素\"]\n    Thresh --> Hide[\"隐藏像素\"]\n    Tex[\"载入 Texture\"] --> Result[\"圆形图案\"]\n    Show --> Result\n```\n\n## Zelda 风格耐力进度条案例 [BV1AjNj6NE8Q P1 02:15]\n\n```mermaid\nflowchart TD\n    SB[\"耐力条案例\"] --> Base[\"GL 图标素材\"]\n    Base --> Clear[\"清除原有色彩\"]\n    Clear --> Big[\"定义大圆\"]\n    Clear --> Small[\"定义小圆\"]\n    Big --> Sub[\"剔除大圆内部\"]\n    Small --> Sub\n    Sub --> Ring[\"得到圆环\"]\n    Ring --> Tri[\"三角运算\"]\n    Tri --> Cut[\"按角度裁剪\"]\n    Cut --> Merge[\"合并逻辑\"]\n    Merge --> Fill[\"填充色彩\"]\n    Fill --> Output[\"最终视觉效果\"]\n```\n\n## 火焰特效案例 [BV1AjNj6NE8Q P1 02:40]\n\n```mermaid\nflowchart TD\n    FC[\"火焰特效案例\"] --> BaseF[\"got up 图标\"]\n    BaseF --> ClearF[\"清除原有色彩\"]\n    ClearF --> Capsule[\"胶囊轮廓公式\"]\n    Capsule --> MergeF[\"合并运算结果\"]\n    NoiseTex[\"载入噪波纹理\"] --> NoiseScroll[\"噪波滚动偏移\"]\n    NoiseScroll --> MergeF\n    MergeF --> CutF[\"裁切数值区间\"]\n    CutF --> FillF[\"填充火焰色彩\"]\n    FillF --> OutputF[\"最终火焰效果\"]\n```",
+      "diagrams": [
+        {
+          "title": "Shader 基础概念",
+          "code": "flowchart TD\n    S[\"Shader\"] --> C[\"代码\"]\n    C --> MP[\"修改像素位置\"]\n    C --> MC[\"修改颜色/Alpha\"]\n    C --> ML[\"修改光照表现\"]\n    C --> OA[\"其他属性\"]\n    C --> GPU[\"运行于 GPU\"]\n    GPU --> Par[\"GPU 并行\"]\n    Par --> Cores[\"数千弱核\"]\n    Par --> Fast[\"对大量简单运算极快\"]\n    CPU[\"运行于 CPU\"] --> Seq[\"逐行读取并顺序执行\"]\n    S --> Pipe[\"Graphics Pipeline\"]\n    Pipe --> VS[\"Vertex 阶段\"]\n    Pipe --> FS[\"Fragment 阶段\"]\n    VS --> MP\n    FS --> MC\n    FS --> ML"
+        },
+        {
+          "title": "Graphics Pipeline 与 Shader 插入点",
+          "code": "flowchart TD\n    GP[\"Graphics Pipeline\"] --> VS[\"Vertex Stage\"]\n    GP --> FS[\"Fragment Stage\"]\n    VS --> SV[\"Shader Vertex\"]\n    FS --> SF[\"Shader Fragment\"]\n    SV --> Exec[\"GPU 执行\"]\n    SF --> Exec\n    Exec --> RS[\"Rasterization\"]\n    RS --> OUT[\"最终输出\"]"
+        },
+        {
+          "title": "Shader 圆形绘制逻辑",
+          "code": "flowchart TD\n    CE[\"圆形示例\"] --> Center[\"设定中心点\"]\n    CE --> Uniform[\"float 参数\"]\n    Center --> Dist[\"计算像素到中心距离\"]\n    Dist --> Thresh[\"阈值比较\"]\n    Thresh --> Show[\"显示像素\"]\n    Thresh --> Hide[\"隐藏像素\"]\n    Tex[\"载入 Texture\"] --> Result[\"圆形图案\"]\n    Show --> Result"
+        },
+        {
+          "title": "Zelda 风格耐力进度条案例",
+          "code": "flowchart TD\n    SB[\"耐力条案例\"] --> Base[\"GL 图标素材\"]\n    Base --> Clear[\"清除原有色彩\"]\n    Clear --> Big[\"定义大圆\"]\n    Clear --> Small[\"定义小圆\"]\n    Big --> Sub[\"剔除大圆内部\"]\n    Small --> Sub\n    Sub --> Ring[\"得到圆环\"]\n    Ring --> Tri[\"三角运算\"]\n    Tri --> Cut[\"按角度裁剪\"]\n    Cut --> Merge[\"合并逻辑\"]\n    Merge --> Fill[\"填充色彩\"]\n    Fill --> Output[\"最终视觉效果\"]"
+        },
+        {
+          "title": "火焰特效案例",
+          "code": "flowchart TD\n    FC[\"火焰特效案例\"] --> BaseF[\"got up 图标\"]\n    BaseF --> ClearF[\"清除原有色彩\"]\n    ClearF --> Capsule[\"胶囊轮廓公式\"]\n    Capsule --> MergeF[\"合并运算结果\"]\n    NoiseTex[\"载入噪波纹理\"] --> NoiseScroll[\"噪波滚动偏移\"]\n    NoiseScroll --> MergeF\n    MergeF --> CutF[\"裁切数值区间\"]\n    CutF --> FillF[\"填充火焰色彩\"]\n    FillF --> OutputF[\"最终火焰效果\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T07:10:56+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 精通 Godot 2D 着色器 – 知识关系图谱\n\n## Shader 基础概念 [BV1AjNj6NE8Q P1 00:03]\n\n```mermaid\nflowchart TD\n    S[\"Shader\"] --> C[\"代码\"]\n    C --> MP[\"修改像素位置\"]\n    C --> MC[\"修改颜色/Alpha\"]\n    C --> ML[\"修改光照表现\"]\n    C --> OA[\"其他属性\"]\n    C --> GPU[\"运行于 GPU\"]\n    GPU --> Par[\"GPU 并行\"]\n    Par --> Cores[\"数千弱核\"]\n    Par --> Fast[\"对大量简单运算极快\"]\n    CPU[\"运行于 CPU\"] --> Seq[\"逐行读取并顺序执行\"]\n    S --> Pipe[\"Graphics Pipeline\"]\n    Pipe --> VS[\"Vertex 阶段\"]\n    Pipe --> FS[\"Fragment 阶段\"]\n    VS --> MP\n    FS --> MC\n    FS --> ML\n```\n\n## Graphics Pipeline 与 Shader 插入点 [BV1AjNj6NE8Q P1 00:17]\n\n```mermaid\nflowchart TD\n    GP[\"Graphics Pipeline\"] --> VS[\"Vertex Stage\"]\n    GP --> FS[\"Fragment Stage\"]\n    VS --> SV[\"Shader Vertex\"]\n    FS --> SF[\"Shader Fragment\"]\n    SV --> Exec[\"GPU 执行\"]\n    SF --> Exec\n    Exec --> RS[\"Rasterization\"]\n    RS --> OUT[\"最终输出\"]\n```\n\n## Shader 圆形绘制逻辑 [BV1AjNj6NE8Q P1 01:44]\n\n```mermaid\nflowchart TD\n    CE[\"圆形示例\"] --> Center[\"设定中心点\"]\n    CE --> Uniform[\"float 参数\"]\n    Center --> Dist[\"计算像素到中心距离\"]\n    Dist --> Thresh[\"阈值比较\"]\n    Thresh --> Show[\"显示像素\"]\n    Thresh --> Hide[\"隐藏像素\"]\n    Tex[\"载入 Texture\"] --> Result[\"圆形图案\"]\n    Show --> Result\n```\n\n## Zelda 风格耐力进度条案例 [BV1AjNj6NE8Q P1 02:15]\n\n```mermaid\nflowchart TD\n    SB[\"耐力条案例\"] --> Base[\"GL 图标素材\"]\n    Base --> Clear[\"清除原有色彩\"]\n    Clear --> Big[\"定义大圆\"]\n    Clear --> Small[\"定义小圆\"]\n    Big --> Sub[\"剔除大圆内部\"]\n    Small --> Sub\n    Sub --> Ring[\"得到圆环\"]\n    Ring --> Tri[\"三角运算\"]\n    Tri --> Cut[\"按角度裁剪\"]\n    Cut --> Merge[\"合并逻辑\"]\n    Merge --> Fill[\"填充色彩\"]\n    Fill --> Output[\"最终视觉效果\"]\n```\n\n## 火焰特效案例 [BV1AjNj6NE8Q P1 02:40]\n\n```mermaid\nflowchart TD\n    FC[\"火焰特效案例\"] --> BaseF[\"got up 图标\"]\n    BaseF --> ClearF[\"清除原有色彩\"]\n    ClearF --> Capsule[\"胶囊轮廓公式\"]\n    Capsule --> MergeF[\"合并运算结果\"]\n    NoiseTex[\"载入噪波纹理\"] --> NoiseScroll[\"噪波滚动偏移\"]\n    NoiseScroll --> MergeF\n    MergeF --> CutF[\"裁切数值区间\"]\n    CutF --> FillF[\"填充火焰色彩\"]\n    FillF --> OutputF[\"最终火焰效果\"]\n```",
+  "diagrams": [
+    {
+      "title": "Shader 基础概念",
+      "code": "flowchart TD\n    S[\"Shader\"] --> C[\"代码\"]\n    C --> MP[\"修改像素位置\"]\n    C --> MC[\"修改颜色/Alpha\"]\n    C --> ML[\"修改光照表现\"]\n    C --> OA[\"其他属性\"]\n    C --> GPU[\"运行于 GPU\"]\n    GPU --> Par[\"GPU 并行\"]\n    Par --> Cores[\"数千弱核\"]\n    Par --> Fast[\"对大量简单运算极快\"]\n    CPU[\"运行于 CPU\"] --> Seq[\"逐行读取并顺序执行\"]\n    S --> Pipe[\"Graphics Pipeline\"]\n    Pipe --> VS[\"Vertex 阶段\"]\n    Pipe --> FS[\"Fragment 阶段\"]\n    VS --> MP\n    FS --> MC\n    FS --> ML"
+    },
+    {
+      "title": "Graphics Pipeline 与 Shader 插入点",
+      "code": "flowchart TD\n    GP[\"Graphics Pipeline\"] --> VS[\"Vertex Stage\"]\n    GP --> FS[\"Fragment Stage\"]\n    VS --> SV[\"Shader Vertex\"]\n    FS --> SF[\"Shader Fragment\"]\n    SV --> Exec[\"GPU 执行\"]\n    SF --> Exec\n    Exec --> RS[\"Rasterization\"]\n    RS --> OUT[\"最终输出\"]"
+    },
+    {
+      "title": "Shader 圆形绘制逻辑",
+      "code": "flowchart TD\n    CE[\"圆形示例\"] --> Center[\"设定中心点\"]\n    CE --> Uniform[\"float 参数\"]\n    Center --> Dist[\"计算像素到中心距离\"]\n    Dist --> Thresh[\"阈值比较\"]\n    Thresh --> Show[\"显示像素\"]\n    Thresh --> Hide[\"隐藏像素\"]\n    Tex[\"载入 Texture\"] --> Result[\"圆形图案\"]\n    Show --> Result"
+    },
+    {
+      "title": "Zelda 风格耐力进度条案例",
+      "code": "flowchart TD\n    SB[\"耐力条案例\"] --> Base[\"GL 图标素材\"]\n    Base --> Clear[\"清除原有色彩\"]\n    Clear --> Big[\"定义大圆\"]\n    Clear --> Small[\"定义小圆\"]\n    Big --> Sub[\"剔除大圆内部\"]\n    Small --> Sub\n    Sub --> Ring[\"得到圆环\"]\n    Ring --> Tri[\"三角运算\"]\n    Tri --> Cut[\"按角度裁剪\"]\n    Cut --> Merge[\"合并逻辑\"]\n    Merge --> Fill[\"填充色彩\"]\n    Fill --> Output[\"最终视觉效果\"]"
+    },
+    {
+      "title": "火焰特效案例",
+      "code": "flowchart TD\n    FC[\"火焰特效案例\"] --> BaseF[\"got up 图标\"]\n    BaseF --> ClearF[\"清除原有色彩\"]\n    ClearF --> Capsule[\"胶囊轮廓公式\"]\n    Capsule --> MergeF[\"合并运算结果\"]\n    NoiseTex[\"载入噪波纹理\"] --> NoiseScroll[\"噪波滚动偏移\"]\n    NoiseScroll --> MergeF\n    MergeF --> CutF[\"裁切数值区间\"]\n    CutF --> FillF[\"填充火焰色彩\"]\n    FillF --> OutputF[\"最终火焰效果\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T07:10:56+00:00"
+}

@@ -1,0 +1,50 @@
+{
+  "bvid": "BV1miGg6rEwY",
+  "title": "用Deepseek V4 Flash正式版做中国象棋",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 30,
+  "text": "用deep seed with flash正式版做的中国象棋",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1miGg6rEwY",
+  "published_at": "1785660600",
+  "fetched_at": "2026-08-06T22:32:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 用DeepSeek V4 Flash 正式版做中国象棋\n\n## [BV1miGg6rEwY P1 00:00] 知识总览\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|正式版| Official[\"正式版\"]\n    DS -->|用于| Chess[\"中国象棋\"]\n    Official -->|支持| Chess\n```",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|正式版| Official[\"正式版\"]\n    DS -->|用于| Chess[\"中国象棋\"]\n    Official -->|支持| Chess"
+        }
+      ],
+      "diagram_count": 1,
+      "error": "",
+      "updated_at": "2026-08-06T22:32:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 1
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 用DeepSeek V4 Flash 正式版做中国象棋\n\n## [BV1miGg6rEwY P1 00:00] 知识总览\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|正式版| Official[\"正式版\"]\n    DS -->|用于| Chess[\"中国象棋\"]\n    Official -->|支持| Chess\n```",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|正式版| Official[\"正式版\"]\n    DS -->|用于| Chess[\"中国象棋\"]\n    Official -->|支持| Chess"
+    }
+  ],
+  "diagram_count": 1,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:32:32+00:00"
+}

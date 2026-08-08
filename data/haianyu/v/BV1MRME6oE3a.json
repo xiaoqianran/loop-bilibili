@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1MRME6oE3a",
+  "title": "[105]. TTT，一种序列模型：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3261,
+  "text": "今天我们来介绍一篇关于序列建模的工作\n标题叫做learning to learn at test time\nR n with expressive hidden states\n简称为TTT\n也就是测试时训练现有的自注意力机制\n在长上下文上表现不错\n但计算复杂度是二次的\n而RNN层虽然每次只消耗常数时间\n却因为隐藏状态的表达能力不足\n在长序列上很难继续提升性能\n这篇论文的核心思路是\n把隐藏状态本身变成一个机器学习模型\n并用一部自监督梯度下降来更新它\n即使在测试序列上也不断学习\n论文给出了两种具体实现\nTtt linear\n用线性模型作为隐藏状态\nTTTMLP用两层MLP作为隐藏状态\n实验规模从1.25亿到13亿\n参数结果表明\nt t t linear和TTTMLP\n都能随着上下文变长\n持续降低困惑度\n而MANA在16K上下文之后就不再提升\nTTTMLP在内存IO上还存在挑战\n但在长上下文上展现出更大的潜力\n下面看一下摘要\n翻译自注意力\n在长上下文上表现良好\n但具有二次复杂度\n现有的RNN层具有线性复杂度\n但它们在长上下文上的性能\n受限于隐藏状态的表达能力\n我们提出了一个实用框架\n用于实例化\n具有线性复杂度和表达性\n隐藏状态的序列建模层\n关键思想是让隐藏状态本身\n成为一个机器学习模型\n并将更新规则设为一小步自监督学习\n由于隐藏状态即使在测试序列上\n也会通过训练进行更新\n我们的层被称为测试时训练层\n也就是TTT层\n我们考虑了两种实例化\nt t t linear和TTTMLP\n它们的隐藏状态分别是线性模型和两层MLP\n我们在1.25亿到13亿参数的规模上\n评估了这两种实例化\n并与较强的transformer\n以及现代RNNMONA进行了比较\n与transformer类似\nttt linear和TTTMLP\n可以通过依赖更多token来持续降低困惑度\n而MUMBA在16K上下文之后无法做到这一点\nTTTMLP在内存IO方面仍面临挑战\n但在长上下文上显示出更大的潜力\n为未来的研究指明了一个有前景的方向\n下面看一下这张图\n这张图展示了TTT层最基本的结构\n和传统RNA一样\n它有一个随时间传递的隐藏状态\n这里用W0W一一直到WT表示\n不同的是\n这个隐藏状态不再是一个简单的向量\n而是一组模型权重\n每一步收到输入token xt后\n先按照更新规则用梯度下降更新隐藏状态\n得到wt\n然后再用输出规则\n让当前模型F根据XT生成输出token z\n换句话说\n每处理一个token\n这个层\n就在测试时对自己的隐藏状态做一次训练\n所以叫做测试时训练层\n下面看一下这张图\n这张图把不同的序列建模层\n统一成了三个组成部分\n初始状态更新规则和输出规则\n普通RN的初始状态是一个固定维度的向量\n更新规则是待激活的线性变换\n每步代价是常数\n自注意力的初始状态是一个列表\n也就是KV缓存\n每步把新的键值队追加进去\n输出时要扫描整个列表\n所以代价随序列长度线性增长\n普速TTT的初始状态是模型参数\n更新规则是一步梯度下降\n输出规则是用更新后的模型做预测\n代价仍然是每部常数\n这个视角说明\nTTT用模型参数替换了固定向量\n在不增加每步计算复杂度的同时\n让隐藏状态能够表达更丰富的信息\n下面看一下这段伪代码\n这段代码用PYTORCH风格\n展示了TTT层的基本实现\nttt layer的forward函数\n遍历输入序列中的每个token\n对每个token先调用state train进行更新\n再调用state predict生成输出\ntask类定义了自监督任务\ntheta k thetv和THETQ分别对应训练视图\n标签视图和测试视图\n损失函数\n用训练视图经过模型F后的输出\n与标签视图计算均方误差\nlearn类\n持有真正的模型和一个在线梯度下降优化器\ntrain函数\n计算损失对模型参数的梯度并更新模型\npredict函数则用测试试图得到当前输出\n这段代码体现了两层训练\n外层通过反向传播优化task里的theta参数\n内层则在每个token上手动更新\nlearner里的模型权重\n下面看一下这个表\n这个表总结了TTT框架里的内循环和外循环\n内循环面对的是单个token训练数据\n是一条完整序列\n优化目标是重建损失\n待优化参数是隐藏状态W也就是模型F的权重\n外循环面对的是整个序列训练数据\n是包含很多序列的数据集\n优化目标是传统的下一个token预测带优化参数\n包括网络其余部分的c a Rest\n三个重建视图的theta k\ntheta q theta v以及初始化W0的学习参数\ntheta in it和学习率相关的THETL2\n可以看到内循环只是一次普通的测试时训练\n而外循环和常规语言模型训练\n几乎处于同一层级\n因此更容易扩展到大规模数据\n下面看一下这张图\n这张图展示了第一个t d t mini batch的计算图\n蓝色节点是输入变量\n黄色节点是输出变量\n白色节点是中间变量\n朴素的在线梯度更新\nWT依赖于WT1无法并行\n为了加速论文采用了mini batch梯度下降\n在一个大小为B的batch内\n每个梯度gt只依赖于初始权重\nW0和对应的输入XT\n因此这些gt可以并行计算\n然后再通过累加得到batch结束时的WB\n这样既保留了比纯by实梯度下降\n更大的搜索空间\n又能利用现代硬件的并行能力\n论文在所有实验中选择B等于16\n下面看一下这个公式\n这个公式推导了t t t linear的对偶形式\n现代加速器擅长矩阵乘法\n但朴素实现的梯度计算\n需要把每个输入XT和它对应的误差做外机\n得到很多D乘D的梯度矩阵\n既浪费内存又难以并行\n论文观察到\n其实并不需要显示构造这些中间梯度矩阵\n只需要得到mini batch末尾的WB\n以及输出token即可\n对于线性模型\nWB可以直接写成W0-2倍\n学习率乘以W0X减X再乘X的转置\n这样整个过程都可以用矩阵乘法完成\n这个对偶形式与原始形式在输出上是等价的\n但在JX实现中\n训练速度比原始形式快了五倍以上\n下面看一下这张图\n这张图是论文在pad的数据集上的主要对比结果\n左图是8K上下文下的缩放曲线\n横轴是计算量\n纵轴是困惑度\n可以看到\nttt linear和TTTMLP\n与MUMBA在相近flops下表现接近或更优\n而transformer由于二次复杂度\n在相同flop下明显落后\n右图展示了不同位置token的平均困惑度\n随token索引的变化\nTransformer\nttt linear和TTTMLP都能随着看到更多token\n持续降低困惑度\n但MUMBA在16K上下文之后\n曲线趋于平缓\n说明他难以继续利用更长的上下文信息\n下面看一下这个表\n这个表展示了如何从线性注意力\n一步一步改进到最终\nttt linear的配置起点是原始线性注意力\n困惑度为15.91\n加入一些实线改进后降到15.23\n随后加入可学习的初始W0\n在模型F中加入层规一化和残差连接\n把batch梯度下降改为mini batch ttt\n让学习率也可学习\n最后换用MONA骨干网络\n最终困惑度降到了11.09\n其中最大的单步提升来自mini batch t t t\n下降了约1.7\n其次是加入层归一化和残差连接\n下降了1.22\n这说明TTT框架中的每一个设计\n都对最终性能有实际贡献\n下面看一下这张图\n这张图展示了books数据集上\n2K和32K上下文长度的缩放趋势\n左图在2K上下文上各方法表现比较接近\n符合pile2K上的观察\n右图在32K上下文上\ntransformer由于代价问题\n只在一个flop点上出现\n并且困惑度明显偏高\n曼巴的表现也不如ttt linear和TTTMLP\nt t t linear和TTTMLP\n在32K上下文上取得了最低的困惑度\n说明上下文越长\nTTT层相对于曼巴的优势越明显\n这也呼应了论文的观点\n用更具表达能力的隐藏状态来压缩历史信息\n有助于模型在长序列上继续学习",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1MRME6oE3a",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

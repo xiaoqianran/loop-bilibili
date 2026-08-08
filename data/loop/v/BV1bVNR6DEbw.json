@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1bVNR6DEbw",
+  "title": "【B站精选】这绝对是B站最系统的Qwen3-0.6B微调实战教程，原理架构 + 实操落地一站式讲解，手把手带你吃透 Qwen小模型全流程微调，存下吧！很难找全的",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2899,
+  "text": "好各位家人们\n从今天开始\n我们来深度解析清问30.6比微调技术\n手把手教会大家手动微调小模型\n那么为了帮助大家彻底理解模型微调\n我们并不会一上来就带领大家去微调\n请问30.6比这个模型啊\n还是呢循序渐进的\n一步一步的教会大家如何做微调\n首先呢我会介绍大家\n我们给大家介绍什么是大模型\n然后呢大模型是如何训练的啊\n紧接着大模型的基础架构啊\n然后呢什么是大模型微调\n最后才是啊期望三的模型微调\n那么经过这一系列流程下来呢\n就大家掌握的不仅仅是期望三这个模型的微调\n还是微调的一系列方法论\n那么我学完这个之后\n大家就可以做到一通百通\n不管什么模型你都可以调tip\n这个你可以调啊\n这个质谱的模型你可以调KIMI的模型\n你也可以调好\n那现在呢我们来看一下什么是大模型哈\n什么是大模型呢\n诶大模型是指参数量巨大\n训练数据含量的就是transformer架构的模型\n那么这一句话即使透露出三个重要的信息\n第一个是参数量巨大\n这个参数量巨大还大到什么地步呢\n哎通常是数千亿甚至万亿\n但在以前啊\n这个数千亿级别的模型呢是很大的一个模型\n现在基本都是外语级别\n不是外音级别\n你都上不了牌桌\n我给大家讲啊\n像前段时间啊出来了DP是个V41.6000000000000\n1.6万亿的参数\n其实像国外的GPT5.5啊\ncloud oppos4.7那个参数量会更大\n好我们来看第二个重要的信息是参与数\n是训练数据含量\n什么意思呢\n就是我们需要很多很多数据去训练这个模型\n那么很多很多多到什么地步呢\n我就以我就以GPT为例啊\nGPT5.5所使用的数据\n60数据量是多少呢\n啊45批评45\nPB到底是一个什么样的概念呢\n基本上互联网上能够找到的数据\n基本上都被OpenAI给找出来了啊\n为什么他能够这么聪明啊\n就是因为有很多很多数据去训练它\n他学了很多很多知识\n好第三个是基于transform的架构\ntransformer呢啊是一种算法\n但目前来讲\n几乎所有大模型都是使用这种算法\n来进行设计的\n当然有一些模型呢\n会在这个基础上做一些局部的调整\n但整体而言都是transformer这个架构\n这是它的三个特点啊\n好那么接下来我们看几个有代表性的模型哈\n第一个出场的呢是deep seek\n那么deep seek呢可以称得上是国产之光啊\n那么是真正的欧皇AI啊\n他不仅仅把自己的模型的群众给开源出来了\n而且呢\n它的这个A片的价格是非常非常的低廉的啊\n100万输的token就一块钱啊\n相比国外的cloud啊\n这个GPT啊真的是便宜太多了\n他是真正的普惠呀\n就所有人都用得起啊\n普通人也用得起\n它不像国外的哈\n所有些人才用得起\n普通人根本用不起啊\n好我们接下来看第二个模型啊\n就是切换\n那么清末呢我觉得也算是国产直播啊\n因为它在开源界呢是非常非常有名的\n那么在开源领域呢\n这个使用最多的这个模型呢就是期望啊\n很多公司啊呃做AI的公司啊\n其实呢呃它都是中小企业\n并不是这个像这个google啊\n像阿里\n像腾讯这种级别的公司\n他们这种公司呢可以自己训练大公司\n但是中小企业没有这个能力训啊啊\n他们只能在这种开源的模型上面做微调\n那么他们使用的模型呢基本上都是轻微的模型\n我们来看第三个三个是质朴这个模型\n这个模型非常非常的优秀\n呃它在这个编码方面也是非常非常强的\n好我们介绍三个国外的模型呢\n我们接下来介绍了几个国外的模型啊\n第一个就是cloud\n这个呢是曾经的兵马最强模型啊\n兵马能力是非常非常强啊\n吊打还有其他一众模型\n但是GPT5.5出来之后呢\n哎哎这个成为最强模型的\n它不仅强啊\n而且呢性价比非常高\n据说哈就是完成同样的任务\nJPG5.5所消耗的出口量呢\n大概是他的60%啊\n啊那么这个性价比就非常高了\n对不对\n好\n那么介绍完模型之后呢\n哎大家脑海中可能还是有一点这个疑惑啊\n就是到底什么是模型呢\n对不对\n因为这个词语啊\n其实对于普通大众来讲\n它并不是一个很很普普遍化的一个词语\n对不对\n大家会感觉会有点模糊\n什么是模型呢\n那么这里我给大家一个更形象的类比哈\n我们可以把模型看作是一个软件\n什么是软件诶\n就是我们平常用的WPS啊\n什么QQ啊\n这些东西都是软件啊\n可以安装\n可以卸载\n那么我们可以把模型呢就看作这个软件\n那么这个时候大家问题就来了哈\n你说的这个软件\n我们平时用的这些软件是不是同一个东西呢\n舵包蚂蚁阿福集满耶\n我相信很多同学都用过啊\n那么这些东西是不是可以把它称之为大模型呢\n这里我要告诉大家\n这些东西不能称之为大模型\n这些东西啊只能称之为大模型应用软件啊\n什么是大模型应用软件\n大模型应用软件\n就是基于大模型开发出来的应用软件\n那么大模型用软件和大模型之间\n到底是一种什么样的关系呢\n大模型应用软件和大模型之间的关系啊\n这有一点像汽车和发动机之间的关系\n它们是一种什么样的关系呢\n我们我们可以说汽车是发动机吗\n不可以\n我们可以说发动机是汽车吗\n不可以\n但是我们可以说\n发动机一定是汽车最核心的一个连接\n对不对啊\n没有差肯定不能成就元气质\n但有差是不够的\n它需要和其他的一些零部件组合在一起\n才能形成形形成一条气质\n比如沙发\n比如说方向盘\n比如说轮胎\n把这些东西啊组合在一起\n才能才能形成一辆汽车\n那么大模型应用软件和大模型之间的关系呢\n这个还是一样的\n大模型应用软件不是大模型\n大模型也不是大模型\n也有软件\n但是大模型是大模型应用软件中\n最核心的一个组件\n但是仅用它是不够的\n他需要还需要数据库啊\n中间件缓存啊\n比如前端等等这些软件组合在一起\n才能形成一个大模型应用软件好\n那么这个时候大家问题又来了哈\n那么大模型在大模型应用软件中\n到底是发挥着一个什么样的作用呢\n扮演着一个什么样的角色呢\n能不能介绍一下呢\n那么这个时候呢我们就杜邦为例来介绍一下\n大模型在大模型应用软件中\n扮演一个什么样的角色\n那么豆包AP呢我相信很多同学都已经装了啊\n这是一个算是国民软件啊\n几亿的用户哈啊非常好用啊\n我自己也经常在用\n那么现在呢我们给豆包问一个问题哈\n你这个豆包是谁\n这个问题好\n那么这个问题呢杜宝月饼本身是不能回答的\n他会做一些什么样的事情\n他会把这个问题啊\n发给一个叫豆包后端程序的这么一个软件\n发给他\n那么他能不能回答这个问题呢\n他也不能回答\n他会把这个问题要发给另外一个东西\n这个东西叫杜邦大模型也发给这个东西\n这个是真正能够回答问题的软件\n那么他呢说到这个问题之后呢\n他就会去生成这个问题的答案\n然后把这个答案再交给多宝后端程序\n多\n把后端程序呢再把这个答案再返回给多包AP\n多AAB就可以把这个结果显示给用户看了\n那么这个呢是多报应用程序的完整的啊\n交互的这个流程就这个样子\n很显然\n逗猫大模型就在这过程中\n扮演一个非常核心的角色\n因为这个问题的答案是逗猫大模型生成的\n他们这些软件顶多是做一个中转\n对不对啊\n但是没有这些东西也是不行的\n但是没有豆瓣大脑小是肯定不行的啊\n那么由此可见豆包\n由此可见\n大模型在大模型应用软件中\n扮演的是一个非常非常重要的一个角色\n好那么我这个视频呢我们到这里下个视频\n我们再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1bVNR6DEbw",
+  "published_at": "1784007323",
+  "fetched_at": "2026-08-07T03:42:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Qwen 3.0.6 微调实战知识图谱\n\n## 大模型核心特征概览 [BV1bVNR6DEbw P1 01:01]  \n```mermaid\nflowchart TD\n    LM[\"大模型\"]\n    Params[\"参数量巨大（数千亿‑万亿）\"]\n    Data[\"训练数据量庞大（PB 级）\"]\n    Transformer[\"基于 Transformer 架构\"]\n\n    LM --> Params\n    LM --> Data\n    LM --> Transformer\n```\n\n## 模型生态与成本对比 [BV1bVNR6DEbw P1 02:30]  \n```mermaid\nflowchart LR\n    Domestic[\"国产模型\"]\n    DeepSeek[\"DeepSeek\"]\n    Qwen[\"Qwen\"]\n    International[\"国外模型\"]\n    Cloud[\"Cloud\"]\n    GPT55[\"GPT 5.5\"]\n    CostLow[\"成本低（100 万 token ≈ 1 元）\"]\n    CostHigh[\"成本高\"]\n    PerfHigh[\"性能强/性价比高\"]\n\n    Domestic --> DeepSeek\n    Domestic --> Qwen\n    International --> Cloud\n    International --> GPT55\n    DeepSeek --> CostLow\n    Cloud --> PerfHigh\n    GPT55 --> PerfHigh\n    Cloud --> CostHigh\n```\n\n## 大模型 ↔ 软件/应用类比 [BV1bVNR6DEbw P1 04:34]  \n```mermaid\nflowchart TD\n    Model[\"大模型\"]\n    Engine[\"模型（相当于发动机）\"]\n    AppSoftware[\"大模型应用软件\"]\n    Car[\"汽车\"]\n    CoreComp[\"核心组件\"]\n    Peripheral[\"其他组件（数据库、缓存、前端等）\"]\n\n    Model --> Engine\n    Engine --> Car\n    Car --> CoreComp\n    Car --> Peripheral\n    AppSoftware --> Model\n    AppSoftware --> Peripheral\n```\n\n## 微调全流程概览 [BV1bVNR6DEbw P1 00:24]  \n```mermaid\nflowchart TD\n    Intro[\"概念与原理介绍\"]\n    DataPrep[\"数据收集与预处理\"]\n    FineTune[\"模型微调\"]\n    Eval[\"效果评估\"]\n    Deploy[\"部署与推理\"]\n    Use[\"用户使用\"]\n\n    Intro --> DataPrep --> FineTune --> Eval --> Deploy --> Use\n```\n\n## 大模型在应用软件中的角色（以豆包为例） [BV1bVNR6DEbw P1 06:33]  \n```mermaid\nflowchart TD\n    User[\"用户提问\"]\n    DoubaoApp[\"豆包前端应用\"]\n    Backend[\"后端服务（转发）\"]\n    LargeModel[\"大模型（核心推理）\"]\n    AnswerGen[\"答案生成\"]\n    UI[\"结果展示\"]\n\n    User --> DoubaoApp\n    DoubaoApp --> Backend\n    Backend --> LargeModel\n    LargeModel --> AnswerGen\n    AnswerGen --> Backend\n    Backend --> UI\n    UI --> User\n```\n",
+      "diagrams": [
+        {
+          "title": "大模型核心特征概览",
+          "code": "flowchart TD\n    LM[\"大模型\"]\n    Params[\"参数量巨大（数千亿‑万亿）\"]\n    Data[\"训练数据量庞大（PB 级）\"]\n    Transformer[\"基于 Transformer 架构\"]\n\n    LM --> Params\n    LM --> Data\n    LM --> Transformer"
+        },
+        {
+          "title": "模型生态与成本对比",
+          "code": "flowchart LR\n    Domestic[\"国产模型\"]\n    DeepSeek[\"DeepSeek\"]\n    Qwen[\"Qwen\"]\n    International[\"国外模型\"]\n    Cloud[\"Cloud\"]\n    GPT55[\"GPT 5.5\"]\n    CostLow[\"成本低（100 万 token ≈ 1 元）\"]\n    CostHigh[\"成本高\"]\n    PerfHigh[\"性能强/性价比高\"]\n\n    Domestic --> DeepSeek\n    Domestic --> Qwen\n    International --> Cloud\n    International --> GPT55\n    DeepSeek --> CostLow\n    Cloud --> PerfHigh\n    GPT55 --> PerfHigh\n    Cloud --> CostHigh"
+        },
+        {
+          "title": "大模型 ↔ 软件/应用类比",
+          "code": "flowchart TD\n    Model[\"大模型\"]\n    Engine[\"模型（相当于发动机）\"]\n    AppSoftware[\"大模型应用软件\"]\n    Car[\"汽车\"]\n    CoreComp[\"核心组件\"]\n    Peripheral[\"其他组件（数据库、缓存、前端等）\"]\n\n    Model --> Engine\n    Engine --> Car\n    Car --> CoreComp\n    Car --> Peripheral\n    AppSoftware --> Model\n    AppSoftware --> Peripheral"
+        },
+        {
+          "title": "微调全流程概览",
+          "code": "flowchart TD\n    Intro[\"概念与原理介绍\"]\n    DataPrep[\"数据收集与预处理\"]\n    FineTune[\"模型微调\"]\n    Eval[\"效果评估\"]\n    Deploy[\"部署与推理\"]\n    Use[\"用户使用\"]\n\n    Intro --> DataPrep --> FineTune --> Eval --> Deploy --> Use"
+        },
+        {
+          "title": "大模型在应用软件中的角色（以豆包为例）",
+          "code": "flowchart TD\n    User[\"用户提问\"]\n    DoubaoApp[\"豆包前端应用\"]\n    Backend[\"后端服务（转发）\"]\n    LargeModel[\"大模型（核心推理）\"]\n    AnswerGen[\"答案生成\"]\n    UI[\"结果展示\"]\n\n    User --> DoubaoApp\n    DoubaoApp --> Backend\n    Backend --> LargeModel\n    LargeModel --> AnswerGen\n    AnswerGen --> Backend\n    Backend --> UI\n    UI --> User"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T03:42:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Qwen 3.0.6 微调实战知识图谱\n\n## 大模型核心特征概览 [BV1bVNR6DEbw P1 01:01]  \n```mermaid\nflowchart TD\n    LM[\"大模型\"]\n    Params[\"参数量巨大（数千亿‑万亿）\"]\n    Data[\"训练数据量庞大（PB 级）\"]\n    Transformer[\"基于 Transformer 架构\"]\n\n    LM --> Params\n    LM --> Data\n    LM --> Transformer\n```\n\n## 模型生态与成本对比 [BV1bVNR6DEbw P1 02:30]  \n```mermaid\nflowchart LR\n    Domestic[\"国产模型\"]\n    DeepSeek[\"DeepSeek\"]\n    Qwen[\"Qwen\"]\n    International[\"国外模型\"]\n    Cloud[\"Cloud\"]\n    GPT55[\"GPT 5.5\"]\n    CostLow[\"成本低（100 万 token ≈ 1 元）\"]\n    CostHigh[\"成本高\"]\n    PerfHigh[\"性能强/性价比高\"]\n\n    Domestic --> DeepSeek\n    Domestic --> Qwen\n    International --> Cloud\n    International --> GPT55\n    DeepSeek --> CostLow\n    Cloud --> PerfHigh\n    GPT55 --> PerfHigh\n    Cloud --> CostHigh\n```\n\n## 大模型 ↔ 软件/应用类比 [BV1bVNR6DEbw P1 04:34]  \n```mermaid\nflowchart TD\n    Model[\"大模型\"]\n    Engine[\"模型（相当于发动机）\"]\n    AppSoftware[\"大模型应用软件\"]\n    Car[\"汽车\"]\n    CoreComp[\"核心组件\"]\n    Peripheral[\"其他组件（数据库、缓存、前端等）\"]\n\n    Model --> Engine\n    Engine --> Car\n    Car --> CoreComp\n    Car --> Peripheral\n    AppSoftware --> Model\n    AppSoftware --> Peripheral\n```\n\n## 微调全流程概览 [BV1bVNR6DEbw P1 00:24]  \n```mermaid\nflowchart TD\n    Intro[\"概念与原理介绍\"]\n    DataPrep[\"数据收集与预处理\"]\n    FineTune[\"模型微调\"]\n    Eval[\"效果评估\"]\n    Deploy[\"部署与推理\"]\n    Use[\"用户使用\"]\n\n    Intro --> DataPrep --> FineTune --> Eval --> Deploy --> Use\n```\n\n## 大模型在应用软件中的角色（以豆包为例） [BV1bVNR6DEbw P1 06:33]  \n```mermaid\nflowchart TD\n    User[\"用户提问\"]\n    DoubaoApp[\"豆包前端应用\"]\n    Backend[\"后端服务（转发）\"]\n    LargeModel[\"大模型（核心推理）\"]\n    AnswerGen[\"答案生成\"]\n    UI[\"结果展示\"]\n\n    User --> DoubaoApp\n    DoubaoApp --> Backend\n    Backend --> LargeModel\n    LargeModel --> AnswerGen\n    AnswerGen --> Backend\n    Backend --> UI\n    UI --> User\n```\n",
+  "diagrams": [
+    {
+      "title": "大模型核心特征概览",
+      "code": "flowchart TD\n    LM[\"大模型\"]\n    Params[\"参数量巨大（数千亿‑万亿）\"]\n    Data[\"训练数据量庞大（PB 级）\"]\n    Transformer[\"基于 Transformer 架构\"]\n\n    LM --> Params\n    LM --> Data\n    LM --> Transformer"
+    },
+    {
+      "title": "模型生态与成本对比",
+      "code": "flowchart LR\n    Domestic[\"国产模型\"]\n    DeepSeek[\"DeepSeek\"]\n    Qwen[\"Qwen\"]\n    International[\"国外模型\"]\n    Cloud[\"Cloud\"]\n    GPT55[\"GPT 5.5\"]\n    CostLow[\"成本低（100 万 token ≈ 1 元）\"]\n    CostHigh[\"成本高\"]\n    PerfHigh[\"性能强/性价比高\"]\n\n    Domestic --> DeepSeek\n    Domestic --> Qwen\n    International --> Cloud\n    International --> GPT55\n    DeepSeek --> CostLow\n    Cloud --> PerfHigh\n    GPT55 --> PerfHigh\n    Cloud --> CostHigh"
+    },
+    {
+      "title": "大模型 ↔ 软件/应用类比",
+      "code": "flowchart TD\n    Model[\"大模型\"]\n    Engine[\"模型（相当于发动机）\"]\n    AppSoftware[\"大模型应用软件\"]\n    Car[\"汽车\"]\n    CoreComp[\"核心组件\"]\n    Peripheral[\"其他组件（数据库、缓存、前端等）\"]\n\n    Model --> Engine\n    Engine --> Car\n    Car --> CoreComp\n    Car --> Peripheral\n    AppSoftware --> Model\n    AppSoftware --> Peripheral"
+    },
+    {
+      "title": "微调全流程概览",
+      "code": "flowchart TD\n    Intro[\"概念与原理介绍\"]\n    DataPrep[\"数据收集与预处理\"]\n    FineTune[\"模型微调\"]\n    Eval[\"效果评估\"]\n    Deploy[\"部署与推理\"]\n    Use[\"用户使用\"]\n\n    Intro --> DataPrep --> FineTune --> Eval --> Deploy --> Use"
+    },
+    {
+      "title": "大模型在应用软件中的角色（以豆包为例）",
+      "code": "flowchart TD\n    User[\"用户提问\"]\n    DoubaoApp[\"豆包前端应用\"]\n    Backend[\"后端服务（转发）\"]\n    LargeModel[\"大模型（核心推理）\"]\n    AnswerGen[\"答案生成\"]\n    UI[\"结果展示\"]\n\n    User --> DoubaoApp\n    DoubaoApp --> Backend\n    Backend --> LargeModel\n    LargeModel --> AnswerGen\n    AnswerGen --> Backend\n    Backend --> UI\n    UI --> User"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:42:43+00:00"
+}

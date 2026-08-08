@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1x9jR6kEC3",
+  "title": "Unity 6.5爆改渲染➡️BIRP弃用，HDRP停更",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2142,
+  "text": "就在无人在意的角落\nUNT6.5刚刚发布了\n很明显最近大家的注意力基本都被U15.8\n还有即将登场的UI6给抢走了\n导致用T6.5这边显得有点过于安静了\n但安静归安静啊\n这次更新里有几个变化呢\n还是值得我们来看一看\n聊一聊啊\n首先是第一个也是最重要的变化\n渲染管线啊\nunity老的BRIP渲染管线呢正式进入了弃用状态\n并且从今年开始\nunity也会把开发重心放在URP上\nHDRP呢则进入了维护阶段\n不再新增任何功能\n但是BRIP呢也不会完全立刻消失\n根据官方的节奏呢\n他至少会维护6.7OTS\n也就是今年年底发布的长期支持版本\n并继续提供为期两年的支持\n直到最终被完全移除了\n而且呢从这次发布的UNT6.5开始呢\n官方就有了一系列的补齐迁移工具链\n给到\n包括改进了\n将BRIP资源转为URP的命令行工具\n以及在渲染管线转换器中支持\n将着色器从BRIP转为HDRP等等等等\nHDRP这边呢官方的态度也很明确了\n功能已经很完整了\n后续也不会有任何更新\n但会继续适配新的平台\n比如这次呢就已经支持适配到了switch2\n整体来看呢\n这一轮的更新调整啊\n不是简短的功能更新\n而是开始大一统了呀\nURP成为主线\nHDRP维持高端反BRIP呢则逐步退出了\n第二个主要更新是HDRP\n这边用T6.5理呢\nHDRP原来的降噪器被弃用了\n改成了英特尔的OIDN\n其实旧版的这个降噪器就是因为打假了\n当我们渲染的时候的路径\n最终画面一开始会有很多噪点\n它的这个降噪器作用呢就是把这些噪点压下去\n让画面更干净\n问题是呢老款的降噪器啊\n主要依赖的是N卡A新英伟达\n而这次更新后的OIDN呢全称是open image diy\n是来自英特尔的开源图像降噪方案\n它的优势就是硬件适配范围更宽广了\nCPUGPU都能覆盖到更多的场景\n所以这次变化呢可以理解为\nunity在把HDRP的降噪流程\n管更通用的硬件路线的更新\n大多数HDR项目呢都会自动更新到OIDN\n接下来是URP正品的更新\nunity6.5之后呢\n图块后期处理功能现在支持所有的硬件平台了\n其实这个图块后期处理功能呢就是把HDR色调\n映色颜色分级暗角\n这些后处理效果尽量在GPU的小块渲染区域里\n一次性做完\n以前这些后处理呢\n有时要在GPU和系统内存之间来回搬数据\n搬来搬去呢也吃带宽\n影响性能\n现在这个流程更新后变完整了\n移动端再做HDR和后处理就更方便了\n虽然以前移动端呢也能做HDR\n但unity并不太推荐\n性能压力比较大\n而这次更新后呢\n除了移动端以外\n在working和metal这些平台上的带宽占用会更低\n画面也更稳定\n所以如果你是做手游\n移动端互动展示轻量级实时项目\n那你现在去做HDR和后处理会更加的方便\n第四个更新是sh\n也就是unity的可视化区域的编辑器\nunity6.5里呢\nHT graph加了几个新功能\n比如技术美术\n现在可以用HLSL着色语言\n写自定义的虚的节点啦\n特别是节点不够用的时候呢\nta就可以自己写一段逻辑\n然后把它变成自定义节点\n另外呢还有新的表达式节点\n这个节点呢可以把复杂表达\n而是塞进一个节点里用\n以前可能要拉一串的数学节点对吧\n现在一个节点就能完全搞定\n节点图呢也会更加的干净\n还有新的switch节点\n它可以让一个区域的根据不同的用途\n走不同的分支\n做着色器的变体的时候呢\n就会非常的方便\n其实这部分的更新呢对很实用啊\n因为项目悦达区的graph很容易连成蜘蛛网\n节点能整理的更加清楚呢\n后面维护的人啊就能少骂两句啦\n接下来是2D工具集方面的更新\n42D更新还挺多的\n有问题\n6.5现在有了一个创建自定义2D灯光的API\n还有自定义2D音API\n另外unity6.5的混合形状API呢也更新了\n现在可以对基于FFD的精灵变形提供基础\n你现在呢可以用基于轮状的自由变形\n动态操纵你的精灵啊\n除此之外还有新的2D性能分析工具\n它可以帮你看精灵设置里到底哪里脱离性能\n所以说2D项目呢只偏人动画2D特效\n我横版游戏的小伙伴呢\n这些功能还是很有用的\n除了以上这五个重点功能更新以外呢\n运营T6点我还有一些其他功能\n比如vfx graph的模板窗口\n现在加入了搜索过滤和排序的功能\n有照明里也加入了新的照明搜索窗口大窗\n这里灯光一端啊\n找灯就很麻烦\n这个窗口呢可以帮你更快的定位\n长这里的灯光了\n3D物理方面新增了一个直接求解器\n用于复杂的齿轮链条和绳索\n以及基于XR的对象操作和堆叠等机械操作了\n所以整体看下来呢\n其实这次更新了unity6.5啊\n不是那种特别炸裂的大版本\n呃难怪我人在意啊\n虽然呢没有一个看完\n让人觉得不明觉厉的大功能\n但它更像是在慢慢把一些关键环节补习\n但项目做起来更顺一点\n哎比如像老的BRIP管线退场了对吧\nHDRP的降噪方案也更新了URP的移动端\nHDR后处理也更好用了\nshade graph更方便\nta库奥迪工具也补了灯光\n阴影变形和性能分析\n这些东西呢单看都不觉得特别的厉害\n但其实也是在帮我们\n把uni t的制作流程变得更加的稳定\n更加的清晰好用啦好啦\n那么根据惯例\n给这次的uni体6.5弹幕打个分吧\n思域是更快报行业大事\n早知道\n关注我了解最近cg行业又发生了什么事情",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1x9jR6kEC3",
+  "published_at": "1782297149",
+  "fetched_at": "2026-08-08T07:32:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Unity 6.5 渲染与工具更新图谱\n\n## 渲染管线策略概览\n```mermaid\nflowchart TD\n    A1[\"BRIP 渲染管线\"] --> A2[\"已弃用 (自 Unity 6.5)\"]\n    A2 --> A3[\"仍维护至 6.7 LTS\"]\n    A3 --> A4[\"6.7 LTS 支持 2 年\"]\n    A4 --> A5[\"最终移除\"]\n    A1 --> A12[\"官方迁移工具链\"]\n    A12 --> A13[\"BRIP→URP 命令行工具\"]\n    A12 --> A14[\"BRIP→HDRP 着色器转换器\"]\n    A6[\"URP (Universal Render Pipeline)\"] --> A7[\"成为主线\"]\n    A8[\"HDRP (High Definition RP)\"] --> A9[\"进入维护阶段\"]\n    A9 --> A10[\"不再新增功能\"]\n    A9 --> A11[\"继续适配新平台 (如 Switch2)\"]\n```\n\n## HDRP 降噪方案更新\n```mermaid\nflowchart TD\n    B1[\"HDRP 旧降噪器\"] --> B3[\"已弃用 (Unity 6.5)\"]\n    B1 --> B2[\"依赖 Nvidia GPU\"]\n    B3 --> B4[\"OIDN (Open Image Denoise)\"]\n    B4 --> B5[\"Intel 开源方案\"]\n    B4 --> B6[\"支持 CPU 与 GPU\"]\n    B6 --> B7[\"硬件适配范围更宽\"]\n    B4 --> B8[\"自动升级至 OIDN\"]\n    B8 --> B9[\"提升画面干净度\"]\n```\n\n## URP Tile 后期处理改进\n```mermaid\nflowchart TD\n    C1[\"URP Tile 后期处理\"] --> C2[\"支持所有硬件平台\"]\n    C2 --> C3[\"在 GPU 小块渲染区域一次性完成\"]\n    C3 --> C4[\"避免 GPU ↔ 系统内存搬移\"]\n    C4 --> C5[\"降低带宽占用\"]\n    C5 --> C6[\"提升性能\"]\n    C1 --> C7[\"移动端 HDR 与后期处理\"]\n    C7 --> C8[\"更易实现\"]\n    C8 --> C9[\"在 Windows、Metal 等平台带宽更低\"]\n    C9 --> C10[\"画面更稳定\"]\n```\n\n## Shader Graph（HT Graph）新功能\n```mermaid\nflowchart TD\n    D1[\"HT Graph (Shader Graph)\"] --> D2[\"新增 HLSL 自定义节点\"]\n    D2 --> D3[\"用户编写逻辑生成自定义节点\"]\n    D1 --> D4[\"新增表达式节点\"]\n    D4 --> D5[\"将复杂表达压缩至单节点\"]\n    D1 --> D6[\"新增 Switch 节点\"]\n    D6 --> D7[\"根据用途分支不同路径\"]\n    D7 --> D8[\"简化 Shader 变体制作\"]\n    D2 --> D9[\"节点图更整洁\"]\n    D4 --> D9\n    D6 --> D9\n```\n\n## 2D 工具集更新\n```mermaid\nflowchart TD\n    E1[\"2D 工具集\"] --> E2[\"自定义 2D 灯光 API\"]\n    E1 --> E3[\"自定义 2D 音频 API\"]\n    E1 --> E4[\"混合形状 API 更新\"]\n    E4 --> E5[\"基于 FFD 的精灵变形\"]\n    E4 --> E6[\"基于轮状的自由变形\"]\n    E5 --> E7[\"动态操纵精灵\"]\n    E6 --> E7\n    E1 --> E8[\"2D 性能分析工具\"]\n    E8 --> E9[\"定位性能瓶颈\"]\n    E9 --> E10[\"适用于横版游戏、动画、特效\"]\n```",
+      "diagrams": [
+        {
+          "title": "渲染管线策略概览",
+          "code": "flowchart TD\n    A1[\"BRIP 渲染管线\"] --> A2[\"已弃用 (自 Unity 6.5)\"]\n    A2 --> A3[\"仍维护至 6.7 LTS\"]\n    A3 --> A4[\"6.7 LTS 支持 2 年\"]\n    A4 --> A5[\"最终移除\"]\n    A1 --> A12[\"官方迁移工具链\"]\n    A12 --> A13[\"BRIP→URP 命令行工具\"]\n    A12 --> A14[\"BRIP→HDRP 着色器转换器\"]\n    A6[\"URP (Universal Render Pipeline)\"] --> A7[\"成为主线\"]\n    A8[\"HDRP (High Definition RP)\"] --> A9[\"进入维护阶段\"]\n    A9 --> A10[\"不再新增功能\"]\n    A9 --> A11[\"继续适配新平台 (如 Switch2)\"]"
+        },
+        {
+          "title": "HDRP 降噪方案更新",
+          "code": "flowchart TD\n    B1[\"HDRP 旧降噪器\"] --> B3[\"已弃用 (Unity 6.5)\"]\n    B1 --> B2[\"依赖 Nvidia GPU\"]\n    B3 --> B4[\"OIDN (Open Image Denoise)\"]\n    B4 --> B5[\"Intel 开源方案\"]\n    B4 --> B6[\"支持 CPU 与 GPU\"]\n    B6 --> B7[\"硬件适配范围更宽\"]\n    B4 --> B8[\"自动升级至 OIDN\"]\n    B8 --> B9[\"提升画面干净度\"]"
+        },
+        {
+          "title": "URP Tile 后期处理改进",
+          "code": "flowchart TD\n    C1[\"URP Tile 后期处理\"] --> C2[\"支持所有硬件平台\"]\n    C2 --> C3[\"在 GPU 小块渲染区域一次性完成\"]\n    C3 --> C4[\"避免 GPU ↔ 系统内存搬移\"]\n    C4 --> C5[\"降低带宽占用\"]\n    C5 --> C6[\"提升性能\"]\n    C1 --> C7[\"移动端 HDR 与后期处理\"]\n    C7 --> C8[\"更易实现\"]\n    C8 --> C9[\"在 Windows、Metal 等平台带宽更低\"]\n    C9 --> C10[\"画面更稳定\"]"
+        },
+        {
+          "title": "Shader Graph（HT Graph）新功能",
+          "code": "flowchart TD\n    D1[\"HT Graph (Shader Graph)\"] --> D2[\"新增 HLSL 自定义节点\"]\n    D2 --> D3[\"用户编写逻辑生成自定义节点\"]\n    D1 --> D4[\"新增表达式节点\"]\n    D4 --> D5[\"将复杂表达压缩至单节点\"]\n    D1 --> D6[\"新增 Switch 节点\"]\n    D6 --> D7[\"根据用途分支不同路径\"]\n    D7 --> D8[\"简化 Shader 变体制作\"]\n    D2 --> D9[\"节点图更整洁\"]\n    D4 --> D9\n    D6 --> D9"
+        },
+        {
+          "title": "2D 工具集更新",
+          "code": "flowchart TD\n    E1[\"2D 工具集\"] --> E2[\"自定义 2D 灯光 API\"]\n    E1 --> E3[\"自定义 2D 音频 API\"]\n    E1 --> E4[\"混合形状 API 更新\"]\n    E4 --> E5[\"基于 FFD 的精灵变形\"]\n    E4 --> E6[\"基于轮状的自由变形\"]\n    E5 --> E7[\"动态操纵精灵\"]\n    E6 --> E7\n    E1 --> E8[\"2D 性能分析工具\"]\n    E8 --> E9[\"定位性能瓶颈\"]\n    E9 --> E10[\"适用于横版游戏、动画、特效\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T07:32:51+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Unity 6.5 渲染与工具更新图谱\n\n## 渲染管线策略概览\n```mermaid\nflowchart TD\n    A1[\"BRIP 渲染管线\"] --> A2[\"已弃用 (自 Unity 6.5)\"]\n    A2 --> A3[\"仍维护至 6.7 LTS\"]\n    A3 --> A4[\"6.7 LTS 支持 2 年\"]\n    A4 --> A5[\"最终移除\"]\n    A1 --> A12[\"官方迁移工具链\"]\n    A12 --> A13[\"BRIP→URP 命令行工具\"]\n    A12 --> A14[\"BRIP→HDRP 着色器转换器\"]\n    A6[\"URP (Universal Render Pipeline)\"] --> A7[\"成为主线\"]\n    A8[\"HDRP (High Definition RP)\"] --> A9[\"进入维护阶段\"]\n    A9 --> A10[\"不再新增功能\"]\n    A9 --> A11[\"继续适配新平台 (如 Switch2)\"]\n```\n\n## HDRP 降噪方案更新\n```mermaid\nflowchart TD\n    B1[\"HDRP 旧降噪器\"] --> B3[\"已弃用 (Unity 6.5)\"]\n    B1 --> B2[\"依赖 Nvidia GPU\"]\n    B3 --> B4[\"OIDN (Open Image Denoise)\"]\n    B4 --> B5[\"Intel 开源方案\"]\n    B4 --> B6[\"支持 CPU 与 GPU\"]\n    B6 --> B7[\"硬件适配范围更宽\"]\n    B4 --> B8[\"自动升级至 OIDN\"]\n    B8 --> B9[\"提升画面干净度\"]\n```\n\n## URP Tile 后期处理改进\n```mermaid\nflowchart TD\n    C1[\"URP Tile 后期处理\"] --> C2[\"支持所有硬件平台\"]\n    C2 --> C3[\"在 GPU 小块渲染区域一次性完成\"]\n    C3 --> C4[\"避免 GPU ↔ 系统内存搬移\"]\n    C4 --> C5[\"降低带宽占用\"]\n    C5 --> C6[\"提升性能\"]\n    C1 --> C7[\"移动端 HDR 与后期处理\"]\n    C7 --> C8[\"更易实现\"]\n    C8 --> C9[\"在 Windows、Metal 等平台带宽更低\"]\n    C9 --> C10[\"画面更稳定\"]\n```\n\n## Shader Graph（HT Graph）新功能\n```mermaid\nflowchart TD\n    D1[\"HT Graph (Shader Graph)\"] --> D2[\"新增 HLSL 自定义节点\"]\n    D2 --> D3[\"用户编写逻辑生成自定义节点\"]\n    D1 --> D4[\"新增表达式节点\"]\n    D4 --> D5[\"将复杂表达压缩至单节点\"]\n    D1 --> D6[\"新增 Switch 节点\"]\n    D6 --> D7[\"根据用途分支不同路径\"]\n    D7 --> D8[\"简化 Shader 变体制作\"]\n    D2 --> D9[\"节点图更整洁\"]\n    D4 --> D9\n    D6 --> D9\n```\n\n## 2D 工具集更新\n```mermaid\nflowchart TD\n    E1[\"2D 工具集\"] --> E2[\"自定义 2D 灯光 API\"]\n    E1 --> E3[\"自定义 2D 音频 API\"]\n    E1 --> E4[\"混合形状 API 更新\"]\n    E4 --> E5[\"基于 FFD 的精灵变形\"]\n    E4 --> E6[\"基于轮状的自由变形\"]\n    E5 --> E7[\"动态操纵精灵\"]\n    E6 --> E7\n    E1 --> E8[\"2D 性能分析工具\"]\n    E8 --> E9[\"定位性能瓶颈\"]\n    E9 --> E10[\"适用于横版游戏、动画、特效\"]\n```",
+  "diagrams": [
+    {
+      "title": "渲染管线策略概览",
+      "code": "flowchart TD\n    A1[\"BRIP 渲染管线\"] --> A2[\"已弃用 (自 Unity 6.5)\"]\n    A2 --> A3[\"仍维护至 6.7 LTS\"]\n    A3 --> A4[\"6.7 LTS 支持 2 年\"]\n    A4 --> A5[\"最终移除\"]\n    A1 --> A12[\"官方迁移工具链\"]\n    A12 --> A13[\"BRIP→URP 命令行工具\"]\n    A12 --> A14[\"BRIP→HDRP 着色器转换器\"]\n    A6[\"URP (Universal Render Pipeline)\"] --> A7[\"成为主线\"]\n    A8[\"HDRP (High Definition RP)\"] --> A9[\"进入维护阶段\"]\n    A9 --> A10[\"不再新增功能\"]\n    A9 --> A11[\"继续适配新平台 (如 Switch2)\"]"
+    },
+    {
+      "title": "HDRP 降噪方案更新",
+      "code": "flowchart TD\n    B1[\"HDRP 旧降噪器\"] --> B3[\"已弃用 (Unity 6.5)\"]\n    B1 --> B2[\"依赖 Nvidia GPU\"]\n    B3 --> B4[\"OIDN (Open Image Denoise)\"]\n    B4 --> B5[\"Intel 开源方案\"]\n    B4 --> B6[\"支持 CPU 与 GPU\"]\n    B6 --> B7[\"硬件适配范围更宽\"]\n    B4 --> B8[\"自动升级至 OIDN\"]\n    B8 --> B9[\"提升画面干净度\"]"
+    },
+    {
+      "title": "URP Tile 后期处理改进",
+      "code": "flowchart TD\n    C1[\"URP Tile 后期处理\"] --> C2[\"支持所有硬件平台\"]\n    C2 --> C3[\"在 GPU 小块渲染区域一次性完成\"]\n    C3 --> C4[\"避免 GPU ↔ 系统内存搬移\"]\n    C4 --> C5[\"降低带宽占用\"]\n    C5 --> C6[\"提升性能\"]\n    C1 --> C7[\"移动端 HDR 与后期处理\"]\n    C7 --> C8[\"更易实现\"]\n    C8 --> C9[\"在 Windows、Metal 等平台带宽更低\"]\n    C9 --> C10[\"画面更稳定\"]"
+    },
+    {
+      "title": "Shader Graph（HT Graph）新功能",
+      "code": "flowchart TD\n    D1[\"HT Graph (Shader Graph)\"] --> D2[\"新增 HLSL 自定义节点\"]\n    D2 --> D3[\"用户编写逻辑生成自定义节点\"]\n    D1 --> D4[\"新增表达式节点\"]\n    D4 --> D5[\"将复杂表达压缩至单节点\"]\n    D1 --> D6[\"新增 Switch 节点\"]\n    D6 --> D7[\"根据用途分支不同路径\"]\n    D7 --> D8[\"简化 Shader 变体制作\"]\n    D2 --> D9[\"节点图更整洁\"]\n    D4 --> D9\n    D6 --> D9"
+    },
+    {
+      "title": "2D 工具集更新",
+      "code": "flowchart TD\n    E1[\"2D 工具集\"] --> E2[\"自定义 2D 灯光 API\"]\n    E1 --> E3[\"自定义 2D 音频 API\"]\n    E1 --> E4[\"混合形状 API 更新\"]\n    E4 --> E5[\"基于 FFD 的精灵变形\"]\n    E4 --> E6[\"基于轮状的自由变形\"]\n    E5 --> E7[\"动态操纵精灵\"]\n    E6 --> E7\n    E1 --> E8[\"2D 性能分析工具\"]\n    E8 --> E9[\"定位性能瓶颈\"]\n    E9 --> E10[\"适用于横版游戏、动画、特效\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T07:32:51+00:00"
+}

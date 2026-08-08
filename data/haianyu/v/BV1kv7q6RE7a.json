@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1kv7q6RE7a",
+  "title": "[93]. PyTorch_2：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2899,
+  "text": "今天我们来介绍一篇关于PYTORCH\n图编译加速的工作\n标题叫做PYTORCH2\n全称是通过动态Python字节码转换和图编译\n实现更快的机器学习\nPYTORCH的即时执行模式\n虽然灵活易用\n但难以进行跨算子的图集优化\n这篇论文提出了两个扩展\ntorch dynamo和torch inductor\n他们共同实现了PYTORCH2中的torch点\ncompile特性\ntorch animal是一个Python级别的即时编译器\n通过在运行时动态修改Python字节码\n来提取PYTORCH运算序列并生成FX图\n同时保留了Python的完整灵活性\ntorch inductor则作为默认后端\n将FX图编译为高效的GPU\ntry to内核或CPU的C加加与open mp代码\n在超过180个真实模型的评测中\n该方案在A100GPU上实现了推理\n2.27倍训练\n1.41倍的几何平均加速\n下面看一下摘要翻译\n本文介绍了对PYTORCH\n机器学习框架的两个扩展\ntorch dynamo和torch inductor\n他们实现了PYTORCH2中发布的torch点\ncom pile功能\ntorch damo是一个Python级别的即时编译器\n能够在不牺牲Python灵活性的前提下\n实现PYTORCH程序的图编译\n它通过在执行前动态修改Python字节码\n提取PYTORCH运算序列\n生成FX图\n然后由可扩展后端进行即时编译\ntching dr.是torch damo的默认编译器\n后端将PYTORCH程序翻译为OpenAI的TRITTON\n已用于GPU或C加加\n已用于CPU实验\n结果表明\ntorch dyamo比以往方法更稳健的捕获图\n且开销极小\nTouching doctor\n在NVIDIAA100GPU上\n对180多个真实世界模型实现了推理\n2.27倍训练\n1.41倍的几何平均加速\n超过了其他六种编译器\n这些扩展为在即时模式框架中\n应用编译器优化提供了一种新途径\n下面看一下这张图\n这张图展示了torch damo修改c Python解释器\n以捕获FX图的核心机制\n左侧是原始的Python执行流程函数\n调用会创建pyframe object和pi code object\n然后进入默认的解释器循环执行字节码\n右侧是torch animal修改后的流程\n当函数被调用时\ntorch animal会先检查guards\n判断当前执行环境\n是否与之前编译时的假设一致\n如果一致\n直接运行缓存的编译后代码\n如果不一致或首次执行\ntorch damo会对Python字节码进行动态分析和转换\n将其中属于PYTORCH运算的部分提取出来\n构建FX图\n并将非PYTORCH部分保留在转换后的拍code object中\nFX图随后被传递给用户\n定义或默认的后端编译器生成compile function\n这个设计的巧妙之处在于\n它不需要替换Python解释器\n而是通过字节码层面的钩子\n实现了无缝的图捕获与混合执行\n下面看一下这张图\n这张图展示了torch inductor的中间表示\n以touch log2在二维张量上的运算为例\n上方是一个Python函数\nInner fbuff0\n它定义了如何计算单个元素的值\n先从输入缓冲区加载数据\n然后做log运算\n再乘以一个常数\n下方是tching dr.的IR结构\n使用tensor box\nStorage\nbox和computed buffer等抽象\n来描述张量的存储和计算方式\n其中layout字段指定了数据类型\n设备尺寸和步长\ndata字段则关联了上面定义的点vice计算函数\n这种IR的优势在于\n它使用可执行的Python代码来定义循环体\n继承了Python的表达能力\n同时又能被后续阶段分析和转换为\n高性能的底层内核代码\n下面看一下这段伪代码\n这段代码展示了由touching dr.\n为之前的log2示例生成的try to内核\n这是一个经过point wise装饰器修饰的\ntritton jet函数\n它的主要流程是\n首先根据程序id和块大小\n计算当前线程块负责的数据偏移\n然后生成一个索引向量\n并构造掩码\n防止越界访问\n接着他从输入指针加载数据\n依次执行log运算和常数乘法\n最后将结果写回输出指针\n通过这个例子可以看出\nTorch inductor\n能够将高层的PYTORCH运算自动降维为\n接近手写质量的GPU内核代码\n并且自然地处理了边界检查和向量化加载存储\n下面看一下这个表\n在三个主流基准测试套件上的图捕获能力评测\n在A100GPU的float32推理环境下进行\n在touch bench的80个模型中\ntorch danimal成功覆盖了74个\n占比93%\n而torch script只能覆盖其中的45%\n在哈根face和TM上覆盖率更是达到了100%\n从捕获质量来看\nTouch danamo\n平均能捕获90%\n1.8到100%的算子\n并且70%到100%的模型\n可以实现零图断裂的完整图捕获\n这说明torch animal\n对真实世界模型的兼容性和图捕获完整性\n都显著优于之前的方案\n下面看一下这个表\n这个表对比了图捕获机制本身引入的运行时\n开销\n数字是相对于PYTORCH及时执行时间的百分比\n越低越好\ntorch animal在推理和训练中的开销\n分别只有5%和1%\n几乎可以忽略不计\n相比之下\nlazy tensors在推理中引入38%的开销\n在训练中更是高达90%\n即使lazy tensors配合跨迭代流水线优化后\n训练开销仍有86%\n这意味着torch danimal的字节码重写方案\n在捕获图的同时\n几乎没有带来额外的运行时负担\n下面看一下这张图\n这张图展示了不同torch damo\n后端相对于PYTORCH计时模式的加速比\n累积分布函数\n图中横轴是加速倍数\n越靠左表示加速越高\n纵轴是模型数量\n可以看到\nTorch inductor\n在各类配置下都明显优于其他后端\n在GPU float32推理中\n大部分模型都能获得二倍以上的加速\n在GPU训练中加速效果同样显著\n其他后端如NVFUSER和NNC\n虽然也能带来一定提升\n但在模型覆盖范围和加速幅度上都不如\nTorch inductor\nCPU上的结果也呈现类似的趋势\nTorch inductor\n在推理和训练中均处于最上方的曲线位置\n下面看一下这个表\n这个表是torch dr.的消融实验\n测量了逐一关闭各项优化后\n在hugin face float16GPU上的性能变化\n基准是全部优化\n开启时的推理\n1.91倍和训练1.45倍加速\n当同时关闭算子融合和内联后\n推理加速从1.91倍跌落到0.80倍\n训练从1.45倍跌落到0.59倍\n说明这两项是性能来源的核心\n单独关闭融合会带来0.23倍的推理降幅\n和0.18倍的训练降幅\n单独关闭内联\n则分别带来0.33倍和0.14倍的下降\n此外CUDA图矩阵成模板和循环布局\n重排等优化\n也对最终性能有不同程度的正向贡献",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1kv7q6RE7a",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

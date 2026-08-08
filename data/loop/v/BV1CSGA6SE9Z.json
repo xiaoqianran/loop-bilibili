@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1CSGA6SE9Z",
+  "title": "Godot4 从零复刻土豆兄弟｜完整 Brotato 类肉鸽割草游戏开发教程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1441,
+  "text": "欢迎来到这门全新课程\n我们将会学习如何使用高德次复刻\n知名游戏potato\n在这门课程里\n你将会掌握生存类游戏的核心机制\n把你的游戏开发水平提升到全新层次\n你能够更加熟练地使用gd script进行编程\n学习\n设计各类游戏系统\n掌握游戏菜单与界面的制作方法\n在第一个章节\n我们将会学习如何制作玩家角色\n在这一部分我们将会实现角色移动\n添加冲刺功能\n为游戏内各类实体创建自定义属性\n还有更多相关内容\n在第二个章节\n我们开始添加游戏敌人\n我们会搭建一套敌人追踪玩家的系统\n制作能够在整个项目复用的各类组件\n同时搭建浮动文字系统\n用来显示我们造成的伤害数值\n接下来我们着手制作近战武器\n这类武器可以装配在玩家角色四周\n我们会制作带有专属属性的自定义武器\n让每一把武器拥有截然不同的使用感受\n我们还会为敌人实现受伤判定与击退效果之后\n我们来配置远程武器\n这类武器可以发射投射物\n并且自动转向距离最近的目标\n在下一个章节\n我们将为敌人设计两种攻击方式\n第一种是冲锋攻击\n第二种会向玩家发射大量投射物\n接下来我们搭建一套功能完善\n支持自定义参数的波次生成系统\n以此控制哪些敌人出现概率更高\n在下一个章节\n我们开始制作用户界面\n搭建升级面板\n这些道具能够提升玩家角色的各项属性\n我们同时会实现普通稀有\n史诗以及传说四种稀有度\n在下一个章节\n我们制作商店面板\n你可以在面板里购买合成以及出售各类道具\n在这之后我们搭建一套机制\n完成波次后有机会获取更高稀有度的道具\n最后我们制作角色选择面板\n你可以在面板里挑选本局想要使用的玩家\n角色与武器\n所以如果你想要提升自己的高到的开发能力\n这门课程就非常适合你\n我建议你先观看免费开放的视频\n确认这门课程\n是否就是你一直在寻找的学习内容\n别再犹豫\n立即报名\n今天就开始动手制作嗯\n各位大家好\n欢迎收看本期视频\n我们会讲解在继续学习之前\n你需要了解的几项重要内容\n在正式开始之前\n我由衷感谢各位购买这门课程\n真心希望大家能够喜欢这门课程\n并且借助课程在游戏开发的道路上持续成长\n首先要说的第一件事就是如何联系我\n提出你的疑问\n如果你对课程内容存在疑惑\n遇到开发瓶颈\n或是需要任何游戏开发相关的技术帮助\n你\n可以在问答板块提问\n也可以加入我们的discord服务器\ndiscord服务器的邀请链接\n放置在附加内容章节的最后一课当中\n你只需要把问题发布到对应频道\n我会很乐意为你提供帮助\n我想讲的第二个要点是\n这门课程适合哪些人群学习\n正如课程简介所写\n学习这门课程需要具备扎实的GUARDA\n游戏开发基础\n实际上课程面向的是入门层级的学习者\n但学习者同时必须拥有扎实的构导操作基础\n也就是说学习者要熟悉编辑器的操作\n清楚2D工作区域是什么\n了解脚本游戏窗口\n场景检查器等等基础内容\n至少要会使用15~20种节点\n例如spread2D各类动画节点\n清楚control节点是什么\ncanvas layer节点是什么\n以及其他相关内容都是使用\nGODOT是最基础的知识\n虽然课程当中我会详细讲解\n我们完成的每一项操作\n但不会讲解最最基础的入门知识\n我不会讲解信号类变量或是函数这类基础概念\n学习这门课程要求你已经掌握这些基础内容\n才能顺利往下学习\n因为我们正在制作的这款游戏\n不属于简易小游戏\n这款游戏包含大量系统\n整体交互动态性很强\n所以你必须熟练掌握编辑器的操作\n理解函数的概念\n懂得如何关联各个类以及其他相关知识\n清楚这一点之后\n我们就可以进入下一个视频进行学习",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1CSGA6SE9Z",
+  "published_at": "1785482045",
+  "fetched_at": "2026-08-06T18:52:27+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot4 土豆兄弟复刻课程知识图谱\n\n## 总体概览\n```mermaid\nflowchart TD\n    Prereq[\"先决条件：Godot编辑器操作、基础节点使用\"] --> GDScript[\"GDscript 编程\"]\n    GDScript --> Player[\"玩家角色系统（移动、冲刺、属性）\"]\n    GDScript --> Enemy[\"敌人系统（追踪、受伤、击退）\"]\n    GDScript --> Weapon[\"武器系统（近战、远程、自动瞄准）\"]\n    GDScript --> UI[\"用户界面系统（升级、商店、角色选择）\"]\n    Player --> CoreLoop[\"核心游戏循环\"]\n    Enemy --> CoreLoop\n    Weapon --> CoreLoop\n    UI --> CoreLoop\n    CoreLoop --> FinalGame[\"完整的土豆兄弟肉鸽游戏\"]\n```\n\n## 章节流程\n```mermaid\nflowchart LR\n    Intro[\"课程导入\"]\n    C1[\"章节 1：玩家角色制作\"]\n    C2[\"章节 2：敌人与组件\"]\n    C3[\"章节 3：攻击方式与波次生成\"]\n    C4[\"章节 4：升级面板与稀有度\"]\n    C5[\"章节 5：商店与道具获取\"]\n    C6[\"章节 6：角色与武器选择\"]\n    Conclusion[\"课程总结与实战\"]\n    Intro --> C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> Conclusion\n```\n\n## 敌人系统细节\n```mermaid\nflowchart TD\n    EnemyEntity[\"敌人实体\"]\n    Tracking[\"追踪玩家系统\"]\n    DamageText[\"浮动伤害文字\"]\n    HurtKnockback[\"受伤判定与击退\"]\n    MeleeWeapon[\"近战武器（自定义属性）\"]\n    RangedWeapon[\"远程武器（投射物）\"]\n    Projectile[\"投射物\"]\n    AutoAim[\"自动转向最近目标\"]\n    AttackTypes[\"攻击方式\"]\n    ChargeAttack[\"冲锋攻击\"]\n    ProjectileBurst[\"大量投射物攻击\"]\n    WaveGen[\"波次生成系统\"]\n    SpawnProb[\"敌人出现概率控制\"]\n    CustomParams[\"自定义参数\"]\n    ReusableComp[\"可复用组件\"]\n    WaveGen --> SpawnProb\n    WaveGen --> CustomParams\n    EnemyEntity --> Tracking\n    EnemyEntity --> DamageText\n    EnemyEntity --> HurtKnockback\n    EnemyEntity --> MeleeWeapon\n    EnemyEntity --> RangedWeapon\n    RangedWeapon --> Projectile\n    Projectile --> AutoAim\n    EnemyEntity --> AttackTypes\n    AttackTypes --> ChargeAttack\n    AttackTypes --> ProjectileBurst\n    EnemyEntity --> ReusableComp\n    WaveGen --> EnemyEntity\n```\n\n## 用户界面系统细节\n```mermaid\nflowchart LR\n    UpgradePanel[\"升级面板\"]\n    RarityCommon[\"普通稀有度\"]\n    RarityRare[\"稀有\"]\n    RarityEpic[\"史诗\"]\n    RarityLegend[\"传说\"]\n    ShopPanel[\"商店面板\"]\n    Purchase[\"购买道具\"]\n    Sell[\"出售道具\"]\n    Synthesis[\"合成系统\"]\n    WaveReward[\"波次奖励机制\"]\n    HigherRarity[\"更高稀有度获取概率\"]\n    CharSelect[\"角色选择面板\"]\n    WeaponSelect[\"武器选择\"]\n    PlayerSelect[\"玩家角色选择\"]\n    UpgradePanel --> RarityCommon\n    UpgradePanel --> RarityRare\n    UpgradePanel --> RarityEpic\n    UpgradePanel --> RarityLegend\n    ShopPanel --> Purchase\n    ShopPanel --> Sell\n    ShopPanel --> Synthesis\n    WaveReward --> HigherRarity\n    HigherRarity --> RarityRare\n    HigherRarity --> RarityEpic\n    HigherRarity --> RarityLegend\n    CharSelect --> WeaponSelect\n    CharSelect --> PlayerSelect\n```",
+      "diagrams": [
+        {
+          "title": "总体概览",
+          "code": "flowchart TD\n    Prereq[\"先决条件：Godot编辑器操作、基础节点使用\"] --> GDScript[\"GDscript 编程\"]\n    GDScript --> Player[\"玩家角色系统（移动、冲刺、属性）\"]\n    GDScript --> Enemy[\"敌人系统（追踪、受伤、击退）\"]\n    GDScript --> Weapon[\"武器系统（近战、远程、自动瞄准）\"]\n    GDScript --> UI[\"用户界面系统（升级、商店、角色选择）\"]\n    Player --> CoreLoop[\"核心游戏循环\"]\n    Enemy --> CoreLoop\n    Weapon --> CoreLoop\n    UI --> CoreLoop\n    CoreLoop --> FinalGame[\"完整的土豆兄弟肉鸽游戏\"]"
+        },
+        {
+          "title": "章节流程",
+          "code": "flowchart LR\n    Intro[\"课程导入\"]\n    C1[\"章节 1：玩家角色制作\"]\n    C2[\"章节 2：敌人与组件\"]\n    C3[\"章节 3：攻击方式与波次生成\"]\n    C4[\"章节 4：升级面板与稀有度\"]\n    C5[\"章节 5：商店与道具获取\"]\n    C6[\"章节 6：角色与武器选择\"]\n    Conclusion[\"课程总结与实战\"]\n    Intro --> C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> Conclusion"
+        },
+        {
+          "title": "敌人系统细节",
+          "code": "flowchart TD\n    EnemyEntity[\"敌人实体\"]\n    Tracking[\"追踪玩家系统\"]\n    DamageText[\"浮动伤害文字\"]\n    HurtKnockback[\"受伤判定与击退\"]\n    MeleeWeapon[\"近战武器（自定义属性）\"]\n    RangedWeapon[\"远程武器（投射物）\"]\n    Projectile[\"投射物\"]\n    AutoAim[\"自动转向最近目标\"]\n    AttackTypes[\"攻击方式\"]\n    ChargeAttack[\"冲锋攻击\"]\n    ProjectileBurst[\"大量投射物攻击\"]\n    WaveGen[\"波次生成系统\"]\n    SpawnProb[\"敌人出现概率控制\"]\n    CustomParams[\"自定义参数\"]\n    ReusableComp[\"可复用组件\"]\n    WaveGen --> SpawnProb\n    WaveGen --> CustomParams\n    EnemyEntity --> Tracking\n    EnemyEntity --> DamageText\n    EnemyEntity --> HurtKnockback\n    EnemyEntity --> MeleeWeapon\n    EnemyEntity --> RangedWeapon\n    RangedWeapon --> Projectile\n    Projectile --> AutoAim\n    EnemyEntity --> AttackTypes\n    AttackTypes --> ChargeAttack\n    AttackTypes --> ProjectileBurst\n    EnemyEntity --> ReusableComp\n    WaveGen --> EnemyEntity"
+        },
+        {
+          "title": "用户界面系统细节",
+          "code": "flowchart LR\n    UpgradePanel[\"升级面板\"]\n    RarityCommon[\"普通稀有度\"]\n    RarityRare[\"稀有\"]\n    RarityEpic[\"史诗\"]\n    RarityLegend[\"传说\"]\n    ShopPanel[\"商店面板\"]\n    Purchase[\"购买道具\"]\n    Sell[\"出售道具\"]\n    Synthesis[\"合成系统\"]\n    WaveReward[\"波次奖励机制\"]\n    HigherRarity[\"更高稀有度获取概率\"]\n    CharSelect[\"角色选择面板\"]\n    WeaponSelect[\"武器选择\"]\n    PlayerSelect[\"玩家角色选择\"]\n    UpgradePanel --> RarityCommon\n    UpgradePanel --> RarityRare\n    UpgradePanel --> RarityEpic\n    UpgradePanel --> RarityLegend\n    ShopPanel --> Purchase\n    ShopPanel --> Sell\n    ShopPanel --> Synthesis\n    WaveReward --> HigherRarity\n    HigherRarity --> RarityRare\n    HigherRarity --> RarityEpic\n    HigherRarity --> RarityLegend\n    CharSelect --> WeaponSelect\n    CharSelect --> PlayerSelect"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T18:52:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot4 土豆兄弟复刻课程知识图谱\n\n## 总体概览\n```mermaid\nflowchart TD\n    Prereq[\"先决条件：Godot编辑器操作、基础节点使用\"] --> GDScript[\"GDscript 编程\"]\n    GDScript --> Player[\"玩家角色系统（移动、冲刺、属性）\"]\n    GDScript --> Enemy[\"敌人系统（追踪、受伤、击退）\"]\n    GDScript --> Weapon[\"武器系统（近战、远程、自动瞄准）\"]\n    GDScript --> UI[\"用户界面系统（升级、商店、角色选择）\"]\n    Player --> CoreLoop[\"核心游戏循环\"]\n    Enemy --> CoreLoop\n    Weapon --> CoreLoop\n    UI --> CoreLoop\n    CoreLoop --> FinalGame[\"完整的土豆兄弟肉鸽游戏\"]\n```\n\n## 章节流程\n```mermaid\nflowchart LR\n    Intro[\"课程导入\"]\n    C1[\"章节 1：玩家角色制作\"]\n    C2[\"章节 2：敌人与组件\"]\n    C3[\"章节 3：攻击方式与波次生成\"]\n    C4[\"章节 4：升级面板与稀有度\"]\n    C5[\"章节 5：商店与道具获取\"]\n    C6[\"章节 6：角色与武器选择\"]\n    Conclusion[\"课程总结与实战\"]\n    Intro --> C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> Conclusion\n```\n\n## 敌人系统细节\n```mermaid\nflowchart TD\n    EnemyEntity[\"敌人实体\"]\n    Tracking[\"追踪玩家系统\"]\n    DamageText[\"浮动伤害文字\"]\n    HurtKnockback[\"受伤判定与击退\"]\n    MeleeWeapon[\"近战武器（自定义属性）\"]\n    RangedWeapon[\"远程武器（投射物）\"]\n    Projectile[\"投射物\"]\n    AutoAim[\"自动转向最近目标\"]\n    AttackTypes[\"攻击方式\"]\n    ChargeAttack[\"冲锋攻击\"]\n    ProjectileBurst[\"大量投射物攻击\"]\n    WaveGen[\"波次生成系统\"]\n    SpawnProb[\"敌人出现概率控制\"]\n    CustomParams[\"自定义参数\"]\n    ReusableComp[\"可复用组件\"]\n    WaveGen --> SpawnProb\n    WaveGen --> CustomParams\n    EnemyEntity --> Tracking\n    EnemyEntity --> DamageText\n    EnemyEntity --> HurtKnockback\n    EnemyEntity --> MeleeWeapon\n    EnemyEntity --> RangedWeapon\n    RangedWeapon --> Projectile\n    Projectile --> AutoAim\n    EnemyEntity --> AttackTypes\n    AttackTypes --> ChargeAttack\n    AttackTypes --> ProjectileBurst\n    EnemyEntity --> ReusableComp\n    WaveGen --> EnemyEntity\n```\n\n## 用户界面系统细节\n```mermaid\nflowchart LR\n    UpgradePanel[\"升级面板\"]\n    RarityCommon[\"普通稀有度\"]\n    RarityRare[\"稀有\"]\n    RarityEpic[\"史诗\"]\n    RarityLegend[\"传说\"]\n    ShopPanel[\"商店面板\"]\n    Purchase[\"购买道具\"]\n    Sell[\"出售道具\"]\n    Synthesis[\"合成系统\"]\n    WaveReward[\"波次奖励机制\"]\n    HigherRarity[\"更高稀有度获取概率\"]\n    CharSelect[\"角色选择面板\"]\n    WeaponSelect[\"武器选择\"]\n    PlayerSelect[\"玩家角色选择\"]\n    UpgradePanel --> RarityCommon\n    UpgradePanel --> RarityRare\n    UpgradePanel --> RarityEpic\n    UpgradePanel --> RarityLegend\n    ShopPanel --> Purchase\n    ShopPanel --> Sell\n    ShopPanel --> Synthesis\n    WaveReward --> HigherRarity\n    HigherRarity --> RarityRare\n    HigherRarity --> RarityEpic\n    HigherRarity --> RarityLegend\n    CharSelect --> WeaponSelect\n    CharSelect --> PlayerSelect\n```",
+  "diagrams": [
+    {
+      "title": "总体概览",
+      "code": "flowchart TD\n    Prereq[\"先决条件：Godot编辑器操作、基础节点使用\"] --> GDScript[\"GDscript 编程\"]\n    GDScript --> Player[\"玩家角色系统（移动、冲刺、属性）\"]\n    GDScript --> Enemy[\"敌人系统（追踪、受伤、击退）\"]\n    GDScript --> Weapon[\"武器系统（近战、远程、自动瞄准）\"]\n    GDScript --> UI[\"用户界面系统（升级、商店、角色选择）\"]\n    Player --> CoreLoop[\"核心游戏循环\"]\n    Enemy --> CoreLoop\n    Weapon --> CoreLoop\n    UI --> CoreLoop\n    CoreLoop --> FinalGame[\"完整的土豆兄弟肉鸽游戏\"]"
+    },
+    {
+      "title": "章节流程",
+      "code": "flowchart LR\n    Intro[\"课程导入\"]\n    C1[\"章节 1：玩家角色制作\"]\n    C2[\"章节 2：敌人与组件\"]\n    C3[\"章节 3：攻击方式与波次生成\"]\n    C4[\"章节 4：升级面板与稀有度\"]\n    C5[\"章节 5：商店与道具获取\"]\n    C6[\"章节 6：角色与武器选择\"]\n    Conclusion[\"课程总结与实战\"]\n    Intro --> C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> Conclusion"
+    },
+    {
+      "title": "敌人系统细节",
+      "code": "flowchart TD\n    EnemyEntity[\"敌人实体\"]\n    Tracking[\"追踪玩家系统\"]\n    DamageText[\"浮动伤害文字\"]\n    HurtKnockback[\"受伤判定与击退\"]\n    MeleeWeapon[\"近战武器（自定义属性）\"]\n    RangedWeapon[\"远程武器（投射物）\"]\n    Projectile[\"投射物\"]\n    AutoAim[\"自动转向最近目标\"]\n    AttackTypes[\"攻击方式\"]\n    ChargeAttack[\"冲锋攻击\"]\n    ProjectileBurst[\"大量投射物攻击\"]\n    WaveGen[\"波次生成系统\"]\n    SpawnProb[\"敌人出现概率控制\"]\n    CustomParams[\"自定义参数\"]\n    ReusableComp[\"可复用组件\"]\n    WaveGen --> SpawnProb\n    WaveGen --> CustomParams\n    EnemyEntity --> Tracking\n    EnemyEntity --> DamageText\n    EnemyEntity --> HurtKnockback\n    EnemyEntity --> MeleeWeapon\n    EnemyEntity --> RangedWeapon\n    RangedWeapon --> Projectile\n    Projectile --> AutoAim\n    EnemyEntity --> AttackTypes\n    AttackTypes --> ChargeAttack\n    AttackTypes --> ProjectileBurst\n    EnemyEntity --> ReusableComp\n    WaveGen --> EnemyEntity"
+    },
+    {
+      "title": "用户界面系统细节",
+      "code": "flowchart LR\n    UpgradePanel[\"升级面板\"]\n    RarityCommon[\"普通稀有度\"]\n    RarityRare[\"稀有\"]\n    RarityEpic[\"史诗\"]\n    RarityLegend[\"传说\"]\n    ShopPanel[\"商店面板\"]\n    Purchase[\"购买道具\"]\n    Sell[\"出售道具\"]\n    Synthesis[\"合成系统\"]\n    WaveReward[\"波次奖励机制\"]\n    HigherRarity[\"更高稀有度获取概率\"]\n    CharSelect[\"角色选择面板\"]\n    WeaponSelect[\"武器选择\"]\n    PlayerSelect[\"玩家角色选择\"]\n    UpgradePanel --> RarityCommon\n    UpgradePanel --> RarityRare\n    UpgradePanel --> RarityEpic\n    UpgradePanel --> RarityLegend\n    ShopPanel --> Purchase\n    ShopPanel --> Sell\n    ShopPanel --> Synthesis\n    WaveReward --> HigherRarity\n    HigherRarity --> RarityRare\n    HigherRarity --> RarityEpic\n    HigherRarity --> RarityLegend\n    CharSelect --> WeaponSelect\n    CharSelect --> PlayerSelect"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:52:43+00:00"
+}

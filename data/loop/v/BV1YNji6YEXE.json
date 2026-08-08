@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1YNji6YEXE",
+  "title": "star 狂飙，把 Deepseek 用到极致的省钱神器（DeepSeek-Reasonix 解读）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1881,
+  "text": "你有没有过每月AI编程工具账单飙到几百块\n好用的cursor cloud code\n舍不得充\n想换便宜的deep sk\n又用不出性价比的经历\n今天给你说个神器\n最多能帮你把deep sick的API成本砍掉93\n看之前记得点赞关注\n咱们马上开始\ndeep sk本身有个隐藏福利叫前缀缓存\n意思是如果两次请求的开头完全一样\n这部分内容的费用直接打一折\n但市面上通用的编程框架根本用不好这个功能\n每次请求都要重新排序历史消息加新的时间戳\n重构系统提示词\n缓存命中率常常不到两成\n相当于给了你张一折优惠券\n你却只会用1/10的额度白白浪费优惠\n今天要说的reason next\n就是专门给deep sick做的专属终端编程助手\n靠着缓存优先的设计\n缓存命中率能做到85%到99\nAPI成本直接砍八成到九成以三\n说白了就是把deep sick的省钱能力榨得干干净净\n它的核心设计全是围着省钱来的\n第一个是缓存优先循环\n他把每次请求的内容拆成三块儿\n每块都有严格的规则\n第一块是整个绘画全程都不动的内容\n比如系统提示词\n工具声明\n这些专门用来命中缓存\n第二块是历史对话\n只能追加\n不能修改\n确保之前的对话内容都能被复用\n第三块是临时的思考内容\n每轮对话都重置\n根本不发给上游模型\n避免打乱缓存\n就像你点奶茶\n每次都固定点同一款茶底\n只换小料\n商家直接给你走\n老客优惠通道不用重新核算原价\n靠这种三区设计\n它实现了字节级稳定的前缀缓存\n命中率直接拉满\n第二个核心设计是R1思考链回收\ndeep sick的R1模型\n每次回答都会输出很长的思考过程\n普通工具要么把这些内容又传回去\n浪费钱\n要么直接扔了\n没用\nreason next的做法很聪明\n花几乎可以忽略的成本\n把思考内容里的核心信息提取出来\n比如识别出的子目标\n考虑过的假设标记的不确定点\n放弃的方案\n这些有用的信息留下来\n没用的就不传给下一轮\n既不浪费钱\n这个功能默认关闭\n你可以自己手动打开\n第三个是工具调用\n修复deep sk的工具调用有几个已知的小问题\n比如参数多了或者嵌套深了\n就漏字段\n工具调用的内容藏在思考里不出来\n同一个工具重复调用等等\n普通工具遇到这些情况直接就崩了\nreason x专门做了对应的修复层\n每个问题都有对应的解决办法\n用起来稳很多\n它的省钱效果到底有多夸张\n我们直接看实测数据\n五轮中文多轮对话\n用它加deep seek成本才不到1美元\n用cloud sonnet就得1%美元多\n直接省了9×4工具调用场景\n两轮对话成本才万分之三美元\n对比同类工具省了九成五八\n还有真实用户案例\n有开发者一天处理4.35亿输入token缓存\n命中率99.82\n实际花费才12美元\n要是没有这个工具的缓存优化\n哪怕用deep sick最便宜的版本\n也得花61美元左右\n直接省了49美元\n换算成人民币\n本来要花400多\n实际才花80多\n相当于打两折啊\n说到这儿\n你觉得这个省钱力度够不够\n可以把你平时每月AI工具花多少钱打在评论区\n它的使用场景也很全\n总共有三种工作模式\n第一种是核心的code模式\n支持项目级别的上下文理解\n改代码还要你手动确认才会写到磁盘上\n安全靠谱\n还支持执行shell命令\n第二种是chat模式\n去掉了文件系统的访问权限\n纯粹用来技术讨论\n不碰你的文件\n适合架构设计\n头脑风暴\n速度快\n还保护隐私\n第三种是run模式\n用于一次性任务输出\n直接流到标准输出\n还能嵌入到shell脚本里\n没有绘画维护的开销\n适合自动化运维或者脚本处理\n它的安装使用也特别简单\n只要你的node js版本在22以上\n有deep seek的API密钥就行\n不用安装\n直接用NPS运行\n每次自动拉最新版\n第一次运行会弹出配置向导\n跟着填就好\n配置会自动保存\n常用命令也很简单\n输入pro就能一键切换到更强的V4pro模型\n输入stats就能查看token消耗和成本\n输入apple line就能确认执行代码改动\n当然它也有一些局限\n只支持deep sick\n不能用其他模型功能相对专注\n不如cloud code\n全面是终端界面\n对习惯用图形界面的人不够友好\n但他走的就是极致专精的路线\n不搞大而全的多模型兼容\n而是死磕一个模型\n把它用到极致\n如果你是deep sick用户\n或者想找一款极致省钱的AI编程助手\n它绝对是目前最好的选择\n有API密钥的\n现在就能去体验\n10分钟就能配好\n下次我会给大家出完整的实操安装教程\n教你从零开始把它用起来\n今天的内容就分享到这里啦\n如果你觉得有收获的话\n记得点赞加关注哦",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YNji6YEXE",
+  "published_at": "1781828715",
+  "fetched_at": "2026-08-07T03:42:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# ReasonNext 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    DS[\"DeepSeek (deep sick)\"] -->|隐藏前缀缓存| PC[\"前缀缓存：相同请求开头 10% 费用\"]\n    PC -->|通用框架利用差| LowHit[\"普通框架缓存命中率≈20%\"]\n    LowHit -->|成本削减受限| CostLoss[\"成本仅削减约10%\"]\n    ReasonNext[\"ReasonNext 终端编程助手\"] -->|专属设计| CacheLoop[\"缓存优先循环\"]\n    ReasonNext -->|专属设计| R1Recycle[\"R1 思考链回收\"]\n    ReasonNext -->|专属设计| ToolFix[\"工具调用修复层\"]\n    CacheLoop -->|高命中率| HighHit[\"缓存命中率 85%~99%\"]\n    HighHit -->|成本削减| CostSave[\"API 成本削减 80%~90%\"]\n    R1Recycle -->|提取核心信息| CoreInfo[\"子目标、假设、不确定点、放弃方案\"]\n    CoreInfo -->|仅传递有用信息| ReduceCost[\"避免无效思考传输，进一步降本\"]\n    ToolFix -->|解决参数、嵌套、字段漏等问题| StableRun[\"提升工具调用稳定性\"]\n```\n\n## 请求三块划分（缓存优先循环）\n```mermaid\nflowchart TD\n    Request[\"一次请求内容\"] --> PartA[\"固定不变块\"]\n    Request --> PartB[\"历史对话块\"]\n    Request --> PartC[\"临时思考块\"]\n    PartA -->|用于命中缓存| CacheUse[\"系统提示词、工具声明\"]\n    PartB -->|只能追加| AppendOnly[\"保持历史可复用\"]\n    PartC -->|每轮重置| Reset[\"不发送至上游模型，防止缓存失效\"]\n    CacheUse -->|提升缓存命中率| HitBoost[\"字节级稳定前缀缓存\"]\n    AppendOnly -->|保证复用| Reuse[\"历史信息持续利用\"]\n    Reset -->|节约成本| CostCut[\"避免无效信息传输\"]\n```\n\n## 三种工作模式\n```mermaid\nflowchart TD\n    Mode[\"ReasonNext 工作模式\"] --> CodeMode[\"Code 模式\"]\n    Mode --> ChatMode[\"Chat 模式\"]\n    Mode --> RunMode[\"Run 模式\"]\n    CodeMode -->|特性| ProjectContext[\"项目级上下文理解\"]\n    CodeMode -->|安全| ManualConfirm[\"手动确认写入磁盘\"]\n    CodeMode -->|功能| ShellExec[\"支持执行 Shell 命令\"]\n    ChatMode -->|限制| NoFileAccess[\"去除文件系统访问\"]\n    ChatMode -->|用途| TechDiscuss[\"技术讨论、架构设计、头脑风暴\"]\n    ChatMode -->|优势| Privacy[\"保护隐私、速度快\"]\n    RunMode -->|场景| OneOffTask[\"一次性任务输出\"]\n    RunMode -->|方式| StdoutStream[\"直接流向标准输出\"]\n    RunMode -->|集成| ScriptEmbed[\"可嵌入 Shell 脚本\"]\n```\n\n## 实测成本与省钱效果\n```mermaid\nflowchart TD\n    Test[\"实测：5 轮中文多轮对话\"] --> CostRN[\"ReasonNext + DeepSeek 成本 < $1\"]\n    Test --> CostCloud[\"使用 Cloud Sonnet 成本 ≈ $1.1\"]\n    CostRN --> Savings[\"省 9×4 工具调用场景\"]\n    Savings --> Rate[\"整体省钱 95.8%\"]\n    UserCase[\"真实用户案例\"] --> Tokens[\"处理 4.35 亿 token，命中率 99.82%\"]\n    Tokens --> Cost12[\"实际花费 $12\"]\n    Cost12 --> Compare[\"若无缓存优化，成本约 $61\"]\n    Compare --> Save49[\"直接省 $49（≈ 人民币 80→400+）\"]\n    Save49 --> Discount[\"相当于打两折\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    DS[\"DeepSeek (deep sick)\"] -->|隐藏前缀缓存| PC[\"前缀缓存：相同请求开头 10% 费用\"]\n    PC -->|通用框架利用差| LowHit[\"普通框架缓存命中率≈20%\"]\n    LowHit -->|成本削减受限| CostLoss[\"成本仅削减约10%\"]\n    ReasonNext[\"ReasonNext 终端编程助手\"] -->|专属设计| CacheLoop[\"缓存优先循环\"]\n    ReasonNext -->|专属设计| R1Recycle[\"R1 思考链回收\"]\n    ReasonNext -->|专属设计| ToolFix[\"工具调用修复层\"]\n    CacheLoop -->|高命中率| HighHit[\"缓存命中率 85%~99%\"]\n    HighHit -->|成本削减| CostSave[\"API 成本削减 80%~90%\"]\n    R1Recycle -->|提取核心信息| CoreInfo[\"子目标、假设、不确定点、放弃方案\"]\n    CoreInfo -->|仅传递有用信息| ReduceCost[\"避免无效思考传输，进一步降本\"]\n    ToolFix -->|解决参数、嵌套、字段漏等问题| StableRun[\"提升工具调用稳定性\"]"
+        },
+        {
+          "title": "请求三块划分（缓存优先循环）",
+          "code": "flowchart TD\n    Request[\"一次请求内容\"] --> PartA[\"固定不变块\"]\n    Request --> PartB[\"历史对话块\"]\n    Request --> PartC[\"临时思考块\"]\n    PartA -->|用于命中缓存| CacheUse[\"系统提示词、工具声明\"]\n    PartB -->|只能追加| AppendOnly[\"保持历史可复用\"]\n    PartC -->|每轮重置| Reset[\"不发送至上游模型，防止缓存失效\"]\n    CacheUse -->|提升缓存命中率| HitBoost[\"字节级稳定前缀缓存\"]\n    AppendOnly -->|保证复用| Reuse[\"历史信息持续利用\"]\n    Reset -->|节约成本| CostCut[\"避免无效信息传输\"]"
+        },
+        {
+          "title": "三种工作模式",
+          "code": "flowchart TD\n    Mode[\"ReasonNext 工作模式\"] --> CodeMode[\"Code 模式\"]\n    Mode --> ChatMode[\"Chat 模式\"]\n    Mode --> RunMode[\"Run 模式\"]\n    CodeMode -->|特性| ProjectContext[\"项目级上下文理解\"]\n    CodeMode -->|安全| ManualConfirm[\"手动确认写入磁盘\"]\n    CodeMode -->|功能| ShellExec[\"支持执行 Shell 命令\"]\n    ChatMode -->|限制| NoFileAccess[\"去除文件系统访问\"]\n    ChatMode -->|用途| TechDiscuss[\"技术讨论、架构设计、头脑风暴\"]\n    ChatMode -->|优势| Privacy[\"保护隐私、速度快\"]\n    RunMode -->|场景| OneOffTask[\"一次性任务输出\"]\n    RunMode -->|方式| StdoutStream[\"直接流向标准输出\"]\n    RunMode -->|集成| ScriptEmbed[\"可嵌入 Shell 脚本\"]"
+        },
+        {
+          "title": "实测成本与省钱效果",
+          "code": "flowchart TD\n    Test[\"实测：5 轮中文多轮对话\"] --> CostRN[\"ReasonNext + DeepSeek 成本 < $1\"]\n    Test --> CostCloud[\"使用 Cloud Sonnet 成本 ≈ $1.1\"]\n    CostRN --> Savings[\"省 9×4 工具调用场景\"]\n    Savings --> Rate[\"整体省钱 95.8%\"]\n    UserCase[\"真实用户案例\"] --> Tokens[\"处理 4.35 亿 token，命中率 99.82%\"]\n    Tokens --> Cost12[\"实际花费 $12\"]\n    Cost12 --> Compare[\"若无缓存优化，成本约 $61\"]\n    Compare --> Save49[\"直接省 $49（≈ 人民币 80→400+）\"]\n    Save49 --> Discount[\"相当于打两折\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T03:42:26+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# ReasonNext 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    DS[\"DeepSeek (deep sick)\"] -->|隐藏前缀缓存| PC[\"前缀缓存：相同请求开头 10% 费用\"]\n    PC -->|通用框架利用差| LowHit[\"普通框架缓存命中率≈20%\"]\n    LowHit -->|成本削减受限| CostLoss[\"成本仅削减约10%\"]\n    ReasonNext[\"ReasonNext 终端编程助手\"] -->|专属设计| CacheLoop[\"缓存优先循环\"]\n    ReasonNext -->|专属设计| R1Recycle[\"R1 思考链回收\"]\n    ReasonNext -->|专属设计| ToolFix[\"工具调用修复层\"]\n    CacheLoop -->|高命中率| HighHit[\"缓存命中率 85%~99%\"]\n    HighHit -->|成本削减| CostSave[\"API 成本削减 80%~90%\"]\n    R1Recycle -->|提取核心信息| CoreInfo[\"子目标、假设、不确定点、放弃方案\"]\n    CoreInfo -->|仅传递有用信息| ReduceCost[\"避免无效思考传输，进一步降本\"]\n    ToolFix -->|解决参数、嵌套、字段漏等问题| StableRun[\"提升工具调用稳定性\"]\n```\n\n## 请求三块划分（缓存优先循环）\n```mermaid\nflowchart TD\n    Request[\"一次请求内容\"] --> PartA[\"固定不变块\"]\n    Request --> PartB[\"历史对话块\"]\n    Request --> PartC[\"临时思考块\"]\n    PartA -->|用于命中缓存| CacheUse[\"系统提示词、工具声明\"]\n    PartB -->|只能追加| AppendOnly[\"保持历史可复用\"]\n    PartC -->|每轮重置| Reset[\"不发送至上游模型，防止缓存失效\"]\n    CacheUse -->|提升缓存命中率| HitBoost[\"字节级稳定前缀缓存\"]\n    AppendOnly -->|保证复用| Reuse[\"历史信息持续利用\"]\n    Reset -->|节约成本| CostCut[\"避免无效信息传输\"]\n```\n\n## 三种工作模式\n```mermaid\nflowchart TD\n    Mode[\"ReasonNext 工作模式\"] --> CodeMode[\"Code 模式\"]\n    Mode --> ChatMode[\"Chat 模式\"]\n    Mode --> RunMode[\"Run 模式\"]\n    CodeMode -->|特性| ProjectContext[\"项目级上下文理解\"]\n    CodeMode -->|安全| ManualConfirm[\"手动确认写入磁盘\"]\n    CodeMode -->|功能| ShellExec[\"支持执行 Shell 命令\"]\n    ChatMode -->|限制| NoFileAccess[\"去除文件系统访问\"]\n    ChatMode -->|用途| TechDiscuss[\"技术讨论、架构设计、头脑风暴\"]\n    ChatMode -->|优势| Privacy[\"保护隐私、速度快\"]\n    RunMode -->|场景| OneOffTask[\"一次性任务输出\"]\n    RunMode -->|方式| StdoutStream[\"直接流向标准输出\"]\n    RunMode -->|集成| ScriptEmbed[\"可嵌入 Shell 脚本\"]\n```\n\n## 实测成本与省钱效果\n```mermaid\nflowchart TD\n    Test[\"实测：5 轮中文多轮对话\"] --> CostRN[\"ReasonNext + DeepSeek 成本 < $1\"]\n    Test --> CostCloud[\"使用 Cloud Sonnet 成本 ≈ $1.1\"]\n    CostRN --> Savings[\"省 9×4 工具调用场景\"]\n    Savings --> Rate[\"整体省钱 95.8%\"]\n    UserCase[\"真实用户案例\"] --> Tokens[\"处理 4.35 亿 token，命中率 99.82%\"]\n    Tokens --> Cost12[\"实际花费 $12\"]\n    Cost12 --> Compare[\"若无缓存优化，成本约 $61\"]\n    Compare --> Save49[\"直接省 $49（≈ 人民币 80→400+）\"]\n    Save49 --> Discount[\"相当于打两折\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    DS[\"DeepSeek (deep sick)\"] -->|隐藏前缀缓存| PC[\"前缀缓存：相同请求开头 10% 费用\"]\n    PC -->|通用框架利用差| LowHit[\"普通框架缓存命中率≈20%\"]\n    LowHit -->|成本削减受限| CostLoss[\"成本仅削减约10%\"]\n    ReasonNext[\"ReasonNext 终端编程助手\"] -->|专属设计| CacheLoop[\"缓存优先循环\"]\n    ReasonNext -->|专属设计| R1Recycle[\"R1 思考链回收\"]\n    ReasonNext -->|专属设计| ToolFix[\"工具调用修复层\"]\n    CacheLoop -->|高命中率| HighHit[\"缓存命中率 85%~99%\"]\n    HighHit -->|成本削减| CostSave[\"API 成本削减 80%~90%\"]\n    R1Recycle -->|提取核心信息| CoreInfo[\"子目标、假设、不确定点、放弃方案\"]\n    CoreInfo -->|仅传递有用信息| ReduceCost[\"避免无效思考传输，进一步降本\"]\n    ToolFix -->|解决参数、嵌套、字段漏等问题| StableRun[\"提升工具调用稳定性\"]"
+    },
+    {
+      "title": "请求三块划分（缓存优先循环）",
+      "code": "flowchart TD\n    Request[\"一次请求内容\"] --> PartA[\"固定不变块\"]\n    Request --> PartB[\"历史对话块\"]\n    Request --> PartC[\"临时思考块\"]\n    PartA -->|用于命中缓存| CacheUse[\"系统提示词、工具声明\"]\n    PartB -->|只能追加| AppendOnly[\"保持历史可复用\"]\n    PartC -->|每轮重置| Reset[\"不发送至上游模型，防止缓存失效\"]\n    CacheUse -->|提升缓存命中率| HitBoost[\"字节级稳定前缀缓存\"]\n    AppendOnly -->|保证复用| Reuse[\"历史信息持续利用\"]\n    Reset -->|节约成本| CostCut[\"避免无效信息传输\"]"
+    },
+    {
+      "title": "三种工作模式",
+      "code": "flowchart TD\n    Mode[\"ReasonNext 工作模式\"] --> CodeMode[\"Code 模式\"]\n    Mode --> ChatMode[\"Chat 模式\"]\n    Mode --> RunMode[\"Run 模式\"]\n    CodeMode -->|特性| ProjectContext[\"项目级上下文理解\"]\n    CodeMode -->|安全| ManualConfirm[\"手动确认写入磁盘\"]\n    CodeMode -->|功能| ShellExec[\"支持执行 Shell 命令\"]\n    ChatMode -->|限制| NoFileAccess[\"去除文件系统访问\"]\n    ChatMode -->|用途| TechDiscuss[\"技术讨论、架构设计、头脑风暴\"]\n    ChatMode -->|优势| Privacy[\"保护隐私、速度快\"]\n    RunMode -->|场景| OneOffTask[\"一次性任务输出\"]\n    RunMode -->|方式| StdoutStream[\"直接流向标准输出\"]\n    RunMode -->|集成| ScriptEmbed[\"可嵌入 Shell 脚本\"]"
+    },
+    {
+      "title": "实测成本与省钱效果",
+      "code": "flowchart TD\n    Test[\"实测：5 轮中文多轮对话\"] --> CostRN[\"ReasonNext + DeepSeek 成本 < $1\"]\n    Test --> CostCloud[\"使用 Cloud Sonnet 成本 ≈ $1.1\"]\n    CostRN --> Savings[\"省 9×4 工具调用场景\"]\n    Savings --> Rate[\"整体省钱 95.8%\"]\n    UserCase[\"真实用户案例\"] --> Tokens[\"处理 4.35 亿 token，命中率 99.82%\"]\n    Tokens --> Cost12[\"实际花费 $12\"]\n    Cost12 --> Compare[\"若无缓存优化，成本约 $61\"]\n    Compare --> Save49[\"直接省 $49（≈ 人民币 80→400+）\"]\n    Save49 --> Discount[\"相当于打两折\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:42:26+00:00"
+}

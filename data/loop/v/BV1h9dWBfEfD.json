@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1h9dWBfEfD",
+  "title": "[Unity] 27届 求实习 Arpg Demo",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 983,
+  "text": "大家好\n本视频将展示我独立开发的RPG demo\n希望能借此找到自己的第一份实习\n战斗连段\n由纯代码FSM驱动系统会截获并重算root motion\n保障位移精准\n还会基于雷达检索驱动角色与摄像机的软锁定\n任务系统采用script oblivic数据驱动\n配置了前置条件\n解锁多态任务目标\n刷怪时间轴\n奖励分发以及专属分支\n剧本小地图依靠纯数学矩阵\n将坐标映射以及低开销\n实现屏幕边缘吸附与动态雷达追踪对话系统\n构建了基于SCRIPTILIBOR的非线性节点数\n原生支持多分支选项跳转\n最核心的是\n每个剧情节点都深度集成了全局事件\n仅需底层配置到达特定语句时\n即可无缝广播代餐事件\n瞬间触发任务结算与系统流转\n表现层完全由数据流驱动\n剧本拓展成本极低\n接取战斗委托\n通过address boss异步切离场景\n在黑屏加载期\n底层解析关卡配置\n将实体资源压入对象池进行并发预热\n杜绝战斗中的实力化掉帧\n我们还没有进行任何养成\n实在是太刮了\n回去发育一波\n先\n商店系统也是采用script pvt\n构建了高度泛用的一物义务经济模型\n底层的购买逻辑\n严格执行限购校验资产扣除\n统一发货与持久化记账的安全事务管线\n进入核心数值构筑阶段\n我为所有养成UI写了内部状态机\n当实体经验触及当前阶数上限时\n面板会自动流转至突破形态\n并且分解与强化搭载了防损耗管线\n当装备作为狗粮被消耗时\n底层会将溢出经验精准折算为基础材料返还\n我还通过纯代码复刻了驱动盘的升级算法\n实现了主属性的线性映射\n以及副词条的随机取\n动态抽取\n最后是社交系统演示\n这里双开客户端来验证\n基于play fab构建的跨端数据交互聊天模块\n接入了持久化存储\n利用shared group data建立了房间级的消息堆栈系统\n支持在登录后拉取历史对话好友系统\n实现了一套完整的异步双向握手协议\n发起申请时\n底层通过cloud script在云端进行虚拟信箱投递\n接收方在轮询回去后点击同意\n服务器会同步确立双向的好友关系\n并建立专属加密聊天频道\n在实时通讯层面\n我基于短轮询的同步机制\n配合UITOOLKT的动态模板实例化\n实现了接近即时通讯的效果\n表情包系统采用了副文本标签进行传输\n利用text mesh pro的资源索引技术\n能将文本代码渲染为高清晰度的图像\n以上就是本demo的全部核心技术展示\n感谢您的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1h9dWBfEfD",
+  "published_at": "1776524574",
+  "fetched_at": "2026-08-07T23:03:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# RPG Demo 技术图谱\n\n## 核心架构总览\n```mermaid\nflowchart TD\n    A[\"RPG Demo Core\"] --> B[\"Combat System\"]\n    A --> C[\"Task & Dialogue System\"]\n    A --> D[\"Economy System\"]\n    A --> E[\"Social System\"]\n    A --> F[\"Data-Driven Presentation\"]\n    B --> G[\"Object Pool\"]\n    B --> H[\"Async Scene Management\"]\n    B --> I[\"Radar & Mini-Map\"]\n    C --> J[\"Global Event Bus\"]\n    E --> J\n```\n\n## 战斗系统流程\n```mermaid\nflowchart TD\n    C1[\"Combat FSM\"] --> C2[\"Root Motion Recalculation\"] --> C3[\"Precise Displacement\"]\n    C1 --> C4[\"Radar Soft Lock\"]\n    C1 --> C5[\"Monster Spawn Timeline\"] --> C6[\"Reward Distribution\"]\n    C6 --> C7[\"Async Scene Switch (address boss)\"]\n    C7 --> C8[\"Loading Phase (black screen)\"]\n    C8 --> C9[\"Level Config Parsing\"]\n    C9 --> C10[\"Object Pool Prewarm\"]\n    C10 --> C11[\"Frame Drop Prevention\"]\n```\n\n## 任务与对话系统\n```mermaid\nflowchart TD\n    T1[\"Script-Oblivic Data-Driven Tasks\"] --> T2[\"Precondition Config\"] --> T3[\"Polymorphic Task Goals\"]\n    T1 --> T4[\"Timeline Spawn\"] --> T5[\"Reward Branches\"]\n    T6[\"Mini-Map Matrix Mapping\"] --> T7[\"Screen Edge Snap\"] --> T8[\"Dynamic Radar Tracking\"]\n    T9[\"Non-linear Dialogue Nodes (SCRIPTILIBOR)\"] --> T10[\"Multi-Branch Options\"] --> T11[\"Global Event Integration\"] --> T12[\"Event Broadcast on Node Reach\"] --> T13[\"Data-Driven UI Flow\"]\n    T3 --> T11\n```\n\n## 经济与升级系统\n```mermaid\nflowchart TD\n    E1[\"Shop Script (script pvt)\"] --> E2[\"Generic Economy Model\"] --> E3[\"Purchase Logic\"] --> E4[\"Limit Check & Asset Deduction\"] --> E5[\"Transaction Pipeline (Secure)\"]\n    E6[\"UI State Machines for Growth\"] --> E7[\"Experience Threshold\"] --> E8[\"Auto Panel Transition\"]\n    E9[\"Equipment Consumption (Dog Food)\"] --> E10[\"Overflow XP Conversion\"]\n    E11[\"Upgrade Algorithm (Pure Code)\"] --> E12[\"Main Attribute Linear Mapping\"]\n    E11 --> E13[\"Sub-Attribute Random Selection\"]\n```\n\n## 社交与通讯系统\n```mermaid\nflowchart TD\n    S1[\"PlayFab Cross-Platform Chat\"] --> S2[\"Persistent Storage\"] --> S3[\"Shared Group Data (Room Message Stack)\"]\n    S4[\"Async Handshake Protocol\"] --> S5[\"Cloud Script Virtual Mailbox\"] --> S6[\"Friend Request Flow\"] --> S7[\"Encrypted Chat Channel\"]\n    S8[\"Short-Polling Sync Mechanism\"] --> S1\n    S9[\"UIToolKT Dynamic Template\"] --> S10[\"Emoji System (Subtext Tags)\"] --> S11[\"TextMeshPro Rendering\"] --> S12[\"Real-Time Communication Effect\"]\n    S7 --> S12\n```",
+      "diagrams": [
+        {
+          "title": "核心架构总览",
+          "code": "flowchart TD\n    A[\"RPG Demo Core\"] --> B[\"Combat System\"]\n    A --> C[\"Task & Dialogue System\"]\n    A --> D[\"Economy System\"]\n    A --> E[\"Social System\"]\n    A --> F[\"Data-Driven Presentation\"]\n    B --> G[\"Object Pool\"]\n    B --> H[\"Async Scene Management\"]\n    B --> I[\"Radar & Mini-Map\"]\n    C --> J[\"Global Event Bus\"]\n    E --> J"
+        },
+        {
+          "title": "战斗系统流程",
+          "code": "flowchart TD\n    C1[\"Combat FSM\"] --> C2[\"Root Motion Recalculation\"] --> C3[\"Precise Displacement\"]\n    C1 --> C4[\"Radar Soft Lock\"]\n    C1 --> C5[\"Monster Spawn Timeline\"] --> C6[\"Reward Distribution\"]\n    C6 --> C7[\"Async Scene Switch (address boss)\"]\n    C7 --> C8[\"Loading Phase (black screen)\"]\n    C8 --> C9[\"Level Config Parsing\"]\n    C9 --> C10[\"Object Pool Prewarm\"]\n    C10 --> C11[\"Frame Drop Prevention\"]"
+        },
+        {
+          "title": "任务与对话系统",
+          "code": "flowchart TD\n    T1[\"Script-Oblivic Data-Driven Tasks\"] --> T2[\"Precondition Config\"] --> T3[\"Polymorphic Task Goals\"]\n    T1 --> T4[\"Timeline Spawn\"] --> T5[\"Reward Branches\"]\n    T6[\"Mini-Map Matrix Mapping\"] --> T7[\"Screen Edge Snap\"] --> T8[\"Dynamic Radar Tracking\"]\n    T9[\"Non-linear Dialogue Nodes (SCRIPTILIBOR)\"] --> T10[\"Multi-Branch Options\"] --> T11[\"Global Event Integration\"] --> T12[\"Event Broadcast on Node Reach\"] --> T13[\"Data-Driven UI Flow\"]\n    T3 --> T11"
+        },
+        {
+          "title": "经济与升级系统",
+          "code": "flowchart TD\n    E1[\"Shop Script (script pvt)\"] --> E2[\"Generic Economy Model\"] --> E3[\"Purchase Logic\"] --> E4[\"Limit Check & Asset Deduction\"] --> E5[\"Transaction Pipeline (Secure)\"]\n    E6[\"UI State Machines for Growth\"] --> E7[\"Experience Threshold\"] --> E8[\"Auto Panel Transition\"]\n    E9[\"Equipment Consumption (Dog Food)\"] --> E10[\"Overflow XP Conversion\"]\n    E11[\"Upgrade Algorithm (Pure Code)\"] --> E12[\"Main Attribute Linear Mapping\"]\n    E11 --> E13[\"Sub-Attribute Random Selection\"]"
+        },
+        {
+          "title": "社交与通讯系统",
+          "code": "flowchart TD\n    S1[\"PlayFab Cross-Platform Chat\"] --> S2[\"Persistent Storage\"] --> S3[\"Shared Group Data (Room Message Stack)\"]\n    S4[\"Async Handshake Protocol\"] --> S5[\"Cloud Script Virtual Mailbox\"] --> S6[\"Friend Request Flow\"] --> S7[\"Encrypted Chat Channel\"]\n    S8[\"Short-Polling Sync Mechanism\"] --> S1\n    S9[\"UIToolKT Dynamic Template\"] --> S10[\"Emoji System (Subtext Tags)\"] --> S11[\"TextMeshPro Rendering\"] --> S12[\"Real-Time Communication Effect\"]\n    S7 --> S12"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T23:03:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# RPG Demo 技术图谱\n\n## 核心架构总览\n```mermaid\nflowchart TD\n    A[\"RPG Demo Core\"] --> B[\"Combat System\"]\n    A --> C[\"Task & Dialogue System\"]\n    A --> D[\"Economy System\"]\n    A --> E[\"Social System\"]\n    A --> F[\"Data-Driven Presentation\"]\n    B --> G[\"Object Pool\"]\n    B --> H[\"Async Scene Management\"]\n    B --> I[\"Radar & Mini-Map\"]\n    C --> J[\"Global Event Bus\"]\n    E --> J\n```\n\n## 战斗系统流程\n```mermaid\nflowchart TD\n    C1[\"Combat FSM\"] --> C2[\"Root Motion Recalculation\"] --> C3[\"Precise Displacement\"]\n    C1 --> C4[\"Radar Soft Lock\"]\n    C1 --> C5[\"Monster Spawn Timeline\"] --> C6[\"Reward Distribution\"]\n    C6 --> C7[\"Async Scene Switch (address boss)\"]\n    C7 --> C8[\"Loading Phase (black screen)\"]\n    C8 --> C9[\"Level Config Parsing\"]\n    C9 --> C10[\"Object Pool Prewarm\"]\n    C10 --> C11[\"Frame Drop Prevention\"]\n```\n\n## 任务与对话系统\n```mermaid\nflowchart TD\n    T1[\"Script-Oblivic Data-Driven Tasks\"] --> T2[\"Precondition Config\"] --> T3[\"Polymorphic Task Goals\"]\n    T1 --> T4[\"Timeline Spawn\"] --> T5[\"Reward Branches\"]\n    T6[\"Mini-Map Matrix Mapping\"] --> T7[\"Screen Edge Snap\"] --> T8[\"Dynamic Radar Tracking\"]\n    T9[\"Non-linear Dialogue Nodes (SCRIPTILIBOR)\"] --> T10[\"Multi-Branch Options\"] --> T11[\"Global Event Integration\"] --> T12[\"Event Broadcast on Node Reach\"] --> T13[\"Data-Driven UI Flow\"]\n    T3 --> T11\n```\n\n## 经济与升级系统\n```mermaid\nflowchart TD\n    E1[\"Shop Script (script pvt)\"] --> E2[\"Generic Economy Model\"] --> E3[\"Purchase Logic\"] --> E4[\"Limit Check & Asset Deduction\"] --> E5[\"Transaction Pipeline (Secure)\"]\n    E6[\"UI State Machines for Growth\"] --> E7[\"Experience Threshold\"] --> E8[\"Auto Panel Transition\"]\n    E9[\"Equipment Consumption (Dog Food)\"] --> E10[\"Overflow XP Conversion\"]\n    E11[\"Upgrade Algorithm (Pure Code)\"] --> E12[\"Main Attribute Linear Mapping\"]\n    E11 --> E13[\"Sub-Attribute Random Selection\"]\n```\n\n## 社交与通讯系统\n```mermaid\nflowchart TD\n    S1[\"PlayFab Cross-Platform Chat\"] --> S2[\"Persistent Storage\"] --> S3[\"Shared Group Data (Room Message Stack)\"]\n    S4[\"Async Handshake Protocol\"] --> S5[\"Cloud Script Virtual Mailbox\"] --> S6[\"Friend Request Flow\"] --> S7[\"Encrypted Chat Channel\"]\n    S8[\"Short-Polling Sync Mechanism\"] --> S1\n    S9[\"UIToolKT Dynamic Template\"] --> S10[\"Emoji System (Subtext Tags)\"] --> S11[\"TextMeshPro Rendering\"] --> S12[\"Real-Time Communication Effect\"]\n    S7 --> S12\n```",
+  "diagrams": [
+    {
+      "title": "核心架构总览",
+      "code": "flowchart TD\n    A[\"RPG Demo Core\"] --> B[\"Combat System\"]\n    A --> C[\"Task & Dialogue System\"]\n    A --> D[\"Economy System\"]\n    A --> E[\"Social System\"]\n    A --> F[\"Data-Driven Presentation\"]\n    B --> G[\"Object Pool\"]\n    B --> H[\"Async Scene Management\"]\n    B --> I[\"Radar & Mini-Map\"]\n    C --> J[\"Global Event Bus\"]\n    E --> J"
+    },
+    {
+      "title": "战斗系统流程",
+      "code": "flowchart TD\n    C1[\"Combat FSM\"] --> C2[\"Root Motion Recalculation\"] --> C3[\"Precise Displacement\"]\n    C1 --> C4[\"Radar Soft Lock\"]\n    C1 --> C5[\"Monster Spawn Timeline\"] --> C6[\"Reward Distribution\"]\n    C6 --> C7[\"Async Scene Switch (address boss)\"]\n    C7 --> C8[\"Loading Phase (black screen)\"]\n    C8 --> C9[\"Level Config Parsing\"]\n    C9 --> C10[\"Object Pool Prewarm\"]\n    C10 --> C11[\"Frame Drop Prevention\"]"
+    },
+    {
+      "title": "任务与对话系统",
+      "code": "flowchart TD\n    T1[\"Script-Oblivic Data-Driven Tasks\"] --> T2[\"Precondition Config\"] --> T3[\"Polymorphic Task Goals\"]\n    T1 --> T4[\"Timeline Spawn\"] --> T5[\"Reward Branches\"]\n    T6[\"Mini-Map Matrix Mapping\"] --> T7[\"Screen Edge Snap\"] --> T8[\"Dynamic Radar Tracking\"]\n    T9[\"Non-linear Dialogue Nodes (SCRIPTILIBOR)\"] --> T10[\"Multi-Branch Options\"] --> T11[\"Global Event Integration\"] --> T12[\"Event Broadcast on Node Reach\"] --> T13[\"Data-Driven UI Flow\"]\n    T3 --> T11"
+    },
+    {
+      "title": "经济与升级系统",
+      "code": "flowchart TD\n    E1[\"Shop Script (script pvt)\"] --> E2[\"Generic Economy Model\"] --> E3[\"Purchase Logic\"] --> E4[\"Limit Check & Asset Deduction\"] --> E5[\"Transaction Pipeline (Secure)\"]\n    E6[\"UI State Machines for Growth\"] --> E7[\"Experience Threshold\"] --> E8[\"Auto Panel Transition\"]\n    E9[\"Equipment Consumption (Dog Food)\"] --> E10[\"Overflow XP Conversion\"]\n    E11[\"Upgrade Algorithm (Pure Code)\"] --> E12[\"Main Attribute Linear Mapping\"]\n    E11 --> E13[\"Sub-Attribute Random Selection\"]"
+    },
+    {
+      "title": "社交与通讯系统",
+      "code": "flowchart TD\n    S1[\"PlayFab Cross-Platform Chat\"] --> S2[\"Persistent Storage\"] --> S3[\"Shared Group Data (Room Message Stack)\"]\n    S4[\"Async Handshake Protocol\"] --> S5[\"Cloud Script Virtual Mailbox\"] --> S6[\"Friend Request Flow\"] --> S7[\"Encrypted Chat Channel\"]\n    S8[\"Short-Polling Sync Mechanism\"] --> S1\n    S9[\"UIToolKT Dynamic Template\"] --> S10[\"Emoji System (Subtext Tags)\"] --> S11[\"TextMeshPro Rendering\"] --> S12[\"Real-Time Communication Effect\"]\n    S7 --> S12"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T23:03:34+00:00"
+}

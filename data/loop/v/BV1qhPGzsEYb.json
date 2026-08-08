@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1qhPGzsEYb",
+  "title": "我让Claude Code接管Godot，结果它用6句话复刻了愤怒的小鸟，物理bug还自己修 #Godot #游戏开发 #AI编程 #愤怒的小鸟 #Claude",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1904,
+  "text": "我用Godot游戏引擎打造了一个完整的愤怒小鸟克隆版\n借助AI，我仅用六个提示语就完成了今天的任务\n在本视频结尾我会展示我的完整工作流程\n你将学会如何将四边形代码连接到Godot MCP\n从无到有生成2D游戏素材并迫使AI调试自身损坏的物理系统\n直到你拥有可玩的游戏\n在编写第一行代码前我们需要制定坚实计划\n我打开Gemini并让它担任我的首席游戏设计师\n我要求它描述原版愤怒小鸟的经典角色\n以便为它们生成2D美术素材\n它给了我完美的提示要求文档\n详细列出物理特性\n每只鸟的颜色和风格\n我将Gemini的描述直接导入精灵表\nAI组合\n这是我自建的工具，可批量将角色提示生成可用资源\n即可使用的资源\n我为每只鸟生成循环飞行动画\n下载整理好的压缩包直接导入空项目\n无需手动绘制\n无需逐帧处理\n仅需大幅节省时间\n将AI连接到游戏引擎可能是个噩梦\n如果你不了解确切终端命令\n首先需要克隆Godot MCP仓库\n打开终端\n运行git clone并输入仓库地址\n进入Godot Dash MCP目录\n执行npm install然后npm run build\n现在MCP服务器已在本地运行\n但让代码与之通信是所有人都卡住的环节\n这里有黄金技巧\n必须在Godot项目文件夹运行特定命令建立连接\n输入claude mcp godot --scope project --node\n接着输入Godot MCP构建index.js的绝对路径\n每个新Godot项目都需执行此步骤\n从claude代码开始\n否则AI会完全虚构你的代码库\n我向Claude发送第一个提示\n创建愤怒小鸟克隆版\n使用Godot MCP\n审查精灵表\n搭建游戏基础并使用单帧作为待机动画\nClaude生成了基础框架\n但一团糟\n测试游戏时小鸟在队列中静止不动\n这正是我们想要的\n但飞行时小鸟同样静止\n而非使用飞行动画\n我们创建了\n鸟儿们似乎在空中出现了故障\n这个初始版本最大的问题\n是猪的堡垒瞬间坍塌到地面\n关卡加载后立即发生\n此外所有鸟类的特殊技能都无法使用\n我将这些问题全部汇报\n编号为二的提示组\n要求修复空中飞行动画\n阻止堡垒坍塌并为每只鸟添加带粒子特效的特殊能力\n游戏画面开始改善\n但遇到了新问题\n猪堡垒的方块仍未从地面生成\n导致结构崩解\n当它们激活时\n游戏未全屏显示\n炸弹和鸡蛋爆炸动画不显示或造成伤害\n猪对鸟撞击不敏感\n我向claude提交第三号提示\n要求确保方块堆叠正确\n从零轴开始生成\n具备正确地面碰撞\n使游戏全屏显示\n修复炸弹和鸡蛋下落动画并计算撞击速度\n准确判定对猪的伤害值\n再次测试游戏\n视觉效果有所提升\n但堡垒激活后仍继续下落\n我还注意到较重的鸟飞行轨迹不同\n导致过早坠落\n发送第四号提示指令\n要求claude确保所有鸟类飞行轨迹一致\n而非让部分物理特性过重\n我也告知claude\n堡垒问题仍未解决\n方块正在下移至碰撞盒底部\n需严格贴合地面顶部\n碰撞形状\n避免穿模现象\n测试时结构仍穿模\n是时候作为资深开发者介入\n发现是检测了泥土层而非草地碰撞\n或仅在方块中心添加碰撞体\n未考虑所有边缘\n向claude发送第五号提示\n详细阐述我的理论\n强制定位问题\n并修复\n使方块稳固在草层上\n结构终于完全固定在草地上\n所有功能完美运行\n原来碰撞形状只在方块的中心部分\n所以这点要记住\n如果你在核心循环完全稳定时遇到类似问题\n我想让它感觉像真正完成的游戏\n我取消了第六个提示\n我告诉claude要确保我们遍历鸟的动画帧\n在游戏全程所有四个角色的精灵图中\n我这样做是为了避免claude混淆静态或动态的鸟\n我本可以添加更多动画\n但几乎不明显\n所以我决定为游戏保留单一动画\n我还要求生成全新关卡并增加复杂度\n最后我让它优化飞行轨迹\n增加所有鸟类的发射距离\n因为有些鸟仍无法飞到屏幕另一侧\n并略微减缓轨迹速度\n因为我感觉速度比真实愤怒的小鸟快\n所以这就是成品，查看所有细节\n我们能在这么短时间内完成\n红鸟功能不多，和原版类似\n但claude赋予了它冲击波能力\n我不确定原版是否有这个功能\n但挺酷的\n蓝鸟会分裂成三只\n飞行中点击时\n黄鸟会沿路径加速通过\n取决于弧线的哪个阶段\n飞行中点击时\n白鸟会投掷蛋炸弹\n现在看黑色炸弹鸟\n我必须承认这过于强大\n如果击中目标或接近目标\n你基本赢得回合\n我不得不说\n这用起来意外有趣\n我甚至故意将黑鸟抛出界外测试回旋\n以免意外获胜\n而且是的\n顺便说下回旋功能也正常\n各位\n我们离今年百万订阅目标很近了\n如果你喜欢这个视频\n请订阅帮助我达成目标\n如果你想看我从零构建超级马里奥兄弟\n使用反重力和claude代码\n点击这里观看这个视频",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qhPGzsEYb",
+  "published_at": "1772429400",
+  "fetched_at": "2026-08-06T23:52:39+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot + Claude 开发流程图谱\n\n## 总体工作流程概览 [BV1qhPGzsEYb P1 00:22‑05:20]\n```mermaid\nflowchart TD\n    A1[\"计划制定\"] --> A2[\"Gemini 生成角色描述\"]\n    A2 --> A3[\"批量生成 2D 素材\"]\n    A3 --> A4[\"导入 Godot 项目\"]\n    A4 --> A5[\"克隆并构建 Godot MCP\"]\n    A5 --> A6[\"在项目文件夹运行连接命令\"]\n    A6 --> A7[\"Claude 生成游戏框架\"]\n    A7 --> A8[\"测试 & 提示修复循环\"]\n    A8 --> A9[\"可玩游戏完成\"]\n```\n\n## AI 与 Godot MCP 连接流程 [BV1qhPGzsEYb P1 01:13‑01:47]\n```mermaid\nflowchart LR\n    B1[\"git clone Godot MCP 仓库\"] --> B2[\"打开终端\"]\n    B2 --> B3[\"npm install\"]\n    B3 --> B4[\"npm run build\"]\n    B4 --> B5[\"本地 MCP 服务器启动\"]\n    B5 --> B6[\"运行 claude mcp godot --scope project --node\"]\n    B6 --> B7[\"输入 index.js 的绝对路径\"]\n    B7 --> B8[\"AI 与 Godot 项目建立连接\"]\n```\n\n## 物理与碰撞问题调试链 [BV1qhPGzsEYb P1 02:14‑04:25]\n```mermaid\nflowchart TD\n    C1[\"鸟静止无飞行动画\"] --> C2[\"提示 2：修复飞行动画 & 防止堡垒坍塌\"]\n    C2 --> C3[\"堡垒瞬间坍塌\"]\n    C3 --> C4[\"提示 3：方块堆叠、全屏、正确地面碰撞\"]\n    C4 --> C5[\"方块未贴合地面\"]\n    C5 --> C6[\"提示 4：统一所有鸟的飞行轨迹\"]\n    C6 --> C7[\"提示 5：修正碰撞形状（仅中心）\"]\n    C7 --> C8[\"碰撞穿模问题\"]\n    C8 --> C9[\"修正后：结构固定、功能完美运行\"]\n```",
+      "diagrams": [
+        {
+          "title": "总体工作流程概览 [BV1qhPGzsEYb P1 00:22‑05:20]",
+          "code": "flowchart TD\n    A1[\"计划制定\"] --> A2[\"Gemini 生成角色描述\"]\n    A2 --> A3[\"批量生成 2D 素材\"]\n    A3 --> A4[\"导入 Godot 项目\"]\n    A4 --> A5[\"克隆并构建 Godot MCP\"]\n    A5 --> A6[\"在项目文件夹运行连接命令\"]\n    A6 --> A7[\"Claude 生成游戏框架\"]\n    A7 --> A8[\"测试 & 提示修复循环\"]\n    A8 --> A9[\"可玩游戏完成\"]"
+        },
+        {
+          "title": "AI 与 Godot MCP 连接流程 [BV1qhPGzsEYb P1 01:13‑01:47]",
+          "code": "flowchart LR\n    B1[\"git clone Godot MCP 仓库\"] --> B2[\"打开终端\"]\n    B2 --> B3[\"npm install\"]\n    B3 --> B4[\"npm run build\"]\n    B4 --> B5[\"本地 MCP 服务器启动\"]\n    B5 --> B6[\"运行 claude mcp godot --scope project --node\"]\n    B6 --> B7[\"输入 index.js 的绝对路径\"]\n    B7 --> B8[\"AI 与 Godot 项目建立连接\"]"
+        },
+        {
+          "title": "物理与碰撞问题调试链 [BV1qhPGzsEYb P1 02:14‑04:25]",
+          "code": "flowchart TD\n    C1[\"鸟静止无飞行动画\"] --> C2[\"提示 2：修复飞行动画 & 防止堡垒坍塌\"]\n    C2 --> C3[\"堡垒瞬间坍塌\"]\n    C3 --> C4[\"提示 3：方块堆叠、全屏、正确地面碰撞\"]\n    C4 --> C5[\"方块未贴合地面\"]\n    C5 --> C6[\"提示 4：统一所有鸟的飞行轨迹\"]\n    C6 --> C7[\"提示 5：修正碰撞形状（仅中心）\"]\n    C7 --> C8[\"碰撞穿模问题\"]\n    C8 --> C9[\"修正后：结构固定、功能完美运行\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T23:52:53+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot + Claude 开发流程图谱\n\n## 总体工作流程概览 [BV1qhPGzsEYb P1 00:22‑05:20]\n```mermaid\nflowchart TD\n    A1[\"计划制定\"] --> A2[\"Gemini 生成角色描述\"]\n    A2 --> A3[\"批量生成 2D 素材\"]\n    A3 --> A4[\"导入 Godot 项目\"]\n    A4 --> A5[\"克隆并构建 Godot MCP\"]\n    A5 --> A6[\"在项目文件夹运行连接命令\"]\n    A6 --> A7[\"Claude 生成游戏框架\"]\n    A7 --> A8[\"测试 & 提示修复循环\"]\n    A8 --> A9[\"可玩游戏完成\"]\n```\n\n## AI 与 Godot MCP 连接流程 [BV1qhPGzsEYb P1 01:13‑01:47]\n```mermaid\nflowchart LR\n    B1[\"git clone Godot MCP 仓库\"] --> B2[\"打开终端\"]\n    B2 --> B3[\"npm install\"]\n    B3 --> B4[\"npm run build\"]\n    B4 --> B5[\"本地 MCP 服务器启动\"]\n    B5 --> B6[\"运行 claude mcp godot --scope project --node\"]\n    B6 --> B7[\"输入 index.js 的绝对路径\"]\n    B7 --> B8[\"AI 与 Godot 项目建立连接\"]\n```\n\n## 物理与碰撞问题调试链 [BV1qhPGzsEYb P1 02:14‑04:25]\n```mermaid\nflowchart TD\n    C1[\"鸟静止无飞行动画\"] --> C2[\"提示 2：修复飞行动画 & 防止堡垒坍塌\"]\n    C2 --> C3[\"堡垒瞬间坍塌\"]\n    C3 --> C4[\"提示 3：方块堆叠、全屏、正确地面碰撞\"]\n    C4 --> C5[\"方块未贴合地面\"]\n    C5 --> C6[\"提示 4：统一所有鸟的飞行轨迹\"]\n    C6 --> C7[\"提示 5：修正碰撞形状（仅中心）\"]\n    C7 --> C8[\"碰撞穿模问题\"]\n    C8 --> C9[\"修正后：结构固定、功能完美运行\"]\n```",
+  "diagrams": [
+    {
+      "title": "总体工作流程概览 [BV1qhPGzsEYb P1 00:22‑05:20]",
+      "code": "flowchart TD\n    A1[\"计划制定\"] --> A2[\"Gemini 生成角色描述\"]\n    A2 --> A3[\"批量生成 2D 素材\"]\n    A3 --> A4[\"导入 Godot 项目\"]\n    A4 --> A5[\"克隆并构建 Godot MCP\"]\n    A5 --> A6[\"在项目文件夹运行连接命令\"]\n    A6 --> A7[\"Claude 生成游戏框架\"]\n    A7 --> A8[\"测试 & 提示修复循环\"]\n    A8 --> A9[\"可玩游戏完成\"]"
+    },
+    {
+      "title": "AI 与 Godot MCP 连接流程 [BV1qhPGzsEYb P1 01:13‑01:47]",
+      "code": "flowchart LR\n    B1[\"git clone Godot MCP 仓库\"] --> B2[\"打开终端\"]\n    B2 --> B3[\"npm install\"]\n    B3 --> B4[\"npm run build\"]\n    B4 --> B5[\"本地 MCP 服务器启动\"]\n    B5 --> B6[\"运行 claude mcp godot --scope project --node\"]\n    B6 --> B7[\"输入 index.js 的绝对路径\"]\n    B7 --> B8[\"AI 与 Godot 项目建立连接\"]"
+    },
+    {
+      "title": "物理与碰撞问题调试链 [BV1qhPGzsEYb P1 02:14‑04:25]",
+      "code": "flowchart TD\n    C1[\"鸟静止无飞行动画\"] --> C2[\"提示 2：修复飞行动画 & 防止堡垒坍塌\"]\n    C2 --> C3[\"堡垒瞬间坍塌\"]\n    C3 --> C4[\"提示 3：方块堆叠、全屏、正确地面碰撞\"]\n    C4 --> C5[\"方块未贴合地面\"]\n    C5 --> C6[\"提示 4：统一所有鸟的飞行轨迹\"]\n    C6 --> C7[\"提示 5：修正碰撞形状（仅中心）\"]\n    C7 --> C8[\"碰撞穿模问题\"]\n    C8 --> C9[\"修正后：结构固定、功能完美运行\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:52:53+00:00"
+}

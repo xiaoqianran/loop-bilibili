@@ -1,0 +1,74 @@
+{
+  "bvid": "BV11rNg6XEj4",
+  "title": "【Unity教程搬运】 ZLinq 以零分配革命性地改变了 Unity 游戏开发",
+  "status": "ok",
+  "language": "zh",
+  "chars": 5866,
+  "text": "如果你是 Unit Task 或 R3 的粉丝，今天我为 你准备了一份特别的礼物。\n我们将深入了解\nSAR 的新包 zlink。\n这个新库允许你使用\n零内存分配的链接表达式，\n不仅如此，你还\n可以使用它来遍历任何结构，\n包括游戏对象\n和变换的层级结构，或者任何其他\n你想要的树状结构。\n今天我们将深入探讨 zlink 的所有\n内置功能，以及如何\n扩展它来实现你想要的任何功能。\n让我们开始吧！要\n开始使用 zlink， 我们需要从 GitHub 安装两个包。\n第一个是 New Get for\nUnity，它允许我们\n安装核心 zlink 包。然后，\n我们将安装一个特定的\n包，它将提供一些\n仅适用于 Unity 的特殊功能。\n我会在 Unity 项目的描述中提供这两个仓库的链接。\n你可以 使用 Git URL 安装 New Get for Unity，\n安装过程很快，安装完成后，\n你的项目顶部就会出现一个新的项目。\n从这个新的菜单项中，我们\n可以管理新的 G Get 包。这将\n打开一个 Moto 窗口，您可以在其中\n搜索 Zlink。在这里，我们可以安装\n核心 Zlink 包，只需选中复选框\n并单击“安装”即可。安装完成后，\n我们只需要导入\nUnity 的特殊包，以便我们可以添加新的\nGetaway，然后返回菜单并\n使用 G URL 进行安装。这应该只\n需要大约 1 分钟，然后您就可以开始使用了。\n让我们开始吧，首先设置一个 使用常规链接的简单示例，\n让我们使用 system 的 using 语句。\n链接，作为我们示例类的一部分，\n我们不妨在类级别定义\n一个整数数组，数组大小为 1 到 5。\n一个普通的链接语句可能看起来像这样：\n我们可能想要\n找到所有偶数，然后\n对它们进行一些操作，例如将\n它们每个乘以 3。让我们把每个\n语句放在单独的一行。现在，\n人们在 Unity 中避免使用这种方法的主要原因\n是，每一\n行都会分配非常非常小的\n内存。虽然这本身并不重要，\n但如果你\n在\n在 项目中到处这样做，尤其是在循环或\nupdate 方法中，就会\n产生大量的垃圾。让\n我们设置一下，以便运行一些测试，看看\nzlink 如何解决这个问题。如果我向下\n创建一个简单的 for 循环，我们可以\n输出每个结果。如果我们\n要将这个小示例转换\n为使用 zlink，我们只需要\n在顶部添加一个 using 语句来使用\nzlink，然后我们需要在语句中添加一行。zlink\n的真正强大之处在于它对 方法链的内存分配为零。 通过使用\n基于结构的无限循环，以及一种\n名为值无限循环的新类型，我们可以使用\nas value innumerable 方法将\n整个管道转换为使用 str\n而不是\n而不是 每次调用都分配内存。zlink 库替换了\n整个系统。 将扩展\n方法与使用\n值枚举结构体的替换方法链接起来，实际上，此时\n我们没有使用系统。\n所以，我们不妨对两种实现方式都进行一些性能分析\n快照，以便进行\n比较，看看\nUnity 分析器内部究竟发生了什么。我们将\n快照输出到\n日志中，启用二进制日志，并在调用\n之前启用分析器，调用之后\n禁用分析器。为了让\n分析器保持简洁，我们再做一件事：将 数组设置为静态只读。现在，我将\n回到 Unity，分别运行这两种方式，\n看看\n看看 分析器内部发生了什么。\n我已将示例脚本添加到\n示例游戏对象中，然后点击播放\n按钮。让我们看看\n使用常规链接时的执行情况。我们可以\n看到，在两行代码中出现了 GC 分配，分别是 WHERE\n语句和 SELECT\n语句。还可以看到，Unity\n决定分配一个 256 字节的块\n来保存这两个调用。现在，让我们\n看看另一个快照。请\n注意，对于 ValueInnumerables，我们有几行不同的\n代码。我们进行了\n三次 ValueInnumerables、SELECT\n和 WHERE 调用。请注意，它们都没有\n分配任何内存。\n单凭这一点就\n足以证明它的价值，但\n我们还可以用这个库做更多的事情。让我们\n回到代码。我要指出的是，\n并非库中的每个方法\n都是零内存分配的。例如，\n如果您使用 `two` 数组\n扩展方法，当然会\n分配一些内存，因为它需要\n创建一个新数组来添加所有\n这些值。但大多数情况下，\n该库是零内存分配的。\n事实上，它甚至没有为\n像 `two`\n字符串这样的操作提供自定义实现。因此，第 18 行的调用\n实际上只是输出 `str`\n类型的值。对于其他可能分配\n内存的任务，您可能需要编写自己的\n扩展方法。例如，如果您\n想将值枚举器转换为\n常规枚举器，当然，\n一旦枚举它，就会分配内存。\n我们可以创建一个通用的\n扩展方法，将\n值枚举器转换为\n类型为 T 的 `I` 枚举器。主要限制是\n枚举器必须是实现了\n类型为 T 的 `I` 值枚举器的结构体。然后，只要满足以下条件，我们就可以\n使用值枚举器提供的枚举器：\n要迭代更多元素，我们可以 返回当前项，\n当然，yield return 会创建一个编译器\n生成的、分配在堆上的状态机。\n你可以使用这样的扩展方法，\n使 zlink 序列\n与标准链接或任何\n需要类型为 t 的可数对象（\n例如字符串）的 API 兼容。 例如，\n我们不妨回到 Unity，看看\n控制台会是什么样子。我们直接按 Ctrl+P 进入 播放模式，它应该会\n中断并暂停我的游戏。我们可以看到，我的\n第一条语句只是输出\n有关类型的信息，第二条\n语句枚举字符串中的两个值\n。 然后我们的 for 循环会\n分别输出每个对象，这\n很好，让我们来看看 Unity 的一些特定\n功能。我在这里的示例下方的层级结构中添加了一个新对象，\n现在我有一个 名为 root 的对象，在其下嵌套了\n许多其他对象，其中一些是空的，\n一些是真实的，它们都没有什么\n特别令人兴奋的地方，但\n它们都是游戏对象，并且它们\n都有一个 transform。\n我们导入的最后一个包具有链接到游戏对象的\n功能，允许您在\n游戏对象和 transform 之间遍历这种层级结构。\n我已经简化了我的示例 脚本，以便我们可以尝试一下。让我们创建\n一个公共 transform，我们称之为 origin。现在\n您可以双向遍历层级结构。\n您可能想要找到\n特定游戏对象的所有祖先，\n为此，您只需遍历\norigin 即可。 这里我们来\n记录一下祖先的名称。这个方法会沿着\n层级结构向上遍历，类似于这个方法。你也\n可以递归地向下遍历层级结构。\n我们将使用一个\n名为 descendants 的方法，所以我们可以再次使用\nfor each 循环遍历 descendants，并\n记录所有名称。同样，\n你可以找到所有直接\n子对象。还有 10 到 20 种其他\n变体，例如 beforeself、\nafterself、afterself and\nincludeself 或 children and self 等等，有\n很多选项。当然，你也可以\n创建自己的变体。那么，这\n对你有什么实际价值呢？通过这样做，\n你引入了一种类似链接的方式来\n处理你的游戏对象。\n例如，你可能想要找到\n一个游戏对象的所有后代，这些后代都\n具有一个特殊的标签；或者你可能\n想要找到\nchildren and self 中所有具有\n刚体组件的对象。刚体组件是\n另一个扩展方法，它扩展了\nZLink 库。我们不妨试试看。\n实际上，我们可以在\n这里添加另一个循环，只记录 children and self 中所有\n具有刚体组件的名称。\n为了区分，我们可以在上面添加一些内容。\n在 Unity 中，我们可以调试组件。 看看我的嵌套项，我给\n这个立方体添加了刚体，但实际上我要\n取它上面的父级（\n组），并将其用作原点。现在，\n当我点击播放时，应该会看到很多\n输出，实际上输出太多了，\n我把它提取出来。在\n这里，我们可以看到“祖先”部分，注意\n它选取了根对象和\n容器对象，但没有选取球体 A 或\n球体 B，因为它们实际上是\n兄弟对象，而不是祖先对象。在“\n后代”部分，我们有立方体、嵌套\n组以及胶囊体 A 和 B。对于\n组件，它在子对象和自身中都找到了一个具有刚体的对象，\n当然就是立方体。这个 功能非常棒，让\n开发变得非常轻松。你可能还记得，我\n提到过你可以使用它来遍历\n任何树状结构，\n包括 JSON 和\nXML。假设我们有一个类似\n这样的 UXL 文档：\n它有一个顶层主容器，一个\n带有标题的标签，然后是一个\n按钮组，它只是一个包含三个独立按钮的空可视化\n元素。\n元素。 让我们来看看如何\n实现这个库中的一个接口，\n创建一个类，以便轻松\n遍历整个结构。\n实际上，我们可以实现与\n游戏\n游戏 对象和变换的内置功能相同的功能。这个接口\n叫做 ITraverser，它有七个方法\n和一个公共 getter。我们将逐一实现\n它们，以便清楚地了解每个方法的作用。\n在一个新类中，\n我们称之为 Visual Element Traverser。我们将\n有一个结构体来实现\nVisual Element 的 ITraverser 接口。\n这将定义我们如何\n遍历 UI 层次结构。ITraverser\n必须实现 IDisposable 接口，所以现在\n我们可以有一个空的 Dispose 方法。\n让我们添加一些成员，用于\n遍历当前 Visual Element、要\n访问的下一个子元素的索引以及\n涉及的子元素总数。然后，让我们\n设置一个构造函数，使用给\n定的原点初始化遍历状态。我们\n可以将当前状态设置为原点，下一个\n子元素的索引为零，并且我们可以\n检查原点的子元素数量来\n设置子元素总数。\n公共属性 `origin` 可以直接\n返回当前元素。然后，对于我们的 `\nconvert to traverser` 方法，我们可以将\n一个可视元素转换为一个以\n该元素为根的新遍历器。现在我们\n还有六个其他方法需要实现，它们都是 `\ntry` 和 `get` 方法。我们可以尝试获取\n当前元素的父元素（如果有的话）。\n注意，每个方法\n都有一个 `out` 变量，但你也必须\n返回 `true` 或 `false`。我们可以检查\n当前元素是否有\n子元素，并获取\n当前元素下的子元素数量。\n稍微复杂一点的方法是，我们可以返回\n序列中的下一个子元素（如果有的话）。\n所以，如果我们还没有到达末尾，我们\n可以直接获取序列中的下一个子元素\n并返回 `true`；否则，我们将\n子元素设置为 `null` 并返回 `\nfalse`。我们可能还需要获取\n当前元素的下一个兄弟元素。\n如果当前元素为 `null` 或当前元素的\n父元素为 `null`，那么我们就没有\n下一个兄弟元素了。`next` 可以为 `null`，返回 `false`。\n否则，我们为父元素设置一个变量，\n并计算\n并计算 当前元素的索引。只要索引\n大于零并且存在下一个\n兄弟元素，我们就将 `next` 设置为该索引。 找到下一个\n兄弟元素，如果一直找到最后一个元素，则返回 true；如果\n下一个元素为 null，则\n返回 false。最后一个方法\n是它的逆方法，即找到上一个\n兄弟元素。\n这里也可以进行类似的空值检查，以\n确保值得继续。然后\n找到父元素，再次找到索引，\n但这次我们想知道\n前面是否有元素，所以\n索引是否大于零？如果是，则\n返回上一级并返回\ntrue；否则，前一个元素为 null，\n返回 false。我会把这些代码折叠起来，\n并按照与接口相同的顺序排列。\n当然，我会把这些代码放到\ngist 之类的地方，所以如果你\n感兴趣，可以\n稍后查看。现在我们有了可视化\n元素遍历器，让我们来实际应用一下。\n我将在这里创建一个新类，\n我们称之为示例二，它有一个\n对可视化树资源的公共引用。\n在启用时，我们可以克隆这\n棵树并将其设置为根节点。要\n渲染它，我们需要在游戏对象\n上添加一个 UI 文档类型的组件。\n现在，假设我们要获取该文档根视觉元素\n下所有按钮的引用，我们可以 创建一个新的视觉元素遍历器\n结构体，并将根元素作为\n源传入。就像\n之前处理游戏对象或变换一样，\n可以使用子元素，但这次\n我们要创建类型为视觉元素\n遍历器和视觉元素的子元素。\n这将返回根元素的所有子元素，\n然后我们使用\n按钮类型进行筛选。现在，我们有了一种类型安全的\n方式来获取根\n元素下所有按钮的引用。之后，你可以对\n它们进行任何操作。\n例如，你可以将它们全部连接\n到事件，或者创建一个\n循环来遍历它们。你还可以\n做一些更复杂的操作，例如，\n一个简单的波形可能只是\n一个基于名称的开关。\n例如，我们可以让播放按钮记录一条\n消息“播放已点击”。同样，我们\n对设置按钮也做同样的事情。\n最后，还有一个退出\n按钮，它的属性可以是“\n应用程序已退出”。我们还没有添加任何\n样式或其他内容。\n看起来可能不太美观，但我们还是去 Unity 里看看吧。\n我用示例 2 的脚本创建了一个新的游戏对象，并\n拖入了一个 UI 文档，里面包含我的小型测试 VI 可视化树资源。我还设置了\n基本的默认面板。\n现在，如果我们点击播放，会看到一个没有样式的\n标签，当然还有三个按钮。如果\n我点击它们，就会在下方看到\n点击设置相关的提示信息。这只是一个 非常简单的例子，显然你\n可以用它做更多的事情，比如像我们之前处理层级树那样遍历\n这些 XML 文档。\n别忘了，你也可以 用 JSON 或任何类似树状结构的数据做同样的事情，\n你只需要像几分钟前那样实现自己的 接口。\n接口。 值得一提的是，Zlink\n仍在开发中，事实上，\n每天都有新的代码提交，不断改进。 实际上，就在我录制这段视频的时候，我看到了一些非常棒的更新。\n所以\n所以 我不可能涵盖\n所有内容，你需要自己去探索。 去代码\n仓库看看吧，\n我自己也知道，就像我做\n大学作业一样，以后我\n每个项目都会用到它。\n今天就分享到这里，欢迎\n在\n在 下方评论区分享你对 Zlink 的看法。希望我们能在 Discord 上见到大家，\n这周我们还会举办一次抽奖活动， 别忘了订阅并点赞哦！\n每周日我们都会推出新的 Unity 中级或高级主题视频， 我会上传新的视频\n供大家观看，也许我们会在\n那里见面。",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV11rNg6XEj4",
+  "published_at": "1783843539",
+  "fetched_at": "2026-08-07T03:30:39+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Zlink 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"Zlink 零内存分配\"] --> A2[\"链接表达式\"]\n    A2 --> A3[\"树状结构遍历\"]\n    A3 --> A4[\"支持的结构：GameObject、Transform、任意树\"]\n    A1 --> A5[\"可扩展性\"]\n    A5 --> A6[\"自定义遍历逻辑\"]\n    A1 --> A7[\"兼容 JSON / XML / UI 树\"]\n    A2 --> A8[\"ValueInnumerable 类型\"]\n    A8 --> A9[\"零分配的无限循环\"]\n```\n\n## 安装流程\n\n```mermaid\nflowchart TD\n    B1[\"开始：打开 Unity 项目\"] --> B2[\"安装 New Get for Unity（Git URL）\"]\n    B2 --> B3[\"打开 Package Manager 窗口\"]\n    B3 --> B4[\"搜索并选择 Zlink\"]\n    B4 --> B5[\"勾选 Core Zlink 包并点击 安装\"]\n    B5 --> B6[\"安装 Unity 专用扩展包\"]\n    B6 --> B7[\"完成：项目顶部出现新菜单项\"]\n    B7 --> B8[\"可通过菜单管理 Zlink 包\"]\n```\n\n## 性能对比\n\n```mermaid\nflowchart TD\n    C1[\"常规 LINQ 实现\"] --> C2[\"WHERE 与 SELECT 产生 GC 分配\"]\n    C2 --> C3[\"分配 256 字节内存块\"]\n    C3 --> C4[\"性能基准：高 GC 开销\"]\n    C5[\"Zlink ValueInnumerables 实现\"] --> C6[\"零内存分配\"]\n    C6 --> C7[\"性能基准：无 GC 开销\"]\n    C4 --> C8[\"对比结果：Zlink 显著降低内存分配\"]\n    C7 --> C8\n    C9[\"注意：部分扩展方法（如 two 数组）仍会分配\"] --> C10[\"需自行实现零分配版本\"]\n```\n\n## Traversal API 结构\n\n```mermaid\nflowchart TD\n    D1[\"ITraverser 接口\"] --> D2[\"7 个核心方法\"]\n    D2 --> D3[\"TryGetParent(out T parent)\"]\n    D2 --> D4[\"TryGetFirstChild(out T child)\"]\n    D2 --> D5[\"TryGetNextSibling(out T sibling)\"]\n    D2 --> D6[\"TryGetPrevSibling(out T sibling)\"]\n    D2 --> D7[\"TryGetDescendants(out IEnumerable<T> desc)\"]\n    D2 --> D8[\"TryGetAncestors(out IEnumerable<T> anc)\"]\n    D2 --> D9[\"Dispose()\"]\n    D1 --> D10[\"实现：VisualElementTraverser 结构体\"]\n    D10 --> D11[\"使用场景：遍历 UI 层级\"]\n    D11 --> D12[\"查找所有祖先\"]\n    D11 --> D13[\"查找带特定标签的后代\"]\n    D11 --> D14[\"筛选含 Rigidbody 的子对象\"]\n    D13 --> D15[\"可扩展至 JSON / XML / 自定义树\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"Zlink 零内存分配\"] --> A2[\"链接表达式\"]\n    A2 --> A3[\"树状结构遍历\"]\n    A3 --> A4[\"支持的结构：GameObject、Transform、任意树\"]\n    A1 --> A5[\"可扩展性\"]\n    A5 --> A6[\"自定义遍历逻辑\"]\n    A1 --> A7[\"兼容 JSON / XML / UI 树\"]\n    A2 --> A8[\"ValueInnumerable 类型\"]\n    A8 --> A9[\"零分配的无限循环\"]"
+        },
+        {
+          "title": "安装流程",
+          "code": "flowchart TD\n    B1[\"开始：打开 Unity 项目\"] --> B2[\"安装 New Get for Unity（Git URL）\"]\n    B2 --> B3[\"打开 Package Manager 窗口\"]\n    B3 --> B4[\"搜索并选择 Zlink\"]\n    B4 --> B5[\"勾选 Core Zlink 包并点击 安装\"]\n    B5 --> B6[\"安装 Unity 专用扩展包\"]\n    B6 --> B7[\"完成：项目顶部出现新菜单项\"]\n    B7 --> B8[\"可通过菜单管理 Zlink 包\"]"
+        },
+        {
+          "title": "性能对比",
+          "code": "flowchart TD\n    C1[\"常规 LINQ 实现\"] --> C2[\"WHERE 与 SELECT 产生 GC 分配\"]\n    C2 --> C3[\"分配 256 字节内存块\"]\n    C3 --> C4[\"性能基准：高 GC 开销\"]\n    C5[\"Zlink ValueInnumerables 实现\"] --> C6[\"零内存分配\"]\n    C6 --> C7[\"性能基准：无 GC 开销\"]\n    C4 --> C8[\"对比结果：Zlink 显著降低内存分配\"]\n    C7 --> C8\n    C9[\"注意：部分扩展方法（如 two 数组）仍会分配\"] --> C10[\"需自行实现零分配版本\"]"
+        },
+        {
+          "title": "Traversal API 结构",
+          "code": "flowchart TD\n    D1[\"ITraverser 接口\"] --> D2[\"7 个核心方法\"]\n    D2 --> D3[\"TryGetParent(out T parent)\"]\n    D2 --> D4[\"TryGetFirstChild(out T child)\"]\n    D2 --> D5[\"TryGetNextSibling(out T sibling)\"]\n    D2 --> D6[\"TryGetPrevSibling(out T sibling)\"]\n    D2 --> D7[\"TryGetDescendants(out IEnumerable<T> desc)\"]\n    D2 --> D8[\"TryGetAncestors(out IEnumerable<T> anc)\"]\n    D2 --> D9[\"Dispose()\"]\n    D1 --> D10[\"实现：VisualElementTraverser 结构体\"]\n    D10 --> D11[\"使用场景：遍历 UI 层级\"]\n    D11 --> D12[\"查找所有祖先\"]\n    D11 --> D13[\"查找带特定标签的后代\"]\n    D11 --> D14[\"筛选含 Rigidbody 的子对象\"]\n    D13 --> D15[\"可扩展至 JSON / XML / 自定义树\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T03:30:52+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Zlink 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"Zlink 零内存分配\"] --> A2[\"链接表达式\"]\n    A2 --> A3[\"树状结构遍历\"]\n    A3 --> A4[\"支持的结构：GameObject、Transform、任意树\"]\n    A1 --> A5[\"可扩展性\"]\n    A5 --> A6[\"自定义遍历逻辑\"]\n    A1 --> A7[\"兼容 JSON / XML / UI 树\"]\n    A2 --> A8[\"ValueInnumerable 类型\"]\n    A8 --> A9[\"零分配的无限循环\"]\n```\n\n## 安装流程\n\n```mermaid\nflowchart TD\n    B1[\"开始：打开 Unity 项目\"] --> B2[\"安装 New Get for Unity（Git URL）\"]\n    B2 --> B3[\"打开 Package Manager 窗口\"]\n    B3 --> B4[\"搜索并选择 Zlink\"]\n    B4 --> B5[\"勾选 Core Zlink 包并点击 安装\"]\n    B5 --> B6[\"安装 Unity 专用扩展包\"]\n    B6 --> B7[\"完成：项目顶部出现新菜单项\"]\n    B7 --> B8[\"可通过菜单管理 Zlink 包\"]\n```\n\n## 性能对比\n\n```mermaid\nflowchart TD\n    C1[\"常规 LINQ 实现\"] --> C2[\"WHERE 与 SELECT 产生 GC 分配\"]\n    C2 --> C3[\"分配 256 字节内存块\"]\n    C3 --> C4[\"性能基准：高 GC 开销\"]\n    C5[\"Zlink ValueInnumerables 实现\"] --> C6[\"零内存分配\"]\n    C6 --> C7[\"性能基准：无 GC 开销\"]\n    C4 --> C8[\"对比结果：Zlink 显著降低内存分配\"]\n    C7 --> C8\n    C9[\"注意：部分扩展方法（如 two 数组）仍会分配\"] --> C10[\"需自行实现零分配版本\"]\n```\n\n## Traversal API 结构\n\n```mermaid\nflowchart TD\n    D1[\"ITraverser 接口\"] --> D2[\"7 个核心方法\"]\n    D2 --> D3[\"TryGetParent(out T parent)\"]\n    D2 --> D4[\"TryGetFirstChild(out T child)\"]\n    D2 --> D5[\"TryGetNextSibling(out T sibling)\"]\n    D2 --> D6[\"TryGetPrevSibling(out T sibling)\"]\n    D2 --> D7[\"TryGetDescendants(out IEnumerable<T> desc)\"]\n    D2 --> D8[\"TryGetAncestors(out IEnumerable<T> anc)\"]\n    D2 --> D9[\"Dispose()\"]\n    D1 --> D10[\"实现：VisualElementTraverser 结构体\"]\n    D10 --> D11[\"使用场景：遍历 UI 层级\"]\n    D11 --> D12[\"查找所有祖先\"]\n    D11 --> D13[\"查找带特定标签的后代\"]\n    D11 --> D14[\"筛选含 Rigidbody 的子对象\"]\n    D13 --> D15[\"可扩展至 JSON / XML / 自定义树\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"Zlink 零内存分配\"] --> A2[\"链接表达式\"]\n    A2 --> A3[\"树状结构遍历\"]\n    A3 --> A4[\"支持的结构：GameObject、Transform、任意树\"]\n    A1 --> A5[\"可扩展性\"]\n    A5 --> A6[\"自定义遍历逻辑\"]\n    A1 --> A7[\"兼容 JSON / XML / UI 树\"]\n    A2 --> A8[\"ValueInnumerable 类型\"]\n    A8 --> A9[\"零分配的无限循环\"]"
+    },
+    {
+      "title": "安装流程",
+      "code": "flowchart TD\n    B1[\"开始：打开 Unity 项目\"] --> B2[\"安装 New Get for Unity（Git URL）\"]\n    B2 --> B3[\"打开 Package Manager 窗口\"]\n    B3 --> B4[\"搜索并选择 Zlink\"]\n    B4 --> B5[\"勾选 Core Zlink 包并点击 安装\"]\n    B5 --> B6[\"安装 Unity 专用扩展包\"]\n    B6 --> B7[\"完成：项目顶部出现新菜单项\"]\n    B7 --> B8[\"可通过菜单管理 Zlink 包\"]"
+    },
+    {
+      "title": "性能对比",
+      "code": "flowchart TD\n    C1[\"常规 LINQ 实现\"] --> C2[\"WHERE 与 SELECT 产生 GC 分配\"]\n    C2 --> C3[\"分配 256 字节内存块\"]\n    C3 --> C4[\"性能基准：高 GC 开销\"]\n    C5[\"Zlink ValueInnumerables 实现\"] --> C6[\"零内存分配\"]\n    C6 --> C7[\"性能基准：无 GC 开销\"]\n    C4 --> C8[\"对比结果：Zlink 显著降低内存分配\"]\n    C7 --> C8\n    C9[\"注意：部分扩展方法（如 two 数组）仍会分配\"] --> C10[\"需自行实现零分配版本\"]"
+    },
+    {
+      "title": "Traversal API 结构",
+      "code": "flowchart TD\n    D1[\"ITraverser 接口\"] --> D2[\"7 个核心方法\"]\n    D2 --> D3[\"TryGetParent(out T parent)\"]\n    D2 --> D4[\"TryGetFirstChild(out T child)\"]\n    D2 --> D5[\"TryGetNextSibling(out T sibling)\"]\n    D2 --> D6[\"TryGetPrevSibling(out T sibling)\"]\n    D2 --> D7[\"TryGetDescendants(out IEnumerable<T> desc)\"]\n    D2 --> D8[\"TryGetAncestors(out IEnumerable<T> anc)\"]\n    D2 --> D9[\"Dispose()\"]\n    D1 --> D10[\"实现：VisualElementTraverser 结构体\"]\n    D10 --> D11[\"使用场景：遍历 UI 层级\"]\n    D11 --> D12[\"查找所有祖先\"]\n    D11 --> D13[\"查找带特定标签的后代\"]\n    D11 --> D14[\"筛选含 Rigidbody 的子对象\"]\n    D13 --> D15[\"可扩展至 JSON / XML / 自定义树\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:30:52+00:00"
+}

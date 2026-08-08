@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1q6Js6DEwE",
+  "title": "[79]. FlashAttention-4：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3869,
+  "text": "今天我们来介绍一篇关于GPU上\n注意力计算优化和函数设计的工作\n标题叫做flash attention4\n全称是面向非对称硬件扩展的算法\n与核函数流水线协同设计\n随着NVIDIABLACKWELL架构的推出\nGPU上tensor CORE的吞吐量相比上一代hopper翻倍\n但shared memory\n带宽和指数计算单元\n等硬件资源并未同比例提升\n这导致注意力计算的瓶颈\n从矩阵乘法转移到了非矩阵乘法操作上\nFlash attention4\n针对这一硬件特性提出了四项关键技术\n第一重新设计前向与反向的流水线\n充分利用BLACKWELL的完全异步\nMMA操作和更大的tile size\n最大化计算重叠\n第二通过软件模拟指数函数和条件\nsoft max重缩放\n减少指数单元的瓶颈\n第三利用tensor memory和2CCTAMMA模式\n降低反向传播中的shared memory流量和原子操作\n第四针对BLACKWELL的资源约束优化\n调度策略和寄存器分配实验表明\n在B200GPU上使用bf16精度flash attention4\n相比康DNN9.13最高有1.3倍的加速\n相比try ton最高有2.7倍\n加速达到了1613\nT flops\n每秒的吞吐量\n约71%的理论峰值利用率\n此外该工作完全基于嵌入Python的qt d sl实现\n编译时间比传统C加加模板方法\n快了20~30倍\n下面看一下摘要\n翻译注意力机制是transformer架构的核心层\n也是大语言模型和长上下文应用的主要瓶颈\n虽然flash attention3\n通过异步执行和沃夫特化为hopper GPU\n优化了注意力计算\n但它主要针对H100架构AI产业\n以快速转向部署基于BLACKWELL的系统\n如B200和GB200\n这些系统由于非对称硬件扩展\n展现出截然不同的性能特征\ntensor CORE吞吐量翻倍\n而shared memory带宽指数\n计算单元等其他功能单元的扩展更慢\n或保持不变\n本文开发了若干技术\n来解决black qugpu上这些转移的瓶颈\n第一重新设计的流水线\n充分利用完全异步的MMA操作和更大的tale size\n第二软件模拟的指数函数和条件\nsoft max重缩放\n减少了非矩阵乘法操作\n第三利用tensor memory和RCCTAMMA模式\n减少了反向传播中的shared memory\n流量和原子累加\n实验表明\nflash attention4在B200GPU上使用bf16时\n相比CODNN9.13最高可达1.3倍\n加速相比TRITTON最高可达2.7倍\n加速达到最高1613\nTFLOPS每秒约71%的利用率\n除了算法创新外\nflash attention4完全使用嵌入Python的cute dsl实现\n编译时间比传统C加加模板方法\n快20~30倍\n同时保持完整的表达能力\n下面看一下这个公式\n这张图给出了标准多头注意力\n在前向传播中的核心计算定义\n首先计算查询矩阵Q和键矩阵K的转置的乘积\n得到注意力分数矩阵S\n然后对S逐行应用\nsoft max得到概率矩阵P最后P与直矩阵V相乘\n得到输出O\n其中缩放因子阿尔法等于一\n除以根号DD是头的维度\n反向传播\n则根据输出梯度DO依次计算DVDPDS\n再进一步求出DQ和DK\n这些公式\n是理解后续所有flash attention优化算法的基础\n下面看一下这张图\n这张图展示了flash attention\n四前向传播的核心流水线设计\n左侧将Q矩阵按行划分为多个CCTA块\n每个CCTA负责计算一部分查询token的输出\n在右侧的时间轴上\n可以看到\n每个SM上交替执行tensor code的MMA矩阵\n乘法操作和MAF指数单元上的soft max\n计算\n上标H和L分别表示高快和低块\n对应乒乓双缓冲策略\n当一个tile在进行tensor CORE计算时\n另一个tile可以并行执行soft max\n从而最大化计算单元之间的重叠\n这种设计充分利用了black well架构的完全异步\nMMA特性\n将soft max计算与矩阵乘法充分重叠\n避免了因指数单元\n吞吐量不足而产生的空闲等待\n下面看一下这个表\n这个表给出了注意力前向传播的LUFINE分析\n结果\n对比了两种典型tie配置下\n各硬件资源的耗时周期数\n在128的立方配置下\nMMA计算和指数单元\n都需要1024个周期\nshared memory需要768个周期\n当tile size增大到256乘\nMMA计算和指数单元的耗时都翻倍到\n2048个周期\nshared memory也增加到1536个周期\n这个分析表明\n在这两种配置下\nMMA计算和指数单元都是主要瓶颈\n而增大tile size虽然会增加shared memory的压力\n但能让tensor CORE和指数单元的工作更好地重叠\n总体上有利于提升吞吐量\n下面看一下这个公式\n这个公式展示了flash attention\n四中指数函数软件模拟的核心思想\n为了缓解black well上指数单元吞吐量不足的问题\n作者将二的X次方分解为整数部分和小数部分\n二的X次方等于二的X下\n取整次方乘以二的X小数部分次方\n其中整数部分可以通过IEEE754\n浮点数表示中的指数位进行快速的未操作\n得到小数部分则通过多项式近似来估算\n使用霍纳法则配合FMA指令高效求职\n这种方法把原本只能由指数单元执行的计算\n分流到了FMA单元和整数LLU上\n从而提升了整体的指数计算吞吐量\n实际实现中\n作者只对其中的10%\n到25%的条目使用软件模拟\n其余人用硬件指数指令\n以平衡寄存器压力和吞吐量收益\n下面看一下这个公式\n这个公式描述了flash attention4中条件\nsoft max重缩放的核心机制\n在标准的在线soft max算法中\n每当处理一个新的快\n发现更大的最大值时\n都需要对之前累积的输出进行重缩放\n这涉及大量的向量乘法操作\nflash tension4引入了条件判断\n只有当当前块的最大值比之前的大值\n超过一个阈值套时\n才执行重缩放\n否则直接跳过阈值套\n通常设为log二两百五十六G8.0\n在计算结束时\n所有累积值会通过最终的真实最大值\n和归一化因子进行一次性校正\n从而保证数值正确性\n这个修改大幅减少了重缩放操作的次数\n同时只在最后做一次全局归一化\n来修正跳过中间重缩放带来的微小偏差\n下面看一下这张图\n这张图展示了flash attention4\n反向传播的计算图和流水线顺序\n包含五个MMA操作和二个逐元素操作\n整个计算分为三个阶段\n序幕阶段初始化第一批计算主循环阶段\n沿着序列长度维度迭代处理各个KV块\n帷幕阶段完成DK和DQ的最终累加\n图中不同颜色代表tensor memory的不同列区域\n可以看到作者精心安排了各中间结果\n在tensor memory中的复用位置\n相比\nFlash attention3\n将累加器保存在寄存器中\nFlash attention4\n利用BLACKWELL的tensor memory来存储中间结果\n从而释放了寄存器压力\n并允许更灵活的流水线调度\n使soft max计算能够与DP的MMA操作重叠\n下面看一下这张图\n这张图详细说明了2CCTA模式下\n反向传播中DQ计算步骤的分解\n左侧是逻辑视图\nDS和K矩阵分别被划分为多个CCTA块\n在2CCTA模式中\n一对CCTA协同执行单个MMA操作\n每个CCTA只加载操作数B的一半\n具体来说\n两个CCTA通过分布式shared memory\n交换一半的ds s tile\n使得每个CCTA可以构造出一个M除以22\nN的操作数\n然后执行双精度规约\n这种分解方式有两个好处\n一是每个CCTA\n只需要在shared memory中保存一半的操作数\nB减少了shared memory流量\n二是DQ的原子累加次数也减少了一半\n因为每个CCTA只写回自己负责的那一半tile\n这对大规模训练的确定性也很有帮助\n下面看一下这个表\n这个表对比了flash attention3和flash attention4\n的单个核函数编译时间\nflash attention3基于C加加模板\n前向传播编译需要55秒\n反向传播需要45秒\n而flash attention4使用嵌入Python的Q的DSL\n实现前向编译仅需2.5秒\n反向仅需1.4秒\n前向编译加速了约22倍\n反向编译加速了约32倍\n更快的编译时间\n意味着开发者在调试和迭代\n核函数时的效率大幅提升\n由于flash attention2和flash attention3\n通常需要为数百种不同的注意力变体\n预编译和函数编译时间的缩短\n对整个开发流程的影响非常大\n下面看一下这张图\n这张图展示了flash attention4\n在B200GPU上前向传播的t flops对比\n左图是非因果注意力\n右图是因果注意力\n头维度均为128\n相比com dn和tritton flash attention4\n在多种序列长度下都有优势\n在中长序列上优势更为明显\n例如在32K序列长度的非因果场景下\nflash attention4达到了约1613\nTFLOPS每秒接近B200\n理论峰值的71%\n对于因果注意力加速效果同样显著\n这得益于最长处理时间\n优先调度策略对负载不均衡的有效缓解\n反向传播的实验也显示了一致的加速趋势\n验证了2CCTA反向流水线的有效性",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1q6Js6DEwE",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:24+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

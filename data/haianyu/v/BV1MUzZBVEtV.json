@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1MUzZBVEtV",
+  "title": "7. SlimAttention：一种比FlashAttention更适合CPU的推理方案【每天一个宝藏名词】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 244,
+  "text": "Sliming attention\nSwiming attention\n是由英特尔在2024年\n随推理框架x fast transformer\n提出的一种CPU专用的优化方案\n不同于GPU上流行的flash attention\n采用二维分块\nslime attention采用一维分块技术\n无需flash attention在计算时所需的重复迭代修正\n更适合多核CPU的并行计算\n目前相关的GITHUB仓库已经超过了400个star\n可以通过p install或者docker进行一键安装",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1MUzZBVEtV",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

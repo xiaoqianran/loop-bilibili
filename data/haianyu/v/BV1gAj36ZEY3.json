@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1gAj36ZEY3",
+  "title": "149. 为什么投机解码最多可以比K个Token多生成一个Token？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 889,
+  "text": "今天的问题是\n为什么投机解码最多可以比K个token\n多生成一个token\n结论先行\n这是因为当投机解码所有草稿\ntoken都被接受的时候\n大模型最后一条隐藏状态还可以投影\n得到一个概率向量\n额外再采样出来一个token\n先来回顾一下投机解码的流程\n本质上小模型串行打草稿就是decode\n而大模型并行验证就是增量的PREFU\n假设用户发来了提示词\n海安语先要进行PREFU\n并且大小模型都要做pref\n这是因为必须生成了kv cash\n才能做后面的计算\n现在大模型和小模型都已经把它PREFU好了\n在preview阶段会把海安语首先作词嵌入\n然后投影得到QKV\n经过注意力层和前馈网络层的计算\n在最后一层会得到三个隐藏状态\n最后这一行的隐藏状态投影到此表\n就可以得到一个概率分布\n此时进行采样\n生成首token\n注意首token由大模型自己采样就可以了\n不要让小模型去猜\n因为大模型已经把这个隐藏状态算好了\n直接得到概率预测\n让小模型去猜\n反而是多此一举\n现在生成了市小模型\n拿到试之后开始打草稿\n先把视作词嵌入投影得到QKV\n把K和V并入到kv cash里面\n然后拿Q去查询之前的K\n以及刚刚算出来的这个K\n会得到一小条注意力分数\n再和V相乘\n本质上是加权平均算出O不断计算\n最后一层会算出来这样一个小条\n投影到此表维度再采样就会得到一名\n把译名再做词嵌入\n得到kv cash\n最后又得到一个概率预测\nB站小模型在这里给出了两个草稿token\n一名和B站\n也就是K等于二\n接下来大模型拿是一名B站\n三个token同时做增量的PREFILE\n得到三个概率预测\n这三个概率预测都是有意义的\n第一个概率预测用来核对小模型\n对译名这个预测是否准确\n因为它是由市对应的next token的预测\n下一条对应着B站的预测\n如果这两个都被通过了\n由于大模型这里还有一个隐藏状态\n还可以投影出来一个概率分布\n所以拿大模型自己的分布多采样一次\n就可以得到up主注意\n最后这一个额外的token\n用大模型自己的采样就可以了\n不需要用小模型\n因为小模型生成到B站就停下来了\n他没有拿B站再去走一遍",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gAj36ZEY3",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

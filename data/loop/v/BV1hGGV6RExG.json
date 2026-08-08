@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1hGGV6RExG",
+  "title": "deepseek v4flash正式版在手机上本地运行",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 597,
+  "text": "Deep sick with flash\n官方的权重\n然后手机的话是\n1+13\nD加13\n这个是24G内存的\n然后1T的空间\n然后给大家看一下那个具体的情况\n1G内所所有的那个完整的权重文件\n已经下到手机里了\n然后开始推理\n嗯应该是\n问个啥呢\n算了\n就介绍一下自己吧\n哦哦对那个开飞行模式了\n证明不是那个啥证明不是没有联网\n不是掉的那个外部的API\n这里连着那个dB可以看下占用\n嗯应该是\n这里有一个那个内存限制\n然后呃大概跟这个是一致的\n速度大概就这么个样子吧\n挺有意思的一个小项目\n其实就是基于社区上面的项目魔改的\n到时候那个设置那个源码什么的哦\n我发到那个GITHUB上吧\n这个速度你要说能用也能用\n但是确实不是很好用\n而且手机的内存还是太小了\n那个长上下文的话顶不住\n这个项目是那个嗯\n基于社区里边一个叫那个什么对这个COLLIBRARY\n那个大家可以去GITHUB上闲着没事查一下\n原项目是那个在24G内存以内的设备上\n跑GLM5.2\n好像是\n然后嗯最近也支持了deep sick\n然后后来然后今天闲着没事儿下载下来嗯\n改吧改吧\n在安卓上面跑起来了\n真没想到完整版的deep sic\n那个跟官方的发的这个一模一样\n也没有用什么社区的量化\n直接官方的直接他自己的权重文件\n然后拷到那个设备上去一行命令\n然后就可以跑起来\n感觉还还还挺奇妙的\n说实话\n就是太慢了太慢了\n行就这样吧\n先录到这",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hGGV6RExG",
+  "published_at": "1785583771",
+  "fetched_at": "2026-08-06T21:21:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 本地运行知识图谱\n\n## Overview\n```mermaid\nflowchart TD\n    A1[\"官方权重文件\"] --> A2[\"完整权重文件（≈1 GB）\"]\n    A2 --> A3[\"下载至手机\"]\n    A3 --> A4[\"手机规格\\n- 24 GB RAM\\n- 1 TB 存储\"]\n    A4 --> A5[\"离线运行\\n（开启飞行模式）\"]\n    A5 --> A6[\"社区改版项目\\n基于 COLLIBRARY，支持 GLM5.2\"]\n    A6 --> A7[\"Android 兼容性\"]\n    A7 --> A8[\"在手机上运行 DeepSeek V4Flash\"]\n```\n\n## Setup Process\n```mermaid\nflowchart LR\n    B1[\"下载官方完整权重文件\"] --> B2[\"拷贝至 Android 设备\"]\n    B2 --> B3[\"执行单行启动命令\"]\n    B3 --> B4[\"开始推理\"]\n    B4 --> B5[\"通过 DB 查看内存占用\"]\n    B5 --> B6[\"记录推理速度\"]\n```\n\n## Limitations & Performance\n```mermaid\nflowchart TD\n    C1[\"设备内存上限 24 GB\"] --> C2[\"长上下文无法支撑\"]\n    C3[\"官方未量化权重\"] --> C4[\"推理速度慢\"]\n    C5[\"Android 环境\"] --> C4\n    C2 --> C4\n    C4 --> C6[\"使用体验受限\"]\n```",
+      "diagrams": [
+        {
+          "title": "Overview",
+          "code": "flowchart TD\n    A1[\"官方权重文件\"] --> A2[\"完整权重文件（≈1 GB）\"]\n    A2 --> A3[\"下载至手机\"]\n    A3 --> A4[\"手机规格\\n- 24 GB RAM\\n- 1 TB 存储\"]\n    A4 --> A5[\"离线运行\\n（开启飞行模式）\"]\n    A5 --> A6[\"社区改版项目\\n基于 COLLIBRARY，支持 GLM5.2\"]\n    A6 --> A7[\"Android 兼容性\"]\n    A7 --> A8[\"在手机上运行 DeepSeek V4Flash\"]"
+        },
+        {
+          "title": "Setup Process",
+          "code": "flowchart LR\n    B1[\"下载官方完整权重文件\"] --> B2[\"拷贝至 Android 设备\"]\n    B2 --> B3[\"执行单行启动命令\"]\n    B3 --> B4[\"开始推理\"]\n    B4 --> B5[\"通过 DB 查看内存占用\"]\n    B5 --> B6[\"记录推理速度\"]"
+        },
+        {
+          "title": "Limitations & Performance",
+          "code": "flowchart TD\n    C1[\"设备内存上限 24 GB\"] --> C2[\"长上下文无法支撑\"]\n    C3[\"官方未量化权重\"] --> C4[\"推理速度慢\"]\n    C5[\"Android 环境\"] --> C4\n    C2 --> C4\n    C4 --> C6[\"使用体验受限\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T21:21:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 本地运行知识图谱\n\n## Overview\n```mermaid\nflowchart TD\n    A1[\"官方权重文件\"] --> A2[\"完整权重文件（≈1 GB）\"]\n    A2 --> A3[\"下载至手机\"]\n    A3 --> A4[\"手机规格\\n- 24 GB RAM\\n- 1 TB 存储\"]\n    A4 --> A5[\"离线运行\\n（开启飞行模式）\"]\n    A5 --> A6[\"社区改版项目\\n基于 COLLIBRARY，支持 GLM5.2\"]\n    A6 --> A7[\"Android 兼容性\"]\n    A7 --> A8[\"在手机上运行 DeepSeek V4Flash\"]\n```\n\n## Setup Process\n```mermaid\nflowchart LR\n    B1[\"下载官方完整权重文件\"] --> B2[\"拷贝至 Android 设备\"]\n    B2 --> B3[\"执行单行启动命令\"]\n    B3 --> B4[\"开始推理\"]\n    B4 --> B5[\"通过 DB 查看内存占用\"]\n    B5 --> B6[\"记录推理速度\"]\n```\n\n## Limitations & Performance\n```mermaid\nflowchart TD\n    C1[\"设备内存上限 24 GB\"] --> C2[\"长上下文无法支撑\"]\n    C3[\"官方未量化权重\"] --> C4[\"推理速度慢\"]\n    C5[\"Android 环境\"] --> C4\n    C2 --> C4\n    C4 --> C6[\"使用体验受限\"]\n```",
+  "diagrams": [
+    {
+      "title": "Overview",
+      "code": "flowchart TD\n    A1[\"官方权重文件\"] --> A2[\"完整权重文件（≈1 GB）\"]\n    A2 --> A3[\"下载至手机\"]\n    A3 --> A4[\"手机规格\\n- 24 GB RAM\\n- 1 TB 存储\"]\n    A4 --> A5[\"离线运行\\n（开启飞行模式）\"]\n    A5 --> A6[\"社区改版项目\\n基于 COLLIBRARY，支持 GLM5.2\"]\n    A6 --> A7[\"Android 兼容性\"]\n    A7 --> A8[\"在手机上运行 DeepSeek V4Flash\"]"
+    },
+    {
+      "title": "Setup Process",
+      "code": "flowchart LR\n    B1[\"下载官方完整权重文件\"] --> B2[\"拷贝至 Android 设备\"]\n    B2 --> B3[\"执行单行启动命令\"]\n    B3 --> B4[\"开始推理\"]\n    B4 --> B5[\"通过 DB 查看内存占用\"]\n    B5 --> B6[\"记录推理速度\"]"
+    },
+    {
+      "title": "Limitations & Performance",
+      "code": "flowchart TD\n    C1[\"设备内存上限 24 GB\"] --> C2[\"长上下文无法支撑\"]\n    C3[\"官方未量化权重\"] --> C4[\"推理速度慢\"]\n    C5[\"Android 环境\"] --> C4\n    C2 --> C4\n    C4 --> C6[\"使用体验受限\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:21:54+00:00"
+}

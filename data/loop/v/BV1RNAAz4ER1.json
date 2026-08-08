@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1RNAAz4ER1",
+  "title": "【AI】权威的LLM大模型api网站去哪里找？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 958,
+  "text": "Hello\n大家好\n我是paper荣荣\n今天我们来推荐一个大模型API的网站\n也就是open router\n在这个网站中呢\n可以通过一个API使用任何大模型\n包括像谷歌的GERMANYIGBT的\n包括像阿里的千问\n还有2米的MIO\n都可以在这里面去实用哈\n这个网站呢它还是一个比\n相对来说比较权威的模型网站\n它还能去和一些其他模型进行对比\n比如说我们可以点击这个models\n我们只要在右边登录之后呢\n我们就可以看到这里了\n因为我们这个网站它是可以用这个邮箱\n中文邮箱\n也就是我们的QQ邮箱之类的登录的哈\n我们可以点进任何的一个大模型\n比如说我们看一下小米新八这个模型\n我们可以看这里面啊\n可以看到他一个和其他模型的一个对比啊\n还有它相对应的这块的价格啊\n你甚至还能在这里看到一个相应的评分啊\n可以看到他这个agent tic index比较高\n但他coding index就比较低\n说明他在这个代码制作上\n可能稍微的没有那么强是吧\n可以再看下一个随便的别的\n比如说我们看下这个mini max\n那我们再看一下他这边诶\n这个数据相对比较多啊\n用的人可能比较多一点\n他这价格也差不多哈哈整体来说比较平均啊\n这效果agent tik它可能更好一点\n我们还能在这里看到一些\n公共的一些公共应用啊\n用使用它的这个形的这个数量啊\n那这个我们也可以给它直接翻译一下\n当前页面是可以的哈\n可以呢可以看到他这个东西是很多的\n我们要是想用它API呢\n很简单啊\n点击这个quick star\n我们点击创建API密钥就可以了\n创建之后呢\n我们需要先登录一下哈\n登录完成了\n我们再开进入这个后台页面就可以了啊\n登录完成之后\n我们再点击create API k就可以\n这里在我们的后台里找到quit了\n然后我们这个关于这个东西都上写上之后呢\n就可以用复制这个hp i\n到我们的任何想需要的地方了\n所有模型都是这样\n当然它不只是这个文本当模型\n它还有很多的一些别的\n比如说这个视频\n我们可以先把它来勾选\n看一下视频\n当模型自觉的seed2.0\nLight sm3.59 b\n还有像这个图片大模型\n比如说这个谷歌的banana banana two\n那这些都是可以去使用的哈\n我推荐一个微信API寻找的网站吧\n国内可以直连哈\n相对网速还是可以的哈",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RNAAz4ER1",
+  "published_at": "1774104713",
+  "fetched_at": "2026-08-07T05:40:56+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# OpenRouter 知识图谱\n\n## 总览  \n[BV1RNAAz4ER1 P1 00:04]、[BV1RNAAz4ER1 P1 00:06]、[BV1RNAAz4ER1 P1 00:16]、[BV1RNAAz4ER1 P1 00:20]、[BV1RNAAz4ER1 P1 00:23]、[BV1RNAAz4ER1 P1 00:32]\n\n```mermaid\nflowchart TD\n    O1[\"OpenRouter 网站\"]\n    O2[\"登录方式\"]\n    O3[\"中文邮箱 / QQ 登录\"]\n    O4[\"模型目录\"]\n    O5[\"模型对比功能\"]\n    O6[\"价格信息\"]\n    O7[\"评分指标\"]\n    O8[\"API 访问\"]\n    O9[\"多模态模型\"]\n    O10[\"文本模型\"]\n    O11[\"视频模型\"]\n    O12[\"图片模型\"]\n    O13[\"国内直连推荐\"]\n\n    O1 --> O2\n    O2 --> O3\n    O1 --> O4\n    O4 --> O5\n    O5 --> O6\n    O5 --> O7\n    O1 --> O8\n    O1 --> O9\n    O9 --> O10\n    O9 --> O11\n    O9 --> O12\n    O1 --> O13\n```\n\n## API 密钥创建流程  \n[BV1RNAAz4ER1 P1 01:18]、[BV1RNAAz4ER1 P1 01:20]、[BV1RNAAz4ER1 P1 01:24]、[BV1RNAAz4ER1 P1 01:28]、[BV1RNAAz4ER1 P1 01:30]、[BV1RNAAz4ER1 P1 01:34]、[BV1RNAAz4ER1 P1 01:36]\n\n```mermaid\nflowchart TD\n    A1[\"打开 OpenRouter 首页\"]\n    A2[\"点击 Quick Start\"]\n    A3[\"创建 API 密钥按钮\"]\n    A4[\"若未登录 → 登录账号\"]\n    A5[\"进入后台管理页面\"]\n    A6[\"点击 Create API Key\"]\n    A7[\"生成并复制 API 端点\"]\n    A8[\"在任意应用中使用 API\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n```\n\n## 模型比较属性  \n[BV1RNAAz4ER1 P1 00:34]、[BV1RNAAz4ER1 P1 00:40]、[BV1RNAAz4ER1 P1 00:45]、[BV1RNAAz4ER1 P1 00:48]、[BV1RNAAz4ER1 P1 00:55]、[BV1RNAAz4ER1 P1 00:58]、[BV1RNAAz4ER1 P1 01:00]、[BV1RNAAz4ER1 P1 01:04]\n\n```mermaid\nflowchart TD\n    M1[\"模型示例\"]\n    M2[\"小米新八\"]\n    M3[\"MiniMax\"]\n    M4[\"Agent TIC 指数\"]\n    M5[\"Coding Index\"]\n    M6[\"价格\"]\n    M7[\"使用人数\"]\n    M8[\"整体评分\"]\n\n    M1 --> M2\n    M1 --> M3\n    M2 --> M4\n    M2 --> M5\n    M2 --> M6\n    M2 --> M8\n    M3 --> M4\n    M3 --> M5\n    M3 --> M6\n    M3 --> M7\n    M3 --> M8\n```\n\n## 多模态支持  \n[BV1RNAAz4ER1 P1 00:09]、[BV1RNAAz4ER1 P1 00:12]、[BV1RNAAz4ER1 P1 01:41]、[BV1RNAAz4ER1 P1 01:49]、[BV1RNAAz4ER1 P1 01:51]、[BV1RNAAz4ER1 P1 01:54]\n\n```mermaid\nflowchart TD\n    V1[\"OpenRouter 支持的模态\"]\n    V2[\"文本模型\"]\n    V3[\"视频模型\"]\n    V4[\"图片模型\"]\n    V5[\"示例：Google GERMANYIGBT（文本）\"]\n    V6[\"示例：阿里千问（文本）\"]\n    V7[\"示例：Google Banana Banana Two（图片）\"]\n    V8[\"示例：未命名视频模型\"]\n\n    V1 --> V2\n    V1 --> V3\n    V1 --> V4\n    V2 --> V5\n    V2 --> V6\n    V4 --> V7\n    V3 --> V8\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    O1[\"OpenRouter 网站\"]\n    O2[\"登录方式\"]\n    O3[\"中文邮箱 / QQ 登录\"]\n    O4[\"模型目录\"]\n    O5[\"模型对比功能\"]\n    O6[\"价格信息\"]\n    O7[\"评分指标\"]\n    O8[\"API 访问\"]\n    O9[\"多模态模型\"]\n    O10[\"文本模型\"]\n    O11[\"视频模型\"]\n    O12[\"图片模型\"]\n    O13[\"国内直连推荐\"]\n\n    O1 --> O2\n    O2 --> O3\n    O1 --> O4\n    O4 --> O5\n    O5 --> O6\n    O5 --> O7\n    O1 --> O8\n    O1 --> O9\n    O9 --> O10\n    O9 --> O11\n    O9 --> O12\n    O1 --> O13"
+        },
+        {
+          "title": "API 密钥创建流程",
+          "code": "flowchart TD\n    A1[\"打开 OpenRouter 首页\"]\n    A2[\"点击 Quick Start\"]\n    A3[\"创建 API 密钥按钮\"]\n    A4[\"若未登录 → 登录账号\"]\n    A5[\"进入后台管理页面\"]\n    A6[\"点击 Create API Key\"]\n    A7[\"生成并复制 API 端点\"]\n    A8[\"在任意应用中使用 API\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8"
+        },
+        {
+          "title": "模型比较属性",
+          "code": "flowchart TD\n    M1[\"模型示例\"]\n    M2[\"小米新八\"]\n    M3[\"MiniMax\"]\n    M4[\"Agent TIC 指数\"]\n    M5[\"Coding Index\"]\n    M6[\"价格\"]\n    M7[\"使用人数\"]\n    M8[\"整体评分\"]\n\n    M1 --> M2\n    M1 --> M3\n    M2 --> M4\n    M2 --> M5\n    M2 --> M6\n    M2 --> M8\n    M3 --> M4\n    M3 --> M5\n    M3 --> M6\n    M3 --> M7\n    M3 --> M8"
+        },
+        {
+          "title": "多模态支持",
+          "code": "flowchart TD\n    V1[\"OpenRouter 支持的模态\"]\n    V2[\"文本模型\"]\n    V3[\"视频模型\"]\n    V4[\"图片模型\"]\n    V5[\"示例：Google GERMANYIGBT（文本）\"]\n    V6[\"示例：阿里千问（文本）\"]\n    V7[\"示例：Google Banana Banana Two（图片）\"]\n    V8[\"示例：未命名视频模型\"]\n\n    V1 --> V2\n    V1 --> V3\n    V1 --> V4\n    V2 --> V5\n    V2 --> V6\n    V4 --> V7\n    V3 --> V8"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T05:41:17+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# OpenRouter 知识图谱\n\n## 总览  \n[BV1RNAAz4ER1 P1 00:04]、[BV1RNAAz4ER1 P1 00:06]、[BV1RNAAz4ER1 P1 00:16]、[BV1RNAAz4ER1 P1 00:20]、[BV1RNAAz4ER1 P1 00:23]、[BV1RNAAz4ER1 P1 00:32]\n\n```mermaid\nflowchart TD\n    O1[\"OpenRouter 网站\"]\n    O2[\"登录方式\"]\n    O3[\"中文邮箱 / QQ 登录\"]\n    O4[\"模型目录\"]\n    O5[\"模型对比功能\"]\n    O6[\"价格信息\"]\n    O7[\"评分指标\"]\n    O8[\"API 访问\"]\n    O9[\"多模态模型\"]\n    O10[\"文本模型\"]\n    O11[\"视频模型\"]\n    O12[\"图片模型\"]\n    O13[\"国内直连推荐\"]\n\n    O1 --> O2\n    O2 --> O3\n    O1 --> O4\n    O4 --> O5\n    O5 --> O6\n    O5 --> O7\n    O1 --> O8\n    O1 --> O9\n    O9 --> O10\n    O9 --> O11\n    O9 --> O12\n    O1 --> O13\n```\n\n## API 密钥创建流程  \n[BV1RNAAz4ER1 P1 01:18]、[BV1RNAAz4ER1 P1 01:20]、[BV1RNAAz4ER1 P1 01:24]、[BV1RNAAz4ER1 P1 01:28]、[BV1RNAAz4ER1 P1 01:30]、[BV1RNAAz4ER1 P1 01:34]、[BV1RNAAz4ER1 P1 01:36]\n\n```mermaid\nflowchart TD\n    A1[\"打开 OpenRouter 首页\"]\n    A2[\"点击 Quick Start\"]\n    A3[\"创建 API 密钥按钮\"]\n    A4[\"若未登录 → 登录账号\"]\n    A5[\"进入后台管理页面\"]\n    A6[\"点击 Create API Key\"]\n    A7[\"生成并复制 API 端点\"]\n    A8[\"在任意应用中使用 API\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n```\n\n## 模型比较属性  \n[BV1RNAAz4ER1 P1 00:34]、[BV1RNAAz4ER1 P1 00:40]、[BV1RNAAz4ER1 P1 00:45]、[BV1RNAAz4ER1 P1 00:48]、[BV1RNAAz4ER1 P1 00:55]、[BV1RNAAz4ER1 P1 00:58]、[BV1RNAAz4ER1 P1 01:00]、[BV1RNAAz4ER1 P1 01:04]\n\n```mermaid\nflowchart TD\n    M1[\"模型示例\"]\n    M2[\"小米新八\"]\n    M3[\"MiniMax\"]\n    M4[\"Agent TIC 指数\"]\n    M5[\"Coding Index\"]\n    M6[\"价格\"]\n    M7[\"使用人数\"]\n    M8[\"整体评分\"]\n\n    M1 --> M2\n    M1 --> M3\n    M2 --> M4\n    M2 --> M5\n    M2 --> M6\n    M2 --> M8\n    M3 --> M4\n    M3 --> M5\n    M3 --> M6\n    M3 --> M7\n    M3 --> M8\n```\n\n## 多模态支持  \n[BV1RNAAz4ER1 P1 00:09]、[BV1RNAAz4ER1 P1 00:12]、[BV1RNAAz4ER1 P1 01:41]、[BV1RNAAz4ER1 P1 01:49]、[BV1RNAAz4ER1 P1 01:51]、[BV1RNAAz4ER1 P1 01:54]\n\n```mermaid\nflowchart TD\n    V1[\"OpenRouter 支持的模态\"]\n    V2[\"文本模型\"]\n    V3[\"视频模型\"]\n    V4[\"图片模型\"]\n    V5[\"示例：Google GERMANYIGBT（文本）\"]\n    V6[\"示例：阿里千问（文本）\"]\n    V7[\"示例：Google Banana Banana Two（图片）\"]\n    V8[\"示例：未命名视频模型\"]\n\n    V1 --> V2\n    V1 --> V3\n    V1 --> V4\n    V2 --> V5\n    V2 --> V6\n    V4 --> V7\n    V3 --> V8\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    O1[\"OpenRouter 网站\"]\n    O2[\"登录方式\"]\n    O3[\"中文邮箱 / QQ 登录\"]\n    O4[\"模型目录\"]\n    O5[\"模型对比功能\"]\n    O6[\"价格信息\"]\n    O7[\"评分指标\"]\n    O8[\"API 访问\"]\n    O9[\"多模态模型\"]\n    O10[\"文本模型\"]\n    O11[\"视频模型\"]\n    O12[\"图片模型\"]\n    O13[\"国内直连推荐\"]\n\n    O1 --> O2\n    O2 --> O3\n    O1 --> O4\n    O4 --> O5\n    O5 --> O6\n    O5 --> O7\n    O1 --> O8\n    O1 --> O9\n    O9 --> O10\n    O9 --> O11\n    O9 --> O12\n    O1 --> O13"
+    },
+    {
+      "title": "API 密钥创建流程",
+      "code": "flowchart TD\n    A1[\"打开 OpenRouter 首页\"]\n    A2[\"点击 Quick Start\"]\n    A3[\"创建 API 密钥按钮\"]\n    A4[\"若未登录 → 登录账号\"]\n    A5[\"进入后台管理页面\"]\n    A6[\"点击 Create API Key\"]\n    A7[\"生成并复制 API 端点\"]\n    A8[\"在任意应用中使用 API\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8"
+    },
+    {
+      "title": "模型比较属性",
+      "code": "flowchart TD\n    M1[\"模型示例\"]\n    M2[\"小米新八\"]\n    M3[\"MiniMax\"]\n    M4[\"Agent TIC 指数\"]\n    M5[\"Coding Index\"]\n    M6[\"价格\"]\n    M7[\"使用人数\"]\n    M8[\"整体评分\"]\n\n    M1 --> M2\n    M1 --> M3\n    M2 --> M4\n    M2 --> M5\n    M2 --> M6\n    M2 --> M8\n    M3 --> M4\n    M3 --> M5\n    M3 --> M6\n    M3 --> M7\n    M3 --> M8"
+    },
+    {
+      "title": "多模态支持",
+      "code": "flowchart TD\n    V1[\"OpenRouter 支持的模态\"]\n    V2[\"文本模型\"]\n    V3[\"视频模型\"]\n    V4[\"图片模型\"]\n    V5[\"示例：Google GERMANYIGBT（文本）\"]\n    V6[\"示例：阿里千问（文本）\"]\n    V7[\"示例：Google Banana Banana Two（图片）\"]\n    V8[\"示例：未命名视频模型\"]\n\n    V1 --> V2\n    V1 --> V3\n    V1 --> V4\n    V2 --> V5\n    V2 --> V6\n    V4 --> V7\n    V3 --> V8"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:41:17+00:00"
+}

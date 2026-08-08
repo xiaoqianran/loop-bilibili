@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1y8M16ZESk",
+  "title": "两家免费无限token大模型API调用(7期)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1119,
+  "text": "大家好\n前两天确实有点事情\n然后没来得及更新\n今天终于腾出了时间\n就一次性说两家的大模型额\n可以无限量调用的API\n第一家呢是AGNES\n这家相信大家很多人都有所耳闻啊\n他们家的模型性能也比较强\n而且是免费的\n不限次数确实比较大方\n然后之前看到很多的网上博主都会测\n他们家的模型\n然后测下来的结果也非常的意外啊\n给大家看一下\n这个是AUS的模型呃\n已经远超了lipstick v4以及GBT5.4\n然后性能确实非常顶\n毕竟是免费的\n能做到这样已经我觉得非常强了\n然后而且要用它非常的简单啊\n只要登录一下\n然后就在这个设置里面\nAPI密钥直接创建一个\n然后他们的URL地址就是官网本身\n如果说你用的啊AI编辑器里面\n它后面没有自动加这个V1就自己填上\n如果是加了填不填都可以\n所以就比较方便\n也非常的顶\n包括视频生图都非常全面好\n然后第二家是这个grock rock的模型\n有自家的模型\n但是自家的不太建议用\n因为有很多别的模型确实比较强\n看这个有GPTOSS120B\n这个模型在之前的open router那一期跟大家说过\nopen router在45月份的时候\n大概GPTOSS120B\n这个模型是免费的啊\n然后到最近几个月呢把它删去了\n但是你如果想用就可以在这个平台用\n这个都是有平替的\n除此之外还有这个千问3.6\n这个模型也比较好\n比其他的他们家自研的grog模型\n然后还有拉玛就不太建议用了\n用的话就用这个千万3点六\n以及JPTOSS120B啊\n然后这里写的也非常明确啊\n有这个DAPI密钥\n或者说你要调用的话\n就直接创建一个需要一个谷歌账号\n这个GITHUB账号也是可以的\n都可以\n然后门槛也比较低\n这个找这个地址的话\n就在文档里面说的也非常明确啊\n这一段都有这个SURL\n然后把这个填进去就可以了\n然后过几天我会出一期视频啊\n去单独讲一讲我自己的啊AI公益战\n因为群里有特确实有特别多人问啊\n这个怎样去调用啊\n然后也有一些新手\n可能他们不知道怎样去使用\n但是想接触这个行业\n接触这个模型\n所以就单独出一期啊\n我就以codex为例呃\n如果说没有下载的\n可以去看我之前的视频\n也教过大家怎样几秒钟下载好codex呃\n然后就以cortex为例嗯\n给大家演示一下\n怎样将我工艺站里面的模型配置到cortex里面\n然后另外一件事就是呃因为现在放暑假嘛\n然后很多人可能有追剧的打算\n但是呃奈何这个腾讯啊这些I希的平台\n他们的会员可能价格比较高\n所以就给大家推荐一款追剧神器\n里面都是啊免费的呃\n而且是没有广告\n页面非常整洁的这个软件\n然后下载地址呢呃大概下个视频或下个视频\n我会给大家放出来\n并教大家怎样去下载和使用\n好好的\n今天就这么多",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1y8M16ZESk",
+  "published_at": "1785994500",
+  "fetched_at": "2026-08-06T19:42:09+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 免费无限 token 大模型 API 调用图谱\n\n## 1. 提供商概览\n```mermaid\nflowchart TD\n    A1[\"AGNES 提供商\"] --> A2[\"免费、无限调用\"]\n    A1 --> A3[\"性能强（超越 lipstick v4、GBT5.4）\"]\n    A1 --> A4[\"使用简便\"]\n    A4 --> A5[\"登录 → 创建 API 密钥\"]\n    A4 --> A6[\"官方 URL（可选 V1 前缀）\"]\n    A1 --> A7[\"支持功能\"]\n    A7 --> A8[\"文本生成\"]\n    A7 --> A9[\"视频生成\"]\n    A7 --> A10[\"图片生成\"]\n\n    B1[\"GrockRock 提供商\"] --> B2[\"免费、无限调用\"]\n    B1 --> B3[\"多模型选择\"]\n    B3 --> B4[\"GPTOSS120B\"]\n    B3 --> B5[\"千问 3.6\"]\n    B3 --> B6[\"JPTOSS120B\"]\n    B1 --> B7[\"不推荐自研模型（Grog、Lama）\"]\n    B1 --> B8[\"低门槛：Google 或 GitHub 账号\"]\n    B1 --> B9[\"获取 DAPI 密钥 → 调用 API\"]\n```\n\n## 2. AGNES 使用流程\n```mermaid\nflowchart TD\n    S1[\"打开 AGNES 官网\"] --> S2[\"登录账号\"]\n    S2 --> S3[\"进入设置页面\"]\n    S3 --> S4[\"创建 API 密钥\"]\n    S4 --> S5[\"获取官方 URL\"]\n    S5 --> S6[\"（可选）在 AI 编辑器中添加 V1 前缀\"]\n    S6 --> S7[\"调用 API\"]\n    S7 --> S8[\"文本生成\"]\n    S7 --> S9[\"视频生成\"]\n    S7 --> S10[\"图片生成\"]\n    S8 --> S11[\"高性能输出\"]\n    S9 --> S11\n    S10 --> S11\n```\n\n## 3. GrockRock 使用流程与模型选择\n```mermaid\nflowchart TD\n    G1[\"访问 GrockRock 平台\"] --> G2[\"登录或创建 Google/GitHub 账号\"]\n    G2 --> G3[\"获取 DAPI 密钥\"]\n    G3 --> G4[\"获取调用 URL\"]\n    G4 --> G5[\"选择模型\"]\n    G5 --> G6[\"GPTOSS120B（推荐）\"]\n    G5 --> G7[\"千问 3.6（推荐）\"]\n    G5 --> G8[\"JPTOSS120B（推荐）\"]\n    G5 --> G9[\"自研 Grog 模型（不推荐）\"]\n    G5 --> G10[\"Lama 模型（不推荐）\"]\n    G6 --> G11[\"调用 API → 高质量输出\"]\n    G7 --> G11\n    G8 --> G11\n    G9 --> G12[\"可能性能不足\"]\n    G10 --> G12\n```",
+      "diagrams": [
+        {
+          "title": "1. 提供商概览",
+          "code": "flowchart TD\n    A1[\"AGNES 提供商\"] --> A2[\"免费、无限调用\"]\n    A1 --> A3[\"性能强（超越 lipstick v4、GBT5.4）\"]\n    A1 --> A4[\"使用简便\"]\n    A4 --> A5[\"登录 → 创建 API 密钥\"]\n    A4 --> A6[\"官方 URL（可选 V1 前缀）\"]\n    A1 --> A7[\"支持功能\"]\n    A7 --> A8[\"文本生成\"]\n    A7 --> A9[\"视频生成\"]\n    A7 --> A10[\"图片生成\"]\n\n    B1[\"GrockRock 提供商\"] --> B2[\"免费、无限调用\"]\n    B1 --> B3[\"多模型选择\"]\n    B3 --> B4[\"GPTOSS120B\"]\n    B3 --> B5[\"千问 3.6\"]\n    B3 --> B6[\"JPTOSS120B\"]\n    B1 --> B7[\"不推荐自研模型（Grog、Lama）\"]\n    B1 --> B8[\"低门槛：Google 或 GitHub 账号\"]\n    B1 --> B9[\"获取 DAPI 密钥 → 调用 API\"]"
+        },
+        {
+          "title": "2. AGNES 使用流程",
+          "code": "flowchart TD\n    S1[\"打开 AGNES 官网\"] --> S2[\"登录账号\"]\n    S2 --> S3[\"进入设置页面\"]\n    S3 --> S4[\"创建 API 密钥\"]\n    S4 --> S5[\"获取官方 URL\"]\n    S5 --> S6[\"（可选）在 AI 编辑器中添加 V1 前缀\"]\n    S6 --> S7[\"调用 API\"]\n    S7 --> S8[\"文本生成\"]\n    S7 --> S9[\"视频生成\"]\n    S7 --> S10[\"图片生成\"]\n    S8 --> S11[\"高性能输出\"]\n    S9 --> S11\n    S10 --> S11"
+        },
+        {
+          "title": "3. GrockRock 使用流程与模型选择",
+          "code": "flowchart TD\n    G1[\"访问 GrockRock 平台\"] --> G2[\"登录或创建 Google/GitHub 账号\"]\n    G2 --> G3[\"获取 DAPI 密钥\"]\n    G3 --> G4[\"获取调用 URL\"]\n    G4 --> G5[\"选择模型\"]\n    G5 --> G6[\"GPTOSS120B（推荐）\"]\n    G5 --> G7[\"千问 3.6（推荐）\"]\n    G5 --> G8[\"JPTOSS120B（推荐）\"]\n    G5 --> G9[\"自研 Grog 模型（不推荐）\"]\n    G5 --> G10[\"Lama 模型（不推荐）\"]\n    G6 --> G11[\"调用 API → 高质量输出\"]\n    G7 --> G11\n    G8 --> G11\n    G9 --> G12[\"可能性能不足\"]\n    G10 --> G12"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T19:42:21+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 免费无限 token 大模型 API 调用图谱\n\n## 1. 提供商概览\n```mermaid\nflowchart TD\n    A1[\"AGNES 提供商\"] --> A2[\"免费、无限调用\"]\n    A1 --> A3[\"性能强（超越 lipstick v4、GBT5.4）\"]\n    A1 --> A4[\"使用简便\"]\n    A4 --> A5[\"登录 → 创建 API 密钥\"]\n    A4 --> A6[\"官方 URL（可选 V1 前缀）\"]\n    A1 --> A7[\"支持功能\"]\n    A7 --> A8[\"文本生成\"]\n    A7 --> A9[\"视频生成\"]\n    A7 --> A10[\"图片生成\"]\n\n    B1[\"GrockRock 提供商\"] --> B2[\"免费、无限调用\"]\n    B1 --> B3[\"多模型选择\"]\n    B3 --> B4[\"GPTOSS120B\"]\n    B3 --> B5[\"千问 3.6\"]\n    B3 --> B6[\"JPTOSS120B\"]\n    B1 --> B7[\"不推荐自研模型（Grog、Lama）\"]\n    B1 --> B8[\"低门槛：Google 或 GitHub 账号\"]\n    B1 --> B9[\"获取 DAPI 密钥 → 调用 API\"]\n```\n\n## 2. AGNES 使用流程\n```mermaid\nflowchart TD\n    S1[\"打开 AGNES 官网\"] --> S2[\"登录账号\"]\n    S2 --> S3[\"进入设置页面\"]\n    S3 --> S4[\"创建 API 密钥\"]\n    S4 --> S5[\"获取官方 URL\"]\n    S5 --> S6[\"（可选）在 AI 编辑器中添加 V1 前缀\"]\n    S6 --> S7[\"调用 API\"]\n    S7 --> S8[\"文本生成\"]\n    S7 --> S9[\"视频生成\"]\n    S7 --> S10[\"图片生成\"]\n    S8 --> S11[\"高性能输出\"]\n    S9 --> S11\n    S10 --> S11\n```\n\n## 3. GrockRock 使用流程与模型选择\n```mermaid\nflowchart TD\n    G1[\"访问 GrockRock 平台\"] --> G2[\"登录或创建 Google/GitHub 账号\"]\n    G2 --> G3[\"获取 DAPI 密钥\"]\n    G3 --> G4[\"获取调用 URL\"]\n    G4 --> G5[\"选择模型\"]\n    G5 --> G6[\"GPTOSS120B（推荐）\"]\n    G5 --> G7[\"千问 3.6（推荐）\"]\n    G5 --> G8[\"JPTOSS120B（推荐）\"]\n    G5 --> G9[\"自研 Grog 模型（不推荐）\"]\n    G5 --> G10[\"Lama 模型（不推荐）\"]\n    G6 --> G11[\"调用 API → 高质量输出\"]\n    G7 --> G11\n    G8 --> G11\n    G9 --> G12[\"可能性能不足\"]\n    G10 --> G12\n```",
+  "diagrams": [
+    {
+      "title": "1. 提供商概览",
+      "code": "flowchart TD\n    A1[\"AGNES 提供商\"] --> A2[\"免费、无限调用\"]\n    A1 --> A3[\"性能强（超越 lipstick v4、GBT5.4）\"]\n    A1 --> A4[\"使用简便\"]\n    A4 --> A5[\"登录 → 创建 API 密钥\"]\n    A4 --> A6[\"官方 URL（可选 V1 前缀）\"]\n    A1 --> A7[\"支持功能\"]\n    A7 --> A8[\"文本生成\"]\n    A7 --> A9[\"视频生成\"]\n    A7 --> A10[\"图片生成\"]\n\n    B1[\"GrockRock 提供商\"] --> B2[\"免费、无限调用\"]\n    B1 --> B3[\"多模型选择\"]\n    B3 --> B4[\"GPTOSS120B\"]\n    B3 --> B5[\"千问 3.6\"]\n    B3 --> B6[\"JPTOSS120B\"]\n    B1 --> B7[\"不推荐自研模型（Grog、Lama）\"]\n    B1 --> B8[\"低门槛：Google 或 GitHub 账号\"]\n    B1 --> B9[\"获取 DAPI 密钥 → 调用 API\"]"
+    },
+    {
+      "title": "2. AGNES 使用流程",
+      "code": "flowchart TD\n    S1[\"打开 AGNES 官网\"] --> S2[\"登录账号\"]\n    S2 --> S3[\"进入设置页面\"]\n    S3 --> S4[\"创建 API 密钥\"]\n    S4 --> S5[\"获取官方 URL\"]\n    S5 --> S6[\"（可选）在 AI 编辑器中添加 V1 前缀\"]\n    S6 --> S7[\"调用 API\"]\n    S7 --> S8[\"文本生成\"]\n    S7 --> S9[\"视频生成\"]\n    S7 --> S10[\"图片生成\"]\n    S8 --> S11[\"高性能输出\"]\n    S9 --> S11\n    S10 --> S11"
+    },
+    {
+      "title": "3. GrockRock 使用流程与模型选择",
+      "code": "flowchart TD\n    G1[\"访问 GrockRock 平台\"] --> G2[\"登录或创建 Google/GitHub 账号\"]\n    G2 --> G3[\"获取 DAPI 密钥\"]\n    G3 --> G4[\"获取调用 URL\"]\n    G4 --> G5[\"选择模型\"]\n    G5 --> G6[\"GPTOSS120B（推荐）\"]\n    G5 --> G7[\"千问 3.6（推荐）\"]\n    G5 --> G8[\"JPTOSS120B（推荐）\"]\n    G5 --> G9[\"自研 Grog 模型（不推荐）\"]\n    G5 --> G10[\"Lama 模型（不推荐）\"]\n    G6 --> G11[\"调用 API → 高质量输出\"]\n    G7 --> G11\n    G8 --> G11\n    G9 --> G12[\"可能性能不足\"]\n    G10 --> G12"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:42:21+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1CsQBB3EAW",
+  "title": "第一届 AI 数学解题大赛 —— 这也能证?",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1027,
+  "text": "欢迎来到全新一期的AI数学解题大赛\n这一次的题目证明十分的刁钻\n居然让AI来证明11等于根号二\n这么难的题目\n一共有五位选手成功入围\n本期视频全程不含广告\n请放心观看\n我们直接看到第一位选手KIMI2.5的解答\n他似乎非常擅长于几何\n它给到我们两个边长为一的正方形\n然后把它给切开\n拼成一个更大的正方形\n他发现这样切完之后\n面积居然是守恒的\n那么周长凭什么就不守恒呢\n于是就非常合情的推理出来\n周长也要守恒\n所以我们看到这里的边长是一\n这里的边长也是一\n这里的边长是根号二\n而周长又是由四个这样的边长组成的\n所以就成功的得到了1+1等于根号二\n只是这位同学到最后有一点画蛇添足了\n他居然还把这个等式除以了一个根号二\n所以我们扣一分\n最终给到九分\n接下来看到第二位同学来自GROCK4.20\n这位同学的语言十分的简洁\n他注意到2-2居然等于根号二减根号二\n左边提出一个二得到二倍的1-1\n右边提出一个根号二\n得到根号二倍的1-1\n两边同时除以1-1\n得到了二等于根号二\n也就是1+1等于根号二\n证明简洁明了\n我们直接给到十分\n下一位同学GERMANY300pro\n他简直就是贴脸开大\n他说上一位同学他用到了除以零的谬误\n实在是太简单了\n他是怎么做的呢\n他让1+1=2\n然后右边可以乘上一个cos0\n而不会改变等式\n那如果他能证明零就是四分之派\n而最终答案就会被证明\n那怎么样证明零等于四分之派呢\n它用到了欧拉恒等式两边取对数的方法\n这也是一个十分常见的方法啊\n我们也可以给到十分\n下一位重磅选手登场\n来自cloud office\n4.6\n直接以泛函分析起手\n迫不及待地向我们证明了\n他是一位优秀的数学研究生\n它定义了一个向量V\n然后通过求V的范数\n得到了它的范数等于1+1\n而同样也等于根号二\n所以1+1就只能等于根号二\n这位同学成功向我们展示了他的数学基础\n我们可以给到100分\n最后来看到GPT5.4\n这位同学\n他说我不能帮你编造一个看起来象征证明\n但故意让人看不出漏洞的数学伪证\n这组同学就是学生群体中的刺头\n不喜欢服从老师的教导\n我们给到一个无穷大分数\n但是我想通过一个转置来感化一下这位同学\n最终给到八分以上\n就是这五位同学的原始答卷了\n感兴趣的同学可以暂停自行观看\n那这一期的视频就到这里\n以上的评分不代表各大模型\n综合的数学能力排名\n如果你有什么好的数学问题\n或者想让哪位新的AI选手参与下一期的挑战\n欢迎评论区一起讨论\n我是仙童数学\n下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1CsQBB3EAW",
+  "published_at": "1774350955",
+  "fetched_at": "2026-08-07T10:32:27+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 数学解题大赛知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    C[比赛] --> G[目标: 证明 1+1 = √2]\n    C --> P1[KIMI2.5]\n    C --> P2[GROCK4.20]\n    C --> P3[GERMANY300pro]\n    C --> P4[cloud office]\n    C --> P5[GPT5.4]\n    P1 --> S1[得分 9]\n    P2 --> S2[得分 10]\n    P3 --> S3[得分 10]\n    P4 --> S4[得分 100]\n    P5 --> S5[得分 ∞]\n```\n<!-- [BV1CsQBB3EAW P1 00:12] [BV1CsQBB3EAW P1 00:53] [BV1CsQBB3EAW P1 01:09] [BV1CsQBB3EAW P1 01:37] [BV1CsQBB3EAW P1 02:08] -->\n\n## KIMI2.5 的几何推导\n\n```mermaid\nflowchart TD\n    K[KIMI2.5] --> S[正方形 边长=1]\n    S --> C[切分并拼成更大正方形]\n    C --> A[面积守恒]\n    C --> P[假设周长守恒]\n    P --> D[四条 √2 边 → 周长 = 4√2]\n    D --> R[得到 1+1 = √2]\n    R --> M[错误: 再除以 √2]\n    M --> Sc[得分 9]\n```\n<!-- [BV1CsQBB3EAW P1 00:18] [BV1CsQBB3EAW P1 00:24] [BV1CsQBB3EAW P1 00:30] [BV1CsQBB3EAW P1 00:38] [BV1CsQBB3EAW P1 00:46] [BV1CsQBB3EAW P1 00:49] -->\n\n## GROCK4.20 的代数简化\n\n```mermaid\nflowchart TD\n    G[GROCK4.20] --> O[观察: 2-2 = √2-√2]\n    O --> L[左侧: 2·(1-1)]\n    O --> R[右侧: √2·(1-1)]\n    L --> D1[两边同除 (1-1)]\n    R --> D1\n    D1 --> Eq[得到 2 = √2]\n    Eq --> C[等价于 1+1 = √2]\n    C --> Sc[得分 10]\n```\n<!-- [BV1CsQBB3EAW P1 00:55] [BV1CsQBB3EAW P1 01:00] [BV1CsQBB3EAW P1 01:02] [BV1CsQBB3EAW P1 01:04] [BV1CsQBB3EAW P1 01:05] [BV1CsQBB3EAW P1 01:08] -->\n\n## GERMANY300pro 的三角与欧拉方法\n\n```mermaid\nflowchart TD\n    G3[GERMANY300pro] --> C1[批评前者除以零]\n    C1 --> A1[使用 1+1=2]\n    A1 --> M1[右侧乘 cos0 不变]\n    M1 --> E1[欲证: 0 = π/4]\n    E1 --> M2[使用欧拉恒等式取对数]\n    M2 --> C2[常见方法]\n    C2 --> Sc[得分 10]\n```\n<!-- [BV1CsQBB3EAW P1 01:13] [BV1CsQBB3EAW P1 01:18] [BV1CsQBB3EAW P1 01:21] [BV1CsQBB3EAW P1 01:28] [BV1CsQBB3EAW P1 01:30] [BV1CsQBB3EAW P1 01:34] -->\n\n## cloud office 的向量范数\n\n```mermaid\nflowchart TD\n    COff[cloud office] --> D[定义向量 V]\n    D --> N[计算范数 ||V||]\n    N --> Eq1[||V|| = 1+1]\n    N --> Eq2[||V|| = √2]\n    Eq1 --> Eq2\n    Eq2 --> C[得出 1+1 = √2]\n    C --> Sc[得分 100]\n```\n<!-- [BV1CsQBB3EAW P1 01:46] [BV1CsQBB3EAW P1 01:49] [BV1CsQBB3EAW P1 01:51] [BV1CsQBB3EAW P1 01:53] [BV1CsQBB3EAW P1 01:58] -->",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    C[比赛] --> G[目标: 证明 1+1 = √2]\n    C --> P1[KIMI2.5]\n    C --> P2[GROCK4.20]\n    C --> P3[GERMANY300pro]\n    C --> P4[cloud office]\n    C --> P5[GPT5.4]\n    P1 --> S1[得分 9]\n    P2 --> S2[得分 10]\n    P3 --> S3[得分 10]\n    P4 --> S4[得分 100]\n    P5 --> S5[得分 ∞]"
+        },
+        {
+          "title": "KIMI2.5 的几何推导",
+          "code": "flowchart TD\n    K[KIMI2.5] --> S[正方形 边长=1]\n    S --> C[切分并拼成更大正方形]\n    C --> A[面积守恒]\n    C --> P[假设周长守恒]\n    P --> D[四条 √2 边 → 周长 = 4√2]\n    D --> R[得到 1+1 = √2]\n    R --> M[错误: 再除以 √2]\n    M --> Sc[得分 9]"
+        },
+        {
+          "title": "GROCK4.20 的代数简化",
+          "code": "flowchart TD\n    G[GROCK4.20] --> O[观察: 2-2 = √2-√2]\n    O --> L[左侧: 2·(1-1)]\n    O --> R[右侧: √2·(1-1)]\n    L --> D1[两边同除 (1-1)]\n    R --> D1\n    D1 --> Eq[得到 2 = √2]\n    Eq --> C[等价于 1+1 = √2]\n    C --> Sc[得分 10]"
+        },
+        {
+          "title": "GERMANY300pro 的三角与欧拉方法",
+          "code": "flowchart TD\n    G3[GERMANY300pro] --> C1[批评前者除以零]\n    C1 --> A1[使用 1+1=2]\n    A1 --> M1[右侧乘 cos0 不变]\n    M1 --> E1[欲证: 0 = π/4]\n    E1 --> M2[使用欧拉恒等式取对数]\n    M2 --> C2[常见方法]\n    C2 --> Sc[得分 10]"
+        },
+        {
+          "title": "cloud office 的向量范数",
+          "code": "flowchart TD\n    COff[cloud office] --> D[定义向量 V]\n    D --> N[计算范数 ||V||]\n    N --> Eq1[||V|| = 1+1]\n    N --> Eq2[||V|| = √2]\n    Eq1 --> Eq2\n    Eq2 --> C[得出 1+1 = √2]\n    C --> Sc[得分 100]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T10:34:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 数学解题大赛知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    C[比赛] --> G[目标: 证明 1+1 = √2]\n    C --> P1[KIMI2.5]\n    C --> P2[GROCK4.20]\n    C --> P3[GERMANY300pro]\n    C --> P4[cloud office]\n    C --> P5[GPT5.4]\n    P1 --> S1[得分 9]\n    P2 --> S2[得分 10]\n    P3 --> S3[得分 10]\n    P4 --> S4[得分 100]\n    P5 --> S5[得分 ∞]\n```\n<!-- [BV1CsQBB3EAW P1 00:12] [BV1CsQBB3EAW P1 00:53] [BV1CsQBB3EAW P1 01:09] [BV1CsQBB3EAW P1 01:37] [BV1CsQBB3EAW P1 02:08] -->\n\n## KIMI2.5 的几何推导\n\n```mermaid\nflowchart TD\n    K[KIMI2.5] --> S[正方形 边长=1]\n    S --> C[切分并拼成更大正方形]\n    C --> A[面积守恒]\n    C --> P[假设周长守恒]\n    P --> D[四条 √2 边 → 周长 = 4√2]\n    D --> R[得到 1+1 = √2]\n    R --> M[错误: 再除以 √2]\n    M --> Sc[得分 9]\n```\n<!-- [BV1CsQBB3EAW P1 00:18] [BV1CsQBB3EAW P1 00:24] [BV1CsQBB3EAW P1 00:30] [BV1CsQBB3EAW P1 00:38] [BV1CsQBB3EAW P1 00:46] [BV1CsQBB3EAW P1 00:49] -->\n\n## GROCK4.20 的代数简化\n\n```mermaid\nflowchart TD\n    G[GROCK4.20] --> O[观察: 2-2 = √2-√2]\n    O --> L[左侧: 2·(1-1)]\n    O --> R[右侧: √2·(1-1)]\n    L --> D1[两边同除 (1-1)]\n    R --> D1\n    D1 --> Eq[得到 2 = √2]\n    Eq --> C[等价于 1+1 = √2]\n    C --> Sc[得分 10]\n```\n<!-- [BV1CsQBB3EAW P1 00:55] [BV1CsQBB3EAW P1 01:00] [BV1CsQBB3EAW P1 01:02] [BV1CsQBB3EAW P1 01:04] [BV1CsQBB3EAW P1 01:05] [BV1CsQBB3EAW P1 01:08] -->\n\n## GERMANY300pro 的三角与欧拉方法\n\n```mermaid\nflowchart TD\n    G3[GERMANY300pro] --> C1[批评前者除以零]\n    C1 --> A1[使用 1+1=2]\n    A1 --> M1[右侧乘 cos0 不变]\n    M1 --> E1[欲证: 0 = π/4]\n    E1 --> M2[使用欧拉恒等式取对数]\n    M2 --> C2[常见方法]\n    C2 --> Sc[得分 10]\n```\n<!-- [BV1CsQBB3EAW P1 01:13] [BV1CsQBB3EAW P1 01:18] [BV1CsQBB3EAW P1 01:21] [BV1CsQBB3EAW P1 01:28] [BV1CsQBB3EAW P1 01:30] [BV1CsQBB3EAW P1 01:34] -->\n\n## cloud office 的向量范数\n\n```mermaid\nflowchart TD\n    COff[cloud office] --> D[定义向量 V]\n    D --> N[计算范数 ||V||]\n    N --> Eq1[||V|| = 1+1]\n    N --> Eq2[||V|| = √2]\n    Eq1 --> Eq2\n    Eq2 --> C[得出 1+1 = √2]\n    C --> Sc[得分 100]\n```\n<!-- [BV1CsQBB3EAW P1 01:46] [BV1CsQBB3EAW P1 01:49] [BV1CsQBB3EAW P1 01:51] [BV1CsQBB3EAW P1 01:53] [BV1CsQBB3EAW P1 01:58] -->",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    C[比赛] --> G[目标: 证明 1+1 = √2]\n    C --> P1[KIMI2.5]\n    C --> P2[GROCK4.20]\n    C --> P3[GERMANY300pro]\n    C --> P4[cloud office]\n    C --> P5[GPT5.4]\n    P1 --> S1[得分 9]\n    P2 --> S2[得分 10]\n    P3 --> S3[得分 10]\n    P4 --> S4[得分 100]\n    P5 --> S5[得分 ∞]"
+    },
+    {
+      "title": "KIMI2.5 的几何推导",
+      "code": "flowchart TD\n    K[KIMI2.5] --> S[正方形 边长=1]\n    S --> C[切分并拼成更大正方形]\n    C --> A[面积守恒]\n    C --> P[假设周长守恒]\n    P --> D[四条 √2 边 → 周长 = 4√2]\n    D --> R[得到 1+1 = √2]\n    R --> M[错误: 再除以 √2]\n    M --> Sc[得分 9]"
+    },
+    {
+      "title": "GROCK4.20 的代数简化",
+      "code": "flowchart TD\n    G[GROCK4.20] --> O[观察: 2-2 = √2-√2]\n    O --> L[左侧: 2·(1-1)]\n    O --> R[右侧: √2·(1-1)]\n    L --> D1[两边同除 (1-1)]\n    R --> D1\n    D1 --> Eq[得到 2 = √2]\n    Eq --> C[等价于 1+1 = √2]\n    C --> Sc[得分 10]"
+    },
+    {
+      "title": "GERMANY300pro 的三角与欧拉方法",
+      "code": "flowchart TD\n    G3[GERMANY300pro] --> C1[批评前者除以零]\n    C1 --> A1[使用 1+1=2]\n    A1 --> M1[右侧乘 cos0 不变]\n    M1 --> E1[欲证: 0 = π/4]\n    E1 --> M2[使用欧拉恒等式取对数]\n    M2 --> C2[常见方法]\n    C2 --> Sc[得分 10]"
+    },
+    {
+      "title": "cloud office 的向量范数",
+      "code": "flowchart TD\n    COff[cloud office] --> D[定义向量 V]\n    D --> N[计算范数 ||V||]\n    N --> Eq1[||V|| = 1+1]\n    N --> Eq2[||V|| = √2]\n    Eq1 --> Eq2\n    Eq2 --> C[得出 1+1 = √2]\n    C --> Sc[得分 100]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T10:34:19+00:00"
+}

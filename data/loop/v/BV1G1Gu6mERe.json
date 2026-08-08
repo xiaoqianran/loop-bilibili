@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1G1Gu6mERe",
+  "title": "【Unity明日方舟卡牌游戏教程】第8集 场地排列容器",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1723,
+  "text": "哈喽大家好\n这里是自然生还者\n上期视频呢我们制作了抽卡以及把牌打出\n然后放置在场上这么一个效果\n那么这期视频呢我们就来补充完善这个呃\n场地管理器\n让我所有的卡牌呢\n都按照一个合适的顺序来排列\n那么来到我们的这个场地管理器\n那它的基本原理呢和手牌的这个容器呢\n是一致的\n首先呢我们就需要创建\n一个card list用来保存所有的这个场地中的卡\n并且呢我们还需要保存一个变量是player control\n用来管理呢这个场地是属于哪个玩家的\n那么和卡牌的这个手牌的管理器一样\n我们有ADD card remove\n还有refresh\n那么呃基本上呢就是这三个功能\n也和这个手牌里的基本上是一致的\n添加卡牌呢就是把它添加进\n这个列表当中\n那么这里呢可以写这个transform set parent\n也可以像这样写\nparent等于这个transform也是可以的\n他俩是嗯完全一致的\n也可以改写成\n都是一致的\n那么呃和手牌不同的是\n手牌中还会有一个旋转\n它会把卡牌旋转到一定的扇形的角度\n那么我们需要把它的角度呢全都调整回来\n这里呢我就是把它的本地旋转角度改为了\n这个欧拉角的零\n就是actor three zero\n就是表示000XYZ轴的旋转都是零\n这样的话它就可以和场地的这个旋转缩放\n完全一致了\n最后呢就是更新所有的卡牌\n那么移除呢也非常简单\n就是直接remove\n之后呢把他的\nset parent改成空\n这样的话把它移除出他的子物体\n也是最后刷新所有的卡牌\n最后refresh card就是更新所有的这个\n卡牌的位置\n那么这里呢我们还是像之前一样\n需要一个do退的功能\n我们首先创建一个叫做sequence\n创建了这个变量以后\n它会自动的帮你引用这个do to\n独特的secret sequence\n那么我们首先需要定义卡牌之间的距离\n那么我们卡牌之间一直保持这个间隔\n并且呢我们需要计算一个start x\n就是它起始的位置\n那么起始的位置呢它会有一个这样的关系\n就是所有的卡牌数量\ncount减一乘上spacing\n这样呢就是他\n也就是说他这个卡牌最后起始的这么一个位置\n也就是我们卡牌从左到右依次排列\n根据这个数量呢依次往左移动\n之后我们写一个for循环来计算\n每一张卡牌的位置\n每一张卡牌的位置呢\n我们可以先定义一个变量\n这是我们当前的这个卡牌需要移动到的位置\n它的X呢就是我们从start的X出发\n每一张卡牌呢都向后偏移一个spacing\n之后呢Y和Z都保值为零\n这样呢就是他这张卡牌的位置\n之后呢我们就是把我们的动画加到sequence里面\n用这个append呢\n他会把卡牌依次移动\n那么我们用join就是让所有的卡牌同时动\nCards i\nTransform\nTo local\n那么这进行一个local move\n移动到我们这个目标点\n并且在0.5秒以内就可以了\nOK这个就写好了之后呢\n我们要去调用它\n我们首先来到player control\n在手牌这里呢我们可以新建一个\n场上的卡也就是public field controler\n那这就是代表玩家场上的牌\n那么我们在召唤的时候\n在butter manager里面\n这是这里召唤\n那么我们这里只是把它\n移除到了从手牌中移除\n那么我们之后呢还需要在手牌中添加它\n在场地上添加它\n并且呢这张牌呢还需要是正面表示的\n召唤到场上的牌呢一定都是正面表示的\n那么回到游戏当中\n首先我们选中这个player\n那他这里这个field\n我们把它属于它的这个field拖拽过来\n并且field也需要配置一个属于它的player\n这样呢就完成了\n我们点击运行进行测试\n我们这样就是把这个呃\n这个干员牌召唤到了场上\n可以看到他就进入了这个build的子物体\n没看到就是呃我们每召唤一只怪物\n可以看到就是我们每召唤一只随从到场上\n他的这个坐标都会重新更新\n但是我们的这个计算呢是有一点问题\n那么调整这个计算公式呢\n就是在这里\n这个start的X我们需要再把它整体再除以二\n这样呢我们再来召唤\n就是他是一个比较正确的\n每次呢牌呢都是放到最末尾\n好的那这样就是一个我们的场地管理器的脚本\n就这样就完成了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1G1Gu6mERe",
+  "published_at": "1785549641",
+  "fetched_at": "2026-08-07T09:19:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T09:20:52+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T09:20:52+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1VsNH6PE1t",
+  "title": "蓝图 VS Verse？不不不，OOP VS ECS!",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 993,
+  "text": "前几天也是稍微花了点时间研究了一下verse\n发现他并不是从蓝图中一脉相承出来的\n而是直接打破了原先的模式\n蓝图是基于OOP的对象模式\n而verse则是基于ECS的数据驱动模型\n之所以发生这样的变动\n主要还是为了并发和书画\n如果现在要给这两个的学习难度都打个分的话\n满分十分\n蓝图我给到两分\nverse我会给到8.6分\n主要问题还是worse要支持并发之后\n并发控制就成了优异开发者的必修课\n这对专业的从业者来说并不是什么难题\n但是对于只是接触过蓝图的成员\n一下子过渡到要进行并发控制\n还是会稍微的犯了点难\n先来对比一下这两者的差异\nOP的实体是包含数据和逻辑的\n而e cs的数据和逻辑是分开的\n实体本身只是个id\n除此之外什么都没有\n不和具体的数据和逻辑相邻\n数据是统一存放在一起的\n这带来了一个好处\n就是同样是批量处理大量数据时\ne cs的CPU缓存命中率要高了很多\n这是两者设计的最大差异\n至于为什么修改架构设计\n那很明显是为了并发\n原先的OP的模式一直被诟病\n说游戏的主逻辑都是在一个线程上跑的\n没有很好的利用上整个机器的性能\n改成ECS架构后\n只要你遵守它的设计原理\n是可以很容易地写出很多\n无所且高并发的代码的\n当然这个架构是没有办法避免\n所有的并发冲突的\n比如有两个人同时攻击你\n这里就变得需要有锁锁住相关的逻辑了\n原先的OOP下面是很难放权给蓝图\n进行高并发的\n最终会导致到处写满了锁设计\n增加了开发负担\n因此官方设计的例如动画蓝图以及网络复制等\n这种可以脱离主逻辑并发的功能\n都是锁定在C加加层面上完成的\n除此之外\nworse是明文代码\n在版本控制上更加的友好\n而且静态强类型\n能规避一下蓝图运行时的空引用和类型不匹配\n到来的崩溃\n同时e cs的底层逻辑\n会让GC几乎不生成内存碎片\n有利于游戏的长期稳定运行\n当然好处都说完了\n现在来说说坏处\n多\n并发的开发任务\n是需要占用开发者更多的心神的同时\n追踪调试也会变得更加的复杂\n同体量的小项目中\nECS架构的开发效率是低于OOP的\n它的设计意图就是争夺规模大\n迭代多的大型项目\n也就是小品级的独立游戏\n用优异开发会变得更加困难\n还有就是worse\n显然丢掉了蓝图的新手友好的特性\n这个我还是有点惋惜的\n毕竟蓝图这种连连看\n在我刚接触的时候还是觉得蛮新颖的\n才会选择这个引擎的\n哎时代的也累了\n这里是盖木零三\n我们下期再会",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VsNH6PE1t",
+  "published_at": "1783738800",
+  "fetched_at": "2026-08-07T05:31:41+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 蓝图 vs Verse：OOP 与 ECS 知识图谱\n\n## 总览比较\n```mermaid\nflowchart TD\n    OOP[\"OOP (Blueprint)\"] --> OOP_ObjectModel[\"对象模式：数据+逻辑在实体\"]\n    ECS[\"ECS (Verse)\"] --> ECS_DataDriven[\"数据驱动模型：数据与逻辑分离\"]\n    OOP_ObjectModel --> OOP_Entity[\"实体包含数据与逻辑\"]\n    ECS_DataDriven --> ECS_EntityID[\"实体仅为 ID\"]\n    ECS_DataDriven --> ECS_DataStore[\"数据统一存放\"]\n    ECS_DataStore --> ECS_CacheHit[\"高 CPU 缓存命中率\"]\n    OOP --> OOP_Concurrency[\"并发支持差\"]\n    ECS --> ECS_Concurrency[\"并发友好\"]\n    OOP --> OOP_Learning[\"学习难度 2/10\"]\n    ECS --> ECS_Learning[\"学习难度 8.6/10\"]\n```\n\n## 并发影响链\n```mermaid\nflowchart TD\n    ConcurrencyGoal[\"提升并发利用机器性能\"] --> OOP_SingleThread[\"主逻辑单线程\"]\n    ConcurrencyGoal --> ECS_MultiThread[\"多线程可写高并发代码\"]\n    OOP_SingleThread --> LockIssue[\"需要锁保护冲突\"]\n    ECS_MultiThread --> LockIssue\n    LockIssue --> LockOverhead[\"锁导致开发负担\"]\n    LockIssue --> DebugComplex[\"调试更复杂\"]\n    ECS_MultiThread --> GCBenefit[\"ECS 减少内存碎片\"]\n    GCBenefit --> PerformanceGain[\"提升长期稳定性\"]\n```\n\n## 项目规模与技术选型\n```mermaid\nflowchart TD\n    SmallProject[\"小体量项目\"] --> OOP_Efficiency[\"OOP 开发效率高\"]\n    LargeProject[\"大规模迭代项目\"] --> ECS_Efficiency[\"ECS 开发效率低\"]\n    LargeProject --> ECS_ScaleAdvantage[\"ECS 适合大规模\"]\n    OOP_Efficiency --> Decision[\"技术选型依据\"]\n    ECS_ScaleAdvantage --> Decision\n    BlueprintFriendliness[\"蓝图友好新手\"] --> Decision\n    VerseFriendliness[\"Verse 缺乏新手友好\"] --> Decision\n```",
+      "diagrams": [
+        {
+          "title": "总览比较",
+          "code": "flowchart TD\n    OOP[\"OOP (Blueprint)\"] --> OOP_ObjectModel[\"对象模式：数据+逻辑在实体\"]\n    ECS[\"ECS (Verse)\"] --> ECS_DataDriven[\"数据驱动模型：数据与逻辑分离\"]\n    OOP_ObjectModel --> OOP_Entity[\"实体包含数据与逻辑\"]\n    ECS_DataDriven --> ECS_EntityID[\"实体仅为 ID\"]\n    ECS_DataDriven --> ECS_DataStore[\"数据统一存放\"]\n    ECS_DataStore --> ECS_CacheHit[\"高 CPU 缓存命中率\"]\n    OOP --> OOP_Concurrency[\"并发支持差\"]\n    ECS --> ECS_Concurrency[\"并发友好\"]\n    OOP --> OOP_Learning[\"学习难度 2/10\"]\n    ECS --> ECS_Learning[\"学习难度 8.6/10\"]"
+        },
+        {
+          "title": "并发影响链",
+          "code": "flowchart TD\n    ConcurrencyGoal[\"提升并发利用机器性能\"] --> OOP_SingleThread[\"主逻辑单线程\"]\n    ConcurrencyGoal --> ECS_MultiThread[\"多线程可写高并发代码\"]\n    OOP_SingleThread --> LockIssue[\"需要锁保护冲突\"]\n    ECS_MultiThread --> LockIssue\n    LockIssue --> LockOverhead[\"锁导致开发负担\"]\n    LockIssue --> DebugComplex[\"调试更复杂\"]\n    ECS_MultiThread --> GCBenefit[\"ECS 减少内存碎片\"]\n    GCBenefit --> PerformanceGain[\"提升长期稳定性\"]"
+        },
+        {
+          "title": "项目规模与技术选型",
+          "code": "flowchart TD\n    SmallProject[\"小体量项目\"] --> OOP_Efficiency[\"OOP 开发效率高\"]\n    LargeProject[\"大规模迭代项目\"] --> ECS_Efficiency[\"ECS 开发效率低\"]\n    LargeProject --> ECS_ScaleAdvantage[\"ECS 适合大规模\"]\n    OOP_Efficiency --> Decision[\"技术选型依据\"]\n    ECS_ScaleAdvantage --> Decision\n    BlueprintFriendliness[\"蓝图友好新手\"] --> Decision\n    VerseFriendliness[\"Verse 缺乏新手友好\"] --> Decision"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T05:31:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 蓝图 vs Verse：OOP 与 ECS 知识图谱\n\n## 总览比较\n```mermaid\nflowchart TD\n    OOP[\"OOP (Blueprint)\"] --> OOP_ObjectModel[\"对象模式：数据+逻辑在实体\"]\n    ECS[\"ECS (Verse)\"] --> ECS_DataDriven[\"数据驱动模型：数据与逻辑分离\"]\n    OOP_ObjectModel --> OOP_Entity[\"实体包含数据与逻辑\"]\n    ECS_DataDriven --> ECS_EntityID[\"实体仅为 ID\"]\n    ECS_DataDriven --> ECS_DataStore[\"数据统一存放\"]\n    ECS_DataStore --> ECS_CacheHit[\"高 CPU 缓存命中率\"]\n    OOP --> OOP_Concurrency[\"并发支持差\"]\n    ECS --> ECS_Concurrency[\"并发友好\"]\n    OOP --> OOP_Learning[\"学习难度 2/10\"]\n    ECS --> ECS_Learning[\"学习难度 8.6/10\"]\n```\n\n## 并发影响链\n```mermaid\nflowchart TD\n    ConcurrencyGoal[\"提升并发利用机器性能\"] --> OOP_SingleThread[\"主逻辑单线程\"]\n    ConcurrencyGoal --> ECS_MultiThread[\"多线程可写高并发代码\"]\n    OOP_SingleThread --> LockIssue[\"需要锁保护冲突\"]\n    ECS_MultiThread --> LockIssue\n    LockIssue --> LockOverhead[\"锁导致开发负担\"]\n    LockIssue --> DebugComplex[\"调试更复杂\"]\n    ECS_MultiThread --> GCBenefit[\"ECS 减少内存碎片\"]\n    GCBenefit --> PerformanceGain[\"提升长期稳定性\"]\n```\n\n## 项目规模与技术选型\n```mermaid\nflowchart TD\n    SmallProject[\"小体量项目\"] --> OOP_Efficiency[\"OOP 开发效率高\"]\n    LargeProject[\"大规模迭代项目\"] --> ECS_Efficiency[\"ECS 开发效率低\"]\n    LargeProject --> ECS_ScaleAdvantage[\"ECS 适合大规模\"]\n    OOP_Efficiency --> Decision[\"技术选型依据\"]\n    ECS_ScaleAdvantage --> Decision\n    BlueprintFriendliness[\"蓝图友好新手\"] --> Decision\n    VerseFriendliness[\"Verse 缺乏新手友好\"] --> Decision\n```",
+  "diagrams": [
+    {
+      "title": "总览比较",
+      "code": "flowchart TD\n    OOP[\"OOP (Blueprint)\"] --> OOP_ObjectModel[\"对象模式：数据+逻辑在实体\"]\n    ECS[\"ECS (Verse)\"] --> ECS_DataDriven[\"数据驱动模型：数据与逻辑分离\"]\n    OOP_ObjectModel --> OOP_Entity[\"实体包含数据与逻辑\"]\n    ECS_DataDriven --> ECS_EntityID[\"实体仅为 ID\"]\n    ECS_DataDriven --> ECS_DataStore[\"数据统一存放\"]\n    ECS_DataStore --> ECS_CacheHit[\"高 CPU 缓存命中率\"]\n    OOP --> OOP_Concurrency[\"并发支持差\"]\n    ECS --> ECS_Concurrency[\"并发友好\"]\n    OOP --> OOP_Learning[\"学习难度 2/10\"]\n    ECS --> ECS_Learning[\"学习难度 8.6/10\"]"
+    },
+    {
+      "title": "并发影响链",
+      "code": "flowchart TD\n    ConcurrencyGoal[\"提升并发利用机器性能\"] --> OOP_SingleThread[\"主逻辑单线程\"]\n    ConcurrencyGoal --> ECS_MultiThread[\"多线程可写高并发代码\"]\n    OOP_SingleThread --> LockIssue[\"需要锁保护冲突\"]\n    ECS_MultiThread --> LockIssue\n    LockIssue --> LockOverhead[\"锁导致开发负担\"]\n    LockIssue --> DebugComplex[\"调试更复杂\"]\n    ECS_MultiThread --> GCBenefit[\"ECS 减少内存碎片\"]\n    GCBenefit --> PerformanceGain[\"提升长期稳定性\"]"
+    },
+    {
+      "title": "项目规模与技术选型",
+      "code": "flowchart TD\n    SmallProject[\"小体量项目\"] --> OOP_Efficiency[\"OOP 开发效率高\"]\n    LargeProject[\"大规模迭代项目\"] --> ECS_Efficiency[\"ECS 开发效率低\"]\n    LargeProject --> ECS_ScaleAdvantage[\"ECS 适合大规模\"]\n    OOP_Efficiency --> Decision[\"技术选型依据\"]\n    ECS_ScaleAdvantage --> Decision\n    BlueprintFriendliness[\"蓝图友好新手\"] --> Decision\n    VerseFriendliness[\"Verse 缺乏新手友好\"] --> Decision"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:31:50+00:00"
+}
