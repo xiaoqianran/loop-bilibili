@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1DAj36ZE2E",
+  "title": "144. 如何可视化Transformer的残差连接？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 189,
+  "text": "今天的问题是\n如何可视化transformer的残差连接\n之前的可视化\n把X和QKV画的一样大\n由于现在要可视化残差连接需要详略得当\n所以就把X画大一点\n问题来了\n残差连接在哪呢\n在注意力层的前后\n以及前馈网络层的前后都有残差连接\n把注意力层的输入加到注意力层的输出\n由于这两个张量形状相同\n所以可以相加\n把前馈网络层的输入加到前馈网络层的输出\n由于两个张量形状相同\n也可以相加",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1DAj36ZE2E",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

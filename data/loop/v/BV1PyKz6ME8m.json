@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1PyKz6ME8m",
+  "title": "NVIDIA ARDY实时AI动画技术解析：探索动作捕捉与实时渲染新工作流",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1906,
+  "text": "老铁们\n英伟达又放了个大卫星\n这次叫阿D\n全称是自回归扩散模型\n巴拉巴拉\n名字不重要\n关键是这玩意儿能实时做AI动画\n离谱的是\n他居然还开源了所有模型权重都公开了\n你现在就能在本地跑起来之后\n还能整合到虚幻引擎里\n咱们来仔细看看这个更新\n而且我已经在本地装好了\n就是为了看看它到底能不能用\n要搞明白这事为什么牛又改变了什么\n我觉得得先快速回顾一下\n今年发布的AI动画工具\n估计大部分人都听说过KIMOTO\n这是个很牛的AI工具\n能在很低显存的本地跑\n比如4~6GB显存\n它控制选项很多能生成动画\n但主要还是生成功能\n一个月前motion breaks发布了\n那个就更接近了\n相当于一个可以插进你游戏的动画引擎\n演示效果简直炸裂\n但也有一些限制\n比如你需要预先建好动画之类的\n不过它也有很多高级功能\n比如智能体块\n延迟只有2ms\n真能玩起来还能和环境互动\n但缺点嘛就是只发布了动作相关的部分\n而且能用的预设也不多\n智能体块是承诺了\n但一直没发布\n现在也没个准信\n现在有了rd实现了完整的实时动作生成\n控制选项\n约束条件\n根部运动\n这些跟提莫达几乎一样\n但这次是实时的\n仔细看的话\n你会发现\n他对约束的遵循程度\n和整体动画质量都有了提升\n这要归功于两阶段的自回归降噪器\n更新了数据集\n现在基于骨骼系统\n总的来说距离key moa也有半年了\n所以看起来确实很很惊艳\n那安装怎么样呢\n我说了所有代码和权重都开源了\n你现在就能动手试试\n代码里的demo是用24GB显存的\nRTX1490测试的\n所以最低配置大概在16~18GB显存\n但要达到实时运行\n你肯定需要24GB左右\n你也知道我的是RTX4070\n所以大概率是跑不动的\n为了测试\n我用了rum pd\n租了GPU\n对我来说\n这是最简单的测试方法\n我当时用的是RTX1590\n因为当时1490没得租\n成本大概一小时一美元\n重申一下\n我只是用它来测试\n整个流程很简单\n租个GPU\n然后用SSH连上去\n连到那台服务器后\n我一般就会开启云码功能\n并再次告诉云马\n就像这样\n这是十五九十实例\n然后让它在那运行就行了\n它会自动搞定所有安装之类的\n很简单\n我有写过一篇关于顶级AI\n怎么实现这个操作的文章\n但也得说用语码的话\n你完全可以选其他方式\n我跟wrong port没有合作关系\n那只是我过去的做法\n过了一段时间\n我确实让他跑起来了\n他就给我提供了一个隧道呃\n连到本地主机好了\n现在我们可以测试了\n那么呃我们可以开始玩了\n会有些动作反馈\n而且你可以实时操控它\n你看这个跑了在十五九十端口上\n也能在十四九十端口上运行\n你完全可以控制这里发生的一切\n比如走路跑步等等\n你可以设置不同类型的约束\n不过眼是并不能展示所有功能\n因为功能实在太多了\n我觉得最厉害的一点是\n你实际上可以用键盘呃来控制它\n而且再次强调这些实时约束\n可以和提示词配合使用\n基本上你可以运行脚本\n把键盘或鼠标输入作为约束条件\n再结合文字提示\n比如单脚跳或跳跃等等指令\n这是最酷的地方\n根运动也一样\n你可以做动画表现或路径规划\n然后再把文字提示加入其中\n全部实时完成\n你可以保存并导出\n当然导出时我们有核心的27个骨骼\n关键点\n还有一的骨骼表现格式\n我确定G1格式肯定能映射到虚幻引擎里\n你可以重定向\n所以操作起来会很方便\n你可以去查查相关教程\n而且所有用到的模型都已经放在HuggingFace上了\n所以你基本上可以根据谷歌类型自由替换\n看看哪个效果最好\n有件事我忘了说\n如果你想在本地运行\n就需要一个HuggingFace的令牌\n这也是免费获取的\n你需要去这个meta lama模型页面申请\n再次申请模型\n大部分情况下\n你会立刻通过这个令牌\n是用来下载这个设置组合中需要用到的\nmeta模型的\n所以这个模型开启了非常引人入胜的可能性\n好吧\n如果我们看看鼠标控制选项\n我可以想象\n很快我们就会有完全程序化的游戏了\n我本想说程序化\n但实际上是AI生成的动画\n玩家实际上在指引方向\n我们有脚本\n根据情况调整文字提示\n所有这些都会实时反馈给这个阿D模型\n或者他未来演变而成的任何形式\n然后所有动作就发生了\n而且效果相当流畅\n相当流畅\n就像你看到的这样\n我真的很喜欢那个场景穿越的事例\n这确实说得通\n再说一遍\n就像这样\n你可以录制那个动作\n当然还可以回放\n录制完你可以把导出或者同样的\n你可以用于不同的目的\n我还能考虑创建播放快照之后\n用视频AI处理\n获得带有导向运动的超棒镜头\n你们觉得这个AI的最佳应用是什么\n告诉我吧\n我会持续关注所有更新\n并随时通知你们\n各位别忘了点赞和订阅\n以便第一时间获取最新信息\n下个视频见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1PyKz6ME8m",
+  "published_at": "1784606100",
+  "fetched_at": "2026-08-09T20:08:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# NVIDIA ARDY 实时AI动画技术图谱\n\n## ARDY整体结构\n```mermaid\nflowchart TD\n    M1[\"ARDY模型<br/>自回归扩散模型\"] --> W1[\"开源权重\"]\n    M1 --> D1[\"两阶段自回归降噪器\"]\n    D1 --> DS[\"骨骼系统数据集\"]\n    M1 --> C1[\"约束系统\"]\n    M1 --> RM[\"根运动支持\"]\n    M1 --> RE[\"实时渲染\"]\n    RE --> UE[\"Unreal Engine 集成\"]\n    UE --> G1[\"27骨骼 G1 格式\"]\n    W1 --> HF[\"HuggingFace 令牌\"]\n    HF --> DL[\"模型下载\"]\n    RE --> HW[\"硬件需求<br/>≈24 GB VRAM\"]\n```\n\n## 实时动画工作流\n```mermaid\nflowchart TD\n    T1[\"获取 HuggingFace 令牌\"] --> D1[\"下载模型权重\"]\n    D1 --> C1[\"配置运行环境\"]\n    C1 --> R1[\"租用 GPU（或本地）\"]\n    R1 --> S1[\"SSH 连接至服务器\"]\n    S1 --> CD[\"启动云码功能\"]\n    CD --> DEMO[\"运行 Demo 程序\"]\n    DEMO --> INP[\"键盘/鼠标输入<br/>实时约束\"]\n    INP --> TXT[\"文字提示（Prompt）\"]\n    TXT --> M1[\"ARDY 模型生成动画\"]\n    M1 --> EXP[\"导出 G1 骨骼文件\"]\n    EXP --> UE[\"导入 Unreal Engine\"]\n```\n\n## 前代工具对比\n```mermaid\nflowchart LR\n    K[\"KIMOTO\"] -->|显存需求| K1[\"4~6 GB\"]\n    K -->|实时性| K2[\"离线生成\"]\n    K -->|控制选项| K3[\"有限\"]\n    MB[\"MotionBreaks\"] -->|显存需求| MB1[\"未知\"]\n    MB -->|实时性| MB2[\"接近实时\"]\n    MB -->|控制选项| MB3[\"动画引擎插件\"]\n    AR[\"ARDY\"] -->|显存需求| AR1[\"≥24 GB 实时\"]\n    AR -->|实时性| AR2[\"实时（≤2 ms 延迟）\"]\n    AR -->|控制选项| AR3[\"约束、根运动、键盘/鼠标、Prompt\"]\n    AR -->|开源程度| AR4[\"模型、权重、代码全开源\"]\n    style K fill:#f9f,stroke:#333,stroke-width:1px\n    style MB fill:#ff9,stroke:#333,stroke-width:1px\n    style AR fill:#9f9,stroke:#333,stroke-width:1px\n```",
+      "diagrams": [
+        {
+          "title": "ARDY整体结构",
+          "code": "flowchart TD\n    M1[\"ARDY模型<br/>自回归扩散模型\"] --> W1[\"开源权重\"]\n    M1 --> D1[\"两阶段自回归降噪器\"]\n    D1 --> DS[\"骨骼系统数据集\"]\n    M1 --> C1[\"约束系统\"]\n    M1 --> RM[\"根运动支持\"]\n    M1 --> RE[\"实时渲染\"]\n    RE --> UE[\"Unreal Engine 集成\"]\n    UE --> G1[\"27骨骼 G1 格式\"]\n    W1 --> HF[\"HuggingFace 令牌\"]\n    HF --> DL[\"模型下载\"]\n    RE --> HW[\"硬件需求<br/>≈24 GB VRAM\"]"
+        },
+        {
+          "title": "实时动画工作流",
+          "code": "flowchart TD\n    T1[\"获取 HuggingFace 令牌\"] --> D1[\"下载模型权重\"]\n    D1 --> C1[\"配置运行环境\"]\n    C1 --> R1[\"租用 GPU（或本地）\"]\n    R1 --> S1[\"SSH 连接至服务器\"]\n    S1 --> CD[\"启动云码功能\"]\n    CD --> DEMO[\"运行 Demo 程序\"]\n    DEMO --> INP[\"键盘/鼠标输入<br/>实时约束\"]\n    INP --> TXT[\"文字提示（Prompt）\"]\n    TXT --> M1[\"ARDY 模型生成动画\"]\n    M1 --> EXP[\"导出 G1 骨骼文件\"]\n    EXP --> UE[\"导入 Unreal Engine\"]"
+        },
+        {
+          "title": "前代工具对比",
+          "code": "flowchart LR\n    K[\"KIMOTO\"] -->|显存需求| K1[\"4~6 GB\"]\n    K -->|实时性| K2[\"离线生成\"]\n    K -->|控制选项| K3[\"有限\"]\n    MB[\"MotionBreaks\"] -->|显存需求| MB1[\"未知\"]\n    MB -->|实时性| MB2[\"接近实时\"]\n    MB -->|控制选项| MB3[\"动画引擎插件\"]\n    AR[\"ARDY\"] -->|显存需求| AR1[\"≥24 GB 实时\"]\n    AR -->|实时性| AR2[\"实时（≤2 ms 延迟）\"]\n    AR -->|控制选项| AR3[\"约束、根运动、键盘/鼠标、Prompt\"]\n    AR -->|开源程度| AR4[\"模型、权重、代码全开源\"]\n    style K fill:#f9f,stroke:#333,stroke-width:1px\n    style MB fill:#ff9,stroke:#333,stroke-width:1px\n    style AR fill:#9f9,stroke:#333,stroke-width:1px"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T20:08:31+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# NVIDIA ARDY 实时AI动画技术图谱\n\n## ARDY整体结构\n```mermaid\nflowchart TD\n    M1[\"ARDY模型<br/>自回归扩散模型\"] --> W1[\"开源权重\"]\n    M1 --> D1[\"两阶段自回归降噪器\"]\n    D1 --> DS[\"骨骼系统数据集\"]\n    M1 --> C1[\"约束系统\"]\n    M1 --> RM[\"根运动支持\"]\n    M1 --> RE[\"实时渲染\"]\n    RE --> UE[\"Unreal Engine 集成\"]\n    UE --> G1[\"27骨骼 G1 格式\"]\n    W1 --> HF[\"HuggingFace 令牌\"]\n    HF --> DL[\"模型下载\"]\n    RE --> HW[\"硬件需求<br/>≈24 GB VRAM\"]\n```\n\n## 实时动画工作流\n```mermaid\nflowchart TD\n    T1[\"获取 HuggingFace 令牌\"] --> D1[\"下载模型权重\"]\n    D1 --> C1[\"配置运行环境\"]\n    C1 --> R1[\"租用 GPU（或本地）\"]\n    R1 --> S1[\"SSH 连接至服务器\"]\n    S1 --> CD[\"启动云码功能\"]\n    CD --> DEMO[\"运行 Demo 程序\"]\n    DEMO --> INP[\"键盘/鼠标输入<br/>实时约束\"]\n    INP --> TXT[\"文字提示（Prompt）\"]\n    TXT --> M1[\"ARDY 模型生成动画\"]\n    M1 --> EXP[\"导出 G1 骨骼文件\"]\n    EXP --> UE[\"导入 Unreal Engine\"]\n```\n\n## 前代工具对比\n```mermaid\nflowchart LR\n    K[\"KIMOTO\"] -->|显存需求| K1[\"4~6 GB\"]\n    K -->|实时性| K2[\"离线生成\"]\n    K -->|控制选项| K3[\"有限\"]\n    MB[\"MotionBreaks\"] -->|显存需求| MB1[\"未知\"]\n    MB -->|实时性| MB2[\"接近实时\"]\n    MB -->|控制选项| MB3[\"动画引擎插件\"]\n    AR[\"ARDY\"] -->|显存需求| AR1[\"≥24 GB 实时\"]\n    AR -->|实时性| AR2[\"实时（≤2 ms 延迟）\"]\n    AR -->|控制选项| AR3[\"约束、根运动、键盘/鼠标、Prompt\"]\n    AR -->|开源程度| AR4[\"模型、权重、代码全开源\"]\n    style K fill:#f9f,stroke:#333,stroke-width:1px\n    style MB fill:#ff9,stroke:#333,stroke-width:1px\n    style AR fill:#9f9,stroke:#333,stroke-width:1px\n```",
+  "diagrams": [
+    {
+      "title": "ARDY整体结构",
+      "code": "flowchart TD\n    M1[\"ARDY模型<br/>自回归扩散模型\"] --> W1[\"开源权重\"]\n    M1 --> D1[\"两阶段自回归降噪器\"]\n    D1 --> DS[\"骨骼系统数据集\"]\n    M1 --> C1[\"约束系统\"]\n    M1 --> RM[\"根运动支持\"]\n    M1 --> RE[\"实时渲染\"]\n    RE --> UE[\"Unreal Engine 集成\"]\n    UE --> G1[\"27骨骼 G1 格式\"]\n    W1 --> HF[\"HuggingFace 令牌\"]\n    HF --> DL[\"模型下载\"]\n    RE --> HW[\"硬件需求<br/>≈24 GB VRAM\"]"
+    },
+    {
+      "title": "实时动画工作流",
+      "code": "flowchart TD\n    T1[\"获取 HuggingFace 令牌\"] --> D1[\"下载模型权重\"]\n    D1 --> C1[\"配置运行环境\"]\n    C1 --> R1[\"租用 GPU（或本地）\"]\n    R1 --> S1[\"SSH 连接至服务器\"]\n    S1 --> CD[\"启动云码功能\"]\n    CD --> DEMO[\"运行 Demo 程序\"]\n    DEMO --> INP[\"键盘/鼠标输入<br/>实时约束\"]\n    INP --> TXT[\"文字提示（Prompt）\"]\n    TXT --> M1[\"ARDY 模型生成动画\"]\n    M1 --> EXP[\"导出 G1 骨骼文件\"]\n    EXP --> UE[\"导入 Unreal Engine\"]"
+    },
+    {
+      "title": "前代工具对比",
+      "code": "flowchart LR\n    K[\"KIMOTO\"] -->|显存需求| K1[\"4~6 GB\"]\n    K -->|实时性| K2[\"离线生成\"]\n    K -->|控制选项| K3[\"有限\"]\n    MB[\"MotionBreaks\"] -->|显存需求| MB1[\"未知\"]\n    MB -->|实时性| MB2[\"接近实时\"]\n    MB -->|控制选项| MB3[\"动画引擎插件\"]\n    AR[\"ARDY\"] -->|显存需求| AR1[\"≥24 GB 实时\"]\n    AR -->|实时性| AR2[\"实时（≤2 ms 延迟）\"]\n    AR -->|控制选项| AR3[\"约束、根运动、键盘/鼠标、Prompt\"]\n    AR -->|开源程度| AR4[\"模型、权重、代码全开源\"]\n    style K fill:#f9f,stroke:#333,stroke-width:1px\n    style MB fill:#ff9,stroke:#333,stroke-width:1px\n    style AR fill:#9f9,stroke:#333,stroke-width:1px"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T20:08:31+00:00"
+}

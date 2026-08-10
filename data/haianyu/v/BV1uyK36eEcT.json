@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1uyK36eEcT",
+  "title": "[115] Kimi K3 技术报告：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3886,
+  "text": "今天我们来介绍一篇\n关于大规模多模态语言模型的工作\n标题叫做KIMIK3\n全称是KIMIK3\nOpen frontier intelligence\n这份技术报告标注的时间是2026年7月\nKIMIK3是一个总参数量2.8万亿\n每次前向激活1040亿参数\n的混合专家模型\n原生支持视觉输入\n上下文窗口达到100万\nToken\n论文\n围绕预训练\n扩展效率和后训练智能体能力两条主线展开\n在架构上引入kimi delta attention\nattention residuals和stable latent moe\n使整体缩放效率相比KIMIK2提升约2.5倍\n在后训练上\n通过强化学习覆盖通用智能体和编程任务\n支持多档推理努力程度\n并通过多教师在线策略真流合并成统一模型\n论文还公开了完整的K3模型权重\n下面看一下摘要\n翻译我们介绍KIMIK三一个总参数量2.8万亿\n激活参数量1040亿的混合专家模型\n具备原生视觉能力\n并支持1000000token的上下文窗口\nKIMIK3基于kimi delta attention和attention residues\n构建这两种机制\n改进了序列长度和模型深度方向上的信息流\n结合stable latent贸易\n他在每个token上\n从896个路由专家中激活16个\n再加上精炼的训练和数据配方\n这些进展使整体缩放效率相比KIMIK2\n提升约2.5倍\n后训练阶段\n论文在通用智能体和编程领域\n以及多个推理努力级别上开展强化学习\n从而实现组合泛化和稳健的长城执行\n在2.8万亿参数规模下\nKIMIK3还依赖多项基础设施创新\n针对KDA的算法与系统协同设计\n负载均衡的专家并行训练\n高效内存管理\n支持持久化\nroll out和沙盒状态的百万token智能体\n强化学习以及部署层面的创新\n大量评估表明\nKIMIK3在长城编程智能体\n知识推理和视觉任务上达到了前沿水平\n尽管整体性能仍落后于最强的专有模型\ncot fable5和gt5.6\nSo\n但在评测套件中\n它持续优于其他开放和专有模型论文\n发布了完整的KIMIK3模型权重\n以促进未来研究并加速前沿智能的广泛部署\n下面看一下这张图\n这张图汇总了KIMI\nK3在多个公开和内部评测上的结果\n上半部分是编程类任务\n包括deep sw terminal bench\n2.1\nFrontier s we chemy code bench\n2.0program bench和s we marathon\n下半部分是通用与视觉智能体任务\n包括GDP boaa browse\nComp\nAutomation\nBench\nJob bench\ntruck sive和zero bench\n可以看到\nK3在大量编程和智能体榜单上得分较高\n仅在少数榜单上低于cloud face book5或gt5.6艘\n整体趋势是\nK3\n在需要长城规划工具\n调用和多模态理解的复杂任务上\n结果较好\n下面看一下这张图\n这张图展示了KIMIK3的整体架构模型\n围绕token通道和层三个维度混合信息\n右侧是整体堆叠输入\n首先经过MOVIATEV2视觉编码器和MLP投影\n然后进入由KDA\ngated mla和stable latent mode组成的重复块\n每个块里包含三层KDA和一层gated m la\n左上是stable latent mode模块\n包含共享专家和路由专家\n左下是KDA模块的展开\n包括查询键值的短卷及投影\n以及可学习的衰减项\nAttention recedu\n用伪查询W对每个模块的输出做加权\n允许当前层选择性地引用前面各层的信息\n而不是只能看到上一层\n下面看一下这个公式\n这个公式给出了kimi delta attention的递推形式\n当前状态s st由上一时刻状态s st减一\n经过遗忘和增量更新得到遗忘部分\n用阿尔法T控制增量\n使贝塔T乘以kt和VT的外机输出\nOT则是把当前状态转制后乘以查询qt\n下面的式子还展示了每个头的具体投影方式\n查询和件经过short combo\nswitch和L2归一化值\n经过short combo和switch\n贝塔T用SIGMOID的约束在0~1之间而衰减\n对数ZT来自一个低质投影\n加上头特定的偏执\n这样设计把线性注意力的长序列建模能力\n与稳定的可学习衰减结合在了一起\n下面看一下这个公式\n它展示了KDA的分块并行计算\n为了兼顾长序列的递推特性和GPU的并行性模型\n把序列切成多个块\n每个块内部输出O由两部分组成\n第一部分是跨块信息\n用伽马累积衰减和先前状态S相乘得到\n第二部分是块内信息\n先构造下三角掩码的注意力矩阵\nA在与尾值微相乘下\n三角操作表示只保留下三角元素\n保证因果性\n这样块与块之间只串行传递固定大小的状态\n块内部则可以并行计算\n下面看一下这张图\n这张图解释了K3为什么要对衰减做下界约束\n左图显示timmy linear\n使用无界的负soft plus映射\n当输入趋于负无穷时\n衰减的对数会无限变小\n而K3用带缩放的SIGMOID\n把下界固定在机命等于五\n保证数值始终在bf16动态范围内\n右图展示计算效果\n没有下界时\n英国矩阵的对角块必须用主位指对计算\n有了下界后\n所有因果块都可以交给tensor CORE做稠密矩阵乘\n从而显著提升计算效率\n下面看一下这个公式\n这个公式描述了attention residuce机制\n传统残差连接\n把前面所有层的信息均匀累加\n这里则为每一层学习一个伪查询\nW\n用soft max和计算当前层与之前各层输出\n以及词嵌入的注意力权重\n再对他们的只做加权求和得到当前层表示\n这样每一层可以有选择地检索\n前面任意层的信息\n而不是简单的把上一层结果加起来\n为了降低显存开销\nK3还使用了分块版本\n每个块内先压缩成部分和块之间再做完整\n注意力\n把原本随深度线性增长的显存占用\n降到更低水平\n下面看一下这个公式\n这个公式给出了stable attender mode的输出形式\n输出外由两部分组成\n一部分是两个全宽共享专家的输出求和\n另一部分是路由专家聚合结果\nU经过i m s norm后\n再做上投影K3把共享专家数量固定为二\n并且把归一化放在上投影之前\n这样可以降低路由分支对缩放变化的敏感度\n它和c to glue以及QUANTIBALANCING\n一起共同解决大规模稀疏more训练中的激活\n爆炸和负载不均衡问题\n下面看一下这张图\n这张图对比了glu switch lu和CTO\nGLU的门控和上分支\nSWIGO的两个成性因子都是没有上界的\n大输入容易产生激活异常值\n在低精度训练中有溢出风险\nSet to glu\n给门控分支和上分支都引入了TCH软帽\n例如图中贝塔一等于四\n贝塔二等于25时\n输出绝对值不超过100\n这样既保留了swig在原点附近的行为\n又抑制了极大值\n配合r m s norm和quantile balancing一起\n下面看一下这张图\n这张图展示了quantile balancing的工作流程\n左边是普通top k路\n由八个token分配给四个专家后\n负载是4310\n非常不均衡\n中间是Q币的调整过程\n给每个专家的分数加上一个偏执B\n再根据margin的分位数更新这个偏执\n右边是调整后的结果\n每个专家恰好分到两个token\n负载变成2222Q币\n不需要辅助损失\n也不改变原始top k选择的语义\n只是通过偏移分数让整体负载自然均衡\n从而避免某些专家过热或死亡\n下面看一下这张图\n这张图对比的两种视觉编码器\n预训练方式的梯度范数\n蓝色线代表用SILIP初始化的movie t3D\n红色线代表从头训练的movie tv2\n可以看到SIGLIE初始化方案的梯度范数更高\n并且有很多尖峰\n导致与语言模型联合训练时不稳定\n而moon vt v2从头训练\n直接用下1token预测目标\n梯度范数更低且稳定\n这说明在足够规模下\n视觉编码器不一定需要对比预训练\n可以直接融入自回归多模态训练\n同时让视觉表示直接被语言建模目标塑造\n下面看一下这张图\n这张图给出了KIMIK2和KIMIK3的缩放率\n拟合曲线\n横轴是训练flops\n纵轴是验证损失\n在同样计算量下\nK3的曲线位于K2下方\n箭头标注了大约2.5倍的缩放效率提升\n这意味着用同样的训练预算\nK3能得到更低的验证损失\n体现了架构数据和训练配方综合改进的效果\n论文中的消融实验表明\n这一提升来自kda attention residuals\nStable attense more\n以及训练配方的共同作用\n下面看一下这张图\n这张图展示了后训练强化学习阶段的能力变化\n横轴是RLFLOPS\n纵轴是各项任务得分和平均助手步数\n随着RL计算量增加\n代码体验通用工具\n使用网页开发智能体\n搜索专业工作流\n办公交付\n图表理解和视觉谜题等多项任务\n都呈现出一致提升\n同时模型调用的平均步数也在增加\n这说明模型在长城智能体任务中\n能够进行更复杂的规划和执行\n而不是简单地追求短答案\n下面看一下这张图\n这张图展示了知识图谱引导的任务合成流程\n左侧是一个层次化知识图谱\n从数学\n物理化学\n生物医学\n人文社科\n计算机与人工智能等高层领域\n逐层细化到具体概念\n系统会从中采样节点生成关键词集合\n然后去互联网上检索公开材料\n包括学术论文\n博客文章代码仓库等\n检索到的材料再交给任务合成模块\n根据选定的任务类型生成训练数据\n通过这种方式后\n覆盖更广泛\n更细粒度的知识和能力",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1uyK36eEcT",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:12:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

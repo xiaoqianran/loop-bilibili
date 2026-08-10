@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1dvwVzXECw",
+  "title": "AI 改网页 UI 为什么总翻车？我做了一个 Runtime 让 AI 直接读 UI",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1111,
+  "text": "最近很多人开始用AI来修改网页UI\n但你可能也遇到过这种情况\n当你打开一个网页截图标注\n然后把修改需求发给AI的时候\nAI经常会改错组件或者把布局直接搞乱\n有时候甚至完全不是你想要的效果\n其实这个问题并不是因为AI不够聪明\n而是因为AI根本没有看到真正的UI\n他看到的只有一张截图\n一张由像素组成的图片\n当AI根据截图去修改界面的时候\n他其实是在猜UI结构\n比如这个是不是按钮\n这个是不是卡片\n这个是不是输入框\n如果猜错了\n生成的代码自然也会出错\n所以我在想一个问题\n如果AI不是看截图\n而是可以直接看到UI的结构会怎么样\n比如组件数\nDOM布局关系\n组建属性\n如果AI能看到这些信息\n他就不需要再去猜UI了\n基于这个想法\n我做了一个开源项目\n叫做AI ui run time\n这个项目的目标很简单\n让AI可以直接读取UI结构\n而不是依赖截图\n在实际使用的时候\n你只需要告诉AI\n你想修改什么\n比如把这个按钮改成红色\n或者给这个组件加一个hover动画\nAI ui run time会把页面的组件信息提供给AI\nAI就可以精准定位到对应的组件\n然后进行修改\n在技术实现上\nAIUIRUNTIME提供了一层ui runtime layer\n这一层会把页面的组件数\n组件id布局结构这些信息导出给AI\n这样AI修改的就不再是截图\n而是结构化的UI数据\n这对于很多AI产品来说\n其实都很有用\n比如AI coding工具AIIDEE或者一些设计工具\n只要你的产品需要让AI修改界面\n都可以使用这样的run time\n这个项目现在已经开源在GITHUB上了\n如果你也在做AI coding\n或者对AIUI编辑感兴趣\n欢迎来看一看\n也欢迎一起参与这个项目\n希望有一天AI不再只是猜UI\n而是真的理解UI\n这里给大家展示使用的过程\n首先这是一个页面示范\n我将会从三个样例展示我的项目\n首先是移动位置\n然后是放大缩小组件大小\n再然后是修改样式\n这里先展示修改位置\n再拖动到你想要的位置之后\n点击复制按钮\n再复制给你的ID或者clean\n然后就会精准的改成你想要的物意效果\n这里修改已经生效了\n接下来调整这个圆的大小来看看效果\n最后是样式的改变\n这里把这个普通样式改成一个\n更好看的展示效果\n使用最后的描述功能\n在输入框中输入内容\n内容就是自己想要选中的物体变成什么样子\n然后复制发送给自己的AI就好了\n最后这里的样式成功改变\n这里只是做一个演示\n如果有自己想要的独特的样式\n或者是组件的替换修改\n可以自己描述或者提供对应的库\n这是一个google插件\n到我的GITHUB上克隆项目\n一分钟就能跑起来\n使用体验项目演示就结束了\n欢迎大家使用",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1dvwVzXECw",
+  "published_at": "1773631056",
+  "fetched_at": "2026-08-10T04:53:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

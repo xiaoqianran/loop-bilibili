@@ -1,0 +1,66 @@
+{
+  "bvid": "BV17eji6CE6M",
+  "title": "我把旧安卓机改造成了本地 AI 服务器：电脑、脚本、智能设备都能调用",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 696,
+  "text": "先别划走\n各位异父异母们\n家里有闲置的安卓手机\n抓紧使用起来\n把闲置手机插上电\n就能变成一台本地AI小服务器\n让你的电脑脚本智能设备都能掉用它\n这时是不是就变得有意思了\n说实话我一开始也觉得手机跑AI有点像玩具\n当时如果拿电脑跑本地模型吧\n占内存\n占显卡还容易卡\n平时还不方便携带\n使用云端AI吧\n要会员要联网\n关键有些资料你还真不敢随便往外传\n然后我就在想\n为什么所有AI请求都一定要丢给电脑或者云端\n家里那台闲置安安卓机能不能专门放在桌上\n当一个局域网里的AI节点\n所以我左右脑打了一架\n最后做了这个app\n名字暂时叫pocket survii\n它不是一个普通聊天app\n他的核心想法是\n把安卓手机变成一个随身AI服务端\n说人话就是你把模型放进手机里\n手机复则在本地跑\nAI在同一个局域网里的电脑脚本小工具\nAI玩具\n甚至你自己做的小客服页面都可以来调用它\n比如你电脑正在写代码\n不想再开一堆云端接口\n可以让电脑调用这台手机\n比如你有AI小智AI玩具\n不想他只能联网问云端\n也可以让它接入这开手机做一些简单对话\n比如你有门店展厅\n景区介绍内部资料\n问答一些内容\n不想先丢到外面\n就可以优先放在本地跑\n他解决的不是手机聊天这一个问题\n而是让旧安卓机有了第二次使用起来的机会\n从智慧设备变成一个低成本\n本地化可调用的AI节点\n当然我也不吹牛\n旧手机不可能替代顶级云端大模型\n但如果只是轻量模型\n本地问答局域网调用简单客服玩具对话\n这个方向我觉得非常值得试\n目前我只想到这些使用场景\n不知道各位异父异母有何高见\n可以在评论区打出来\n我们可以一起讨论讨论\n目前app已经做出来了\n下面是app展示",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV17eji6CE6M",
+  "published_at": "1781856676",
+  "fetched_at": "2026-08-09T16:24:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 旧安卓机改造成本地 AI 服务器知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"闲置安卓手机\"] --> A2[\"本地 AI 服务器 (PocketSurvii)\"]\n    A2 --> A3[\"局域网 AI 节点\"]\n    A3 --> A4[\"电脑、脚本、智能设备、客服页面\"]\n    A3 --> A5[\"云端 AI（需会员、联网）\"]\n    A2 --> A6[\"低成本、随身、离线\"]\n    A6 --> A7[\"数据不外传\"]\n```\n- A1: [BV17eji6CE6M P1 00:01]  \n- A2: [BV17eji6CE6M P1 00:38]  \n- A3: [BV17eji6CE6M P1 00:34]  \n- A4: [BV17eji6CE6M P1 00:51]  \n- A5: [BV17eji6CE6M P1 00:22]  \n- A6: [BV17eji6CE6M P1 00:05]  \n- A7: [BV17eji6CE6M P1 00:24]  \n\n## 使用场景与流程\n```mermaid\nflowchart TD\n    B1[\"电脑写代码\"] --> B2[\"调用手机 AI\"]\n    B2 --> B3[\"不使用云端接口\"]\n    B3 --> B4[\"本地跑模型\"]\n    B4 --> B5[\"即时响应\"]\n    B5 --> B6[\"保护隐私\"]\n    C1[\"AI 小智玩具\"] --> B2\n    D1[\"门店/展厅资料问答\"] --> B2\n    B5 --> C2[\"本地客服/对话页面\"]\n```\n- B1: [BV17eji6CE6M P1 01:00]  \n- B2: [BV17eji6CE6M P1 01:02]  \n- B3: [BV17eji6CE6M P1 01:00]  \n- B4: [BV17eji6CE6M P1 01:16]  \n- B5: [BV17eji6CE6M P1 01:20]  \n- B6: [BV17eji6CE6M P1 00:24]  \n- C1: [BV17eji6CE6M P1 01:06]  \n- D1: [BV17eji6CE6M P1 01:12]  \n- C2: [BV17eji6CE6M P1 01:14]  \n\n## 限制与适用模型\n```mermaid\nflowchart TD\n    E1[\"旧安卓机\"] --> E2[\"轻量本地模型\"]\n    E2 --> E3[\"本地问答、客服玩具\"]\n    E1 --> E4[\"性能/内存/显卡限制\"]\n    E4 --> E2\n    E5[\"顶级云端大模型\"] -.-> E1\n    E5 -.-> E3\n```\n- E1: [BV17eji6CE6M P1 00:01]  \n- E2: [BV17eji6CE6M P1 01:31]  \n- E3: [BV17eji6CE6M P1 01:37]  \n- E4: [BV17eji6CE6M P1 01:33]  \n- E5: [BV17eji6CE6M P1 01:29]  ",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"闲置安卓手机\"] --> A2[\"本地 AI 服务器 (PocketSurvii)\"]\n    A2 --> A3[\"局域网 AI 节点\"]\n    A3 --> A4[\"电脑、脚本、智能设备、客服页面\"]\n    A3 --> A5[\"云端 AI（需会员、联网）\"]\n    A2 --> A6[\"低成本、随身、离线\"]\n    A6 --> A7[\"数据不外传\"]"
+        },
+        {
+          "title": "使用场景与流程",
+          "code": "flowchart TD\n    B1[\"电脑写代码\"] --> B2[\"调用手机 AI\"]\n    B2 --> B3[\"不使用云端接口\"]\n    B3 --> B4[\"本地跑模型\"]\n    B4 --> B5[\"即时响应\"]\n    B5 --> B6[\"保护隐私\"]\n    C1[\"AI 小智玩具\"] --> B2\n    D1[\"门店/展厅资料问答\"] --> B2\n    B5 --> C2[\"本地客服/对话页面\"]"
+        },
+        {
+          "title": "限制与适用模型",
+          "code": "flowchart TD\n    E1[\"旧安卓机\"] --> E2[\"轻量本地模型\"]\n    E2 --> E3[\"本地问答、客服玩具\"]\n    E1 --> E4[\"性能/内存/显卡限制\"]\n    E4 --> E2\n    E5[\"顶级云端大模型\"] -.-> E1\n    E5 -.-> E3"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T16:24:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 旧安卓机改造成本地 AI 服务器知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"闲置安卓手机\"] --> A2[\"本地 AI 服务器 (PocketSurvii)\"]\n    A2 --> A3[\"局域网 AI 节点\"]\n    A3 --> A4[\"电脑、脚本、智能设备、客服页面\"]\n    A3 --> A5[\"云端 AI（需会员、联网）\"]\n    A2 --> A6[\"低成本、随身、离线\"]\n    A6 --> A7[\"数据不外传\"]\n```\n- A1: [BV17eji6CE6M P1 00:01]  \n- A2: [BV17eji6CE6M P1 00:38]  \n- A3: [BV17eji6CE6M P1 00:34]  \n- A4: [BV17eji6CE6M P1 00:51]  \n- A5: [BV17eji6CE6M P1 00:22]  \n- A6: [BV17eji6CE6M P1 00:05]  \n- A7: [BV17eji6CE6M P1 00:24]  \n\n## 使用场景与流程\n```mermaid\nflowchart TD\n    B1[\"电脑写代码\"] --> B2[\"调用手机 AI\"]\n    B2 --> B3[\"不使用云端接口\"]\n    B3 --> B4[\"本地跑模型\"]\n    B4 --> B5[\"即时响应\"]\n    B5 --> B6[\"保护隐私\"]\n    C1[\"AI 小智玩具\"] --> B2\n    D1[\"门店/展厅资料问答\"] --> B2\n    B5 --> C2[\"本地客服/对话页面\"]\n```\n- B1: [BV17eji6CE6M P1 01:00]  \n- B2: [BV17eji6CE6M P1 01:02]  \n- B3: [BV17eji6CE6M P1 01:00]  \n- B4: [BV17eji6CE6M P1 01:16]  \n- B5: [BV17eji6CE6M P1 01:20]  \n- B6: [BV17eji6CE6M P1 00:24]  \n- C1: [BV17eji6CE6M P1 01:06]  \n- D1: [BV17eji6CE6M P1 01:12]  \n- C2: [BV17eji6CE6M P1 01:14]  \n\n## 限制与适用模型\n```mermaid\nflowchart TD\n    E1[\"旧安卓机\"] --> E2[\"轻量本地模型\"]\n    E2 --> E3[\"本地问答、客服玩具\"]\n    E1 --> E4[\"性能/内存/显卡限制\"]\n    E4 --> E2\n    E5[\"顶级云端大模型\"] -.-> E1\n    E5 -.-> E3\n```\n- E1: [BV17eji6CE6M P1 00:01]  \n- E2: [BV17eji6CE6M P1 01:31]  \n- E3: [BV17eji6CE6M P1 01:37]  \n- E4: [BV17eji6CE6M P1 01:33]  \n- E5: [BV17eji6CE6M P1 01:29]  ",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"闲置安卓手机\"] --> A2[\"本地 AI 服务器 (PocketSurvii)\"]\n    A2 --> A3[\"局域网 AI 节点\"]\n    A3 --> A4[\"电脑、脚本、智能设备、客服页面\"]\n    A3 --> A5[\"云端 AI（需会员、联网）\"]\n    A2 --> A6[\"低成本、随身、离线\"]\n    A6 --> A7[\"数据不外传\"]"
+    },
+    {
+      "title": "使用场景与流程",
+      "code": "flowchart TD\n    B1[\"电脑写代码\"] --> B2[\"调用手机 AI\"]\n    B2 --> B3[\"不使用云端接口\"]\n    B3 --> B4[\"本地跑模型\"]\n    B4 --> B5[\"即时响应\"]\n    B5 --> B6[\"保护隐私\"]\n    C1[\"AI 小智玩具\"] --> B2\n    D1[\"门店/展厅资料问答\"] --> B2\n    B5 --> C2[\"本地客服/对话页面\"]"
+    },
+    {
+      "title": "限制与适用模型",
+      "code": "flowchart TD\n    E1[\"旧安卓机\"] --> E2[\"轻量本地模型\"]\n    E2 --> E3[\"本地问答、客服玩具\"]\n    E1 --> E4[\"性能/内存/显卡限制\"]\n    E4 --> E2\n    E5[\"顶级云端大模型\"] -.-> E1\n    E5 -.-> E3"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T16:24:36+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1AVKr6TEFS",
+  "title": "Hermes Agent 是什么？比 Claude Code、Codex 强在哪",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 940,
+  "text": "对比codex cloud code和HERMES这三款AI agent\n底层逻辑高度相似\n都有桌面端\n都能读写本地文件\n甚至可以直接操控电脑完成各种任务\n但具体用起来差异其实不小\n记忆体系是HERMES与另外两款最大的差异\ncodex和cloud code目前主要靠手动MD记忆文件\n加上自动记忆\n需要习以向下文方式注入\nHERMES走的是另一条路\n解决完一个复杂问题后\n他会自学习记住你的操作习惯和偏好\n自己创建skill技能\n下次遇到类似任务\n直接调用\n用的时间越长\n他越知道你是怎么做事的\n开源这一条\nHERMES是三者中唯一完全开源的\ncodex和cloud code则都是各自公司的必然产品\n模型绑定下codex和cloud code\n目前都更倾向于使用自家模型\n想切换其他模型\n通常的借助额外工具\n比如CCS witch\n而且实际用下来切到deep seek之后\n整体效果有时会出现明显下降\nHERMES没有这个顾虑\n模型可以随意切换\n不锈生态绑定\n也不用为了换个模型重新折腾一遍\n配件使用体验方面\n三款产品的定位感差异很明显\ncodex是完成度最高的computer use浏览器操控\n这些能力都已经打磨得相当成熟\ncloud code整体更偏向专业开发者\n工具链完整\n但上手需要一定门槛\nHERMES的思路则不太一样\n它不仅是一个坐在电脑前用的工具\n可以直接接入微信\nQQ飞书等常用平台\n你在手机上发一条消息\nagent就在后台帮你把事情办完\n不需要守在电脑旁边\n这种远程派活的方式\n对于想把agent真正融入日常工作流的人来说\n体验上有明显的区别\n我的建议就是\n如果你现在用codex或cloud code已经挺现小了\n没必要急着换\n但如果你是第一次接触AI agent或者不太懂技术\n只想找一个门槛低\n成本可控的方案\nHERMES值得试试\n很多时候一个月订阅费就够\n你用HERMES接入deep seek跑很久\n也不用担心账号封禁或订阅献祭的问题\n也正是基于长期记忆\nHERMES有个很有意思的设计叫profile\n你可以把每个profile理解成一个独立的AI智能体\n有自己的记忆技能\n人格和上下文彼此完全隔离\n对于重度使用A键子的人来说\n这个设计相当实用",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1AVKr6TEFS",
+  "published_at": "1784475005",
+  "fetched_at": "2026-08-09T01:11:04+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Hermes Agent 与 Codex、Cloud Code 对比概览\n\n## 总体特性对比\n```mermaid\nflowchart TD\n    A[\"三款 AI Agent\"] --> B[\"均提供桌面端\"]\n    A --> C[\"均能读写本地文件\"]\n    A --> D[\"均可操控电脑完成任务\"]\n    A --> E[\"底层逻辑高度相似\"]\n    A --> F[\"定位感差异显著\"]\n    F --> G[\"Codex：Computer‑use 浏览器操控，完成度最高\"]\n    F --> H[\"Cloud Code：面向专业开发者，工具链完整，上手有门槛\"]\n    F --> I[\"Hermes：低门槛、跨平台（PC、微信/QQ/飞书），侧重日常工作流\"]\n```\n\n## 记忆体系与技能\n```mermaid\nflowchart TD\n    A[\"记忆体系\"] --> B[\"Codex / Cloud Code：手动 MD 记忆 + 自动记忆，需要向下文注入\"]\n    A --> C[\"Hermes：解决复杂问题后自学习，记住操作习惯与偏好\"]\n    C --> D[\"自动创建 skill（技能）\"]\n    D --> E[\"下次相似任务直接调用\"]\n    C --> F[\"使用时间越长，记忆越精准\"]\n    C --> G[\"Profile 设计：每个 profile 为独立 AI 实体，记忆、人格、上下文完全隔离\"]\n```\n\n## 模型绑定与开源状态\n```mermaid\nflowchart TD\n    A[\"模型与生态\"] --> B[\"Codex / Cloud Code：绑定自家模型，切换需额外工具（如 CCS witch）\"]\n    B --> C[\"切换至 DeepSeek 可能导致效果下降\"]\n    A --> D[\"Hermes：完全开源，模型随意切换，无生态绑定限制\"]\n```\n\n## 使用场景与平台接入\n```mermaid\nflowchart TD\n    A[\"使用场景\"] --> B[\"桌面端直接操作（三款均支持）\"]\n    A --> C[\"移动端远程派活（仅 Hermes 支持）\"]\n    C --> D[\"可接入微信、QQ、飞书等平台\"]\n    D --> E[\"手机发消息，后台 Agent 完成任务\"]\n    B --> F[\"需要守在电脑旁\"]\n    E --> G[\"无需守在电脑旁，提升工作流融合度\"]\n```\n\n## 选型建议决策流\n```mermaid\nflowchart TD\n    A[\"是否已在使用 Codex 或 Cloud Code？\"] -->|是| B[\"是否对现有体验满意？\"]\n    B -->|满意| C[\"继续使用，无需更换\"]\n    B -->|不满意| D[\"考虑切换至 Hermes（低门槛、成本可控）\"]\n    A -->|否| E[\"首次接触 AI Agent 或技术了解有限\"]\n    E --> F[\"推荐 Hermes：月订阅费低、无账号封禁风险、支持 deep seek\"]\n    D --> G[\"评估模型切换成本与效果\"]\n    G --> H[\"若接受模型自由度，选择 Hermes\"]\n```",
+      "diagrams": [
+        {
+          "title": "总体特性对比",
+          "code": "flowchart TD\n    A[\"三款 AI Agent\"] --> B[\"均提供桌面端\"]\n    A --> C[\"均能读写本地文件\"]\n    A --> D[\"均可操控电脑完成任务\"]\n    A --> E[\"底层逻辑高度相似\"]\n    A --> F[\"定位感差异显著\"]\n    F --> G[\"Codex：Computer‑use 浏览器操控，完成度最高\"]\n    F --> H[\"Cloud Code：面向专业开发者，工具链完整，上手有门槛\"]\n    F --> I[\"Hermes：低门槛、跨平台（PC、微信/QQ/飞书），侧重日常工作流\"]"
+        },
+        {
+          "title": "记忆体系与技能",
+          "code": "flowchart TD\n    A[\"记忆体系\"] --> B[\"Codex / Cloud Code：手动 MD 记忆 + 自动记忆，需要向下文注入\"]\n    A --> C[\"Hermes：解决复杂问题后自学习，记住操作习惯与偏好\"]\n    C --> D[\"自动创建 skill（技能）\"]\n    D --> E[\"下次相似任务直接调用\"]\n    C --> F[\"使用时间越长，记忆越精准\"]\n    C --> G[\"Profile 设计：每个 profile 为独立 AI 实体，记忆、人格、上下文完全隔离\"]"
+        },
+        {
+          "title": "模型绑定与开源状态",
+          "code": "flowchart TD\n    A[\"模型与生态\"] --> B[\"Codex / Cloud Code：绑定自家模型，切换需额外工具（如 CCS witch）\"]\n    B --> C[\"切换至 DeepSeek 可能导致效果下降\"]\n    A --> D[\"Hermes：完全开源，模型随意切换，无生态绑定限制\"]"
+        },
+        {
+          "title": "使用场景与平台接入",
+          "code": "flowchart TD\n    A[\"使用场景\"] --> B[\"桌面端直接操作（三款均支持）\"]\n    A --> C[\"移动端远程派活（仅 Hermes 支持）\"]\n    C --> D[\"可接入微信、QQ、飞书等平台\"]\n    D --> E[\"手机发消息，后台 Agent 完成任务\"]\n    B --> F[\"需要守在电脑旁\"]\n    E --> G[\"无需守在电脑旁，提升工作流融合度\"]"
+        },
+        {
+          "title": "选型建议决策流",
+          "code": "flowchart TD\n    A[\"是否已在使用 Codex 或 Cloud Code？\"] -->|是| B[\"是否对现有体验满意？\"]\n    B -->|满意| C[\"继续使用，无需更换\"]\n    B -->|不满意| D[\"考虑切换至 Hermes（低门槛、成本可控）\"]\n    A -->|否| E[\"首次接触 AI Agent 或技术了解有限\"]\n    E --> F[\"推荐 Hermes：月订阅费低、无账号封禁风险、支持 deep seek\"]\n    D --> G[\"评估模型切换成本与效果\"]\n    G --> H[\"若接受模型自由度，选择 Hermes\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T01:11:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Hermes Agent 与 Codex、Cloud Code 对比概览\n\n## 总体特性对比\n```mermaid\nflowchart TD\n    A[\"三款 AI Agent\"] --> B[\"均提供桌面端\"]\n    A --> C[\"均能读写本地文件\"]\n    A --> D[\"均可操控电脑完成任务\"]\n    A --> E[\"底层逻辑高度相似\"]\n    A --> F[\"定位感差异显著\"]\n    F --> G[\"Codex：Computer‑use 浏览器操控，完成度最高\"]\n    F --> H[\"Cloud Code：面向专业开发者，工具链完整，上手有门槛\"]\n    F --> I[\"Hermes：低门槛、跨平台（PC、微信/QQ/飞书），侧重日常工作流\"]\n```\n\n## 记忆体系与技能\n```mermaid\nflowchart TD\n    A[\"记忆体系\"] --> B[\"Codex / Cloud Code：手动 MD 记忆 + 自动记忆，需要向下文注入\"]\n    A --> C[\"Hermes：解决复杂问题后自学习，记住操作习惯与偏好\"]\n    C --> D[\"自动创建 skill（技能）\"]\n    D --> E[\"下次相似任务直接调用\"]\n    C --> F[\"使用时间越长，记忆越精准\"]\n    C --> G[\"Profile 设计：每个 profile 为独立 AI 实体，记忆、人格、上下文完全隔离\"]\n```\n\n## 模型绑定与开源状态\n```mermaid\nflowchart TD\n    A[\"模型与生态\"] --> B[\"Codex / Cloud Code：绑定自家模型，切换需额外工具（如 CCS witch）\"]\n    B --> C[\"切换至 DeepSeek 可能导致效果下降\"]\n    A --> D[\"Hermes：完全开源，模型随意切换，无生态绑定限制\"]\n```\n\n## 使用场景与平台接入\n```mermaid\nflowchart TD\n    A[\"使用场景\"] --> B[\"桌面端直接操作（三款均支持）\"]\n    A --> C[\"移动端远程派活（仅 Hermes 支持）\"]\n    C --> D[\"可接入微信、QQ、飞书等平台\"]\n    D --> E[\"手机发消息，后台 Agent 完成任务\"]\n    B --> F[\"需要守在电脑旁\"]\n    E --> G[\"无需守在电脑旁，提升工作流融合度\"]\n```\n\n## 选型建议决策流\n```mermaid\nflowchart TD\n    A[\"是否已在使用 Codex 或 Cloud Code？\"] -->|是| B[\"是否对现有体验满意？\"]\n    B -->|满意| C[\"继续使用，无需更换\"]\n    B -->|不满意| D[\"考虑切换至 Hermes（低门槛、成本可控）\"]\n    A -->|否| E[\"首次接触 AI Agent 或技术了解有限\"]\n    E --> F[\"推荐 Hermes：月订阅费低、无账号封禁风险、支持 deep seek\"]\n    D --> G[\"评估模型切换成本与效果\"]\n    G --> H[\"若接受模型自由度，选择 Hermes\"]\n```",
+  "diagrams": [
+    {
+      "title": "总体特性对比",
+      "code": "flowchart TD\n    A[\"三款 AI Agent\"] --> B[\"均提供桌面端\"]\n    A --> C[\"均能读写本地文件\"]\n    A --> D[\"均可操控电脑完成任务\"]\n    A --> E[\"底层逻辑高度相似\"]\n    A --> F[\"定位感差异显著\"]\n    F --> G[\"Codex：Computer‑use 浏览器操控，完成度最高\"]\n    F --> H[\"Cloud Code：面向专业开发者，工具链完整，上手有门槛\"]\n    F --> I[\"Hermes：低门槛、跨平台（PC、微信/QQ/飞书），侧重日常工作流\"]"
+    },
+    {
+      "title": "记忆体系与技能",
+      "code": "flowchart TD\n    A[\"记忆体系\"] --> B[\"Codex / Cloud Code：手动 MD 记忆 + 自动记忆，需要向下文注入\"]\n    A --> C[\"Hermes：解决复杂问题后自学习，记住操作习惯与偏好\"]\n    C --> D[\"自动创建 skill（技能）\"]\n    D --> E[\"下次相似任务直接调用\"]\n    C --> F[\"使用时间越长，记忆越精准\"]\n    C --> G[\"Profile 设计：每个 profile 为独立 AI 实体，记忆、人格、上下文完全隔离\"]"
+    },
+    {
+      "title": "模型绑定与开源状态",
+      "code": "flowchart TD\n    A[\"模型与生态\"] --> B[\"Codex / Cloud Code：绑定自家模型，切换需额外工具（如 CCS witch）\"]\n    B --> C[\"切换至 DeepSeek 可能导致效果下降\"]\n    A --> D[\"Hermes：完全开源，模型随意切换，无生态绑定限制\"]"
+    },
+    {
+      "title": "使用场景与平台接入",
+      "code": "flowchart TD\n    A[\"使用场景\"] --> B[\"桌面端直接操作（三款均支持）\"]\n    A --> C[\"移动端远程派活（仅 Hermes 支持）\"]\n    C --> D[\"可接入微信、QQ、飞书等平台\"]\n    D --> E[\"手机发消息，后台 Agent 完成任务\"]\n    B --> F[\"需要守在电脑旁\"]\n    E --> G[\"无需守在电脑旁，提升工作流融合度\"]"
+    },
+    {
+      "title": "选型建议决策流",
+      "code": "flowchart TD\n    A[\"是否已在使用 Codex 或 Cloud Code？\"] -->|是| B[\"是否对现有体验满意？\"]\n    B -->|满意| C[\"继续使用，无需更换\"]\n    B -->|不满意| D[\"考虑切换至 Hermes（低门槛、成本可控）\"]\n    A -->|否| E[\"首次接触 AI Agent 或技术了解有限\"]\n    E --> F[\"推荐 Hermes：月订阅费低、无账号封禁风险、支持 deep seek\"]\n    D --> G[\"评估模型切换成本与效果\"]\n    G --> H[\"若接受模型自由度，选择 Hermes\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T01:11:30+00:00"
+}

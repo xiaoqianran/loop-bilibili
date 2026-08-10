@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1obA6zeEtE",
+  "title": "38. miniSGLang：一个简化版SGLang，仅5000行python【每天一个宝藏名词】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 120,
+  "text": "mini s阶line mini s阶段是GITHUB上的一个简化版\nS阶段\n他只用了大约5000行Python代码\n就复现了sg land的几乎所有要素\n比如REDX缓存张量\n并行和重叠调度\n目前在GITHUB上它已经超过了3000个st",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1obA6zeEtE",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:18:58+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# miniSGLang 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"miniSGLang\"] --> B[\"GitHub 项目\"]\n    A --> C[\"约5000行 Python 代码\"]\n    A --> D[\"复现 SGLang 大部分要素\"]\n    D --> E[\"REDX 缓存张量\"]\n    D --> F[\"并行调度\"]\n    D --> G[\"重叠调度\"]\n    A --> H[\">3000 个 stars\"]\n    I[\"SGLang 原始项目\"] --> D\n    A --> I\n```\n<!-- 关键结论: miniSGLang 是 GitHub 上的简化版 [BV1obA6zeEtE P1 00:00]；使用约5000行 Python 代码 [BV1obA6zeEtE P1 00:05]；复现 SGLang 几乎所有要素 [BV1obA6zeEtE P1 00:07]；包含 REDX 缓存张量 [BV1obA6zeEtE P1 00:10]、并行调度与重叠调度 [BV1obA6zeEtE P1 00:12]；已获 >3000 stars [BV1obA6zeEtE P1 00:13] -->\n\n## 功能实现流程\n```mermaid\nflowchart TD\n    A[\"miniSGLang\"] --> B[\"REDX 缓存张量实现\"]\n    A --> C[\"并行调度实现\"]\n    A --> D[\"重叠调度实现\"]\n    B --> E[\"张量缓存层\"]\n    C --> F[\"核心调度器\"]\n    D --> F\n    F --> G[\"执行引擎\"]\n    G --> H[\"性能提升\"]\n```\n<!-- 关键结论: miniSGLang 实现了 REDX 缓存张量、并行调度、重叠调度等核心功能，最终提升性能 [BV1obA6zeEtE P1 00:10-00:12] -->\n\n## 受欢迎程度与影响\n```mermaid\nflowchart TD\n    A[\"miniSGLang\"] --> B[\">3000 stars\"]\n    B --> C[\"GitHub 关注度\"]\n    C --> D[\"社区贡献\"]\n    D --> E[\"潜在用户\"]\n    E --> F[\"对 SGLang 生态的影响\"]\n    F --> G[\"学习资源\"]\n    G --> H[\"后续扩展可能\"]\n```\n<!-- 关键结论: 项目已获 >3000 stars，吸引社区关注并产生潜在用户，对 SGLang 生态产生影响，推动后续扩展 [BV1obA6zeEtE P1 00:13] -->",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"miniSGLang\"] --> B[\"GitHub 项目\"]\n    A --> C[\"约5000行 Python 代码\"]\n    A --> D[\"复现 SGLang 大部分要素\"]\n    D --> E[\"REDX 缓存张量\"]\n    D --> F[\"并行调度\"]\n    D --> G[\"重叠调度\"]\n    A --> H[\">3000 个 stars\"]\n    I[\"SGLang 原始项目\"] --> D\n    A --> I"
+        },
+        {
+          "title": "功能实现流程",
+          "code": "flowchart TD\n    A[\"miniSGLang\"] --> B[\"REDX 缓存张量实现\"]\n    A --> C[\"并行调度实现\"]\n    A --> D[\"重叠调度实现\"]\n    B --> E[\"张量缓存层\"]\n    C --> F[\"核心调度器\"]\n    D --> F\n    F --> G[\"执行引擎\"]\n    G --> H[\"性能提升\"]"
+        },
+        {
+          "title": "受欢迎程度与影响",
+          "code": "flowchart TD\n    A[\"miniSGLang\"] --> B[\">3000 stars\"]\n    B --> C[\"GitHub 关注度\"]\n    C --> D[\"社区贡献\"]\n    D --> E[\"潜在用户\"]\n    E --> F[\"对 SGLang 生态的影响\"]\n    F --> G[\"学习资源\"]\n    G --> H[\"后续扩展可能\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T18:18:04+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# miniSGLang 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"miniSGLang\"] --> B[\"GitHub 项目\"]\n    A --> C[\"约5000行 Python 代码\"]\n    A --> D[\"复现 SGLang 大部分要素\"]\n    D --> E[\"REDX 缓存张量\"]\n    D --> F[\"并行调度\"]\n    D --> G[\"重叠调度\"]\n    A --> H[\">3000 个 stars\"]\n    I[\"SGLang 原始项目\"] --> D\n    A --> I\n```\n<!-- 关键结论: miniSGLang 是 GitHub 上的简化版 [BV1obA6zeEtE P1 00:00]；使用约5000行 Python 代码 [BV1obA6zeEtE P1 00:05]；复现 SGLang 几乎所有要素 [BV1obA6zeEtE P1 00:07]；包含 REDX 缓存张量 [BV1obA6zeEtE P1 00:10]、并行调度与重叠调度 [BV1obA6zeEtE P1 00:12]；已获 >3000 stars [BV1obA6zeEtE P1 00:13] -->\n\n## 功能实现流程\n```mermaid\nflowchart TD\n    A[\"miniSGLang\"] --> B[\"REDX 缓存张量实现\"]\n    A --> C[\"并行调度实现\"]\n    A --> D[\"重叠调度实现\"]\n    B --> E[\"张量缓存层\"]\n    C --> F[\"核心调度器\"]\n    D --> F\n    F --> G[\"执行引擎\"]\n    G --> H[\"性能提升\"]\n```\n<!-- 关键结论: miniSGLang 实现了 REDX 缓存张量、并行调度、重叠调度等核心功能，最终提升性能 [BV1obA6zeEtE P1 00:10-00:12] -->\n\n## 受欢迎程度与影响\n```mermaid\nflowchart TD\n    A[\"miniSGLang\"] --> B[\">3000 stars\"]\n    B --> C[\"GitHub 关注度\"]\n    C --> D[\"社区贡献\"]\n    D --> E[\"潜在用户\"]\n    E --> F[\"对 SGLang 生态的影响\"]\n    F --> G[\"学习资源\"]\n    G --> H[\"后续扩展可能\"]\n```\n<!-- 关键结论: 项目已获 >3000 stars，吸引社区关注并产生潜在用户，对 SGLang 生态产生影响，推动后续扩展 [BV1obA6zeEtE P1 00:13] -->",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"miniSGLang\"] --> B[\"GitHub 项目\"]\n    A --> C[\"约5000行 Python 代码\"]\n    A --> D[\"复现 SGLang 大部分要素\"]\n    D --> E[\"REDX 缓存张量\"]\n    D --> F[\"并行调度\"]\n    D --> G[\"重叠调度\"]\n    A --> H[\">3000 个 stars\"]\n    I[\"SGLang 原始项目\"] --> D\n    A --> I"
+    },
+    {
+      "title": "功能实现流程",
+      "code": "flowchart TD\n    A[\"miniSGLang\"] --> B[\"REDX 缓存张量实现\"]\n    A --> C[\"并行调度实现\"]\n    A --> D[\"重叠调度实现\"]\n    B --> E[\"张量缓存层\"]\n    C --> F[\"核心调度器\"]\n    D --> F\n    F --> G[\"执行引擎\"]\n    G --> H[\"性能提升\"]"
+    },
+    {
+      "title": "受欢迎程度与影响",
+      "code": "flowchart TD\n    A[\"miniSGLang\"] --> B[\">3000 stars\"]\n    B --> C[\"GitHub 关注度\"]\n    C --> D[\"社区贡献\"]\n    D --> E[\"潜在用户\"]\n    E --> F[\"对 SGLang 生态的影响\"]\n    F --> G[\"学习资源\"]\n    G --> H[\"后续扩展可能\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:18:04+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV12vTn6sE6k",
+  "title": "四张 3070m 魔改卡跑大模型效果如何？vLLM 张量并行实测",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1476,
+  "text": "大家好啊\n现在是2026年7月2日的晚上\n11.12分\n录这个视频的是\n我们来看一下昨天这个对大模型\n本地推理设备的另一种畅想\n这个我们可以点进去看\n这个评论还挺多的\n这有一些评论是\n我我我来读一下吧\n我来读一下这些评论\n有一些我不理解的\n或者是有些我也不知道对不对的\n大家可以自己来看这位谁能代表汉堡汉堡王\n这位网友说\n我用的两张3070M16G跑千问27\nB q8\n最多60K上下文是4token嗯\n这个我手里面有四张3070M16G\n来进行VLLM张量并行的数据\n待会我们可以来看这个人所说的\n我就完全不懂这个艺海新街这位网友说\n3070M如果是10DE0000\n用早期v BIOS的那种不支持reset vd\n真说的我不太懂嗯\n这一位网友的评论是没有nv link\n多卡的意义在哪里\n这个待会我们可以看他实际推理模型的数据\n我们就可以看到他能不能用这个nv link\n其实\n我们去搞这个大模型\n本地推理是为了解决遇到的一些问题\n也并不是说非得要做的多么多么好\n他很多时候就是能用就行了\n够用就行了\n来都来了对吧\n这位黄伟达400\n这位网友说\n3070M这种本身就没考虑过多\n卡塞一箱的场景\n而且这卡最佳场景是开放式机架\n这个我就不太了解了\n这个为什么这张卡最佳场景是开放式机价呀\n这个我不太懂\n这位SPOTLITE这位网友\n所有笔记本魔改卡都不支持点对点拷贝\n所以只能走串行\n但是3070M核心和带宽都太弱了\n速度不快\n这时候还真不如V1004卡互联底板嗯\n他这个结论是对的吗\n所以只能走串行\n这个结论是对的吗\n我不知道嗯\n他说这时候还真不如V100加斯卡互联迪版\n我这个我这个视频里面说的是\n希望把这个大模型主机体积做到足够的小\n那么可以用这种3070M这种卡\n目的是因为这种这种卡\n它它的功耗没有那么高\n可以把体积给做小呃\n他说的肯定是不如V100加斯卡互联迪版的\n这个是肯定的\n但是V100它功耗太高了\n他那个体积太大了\n是这样\n这个是对的\n但是这个只能走串行\n我不知道说的是什么意思\n这对于这个视频的评论\n大家如果我也不知道\n有些有有些我我也不知道\n对不对\n大家也可以针对这个视频进行评论\n在这个视频下面\n大家可以一起来讨论讨论\n这个图片是哎我靠\n这个图片是使用四张3070F16G\n使用VLLM这个推理框架\n来对千文3.6R七BFP8\n和千文3.63105BFP8来进行的推理\n我们可以大体上来看一看\n他这个数据到底是如何的\n这个橙色的线是千万306315BF788\n这个模型我们可以先来看这个橙色的线\n可以看到这个呃预处理速度\n他这个下降还是这个下降其实并不快\n因为这次测量的是这个上下文\n长度在25万以内的\n也就是250K以内的数据\n这个已经是相当大的上游长度的范围了\n他的预处理速度的平均值大概在3500左右\n他输出速度的平均值大概在100托克斯每秒\n这个其实这个预处理速度和输出速度\n已经是嗯相当不错的了\n就是它能跑FP8这种模型\n预处理速度在3500\n输出速度在100\n这个这个其实已经不错了\n然后我们来看这个蓝色线\n蓝色线是天问3.6\n27比LP8\n这个模型可以看到他的预处理速度\n在最开始的时候\n它是大于1000的\n它那么它的平均值大概在800多根斯每秒吧\n从输出速度来看\n他最开始的预处理\n他最开始的输出速度是40\n那么平均下来他的输出速度可能只有30\n可能只有30头根子每秒\n这就是我们简单的看了一下\n使用四张3070M16G来\n使使用VLLM这个推框架来进行张亮并行\n它这个推理效果是如何的\n这个视频就先录到这儿了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV12vTn6sE6k",
+  "published_at": "1783007656",
+  "fetched_at": "2026-08-09T22:33:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 四张 3070M 魔改卡跑大模型效果概览\n\n## 知识总览 [BV12vTn6sE6k P1 03:19]  \n```mermaid\nflowchart TD\n    GPU[\"3070M 16G 魔改显卡\"]\n    VLLM[\"VLLM 推理框架\"]\n    TP[\"张量并行\"]\n    ModelA[\"千问3.6R 7B FP8\"]\n    ModelB[\"千问3.6 105B FP8\"]\n    UseCase[\"本地小体积大模型推理\"]\n    Lim[\"无 NVLink，仅串行\"]\n    PowerLow[\"功耗低\"]\n    SizeSmall[\"体积小\"]\n    V100[\"V100 高功耗大体积\"]\n    NVLink[\"NVLink（点对点拷贝）\"]\n\n    GPU --> VLLM\n    VLLM --> TP\n    TP --> ModelA\n    TP --> ModelB\n    GPU --> Lim\n    GPU --> PowerLow\n    GPU --> SizeSmall\n    V100 --> PowerLow\n    V100 --> SizeSmall\n    V100 --> NVLink\n    Lim --> NVLink\n    UseCase --> GPU\n```\n\n## 性能指标 [BV12vTn6sE6k P1 03:57]  \n```mermaid\nflowchart LR\n    ModelA[\"千问3.6R 7B FP8\"]\n    PreA[\"预处理速度 ≈ 3500 token/s\"]\n    OutA[\"输出速度 ≈ 100 token/s\"]\n    ModelB[\"千问3.6 105B FP8\"]\n    PreB[\"预处理速度 ≈ 800 token/s\"]\n    OutB[\"输出速度 ≈ 30 token/s\"]\n    Context[\"上下文 ≤ 250K token\"]\n\n    ModelA --> PreA\n    ModelA --> OutA\n    ModelB --> PreB\n    ModelB --> OutB\n    ModelA --> Context\n    ModelB --> Context\n```\n\n## 选型权衡 [BV12vTn6sE6k P1 02:30]  \n```mermaid\nflowchart TD\n    Need[\"需要小体积、低功耗\"]\n    Choose3070[\"选择 3070M 16G\"]\n    ChooseV100[\"选择 V100\"]\n    Adv3070[\"功耗低、体积小\"]\n    DisAdv3070[\"无 NVLink、只能串行、性能较低\"]\n    AdvV100[\"高性能、支持 NVLink\"]\n    DisAdvV100[\"功耗高、体积大\"]\n    Decision[\"根据需求做出选择\"]\n\n    Need --> Choose3070\n    Need --> ChooseV100\n    Choose3070 --> Adv3070\n    Choose3070 --> DisAdv3070\n    ChooseV100 --> AdvV100\n    ChooseV100 --> DisAdvV100\n    Adv3070 --> Decision\n    DisAdv3070 --> Decision\n    AdvV100 --> Decision\n    DisAdvV100 --> Decision\n```",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    GPU[\"3070M 16G 魔改显卡\"]\n    VLLM[\"VLLM 推理框架\"]\n    TP[\"张量并行\"]\n    ModelA[\"千问3.6R 7B FP8\"]\n    ModelB[\"千问3.6 105B FP8\"]\n    UseCase[\"本地小体积大模型推理\"]\n    Lim[\"无 NVLink，仅串行\"]\n    PowerLow[\"功耗低\"]\n    SizeSmall[\"体积小\"]\n    V100[\"V100 高功耗大体积\"]\n    NVLink[\"NVLink（点对点拷贝）\"]\n\n    GPU --> VLLM\n    VLLM --> TP\n    TP --> ModelA\n    TP --> ModelB\n    GPU --> Lim\n    GPU --> PowerLow\n    GPU --> SizeSmall\n    V100 --> PowerLow\n    V100 --> SizeSmall\n    V100 --> NVLink\n    Lim --> NVLink\n    UseCase --> GPU"
+        },
+        {
+          "title": "性能指标",
+          "code": "flowchart LR\n    ModelA[\"千问3.6R 7B FP8\"]\n    PreA[\"预处理速度 ≈ 3500 token/s\"]\n    OutA[\"输出速度 ≈ 100 token/s\"]\n    ModelB[\"千问3.6 105B FP8\"]\n    PreB[\"预处理速度 ≈ 800 token/s\"]\n    OutB[\"输出速度 ≈ 30 token/s\"]\n    Context[\"上下文 ≤ 250K token\"]\n\n    ModelA --> PreA\n    ModelA --> OutA\n    ModelB --> PreB\n    ModelB --> OutB\n    ModelA --> Context\n    ModelB --> Context"
+        },
+        {
+          "title": "选型权衡",
+          "code": "flowchart TD\n    Need[\"需要小体积、低功耗\"]\n    Choose3070[\"选择 3070M 16G\"]\n    ChooseV100[\"选择 V100\"]\n    Adv3070[\"功耗低、体积小\"]\n    DisAdv3070[\"无 NVLink、只能串行、性能较低\"]\n    AdvV100[\"高性能、支持 NVLink\"]\n    DisAdvV100[\"功耗高、体积大\"]\n    Decision[\"根据需求做出选择\"]\n\n    Need --> Choose3070\n    Need --> ChooseV100\n    Choose3070 --> Adv3070\n    Choose3070 --> DisAdv3070\n    ChooseV100 --> AdvV100\n    ChooseV100 --> DisAdvV100\n    Adv3070 --> Decision\n    DisAdv3070 --> Decision\n    AdvV100 --> Decision\n    DisAdvV100 --> Decision"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T22:45:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 四张 3070M 魔改卡跑大模型效果概览\n\n## 知识总览 [BV12vTn6sE6k P1 03:19]  \n```mermaid\nflowchart TD\n    GPU[\"3070M 16G 魔改显卡\"]\n    VLLM[\"VLLM 推理框架\"]\n    TP[\"张量并行\"]\n    ModelA[\"千问3.6R 7B FP8\"]\n    ModelB[\"千问3.6 105B FP8\"]\n    UseCase[\"本地小体积大模型推理\"]\n    Lim[\"无 NVLink，仅串行\"]\n    PowerLow[\"功耗低\"]\n    SizeSmall[\"体积小\"]\n    V100[\"V100 高功耗大体积\"]\n    NVLink[\"NVLink（点对点拷贝）\"]\n\n    GPU --> VLLM\n    VLLM --> TP\n    TP --> ModelA\n    TP --> ModelB\n    GPU --> Lim\n    GPU --> PowerLow\n    GPU --> SizeSmall\n    V100 --> PowerLow\n    V100 --> SizeSmall\n    V100 --> NVLink\n    Lim --> NVLink\n    UseCase --> GPU\n```\n\n## 性能指标 [BV12vTn6sE6k P1 03:57]  \n```mermaid\nflowchart LR\n    ModelA[\"千问3.6R 7B FP8\"]\n    PreA[\"预处理速度 ≈ 3500 token/s\"]\n    OutA[\"输出速度 ≈ 100 token/s\"]\n    ModelB[\"千问3.6 105B FP8\"]\n    PreB[\"预处理速度 ≈ 800 token/s\"]\n    OutB[\"输出速度 ≈ 30 token/s\"]\n    Context[\"上下文 ≤ 250K token\"]\n\n    ModelA --> PreA\n    ModelA --> OutA\n    ModelB --> PreB\n    ModelB --> OutB\n    ModelA --> Context\n    ModelB --> Context\n```\n\n## 选型权衡 [BV12vTn6sE6k P1 02:30]  \n```mermaid\nflowchart TD\n    Need[\"需要小体积、低功耗\"]\n    Choose3070[\"选择 3070M 16G\"]\n    ChooseV100[\"选择 V100\"]\n    Adv3070[\"功耗低、体积小\"]\n    DisAdv3070[\"无 NVLink、只能串行、性能较低\"]\n    AdvV100[\"高性能、支持 NVLink\"]\n    DisAdvV100[\"功耗高、体积大\"]\n    Decision[\"根据需求做出选择\"]\n\n    Need --> Choose3070\n    Need --> ChooseV100\n    Choose3070 --> Adv3070\n    Choose3070 --> DisAdv3070\n    ChooseV100 --> AdvV100\n    ChooseV100 --> DisAdvV100\n    Adv3070 --> Decision\n    DisAdv3070 --> Decision\n    AdvV100 --> Decision\n    DisAdvV100 --> Decision\n```",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    GPU[\"3070M 16G 魔改显卡\"]\n    VLLM[\"VLLM 推理框架\"]\n    TP[\"张量并行\"]\n    ModelA[\"千问3.6R 7B FP8\"]\n    ModelB[\"千问3.6 105B FP8\"]\n    UseCase[\"本地小体积大模型推理\"]\n    Lim[\"无 NVLink，仅串行\"]\n    PowerLow[\"功耗低\"]\n    SizeSmall[\"体积小\"]\n    V100[\"V100 高功耗大体积\"]\n    NVLink[\"NVLink（点对点拷贝）\"]\n\n    GPU --> VLLM\n    VLLM --> TP\n    TP --> ModelA\n    TP --> ModelB\n    GPU --> Lim\n    GPU --> PowerLow\n    GPU --> SizeSmall\n    V100 --> PowerLow\n    V100 --> SizeSmall\n    V100 --> NVLink\n    Lim --> NVLink\n    UseCase --> GPU"
+    },
+    {
+      "title": "性能指标",
+      "code": "flowchart LR\n    ModelA[\"千问3.6R 7B FP8\"]\n    PreA[\"预处理速度 ≈ 3500 token/s\"]\n    OutA[\"输出速度 ≈ 100 token/s\"]\n    ModelB[\"千问3.6 105B FP8\"]\n    PreB[\"预处理速度 ≈ 800 token/s\"]\n    OutB[\"输出速度 ≈ 30 token/s\"]\n    Context[\"上下文 ≤ 250K token\"]\n\n    ModelA --> PreA\n    ModelA --> OutA\n    ModelB --> PreB\n    ModelB --> OutB\n    ModelA --> Context\n    ModelB --> Context"
+    },
+    {
+      "title": "选型权衡",
+      "code": "flowchart TD\n    Need[\"需要小体积、低功耗\"]\n    Choose3070[\"选择 3070M 16G\"]\n    ChooseV100[\"选择 V100\"]\n    Adv3070[\"功耗低、体积小\"]\n    DisAdv3070[\"无 NVLink、只能串行、性能较低\"]\n    AdvV100[\"高性能、支持 NVLink\"]\n    DisAdvV100[\"功耗高、体积大\"]\n    Decision[\"根据需求做出选择\"]\n\n    Need --> Choose3070\n    Need --> ChooseV100\n    Choose3070 --> Adv3070\n    Choose3070 --> DisAdv3070\n    ChooseV100 --> AdvV100\n    ChooseV100 --> DisAdvV100\n    Adv3070 --> Decision\n    DisAdv3070 --> Decision\n    AdvV100 --> Decision\n    DisAdvV100 --> Decision"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:45:35+00:00"
+}

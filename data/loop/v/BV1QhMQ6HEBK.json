@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1QhMQ6HEBK",
+  "title": "VsCode/IDEA内置copilot插件直接接入deepseek api",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1617,
+  "text": "这个视频想给大家分享一下\n如何在VSCODE内置的GITHUBCOPLOT的插件\n以及IDA里面可拍了的插件中添加自定义的API\n大家可以看到\n我现在是已经成功添加了deep sick的API\n而且IDEA是没有使用第三方插件的\nvs code vscode用了这个\n但是其实自定义API的方式\n可以不依靠这个插件也可以实现\nWESTCODE里面呢是点击manage model\n点击添加模型\n这里最底下有个用户端点\n他先让我输入一个APIKE\n然后这里有三个API的模式选项\n目前是只有新的flash模型才支持这个response API\n而且我测试起来发现这个response API\nflash也没法成功的使用\n它会报错的原因我还没查清楚\n反正我现在打算先使用呃\n老的这个第一个模式\n点击完以后就会发现\n这里出现了一个用户自定义配置\n可以看到这里有三段\n第一段是官方那个auto模型\n第二个这个东西呢\n是使用使用刚才的迪斯科V4for cp的chat\n这个插件接入的模型当中\n如果你把思考模式改成了max\n它就会自动跳出这一段\n这个这个没有关系\n第三段才是我们需要改的\n这是我已经写好的一个配置\n第一个name是你自己的API组的名字\n随便取什么都可以\n后面几个我就没有改\n这个API type就是API格式的模式\n下面这个models我添加了两个模型\n第三个点是我修改了最大输入token这个属性\n我把它改成了这个叫context window\n这个它就可以直接读出它的最大上下文是一兆\n然后是下面这两个多出来的新的属性\n这个是高速插件\n这个模型它支持三档的思维深度\n然后一个属性我也不知道是什么\n但是AI告诉我要怎么写\n那么只需要把这一段整个复制粘贴进JASON\n配置里面\n它就可以读取出来了\n大家可以看到这里已经多出来了一个\n我们点击manage model\n发现这个模型列表里面已经出现了\n我们自己这个组\n然后呢点击这边的固定模型\n就可以把两个都固定出来\n但在这个插件里面我们会发现自己接入的API\n它在这里会少某一些信息\n而且还有一个问题\n就是在WHISTCODE新增的智能体面板中\n不管是手动添加的还是通过插件添加的\n它都无法调整思考深度\n所以说总的来说在VSCODE里面使用的话\n还是建议使用官方的这个插件会方便很多\n那么我们再来看一下IDA怎么接他\n这里的插件市场是没有官方开发的中介插件的\n其他的插件我也还没试过\n之前由于我订阅的是学生免费套餐\n他这里还是有一些高级模型可以用的\n但是昨天打开发现这些高级模型全都被取消了\n只有一个auto\n还是蛮恶心的\n所以现在是必须得自己想办法接API的时候\n那么还是刚才一样的方法添加模型\n用户自定义端点\nProvide name\n这个可以随便填\nAPI key和API模式\n选择这里的model id\n需要根据刚才这一段自己填写IDA\n它这里并没有像vs code一样\n提供了手动修改JSON配置的方案\n所以说这里就只能自己想办法填\n这样两个加起来刚好是一兆上下文保存\n那么这里就可以看到\n这就是我们自己添加进来的API\n点这里设置还可以添加模型\n可以添加pro\n但是我们会发现\n他这里的思考模式是不支持使用的\n其他几个信息\n这里这个信息也没有\n所以说目前它的功能是比较残缺的\n听说这两个IDE都可以使用cloud code插件代替后拍的\n这个方案呢\n目前我还没试过\n那么再提一下\n想要在这里的智能体面板\n使用到我们自己添加的配置\n尤其是这个插件自自定义添加的配置\n我们需要修改这个面板的配置文件\n它的路径在这个位置\n有个叫sitting stan jason\n我们打开修改需要增加这条属性\n这条属性的作用就是我们可以将这个插件\n它引入的两个API\n直接接入到智能体面板当中使用\n如果不加这一条的话\n我们就只有一个刚才的手动写用户JSON配置\n这个方案才能把API接进去",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1QhMQ6HEBK",
+  "published_at": "1785731480",
+  "fetched_at": "2026-08-09T17:13:50+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# VSCode 与 IDA 自定义 DeepSeek API 整合图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"VSCode 内置 GitHub Copilot 插件\"] --> B1[\"支持自定义 API（可选）\"]\n    A2[\"IDA 插件市场\"] --> B2[\"无官方中介插件\"]\n    B1 --> C1[\"添加 DeepSeek API\"]\n    B2 --> C2[\"手动添加 DeepSeek API\"]\n    C1 --> D1[\"使用官方插件更便捷\"]\n    C2 --> D2[\"需自行填写端点与配置\"]\n    D1 --> E1[\"功能完整（支持思考深度）\"]\n    D2 --> E2[\"功能残缺（思考深度不可调）\"]\n```\n\n## VSCode 添加自定义 API 流程\n```mermaid\nflowchart LR\n    S1[\"打开 VSCode\"] --> S2[\"打开 Copilot 插件设置\"]\n    S2 --> S3[\"点击 Manage Model\"]\n    S3 --> S4[\"点击 Add Model\"]\n    S4 --> S5[\"在底部选择 User Endpoint\"]\n    S5 --> S6[\"输入 API Key\"]\n    S6 --> S7[\"选择模型模式（旧模式/新 Flash）\"]\n    S7 --> S8[\"保存后出现 User Custom Config\"]\n    S8 --> S9[\"编辑第三段 JSON（自定义模型）\"]\n    S9 --> S10[\"设置 name、api_type、models、context_window 等属性\"]\n    S10 --> S11[\"保存并在模型列表中看到自定义组\"]\n    S11 --> S12[\"在 Copilot 面板中使用自定义模型\"]\n```\n\n## VSCode 限制与注意事项\n```mermaid\nflowchart TD\n    L1[\"新 Flash 模型的 response API\"] --> L2[\"目前不支持成功调用\"]\n    L2 --> L3[\"报错原因未明\"]\n    L4[\"思考深度设置\"] --> L5[\"在智能体面板中不可调\"]\n    L6[\"官方插件推荐使用\"] --> L7[\"提供更完整功能\"]\n    L1 --> L8[\"使用旧模式作为替代\"]\n    L5 --> L8\n```\n\n## IDA 添加自定义 API 流程\n```mermaid\nflowchart LR\n    I1[\"打开 IDA\"] --> I2[\"进入插件设置\"]\n    I2 --> I3[\"点击 Add Model\"]\n    I3 --> I4[\"选择 User Endpoint\"]\n    I4 --> I5[\"填写 Provide Name（任意）\"]\n    I5 --> I6[\"输入 API Key 与 API Mode\"]\n    I6 --> I7[\"填写 Model ID（对应 DeepSeek）\"]\n    I7 --> I8[\"保存后模型列表出现自定义组\"]\n    I8 --> I9[\"在插件面板中使用模型（思考深度不可调）\"]\n```\n\n## 配置文件编辑以启用智能体面板\n```mermaid\nflowchart TD\n    C1[\"定位配置文件 (settings.json)\"] --> C2[\"打开文件编辑\"]\n    C2 --> C3[\"在 JSON 中添加 new_property\"]\n    C3 --> C4[\"new_property 用于将自定义 API 引入智能体面板\"]\n    C4 --> C5[\"保存文件\"]\n    C5 --> C6[\"重新加载插件\"]\n    C6 --> C7[\"智能体面板可直接使用两个自定义 API\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"VSCode 内置 GitHub Copilot 插件\"] --> B1[\"支持自定义 API（可选）\"]\n    A2[\"IDA 插件市场\"] --> B2[\"无官方中介插件\"]\n    B1 --> C1[\"添加 DeepSeek API\"]\n    B2 --> C2[\"手动添加 DeepSeek API\"]\n    C1 --> D1[\"使用官方插件更便捷\"]\n    C2 --> D2[\"需自行填写端点与配置\"]\n    D1 --> E1[\"功能完整（支持思考深度）\"]\n    D2 --> E2[\"功能残缺（思考深度不可调）\"]"
+        },
+        {
+          "title": "VSCode 添加自定义 API 流程",
+          "code": "flowchart LR\n    S1[\"打开 VSCode\"] --> S2[\"打开 Copilot 插件设置\"]\n    S2 --> S3[\"点击 Manage Model\"]\n    S3 --> S4[\"点击 Add Model\"]\n    S4 --> S5[\"在底部选择 User Endpoint\"]\n    S5 --> S6[\"输入 API Key\"]\n    S6 --> S7[\"选择模型模式（旧模式/新 Flash）\"]\n    S7 --> S8[\"保存后出现 User Custom Config\"]\n    S8 --> S9[\"编辑第三段 JSON（自定义模型）\"]\n    S9 --> S10[\"设置 name、api_type、models、context_window 等属性\"]\n    S10 --> S11[\"保存并在模型列表中看到自定义组\"]\n    S11 --> S12[\"在 Copilot 面板中使用自定义模型\"]"
+        },
+        {
+          "title": "VSCode 限制与注意事项",
+          "code": "flowchart TD\n    L1[\"新 Flash 模型的 response API\"] --> L2[\"目前不支持成功调用\"]\n    L2 --> L3[\"报错原因未明\"]\n    L4[\"思考深度设置\"] --> L5[\"在智能体面板中不可调\"]\n    L6[\"官方插件推荐使用\"] --> L7[\"提供更完整功能\"]\n    L1 --> L8[\"使用旧模式作为替代\"]\n    L5 --> L8"
+        },
+        {
+          "title": "IDA 添加自定义 API 流程",
+          "code": "flowchart LR\n    I1[\"打开 IDA\"] --> I2[\"进入插件设置\"]\n    I2 --> I3[\"点击 Add Model\"]\n    I3 --> I4[\"选择 User Endpoint\"]\n    I4 --> I5[\"填写 Provide Name（任意）\"]\n    I5 --> I6[\"输入 API Key 与 API Mode\"]\n    I6 --> I7[\"填写 Model ID（对应 DeepSeek）\"]\n    I7 --> I8[\"保存后模型列表出现自定义组\"]\n    I8 --> I9[\"在插件面板中使用模型（思考深度不可调）\"]"
+        },
+        {
+          "title": "配置文件编辑以启用智能体面板",
+          "code": "flowchart TD\n    C1[\"定位配置文件 (settings.json)\"] --> C2[\"打开文件编辑\"]\n    C2 --> C3[\"在 JSON 中添加 new_property\"]\n    C3 --> C4[\"new_property 用于将自定义 API 引入智能体面板\"]\n    C4 --> C5[\"保存文件\"]\n    C5 --> C6[\"重新加载插件\"]\n    C6 --> C7[\"智能体面板可直接使用两个自定义 API\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T17:14:06+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# VSCode 与 IDA 自定义 DeepSeek API 整合图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"VSCode 内置 GitHub Copilot 插件\"] --> B1[\"支持自定义 API（可选）\"]\n    A2[\"IDA 插件市场\"] --> B2[\"无官方中介插件\"]\n    B1 --> C1[\"添加 DeepSeek API\"]\n    B2 --> C2[\"手动添加 DeepSeek API\"]\n    C1 --> D1[\"使用官方插件更便捷\"]\n    C2 --> D2[\"需自行填写端点与配置\"]\n    D1 --> E1[\"功能完整（支持思考深度）\"]\n    D2 --> E2[\"功能残缺（思考深度不可调）\"]\n```\n\n## VSCode 添加自定义 API 流程\n```mermaid\nflowchart LR\n    S1[\"打开 VSCode\"] --> S2[\"打开 Copilot 插件设置\"]\n    S2 --> S3[\"点击 Manage Model\"]\n    S3 --> S4[\"点击 Add Model\"]\n    S4 --> S5[\"在底部选择 User Endpoint\"]\n    S5 --> S6[\"输入 API Key\"]\n    S6 --> S7[\"选择模型模式（旧模式/新 Flash）\"]\n    S7 --> S8[\"保存后出现 User Custom Config\"]\n    S8 --> S9[\"编辑第三段 JSON（自定义模型）\"]\n    S9 --> S10[\"设置 name、api_type、models、context_window 等属性\"]\n    S10 --> S11[\"保存并在模型列表中看到自定义组\"]\n    S11 --> S12[\"在 Copilot 面板中使用自定义模型\"]\n```\n\n## VSCode 限制与注意事项\n```mermaid\nflowchart TD\n    L1[\"新 Flash 模型的 response API\"] --> L2[\"目前不支持成功调用\"]\n    L2 --> L3[\"报错原因未明\"]\n    L4[\"思考深度设置\"] --> L5[\"在智能体面板中不可调\"]\n    L6[\"官方插件推荐使用\"] --> L7[\"提供更完整功能\"]\n    L1 --> L8[\"使用旧模式作为替代\"]\n    L5 --> L8\n```\n\n## IDA 添加自定义 API 流程\n```mermaid\nflowchart LR\n    I1[\"打开 IDA\"] --> I2[\"进入插件设置\"]\n    I2 --> I3[\"点击 Add Model\"]\n    I3 --> I4[\"选择 User Endpoint\"]\n    I4 --> I5[\"填写 Provide Name（任意）\"]\n    I5 --> I6[\"输入 API Key 与 API Mode\"]\n    I6 --> I7[\"填写 Model ID（对应 DeepSeek）\"]\n    I7 --> I8[\"保存后模型列表出现自定义组\"]\n    I8 --> I9[\"在插件面板中使用模型（思考深度不可调）\"]\n```\n\n## 配置文件编辑以启用智能体面板\n```mermaid\nflowchart TD\n    C1[\"定位配置文件 (settings.json)\"] --> C2[\"打开文件编辑\"]\n    C2 --> C3[\"在 JSON 中添加 new_property\"]\n    C3 --> C4[\"new_property 用于将自定义 API 引入智能体面板\"]\n    C4 --> C5[\"保存文件\"]\n    C5 --> C6[\"重新加载插件\"]\n    C6 --> C7[\"智能体面板可直接使用两个自定义 API\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"VSCode 内置 GitHub Copilot 插件\"] --> B1[\"支持自定义 API（可选）\"]\n    A2[\"IDA 插件市场\"] --> B2[\"无官方中介插件\"]\n    B1 --> C1[\"添加 DeepSeek API\"]\n    B2 --> C2[\"手动添加 DeepSeek API\"]\n    C1 --> D1[\"使用官方插件更便捷\"]\n    C2 --> D2[\"需自行填写端点与配置\"]\n    D1 --> E1[\"功能完整（支持思考深度）\"]\n    D2 --> E2[\"功能残缺（思考深度不可调）\"]"
+    },
+    {
+      "title": "VSCode 添加自定义 API 流程",
+      "code": "flowchart LR\n    S1[\"打开 VSCode\"] --> S2[\"打开 Copilot 插件设置\"]\n    S2 --> S3[\"点击 Manage Model\"]\n    S3 --> S4[\"点击 Add Model\"]\n    S4 --> S5[\"在底部选择 User Endpoint\"]\n    S5 --> S6[\"输入 API Key\"]\n    S6 --> S7[\"选择模型模式（旧模式/新 Flash）\"]\n    S7 --> S8[\"保存后出现 User Custom Config\"]\n    S8 --> S9[\"编辑第三段 JSON（自定义模型）\"]\n    S9 --> S10[\"设置 name、api_type、models、context_window 等属性\"]\n    S10 --> S11[\"保存并在模型列表中看到自定义组\"]\n    S11 --> S12[\"在 Copilot 面板中使用自定义模型\"]"
+    },
+    {
+      "title": "VSCode 限制与注意事项",
+      "code": "flowchart TD\n    L1[\"新 Flash 模型的 response API\"] --> L2[\"目前不支持成功调用\"]\n    L2 --> L3[\"报错原因未明\"]\n    L4[\"思考深度设置\"] --> L5[\"在智能体面板中不可调\"]\n    L6[\"官方插件推荐使用\"] --> L7[\"提供更完整功能\"]\n    L1 --> L8[\"使用旧模式作为替代\"]\n    L5 --> L8"
+    },
+    {
+      "title": "IDA 添加自定义 API 流程",
+      "code": "flowchart LR\n    I1[\"打开 IDA\"] --> I2[\"进入插件设置\"]\n    I2 --> I3[\"点击 Add Model\"]\n    I3 --> I4[\"选择 User Endpoint\"]\n    I4 --> I5[\"填写 Provide Name（任意）\"]\n    I5 --> I6[\"输入 API Key 与 API Mode\"]\n    I6 --> I7[\"填写 Model ID（对应 DeepSeek）\"]\n    I7 --> I8[\"保存后模型列表出现自定义组\"]\n    I8 --> I9[\"在插件面板中使用模型（思考深度不可调）\"]"
+    },
+    {
+      "title": "配置文件编辑以启用智能体面板",
+      "code": "flowchart TD\n    C1[\"定位配置文件 (settings.json)\"] --> C2[\"打开文件编辑\"]\n    C2 --> C3[\"在 JSON 中添加 new_property\"]\n    C3 --> C4[\"new_property 用于将自定义 API 引入智能体面板\"]\n    C4 --> C5[\"保存文件\"]\n    C5 --> C6[\"重新加载插件\"]\n    C6 --> C7[\"智能体面板可直接使用两个自定义 API\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T17:14:06+00:00"
+}

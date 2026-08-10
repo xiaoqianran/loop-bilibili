@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1FUMP6vEq6",
+  "title": "Deepseek接Codex，效果如何？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 789,
+  "text": "真的是不忍直视\n用deep sk接入codex的朋友\n你们用的还好吗\n我看很多博主在讲codex教学的时候\n都会提到用deep sk接入codex\n我今天就想对比一下\n用deep sk介入的cos x和原版的codex\n到底区别有多大\n我今天给他们准备了两个比较典型的任务\n第一个呢是让他们阅读OpenAI最新发布的A\n该报告纯英文的\n并且让他们总结成三页的PPT\n第二个我让他们调用REMOTION\n根据这个视频的主题做一个四秒钟的开头动画\n第一个任务就差点翻车\n我调用了presentation插件\n把这段提示词输进去\n让他去读取这个文章\n并且生成三页PPT\n先看原版codex的效果\n这是第一页\n第二页\n第三页\n整体的美观度和表述的清晰度\n还是比较容易让人理解\n再看deep sic版本的\n打开一看三页全都是占位符\n当然当我给他指出来之后\n他去修正了一遍\n现在就可以了\n整个三页看下来也算还行\n中规中矩\n比较简洁明了\n第二个任务也算是有惊无险\n还是先看原版的codex\n调用REMOTION插件把提示词输进去\n运行过程中它会抽帧去看一下效果\n然后整体运行完毕之后会做一个汇报\n然后有一个演示可以看结果\n我们放到后边一起对比\n再来看deep sk版codex调用REMOTION插件\n然后运行过程中的语言\n不知道为什么突然变成了英语\n然后也没有像codex一样\n中间给你一些图片让你观察\n然后生成之后呢\n也没有预览好的\n现在我们把他们都打开\n这个是codex做的\n这个是deep sic做的\n通过上面两个任务\ncodex接入自家模型和插件做任务\n从从容容\n游刃有余\n怪不得CEO山姆奥特曼公开说\n支持所有模型接入codex\n其实是对自己生态有信心\n如果用不了原生态\n那接入deep sk也能发挥八成的效果\n还是能完成基本任务\n如果非要接外部模型\n还是推荐多模态效果会更好一些",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1FUMP6vEq6",
+  "published_at": "1783170409",
+  "fetched_at": "2026-08-08T16:01:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 接入 Codex 效果对比图谱\n\n## 总览比较\n```mermaid\nflowchart TD\n    A1[\"原版 Codex\"] --> B1[\"任务 1：生成 PPT\"]\n    A1 --> B2[\"任务 2：生成动画\"]\n    A2[\"DeepSeek 接入 Codex\"] --> C1[\"任务 1：生成 PPT\"]\n    A2 --> C2[\"任务 2：生成动画\"]\n    B1 --> D1[\"输出：三页完整 PPT（美观、清晰）\"]\n    C1 --> D2[\"输出：三页占位符 → 修正后可用\"]\n    B2 --> E1[\"输出：动画预览、语言中文、图片观察\"]\n    C2 --> E2[\"输出：语言突变英文、无图片观察、预览差\"]\n    D1 --> F[\"整体评价：表现优异\"]\n    D2 --> F\n    E1 --> G[\"整体评价：基本完成\"]\n    E2 --> G\n    A2 --> H[\"官方声明：支持所有模型接入 Codex\"]\n    H --> I[\"生态信心 → 80% 效果\"]\n    I --> J[\"推荐：多模态模型效果更佳\"]\n```\n\n## 任务 1：阅读报告并生成 PPT 流程\n```mermaid\nflowchart LR\n    T1[\"读取 OpenAI 最新英文报告\"] --> T2[\"使用 presentation 插件\"]\n    T2 --> T3[\"提示词：生成 3 页 PPT\"]\n    T3 --> O1[\"原版 Codex 直接输出完整 PPT\"]\n    T3 --> O2[\"DeepSeek 首次输出占位符\"]\n    O2 --> R1[\"用户指出占位符问题\"]\n    R1 --> O2b[\"DeepSeek 修正后输出可用 PPT\"]\n    O1 --> S1[\"美观度高、表述清晰\"]\n    O2b --> S2[\"中规中矩、简洁明了\"]\n    S1 --> C[\"任务 1 结论：原版更优\"]\n    S2 --> C\n```\n\n## 任务 2：调用 REMOTION 插件生成动画流程\n```mermaid\nflowchart LR\n    A1[\"调用 REMOTION 插件\"] --> P1[\"提示词：根据视频主题做 4 秒动画\"]\n    P1 --> O1[\"原版 Codex 运行\"]\n    O1 --> O1a[\"抽帧检查、中文输出\"]\n    O1a --> O1b[\"生成动画并预览\"]\n    P1 --> O2[\"DeepSeek Codex 运行\"]\n    O2 --> O2a[\"运行中语言突变为英文\"]\n    O2a --> O2b[\"缺少图片观察步骤\"]\n    O2b --> O2c[\"生成的动画预览差\"]\n    O1b --> C1[\"任务 2 结论：原版表现更好\"]\n    O2c --> C1\n```\n\n## 结论与建议\n```mermaid\nflowchart TD\n    S1[\"原版 Codex 在任务 1、任务 2 表现更佳\"] --> S2[\"DeepSeek 接入后可达约 80% 效果\"]\n    S2 --> S3[\"若无法使用原生态模型，可考虑 DeepSeek 作为备选\"]\n    S3 --> S4[\"对多模态任务，推荐使用支持多模态的模型\"]\n    S4 --> S5[\"官方立场：Codex 支持所有模型接入\"]\n    S5 --> S6[\"生态信心驱动模型多样化接入\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览比较",
+          "code": "flowchart TD\n    A1[\"原版 Codex\"] --> B1[\"任务 1：生成 PPT\"]\n    A1 --> B2[\"任务 2：生成动画\"]\n    A2[\"DeepSeek 接入 Codex\"] --> C1[\"任务 1：生成 PPT\"]\n    A2 --> C2[\"任务 2：生成动画\"]\n    B1 --> D1[\"输出：三页完整 PPT（美观、清晰）\"]\n    C1 --> D2[\"输出：三页占位符 → 修正后可用\"]\n    B2 --> E1[\"输出：动画预览、语言中文、图片观察\"]\n    C2 --> E2[\"输出：语言突变英文、无图片观察、预览差\"]\n    D1 --> F[\"整体评价：表现优异\"]\n    D2 --> F\n    E1 --> G[\"整体评价：基本完成\"]\n    E2 --> G\n    A2 --> H[\"官方声明：支持所有模型接入 Codex\"]\n    H --> I[\"生态信心 → 80% 效果\"]\n    I --> J[\"推荐：多模态模型效果更佳\"]"
+        },
+        {
+          "title": "任务 1：阅读报告并生成 PPT 流程",
+          "code": "flowchart LR\n    T1[\"读取 OpenAI 最新英文报告\"] --> T2[\"使用 presentation 插件\"]\n    T2 --> T3[\"提示词：生成 3 页 PPT\"]\n    T3 --> O1[\"原版 Codex 直接输出完整 PPT\"]\n    T3 --> O2[\"DeepSeek 首次输出占位符\"]\n    O2 --> R1[\"用户指出占位符问题\"]\n    R1 --> O2b[\"DeepSeek 修正后输出可用 PPT\"]\n    O1 --> S1[\"美观度高、表述清晰\"]\n    O2b --> S2[\"中规中矩、简洁明了\"]\n    S1 --> C[\"任务 1 结论：原版更优\"]\n    S2 --> C"
+        },
+        {
+          "title": "任务 2：调用 REMOTION 插件生成动画流程",
+          "code": "flowchart LR\n    A1[\"调用 REMOTION 插件\"] --> P1[\"提示词：根据视频主题做 4 秒动画\"]\n    P1 --> O1[\"原版 Codex 运行\"]\n    O1 --> O1a[\"抽帧检查、中文输出\"]\n    O1a --> O1b[\"生成动画并预览\"]\n    P1 --> O2[\"DeepSeek Codex 运行\"]\n    O2 --> O2a[\"运行中语言突变为英文\"]\n    O2a --> O2b[\"缺少图片观察步骤\"]\n    O2b --> O2c[\"生成的动画预览差\"]\n    O1b --> C1[\"任务 2 结论：原版表现更好\"]\n    O2c --> C1"
+        },
+        {
+          "title": "结论与建议",
+          "code": "flowchart TD\n    S1[\"原版 Codex 在任务 1、任务 2 表现更佳\"] --> S2[\"DeepSeek 接入后可达约 80% 效果\"]\n    S2 --> S3[\"若无法使用原生态模型，可考虑 DeepSeek 作为备选\"]\n    S3 --> S4[\"对多模态任务，推荐使用支持多模态的模型\"]\n    S4 --> S5[\"官方立场：Codex 支持所有模型接入\"]\n    S5 --> S6[\"生态信心驱动模型多样化接入\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T16:01:10+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 接入 Codex 效果对比图谱\n\n## 总览比较\n```mermaid\nflowchart TD\n    A1[\"原版 Codex\"] --> B1[\"任务 1：生成 PPT\"]\n    A1 --> B2[\"任务 2：生成动画\"]\n    A2[\"DeepSeek 接入 Codex\"] --> C1[\"任务 1：生成 PPT\"]\n    A2 --> C2[\"任务 2：生成动画\"]\n    B1 --> D1[\"输出：三页完整 PPT（美观、清晰）\"]\n    C1 --> D2[\"输出：三页占位符 → 修正后可用\"]\n    B2 --> E1[\"输出：动画预览、语言中文、图片观察\"]\n    C2 --> E2[\"输出：语言突变英文、无图片观察、预览差\"]\n    D1 --> F[\"整体评价：表现优异\"]\n    D2 --> F\n    E1 --> G[\"整体评价：基本完成\"]\n    E2 --> G\n    A2 --> H[\"官方声明：支持所有模型接入 Codex\"]\n    H --> I[\"生态信心 → 80% 效果\"]\n    I --> J[\"推荐：多模态模型效果更佳\"]\n```\n\n## 任务 1：阅读报告并生成 PPT 流程\n```mermaid\nflowchart LR\n    T1[\"读取 OpenAI 最新英文报告\"] --> T2[\"使用 presentation 插件\"]\n    T2 --> T3[\"提示词：生成 3 页 PPT\"]\n    T3 --> O1[\"原版 Codex 直接输出完整 PPT\"]\n    T3 --> O2[\"DeepSeek 首次输出占位符\"]\n    O2 --> R1[\"用户指出占位符问题\"]\n    R1 --> O2b[\"DeepSeek 修正后输出可用 PPT\"]\n    O1 --> S1[\"美观度高、表述清晰\"]\n    O2b --> S2[\"中规中矩、简洁明了\"]\n    S1 --> C[\"任务 1 结论：原版更优\"]\n    S2 --> C\n```\n\n## 任务 2：调用 REMOTION 插件生成动画流程\n```mermaid\nflowchart LR\n    A1[\"调用 REMOTION 插件\"] --> P1[\"提示词：根据视频主题做 4 秒动画\"]\n    P1 --> O1[\"原版 Codex 运行\"]\n    O1 --> O1a[\"抽帧检查、中文输出\"]\n    O1a --> O1b[\"生成动画并预览\"]\n    P1 --> O2[\"DeepSeek Codex 运行\"]\n    O2 --> O2a[\"运行中语言突变为英文\"]\n    O2a --> O2b[\"缺少图片观察步骤\"]\n    O2b --> O2c[\"生成的动画预览差\"]\n    O1b --> C1[\"任务 2 结论：原版表现更好\"]\n    O2c --> C1\n```\n\n## 结论与建议\n```mermaid\nflowchart TD\n    S1[\"原版 Codex 在任务 1、任务 2 表现更佳\"] --> S2[\"DeepSeek 接入后可达约 80% 效果\"]\n    S2 --> S3[\"若无法使用原生态模型，可考虑 DeepSeek 作为备选\"]\n    S3 --> S4[\"对多模态任务，推荐使用支持多模态的模型\"]\n    S4 --> S5[\"官方立场：Codex 支持所有模型接入\"]\n    S5 --> S6[\"生态信心驱动模型多样化接入\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览比较",
+      "code": "flowchart TD\n    A1[\"原版 Codex\"] --> B1[\"任务 1：生成 PPT\"]\n    A1 --> B2[\"任务 2：生成动画\"]\n    A2[\"DeepSeek 接入 Codex\"] --> C1[\"任务 1：生成 PPT\"]\n    A2 --> C2[\"任务 2：生成动画\"]\n    B1 --> D1[\"输出：三页完整 PPT（美观、清晰）\"]\n    C1 --> D2[\"输出：三页占位符 → 修正后可用\"]\n    B2 --> E1[\"输出：动画预览、语言中文、图片观察\"]\n    C2 --> E2[\"输出：语言突变英文、无图片观察、预览差\"]\n    D1 --> F[\"整体评价：表现优异\"]\n    D2 --> F\n    E1 --> G[\"整体评价：基本完成\"]\n    E2 --> G\n    A2 --> H[\"官方声明：支持所有模型接入 Codex\"]\n    H --> I[\"生态信心 → 80% 效果\"]\n    I --> J[\"推荐：多模态模型效果更佳\"]"
+    },
+    {
+      "title": "任务 1：阅读报告并生成 PPT 流程",
+      "code": "flowchart LR\n    T1[\"读取 OpenAI 最新英文报告\"] --> T2[\"使用 presentation 插件\"]\n    T2 --> T3[\"提示词：生成 3 页 PPT\"]\n    T3 --> O1[\"原版 Codex 直接输出完整 PPT\"]\n    T3 --> O2[\"DeepSeek 首次输出占位符\"]\n    O2 --> R1[\"用户指出占位符问题\"]\n    R1 --> O2b[\"DeepSeek 修正后输出可用 PPT\"]\n    O1 --> S1[\"美观度高、表述清晰\"]\n    O2b --> S2[\"中规中矩、简洁明了\"]\n    S1 --> C[\"任务 1 结论：原版更优\"]\n    S2 --> C"
+    },
+    {
+      "title": "任务 2：调用 REMOTION 插件生成动画流程",
+      "code": "flowchart LR\n    A1[\"调用 REMOTION 插件\"] --> P1[\"提示词：根据视频主题做 4 秒动画\"]\n    P1 --> O1[\"原版 Codex 运行\"]\n    O1 --> O1a[\"抽帧检查、中文输出\"]\n    O1a --> O1b[\"生成动画并预览\"]\n    P1 --> O2[\"DeepSeek Codex 运行\"]\n    O2 --> O2a[\"运行中语言突变为英文\"]\n    O2a --> O2b[\"缺少图片观察步骤\"]\n    O2b --> O2c[\"生成的动画预览差\"]\n    O1b --> C1[\"任务 2 结论：原版表现更好\"]\n    O2c --> C1"
+    },
+    {
+      "title": "结论与建议",
+      "code": "flowchart TD\n    S1[\"原版 Codex 在任务 1、任务 2 表现更佳\"] --> S2[\"DeepSeek 接入后可达约 80% 效果\"]\n    S2 --> S3[\"若无法使用原生态模型，可考虑 DeepSeek 作为备选\"]\n    S3 --> S4[\"对多模态任务，推荐使用支持多模态的模型\"]\n    S4 --> S5[\"官方立场：Codex 支持所有模型接入\"]\n    S5 --> S6[\"生态信心驱动模型多样化接入\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T16:01:10+00:00"
+}

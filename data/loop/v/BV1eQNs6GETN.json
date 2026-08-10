@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1eQNs6GETN",
+  "title": "16.Godot  Ui制作：功能按钮、半透明、按钮动画系统",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2398,
+  "text": "我需要他们彼此紧贴\n但不能重叠啊\n现在给每个按钮分配图标\n先看info按钮\n我去图标那里选这个info图标\n拖到这里\nmute按钮用这个图标拖下来\n居中放在黑色矩形区域内\nquick按钮\n用这个红色叉号图标也放在中间\n把设置按钮移到退出按钮前面\n设置按钮用这个图标\n拖到中间位置\n好弄完后按CTRLS保存运行游戏\n检查一下\n好笔记本应该渲染完了\n可以看到按钮确实出现了\n但它们太大了\n全选按钮稍微移动一下\n往里移一些\n再用方向键往下移一点\n好再运行一次\n按钮在位置上了\n但还是太大\n选中每个图标锁定\n然后缩小\n按住control shift全选\n把process mode改成always\n打开theme overrides面板\n选用预设的纯屏透明按钮样式\n现在全选他们\n打开transform\n把scale改成0.5\n现在有个小问题\n你能看出按钮之间有没有重叠吗\n我们来确保它们不重叠\n你看\n大概在这附近一个一个调位置\n真的很烦人\n先保存一下\n看看效果怎么样\n完美的放在右上角\n这正是我想要的\n把这个最小化\n然后去调可见度\n让按钮变得半透明\n选alpha200\n效果正好看到了吧\n关掉网格\n按control l锁定所有按钮\n复节点也锁定\n去unit construction tile map\n我们要创建一个tile set\nti set里我用64X64的瓦片尺寸\n关掉\n这里去底部选择指纹里\n指纹理在哪好\npaper纹理我用regular paper\n选好regular paper后\n用draw工具选这里那里完美选定\n我先展示一下效果\n让大家看看我想做成什么样\n编码之前先把设计做好\n把这个覆盖层的modulate alpha改成半透明\n就像这样\n能看到透过来了\n但还不够\n还不是我要的效果\n再移动一下\n调薄一点\n同时降低alpha值到100\n让它更加透明\n现在能清楚地透过他看到后面了啊\n而且因为用了画布层\ncanvas layer节点会吸附在屏幕上\n即使摄像机在移动\n也不影响\n去unit resource tile map\n复用unit construction的瓦片流程跟unit construction一样\n添加tile set\n设置预设瓦片\n瓦片尺寸设成64X64\n添加regular paper\n用draw工具添加这个\n大致这个形状\n然后把可见度设成100100\n好就是这个效果把它移到这个下面\n或者说放在下方\n我到底在说什么\n好了\n关掉这个点击building按钮\n先取个名字\n然后给建筑添加动画\nbuild house e btn下添加animated sprite\n二弟子节点对应每一种颜色添加动画\n有黑色\n蓝色\n红色\n黄色和紫色\n这是我大部分建筑用的系统\n脚本里写逻辑来区分颜色\n我进来全选这些全部删掉\n大部分都删掉\n把之前做好的新动画素材传进来\n从第一个建筑那里复制过来\n现在点开动画名\n接下来把对应图片添加到对应颜色\n黑色动画\n从black building house1里添加\n蓝色紫色和红色的我已经做好了\n如果不关掉链接文件会报错\n所以我来这里全部删掉\n现在蓝色紫色\n紫色选purple house\n三红色也选好了\n现在已经都弄好了\n这些做好了\n我全部重做一遍\n先看archer\n其他按钮也是一样的流程\n每个动画按钮都有自己的一套动画\n对应按钮的功能啊\n现在全选这些\n从这选到那移到旁边\n真是麻烦好了\n选中所有\n然后统一调整大小\n设成100X100\n在那之前先锁定这些\n然后选中移动到这\n现在需要对齐\n展开它们\n调整动画尺寸\n在transform里把scale改成0.5\n最低可调至0.45\n再把modulation改成100\n层级排序设成原值加一\n太小了\n归0alpha modulation改成150\n现在来对齐archer的动画\n放中间\n就放在按钮的深色方块正中间\n按钮的大小就是那个深色方块区域\n确保每个动画都在区域内\n标记也一样\n每个建筑物和它的标记都要对齐\n标记放在中间\n然后处理monastery建筑\n把它移到这里\n解锁这两个移到这里\nmonastery的图片比别的大\n所以scale缩的更多\n确保按钮不重叠\n如果重叠了\n后面会带来麻烦\n我把大部分对齐\n好好在这后面\n大部分按钮已经对齐了\n但它们太大\n这就是问题\n我来缩小选中它们\n然后在transform里缩小按钮尺寸\n设成0.80.6\n这个尺寸看起来正好现在一个一个移动对齐好\n这得花点时间\n好先全部锁定\n全部锁定\n不然工作的时候会非常麻烦\n去unit construction tile map层\n把它拉长一点\n把底部拉长\n好让所有建筑按钮都能放得下\n然后一个一个移过去\n这真的很麻烦\n放到这里\n好了\n现在都放下了\n但每个之间需要留间距\n我打算每个之间留两格\n现在往下移一点\n试着居中对齐\n好运行游戏看看\n现在我要做的是点这个来建造建筑\n但脚本还没写好\n先锁定它们去theme\n确保预设主题设置好了\n用纯屏按钮主题\n避免出现那个难看的黑色矩形\n一个一个打开\n选中这些名称\n可见度改成200左右\n因为之前太透明了\n然后去z index设为五\n可见度改成110\n在unit resource里擦掉这部分\n避免重叠\n好运行游戏\n好可以看到效果非常完美\n关掉这个打开每个建筑按钮\n挂载脚本\n新建一个文件夹\n命名为system script\n保存命名为build btn\n好在building按钮里创建脚本\n然后把这个脚本挂到每个按钮上\n去ENEM节点也添加脚本\n同样保存在system文件夹点\nCreate\n在这个动画脚本里\n我们要做一个当前索引系统\n根据选择颜色播放对应的动画\n把这个动画脚本拖拽到每个按钮的名称上\n确保正确分配脚本\n一个错误可能非常致命\n这真的很让人抓狂\n我编码时就犯过这种错",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1eQNs6GETN",
+  "published_at": "1783733306",
+  "fetched_at": "2026-08-08T04:36:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T04:44:46+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T04:44:46+00:00"
+}

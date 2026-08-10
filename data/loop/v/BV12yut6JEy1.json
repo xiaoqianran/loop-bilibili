@@ -1,0 +1,74 @@
+{
+  "bvid": "BV12yut6JEy1",
+  "title": "开源啦！四目鱼眼+激光雷达全彩点云导航建图一台Orbvi 4VL搞定！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 504,
+  "text": "这是欧博维斯VR\n一套由四目鱼眼相机和激光雷达组成的\n全向多目态感知系统\n四个视场角达到200度的鱼眼相机\n分别朝向前后左右\n实现对周围环境的360度\n视觉加激光雷达覆盖\n通过精确的时间同步与空间标定系统\n可以将四路鱼眼图像与激光点云实时对齐\n激光雷达提供准确的三维结构\n鱼眼相机提供丰富的颜色和纹理信息\n融合后能够实时输出带有RGB信息的彩色点云\n四个鱼眼相机并不是相互独立工作的\n依靠相邻相机之间充足的市场重叠系统\n可以对同一个环境特征进行跨相机连续跟踪\n当特征离开当前相机视野后\n仍然可以在相邻相机中继续被观测\n这能够有效延长特征轨迹\n减少设备转弯和快速旋转时的跟踪中断\n在设备运动过程中\n系统持续融合视觉激光雷达和惯性数据\n实时估计设备位资不同位置\n采集到的三维信息被统一到同一坐标系中\n逐步构建完整连续的环境地图\n这是欧泊维4VL\n在真实场景中的实际定位与建图效果\n我们即将开源fast calip\nFast label\nTwo army\nVivo\n等经典项目\n在欧布韦4VL上的拓展代码与配套教程\n拓展版本\n将支持鱼眼相机模型和多鱼眼相机协同工作\n为全向视觉与激光融合\n定位建图提供完整的工程参考",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV12yut6JEy1",
+  "published_at": "1786100587",
+  "fetched_at": "2026-08-10T06:56:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 四目鱼眼+激光雷达全彩点云导航建图系统知识图谱\n\n## 系统总体结构概览 [BV12yut6JEy1 P1 00:00]\n```mermaid\nflowchart TD\n    S[\"全向多目态感知系统\"]\n    FE[\"四目鱼眼相机 (4)\"]\n    LID[\"激光雷达\"]\n    SYNC[\"时间同步 & 空间标定\"]\n    ALIGN[\"图像-点云实时对齐\"]\n    LID3D[\"提供三维结构\"]\n    FE_RGB[\"提供RGB纹理\"]\n    FUSE[\"视觉+激光融合\"]\n    RGBPC[\"实时彩色点云输出\"]\n    IMU[\"惯性测量单元\"]\n    POSE[\"实时位姿估计\"]\n    UNIFY[\"统一坐标系\"]\n    MAP[\"连续环境地图构建\"]\n    OS[\"开源fast calip等项目\"]\n    MULTI[\"支持多鱼眼协同\"]\n    REF[\"提供工程参考\"]\n    S --> FE\n    S --> LID\n    FE --> SYNC\n    LID --> SYNC\n    SYNC --> ALIGN\n    ALIGN --> FUSE\n    LID3D --> FUSE\n    FE_RGB --> FUSE\n    FUSE --> RGBPC\n    IMU --> POSE\n    FUSE --> POSE\n    POSE --> UNIFY\n    UNIFY --> MAP\n    OS --> MULTI\n    MULTI --> S\n    MULTI --> REF\n```\n\n## 跨相机特征跟踪机制 [BV12yut6JEy1 P1 00:42]\n```mermaid\nflowchart TD\n    CAM_A[\"当前相机\"]\n    CAM_B[\"相邻相机\"]\n    OVERLAP[\"相邻相机视野重叠\"]\n    FEATURE[\"环境特征\"]\n    TRACK[\"跨相机连续跟踪\"]\n    EXT[\"特征轨迹延长\"]\n    REDUCTION[\"减少转弯/旋转中断\"]\n    PROCESS[\"特征离开视野后转移\"]\n    CAM_A --> FEATURE\n    FEATURE --> OVERLAP\n    OVERLAP --> CAM_B\n    CAM_B --> TRACK\n    TRACK --> EXT\n    EXT --> REDUCTION\n    FEATURE --> PROCESS\n    PROCESS --> CAM_B\n```\n\n## 融合定位与建图流程 [BV12yut6JEy1 P1 01:06]\n```mermaid\nflowchart TD\n    CAP[\"捕获鱼眼图像 & 激光点云\"]\n    SYNC[\"时间同步\"]\n    CALIB[\"空间标定\"]\n    ALIGN[\"图像-点云对齐\"]\n    IMU_DATA[\"惯性数据\"]\n    FUSE[\"多源数据融合\"]\n    POSE_EST[\"位姿估计\"]\n    COORD_UNIFY[\"坐标系统一\"]\n    MAP_UPDATE[\"地图更新\"]\n    LOOP[\"回环检测\"]\n    OUTPUT[\"输出完整地图\"]\n    CAP --> SYNC\n    SYNC --> CALIB\n    CALIB --> ALIGN\n    ALIGN --> FUSE\n    IMU_DATA --> FUSE\n    FUSE --> POSE_EST\n    POSE_EST --> COORD_UNIFY\n    COORD_UNIFY --> MAP_UPDATE\n    MAP_UPDATE --> LOOP\n    LOOP --> OUTPUT\n```\n\n## 开源项目与平台扩展 [BV12yut6JEy1 P1 01:26]\n```mermaid\nflowchart TD\n    ORB[\"Orbvi 4VL平台\"]\n    FASTCALIB[\"fast calip\"]\n    FASTLABEL[\"Fast label\"]\n    TWOARMY[\"Two army\"]\n    VIVO[\"Vivo\"]\n    CLASSIC[\"经典项目\"]\n    EXT_CODE[\"拓展代码\"]\n    TUTORIAL[\"配套教程\"]\n    MULTI_MODEL[\"鱼眼相机模型\"]\n    COOP[\"多鱼眼协同工作\"]\n    REFERENCE[\"全向视觉与激光融合定位建图参考\"]\n    CLASSIC --> FASTCALIB\n    FASTCALIB --> EXT_CODE\n    EXT_CODE --> ORB\n    MULTI_MODEL --> COOP\n    COOP --> ORB\n    ORB --> REFERENCE\n    TUTORIAL --> ORB\n```",
+      "diagrams": [
+        {
+          "title": "系统总体结构概览",
+          "code": "flowchart TD\n    S[\"全向多目态感知系统\"]\n    FE[\"四目鱼眼相机 (4)\"]\n    LID[\"激光雷达\"]\n    SYNC[\"时间同步 & 空间标定\"]\n    ALIGN[\"图像-点云实时对齐\"]\n    LID3D[\"提供三维结构\"]\n    FE_RGB[\"提供RGB纹理\"]\n    FUSE[\"视觉+激光融合\"]\n    RGBPC[\"实时彩色点云输出\"]\n    IMU[\"惯性测量单元\"]\n    POSE[\"实时位姿估计\"]\n    UNIFY[\"统一坐标系\"]\n    MAP[\"连续环境地图构建\"]\n    OS[\"开源fast calip等项目\"]\n    MULTI[\"支持多鱼眼协同\"]\n    REF[\"提供工程参考\"]\n    S --> FE\n    S --> LID\n    FE --> SYNC\n    LID --> SYNC\n    SYNC --> ALIGN\n    ALIGN --> FUSE\n    LID3D --> FUSE\n    FE_RGB --> FUSE\n    FUSE --> RGBPC\n    IMU --> POSE\n    FUSE --> POSE\n    POSE --> UNIFY\n    UNIFY --> MAP\n    OS --> MULTI\n    MULTI --> S\n    MULTI --> REF"
+        },
+        {
+          "title": "跨相机特征跟踪机制",
+          "code": "flowchart TD\n    CAM_A[\"当前相机\"]\n    CAM_B[\"相邻相机\"]\n    OVERLAP[\"相邻相机视野重叠\"]\n    FEATURE[\"环境特征\"]\n    TRACK[\"跨相机连续跟踪\"]\n    EXT[\"特征轨迹延长\"]\n    REDUCTION[\"减少转弯/旋转中断\"]\n    PROCESS[\"特征离开视野后转移\"]\n    CAM_A --> FEATURE\n    FEATURE --> OVERLAP\n    OVERLAP --> CAM_B\n    CAM_B --> TRACK\n    TRACK --> EXT\n    EXT --> REDUCTION\n    FEATURE --> PROCESS\n    PROCESS --> CAM_B"
+        },
+        {
+          "title": "融合定位与建图流程",
+          "code": "flowchart TD\n    CAP[\"捕获鱼眼图像 & 激光点云\"]\n    SYNC[\"时间同步\"]\n    CALIB[\"空间标定\"]\n    ALIGN[\"图像-点云对齐\"]\n    IMU_DATA[\"惯性数据\"]\n    FUSE[\"多源数据融合\"]\n    POSE_EST[\"位姿估计\"]\n    COORD_UNIFY[\"坐标系统一\"]\n    MAP_UPDATE[\"地图更新\"]\n    LOOP[\"回环检测\"]\n    OUTPUT[\"输出完整地图\"]\n    CAP --> SYNC\n    SYNC --> CALIB\n    CALIB --> ALIGN\n    ALIGN --> FUSE\n    IMU_DATA --> FUSE\n    FUSE --> POSE_EST\n    POSE_EST --> COORD_UNIFY\n    COORD_UNIFY --> MAP_UPDATE\n    MAP_UPDATE --> LOOP\n    LOOP --> OUTPUT"
+        },
+        {
+          "title": "开源项目与平台扩展",
+          "code": "flowchart TD\n    ORB[\"Orbvi 4VL平台\"]\n    FASTCALIB[\"fast calip\"]\n    FASTLABEL[\"Fast label\"]\n    TWOARMY[\"Two army\"]\n    VIVO[\"Vivo\"]\n    CLASSIC[\"经典项目\"]\n    EXT_CODE[\"拓展代码\"]\n    TUTORIAL[\"配套教程\"]\n    MULTI_MODEL[\"鱼眼相机模型\"]\n    COOP[\"多鱼眼协同工作\"]\n    REFERENCE[\"全向视觉与激光融合定位建图参考\"]\n    CLASSIC --> FASTCALIB\n    FASTCALIB --> EXT_CODE\n    EXT_CODE --> ORB\n    MULTI_MODEL --> COOP\n    COOP --> ORB\n    ORB --> REFERENCE\n    TUTORIAL --> ORB"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T06:58:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 四目鱼眼+激光雷达全彩点云导航建图系统知识图谱\n\n## 系统总体结构概览 [BV12yut6JEy1 P1 00:00]\n```mermaid\nflowchart TD\n    S[\"全向多目态感知系统\"]\n    FE[\"四目鱼眼相机 (4)\"]\n    LID[\"激光雷达\"]\n    SYNC[\"时间同步 & 空间标定\"]\n    ALIGN[\"图像-点云实时对齐\"]\n    LID3D[\"提供三维结构\"]\n    FE_RGB[\"提供RGB纹理\"]\n    FUSE[\"视觉+激光融合\"]\n    RGBPC[\"实时彩色点云输出\"]\n    IMU[\"惯性测量单元\"]\n    POSE[\"实时位姿估计\"]\n    UNIFY[\"统一坐标系\"]\n    MAP[\"连续环境地图构建\"]\n    OS[\"开源fast calip等项目\"]\n    MULTI[\"支持多鱼眼协同\"]\n    REF[\"提供工程参考\"]\n    S --> FE\n    S --> LID\n    FE --> SYNC\n    LID --> SYNC\n    SYNC --> ALIGN\n    ALIGN --> FUSE\n    LID3D --> FUSE\n    FE_RGB --> FUSE\n    FUSE --> RGBPC\n    IMU --> POSE\n    FUSE --> POSE\n    POSE --> UNIFY\n    UNIFY --> MAP\n    OS --> MULTI\n    MULTI --> S\n    MULTI --> REF\n```\n\n## 跨相机特征跟踪机制 [BV12yut6JEy1 P1 00:42]\n```mermaid\nflowchart TD\n    CAM_A[\"当前相机\"]\n    CAM_B[\"相邻相机\"]\n    OVERLAP[\"相邻相机视野重叠\"]\n    FEATURE[\"环境特征\"]\n    TRACK[\"跨相机连续跟踪\"]\n    EXT[\"特征轨迹延长\"]\n    REDUCTION[\"减少转弯/旋转中断\"]\n    PROCESS[\"特征离开视野后转移\"]\n    CAM_A --> FEATURE\n    FEATURE --> OVERLAP\n    OVERLAP --> CAM_B\n    CAM_B --> TRACK\n    TRACK --> EXT\n    EXT --> REDUCTION\n    FEATURE --> PROCESS\n    PROCESS --> CAM_B\n```\n\n## 融合定位与建图流程 [BV12yut6JEy1 P1 01:06]\n```mermaid\nflowchart TD\n    CAP[\"捕获鱼眼图像 & 激光点云\"]\n    SYNC[\"时间同步\"]\n    CALIB[\"空间标定\"]\n    ALIGN[\"图像-点云对齐\"]\n    IMU_DATA[\"惯性数据\"]\n    FUSE[\"多源数据融合\"]\n    POSE_EST[\"位姿估计\"]\n    COORD_UNIFY[\"坐标系统一\"]\n    MAP_UPDATE[\"地图更新\"]\n    LOOP[\"回环检测\"]\n    OUTPUT[\"输出完整地图\"]\n    CAP --> SYNC\n    SYNC --> CALIB\n    CALIB --> ALIGN\n    ALIGN --> FUSE\n    IMU_DATA --> FUSE\n    FUSE --> POSE_EST\n    POSE_EST --> COORD_UNIFY\n    COORD_UNIFY --> MAP_UPDATE\n    MAP_UPDATE --> LOOP\n    LOOP --> OUTPUT\n```\n\n## 开源项目与平台扩展 [BV12yut6JEy1 P1 01:26]\n```mermaid\nflowchart TD\n    ORB[\"Orbvi 4VL平台\"]\n    FASTCALIB[\"fast calip\"]\n    FASTLABEL[\"Fast label\"]\n    TWOARMY[\"Two army\"]\n    VIVO[\"Vivo\"]\n    CLASSIC[\"经典项目\"]\n    EXT_CODE[\"拓展代码\"]\n    TUTORIAL[\"配套教程\"]\n    MULTI_MODEL[\"鱼眼相机模型\"]\n    COOP[\"多鱼眼协同工作\"]\n    REFERENCE[\"全向视觉与激光融合定位建图参考\"]\n    CLASSIC --> FASTCALIB\n    FASTCALIB --> EXT_CODE\n    EXT_CODE --> ORB\n    MULTI_MODEL --> COOP\n    COOP --> ORB\n    ORB --> REFERENCE\n    TUTORIAL --> ORB\n```",
+  "diagrams": [
+    {
+      "title": "系统总体结构概览",
+      "code": "flowchart TD\n    S[\"全向多目态感知系统\"]\n    FE[\"四目鱼眼相机 (4)\"]\n    LID[\"激光雷达\"]\n    SYNC[\"时间同步 & 空间标定\"]\n    ALIGN[\"图像-点云实时对齐\"]\n    LID3D[\"提供三维结构\"]\n    FE_RGB[\"提供RGB纹理\"]\n    FUSE[\"视觉+激光融合\"]\n    RGBPC[\"实时彩色点云输出\"]\n    IMU[\"惯性测量单元\"]\n    POSE[\"实时位姿估计\"]\n    UNIFY[\"统一坐标系\"]\n    MAP[\"连续环境地图构建\"]\n    OS[\"开源fast calip等项目\"]\n    MULTI[\"支持多鱼眼协同\"]\n    REF[\"提供工程参考\"]\n    S --> FE\n    S --> LID\n    FE --> SYNC\n    LID --> SYNC\n    SYNC --> ALIGN\n    ALIGN --> FUSE\n    LID3D --> FUSE\n    FE_RGB --> FUSE\n    FUSE --> RGBPC\n    IMU --> POSE\n    FUSE --> POSE\n    POSE --> UNIFY\n    UNIFY --> MAP\n    OS --> MULTI\n    MULTI --> S\n    MULTI --> REF"
+    },
+    {
+      "title": "跨相机特征跟踪机制",
+      "code": "flowchart TD\n    CAM_A[\"当前相机\"]\n    CAM_B[\"相邻相机\"]\n    OVERLAP[\"相邻相机视野重叠\"]\n    FEATURE[\"环境特征\"]\n    TRACK[\"跨相机连续跟踪\"]\n    EXT[\"特征轨迹延长\"]\n    REDUCTION[\"减少转弯/旋转中断\"]\n    PROCESS[\"特征离开视野后转移\"]\n    CAM_A --> FEATURE\n    FEATURE --> OVERLAP\n    OVERLAP --> CAM_B\n    CAM_B --> TRACK\n    TRACK --> EXT\n    EXT --> REDUCTION\n    FEATURE --> PROCESS\n    PROCESS --> CAM_B"
+    },
+    {
+      "title": "融合定位与建图流程",
+      "code": "flowchart TD\n    CAP[\"捕获鱼眼图像 & 激光点云\"]\n    SYNC[\"时间同步\"]\n    CALIB[\"空间标定\"]\n    ALIGN[\"图像-点云对齐\"]\n    IMU_DATA[\"惯性数据\"]\n    FUSE[\"多源数据融合\"]\n    POSE_EST[\"位姿估计\"]\n    COORD_UNIFY[\"坐标系统一\"]\n    MAP_UPDATE[\"地图更新\"]\n    LOOP[\"回环检测\"]\n    OUTPUT[\"输出完整地图\"]\n    CAP --> SYNC\n    SYNC --> CALIB\n    CALIB --> ALIGN\n    ALIGN --> FUSE\n    IMU_DATA --> FUSE\n    FUSE --> POSE_EST\n    POSE_EST --> COORD_UNIFY\n    COORD_UNIFY --> MAP_UPDATE\n    MAP_UPDATE --> LOOP\n    LOOP --> OUTPUT"
+    },
+    {
+      "title": "开源项目与平台扩展",
+      "code": "flowchart TD\n    ORB[\"Orbvi 4VL平台\"]\n    FASTCALIB[\"fast calip\"]\n    FASTLABEL[\"Fast label\"]\n    TWOARMY[\"Two army\"]\n    VIVO[\"Vivo\"]\n    CLASSIC[\"经典项目\"]\n    EXT_CODE[\"拓展代码\"]\n    TUTORIAL[\"配套教程\"]\n    MULTI_MODEL[\"鱼眼相机模型\"]\n    COOP[\"多鱼眼协同工作\"]\n    REFERENCE[\"全向视觉与激光融合定位建图参考\"]\n    CLASSIC --> FASTCALIB\n    FASTCALIB --> EXT_CODE\n    EXT_CODE --> ORB\n    MULTI_MODEL --> COOP\n    COOP --> ORB\n    ORB --> REFERENCE\n    TUTORIAL --> ORB"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T06:58:32+00:00"
+}

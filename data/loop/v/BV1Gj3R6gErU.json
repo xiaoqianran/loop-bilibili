@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1Gj3R6gErU",
+  "title": "27届 Unity客户端 找实习 demo作品集",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2821,
+  "text": "这是基于character control实现的八项移动系统\n移动方向基于摄像机朝向计算\n使用smooth stamp angle实现平滑转向\n摄像机采用spr test碰撞检测\n防止穿模战斗系统基于出招表配置\n支持多段连击\n每段攻击的判定区域\n时间窗口动画均通过scriptable object配置攻击特效\n由对象池统一管理\n对象池使用dictionary加Q结构\n避免频繁创建销毁对象\n降低GC压力特效\n播放完毕后自动归还对象池\n下次使用直接复用\n背包系统\n支持武器和食物两种分类\n物品数据由scriptable object配置本地存档\n使用JASON格式保存\n选中实物\n可直接使用血条会实时更新\n按J键打开任务面板\n任务面板会根据任务状态对任务进行分类\n当前有一个对话任务\n目标是找奶龙NPC对话\n接取任务后\n左上角HUD实时显示当前任务追踪\n前往PC所在位置靠近后\n按F键触发对话\n对话\n系统支持逐字显示效果\n点击可跳过\n直接显示全部文字\n对话结束后\n任务自动完成\n回到任务面板\n切换到已完成tab\n点击领取奖励\n奖励道具自动加入背包\n打开背包可以看到奖励已经到账\n点击背包左下角按钮进入删除模式\n删除模式下选择不需要的物体进行删除\n多把相同武器使用不同格子显示\n删除时直接删除对应武器格子\n删除食物时\n每次点击删除一个食物\n数量为零时\n删除对应实物格子\n靠近世界中的道具会在道具旁边显示拾取提示\n按E键拾取道具消失\n背包数量增加\n左上角小地图基于正交摄像机\n加render texture实现\n摄像机始终跟随玩家俯视拍摄\n实时渲染到UI上\n白色图标代表本地玩家位置\n项目集成了addressable\n资源热更新和hybrid c l a代码热更新\n现在在没有启动本地服务器的情况下运行游戏\n可以看到资源下载失败\n无法获取最新内容\n退出游戏\n启动本地HTTP服务器\n重新运行游戏\n进入游戏后\n这是热更前的状态\n背包中物品描述是旧版本的内容\n敌人站在原地\n没有任何移动逻辑\n退出游戏\n对项目进行两处修改\n第一修改背包物品的描述文字\n第二在热跟代码中取消注释\n敌人转圈逻辑\n重新编译热更程序集\n打包上传到服务器\n再次运行游戏热更新系统检测到新版本\n可以看到进度条\n正在下载最新资源包和代码\nDML下载完成\n进入游戏\n打开背包\n物品描述已经更新为新版本内容\n这是addressable资源热更新的效果\n再看敌人\n现在已经开始绕圈移动\n这是hybrid cml代码热更新的效果\n无需重新打包\n整个游戏仅通过下载即可更新游戏内容和逻辑\n项目集成了mirror网络框架\n支持多人联机\n现在启动两个游戏实例来演示联机效果\n左侧为房主端\n右侧为加入端\n房主点击创建房间\n加入端\n填入IP后\n点击加入游戏\n连接成功\n两个玩家同时出现在场景中\n注意观察两侧画面左上角的小地图\n白色图标是本地玩家\n绿色图标是对方玩家\n两名玩家移动时\n对方的绿色图标实时跟随更新图标位置\n通过世界坐标转换技巧操控右侧玩家移动\n可以看到左侧画面中对方角色位置实时同步\n位置同步\n基于mirror的network transform组件实现操控\n左侧玩家发动攻击\n右侧画面中可以看到完整的攻击动画和特效\n同步动画同步\n基于network canameter组件特效同步\n通过自定义的network combat sy脚本\n使用client tapc广播给所有客户端\n左侧玩家走进道具显示拾取提示\n按E键拾取道具\n可以看到右侧画面中地图上的道具同步消失\n道具拾取状态通过SINGFILE同步到所有客户端\n保证不会出现重复拾取的问题\n进入场景\n先来看基础的移动系统\n鼠标控制视角\nWASD控制方向\n按住shift切换为奔跑状态\n移动速度明显提升\n在可翻越障碍物前\n按下空格\n系统会自动判断执行对应的跨越动作\n注意翻越动作是随机的\n系统内置了多套翻阅动画\n根据当前状态随机播放\n避免重复感\n接下来展示不同高度的障碍物\n攀爬系统会根据障碍物高度\n自动匹配不同的攀爬动作\n高度检测\n依靠多条物理射线完成\n由environment checker组建统一管理\n站在边缘可以看到移动被限制了\n这是边缘检测系统在工作视线向下探测\n判断前方是否有足够支撑面\n没有支撑面则限制角色移动范围\n防止角色意外踏空\n低矮的平台可以直接走下去\n现在来到建筑旁边跳跃抓取墙壁系统\n先用射线打中墙壁的大碰撞体\n在动态便利墙壁子物体中\n所有的climbing point节点\n锁定距离最近的一个检测与节点彻底解耦\n避免大量细小碰撞体带来的性能浪费\n成功上到楼顶高度检测同样有效\n站在边缘时移动被限制\n从楼顶跳下\n系统检测到离地高度超过阈值\n自动触发下落动画\n落地后平滑过渡回移动状态\n按下tab键开启鹰眼\n这里使用了URP的post processing后处理\n通过color adjustments组件\n将全局饱和度差值到-100\n画面完全变为黑白扫描波\n从玩家位置向外扩散\n这个效果是自定义的屏幕空间C的实现的\n我写了一个scriptable render feature\n插入到URP的渲染管线中\nC的每帧读取camera depth texture\n深度缓冲\n通过逆矩阵变换重建每个像素的世界坐标\n计算该坐标到玩家的距离\n落在扫描波半径范围内\n就叠加颜色\n所以扫描波能自然贴合地面起伏\n沿墙面蔓延\n覆盖所有几何体表面\n这和传统的贴片方式完全不同\n不依赖任何mesh\n按下G往角色脚下投掷烟雾弹\n长按G进入瞄准模式\n屏幕上出现了实时的抛物线\n预览地面上的圆形指示器\n显示精确落点\n烟雾使用粒子系统爆开时\n粒子从中心向外喷射后\n速度衰减\n同时体积持续膨胀\n填满目标区域\n敌人进入烟雾范围时\noverlap sphere持续检测烟雾范围内的敌人\n检测到后清空AI的目标\n引用强制将状态机切回idol状态\n被扫描波经过的敌人立刻出现了红色高光\n这里同时用了两个技术\n一是将敌人的skinned mesh render\n切换到ego highlight层\n配合另一个render object ranger feature\n在所有后处理完成之后单独渲染这一层\n所以红色不会被黑白后处理脱色\n二是开启了depth test always\n透过深度缓冲的遮挡判断\n所以隔着墙壁也能看到敌人的红色轮廓\n进入战斗\n摄像机视线方向的最近\n敌人持续高亮战斗\n使用盾针和屏幕振动\n增强打击感\n战斗中按下空格进行闪避\n闪避动作会根据敌人的攻击\n动作不同而有所变化\n每个敌人都运行着独立的状态机\n可以看到敌人是轮流出手的\n不会同时发动攻击\n这是enemy manager\n在全局控制战斗节奏\n它维护着一个战斗范围内的敌人列表\n通过计时器决定\n什么时候让哪个敌人进入了tag状态\n每次敌人死亡时\n从列表移除系统自动切换下一个锁定目标",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Gj3R6gErU",
+  "published_at": "1785666076",
+  "fetched_at": "2026-08-09T13:29:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T13:40:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T13:40:34+00:00"
+}

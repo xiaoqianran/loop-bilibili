@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1GcdKBGEqt",
+  "title": "用SSD硬盘+8G显存跑Minimax 2.7大模型（229B），意外地还挺流畅！（推理框架fastllm，含教程）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4280,
+  "text": "嗯大家好啊\n今天我们录一期视频\n来讲解一个在一个很低的配置下\n就是只有8G的显存\n然后8G的内存\n然后如何用硬盘来跑一个mini max的大模型\n这个大模型是200多B的模型\n我们首先看一下现在的演示效果\n呃\n我这个服务已经提起来了\n嗯我们先问最简单的问题啊\n然后你可以看到它的输出速度\n基本上还是一个比较流畅的速度\n然后服务器这边可以看到\n它每秒可以跑到12个token\n然后他已经回答完了\n我们问下你是谁\n然后我们这里看一下资源的占用情况呃\n我这张显卡比较好\n它一共是有90多G的内存和显存\n不过我就是呃把显存固定到了使用八个G\n然后就是内存的情况\n内存目前我开了一个多\n可然后给他限定了8G的内存\n其实实际上只使用到了5G\n然后这个模型大部分都是在用硬盘在跑\n我们可以看到这里已经会思思考完了\n他说他是mini max嗯\n然后我们也可以写呃\n用这个来写一些比较复杂的代码\n比如这个我想让他写一个HTML页面\n介绍给fast m框架\n如何送star\n然后他在这里写呃\n然后我们可以大概看一下嗯\n这个模型额部署它需要什么工作\n首先我们讲解一下\n为什么这个这么大的一个200多B的模型嗯\n它可以用显卡加硬盘就能跑起来嗯\n我们要了解一下moo e模型\n它的一个原理就是moo e模型\n它和普通的大模型就是稠密模型\n其实有点不一样\n就是它分成两部分嗯\n一个是attention\n还有一个是MOE模块\nattention和稠密大模型是类似的\n就是注意力的部分\n他主要是负责模型的上下文\n但是这一部分\n它其实嗯在模型中占的比例是比较少的\n可能只有10%\n甚至还不到嗯\n然后MOE部分占的是比较大的比重\nMOE的话\n它嗯可能占到整个模型的90%多\n但是其实每次我们推理的时候\n就是你生成一个token\n他只要从MOE的模型中选取一部分的专家\n可能大概就是激活5%的专家嗯\n然后比如我们这个200多G的模型\n然后它可能只会激活10G左右的专家嗯\n然后我们做了一些量化这样的措施\n所以它实际需要读取的权重的数量\n其实是比较少的\n可能只有呃12G这种水平\n所以我们可以把专家的权重全部都存在嗯\n硬盘里面\n然后需要的时候就是生成一个token的时候\n再把它从硬盘取出来嗯\n这个图是GPT生成的\n可能额稍微不太准确\n其实你那个专家把它取出来的时候\n不一定要把它读到显存\n读到内存可能就可以了\n然后在内存中再进行推理嗯\n然后这样子每次你生成一个token\n和显存的交互量\n可能是嗯\n就是1G1G甚至1G都不到的一个水平嗯\n所以即使这个模型它本身它总共有200多币\n但是他做了一些量化\n然后做了一些别的处理\n所以他每次生成一个token\n只要从显存里呃\n只要从那个磁盘里面读不到一兆的呃\n不到1G的数据\n所以你即使用硬盘来跑这个模型\n它还是可以保持一个比较流畅的速度好的\n那我们具体到mini max这个模型\n我们来说明一下我们需要什么样的硬件配置\n然后怎么样把它用硬盘跑起来\n首先硬件配置的话嗯\n我这里建议大家最好是有8G以上的显存嗯\n然后8G以上的内存\n其实这个嗯也不是一定需要的\n这个模型大概跑起来6G左右的显存就够了\n然后实际上内存你是可以不需要的\n嗯但是你显存稍微多一点\n你模型的上下文会更长一些嗯\n然后我们核心的部分是要有一块\n256G以上的固态硬盘\n然后因为我们是用硬盘在跑这个模型\n所以你硬盘的速度越快越好\n然后我的硬盘大概是读速是每秒七个G左右嗯\n我看到现在市面上有在卖的硬盘\n最快的大概是每秒14个G嗯\n然后好像说下半年会出那个\n28G以上的硬盘嗯\n然后硬盘现在价格也不是很便宜\n大概1T的就是14G\n每秒1T可能要1000多块钱吧\n嗯但是相对于内存来说还是非常便宜的\n然后我们用到的这个项目叫fast LLM\n嗯我们可以看一下刚才生成的那个页面\n他已经写完了\n嗯看一下\n这是刚才用mini max写出来的那个页面嗯\n然后他会告诉你怎么给这个项目打新\n还有一个界面\n我们打开这个项目\n然后右上角有个4start按钮\n然后你注册一个账号\n给他打一个4start就可以了\n这样可以鼓励到作者嗯\n然后我们看一下用到的模型\n模型的话\n我们用的是model scope上的mini max\n2.7的GGUF的模型嗯\n大家可以看到哦\n我这个网址已经打开了\nGGUF它是一个压缩\n就是呃专门压缩模型的一个网站呃组织\n然后他就是做了很多量化的模型\n因为原本的mini max模型嗯是FP8的格式\n然后我们跑起来会比较慢一点\n然后我这里跑的是一个Q4量化的模型\n就是四比特量化\n量化完之后大概是150个G左右\n嗯然后这里的命令我都给大家写下来了\n就是用在LINUX里面\n用这几行命令就可以把嗯整个模型下载下来\n然后额有150个G\n所以可能需要下载一段时间\n嗯然后我们介绍一下具体的操作\n我在这里是启动了一个多可\n然后这个多可主要是为了限制呃使用的内存\n就是只能使用8G的内存\n但是嗯你这个这个操作其实可以跳过\n然后你用多核的话\n环境会比较干净一点\n但是你如果直接在LINUX的环境里面\n直接操作也是可以的\n嗯这样启动了一个多\n可呃我这里启动的是一个python3.10的多\n可\n然后里面除了Python其余什么东西都没有\n大家可以看一下pip list\n目前是一个非常干净的环境\n什么都没装\n然后我们呃需要安装FTLM这个工具\n就是用pip安装就可以了\n然后我这里用清华源速度会比较快一点\n嗯然后这个大概要嗯等个几十秒的样子\n就是取决于你的网速\n嗯然后呃我们可以回到刚才的那个项目网址\n它这里会有它的使用说明\n就是呃怎么安\n包括怎么安装\n然后还有额怎么运行\n以及一些以及运行的时候的一些参数\n大家可以具体读一读这个启动信息\n然后呃我这里的话跑这个模型一些比较呃\n启动命令我已经贴在这里了\n然后这个是那个呃下下来的模型的地址\n然后以及原模型的地址嗯\n然后一些比较重要的内容\n就是嗯就是它的运行方式\n把一般跑在KDA上面\n然后呃moo e层用迪斯科就是用硬盘来跑\n然后后面就是我这里限定了一下GPU的使用率呃\n限定到0.08\n因为我一共是96G的显存\n所以就是控制在8G显存\n但是如果你本身显存没有这么高\n你可以不用限定\n就是呃让他自己去分配\n然后kv catch调成P8的话\n这样子会使得上下文更长一点\n然后这个参数MOE的experts\n是控制每次激活的专家的数量\n默认的是八个专家\n然后呃我我把控制四个专家\n是为了让这个模型跑得快一点\n但是他的那个智商其实可能会下降嗯\n所以大家可以跑一下这个看一看\n如果你觉得他智商太蠢的话\n就把这个把这个参数去掉\n就直接直接不加这个参数了\n这样速度会慢一点\n但是智商是会比较正常的\n好的嗯\n我们这里已经安装完了\n然后可以看一下嗯\n刚刚version可以看一下目前的版本\n现在版本是1.6.3嗯\n然后我们就用这个命令跑一下哦\n我们我们首先可以试一下呃\n一般如果不加这个参数\n就是把M1放在CPU上嗯\n会是什么样的情况\n呃大家可以看到他读了一点点内容\n就被kill掉了\n因为他我只给他分配了8G的内存\n就是这个模型有100多个G\n所以他读不下来\n我们把这个moe device改成嗯硬盘\n然后\n嗯这里它显示了一句嗯\nuse迪斯科m o e with\n就是说把MOE部分会用呃磁盘来嗯储存\n这样子这个模型就可以就可以loading成功了\n好的这样子他服务就齐起来了\n就是我们刚才跑的这个服务哦\n我们可以重新再试一下\n你是谁\n嗯然后然后他在思考啊\n这个很快就回答完了啊\n当然这个速度可能没有那么快啊\n但是因为这是在一个非常受限的嗯\n配置下可以跑出的速度大概是每秒十几个token\n嗯然后我们也可以看到目前的磁盘的使用期呃\n内存的使用情况\n他只使用了五个G\n然后显存就是嗯8G的显存嗯\n大家可能觉得这个速度实在是太慢了\n就是嗯就我们可能这个配置\n跑这个模型可能还是有点勉强\n我觉得跑mini max\n你可能需要用到就是嗯每秒14个G的硬盘\n或者是以后更高一点\n每秒28个G的硬盘\n这样子速度会比较流畅\n嗯但是我们可以体验一下\n就是嗯也可以跑千问30B的这个模型\n嗯就是这个模型就会跑的比较快\n我们可以看一下嗯\n把这个关掉\n稍等嘶\n他也是同样的会用嗯硬盘去存储moo1的权重\n然后我们可以看到这个模型\n只要2G的内存就可以\n然后我这里限定的是4G的显存\n同样问个问题\n你好\n请问你是谁\n这个它的速度是每秒可以跑到20个token\n比刚才mini max就已经流畅不少了\n然后你如果用了28G显\n28G的硬盘的话\n嗯速度还可以翻个\n可能翻个三倍左右吧\n就到六七十个头\n可每秒这样子就非常流畅了嗯\n最后我们来讲一讲\n就是为什么要做这一期视频\n然后做这个用硬盘跑MOE模型的探索\n这是我上次发了一期视频\n讲deep sk v4flash的部署\n然后是用了156G的内存\n但是其实现在内存价格比较贵嘛\n就是其实很多朋友\n现在内存可能并没有这么大的内存\n就是要跑一个200多B的模型\n其实还是比较艰难的嗯\n然后我们就想到其实大家的呃\n内存虽然可能不够\n但是硬盘其实基本上存一个200多B的模型\n还是没有什么问题\n而且硬盘价格相对于内存肯定还是便宜很多嗯\n所以我们就做了这个尝试\n就是在硬盘上跑MOE大模型\n然后发现你硬盘速度足够快的话\n其实这个速度还是会比较流畅的\n然后目前的话我们只有一块硬盘嗯\n所以它的速度其实没有那么快嗯\n但是有一些主板上可以做一些硬盘的阵列\n包括以后PCIE5PC\n甚至PCIE6的硬盘出来\n它速度会嗯比现在翻很多很多倍嗯\n这样子嗯即使是一个200多币\n或者甚至可能以后334百B的这种模型\n你在硬盘上面跑嗯\n它只要它激活没有那么大\n可能还是可以达到一个比较合理的速度\n然后这样子的话\n你的配置整个成本可能还是比较低的\n就是比如我们跑mini max的这套模型\n你如果用8G显存\n8G内存\n然后256G固态硬盘\n就是这个最低的配置嗯\n可能只要我感觉就是两三千块钱\n应该就能跑下来嗯\n主要最大的投资成本就是在那个硬盘上面嗯\n但是你如果要用内存跑嗯\n大概就是上万的一个成本\n用显存跑就更贵了\n显存应该要十几万\n几10万的这个成本嗯\n所以我们做了这样的一个探索\n当然现在这个方式\n可能并不是一个主流的方式吧\n但是我觉得以后就是包括可能会有一些嗯\n总总体非常非常大\n但是激活很小的模型\n它其实也是非常适合在硬盘上面跑的\n然后这些我们以后都可以期待一下",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1GcdKBGEqt",
+  "published_at": "1778212800",
+  "fetched_at": "2026-08-06T20:30:36+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# MiniMax 2.7B on 8G VRAM + SSD 知识图谱\n\n## 总体系统结构\n```mermaid\nflowchart TD\n    Q[\"用户提问\"] --> S[\"FastLLM 服务\"]\n    S --> G[\"GPU (8 GB VRAM)\"]\n    S --> R[\"RAM (8 GB)\"]\n    S --> D[\"SSD (≥256 GB)\"]\n    D --> W[\"模型权重（量化后 ~12 GB）\"]\n    G --> T[\"Token 生成\"]\n    R --> T\n    T --> O[\"输出答案\"]\n    O --> Q\n    style G fill:#f9f,stroke:#333,stroke-width:2px\n    style D fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## 模型架构与推理流程\n```mermaid\nflowchart TD\n    M[\"MiniMax 2.7B 模型\"] --> A[\"Attention 模块 (~10 % 参数)\"]\n    M --> E[\"MOE 模块 (~90 % 参数)\"]\n    E --> P[\"专家池（存于 SSD）\"]\n    P --> QW[\"量化权重 (~12 GB)\"]\n    QW --> S[\"激活选择器（每 token ~5 % 专家)\"]\n    S --> I[\"Token 推理\"]\n    A --> I\n    I --> O[\"生成 Token\"]\n    style E fill:#ddf,stroke:#333,stroke-width:2px\n    style P fill:#eef,stroke:#333,stroke-width:2px\n```\n\n## 硬件需求与性能关系\n```mermaid\nflowchart TD\n    VR[\"显存 6‑8 GB\"] -->|足以运行| MRun[\"模型运行\"]\n    RM[\"内存 8 GB\"] -->|可选| MRun\n    SSD[\"SSD ≥256 GB\"] -->|存放权重| MRun\n    SSDRead7[\"读取速率 7 GB/s\"] -->|提升| TPS12[\"吞吐 ~12 token/s\"]\n    SSDRead14[\"读取速率 14 GB/s\"] -->|进一步提升| TPS20[\"吞吐 ~20 token/s\"]\n    CostSSD[\"SSD 成本 ~2‑3 k\"]\n    CostRAM[\"内存成本 ~10 k\"]\n    CostVRAM[\"显存成本 >10 k\"]\n    CostSSD -->|相对低| CostRAM\n    CostSSD -->|相对低| CostVRAM\n    style VR fill:#cfc,stroke:#333,stroke-width:2px\n    style SSD fill:#ccf,stroke:#333,stroke-width:2px\n```\n\n## FastLLM 部署步骤\n```mermaid\nflowchart TD\n    Env[\"创建干净 Python3.10 环境\"] --> Inst[\"pip 安装 fastllm (清华源)\"]\n    Inst --> Dload[\"下载 MiniMax GGUF (Q4 量化, ~150 GB)\"]\n    Dload --> GpuLim[\"设置 GPU 使用率 0.08 (≈8 GB)\"]\n    GpuLim --> KV[\"kv cache 设为 P8 (延长上下文)\"]\n    KV --> Moe[\"MOE experts 设为 4 (加速)\"]\n    Moe --> Run[\"启动服务\"]\n    Run --> Qry[\"发送查询并获取答案\"]\n    style Inst fill:#f9f,stroke:#333,stroke-width:2px\n    style Run fill:#9cf,stroke:#333,stroke-width:2px\n```\n\n## 成本‑性能权衡与未来展望\n```mermaid\nflowchart TD\n    CurSSD[\"当前 SSD 读取 14 GB/s\"] -->|支持| MiniMaxRun[\"MiniMax 运行 (≈12 token/s)\"]\n    FutSSD[\"未来 SSD 读取 28 GB/s\"] -->|提升| LargeRun[\"更大模型 (200‑300 B) 运行\"]\n    CostLow[\"低成本方案 (SSD+8G VRAM)\"] --> MiniMaxRun\n    CostHigh[\"高成本方案 (大容量 RAM/显存)\"] --> LargeRun\n    MiniMaxRun --> Feas[\"可行性高\"]\n    LargeRun --> Feas\n    style FutSSD fill:#ddf,stroke:#333,stroke-width:2px\n    style CostLow fill:#c9f,stroke:#333,stroke-width:2px\n```",
+      "diagrams": [
+        {
+          "title": "总体系统结构",
+          "code": "flowchart TD\n    Q[\"用户提问\"] --> S[\"FastLLM 服务\"]\n    S --> G[\"GPU (8 GB VRAM)\"]\n    S --> R[\"RAM (8 GB)\"]\n    S --> D[\"SSD (≥256 GB)\"]\n    D --> W[\"模型权重（量化后 ~12 GB）\"]\n    G --> T[\"Token 生成\"]\n    R --> T\n    T --> O[\"输出答案\"]\n    O --> Q\n    style G fill:#f9f,stroke:#333,stroke-width:2px\n    style D fill:#bbf,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "模型架构与推理流程",
+          "code": "flowchart TD\n    M[\"MiniMax 2.7B 模型\"] --> A[\"Attention 模块 (~10 % 参数)\"]\n    M --> E[\"MOE 模块 (~90 % 参数)\"]\n    E --> P[\"专家池（存于 SSD）\"]\n    P --> QW[\"量化权重 (~12 GB)\"]\n    QW --> S[\"激活选择器（每 token ~5 % 专家)\"]\n    S --> I[\"Token 推理\"]\n    A --> I\n    I --> O[\"生成 Token\"]\n    style E fill:#ddf,stroke:#333,stroke-width:2px\n    style P fill:#eef,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "硬件需求与性能关系",
+          "code": "flowchart TD\n    VR[\"显存 6‑8 GB\"] -->|足以运行| MRun[\"模型运行\"]\n    RM[\"内存 8 GB\"] -->|可选| MRun\n    SSD[\"SSD ≥256 GB\"] -->|存放权重| MRun\n    SSDRead7[\"读取速率 7 GB/s\"] -->|提升| TPS12[\"吞吐 ~12 token/s\"]\n    SSDRead14[\"读取速率 14 GB/s\"] -->|进一步提升| TPS20[\"吞吐 ~20 token/s\"]\n    CostSSD[\"SSD 成本 ~2‑3 k\"]\n    CostRAM[\"内存成本 ~10 k\"]\n    CostVRAM[\"显存成本 >10 k\"]\n    CostSSD -->|相对低| CostRAM\n    CostSSD -->|相对低| CostVRAM\n    style VR fill:#cfc,stroke:#333,stroke-width:2px\n    style SSD fill:#ccf,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "FastLLM 部署步骤",
+          "code": "flowchart TD\n    Env[\"创建干净 Python3.10 环境\"] --> Inst[\"pip 安装 fastllm (清华源)\"]\n    Inst --> Dload[\"下载 MiniMax GGUF (Q4 量化, ~150 GB)\"]\n    Dload --> GpuLim[\"设置 GPU 使用率 0.08 (≈8 GB)\"]\n    GpuLim --> KV[\"kv cache 设为 P8 (延长上下文)\"]\n    KV --> Moe[\"MOE experts 设为 4 (加速)\"]\n    Moe --> Run[\"启动服务\"]\n    Run --> Qry[\"发送查询并获取答案\"]\n    style Inst fill:#f9f,stroke:#333,stroke-width:2px\n    style Run fill:#9cf,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "成本‑性能权衡与未来展望",
+          "code": "flowchart TD\n    CurSSD[\"当前 SSD 读取 14 GB/s\"] -->|支持| MiniMaxRun[\"MiniMax 运行 (≈12 token/s)\"]\n    FutSSD[\"未来 SSD 读取 28 GB/s\"] -->|提升| LargeRun[\"更大模型 (200‑300 B) 运行\"]\n    CostLow[\"低成本方案 (SSD+8G VRAM)\"] --> MiniMaxRun\n    CostHigh[\"高成本方案 (大容量 RAM/显存)\"] --> LargeRun\n    MiniMaxRun --> Feas[\"可行性高\"]\n    LargeRun --> Feas\n    style FutSSD fill:#ddf,stroke:#333,stroke-width:2px\n    style CostLow fill:#c9f,stroke:#333,stroke-width:2px"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T20:30:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# MiniMax 2.7B on 8G VRAM + SSD 知识图谱\n\n## 总体系统结构\n```mermaid\nflowchart TD\n    Q[\"用户提问\"] --> S[\"FastLLM 服务\"]\n    S --> G[\"GPU (8 GB VRAM)\"]\n    S --> R[\"RAM (8 GB)\"]\n    S --> D[\"SSD (≥256 GB)\"]\n    D --> W[\"模型权重（量化后 ~12 GB）\"]\n    G --> T[\"Token 生成\"]\n    R --> T\n    T --> O[\"输出答案\"]\n    O --> Q\n    style G fill:#f9f,stroke:#333,stroke-width:2px\n    style D fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## 模型架构与推理流程\n```mermaid\nflowchart TD\n    M[\"MiniMax 2.7B 模型\"] --> A[\"Attention 模块 (~10 % 参数)\"]\n    M --> E[\"MOE 模块 (~90 % 参数)\"]\n    E --> P[\"专家池（存于 SSD）\"]\n    P --> QW[\"量化权重 (~12 GB)\"]\n    QW --> S[\"激活选择器（每 token ~5 % 专家)\"]\n    S --> I[\"Token 推理\"]\n    A --> I\n    I --> O[\"生成 Token\"]\n    style E fill:#ddf,stroke:#333,stroke-width:2px\n    style P fill:#eef,stroke:#333,stroke-width:2px\n```\n\n## 硬件需求与性能关系\n```mermaid\nflowchart TD\n    VR[\"显存 6‑8 GB\"] -->|足以运行| MRun[\"模型运行\"]\n    RM[\"内存 8 GB\"] -->|可选| MRun\n    SSD[\"SSD ≥256 GB\"] -->|存放权重| MRun\n    SSDRead7[\"读取速率 7 GB/s\"] -->|提升| TPS12[\"吞吐 ~12 token/s\"]\n    SSDRead14[\"读取速率 14 GB/s\"] -->|进一步提升| TPS20[\"吞吐 ~20 token/s\"]\n    CostSSD[\"SSD 成本 ~2‑3 k\"]\n    CostRAM[\"内存成本 ~10 k\"]\n    CostVRAM[\"显存成本 >10 k\"]\n    CostSSD -->|相对低| CostRAM\n    CostSSD -->|相对低| CostVRAM\n    style VR fill:#cfc,stroke:#333,stroke-width:2px\n    style SSD fill:#ccf,stroke:#333,stroke-width:2px\n```\n\n## FastLLM 部署步骤\n```mermaid\nflowchart TD\n    Env[\"创建干净 Python3.10 环境\"] --> Inst[\"pip 安装 fastllm (清华源)\"]\n    Inst --> Dload[\"下载 MiniMax GGUF (Q4 量化, ~150 GB)\"]\n    Dload --> GpuLim[\"设置 GPU 使用率 0.08 (≈8 GB)\"]\n    GpuLim --> KV[\"kv cache 设为 P8 (延长上下文)\"]\n    KV --> Moe[\"MOE experts 设为 4 (加速)\"]\n    Moe --> Run[\"启动服务\"]\n    Run --> Qry[\"发送查询并获取答案\"]\n    style Inst fill:#f9f,stroke:#333,stroke-width:2px\n    style Run fill:#9cf,stroke:#333,stroke-width:2px\n```\n\n## 成本‑性能权衡与未来展望\n```mermaid\nflowchart TD\n    CurSSD[\"当前 SSD 读取 14 GB/s\"] -->|支持| MiniMaxRun[\"MiniMax 运行 (≈12 token/s)\"]\n    FutSSD[\"未来 SSD 读取 28 GB/s\"] -->|提升| LargeRun[\"更大模型 (200‑300 B) 运行\"]\n    CostLow[\"低成本方案 (SSD+8G VRAM)\"] --> MiniMaxRun\n    CostHigh[\"高成本方案 (大容量 RAM/显存)\"] --> LargeRun\n    MiniMaxRun --> Feas[\"可行性高\"]\n    LargeRun --> Feas\n    style FutSSD fill:#ddf,stroke:#333,stroke-width:2px\n    style CostLow fill:#c9f,stroke:#333,stroke-width:2px\n```",
+  "diagrams": [
+    {
+      "title": "总体系统结构",
+      "code": "flowchart TD\n    Q[\"用户提问\"] --> S[\"FastLLM 服务\"]\n    S --> G[\"GPU (8 GB VRAM)\"]\n    S --> R[\"RAM (8 GB)\"]\n    S --> D[\"SSD (≥256 GB)\"]\n    D --> W[\"模型权重（量化后 ~12 GB）\"]\n    G --> T[\"Token 生成\"]\n    R --> T\n    T --> O[\"输出答案\"]\n    O --> Q\n    style G fill:#f9f,stroke:#333,stroke-width:2px\n    style D fill:#bbf,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "模型架构与推理流程",
+      "code": "flowchart TD\n    M[\"MiniMax 2.7B 模型\"] --> A[\"Attention 模块 (~10 % 参数)\"]\n    M --> E[\"MOE 模块 (~90 % 参数)\"]\n    E --> P[\"专家池（存于 SSD）\"]\n    P --> QW[\"量化权重 (~12 GB)\"]\n    QW --> S[\"激活选择器（每 token ~5 % 专家)\"]\n    S --> I[\"Token 推理\"]\n    A --> I\n    I --> O[\"生成 Token\"]\n    style E fill:#ddf,stroke:#333,stroke-width:2px\n    style P fill:#eef,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "硬件需求与性能关系",
+      "code": "flowchart TD\n    VR[\"显存 6‑8 GB\"] -->|足以运行| MRun[\"模型运行\"]\n    RM[\"内存 8 GB\"] -->|可选| MRun\n    SSD[\"SSD ≥256 GB\"] -->|存放权重| MRun\n    SSDRead7[\"读取速率 7 GB/s\"] -->|提升| TPS12[\"吞吐 ~12 token/s\"]\n    SSDRead14[\"读取速率 14 GB/s\"] -->|进一步提升| TPS20[\"吞吐 ~20 token/s\"]\n    CostSSD[\"SSD 成本 ~2‑3 k\"]\n    CostRAM[\"内存成本 ~10 k\"]\n    CostVRAM[\"显存成本 >10 k\"]\n    CostSSD -->|相对低| CostRAM\n    CostSSD -->|相对低| CostVRAM\n    style VR fill:#cfc,stroke:#333,stroke-width:2px\n    style SSD fill:#ccf,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "FastLLM 部署步骤",
+      "code": "flowchart TD\n    Env[\"创建干净 Python3.10 环境\"] --> Inst[\"pip 安装 fastllm (清华源)\"]\n    Inst --> Dload[\"下载 MiniMax GGUF (Q4 量化, ~150 GB)\"]\n    Dload --> GpuLim[\"设置 GPU 使用率 0.08 (≈8 GB)\"]\n    GpuLim --> KV[\"kv cache 设为 P8 (延长上下文)\"]\n    KV --> Moe[\"MOE experts 设为 4 (加速)\"]\n    Moe --> Run[\"启动服务\"]\n    Run --> Qry[\"发送查询并获取答案\"]\n    style Inst fill:#f9f,stroke:#333,stroke-width:2px\n    style Run fill:#9cf,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "成本‑性能权衡与未来展望",
+      "code": "flowchart TD\n    CurSSD[\"当前 SSD 读取 14 GB/s\"] -->|支持| MiniMaxRun[\"MiniMax 运行 (≈12 token/s)\"]\n    FutSSD[\"未来 SSD 读取 28 GB/s\"] -->|提升| LargeRun[\"更大模型 (200‑300 B) 运行\"]\n    CostLow[\"低成本方案 (SSD+8G VRAM)\"] --> MiniMaxRun\n    CostHigh[\"高成本方案 (大容量 RAM/显存)\"] --> LargeRun\n    MiniMaxRun --> Feas[\"可行性高\"]\n    LargeRun --> Feas\n    style FutSSD fill:#ddf,stroke:#333,stroke-width:2px\n    style CostLow fill:#c9f,stroke:#333,stroke-width:2px"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:30:54+00:00"
+}

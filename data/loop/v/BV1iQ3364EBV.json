@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1iQ3364EBV",
+  "title": "118B 模型仅 8B 激活就能用？Laguna S 2.1：9 周从零训练，1M 上下文，3090 可跑——最被低估的开源模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4375,
+  "text": "昨天，泳池边AI团队正式发布了拉古纳S 2.1版本\n这是他们迄今为止最强大的大型语言模型\n不得不说对于一家中型美国AI实验室\n这个模型确实令人印象深刻\n它在对抗昆汀3.7模型时表现出惊人的强劲\n性能远超其体量\n拉古纳S 2.1拥有1180亿参数\n采用专家混合模型，每个token仅激活80亿参数\n支持最大100万token上下文窗口\n并包含思考与非思考两种模式\n尽管激活参数相对较小\n却具备与数倍更大模型竞争的实力\n更令人震惊的是\n拉古纳S 2.1从训练启动到发布仅用时9周\n这简直不可思议\n但让我最欣赏的是\n这个模型并非训练速度\n而是实用型中端模型的定位\n无需配备巨型多GPU服务器即可运行\n甚至可在单台NVIDIA DGX Spark上运行\n使其成为长上下文处理的理想选择\n在编码工作负载中表现优异\n有一点需要明确说明\n那就是\n这不是另一个炫酷的编程模型\n或擅长Web开发的工具\n它是为需要实用模型的开发者设计\n可本地运行并集成到真实工作流中\n但这并不意味着它无法卓越表现\n在Web开发相关问题上\n稍后您将实际看到这一点\n基准测试在世界AI基准和Vibe Conan平台进行\n在开源类别中，我们有泳池边拉古纳S 2.1位居榜首\n综合排名第六\n这相当疯狂\n尽管模型规模更大\n仍能与7530亿参数模型抗衡\n同时保持在现代高端硬件上的可部署性\n意味着大多数消费级硬件均可承载此模型\n这展现了极高的效率水平\n尤其对更关注实际部署而非单纯追求参数量的开发者\n另外各位\n如果你想完全免费运行此模型\n在世界AI输出平台和基准测试中\n可通过描述下方链接访问该网站\n然后可在不同领域运行基准测试评估性能\n并使用自定义提示词测试其表现\n现在即可完全免费进行\n因为模型目前通过我们的基准工具免费提供\n这也是个绝佳示例，因其架构在此案例中相当有趣\n在泳池边还测试了较小的拉古纳XS 2.1型号与硬币的对比\n在三亿六千三百五十亿参数模型上进行真实涂层任务\n两款模型均构建出可完整游玩的复古俄罗斯方块游戏\n作为单个自包含的HTML文件经过三次代码迭代\n最终结果在质量上几乎完全一致\n差异在于速度\n因为拉古纳XS 2.1生成了约四十\n五千个标记，每秒约158个标记\n而奎因3.6\n三\n五亿参数模型产出约三\n九千个标记，仅81个标记/秒\n换句话说\n拉古纳在保持相近涂层质量的同时运行速度快约两倍\n并且它通过少量视觉瑕疵实现了这一点，而奎因则避免了\n当拉古纳2.1与GM5.2\n及H3在多个基准测试中对比\n在此案例中\n要求创建涂鸦\n跳跃游戏和曲棍球模拟及几何大挑战\n三者均能生成相似的整体质量内容\n但在标记消耗方面\n拉古纳2.1仅生成10.3k标记\n相比GM5.2的26.4k标记\n及H3的10.4k标记\n拉古纳的几何大挑战表现最佳\n尽管面对7530亿参数模型的竞争\n而拉古纳仅占其七分之一\n且拉古纳是唯一能本地运行的模型\n在128GB MacBook上\n若想获取最佳AI工具\n工作流程和模板\n在下方描述中点击链接加入我的免费简讯\n现在完全免费，快速查看拉古纳2.1基准得分\n这里可以看到它虽体积小却表现优异\n在Swaybench中得分78.5%\n多语言\nTerminalbench中70.2%\nSubench Pro中59.9%\n44分在Deep Suite\n实际上非常出色\n仔细观察这些数据\n它在Terminalbench中排名十一\n在Deep Suite中超越了Gemini等模型\n三五版FlashKimiK\n二七版Code Thoughts等\n2.1版本在Terminalbench中排名十一\n拉古纳2.1在Deep Suite中超越了Gemini\n三五版FlashKimiK\n二七版Code Thoughts等\n还有许多其他内容\n这真的令人非常惊喜\n对于一个拥有1180亿参数的开放权重模型\n这是一个专家混合模型\n但仅有80亿参数处于活跃状态\n这确实是一个适合本地使用的优秀模型\n这也是我为何现在要制作这个视频开始使用这个模型\n你可以通过Hugging Face轻松安装本地开放权重\n或者通过他们的聊天机器人访问\n这里可以使用两种模型尺寸\n是的\n包括这个快速高效版本\n支持思考模式和非思考模式\n或者通过Open Router访问\n定价为每百万输入令牌10美分\n每百万输出令牌20美分\n如果你想通过API付费\n也可以这样做\n但如果你想完全免费使用\n甚至可以通过AI基准世界获取\n我会在下方描述中留下链接\n通过我们的Vibe编码平台免费使用此模型\n你还能获取我的提示模板\n这能让你同时享受两者的优势\n这太惊人了\n这是一款完整的FPS射击游戏\n完全在96GB本地设备上开发的游戏\n这简直难以置信\n这个模型能输出如此高质量的内容\n通过这类提示词\n当要求创建FPS射击游戏时\n在AI基准工具中具有多波次的世界\n我在这多个不同提示词上进行了测试\n现在我们将首先查看模型的前端生成\n这个模型的生成效果\n我要求它创建RTX 5900显卡的落地页\n不得不说这还不够完美\n但在发挥自身创造力方面\n并尽力创建GPU的3D模型\n它完成得还算不错\n并且明显生成了许多其他组件甚至自定义基准测试\n这还不够完美\n但这是一个相当不错的落地页\n我不得不说\n我们确实被宠坏了，不再轻易被这些生成内容打动\n但我忘了这个是开放权重模型\n本地部署在类似3090设备上\n看到它能完成这些简直令人难以置信\n我们确实有些被宠坏了\n因为我们最近获得了如此优秀的模型\n就像kimi k三点三\n抱歉\n不是三点一\n我不知道为什么\n我说过但给我一个三点\n然后我们还有qu三点八\n这也是开源的\n这简直疯狂\n因为空间发展得太快了\n我们有了这些开源模型能媲美fables\n所以很难欣赏这些其他模型\n但我忘了这模型其实很小\n却能和这些专有巨头抗衡\n就连这些新开源巨头\n拉古纳s二点一试图创造真实水族箱\n我不是说完美\n但质量真的让我惊叹\n灯光和着色器效果\n还有水体纹理\n某些部分比如气泡超出缸体\n这不应该发生\n但还有不同物种\n右侧控制面板有多功能\n还能调整水质清澈度\n还能调节水流速度\n这挺酷的\n还能切换轨道视角\n甚至能改变时间\n这个功能很丰富\n真的很酷\n我并非说它完美\n因为这条鱼明显不像鱼\n它试图渲染正确形状\n但可能我们漏掉了某些代码\n这确实遗憾\n不过\n我们已有不错的生成效果满足所有需求\n还添加了部分未完全生成的功能\n比如水族箱内的洞穴或地下系统\n对于本地模型生成\n确实令人印象深刻\n之前qun模型连基础水族箱都生成不了\n这很遗憾\n但看到这个模型能做到\n在SVG中看到这效果真不错\n我要求生成蝴蝶\n这效果确实糟糕\n多数情况不用CG\n但这是个基准\n我们通常测试每个模型以评估其能力\n在多个编程领域\n不幸的是在这个特定测试中它确实失败了\n我想它确实尝试过动画效果\n这很好而且它做到了对称\n但形状设计可以更好\n我对这次生成结果感到非常惊讶\n这是使用AI基准工具生成的\n它实际上创建了一个相当功能性的macOS克隆\n我不是说这是最好的\n我喜欢它为每个应用图标编码\n使用SVG\n这真的很棒\n顶部部分似乎也有一定功能\n你可以创建新窗口操作\n你不能\n我骗了大家\n对此我道歉\n但除此之外\n这是一个相当基础的生成效果\n图标在实际桌面页面上似乎可用\n其他内容尚未编码\n这确实令人遗憾\n但我真的很喜欢这一点\n它最终生成了CG\n应用程序图标\n你有一个文本应用\n你有一个计算器\n还有一个动画\n当你点击应用时\n就像macOS实际呈现的一样\n还有一个终端\n有一个设置应用\n现在\n看起来没有任何功能正常\n这确实很遗憾\n但它添加了贪吃蛇游戏\n但真正让我印象深刻的是这个三十九十设备输出的质量\n这里\n要求用CSS创建动态熔岩灯\n同时使用CG技术\n它确实完美实现了球体动画\n以及物理效果\n效果相当不错\n我不是说这是最好的\n但真的很喜欢这个示例中的表现\n我要求它创建FPS射击游戏\n在某些生成中\n比如Three.js\n当使用Three.js时\n能生成此领域的相当不错的效果\n甚至在这个特定的fps射击游戏中还带有重新加载功能，最终生成了相关内容\n在完成某些任务时它表现得相当智能\n这可能是这个模型生成效果最好的一次\n这是我要求它创建f1漂移甜甜圈模拟的场景\n这是我第一次看到模型\n实际上生成了不完美的漂移动画\n但它成功还原了轮胎冒烟或打滑的效果\n每当它进行转向时\n并没有明显持续进行\n这也是一个缺点\n但它完美还原了特定的动画细节真的令人印象深刻\n这是我从未在其他顶尖模型中见过的\n这在本次测试中是一个非常积极的信号\n我认为拉古纳s2.1是最有趣的开放重量模型发布之一\n我们很久没有见过如此引人注目的模型了\n这是一个相当不错的模型\n我不是说它能超越前沿模型如GBC\n五点六灵魂或claude\nFable五或甚至kimi k3\n而是专注于提供强大的现实编码性能\n开发者可以本地运行的模型\n易于访问的模型\n可以在类似3090或nvidia dgx spark上运行\n1180亿参数的Moe模型仅用九周训练\n就能与数倍规模的模型竞争\n模型规模令人印象深刻\n且能适配相对常见的硬件\n这可能是该模型最大的优点\n但我真的很喜欢Poolside对这个模型的优化\n我非常期待他们未来的新发布\n感谢他们创造出如此出色的模型\n如果你喜欢这个视频并想支持频道\n可以通过下方的超级感谢选项向频道捐款\n或者加入我们的私人Discord\n可免费获取多个AI工具的订阅权限\n每月一次\n加每日AI资讯和独家内容\n还有更多值得关注的是该模型的本地运行效率\n因为拉古纳s2.1支持原生NV\nE\nP4量化\n在nvidia dgx spark上达到约19 tokens/秒\n现在它在RTX Pro上运行速度达到109 tokens/秒\n在RTX 6000上接近140\n六tokens/秒四路RTX 50\n90s处理1170亿参数\nMoe模型仅需8.5亿活跃参数\n仅用常见硬件就能实现如此出色性能\n这确实值得推荐尝试\n所以我强烈推荐大家亲自体验\n你可以免费轻松访问\n今天视频中使用的所有链接请查看下方描述\n务必前往探索be at vibe point平台\n平台与基准\n以便获取所有这些工具\n以及开始使用AI模型的能力\n并了解不同场景下应使用哪种模型\n请务必订阅第二个频道\n加入新闻通讯\n加入Discord社区\n关注我的推特，最后\n请大家务必订阅\n开启通知提醒\n铃铛图标\n点赞这个视频\n请继续订阅\n以便获取最新的AI资讯\n但我觉得大家今天过得真棒\n传播正能量\n我们很快再见\n但有一个重要提示\n如果你在这里\n我有个秘密\n是复活节吗无关紧要\n我到底在说什么\n我有个秘密留言\n实际上Opus Five将于明日发布\n请保持关注",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1iQ3364EBV",
+  "published_at": "1785150600",
+  "fetched_at": "2026-08-09T03:48:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Laguna S2.1 知识图谱\n\n## 模型概览\n```mermaid\nflowchart TD\n    M[\"Laguna S 2.1\"]\n    P[\"总参数 1180 亿\"]\n    A[\"每 token 激活 80 亿参数\"]\n    C[\"上下文窗口 1M token\"]\n    Mo[\"模式：思考 / 非思考\"]\n    T[\"训练时长 9 周\"]\n    H[\"硬件需求：单台 NVIDIA DGX Spark / 3090\"]\n    E[\"专家混合模型\"]\n    M --> P\n    M --> A\n    M --> C\n    M --> Mo\n    M --> T\n    M --> H\n    M --> E\n```\n\n## 性能与基准\n```mermaid\nflowchart TD\n    B[\"基准平台：World AI、Vibe Conan\"]\n    R1[\"开源榜首\"]\n    R2[\"综合第 6 名\"]\n    S1[\"Swaybench 78.5%\"]\n    S2[\"Terminalbench 70.2%\"]\n    S3[\"Subench Pro 59.9%\"]\n    S4[\"Deep Suite 44%\"]\n    TS[\"生成速率：Laguna 158 tok/s，Quinn 81 tok/s\"]\n    TC[\"标记消耗：Laguna 10.3k，GM5.2 26.4k，H3 10.4k\"]\n    Cmp[\"与 7530B 参数模型竞争（约 1/7 参数量）\"]\n    B --> R1\n    B --> R2\n    B --> S1\n    B --> S2\n    B --> S3\n    B --> S4\n    TS --> Cmp\n    TC --> Cmp\n```\n\n## 部署与获取方式\n```mermaid\nflowchart TD\n    FA[\"免费平台：World AI 输出平台\"]\n    HF[\"Hugging Face：本地权重下载\"]\n    OR[\"OpenRouter：API 访问\"]\n    P[\"API 费用：输入 0.10$/M token，输出 0.20$/M token\"]\n    LR[\"本地运行硬件：3090、DGX Spark、128GB MacBook\"]\n    Q[\"量化：FP4/E8（NVidia 原生）\"]\n    TP1[\"DGX Spark 约 19 tok/s\"]\n    TP2[\"RTX Pro 109 tok/s\"]\n    TP3[\"RTX 6000 接近 140 tok/s\"]\n    FA --> HF\n    FA --> OR\n    OR --> P\n    LR --> Q\n    LR --> TP1\n    LR --> TP2\n    LR --> TP3\n```\n\n## 应用场景与示例\n```mermaid\nflowchart TD\n    CS[\"代码生成与编码工作负载\"]\n    GD[\"游戏开发：FPS、俄罗斯方块、真实水族箱模拟\"]\n    UI[\"网页落地页、macOS 克隆 UI\"]\n    AN[\"动画示例：动态熔岩灯、F1 漂移甜甜圈\"]\n    PT[\"自定义提示词测试\"]\n    BM[\"基准测试：多领域评估\"]\n    EM[\"评估指标：标记质量、速度、视觉完整度\"]\n    CS --> BM\n    GD --> BM\n    UI --> BM\n    AN --> BM\n    PT --> BM\n    BM --> EM\n    CS --> UI\n    GD --> AN\n```",
+      "diagrams": [
+        {
+          "title": "模型概览",
+          "code": "flowchart TD\n    M[\"Laguna S 2.1\"]\n    P[\"总参数 1180 亿\"]\n    A[\"每 token 激活 80 亿参数\"]\n    C[\"上下文窗口 1M token\"]\n    Mo[\"模式：思考 / 非思考\"]\n    T[\"训练时长 9 周\"]\n    H[\"硬件需求：单台 NVIDIA DGX Spark / 3090\"]\n    E[\"专家混合模型\"]\n    M --> P\n    M --> A\n    M --> C\n    M --> Mo\n    M --> T\n    M --> H\n    M --> E"
+        },
+        {
+          "title": "性能与基准",
+          "code": "flowchart TD\n    B[\"基准平台：World AI、Vibe Conan\"]\n    R1[\"开源榜首\"]\n    R2[\"综合第 6 名\"]\n    S1[\"Swaybench 78.5%\"]\n    S2[\"Terminalbench 70.2%\"]\n    S3[\"Subench Pro 59.9%\"]\n    S4[\"Deep Suite 44%\"]\n    TS[\"生成速率：Laguna 158 tok/s，Quinn 81 tok/s\"]\n    TC[\"标记消耗：Laguna 10.3k，GM5.2 26.4k，H3 10.4k\"]\n    Cmp[\"与 7530B 参数模型竞争（约 1/7 参数量）\"]\n    B --> R1\n    B --> R2\n    B --> S1\n    B --> S2\n    B --> S3\n    B --> S4\n    TS --> Cmp\n    TC --> Cmp"
+        },
+        {
+          "title": "部署与获取方式",
+          "code": "flowchart TD\n    FA[\"免费平台：World AI 输出平台\"]\n    HF[\"Hugging Face：本地权重下载\"]\n    OR[\"OpenRouter：API 访问\"]\n    P[\"API 费用：输入 0.10$/M token，输出 0.20$/M token\"]\n    LR[\"本地运行硬件：3090、DGX Spark、128GB MacBook\"]\n    Q[\"量化：FP4/E8（NVidia 原生）\"]\n    TP1[\"DGX Spark 约 19 tok/s\"]\n    TP2[\"RTX Pro 109 tok/s\"]\n    TP3[\"RTX 6000 接近 140 tok/s\"]\n    FA --> HF\n    FA --> OR\n    OR --> P\n    LR --> Q\n    LR --> TP1\n    LR --> TP2\n    LR --> TP3"
+        },
+        {
+          "title": "应用场景与示例",
+          "code": "flowchart TD\n    CS[\"代码生成与编码工作负载\"]\n    GD[\"游戏开发：FPS、俄罗斯方块、真实水族箱模拟\"]\n    UI[\"网页落地页、macOS 克隆 UI\"]\n    AN[\"动画示例：动态熔岩灯、F1 漂移甜甜圈\"]\n    PT[\"自定义提示词测试\"]\n    BM[\"基准测试：多领域评估\"]\n    EM[\"评估指标：标记质量、速度、视觉完整度\"]\n    CS --> BM\n    GD --> BM\n    UI --> BM\n    AN --> BM\n    PT --> BM\n    BM --> EM\n    CS --> UI\n    GD --> AN"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T03:48:44+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Laguna S2.1 知识图谱\n\n## 模型概览\n```mermaid\nflowchart TD\n    M[\"Laguna S 2.1\"]\n    P[\"总参数 1180 亿\"]\n    A[\"每 token 激活 80 亿参数\"]\n    C[\"上下文窗口 1M token\"]\n    Mo[\"模式：思考 / 非思考\"]\n    T[\"训练时长 9 周\"]\n    H[\"硬件需求：单台 NVIDIA DGX Spark / 3090\"]\n    E[\"专家混合模型\"]\n    M --> P\n    M --> A\n    M --> C\n    M --> Mo\n    M --> T\n    M --> H\n    M --> E\n```\n\n## 性能与基准\n```mermaid\nflowchart TD\n    B[\"基准平台：World AI、Vibe Conan\"]\n    R1[\"开源榜首\"]\n    R2[\"综合第 6 名\"]\n    S1[\"Swaybench 78.5%\"]\n    S2[\"Terminalbench 70.2%\"]\n    S3[\"Subench Pro 59.9%\"]\n    S4[\"Deep Suite 44%\"]\n    TS[\"生成速率：Laguna 158 tok/s，Quinn 81 tok/s\"]\n    TC[\"标记消耗：Laguna 10.3k，GM5.2 26.4k，H3 10.4k\"]\n    Cmp[\"与 7530B 参数模型竞争（约 1/7 参数量）\"]\n    B --> R1\n    B --> R2\n    B --> S1\n    B --> S2\n    B --> S3\n    B --> S4\n    TS --> Cmp\n    TC --> Cmp\n```\n\n## 部署与获取方式\n```mermaid\nflowchart TD\n    FA[\"免费平台：World AI 输出平台\"]\n    HF[\"Hugging Face：本地权重下载\"]\n    OR[\"OpenRouter：API 访问\"]\n    P[\"API 费用：输入 0.10$/M token，输出 0.20$/M token\"]\n    LR[\"本地运行硬件：3090、DGX Spark、128GB MacBook\"]\n    Q[\"量化：FP4/E8（NVidia 原生）\"]\n    TP1[\"DGX Spark 约 19 tok/s\"]\n    TP2[\"RTX Pro 109 tok/s\"]\n    TP3[\"RTX 6000 接近 140 tok/s\"]\n    FA --> HF\n    FA --> OR\n    OR --> P\n    LR --> Q\n    LR --> TP1\n    LR --> TP2\n    LR --> TP3\n```\n\n## 应用场景与示例\n```mermaid\nflowchart TD\n    CS[\"代码生成与编码工作负载\"]\n    GD[\"游戏开发：FPS、俄罗斯方块、真实水族箱模拟\"]\n    UI[\"网页落地页、macOS 克隆 UI\"]\n    AN[\"动画示例：动态熔岩灯、F1 漂移甜甜圈\"]\n    PT[\"自定义提示词测试\"]\n    BM[\"基准测试：多领域评估\"]\n    EM[\"评估指标：标记质量、速度、视觉完整度\"]\n    CS --> BM\n    GD --> BM\n    UI --> BM\n    AN --> BM\n    PT --> BM\n    BM --> EM\n    CS --> UI\n    GD --> AN\n```",
+  "diagrams": [
+    {
+      "title": "模型概览",
+      "code": "flowchart TD\n    M[\"Laguna S 2.1\"]\n    P[\"总参数 1180 亿\"]\n    A[\"每 token 激活 80 亿参数\"]\n    C[\"上下文窗口 1M token\"]\n    Mo[\"模式：思考 / 非思考\"]\n    T[\"训练时长 9 周\"]\n    H[\"硬件需求：单台 NVIDIA DGX Spark / 3090\"]\n    E[\"专家混合模型\"]\n    M --> P\n    M --> A\n    M --> C\n    M --> Mo\n    M --> T\n    M --> H\n    M --> E"
+    },
+    {
+      "title": "性能与基准",
+      "code": "flowchart TD\n    B[\"基准平台：World AI、Vibe Conan\"]\n    R1[\"开源榜首\"]\n    R2[\"综合第 6 名\"]\n    S1[\"Swaybench 78.5%\"]\n    S2[\"Terminalbench 70.2%\"]\n    S3[\"Subench Pro 59.9%\"]\n    S4[\"Deep Suite 44%\"]\n    TS[\"生成速率：Laguna 158 tok/s，Quinn 81 tok/s\"]\n    TC[\"标记消耗：Laguna 10.3k，GM5.2 26.4k，H3 10.4k\"]\n    Cmp[\"与 7530B 参数模型竞争（约 1/7 参数量）\"]\n    B --> R1\n    B --> R2\n    B --> S1\n    B --> S2\n    B --> S3\n    B --> S4\n    TS --> Cmp\n    TC --> Cmp"
+    },
+    {
+      "title": "部署与获取方式",
+      "code": "flowchart TD\n    FA[\"免费平台：World AI 输出平台\"]\n    HF[\"Hugging Face：本地权重下载\"]\n    OR[\"OpenRouter：API 访问\"]\n    P[\"API 费用：输入 0.10$/M token，输出 0.20$/M token\"]\n    LR[\"本地运行硬件：3090、DGX Spark、128GB MacBook\"]\n    Q[\"量化：FP4/E8（NVidia 原生）\"]\n    TP1[\"DGX Spark 约 19 tok/s\"]\n    TP2[\"RTX Pro 109 tok/s\"]\n    TP3[\"RTX 6000 接近 140 tok/s\"]\n    FA --> HF\n    FA --> OR\n    OR --> P\n    LR --> Q\n    LR --> TP1\n    LR --> TP2\n    LR --> TP3"
+    },
+    {
+      "title": "应用场景与示例",
+      "code": "flowchart TD\n    CS[\"代码生成与编码工作负载\"]\n    GD[\"游戏开发：FPS、俄罗斯方块、真实水族箱模拟\"]\n    UI[\"网页落地页、macOS 克隆 UI\"]\n    AN[\"动画示例：动态熔岩灯、F1 漂移甜甜圈\"]\n    PT[\"自定义提示词测试\"]\n    BM[\"基准测试：多领域评估\"]\n    EM[\"评估指标：标记质量、速度、视觉完整度\"]\n    CS --> BM\n    GD --> BM\n    UI --> BM\n    AN --> BM\n    PT --> BM\n    BM --> EM\n    CS --> UI\n    GD --> AN"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T03:48:44+00:00"
+}

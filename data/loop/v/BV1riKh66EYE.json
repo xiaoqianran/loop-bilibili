@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1riKh66EYE",
+  "title": "GODOT正交视角场景实现昼夜切换效果",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 171,
+  "text": "上次我们创建的场景\n周围空空的相浮在天上\n用我们编辑器的绘制外围来解决\n先批量生成一圈\n可以看到周围还是有穿帮\n接下来手动绘制和地板绘制一样\n左键拖动就生成\n右键删除\n下面我们来给场景生成夜景\n从编辑器添加夜景节点\n手动调一下灯光颜色\n营造霓虹灯光照进室内的感觉\n在脚本中绑定设置切换按键\n看看就业切换的效果吧\n下期进行场景优化和家具导入预览",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1riKh66EYE",
+  "published_at": "1784632421",
+  "fetched_at": "2026-08-08T18:31:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T18:35:01+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T18:35:01+00:00"
+}

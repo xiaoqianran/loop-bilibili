@@ -1,0 +1,74 @@
+{
+  "bvid": "BV13WN76EEFq",
+  "title": "如何在UE里提升工作效率？｜UE5零基础入门教程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1041,
+  "text": "这期快问快答\n我们讲解这几个问题\n优异如何快速选择相同类型资产\n优异中快速调用其他关卡资产\nUE设置自定义移动旋转缩放吸附值\nUE中如何快速了解控制台代码的作用\n那话不多说\n我们直接开始\n首先是优异\n如何快速选择相同类型资产\n在场景中\n如果你已经选中了一个物体\n这时你想把场景里所有同类型的物体都选出来\n方便统一调整属性或者批量替换\n常规做法是取大纲视图里手动一个个点\n或者用过滤器筛选\n但那样效率太低了\n其实UE提供了一个超快的快捷键\n选中目标物体后\n直接按下键盘上的shift\n加E引擎\n就会自动帮你选中当前场景中\n所有同类型的资产\n这样一来你就可以一次性修改材质\n移动位置或者删除它们\n非常省事\n第二点右翼如何快速调用其他关卡资产\n当我们做大型项目时\n不同类别的资产分散放在不同的关卡\n如果当前关卡想用到另一个关卡里的某个模型\n常规做法是打开那个关卡\n复制粘贴或者重新导入\n其实我们可以借助一个插件叫actor palette\n我们打开edit\n找到plugins\n搜索actor palette\n重启工程\n在工具栏里打开tools菜单\n找到actor控制\n或者直接搜索actor palette\n然后选择存放资产的关卡\n面板里就会列出那个关卡中的所有actor\n直接拖拽到当前场景就能使用\n第三点\nUE如何设置自定义移动旋转缩放吸附值\n平时我们移动物体时默认的吸附不长\n可能是十个单位\n旋转\n可能是五度缩放\n可能是0.1\n但在某些精细调整的场景下\n可能需要更精确的数值\n我们可以来到编辑器首选项搜索grade\n然后往下滑动\n在出现的选项里找到decimal great sizes\n这里可以分别设置移动旋转缩放的吸附增值\n比如我想增加一个旋转的吸附值\n找到root great sizes\n填上你想要的数值后\n关掉窗口\n就可以选择你设定的数值了\n第四点\nUE中如何快速了解控制台代码的作用\n在项目调试时\n我们经常要用到控制台输入一些命令\n比如二点shaw quality之类的\n但有时记不清某个命令具体是做什么的\n或者有哪些可选参数\n其实U1内置了很贴心的帮助功能\n你可以在命令后面直接加空格和问号\n比如输入R点settle quality\n空格问号\n控制台就会打印出该命令的说明和参数范围\n更省事的方法是直接输入help并回车\n它会弹出一个网页链接\n里面列出了所有控制台命令及其详细解释\n随用随查\n再也不用去翻文档了\n那这期快问快答就到这了\n希望对大家有所帮助\n我们下次见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV13WN76EEFq",
+  "published_at": "1783908000",
+  "fetched_at": "2026-08-07T15:07:05+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# UE5 工作效率提升知识图谱\n\n## 快速选择同类型资产 [BV13WN76EEFq P1 00:38]\n```mermaid\nflowchart TD\n    A1[\"选中目标物体\"] --> A2[\"按 Shift + E\"]\n    A2 --> A3[\"UE 自动选中场景中所有同类型资产\"]\n    A3 --> A4[\"批量修改属性（材质、位置、删除等）\"]\n    A4 --> A5[\"完成\"]\n```\n\n## 跨关卡调用资产（Actor Palette） [BV13WN76EEFq P1 00:55]\n```mermaid\nflowchart TD\n    B1[\"打开 Edit → Plugins\"] --> B2[\"搜索并启用 Actor Palette 插件\"]\n    B2 --> B3[\"重启工程\"]\n    B3 --> B4[\"在 Tools 菜单打开 Actor 控制面板\"]\n    B4 --> B5[\"选择存放资产的目标关卡\"]\n    B5 --> B6[\"面板列出该关卡的所有 Actor\"]\n    B6 --> B7[\"拖拽所需 Actor 到当前场景\"]\n    B7 --> B8[\"资产使用完成\"]\n```\n\n## 自定义移动/旋转/缩放吸附值 [BV13WN76EEFq P1 01:32]\n```mermaid\nflowchart TD\n    C1[\"打开 编辑器首选项\"] --> C2[\"搜索 “grid”\"]\n    C2 --> C3[\"滚动至 “Decimal Grid Sizes”\"]\n    C3 --> C4[\"设置移动吸附增值\"]\n    C4 --> C5[\"设置旋转吸附增值\"]\n    C5 --> C6[\"设置缩放吸附增值\"]\n    C6 --> C7[\"保存并关闭首选项窗口\"]\n    C7 --> C8[\"在场景中使用自定义吸附值\"]\n```\n\n## 控制台命令快速帮助查询 [BV13WN76EEFq P1 02:06]\n```mermaid\nflowchart TD\n    D1[\"在控制台输入命令 + 空格 + ?\"] --> D2[\"控制台打印命令说明和参数范围\"]\n    D1 --> D3[\"输入 help 并回车\"]\n    D3 --> D4[\"弹出网页链接列出所有命令及详细解释\"]\n    D2 --> D5[\"快速了解命令作用\"]\n    D4 --> D5\n    D5 --> D6[\"完成查询\"]\n```",
+      "diagrams": [
+        {
+          "title": "快速选择同类型资产",
+          "code": "flowchart TD\n    A1[\"选中目标物体\"] --> A2[\"按 Shift + E\"]\n    A2 --> A3[\"UE 自动选中场景中所有同类型资产\"]\n    A3 --> A4[\"批量修改属性（材质、位置、删除等）\"]\n    A4 --> A5[\"完成\"]"
+        },
+        {
+          "title": "跨关卡调用资产（Actor Palette）",
+          "code": "flowchart TD\n    B1[\"打开 Edit → Plugins\"] --> B2[\"搜索并启用 Actor Palette 插件\"]\n    B2 --> B3[\"重启工程\"]\n    B3 --> B4[\"在 Tools 菜单打开 Actor 控制面板\"]\n    B4 --> B5[\"选择存放资产的目标关卡\"]\n    B5 --> B6[\"面板列出该关卡的所有 Actor\"]\n    B6 --> B7[\"拖拽所需 Actor 到当前场景\"]\n    B7 --> B8[\"资产使用完成\"]"
+        },
+        {
+          "title": "自定义移动/旋转/缩放吸附值",
+          "code": "flowchart TD\n    C1[\"打开 编辑器首选项\"] --> C2[\"搜索 “grid”\"]\n    C2 --> C3[\"滚动至 “Decimal Grid Sizes”\"]\n    C3 --> C4[\"设置移动吸附增值\"]\n    C4 --> C5[\"设置旋转吸附增值\"]\n    C5 --> C6[\"设置缩放吸附增值\"]\n    C6 --> C7[\"保存并关闭首选项窗口\"]\n    C7 --> C8[\"在场景中使用自定义吸附值\"]"
+        },
+        {
+          "title": "控制台命令快速帮助查询",
+          "code": "flowchart TD\n    D1[\"在控制台输入命令 + 空格 + ?\"] --> D2[\"控制台打印命令说明和参数范围\"]\n    D1 --> D3[\"输入 help 并回车\"]\n    D3 --> D4[\"弹出网页链接列出所有命令及详细解释\"]\n    D2 --> D5[\"快速了解命令作用\"]\n    D4 --> D5\n    D5 --> D6[\"完成查询\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T15:07:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# UE5 工作效率提升知识图谱\n\n## 快速选择同类型资产 [BV13WN76EEFq P1 00:38]\n```mermaid\nflowchart TD\n    A1[\"选中目标物体\"] --> A2[\"按 Shift + E\"]\n    A2 --> A3[\"UE 自动选中场景中所有同类型资产\"]\n    A3 --> A4[\"批量修改属性（材质、位置、删除等）\"]\n    A4 --> A5[\"完成\"]\n```\n\n## 跨关卡调用资产（Actor Palette） [BV13WN76EEFq P1 00:55]\n```mermaid\nflowchart TD\n    B1[\"打开 Edit → Plugins\"] --> B2[\"搜索并启用 Actor Palette 插件\"]\n    B2 --> B3[\"重启工程\"]\n    B3 --> B4[\"在 Tools 菜单打开 Actor 控制面板\"]\n    B4 --> B5[\"选择存放资产的目标关卡\"]\n    B5 --> B6[\"面板列出该关卡的所有 Actor\"]\n    B6 --> B7[\"拖拽所需 Actor 到当前场景\"]\n    B7 --> B8[\"资产使用完成\"]\n```\n\n## 自定义移动/旋转/缩放吸附值 [BV13WN76EEFq P1 01:32]\n```mermaid\nflowchart TD\n    C1[\"打开 编辑器首选项\"] --> C2[\"搜索 “grid”\"]\n    C2 --> C3[\"滚动至 “Decimal Grid Sizes”\"]\n    C3 --> C4[\"设置移动吸附增值\"]\n    C4 --> C5[\"设置旋转吸附增值\"]\n    C5 --> C6[\"设置缩放吸附增值\"]\n    C6 --> C7[\"保存并关闭首选项窗口\"]\n    C7 --> C8[\"在场景中使用自定义吸附值\"]\n```\n\n## 控制台命令快速帮助查询 [BV13WN76EEFq P1 02:06]\n```mermaid\nflowchart TD\n    D1[\"在控制台输入命令 + 空格 + ?\"] --> D2[\"控制台打印命令说明和参数范围\"]\n    D1 --> D3[\"输入 help 并回车\"]\n    D3 --> D4[\"弹出网页链接列出所有命令及详细解释\"]\n    D2 --> D5[\"快速了解命令作用\"]\n    D4 --> D5\n    D5 --> D6[\"完成查询\"]\n```",
+  "diagrams": [
+    {
+      "title": "快速选择同类型资产",
+      "code": "flowchart TD\n    A1[\"选中目标物体\"] --> A2[\"按 Shift + E\"]\n    A2 --> A3[\"UE 自动选中场景中所有同类型资产\"]\n    A3 --> A4[\"批量修改属性（材质、位置、删除等）\"]\n    A4 --> A5[\"完成\"]"
+    },
+    {
+      "title": "跨关卡调用资产（Actor Palette）",
+      "code": "flowchart TD\n    B1[\"打开 Edit → Plugins\"] --> B2[\"搜索并启用 Actor Palette 插件\"]\n    B2 --> B3[\"重启工程\"]\n    B3 --> B4[\"在 Tools 菜单打开 Actor 控制面板\"]\n    B4 --> B5[\"选择存放资产的目标关卡\"]\n    B5 --> B6[\"面板列出该关卡的所有 Actor\"]\n    B6 --> B7[\"拖拽所需 Actor 到当前场景\"]\n    B7 --> B8[\"资产使用完成\"]"
+    },
+    {
+      "title": "自定义移动/旋转/缩放吸附值",
+      "code": "flowchart TD\n    C1[\"打开 编辑器首选项\"] --> C2[\"搜索 “grid”\"]\n    C2 --> C3[\"滚动至 “Decimal Grid Sizes”\"]\n    C3 --> C4[\"设置移动吸附增值\"]\n    C4 --> C5[\"设置旋转吸附增值\"]\n    C5 --> C6[\"设置缩放吸附增值\"]\n    C6 --> C7[\"保存并关闭首选项窗口\"]\n    C7 --> C8[\"在场景中使用自定义吸附值\"]"
+    },
+    {
+      "title": "控制台命令快速帮助查询",
+      "code": "flowchart TD\n    D1[\"在控制台输入命令 + 空格 + ?\"] --> D2[\"控制台打印命令说明和参数范围\"]\n    D1 --> D3[\"输入 help 并回车\"]\n    D3 --> D4[\"弹出网页链接列出所有命令及详细解释\"]\n    D2 --> D5[\"快速了解命令作用\"]\n    D4 --> D5\n    D5 --> D6[\"完成查询\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:07:16+00:00"
+}

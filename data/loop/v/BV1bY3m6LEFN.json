@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1bY3m6LEFN",
+  "title": "一分钟搞定！DeepSeek V4 Flash 接入 Codex 教程（可识图）！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 702,
+  "text": "DEPCV4flash已经发布了\n并且性能远超之前的V4pro\n关键是针对codex做的适配\n今天我就教大家怎么让DIPC接到codex\n还能让DIPC拥有识图的能力\n整个教程就两步\n第一步接入DEPC\n第二步让DEPC拥有识图能力\n我们在接入DPC之前\n需要下载一个很重要的软件叫ag switch\n你可以理解成它是帮你管理AI的配置工具\n无论你用任何AI都离不开它\n下载完成后打开这里会进入到一个简单的引导\n如果你没有安装codex这样的工具\n这里也有一键安装功能\n点一下\n等待几分钟就会安装完成\n我们进入进来后\n在左侧面板点击这里\n重点在这个通道添加新渠道\n我们找到DEPC\n点击使用此通道\n这段填充内容\n需要我们点击蓝字跳转到DPC官网\n这里需要登录和注册自己的账号\n我有账号就直接登录了\n登录进来后\n找到左侧面板的这个API key\n创建一个名称\n随意创建完成后\n我们复制这一段内容轨道ag switch粘贴上去\n然后使用普通刀\n现在我们来看一下是不是成功接入了\n打开codex\n在对话里输入\n您好\n如果成功回复\n就说明接入成功了\n但是不要急\n现在的DPC还没有读图识图功能\n我们需要对它进行两个小设置\n复制我给你的这一段链接模板到对话框里\n这时候别着急回车\n我们还需要借助一个小工具\n打开阿里云百列\n点击这里创建描述为codes\n我们把这一串内容复制下来\n粘贴到codex的对话框里\n回车发送\n现在就能在对话框里正常使用了\n我们来试验一下\n新建一个对话\n我直接给它一个图片\n让它识别\n可以看到我们的DEPC已经拥有了识图功能\n本次使用到的工具链接我都会附带在评论区\n这就是本期视频的全部内容了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1bY3m6LEFN",
+  "published_at": "1785601440",
+  "fetched_at": "2026-08-10T04:04:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 接入 Codex 知识图谱\n\n## 总览概览 [BV1bY3m6LEFN P1 00:00]\n```mermaid\nflowchart TD\n    A1[\"DEPC V4 Flash\"]\n    A2[\"性能远超 V4pro\"]\n    A3[\"针对 Codex 适配\"]\n    A4[\"ag switch 软件\"]\n    A5[\"管理 AI 配置\"]\n    A6[\"Codex 平台\"]\n    A7[\"API Key\"]\n    A8[\"DEPC 通道\"]\n    A9[\"图像识别功能\"]\n    A10[\"阿里云百列\"]\n\n    A1 --> A2\n    A1 --> A3\n    A4 --> A5\n    A5 --> A6\n    A4 --> A8\n    A8 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n    A10 --> A9\n    A10 --> A6\n```\n\n## 集成步骤概览 [BV1bY3m6LEFN P1 00:10]\n```mermaid\nflowchart TD\n    B1[\"下载 ag switch\"]\n    B2[\"打开引导页面\"]\n    B3[\"在左侧面板添加新渠道\"]\n    B4[\"选择 DEPC 通道\"]\n    B5[\"点击蓝字跳转 DPC 官网\"]\n    B6[\"登录/注册账号\"]\n    B7[\"获取 API Key\"]\n    B8[\"复制 API Key 并粘贴到 ag switch\"]\n    B9[\"使用普通刀检查接入状态\"]\n    B10[\"打开 Codex 对话框\"]\n    B11[\"输入 ‘您好’ 进行测试\"]\n    B12[\"确认接入成功\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10 --> B11 --> B12\n```\n\n## 启用图像识别流程 [BV1bY3m6LEFN P1 01:10]\n```mermaid\nflowchart TD\n    C1[\"当前 DPC 无图像识别功能\"]\n    C2[\"复制链接模板\"]\n    C3[\"准备小工具（阿里云百列）\"]\n    C4[\"打开阿里云百列\"]\n    C5[\"创建描述为 codes\"]\n    C6[\"复制生成的内容\"]\n    C7[\"粘贴到 Codex 对话框\"]\n    C8[\"回车发送\"]\n    C9[\"图像识别功能激活\"]\n    C10[\"新建对话并发送图片\"]\n    C11[\"DEPC 成功识别图片\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10 --> C11\n```",
+      "diagrams": [
+        {
+          "title": "总览概览",
+          "code": "flowchart TD\n    A1[\"DEPC V4 Flash\"]\n    A2[\"性能远超 V4pro\"]\n    A3[\"针对 Codex 适配\"]\n    A4[\"ag switch 软件\"]\n    A5[\"管理 AI 配置\"]\n    A6[\"Codex 平台\"]\n    A7[\"API Key\"]\n    A8[\"DEPC 通道\"]\n    A9[\"图像识别功能\"]\n    A10[\"阿里云百列\"]\n\n    A1 --> A2\n    A1 --> A3\n    A4 --> A5\n    A5 --> A6\n    A4 --> A8\n    A8 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n    A10 --> A9\n    A10 --> A6"
+        },
+        {
+          "title": "集成步骤概览",
+          "code": "flowchart TD\n    B1[\"下载 ag switch\"]\n    B2[\"打开引导页面\"]\n    B3[\"在左侧面板添加新渠道\"]\n    B4[\"选择 DEPC 通道\"]\n    B5[\"点击蓝字跳转 DPC 官网\"]\n    B6[\"登录/注册账号\"]\n    B7[\"获取 API Key\"]\n    B8[\"复制 API Key 并粘贴到 ag switch\"]\n    B9[\"使用普通刀检查接入状态\"]\n    B10[\"打开 Codex 对话框\"]\n    B11[\"输入 ‘您好’ 进行测试\"]\n    B12[\"确认接入成功\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10 --> B11 --> B12"
+        },
+        {
+          "title": "启用图像识别流程",
+          "code": "flowchart TD\n    C1[\"当前 DPC 无图像识别功能\"]\n    C2[\"复制链接模板\"]\n    C3[\"准备小工具（阿里云百列）\"]\n    C4[\"打开阿里云百列\"]\n    C5[\"创建描述为 codes\"]\n    C6[\"复制生成的内容\"]\n    C7[\"粘贴到 Codex 对话框\"]\n    C8[\"回车发送\"]\n    C9[\"图像识别功能激活\"]\n    C10[\"新建对话并发送图片\"]\n    C11[\"DEPC 成功识别图片\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10 --> C11"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T04:04:44+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 接入 Codex 知识图谱\n\n## 总览概览 [BV1bY3m6LEFN P1 00:00]\n```mermaid\nflowchart TD\n    A1[\"DEPC V4 Flash\"]\n    A2[\"性能远超 V4pro\"]\n    A3[\"针对 Codex 适配\"]\n    A4[\"ag switch 软件\"]\n    A5[\"管理 AI 配置\"]\n    A6[\"Codex 平台\"]\n    A7[\"API Key\"]\n    A8[\"DEPC 通道\"]\n    A9[\"图像识别功能\"]\n    A10[\"阿里云百列\"]\n\n    A1 --> A2\n    A1 --> A3\n    A4 --> A5\n    A5 --> A6\n    A4 --> A8\n    A8 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n    A10 --> A9\n    A10 --> A6\n```\n\n## 集成步骤概览 [BV1bY3m6LEFN P1 00:10]\n```mermaid\nflowchart TD\n    B1[\"下载 ag switch\"]\n    B2[\"打开引导页面\"]\n    B3[\"在左侧面板添加新渠道\"]\n    B4[\"选择 DEPC 通道\"]\n    B5[\"点击蓝字跳转 DPC 官网\"]\n    B6[\"登录/注册账号\"]\n    B7[\"获取 API Key\"]\n    B8[\"复制 API Key 并粘贴到 ag switch\"]\n    B9[\"使用普通刀检查接入状态\"]\n    B10[\"打开 Codex 对话框\"]\n    B11[\"输入 ‘您好’ 进行测试\"]\n    B12[\"确认接入成功\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10 --> B11 --> B12\n```\n\n## 启用图像识别流程 [BV1bY3m6LEFN P1 01:10]\n```mermaid\nflowchart TD\n    C1[\"当前 DPC 无图像识别功能\"]\n    C2[\"复制链接模板\"]\n    C3[\"准备小工具（阿里云百列）\"]\n    C4[\"打开阿里云百列\"]\n    C5[\"创建描述为 codes\"]\n    C6[\"复制生成的内容\"]\n    C7[\"粘贴到 Codex 对话框\"]\n    C8[\"回车发送\"]\n    C9[\"图像识别功能激活\"]\n    C10[\"新建对话并发送图片\"]\n    C11[\"DEPC 成功识别图片\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10 --> C11\n```",
+  "diagrams": [
+    {
+      "title": "总览概览",
+      "code": "flowchart TD\n    A1[\"DEPC V4 Flash\"]\n    A2[\"性能远超 V4pro\"]\n    A3[\"针对 Codex 适配\"]\n    A4[\"ag switch 软件\"]\n    A5[\"管理 AI 配置\"]\n    A6[\"Codex 平台\"]\n    A7[\"API Key\"]\n    A8[\"DEPC 通道\"]\n    A9[\"图像识别功能\"]\n    A10[\"阿里云百列\"]\n\n    A1 --> A2\n    A1 --> A3\n    A4 --> A5\n    A5 --> A6\n    A4 --> A8\n    A8 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n    A10 --> A9\n    A10 --> A6"
+    },
+    {
+      "title": "集成步骤概览",
+      "code": "flowchart TD\n    B1[\"下载 ag switch\"]\n    B2[\"打开引导页面\"]\n    B3[\"在左侧面板添加新渠道\"]\n    B4[\"选择 DEPC 通道\"]\n    B5[\"点击蓝字跳转 DPC 官网\"]\n    B6[\"登录/注册账号\"]\n    B7[\"获取 API Key\"]\n    B8[\"复制 API Key 并粘贴到 ag switch\"]\n    B9[\"使用普通刀检查接入状态\"]\n    B10[\"打开 Codex 对话框\"]\n    B11[\"输入 ‘您好’ 进行测试\"]\n    B12[\"确认接入成功\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10 --> B11 --> B12"
+    },
+    {
+      "title": "启用图像识别流程",
+      "code": "flowchart TD\n    C1[\"当前 DPC 无图像识别功能\"]\n    C2[\"复制链接模板\"]\n    C3[\"准备小工具（阿里云百列）\"]\n    C4[\"打开阿里云百列\"]\n    C5[\"创建描述为 codes\"]\n    C6[\"复制生成的内容\"]\n    C7[\"粘贴到 Codex 对话框\"]\n    C8[\"回车发送\"]\n    C9[\"图像识别功能激活\"]\n    C10[\"新建对话并发送图片\"]\n    C11[\"DEPC 成功识别图片\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10 --> C11"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T04:04:44+00:00"
+}

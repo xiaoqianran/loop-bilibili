@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1sCGH6iErJ",
+  "title": "[Unity]28届 ARPG Demo项目展示",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1294,
+  "text": "大家好\n欢迎收看我的arpg demo介绍视频\n我是RICHMAN的\n这个demo是我用unity做的一个2D AI pg原型\n由于我期望的方向是客户端开发\n这个demo几乎没有堆什么玩法\n我更倾向的是把它做成几个可复用的系统\n包括A星寻路集成UI与焦点管理\n任务与对话逻辑以及存档读档\n下面我会重点从上述几个方面介绍这个demo\n其中UI的绘制参考了nature工作室的教程\n其余部分均为自行实现\n下面是有关A星的介绍\n我把整个系统拆成了网格层\n加算法层加路径消费层\n如视频中的那样\n我的怪物和NPC都能寻路与避障\n并且采用了较为轻便的移动配置\n这就归功于我的分层设计\n保证了整个系统底层的可复用\n也便于需要寻路的物体进行移动配置\n此外这个A星的实现还考虑了斜向通行\n安全边距\n目标移动后的重巡录等少量优化问题\nUI这部分我比较想强调的是焦点管理\n因为项目里会同时存在背包任务\n技能树\n存档等面板\n为了更好的多窗口交互体验\n我引入拖拽配件\n并且构建了ui manager\nUi manager\n使用链表维护打开顺序\n当前焦点拖拽窗口时\n也会自动把当前窗口提到最上层\n此外我还构建了一个集成面板\n能统一调度所有已注册UI\n并且为ui manager处理外部逻辑的输入预留了入口\n还值得一提的是\n我这部分的实现是事件驱动加编辑器\n配置的价值在于可以利用广播\n同时唤起其他的系统\n比如音频等\n能打通UI和其他系统\n接下来是任务和对话部分任务和对话\n我使用了数据驱动的设计思路\n任务目标奖励\n对话选项和拒绝条件都放在scriptable object里配置\n运行时\nquest manager负责追踪任务状态\n并且实际上会动态加载地图上的任务\n栏里的任务\ndialogue manager负责根据历史记录和道具数量\n决定进入某段对话\n或者按顺序进入拒绝分居\n最终两个系统都能在不改动代码的情况下\n用scriptable object组合出多种多样的对话和任务配置\n接下来是存档部分\n我把存档部分设计成了注册序结构\n只要是实现了ISAVEABLE接口的对象\n在存档时都会统一交给data manager来收集数据\n之后再由sea system负责把数据写入\nJASON存档分为自动与手动两种\n这是对应的存档文件\n这样一来新增可保存对象的时候\n只需要实现对应的接口就可以了\n另外我还做了坏档过滤和删除路径校验的处理\n能让读档和删档的操作更安全\n另外我还使用addressable\n实现了场景的异步加载与卸载\n主要解决了两个问题\n一是淡入淡出的持续控制问题\n二是场景对象的持久化问题\n前者利用同时加载多场景加同步事件广播解决\n后者利用场景分割天然地区\n分常驻游戏对象和需要加载与卸载的游戏对象\n介绍视频到这里就告一段落了\n最后谈谈优化\nA星后面可以换成更高效的寻路算法\n并且引入碰撞和空间规划任务目标类型\n后面还可以继续扩展\n比如位置触发或击杀目标UI\n这部分\n后面还可以补更完整的动画和移动端适配\n此外也可以构建一个更完整的玩法循环\n感谢大家百忙之中抽空观看\n这里是RICHMENT\n我们下个视频见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1sCGH6iErJ",
+  "published_at": "1779668100",
+  "fetched_at": "2026-08-09T20:59:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

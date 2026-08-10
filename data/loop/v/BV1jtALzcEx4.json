@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1jtALzcEx4",
+  "title": "OmniCoder-9B：9B 小模型编程实战暴涨 61%，42 万条顶级 AI 轨迹训练的开源编码智能体",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 494,
+  "text": "一个只有9B参数的小模型\n在编程智能体测试中\n把基座模型的成绩直接拉高了61%\n他叫ommy coder\n上线一周下载量就突破了5万\n你可能已经厌倦了本地跑个代码模型\n动不动就要80G显存\n要么租卡\n要么排队等API编码智能体这么火\n普通开发者根本玩不起OMNIODER的思路很暴力\n直接从最强模型身上学\n他的训练数据来自42万条真实编码轨迹\n全是从cloud opus gp t5\n这些顶级模型的实际工作记录中提取的\n不是背答案\n是学工作方式\n遇到错误会先读再改\n用最小的DF修补代码\n像真正的程序员一样思考\n看数据\nGPQA测试83.8分\n比基座高两个点\nterminal bench编程实战23.6分\n比基座翻了将近一倍\naim数学竞赛90分\n关键是\n这些成绩是用一张消费级显卡就能跑出来的\n架构上继承了queen3.5的混合设计\n门控delta网络加标准\n注意力交替排列\n原生支持260000token上下文完全开源\nAPACHE2.0协议\nGGUF量化版已经就位\n笔记本也能跑小模型时代不是参数越大越好\n而是训练数据越精越强\n觉得有用就点个赞\n我是锋芒AI追星不盲从\n实测出真知",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1jtALzcEx4",
+  "published_at": "1774170000",
+  "fetched_at": "2026-08-10T01:27:58+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# OmniCoder-9B 知识图谱\n\n## 总览 [BV1jtALzcEx4 P1 00:00] [BV1jtALzcEx4 P1 00:08] [BV1jtALzcEx4 P1 01:10]\n```mermaid\nflowchart TD\n    A[\"OmniCoder-9B\"] --> B[\"9B 参数\"]\n    A --> C[\"基座模型成绩提升 61%\"]\n    A --> D[\"上线一周下载量 5万\"]\n    A --> E[\"训练数据 42万条真实编码轨迹\"]\n    A --> F[\"架构继承 queen3.5 混合设计\"]\n    A --> G[\"消费级显卡可运行\"]\n    A --> H[\"APACHE2.0 开源\"]\n    A --> I[\"GGUF 量化版已就位\"]\n```\n\n## 训练数据与学习方式 [BV1jtALzcEx4 P1 00:26] [BV1jtALzcEx4 P1 00:35] [BV1jtALzcEx4 P1 00:41]\n```mermaid\nflowchart TD\n    A2[\"训练数据 42万条真实编码轨迹\"] --> B2[\"来源 cloud opus gpt5 顶级模型工作记录\"]\n    C2[\"学习方式 非背答案\"] --> D2[\"学习工作方式\"]\n    D2 --> G2[\"思考方式 像程序员一样思考\"]\n    E2[\"错误处理 先读再改\"] --> F2[\"最小 DF 修补\"]\n    H2[\"对比 传统本地模型 80G 显存需求\"] --> I2[\"OmniCoder 低显存需求\"]\n```\n\n## 性能与硬件要求 [BV1jtALzcEx4 P1 00:44] [BV1jtALzcEx4 P1 00:56] [BV1jtALzcEx4 P1 01:05]\n```mermaid\nflowchart TD\n    D3[\"消费级显卡运行\"] --> A3[\"GPQA 83.8 分 (+2 基座)\"]\n    D3 --> B3[\"Terminal Bench 23.6 分 (≈翻倍)\"]\n    D3 --> C3[\"AIM 数学竞赛 90 分\"]\n    D3 --> E3[\"支持 260k token 上下文\"]\n    D3 --> F3[\"可在笔记本运行\"]\n    D3 --> G3[\"量化版 GGUF 已就位\"]\n    D3 --> H3[\"无需租卡或排队 API\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"OmniCoder-9B\"] --> B[\"9B 参数\"]\n    A --> C[\"基座模型成绩提升 61%\"]\n    A --> D[\"上线一周下载量 5万\"]\n    A --> E[\"训练数据 42万条真实编码轨迹\"]\n    A --> F[\"架构继承 queen3.5 混合设计\"]\n    A --> G[\"消费级显卡可运行\"]\n    A --> H[\"APACHE2.0 开源\"]\n    A --> I[\"GGUF 量化版已就位\"]"
+        },
+        {
+          "title": "训练数据与学习方式",
+          "code": "flowchart TD\n    A2[\"训练数据 42万条真实编码轨迹\"] --> B2[\"来源 cloud opus gpt5 顶级模型工作记录\"]\n    C2[\"学习方式 非背答案\"] --> D2[\"学习工作方式\"]\n    D2 --> G2[\"思考方式 像程序员一样思考\"]\n    E2[\"错误处理 先读再改\"] --> F2[\"最小 DF 修补\"]\n    H2[\"对比 传统本地模型 80G 显存需求\"] --> I2[\"OmniCoder 低显存需求\"]"
+        },
+        {
+          "title": "性能与硬件要求",
+          "code": "flowchart TD\n    D3[\"消费级显卡运行\"] --> A3[\"GPQA 83.8 分 (+2 基座)\"]\n    D3 --> B3[\"Terminal Bench 23.6 分 (≈翻倍)\"]\n    D3 --> C3[\"AIM 数学竞赛 90 分\"]\n    D3 --> E3[\"支持 260k token 上下文\"]\n    D3 --> F3[\"可在笔记本运行\"]\n    D3 --> G3[\"量化版 GGUF 已就位\"]\n    D3 --> H3[\"无需租卡或排队 API\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T01:28:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# OmniCoder-9B 知识图谱\n\n## 总览 [BV1jtALzcEx4 P1 00:00] [BV1jtALzcEx4 P1 00:08] [BV1jtALzcEx4 P1 01:10]\n```mermaid\nflowchart TD\n    A[\"OmniCoder-9B\"] --> B[\"9B 参数\"]\n    A --> C[\"基座模型成绩提升 61%\"]\n    A --> D[\"上线一周下载量 5万\"]\n    A --> E[\"训练数据 42万条真实编码轨迹\"]\n    A --> F[\"架构继承 queen3.5 混合设计\"]\n    A --> G[\"消费级显卡可运行\"]\n    A --> H[\"APACHE2.0 开源\"]\n    A --> I[\"GGUF 量化版已就位\"]\n```\n\n## 训练数据与学习方式 [BV1jtALzcEx4 P1 00:26] [BV1jtALzcEx4 P1 00:35] [BV1jtALzcEx4 P1 00:41]\n```mermaid\nflowchart TD\n    A2[\"训练数据 42万条真实编码轨迹\"] --> B2[\"来源 cloud opus gpt5 顶级模型工作记录\"]\n    C2[\"学习方式 非背答案\"] --> D2[\"学习工作方式\"]\n    D2 --> G2[\"思考方式 像程序员一样思考\"]\n    E2[\"错误处理 先读再改\"] --> F2[\"最小 DF 修补\"]\n    H2[\"对比 传统本地模型 80G 显存需求\"] --> I2[\"OmniCoder 低显存需求\"]\n```\n\n## 性能与硬件要求 [BV1jtALzcEx4 P1 00:44] [BV1jtALzcEx4 P1 00:56] [BV1jtALzcEx4 P1 01:05]\n```mermaid\nflowchart TD\n    D3[\"消费级显卡运行\"] --> A3[\"GPQA 83.8 分 (+2 基座)\"]\n    D3 --> B3[\"Terminal Bench 23.6 分 (≈翻倍)\"]\n    D3 --> C3[\"AIM 数学竞赛 90 分\"]\n    D3 --> E3[\"支持 260k token 上下文\"]\n    D3 --> F3[\"可在笔记本运行\"]\n    D3 --> G3[\"量化版 GGUF 已就位\"]\n    D3 --> H3[\"无需租卡或排队 API\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"OmniCoder-9B\"] --> B[\"9B 参数\"]\n    A --> C[\"基座模型成绩提升 61%\"]\n    A --> D[\"上线一周下载量 5万\"]\n    A --> E[\"训练数据 42万条真实编码轨迹\"]\n    A --> F[\"架构继承 queen3.5 混合设计\"]\n    A --> G[\"消费级显卡可运行\"]\n    A --> H[\"APACHE2.0 开源\"]\n    A --> I[\"GGUF 量化版已就位\"]"
+    },
+    {
+      "title": "训练数据与学习方式",
+      "code": "flowchart TD\n    A2[\"训练数据 42万条真实编码轨迹\"] --> B2[\"来源 cloud opus gpt5 顶级模型工作记录\"]\n    C2[\"学习方式 非背答案\"] --> D2[\"学习工作方式\"]\n    D2 --> G2[\"思考方式 像程序员一样思考\"]\n    E2[\"错误处理 先读再改\"] --> F2[\"最小 DF 修补\"]\n    H2[\"对比 传统本地模型 80G 显存需求\"] --> I2[\"OmniCoder 低显存需求\"]"
+    },
+    {
+      "title": "性能与硬件要求",
+      "code": "flowchart TD\n    D3[\"消费级显卡运行\"] --> A3[\"GPQA 83.8 分 (+2 基座)\"]\n    D3 --> B3[\"Terminal Bench 23.6 分 (≈翻倍)\"]\n    D3 --> C3[\"AIM 数学竞赛 90 分\"]\n    D3 --> E3[\"支持 260k token 上下文\"]\n    D3 --> F3[\"可在笔记本运行\"]\n    D3 --> G3[\"量化版 GGUF 已就位\"]\n    D3 --> H3[\"无需租卡或排队 API\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T01:28:16+00:00"
+}

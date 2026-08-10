@@ -1,0 +1,66 @@
+{
+  "bvid": "BV12BNJ62E8Q",
+  "title": "便宜使用deepseek方案commandcode反代",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 258,
+  "text": "这个演示是如何使用command code里面的套餐\n让其他A键的使用\n首先要弄一个一美元的套餐\n先进入这个项目直接进行下载\n可以看到作者已经编译好了\n下载好之后\n如果你是Mac用户\n还要自己编译一下\n只是使用的话\n不用看read me\n我这里是windows\n点击运行\n可以看到里面有支持的协议\n然后这里使用cherry studio进行测试\n先来测标准的OpenAI接口\n可以看到已经有回复了\n然后来改成response接口\n点击运行\n这个好像报错了\n不太支持这个只有标准OpenAI\n可以cc switch路由",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV12BNJ62E8Q",
+  "published_at": "1783687382",
+  "fetched_at": "2026-08-08T08:27:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 方案 Command Code 反代使用流程\n\n## 整体流程概览\n```mermaid\nflowchart TD\n    A1[\"获取 1 美元 套餐\"] --> A2[\"下载项目源码\"]\n    A2 --> A3[\"检查平台\"]\n    A3 -->|Mac| A4[\"自行编译\"]\n    A3 -->|Windows| A5[\"直接运行可执行文件\"]\n    A4 --> A6[\"运行后查看支持的协议\"]\n    A5 --> A6\n    A6 --> A7[\"使用 Cherry Studio 进行测试\"]\n    A7 --> A8[\"测试标准 OpenAI 接口\"]\n    A8 --> A9[\"收到回复\"]\n    A9 --> A10[\"切换为 response 接口\"]\n    A10 --> A11[\"报错：仅支持标准 OpenAI\"]\n    A11 --> A12[\"可使用 cc switch 路由\"]\n```\n\n## 平台选择与编译需求\n```mermaid\nflowchart LR\n    B1[\"平台检测\"] -->|Mac| B2[\"需要自行编译\"]\n    B1 -->|Windows| B3[\"无需编译，直接运行\"]\n    B2 --> B4[\"编译后运行\"]\n    B3 --> B4\n    B4 --> B5[\"查看支持的协议列表\"]\n```\n\n## 接口测试与错误处理\n```mermaid\nflowchart TD\n    C1[\"使用 Cherry Studio 测试\"] --> C2[\"标准 OpenAI 接口\"]\n    C2 --> C3[\"成功获取回复\"]\n    C3 --> C4[\"切换为 response 接口\"]\n    C4 --> C5[\"报错：不支持 response 接口\"]\n    C5 --> C6[\"仅可使用标准 OpenAI\"]\n    C6 --> C7[\"可通过 cc switch 路由\"]\n```",
+      "diagrams": [
+        {
+          "title": "整体流程概览",
+          "code": "flowchart TD\n    A1[\"获取 1 美元 套餐\"] --> A2[\"下载项目源码\"]\n    A2 --> A3[\"检查平台\"]\n    A3 -->|Mac| A4[\"自行编译\"]\n    A3 -->|Windows| A5[\"直接运行可执行文件\"]\n    A4 --> A6[\"运行后查看支持的协议\"]\n    A5 --> A6\n    A6 --> A7[\"使用 Cherry Studio 进行测试\"]\n    A7 --> A8[\"测试标准 OpenAI 接口\"]\n    A8 --> A9[\"收到回复\"]\n    A9 --> A10[\"切换为 response 接口\"]\n    A10 --> A11[\"报错：仅支持标准 OpenAI\"]\n    A11 --> A12[\"可使用 cc switch 路由\"]"
+        },
+        {
+          "title": "平台选择与编译需求",
+          "code": "flowchart LR\n    B1[\"平台检测\"] -->|Mac| B2[\"需要自行编译\"]\n    B1 -->|Windows| B3[\"无需编译，直接运行\"]\n    B2 --> B4[\"编译后运行\"]\n    B3 --> B4\n    B4 --> B5[\"查看支持的协议列表\"]"
+        },
+        {
+          "title": "接口测试与错误处理",
+          "code": "flowchart TD\n    C1[\"使用 Cherry Studio 测试\"] --> C2[\"标准 OpenAI 接口\"]\n    C2 --> C3[\"成功获取回复\"]\n    C3 --> C4[\"切换为 response 接口\"]\n    C4 --> C5[\"报错：不支持 response 接口\"]\n    C5 --> C6[\"仅可使用标准 OpenAI\"]\n    C6 --> C7[\"可通过 cc switch 路由\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T08:29:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 方案 Command Code 反代使用流程\n\n## 整体流程概览\n```mermaid\nflowchart TD\n    A1[\"获取 1 美元 套餐\"] --> A2[\"下载项目源码\"]\n    A2 --> A3[\"检查平台\"]\n    A3 -->|Mac| A4[\"自行编译\"]\n    A3 -->|Windows| A5[\"直接运行可执行文件\"]\n    A4 --> A6[\"运行后查看支持的协议\"]\n    A5 --> A6\n    A6 --> A7[\"使用 Cherry Studio 进行测试\"]\n    A7 --> A8[\"测试标准 OpenAI 接口\"]\n    A8 --> A9[\"收到回复\"]\n    A9 --> A10[\"切换为 response 接口\"]\n    A10 --> A11[\"报错：仅支持标准 OpenAI\"]\n    A11 --> A12[\"可使用 cc switch 路由\"]\n```\n\n## 平台选择与编译需求\n```mermaid\nflowchart LR\n    B1[\"平台检测\"] -->|Mac| B2[\"需要自行编译\"]\n    B1 -->|Windows| B3[\"无需编译，直接运行\"]\n    B2 --> B4[\"编译后运行\"]\n    B3 --> B4\n    B4 --> B5[\"查看支持的协议列表\"]\n```\n\n## 接口测试与错误处理\n```mermaid\nflowchart TD\n    C1[\"使用 Cherry Studio 测试\"] --> C2[\"标准 OpenAI 接口\"]\n    C2 --> C3[\"成功获取回复\"]\n    C3 --> C4[\"切换为 response 接口\"]\n    C4 --> C5[\"报错：不支持 response 接口\"]\n    C5 --> C6[\"仅可使用标准 OpenAI\"]\n    C6 --> C7[\"可通过 cc switch 路由\"]\n```",
+  "diagrams": [
+    {
+      "title": "整体流程概览",
+      "code": "flowchart TD\n    A1[\"获取 1 美元 套餐\"] --> A2[\"下载项目源码\"]\n    A2 --> A3[\"检查平台\"]\n    A3 -->|Mac| A4[\"自行编译\"]\n    A3 -->|Windows| A5[\"直接运行可执行文件\"]\n    A4 --> A6[\"运行后查看支持的协议\"]\n    A5 --> A6\n    A6 --> A7[\"使用 Cherry Studio 进行测试\"]\n    A7 --> A8[\"测试标准 OpenAI 接口\"]\n    A8 --> A9[\"收到回复\"]\n    A9 --> A10[\"切换为 response 接口\"]\n    A10 --> A11[\"报错：仅支持标准 OpenAI\"]\n    A11 --> A12[\"可使用 cc switch 路由\"]"
+    },
+    {
+      "title": "平台选择与编译需求",
+      "code": "flowchart LR\n    B1[\"平台检测\"] -->|Mac| B2[\"需要自行编译\"]\n    B1 -->|Windows| B3[\"无需编译，直接运行\"]\n    B2 --> B4[\"编译后运行\"]\n    B3 --> B4\n    B4 --> B5[\"查看支持的协议列表\"]"
+    },
+    {
+      "title": "接口测试与错误处理",
+      "code": "flowchart TD\n    C1[\"使用 Cherry Studio 测试\"] --> C2[\"标准 OpenAI 接口\"]\n    C2 --> C3[\"成功获取回复\"]\n    C3 --> C4[\"切换为 response 接口\"]\n    C4 --> C5[\"报错：不支持 response 接口\"]\n    C5 --> C6[\"仅可使用标准 OpenAI\"]\n    C6 --> C7[\"可通过 cc switch 路由\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T08:29:24+00:00"
+}

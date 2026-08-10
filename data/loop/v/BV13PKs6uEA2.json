@@ -1,0 +1,74 @@
+{
+  "bvid": "BV13PKs6uEA2",
+  "title": "Godot无需美术Shader实现水波拖尾效果！1分半复刻小猫与海",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 584,
+  "text": "最近是玩了一款叫做小猫与海的游戏\n尾击波浪效果非常不错\n我们尝试来复刻一下\n右边是我们的复刻效果\n尾迹是由rap波纹和两行form气泡效果组成\n我们先来讲rap效果\n这里我有一个可移动小船\n下面有精灵堆叠的thread节点\n和标记小船旋转的pa节点\n尾迹效果也会在PV里跟随旋转\n将小船放进世界里\n移动正常\n这一集下来制作用SHADER生成的ripple\n创建mesh节点\n作为sh的容器选择框\nmesh类型\n然后导入写好的SHADER\nSHADER就干两件事\n先把UV量化到格子上\n制造像素颗粒\n再用距离场算每个像素到中心的距离\n若在指定半径的那一圈环带里才点亮\n半径和透明度交给脚本驱动\n然后给ripple水波节点添加脚本\n控制脚本做三件事\n每个波纹都复制一份自己的材质\n动画互不干扰\n用一条sin曲线让半径先扩大再收缩\n同时让透明度线性淡出\n最后到生命结束就自己销毁水波生成\n交给一个发射器\n创建诺拉蒂节点挂载脚本脚本\n按随机间隔定时生成一批波纹\n尺寸透明度\n初始半径散布都随机在\n按发射器当前朝向旋转到船尾两侧\n生成的波纹挂到长颈根\n这样船开走了\n波纹留在原地\n把波纹发射器挂载到船的PY上\n打开BD控制脚本\n引用发射器在process中检测到船运动时就发射波纹\n微调一下波纹参数就可以实现漂亮的波纹了\n下一期我们继续实现泡沫效果\n现在就关注我\n成为原始粉丝吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV13PKs6uEA2",
+  "published_at": "1784599200",
+  "fetched_at": "2026-08-09T16:23:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 水波拖尾效果实现图谱\n\n## 总览\n```mermaid\nflowchart TD\n    Game[\"小猫与海游戏\"]\n    Effect[\"尾击波浪效果\"]\n    Replication[\"复刻实现\"]\n    Components[\"rap波纹 + form气泡\"]\n    Shader[\"Shader 生成 ripple\"]\n    Emitter[\"波纹发射器\"]\n    Boat[\"可移动小船\"]\n    Result[\"复刻效果显示\"]\n\n    Game --> Effect\n    Effect --> Replication\n    Replication --> Components\n    Components --> Shader\n    Shader --> Emitter\n    Emitter --> Boat\n    Boat --> Result\n```\n<!-- [BV13PKs6uEA2 P1 00:02] -->\n<!-- [BV13PKs6uEA2 P1 00:03] -->\n<!-- [BV13PKs6uEA2 P1 00:07] -->\n<!-- [BV13PKs6uEA2 P1 00:24] -->\n<!-- [BV13PKs6uEA2 P1 00:59] -->\n<!-- [BV13PKs6uEA2 P1 00:12] -->\n<!-- [BV13PKs6uEA2 P1 00:05] -->\n\n## Shader 工作原理\n```mermaid\nflowchart TD\n    Shader[\"ripple Shader\"]\n    QuantizeUV[\"UV量化到格子\"]\n    PixelGrain[\"制造像素颗粒\"]\n    DistanceField[\"距离场计算像素到中心距离\"]\n    RingCheck[\"环带半径内点亮\"]\n    Params[\"半径&透明度由脚本驱动\"]\n\n    Shader --> QuantizeUV --> PixelGrain --> DistanceField --> RingCheck --> Params\n```\n<!-- [BV13PKs6uEA2 P1 00:34] -->\n<!-- [BV13PKs6uEA2 P1 00:36] -->\n<!-- [BV13PKs6uEA2 P1 00:37] -->\n<!-- [BV13PKs6uEA2 P1 00:39] -->\n<!-- [BV13PKs6uEA2 P1 00:41] -->\n\n## 波纹脚本行为\n```mermaid\nflowchart TD\n    Script[\"波纹控制脚本\"]\n    CopyMaterial[\"复制材质\"]\n    Animate[\"动画 (半径 sin 扩大收缩)\"]\n    Fade[\"透明度线性淡出\"]\n    Destroy[\"生命结束自毁\"]\n    Emitter[\"波纹发射器\"]\n\n    Script --> CopyMaterial\n    Script --> Animate\n    Script --> Fade\n    Script --> Destroy\n    Emitter --> Script\n```\n<!-- [BV13PKs6uEA2 P1 00:49] -->\n<!-- [BV13PKs6uEA2 P1 00:52] -->\n<!-- [BV13PKs6uEA2 P1 00:55] -->\n<!-- [BV13PKs6uEA2 P1 00:56] -->\n\n## 发射器与船的关联\n```mermaid\nflowchart TD\n    Boat[\"船\"]\n    Emitter[\"波纹发射器挂在船PY\"]\n    ProcessDetect[\"process 检测船运动\"]\n    Emit[\"发射波纹\"]\n    Attach[\"挂到长颈根\"]\n    RandomParams[\"随机间隔、尺寸、透明度、初始半径\"]\n    Rotate[\"按船朝向旋转至两侧\"]\n\n    Boat --> Emitter\n    Emitter --> ProcessDetect\n    ProcessDetect --> Emit\n    Emit --> Attach\n    Emit --> RandomParams\n    Emit --> Rotate\n```\n<!-- [BV13PKs6uEA2 P1 01:14] -->\n<!-- [BV13PKs6uEA2 P1 01:17] -->\n<!-- [BV13PKs6uEA2 P1 01:04] -->\n<!-- [BV13PKs6uEA2 P1 01:05] -->\n<!-- [BV13PKs6uEA2 P1 01:07] -->",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    Game[\"小猫与海游戏\"]\n    Effect[\"尾击波浪效果\"]\n    Replication[\"复刻实现\"]\n    Components[\"rap波纹 + form气泡\"]\n    Shader[\"Shader 生成 ripple\"]\n    Emitter[\"波纹发射器\"]\n    Boat[\"可移动小船\"]\n    Result[\"复刻效果显示\"]\n\n    Game --> Effect\n    Effect --> Replication\n    Replication --> Components\n    Components --> Shader\n    Shader --> Emitter\n    Emitter --> Boat\n    Boat --> Result"
+        },
+        {
+          "title": "Shader 工作原理",
+          "code": "flowchart TD\n    Shader[\"ripple Shader\"]\n    QuantizeUV[\"UV量化到格子\"]\n    PixelGrain[\"制造像素颗粒\"]\n    DistanceField[\"距离场计算像素到中心距离\"]\n    RingCheck[\"环带半径内点亮\"]\n    Params[\"半径&透明度由脚本驱动\"]\n\n    Shader --> QuantizeUV --> PixelGrain --> DistanceField --> RingCheck --> Params"
+        },
+        {
+          "title": "波纹脚本行为",
+          "code": "flowchart TD\n    Script[\"波纹控制脚本\"]\n    CopyMaterial[\"复制材质\"]\n    Animate[\"动画 (半径 sin 扩大收缩)\"]\n    Fade[\"透明度线性淡出\"]\n    Destroy[\"生命结束自毁\"]\n    Emitter[\"波纹发射器\"]\n\n    Script --> CopyMaterial\n    Script --> Animate\n    Script --> Fade\n    Script --> Destroy\n    Emitter --> Script"
+        },
+        {
+          "title": "发射器与船的关联",
+          "code": "flowchart TD\n    Boat[\"船\"]\n    Emitter[\"波纹发射器挂在船PY\"]\n    ProcessDetect[\"process 检测船运动\"]\n    Emit[\"发射波纹\"]\n    Attach[\"挂到长颈根\"]\n    RandomParams[\"随机间隔、尺寸、透明度、初始半径\"]\n    Rotate[\"按船朝向旋转至两侧\"]\n\n    Boat --> Emitter\n    Emitter --> ProcessDetect\n    ProcessDetect --> Emit\n    Emit --> Attach\n    Emit --> RandomParams\n    Emit --> Rotate"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T16:23:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 水波拖尾效果实现图谱\n\n## 总览\n```mermaid\nflowchart TD\n    Game[\"小猫与海游戏\"]\n    Effect[\"尾击波浪效果\"]\n    Replication[\"复刻实现\"]\n    Components[\"rap波纹 + form气泡\"]\n    Shader[\"Shader 生成 ripple\"]\n    Emitter[\"波纹发射器\"]\n    Boat[\"可移动小船\"]\n    Result[\"复刻效果显示\"]\n\n    Game --> Effect\n    Effect --> Replication\n    Replication --> Components\n    Components --> Shader\n    Shader --> Emitter\n    Emitter --> Boat\n    Boat --> Result\n```\n<!-- [BV13PKs6uEA2 P1 00:02] -->\n<!-- [BV13PKs6uEA2 P1 00:03] -->\n<!-- [BV13PKs6uEA2 P1 00:07] -->\n<!-- [BV13PKs6uEA2 P1 00:24] -->\n<!-- [BV13PKs6uEA2 P1 00:59] -->\n<!-- [BV13PKs6uEA2 P1 00:12] -->\n<!-- [BV13PKs6uEA2 P1 00:05] -->\n\n## Shader 工作原理\n```mermaid\nflowchart TD\n    Shader[\"ripple Shader\"]\n    QuantizeUV[\"UV量化到格子\"]\n    PixelGrain[\"制造像素颗粒\"]\n    DistanceField[\"距离场计算像素到中心距离\"]\n    RingCheck[\"环带半径内点亮\"]\n    Params[\"半径&透明度由脚本驱动\"]\n\n    Shader --> QuantizeUV --> PixelGrain --> DistanceField --> RingCheck --> Params\n```\n<!-- [BV13PKs6uEA2 P1 00:34] -->\n<!-- [BV13PKs6uEA2 P1 00:36] -->\n<!-- [BV13PKs6uEA2 P1 00:37] -->\n<!-- [BV13PKs6uEA2 P1 00:39] -->\n<!-- [BV13PKs6uEA2 P1 00:41] -->\n\n## 波纹脚本行为\n```mermaid\nflowchart TD\n    Script[\"波纹控制脚本\"]\n    CopyMaterial[\"复制材质\"]\n    Animate[\"动画 (半径 sin 扩大收缩)\"]\n    Fade[\"透明度线性淡出\"]\n    Destroy[\"生命结束自毁\"]\n    Emitter[\"波纹发射器\"]\n\n    Script --> CopyMaterial\n    Script --> Animate\n    Script --> Fade\n    Script --> Destroy\n    Emitter --> Script\n```\n<!-- [BV13PKs6uEA2 P1 00:49] -->\n<!-- [BV13PKs6uEA2 P1 00:52] -->\n<!-- [BV13PKs6uEA2 P1 00:55] -->\n<!-- [BV13PKs6uEA2 P1 00:56] -->\n\n## 发射器与船的关联\n```mermaid\nflowchart TD\n    Boat[\"船\"]\n    Emitter[\"波纹发射器挂在船PY\"]\n    ProcessDetect[\"process 检测船运动\"]\n    Emit[\"发射波纹\"]\n    Attach[\"挂到长颈根\"]\n    RandomParams[\"随机间隔、尺寸、透明度、初始半径\"]\n    Rotate[\"按船朝向旋转至两侧\"]\n\n    Boat --> Emitter\n    Emitter --> ProcessDetect\n    ProcessDetect --> Emit\n    Emit --> Attach\n    Emit --> RandomParams\n    Emit --> Rotate\n```\n<!-- [BV13PKs6uEA2 P1 01:14] -->\n<!-- [BV13PKs6uEA2 P1 01:17] -->\n<!-- [BV13PKs6uEA2 P1 01:04] -->\n<!-- [BV13PKs6uEA2 P1 01:05] -->\n<!-- [BV13PKs6uEA2 P1 01:07] -->",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    Game[\"小猫与海游戏\"]\n    Effect[\"尾击波浪效果\"]\n    Replication[\"复刻实现\"]\n    Components[\"rap波纹 + form气泡\"]\n    Shader[\"Shader 生成 ripple\"]\n    Emitter[\"波纹发射器\"]\n    Boat[\"可移动小船\"]\n    Result[\"复刻效果显示\"]\n\n    Game --> Effect\n    Effect --> Replication\n    Replication --> Components\n    Components --> Shader\n    Shader --> Emitter\n    Emitter --> Boat\n    Boat --> Result"
+    },
+    {
+      "title": "Shader 工作原理",
+      "code": "flowchart TD\n    Shader[\"ripple Shader\"]\n    QuantizeUV[\"UV量化到格子\"]\n    PixelGrain[\"制造像素颗粒\"]\n    DistanceField[\"距离场计算像素到中心距离\"]\n    RingCheck[\"环带半径内点亮\"]\n    Params[\"半径&透明度由脚本驱动\"]\n\n    Shader --> QuantizeUV --> PixelGrain --> DistanceField --> RingCheck --> Params"
+    },
+    {
+      "title": "波纹脚本行为",
+      "code": "flowchart TD\n    Script[\"波纹控制脚本\"]\n    CopyMaterial[\"复制材质\"]\n    Animate[\"动画 (半径 sin 扩大收缩)\"]\n    Fade[\"透明度线性淡出\"]\n    Destroy[\"生命结束自毁\"]\n    Emitter[\"波纹发射器\"]\n\n    Script --> CopyMaterial\n    Script --> Animate\n    Script --> Fade\n    Script --> Destroy\n    Emitter --> Script"
+    },
+    {
+      "title": "发射器与船的关联",
+      "code": "flowchart TD\n    Boat[\"船\"]\n    Emitter[\"波纹发射器挂在船PY\"]\n    ProcessDetect[\"process 检测船运动\"]\n    Emit[\"发射波纹\"]\n    Attach[\"挂到长颈根\"]\n    RandomParams[\"随机间隔、尺寸、透明度、初始半径\"]\n    Rotate[\"按船朝向旋转至两侧\"]\n\n    Boat --> Emitter\n    Emitter --> ProcessDetect\n    ProcessDetect --> Emit\n    Emit --> Attach\n    Emit --> RandomParams\n    Emit --> Rotate"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T16:23:50+00:00"
+}

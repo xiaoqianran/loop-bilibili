@@ -1,0 +1,74 @@
+{
+  "bvid": "BV185N36cEU6",
+  "title": "Godot中文蓝图编辑器——游戏角色多方向动画制作演示",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 812,
+  "text": "今天我们来讲一下如何用中文蓝图编辑器\n制作游戏角色的不同方向动画\n先给大家展示一下具体效果\n好效果展示完毕\n接下来正式开始制作\n首先我们需要准备两张精灵图\n一张是四方向的\n另一张是八方向的素材\n准备好之后\n我们在主节点下创建一个2D触发器\n它就是用来存放蓝图节点的地方\n然后在编辑器中创建一个开始节点\n在他后面再创建一个2D序列帧\n玩家节点\n接着再创建一个序列帧动画编辑器\n节点节点创建好之后\n先给玩家填写一个id和角色名\n这样序列帧动画编辑器\n就能自动绑定到我们的玩家上\n填写完成后\n把玩家和动画编辑器进行链接\n接下来展开动画面板\n可以看到里面有两种方向模式\n四方向和八方向方向的顺序也可以自由设置\n动画的核心\n其实就是通过设置不同的序列帧来区分方向\n具体做法就是根据精灵图中帧的排列顺序\n确定每一帧对应哪个方向\n然后逐个方向单独设置\n另外动画面板还支持\n对图像进行缩放和挤压的调整\n好动画部分就制作完成了\n接下来我们给角色设置移动方式\n为了加快教程节奏\n这里我用鼠标移动来演示\n键盘移动的原理是一样的\n区别在于键盘需要分别设置上下左右四个方向\n所以需要额外增加四个控制节点\n这里我只用一个鼠标控制节点就够了\n在设置移动之前\n我们先要给角色创建一个碰撞节点\n赋予角色碰撞体\n碰撞组件会自动绑定到角色上\n设置好之后\n可以一键应用不同方向\n也可以单独调整碰撞范围\n碰撞设置好之后\n创建鼠标控制节点来实现移动\n然后在任务流末尾增加一个结束节点\n检查一下整个蓝图没有问题就可以保存了\n这时候玉兰可能会发现角色非常小\n这是因为我们还没有在玩家节点里设置\n基础的角色大小\n在角色面板中勾选相对位置这个选项\n这样就可以在视图面板中随时拖动\n调整角色的位置\n然后再给角色设置一个合适的大小\n显示就正常了\n八方向的制作和四方向基本一样\n只需要把方向模式切换为八方向\n然后逐个方向设置对应的帧率就可以了\n其他配置完全相同\n好今天的教程就到这里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV185N36cEU6",
+  "published_at": "1783865698",
+  "fetched_at": "2026-08-08T18:35:03+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot中文蓝图编辑器角色多方向动画知识图谱\n\n## Overview_Workflow\n```mermaid\nflowchart TD\n    S[\"开始\"] --> P1[\"准备四方向/八方向精灵图\"]\n    P1 --> T[\"在主节点下创建 2D 触发器\"]\n    T --> PL[\"创建玩家节点\"]\n    PL --> AE[\"创建序列帧动画编辑器\"]\n    PL --> ID[\"为玩家填写 ID 与角色名\"]\n    AE --> B[\"绑定动画编辑器到玩家\"]\n    B --> AD[\"展开动画面板设置方向\"]\n    AD --> C[\"添加碰撞节点并赋予碰撞体\"]\n    C --> MC[\"创建控制节点（鼠标/键盘）\"]\n    MC --> END[\"检查蓝图并保存\"]\n```\n\n## Animation_Direction_Setup\n```mermaid\nflowchart LR\n    AP[\"打开动画面板\"] --> DM[\"选择方向模式\"]\n    DM -->|四方向| FD[\"四方向顺序设置\"]\n    DM -->|八方向| ED[\"八方向顺序设置\"]\n    FD --> FS[\"为每帧指定方向\"]\n    ED --> FS\n    FS --> SC[\"可选：缩放/挤压调整\"]\n    SC --> BIND[\"绑定到玩家节点\"]\n```\n\n## Movement_Control_Setup\n```mermaid\nflowchart TD\n    CNode[\"创建碰撞节点\"] --> CComp[\"赋予碰撞体并自动绑定\"]\n    CComp --> Ctrl[\"添加控制节点\"]\n    Ctrl -->|鼠标| MCtrl[\"鼠标控制节点\"]\n    Ctrl -->|键盘| KCtrl[\"键盘控制节点（上下左右）\"]\n    MCtrl --> Move[\"设置移动逻辑\"]\n    KCtrl --> Move\n    Move --> APPLY[\"一键应用不同方向移动\"]\n```\n\n## Size_Position_Adjustment\n```mermaid\nflowchart LR\n    PN[\"打开玩家节点面板\"] --> RP[\"勾选相对位置\"]\n    RP --> DR[\"在视图面板中拖动\"]\n    DR --> SZ[\"设置合适的角色大小\"]\n    SZ --> VIEW[\"预览显示正常\"]\n    VIEW --> SAVE[\"保存蓝图\"]\n```",
+      "diagrams": [
+        {
+          "title": "Overview_Workflow",
+          "code": "flowchart TD\n    S[\"开始\"] --> P1[\"准备四方向/八方向精灵图\"]\n    P1 --> T[\"在主节点下创建 2D 触发器\"]\n    T --> PL[\"创建玩家节点\"]\n    PL --> AE[\"创建序列帧动画编辑器\"]\n    PL --> ID[\"为玩家填写 ID 与角色名\"]\n    AE --> B[\"绑定动画编辑器到玩家\"]\n    B --> AD[\"展开动画面板设置方向\"]\n    AD --> C[\"添加碰撞节点并赋予碰撞体\"]\n    C --> MC[\"创建控制节点（鼠标/键盘）\"]\n    MC --> END[\"检查蓝图并保存\"]"
+        },
+        {
+          "title": "Animation_Direction_Setup",
+          "code": "flowchart LR\n    AP[\"打开动画面板\"] --> DM[\"选择方向模式\"]\n    DM -->|四方向| FD[\"四方向顺序设置\"]\n    DM -->|八方向| ED[\"八方向顺序设置\"]\n    FD --> FS[\"为每帧指定方向\"]\n    ED --> FS\n    FS --> SC[\"可选：缩放/挤压调整\"]\n    SC --> BIND[\"绑定到玩家节点\"]"
+        },
+        {
+          "title": "Movement_Control_Setup",
+          "code": "flowchart TD\n    CNode[\"创建碰撞节点\"] --> CComp[\"赋予碰撞体并自动绑定\"]\n    CComp --> Ctrl[\"添加控制节点\"]\n    Ctrl -->|鼠标| MCtrl[\"鼠标控制节点\"]\n    Ctrl -->|键盘| KCtrl[\"键盘控制节点（上下左右）\"]\n    MCtrl --> Move[\"设置移动逻辑\"]\n    KCtrl --> Move\n    Move --> APPLY[\"一键应用不同方向移动\"]"
+        },
+        {
+          "title": "Size_Position_Adjustment",
+          "code": "flowchart LR\n    PN[\"打开玩家节点面板\"] --> RP[\"勾选相对位置\"]\n    RP --> DR[\"在视图面板中拖动\"]\n    DR --> SZ[\"设置合适的角色大小\"]\n    SZ --> VIEW[\"预览显示正常\"]\n    VIEW --> SAVE[\"保存蓝图\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T18:35:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot中文蓝图编辑器角色多方向动画知识图谱\n\n## Overview_Workflow\n```mermaid\nflowchart TD\n    S[\"开始\"] --> P1[\"准备四方向/八方向精灵图\"]\n    P1 --> T[\"在主节点下创建 2D 触发器\"]\n    T --> PL[\"创建玩家节点\"]\n    PL --> AE[\"创建序列帧动画编辑器\"]\n    PL --> ID[\"为玩家填写 ID 与角色名\"]\n    AE --> B[\"绑定动画编辑器到玩家\"]\n    B --> AD[\"展开动画面板设置方向\"]\n    AD --> C[\"添加碰撞节点并赋予碰撞体\"]\n    C --> MC[\"创建控制节点（鼠标/键盘）\"]\n    MC --> END[\"检查蓝图并保存\"]\n```\n\n## Animation_Direction_Setup\n```mermaid\nflowchart LR\n    AP[\"打开动画面板\"] --> DM[\"选择方向模式\"]\n    DM -->|四方向| FD[\"四方向顺序设置\"]\n    DM -->|八方向| ED[\"八方向顺序设置\"]\n    FD --> FS[\"为每帧指定方向\"]\n    ED --> FS\n    FS --> SC[\"可选：缩放/挤压调整\"]\n    SC --> BIND[\"绑定到玩家节点\"]\n```\n\n## Movement_Control_Setup\n```mermaid\nflowchart TD\n    CNode[\"创建碰撞节点\"] --> CComp[\"赋予碰撞体并自动绑定\"]\n    CComp --> Ctrl[\"添加控制节点\"]\n    Ctrl -->|鼠标| MCtrl[\"鼠标控制节点\"]\n    Ctrl -->|键盘| KCtrl[\"键盘控制节点（上下左右）\"]\n    MCtrl --> Move[\"设置移动逻辑\"]\n    KCtrl --> Move\n    Move --> APPLY[\"一键应用不同方向移动\"]\n```\n\n## Size_Position_Adjustment\n```mermaid\nflowchart LR\n    PN[\"打开玩家节点面板\"] --> RP[\"勾选相对位置\"]\n    RP --> DR[\"在视图面板中拖动\"]\n    DR --> SZ[\"设置合适的角色大小\"]\n    SZ --> VIEW[\"预览显示正常\"]\n    VIEW --> SAVE[\"保存蓝图\"]\n```",
+  "diagrams": [
+    {
+      "title": "Overview_Workflow",
+      "code": "flowchart TD\n    S[\"开始\"] --> P1[\"准备四方向/八方向精灵图\"]\n    P1 --> T[\"在主节点下创建 2D 触发器\"]\n    T --> PL[\"创建玩家节点\"]\n    PL --> AE[\"创建序列帧动画编辑器\"]\n    PL --> ID[\"为玩家填写 ID 与角色名\"]\n    AE --> B[\"绑定动画编辑器到玩家\"]\n    B --> AD[\"展开动画面板设置方向\"]\n    AD --> C[\"添加碰撞节点并赋予碰撞体\"]\n    C --> MC[\"创建控制节点（鼠标/键盘）\"]\n    MC --> END[\"检查蓝图并保存\"]"
+    },
+    {
+      "title": "Animation_Direction_Setup",
+      "code": "flowchart LR\n    AP[\"打开动画面板\"] --> DM[\"选择方向模式\"]\n    DM -->|四方向| FD[\"四方向顺序设置\"]\n    DM -->|八方向| ED[\"八方向顺序设置\"]\n    FD --> FS[\"为每帧指定方向\"]\n    ED --> FS\n    FS --> SC[\"可选：缩放/挤压调整\"]\n    SC --> BIND[\"绑定到玩家节点\"]"
+    },
+    {
+      "title": "Movement_Control_Setup",
+      "code": "flowchart TD\n    CNode[\"创建碰撞节点\"] --> CComp[\"赋予碰撞体并自动绑定\"]\n    CComp --> Ctrl[\"添加控制节点\"]\n    Ctrl -->|鼠标| MCtrl[\"鼠标控制节点\"]\n    Ctrl -->|键盘| KCtrl[\"键盘控制节点（上下左右）\"]\n    MCtrl --> Move[\"设置移动逻辑\"]\n    KCtrl --> Move\n    Move --> APPLY[\"一键应用不同方向移动\"]"
+    },
+    {
+      "title": "Size_Position_Adjustment",
+      "code": "flowchart LR\n    PN[\"打开玩家节点面板\"] --> RP[\"勾选相对位置\"]\n    RP --> DR[\"在视图面板中拖动\"]\n    DR --> SZ[\"设置合适的角色大小\"]\n    SZ --> VIEW[\"预览显示正常\"]\n    VIEW --> SAVE[\"保存蓝图\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T18:35:28+00:00"
+}

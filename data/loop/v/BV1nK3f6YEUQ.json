@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1nK3f6YEUQ",
+  "title": "【王牌将至？】DeepSeek V4 Pro 正式版发布前预览 主观横评第三期",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1803,
+  "text": "本期为模型横屏\n第三期总计六个项目\n四个模型参照模型分别为基准file5\n前端专用up\n五\n8月初即将发布的DXUV\n4GA以及千万308max0720\n测试用例分别为\n3D液体CFC模拟实时布料解算\n履带输FPV模拟器与世界关节物理光追渲染\n以及微体素城市沙盘\n第一项\n使用SSPH方法的3DCFD液体模拟DC x\n生成的项目\n在6000粒子下都能流畅运行\n粒子间距\n流动性效果与性能优化基本最佳\nVIVO的粒子模拟在同样性能配置环境下\n只能流畅运行在4000档位数\n液体行为也不够正式\nUPS生成的版本仅仅只能在2000粒子下保持流畅\n视觉上明显更加\n本轮表现中明显DPCV4JA的技术选型\n性能表现要优于其他\n第二项是实时布料\n背包作为基准物理要更加真实\n性能响应更好\n对于主动拉扯和风吹模拟都比较还原\nARS同样完成的自然不穿模\n功能比较齐全\n第三位则是前两天刚发布的deep CV is flash\n0731正式版\n其性能表现也接近前两位\n拉扯和风吹都能流畅响应\n和台阶交互也比较自然\n对于较为高端的模型来说\n这只是一套基础题\n其余模型表现都不错\n分不出明显胜负\n第三项是最考验数学建模以及视觉感知这一关\n手写SOO3理\n清理代数姿态积分的FPV穿越机模拟器\n考验其数学角度转换以及PIDA闭环的搭建\n飞豹的飞行手感基本贴近了真机\n我这边询问了FPU领域大神\n他也认可了这个模拟七\n且其迭代一次后\n就搭建了完整的多张地图以及竞速赛道\nDC手感更佳\n基本还原高端模拟器的操控质感\n并且是其中唯一做了电机电器模型\n电池soc曲线\n以及多套pad飞控预设的win7级别产品\nup手感欠佳\n但是它的图传设置效果是三家里最好看的\n可以看出其前端实力还是延续到了其他\n并且实际项目的数学计算以及视觉感知上\n还是不如fable\n第四项是模仿与世界中\n主角愧于猫的关节肉体运动\nFable\n基本展现了quin猫的正常姿态与行为逻辑\n可以实现大跳的操作性能\n也是三者最佳\nup子关节与原作仍有较大差距\n只有一点与世界的感觉\n而千问他按下跳跃键就直接起飞了\n所有关节缠在一起\n不停的飞\n全片几乎是完整的异常证据\n无法完全完全无法游玩\n第五项是WEBGL的路径追踪房间\n要模拟出一个光线追踪测试\n房间是一个基本的图形学作业\nDFC生成的画面非常干净\n收敛也非常快\n几乎没有任何图形学上可见问题\noff则可以运行\n光照也可信\n但是它的遮挡物没有做层级关系\n物体直接穿过边界显示\n这是路径最终以一个非常典型的实现缺口\n最后一项是微提速的城市沙盘\n要借鉴拆迁这个游戏的风格\nup的城市最为精致\n整体氛围非常接近拆迁\n但场景中有不合理之处\n移轴镜头的自动对焦也不准确\nDPCC场景最合理\n也是三家中一周镜头唯一能准确对焦的\n可惜他体速太大了\n更像我的世界\n而不是拆迁\nVIVO整体场景最粗糙\n但是渲染性能比较好\n自动对焦同样会跑偏\n在三家的镜头设置之中\n只有deep stick没有识准\nThe two note motive disappears\nCompletely music strips back to the bare essentials\nJust the dusty drum break in the deep baseline\n依旧是代码浅拆\n首先是CFD这关\ncc用的是PBF的流体池引擎\n在无指导的情况下做多项细节优化\n所以现在表现比较优秀\n菲宝则是更专注于稳定性\n它没有超越函数为其状态哈\n希可以探测到基准测试工具的级别\nup走的是传统的PPPF路线\n基本上没有特别多的优化\n然后是FPV\n三家都手写了SOO3里清理代数的积分方式\n差距在于FACEBOOK是用的指数映射up\n把碰撞体和图像后处理做到最全\n是做了碰撞的\n而TIPSC给四台电机做了电气模型电池\nSOO3SOC的电池\nsoc的实时放电曲线\n同时还做了升级的叶片气动模型\n这些细节映射就是其手感优秀的根本原因\n至于路径追踪\nup的工具链比较完整\n但是他没有加BUH遮挡层级\n因此漏了一环\nDEPC的整体测试盒比较简单\n但是干净收敛\n基本上没噪点\n所以总结在本次测试中\nDCV4j a pro以CFD和FPV双九分登顶\n成为本期的精度之王\n所以可见其在数学和思维逻辑以及视感知之下\n有不小的优势\n让我们期待一下\n8月初其正式上线后的发布表现",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1nK3f6YEUQ",
+  "published_at": "1785720895",
+  "fetched_at": "2026-08-06T22:40:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Pro 评测知识图谱\n\n## 测试项目与模型概览\n```mermaid\nflowchart TD\n    T1[\"3D液体CFD模拟\"] --> M1[\"DPCV4JA（最佳）\"]\n    T1 --> M2[\"VIVO（次佳）\"]\n    T1 --> M3[\"UPS（最低）\"]\n    T2[\"实时布料解算\"] --> M4[\"UP（表现佳）\"]\n    T2 --> M5[\"ARS（功能齐全）\"]\n    T3[\"Deep CV Flash\"] --> M1\n    T3 --> M4\n    T4[\"FPV穿越机模拟\"] --> M6[\"DPCC（最合理）\"]\n    T4 --> M7[\"Deep Stick（对焦不准）\"]\n    T5[\"WEBGL路径追踪房间\"] --> M4\n    T5 --> M6\n    T6[\"微提速城市沙盘\"] --> M4[\"UP（最精致）\"]\n    T6 --> M6[\"DPCC（最合理）\"]\n    T6 --> M2[\"VIVO（最粗糙）\"]\n```\n\n## 流体模拟性能对比\n```mermaid\nflowchart TD\n    Mth[\"SSPH 方法\"]\n    P6[\"6000 粒子（流畅）\"]\n    P4[\"4000 粒子（流畅）\"]\n    P2[\"2000 粒子（流畅）\"]\n    DPCV[\"DPCV4JA\"]\n    VIVO[\"VIVO\"]\n    UPS[\"UPS\"]\n\n    Mth --> P6\n    DPCV --> P6\n    VIVO --> P4\n    UPS --> P2\n    DPCV -->|粒子间距、流动性、性能最佳| P6\n    VIVO -->|液体行为不够正式| P4\n    UPS -->|视觉上明显更差| P2\n```\n\n## 综合评分与排名\n```mermaid\nflowchart TD\n    DCV[\"DCV4j A Pro\"]\n    CFD9[\"CFD 双 9 分\"]\n    FPV9[\"FPV 双 9 分\"]\n    MathAdv[\"数学建模优势\"]\n    VisAdv[\"视觉感知优势\"]\n    King[\"精度之王\"]\n    Summary[\"本次测试结论\"]\n\n    DCV --> CFD9\n    DCV --> FPV9\n    DCV --> MathAdv\n    DCV --> VisAdv\n    CFD9 --> King\n    FPV9 --> King\n    MathAdv --> King\n    VisAdv --> King\n    King --> Summary\n```",
+      "diagrams": [
+        {
+          "title": "测试项目与模型概览",
+          "code": "flowchart TD\n    T1[\"3D液体CFD模拟\"] --> M1[\"DPCV4JA（最佳）\"]\n    T1 --> M2[\"VIVO（次佳）\"]\n    T1 --> M3[\"UPS（最低）\"]\n    T2[\"实时布料解算\"] --> M4[\"UP（表现佳）\"]\n    T2 --> M5[\"ARS（功能齐全）\"]\n    T3[\"Deep CV Flash\"] --> M1\n    T3 --> M4\n    T4[\"FPV穿越机模拟\"] --> M6[\"DPCC（最合理）\"]\n    T4 --> M7[\"Deep Stick（对焦不准）\"]\n    T5[\"WEBGL路径追踪房间\"] --> M4\n    T5 --> M6\n    T6[\"微提速城市沙盘\"] --> M4[\"UP（最精致）\"]\n    T6 --> M6[\"DPCC（最合理）\"]\n    T6 --> M2[\"VIVO（最粗糙）\"]"
+        },
+        {
+          "title": "流体模拟性能对比",
+          "code": "flowchart TD\n    Mth[\"SSPH 方法\"]\n    P6[\"6000 粒子（流畅）\"]\n    P4[\"4000 粒子（流畅）\"]\n    P2[\"2000 粒子（流畅）\"]\n    DPCV[\"DPCV4JA\"]\n    VIVO[\"VIVO\"]\n    UPS[\"UPS\"]\n\n    Mth --> P6\n    DPCV --> P6\n    VIVO --> P4\n    UPS --> P2\n    DPCV -->|粒子间距、流动性、性能最佳| P6\n    VIVO -->|液体行为不够正式| P4\n    UPS -->|视觉上明显更差| P2"
+        },
+        {
+          "title": "综合评分与排名",
+          "code": "flowchart TD\n    DCV[\"DCV4j A Pro\"]\n    CFD9[\"CFD 双 9 分\"]\n    FPV9[\"FPV 双 9 分\"]\n    MathAdv[\"数学建模优势\"]\n    VisAdv[\"视觉感知优势\"]\n    King[\"精度之王\"]\n    Summary[\"本次测试结论\"]\n\n    DCV --> CFD9\n    DCV --> FPV9\n    DCV --> MathAdv\n    DCV --> VisAdv\n    CFD9 --> King\n    FPV9 --> King\n    MathAdv --> King\n    VisAdv --> King\n    King --> Summary"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T22:41:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Pro 评测知识图谱\n\n## 测试项目与模型概览\n```mermaid\nflowchart TD\n    T1[\"3D液体CFD模拟\"] --> M1[\"DPCV4JA（最佳）\"]\n    T1 --> M2[\"VIVO（次佳）\"]\n    T1 --> M3[\"UPS（最低）\"]\n    T2[\"实时布料解算\"] --> M4[\"UP（表现佳）\"]\n    T2 --> M5[\"ARS（功能齐全）\"]\n    T3[\"Deep CV Flash\"] --> M1\n    T3 --> M4\n    T4[\"FPV穿越机模拟\"] --> M6[\"DPCC（最合理）\"]\n    T4 --> M7[\"Deep Stick（对焦不准）\"]\n    T5[\"WEBGL路径追踪房间\"] --> M4\n    T5 --> M6\n    T6[\"微提速城市沙盘\"] --> M4[\"UP（最精致）\"]\n    T6 --> M6[\"DPCC（最合理）\"]\n    T6 --> M2[\"VIVO（最粗糙）\"]\n```\n\n## 流体模拟性能对比\n```mermaid\nflowchart TD\n    Mth[\"SSPH 方法\"]\n    P6[\"6000 粒子（流畅）\"]\n    P4[\"4000 粒子（流畅）\"]\n    P2[\"2000 粒子（流畅）\"]\n    DPCV[\"DPCV4JA\"]\n    VIVO[\"VIVO\"]\n    UPS[\"UPS\"]\n\n    Mth --> P6\n    DPCV --> P6\n    VIVO --> P4\n    UPS --> P2\n    DPCV -->|粒子间距、流动性、性能最佳| P6\n    VIVO -->|液体行为不够正式| P4\n    UPS -->|视觉上明显更差| P2\n```\n\n## 综合评分与排名\n```mermaid\nflowchart TD\n    DCV[\"DCV4j A Pro\"]\n    CFD9[\"CFD 双 9 分\"]\n    FPV9[\"FPV 双 9 分\"]\n    MathAdv[\"数学建模优势\"]\n    VisAdv[\"视觉感知优势\"]\n    King[\"精度之王\"]\n    Summary[\"本次测试结论\"]\n\n    DCV --> CFD9\n    DCV --> FPV9\n    DCV --> MathAdv\n    DCV --> VisAdv\n    CFD9 --> King\n    FPV9 --> King\n    MathAdv --> King\n    VisAdv --> King\n    King --> Summary\n```",
+  "diagrams": [
+    {
+      "title": "测试项目与模型概览",
+      "code": "flowchart TD\n    T1[\"3D液体CFD模拟\"] --> M1[\"DPCV4JA（最佳）\"]\n    T1 --> M2[\"VIVO（次佳）\"]\n    T1 --> M3[\"UPS（最低）\"]\n    T2[\"实时布料解算\"] --> M4[\"UP（表现佳）\"]\n    T2 --> M5[\"ARS（功能齐全）\"]\n    T3[\"Deep CV Flash\"] --> M1\n    T3 --> M4\n    T4[\"FPV穿越机模拟\"] --> M6[\"DPCC（最合理）\"]\n    T4 --> M7[\"Deep Stick（对焦不准）\"]\n    T5[\"WEBGL路径追踪房间\"] --> M4\n    T5 --> M6\n    T6[\"微提速城市沙盘\"] --> M4[\"UP（最精致）\"]\n    T6 --> M6[\"DPCC（最合理）\"]\n    T6 --> M2[\"VIVO（最粗糙）\"]"
+    },
+    {
+      "title": "流体模拟性能对比",
+      "code": "flowchart TD\n    Mth[\"SSPH 方法\"]\n    P6[\"6000 粒子（流畅）\"]\n    P4[\"4000 粒子（流畅）\"]\n    P2[\"2000 粒子（流畅）\"]\n    DPCV[\"DPCV4JA\"]\n    VIVO[\"VIVO\"]\n    UPS[\"UPS\"]\n\n    Mth --> P6\n    DPCV --> P6\n    VIVO --> P4\n    UPS --> P2\n    DPCV -->|粒子间距、流动性、性能最佳| P6\n    VIVO -->|液体行为不够正式| P4\n    UPS -->|视觉上明显更差| P2"
+    },
+    {
+      "title": "综合评分与排名",
+      "code": "flowchart TD\n    DCV[\"DCV4j A Pro\"]\n    CFD9[\"CFD 双 9 分\"]\n    FPV9[\"FPV 双 9 分\"]\n    MathAdv[\"数学建模优势\"]\n    VisAdv[\"视觉感知优势\"]\n    King[\"精度之王\"]\n    Summary[\"本次测试结论\"]\n\n    DCV --> CFD9\n    DCV --> FPV9\n    DCV --> MathAdv\n    DCV --> VisAdv\n    CFD9 --> King\n    FPV9 --> King\n    MathAdv --> King\n    VisAdv --> King\n    King --> Summary"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:41:05+00:00"
+}

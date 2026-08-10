@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Na3R6FEsK",
+  "title": "Agent系统设计 02：如何评测（单意图评测）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3352,
+  "text": "上一个视频给大家分享了如何在保险这个业务场景下做意图识别\n那么这个视频给大家分享一下怎么去评测意图识别的效果\n我们评价一个A型的系统好不好\n或者评价一个艺术视觉效果好不好\n大家最先想的就是看这个问题到底有没有被映射\n直觉回答可能会你会通过人工分辨\n或者是引入一个新的大冒险进行评估\n但是在业内\n像LUNCHEATROPIC这样的公司会有比较标准的评价指标\n今天就来跟大家分享一下这些评价指标\n在分享这些评价指标之前呢\n首先我们把问题约束成单标签多分类呃\n这个简单的来说就是说我们需要定义成一个问题\n只有一个分类\n但是呢在现实生活当中\n用户问的问题呢是有可能会有多个意图的\n那这种情况呢就把这个问题产生多个子问题\n让每个子问题对应一个分类来解决\n一个问题只对应一个子分类的情况\n在保险业务这个场景当中\n就上上上一个视频\n我们提到了说保险这个业务场景它有十个意图啊\n那我们假设说只想只想去关注说理赔争议这一个意图\n它的效果到底好不好\n那么我们有四个指标可以参考\n第一个指标是TP\n就是实际情况是不是你理赔争议模型推测也是的情况啊\n实际情况是模型0.4的情况的话\n那那我们认为是TP正确识别\n而FP呢是指实际情况\n不是模型策略推测四\n那是错误识别\n而FN呢是指实际情况\n四模型学认为不是\n那就是漏掉了\n而tn呢是实际情况\n不是推测\n也不是这个叫正确排除前面的那个TTPFPFN和tn呢\n第一个字段T就是true和false\n那第二个阶段P和N呢是positive和negative\n这个其实是指的是模型\npositive和negative\n它指的是模型推测是还是不是\n而true force呢\n它其实不是指实际的情况是还是不是\n它其实是指的是模型的推测和真实情况相比是正确还是错误\n也就是所谓的先看模型说了什么\n再看他说的对不对\n那我们再看\n那我们再看一下几个具体的例子\n假设在理赔争议这个场景\n用户总共问了六次\n其中有两次都是指的是正确识别嗯\n其中有两次是漏报的\n还有一次是错误识别\n一次是正确排除额\n那么在ACCURSE这个指标下面\nACCURSE它是指的是分类的证券数量除以总数\n那么分类的证券数量其实指的是在这个across这个场景下\n它指的是模型认为是\n并且呢它实际也是这个算模型认为不是\n实际上也不是它也算\n然后那么它其实这个情况加起来TP加tn是三个\n然后呢他总数是六个嘛\n呃那么算算是50%\n但这个指标在我们用来判断说单个意图识别准不准\n其实是它是一个比较激烈的场景\n为什么呢\n因为你也看到了\n就是说他其实把最后这个TN这个场景嗯\n就是实际上不是模型推\n这也不是实际上不是模型推\n也不是这个场景拉进来了\n也因为这个场景呢其实我们并不是很关注啊\n因为他都没有涉及到底配色一诶\n嗯真正用来识别这个模型判断可不可靠的\n可不可信呢\n其实procession procession它的含义是指正确预测为争议的数量\n除以所有被模型预测为争议的数量\n那其实这里正确被模型预测为真的数量其实是TP总共有两个\n那么除以实际上是推测也是\n然后实际上不是推测去试\n因为只要你模型认为它是它都要算\n那这个算出来就是百分点46.7好呃\n另外一个是指标是record\n这个是指的是模型\n它到底算的全不全\n那么这个其实就是它的分母是实际增益的总数量\n就是总共到底有多少个是低配增益呃\n这个是取决于它真实情况\n那我们需要把所有实际上四的给统计出来\n那就是TP加FN是它的分母\n而TP是到底被正确算出来\n是底比正义的数量有几个\n那个这个这个加起来就是两个\n总共是2÷4等于50%\n这两个指标其实它的侧重点是不一样的\n一个是在问全不全\n一个是在问准不准\n像recall呢就是代表着到底全不全\n而protection呢在是在回答到底准不准的\n他们两个指标在不同的业务场景当中的侧重点还不一样\n像搜索推荐这种场景啊\n假如说首页只能推荐五篇文章\n方案A推荐五篇文章中有四篇是用户喜欢的\n那他的procession的算出来是800%分之80\n而另外一个方案五篇文章中只有一篇文章是用户喜欢的\n那算算是20%\n对于用户来说\n你如果说你方案b depression expression只有20%的情况\n他会认为你推的内容都跟它不相关\n他可能逐渐就不愿意使用这个场景了\n但是呢在这个场景下\n你processing很高\n那就很会就会继续用\n不过在这个场景下\n你的record值可能会很低\n为什么呢\n因为可能世界上还会有100篇用户喜欢的其他的文章\n但是首页它展示不全嘛\n会录掉一些\n通常就没有推荐一些拉丁这种那么糟糕了\n所以说呢这个场景你不太有\n你不用不用他去关注\n说record到底怎么样\n其实跟咱们更关注的是procession嗯\n在推荐系统当中可能还会更严格\n可能还会用perstition top key\n然后另外一个场景是record什么场景\n我们可关心record呢\n像安全这个场景下\n假如说用户这个公司他一天发生了十次真实入侵\n按这个系统只报警了四次\n那这个record算出来就是就4%次\n虽然说这四次咱们都已经抓到了\n但是还有六次没被发现\n那就很严重了\n其实还有一次没抓到\n都挺严重的\n因为可能这个时候可能你的公司已经被攻击了\nOK但是呢如果说你只关注record呢\n其实也不是特别安全的\n因为有可能说你虽然说record是提高了90%或百分之百啊\n但是呢你带来大量的误报也不行\n因为你如果说产生了很多的误报\n你安全团队可能都会去处于一个疲于应对告警的情况了\n呃所以呢真实的情况通常应该是你先把record这个指标处理好了\n然后再去通过规则聚合和二次模型及减少一个误报\n但是呢很明显嗯\n在安全这个行业当中\nrecord阈值是明显高于procession的好\n如果说准不准和全不全\n你都关心你有什么一个值来来可以去衡量它呢\n咱们用的是这个调和平均数\n这个调和平均数的公式是一加贝塔乘以procession乘以record\n除以贝塔平方乘以position加record\n那首先啊这个beta其实它是有三有三种类型啊\n第一种类型是等于一\n就代表着procession和record\n他是同等重要的\n这个贝塔是权重的意思\n那大于一的情况呢\n就是我更重视record\n小于一的情况下\n是我我更重视procession额\n然后呢\n但我们为什么不用这个算术平均数呢\n因为算数平均数其实会没办法去把偏科这个情况给算出来\n就就大家都知道说我和马云平均下来工资可能都是过亿\n但是其实嗯你就掩盖了你的工资比较低的是在这个情况\n嗯嗯嗯嗯OK\n那为什么我们不用算算平均数呢\n因为双向平均数可能会掩盖严重偏科这个情况嗯\n好然后那我们知道这些指标之后怎么用它呢\n首先啊就是已上线模型的时候\n你不要只看其中某一个指标\n比如你只看这个\n既然你说我们要关注准不准和选不选\n那我是不是只看F1就行了\n或者发现这个模型或者调整后的效果F1好\n那我它是最高的\n我就上线\n这个其实不是的\n更合理的情况是\n你要先检查你这个业务的硬性指标到底怎么样\n有因为有的业务他对于PROSTIN要求高\n那你首先要达到这个PROCE最低最低的底线嗯\n然后呢有的有的场景呢还要对record要求高\n那你至少要达到别人对record要求最高底线\n在这个基础上\n你再去看这个F1谁高\n再去选F1高的那个模型上线\n然后呢你要调整这个效果好不好呢\n你需要去看具体的一个事例\n好阿格瑞斯呢\n这是在这个单一图的场景\n其实就比较鸡肋了啊\n因为说实话tn其实是大量的那种跟我们要观测这个意图无关的场景\n好呃这节课呢其实只讲了单意图的指标怎么去看\n但是呢在我们真实业务场景当中\n其实是不不只有一个意图的\n因为你想保险这个业务场景\n它至少就有十个意图\n那我们要综合的去看你的这个意图识别系统到底在这十个意图的表现\n合起来一个效果是怎么样的\n嗯这个我们等下节课再讲\n这节课呢只给大家介绍一下单意图怎么做\n嗯然后呢呃大家如果对我讲的这个A型的系统感兴趣的话\n可以给我一一些点赞\n投币和收藏嗯\n可以关注一下我\n我会后续呢继续跟大家分享嗯\n但大家如果有什么其他想听的\n也可以在评论区给我留言哦\n谢谢大家\n咱们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Na3R6FEsK",
+  "published_at": "1785662717",
+  "fetched_at": "2026-08-07T17:49:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Agent系统设计 02：单意图评测知识图谱\n\n## 图1：单意图评估基本概念 [BV1Na3R6FEsK P1 01:09]\n```mermaid\nflowchart TD\n    A[\"实际标签 (Actual)\"] -->|正例| B[\"正类 (Positive)\"]\n    A -->|负例| C[\"负类 (Negative)\"]\n    D[\"模型预测 (Prediction)\"] -->|正例| B\n    D -->|负例| C\n\n    B -->|模型预测正且实际正| TP[\"True Positive (TP)\"]\n    B -->|模型预测负且实际正| FN[\"False Negative (FN)\"]\n    C -->|模型预测正且实际负| FP[\"False Positive (FP)\"]\n    C -->|模型预测负且实际负| TN[\"True Negative (TN)\"]\n```\n\n## 图2：评估指标计算与关系 [BV1Na3R6FEsK P1 03:03]\n```mermaid\nflowchart TD\n    TP[\"TP\"] --> PrecFormula[\"Precision = TP / (TP + FP)\"]\n    FP[\"FP\"] --> PrecFormula\n    FN[\"FN\"] --> RecFormula[\"Recall = TP / (TP + FN)\"]\n    TP --> RecFormula\n\n    PrecFormula --> Precision[\"Precision (procession)\"]\n    RecFormula --> Recall[\"Recall (record)\"]\n\n    Precision --> F1[\"F1 Score (Harmonic Mean)\"]\n    Recall --> F1\n    Beta[\"β (权重)\"] --> F1\n\n    F1 --> F1Formula[\"F1 = (1+β²)·(Precision·Recall) / (β²·Precision + Recall)\"]\n```\n\n## 图3：业务场景指标取舍指南 [BV1Na3R6FEsK P1 04:05]\n```mermaid\nflowchart TD\n    Insurance[\"保险业务场景\"] --> RecallPriority[\"优先关注 Recall (record)\"]\n    Recommendation[\"推荐系统场景\"] --> PrecisionPriority[\"优先关注 Precision (procession)\"]\n    Security[\"安全监控场景\"] --> RecallPrioritySec[\"优先关注 Recall (record)\"]\n\n    RecallPriority --> Reason1[\"需要捕获全部争议/入侵\"]\n    PrecisionPriority --> Reason2[\"避免误报影响用户体验\"]\n    RecallPrioritySec --> Reason3[\"漏报风险高，容忍误报\"]\n\n    Reason1 --> ExampleIns[\"例：理赔争议识别\"]\n    Reason2 --> ExampleRec[\"例：首页推荐 5 篇文章\"]\n    Reason3 --> ExampleSec[\"例：入侵检测报警 10 次中仅 4 次被捕获\"]\n```)",
+      "diagrams": [
+        {
+          "title": "图1：单意图评估基本概念",
+          "code": "flowchart TD\n    A[\"实际标签 (Actual)\"] -->|正例| B[\"正类 (Positive)\"]\n    A -->|负例| C[\"负类 (Negative)\"]\n    D[\"模型预测 (Prediction)\"] -->|正例| B\n    D -->|负例| C\n\n    B -->|模型预测正且实际正| TP[\"True Positive (TP)\"]\n    B -->|模型预测负且实际正| FN[\"False Negative (FN)\"]\n    C -->|模型预测正且实际负| FP[\"False Positive (FP)\"]\n    C -->|模型预测负且实际负| TN[\"True Negative (TN)\"]"
+        },
+        {
+          "title": "图2：评估指标计算与关系",
+          "code": "flowchart TD\n    TP[\"TP\"] --> PrecFormula[\"Precision = TP / (TP + FP)\"]\n    FP[\"FP\"] --> PrecFormula\n    FN[\"FN\"] --> RecFormula[\"Recall = TP / (TP + FN)\"]\n    TP --> RecFormula\n\n    PrecFormula --> Precision[\"Precision (procession)\"]\n    RecFormula --> Recall[\"Recall (record)\"]\n\n    Precision --> F1[\"F1 Score (Harmonic Mean)\"]\n    Recall --> F1\n    Beta[\"β (权重)\"] --> F1\n\n    F1 --> F1Formula[\"F1 = (1+β²)·(Precision·Recall) / (β²·Precision + Recall)\"]"
+        },
+        {
+          "title": "图3：业务场景指标取舍指南",
+          "code": "flowchart TD\n    Insurance[\"保险业务场景\"] --> RecallPriority[\"优先关注 Recall (record)\"]\n    Recommendation[\"推荐系统场景\"] --> PrecisionPriority[\"优先关注 Precision (procession)\"]\n    Security[\"安全监控场景\"] --> RecallPrioritySec[\"优先关注 Recall (record)\"]\n\n    RecallPriority --> Reason1[\"需要捕获全部争议/入侵\"]\n    PrecisionPriority --> Reason2[\"避免误报影响用户体验\"]\n    RecallPrioritySec --> Reason3[\"漏报风险高，容忍误报\"]\n\n    Reason1 --> ExampleIns[\"例：理赔争议识别\"]\n    Reason2 --> ExampleRec[\"例：首页推荐 5 篇文章\"]\n    Reason3 --> ExampleSec[\"例：入侵检测报警 10 次中仅 4 次被捕获\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T17:51:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Agent系统设计 02：单意图评测知识图谱\n\n## 图1：单意图评估基本概念 [BV1Na3R6FEsK P1 01:09]\n```mermaid\nflowchart TD\n    A[\"实际标签 (Actual)\"] -->|正例| B[\"正类 (Positive)\"]\n    A -->|负例| C[\"负类 (Negative)\"]\n    D[\"模型预测 (Prediction)\"] -->|正例| B\n    D -->|负例| C\n\n    B -->|模型预测正且实际正| TP[\"True Positive (TP)\"]\n    B -->|模型预测负且实际正| FN[\"False Negative (FN)\"]\n    C -->|模型预测正且实际负| FP[\"False Positive (FP)\"]\n    C -->|模型预测负且实际负| TN[\"True Negative (TN)\"]\n```\n\n## 图2：评估指标计算与关系 [BV1Na3R6FEsK P1 03:03]\n```mermaid\nflowchart TD\n    TP[\"TP\"] --> PrecFormula[\"Precision = TP / (TP + FP)\"]\n    FP[\"FP\"] --> PrecFormula\n    FN[\"FN\"] --> RecFormula[\"Recall = TP / (TP + FN)\"]\n    TP --> RecFormula\n\n    PrecFormula --> Precision[\"Precision (procession)\"]\n    RecFormula --> Recall[\"Recall (record)\"]\n\n    Precision --> F1[\"F1 Score (Harmonic Mean)\"]\n    Recall --> F1\n    Beta[\"β (权重)\"] --> F1\n\n    F1 --> F1Formula[\"F1 = (1+β²)·(Precision·Recall) / (β²·Precision + Recall)\"]\n```\n\n## 图3：业务场景指标取舍指南 [BV1Na3R6FEsK P1 04:05]\n```mermaid\nflowchart TD\n    Insurance[\"保险业务场景\"] --> RecallPriority[\"优先关注 Recall (record)\"]\n    Recommendation[\"推荐系统场景\"] --> PrecisionPriority[\"优先关注 Precision (procession)\"]\n    Security[\"安全监控场景\"] --> RecallPrioritySec[\"优先关注 Recall (record)\"]\n\n    RecallPriority --> Reason1[\"需要捕获全部争议/入侵\"]\n    PrecisionPriority --> Reason2[\"避免误报影响用户体验\"]\n    RecallPrioritySec --> Reason3[\"漏报风险高，容忍误报\"]\n\n    Reason1 --> ExampleIns[\"例：理赔争议识别\"]\n    Reason2 --> ExampleRec[\"例：首页推荐 5 篇文章\"]\n    Reason3 --> ExampleSec[\"例：入侵检测报警 10 次中仅 4 次被捕获\"]\n```)",
+  "diagrams": [
+    {
+      "title": "图1：单意图评估基本概念",
+      "code": "flowchart TD\n    A[\"实际标签 (Actual)\"] -->|正例| B[\"正类 (Positive)\"]\n    A -->|负例| C[\"负类 (Negative)\"]\n    D[\"模型预测 (Prediction)\"] -->|正例| B\n    D -->|负例| C\n\n    B -->|模型预测正且实际正| TP[\"True Positive (TP)\"]\n    B -->|模型预测负且实际正| FN[\"False Negative (FN)\"]\n    C -->|模型预测正且实际负| FP[\"False Positive (FP)\"]\n    C -->|模型预测负且实际负| TN[\"True Negative (TN)\"]"
+    },
+    {
+      "title": "图2：评估指标计算与关系",
+      "code": "flowchart TD\n    TP[\"TP\"] --> PrecFormula[\"Precision = TP / (TP + FP)\"]\n    FP[\"FP\"] --> PrecFormula\n    FN[\"FN\"] --> RecFormula[\"Recall = TP / (TP + FN)\"]\n    TP --> RecFormula\n\n    PrecFormula --> Precision[\"Precision (procession)\"]\n    RecFormula --> Recall[\"Recall (record)\"]\n\n    Precision --> F1[\"F1 Score (Harmonic Mean)\"]\n    Recall --> F1\n    Beta[\"β (权重)\"] --> F1\n\n    F1 --> F1Formula[\"F1 = (1+β²)·(Precision·Recall) / (β²·Precision + Recall)\"]"
+    },
+    {
+      "title": "图3：业务场景指标取舍指南",
+      "code": "flowchart TD\n    Insurance[\"保险业务场景\"] --> RecallPriority[\"优先关注 Recall (record)\"]\n    Recommendation[\"推荐系统场景\"] --> PrecisionPriority[\"优先关注 Precision (procession)\"]\n    Security[\"安全监控场景\"] --> RecallPrioritySec[\"优先关注 Recall (record)\"]\n\n    RecallPriority --> Reason1[\"需要捕获全部争议/入侵\"]\n    PrecisionPriority --> Reason2[\"避免误报影响用户体验\"]\n    RecallPrioritySec --> Reason3[\"漏报风险高，容忍误报\"]\n\n    Reason1 --> ExampleIns[\"例：理赔争议识别\"]\n    Reason2 --> ExampleRec[\"例：首页推荐 5 篇文章\"]\n    Reason3 --> ExampleSec[\"例：入侵检测报警 10 次中仅 4 次被捕获\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T17:51:16+00:00"
+}

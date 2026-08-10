@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1dUPuzLEu7",
+  "title": "保姆级KV Cache教程！从底层原理到显存计算，新手也能一次看懂",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4219,
+  "text": "玩过本地部署大模型的小伙伴\n肯定都有过这样的疑问\n我下载的模型权重明明只有十个G\n为啥一跑起来啊\n显存就不止十个G\n甚至聊着聊着显存就爆炸了\n而多出来这些显存到底被谁吃掉了\n现在要聊的话题呢就是今天的主角davy catch\n这绝对是你在全网看到最详细的\nKVKH教程啊\n可以先点赞收藏交波学费\n我们现在开始\n因为现在的大模型基本都是基于transformer的\n解码器架构而延伸出来的各种变体嘛\n而熟悉transformer架构的小伙伴应该清楚\n当今大模型说话是不是一个token\n一个token往外蹦的\n说专业一点啊\n叫做自回归生成\n简单举个例子\n为了方便演示\n我把这个模型横过来\n假设要生成锯子啊\n我爱吃苹果\n第一步呢模型输入我预测出I\n那第二步呢模型再把我爱作为输入啊\n预测出吃\n第三步呢再把我爱吃作为输入\n预测出哺乳诶\n发现问题了吗\n在原始的transformer推理中\n当我们生成第二个字I的时候\n模型不仅要处理新的输入I\n他还得重新把我这个字再看一遍\n也就是说模型又要对我进行词嵌入啊\n位置编码等一系列操作\n然后生成我的QKV向量之后\n又重复的计算了我的注意力分数\n而生成吃的时候也同理\n不光要生成吃的QKV向量\n也还需要重新计算前面我和爱的QKV向量\n并重新计算我爱的注意力分数\n有些不太了解大模型推理详细步骤的小伙伴\n可能在这个地方看的有点懵是吧\n这个不要紧\n我这里简单的把大模型的推理给大家演示一遍\n我这里直接跳过前面的磁线路啊\n还有位置编码等这些步骤\n直接从注意力计算这里开始\n假设输入啊我爱吃这三个字\n然后这是关于token啊\n我爱吃映射出来的QKV3个矩阵\n然后这个词向量的维度我这就不画了啊\n反正就是这么长\n然后用每个token的Q向量\n和每个token的K向量啊\n做计算会得到一个助力的分数矩阵\n这个分数的核心含义呢\n其实就是衡量每个token和句子里\n其他token的一个关联程度\n相似度\n说白了就是计算啊\n我该把多少注意力啊分配给其他的每一个token\n而在计算注意力分数之前呢\n每一个token\n它的词向量都只代表他自己孤立的含义\n比如说我的词向量它只有我本身的语义\n而吃的词向量呢也只有吃本身的语义\n彼此之间没有任何关联\n而通过Q和K算出注意力分数之后呢\n我们就有了分配助力的依据\n接下来第二步就是用这个助力分数去乘以\n对应的V矩阵\n这一步的本质呢是按照注意力分数的高低啊\n把其他token的这个语义信息\n加权融合到当前的token里头\n比如说原本吃的词向量里头完全没有我的语义\n但通过助力分数的计算\n我们发现我和吃的关联度很高\n于是在和微矩阵相乘的时候\n就会把我的语义信息\n按照高权重融入到这个吃的最终向量\n当中去\n最终每个token的输出向量就不再是孤立的了\n而是既保留了自己原本的语义\n又结合了句子中所有相关token的语义信息\n然后再拿这个融合了新语义的矩阵推到下一层\n计算QKV\n然后再经过若干层的计算之后呢\n将最后这一层已经互相充分理解后的这个token\n词向量矩阵映射到此表当中\n这里映射层呢是词向量的维度啊\n乘以此表大小的\n最终会输出每一个token\n对下一个token的预测概率\n也就是说我是预测I这个位置的概率\n然后I呢又是预测吃这个位置的概率\n因为目前我们已经知道了\n我和爱这两个位置的头肯\n所以咱只需要取最后一个token\n也就吃在所有词表上啊\n预测概率最大的那个词作为模型\n这一轮的输出也就是这个苹果\n当然我这里的推理流程精简了很多啊\n省略了像多头助力机制啊\n还有像规划等部分内容\n想详细了解这些部分的呢\n也可以去看看我过去发的这期视频啊\n但是大体的推理流程基本就是这个样子\n有的小伙伴时可能寻思诶\n这不是kv catch的视频吗\n你为啥要大费周章的来讲解这个呢\n我想说我看过很多其他的视频\n几乎全都忽略了这一部分的内容\n但实际上模型推理这部分内容又是非常必要的\n如果不讲透这一部分\n再怎么说\n你也不会真正的去理解\n我们现在开始追根溯源\n重点来了哦\n不知道你们有没有注意到\n模型每一轮预测是不是都只看那个logic\n最后一个token输出的概率啊\n前面这俩是不是压根就不需要\n而最后这一个token\n是不是又只是这里的词\n和这个权重矩阵计算出来的\n也就是说\n这里的我和I其实也都不需要再往前走\n那么这里的词是不是也只是最下面这一行的\n这个注意力分数和这个微矩阵相乘得到的\n也就是说\n注意力分数的前两行是不是做的也是无用功啊\n白算的\n因为根本就没用到嘛\n然后我们再往前走\n是不是发现注意力分数矩阵的这个最后一行\n又只和吃的这个Q向量和整个K矩阵相关的\n也就是说我和I这俩Q向量也是白算的\n因为压根就跟模型最终的输出无关\n对不对\n所以最终我们发现了什么\n是不是当前这轮输出的苹果\n只和token吃的QKV向量\n和历史的其他QV向量有关呢\n而其他的一些计算和操作是不是都是冗余的\n而这里的KV呢\n其实在上一轮的计算当中已经算过了\n比如说当第一轮输入我的时候啊\n模型咔咔算了一波我的QQV向量对吧\n然后模型输出了I\n然后到第二轮输入我爱的时候呢\n模型其实这个时候只需要计算爱这一个字的\n这个QKV即可\n因为我在上一轮其实已经算过KV了\n我们只要在上一轮计算的时候\n把这个KV部分诶缓存起来\n然后拼接到这一轮爱的KV前面即可\n诶这个就是kv catch的核心原理了\n用空间来换时间好\n现在我们还是拿这个生成我爱吃苹果这个例子\n从头到尾来捋一遍\n带kv catch和不带kv catch的一个区别\n首先输入我\n这时这俩是不是都得生成我的QKV向量啊\n不同的是KV开局\n这里会同时缓存一份我的KV\n然后再计算助力的分数\n和新的词向量的一个输出\n最后拿着新的词向量映射到此表当中\n获得下一个token的一个预测概率\n我这里为了教学方面\n同样也省略了多个子层和多同类系列操作啊\n并且这一轮还看不出什么\n但是下一轮就非常不一样了\n看到没有\n在KVCCH的这一轮只输入了上一轮的爱\n并没有把我也一起给他输入进来\n为啥可以这么做\n是不是\n因为我们这一轮的预测\n其实只跟上一轮我的KV部分相关呢\n而这部分咱们其实已经缓存下来了\n所以只需要输入一个I就行\n在将缓存的我的KV\n拼接到新生成的I的KV之前\n而传统的必须从头到尾再算一波磁线路啊\n等操作来重新算得这个我的QKV项链\n然后我们再把这一轮新产生的token\nI的KV向量啊继续存储起来\n然后接着往下算这个注意力分数\n可以看到传统的方式重复计算了\n之前我部分的注意力分数\n我刚刚在倒推的时候\n是不是演示过咱们新一轮推理\n其实只需要用到最下面这一行的助力分数就行\n所以你这个地方又造成了一次冗余的计算\n而带k v catch的就没有这部分的问题了\n接下来又是新的磁向量的输出啊\n这里传统的也重复的计算了\n这个我部分这个词向量我后面就不再赘述了\n然后最后映射到此表上啊\n输出下一个token好\n然后接下来在预测苹果这个头恨的时候\n其实也是同理\n我就不再重复演示了\n这里有一个经常容易被忽略的点\ntransformer的架构本身\n对token的位置信息是完全不敏感的\n必须得通过位置编码来告诉模型\n每一个token在句子当中的位置\n才能够正常理解语义\n对不对\n而在KV开局的生成阶段呢\n每次只需要输入单个的token就行了\n所以必须得修改这个token的位置编码\n使其对应整个序列的正确的位置\n比如说我现在输入到这个十这个字\n那么我们通过查看缓存KV\n我们知道哎这个token前面有两个token\n所以token吃的位置编码呢\n则必须是第三个位置的\n而不应该是第一个位置的\n不然模型每次都会以为自己在生成\n第一个位置的token\n这就完全乱套了\n对不对\n这位置编码就会完全失效\n对不对\n好相信看到这的小伙伴\n你应该彻底了解了kv cash的原理啊\n我们通过拆解模型推理的流程发现\n有多处冗余的计算\n而模型每一轮的输出呢均只和历史的KV有关\n所以通过缓存KV的这一操作\n使得每一个历史token的KV只计算了一次啊\n之后全靠缓存复用\n消除了重复的计算\n像现在你应该懂得了开头的疑问\n为啥模型权重只有10G\n但跑起来却多了额外的显存\n那就是缓存下来的KV也是需要空间的\n那我们怎么去计算\nPPP开局一般要占用多少显存呢\n很简单\n这里有个计算的公式啊\n二乘上层数乘上批量大小\n乘上这个序列长度啊\n反正叭叭叭叭一堆\n就可以算出这个q v catch占了多少显存\n而这里的R呢指的就是K和V两个嘛对吧\n然后层数呢指的就是模型\n这里的N批量大小呢啊\n就是一次性输入多少个句子给模型\n一般我们自己电脑上部署推理的话\n批量大小一般都是以\n而序列长度呢就是当前已经输入\n加上生成的总token数量\n也就上下文的长度\n它会随着你的对话生成不断的变长\n而这个KV助力投诉呢就是多头助力一下\n你有几头\n而单头维度顾名思义就是每个头有多少个维度\n最后这个元素字节数呢\n就是你这个词项的维度里头\n每一个值是用多少个字节来存储的\n如果是F32\n那就是四个字节\n我们以Q问38B这个模型举例\n然后我们找到模型的配置文件\n可以看到模型的层数是36\n然后KV柱立头的数量是八\n单头的维度呢是128\n然后它采用的张量类型呢\n我看一下啊\n这里有写是吧\n是BF a16\n也就是每个元素占两个字节\n然后序列的长度呢这个地方也有写啊\n原生支持3万2768的长度\n然后批量大小我们这就按一来算\n我们代入这一套公式\n可以算得\n他大概占用了这么长的一个字节的显存\n换算成GB呢\n也就除上三个1024\n也就大概占4.5GB显存左右\n也就是说这个模型本身占用大概16.4GB\n但是加上QVPH之后呢\n拉满上下文会占用21GB显存左右\n不知道大家刚刚还注意到了没有这个模型的啊\nKV数量和Q的数量居然也还不一致\n这是因为QN3使用了另一种技术叫做QQA\n它可以用来减少这个KV的数量\n那除了这个以外呢\n还有像MQAR模型变化等其他技术\n来减轻模型的大小和这个kv catch\n因为时间的关系\n这些进阶优化技术\n我这期视频就不详细展开讲解了\n如果大家感兴趣的话呢\n可以在弹幕或者评论区扣波一\n后续呢我也会接着讲解好\n如果这期视频对你有帮助的话呢\n麻烦点赞收藏加关注\n你的支持是我更新视频的最大动力\n咱们下期视频见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1dUPuzLEu7",
+  "published_at": "1772379219",
+  "fetched_at": "2026-08-10T00:50:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# KV Cache 知识图谱\n\n## 1. Transformer 生成与注意力机制 [BV1dUPuzLEu7 P1 00:34]\n```mermaid\nflowchart TD\n    A1[\"Transformer Decoder\"]\n    A2[\"自回归生成 (Autoregressive)\"]\n    A3[\"Token 序列\"]\n    A4[\"Embedding + Positional Encoding\"]\n    A5[\"Q, K, V 线性映射\"]\n    A6[\"Attention Scores (Q·Kᵀ)\"]\n    A7[\"Weighted Sum with V\"]\n    A8[\"输出 Token 概率\"]\n    A1 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A2 --> A3\n```\n\n## 2. 冗余计算 vs KV Cache 工作流 [BV1dUPuzLEu7 P1 01:56] [BV1dUPuzLEu7 P1 04:56] [BV1dUPuzLEu7 P1 05:03]\n```mermaid\nflowchart TD\n    B1[\"每步重新计算所有 Token 的 QKV\"]\n    B2[\"注意力分数矩阵全体计算\"]\n    B3[\"KV Cache: 缓存历史 K 与 V\"]\n    B4[\"仅计算新 Token 的 Q\"]\n    B5[\"复用缓存 K,V 计算注意力\"]\n    B6[\"减少显存/计算重复\"]\n    B1 --> B2\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B2 --> B5\n```\n\n## 3. KV Cache 显存占用公式与估算 [BV1dUPuzLEu7 P1 07:45] [BV1dUPuzLEu7 P1 08:39] [BV1dUPuzLEu7 P1 08:55]\n```mermaid\nflowchart LR\n    C1[\"公式: 2 × L × B × S × H × D × bytes\"]\n    C2[\"L: 层数 = 36\"]\n    C3[\"B: 批量大小 = 1\"]\n    C4[\"S: 序列长度 = 32768\"]\n    C5[\"H: 头数 = 8\"]\n    C6[\"D: 单头维度 = 128\"]\n    C7[\"bytes: 元素字节数 = 2 (BF16)\"]\n    C8[\"估算显存 ≈ 4.5 GB\"]\n    C1 --> C2\n    C1 --> C3\n    C1 --> C4\n    C1 --> C5\n    C1 --> C6\n    C1 --> C7\n    C1 --> C8\n```\n\n## 4. KV Cache 下的位置编码处理 [BV1dUPuzLEu7 P1 06:38] [BV1dUPuzLEu7 P1 06:54]\n```mermaid\nflowchart TD\n    D1[\"Transformer 对位置不敏感\"]\n    D2[\"使用位置编码\"]\n    D3[\"生成新 Token 时位置需更新\"]\n    D4[\"缓存 KV 不影响位置编码\"]\n    D5[\"正确位置编码确保序列顺序\"]\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5\n```",
+      "diagrams": [
+        {
+          "title": "1. Transformer 生成与注意力机制",
+          "code": "flowchart TD\n    A1[\"Transformer Decoder\"]\n    A2[\"自回归生成 (Autoregressive)\"]\n    A3[\"Token 序列\"]\n    A4[\"Embedding + Positional Encoding\"]\n    A5[\"Q, K, V 线性映射\"]\n    A6[\"Attention Scores (Q·Kᵀ)\"]\n    A7[\"Weighted Sum with V\"]\n    A8[\"输出 Token 概率\"]\n    A1 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A2 --> A3"
+        },
+        {
+          "title": "2. 冗余计算 vs KV Cache 工作流",
+          "code": "flowchart TD\n    B1[\"每步重新计算所有 Token 的 QKV\"]\n    B2[\"注意力分数矩阵全体计算\"]\n    B3[\"KV Cache: 缓存历史 K 与 V\"]\n    B4[\"仅计算新 Token 的 Q\"]\n    B5[\"复用缓存 K,V 计算注意力\"]\n    B6[\"减少显存/计算重复\"]\n    B1 --> B2\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B2 --> B5"
+        },
+        {
+          "title": "3. KV Cache 显存占用公式与估算",
+          "code": "flowchart LR\n    C1[\"公式: 2 × L × B × S × H × D × bytes\"]\n    C2[\"L: 层数 = 36\"]\n    C3[\"B: 批量大小 = 1\"]\n    C4[\"S: 序列长度 = 32768\"]\n    C5[\"H: 头数 = 8\"]\n    C6[\"D: 单头维度 = 128\"]\n    C7[\"bytes: 元素字节数 = 2 (BF16)\"]\n    C8[\"估算显存 ≈ 4.5 GB\"]\n    C1 --> C2\n    C1 --> C3\n    C1 --> C4\n    C1 --> C5\n    C1 --> C6\n    C1 --> C7\n    C1 --> C8"
+        },
+        {
+          "title": "4. KV Cache 下的位置编码处理",
+          "code": "flowchart TD\n    D1[\"Transformer 对位置不敏感\"]\n    D2[\"使用位置编码\"]\n    D3[\"生成新 Token 时位置需更新\"]\n    D4[\"缓存 KV 不影响位置编码\"]\n    D5[\"正确位置编码确保序列顺序\"]\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T00:50:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# KV Cache 知识图谱\n\n## 1. Transformer 生成与注意力机制 [BV1dUPuzLEu7 P1 00:34]\n```mermaid\nflowchart TD\n    A1[\"Transformer Decoder\"]\n    A2[\"自回归生成 (Autoregressive)\"]\n    A3[\"Token 序列\"]\n    A4[\"Embedding + Positional Encoding\"]\n    A5[\"Q, K, V 线性映射\"]\n    A6[\"Attention Scores (Q·Kᵀ)\"]\n    A7[\"Weighted Sum with V\"]\n    A8[\"输出 Token 概率\"]\n    A1 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A2 --> A3\n```\n\n## 2. 冗余计算 vs KV Cache 工作流 [BV1dUPuzLEu7 P1 01:56] [BV1dUPuzLEu7 P1 04:56] [BV1dUPuzLEu7 P1 05:03]\n```mermaid\nflowchart TD\n    B1[\"每步重新计算所有 Token 的 QKV\"]\n    B2[\"注意力分数矩阵全体计算\"]\n    B3[\"KV Cache: 缓存历史 K 与 V\"]\n    B4[\"仅计算新 Token 的 Q\"]\n    B5[\"复用缓存 K,V 计算注意力\"]\n    B6[\"减少显存/计算重复\"]\n    B1 --> B2\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B2 --> B5\n```\n\n## 3. KV Cache 显存占用公式与估算 [BV1dUPuzLEu7 P1 07:45] [BV1dUPuzLEu7 P1 08:39] [BV1dUPuzLEu7 P1 08:55]\n```mermaid\nflowchart LR\n    C1[\"公式: 2 × L × B × S × H × D × bytes\"]\n    C2[\"L: 层数 = 36\"]\n    C3[\"B: 批量大小 = 1\"]\n    C4[\"S: 序列长度 = 32768\"]\n    C5[\"H: 头数 = 8\"]\n    C6[\"D: 单头维度 = 128\"]\n    C7[\"bytes: 元素字节数 = 2 (BF16)\"]\n    C8[\"估算显存 ≈ 4.5 GB\"]\n    C1 --> C2\n    C1 --> C3\n    C1 --> C4\n    C1 --> C5\n    C1 --> C6\n    C1 --> C7\n    C1 --> C8\n```\n\n## 4. KV Cache 下的位置编码处理 [BV1dUPuzLEu7 P1 06:38] [BV1dUPuzLEu7 P1 06:54]\n```mermaid\nflowchart TD\n    D1[\"Transformer 对位置不敏感\"]\n    D2[\"使用位置编码\"]\n    D3[\"生成新 Token 时位置需更新\"]\n    D4[\"缓存 KV 不影响位置编码\"]\n    D5[\"正确位置编码确保序列顺序\"]\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5\n```",
+  "diagrams": [
+    {
+      "title": "1. Transformer 生成与注意力机制",
+      "code": "flowchart TD\n    A1[\"Transformer Decoder\"]\n    A2[\"自回归生成 (Autoregressive)\"]\n    A3[\"Token 序列\"]\n    A4[\"Embedding + Positional Encoding\"]\n    A5[\"Q, K, V 线性映射\"]\n    A6[\"Attention Scores (Q·Kᵀ)\"]\n    A7[\"Weighted Sum with V\"]\n    A8[\"输出 Token 概率\"]\n    A1 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A2 --> A3"
+    },
+    {
+      "title": "2. 冗余计算 vs KV Cache 工作流",
+      "code": "flowchart TD\n    B1[\"每步重新计算所有 Token 的 QKV\"]\n    B2[\"注意力分数矩阵全体计算\"]\n    B3[\"KV Cache: 缓存历史 K 与 V\"]\n    B4[\"仅计算新 Token 的 Q\"]\n    B5[\"复用缓存 K,V 计算注意力\"]\n    B6[\"减少显存/计算重复\"]\n    B1 --> B2\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B2 --> B5"
+    },
+    {
+      "title": "3. KV Cache 显存占用公式与估算",
+      "code": "flowchart LR\n    C1[\"公式: 2 × L × B × S × H × D × bytes\"]\n    C2[\"L: 层数 = 36\"]\n    C3[\"B: 批量大小 = 1\"]\n    C4[\"S: 序列长度 = 32768\"]\n    C5[\"H: 头数 = 8\"]\n    C6[\"D: 单头维度 = 128\"]\n    C7[\"bytes: 元素字节数 = 2 (BF16)\"]\n    C8[\"估算显存 ≈ 4.5 GB\"]\n    C1 --> C2\n    C1 --> C3\n    C1 --> C4\n    C1 --> C5\n    C1 --> C6\n    C1 --> C7\n    C1 --> C8"
+    },
+    {
+      "title": "4. KV Cache 下的位置编码处理",
+      "code": "flowchart TD\n    D1[\"Transformer 对位置不敏感\"]\n    D2[\"使用位置编码\"]\n    D3[\"生成新 Token 时位置需更新\"]\n    D4[\"缓存 KV 不影响位置编码\"]\n    D5[\"正确位置编码确保序列顺序\"]\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T00:50:30+00:00"
+}

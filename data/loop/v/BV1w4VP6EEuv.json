@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1w4VP6EEuv",
+  "title": "DeepSeek-TUI正式更名为codewhale（0.8.44更新解读）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 809,
+  "text": "CODWELL原名deep sick t y\n从0.8.38到0.8.44\n跨越七个版本\n包含33项以上的新功能和60多项修复\nV0.8.44是更名后的第一个功能版本\n新增CODO作为短格式别名\ncontrol加R绘画选择器\n支持按R键内联重命名\nplan confirmation模态框显示详细步骤\nagent团队委托卡片\n现在显示人类可读角色\n新增双横线continue\n参数恢复最近绘画应用状态\n默认迁移到波浪号点\ncode will目录V0.8.43\n引入持久化斜杠\ngo目标展示界面\n每次对话结束后\n显示工具调用和文件变更\n收据运行超过30秒\n显示卡顿原因\n需要选择时弹出带编号的决策卡片\n支持键盘导航\nV0.8.41是项目分水岭\ndeep seek toy正式更名为code will\n金马CLI从deep seek变为cold wa npm包\n从deep sick tie变为code will\n就二进制保留为shame\n在V0.9.0移除\nV0.8.42给code will内置了brother will agent\n身份提示\n定位为deep sick\n优先开放模型导向\n同时修复了流解码卡死模型选择器滚动\nunit code路径显示等问题\nV 0.8.40\n支持子agent的可配置API\n超时和文件写入权限\n委托新增实验性theme快速通道工具agent\n修复了WSL2启动阻塞和windows日志隔离等问题\nV0.8.38和0.8.39\n是密集修复版本\n共20多项修复\n包括FISHO桥启动顺序\nOpenAI兼容提供者请求体验\n格化终端模式\n正确还原windows鼠标滚动和power shell支持\n总结一下\n从deep seek t i到code will\n金马品牌功能稳定性\nagent能力都有了实质性提升\n运行npm install code will即可升级\n推荐使用最新版本\n感谢观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1w4VP6EEuv",
+  "published_at": "1779779401",
+  "fetched_at": "2026-08-08T03:55:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek‑TUI 更名为 codewhale 版本与功能概览\n\n## 版本演进概览\n[00:02] [00:05] [00:52] [01:39] [01:45] [01:47] [01:50] [01:51] [00:11]\n\n```mermaid\nflowchart TD\n    V038[\"V0.8.38<br/>密集修复<br/>+20项修复\"] --> V039[\"V0.8.39<br/>密集修复<br/>继续修复\"]\n    V039 --> V040[\"V0.8.40<br/>子agent可配置API<br/>实验性theme快速通道<br/>WSL2/Windows日志修复\"]\n    V040 --> V041[\"V0.8.41<br/>项目分水岭\"]\n    V041 --> V042[\"V0.8.42<br/>内置brother will agent<br/>身份提示<br/>模型导向优先<br/>流解码卡死修复\"]\n    V042 --> V043[\"V0.8.43<br/>code will 目录<br/>持久化斜杠<br/>go目标展示界面\"]\n    V043 --> V044[\"V0.8.44<br/>更名后首个功能版<br/>33+新功能<br/>60+修复\"]\n```\n\n## V0.8.44 新功能概览\n[00:15] [00:17] [00:19] [00:21] [00:24] [00:28] [00:30] [00:33] [00:44] [00:47] [00:50]\n\n```mermaid\nflowchart LR\n    CODO[\"新增CODO短格式别名\"] --> RKey[\"Ctrl+R 绘画选择器\"]\n    RKey --> InlineRename[\"R键内联重命名\"]\n    InlineRename --> PlanModal[\"plan confirmation 模态框显示详细步骤\"]\n    PlanModal --> AgentCard[\"agent 团队委托卡片<br/>显示人类可读角色\"]\n    AgentCard --> DoubleDash[\"新增双横线 continue\"]\n    DoubleDash --> ParamRestore[\"参数恢复最近绘画应用状态\"]\n    ParamRestore --> WaveDash[\"默认迁移到波浪号点\"]\n    WaveDash --> LagInfo[\"运行超过30秒显示卡顿原因\"]\n    LagInfo --> DecisionCard[\"弹出带编号的决策卡片\"]\n    DecisionCard --> KeyboardNav[\"支持键盘导航\"]\n```\n\n## 名称与二进制映射\n[00:00] [00:55] [00:58] [01:05] [01:07]\n\n```mermaid\nflowchart TD\n    DeepSeekTUI[\"CODWELL原名 deep sick t y\"] --> CodeWhale[\"更名为 codewhale\"]\n    DeepSeekToy[\"deep seek toy\"] --> CodeWill[\"更名为 code will\"]\n    JinMaCLI[\"金马CLI\"] --> ColdWa[\"变为 cold wa npm 包\"]\n    Binary[\"二进制保留为 shame\"] --> Removal[\"在 V0.9.0 移除\"]\n```\n\n## Agent 能力演进\n[01:25] [01:28] [01:29] [01:09] [01:14] [01:16] [01:18] [01:21]\n\n```mermaid\nflowchart LR\n    SubAgentAPI[\"支持子agent的可配置 API\"] --> TimeoutPerm[\"超时和文件写入权限控制\"]\n    TimeoutPerm --> ThemeAgent[\"实验性 theme 快速通道工具 agent\"]\n    ThemeAgent --> BrotherWill[\"V0.8.42 内置 brother will agent\"]\n    BrotherWill --> IdentityPrompt[\"身份提示定位为 deep sick\"]\n    IdentityPrompt --> ModelPriority[\"优先开放模型导向\"]\n    ModelPriority --> StreamFix[\"修复流解码卡死与模型选择器滚动\"]\n    StreamFix --> UnitPath[\"unit code 路径显示等问题\"]\n```",
+      "diagrams": [
+        {
+          "title": "版本演进概览",
+          "code": "flowchart TD\n    V038[\"V0.8.38<br/>密集修复<br/>+20项修复\"] --> V039[\"V0.8.39<br/>密集修复<br/>继续修复\"]\n    V039 --> V040[\"V0.8.40<br/>子agent可配置API<br/>实验性theme快速通道<br/>WSL2/Windows日志修复\"]\n    V040 --> V041[\"V0.8.41<br/>项目分水岭\"]\n    V041 --> V042[\"V0.8.42<br/>内置brother will agent<br/>身份提示<br/>模型导向优先<br/>流解码卡死修复\"]\n    V042 --> V043[\"V0.8.43<br/>code will 目录<br/>持久化斜杠<br/>go目标展示界面\"]\n    V043 --> V044[\"V0.8.44<br/>更名后首个功能版<br/>33+新功能<br/>60+修复\"]"
+        },
+        {
+          "title": "V0.8.44 新功能概览",
+          "code": "flowchart LR\n    CODO[\"新增CODO短格式别名\"] --> RKey[\"Ctrl+R 绘画选择器\"]\n    RKey --> InlineRename[\"R键内联重命名\"]\n    InlineRename --> PlanModal[\"plan confirmation 模态框显示详细步骤\"]\n    PlanModal --> AgentCard[\"agent 团队委托卡片<br/>显示人类可读角色\"]\n    AgentCard --> DoubleDash[\"新增双横线 continue\"]\n    DoubleDash --> ParamRestore[\"参数恢复最近绘画应用状态\"]\n    ParamRestore --> WaveDash[\"默认迁移到波浪号点\"]\n    WaveDash --> LagInfo[\"运行超过30秒显示卡顿原因\"]\n    LagInfo --> DecisionCard[\"弹出带编号的决策卡片\"]\n    DecisionCard --> KeyboardNav[\"支持键盘导航\"]"
+        },
+        {
+          "title": "名称与二进制映射",
+          "code": "flowchart TD\n    DeepSeekTUI[\"CODWELL原名 deep sick t y\"] --> CodeWhale[\"更名为 codewhale\"]\n    DeepSeekToy[\"deep seek toy\"] --> CodeWill[\"更名为 code will\"]\n    JinMaCLI[\"金马CLI\"] --> ColdWa[\"变为 cold wa npm 包\"]\n    Binary[\"二进制保留为 shame\"] --> Removal[\"在 V0.9.0 移除\"]"
+        },
+        {
+          "title": "Agent 能力演进",
+          "code": "flowchart LR\n    SubAgentAPI[\"支持子agent的可配置 API\"] --> TimeoutPerm[\"超时和文件写入权限控制\"]\n    TimeoutPerm --> ThemeAgent[\"实验性 theme 快速通道工具 agent\"]\n    ThemeAgent --> BrotherWill[\"V0.8.42 内置 brother will agent\"]\n    BrotherWill --> IdentityPrompt[\"身份提示定位为 deep sick\"]\n    IdentityPrompt --> ModelPriority[\"优先开放模型导向\"]\n    ModelPriority --> StreamFix[\"修复流解码卡死与模型选择器滚动\"]\n    StreamFix --> UnitPath[\"unit code 路径显示等问题\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T03:56:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek‑TUI 更名为 codewhale 版本与功能概览\n\n## 版本演进概览\n[00:02] [00:05] [00:52] [01:39] [01:45] [01:47] [01:50] [01:51] [00:11]\n\n```mermaid\nflowchart TD\n    V038[\"V0.8.38<br/>密集修复<br/>+20项修复\"] --> V039[\"V0.8.39<br/>密集修复<br/>继续修复\"]\n    V039 --> V040[\"V0.8.40<br/>子agent可配置API<br/>实验性theme快速通道<br/>WSL2/Windows日志修复\"]\n    V040 --> V041[\"V0.8.41<br/>项目分水岭\"]\n    V041 --> V042[\"V0.8.42<br/>内置brother will agent<br/>身份提示<br/>模型导向优先<br/>流解码卡死修复\"]\n    V042 --> V043[\"V0.8.43<br/>code will 目录<br/>持久化斜杠<br/>go目标展示界面\"]\n    V043 --> V044[\"V0.8.44<br/>更名后首个功能版<br/>33+新功能<br/>60+修复\"]\n```\n\n## V0.8.44 新功能概览\n[00:15] [00:17] [00:19] [00:21] [00:24] [00:28] [00:30] [00:33] [00:44] [00:47] [00:50]\n\n```mermaid\nflowchart LR\n    CODO[\"新增CODO短格式别名\"] --> RKey[\"Ctrl+R 绘画选择器\"]\n    RKey --> InlineRename[\"R键内联重命名\"]\n    InlineRename --> PlanModal[\"plan confirmation 模态框显示详细步骤\"]\n    PlanModal --> AgentCard[\"agent 团队委托卡片<br/>显示人类可读角色\"]\n    AgentCard --> DoubleDash[\"新增双横线 continue\"]\n    DoubleDash --> ParamRestore[\"参数恢复最近绘画应用状态\"]\n    ParamRestore --> WaveDash[\"默认迁移到波浪号点\"]\n    WaveDash --> LagInfo[\"运行超过30秒显示卡顿原因\"]\n    LagInfo --> DecisionCard[\"弹出带编号的决策卡片\"]\n    DecisionCard --> KeyboardNav[\"支持键盘导航\"]\n```\n\n## 名称与二进制映射\n[00:00] [00:55] [00:58] [01:05] [01:07]\n\n```mermaid\nflowchart TD\n    DeepSeekTUI[\"CODWELL原名 deep sick t y\"] --> CodeWhale[\"更名为 codewhale\"]\n    DeepSeekToy[\"deep seek toy\"] --> CodeWill[\"更名为 code will\"]\n    JinMaCLI[\"金马CLI\"] --> ColdWa[\"变为 cold wa npm 包\"]\n    Binary[\"二进制保留为 shame\"] --> Removal[\"在 V0.9.0 移除\"]\n```\n\n## Agent 能力演进\n[01:25] [01:28] [01:29] [01:09] [01:14] [01:16] [01:18] [01:21]\n\n```mermaid\nflowchart LR\n    SubAgentAPI[\"支持子agent的可配置 API\"] --> TimeoutPerm[\"超时和文件写入权限控制\"]\n    TimeoutPerm --> ThemeAgent[\"实验性 theme 快速通道工具 agent\"]\n    ThemeAgent --> BrotherWill[\"V0.8.42 内置 brother will agent\"]\n    BrotherWill --> IdentityPrompt[\"身份提示定位为 deep sick\"]\n    IdentityPrompt --> ModelPriority[\"优先开放模型导向\"]\n    ModelPriority --> StreamFix[\"修复流解码卡死与模型选择器滚动\"]\n    StreamFix --> UnitPath[\"unit code 路径显示等问题\"]\n```",
+  "diagrams": [
+    {
+      "title": "版本演进概览",
+      "code": "flowchart TD\n    V038[\"V0.8.38<br/>密集修复<br/>+20项修复\"] --> V039[\"V0.8.39<br/>密集修复<br/>继续修复\"]\n    V039 --> V040[\"V0.8.40<br/>子agent可配置API<br/>实验性theme快速通道<br/>WSL2/Windows日志修复\"]\n    V040 --> V041[\"V0.8.41<br/>项目分水岭\"]\n    V041 --> V042[\"V0.8.42<br/>内置brother will agent<br/>身份提示<br/>模型导向优先<br/>流解码卡死修复\"]\n    V042 --> V043[\"V0.8.43<br/>code will 目录<br/>持久化斜杠<br/>go目标展示界面\"]\n    V043 --> V044[\"V0.8.44<br/>更名后首个功能版<br/>33+新功能<br/>60+修复\"]"
+    },
+    {
+      "title": "V0.8.44 新功能概览",
+      "code": "flowchart LR\n    CODO[\"新增CODO短格式别名\"] --> RKey[\"Ctrl+R 绘画选择器\"]\n    RKey --> InlineRename[\"R键内联重命名\"]\n    InlineRename --> PlanModal[\"plan confirmation 模态框显示详细步骤\"]\n    PlanModal --> AgentCard[\"agent 团队委托卡片<br/>显示人类可读角色\"]\n    AgentCard --> DoubleDash[\"新增双横线 continue\"]\n    DoubleDash --> ParamRestore[\"参数恢复最近绘画应用状态\"]\n    ParamRestore --> WaveDash[\"默认迁移到波浪号点\"]\n    WaveDash --> LagInfo[\"运行超过30秒显示卡顿原因\"]\n    LagInfo --> DecisionCard[\"弹出带编号的决策卡片\"]\n    DecisionCard --> KeyboardNav[\"支持键盘导航\"]"
+    },
+    {
+      "title": "名称与二进制映射",
+      "code": "flowchart TD\n    DeepSeekTUI[\"CODWELL原名 deep sick t y\"] --> CodeWhale[\"更名为 codewhale\"]\n    DeepSeekToy[\"deep seek toy\"] --> CodeWill[\"更名为 code will\"]\n    JinMaCLI[\"金马CLI\"] --> ColdWa[\"变为 cold wa npm 包\"]\n    Binary[\"二进制保留为 shame\"] --> Removal[\"在 V0.9.0 移除\"]"
+    },
+    {
+      "title": "Agent 能力演进",
+      "code": "flowchart LR\n    SubAgentAPI[\"支持子agent的可配置 API\"] --> TimeoutPerm[\"超时和文件写入权限控制\"]\n    TimeoutPerm --> ThemeAgent[\"实验性 theme 快速通道工具 agent\"]\n    ThemeAgent --> BrotherWill[\"V0.8.42 内置 brother will agent\"]\n    BrotherWill --> IdentityPrompt[\"身份提示定位为 deep sick\"]\n    IdentityPrompt --> ModelPriority[\"优先开放模型导向\"]\n    ModelPriority --> StreamFix[\"修复流解码卡死与模型选择器滚动\"]\n    StreamFix --> UnitPath[\"unit code 路径显示等问题\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T03:56:36+00:00"
+}

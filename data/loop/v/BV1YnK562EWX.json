@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1YnK562EWX",
+  "title": "Claude Code 和 OpenCode 接入同一个模型，谁更能打？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1980,
+  "text": "Hello\n大家好\n今天我们给agent的安排了一场程序员全能闯关赛\n因为最近的大模型\n包括大模型配套的这一个code agent层出不穷\n但是孰优孰劣啊\n这个只有自己用了自己才知道\n那今天我们来用这一个agent加大模型来测试一下\n看看这个不同的背景的框架\njava大模型到底有什么样的效果\n我们首先测的是用mini max老师\n然后加上不同的A级的框架\n来得到的这样的一个效果\n那么这个mini max老师呢呃也是老牌的\n就是我们性价比之王\n然后现在加上那个open code这个开源的A键的框架\n和这个传统王者啊\ncloud code这样一个王者A键的框架\n到底他们在这个能力表现上有什么样的不同\n我们准备了12个测评项目\n先用快速链路质检\n看看这一个啊\n嗯能不能开机干活\n再让他修数据库\n写web插件解析\nmarkdown调命令行\n还有扩展语法\n这个模板的语法好考验基本功\n最后啊扔进全站项目\n然后load API安全漏洞啊\n异步队列可靠性\n还有SDK迁移这些大型的事故现场\n看看他能不能够理清需求\n定位故障\n并且稳住局面\n最后还要进入一个HTML5的游戏创作\n不仅代码能跑\n还能做出一个诶可以玩的游戏\n当然这个前面的项目呢\n我们可以通过这一个啊测评软件\n他自行去测评啊\n最后的这个游戏就只能我们啊呵呵呵\n在座的各位自己来打分了\n那么我们现在就开始测评\nA组就是我们刚才说的open code\n加上我们的mini max m3老师\n然后我们的B组呢就是王者cloud code\n加上我们的mini max m3老师\n相当于我们的大模型都是一样的\n现在就是agent或不同啊\n看看在这个效果上是否会有差距\n好现在点击测评\n让我们开始\n好总算是所有的这一个测试都结束了\n我们来比较一下他们的这个结果\n从整体上来看\ncloud code加上M3的效果\n会比open code加M3的效果要好一些\n嗯可以看到啊\n这个红色的部分是没有完全通过的部分\n但是可以重点看下面的小分呃\n这个分数代表了他的细节\n有可能这一个是呃大部分通过了\n但是有一些部分是没有得分\n所以说他也是以红色的标识\n但实际上来讲\n像这样运行无效的啊\n这种是属于就完全没有实现啊\n这是得了零分\n但是在那个cloud code加M3的情况下\n这里markdown文档解析得了100分\n而是完全通过的\n而这两个都没有通过啊\n数据库框架故障修复\n但他们都是得的90几分\n也就是说他们已经完成度\n达到了90%几啊\n只是有几个关键步骤没有完成\n所以说他的这个标识是红色的好\n然后我们看一下这一个命令行工具\n修复这一块的话\n是那个cloud code好\n把关键步骤完成了\n但得分呢没有\n相对来讲完成度可能还没有这个open code高\n可以看得到下面的这几个来讲的话啊\n基本上是这个cloud code要略微领先一些\n然后在这一个啊\n订单SDK迁移和这个docker服务集成这两个部分啊\nopen code啊\ndocker服务基层上open code要稍微好一点点好\n然后我们来是来看看我们的这一个H5的游戏\n怎么样\n先看这个open code做出来的这个游戏\n可以看到这个游戏额\n有这一个碰撞的这样的一个效果\n用鼠标呢也是能够带动它的移动\n但是对于这个敌机的这样的一个碰撞呃\n没有那个实际的哦\n当它发出光线的时候\n有有那个\n好也有积分\n也有那个结束\n我们再来看一看这个open code啊\n刚看了再来看一看那个cloud code实现的怎么样\n这个的音效呢感觉更明显一些好\n而这一个整个完成度哈\n感觉上这个好像会更明显一些\n好一点\n整体来讲也差不了多少\n但这里呢也要说一说\n就是在做这个评测的时候啊\n嗯好几次做了好几次的测试嗯\nopen code加M3和cloud code加M3\n他们不管是哪种agent加这一个大模型\n它的这一个效果都会有一定的起伏\n也就是说呃这一次可能没做对的\n或者这一次完全为零的啊\n他有可能是下一次的时候他就能够做对了\n呃\n这个还是有一定的抽奖的概率\n所以说这个结果也不能说是完全的体现出\n这个agent加那个大模型的能力\n只能说做一个参考吧\n好我们再来看一下整个的那个综合报告呃\n综合指标可以看得到这一个总体来讲\ncloud code加M3是要优于open code加M3的\n从项目成功率呃\n综合得分还有耗时\n甚至是使用的token来讲\n都是靠的code要更优一点\n就是用M3的话\nCLOLCODE甚至使用的token反而更少\n这是项目的几个比对呃\n这是项目的那个各个评分的一个柱状图的比对\n这个其实刚才已经看过\n然后这是综合的核心雷达啊\n从这个雷达图上可以看得出来\n在一个课方面\n这一个cloud code加上M3的效果会要优于open code\n下一次我们会做一些更多的尝试",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YnK562EWX",
+  "published_at": "1784208994",
+  "fetched_at": "2026-08-10T03:33:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Claude Code 与 OpenCode 对比评测图谱\n\n## 评测框架概览 [BV1 P1 01:03]\n```mermaid\nflowchart LR\n    S[\"开始评测\"]\n    Setup[\"测试准备：12 项评测任务\"]\n    Tasks[\"评测任务列表\"]\n    Quick[\"快速链路质检\"]\n    DB[\"数据库修复\"]\n    Web[\"Web 插件解析\"]\n    MD[\"Markdown CLI 解析\"]\n    Syntax[\"扩展语法考验\"]\n    Full[\"全站项目集成\"]\n    API[\"API 安全漏洞检测\"]\n    Async[\"异步队列可靠性\"]\n    SDK[\"SDK 迁移\"]\n    Game[\"HTML5 游戏创作\"]\n\n    S --> Setup --> Tasks\n    Tasks --> Quick --> DB --> Web --> MD --> Syntax --> Full --> API --> Async --> SDK --> Game\n```\n\n## Agent 配置对比 [BV1 P1 02:11]\n```mermaid\nflowchart LR\n    Base[\"相同大模型 M3 (MiniMax)\"]\n    Open[\"A 组：OpenCode + M3\"]\n    Cloud[\"B 组：CloudCode + M3\"]\n    Compare[\"评测对比\"]\n\n    Base --> Open\n    Base --> Cloud\n    Open --> Compare\n    Cloud --> Compare\n```\n\n## 综合结果概览 [BV1 P1 02:48]\n```mermaid\nflowchart LR\n    Overall[\"整体表现\"]\n    CloudBetter[\"CloudCode + M3 效果更佳\"]\n    Metrics[\"评估指标\"]\n    Success[\"项目成功率\"]\n    Score[\"综合得分\"]\n    Time[\"耗时\"]\n    Tokens[\"Token 使用量\"]\n\n    Overall --> CloudBetter\n    CloudBetter --> Metrics\n    Metrics --> Success\n    Metrics --> Score\n    Metrics --> Time\n    Metrics --> Tokens\n```\n\n## 关键任务表现细节 [BV1 P1 03:32]\n```mermaid\nflowchart TD\n    Tasks[\"任务表现细分\"]\n    MD_Cloud[\"Markdown 解析：CloudCode 100 分\"]\n    MD_Open[\"Markdown 解析：OpenCode 低于 100\"]\n    DB_Cloud[\"数据库修复：CloudCode ~90 分\"]\n    DB_Open[\"数据库修复：OpenCode ~90 分\"]\n    CLI_Cloud[\"命令行工具：Cloud 完成关键步骤，得分低\"]\n    CLI_Open[\"命令行工具：Open 得分略高\"]\n    SDK_Cloud[\"SDK 迁移 & Docker：Cloud 略逊\"]\n    SDK_Open[\"SDK 迁移 & Docker：Open 稍好\"]\n    Game_Open[\"HTML5 游戏（Open）：碰撞效果实现\"]\n    Game_Cloud[\"HTML5 游戏（Cloud）：音效更明显，整体相近\"]\n\n    Tasks --> MD_Cloud --> MD_Open\n    Tasks --> DB_Cloud --> DB_Open\n    Tasks --> CLI_Cloud --> CLI_Open\n    Tasks --> SDK_Cloud --> SDK_Open\n    Tasks --> Game_Open --> Game_Cloud\n```\n\n## 结果波动与可靠性说明 [BV1 P1 05:38]\n```mermaid\nflowchart LR\n    Variability[\"结果波动\"]\n    MultiRuns[\"多次测试导致分数起伏\"]\n    Randomness[\"存在抽奖概率\"]\n    NotDeterministic[\"不具决定性\"]\n    Reference[\"仅作参考，不能完全体现 Agent 能力\"]\n    Future[\"后续将进行更多尝试\"]\n\n    Variability --> MultiRuns --> Randomness --> NotDeterministic --> Reference --> Future\n```",
+      "diagrams": [
+        {
+          "title": "评测框架概览",
+          "code": "flowchart LR\n    S[\"开始评测\"]\n    Setup[\"测试准备：12 项评测任务\"]\n    Tasks[\"评测任务列表\"]\n    Quick[\"快速链路质检\"]\n    DB[\"数据库修复\"]\n    Web[\"Web 插件解析\"]\n    MD[\"Markdown CLI 解析\"]\n    Syntax[\"扩展语法考验\"]\n    Full[\"全站项目集成\"]\n    API[\"API 安全漏洞检测\"]\n    Async[\"异步队列可靠性\"]\n    SDK[\"SDK 迁移\"]\n    Game[\"HTML5 游戏创作\"]\n\n    S --> Setup --> Tasks\n    Tasks --> Quick --> DB --> Web --> MD --> Syntax --> Full --> API --> Async --> SDK --> Game"
+        },
+        {
+          "title": "Agent 配置对比",
+          "code": "flowchart LR\n    Base[\"相同大模型 M3 (MiniMax)\"]\n    Open[\"A 组：OpenCode + M3\"]\n    Cloud[\"B 组：CloudCode + M3\"]\n    Compare[\"评测对比\"]\n\n    Base --> Open\n    Base --> Cloud\n    Open --> Compare\n    Cloud --> Compare"
+        },
+        {
+          "title": "综合结果概览",
+          "code": "flowchart LR\n    Overall[\"整体表现\"]\n    CloudBetter[\"CloudCode + M3 效果更佳\"]\n    Metrics[\"评估指标\"]\n    Success[\"项目成功率\"]\n    Score[\"综合得分\"]\n    Time[\"耗时\"]\n    Tokens[\"Token 使用量\"]\n\n    Overall --> CloudBetter\n    CloudBetter --> Metrics\n    Metrics --> Success\n    Metrics --> Score\n    Metrics --> Time\n    Metrics --> Tokens"
+        },
+        {
+          "title": "关键任务表现细节",
+          "code": "flowchart TD\n    Tasks[\"任务表现细分\"]\n    MD_Cloud[\"Markdown 解析：CloudCode 100 分\"]\n    MD_Open[\"Markdown 解析：OpenCode 低于 100\"]\n    DB_Cloud[\"数据库修复：CloudCode ~90 分\"]\n    DB_Open[\"数据库修复：OpenCode ~90 分\"]\n    CLI_Cloud[\"命令行工具：Cloud 完成关键步骤，得分低\"]\n    CLI_Open[\"命令行工具：Open 得分略高\"]\n    SDK_Cloud[\"SDK 迁移 & Docker：Cloud 略逊\"]\n    SDK_Open[\"SDK 迁移 & Docker：Open 稍好\"]\n    Game_Open[\"HTML5 游戏（Open）：碰撞效果实现\"]\n    Game_Cloud[\"HTML5 游戏（Cloud）：音效更明显，整体相近\"]\n\n    Tasks --> MD_Cloud --> MD_Open\n    Tasks --> DB_Cloud --> DB_Open\n    Tasks --> CLI_Cloud --> CLI_Open\n    Tasks --> SDK_Cloud --> SDK_Open\n    Tasks --> Game_Open --> Game_Cloud"
+        },
+        {
+          "title": "结果波动与可靠性说明",
+          "code": "flowchart LR\n    Variability[\"结果波动\"]\n    MultiRuns[\"多次测试导致分数起伏\"]\n    Randomness[\"存在抽奖概率\"]\n    NotDeterministic[\"不具决定性\"]\n    Reference[\"仅作参考，不能完全体现 Agent 能力\"]\n    Future[\"后续将进行更多尝试\"]\n\n    Variability --> MultiRuns --> Randomness --> NotDeterministic --> Reference --> Future"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T03:33:29+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Claude Code 与 OpenCode 对比评测图谱\n\n## 评测框架概览 [BV1 P1 01:03]\n```mermaid\nflowchart LR\n    S[\"开始评测\"]\n    Setup[\"测试准备：12 项评测任务\"]\n    Tasks[\"评测任务列表\"]\n    Quick[\"快速链路质检\"]\n    DB[\"数据库修复\"]\n    Web[\"Web 插件解析\"]\n    MD[\"Markdown CLI 解析\"]\n    Syntax[\"扩展语法考验\"]\n    Full[\"全站项目集成\"]\n    API[\"API 安全漏洞检测\"]\n    Async[\"异步队列可靠性\"]\n    SDK[\"SDK 迁移\"]\n    Game[\"HTML5 游戏创作\"]\n\n    S --> Setup --> Tasks\n    Tasks --> Quick --> DB --> Web --> MD --> Syntax --> Full --> API --> Async --> SDK --> Game\n```\n\n## Agent 配置对比 [BV1 P1 02:11]\n```mermaid\nflowchart LR\n    Base[\"相同大模型 M3 (MiniMax)\"]\n    Open[\"A 组：OpenCode + M3\"]\n    Cloud[\"B 组：CloudCode + M3\"]\n    Compare[\"评测对比\"]\n\n    Base --> Open\n    Base --> Cloud\n    Open --> Compare\n    Cloud --> Compare\n```\n\n## 综合结果概览 [BV1 P1 02:48]\n```mermaid\nflowchart LR\n    Overall[\"整体表现\"]\n    CloudBetter[\"CloudCode + M3 效果更佳\"]\n    Metrics[\"评估指标\"]\n    Success[\"项目成功率\"]\n    Score[\"综合得分\"]\n    Time[\"耗时\"]\n    Tokens[\"Token 使用量\"]\n\n    Overall --> CloudBetter\n    CloudBetter --> Metrics\n    Metrics --> Success\n    Metrics --> Score\n    Metrics --> Time\n    Metrics --> Tokens\n```\n\n## 关键任务表现细节 [BV1 P1 03:32]\n```mermaid\nflowchart TD\n    Tasks[\"任务表现细分\"]\n    MD_Cloud[\"Markdown 解析：CloudCode 100 分\"]\n    MD_Open[\"Markdown 解析：OpenCode 低于 100\"]\n    DB_Cloud[\"数据库修复：CloudCode ~90 分\"]\n    DB_Open[\"数据库修复：OpenCode ~90 分\"]\n    CLI_Cloud[\"命令行工具：Cloud 完成关键步骤，得分低\"]\n    CLI_Open[\"命令行工具：Open 得分略高\"]\n    SDK_Cloud[\"SDK 迁移 & Docker：Cloud 略逊\"]\n    SDK_Open[\"SDK 迁移 & Docker：Open 稍好\"]\n    Game_Open[\"HTML5 游戏（Open）：碰撞效果实现\"]\n    Game_Cloud[\"HTML5 游戏（Cloud）：音效更明显，整体相近\"]\n\n    Tasks --> MD_Cloud --> MD_Open\n    Tasks --> DB_Cloud --> DB_Open\n    Tasks --> CLI_Cloud --> CLI_Open\n    Tasks --> SDK_Cloud --> SDK_Open\n    Tasks --> Game_Open --> Game_Cloud\n```\n\n## 结果波动与可靠性说明 [BV1 P1 05:38]\n```mermaid\nflowchart LR\n    Variability[\"结果波动\"]\n    MultiRuns[\"多次测试导致分数起伏\"]\n    Randomness[\"存在抽奖概率\"]\n    NotDeterministic[\"不具决定性\"]\n    Reference[\"仅作参考，不能完全体现 Agent 能力\"]\n    Future[\"后续将进行更多尝试\"]\n\n    Variability --> MultiRuns --> Randomness --> NotDeterministic --> Reference --> Future\n```",
+  "diagrams": [
+    {
+      "title": "评测框架概览",
+      "code": "flowchart LR\n    S[\"开始评测\"]\n    Setup[\"测试准备：12 项评测任务\"]\n    Tasks[\"评测任务列表\"]\n    Quick[\"快速链路质检\"]\n    DB[\"数据库修复\"]\n    Web[\"Web 插件解析\"]\n    MD[\"Markdown CLI 解析\"]\n    Syntax[\"扩展语法考验\"]\n    Full[\"全站项目集成\"]\n    API[\"API 安全漏洞检测\"]\n    Async[\"异步队列可靠性\"]\n    SDK[\"SDK 迁移\"]\n    Game[\"HTML5 游戏创作\"]\n\n    S --> Setup --> Tasks\n    Tasks --> Quick --> DB --> Web --> MD --> Syntax --> Full --> API --> Async --> SDK --> Game"
+    },
+    {
+      "title": "Agent 配置对比",
+      "code": "flowchart LR\n    Base[\"相同大模型 M3 (MiniMax)\"]\n    Open[\"A 组：OpenCode + M3\"]\n    Cloud[\"B 组：CloudCode + M3\"]\n    Compare[\"评测对比\"]\n\n    Base --> Open\n    Base --> Cloud\n    Open --> Compare\n    Cloud --> Compare"
+    },
+    {
+      "title": "综合结果概览",
+      "code": "flowchart LR\n    Overall[\"整体表现\"]\n    CloudBetter[\"CloudCode + M3 效果更佳\"]\n    Metrics[\"评估指标\"]\n    Success[\"项目成功率\"]\n    Score[\"综合得分\"]\n    Time[\"耗时\"]\n    Tokens[\"Token 使用量\"]\n\n    Overall --> CloudBetter\n    CloudBetter --> Metrics\n    Metrics --> Success\n    Metrics --> Score\n    Metrics --> Time\n    Metrics --> Tokens"
+    },
+    {
+      "title": "关键任务表现细节",
+      "code": "flowchart TD\n    Tasks[\"任务表现细分\"]\n    MD_Cloud[\"Markdown 解析：CloudCode 100 分\"]\n    MD_Open[\"Markdown 解析：OpenCode 低于 100\"]\n    DB_Cloud[\"数据库修复：CloudCode ~90 分\"]\n    DB_Open[\"数据库修复：OpenCode ~90 分\"]\n    CLI_Cloud[\"命令行工具：Cloud 完成关键步骤，得分低\"]\n    CLI_Open[\"命令行工具：Open 得分略高\"]\n    SDK_Cloud[\"SDK 迁移 & Docker：Cloud 略逊\"]\n    SDK_Open[\"SDK 迁移 & Docker：Open 稍好\"]\n    Game_Open[\"HTML5 游戏（Open）：碰撞效果实现\"]\n    Game_Cloud[\"HTML5 游戏（Cloud）：音效更明显，整体相近\"]\n\n    Tasks --> MD_Cloud --> MD_Open\n    Tasks --> DB_Cloud --> DB_Open\n    Tasks --> CLI_Cloud --> CLI_Open\n    Tasks --> SDK_Cloud --> SDK_Open\n    Tasks --> Game_Open --> Game_Cloud"
+    },
+    {
+      "title": "结果波动与可靠性说明",
+      "code": "flowchart LR\n    Variability[\"结果波动\"]\n    MultiRuns[\"多次测试导致分数起伏\"]\n    Randomness[\"存在抽奖概率\"]\n    NotDeterministic[\"不具决定性\"]\n    Reference[\"仅作参考，不能完全体现 Agent 能力\"]\n    Future[\"后续将进行更多尝试\"]\n\n    Variability --> MultiRuns --> Randomness --> NotDeterministic --> Reference --> Future"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T03:33:29+00:00"
+}

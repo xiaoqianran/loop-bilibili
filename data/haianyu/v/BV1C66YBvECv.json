@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1C66YBvECv",
+  "title": "9. FlashAttention：将Attention的显存占用从平方级降到了线性级【每天一个宝藏名词】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 191,
+  "text": "Flash attention\nflash attention是斯坦福提出的IO感知注意力算法\n它的核心贡献不在于减少计算量\n而在于通过分块技术\n将attention的显存占用从平方级降低到了线性级\n在反向传播时使用了激活\n从计算技术\n它实现了比PYTORCH更快的运行速度\n目前该项目在GITHUB已经超过2万个\nStart\n有极简的安装教程\n并且已经迭代出了更强的V2和V3版本",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1C66YBvECv",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

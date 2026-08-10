@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1L3NS62E6Y",
+  "title": "1分钟僵尸战损部位组合省美术思路！附Godot Shader源码",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 501,
+  "text": "在这个案例中\n使用\n用三张图实现僵尸的七种断肢效果\n来源于在go go中我们实现的随意切换组合僵尸的残肢部位\n要实现僵尸缺少头和手的组合效果\n我给每个部位准备了一张遮罩图\n实现原理就是用遮罩图去覆盖原有的部分\n在SHADER脚本中识别洋红的部分进行隐藏\n我们只需要一个spit节点添加和导入SHADER\n在SHADER参数中导入遮罩图片就大功告成\n接下来我们看代码\n第一行说明这是一个2D\n然后是参数声明\n每个部位都有一个不要控制这个部位的遮罩\n要不要生效\n和一个3plus2D作为遮罩图\n另外还有代表洋红色的Mac ada和判断颜色的is genta\n进入fragment函数\n先把原始贴图拆成颜色和透明度\n后面我们只修改这两个变量\n然后下面是三块一样结构的代码\n分别处理两只手和头\n先采样头部遮罩图\n拿到这个UV坐标对应的遮罩像素\n如果这个像素不透明\n并且是品红色\n是cut等于true\n后面统一把透明度清零\n如果这个像素不透明\n但不是品红把原图颜色替换成遮罩颜色\n后面两只手的逻辑是一样的\n最后输出颜色即可\n这个多张spread的组合技巧还可以用于很多其他方面\n如环境破坏\n地图探索\n角色变体等等",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1L3NS62E6Y",
+  "published_at": "1783994400",
+  "fetched_at": "2026-08-09T07:02:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T07:05:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T07:05:43+00:00"
+}

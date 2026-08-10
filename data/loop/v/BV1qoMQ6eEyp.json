@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1qoMQ6eEyp",
+  "title": "Office 高手必用！专为 AI Agent 打造的 Office 套件，无需 Microsoft Office | OfficeCLI",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 566,
+  "text": "你让AI做一份PPT\n它通常会一行行拼slide\n拼文本框\n调字体\n调颜色\n更麻烦的是\n他看不见自己做出来的是什么样子\n只能盲改\n今天聊的这个工具叫office CLI\n是用c#开发的\n专门给AI agent用的office套件\n在GITHUB上已经有23k star了\n他把word excel powerpoint的操作全都变成了命令行指令\n并内置了渲染引擎\n让agent能看见渲染后的文档\n装起来就一行命令x install office CLI\n装完再跑一下office CLI install\n它会自动把自己的skill\n装进检测到的AI编程工具里\n比如clock code\nCursor\ncodex之后\n你直接跟agent说任务就行\n比较值得聊的是\n它内置了一套HTML渲染引擎\nOffice c l i vie\n能把文档直接渲染成HTML或者图片\noffice CLI watch会在本地开一个实时预览\n改一次文档\n浏览器里刷新一次\n这样agent就有了一个渲染查看修改的闭环\n它能自己发现这页字溢出了\n这个配色不对\n然后接着改一份PPT是需要反复调整的\n不可能一次写对\n没有视觉反馈\nagent是做不出好的PPT\n本期就到这\noffice CLI的实战指南\n可以到x command网站观看链接\n在简介区\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qoMQ6eEyp",
+  "published_at": "1785727344",
+  "fetched_at": "2026-08-08T07:08:57+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# OfficeCLI 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"OfficeCLI\"] --> B1[\"C# 开发\"]\n    A1 --> B2[\"GitHub 23k stars\"]\n    A1 --> B3[\"CLI 指令集\"]\n    B3 --> C1[\"Word 操作\"]\n    B3 --> C2[\"Excel 操作\"]\n    B3 --> C3[\"PowerPoint 操作\"]\n    A1 --> B4[\"内置渲染引擎\"]\n    B4 --> C4[\"HTML 输出\"]\n    B4 --> C5[\"图片 输出\"]\n    A1 --> B5[\"watch 实时预览\"]\n    A1 --> B6[\"自动 skill 安装\"]\n    B6 --> C6[\"Clock code\"]\n    B6 --> C7[\"Cursor\"]\n    B6 --> C8[\"Codex\"]\n    A1 --> B7[\"AI Agent 交互\"]\n    B7 --> C9[\"任务指令\"]\n```\n\n## 使用流程\n\n```mermaid\nflowchart LR\n    D1[\"安装 OfficeCLI\"] --> D2[\"x install office CLI\"]\n    D2 --> D3[\"运行 office CLI install\"]\n    D3 --> D4[\"自动装入 AI 编程工具\"]\n    D4 --> D5[\"编写任务指令给 Agent\"]\n    D5 --> D6[\"Agent 调用 CLI 生成文档\"]\n    D6 --> D7[\"watch 启动本地预览\"]\n    D7 --> D8[\"浏览器刷新显示渲染\"]\n    D8 --> D9[\"Agent 检测渲染问题\"]\n    D9 --> D10[\"文字溢出 / 配色错误\"]\n    D10 --> D11[\"Agent 反馈修改指令\"]\n    D11 --> D6\n    D9 --> D12[\"完成 PPT\"]\n```\n\n## 反馈闭环\n\n```mermaid\nflowchart TD\n    E1[\"AI 生成文档\"] --> E2[\"渲染引擎生成 HTML/图片\"]\n    E2 --> E3[\"watch 实时预览\"]\n    E3 --> E4[\"浏览器显示渲染结果\"]\n    E4 --> E5[\"Agent 观察渲染\"]\n    E5 --> E6[\"检测错误（溢出、配色）\"]\n    E6 --> E7[\"生成修改指令\"]\n    E7 --> E1\n    E6 --> E8[\"循环直至满意\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"OfficeCLI\"] --> B1[\"C# 开发\"]\n    A1 --> B2[\"GitHub 23k stars\"]\n    A1 --> B3[\"CLI 指令集\"]\n    B3 --> C1[\"Word 操作\"]\n    B3 --> C2[\"Excel 操作\"]\n    B3 --> C3[\"PowerPoint 操作\"]\n    A1 --> B4[\"内置渲染引擎\"]\n    B4 --> C4[\"HTML 输出\"]\n    B4 --> C5[\"图片 输出\"]\n    A1 --> B5[\"watch 实时预览\"]\n    A1 --> B6[\"自动 skill 安装\"]\n    B6 --> C6[\"Clock code\"]\n    B6 --> C7[\"Cursor\"]\n    B6 --> C8[\"Codex\"]\n    A1 --> B7[\"AI Agent 交互\"]\n    B7 --> C9[\"任务指令\"]"
+        },
+        {
+          "title": "使用流程",
+          "code": "flowchart LR\n    D1[\"安装 OfficeCLI\"] --> D2[\"x install office CLI\"]\n    D2 --> D3[\"运行 office CLI install\"]\n    D3 --> D4[\"自动装入 AI 编程工具\"]\n    D4 --> D5[\"编写任务指令给 Agent\"]\n    D5 --> D6[\"Agent 调用 CLI 生成文档\"]\n    D6 --> D7[\"watch 启动本地预览\"]\n    D7 --> D8[\"浏览器刷新显示渲染\"]\n    D8 --> D9[\"Agent 检测渲染问题\"]\n    D9 --> D10[\"文字溢出 / 配色错误\"]\n    D10 --> D11[\"Agent 反馈修改指令\"]\n    D11 --> D6\n    D9 --> D12[\"完成 PPT\"]"
+        },
+        {
+          "title": "反馈闭环",
+          "code": "flowchart TD\n    E1[\"AI 生成文档\"] --> E2[\"渲染引擎生成 HTML/图片\"]\n    E2 --> E3[\"watch 实时预览\"]\n    E3 --> E4[\"浏览器显示渲染结果\"]\n    E4 --> E5[\"Agent 观察渲染\"]\n    E5 --> E6[\"检测错误（溢出、配色）\"]\n    E6 --> E7[\"生成修改指令\"]\n    E7 --> E1\n    E6 --> E8[\"循环直至满意\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T07:09:11+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# OfficeCLI 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"OfficeCLI\"] --> B1[\"C# 开发\"]\n    A1 --> B2[\"GitHub 23k stars\"]\n    A1 --> B3[\"CLI 指令集\"]\n    B3 --> C1[\"Word 操作\"]\n    B3 --> C2[\"Excel 操作\"]\n    B3 --> C3[\"PowerPoint 操作\"]\n    A1 --> B4[\"内置渲染引擎\"]\n    B4 --> C4[\"HTML 输出\"]\n    B4 --> C5[\"图片 输出\"]\n    A1 --> B5[\"watch 实时预览\"]\n    A1 --> B6[\"自动 skill 安装\"]\n    B6 --> C6[\"Clock code\"]\n    B6 --> C7[\"Cursor\"]\n    B6 --> C8[\"Codex\"]\n    A1 --> B7[\"AI Agent 交互\"]\n    B7 --> C9[\"任务指令\"]\n```\n\n## 使用流程\n\n```mermaid\nflowchart LR\n    D1[\"安装 OfficeCLI\"] --> D2[\"x install office CLI\"]\n    D2 --> D3[\"运行 office CLI install\"]\n    D3 --> D4[\"自动装入 AI 编程工具\"]\n    D4 --> D5[\"编写任务指令给 Agent\"]\n    D5 --> D6[\"Agent 调用 CLI 生成文档\"]\n    D6 --> D7[\"watch 启动本地预览\"]\n    D7 --> D8[\"浏览器刷新显示渲染\"]\n    D8 --> D9[\"Agent 检测渲染问题\"]\n    D9 --> D10[\"文字溢出 / 配色错误\"]\n    D10 --> D11[\"Agent 反馈修改指令\"]\n    D11 --> D6\n    D9 --> D12[\"完成 PPT\"]\n```\n\n## 反馈闭环\n\n```mermaid\nflowchart TD\n    E1[\"AI 生成文档\"] --> E2[\"渲染引擎生成 HTML/图片\"]\n    E2 --> E3[\"watch 实时预览\"]\n    E3 --> E4[\"浏览器显示渲染结果\"]\n    E4 --> E5[\"Agent 观察渲染\"]\n    E5 --> E6[\"检测错误（溢出、配色）\"]\n    E6 --> E7[\"生成修改指令\"]\n    E7 --> E1\n    E6 --> E8[\"循环直至满意\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"OfficeCLI\"] --> B1[\"C# 开发\"]\n    A1 --> B2[\"GitHub 23k stars\"]\n    A1 --> B3[\"CLI 指令集\"]\n    B3 --> C1[\"Word 操作\"]\n    B3 --> C2[\"Excel 操作\"]\n    B3 --> C3[\"PowerPoint 操作\"]\n    A1 --> B4[\"内置渲染引擎\"]\n    B4 --> C4[\"HTML 输出\"]\n    B4 --> C5[\"图片 输出\"]\n    A1 --> B5[\"watch 实时预览\"]\n    A1 --> B6[\"自动 skill 安装\"]\n    B6 --> C6[\"Clock code\"]\n    B6 --> C7[\"Cursor\"]\n    B6 --> C8[\"Codex\"]\n    A1 --> B7[\"AI Agent 交互\"]\n    B7 --> C9[\"任务指令\"]"
+    },
+    {
+      "title": "使用流程",
+      "code": "flowchart LR\n    D1[\"安装 OfficeCLI\"] --> D2[\"x install office CLI\"]\n    D2 --> D3[\"运行 office CLI install\"]\n    D3 --> D4[\"自动装入 AI 编程工具\"]\n    D4 --> D5[\"编写任务指令给 Agent\"]\n    D5 --> D6[\"Agent 调用 CLI 生成文档\"]\n    D6 --> D7[\"watch 启动本地预览\"]\n    D7 --> D8[\"浏览器刷新显示渲染\"]\n    D8 --> D9[\"Agent 检测渲染问题\"]\n    D9 --> D10[\"文字溢出 / 配色错误\"]\n    D10 --> D11[\"Agent 反馈修改指令\"]\n    D11 --> D6\n    D9 --> D12[\"完成 PPT\"]"
+    },
+    {
+      "title": "反馈闭环",
+      "code": "flowchart TD\n    E1[\"AI 生成文档\"] --> E2[\"渲染引擎生成 HTML/图片\"]\n    E2 --> E3[\"watch 实时预览\"]\n    E3 --> E4[\"浏览器显示渲染结果\"]\n    E4 --> E5[\"Agent 观察渲染\"]\n    E5 --> E6[\"检测错误（溢出、配色）\"]\n    E6 --> E7[\"生成修改指令\"]\n    E7 --> E1\n    E6 --> E8[\"循环直至满意\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T07:09:11+00:00"
+}

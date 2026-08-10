@@ -1,0 +1,58 @@
+{
+  "bvid": "BV18YGc6XEJo",
+  "title": "MiniMax H3 宣布开源，多模态统一模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 46,
+  "text": "♪ I'm just a fool tob ♪\n马桑赶紧过来\n留着你摸了\n别磨蹭了\n赶紧过来",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18YGc6XEJo",
+  "published_at": "1785467018",
+  "fetched_at": "2026-08-07T08:18:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# MiniMax H3 开源多模态统一模型 - 字幕知识图谱\n\n## 对话概览\n```mermaid\nflowchart TD\n    S[\"说话者\"] --> C1[\"马桑赶紧过来\"]\n    S --> C2[\"留着你摸了\"]\n    S --> C3[\"别磨蹭了\"]\n    S --> C4[\"赶紧过来\"]\n    C1 --> T[\"目标：马桑\"]\n    C2 --> T\n    C3 --> T\n    C4 --> T\n    S --> E[\"情绪：催促\"]\n    E --> C1\n    E --> C3\n    E --> C4\n```\n\n## 指令顺序\n```mermaid\nflowchart LR\n    A1[\"00:36  马桑赶紧过来\"] --> A2[\"00:38  留着你摸了\"]\n    A2 --> A3[\"00:41  别磨蹭了\"]\n    A3 --> A4[\"00:42  赶紧过来\"]\n    A1 -->|重复| A4\n    A1 -->|目标| T[\"马桑\"]\n    A2 -->|目标| T\n    A3 -->|目标| T\n    A4 -->|目标| T\n```",
+      "diagrams": [
+        {
+          "title": "对话概览",
+          "code": "flowchart TD\n    S[\"说话者\"] --> C1[\"马桑赶紧过来\"]\n    S --> C2[\"留着你摸了\"]\n    S --> C3[\"别磨蹭了\"]\n    S --> C4[\"赶紧过来\"]\n    C1 --> T[\"目标：马桑\"]\n    C2 --> T\n    C3 --> T\n    C4 --> T\n    S --> E[\"情绪：催促\"]\n    E --> C1\n    E --> C3\n    E --> C4"
+        },
+        {
+          "title": "指令顺序",
+          "code": "flowchart LR\n    A1[\"00:36  马桑赶紧过来\"] --> A2[\"00:38  留着你摸了\"]\n    A2 --> A3[\"00:41  别磨蹭了\"]\n    A3 --> A4[\"00:42  赶紧过来\"]\n    A1 -->|重复| A4\n    A1 -->|目标| T[\"马桑\"]\n    A2 -->|目标| T\n    A3 -->|目标| T\n    A4 -->|目标| T"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-07T08:19:22+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# MiniMax H3 开源多模态统一模型 - 字幕知识图谱\n\n## 对话概览\n```mermaid\nflowchart TD\n    S[\"说话者\"] --> C1[\"马桑赶紧过来\"]\n    S --> C2[\"留着你摸了\"]\n    S --> C3[\"别磨蹭了\"]\n    S --> C4[\"赶紧过来\"]\n    C1 --> T[\"目标：马桑\"]\n    C2 --> T\n    C3 --> T\n    C4 --> T\n    S --> E[\"情绪：催促\"]\n    E --> C1\n    E --> C3\n    E --> C4\n```\n\n## 指令顺序\n```mermaid\nflowchart LR\n    A1[\"00:36  马桑赶紧过来\"] --> A2[\"00:38  留着你摸了\"]\n    A2 --> A3[\"00:41  别磨蹭了\"]\n    A3 --> A4[\"00:42  赶紧过来\"]\n    A1 -->|重复| A4\n    A1 -->|目标| T[\"马桑\"]\n    A2 -->|目标| T\n    A3 -->|目标| T\n    A4 -->|目标| T\n```",
+  "diagrams": [
+    {
+      "title": "对话概览",
+      "code": "flowchart TD\n    S[\"说话者\"] --> C1[\"马桑赶紧过来\"]\n    S --> C2[\"留着你摸了\"]\n    S --> C3[\"别磨蹭了\"]\n    S --> C4[\"赶紧过来\"]\n    C1 --> T[\"目标：马桑\"]\n    C2 --> T\n    C3 --> T\n    C4 --> T\n    S --> E[\"情绪：催促\"]\n    E --> C1\n    E --> C3\n    E --> C4"
+    },
+    {
+      "title": "指令顺序",
+      "code": "flowchart LR\n    A1[\"00:36  马桑赶紧过来\"] --> A2[\"00:38  留着你摸了\"]\n    A2 --> A3[\"00:41  别磨蹭了\"]\n    A3 --> A4[\"00:42  赶紧过来\"]\n    A1 -->|重复| A4\n    A1 -->|目标| T[\"马桑\"]\n    A2 -->|目标| T\n    A3 -->|目标| T\n    A4 -->|目标| T"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:19:22+00:00"
+}

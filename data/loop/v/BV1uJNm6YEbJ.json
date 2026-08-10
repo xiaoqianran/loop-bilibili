@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1uJNm6YEbJ",
+  "title": "《Godot知识》tween动画的基础操作与使用_2",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2210,
+  "text": "接着上一期视频\n然后是twin动画的并行播放和串行播放\n默认情况下\ntwin动画是按照顺序一个接着一个播放的\n也就是说它默认是串行播放的\n想要并行播放就要使用到一个方法函数\n叫PARALO\n先将其他的动画都先注释掉\n只保留移动透明以及twin method这三个动画\n现在他们是按顺序执行的\n我希望它是一边移动一边变透明\n也就是说这两个动画应该要一起播放\n需要在后面这一个动画的这个位置\n添加一个PARALL函数\n这样这一条动画还有这一条动画就会并行播放\n一边移动一边变透明\n可以看到这两个动画现在是并行播放的了\n这两个播放完之后\n再轮到这个to method播放\n如果想要to method也一起并行播放\n就需要在这里同样添加parallel函数\n现在他们是一起的了\n但是当动画多的时候\n一个一个的去添加就很麻烦\n我们可以直接在一开始创建tin动画的时候\n就直接添加一个set parallel to\n这样下面所有的twin动画就都是并行播放的了\n这个parallel函数就可以删除掉了\n一样的效果\nset paralo two是让下面的动画全部并行播放\n如果我设置了全部都并行播放\n但是又想让其中一个不参与并行播放\n你可以删掉set parallel这个方法\n然后一个一个的去写payload\n但是这样太麻烦了\n你可以在不需要并行播放的动画里\n添加一个train函数\n例如我不想让分数更新这个动画并行\n就可以在这里添加一个\ntrain函数\n这样它就不会变形播放\n在需要多变形播放的时候\n就直接使用set parallel true这个方法\n再用train这个方法函数去关掉\n不需要并行的动画\n如果是串行播放动画多\n但是需要有几个并行的情况\n就单独用parallel这个方法\n然后就是循环播放\n使用的是set loops函数\n需要填写一个值循环的次数\n这里循环三次\n我这里将一些动画给注释掉\n只保留了two method\n也就是分数更新了这个动画\n然后还添加了一个interval\n也就是等待一秒\n这样可以比较明显的看到它循环的次数\n等待一秒\n然后又继续to map运行\n又等一秒\n总共循环了三次\n接下来是款动算法\n由两个部分组成\n过渡曲线和款动方式\ntwin最强大的地方在于\n可以通过数学算法实现非匀速过渡\n之前我们用的方法函数基本都是从头到尾\n匀速播放\n缓动算法可以让twin动画实现微调\n比如我们的这个spy to d\n它在修改位置的时候\n它是匀速播放的\n我先将无关的代码给注释掉\n这里我只保留了一个动画\n也就是spider to d移动的动画\n然后它的运动方式我也进行了修改\n它只在X轴上面进行运动\n它的Y轴将不运动\n然后持续的时间从一秒修改成了三秒\n现在我可以通过过渡方式去修改\n它\n只需要在它后面这里写就可以了\n这个set change函数就是过渡方式\n按住CTRL鼠标点击这个函数\n就可以进入到对应的文档\n这里解释set trans是过渡类型\n还有一个就是set is\n也就是缓动类型\n这两个一般都是搭配着使用的\n它们可以对动画进行微调\n他们需要参数\n这里也有说明\n点击就可以跳到对应的文档\n这里有很多个都已经为我们写好的值\n也有对应的说明\n可以直接使用回到我们的脚本当中\n这里我就随便用一种\n鼠标悬停在上面\n就可以看到这个值的效果\n就可以看到这个值的对应描述\n这个值可以让动画像弹簧一样弹跳\n直接运行\n看一下\n可以看到SPITO地在移动的时候\n就像一个弹簧一样弹跳\n而不是匀速的运动\n通常过渡和晃动是一起使用的\n我这里就使用了set trance\n也就是只使用了过渡\n后面这里我可以再添加一个晃动\n点set is\n然后同样的也是选择一个值\n可以看到晃动的值总共有四个\n没有过度的\n这么的多\n过渡也非常的多\n这里我使用了他们两个的结合运行\n看一下是怎么样的效果\nSPITO地\n他一开始是从这里慢慢慢慢的弹\n最后弹了很快的一下\n弹到了终点\n可以看到这个晃动的值的描述\n差值一开始是缓慢的\n并加速接近结束\n这就是它的效果\n如果我把它相反过来\n使用一个与它相反的值差值\n开始快速接近\n结束时减慢\n可以看到它会快速先弹到终点\n然后在终点慢慢慢慢的变慢\n也就实现了两个效果\n这个是让它进行像弹簧一样的弹跳\n这个是让它速度是怎样的微调变快\n这里有非常多的值就不一一去演示了\n可以自己去搭配去使用\n它一般都是对TW动画进行微调\n很多场景你都可以去使用\n比如游戏里面的呼吸灯\n霓虹灯\n它的颜色就是慢慢慢的变化\n你可以设置它是匀速\n它也可以是有频率的\n一开始快或者一开始慢的去变化\n再比如说另外一种场景\n你的游戏里面有一个角色\n他拿着一把武器\n那把武器是电磁炮\n需要蓄力的那种电磁炮\n当武器蓄力完成\n然后射出去\n由于后坐力\n你的角色肯定要往后倒退几步的\n这个过程可能只有0.5秒\n但是它的速度肯定不是匀速的\n它可能就是武器发射出去之后\n后坐力这个时候是最大的\n那么你后退的速度也是最快的\n但是当你控制住你的武器之后\n角色就停下来\n这个时候肯定是慢慢慢慢慢停下来\n在这0.5秒的过程\n它就是一个晃动的变化\n有非常多的场景都可以去使用\n主要还是看个人怎么去运用\n这个twin动画去实现效果\n这两期视频已经将听动画比较常用的一些属性\n方法都讲解了一下\n但这并不是听动画的所有的用法\n还有一些比较少用到的\n可以自己去文档当中去查看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1uJNm6YEbJ",
+  "published_at": "1783941300",
+  "fetched_at": "2026-08-09T13:00:40+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot Tween 动画操作图谱\n\n## 总览：Tween 播放模式与关键函数\n<!-- [BV1uJNm6YEbJ P1 00:07] 默认串行播放；[BV1uJNm6YEbJ P1 00:16] 并行函数；[BV1uJNm6YEbJ P1 01:33] set_parallel；[BV1uJNm6YEbJ P1 02:18] train；[BV1uJNm6YEbJ P1 02:51] set_loops；[BV1uJNm6YEbJ P1 04:31] set_change；[BV1uJNm6YEbJ P1 04:44] set_is -->\n```mermaid\nflowchart TD\n    A[\"默认串行播放\"] --> B[\"需要并行时使用 parallel / set_parallel\"]\n    B --> C[\"parallel 函数 (单个动画)\"]\n    B --> D[\"set_parallel(true) (整体并行)\"]\n    D --> E[\"可在创建 Tween 时一次性开启\"]\n    D --> F[\"可通过删除 set_parallel 关闭整体并行\"]\n    C --> G[\"可在特定动画后插入 parallel\"]\n    G --> H[\"实现局部并行\"]\n    F --> I[\"使用 train 函数排除单个动画\"]\n    J[\"循环播放\"] --> K[\"set_loops(count)\"]\n    L[\"微调运动\"] --> M[\"set_change (过渡)\"]\n    L --> N[\"set_is (缓动)\"]\n    M --> O[\"组合产生弹簧/晃动效果\"]\n    N --> O\n```\n\n## 并行播放的实现步骤\n<!-- [BV1uJNm6YEbJ P1 00:45] 添加 parallel；[BV1uJNm6YEbJ P1 01:33] set_parallel；[BV1uJNm6YEbJ P1 02:18] train 排除 -->\n```mermaid\nflowchart LR\n    A[\"准备动画列表\"] --> B[\"决定整体并行或局部并行\"]\n    B -->|整体并行| C[\"在创建 Tween 时调用 set_parallel(true)\"]\n    B -->|局部并行| D[\"在目标动画后插入 parallel()\"]\n    D --> E[\"多个局部并行可叠加\"]\n    C --> F[\"若需排除某动画 → 在该动画前使用 train()\"]\n    F --> G[\"该动画保持串行，其余保持并行\"]\n```\n\n## 过渡（set_change）与缓动（set_is）的组合使用\n<!-- [BV1uJNm6YEbJ P1 04:31] set_change；[BV1uJNm6YEbJ P1 04:44] set_is；[BV1uJNm6YEbJ P1 05:18] 弹簧效果 -->\n```mermaid\nflowchart TD\n    A[\"选择动画\"] --> B[\"设置过渡方式 set_change(类型)\"]\n    B --> C[\"可选预设值（如弹簧）\"]\n    A --> D[\"设置缓动方式 set_is(类型)\"]\n    D --> E[\"可选预设值（如 ease-in）\"]\n    C --> F[\"仅过渡 → 产生弹跳/弹簧效果\"]\n    E --> G[\"仅缓动 → 产生加速/减速曲线\"]\n    F --> H[\"组合 set_change + set_is → 同时拥有弹簧+缓动\"]\n    G --> H\n```\n\n## 示例场景：弹簧弹跳与武器后坐力\n<!-- [BV1uJNm6YEbJ P1 05:27] 弹簧演示；[BV1uJNm6YEbJ P1 07:47] 武器后坐力场景 -->\n```mermaid\nflowchart LR\n    A[\"动画：spider_to_d 移动\"] --> B[\"使用 set_change(弹簧)\"]\n    B --> C[\"产生弹簧式弹跳\"]\n    A --> D[\"使用 set_is(缓动)\"]\n    D --> E[\"细调速度曲线\"]\n    C --> F[\"组合 → 弹跳+微调效果\"]\n    G[\"武器射击后坐力\"] --> H[\"设置短时 (0.5s) 动画\"]\n    H --> I[\"使用 set_change(快速上升) + set_is(慢速结束)\"]\n    I --> J[\"实现初始快速后退 → 逐渐停稳\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览：Tween 播放模式与关键函数",
+          "code": "flowchart TD\n    A[\"默认串行播放\"] --> B[\"需要并行时使用 parallel / set_parallel\"]\n    B --> C[\"parallel 函数 (单个动画)\"]\n    B --> D[\"set_parallel(true) (整体并行)\"]\n    D --> E[\"可在创建 Tween 时一次性开启\"]\n    D --> F[\"可通过删除 set_parallel 关闭整体并行\"]\n    C --> G[\"可在特定动画后插入 parallel\"]\n    G --> H[\"实现局部并行\"]\n    F --> I[\"使用 train 函数排除单个动画\"]\n    J[\"循环播放\"] --> K[\"set_loops(count)\"]\n    L[\"微调运动\"] --> M[\"set_change (过渡)\"]\n    L --> N[\"set_is (缓动)\"]\n    M --> O[\"组合产生弹簧/晃动效果\"]\n    N --> O"
+        },
+        {
+          "title": "并行播放的实现步骤",
+          "code": "flowchart LR\n    A[\"准备动画列表\"] --> B[\"决定整体并行或局部并行\"]\n    B -->|整体并行| C[\"在创建 Tween 时调用 set_parallel(true)\"]\n    B -->|局部并行| D[\"在目标动画后插入 parallel()\"]\n    D --> E[\"多个局部并行可叠加\"]\n    C --> F[\"若需排除某动画 → 在该动画前使用 train()\"]\n    F --> G[\"该动画保持串行，其余保持并行\"]"
+        },
+        {
+          "title": "过渡（set_change）与缓动（set_is）的组合使用",
+          "code": "flowchart TD\n    A[\"选择动画\"] --> B[\"设置过渡方式 set_change(类型)\"]\n    B --> C[\"可选预设值（如弹簧）\"]\n    A --> D[\"设置缓动方式 set_is(类型)\"]\n    D --> E[\"可选预设值（如 ease-in）\"]\n    C --> F[\"仅过渡 → 产生弹跳/弹簧效果\"]\n    E --> G[\"仅缓动 → 产生加速/减速曲线\"]\n    F --> H[\"组合 set_change + set_is → 同时拥有弹簧+缓动\"]\n    G --> H"
+        },
+        {
+          "title": "示例场景：弹簧弹跳与武器后坐力",
+          "code": "flowchart LR\n    A[\"动画：spider_to_d 移动\"] --> B[\"使用 set_change(弹簧)\"]\n    B --> C[\"产生弹簧式弹跳\"]\n    A --> D[\"使用 set_is(缓动)\"]\n    D --> E[\"细调速度曲线\"]\n    C --> F[\"组合 → 弹跳+微调效果\"]\n    G[\"武器射击后坐力\"] --> H[\"设置短时 (0.5s) 动画\"]\n    H --> I[\"使用 set_change(快速上升) + set_is(慢速结束)\"]\n    I --> J[\"实现初始快速后退 → 逐渐停稳\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T13:19:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot Tween 动画操作图谱\n\n## 总览：Tween 播放模式与关键函数\n<!-- [BV1uJNm6YEbJ P1 00:07] 默认串行播放；[BV1uJNm6YEbJ P1 00:16] 并行函数；[BV1uJNm6YEbJ P1 01:33] set_parallel；[BV1uJNm6YEbJ P1 02:18] train；[BV1uJNm6YEbJ P1 02:51] set_loops；[BV1uJNm6YEbJ P1 04:31] set_change；[BV1uJNm6YEbJ P1 04:44] set_is -->\n```mermaid\nflowchart TD\n    A[\"默认串行播放\"] --> B[\"需要并行时使用 parallel / set_parallel\"]\n    B --> C[\"parallel 函数 (单个动画)\"]\n    B --> D[\"set_parallel(true) (整体并行)\"]\n    D --> E[\"可在创建 Tween 时一次性开启\"]\n    D --> F[\"可通过删除 set_parallel 关闭整体并行\"]\n    C --> G[\"可在特定动画后插入 parallel\"]\n    G --> H[\"实现局部并行\"]\n    F --> I[\"使用 train 函数排除单个动画\"]\n    J[\"循环播放\"] --> K[\"set_loops(count)\"]\n    L[\"微调运动\"] --> M[\"set_change (过渡)\"]\n    L --> N[\"set_is (缓动)\"]\n    M --> O[\"组合产生弹簧/晃动效果\"]\n    N --> O\n```\n\n## 并行播放的实现步骤\n<!-- [BV1uJNm6YEbJ P1 00:45] 添加 parallel；[BV1uJNm6YEbJ P1 01:33] set_parallel；[BV1uJNm6YEbJ P1 02:18] train 排除 -->\n```mermaid\nflowchart LR\n    A[\"准备动画列表\"] --> B[\"决定整体并行或局部并行\"]\n    B -->|整体并行| C[\"在创建 Tween 时调用 set_parallel(true)\"]\n    B -->|局部并行| D[\"在目标动画后插入 parallel()\"]\n    D --> E[\"多个局部并行可叠加\"]\n    C --> F[\"若需排除某动画 → 在该动画前使用 train()\"]\n    F --> G[\"该动画保持串行，其余保持并行\"]\n```\n\n## 过渡（set_change）与缓动（set_is）的组合使用\n<!-- [BV1uJNm6YEbJ P1 04:31] set_change；[BV1uJNm6YEbJ P1 04:44] set_is；[BV1uJNm6YEbJ P1 05:18] 弹簧效果 -->\n```mermaid\nflowchart TD\n    A[\"选择动画\"] --> B[\"设置过渡方式 set_change(类型)\"]\n    B --> C[\"可选预设值（如弹簧）\"]\n    A --> D[\"设置缓动方式 set_is(类型)\"]\n    D --> E[\"可选预设值（如 ease-in）\"]\n    C --> F[\"仅过渡 → 产生弹跳/弹簧效果\"]\n    E --> G[\"仅缓动 → 产生加速/减速曲线\"]\n    F --> H[\"组合 set_change + set_is → 同时拥有弹簧+缓动\"]\n    G --> H\n```\n\n## 示例场景：弹簧弹跳与武器后坐力\n<!-- [BV1uJNm6YEbJ P1 05:27] 弹簧演示；[BV1uJNm6YEbJ P1 07:47] 武器后坐力场景 -->\n```mermaid\nflowchart LR\n    A[\"动画：spider_to_d 移动\"] --> B[\"使用 set_change(弹簧)\"]\n    B --> C[\"产生弹簧式弹跳\"]\n    A --> D[\"使用 set_is(缓动)\"]\n    D --> E[\"细调速度曲线\"]\n    C --> F[\"组合 → 弹跳+微调效果\"]\n    G[\"武器射击后坐力\"] --> H[\"设置短时 (0.5s) 动画\"]\n    H --> I[\"使用 set_change(快速上升) + set_is(慢速结束)\"]\n    I --> J[\"实现初始快速后退 → 逐渐停稳\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览：Tween 播放模式与关键函数",
+      "code": "flowchart TD\n    A[\"默认串行播放\"] --> B[\"需要并行时使用 parallel / set_parallel\"]\n    B --> C[\"parallel 函数 (单个动画)\"]\n    B --> D[\"set_parallel(true) (整体并行)\"]\n    D --> E[\"可在创建 Tween 时一次性开启\"]\n    D --> F[\"可通过删除 set_parallel 关闭整体并行\"]\n    C --> G[\"可在特定动画后插入 parallel\"]\n    G --> H[\"实现局部并行\"]\n    F --> I[\"使用 train 函数排除单个动画\"]\n    J[\"循环播放\"] --> K[\"set_loops(count)\"]\n    L[\"微调运动\"] --> M[\"set_change (过渡)\"]\n    L --> N[\"set_is (缓动)\"]\n    M --> O[\"组合产生弹簧/晃动效果\"]\n    N --> O"
+    },
+    {
+      "title": "并行播放的实现步骤",
+      "code": "flowchart LR\n    A[\"准备动画列表\"] --> B[\"决定整体并行或局部并行\"]\n    B -->|整体并行| C[\"在创建 Tween 时调用 set_parallel(true)\"]\n    B -->|局部并行| D[\"在目标动画后插入 parallel()\"]\n    D --> E[\"多个局部并行可叠加\"]\n    C --> F[\"若需排除某动画 → 在该动画前使用 train()\"]\n    F --> G[\"该动画保持串行，其余保持并行\"]"
+    },
+    {
+      "title": "过渡（set_change）与缓动（set_is）的组合使用",
+      "code": "flowchart TD\n    A[\"选择动画\"] --> B[\"设置过渡方式 set_change(类型)\"]\n    B --> C[\"可选预设值（如弹簧）\"]\n    A --> D[\"设置缓动方式 set_is(类型)\"]\n    D --> E[\"可选预设值（如 ease-in）\"]\n    C --> F[\"仅过渡 → 产生弹跳/弹簧效果\"]\n    E --> G[\"仅缓动 → 产生加速/减速曲线\"]\n    F --> H[\"组合 set_change + set_is → 同时拥有弹簧+缓动\"]\n    G --> H"
+    },
+    {
+      "title": "示例场景：弹簧弹跳与武器后坐力",
+      "code": "flowchart LR\n    A[\"动画：spider_to_d 移动\"] --> B[\"使用 set_change(弹簧)\"]\n    B --> C[\"产生弹簧式弹跳\"]\n    A --> D[\"使用 set_is(缓动)\"]\n    D --> E[\"细调速度曲线\"]\n    C --> F[\"组合 → 弹跳+微调效果\"]\n    G[\"武器射击后坐力\"] --> H[\"设置短时 (0.5s) 动画\"]\n    H --> I[\"使用 set_change(快速上升) + set_is(慢速结束)\"]\n    I --> J[\"实现初始快速后退 → 逐渐停稳\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T13:19:35+00:00"
+}

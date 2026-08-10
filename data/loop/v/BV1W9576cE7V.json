@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1W9576cE7V",
+  "title": "【Godot】轻松制作2D角色待机动画！无需精灵图的关键帧动画教学！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1536,
+  "text": "Hello\n大家好\n我是paper\n又来学GODOT了\n今天我们来学习\n如何在你的2D场景中导入我们的人物动画\n也就是让我们的人物有更多可以操控的选项\n比如说这里我们制作一个待机动画\n我们点击运行项目\n我们可以看到我们的人物正在进行一个\n抽刀和拔刀的一个动画循环\n如果说你想要更多的动画效果\n你可以轻松的去利用AI\n或者说结合你的方式去制作这种精灵图\n我们只要把它以关键帧的动画\n拼凑起来就可以了\n接下来我们来教下如何进行一个使用\n首先我们可以把这个东西全部给他删除\n这里我们全部清空场景\n我们新建一个场景\n这个场景我们给它添加一个精灵节点\n我们CTRL加A选择这个spirit to d\n这是我们的这个场景\n我们可以先把我们的场景的素材添加进来\n这里我选中了一个场景素材\n这里我是用这个AI生成的一份中式樱花\n我们给它放到我们的拖进场景来\n或者说添加到我们这个texture里就可以了\n这里我们这里默认拖进来\n他就直接给你添加到spirit to d了\n如果说你不想要这么添加\n比如我们可以直接删除\n我们直接给他删除\n我们把这个场景我们选中这个spirit to d\n然后给他作为这个纹理\n以text形式来放进来也是一样\n这里我们可以先按住它\n然后选中shift\n给它大小缩放到我们这个场景渲染框中\n接下来我们再创建我们的人物角色啊\n首先我们点击加号\n我们创建一个二级节点\nShift ctrl a\n我们选择这个enemy spirit to d\n或者说是选择这个character body\n作为我们可以移动的脚本角色\n2D5里\n也就是说我们可以通过它来加载我们的脚本\n让我们可以控制角色的移动\n待机的时候\n我们播放动画\n我们移动的时候播放移动动画是吧\n在这里我们以以一个待机的小动画为举例\n我们CTRL加A添加一个animate spirit to d节点\n我们直接搜就可以了\n点击创建就好了\n这里如果说你没有\n你可以直接点搜索\n这里我已经创建好了\n所以它会在默认的快捷搜索框中体现\n这里我们点击这里\n我们在spirit frames这里\nAnimated spirit to the frames\n我们点击这里新建一个spirit frame\n点击它再点一次\n这里就会出来一个动画帧的框\n我们这里把我们需要的动画帧拖进来就好了\n这里我们是第一帧\n第二针\n第三针\n第四针\n这里不要这样拖\n这样拖会有问题对吧\n它它这样拖\n它会作为这个节点场景节点拖进来\n所以说我们不要直接拖进来\n如果说你的这个没了\n我们再点回去就可以了\n我们刚刚是123是吧\n123第四针我们拖到这里面来\n第五针第六帧\n也就是每一帧我们都是一个图片\n五张动动画连起来\n我们播放一下\n就是这么一个效果啦\n好的\n这里我们默认是动画循环\n它是五帧5fps\n这里我们选择把这个加载后自动播放勾上\n如果你不勾上\n那你导入进游戏里\n它就直接没了\n它就不会自动播放了\n我们CTRLS保存一下\n把它保存我们动画场景\n这里我们改为ANIANIMM1是吧\n我们随便保存一下好\n接下来我们在我们的这个场景中\n我们可以看到这个AN1\n这是我们已经保存过的\n因为我们新建了另外一个场景\n来做我们人物动画\n我们只需要把这个人物动画关联过来就可以了\n我们点击这里点击实例化子场景\n选择AN1\n这是我们刚创作的这个好\n接下来我们按F5进入当前页面\n我们这里需要把这个场景保存一下\n好我们就可以看到我们的人物已经在动了\n如果说你加载一些移动脚本的人物\n就可以自由移动了\n你移动的时候需要播放另一段移动动画\n那之后我们下节课再说\n我们先说一下如何加载咱们的关键帧\n也就是精灵图动画\nOK感谢大家观看\n今天我们课程就到这里\n我们下节课再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1W9576cE7V",
+  "published_at": "1778412543",
+  "fetched_at": "2026-08-09T04:38:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T04:38:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T04:38:43+00:00"
+}

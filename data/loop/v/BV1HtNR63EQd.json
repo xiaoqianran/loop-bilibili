@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1HtNR63EQd",
+  "title": "一句话，AI 给我建了座 3D 电站（Kimi K3 实测）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 203,
+  "text": "每写一行代码\n只用一句话\nAI就帮我建了一座3D电站\n我只给KIMIK3发了一句话\n帮我做一个光储充一体化电站的3D\n数字孪生网页\n要有实时数据和告警效果\n电动车和快充桩都是他驱动\nblender一个个建出来的筋膜\n功率储能soc充电状态实时跳动\n4号桩告警还会亮起红色雷达圈\n光伏车棚储能柜阵列\n配电监控中心\n一座电站完整还原\n项目已经完整开源\n想要的评论区扣开源\n简单的小需求可以免费帮你做\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HtNR63EQd",
+  "published_at": "1784298797",
+  "fetched_at": "2026-08-09T02:10:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 3D 电站知识图谱\n\n## 系统整体概览 [BV1HtNR63EQd P1 00:03]\n\n```mermaid\nflowchart TD\n    U[\"用户指令\\n（单句）\"] --> AI[\"AI KIMI K3\\n生成 3D 电站\"]\n    AI --> WEB[\"3D 数字孪生网页\"]\n    AI --> BLEND[\"Blender\\n建模组件\"]\n    BLEND --> WEB\n    WEB --> DATA[\"实时数据\"]\n    WEB --> ALERT[\"告警效果\"]\n    DATA --> EV[\"电动车\"]\n    DATA --> CHARGER[\"快充桩\"]\n    DATA --> PV[\"光伏车棚\"]\n    DATA --> STORAGE[\"储能柜阵列\"]\n    ALERT --> STATION4[\"4号桩告警\\n红色雷达圈\"]\n    WEB --> MON[\"配电监控中心\"]\n    MON --> EV\n    MON --> CHARGER\n    MON --> PV\n    MON --> STORAGE\n```\n\n## 工作流程：从指令到完整站点 [BV1HtNR63EQd P1 00:06]\n\n```mermaid\nflowchart LR\n    STEP1[\"输入指令\\n光储充一体化 3D 数字孪生网页\"]\n    STEP2[\"KIMI K3 解析指令\"]\n    STEP3[\"调用 Blender 生成模型\"]\n    STEP4[\"部署 3D 数字孪生网页\"]\n    STEP5[\"集成实时数据接口\"]\n    STEP6[\"实现告警可视化\"]\n    STEP7[\"项目开源发布\"]\n    STEP8[\"社区反馈与定制\"]\n    STEP1 --> STEP2 --> STEP3 --> STEP4 --> STEP5 --> STEP6 --> STEP7 --> STEP8\n```\n\n## 开源与社区交互机制 [BV1HtNR63EQd P1 00:48]\n\n```mermaid\nflowchart TD\n    OPEN[\"项目已完整开源\"]\n    COMMENT[\"评论区请求开源链接\"]\n    FREE[\"免费处理小需求\"]\n    CUSTOM[\"进一步定制服务\"]\n    OPEN --> COMMENT\n    COMMENT --> FREE\n    FREE --> CUSTOM\n```\n\n## 实时数据与告警细节 [BV1HtNR63EQd P1 00:29]\n\n```mermaid\nflowchart TD\n    SOC[\"功率储能 SOC\\n充电状态实时跳动\"]\n    ALERT4[\"4号桩告警\\n红色雷达圈\"]\n    DISPLAY[\"配电监控中心显示\"]\n    SOC --> DISPLAY\n    ALERT4 --> DISPLAY\n```",
+      "diagrams": [
+        {
+          "title": "系统整体概览",
+          "code": "flowchart TD\n    U[\"用户指令\\n（单句）\"] --> AI[\"AI KIMI K3\\n生成 3D 电站\"]\n    AI --> WEB[\"3D 数字孪生网页\"]\n    AI --> BLEND[\"Blender\\n建模组件\"]\n    BLEND --> WEB\n    WEB --> DATA[\"实时数据\"]\n    WEB --> ALERT[\"告警效果\"]\n    DATA --> EV[\"电动车\"]\n    DATA --> CHARGER[\"快充桩\"]\n    DATA --> PV[\"光伏车棚\"]\n    DATA --> STORAGE[\"储能柜阵列\"]\n    ALERT --> STATION4[\"4号桩告警\\n红色雷达圈\"]\n    WEB --> MON[\"配电监控中心\"]\n    MON --> EV\n    MON --> CHARGER\n    MON --> PV\n    MON --> STORAGE"
+        },
+        {
+          "title": "工作流程：从指令到完整站点",
+          "code": "flowchart LR\n    STEP1[\"输入指令\\n光储充一体化 3D 数字孪生网页\"]\n    STEP2[\"KIMI K3 解析指令\"]\n    STEP3[\"调用 Blender 生成模型\"]\n    STEP4[\"部署 3D 数字孪生网页\"]\n    STEP5[\"集成实时数据接口\"]\n    STEP6[\"实现告警可视化\"]\n    STEP7[\"项目开源发布\"]\n    STEP8[\"社区反馈与定制\"]\n    STEP1 --> STEP2 --> STEP3 --> STEP4 --> STEP5 --> STEP6 --> STEP7 --> STEP8"
+        },
+        {
+          "title": "开源与社区交互机制",
+          "code": "flowchart TD\n    OPEN[\"项目已完整开源\"]\n    COMMENT[\"评论区请求开源链接\"]\n    FREE[\"免费处理小需求\"]\n    CUSTOM[\"进一步定制服务\"]\n    OPEN --> COMMENT\n    COMMENT --> FREE\n    FREE --> CUSTOM"
+        },
+        {
+          "title": "实时数据与告警细节",
+          "code": "flowchart TD\n    SOC[\"功率储能 SOC\\n充电状态实时跳动\"]\n    ALERT4[\"4号桩告警\\n红色雷达圈\"]\n    DISPLAY[\"配电监控中心显示\"]\n    SOC --> DISPLAY\n    ALERT4 --> DISPLAY"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T02:23:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 3D 电站知识图谱\n\n## 系统整体概览 [BV1HtNR63EQd P1 00:03]\n\n```mermaid\nflowchart TD\n    U[\"用户指令\\n（单句）\"] --> AI[\"AI KIMI K3\\n生成 3D 电站\"]\n    AI --> WEB[\"3D 数字孪生网页\"]\n    AI --> BLEND[\"Blender\\n建模组件\"]\n    BLEND --> WEB\n    WEB --> DATA[\"实时数据\"]\n    WEB --> ALERT[\"告警效果\"]\n    DATA --> EV[\"电动车\"]\n    DATA --> CHARGER[\"快充桩\"]\n    DATA --> PV[\"光伏车棚\"]\n    DATA --> STORAGE[\"储能柜阵列\"]\n    ALERT --> STATION4[\"4号桩告警\\n红色雷达圈\"]\n    WEB --> MON[\"配电监控中心\"]\n    MON --> EV\n    MON --> CHARGER\n    MON --> PV\n    MON --> STORAGE\n```\n\n## 工作流程：从指令到完整站点 [BV1HtNR63EQd P1 00:06]\n\n```mermaid\nflowchart LR\n    STEP1[\"输入指令\\n光储充一体化 3D 数字孪生网页\"]\n    STEP2[\"KIMI K3 解析指令\"]\n    STEP3[\"调用 Blender 生成模型\"]\n    STEP4[\"部署 3D 数字孪生网页\"]\n    STEP5[\"集成实时数据接口\"]\n    STEP6[\"实现告警可视化\"]\n    STEP7[\"项目开源发布\"]\n    STEP8[\"社区反馈与定制\"]\n    STEP1 --> STEP2 --> STEP3 --> STEP4 --> STEP5 --> STEP6 --> STEP7 --> STEP8\n```\n\n## 开源与社区交互机制 [BV1HtNR63EQd P1 00:48]\n\n```mermaid\nflowchart TD\n    OPEN[\"项目已完整开源\"]\n    COMMENT[\"评论区请求开源链接\"]\n    FREE[\"免费处理小需求\"]\n    CUSTOM[\"进一步定制服务\"]\n    OPEN --> COMMENT\n    COMMENT --> FREE\n    FREE --> CUSTOM\n```\n\n## 实时数据与告警细节 [BV1HtNR63EQd P1 00:29]\n\n```mermaid\nflowchart TD\n    SOC[\"功率储能 SOC\\n充电状态实时跳动\"]\n    ALERT4[\"4号桩告警\\n红色雷达圈\"]\n    DISPLAY[\"配电监控中心显示\"]\n    SOC --> DISPLAY\n    ALERT4 --> DISPLAY\n```",
+  "diagrams": [
+    {
+      "title": "系统整体概览",
+      "code": "flowchart TD\n    U[\"用户指令\\n（单句）\"] --> AI[\"AI KIMI K3\\n生成 3D 电站\"]\n    AI --> WEB[\"3D 数字孪生网页\"]\n    AI --> BLEND[\"Blender\\n建模组件\"]\n    BLEND --> WEB\n    WEB --> DATA[\"实时数据\"]\n    WEB --> ALERT[\"告警效果\"]\n    DATA --> EV[\"电动车\"]\n    DATA --> CHARGER[\"快充桩\"]\n    DATA --> PV[\"光伏车棚\"]\n    DATA --> STORAGE[\"储能柜阵列\"]\n    ALERT --> STATION4[\"4号桩告警\\n红色雷达圈\"]\n    WEB --> MON[\"配电监控中心\"]\n    MON --> EV\n    MON --> CHARGER\n    MON --> PV\n    MON --> STORAGE"
+    },
+    {
+      "title": "工作流程：从指令到完整站点",
+      "code": "flowchart LR\n    STEP1[\"输入指令\\n光储充一体化 3D 数字孪生网页\"]\n    STEP2[\"KIMI K3 解析指令\"]\n    STEP3[\"调用 Blender 生成模型\"]\n    STEP4[\"部署 3D 数字孪生网页\"]\n    STEP5[\"集成实时数据接口\"]\n    STEP6[\"实现告警可视化\"]\n    STEP7[\"项目开源发布\"]\n    STEP8[\"社区反馈与定制\"]\n    STEP1 --> STEP2 --> STEP3 --> STEP4 --> STEP5 --> STEP6 --> STEP7 --> STEP8"
+    },
+    {
+      "title": "开源与社区交互机制",
+      "code": "flowchart TD\n    OPEN[\"项目已完整开源\"]\n    COMMENT[\"评论区请求开源链接\"]\n    FREE[\"免费处理小需求\"]\n    CUSTOM[\"进一步定制服务\"]\n    OPEN --> COMMENT\n    COMMENT --> FREE\n    FREE --> CUSTOM"
+    },
+    {
+      "title": "实时数据与告警细节",
+      "code": "flowchart TD\n    SOC[\"功率储能 SOC\\n充电状态实时跳动\"]\n    ALERT4[\"4号桩告警\\n红色雷达圈\"]\n    DISPLAY[\"配电监控中心显示\"]\n    SOC --> DISPLAY\n    ALERT4 --> DISPLAY"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T02:23:25+00:00"
+}

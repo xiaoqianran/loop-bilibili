@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1FXLJ6YE1L",
+  "title": "124. 训练时是如何恰好错开一个token的？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 572,
+  "text": "今天的问题是\n训练时是如何恰好错开一个token的\n就给出一种可视化\n首先说这里这个图是什么意思\n这个是之前的一个超简单transformer可视化\n而它是一个2D的\n如果把它按层堆起来\n意思就是说把这个矩阵按照621\n62023堆起来\n就可以变成一个长方体\n由于训练的时候呢是未来已定并行计算的\n所以它是每次加盖一个面\n而对于每一个token\n它算算算\n最后呢会变成最后一层的一个长条\n让这个长条呢它投影到此表就会得到一个预测\n并且呢他恰好错开了一个token\n意思就是说他是要基于这里的这个海字\n去预测这个安字\nOK那么这个错开怎么理解呢\n就是说假设现在有五个token\n就首token海安与伪token\n那这个时候计算损失发生在几个位置呢\n答案是它发生在四个位置\n而不是在五个位置\n具体是怎么四个位置呢\n就是这四个位置为什么没有最后的这个位置呢\n就是由于如果把最后的伪token进行了磁线入\n这算算他也可以算出来这样的一个向量\n也可以算出来个概率\n但问题他没有答案\n跟它对应了\n没有答案了\n所以呢这里就不算损失了\n再说这个手token for token会被所有的位置看到\n为什么呢\n因为在这个注意力矩阵当中\n这个首列它是没有掩码的\n就相当于被所有位置看到\n所以呢它也不需要去对\n在这个地方\n相当于说正好就这两个地方都错开了一个token",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1FXLJ6YE1L",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:15:31+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

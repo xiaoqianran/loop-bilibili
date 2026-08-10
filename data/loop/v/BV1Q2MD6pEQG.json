@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1Q2MD6pEQG",
+  "title": "教你用低端6G显卡玩转AI视频生成 40系50系列均可！comfyui本地部署图生视频教程 comfyui视频工作流",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 103,
+  "text": "这个视频将教你用低端显卡玩AI视频生成\n然后打开专门搭建的低显存工作流\n上传图片\n点击生成\n完事提示词都不要\n你写进雪莲\n最后结尾吱个声\n我只是想静一静\n雪这么大\n容易冻着\n你是在担心我吗\n不然呢\n你又一个",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Q2MD6pEQG",
+  "published_at": "1785917340",
+  "fetched_at": "2026-08-07T12:57:10+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 低端显卡AI视频生成工作流图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"视频教程\"] --> K[\"使用ComfyUI\"]\n    K --> L[\"本地部署\"]\n    L --> C[\"低显存工作流\"]\n    C --> D[\"上传图片\"]\n    D --> E[\"点击生成\"]\n    E --> F[\"无需提示词\"]\n    F --> G[\"添加文字/字幕\"]\n    G --> H[\"结束音效\"]\n    H --> I[\"生成视频文件\"]\n    I --> O[\"输出结果\"]\n    B[\"低端显卡 (40系/50系)\"] --> J[\"适用显卡系列\"]\n    B --> K\n    N[\"显存需求低\"] --> C\n    M[\"AI模型\"] --> K\n```\n\n## 操作步骤\n```mermaid\nflowchart LR\n    S[\"开始：观看教程\"] --> U[\"上传图片\"]\n    U --> G[\"点击生成\"]\n    G --> NP[\"无需提示词\"]\n    NP --> AT[\"添加文字/字幕（如“雪莲”）\"]\n    AT --> ES[\"结束音效（如吱声）\"]\n    ES --> R[\"生成并保存视频\"]\n    R --> E[\"结束\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"视频教程\"] --> K[\"使用ComfyUI\"]\n    K --> L[\"本地部署\"]\n    L --> C[\"低显存工作流\"]\n    C --> D[\"上传图片\"]\n    D --> E[\"点击生成\"]\n    E --> F[\"无需提示词\"]\n    F --> G[\"添加文字/字幕\"]\n    G --> H[\"结束音效\"]\n    H --> I[\"生成视频文件\"]\n    I --> O[\"输出结果\"]\n    B[\"低端显卡 (40系/50系)\"] --> J[\"适用显卡系列\"]\n    B --> K\n    N[\"显存需求低\"] --> C\n    M[\"AI模型\"] --> K"
+        },
+        {
+          "title": "操作步骤",
+          "code": "flowchart LR\n    S[\"开始：观看教程\"] --> U[\"上传图片\"]\n    U --> G[\"点击生成\"]\n    G --> NP[\"无需提示词\"]\n    NP --> AT[\"添加文字/字幕（如“雪莲”）\"]\n    AT --> ES[\"结束音效（如吱声）\"]\n    ES --> R[\"生成并保存视频\"]\n    R --> E[\"结束\"]"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-07T13:00:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 低端显卡AI视频生成工作流图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"视频教程\"] --> K[\"使用ComfyUI\"]\n    K --> L[\"本地部署\"]\n    L --> C[\"低显存工作流\"]\n    C --> D[\"上传图片\"]\n    D --> E[\"点击生成\"]\n    E --> F[\"无需提示词\"]\n    F --> G[\"添加文字/字幕\"]\n    G --> H[\"结束音效\"]\n    H --> I[\"生成视频文件\"]\n    I --> O[\"输出结果\"]\n    B[\"低端显卡 (40系/50系)\"] --> J[\"适用显卡系列\"]\n    B --> K\n    N[\"显存需求低\"] --> C\n    M[\"AI模型\"] --> K\n```\n\n## 操作步骤\n```mermaid\nflowchart LR\n    S[\"开始：观看教程\"] --> U[\"上传图片\"]\n    U --> G[\"点击生成\"]\n    G --> NP[\"无需提示词\"]\n    NP --> AT[\"添加文字/字幕（如“雪莲”）\"]\n    AT --> ES[\"结束音效（如吱声）\"]\n    ES --> R[\"生成并保存视频\"]\n    R --> E[\"结束\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"视频教程\"] --> K[\"使用ComfyUI\"]\n    K --> L[\"本地部署\"]\n    L --> C[\"低显存工作流\"]\n    C --> D[\"上传图片\"]\n    D --> E[\"点击生成\"]\n    E --> F[\"无需提示词\"]\n    F --> G[\"添加文字/字幕\"]\n    G --> H[\"结束音效\"]\n    H --> I[\"生成视频文件\"]\n    I --> O[\"输出结果\"]\n    B[\"低端显卡 (40系/50系)\"] --> J[\"适用显卡系列\"]\n    B --> K\n    N[\"显存需求低\"] --> C\n    M[\"AI模型\"] --> K"
+    },
+    {
+      "title": "操作步骤",
+      "code": "flowchart LR\n    S[\"开始：观看教程\"] --> U[\"上传图片\"]\n    U --> G[\"点击生成\"]\n    G --> NP[\"无需提示词\"]\n    NP --> AT[\"添加文字/字幕（如“雪莲”）\"]\n    AT --> ES[\"结束音效（如吱声）\"]\n    ES --> R[\"生成并保存视频\"]\n    R --> E[\"结束\"]"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T13:00:50+00:00"
+}

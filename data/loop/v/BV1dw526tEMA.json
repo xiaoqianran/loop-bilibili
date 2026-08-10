@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1dw526tEMA",
+  "title": "【2026/Agent】一期讲透！理论+代码从ToolCall到Harness、Claw，告诉你Agent的一切",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2089,
+  "text": "大家好\n这里是木桥\n那这期视频呢就如约带来之前在动态里承诺的\nagent的全站相关的一些系列视频\n在这期视频里呢\n我会带你从function calling到open cloud\n来告诉你agent的相关的一切知识\n那agent的概念呢是去年年初由minus爆火而带动的\n然后在今年年初呢\n同样也发生了agent的一个关键的一个标志\n就是open cloud爆火\n它标志着agent从我们的概念与技术\n走向了一个产品化的成熟产品的过程\n那这样从2025年到2026年\n这一年的短短一年的过程里\n我们的agent特的技术也是经历了很多\n很多轮的发展与变化\n那我们接下来可以看一下\nagent特的整个的发展历史\n最初呢是function calling\n在2023年由OpenAI发布的这样一个function calling\n功能大模型\n第一次可以调用工具\n第一次可以接触外界\n那去年呢2025年3月\nMANUS斯的正式发布\n标志着AI agent的元年\n也就是agent的概念正式爆火走入大众视野\n那在去年6月嗯\n这样一个CEO首次公开了context engineering的概念\n也就提出了对于上下文的处理\n是我们A镜的工程中的重要一环\n那在上下文工程之后呢\n今年2月\n这样一个创作者在个人博客里又强调了\nHarness engineering\n从把我们对于整个agent的构建工程\n从上下文更加扩展到围绕A卷的构建\n整系统约束与反馈机制\n那在工程和技术之外呢\n就是今年年初open cloud爆火\n成为史上增长最快的开源项目之一\n标志着agent特正式从工程技术走向了实际产品\n那在这样一个发展过程中\n我们可以看到新概念\n新技术\n新思想都在不断的涌现\n那我接下来的视频呢\n也就会按照这样一个从过去到现在的一个\n发展顺序来进行一个理论的讲解\n那为什么要做这一系列视频呢\n首先呢是大家可以看到\n在去年10月11月的时候\n我去学习了模型架构的一些相关知识\n以及去做了一些科研\n那么在脱离agent的前期输的\n我可以在落后几个月的情况下\n学会Steal harness和L\n那意思也就是说\n做这期视频是为了鞭策我自己\n去进行一些自我学习\n然后输出\n那第二点呢就是和过去的视频一样\n我会呃\n我做这期视频\n是为了给一些喜欢看视频教程的朋友\n去进行一些分享\n那依然会有理论和代码的录制\n那需要有的朋友可以呃三连关注并学习一下\n那这期视频呢面向人群有两类\n第一类呢就是呃像我之前春招视频里\n下面所说的\n如果你是对agent并不了解\n你想转行agent\n或者是从零开始学习学习\na gentle的相关概念和知识呢\n那你可以看这期视频\n我会从TOAL开始\n一步步用理论加上最小代码的方式\n教你整个agent的发展历程中的各种概念\n以及代码逻辑\n这样的话方便你在后续的面试\n或者其他的基础学习中起到一个帮助作用\n那第二点呢就是我会在这一期视频里\n通过半外web coding\n半手敲的一个方式\n自底向上做一个自己的cloud code和open do\n那如果你是想拥有一个自己的一定的项目的话\n也可以通过这期视频来学习\n那跟往期视频一样\n我们看这期视频前\n我也会要求你有一定的前置知识\n这期视频并不是完全从零基础开始的\n那前置知识呢包括我们选用的框架long unchain\n你要有一些基础概念和了解\n可以看一下我提供的官方文档\n然后Python的基础知识我不再细讲\n然后我们构建工程呢会用到UV等现代的Python工具\n你可以看我往期的\n现在花拍成工具指南\n还有如果你对agent的概念真的是完全一概不知\n想要速通一下的话\n可以看一下闪贺老师的呃\nagent的一些概念扫盲\n看一下这期视频\n大概就能了解大概要讲的内容是个什么样子\n那这期视频呢这期视频一样分为四部分\n第一部分呢我会去进行一个理论的讲解\n我会讲解脱call react\nContext\nEngineering\nharness等理论讲解\n在理论讲解的时候会用白板等方式来带你嗯\n彻底理解这样一些这样一些概念到底是什么\n那第二部分呢我会进行代码的编写\n我会用最小的代码来实现\n把我们这些概念呢落实到代码的层面上来\n实现脱口react这些\n那第三部分呢就是我们在理论和代码之外\n我们同步还会推进一个项目\n就是我们讲脱口的时候\n这个项目就是脱口讲react的时候\n就是react\n我们手动实际做一个自己的项目\n来实现从TOC到cloud一个进化\n那第四部分呢\n就是我会推荐一些优秀的普惠及学习资料\n那这些呢都放在我的notion笔记里\n那和也是和往期视频一样啊\n视频文稿以及GITHUB仓库\n我都会把它放在简介里\n可以看到这样一个notion笔记\n这样一个up的仓库\n我一样会把他们的链接放在简介\n那么制作不易\n为了做这一期镜的视频概念\n我也是边学边制作脚本\nPPT制作项目大概前前后后耗时有一个月左右\n那制作不易\n希望大家给个三连和关注\n非常感谢大家\n那么话不多说\n接下来就进行\n我们就进入agent的世界来学习关于agent的一切吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1dw526tEMA",
+  "published_at": "1778692642",
+  "fetched_at": "2026-08-07T14:11:41+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Agent 全站学习图谱\n\n## 1. Agent 发展时间线概览\n```mermaid\nflowchart TD\n    A1[\"2023 Function Calling (OpenAI)\"] --> A2[\"2025 March MANUS 正式发布 – AI Agent 元年\"]\n    A2 --> A3[\"2025 June CEO 首次公开 Context Engineering 概念\"]\n    A3 --> A4[\"2026 February Harness Engineering 强调系统约束与反馈\"]\n    A4 --> A5[\"2026 January Open Cloud 爆火 – 成为增长最快的开源项目\"]\n    A5 --> A6[\"2026 Open Cloud 标志 Agent 从技术走向成熟产品\"]\n```\n\n## 2. Agent 技术演进链\n```mermaid\nflowchart LR\n    T1[\"Function Calling\"] --> T2[\"Context Engineering\"]\n    T2 --> T3[\"Harness Engineering\"]\n    T3 --> T4[\"Open Cloud\"]\n    T4 --> T5[\"成熟产品化\"]\n    T5 --> T6[\"实际项目落地\"]\n```\n\n## 3. 视频内容结构四部分\n```mermaid\nflowchart TD\n    P1[\"第一部分：理论讲解\"] --> P1A[\"Function Call、Context、Harness 等概念\"]\n    P2[\"第二部分：代码实现\"] --> P2A[\"最小代码落地概念\"]\n    P3[\"第三部分：项目推进\"] --> P3A[\"从 TOC 到 Cloud 的实战项目\"]\n    P4[\"第四部分：学习资源推荐\"] --> P4A[\"Notion 笔记、GitHub 仓库、文稿链接\"]\n```",
+      "diagrams": [
+        {
+          "title": "1. Agent 发展时间线概览",
+          "code": "flowchart TD\n    A1[\"2023 Function Calling (OpenAI)\"] --> A2[\"2025 March MANUS 正式发布 – AI Agent 元年\"]\n    A2 --> A3[\"2025 June CEO 首次公开 Context Engineering 概念\"]\n    A3 --> A4[\"2026 February Harness Engineering 强调系统约束与反馈\"]\n    A4 --> A5[\"2026 January Open Cloud 爆火 – 成为增长最快的开源项目\"]\n    A5 --> A6[\"2026 Open Cloud 标志 Agent 从技术走向成熟产品\"]"
+        },
+        {
+          "title": "2. Agent 技术演进链",
+          "code": "flowchart LR\n    T1[\"Function Calling\"] --> T2[\"Context Engineering\"]\n    T2 --> T3[\"Harness Engineering\"]\n    T3 --> T4[\"Open Cloud\"]\n    T4 --> T5[\"成熟产品化\"]\n    T5 --> T6[\"实际项目落地\"]"
+        },
+        {
+          "title": "3. 视频内容结构四部分",
+          "code": "flowchart TD\n    P1[\"第一部分：理论讲解\"] --> P1A[\"Function Call、Context、Harness 等概念\"]\n    P2[\"第二部分：代码实现\"] --> P2A[\"最小代码落地概念\"]\n    P3[\"第三部分：项目推进\"] --> P3A[\"从 TOC 到 Cloud 的实战项目\"]\n    P4[\"第四部分：学习资源推荐\"] --> P4A[\"Notion 笔记、GitHub 仓库、文稿链接\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T14:11:49+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Agent 全站学习图谱\n\n## 1. Agent 发展时间线概览\n```mermaid\nflowchart TD\n    A1[\"2023 Function Calling (OpenAI)\"] --> A2[\"2025 March MANUS 正式发布 – AI Agent 元年\"]\n    A2 --> A3[\"2025 June CEO 首次公开 Context Engineering 概念\"]\n    A3 --> A4[\"2026 February Harness Engineering 强调系统约束与反馈\"]\n    A4 --> A5[\"2026 January Open Cloud 爆火 – 成为增长最快的开源项目\"]\n    A5 --> A6[\"2026 Open Cloud 标志 Agent 从技术走向成熟产品\"]\n```\n\n## 2. Agent 技术演进链\n```mermaid\nflowchart LR\n    T1[\"Function Calling\"] --> T2[\"Context Engineering\"]\n    T2 --> T3[\"Harness Engineering\"]\n    T3 --> T4[\"Open Cloud\"]\n    T4 --> T5[\"成熟产品化\"]\n    T5 --> T6[\"实际项目落地\"]\n```\n\n## 3. 视频内容结构四部分\n```mermaid\nflowchart TD\n    P1[\"第一部分：理论讲解\"] --> P1A[\"Function Call、Context、Harness 等概念\"]\n    P2[\"第二部分：代码实现\"] --> P2A[\"最小代码落地概念\"]\n    P3[\"第三部分：项目推进\"] --> P3A[\"从 TOC 到 Cloud 的实战项目\"]\n    P4[\"第四部分：学习资源推荐\"] --> P4A[\"Notion 笔记、GitHub 仓库、文稿链接\"]\n```",
+  "diagrams": [
+    {
+      "title": "1. Agent 发展时间线概览",
+      "code": "flowchart TD\n    A1[\"2023 Function Calling (OpenAI)\"] --> A2[\"2025 March MANUS 正式发布 – AI Agent 元年\"]\n    A2 --> A3[\"2025 June CEO 首次公开 Context Engineering 概念\"]\n    A3 --> A4[\"2026 February Harness Engineering 强调系统约束与反馈\"]\n    A4 --> A5[\"2026 January Open Cloud 爆火 – 成为增长最快的开源项目\"]\n    A5 --> A6[\"2026 Open Cloud 标志 Agent 从技术走向成熟产品\"]"
+    },
+    {
+      "title": "2. Agent 技术演进链",
+      "code": "flowchart LR\n    T1[\"Function Calling\"] --> T2[\"Context Engineering\"]\n    T2 --> T3[\"Harness Engineering\"]\n    T3 --> T4[\"Open Cloud\"]\n    T4 --> T5[\"成熟产品化\"]\n    T5 --> T6[\"实际项目落地\"]"
+    },
+    {
+      "title": "3. 视频内容结构四部分",
+      "code": "flowchart TD\n    P1[\"第一部分：理论讲解\"] --> P1A[\"Function Call、Context、Harness 等概念\"]\n    P2[\"第二部分：代码实现\"] --> P2A[\"最小代码落地概念\"]\n    P3[\"第三部分：项目推进\"] --> P3A[\"从 TOC 到 Cloud 的实战项目\"]\n    P4[\"第四部分：学习资源推荐\"] --> P4A[\"Notion 笔记、GitHub 仓库、文稿链接\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T14:11:49+00:00"
+}

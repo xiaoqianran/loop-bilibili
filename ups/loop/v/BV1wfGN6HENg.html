@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="site-base" content="/loop-bilibili" />
+  <title>ImGui菜单源码 纯自己写的不是开源的 可以帮忙对接到你的项目 支持手机端电脑端 · BV1wfGN6HENg</title>
+  <link rel="stylesheet" href="../../../assets/app.css?v=20260810101044" />
+</head>
+<body>
+  <div class="wrap" id="app">加载中…</div>
+  <script>
+    window.SITE_BASE = "/loop-bilibili";
+    window.SITE_ASSET_V = "20260810101044";
+  </script>
+  <script src="../../../assets/app.js?v=20260810101044"></script>
+  <script>
+    
+    SubtitleSite.renderVideo("loop", "BV1wfGN6HENg").catch(e => {
+      document.getElementById('app').textContent = String(e);
+    });
+    
+  </script>
+</body>
+</html>

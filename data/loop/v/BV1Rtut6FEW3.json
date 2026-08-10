@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Rtut6FEW3",
+  "title": "DeepSeek V4接入Codex完整实战：从0开发AI数据分析Agent，40轮提示词驱动300万行数据分析，自动生成可追溯数据报告",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 620,
+  "text": "GPC和V4正式发布\n我们直接把它接近codex\n用40轮提示词\n跑通了300万行数据的完整分析与报告交付\n进入my s q SQL like excel或csv deep seek v4\n就能在codex里自动查数分析画图\n最后把结论和报告集中展示在数据分析看板里\n这就是这节课要带你完成的AI数据分析agent\n他不止回答数据问题\n还会读取300万行数据\n运行Python脚本\n追溯结论来源\n并持续修改和回滚分析报告\n整套项目分成三个环节\n这套项目的整体架构\n40轮开发提示词和每轮快照\n我都整理进课件了\n你自己搭的时候\n模型接入数据工具或者报告生成\n哪一步卡住就翻到对应一轮\n照着提示词和快照往下对\n不用从空白排查需要的评论区扣课件领取\n第一步完成deep seek v4调用和codex配置\n接入四类数据源\n建立统一的数据资产\n第二步配置项目规则\nskills和分析工具\n让agent自动查数清洗建模画图脚本\n在沙盒中运行数据库\n保持只读\n第三步\n把结果渲染成图表和多版本报告\n再通过MCP补上视觉审查\n让codex自动截图修改和复验\n直到页面通过验收\n学完以后\n你能拿走三个结果\n国产模型能接入codex跑完整项目\n300万行数据能完成整条分析电路\n最终报告能追溯\n能修改\n能回滚\n即使你还没有完整做过A证的项目\n也能沿着这条链路\n看懂他怎样从读取数据走到交付结果\n要项目整体架构\n40轮提示词和codex快照的评论区\n扣课件领取",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Rtut6FEW3",
+  "published_at": "1786099484",
+  "fetched_at": "2026-08-10T04:42:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 接入 Codex 实战知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A0[\"GPC 与 V4 正式发布\"] --> A1[\"接入 Codex\"]\n    A1 --> A2[\"使用 40 轮提示词\"]\n    A2 --> A3[\"跑通 300 万行数据分析\"]\n    A3 --> A4[\"生成可追溯报告\"]\n```\n证据: [BV1Rtut6FEW3 P1 00:00]、[BV1Rtut6FEW3 P1 00:02]、[BV1Rtut6FEW3 P1 00:03]、[BV1Rtut6FEW3 P1 00:12]\n\n## 项目三步架构\n```mermaid\nflowchart LR\n    S1[\"第一步：DeepSeek V4 调用 & Codex 配置\"] --> S2[\"接入四类数据源\"]\n    S2 --> S3[\"建立统一数据资产\"]\n    S3 --> S4[\"第二步：配置项目规则、skills 与分析工具\"]\n    S4 --> S5[\"Agent 自动查数、清洗、建模、画图、脚本\"]\n    S5 --> S6[\"在沙盒中只读运行数据库\"]\n    S6 --> S7[\"第三步：渲染图表 & 多版本报告\"]\n    S7 --> S8[\"通过 MCP 完成视觉审查 & 自动截图、复验\"]\n```\n证据: [BV1Rtut6FEW3 P1 00:43]、[BV1Rtut6FEW3 P1 00:46]、[BV1Rtut6FEW3 P1 00:48]、[BV1Rtut6FEW3 P1 00:50]、[BV1Rtut6FEW3 P1 00:52]、[BV1Rtut6FEW3 P1 00:56]、[BV1Rtut6FEW3 P1 00:58]、[BV1Rtut6FEW3 P1 01:01]\n\n## 数据分析与报告链路\n```mermaid\nflowchart TD\n    D0[\"读取 300 万行数据\"] --> D1[\"运行 Python 脚本\"]\n    D1 --> D2[\"自动查数、清洗、建模\"]\n    D2 --> D3[\"生成图表与可视化\"]\n    D3 --> D4[\"生成多版本报告\"]\n    D4 --> D5[\"追溯结论来源\"]\n    D5 --> D6[\"支持修改 & 回滚\"]\n```\n证据: [BV1Rtut6FEW3 P1 00:20]、[BV1Rtut6FEW3 P1 00:22]、[BV1Rtut6FEW3 P1 00:23]、[BV1Rtut6FEW3 P1 00:24]、[BV1Rtut6FEW3 P1 00:59]、[BV1Rtut6FEW3 P1 01:13]、[BV1Rtut6FEW3 P1 01:14]、[BV1Rtut6FEW3 P1 01:15]",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A0[\"GPC 与 V4 正式发布\"] --> A1[\"接入 Codex\"]\n    A1 --> A2[\"使用 40 轮提示词\"]\n    A2 --> A3[\"跑通 300 万行数据分析\"]\n    A3 --> A4[\"生成可追溯报告\"]"
+        },
+        {
+          "title": "项目三步架构",
+          "code": "flowchart LR\n    S1[\"第一步：DeepSeek V4 调用 & Codex 配置\"] --> S2[\"接入四类数据源\"]\n    S2 --> S3[\"建立统一数据资产\"]\n    S3 --> S4[\"第二步：配置项目规则、skills 与分析工具\"]\n    S4 --> S5[\"Agent 自动查数、清洗、建模、画图、脚本\"]\n    S5 --> S6[\"在沙盒中只读运行数据库\"]\n    S6 --> S7[\"第三步：渲染图表 & 多版本报告\"]\n    S7 --> S8[\"通过 MCP 完成视觉审查 & 自动截图、复验\"]"
+        },
+        {
+          "title": "数据分析与报告链路",
+          "code": "flowchart TD\n    D0[\"读取 300 万行数据\"] --> D1[\"运行 Python 脚本\"]\n    D1 --> D2[\"自动查数、清洗、建模\"]\n    D2 --> D3[\"生成图表与可视化\"]\n    D3 --> D4[\"生成多版本报告\"]\n    D4 --> D5[\"追溯结论来源\"]\n    D5 --> D6[\"支持修改 & 回滚\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T04:43:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 接入 Codex 实战知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A0[\"GPC 与 V4 正式发布\"] --> A1[\"接入 Codex\"]\n    A1 --> A2[\"使用 40 轮提示词\"]\n    A2 --> A3[\"跑通 300 万行数据分析\"]\n    A3 --> A4[\"生成可追溯报告\"]\n```\n证据: [BV1Rtut6FEW3 P1 00:00]、[BV1Rtut6FEW3 P1 00:02]、[BV1Rtut6FEW3 P1 00:03]、[BV1Rtut6FEW3 P1 00:12]\n\n## 项目三步架构\n```mermaid\nflowchart LR\n    S1[\"第一步：DeepSeek V4 调用 & Codex 配置\"] --> S2[\"接入四类数据源\"]\n    S2 --> S3[\"建立统一数据资产\"]\n    S3 --> S4[\"第二步：配置项目规则、skills 与分析工具\"]\n    S4 --> S5[\"Agent 自动查数、清洗、建模、画图、脚本\"]\n    S5 --> S6[\"在沙盒中只读运行数据库\"]\n    S6 --> S7[\"第三步：渲染图表 & 多版本报告\"]\n    S7 --> S8[\"通过 MCP 完成视觉审查 & 自动截图、复验\"]\n```\n证据: [BV1Rtut6FEW3 P1 00:43]、[BV1Rtut6FEW3 P1 00:46]、[BV1Rtut6FEW3 P1 00:48]、[BV1Rtut6FEW3 P1 00:50]、[BV1Rtut6FEW3 P1 00:52]、[BV1Rtut6FEW3 P1 00:56]、[BV1Rtut6FEW3 P1 00:58]、[BV1Rtut6FEW3 P1 01:01]\n\n## 数据分析与报告链路\n```mermaid\nflowchart TD\n    D0[\"读取 300 万行数据\"] --> D1[\"运行 Python 脚本\"]\n    D1 --> D2[\"自动查数、清洗、建模\"]\n    D2 --> D3[\"生成图表与可视化\"]\n    D3 --> D4[\"生成多版本报告\"]\n    D4 --> D5[\"追溯结论来源\"]\n    D5 --> D6[\"支持修改 & 回滚\"]\n```\n证据: [BV1Rtut6FEW3 P1 00:20]、[BV1Rtut6FEW3 P1 00:22]、[BV1Rtut6FEW3 P1 00:23]、[BV1Rtut6FEW3 P1 00:24]、[BV1Rtut6FEW3 P1 00:59]、[BV1Rtut6FEW3 P1 01:13]、[BV1Rtut6FEW3 P1 01:14]、[BV1Rtut6FEW3 P1 01:15]",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A0[\"GPC 与 V4 正式发布\"] --> A1[\"接入 Codex\"]\n    A1 --> A2[\"使用 40 轮提示词\"]\n    A2 --> A3[\"跑通 300 万行数据分析\"]\n    A3 --> A4[\"生成可追溯报告\"]"
+    },
+    {
+      "title": "项目三步架构",
+      "code": "flowchart LR\n    S1[\"第一步：DeepSeek V4 调用 & Codex 配置\"] --> S2[\"接入四类数据源\"]\n    S2 --> S3[\"建立统一数据资产\"]\n    S3 --> S4[\"第二步：配置项目规则、skills 与分析工具\"]\n    S4 --> S5[\"Agent 自动查数、清洗、建模、画图、脚本\"]\n    S5 --> S6[\"在沙盒中只读运行数据库\"]\n    S6 --> S7[\"第三步：渲染图表 & 多版本报告\"]\n    S7 --> S8[\"通过 MCP 完成视觉审查 & 自动截图、复验\"]"
+    },
+    {
+      "title": "数据分析与报告链路",
+      "code": "flowchart TD\n    D0[\"读取 300 万行数据\"] --> D1[\"运行 Python 脚本\"]\n    D1 --> D2[\"自动查数、清洗、建模\"]\n    D2 --> D3[\"生成图表与可视化\"]\n    D3 --> D4[\"生成多版本报告\"]\n    D4 --> D5[\"追溯结论来源\"]\n    D5 --> D6[\"支持修改 & 回滚\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T04:43:24+00:00"
+}

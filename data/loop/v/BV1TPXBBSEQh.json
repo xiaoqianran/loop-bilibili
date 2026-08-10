@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1TPXBBSEQh",
+  "title": "别再让敌人复活了！Godot 4.6 持久化数据系统，零基础也能搞定场景切换",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4543,
+  "text": "你可以从描述中获取免费下载的待审ass链接以保存敌人的生命值\n并在切换场景时阻止敌人重生\n实现场景间数据持久化\n我们首先创建一个脚本\n并在脚本标签下存储需要跨场景传递的数据\n前往文件新建脚本\n将其命名为持久化数据并创建，该脚本将在游戏后台运行\n我们现在将存储和处理需要跨场景传递的数据\n为了让脚本在后台运行并保持启动状态\n即使切换场景或重新加载当前场景\n前往全局设置下的项目设置（文件夹图标）\n选择持久化数据gd脚本并打开\n然后点击添加\n这将使脚本成为全局脚本\n从启动游戏开始在后台持续运行\n与当前激活场景独立运行\n另外\n请注意左侧名称是我们在游戏中其他脚本引用的标识\n从其他脚本中调用\n此外\n如果你想查看后台运行的脚本效果\n按下任意播放按钮\n在左侧远程视图中\n可以看到当前场景的节点结构\n以及独立的持久化数据脚本\n之所以是基础节点是因为我们在脚本中进行了扩展\n现在在持久化数据脚本内部\n首先定义一个名为data的变量\n该变量为字典类型\n字典允许我们通过名称关联值\n便于识别不同场景节点对应的数据\n我们还会大量使用字典\n并在字典中存储大量值\n而非使用数组\n因为字典的取值速度更快\n无论有多少条目都得益于哈希机制\n使系统性能更高效\n相比使用单一变量存储大量数据\n如果我们使用数组的话\n我们将创建大量自定义函数\n首先创建一个生成数据条目名称的辅助函数\n函数内有一个内置变量node_path_identifier\n接收需要保存启动状态的节点路径\n该函数将返回字符串\n这意味着我们可以调用此函数\n并确保返回字符串值\n使用return语句\n同时在函数名前添加下划线\n避免出现在自动补全下拉列表中\n因为我们需要仅在本脚本中使用此函数\n并非指向此全局脚本的敌方脚本\n我们立即返回当前活动场景文件路径的字符串转换\nGettree获取场景的核心部分\n当前场景获取当前加载的场景文件名称\n例如\n如果你要获取房间一tcn的文件\n则get path将获取文件路径\n这意味着很可能返回res冒号斜杠\n斜杠\n然后是房间一tcn\n这是我的房间的文件路径\n游戏中的一个场景\n然后添加一个额外的斜杠\n以便将场景路径与敌方名称分开\n确保如果敌方名称为房间一敌人\n我们不会出现错误或命名冲突\n最后传递一个节点路径标识变量\n这是场景内节点的路径\n使用节点路径也很重要\n而不是仅仅获取节点名称\n以确保即使存在敌方节点\n然后另一个有子节点也叫敌方的节点\n使用get one会被调用为敌方\n而另一个则为no two d斜杠敌方\n或根据父节点名称\n确保分离节点\n即使场景内名称完全相同\n完成设置后\n我将建立脚本中使用的所有函数\n这包括哈希函数\n获取函数\n存储函数\n和移除函数，每个功能分别用于添加单个值或多个值\n在添加单个条目时使用，而添加多个值时使用\n我们将有这种区别\n当存储数据时\n我们将存储单个值\n如布尔值、字符串\n整数\n浮点数\n或其他类型\n或存储包含多个值的完整字典\n但从脚本视角来看\n当我们存储单个值时\n只需将其封装在独立字典中\n以便与完整字典处理方式一致\n简化整体代码\n暂时返回任意值以避免脚本错误\n虽然后续会用实际代码填充这些函数\n之后我也会详细说明命名规则\n当我们逐一处理每一个\n这确实有功能\n这些将用于判断\n是否存在我们节点名称的条目\n或字典中名为节点的特定值\n或者我们检查的hadata条目函数\n如果数据字典下有节点名称的条目或字符串\n正如你所见\n我们使用辅助函数简化并清理代码\n由于该函数使用返回\n此行将等于返回值，类似变量\n但每次调用或编写此代码行\n函数将运行自身代码\n函数的值将更新，这\n如果数据变量有此条目\n我们返回true\n否则返回false\n这里无需写else语句\n因为返回会跳过下方所有代码\n如果我们返回true\n则此返回false整体不会运行\n避免使用else语句的需要\n使代码比检查更整洁\n如果特定值存在于条目中\n我们检查该节点是否存在条目，使用刚创建的函数\n如果存在并使用获取数据条目函数\n这是我们即将编写的函数\n该函数将简单返回与节点关联的字典\n然后检查该字典中是否有值名称\n如果有则返回true\n否则返回false\n如果任一条件不成立，再次强调\n无论存储字典还是单个值\n节点名称下将有字典，单值情况\n仅是包含该值的字典\n意味着两种函数均可用于任一情况\n存储数据如健康位置后\n我们可以使用has data value判断健康值是否存在\n并使用house data entry判断\n是否已存储字典或该节点下的任何值\n若存储true/false字符串\n整数或直接在节点名称下\n则只需检查has data entry条目\n无需为获取数据函数传递值名称\n若要获取整个字典条目\n首先需检查节点名称下的条目是否存在\n若存在，使用返回使函数等于返回值\n即数据变量在节点名称位置的值\n如果数据条目不存在\n则返回空字典\n然后获取数据值\n我们执行与之前相同的操作\n不再检查hadata值函数\n传递值的名称\n然后返回get data条目以获取节点的字典条目\n接着从字典中获取我们正在搜索的值\n同样地\n当我们存储单个值时\n我们将它存储在字典中\n否则返回null\n因为这意味着该节点的数据变量中没有值\n请注意此函数没有类型参数\n对于函数应等于或返回的内容\n这是因为我们希望返回任何存储的值\n包括向量\n两个整数\n球体字符串\n等等\n这意味着此处无法使用类型参数，返回值可能是任何类型\n存储函数将包含类型参数或void\n表示函数不返回任何值\n对于存储数据条目\n我们只需获取节点名称处的数据并设为值\n如同字典操作\n如果你想向其中添加新值\n只需将字典视为已有条目\n如果不存在的话\n它会自动创建条目\n还需注意此函数会覆盖提供节点的先前条目\n这也是为何你可能需要使用其他函数\n比如has data entry函数\n你从脚本中调用此函数时\n你将替换之前的字典设置\n这也是存储数据值函数存在的原因\n我们检查节点是否存在条目\n如果存在的话\n我们将获取该条目及特定值的位置\n从而添加我们的值\n如果我们有敌人条目并想在存储其他数据后保存防御值\n只需在现有条目下添加名为防御的值\n如果该名称下没有条目\n则使用存储数据条目函数添加值\n将值和名称存入字典\n通过大括号以名称开头\n然后加冒号\n接着以这种方式设置条目值\n数据变量中的每个条目都是字典\n简化代码并明确数据变量每个直接条目的预期\n还需注意我们未为值变量提供类型参数\n这是因为我们希望接受任何类型的值\n无论是什么移除函数\n它们都将具有类型或void，因为不会返回任何值\n而对于移除数据条目函数\n移除条目将从数据变量中删除整个条目\n因此我们只需使用has data entry检查条目是否存在\n如果存在的话\n则在节点的条目上对数据变量使用内置的erase函数\n要移除特定数据值\n检查所提供节点条目下是否存在该值\n请注意，has data value也会为你检查条目是否存在\n因此在获取数据条目时无需重复检查\n并使用race而非数据变量\n然后移除特定值\n此外我们对刚移除值的条目进行额外检查\n并检查该条目是否还有剩余值\n如果不存在的话\n则完全移除该条目\n因为数据变量中不需要空条目\n这是通过检查条目字典的大小实现的\n对于字典中的每个值\n字典大小会增加1\n所以0表示字典为空\n最后完成脚本逻辑\n我们将创建一个名为clear all data的函数\n只需获取数据变量并调用clear函数\n移除所有条目和值\n我们为此创建了独立函数\n尽管只有一行代码\n因为你不应直接操作数据变量\n应仅使用此处创建的各种函数\n此外\n该脚本的核心思想是保存数据如生命值\n或敌人的存活状态等需要跨场景持久化的数据\n当到达无法返回的特定位置时\n无法继续旅行或进入游戏新章节或全新关卡\n只需清除所有数据并开始存储新数据\n根据当前所在的章节或关卡\n最后需记住该脚本会始终在游戏后台运行\n如果你想保存数据\n以便玩家关闭并重新打开游戏时\n仍保留已击败的敌人信息\n只需将数据变量传递给安全系统\n或在脚本内添加安全系统\n现在在游戏使用此持久化数据系统的示例包括访问敌人脚本\n若只需保存类似生命值的变量\n我们可在退出树函数中使用entry和exit函数\n这会在场景切换时自然触发\n或当节点q释放时\n通过获取持久化数据脚本保存单个值\n使用项目中预设的名称\n设置全局标签\n然后我们调用存储数据值函数\n传递此节点的路径\n这比使用节点名称更重要\n以确保同一层级场景下不会出现同名冲突\n然后传递我们为保存值指定的名称\n然后我刚刚传递的值\n无论我的健康变量等于什么\n然后在入口函数内部\n当场景加载时触发\n或当节点生成时触发\n创建临时变量存储从获取数据值函数得到的值\n对于获取数据值函数\n我们使用此节点的路径和之前为值设定的名称\n我们将检查该值是否为空\n如果为空则使用\n返回跳过以下所有代码\n这表示该值尚未设置\n表明退出树函数已至少运行一次\n否则如果值不为空\n让我更新健康变量\n因为我想要删除我的敌人\n如果他们的生命值为零或更低\n然后我会处理相关代码\n确保不让敌人继续存在\n在内部\n持久化数据为零\n现在如果想在单个节点下保存多个值\n有两种方法可以实现\n两者在退出树函数中的代码相同\n在此情况下我们同时使用进入和退出树函数\n我们直接获取持久化数据脚本\n调用存储数据入口函数\n请求此节点的路径\n接着传递我们定义的字典\n使用大括号包含每个值的名称\n以及它们对应的值\n传递此节点的路径非常重要\n因为我们不希望使用节点名称\n以确保同一层级场景下不会出现同名冲突\n同时确保每个值末尾添加逗号\n虽然最后一个值无需添加\n我们可以在入口函数中选择两种加载方式\n第一种是假设所有获取的值始终存在\n意味着不会从入口中移除某个值\n或为该入口添加新值\n创建变量保存我们刚使用的入口\n通过获取数据入口\n如果入口等于空字典\n表示该节点的入口不存在\n然后我们只需使用return跳过下面的所有代码\n如果条目已存在\n我们可以更新各种值\n比如我的健康变量和全局位置通过条目\n使用我们在退出树函数中之前声明的名称获取值\n再次因为我希望敌人使用队列自由\n如果他们为零\n或者我这里也有同样的代码\n现在\n在打算移除单个值的情况下\n或稍后在代码中添加单个值\n但仍希望该条目保留其他不变的值\n因此我们执行与单值示例类似的代码\n其中我们使用\n在每个单独值上使用获取数据值\n本质上将条目\n视为已添加的多个单值集合\n并使用与之前相同的逻辑\n这通常就是持久化数据系统所需全部内容\n你可以发现获取全局脚本的名称\n我们在项目设置的全局标签中定义过\n然后你要使用的函数\n务必使用获取路径\n而不是节点名称\n通常应避免直接获取数据变量\n此外\n如果不希望使用\n你无需使用进入和退出树函数\n我选择使用因为进入树会在节点生成时激活\n或当关卡加载时\n退出树则在场景队列释放或关卡切换时运行\n确保我不必每次健康变量变化时存储数据\n或当节点即将队列释放时\n现在\n你已拥有可用于存储游戏任意数据的持久化系统\n并避免在切换或重载场景时重置\n例如阻止敌人在切换场景时重生\n你可以将此系统添加到任何Godot游戏\n别忘了在描述中分享项目文件",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TPXBBSEQh",
+  "published_at": "1774935000",
+  "fetched_at": "2026-08-07T02:21:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 持久化数据系统知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    GS[\"持久化数据脚本 (全局)\"] --> DD[\"data (Dictionary)\"]\n    GS --> FC[\"核心函数集合\"]\n    FC --> DD\n    SS[\"场景切换\"] --> GS\n    ES[\"敌人存活状态\"] --> DD\n    PD[\"玩家数据\"] --> DD\n    SL[\"保存/加载\"] --> DD\n    GB[\"游戏后台运行\"] --> GS\n```\n\n## 核心函数分类\n\n```mermaid\nflowchart TD\n    ADD[\"add_data_entry (单条)\"] --> DD[\"data (Dictionary)\"]\n    ADDS[\"add_data_entries (多条)\"] --> DD\n    GET[\"get_data_entry\"] --> DD\n    HAS[\"has_data_entry\"] --> DD\n    REM[\"remove_data_entry\"] --> DD\n    CLR[\"clear_all_data\"] --> DD\n    HASH[\"hash_function\"] --> ADD\n    HELP[\"_node_path_identifier\"] --> ADD\n```\n\n## 场景切换数据流\n\n```mermaid\nflowchart TD\n    EXIT[\"退出树函数\"] --> STOREH[\"存储健康值\"]\n    EXIT --> STOREA[\"存储其他数据\"]\n    STOREH --> PS[\"持久化数据脚本\"]\n    STOREA --> PS\n    PS --> DD[\"data (Dictionary)\"]\n    ENTER[\"进入树函数\"] --> GETH[\"获取健康值\"]\n    GETH --> PS\n    GETH --> DD\n    GETH --> APPLH[\"应用健康值\"]\n    APPLH --> ENREM[\"移除死亡敌人\"]\n    ENREM --> PS\n```\n\n## 节点唯一标识策略\n\n```mermaid\nflowchart TD\n    NP[\"节点完整路径\"] --> ID[\"_node_path_identifier\"]\n    NN[\"节点名称\"] --> ID\n    ID --> UK[\"唯一键 (路径+名称)\"]\n    SLASH[\"/ 分隔符\"] --> UK\n    UK --> DE[\"字典条目\"]\n```\n\n## 单节点多值存储示例\n\n```mermaid\nflowchart TD\n    EP[\"节点路径\"] --> EN[\"store_data_entry\"]\n    EN --> MV[\"多值字典\"]\n    GV[\"get_data_entry\"] --> MV\n    UP[\"update_data_entry\"] --> MV\n    CLR[\"clear_all_data\"] --> MV\n    MV --> EX[\"示例: 生命值、位置、状态\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    GS[\"持久化数据脚本 (全局)\"] --> DD[\"data (Dictionary)\"]\n    GS --> FC[\"核心函数集合\"]\n    FC --> DD\n    SS[\"场景切换\"] --> GS\n    ES[\"敌人存活状态\"] --> DD\n    PD[\"玩家数据\"] --> DD\n    SL[\"保存/加载\"] --> DD\n    GB[\"游戏后台运行\"] --> GS"
+        },
+        {
+          "title": "核心函数分类",
+          "code": "flowchart TD\n    ADD[\"add_data_entry (单条)\"] --> DD[\"data (Dictionary)\"]\n    ADDS[\"add_data_entries (多条)\"] --> DD\n    GET[\"get_data_entry\"] --> DD\n    HAS[\"has_data_entry\"] --> DD\n    REM[\"remove_data_entry\"] --> DD\n    CLR[\"clear_all_data\"] --> DD\n    HASH[\"hash_function\"] --> ADD\n    HELP[\"_node_path_identifier\"] --> ADD"
+        },
+        {
+          "title": "场景切换数据流",
+          "code": "flowchart TD\n    EXIT[\"退出树函数\"] --> STOREH[\"存储健康值\"]\n    EXIT --> STOREA[\"存储其他数据\"]\n    STOREH --> PS[\"持久化数据脚本\"]\n    STOREA --> PS\n    PS --> DD[\"data (Dictionary)\"]\n    ENTER[\"进入树函数\"] --> GETH[\"获取健康值\"]\n    GETH --> PS\n    GETH --> DD\n    GETH --> APPLH[\"应用健康值\"]\n    APPLH --> ENREM[\"移除死亡敌人\"]\n    ENREM --> PS"
+        },
+        {
+          "title": "节点唯一标识策略",
+          "code": "flowchart TD\n    NP[\"节点完整路径\"] --> ID[\"_node_path_identifier\"]\n    NN[\"节点名称\"] --> ID\n    ID --> UK[\"唯一键 (路径+名称)\"]\n    SLASH[\"/ 分隔符\"] --> UK\n    UK --> DE[\"字典条目\"]"
+        },
+        {
+          "title": "单节点多值存储示例",
+          "code": "flowchart TD\n    EP[\"节点路径\"] --> EN[\"store_data_entry\"]\n    EN --> MV[\"多值字典\"]\n    GV[\"get_data_entry\"] --> MV\n    UP[\"update_data_entry\"] --> MV\n    CLR[\"clear_all_data\"] --> MV\n    MV --> EX[\"示例: 生命值、位置、状态\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T02:21:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 持久化数据系统知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    GS[\"持久化数据脚本 (全局)\"] --> DD[\"data (Dictionary)\"]\n    GS --> FC[\"核心函数集合\"]\n    FC --> DD\n    SS[\"场景切换\"] --> GS\n    ES[\"敌人存活状态\"] --> DD\n    PD[\"玩家数据\"] --> DD\n    SL[\"保存/加载\"] --> DD\n    GB[\"游戏后台运行\"] --> GS\n```\n\n## 核心函数分类\n\n```mermaid\nflowchart TD\n    ADD[\"add_data_entry (单条)\"] --> DD[\"data (Dictionary)\"]\n    ADDS[\"add_data_entries (多条)\"] --> DD\n    GET[\"get_data_entry\"] --> DD\n    HAS[\"has_data_entry\"] --> DD\n    REM[\"remove_data_entry\"] --> DD\n    CLR[\"clear_all_data\"] --> DD\n    HASH[\"hash_function\"] --> ADD\n    HELP[\"_node_path_identifier\"] --> ADD\n```\n\n## 场景切换数据流\n\n```mermaid\nflowchart TD\n    EXIT[\"退出树函数\"] --> STOREH[\"存储健康值\"]\n    EXIT --> STOREA[\"存储其他数据\"]\n    STOREH --> PS[\"持久化数据脚本\"]\n    STOREA --> PS\n    PS --> DD[\"data (Dictionary)\"]\n    ENTER[\"进入树函数\"] --> GETH[\"获取健康值\"]\n    GETH --> PS\n    GETH --> DD\n    GETH --> APPLH[\"应用健康值\"]\n    APPLH --> ENREM[\"移除死亡敌人\"]\n    ENREM --> PS\n```\n\n## 节点唯一标识策略\n\n```mermaid\nflowchart TD\n    NP[\"节点完整路径\"] --> ID[\"_node_path_identifier\"]\n    NN[\"节点名称\"] --> ID\n    ID --> UK[\"唯一键 (路径+名称)\"]\n    SLASH[\"/ 分隔符\"] --> UK\n    UK --> DE[\"字典条目\"]\n```\n\n## 单节点多值存储示例\n\n```mermaid\nflowchart TD\n    EP[\"节点路径\"] --> EN[\"store_data_entry\"]\n    EN --> MV[\"多值字典\"]\n    GV[\"get_data_entry\"] --> MV\n    UP[\"update_data_entry\"] --> MV\n    CLR[\"clear_all_data\"] --> MV\n    MV --> EX[\"示例: 生命值、位置、状态\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    GS[\"持久化数据脚本 (全局)\"] --> DD[\"data (Dictionary)\"]\n    GS --> FC[\"核心函数集合\"]\n    FC --> DD\n    SS[\"场景切换\"] --> GS\n    ES[\"敌人存活状态\"] --> DD\n    PD[\"玩家数据\"] --> DD\n    SL[\"保存/加载\"] --> DD\n    GB[\"游戏后台运行\"] --> GS"
+    },
+    {
+      "title": "核心函数分类",
+      "code": "flowchart TD\n    ADD[\"add_data_entry (单条)\"] --> DD[\"data (Dictionary)\"]\n    ADDS[\"add_data_entries (多条)\"] --> DD\n    GET[\"get_data_entry\"] --> DD\n    HAS[\"has_data_entry\"] --> DD\n    REM[\"remove_data_entry\"] --> DD\n    CLR[\"clear_all_data\"] --> DD\n    HASH[\"hash_function\"] --> ADD\n    HELP[\"_node_path_identifier\"] --> ADD"
+    },
+    {
+      "title": "场景切换数据流",
+      "code": "flowchart TD\n    EXIT[\"退出树函数\"] --> STOREH[\"存储健康值\"]\n    EXIT --> STOREA[\"存储其他数据\"]\n    STOREH --> PS[\"持久化数据脚本\"]\n    STOREA --> PS\n    PS --> DD[\"data (Dictionary)\"]\n    ENTER[\"进入树函数\"] --> GETH[\"获取健康值\"]\n    GETH --> PS\n    GETH --> DD\n    GETH --> APPLH[\"应用健康值\"]\n    APPLH --> ENREM[\"移除死亡敌人\"]\n    ENREM --> PS"
+    },
+    {
+      "title": "节点唯一标识策略",
+      "code": "flowchart TD\n    NP[\"节点完整路径\"] --> ID[\"_node_path_identifier\"]\n    NN[\"节点名称\"] --> ID\n    ID --> UK[\"唯一键 (路径+名称)\"]\n    SLASH[\"/ 分隔符\"] --> UK\n    UK --> DE[\"字典条目\"]"
+    },
+    {
+      "title": "单节点多值存储示例",
+      "code": "flowchart TD\n    EP[\"节点路径\"] --> EN[\"store_data_entry\"]\n    EN --> MV[\"多值字典\"]\n    GV[\"get_data_entry\"] --> MV\n    UP[\"update_data_entry\"] --> MV\n    CLR[\"clear_all_data\"] --> MV\n    MV --> EX[\"示例: 生命值、位置、状态\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:21:50+00:00"
+}

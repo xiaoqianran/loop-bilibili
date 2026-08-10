@@ -1,0 +1,66 @@
+{
+  "bvid": "BV18KocB4EK4",
+  "title": "装好 Claude Code，却不知道怎么用？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2936,
+  "text": "当你花了半个小时装好了COCODE\n然后你打开了对话框\n你陷入了沉默\n命令行黑框框\n我又不是程序员\n其实不止你这样\n很多人看到这里就想放弃了\n那本期视频呢是对小白的新手入门指南\n带你理解color code核心机制的同时啊\n知道一些必要学会的技术操作\n建议点赞收藏\n反复观看\n如果你还没有安装呢\n先看上一期视频\n装好之后再回来\n那么接着往下走\n一是环境准备在vs code里面使用COCODE\n很多人看到命令行工具这几个字就想关掉页面\n我理解这个黑框框确实不太友好\n但其实有个对小白更友好的方式\n那就是在vs code里面使用cocode vs code\n你可以理解成程序员专用的word\n左边是文件\n右边是编辑区\n界面清晰\n操作直观\n新手也能很快上手\n安装也很简单\n去vs go的官网下载安装\n打开之后左侧的插件图标搜索掐例子\n装完重启界面就变成了中文了\n然后继续搜索COCODE\n找到带官方标识的那个点安装\n稍等一会就安装好了\n那装完之后呢\n左侧会出现卡扣的图标\n注意要在cc4witch里面打开设置\n往下滑\n把应用到COCODE插件打开\n这样你才能在vs code里面用到COCODE\n然后再回到vs code\n我们点开QQ图标\n在右边用自然语言描述你的需求就行了\n二理解核心COCODE的核心机制\n在正式开始之前呢\n我们先来了解一下COCODE的核心机制\nagent tic loop代理循环\n用来做一个个人网站来举例\n首先是读取上下文\n它会扫描你的项目文件\n读懂这是个什么项目\n用的什么技术\n现在是什么状态\n比如我的项目里已经有了一个HTML文件\n他会读懂这个是个网页的项目\n用的是什么\n然后现在做到哪一步了\n然后是拆解任务\n他会分析你的需求\n把需求拆成一步一步的执行计划\n你说我想做一个个人网站\n要有自我介绍和作品展示\n他会自己弄清楚先做什么后做什么\n不需要你来安排顺序\n第三步是动手执行\n创建文件\n写代码\n安装依赖真实操作你的电脑页面结构样式交互\n一个个给你搭出来\n执行完成之后呢\n就是验证结果自己检查看有没有问题\n就比如写代码\n他会自己检查一遍\n看语法有没有问题\n逻辑有没有问题\n最后是自我纠错\n发现问题他会自己改\n改完再验证\n循环下去\n直到搞定页面\n哪里报错\n他就自己修\n修完再检查\n直到你的网站能够跑起来\n那知道了它怎么运转\n那我们接下来看看怎么操作\n三开始之前\n我们先在桌面新建一个文件夹\n用来存储项目文件之后呢\n我们打开vs code\n然后点击资源管理器\n打开我们刚刚新建的文件夹\n第一选好模式或者使用superpowers插件\n新手刚开始呢先别着急\n用COCODE写代码\n很多人上来直接说需求COCODE刷刷刷干了一堆\n结果发现方向不对\n改起来比重新做还费劲\n还是拿个人网站举例\n你上来就说帮我做一个个人网站\n他可能直接给你搭了一套你完全不喜欢的风格\n改起来比重新做还麻烦\n那vs code里面的COCODE左下角有三种模式\n正确的做法是\n开始之前呢先用play model来梳理需求文档\n确认方向没问题之后\n我们再切换到edit automatically来制作项目\n不过呢这里有一个更好的方案\n就是使用super powers这个插件\n你这个插件相当于给你的AI\n装了一个资深的工程师\n安装它\n你就可以体验一个资深工程的工作方式\n那我们输入这串指令\n回车点击market places\n在这里输入superpowers的GITHUB地址\n点击添加\n再回到插件\n点击安装\n这里直接选第一个选项\n看到前面有个绿色的小点\n就表示安装成功\n那装完之后呢\n在对话框输帮我开发一个个人网站\n回车\n那他不会马上动手\n而是开始问你问题\n几个页面\n什么风格给谁看\n把需求摸清楚之后\n再给你一份完整的方案\n你确认之后\n他才开始\n但这个流程对新人来说友好很多\nAI来引导你把需求想清楚\n引导你一步步把整个项目做好\n第二告诉他你的项目是什么\n还记得aintec loop的第一步吗\n读取上下文\n他每次开始任务都要先读你的项目\n但如果什么都没有告诉他的话\n他只能自己慢慢摸索\n摸索不准后面所有步骤可能都会跑偏\n在对话框输入斜杠INIT回车\n就是解决这个问题的\n还是拿个人网站举例\n跑完之后自动生成的一份co点MD文件里面\n把整个项目都梳理了一遍\n终端黑客风格\n其中不仅介绍了项目的启动方式啊\n技术框架\n还有布局结构和组件的清单\n这些都是给coco的项目说明书\n从此之后每次新开会画coo\n第一步就是读这个文件\n快速了解整个项目\n不用你反复交代上下文\n不过新手刚开始文件夹是空的\n这个命令就没什么用\n等你项目慢慢有了内容\n记得回来用上这个命令非常的重要\n四干活过程中\n在干活的过程中呢\n这里有几个操作和命令\n新手必须知道第一个A的指定文件\n在对话框输it会弹出项目里的文件列表\n它的作用是告诉去读哪个文件\n然后基于那个文件的内容来回答你或执行操作\n还是拿个人网站举例\n比如我让它实现主页文字出现效果\n参考这个文件\n它读取上下文\n直接锁定那个文件\n按照我指定的要求帮我改成了我想要的效果\n第二个是ESC键打断COCOD跑代码的时候啊\n有时候编码的方向本身就错了\n越跑越偏\n发现不对\n直接按ESC键打乱他正在跑的循环\n不要等它跑完再说\n方向错了\n跑完只会让问题更大\n再说几个常用的指令\n这几个需要主动输入\n第一个是斜杠rewind回退\n按了ESC键之后呢\n如果想撤销他刚才做的所有操作\n回到动手之前的状态\n输入斜杠rewind\n它会把文件和对话都回归到你指定的步骤\n比手动一个个撤销省事的多\n第二个斜杠clear清空\n每次开始一个新任务\n先输入斜杠clear\n清掉所有的对话历史\n让他从一个干净的状态重新开始\n如果是带上一个任务的历史去做新任务\n那他上下文里面全是无关的东西\n第一步读取上下文就读进来一堆干扰\n消耗token不说\n还可能会乱改\n第三个是斜杠compact压缩\n为了保证AI能够读取到有效的信息呢\n节省token\n当你的上下文已经达到60%的时候呢\n使用compact压缩一下\nCOCODE会把对话历史压缩成一份摘要\n只留下关键信息\n释放大量空间\n让它继续按照你想的方向推进\n第四个写入永久记忆\n有些要求你告诉他之后呢\n他会一会就忘记了\n下次又得重新说一遍\n那遇到这种情况呢\n直接说记住这条规则\n把它写入到memory文件\n就比如说导航栏不要用蓝色\n把这个要求写入memory文件\n它会把这个要求永存下来\n之后每次启动都自动带上\n再也不用反复的提醒\n那之后你想打开也可以直接输入\n帮我打开记忆管理文件\n它就是会直接出现那个memory点MD文件\n点击即可\n最后说一个小技巧\n语音输入你可以安装闪电书\n下载成功之后呢\n直接按照指引操作安装就行\n这里我选择使用API密钥\n这里我买的是豆包的语言大模型\n所以选择火山引擎\n它会自动跳转\n我们只需要把API id和xx token复制到闪电\n说测试成功就好了\n装上之后呢\n直接对着麦克风输入\n有需求言出法\n随连打字都省了\n好以上就是本期COCODE的基础教学指南\n那么下一期呢\n我会给大家带来COCODE的进阶教学指南",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18KocB4EK4",
+  "published_at": "1776651000",
+  "fetched_at": "2026-08-10T06:34:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# COCODE 使用指南知识图谱\n\n## 核心机制循环\n```mermaid\nflowchart TD\n    A[\"读取上下文\"] --> B[\"拆解任务\"]\n    B --> C[\"动手执行\"]\n    C --> D[\"验证结果\"]\n    D --> E[\"自我纠错\"]\n    E --> A\n```\n[BV18KocB4EK4 P1 01:26] 读取上下文 → [BV18KocB4EK4 P1 01:42] 拆解任务 → [BV18KocB4EK4 P1 01:55] 动手执行 → [BV18KocB4EK4 P1 02:03] 验证结果 → [BV18KocB4EK4 P1 02:10] 自我纠错\n\n## VS Code 中的 COCODE 集成\n```mermaid\nflowchart LR\n    A[\"安装 VS Code\"] --> B[\"在插件市场搜索并安装 COCODE\"]\n    B --> C[\"在设置中启用 COCODE 插件\"]\n    C --> D[\"打开左侧 COCODE 面板\"]\n    D --> E[\"使用 Play Model 梳理需求\"]\n    E --> F[\"切换 Edit Automatically 开始项目\"]\n    F --> G[\"可选：安装 Superpowers 插件提升工程师体验\"]\n```\n[BV18KocB4EK4 P1 00:44] 安装 VS Code → [BV18KocB4EK4 P1 00:55] 安装 COCODE → [BV18KocB4EK4 P1 01:11] 启用插件 → [BV18KocB4EK4 P1 01:16] 打开面板 → [BV18KocB4EK4 P1 03:02] Play Model → [BV18KocB4EK4 P1 03:07] Edit Automatically → [BV18KocB4EK4 P1 03:12] Superpowers 插件\n\n## 常用指令与交互流程\n```mermaid\nflowchart TD\n    A[\"/init 初始化项目上下文\"] --> B[\"/clear 清空对话历史\"]\n    B --> C[\"/rewind 回退到指定步骤\"]\n    C --> D[\"/compact 压缩对话以节省 token\"]\n    D --> E[\"/memory 写入永久记忆规则\"]\n    E --> F[\"ESC 中断当前执行循环\"]\n```\n[BV18KocB4EK4 P1 04:16] /init → [BV18KocB4EK4 P1 05:51] /clear → [BV18KocB4EK4 P1 05:36] /rewind → [BV18KocB4EK4 P1 06:09] /compact → [BV18KocB4EK4 P1 06:34] /memory → [BV18KocB4EK4 P1 05:21] ESC",
+      "diagrams": [
+        {
+          "title": "核心机制循环",
+          "code": "flowchart TD\n    A[\"读取上下文\"] --> B[\"拆解任务\"]\n    B --> C[\"动手执行\"]\n    C --> D[\"验证结果\"]\n    D --> E[\"自我纠错\"]\n    E --> A"
+        },
+        {
+          "title": "VS Code 中的 COCODE 集成",
+          "code": "flowchart LR\n    A[\"安装 VS Code\"] --> B[\"在插件市场搜索并安装 COCODE\"]\n    B --> C[\"在设置中启用 COCODE 插件\"]\n    C --> D[\"打开左侧 COCODE 面板\"]\n    D --> E[\"使用 Play Model 梳理需求\"]\n    E --> F[\"切换 Edit Automatically 开始项目\"]\n    F --> G[\"可选：安装 Superpowers 插件提升工程师体验\"]"
+        },
+        {
+          "title": "常用指令与交互流程",
+          "code": "flowchart TD\n    A[\"/init 初始化项目上下文\"] --> B[\"/clear 清空对话历史\"]\n    B --> C[\"/rewind 回退到指定步骤\"]\n    C --> D[\"/compact 压缩对话以节省 token\"]\n    D --> E[\"/memory 写入永久记忆规则\"]\n    E --> F[\"ESC 中断当前执行循环\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T06:36:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# COCODE 使用指南知识图谱\n\n## 核心机制循环\n```mermaid\nflowchart TD\n    A[\"读取上下文\"] --> B[\"拆解任务\"]\n    B --> C[\"动手执行\"]\n    C --> D[\"验证结果\"]\n    D --> E[\"自我纠错\"]\n    E --> A\n```\n[BV18KocB4EK4 P1 01:26] 读取上下文 → [BV18KocB4EK4 P1 01:42] 拆解任务 → [BV18KocB4EK4 P1 01:55] 动手执行 → [BV18KocB4EK4 P1 02:03] 验证结果 → [BV18KocB4EK4 P1 02:10] 自我纠错\n\n## VS Code 中的 COCODE 集成\n```mermaid\nflowchart LR\n    A[\"安装 VS Code\"] --> B[\"在插件市场搜索并安装 COCODE\"]\n    B --> C[\"在设置中启用 COCODE 插件\"]\n    C --> D[\"打开左侧 COCODE 面板\"]\n    D --> E[\"使用 Play Model 梳理需求\"]\n    E --> F[\"切换 Edit Automatically 开始项目\"]\n    F --> G[\"可选：安装 Superpowers 插件提升工程师体验\"]\n```\n[BV18KocB4EK4 P1 00:44] 安装 VS Code → [BV18KocB4EK4 P1 00:55] 安装 COCODE → [BV18KocB4EK4 P1 01:11] 启用插件 → [BV18KocB4EK4 P1 01:16] 打开面板 → [BV18KocB4EK4 P1 03:02] Play Model → [BV18KocB4EK4 P1 03:07] Edit Automatically → [BV18KocB4EK4 P1 03:12] Superpowers 插件\n\n## 常用指令与交互流程\n```mermaid\nflowchart TD\n    A[\"/init 初始化项目上下文\"] --> B[\"/clear 清空对话历史\"]\n    B --> C[\"/rewind 回退到指定步骤\"]\n    C --> D[\"/compact 压缩对话以节省 token\"]\n    D --> E[\"/memory 写入永久记忆规则\"]\n    E --> F[\"ESC 中断当前执行循环\"]\n```\n[BV18KocB4EK4 P1 04:16] /init → [BV18KocB4EK4 P1 05:51] /clear → [BV18KocB4EK4 P1 05:36] /rewind → [BV18KocB4EK4 P1 06:09] /compact → [BV18KocB4EK4 P1 06:34] /memory → [BV18KocB4EK4 P1 05:21] ESC",
+  "diagrams": [
+    {
+      "title": "核心机制循环",
+      "code": "flowchart TD\n    A[\"读取上下文\"] --> B[\"拆解任务\"]\n    B --> C[\"动手执行\"]\n    C --> D[\"验证结果\"]\n    D --> E[\"自我纠错\"]\n    E --> A"
+    },
+    {
+      "title": "VS Code 中的 COCODE 集成",
+      "code": "flowchart LR\n    A[\"安装 VS Code\"] --> B[\"在插件市场搜索并安装 COCODE\"]\n    B --> C[\"在设置中启用 COCODE 插件\"]\n    C --> D[\"打开左侧 COCODE 面板\"]\n    D --> E[\"使用 Play Model 梳理需求\"]\n    E --> F[\"切换 Edit Automatically 开始项目\"]\n    F --> G[\"可选：安装 Superpowers 插件提升工程师体验\"]"
+    },
+    {
+      "title": "常用指令与交互流程",
+      "code": "flowchart TD\n    A[\"/init 初始化项目上下文\"] --> B[\"/clear 清空对话历史\"]\n    B --> C[\"/rewind 回退到指定步骤\"]\n    C --> D[\"/compact 压缩对话以节省 token\"]\n    D --> E[\"/memory 写入永久记忆规则\"]\n    E --> F[\"ESC 中断当前执行循环\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T06:36:35+00:00"
+}

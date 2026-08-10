@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1AYQdBfEDS",
+  "title": "68. prefill和decode时KV Cache是如何\"堆积\"的？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1196,
+  "text": "今天的问题是\nPREFUSE和decode是kv cash是如何堆积的\n结论先行\nPREFU每次会堆积一个面\n而decode每次会堆积一个条项\n明确这里的堆积指的是逻辑上的\n视觉上的堆积\n而不是物理上的\n因为配置的attention和redx attention\nkv catch在显存当中未必是连续存储的\n那么我们先来看一下PREFU\n假设现在有五个字\n海安宇是谁\n假设每一个字都对应着一个token\n而每一个token都会对应着一个KV\n就比如说海它就对应着K1V1\nan就对应着K2V2\n那么这个只是第一层\n它会要不断的堆积出来后面的层\n那么第二层呢就会在第一层的计算加盖一个面\n加在一个面\n指的就是它是并行算出来的\n意思就是说K1K2K三\n它是可以同时算的\n那么这个点是不同于decode的\ndecode呢它是要必须要先算出来K6\n才能去堆积K7\nOK并且还要明确一个点\n就是不同层之间\n虽然我们都可以把它叫做这个是K5\n这个也是K5\n但是呢它的值是不同的\n那么假设我们堆积完了最后一层\n这个时候呢PREFU它就完成了\n那么还有一个重要的理解就是训练约等于pref\n指的就是说训练它也会有这样的一个\n并行的堆积的一个操作\n还有一个点就是训练是有教师强制的\n这句话用人话来讲\n就是说只做感觉\n不做生存\n只感觉的意思就是说会把最后一个token去掉\n把前面的这些token\n他在最后一层的那个输出叫做X\n让它它投影到此表维度\n然后每一个位置呢都会有一个预测\n比如说是在第一个位置\n他预测了一下这个词\n比如说有0.7的概率是an\n这个字相当于他把后面蒙起来去预测这个安字\n他认为是0.7\n但是呢这个只是一个感觉\n就说他感觉是0.7\n但他不需要真的把那个安字给预测出来\n那么这个就是教师强制\n还有一个点就是训练的时候呢\n它是需要计算损失的\n但是推理的时候呢是不需要计算损失的\n然后这个就是preview\n接下来看一下decode它是如何堆积的\n那么它每次它是堆积出来一个条\n这个的意思就是说\n假设我们现在的这个PREFU呢已经结束了\n然后呢\n我们现在要算出来layer1当中的这个K6\n那么它首先会堆出来这样的一个条\n就是B站\nOK然后呢接下来再往上堆\n它就会把它堆成这样一个条\n然后再堆这个条就堆完B站的这个条呢\n他才能对下一个条\n就是up主这个条就对这一条条\n那么就是说推理呢它是自回归的\n但有个不同点就是用用人话来说\n就是推理是既感觉也生存\n就他不仅要感受一下\n说哦下一个词可能是B站\n他还要真的把B站这个词给预测出来\n然后自回归拼到前面去\n然后进一步的继续生成\n那么举个例子\n比如说假设B站这个词\n它对应的这个最后的那个输出\n我们把它叫做X6\n就是一个向量\n然后呢把它投影到此表维度\n然后呢去预测出来up主\n那么这个投影呢是发生在最后一层的\n那个向量上的\n并且呢他是要去真实的进行预测",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1AYQdBfEDS",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:18:03+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

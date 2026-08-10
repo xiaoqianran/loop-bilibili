@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1kzuJ6SEWT",
+  "title": "DeepSeek即将大幅涨价，大降价的GPT性价比还在提高，国内最新使用方法，超低价使用官网原版gpt-5.6",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 852,
+  "text": "随着deep six新版本发布\n一同入场的是API调用\n价格即将大幅增长\n具体方案还要等进一步通知\n不过可以肯定的是\n大肥鱼不再是便宜货了\n另一方面\nChatGPT却宣布进行80%的超大幅降价\n这下GPT的使用价格比DC还要便宜了\n在主包之前推荐的网站更是可以几毛钱不到\n就有1000000token可用\n国内可直连畅玩官网原版顶配GPT模型\n无套路直接开始演示如何国内直连使用codex\n不需要GPT账号与美国手机号验证\n安装包都给你准备好了\n跟着视频一步一步来都能成功的\n国内网络环境可以直接下载使用\n立即体验\n现在最新的超强AI工具\n下载好的也可以再更新一下\n现在codex几乎每天都有新功能发布\n点击打开确认没问题\n能运行\n第一次启动会有点慢\n稍等片刻就好\n看到codex的这个图标就可以继续进入下一步了\n注册获取API密钥\n用国内的手机号即可\n主包这里已经注册过了\n就直接登录使用\n点击左侧的API密钥选择复制\n注意要用视频里的这个才能成功获取访问许可\n否则会出错\n根据提示粘贴刚刚复制的APIKE到这里\n点击一键配置\n等待脚本自动完成部署\n等待codex启动并初始化\n这里还有详细的文本说明\n以及Mac设备的配置步骤\n大部分问题都在词汇总解答了\n已经配置完成\n等待codex完成初始化部署\n只有第一次会慢一点\n后面都很快的\n启动完成后\n点击下面的这个选项\n再次输入刚刚复制的完整API密钥\n等待加载完成即可使用\n这里是问你的工作类型\n一般都跳过\n点击update升级一下沙盒环境\n可以更加安全的使用agent修改文件\n然后就可以开始使用了\n比如先来个自我介绍\n这里建议改成完全允许\n不然codex会时不时问你要许可很麻烦\n而我们只能做无情的yes机器\n由于开启了最顶级的extra high sinking模式\n可能会推理比较久\n日常的简单任务可以用low模式恢复更快\n画图也是完全没问题的\n给大家展示下现在最强的绘图模型image2的效果\n这还只是随口一句的一次生成效果\n还有更多玩等你探索",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1kzuJ6SEWT",
+  "published_at": "1786161600",
+  "fetched_at": "2026-08-10T05:56:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 与 ChatGPT 国内使用与配置全流程\n\n## 市场价格概览\n```mermaid\nflowchart TD\n    DS_New[\"DeepSeek 新版本发布\"] --> DS_API[\"提供 API 调用\"]\n    DS_API --> DS_PriceInc[\"DeepSeek 价格即将大幅增长\"]\n    ChatGPT_Cut[\"ChatGPT 宣布 80% 超大幅降价\"] --> GPT_Cheap[\"GPT 使用价格低于 DeepSeek\"]\n    GPT_Cheap --> Domestic_Connect[\"国内可直连官方原版 GPT 模型\"]\n```\n\n## 国内直连安装配置流程\n```mermaid\nflowchart LR\n    Download[\"下载并安装 Codex 包\"] --> Run[\"运行安装包\"]\n    Run --> FirstLaunch[\"首次启动较慢\"]\n    FirstLaunch --> Register[\"使用国内手机号注册获取 API 密钥\"]\n    Register --> CopyKey[\"复制 API 密钥\"]\n    CopyKey --> OneClick[\"点击“一键配置”\"]\n    OneClick --> Deploy[\"脚本自动完成部署\"]\n    Deploy --> CodexInit[\"Codex 启动并初始化\"]\n    CodexInit --> ReEnterKey[\"再次输入完整 API 密钥\"]\n    ReEnterKey --> LoadComplete[\"加载完成，可使用\"]\n```\n\n## 使用模式与性能\n```mermaid\nflowchart TD\n    ModeSelect[\"选择运行模式\"] --> HighSink[\"extra high sinking 模式（推理慢）\"]\n    ModeSelect --> LowMode[\"low 模式（推理快）\"]\n    HighSink --> Draw[\"绘图模型 image2 可用\"]\n    LowMode --> Draw\n    Draw --> Result[\"生成绘图结果\"]\n```",
+      "diagrams": [
+        {
+          "title": "市场价格概览",
+          "code": "flowchart TD\n    DS_New[\"DeepSeek 新版本发布\"] --> DS_API[\"提供 API 调用\"]\n    DS_API --> DS_PriceInc[\"DeepSeek 价格即将大幅增长\"]\n    ChatGPT_Cut[\"ChatGPT 宣布 80% 超大幅降价\"] --> GPT_Cheap[\"GPT 使用价格低于 DeepSeek\"]\n    GPT_Cheap --> Domestic_Connect[\"国内可直连官方原版 GPT 模型\"]"
+        },
+        {
+          "title": "国内直连安装配置流程",
+          "code": "flowchart LR\n    Download[\"下载并安装 Codex 包\"] --> Run[\"运行安装包\"]\n    Run --> FirstLaunch[\"首次启动较慢\"]\n    FirstLaunch --> Register[\"使用国内手机号注册获取 API 密钥\"]\n    Register --> CopyKey[\"复制 API 密钥\"]\n    CopyKey --> OneClick[\"点击“一键配置”\"]\n    OneClick --> Deploy[\"脚本自动完成部署\"]\n    Deploy --> CodexInit[\"Codex 启动并初始化\"]\n    CodexInit --> ReEnterKey[\"再次输入完整 API 密钥\"]\n    ReEnterKey --> LoadComplete[\"加载完成，可使用\"]"
+        },
+        {
+          "title": "使用模式与性能",
+          "code": "flowchart TD\n    ModeSelect[\"选择运行模式\"] --> HighSink[\"extra high sinking 模式（推理慢）\"]\n    ModeSelect --> LowMode[\"low 模式（推理快）\"]\n    HighSink --> Draw[\"绘图模型 image2 可用\"]\n    LowMode --> Draw\n    Draw --> Result[\"生成绘图结果\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T05:56:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 与 ChatGPT 国内使用与配置全流程\n\n## 市场价格概览\n```mermaid\nflowchart TD\n    DS_New[\"DeepSeek 新版本发布\"] --> DS_API[\"提供 API 调用\"]\n    DS_API --> DS_PriceInc[\"DeepSeek 价格即将大幅增长\"]\n    ChatGPT_Cut[\"ChatGPT 宣布 80% 超大幅降价\"] --> GPT_Cheap[\"GPT 使用价格低于 DeepSeek\"]\n    GPT_Cheap --> Domestic_Connect[\"国内可直连官方原版 GPT 模型\"]\n```\n\n## 国内直连安装配置流程\n```mermaid\nflowchart LR\n    Download[\"下载并安装 Codex 包\"] --> Run[\"运行安装包\"]\n    Run --> FirstLaunch[\"首次启动较慢\"]\n    FirstLaunch --> Register[\"使用国内手机号注册获取 API 密钥\"]\n    Register --> CopyKey[\"复制 API 密钥\"]\n    CopyKey --> OneClick[\"点击“一键配置”\"]\n    OneClick --> Deploy[\"脚本自动完成部署\"]\n    Deploy --> CodexInit[\"Codex 启动并初始化\"]\n    CodexInit --> ReEnterKey[\"再次输入完整 API 密钥\"]\n    ReEnterKey --> LoadComplete[\"加载完成，可使用\"]\n```\n\n## 使用模式与性能\n```mermaid\nflowchart TD\n    ModeSelect[\"选择运行模式\"] --> HighSink[\"extra high sinking 模式（推理慢）\"]\n    ModeSelect --> LowMode[\"low 模式（推理快）\"]\n    HighSink --> Draw[\"绘图模型 image2 可用\"]\n    LowMode --> Draw\n    Draw --> Result[\"生成绘图结果\"]\n```",
+  "diagrams": [
+    {
+      "title": "市场价格概览",
+      "code": "flowchart TD\n    DS_New[\"DeepSeek 新版本发布\"] --> DS_API[\"提供 API 调用\"]\n    DS_API --> DS_PriceInc[\"DeepSeek 价格即将大幅增长\"]\n    ChatGPT_Cut[\"ChatGPT 宣布 80% 超大幅降价\"] --> GPT_Cheap[\"GPT 使用价格低于 DeepSeek\"]\n    GPT_Cheap --> Domestic_Connect[\"国内可直连官方原版 GPT 模型\"]"
+    },
+    {
+      "title": "国内直连安装配置流程",
+      "code": "flowchart LR\n    Download[\"下载并安装 Codex 包\"] --> Run[\"运行安装包\"]\n    Run --> FirstLaunch[\"首次启动较慢\"]\n    FirstLaunch --> Register[\"使用国内手机号注册获取 API 密钥\"]\n    Register --> CopyKey[\"复制 API 密钥\"]\n    CopyKey --> OneClick[\"点击“一键配置”\"]\n    OneClick --> Deploy[\"脚本自动完成部署\"]\n    Deploy --> CodexInit[\"Codex 启动并初始化\"]\n    CodexInit --> ReEnterKey[\"再次输入完整 API 密钥\"]\n    ReEnterKey --> LoadComplete[\"加载完成，可使用\"]"
+    },
+    {
+      "title": "使用模式与性能",
+      "code": "flowchart TD\n    ModeSelect[\"选择运行模式\"] --> HighSink[\"extra high sinking 模式（推理慢）\"]\n    ModeSelect --> LowMode[\"low 模式（推理快）\"]\n    HighSink --> Draw[\"绘图模型 image2 可用\"]\n    LowMode --> Draw\n    Draw --> Result[\"生成绘图结果\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T05:56:19+00:00"
+}

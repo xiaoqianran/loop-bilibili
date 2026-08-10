@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1fRLQ6nELd",
+  "title": "计算机界的千古难题：C语言是用什么语言写的",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 763,
+  "text": "回答一个计算机界的千古难题\nC语言是用什么语言来写的\n回答这个问题之前\n有必要先搞清楚三个概念\nC标准\nC库编译器\n首先C语言本质上是一套语法规则和标准规范\n这套规范由ISO就是国际标准化组织发布\n是一份纸质文档\n比如我们经常听说的C89C23\n就是这个标准的不同版本\n这份文档里面规定了C语言有哪些数据类型\n数据类型长度范围\n各种语法规则\n数组指针等等\n他没有任何编程语言\n这一说\n纯粹就是一本说明书\n当然标准里面也提到了一些库函数\n像我们常用的print f string length\nstring copy等等\n但是标准也只是规定了它们的函数原型\n错误处理特定数值等等\n至于具体怎么实现\n标准不会干预\n于是就出现了另一个概念\nC库专门来实现print type\nString length\nString copy\n这些函数供我们编程使用\n而实现这些库函数也是用的C语言\n通过一个叫做BT的工具做成最终的库\n比如常见的lip c点SOO点六\n最后不得不提BG\n他的角色极其重要\n随便来一份代码\n我们来拆解一下\n这里的include包含头文件\n由预处理器来处理\n它是编译器套件的一部分\n下面的代码在编译和汇编阶段会被转化成汇编\n代码\n最后变成二进制\n这里的print函数会在最后一步链接的时候\n跟C库关联起来\n形成最终的可执行文件\n所以问题来了\n整个过程里面最关键的好像是编译器\n编译器是用什么语言来写的\n还没有C语言的时候\n编译器是用汇编写的\n后来有了C语言\n开始用C语言来完善编译器\n到了今天\nGCC的部分功能甚至开始用C加来编写\n所以C语言是用什么语言来写的\n它是靠汇编生出来的\n然后靠C语言自己慢慢壮大\n如果你想看证据\n可以去搜索GCC的源码\n里面绝大部分文件都是点C和点CPP后缀\n只有极少数底层文件是DSS后缀",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1fRLQ6nELd",
+  "published_at": "1781691028",
+  "fetched_at": "2026-08-07T06:13:10+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# C语言实现与编译体系图谱\n\n## C语言概念层次结构 [BV1fRLQ6nELd P1 00:08-00:14, 00:54-00:58, 01:38-01:40]\n```mermaid\nflowchart TD\n    A[\"C标准 (ISO)\"] --> B[\"语法规则、数据类型、库函数原型\"]\n    B --> C[\"C库实现 (printf, strlen, strcpy)\"]\n    B --> D[\"编译器实现\"]\n    C --> D\n```\n\n## C程序编译流程 [BV1fRLQ6nELd P1 01:15-01:30]\n```mermaid\nflowchart TD\n    E[\"源文件 (include 头文件)\"] --> F[\"预处理器\"]\n    F --> G[\"编译器 (生成汇编)\"]\n    G --> H[\"汇编器\"]\n    H --> I[\"链接器 (关联 C库)\"]\n    I --> J[\"可执行文件\"]\n```\n\n## 编译器实现语言演进 [BV1fRLQ6nELd P1 01:42-01:55, 02:01-02:05]\n```mermaid\nflowchart TD\n    K[\"早期编译器 (汇编实现)\"] --> L[\"C语言出现后，用 C 实现编译器\"]\n    L --> M[\"GCC 部分功能使用 C++ 实现\"]\n    M --> N[\"自举：编译器用 C 自己编写并壮大\"]\n```",
+      "diagrams": [
+        {
+          "title": "C语言概念层次结构 [BV1fRLQ6nELd P1 00:08-00:14, 00:54-00:58, 01:38-01:40]",
+          "code": "flowchart TD\n    A[\"C标准 (ISO)\"] --> B[\"语法规则、数据类型、库函数原型\"]\n    B --> C[\"C库实现 (printf, strlen, strcpy)\"]\n    B --> D[\"编译器实现\"]\n    C --> D"
+        },
+        {
+          "title": "C程序编译流程 [BV1fRLQ6nELd P1 01:15-01:30]",
+          "code": "flowchart TD\n    E[\"源文件 (include 头文件)\"] --> F[\"预处理器\"]\n    F --> G[\"编译器 (生成汇编)\"]\n    G --> H[\"汇编器\"]\n    H --> I[\"链接器 (关联 C库)\"]\n    I --> J[\"可执行文件\"]"
+        },
+        {
+          "title": "编译器实现语言演进 [BV1fRLQ6nELd P1 01:42-01:55, 02:01-02:05]",
+          "code": "flowchart TD\n    K[\"早期编译器 (汇编实现)\"] --> L[\"C语言出现后，用 C 实现编译器\"]\n    L --> M[\"GCC 部分功能使用 C++ 实现\"]\n    M --> N[\"自举：编译器用 C 自己编写并壮大\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T06:13:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# C语言实现与编译体系图谱\n\n## C语言概念层次结构 [BV1fRLQ6nELd P1 00:08-00:14, 00:54-00:58, 01:38-01:40]\n```mermaid\nflowchart TD\n    A[\"C标准 (ISO)\"] --> B[\"语法规则、数据类型、库函数原型\"]\n    B --> C[\"C库实现 (printf, strlen, strcpy)\"]\n    B --> D[\"编译器实现\"]\n    C --> D\n```\n\n## C程序编译流程 [BV1fRLQ6nELd P1 01:15-01:30]\n```mermaid\nflowchart TD\n    E[\"源文件 (include 头文件)\"] --> F[\"预处理器\"]\n    F --> G[\"编译器 (生成汇编)\"]\n    G --> H[\"汇编器\"]\n    H --> I[\"链接器 (关联 C库)\"]\n    I --> J[\"可执行文件\"]\n```\n\n## 编译器实现语言演进 [BV1fRLQ6nELd P1 01:42-01:55, 02:01-02:05]\n```mermaid\nflowchart TD\n    K[\"早期编译器 (汇编实现)\"] --> L[\"C语言出现后，用 C 实现编译器\"]\n    L --> M[\"GCC 部分功能使用 C++ 实现\"]\n    M --> N[\"自举：编译器用 C 自己编写并壮大\"]\n```",
+  "diagrams": [
+    {
+      "title": "C语言概念层次结构 [BV1fRLQ6nELd P1 00:08-00:14, 00:54-00:58, 01:38-01:40]",
+      "code": "flowchart TD\n    A[\"C标准 (ISO)\"] --> B[\"语法规则、数据类型、库函数原型\"]\n    B --> C[\"C库实现 (printf, strlen, strcpy)\"]\n    B --> D[\"编译器实现\"]\n    C --> D"
+    },
+    {
+      "title": "C程序编译流程 [BV1fRLQ6nELd P1 01:15-01:30]",
+      "code": "flowchart TD\n    E[\"源文件 (include 头文件)\"] --> F[\"预处理器\"]\n    F --> G[\"编译器 (生成汇编)\"]\n    G --> H[\"汇编器\"]\n    H --> I[\"链接器 (关联 C库)\"]\n    I --> J[\"可执行文件\"]"
+    },
+    {
+      "title": "编译器实现语言演进 [BV1fRLQ6nELd P1 01:42-01:55, 02:01-02:05]",
+      "code": "flowchart TD\n    K[\"早期编译器 (汇编实现)\"] --> L[\"C语言出现后，用 C 实现编译器\"]\n    L --> M[\"GCC 部分功能使用 C++ 实现\"]\n    M --> N[\"自举：编译器用 C 自己编写并壮大\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:13:25+00:00"
+}

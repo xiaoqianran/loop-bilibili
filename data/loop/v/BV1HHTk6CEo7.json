@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1HHTk6CEo7",
+  "title": "1.Godot着色器Shader入门到进阶案例实战",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1753,
+  "text": "着色器对于制作精美的游戏至关重要\n2D和3D项目都广泛依赖着色器\n如果你不了解基础\n你的游戏会受到严重限制\n所以在这门课程中\n你将学到关于GODOT2D着色器的所有知识\n我们将创建超过40个着色器\n涵盖每一个主要主题\n课程会从着色器基础\n基础项目相关内容开始讲解\n我们会讲解重要的数学概念\n比如三角函数和矩阵\n并用这些来实现高级效果\n如果你觉得数学吃力\n还会附赠额外的数学课程\n并且会有大量的事例和图解来帮助你理解\n这门课程还会包含一些很少被教授的进阶概念\n比如使用世界空间world space和画布空间canvas space\n光照着色器以及子视口\nsub减VIEWPORTS来组合多个着色器\n学完这门课程后\n你将不再把着色器看作黑魔法\n不再只是你从网站复制的代码\n而是能为你所用的强大工具\n能让你的游戏变得更加令人印象深刻\n这个YOUTUBE视频会覆盖所有主要部分\n你会学到每一个主要的着色器概念\n但那些更炫酷的着色器需要付费\n你可以在patron上花五英镑购买这门课程\n每月订阅五英镑就能看所有课程\n另外这门课在UDEMY上售价10~20美元\n在flip normals上售价十美元\n希望你能喜欢好\n我们正式来讲着色器\n用最通俗的话来说\n着色器是一段代码\n能够修改像素的位置\n色彩alpha通道值以及光照表现效果\n还有很多其他属性\n但这些相对没那么重要\n稍微详细的讲\n要显示一个图形\n需要经过大量的处理\n这被称为图形渲染管线\nGraphics pipeline\n而着色器可以自定义渲染管线内的各个环节\n在顶点阶段vertex step中\n你可以修改顶点的坐标位置\n而片源着色器fragment shader\n可以修改像素的颜色\n透明度以及光照交互逻辑\n但以上所有运算全都在GPU上运行\n如果你此前只接触过CPU编程\n这点会大幅提升理解难度\n因为常规编程语言都是基于CPU进行代码编写的\nCPU会逐行读取代码\n并按顺序串行执行\n而GPU的设计目标是并行运算\nGPU拥有数千个算力相对有限的计算核心\n所有核心可以同步工作\n如果你的任务包含大量简单计算\n这种方式速度极快\n计算机图形渲染就是它最主要的应用场景\n用来为每一个像素计算正确画面效果\n以此算出色彩坐标\n透明度等属性\n运算本身并不复杂\n但我们必须在极短时间内\n完成数百万像素的运算\n正因如此\n着色器代码不会只运行单次\n而是同步作用于画面内每一个像素\n举个例子\n假设你想用gd script绘制一个圆形\n在CPU端\n你会直接调用draw circle\n这个内置方法\n只需要传入位置半径和颜色\n就能画出一个圆\n但换到GPU端的着色器逻辑中\n我们会传入一张纹理贴图\n并为每个像素运行代码\n所以我们不能直接创建一个圆\n我们需要先定义一个中心点\n然后计算当前像素到该点的距离\n如果距离在某个阈值之内\n就显示该像素\n否则隐藏对应的计算公式如下\n刚上手这种运算逻辑时\n很容易感到费解\n无从下手\n就拿绘制圆形的公式举例\n我们需要定义浮点变量来判定圆形范围\n感觉确实很奇怪\n你需要一些时间来适应嗯\n我们再来做两个例子\n首先是塞尔达风格的体力条\nStamina bar\n这个例子从GOODLE图标开始\n本课程中的大多数着色器都是如此\n我们先去除颜色\n然后定义一个外圆和一个内圆\n用大圆减去小圆的区域就能得到圆环\n接着用三角函数按角度切出一个区域\n将两者结合起来\n并添加颜色就完成了\n接下来是火焰效果\n这个同样从GOODLE图标开始\n不过换成其他纹理也可以\n我们再次去除颜色\n然后用数学公式得到一个药丸形状\n再导入一张噪声纹理\nNoise texture\n并让纹理滚动\n将两层效果结合\n裁剪数值区间后\n就能得到火焰主体轮廓\n最后叠加色彩就制作完成\n这两个着色器视觉效果十分惊艳\n却只需要寥寥几行代码\n只要你对着色器逻辑建立直观理解\n写起来会十分简单\n想要练出这种直觉确实需要时间\n不过不用担心\n我们会带大家逐一实操大量案例\n不过我前面给大家介绍的着色器定义\n是过度简化的版本\n并不完全严谨准确\n我会在第一大章节结尾完善完整定义\n现阶段大家不用深究复杂理论\n入门阶段\n你只需记住着色器能够修改每个像素的坐标\n透明度\n色彩与光照表现\n而且所有像素的修改运算都会同步并行执行",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HHTk6CEo7",
+  "published_at": "1782963493",
+  "fetched_at": "2026-08-08T04:58:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 着色器学习图谱\n\n## 着色器与渲染管线关系\n```mermaid\nflowchart TD\n    Shader[\"着色器\"]\n    GraphicsPipeline[\"图形渲染管线\"]\n    VertexShader[\"顶点着色器\"]\n    FragmentShader[\"片元着色器\"]\n    ModifyVertex[\"修改顶点坐标\"]\n    ModifyPixel[\"修改像素颜色/透明度/光照\"]\n    RunsOnGPU[\"在 GPU 上并行执行\"]\n    Customizable[\"可自定义渲染阶段\"]\n\n    Shader -->|属于| GraphicsPipeline\n    GraphicsPipeline -->|包含| VertexShader\n    GraphicsPipeline -->|包含| FragmentShader\n    VertexShader --> ModifyVertex\n    FragmentShader --> ModifyPixel\n    Shader --> RunsOnGPU\n    RunsOnGPU --> Customizable\n```\n\n## CPU 与 GPU 的并行/串行对比\n```mermaid\nflowchart TD\n    CPU[\"CPU\"]\n    GPU[\"GPU\"]\n    SerialExec[\"串行执行\"]\n    ParallelExec[\"并行执行\"]\n    SimpleTasks[\"大量简单计算\"]\n    Speed[\"速度快\"]\n    CPUModel[\"基于 CPU 的编程模型\"]\n    ShaderProg[\"基于 GPU 的着色器编程\"]\n\n    CPU --> SerialExec\n    GPU --> ParallelExec\n    ParallelExec --> Speed\n    SimpleTasks --> Speed\n    CPU --> CPUModel\n    GPU --> ShaderProg\n    ShaderProg --> ParallelExec\n```\n\n## 常见案例实现流程\n```mermaid\nflowchart LR\n    CircleExample[\"绘制圆形示例\"]\n    DefineCenter[\"定义圆心\"]\n    ComputeDist[\"计算像素到圆心距离\"]\n    Threshold[\"距离阈值判断\"]\n    ShowPixel[\"显示像素\"]\n    HidePixel[\"隐藏像素\"]\n\n    StaminaBar[\"体力条示例\"]\n    RemoveColor1[\"去除颜色\"]\n    OuterCircle[\"定义外圆\"]\n    InnerCircle[\"定义内圆\"]\n    Ring[\"形成圆环\"]\n    AngleCut[\"三角函数切割\"]\n    AddColor1[\"添加颜色\"]\n\n    FlameEffect[\"火焰效果示例\"]\n    RemoveColor2[\"去除颜色\"]\n    NoiseTex[\"噪声纹理\"]\n    ScrollTex[\"纹理滚动\"]\n    Combine[\"层叠效果\"]\n    ClipVals[\"裁剪数值区间\"]\n    FinalColor[\"叠加色彩\"]\n\n    CircleExample --> DefineCenter --> ComputeDist --> Threshold --> ShowPixel\n    Threshold --> HidePixel\n\n    StaminaBar --> RemoveColor1 --> OuterCircle --> InnerCircle --> Ring --> AngleCut --> AddColor1\n\n    FlameEffect --> RemoveColor2 --> NoiseTex --> ScrollTex --> Combine --> ClipVals --> FinalColor\n```",
+      "diagrams": [
+        {
+          "title": "着色器与渲染管线关系",
+          "code": "flowchart TD\n    Shader[\"着色器\"]\n    GraphicsPipeline[\"图形渲染管线\"]\n    VertexShader[\"顶点着色器\"]\n    FragmentShader[\"片元着色器\"]\n    ModifyVertex[\"修改顶点坐标\"]\n    ModifyPixel[\"修改像素颜色/透明度/光照\"]\n    RunsOnGPU[\"在 GPU 上并行执行\"]\n    Customizable[\"可自定义渲染阶段\"]\n\n    Shader -->|属于| GraphicsPipeline\n    GraphicsPipeline -->|包含| VertexShader\n    GraphicsPipeline -->|包含| FragmentShader\n    VertexShader --> ModifyVertex\n    FragmentShader --> ModifyPixel\n    Shader --> RunsOnGPU\n    RunsOnGPU --> Customizable"
+        },
+        {
+          "title": "CPU 与 GPU 的并行/串行对比",
+          "code": "flowchart TD\n    CPU[\"CPU\"]\n    GPU[\"GPU\"]\n    SerialExec[\"串行执行\"]\n    ParallelExec[\"并行执行\"]\n    SimpleTasks[\"大量简单计算\"]\n    Speed[\"速度快\"]\n    CPUModel[\"基于 CPU 的编程模型\"]\n    ShaderProg[\"基于 GPU 的着色器编程\"]\n\n    CPU --> SerialExec\n    GPU --> ParallelExec\n    ParallelExec --> Speed\n    SimpleTasks --> Speed\n    CPU --> CPUModel\n    GPU --> ShaderProg\n    ShaderProg --> ParallelExec"
+        },
+        {
+          "title": "常见案例实现流程",
+          "code": "flowchart LR\n    CircleExample[\"绘制圆形示例\"]\n    DefineCenter[\"定义圆心\"]\n    ComputeDist[\"计算像素到圆心距离\"]\n    Threshold[\"距离阈值判断\"]\n    ShowPixel[\"显示像素\"]\n    HidePixel[\"隐藏像素\"]\n\n    StaminaBar[\"体力条示例\"]\n    RemoveColor1[\"去除颜色\"]\n    OuterCircle[\"定义外圆\"]\n    InnerCircle[\"定义内圆\"]\n    Ring[\"形成圆环\"]\n    AngleCut[\"三角函数切割\"]\n    AddColor1[\"添加颜色\"]\n\n    FlameEffect[\"火焰效果示例\"]\n    RemoveColor2[\"去除颜色\"]\n    NoiseTex[\"噪声纹理\"]\n    ScrollTex[\"纹理滚动\"]\n    Combine[\"层叠效果\"]\n    ClipVals[\"裁剪数值区间\"]\n    FinalColor[\"叠加色彩\"]\n\n    CircleExample --> DefineCenter --> ComputeDist --> Threshold --> ShowPixel\n    Threshold --> HidePixel\n\n    StaminaBar --> RemoveColor1 --> OuterCircle --> InnerCircle --> Ring --> AngleCut --> AddColor1\n\n    FlameEffect --> RemoveColor2 --> NoiseTex --> ScrollTex --> Combine --> ClipVals --> FinalColor"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T05:16:49+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 着色器学习图谱\n\n## 着色器与渲染管线关系\n```mermaid\nflowchart TD\n    Shader[\"着色器\"]\n    GraphicsPipeline[\"图形渲染管线\"]\n    VertexShader[\"顶点着色器\"]\n    FragmentShader[\"片元着色器\"]\n    ModifyVertex[\"修改顶点坐标\"]\n    ModifyPixel[\"修改像素颜色/透明度/光照\"]\n    RunsOnGPU[\"在 GPU 上并行执行\"]\n    Customizable[\"可自定义渲染阶段\"]\n\n    Shader -->|属于| GraphicsPipeline\n    GraphicsPipeline -->|包含| VertexShader\n    GraphicsPipeline -->|包含| FragmentShader\n    VertexShader --> ModifyVertex\n    FragmentShader --> ModifyPixel\n    Shader --> RunsOnGPU\n    RunsOnGPU --> Customizable\n```\n\n## CPU 与 GPU 的并行/串行对比\n```mermaid\nflowchart TD\n    CPU[\"CPU\"]\n    GPU[\"GPU\"]\n    SerialExec[\"串行执行\"]\n    ParallelExec[\"并行执行\"]\n    SimpleTasks[\"大量简单计算\"]\n    Speed[\"速度快\"]\n    CPUModel[\"基于 CPU 的编程模型\"]\n    ShaderProg[\"基于 GPU 的着色器编程\"]\n\n    CPU --> SerialExec\n    GPU --> ParallelExec\n    ParallelExec --> Speed\n    SimpleTasks --> Speed\n    CPU --> CPUModel\n    GPU --> ShaderProg\n    ShaderProg --> ParallelExec\n```\n\n## 常见案例实现流程\n```mermaid\nflowchart LR\n    CircleExample[\"绘制圆形示例\"]\n    DefineCenter[\"定义圆心\"]\n    ComputeDist[\"计算像素到圆心距离\"]\n    Threshold[\"距离阈值判断\"]\n    ShowPixel[\"显示像素\"]\n    HidePixel[\"隐藏像素\"]\n\n    StaminaBar[\"体力条示例\"]\n    RemoveColor1[\"去除颜色\"]\n    OuterCircle[\"定义外圆\"]\n    InnerCircle[\"定义内圆\"]\n    Ring[\"形成圆环\"]\n    AngleCut[\"三角函数切割\"]\n    AddColor1[\"添加颜色\"]\n\n    FlameEffect[\"火焰效果示例\"]\n    RemoveColor2[\"去除颜色\"]\n    NoiseTex[\"噪声纹理\"]\n    ScrollTex[\"纹理滚动\"]\n    Combine[\"层叠效果\"]\n    ClipVals[\"裁剪数值区间\"]\n    FinalColor[\"叠加色彩\"]\n\n    CircleExample --> DefineCenter --> ComputeDist --> Threshold --> ShowPixel\n    Threshold --> HidePixel\n\n    StaminaBar --> RemoveColor1 --> OuterCircle --> InnerCircle --> Ring --> AngleCut --> AddColor1\n\n    FlameEffect --> RemoveColor2 --> NoiseTex --> ScrollTex --> Combine --> ClipVals --> FinalColor\n```",
+  "diagrams": [
+    {
+      "title": "着色器与渲染管线关系",
+      "code": "flowchart TD\n    Shader[\"着色器\"]\n    GraphicsPipeline[\"图形渲染管线\"]\n    VertexShader[\"顶点着色器\"]\n    FragmentShader[\"片元着色器\"]\n    ModifyVertex[\"修改顶点坐标\"]\n    ModifyPixel[\"修改像素颜色/透明度/光照\"]\n    RunsOnGPU[\"在 GPU 上并行执行\"]\n    Customizable[\"可自定义渲染阶段\"]\n\n    Shader -->|属于| GraphicsPipeline\n    GraphicsPipeline -->|包含| VertexShader\n    GraphicsPipeline -->|包含| FragmentShader\n    VertexShader --> ModifyVertex\n    FragmentShader --> ModifyPixel\n    Shader --> RunsOnGPU\n    RunsOnGPU --> Customizable"
+    },
+    {
+      "title": "CPU 与 GPU 的并行/串行对比",
+      "code": "flowchart TD\n    CPU[\"CPU\"]\n    GPU[\"GPU\"]\n    SerialExec[\"串行执行\"]\n    ParallelExec[\"并行执行\"]\n    SimpleTasks[\"大量简单计算\"]\n    Speed[\"速度快\"]\n    CPUModel[\"基于 CPU 的编程模型\"]\n    ShaderProg[\"基于 GPU 的着色器编程\"]\n\n    CPU --> SerialExec\n    GPU --> ParallelExec\n    ParallelExec --> Speed\n    SimpleTasks --> Speed\n    CPU --> CPUModel\n    GPU --> ShaderProg\n    ShaderProg --> ParallelExec"
+    },
+    {
+      "title": "常见案例实现流程",
+      "code": "flowchart LR\n    CircleExample[\"绘制圆形示例\"]\n    DefineCenter[\"定义圆心\"]\n    ComputeDist[\"计算像素到圆心距离\"]\n    Threshold[\"距离阈值判断\"]\n    ShowPixel[\"显示像素\"]\n    HidePixel[\"隐藏像素\"]\n\n    StaminaBar[\"体力条示例\"]\n    RemoveColor1[\"去除颜色\"]\n    OuterCircle[\"定义外圆\"]\n    InnerCircle[\"定义内圆\"]\n    Ring[\"形成圆环\"]\n    AngleCut[\"三角函数切割\"]\n    AddColor1[\"添加颜色\"]\n\n    FlameEffect[\"火焰效果示例\"]\n    RemoveColor2[\"去除颜色\"]\n    NoiseTex[\"噪声纹理\"]\n    ScrollTex[\"纹理滚动\"]\n    Combine[\"层叠效果\"]\n    ClipVals[\"裁剪数值区间\"]\n    FinalColor[\"叠加色彩\"]\n\n    CircleExample --> DefineCenter --> ComputeDist --> Threshold --> ShowPixel\n    Threshold --> HidePixel\n\n    StaminaBar --> RemoveColor1 --> OuterCircle --> InnerCircle --> Ring --> AngleCut --> AddColor1\n\n    FlameEffect --> RemoveColor2 --> NoiseTex --> ScrollTex --> Combine --> ClipVals --> FinalColor"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T05:16:49+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1mf356EEVm",
+  "title": "CAD二次开发：多文档批量打印",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1200,
+  "text": "嗯大家好啊\n上一次我给M打印提了两点建议嗯\n然后通过邮箱发给M打印的话\n他也回复我了\n会考虑嗯去优化嗯\n我后面又思考了一下\n现在很多人在开发这个批量打印啊\n而且也有很多现有的这个批量打印软件\n它实际上嗯比M打印有一点区别的话\n就是别人是支持这个多文档打印的\n你说这个多文呢打印有没有用啊\n其实你没有这个东西\n这个M打印也也也能\n无非也就是嗯多个文档多执行两次嘛\n然后因为这个排序\n它呃这个命名它是可以支持这个定义的\n你定义成符号命名\n那么每个每个文件打出的PDF它合并在一起的话\n他肯定是有序的\n所以你要最终要合并成PDF的话\n用PDF软件去合并一下单个PDF也是可以做到的\n但是为什么M打印它没有支持这个多文呢\n打印其实我也没想通\n所以我按这个M打印的这个交互逻辑\n做了一下这个多文的打印\n嗯就是这个我的我我我再解释一下\n我这个WM打印是因为我的名字是W开头的\n所以我取了一个W打印啊\n嗯点这个多文的打印的话\n就弹出来这个模态窗口\n让你选择是打开所有打开的文档呢\n还是你自己再去重新选择指定的文档\n因为我现在这个图纸我没有打开\n那我就选这个指定的文档\n然后框选你要打印的那个文档嗯\n我是两个\n一个是平面图\n一个是剖面\n断面和说明那些东西\n你看呃这在这个界面上无非就是增加一面嘛\n就是这是这这些图是来自于哪个文文档的嘛\n你看我这里这这这个东西你要预览的话\n因为我我我是支持后台识别的\n所以我这里后台识别完\n我没有把这个没有前台把这张图打开\n当你点击预览的时候\n你需要看这张图的时候\n它就可以帮你把这个文档给打开咳\n在执行打印的时候呃\n没有打开的文档\n他肯定也是帮你打开嘛\n这里我试一下这个打印嗯\n然后点合并\n就是打完之后自动合并啊\n这个就开始执行多文档的批量打印了\n因为刚才我预览的时候\n已经把第一张图给打开了\n所以这个图是处于打开的状态嗯\n然后他打完之后会把另外一个文档也给打开\n然后前台打印打印完之后\n他会把这个打印过程中打开的文档\n会把它关闭掉\n预览打开的嗯\n它没有自动关闭\n所以这个这个东西嗯你说难不难吧\n好像也也没有那么难吧\n这个批量多文档的批量打印\n那我们可以看一下我们打出来那个那个图纸嗯\n嗯就是就是这样子的\n就是完整的\n你看这四张呃\n这这是有\n其中这个这个三张平面\n是是从那个另外一个文档里面打出来的\n其他的就是从嗯\n这这这这里是有两个文档的批量嗯\n你说这个东西有多复杂吗\n好像也没多复杂\n所以这个东西如果M打印\n能把这个多文能打印加进去的话\n那肯定是更好嗯\n因为这个M打印开始收费啊\n好像很多二次开发的人也都在搞这个\n批量打印的软件\n我也看到已经有很多人做的很不错了\n包括在这个图框的识别速度嗯\n那个嗯交互的那个体验\n嗯感觉有很多地方已经做的比M打印更好了\n所以我觉得M打印你觉得你你你考虑收费的话\n最好是把这个多文能打印的\n那个东西也给加上来\n嗯这是我第二次给您录视频提供一个建议",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1mf356EEVm",
+  "published_at": "1785028652",
+  "fetched_at": "2026-08-09T23:24:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# CAD二次开发：多文档批量打印知识图谱\n\n## 多文档批量打印概览 [BV1mf356EEVm P1 00:29]\n```mermaid\nflowchart TD\n    MPrint[\"M打印\"] -->|缺少| MultiDocSupport[\"多文档支持\"]\n    WPrint[\"W打印（自定义）\"] -->|实现| MultiDocSupport\n    ExistingSoftware[\"现有批量打印软件\"] -->|提供| MultiDocSupport\n    MultiDocSupport -->|需要| OrderDef[\"排序/命名定义\"]\n    OrderDef -->|用于| PDFMerge[\"PDF 合并（保持有序）\"]\n    BackendRecog[\"后台识别\"] -->|支撑| MultiDocSupport\n    UserInteraction[\"用户交互\"] -->|选择| MultiDocSupport\n    ChargingModel[\"收费模式\"] -->|驱动| DevDemand[\"开发者需求\"]\n    DevDemand -->|促使| MultiDocSupport\n```\n\n## 用户选择与预览流程 [BV1mf356EEVm P1 01:28]\n```mermaid\nflowchart TD\n    Modal[\"模态窗口\"] --> OpenAll[\"打开所有已打开文档\"]\n    Modal --> SelectSpecific[\"选择指定文档\"]\n    SelectSpecific --> DocList[\"文档列表（可框选）\"]\n    DocList --> PreviewBtn[\"预览按钮\"]\n    PreviewBtn --> BackendOpen[\"后台识别并打开文档\"]\n    BackendOpen --> DocOpened[\"文档已打开状态\"]\n    DocOpened --> PreviewDisplay[\"预览显示\"]\n```\n\n## 批量打印执行与合并流程 [BV1mf356EEVm P1 02:26]\n```mermaid\nflowchart TD\n    Start[\"开始批量打印\"] --> CheckOpen[\"检查文档是否已打开\"]\n    CheckOpen --> PrintCurrent[\"打印当前文档\"]\n    PrintCurrent --> PrintDone[\"打印完成\"]\n    PrintDone --> AutoMerge[\"自动合并 PDF\"]\n    AutoMerge --> PrintNext[\"打印下一个文档\"]\n    PrintNext --> CloseDoc[\"关闭已打印文档\"]\n    CloseDoc --> AllDone[\"全部文档完成\"]\n    AllDone --> FinalPDF[\"生成最终合并 PDF\"]\n```\n\n## 加入多文档支持的商业与技术动因 [BV1mf356EEVm P1 04:03]\n```mermaid\nflowchart TD\n    Charging[\"M打印开始收费\"] --> UserNeed[\"用户对多文档打印的需求\"]\n    CompetitorFeature[\"竞争软件已有多文档功能\"] --> UserNeed\n    UserNeed --> MultiDocValue[\"多文档打印的价值\"]\n    MultiDocValue --> DevSecond[\"二次开发者关注\"]\n    DevSecond --> AddDifficulty[\"实现难度评估\"]\n    AddDifficulty --> ExpectedBenefit[\"预期收益（提升竞争力）\"]\n    ExpectedBenefit --> VideoSuggestion[\"建议录制视频提出需求\"]\n```",
+      "diagrams": [
+        {
+          "title": "多文档批量打印概览",
+          "code": "flowchart TD\n    MPrint[\"M打印\"] -->|缺少| MultiDocSupport[\"多文档支持\"]\n    WPrint[\"W打印（自定义）\"] -->|实现| MultiDocSupport\n    ExistingSoftware[\"现有批量打印软件\"] -->|提供| MultiDocSupport\n    MultiDocSupport -->|需要| OrderDef[\"排序/命名定义\"]\n    OrderDef -->|用于| PDFMerge[\"PDF 合并（保持有序）\"]\n    BackendRecog[\"后台识别\"] -->|支撑| MultiDocSupport\n    UserInteraction[\"用户交互\"] -->|选择| MultiDocSupport\n    ChargingModel[\"收费模式\"] -->|驱动| DevDemand[\"开发者需求\"]\n    DevDemand -->|促使| MultiDocSupport"
+        },
+        {
+          "title": "用户选择与预览流程",
+          "code": "flowchart TD\n    Modal[\"模态窗口\"] --> OpenAll[\"打开所有已打开文档\"]\n    Modal --> SelectSpecific[\"选择指定文档\"]\n    SelectSpecific --> DocList[\"文档列表（可框选）\"]\n    DocList --> PreviewBtn[\"预览按钮\"]\n    PreviewBtn --> BackendOpen[\"后台识别并打开文档\"]\n    BackendOpen --> DocOpened[\"文档已打开状态\"]\n    DocOpened --> PreviewDisplay[\"预览显示\"]"
+        },
+        {
+          "title": "批量打印执行与合并流程",
+          "code": "flowchart TD\n    Start[\"开始批量打印\"] --> CheckOpen[\"检查文档是否已打开\"]\n    CheckOpen --> PrintCurrent[\"打印当前文档\"]\n    PrintCurrent --> PrintDone[\"打印完成\"]\n    PrintDone --> AutoMerge[\"自动合并 PDF\"]\n    AutoMerge --> PrintNext[\"打印下一个文档\"]\n    PrintNext --> CloseDoc[\"关闭已打印文档\"]\n    CloseDoc --> AllDone[\"全部文档完成\"]\n    AllDone --> FinalPDF[\"生成最终合并 PDF\"]"
+        },
+        {
+          "title": "加入多文档支持的商业与技术动因",
+          "code": "flowchart TD\n    Charging[\"M打印开始收费\"] --> UserNeed[\"用户对多文档打印的需求\"]\n    CompetitorFeature[\"竞争软件已有多文档功能\"] --> UserNeed\n    UserNeed --> MultiDocValue[\"多文档打印的价值\"]\n    MultiDocValue --> DevSecond[\"二次开发者关注\"]\n    DevSecond --> AddDifficulty[\"实现难度评估\"]\n    AddDifficulty --> ExpectedBenefit[\"预期收益（提升竞争力）\"]\n    ExpectedBenefit --> VideoSuggestion[\"建议录制视频提出需求\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T23:28:01+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# CAD二次开发：多文档批量打印知识图谱\n\n## 多文档批量打印概览 [BV1mf356EEVm P1 00:29]\n```mermaid\nflowchart TD\n    MPrint[\"M打印\"] -->|缺少| MultiDocSupport[\"多文档支持\"]\n    WPrint[\"W打印（自定义）\"] -->|实现| MultiDocSupport\n    ExistingSoftware[\"现有批量打印软件\"] -->|提供| MultiDocSupport\n    MultiDocSupport -->|需要| OrderDef[\"排序/命名定义\"]\n    OrderDef -->|用于| PDFMerge[\"PDF 合并（保持有序）\"]\n    BackendRecog[\"后台识别\"] -->|支撑| MultiDocSupport\n    UserInteraction[\"用户交互\"] -->|选择| MultiDocSupport\n    ChargingModel[\"收费模式\"] -->|驱动| DevDemand[\"开发者需求\"]\n    DevDemand -->|促使| MultiDocSupport\n```\n\n## 用户选择与预览流程 [BV1mf356EEVm P1 01:28]\n```mermaid\nflowchart TD\n    Modal[\"模态窗口\"] --> OpenAll[\"打开所有已打开文档\"]\n    Modal --> SelectSpecific[\"选择指定文档\"]\n    SelectSpecific --> DocList[\"文档列表（可框选）\"]\n    DocList --> PreviewBtn[\"预览按钮\"]\n    PreviewBtn --> BackendOpen[\"后台识别并打开文档\"]\n    BackendOpen --> DocOpened[\"文档已打开状态\"]\n    DocOpened --> PreviewDisplay[\"预览显示\"]\n```\n\n## 批量打印执行与合并流程 [BV1mf356EEVm P1 02:26]\n```mermaid\nflowchart TD\n    Start[\"开始批量打印\"] --> CheckOpen[\"检查文档是否已打开\"]\n    CheckOpen --> PrintCurrent[\"打印当前文档\"]\n    PrintCurrent --> PrintDone[\"打印完成\"]\n    PrintDone --> AutoMerge[\"自动合并 PDF\"]\n    AutoMerge --> PrintNext[\"打印下一个文档\"]\n    PrintNext --> CloseDoc[\"关闭已打印文档\"]\n    CloseDoc --> AllDone[\"全部文档完成\"]\n    AllDone --> FinalPDF[\"生成最终合并 PDF\"]\n```\n\n## 加入多文档支持的商业与技术动因 [BV1mf356EEVm P1 04:03]\n```mermaid\nflowchart TD\n    Charging[\"M打印开始收费\"] --> UserNeed[\"用户对多文档打印的需求\"]\n    CompetitorFeature[\"竞争软件已有多文档功能\"] --> UserNeed\n    UserNeed --> MultiDocValue[\"多文档打印的价值\"]\n    MultiDocValue --> DevSecond[\"二次开发者关注\"]\n    DevSecond --> AddDifficulty[\"实现难度评估\"]\n    AddDifficulty --> ExpectedBenefit[\"预期收益（提升竞争力）\"]\n    ExpectedBenefit --> VideoSuggestion[\"建议录制视频提出需求\"]\n```",
+  "diagrams": [
+    {
+      "title": "多文档批量打印概览",
+      "code": "flowchart TD\n    MPrint[\"M打印\"] -->|缺少| MultiDocSupport[\"多文档支持\"]\n    WPrint[\"W打印（自定义）\"] -->|实现| MultiDocSupport\n    ExistingSoftware[\"现有批量打印软件\"] -->|提供| MultiDocSupport\n    MultiDocSupport -->|需要| OrderDef[\"排序/命名定义\"]\n    OrderDef -->|用于| PDFMerge[\"PDF 合并（保持有序）\"]\n    BackendRecog[\"后台识别\"] -->|支撑| MultiDocSupport\n    UserInteraction[\"用户交互\"] -->|选择| MultiDocSupport\n    ChargingModel[\"收费模式\"] -->|驱动| DevDemand[\"开发者需求\"]\n    DevDemand -->|促使| MultiDocSupport"
+    },
+    {
+      "title": "用户选择与预览流程",
+      "code": "flowchart TD\n    Modal[\"模态窗口\"] --> OpenAll[\"打开所有已打开文档\"]\n    Modal --> SelectSpecific[\"选择指定文档\"]\n    SelectSpecific --> DocList[\"文档列表（可框选）\"]\n    DocList --> PreviewBtn[\"预览按钮\"]\n    PreviewBtn --> BackendOpen[\"后台识别并打开文档\"]\n    BackendOpen --> DocOpened[\"文档已打开状态\"]\n    DocOpened --> PreviewDisplay[\"预览显示\"]"
+    },
+    {
+      "title": "批量打印执行与合并流程",
+      "code": "flowchart TD\n    Start[\"开始批量打印\"] --> CheckOpen[\"检查文档是否已打开\"]\n    CheckOpen --> PrintCurrent[\"打印当前文档\"]\n    PrintCurrent --> PrintDone[\"打印完成\"]\n    PrintDone --> AutoMerge[\"自动合并 PDF\"]\n    AutoMerge --> PrintNext[\"打印下一个文档\"]\n    PrintNext --> CloseDoc[\"关闭已打印文档\"]\n    CloseDoc --> AllDone[\"全部文档完成\"]\n    AllDone --> FinalPDF[\"生成最终合并 PDF\"]"
+    },
+    {
+      "title": "加入多文档支持的商业与技术动因",
+      "code": "flowchart TD\n    Charging[\"M打印开始收费\"] --> UserNeed[\"用户对多文档打印的需求\"]\n    CompetitorFeature[\"竞争软件已有多文档功能\"] --> UserNeed\n    UserNeed --> MultiDocValue[\"多文档打印的价值\"]\n    MultiDocValue --> DevSecond[\"二次开发者关注\"]\n    DevSecond --> AddDifficulty[\"实现难度评估\"]\n    AddDifficulty --> ExpectedBenefit[\"预期收益（提升竞争力）\"]\n    ExpectedBenefit --> VideoSuggestion[\"建议录制视频提出需求\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T23:28:01+00:00"
+}

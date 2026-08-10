@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1S2Vo65EH5",
+  "title": "DeepSeek官方API有点贵？目前最具性价比的coding plan推荐【coding plan横评】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2164,
+  "text": "如果你一个月的deep seek API\n调用费用超过了70元\n或者觉得调用API总是不敢多用\n现在呢有一个coding plan\n可以让你以2~3折的价格调用\n而且还不止deep sick的模型\n并且可以用到比如cloud code等所有的A证的工具中\n这个就是open code的go套餐\n购套餐\n以首月五美元\n后续十美元的价格\n可以购入月度60美元的额度\n而且可以调用国内多个顶级模型\n调研过各家coding plan的朋友\n肯定知道这个套餐适配open code\n这个编程A真的是不错的\n但是其他地方用起来没有那么流畅\n就在前几天\ncc switch更新了\n可以转换不同API兼容类型的功能\n这意味着可以让OpenAI格式的API\n适用于ANTHROPIC\n反之亦是如此\n这里稍微向大家介绍一下\n目前大语言模型主流的三种API兼容格式\n它们之间是不能直接互通的\n第一个是OpenAI chat completions格式\n这个是行业内的标准对话API专用\n第二种是OpenAI responses API格式\n它适用于code x等agent专用的场景\n第三种是anthropic message API格式\n它是ANTHROPIC提出的\n是他们的模型专用的一种格式\n以往的open code购套餐里面\n只能提供千问的ANTHROPIC格式\n以及其他国产模型\n比如deep sick的OpenAI chat格式\n正是因为ANTHROPIC格式兼容的模型不多\n让他很难走出open code的生态\ncc switch提供了有界面\n非常简单的格式转化\n可以让OpenAI chat格式的deep seek接入cloud code\n这种只兼容ANTHROPIC格式的agent\n以及code x这种只兼容OpenAI responses格式的agent\n视频的最后有手把手的演示\n接下来我们来算一笔账\n对国内的coding plan做一个大横屏\n这些都是我自己在上面踩过的一些坑\n给出我推荐的购买配置\n对你一定有所帮助\n推荐度从低到高\n依次介绍国内的coding plan\n最不推荐的是字节\n方舟以及其他运营商的coding plan\n首先是最不推荐的一档字节\n方舟以及其他运营商社区\n反映模型存在用量虚标\n以及模型量化降智的问题\n阿里云coding plan量大管饱\n但是目前阿里已经是半放弃的状态\n模型只更新到上一代\n除了五个小时的限额\n还有短时间的token限额\n可以说想把它的用量用完几乎不可能\n阿里云的token plan\n他的计费是100\ncredits等效为一元\n综合折扣是7~8折嗯\n由于阿里云官方API价格就比较高\n缓存命中也比较差\n这里完全不做推荐\n然后是在一些情况下\n你可以考虑的coding plan\n小米的token plan\n他的计费方式是100000000credit\n等效为一元包月的价格大约在8~9折\n折扣力度比较低\n但是小米的模型API价格比较低\n而且缓存命中也比较高\n个人测试首次时长有可能会比较长\n如果看中他的深夜有八折优惠\n可以考虑mini max token plan\n目前它的模型能力已经跟不上了\n就在今天早上发布了M3模型\n至于他的coding领域的表现还有待观察\n在coding的评分上可以达到国产的顶级\n可以先观望一段时间\n看看M3的模型表现\n如果模型表现比较强\n综合价格比较低的话\n可以考虑质朴的coding plan\n质朴的模型能力是国产第一梯队\n但是GLM的200K上下文以及没有多模态\n都是他的短板\n更重要的是\n现在很难抢到\n它的综合价格可以到两到三折\n最推荐的一档kimi coding plan\nKIMI只推荐199以及更高的月费会员\n它的综合优惠可以到API价格的1~2折\n缺点就是周额度大约是总额度的1/4\n也就意味着你必须每一周都把周线额跑满\n才能榨干整个coding plus的价值\nopen code go套餐模型比较多\n综合是1.7折\n用量透明\n转发的是官方API\n没有额外的限制\n周限额是月度的一半\n比较慷慨\n缺点就是只有十美元一个档位\n对于有更多需求的人来说\n没有更高一档的选择\n这里需要注意的是\ndeep sk v4pro的价格是按照原价计算的\n综合是官方的六七折\nMIMO2.5pro和deep sk v4同价\nDEPSICKMEO官方API\n它的好处主要是按量付费缓存\n命中率高\n比较灵活\n缺点就是没有多模态\n只有MEM2.5是多么态模型\n对于轻度使用的用户而言\n比如说做一些小项目的开发\n龙虾部署初学者或者是写小说\n那么open code的go套餐加上deep sick memo的API\n是一个比较好的组合\n对于中度使用用户\n比如说大型项目的开发项目的重构\n大量的高并发场景\n那么KIMI的199元的套餐\n加上呃open code购套餐以及deep sick密谋的API\n对于重度用户建议选择KIMI最高一档的套餐\n加open code go套餐以及tipsick memo的官方API\n由于录制的时候是6月1日\n对于mini max官方的token plan还没有明确的信息\n后续如果他的表现比较好\n优惠力度也比较强的话\n是值得推荐的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1S2Vo65EH5",
+  "published_at": "1780318061",
+  "fetched_at": "2026-08-07T08:22:06+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek Coding Plan 知识图谱\n\n## 总览：Coding Plan 生态\n```mermaid\nflowchart TD\n    A1[\"DeepSeek API\"]\n    A2[\"OpenCode Go 套餐\"]\n    A3[\"阿里云 Coding Plan\"]\n    A4[\"小米 Coding Plan\"]\n    A5[\"KIMI Coding Plan\"]\n    A6[\"质朴 Coding Plan\"]\n    A7[\"字节/方舟 及其他运营商\"]\n    A8[\"价格折扣（2~3折、1~2折）\"]\n    A9[\"模型兼容性\"]\n    A10[\"使用场景（轻度/中度/重度）\"]\n\n    A1 --> A2\n    A2 --> A9\n    A3 --> A8\n    A4 --> A8\n    A5 --> A8\n    A6 --> A8\n    A7 --> A8\n    A9 --> A10\n    A8 --> A10\n    A2 --> A10\n```\n\n## API 兼容格式与转换\n```mermaid\nflowchart TD\n    B1[\"OpenAI Chat Completions\"]\n    B2[\"OpenAI Responses\"]\n    B3[\"Anthropic Message\"]\n    B4[\"CC Switch 转换工具\"]\n    B5[\"OpenCode Go 套餐 支持模型\"]\n    B6[\"DeepSeek (OpenAI Chat)\"]\n    B7[\"Anthropic 兼容模型\"]\n    B8[\"Code X (OpenAI Responses)\"]\n\n    B1 --> B4\n    B2 --> B4\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B5 --> B8\n```\n\n## 推荐层级与适用场景\n```mermaid\nflowchart TD\n    C1[\"推荐度低\"]\n    C2[\"字节/方舟 及其他运营商\"]\n    C3[\"推荐度中\"]\n    C4[\"小米 Coding Plan\"]\n    C5[\"质朴 Coding Plan\"]\n    C6[\"推荐度高\"]\n    C7[\"KIMI Coding Plan\"]\n    C8[\"轻度使用\"]\n    C9[\"中度使用\"]\n    C10[\"重度使用\"]\n\n    C1 --> C2\n    C3 --> C4\n    C3 --> C5\n    C6 --> C7\n    C2 --> C8\n    C4 --> C9\n    C5 --> C9\n    C7 --> C10\n```\n\n## 计费方式与折扣关系\n```mermaid\nflowchart TD\n    D1[\"计费方式\"]\n    D2[\"Credits（100 credits = 1 元）\"]\n    D3[\"Token（100,000,000 credit = 1 元）\"]\n    D4[\"折扣区间\"]\n    D5[\"2~3 折\"]\n    D6[\"1~2 折\"]\n    D7[\"额度限制\"]\n    D8[\"月度额度\"]\n    D9[\"周额度（KIMI 为总额 1/4）\"]\n    D10[\"价格示例\"]\n    D11[\"首月 5 美元 → 月度 60 美元额度\"]\n    D12[\"小米 8~9 折\"]\n    D13[\"KIMI 1~2 折\"]\n\n    D1 --> D2\n    D1 --> D3\n    D2 --> D4\n    D3 --> D4\n    D4 --> D5\n    D4 --> D6\n    D5 --> D10\n    D6 --> D10\n    D10 --> D11\n    D10 --> D12\n    D10 --> D13\n    D4 --> D7\n    D7 --> D8\n    D7 --> D9\n```\n\n## 使用组合建议\n```mermaid\nflowchart TD\n    E1[\"轻度用户\"]\n    E2[\"中度用户\"]\n    E3[\"重度用户\"]\n    E4[\"OpenCode Go 套餐\"]\n    E5[\"DeepSeek Memo 官方 API\"]\n    E6[\"KIMI 199 元套餐\"]\n    E7[\"组合：OpenCode Go + DeepSeek Memo\"]\n    E8[\"组合：KIMI + OpenCode Go + DeepSeek Memo\"]\n\n    E1 --> E7\n    E2 --> E7\n    E3 --> E8\n    E4 --> E7\n    E5 --> E7\n    E6 --> E8\n    E4 --> E8\n    E5 --> E8\n```",
+      "diagrams": [
+        {
+          "title": "总览：Coding Plan 生态",
+          "code": "flowchart TD\n    A1[\"DeepSeek API\"]\n    A2[\"OpenCode Go 套餐\"]\n    A3[\"阿里云 Coding Plan\"]\n    A4[\"小米 Coding Plan\"]\n    A5[\"KIMI Coding Plan\"]\n    A6[\"质朴 Coding Plan\"]\n    A7[\"字节/方舟 及其他运营商\"]\n    A8[\"价格折扣（2~3折、1~2折）\"]\n    A9[\"模型兼容性\"]\n    A10[\"使用场景（轻度/中度/重度）\"]\n\n    A1 --> A2\n    A2 --> A9\n    A3 --> A8\n    A4 --> A8\n    A5 --> A8\n    A6 --> A8\n    A7 --> A8\n    A9 --> A10\n    A8 --> A10\n    A2 --> A10"
+        },
+        {
+          "title": "API 兼容格式与转换",
+          "code": "flowchart TD\n    B1[\"OpenAI Chat Completions\"]\n    B2[\"OpenAI Responses\"]\n    B3[\"Anthropic Message\"]\n    B4[\"CC Switch 转换工具\"]\n    B5[\"OpenCode Go 套餐 支持模型\"]\n    B6[\"DeepSeek (OpenAI Chat)\"]\n    B7[\"Anthropic 兼容模型\"]\n    B8[\"Code X (OpenAI Responses)\"]\n\n    B1 --> B4\n    B2 --> B4\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B5 --> B8"
+        },
+        {
+          "title": "推荐层级与适用场景",
+          "code": "flowchart TD\n    C1[\"推荐度低\"]\n    C2[\"字节/方舟 及其他运营商\"]\n    C3[\"推荐度中\"]\n    C4[\"小米 Coding Plan\"]\n    C5[\"质朴 Coding Plan\"]\n    C6[\"推荐度高\"]\n    C7[\"KIMI Coding Plan\"]\n    C8[\"轻度使用\"]\n    C9[\"中度使用\"]\n    C10[\"重度使用\"]\n\n    C1 --> C2\n    C3 --> C4\n    C3 --> C5\n    C6 --> C7\n    C2 --> C8\n    C4 --> C9\n    C5 --> C9\n    C7 --> C10"
+        },
+        {
+          "title": "计费方式与折扣关系",
+          "code": "flowchart TD\n    D1[\"计费方式\"]\n    D2[\"Credits（100 credits = 1 元）\"]\n    D3[\"Token（100,000,000 credit = 1 元）\"]\n    D4[\"折扣区间\"]\n    D5[\"2~3 折\"]\n    D6[\"1~2 折\"]\n    D7[\"额度限制\"]\n    D8[\"月度额度\"]\n    D9[\"周额度（KIMI 为总额 1/4）\"]\n    D10[\"价格示例\"]\n    D11[\"首月 5 美元 → 月度 60 美元额度\"]\n    D12[\"小米 8~9 折\"]\n    D13[\"KIMI 1~2 折\"]\n\n    D1 --> D2\n    D1 --> D3\n    D2 --> D4\n    D3 --> D4\n    D4 --> D5\n    D4 --> D6\n    D5 --> D10\n    D6 --> D10\n    D10 --> D11\n    D10 --> D12\n    D10 --> D13\n    D4 --> D7\n    D7 --> D8\n    D7 --> D9"
+        },
+        {
+          "title": "使用组合建议",
+          "code": "flowchart TD\n    E1[\"轻度用户\"]\n    E2[\"中度用户\"]\n    E3[\"重度用户\"]\n    E4[\"OpenCode Go 套餐\"]\n    E5[\"DeepSeek Memo 官方 API\"]\n    E6[\"KIMI 199 元套餐\"]\n    E7[\"组合：OpenCode Go + DeepSeek Memo\"]\n    E8[\"组合：KIMI + OpenCode Go + DeepSeek Memo\"]\n\n    E1 --> E7\n    E2 --> E7\n    E3 --> E8\n    E4 --> E7\n    E5 --> E7\n    E6 --> E8\n    E4 --> E8\n    E5 --> E8"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T08:22:17+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek Coding Plan 知识图谱\n\n## 总览：Coding Plan 生态\n```mermaid\nflowchart TD\n    A1[\"DeepSeek API\"]\n    A2[\"OpenCode Go 套餐\"]\n    A3[\"阿里云 Coding Plan\"]\n    A4[\"小米 Coding Plan\"]\n    A5[\"KIMI Coding Plan\"]\n    A6[\"质朴 Coding Plan\"]\n    A7[\"字节/方舟 及其他运营商\"]\n    A8[\"价格折扣（2~3折、1~2折）\"]\n    A9[\"模型兼容性\"]\n    A10[\"使用场景（轻度/中度/重度）\"]\n\n    A1 --> A2\n    A2 --> A9\n    A3 --> A8\n    A4 --> A8\n    A5 --> A8\n    A6 --> A8\n    A7 --> A8\n    A9 --> A10\n    A8 --> A10\n    A2 --> A10\n```\n\n## API 兼容格式与转换\n```mermaid\nflowchart TD\n    B1[\"OpenAI Chat Completions\"]\n    B2[\"OpenAI Responses\"]\n    B3[\"Anthropic Message\"]\n    B4[\"CC Switch 转换工具\"]\n    B5[\"OpenCode Go 套餐 支持模型\"]\n    B6[\"DeepSeek (OpenAI Chat)\"]\n    B7[\"Anthropic 兼容模型\"]\n    B8[\"Code X (OpenAI Responses)\"]\n\n    B1 --> B4\n    B2 --> B4\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B5 --> B8\n```\n\n## 推荐层级与适用场景\n```mermaid\nflowchart TD\n    C1[\"推荐度低\"]\n    C2[\"字节/方舟 及其他运营商\"]\n    C3[\"推荐度中\"]\n    C4[\"小米 Coding Plan\"]\n    C5[\"质朴 Coding Plan\"]\n    C6[\"推荐度高\"]\n    C7[\"KIMI Coding Plan\"]\n    C8[\"轻度使用\"]\n    C9[\"中度使用\"]\n    C10[\"重度使用\"]\n\n    C1 --> C2\n    C3 --> C4\n    C3 --> C5\n    C6 --> C7\n    C2 --> C8\n    C4 --> C9\n    C5 --> C9\n    C7 --> C10\n```\n\n## 计费方式与折扣关系\n```mermaid\nflowchart TD\n    D1[\"计费方式\"]\n    D2[\"Credits（100 credits = 1 元）\"]\n    D3[\"Token（100,000,000 credit = 1 元）\"]\n    D4[\"折扣区间\"]\n    D5[\"2~3 折\"]\n    D6[\"1~2 折\"]\n    D7[\"额度限制\"]\n    D8[\"月度额度\"]\n    D9[\"周额度（KIMI 为总额 1/4）\"]\n    D10[\"价格示例\"]\n    D11[\"首月 5 美元 → 月度 60 美元额度\"]\n    D12[\"小米 8~9 折\"]\n    D13[\"KIMI 1~2 折\"]\n\n    D1 --> D2\n    D1 --> D3\n    D2 --> D4\n    D3 --> D4\n    D4 --> D5\n    D4 --> D6\n    D5 --> D10\n    D6 --> D10\n    D10 --> D11\n    D10 --> D12\n    D10 --> D13\n    D4 --> D7\n    D7 --> D8\n    D7 --> D9\n```\n\n## 使用组合建议\n```mermaid\nflowchart TD\n    E1[\"轻度用户\"]\n    E2[\"中度用户\"]\n    E3[\"重度用户\"]\n    E4[\"OpenCode Go 套餐\"]\n    E5[\"DeepSeek Memo 官方 API\"]\n    E6[\"KIMI 199 元套餐\"]\n    E7[\"组合：OpenCode Go + DeepSeek Memo\"]\n    E8[\"组合：KIMI + OpenCode Go + DeepSeek Memo\"]\n\n    E1 --> E7\n    E2 --> E7\n    E3 --> E8\n    E4 --> E7\n    E5 --> E7\n    E6 --> E8\n    E4 --> E8\n    E5 --> E8\n```",
+  "diagrams": [
+    {
+      "title": "总览：Coding Plan 生态",
+      "code": "flowchart TD\n    A1[\"DeepSeek API\"]\n    A2[\"OpenCode Go 套餐\"]\n    A3[\"阿里云 Coding Plan\"]\n    A4[\"小米 Coding Plan\"]\n    A5[\"KIMI Coding Plan\"]\n    A6[\"质朴 Coding Plan\"]\n    A7[\"字节/方舟 及其他运营商\"]\n    A8[\"价格折扣（2~3折、1~2折）\"]\n    A9[\"模型兼容性\"]\n    A10[\"使用场景（轻度/中度/重度）\"]\n\n    A1 --> A2\n    A2 --> A9\n    A3 --> A8\n    A4 --> A8\n    A5 --> A8\n    A6 --> A8\n    A7 --> A8\n    A9 --> A10\n    A8 --> A10\n    A2 --> A10"
+    },
+    {
+      "title": "API 兼容格式与转换",
+      "code": "flowchart TD\n    B1[\"OpenAI Chat Completions\"]\n    B2[\"OpenAI Responses\"]\n    B3[\"Anthropic Message\"]\n    B4[\"CC Switch 转换工具\"]\n    B5[\"OpenCode Go 套餐 支持模型\"]\n    B6[\"DeepSeek (OpenAI Chat)\"]\n    B7[\"Anthropic 兼容模型\"]\n    B8[\"Code X (OpenAI Responses)\"]\n\n    B1 --> B4\n    B2 --> B4\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B5 --> B8"
+    },
+    {
+      "title": "推荐层级与适用场景",
+      "code": "flowchart TD\n    C1[\"推荐度低\"]\n    C2[\"字节/方舟 及其他运营商\"]\n    C3[\"推荐度中\"]\n    C4[\"小米 Coding Plan\"]\n    C5[\"质朴 Coding Plan\"]\n    C6[\"推荐度高\"]\n    C7[\"KIMI Coding Plan\"]\n    C8[\"轻度使用\"]\n    C9[\"中度使用\"]\n    C10[\"重度使用\"]\n\n    C1 --> C2\n    C3 --> C4\n    C3 --> C5\n    C6 --> C7\n    C2 --> C8\n    C4 --> C9\n    C5 --> C9\n    C7 --> C10"
+    },
+    {
+      "title": "计费方式与折扣关系",
+      "code": "flowchart TD\n    D1[\"计费方式\"]\n    D2[\"Credits（100 credits = 1 元）\"]\n    D3[\"Token（100,000,000 credit = 1 元）\"]\n    D4[\"折扣区间\"]\n    D5[\"2~3 折\"]\n    D6[\"1~2 折\"]\n    D7[\"额度限制\"]\n    D8[\"月度额度\"]\n    D9[\"周额度（KIMI 为总额 1/4）\"]\n    D10[\"价格示例\"]\n    D11[\"首月 5 美元 → 月度 60 美元额度\"]\n    D12[\"小米 8~9 折\"]\n    D13[\"KIMI 1~2 折\"]\n\n    D1 --> D2\n    D1 --> D3\n    D2 --> D4\n    D3 --> D4\n    D4 --> D5\n    D4 --> D6\n    D5 --> D10\n    D6 --> D10\n    D10 --> D11\n    D10 --> D12\n    D10 --> D13\n    D4 --> D7\n    D7 --> D8\n    D7 --> D9"
+    },
+    {
+      "title": "使用组合建议",
+      "code": "flowchart TD\n    E1[\"轻度用户\"]\n    E2[\"中度用户\"]\n    E3[\"重度用户\"]\n    E4[\"OpenCode Go 套餐\"]\n    E5[\"DeepSeek Memo 官方 API\"]\n    E6[\"KIMI 199 元套餐\"]\n    E7[\"组合：OpenCode Go + DeepSeek Memo\"]\n    E8[\"组合：KIMI + OpenCode Go + DeepSeek Memo\"]\n\n    E1 --> E7\n    E2 --> E7\n    E3 --> E8\n    E4 --> E7\n    E5 --> E7\n    E6 --> E8\n    E4 --> E8\n    E5 --> E8"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:22:17+00:00"
+}

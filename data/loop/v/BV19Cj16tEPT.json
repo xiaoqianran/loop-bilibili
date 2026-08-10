@@ -1,0 +1,40 @@
+{
+  "bvid": "BV19Cj16tEPT",
+  "title": "【2026版】这绝对是B站唯一将Hermes Agent从入门到精通讲明白的教程，手把手带你从入门到代码实战开发，比付费效果强百倍！让你少走99%弯路！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2046,
+  "text": "不不需要过多的了解这个玩意儿啊\n它的概念你就知道它是一个agent的框架啊\n就可以了啊\n它类似于什么东西呢\n就类似于大家伙的用过的那个open cloud小龙虾啊\n但它比好龙虾要好用很多啊\n通过呃我搭建搭建起来之后啊\n我去使用\n我也发现这个HERMES的呢确实它比小龙虾要呃\n呃这个也可能是它底层对于模型的调教来说啊\n可能这个使用模型上这这这种框架的编写来说\n它要优秀很多呃\n它比较准确\n然后反应速度呢也比较快\n所以有些人啊他他说这个hermes agent呢\n他相当于是什么呢\n相当于是呃cloud code加上啊对应的那个那对应的呃\nopen cloud啊\n这两者的集成啊\n这样说我就我觉得也也不为过啊\n他确实很好用啊\nHERMES呢就是爱马仕的意思啊\n所以有些人叫他爱马仕agent的啊\n这个词啊你就听一听就行了好吧\n他就是一个AI的agent的框架\n我们搭建起来之后可以利用它做什么事呢\n啊你完全可以做你想做的任何的事情\n比如说让他去编写代码\n完全的可以呃支持\n那你像open cloud\n你去编写代码\n它可能支持的还不是太好\n那实际上hermes agent在内置了cloud code\n内置了codex对吧啊\n那你让他去编写代码是完全没有问题的\n未满完全没有问题的\n然后也可以让它执行一系列的工具\n比如说这些工具它也内置了非常多的工具集\n这些供给机比如说操作浏览器的对吧\n它不需要像open cloud一样\n直接真正的打开那个浏览器\n而是在内部它去呃访问网页啊\n或者从网页上抓取一些东西的时候啊\n它内置有浏览器的那个工具集\n它直接啊\n就是通过供给机来去操作了这个网页啊\n来去读取了网页啊\n来去访问了一些内容\n好吧\n呃然后呃当然呃\nopen cloud所有能做的这个harmony dent\n它全都能做好吧啊\n包括web的工具内\n它有内置的工具\n也有web的工具啊\n它也可以呃自己让用户自己去辨析一些skill啊\n就是我们所谓的技能对吧\n当然这些技能你也可以从网络上下载下来\n都是OK的啊\n完全没有问题呃\n然后最优秀的啊\n这个harmony aan的最优秀的\n我个人用下来感觉啊\n一个是他自己的这个记忆分层非常好\n做的非常好\n另外一点呢就是harmony agent呢\n它还有这么一个呢这么一个特点\n就是自我进化的能力\n它的内部skill啊可以自动生成\n就是大家经常用harmony edit\n完成一件事的过程里面\n那么你跟他进行对话啊\n我第一步要干嘛\n第二步干干嘛\n第三步要干嘛\n然后你在经常跟他对话的过程里面呢\n他如果发现啊会有经常性重复性的这样的工作\n它会自动给你生成sq\n后续再去调用的时候\n它直接会调用自己生成的这个skill\n好吧好\n当然它也有其他的一些特点啊\n比如说第一个就是它支持的模型非常多\n200多个\n就是大家网上看到的任意的这种模型供应商\n几乎他都支持好吧\n它的打点呢可以基于本地啊\n基于你的docker linux啊\nwindows啊\n什么都可以啊\n本地我这说的用windows啊\nDocker linux marco s\n还有一些集群上都是OK的\n呃还有一点呢就是它呃也像open cloud一样\nopen cloud呢它是不是可以集成你的QQ啊\n你的微信是吧啊\n或者是飞书啊\n那么这个啊哈呃HARMONAGENT\n他也完全可以呃\n集成任意的这种聊天的这种这种这种软件吧\n啊或者这种平台啊\n国内的国外的它支持的种类非常非常多\n非常多啊\n啊像telegram什么discord就是国外的微信啊\n企业微信钉钉啊对吧\n他都支持啊\n而且配置呢也特别简单啊\n咱们待会一扫码就能配置上好吧\n不需要像open cloud里面一样需要繁琐的一些配置啊\n那个呃这个呃方便了很多好吧\n然后这个自我进化说完了啊\n就是它可以自动给你生成skill来去做呃\n这个后续的一些任务的执行啊\n然后不用它的时候\n它的呃它消耗token几乎是不会消耗token的\n然后也就意味着大家想想啊\n嗯当你配置了外部的一些\n比如说配置了你的微信啊\n配置了你的微信\n那么你在手机端是不是可以访问微信对吧\n那你通过微信对话\n其实可以操作这个harmony agent的\n可以操作它\n那你的harmony agent可以静默的在你的电脑本地\n比如说windows启动的\n那实际上你就可以完全达到\n通过微信对话来去操作你的电脑啊\n来来去完成这些事儿\n这个东西你完全启动呢\n它是不它是正常的话\n它是不会消耗那个token的啊\n就是消耗token极其低\n并且有人测试呢\n说harmony agent和open cloud做了个对比\n他们在进行对话多轮对话啊\n经过一段时间的对比呢\nharmony agent的总体消耗的token量\n要远远低于open cloud啊\n所以对于呃我们之前说deep agent呢来进行多轮对话\n这种极其消耗token的这种场景\n对吧啊\n那大家不用担心\n用这个绝对消耗的token极其少",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19Cj16tEPT",
+  "published_at": "1782188425",
+  "fetched_at": "2026-08-09T08:17:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T08:37:39+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T08:37:39+00:00"
+}

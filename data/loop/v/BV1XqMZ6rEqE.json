@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1XqMZ6rEqE",
+  "title": "一天烧掉8万亿Token，DeepSeek划下的斩杀线",
+  "status": "ok",
+  "language": "zh",
+  "chars": 2751,
+  "text": "大家好\n欢迎收听今天的AI每日观察\n首先我们来看看今日快报\nquin3.8max上线\n在编程\n真实办公和长城任务执行上实现全面升级\n聚焦真实办公与复杂任务\n下周将开源模型权重mini max c3\n正式开源模型权重\n开发者可以根据任务选择三种用法\n输入文字\n生成视频\n输入首帧或首尾帧\n控制视频变化\n输入参考图\n视频和音频控制角色身份风格动作\n镜头运动或声音\n接下来的故事要从一个数字讲起\n8万亿\n听到这个数字\n你可能会以为是哪个国家的GDP\n或者某家公司的市值都不是\n这是一款AI模型在某一天被人用掉的token数量\n注意是一天是一款模型\n是一个入口\n什么概念呢\n市面上有个叫open router的平台\n接入了400多款模型\n整个平台一天的消耗量大约是六点6000000000000token\n而deep seek v4flash一款模型在一个叫open code\nAI编程工具里\n一天就烧掉了8万亿\n一款对战400款完胜\n听到这你可能会问这玩意是不要钱吗\n恭喜你猜对了一半\n他真就几乎不要钱\n一滴目茅台卖出了矿泉水的价格好\n我先给你讲个故事\n假设你是一位程序员\n平时让AI帮你写代码\n你用的是ANTHROPIC家的cloud open4.8\n业界公认的贵族模型\n他输出100万个token收你25美元\n折合人民币大概170块\n而deep sick v4flash输出同样100万个token\n只收你两块钱\n170块对两块85倍\n你可能会说\n那肯定是因为deep seek笨啊\n便宜没好货\n可问题来了\n在最新的前端编码能力评测榜单上\nV4flash的排名暂时压过了opus4.8\nThinking\n不是并列\n是排到前面\n而在另一个权威综合测试里\ncloud opus4.8max拿了56分\ndeep sk v4flash max拿了50分\n差距六分\n那跑完这套评测\n各自要烧多少钱呢\n付费了这边3752美元\ndeep seek这边72美元\n也就是说opus多拿了六分\n但调用费高出了约52倍\n过六分的差距\n52倍的价格\n你说这笔账怎么算\n第二幕\n2840亿参数\n为什么只激活130亿\n有人可能好奇了\ndeep sick是怎么把成本压到这么低的\n他们变魔术了吗\n嗯某种程度上还真是\n那么\n来拆解一下\nV4flash的总参数量是2841\n听着很吓人对吧\n但你每让它生成一个token\n它实际上只激活大约130亿参数\n怎么做到的\n靠一种叫MAOE的架构\n你可以这么理解\n这模型内部养了一群专家\n每次来了活儿\n他只喊几个最对口的专家出来干活儿\n其余的专家继续在后台睡觉\n再配上一种叫混合注意力的新机制\n先压缩再找重点的CSA和更极致压缩\n但全部扫一遍的HCA两种结构交错排列\n这一套组合拳打下来\n在百万token的长上下文场景里\nV 4flash\n每个token的推理计算量\n只有自家上一代V3.2的110\nkv cash更是只剩70%分之一啊\n朋友们\n这就好比一个人吃饭只花1/10的钱\n干出来的活儿\n还跟以前差不多\n这到底是怎么做到的\n还有更狠的V4flash的正式版跟预览版比\n架构参数量一个参数都没变\ndeep sick只做了一件事\n重新后训练\n跪求练的重点是什么呢\n不是让他更会聊天\n而是让他更会干活\ndeep sick搞了几10万个并发沙箱\n让模型反复练习一件事\n运行代码看报错\n改代码再运行\n再看报错\n就像武侠小说里的少年\n在深山老林里日复一日的挥剑\n直到形成肌肉记忆\n结果呢在专门测试AI能不能独立把活干完的\nTerminal bench\n2.1上\nV4flash拿了82.7分\n架构没变\n能力大涨\n这大概就是传说中的软件更新\n第三幕\n斩杀线到底斩了谁好\n现在来到今天最精彩的部分斩杀线\ndeep seek这个策略很有意思\n他不需要成为最强模型\n它只要做到一件事\n大多数任务他都能做完\n然后呢\n然后把85倍的价差\n像一把刀一样摆在你面前\n你说如果你是老板\n你会怎么选\n真正被斩的不是那些最弱的小模型\n便宜的小模型呢\n还有自己的生态位分类提取路由\n人家活的好好的\n也不是那些最强的旗舰模型\n疑难杂症高失败成本的场景还得靠他们兜底\n最尴尬的是中间那一批模型\n他们比V4flash强一些\n真的只是一些可价格贵了几十倍\n关键是他们又没有强到\n能稳定解决V4flash干不了的活\n上有老下有小\n中间还横着一个比你便宜85倍\n还差不了多少的对手\n这就叫战第四幕\n一个浪费得起的时代\n不过我觉得这个故事最有意思的地方\n还不是性价比本身\n而是它背后折射出的时代的变化\n以前我们用AI是一问一答\n问一个问题\n得到一段回答\n任务结束\n那时候贵一点无所谓\n反正就问你一次\n他现在AI进入了agent时代\n它不再只是回答问题\n他会自己读文件\n改代码\n跑程序\n看结果失败了\n再重来一次\n任务可能持续几个小时\n调用几十次工具\n甚至多个agent的同时干活\n我给你讲个真实的花絮\n有人用cloud obs5做了一个单页3D游戏\n就一句提示词模型在那自己生成页面截图\n检查修改再检查\n最后交付了一个HTML文件\n听起来很正常对吧\n但这个过程消耗了六点900000000token费用\n接近3000块人民币\n游戏可能很精美\n但那一句提示词可真是金口玉言啊\n这说明什么\n说明在agent时代\ntoken的消耗量会爆炸式增长\n原来问一次的\n现在要问几十次\n原来一个人干的活\n现在一群agent的同时在干\n在这种背景下\n单价就成了生死线\n而deep sick做了一件很聪明的事\n把单价压到了可以浪费的程度\n注意我的用词是可以浪费\n当你允许AI犯错\n允许他多试几轮\n允许他常驻后台\n允许他整夜跑任务的时候\n整个使用场景就被彻底打开了\n三毛特曼和deep sick的梁文峰\n这两位最聪明的AI掌门人\n不约而同说过类似的话\nAI的需求是没有上限的\n单次调用赚的少没关系\n量一旦上来\n累计利润照样能覆盖下一代模型的训练成本\n低价不是慈善\n低价是最锋利的市场武器\n结尾升华\n所以回到开头那个问题\n不是某个具体的对手\n它斩掉的是调用旗舰模型\n之前不需要计算成本的旧习惯\n以前我们默认越贵的模型越好\n好模型就该卖的贵\n但V4flash用一天8000000000000token的实际告诉我们\n当一个便宜50倍甚至80倍的模型\n已经能完成大多数编码和agent的任务时\n昂贵模型就必须反过来证明\n剩下那几分能力究竟值不值得多付几十倍的钱\n这个问题以后\n每一个开发者\n每一个老板\n每一个会用AI的人\n都必须在心里算一遍\n模型厂商们准备好回答了吗\n好了\n今天的AI每日观察就到这里\n如果你也被8万亿这个数字震撼到\n欢迎在评论区聊聊你的看法\n我们明天见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1XqMZ6rEqE",
+  "published_at": "1785802438",
+  "fetched_at": "2026-08-08T08:53:15+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 一天烧掉8万亿Token，DeepSeek斩杀线知识图谱\n\n## 图1 Token 消耗 与 成本对比\n```mermaid\nflowchart TD\n    A[\"DeepSeek V4Flash\\n每日消耗 8 万亿 token\"] --> B[\"单 token 成本约 2 元人民币\"]\n    C[\"Anthropic Claude\\n（cloud open 4.8）\\n单 token 成本约 170 元人民币\"] --> D[\"成本比值 85 倍\"]\n    A --> D\n    E[\"OpenRouter 平台\\n每日总消耗约 6.6 万亿 token\"] --> F[\"DeepSeek V4Flash 占比 >100%（在 OpenCode 场景）\"]\n    D --> G[\"价格差驱动模型选择\"]\n```\n\n## 图2 MAOE 架构 与 推理效率\n```mermaid\nflowchart TD\n    A[\"模型总参数 2841 B\"] --> B[\"实际激活参数约 130 B / token\"]\n    B --> C[\"MAOE（Mixture of Activated Experts）架构\"]\n    C --> D[\"专家网络：仅召唤最匹配的少数专家\"]\n    C --> E[\"混合注意力机制\"]\n    E --> F[\"CSA：压缩‑聚焦注意力\"]\n    E --> G[\"HCA：全局扫描注意力\"]\n    F --> H[\"降低 KV‑cache 至 1/70\"]\n    G --> I[\"推理计算量仅 V3.2 的 1/110\"]\n    H --> J[\"每 token 成本大幅下降\"]\n    I --> J\n```\n\n## 图3 性能 vs 成本 权衡\n```mermaid\nflowchart TD\n    A[\"前端编码基准榜单\\nV4Flash 排名 > Opus 4.8\"] --> B[\"综合测试得分\\nOpus 4.8 = 56，V4Flash = 50\"]\n    B --> C[\"分差 6 分\"]\n    D[\"使用成本\\nOpus 4.8 = 3752 美元\"] --> E[\"V4Flash = 72 美元\"]\n    E --> F[\"成本比约 52 倍\"]\n    C --> G[\"性能提升有限\\n但成本优势显著\"]\n    G --> H[\"性价比决定模型选型\"]\n```\n\n## 图4 “斩杀线” 策略 与 市场影响\n```mermaid\nflowchart TD\n    A[\"斩杀线概念\"] --> B[\"便宜模型（V4Flash）\\n完成多数任务\"]\n    B --> C[\"85 倍价格优势\"]\n    C --> D[\"迫使旗舰模型\\n证明额外价值\"]\n    D --> E[\"旧有高价即好观念被冲击\"]\n    F[\"Agent 时代\\nToken 消耗爆炸式增长\"] --> G[\"单价成为生死线\"]\n    G --> H[\"DeepSeek 将单价压至可浪费水平\"]\n    H --> I[\"鼓励容错、反复尝试的 AI 使用场景\"]\n    I --> J[\"扩大 AI 需求上限\"]\n    J --> K[\"模型厂商需重新定位定价策略\"]\n```",
+      "diagrams": [
+        {
+          "title": "图1 Token 消耗 与 成本对比",
+          "code": "flowchart TD\n    A[\"DeepSeek V4Flash\\n每日消耗 8 万亿 token\"] --> B[\"单 token 成本约 2 元人民币\"]\n    C[\"Anthropic Claude\\n（cloud open 4.8）\\n单 token 成本约 170 元人民币\"] --> D[\"成本比值 85 倍\"]\n    A --> D\n    E[\"OpenRouter 平台\\n每日总消耗约 6.6 万亿 token\"] --> F[\"DeepSeek V4Flash 占比 >100%（在 OpenCode 场景）\"]\n    D --> G[\"价格差驱动模型选择\"]"
+        },
+        {
+          "title": "图2 MAOE 架构 与 推理效率",
+          "code": "flowchart TD\n    A[\"模型总参数 2841 B\"] --> B[\"实际激活参数约 130 B / token\"]\n    B --> C[\"MAOE（Mixture of Activated Experts）架构\"]\n    C --> D[\"专家网络：仅召唤最匹配的少数专家\"]\n    C --> E[\"混合注意力机制\"]\n    E --> F[\"CSA：压缩‑聚焦注意力\"]\n    E --> G[\"HCA：全局扫描注意力\"]\n    F --> H[\"降低 KV‑cache 至 1/70\"]\n    G --> I[\"推理计算量仅 V3.2 的 1/110\"]\n    H --> J[\"每 token 成本大幅下降\"]\n    I --> J"
+        },
+        {
+          "title": "图3 性能 vs 成本 权衡",
+          "code": "flowchart TD\n    A[\"前端编码基准榜单\\nV4Flash 排名 > Opus 4.8\"] --> B[\"综合测试得分\\nOpus 4.8 = 56，V4Flash = 50\"]\n    B --> C[\"分差 6 分\"]\n    D[\"使用成本\\nOpus 4.8 = 3752 美元\"] --> E[\"V4Flash = 72 美元\"]\n    E --> F[\"成本比约 52 倍\"]\n    C --> G[\"性能提升有限\\n但成本优势显著\"]\n    G --> H[\"性价比决定模型选型\"]"
+        },
+        {
+          "title": "图4 “斩杀线” 策略 与 市场影响",
+          "code": "flowchart TD\n    A[\"斩杀线概念\"] --> B[\"便宜模型（V4Flash）\\n完成多数任务\"]\n    B --> C[\"85 倍价格优势\"]\n    C --> D[\"迫使旗舰模型\\n证明额外价值\"]\n    D --> E[\"旧有高价即好观念被冲击\"]\n    F[\"Agent 时代\\nToken 消耗爆炸式增长\"] --> G[\"单价成为生死线\"]\n    G --> H[\"DeepSeek 将单价压至可浪费水平\"]\n    H --> I[\"鼓励容错、反复尝试的 AI 使用场景\"]\n    I --> J[\"扩大 AI 需求上限\"]\n    J --> K[\"模型厂商需重新定位定价策略\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T08:54:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 一天烧掉8万亿Token，DeepSeek斩杀线知识图谱\n\n## 图1 Token 消耗 与 成本对比\n```mermaid\nflowchart TD\n    A[\"DeepSeek V4Flash\\n每日消耗 8 万亿 token\"] --> B[\"单 token 成本约 2 元人民币\"]\n    C[\"Anthropic Claude\\n（cloud open 4.8）\\n单 token 成本约 170 元人民币\"] --> D[\"成本比值 85 倍\"]\n    A --> D\n    E[\"OpenRouter 平台\\n每日总消耗约 6.6 万亿 token\"] --> F[\"DeepSeek V4Flash 占比 >100%（在 OpenCode 场景）\"]\n    D --> G[\"价格差驱动模型选择\"]\n```\n\n## 图2 MAOE 架构 与 推理效率\n```mermaid\nflowchart TD\n    A[\"模型总参数 2841 B\"] --> B[\"实际激活参数约 130 B / token\"]\n    B --> C[\"MAOE（Mixture of Activated Experts）架构\"]\n    C --> D[\"专家网络：仅召唤最匹配的少数专家\"]\n    C --> E[\"混合注意力机制\"]\n    E --> F[\"CSA：压缩‑聚焦注意力\"]\n    E --> G[\"HCA：全局扫描注意力\"]\n    F --> H[\"降低 KV‑cache 至 1/70\"]\n    G --> I[\"推理计算量仅 V3.2 的 1/110\"]\n    H --> J[\"每 token 成本大幅下降\"]\n    I --> J\n```\n\n## 图3 性能 vs 成本 权衡\n```mermaid\nflowchart TD\n    A[\"前端编码基准榜单\\nV4Flash 排名 > Opus 4.8\"] --> B[\"综合测试得分\\nOpus 4.8 = 56，V4Flash = 50\"]\n    B --> C[\"分差 6 分\"]\n    D[\"使用成本\\nOpus 4.8 = 3752 美元\"] --> E[\"V4Flash = 72 美元\"]\n    E --> F[\"成本比约 52 倍\"]\n    C --> G[\"性能提升有限\\n但成本优势显著\"]\n    G --> H[\"性价比决定模型选型\"]\n```\n\n## 图4 “斩杀线” 策略 与 市场影响\n```mermaid\nflowchart TD\n    A[\"斩杀线概念\"] --> B[\"便宜模型（V4Flash）\\n完成多数任务\"]\n    B --> C[\"85 倍价格优势\"]\n    C --> D[\"迫使旗舰模型\\n证明额外价值\"]\n    D --> E[\"旧有高价即好观念被冲击\"]\n    F[\"Agent 时代\\nToken 消耗爆炸式增长\"] --> G[\"单价成为生死线\"]\n    G --> H[\"DeepSeek 将单价压至可浪费水平\"]\n    H --> I[\"鼓励容错、反复尝试的 AI 使用场景\"]\n    I --> J[\"扩大 AI 需求上限\"]\n    J --> K[\"模型厂商需重新定位定价策略\"]\n```",
+  "diagrams": [
+    {
+      "title": "图1 Token 消耗 与 成本对比",
+      "code": "flowchart TD\n    A[\"DeepSeek V4Flash\\n每日消耗 8 万亿 token\"] --> B[\"单 token 成本约 2 元人民币\"]\n    C[\"Anthropic Claude\\n（cloud open 4.8）\\n单 token 成本约 170 元人民币\"] --> D[\"成本比值 85 倍\"]\n    A --> D\n    E[\"OpenRouter 平台\\n每日总消耗约 6.6 万亿 token\"] --> F[\"DeepSeek V4Flash 占比 >100%（在 OpenCode 场景）\"]\n    D --> G[\"价格差驱动模型选择\"]"
+    },
+    {
+      "title": "图2 MAOE 架构 与 推理效率",
+      "code": "flowchart TD\n    A[\"模型总参数 2841 B\"] --> B[\"实际激活参数约 130 B / token\"]\n    B --> C[\"MAOE（Mixture of Activated Experts）架构\"]\n    C --> D[\"专家网络：仅召唤最匹配的少数专家\"]\n    C --> E[\"混合注意力机制\"]\n    E --> F[\"CSA：压缩‑聚焦注意力\"]\n    E --> G[\"HCA：全局扫描注意力\"]\n    F --> H[\"降低 KV‑cache 至 1/70\"]\n    G --> I[\"推理计算量仅 V3.2 的 1/110\"]\n    H --> J[\"每 token 成本大幅下降\"]\n    I --> J"
+    },
+    {
+      "title": "图3 性能 vs 成本 权衡",
+      "code": "flowchart TD\n    A[\"前端编码基准榜单\\nV4Flash 排名 > Opus 4.8\"] --> B[\"综合测试得分\\nOpus 4.8 = 56，V4Flash = 50\"]\n    B --> C[\"分差 6 分\"]\n    D[\"使用成本\\nOpus 4.8 = 3752 美元\"] --> E[\"V4Flash = 72 美元\"]\n    E --> F[\"成本比约 52 倍\"]\n    C --> G[\"性能提升有限\\n但成本优势显著\"]\n    G --> H[\"性价比决定模型选型\"]"
+    },
+    {
+      "title": "图4 “斩杀线” 策略 与 市场影响",
+      "code": "flowchart TD\n    A[\"斩杀线概念\"] --> B[\"便宜模型（V4Flash）\\n完成多数任务\"]\n    B --> C[\"85 倍价格优势\"]\n    C --> D[\"迫使旗舰模型\\n证明额外价值\"]\n    D --> E[\"旧有高价即好观念被冲击\"]\n    F[\"Agent 时代\\nToken 消耗爆炸式增长\"] --> G[\"单价成为生死线\"]\n    G --> H[\"DeepSeek 将单价压至可浪费水平\"]\n    H --> I[\"鼓励容错、反复尝试的 AI 使用场景\"]\n    I --> J[\"扩大 AI 需求上限\"]\n    J --> K[\"模型厂商需重新定位定价策略\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T08:54:28+00:00"
+}

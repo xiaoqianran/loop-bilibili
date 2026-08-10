@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1rZMd6JEQk",
+  "title": "[中配]DeepSeek官方代码：告别Claude、Codex！这太棒了！ - AICodeKing",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3877,
+  "text": "观看本期视频\n在过去的几期视频里\n我们聊了很多关于deep c q v4flash的内容\n首先是0.73.1更新\n它大幅提升了模型智能体的能力\n然后我们讨论了如何通过命令代码\n低成本的使用它\n但在deep seq的故事中一直缺少一个东西\n那就是一个正式的第一方编程智能体\nANTHROPIC有cloud code open\n人工智能\n有codex\ngoogle有自己的方案\n而deep cq用户\n则总是不得不将API接入第三方工具\n如client open code kilo或command code\n并希望这种整合能与模型良好配合\n现在这个差距基本上已经弥补了\n因为deep s e q的官方API文档\n现在有一个专门的集成页面\n介绍名为REASONNEX的工具\n这是deep sick\n有史以来对编程智能体最官方的继承\n所以让我们聊聊它是什么\n如何运作以及如何配置\n不过在开始之前\n让我先介绍一下今天的赞助商out skt\n几周前\nAnthropic\n做了一件没有人工智能公司想做的事情\n他们在全球范围内\n一夜之间下架了自家的一款模型\n该模型就是cloud fable5\n是因为它太强大了吗\n两周半后\n禁令解除\nfable5重新上线\n能力比之前更强\n一个模型不会无缘无故被仅有恢复\n除非它确实重要\n这正是CLAUDE目前所蕴含的力量\n坦率地说\n大多数人只使用了他能力的1%\n因此OUTSKILL\n本周末将举办一场免费的两天\n人工智能靠的马拉松\n时间为美国东部时间上午十点到下午七点\n这将是一次关于cloud模型\n以及另外十多种人工智能工具的深入探讨\n这通常是付费的\n但通过我的链接\n注册的前1000人可享受100%折扣\n全球已有超过1000万人参加了这项培训\n在两天内\n你将使用cloud进行深度研究\n构建工件和仪表盘\n制作完整的演示文稿\n并设置连接器来自动化繁琐的工作\n甚至包括你的求职过程\n你还将亲手实践cloud code\n构建自己的人工智能智能体\n并生成人工智能视觉内容和视频\n而且你将得到来自microsoft google\namazon和NBIDIA的实际领导者的指导\n如果你参加\n还可以解锁价值超过5000美元的奖励\n这包括50个秘密的cloud代码\n一个完整的人工智能提示词库\n以及一个个性化的人工智能工具构建器\n如果你对cloud稍微认真一点\n这都不该错过\n通过描述和置顶评论中的链接\n获取你的免费席位\n现在回到视频主题\n首先reason是什么\nreason是一个在终端中运行的deep cq\n原生编码智能体\n这里的关键词是deep cq原声\n这不是有一个多提供商工具\n其中deep cq只是在长模型下拉菜单中的一项\nreason是直接与API deep sek dot com通信\n中间没有翻译层\n没有open人工智能兼容层适配器或代理\n整个智能体都是围绕DPC\nKPI的实际行为来设计的\n现在让我澄清一下官方的部分\n因为我想坦诚相待\nREASONEX本身并非由deep seka开发\n它是一个在GITHUB上由S键engine维护的开源项目\n它采用MIT许可证\n由社区开发\n目前大约有4600颗星\n该仓库本身不声称获得任何deep c q官方认可\n但重要的是\nDeep cto\n现在已将rec nex直接收录到其官方API文档中\n并在智能体集成下提供了独立的快速入门页面\nDPCSEQ不会为随意某个工具这样做\n他们的文档总体都比较精简\n因此当公司自己记录如何使用\n这个特定的智能体与其API配合使用\n并附有设置说明和命令时\n这几乎就是有史以来\n最接近官方deep seek编码智能体的存在了\n这有点像GLM及其编码计划的情况\n当时特定的整合框架得到了实验室本身的认可\n实验室选择你的工具就是一种倍数\n当你了解REASONINGS的构建方式时\n就能理解为什么deep cq选择了它\n因为整个设计完美契合deep c k p i的工作方式\nREADME描述了三大支柱\n第一个是缓存优先循环\n整个智能体循环旨在确保跨轮次的提示\n前缀字节保持稳定\n这样deep sea q的前缀缓存就能持续命中\n我们在命令代码那期视频中讨论过这一点\n在智能体编码中\n大部分令牌消耗是智能体\n在循环中反复读取相同的上下文\n而在deep s e q上缓存命中的成本要便宜得多\nREASONIC将这一点发挥到了极致\n他们甚至发布了一个真实案例\n研究一个长时间运行的绘画\n输入了4.35亿个令牌\n缓存\n命中率高达99.82%\n成本约12美元\n而没有缓存时大致需要60亿美元\n所以口号就是前缀缓存稳定性\n让它继续运行\n这非常符合deep sick设计智能体的风格\n第二支柱是工具调用修复\n当模型产生略有格式错误的工具调用时\nreason x会修复它\n而不是直接失败\n如果你还记得\ncommand code强调的相同点\n开放模型有时会在工具调用上出错\n而一个能实时修复这些错误的整合框架\n能从同一模型中获取更可靠的智能体行为\n第三支柱是成本控制\n默认情况下reason运行在deep seek v4flash上\n在0.73.1更新后\n这确实是一个非常强大的默认选择\n当你遇到真正困难的任务时\n只需输入斜杠pro\n它会在下一轮使用deep seek v4pro\n然后切换回flash\n如果你希望整个绘画都使用pro\n可以运行斜杠preset max\n这样昂贵的模型仅需一个命令就能调用\n但你不会为每个琐碎的文件编辑都支付pro价格\n这种flash优先的方法\n正是我在上一期视频中推荐的工作流\n只是在这里\n它内置于智能体重\n现在让我们进行设置\n因为这确实是我见过最简单的设置之一\n首先你需要node官方deep seq文档\n建议node20.10以上\n而GITHUBREADME要求node22\n因此只需安装一个较新的node版本即可\n在windows上你还需要安装git for windows\n然后从deep sq平台获取你的API密钥\n接着你只需进入项目文件夹\n并运行np x reason x减code\n就是这样\n无需全局安装\n也无需环境变量\n首次运行会打开内置配置向导\n询问你的API密钥\n并将其存储在主目录下的RESNEX简CONFIG\nJSON文件中\n如果你更喜欢常规安装\n也可以运行npm install简green ex\n然后在项目中运行reason code\n还有用于普通对话的reason chat\n用于自我升级的reason update\n在会话内斜杠help可显示完整命令\n参考\n从功能上看\n对于一个社区项目来说\n这已经相当完整了\n编辑操作以搜索替换提议的形式呈现\n你需要通过斜杠apply进行审查和批准\n因此智能体不会默默重写你的文件\n有计划模式可在行动前思考\n有持久化的按工作区绘画\n因此你可以离开项目\n然后回到之前离开的地方\n支持通过STDO\nSSE和HTTP连接MCP\n因此可以接入外部工具\n有技能系统\n可以通过斜杠skill new创建基于markdown的技能\n并可内联运行\n或作为子智能体运行\n有记忆系统\n包含用户项目反馈和参考记忆类型\n由生命周期钩子\n用于shell命令和工作区范围的权限\n它甚至拥有一些大型工具所没有的功能\n内置网页搜索支持magic series x ng或MEDICSO\n有语义代码索引\n可通过本地欧拉A模型或任何兼容open\n人工智能的端点运行\n有基于ti构建的预发布桌面客户端\n支持多标签\n而且非常符合中国生态的做法\n还有QQ消息集成没\n你甚至可以通过斜杠qq connect连接会话\n然后通过QQ远程与编程智能T对话\n说实话\n这让我会心一笑\n不过我想坦率说明\nreason不是什么\n这个项目有明确的非目标列表\n它设计上仅支持deep seek\n不支持多提供商\n没有IDE集成\n没有气息模式\n他们将其定位为功能而非限制\n因为耦合到一个后端\n正是他们能如此激进地实现\n字节级缓存和工具调用修复的原因\n但这确实意味着\n它不是适合所有人的cloud code替代品\n如果你想要一个\n能在十个提供商之间切换的工具\n这并不适合\n这适合那些已决定将deep seek作为日常主力模型\n并希望使用能最大化其性能的整合框架的人\n那么这在更大的图景中处于什么位置\n在我看来\n这是deep seek在悄悄构建完整的技术站\n将V4flash变成了合法可用的智能体模型\n然后他们适配了响应API和编解码器\n现在他们的官方文档指引\n人们使用deep sq原生智能体\n以flash为默认pro1键可达\n随着官方deep s q v4pro据称即将发布\nreason x已作为该工具准备就绪\n斜杠pro命令亦可随时使用\n那么如果你问我最终结论如何\n如果你将deep seq模型作为主力\nreason现在是最贴合你的整合框架\n而且它出现在deep seq官方API文档中\n意味着\n未来模型很可能针对这种循环进行调优和测试\n他免费采用MIT许可证\n通过NPX2分钟即可完成设置\n缓存优先的设计\n直接转化为实际节省的钱财\n如果你想要套餐或积分\n而不是直接通过API付费\n我仍建议你将其与命令代码一起使用\n但作为一个纯粹的deep sq设置\n现在值得关注的就是他总体来说挺酷的\n不管怎样\n在评论区告诉我你的想法\n如果你喜欢这期视频\n可以考虑通过超级感谢选项\n捐赠或点击加入按钮成为会员\n另外请给这期视频点赞并订阅我的频道\n我们下期见再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1rZMd6JEQk",
+  "published_at": "1785786192",
+  "fetched_at": "2026-08-06T22:41:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek ReasonNex 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    DS[\"DeepSeek 模型\"] -->|官方API文档| RN[\"ReasonNex 工具\"]\n    RN -->|MIT 许可证| OSS[\"开源社区项目\"]\n    RN -->|直接通信| API[\"deepseek.com API\"]\n    RN -->|三大支柱| Pillars[\"缓存优先循环 / 工具调用修复 / 成本控制\"]\n    Pillars --> Cache[\"缓存优先循环\"]\n    Pillars --> ToolFix[\"工具调用修复\"]\n    Pillars --> Cost[\"成本控制\"]\n    Cost --> Default[\"默认 flash (v4flash)\"]\n    Cost --> ProSwitch[\"/pro 与 /preset max 切换\"]\n```\n\n## 安装与配置流程\n\n```mermaid\nflowchart TD\n    Start[\"开始\"] --> Prereq[\"检查 Node >=20.10 / Git (Windows)\"]\n    Prereq --> Key[\"获取 DeepSeek API 密钥\"]\n    Key --> Install[\"运行 npx reasonx --code\"]\n    Install --> ConfigWizard[\"首次运行弹出配置向导\"]\n    ConfigWizard --> Store[\"将密钥写入 ~/.reasonx/config.json\"]\n    Store --> Commands[\"可用命令: reason code, reason chat, reason update, /help\"]\n    Commands --> End[\"完成设置\"]\n```\n\n## 功能支柱细分\n\n```mermaid\nflowchart LR\n    Cache[\"缓存优先循环\"] -->|保持前缀字节稳定| Hit[\"高缓存命中率 99.82%\"]\n    Hit --> CostSaving[\"成本约 $12 vs $60B 无缓存\"]\n    ToolFix[\"工具调用修复\"] -->|自动纠正格式错误| Reliability[\"提升智能体行为可靠性\"]\n    Cost[\"成本控制\"] -->|默认 flash| Flash[\"低成本模型\"]\n    Cost -->|需要高性能时| Pro[\"使用 deepseek v4pro via /pro\"]\n    Pro -->|全程使用| PresetMax[\"/preset max 切换至 pro\"]\n```\n\n## 适用性决策图\n\n```mermaid\nflowchart TD\n    User[\"使用 DeepSeek 作为主力模型?\"] -->|是| Suitable[\"ReasonNex 适合\"]\n    User -->|否| NotSuitable[\"不适合\"]\n    Suitable --> Benefits[\"最大化性能、成本节约、官方支持\"]\n    NotSuitable --> Limits[\"不支持多提供商、IDE 集成、气息模式\"]\n    Limits --> Alternatives[\"考虑 Cloud Code、其他多提供商工具\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    DS[\"DeepSeek 模型\"] -->|官方API文档| RN[\"ReasonNex 工具\"]\n    RN -->|MIT 许可证| OSS[\"开源社区项目\"]\n    RN -->|直接通信| API[\"deepseek.com API\"]\n    RN -->|三大支柱| Pillars[\"缓存优先循环 / 工具调用修复 / 成本控制\"]\n    Pillars --> Cache[\"缓存优先循环\"]\n    Pillars --> ToolFix[\"工具调用修复\"]\n    Pillars --> Cost[\"成本控制\"]\n    Cost --> Default[\"默认 flash (v4flash)\"]\n    Cost --> ProSwitch[\"/pro 与 /preset max 切换\"]"
+        },
+        {
+          "title": "安装与配置流程",
+          "code": "flowchart TD\n    Start[\"开始\"] --> Prereq[\"检查 Node >=20.10 / Git (Windows)\"]\n    Prereq --> Key[\"获取 DeepSeek API 密钥\"]\n    Key --> Install[\"运行 npx reasonx --code\"]\n    Install --> ConfigWizard[\"首次运行弹出配置向导\"]\n    ConfigWizard --> Store[\"将密钥写入 ~/.reasonx/config.json\"]\n    Store --> Commands[\"可用命令: reason code, reason chat, reason update, /help\"]\n    Commands --> End[\"完成设置\"]"
+        },
+        {
+          "title": "功能支柱细分",
+          "code": "flowchart LR\n    Cache[\"缓存优先循环\"] -->|保持前缀字节稳定| Hit[\"高缓存命中率 99.82%\"]\n    Hit --> CostSaving[\"成本约 $12 vs $60B 无缓存\"]\n    ToolFix[\"工具调用修复\"] -->|自动纠正格式错误| Reliability[\"提升智能体行为可靠性\"]\n    Cost[\"成本控制\"] -->|默认 flash| Flash[\"低成本模型\"]\n    Cost -->|需要高性能时| Pro[\"使用 deepseek v4pro via /pro\"]\n    Pro -->|全程使用| PresetMax[\"/preset max 切换至 pro\"]"
+        },
+        {
+          "title": "适用性决策图",
+          "code": "flowchart TD\n    User[\"使用 DeepSeek 作为主力模型?\"] -->|是| Suitable[\"ReasonNex 适合\"]\n    User -->|否| NotSuitable[\"不适合\"]\n    Suitable --> Benefits[\"最大化性能、成本节约、官方支持\"]\n    NotSuitable --> Limits[\"不支持多提供商、IDE 集成、气息模式\"]\n    Limits --> Alternatives[\"考虑 Cloud Code、其他多提供商工具\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T22:41:42+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek ReasonNex 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    DS[\"DeepSeek 模型\"] -->|官方API文档| RN[\"ReasonNex 工具\"]\n    RN -->|MIT 许可证| OSS[\"开源社区项目\"]\n    RN -->|直接通信| API[\"deepseek.com API\"]\n    RN -->|三大支柱| Pillars[\"缓存优先循环 / 工具调用修复 / 成本控制\"]\n    Pillars --> Cache[\"缓存优先循环\"]\n    Pillars --> ToolFix[\"工具调用修复\"]\n    Pillars --> Cost[\"成本控制\"]\n    Cost --> Default[\"默认 flash (v4flash)\"]\n    Cost --> ProSwitch[\"/pro 与 /preset max 切换\"]\n```\n\n## 安装与配置流程\n\n```mermaid\nflowchart TD\n    Start[\"开始\"] --> Prereq[\"检查 Node >=20.10 / Git (Windows)\"]\n    Prereq --> Key[\"获取 DeepSeek API 密钥\"]\n    Key --> Install[\"运行 npx reasonx --code\"]\n    Install --> ConfigWizard[\"首次运行弹出配置向导\"]\n    ConfigWizard --> Store[\"将密钥写入 ~/.reasonx/config.json\"]\n    Store --> Commands[\"可用命令: reason code, reason chat, reason update, /help\"]\n    Commands --> End[\"完成设置\"]\n```\n\n## 功能支柱细分\n\n```mermaid\nflowchart LR\n    Cache[\"缓存优先循环\"] -->|保持前缀字节稳定| Hit[\"高缓存命中率 99.82%\"]\n    Hit --> CostSaving[\"成本约 $12 vs $60B 无缓存\"]\n    ToolFix[\"工具调用修复\"] -->|自动纠正格式错误| Reliability[\"提升智能体行为可靠性\"]\n    Cost[\"成本控制\"] -->|默认 flash| Flash[\"低成本模型\"]\n    Cost -->|需要高性能时| Pro[\"使用 deepseek v4pro via /pro\"]\n    Pro -->|全程使用| PresetMax[\"/preset max 切换至 pro\"]\n```\n\n## 适用性决策图\n\n```mermaid\nflowchart TD\n    User[\"使用 DeepSeek 作为主力模型?\"] -->|是| Suitable[\"ReasonNex 适合\"]\n    User -->|否| NotSuitable[\"不适合\"]\n    Suitable --> Benefits[\"最大化性能、成本节约、官方支持\"]\n    NotSuitable --> Limits[\"不支持多提供商、IDE 集成、气息模式\"]\n    Limits --> Alternatives[\"考虑 Cloud Code、其他多提供商工具\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    DS[\"DeepSeek 模型\"] -->|官方API文档| RN[\"ReasonNex 工具\"]\n    RN -->|MIT 许可证| OSS[\"开源社区项目\"]\n    RN -->|直接通信| API[\"deepseek.com API\"]\n    RN -->|三大支柱| Pillars[\"缓存优先循环 / 工具调用修复 / 成本控制\"]\n    Pillars --> Cache[\"缓存优先循环\"]\n    Pillars --> ToolFix[\"工具调用修复\"]\n    Pillars --> Cost[\"成本控制\"]\n    Cost --> Default[\"默认 flash (v4flash)\"]\n    Cost --> ProSwitch[\"/pro 与 /preset max 切换\"]"
+    },
+    {
+      "title": "安装与配置流程",
+      "code": "flowchart TD\n    Start[\"开始\"] --> Prereq[\"检查 Node >=20.10 / Git (Windows)\"]\n    Prereq --> Key[\"获取 DeepSeek API 密钥\"]\n    Key --> Install[\"运行 npx reasonx --code\"]\n    Install --> ConfigWizard[\"首次运行弹出配置向导\"]\n    ConfigWizard --> Store[\"将密钥写入 ~/.reasonx/config.json\"]\n    Store --> Commands[\"可用命令: reason code, reason chat, reason update, /help\"]\n    Commands --> End[\"完成设置\"]"
+    },
+    {
+      "title": "功能支柱细分",
+      "code": "flowchart LR\n    Cache[\"缓存优先循环\"] -->|保持前缀字节稳定| Hit[\"高缓存命中率 99.82%\"]\n    Hit --> CostSaving[\"成本约 $12 vs $60B 无缓存\"]\n    ToolFix[\"工具调用修复\"] -->|自动纠正格式错误| Reliability[\"提升智能体行为可靠性\"]\n    Cost[\"成本控制\"] -->|默认 flash| Flash[\"低成本模型\"]\n    Cost -->|需要高性能时| Pro[\"使用 deepseek v4pro via /pro\"]\n    Pro -->|全程使用| PresetMax[\"/preset max 切换至 pro\"]"
+    },
+    {
+      "title": "适用性决策图",
+      "code": "flowchart TD\n    User[\"使用 DeepSeek 作为主力模型?\"] -->|是| Suitable[\"ReasonNex 适合\"]\n    User -->|否| NotSuitable[\"不适合\"]\n    Suitable --> Benefits[\"最大化性能、成本节约、官方支持\"]\n    NotSuitable --> Limits[\"不支持多提供商、IDE 集成、气息模式\"]\n    Limits --> Alternatives[\"考虑 Cloud Code、其他多提供商工具\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:41:42+00:00"
+}

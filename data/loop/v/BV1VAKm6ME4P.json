@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1VAKm6ME4P",
+  "title": "[Godot]用godot4.5中的GD-Sync插件制作一款简单的3d联机游戏——前期准备---King_-G",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 702,
+  "text": "注意到B站的高斗联机教程\n大部分是高斗内置的multi player\n但是那无疑是困难且麻烦的\n恰好我最近又发现了一款\n简单好用的GD斗联机插件\nJ d think c\n这款插件有特别多的功能\n并且用起来也很简单\n下面让我们开始从零开始的G斗联机教程吧\n打开GDA官网点下载最新版\n因为高度4.7更新的资源商店依旧没同步\nJd sync\n所以我们点击底部的之前的版本\n找到GTO4five选稳定版\n点下载下载适配你系统的GDA下标准\n因为我不会C加加好\n假装什么都没发生\n我下载好了\n解压这个压缩包\n然后打开解压完的点X文件\n然后如果你第一次用时\n英语点右上角的设置\n把语言也就是第一个设置成the cn就行了\n然后问我根据自己的喜好调下主题\n接下来新建一个项目\n这流程大家都说我就快建了\n进来后打开资产库搜索jd sync\n就这个点下载\n当然下载不了的\n可以去我的QQ群的吃\n你看像这种安装后报错的\n就是不能用\n我直接去下载过插件的项目\n复制一个过来\n然后去项目项目设置插件里启用\n这样就是好了\n现在去项目工具里有个jd sync\n你点它会出现这样的界面\n现在你只要填上这两个key\n准备就算完毕\n你就可以去下一期制作游戏了\n怎么获取这两个key呢\n去HTTPS冒号斜杠斜杠3W点\n但是那无疑是需要梯子的\n我是让朋友帮我注册的\n但如果你朋友也进不去\n那我也没招了\n说不定以后我会推荐个更好用的插件呢\n关注我\n来到这个界面\n点sign app注册\n这里你就自己整吧\n填完邮箱会出现这个额\n你就去自己邮箱里验证一下\n然后你就注册成功了\n找API key界面生成\n抓紧记下来\nprivate key只出现一次",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VAKm6ME4P",
+  "published_at": "1784542788",
+  "fetched_at": "2026-08-09T01:10:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GD‑Sync 插件使用流程图谱\n\n## 总览流程\n[BV1VAKm6ME4P P1 00:21] → [BV1VAKm6ME4P P1 01:31]\n\n```mermaid\nflowchart TD\n    A1[\"打开 GDA 官网下载 GD‑Sync\"] --> A2[\"解压并打开 X 文件\"]\n    A2 --> A3[\"设置语言为中文\"]\n    A3 --> A4[\"新建 Godot 项目\"]\n    A4 --> A5[\"在资产库搜索并下载 jd sync\"]\n    A5 --> A6[\"若下载失败，从 QQ 群获取插件并复制\"]\n    A6 --> A7[\"在项目设置 → 插件 中启用\"]\n    A7 --> A8[\"打开 项目工具 → jd sync 界面\"]\n    A8 --> A9[\"填写 API Key 与 Private Key\"]\n    A9 --> A10[\"完成插件配置，可开始开发联机游戏\"]\n```\n\n## 插件下载与安装\n[BV1VAKm6ME4P P1 00:21]、[BV1VAKm6ME4P P1 00:34]、[BV1VAKm6ME4P P1 01:13]、[BV1VAKm6ME4P P1 01:20]\n\n```mermaid\nflowchart LR\n    D1[\"打开 GDA 官网\"] --> D2[\"点击底部历史版本\"]\n    D2 --> D3[\"选择 GTO4five 稳定版\"]\n    D3 --> D4[\"下载对应系统的压缩包\"]\n    D4 --> D5[\"解压压缩包\"]\n    D5 --> D6[\"打开解压后的 X 文件\"]\n    D6 --> D7[\"在资产库搜索 jd sync\"]\n    D7 --> D8[\"点击下载插件\"]\n    D8 --> D9[\"若下载失败，前往 QQ 群获取插件\"]\n    D9 --> D10[\"复制插件到项目目录\"]\n    D10 --> D11[\"项目设置 → 插件 → 启用 jd sync\"]\n```\n\n## API Key 获取与填写\n[BV1VAKm6ME4P P1 01:35]、[BV1VAKm6ME4P P1 01:55]、[BV1VAKm6ME4P P1 02:01]、[BV1VAKm6ME4P P1 02:05]\n\n```mermaid\nflowchart TD\n    K1[\"访问 https://...（需梯子）\"] --> K2[\"点击 Sign App 注册\"]\n    K2 --> K3[\"填写邮箱并提交\"]\n    K3 --> K4[\"前往邮箱验证链接\"]\n    K4 --> K5[\"完成注册，进入 API Key 页面\"]\n    K5 --> K6[\"生成 App Key 与 Private Key\"]\n    K6 --> K7[\"记录 Private Key（仅显示一次）\"]\n    K7 --> K8[\"在 jd sync 界面填写两把 Key\"]\n    K8 --> K9[\"插件配置完成\"]\n```\n\n## 常见问题与解决方案\n[BV1VAKm6ME4P P1 01:13]、[BV1VAKm6ME4P P1 01:45]、[BV1VAKm6ME4P P1 01:48]\n\n```mermaid\nflowchart LR\n    Q1[\"插件下载失败\"] --> Q2[\"检查网络或使用 VPN\"]\n    Q2 --> Q3[\"若仍不可用，前往作者 QQ 群获取插件\"]\n    Q3 --> Q4[\"复制插件至项目并手动启用\"]\n    Q4 --> Q5[\"若获取 API Key 受限\"]\n    Q5 --> Q6[\"请让有网络的朋友代为注册\"]\n    Q6 --> Q7[\"若朋友也无法访问，则暂无解决方案\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"打开 GDA 官网下载 GD‑Sync\"] --> A2[\"解压并打开 X 文件\"]\n    A2 --> A3[\"设置语言为中文\"]\n    A3 --> A4[\"新建 Godot 项目\"]\n    A4 --> A5[\"在资产库搜索并下载 jd sync\"]\n    A5 --> A6[\"若下载失败，从 QQ 群获取插件并复制\"]\n    A6 --> A7[\"在项目设置 → 插件 中启用\"]\n    A7 --> A8[\"打开 项目工具 → jd sync 界面\"]\n    A8 --> A9[\"填写 API Key 与 Private Key\"]\n    A9 --> A10[\"完成插件配置，可开始开发联机游戏\"]"
+        },
+        {
+          "title": "插件下载与安装",
+          "code": "flowchart LR\n    D1[\"打开 GDA 官网\"] --> D2[\"点击底部历史版本\"]\n    D2 --> D3[\"选择 GTO4five 稳定版\"]\n    D3 --> D4[\"下载对应系统的压缩包\"]\n    D4 --> D5[\"解压压缩包\"]\n    D5 --> D6[\"打开解压后的 X 文件\"]\n    D6 --> D7[\"在资产库搜索 jd sync\"]\n    D7 --> D8[\"点击下载插件\"]\n    D8 --> D9[\"若下载失败，前往 QQ 群获取插件\"]\n    D9 --> D10[\"复制插件到项目目录\"]\n    D10 --> D11[\"项目设置 → 插件 → 启用 jd sync\"]"
+        },
+        {
+          "title": "API Key 获取与填写",
+          "code": "flowchart TD\n    K1[\"访问 https://...（需梯子）\"] --> K2[\"点击 Sign App 注册\"]\n    K2 --> K3[\"填写邮箱并提交\"]\n    K3 --> K4[\"前往邮箱验证链接\"]\n    K4 --> K5[\"完成注册，进入 API Key 页面\"]\n    K5 --> K6[\"生成 App Key 与 Private Key\"]\n    K6 --> K7[\"记录 Private Key（仅显示一次）\"]\n    K7 --> K8[\"在 jd sync 界面填写两把 Key\"]\n    K8 --> K9[\"插件配置完成\"]"
+        },
+        {
+          "title": "常见问题与解决方案",
+          "code": "flowchart LR\n    Q1[\"插件下载失败\"] --> Q2[\"检查网络或使用 VPN\"]\n    Q2 --> Q3[\"若仍不可用，前往作者 QQ 群获取插件\"]\n    Q3 --> Q4[\"复制插件至项目并手动启用\"]\n    Q4 --> Q5[\"若获取 API Key 受限\"]\n    Q5 --> Q6[\"请让有网络的朋友代为注册\"]\n    Q6 --> Q7[\"若朋友也无法访问，则暂无解决方案\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T01:12:01+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GD‑Sync 插件使用流程图谱\n\n## 总览流程\n[BV1VAKm6ME4P P1 00:21] → [BV1VAKm6ME4P P1 01:31]\n\n```mermaid\nflowchart TD\n    A1[\"打开 GDA 官网下载 GD‑Sync\"] --> A2[\"解压并打开 X 文件\"]\n    A2 --> A3[\"设置语言为中文\"]\n    A3 --> A4[\"新建 Godot 项目\"]\n    A4 --> A5[\"在资产库搜索并下载 jd sync\"]\n    A5 --> A6[\"若下载失败，从 QQ 群获取插件并复制\"]\n    A6 --> A7[\"在项目设置 → 插件 中启用\"]\n    A7 --> A8[\"打开 项目工具 → jd sync 界面\"]\n    A8 --> A9[\"填写 API Key 与 Private Key\"]\n    A9 --> A10[\"完成插件配置，可开始开发联机游戏\"]\n```\n\n## 插件下载与安装\n[BV1VAKm6ME4P P1 00:21]、[BV1VAKm6ME4P P1 00:34]、[BV1VAKm6ME4P P1 01:13]、[BV1VAKm6ME4P P1 01:20]\n\n```mermaid\nflowchart LR\n    D1[\"打开 GDA 官网\"] --> D2[\"点击底部历史版本\"]\n    D2 --> D3[\"选择 GTO4five 稳定版\"]\n    D3 --> D4[\"下载对应系统的压缩包\"]\n    D4 --> D5[\"解压压缩包\"]\n    D5 --> D6[\"打开解压后的 X 文件\"]\n    D6 --> D7[\"在资产库搜索 jd sync\"]\n    D7 --> D8[\"点击下载插件\"]\n    D8 --> D9[\"若下载失败，前往 QQ 群获取插件\"]\n    D9 --> D10[\"复制插件到项目目录\"]\n    D10 --> D11[\"项目设置 → 插件 → 启用 jd sync\"]\n```\n\n## API Key 获取与填写\n[BV1VAKm6ME4P P1 01:35]、[BV1VAKm6ME4P P1 01:55]、[BV1VAKm6ME4P P1 02:01]、[BV1VAKm6ME4P P1 02:05]\n\n```mermaid\nflowchart TD\n    K1[\"访问 https://...（需梯子）\"] --> K2[\"点击 Sign App 注册\"]\n    K2 --> K3[\"填写邮箱并提交\"]\n    K3 --> K4[\"前往邮箱验证链接\"]\n    K4 --> K5[\"完成注册，进入 API Key 页面\"]\n    K5 --> K6[\"生成 App Key 与 Private Key\"]\n    K6 --> K7[\"记录 Private Key（仅显示一次）\"]\n    K7 --> K8[\"在 jd sync 界面填写两把 Key\"]\n    K8 --> K9[\"插件配置完成\"]\n```\n\n## 常见问题与解决方案\n[BV1VAKm6ME4P P1 01:13]、[BV1VAKm6ME4P P1 01:45]、[BV1VAKm6ME4P P1 01:48]\n\n```mermaid\nflowchart LR\n    Q1[\"插件下载失败\"] --> Q2[\"检查网络或使用 VPN\"]\n    Q2 --> Q3[\"若仍不可用，前往作者 QQ 群获取插件\"]\n    Q3 --> Q4[\"复制插件至项目并手动启用\"]\n    Q4 --> Q5[\"若获取 API Key 受限\"]\n    Q5 --> Q6[\"请让有网络的朋友代为注册\"]\n    Q6 --> Q7[\"若朋友也无法访问，则暂无解决方案\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"打开 GDA 官网下载 GD‑Sync\"] --> A2[\"解压并打开 X 文件\"]\n    A2 --> A3[\"设置语言为中文\"]\n    A3 --> A4[\"新建 Godot 项目\"]\n    A4 --> A5[\"在资产库搜索并下载 jd sync\"]\n    A5 --> A6[\"若下载失败，从 QQ 群获取插件并复制\"]\n    A6 --> A7[\"在项目设置 → 插件 中启用\"]\n    A7 --> A8[\"打开 项目工具 → jd sync 界面\"]\n    A8 --> A9[\"填写 API Key 与 Private Key\"]\n    A9 --> A10[\"完成插件配置，可开始开发联机游戏\"]"
+    },
+    {
+      "title": "插件下载与安装",
+      "code": "flowchart LR\n    D1[\"打开 GDA 官网\"] --> D2[\"点击底部历史版本\"]\n    D2 --> D3[\"选择 GTO4five 稳定版\"]\n    D3 --> D4[\"下载对应系统的压缩包\"]\n    D4 --> D5[\"解压压缩包\"]\n    D5 --> D6[\"打开解压后的 X 文件\"]\n    D6 --> D7[\"在资产库搜索 jd sync\"]\n    D7 --> D8[\"点击下载插件\"]\n    D8 --> D9[\"若下载失败，前往 QQ 群获取插件\"]\n    D9 --> D10[\"复制插件到项目目录\"]\n    D10 --> D11[\"项目设置 → 插件 → 启用 jd sync\"]"
+    },
+    {
+      "title": "API Key 获取与填写",
+      "code": "flowchart TD\n    K1[\"访问 https://...（需梯子）\"] --> K2[\"点击 Sign App 注册\"]\n    K2 --> K3[\"填写邮箱并提交\"]\n    K3 --> K4[\"前往邮箱验证链接\"]\n    K4 --> K5[\"完成注册，进入 API Key 页面\"]\n    K5 --> K6[\"生成 App Key 与 Private Key\"]\n    K6 --> K7[\"记录 Private Key（仅显示一次）\"]\n    K7 --> K8[\"在 jd sync 界面填写两把 Key\"]\n    K8 --> K9[\"插件配置完成\"]"
+    },
+    {
+      "title": "常见问题与解决方案",
+      "code": "flowchart LR\n    Q1[\"插件下载失败\"] --> Q2[\"检查网络或使用 VPN\"]\n    Q2 --> Q3[\"若仍不可用，前往作者 QQ 群获取插件\"]\n    Q3 --> Q4[\"复制插件至项目并手动启用\"]\n    Q4 --> Q5[\"若获取 API Key 受限\"]\n    Q5 --> Q6[\"请让有网络的朋友代为注册\"]\n    Q6 --> Q7[\"若朋友也无法访问，则暂无解决方案\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T01:12:01+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1VYut6oETT",
+  "title": "字节正在训练一款超5T参数模型，Seedance 2.5开放API服务 | 8月7日AI日报第480期",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1032,
+  "text": "大家好\n欢迎收看8月7日AI日报\n火山引擎宣布最新一代视频模型SEDENCE2.5\n目前已上线IPI服务\n同步开启CDENCE2.0mini与fast两款模型限时优惠活动\n另外根据晚点late post报道\n字节跳动正在讨论训练一个参数规模超过5万亿的模型\n将超过宽3.8max以及KIMIK3\n一举成为国内已知最大规模的模型\n新模型由city foundation负责人向量主导\n与大语言模型预训练数据负责人沈科合作\n目前正在梳理项目分配资源\n结合前几天的报道\n张一鸣在C的团队全员会议中表示\nC的模型可以接受暂时落后\n他安抚了团队成员\n并且提出反对争流的看法\n他认为中游只能无限接近cod模型\n但是无法实现超越\n最后他表示\n未来会在AI领域继续投入更多资源\n马100推出LIN3.0tiny模型参数量仅7.9\nB激活参数约为1.3\nB官方表示\n该模型在实际任务指令遵循等领域有显著优势\n多项测试中优于宽3.5\nJA4等小模型\n目前已在open router和VERCEL上线可用\n近期将开放模型权重\n路透社报道\n阿里计划向下一代QUAN开源模型的大型商用实体收取营收分成\n将采用类似KIMIK3的开源协议\n其中任何将模型作为服务对外销售\n并且年销售额超过2000万美元的实体\n必须达成商业协议\n并提供商业分成\nOpenAI宣布GPT5.6so模型现已为plus和pro用户提供思考强度调节功能\n对于及时与深度推理两种模式进行融合\n体验更统一\n同时针对免费版与购订阅默认模型切换为GPT5.6\nLUNA提供无线文本聊天\n不过仅限于文本对话\n据it之家报道\n宇树科技即将上市\n在战略配售名单中出现\ndeep sick获配约94万股\n金额约1.4亿元\n宇树科技CEO王兴兴回应称\n将与deep sk针对通用人工智能等三方面展开重点合作\n最后几条消息\n快速浏览\nopen code宣布购套餐中的deep siv4flash可使用量翻倍\n作为限时优惠活动\n活动截止时间暂未明确\nANTHROPIC针对cloud fable5的安全护栏进行更新\n更新后对于生物学领域相关问题降级回退减少约85%\n因此可以更加广泛地使用fab5处理生物和健康问题\n谷歌知名大模型\n由于这段时间的表现未达用户预期\n针对用户的不满情绪\nLOGAN表示正在开发一些很棒的新模型\n业界认为这些模型将是GEMINI3.7flash以及GEMINI3.5pro\n今天的AI日报就到这里\n谢谢收看\n明天见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VYut6oETT",
+  "published_at": "1786098600",
+  "fetched_at": "2026-08-08T15:08:55+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI模型新闻关系图谱\n\n## 图1：模型生态概览 [BV1VYut6oETT P1 00:05]  \n```mermaid\nflowchart TD\n    SEDENCE2_5[\"火山引擎 SEDENCE2.5 视频模型\"] -->|上线| IPI_Service[\"IPI 服务\"]\n    CDENCE2_0_mini[\"火山引擎 CDENCE2.0 mini\"] -->|限时优惠| Promotion[\"限时优惠活动\"]\n    CDENCE2_fast[\"火山引擎 CDENCE2 fast\"] -->|限时优惠| Promotion\n    ByteDance_5T[\"字节跳动 超5T 参数模型\"] -->|计划中| Resource_Allocation[\"项目资源分配\"]\n    Ma100_LIN3_0[\"马100 LIN3.0 tiny 参数 7.9B\"] -->|优势| Task_Performance[\"指令遵循等任务\"]\n    OpenAI_GPT5_6[\"OpenAI GPT5.6 模型\"] -->|功能| Thought_Adjust[\"思考强度调节\"]\n    Anthropic_fable5[\"Anthropic cloud fable5\"] -->|安全更新| Safety_Update[\"安全护栏降级回退‑85%\"]\n    Google_GEMINI[\"谷歌 GEMINI3.7 flash / 3.5 pro\"] -->|开发中| New_Models[\"新模型研发\"]\n    Alibaba_QUAN[\"阿里 QUAN 开源模型\"] -->|商业协议| Revenue_Share[\"营收分成 ≥2000万美元\"]\n    DeepSick_Equity[\"DeepSick 94万股 1.4亿元\"] -->|合作| YushuTech[\"宇树科技\"]\n    LUNA_TextChat[\"LUNA 文本聊天\"] -->|仅限文本| Text_Only[\"文本对话\"]\n```\n\n## 图2：ByteDance 超5T模型决策链 [BV1VYut6oETT P1 00:13]  \n```mermaid\nflowchart TD\n    Leadership[\"字节跳动 高层（张一鸣）\"] -->|讨论| Model_Scale[\"参数规模 >5万亿\"]\n    CityFoundation[\"City Foundation 负责人（向量）\"] -->|合作| Data_Lead[\"大语言模型预训练数据负责人沈科\"]\n    Model_Scale -->|比较| Wide3_8max[\"宽3.8max\"]\n    Model_Scale -->|比较| KIMIK3[\"KIMIK3\"]\n    Leadership -->|安抚团队| Team_Reassurance[\"接受暂时落后\"]\n    Leadership -->|表达| Future_Investment[\"继续投入 AI 资源\"]\n    Resource_Allocation[\"项目资源分配\"] -->|正在梳理| Model_Scale\n    Controversy[\"是否应争流”\"] -->|反对| Team_Reassurance\n    Outcome[\"预计成为国内最大模型\"] -->|目标| Model_Scale\n```\n\n## 图3：商业与开源政策网络 [BV1VYut6oETT P1 01:02]  \n```mermaid\nflowchart TD\n    Alibaba_QUAN -->|采用| OpenSource_License[\"类似 KIMIK3 开源协议\"]\n    OpenSource_License -->|约束| Commercial_Agreement[\"商业协议必达成\"]\n    Commercial_Agreement -->|对象| Sales_Entity[\"年销售额 >2000万美元 实体\"]\n    Sales_Entity -->|需提供| Revenue_Share[\"营收分成\"]\n    OpenAI_GPT5_6 -->|提供| Thought_Adjust\n    Thought_Adjust -->|适用于| Plus_Pro_Users[\"Plus 与 Pro 用户\"]\n    Model_Weight[\"模型权重\"] -->|即将开放| Open_Access[\"开放下载\"]\n    Open_Access -->|部署平台| OpenRouter[\"OpenRouter\"]\n    OpenRouter -->|可用| Vercel[\"Vercel\"]\n    Anthropic_fable5 -->|安全更新| Safety_Update\n    Safety_Update -->|适用领域| Bio_Health[\"生物与健康问题\"]\n```",
+      "diagrams": [
+        {
+          "title": "图1：模型生态概览",
+          "code": "flowchart TD\n    SEDENCE2_5[\"火山引擎 SEDENCE2.5 视频模型\"] -->|上线| IPI_Service[\"IPI 服务\"]\n    CDENCE2_0_mini[\"火山引擎 CDENCE2.0 mini\"] -->|限时优惠| Promotion[\"限时优惠活动\"]\n    CDENCE2_fast[\"火山引擎 CDENCE2 fast\"] -->|限时优惠| Promotion\n    ByteDance_5T[\"字节跳动 超5T 参数模型\"] -->|计划中| Resource_Allocation[\"项目资源分配\"]\n    Ma100_LIN3_0[\"马100 LIN3.0 tiny 参数 7.9B\"] -->|优势| Task_Performance[\"指令遵循等任务\"]\n    OpenAI_GPT5_6[\"OpenAI GPT5.6 模型\"] -->|功能| Thought_Adjust[\"思考强度调节\"]\n    Anthropic_fable5[\"Anthropic cloud fable5\"] -->|安全更新| Safety_Update[\"安全护栏降级回退‑85%\"]\n    Google_GEMINI[\"谷歌 GEMINI3.7 flash / 3.5 pro\"] -->|开发中| New_Models[\"新模型研发\"]\n    Alibaba_QUAN[\"阿里 QUAN 开源模型\"] -->|商业协议| Revenue_Share[\"营收分成 ≥2000万美元\"]\n    DeepSick_Equity[\"DeepSick 94万股 1.4亿元\"] -->|合作| YushuTech[\"宇树科技\"]\n    LUNA_TextChat[\"LUNA 文本聊天\"] -->|仅限文本| Text_Only[\"文本对话\"]"
+        },
+        {
+          "title": "图2：ByteDance 超5T模型决策链",
+          "code": "flowchart TD\n    Leadership[\"字节跳动 高层（张一鸣）\"] -->|讨论| Model_Scale[\"参数规模 >5万亿\"]\n    CityFoundation[\"City Foundation 负责人（向量）\"] -->|合作| Data_Lead[\"大语言模型预训练数据负责人沈科\"]\n    Model_Scale -->|比较| Wide3_8max[\"宽3.8max\"]\n    Model_Scale -->|比较| KIMIK3[\"KIMIK3\"]\n    Leadership -->|安抚团队| Team_Reassurance[\"接受暂时落后\"]\n    Leadership -->|表达| Future_Investment[\"继续投入 AI 资源\"]\n    Resource_Allocation[\"项目资源分配\"] -->|正在梳理| Model_Scale\n    Controversy[\"是否应争流”\"] -->|反对| Team_Reassurance\n    Outcome[\"预计成为国内最大模型\"] -->|目标| Model_Scale"
+        },
+        {
+          "title": "图3：商业与开源政策网络",
+          "code": "flowchart TD\n    Alibaba_QUAN -->|采用| OpenSource_License[\"类似 KIMIK3 开源协议\"]\n    OpenSource_License -->|约束| Commercial_Agreement[\"商业协议必达成\"]\n    Commercial_Agreement -->|对象| Sales_Entity[\"年销售额 >2000万美元 实体\"]\n    Sales_Entity -->|需提供| Revenue_Share[\"营收分成\"]\n    OpenAI_GPT5_6 -->|提供| Thought_Adjust\n    Thought_Adjust -->|适用于| Plus_Pro_Users[\"Plus 与 Pro 用户\"]\n    Model_Weight[\"模型权重\"] -->|即将开放| Open_Access[\"开放下载\"]\n    Open_Access -->|部署平台| OpenRouter[\"OpenRouter\"]\n    OpenRouter -->|可用| Vercel[\"Vercel\"]\n    Anthropic_fable5 -->|安全更新| Safety_Update\n    Safety_Update -->|适用领域| Bio_Health[\"生物与健康问题\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T15:09:09+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI模型新闻关系图谱\n\n## 图1：模型生态概览 [BV1VYut6oETT P1 00:05]  \n```mermaid\nflowchart TD\n    SEDENCE2_5[\"火山引擎 SEDENCE2.5 视频模型\"] -->|上线| IPI_Service[\"IPI 服务\"]\n    CDENCE2_0_mini[\"火山引擎 CDENCE2.0 mini\"] -->|限时优惠| Promotion[\"限时优惠活动\"]\n    CDENCE2_fast[\"火山引擎 CDENCE2 fast\"] -->|限时优惠| Promotion\n    ByteDance_5T[\"字节跳动 超5T 参数模型\"] -->|计划中| Resource_Allocation[\"项目资源分配\"]\n    Ma100_LIN3_0[\"马100 LIN3.0 tiny 参数 7.9B\"] -->|优势| Task_Performance[\"指令遵循等任务\"]\n    OpenAI_GPT5_6[\"OpenAI GPT5.6 模型\"] -->|功能| Thought_Adjust[\"思考强度调节\"]\n    Anthropic_fable5[\"Anthropic cloud fable5\"] -->|安全更新| Safety_Update[\"安全护栏降级回退‑85%\"]\n    Google_GEMINI[\"谷歌 GEMINI3.7 flash / 3.5 pro\"] -->|开发中| New_Models[\"新模型研发\"]\n    Alibaba_QUAN[\"阿里 QUAN 开源模型\"] -->|商业协议| Revenue_Share[\"营收分成 ≥2000万美元\"]\n    DeepSick_Equity[\"DeepSick 94万股 1.4亿元\"] -->|合作| YushuTech[\"宇树科技\"]\n    LUNA_TextChat[\"LUNA 文本聊天\"] -->|仅限文本| Text_Only[\"文本对话\"]\n```\n\n## 图2：ByteDance 超5T模型决策链 [BV1VYut6oETT P1 00:13]  \n```mermaid\nflowchart TD\n    Leadership[\"字节跳动 高层（张一鸣）\"] -->|讨论| Model_Scale[\"参数规模 >5万亿\"]\n    CityFoundation[\"City Foundation 负责人（向量）\"] -->|合作| Data_Lead[\"大语言模型预训练数据负责人沈科\"]\n    Model_Scale -->|比较| Wide3_8max[\"宽3.8max\"]\n    Model_Scale -->|比较| KIMIK3[\"KIMIK3\"]\n    Leadership -->|安抚团队| Team_Reassurance[\"接受暂时落后\"]\n    Leadership -->|表达| Future_Investment[\"继续投入 AI 资源\"]\n    Resource_Allocation[\"项目资源分配\"] -->|正在梳理| Model_Scale\n    Controversy[\"是否应争流”\"] -->|反对| Team_Reassurance\n    Outcome[\"预计成为国内最大模型\"] -->|目标| Model_Scale\n```\n\n## 图3：商业与开源政策网络 [BV1VYut6oETT P1 01:02]  \n```mermaid\nflowchart TD\n    Alibaba_QUAN -->|采用| OpenSource_License[\"类似 KIMIK3 开源协议\"]\n    OpenSource_License -->|约束| Commercial_Agreement[\"商业协议必达成\"]\n    Commercial_Agreement -->|对象| Sales_Entity[\"年销售额 >2000万美元 实体\"]\n    Sales_Entity -->|需提供| Revenue_Share[\"营收分成\"]\n    OpenAI_GPT5_6 -->|提供| Thought_Adjust\n    Thought_Adjust -->|适用于| Plus_Pro_Users[\"Plus 与 Pro 用户\"]\n    Model_Weight[\"模型权重\"] -->|即将开放| Open_Access[\"开放下载\"]\n    Open_Access -->|部署平台| OpenRouter[\"OpenRouter\"]\n    OpenRouter -->|可用| Vercel[\"Vercel\"]\n    Anthropic_fable5 -->|安全更新| Safety_Update\n    Safety_Update -->|适用领域| Bio_Health[\"生物与健康问题\"]\n```",
+  "diagrams": [
+    {
+      "title": "图1：模型生态概览",
+      "code": "flowchart TD\n    SEDENCE2_5[\"火山引擎 SEDENCE2.5 视频模型\"] -->|上线| IPI_Service[\"IPI 服务\"]\n    CDENCE2_0_mini[\"火山引擎 CDENCE2.0 mini\"] -->|限时优惠| Promotion[\"限时优惠活动\"]\n    CDENCE2_fast[\"火山引擎 CDENCE2 fast\"] -->|限时优惠| Promotion\n    ByteDance_5T[\"字节跳动 超5T 参数模型\"] -->|计划中| Resource_Allocation[\"项目资源分配\"]\n    Ma100_LIN3_0[\"马100 LIN3.0 tiny 参数 7.9B\"] -->|优势| Task_Performance[\"指令遵循等任务\"]\n    OpenAI_GPT5_6[\"OpenAI GPT5.6 模型\"] -->|功能| Thought_Adjust[\"思考强度调节\"]\n    Anthropic_fable5[\"Anthropic cloud fable5\"] -->|安全更新| Safety_Update[\"安全护栏降级回退‑85%\"]\n    Google_GEMINI[\"谷歌 GEMINI3.7 flash / 3.5 pro\"] -->|开发中| New_Models[\"新模型研发\"]\n    Alibaba_QUAN[\"阿里 QUAN 开源模型\"] -->|商业协议| Revenue_Share[\"营收分成 ≥2000万美元\"]\n    DeepSick_Equity[\"DeepSick 94万股 1.4亿元\"] -->|合作| YushuTech[\"宇树科技\"]\n    LUNA_TextChat[\"LUNA 文本聊天\"] -->|仅限文本| Text_Only[\"文本对话\"]"
+    },
+    {
+      "title": "图2：ByteDance 超5T模型决策链",
+      "code": "flowchart TD\n    Leadership[\"字节跳动 高层（张一鸣）\"] -->|讨论| Model_Scale[\"参数规模 >5万亿\"]\n    CityFoundation[\"City Foundation 负责人（向量）\"] -->|合作| Data_Lead[\"大语言模型预训练数据负责人沈科\"]\n    Model_Scale -->|比较| Wide3_8max[\"宽3.8max\"]\n    Model_Scale -->|比较| KIMIK3[\"KIMIK3\"]\n    Leadership -->|安抚团队| Team_Reassurance[\"接受暂时落后\"]\n    Leadership -->|表达| Future_Investment[\"继续投入 AI 资源\"]\n    Resource_Allocation[\"项目资源分配\"] -->|正在梳理| Model_Scale\n    Controversy[\"是否应争流”\"] -->|反对| Team_Reassurance\n    Outcome[\"预计成为国内最大模型\"] -->|目标| Model_Scale"
+    },
+    {
+      "title": "图3：商业与开源政策网络",
+      "code": "flowchart TD\n    Alibaba_QUAN -->|采用| OpenSource_License[\"类似 KIMIK3 开源协议\"]\n    OpenSource_License -->|约束| Commercial_Agreement[\"商业协议必达成\"]\n    Commercial_Agreement -->|对象| Sales_Entity[\"年销售额 >2000万美元 实体\"]\n    Sales_Entity -->|需提供| Revenue_Share[\"营收分成\"]\n    OpenAI_GPT5_6 -->|提供| Thought_Adjust\n    Thought_Adjust -->|适用于| Plus_Pro_Users[\"Plus 与 Pro 用户\"]\n    Model_Weight[\"模型权重\"] -->|即将开放| Open_Access[\"开放下载\"]\n    Open_Access -->|部署平台| OpenRouter[\"OpenRouter\"]\n    OpenRouter -->|可用| Vercel[\"Vercel\"]\n    Anthropic_fable5 -->|安全更新| Safety_Update\n    Safety_Update -->|适用领域| Bio_Health[\"生物与健康问题\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T15:09:09+00:00"
+}

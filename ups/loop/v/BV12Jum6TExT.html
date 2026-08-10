@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="site-base" content="/loop-bilibili" />
+  <title>本地AI字幕工具：批量音视频转文字srt工具，长音频自动切分还能续跑 · BV12Jum6TExT</title>
+  <link rel="stylesheet" href="../../../assets/app.css?v=20260810101044" />
+</head>
+<body>
+  <div class="wrap" id="app">加载中…</div>
+  <script>
+    window.SITE_BASE = "/loop-bilibili";
+    window.SITE_ASSET_V = "20260810101044";
+  </script>
+  <script src="../../../assets/app.js?v=20260810101044"></script>
+  <script>
+    
+    SubtitleSite.renderVideo("loop", "BV12Jum6TExT").catch(e => {
+      document.getElementById('app').textContent = String(e);
+    });
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1KYNS6aE8S",
+  "title": "AI 绑定 动画 测试",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 399,
+  "text": "那么测试了下AI这绑定啊\n这绑定肯定是不合格的\n咱们现在先停一下这动画啊\n放大点看一看\n按个腿这地方要把线框拿出来吧\n看就这肯定得后期得修一修\n是不是\n然后这里头还有一个啥问题呢\n就是将来你上传模型的时候吧\n一定要是梯形姿势或者A型姿势\n然后这个双腿的话一定要岔开一点啊\n咱们现在看一看我之前做的那个\n咱们现在停一下啊\n这块啊之前就是那个参考图\n他双腿离得太近了\n但是脚这块你看这就粘连了\n这样的话你都得在后期去修去\n看到没有\n哎就是你那个模型那个姿势吧\n给他摆成这样啊\n就之前咱们说了梯形或者A型\n就是双手下垂45度\n然后这个角的话一定要劈开点\n这样这样他才不会粘连\n然后咱们现在又试了一个平台\n这个绑定的话就是更离谱是吧\n看看这家伙拧劲儿拧的\n他这个因为绑定的时候还看不出来是哪的毛病\n当你点动画的时候\n他那个骨骼估计是错位了\n就左右他整拧巴了\n所以说现在就造成这个人是这样的\n是不是很奇特是吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1KYNS6aE8S",
+  "published_at": "1783987771",
+  "fetched_at": "2026-08-09T23:05:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 绑定问题与规范图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A0[\"绑定质量评估\"] --> B0[\"不合格\"]:::issue\n    A0 --> C0[\"需要后期修正\"]:::action\n    B0 --> D0[\"常见错误\"]:::category\n    D0 --> E0[\"腿部线框未分离\"]:::issue\n    D0 --> F0[\"脚部粘连\"]:::issue\n    D0 --> G0[\"骨骼错位/拧巴\"]:::issue\n    classDef issue fill:#f9d5d3,stroke:#c33;\n    classDef action fill:#d5f9d3,stroke:#3c3;\n    classDef category fill:#d5d9f9,stroke:#33c;\n```\n[BV1KYNS6aE8S P1 00:01]  \n[BV1KYNS6aE8S P1 00:12]  \n[BV1KYNS6aE8S P1 00:06]  \n[BV1KYNS6aE8S P1 00:34]  \n[BV1KYNS6aE8S P1 01:09]\n\n## 推荐模型姿势规范\n```mermaid\nflowchart LR\n    A1[\"模型上传姿势要求\"] --> B1[\"梯形姿势或A型姿势\"]:::require\n    A1 --> C1[\"双腿需适度分开\"]:::require\n    A1 --> D1[\"双手下垂约45°\"]:::require\n    A1 --> E1[\"腿部与手臂角度需劈开\"]:::require\n    B1 --> F1[\"避免腿部过近\"]:::avoid\n    C1 --> F1\n    D1 --> G1[\"防止手部与身体粘连\"]:::avoid\n    E1 --> G1\n    classDef require fill:#d5f9d3,stroke:#3c3;\n    classDef avoid fill:#f9d5d3,stroke:#c33;\n```\n[BV1KYNS6aE8S P1 00:17]  \n[BV1KYNS6aE8S P1 00:21]  \n[BV1KYNS6aE8S P1 00:47]  \n[BV1KYNS6aE8S P1 00:49]\n\n## 后期修正步骤\n```mermaid\nflowchart TD\n    A2[\"检测绑定问题\"] --> B2[\"腿部线框分离\"]:::step\n    A2 --> C2[\"脚部粘连处理\"]:::step\n    A2 --> D2[\"骨骼错位校正\"]:::step\n    B2 --> E2[\"使用线框工具分离\"]:::method\n    C2 --> F2[\"手动调整顶点\"]:::method\n    D2 --> G2[\"重新绑定或调整骨骼\"]:::method\n    classDef step fill:#d5f9d3,stroke:#3c3;\n    classDef method fill:#d5d9f9,stroke:#33c;\n```\n[BV1KYNS6aE8S P1 00:06]  \n[BV1KYNS6aE8S P1 00:34]  \n[BV1KYNS6aE8S P1 01:09]",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A0[\"绑定质量评估\"] --> B0[\"不合格\"]:::issue\n    A0 --> C0[\"需要后期修正\"]:::action\n    B0 --> D0[\"常见错误\"]:::category\n    D0 --> E0[\"腿部线框未分离\"]:::issue\n    D0 --> F0[\"脚部粘连\"]:::issue\n    D0 --> G0[\"骨骼错位/拧巴\"]:::issue\n    classDef issue fill:#f9d5d3,stroke:#c33;\n    classDef action fill:#d5f9d3,stroke:#3c3;\n    classDef category fill:#d5d9f9,stroke:#33c;"
+        },
+        {
+          "title": "推荐模型姿势规范",
+          "code": "flowchart LR\n    A1[\"模型上传姿势要求\"] --> B1[\"梯形姿势或A型姿势\"]:::require\n    A1 --> C1[\"双腿需适度分开\"]:::require\n    A1 --> D1[\"双手下垂约45°\"]:::require\n    A1 --> E1[\"腿部与手臂角度需劈开\"]:::require\n    B1 --> F1[\"避免腿部过近\"]:::avoid\n    C1 --> F1\n    D1 --> G1[\"防止手部与身体粘连\"]:::avoid\n    E1 --> G1\n    classDef require fill:#d5f9d3,stroke:#3c3;\n    classDef avoid fill:#f9d5d3,stroke:#c33;"
+        },
+        {
+          "title": "后期修正步骤",
+          "code": "flowchart TD\n    A2[\"检测绑定问题\"] --> B2[\"腿部线框分离\"]:::step\n    A2 --> C2[\"脚部粘连处理\"]:::step\n    A2 --> D2[\"骨骼错位校正\"]:::step\n    B2 --> E2[\"使用线框工具分离\"]:::method\n    C2 --> F2[\"手动调整顶点\"]:::method\n    D2 --> G2[\"重新绑定或调整骨骼\"]:::method\n    classDef step fill:#d5f9d3,stroke:#3c3;\n    classDef method fill:#d5d9f9,stroke:#33c;"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T23:06:20+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 绑定问题与规范图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A0[\"绑定质量评估\"] --> B0[\"不合格\"]:::issue\n    A0 --> C0[\"需要后期修正\"]:::action\n    B0 --> D0[\"常见错误\"]:::category\n    D0 --> E0[\"腿部线框未分离\"]:::issue\n    D0 --> F0[\"脚部粘连\"]:::issue\n    D0 --> G0[\"骨骼错位/拧巴\"]:::issue\n    classDef issue fill:#f9d5d3,stroke:#c33;\n    classDef action fill:#d5f9d3,stroke:#3c3;\n    classDef category fill:#d5d9f9,stroke:#33c;\n```\n[BV1KYNS6aE8S P1 00:01]  \n[BV1KYNS6aE8S P1 00:12]  \n[BV1KYNS6aE8S P1 00:06]  \n[BV1KYNS6aE8S P1 00:34]  \n[BV1KYNS6aE8S P1 01:09]\n\n## 推荐模型姿势规范\n```mermaid\nflowchart LR\n    A1[\"模型上传姿势要求\"] --> B1[\"梯形姿势或A型姿势\"]:::require\n    A1 --> C1[\"双腿需适度分开\"]:::require\n    A1 --> D1[\"双手下垂约45°\"]:::require\n    A1 --> E1[\"腿部与手臂角度需劈开\"]:::require\n    B1 --> F1[\"避免腿部过近\"]:::avoid\n    C1 --> F1\n    D1 --> G1[\"防止手部与身体粘连\"]:::avoid\n    E1 --> G1\n    classDef require fill:#d5f9d3,stroke:#3c3;\n    classDef avoid fill:#f9d5d3,stroke:#c33;\n```\n[BV1KYNS6aE8S P1 00:17]  \n[BV1KYNS6aE8S P1 00:21]  \n[BV1KYNS6aE8S P1 00:47]  \n[BV1KYNS6aE8S P1 00:49]\n\n## 后期修正步骤\n```mermaid\nflowchart TD\n    A2[\"检测绑定问题\"] --> B2[\"腿部线框分离\"]:::step\n    A2 --> C2[\"脚部粘连处理\"]:::step\n    A2 --> D2[\"骨骼错位校正\"]:::step\n    B2 --> E2[\"使用线框工具分离\"]:::method\n    C2 --> F2[\"手动调整顶点\"]:::method\n    D2 --> G2[\"重新绑定或调整骨骼\"]:::method\n    classDef step fill:#d5f9d3,stroke:#3c3;\n    classDef method fill:#d5d9f9,stroke:#33c;\n```\n[BV1KYNS6aE8S P1 00:06]  \n[BV1KYNS6aE8S P1 00:34]  \n[BV1KYNS6aE8S P1 01:09]",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A0[\"绑定质量评估\"] --> B0[\"不合格\"]:::issue\n    A0 --> C0[\"需要后期修正\"]:::action\n    B0 --> D0[\"常见错误\"]:::category\n    D0 --> E0[\"腿部线框未分离\"]:::issue\n    D0 --> F0[\"脚部粘连\"]:::issue\n    D0 --> G0[\"骨骼错位/拧巴\"]:::issue\n    classDef issue fill:#f9d5d3,stroke:#c33;\n    classDef action fill:#d5f9d3,stroke:#3c3;\n    classDef category fill:#d5d9f9,stroke:#33c;"
+    },
+    {
+      "title": "推荐模型姿势规范",
+      "code": "flowchart LR\n    A1[\"模型上传姿势要求\"] --> B1[\"梯形姿势或A型姿势\"]:::require\n    A1 --> C1[\"双腿需适度分开\"]:::require\n    A1 --> D1[\"双手下垂约45°\"]:::require\n    A1 --> E1[\"腿部与手臂角度需劈开\"]:::require\n    B1 --> F1[\"避免腿部过近\"]:::avoid\n    C1 --> F1\n    D1 --> G1[\"防止手部与身体粘连\"]:::avoid\n    E1 --> G1\n    classDef require fill:#d5f9d3,stroke:#3c3;\n    classDef avoid fill:#f9d5d3,stroke:#c33;"
+    },
+    {
+      "title": "后期修正步骤",
+      "code": "flowchart TD\n    A2[\"检测绑定问题\"] --> B2[\"腿部线框分离\"]:::step\n    A2 --> C2[\"脚部粘连处理\"]:::step\n    A2 --> D2[\"骨骼错位校正\"]:::step\n    B2 --> E2[\"使用线框工具分离\"]:::method\n    C2 --> F2[\"手动调整顶点\"]:::method\n    D2 --> G2[\"重新绑定或调整骨骼\"]:::method\n    classDef step fill:#d5f9d3,stroke:#3c3;\n    classDef method fill:#d5d9f9,stroke:#33c;"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T23:06:20+00:00"
+}

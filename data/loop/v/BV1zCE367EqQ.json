@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1zCE367EqQ",
+  "title": "vLLM-Omni v0.22.0 震撼发布",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 801,
+  "text": "所有这些场景均由vllm omni平台生成\n什么是vllm omni\nLlm omni是一个加速多模态模型的推理框架\n它支持文本\n语音图像\n视频及组合输入输出\n最新发布的版本贝拉点二\n二点零更新目前支持如Qun三Omni等模型\nQuinn图像\nQun三TTS\nHelios一二二搭配LVSA\n后端\n宇宙\n本视频所有配音均由Qun三Omni生成\n世界模型Cosmos使机器能够理解并模拟物理世界\n以及与空间环境互动\n它支持文本\n图像\n视频\n音频和动作输入输出\n在人工分析中被评为最佳开源文本到图像及图像到视频模型\n从零开始\n可在VL及所有i弱i联系设备运行\n并行化\n音乐\n并行\nHSDP\n并缓存\n将每个请求分配至多GPU以降低延迟和内存占用而不影响质量\n200至720p图像生成时间从2.9秒降至1.8秒\n相比平面Pi Torch\n且可从单GPU无缝扩展至八GPU\nHelios长视频生成\n专为实时交互设计\n零权重\n即时响应\n电影级画质\n持续连贯性\n多项加速技术实现快速视频生成\nLVSA长视频稀疏注意力\n左侧为基准对比\n右侧展示使用vllm omni框架生成的LVSA结果\n无需额外成本即可生成更长视频并细化细节\n更多样化动作与更低延迟\n此演示对比vllm omni服务同一Qun三TTS模型\n在同一台机器\n两侧的提示词和参考音频完全相同\n我们测量各服务器完成突发任务所需时间\n此页面发送十六路并发流\n新版可在单批次完成\n旧版需分两批次处理\n总体加速约为1.5倍\n此页面将并发流提升至64路\n旧版本采用七批次循环处理\n新版本在两个阶段中并行处理所有64路流\n总体加速约为2.1倍\n加速源于0.22版本发布的优化工作\n包括新的高并发部署配置\nCUDA图捕获用于调度器优化\n编解码阶段性能提升\n并引入参考音频缓存避免重复编码\n每个请求的说话人片段处理，我们支持的模型越来越多\n在GitHub上关注并星标我们",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zCE367EqQ",
+  "published_at": "1780929807",
+  "fetched_at": "2026-08-10T01:28:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# vLLM-Omni 知识图谱\n\n## Overview\n```mermaid\nflowchart TD\n    VLLM_OMNI[\"vLLM-Omni\"] --> FRAMEWORK[\"加速多模态模型的推理框架\"]\n    VLLM_OMNI --> VERSION[\"v0.22.0 发布\"]\n    VLLM_OMNI --> FEATURES[\"支持文本、语音、图像、视频及组合输入输出\"]\n    VLLM_OMNI --> BACKEND[\"后端宇宙\"]\n    VLLM_OMNI --> DEMO[\"配音由 Qun三Omni 生成\"]\n    VLLM_OMNI --> WORLD_MODEL[\"Cosmos 世界模型\"]\n    WORLD_MODEL --> INTERACTION[\"理解并模拟物理世界并与空间环境互动\"]\n```\n\n## Supported Modalities & Models\n```mermaid\nflowchart TD\n    FEATURES[\"支持文本、语音、图像、视频及组合输入输出\"] --> TEXT[\"文本\"]\n    FEATURES --> VOICE[\"语音\"]\n    FEATURES --> IMAGE[\"图像\"]\n    FEATURES --> VIDEO[\"视频\"]\n    FEATURES --> COMBO[\"组合输入输出\"]\n\n    MODELS[\"已支持模型\"] --> QUN3_OMNI[\"Qun三Omni\"]\n    MODELS --> HELIOS[\"Helios-1-2 搭配 LVSA\"]\n    MODELS --> QUINN_IMG[\"Quinn 图像\"]\n    MODELS --> QUN3_TTS[\"Qun三 TTS\"]\n\n    QUN3_OMNI --> VOICE\n    QUN3_OMNI --> TEXT\n    QUN3_OMNI --> IMAGE\n    QUN3_OMNI --> VIDEO\n\n    HELIOS --> LVSA[\"LVSA 长视频稀疏注意力\"]\n    HELIOS --> VIDEO\n```\n\n## Performance & Parallelism\n```mermaid\nflowchart TD\n    PARALLEL[\"并行化\"] --> HSDP[\"HSDP\"]\n    PARALLEL --> CACHE[\"缓存\"]\n    PARALLEL --> GPU_ALLOC[\"多GPU请求分配\"]\n\n    GPU_ALLOC --> LATENCY[\"降低延迟\"]\n    GPU_ALLOC --> MEM_USAGE[\"降低内存占用\"]\n    GPU_ALLOC --> QUALITY[\"不影响质量\"]\n\n    SPEED_IMPROV[\"图像生成时间 2.9s → 1.8s\"] --> GPU_SCALE[\"单GPU至八GPU扩展\"]\n    SPEED_IMPROV --> VIDEO_ACCEL[\"多项加速技术实现快速视频生成\"]\n\n    LVSA[\"LVSA 长视频稀疏注意力\"] --> COMPARE[\"对比基准\"]\n    COMPARE --> ACCEL_FACTOR[\"总体加速 1.5× / 2.1×\"]\n\n    OPTIM[\"0.22 版优化\"] --> HIGH_CONC[\"高并发部署配置\"]\n    OPTIM --> CUDA_CAPTURE[\"CUDA 图捕获用于调度器优化\"]\n    OPTIM --> CODEC_BOOST[\"编解码阶段性能提升\"]\n    OPTIM --> AUDIO_CACHE[\"参考音频缓存避免重复编码\"]\n```\n\n## Deployment & Scaling\n```mermaid\nflowchart TD\n    DEPLOY[\"部署\"] --> CONCURRENCY[\"并发流 16路 → 64路\"]\n    CONCURRENCY --> NEW_VER[\"新版单批次完成\"]\n    CONCURRENCY --> OLD_VER[\"旧版需分两批次\"]\n\n    NEW_VER --> ACCEL_1_5[\"总体加速约 1.5×\"]\n    OLD_VER --> ACCEL_2_1[\"总体加速约 2.1×\"]\n\n    BATCH[\"单批次处理\"] --> NEW_VER\n    BATCH --> OLD_VER\n```",
+      "diagrams": [
+        {
+          "title": "Overview",
+          "code": "flowchart TD\n    VLLM_OMNI[\"vLLM-Omni\"] --> FRAMEWORK[\"加速多模态模型的推理框架\"]\n    VLLM_OMNI --> VERSION[\"v0.22.0 发布\"]\n    VLLM_OMNI --> FEATURES[\"支持文本、语音、图像、视频及组合输入输出\"]\n    VLLM_OMNI --> BACKEND[\"后端宇宙\"]\n    VLLM_OMNI --> DEMO[\"配音由 Qun三Omni 生成\"]\n    VLLM_OMNI --> WORLD_MODEL[\"Cosmos 世界模型\"]\n    WORLD_MODEL --> INTERACTION[\"理解并模拟物理世界并与空间环境互动\"]"
+        },
+        {
+          "title": "Supported Modalities & Models",
+          "code": "flowchart TD\n    FEATURES[\"支持文本、语音、图像、视频及组合输入输出\"] --> TEXT[\"文本\"]\n    FEATURES --> VOICE[\"语音\"]\n    FEATURES --> IMAGE[\"图像\"]\n    FEATURES --> VIDEO[\"视频\"]\n    FEATURES --> COMBO[\"组合输入输出\"]\n\n    MODELS[\"已支持模型\"] --> QUN3_OMNI[\"Qun三Omni\"]\n    MODELS --> HELIOS[\"Helios-1-2 搭配 LVSA\"]\n    MODELS --> QUINN_IMG[\"Quinn 图像\"]\n    MODELS --> QUN3_TTS[\"Qun三 TTS\"]\n\n    QUN3_OMNI --> VOICE\n    QUN3_OMNI --> TEXT\n    QUN3_OMNI --> IMAGE\n    QUN3_OMNI --> VIDEO\n\n    HELIOS --> LVSA[\"LVSA 长视频稀疏注意力\"]\n    HELIOS --> VIDEO"
+        },
+        {
+          "title": "Performance & Parallelism",
+          "code": "flowchart TD\n    PARALLEL[\"并行化\"] --> HSDP[\"HSDP\"]\n    PARALLEL --> CACHE[\"缓存\"]\n    PARALLEL --> GPU_ALLOC[\"多GPU请求分配\"]\n\n    GPU_ALLOC --> LATENCY[\"降低延迟\"]\n    GPU_ALLOC --> MEM_USAGE[\"降低内存占用\"]\n    GPU_ALLOC --> QUALITY[\"不影响质量\"]\n\n    SPEED_IMPROV[\"图像生成时间 2.9s → 1.8s\"] --> GPU_SCALE[\"单GPU至八GPU扩展\"]\n    SPEED_IMPROV --> VIDEO_ACCEL[\"多项加速技术实现快速视频生成\"]\n\n    LVSA[\"LVSA 长视频稀疏注意力\"] --> COMPARE[\"对比基准\"]\n    COMPARE --> ACCEL_FACTOR[\"总体加速 1.5× / 2.1×\"]\n\n    OPTIM[\"0.22 版优化\"] --> HIGH_CONC[\"高并发部署配置\"]\n    OPTIM --> CUDA_CAPTURE[\"CUDA 图捕获用于调度器优化\"]\n    OPTIM --> CODEC_BOOST[\"编解码阶段性能提升\"]\n    OPTIM --> AUDIO_CACHE[\"参考音频缓存避免重复编码\"]"
+        },
+        {
+          "title": "Deployment & Scaling",
+          "code": "flowchart TD\n    DEPLOY[\"部署\"] --> CONCURRENCY[\"并发流 16路 → 64路\"]\n    CONCURRENCY --> NEW_VER[\"新版单批次完成\"]\n    CONCURRENCY --> OLD_VER[\"旧版需分两批次\"]\n\n    NEW_VER --> ACCEL_1_5[\"总体加速约 1.5×\"]\n    OLD_VER --> ACCEL_2_1[\"总体加速约 2.1×\"]\n\n    BATCH[\"单批次处理\"] --> NEW_VER\n    BATCH --> OLD_VER"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T01:28:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# vLLM-Omni 知识图谱\n\n## Overview\n```mermaid\nflowchart TD\n    VLLM_OMNI[\"vLLM-Omni\"] --> FRAMEWORK[\"加速多模态模型的推理框架\"]\n    VLLM_OMNI --> VERSION[\"v0.22.0 发布\"]\n    VLLM_OMNI --> FEATURES[\"支持文本、语音、图像、视频及组合输入输出\"]\n    VLLM_OMNI --> BACKEND[\"后端宇宙\"]\n    VLLM_OMNI --> DEMO[\"配音由 Qun三Omni 生成\"]\n    VLLM_OMNI --> WORLD_MODEL[\"Cosmos 世界模型\"]\n    WORLD_MODEL --> INTERACTION[\"理解并模拟物理世界并与空间环境互动\"]\n```\n\n## Supported Modalities & Models\n```mermaid\nflowchart TD\n    FEATURES[\"支持文本、语音、图像、视频及组合输入输出\"] --> TEXT[\"文本\"]\n    FEATURES --> VOICE[\"语音\"]\n    FEATURES --> IMAGE[\"图像\"]\n    FEATURES --> VIDEO[\"视频\"]\n    FEATURES --> COMBO[\"组合输入输出\"]\n\n    MODELS[\"已支持模型\"] --> QUN3_OMNI[\"Qun三Omni\"]\n    MODELS --> HELIOS[\"Helios-1-2 搭配 LVSA\"]\n    MODELS --> QUINN_IMG[\"Quinn 图像\"]\n    MODELS --> QUN3_TTS[\"Qun三 TTS\"]\n\n    QUN3_OMNI --> VOICE\n    QUN3_OMNI --> TEXT\n    QUN3_OMNI --> IMAGE\n    QUN3_OMNI --> VIDEO\n\n    HELIOS --> LVSA[\"LVSA 长视频稀疏注意力\"]\n    HELIOS --> VIDEO\n```\n\n## Performance & Parallelism\n```mermaid\nflowchart TD\n    PARALLEL[\"并行化\"] --> HSDP[\"HSDP\"]\n    PARALLEL --> CACHE[\"缓存\"]\n    PARALLEL --> GPU_ALLOC[\"多GPU请求分配\"]\n\n    GPU_ALLOC --> LATENCY[\"降低延迟\"]\n    GPU_ALLOC --> MEM_USAGE[\"降低内存占用\"]\n    GPU_ALLOC --> QUALITY[\"不影响质量\"]\n\n    SPEED_IMPROV[\"图像生成时间 2.9s → 1.8s\"] --> GPU_SCALE[\"单GPU至八GPU扩展\"]\n    SPEED_IMPROV --> VIDEO_ACCEL[\"多项加速技术实现快速视频生成\"]\n\n    LVSA[\"LVSA 长视频稀疏注意力\"] --> COMPARE[\"对比基准\"]\n    COMPARE --> ACCEL_FACTOR[\"总体加速 1.5× / 2.1×\"]\n\n    OPTIM[\"0.22 版优化\"] --> HIGH_CONC[\"高并发部署配置\"]\n    OPTIM --> CUDA_CAPTURE[\"CUDA 图捕获用于调度器优化\"]\n    OPTIM --> CODEC_BOOST[\"编解码阶段性能提升\"]\n    OPTIM --> AUDIO_CACHE[\"参考音频缓存避免重复编码\"]\n```\n\n## Deployment & Scaling\n```mermaid\nflowchart TD\n    DEPLOY[\"部署\"] --> CONCURRENCY[\"并发流 16路 → 64路\"]\n    CONCURRENCY --> NEW_VER[\"新版单批次完成\"]\n    CONCURRENCY --> OLD_VER[\"旧版需分两批次\"]\n\n    NEW_VER --> ACCEL_1_5[\"总体加速约 1.5×\"]\n    OLD_VER --> ACCEL_2_1[\"总体加速约 2.1×\"]\n\n    BATCH[\"单批次处理\"] --> NEW_VER\n    BATCH --> OLD_VER\n```",
+  "diagrams": [
+    {
+      "title": "Overview",
+      "code": "flowchart TD\n    VLLM_OMNI[\"vLLM-Omni\"] --> FRAMEWORK[\"加速多模态模型的推理框架\"]\n    VLLM_OMNI --> VERSION[\"v0.22.0 发布\"]\n    VLLM_OMNI --> FEATURES[\"支持文本、语音、图像、视频及组合输入输出\"]\n    VLLM_OMNI --> BACKEND[\"后端宇宙\"]\n    VLLM_OMNI --> DEMO[\"配音由 Qun三Omni 生成\"]\n    VLLM_OMNI --> WORLD_MODEL[\"Cosmos 世界模型\"]\n    WORLD_MODEL --> INTERACTION[\"理解并模拟物理世界并与空间环境互动\"]"
+    },
+    {
+      "title": "Supported Modalities & Models",
+      "code": "flowchart TD\n    FEATURES[\"支持文本、语音、图像、视频及组合输入输出\"] --> TEXT[\"文本\"]\n    FEATURES --> VOICE[\"语音\"]\n    FEATURES --> IMAGE[\"图像\"]\n    FEATURES --> VIDEO[\"视频\"]\n    FEATURES --> COMBO[\"组合输入输出\"]\n\n    MODELS[\"已支持模型\"] --> QUN3_OMNI[\"Qun三Omni\"]\n    MODELS --> HELIOS[\"Helios-1-2 搭配 LVSA\"]\n    MODELS --> QUINN_IMG[\"Quinn 图像\"]\n    MODELS --> QUN3_TTS[\"Qun三 TTS\"]\n\n    QUN3_OMNI --> VOICE\n    QUN3_OMNI --> TEXT\n    QUN3_OMNI --> IMAGE\n    QUN3_OMNI --> VIDEO\n\n    HELIOS --> LVSA[\"LVSA 长视频稀疏注意力\"]\n    HELIOS --> VIDEO"
+    },
+    {
+      "title": "Performance & Parallelism",
+      "code": "flowchart TD\n    PARALLEL[\"并行化\"] --> HSDP[\"HSDP\"]\n    PARALLEL --> CACHE[\"缓存\"]\n    PARALLEL --> GPU_ALLOC[\"多GPU请求分配\"]\n\n    GPU_ALLOC --> LATENCY[\"降低延迟\"]\n    GPU_ALLOC --> MEM_USAGE[\"降低内存占用\"]\n    GPU_ALLOC --> QUALITY[\"不影响质量\"]\n\n    SPEED_IMPROV[\"图像生成时间 2.9s → 1.8s\"] --> GPU_SCALE[\"单GPU至八GPU扩展\"]\n    SPEED_IMPROV --> VIDEO_ACCEL[\"多项加速技术实现快速视频生成\"]\n\n    LVSA[\"LVSA 长视频稀疏注意力\"] --> COMPARE[\"对比基准\"]\n    COMPARE --> ACCEL_FACTOR[\"总体加速 1.5× / 2.1×\"]\n\n    OPTIM[\"0.22 版优化\"] --> HIGH_CONC[\"高并发部署配置\"]\n    OPTIM --> CUDA_CAPTURE[\"CUDA 图捕获用于调度器优化\"]\n    OPTIM --> CODEC_BOOST[\"编解码阶段性能提升\"]\n    OPTIM --> AUDIO_CACHE[\"参考音频缓存避免重复编码\"]"
+    },
+    {
+      "title": "Deployment & Scaling",
+      "code": "flowchart TD\n    DEPLOY[\"部署\"] --> CONCURRENCY[\"并发流 16路 → 64路\"]\n    CONCURRENCY --> NEW_VER[\"新版单批次完成\"]\n    CONCURRENCY --> OLD_VER[\"旧版需分两批次\"]\n\n    NEW_VER --> ACCEL_1_5[\"总体加速约 1.5×\"]\n    OLD_VER --> ACCEL_2_1[\"总体加速约 2.1×\"]\n\n    BATCH[\"单批次处理\"] --> NEW_VER\n    BATCH --> OLD_VER"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T01:28:34+00:00"
+}

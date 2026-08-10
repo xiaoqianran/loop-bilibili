@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1fSJM6zEqV",
+  "title": "vscode1.122重大更新！自由配置API节点，随意接入大模型！保姆级教程，有手就行！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 588,
+  "text": "最近visual studio code也是更新了一个1.12版本\n在这个版本里呢\n它增加了一个呃\n无需GITHUB即可使用外部agent这样的一个功能嗯\n这样我们就可以在vs code里头自己定义节点\n并且进入外部中转站的模型\n嗯这样我们使用A忍就会方便很多\n我给大家演示一下如何呃实践嗯\n首先呢你需要一个额中转站\n中转站地址\n我在视频最后会给大家一个链接嗯\n你需要一个中转站\n然后你先在\n先创建一个灭药\n比如说这样一个密钥\n然后这样都选默认就可以了\n这样你就生成一个密钥\n然后我们复制密钥的链接\n然后大家到这里头选一个你需要的模型\n在这里我们先找到这个吧\n然后我们在这里看它支持什么样的格式\nCombition\n那到时候我们就选competition就可以了\n嗯在这里这个模型我们选其他模型\n然后右上角这个选自定义节点\n这里我们写GPT5.5\n嗯就这样吧\n然后输入我们之前的API\n然后选择这个CONTRACCOMDATION\n然后在这里呢填入这个id name和URL额\nURLL就是这个网站提供给你这个链接\n这个网站URL就是这个\n额填完URLL之后呢\n我们填id和name id\n这个我们就按照这个网上给的对应的名称\n该填就可以了\n这样我们就填完了\n然后我们来试一下这个节点是否可用\n我们测试一下\n我可以看到呃\nA真的已经给我们回答了\n这样一个这个端口就要配置成功了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1fSJM6zEqV",
+  "published_at": "1781495997",
+  "fetched_at": "2026-08-06T22:11:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# VS Code 1.12 更新与自定义节点配置图谱\n\n## VS Code 1.12 新特性概览\n```mermaid\nflowchart TD\n    A[\"VS Code 1.12 更新\"] --> B[\"支持外部 Agent（无需 GitHub）\"]\n    B --> C[\"在 VS Code 中自定义节点\"]\n    C --> D[\"接入外部中转站模型\"]\n    D --> E[\"模型列表与格式支持\"]\n    E --> F[\"选择模型（如 GPT5.5）\"]\n    F --> G[\"配置 API URL、ID、Name\"]\n    G --> H[\"节点可用性测试\"]\n    H --> I[\"成功响应 → 配置完成\"]\n```\n\n## 自定义节点配置流程\n```mermaid\nflowchart LR\n    S1[\"获取中转站地址（视频末提供）\"] --> S2[\"在 VS Code 创建密钥（默认选项）\"]\n    S2 --> S3[\"复制密钥链接\"]\n    S3 --> S4[\"在模型列表中选择所需模型\"]\n    S4 --> S5[\"查看模型支持的格式\"]\n    S5 --> S6[\"在右上角选择“自定义节点”\"]\n    S6 --> S7[\"填写节点名称（例：GPT5.5）\"]\n    S7 --> S8[\"输入 API URL\"]\n    S8 --> S9[\"填写对应的 ID 与 Name\"]\n    S9 --> S10[\"保存节点配置\"]\n    S10 --> S11[\"测试节点可用性\"]\n    S11 --> S12[\"收到模型回复 → 配置成功\"]\n```\n\n## 模型支持与格式选择\n```mermaid\nflowchart TD\n    M1[\"模型列表\"] --> M2[\"查看模型详情\"]\n    M2 --> M3[\"支持的格式\"]\n    M3 --> M4[\"Completion（完成）\"]\n    M3 --> M5[\"Competition（竞争）\"]\n    M4 --> M6[\"选择 Completion 作为节点格式\"]\n    M5 --> M7[\"选择 Competition 作为节点格式\"]\n    M6 --> M8[\"应用于自定义节点\"]\n    M7 --> M8\n    M8 --> M9[\"完成模型配置\"]\n```",
+      "diagrams": [
+        {
+          "title": "VS Code 1.12 新特性概览",
+          "code": "flowchart TD\n    A[\"VS Code 1.12 更新\"] --> B[\"支持外部 Agent（无需 GitHub）\"]\n    B --> C[\"在 VS Code 中自定义节点\"]\n    C --> D[\"接入外部中转站模型\"]\n    D --> E[\"模型列表与格式支持\"]\n    E --> F[\"选择模型（如 GPT5.5）\"]\n    F --> G[\"配置 API URL、ID、Name\"]\n    G --> H[\"节点可用性测试\"]\n    H --> I[\"成功响应 → 配置完成\"]"
+        },
+        {
+          "title": "自定义节点配置流程",
+          "code": "flowchart LR\n    S1[\"获取中转站地址（视频末提供）\"] --> S2[\"在 VS Code 创建密钥（默认选项）\"]\n    S2 --> S3[\"复制密钥链接\"]\n    S3 --> S4[\"在模型列表中选择所需模型\"]\n    S4 --> S5[\"查看模型支持的格式\"]\n    S5 --> S6[\"在右上角选择“自定义节点”\"]\n    S6 --> S7[\"填写节点名称（例：GPT5.5）\"]\n    S7 --> S8[\"输入 API URL\"]\n    S8 --> S9[\"填写对应的 ID 与 Name\"]\n    S9 --> S10[\"保存节点配置\"]\n    S10 --> S11[\"测试节点可用性\"]\n    S11 --> S12[\"收到模型回复 → 配置成功\"]"
+        },
+        {
+          "title": "模型支持与格式选择",
+          "code": "flowchart TD\n    M1[\"模型列表\"] --> M2[\"查看模型详情\"]\n    M2 --> M3[\"支持的格式\"]\n    M3 --> M4[\"Completion（完成）\"]\n    M3 --> M5[\"Competition（竞争）\"]\n    M4 --> M6[\"选择 Completion 作为节点格式\"]\n    M5 --> M7[\"选择 Competition 作为节点格式\"]\n    M6 --> M8[\"应用于自定义节点\"]\n    M7 --> M8\n    M8 --> M9[\"完成模型配置\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T22:11:10+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# VS Code 1.12 更新与自定义节点配置图谱\n\n## VS Code 1.12 新特性概览\n```mermaid\nflowchart TD\n    A[\"VS Code 1.12 更新\"] --> B[\"支持外部 Agent（无需 GitHub）\"]\n    B --> C[\"在 VS Code 中自定义节点\"]\n    C --> D[\"接入外部中转站模型\"]\n    D --> E[\"模型列表与格式支持\"]\n    E --> F[\"选择模型（如 GPT5.5）\"]\n    F --> G[\"配置 API URL、ID、Name\"]\n    G --> H[\"节点可用性测试\"]\n    H --> I[\"成功响应 → 配置完成\"]\n```\n\n## 自定义节点配置流程\n```mermaid\nflowchart LR\n    S1[\"获取中转站地址（视频末提供）\"] --> S2[\"在 VS Code 创建密钥（默认选项）\"]\n    S2 --> S3[\"复制密钥链接\"]\n    S3 --> S4[\"在模型列表中选择所需模型\"]\n    S4 --> S5[\"查看模型支持的格式\"]\n    S5 --> S6[\"在右上角选择“自定义节点”\"]\n    S6 --> S7[\"填写节点名称（例：GPT5.5）\"]\n    S7 --> S8[\"输入 API URL\"]\n    S8 --> S9[\"填写对应的 ID 与 Name\"]\n    S9 --> S10[\"保存节点配置\"]\n    S10 --> S11[\"测试节点可用性\"]\n    S11 --> S12[\"收到模型回复 → 配置成功\"]\n```\n\n## 模型支持与格式选择\n```mermaid\nflowchart TD\n    M1[\"模型列表\"] --> M2[\"查看模型详情\"]\n    M2 --> M3[\"支持的格式\"]\n    M3 --> M4[\"Completion（完成）\"]\n    M3 --> M5[\"Competition（竞争）\"]\n    M4 --> M6[\"选择 Completion 作为节点格式\"]\n    M5 --> M7[\"选择 Competition 作为节点格式\"]\n    M6 --> M8[\"应用于自定义节点\"]\n    M7 --> M8\n    M8 --> M9[\"完成模型配置\"]\n```",
+  "diagrams": [
+    {
+      "title": "VS Code 1.12 新特性概览",
+      "code": "flowchart TD\n    A[\"VS Code 1.12 更新\"] --> B[\"支持外部 Agent（无需 GitHub）\"]\n    B --> C[\"在 VS Code 中自定义节点\"]\n    C --> D[\"接入外部中转站模型\"]\n    D --> E[\"模型列表与格式支持\"]\n    E --> F[\"选择模型（如 GPT5.5）\"]\n    F --> G[\"配置 API URL、ID、Name\"]\n    G --> H[\"节点可用性测试\"]\n    H --> I[\"成功响应 → 配置完成\"]"
+    },
+    {
+      "title": "自定义节点配置流程",
+      "code": "flowchart LR\n    S1[\"获取中转站地址（视频末提供）\"] --> S2[\"在 VS Code 创建密钥（默认选项）\"]\n    S2 --> S3[\"复制密钥链接\"]\n    S3 --> S4[\"在模型列表中选择所需模型\"]\n    S4 --> S5[\"查看模型支持的格式\"]\n    S5 --> S6[\"在右上角选择“自定义节点”\"]\n    S6 --> S7[\"填写节点名称（例：GPT5.5）\"]\n    S7 --> S8[\"输入 API URL\"]\n    S8 --> S9[\"填写对应的 ID 与 Name\"]\n    S9 --> S10[\"保存节点配置\"]\n    S10 --> S11[\"测试节点可用性\"]\n    S11 --> S12[\"收到模型回复 → 配置成功\"]"
+    },
+    {
+      "title": "模型支持与格式选择",
+      "code": "flowchart TD\n    M1[\"模型列表\"] --> M2[\"查看模型详情\"]\n    M2 --> M3[\"支持的格式\"]\n    M3 --> M4[\"Completion（完成）\"]\n    M3 --> M5[\"Competition（竞争）\"]\n    M4 --> M6[\"选择 Completion 作为节点格式\"]\n    M5 --> M7[\"选择 Competition 作为节点格式\"]\n    M6 --> M8[\"应用于自定义节点\"]\n    M7 --> M8\n    M8 --> M9[\"完成模型配置\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:11:10+00:00"
+}

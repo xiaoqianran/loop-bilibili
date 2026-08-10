@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1FBfYBkEP2",
+  "title": "【虚幻引擎5】自制简易风场控制器",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2502,
+  "text": "哈喽大家好\n今天想分享的是我在做一个水下小场景时\n做的一个\n便于同时控制\n制备风力方向和粒子运动方向\n的一个简易小工具\n通常涉及风力方向控制的权威做法是\n使用右翼自带的风力定向风源\nactor放在场景中和speed tree植被产生效果\n或者是自定义simple grass wind节点来实现\n嗯这里我不采用这两种方法\n而是用另外一种方法\n自己手搓一个风力控制器\n也能很简单的来实现类似的效果\n其实做这个的最初目的呢\n是为了在不同的镜头里呃\n便于非常方便的来统一控制\n水体流动的一个方向哦\n因为这里是水下环境\n所以水体流动的方向就是我想表示的风场方向\n就像这样\n当我旋转箭头时\n制备的运动方向\n还有粒子方向\n都是按照我的箭头的指示来\n这是我的master sequence\n可以看到只需要K下控制器的transform\n就能展示不同风力\n也就是不同流体方向的效果\n接下来看下大致的制作思路\n其实非常简单\n就是在蓝图里获取方向向量\n传给材质参数集\n再把信息传给植被材质的过程\n这里做顶点偏移动画\n我们不用simple grass wind\n使用rotate绕轴旋转节点来实现\n我这里使用的植被模型就是一个面片\n需要添加一些细分啊\n不然的话弯曲效果会不太好\n首先来确定它的轴向\nMPC里的方向向量是自由控制的\n所以只被旋转的轴向就应该是啊\n风力的向量和Z轴的向量积\n也就是cross product差成\n然后给他normalize一下\n旋转角度呢\n待会再说\n然后就是它的轴点配备point\n最后面需要再乘以根部固定\n由于我的模型是一个面片\n所以这里可以直接使用G通道作为mask\n来固定根部\n根据自己的模型来啊\n通常也可以用bonding box节点\n然后我们来看下怎么样制作它的旋转嗯\n我找了一些视频参考水下植被的云图效果\n它主要受两种力\n一个是它自身的浮力\n就是那种类似于S型曲线的来回摆动\n另外一个就是水流动力的影响嗯\n就像它表面的波浪起伏的效果\n嗯这样讲可能不太专业\n意思就是在写材质时\n主要考虑了两个部分来表示摆动的效果\n先来看第一部分就是它自身的摆动扭动呃\n我的思路是使用球形遮罩配合正弦函数来实现\n这里我直接把之前调好的参数拿来用\n然后添加速度\n看下sin函数的预览嗯\n这里可以想象成\n它绕着同个轴向的不同方向交替摆动\n然后乘以摆动旋转的角度\n同样的在乘上用于固定根部的mask节点\n这样它在不同的位置就有不同的弯曲幅度\n看下效果可以看到已经有初步的样子了\n但是我不想让它两侧平均的摆动\n而是让它单侧摆动\n这个实现也很简单啊\n可以联想一下sin函数\n让它整体向上平移一下\n添加一个常量偏移constant bias就可以了\n这样就能看到水草是在单侧摆动\n而不是像刚才那样在两侧平均的摆动\n这部分就是实现水草摆动的主要思路\n另外还要添加随机效果\n不能让它的运动这么一致嗯\n所以可以用到我们常用的poor instance节点嗯\n这里我做的比较简单\n就是给它的摆动速度加上这个随机值\n让不同的位置有不同的效果来打破一致性\n可以看到添加随机之后\n植被就有不同的摆动幅度\n接下来要考虑的就是波浪效果嗯\n这里我用了一张512的纹理\n波浪纹理\n最基本的想法\n就是让这张纹理在世界位置坐标下做平移运动\n那么怎么能让它的平移方向角度\n和我们的方向控制向量结合呢\n说白了就是我用一个箭头来任意旋转\n这个贴图的UV\n并且让它沿着该方向做UV的平移\n第一个想到的肯定是控制UV旋转的节点嗯\n但是这里旋转的角度是0~1\n而我并不想手动去输入这个数值\n所以说得想方法\n根据XY平面的向量方向来得到规划的角度\n当时其实我最先尝试的是极坐标转换的方法\n但后来我决定直接使用反正切函数来做\n这样可能会更简单直观一些\n这个是四象限\n反正切函数的定义和使用说明\n这个函数就刚好可以满足我的需求\n根据它的定义\n分别输入XY\n把得出的结果除以派可以得到的范围是非到一\n然后再做一次常量偏移就得到了0~1\n这样把它输入到控制UV旋转的节点上\n然后再做平移就可以了\n我们先拿一个平面做测试\n场景里放一个平面\n然后旋转箭头\n可以看到贴图确实能沿着箭头的方向旋转\n并朝着这个方向做平移\n虽然说这个计算方式呃并不十分的精确\n可以看到有拉伸\n但是对我来说\n这个目前就够用了\n所以要这样有了控制波浪的mask\n再输入对应不同的旋转数值\n就可以做出来\n随着波浪起伏摆动的效果\n最后把这两部分的计算相加\n为了方便能更明显的显示效果\n可以把这个波浪的遮罩再应用到颜色上\n这样能更加加深起伏的效果\n这样就基本上得到了一个简易的制备\n风力方向控制器\n其实梳理一下材质并没有繁琐复杂的计算过程\n就是这两部分\n一个是自身摆动\n一个是波浪效果\n呃另外对这个蓝图再做一点完善的话\n就是顺带添加方力的强度和速度\n剩下的这些就很简单了\n在MPC里添加两个标量\n代表强度和速度\n然后把这两个标量在蓝图里暴露出来\n给这两个数值啊\n一个区间范围回到材质中\n这里我在旋转角度上乘以wind intensity\n表示它所受的风力大小\n另外在波浪速度上乘以风速呃\n除了这里\n还有在摆动速度上乘上\n最后在外面就可以任意调整了\n需要同时调整两个数值\n配合得到理想的效果\n最后回到这个水下场景\n这里除了植被\n我还把粒子运动的方向\n也加入到这个方向控制器中\n这里需要用到一个传递信息的小工具\n就是类似于NPC的NPC粒子参数集\n把对应啊\n把方向对应的材质参数集\n导入到这个粒子参数集中\n它就可以自动读取到材质参数集里的向量信息\n同样的也需要在蓝图里重复一遍\n获取向量信息并传递的过程就是传递给这个NPC\n呃这里我以鱼群和尘埃粒子为例呃\n在参数栏下面需要把这个粒子参数集添加上\n导入到粒子生成下的速度上\n同时粒子更新下的线性力\n也需要导入这个向量参数\n表示速度和力的朝向\n都是由呃这个方向向量控制\n同样的\n在另一个例子中添加的风力下的方向中\n也导入这个参数\n这样就能够统一控制场景中\n植被和粒子的运动方向了\n今天就分享到这里\n还是只做思路的分享\n不足之处还望见谅\n希望能给大家一点启发\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1FBfYBkEP2",
+  "published_at": "1772069253",
+  "fetched_at": "2026-08-08T03:58:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 【虚幻引擎5】自制简易风场控制器 知识图谱\n\n## 总览 [BV1FBfYBkEP2 P1 00:10] [BV1FBfYBkEP2 P1 01:00]\n```mermaid\nflowchart TD\n    C[\"控制器\"] --> MS[\"Master Sequence\"]\n    MS --> T[\"Transform\"]\n    T --> DV[\"方向向量 (MPC)\"]\n    DV --> CP[\"Cross Product (Wind × Z)\"]\n    CP --> N[\"Normalize Axis\"]\n    N --> RA[\"Rotate Around Axis\"]\n    RA --> V[\"顶点偏移\"]\n    V --> GM[\"根部Mask (G通道)\"]\n    V --> S[\"摆动 (Sine)\"]\n    S --> RND[\"随机 (Poor Instance)\"]\n    V --> WV[\"波浪纹理\"]\n    WV --> UVR[\"UV Rotation\"]\n    UVR --> UVT[\"UV Translation\"]\n    DV --> MP[\"材质参数集\"]\n    MP --> PL[\"植被材质\"]\n    MP --> PT[\"粒子材质\"]\n    PL --> V\n    PT --> V\n```\n\n## 蓝图向量获取与传递 [BV1FBfYBkEP2 P1 01:12] [BV1FBfYBkEP2 P1 01:14] [BV1FBfYBkEP2 P1 02:01]\n```mermaid\nflowchart TD\n    BP[\"蓝图\"] --> GetDV[\"获取方向向量\"]\n    GetDV --> CP[\"计算 Cross Product (Wind × Z)\"]\n    CP --> Norm[\"Normalize 结果\"]\n    Norm --> SetMP[\"设置到 Material Parameter Set\"]\n    SetMP --> ExposeI[\"暴露标量 强度\"]\n    SetMP --> ExposeS[\"暴露标量 速度\"]\n    ExposeI --> Mat[\"材质\"]\n    ExposeS --> Mat\n```\n\n## 植被摆动实现 [BV1FBfYBkEP2 P1 03:20] [BV1FBfYBkEP2 P1 04:20] [BV1FBfYBkEP2 P1 04:46]\n```mermaid\nflowchart TD\n    Plant[\"植被模型 (Plane)\"] --> Subdiv[\"细分\"]\n    Subdiv --> Mask[\"G通道根部Mask\"]\n    Subdiv --> SphereMask[\"球形遮罩\"]\n    SphereMask --> Sine[\"正弦函数\"]\n    Sine --> ConstBias[\"常量偏移 (上移)\"]\n    ConstBias --> AngleMul[\"乘以摆动角度\"]\n    AngleMul --> RandomInst[\"随机实例 (Poor Instance)\"]\n    RandomInst --> FinalOffset[\"最终顶点位移\"]\n    FinalOffset --> Mask\n    FinalOffset --> Plant\n```\n\n## 波浪 UV 控制 [BV1FBfYBkEP2 P1 05:32] [BV1FBfYBkEP2 P1 06:05] [BV1FBfYBkEP2 P1 06:45]\n```mermaid\nflowchart TD\n    WaveTex[\"波浪纹理 (512)\"] --> UV[\"UV 坐标\"]\n    DirVec[\"方向向量 XY\"] --> Atan2[\"atan2(Y,X)\"]\n    Atan2 --> DivPi[\"除以 π\"]\n    DivPi --> ConstBias[\"常量偏移 (0~1)\"]\n    ConstBias --> UVRot[\"UV 旋转节点\"]\n    UVRot --> UVTrans[\"UV 平移\"]\n    UVTrans --> WaveTex\n```\n\n## 粒子方向同步 [BV1FBfYBkEP2 P1 11:34] [BV1FBfYBkEP2 P1 11:55] [BV1FBfYBkEP2 P1 12:08]\n```mermaid\nflowchart TD\n    ParticleSys[\"粒子系统\"] --> ParamSet[\"粒子参数集\"]\n    DirVec[\"方向向量 (MPC)\"] --> ParamSet\n    ParamSet --> Vel[\"速度向量\"]\n    ParamSet --> LinForce[\"线性力\"]\n    Vel --> ParticleSys\n    LinForce --> ParticleSys\n    ParamSet --> SyncMat[\"同步到材质参数\"]\n    SyncMat --> PlantMat[\"植被材质\"]\n    SyncMat --> ParticleMat[\"粒子材质\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    C[\"控制器\"] --> MS[\"Master Sequence\"]\n    MS --> T[\"Transform\"]\n    T --> DV[\"方向向量 (MPC)\"]\n    DV --> CP[\"Cross Product (Wind × Z)\"]\n    CP --> N[\"Normalize Axis\"]\n    N --> RA[\"Rotate Around Axis\"]\n    RA --> V[\"顶点偏移\"]\n    V --> GM[\"根部Mask (G通道)\"]\n    V --> S[\"摆动 (Sine)\"]\n    S --> RND[\"随机 (Poor Instance)\"]\n    V --> WV[\"波浪纹理\"]\n    WV --> UVR[\"UV Rotation\"]\n    UVR --> UVT[\"UV Translation\"]\n    DV --> MP[\"材质参数集\"]\n    MP --> PL[\"植被材质\"]\n    MP --> PT[\"粒子材质\"]\n    PL --> V\n    PT --> V"
+        },
+        {
+          "title": "蓝图向量获取与传递",
+          "code": "flowchart TD\n    BP[\"蓝图\"] --> GetDV[\"获取方向向量\"]\n    GetDV --> CP[\"计算 Cross Product (Wind × Z)\"]\n    CP --> Norm[\"Normalize 结果\"]\n    Norm --> SetMP[\"设置到 Material Parameter Set\"]\n    SetMP --> ExposeI[\"暴露标量 强度\"]\n    SetMP --> ExposeS[\"暴露标量 速度\"]\n    ExposeI --> Mat[\"材质\"]\n    ExposeS --> Mat"
+        },
+        {
+          "title": "植被摆动实现",
+          "code": "flowchart TD\n    Plant[\"植被模型 (Plane)\"] --> Subdiv[\"细分\"]\n    Subdiv --> Mask[\"G通道根部Mask\"]\n    Subdiv --> SphereMask[\"球形遮罩\"]\n    SphereMask --> Sine[\"正弦函数\"]\n    Sine --> ConstBias[\"常量偏移 (上移)\"]\n    ConstBias --> AngleMul[\"乘以摆动角度\"]\n    AngleMul --> RandomInst[\"随机实例 (Poor Instance)\"]\n    RandomInst --> FinalOffset[\"最终顶点位移\"]\n    FinalOffset --> Mask\n    FinalOffset --> Plant"
+        },
+        {
+          "title": "波浪 UV 控制",
+          "code": "flowchart TD\n    WaveTex[\"波浪纹理 (512)\"] --> UV[\"UV 坐标\"]\n    DirVec[\"方向向量 XY\"] --> Atan2[\"atan2(Y,X)\"]\n    Atan2 --> DivPi[\"除以 π\"]\n    DivPi --> ConstBias[\"常量偏移 (0~1)\"]\n    ConstBias --> UVRot[\"UV 旋转节点\"]\n    UVRot --> UVTrans[\"UV 平移\"]\n    UVTrans --> WaveTex"
+        },
+        {
+          "title": "粒子方向同步",
+          "code": "flowchart TD\n    ParticleSys[\"粒子系统\"] --> ParamSet[\"粒子参数集\"]\n    DirVec[\"方向向量 (MPC)\"] --> ParamSet\n    ParamSet --> Vel[\"速度向量\"]\n    ParamSet --> LinForce[\"线性力\"]\n    Vel --> ParticleSys\n    LinForce --> ParticleSys\n    ParamSet --> SyncMat[\"同步到材质参数\"]\n    SyncMat --> PlantMat[\"植被材质\"]\n    SyncMat --> ParticleMat[\"粒子材质\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T04:05:56+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 【虚幻引擎5】自制简易风场控制器 知识图谱\n\n## 总览 [BV1FBfYBkEP2 P1 00:10] [BV1FBfYBkEP2 P1 01:00]\n```mermaid\nflowchart TD\n    C[\"控制器\"] --> MS[\"Master Sequence\"]\n    MS --> T[\"Transform\"]\n    T --> DV[\"方向向量 (MPC)\"]\n    DV --> CP[\"Cross Product (Wind × Z)\"]\n    CP --> N[\"Normalize Axis\"]\n    N --> RA[\"Rotate Around Axis\"]\n    RA --> V[\"顶点偏移\"]\n    V --> GM[\"根部Mask (G通道)\"]\n    V --> S[\"摆动 (Sine)\"]\n    S --> RND[\"随机 (Poor Instance)\"]\n    V --> WV[\"波浪纹理\"]\n    WV --> UVR[\"UV Rotation\"]\n    UVR --> UVT[\"UV Translation\"]\n    DV --> MP[\"材质参数集\"]\n    MP --> PL[\"植被材质\"]\n    MP --> PT[\"粒子材质\"]\n    PL --> V\n    PT --> V\n```\n\n## 蓝图向量获取与传递 [BV1FBfYBkEP2 P1 01:12] [BV1FBfYBkEP2 P1 01:14] [BV1FBfYBkEP2 P1 02:01]\n```mermaid\nflowchart TD\n    BP[\"蓝图\"] --> GetDV[\"获取方向向量\"]\n    GetDV --> CP[\"计算 Cross Product (Wind × Z)\"]\n    CP --> Norm[\"Normalize 结果\"]\n    Norm --> SetMP[\"设置到 Material Parameter Set\"]\n    SetMP --> ExposeI[\"暴露标量 强度\"]\n    SetMP --> ExposeS[\"暴露标量 速度\"]\n    ExposeI --> Mat[\"材质\"]\n    ExposeS --> Mat\n```\n\n## 植被摆动实现 [BV1FBfYBkEP2 P1 03:20] [BV1FBfYBkEP2 P1 04:20] [BV1FBfYBkEP2 P1 04:46]\n```mermaid\nflowchart TD\n    Plant[\"植被模型 (Plane)\"] --> Subdiv[\"细分\"]\n    Subdiv --> Mask[\"G通道根部Mask\"]\n    Subdiv --> SphereMask[\"球形遮罩\"]\n    SphereMask --> Sine[\"正弦函数\"]\n    Sine --> ConstBias[\"常量偏移 (上移)\"]\n    ConstBias --> AngleMul[\"乘以摆动角度\"]\n    AngleMul --> RandomInst[\"随机实例 (Poor Instance)\"]\n    RandomInst --> FinalOffset[\"最终顶点位移\"]\n    FinalOffset --> Mask\n    FinalOffset --> Plant\n```\n\n## 波浪 UV 控制 [BV1FBfYBkEP2 P1 05:32] [BV1FBfYBkEP2 P1 06:05] [BV1FBfYBkEP2 P1 06:45]\n```mermaid\nflowchart TD\n    WaveTex[\"波浪纹理 (512)\"] --> UV[\"UV 坐标\"]\n    DirVec[\"方向向量 XY\"] --> Atan2[\"atan2(Y,X)\"]\n    Atan2 --> DivPi[\"除以 π\"]\n    DivPi --> ConstBias[\"常量偏移 (0~1)\"]\n    ConstBias --> UVRot[\"UV 旋转节点\"]\n    UVRot --> UVTrans[\"UV 平移\"]\n    UVTrans --> WaveTex\n```\n\n## 粒子方向同步 [BV1FBfYBkEP2 P1 11:34] [BV1FBfYBkEP2 P1 11:55] [BV1FBfYBkEP2 P1 12:08]\n```mermaid\nflowchart TD\n    ParticleSys[\"粒子系统\"] --> ParamSet[\"粒子参数集\"]\n    DirVec[\"方向向量 (MPC)\"] --> ParamSet\n    ParamSet --> Vel[\"速度向量\"]\n    ParamSet --> LinForce[\"线性力\"]\n    Vel --> ParticleSys\n    LinForce --> ParticleSys\n    ParamSet --> SyncMat[\"同步到材质参数\"]\n    SyncMat --> PlantMat[\"植被材质\"]\n    SyncMat --> ParticleMat[\"粒子材质\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    C[\"控制器\"] --> MS[\"Master Sequence\"]\n    MS --> T[\"Transform\"]\n    T --> DV[\"方向向量 (MPC)\"]\n    DV --> CP[\"Cross Product (Wind × Z)\"]\n    CP --> N[\"Normalize Axis\"]\n    N --> RA[\"Rotate Around Axis\"]\n    RA --> V[\"顶点偏移\"]\n    V --> GM[\"根部Mask (G通道)\"]\n    V --> S[\"摆动 (Sine)\"]\n    S --> RND[\"随机 (Poor Instance)\"]\n    V --> WV[\"波浪纹理\"]\n    WV --> UVR[\"UV Rotation\"]\n    UVR --> UVT[\"UV Translation\"]\n    DV --> MP[\"材质参数集\"]\n    MP --> PL[\"植被材质\"]\n    MP --> PT[\"粒子材质\"]\n    PL --> V\n    PT --> V"
+    },
+    {
+      "title": "蓝图向量获取与传递",
+      "code": "flowchart TD\n    BP[\"蓝图\"] --> GetDV[\"获取方向向量\"]\n    GetDV --> CP[\"计算 Cross Product (Wind × Z)\"]\n    CP --> Norm[\"Normalize 结果\"]\n    Norm --> SetMP[\"设置到 Material Parameter Set\"]\n    SetMP --> ExposeI[\"暴露标量 强度\"]\n    SetMP --> ExposeS[\"暴露标量 速度\"]\n    ExposeI --> Mat[\"材质\"]\n    ExposeS --> Mat"
+    },
+    {
+      "title": "植被摆动实现",
+      "code": "flowchart TD\n    Plant[\"植被模型 (Plane)\"] --> Subdiv[\"细分\"]\n    Subdiv --> Mask[\"G通道根部Mask\"]\n    Subdiv --> SphereMask[\"球形遮罩\"]\n    SphereMask --> Sine[\"正弦函数\"]\n    Sine --> ConstBias[\"常量偏移 (上移)\"]\n    ConstBias --> AngleMul[\"乘以摆动角度\"]\n    AngleMul --> RandomInst[\"随机实例 (Poor Instance)\"]\n    RandomInst --> FinalOffset[\"最终顶点位移\"]\n    FinalOffset --> Mask\n    FinalOffset --> Plant"
+    },
+    {
+      "title": "波浪 UV 控制",
+      "code": "flowchart TD\n    WaveTex[\"波浪纹理 (512)\"] --> UV[\"UV 坐标\"]\n    DirVec[\"方向向量 XY\"] --> Atan2[\"atan2(Y,X)\"]\n    Atan2 --> DivPi[\"除以 π\"]\n    DivPi --> ConstBias[\"常量偏移 (0~1)\"]\n    ConstBias --> UVRot[\"UV 旋转节点\"]\n    UVRot --> UVTrans[\"UV 平移\"]\n    UVTrans --> WaveTex"
+    },
+    {
+      "title": "粒子方向同步",
+      "code": "flowchart TD\n    ParticleSys[\"粒子系统\"] --> ParamSet[\"粒子参数集\"]\n    DirVec[\"方向向量 (MPC)\"] --> ParamSet\n    ParamSet --> Vel[\"速度向量\"]\n    ParamSet --> LinForce[\"线性力\"]\n    Vel --> ParticleSys\n    LinForce --> ParticleSys\n    ParamSet --> SyncMat[\"同步到材质参数\"]\n    SyncMat --> PlantMat[\"植被材质\"]\n    SyncMat --> ParticleMat[\"粒子材质\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T04:05:56+00:00"
+}

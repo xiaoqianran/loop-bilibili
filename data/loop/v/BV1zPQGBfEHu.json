@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1zPQGBfEHu",
+  "title": "同样是大模型，显存为啥能差一倍？FP32、FP16、BF16讲透",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3055,
+  "text": "你有没有疑问过\n明明都是27B参数量大模型\n为什么有的部署起来要吃掉50多G的显存\n有的却只要30G显存\n就能跑整整快一倍的显存\n差距到底是怎么来的\n而且不管你去哪个平台下载大模型\n相信你都会见过这样的一个参数\n没错就是张亮数据类型\n今天这期视频呢\n将带你熟悉几个最常用的浮点类型\n张量我们话不多说\n现在开始讲解\n大模型的本质呢就是海量参数的矩阵运算\n而张亮类型呢就这些数字的存储与计算格式\n它的核心取舍永远围绕着三个维度\n精度显存占用和计算速度\n这跟咱存照片的逻辑完全一致\n像无损的肉格式是吧\n精度拉满\n但占空间啊\n加载速度慢\n而压缩的JPG格式呢牺牲几乎感知不到的画面\n换来体积骤减啊\n加载飞快\n而大模型能用低精度的核心前提\n就是他天生的参数冗余性\n在成千上万亿的参数里头\n其实绝大多数参数的微小数值变化\n对模型的最终输出的影响几乎微乎其微\n而正是因为这点\n才让我们能够去压缩这个参数的精度\n在讲这个之前\n咱得先普及一个基础知识\n计算机专业的小伙伴应该知道\n任何数据的本质其实都是一个又一个的数字\n而计算机又是使用二进制来处理数字的\n一个数字\n在计算机当中怎么表示的呢\n核心分为三段\n最前面这个叫符号位呃\n用一比特固定\n主要用于标记该数字是正还是负的\n然后就是指数位\n用来决定数值能表示的大小范围\n比如说是1000还是1万\n大模型\n最怕这里不够用\n导致数值溢出\n最后就是尾数位用来决定数字的精细程度\n比如用来决定小数点后面能保留多少细节\n而大模型对这部分的敏感度呢\n远低于这个指数位\n关于这三部分的详细教程\n可以去看我的这期视频啊\n嘎嘎\n详细看完\n你就知道计算机底层的数字存储原理了\n知道这些之后呢\n咱们就可以开始来看目前主流的一些浮点型\n张亮了\n首先第一个就是FP32啊\n传统的单精度浮点数\n像c gala当中的float变量就是FP32\n它的核心结构为一比特的符号位\n加上八比特的指数位\n加上23比特的尾数位\n总计32个比特\n也就四个字节\n核心的特点就是数值范围几乎拉满\n他能表达的最大或最小的数值范围呢是这些啊\n几乎没有误差\n但是他的缺点也很明显\n就是显存占用嘎嘎高\n举个例子\n仅7B的模型大概是70亿的参数量\n如果全用这个FP32来存储权重\n仅加载就需要大约26GB的显存\n家用的消费级显卡根本就扛不住\n所以他现在主要被用于梯度更新\n优化器的状态存储等这些关键的地方\n避免因为精度损失导致梯度消失或者爆炸\n最终总结一下就是FP3上\n你可以理解为原画无损格式啊\n什么都好\n就是太占空间\n现在只有最核心的梯度更新才会用到它\n接下来就是FP16了\n也就是传统的半精度浮点\n它是由一比特的符号位加上五比特的指数位\n加上十比特的尾数位构成\n总计16比特\n也就是两个字节\n优势呢很明显是吧\n相比刚刚那个FP32体积减少了一半\n是早期混合精度训练的一个核心\n这里简单提一嘴混合精度\n就是训练模型的时候呢\n有的参数用高精度算\n有的用低精度算\n两种精度混着用啊\n所以叫做混合精度\n而FP16呢就是早期的混合精度里面的\n低精度的代表\n不过由于FP16的指数位只有五比特\n导致数值范围就相对较小\n最大仅能表示正负的6万5504\n而在大模型的激活值啊\n梯度啊都很容易超出这个范围\n直接溢出\n导致训练崩溃\n需要靠损失缩放来补救\n相对来讲更麻烦一点\n而且不稳定\n所以目前来讲呢用的很少了\n而这个FP16呢取而代之的则是bf16啊\n这个是由谷歌制定的一种张量类型\n它的核心结构呢为一比特符号位\n加上八比特的指数位和七比特的尾数位\n共计16\n比特和刚刚一样\n也是两个字节\n因为FP16的指数范围跟FP331样大\n所以他的动态范围呢与FP32同级\n但由于尾数更少\n所以它最大有限值呢会略小于FP32\n也就数值精度略低\n但大模型对尾数精度其实并没有那么敏感\n所以这点损失呢几乎感觉不到这个bf16呢\n现在很多大模型的混合精度基本都用到了它\n所以总结一下\nbf16呢是为大模型量身定做的半精度格式\n和FP32一样的取景范围\n只牺牲了一点点细节上的精度\n现在是绝大多数大模型训练的标准\n再接下来出场就是TF32了\n他是英伟达在NPL架构及更高版本的GPU\n引入的一种计算格式\n从结构上看呢\n它是由一比特的符号位加上八比特指数位\n加上十比特的尾数位组成\n总体呢大约相当于19比特的一个有效信息量\n和刚刚的bf16相比呢\nTF32在尾数部分精度更高\n但它和前面那些格式的定位不太一样\nTF32主要不是为了节省显存\n而是为了让原本用FP32训练的模型\n几乎不用改代码\n也能保持接近FP32的训练效果\n同时还把速度提上来\n具体来说呢\n当原本的FP32的数据进入TENSCOE\n做矩阵乘法的时候\n硬件会先把这个FP32的数据\n按TF32的规则\n对尾数精度进行截断或者舍入\n也就这个样子\n从它变成它\n然后再参与乘法运算\n而累加通常仍然保持FP32的精度\n这样一来\n它的运算速度会比传统的FP32更快\n同时数值精度又通常会比bf16更高\n当然我这为了方便\n是用的两个标量做的演示\n而实际它加速的对象主要是啊矩阵的乘法呀\n卷积的那种操作并不持单个的数\n所以你可以把这个TF16呢理解为\n英伟达专门为FP32工作流\n准备的一种加速计算模式\n最后呢就是个FP8了\n浮点数中继续压缩后的一个产物\n不过FPR的核心结构跟前面的相比有些微区别\n它有两种结构\n一种呢叫做14M3\n第二种呢叫做E5M2\n这里的一呢指的就是指数精度\nM值是尾数精度\n也就一比特符号位加四比特\n指数位加上三比特尾数位\n而第二种这个em52呢也就是一比特的符号位\n加上五比特指数位\n加上二比特的尾数位\n你们一看这个格式就会发现\nFP8把位数压缩的更极限了是吧\n指数位和尾数位都相对来讲比较紧张\n所以他不可能像bf16那样既保住范围\n又保住细节\n所以他必须得在范围和精度之间做一个取舍\n这个E4M3的特点呢就是尾数稍微多一点\n所以精度相对更好一点\n但是它数值范围更小\n而这个E5M2呢特点又指数会更多\n所以数值范围更大\n但精度更粗一点\n说白了就是一个更擅长保留细节啊\n一个更擅长避免溢出\n在实际的工程上很常见的一种做法\n就是前向更偏向使用这个E4M3\n而反向梯度呢更偏向使用这个E5M2好\n最后咱们来总结一下\n今天讲了五种张量类型\n然后这是他们的一个综合对比\n这五种张量类型\n他们真正解决的其实就一个问题是吧\n你到底愿意拿多少精度去换多少显存跟速度\n所以这几种类型呢\n其实对应的就是五种完全不同的取舍逻辑\nFP32呢就属于精度最高啊\n范围也大\n但代价就是又慢又占显存是吧\n通常只在最关键的计算环节\n而TF32呢就属于\n我表面上还走这个FP32的流程\n但底层呢偷偷帮你进行了个提速\n他不省显存\n主要解决的是FC32\n工作流跑太慢的一个问题\n而FP16呢就属于简单粗暴是吧\n把体积先砍一半\n但他的问题呢就是数值范围比较小啊\n训练的时候容易溢出\n所以现在的大模型训练里头已经很少使用了\n接下来就是这个BF16\n然后他跟FP16呢是同样的一个显存占用\n但是它的数值范围呢\n跟这个FP32是一致的\n所以它几乎成为了现在大模型训练的一个\n最主流的一个半精度格式\n而最后这个FP8呢是继续压缩嘛\n在显存啊\n精度啊之间做了一个更激进的一个平衡\n所以你以后再看到像什么FP32呀\nFP16啊等等等这种张量类型\n你应该就能清楚的知道它们的含义了\n好如果这期视频对你有帮助的话呢\n麻烦点赞收藏加关注\n咱们下期视频见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zPQGBfEHu",
+  "published_at": "1776492000",
+  "fetched_at": "2026-08-10T00:57:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 同样是大模型，显存为啥能差一倍？FP32、FP16、BF16讲透\n\n## 浮点类型概览 [BV1zPQGBfEHu P1 01:57]\n```mermaid\nflowchart TD\n    FP32[\"FP32<br/>32 bits<br/>1+8+23\"] -->|高精度| Range32[\"数值范围广\"]\n    FP16[\"FP16<br/>16 bits<br/>1+5+10\"] -->|半精度| Range16[\"数值范围较小\"]\n    BF16[\"BF16<br/>16 bits<br/>1+8+7\"] -->|半精度| RangeBF[\"数值范围≈FP32\"]\n    TF32[\"TF32<br/>≈19有效位<br/>1+8+10\"] -->|加速| RangeTF[\"保留FP32范围\"]\n    FP8_E4M3[\"FP8 E4M3<br/>8 bits<br/>1+4+3\"] -->|极端压缩| RangeE4M3[\"范围更小<br/>精度稍好\"]\n    FP8_E5M2[\"FP8 E5M2<br/>8 bits<br/>1+5+2\"] -->|极端压缩| RangeE5M2[\"范围更大<br/>精度更粗\"]\n    class FP32,FP16,BF16,TF32,FP8_E4M3,FP8_E5M2 fill:#f9f,stroke:#333,stroke-width:1px\n```\n\n## 显存‑精度‑范围取舍决策 [BV1zPQGBfEHu P1 00:33]\n```mermaid\nflowchart TD\n    Start[\"需求：降低显存\"] --> NeedRange[\"是否需要保持FP32数值范围？\"]\n    NeedRange -- 是 --> ChooseBF16[\"选择 BF16\"]\n    NeedRange -- 否 --> RangeAccept[\"可接受更小范围？\"]\n    RangeAccept -- 是 --> ChooseFP16[\"选择 FP16\"]\n    RangeAccept -- 否 --> ExtremeComp[\"极端压缩需求\"]\n    ExtremeComp --> ChooseE4M3[\"选择 FP8 E4M3（更好精度）\"]\n    ExtremeComp --> ChooseE5M2[\"选择 FP8 E5M2（更大范围）\"]\n    ChooseBF16 --> SpeedBoost[\"获得显存节省 + 近FP32速度\"]\n    ChooseFP16 --> SpeedBoost\n    ChooseE4M3 --> SpeedBoost\n    ChooseE5M2 --> SpeedBoost\n    class Start,NeedRange,RangeAccept,ExtremeComp fill:#bbf,stroke:#333,stroke-width:1px\n    class ChooseBF16,ChooseFP16,ChooseE4M3,ChooseE5M2 fill:#bfb,stroke:#333,stroke-width:1px\n```\n\n## 训练与推理中的浮点类型使用映射 [BV1zPQGBfEHu P1 04:12]\n```mermaid\nflowchart TD\n    Training[\"大模型训练\"] -->|梯度/关键计算| UseFP32[\"FP32（梯度更新）\"]\n    Training -->|主参数存储| UseBF16[\"BF16（主流半精度）\"]\n    Training -->|旧流程| UseTF32[\"TF32（加速FP32工作流）\"]\n    Training -->|已少用| UseFP16[\"FP16（已不常用）\"]\n    Inference[\"模型推理/部署\"] -->|极致显存压缩| UseFP8[\"FP8（E4M3/E5M2）\"]\n    class Training,Inference fill:#ddf,stroke:#333,stroke-width:1px\n    class UseFP32,UseBF16,UseTF32,UseFP16,UseFP8 fill:#ffd,stroke:#333,stroke-width:1px\n```",
+      "diagrams": [
+        {
+          "title": "浮点类型概览",
+          "code": "flowchart TD\n    FP32[\"FP32<br/>32 bits<br/>1+8+23\"] -->|高精度| Range32[\"数值范围广\"]\n    FP16[\"FP16<br/>16 bits<br/>1+5+10\"] -->|半精度| Range16[\"数值范围较小\"]\n    BF16[\"BF16<br/>16 bits<br/>1+8+7\"] -->|半精度| RangeBF[\"数值范围≈FP32\"]\n    TF32[\"TF32<br/>≈19有效位<br/>1+8+10\"] -->|加速| RangeTF[\"保留FP32范围\"]\n    FP8_E4M3[\"FP8 E4M3<br/>8 bits<br/>1+4+3\"] -->|极端压缩| RangeE4M3[\"范围更小<br/>精度稍好\"]\n    FP8_E5M2[\"FP8 E5M2<br/>8 bits<br/>1+5+2\"] -->|极端压缩| RangeE5M2[\"范围更大<br/>精度更粗\"]\n    class FP32,FP16,BF16,TF32,FP8_E4M3,FP8_E5M2 fill:#f9f,stroke:#333,stroke-width:1px"
+        },
+        {
+          "title": "显存‑精度‑范围取舍决策",
+          "code": "flowchart TD\n    Start[\"需求：降低显存\"] --> NeedRange[\"是否需要保持FP32数值范围？\"]\n    NeedRange -- 是 --> ChooseBF16[\"选择 BF16\"]\n    NeedRange -- 否 --> RangeAccept[\"可接受更小范围？\"]\n    RangeAccept -- 是 --> ChooseFP16[\"选择 FP16\"]\n    RangeAccept -- 否 --> ExtremeComp[\"极端压缩需求\"]\n    ExtremeComp --> ChooseE4M3[\"选择 FP8 E4M3（更好精度）\"]\n    ExtremeComp --> ChooseE5M2[\"选择 FP8 E5M2（更大范围）\"]\n    ChooseBF16 --> SpeedBoost[\"获得显存节省 + 近FP32速度\"]\n    ChooseFP16 --> SpeedBoost\n    ChooseE4M3 --> SpeedBoost\n    ChooseE5M2 --> SpeedBoost\n    class Start,NeedRange,RangeAccept,ExtremeComp fill:#bbf,stroke:#333,stroke-width:1px\n    class ChooseBF16,ChooseFP16,ChooseE4M3,ChooseE5M2 fill:#bfb,stroke:#333,stroke-width:1px"
+        },
+        {
+          "title": "训练与推理中的浮点类型使用映射",
+          "code": "flowchart TD\n    Training[\"大模型训练\"] -->|梯度/关键计算| UseFP32[\"FP32（梯度更新）\"]\n    Training -->|主参数存储| UseBF16[\"BF16（主流半精度）\"]\n    Training -->|旧流程| UseTF32[\"TF32（加速FP32工作流）\"]\n    Training -->|已少用| UseFP16[\"FP16（已不常用）\"]\n    Inference[\"模型推理/部署\"] -->|极致显存压缩| UseFP8[\"FP8（E4M3/E5M2）\"]\n    class Training,Inference fill:#ddf,stroke:#333,stroke-width:1px\n    class UseFP32,UseBF16,UseTF32,UseFP16,UseFP8 fill:#ffd,stroke:#333,stroke-width:1px"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T00:58:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 同样是大模型，显存为啥能差一倍？FP32、FP16、BF16讲透\n\n## 浮点类型概览 [BV1zPQGBfEHu P1 01:57]\n```mermaid\nflowchart TD\n    FP32[\"FP32<br/>32 bits<br/>1+8+23\"] -->|高精度| Range32[\"数值范围广\"]\n    FP16[\"FP16<br/>16 bits<br/>1+5+10\"] -->|半精度| Range16[\"数值范围较小\"]\n    BF16[\"BF16<br/>16 bits<br/>1+8+7\"] -->|半精度| RangeBF[\"数值范围≈FP32\"]\n    TF32[\"TF32<br/>≈19有效位<br/>1+8+10\"] -->|加速| RangeTF[\"保留FP32范围\"]\n    FP8_E4M3[\"FP8 E4M3<br/>8 bits<br/>1+4+3\"] -->|极端压缩| RangeE4M3[\"范围更小<br/>精度稍好\"]\n    FP8_E5M2[\"FP8 E5M2<br/>8 bits<br/>1+5+2\"] -->|极端压缩| RangeE5M2[\"范围更大<br/>精度更粗\"]\n    class FP32,FP16,BF16,TF32,FP8_E4M3,FP8_E5M2 fill:#f9f,stroke:#333,stroke-width:1px\n```\n\n## 显存‑精度‑范围取舍决策 [BV1zPQGBfEHu P1 00:33]\n```mermaid\nflowchart TD\n    Start[\"需求：降低显存\"] --> NeedRange[\"是否需要保持FP32数值范围？\"]\n    NeedRange -- 是 --> ChooseBF16[\"选择 BF16\"]\n    NeedRange -- 否 --> RangeAccept[\"可接受更小范围？\"]\n    RangeAccept -- 是 --> ChooseFP16[\"选择 FP16\"]\n    RangeAccept -- 否 --> ExtremeComp[\"极端压缩需求\"]\n    ExtremeComp --> ChooseE4M3[\"选择 FP8 E4M3（更好精度）\"]\n    ExtremeComp --> ChooseE5M2[\"选择 FP8 E5M2（更大范围）\"]\n    ChooseBF16 --> SpeedBoost[\"获得显存节省 + 近FP32速度\"]\n    ChooseFP16 --> SpeedBoost\n    ChooseE4M3 --> SpeedBoost\n    ChooseE5M2 --> SpeedBoost\n    class Start,NeedRange,RangeAccept,ExtremeComp fill:#bbf,stroke:#333,stroke-width:1px\n    class ChooseBF16,ChooseFP16,ChooseE4M3,ChooseE5M2 fill:#bfb,stroke:#333,stroke-width:1px\n```\n\n## 训练与推理中的浮点类型使用映射 [BV1zPQGBfEHu P1 04:12]\n```mermaid\nflowchart TD\n    Training[\"大模型训练\"] -->|梯度/关键计算| UseFP32[\"FP32（梯度更新）\"]\n    Training -->|主参数存储| UseBF16[\"BF16（主流半精度）\"]\n    Training -->|旧流程| UseTF32[\"TF32（加速FP32工作流）\"]\n    Training -->|已少用| UseFP16[\"FP16（已不常用）\"]\n    Inference[\"模型推理/部署\"] -->|极致显存压缩| UseFP8[\"FP8（E4M3/E5M2）\"]\n    class Training,Inference fill:#ddf,stroke:#333,stroke-width:1px\n    class UseFP32,UseBF16,UseTF32,UseFP16,UseFP8 fill:#ffd,stroke:#333,stroke-width:1px\n```",
+  "diagrams": [
+    {
+      "title": "浮点类型概览",
+      "code": "flowchart TD\n    FP32[\"FP32<br/>32 bits<br/>1+8+23\"] -->|高精度| Range32[\"数值范围广\"]\n    FP16[\"FP16<br/>16 bits<br/>1+5+10\"] -->|半精度| Range16[\"数值范围较小\"]\n    BF16[\"BF16<br/>16 bits<br/>1+8+7\"] -->|半精度| RangeBF[\"数值范围≈FP32\"]\n    TF32[\"TF32<br/>≈19有效位<br/>1+8+10\"] -->|加速| RangeTF[\"保留FP32范围\"]\n    FP8_E4M3[\"FP8 E4M3<br/>8 bits<br/>1+4+3\"] -->|极端压缩| RangeE4M3[\"范围更小<br/>精度稍好\"]\n    FP8_E5M2[\"FP8 E5M2<br/>8 bits<br/>1+5+2\"] -->|极端压缩| RangeE5M2[\"范围更大<br/>精度更粗\"]\n    class FP32,FP16,BF16,TF32,FP8_E4M3,FP8_E5M2 fill:#f9f,stroke:#333,stroke-width:1px"
+    },
+    {
+      "title": "显存‑精度‑范围取舍决策",
+      "code": "flowchart TD\n    Start[\"需求：降低显存\"] --> NeedRange[\"是否需要保持FP32数值范围？\"]\n    NeedRange -- 是 --> ChooseBF16[\"选择 BF16\"]\n    NeedRange -- 否 --> RangeAccept[\"可接受更小范围？\"]\n    RangeAccept -- 是 --> ChooseFP16[\"选择 FP16\"]\n    RangeAccept -- 否 --> ExtremeComp[\"极端压缩需求\"]\n    ExtremeComp --> ChooseE4M3[\"选择 FP8 E4M3（更好精度）\"]\n    ExtremeComp --> ChooseE5M2[\"选择 FP8 E5M2（更大范围）\"]\n    ChooseBF16 --> SpeedBoost[\"获得显存节省 + 近FP32速度\"]\n    ChooseFP16 --> SpeedBoost\n    ChooseE4M3 --> SpeedBoost\n    ChooseE5M2 --> SpeedBoost\n    class Start,NeedRange,RangeAccept,ExtremeComp fill:#bbf,stroke:#333,stroke-width:1px\n    class ChooseBF16,ChooseFP16,ChooseE4M3,ChooseE5M2 fill:#bfb,stroke:#333,stroke-width:1px"
+    },
+    {
+      "title": "训练与推理中的浮点类型使用映射",
+      "code": "flowchart TD\n    Training[\"大模型训练\"] -->|梯度/关键计算| UseFP32[\"FP32（梯度更新）\"]\n    Training -->|主参数存储| UseBF16[\"BF16（主流半精度）\"]\n    Training -->|旧流程| UseTF32[\"TF32（加速FP32工作流）\"]\n    Training -->|已少用| UseFP16[\"FP16（已不常用）\"]\n    Inference[\"模型推理/部署\"] -->|极致显存压缩| UseFP8[\"FP8（E4M3/E5M2）\"]\n    class Training,Inference fill:#ddf,stroke:#333,stroke-width:1px\n    class UseFP32,UseBF16,UseTF32,UseFP16,UseFP8 fill:#ffd,stroke:#333,stroke-width:1px"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T00:58:00+00:00"
+}

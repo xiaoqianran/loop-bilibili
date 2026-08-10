@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1EXEi6EEZB",
+  "title": "基于知识图谱(Neo4j)和大语言模型(LLM)的图检索增强(GraphRAG)的地质矿产知识管理智能问答系统",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2159,
+  "text": "大家好\n这边是杨洋小站\n今天咱们来聊个地质矿产领域的智能小助手\n地质矿产知识管理graph fg系统\n可能有朋友听到知识图谱graph r a g就头大\n别急\n咱们用大白话来讲讲这到底是个啥\n能帮咱们解决啥问题\n想象一下咱们地质勘察的时候\n是不是经常要面对一堆堆的报告图纸\n还有各种矿床矿体地层的数据\n想找个成矿规律或者某个钻孔的品位指标\n是不是得翻半天资料\n像大海捞针一样\n我们这个系统啊\n就是帮大家把这些散落的珍珠串起来\n让知识变得有条理\n找信息就像查字典一样方便\n它的核心秘密武器就是graph r a g技术\n简单说就是把矿床地层构造这些关键信息\n还有它们之间的关系\n都存到一个叫NEO4J的知识图谱里\n打个比方\n以前这些信息可能是一本本独立的书\n现在呢我们给每本书都做了详细的索引\n还画出了它们之间的联系图\n当你提问的时候\n系统会同时从知识图谱\n矿床档案和勘探记录里找答案\n三路并进\n这样回答不仅准确\n还能告诉你为什么这么说\n让你心里有数\n那具体能做些啥呢\n咱们来看看几个主要功能\n首先是文档和图谱管理\n你可以上传各种格式的文档\n系统会帮你自动生成摘要\n还能从文档里提取关键信息\n自动加到知识图谱里\n不用你手动一条条书\n是不是省了不少事\n然后是智能问答\n你用自然语言提问就行\n比如某某矿床的主要识别类型有哪些\n系统会给出答案\n还会把相关的知识图\n谱子图和检索到的文档片段展示出来\n支持多轮对话\n最后还能把结果导出成word\n对于勘查数据\n像矿床档案的增删改查\n勘探记录和图片的上传都能轻松搞定\n还能按矿床类型和数据质量状态进行统计\n当然图谱可视化也少不了\n用e charts做的力导向图\n节点能搜索\n能过滤矿床之间的关系\n一目了然\n说到应用场景那就更广泛了\n地质勘察人员想研究成矿规律\n矿床特征\n用它准没错\n勘探技术人员要查钻孔\n记录品位指标\n效率大大提升\n业务人员通过自然语言就能快速获取矿床信息\n不用再啃厚厚的报告\n管理员呢负责维护这些文档\n让知识图谱越来越丰富\n对了\n系统还有用户与权限管理\n注册登录JWT认证管理员和普通用户权限分开\n保证数据安全\n总的来说\n这个系统就像一个经验丰富的地质知识管家\n把复杂的信息梳理得明明白白\n让大家在工作中能更高效\n更准确地获取和利用知识\n怎么样\n是不是觉得没那么枯燥了\n如果你是地质矿产领域的从业者\n你觉得这样的系统\n能帮你解决工作中的哪些痛点呢\n大家好\n这边是杨洋小站\n现在来介绍系统文档部分\n咱们这个地质矿产知识管理\ngraph r a g系统的文档啊\n可不是随随便便堆在一起的\n那可是一套豪华套餐\n从里到外给你安排的明明白白\n保证让你从小白到入门不迷路\n首先最硬核的肯定是完整系统源码了\n就像咱们做菜的\n有食材开发系统源码就是最关键的原材料\n这里面分了两大块\n一个是前端源码用的是WEBVIE\n这就好比咱们系统的脸面\n负责把好看又好用的界面呈现给大家\n另一个是后端源码用的是web flask\n这里面还藏着两个宝贝\nALGO知识图谱模块和LLM模块\n它们就像是系统的大脑和心脏\n负责处理各种复杂的逻辑和智能交互\n有了源码不会用可不行啊\n所以我们准备了超贴心的项目启动教程\n这就像玩游戏的新手引导\n一步一步带你飞\n里面包含环境安装教程和系统启动教程\n而且都是视频加文档双保险模式\n视频嘛就像老师当面演示\n直观文档呢就像操作手册\n随时可以翻出来对照\n再也不用担心对着一堆代码发呆\n不知道从哪下手了\n接下来是项目文档\n这部分可是系统的说明书和设计蓝图\n专业度拉满\n但咱们尽量说的接地气\n第一个是系统介绍文档\n它会告诉你这个graph r a g系统到底是个啥\n能干啥\n有啥特别之处\n让你对它有个整体的认识\n第二个是数据库开发文档\n数据库就像系统的仓库里面怎么分类放东西\n怎么建货架\n这里都写的清清楚楚\n第三个是API接口文档\nAPI接口你可以理解成系统各个部分之间\n或者系统和外部沟通的桥梁\n这个文档就是告诉你这些桥梁怎么用\n能传递什么信息\n第四个是系统使用注意事项\n这个很重要\n就像玩电器前要看的安全须知\n告诉你哪些能做\n哪些要小心\n避免踩坑\n第五个是软件开发文档\n如果你想深入了解\n系统是怎么一步步开发出来的\n用了什么技术\n有什么设计思路\n那这个文档就是你的寻宝图\n最后我们还准备了系统PPT\nPPT这东西图文并茂\n一目了然\n特别适合快速了解核心内容\n里面有系统架构图\n让你看清系统的骨架\n数据流图\n告诉你数据在系统里是怎么跑的\n逻辑时序图展示各个操作的先后顺序和配合\n还有功能模块概要图和功能模块图\n让你知道系统有哪些器官\n各自负责什么功能\n当然咱们graph r a g系统的核心\ngraph r i g检索模块流程图和知识图谱\n构建流程图也必须安排上\n让你明白知识是怎么被找出来和建起来的\n哦对了\n还有数据库ER图\n直观展示数据库里各个表之间的关系\n再也不是一团乱麻了\n怎么样\n这么一套文档下来\n是不是感觉这个系统清晰多了\n就像拆开一个精密的玩具\n每个零件都给你标好了名称和用法\n希望这些文档能帮到大家\n让使用和了解我们这个地质矿产知识管理\ngraph r a g系统变得轻松愉快\n大家在看文档的时候\n有没有哪个部分特别感兴趣\n或者觉得需要再详细了解的呢",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1EXEi6EEZB",
+  "published_at": "1781180674",
+  "fetched_at": "2026-08-07T15:03:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 基于 GraphRAG 的地质矿产知识管理系统全景图谱\n\n## 系统整体结构总览\n```mermaid\nflowchart TD\n    U1[\"用户\"] -->|自然语言提问| QA[\"智能问答模块\"]\n    U1 -->|上传文档/图片| DOC[\"文档与图像管理\"]\n    DOC -->|自动生成摘要| SUM[\"摘要生成\"]\n    DOC -->|提取关键信息| EX[\"关键信息抽取\"]\n    EX -->|写入| KG[\"Neo4j 知识图谱\"]\n    SUM -->|写入| KG\n    KG -->|支持检索| RET[\"GraphRAG 检索模块\"]\n    RET -->|提供上下文| LLM[\"大语言模型 (LLM)\"]\n    LLM -->|生成答案| ANS[\"答案输出\"]\n    ANS -->|展示| VIS[\"可视化 (ECharts)\"]\n    ANS -->|导出| EXP[\"导出 Word\"]\n    QA -->|调用| RET\n    QA -->|调用| LLM\n    U1 -->|多轮对话| DLG[\"对话管理\"]\n    DLG -->|调用| QA\n    ADMIN[\"管理员\"] -->|权限管理| AUTH[\"JWT 认证\"]\n    AUTH -->|控制| U1\n    AUTH -->|控制| ADMIN\n```\n\n## 文档与开发资源体系\n```mermaid\nflowchart TD\n    DOCS[\"系统文档集合\"] --> SYS_INTRO[\"系统介绍文档\"]\n    DOCS --> DB_DEV[\"数据库开发文档\"]\n    DOCS --> API_DOC[\"API 接口文档\"]\n    DOCS --> USAGE_TIPS[\"使用注意事项\"]\n    DOCS --> DEV_GUIDE[\"软件开发文档\"]\n    DOCS --> PPT[\"系统 PPT\"]\n    DOCS --> ER_DIAG[\"数据库 ER 图\"]\n    DOCS --> FLOW_DIAG[\"GraphRAG 检索与构建流程图\"]\n    SYS_INTRO -->|解释系统定位| OVERVIEW[\"整体认识\"]\n    DB_DEV -->|说明仓库结构| SCHEMA[\"表/货架设计\"]\n    API_DOC -->|桥接系统内部与外部| BRIDGE[\"接口桥梁\"]\n    USAGE_TIPS -->|安全操作指引| SAFETY[\"防踩坑指南\"]\n    DEV_GUIDE -->|技术栈与实现思路| TECH[\"技术细节\"]\n    PPT -->|快速核心概览| QUICKVIEW[\"核心要点\"]\n```\n\n## 功能工作流细节\n```mermaid\nflowchart LR\n    A1[\"上传文档/图片\"] --> A2[\"摘要生成\"]\n    A2 --> A3[\"关键信息抽取\"]\n    A3 --> A4[\"写入 Neo4j 知识图谱\"]\n    A4 --> B1[\"用户自然语言查询\"]\n    B1 --> B2[\"GraphRAG 检索\"]\n    B2 --> B3[\"LLM 生成答案\"]\n    B3 --> C1[\"展示答案与关联图谱\"]\n    C1 --> C2[\"多轮对话（可选）\"]\n    C2 --> D1[\"导出 Word（可选）\"]\n    B1 --> D2[\"可视化查询结果\"]\n    D2 --> C1\n```\n\n## 角色与权限矩阵\n```mermaid\nflowchart TD\n    R1[\"管理员\"] -->|管理| USER_MGMT[\"用户管理\"]\n    R1 -->|维护| KG[\"知识图谱\"]\n    R1 -->|配置| AUTH[\"JWT 权限\"]\n    R2[\"普通用户\"] -->|查询| QUERY[\"智能问答\"]\n    R2 -->|上传| UPLOAD[\"文档/图片上传\"]\n    R2 -->|导出| EXPORT[\"结果导出\"]\n    AUTH -->|授权访问| QUERY\n    AUTH -->|授权访问| UPLOAD\n    AUTH -->|授权访问| EXPORT\n    USER_MGMT -->|创建/删除| R2\n```",
+      "diagrams": [
+        {
+          "title": "系统整体结构总览",
+          "code": "flowchart TD\n    U1[\"用户\"] -->|自然语言提问| QA[\"智能问答模块\"]\n    U1 -->|上传文档/图片| DOC[\"文档与图像管理\"]\n    DOC -->|自动生成摘要| SUM[\"摘要生成\"]\n    DOC -->|提取关键信息| EX[\"关键信息抽取\"]\n    EX -->|写入| KG[\"Neo4j 知识图谱\"]\n    SUM -->|写入| KG\n    KG -->|支持检索| RET[\"GraphRAG 检索模块\"]\n    RET -->|提供上下文| LLM[\"大语言模型 (LLM)\"]\n    LLM -->|生成答案| ANS[\"答案输出\"]\n    ANS -->|展示| VIS[\"可视化 (ECharts)\"]\n    ANS -->|导出| EXP[\"导出 Word\"]\n    QA -->|调用| RET\n    QA -->|调用| LLM\n    U1 -->|多轮对话| DLG[\"对话管理\"]\n    DLG -->|调用| QA\n    ADMIN[\"管理员\"] -->|权限管理| AUTH[\"JWT 认证\"]\n    AUTH -->|控制| U1\n    AUTH -->|控制| ADMIN"
+        },
+        {
+          "title": "文档与开发资源体系",
+          "code": "flowchart TD\n    DOCS[\"系统文档集合\"] --> SYS_INTRO[\"系统介绍文档\"]\n    DOCS --> DB_DEV[\"数据库开发文档\"]\n    DOCS --> API_DOC[\"API 接口文档\"]\n    DOCS --> USAGE_TIPS[\"使用注意事项\"]\n    DOCS --> DEV_GUIDE[\"软件开发文档\"]\n    DOCS --> PPT[\"系统 PPT\"]\n    DOCS --> ER_DIAG[\"数据库 ER 图\"]\n    DOCS --> FLOW_DIAG[\"GraphRAG 检索与构建流程图\"]\n    SYS_INTRO -->|解释系统定位| OVERVIEW[\"整体认识\"]\n    DB_DEV -->|说明仓库结构| SCHEMA[\"表/货架设计\"]\n    API_DOC -->|桥接系统内部与外部| BRIDGE[\"接口桥梁\"]\n    USAGE_TIPS -->|安全操作指引| SAFETY[\"防踩坑指南\"]\n    DEV_GUIDE -->|技术栈与实现思路| TECH[\"技术细节\"]\n    PPT -->|快速核心概览| QUICKVIEW[\"核心要点\"]"
+        },
+        {
+          "title": "功能工作流细节",
+          "code": "flowchart LR\n    A1[\"上传文档/图片\"] --> A2[\"摘要生成\"]\n    A2 --> A3[\"关键信息抽取\"]\n    A3 --> A4[\"写入 Neo4j 知识图谱\"]\n    A4 --> B1[\"用户自然语言查询\"]\n    B1 --> B2[\"GraphRAG 检索\"]\n    B2 --> B3[\"LLM 生成答案\"]\n    B3 --> C1[\"展示答案与关联图谱\"]\n    C1 --> C2[\"多轮对话（可选）\"]\n    C2 --> D1[\"导出 Word（可选）\"]\n    B1 --> D2[\"可视化查询结果\"]\n    D2 --> C1"
+        },
+        {
+          "title": "角色与权限矩阵",
+          "code": "flowchart TD\n    R1[\"管理员\"] -->|管理| USER_MGMT[\"用户管理\"]\n    R1 -->|维护| KG[\"知识图谱\"]\n    R1 -->|配置| AUTH[\"JWT 权限\"]\n    R2[\"普通用户\"] -->|查询| QUERY[\"智能问答\"]\n    R2 -->|上传| UPLOAD[\"文档/图片上传\"]\n    R2 -->|导出| EXPORT[\"结果导出\"]\n    AUTH -->|授权访问| QUERY\n    AUTH -->|授权访问| UPLOAD\n    AUTH -->|授权访问| EXPORT\n    USER_MGMT -->|创建/删除| R2"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T15:05:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 基于 GraphRAG 的地质矿产知识管理系统全景图谱\n\n## 系统整体结构总览\n```mermaid\nflowchart TD\n    U1[\"用户\"] -->|自然语言提问| QA[\"智能问答模块\"]\n    U1 -->|上传文档/图片| DOC[\"文档与图像管理\"]\n    DOC -->|自动生成摘要| SUM[\"摘要生成\"]\n    DOC -->|提取关键信息| EX[\"关键信息抽取\"]\n    EX -->|写入| KG[\"Neo4j 知识图谱\"]\n    SUM -->|写入| KG\n    KG -->|支持检索| RET[\"GraphRAG 检索模块\"]\n    RET -->|提供上下文| LLM[\"大语言模型 (LLM)\"]\n    LLM -->|生成答案| ANS[\"答案输出\"]\n    ANS -->|展示| VIS[\"可视化 (ECharts)\"]\n    ANS -->|导出| EXP[\"导出 Word\"]\n    QA -->|调用| RET\n    QA -->|调用| LLM\n    U1 -->|多轮对话| DLG[\"对话管理\"]\n    DLG -->|调用| QA\n    ADMIN[\"管理员\"] -->|权限管理| AUTH[\"JWT 认证\"]\n    AUTH -->|控制| U1\n    AUTH -->|控制| ADMIN\n```\n\n## 文档与开发资源体系\n```mermaid\nflowchart TD\n    DOCS[\"系统文档集合\"] --> SYS_INTRO[\"系统介绍文档\"]\n    DOCS --> DB_DEV[\"数据库开发文档\"]\n    DOCS --> API_DOC[\"API 接口文档\"]\n    DOCS --> USAGE_TIPS[\"使用注意事项\"]\n    DOCS --> DEV_GUIDE[\"软件开发文档\"]\n    DOCS --> PPT[\"系统 PPT\"]\n    DOCS --> ER_DIAG[\"数据库 ER 图\"]\n    DOCS --> FLOW_DIAG[\"GraphRAG 检索与构建流程图\"]\n    SYS_INTRO -->|解释系统定位| OVERVIEW[\"整体认识\"]\n    DB_DEV -->|说明仓库结构| SCHEMA[\"表/货架设计\"]\n    API_DOC -->|桥接系统内部与外部| BRIDGE[\"接口桥梁\"]\n    USAGE_TIPS -->|安全操作指引| SAFETY[\"防踩坑指南\"]\n    DEV_GUIDE -->|技术栈与实现思路| TECH[\"技术细节\"]\n    PPT -->|快速核心概览| QUICKVIEW[\"核心要点\"]\n```\n\n## 功能工作流细节\n```mermaid\nflowchart LR\n    A1[\"上传文档/图片\"] --> A2[\"摘要生成\"]\n    A2 --> A3[\"关键信息抽取\"]\n    A3 --> A4[\"写入 Neo4j 知识图谱\"]\n    A4 --> B1[\"用户自然语言查询\"]\n    B1 --> B2[\"GraphRAG 检索\"]\n    B2 --> B3[\"LLM 生成答案\"]\n    B3 --> C1[\"展示答案与关联图谱\"]\n    C1 --> C2[\"多轮对话（可选）\"]\n    C2 --> D1[\"导出 Word（可选）\"]\n    B1 --> D2[\"可视化查询结果\"]\n    D2 --> C1\n```\n\n## 角色与权限矩阵\n```mermaid\nflowchart TD\n    R1[\"管理员\"] -->|管理| USER_MGMT[\"用户管理\"]\n    R1 -->|维护| KG[\"知识图谱\"]\n    R1 -->|配置| AUTH[\"JWT 权限\"]\n    R2[\"普通用户\"] -->|查询| QUERY[\"智能问答\"]\n    R2 -->|上传| UPLOAD[\"文档/图片上传\"]\n    R2 -->|导出| EXPORT[\"结果导出\"]\n    AUTH -->|授权访问| QUERY\n    AUTH -->|授权访问| UPLOAD\n    AUTH -->|授权访问| EXPORT\n    USER_MGMT -->|创建/删除| R2\n```",
+  "diagrams": [
+    {
+      "title": "系统整体结构总览",
+      "code": "flowchart TD\n    U1[\"用户\"] -->|自然语言提问| QA[\"智能问答模块\"]\n    U1 -->|上传文档/图片| DOC[\"文档与图像管理\"]\n    DOC -->|自动生成摘要| SUM[\"摘要生成\"]\n    DOC -->|提取关键信息| EX[\"关键信息抽取\"]\n    EX -->|写入| KG[\"Neo4j 知识图谱\"]\n    SUM -->|写入| KG\n    KG -->|支持检索| RET[\"GraphRAG 检索模块\"]\n    RET -->|提供上下文| LLM[\"大语言模型 (LLM)\"]\n    LLM -->|生成答案| ANS[\"答案输出\"]\n    ANS -->|展示| VIS[\"可视化 (ECharts)\"]\n    ANS -->|导出| EXP[\"导出 Word\"]\n    QA -->|调用| RET\n    QA -->|调用| LLM\n    U1 -->|多轮对话| DLG[\"对话管理\"]\n    DLG -->|调用| QA\n    ADMIN[\"管理员\"] -->|权限管理| AUTH[\"JWT 认证\"]\n    AUTH -->|控制| U1\n    AUTH -->|控制| ADMIN"
+    },
+    {
+      "title": "文档与开发资源体系",
+      "code": "flowchart TD\n    DOCS[\"系统文档集合\"] --> SYS_INTRO[\"系统介绍文档\"]\n    DOCS --> DB_DEV[\"数据库开发文档\"]\n    DOCS --> API_DOC[\"API 接口文档\"]\n    DOCS --> USAGE_TIPS[\"使用注意事项\"]\n    DOCS --> DEV_GUIDE[\"软件开发文档\"]\n    DOCS --> PPT[\"系统 PPT\"]\n    DOCS --> ER_DIAG[\"数据库 ER 图\"]\n    DOCS --> FLOW_DIAG[\"GraphRAG 检索与构建流程图\"]\n    SYS_INTRO -->|解释系统定位| OVERVIEW[\"整体认识\"]\n    DB_DEV -->|说明仓库结构| SCHEMA[\"表/货架设计\"]\n    API_DOC -->|桥接系统内部与外部| BRIDGE[\"接口桥梁\"]\n    USAGE_TIPS -->|安全操作指引| SAFETY[\"防踩坑指南\"]\n    DEV_GUIDE -->|技术栈与实现思路| TECH[\"技术细节\"]\n    PPT -->|快速核心概览| QUICKVIEW[\"核心要点\"]"
+    },
+    {
+      "title": "功能工作流细节",
+      "code": "flowchart LR\n    A1[\"上传文档/图片\"] --> A2[\"摘要生成\"]\n    A2 --> A3[\"关键信息抽取\"]\n    A3 --> A4[\"写入 Neo4j 知识图谱\"]\n    A4 --> B1[\"用户自然语言查询\"]\n    B1 --> B2[\"GraphRAG 检索\"]\n    B2 --> B3[\"LLM 生成答案\"]\n    B3 --> C1[\"展示答案与关联图谱\"]\n    C1 --> C2[\"多轮对话（可选）\"]\n    C2 --> D1[\"导出 Word（可选）\"]\n    B1 --> D2[\"可视化查询结果\"]\n    D2 --> C1"
+    },
+    {
+      "title": "角色与权限矩阵",
+      "code": "flowchart TD\n    R1[\"管理员\"] -->|管理| USER_MGMT[\"用户管理\"]\n    R1 -->|维护| KG[\"知识图谱\"]\n    R1 -->|配置| AUTH[\"JWT 权限\"]\n    R2[\"普通用户\"] -->|查询| QUERY[\"智能问答\"]\n    R2 -->|上传| UPLOAD[\"文档/图片上传\"]\n    R2 -->|导出| EXPORT[\"结果导出\"]\n    AUTH -->|授权访问| QUERY\n    AUTH -->|授权访问| UPLOAD\n    AUTH -->|授权访问| EXPORT\n    USER_MGMT -->|创建/删除| R2"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:05:25+00:00"
+}

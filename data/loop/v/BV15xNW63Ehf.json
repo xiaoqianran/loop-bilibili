@@ -1,0 +1,66 @@
+{
+  "bvid": "BV15xNW63Ehf",
+  "title": "DeepSeek4.0正式版灰度测试小游戏开发",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 185,
+  "text": "deep six4.0正式版灰度测试\n小游戏开发原本只用了3亿左右\ntoken成本大概九块钱左右\n后面为了适配移动端\n又烧了1亿多token\n本来想做众包游戏\n扮演外卖骑手送外卖\n但是感觉会有点无聊\n就改成道长送糯米了\n毕竟现在网上太阴了\n看天际朗月也不算错\n♪ 明月透光 ♪\n♪ 阴风吹柳下 ♪\n♪ 市里怪异的爱浪 ♪\n♪ 谁人愿爱凄厉鬼新娘 ♪\n抱歉\n真不是故意死的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV15xNW63Ehf",
+  "published_at": "1783710921",
+  "fetched_at": "2026-08-07T08:15:27+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek4.0 正式版灰度测试小游戏开发 知识图谱\n\n## 知识总览 [BV15xNW63Ehf P1 00:00]\n```mermaid\nflowchart TD\n    A1[\"DeepSeek4.0 正式版灰度测试\"]\n    B1[\"小游戏开发成本 3亿 token\"]\n    C1[\"token 成本 ~9元/个\"]\n    D1[\"移动端适配 +1亿 token\"]\n    E1[\"总消耗约 4亿 token\"]\n    F1[\"原计划 众包游戏\"]\n    G1[\"角色设定 外卖骑手\"]\n    H1[\"评估：可能无聊\"]\n    I1[\"改为 道长送糯米\"]\n    J1[\"原因：网络氛围太阴\"]\n    A1 --> B1\n    B1 --> C1\n    B1 --> D1\n    D1 --> E1\n    F1 --> G1\n    G1 --> H1\n    H1 --> I1\n    I1 --> J1\n```\n\n## 决策流程 [BV15xNW63Ehf P1 00:10]\n```mermaid\nflowchart LR\n    S1[\"初始想法：众包游戏\"] --> S2[\"设定角色：外卖骑手\"]\n    S2 --> S3[\"评估可玩性：可能无聊\"]\n    S3 --> S4[\"决策：改为道长送糯米\"]\n    S4 --> S5[\"实施新角色\"]\n```\n\n## 成本结构 [BV15xNW63Ehf P1 00:02]\n```mermaid\nflowchart TD\n    Cst1[\"基础开发\"] --> Cst2[\"3亿 token\"]\n    Cst1 --> Cst3[\"token 成本 ~9元\"]\n    Adapt[\"移动端适配\"] --> Adapt2[\"+1亿 token\"]\n    Total[\"总消耗\"] --> Total2[\"约4亿 token\"]\n    Cst2 --> Total2\n    Adapt2 --> Total2\n```",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    A1[\"DeepSeek4.0 正式版灰度测试\"]\n    B1[\"小游戏开发成本 3亿 token\"]\n    C1[\"token 成本 ~9元/个\"]\n    D1[\"移动端适配 +1亿 token\"]\n    E1[\"总消耗约 4亿 token\"]\n    F1[\"原计划 众包游戏\"]\n    G1[\"角色设定 外卖骑手\"]\n    H1[\"评估：可能无聊\"]\n    I1[\"改为 道长送糯米\"]\n    J1[\"原因：网络氛围太阴\"]\n    A1 --> B1\n    B1 --> C1\n    B1 --> D1\n    D1 --> E1\n    F1 --> G1\n    G1 --> H1\n    H1 --> I1\n    I1 --> J1"
+        },
+        {
+          "title": "决策流程",
+          "code": "flowchart LR\n    S1[\"初始想法：众包游戏\"] --> S2[\"设定角色：外卖骑手\"]\n    S2 --> S3[\"评估可玩性：可能无聊\"]\n    S3 --> S4[\"决策：改为道长送糯米\"]\n    S4 --> S5[\"实施新角色\"]"
+        },
+        {
+          "title": "成本结构",
+          "code": "flowchart TD\n    Cst1[\"基础开发\"] --> Cst2[\"3亿 token\"]\n    Cst1 --> Cst3[\"token 成本 ~9元\"]\n    Adapt[\"移动端适配\"] --> Adapt2[\"+1亿 token\"]\n    Total[\"总消耗\"] --> Total2[\"约4亿 token\"]\n    Cst2 --> Total2\n    Adapt2 --> Total2"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T08:17:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek4.0 正式版灰度测试小游戏开发 知识图谱\n\n## 知识总览 [BV15xNW63Ehf P1 00:00]\n```mermaid\nflowchart TD\n    A1[\"DeepSeek4.0 正式版灰度测试\"]\n    B1[\"小游戏开发成本 3亿 token\"]\n    C1[\"token 成本 ~9元/个\"]\n    D1[\"移动端适配 +1亿 token\"]\n    E1[\"总消耗约 4亿 token\"]\n    F1[\"原计划 众包游戏\"]\n    G1[\"角色设定 外卖骑手\"]\n    H1[\"评估：可能无聊\"]\n    I1[\"改为 道长送糯米\"]\n    J1[\"原因：网络氛围太阴\"]\n    A1 --> B1\n    B1 --> C1\n    B1 --> D1\n    D1 --> E1\n    F1 --> G1\n    G1 --> H1\n    H1 --> I1\n    I1 --> J1\n```\n\n## 决策流程 [BV15xNW63Ehf P1 00:10]\n```mermaid\nflowchart LR\n    S1[\"初始想法：众包游戏\"] --> S2[\"设定角色：外卖骑手\"]\n    S2 --> S3[\"评估可玩性：可能无聊\"]\n    S3 --> S4[\"决策：改为道长送糯米\"]\n    S4 --> S5[\"实施新角色\"]\n```\n\n## 成本结构 [BV15xNW63Ehf P1 00:02]\n```mermaid\nflowchart TD\n    Cst1[\"基础开发\"] --> Cst2[\"3亿 token\"]\n    Cst1 --> Cst3[\"token 成本 ~9元\"]\n    Adapt[\"移动端适配\"] --> Adapt2[\"+1亿 token\"]\n    Total[\"总消耗\"] --> Total2[\"约4亿 token\"]\n    Cst2 --> Total2\n    Adapt2 --> Total2\n```",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    A1[\"DeepSeek4.0 正式版灰度测试\"]\n    B1[\"小游戏开发成本 3亿 token\"]\n    C1[\"token 成本 ~9元/个\"]\n    D1[\"移动端适配 +1亿 token\"]\n    E1[\"总消耗约 4亿 token\"]\n    F1[\"原计划 众包游戏\"]\n    G1[\"角色设定 外卖骑手\"]\n    H1[\"评估：可能无聊\"]\n    I1[\"改为 道长送糯米\"]\n    J1[\"原因：网络氛围太阴\"]\n    A1 --> B1\n    B1 --> C1\n    B1 --> D1\n    D1 --> E1\n    F1 --> G1\n    G1 --> H1\n    H1 --> I1\n    I1 --> J1"
+    },
+    {
+      "title": "决策流程",
+      "code": "flowchart LR\n    S1[\"初始想法：众包游戏\"] --> S2[\"设定角色：外卖骑手\"]\n    S2 --> S3[\"评估可玩性：可能无聊\"]\n    S3 --> S4[\"决策：改为道长送糯米\"]\n    S4 --> S5[\"实施新角色\"]"
+    },
+    {
+      "title": "成本结构",
+      "code": "flowchart TD\n    Cst1[\"基础开发\"] --> Cst2[\"3亿 token\"]\n    Cst1 --> Cst3[\"token 成本 ~9元\"]\n    Adapt[\"移动端适配\"] --> Adapt2[\"+1亿 token\"]\n    Total[\"总消耗\"] --> Total2[\"约4亿 token\"]\n    Cst2 --> Total2\n    Adapt2 --> Total2"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:17:05+00:00"
+}

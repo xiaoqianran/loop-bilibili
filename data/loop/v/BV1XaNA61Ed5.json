@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1XaNA61Ed5",
+  "title": "【关于网安Agent的设想】1.做两题CTF看看",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 644,
+  "text": "嗨大家好\n我是林逸书\n这是我关于一个网安agent的设想\n并且做出来的一个初步的demo\n接下来我们让他做两道CCTF题试试\n我们给他的命令很简单\n就是解开屏幕上这道CTF\n在这之前我也不知道他的表现会如何\n那接下来让我们一起看看\n这题相对来说还是比较简单的\n我们的agent很快就拿到了flag\n那接下来我们看他能否正确\n回去提交这个flag呢\n上下文设置的比较短\n所以很快就会触发压缩上下文\n我去设置一下上下文窗口\n之前为了测试方便\n我给了40\n那实际上可以给500\n单位是千\n因为压缩的问题\n这里好像被截断了\n那么我让他继续操作\n我们看到agent很熟练地打开了题目\n然后在输入框中填写了flag\n并且点击了提交\n并且读取到页面的正确反馈\n现在agent问我们要不要继续去做下一题好\n那接下来我们把第四章的下一题也解决一下吧\nif flask session伪造\n这里有一个靶场的小坑\n可能会对agent的造成困扰\n就是每次启动关闭之间\n必须有一分钟的时长限制\n让我们看一下agent能否顺利解决呢\n好在右侧我们已经看到agent识别到了\n有这个一分钟的时长限制\n那让我们看看agent是如何处理的好\n他决定先去搜索和了解一下相关的漏洞信息\n然后做一些提前的准备\n我们看他执行了什么命令嗯\n他在安装fl s k\n我们看到很快啊\nagent也解决了这一题\n拿到了这一题的flag\n接下来就是正常的提交流程\nagent输入了flag\n并且点击了提交页面反馈的正确好的\n那么这两个测试结束",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1XaNA61Ed5",
+  "published_at": "1783780050",
+  "fetched_at": "2026-08-08T10:55:12+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 网安Agent CTF 流程图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A[\"Agent\"] --> B[\"接收指令：解开屏幕CTF\"]\n    B --> C[\"上下文窗口设置\"]\n    C --> D[\"解决第一题\"]\n    D --> E[\"获取 flag\"]\n    E --> F[\"提交 flag\"]\n    F --> G[\"收到正确反馈\"]\n    G --> H[\"询问是否继续\"]\n    H --> I[\"解决第二题：Flask session 伪造\"]\n    I --> J[\"识别 1 分钟时长限制\"]\n    J --> K[\"搜索漏洞信息\"]\n    K --> L[\"准备环境（安装 fl s k）\"]\n    L --> M[\"解决挑战\"]\n    M --> N[\"获取 flag\"]\n    N --> O[\"提交 flag\"]\n    O --> P[\"测试结束\"]\n```\n- 接收指令：解开屏幕CTF [BV1XaNA61Ed5 P1 00:10‑00:14]  \n- 上下文窗口设置 [BV1XaNA61Ed5 P1 01:00‑01:07]  \n- 解决第一题 [BV1XaNA61Ed5 P1 00:42‑00:57]  \n- 获取 flag（第一题） [BV1XaNA61Ed5 P1 00:45]  \n- 提交 flag（第一题） [BV1XaNA61Ed5 P1 01:27‑01:31]  \n- 收到正确反馈 [BV1XaNA61Ed5 P1 01:31]  \n- 询问是否继续 [BV1XaNA61Ed5 P1 01:37]  \n- 解决第二题：Flask session 伪造 [BV1XaNA61Ed5 P1 01:58‑02:12]  \n- 识别 1 分钟时长限制 [BV1XaNA61Ed5 P1 02:09‑02:12]  \n- 搜索漏洞信息 [BV1XaNA61Ed5 P1 02:25‑02:30]  \n- 准备环境（安装 fl s k） [BV1XaNA61Ed5 P1 02:33]（识别存疑）  \n- 解决挑战 [BV1XaNA61Ed5 P1 03:28‑03:31]  \n- 获取 flag（第二题） [BV1XaNA61Ed5 P1 03:31]  \n- 提交 flag（第二题） [BV1XaNA61Ed5 P1 03:36‑03:37]  \n- 测试结束 [BV1XaNA61Ed5 P1 03:42]\n\n## 上下文窗口配置\n```mermaid\nflowchart LR\n    C1[\"上下文窗口\"] --> S1[\"当前大小 40k\"]\n    C1 --> S2[\"可设最大 500k\"]\n    S1 --> T1[\"触发压缩（上下文短）\"]\n    S2 --> T1\n```\n- 当前大小 40k（单位千） [BV1XaNA61Ed5 P1 01:00‑01:05]  \n- 可设最大 500k [BV1XaNA61Ed5 P1 01:03‑01:05]  \n- 触发压缩（上下文短） [BV1XaNA61Ed5 P1 00:54‑00:57]\n\n## Flask Session 伪造挑战处理\n```mermaid\nflowchart TD\n    F1[\"Flask Session 伪造挑战\"] --> C1[\"存在 1 分钟时长限制\"]\n    C1 --> D1[\"Agent 识别限制\"]\n    D1 --> S1[\"搜索漏洞信息\"]\n    S1 --> P1[\"准备环境（安装 fl s k）\"]\n    P1 --> R1[\"执行攻击\"]\n    R1 --> F2[\"获取 flag\"]\n    F2 --> S2[\"提交 flag\"]\n    S2 --> End[\"结束\"]\n```\n- 存在 1 分钟时长限制 [BV1XaNA61Ed5 P1 02:07‑02:12]  \n- Agent 识别限制 [BV1XaNA61Ed5 P1 02:19‑02:21]  \n- 搜索漏洞信息 [BV1XaNA61Ed5 P1 02:25‑02:30]  \n- 准备环境（安装 fl s k） [BV1XaNA61Ed5 P1 02:33]（识别存疑）  \n- 执行攻击并获取 flag [BV1XaNA61Ed5 P1 03:28‑03:31]  \n- 提交 flag [BV1XaNA61Ed5 P1 03:36‑03:37]  \n- 测试结束 [BV1XaNA61Ed5 P1 03:42]",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A[\"Agent\"] --> B[\"接收指令：解开屏幕CTF\"]\n    B --> C[\"上下文窗口设置\"]\n    C --> D[\"解决第一题\"]\n    D --> E[\"获取 flag\"]\n    E --> F[\"提交 flag\"]\n    F --> G[\"收到正确反馈\"]\n    G --> H[\"询问是否继续\"]\n    H --> I[\"解决第二题：Flask session 伪造\"]\n    I --> J[\"识别 1 分钟时长限制\"]\n    J --> K[\"搜索漏洞信息\"]\n    K --> L[\"准备环境（安装 fl s k）\"]\n    L --> M[\"解决挑战\"]\n    M --> N[\"获取 flag\"]\n    N --> O[\"提交 flag\"]\n    O --> P[\"测试结束\"]"
+        },
+        {
+          "title": "上下文窗口配置",
+          "code": "flowchart LR\n    C1[\"上下文窗口\"] --> S1[\"当前大小 40k\"]\n    C1 --> S2[\"可设最大 500k\"]\n    S1 --> T1[\"触发压缩（上下文短）\"]\n    S2 --> T1"
+        },
+        {
+          "title": "Flask Session 伪造挑战处理",
+          "code": "flowchart TD\n    F1[\"Flask Session 伪造挑战\"] --> C1[\"存在 1 分钟时长限制\"]\n    C1 --> D1[\"Agent 识别限制\"]\n    D1 --> S1[\"搜索漏洞信息\"]\n    S1 --> P1[\"准备环境（安装 fl s k）\"]\n    P1 --> R1[\"执行攻击\"]\n    R1 --> F2[\"获取 flag\"]\n    F2 --> S2[\"提交 flag\"]\n    S2 --> End[\"结束\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T10:55:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 网安Agent CTF 流程图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A[\"Agent\"] --> B[\"接收指令：解开屏幕CTF\"]\n    B --> C[\"上下文窗口设置\"]\n    C --> D[\"解决第一题\"]\n    D --> E[\"获取 flag\"]\n    E --> F[\"提交 flag\"]\n    F --> G[\"收到正确反馈\"]\n    G --> H[\"询问是否继续\"]\n    H --> I[\"解决第二题：Flask session 伪造\"]\n    I --> J[\"识别 1 分钟时长限制\"]\n    J --> K[\"搜索漏洞信息\"]\n    K --> L[\"准备环境（安装 fl s k）\"]\n    L --> M[\"解决挑战\"]\n    M --> N[\"获取 flag\"]\n    N --> O[\"提交 flag\"]\n    O --> P[\"测试结束\"]\n```\n- 接收指令：解开屏幕CTF [BV1XaNA61Ed5 P1 00:10‑00:14]  \n- 上下文窗口设置 [BV1XaNA61Ed5 P1 01:00‑01:07]  \n- 解决第一题 [BV1XaNA61Ed5 P1 00:42‑00:57]  \n- 获取 flag（第一题） [BV1XaNA61Ed5 P1 00:45]  \n- 提交 flag（第一题） [BV1XaNA61Ed5 P1 01:27‑01:31]  \n- 收到正确反馈 [BV1XaNA61Ed5 P1 01:31]  \n- 询问是否继续 [BV1XaNA61Ed5 P1 01:37]  \n- 解决第二题：Flask session 伪造 [BV1XaNA61Ed5 P1 01:58‑02:12]  \n- 识别 1 分钟时长限制 [BV1XaNA61Ed5 P1 02:09‑02:12]  \n- 搜索漏洞信息 [BV1XaNA61Ed5 P1 02:25‑02:30]  \n- 准备环境（安装 fl s k） [BV1XaNA61Ed5 P1 02:33]（识别存疑）  \n- 解决挑战 [BV1XaNA61Ed5 P1 03:28‑03:31]  \n- 获取 flag（第二题） [BV1XaNA61Ed5 P1 03:31]  \n- 提交 flag（第二题） [BV1XaNA61Ed5 P1 03:36‑03:37]  \n- 测试结束 [BV1XaNA61Ed5 P1 03:42]\n\n## 上下文窗口配置\n```mermaid\nflowchart LR\n    C1[\"上下文窗口\"] --> S1[\"当前大小 40k\"]\n    C1 --> S2[\"可设最大 500k\"]\n    S1 --> T1[\"触发压缩（上下文短）\"]\n    S2 --> T1\n```\n- 当前大小 40k（单位千） [BV1XaNA61Ed5 P1 01:00‑01:05]  \n- 可设最大 500k [BV1XaNA61Ed5 P1 01:03‑01:05]  \n- 触发压缩（上下文短） [BV1XaNA61Ed5 P1 00:54‑00:57]\n\n## Flask Session 伪造挑战处理\n```mermaid\nflowchart TD\n    F1[\"Flask Session 伪造挑战\"] --> C1[\"存在 1 分钟时长限制\"]\n    C1 --> D1[\"Agent 识别限制\"]\n    D1 --> S1[\"搜索漏洞信息\"]\n    S1 --> P1[\"准备环境（安装 fl s k）\"]\n    P1 --> R1[\"执行攻击\"]\n    R1 --> F2[\"获取 flag\"]\n    F2 --> S2[\"提交 flag\"]\n    S2 --> End[\"结束\"]\n```\n- 存在 1 分钟时长限制 [BV1XaNA61Ed5 P1 02:07‑02:12]  \n- Agent 识别限制 [BV1XaNA61Ed5 P1 02:19‑02:21]  \n- 搜索漏洞信息 [BV1XaNA61Ed5 P1 02:25‑02:30]  \n- 准备环境（安装 fl s k） [BV1XaNA61Ed5 P1 02:33]（识别存疑）  \n- 执行攻击并获取 flag [BV1XaNA61Ed5 P1 03:28‑03:31]  \n- 提交 flag [BV1XaNA61Ed5 P1 03:36‑03:37]  \n- 测试结束 [BV1XaNA61Ed5 P1 03:42]",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A[\"Agent\"] --> B[\"接收指令：解开屏幕CTF\"]\n    B --> C[\"上下文窗口设置\"]\n    C --> D[\"解决第一题\"]\n    D --> E[\"获取 flag\"]\n    E --> F[\"提交 flag\"]\n    F --> G[\"收到正确反馈\"]\n    G --> H[\"询问是否继续\"]\n    H --> I[\"解决第二题：Flask session 伪造\"]\n    I --> J[\"识别 1 分钟时长限制\"]\n    J --> K[\"搜索漏洞信息\"]\n    K --> L[\"准备环境（安装 fl s k）\"]\n    L --> M[\"解决挑战\"]\n    M --> N[\"获取 flag\"]\n    N --> O[\"提交 flag\"]\n    O --> P[\"测试结束\"]"
+    },
+    {
+      "title": "上下文窗口配置",
+      "code": "flowchart LR\n    C1[\"上下文窗口\"] --> S1[\"当前大小 40k\"]\n    C1 --> S2[\"可设最大 500k\"]\n    S1 --> T1[\"触发压缩（上下文短）\"]\n    S2 --> T1"
+    },
+    {
+      "title": "Flask Session 伪造挑战处理",
+      "code": "flowchart TD\n    F1[\"Flask Session 伪造挑战\"] --> C1[\"存在 1 分钟时长限制\"]\n    C1 --> D1[\"Agent 识别限制\"]\n    D1 --> S1[\"搜索漏洞信息\"]\n    S1 --> P1[\"准备环境（安装 fl s k）\"]\n    P1 --> R1[\"执行攻击\"]\n    R1 --> F2[\"获取 flag\"]\n    F2 --> S2[\"提交 flag\"]\n    S2 --> End[\"结束\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T10:55:36+00:00"
+}

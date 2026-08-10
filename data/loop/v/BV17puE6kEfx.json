@@ -1,0 +1,66 @@
+{
+  "bvid": "BV17puE6kEfx",
+  "title": "【Godot】2.5D 即时战斗框架开发记录（一）：攻击状态机与组件架构",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4662,
+  "text": "首先呢这里可以看到我们这个人物的这个呃\n行动\n还有他的呃自己的碰撞盒\n以及他的攻击的检测盒\n这个方形大概就是他攻击的检测盒\n那么这些都是可以调的\n那按下左键呢就是我们的进攻吧\n各位亲爱的观众朋友们\n大家好\n今天呢给大家介绍一下啊\n我最近一直在研究的关于GODOT游戏\n怎么做一个GODOT引擎\n怎么做一个2.5D的这种即时战略\n即时战斗游戏啊\n就是说呃他的场景用的是全部都是3D的\n但是呢我们的人物却是一个纸片的人物\n而且不同于以往的这种呃回合的战斗\n我们采用了完全的骑手战斗模式\n让我们来看一下这\n首先呢\n这里可以看到我们这个人物的这个呃行动\n还有他的呃自己的碰撞盒\n以及他的攻击的检测和这个方形\n大概就是他攻击的检测盒\n那么这些都是可以调的\n那按下左键呢就是我们的进攻对吧\n然后可以人物的可以在这个地图上自由的移动\n然后呢我们着重的这现在第一个版本呢\n我的着重的注意点呢\n在这个呃攻击这件事情上\n我把攻击分成了三个阶段\n第一个阶段是\n第第一个阶段是前摇\n第二个是攻击中\n第三个是额后摇\n最后一个是结束\n然后呢\n我把这个状态机内置到了这个呃代码里面\n因为呃我曾经试过呃\n用这种用\n用这个呃呃play player\n就是animator player去播放这种呃事件来控制\n但是后来我发现这个东西有一个问题\n就是在于它在它\n它其实并不能减轻很多的工作量\n反而会让这个呃因为他事件之间\n搁到者的事件之间的话呢\n就是会反而会有很多麻烦\n所以说我就干脆呃直接内置了一个计时器\n然后这里面有一些相关的参数\n比方说一个攻击的总攻击时间\n一个攻击的前摇\n攻击的这个计时器\n以及他的这个呃checkpoints\n就是触发碰撞检测的时间节点\n比方说我在0.1这里我可以打一个\n0.2这里可以打一个呃\n那之后的话呢也可能会出推出我\n我可能会做一个这种插件\n就是呃一个图形化的界面\n来把这些点让\n就是使用者可以很很很方便的把它打开\n但现在还没有时间\n现在只能通过这种就是导出的方式给他\n就是给他增加元素\n这样子这个我们先不管了\n呃\n第二个呢就是呃\n然后呢就是一个它的计时器的规则啊\n我在这里显示的是每每每帧倒计时\n然后呃大概就是这些\n如果说我没有把它写死啊\n我没有说就是他在哪个阶段就一定额跳频的\n哪个阶段\n我是把它呃进行了一个\n类似于一个触发器的跳转\n我会让他判断\n如果说呃是不是大于这个\n是不是没有没有到达前摇阶段\n然后他就把他的这个呃阶段设为前摇\n大概这样子\n然后呢当他在攻击的时候呢\n就可以判断他是否到了这个攻击出发点\n这里的话可以试\n这里的话找攻击八点之后呢\n他就会进行一个x cute hit check\n然后在excute hit check当中呢\n呃我们会引入一个tag component\n这个tag component它是一个范围\n他这个aria3D\n然后在这个error3D当中呢\n它有一个DDYNAMICBOXX\n可SION\n在这可SION当中呃\n我给他设置\n因为go not的这个呃这个box shape\n他是没有办法在CLICTION当中\n直接去调整它的这个size的\n就它的尺寸的\n所以说呃我们在这里呢我声明了一个可选\n然后让他每次在启动的时候new一个新的\n当然这个后面可以优化\n但现在暂时先这么着\n然后呢这样的话呢我们就可以调整它的scale\n这样的实话呢我们就可以通过\n我们就可以根据这个人物他的不同的武器\n或者说不同的这个参数和等级\n来调整它的攻击的范围呃\n比方说我可以在这里\n这现在是这个尺寸吗\n我可以把这个尺寸调大一些\n把它的X轴调成一\n这样的话它就会显得非常长\n可以进游戏一下效果\n你看现在就比这个长多了\n那这个就是额这个攻击攻击组件吧\n应该说\n估计组件的话\n找回了攻击组件呃\n我们可以看到他这个execute这个hit check\n他是用攻击组件当中的这个check来的\n那攻击组件当中的这个函数就是呃\n首先他要就是获取当前在他的范围之内的\n这些所有的这个巴黎\n然后如果他们身上有这个hurt函数\n用这个格斗当中的has max这个方法非常的有意思\n这个方法呃\n这个方法就像接口一样\n但但但它就比接口要简单一些\n因为它呃不需要你去写一个接口脚本\n你可以直接用海子max\n直接输入他的字符串就可以\n那输入完之后呢\n就让它调用这个hurt\n然后hurt呢我们就把它\n然后我们也把它写进我们的自己\n这个呃人物当中\n目前还没有写他的完整逻辑\n现在大概只是写了一个那个print\n那之后呢这些函数的话呢\n呃也会跟这个也可以跟这个呃tech component\n继续就是做一个这种呃配合\n然后实现这种ECS架构\n那具体的话呢\n呃目前暂时是只是写好了这个攻击\n且攻击中后摇和结束\n然后呢它和动画系统是怎么配合的呢\n首先呢我们需要一个呃\n肯定要需要一个player\n然后player的话呢这叫打关键帧\n通过打关键帧来控制我们角色的运动\n第二个呢我们需要一个很重要的东西\n就这个blender tree\nblender去\n我们首先可以\n然后呢blender去我们给它添加一个脚本\n让它类似于呃优异当中那种动画蓝图一样\n什么意思呢\n就是呃我们并不是直接控制它的这个播放\n而是这两个属性\n一个是velocity\n一个是孩子velocity\n然后呢\n他会写一个给他写一个这个更新移动速度\n然后呢在我们的角色的脚本当中去调用这个\n大家可以看到这里有个我写了一个animation\n让他直接获取场景当中的tree\n如果他有的话\n那么它每秒就会每帧就会去这个更新它\n那最后这些东西都写在这个process里面\n这样的话呢它就可以去时刻的去更新呃\n按你VIATION去当中的参数\n按你via去当中参数它可以\n然后呢我们就可以在这里给它加一个state machine\n让他直接在这里用他自己的这个额属性去判断\n可以看到从run到idol的话呢\n他的转换的\n就是通过他判断他自己有没有那个速度\n如果有速度的话\n就变成run\n然后呢这里呢是一个独立的一个节点\n就是ability\n这个ability它是一个触发器\n就是我们的一个攻击\n我为了把攻击的多种攻击都写在同一个地方\n我做了一个这样的\n挺这样的这个设置\n首先这里是动画\n动画的名字是可以改的\n其次呢把动画通过一个缩放连接之后呢\n我们给它放到一个过渡当中去\n这个过渡当中它相当于就是一个呃一个选择器\n你可以选择多个这种唉\n你没选放在里面\n那这里的话呢我们可以随便选一个\n比方说我们现在选light attack\n就是这个如果我们加速加入ABCD\n加入一堆的话呢\n你就可以把它们也连在这个上面\n这样的话就就实现了一个这种动画资源的拓展\n而且呢由于这个你的name是可以自命名的\n所以说呢这个东西也可以复用\n就是说我们可以额保持它的名字不变\n然后给它添加不同的动画资源就可以了\n那么这个是怎么触发的呢\n首先我们在这个animation区域当中写一个函数\n叫做play montouch\n这个也是呃参考了这个虚幻的编写方法\n那之后呢我们给大家就是这个\n就是我们就取了一个叫pay back这个方法\n大家可以上网自己查一下\n这个是控制这个animation去的一个方法\n在构造当中\n然后如果呃大家不太明白的话\n后期后续也可以再做个新的视频\n给大家讲解一下\n然后呢是play montouch\n如果就返回嘛防御性编程\n然后呢他就让他直接开始直接通过指令\n它强行开始这个ability这个状态\n然后我们把ability设为一个\n当它结束的时候自动回来\n然后呢我们再通过一个等他直接self点PARIS\n直接让他这个request就是直接这个这串的意思\n就是直接把他这个\n过度的选择到你给出的name这个节点上面去\n比方说我们现在name的选择是\n比方说我们现在我不在这里的这个\nlight attack当中呢\n我们给他写的是一个play motouch\n然后light tag\n那么它就会直接播放\n就是大概就这么个原理呃\n然后呢\n这里的话呢\n我还写了一个\n目前来说不是特别成熟的一个东西\n就是一个combat resource\n因为我希望他这个呃数据可以可以就是乐\n就是它是由数据驱动的嘛\n那么我就写了一个resource\n在这个\nability里面\n就是它里面有包含了一个攻击的持续时间\n他的前摇时间以及他的这个攻击检测点\n把这个东西之后\n我们创建出来之后\n我们可以给它放到这个ability resource\ncomponent当中\n就是这个数组里面\n我们可以给它放进去\n放进去之后呢\n我们的ability\n我们的attack\n我们调用了light attack这个函数\n我们就可以根据一个呃一个index\n然后用这个copy ability data\n去读取ability当中的含的数据\n把它复制过来\n然后进行我们自己的一个处理\n大概是这么一个过程\n然后呢这几个那个component呢\n他们之间彼此之间\n他们彼此之间不用互相指导\n比方说我我component\n我那个我的每个component都\n每个component彼此之间都是独立的\n我的这个combat resource component\n和我的attack component\n他们之间是不需要知道彼此的component\n只需要知道他自己有哪些攻击东西\n但他不需要去知道tag当中\n到具体有具体是怎么运作的\n但他们又通过\n但是又通过统一他们的决策\n又统一在这个呃背一次character当中做\n那就形成了\n那就这样的话\n那这个逻辑就很清晰\n而且也不会有这个职责越界的问题好\n那么这东西讲完了之后呢\n就是\n那么这样的话呢\n这个角色的话他就实现了这样一种呃比较完善\n然后又比较有有这个逻辑的这个有攻击系统\n但具体的后面的一些东西呃\n我也自己还在呃研究\n那么呃应该这期视频就先给大家讲这么多\n我们之后之后我也会继续更新\n有时间的话就是会更新这个更多\n关于这个素质方面的一些呃联合还有一个呃\n比方说现在我这里的好beat有点臃肿\n我打算把一些东西给他挪到ability system上去好\n那么呃这个里面的源码哦\n对还有一个操作啊\n操作的话就是一个control\n我在这里\n因为我已经把CALLIC当中的一些操控的代码\n已经方式已经写出来了\n比方说呃local motions\n它的运动的话呢\n就是用这个salary就是一个加速的一个代码\n在加速代码当中呢\n只要你每帧去调用它\n然后给它方向\n它就会自动的进行一个加速\n然后检测一个最大速度呃\n你可以通过这个player control\n就是在这个我这个插件当中的一个\n到时候我也会把这个插件打包起来\n这个插件当中它是一个呃\n他会叫你输入几个呃\n前后左右的这个名字\n也就是我们的输入嘛\n输入的是名字\n然后他就会handle\n他就会在这个handle movie input当中直接去检测\n当它检测到了这个额前后左右的输入时候\n他就会去调用呃\nowning character的这个加速的函数\n这样的话呢也就实现了一个单单单向依赖\n就是character不需要制造control\n但control可以直接操控character好\n那这就是现在的一些内容\n那之后呢我会把这些\n那现在我已经把这个代码传到了GITHUB上\n大家有兴趣的话也可以一起来交流好\n那我们本期视频到此结束\n下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV17puE6kEfx",
+  "published_at": "1785992713",
+  "fetched_at": "2026-08-10T10:06:09+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 2.5D 即时战斗框架知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"2.5D 即时战斗游戏\"] --> B1[\"全 3D 场景 + 纸片人物\"]\n    A1 --> C1[\"实时（非回合）战斗模式\"]\n    B1 --> D1[\"人物行动、碰撞盒、攻击检测盒\"]\n    C1 --> E1[\"攻击状态机内置于代码\"]\n    C1 --> F1[\"ECS 架构：独立 Component 互不依赖\"]\n    D1 --> G1[\"可调参数：碰撞盒尺寸、攻击检测盒\"]\n    E1 --> H1[\"攻击分三阶段：前摇、攻击中、后摇\"]\n    F1 --> I1[\"Attack Component、Tag Component、Combat Resource、Ability System\"]\n```\n\n## 攻击状态机与计时器\n```mermaid\nflowchart LR\n    S0[\"攻击输入（左键）\"] --> S1[\"进入前摇\"]\n    S1 -->|计时器 >= 前摇时长| S2[\"进入攻击中\"]\n    S2 -->|计时器 >= 前摇+攻击中时长| S3[\"进入后摇\"]\n    S3 -->|计时器 >= 前摇+攻击中+后摇时长| S4[\"结束并返回待机\"]\n    S0 -->|未输入| Idle[\"待机\"]\n    subgraph TimerParams\n        T1[\"总攻击时间\"]\n        T2[\"前摇时长\"]\n        T3[\"攻击中时长\"]\n        T4[\"后摇时长\"]\n        T5[\"Checkpoints（碰撞检测时间点）\"]\n    end\n    S1 --> T2\n    S2 --> T3\n    S3 --> T4\n    S4 --> T1\n    S1 -.-> T5\n    S2 -.-> T5\n    S3 -.-> T5\n```\n\n## 组件交互与动画系统\n```mermaid\nflowchart TD\n    Player[\"Player（角色脚本）\"] --> AnimTree[\"AnimationTree（动画蓝图）\"]\n    Player --> Control[\"Control（输入）\"]\n    AnimTree --> Ability[\"Ability Component\"]\n    Ability --> AttackComp[\"Attack Component\"]\n    AttackComp --> TagComp[\"Tag Component（范围/Box）\"]\n    AttackComp --> CombatRes[\"Combat Resource（数据驱动）\"]\n    CombatRes --> AbilityData[\"Ability Data（持续时间、前摇、检测点）\"]\n    Ability --> StateMachine[\"状态机（run、idle、ability）\"]\n    Control -->|输入方向| Velocity[\"Velocity 参数\"]\n    Velocity --> StateMachine\n    StateMachine -->|触发| AttackComp\n    AttackComp -->|执行| HitCheck[\"Execute Hit Check\"]\n    HitCheck -->|调用| HurtMethod[\"hurt 方法（若目标实现）\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"2.5D 即时战斗游戏\"] --> B1[\"全 3D 场景 + 纸片人物\"]\n    A1 --> C1[\"实时（非回合）战斗模式\"]\n    B1 --> D1[\"人物行动、碰撞盒、攻击检测盒\"]\n    C1 --> E1[\"攻击状态机内置于代码\"]\n    C1 --> F1[\"ECS 架构：独立 Component 互不依赖\"]\n    D1 --> G1[\"可调参数：碰撞盒尺寸、攻击检测盒\"]\n    E1 --> H1[\"攻击分三阶段：前摇、攻击中、后摇\"]\n    F1 --> I1[\"Attack Component、Tag Component、Combat Resource、Ability System\"]"
+        },
+        {
+          "title": "攻击状态机与计时器",
+          "code": "flowchart LR\n    S0[\"攻击输入（左键）\"] --> S1[\"进入前摇\"]\n    S1 -->|计时器 >= 前摇时长| S2[\"进入攻击中\"]\n    S2 -->|计时器 >= 前摇+攻击中时长| S3[\"进入后摇\"]\n    S3 -->|计时器 >= 前摇+攻击中+后摇时长| S4[\"结束并返回待机\"]\n    S0 -->|未输入| Idle[\"待机\"]\n    subgraph TimerParams\n        T1[\"总攻击时间\"]\n        T2[\"前摇时长\"]\n        T3[\"攻击中时长\"]\n        T4[\"后摇时长\"]\n        T5[\"Checkpoints（碰撞检测时间点）\"]\n    end\n    S1 --> T2\n    S2 --> T3\n    S3 --> T4\n    S4 --> T1\n    S1 -.-> T5\n    S2 -.-> T5\n    S3 -.-> T5"
+        },
+        {
+          "title": "组件交互与动画系统",
+          "code": "flowchart TD\n    Player[\"Player（角色脚本）\"] --> AnimTree[\"AnimationTree（动画蓝图）\"]\n    Player --> Control[\"Control（输入）\"]\n    AnimTree --> Ability[\"Ability Component\"]\n    Ability --> AttackComp[\"Attack Component\"]\n    AttackComp --> TagComp[\"Tag Component（范围/Box）\"]\n    AttackComp --> CombatRes[\"Combat Resource（数据驱动）\"]\n    CombatRes --> AbilityData[\"Ability Data（持续时间、前摇、检测点）\"]\n    Ability --> StateMachine[\"状态机（run、idle、ability）\"]\n    Control -->|输入方向| Velocity[\"Velocity 参数\"]\n    Velocity --> StateMachine\n    StateMachine -->|触发| AttackComp\n    AttackComp -->|执行| HitCheck[\"Execute Hit Check\"]\n    HitCheck -->|调用| HurtMethod[\"hurt 方法（若目标实现）\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T10:06:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 2.5D 即时战斗框架知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"2.5D 即时战斗游戏\"] --> B1[\"全 3D 场景 + 纸片人物\"]\n    A1 --> C1[\"实时（非回合）战斗模式\"]\n    B1 --> D1[\"人物行动、碰撞盒、攻击检测盒\"]\n    C1 --> E1[\"攻击状态机内置于代码\"]\n    C1 --> F1[\"ECS 架构：独立 Component 互不依赖\"]\n    D1 --> G1[\"可调参数：碰撞盒尺寸、攻击检测盒\"]\n    E1 --> H1[\"攻击分三阶段：前摇、攻击中、后摇\"]\n    F1 --> I1[\"Attack Component、Tag Component、Combat Resource、Ability System\"]\n```\n\n## 攻击状态机与计时器\n```mermaid\nflowchart LR\n    S0[\"攻击输入（左键）\"] --> S1[\"进入前摇\"]\n    S1 -->|计时器 >= 前摇时长| S2[\"进入攻击中\"]\n    S2 -->|计时器 >= 前摇+攻击中时长| S3[\"进入后摇\"]\n    S3 -->|计时器 >= 前摇+攻击中+后摇时长| S4[\"结束并返回待机\"]\n    S0 -->|未输入| Idle[\"待机\"]\n    subgraph TimerParams\n        T1[\"总攻击时间\"]\n        T2[\"前摇时长\"]\n        T3[\"攻击中时长\"]\n        T4[\"后摇时长\"]\n        T5[\"Checkpoints（碰撞检测时间点）\"]\n    end\n    S1 --> T2\n    S2 --> T3\n    S3 --> T4\n    S4 --> T1\n    S1 -.-> T5\n    S2 -.-> T5\n    S3 -.-> T5\n```\n\n## 组件交互与动画系统\n```mermaid\nflowchart TD\n    Player[\"Player（角色脚本）\"] --> AnimTree[\"AnimationTree（动画蓝图）\"]\n    Player --> Control[\"Control（输入）\"]\n    AnimTree --> Ability[\"Ability Component\"]\n    Ability --> AttackComp[\"Attack Component\"]\n    AttackComp --> TagComp[\"Tag Component（范围/Box）\"]\n    AttackComp --> CombatRes[\"Combat Resource（数据驱动）\"]\n    CombatRes --> AbilityData[\"Ability Data（持续时间、前摇、检测点）\"]\n    Ability --> StateMachine[\"状态机（run、idle、ability）\"]\n    Control -->|输入方向| Velocity[\"Velocity 参数\"]\n    Velocity --> StateMachine\n    StateMachine -->|触发| AttackComp\n    AttackComp -->|执行| HitCheck[\"Execute Hit Check\"]\n    HitCheck -->|调用| HurtMethod[\"hurt 方法（若目标实现）\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"2.5D 即时战斗游戏\"] --> B1[\"全 3D 场景 + 纸片人物\"]\n    A1 --> C1[\"实时（非回合）战斗模式\"]\n    B1 --> D1[\"人物行动、碰撞盒、攻击检测盒\"]\n    C1 --> E1[\"攻击状态机内置于代码\"]\n    C1 --> F1[\"ECS 架构：独立 Component 互不依赖\"]\n    D1 --> G1[\"可调参数：碰撞盒尺寸、攻击检测盒\"]\n    E1 --> H1[\"攻击分三阶段：前摇、攻击中、后摇\"]\n    F1 --> I1[\"Attack Component、Tag Component、Combat Resource、Ability System\"]"
+    },
+    {
+      "title": "攻击状态机与计时器",
+      "code": "flowchart LR\n    S0[\"攻击输入（左键）\"] --> S1[\"进入前摇\"]\n    S1 -->|计时器 >= 前摇时长| S2[\"进入攻击中\"]\n    S2 -->|计时器 >= 前摇+攻击中时长| S3[\"进入后摇\"]\n    S3 -->|计时器 >= 前摇+攻击中+后摇时长| S4[\"结束并返回待机\"]\n    S0 -->|未输入| Idle[\"待机\"]\n    subgraph TimerParams\n        T1[\"总攻击时间\"]\n        T2[\"前摇时长\"]\n        T3[\"攻击中时长\"]\n        T4[\"后摇时长\"]\n        T5[\"Checkpoints（碰撞检测时间点）\"]\n    end\n    S1 --> T2\n    S2 --> T3\n    S3 --> T4\n    S4 --> T1\n    S1 -.-> T5\n    S2 -.-> T5\n    S3 -.-> T5"
+    },
+    {
+      "title": "组件交互与动画系统",
+      "code": "flowchart TD\n    Player[\"Player（角色脚本）\"] --> AnimTree[\"AnimationTree（动画蓝图）\"]\n    Player --> Control[\"Control（输入）\"]\n    AnimTree --> Ability[\"Ability Component\"]\n    Ability --> AttackComp[\"Attack Component\"]\n    AttackComp --> TagComp[\"Tag Component（范围/Box）\"]\n    AttackComp --> CombatRes[\"Combat Resource（数据驱动）\"]\n    CombatRes --> AbilityData[\"Ability Data（持续时间、前摇、检测点）\"]\n    Ability --> StateMachine[\"状态机（run、idle、ability）\"]\n    Control -->|输入方向| Velocity[\"Velocity 参数\"]\n    Velocity --> StateMachine\n    StateMachine -->|触发| AttackComp\n    AttackComp -->|执行| HitCheck[\"Execute Hit Check\"]\n    HitCheck -->|调用| HurtMethod[\"hurt 方法（若目标实现）\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T10:06:19+00:00"
+}

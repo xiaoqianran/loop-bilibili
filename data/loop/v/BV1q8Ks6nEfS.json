@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1q8Ks6nEfS",
+  "title": "给 AI Agent 装眼睛,一 CLI 读全网 6 平台【扒一扒 GitHub 本月最火 S2 No.3/30】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1330,
+  "text": "你的AI agent只能看本地文件\n想让他去看看今天推特上什么热\n挨个平台API申请下来能把人劝退\nGITHUB上有个刚破5万8000星的开源项目叫agent rich\n6月月榜第三名\nYoutube github\nB站小红书六个平台官方口径较零\nAPI费用\nstar po是value AI的萌宠助手\n今天扒一扒这个AI全网感知的开源工具\n也把他必须严守的合规边界一次说清\n项目名agent rich github仓库penn town斜杠agent rich\n今天数据是5万8000多星\n接近5000\nfork协议\nMIT主语言\nPython\n定位是把六个国内外主流内容平台的读\n跟搜都封装成同一个CLI\n核心宣传点是给agent装眼睛\n六平台指X也就是原来的推特\nYoutube github\nB站和小红书核心能力一六平台一站接入\n得跟六套SDK打交道\n每家健全限流分页规则都不一样\nagent rich把这六家包成一致命令风格\n想搜YOUTUBE某关键词\n最近视频\n想看B站小红书\n某话题在国内的讨论命令语法基本一致\nagent学一遍就能用六种平台核心能力\n二官方口径0API费用\n他主要走各平台公开可访问的数据入口\n而不是绕付费企业API\n也就是说个人研究小规模信息收集能省不少钱\n但请务必记住\n0API费用只是没花钱买SDK\n不等于没有法律和合规成本\n每家平台的TOS都对自动化访问频率\n数据用途有明确条款\n违反了照样封号限流\n甚至面临法律风险\n核心能力三命令风格轻\n它是一个纯c AI agent\n只要能起shell就能用\n不需要额外挂MCP服务\n也不用装浏览器\nHeadless\n你在cloud code codex cursor里跟agent说\n帮我调研某话题最近一周的舆情\nagent就能一次性拉六平台的样本回来\n再自己汇总\n轻视他这一个月能冲上榜前三的关键理由\n谁最该装\n第一类做行业调研\n竞品分析\n舆情监测的个人研究者\n一个agent1晚上拉六家平台样本\n效率提升明显\n第二类独立创作者做选题\n想同时看看某话题\n在小红书和推特上的差异化讨论\n第三类数据科学家\n学术研究人员做小规模文本样本收集\n前提是遵守伦理审查\n共同前提\n是不是拿来做商业化爬虫或大规模数据倒卖\n那既违反TOS\n也大概率违法\n三点冷静提示\n这一期特别重要\n第一各家平台的TOS才是最终边界\n这几家近两年对自动化访问收的越来越紧\nB站小红书对高频抓取的风控也很严格\n大规模用汇封号封IP\n严重的可能面临法律风险\n第二数据用途要合规\n尤其涉及个人数据的转发\n二次分发\n拿去训练模型\n得看当地隐私法\n比如欧盟的GDP\n2日本的个人情报保护法\n为了不是小事\n第三请勿商业化爬虫项目定位是给agent装眼睛\n不是做数据倒卖工具\n今天的扒一扒就到这里\nagent rich有意思的地方在于\n他让agent具备了看世界的入口\n但正因为门槛低\n用它的人更需要自己守住合规边界\n别把好工具用成坏事的推手\n喜欢的话记得一键三连搜valley AI\n关注我们的公众号\n下期我们8D4\nOpen montouch\n一个把AI编程助手变成完整\n视频制作工作室的开源系统\nStar pod\n下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1q8Ks6nEfS",
+  "published_at": "1785058200",
+  "fetched_at": "2026-08-08T12:13:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Agent Rich 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    P1[\"agent rich (GitHub)\"]\n    P2[\"5.8 万+ stars\"]\n    P3[\"6月月榜第3名\"]\n    P4[\"MIT 许可证\"]\n    P5[\"Python\"]\n    P6[\"给 AI agent 装眼睛\"]\n    P7[\"开源项目\"]\n    P1 --> P2\n    P1 --> P3\n    P1 --> P4\n    P1 --> P5\n    P1 --> P6\n    P1 --> P7\n```\n\n- P1: [BV1q8Ks6nEfS P1 00:14]  \n- P2: [BV1q8Ks6nEfS P1 00:48]  \n- P3: [BV1q8Ks6nEfS P1 00:19]  \n- P4: [BV1q8Ks6nEfS P1 00:52]  \n- P5: [BV1q8Ks6nEfS P1 00:55]  \n- P6: [BV1q8Ks6nEfS P1 01:07]  \n- P7: [BV1q8Ks6nEfS P1 00:14]  \n\n## 功能与平台统一\n\n```mermaid\nflowchart TD\n    C1[\"统一 CLI\"]\n    PL[\"六大平台\"]\n    X[\"X (Twitter)\"]\n    YT[\"YouTube\"]\n    GH[\"GitHub\"]\n    B[\"B站\"]\n    XR[\"小红书\"]\n    CS[\"统一命令风格\"]\n    DS[\"公开可访问数据入口\"]\n    NAF[\"0 API费用\"]\n    NES[\"无需额外 MCP/浏览器\"]\n    HL[\"Headless 运行\"]\n    C1 --> PL\n    PL --> X\n    PL --> YT\n    PL --> GH\n    PL --> B\n    PL --> XR\n    C1 --> CS\n    C1 --> DS --> NAF\n    C1 --> NES --> HL\n```\n\n- C1: [BV1q8Ks6nEfS P1 01:30]  \n- PL: [BV1q8Ks6nEfS P1 01:10]  \n- X: [BV1q8Ks6nEfS P1 01:10]  \n- YT: [BV1q8Ks6nEfS P1 01:14]  \n- GH: [BV1q8Ks6nEfS P1 01:14]  \n- B: [BV1q8Ks6nEfS P1 01:15]  \n- XR: [BV1q8Ks6nEfS P1 01:15]  \n- CS: [BV1q8Ks6nEfS P1 01:30]  \n- DS: [BV1q8Ks6nEfS P1 01:51]  \n- NAF: [BV1q8Ks6nEfS P1 01:48]  \n- NES: [BV1q8Ks6nEfS P1 02:23]  \n- HL: [BV1q8Ks6nEfS P1 02:31]  \n\n## 合规与使用场景\n\n```mermaid\nflowchart TD\n    UC1[\"行业调研/竞品分析/舆情监测\"]\n    UC2[\"独立创作者选题\"]\n    UC3[\"数据科学小规模文本收集\"]\n    COMP[\"遵守平台 TOS\"]\n    LR[\"封号 / 法律风险\"]\n    PROH[\"禁止商业爬虫/大规模数据倒卖\"]\n    ETH[\"遵守伦理审查\"]\n    PRIV[\"个人数据转发需合规\"]\n    LAW[\"GDPR / 日本个人情报保护法\"]\n    REC[\"仅用于研究/非商业\"]\n    UC1 --> COMP\n    UC2 --> COMP\n    UC3 --> COMP\n    COMP --> LR\n    PROH --> LR\n    ETH --> COMP\n    PRIV --> LAW\n    REC --> COMP\n```\n\n- UC1: [BV1q8Ks6nEfS P1 02:49]  \n- UC2: [BV1q8Ks6nEfS P1 03:00]  \n- UC3: [BV1q8Ks6nEfS P1 03:08]  \n- COMP: [BV1q8Ks6nEfS P1 02:07]  \n- LR: [BV1q8Ks6nEfS P1 02:15]  \n- PROH: [BV1q8Ks6nEfS P1 03:17]  \n- ETH: [BV1q8Ks6nEfS P1 03:13]  \n- PRIV: [BV1q8Ks6nEfS P1 03:49]  \n- LAW: [BV1q8Ks6nEfS P1 03:55]  \n- REC: [BV1q8Ks6nEfS P1 04:01]  ",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    P1[\"agent rich (GitHub)\"]\n    P2[\"5.8 万+ stars\"]\n    P3[\"6月月榜第3名\"]\n    P4[\"MIT 许可证\"]\n    P5[\"Python\"]\n    P6[\"给 AI agent 装眼睛\"]\n    P7[\"开源项目\"]\n    P1 --> P2\n    P1 --> P3\n    P1 --> P4\n    P1 --> P5\n    P1 --> P6\n    P1 --> P7"
+        },
+        {
+          "title": "功能与平台统一",
+          "code": "flowchart TD\n    C1[\"统一 CLI\"]\n    PL[\"六大平台\"]\n    X[\"X (Twitter)\"]\n    YT[\"YouTube\"]\n    GH[\"GitHub\"]\n    B[\"B站\"]\n    XR[\"小红书\"]\n    CS[\"统一命令风格\"]\n    DS[\"公开可访问数据入口\"]\n    NAF[\"0 API费用\"]\n    NES[\"无需额外 MCP/浏览器\"]\n    HL[\"Headless 运行\"]\n    C1 --> PL\n    PL --> X\n    PL --> YT\n    PL --> GH\n    PL --> B\n    PL --> XR\n    C1 --> CS\n    C1 --> DS --> NAF\n    C1 --> NES --> HL"
+        },
+        {
+          "title": "合规与使用场景",
+          "code": "flowchart TD\n    UC1[\"行业调研/竞品分析/舆情监测\"]\n    UC2[\"独立创作者选题\"]\n    UC3[\"数据科学小规模文本收集\"]\n    COMP[\"遵守平台 TOS\"]\n    LR[\"封号 / 法律风险\"]\n    PROH[\"禁止商业爬虫/大规模数据倒卖\"]\n    ETH[\"遵守伦理审查\"]\n    PRIV[\"个人数据转发需合规\"]\n    LAW[\"GDPR / 日本个人情报保护法\"]\n    REC[\"仅用于研究/非商业\"]\n    UC1 --> COMP\n    UC2 --> COMP\n    UC3 --> COMP\n    COMP --> LR\n    PROH --> LR\n    ETH --> COMP\n    PRIV --> LAW\n    REC --> COMP"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T12:14:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Agent Rich 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    P1[\"agent rich (GitHub)\"]\n    P2[\"5.8 万+ stars\"]\n    P3[\"6月月榜第3名\"]\n    P4[\"MIT 许可证\"]\n    P5[\"Python\"]\n    P6[\"给 AI agent 装眼睛\"]\n    P7[\"开源项目\"]\n    P1 --> P2\n    P1 --> P3\n    P1 --> P4\n    P1 --> P5\n    P1 --> P6\n    P1 --> P7\n```\n\n- P1: [BV1q8Ks6nEfS P1 00:14]  \n- P2: [BV1q8Ks6nEfS P1 00:48]  \n- P3: [BV1q8Ks6nEfS P1 00:19]  \n- P4: [BV1q8Ks6nEfS P1 00:52]  \n- P5: [BV1q8Ks6nEfS P1 00:55]  \n- P6: [BV1q8Ks6nEfS P1 01:07]  \n- P7: [BV1q8Ks6nEfS P1 00:14]  \n\n## 功能与平台统一\n\n```mermaid\nflowchart TD\n    C1[\"统一 CLI\"]\n    PL[\"六大平台\"]\n    X[\"X (Twitter)\"]\n    YT[\"YouTube\"]\n    GH[\"GitHub\"]\n    B[\"B站\"]\n    XR[\"小红书\"]\n    CS[\"统一命令风格\"]\n    DS[\"公开可访问数据入口\"]\n    NAF[\"0 API费用\"]\n    NES[\"无需额外 MCP/浏览器\"]\n    HL[\"Headless 运行\"]\n    C1 --> PL\n    PL --> X\n    PL --> YT\n    PL --> GH\n    PL --> B\n    PL --> XR\n    C1 --> CS\n    C1 --> DS --> NAF\n    C1 --> NES --> HL\n```\n\n- C1: [BV1q8Ks6nEfS P1 01:30]  \n- PL: [BV1q8Ks6nEfS P1 01:10]  \n- X: [BV1q8Ks6nEfS P1 01:10]  \n- YT: [BV1q8Ks6nEfS P1 01:14]  \n- GH: [BV1q8Ks6nEfS P1 01:14]  \n- B: [BV1q8Ks6nEfS P1 01:15]  \n- XR: [BV1q8Ks6nEfS P1 01:15]  \n- CS: [BV1q8Ks6nEfS P1 01:30]  \n- DS: [BV1q8Ks6nEfS P1 01:51]  \n- NAF: [BV1q8Ks6nEfS P1 01:48]  \n- NES: [BV1q8Ks6nEfS P1 02:23]  \n- HL: [BV1q8Ks6nEfS P1 02:31]  \n\n## 合规与使用场景\n\n```mermaid\nflowchart TD\n    UC1[\"行业调研/竞品分析/舆情监测\"]\n    UC2[\"独立创作者选题\"]\n    UC3[\"数据科学小规模文本收集\"]\n    COMP[\"遵守平台 TOS\"]\n    LR[\"封号 / 法律风险\"]\n    PROH[\"禁止商业爬虫/大规模数据倒卖\"]\n    ETH[\"遵守伦理审查\"]\n    PRIV[\"个人数据转发需合规\"]\n    LAW[\"GDPR / 日本个人情报保护法\"]\n    REC[\"仅用于研究/非商业\"]\n    UC1 --> COMP\n    UC2 --> COMP\n    UC3 --> COMP\n    COMP --> LR\n    PROH --> LR\n    ETH --> COMP\n    PRIV --> LAW\n    REC --> COMP\n```\n\n- UC1: [BV1q8Ks6nEfS P1 02:49]  \n- UC2: [BV1q8Ks6nEfS P1 03:00]  \n- UC3: [BV1q8Ks6nEfS P1 03:08]  \n- COMP: [BV1q8Ks6nEfS P1 02:07]  \n- LR: [BV1q8Ks6nEfS P1 02:15]  \n- PROH: [BV1q8Ks6nEfS P1 03:17]  \n- ETH: [BV1q8Ks6nEfS P1 03:13]  \n- PRIV: [BV1q8Ks6nEfS P1 03:49]  \n- LAW: [BV1q8Ks6nEfS P1 03:55]  \n- REC: [BV1q8Ks6nEfS P1 04:01]  ",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    P1[\"agent rich (GitHub)\"]\n    P2[\"5.8 万+ stars\"]\n    P3[\"6月月榜第3名\"]\n    P4[\"MIT 许可证\"]\n    P5[\"Python\"]\n    P6[\"给 AI agent 装眼睛\"]\n    P7[\"开源项目\"]\n    P1 --> P2\n    P1 --> P3\n    P1 --> P4\n    P1 --> P5\n    P1 --> P6\n    P1 --> P7"
+    },
+    {
+      "title": "功能与平台统一",
+      "code": "flowchart TD\n    C1[\"统一 CLI\"]\n    PL[\"六大平台\"]\n    X[\"X (Twitter)\"]\n    YT[\"YouTube\"]\n    GH[\"GitHub\"]\n    B[\"B站\"]\n    XR[\"小红书\"]\n    CS[\"统一命令风格\"]\n    DS[\"公开可访问数据入口\"]\n    NAF[\"0 API费用\"]\n    NES[\"无需额外 MCP/浏览器\"]\n    HL[\"Headless 运行\"]\n    C1 --> PL\n    PL --> X\n    PL --> YT\n    PL --> GH\n    PL --> B\n    PL --> XR\n    C1 --> CS\n    C1 --> DS --> NAF\n    C1 --> NES --> HL"
+    },
+    {
+      "title": "合规与使用场景",
+      "code": "flowchart TD\n    UC1[\"行业调研/竞品分析/舆情监测\"]\n    UC2[\"独立创作者选题\"]\n    UC3[\"数据科学小规模文本收集\"]\n    COMP[\"遵守平台 TOS\"]\n    LR[\"封号 / 法律风险\"]\n    PROH[\"禁止商业爬虫/大规模数据倒卖\"]\n    ETH[\"遵守伦理审查\"]\n    PRIV[\"个人数据转发需合规\"]\n    LAW[\"GDPR / 日本个人情报保护法\"]\n    REC[\"仅用于研究/非商业\"]\n    UC1 --> COMP\n    UC2 --> COMP\n    UC3 --> COMP\n    COMP --> LR\n    PROH --> LR\n    ETH --> COMP\n    PRIV --> LAW\n    REC --> COMP"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T12:14:19+00:00"
+}

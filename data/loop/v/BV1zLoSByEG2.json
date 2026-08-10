@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1zLoSByEG2",
+  "title": "为什么DeepSeek V4这么强？它到底更新了啥？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1097,
+  "text": "deep sk v4拖了整整两个月\n这一次他终于来了\n但最离谱的不是他变得更强了\n而是他做到了三件不可能发生的事\n更便宜\n能读更多\n还更聪明\n这三件事不应该同时发生\n那他到底是怎么做到的呢\n我把他的论文研读了一遍\n给你讲小白的版本\n从技术上看\n这次最核心的升级有三件\n第一件叫做混合注意力机制\n听起来很复杂\n但是你可以这样理解\n以前AI每次回答问题的时候\n都要把所有的内容重新看一遍再回答你\n而deep seek v4不一样\n他先做一层总结\n再只看最关键的部分\n就像我们考试复习的时候不会重新读整本书\n而是只看课程的重点和记录下来的笔记\n那通过这个能力\n就可以让V4更容易地处理百万级别的文本\n从读一本小册子变成读一座图书馆\n第二个升级是MHC\n名字很长\n但本质很简单\n小学二年级的课本里就讲过\nAI在计算的时候\n信息是一层一层往下传的\n很容易丢失\n甚至是越算越乱\n而MHC做的事情\n就是给信息的传递增加了一套更稳定的通道\n让信息在层与层之间不易丢失\n对我们的影响就是\nAI在思考的时候不容易断片了\n体感也很明显\n它会一直记住我们之前说过的话\n那第三个升级呢是MUON优化器\n它解决的是AI怎么学习的问题\n搞过模型训练的同学都知道\n以前训练模型的时候\n就像盲人在山里找最低点\n只能一步一步的去世\n有时候还会在原地打转\n而这个优化器\n就相当于开了一个全局视角的外挂\n可以更快的找到最优路径\n这样AI在训练的过程中能更快更准\n也离最优解更近\n那这三件事加在一起\n就带来了一个非常关键的变化\n在处理超长文本的时候\nDeep seek v4\n的计算成本只有之前版本的大约1/3\n而内存的占用甚至可以降到1/10\n这就是为什么它可以做到又强又便宜\n而且deep sk v41口气还出了两个版本\n一个是pro版本\n主打极致的性能\n另一个是flash版本\n主打极致的性价比\n覆盖面更广\n对于不同使用场景和版本的深度测评\n你在看这期视频的时候\n我已经开始着手做了\n大家可以蹲一下\n后续我会把结果同步出来\n那我们再看能力层面\n在知识推理代码这些测试中\ndeep sk v4已经可以对标\n甚至接近一些顶级的闭源模型\n而flash版本在成本更低的情况下\n依然能保持非常接近的推理能力\n还有一个很多人没有注意到的点\ndeep sk v4已经可以跑在国产的GPU上了\n比如寒武纪不再完全依赖国外的芯片体系\n那这样的话\n未来估计成本还能再更低一点\n不得不说D老师这波是真的牛\n那本期视频所涉及到的资源\n还有资料也都整理成了中文版本和图文版本\n都放在了评论区\n求个点赞收藏\n最后我是元宝\n一台AI和黑科技的挖掘机\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zLoSByEG2",
+  "published_at": "1777077324",
+  "fetched_at": "2026-08-07T01:21:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 升级与优势概览\n\n## 总体升级概览 [BV1zLoSByEG2 P1 00:21]\n```mermaid\nflowchart TD\n    A1[\"核心升级三件事\"]\n    B1[\"混合注意力机制\"]\n    B2[\"MHC 稳定信息通道\"]\n    B3[\"MUON 优化器\"]\n    C1[\"更便宜\"]\n    C2[\"能读更多\"]\n    C3[\"更聪明\"]\n    D1[\"计算成本降低至 1/3\"]\n    D2[\"内存占用降至 1/10\"]\n    A1 --> B1\n    A1 --> B2\n    A1 --> B3\n    B1 --> C2\n    B2 --> C3\n    B3 --> C1\n    C1 --> D1\n    C2 --> D1\n    C3 --> D2\n```\n\n## 混合注意力机制流程 [BV1zLoSByEG2 P1 00:24]\n```mermaid\nflowchart TD\n    MA1[\"输入全文\"]\n    MA2[\"先做摘要/总结层\"]\n    MA3[\"只关注关键部分\"]\n    MA4[\"高效处理百万级文本\"]\n    MA1 --> MA2 --> MA3 --> MA4\n```\n\n## MHC 信息传递机制 [BV1zLoSByEG2 P1 01:01]\n```mermaid\nflowchart TD\n    MHC1[\"层间信息逐层传递\"]\n    MHC2[\"易丢失/乱\"]\n    MHC3[\"增加稳定通道\"]\n    MHC4[\"层间信息不易丢失\"]\n    MHC5[\"避免思考断片\"]\n    MHC1 --> MHC2 --> MHC3 --> MHC4 --> MHC5\n```\n\n## MUON 优化器训练流程 [BV1zLoSByEG2 P1 01:31]\n```mermaid\nflowchart TD\n    MU1[\"传统训练：盲人找最低点\"]\n    MU2[\"局部步进，可能原地打转\"]\n    MU3[\"MUON：全局视角外挂\"]\n    MU4[\"快速找到最优路径\"]\n    MU5[\"更快更准的训练\"]\n    MU1 --> MU2 --> MU3 --> MU4 --> MU5\n```\n\n## 成本与性能结果 [BV1zLoSByEG2 P1 01:54]\n```mermaid\nflowchart TD\n    RES1[\"计算成本 1/3\"]\n    RES2[\"内存占用 1/10\"]\n    RES3[\"更强、更便宜\"]\n    RES4[\"Pro 版：极致性能\"]\n    RES5[\"Flash 版：极致性价比\"]\n    RES6[\"国产 GPU 兼容\"]\n    RES1 --> RES3\n    RES2 --> RES3\n    RES3 --> RES4\n    RES3 --> RES5\n    RES3 --> RES6\n```",
+      "diagrams": [
+        {
+          "title": "总体升级概览",
+          "code": "flowchart TD\n    A1[\"核心升级三件事\"]\n    B1[\"混合注意力机制\"]\n    B2[\"MHC 稳定信息通道\"]\n    B3[\"MUON 优化器\"]\n    C1[\"更便宜\"]\n    C2[\"能读更多\"]\n    C3[\"更聪明\"]\n    D1[\"计算成本降低至 1/3\"]\n    D2[\"内存占用降至 1/10\"]\n    A1 --> B1\n    A1 --> B2\n    A1 --> B3\n    B1 --> C2\n    B2 --> C3\n    B3 --> C1\n    C1 --> D1\n    C2 --> D1\n    C3 --> D2"
+        },
+        {
+          "title": "混合注意力机制流程",
+          "code": "flowchart TD\n    MA1[\"输入全文\"]\n    MA2[\"先做摘要/总结层\"]\n    MA3[\"只关注关键部分\"]\n    MA4[\"高效处理百万级文本\"]\n    MA1 --> MA2 --> MA3 --> MA4"
+        },
+        {
+          "title": "MHC 信息传递机制",
+          "code": "flowchart TD\n    MHC1[\"层间信息逐层传递\"]\n    MHC2[\"易丢失/乱\"]\n    MHC3[\"增加稳定通道\"]\n    MHC4[\"层间信息不易丢失\"]\n    MHC5[\"避免思考断片\"]\n    MHC1 --> MHC2 --> MHC3 --> MHC4 --> MHC5"
+        },
+        {
+          "title": "MUON 优化器训练流程",
+          "code": "flowchart TD\n    MU1[\"传统训练：盲人找最低点\"]\n    MU2[\"局部步进，可能原地打转\"]\n    MU3[\"MUON：全局视角外挂\"]\n    MU4[\"快速找到最优路径\"]\n    MU5[\"更快更准的训练\"]\n    MU1 --> MU2 --> MU3 --> MU4 --> MU5"
+        },
+        {
+          "title": "成本与性能结果",
+          "code": "flowchart TD\n    RES1[\"计算成本 1/3\"]\n    RES2[\"内存占用 1/10\"]\n    RES3[\"更强、更便宜\"]\n    RES4[\"Pro 版：极致性能\"]\n    RES5[\"Flash 版：极致性价比\"]\n    RES6[\"国产 GPU 兼容\"]\n    RES1 --> RES3\n    RES2 --> RES3\n    RES3 --> RES4\n    RES3 --> RES5\n    RES3 --> RES6"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T01:21:26+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 升级与优势概览\n\n## 总体升级概览 [BV1zLoSByEG2 P1 00:21]\n```mermaid\nflowchart TD\n    A1[\"核心升级三件事\"]\n    B1[\"混合注意力机制\"]\n    B2[\"MHC 稳定信息通道\"]\n    B3[\"MUON 优化器\"]\n    C1[\"更便宜\"]\n    C2[\"能读更多\"]\n    C3[\"更聪明\"]\n    D1[\"计算成本降低至 1/3\"]\n    D2[\"内存占用降至 1/10\"]\n    A1 --> B1\n    A1 --> B2\n    A1 --> B3\n    B1 --> C2\n    B2 --> C3\n    B3 --> C1\n    C1 --> D1\n    C2 --> D1\n    C3 --> D2\n```\n\n## 混合注意力机制流程 [BV1zLoSByEG2 P1 00:24]\n```mermaid\nflowchart TD\n    MA1[\"输入全文\"]\n    MA2[\"先做摘要/总结层\"]\n    MA3[\"只关注关键部分\"]\n    MA4[\"高效处理百万级文本\"]\n    MA1 --> MA2 --> MA3 --> MA4\n```\n\n## MHC 信息传递机制 [BV1zLoSByEG2 P1 01:01]\n```mermaid\nflowchart TD\n    MHC1[\"层间信息逐层传递\"]\n    MHC2[\"易丢失/乱\"]\n    MHC3[\"增加稳定通道\"]\n    MHC4[\"层间信息不易丢失\"]\n    MHC5[\"避免思考断片\"]\n    MHC1 --> MHC2 --> MHC3 --> MHC4 --> MHC5\n```\n\n## MUON 优化器训练流程 [BV1zLoSByEG2 P1 01:31]\n```mermaid\nflowchart TD\n    MU1[\"传统训练：盲人找最低点\"]\n    MU2[\"局部步进，可能原地打转\"]\n    MU3[\"MUON：全局视角外挂\"]\n    MU4[\"快速找到最优路径\"]\n    MU5[\"更快更准的训练\"]\n    MU1 --> MU2 --> MU3 --> MU4 --> MU5\n```\n\n## 成本与性能结果 [BV1zLoSByEG2 P1 01:54]\n```mermaid\nflowchart TD\n    RES1[\"计算成本 1/3\"]\n    RES2[\"内存占用 1/10\"]\n    RES3[\"更强、更便宜\"]\n    RES4[\"Pro 版：极致性能\"]\n    RES5[\"Flash 版：极致性价比\"]\n    RES6[\"国产 GPU 兼容\"]\n    RES1 --> RES3\n    RES2 --> RES3\n    RES3 --> RES4\n    RES3 --> RES5\n    RES3 --> RES6\n```",
+  "diagrams": [
+    {
+      "title": "总体升级概览",
+      "code": "flowchart TD\n    A1[\"核心升级三件事\"]\n    B1[\"混合注意力机制\"]\n    B2[\"MHC 稳定信息通道\"]\n    B3[\"MUON 优化器\"]\n    C1[\"更便宜\"]\n    C2[\"能读更多\"]\n    C3[\"更聪明\"]\n    D1[\"计算成本降低至 1/3\"]\n    D2[\"内存占用降至 1/10\"]\n    A1 --> B1\n    A1 --> B2\n    A1 --> B3\n    B1 --> C2\n    B2 --> C3\n    B3 --> C1\n    C1 --> D1\n    C2 --> D1\n    C3 --> D2"
+    },
+    {
+      "title": "混合注意力机制流程",
+      "code": "flowchart TD\n    MA1[\"输入全文\"]\n    MA2[\"先做摘要/总结层\"]\n    MA3[\"只关注关键部分\"]\n    MA4[\"高效处理百万级文本\"]\n    MA1 --> MA2 --> MA3 --> MA4"
+    },
+    {
+      "title": "MHC 信息传递机制",
+      "code": "flowchart TD\n    MHC1[\"层间信息逐层传递\"]\n    MHC2[\"易丢失/乱\"]\n    MHC3[\"增加稳定通道\"]\n    MHC4[\"层间信息不易丢失\"]\n    MHC5[\"避免思考断片\"]\n    MHC1 --> MHC2 --> MHC3 --> MHC4 --> MHC5"
+    },
+    {
+      "title": "MUON 优化器训练流程",
+      "code": "flowchart TD\n    MU1[\"传统训练：盲人找最低点\"]\n    MU2[\"局部步进，可能原地打转\"]\n    MU3[\"MUON：全局视角外挂\"]\n    MU4[\"快速找到最优路径\"]\n    MU5[\"更快更准的训练\"]\n    MU1 --> MU2 --> MU3 --> MU4 --> MU5"
+    },
+    {
+      "title": "成本与性能结果",
+      "code": "flowchart TD\n    RES1[\"计算成本 1/3\"]\n    RES2[\"内存占用 1/10\"]\n    RES3[\"更强、更便宜\"]\n    RES4[\"Pro 版：极致性能\"]\n    RES5[\"Flash 版：极致性价比\"]\n    RES6[\"国产 GPU 兼容\"]\n    RES1 --> RES3\n    RES2 --> RES3\n    RES3 --> RES4\n    RES3 --> RES5\n    RES3 --> RES6"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:21:26+00:00"
+}

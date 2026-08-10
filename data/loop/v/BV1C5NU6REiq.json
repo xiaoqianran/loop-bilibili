@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1C5NU6REiq",
+  "title": "Qwen3.6-35B-A3B 本地部署实战：AI Agent、写代码、做视频，一套搞定",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2719,
+  "text": "哈喽大家好\n今天给大家介绍一个呃\n本地就是我们自己电脑部署的呃\n部署一个本地模型\n然后性能比较好的一个啊\n就是这个千万30呃\n3.63105 b a3 b\n然后它可以达到一个\n因为我我现在电脑配置是这个\n我现在我现在脑配置是5070ti\n然后是16G的一个显存\n然后32G的一个内存啊\n就是他可以达到\n那它可以达到一个嗯80T左右\n就七八十T左右的一个速率\n因为他是他虽然是35B的一个呃模型呃\n就是参数总量\n但是他每次因为他是A3B\n因它是MOE架构嘛\n所以他每次只需要激活3B的参数就可以了\n所以就非常适合这种消费级的显卡\n然后我们我们现在来看一下\n然后这边的话是我是用拉那么点\n那么那么点CPP去做的\n因为这边的话一般敲命令的话啊\n最开始敲命令啊\n然后前前前敲命令\n每次都要重新敲\n所以我外外外部coding了一个这个\n一个小的工具啊\n就是可以把这些参数啊配一下\n然后就可以让它运行了\n然后这块的话说下参数啊\n这块参数的话呃\n就是呃这上下文我配的是一百二十八八K的\n因为如果你上下文配的比较少的话\n你很难做一些啊有用的一些事情啊\n然后我大概说一下\n然后我我们大先先先先让它运行起来吧\n先它运行起来\n然后我们先呃我们我们一会儿会看两个例子啊\n一个是它外部端的一个例子\n然后一个再一个是他在agent里面\n就AI agent里面一个表现\n然后先让它运行起来\n啊稍等啊\n然后他是监听是80880端口\n然后我们先八零\n然后然后先\n然后大概让比如说我让他写个\n写一个网页版本的坦克大战\n那可以带一下它\n它的速率现在是70多\n它一会稳稳定之后\n可以达到80多的一个一个效果呃\n基本上可以维持在七八十\n所以在他的速率是非常\n就是它的性能是非常好的\n就在本地部署\n好可以看下它的文理不出性能非常好的\n而且我们上下文是是128K啊\n也不是说32K64K\n所以他优化的还是比较好的\n然后他能达到一个70多\n七十七八十的一个速率还是比较不错的\n然后这块的话可以看一下哎\n这块的大概介绍下参数啊\n参数的话你看他额这块\n因为他是MOVE加工嘛\n所以啊这个是我调的\n这是我调的27层\n然后放到了CPU测CPU\nCPU测放到27层\n然后这然后这个GPU的话\nGPU的话就直接放99\n然后调通过调这个参数来来达到一个资源\n资源利用和这个速率的一个平衡啊\n你看现在我内存是这个用21G\n然后显存用了15G啊\n他这个他这个内存和显存在会会随着你这个\n比如说你要你要做一个长任务\n然后做一个长任务之后\n任务越长\n然后数据数据数据数越多的话\n它的内存会增长\n它内存会增长\n因为你的上下文件会越来越长\n然后其他的这些什么KV缓存呀\nKB缓存就和上下文有关\nKV缓存和这个额就QQ缓存还还是是默认的\n因为因为这个你调成Q8或者Q4的话\n它会影响上下位那个处理啊\n它会影响影响上面这个上下这个精度啊\n然后模型我使用的是这个Q4的Q4量化版本\nQ四一个Q4的一个量化版本\n呃\n总总体来说性能损失不是那么大\n呃我我们一会可以对对比\n看看几个例子就行了\n然后这块的话呃\n看下这个例子啊\n看这个例子稍等太下\n看一下以后这个例子能不能玩\n然后那他然后然后他现在做完了\n然后现在现在做完了\n让我们看一下呃\n还是有点bug\n但但是总体上还是能玩的\n但是这卡这卡住了\n然后我重新进一下\n我去为什么为什么会卡住啊\n还是不错对\n只不过这个坦克卡到这里面了\n他可能这块做的还是有点问题的\n我们让它修复一下\n你看它的平均速率能达达\n能达到这个能达到这么多啊\n然后他大概就知就知道是这个什么问题了\n然后他就他他就做\n啊他其实有波动啊\n其实有波动\n他随着资源上涨的话\n它有波动\n因为它显存已经15G了\n他有波动\n但是它总体能达到一个六七十的状态\n然后这个例子我们就看到这儿\n就将这个大概\n他这个大概就是能做出来这么个效果\n然后这个例子我们先看到这\n然后再一个就是说呃\n他的本地AI agent的一个一个一个能力\n他本地AI agent的一个能力\n然后比如说我现在在那个\n我现在这个是我在让他在之前做的一个那个额\n在派\n因为我们我们只有128K的摄像文啊\n所以因为派派是个轻量级的一个AI症的\n所以我在派里面呃\n让他做一个一做一个任务啊\n就比如说让他做一个这个\n哎呦我去看一下\n就说让他去hack news上\n然后去捕获一些信息啊\n然后来最终做做成一个其实就这个任务\n这个任务\n然后让他在hahacker news身上去捕获一些信息\n然后最终用have formers去做一个视频啊\n去做一个视频\n然后呃挑相关的AI话题\n然后用用这个MMAXC下来生成生成配音啊\n生成配音\n然后其实其额他并不是用用米max模型\n它只是用MMAX的声配音\n然后模型还是他自己的能力啊\n然后我们来看一下\n他在他在edge团里面的一个表象\n然后这个是刚才他做成品的一个\n做成的一个一个视频\n然后呢你看他选了四个话题\n然后做做成一个视频\n看一下\n看下这个能力\n大家好\n欢迎来到今日AI热点\n今天是2026年7月14日\n我们来看hacker news上最热门的AI话题\n第一ZII语言创始人炮轰ANTHROPICBEN\n被ANTHROPIC收购后\n用AI2000000000美元效率对比火了\nCD code在收到用户输入前就发送了三次\n工程内容越来越逼真\n区分人工和AI创作越来越难\n这个问题没有简单答案\n16gt5.6\n我们再看另一个例子\n让他再做一个左下\n另外一个例子\n稍等啊\n把这个稍微关一下\n因为他还是挺挺耗资源的\n然后把这个退出来\n然后我让他做一个什么\n然后我们我们选用一个\n就是之前比较火的好多那个博主啊\n你看抖音上好多那个就是比较炫酷的网页啊\n它其实都是通过这种网站去做的\n我们可以让他做一个\n所以做一个类似的的一个\n然后我们可以在这复制一个呃\n先写一个吧\n比如说复制复制个提示词吧\n复制个提示词\n然后做一个做一下嘶\n然后做一下\n看他的他的他的这个前段\n他这个写代码能力到底如何\n啊等一下他要开始工作了\n让我们来看一下他的他的一个\n一会看他他的一个速率啊\n哦我刚才截了一段啊\n因为他做的还是还是做了好长时间的\n所以我把中间内容截了\n然后现在他已经做完了\n然后把服务器已经启动起来了\n然后我们来看一下他做的效果啊\n你看还是不错的还是不错的\n然后这个网站大家也可以也也可以去了解一下\n这个网站就是呃复制呃\n就是就有成品的一些提示词\n然后可以去复制\n然后可以去去做出来这么个效果啊\n对你看抖音上\n就是好多人其实就是类似于这种网站\n然后去做成了一个效果\n然后去骗赞哈\n这回就说一下\n这回就说一下好的行\n今天分享就到这里\n感谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1C5NU6REiq",
+  "published_at": "1783963818",
+  "fetched_at": "2026-08-09T03:49:10+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Qwen3.6-35B-A3B 本地部署知识图谱\n\n## 1 本地部署概览\n```mermaid\nflowchart TD\n    HW[\"硬件：RTX 3070Ti 16GB VRAM<br/>32GB RAM\"]\n    Model[\"模型：Qwen3.6-35B-A3B\"]\n    MOE[\"MOE 架构（激活 3B 参数）\"]\n    Quant[\"量化：Q4 版本\"]\n    Ctx[\"上下文长度 128K\"]\n    Rate[\"推理速率 70‑80 token/s\"]\n    Suit[\"适配消费级显卡\"]\n    Perf[\"性能良好\"]\n\n    HW --> Model\n    Model --> MOE\n    MOE --> Rate\n    Model --> Quant\n    Quant --> Rate\n    Model --> Ctx\n    Ctx --> Rate\n    Rate --> Perf\n    HW --> Suit\n    Suit --> Perf\n```\n\n## 2 参数调优与资源平衡\n```mermaid\nflowchart TD\n    Config[\"参数配置\"]\n    CPUlayers[\"CPU 层数 27\"]\n    GPULayers[\"GPU 层数 99\"]\n    MemCPU[\"CPU 内存占用 21GB\"]\n    MemGPU[\"GPU 显存占用 15GB\"]\n    Rate[\"推理速率 70‑80 token/s\"]\n    Trade[\"资源利用 ↔ 速率 平衡\"]\n    Adjust[\"调高 GPU 层数 → 速率提升\"]\n    Fluct[\"速率随资源波动\"]\n\n    Config --> CPUlayers\n    Config --> GPULayers\n    CPUlayers --> MemCPU\n    GPULayers --> MemGPU\n    MemCPU --> Trade\n    MemGPU --> Trade\n    Trade --> Rate\n    Adjust --> Rate\n    Rate --> Fluct\n```\n\n## 3 AI Agent 工作流\n```mermaid\nflowchart TD\n    TaskDef[\"任务定义：抓取 Hacker News\"]\n    Scrape[\"抓取新闻内容\"]\n    Extract[\"信息抽取与整理\"]\n    ScriptGen[\"生成脚本（文字/代码）\"]\n    VoiceGen[\"使用 MMAX 生成配音\"]\n    VideoAsm[\"视频合成\"]\n    Output[\"输出视频\"]\n    Agent[\"本地 AI Agent\"]\n\n    Agent --> TaskDef\n    TaskDef --> Scrape\n    Scrape --> Extract\n    Extract --> ScriptGen\n    ScriptGen --> VoiceGen\n    VoiceGen --> VideoAsm\n    VideoAsm --> Output\n```\n\n## 4 示例：网页坦克大战生成\n```mermaid\nflowchart TD\n    Prompt[\"用户请求：网页坦克大战\"]\n    CodeGen[\"模型生成前端代码\"]\n    Exec[\"代码执行并运行游戏\"]\n    RateObs[\"观察推理速率 70‑80 token/s\"]\n    Perf[\"游戏可玩性良好\"]\n    Adjust[\"如需提升速率，可调资源配置\"]\n    Result[\"得到可交互的网页游戏\"]\n\n    Prompt --> CodeGen\n    CodeGen --> Exec\n    Exec --> RateObs\n    RateObs --> Perf\n    Perf --> Result\n    Adjust --> RateObs\n```",
+      "diagrams": [
+        {
+          "title": "1 本地部署概览",
+          "code": "flowchart TD\n    HW[\"硬件：RTX 3070Ti 16GB VRAM<br/>32GB RAM\"]\n    Model[\"模型：Qwen3.6-35B-A3B\"]\n    MOE[\"MOE 架构（激活 3B 参数）\"]\n    Quant[\"量化：Q4 版本\"]\n    Ctx[\"上下文长度 128K\"]\n    Rate[\"推理速率 70‑80 token/s\"]\n    Suit[\"适配消费级显卡\"]\n    Perf[\"性能良好\"]\n\n    HW --> Model\n    Model --> MOE\n    MOE --> Rate\n    Model --> Quant\n    Quant --> Rate\n    Model --> Ctx\n    Ctx --> Rate\n    Rate --> Perf\n    HW --> Suit\n    Suit --> Perf"
+        },
+        {
+          "title": "2 参数调优与资源平衡",
+          "code": "flowchart TD\n    Config[\"参数配置\"]\n    CPUlayers[\"CPU 层数 27\"]\n    GPULayers[\"GPU 层数 99\"]\n    MemCPU[\"CPU 内存占用 21GB\"]\n    MemGPU[\"GPU 显存占用 15GB\"]\n    Rate[\"推理速率 70‑80 token/s\"]\n    Trade[\"资源利用 ↔ 速率 平衡\"]\n    Adjust[\"调高 GPU 层数 → 速率提升\"]\n    Fluct[\"速率随资源波动\"]\n\n    Config --> CPUlayers\n    Config --> GPULayers\n    CPUlayers --> MemCPU\n    GPULayers --> MemGPU\n    MemCPU --> Trade\n    MemGPU --> Trade\n    Trade --> Rate\n    Adjust --> Rate\n    Rate --> Fluct"
+        },
+        {
+          "title": "3 AI Agent 工作流",
+          "code": "flowchart TD\n    TaskDef[\"任务定义：抓取 Hacker News\"]\n    Scrape[\"抓取新闻内容\"]\n    Extract[\"信息抽取与整理\"]\n    ScriptGen[\"生成脚本（文字/代码）\"]\n    VoiceGen[\"使用 MMAX 生成配音\"]\n    VideoAsm[\"视频合成\"]\n    Output[\"输出视频\"]\n    Agent[\"本地 AI Agent\"]\n\n    Agent --> TaskDef\n    TaskDef --> Scrape\n    Scrape --> Extract\n    Extract --> ScriptGen\n    ScriptGen --> VoiceGen\n    VoiceGen --> VideoAsm\n    VideoAsm --> Output"
+        },
+        {
+          "title": "4 示例：网页坦克大战生成",
+          "code": "flowchart TD\n    Prompt[\"用户请求：网页坦克大战\"]\n    CodeGen[\"模型生成前端代码\"]\n    Exec[\"代码执行并运行游戏\"]\n    RateObs[\"观察推理速率 70‑80 token/s\"]\n    Perf[\"游戏可玩性良好\"]\n    Adjust[\"如需提升速率，可调资源配置\"]\n    Result[\"得到可交互的网页游戏\"]\n\n    Prompt --> CodeGen\n    CodeGen --> Exec\n    Exec --> RateObs\n    RateObs --> Perf\n    Perf --> Result\n    Adjust --> RateObs"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T03:59:06+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Qwen3.6-35B-A3B 本地部署知识图谱\n\n## 1 本地部署概览\n```mermaid\nflowchart TD\n    HW[\"硬件：RTX 3070Ti 16GB VRAM<br/>32GB RAM\"]\n    Model[\"模型：Qwen3.6-35B-A3B\"]\n    MOE[\"MOE 架构（激活 3B 参数）\"]\n    Quant[\"量化：Q4 版本\"]\n    Ctx[\"上下文长度 128K\"]\n    Rate[\"推理速率 70‑80 token/s\"]\n    Suit[\"适配消费级显卡\"]\n    Perf[\"性能良好\"]\n\n    HW --> Model\n    Model --> MOE\n    MOE --> Rate\n    Model --> Quant\n    Quant --> Rate\n    Model --> Ctx\n    Ctx --> Rate\n    Rate --> Perf\n    HW --> Suit\n    Suit --> Perf\n```\n\n## 2 参数调优与资源平衡\n```mermaid\nflowchart TD\n    Config[\"参数配置\"]\n    CPUlayers[\"CPU 层数 27\"]\n    GPULayers[\"GPU 层数 99\"]\n    MemCPU[\"CPU 内存占用 21GB\"]\n    MemGPU[\"GPU 显存占用 15GB\"]\n    Rate[\"推理速率 70‑80 token/s\"]\n    Trade[\"资源利用 ↔ 速率 平衡\"]\n    Adjust[\"调高 GPU 层数 → 速率提升\"]\n    Fluct[\"速率随资源波动\"]\n\n    Config --> CPUlayers\n    Config --> GPULayers\n    CPUlayers --> MemCPU\n    GPULayers --> MemGPU\n    MemCPU --> Trade\n    MemGPU --> Trade\n    Trade --> Rate\n    Adjust --> Rate\n    Rate --> Fluct\n```\n\n## 3 AI Agent 工作流\n```mermaid\nflowchart TD\n    TaskDef[\"任务定义：抓取 Hacker News\"]\n    Scrape[\"抓取新闻内容\"]\n    Extract[\"信息抽取与整理\"]\n    ScriptGen[\"生成脚本（文字/代码）\"]\n    VoiceGen[\"使用 MMAX 生成配音\"]\n    VideoAsm[\"视频合成\"]\n    Output[\"输出视频\"]\n    Agent[\"本地 AI Agent\"]\n\n    Agent --> TaskDef\n    TaskDef --> Scrape\n    Scrape --> Extract\n    Extract --> ScriptGen\n    ScriptGen --> VoiceGen\n    VoiceGen --> VideoAsm\n    VideoAsm --> Output\n```\n\n## 4 示例：网页坦克大战生成\n```mermaid\nflowchart TD\n    Prompt[\"用户请求：网页坦克大战\"]\n    CodeGen[\"模型生成前端代码\"]\n    Exec[\"代码执行并运行游戏\"]\n    RateObs[\"观察推理速率 70‑80 token/s\"]\n    Perf[\"游戏可玩性良好\"]\n    Adjust[\"如需提升速率，可调资源配置\"]\n    Result[\"得到可交互的网页游戏\"]\n\n    Prompt --> CodeGen\n    CodeGen --> Exec\n    Exec --> RateObs\n    RateObs --> Perf\n    Perf --> Result\n    Adjust --> RateObs\n```",
+  "diagrams": [
+    {
+      "title": "1 本地部署概览",
+      "code": "flowchart TD\n    HW[\"硬件：RTX 3070Ti 16GB VRAM<br/>32GB RAM\"]\n    Model[\"模型：Qwen3.6-35B-A3B\"]\n    MOE[\"MOE 架构（激活 3B 参数）\"]\n    Quant[\"量化：Q4 版本\"]\n    Ctx[\"上下文长度 128K\"]\n    Rate[\"推理速率 70‑80 token/s\"]\n    Suit[\"适配消费级显卡\"]\n    Perf[\"性能良好\"]\n\n    HW --> Model\n    Model --> MOE\n    MOE --> Rate\n    Model --> Quant\n    Quant --> Rate\n    Model --> Ctx\n    Ctx --> Rate\n    Rate --> Perf\n    HW --> Suit\n    Suit --> Perf"
+    },
+    {
+      "title": "2 参数调优与资源平衡",
+      "code": "flowchart TD\n    Config[\"参数配置\"]\n    CPUlayers[\"CPU 层数 27\"]\n    GPULayers[\"GPU 层数 99\"]\n    MemCPU[\"CPU 内存占用 21GB\"]\n    MemGPU[\"GPU 显存占用 15GB\"]\n    Rate[\"推理速率 70‑80 token/s\"]\n    Trade[\"资源利用 ↔ 速率 平衡\"]\n    Adjust[\"调高 GPU 层数 → 速率提升\"]\n    Fluct[\"速率随资源波动\"]\n\n    Config --> CPUlayers\n    Config --> GPULayers\n    CPUlayers --> MemCPU\n    GPULayers --> MemGPU\n    MemCPU --> Trade\n    MemGPU --> Trade\n    Trade --> Rate\n    Adjust --> Rate\n    Rate --> Fluct"
+    },
+    {
+      "title": "3 AI Agent 工作流",
+      "code": "flowchart TD\n    TaskDef[\"任务定义：抓取 Hacker News\"]\n    Scrape[\"抓取新闻内容\"]\n    Extract[\"信息抽取与整理\"]\n    ScriptGen[\"生成脚本（文字/代码）\"]\n    VoiceGen[\"使用 MMAX 生成配音\"]\n    VideoAsm[\"视频合成\"]\n    Output[\"输出视频\"]\n    Agent[\"本地 AI Agent\"]\n\n    Agent --> TaskDef\n    TaskDef --> Scrape\n    Scrape --> Extract\n    Extract --> ScriptGen\n    ScriptGen --> VoiceGen\n    VoiceGen --> VideoAsm\n    VideoAsm --> Output"
+    },
+    {
+      "title": "4 示例：网页坦克大战生成",
+      "code": "flowchart TD\n    Prompt[\"用户请求：网页坦克大战\"]\n    CodeGen[\"模型生成前端代码\"]\n    Exec[\"代码执行并运行游戏\"]\n    RateObs[\"观察推理速率 70‑80 token/s\"]\n    Perf[\"游戏可玩性良好\"]\n    Adjust[\"如需提升速率，可调资源配置\"]\n    Result[\"得到可交互的网页游戏\"]\n\n    Prompt --> CodeGen\n    CodeGen --> Exec\n    Exec --> RateObs\n    RateObs --> Perf\n    Perf --> Result\n    Adjust --> RateObs"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T03:59:06+00:00"
+}

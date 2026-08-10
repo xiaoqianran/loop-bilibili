@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1UdNF6YEbo",
+  "title": "[GODOT引擎复刻传奇02]地图一些功能展示与总结",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4713,
+  "text": "今天是2026年的7月11号\n起床啦\n来录一个视频啊\n嗯主要算已经也好多天没有录视频了\n解说给我看一下\n是\n在上一个视频还是7月2号的啊\n这个视频的话其实是来讲什么的\n来讲一个还是复刻戈多引擎\n复刻传奇的一个进度吧\n就是现在就是呃主要讲就是地图的一个精度\n因为地图呢其实还没有完全的就是复刻好\n其实还是有一些问题的\n但是呢可以也可以展示展示\n主要是\n这些视频主要是一个记录视频\n因为很多东西也是我边学\n我也不是什么高手\n也不是做游戏的\n就是纯粹的就是也是边学歌多引擎\n边去复刻这个排版城起号的一个一个过程\n可以看一下啊\n这个一个地图\n首先这是我鼠标指的\n这是歌多领擎4.7\n应该是现在是最新的\n你可以看到这是最新的\n我们双击打开\n这个可以运行一下\n你可以看到这个就是现在的一个一个情况人物啊\n有一个简单的人物啊\n可以移动\n我们把分辨率调大一点\n而且这边可以看一下\n其实我是把我是地图的话\n其实是添加了两个\n一个非天线\n一个是沃玛森林\n但是你可以看一下\n其实我认为这个地图的显示啊已经是挺好的了\n地图的显示啊已经是挺好的了\n并且的话其实这个人物移动我认为也是要听挺好的\n很跟手\n就是很跟我这个鼠标\n我鼠标你可以看到很跟鼠标\n你看可以转可以转的\n只是走这凿也可以转\n跑也是可以转的\n非常的跟鼠标\n其实呢这边相对应的一些东西我并不是把它一比一啊\n就是韩版传奇二里面的东西全部啊用歌多引擎来复现一遍\n我我是有些东西会自己加上自己的认知\n或者自己的一些一些自己的想法\n像像这个你像这个灯我是没有按照它\n没有按照他这个原来的那个显示\n我默认就是这这这样的状态\n并且的话现在这个功能其实已经被我优化了一轮了\n还可以\n其实地图的显示我认为还是可以的\n并且我加了一些天气系统\n这个白天你知道看不出什么的\n但是他会有一个就是明显的\n就是他是按照他会就是按照就是白天黑夜24小时它会变化\n晚上还是看得见\n这黑夜你可以看到\n其实我们这个状态人啊\n他是没有那个蜡烛的\n但是它本身它是有一些就是有一些能显示的范围的\n南开的贱人\n不然的话就别去\n全太黑了\n这是我自己的一些自己的设置啊想法\n白天夜晚季节神了\n这个是下雨啊\n下雨的话配配上了一些音乐\n这样的话就是挺有感觉的\n就下雨了\n这个也下雪\n其实这个学学还可以做一些歌多引擎啊\n在做这个下雪啊\n天气系统上是非常有毒贴\n就是图贴叫什么的\n就是非常有优势的\n他这个这个雪还可以做的\n正式一点\n可以在这个屋顶就是激起一个一一个雪滩\n但是我好后面可能会增加\n因为一开始第一个版本是有的\n但是我发现并不是很好\n人物的跑动还是很跟手的\n只是啊雾气其实还有一个还有一个天空不\n还有个云云的话\n其实要搭配其他的特效\n这边可以看一下的\n其实呃你像我这个我这个弹啊\n他其实是有问题的\n你没发现我这个人是可以站在这个灯上的\n很失真\n你有没有发现\n其实我现在这个虽然说歌多引擎这个编辑器啊\n我我把很多东西已经这个地图啊\n其实啊我可以讲一下这个思路的\n我并不是说完全的把这个韩版权小二的一些东西把它复刻复刻进来\n因为我的想法是怎么样的\n你不可能做到什么100%把它的把它的功能100%的搬过来\n把他的显示啊也是100%的搬过来\n因为歌多引擎我选择的这是编程语言\n是戈多脚本\n是极地脚本哦\n那个韩版传奇二或者大多数的那那种传奇开源还是传奇\n它大多数的源码是什么\nc#的那个源码\nc c c#这个编程语言很多很多的东西\n我这个是脚本\n它是语言\n也是它是那种编译型语言\n跟我的这个是不一样的\n你不可能很多东西是不一样的\n所以说呢所以其实有些东西要就是可以\n我是认为把它写诗上\n可以把它搬过来\n但允许他出错\n于是他说错\n像这个灯\n我我特意发现了这个灯是有问题的\n就是一些数据啊\n转化的过程\n这个灯是有问题的\n你可以看一下啊\n你发现啊\n其实这个蛋它应该是四格的\n像这个灯它只有三格\n明显是有问题的\n那怎么修改呢\n其实只要把这个双击双击就可以了\n再确认一下\n这个就地图啊\n地图就重载了\n其实我这边也传送的\n我我我没有去\n这边这边有个传送点\n我没有写\n没有把它写的很好\n我就懒得去测试\n啊你可以发现现在他就不能跑上去了\n像这样的话\n其实我这个编辑器里面这个这个功能我认为是比较好的\n因为如果这个功能不能说就是说老是通过\n就说什么排版传下order那个地图里面得到正确的数据再来修改\n应该是什么\n应该是已经把这个我们修改\n已经哥多引擎里\n我的思路是直接在已导出的歌多引擎里面修改\n而不是只再去韩版传奇二里面的那个地图里面\n去找到正确的一些数据的\n就是资料\n再拿这个数据资料再来我歌多引擎来予以去修正\n这个过程是很复杂的\n不如直播直直\n这直接在这个上面改是比较比较快的\n那这个其实也是比较好解答的\n你可以看到这里\n这里面有个A跟B就是我人物跑到这个A他就能传送到这个B\n我们可以试一下的\n可以试一下的\n他他这个是在这边可以试一下的\n你看这边到这边\n这是传送啊\n这个传送就相当于我自己写的一些规则了\n哎呀我我这边也不知道是具体的哪一个\n邓凯传送过来了\n到这边来了\n这个这个因为做的这个传送点比较小\n并且我这边没有标记\n所以说也并不是很好\n效果并不是很好\n还可以还可以做一个就是跨跨地图的传送\n可以看一下这个这些功能啊\n本来都应该在什么\n都应该在那个韩版传奇二的那个上面\n我直接把它在这个这个其实就是一个项目啊\n我直接放在项目里面\n直接来把它搞搞出来的\n我们就选个区呀\n怎么直接选个区域啊\n怎么选择有辨识度的区域\n现在好了就可以看一下这个效果\n这个只是稍微也是也是啊\n其实这个没什么\n至少没什么\n那可\n我也不知道啊\n刚刚写那个A在哪B了\n那个A在哪边啊\nhe在这边\n你看一下能不能跨地图啊\nAK啊\n你看这个地图并不是飞天城的地图啊\n这个是这个是什么沃玛森林的地图\n并且这个传送是单向的\n就简单的看一下\n其他的话其实都差不多\n其实呢这个现在这个功能的话\n我认为还是可以的\n但是实际上还有很多东西可以优化\n还是可以很多东西可以优化\n因为我添加了很多我自己的一些想法\n可以有很多东西可以优化\n尤其这边讲一下\n其实这个我我讲一下我自己的认知啊\n你说我为什么选歌多这个引擎\n歌多这个引擎的话\n其实他是有好处的\n好处其实你如果你写过代码\n其实你写你正常点\n你写过代码去自己学习过\n写自己学习过\n学习编程这个一个过程就知道你要选择的语言一定要什么用的人多\n用的人多才会资料多\n视频多查\n你能搜索到的有用的资料多\n能教你的人多\n那科多引擎其实是在众多游戏引擎里面\n我感觉是最符合的\n并且他还是开源的嗯\n他用的人很多\n有很多教程你也能学习到\n你能通过很多东西能找到很多\n就是就是能通过这些资料能解决很多问题\n就是这个就是一个很好的选择的方式\n而不是说你去选一些这个哼也没几个人能用的这个东西\n学习的一个过程\n最怕什么\n不是叫最怕最怕不是绝不是怕\n是最怕你遇到问题解决不了\n不是怕遇到问题\n而是你遇到问题解决不了怎么办哦\n现在有AI\n但是你也你也不要全相信AI\n什么问题都能解决对呀\n什么问题都能解决\n就太扯了\n我跟你讲\n还是有些问题是很难解决\n要靠一些人的一些参与辅助他\n所以说戈多引擎在这个他的资料是非常多的\n可以搞一下\n并且的话他他的很我是在我第一第一指7月2号拿的视频\n我讲了他这个很多东西啊\n它底层是C加加\n他的很多思维纯粹的就是C加加\n就很多思维就是C加加的一种思维\n而我恰巧是会一点点C加加的一些代码的\n所以说我感觉上手还是比较快的\n还有一点就是说什么呢\n其实歌多领钱\n他这个他他这个引擎非常好\n他这个引擎非常好\n真的是一个比较好的一个开源项目社区啊\n什么都比较好\n并且它它这个引擎它支持3D\n它它支持3D3D其实我认为也是一个很重要的一个东西\n因为现在大家其实啊我了解下来\n其实很多这个你想这个游戏里面\n这个游戏里面其实我会用到3D的一些\n3D的一些一些一些一些东西\n其实我为什么会换这个引擎\n就是其实我是需要一个一个能有2D引擎跟3D引擎的一个\n那这个这个游戏引擎来搞一下\n这个虽然说这个这个游戏是是一个2D的游戏\n但是它里面会用到3D的一些其他的东西来做一些东西\n效果啊什么这个是非常除了这个是降维打击啊\n我认为这个东西就是降维打击非常好哈\n非常好\n很多的很多的概念也是比较好的\n而且它其实你可以看到更多引擎\n它它整体我感觉比那个这个韩版传奇二\n他那个游戏稳\n我感觉非常流畅流畅\n不怎么卡\n你没卡\n而且这他它的效果他能做到这样折\n很跟我的鼠标\n我鼠标哎\n这边右边右边这边这边这边这边这边这边你可以发现非非常跟数\n跟我鼠标非常跟我鼠标就很跟手\n当然这是我自己优化的一个结果\n并不是说他随便就可以有这个结果\n但是很跟手\n不管是走\n你看这很跟手\n非常跟手\n非常非常跟手\n我感觉这个东西还是可以的\n所以说戈多引擎还是可以的\n当然了\n这我本身也是一个新手\n也谈不上什么呃什么啊\n什么什么基石啊\n很很厉害的一个能传授知识给你\n没没没没没达到这种水准\n很多东西我也在边学边看\n自己就记录一下\n其实7月2号到今天\n11号已经有差不多一个多星期了\n现在就是时间黄昏的一个时间\n他自己天色会自己编的变暗变暗\n然后再完全去进入黑夜\n黑夜再变到白天\n就是模拟的一个就是一整天的白天到黑夜\n黑夜到白天\n那回归正传\n就说其实我2号到11号这几天其实有时间就搞一下\n有时间就搞一下\n其实有些东西有有有长进的\n有长进的\n有些东西比我想象的其实要复杂\n其实要复杂一点\n其实是要复杂一点的\n其实是要复杂一点的\n有些东西没有这个游戏啊\n其实没有想象的那么简单\n一张地图都已经快\n已经搞了很长时间\n但大致其实地图已经差不多了\n但是你可以看到其实这个画面他好像有些闪闪烁\n其实还是有问题\n并不是很好\n还要优化还要优化还要优化\n主要啊是一个我认为学习啊歌多的话\n其实我感觉第一个你不能把它就是在这个时代\n我认为不要不要最好也最好你是学习过C加加的\n这样的话你你对这个呃歌多引擎的认知我认为是比较好的\n因为你这样的话\n其实你能你能更好的用AI去操控它\n操控它\n其实现在AI写代码我也是用的\n我并不认为我我多厉害\n其实很大一部分也要归功于AI写代码\n他他来帮我实现\n我只是辅\n我只是辅助的一个作用\n但实际上人是要参与进去的\n而且人的话其实我认为更多的话就是说你不能让AI替你去思考\n你要把你思考过的东西让AI帮你去实施\n实现它\nAI帮你去思考\n是我认为AI在思考的\n有些东西是绝大部分东西都是很很挫的\n很差的\n而且你很多东西其实你很多东西AI写的代码也我个人认为是比较差的\n你要把你的一些思考跟他讲\n才能把这个代码控制住\n不然的话是非常非常差的\n这代码非常非常差\n非常非常差\n有你你这你写的小项目不多的话\n代码量不多的话还可以看看\n但是这个项目一旦大起来\n这个代码是很差的\nAI写的代码非常差\n而且自身的话\n其实我认为更多的是还是要花时间去解决问题\n花时间自己自己要思考这个这些问题怎么解决啊\n可不是啊\n期望着AI帮你解决AI很多东西\n我认为它解决不AIG很多问题他解决不了很多问题\n他解决不了\n你像我这个做这种复刻\n很多问题都是新的\n很多问题都是新的\n很多新问题他根本一点一点办法都没有\n很多问题\n新的问题他一点办法都没有\n但是你想反过来另另外一种情况\n就是说你有一个大的项目去找bug啊什么的\n从当中你又大的一个项目从当中去实现\n去修改一些功能\n他这种这方面很厉害\n但是你重新去用一个东西\n重新复刻一些东西\n就我认为是也是有问题的\n当然这这只是我的一些想法了\n我看一下时间时间已经很长了\n就这样吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UdNF6YEbo",
+  "published_at": "1783772522",
+  "fetched_at": "2026-08-07T05:10:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 引擎复刻传奇项目知识图谱\n\n## 总体概览\n```mermaid\nflowchart TD\n    Start[\"复刻戈多引擎传奇项目\"]\n    Tools[\"使用Godot 4.7 + GDScript\"]\n    MapDisplay[\"地图显示已达可接受水平\"]\n    CharacterControl[\"人物移动跟手\"]\n    WeatherSystem[\"天气系统（昼夜、雨、雪）\"]\n    Issues[\"仍有问题（灯光、传送点、闪烁）\"]\n    Optimization[\"后续优化空间\"]\n    Outcome[\"记录学习过程\"]\n    Start --> Tools\n    Start --> MapDisplay\n    Start --> CharacterControl\n    Start --> WeatherSystem\n    MapDisplay --> Issues\n    WeatherSystem --> Issues\n    Issues --> Optimization\n    Optimization --> Outcome\n```\n\n## 天气系统细节\n```mermaid\nflowchart TD\n    WeatherSystem[\"天气系统\"]\n    DayNightCycle[\"昼夜24h循环\"]\n    Rain[\"雨\"]\n    Snow[\"雪\"]\n    Audio[\"配套音效\"]\n    Visibility[\"夜间可见范围\"]\n    Settings[\"自定义设置\"]\n    Effects[\"特效（云、雾）\"]\n    WeatherSystem --> DayNightCycle\n    WeatherSystem --> Rain\n    WeatherSystem --> Snow\n    Rain --> Audio\n    Snow --> Audio\n    DayNightCycle --> Visibility\n    Settings --> Effects\n    Effects --> Visibility\n```\n\n## 开发工作流与数据转换\n```mermaid\nflowchart TD\n    OriginalLegend[\"韩版传奇二源码 (C#)\"]\n    DataConversion[\"数据转换过程\"]\n    GodotEngine[\"Godot (GDScript)\"]\n    MapEdit[\"在Godot编辑器直接修改\"]\n    IssueFix[\"修复灯光格数错误\"]\n    TestRun[\"运行并测试传送点\"]\n    Optimization[\"持续优化\"]\n    Documentation[\"记录视频\"]\n    OriginalLegend --> DataConversion\n    DataConversion --> GodotEngine\n    GodotEngine --> MapEdit\n    MapEdit --> IssueFix\n    IssueFix --> TestRun\n    TestRun --> Optimization\n    Optimization --> Documentation\n```\n\n## 选择 Godot 引擎的理由\n```mermaid\nflowchart TD\n    Decision[\"综合考虑\"]\n    EngineChoice[\"选择Godot引擎\"]\n    OpenSource[\"开源\"]\n    Community[\"社区资料丰富\"]\n    Language[\"GDScript (类C++)\"]\n    MultiDim[\"支持2D+3D\"]\n    LearningCurve[\"上手快\"]\n    AIHelper[\"AI辅助编码\"]\n    Decision --> EngineChoice\n    EngineChoice --> OpenSource\n    EngineChoice --> Community\n    EngineChoice --> Language\n    EngineChoice --> MultiDim\n    EngineChoice --> LearningCurve\n    EngineChoice --> AIHelper\n```",
+      "diagrams": [
+        {
+          "title": "总体概览",
+          "code": "flowchart TD\n    Start[\"复刻戈多引擎传奇项目\"]\n    Tools[\"使用Godot 4.7 + GDScript\"]\n    MapDisplay[\"地图显示已达可接受水平\"]\n    CharacterControl[\"人物移动跟手\"]\n    WeatherSystem[\"天气系统（昼夜、雨、雪）\"]\n    Issues[\"仍有问题（灯光、传送点、闪烁）\"]\n    Optimization[\"后续优化空间\"]\n    Outcome[\"记录学习过程\"]\n    Start --> Tools\n    Start --> MapDisplay\n    Start --> CharacterControl\n    Start --> WeatherSystem\n    MapDisplay --> Issues\n    WeatherSystem --> Issues\n    Issues --> Optimization\n    Optimization --> Outcome"
+        },
+        {
+          "title": "天气系统细节",
+          "code": "flowchart TD\n    WeatherSystem[\"天气系统\"]\n    DayNightCycle[\"昼夜24h循环\"]\n    Rain[\"雨\"]\n    Snow[\"雪\"]\n    Audio[\"配套音效\"]\n    Visibility[\"夜间可见范围\"]\n    Settings[\"自定义设置\"]\n    Effects[\"特效（云、雾）\"]\n    WeatherSystem --> DayNightCycle\n    WeatherSystem --> Rain\n    WeatherSystem --> Snow\n    Rain --> Audio\n    Snow --> Audio\n    DayNightCycle --> Visibility\n    Settings --> Effects\n    Effects --> Visibility"
+        },
+        {
+          "title": "开发工作流与数据转换",
+          "code": "flowchart TD\n    OriginalLegend[\"韩版传奇二源码 (C#)\"]\n    DataConversion[\"数据转换过程\"]\n    GodotEngine[\"Godot (GDScript)\"]\n    MapEdit[\"在Godot编辑器直接修改\"]\n    IssueFix[\"修复灯光格数错误\"]\n    TestRun[\"运行并测试传送点\"]\n    Optimization[\"持续优化\"]\n    Documentation[\"记录视频\"]\n    OriginalLegend --> DataConversion\n    DataConversion --> GodotEngine\n    GodotEngine --> MapEdit\n    MapEdit --> IssueFix\n    IssueFix --> TestRun\n    TestRun --> Optimization\n    Optimization --> Documentation"
+        },
+        {
+          "title": "选择 Godot 引擎的理由",
+          "code": "flowchart TD\n    Decision[\"综合考虑\"]\n    EngineChoice[\"选择Godot引擎\"]\n    OpenSource[\"开源\"]\n    Community[\"社区资料丰富\"]\n    Language[\"GDScript (类C++)\"]\n    MultiDim[\"支持2D+3D\"]\n    LearningCurve[\"上手快\"]\n    AIHelper[\"AI辅助编码\"]\n    Decision --> EngineChoice\n    EngineChoice --> OpenSource\n    EngineChoice --> Community\n    EngineChoice --> Language\n    EngineChoice --> MultiDim\n    EngineChoice --> LearningCurve\n    EngineChoice --> AIHelper"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T05:11:02+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 引擎复刻传奇项目知识图谱\n\n## 总体概览\n```mermaid\nflowchart TD\n    Start[\"复刻戈多引擎传奇项目\"]\n    Tools[\"使用Godot 4.7 + GDScript\"]\n    MapDisplay[\"地图显示已达可接受水平\"]\n    CharacterControl[\"人物移动跟手\"]\n    WeatherSystem[\"天气系统（昼夜、雨、雪）\"]\n    Issues[\"仍有问题（灯光、传送点、闪烁）\"]\n    Optimization[\"后续优化空间\"]\n    Outcome[\"记录学习过程\"]\n    Start --> Tools\n    Start --> MapDisplay\n    Start --> CharacterControl\n    Start --> WeatherSystem\n    MapDisplay --> Issues\n    WeatherSystem --> Issues\n    Issues --> Optimization\n    Optimization --> Outcome\n```\n\n## 天气系统细节\n```mermaid\nflowchart TD\n    WeatherSystem[\"天气系统\"]\n    DayNightCycle[\"昼夜24h循环\"]\n    Rain[\"雨\"]\n    Snow[\"雪\"]\n    Audio[\"配套音效\"]\n    Visibility[\"夜间可见范围\"]\n    Settings[\"自定义设置\"]\n    Effects[\"特效（云、雾）\"]\n    WeatherSystem --> DayNightCycle\n    WeatherSystem --> Rain\n    WeatherSystem --> Snow\n    Rain --> Audio\n    Snow --> Audio\n    DayNightCycle --> Visibility\n    Settings --> Effects\n    Effects --> Visibility\n```\n\n## 开发工作流与数据转换\n```mermaid\nflowchart TD\n    OriginalLegend[\"韩版传奇二源码 (C#)\"]\n    DataConversion[\"数据转换过程\"]\n    GodotEngine[\"Godot (GDScript)\"]\n    MapEdit[\"在Godot编辑器直接修改\"]\n    IssueFix[\"修复灯光格数错误\"]\n    TestRun[\"运行并测试传送点\"]\n    Optimization[\"持续优化\"]\n    Documentation[\"记录视频\"]\n    OriginalLegend --> DataConversion\n    DataConversion --> GodotEngine\n    GodotEngine --> MapEdit\n    MapEdit --> IssueFix\n    IssueFix --> TestRun\n    TestRun --> Optimization\n    Optimization --> Documentation\n```\n\n## 选择 Godot 引擎的理由\n```mermaid\nflowchart TD\n    Decision[\"综合考虑\"]\n    EngineChoice[\"选择Godot引擎\"]\n    OpenSource[\"开源\"]\n    Community[\"社区资料丰富\"]\n    Language[\"GDScript (类C++)\"]\n    MultiDim[\"支持2D+3D\"]\n    LearningCurve[\"上手快\"]\n    AIHelper[\"AI辅助编码\"]\n    Decision --> EngineChoice\n    EngineChoice --> OpenSource\n    EngineChoice --> Community\n    EngineChoice --> Language\n    EngineChoice --> MultiDim\n    EngineChoice --> LearningCurve\n    EngineChoice --> AIHelper\n```",
+  "diagrams": [
+    {
+      "title": "总体概览",
+      "code": "flowchart TD\n    Start[\"复刻戈多引擎传奇项目\"]\n    Tools[\"使用Godot 4.7 + GDScript\"]\n    MapDisplay[\"地图显示已达可接受水平\"]\n    CharacterControl[\"人物移动跟手\"]\n    WeatherSystem[\"天气系统（昼夜、雨、雪）\"]\n    Issues[\"仍有问题（灯光、传送点、闪烁）\"]\n    Optimization[\"后续优化空间\"]\n    Outcome[\"记录学习过程\"]\n    Start --> Tools\n    Start --> MapDisplay\n    Start --> CharacterControl\n    Start --> WeatherSystem\n    MapDisplay --> Issues\n    WeatherSystem --> Issues\n    Issues --> Optimization\n    Optimization --> Outcome"
+    },
+    {
+      "title": "天气系统细节",
+      "code": "flowchart TD\n    WeatherSystem[\"天气系统\"]\n    DayNightCycle[\"昼夜24h循环\"]\n    Rain[\"雨\"]\n    Snow[\"雪\"]\n    Audio[\"配套音效\"]\n    Visibility[\"夜间可见范围\"]\n    Settings[\"自定义设置\"]\n    Effects[\"特效（云、雾）\"]\n    WeatherSystem --> DayNightCycle\n    WeatherSystem --> Rain\n    WeatherSystem --> Snow\n    Rain --> Audio\n    Snow --> Audio\n    DayNightCycle --> Visibility\n    Settings --> Effects\n    Effects --> Visibility"
+    },
+    {
+      "title": "开发工作流与数据转换",
+      "code": "flowchart TD\n    OriginalLegend[\"韩版传奇二源码 (C#)\"]\n    DataConversion[\"数据转换过程\"]\n    GodotEngine[\"Godot (GDScript)\"]\n    MapEdit[\"在Godot编辑器直接修改\"]\n    IssueFix[\"修复灯光格数错误\"]\n    TestRun[\"运行并测试传送点\"]\n    Optimization[\"持续优化\"]\n    Documentation[\"记录视频\"]\n    OriginalLegend --> DataConversion\n    DataConversion --> GodotEngine\n    GodotEngine --> MapEdit\n    MapEdit --> IssueFix\n    IssueFix --> TestRun\n    TestRun --> Optimization\n    Optimization --> Documentation"
+    },
+    {
+      "title": "选择 Godot 引擎的理由",
+      "code": "flowchart TD\n    Decision[\"综合考虑\"]\n    EngineChoice[\"选择Godot引擎\"]\n    OpenSource[\"开源\"]\n    Community[\"社区资料丰富\"]\n    Language[\"GDScript (类C++)\"]\n    MultiDim[\"支持2D+3D\"]\n    LearningCurve[\"上手快\"]\n    AIHelper[\"AI辅助编码\"]\n    Decision --> EngineChoice\n    EngineChoice --> OpenSource\n    EngineChoice --> Community\n    EngineChoice --> Language\n    EngineChoice --> MultiDim\n    EngineChoice --> LearningCurve\n    EngineChoice --> AIHelper"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:11:02+00:00"
+}

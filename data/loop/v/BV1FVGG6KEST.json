@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1FVGG6KEST",
+  "title": "Boo Engine 一款全新的游戏引擎(13)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 395,
+  "text": "我胡汉三又回来了\n距离上期视频的发布已经过去一个多月了\n并且咱们的第一个引擎测试版\n1.0.0也早就发布了\n今天宗宝给大家同步一下\n一直在不断开发的1.0.1版本\n目前啥进度\n先来说说咱们多平台支持情况\n宗保又新增了两个平台\n鸿蒙和LINUX\n鸿蒙的话\n宗保编辑器版本使用的是6.1\n同时使用的手机是华为的畅享系列\n系统是鸿蒙\n6.1\n调试的话\n需要直接使用真机模拟器是不行的\n点击运行\n直接在手机上查看实际的运行效果\nLINUX宗保装的系统是乌班图26\n窗口系统是微软\n至于X11的话\n理论上应该也是支持的\n直接运行看效果\n除此之外\n宗宝太多时间花在重构渲染这一块\n主要是宗保为了支持一个特性渲染画面\n在多个窗口之间切换\n也就是在不打断渲染运行情况下\n我可以随意切换窗口\n整体就是这些了\n咱们目前已经支持五个平台的适配了\n接下来宗宝会去做一个有代表性的游戏\n发布到这五个平台\n让大家去体验",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1FVGG6KEST",
+  "published_at": "1785590665",
+  "fetched_at": "2026-08-07T21:25:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Boo Engine 多平台与渲染特性概览\n\n## 版本进展概览\n```mermaid\nflowchart TD\n    V100[\"1.0.0 发布\"] --> V101[\"1.0.1 开发中\"]\n    GAP[\"已过去 >1 个月\"] --> V100\n```\n<!-- [BV1FVGG6KEST P1 00:05] [BV1FVGG6KEST P1 00:08] -->\n\n## 多平台支持细节\n```mermaid\nflowchart LR\n    BASE[\"已支持平台\"] --> HONGMENG[\"鸿蒙 (编辑器6.1)\"]\n    BASE --> LINUX[\"Linux (Ubuntu 26)\"]\n    HONGMENG --> HM_PHONE[\"华为畅享系列手机\"]\n    HONGMENG --> HM_DEBUG[\"需真机调试\"]\n    LINUX --> WIN_SYS[\"Windows 窗口系统\"]\n    LINUX --> X11[\"X11 理论支持\"]\n    BASE --> TOTAL[\"共5平台\"]\n```\n<!-- [BV1FVGG6KEST P1 00:13] [BV1FVGG6KEST P1 00:35] [BV1FVGG6KEST P1 00:17] [BV1FVGG6KEST P1 00:19] [BV1FVGG6KEST P1 00:22] [BV1FVGG6KEST P1 00:24] [BV1FVGG6KEST P1 00:37] [BV1FVGG6KEST P1 00:40] [BV1FVGG6KEST P1 01:00] -->\n\n## 渲染重构特性\n```mermaid\nflowchart TD\n    REFACTOR[\"渲染重构\"] --> REASON[\"支持特性渲染画面\"]\n    REFACTOR --> SWITCH[\"窗口切换不打断渲染\"]\n    SWITCH --> ABILITY[\"随意切换窗口\"]\n```\n<!-- [BV1FVGG6KEST P1 00:51] [BV1FVGG6KEST P1 00:54] [BV1FVGG6KEST P1 00:57] -->\n\n## 开发计划与发布\n```mermaid\nflowchart LR\n    DEMO[\"代表性游戏开发\"] --> DEPLOY[\"发布到5平台\"]\n    DEPLOY --> USER[\"用户体验\"]\n    USER --> NEXT[\"后续计划\"]\n```\n<!-- [BV1FVGG6KEST P1 01:02] [BV1FVGG6KEST P1 01:04] [BV1FVGG6KEST P1 01:05] -->",
+      "diagrams": [
+        {
+          "title": "版本进展概览",
+          "code": "flowchart TD\n    V100[\"1.0.0 发布\"] --> V101[\"1.0.1 开发中\"]\n    GAP[\"已过去 >1 个月\"] --> V100"
+        },
+        {
+          "title": "多平台支持细节",
+          "code": "flowchart LR\n    BASE[\"已支持平台\"] --> HONGMENG[\"鸿蒙 (编辑器6.1)\"]\n    BASE --> LINUX[\"Linux (Ubuntu 26)\"]\n    HONGMENG --> HM_PHONE[\"华为畅享系列手机\"]\n    HONGMENG --> HM_DEBUG[\"需真机调试\"]\n    LINUX --> WIN_SYS[\"Windows 窗口系统\"]\n    LINUX --> X11[\"X11 理论支持\"]\n    BASE --> TOTAL[\"共5平台\"]"
+        },
+        {
+          "title": "渲染重构特性",
+          "code": "flowchart TD\n    REFACTOR[\"渲染重构\"] --> REASON[\"支持特性渲染画面\"]\n    REFACTOR --> SWITCH[\"窗口切换不打断渲染\"]\n    SWITCH --> ABILITY[\"随意切换窗口\"]"
+        },
+        {
+          "title": "开发计划与发布",
+          "code": "flowchart LR\n    DEMO[\"代表性游戏开发\"] --> DEPLOY[\"发布到5平台\"]\n    DEPLOY --> USER[\"用户体验\"]\n    USER --> NEXT[\"后续计划\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T21:26:23+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Boo Engine 多平台与渲染特性概览\n\n## 版本进展概览\n```mermaid\nflowchart TD\n    V100[\"1.0.0 发布\"] --> V101[\"1.0.1 开发中\"]\n    GAP[\"已过去 >1 个月\"] --> V100\n```\n<!-- [BV1FVGG6KEST P1 00:05] [BV1FVGG6KEST P1 00:08] -->\n\n## 多平台支持细节\n```mermaid\nflowchart LR\n    BASE[\"已支持平台\"] --> HONGMENG[\"鸿蒙 (编辑器6.1)\"]\n    BASE --> LINUX[\"Linux (Ubuntu 26)\"]\n    HONGMENG --> HM_PHONE[\"华为畅享系列手机\"]\n    HONGMENG --> HM_DEBUG[\"需真机调试\"]\n    LINUX --> WIN_SYS[\"Windows 窗口系统\"]\n    LINUX --> X11[\"X11 理论支持\"]\n    BASE --> TOTAL[\"共5平台\"]\n```\n<!-- [BV1FVGG6KEST P1 00:13] [BV1FVGG6KEST P1 00:35] [BV1FVGG6KEST P1 00:17] [BV1FVGG6KEST P1 00:19] [BV1FVGG6KEST P1 00:22] [BV1FVGG6KEST P1 00:24] [BV1FVGG6KEST P1 00:37] [BV1FVGG6KEST P1 00:40] [BV1FVGG6KEST P1 01:00] -->\n\n## 渲染重构特性\n```mermaid\nflowchart TD\n    REFACTOR[\"渲染重构\"] --> REASON[\"支持特性渲染画面\"]\n    REFACTOR --> SWITCH[\"窗口切换不打断渲染\"]\n    SWITCH --> ABILITY[\"随意切换窗口\"]\n```\n<!-- [BV1FVGG6KEST P1 00:51] [BV1FVGG6KEST P1 00:54] [BV1FVGG6KEST P1 00:57] -->\n\n## 开发计划与发布\n```mermaid\nflowchart LR\n    DEMO[\"代表性游戏开发\"] --> DEPLOY[\"发布到5平台\"]\n    DEPLOY --> USER[\"用户体验\"]\n    USER --> NEXT[\"后续计划\"]\n```\n<!-- [BV1FVGG6KEST P1 01:02] [BV1FVGG6KEST P1 01:04] [BV1FVGG6KEST P1 01:05] -->",
+  "diagrams": [
+    {
+      "title": "版本进展概览",
+      "code": "flowchart TD\n    V100[\"1.0.0 发布\"] --> V101[\"1.0.1 开发中\"]\n    GAP[\"已过去 >1 个月\"] --> V100"
+    },
+    {
+      "title": "多平台支持细节",
+      "code": "flowchart LR\n    BASE[\"已支持平台\"] --> HONGMENG[\"鸿蒙 (编辑器6.1)\"]\n    BASE --> LINUX[\"Linux (Ubuntu 26)\"]\n    HONGMENG --> HM_PHONE[\"华为畅享系列手机\"]\n    HONGMENG --> HM_DEBUG[\"需真机调试\"]\n    LINUX --> WIN_SYS[\"Windows 窗口系统\"]\n    LINUX --> X11[\"X11 理论支持\"]\n    BASE --> TOTAL[\"共5平台\"]"
+    },
+    {
+      "title": "渲染重构特性",
+      "code": "flowchart TD\n    REFACTOR[\"渲染重构\"] --> REASON[\"支持特性渲染画面\"]\n    REFACTOR --> SWITCH[\"窗口切换不打断渲染\"]\n    SWITCH --> ABILITY[\"随意切换窗口\"]"
+    },
+    {
+      "title": "开发计划与发布",
+      "code": "flowchart LR\n    DEMO[\"代表性游戏开发\"] --> DEPLOY[\"发布到5平台\"]\n    DEPLOY --> USER[\"用户体验\"]\n    USER --> NEXT[\"后续计划\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T21:26:23+00:00"
+}

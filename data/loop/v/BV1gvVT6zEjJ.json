@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1gvVT6zEjJ",
+  "title": "雷军神了，mimo模型降低99%，直接token自由！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 457,
+  "text": "雷军衔了小米MIO史诗级降价\ntoken额度大幅度提升\n虽然我是二游博主\n但也是经常需要AI写项目\n现在好了\n用不完根本用不完\n终于token自由了\n我的龙虾河马也可以随便跑了\n我们看token play年计划\nlight版本一年有492亿\n标准版本有1320亿\n虽然用V2.5pro模型是两倍用量\n但依然很多\n我每天大概2亿积分使用\n一年下来最多800多亿积分\n如果你是学生\n直接选择light\n然后工作党就这个标准即可\n而max基本就是为团队使用\n根本用不完\n再看一下降价有多恐怖吓人\n直接99%输入输出\n比deep sec v4pro还要便宜\n再看token plan\n等效token恐怖如斯啊\n再看看这百万token计划\n这波有50多万人申请人民币\n原来是6500万\n不得不说这个营销非常值\n然后现在的API收费是这样\n我本来还在纠结养马养不起\n现在token自由了\n另外小米MIO有个适配度问题\n汇报400\n我这撸了个工具\n可以解决大部分工具的使用问题\n可以看到大部分平台都可以解决\n然后链接我发到评论区",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gvVT6zEjJ",
+  "published_at": "1779817370",
+  "fetched_at": "2026-08-07T06:22:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 小米 MIO 模型 token 计划与使用指南\n\n## Token 计划总览\n```mermaid\nflowchart TD\n    L1[\"Light 版<br/>年 token 额度：492 亿\"] -->|适合| S1[\"学生\"]\n    S2[\"Standard 版<br/>年 token 额度：1320 亿\"] -->|适合| W1[\"工作党\"]\n    M1[\"Max 版<br/>面向团队\"] -->|适合| T1[\"团队\"]\n    V2[\"V2.5 pro 模型\"] -->|使用量翻倍| D1[\"每日约 2 亿积分\"]\n    D1 -->|一年累计| Y1[\"≈800 亿积分\"]\n```\n\n## 用户选择决策图\n```mermaid\nflowchart TD\n    Start[\"你属于哪类用户？\"] -->|学生| Choice1[\"选择 Light 版\"]\n    Start -->|工作党| Choice2[\"选择 Standard 版\"]\n    Start -->|团队| Choice3[\"选择 Max 版\"]\n    Choice1 --> Result1[\"基本满足需求\"]\n    Choice2 --> Result2[\"满足日常工作需求\"]\n    Choice3 --> Result3[\"大规模使用，基本用不完\"]\n```\n\n## 成本降幅对比\n```mermaid\nflowchart TD\n    Orig[\"原始 token 成本\"] --> Red99[\"降价 99%\"]\n    Red99 --> NewCost[\"当前成本\"]\n    DeepSec[\"DeepSec V4 Pro 成本\"] --> Compare[\"比 DeepSec V4 Pro 更低\"]\n    NewCost --> Compare\n```\n\n## 兼容性问题与工具解决方案\n```mermaid\nflowchart TD\n    Issue[\"MIO 适配度问题\"] --> Report[\"报告 400\"]\n    Report --> Tool[\"自研工具\"]\n    Tool --> Solve[\"解决大部分平台使用问题\"]\n    Solve --> Link[\"链接已放评论区\"]\n```",
+      "diagrams": [
+        {
+          "title": "Token 计划总览",
+          "code": "flowchart TD\n    L1[\"Light 版<br/>年 token 额度：492 亿\"] -->|适合| S1[\"学生\"]\n    S2[\"Standard 版<br/>年 token 额度：1320 亿\"] -->|适合| W1[\"工作党\"]\n    M1[\"Max 版<br/>面向团队\"] -->|适合| T1[\"团队\"]\n    V2[\"V2.5 pro 模型\"] -->|使用量翻倍| D1[\"每日约 2 亿积分\"]\n    D1 -->|一年累计| Y1[\"≈800 亿积分\"]"
+        },
+        {
+          "title": "用户选择决策图",
+          "code": "flowchart TD\n    Start[\"你属于哪类用户？\"] -->|学生| Choice1[\"选择 Light 版\"]\n    Start -->|工作党| Choice2[\"选择 Standard 版\"]\n    Start -->|团队| Choice3[\"选择 Max 版\"]\n    Choice1 --> Result1[\"基本满足需求\"]\n    Choice2 --> Result2[\"满足日常工作需求\"]\n    Choice3 --> Result3[\"大规模使用，基本用不完\"]"
+        },
+        {
+          "title": "成本降幅对比",
+          "code": "flowchart TD\n    Orig[\"原始 token 成本\"] --> Red99[\"降价 99%\"]\n    Red99 --> NewCost[\"当前成本\"]\n    DeepSec[\"DeepSec V4 Pro 成本\"] --> Compare[\"比 DeepSec V4 Pro 更低\"]\n    NewCost --> Compare"
+        },
+        {
+          "title": "兼容性问题与工具解决方案",
+          "code": "flowchart TD\n    Issue[\"MIO 适配度问题\"] --> Report[\"报告 400\"]\n    Report --> Tool[\"自研工具\"]\n    Tool --> Solve[\"解决大部分平台使用问题\"]\n    Solve --> Link[\"链接已放评论区\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T06:22:29+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 小米 MIO 模型 token 计划与使用指南\n\n## Token 计划总览\n```mermaid\nflowchart TD\n    L1[\"Light 版<br/>年 token 额度：492 亿\"] -->|适合| S1[\"学生\"]\n    S2[\"Standard 版<br/>年 token 额度：1320 亿\"] -->|适合| W1[\"工作党\"]\n    M1[\"Max 版<br/>面向团队\"] -->|适合| T1[\"团队\"]\n    V2[\"V2.5 pro 模型\"] -->|使用量翻倍| D1[\"每日约 2 亿积分\"]\n    D1 -->|一年累计| Y1[\"≈800 亿积分\"]\n```\n\n## 用户选择决策图\n```mermaid\nflowchart TD\n    Start[\"你属于哪类用户？\"] -->|学生| Choice1[\"选择 Light 版\"]\n    Start -->|工作党| Choice2[\"选择 Standard 版\"]\n    Start -->|团队| Choice3[\"选择 Max 版\"]\n    Choice1 --> Result1[\"基本满足需求\"]\n    Choice2 --> Result2[\"满足日常工作需求\"]\n    Choice3 --> Result3[\"大规模使用，基本用不完\"]\n```\n\n## 成本降幅对比\n```mermaid\nflowchart TD\n    Orig[\"原始 token 成本\"] --> Red99[\"降价 99%\"]\n    Red99 --> NewCost[\"当前成本\"]\n    DeepSec[\"DeepSec V4 Pro 成本\"] --> Compare[\"比 DeepSec V4 Pro 更低\"]\n    NewCost --> Compare\n```\n\n## 兼容性问题与工具解决方案\n```mermaid\nflowchart TD\n    Issue[\"MIO 适配度问题\"] --> Report[\"报告 400\"]\n    Report --> Tool[\"自研工具\"]\n    Tool --> Solve[\"解决大部分平台使用问题\"]\n    Solve --> Link[\"链接已放评论区\"]\n```",
+  "diagrams": [
+    {
+      "title": "Token 计划总览",
+      "code": "flowchart TD\n    L1[\"Light 版<br/>年 token 额度：492 亿\"] -->|适合| S1[\"学生\"]\n    S2[\"Standard 版<br/>年 token 额度：1320 亿\"] -->|适合| W1[\"工作党\"]\n    M1[\"Max 版<br/>面向团队\"] -->|适合| T1[\"团队\"]\n    V2[\"V2.5 pro 模型\"] -->|使用量翻倍| D1[\"每日约 2 亿积分\"]\n    D1 -->|一年累计| Y1[\"≈800 亿积分\"]"
+    },
+    {
+      "title": "用户选择决策图",
+      "code": "flowchart TD\n    Start[\"你属于哪类用户？\"] -->|学生| Choice1[\"选择 Light 版\"]\n    Start -->|工作党| Choice2[\"选择 Standard 版\"]\n    Start -->|团队| Choice3[\"选择 Max 版\"]\n    Choice1 --> Result1[\"基本满足需求\"]\n    Choice2 --> Result2[\"满足日常工作需求\"]\n    Choice3 --> Result3[\"大规模使用，基本用不完\"]"
+    },
+    {
+      "title": "成本降幅对比",
+      "code": "flowchart TD\n    Orig[\"原始 token 成本\"] --> Red99[\"降价 99%\"]\n    Red99 --> NewCost[\"当前成本\"]\n    DeepSec[\"DeepSec V4 Pro 成本\"] --> Compare[\"比 DeepSec V4 Pro 更低\"]\n    NewCost --> Compare"
+    },
+    {
+      "title": "兼容性问题与工具解决方案",
+      "code": "flowchart TD\n    Issue[\"MIO 适配度问题\"] --> Report[\"报告 400\"]\n    Report --> Tool[\"自研工具\"]\n    Tool --> Solve[\"解决大部分平台使用问题\"]\n    Solve --> Link[\"链接已放评论区\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:22:29+00:00"
+}

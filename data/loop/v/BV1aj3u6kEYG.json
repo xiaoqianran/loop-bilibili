@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1aj3u6kEYG",
+  "title": "AI建模生成8方向人物帧动画",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 923,
+  "text": "零软件基础的人是怎么制作八方向人物动画的\n首先我纯属好奇\n来试一下常见的换皮方法\n我从H上下载了这组免费的白膜\n像这样的免费素材\n在unity素材商店也是可以找到的\n这组素材包含八方向\n待机奔跑跳跃\n为了匹配这些白模\n我生成了一个二次元黄毛\n然后让codex给我换皮\n在不使用control net的前提下完成这样的任务是很难的\n不过我还是让他试一试\n这是他第一次给我的结果\n据codex解释\n他觉得这个任务他做不了\n所以他看了我的二次元黄毛\n然后决定用代码给我手搓了一个\n我说你还是用图片生成试试吧\n那么这就是最终结果了\n只能说换皮这件事情比我想象的难\n如果搭建一套开源模型加control net加IP adapter的工作流\n或许可以尝试一下\n但今天就先点到为止了\n那么制作八方向人物有没有啥替代方法呢\n我先把刚才的二次元做成了TPOS\n接着到triple生成了3D模型\n第一次看到2D人物变成3D\n而且它还原的也不错\n心里还是有一点震撼的\n这模型加上动作\n然后从八个角度截图\n不就是八方向了吗\n但当我给模型绑上几个动作后\n出现了非常离谱的bug\n好好的二次元怎么就成半身不遂了呢\n我把二次元模型下载到本地\n然后丢给codex\n问他咋整\ncodex说他有办法\n原来在早些时候\n我们制作了一个导演台\n里面都是网上下载的免费3D动作库\n我从动作库里挑了几个给codex\n经过一些友好的沟通\n我不知道他是怎么做的\n明明白魔的身形和我的黄毛差别很大\n但他就是给我绑上了二次元\n又活蹦乱跳了\n接下来我让他给我做了一个一键导出八方向序列帧的功能\n我可以调整俯视角度\n像素化程度\n还有三宣二程度\n然后一键导出所有动作\n所有方向序列帧\n这就是最后的结果了\n不仔细看\n甚至会以为这还是3D模型\n像素风的就差了一点\n体内仍然有像素在疯狂乱窜\n仍然让人想到那个蜗牛像素画的创作过程就是那么特殊\n画画的人一边在画布里点像素\n另一边还有一个缩小图\n让你能实时掌握画面的最终观感\n这就是像素语言\n它不是一个高清图\n缩放一下就能搞出来的\n那么本期视频就到这里\n下次我会详细分享我最常用的视频生成动画的详细流程和注意事项\n并且把这个导演台工具完善后分享出来\n我们下期视频见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1aj3u6kEYG",
+  "published_at": "1784955751",
+  "fetched_at": "2026-08-09T23:10:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI建模生成8方向人物帧动画 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A[\"获取免费白膜素材（8方向）\"] --> B[\"生成二次元黄毛角色\"]\n    B --> C[\"尝试 Codex 换皮\"]\n    C --> D[\"Codex 代码手搓备选\"]\n    C --> E[\"建议：开源模型 + ControlNet + IP‑Adapter\"]\n    B --> F[\"TPOS → Triple 生成 3D 模型\"]\n    F --> G[\"绑定动作并出现异常\"]\n    G --> H[\"导演台 + 免费 3D 动作库\"]\n    H --> I[\"Codex 将二次元模型绑定到动作\"]\n    I --> J[\"一键导出八方向序列帧\"]\n    J --> K[\"可调俯视角、像素化、三宣二程度\"]\n```\n[BV1aj3u6kEYG P1 00:06]  \n[BV1aj3u6kEYG P1 00:18]  \n[BV1aj3u6kEYG P1 00:30]  \n[BV1aj3u6kEYG P1 00:42]  \n[BV1aj3u6kEYG P1 00:53]  \n[BV1aj3u6kEYG P1 01:07]  \n[BV1aj3u6kEYG P1 01:20]  \n[BV1aj3u6kEYG P1 01:36]  \n[BV1aj3u6kEYG P1 01:40]\n\n## 换皮方法流程\n\n```mermaid\nflowchart LR\n    A[\"准备二次元黄毛角色\"] --> B[\"调用 Codex 换皮\"]\n    B -->|任务不可完成| C[\"Codex 手动编写换皮代码\"]\n    B -->|建议方案| D[\"使用开源模型 + ControlNet + IP‑Adapter\"]\n    C --> E[\"生成最终换皮结果\"]\n```\n[BV1aj3u6kEYG P1 00:18]  \n[BV1aj3u6kEYG P1 00:30]  \n[BV1aj3u6kEYG P1 00:36]  \n[BV1aj3u6kEYG P1 00:42]\n\n## 3D 模型转 2D 八方向帧序列\n\n```mermaid\nflowchart TD\n    A[\"二次元角色 → TPOS\"] --> B[\"Triple 生成 3D 模型\"]\n    B --> C[\"为模型绑定动作\"]\n    C -->|出现异常| D[\"下载模型本地 → 交给 Codex\"]\n    D --> E[\"导演台：加载免费 3D 动作库\"]\n    E --> F[\"Codex 绑定二次元模型到动作\"]\n    F --> G[\"从八个视角截图 → 形成八方向帧\"]\n```\n[BV1aj3u6kEYG P1 00:53]  \n[BV1aj3u6kEYG P1 01:07]  \n[BV1aj3u6kEYG P1 01:13]  \n[BV1aj3u6kEYG P1 01:20]  \n[BV1aj3u6kEYG P1 01:36]  \n[BV1aj3u6kEYG P1 01:04]\n\n## 导出参数与像素化调节\n\n```mermaid\nflowchart LR\n    A[\"一键导出八方向序列帧功能\"] --> B[\"调节俯视角度\"]\n    A --> C[\"调节像素化程度\"]\n    A --> D[\"调节三宣二程度\"]\n    B --> E[\"导出所有动作的所有方向帧\"]\n    C --> E\n    D --> E\n```\n[BV1aj3u6kEYG P1 01:40]  \n[BV1aj3u6kEYG P1 01:42]  \n[BV1aj3u6kEYG P1 01:43]  \n[BV1aj3u6kEYG P1 01:44]  \n[BV1aj3u6kEYG P1 01:46]",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"获取免费白膜素材（8方向）\"] --> B[\"生成二次元黄毛角色\"]\n    B --> C[\"尝试 Codex 换皮\"]\n    C --> D[\"Codex 代码手搓备选\"]\n    C --> E[\"建议：开源模型 + ControlNet + IP‑Adapter\"]\n    B --> F[\"TPOS → Triple 生成 3D 模型\"]\n    F --> G[\"绑定动作并出现异常\"]\n    G --> H[\"导演台 + 免费 3D 动作库\"]\n    H --> I[\"Codex 将二次元模型绑定到动作\"]\n    I --> J[\"一键导出八方向序列帧\"]\n    J --> K[\"可调俯视角、像素化、三宣二程度\"]"
+        },
+        {
+          "title": "换皮方法流程",
+          "code": "flowchart LR\n    A[\"准备二次元黄毛角色\"] --> B[\"调用 Codex 换皮\"]\n    B -->|任务不可完成| C[\"Codex 手动编写换皮代码\"]\n    B -->|建议方案| D[\"使用开源模型 + ControlNet + IP‑Adapter\"]\n    C --> E[\"生成最终换皮结果\"]"
+        },
+        {
+          "title": "3D 模型转 2D 八方向帧序列",
+          "code": "flowchart TD\n    A[\"二次元角色 → TPOS\"] --> B[\"Triple 生成 3D 模型\"]\n    B --> C[\"为模型绑定动作\"]\n    C -->|出现异常| D[\"下载模型本地 → 交给 Codex\"]\n    D --> E[\"导演台：加载免费 3D 动作库\"]\n    E --> F[\"Codex 绑定二次元模型到动作\"]\n    F --> G[\"从八个视角截图 → 形成八方向帧\"]"
+        },
+        {
+          "title": "导出参数与像素化调节",
+          "code": "flowchart LR\n    A[\"一键导出八方向序列帧功能\"] --> B[\"调节俯视角度\"]\n    A --> C[\"调节像素化程度\"]\n    A --> D[\"调节三宣二程度\"]\n    B --> E[\"导出所有动作的所有方向帧\"]\n    C --> E\n    D --> E"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T23:11:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI建模生成8方向人物帧动画 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A[\"获取免费白膜素材（8方向）\"] --> B[\"生成二次元黄毛角色\"]\n    B --> C[\"尝试 Codex 换皮\"]\n    C --> D[\"Codex 代码手搓备选\"]\n    C --> E[\"建议：开源模型 + ControlNet + IP‑Adapter\"]\n    B --> F[\"TPOS → Triple 生成 3D 模型\"]\n    F --> G[\"绑定动作并出现异常\"]\n    G --> H[\"导演台 + 免费 3D 动作库\"]\n    H --> I[\"Codex 将二次元模型绑定到动作\"]\n    I --> J[\"一键导出八方向序列帧\"]\n    J --> K[\"可调俯视角、像素化、三宣二程度\"]\n```\n[BV1aj3u6kEYG P1 00:06]  \n[BV1aj3u6kEYG P1 00:18]  \n[BV1aj3u6kEYG P1 00:30]  \n[BV1aj3u6kEYG P1 00:42]  \n[BV1aj3u6kEYG P1 00:53]  \n[BV1aj3u6kEYG P1 01:07]  \n[BV1aj3u6kEYG P1 01:20]  \n[BV1aj3u6kEYG P1 01:36]  \n[BV1aj3u6kEYG P1 01:40]\n\n## 换皮方法流程\n\n```mermaid\nflowchart LR\n    A[\"准备二次元黄毛角色\"] --> B[\"调用 Codex 换皮\"]\n    B -->|任务不可完成| C[\"Codex 手动编写换皮代码\"]\n    B -->|建议方案| D[\"使用开源模型 + ControlNet + IP‑Adapter\"]\n    C --> E[\"生成最终换皮结果\"]\n```\n[BV1aj3u6kEYG P1 00:18]  \n[BV1aj3u6kEYG P1 00:30]  \n[BV1aj3u6kEYG P1 00:36]  \n[BV1aj3u6kEYG P1 00:42]\n\n## 3D 模型转 2D 八方向帧序列\n\n```mermaid\nflowchart TD\n    A[\"二次元角色 → TPOS\"] --> B[\"Triple 生成 3D 模型\"]\n    B --> C[\"为模型绑定动作\"]\n    C -->|出现异常| D[\"下载模型本地 → 交给 Codex\"]\n    D --> E[\"导演台：加载免费 3D 动作库\"]\n    E --> F[\"Codex 绑定二次元模型到动作\"]\n    F --> G[\"从八个视角截图 → 形成八方向帧\"]\n```\n[BV1aj3u6kEYG P1 00:53]  \n[BV1aj3u6kEYG P1 01:07]  \n[BV1aj3u6kEYG P1 01:13]  \n[BV1aj3u6kEYG P1 01:20]  \n[BV1aj3u6kEYG P1 01:36]  \n[BV1aj3u6kEYG P1 01:04]\n\n## 导出参数与像素化调节\n\n```mermaid\nflowchart LR\n    A[\"一键导出八方向序列帧功能\"] --> B[\"调节俯视角度\"]\n    A --> C[\"调节像素化程度\"]\n    A --> D[\"调节三宣二程度\"]\n    B --> E[\"导出所有动作的所有方向帧\"]\n    C --> E\n    D --> E\n```\n[BV1aj3u6kEYG P1 01:40]  \n[BV1aj3u6kEYG P1 01:42]  \n[BV1aj3u6kEYG P1 01:43]  \n[BV1aj3u6kEYG P1 01:44]  \n[BV1aj3u6kEYG P1 01:46]",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"获取免费白膜素材（8方向）\"] --> B[\"生成二次元黄毛角色\"]\n    B --> C[\"尝试 Codex 换皮\"]\n    C --> D[\"Codex 代码手搓备选\"]\n    C --> E[\"建议：开源模型 + ControlNet + IP‑Adapter\"]\n    B --> F[\"TPOS → Triple 生成 3D 模型\"]\n    F --> G[\"绑定动作并出现异常\"]\n    G --> H[\"导演台 + 免费 3D 动作库\"]\n    H --> I[\"Codex 将二次元模型绑定到动作\"]\n    I --> J[\"一键导出八方向序列帧\"]\n    J --> K[\"可调俯视角、像素化、三宣二程度\"]"
+    },
+    {
+      "title": "换皮方法流程",
+      "code": "flowchart LR\n    A[\"准备二次元黄毛角色\"] --> B[\"调用 Codex 换皮\"]\n    B -->|任务不可完成| C[\"Codex 手动编写换皮代码\"]\n    B -->|建议方案| D[\"使用开源模型 + ControlNet + IP‑Adapter\"]\n    C --> E[\"生成最终换皮结果\"]"
+    },
+    {
+      "title": "3D 模型转 2D 八方向帧序列",
+      "code": "flowchart TD\n    A[\"二次元角色 → TPOS\"] --> B[\"Triple 生成 3D 模型\"]\n    B --> C[\"为模型绑定动作\"]\n    C -->|出现异常| D[\"下载模型本地 → 交给 Codex\"]\n    D --> E[\"导演台：加载免费 3D 动作库\"]\n    E --> F[\"Codex 绑定二次元模型到动作\"]\n    F --> G[\"从八个视角截图 → 形成八方向帧\"]"
+    },
+    {
+      "title": "导出参数与像素化调节",
+      "code": "flowchart LR\n    A[\"一键导出八方向序列帧功能\"] --> B[\"调节俯视角度\"]\n    A --> C[\"调节像素化程度\"]\n    A --> D[\"调节三宣二程度\"]\n    B --> E[\"导出所有动作的所有方向帧\"]\n    C --> E\n    D --> E"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T23:11:54+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1rtTc6tEqd",
+  "title": "159. 如何可视化MTP？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1224,
+  "text": "今天的问题是如何可视化MTP\n也就是多token预测\n我们先来回想一下\n如何可视化传统的transformer呢\n假设现在我们的训练语料中只包含四个token\n分别是T1T2T三和T4\n按照我们之前的思路\n首先把它们作词嵌入\n得到矩阵X接着经过投影得到QKV3个矩阵\n把Q和K的转置相乘\n相当于做内积\n得到这里的注意力分数矩阵再和V相乘\n加权平均后得到输出矩阵O接着送入FN\n也就是前馈网络经历先变宽再变窄的特征变换\n最后经过一个词表投影\n我们在每一个token的位置上\n都能得到一个针对下一个词的概率预测\n这就是传统的多层transformer的计算流程\n而在MTP的设计中\n它的主模型和这个传统的transformer\n是完全一样的\n接下来MTP的核心不同点来了\n就是它在主模型的下方挂载了额外的MTP模块\n并且要强调MTP模块是单层的transformer\n因而不会造成过大负担\n假设我们现在有两个MTP模块\n也就是MTP模块一和MTP模块二\n我们来看看它们是怎么运转的\n这里有一个非常关键的概念\n叫做串行依赖\n也就是说MTP模块的计算必须要依赖主模型\n最后一层的输出\n这里的X就是主模型\n最后一层在送入此表投影前的隐藏状态\n现在我们把主模型输出的这个X的前三行\n拿出来去和T2T3T四的词嵌入做拼接\n为什么要拿前三行\n而不是全部四行呢\n因为MTP模块一的任务是预测下下个词\n在位置一\n我们用T1的特征拼接T2去预测T3\n在位置二\n我们用T1T2的特征拼接T3去预测T4\n以此类推\n我们把这前三行特征和T2T3T四的词嵌入\n沿着列的维度进行拼接\n虽然拼接之后特征宽度翻倍了\n但整体的结构依然是手稿上画的三行\n形状变长了怎么办\n不用担心\n我们立刻用一个投影矩阵把它压窄\n重新变回原来的三行X\n接着送入MTP模块一\n这个单层的transformer\n经过一模一样的QKV和自注意力计算\n在输出端\n我们得到了针对T3T4和T5的概率预测\n因为这里的T5不存在\n所以最后这一行的预测不计入损失\n同理对于MTP模块二\n他的任务是预测未来第三个词\n它同样存在串行依赖\n必须要等MTP模块一算完才能开始\n我们把MTP模块一输出的前两行去和T3\nT4的词嵌入做拼接投影\n注意到没有\n因为要预测更远的未来\n这次我们不仅去掉了T1\n连T2也去掉了整个计算流程里\n只剩下了两个token\n经过拼接投影\n送入MTP模块二的单层transformer\n最终我们得到了对T4和T5的预测\n当然这里的T5依然不存在不计算损失\n听到这里\n我们可视化MTP的要诀就可以总结为三点\n第一主模型是多层的\n但MTP模块是单层的\n第二它们之间存在着串行依赖\n必须要先算出多层主模型的最后一层隐藏状态\nX才能把他送入MTP模块一\n第三随着MTP模块深度的递增\n参与词嵌入和实际计算损失的token数量\n每一个MTP模块都会减少一个\n掌握了这三点多\ntoken预测的可视化逻辑就全部理通了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1rtTc6tEqd",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

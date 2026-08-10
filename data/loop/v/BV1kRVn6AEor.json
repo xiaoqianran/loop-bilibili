@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1kRVn6AEor",
+  "title": "API版DeepSeek尝鲜，百万tokens仅一元？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1233,
+  "text": "充了一块钱来体验一下deep sic的API版本\n看看能用多久怎么样吧\n减小API密钥之后\n我们先来试一下flash版本\n请自我介绍一下\n速度不错啊\n非常快\n只不过没有收费计划呃\n这个有点假了\n我让他推荐一个压缩图片网站\n因为这边需要压缩一下图片\n把PNG转成JPG\n但注意我没开联网搜索\n唉结果震惊我的是\n他居然直接写一个\n但是我这边打断了他\n防止消耗token\n然后我这边再复制粘贴一下\n拦不住他\n他还是自己写了一个\n那看来token保不住了\n只能让他写\n那我们这边来到vs code\n新建一个文件叫test点HTML\n然后粘贴代码500多行\n看起来不错\n访问local host test点HTML\n哎看起来不错啊\nUI挺精美\n挺现代化\n它甚至还有图标来试试\n这边有些图片素材刚好等会就要放到网站里\n哎貌似只能转换一张啊\n有点缺点\n那就不演了\n再发一个提示词\n让他直接加上多文件上传功能\n导出的时候导出ZZIP\n这边不小心把思考打开了\n这个思考的真快啊\n来看一下\n这边还没有记录到消耗多少\n而消耗了0.1元\n0.01元离谱吧\n哇这个生成速度真是快到飞起\n都已经开始卡顿了\n已经写到JS了\n我们这边复制粘贴\n我去1400多行\n感觉一分钟不到就生成了\n我们再次刷新一下哇\n这次UI一下子变得好看了好多\n再次上传哇\n多文件真的可以调节压缩比率\n速度也非常快\n这边激动的鼠标怎么开始发抖了\n哎鼠标又抖了\n来放大看一下\n感觉效果不错\n对比一下\n其实这个没啥好对比的\n主要是看看DVC和UI写的能力怎么样\n毕竟转换用的都是那套逻辑\n然后这边居然只耗费了四分钱\n离谱吧\n然后这边呃我用了一会儿\n用了快半天了\n还剩0.36元\n离谱吧\n还有主要是辅助编码\n这边我顺便又把这个给修改了一下\n然后增加更多功能\n不仅可以转换JPG\n还能VIP\n还有PNG上传一个\n上传几个试试\n这边能调节质量\n好再来看一下\n这里还能调节比例\n已经变成图片编编辑器了\n都快比例真能用\n而且还有翻转功能\n翻转图片\n你看梯子到右边了\n然后这边我也直接部署到了网站上\n你们只需要访问p f i c infinity free app\n点com photo exchange\n点HTML就可以直接来到这个页面\n然后呢上传文件\n这个都是在本地处理的\n非常安全啊\n所以速度取决于你的本地设备\n多选择一点来测试一下\n这里还有重命令功能\nVIVP调节到90%\n然后给每一个图片都能调节比例\n还能自定义比例\n我直接自定义一个细长的\n哎这里还有优美的动画图片\n没有放大手\n这个服务器上速度稍微慢一点\n然后这上面甚至有主题啊\n我都不知道他什么时候偷偷加的\n直接下载全部速度秒下呀\n因为这毕竟是本地处理\n看一看名字都一样\n这个不建议直接在压缩包里打开\n你看这个比例对吧\n特别是细长的那个\n这是在压缩包里打开\n所以卡了一下\n总之DBC和API版本比官网领先的太多\n而且价格实惠\n并且有命中缓存\n它不仅能省token\n而且还能省钱",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1kRVn6AEor",
+  "published_at": "1780204223",
+  "fetched_at": "2026-08-06T21:50:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek API 体验知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"充值1元体验\"]\n    B[\"API密钥\"]\n    C[\"调用Flash版\"]\n    D[\"生成速度快\"]\n    E[\"费用低\"]\n    F[\"本地处理安全\"]\n    G[\"多功能图片编辑\"]\n    H[\"部署到网站\"]\n    A --> B\n    B --> C\n    C --> D\n    C --> E\n    C --> F\n    F --> G\n    G --> H\n```\n<!-- [BV1kRVn6AEor P1 00:00] [BV1kRVn6AEor P1 02:01] [BV1kRVn6AEor P1 03:05] [BV1kRVn6AEor P1 04:07] [BV1kRVn6AEor P1 03:26] -->\n\n## 使用流程\n```mermaid\nflowchart LR\n    S1[\"充值1元\"]\n    S2[\"获取API密钥\"]\n    S3[\"调用Flash版API\"]\n    S4[\"请求压缩PNG转JPG\"]\n    S5[\"生成HTML代码\"]\n    S6[\"在VS Code新建test.html\"]\n    S7[\"本地预览\"]\n    S8[\"添加多文件上传\"]\n    S9[\"调节压缩比率\"]\n    S10[\"部署至InfinityFree\"]\n    S11[\"访问页面上传文件\"]\n    S12[\"本地处理完成\"]\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9 --> S10 --> S11 --> S12\n```\n<!-- [BV1kRVn6AEor P1 00:00] [BV1kRVn6AEor P1 00:12] [BV1kRVn6AEor P1 00:19] [BV1kRVn6AEor P1 00:54] [BV1kRVn6AEor P1 00:44] [BV1kRVn6AEor P1 01:32] [BV1kRVn6AEor P1 04:20] [BV1kRVn6AEor P1 03:53] [BV1kRVn6AEor P1 04:05] [BV1kRVn6AEor P1 04:07] -->\n\n## 成本与消耗\n```mermaid\nflowchart TD\n    C1[\"0.01元/0.1元消耗\"]\n    C2[\"4分钱已用\"]\n    C3[\"剩余0.36元\"]\n    C4[\"价格实惠\"]\n    C5[\"省token\"]\n    C6[\"省钱\"]\n    C7[\"无收费计划\"]\n    C8[\"假设收费\"]\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8\n```\n<!-- [BV1kRVn6AEor P1 01:53] [BV1kRVn6AEor P1 03:05] [BV1kRVn6AEor P1 03:16] [BV1kRVn6AEor P1 05:18] [BV1kRVn6AEor P1 05:20] [BV1kRVn6AEor P1 05:22] [BV1kRVn6AEor P1 00:14] [BV1kRVn6AEor P1 00:16] -->\n\n## 功能特性\n```mermaid\nflowchart TD\n    F1[\"单图压缩PNG→JPG\"]\n    F2[\"多文件上传\"]\n    F3[\"调节质量\"]\n    F4[\"调节比例\"]\n    F5[\"翻转图片\"]\n    F6[\"动画效果\"]\n    F7[\"主题切换\"]\n    F8[\"下载全部\"]\n    F9[\"安全本地处理\"]\n    F10[\"自定义比例\"]\n    F11[\"VIP功能\"]\n    F12[\"PNG上传\"]\n    F1 --> F2 --> F3 --> F4 --> F5 --> F6 --> F7 --> F8 --> F9 --> F10 --> F11 --> F12\n```\n<!-- [BV1kRVn6AEor P1 00:21] [BV1kRVn6AEor P1 02:23] [BV1kRVn6AEor P1 04:20] [BV1kRVn6AEor P1 03:40] [BV1kRVn6AEor P1 03:50] [BV1kRVn6AEor P1 04:32] [BV1kRVn6AEor P1 04:41] [BV1kRVn6AEor P1 04:45] [BV1kRVn6AEor P1 04:07] [BV1kRVn6AEor P1 04:26] [BV1kRVn6AEor P1 03:27] [BV1kRVn6AEor P1 03:28] -->\n\n## 性能表现\n```mermaid\nflowchart LR\n    P1[\"生成速度快\"]\n    P2[\"UI精美\"]\n    P3[\"出现卡顿\"]\n    P4[\"生成JS代码\"]\n    P5[\"多文件压缩比率调节\"]\n    P6[\"鼠标抖动\"]\n    P7[\"本地设备决定速度\"]\n    P8[\"动画流畅\"]\n    P1 --> P2\n    P1 --> P3\n    P1 --> P4\n    P4 --> P5\n    P5 --> P6\n    P6 --> P7\n    P2 --> P8\n```\n<!-- [BV1kRVn6AEor P1 02:01] [BV1kRVn6AEor P1 01:06] [BV1kRVn6AEor P1 02:06] [BV1kRVn6AEor P1 02:07] [BV1kRVn6AEor P1 02:23] [BV1kRVn6AEor P1 02:35] [BV1kRVn6AEor P1 04:08] [BV1kRVn6AEor P1 04:34] -->",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"充值1元体验\"]\n    B[\"API密钥\"]\n    C[\"调用Flash版\"]\n    D[\"生成速度快\"]\n    E[\"费用低\"]\n    F[\"本地处理安全\"]\n    G[\"多功能图片编辑\"]\n    H[\"部署到网站\"]\n    A --> B\n    B --> C\n    C --> D\n    C --> E\n    C --> F\n    F --> G\n    G --> H"
+        },
+        {
+          "title": "使用流程",
+          "code": "flowchart LR\n    S1[\"充值1元\"]\n    S2[\"获取API密钥\"]\n    S3[\"调用Flash版API\"]\n    S4[\"请求压缩PNG转JPG\"]\n    S5[\"生成HTML代码\"]\n    S6[\"在VS Code新建test.html\"]\n    S7[\"本地预览\"]\n    S8[\"添加多文件上传\"]\n    S9[\"调节压缩比率\"]\n    S10[\"部署至InfinityFree\"]\n    S11[\"访问页面上传文件\"]\n    S12[\"本地处理完成\"]\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9 --> S10 --> S11 --> S12"
+        },
+        {
+          "title": "成本与消耗",
+          "code": "flowchart TD\n    C1[\"0.01元/0.1元消耗\"]\n    C2[\"4分钱已用\"]\n    C3[\"剩余0.36元\"]\n    C4[\"价格实惠\"]\n    C5[\"省token\"]\n    C6[\"省钱\"]\n    C7[\"无收费计划\"]\n    C8[\"假设收费\"]\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8"
+        },
+        {
+          "title": "功能特性",
+          "code": "flowchart TD\n    F1[\"单图压缩PNG→JPG\"]\n    F2[\"多文件上传\"]\n    F3[\"调节质量\"]\n    F4[\"调节比例\"]\n    F5[\"翻转图片\"]\n    F6[\"动画效果\"]\n    F7[\"主题切换\"]\n    F8[\"下载全部\"]\n    F9[\"安全本地处理\"]\n    F10[\"自定义比例\"]\n    F11[\"VIP功能\"]\n    F12[\"PNG上传\"]\n    F1 --> F2 --> F3 --> F4 --> F5 --> F6 --> F7 --> F8 --> F9 --> F10 --> F11 --> F12"
+        },
+        {
+          "title": "性能表现",
+          "code": "flowchart LR\n    P1[\"生成速度快\"]\n    P2[\"UI精美\"]\n    P3[\"出现卡顿\"]\n    P4[\"生成JS代码\"]\n    P5[\"多文件压缩比率调节\"]\n    P6[\"鼠标抖动\"]\n    P7[\"本地设备决定速度\"]\n    P8[\"动画流畅\"]\n    P1 --> P2\n    P1 --> P3\n    P1 --> P4\n    P4 --> P5\n    P5 --> P6\n    P6 --> P7\n    P2 --> P8"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T21:50:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek API 体验知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"充值1元体验\"]\n    B[\"API密钥\"]\n    C[\"调用Flash版\"]\n    D[\"生成速度快\"]\n    E[\"费用低\"]\n    F[\"本地处理安全\"]\n    G[\"多功能图片编辑\"]\n    H[\"部署到网站\"]\n    A --> B\n    B --> C\n    C --> D\n    C --> E\n    C --> F\n    F --> G\n    G --> H\n```\n<!-- [BV1kRVn6AEor P1 00:00] [BV1kRVn6AEor P1 02:01] [BV1kRVn6AEor P1 03:05] [BV1kRVn6AEor P1 04:07] [BV1kRVn6AEor P1 03:26] -->\n\n## 使用流程\n```mermaid\nflowchart LR\n    S1[\"充值1元\"]\n    S2[\"获取API密钥\"]\n    S3[\"调用Flash版API\"]\n    S4[\"请求压缩PNG转JPG\"]\n    S5[\"生成HTML代码\"]\n    S6[\"在VS Code新建test.html\"]\n    S7[\"本地预览\"]\n    S8[\"添加多文件上传\"]\n    S9[\"调节压缩比率\"]\n    S10[\"部署至InfinityFree\"]\n    S11[\"访问页面上传文件\"]\n    S12[\"本地处理完成\"]\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9 --> S10 --> S11 --> S12\n```\n<!-- [BV1kRVn6AEor P1 00:00] [BV1kRVn6AEor P1 00:12] [BV1kRVn6AEor P1 00:19] [BV1kRVn6AEor P1 00:54] [BV1kRVn6AEor P1 00:44] [BV1kRVn6AEor P1 01:32] [BV1kRVn6AEor P1 04:20] [BV1kRVn6AEor P1 03:53] [BV1kRVn6AEor P1 04:05] [BV1kRVn6AEor P1 04:07] -->\n\n## 成本与消耗\n```mermaid\nflowchart TD\n    C1[\"0.01元/0.1元消耗\"]\n    C2[\"4分钱已用\"]\n    C3[\"剩余0.36元\"]\n    C4[\"价格实惠\"]\n    C5[\"省token\"]\n    C6[\"省钱\"]\n    C7[\"无收费计划\"]\n    C8[\"假设收费\"]\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8\n```\n<!-- [BV1kRVn6AEor P1 01:53] [BV1kRVn6AEor P1 03:05] [BV1kRVn6AEor P1 03:16] [BV1kRVn6AEor P1 05:18] [BV1kRVn6AEor P1 05:20] [BV1kRVn6AEor P1 05:22] [BV1kRVn6AEor P1 00:14] [BV1kRVn6AEor P1 00:16] -->\n\n## 功能特性\n```mermaid\nflowchart TD\n    F1[\"单图压缩PNG→JPG\"]\n    F2[\"多文件上传\"]\n    F3[\"调节质量\"]\n    F4[\"调节比例\"]\n    F5[\"翻转图片\"]\n    F6[\"动画效果\"]\n    F7[\"主题切换\"]\n    F8[\"下载全部\"]\n    F9[\"安全本地处理\"]\n    F10[\"自定义比例\"]\n    F11[\"VIP功能\"]\n    F12[\"PNG上传\"]\n    F1 --> F2 --> F3 --> F4 --> F5 --> F6 --> F7 --> F8 --> F9 --> F10 --> F11 --> F12\n```\n<!-- [BV1kRVn6AEor P1 00:21] [BV1kRVn6AEor P1 02:23] [BV1kRVn6AEor P1 04:20] [BV1kRVn6AEor P1 03:40] [BV1kRVn6AEor P1 03:50] [BV1kRVn6AEor P1 04:32] [BV1kRVn6AEor P1 04:41] [BV1kRVn6AEor P1 04:45] [BV1kRVn6AEor P1 04:07] [BV1kRVn6AEor P1 04:26] [BV1kRVn6AEor P1 03:27] [BV1kRVn6AEor P1 03:28] -->\n\n## 性能表现\n```mermaid\nflowchart LR\n    P1[\"生成速度快\"]\n    P2[\"UI精美\"]\n    P3[\"出现卡顿\"]\n    P4[\"生成JS代码\"]\n    P5[\"多文件压缩比率调节\"]\n    P6[\"鼠标抖动\"]\n    P7[\"本地设备决定速度\"]\n    P8[\"动画流畅\"]\n    P1 --> P2\n    P1 --> P3\n    P1 --> P4\n    P4 --> P5\n    P5 --> P6\n    P6 --> P7\n    P2 --> P8\n```\n<!-- [BV1kRVn6AEor P1 02:01] [BV1kRVn6AEor P1 01:06] [BV1kRVn6AEor P1 02:06] [BV1kRVn6AEor P1 02:07] [BV1kRVn6AEor P1 02:23] [BV1kRVn6AEor P1 02:35] [BV1kRVn6AEor P1 04:08] [BV1kRVn6AEor P1 04:34] -->",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"充值1元体验\"]\n    B[\"API密钥\"]\n    C[\"调用Flash版\"]\n    D[\"生成速度快\"]\n    E[\"费用低\"]\n    F[\"本地处理安全\"]\n    G[\"多功能图片编辑\"]\n    H[\"部署到网站\"]\n    A --> B\n    B --> C\n    C --> D\n    C --> E\n    C --> F\n    F --> G\n    G --> H"
+    },
+    {
+      "title": "使用流程",
+      "code": "flowchart LR\n    S1[\"充值1元\"]\n    S2[\"获取API密钥\"]\n    S3[\"调用Flash版API\"]\n    S4[\"请求压缩PNG转JPG\"]\n    S5[\"生成HTML代码\"]\n    S6[\"在VS Code新建test.html\"]\n    S7[\"本地预览\"]\n    S8[\"添加多文件上传\"]\n    S9[\"调节压缩比率\"]\n    S10[\"部署至InfinityFree\"]\n    S11[\"访问页面上传文件\"]\n    S12[\"本地处理完成\"]\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9 --> S10 --> S11 --> S12"
+    },
+    {
+      "title": "成本与消耗",
+      "code": "flowchart TD\n    C1[\"0.01元/0.1元消耗\"]\n    C2[\"4分钱已用\"]\n    C3[\"剩余0.36元\"]\n    C4[\"价格实惠\"]\n    C5[\"省token\"]\n    C6[\"省钱\"]\n    C7[\"无收费计划\"]\n    C8[\"假设收费\"]\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8"
+    },
+    {
+      "title": "功能特性",
+      "code": "flowchart TD\n    F1[\"单图压缩PNG→JPG\"]\n    F2[\"多文件上传\"]\n    F3[\"调节质量\"]\n    F4[\"调节比例\"]\n    F5[\"翻转图片\"]\n    F6[\"动画效果\"]\n    F7[\"主题切换\"]\n    F8[\"下载全部\"]\n    F9[\"安全本地处理\"]\n    F10[\"自定义比例\"]\n    F11[\"VIP功能\"]\n    F12[\"PNG上传\"]\n    F1 --> F2 --> F3 --> F4 --> F5 --> F6 --> F7 --> F8 --> F9 --> F10 --> F11 --> F12"
+    },
+    {
+      "title": "性能表现",
+      "code": "flowchart LR\n    P1[\"生成速度快\"]\n    P2[\"UI精美\"]\n    P3[\"出现卡顿\"]\n    P4[\"生成JS代码\"]\n    P5[\"多文件压缩比率调节\"]\n    P6[\"鼠标抖动\"]\n    P7[\"本地设备决定速度\"]\n    P8[\"动画流畅\"]\n    P1 --> P2\n    P1 --> P3\n    P1 --> P4\n    P4 --> P5\n    P5 --> P6\n    P6 --> P7\n    P2 --> P8"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:50:57+00:00"
+}

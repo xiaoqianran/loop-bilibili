@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1VCRsBaELq",
+  "title": "因为懒得调试移动手感，我做了把不能动的枪？【我在B站做游戏-玩法设计赛道】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 721,
+  "text": "什么是一支动作游戏最重要的地方\n去年的时候\n就我刚接触五国道的那会儿\n我做了一个平台跳跃类的小游戏\n看上去还行\n但当我深入飞机之后才发现\n这图二水实在是太深了\n尤其是节点状态机\n还有玩家移动调试\n然后我冒出一个特别偷懒的念头\n既然调试移动手感这么麻烦\n那我直接不做它不就得了\n于是就有了你现在看到这把枪\n一把可以聚焦的霰弹枪\n你可以在敌人离你很近的时候\n一喷子放倒他\n也可以在他离你很远的时候一喷子点杀他\n哎呀听起来有点怪\n但还有一个问题\n枪我怎么面对贴脸的虫子\n这个问题我想了好久\n然后就在某一个晚上\n就当我在这玩室友室友的卡带的时候\n我突然意识到一点\n旋转本身也可以当做一种防御机制\n然后就有了这个机制\n当你摁R让它转起来的时候\n他可以劈开弹幕和敌人\n然后为下一发霰弹充能\n为什么一定要是虫子呢\n这真是个好问题\n因为我现实中真的很讨厌虫子\n我我玩MC都是一定要\n都是一定要附上节肢杀手的\n你想想看一群虫子在你的桌子上爬来爬去\n我靠沙一直就上来了\n关于虫子的贴图\n蝗虫我一开始是想画成俯视图\n突出他腿部的特征的\n但是结果画像只蟑螂呃\n还有甲虫身上的金色纹路\n就一开始画的时候吧\n没有什么感觉\n但画完之后总感觉有一股故人之姿\n卧槽格莱姆\n关于关底boss\n说实在的\n一开始我确实很想加\n你们也能看到我给他画的贴图和动画\n但我浪费了几周晚上去写它的逻辑\n还是被我原先的鸡肋给卡住了\n我确实没有义务去面对一个根本赢不了的敌人\n所以我直接把他砍掉了\n但没准以后我会加一些肉鸽方面的内容\n那谁知道呢\n所以回到一开始的问题\n虽然这把枪不能动\n但你仍然可以碾压虫群\n好的那如果你看到这里了\n不妨点个三连加关注\n游戏链接在置顶评论\n感兴趣的话\n一定要来试试",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VCRsBaELq",
+  "published_at": "1778048610",
+  "fetched_at": "2026-08-09T13:20:05+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 动作游戏设计决策与实现图谱\n\n## 设计动机与实现流程\n```mermaid\nflowchart TD\n    A1[\"玩家移动手感调试困难\"] --> A2[\"偷懒：不实现移动\"]\n    A2 --> A3[\"不可动的聚焦霰弹枪\"]\n    A3 --> A4[\"近距喷射 / 远距点杀\"]\n    A4 --> A5[\"面对贴脸虫子的问题\"]\n    A5 --> A6[\"旋转防御机制的灵感\"]\n    A6 --> A7[\"R键触发旋转，劈开弹幕\"]\n    A7 --> A8[\"为下一发霰弹充能\"]\n```\n[BV1VCRsBaELq P1 00:10] [BV1VCRsBaELq P1 00:21] [BV1VCRsBaELq P1 00:25] [BV1VCRsBaELq P1 00:30] [BV1VCRsBaELq P1 00:39] [BV1VCRsBaELq P1 00:46] [BV1VCRsBaELq P1 00:55] [BV1VCRsBaELq P1 01:04]\n\n## 虫子贴图设计\n```mermaid\nflowchart TD\n    B1[\"个人讨厌虫子（现实动机）\"] --> B2[\"虫子贴图初衷：俯视突出腿部\"]\n    B2 --> B3[\"实际绘制结果：蟑螂/甲虫金纹\"]\n    B3 --> B4[\"创作后感：故人之姿\"]\n```\n[BV1VCRsBaELq P1 01:06] [BV1VCRsBaELq P1 01:22] [BV1VCRsBaELq P1 01:26] [BV1VCRsBaELq P1 01:33]\n\n## 关底Boss决策\n```mermaid\nflowchart TD\n    C1[\"原计划加入关底Boss\"] --> C2[\"投入数周编写逻辑\"]\n    C2 --> C3[\"被鸡肋卡住，放弃Boss\"]\n    C3 --> C4[\"未来可能加入肉鸽内容\"]\n```\n[BV1VCRsBaELq P1 01:40] [BV1VCRsBaELq P1 01:46] [BV1VCRsBaELq P1 01:51] [BV1VCRsBaELq P1 01:55]\n\n## 结论与观众呼吁\n```mermaid\nflowchart TD\n    D1[\"枪不能动但仍能碾压虫群\"] --> D2[\"鼓励三连关注\"]\n    D2 --> D3[\"游戏链接置顶评论，邀请试玩\"]\n```\n[BV1VCRsBaELq P1 02:00] [BV1VCRsBaELq P1 02:06] [BV1VCRsBaELq P1 02:10]",
+      "diagrams": [
+        {
+          "title": "设计动机与实现流程",
+          "code": "flowchart TD\n    A1[\"玩家移动手感调试困难\"] --> A2[\"偷懒：不实现移动\"]\n    A2 --> A3[\"不可动的聚焦霰弹枪\"]\n    A3 --> A4[\"近距喷射 / 远距点杀\"]\n    A4 --> A5[\"面对贴脸虫子的问题\"]\n    A5 --> A6[\"旋转防御机制的灵感\"]\n    A6 --> A7[\"R键触发旋转，劈开弹幕\"]\n    A7 --> A8[\"为下一发霰弹充能\"]"
+        },
+        {
+          "title": "虫子贴图设计",
+          "code": "flowchart TD\n    B1[\"个人讨厌虫子（现实动机）\"] --> B2[\"虫子贴图初衷：俯视突出腿部\"]\n    B2 --> B3[\"实际绘制结果：蟑螂/甲虫金纹\"]\n    B3 --> B4[\"创作后感：故人之姿\"]"
+        },
+        {
+          "title": "关底Boss决策",
+          "code": "flowchart TD\n    C1[\"原计划加入关底Boss\"] --> C2[\"投入数周编写逻辑\"]\n    C2 --> C3[\"被鸡肋卡住，放弃Boss\"]\n    C3 --> C4[\"未来可能加入肉鸽内容\"]"
+        },
+        {
+          "title": "结论与观众呼吁",
+          "code": "flowchart TD\n    D1[\"枪不能动但仍能碾压虫群\"] --> D2[\"鼓励三连关注\"]\n    D2 --> D3[\"游戏链接置顶评论，邀请试玩\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T13:20:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 动作游戏设计决策与实现图谱\n\n## 设计动机与实现流程\n```mermaid\nflowchart TD\n    A1[\"玩家移动手感调试困难\"] --> A2[\"偷懒：不实现移动\"]\n    A2 --> A3[\"不可动的聚焦霰弹枪\"]\n    A3 --> A4[\"近距喷射 / 远距点杀\"]\n    A4 --> A5[\"面对贴脸虫子的问题\"]\n    A5 --> A6[\"旋转防御机制的灵感\"]\n    A6 --> A7[\"R键触发旋转，劈开弹幕\"]\n    A7 --> A8[\"为下一发霰弹充能\"]\n```\n[BV1VCRsBaELq P1 00:10] [BV1VCRsBaELq P1 00:21] [BV1VCRsBaELq P1 00:25] [BV1VCRsBaELq P1 00:30] [BV1VCRsBaELq P1 00:39] [BV1VCRsBaELq P1 00:46] [BV1VCRsBaELq P1 00:55] [BV1VCRsBaELq P1 01:04]\n\n## 虫子贴图设计\n```mermaid\nflowchart TD\n    B1[\"个人讨厌虫子（现实动机）\"] --> B2[\"虫子贴图初衷：俯视突出腿部\"]\n    B2 --> B3[\"实际绘制结果：蟑螂/甲虫金纹\"]\n    B3 --> B4[\"创作后感：故人之姿\"]\n```\n[BV1VCRsBaELq P1 01:06] [BV1VCRsBaELq P1 01:22] [BV1VCRsBaELq P1 01:26] [BV1VCRsBaELq P1 01:33]\n\n## 关底Boss决策\n```mermaid\nflowchart TD\n    C1[\"原计划加入关底Boss\"] --> C2[\"投入数周编写逻辑\"]\n    C2 --> C3[\"被鸡肋卡住，放弃Boss\"]\n    C3 --> C4[\"未来可能加入肉鸽内容\"]\n```\n[BV1VCRsBaELq P1 01:40] [BV1VCRsBaELq P1 01:46] [BV1VCRsBaELq P1 01:51] [BV1VCRsBaELq P1 01:55]\n\n## 结论与观众呼吁\n```mermaid\nflowchart TD\n    D1[\"枪不能动但仍能碾压虫群\"] --> D2[\"鼓励三连关注\"]\n    D2 --> D3[\"游戏链接置顶评论，邀请试玩\"]\n```\n[BV1VCRsBaELq P1 02:00] [BV1VCRsBaELq P1 02:06] [BV1VCRsBaELq P1 02:10]",
+  "diagrams": [
+    {
+      "title": "设计动机与实现流程",
+      "code": "flowchart TD\n    A1[\"玩家移动手感调试困难\"] --> A2[\"偷懒：不实现移动\"]\n    A2 --> A3[\"不可动的聚焦霰弹枪\"]\n    A3 --> A4[\"近距喷射 / 远距点杀\"]\n    A4 --> A5[\"面对贴脸虫子的问题\"]\n    A5 --> A6[\"旋转防御机制的灵感\"]\n    A6 --> A7[\"R键触发旋转，劈开弹幕\"]\n    A7 --> A8[\"为下一发霰弹充能\"]"
+    },
+    {
+      "title": "虫子贴图设计",
+      "code": "flowchart TD\n    B1[\"个人讨厌虫子（现实动机）\"] --> B2[\"虫子贴图初衷：俯视突出腿部\"]\n    B2 --> B3[\"实际绘制结果：蟑螂/甲虫金纹\"]\n    B3 --> B4[\"创作后感：故人之姿\"]"
+    },
+    {
+      "title": "关底Boss决策",
+      "code": "flowchart TD\n    C1[\"原计划加入关底Boss\"] --> C2[\"投入数周编写逻辑\"]\n    C2 --> C3[\"被鸡肋卡住，放弃Boss\"]\n    C3 --> C4[\"未来可能加入肉鸽内容\"]"
+    },
+    {
+      "title": "结论与观众呼吁",
+      "code": "flowchart TD\n    D1[\"枪不能动但仍能碾压虫群\"] --> D2[\"鼓励三连关注\"]\n    D2 --> D3[\"游戏链接置顶评论，邀请试玩\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T13:20:24+00:00"
+}

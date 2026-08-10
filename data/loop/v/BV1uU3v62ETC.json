@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1uU3v62ETC",
+  "title": "腾讯 RAG 和 Agent 高频面试题合集",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1950,
+  "text": "企鹅厂rag和agent面试题\n这套题一共八道\n整体难度不大\n但越往后越考验实战经验\n来看看你能答出多少\n第一题\nembedding模型怎么选诶\n很多人一上来就看榜单\n其实不对啊\n得从场景倒推短文本检索\n用bg e large长文档\n用JAV3多语言场景上BGEM3代码检索\n用code b e RT系列\n还有个关键点维度怎么选\n768维是工业界的甜点区\n高维不一定线性提升召回\n但存储成本可是实实在在的涨\n那要不要微调呢\n看一个指标就行\nN d c g a t5\n如果低于0.7\n说明你的领域数据和通用模型差距太大\n必须微调\n第二题\n手动干预切片怎么实现\n这问题问得好啊\n为什么需要手动干预\n因为固定切片会把语义单元切碎\n比如一个函数签名和参数说明\n硬生生切成两块\n召回的时候匹配到了函数名\n参数定义丢了\n那怎么解决呢\n搞一个分块规则引擎\n技术文档\n按标题层级切对话记录\n按说话人签合同\n按条款编号切\n还有一个工程细节经常被忽略\n多力度索引小chunk做精准检索\n大唱可保留上下文\n召回的时候把标题路径带上\n这样LLM看到的就不是\n孤零零的一小段文字了\n第三题\n召回和重排策略怎么设计\n记住一个词\n漏斗式\n第一层多路召回BM25做关键词匹配\n向量检索\n做语义泛化\n两路结果用RRF融合\n这个RRF是工业界首选\n不用调参\n按照排名倒数加权就行\n融合完大概50~100条候选\n然后进入第二层\n京牌上CROSSENCODER类型的REWRER\n像是BGERERANKERV2或者cohere rrank都行\n经排完之后取top5到十\n同时还可以叠加上时效性加权\n权威性加权这些业务规则\n一个完整的检索链路就搭起来了\n第四题\n多租户隔离怎么做\n分三个级别\nlevel1最简单\n所有租户共用一张表\n每条数据带个tenan id字段做过滤成本低\n但万一过滤漏了就是事故\nlevel2是推荐方案\n每个租户独立的向量collection天然隔离\n不存在过滤遗漏的问题\nlevel3就是金融医疗那种高合规场景了\n独立实力\n独立模型链路物理隔离成本最高\n但也最安全\n选哪一级\n看你的客户对数据安全的容忍度\n第五题\nSSE流式输出\n用户关了浏览器中断了\n怎么恢复\n这题属于典型的没上线过就不会遇到的问题\n核心思路是生成的同时做持久化\nLLM每吐一个token\n一边推送SSE给客户端\n一边写进REDIS客户端记录\nlast event id等用户重新连上来\n带上这个id服务端\n从REDIS里把缺失的片段补推回去\n还有一个容易被忽略的细节密等锁\n同一个message id不能重复触发LOLM调用\n不然token白白浪费了\n这套方案落地下来用户体验会很丝滑\n第六题\nK8S了解到什么程度\n这题的关键不在你会不会搭集群\n而在于你知不知道AI推理场景下\nK8S有什么特殊的地方\nGPU资源调度得用device plugin\n启动探针的initial delay\nseconds的流构模型\n加载的时间部署模式上轻量模型走side car\n大模型独立deployment模型文件用PVC共享挂载\n弹性伸缩\n这块可以基于GPU利用率做hp a或者用KEDA\n基于消息队列积压来扩缩容\n同时至少保持一个warm pod\n避免冷启动\n能说出这些基本就够了\n第七题\n你怎么理解agent\n一句话总结\nagent是把LLM从被动问答器升级成主动执行器\n它的核心公式是LLM加上规划能力工具\n调用记忆系统和自我反思\n那它跟rag是什么关系呢\n你看这个层次纯LLM是最底层\n往上是rag\n再往上是agent\n最顶层是multi agent rug\n本质上是agent的记忆工具之一\nagent把检索当成一个可调用的to\n而不是唯一的知识来源\n这个理解对了\n后面的架构设计才不会跑偏\n第八题\nagent有哪些常见工作模式四种\n第一种react思考行动观察循环\n适合不确定性高的多步推理\n第二种plan and execute\n先把计划列清楚\n再逐步执行\n效率高\n适合确定性强的任务\n第三种\nmulti agent协作多个agent的分工\n流水线模式\n辩论模式\n层级结构都行\n降低单个agent的认知负担\n第四种reflection\n执行完之后自我评估\n从失败里反思修正\n用额外的推理成本换更高质量的输出\n不同的场景选不同的模式\n没有银弹\n最后我们回过头看这八道题的递进结构\n前两题考的是rag基础检验\n你有没有真的动手做过\n三四题考的是架构设计\n看你有没有独立搭系统的能力\n五六题考的是工程实战\n你有没有上线过生产服务\n到这基本就见分晓了\n最后七八题考的是agent认知\n这两道题决定了你的最终定级\n难度逐层递增\n你能达到哪一层\n那么下次再见啦",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1uU3v62ETC",
+  "published_at": "1785227443",
+  "fetched_at": "2026-08-08T23:39:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 腾讯 RAG 和 Agent 高频面试题知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    Q1[\"Q1 嵌入模型选择\"]\n    Q2[\"Q2 手动切片干预\"]\n    Q3[\"Q3 召回与重排策略\"]\n    Q4[\"Q4 多租户隔离方案\"]\n    Q5[\"Q5 SSE 流式输出恢复\"]\n    Q6[\"Q6 K8s 在 AI 推理中的要点\"]\n    Q7[\"Q7 Agent 的定义\"]\n    Q8[\"Q8 Agent 常见工作模式\"]\n    Diff[\"难度递增\"]\n    Q1 --> Diff\n    Q2 --> Diff\n    Q3 --> Diff\n    Q4 --> Diff\n    Q5 --> Diff\n    Q6 --> Diff\n    Q7 --> Diff\n    Q8 --> Diff\n    Diff -->|逐层递增| Q1\n    Diff -->|逐层递增| Q2\n    Diff -->|逐层递增| Q3\n    Diff -->|逐层递增| Q4\n    Diff -->|逐层递增| Q5\n    Diff -->|逐层递增| Q6\n    Diff -->|逐层递增| Q7\n    Diff -->|逐层递增| Q8\n```\n\n## 检索与重排链路\n\n```mermaid\nflowchart TD\n    Chunk[\"文本分块 & 多力度索引\"]\n    BM25[\"BM25 关键词召回\"]\n    Vec[\"向量检索（语义）\"]\n    RRF[\"RRF 融合（排名倒数加权）\"]\n    Cand[\"候选集合 50~100 条\"]\n    ReRank[\"CrossEncoder / BGERankV2 / cohere‑rank\"]\n    Top[\"取 Top5~10\"]\n    Weight[\"时效性、权威性业务加权\"]\n    Final[\"最终检索结果\"]\n    Chunk --> BM25\n    Chunk --> Vec\n    BM25 --> RRF\n    Vec --> RRF\n    RRF --> Cand\n    Cand --> ReRank\n    ReRank --> Top\n    Top --> Weight\n    Weight --> Final\n```\n\n## 多租户隔离层级\n\n```mermaid\nflowchart LR\n    L1[\"Level1：共享表 + tenant_id 过滤\"]\n    L1Risk[\"过滤漏失风险\"]\n    L2[\"Level2：独立向量 collection\"]\n    L2Iso[\"天然隔离，无过滤风险\"]\n    L3[\"Level3：物理隔离（独立模型链路）\"]\n    L3Cost[\"成本最高，安全性最高\"]\n    Choose[\"依据客户数据安全容忍度选择\"]\n    L1 --> L1Risk\n    L2 --> L2Iso\n    L3 --> L3Cost\n    L1 --> Choose\n    L2 --> Choose\n    L3 --> Choose\n```\n\n## Agent 工作模式\n\n```mermaid\nflowchart TD\n    React[\"React 循环（观察‑思考‑行动）\"]\n    PlanExec[\"Plan & Execute（先计划后执行）\"]\n    Multi[\"Multi‑Agent 协作\"]\n    MultiPipe[\"流水线模式\"]\n    MultiDebate[\"辩论模式\"]\n    MultiHier[\"层级结构\"]\n    Reflect[\"Reflection（执行后自我评估）\"]\n    Scenario1[\"高不确定性、多步推理\"]\n    Scenario2[\"高确定性、效率需求\"]\n    Scenario3[\"降低单体认知负担\"]\n    Scenario4[\"提升输出质量（付出额外推理成本）\"]\n    NoSilver[\"无银弹，模式需匹配场景\"]\n    React --> Scenario1\n    PlanExec --> Scenario2\n    Multi --> MultiPipe\n    Multi --> MultiDebate\n    Multi --> MultiHier\n    MultiPipe --> Scenario3\n    MultiDebate --> Scenario3\n    MultiHier --> Scenario3\n    Reflect --> Scenario4\n    Scenario1 --> NoSilver\n    Scenario2 --> NoSilver\n    Scenario3 --> NoSilver\n    Scenario4 --> NoSilver\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    Q1[\"Q1 嵌入模型选择\"]\n    Q2[\"Q2 手动切片干预\"]\n    Q3[\"Q3 召回与重排策略\"]\n    Q4[\"Q4 多租户隔离方案\"]\n    Q5[\"Q5 SSE 流式输出恢复\"]\n    Q6[\"Q6 K8s 在 AI 推理中的要点\"]\n    Q7[\"Q7 Agent 的定义\"]\n    Q8[\"Q8 Agent 常见工作模式\"]\n    Diff[\"难度递增\"]\n    Q1 --> Diff\n    Q2 --> Diff\n    Q3 --> Diff\n    Q4 --> Diff\n    Q5 --> Diff\n    Q6 --> Diff\n    Q7 --> Diff\n    Q8 --> Diff\n    Diff -->|逐层递增| Q1\n    Diff -->|逐层递增| Q2\n    Diff -->|逐层递增| Q3\n    Diff -->|逐层递增| Q4\n    Diff -->|逐层递增| Q5\n    Diff -->|逐层递增| Q6\n    Diff -->|逐层递增| Q7\n    Diff -->|逐层递增| Q8"
+        },
+        {
+          "title": "检索与重排链路",
+          "code": "flowchart TD\n    Chunk[\"文本分块 & 多力度索引\"]\n    BM25[\"BM25 关键词召回\"]\n    Vec[\"向量检索（语义）\"]\n    RRF[\"RRF 融合（排名倒数加权）\"]\n    Cand[\"候选集合 50~100 条\"]\n    ReRank[\"CrossEncoder / BGERankV2 / cohere‑rank\"]\n    Top[\"取 Top5~10\"]\n    Weight[\"时效性、权威性业务加权\"]\n    Final[\"最终检索结果\"]\n    Chunk --> BM25\n    Chunk --> Vec\n    BM25 --> RRF\n    Vec --> RRF\n    RRF --> Cand\n    Cand --> ReRank\n    ReRank --> Top\n    Top --> Weight\n    Weight --> Final"
+        },
+        {
+          "title": "多租户隔离层级",
+          "code": "flowchart LR\n    L1[\"Level1：共享表 + tenant_id 过滤\"]\n    L1Risk[\"过滤漏失风险\"]\n    L2[\"Level2：独立向量 collection\"]\n    L2Iso[\"天然隔离，无过滤风险\"]\n    L3[\"Level3：物理隔离（独立模型链路）\"]\n    L3Cost[\"成本最高，安全性最高\"]\n    Choose[\"依据客户数据安全容忍度选择\"]\n    L1 --> L1Risk\n    L2 --> L2Iso\n    L3 --> L3Cost\n    L1 --> Choose\n    L2 --> Choose\n    L3 --> Choose"
+        },
+        {
+          "title": "Agent 工作模式",
+          "code": "flowchart TD\n    React[\"React 循环（观察‑思考‑行动）\"]\n    PlanExec[\"Plan & Execute（先计划后执行）\"]\n    Multi[\"Multi‑Agent 协作\"]\n    MultiPipe[\"流水线模式\"]\n    MultiDebate[\"辩论模式\"]\n    MultiHier[\"层级结构\"]\n    Reflect[\"Reflection（执行后自我评估）\"]\n    Scenario1[\"高不确定性、多步推理\"]\n    Scenario2[\"高确定性、效率需求\"]\n    Scenario3[\"降低单体认知负担\"]\n    Scenario4[\"提升输出质量（付出额外推理成本）\"]\n    NoSilver[\"无银弹，模式需匹配场景\"]\n    React --> Scenario1\n    PlanExec --> Scenario2\n    Multi --> MultiPipe\n    Multi --> MultiDebate\n    Multi --> MultiHier\n    MultiPipe --> Scenario3\n    MultiDebate --> Scenario3\n    MultiHier --> Scenario3\n    Reflect --> Scenario4\n    Scenario1 --> NoSilver\n    Scenario2 --> NoSilver\n    Scenario3 --> NoSilver\n    Scenario4 --> NoSilver"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T23:39:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 腾讯 RAG 和 Agent 高频面试题知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    Q1[\"Q1 嵌入模型选择\"]\n    Q2[\"Q2 手动切片干预\"]\n    Q3[\"Q3 召回与重排策略\"]\n    Q4[\"Q4 多租户隔离方案\"]\n    Q5[\"Q5 SSE 流式输出恢复\"]\n    Q6[\"Q6 K8s 在 AI 推理中的要点\"]\n    Q7[\"Q7 Agent 的定义\"]\n    Q8[\"Q8 Agent 常见工作模式\"]\n    Diff[\"难度递增\"]\n    Q1 --> Diff\n    Q2 --> Diff\n    Q3 --> Diff\n    Q4 --> Diff\n    Q5 --> Diff\n    Q6 --> Diff\n    Q7 --> Diff\n    Q8 --> Diff\n    Diff -->|逐层递增| Q1\n    Diff -->|逐层递增| Q2\n    Diff -->|逐层递增| Q3\n    Diff -->|逐层递增| Q4\n    Diff -->|逐层递增| Q5\n    Diff -->|逐层递增| Q6\n    Diff -->|逐层递增| Q7\n    Diff -->|逐层递增| Q8\n```\n\n## 检索与重排链路\n\n```mermaid\nflowchart TD\n    Chunk[\"文本分块 & 多力度索引\"]\n    BM25[\"BM25 关键词召回\"]\n    Vec[\"向量检索（语义）\"]\n    RRF[\"RRF 融合（排名倒数加权）\"]\n    Cand[\"候选集合 50~100 条\"]\n    ReRank[\"CrossEncoder / BGERankV2 / cohere‑rank\"]\n    Top[\"取 Top5~10\"]\n    Weight[\"时效性、权威性业务加权\"]\n    Final[\"最终检索结果\"]\n    Chunk --> BM25\n    Chunk --> Vec\n    BM25 --> RRF\n    Vec --> RRF\n    RRF --> Cand\n    Cand --> ReRank\n    ReRank --> Top\n    Top --> Weight\n    Weight --> Final\n```\n\n## 多租户隔离层级\n\n```mermaid\nflowchart LR\n    L1[\"Level1：共享表 + tenant_id 过滤\"]\n    L1Risk[\"过滤漏失风险\"]\n    L2[\"Level2：独立向量 collection\"]\n    L2Iso[\"天然隔离，无过滤风险\"]\n    L3[\"Level3：物理隔离（独立模型链路）\"]\n    L3Cost[\"成本最高，安全性最高\"]\n    Choose[\"依据客户数据安全容忍度选择\"]\n    L1 --> L1Risk\n    L2 --> L2Iso\n    L3 --> L3Cost\n    L1 --> Choose\n    L2 --> Choose\n    L3 --> Choose\n```\n\n## Agent 工作模式\n\n```mermaid\nflowchart TD\n    React[\"React 循环（观察‑思考‑行动）\"]\n    PlanExec[\"Plan & Execute（先计划后执行）\"]\n    Multi[\"Multi‑Agent 协作\"]\n    MultiPipe[\"流水线模式\"]\n    MultiDebate[\"辩论模式\"]\n    MultiHier[\"层级结构\"]\n    Reflect[\"Reflection（执行后自我评估）\"]\n    Scenario1[\"高不确定性、多步推理\"]\n    Scenario2[\"高确定性、效率需求\"]\n    Scenario3[\"降低单体认知负担\"]\n    Scenario4[\"提升输出质量（付出额外推理成本）\"]\n    NoSilver[\"无银弹，模式需匹配场景\"]\n    React --> Scenario1\n    PlanExec --> Scenario2\n    Multi --> MultiPipe\n    Multi --> MultiDebate\n    Multi --> MultiHier\n    MultiPipe --> Scenario3\n    MultiDebate --> Scenario3\n    MultiHier --> Scenario3\n    Reflect --> Scenario4\n    Scenario1 --> NoSilver\n    Scenario2 --> NoSilver\n    Scenario3 --> NoSilver\n    Scenario4 --> NoSilver\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    Q1[\"Q1 嵌入模型选择\"]\n    Q2[\"Q2 手动切片干预\"]\n    Q3[\"Q3 召回与重排策略\"]\n    Q4[\"Q4 多租户隔离方案\"]\n    Q5[\"Q5 SSE 流式输出恢复\"]\n    Q6[\"Q6 K8s 在 AI 推理中的要点\"]\n    Q7[\"Q7 Agent 的定义\"]\n    Q8[\"Q8 Agent 常见工作模式\"]\n    Diff[\"难度递增\"]\n    Q1 --> Diff\n    Q2 --> Diff\n    Q3 --> Diff\n    Q4 --> Diff\n    Q5 --> Diff\n    Q6 --> Diff\n    Q7 --> Diff\n    Q8 --> Diff\n    Diff -->|逐层递增| Q1\n    Diff -->|逐层递增| Q2\n    Diff -->|逐层递增| Q3\n    Diff -->|逐层递增| Q4\n    Diff -->|逐层递增| Q5\n    Diff -->|逐层递增| Q6\n    Diff -->|逐层递增| Q7\n    Diff -->|逐层递增| Q8"
+    },
+    {
+      "title": "检索与重排链路",
+      "code": "flowchart TD\n    Chunk[\"文本分块 & 多力度索引\"]\n    BM25[\"BM25 关键词召回\"]\n    Vec[\"向量检索（语义）\"]\n    RRF[\"RRF 融合（排名倒数加权）\"]\n    Cand[\"候选集合 50~100 条\"]\n    ReRank[\"CrossEncoder / BGERankV2 / cohere‑rank\"]\n    Top[\"取 Top5~10\"]\n    Weight[\"时效性、权威性业务加权\"]\n    Final[\"最终检索结果\"]\n    Chunk --> BM25\n    Chunk --> Vec\n    BM25 --> RRF\n    Vec --> RRF\n    RRF --> Cand\n    Cand --> ReRank\n    ReRank --> Top\n    Top --> Weight\n    Weight --> Final"
+    },
+    {
+      "title": "多租户隔离层级",
+      "code": "flowchart LR\n    L1[\"Level1：共享表 + tenant_id 过滤\"]\n    L1Risk[\"过滤漏失风险\"]\n    L2[\"Level2：独立向量 collection\"]\n    L2Iso[\"天然隔离，无过滤风险\"]\n    L3[\"Level3：物理隔离（独立模型链路）\"]\n    L3Cost[\"成本最高，安全性最高\"]\n    Choose[\"依据客户数据安全容忍度选择\"]\n    L1 --> L1Risk\n    L2 --> L2Iso\n    L3 --> L3Cost\n    L1 --> Choose\n    L2 --> Choose\n    L3 --> Choose"
+    },
+    {
+      "title": "Agent 工作模式",
+      "code": "flowchart TD\n    React[\"React 循环（观察‑思考‑行动）\"]\n    PlanExec[\"Plan & Execute（先计划后执行）\"]\n    Multi[\"Multi‑Agent 协作\"]\n    MultiPipe[\"流水线模式\"]\n    MultiDebate[\"辩论模式\"]\n    MultiHier[\"层级结构\"]\n    Reflect[\"Reflection（执行后自我评估）\"]\n    Scenario1[\"高不确定性、多步推理\"]\n    Scenario2[\"高确定性、效率需求\"]\n    Scenario3[\"降低单体认知负担\"]\n    Scenario4[\"提升输出质量（付出额外推理成本）\"]\n    NoSilver[\"无银弹，模式需匹配场景\"]\n    React --> Scenario1\n    PlanExec --> Scenario2\n    Multi --> MultiPipe\n    Multi --> MultiDebate\n    Multi --> MultiHier\n    MultiPipe --> Scenario3\n    MultiDebate --> Scenario3\n    MultiHier --> Scenario3\n    Reflect --> Scenario4\n    Scenario1 --> NoSilver\n    Scenario2 --> NoSilver\n    Scenario3 --> NoSilver\n    Scenario4 --> NoSilver"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T23:39:19+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1qzFxzQES2",
+  "title": "13. 旋转位置编码和复数欧拉公式有什么关系？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 730,
+  "text": "今天的问题是旋转位置编码和负数\n还有欧拉公式有什么关系\n那么根据高中知识\n我们知道\n将一个负数X加上YI逆时针旋转西塔度\n只需要去乘以一个模长为一的复数\n就是这个EIC塔次方\n也就是相当于X加上YI乘以EI西塔次方\n那么在这个图像可以看到\n它就是把这个向量X加上YI\n逆时针旋转了西塔度\n那么我们可以把原来的这个负数\n对应的这个向量叫做XY\n新的这一个向量叫做X撇Y撇好\n这是第一步\n那么由于复数欧拉公式X加上YI乘以EI\n西塔\n它可以把它展开变成X加上YI乘以cos theta\n加上i sin theta\n然后我们根据最简单的英式展开\n那么就把X和这里的cos西塔\n然后这里的Y和sin theta配成一对\n因为它是没有I的\n然后含有I的这个部分呢\n属于x sin theta和y cosin theta\n然后得到的这个结果可以看作一个新的向量\n那么X加上YI是向量XY\n而新的这一个向量呢是X撇Y撇\n它就等于这个向量就是x cos theta\n减去y sin theta\n这是第一个分量\nx sin theta加上y cos theta\n这是第二个分量\n那么我们就得到了一个结论\n就是向量XY旋转西塔度\n注意这里是逆时针旋转得到的向量是这个向量\n这个\n那么现在的问题是\n什么样的矩阵乘以XY会有如此的效果呢\n那么不难构造\n我们只需要把它这里的系数提出来\n就是cos theta\n负sin theta\n以及这里的\nSin theta\nCosin theta\n就这里\n然后就会发现这一个矩阵乘以这个向量XY\n可以得到这个东西\n哎此时我们就发现了\n如果想要将向量XY旋转\n就逆时针旋转\n西塔度只需要乘以这样的一个旋转矩阵即可\n那么这个思想就是旋转位置编码的精髓",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qzFxzQES2",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:45+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

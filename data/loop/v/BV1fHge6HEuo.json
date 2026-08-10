@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1fHge6HEuo",
+  "title": "实现地球最强搜索引擎grok模型搜索自由",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3062,
+  "text": "这期视频教大家实现格洛克模型的搜索自由\n虽然今天上午格洛克4.5拉闸了\n就因为那个grog c o i授权的接口失败\n拿不到token文件\n所以用不了\n但是网页端注册是没问题的\n大家都知道格洛克网页的这个模型\n它是实时联网以及连接推特的\n作为搜索引擎的话\n可以说是top one了\n我们可以看到免费账户只能使用fast模式\nfast也就是一个agent\n而export以及have对应的是四个以及16个ENGINT\n这两个模式是非常好用的\n作为搜索引擎\n就是他四个A进程的话\n第一个先搜出来\n然后第二个接着核查\n就是逐渐递进\n他的逻辑是非常缜密的\n这里用我之前搭好的一个new API来演示一下成果\n我们先测试一下这个16个engines的模型\n你有几个小伙伴\n可以看到他有15个\n加上他自己就16个\n我们再换到四个in的\n这个是四个A进的模型\n重新音测试\n他有三个一三个一级的小伙伴\n加上他就是四个\n这个是比较快\n然后效果又比较好的\n然后还有一个就是有用的模型\n就是这个生图模型\n生成一只小猫\n他这个生图的话\n有时候时间比较慢\n可以看到是没问题的\n可以看一下我这个数据\n生图的成功率在85%左右\n然后发射的4.3和发射的几乎是百分百\n这个有时候用的人多的话\n他就成功率比较低\n70%\n然后70%到80%左右\n基本上如果你是个人用的话\n成功率几乎是百分百\n然后我这个用的人比较多\n所以成功率有时候比较低\n这个项目的核心思路\n其实跟那个我发过的那个教程是一模一样的\n也是这个格尔和2AB项目\n他这个项目不仅把CLI作为中转\n并且它把网页以及这个console平台\n也中转一下网页\n网页的话对应的是4.3fast的模型\n然后这个console对应的是那四个A进度\n及16个AIN的模型\n现在开始实际演示一下\n从购买VPS开始\n这VPS99元一年\n可以说是非常非常香的\n下方有链接\n输入一下\n这个页面往下滑\n可以看到这里有轻量应用服务器\n点一下\n然后这里可以选地区\n我推荐选新加坡或者是韩国首尔\n或者是日本东京\n就这里新用户才能买\n新用户的话99元一年\n我已经买过了\n这里就不演示购买了\n你们购买一下就可以了\n然后就是购买域名\n购买域名的话\n你可以用可以去这个space save或者是任何平台\n腾讯云\n阿里云哪里都可以\n国内的平台的话\n你购买需要实名一下\n然后国外平台一般不需要实名\n注册一下账号就可以\n然后我这里演示一下\n搜索一下\n一般五个数字的\n五个字母的话\n这个online后缀的比较便宜\n这里加入一下购物车\n然后点击购买\n然后购买一下就可以了\n这里我就不买了\n我已经买过了\n然后把语言换一下\n然后把这个域名转移到那个cf\n购买完域名之后\n点击这个所有产品\n然后点击这个域名\n然后点这个域名管理器\n然后点这个私密\n点与你购买的域名的私密\n然后点击这个名称服务器和DNS\n然后点击这个更改\n就是把这两个原本存在的改成cf的\n现在到cf\n然后在搜索里面\n浏览器里面搜索CLOUDFLARE\n点击登录一下\n如果没有账号的\n就注册一个\n然后点击左边的这个域名\n点击概览\n然后点击右上角的添加域名\n然后点击第一个连接域名\n然后输入你刚才购买的\n我这里做个例子\n随便输的\n然后点击右下角继续\n然后荣耀连接这个是这个\n因为我没有买\n所以它提示你要买了之后\n他就提示正常的\n然后点击这个免费的选择计划嗯\n然后继续\n确定\n然后这是两个DNS服务器\n复制一下\n回到刚才的那个页面\n修改一下\n把原来的就是DNS服务器\n换成cf里面给给你的那两个\n然后就相当于把这个域名转移到cf上面了\n我这里就不不演示了\n转移之后点击这个我已知晓\n然后可能要等一等几分钟它才显示转移到到这\n等几分钟就正常了\n然后接下来就是部署CD mail这个域名邮箱\n直接搜CD mail githu\n然后点击\n这个需要fork一下部署的时候\n然后点击这个部署文档\n点击这个界面部署\n然后它这就是非常非常详细的图文教程\n这里我就不演示了\n你一步一步按照这个绝绝对百分百可以的\n然后接下来就是让AI帮你配置了\n让AI帮你部署这个group2API以及注册机项目\n然后把这个COMMIO域名邮箱的信息告诉他\n就你部署的那个网址是什么\n然后密码是什么\n然后你用的域名邮箱是什么\n然后让他跑通全流程\n然后再加一个就是用WARP洗白流量\n洗白IP的\n这个必须要用\n不然的话注册失败\n然后使用的时候GLOCK2API也会失败\n这里我让他部署测试一下\n然后这里可以看到他已经他已经不如好了\n可以看到这个这些账号已经注册了29个了\n然后再让他就是用你的域名反代出来\n然后这里它就会让你加一个DNS记录\n或者是你可以创建token\n但是这个token比较麻烦\n所以手动的比较快\n然后到cf里面添加ERDNSS\n点击域名\n点击你购买的那个域名\n然后点击这个DNS记录\n然后你就是点这个添加记录\n然后这个是服务器IP\n这个是就是你用的那个\n如果你让AI直接就是使用你那个域名没有前缀\n那这个就填一个艾特\n我这里是需要我有一个前缀是三点\n后面加我的域名\n然后这个点点成灰云保存\n然后回到这里继续让他配置\n然后这里可以看到已经成功了\n这里我们来登录测试一下\n可以看到这已经登录进来了\n然后点击创作台\n这个就是fast4.3fast的\n这个就是四个NG的\n这个是16个\n你有几个小伙伴\n刚刚出了点问题\n这个注册机他注册的SSO token文件\n只导入了那个外部\n然后让他修了一下\n现在同时导入外五以及console\n然后还有比较踩坑的点\n就是他这个设置里面\n这个设置里面需要把这个网络出口改一下\n他现在他我让他配置的WARP\n他非要配置这个flash server\n然后让他改给你改一下\n改成WARP\n让AI改一下\n这个注册机是需要这个flower sword\n然后这个格尔2API的话\n最好是用这个WAP\n因为如果再用这个的话\n它会非常慢\n有时候直接就延迟过高\n然后失败了\n我们来测试一下\n用这个多NG的模型测试一下\n可以看到他有16个小伙伴\n也就也就是加上他自己是16个\n然后这个模型的话应该是\n这个模型应该是四个N进程测试一下\n这个好像不是多N技能\n这个应该是四个A技能\n他这个项目好像没有添加四个engines的那个模型\n那就用这个16个agent的吧\n这个16个agent的效果也很好\n如果你非要用那四个A镜的的那个模型的话\n你就用这个高科2API\n这格尔2A片的话\n他就是没有那个CLI\n也就是不能使用GLOCK4.5\n但是现在格log4.5就是不稳定\n这个这个格尔n a pi的\n它的console就是模型比较全\n比那个全一点啊\n也是同样的同样的方法告诉AI这个项目\n然后用WAARP来配置出口就可以了\n他这个的话就是这个CONSOL平台的话\n这些模型都可以用\n像刚才那个项目的话\n他就是非常少选择\n非常少\n然后你就可以在你用的AINNER里面下载\n高科设计MCP\n比如clock code codex\n让我爷爷帮你配置一下\n这里面所需的URLK\n就是你搭建的格格2a pi\n而且它可以你你可以配置你所需的模型名\n比如你想用四个agent\n你就用四个的\n你想用16个就用16个\n它这个有三种模式\n第一个就是普通模式\n普通模式一般的话就是用fast的模型比较快\n然后底部设计的话就用16个A的\n它是比较深度的\n然后还有一个check模型切割模型\n你用四个或者是16个都可以\n这个看你怎么选择",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1fHge6HEuo",
+  "published_at": "1784902324",
+  "fetched_at": "2026-08-10T03:43:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Grok 模型搜索自由知识图谱\n\n## 模型结构总览 [BV1fHge6HEuo P1 00:24]\n```mermaid\nflowchart TD\n    SearchEngine[\"Grok 搜索引擎\"] --> RealTime[\"实时联网 & 连接推特\"]\n    SearchEngine --> TopOne[\"被视为 Top One 搜索引擎\"]\n    FreeAccount[\"免费账户\"] --> FastMode[\"fast (agent)\"]\n    FastMode --> ModeComp[\"模式比较\"]\n    FourA[\"4 A 进程模型\"] --> ModeComp\n    SixteenEngines[\"16 engines (agents) 模型\"] --> ModeComp\n    ExportHave[\"export / have (对应 4/16 ENGINT)\"] --> FourA\n    ExportHave --> SixteenEngines\n```\n\n## 部署流程总览 [BV1fHge6HEuo P1 03:23]\n```mermaid\nflowchart TD\n    PurchaseVPS[\"购买 VPS (99元/年)\"] --> PurchaseDomain[\"购买域名\"]\n    PurchaseDomain --> SetDNS_CF[\"在 Cloudflare 设置 DNS\"]\n    SetDNS_CF --> TransferDomain[\"域名转移到 Cloudflare\"]\n    TransferDomain --> DeployCDMail[\"部署 CD mail 项目\"]\n    DeployCDMail --> ConfigureAI[\"AI 配置 GLOCK2API & 注册机\"]\n    ConfigureAI --> EnableWARP[\"使用 WARP 洗白流量\"]\n    EnableWARP --> TestDeployment[\"测试部署\"]\n    TestDeployment --> LoginConsole[\"登录 Console\"]\n    LoginConsole --> UseModel[\"使用模型 (fast / 4A / 16)\"]\n```\n\n## 域名转移到 Cloudflare 流程 [BV1fHge6HEuo P1 05:01]\n```mermaid\nflowchart LR\n    DomainProvider[\"域名提供商\"] --> AddToCart[\"加入购物车\"]\n    AddToCart --> Purchase[\"完成购买\"]\n    Purchase --> DNSManagement[\"进入域名管理器\"]\n    DNSManagement --> ChangeNS[\"更改 NameServer 为 Cloudflare\"]\n    ChangeNS --> CloudflareLogin[\"登录 Cloudflare\"]\n    CloudflareLogin --> AddDomainCF[\"在 Cloudflare 添加域名\"]\n    AddDomainCF --> SetDNSRecords[\"设置 DNS 记录\"]\n    SetDNSRecords --> Propagation[\"DNS 传播生效\"]\n```\n\n## 使用模式选择决策树 [BV1fHge6HEuo P1 14:01]\n```mermaid\nflowchart TD\n    Start[\"需求评估\"] --> NeedSpeed[\"需要快速响应?\"]\n    NeedSpeed -->|是| ChooseFast[\"选择 fast (agent)\"]\n    NeedSpeed -->|否| NeedDepth[\"需要深度搜索?\"]\n    NeedDepth -->|是| ChooseFourA[\"选择 4 A 进程\"]\n    NeedDepth -->|否| NeedCheck[\"需要检查/切割模型?\"]\n    NeedCheck -->|是| UseCheckModel[\"使用 check 模型切割\"]\n    NeedCheck -->|否| ChooseSixteen[\"选择 16 A 进程 (深度模式)\"]\n```",
+      "diagrams": [
+        {
+          "title": "模型结构总览",
+          "code": "flowchart TD\n    SearchEngine[\"Grok 搜索引擎\"] --> RealTime[\"实时联网 & 连接推特\"]\n    SearchEngine --> TopOne[\"被视为 Top One 搜索引擎\"]\n    FreeAccount[\"免费账户\"] --> FastMode[\"fast (agent)\"]\n    FastMode --> ModeComp[\"模式比较\"]\n    FourA[\"4 A 进程模型\"] --> ModeComp\n    SixteenEngines[\"16 engines (agents) 模型\"] --> ModeComp\n    ExportHave[\"export / have (对应 4/16 ENGINT)\"] --> FourA\n    ExportHave --> SixteenEngines"
+        },
+        {
+          "title": "部署流程总览",
+          "code": "flowchart TD\n    PurchaseVPS[\"购买 VPS (99元/年)\"] --> PurchaseDomain[\"购买域名\"]\n    PurchaseDomain --> SetDNS_CF[\"在 Cloudflare 设置 DNS\"]\n    SetDNS_CF --> TransferDomain[\"域名转移到 Cloudflare\"]\n    TransferDomain --> DeployCDMail[\"部署 CD mail 项目\"]\n    DeployCDMail --> ConfigureAI[\"AI 配置 GLOCK2API & 注册机\"]\n    ConfigureAI --> EnableWARP[\"使用 WARP 洗白流量\"]\n    EnableWARP --> TestDeployment[\"测试部署\"]\n    TestDeployment --> LoginConsole[\"登录 Console\"]\n    LoginConsole --> UseModel[\"使用模型 (fast / 4A / 16)\"]"
+        },
+        {
+          "title": "域名转移到 Cloudflare 流程",
+          "code": "flowchart LR\n    DomainProvider[\"域名提供商\"] --> AddToCart[\"加入购物车\"]\n    AddToCart --> Purchase[\"完成购买\"]\n    Purchase --> DNSManagement[\"进入域名管理器\"]\n    DNSManagement --> ChangeNS[\"更改 NameServer 为 Cloudflare\"]\n    ChangeNS --> CloudflareLogin[\"登录 Cloudflare\"]\n    CloudflareLogin --> AddDomainCF[\"在 Cloudflare 添加域名\"]\n    AddDomainCF --> SetDNSRecords[\"设置 DNS 记录\"]\n    SetDNSRecords --> Propagation[\"DNS 传播生效\"]"
+        },
+        {
+          "title": "使用模式选择决策树",
+          "code": "flowchart TD\n    Start[\"需求评估\"] --> NeedSpeed[\"需要快速响应?\"]\n    NeedSpeed -->|是| ChooseFast[\"选择 fast (agent)\"]\n    NeedSpeed -->|否| NeedDepth[\"需要深度搜索?\"]\n    NeedDepth -->|是| ChooseFourA[\"选择 4 A 进程\"]\n    NeedDepth -->|否| NeedCheck[\"需要检查/切割模型?\"]\n    NeedCheck -->|是| UseCheckModel[\"使用 check 模型切割\"]\n    NeedCheck -->|否| ChooseSixteen[\"选择 16 A 进程 (深度模式)\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T03:44:12+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Grok 模型搜索自由知识图谱\n\n## 模型结构总览 [BV1fHge6HEuo P1 00:24]\n```mermaid\nflowchart TD\n    SearchEngine[\"Grok 搜索引擎\"] --> RealTime[\"实时联网 & 连接推特\"]\n    SearchEngine --> TopOne[\"被视为 Top One 搜索引擎\"]\n    FreeAccount[\"免费账户\"] --> FastMode[\"fast (agent)\"]\n    FastMode --> ModeComp[\"模式比较\"]\n    FourA[\"4 A 进程模型\"] --> ModeComp\n    SixteenEngines[\"16 engines (agents) 模型\"] --> ModeComp\n    ExportHave[\"export / have (对应 4/16 ENGINT)\"] --> FourA\n    ExportHave --> SixteenEngines\n```\n\n## 部署流程总览 [BV1fHge6HEuo P1 03:23]\n```mermaid\nflowchart TD\n    PurchaseVPS[\"购买 VPS (99元/年)\"] --> PurchaseDomain[\"购买域名\"]\n    PurchaseDomain --> SetDNS_CF[\"在 Cloudflare 设置 DNS\"]\n    SetDNS_CF --> TransferDomain[\"域名转移到 Cloudflare\"]\n    TransferDomain --> DeployCDMail[\"部署 CD mail 项目\"]\n    DeployCDMail --> ConfigureAI[\"AI 配置 GLOCK2API & 注册机\"]\n    ConfigureAI --> EnableWARP[\"使用 WARP 洗白流量\"]\n    EnableWARP --> TestDeployment[\"测试部署\"]\n    TestDeployment --> LoginConsole[\"登录 Console\"]\n    LoginConsole --> UseModel[\"使用模型 (fast / 4A / 16)\"]\n```\n\n## 域名转移到 Cloudflare 流程 [BV1fHge6HEuo P1 05:01]\n```mermaid\nflowchart LR\n    DomainProvider[\"域名提供商\"] --> AddToCart[\"加入购物车\"]\n    AddToCart --> Purchase[\"完成购买\"]\n    Purchase --> DNSManagement[\"进入域名管理器\"]\n    DNSManagement --> ChangeNS[\"更改 NameServer 为 Cloudflare\"]\n    ChangeNS --> CloudflareLogin[\"登录 Cloudflare\"]\n    CloudflareLogin --> AddDomainCF[\"在 Cloudflare 添加域名\"]\n    AddDomainCF --> SetDNSRecords[\"设置 DNS 记录\"]\n    SetDNSRecords --> Propagation[\"DNS 传播生效\"]\n```\n\n## 使用模式选择决策树 [BV1fHge6HEuo P1 14:01]\n```mermaid\nflowchart TD\n    Start[\"需求评估\"] --> NeedSpeed[\"需要快速响应?\"]\n    NeedSpeed -->|是| ChooseFast[\"选择 fast (agent)\"]\n    NeedSpeed -->|否| NeedDepth[\"需要深度搜索?\"]\n    NeedDepth -->|是| ChooseFourA[\"选择 4 A 进程\"]\n    NeedDepth -->|否| NeedCheck[\"需要检查/切割模型?\"]\n    NeedCheck -->|是| UseCheckModel[\"使用 check 模型切割\"]\n    NeedCheck -->|否| ChooseSixteen[\"选择 16 A 进程 (深度模式)\"]\n```",
+  "diagrams": [
+    {
+      "title": "模型结构总览",
+      "code": "flowchart TD\n    SearchEngine[\"Grok 搜索引擎\"] --> RealTime[\"实时联网 & 连接推特\"]\n    SearchEngine --> TopOne[\"被视为 Top One 搜索引擎\"]\n    FreeAccount[\"免费账户\"] --> FastMode[\"fast (agent)\"]\n    FastMode --> ModeComp[\"模式比较\"]\n    FourA[\"4 A 进程模型\"] --> ModeComp\n    SixteenEngines[\"16 engines (agents) 模型\"] --> ModeComp\n    ExportHave[\"export / have (对应 4/16 ENGINT)\"] --> FourA\n    ExportHave --> SixteenEngines"
+    },
+    {
+      "title": "部署流程总览",
+      "code": "flowchart TD\n    PurchaseVPS[\"购买 VPS (99元/年)\"] --> PurchaseDomain[\"购买域名\"]\n    PurchaseDomain --> SetDNS_CF[\"在 Cloudflare 设置 DNS\"]\n    SetDNS_CF --> TransferDomain[\"域名转移到 Cloudflare\"]\n    TransferDomain --> DeployCDMail[\"部署 CD mail 项目\"]\n    DeployCDMail --> ConfigureAI[\"AI 配置 GLOCK2API & 注册机\"]\n    ConfigureAI --> EnableWARP[\"使用 WARP 洗白流量\"]\n    EnableWARP --> TestDeployment[\"测试部署\"]\n    TestDeployment --> LoginConsole[\"登录 Console\"]\n    LoginConsole --> UseModel[\"使用模型 (fast / 4A / 16)\"]"
+    },
+    {
+      "title": "域名转移到 Cloudflare 流程",
+      "code": "flowchart LR\n    DomainProvider[\"域名提供商\"] --> AddToCart[\"加入购物车\"]\n    AddToCart --> Purchase[\"完成购买\"]\n    Purchase --> DNSManagement[\"进入域名管理器\"]\n    DNSManagement --> ChangeNS[\"更改 NameServer 为 Cloudflare\"]\n    ChangeNS --> CloudflareLogin[\"登录 Cloudflare\"]\n    CloudflareLogin --> AddDomainCF[\"在 Cloudflare 添加域名\"]\n    AddDomainCF --> SetDNSRecords[\"设置 DNS 记录\"]\n    SetDNSRecords --> Propagation[\"DNS 传播生效\"]"
+    },
+    {
+      "title": "使用模式选择决策树",
+      "code": "flowchart TD\n    Start[\"需求评估\"] --> NeedSpeed[\"需要快速响应?\"]\n    NeedSpeed -->|是| ChooseFast[\"选择 fast (agent)\"]\n    NeedSpeed -->|否| NeedDepth[\"需要深度搜索?\"]\n    NeedDepth -->|是| ChooseFourA[\"选择 4 A 进程\"]\n    NeedDepth -->|否| NeedCheck[\"需要检查/切割模型?\"]\n    NeedCheck -->|是| UseCheckModel[\"使用 check 模型切割\"]\n    NeedCheck -->|否| ChooseSixteen[\"选择 16 A 进程 (深度模式)\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T03:44:12+00:00"
+}

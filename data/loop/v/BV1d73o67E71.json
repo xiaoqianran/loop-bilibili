@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1d73o67E71",
+  "title": "DeepSeek V4 Flash正式版发布 性能大幅提升",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2172,
+  "text": "今天我们给大家介绍一下deep seek v4flash\n0731版本啊\n最近刚刚发布出来\n那么这个版本官方最近又把这个数据公布出来\n性能是非常厉害的\n我们给大家来介绍一下咳\n目前官方desk公布的这个V4flash的这个功能\n它已经超过了原来DC科V4pro的这个预览版本\n你可以看到它在很多评测里面\n它主要是做智能体向\nTerminal bench n l two r e p o\n这些都是写代码方面用的比较多的\n这个SIOGYM\n它主要是做网络安全检测方面的\n这方面能力都大幅提升\nflash的版本\n都超过了原来pro的这样的一个预览版本\n所以他这个正式版本这个姓一旦发布之后\n它业界应该还是比较震惊的\n竟然EPSKV4flash的版本超过了EPPCCV4\npro预览版本\n已经非常接近像GML5.2OS\n4.88的超大规模的这些模型\n因为这个模型它毕竟啊权重还是比较小的\n它权重将近是差不多是200多个币\n304个币\n差不多200多个币\n应该是在300B之内的\n284个币左右还是比较小的\n不像pro的这个模型有1.6个T\n毕竟它是个小模型\n就相对这些大模型来讲\n它这个模型还是比较小\n能够达到这种性能还是非常厉害的\n包括像写代码的\ndeep sic d e的这些a int的最后一次测试\n这些包括deep seek自己的一些评测\n他的评测相对都比较难\n那么基本上都能够达到或者接近这些\n目前商业或者是开源的最主流的这些旗舰模型\n应该是一个非常不错的这样一个成绩\n当然他的评测他也讲了\n他是用deep seek的一个harness\n马上要发布的这样的一个智能体\n做的这样一个评测\n所以他又打了个伏笔\n应该来讲deep seek后面的不光这个模型比较强\n他的阿内斯的这样的一个智能体\n应该很快也会发布出来\n性能也是非常不错\n那他这个版本它推理方面啊跟原来一样啊\n有low有high有max这三种方案\nmax这个性能是最好的\n因为开源界对这个模型适配还是非常好的\n所以VLLM啊\n这些包括sg line啊\n包括其他的一些开源的这些项目都能去支持它\n那么他在这里面我们也简单介绍了一下\n如果他建议我们设置的这个参数取样的参数\ntemperature设置成1.0top的0.95\ntop是一\n我用high max这样的一个推理方式\n可能会最好最大的输出的长度\n它基本上是建议控制在384K的\n这样一个通\n这个应该也是非常大\nlicense还是非常好的\nand的这样一个license可以免费商用\n没有任何限制\n非常非常不错的这样的一个好\n那这个是一方面\n那我们再给大家介绍一下那个deep sc flash\n在VAM里面到底是怎么来部署的\n这个也是VAM团队\n他很很快又更新了这个SKV4flash\n0731版本的这样的一个更新更新\n首先也讲一下\n要装一下这个叫deg emm的一个kernel\n这个是专门针对deep sk的这个模型做的一个优化\nkernel的这样一个优化叫DGMMFP8kernel\n他建议要去安装了\n安装完之后\n它的目前的模型差不多是在三个300个币左右\n所以你可以用H100或者是用H200\n基本上都是可以的\n如果你是要用B200\n性能会更好一些\n因为它能够支持FP4的这样一个精度啊\n性能会更好一些\n好啊这个是启用的参数\n使用参数\n它kv catch一般都默认设置成FP8的\n那么减少这个显存的用量啊\nblock是256个enable的\n这个是专家的这个病情\n他这个里面是用了八个GPU\n当然目前来看四个其实已经足够了\n他这个地方用了八个啊\n这个是开启了一些工具的一些功能\n推理的这样的一个性能的一个分析\n包括投机解码\n他用了一个debug\n这个也是deep sk后面发布的一个非常好的一个\n并行偷袭解码的一个算法\n那目前业界很快过一阵子\n应该英伟达也会发布他们的NVF\nP4的这样一个精度\n那目前迪斯科官方啊\n是用P8的这样的一个精度\n加了一个debug的\n这样的一个投机解码的一个草稿的一个模型\n这个我们前面讲过了\n他有NO thinking\n没有思考或者思考hi或思考max的这三种方案\n那使用还是一样\n它跟OpenAI标准的API是兼容的\n在如果你要用启用思考模式\n推理模式\n你就要用参数\ncharter temperature的这样一个额外的一个参数\n这个设置为true\n这个设置为max\n好啊\n这个我们简单给大家介绍一下\n这个最近刚刚更新了这个deep sk v4\nflash0731版本\n这个版本\n它跟之前的模型的结构是完全是一致的\n那么他们也没有做重新的训练\n他只是在做了一部分\n加强了一部分后训练强化学习\n他在原来这个模型基础上\n又做了进一步的强化学习\n所以的你可以看到目前的强化学习\n其实对模型的整个一个性能的提升\n还是有非常大的这样一个影响\n当然目前DPC可是没有公布\n他到底是怎么做强化学习的\n他只是在之前他的技术白皮书里面\n大概讲了一下\n他谈化学习的这样一个方式和方法\n那我相信他肯定又找到了一个新的方法\n所以否则不可能这个性能有这么大的一个提升\n好今天我们这样的一个deep seek v4flash\n开源的这样的一个模型\n应该也是我们企业级里面一个主流的一个\n主力模型\n给大家推荐到这好吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1d73o67E71",
+  "published_at": "1785888900",
+  "fetched_at": "2026-08-09T06:49:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 知识图谱\n\n## Overview\n```mermaid\nflowchart TD\n    V4F[\"DeepSeek V4 Flash 0731版\"]\n    Perf[\"性能显著提升\"]\n    Comp[\"超越 V4 Pro 预览版\"]\n    Model[\"模型规模较小\"]\n    Params[\"约 200‑300B 参数\"]\n    License[\"免费商用许可证\"]\n    Bench[\"多项评测（代码、网络安全）\"]\n    Agent[\"即将发布的智能体\"]\n    Future[\"后续强化学习提升\"]\n\n    V4F --> Perf\n    Perf --> Comp\n    V4F --> Model\n    Model --> Params\n    V4F --> License\n    V4F --> Bench\n    V4F --> Agent\n    Agent --> Future\n    Model --> Future\n```\n\n## Inference Configuration\n```mermaid\nflowchart TD\n    Inf[\"推理模式\"]\n    Low[\"low\"]\n    High[\"high\"]\n    Max[\"max（最佳性能）\"]\n    Temp[\"temperature = 1.0\"]\n    TopP[\"top_p = 0.95\"]\n    MaxLen[\"最大输出 ≈ 384K\"]\n    KV[\"KV cache FP8\"]\n    Block[\"block size = 256\"]\n    Compat[\"兼容 OpenAI API\"]\n    Think[\"思考模式（charter temperature）\"]\n    ThinkParam[\"设置 true / max\"]\n\n    Inf --> Low\n    Inf --> High\n    Inf --> Max\n    Max --> Temp\n    Max --> TopP\n    Max --> MaxLen\n    Max --> KV\n    KV --> Block\n    Max --> Compat\n    Compat --> Think\n    Think --> ThinkParam\n```\n\n## Deployment Pipeline\n```mermaid\nflowchart TD\n    Install[\"安装 DGMMFP8 kernel\"]\n    Kernel[\"针对 DeepSeek 优化\"]\n    HW[\"选择硬件：H100 / H200 / B200\"]\n    Precision[\"支持 FP8（默认）/ FP4（B200）\"]\n    ParamsSet[\"设置推理参数\"]\n    Run[\"执行推理\"]\n    Tools[\"使用 VLLM、sgline 等开源项目\"]\n    Debug[\"启用 debug / 投机解码\"]\n    FutureNV[\"NVF P4 精度即将发布\"]\n    Release[\"后续模型强化学习\"]\n\n    Install --> Kernel\n    Kernel --> HW\n    HW --> Precision\n    Precision --> ParamsSet\n    ParamsSet --> Run\n    Run --> Tools\n    Run --> Debug\n    Debug --> FutureNV\n    Run --> Release\n```",
+      "diagrams": [
+        {
+          "title": "Overview",
+          "code": "flowchart TD\n    V4F[\"DeepSeek V4 Flash 0731版\"]\n    Perf[\"性能显著提升\"]\n    Comp[\"超越 V4 Pro 预览版\"]\n    Model[\"模型规模较小\"]\n    Params[\"约 200‑300B 参数\"]\n    License[\"免费商用许可证\"]\n    Bench[\"多项评测（代码、网络安全）\"]\n    Agent[\"即将发布的智能体\"]\n    Future[\"后续强化学习提升\"]\n\n    V4F --> Perf\n    Perf --> Comp\n    V4F --> Model\n    Model --> Params\n    V4F --> License\n    V4F --> Bench\n    V4F --> Agent\n    Agent --> Future\n    Model --> Future"
+        },
+        {
+          "title": "Inference Configuration",
+          "code": "flowchart TD\n    Inf[\"推理模式\"]\n    Low[\"low\"]\n    High[\"high\"]\n    Max[\"max（最佳性能）\"]\n    Temp[\"temperature = 1.0\"]\n    TopP[\"top_p = 0.95\"]\n    MaxLen[\"最大输出 ≈ 384K\"]\n    KV[\"KV cache FP8\"]\n    Block[\"block size = 256\"]\n    Compat[\"兼容 OpenAI API\"]\n    Think[\"思考模式（charter temperature）\"]\n    ThinkParam[\"设置 true / max\"]\n\n    Inf --> Low\n    Inf --> High\n    Inf --> Max\n    Max --> Temp\n    Max --> TopP\n    Max --> MaxLen\n    Max --> KV\n    KV --> Block\n    Max --> Compat\n    Compat --> Think\n    Think --> ThinkParam"
+        },
+        {
+          "title": "Deployment Pipeline",
+          "code": "flowchart TD\n    Install[\"安装 DGMMFP8 kernel\"]\n    Kernel[\"针对 DeepSeek 优化\"]\n    HW[\"选择硬件：H100 / H200 / B200\"]\n    Precision[\"支持 FP8（默认）/ FP4（B200）\"]\n    ParamsSet[\"设置推理参数\"]\n    Run[\"执行推理\"]\n    Tools[\"使用 VLLM、sgline 等开源项目\"]\n    Debug[\"启用 debug / 投机解码\"]\n    FutureNV[\"NVF P4 精度即将发布\"]\n    Release[\"后续模型强化学习\"]\n\n    Install --> Kernel\n    Kernel --> HW\n    HW --> Precision\n    Precision --> ParamsSet\n    ParamsSet --> Run\n    Run --> Tools\n    Run --> Debug\n    Debug --> FutureNV\n    Run --> Release"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T06:50:52+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 知识图谱\n\n## Overview\n```mermaid\nflowchart TD\n    V4F[\"DeepSeek V4 Flash 0731版\"]\n    Perf[\"性能显著提升\"]\n    Comp[\"超越 V4 Pro 预览版\"]\n    Model[\"模型规模较小\"]\n    Params[\"约 200‑300B 参数\"]\n    License[\"免费商用许可证\"]\n    Bench[\"多项评测（代码、网络安全）\"]\n    Agent[\"即将发布的智能体\"]\n    Future[\"后续强化学习提升\"]\n\n    V4F --> Perf\n    Perf --> Comp\n    V4F --> Model\n    Model --> Params\n    V4F --> License\n    V4F --> Bench\n    V4F --> Agent\n    Agent --> Future\n    Model --> Future\n```\n\n## Inference Configuration\n```mermaid\nflowchart TD\n    Inf[\"推理模式\"]\n    Low[\"low\"]\n    High[\"high\"]\n    Max[\"max（最佳性能）\"]\n    Temp[\"temperature = 1.0\"]\n    TopP[\"top_p = 0.95\"]\n    MaxLen[\"最大输出 ≈ 384K\"]\n    KV[\"KV cache FP8\"]\n    Block[\"block size = 256\"]\n    Compat[\"兼容 OpenAI API\"]\n    Think[\"思考模式（charter temperature）\"]\n    ThinkParam[\"设置 true / max\"]\n\n    Inf --> Low\n    Inf --> High\n    Inf --> Max\n    Max --> Temp\n    Max --> TopP\n    Max --> MaxLen\n    Max --> KV\n    KV --> Block\n    Max --> Compat\n    Compat --> Think\n    Think --> ThinkParam\n```\n\n## Deployment Pipeline\n```mermaid\nflowchart TD\n    Install[\"安装 DGMMFP8 kernel\"]\n    Kernel[\"针对 DeepSeek 优化\"]\n    HW[\"选择硬件：H100 / H200 / B200\"]\n    Precision[\"支持 FP8（默认）/ FP4（B200）\"]\n    ParamsSet[\"设置推理参数\"]\n    Run[\"执行推理\"]\n    Tools[\"使用 VLLM、sgline 等开源项目\"]\n    Debug[\"启用 debug / 投机解码\"]\n    FutureNV[\"NVF P4 精度即将发布\"]\n    Release[\"后续模型强化学习\"]\n\n    Install --> Kernel\n    Kernel --> HW\n    HW --> Precision\n    Precision --> ParamsSet\n    ParamsSet --> Run\n    Run --> Tools\n    Run --> Debug\n    Debug --> FutureNV\n    Run --> Release\n```",
+  "diagrams": [
+    {
+      "title": "Overview",
+      "code": "flowchart TD\n    V4F[\"DeepSeek V4 Flash 0731版\"]\n    Perf[\"性能显著提升\"]\n    Comp[\"超越 V4 Pro 预览版\"]\n    Model[\"模型规模较小\"]\n    Params[\"约 200‑300B 参数\"]\n    License[\"免费商用许可证\"]\n    Bench[\"多项评测（代码、网络安全）\"]\n    Agent[\"即将发布的智能体\"]\n    Future[\"后续强化学习提升\"]\n\n    V4F --> Perf\n    Perf --> Comp\n    V4F --> Model\n    Model --> Params\n    V4F --> License\n    V4F --> Bench\n    V4F --> Agent\n    Agent --> Future\n    Model --> Future"
+    },
+    {
+      "title": "Inference Configuration",
+      "code": "flowchart TD\n    Inf[\"推理模式\"]\n    Low[\"low\"]\n    High[\"high\"]\n    Max[\"max（最佳性能）\"]\n    Temp[\"temperature = 1.0\"]\n    TopP[\"top_p = 0.95\"]\n    MaxLen[\"最大输出 ≈ 384K\"]\n    KV[\"KV cache FP8\"]\n    Block[\"block size = 256\"]\n    Compat[\"兼容 OpenAI API\"]\n    Think[\"思考模式（charter temperature）\"]\n    ThinkParam[\"设置 true / max\"]\n\n    Inf --> Low\n    Inf --> High\n    Inf --> Max\n    Max --> Temp\n    Max --> TopP\n    Max --> MaxLen\n    Max --> KV\n    KV --> Block\n    Max --> Compat\n    Compat --> Think\n    Think --> ThinkParam"
+    },
+    {
+      "title": "Deployment Pipeline",
+      "code": "flowchart TD\n    Install[\"安装 DGMMFP8 kernel\"]\n    Kernel[\"针对 DeepSeek 优化\"]\n    HW[\"选择硬件：H100 / H200 / B200\"]\n    Precision[\"支持 FP8（默认）/ FP4（B200）\"]\n    ParamsSet[\"设置推理参数\"]\n    Run[\"执行推理\"]\n    Tools[\"使用 VLLM、sgline 等开源项目\"]\n    Debug[\"启用 debug / 投机解码\"]\n    FutureNV[\"NVF P4 精度即将发布\"]\n    Release[\"后续模型强化学习\"]\n\n    Install --> Kernel\n    Kernel --> HW\n    HW --> Precision\n    Precision --> ParamsSet\n    ParamsSet --> Run\n    Run --> Tools\n    Run --> Debug\n    Debug --> FutureNV\n    Run --> Release"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T06:50:52+00:00"
+}

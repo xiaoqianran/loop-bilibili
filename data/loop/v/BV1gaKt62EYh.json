@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1gaKt62EYh",
+  "title": "OpenCode 2.0 从 API 到桌面端全面重写，AI 编程工具进入服务化阶段",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1112,
+  "text": "160000star open code没有在一点X上继续修修补补\n而是选择了彻底重写\n2.0的关键词很明确\nAPI全部重做\nbeyond签到node桌面端\n从ti转向electron\n这不是一次普通升级\n而是AI编程工具\n从命令行产品走向长期服务\n和多设备网络的架构换代\nDEX对重写的解释很直接\n很多事情要做三次才知道真正该怎么做\nopen code0是原型\n一点X是验证\n2.0则是在理解完整领域之后\n把核心接口重新设计\n所以这次最重要的不是新增功能\n而是把自然生长出来的API\n改成可以长期扩展的产品\n股价open code和cloud code\n一个关键差异是他从BG迁到了node\n迁移后\n团队移除了bang特有API\n让服务器代码可以直接跑在node环境里\n桌面端也从ti转向electron\n因为WEBKIT在渲染性能和一致性上拖了后腿\n这两个选择看起来更重\n但目标是降低内存问题\n换来更稳定的桌面体验\n桌面端重写带来的直接变化是\nAI编程不用再排队\n用户可以在多个标签页里打开独立绘画\n让不同模型同时处理不同任务\n比如一边生成网站\n一边写会员入门清单\n还能把两个模型并排比较\n这会改变使用习惯\n从等一个任务跑完\n变成同时调度多个agent\n2.0的第二个关键变化是\nopen code默认以服务方式运行\n安装之后\n它会常驻本地桌面端\nweb应用脚本和自定义程序都能连接同一个服务\n如果你把远程服务器\nMac studio和主力桌面都纳入网络\nagent就能知道每台设备的位置和能力\n这让open code不只是一个命令行工具\n而更像跨设备的智能体操作层\nDEX谈软件质量时\n第一句话不是技术\n而是决定在乎open code团队过去几个月\ntoken用量涨了五倍\n他们把模型用于反复探索API设计和产品先例\n同时他们仍然投入open t i这样的底层言语\n因为coding agent不能自动补齐所有工程基础\n这套方法论很清楚\n用AI放大探索能力\n但用扎实言语保证产品完成度\n在模型路由上\nDEX认为简单切模型被高估了\n更有价值的是编排模式\n让一个贵的主模型负责指挥\n再派便宜子代理并行探索和执行\n交互方式也在变化\nopen code团队大量使用语音提示词\n因为LLM能理解混乱但真实的表达\n所以他更少看基准分数\n而是看团队token用量是否上涨\n因为那代表大家真的愿意用open code\n2.0的真正信号是AI编程工具正在改变形态\n它不再只是一个终端里的聊天框\n而是常驻服务桌面客户端\n多设备网络和A阵编排层\n从这个角度看\nAPI重做运行时迁移和桌面端换新\n都是为了让A证长期并行\n可靠的接管更多开发流程",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gaKt62EYh",
+  "published_at": "1784601312",
+  "fetched_at": "2026-08-08T22:17:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T22:20:56+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T22:20:56+00:00"
+}

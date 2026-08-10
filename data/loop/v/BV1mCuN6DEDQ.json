@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1mCuN6DEDQ",
+  "title": "minimax_h3官方4步lora加速模型，快5倍！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 194,
+  "text": "官方出手\n寸草不生\nCONFUE官方刚刚放出mini max h3的四部加速\nla模型\n速度直接提升五倍\n再也不用下载乱七八糟的加速节点了\n使用的方法也非常简单\n以默认的纹身图工作流为例\n在模型这里我们拖出一条线\n然后选择洛弱加载器挤模型\n选择四部la模型\n在la输出这里拉出两条线\n连接基本引导器\n连接基本调度器\n步数这里设置为四工作流就改好了\n模型都打包放在群公告了\n有需要的免费自取",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1mCuN6DEDQ",
+  "published_at": "1786119234",
+  "fetched_at": "2026-08-10T01:37:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# MiniMax H3 4步 LoRA 加速模型流程图谱\n\n## 加速概览\n```mermaid\nflowchart TD\n    A1[\"官方发布 MiniMax H3 4步 LoRA 加速\"]\n    A2[\"速度提升约5倍\"]\n    A3[\"无需下载外部加速节点\"]\n    A4[\"模型已在群公告提供，免费自取\"]\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n```\n- A1: [BV1mCuN6DEDQ P1 00:02]  \n- A2: [BV1mCuN6DEDQ P1 00:06]  \n- A3: [BV1mCuN6DEDQ P1 00:08]  \n- A4: [BV1mCuN6DEDQ P1 00:46‑00:48]  \n\n## 工作流步骤\n```mermaid\nflowchart LR\n    B1[\"使用默认纹身图工作流\"]\n    B2[\"在模型节点拖出线\"]\n    B3[\"选择 LoRA 加载器并加载模型\"]\n    B4[\"选择四步 LoRA 模型\"]\n    B5[\"在 LoRA 输出处拉出两条线\"]\n    B6[\"连接基本引导器\"]\n    B7[\"连接基本调度器\"]\n    B8[\"将步数设置为 4\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8\n```\n- B1: [BV1mCuN6DEDQ P1 00:20‑00:22]  \n- B2: [BV1mCuN6DEDQ P1 00:24]  \n- B3: [BV1mCuN6DEDQ P1 00:27]  \n- B4: [BV1mCuN6DEDQ P1 00:32]  \n- B5: [BV1mCuN6DEDQ P1 00:34]  \n- B6: [BV1mCuN6DEDQ P1 00:37]  \n- B7: [BV1mCuN6DEDQ P1 00:39]  \n- B8: [BV1mCuN6DEDQ P1 00:42]  ",
+      "diagrams": [
+        {
+          "title": "加速概览",
+          "code": "flowchart TD\n    A1[\"官方发布 MiniMax H3 4步 LoRA 加速\"]\n    A2[\"速度提升约5倍\"]\n    A3[\"无需下载外部加速节点\"]\n    A4[\"模型已在群公告提供，免费自取\"]\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4"
+        },
+        {
+          "title": "工作流步骤",
+          "code": "flowchart LR\n    B1[\"使用默认纹身图工作流\"]\n    B2[\"在模型节点拖出线\"]\n    B3[\"选择 LoRA 加载器并加载模型\"]\n    B4[\"选择四步 LoRA 模型\"]\n    B5[\"在 LoRA 输出处拉出两条线\"]\n    B6[\"连接基本引导器\"]\n    B7[\"连接基本调度器\"]\n    B8[\"将步数设置为 4\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-10T01:37:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# MiniMax H3 4步 LoRA 加速模型流程图谱\n\n## 加速概览\n```mermaid\nflowchart TD\n    A1[\"官方发布 MiniMax H3 4步 LoRA 加速\"]\n    A2[\"速度提升约5倍\"]\n    A3[\"无需下载外部加速节点\"]\n    A4[\"模型已在群公告提供，免费自取\"]\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n```\n- A1: [BV1mCuN6DEDQ P1 00:02]  \n- A2: [BV1mCuN6DEDQ P1 00:06]  \n- A3: [BV1mCuN6DEDQ P1 00:08]  \n- A4: [BV1mCuN6DEDQ P1 00:46‑00:48]  \n\n## 工作流步骤\n```mermaid\nflowchart LR\n    B1[\"使用默认纹身图工作流\"]\n    B2[\"在模型节点拖出线\"]\n    B3[\"选择 LoRA 加载器并加载模型\"]\n    B4[\"选择四步 LoRA 模型\"]\n    B5[\"在 LoRA 输出处拉出两条线\"]\n    B6[\"连接基本引导器\"]\n    B7[\"连接基本调度器\"]\n    B8[\"将步数设置为 4\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8\n```\n- B1: [BV1mCuN6DEDQ P1 00:20‑00:22]  \n- B2: [BV1mCuN6DEDQ P1 00:24]  \n- B3: [BV1mCuN6DEDQ P1 00:27]  \n- B4: [BV1mCuN6DEDQ P1 00:32]  \n- B5: [BV1mCuN6DEDQ P1 00:34]  \n- B6: [BV1mCuN6DEDQ P1 00:37]  \n- B7: [BV1mCuN6DEDQ P1 00:39]  \n- B8: [BV1mCuN6DEDQ P1 00:42]  ",
+  "diagrams": [
+    {
+      "title": "加速概览",
+      "code": "flowchart TD\n    A1[\"官方发布 MiniMax H3 4步 LoRA 加速\"]\n    A2[\"速度提升约5倍\"]\n    A3[\"无需下载外部加速节点\"]\n    A4[\"模型已在群公告提供，免费自取\"]\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4"
+    },
+    {
+      "title": "工作流步骤",
+      "code": "flowchart LR\n    B1[\"使用默认纹身图工作流\"]\n    B2[\"在模型节点拖出线\"]\n    B3[\"选择 LoRA 加载器并加载模型\"]\n    B4[\"选择四步 LoRA 模型\"]\n    B5[\"在 LoRA 输出处拉出两条线\"]\n    B6[\"连接基本引导器\"]\n    B7[\"连接基本调度器\"]\n    B8[\"将步数设置为 4\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T01:37:57+00:00"
+}

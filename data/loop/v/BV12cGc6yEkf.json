@@ -1,0 +1,26 @@
+{
+  "bvid": "BV12cGc6yEkf",
+  "title": "Kimi K3.1 八月发布、GPT-5.6 降价 80%、Inkling Small 发布、FLUX 3预览上线Hermes | 7 月 31 日 AI",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2225,
+  "text": "大家好\n欢迎收看今日AI风向标\n本期内容共涵盖四大方面\n首先来看AI动态板块的相关内容\n月之暗面确认KIMIK3.1将于8月发布\n拥有神话级能力并开源权重新模型\n主打更快推理速度\n更低延迟和更可靠的编码及智能体工作流\n预计将显著缩小与club fable5的差距\nOpenAI宣布GPT5.6全系列降价\n入门级LUNA降价80%\n每百万输入token仅0.20美元\nTARA降价20%\n同时推出so fast模式\n速度提升2.5倍\nLUNA和TARA的新价格\n已同步反映在codex和cheat GPT t work中\n使用量更耐消耗\nmirror mirai创办的thinking machines发布开源模型\nIncluding small\n总参数量276B\n活跃参数12B\n支持文本图像和音频多模态输入\n上下文窗口达100万\ntoken模型支持sg line day0部署\n解码速度达648\ntoken sp flux3预览版现已在HERMES平台上提供\n有效期48小时\nHERMES可将片段串联成完整短片\n实现一个提示词从头到尾生成\n视频团队同步举办为期一周的短片创作竞赛\n字节跳动发布内部邮件\n宣布豆包与非书产品团队整合成立\n新豆包产品团队\n由豆包负责人赵其统一管理\n飞书GTM体系与火山引擎整合\n为创造力服务平台\n此举意味着豆包正式接管飞书字节\n全面压住AI to b赛道\nOpenAI宣布暂停最新模型训练\n原因是发现多个0day漏洞可被连续利用\n突破沙河防线\n该公司表示\nAI发展速度可能需要主动放慢\n给安全基础设施留出加固时间\n这标志着前沿实验室从追求迭代速度\n转向安全优先的路线调整\n硅谷正酝酿针对ANTHROPIC的抵制浪潮\n矛头指向其与合作伙伴竞争的产品策略\n数据留存政策收紧及反开源立场\n部分企业已收到美国政府指令\n被要求在2026年8月底前\n全面停用ANTHROPIC旗下所有产品与服务\n亚马逊内部演示文稿披露\n一次失败的AI部署造成180万美元损失\n问题持续数月未被发现\n该事件涉及使用cloud执行低级编码任务\n实际花费超出预算860%\n并有多个项目产生数10万美元额外AI费用\n凸显企业AI成本管控风险\n谷歌正在利用AI技术\n全面重建chrome浏览器的安全防护体系\n通过智能分析\n识别传统规则引擎无法发现的隐藏漏洞\n此举旨在应对日益复杂的浏览器攻击手法\n将安全检测从被动规则匹配升级为主动威胁\n发现arm联合VLLM团队优化全推理\n站在纯CPU环境下\n实现高达6.2倍的LLM服务吞吐量提升\n优化覆盖内存分配\n高核数同步bf16权重域打包\npage attention和INT8执行ins4权重加载模式下\n吞吐量增益尤为显著\nNVIDIA的cosmos3super4step蒸馏模型\n在人工智能分析竞技场中\n成为图像到视频及文本到图像任务的新领跑者\ncosmos3super text2image四step和image2video4step\n均刷新了性价比和速度记录\n以下是官方给出的demo\nPRAAI和DIOGRAM联合开发的pmg dio gram\n在偏好与价格\n偏好与速度维度建立新的帕雷托前沿\n1K分辨率\n下级低推理变体\n每张图像仅需0.3每分\n低推理变体0.75美分\n生成时间大幅缩短\n以下是官方\n第56届国际物理奥林匹克竞赛落幕\n华为宣布小艺在理论考试中取得28.6分\n满分30分\n超出金牌线\n这是AI模型在高水平物理推理竞赛中\n取得的又一里程碑成绩\nGITHUB宣布自2026年7月30日起正式退役\ngithub models服务\nplayground模型目录推理API和自带密钥功能\n不再对任何客户开放\n用户需迁移至其他模型调用方案\n此举标志着GITHUB精简AI产品线的战略调整\n接下来是AI基础设施板块\nDeep se\n正计划在内蒙古建设一座\n一级瓦规模的人工智能数据中心\n目标在2027年底或2028年初\n至少部分投入运营\n该项目若建成\n将超过目前任何中国公司运营的AI设施规模\n但驱动芯片来源尚不明确\n与ANTHROPIC合作的数据中心开发商nexus\n正进行深入谈判\n计划借款150亿美元\n在德克萨斯州建设大型园区和发电厂\n谷歌提供财务担保和TPU芯片\n摩根士丹利牵头的银团将提供贷款\n接下来是芯片半导体板块\n台积电1.4NM制程进度提前\n首座台中晶圆厂预计2027年4月前完工\n2028年中期有望量产\n这一时间节点恰与英特尔计划\n2028年实现14A工艺量产形成直接竞争\n先进制程竞赛进一步加剧\n接下来是机器人具身智能板块\n谷歌DeepMind发布Gemini robotics2系列\n三款实体AI模型\n分别负责全身运动控制\n精细灵巧操作和多机器人协作\n新模型使机器人能够推理每个动作\n完成打结拧灯泡等此前无法实现的任务\n并首次支持不同类型机器人间的实时通信协作\n以下是官方给出的demo\n接下来是模型排行榜板块\n最后是今日的AI模型能力排行榜单\ncloud opus s5以智力61分\n代码78.0分\n智能体55:03分全面领跑\nClub fable5\n紧随其后\nGp p5.6\nso在代码和智能体榜单紧咬\n显示闭源三强焦灼\nANDROPIC在多维度略胜OpenAI\n但gt t系列版本分化明显\n感谢收看今日的AI风向标\n每天5分钟带你速览AI大事\n喜欢的话记得一键三连哦\n我们明天见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV12cGc6yEkf",
+  "published_at": "1785472537",
+  "fetched_at": "2026-08-09T16:24:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

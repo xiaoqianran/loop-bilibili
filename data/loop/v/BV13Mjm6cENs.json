@@ -1,0 +1,82 @@
+{
+  "bvid": "BV13Mjm6cENs",
+  "title": "B站强推！为什么神经网络可以学习几乎任何东西？AI大佬手把手带你1小时学透GNN、CNN、RNN、GAN、Transformer五大神经网络模型原理与实战！AI",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2884,
+  "text": "今天我们来简单聊一聊神经网络\n为什么可以学习\n一个神经网络是由很多神经元相互连接而成的\n可以是只有一层\n也可以是多层\n每一层的输出将会作为下一层的输入\n层和层之间的神经元之间是全连接的结构\n就像一张网一样\n每两个神经元之间有一些连接参数\n我们称之为权重\n不过在同一层的神经元之间是没有连接的\n神经网络的第一层称之为输入层\n主要用于获取输入的信息\n中间称之为隐藏层\n用于进行特征提取调整权重\n让隐藏层的神经单元对某种模式形成反应\n神经网络的最后一层称为输出层\n他的任务是输出最终的结果\n为了学习数据背后的模型\n神经网络首先定义一个损失函数\n然后训练的过程就是不断地将数据输入\n神经网络\n利用梯度下降和反向传播的方法\n不断地优化模型的参数\n以便更好地拟合这些训练数据背后的规律\n使得损失函数的数值越来越小\n最终达到学习到训练数据背后规律的目的\n为了更好的理解神经网络的学习过程\n我们可以看一个最简单的神经网络\n它只有一个神经元\n这个神经元只有一个输入X\n并有一个需要学习的参数\nW经过神经元的计算之后\n会产生一个输出\nY这个由一个神经元\n一个输入\n一个输出组成的网络模型\n表示了一个什么样的关系呢\n实际上描述了一个很简单的线性关系\nY等于WX加B\n这里的W和B是需要通过训练学习的参数\n举个例子\n当W等于0.6\nB等于E时\n画出来的曲线就是一条斜率为0.6\n截距唯一的直线\n现在让我们通过一个最简单的神经网络\n来进行实验\n来观察神经网络如何学习\n输入与输出之间的映射关系\n我们的训练数据是一些点\n这些点都位于一条直线上\n遵循着Y等于2X加一的规律\n我们采用的神经网络模型非常简单\n只有一个神经元\n正如之前所说\n这样的神经元网络模型\n描述的就是一个线性关系\n我们希望这个模型能够很好的拟合\n我们的训练数据\n我们使用了PYTORCH来训练这个模型\n损失函数是均方误差\n简称MSE\n均方误差是一种常用的损失函数\n用于衡量预测值与真实值之间的差异\n我们使用了linear模型\n它只有一个输入和一个输出\n在这里输出的个数代表了神经元的个数\n我们使用了IEW优化器来进行参数优化\n下面的代码是输入数据前向传递\n计算损失函数梯度下降\n反向传播\n优化网络参数的代码\n开始训练时\n我们随机初始化了神经网络的参数\n此时我们看到网络模型的表现\n确实是一个线性关系\n随着训练的进行\n我们的网络模型不断的拟合\n我们的训练数据\n损失函数的值也逐渐减小\n最终完全拟合了训练数据所表示的线性关系\n这表明我们的神经网络已经学习到了\n输入和输出之间的映射关系\n现在让我们考虑一个问题\n如果我们的采样数据不是一个线性关系\n会发生什么呢\n我们还是采用一个神经元的网络来训练\n看一下开始我们的训练过程\n虽然可以看到损失函数的值也越来越小\n但是很明显\n我们的训练数据并不是一个线性关系\n所以一个线性的模型只能是\n尽最大可能去拟合它\n但是始终无法完全拟合\n增加神经元的个数和神经网络的层数\n可以解决这个问题吗\n我们增加网络层数为两层\n并且把的神经元个数增加到三个\n开始我们的训练过程\n我们会发现\n单纯增加神经元个数和网络层数\n并不能改变神经网络的结构\n它仍然表达的是一个线性关系\n这样的神经网络无论有多深\n神经元有多少个\n都无法拟合非线性关系\n对于这些采样数据表达的非线性关系\n我们如何去拟合它呢\n采样数据的最左边的点是-14\n我们先画一条直线之后\n我们沿着X轴小于五的点\n让它为零\n然后画一个斜率和训练数据代表的直线\n斜率一样的一条直线\n直到训练数据出现拐点的点也就是二\n然后之后的点画一条直线\n我们沿着X轴小于前面的拐点二的点\n让它为零\n然后画一个斜率和训练数据代表的直线\n斜率一样的一条直线\n直到训练数据出现拐点的点也就是零\n然后之后的点画一条直线\n我们沿着X轴小于前面的拐点\n零的点让它为零\n然后画一个斜率和训练数据代表的直线\n斜率一样的一条直线\n直到训练数据出现拐点的点也就是三\n然后之后的点画一条直线\n我们沿着X轴小于前面的拐点\n三个点让它为零\n然后画一个斜率和训练数据代表的直线\n斜率一样的一条直线\n直到训练数据出现拐点的点也就是五\n然后之后的点画一条直线\n这上面的五条线的叠加\n就拟合了我们的训练数据\n这个过程我们采用的是手动的过程\n可不可以让神经网络也采用这样的方式\n来进行学习呢\n我们手动分解的线\n有一个函数可以很好的拟合它\n下面是它的计算公式\n它就是SIGNMATE函数\n是神经网络激活函数的一种\n我们重新定义网络模型\n增加神经元的个数到八个\n同时在神经元的输出后增加一个SIGMOID\n这样我们的网络模型就不再是一条直线了\n这是我们PYTORCH来训练这个模型的代码\n不同的地方就是我们定义模型的代码\n我们在两个linear中间增加了SIGMOID的函数\n创建好我们的模型之后\n我们重新开始模型训练\n这还是我们之前的测试数据\n随着训练的进行\n我们可以看到\n由于引入了SIGMOID激活函数\n增加了非线性关系\n我们的网络模型不再是一条直线神经网络\n可以不断拟合训练数据\n损失函数的值也逐渐减小\n最终拟合了训练数据所表示的非线性关系\n我们将我们学习好的神经网络进行分解\n将隐藏层的最后一层的八个神经元\n分解成八个小网络\n第一个网络学习到的关系是这样的\n第二个网络学习到的关系\n第三个网络学习到的关系\n第四个网络学习到的关系\n第五个网络学习到的关系\n第六个网络学习到的关系\n第七个网络学习到的关系\n第八个网络学习到的关系是这样的\n我们将网络模型参数拆分成八个小模型\n每个神经网络学到了一种简单的关系\n这些简单的函数通过叠加起来\n便能拟合复杂的非线性关系\n让我们再来看一下这个网络结构\n把输入投射到多个神经元\n从几何意义上来看\n可以想象为一个点投射到高维度的空间\n从逻辑上看\n就相当于把一个复杂的问题拆分成小的问题\n每个神经元汇总输入\n然后通过激活函数来做判断\n得到这个问题的结果\n从多个神经元到一个神经元的结构\n从逻辑上看就相当于是结果的汇总\n这个神经元对拆分的问题进行汇总之后\n产生最终结果\n我们举一个图像识别的例子\n判断一张图片是不是人脸\n这个是一个复杂的问题\n但是可以对这个问题进行拆分\n比如左上角有没有眼睛\n中间有没有鼻子\n下面有没有嘴巴\n右上角有没有眼睛\n两边有没有耳朵等等\n这样一个复杂的问题就被拆分成了五个小问题\n对这五个问题进行判断以后\n对结果进行汇总\n根据这些结果就可以判断这是不是一张人脸了\n其实这里面的每个小问题还可以进一步的拆分\n比如左上角有没有眼睛\n可以进一步的拆分成有没有眉毛\n有没有睫毛\n有没有眼球\n然后根据结果汇总\n判断左上角是否有眼睛\n这个拆分结果可以一直细化下去\n直到神经网络可以轻松处理为止\n进行一下总结\n神经网络为什么可以学习\n神经网络可以学习\n这是因为他们引入了激活函数\n增加了网络中的非线性关系\n只要有足够多的神经元\n就可以拟合各种函数关系\n同时这种网络结构可以把一个复杂的问题\n分解成无数个小问题\n然后叠加各个小问题的答案\n得到最终的结果\n谢谢大家的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV13Mjm6cENs",
+  "published_at": "1782210097",
+  "fetched_at": "2026-08-09T20:21:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 神经网络学习原理图谱\n\n## 知识总览  \n[BV13Mjm6cENs P1 00:09]、[BV13Mjm6cENs P1 00:21]、[BV13Mjm6cENs P1 00:53]、[BV13Mjm6cENs P1 00:59]、[BV13Mjm6cENs P1 01:02]\n\n```mermaid\nflowchart TD\n    NN[\"神经网络\"]\n    L1[\"输入层\"] -->|全连接| L2[\"隐藏层\"]\n    L2 -->|全连接| L3[\"输出层\"]\n    L1 -->|获取输入信息| NN\n    L2 -->|特征提取、调权| NN\n    L3 -->|输出结果| NN\n    NN -->|前向传播| Out[\"输出 Y\"]\n    Out -->|计算| Loss[\"损失函数\"]\n    Loss -->|梯度下降| Grad[\"梯度\"]\n    Grad -->|反向传播| Update[\"参数更新\"]\n    Update -->|迭代| NN\n    NN -->|学习目标| Goal[\"拟合数据规律\"]\n```\n\n## 单神经元线性学习  \n[BV13Mjm6cENs P1 01:31]、[BV13Mjm6cENs P1 01:35]、[BV13Mjm6cENs P1 02:00]、[BV13Mjm6cENs P1 02:19]、[BV13Mjm6cENs P1 02:55]、[BV13Mjm6cENs P1 03:04]\n\n```mermaid\nflowchart TD\n    SN[\"单神经元模型\"]\n    X[\"输入 X\"]\n    Params[\"参数 W、B\"]\n    Linear[\"Y = W·X + B\"]\n    Data[\"训练数据 Y=2X+1\"]\n    LossMSE[\"均方误差 (MSE)\"]\n    Optim[\"梯度下降优化\"]\n    Converge[\"损失趋近 0\"]\n    Fit[\"线性关系完全拟合\"]\n    SN --> X\n    SN --> Params\n    X --> Linear\n    Params --> Linear\n    Linear --> LossMSE\n    Data --> LossMSE\n    LossMSE --> Optim\n    Optim --> Converge\n    Converge --> Fit\n```\n\n## 线性网络的局限与激活函数突破  \n[BV13Mjm6cENs P1 03:12]、[BV13Mjm6cENs P1 03:34]、[BV13Mjm6cENs P1 03:55]、[BV13Mjm6cENs P1 05:12]、[BV13Mjm6cENs P1 05:56]\n\n```mermaid\nflowchart LR\n    LinearNet[\"线性网络（任意层深）\"]\n    LinearNet -->|只能表达| LinearRel[\"线性关系\"]\n    NonLinearData[\"非线性采样数据\"]\n    LinearNet -.->|无法完全拟合| Fail[\"拟合不足\"]\n    AddSigmoid[\"加入 Sigmoid 激活函数\"]\n    AddSigmoid -->|引入| NonLinearRel[\"非线性关系\"]\n    ExpandedNet[\"8 个神经元 + Sigmoid\"]\n    ExpandedNet -->|能够| FitNonLinear[\"拟合非线性\"]\n    FitNonLinear -->|损失下降| LossDecrease[\"损失函数值下降\"]\n```\n\n## 分解与叠加视角  \n[BV13Mjm6cENs P1 06:02]、[BV13Mjm6cENs P1 06:31]、[BV13Mjm6cENs P1 06:39]、[BV13Mjm6cENs P1 06:44]\n\n```mermaid\nflowchart TD\n    Complex[\"复杂问题\"]\n    Decompose[\"拆分为多个子网络\"]\n    SubNet1[\"子网络 1 学到简易函数\"]\n    SubNet2[\"子网络 2 学到简易函数\"]\n    SubNetN[\"子网络 N 学到简易函数\"]\n    Aggregate[\"叠加子网络输出\"]\n    Approx[\"逼近复杂非线性关系\"]\n    Projection[\"输入投射到高维空间\"]\n    Complex --> Decompose\n    Decompose --> SubNet1\n    Decompose --> SubNet2\n    Decompose --> SubNetN\n    SubNet1 --> Aggregate\n    SubNet2 --> Aggregate\n    SubNetN --> Aggregate\n    Aggregate --> Approx\n    Projection --> Decompose\n```\n\n## 图像识别任务拆解示例  \n[BV13Mjm6cENs P1 07:03]、[BV13Mjm6cENs P1 07:11]、[BV13Mjm6cENs P1 07:25]、[BV13Mjm6cENs P1 07:49]\n\n```mermaid\nflowchart TD\n    ImgRec[\"图像识别任务（人脸）\"]\n    Split[\"拆分为局部特征检测\"]\n    EyeTL[\"左上角眼睛检测\"]\n    EyeTR[\"右上角眼睛检测\"]\n    Nose[\"鼻子检测\"]\n    Mouth[\"嘴巴检测\"]\n    EarL[\"左耳检测\"]\n    EarR[\"右耳检测\"]\n    Combine[\"汇总局部结果\"]\n    Decision[\"判断是否为人脸\"]\n    ImgRec --> Split\n    Split --> EyeTL\n    Split --> EyeTR\n    Split --> Nose\n    Split --> Mouth\n    Split --> EarL\n    Split --> EarR\n    EyeTL --> Combine\n    EyeTR --> Combine\n    Nose --> Combine\n    Mouth --> Combine\n    EarL --> Combine\n    EarR --> Combine\n    Combine --> Decision\n```",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    NN[\"神经网络\"]\n    L1[\"输入层\"] -->|全连接| L2[\"隐藏层\"]\n    L2 -->|全连接| L3[\"输出层\"]\n    L1 -->|获取输入信息| NN\n    L2 -->|特征提取、调权| NN\n    L3 -->|输出结果| NN\n    NN -->|前向传播| Out[\"输出 Y\"]\n    Out -->|计算| Loss[\"损失函数\"]\n    Loss -->|梯度下降| Grad[\"梯度\"]\n    Grad -->|反向传播| Update[\"参数更新\"]\n    Update -->|迭代| NN\n    NN -->|学习目标| Goal[\"拟合数据规律\"]"
+        },
+        {
+          "title": "单神经元线性学习",
+          "code": "flowchart TD\n    SN[\"单神经元模型\"]\n    X[\"输入 X\"]\n    Params[\"参数 W、B\"]\n    Linear[\"Y = W·X + B\"]\n    Data[\"训练数据 Y=2X+1\"]\n    LossMSE[\"均方误差 (MSE)\"]\n    Optim[\"梯度下降优化\"]\n    Converge[\"损失趋近 0\"]\n    Fit[\"线性关系完全拟合\"]\n    SN --> X\n    SN --> Params\n    X --> Linear\n    Params --> Linear\n    Linear --> LossMSE\n    Data --> LossMSE\n    LossMSE --> Optim\n    Optim --> Converge\n    Converge --> Fit"
+        },
+        {
+          "title": "线性网络的局限与激活函数突破",
+          "code": "flowchart LR\n    LinearNet[\"线性网络（任意层深）\"]\n    LinearNet -->|只能表达| LinearRel[\"线性关系\"]\n    NonLinearData[\"非线性采样数据\"]\n    LinearNet -.->|无法完全拟合| Fail[\"拟合不足\"]\n    AddSigmoid[\"加入 Sigmoid 激活函数\"]\n    AddSigmoid -->|引入| NonLinearRel[\"非线性关系\"]\n    ExpandedNet[\"8 个神经元 + Sigmoid\"]\n    ExpandedNet -->|能够| FitNonLinear[\"拟合非线性\"]\n    FitNonLinear -->|损失下降| LossDecrease[\"损失函数值下降\"]"
+        },
+        {
+          "title": "分解与叠加视角",
+          "code": "flowchart TD\n    Complex[\"复杂问题\"]\n    Decompose[\"拆分为多个子网络\"]\n    SubNet1[\"子网络 1 学到简易函数\"]\n    SubNet2[\"子网络 2 学到简易函数\"]\n    SubNetN[\"子网络 N 学到简易函数\"]\n    Aggregate[\"叠加子网络输出\"]\n    Approx[\"逼近复杂非线性关系\"]\n    Projection[\"输入投射到高维空间\"]\n    Complex --> Decompose\n    Decompose --> SubNet1\n    Decompose --> SubNet2\n    Decompose --> SubNetN\n    SubNet1 --> Aggregate\n    SubNet2 --> Aggregate\n    SubNetN --> Aggregate\n    Aggregate --> Approx\n    Projection --> Decompose"
+        },
+        {
+          "title": "图像识别任务拆解示例",
+          "code": "flowchart TD\n    ImgRec[\"图像识别任务（人脸）\"]\n    Split[\"拆分为局部特征检测\"]\n    EyeTL[\"左上角眼睛检测\"]\n    EyeTR[\"右上角眼睛检测\"]\n    Nose[\"鼻子检测\"]\n    Mouth[\"嘴巴检测\"]\n    EarL[\"左耳检测\"]\n    EarR[\"右耳检测\"]\n    Combine[\"汇总局部结果\"]\n    Decision[\"判断是否为人脸\"]\n    ImgRec --> Split\n    Split --> EyeTL\n    Split --> EyeTR\n    Split --> Nose\n    Split --> Mouth\n    Split --> EarL\n    Split --> EarR\n    EyeTL --> Combine\n    EyeTR --> Combine\n    Nose --> Combine\n    Mouth --> Combine\n    EarL --> Combine\n    EarR --> Combine\n    Combine --> Decision"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T20:22:09+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 神经网络学习原理图谱\n\n## 知识总览  \n[BV13Mjm6cENs P1 00:09]、[BV13Mjm6cENs P1 00:21]、[BV13Mjm6cENs P1 00:53]、[BV13Mjm6cENs P1 00:59]、[BV13Mjm6cENs P1 01:02]\n\n```mermaid\nflowchart TD\n    NN[\"神经网络\"]\n    L1[\"输入层\"] -->|全连接| L2[\"隐藏层\"]\n    L2 -->|全连接| L3[\"输出层\"]\n    L1 -->|获取输入信息| NN\n    L2 -->|特征提取、调权| NN\n    L3 -->|输出结果| NN\n    NN -->|前向传播| Out[\"输出 Y\"]\n    Out -->|计算| Loss[\"损失函数\"]\n    Loss -->|梯度下降| Grad[\"梯度\"]\n    Grad -->|反向传播| Update[\"参数更新\"]\n    Update -->|迭代| NN\n    NN -->|学习目标| Goal[\"拟合数据规律\"]\n```\n\n## 单神经元线性学习  \n[BV13Mjm6cENs P1 01:31]、[BV13Mjm6cENs P1 01:35]、[BV13Mjm6cENs P1 02:00]、[BV13Mjm6cENs P1 02:19]、[BV13Mjm6cENs P1 02:55]、[BV13Mjm6cENs P1 03:04]\n\n```mermaid\nflowchart TD\n    SN[\"单神经元模型\"]\n    X[\"输入 X\"]\n    Params[\"参数 W、B\"]\n    Linear[\"Y = W·X + B\"]\n    Data[\"训练数据 Y=2X+1\"]\n    LossMSE[\"均方误差 (MSE)\"]\n    Optim[\"梯度下降优化\"]\n    Converge[\"损失趋近 0\"]\n    Fit[\"线性关系完全拟合\"]\n    SN --> X\n    SN --> Params\n    X --> Linear\n    Params --> Linear\n    Linear --> LossMSE\n    Data --> LossMSE\n    LossMSE --> Optim\n    Optim --> Converge\n    Converge --> Fit\n```\n\n## 线性网络的局限与激活函数突破  \n[BV13Mjm6cENs P1 03:12]、[BV13Mjm6cENs P1 03:34]、[BV13Mjm6cENs P1 03:55]、[BV13Mjm6cENs P1 05:12]、[BV13Mjm6cENs P1 05:56]\n\n```mermaid\nflowchart LR\n    LinearNet[\"线性网络（任意层深）\"]\n    LinearNet -->|只能表达| LinearRel[\"线性关系\"]\n    NonLinearData[\"非线性采样数据\"]\n    LinearNet -.->|无法完全拟合| Fail[\"拟合不足\"]\n    AddSigmoid[\"加入 Sigmoid 激活函数\"]\n    AddSigmoid -->|引入| NonLinearRel[\"非线性关系\"]\n    ExpandedNet[\"8 个神经元 + Sigmoid\"]\n    ExpandedNet -->|能够| FitNonLinear[\"拟合非线性\"]\n    FitNonLinear -->|损失下降| LossDecrease[\"损失函数值下降\"]\n```\n\n## 分解与叠加视角  \n[BV13Mjm6cENs P1 06:02]、[BV13Mjm6cENs P1 06:31]、[BV13Mjm6cENs P1 06:39]、[BV13Mjm6cENs P1 06:44]\n\n```mermaid\nflowchart TD\n    Complex[\"复杂问题\"]\n    Decompose[\"拆分为多个子网络\"]\n    SubNet1[\"子网络 1 学到简易函数\"]\n    SubNet2[\"子网络 2 学到简易函数\"]\n    SubNetN[\"子网络 N 学到简易函数\"]\n    Aggregate[\"叠加子网络输出\"]\n    Approx[\"逼近复杂非线性关系\"]\n    Projection[\"输入投射到高维空间\"]\n    Complex --> Decompose\n    Decompose --> SubNet1\n    Decompose --> SubNet2\n    Decompose --> SubNetN\n    SubNet1 --> Aggregate\n    SubNet2 --> Aggregate\n    SubNetN --> Aggregate\n    Aggregate --> Approx\n    Projection --> Decompose\n```\n\n## 图像识别任务拆解示例  \n[BV13Mjm6cENs P1 07:03]、[BV13Mjm6cENs P1 07:11]、[BV13Mjm6cENs P1 07:25]、[BV13Mjm6cENs P1 07:49]\n\n```mermaid\nflowchart TD\n    ImgRec[\"图像识别任务（人脸）\"]\n    Split[\"拆分为局部特征检测\"]\n    EyeTL[\"左上角眼睛检测\"]\n    EyeTR[\"右上角眼睛检测\"]\n    Nose[\"鼻子检测\"]\n    Mouth[\"嘴巴检测\"]\n    EarL[\"左耳检测\"]\n    EarR[\"右耳检测\"]\n    Combine[\"汇总局部结果\"]\n    Decision[\"判断是否为人脸\"]\n    ImgRec --> Split\n    Split --> EyeTL\n    Split --> EyeTR\n    Split --> Nose\n    Split --> Mouth\n    Split --> EarL\n    Split --> EarR\n    EyeTL --> Combine\n    EyeTR --> Combine\n    Nose --> Combine\n    Mouth --> Combine\n    EarL --> Combine\n    EarR --> Combine\n    Combine --> Decision\n```",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    NN[\"神经网络\"]\n    L1[\"输入层\"] -->|全连接| L2[\"隐藏层\"]\n    L2 -->|全连接| L3[\"输出层\"]\n    L1 -->|获取输入信息| NN\n    L2 -->|特征提取、调权| NN\n    L3 -->|输出结果| NN\n    NN -->|前向传播| Out[\"输出 Y\"]\n    Out -->|计算| Loss[\"损失函数\"]\n    Loss -->|梯度下降| Grad[\"梯度\"]\n    Grad -->|反向传播| Update[\"参数更新\"]\n    Update -->|迭代| NN\n    NN -->|学习目标| Goal[\"拟合数据规律\"]"
+    },
+    {
+      "title": "单神经元线性学习",
+      "code": "flowchart TD\n    SN[\"单神经元模型\"]\n    X[\"输入 X\"]\n    Params[\"参数 W、B\"]\n    Linear[\"Y = W·X + B\"]\n    Data[\"训练数据 Y=2X+1\"]\n    LossMSE[\"均方误差 (MSE)\"]\n    Optim[\"梯度下降优化\"]\n    Converge[\"损失趋近 0\"]\n    Fit[\"线性关系完全拟合\"]\n    SN --> X\n    SN --> Params\n    X --> Linear\n    Params --> Linear\n    Linear --> LossMSE\n    Data --> LossMSE\n    LossMSE --> Optim\n    Optim --> Converge\n    Converge --> Fit"
+    },
+    {
+      "title": "线性网络的局限与激活函数突破",
+      "code": "flowchart LR\n    LinearNet[\"线性网络（任意层深）\"]\n    LinearNet -->|只能表达| LinearRel[\"线性关系\"]\n    NonLinearData[\"非线性采样数据\"]\n    LinearNet -.->|无法完全拟合| Fail[\"拟合不足\"]\n    AddSigmoid[\"加入 Sigmoid 激活函数\"]\n    AddSigmoid -->|引入| NonLinearRel[\"非线性关系\"]\n    ExpandedNet[\"8 个神经元 + Sigmoid\"]\n    ExpandedNet -->|能够| FitNonLinear[\"拟合非线性\"]\n    FitNonLinear -->|损失下降| LossDecrease[\"损失函数值下降\"]"
+    },
+    {
+      "title": "分解与叠加视角",
+      "code": "flowchart TD\n    Complex[\"复杂问题\"]\n    Decompose[\"拆分为多个子网络\"]\n    SubNet1[\"子网络 1 学到简易函数\"]\n    SubNet2[\"子网络 2 学到简易函数\"]\n    SubNetN[\"子网络 N 学到简易函数\"]\n    Aggregate[\"叠加子网络输出\"]\n    Approx[\"逼近复杂非线性关系\"]\n    Projection[\"输入投射到高维空间\"]\n    Complex --> Decompose\n    Decompose --> SubNet1\n    Decompose --> SubNet2\n    Decompose --> SubNetN\n    SubNet1 --> Aggregate\n    SubNet2 --> Aggregate\n    SubNetN --> Aggregate\n    Aggregate --> Approx\n    Projection --> Decompose"
+    },
+    {
+      "title": "图像识别任务拆解示例",
+      "code": "flowchart TD\n    ImgRec[\"图像识别任务（人脸）\"]\n    Split[\"拆分为局部特征检测\"]\n    EyeTL[\"左上角眼睛检测\"]\n    EyeTR[\"右上角眼睛检测\"]\n    Nose[\"鼻子检测\"]\n    Mouth[\"嘴巴检测\"]\n    EarL[\"左耳检测\"]\n    EarR[\"右耳检测\"]\n    Combine[\"汇总局部结果\"]\n    Decision[\"判断是否为人脸\"]\n    ImgRec --> Split\n    Split --> EyeTL\n    Split --> EyeTR\n    Split --> Nose\n    Split --> Mouth\n    Split --> EarL\n    Split --> EarR\n    EyeTL --> Combine\n    EyeTR --> Combine\n    Nose --> Combine\n    Mouth --> Combine\n    EarL --> Combine\n    EarR --> Combine\n    Combine --> Decision"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T20:22:09+00:00"
+}

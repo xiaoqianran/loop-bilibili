@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1aw9jBeEHr",
+  "title": "FPS游戏开发教程 | UE5制作第一人称射击游戏 | 虚幻引擎5.7 零基础入门",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 774,
+  "text": "嗨大家好\n我是星露\n如果你想亲手做一款独立游戏\n或是想深入学习虚幻引擎\n那这套教程会非常适合你\n在接下来的时间里\n我会带大家从零开始开发一款完整的FPS\n第一人称射击游戏\n学完这门课程\n你不仅能自己独立开发出一款FPS游戏\n还能将在这里学到的知识应用到其他类型的游戏开发中\n无论你开发的是什么类型的游戏\n就例如第三人称的RPG游戏\n看似是完全不同的游戏类型\n但经过这门课程的学习后\n你会发现\n其实不管开发什么类型的游戏\n它们的底层逻辑都是一样的\n没错我要教的就是一个能够举一反三的能力\n这门课绝不是机械性的照着念PPT\n而是会从原理讲起\n让你彻底搞懂虚幻五的底层开发逻辑\n我是星露\n我从事游戏开发已经8年了\n从事虚幻引擎开发也有7年的时间了\n我之前推出的虚幻五零基础入门教程\n目前已经有接近40万人看过了\n而现在经过我耗时数月的开发\n反复打磨细节\n优化游戏架构\n终于能把FPS开发课给端上来了\n并且最重要的是\n我依然决定将这门课程作为完全免费的公开课\n如果你未来想从事游戏行业\n也可以带着这份作品去和面试官聊聊你的设计思路\n相信这份知其然更知其所以然的经历会让你在众多简历中脱颖而出\n这门课针对小白设计\n但同样适合那些学过一些\n但总感觉还是有些懵懂\n没有学系统的朋友\n课程完全免费\n所以你的三连就是最好的学费\n那么接下来我来介绍一下课程内容\n我首先会讲解最基本的人物运动系统\n再到武器系统的开发\n以及最新的AI状态术开发\n游戏UI设计\n还有射击手感的原理讲解等等\n以及最终如何打包成一个成品\n这其中的每一个知识点我都会从头到尾彻彻底底的给大家讲清楚\n讲明白\n所以这套课程就是你一定能学会的\n游戏开发课\n为了不让你把我扔到收藏夹里吃灰\n现在在弹幕中为那个决心开始的自己留下一句寄语\n完结撒花时\n记得回来\n感谢今天的自己\n我是新路\n我在第一节课等你拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1aw9jBeEHr",
+  "published_at": "1775034600",
+  "fetched_at": "2026-08-07T01:52:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# FPS游戏开发教程知识图谱\n\n## 课程定位与价值\n```mermaid\nflowchart TD\n    Beginner[\"零基础/小白\"] --> CoreLogic[\"底层开发逻辑\"]\n    Intermediate[\"有基础但懵懂\"] --> CoreLogic\n    Free[\"完全免费\"] --> CoreLogic\n    CoreLogic --> Transferable[\"知识可迁移\"]\n    Transferable --> Versatile[\"适用于多种游戏类型\"]\n    CoreLogic --> Skill[\"举一反三能力\"]\n    Skill --> Outcome[\"独立开发FPS\"]\n```\n\n## 课程内容结构与实现细节\n```mermaid\nflowchart TD\n    Move[\"移动系统\"] --> Jump[\"跳跃实现\"]\n    Jump --> Run[\"跑步实现\"]\n    Run --> WeaponFire[\"射击实现\"]\n    WeaponFire --> Reload[\"换弹实现\"]\n    Reload --> AIState[\"AI巡逻状态\"]\n    AIState --> AICombat[\"AI战斗状态\"]\n    AICombat --> UIHUD[\"HUD显示\"]\n    UIHUD --> UIInventory[\"背包界面\"]\n    UIInventory --> ShootFeel[\"射击手感（后坐力）\"]\n    ShootFeel --> Accuracy[\"准星控制\"]\n    Accuracy --> Packaging[\"Windows 打包\"]\n    Packaging --> Distribution[\"发布渠道\"]\n```\n\n## 学习收益与职业提升\n```mermaid\nflowchart TD\n    FPSDev[\"独立开发FPS\"] --> Pack[\"完整打包发布\"]\n    FPSDev --> Portfolio[\"作品用于面试\"]\n    Understanding[\"掌握底层原理\"] --> Transfer[\"跨类型应用\"]\n    Transfer --> Competitiveness[\"提升行业竞争力\"]\n    Portfolio --> JobOpportunity[\"获取工作机会\"]\n    Understanding --> Confidence[\"自信展示\"]\n    Confidence --> JobOpportunity\n```",
+      "diagrams": [
+        {
+          "title": "课程定位与价值",
+          "code": "flowchart TD\n    Beginner[\"零基础/小白\"] --> CoreLogic[\"底层开发逻辑\"]\n    Intermediate[\"有基础但懵懂\"] --> CoreLogic\n    Free[\"完全免费\"] --> CoreLogic\n    CoreLogic --> Transferable[\"知识可迁移\"]\n    Transferable --> Versatile[\"适用于多种游戏类型\"]\n    CoreLogic --> Skill[\"举一反三能力\"]\n    Skill --> Outcome[\"独立开发FPS\"]"
+        },
+        {
+          "title": "课程内容结构与实现细节",
+          "code": "flowchart TD\n    Move[\"移动系统\"] --> Jump[\"跳跃实现\"]\n    Jump --> Run[\"跑步实现\"]\n    Run --> WeaponFire[\"射击实现\"]\n    WeaponFire --> Reload[\"换弹实现\"]\n    Reload --> AIState[\"AI巡逻状态\"]\n    AIState --> AICombat[\"AI战斗状态\"]\n    AICombat --> UIHUD[\"HUD显示\"]\n    UIHUD --> UIInventory[\"背包界面\"]\n    UIInventory --> ShootFeel[\"射击手感（后坐力）\"]\n    ShootFeel --> Accuracy[\"准星控制\"]\n    Accuracy --> Packaging[\"Windows 打包\"]\n    Packaging --> Distribution[\"发布渠道\"]"
+        },
+        {
+          "title": "学习收益与职业提升",
+          "code": "flowchart TD\n    FPSDev[\"独立开发FPS\"] --> Pack[\"完整打包发布\"]\n    FPSDev --> Portfolio[\"作品用于面试\"]\n    Understanding[\"掌握底层原理\"] --> Transfer[\"跨类型应用\"]\n    Transfer --> Competitiveness[\"提升行业竞争力\"]\n    Portfolio --> JobOpportunity[\"获取工作机会\"]\n    Understanding --> Confidence[\"自信展示\"]\n    Confidence --> JobOpportunity"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T01:53:02+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# FPS游戏开发教程知识图谱\n\n## 课程定位与价值\n```mermaid\nflowchart TD\n    Beginner[\"零基础/小白\"] --> CoreLogic[\"底层开发逻辑\"]\n    Intermediate[\"有基础但懵懂\"] --> CoreLogic\n    Free[\"完全免费\"] --> CoreLogic\n    CoreLogic --> Transferable[\"知识可迁移\"]\n    Transferable --> Versatile[\"适用于多种游戏类型\"]\n    CoreLogic --> Skill[\"举一反三能力\"]\n    Skill --> Outcome[\"独立开发FPS\"]\n```\n\n## 课程内容结构与实现细节\n```mermaid\nflowchart TD\n    Move[\"移动系统\"] --> Jump[\"跳跃实现\"]\n    Jump --> Run[\"跑步实现\"]\n    Run --> WeaponFire[\"射击实现\"]\n    WeaponFire --> Reload[\"换弹实现\"]\n    Reload --> AIState[\"AI巡逻状态\"]\n    AIState --> AICombat[\"AI战斗状态\"]\n    AICombat --> UIHUD[\"HUD显示\"]\n    UIHUD --> UIInventory[\"背包界面\"]\n    UIInventory --> ShootFeel[\"射击手感（后坐力）\"]\n    ShootFeel --> Accuracy[\"准星控制\"]\n    Accuracy --> Packaging[\"Windows 打包\"]\n    Packaging --> Distribution[\"发布渠道\"]\n```\n\n## 学习收益与职业提升\n```mermaid\nflowchart TD\n    FPSDev[\"独立开发FPS\"] --> Pack[\"完整打包发布\"]\n    FPSDev --> Portfolio[\"作品用于面试\"]\n    Understanding[\"掌握底层原理\"] --> Transfer[\"跨类型应用\"]\n    Transfer --> Competitiveness[\"提升行业竞争力\"]\n    Portfolio --> JobOpportunity[\"获取工作机会\"]\n    Understanding --> Confidence[\"自信展示\"]\n    Confidence --> JobOpportunity\n```",
+  "diagrams": [
+    {
+      "title": "课程定位与价值",
+      "code": "flowchart TD\n    Beginner[\"零基础/小白\"] --> CoreLogic[\"底层开发逻辑\"]\n    Intermediate[\"有基础但懵懂\"] --> CoreLogic\n    Free[\"完全免费\"] --> CoreLogic\n    CoreLogic --> Transferable[\"知识可迁移\"]\n    Transferable --> Versatile[\"适用于多种游戏类型\"]\n    CoreLogic --> Skill[\"举一反三能力\"]\n    Skill --> Outcome[\"独立开发FPS\"]"
+    },
+    {
+      "title": "课程内容结构与实现细节",
+      "code": "flowchart TD\n    Move[\"移动系统\"] --> Jump[\"跳跃实现\"]\n    Jump --> Run[\"跑步实现\"]\n    Run --> WeaponFire[\"射击实现\"]\n    WeaponFire --> Reload[\"换弹实现\"]\n    Reload --> AIState[\"AI巡逻状态\"]\n    AIState --> AICombat[\"AI战斗状态\"]\n    AICombat --> UIHUD[\"HUD显示\"]\n    UIHUD --> UIInventory[\"背包界面\"]\n    UIInventory --> ShootFeel[\"射击手感（后坐力）\"]\n    ShootFeel --> Accuracy[\"准星控制\"]\n    Accuracy --> Packaging[\"Windows 打包\"]\n    Packaging --> Distribution[\"发布渠道\"]"
+    },
+    {
+      "title": "学习收益与职业提升",
+      "code": "flowchart TD\n    FPSDev[\"独立开发FPS\"] --> Pack[\"完整打包发布\"]\n    FPSDev --> Portfolio[\"作品用于面试\"]\n    Understanding[\"掌握底层原理\"] --> Transfer[\"跨类型应用\"]\n    Transfer --> Competitiveness[\"提升行业竞争力\"]\n    Portfolio --> JobOpportunity[\"获取工作机会\"]\n    Understanding --> Confidence[\"自信展示\"]\n    Confidence --> JobOpportunity"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:53:02+00:00"
+}

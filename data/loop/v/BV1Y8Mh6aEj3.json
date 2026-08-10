@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Y8Mh6aEj3",
+  "title": "虚幻引擎 5.8 ！将任何视频转换为动画（无标记动作捕捉） ！",
+  "status": "ok",
+  "language": "zh",
+  "chars": 1644,
+  "text": "你好\n在本视频中\n我们将介绍如何在虚幻引擎中使用原始视频文件来创建动画\n首先\n你需要使用虚幻引擎5.8或以上版本\n并且需要确保在你的虚幻引擎版本中启用了MetaHuman核心数据\n要启用的话\n点击这个箭头\n然后进入选项\n确保你勾选了MetaHuman创建器核心数据\n接下来\n你需要确保安装了MetaHuman无标记动作捕捉插件\n你可以在Fab上下载这个插件\n我直接把它添加到你的资料库中\n添加完成后\n只需打开Epic Games启动器\n转到你的资料库\n然后将其安装到你的虚幻引擎版本中\n完成之后\n你可以在虚幻引擎5.8或以上版本中创建一个新项目\n然后进入编辑\n插件\n搜索Meta\n然后启用MetaHuman动画师\nMetaHuman创建器\n选择是\n并确保启用了MetaHuman动画师无标记动作捕捉\n完成之后\n重启你的虚幻引擎项目，使这些插件生效\n项目重新加载后\n转到工具\n向下滚动\n进入Live Link中心\n加载完成后\n点击这里，将其更改为捕捉管理器\n然后我们点击添加，选择Modo视频导入\n然后你需要转到存放你想要转换成动画的视频的文件夹\n好的\n选择该视频后\n点击添加到队列\n然后点击开始\n这将会转换视频，以便我们最终可以用它来创建动画\n完成之后\n你应该会在项目里看到一个新文件夹，名为捕捉管理器\n里面会有你的视频，它已被转换成一些虚幻引擎文件\n我们稍后会用到这些文件\n接下来\n我们需要创建一个MetaHuman\n所以\n我直接右键\n转到MetaHuman\n选择MetaHuman角色\n如果看到类似这样的错误信息，点击启用缺失\n我先创建一个非常基础的MetaHuman\n不打算花时间设计它\n另外\n我会重启编辑器，以确保它能正确创建\n然后我直接转到预设\n直接选用Aura\n我们需要为角色创建一个绑定\n所以我直接点击创建完整绑定\n我们还需要下载MetaHuman的纹理\n我点击这个\n完成后\n转到组装\n然后我选择优化和低质量\n接着组装这个MetaHuman角色\n好的\n我已经创建了一个新的MetaHuman\n接下来我创建一个新文件夹\n命名为performance\n我会在这里添加内容\n右键\n转到MetaHuman\n选择MetaHuman表演\n命名为example\n打开它\n然后转到输入类型，选择单色镜头素材\n对于素材\n选择我们通过Live Link流程转换好的素材\n现在\n当将其转换为动画时\n如果你愿意，它可以追踪角色的面部动作\n但我认为面部追踪最好单独处理\n所以我取消勾选面部追踪\n并确保勾选了身体追踪\n我们会看到一个小预览\n然后我们还需要转到可视化对象\n如果你点击这里\n应该能看到你创建的MetaHuman角色\n但不知为何我看不到\n所以我重启一下虚幻引擎项目\n好的\n我重启了项目，现在能看到可视化了\n所以\n我选择这个\n然后点击是\n好的\n接下来我们只需点击处理，这会将视频转换成动画并应用到我们的角色上\n这可能需要一些时间\n所以你可以趁机做点别的事\n在等待的时候我先说一句\n我是虚幻引擎官方认证讲师，如果你对虚幻引擎还不熟悉\n我制作了一个完全免费的虚幻引擎入门课程，涵盖了初学者应该了解的所有基础知识\n视频描述中有课程链接，感兴趣的话可以查看\n好的\n动画已经转换好了，效果还不错\n我觉得\n总之\n完成动画制作后\n点击导出动画\n我把它导出到performance文件夹里\n命名为Viking动画\n保存\n点击创建\n点击是\n添加兼容性\n然后就能在这里看到动画了\n如果你想让虚幻引擎的骨骼模型也能使用这个动画，或者其他角色也能使用\n只需右键\n选择重定向动画\n然后选择SK骨骼模型\n再点击导出动画\n我直接导出到content文件夹里\n现在我有了一个角色挥动斧头的动画\n所以\n如果点击模拟\n我觉得效果很不错\n好的\n本视频到此结束\n如果你想了解更多关于虚幻引擎的内容\n我是虚幻引擎官方认证讲师，我有一门完全免费的虚幻引擎入门课程\n视频描述中有课程链接\n如果喜欢这个视频\n记得点赞和订阅，我们下期再见\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Y8Mh6aEj3",
+  "published_at": "1783441654",
+  "fetched_at": "2026-08-07T02:30:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 虚幻引擎 5.8 视频转动画流程图\n\n## 总览\n```mermaid\nflowchart LR\n    V1[\"准备原始视频\"] --> UE[\"UE5.8 或以上\"]\n    UE --> Core[\"启用 MetaHuman 核心数据\"]\n    Core --> PlugInst[\"安装 MetaHuman 无标记动作捕捉插件\"]\n    PlugInst --> PlugEn[\"启用 MetaHuman 动画师插件\"]\n    PlugEn --> LiveLink[\"打开 Live Link 中心\"]\n    LiveLink --> Import[\"添加 Modo 视频导入并开始转换\"]\n    Import --> Conv[\"生成 UE 资源文件\"]\n    Conv --> MHCreate[\"创建 MetaHuman 角色\"]\n    MHCreate --> Bind[\"创建完整绑定\"]\n    Bind --> Apply[\"将动画应用到 MetaHuman\"]\n    Apply --> Export[\"导出动画至 performance 文件夹\"]\n```\n\n## 插件安装流程\n```mermaid\nflowchart TD\n    VChk[\"检查 UE 版本 ≥ 5.8\"] --> CoreEn[\"在插件设置中勾选 MetaHuman 核心数据\"]\n    CoreEn --> EPInst[\"在 Epic Games 启动器中安装 MetaHuman 无标记动作捕捉插件\"]\n    EPInst --> Restart[\"重启 UE 项目\"]\n    Restart --> Verify[\"确认插件已生效\"]\n```\n\n## 动画创建与导出流程\n```mermaid\nflowchart TD\n    OpenMgr[\"打开捕捉管理器\"] --> AddVid[\"添加视频到队列\"]\n    AddVid --> StartConv[\"点击开始转换\"]\n    StartConv --> Wait[\"等待转换完成\"]\n    Wait --> Result[\"捕捉管理器文件夹出现转换文件\"]\n    Result --> MHCreate[\"创建 MetaHuman 角色\"]\n    MHCreate --> Preset[\"选择 Aura 预设\"]\n    Preset --> Bind[\"创建完整绑定\"]\n    Bind --> Track[\"勾选身体追踪，取消面部追踪\"]\n    Track --> Process[\"处理并将动画应用到角色\"]\n    Process --> ExportAnim[\"导出动画至 performance 文件夹\"]\n    ExportAnim --> Redirect[\"（可选）重定向动画至其他骨骼模型\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart LR\n    V1[\"准备原始视频\"] --> UE[\"UE5.8 或以上\"]\n    UE --> Core[\"启用 MetaHuman 核心数据\"]\n    Core --> PlugInst[\"安装 MetaHuman 无标记动作捕捉插件\"]\n    PlugInst --> PlugEn[\"启用 MetaHuman 动画师插件\"]\n    PlugEn --> LiveLink[\"打开 Live Link 中心\"]\n    LiveLink --> Import[\"添加 Modo 视频导入并开始转换\"]\n    Import --> Conv[\"生成 UE 资源文件\"]\n    Conv --> MHCreate[\"创建 MetaHuman 角色\"]\n    MHCreate --> Bind[\"创建完整绑定\"]\n    Bind --> Apply[\"将动画应用到 MetaHuman\"]\n    Apply --> Export[\"导出动画至 performance 文件夹\"]"
+        },
+        {
+          "title": "插件安装流程",
+          "code": "flowchart TD\n    VChk[\"检查 UE 版本 ≥ 5.8\"] --> CoreEn[\"在插件设置中勾选 MetaHuman 核心数据\"]\n    CoreEn --> EPInst[\"在 Epic Games 启动器中安装 MetaHuman 无标记动作捕捉插件\"]\n    EPInst --> Restart[\"重启 UE 项目\"]\n    Restart --> Verify[\"确认插件已生效\"]"
+        },
+        {
+          "title": "动画创建与导出流程",
+          "code": "flowchart TD\n    OpenMgr[\"打开捕捉管理器\"] --> AddVid[\"添加视频到队列\"]\n    AddVid --> StartConv[\"点击开始转换\"]\n    StartConv --> Wait[\"等待转换完成\"]\n    Wait --> Result[\"捕捉管理器文件夹出现转换文件\"]\n    Result --> MHCreate[\"创建 MetaHuman 角色\"]\n    MHCreate --> Preset[\"选择 Aura 预设\"]\n    Preset --> Bind[\"创建完整绑定\"]\n    Bind --> Track[\"勾选身体追踪，取消面部追踪\"]\n    Track --> Process[\"处理并将动画应用到角色\"]\n    Process --> ExportAnim[\"导出动画至 performance 文件夹\"]\n    ExportAnim --> Redirect[\"（可选）重定向动画至其他骨骼模型\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T02:31:04+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 虚幻引擎 5.8 视频转动画流程图\n\n## 总览\n```mermaid\nflowchart LR\n    V1[\"准备原始视频\"] --> UE[\"UE5.8 或以上\"]\n    UE --> Core[\"启用 MetaHuman 核心数据\"]\n    Core --> PlugInst[\"安装 MetaHuman 无标记动作捕捉插件\"]\n    PlugInst --> PlugEn[\"启用 MetaHuman 动画师插件\"]\n    PlugEn --> LiveLink[\"打开 Live Link 中心\"]\n    LiveLink --> Import[\"添加 Modo 视频导入并开始转换\"]\n    Import --> Conv[\"生成 UE 资源文件\"]\n    Conv --> MHCreate[\"创建 MetaHuman 角色\"]\n    MHCreate --> Bind[\"创建完整绑定\"]\n    Bind --> Apply[\"将动画应用到 MetaHuman\"]\n    Apply --> Export[\"导出动画至 performance 文件夹\"]\n```\n\n## 插件安装流程\n```mermaid\nflowchart TD\n    VChk[\"检查 UE 版本 ≥ 5.8\"] --> CoreEn[\"在插件设置中勾选 MetaHuman 核心数据\"]\n    CoreEn --> EPInst[\"在 Epic Games 启动器中安装 MetaHuman 无标记动作捕捉插件\"]\n    EPInst --> Restart[\"重启 UE 项目\"]\n    Restart --> Verify[\"确认插件已生效\"]\n```\n\n## 动画创建与导出流程\n```mermaid\nflowchart TD\n    OpenMgr[\"打开捕捉管理器\"] --> AddVid[\"添加视频到队列\"]\n    AddVid --> StartConv[\"点击开始转换\"]\n    StartConv --> Wait[\"等待转换完成\"]\n    Wait --> Result[\"捕捉管理器文件夹出现转换文件\"]\n    Result --> MHCreate[\"创建 MetaHuman 角色\"]\n    MHCreate --> Preset[\"选择 Aura 预设\"]\n    Preset --> Bind[\"创建完整绑定\"]\n    Bind --> Track[\"勾选身体追踪，取消面部追踪\"]\n    Track --> Process[\"处理并将动画应用到角色\"]\n    Process --> ExportAnim[\"导出动画至 performance 文件夹\"]\n    ExportAnim --> Redirect[\"（可选）重定向动画至其他骨骼模型\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart LR\n    V1[\"准备原始视频\"] --> UE[\"UE5.8 或以上\"]\n    UE --> Core[\"启用 MetaHuman 核心数据\"]\n    Core --> PlugInst[\"安装 MetaHuman 无标记动作捕捉插件\"]\n    PlugInst --> PlugEn[\"启用 MetaHuman 动画师插件\"]\n    PlugEn --> LiveLink[\"打开 Live Link 中心\"]\n    LiveLink --> Import[\"添加 Modo 视频导入并开始转换\"]\n    Import --> Conv[\"生成 UE 资源文件\"]\n    Conv --> MHCreate[\"创建 MetaHuman 角色\"]\n    MHCreate --> Bind[\"创建完整绑定\"]\n    Bind --> Apply[\"将动画应用到 MetaHuman\"]\n    Apply --> Export[\"导出动画至 performance 文件夹\"]"
+    },
+    {
+      "title": "插件安装流程",
+      "code": "flowchart TD\n    VChk[\"检查 UE 版本 ≥ 5.8\"] --> CoreEn[\"在插件设置中勾选 MetaHuman 核心数据\"]\n    CoreEn --> EPInst[\"在 Epic Games 启动器中安装 MetaHuman 无标记动作捕捉插件\"]\n    EPInst --> Restart[\"重启 UE 项目\"]\n    Restart --> Verify[\"确认插件已生效\"]"
+    },
+    {
+      "title": "动画创建与导出流程",
+      "code": "flowchart TD\n    OpenMgr[\"打开捕捉管理器\"] --> AddVid[\"添加视频到队列\"]\n    AddVid --> StartConv[\"点击开始转换\"]\n    StartConv --> Wait[\"等待转换完成\"]\n    Wait --> Result[\"捕捉管理器文件夹出现转换文件\"]\n    Result --> MHCreate[\"创建 MetaHuman 角色\"]\n    MHCreate --> Preset[\"选择 Aura 预设\"]\n    Preset --> Bind[\"创建完整绑定\"]\n    Bind --> Track[\"勾选身体追踪，取消面部追踪\"]\n    Track --> Process[\"处理并将动画应用到角色\"]\n    Process --> ExportAnim[\"导出动画至 performance 文件夹\"]\n    ExportAnim --> Redirect[\"（可选）重定向动画至其他骨骼模型\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:31:04+00:00"
+}

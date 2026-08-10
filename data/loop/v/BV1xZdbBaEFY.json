@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1xZdbBaEFY",
+  "title": "面试官问：一个完整的Agent架构包括哪些部分？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3831,
+  "text": "大家好\n这里是AI深度幻觉\n今天的面试题是一个完整的agent智能体架构\n一般包括哪些部分\n这题坑特别多\n我见过很多人上来就背名词感知推理\n记忆工具编排\n背完面试官追一句\n你就愣住了\n对面试官想听的不是名词列表\n而是你对这些组件的理解深度\n我们今天从教科书到生产实战一层一层拆\n先把教科书答案摆出来再说\n哪些是面试官真正想听的\n教科书会告诉你七大核心组件\n感知层负责接收输入推理引擎是大脑记忆系统\n分短期长期和情景三层工具\n使用连接外部世界编排管理多步骤工作流\nmulti agent是可选的\n多智能体协作\n最后是安全和治理\n这七个答出来能及格吗\n能及格但不出彩\n因为面试官紧接着会问\n那你觉得推理引擎应该用react还是plan and execute\n这时候如果你只会被定义就露馅了\n等一下这几个模式\n我背的滚瓜烂熟\n你是说背出来也没用\n不是没用\n而是你得知道他们在生产里到底长什么样\n从生产实际来看\n这些都不是独立的复杂架构\n它们都是同一个while loop的不同变体\n2026年3月\nCrowd code\n51万2000行源码泄露\n给了我们极其罕见的一手证据啊\nCloud code cursor menus davin\n四个产品核心架构居然是一样的\n那花几10亿做的东西跟几行伪代码有什么区别\n区别大了\n但不在循环本身\n我们之前在从cloud code源码看A证架构之争\n那期详细拆过核心就是模型调用加工具列表\n有to a CORE就执行\n没有就结束循环\n但51万2000行代码里\n99%都是围绕这个循环做的\n工程权限系统错误恢复\n那react plan and execute\n这些学术名词在生产中到底对应什么\nReact\n就是给这个while loop\n加了一个显示的思考步骤\nbite bite go在描述cursor架构时\n直接说\nreact只是实现这个循环的一种常见方式\nPlan and execute\n在生产中也不是严格的先规划后执行\ncloud code和mace都是用TUDO文件做软规划\n规划和执行交错进行\n所以ANTHROPIC自己也承认agent其实很简单\n原话是agent的实现往往很简单\n就是LLM在循环中基于环境反馈调用工具\n他们甚至说最成功的实现不用复杂框架\n而是用简单的可组合的模式\nberry jn还补了一句\n复杂度会杀死迭代速度\n那面试的时候直接说agent就是个wild loop\n不会显得太简单了吗\n面试官会不会觉得你在敷衍\n不会因为接下来你要告诉面试官\nloop虽然简单\n但真正决定agent的好坏的是工程细节\n工具怎么设计\n上下文怎么管理\n怎么编排\n这才是水面下的冰山\n工具设计为什么排第一\n比模型选择还重要吗\n有一手数据\nANTHROPIC在s w e bench上升级版cloud3.5\nSonnet\n配合仅两个工具\nbash和edit\n再加上精心优化的工具描述\n就刷到了49%\n当时直接SAANTHROPIC的原话是\n给模型设计工具接口\n应该投入跟给人设计界面一样多的精力\n只靠两个工具就搜它\n那是不是说工具不在多\n而在精\n完全正确\n而且工具太多反而有害\nspeak easy团队做过测试\n小模型在十个工具是完美\n20个时差一道题\n但到了107个大小模型都开始频繁\n幻觉和出错\n不是线性退化\n是悬崖式崩塌\ngithub copilot好像也验证了这个对\nCPLOT把核心工具从40个精简到13个\n配合智能路由基准提升了2~5个百分点\n现在常规模型s w e bench\n已经到80%左右了\n但工具描述决定性能天花板\n这个洞察到今天依然成立\n那ACI具体怎么指导工具设计\nACI就是agent computer interface\ns w e agent论文原创\nANTHROPIC借用过来\n类比HCI应用到工具设计上\n在writing to us for agents\n博客里列了五条工具设计原则\n选对工具要为agent重新设计\n而不是包装现有API命名空间化返回语义化信息\n而不是技术标识符优化token效率\n最后是精心编写工具描述\nANTHROPIC自己说\n这是最有效的方法之一\n我们之前在面试官问MCP还是CLI\n那期也从协议层面聊过相关问题\n但现实中用户会往A站那里塞几百个\nMCP工具怎么办\n总不能不让人装吧\nVENUS的解法很优雅\n他不删除工具定义\n因为那会让kv cash失效\n而是在解码时用logic masking\n遮蔽不可用工具的token工具命名\n故意用一致前缀\n所有浏览器工具都叫browser\n下划线开头\n通过前缀预填就能限制在特定工具组内\n这个解法确实优雅好\n工具聊透了\n这是agent的隐藏战场\n隐藏战场\n感觉大家都在聊模型能力\n所以这是面试加分项\nANTHROPIC提出了context engineering这个概念\n核心是找到最小的高信号\ntoken集合\n最大化期望结果的概率\n因为所有模型都有context RT token越多\n模型回忆信息的能力越差\nICML2025的NOLIA测试\n发现\n13个LLM中有11个在仅32000token时\n性能就降到自身短上下文基线的一半以下\n我们在open cloud为什么总失忆\n那期对比过agent的记忆的两大流派对吧\ncompaction和pruning对\n今天补充一个关键新数据\njet brains在new ips2025上做了实验\nObservation masking\n就是用占位符替换旧的工具输出\n但保留推理历史\n跟完全不管理上下文相比\n便宜了52%\n解决率还高\n2.6%等等\n那LLM做摘要呢\n直觉上摘要应该更好啊\n毕竟他理解内容反直觉的是LLM摘要\n反而让agent多跑13%到15%的步骤\n因为摘要平滑了一些本该触发停止的信号\nagent就在那绕圈\n最佳方案是混合策略\nMasking\n做一线防御\n偶尔触发LLM摘要兜底\n那cloud code现在有em上下文窗口了\n还需要压缩吗\n窗口大了不代表不需要压缩\ncontext RT是结构性问题\ncrowd code依然用分层压缩\n先清旧工具输出\n再总结对话\n保留架构决策和未解决的bug\nthe agent的隔离也是关键\n每个词agent呢在独立上下文里干活\n只返回1000~2000token的精炼摘要\n主对话完全不膨胀\n好架构组件和工程细节都聊了\n面试还经常问agent到底有几种类型\n这题怎么答\n不踩坑\n这是最容易踩坑的问题\n分类列表五花八门\n是因为分类维度被混在了一起\ndata breaks直接说有的按决策行为分\n有的按系统架构分\n有的按应用角色分\n混在一起\n讨论类型数量就无限膨胀\n所以面试的时候应该先说清你在用哪个维度\n分类没错\n这就是关键\n最实用的维度是ANTHROPIC的编排架构三层\n就是LLM加上检索工具和记忆\n第二层是workflow\n通过预定义代码\n编排多个LLM调用有五种模式\n第三层才是真正的agent\nLLM自主决定流程和工具使用\n就是我们说的while loop\n那RUSSELL和NOVC的经典五类呢\nreflects model based go base的那些面试要不要提\n开场提一句\n表示你知道经典理论就行\n然后迅速转到编排架构维度\n因为现代LLM agent天然就是go beast\n加learning的混合体\n经典分类区分度不高\n那如果面试官追问\n不同类型的agent在工程实现上到底差在哪\n股价完全一样\n差异体现在三个配置旋钮\n第一个是工具集\n这是最大的差异来源\ncoding agent用文件读写和终端客服agent\n用数据库查询和退款接口\nResearch agent\n用搜索和爬虫\n第二个是system prompt\n它不只是指令还是权限系统\nvs code多agent系统就是同一个骨架\nplan模式只读不能改代码\nimplementation模式有完整编辑权限\n第三个是编排模式\n我们在字节dear flow2.0那期聊过\n当agent在大多数场景比多agent更可靠\n所以总结一下面试回答的核心思路是什么\n五层递进\n第一层给整体框架七大组件感知推理记忆工具\n编排multi agent的协作治理\n第二层揭示现实生产阶agent的核心就是\nwhile loop加to accore react之类的\n是学术命名\n不是独立架构\n第三层深入工具设计\n取ACI和s w e bench的数据\n这是性能天花板\ncontext RT压缩策略\n自agent隔离\n第五层点名agent类型的本质骨架相同\n差异在工具集system prompt和编排模式\n三个配置旋钮打到哪一层算及格\n达到第一层\n只能说你背了书\n达到第三层\n面试官会觉得你真的理解agent\n达到第五层\n面试官可能反过来想跟你讨论了哈\n最后说说B坑\n我觉得最大的坑可能是过度吹嘘多agent\n你说到点子上了\n三个坑\n第一不要只列名词\n不解释机制\n第二不要把agent和chat bot混为一谈\nagent的核心区别是自主循环和工具使用\n第三就是你说的不要过度吹嘘多agent\nANTHROPIC和OpenAI都明确说过\n先穷尽单agent能力\n再考虑多agent\n有什么想让我们拆的面试题\n评论区留言\n觉得有帮助的话\n一键三连\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1xZdbBaEFY",
+  "published_at": "1776311263",
+  "fetched_at": "2026-08-10T05:56:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 面试官问：一个完整的Agent架构包括哪些部分？\n\n## 七大核心组件 [BV1xZdbBaEFY P1 00:30]\n```mermaid\nflowchart TD\n    A[\"感知层\"] --> B[\"推理引擎（大脑）\"]\n    B --> C[\"记忆系统\"]\n    C --> D[\"短期记忆\"]\n    C --> E[\"长期记忆\"]\n    C --> F[\"情景记忆\"]\n    B --> G[\"工具层\"]\n    G --> H[\"外部世界连接\"]\n    G --> I[\"多步骤工作流编排\"]\n    G --> J[\"工具管理\"]\n    B --> K[\"多智能体协作（可选）\"]\n    B --> L[\"安全与治理\"]\n```\n\n## 循环实现方式：React 与 Plan‑Execute [BV1xZdbBaEFY P1 01:59]\n```mermaid\nflowchart TD\n    W[\"While Loop 主循环\"] --> R[\"React 模式\"]\n    W --> P[\"Plan‑Execute 模式\"]\n    R --> S[\"显式思考步骤\"]\n    P --> T[\"软规划 + 执行交错\"]\n    W --> LLM[\"LLM 在循环中基于环境反馈调用工具\"]\n    LLM --> TOOL[\"工具调用\"]\n    TOOL --> FEED[\"环境反馈\"]\n    FEED --> LLM\n```\n\n## 工具设计关键与 ACI 原则 [BV1xZdbBaEFY P1 03:04]\n```mermaid\nflowchart TD\n    T[\"工具设计重要性\"] --> ACI[\"Agent Computer Interface (ACI)\"]\n    ACI --> P1[\"选对工具并为 Agent 重新设计\"]\n    ACI --> P2[\"避免仅包装现有 API\"]\n    ACI --> P3[\"不以技术标识符优化 token 效率\"]\n    ACI --> P4[\"精心编写工具描述\"]\n    P4 --> IMP[\"提升性能上限（SWe benchmark 49%）\"]\n    T --> IMP\n    T --> D[\"工具数量 vs 质量\"]\n    D --> C1[\"少量高质量工具表现最佳\"]\n    D --> C2[\"工具过多导致悬崖式性能下降\"]\n```\n\n## 面试回答的五层递进结构 [BV1xZdbBaEFY P1 08:33]\n```mermaid\nflowchart TD\n    L1[\"第一层：整体框架 – 七大组件\"] --> L2[\"第二层：生产核心 – while loop + React/Plan‑Execute\"]\n    L2 --> L3[\"第三层：工具设计 – ACI 数据与性能影响\"]\n    L3 --> L4[\"第四层：上下文压缩 & Agent 隔离\"]\n    L4 --> L5[\"第五层：Agent 类型本质 – 相同骨架，差异在工具集、system prompt、编排模式\"]\n    L5 --> OUT[\"面试深度展示：从名词到实现细节\"]\n```",
+      "diagrams": [
+        {
+          "title": "七大核心组件",
+          "code": "flowchart TD\n    A[\"感知层\"] --> B[\"推理引擎（大脑）\"]\n    B --> C[\"记忆系统\"]\n    C --> D[\"短期记忆\"]\n    C --> E[\"长期记忆\"]\n    C --> F[\"情景记忆\"]\n    B --> G[\"工具层\"]\n    G --> H[\"外部世界连接\"]\n    G --> I[\"多步骤工作流编排\"]\n    G --> J[\"工具管理\"]\n    B --> K[\"多智能体协作（可选）\"]\n    B --> L[\"安全与治理\"]"
+        },
+        {
+          "title": "循环实现方式：React 与 Plan‑Execute",
+          "code": "flowchart TD\n    W[\"While Loop 主循环\"] --> R[\"React 模式\"]\n    W --> P[\"Plan‑Execute 模式\"]\n    R --> S[\"显式思考步骤\"]\n    P --> T[\"软规划 + 执行交错\"]\n    W --> LLM[\"LLM 在循环中基于环境反馈调用工具\"]\n    LLM --> TOOL[\"工具调用\"]\n    TOOL --> FEED[\"环境反馈\"]\n    FEED --> LLM"
+        },
+        {
+          "title": "工具设计关键与 ACI 原则",
+          "code": "flowchart TD\n    T[\"工具设计重要性\"] --> ACI[\"Agent Computer Interface (ACI)\"]\n    ACI --> P1[\"选对工具并为 Agent 重新设计\"]\n    ACI --> P2[\"避免仅包装现有 API\"]\n    ACI --> P3[\"不以技术标识符优化 token 效率\"]\n    ACI --> P4[\"精心编写工具描述\"]\n    P4 --> IMP[\"提升性能上限（SWe benchmark 49%）\"]\n    T --> IMP\n    T --> D[\"工具数量 vs 质量\"]\n    D --> C1[\"少量高质量工具表现最佳\"]\n    D --> C2[\"工具过多导致悬崖式性能下降\"]"
+        },
+        {
+          "title": "面试回答的五层递进结构",
+          "code": "flowchart TD\n    L1[\"第一层：整体框架 – 七大组件\"] --> L2[\"第二层：生产核心 – while loop + React/Plan‑Execute\"]\n    L2 --> L3[\"第三层：工具设计 – ACI 数据与性能影响\"]\n    L3 --> L4[\"第四层：上下文压缩 & Agent 隔离\"]\n    L4 --> L5[\"第五层：Agent 类型本质 – 相同骨架，差异在工具集、system prompt、编排模式\"]\n    L5 --> OUT[\"面试深度展示：从名词到实现细节\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T05:56:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 面试官问：一个完整的Agent架构包括哪些部分？\n\n## 七大核心组件 [BV1xZdbBaEFY P1 00:30]\n```mermaid\nflowchart TD\n    A[\"感知层\"] --> B[\"推理引擎（大脑）\"]\n    B --> C[\"记忆系统\"]\n    C --> D[\"短期记忆\"]\n    C --> E[\"长期记忆\"]\n    C --> F[\"情景记忆\"]\n    B --> G[\"工具层\"]\n    G --> H[\"外部世界连接\"]\n    G --> I[\"多步骤工作流编排\"]\n    G --> J[\"工具管理\"]\n    B --> K[\"多智能体协作（可选）\"]\n    B --> L[\"安全与治理\"]\n```\n\n## 循环实现方式：React 与 Plan‑Execute [BV1xZdbBaEFY P1 01:59]\n```mermaid\nflowchart TD\n    W[\"While Loop 主循环\"] --> R[\"React 模式\"]\n    W --> P[\"Plan‑Execute 模式\"]\n    R --> S[\"显式思考步骤\"]\n    P --> T[\"软规划 + 执行交错\"]\n    W --> LLM[\"LLM 在循环中基于环境反馈调用工具\"]\n    LLM --> TOOL[\"工具调用\"]\n    TOOL --> FEED[\"环境反馈\"]\n    FEED --> LLM\n```\n\n## 工具设计关键与 ACI 原则 [BV1xZdbBaEFY P1 03:04]\n```mermaid\nflowchart TD\n    T[\"工具设计重要性\"] --> ACI[\"Agent Computer Interface (ACI)\"]\n    ACI --> P1[\"选对工具并为 Agent 重新设计\"]\n    ACI --> P2[\"避免仅包装现有 API\"]\n    ACI --> P3[\"不以技术标识符优化 token 效率\"]\n    ACI --> P4[\"精心编写工具描述\"]\n    P4 --> IMP[\"提升性能上限（SWe benchmark 49%）\"]\n    T --> IMP\n    T --> D[\"工具数量 vs 质量\"]\n    D --> C1[\"少量高质量工具表现最佳\"]\n    D --> C2[\"工具过多导致悬崖式性能下降\"]\n```\n\n## 面试回答的五层递进结构 [BV1xZdbBaEFY P1 08:33]\n```mermaid\nflowchart TD\n    L1[\"第一层：整体框架 – 七大组件\"] --> L2[\"第二层：生产核心 – while loop + React/Plan‑Execute\"]\n    L2 --> L3[\"第三层：工具设计 – ACI 数据与性能影响\"]\n    L3 --> L4[\"第四层：上下文压缩 & Agent 隔离\"]\n    L4 --> L5[\"第五层：Agent 类型本质 – 相同骨架，差异在工具集、system prompt、编排模式\"]\n    L5 --> OUT[\"面试深度展示：从名词到实现细节\"]\n```",
+  "diagrams": [
+    {
+      "title": "七大核心组件",
+      "code": "flowchart TD\n    A[\"感知层\"] --> B[\"推理引擎（大脑）\"]\n    B --> C[\"记忆系统\"]\n    C --> D[\"短期记忆\"]\n    C --> E[\"长期记忆\"]\n    C --> F[\"情景记忆\"]\n    B --> G[\"工具层\"]\n    G --> H[\"外部世界连接\"]\n    G --> I[\"多步骤工作流编排\"]\n    G --> J[\"工具管理\"]\n    B --> K[\"多智能体协作（可选）\"]\n    B --> L[\"安全与治理\"]"
+    },
+    {
+      "title": "循环实现方式：React 与 Plan‑Execute",
+      "code": "flowchart TD\n    W[\"While Loop 主循环\"] --> R[\"React 模式\"]\n    W --> P[\"Plan‑Execute 模式\"]\n    R --> S[\"显式思考步骤\"]\n    P --> T[\"软规划 + 执行交错\"]\n    W --> LLM[\"LLM 在循环中基于环境反馈调用工具\"]\n    LLM --> TOOL[\"工具调用\"]\n    TOOL --> FEED[\"环境反馈\"]\n    FEED --> LLM"
+    },
+    {
+      "title": "工具设计关键与 ACI 原则",
+      "code": "flowchart TD\n    T[\"工具设计重要性\"] --> ACI[\"Agent Computer Interface (ACI)\"]\n    ACI --> P1[\"选对工具并为 Agent 重新设计\"]\n    ACI --> P2[\"避免仅包装现有 API\"]\n    ACI --> P3[\"不以技术标识符优化 token 效率\"]\n    ACI --> P4[\"精心编写工具描述\"]\n    P4 --> IMP[\"提升性能上限（SWe benchmark 49%）\"]\n    T --> IMP\n    T --> D[\"工具数量 vs 质量\"]\n    D --> C1[\"少量高质量工具表现最佳\"]\n    D --> C2[\"工具过多导致悬崖式性能下降\"]"
+    },
+    {
+      "title": "面试回答的五层递进结构",
+      "code": "flowchart TD\n    L1[\"第一层：整体框架 – 七大组件\"] --> L2[\"第二层：生产核心 – while loop + React/Plan‑Execute\"]\n    L2 --> L3[\"第三层：工具设计 – ACI 数据与性能影响\"]\n    L3 --> L4[\"第四层：上下文压缩 & Agent 隔离\"]\n    L4 --> L5[\"第五层：Agent 类型本质 – 相同骨架，差异在工具集、system prompt、编排模式\"]\n    L5 --> OUT[\"面试深度展示：从名词到实现细节\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T05:56:34+00:00"
+}

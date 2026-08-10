@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1AAVU6kEtM",
+  "title": "Python新手必学，零基础学习版游戏开发。",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4444,
+  "text": "挑战用泰坦制作植物大战僵尸第一期\n本视频零基础小白也能听懂\n你没有听错\n今天小张手把手带你用Python制作植物大战僵尸啊\n首先第一步呢\n我们先看一下我们需要的一些图片的资源\n这个图片资源呢是放到resource\n这个文件夹里边\n在这个resource文件夹里边呢\n啊首先它又分为的是图像music\n音乐sound的声音啊\n那我们先看图像\n在图像里边呢\n这个是子弹卡片关卡啊\nplus就是植物screen屏幕啊\n这是我们僵尸来分别看一下\n这个是子\n这个是子弹啊\n那我们可以看子弹相关的一些图片啊\n这是卡片啊\n这是我们的一些植物的卡片\nOK第三个是items\n是它是我们整个的一个关卡对吧\n这是我们初始的关卡\n然后第一关\n第二第三第四第五第六第七\n第八素材都给大家准备好了\n我们从头开始啊\n那好我们选中选中这个文件夹\n右键新建一个文件夹\n这个文件夹名字呢我们就叫做值啊\n大战僵尸啊\nOK啊\n现在就创建好了这么一个文件夹\n在这个文件夹里面呢\n我们先创建第一个Python文件\n来右键\n咱们新建一个Python文件\n这个Python文件咱们叫什么名字呢\n我们叫做window\n好那么这个window这个Python文件它起的作用是什么\n它的作用就是我们来干嘛呢\n来制作游戏的初始界面啊\n这个游戏初始界面\n说白了就是我们今天要把这个界面来给它搞定\n好吧\n来关掉一下\n这是个window的这个呃Python的一个作用\n然后我们再来创建一个Python文件\n右键咱们新建一个叫做start\nso start这个Python文件它的作用是什么\n它的作用就是来启动我们整个游戏的好\n那么咱们今天呢先来看第一个Python文件\n第二步呢是需要各位安装一个核心模块\n叫做pi game\n这是个游戏模块啊\n这个游戏模块\n那么这个游戏模块由于它是第三方的\n所以在使用它之前需要咱们来安装一下\n安装也非常的简单\n就是输入这个pip install py\nOK那么这个安装命令在什么地方输入呢\n大家看好在我的终端对吧\n我的PCHARM的左下角有这么一个长方形的图标\n它叫做终端\n来咱们点一下\n点完之后啊\n在这个地方咱们来输入这个安装的命令\npip空格\nIn store\nPy game\n按回车就可以了\n那么安装完了之后\n第三步\n咱们就开始实现这个游戏初始界面的\n一个代码的编写\n首先第一步呢我们先导入这个py game模\npy game模块\n那么就是import关键字\n导入py game啊\n这行代码非常的简单\n写个注释\n一行代码我们就写完了\n然后现在写第二行代码\n那么第二行代码咱们写什么呀\n第二行代码呢我们来定义一个函数好吧\n定义一个函数\n那么这个函数的作用是什么呢\n作用啊非常的简单\n就是来加载游戏主界面的背景图片的\n我们定义一个函数\n这个第一个函数作用呢咱们是先这样子吧\n因为我们还没有窗口\n对不对\n所以我们这个函数呢先创建窗口\n然后要指定这个窗口的宽度和高度\n宽度和高度来大家看我们的植物大战僵尸\n首先这是他的窗口\n对不对是吧\n窗口\n那么是窗口\n它是不是有个宽度和高度呀\n所以咱们先做这个事啊\n来\n那么还是把这个函数来定义一下DEF关键字\n我们叫做温window size\n在这个函数里边呢\n首先我们先指定它的一个宽度啊\nWindow\nsize啊\n然后window hit window hiit是高度\n那么我们的宽度给它一个1000高度\n给他一个多少\n给他一个600宽度和高度\n我们指定好了之后\n然后把这个结构给他返回下\nReturn window vs window hit\n这个第一个函数我们就定好了\n然后呢咱们来开始定义第二个函数\n那么这个函数它的作用又是什么呀\n它的作用呢是加载啊游戏主界面的背景图片好\nOK来咱们写一下DF\n然后呢就是我叫做闷UBJ啊BJ\n然后在里边我们怎么写这个逻辑\n你看我们是要加载游戏的一个主界面\n的一个背景图片\n对不对\n所以第一步呢我们得先要找到这个图片来\n这个图片呢就是在呃我看看在哪呀\n在我们那个QUEN啊\nquen screen就是屏幕的意思吗\n屏幕里边有这张图片叫做mu点PNG\n对不对\n所以来\n咱们把这个图片的这个路径来复制一下啊\n复制好了之后来咱们把这个方法来写写\n这个方法其实也不难\n先写个注释吧\n加载背景图片好\nOK啊\n那就是来个变量mm就等于什么py game\n点image点一个load\nOK在load里边呢\n咱们把这个图片的地址给他放进去啊\n那么这是找到screen这个文件夹了\nspring这个文件夹呢后面大家千万不要忘了啊\n咱们把这个名称给它复制进去啊\n来咱复制一下这个\nOK那么放到我们的这个反应跟在后边\nOK那么这样代码就写完\n加载图片的背景的背景图片\n把结果给到一个变量M那么这行代码写完之后\n哎我们这个函数就算是完成了吗\n当然没有啊\n因为我们刚才是不是指定窗口一个大小\n对不对\n所以现在啊就需要我们把什么呀\n把图片放到指定窗口\n当中啊\n来咱们怎么写这个代码呢\n那就是py game\n点这儿有个transform啊\nTransform\n点s scale这个方法在这个方法里边\n我们传递两个参数\n第一个是M就是我们的加载好的背景图片对吧\n第二个只放到指定窗口当中\n那么指定窗口是谁啊\n不就是这个window size\n怎么对不对\n所以把这个window size哎给他放进去好\nOK那么这个结果同样我们通过一个变量来表示\n那个我也叫M吧好吧\nM那现在呢咱把这个结果返回return一个M好的\n那么通过以上两个方法呢\n其实我们就把这个图片啊\n放到了我们指定的窗口当中\n也是窗口里面\n它是有这个图片的好吧\n那么接下来咱们做个判断\n然后调用这个闷右下划线B这个方法\n那这判断是什么意思呢\n就是判断啊当前文件if是判断\n对不对\n判断当前文件啊\n如果是主文件\n那么我就执行这个方法\n那如果当前文件它不是主文件\n是不是这个方法它不会执行呀\n谁呀\n是不是就是这个方法嘛\n对不对\n好\n那么这个window就是制作游戏初始界面的这个呃\n这个Python文件我们就写完了\n然后咱们看这start这个Python文件他是来启动游戏的\n对不对\n那么既然要启动游戏\n首先第一步呢咱们先还是先导入几个模块\n那么先导入一个input s y s\n那么这个模块是什么呀\n就是导入系统模块\n然后还是要导入我们的游戏模块\nPy game\n然后呢有一个重点了\n看好也就是说你看我要启动游戏\n那整个游戏的逻辑是不是\n现在目前是在这个window点pi模块里面\n是不是不是在这个window点Python文件里面\n对不对\n那么我肯定是要调用这个Python文件里面的\n一些方法和属性对吧\n那么它里面显然是有两个方法\n所以我可以这么来写啊\n就是from从哪\n从这个window模块里边\n直接引入它所有的方法和属性\n所以后面来个星号就行了啊\n来是什么意思呢\n从window点PY文件对不对\n他是个点PY文件当中导入所有的方法和属性\n就是个星号好的\n那么准备工作做完之后来咱们写第一行代码啊\n那么第一行代码呢是初始化游戏模块\n非常简单\nPy game\n点in it\n那为什么要初始化游戏模块呢\n很简单\n就是我们后续呢不管是窗口的调整对吧\n或者是窗口的创建\n音乐的创创建各种动画等等\n全会用到pn game里里边的一些功能板块\n所以咱们需要先初始化它\n然后才可以调用它里面的一些功能\n就这么简单啊\nOK那么接下来呢咱们开始创建窗口\n那么怎么写啊\n那么来个W吧对吧\nW就等于py game\n点display\n点set一个mode\n那这个mode其实窗口啊\n各位先生们\n咱们在这里面是不是指定了一个窗口的大小\n对不对\n好\n所以啊啊我先说一下\n这是制作游戏的初始界面\n对不对\n那么我们这里面有什么有指定窗窗口的大小\n然后窗口里面也放了个背景的图片\n但是并没有创建这个窗口吧对吧\n所以这个创建窗口我们是放在这个启动游戏\n这个start py文件里面了\n那么所以这里面写什么呀\n那么创建好的窗口是不是它有个大小是谁\n是这个window杠size\n所以咱们就直接啊直接在这个括号里边\n把这个方法来调用一下window size啊\n好这行代码咱们就写完了\n写完好\n写完这行代码之后呢\n来咱们接下来咳就是我们要定义一个循环\n那这循环呢有人可能会问啊\n为什么要定义循环呢\n很简单\n因为我们啊要在循环当中循环当中啊\n执行打开窗口的逻辑\n你想我打开这个窗口\n他不会一下子就关一\n一下子就消失了\n对不对\n所以我会让他一直循环的来打开这个界面\n直到我点击这个叉号\n它就会关闭了啊\n所以我会有\n所以我们可以写这么一个关闭的逻辑啊\n也可以也可以\n前期先不用写好吧\n咱们先写一个循环\n那这个循环呢我们就直接来写了\n怎么写呀\n就是view关键字啊\n咱们写个死循环\nwill处冒号回车\n那么在循环里面\n首先我们是不是可以给这给这窗口来命个名称\n对吧\n我们叫做植物大战僵尸啊\n就是给窗口\n给窗口命名来怎么写\n那就是py game点\n哎呦嘿\npy game点\nDisplay\n第2site啊\nsite captain名字叫做植物大战僵尸\nOK然后继续再往下\n那这个名字命名完了之后\n那我们现在呢需要画出窗口的背景啊\n画出\n窗口的背景啊\nOK呃然后呢再加一个逻辑\n并让图片在中间\n然后这行代码怎么写呢\n其实也不难\n那就是窗口是谁\n窗口是我们的W对吧\n那就W点BELETE啊\nBELETE在BLITTE里边呢\n我们窗口的背景是谁呀\n窗口我们创建好对吧\n背景也有\n就是我们这个闷U杠BJ对不对\n所以咱们就直接在这个窗口里面来\n调用它的背景\n那么直接就在这个里边呢写闷右下划线BJ\n然后再写一个参数\n逗号隔开啊\n这个参数加个括号里边给他个零逗号零\n啧这个零逗号零是什么意思呢\n来解释一下\n我们说呃让这个图片在中间\n其实就是整个的一个填充的效果\n就是个零零啊\n就是个零零\n就这么个意思\nOK那么再往下面呃写个逻辑\n就是更新窗口画面啊\n如果不写这行逻辑\n我们窗口还是展示不出来\n那就是py game\nPy game\nPy game\npy game点display点update\nOK啊\n那么咱们这个代码其实就写完了\n后续我们其实是可以加一个什么\n可以加一个事件监听一个效果\n就是比如说他监听到我按键盘的一个退出键\n我们就可以退出这个窗口了\n那这个呢我们今天先不实现\n我们先看看通过以上的这些代码能不能呃\n实现我们这个游戏的初始界面啊\n来咱们试一试好\n那我就直接啊先暂停这个啊\n我们来运行start这个文件\n因为它是启动游戏的文件嘛\n对不对\n来直接右键运行\n看效果\n别眨眼\n是不是OK啦\n看到了没有看到这个结果的\n看到应该看到这个结果了对吧\nOK那咱们今天呢\n本节就实现了一个窗口的一个初始化界面\n那后续呢我们继续可以往下面\n实现其他的一些逻辑",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1AAVU6kEtM",
+  "published_at": "1780466962",
+  "fetched_at": "2026-08-09T16:54:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Python新手必学——零基础游戏开发流程图谱\n\n## 项目结构与准备\n[BV1AAVU6kEtM P1 00:12-02:15]\n\n```mermaid\nflowchart TD\n    A[\"资源文件夹 resource\"] --> B[\"图像 images\"]\n    A --> C[\"音乐 music\"]\n    A --> D[\"声音 sound\"]\n    B --> E[\"子弹 bullet.png\"]\n    B --> F[\"卡片 card.png\"]\n    B --> G[\"关卡 level1.png\"]\n    H[\"创建项目文件夹\"] --> I[\"window.py（游戏初始界面）\"]\n    H --> J[\"start.py（启动游戏）\"]\n    K[\"安装 pygame 模块\"] --> L[\"pip install pygame\"]\n    L --> M[\"完成依赖\"]\n    I --> N[\"定义窗口尺寸函数\"]\n    I --> O[\"加载并缩放背景函数\"]\n    J --> P[\"导入 window 模块全部\"]\n    J --> Q[\"初始化 pygame\"]\n    J --> R[\"创建窗口并循环显示\"]\n```\n\n## window.py 关键函数实现\n[BV1AAVU6kEtM P1 03:45-06:46]\n\n```mermaid\nflowchart TD\n    A[\"def window_size()\"] --> B[\"设置 width = 1000\"]\n    B --> C[\"设置 height = 600\"]\n    C --> D[\"返回 (width, height)\"]\n    E[\"def load_background()\"] --> F[\"加载图片 pygame.image.load('resource/images/scene.png')\"]\n    F --> G[\"缩放图片 pygame.transform.scale(image, window_size())\"]\n    G --> H[\"返回缩放后的图片\"]\n    I[\"if __name__ == '__main__':\"] --> J[\"调用 window_size()\"]\n    I --> K[\"调用 load_background()\"]\n    J --> L[\"创建窗口 pygame.display.set_mode(window_size())\"]\n    K --> M[\"在窗口中 blit 背景图片\"]\n```\n\n## start.py 启动与主循环\n[BV1AAVU6kEtM P1 07:30-12:58]\n\n```mermaid\nflowchart TD\n    A[\"import sys\"] --> B[\"import pygame\"]\n    A --> C[\"from window import *\"]\n    D[\"pygame.init()\"] --> E[\"创建窗口 = pygame.display.set_mode(window_size())\"]\n    E --> F[\"设置窗口标题 pygame.display.set_caption('植物大战僵尸')\"]\n    G[\"while True:\"] --> H[\"窗口.blit(background, (0,0))\"]\n    H --> I[\"pygame.display.update()\"]\n    I --> J[\"# 事件监听占位（如键盘退出）\"]\n    J --> G\n```",
+      "diagrams": [
+        {
+          "title": "项目结构与准备",
+          "code": "flowchart TD\n    A[\"资源文件夹 resource\"] --> B[\"图像 images\"]\n    A --> C[\"音乐 music\"]\n    A --> D[\"声音 sound\"]\n    B --> E[\"子弹 bullet.png\"]\n    B --> F[\"卡片 card.png\"]\n    B --> G[\"关卡 level1.png\"]\n    H[\"创建项目文件夹\"] --> I[\"window.py（游戏初始界面）\"]\n    H --> J[\"start.py（启动游戏）\"]\n    K[\"安装 pygame 模块\"] --> L[\"pip install pygame\"]\n    L --> M[\"完成依赖\"]\n    I --> N[\"定义窗口尺寸函数\"]\n    I --> O[\"加载并缩放背景函数\"]\n    J --> P[\"导入 window 模块全部\"]\n    J --> Q[\"初始化 pygame\"]\n    J --> R[\"创建窗口并循环显示\"]"
+        },
+        {
+          "title": "window.py 关键函数实现",
+          "code": "flowchart TD\n    A[\"def window_size()\"] --> B[\"设置 width = 1000\"]\n    B --> C[\"设置 height = 600\"]\n    C --> D[\"返回 (width, height)\"]\n    E[\"def load_background()\"] --> F[\"加载图片 pygame.image.load('resource/images/scene.png')\"]\n    F --> G[\"缩放图片 pygame.transform.scale(image, window_size())\"]\n    G --> H[\"返回缩放后的图片\"]\n    I[\"if __name__ == '__main__':\"] --> J[\"调用 window_size()\"]\n    I --> K[\"调用 load_background()\"]\n    J --> L[\"创建窗口 pygame.display.set_mode(window_size())\"]\n    K --> M[\"在窗口中 blit 背景图片\"]"
+        },
+        {
+          "title": "start.py 启动与主循环",
+          "code": "flowchart TD\n    A[\"import sys\"] --> B[\"import pygame\"]\n    A --> C[\"from window import *\"]\n    D[\"pygame.init()\"] --> E[\"创建窗口 = pygame.display.set_mode(window_size())\"]\n    E --> F[\"设置窗口标题 pygame.display.set_caption('植物大战僵尸')\"]\n    G[\"while True:\"] --> H[\"窗口.blit(background, (0,0))\"]\n    H --> I[\"pygame.display.update()\"]\n    I --> J[\"# 事件监听占位（如键盘退出）\"]\n    J --> G"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T16:54:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Python新手必学——零基础游戏开发流程图谱\n\n## 项目结构与准备\n[BV1AAVU6kEtM P1 00:12-02:15]\n\n```mermaid\nflowchart TD\n    A[\"资源文件夹 resource\"] --> B[\"图像 images\"]\n    A --> C[\"音乐 music\"]\n    A --> D[\"声音 sound\"]\n    B --> E[\"子弹 bullet.png\"]\n    B --> F[\"卡片 card.png\"]\n    B --> G[\"关卡 level1.png\"]\n    H[\"创建项目文件夹\"] --> I[\"window.py（游戏初始界面）\"]\n    H --> J[\"start.py（启动游戏）\"]\n    K[\"安装 pygame 模块\"] --> L[\"pip install pygame\"]\n    L --> M[\"完成依赖\"]\n    I --> N[\"定义窗口尺寸函数\"]\n    I --> O[\"加载并缩放背景函数\"]\n    J --> P[\"导入 window 模块全部\"]\n    J --> Q[\"初始化 pygame\"]\n    J --> R[\"创建窗口并循环显示\"]\n```\n\n## window.py 关键函数实现\n[BV1AAVU6kEtM P1 03:45-06:46]\n\n```mermaid\nflowchart TD\n    A[\"def window_size()\"] --> B[\"设置 width = 1000\"]\n    B --> C[\"设置 height = 600\"]\n    C --> D[\"返回 (width, height)\"]\n    E[\"def load_background()\"] --> F[\"加载图片 pygame.image.load('resource/images/scene.png')\"]\n    F --> G[\"缩放图片 pygame.transform.scale(image, window_size())\"]\n    G --> H[\"返回缩放后的图片\"]\n    I[\"if __name__ == '__main__':\"] --> J[\"调用 window_size()\"]\n    I --> K[\"调用 load_background()\"]\n    J --> L[\"创建窗口 pygame.display.set_mode(window_size())\"]\n    K --> M[\"在窗口中 blit 背景图片\"]\n```\n\n## start.py 启动与主循环\n[BV1AAVU6kEtM P1 07:30-12:58]\n\n```mermaid\nflowchart TD\n    A[\"import sys\"] --> B[\"import pygame\"]\n    A --> C[\"from window import *\"]\n    D[\"pygame.init()\"] --> E[\"创建窗口 = pygame.display.set_mode(window_size())\"]\n    E --> F[\"设置窗口标题 pygame.display.set_caption('植物大战僵尸')\"]\n    G[\"while True:\"] --> H[\"窗口.blit(background, (0,0))\"]\n    H --> I[\"pygame.display.update()\"]\n    I --> J[\"# 事件监听占位（如键盘退出）\"]\n    J --> G\n```",
+  "diagrams": [
+    {
+      "title": "项目结构与准备",
+      "code": "flowchart TD\n    A[\"资源文件夹 resource\"] --> B[\"图像 images\"]\n    A --> C[\"音乐 music\"]\n    A --> D[\"声音 sound\"]\n    B --> E[\"子弹 bullet.png\"]\n    B --> F[\"卡片 card.png\"]\n    B --> G[\"关卡 level1.png\"]\n    H[\"创建项目文件夹\"] --> I[\"window.py（游戏初始界面）\"]\n    H --> J[\"start.py（启动游戏）\"]\n    K[\"安装 pygame 模块\"] --> L[\"pip install pygame\"]\n    L --> M[\"完成依赖\"]\n    I --> N[\"定义窗口尺寸函数\"]\n    I --> O[\"加载并缩放背景函数\"]\n    J --> P[\"导入 window 模块全部\"]\n    J --> Q[\"初始化 pygame\"]\n    J --> R[\"创建窗口并循环显示\"]"
+    },
+    {
+      "title": "window.py 关键函数实现",
+      "code": "flowchart TD\n    A[\"def window_size()\"] --> B[\"设置 width = 1000\"]\n    B --> C[\"设置 height = 600\"]\n    C --> D[\"返回 (width, height)\"]\n    E[\"def load_background()\"] --> F[\"加载图片 pygame.image.load('resource/images/scene.png')\"]\n    F --> G[\"缩放图片 pygame.transform.scale(image, window_size())\"]\n    G --> H[\"返回缩放后的图片\"]\n    I[\"if __name__ == '__main__':\"] --> J[\"调用 window_size()\"]\n    I --> K[\"调用 load_background()\"]\n    J --> L[\"创建窗口 pygame.display.set_mode(window_size())\"]\n    K --> M[\"在窗口中 blit 背景图片\"]"
+    },
+    {
+      "title": "start.py 启动与主循环",
+      "code": "flowchart TD\n    A[\"import sys\"] --> B[\"import pygame\"]\n    A --> C[\"from window import *\"]\n    D[\"pygame.init()\"] --> E[\"创建窗口 = pygame.display.set_mode(window_size())\"]\n    E --> F[\"设置窗口标题 pygame.display.set_caption('植物大战僵尸')\"]\n    G[\"while True:\"] --> H[\"窗口.blit(background, (0,0))\"]\n    H --> I[\"pygame.display.update()\"]\n    I --> J[\"# 事件监听占位（如键盘退出）\"]\n    J --> G"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T16:54:45+00:00"
+}

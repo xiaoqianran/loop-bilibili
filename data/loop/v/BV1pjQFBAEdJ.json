@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1pjQFBAEdJ",
+  "title": "全靠AI，零基础的我一个月能做出什么样的游戏Demo？【Unity】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 710,
+  "text": "大家好\n这里是波波虾\n不知道大家对前面的游戏演戏感觉如何\n作为我从零开始一个月自学unity的成果\n我个人还是非常满意的\n接下来我将简单的介绍一下我的AI工作流\n首先是代码足球系\ncloud大人codex作为辅助代码\nAI率100%\n而且其中95%以上\n我献祭没看过一眼\n项目管理策划是由我在GBT的辅助下完成的\n但是熟悉java技术站和web编程\n因此代码和项目管理方面没有遇到太大困难\n然后是游戏策划\n我开始时不懂搞什么GDD\n但是我游戏经验很丰富\n就先做出一个快速原型\n然后不断的玩\n不断的调戏\n我玩过很多的RPG和泪银\n而且我特别喜欢玩泰拉瑞亚\n就强行把他们结合了一下\n个人感觉体验还不错\n接下来是美术\n我使用了JMI的nano banana2\n来形成了我们能看到的所有的贴图\n我本人完全不会画画\n只负责把星群的图片在PS里面处理一下\n即便这样\n他也消耗了我这一个月中最多的时间\n不过效果还是很不错的\n最后是音效和音乐\n音效使用的是eleven labs\n音乐使用的是苏诺音效\n是我把场景和我的想法给GPT\n他帮我生成提示词\n然后我拿着提示词去leon lets\n中秋卡角和西的音效音乐就更简单了\n给苏诺描述一下我要的音乐风格出来的\n怎么听都好听\n后续我还会用TTS制作角色的语音\n以上就是我的工作流的简述了\n一个月\n实践下来\n我还是很有感触的\n现在的AI真的太强大了\n做出这种程度的游戏\n对曾经的我来说只能是幻想\nAI真的大大的降低了制作游戏的门槛\n再发展个一两年更是难以想象\n我希望热爱游戏的\n有想过要去制作游戏的朋友们\n真的可以尝试起来\n我坚信AI只是工具\n只有真正玩游戏\n热爱游戏的人\n才能做出好玩的游戏",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1pjQFBAEdJ",
+  "published_at": "1775804948",
+  "fetched_at": "2026-08-07T01:11:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 全靠AI，零基础一个月游戏Demo的知识图谱\n\n## AI工作流概览 [BV1pjQFBAEdJ P1 08:30]\n```mermaid\nflowchart TD\n    A1[\"AI工作流概览\"] --> A2[\"代码辅助 (Codex)\"]\n    A1 --> A3[\"项目管理辅助 (GPT)\"]\n    A1 --> A4[\"美术生成 (NanoBanana2)\"]\n    A1 --> A5[\"音效生成 (Eleven Labs)\"]\n    A1 --> A6[\"音乐生成 (Suno)\"]\n    A1 --> A7[\"角色语音合成 (TTS)\"]\n```\n\n## 游戏策划与原型迭代流程 [BV1pjQFBAEdJ P1 08:55]\n```mermaid\nflowchart LR\n    B1[\"快速原型\"] --> B2[\"反复玩 & 调试\"]\n    B2 --> B3[\"融合RPG & Terraria元素\"]\n    B3 --> B4[\"形成可玩 Demo\"]\n```\n\n## AI降低游戏制作门槛的因果链 [BV1pjQFBAEdJ P1 10:05]\n```mermaid\nflowchart TD\n    C1[\"AI技术进步 (2023)\"] --> C2[\"降低代码实现难度\"]\n    C1 --> C3[\"降低美术创作难度\"]\n    C1 --> C4[\"降低音效/音乐制作难度\"]\n    C2 --> C5[\"整体制作门槛下降\"]\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"更多非专业玩家尝试制作游戏\"]\n```",
+      "diagrams": [
+        {
+          "title": "AI工作流概览",
+          "code": "flowchart TD\n    A1[\"AI工作流概览\"] --> A2[\"代码辅助 (Codex)\"]\n    A1 --> A3[\"项目管理辅助 (GPT)\"]\n    A1 --> A4[\"美术生成 (NanoBanana2)\"]\n    A1 --> A5[\"音效生成 (Eleven Labs)\"]\n    A1 --> A6[\"音乐生成 (Suno)\"]\n    A1 --> A7[\"角色语音合成 (TTS)\"]"
+        },
+        {
+          "title": "游戏策划与原型迭代流程",
+          "code": "flowchart LR\n    B1[\"快速原型\"] --> B2[\"反复玩 & 调试\"]\n    B2 --> B3[\"融合RPG & Terraria元素\"]\n    B3 --> B4[\"形成可玩 Demo\"]"
+        },
+        {
+          "title": "AI降低游戏制作门槛的因果链",
+          "code": "flowchart TD\n    C1[\"AI技术进步 (2023)\"] --> C2[\"降低代码实现难度\"]\n    C1 --> C3[\"降低美术创作难度\"]\n    C1 --> C4[\"降低音效/音乐制作难度\"]\n    C2 --> C5[\"整体制作门槛下降\"]\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"更多非专业玩家尝试制作游戏\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T01:11:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 全靠AI，零基础一个月游戏Demo的知识图谱\n\n## AI工作流概览 [BV1pjQFBAEdJ P1 08:30]\n```mermaid\nflowchart TD\n    A1[\"AI工作流概览\"] --> A2[\"代码辅助 (Codex)\"]\n    A1 --> A3[\"项目管理辅助 (GPT)\"]\n    A1 --> A4[\"美术生成 (NanoBanana2)\"]\n    A1 --> A5[\"音效生成 (Eleven Labs)\"]\n    A1 --> A6[\"音乐生成 (Suno)\"]\n    A1 --> A7[\"角色语音合成 (TTS)\"]\n```\n\n## 游戏策划与原型迭代流程 [BV1pjQFBAEdJ P1 08:55]\n```mermaid\nflowchart LR\n    B1[\"快速原型\"] --> B2[\"反复玩 & 调试\"]\n    B2 --> B3[\"融合RPG & Terraria元素\"]\n    B3 --> B4[\"形成可玩 Demo\"]\n```\n\n## AI降低游戏制作门槛的因果链 [BV1pjQFBAEdJ P1 10:05]\n```mermaid\nflowchart TD\n    C1[\"AI技术进步 (2023)\"] --> C2[\"降低代码实现难度\"]\n    C1 --> C3[\"降低美术创作难度\"]\n    C1 --> C4[\"降低音效/音乐制作难度\"]\n    C2 --> C5[\"整体制作门槛下降\"]\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"更多非专业玩家尝试制作游戏\"]\n```",
+  "diagrams": [
+    {
+      "title": "AI工作流概览",
+      "code": "flowchart TD\n    A1[\"AI工作流概览\"] --> A2[\"代码辅助 (Codex)\"]\n    A1 --> A3[\"项目管理辅助 (GPT)\"]\n    A1 --> A4[\"美术生成 (NanoBanana2)\"]\n    A1 --> A5[\"音效生成 (Eleven Labs)\"]\n    A1 --> A6[\"音乐生成 (Suno)\"]\n    A1 --> A7[\"角色语音合成 (TTS)\"]"
+    },
+    {
+      "title": "游戏策划与原型迭代流程",
+      "code": "flowchart LR\n    B1[\"快速原型\"] --> B2[\"反复玩 & 调试\"]\n    B2 --> B3[\"融合RPG & Terraria元素\"]\n    B3 --> B4[\"形成可玩 Demo\"]"
+    },
+    {
+      "title": "AI降低游戏制作门槛的因果链",
+      "code": "flowchart TD\n    C1[\"AI技术进步 (2023)\"] --> C2[\"降低代码实现难度\"]\n    C1 --> C3[\"降低美术创作难度\"]\n    C1 --> C4[\"降低音效/音乐制作难度\"]\n    C2 --> C5[\"整体制作门槛下降\"]\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"更多非专业玩家尝试制作游戏\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:11:47+00:00"
+}

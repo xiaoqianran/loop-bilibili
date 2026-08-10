@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1qKZ7BsEs5",
+  "title": "34. BERT为什么没有KV Cache/KV Cache何以存在？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 900,
+  "text": "今天的问题是BT为什么没有ky cash\n或者问一个更加深刻一点的问题\nkeep y cash何以存在\n对于第一个问题\n有一个简单的回答是\nBT是encoder only的架构\n他是一眼全看所有的token\n所以他没有kv cash\n但这个答案呢有点太简单了\n其实还有个更加深层的原因\n就是BT只要变一个输入token\nky cash要全部重算\n这制约了BTS有ky cash\n而GPT不同\nGPT只需要重算这个token\n及其以后对应的那个k b cash\n我们先来分析一下GPT为什么有这个性质\n之前说过\n再分析一遍\n假设现在有若干个词向量X\n然后其中的这个X3变了\n但数X一X21XX五没有\n那么此时只会影响到当前层的Q3K3和V3\n为什么之前说过一个独立性质\n就是一个暗含分的矩阵乘一个不划分的矩阵\n得到的还是个暗含分的矩阵\n其中这个输入矩阵和这个输出矩阵呢\n它的函数一对应的互不干扰\n这就意味着X3不会去干扰到Q1和K1\n也就意味着只有当前层的Q3K3变了\n那么它所在的行\nQ3所在的行和K3所在的列\n就这个数字都会变a soft max\n按行做\n只要变了一个整行都变\n所以这下面全变\n然后再乘以V\n由于这个矩阵乘法的\n它这个独立性导致下面的全变\n然后呢再去进行FFN后面的就全变了\n就意味着输出做输入下面全变\n然后导致下面变\n但是无论它怎么变\n上面的这部分都不变\n也就意味着这个kv cash\n前面的部分是不会变的\n但是birch有一个大的问题是他没有这个掩码\n又导致了这个K3的范围覆盖的很大\n就他会把上面的也覆盖掉\n这就导致了soft max当中这个数变了\n整行全变\n那这样的话整个这个矩阵都变了\n再去乘以V1的话\n整个矩阵也变了\n然后输出做输入哎全部变了\n所以birth只需要你修改中间的一个输入token\n或者在后面再加一个token\n那kb catch就要重算了\n这就限制了BT有kv catch\n所以BT不适合生存任务\n所以我们这个更深刻的这个问题\n有一个答案\n就是kv catch得出来的条件是什么的\n就是两句话输入到模型当中\n这两句话的公共前缀的kv catch必须要相同",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qKZ7BsEs5",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

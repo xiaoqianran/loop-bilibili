@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1EQNM6ME9x",
+  "title": "Unity 必学！场景与资产管理核心逻辑（新手避坑）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 747,
+  "text": "当我们在场景里面做了修改之后\n我们保存保存之后\n那所有的内容\n这些数据会记录在我们的这个场景里面\n我们选择找到这个场景啊\n在这个场景右键select sing assets\n可以找到这个场景\nmax图里面所有的对象都是一个资产\n那这个资产就是在我们的硬盘上面\n我们右键打开show in explorer\n就是在我们的浏览器\n就是在我们的文件夹中打开\n你所有的资产都在我们的这个项目\nS这个文件夹下面\n这下面的所有的数据就是这是一个文件\n每个对象就是在我们场景里面的一个文件\n那think视图里面就是hero ari\n成绩面板和SC视图里面的这些内容啊\n它只记录在我们的信场景之中啊\n只记录在这一份文件里面的数据\n继承了字节的数据\n记录在了里面\n如果你用模型或者图片想放到我们的工程里面\n那你只需要把我们的资产\n拖拽到我们的project视图里面\n这边就可以了\n拖拽到project视图松手好\n他就会拷贝到我们的工程里面\n你不能直接通过拖拽放到我们的hero art层级视图\n这边\n你需要放到我们的project视图里面\n然后再project视图里面拖拽到我们的HERR体\n传递面板\n好这样子我们的资产才会导进来\n那如果我们现在场景里面\n比如说我们把模型拖在了场景里面\n这个模型已经放进来了\n我们在场景里面删除这个模型\n对我们的project视图是没有任何影响的\n你的HERRI成绩面板\n只是我们这些模型的一个映射\n但是相反的\n如果你在project视图里把boss的模型删除了\n你的HERRI成绩里面的这个模型就会丢失好\n我们一个场景做完之后\n我们可能会做多个场景\n我们通过右键创建一个场景好\n那我们在这个场控场里面去做自己\n新的一个场景的内容\n我们保存\n那这两个场景之间的内容就是相互独立的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1EQNM6ME9x",
+  "published_at": "1783824991",
+  "fetched_at": "2026-08-08T02:06:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Unity 场景与资产管理知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"在场景中修改\"] --> A2[\"保存场景\"]\n    A2 --> A3[\"场景文件记录数据\"]\n    B1[\"外部模型/图片等资产\"] --> B2[\"资产文件（硬盘）\"]\n    B2 --> B3[\"Project 视图显示资产\"]\n    B3 --> B4[\"右键 → Show in Explorer 打开所在文件夹\"]\n```\n\n## 资产导入流程\n```mermaid\nflowchart TD\n    C1[\"外部模型/图片\"] --> C2[\"拖拽操作\"]\n    C2 --> C3[\"放到 Project 视图\"]\n    C3 --> C4[\"复制到项目文件夹\"]\n    C4 --> C5[\"资产出现在 Project 视图\"]\n    C5 --> C6[\"从 Project 拖到 Hierarchy\"]\n    C6 --> C7[\"场景中实例化对象\"]\n```\n\n## 场景与资产的依赖关系\n```mermaid\nflowchart TD\n    D1[\"场景文件\"] --> D2[\"对资产的引用\"]\n    D2 --> D3[\"资产文件（硬盘）\"]\n    D4[\"在场景中删除对象\"] --> D5[\"对 Project 视图无影响\"]\n    D6[\"在 Project 视图删除资产\"] --> D7[\"场景中对应对象丢失\"]\n```\n\n## 多场景管理与独立性\n```mermaid\nflowchart TD\n    E1[\"右键创建新场景\"] --> E2[\"编辑场景内容\"]\n    E2 --> E3[\"保存场景\"]\n    E3 --> E4[\"场景 A 文件\"]\n    E3 --> E5[\"场景 B 文件\"]\n    E4 --> E6[\"相互独立\"]\n    E5 --> E6\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A1[\"在场景中修改\"] --> A2[\"保存场景\"]\n    A2 --> A3[\"场景文件记录数据\"]\n    B1[\"外部模型/图片等资产\"] --> B2[\"资产文件（硬盘）\"]\n    B2 --> B3[\"Project 视图显示资产\"]\n    B3 --> B4[\"右键 → Show in Explorer 打开所在文件夹\"]"
+        },
+        {
+          "title": "资产导入流程",
+          "code": "flowchart TD\n    C1[\"外部模型/图片\"] --> C2[\"拖拽操作\"]\n    C2 --> C3[\"放到 Project 视图\"]\n    C3 --> C4[\"复制到项目文件夹\"]\n    C4 --> C5[\"资产出现在 Project 视图\"]\n    C5 --> C6[\"从 Project 拖到 Hierarchy\"]\n    C6 --> C7[\"场景中实例化对象\"]"
+        },
+        {
+          "title": "场景与资产的依赖关系",
+          "code": "flowchart TD\n    D1[\"场景文件\"] --> D2[\"对资产的引用\"]\n    D2 --> D3[\"资产文件（硬盘）\"]\n    D4[\"在场景中删除对象\"] --> D5[\"对 Project 视图无影响\"]\n    D6[\"在 Project 视图删除资产\"] --> D7[\"场景中对应对象丢失\"]"
+        },
+        {
+          "title": "多场景管理与独立性",
+          "code": "flowchart TD\n    E1[\"右键创建新场景\"] --> E2[\"编辑场景内容\"]\n    E2 --> E3[\"保存场景\"]\n    E3 --> E4[\"场景 A 文件\"]\n    E3 --> E5[\"场景 B 文件\"]\n    E4 --> E6[\"相互独立\"]\n    E5 --> E6"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T02:06:09+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Unity 场景与资产管理知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"在场景中修改\"] --> A2[\"保存场景\"]\n    A2 --> A3[\"场景文件记录数据\"]\n    B1[\"外部模型/图片等资产\"] --> B2[\"资产文件（硬盘）\"]\n    B2 --> B3[\"Project 视图显示资产\"]\n    B3 --> B4[\"右键 → Show in Explorer 打开所在文件夹\"]\n```\n\n## 资产导入流程\n```mermaid\nflowchart TD\n    C1[\"外部模型/图片\"] --> C2[\"拖拽操作\"]\n    C2 --> C3[\"放到 Project 视图\"]\n    C3 --> C4[\"复制到项目文件夹\"]\n    C4 --> C5[\"资产出现在 Project 视图\"]\n    C5 --> C6[\"从 Project 拖到 Hierarchy\"]\n    C6 --> C7[\"场景中实例化对象\"]\n```\n\n## 场景与资产的依赖关系\n```mermaid\nflowchart TD\n    D1[\"场景文件\"] --> D2[\"对资产的引用\"]\n    D2 --> D3[\"资产文件（硬盘）\"]\n    D4[\"在场景中删除对象\"] --> D5[\"对 Project 视图无影响\"]\n    D6[\"在 Project 视图删除资产\"] --> D7[\"场景中对应对象丢失\"]\n```\n\n## 多场景管理与独立性\n```mermaid\nflowchart TD\n    E1[\"右键创建新场景\"] --> E2[\"编辑场景内容\"]\n    E2 --> E3[\"保存场景\"]\n    E3 --> E4[\"场景 A 文件\"]\n    E3 --> E5[\"场景 B 文件\"]\n    E4 --> E6[\"相互独立\"]\n    E5 --> E6\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A1[\"在场景中修改\"] --> A2[\"保存场景\"]\n    A2 --> A3[\"场景文件记录数据\"]\n    B1[\"外部模型/图片等资产\"] --> B2[\"资产文件（硬盘）\"]\n    B2 --> B3[\"Project 视图显示资产\"]\n    B3 --> B4[\"右键 → Show in Explorer 打开所在文件夹\"]"
+    },
+    {
+      "title": "资产导入流程",
+      "code": "flowchart TD\n    C1[\"外部模型/图片\"] --> C2[\"拖拽操作\"]\n    C2 --> C3[\"放到 Project 视图\"]\n    C3 --> C4[\"复制到项目文件夹\"]\n    C4 --> C5[\"资产出现在 Project 视图\"]\n    C5 --> C6[\"从 Project 拖到 Hierarchy\"]\n    C6 --> C7[\"场景中实例化对象\"]"
+    },
+    {
+      "title": "场景与资产的依赖关系",
+      "code": "flowchart TD\n    D1[\"场景文件\"] --> D2[\"对资产的引用\"]\n    D2 --> D3[\"资产文件（硬盘）\"]\n    D4[\"在场景中删除对象\"] --> D5[\"对 Project 视图无影响\"]\n    D6[\"在 Project 视图删除资产\"] --> D7[\"场景中对应对象丢失\"]"
+    },
+    {
+      "title": "多场景管理与独立性",
+      "code": "flowchart TD\n    E1[\"右键创建新场景\"] --> E2[\"编辑场景内容\"]\n    E2 --> E3[\"保存场景\"]\n    E3 --> E4[\"场景 A 文件\"]\n    E3 --> E5[\"场景 B 文件\"]\n    E4 --> E6[\"相互独立\"]\n    E5 --> E6"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T02:06:09+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1FXNGzNENy",
+  "title": "最简单的Godot对话系统 | EP07",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 560,
+  "text": "主播今天本来信心满满\n觉得给自己的游戏增加一个对话系统\n还不是简简单单\n谁曾想凡尔呢\n翻车翻的相当彻底\n事情是这样的\n今天是主播开发游戏的第七天\n前几天我已经做完了人物移动攻击敌人系统\n所以我当时的想法非常单纯\n既然都能打怪了\n加个NPC对话\n那不是分分钟\n于是我打开歌多\n开始做对话系统\n我的设计非常简单\n玩家走到NPC面前\n按一下交互键\n屏幕下方弹出对话框\nNPC开始说话\n玩家点一下继续剧情\n听起来非常合理\n能出什么bug\n于是我开始搭UI写触发区域检测\n输入加载对话文本\nThree hours later\nCan you move all time cuts\n终于可以简单对话了\n就在我以为终于搞定的时候\n对话完后\n我的NPC直接挤我头上了\n那一刻\n我意识到事情可能没有我想象的那么简单\n主播最后还是很轻松的把整个对话系统搭好了\n只不过用了一点点小小的科技手段\n比如我用了GODOT的对话插件来管理对话数\n然后代码部分大量逻辑其实是让AI帮我生成的\n比如输入检测对话\n推进UI更新\n这些脚本基本都是我描述功能\n然后codex帮我写的AI还是太好用了\n最终结果就是只用了一天时间\n我已经把整个游戏的对话系统跑通了\n现在游戏已经可以做到NPC对话多段剧情\n案件推进\n未来还可以加分支剧情\n主播勉强还算厉害\n明天继续",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1FXNGzNENy",
+  "published_at": "1773049774",
+  "fetched_at": "2026-08-10T08:45:41+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 最简单的Godot对话系统知识图谱\n\n## 总览\n```mermaid\nflowchart TD\nA1[\"玩家走到NPC前\"]\nA2[\"按交互键\"]\nA3[\"弹出对话框\"]\nA4[\"NPC开始说话\"]\nA5[\"玩家点击继续\"]\nA6[\"对话结束\"]\nA7[\"NPC贴近玩家\"]\nA1 --> A2\nA2 --> A3\nA3 --> A4\nA4 --> A5\nA5 --> A6\nA6 --> A7\n```\nBV1FXNGzNENy P1 00:26  \nBV1FXNGzNENy P1 00:27  \nBV1FXNGzNENy P1 00:28  \nBV1FXNGzNENy P1 00:30  \nBV1FXNGzNENy P1 00:31  \nBV1FXNGzNENy P1 00:47  \nBV1FXNGzNENy P1 00:48  \n\n## 实现手段\n```mermaid\nflowchart TD\nB1[\"使用Godot对话插件\"]\nB2[\"加载对话文本\"]\nB3[\"UI更新与输入检测\"]\nB4[\"AI (Codex) 生成脚本\"]\nB5[\"完成对话系统\"]\nB1 --> B2\nB2 --> B3\nB3 --> B4\nB4 --> B5\n```\nBV1FXNGzNENy P1 01:02  \nBV1FXNGzNENy P1 01:06  \nBV1FXNGzNENy P1 01:18  \n\n## 多段剧情与分支\n```mermaid\nflowchart TD\nC1[\"多段剧情已实现\"]\nC2[\"案件推进\"]\nC3[\"可加入分支剧情\"]\nC1 --> C2\nC2 --> C3\n```\nBV1FXNGzNENy P1 01:23  \nBV1FXNGzNENy P1 01:27  \n\n## 常见问题与调试\n```mermaid\nflowchart TD\nD1[\"对话结束后NPC贴近玩家\"]\nD2[\"需要处理碰撞或结束位置\"]\nD3[\"调整触发区域或结束逻辑\"]\nD1 --> D2\nD2 --> D3\n```\nBV1FXNGzNENy P1 00:48  ",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\nA1[\"玩家走到NPC前\"]\nA2[\"按交互键\"]\nA3[\"弹出对话框\"]\nA4[\"NPC开始说话\"]\nA5[\"玩家点击继续\"]\nA6[\"对话结束\"]\nA7[\"NPC贴近玩家\"]\nA1 --> A2\nA2 --> A3\nA3 --> A4\nA4 --> A5\nA5 --> A6\nA6 --> A7"
+        },
+        {
+          "title": "实现手段",
+          "code": "flowchart TD\nB1[\"使用Godot对话插件\"]\nB2[\"加载对话文本\"]\nB3[\"UI更新与输入检测\"]\nB4[\"AI (Codex) 生成脚本\"]\nB5[\"完成对话系统\"]\nB1 --> B2\nB2 --> B3\nB3 --> B4\nB4 --> B5"
+        },
+        {
+          "title": "多段剧情与分支",
+          "code": "flowchart TD\nC1[\"多段剧情已实现\"]\nC2[\"案件推进\"]\nC3[\"可加入分支剧情\"]\nC1 --> C2\nC2 --> C3"
+        },
+        {
+          "title": "常见问题与调试",
+          "code": "flowchart TD\nD1[\"对话结束后NPC贴近玩家\"]\nD2[\"需要处理碰撞或结束位置\"]\nD3[\"调整触发区域或结束逻辑\"]\nD1 --> D2\nD2 --> D3"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T08:46:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 最简单的Godot对话系统知识图谱\n\n## 总览\n```mermaid\nflowchart TD\nA1[\"玩家走到NPC前\"]\nA2[\"按交互键\"]\nA3[\"弹出对话框\"]\nA4[\"NPC开始说话\"]\nA5[\"玩家点击继续\"]\nA6[\"对话结束\"]\nA7[\"NPC贴近玩家\"]\nA1 --> A2\nA2 --> A3\nA3 --> A4\nA4 --> A5\nA5 --> A6\nA6 --> A7\n```\nBV1FXNGzNENy P1 00:26  \nBV1FXNGzNENy P1 00:27  \nBV1FXNGzNENy P1 00:28  \nBV1FXNGzNENy P1 00:30  \nBV1FXNGzNENy P1 00:31  \nBV1FXNGzNENy P1 00:47  \nBV1FXNGzNENy P1 00:48  \n\n## 实现手段\n```mermaid\nflowchart TD\nB1[\"使用Godot对话插件\"]\nB2[\"加载对话文本\"]\nB3[\"UI更新与输入检测\"]\nB4[\"AI (Codex) 生成脚本\"]\nB5[\"完成对话系统\"]\nB1 --> B2\nB2 --> B3\nB3 --> B4\nB4 --> B5\n```\nBV1FXNGzNENy P1 01:02  \nBV1FXNGzNENy P1 01:06  \nBV1FXNGzNENy P1 01:18  \n\n## 多段剧情与分支\n```mermaid\nflowchart TD\nC1[\"多段剧情已实现\"]\nC2[\"案件推进\"]\nC3[\"可加入分支剧情\"]\nC1 --> C2\nC2 --> C3\n```\nBV1FXNGzNENy P1 01:23  \nBV1FXNGzNENy P1 01:27  \n\n## 常见问题与调试\n```mermaid\nflowchart TD\nD1[\"对话结束后NPC贴近玩家\"]\nD2[\"需要处理碰撞或结束位置\"]\nD3[\"调整触发区域或结束逻辑\"]\nD1 --> D2\nD2 --> D3\n```\nBV1FXNGzNENy P1 00:48  ",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\nA1[\"玩家走到NPC前\"]\nA2[\"按交互键\"]\nA3[\"弹出对话框\"]\nA4[\"NPC开始说话\"]\nA5[\"玩家点击继续\"]\nA6[\"对话结束\"]\nA7[\"NPC贴近玩家\"]\nA1 --> A2\nA2 --> A3\nA3 --> A4\nA4 --> A5\nA5 --> A6\nA6 --> A7"
+    },
+    {
+      "title": "实现手段",
+      "code": "flowchart TD\nB1[\"使用Godot对话插件\"]\nB2[\"加载对话文本\"]\nB3[\"UI更新与输入检测\"]\nB4[\"AI (Codex) 生成脚本\"]\nB5[\"完成对话系统\"]\nB1 --> B2\nB2 --> B3\nB3 --> B4\nB4 --> B5"
+    },
+    {
+      "title": "多段剧情与分支",
+      "code": "flowchart TD\nC1[\"多段剧情已实现\"]\nC2[\"案件推进\"]\nC3[\"可加入分支剧情\"]\nC1 --> C2\nC2 --> C3"
+    },
+    {
+      "title": "常见问题与调试",
+      "code": "flowchart TD\nD1[\"对话结束后NPC贴近玩家\"]\nD2[\"需要处理碰撞或结束位置\"]\nD3[\"调整触发区域或结束逻辑\"]\nD1 --> D2\nD2 --> D3"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:46:00+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1HEGN6UEp1",
+  "title": "DeepSeek 自己评测 DeepSeek",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1199,
+  "text": "今天有个大新闻\ndeep seek悄悄把自家的轻量版练成了倒反天罡\n一个便宜小模型\n硬刚自家旗舰还赢了\n这条视频给你掰开揉碎\n讲明白\n不是新模型\n是轻量快便宜版\n练级回来了\ndeep sick的模型一直分两档\npro是性能怪兽\nflash是轻量快便宜版\n这次正式版7月31号上线\n模型结构跟三个月前的预览版一模一样\n总参数2840亿\n但激活只有130亿\n说人话就是脑子大\n但每次只动一小块\n所以又快又省\n他还支持最长1000000token的上下文\n差不多能一次塞进好几本小说\n而且能切思考模式和不思考模式要快还是要准\n随你挑\n这次不是堆参数\n是后训练\n把agent能力拉满\n以前AI像个只会聊天的顾问\n你问他他答\n但让他自己开电脑\n干点活就歇菜\n这次正式版\n重点就是把自己动手的能力练出来了\n官方说主要就是重做了后训练\n模型大小一点没变\n结果就是他能自己调工具\n自己跑代码\n自己操作软件\n越来越像一个不用你盯着的数字员工\n这也是为什么他在各种动手测试里分数暴涨\nTerminal bench82.7\n等于让他自己开终端修bug\n别被数字吓到\n我给你翻译一下\nterminal bench测的是让他自己开终端\n敲命令\n配环境\n跑程序\n他拿了82.7\n比预览版高了一大截\ncyber gym76.7是网络安全攻防模拟\nTo athon\n70.3是综合工具调用\n还有全站开发\nD s bench\n68.7\n高难度编码59.6\n翻译成大白话\n就是让她独立写个小项目\n查个bug\n配个环境\n他现在真能上手了\n不是嘴上说说130亿激活的小模型\n反超490亿激活的pro预览版\n这才是今天最反直觉的地方\ndeep sick还有个更大的V4pro激活参数\n490亿\n是flash的三倍多\n结果这个只有130亿激活的flash正式版\n在agent跑分上反过来把自家pro预览版抄了\n而且价格只有cloud的190\n等于说你用几乎零头的价格\n买到了接近旗舰的动手能力\n对开发者来说\n这是真相\n警告只有API app和网页端\n还没先泼盆冷水\n目前只有flash的API上线了\n你平时用的deep sick app\n网页端\n还有V4pro全都还没变\n体验跟昨天一模一样\n想尝鲜得会点代码\n它原生支持response API\n还适配了codex生态程序员\n配一下就能在vs code插件\ncodex命令行里直接调他写代码查bug\n普通用户想感受得等8月初的V4pro正式版\n别上头\n它也不是万能\n理性看几句\n第一这次只升了flash的API pro正式版还要等\n第二跑分涨的是动手干活\n这类任务纯聊天\n你可能感觉不到\n第三后训练带来的提升是特定场景\n明显不是全面碾压\n所以别听风就是雨\n把它当个趁手的工具就好\n我是阿豹\n今天这条deep seek v4flash评测就到这\n觉得有用\n点个关注\n咱们下期接着聊AI圈的新鲜事",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HEGN6UEp1",
+  "published_at": "1785499137",
+  "fetched_at": "2026-08-08T11:48:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 评测知识图谱\n\n## 模型概览\n```mermaid\nflowchart TD\n    A1[\"模型名称: flash (轻量版)\"]\n    A2[\"总参数 2840 亿\"]\n    A3[\"激活参数 130 亿\"]\n    A4[\"结构同预览版 (2023)\"]\n    A5[\"支持上下文 1,000,000 token\"]\n    A6[\"快且省资源\"]\n    A7[\"定位: 便宜小模型\"]\n    A8[\"对比 Pro: 参数更多但激活更多\"]\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A1 --> A5\n    A1 --> A6\n    A1 --> A7\n    A1 --> A8\n```\n<!-- [BV1HEGN6UEp1 P1 00:24] [BV1HEGN6UEp1 P1 00:27] [BV1HEGN6UEp1 P1 00:36] -->\n\n## 后训练与动手能力\n```mermaid\nflowchart TD\n    B1[\"后训练 (post‑training)\"]\n    B2[\"提升 agent 能力\"]\n    B3[\"可自行调工具\"]\n    B4[\"可自行运行代码\"]\n    B5[\"可自行操作软件\"]\n    B6[\"转变为数字员工\"]\n    B7[\"提升动手测试分数\"]\n    B8[\"不再仅聊天顾问\"]\n    B1 --> B2\n    B2 --> B3\n    B2 --> B4\n    B2 --> B5\n    B2 --> B6\n    B2 --> B7\n    B2 --> B8\n```\n<!-- [BV1HEGN6UEp1 P1 00:48] [BV1HEGN6UEp1 P1 01:08] -->\n\n## Benchmark 对比\n```mermaid\nflowchart TD\n    C1[\"Benchmark: Terminal bench\"]\n    C2[\"得分 82.7\"]\n    C3[\"比预览版高\"]\n    C4[\"Benchmark: Cyber Gym\"]\n    C5[\"得分 76.7\"]\n    C6[\"Benchmark: To athon 70.3\"]\n    C7[\"Benchmark: D s bench 68.7\"]\n    C8[\"高难度编码 59.6\"]\n    C9[\"整体提升显著\"]\n    C1 --> C2\n    C2 --> C3\n    C4 --> C5\n    C6 --> C9\n    C7 --> C9\n    C8 --> C9\n    C1 --> C9\n    C4 --> C9\n```\n<!-- [BV1HEGN6UEp1 P1 01:18] -->\n\n## 使用与部署\n```mermaid\nflowchart TD\n    D1[\"可用渠道: API\"]\n    D2[\"App 与网页端未更新\"]\n    D3[\"支持 response API\"]\n    D4[\"适配 codex 生态\"]\n    D5[\"VS Code 插件\"]\n    D6[\"调用写代码、查 bug\"]\n    D7[\"普通用户待 8 月 V4pro\"]\n    D8[\"需代码能力尝鲜\"]\n    D1 --> D3\n    D1 --> D4\n    D4 --> D5\n    D5 --> D6\n    D2 --> D8\n    D7 --> D8\n```\n<!-- [BV1HEGN6UEp1 P1 02:32] [BV1HEGN6UEp1 P1 02:44] -->\n\n## 注意事项与局限\n```mermaid\nflowchart TD\n    E1[\"非万能\"]\n    E2[\"仅 flash API pro 正式版待发布\"]\n    E3[\"提升特定场景\"]\n    E4[\"非全面碾压\"]\n    E5[\"理性使用\"]\n    E6[\"视为工具\"]\n    E7[\"价格 190 (云)\"]\n    E8[\"接近旗舰动手能力\"]\n    E1 --> E3\n    E2 --> E3\n    E3 --> E4\n    E5 --> E6\n    E7 --> E8\n    E8 --> E6\n```\n<!-- [BV1HEGN6UEp1 P1 03:02] [BV1HEGN6UEp1 P1 02:17] -->",
+      "diagrams": [
+        {
+          "title": "模型概览",
+          "code": "flowchart TD\n    A1[\"模型名称: flash (轻量版)\"]\n    A2[\"总参数 2840 亿\"]\n    A3[\"激活参数 130 亿\"]\n    A4[\"结构同预览版 (2023)\"]\n    A5[\"支持上下文 1,000,000 token\"]\n    A6[\"快且省资源\"]\n    A7[\"定位: 便宜小模型\"]\n    A8[\"对比 Pro: 参数更多但激活更多\"]\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A1 --> A5\n    A1 --> A6\n    A1 --> A7\n    A1 --> A8"
+        },
+        {
+          "title": "后训练与动手能力",
+          "code": "flowchart TD\n    B1[\"后训练 (post‑training)\"]\n    B2[\"提升 agent 能力\"]\n    B3[\"可自行调工具\"]\n    B4[\"可自行运行代码\"]\n    B5[\"可自行操作软件\"]\n    B6[\"转变为数字员工\"]\n    B7[\"提升动手测试分数\"]\n    B8[\"不再仅聊天顾问\"]\n    B1 --> B2\n    B2 --> B3\n    B2 --> B4\n    B2 --> B5\n    B2 --> B6\n    B2 --> B7\n    B2 --> B8"
+        },
+        {
+          "title": "Benchmark 对比",
+          "code": "flowchart TD\n    C1[\"Benchmark: Terminal bench\"]\n    C2[\"得分 82.7\"]\n    C3[\"比预览版高\"]\n    C4[\"Benchmark: Cyber Gym\"]\n    C5[\"得分 76.7\"]\n    C6[\"Benchmark: To athon 70.3\"]\n    C7[\"Benchmark: D s bench 68.7\"]\n    C8[\"高难度编码 59.6\"]\n    C9[\"整体提升显著\"]\n    C1 --> C2\n    C2 --> C3\n    C4 --> C5\n    C6 --> C9\n    C7 --> C9\n    C8 --> C9\n    C1 --> C9\n    C4 --> C9"
+        },
+        {
+          "title": "使用与部署",
+          "code": "flowchart TD\n    D1[\"可用渠道: API\"]\n    D2[\"App 与网页端未更新\"]\n    D3[\"支持 response API\"]\n    D4[\"适配 codex 生态\"]\n    D5[\"VS Code 插件\"]\n    D6[\"调用写代码、查 bug\"]\n    D7[\"普通用户待 8 月 V4pro\"]\n    D8[\"需代码能力尝鲜\"]\n    D1 --> D3\n    D1 --> D4\n    D4 --> D5\n    D5 --> D6\n    D2 --> D8\n    D7 --> D8"
+        },
+        {
+          "title": "注意事项与局限",
+          "code": "flowchart TD\n    E1[\"非万能\"]\n    E2[\"仅 flash API pro 正式版待发布\"]\n    E3[\"提升特定场景\"]\n    E4[\"非全面碾压\"]\n    E5[\"理性使用\"]\n    E6[\"视为工具\"]\n    E7[\"价格 190 (云)\"]\n    E8[\"接近旗舰动手能力\"]\n    E1 --> E3\n    E2 --> E3\n    E3 --> E4\n    E5 --> E6\n    E7 --> E8\n    E8 --> E6"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T11:48:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 评测知识图谱\n\n## 模型概览\n```mermaid\nflowchart TD\n    A1[\"模型名称: flash (轻量版)\"]\n    A2[\"总参数 2840 亿\"]\n    A3[\"激活参数 130 亿\"]\n    A4[\"结构同预览版 (2023)\"]\n    A5[\"支持上下文 1,000,000 token\"]\n    A6[\"快且省资源\"]\n    A7[\"定位: 便宜小模型\"]\n    A8[\"对比 Pro: 参数更多但激活更多\"]\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A1 --> A5\n    A1 --> A6\n    A1 --> A7\n    A1 --> A8\n```\n<!-- [BV1HEGN6UEp1 P1 00:24] [BV1HEGN6UEp1 P1 00:27] [BV1HEGN6UEp1 P1 00:36] -->\n\n## 后训练与动手能力\n```mermaid\nflowchart TD\n    B1[\"后训练 (post‑training)\"]\n    B2[\"提升 agent 能力\"]\n    B3[\"可自行调工具\"]\n    B4[\"可自行运行代码\"]\n    B5[\"可自行操作软件\"]\n    B6[\"转变为数字员工\"]\n    B7[\"提升动手测试分数\"]\n    B8[\"不再仅聊天顾问\"]\n    B1 --> B2\n    B2 --> B3\n    B2 --> B4\n    B2 --> B5\n    B2 --> B6\n    B2 --> B7\n    B2 --> B8\n```\n<!-- [BV1HEGN6UEp1 P1 00:48] [BV1HEGN6UEp1 P1 01:08] -->\n\n## Benchmark 对比\n```mermaid\nflowchart TD\n    C1[\"Benchmark: Terminal bench\"]\n    C2[\"得分 82.7\"]\n    C3[\"比预览版高\"]\n    C4[\"Benchmark: Cyber Gym\"]\n    C5[\"得分 76.7\"]\n    C6[\"Benchmark: To athon 70.3\"]\n    C7[\"Benchmark: D s bench 68.7\"]\n    C8[\"高难度编码 59.6\"]\n    C9[\"整体提升显著\"]\n    C1 --> C2\n    C2 --> C3\n    C4 --> C5\n    C6 --> C9\n    C7 --> C9\n    C8 --> C9\n    C1 --> C9\n    C4 --> C9\n```\n<!-- [BV1HEGN6UEp1 P1 01:18] -->\n\n## 使用与部署\n```mermaid\nflowchart TD\n    D1[\"可用渠道: API\"]\n    D2[\"App 与网页端未更新\"]\n    D3[\"支持 response API\"]\n    D4[\"适配 codex 生态\"]\n    D5[\"VS Code 插件\"]\n    D6[\"调用写代码、查 bug\"]\n    D7[\"普通用户待 8 月 V4pro\"]\n    D8[\"需代码能力尝鲜\"]\n    D1 --> D3\n    D1 --> D4\n    D4 --> D5\n    D5 --> D6\n    D2 --> D8\n    D7 --> D8\n```\n<!-- [BV1HEGN6UEp1 P1 02:32] [BV1HEGN6UEp1 P1 02:44] -->\n\n## 注意事项与局限\n```mermaid\nflowchart TD\n    E1[\"非万能\"]\n    E2[\"仅 flash API pro 正式版待发布\"]\n    E3[\"提升特定场景\"]\n    E4[\"非全面碾压\"]\n    E5[\"理性使用\"]\n    E6[\"视为工具\"]\n    E7[\"价格 190 (云)\"]\n    E8[\"接近旗舰动手能力\"]\n    E1 --> E3\n    E2 --> E3\n    E3 --> E4\n    E5 --> E6\n    E7 --> E8\n    E8 --> E6\n```\n<!-- [BV1HEGN6UEp1 P1 03:02] [BV1HEGN6UEp1 P1 02:17] -->",
+  "diagrams": [
+    {
+      "title": "模型概览",
+      "code": "flowchart TD\n    A1[\"模型名称: flash (轻量版)\"]\n    A2[\"总参数 2840 亿\"]\n    A3[\"激活参数 130 亿\"]\n    A4[\"结构同预览版 (2023)\"]\n    A5[\"支持上下文 1,000,000 token\"]\n    A6[\"快且省资源\"]\n    A7[\"定位: 便宜小模型\"]\n    A8[\"对比 Pro: 参数更多但激活更多\"]\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A1 --> A5\n    A1 --> A6\n    A1 --> A7\n    A1 --> A8"
+    },
+    {
+      "title": "后训练与动手能力",
+      "code": "flowchart TD\n    B1[\"后训练 (post‑training)\"]\n    B2[\"提升 agent 能力\"]\n    B3[\"可自行调工具\"]\n    B4[\"可自行运行代码\"]\n    B5[\"可自行操作软件\"]\n    B6[\"转变为数字员工\"]\n    B7[\"提升动手测试分数\"]\n    B8[\"不再仅聊天顾问\"]\n    B1 --> B2\n    B2 --> B3\n    B2 --> B4\n    B2 --> B5\n    B2 --> B6\n    B2 --> B7\n    B2 --> B8"
+    },
+    {
+      "title": "Benchmark 对比",
+      "code": "flowchart TD\n    C1[\"Benchmark: Terminal bench\"]\n    C2[\"得分 82.7\"]\n    C3[\"比预览版高\"]\n    C4[\"Benchmark: Cyber Gym\"]\n    C5[\"得分 76.7\"]\n    C6[\"Benchmark: To athon 70.3\"]\n    C7[\"Benchmark: D s bench 68.7\"]\n    C8[\"高难度编码 59.6\"]\n    C9[\"整体提升显著\"]\n    C1 --> C2\n    C2 --> C3\n    C4 --> C5\n    C6 --> C9\n    C7 --> C9\n    C8 --> C9\n    C1 --> C9\n    C4 --> C9"
+    },
+    {
+      "title": "使用与部署",
+      "code": "flowchart TD\n    D1[\"可用渠道: API\"]\n    D2[\"App 与网页端未更新\"]\n    D3[\"支持 response API\"]\n    D4[\"适配 codex 生态\"]\n    D5[\"VS Code 插件\"]\n    D6[\"调用写代码、查 bug\"]\n    D7[\"普通用户待 8 月 V4pro\"]\n    D8[\"需代码能力尝鲜\"]\n    D1 --> D3\n    D1 --> D4\n    D4 --> D5\n    D5 --> D6\n    D2 --> D8\n    D7 --> D8"
+    },
+    {
+      "title": "注意事项与局限",
+      "code": "flowchart TD\n    E1[\"非万能\"]\n    E2[\"仅 flash API pro 正式版待发布\"]\n    E3[\"提升特定场景\"]\n    E4[\"非全面碾压\"]\n    E5[\"理性使用\"]\n    E6[\"视为工具\"]\n    E7[\"价格 190 (云)\"]\n    E8[\"接近旗舰动手能力\"]\n    E1 --> E3\n    E2 --> E3\n    E3 --> E4\n    E5 --> E6\n    E7 --> E8\n    E8 --> E6"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T11:48:47+00:00"
+}

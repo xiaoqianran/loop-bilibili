@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="site-base" content="/loop-bilibili" />
+  <title>国外大佬开发的良心APP，一款电脑鼠标连点与自动化辅助软件。解决日常办公、游戏或抢购场景中，需要长时间重复点击鼠标，及执行固定键盘输入流程导致的操作疲劳问题 · BV1TBLh6kEBT</title>
+  <link rel="stylesheet" href="../../../assets/app.css?v=20260810101044" />
+</head>
+<body>
+  <div class="wrap" id="app">加载中…</div>
+  <script>
+    window.SITE_BASE = "/loop-bilibili";
+    window.SITE_ASSET_V = "20260810101044";
+  </script>
+  <script src="../../../assets/app.js?v=20260810101044"></script>
+  <script>
+    
+    SubtitleSite.renderVideo("loop", "BV1TBLh6kEBT").catch(e => {
+      document.getElementById('app').textContent = String(e);
+    });
+    
+  </script>
+</body>
+</html>

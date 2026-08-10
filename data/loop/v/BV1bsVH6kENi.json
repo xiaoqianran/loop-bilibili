@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1bsVH6kENi",
+  "title": "谁还在说deepseek降价了就很便宜的？ 站出来！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 813,
+  "text": "谁说DBC更便宜了\n说凭啥便宜的给我站出来\n两天就给我用了50多块钱\n谁再给我说便宜\n结果站出去\n有些兄弟说\n20块钱还不便宜\n你用了这么久\n关键我还没怎么调用它\n我目前只是让那个deep sk只是做任务分发啊\n还没让他去完成任务\n我们公司可能就有将近20人的公司\n每天调用量可能就是456次\n他竟然花了我20块钱\n有些兄弟说我们是跑了模型\n花20块钱不是挺正常\n关键有些兄弟可能不知道\n我们公司的open call的构架\n我们自己搞了一个团队\n像我们这五个机器人\n还有一个open call总助手是几个编码法务报价运维\n那其中这个open gl它只是做任务分发的作用\n就是他把任务派发给运维\n派发给法务\n就光一个派发的任务\n他四天将近吃了我两个多亿\n而且可以看到我们缓冲并存也高了\n也就是说我们光一些平时的调用\n而且我们其他的运营模型全是交给V211M\n本地模型\n比如说我们干活啊\n实际干活其实都是本意在干\n他就简简做个任务分发\n它就要消耗大量的token\n其实我感觉像低配是个看似便宜啊\n但是如果你一旦用到于一些什么open code\n智能体调调用上了\n那么说他就肯定需要大量的上下文\n因为它智能体调用它完全不是跟你聊天的\n他每次输出\n它就需要把整个智能体的所有上下文\n全部导进去\n一次导进去将近200K了上下文\n所以的话他这个对模型的压力是巨大\n有些兄弟说这个大模型很贵\n很烧钱\n有些兄弟说大模型很便宜\n很不烧钱\n我说真的\n目前我我们测试下来看\n如果你真要好好的玩agent\n那么说你搞个agent的团队是必须的\n因为像目前的agent他很多幻觉\n你需要用agent的团队来调度\n让它尽量少出现幻觉\n才能成为真正的生产力\n我说真的\n这两天就花我20块钱的情况下\n我感觉我都已经找住了\n还只是任务调度\n我更为难以想象\n如果我把这个五个A键呢全部接进去\n完整的任务\n这云上的API跑它的收费有多强\n关注小鹏了解最新的科技资讯",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1bsVH6kENi",
+  "published_at": "1779973686",
+  "fetched_at": "2026-08-08T08:26:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 使用成本与架构图谱\n\n## 成本与使用概览\n```mermaid\nflowchart TD\n    C1[\"公司规模 ~20人\"]\n    C2[\"每日调用量 ~456次\"]\n    C3[\"两天成本 >50元\"]\n    C4[\"单日成本 20元\"]\n    C5[\"任务分发模块 (OpenGL)\"]\n    C6[\"Token 消耗大\"]\n    C7[\"上下文约 200KB/次\"]\n    C8[\"成本累计可能高达亿元级\"]\n    C9[\"对模型压力巨大\"]\n    C10[\"对成本感知的争议\"]\n\n    C1 --> C2\n    C2 --> C3\n    C2 --> C4\n    C5 --> C6\n    C6 --> C7\n    C7 --> C9\n    C9 --> C8\n    C3 --> C10\n    C4 --> C10\n    C8 --> C10\n```\n- C1: [BV1bsVH6kENi P1 00:16]  \n- C2: [BV1bsVH6kENi P1 00:18]  \n- C3: [BV1bsVH6kENi P1 00:02]  \n- C4: [BV1bsVH6kENi P1 00:08]、[BV1bsVH6kENi P1 00:20]  \n- C5: [BV1bsVH6kENi P1 00:32]  \n- C6: [BV1bsVH6kENi P1 00:54]  \n- C7: [BV1bsVH6kENi P1 01:09]  \n- C8: [BV1bsVH6kENi P1 00:40]  \n- C9: [BV1bsVH6kENi P1 01:11]  \n- C10: [BV1bsVH6kENi P1 01:13]、[BV1bsVH6kENi P1 01:15]、[BV1bsVH6kENi P1 01:16]\n\n## Open Call 架构与任务分发\n```mermaid\nflowchart LR\n    A1[\"公司 (20人)\"]\n    A2[\"Open Call 架构\"]\n    A3[\"内部团队\"]\n    A4[\"5个机器人\"]\n    A5[\"Open Call 总助手 (编码、法务、报价、运维)\"]\n    A6[\"OpenGL (任务分发)\"]\n    A7[\"分发给运维\"]\n    A8[\"分发给法务\"]\n    A9[\"分发给机器人\"]\n    A10[\"任务分发仅为调度\"]\n    A11[\"后续模型执行交给 V211M 本地模型\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A2 --> A5\n    A5 --> A6\n    A6 --> A7\n    A6 --> A8\n    A6 --> A9\n    A6 --> A10\n    A10 --> A11\n```\n- A1: [BV1bsVH6kENi P1 00:16]  \n- A2: [BV1bsVH6kENi P1 00:25]  \n- A3: [BV1bsVH6kENi P1 00:27]  \n- A4: [BV1bsVH6kENi P1 00:28]  \n- A5: [BV1bsVH6kENi P1 00:29]  \n- A6: [BV1bsVH6kENi P1 00:32]  \n- A7: [BV1bsVH6kENi P1 00:37]  \n- A8: [BV1bsVH6kENi P1 00:38]  \n- A9: [BV1bsVH6kENi P1 00:28]  \n- A10: [BV1bsVH6kENi P1 00:35]  \n- A11: [BV1bsVH6kENi P1 00:50]\n\n## Agent 使用挑战与团队需求\n```mermaid\nflowchart TD\n    B1[\"Agent (智能体) 调用需求\"]\n    B2[\"需要完整上下文 (~200KB)\"]\n    B3[\"高 Token 消耗\"]\n    B4[\"模型压力巨大\"]\n    B5[\"成本高（烧钱）\"]\n    B6[\"出现幻觉\"]\n    B7[\"需要 Agent 团队调度\"]\n    B8[\"降低幻觉\"]\n    B9[\"提升生产力\"]\n    B10[\"大模型贵 vs 便宜 争议\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B6 --> B7\n    B7 --> B8\n    B8 --> B9\n    B5 --> B10\n    B10 --> B6\n```\n- B1: [BV1bsVH6kENi P1 01:00]  \n- B2: [BV1bsVH6kENi P1 01:09]  \n- B3: [BV1bsVH6kENi P1 00:54]  \n- B4: [BV1bsVH6kENi P1 01:11]  \n- B5: [BV1bsVH6kENi P1 01:13]  \n- B6: [BV1bsVH6kENi P1 01:22]  \n- B7: [BV1bsVH6kENi P1 01:19]  \n- B8: [BV1bsVH6kENi P1 01:26]  \n- B9: [BV1bsVH6kENi P1 01:28]  \n- B10: [BV1bsVH6kENi P1 01:13]、[BV1bsVH6kENi P1 01:15]、[BV1bsVH6kENi P1 01:16]",
+      "diagrams": [
+        {
+          "title": "成本与使用概览",
+          "code": "flowchart TD\n    C1[\"公司规模 ~20人\"]\n    C2[\"每日调用量 ~456次\"]\n    C3[\"两天成本 >50元\"]\n    C4[\"单日成本 20元\"]\n    C5[\"任务分发模块 (OpenGL)\"]\n    C6[\"Token 消耗大\"]\n    C7[\"上下文约 200KB/次\"]\n    C8[\"成本累计可能高达亿元级\"]\n    C9[\"对模型压力巨大\"]\n    C10[\"对成本感知的争议\"]\n\n    C1 --> C2\n    C2 --> C3\n    C2 --> C4\n    C5 --> C6\n    C6 --> C7\n    C7 --> C9\n    C9 --> C8\n    C3 --> C10\n    C4 --> C10\n    C8 --> C10"
+        },
+        {
+          "title": "Open Call 架构与任务分发",
+          "code": "flowchart LR\n    A1[\"公司 (20人)\"]\n    A2[\"Open Call 架构\"]\n    A3[\"内部团队\"]\n    A4[\"5个机器人\"]\n    A5[\"Open Call 总助手 (编码、法务、报价、运维)\"]\n    A6[\"OpenGL (任务分发)\"]\n    A7[\"分发给运维\"]\n    A8[\"分发给法务\"]\n    A9[\"分发给机器人\"]\n    A10[\"任务分发仅为调度\"]\n    A11[\"后续模型执行交给 V211M 本地模型\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A2 --> A5\n    A5 --> A6\n    A6 --> A7\n    A6 --> A8\n    A6 --> A9\n    A6 --> A10\n    A10 --> A11"
+        },
+        {
+          "title": "Agent 使用挑战与团队需求",
+          "code": "flowchart TD\n    B1[\"Agent (智能体) 调用需求\"]\n    B2[\"需要完整上下文 (~200KB)\"]\n    B3[\"高 Token 消耗\"]\n    B4[\"模型压力巨大\"]\n    B5[\"成本高（烧钱）\"]\n    B6[\"出现幻觉\"]\n    B7[\"需要 Agent 团队调度\"]\n    B8[\"降低幻觉\"]\n    B9[\"提升生产力\"]\n    B10[\"大模型贵 vs 便宜 争议\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B6 --> B7\n    B7 --> B8\n    B8 --> B9\n    B5 --> B10\n    B10 --> B6"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T08:27:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 使用成本与架构图谱\n\n## 成本与使用概览\n```mermaid\nflowchart TD\n    C1[\"公司规模 ~20人\"]\n    C2[\"每日调用量 ~456次\"]\n    C3[\"两天成本 >50元\"]\n    C4[\"单日成本 20元\"]\n    C5[\"任务分发模块 (OpenGL)\"]\n    C6[\"Token 消耗大\"]\n    C7[\"上下文约 200KB/次\"]\n    C8[\"成本累计可能高达亿元级\"]\n    C9[\"对模型压力巨大\"]\n    C10[\"对成本感知的争议\"]\n\n    C1 --> C2\n    C2 --> C3\n    C2 --> C4\n    C5 --> C6\n    C6 --> C7\n    C7 --> C9\n    C9 --> C8\n    C3 --> C10\n    C4 --> C10\n    C8 --> C10\n```\n- C1: [BV1bsVH6kENi P1 00:16]  \n- C2: [BV1bsVH6kENi P1 00:18]  \n- C3: [BV1bsVH6kENi P1 00:02]  \n- C4: [BV1bsVH6kENi P1 00:08]、[BV1bsVH6kENi P1 00:20]  \n- C5: [BV1bsVH6kENi P1 00:32]  \n- C6: [BV1bsVH6kENi P1 00:54]  \n- C7: [BV1bsVH6kENi P1 01:09]  \n- C8: [BV1bsVH6kENi P1 00:40]  \n- C9: [BV1bsVH6kENi P1 01:11]  \n- C10: [BV1bsVH6kENi P1 01:13]、[BV1bsVH6kENi P1 01:15]、[BV1bsVH6kENi P1 01:16]\n\n## Open Call 架构与任务分发\n```mermaid\nflowchart LR\n    A1[\"公司 (20人)\"]\n    A2[\"Open Call 架构\"]\n    A3[\"内部团队\"]\n    A4[\"5个机器人\"]\n    A5[\"Open Call 总助手 (编码、法务、报价、运维)\"]\n    A6[\"OpenGL (任务分发)\"]\n    A7[\"分发给运维\"]\n    A8[\"分发给法务\"]\n    A9[\"分发给机器人\"]\n    A10[\"任务分发仅为调度\"]\n    A11[\"后续模型执行交给 V211M 本地模型\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A2 --> A5\n    A5 --> A6\n    A6 --> A7\n    A6 --> A8\n    A6 --> A9\n    A6 --> A10\n    A10 --> A11\n```\n- A1: [BV1bsVH6kENi P1 00:16]  \n- A2: [BV1bsVH6kENi P1 00:25]  \n- A3: [BV1bsVH6kENi P1 00:27]  \n- A4: [BV1bsVH6kENi P1 00:28]  \n- A5: [BV1bsVH6kENi P1 00:29]  \n- A6: [BV1bsVH6kENi P1 00:32]  \n- A7: [BV1bsVH6kENi P1 00:37]  \n- A8: [BV1bsVH6kENi P1 00:38]  \n- A9: [BV1bsVH6kENi P1 00:28]  \n- A10: [BV1bsVH6kENi P1 00:35]  \n- A11: [BV1bsVH6kENi P1 00:50]\n\n## Agent 使用挑战与团队需求\n```mermaid\nflowchart TD\n    B1[\"Agent (智能体) 调用需求\"]\n    B2[\"需要完整上下文 (~200KB)\"]\n    B3[\"高 Token 消耗\"]\n    B4[\"模型压力巨大\"]\n    B5[\"成本高（烧钱）\"]\n    B6[\"出现幻觉\"]\n    B7[\"需要 Agent 团队调度\"]\n    B8[\"降低幻觉\"]\n    B9[\"提升生产力\"]\n    B10[\"大模型贵 vs 便宜 争议\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B6 --> B7\n    B7 --> B8\n    B8 --> B9\n    B5 --> B10\n    B10 --> B6\n```\n- B1: [BV1bsVH6kENi P1 01:00]  \n- B2: [BV1bsVH6kENi P1 01:09]  \n- B3: [BV1bsVH6kENi P1 00:54]  \n- B4: [BV1bsVH6kENi P1 01:11]  \n- B5: [BV1bsVH6kENi P1 01:13]  \n- B6: [BV1bsVH6kENi P1 01:22]  \n- B7: [BV1bsVH6kENi P1 01:19]  \n- B8: [BV1bsVH6kENi P1 01:26]  \n- B9: [BV1bsVH6kENi P1 01:28]  \n- B10: [BV1bsVH6kENi P1 01:13]、[BV1bsVH6kENi P1 01:15]、[BV1bsVH6kENi P1 01:16]",
+  "diagrams": [
+    {
+      "title": "成本与使用概览",
+      "code": "flowchart TD\n    C1[\"公司规模 ~20人\"]\n    C2[\"每日调用量 ~456次\"]\n    C3[\"两天成本 >50元\"]\n    C4[\"单日成本 20元\"]\n    C5[\"任务分发模块 (OpenGL)\"]\n    C6[\"Token 消耗大\"]\n    C7[\"上下文约 200KB/次\"]\n    C8[\"成本累计可能高达亿元级\"]\n    C9[\"对模型压力巨大\"]\n    C10[\"对成本感知的争议\"]\n\n    C1 --> C2\n    C2 --> C3\n    C2 --> C4\n    C5 --> C6\n    C6 --> C7\n    C7 --> C9\n    C9 --> C8\n    C3 --> C10\n    C4 --> C10\n    C8 --> C10"
+    },
+    {
+      "title": "Open Call 架构与任务分发",
+      "code": "flowchart LR\n    A1[\"公司 (20人)\"]\n    A2[\"Open Call 架构\"]\n    A3[\"内部团队\"]\n    A4[\"5个机器人\"]\n    A5[\"Open Call 总助手 (编码、法务、报价、运维)\"]\n    A6[\"OpenGL (任务分发)\"]\n    A7[\"分发给运维\"]\n    A8[\"分发给法务\"]\n    A9[\"分发给机器人\"]\n    A10[\"任务分发仅为调度\"]\n    A11[\"后续模型执行交给 V211M 本地模型\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A2 --> A5\n    A5 --> A6\n    A6 --> A7\n    A6 --> A8\n    A6 --> A9\n    A6 --> A10\n    A10 --> A11"
+    },
+    {
+      "title": "Agent 使用挑战与团队需求",
+      "code": "flowchart TD\n    B1[\"Agent (智能体) 调用需求\"]\n    B2[\"需要完整上下文 (~200KB)\"]\n    B3[\"高 Token 消耗\"]\n    B4[\"模型压力巨大\"]\n    B5[\"成本高（烧钱）\"]\n    B6[\"出现幻觉\"]\n    B7[\"需要 Agent 团队调度\"]\n    B8[\"降低幻觉\"]\n    B9[\"提升生产力\"]\n    B10[\"大模型贵 vs 便宜 争议\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B6 --> B7\n    B7 --> B8\n    B8 --> B9\n    B5 --> B10\n    B10 --> B6"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T08:27:43+00:00"
+}

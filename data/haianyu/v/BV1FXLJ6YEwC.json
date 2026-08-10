@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1FXLJ6YEwC",
+  "title": "122. 为什么只有单个词嵌入就能构成二元语言模型？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 742,
+  "text": "今天的问题是\n为什么单个词嵌入就能构成一个二元语言模型\n或者说语言模型的本质可能是什么呢\n那么卡帕奇有一个NANOGPT视频教学版源码\n在GITHUB上面叫做ng video lecture\n他的第一讲就讲了一个二元语言模型\n唉整个模型就只有一个矩阵\n就这个方方正正的矩阵就是语言模型的全部\n它的长和宽都是VV\n这里指的是磁表的大小\n问题来了\n为什么一个矩阵就能构成一个语言模型呢\n或者说语言模型的本质可能是什么呢\n那无论是RNN还是transformer\n还是member还是什么什么\n这种next token预测的语言模型\n它本质上都可以看作是把这个词嵌入\n映射到预测向量\n就比如说海安语\n它是token\n然后每一个token对应着一个词\n嵌入它进行一堆操作\n不管他怎么操作的\n最后呢会对应着一个概率预测\n就是说这个向量当中这个位置对应安这个字\n70%\n意味着模型认为海后面有70%的概率\n应该接着an这个字\n那如果把这种next token进行简化到极致\n就真的可以简化为一个方方正正的举证了\n分析一下为什么\n首先明确一下\n在这个仓库当中\n它是怎么分词的\n当然是他是拿字母级别分词的\n这就是说入动物园\n他不是说给它分成一个token\n而是说给它分成zoo\n每个字母是一个token\n对于Z这个token首先进行词嵌入\n得到一个词向量\n而这个词向量不会再进行任何额外的操作\n相当于它既是词嵌入\n也是LOGIES\n也是说可以直接在词嵌入上面做soft nex\n就得到了一个概率预测\n由于这个矩阵是V乘V的\n就它宽度是V\n就意味着每一个位置都可以对应着一个token\n比如说O嗯\n这个预测36%\n指的就是模型认为Z后面有36%的概\n率应该接一个O\n那么这个就是一个最简单的二元语言模型",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1FXLJ6YEwC",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:15:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

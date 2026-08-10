@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1oA93BtETZ",
+  "title": "82. 在线Softmax和Flash Attention分别维护了多少个“动态规划量”？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1187,
+  "text": "今天的问题是在线soft max和flash attention\n它分别维护了多少个动态规划量\n虽然不是传统的动态规划算法\n但从动态规划量的角度呢更好理解结论\n相信我们可以认为在线soft max它维护了两个呃\nflash attention呢它维护了三个动态规划量\n具体而言\n在线soft max它维护了最大值和安全\nsoft max的分母a flash attention呢不仅要维护这两个\n还要多维护一个O\n那么先来看一下在线soft max\n假设现在呢我们有两个局部数组一二和三五\n那么它就会有一个局部最值二和五\n那么就可以用它俩再去求一个最值五\n得到的就是这个全局最具\n那么这个就是一个动态规划的思想\n而这个思想呢也可以运用在安全soft max的分母上\n就是用一个局部的安全\nsoft max的分母就这个就乘以E\n然后局部最值减去全局最值\n像这要把这两个东西相加\n就可以得到这个全局的安全\nsoft max的分布就用动态规划来维护这个安全\nsoft max的分母\n那么问题来了\nflash attension呢它不仅是有这种数字的操作\n它还有一个矩阵分块乘法\n怎么解决呢\n那么假设只有这样的一个问题\n就是我们如果用一个全局的视角去看看这个\n那么假设现在有一个注意力分数\n它是这样的一条\n然后呢现在要进行一个全局的soft max\n而且具体来说是安全soft max\n那么他就会得到这样的一个结果\n然后呢要进行一个加权平均\n就说这个乘以这个V1加到这里来\n然后这个乘以这个V2加到这里来\n它加出来的呢还是一个条\n然后这个就是那个全局的O\n但问题在于flash attention呢\n他看到的是个局部信息\n为什么呢\n因为SRAM空间是有限的\n它不是一次性把V的都搬进来\n它是只搬入一部分这个V\n那么还会进行一个替换操作\n就是说把之前搬入的那个V给它替换掉\n然后呢进行一个修正累加\n那么我们怎么样用这个局部的修正\n累加的结果的这个O和全局的这个O给他对上呢\n这个就是flash特性它要解决的核心问题\n直接说结论\n首先呢要去求一个安全soft max的分子\n就这个一和二求一个安全soft的分子\n得到的就是这个OK然后呢要进行一个加权平均\n就是拿这个去乘以这个V1\n然后拿这个去乘以这个V2\n那他加出来的就是一小条\n就这一条\nOK那么我们可以认为这个就是那个局部的O\n然后进行修正\n累加修正就是说乘以E的局部最值减去全局最值权证\n那累加累加出来的还是一条O但有个问题就是现在还少了这个信号\n就是这个全局安全soft max的分母怎么办呢\n还要去除以这个全局安全soft max的分布\n它是咋来的呢\n它也是有局部的\n按理来说max分母维护而来的\n那么这个时候呢去对一下\n就会发现哎局部算出来这个O它和全局算出来的是一样的\n就做到了只看局部的情况下\n还跟全局算出来的结果一样",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1oA93BtETZ",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:17:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

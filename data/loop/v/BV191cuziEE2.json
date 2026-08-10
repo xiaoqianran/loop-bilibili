@@ -1,0 +1,74 @@
+{
+  "bvid": "BV191cuziEE2",
+  "title": "10个AI一起制作《我的世界》",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4635,
+  "text": "你已经看到了这个视频的标题\n我正在强制让十个人工智能从零开始\n制作我的世界\n并且在视频结尾会发布这款游戏\n让你们试玩\n如果你是第一次来这里\n欢迎你\n因为这个这绝对是我所有AI视频中的巅峰之作\n你可能已经在别的地方看过类似的视频\n但这次会不一样\n因为我们以cursor AI为整个项目的核心\n并且由我们的软件工程师和程序员提供支持\nchat gp t5.2思维模型\nCloud opus\n4.5\nGoogle gemini ai studio\n天呐rock专家模式\nDeep seek\n开启deep sink以及deep seek版本\n3when我用的不是很多\n但它它还挺不错的\nperplexity AI开启了实验室模式\n这个真的挺有意思的\nmicrosoft copilot也在cursor AI的这个标签页里\n所以然后为了发布应用\n我们还用到了reply AI\n很多人在评论区建议我用它\n所以谢谢大家\n总之我基本上已经写下了这期视频的流程\n以及我会如何让这些AI协同工作\n很明显\n首先cursor AI就是这个\n它基本上会起到粘合剂的作用\n它会把其他AI生成的所有代码整合在一起\n作为我们的最终成果\n接下来是chat gt\n他就像是架构师\n主要负责其他AI的集成工作\n然后CLAUDE会负责逻辑部分\n你懂我的意思\n比如玩家控制碰撞摄像机视角这些\n你看我都写在这里了\n我在努力让每个AI都发挥他们最擅长的领域\n至于GEMINI\n我让他负责区块系统和地形生成\n因为在像MINECRAFT这样的游戏中\n这显然非常重要\n我不知道你有没有注意到\n我还在右上角\n这里\n根据我们要在cursor中创建的文件\n列出了允许编辑的文件\n所以每个AI只能编辑特定的文件\n最后我们会把所有内容拼接在一起\n而GROCK则负责贪婪网格化和性能优化部分\n说实话\nGROCK相比其他AI并没有那么强大\n所以我给他分配了一个更简单的任务\n基本上就是在GEMINI已经完成的生成基础上\n然后是deep se\n我们会让deep sick负责处理世界的保存和加载\n编辑任务\n所以他会为我们创建一个数据库\n非常基础的那种\n并且将其本地存储\n接下来我们会用q in来做UI\n也就是界面hard和快捷栏菜单\n基本上就是那些类似于MINECRAFT的东西\n就是你一进来首先看到的那些\n你懂我的意思吧\n所以Q还是挺不错的\n它的功能也相当强大\n所以我给他分配了一个中等难度的UI任务\n没什么特别疯狂的\n你懂我的意思吧\n至于perplexity\n我其实不太清楚该怎么实现它\n他会做一些基础的调研\n比如写一份工程备忘录\n帮助我们避免常见的陷阱\n所以perplexity\n其实会是我最先用来提示的AI之一\n确保整个流程顺利进行\n所以他会做一些深入的调研\n而现在CPA基本上就像是加速器一样\n我会把这些信息粘贴到我们的cursor copilot里\n这样它就能大大加快我们的进度\n并确保我们按照提示正确操作\n以最高效的方式完成\n所以最后这两个perplexity和copilot\n基本上就像是加速工具\n最后我还有report it\n很明显这会是用来发布的AI好了\n那我们开始吧\n首先我们需要让perplexity做一些调研\n因为我们要确保一切都能对齐\n在他调研的同时\n我也用cursor创建好文件好了\n现在把它拿过来粘贴进去\n然后在cursor上发送它\n这是我们第一个制作MINECRAFT的提示\n我跟你说\n兄弟我我真的很兴奋能做这个视频\n因为我心里想兄弟我们必须做出MINECRAFT\n而且最后我还得发布\n而且我真的打算在这期视频里\n一次性做出一个真正能玩的游戏\n因为兄弟那样就太酷了\n所以接下来我觉得我们可以启动拆GPT了\n开始编写主文件\n如main jazz\nworld jazz和hard jazz好了\nChatGPT千万别让我们失望\n所以我们现在有三个AI在同时工作\n是啊这肯定会花点时间呃\n尤其是cursor那个\n我真希望cursor能赞助我兄弟\n这真是个很棒的工具\n而且我用了很多\n真的确实非常好用\n总之perplexity应该已经完成了\n没错确实完成了\n所以他帮我们做了一些调研\n有了这份备忘录\nPerplexity\n基本上能让每个AI都像真正的工程师一样\n知道该避免什么\n就像这些事情\n你懂我的意思吧\n他会确保自己不会犯这些错误\n所以我会把这个保存在cursor里\n作为类似文档的东西好了\ncursor已经完成了我们的模块\n所以我们需要的东西都齐了\n然后用来放代码\n所以chat gbt刚刚完成了\n我们前几个文件的编码\n我们这里有主文件\n他写了很多代码\n那我们把这个复制一下\n然后粘贴进去好\n这是我们的第一个文件\n你可以看到cursor已经自己生成了一个\n这还挺酷的\n但我们现在要粘贴chat gbt生成的内容\n另外我们还得把扣拍了的提示词和备忘录一起\n放到cursor的扣拍了侧边栏里\n这样一切都能对齐\n所以我们会把它粘贴在最上面\n然后把需要的内容都放在底部\n接下来我们要用来实现\n我们的MINECRAFT的克隆版的逻辑\n我真的非常期待他会做出什么\n所以我们把这个提示词粘贴到cloud里\n然后基本上让他帮我们实现移动物理目标\n还有像定位这些内容\n基本上就是我们游戏的逻辑\n那我们就把这个家伙粘贴进去\n看看cloud oper s4.5能整出什么花样吧\n兄弟我我会永远吹捧cloud\n我太喜欢他了\n他已经这样运行了大概3分钟了\n兄弟就是就是在思考\n现在我得说实话\n让这么多AI一起协作来做这件事\n可能不是最聪明的做法\n因为你得手动把他们和cursor集成\n这可能会有点棘手\n而且cursor真的需要把所有东西都粘合在一起\n但我觉得这样做会有好结果的\n原因是因为cursor在整合各部分方面非常擅长\n而且当这些AI每次只专注于一件事时\n他们成功的可能性确实更高\n事情就是会这样发展\n总之等cloud完成后\n我们再回来\n这个家伙可得花点时间好了\ncloud已经完成了玩家控制器的JAVASCRIPT编写\n他还像我要求的那样\n给了我们测试步骤\n以及常见的失败点和需要注意的事项\n总之我们现在要把这段代码粘贴进去\n所以代码现在已经粘贴到cursor里了\n谢谢你\nCD你完成了你的任务\n希望你做的非常好\n我们马上就能见分晓\n接下来是GEMINI负责区块系统和地形生成\n那么让我们把这段代码粘贴到GEMINI里\n我们实际上会用google AI studio\n这样更有可能得到更好的结果\n那我们来运行这个家伙吧\n在我们的视频里\n通常GEMINI和CLAUDE表现最好\n所以让他们先出场\n在我们用到那些能力较弱的AI之前\n这绝对是件好事\n因为我我想把一些比较轻松的任务分配给\n我认为能力较弱的AI\nDeep seek\nGEMINI和CLAUDE在制作这个MINECRAFT克隆版时\n绝对承担了最难的任务\n好了\nGEMINI刚刚完成了好\n那我们来拿到我们的文件吧\n首先是一个方块注册表文件\n那我们把这个粘贴到cursor好了\n搞定复制粘贴\n接下来是坐标文件\n那我们把这个复制粘贴到utility\n文件夹里好了\ncontrol加V粘贴\n然后接下来是地形生成文件\n所以我们也把这个复制粘贴一下\n搞定完美\n然后我们有chunk文件\n这个文件会生成区块\n把这个家伙粘贴进去\n完美接下来是world chase文件\n好的把这个粘贴进去\n说实话\nGEMINI在这里帮我们完成了一个非常大的任务\n基本上就是这样了\n他还在这里给了我们测试步骤\n用来测试一切是否正常运行\n现在我们要进入GROCK\n这部分只是贪婪网格化和性能路径\n所以这其实非常清亮\n你懂我的意思吧\n只是为了呃辅助GEMINI代码好\n把这个粘贴到GROCK里\n并开启deep sink\n我们等它给我们生成代码就行\n应该会很快好啦\nGROCK刚刚完成了代码\n并且是以这种普通文本的格式给我的\n让我看看能不能把它复制粘贴到呃\n兄弟来吧\nGrock\n最近GROKE有点让我失望\n我不太喜欢这样等等\n把这个粘贴到区块注册表里试试\n你看他确实能用好了\n接下来我们有一个相当繁重的任务\n就是用deep seek来实现世界的保存和加载\n所以说我们现在就要直接把它交给deep sick\nDeep sick\n别失手\n虽然你从没试过准\n但我还是发给你了\n这需要点时间\n完成后我再回来\n既然在播视频\n顺便给视频点个赞吧\n兄弟快点快点\n喜欢这个视频\n大块头点赞点赞点赞这个视频\n嘿\ndeep seek生成保存管理器JAVASCRIPT文件的时间相对较短\n相信过程好吗\n很快在视频结尾我们会看到结果\n到时候MINECRAFT就完美了\n兄弟我完全信任这些AI\n现在用queen处理hard和UI流程\n你懂的好吧\n让我们把这个提示输入到queen\n在这之后我们的AI写代码的部分基本就完成了\n主要靠cursor配合perplexity和copilot\n将其完美融合\n打造出这个完美的MINECRAFT克隆版\n从那时起我们就能修复任何错误好了\nqueen完成了这个queen的任务其实非常重要\n先将这些文件添加进cursor\n首先粘贴UI文件\n再把菜单文件贴进去即可\n现在让cursor把代码整合并运行\n清除语法错误\n确保我们真的做出了MINECRAFT\n把提示词发给他\ncursor靠你了\n这就是十个人工智能打造MINECRAFT\n我们马上就能看到他要创造出什么了\n伙计天哪好了\ncursor刚刚完成了\n把所有东西都整合到一起\n那我们来玩MINECRAFT吧\n我是说别再拖拖拉拉了\n来吧\n让我们试试这个家伙\n看看我们的MINECRAFT克隆版\n好\n感觉真的很流畅\n但为什么这些方块是透明的啊啊兄弟\n不过真的很流畅\n这是我能说的一个优点\n这游戏非常流畅\n但贴图和其他东西确实还需要改进\n兄弟来吧\n好我们再试一次\n显然方块变成透明是growth那边的问题\n搞砸的很厉害\n好了\n现在又回来了\n看我加了主界面来玩下吧\n方块还是有点透明天哪\n但我能说的一点是真的非常流畅\n在所有视频里\n这绝对是我做过最流畅的我的世界仿制版\n但我真的不喜欢方块是透明的\n兄弟天啊\n第二次尝试又失败了\n我在运行最后一个提示\n诶\n这是我最后要用的提示\n然后好太棒了\n现在方块终于不透明了\n然后不过当我破坏它的时候\n它又变成透明的了哦\n呃他自己修复了好吧\n但这是我们的第二种方块\n咱们建个小房子吧\n在这玩开心点\n第四块是石头\n第三个是草方块\n第四个是草方块\n第五个是泥土\n第一个方块是我不知道那是什么\n好吧\n我觉得这是泥土\n第五个方块是木头\n好的哦\n对让我们来建个小房子吧\n嘿伙计们\n这就是我的简陋小屋\n我发现随着探索区块会不断生成\n这真的很酷\n有种我的世界的感觉\n不到一小时就能搞定\n这些AI的表现相当出色\n不过只有少数几个AI时效果更好\n你可以持续优化该项目\n用编程技能提升它\nAI能独立完成这些对我来说就是胜利\n现在到了最后一步\n那就是用REPLATEAI发布它\n不过我们这次不用REPPLATE\n而是用NETLIFY\n这样我们就可以直接拖进去\n立刻发布了\n因为说实话\nREPPLATE在这方面有点让人摸不着头脑\n好了\n我已经把项目拖进NETIFY\n现在它已经发布了\n所以我会把链接放在下方描述里\n任何人都可以玩我的我的世界克隆版",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV191cuziEE2",
+  "published_at": "1770644965",
+  "fetched_at": "2026-08-08T11:35:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 10个AI一起制作《我的世界》知识图谱\n\n## AI协作总览 [BV191cuziEE2 P1 01:06]\n```mermaid\nflowchart TD\n    CUR[\"Cursor AI（粘合剂）\"]\n    GPT[\"ChatGPT（架构师）\"]\n    CLAUDE[\"Claude（逻辑）\"]\n    GEM[\"Gemini（区块/地形）\"]\n    GROCK[\"Grock（网格化/性能）\"]\n    DEEP[\"DeepSeek（存档/加载）\"]\n    Q[\"Q（UI/快捷栏）\"]\n    PER[\"Perplexity（调研/加速）\"]\n    COP[\"Copilot（加速工具）\"]\n    REP[\"ReportIt（发布）\"]\n\n    PER -->|提供调研与提示| CUR\n    COP -->|加速生成| CUR\n    CUR -->|整合代码| GPT\n    CUR -->|整合代码| CLAUDE\n    CUR -->|整合代码| GEM\n    CUR -->|整合代码| GROCK\n    CUR -->|整合代码| DEEP\n    CUR -->|整合代码| Q\n    CUR -->|整合代码| PER\n    CUR -->|整合代码| COP\n    CUR -->|最终产出交给| REP\n```\n\n## 制作流程链路 [BV191cuziEE2 P1 03:20]\n```mermaid\nflowchart LR\n    A1[\"Perplexity：调研、生成备忘录\"] --> A2[\"Cursor：创建文件结构\"]\n    A2 --> A3[\"ChatGPT：主文件（main、world、hard）\"]\n    A3 --> A4[\"Cloud Opus 4.5：玩家控制器（JS）\"]\n    A4 --> A5[\"Gemini：区块系统 & 地形生成\"]\n    A5 --> A6[\"Grock：网格化 & 性能优化\"]\n    A6 --> A7[\"DeepSeek：世界保存/加载管理器\"]\n    A7 --> A8[\"Q：UI 与快捷栏实现\"]\n    A8 --> A9[\"Cursor：代码整合 & 运行\"]\n    A9 --> A10[\"Perplexity & Copilot：加速、检查\"]\n    A10 --> A11[\"ReportIt / Netlify：发布\"]\n```\n\n## AI角色与任务分配 [BV191cuziEE2 P1 01:16]\n```mermaid\nflowchart TD\n    GPT[\"ChatGPT\"] -->|生成主框架代码| TASK1[\"main、world、hard 文件\"]\n    CLAUDE[\"Claude\"] -->|实现玩家控制、碰撞、摄像机| TASK2[\"控制器逻辑\"]\n    GEM[\"Gemini\"] -->|区块注册、地形、区块生成| TASK3[\"区块系统\"]\n    GROCK[\"Grock\"] -->|网格化、性能路径| TASK4[\"性能优化\"]\n    DEEP[\"DeepSeek\"] -->|存档/加载数据库| TASK5[\"保存管理器\"]\n    Q[\"Q\"] -->|UI、快捷栏、菜单| TASK6[\"界面实现\"]\n    PER[\"Perplexity\"] -->|调研、备忘录、加速提示| TASK7[\"工程备忘录\"]\n    COP[\"Copilot\"] -->|加速代码生成、错误检查| TASK8[\"加速工具\"]\n    CUR[\"Cursor\"] -->|整合所有代码| TASK9[\"最终项目整合\"]\n    REP[\"ReportIt\"] -->|发布到网络| TASK10[\"部署\"]\n```\n\n## 发布与部署路径 [BV191cuziEE2 P1 11:38]\n```mermaid\nflowchart TD\n    PREP[\"完成所有代码整合（Cursor）\"] --> DEP[\"使用 Netlify 部署\"]\n    DEP --> LINK[\"生成公开链接\"]\n    LINK --> SHARE[\"放入视频描述，供玩家试玩\"]\n```",
+      "diagrams": [
+        {
+          "title": "AI协作总览",
+          "code": "flowchart TD\n    CUR[\"Cursor AI（粘合剂）\"]\n    GPT[\"ChatGPT（架构师）\"]\n    CLAUDE[\"Claude（逻辑）\"]\n    GEM[\"Gemini（区块/地形）\"]\n    GROCK[\"Grock（网格化/性能）\"]\n    DEEP[\"DeepSeek（存档/加载）\"]\n    Q[\"Q（UI/快捷栏）\"]\n    PER[\"Perplexity（调研/加速）\"]\n    COP[\"Copilot（加速工具）\"]\n    REP[\"ReportIt（发布）\"]\n\n    PER -->|提供调研与提示| CUR\n    COP -->|加速生成| CUR\n    CUR -->|整合代码| GPT\n    CUR -->|整合代码| CLAUDE\n    CUR -->|整合代码| GEM\n    CUR -->|整合代码| GROCK\n    CUR -->|整合代码| DEEP\n    CUR -->|整合代码| Q\n    CUR -->|整合代码| PER\n    CUR -->|整合代码| COP\n    CUR -->|最终产出交给| REP"
+        },
+        {
+          "title": "制作流程链路",
+          "code": "flowchart LR\n    A1[\"Perplexity：调研、生成备忘录\"] --> A2[\"Cursor：创建文件结构\"]\n    A2 --> A3[\"ChatGPT：主文件（main、world、hard）\"]\n    A3 --> A4[\"Cloud Opus 4.5：玩家控制器（JS）\"]\n    A4 --> A5[\"Gemini：区块系统 & 地形生成\"]\n    A5 --> A6[\"Grock：网格化 & 性能优化\"]\n    A6 --> A7[\"DeepSeek：世界保存/加载管理器\"]\n    A7 --> A8[\"Q：UI 与快捷栏实现\"]\n    A8 --> A9[\"Cursor：代码整合 & 运行\"]\n    A9 --> A10[\"Perplexity & Copilot：加速、检查\"]\n    A10 --> A11[\"ReportIt / Netlify：发布\"]"
+        },
+        {
+          "title": "AI角色与任务分配",
+          "code": "flowchart TD\n    GPT[\"ChatGPT\"] -->|生成主框架代码| TASK1[\"main、world、hard 文件\"]\n    CLAUDE[\"Claude\"] -->|实现玩家控制、碰撞、摄像机| TASK2[\"控制器逻辑\"]\n    GEM[\"Gemini\"] -->|区块注册、地形、区块生成| TASK3[\"区块系统\"]\n    GROCK[\"Grock\"] -->|网格化、性能路径| TASK4[\"性能优化\"]\n    DEEP[\"DeepSeek\"] -->|存档/加载数据库| TASK5[\"保存管理器\"]\n    Q[\"Q\"] -->|UI、快捷栏、菜单| TASK6[\"界面实现\"]\n    PER[\"Perplexity\"] -->|调研、备忘录、加速提示| TASK7[\"工程备忘录\"]\n    COP[\"Copilot\"] -->|加速代码生成、错误检查| TASK8[\"加速工具\"]\n    CUR[\"Cursor\"] -->|整合所有代码| TASK9[\"最终项目整合\"]\n    REP[\"ReportIt\"] -->|发布到网络| TASK10[\"部署\"]"
+        },
+        {
+          "title": "发布与部署路径",
+          "code": "flowchart TD\n    PREP[\"完成所有代码整合（Cursor）\"] --> DEP[\"使用 Netlify 部署\"]\n    DEP --> LINK[\"生成公开链接\"]\n    LINK --> SHARE[\"放入视频描述，供玩家试玩\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T11:36:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 10个AI一起制作《我的世界》知识图谱\n\n## AI协作总览 [BV191cuziEE2 P1 01:06]\n```mermaid\nflowchart TD\n    CUR[\"Cursor AI（粘合剂）\"]\n    GPT[\"ChatGPT（架构师）\"]\n    CLAUDE[\"Claude（逻辑）\"]\n    GEM[\"Gemini（区块/地形）\"]\n    GROCK[\"Grock（网格化/性能）\"]\n    DEEP[\"DeepSeek（存档/加载）\"]\n    Q[\"Q（UI/快捷栏）\"]\n    PER[\"Perplexity（调研/加速）\"]\n    COP[\"Copilot（加速工具）\"]\n    REP[\"ReportIt（发布）\"]\n\n    PER -->|提供调研与提示| CUR\n    COP -->|加速生成| CUR\n    CUR -->|整合代码| GPT\n    CUR -->|整合代码| CLAUDE\n    CUR -->|整合代码| GEM\n    CUR -->|整合代码| GROCK\n    CUR -->|整合代码| DEEP\n    CUR -->|整合代码| Q\n    CUR -->|整合代码| PER\n    CUR -->|整合代码| COP\n    CUR -->|最终产出交给| REP\n```\n\n## 制作流程链路 [BV191cuziEE2 P1 03:20]\n```mermaid\nflowchart LR\n    A1[\"Perplexity：调研、生成备忘录\"] --> A2[\"Cursor：创建文件结构\"]\n    A2 --> A3[\"ChatGPT：主文件（main、world、hard）\"]\n    A3 --> A4[\"Cloud Opus 4.5：玩家控制器（JS）\"]\n    A4 --> A5[\"Gemini：区块系统 & 地形生成\"]\n    A5 --> A6[\"Grock：网格化 & 性能优化\"]\n    A6 --> A7[\"DeepSeek：世界保存/加载管理器\"]\n    A7 --> A8[\"Q：UI 与快捷栏实现\"]\n    A8 --> A9[\"Cursor：代码整合 & 运行\"]\n    A9 --> A10[\"Perplexity & Copilot：加速、检查\"]\n    A10 --> A11[\"ReportIt / Netlify：发布\"]\n```\n\n## AI角色与任务分配 [BV191cuziEE2 P1 01:16]\n```mermaid\nflowchart TD\n    GPT[\"ChatGPT\"] -->|生成主框架代码| TASK1[\"main、world、hard 文件\"]\n    CLAUDE[\"Claude\"] -->|实现玩家控制、碰撞、摄像机| TASK2[\"控制器逻辑\"]\n    GEM[\"Gemini\"] -->|区块注册、地形、区块生成| TASK3[\"区块系统\"]\n    GROCK[\"Grock\"] -->|网格化、性能路径| TASK4[\"性能优化\"]\n    DEEP[\"DeepSeek\"] -->|存档/加载数据库| TASK5[\"保存管理器\"]\n    Q[\"Q\"] -->|UI、快捷栏、菜单| TASK6[\"界面实现\"]\n    PER[\"Perplexity\"] -->|调研、备忘录、加速提示| TASK7[\"工程备忘录\"]\n    COP[\"Copilot\"] -->|加速代码生成、错误检查| TASK8[\"加速工具\"]\n    CUR[\"Cursor\"] -->|整合所有代码| TASK9[\"最终项目整合\"]\n    REP[\"ReportIt\"] -->|发布到网络| TASK10[\"部署\"]\n```\n\n## 发布与部署路径 [BV191cuziEE2 P1 11:38]\n```mermaid\nflowchart TD\n    PREP[\"完成所有代码整合（Cursor）\"] --> DEP[\"使用 Netlify 部署\"]\n    DEP --> LINK[\"生成公开链接\"]\n    LINK --> SHARE[\"放入视频描述，供玩家试玩\"]\n```",
+  "diagrams": [
+    {
+      "title": "AI协作总览",
+      "code": "flowchart TD\n    CUR[\"Cursor AI（粘合剂）\"]\n    GPT[\"ChatGPT（架构师）\"]\n    CLAUDE[\"Claude（逻辑）\"]\n    GEM[\"Gemini（区块/地形）\"]\n    GROCK[\"Grock（网格化/性能）\"]\n    DEEP[\"DeepSeek（存档/加载）\"]\n    Q[\"Q（UI/快捷栏）\"]\n    PER[\"Perplexity（调研/加速）\"]\n    COP[\"Copilot（加速工具）\"]\n    REP[\"ReportIt（发布）\"]\n\n    PER -->|提供调研与提示| CUR\n    COP -->|加速生成| CUR\n    CUR -->|整合代码| GPT\n    CUR -->|整合代码| CLAUDE\n    CUR -->|整合代码| GEM\n    CUR -->|整合代码| GROCK\n    CUR -->|整合代码| DEEP\n    CUR -->|整合代码| Q\n    CUR -->|整合代码| PER\n    CUR -->|整合代码| COP\n    CUR -->|最终产出交给| REP"
+    },
+    {
+      "title": "制作流程链路",
+      "code": "flowchart LR\n    A1[\"Perplexity：调研、生成备忘录\"] --> A2[\"Cursor：创建文件结构\"]\n    A2 --> A3[\"ChatGPT：主文件（main、world、hard）\"]\n    A3 --> A4[\"Cloud Opus 4.5：玩家控制器（JS）\"]\n    A4 --> A5[\"Gemini：区块系统 & 地形生成\"]\n    A5 --> A6[\"Grock：网格化 & 性能优化\"]\n    A6 --> A7[\"DeepSeek：世界保存/加载管理器\"]\n    A7 --> A8[\"Q：UI 与快捷栏实现\"]\n    A8 --> A9[\"Cursor：代码整合 & 运行\"]\n    A9 --> A10[\"Perplexity & Copilot：加速、检查\"]\n    A10 --> A11[\"ReportIt / Netlify：发布\"]"
+    },
+    {
+      "title": "AI角色与任务分配",
+      "code": "flowchart TD\n    GPT[\"ChatGPT\"] -->|生成主框架代码| TASK1[\"main、world、hard 文件\"]\n    CLAUDE[\"Claude\"] -->|实现玩家控制、碰撞、摄像机| TASK2[\"控制器逻辑\"]\n    GEM[\"Gemini\"] -->|区块注册、地形、区块生成| TASK3[\"区块系统\"]\n    GROCK[\"Grock\"] -->|网格化、性能路径| TASK4[\"性能优化\"]\n    DEEP[\"DeepSeek\"] -->|存档/加载数据库| TASK5[\"保存管理器\"]\n    Q[\"Q\"] -->|UI、快捷栏、菜单| TASK6[\"界面实现\"]\n    PER[\"Perplexity\"] -->|调研、备忘录、加速提示| TASK7[\"工程备忘录\"]\n    COP[\"Copilot\"] -->|加速代码生成、错误检查| TASK8[\"加速工具\"]\n    CUR[\"Cursor\"] -->|整合所有代码| TASK9[\"最终项目整合\"]\n    REP[\"ReportIt\"] -->|发布到网络| TASK10[\"部署\"]"
+    },
+    {
+      "title": "发布与部署路径",
+      "code": "flowchart TD\n    PREP[\"完成所有代码整合（Cursor）\"] --> DEP[\"使用 Netlify 部署\"]\n    DEP --> LINK[\"生成公开链接\"]\n    LINK --> SHARE[\"放入视频描述，供玩家试玩\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T11:36:28+00:00"
+}

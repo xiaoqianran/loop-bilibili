@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1fXMK6zE5J",
+  "title": "Codex VS Claude？10分钟同时速通！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4421,
+  "text": "codex和cloud code是过去半年全球最强的AI agent\n你一定听过他们\n今天这期我会带你10分钟\n同时速通这两个产品从安装到使用对比\n如果要选择一个哪个更适合你\n无需境外网络\n不需要海外银行卡\n人在内地也能用上\n我们有特殊的小窍门\n另外看完这一期\n你基本可以快速上手\n任何一个国内的AARA证产品\n比如字爷的trap\n阿离的coder\n腾讯的work buddy\n不只是因为他们正在长成codex和cloud的样子\n还是因为我们即将看到的是诚信中的agent的产品\n标准好了\n马上开始codex安装\n直接官网下载\n没法连上的\n也可以去搜索引擎里下载安装包\n启动安装包\n它会检测你电脑里之前使用过cloud code\n提醒你一键导入cloud code的对话和配置\n商战就是这么朴实无华\n看到这个界面说明你搞到震感\n有条件的同学可以使用chat gt官方账号登录\n没有条件的同学哎\n这个其他方式登录其实也没有用\n我们需要用另一种绕过的方式\n配置自己的国产大模型\n在这里\ncodex提供的是顶尖的agent的框架和交互能力\n而我们接入这套框架和交互的是性价比更高的\n国产模型\n该如何配置呢\n如果你是一个程序员\n我会告诉你改哪些配置文件\n所以我们需要借助一些三方工具\n来快速修改配置\n这个工具就是cc switch\ncc switch安装\n这是一个在GITHUB上已经有100k star的产品\n核心功能只有一个\n就是帮你的agent的产品快速切换模型\n最早它是给cloud code提供切换模型的功能\n所以叫做cc switch\n但现在支持可以切换模型的产品早已不止cc\n还包括前一阵子爆火的open glb\n以及现在要讲的codex\n这是它的官网界面\n工具本身是开源的\n谁都能免费用\n点击立即下载\n会跳到程序员交友社区GITHUB下拉\n找到assets\n找到你要的安装包\n如果你是windows系统\n常常会发现最新的版本不支持\n再往下拉\n从过去的旧版本里找这个点\nMSI就是正常的安装包\n原因是windows系统的适配比较复杂\n一般开发者首先适配的都是Mac系统\n有条件的也建议大家换成Mac\n那换下来的旧电脑怎么办呢\n当然是当然是当然是接着用了呀\n想什么呢\n模型配置安装完成后\n会看到这个界面\n切换到codex选项\n点击右上角的加号\n也就是新增自定义的模型\n国产模型里效果最好的可能是质朴\n但性价比最高的当属deep sick\n选择deep sick\n你需要填入自己的deep sic密钥\n也就是a API key密钥哪里来呢\n访问platform\n点deep sc\n你需要先充值\n这里就不建议大家白嫖了\n顺便我的视频都看到这里了\n白嫖你一个免费的赞\n不过分吧\n点击API kiss\n创建APIT\n随便输入一个备注\n生成完毕\n点击复制\n现在谁拿到这个API key都能消费\n你的充值余额\n注意保管呀\n回到cc switch\n找到API key\n粘贴你刚才创建的内容\n点击保存\n这就好了吗\n没好我们看到列表里已经有这个deep seek渠道\n但是标注了需要路由\n点击左上角的设置\n找到路由\n本地路由还有一个开关没有打开\n打开后回到模型列表\n点击启用就会提示启用成功了\n重启codex就会进入页面了\n打一个招呼\n他可以正常回诶\n不可以正常回复\n为什么报错了呢\n是哪里出了问题\n回到cc switch检查一下配置\n发现我们虽然开启了路由开关\n但是没有启动一个具体的应用\n勾选co类\n再次重启并打开\n发现这次他可以正常回复了\n下面模型价格\n问一下它是什么模型\n他会说他是GPT诶\n我们不是配置了deep sk模型吗\n这是正常的\n因为这个时候回复你的不仅是单纯的大模型\n而是一套运行大模型的agent的框架\n这套agent的框架可能内置了这样的提示词\n比如你是一个基于GBT驱动的agent的产品codex\n所以回答会和实际不符合\n是预期内的\n我们来到DEPC开放平台\n发现刚才的对话扣了两分钱\n算是非常便宜的\n因为随着后续在同一个主题里对话会命中缓存\n而缓存的价格要比原价低好几倍\n也就会更加便宜\nCOLEX使用codex和网页版JPD\n最大的区别就是可以操作\n你的本地文件\n而不仅仅是对话聊天\n一般的博主会在这里告诉你\n他可以帮你找发票\n将本地的图片整理归类\n或者开发一个小网站\n而我希望带你开发更有趣的小游戏\n通过一个真实的实战\n让你了解codex强大之处\n新建文件夹\n祝游戏名飞机大战\n我想要开发一个飞机大战网页小游戏\n这么一句简单的提示词\n看看他能做成什么样\n因为它会涉及修改你的本地文件\n所以提示需要授权选项一\n这次允许选项二\n这次允许\n并且相同的命令\n下次也允许选项三\n不允许\n为了视频尽快结束\n当然是选项二了\n很快一个简单的小游戏就开发完成了\n试玩一下\n点击开始游戏诶\n怎么开始了\n中间的文字还在啊\n简单先玩两下\n再来优化左右左右和小时候玩个小游戏很像\nCOLEX技巧好的\n我们思考一下\n刚才其实有两个问题\n第一是授权问题\n如果每次他改文件都需要我授权\n太麻烦了\n输入框这里有授权模式的切换\n第三个选项也就是完全访问权限\n可以执行任何指令\n都不需要你的授权\n就用它了\n当然如果你担心AI改换你的文件\n也可以切换\n中间那个选项含义是AI\nas已检测到有危险指令的时候才需要你授权\n第二是预览效果的问题\n我们需要同时在浏览器和COLLEX间切换\n比较麻烦\n可以复制浏览器里的预览地址\n回到codex右边\n打开侧边栏就可以预览网页\n粘贴刚才的连接并访问\n就可以看到效果了\n左边呢让AI改\n右边呢实时查看AI改之后的效果\n点击开始游戏之后\n中间的标题按键描述等要消失\n很好\n他改完了重新点击开始\n你会发现一切都正常\n右边侧边栏还有两个比较重要的功能\n一是审查\n审查的是最近对话变更了哪些文件\n方便知道改了些什么\n二是文件\n就是看看当前文件夹下全部的文件内容\n我们这个游戏比较简单\n就只有一个点HTML的代码文件\nPROLEX总结\n整个cortex其实很简单\n界面是极简的\n看到的功能也是极少\n相比国内很多功能繁杂的a h codex\n更多做的是水下的工作\n在你和他一步一步对话的过程中\n他会自然而然地将你可能需要的功能呈现给你\n比如刚才的右边侧边栏预览网页效果\n其实在对话中就会将选项交给你\n不能做的多是本能\n而功能做的少\n体验还好\n才是能力\n相比一些只知道怼的功能琳琅满目\n显得张牙舞爪的agent的产品\ncodex给我的感觉是极致的内敛克制和高级感\n不知道你怎么看\n安装cloud co\n相比极简舒适的codex\ncloud code就会让大多数用户不那么舒服\n首先就是它的安装\n不是传统的下载和打开一个安装包\n而是在终端里输入一行命令\n这是cloud code的官网\n这是他提供的命令\n但如果你真的执行这条命令\n不管你是windows还是Mac\n基本都会报错\n因为你所在的国家和地区无法直接下载\n低等级的梯子都不太好使\n这也是我们会遇到的第一个门槛\n一般我们会建议先下载和安装node点JS\n安装完成后执行这行命令\n怎么理解呢\nNPM就是你安装node js之后自带的一个包管理器\n接下来使用这个包管理器安装cloud code\n输入cloud\n按照这个经典的橙色小人就是安装成功了\n在使用前呢\n我想说cloud code的功能其实不只是限于code\n不只是写代码\n而是可以做很多通用的办公能力\n但这个名字给我们造成了很大的误解\n要我说叫cloud ex\n得了配置cloud code模型\n刚才我们说过\nCc switch\n最早就是为了切换cloud code模型而推出的小工具\n还是使用这个经典的工具来帮我们完成配置\ncloud code使用\n接下来就是在终端里使用cloud code\n如果你是Mac\n推荐你下载一个ghosting\n如果你是windows\n推荐你下一个windows terminal\n这两个都是比较轻便的终端工具\n这里我们需要学习一个指令\nCD前置directory\n也就是切换目录的意思\n我们需要先进入一个目录才能开始工作\n找到刚才的飞机大战目录\nMac快捷键option加command加C复制目录\n在终端里输入CD空格\n粘贴刚才的目录\n敲一下\n回车就可以看到我们已经进入了目标的目录\n输入cloud\n在该目录下唤醒cloud code\n先发出一个简单的指令\n让他理解一下项目\nOK现在呢他知道了\n这是一个飞机大战的小游戏项目\n和COLLEX一样\ncloud code可以切换对话的模式\nMac按shift加tab\nwindows是alt加M\n除了默认的模式\n还有另外两种\n一个是自动编辑\n意思就是自动审批大部分的授权\nplan mod计划模式\n意思就是给你先列一个计划\n确认后再执行\n适合比较复杂的项目\n另外cloud code还有一个完全授权的访问模式\n但默认是隐藏的\n新手的话建议不要用这个模式\n因为很容易就把你的token消耗完\nlogo使用二\n我们先用plan模式让他写一个优化有序的计划\n在他写计划的过程中\n一般会找你澄清具体的诉求\n澄清方案神经操作方式\n澄清视觉风格\n因为是plan模式\n所以他只会写计划\n不会执行\n我们发出确认指令会自动切到自动编辑模式\n并开始修改代码和文件\n这种边界模式在执行过程中\n还是有一些指令需要确认同意就可以\n就这样第一个小改动就完成了\n我们再继续提第二轮要求\n我希望有BGM\n另外击毁敌机的时候也要有相应的音乐和特效\n更有打击感\n就和我的视频一样\n执行完成后\n验收结果\n非常好\n产品对比codex和cloud code有很多不同\n大家会说一个是有界面\n一个是没有界面终端的版本\n但我觉得最本质的不是这层皮的不同\n而是honeys的不同\n比如我们同时给这两个agent的产品\n都用了相同的deep sic模型\n但你会发现在相同的任务上\n他们的执行效果可能天差地别\n这就是harness的作用\n约束大模型\n让相同的大模型发挥不同的效果\n为什么\n三个月前一大堆人说cloud code的原生终端体验好\n而现在又有一大堆人说\ncodex可视化的界面才是更好\n在我看来\n其实并不是哪种产品的形态更好\n而是三个月前cloud cod的模型和harness更好\n三个月后的现在\nCOLLEX的模型和honeys赶了上来\n而界面只是顺手捡到的\n能感知到的加分项\n说直白点\n哪家厂商拥有了最顶尖的模型和honeys\n他就拥有了叙事的定义权\n你以为你赶上了新的趋势\n在学新的东西\n实际上只是跟随阶段性领先的厂商的叙事在走\n而当领先者变更叙事更点\n你就需要去学习新的叙事\n这也就是大家常说AI圈热点太多\n学不过来的深层次原因\n好了\n如果觉得有收获\n点赞收藏加投币\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1fXMK6zE5J",
+  "published_at": "1783215242",
+  "fetched_at": "2026-08-09T22:16:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Codex 与 Cloud Code 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    C1[\"Codex (可视化 UI)\"] -->|使用| CC[\"cc switch\"]\n    C2[\"Cloud Code (终端 UI)\"] -->|使用| CC\n    CC --> M[\"模型切换\"]\n    M --> D[\"DeepSIC 模型\"]\n    M --> Z[\"其他模型\"]\n    D --> H[\"harness（约束大模型）\"]\n    Z --> H\n    C1 --> UI[\"界面交互\"]\n    C2 --> CLI[\"命令行交互\"]\n    UI --> H\n    CLI --> H\n    H --> E[\"执行效果\"]\n```\n\n## Codex 安装与配置流程\n\n```mermaid\nflowchart TD\n    A1[\"下载 Codex 安装包\"] --> A2[\"运行安装包\"]\n    A2 --> A3[\"检测已有 Cloud Code 配置\"]\n    A3 --> A4[\"提示导入 Cloud Code 对话\"]\n    A4 --> A5[\"使用 cc switch 切换模型\"]\n    A5 --> B1[\"选择 DeepSIC 模型\"]\n    B1 --> B2[\"获取 API Key（平台 → 创建 → 复制）\"]\n    B2 --> B3[\"在 cc switch 粘贴 API Key 并保存\"]\n    B3 --> B4[\"开启本地路由开关\"]\n    B4 --> B5[\"启用模型并重启 Codex\"]\n    B5 --> B6[\"测试对话：正常回复\"]\n```\n\n## Cloud Code 使用模式\n\n```mermaid\nflowchart LR\n    C1[\"Cloud Code\"] --> M1[\"默认模式\"]\n    C1 --> M2[\"Plan 模式（计划）\"]\n    C1 --> M3[\"Auto Edit 模式（自动编辑）\"]\n    C1 --> M4[\"Full Access 模式（完全授权）\"]\n    M1 --> D1[\"手动指令\"]\n    M2 --> D2[\"先生成计划 → 确认 → 执行\"]\n    M3 --> D3[\"自动批准大多数授权\"]\n    M4 --> D4[\"无需授权，消耗 Token\"]\n    D2 -->|适合| P1[\"复杂项目\"]\n    D3 -->|适合| P2[\"需要快速迭代\"]\n```\n\n## Codex 与 Cloud Code 对比因素\n\n```mermaid\nflowchart TD\n    F1[\"界面形式\"] -->|Codex| UI[\"可视化 UI\"]\n    F1 -->|Cloud Code| CLI[\"终端 CLI\"]\n    F2[\"模型来源\"] -->|相同模型| SM[\"DeepSIC\"]\n    F2 -->|不同模型| DM[\"各自模型\"]\n    F3[\"harness 约束\"] --> H[\"影响执行效果\"]\n    UI --> H\n    CLI --> H\n    F4[\"使用便利性\"] -->|Codex| U1[\"简单点击\"]\n    F4 -->|Cloud Code| U2[\"命令行操作\"]\n    F5[\"授权模式\"] -->|Codex| A1[\"本地路由 + API Key\"]\n    F5 -->|Cloud Code| A2[\"计划 / 自动编辑 / 完全授权\"]\n    H --> E[\"任务执行效果差异\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    C1[\"Codex (可视化 UI)\"] -->|使用| CC[\"cc switch\"]\n    C2[\"Cloud Code (终端 UI)\"] -->|使用| CC\n    CC --> M[\"模型切换\"]\n    M --> D[\"DeepSIC 模型\"]\n    M --> Z[\"其他模型\"]\n    D --> H[\"harness（约束大模型）\"]\n    Z --> H\n    C1 --> UI[\"界面交互\"]\n    C2 --> CLI[\"命令行交互\"]\n    UI --> H\n    CLI --> H\n    H --> E[\"执行效果\"]"
+        },
+        {
+          "title": "Codex 安装与配置流程",
+          "code": "flowchart TD\n    A1[\"下载 Codex 安装包\"] --> A2[\"运行安装包\"]\n    A2 --> A3[\"检测已有 Cloud Code 配置\"]\n    A3 --> A4[\"提示导入 Cloud Code 对话\"]\n    A4 --> A5[\"使用 cc switch 切换模型\"]\n    A5 --> B1[\"选择 DeepSIC 模型\"]\n    B1 --> B2[\"获取 API Key（平台 → 创建 → 复制）\"]\n    B2 --> B3[\"在 cc switch 粘贴 API Key 并保存\"]\n    B3 --> B4[\"开启本地路由开关\"]\n    B4 --> B5[\"启用模型并重启 Codex\"]\n    B5 --> B6[\"测试对话：正常回复\"]"
+        },
+        {
+          "title": "Cloud Code 使用模式",
+          "code": "flowchart LR\n    C1[\"Cloud Code\"] --> M1[\"默认模式\"]\n    C1 --> M2[\"Plan 模式（计划）\"]\n    C1 --> M3[\"Auto Edit 模式（自动编辑）\"]\n    C1 --> M4[\"Full Access 模式（完全授权）\"]\n    M1 --> D1[\"手动指令\"]\n    M2 --> D2[\"先生成计划 → 确认 → 执行\"]\n    M3 --> D3[\"自动批准大多数授权\"]\n    M4 --> D4[\"无需授权，消耗 Token\"]\n    D2 -->|适合| P1[\"复杂项目\"]\n    D3 -->|适合| P2[\"需要快速迭代\"]"
+        },
+        {
+          "title": "Codex 与 Cloud Code 对比因素",
+          "code": "flowchart TD\n    F1[\"界面形式\"] -->|Codex| UI[\"可视化 UI\"]\n    F1 -->|Cloud Code| CLI[\"终端 CLI\"]\n    F2[\"模型来源\"] -->|相同模型| SM[\"DeepSIC\"]\n    F2 -->|不同模型| DM[\"各自模型\"]\n    F3[\"harness 约束\"] --> H[\"影响执行效果\"]\n    UI --> H\n    CLI --> H\n    F4[\"使用便利性\"] -->|Codex| U1[\"简单点击\"]\n    F4 -->|Cloud Code| U2[\"命令行操作\"]\n    F5[\"授权模式\"] -->|Codex| A1[\"本地路由 + API Key\"]\n    F5 -->|Cloud Code| A2[\"计划 / 自动编辑 / 完全授权\"]\n    H --> E[\"任务执行效果差异\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T22:17:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Codex 与 Cloud Code 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    C1[\"Codex (可视化 UI)\"] -->|使用| CC[\"cc switch\"]\n    C2[\"Cloud Code (终端 UI)\"] -->|使用| CC\n    CC --> M[\"模型切换\"]\n    M --> D[\"DeepSIC 模型\"]\n    M --> Z[\"其他模型\"]\n    D --> H[\"harness（约束大模型）\"]\n    Z --> H\n    C1 --> UI[\"界面交互\"]\n    C2 --> CLI[\"命令行交互\"]\n    UI --> H\n    CLI --> H\n    H --> E[\"执行效果\"]\n```\n\n## Codex 安装与配置流程\n\n```mermaid\nflowchart TD\n    A1[\"下载 Codex 安装包\"] --> A2[\"运行安装包\"]\n    A2 --> A3[\"检测已有 Cloud Code 配置\"]\n    A3 --> A4[\"提示导入 Cloud Code 对话\"]\n    A4 --> A5[\"使用 cc switch 切换模型\"]\n    A5 --> B1[\"选择 DeepSIC 模型\"]\n    B1 --> B2[\"获取 API Key（平台 → 创建 → 复制）\"]\n    B2 --> B3[\"在 cc switch 粘贴 API Key 并保存\"]\n    B3 --> B4[\"开启本地路由开关\"]\n    B4 --> B5[\"启用模型并重启 Codex\"]\n    B5 --> B6[\"测试对话：正常回复\"]\n```\n\n## Cloud Code 使用模式\n\n```mermaid\nflowchart LR\n    C1[\"Cloud Code\"] --> M1[\"默认模式\"]\n    C1 --> M2[\"Plan 模式（计划）\"]\n    C1 --> M3[\"Auto Edit 模式（自动编辑）\"]\n    C1 --> M4[\"Full Access 模式（完全授权）\"]\n    M1 --> D1[\"手动指令\"]\n    M2 --> D2[\"先生成计划 → 确认 → 执行\"]\n    M3 --> D3[\"自动批准大多数授权\"]\n    M4 --> D4[\"无需授权，消耗 Token\"]\n    D2 -->|适合| P1[\"复杂项目\"]\n    D3 -->|适合| P2[\"需要快速迭代\"]\n```\n\n## Codex 与 Cloud Code 对比因素\n\n```mermaid\nflowchart TD\n    F1[\"界面形式\"] -->|Codex| UI[\"可视化 UI\"]\n    F1 -->|Cloud Code| CLI[\"终端 CLI\"]\n    F2[\"模型来源\"] -->|相同模型| SM[\"DeepSIC\"]\n    F2 -->|不同模型| DM[\"各自模型\"]\n    F3[\"harness 约束\"] --> H[\"影响执行效果\"]\n    UI --> H\n    CLI --> H\n    F4[\"使用便利性\"] -->|Codex| U1[\"简单点击\"]\n    F4 -->|Cloud Code| U2[\"命令行操作\"]\n    F5[\"授权模式\"] -->|Codex| A1[\"本地路由 + API Key\"]\n    F5 -->|Cloud Code| A2[\"计划 / 自动编辑 / 完全授权\"]\n    H --> E[\"任务执行效果差异\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    C1[\"Codex (可视化 UI)\"] -->|使用| CC[\"cc switch\"]\n    C2[\"Cloud Code (终端 UI)\"] -->|使用| CC\n    CC --> M[\"模型切换\"]\n    M --> D[\"DeepSIC 模型\"]\n    M --> Z[\"其他模型\"]\n    D --> H[\"harness（约束大模型）\"]\n    Z --> H\n    C1 --> UI[\"界面交互\"]\n    C2 --> CLI[\"命令行交互\"]\n    UI --> H\n    CLI --> H\n    H --> E[\"执行效果\"]"
+    },
+    {
+      "title": "Codex 安装与配置流程",
+      "code": "flowchart TD\n    A1[\"下载 Codex 安装包\"] --> A2[\"运行安装包\"]\n    A2 --> A3[\"检测已有 Cloud Code 配置\"]\n    A3 --> A4[\"提示导入 Cloud Code 对话\"]\n    A4 --> A5[\"使用 cc switch 切换模型\"]\n    A5 --> B1[\"选择 DeepSIC 模型\"]\n    B1 --> B2[\"获取 API Key（平台 → 创建 → 复制）\"]\n    B2 --> B3[\"在 cc switch 粘贴 API Key 并保存\"]\n    B3 --> B4[\"开启本地路由开关\"]\n    B4 --> B5[\"启用模型并重启 Codex\"]\n    B5 --> B6[\"测试对话：正常回复\"]"
+    },
+    {
+      "title": "Cloud Code 使用模式",
+      "code": "flowchart LR\n    C1[\"Cloud Code\"] --> M1[\"默认模式\"]\n    C1 --> M2[\"Plan 模式（计划）\"]\n    C1 --> M3[\"Auto Edit 模式（自动编辑）\"]\n    C1 --> M4[\"Full Access 模式（完全授权）\"]\n    M1 --> D1[\"手动指令\"]\n    M2 --> D2[\"先生成计划 → 确认 → 执行\"]\n    M3 --> D3[\"自动批准大多数授权\"]\n    M4 --> D4[\"无需授权，消耗 Token\"]\n    D2 -->|适合| P1[\"复杂项目\"]\n    D3 -->|适合| P2[\"需要快速迭代\"]"
+    },
+    {
+      "title": "Codex 与 Cloud Code 对比因素",
+      "code": "flowchart TD\n    F1[\"界面形式\"] -->|Codex| UI[\"可视化 UI\"]\n    F1 -->|Cloud Code| CLI[\"终端 CLI\"]\n    F2[\"模型来源\"] -->|相同模型| SM[\"DeepSIC\"]\n    F2 -->|不同模型| DM[\"各自模型\"]\n    F3[\"harness 约束\"] --> H[\"影响执行效果\"]\n    UI --> H\n    CLI --> H\n    F4[\"使用便利性\"] -->|Codex| U1[\"简单点击\"]\n    F4 -->|Cloud Code| U2[\"命令行操作\"]\n    F5[\"授权模式\"] -->|Codex| A1[\"本地路由 + API Key\"]\n    F5 -->|Cloud Code| A2[\"计划 / 自动编辑 / 完全授权\"]\n    H --> E[\"任务执行效果差异\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:17:41+00:00"
+}

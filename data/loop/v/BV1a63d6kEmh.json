@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1a63d6kEmh",
+  "title": "DeepSeek原生支持Codex，还能扩展视觉理解",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 684,
+  "text": "codex加deep sk v4正式版\n简直是王炸性价比组合\n而且还能扩展出视觉理解\n就在7月31号\ndeep sick v4flash正式版发布\n评分居然甩开V4pro预览版一\n甚至有些评分项超越了旗舰模型GLM5.2\n目前V4flash可以一键接入codex\n接入方式非常方便\n在deep sick的官方文档写的很清楚\n直接复制即可\n但是codex是非常强烈的\nHarness agent\n如果没有视觉理解\n那就相当于残废\n于是我想到deep sick\n装一个视觉理解的MCP不就成了吗\n这里我找到比较好的方式\n是使用G4.6V的API\n它完全免费\n我让GPT帮我根据API调用方式\n封装了一个MCP包\n发送给codex\n让他给我配置其中\n重启codex\n再回到对话框中\n让deep sick调用这个MCP去读图片\n大功告成\n他已经可以认识图片了\n不过这样还是有点麻烦\n我不想每次都手动让它调用\n现在codex对skill的调用优先级更高\n直接让他给我打包一个skill\n大功再次告成\n这次随便发送图片\n它就能自动调用skill进行识图了\n这里还有一个小tips\n最好是在接入deep sick之前\n就把MCP和skill配置好\n否则你再次用文档中的命令\n恢复codex默认配置后\n刚才的功能就都没有了\n还得重新配置\n另外据说deep sick自研的harness agent呢\n可能就要内测了\n到时候就不用这么麻烦的做各种配置了\n说不定官方的多模态能力也会一起端上来\n毕竟网页版已经有识图模式了\n真是非常期待啊\n好了觉得本期视频有帮助\n可以点点关注\n感谢大家观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1a63d6kEmh",
+  "published_at": "1785680817",
+  "fetched_at": "2026-08-07T07:49:55+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 与 Codex 视觉理解集成图谱\n\n## Overview of components and capabilities [BV1a63d6kEmh P1 00:05]\n\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4Flash\"] -->|一键接入| Codex[\"Codex (Harness agent)\"]\n    Codex -->|需要| Visual[\"视觉理解 MCP\"]\n    Visual -->|提供| ImageRec[\"图片识别能力\"]\n    DS -->|可通过| G46V[\"G4.6V API (免费)\"]\n    G46V -->|生成| MCPPkg[\"MCP 包\"]\n    Codex -->|可打包| Skill[\"Skill (自动识图)\"]\n    DS -->|网页端已有| WebImgMode[\"网页版识图模式\"]\n```\n\n## Integration workflow: from docs to image reading [BV1a63d6kEmh P1 00:14]\n\n```mermaid\nflowchart TD\n    Docs[\"官方文档复制配置\"] -->|复制| Config[\"Codex 配置\"]\n    Config -->|发送 MCP 包| Codex\n    Codex -->|重启| CodexRestart[\"Codex 重启\"]\n    CodexRestart -->|调用| Visual\n    Visual -->|读取图片| ImageRec\n    ImageRec -->|完成| Success[\"大功告成\"]\n```\n\n## Automation via Skill packaging [BV1a63d6kEmh P1 00:49]\n\n```mermaid\nflowchart TD\n    Codex -->|优先调用| Skill\n    Skill -->|打包| SkillPkg[\"Skill 包\"]\n    SkillPkg -->|发送| Codex\n    User[\"用户发送图片\"] -->|自动触发| Codex\n    Codex -->|调用 Skill| ImageRec\n    ImageRec -->|返回识别结果| Result[\"识图结果\"]\n```\n\n## Configuration timing & future simplification [BV1a63d6kEmh P1 00:59]\n\n```mermaid\nflowchart TD\n    PreConfig[\"提前配置 MCP & Skill\"] -->|避免| Reset[\"恢复默认配置\"]\n    Reset -->|导致| Loss[\"功能丢失\"]\n    Loss -->|需要| ReConfig[\"重新配置\"]\n    Future[\"DeepSeek 自研 Harness agent (内测)\"] -->|可能简化| AutoConfig[\"自动配置\"]\n    AutoConfig -->|省去| ManualSteps[\"手动步骤\"]\n```",
+      "diagrams": [
+        {
+          "title": "Overview of components and capabilities",
+          "code": "flowchart TD\n    DS[\"DeepSeek V4Flash\"] -->|一键接入| Codex[\"Codex (Harness agent)\"]\n    Codex -->|需要| Visual[\"视觉理解 MCP\"]\n    Visual -->|提供| ImageRec[\"图片识别能力\"]\n    DS -->|可通过| G46V[\"G4.6V API (免费)\"]\n    G46V -->|生成| MCPPkg[\"MCP 包\"]\n    Codex -->|可打包| Skill[\"Skill (自动识图)\"]\n    DS -->|网页端已有| WebImgMode[\"网页版识图模式\"]"
+        },
+        {
+          "title": "Integration workflow: from docs to image reading",
+          "code": "flowchart TD\n    Docs[\"官方文档复制配置\"] -->|复制| Config[\"Codex 配置\"]\n    Config -->|发送 MCP 包| Codex\n    Codex -->|重启| CodexRestart[\"Codex 重启\"]\n    CodexRestart -->|调用| Visual\n    Visual -->|读取图片| ImageRec\n    ImageRec -->|完成| Success[\"大功告成\"]"
+        },
+        {
+          "title": "Automation via Skill packaging",
+          "code": "flowchart TD\n    Codex -->|优先调用| Skill\n    Skill -->|打包| SkillPkg[\"Skill 包\"]\n    SkillPkg -->|发送| Codex\n    User[\"用户发送图片\"] -->|自动触发| Codex\n    Codex -->|调用 Skill| ImageRec\n    ImageRec -->|返回识别结果| Result[\"识图结果\"]"
+        },
+        {
+          "title": "Configuration timing & future simplification",
+          "code": "flowchart TD\n    PreConfig[\"提前配置 MCP & Skill\"] -->|避免| Reset[\"恢复默认配置\"]\n    Reset -->|导致| Loss[\"功能丢失\"]\n    Loss -->|需要| ReConfig[\"重新配置\"]\n    Future[\"DeepSeek 自研 Harness agent (内测)\"] -->|可能简化| AutoConfig[\"自动配置\"]\n    AutoConfig -->|省去| ManualSteps[\"手动步骤\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T07:51:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 与 Codex 视觉理解集成图谱\n\n## Overview of components and capabilities [BV1a63d6kEmh P1 00:05]\n\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4Flash\"] -->|一键接入| Codex[\"Codex (Harness agent)\"]\n    Codex -->|需要| Visual[\"视觉理解 MCP\"]\n    Visual -->|提供| ImageRec[\"图片识别能力\"]\n    DS -->|可通过| G46V[\"G4.6V API (免费)\"]\n    G46V -->|生成| MCPPkg[\"MCP 包\"]\n    Codex -->|可打包| Skill[\"Skill (自动识图)\"]\n    DS -->|网页端已有| WebImgMode[\"网页版识图模式\"]\n```\n\n## Integration workflow: from docs to image reading [BV1a63d6kEmh P1 00:14]\n\n```mermaid\nflowchart TD\n    Docs[\"官方文档复制配置\"] -->|复制| Config[\"Codex 配置\"]\n    Config -->|发送 MCP 包| Codex\n    Codex -->|重启| CodexRestart[\"Codex 重启\"]\n    CodexRestart -->|调用| Visual\n    Visual -->|读取图片| ImageRec\n    ImageRec -->|完成| Success[\"大功告成\"]\n```\n\n## Automation via Skill packaging [BV1a63d6kEmh P1 00:49]\n\n```mermaid\nflowchart TD\n    Codex -->|优先调用| Skill\n    Skill -->|打包| SkillPkg[\"Skill 包\"]\n    SkillPkg -->|发送| Codex\n    User[\"用户发送图片\"] -->|自动触发| Codex\n    Codex -->|调用 Skill| ImageRec\n    ImageRec -->|返回识别结果| Result[\"识图结果\"]\n```\n\n## Configuration timing & future simplification [BV1a63d6kEmh P1 00:59]\n\n```mermaid\nflowchart TD\n    PreConfig[\"提前配置 MCP & Skill\"] -->|避免| Reset[\"恢复默认配置\"]\n    Reset -->|导致| Loss[\"功能丢失\"]\n    Loss -->|需要| ReConfig[\"重新配置\"]\n    Future[\"DeepSeek 自研 Harness agent (内测)\"] -->|可能简化| AutoConfig[\"自动配置\"]\n    AutoConfig -->|省去| ManualSteps[\"手动步骤\"]\n```",
+  "diagrams": [
+    {
+      "title": "Overview of components and capabilities",
+      "code": "flowchart TD\n    DS[\"DeepSeek V4Flash\"] -->|一键接入| Codex[\"Codex (Harness agent)\"]\n    Codex -->|需要| Visual[\"视觉理解 MCP\"]\n    Visual -->|提供| ImageRec[\"图片识别能力\"]\n    DS -->|可通过| G46V[\"G4.6V API (免费)\"]\n    G46V -->|生成| MCPPkg[\"MCP 包\"]\n    Codex -->|可打包| Skill[\"Skill (自动识图)\"]\n    DS -->|网页端已有| WebImgMode[\"网页版识图模式\"]"
+    },
+    {
+      "title": "Integration workflow: from docs to image reading",
+      "code": "flowchart TD\n    Docs[\"官方文档复制配置\"] -->|复制| Config[\"Codex 配置\"]\n    Config -->|发送 MCP 包| Codex\n    Codex -->|重启| CodexRestart[\"Codex 重启\"]\n    CodexRestart -->|调用| Visual\n    Visual -->|读取图片| ImageRec\n    ImageRec -->|完成| Success[\"大功告成\"]"
+    },
+    {
+      "title": "Automation via Skill packaging",
+      "code": "flowchart TD\n    Codex -->|优先调用| Skill\n    Skill -->|打包| SkillPkg[\"Skill 包\"]\n    SkillPkg -->|发送| Codex\n    User[\"用户发送图片\"] -->|自动触发| Codex\n    Codex -->|调用 Skill| ImageRec\n    ImageRec -->|返回识别结果| Result[\"识图结果\"]"
+    },
+    {
+      "title": "Configuration timing & future simplification",
+      "code": "flowchart TD\n    PreConfig[\"提前配置 MCP & Skill\"] -->|避免| Reset[\"恢复默认配置\"]\n    Reset -->|导致| Loss[\"功能丢失\"]\n    Loss -->|需要| ReConfig[\"重新配置\"]\n    Future[\"DeepSeek 自研 Harness agent (内测)\"] -->|可能简化| AutoConfig[\"自动配置\"]\n    AutoConfig -->|省去| ManualSteps[\"手动步骤\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T07:51:57+00:00"
+}

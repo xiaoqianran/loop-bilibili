@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1hcwuzhENR",
+  "title": "Godot 角色生成器教程 #1：角色初始配置",
+  "status": "ok",
+  "language": "zh",
+  "chars": 3203,
+  "text": "大家好，我是理查德。\n在这个教程系列里，我们要做一个功能强大的角色创建系统。\n我们可以更改角色的发色、肤色，切换盔甲和武器，随机生成外观，\n还能保存和读取创建的角色。\n在第一期视频中，我们将搭建项目，\n构建复杂的角色结构，让所有动画精灵协同运作。\n我将使用Godot 4.5.1版本，这是目前最新的正式版。\n我强烈建议大家使用同一版本，确保和视频展示的功能完全兼容。\n你还需要用到我们的素材包。现在暂停视频，下载简介里的资源包。\n准备好后，启动Godot并创建新项目。\n你的界面应该和我屏幕上显示的差不多。\n打开刚下载的资源包，将assets文件夹拖到项目根目录。\n你可以看到我们把资源分门别类：字体、精灵表、精灵帧。另外还有一个\n后续视频会用到的背景素材。\n现在点击菜单栏的「项目」，选择「项目设置」。\n首先设置分辨率。找到「显示」分类，点击「窗口」选项。\n将视口宽度设为1920，高度设为1080。模式选择「最大化」。\n拉伸模式设为「画布项」，宽高比设为「扩展」。\n这样游戏就能根据屏幕尺寸正确缩放。\n接下来切换到「渲染」分类，点击「纹理」选项。\n将默认纹理过滤器从「线性」改为「最近邻」。\n这一步很关键，能让Godot渲染像素精灵时保持边缘锐利清晰。\n现在关闭设置，开始创建主结构。在左侧选择2D场景根节点。\n将它重命名为main，这个节点将承载玩家和交互界面。\n注意右上角的星号，表示文件未保存。按Ctrl+S（Mac用户按Command+S），新建一个名为Main的文件夹。\n然后把主场景文件保存在这个文件夹里。\n接下来添加角色节点。在main下创建CharacterBody2D，命名为player。\n你会立刻看到警告，提示需要添加碰撞形状。\n所有CharacterBody都需要碰撞区域，所以给它添加CollisionShape2D作为子节点。\n现在解决了之前的警告，但又出现新提示，说需要定义具体的碰撞形状。\n转到右侧检查器面板，创建CircleShape2D。\n最后在碰撞形状下方添加Node2D，命名为Skeleton。\n这个节点是核心，将承载角色所有分层视觉部件。\n添加精灵前，先快速检查资源。在sprite sheets文件夹里，你会看到对应每个\n动画所需素材的子文件夹。\n现在在Skeleton节点下创建视觉分层。\n首先添加AnimatedSprite2D节点。\n然后复制这个节点5次，这样就有6个动画精灵节点了。\n给它们命名：第一个是\narmor（盔甲）、head（头部）、hair（头发）、eyes（眼睛）和weapon（武器）。现在从眼睛层开始配置动画。\n选中eyes节点，在右侧点击「创建新精灵帧」。\n这会创建新资源来存储我们的动画。\n将默认动画重命名为IdleDown。\n点击「从网格添加帧」图标，从assets的spritesheets文件夹中选择眼睛的idle精灵表。\n在这个窗口里，我们能看到精灵表的所有帧。默认Godot会把它分成4行，\n4列。4行的设置是对的，因为我们所有精灵表每行对应一个方向：向下、向左、\n向右和向上。\n我们的idle动画有20帧，所以把水平方向数值改成20。\n现在可以轻松选中第一行所有帧并添加进去。\n点击这里的播放按钮，就能预览动画效果了。\n你看它播放得有点慢，我们把帧率（fps，即每秒帧数）调到10\n接下来我们快速在面板里创建剩下的动画。\n点击「添加新动画」，将其命名为「Idle Left」（左待机），帧率同样设为10，因为我们已经确定\n这个速度效果不错。\n选中「Idle Left」后，点击复制按钮6次，这样就能创建出其他方向的待机动画了。\n包括右待机、上待机，还有跑步循环的四个方向：下跑、左跑、右跑和上跑。\n因为我们复制的是左待机动画，所以不用再给这些新动画逐一设置帧率为10了。\n所有待机方向的动画都用同一张待机眼睛图，所以我们可以快速配置它们。\n对于下跑动画，点击「添加帧分级」，选择跑步眼睛精灵图。\n你看这个动画的帧数更少，所以这次把水平分割数调到8，选择第一行然后添加。\n左跑、右跑和上跑动画也重复同样的选择步骤。\n这个配置是最繁琐的环节。\n既然你已经掌握了方法，我把剩下五个预先配置好的SpriteFrames文件放在了SpriteFrames文件夹里\n就是我们之前添加到项目里的那个文件夹。\n这样我们就不用重复这个步骤几十次了。\n现在把每个文件拖到对应的动画精灵节点上。\n现在测试一下效果，我们点击身体的动画精灵节点。\n然后按住Shift键点击武器节点。\n这样就能选中所有的动画精灵节点了。\n在检查器里，选择下跑动画，然后点击「帧」手动调整。\n现在按键盘的上下箭头，就能增减当前动画的帧索引。\n这样就能预览所有动画精灵同时播放的效果了。\n最后再做个视觉优化，我们添加一个阴影。\n在骨骼节点里创建一个Sprite2D节点，然后给它指定阴影纹理，这个纹理在资源文件夹的精灵图文件夹里能找到。\n你看，现在阴影画在了脚的前面。我们切换阴影精灵的可见性，这样能看得更清楚。\n这是因为绘制顺序的问题，阴影节点在最后，所以会被画在最前面。\n我们把阴影节点拖到骨骼列表的最顶部就能解决这个问题，现在它就会正确地画在所有元素的后面了。\n现在进行第一次测试，运行项目。它会提示我们选择要运行的场景\n我们直接选择主场景就行。\n屏幕上什么都看不到，但仔细看的话，能在左上角看到我们的小角色的一部分。\n这说明我们需要一个相机来把视角对准玩家。\n关闭调试窗口。\n右键点击玩家节点，创建一个Camera2D节点，然后再次运行项目。\n现在角色居中了，但还是太小了。\n停止调试，在检查器里把缩放值设为15。\n再次运行项目，现在角色应该清晰可见了。\n现在是设置的最后一步：让结构模块化，并播放动画。\n我们的玩家节点包含很多层，我们希望通过一个模板文件来管理这个复杂的角色。\n首先在main文件夹里新建一个名为player的文件夹。\n现在选中主场景里的玩家节点，把分支另存为场景。\n然后把它保存到我们刚创建的player文件夹里。\n这样我们的玩家就变成了可复用的角色模块，它的所有子节点现在都属于这个玩家场景。\n以后如果要修改玩家，只需要编辑这一个文件就行。\n打开玩家场景，我们要给它附加脚本。\n确保选中玩家的根节点，在检查器面板里添加新脚本，命名为player并保存。\n首先定义脚本的类，然后我们需要创建对6个视觉层的引用。\n首先用unready关键字创建对身体精灵的引用，这样赋值会在游戏加载并准备好脚本时进行。\n注意我们在变量名前加了下划线前缀。\n这是GD脚本的惯例，用来标记变量为私有，意味着它们只能在当前脚本内部使用。\n然后我们给变量加上AnimatedSprite2D的类型提示。\n这不是必须的，但作用很大，因为它能让go.editor为我们提供实用建议和自动补全功能，当我们\n最后，赋值时我们要加上$符号，这样就能直接指定精灵的notepath了。\n现在我们对另外5个精灵图层做同样的操作。\n定义一个名为sprites的变量，作为动画精灵的数组，它将作为所有图层的列表，用于\n我们后续进行动画制作和自定义设置。\n现在我们来定义标准的ready函数。\n注意末尾的arrow void，这表示该函数不会返回任何值。\n在函数内部，我们可以将动画精灵列表赋值给sprites变量。\n最后，我们编写核心动画函数PlayAnimation。\n它会遍历我们的动画精灵列表，指示每个精灵播放指定的动画\n为了测试，我们最后更新ready函数，调用这个方法让玩家进入向下待机状态。\n点击播放吧。\n现在我们可以看到角色正在待机，6个图层协同运作，玩家场景制作完成。\n在第二集视频中，我们将深入讲解Golot的UI系统，制作第一个发色自定义面板。\n咱们下期见。",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hcwuzhENR",
+  "published_at": "1773577681",
+  "fetched_at": "2026-08-08T06:49:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 角色生成器教程 - 知识图谱\n\n## 项目初始化与设置\n\n```mermaid\nflowchart TD\n    G[\"Godot 4.5.1\\n[00:22]\"] --> D[\"下载资源包\\n[00:33]\"]\n    D --> P[\"创建新项目\\n[00:40]\"]\n    P --> I[\"导入 assets 文件夹\\n[00:50]\"]\n    I --> S[\"项目设置\"]\n    S --> R[\"分辨率 1920x1080\\n[01:09-01:15]\"]\n    S --> L[\"拉伸模式 '画布项'、宽高比 '扩展'\\n[01:22]\"]\n    S --> T[\"纹理过滤 '最近邻'\\n[01:34-01:37]\"]\n    R --> L\n    L --> T\n```\n00:22, 00:33, 00:40, 00:50, 01:09-01:15, 01:22, 01:34-01:37  \n\n## 角色节点结构\n\n```mermaid\nflowchart TD\n    M[\"main (2D根节点)\\n[01:42-01:48]\"] --> PL[\"player (CharacterBody2D)\\n[02:04-02:13]\"]\n    PL --> CS[\"CollisionShape2D\\n[02:13-02:23]\"]\n    CS --> CSH[\"CircleShape2D\\n[02:29-02:36]\"]\n    PL --> SK[\"Skeleton (Node2D)\\n[02:36-02:41]\"]\n    SK --> AS1[\"AnimatedSprite2D - armor\"]\n    SK --> AS2[\"AnimatedSprite2D - head\"]\n    SK --> AS3[\"AnimatedSprite2D - hair\"]\n    SK --> AS4[\"AnimatedSprite2D - eyes\\n[02:59-03:08]\"]\n    SK --> AS5[\"AnimatedSprite2D - weapon\"]\n    SK --> AS6[\"AnimatedSprite2D - body\"]\n    SK --> SH[\"Shadow Sprite2D\\n[06:30-06:46]\"]\n```\n01:42-01:48, 02:04-02:13, 02:13-02:23, 02:29-02:36, 02:36-02:41, 02:59-03:08, 06:30-06:46  \n\n## 动画配置流程\n\n```mermaid\nflowchart TD\n    E[\"eyes AnimatedSprite2D\\n[03:16-03:28]\"] --> SF[\"创建 SpriteFrames\\n[03:20]\"]\n    SF --> ID[\"IdleDown 动画\\n[03:24]\"]\n    ID --> FR[\"水平帧数 20\\n[03:53]\"]\n    ID --> DIR[\"4 行: 下 左 右 上\\n[03:43-03:51]\"]\n    ID --> FPS[\"帧率 10\\n[04:06]\"]\n    ID --> CP[\"复制为 IdleLeft\\n[04:18-04:24]\"]\n    CP --> CP2[\"复制 6 次得到所有方向动画\\n[04:26-04:33]\"]\n    CP2 --> RUN[\"跑步动画配置\\n[05:00-05:16]\"]\n    RUN --> HFR[\"水平帧数 8\\n[05:07]\"]\n    RUN --> FRAMES[\"选择对应行添加帧\\n[05:16]\"]\n```\n03:16-03:28, 03:20, 03:24, 03:43-03:51, 03:53, 04:06, 04:18-04:24, 04:26-04:33, 05:00-05:16, 05:07  \n\n## 脚本与模块化\n\n```mermaid\nflowchart TD\n    PS[\"player 场景模块化\\n[08:02-08:10]\"] --> SC[\"添加脚本 player.gd\\n[08:26-08:33]\"]\n    SC --> CL[\"定义类\"]\n    CL --> VAR[\"私有变量 _bodySprite, _headSprite …\\n[08:40-09:13]\"]\n    VAR --> ARR[\"sprites 数组 (AnimatedSprite2D 列表)\\n[09:23-09:29]\"]\n    ARR --> RD[\"_ready() 函数\\n[09:32-09:40]\"]\n    RD --> PA[\"PlayAnimation(name) 遍历 sprites 播放动画\\n[09:47-09:52]\"]\n    PA --> CALL[\"在 _ready 中调用 PlayAnimation('IdleDown')\\n[09:58-10:04]\"]\n```\n08:02-08:10, 08:26-08:33, 08:40-09:13, 09:23-09:29, 09:32-09:40, 09:47-09:52, 09:58-10:04  \n\n## 测试、相机与最终展示\n\n```mermaid\nflowchart TD\n    RUN1[\"运行项目选择主场景\\n[07:05-07:10]\"] --> VISS[\"角色仅左上角可见\"]\n    VISS --> CAM[\"添加 Camera2D\\n[07:24-07:32]\"]\n    CAM --> CENTER[\"角色居中\"]\n    CENTER --> SCALE[\"缩放 15\\n[07:36-07:41]\"]\n    SCALE --> RUN2[\"再次运行项目\\n[07:41]\"]\n    RUN2 --> SHOW[\"角色完整可见\\n[10:07-10:13]\"]\n```\n07:05-07:10, 07:24-07:32, 07:36-07:41, 10:07-10:13  ",
+      "diagrams": [
+        {
+          "title": "项目初始化与设置",
+          "code": "flowchart TD\n    G[\"Godot 4.5.1\\n[00:22]\"] --> D[\"下载资源包\\n[00:33]\"]\n    D --> P[\"创建新项目\\n[00:40]\"]\n    P --> I[\"导入 assets 文件夹\\n[00:50]\"]\n    I --> S[\"项目设置\"]\n    S --> R[\"分辨率 1920x1080\\n[01:09-01:15]\"]\n    S --> L[\"拉伸模式 '画布项'、宽高比 '扩展'\\n[01:22]\"]\n    S --> T[\"纹理过滤 '最近邻'\\n[01:34-01:37]\"]\n    R --> L\n    L --> T"
+        },
+        {
+          "title": "角色节点结构",
+          "code": "flowchart TD\n    M[\"main (2D根节点)\\n[01:42-01:48]\"] --> PL[\"player (CharacterBody2D)\\n[02:04-02:13]\"]\n    PL --> CS[\"CollisionShape2D\\n[02:13-02:23]\"]\n    CS --> CSH[\"CircleShape2D\\n[02:29-02:36]\"]\n    PL --> SK[\"Skeleton (Node2D)\\n[02:36-02:41]\"]\n    SK --> AS1[\"AnimatedSprite2D - armor\"]\n    SK --> AS2[\"AnimatedSprite2D - head\"]\n    SK --> AS3[\"AnimatedSprite2D - hair\"]\n    SK --> AS4[\"AnimatedSprite2D - eyes\\n[02:59-03:08]\"]\n    SK --> AS5[\"AnimatedSprite2D - weapon\"]\n    SK --> AS6[\"AnimatedSprite2D - body\"]\n    SK --> SH[\"Shadow Sprite2D\\n[06:30-06:46]\"]"
+        },
+        {
+          "title": "动画配置流程",
+          "code": "flowchart TD\n    E[\"eyes AnimatedSprite2D\\n[03:16-03:28]\"] --> SF[\"创建 SpriteFrames\\n[03:20]\"]\n    SF --> ID[\"IdleDown 动画\\n[03:24]\"]\n    ID --> FR[\"水平帧数 20\\n[03:53]\"]\n    ID --> DIR[\"4 行: 下 左 右 上\\n[03:43-03:51]\"]\n    ID --> FPS[\"帧率 10\\n[04:06]\"]\n    ID --> CP[\"复制为 IdleLeft\\n[04:18-04:24]\"]\n    CP --> CP2[\"复制 6 次得到所有方向动画\\n[04:26-04:33]\"]\n    CP2 --> RUN[\"跑步动画配置\\n[05:00-05:16]\"]\n    RUN --> HFR[\"水平帧数 8\\n[05:07]\"]\n    RUN --> FRAMES[\"选择对应行添加帧\\n[05:16]\"]"
+        },
+        {
+          "title": "脚本与模块化",
+          "code": "flowchart TD\n    PS[\"player 场景模块化\\n[08:02-08:10]\"] --> SC[\"添加脚本 player.gd\\n[08:26-08:33]\"]\n    SC --> CL[\"定义类\"]\n    CL --> VAR[\"私有变量 _bodySprite, _headSprite …\\n[08:40-09:13]\"]\n    VAR --> ARR[\"sprites 数组 (AnimatedSprite2D 列表)\\n[09:23-09:29]\"]\n    ARR --> RD[\"_ready() 函数\\n[09:32-09:40]\"]\n    RD --> PA[\"PlayAnimation(name) 遍历 sprites 播放动画\\n[09:47-09:52]\"]\n    PA --> CALL[\"在 _ready 中调用 PlayAnimation('IdleDown')\\n[09:58-10:04]\"]"
+        },
+        {
+          "title": "测试、相机与最终展示",
+          "code": "flowchart TD\n    RUN1[\"运行项目选择主场景\\n[07:05-07:10]\"] --> VISS[\"角色仅左上角可见\"]\n    VISS --> CAM[\"添加 Camera2D\\n[07:24-07:32]\"]\n    CAM --> CENTER[\"角色居中\"]\n    CENTER --> SCALE[\"缩放 15\\n[07:36-07:41]\"]\n    SCALE --> RUN2[\"再次运行项目\\n[07:41]\"]\n    RUN2 --> SHOW[\"角色完整可见\\n[10:07-10:13]\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T06:52:33+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 角色生成器教程 - 知识图谱\n\n## 项目初始化与设置\n\n```mermaid\nflowchart TD\n    G[\"Godot 4.5.1\\n[00:22]\"] --> D[\"下载资源包\\n[00:33]\"]\n    D --> P[\"创建新项目\\n[00:40]\"]\n    P --> I[\"导入 assets 文件夹\\n[00:50]\"]\n    I --> S[\"项目设置\"]\n    S --> R[\"分辨率 1920x1080\\n[01:09-01:15]\"]\n    S --> L[\"拉伸模式 '画布项'、宽高比 '扩展'\\n[01:22]\"]\n    S --> T[\"纹理过滤 '最近邻'\\n[01:34-01:37]\"]\n    R --> L\n    L --> T\n```\n00:22, 00:33, 00:40, 00:50, 01:09-01:15, 01:22, 01:34-01:37  \n\n## 角色节点结构\n\n```mermaid\nflowchart TD\n    M[\"main (2D根节点)\\n[01:42-01:48]\"] --> PL[\"player (CharacterBody2D)\\n[02:04-02:13]\"]\n    PL --> CS[\"CollisionShape2D\\n[02:13-02:23]\"]\n    CS --> CSH[\"CircleShape2D\\n[02:29-02:36]\"]\n    PL --> SK[\"Skeleton (Node2D)\\n[02:36-02:41]\"]\n    SK --> AS1[\"AnimatedSprite2D - armor\"]\n    SK --> AS2[\"AnimatedSprite2D - head\"]\n    SK --> AS3[\"AnimatedSprite2D - hair\"]\n    SK --> AS4[\"AnimatedSprite2D - eyes\\n[02:59-03:08]\"]\n    SK --> AS5[\"AnimatedSprite2D - weapon\"]\n    SK --> AS6[\"AnimatedSprite2D - body\"]\n    SK --> SH[\"Shadow Sprite2D\\n[06:30-06:46]\"]\n```\n01:42-01:48, 02:04-02:13, 02:13-02:23, 02:29-02:36, 02:36-02:41, 02:59-03:08, 06:30-06:46  \n\n## 动画配置流程\n\n```mermaid\nflowchart TD\n    E[\"eyes AnimatedSprite2D\\n[03:16-03:28]\"] --> SF[\"创建 SpriteFrames\\n[03:20]\"]\n    SF --> ID[\"IdleDown 动画\\n[03:24]\"]\n    ID --> FR[\"水平帧数 20\\n[03:53]\"]\n    ID --> DIR[\"4 行: 下 左 右 上\\n[03:43-03:51]\"]\n    ID --> FPS[\"帧率 10\\n[04:06]\"]\n    ID --> CP[\"复制为 IdleLeft\\n[04:18-04:24]\"]\n    CP --> CP2[\"复制 6 次得到所有方向动画\\n[04:26-04:33]\"]\n    CP2 --> RUN[\"跑步动画配置\\n[05:00-05:16]\"]\n    RUN --> HFR[\"水平帧数 8\\n[05:07]\"]\n    RUN --> FRAMES[\"选择对应行添加帧\\n[05:16]\"]\n```\n03:16-03:28, 03:20, 03:24, 03:43-03:51, 03:53, 04:06, 04:18-04:24, 04:26-04:33, 05:00-05:16, 05:07  \n\n## 脚本与模块化\n\n```mermaid\nflowchart TD\n    PS[\"player 场景模块化\\n[08:02-08:10]\"] --> SC[\"添加脚本 player.gd\\n[08:26-08:33]\"]\n    SC --> CL[\"定义类\"]\n    CL --> VAR[\"私有变量 _bodySprite, _headSprite …\\n[08:40-09:13]\"]\n    VAR --> ARR[\"sprites 数组 (AnimatedSprite2D 列表)\\n[09:23-09:29]\"]\n    ARR --> RD[\"_ready() 函数\\n[09:32-09:40]\"]\n    RD --> PA[\"PlayAnimation(name) 遍历 sprites 播放动画\\n[09:47-09:52]\"]\n    PA --> CALL[\"在 _ready 中调用 PlayAnimation('IdleDown')\\n[09:58-10:04]\"]\n```\n08:02-08:10, 08:26-08:33, 08:40-09:13, 09:23-09:29, 09:32-09:40, 09:47-09:52, 09:58-10:04  \n\n## 测试、相机与最终展示\n\n```mermaid\nflowchart TD\n    RUN1[\"运行项目选择主场景\\n[07:05-07:10]\"] --> VISS[\"角色仅左上角可见\"]\n    VISS --> CAM[\"添加 Camera2D\\n[07:24-07:32]\"]\n    CAM --> CENTER[\"角色居中\"]\n    CENTER --> SCALE[\"缩放 15\\n[07:36-07:41]\"]\n    SCALE --> RUN2[\"再次运行项目\\n[07:41]\"]\n    RUN2 --> SHOW[\"角色完整可见\\n[10:07-10:13]\"]\n```\n07:05-07:10, 07:24-07:32, 07:36-07:41, 10:07-10:13  ",
+  "diagrams": [
+    {
+      "title": "项目初始化与设置",
+      "code": "flowchart TD\n    G[\"Godot 4.5.1\\n[00:22]\"] --> D[\"下载资源包\\n[00:33]\"]\n    D --> P[\"创建新项目\\n[00:40]\"]\n    P --> I[\"导入 assets 文件夹\\n[00:50]\"]\n    I --> S[\"项目设置\"]\n    S --> R[\"分辨率 1920x1080\\n[01:09-01:15]\"]\n    S --> L[\"拉伸模式 '画布项'、宽高比 '扩展'\\n[01:22]\"]\n    S --> T[\"纹理过滤 '最近邻'\\n[01:34-01:37]\"]\n    R --> L\n    L --> T"
+    },
+    {
+      "title": "角色节点结构",
+      "code": "flowchart TD\n    M[\"main (2D根节点)\\n[01:42-01:48]\"] --> PL[\"player (CharacterBody2D)\\n[02:04-02:13]\"]\n    PL --> CS[\"CollisionShape2D\\n[02:13-02:23]\"]\n    CS --> CSH[\"CircleShape2D\\n[02:29-02:36]\"]\n    PL --> SK[\"Skeleton (Node2D)\\n[02:36-02:41]\"]\n    SK --> AS1[\"AnimatedSprite2D - armor\"]\n    SK --> AS2[\"AnimatedSprite2D - head\"]\n    SK --> AS3[\"AnimatedSprite2D - hair\"]\n    SK --> AS4[\"AnimatedSprite2D - eyes\\n[02:59-03:08]\"]\n    SK --> AS5[\"AnimatedSprite2D - weapon\"]\n    SK --> AS6[\"AnimatedSprite2D - body\"]\n    SK --> SH[\"Shadow Sprite2D\\n[06:30-06:46]\"]"
+    },
+    {
+      "title": "动画配置流程",
+      "code": "flowchart TD\n    E[\"eyes AnimatedSprite2D\\n[03:16-03:28]\"] --> SF[\"创建 SpriteFrames\\n[03:20]\"]\n    SF --> ID[\"IdleDown 动画\\n[03:24]\"]\n    ID --> FR[\"水平帧数 20\\n[03:53]\"]\n    ID --> DIR[\"4 行: 下 左 右 上\\n[03:43-03:51]\"]\n    ID --> FPS[\"帧率 10\\n[04:06]\"]\n    ID --> CP[\"复制为 IdleLeft\\n[04:18-04:24]\"]\n    CP --> CP2[\"复制 6 次得到所有方向动画\\n[04:26-04:33]\"]\n    CP2 --> RUN[\"跑步动画配置\\n[05:00-05:16]\"]\n    RUN --> HFR[\"水平帧数 8\\n[05:07]\"]\n    RUN --> FRAMES[\"选择对应行添加帧\\n[05:16]\"]"
+    },
+    {
+      "title": "脚本与模块化",
+      "code": "flowchart TD\n    PS[\"player 场景模块化\\n[08:02-08:10]\"] --> SC[\"添加脚本 player.gd\\n[08:26-08:33]\"]\n    SC --> CL[\"定义类\"]\n    CL --> VAR[\"私有变量 _bodySprite, _headSprite …\\n[08:40-09:13]\"]\n    VAR --> ARR[\"sprites 数组 (AnimatedSprite2D 列表)\\n[09:23-09:29]\"]\n    ARR --> RD[\"_ready() 函数\\n[09:32-09:40]\"]\n    RD --> PA[\"PlayAnimation(name) 遍历 sprites 播放动画\\n[09:47-09:52]\"]\n    PA --> CALL[\"在 _ready 中调用 PlayAnimation('IdleDown')\\n[09:58-10:04]\"]"
+    },
+    {
+      "title": "测试、相机与最终展示",
+      "code": "flowchart TD\n    RUN1[\"运行项目选择主场景\\n[07:05-07:10]\"] --> VISS[\"角色仅左上角可见\"]\n    VISS --> CAM[\"添加 Camera2D\\n[07:24-07:32]\"]\n    CAM --> CENTER[\"角色居中\"]\n    CENTER --> SCALE[\"缩放 15\\n[07:36-07:41]\"]\n    SCALE --> RUN2[\"再次运行项目\\n[07:41]\"]\n    RUN2 --> SHOW[\"角色完整可见\\n[10:07-10:13]\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T06:52:33+00:00"
+}

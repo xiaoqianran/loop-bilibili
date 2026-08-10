@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1HSEb6TEyF",
+  "title": "我建议agent工具用flash模型，不要迷信pro模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 855,
+  "text": "养虾养马和其他A制的工具不一定得用pro模型\nflash版反而会更好\n不是因为flash便宜\n速度快\n就单能力角度来说也是flash模型能力更好\n就比如open cloud已经加DVCV4flash\n设为新用户的默认模型\n我最近测试了二组大模型\n一个是deep sic v4flash和V4pro\n一个是小米MIOV2.5和V2.5pro\n测完以后\n我最大的感受是\n很多人对pro有一种天然滤镜\n好像只要名字里带pro就一定更聪明\n更高级\n更适合干活\n但实际用下来不是这样\n很多日常任务里pro反而不如标准版或者flash好用\n我这次测试里有些题是非常明确的规则题\n比如让它基于CLOUD\nE点MD和我的工作内容和触发词语\nMD敏捷系统规则必须提到删除文件\n二次确认\n必须指出已使用默认不检索\n必须区分多个账号风格\n这种题flash反而更靠谱\n它不会乱扩展\n不会把别的文档里的规则塞进来\n也不会把自己的推断说成硬规则\npro呢他会给你一份看起来很完整的答案\n但有点喜欢脑补\n他会推测一些结论出来\n把这些结论当做规则\n比如有些规则原文没有写\n他也会顺手补进去\n你问两个文件\n他可能把别的sop\n别的系统文档甚至自己的经验一起放进去\n你可以理解为DISCIPV4\nflash和小米米OV2.5更守规则\n而pro喜欢自作主张\n但我需要他先守规则再发挥\n如果第一步就越界\n后面写的再漂亮也不可靠\npro有个典型问题\n它更像在理解系统\n而不是逐条核对系统\n这就是我所说的\npro更喜欢自由发挥\n喜欢多想一点\n然后把这些多想的内容当作规则\n但那种比较深度的问题还是pro做得更好\n譬如我让AI基于多份文档和教程做分析整理\n复盘展望\n这个时候pro做的更好\n标准版和flash就差一些\n所以你在使用open cloud\nPurse\nCloud code\nCodex\nwork body等等各种agent软件的时候\n优先用DSTV4\nFlash neo v2.5\n这样的快速模型\n在长推理\n深度分析等困难问题上\n再让pro出马",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HSEb6TEyF",
+  "published_at": "1780829085",
+  "fetched_at": "2026-08-09T01:48:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T01:49:08+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T01:49:08+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1fvGC6HEY6",
+  "title": "操作系统级 AI Agent，正在重新定义电脑的使用方式",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1573,
+  "text": "我们每天都在用AI提问\n等待复制修改\n他很聪明\n但大多数时候他只是一个问答助手\n现在有个AI能够理解你的需求\n主动调用工具自动完成任务\n这就是flow AI p c\n让你的电脑开始主动工作\n不需要环境配置\n不需要API p flow a IP c已内置多种模型\n开箱即用\n从打开的第一秒就能为你工作\n覆盖日常办公内容\n创作信息\n收集写作编程等场景\n打开agent store\n不需要从零设计复杂流程\n在这里你可以快速找到想要落地的AI场景\nPPT设计\n股票分析\n跨境电商操盘应有尽有\n一键安装就能立即开始使用agent\n安装完毕给他吩咐第一个任务\n分析一下昨天的绿肥红瘦\n理解需求\n调用skills收集信息\n汇总信息输出结果\n在flow AI p c中\n你不需要手动寻找和安装skills\nAI会理解你的需求\n选择需要的skills\n自动安装\n自动调用\n你只需要表达需求\n在flow AI p c\n你还可以上传你的各种资料\n建立属于自己的AAI知识库\n支持markdown\nPdf word\nPowerpoint\nexcel等格式内容\n知识库内容支持一键绑定任意agent\n随后便可开始对话\n无论是会议记录项目文档还是团队经验\n都可以随时获取\nFlow a i p c\n作为一款全场景覆盖的本地AI智能体\n文声视频自然不在话下\n我们接入了SEDANCE2.0视频模型\n你可以自定义视频尺寸时长\n上传逐帧图片\n生成完整的视频\n还能一键润色提示词\n支持同时生成多个视频\n随后提交\n等待视频生成\n恋爱不只是回答问题\n而是能够理解你的目标\n主动调用工具\n自动完成任务\nFlow e i i pc\n让你的电脑开始主动工作\n接入频道\n你可以通过手机的app实现对电脑的绝对控制\n即使你的工作电脑不在身边\n也能通过手机远程遥控一键扫码\n快速接入你的微信\n并且支持绑定任意一个agent\n便可以通过手机微信发号施令\n设置定时任务\n让AI持续工作\n榨干AI的所有价值\n比如每天一个早间晨报\n晚间工作总结还能推送到你的手机app\n会议纪要一键开始录音\n自定义参会人员会议笔记\n会议结束\n一键生成\n会议总结\n会议关键词\n待办事项一目了然\nAI操作电脑有非常多的安全隐患\n但在flow AI p c我们配备了完善的安全机制\n支持设置重要文件夹保护\n你还可以设置自己喜欢的主题色和语言\n但是你以为这就完了吗\nPERSMAN牧马人本地推理引擎\n我们基于大家不同的使用场景\n对模型进行了详细分类\n包含智能对话\n图片生成\nAI虚拟人物翻译\n播客文章创作以及NPU专有模型\n你无需了解每个模型参数代表的含义\n以及是否能运行在你的设备上\nHZ们会根据你的硬件配置推荐合适的模型\n一键下载模型\n下载好的模型一键启动\n可设置上下文长度及思考模式\n模型启动后\n在HERSMAN可以通过资源监控查看使用情况\n打开应用\n快速使用本地模型能力\n一键切换本地模型\n开始对话\n一键查看token生成速度\n本地文生图\n无拘无束\n无忧无虑\n支持设定图片尺寸风格等\n除此之外还支持图生图\n图片编辑等更多玩法\n牧马人提供OpenAI以及ANTHROPIC的公共接口API\n这意味着你通过牧马人部署的本地模型\n可以被第三方软件调用\n充分利用你的本地算力资源\n比如在flow AI pc\n通过牧马人部署的本地模型\n只需在模型切换区域一键切换即可\n接下来便可实现本地0token支出\n拥有属于你的AI员工\n如果你不清楚flow u i pc能做什么\n问他就可以了\n注意哈\n在flow AI p c\n使用本地模型和云端模型能做的事情是一样的\n如果你的设备性能好\n并且有隐私要求\n推荐使用本地模型flow AI p c\n不是一问一答的AI助手\n是一个真正的AI员工\n立即安装FA IP c\n让你的电脑开始主动为你工作",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1fvGC6HEY6",
+  "published_at": "1779876000",
+  "fetched_at": "2026-08-08T03:35:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Flow AI PC 知识图谱\n\n## 总览结构\n```mermaid\nflowchart TD\n    U[\"用户\"] -->|发出需求| AI[\"AI Agent\"]\n    AI -->|查询| KB[\"知识库\"]\n    AI -->|获取场景| AS[\"Agent Store\"]\n    AS -->|提供| SK[\"Skills\"]\n    AI -->|调用| VM[\"视频模块 (SEDANCE2.0)\"]\n    AI -->|远程交互| RC[\"手机 App 远程控制\"]\n    AI -->|设置| SC[\"调度器 (定时任务)\"]\n    AI -->|安全防护| SM[\"安全机制\"]\n    AI -->|模型选择| MS[\"模型选择器 (HZ)\"]\n    MS -->|推荐| LM[\"本地模型\"]\n    MS -->|推荐| CM[\"云端模型\"]\n    LM -->|下载/启动| MDL[\"模型下载 & 启动\"]\n    CM -->|调用| API[\"OpenAI / ANTHROPIC 公共 API\"]\n    MDL -->|供给| AI\n    API -->|供给| AI\n    AI -->|输出结果| U\n```\n\n## 任务执行流程\n```mermaid\nflowchart TD\n    R1[\"用户请求\"] --> R2[\"需求理解\"]\n    R2 --> R3[\"技能选择\"]\n    R3 --> R4[\"技能自动安装\"]\n    R4 --> R5[\"技能调用\"]\n    R5 --> R6[\"数据收集\"]\n    R6 --> R7[\"结果汇总\"]\n    R7 --> R8[\"向用户输出\"]\n```\n\n## 模型管理与切换\n```mermaid\nflowchart LR\n    HC[\"硬件配置检测\"] --> HR[\"HZ 推荐模型\"]\n    HR --> MC[\"模型分类\"]\n    MC --> MD[\"模型下载\"]\n    MD --> MS[\"模型启动\"]\n    MS --> CL[\"上下文长度设置\"]\n    MS --> TM[\"思考模式设置\"]\n    MS --> TS[\"Token 生成速度查看\"]\n    MS --> LM[\"本地模型使用\"]\n    MS --> CM[\"云端模型使用\"]\n    LM --> API[\"本地模型 API 暴露\"]\n    CM --> API[\"云端模型 API 暴露\"]\n    API --> TS[\"供第三方软件调用\"]\n```\n\n## 远程控制与定时任务\n```mermaid\nflowchart TD\n    PA[\"手机 App\"] --> QR[\"扫码连接 PC\"]\n    QR --> PC[\"电脑端 Flow AI PC\"]\n    PC --> BA[\"绑定 Agent\"]\n    BA --> CMD[\"发送指令/任务\"]\n    CMD --> AI[\"AI 执行\"]\n    AI --> SC[\"设置定时任务\"]\n    SC --> MB[\"每日早间晨报\"]\n    SC --> ES[\"晚间工作总结\"]\n    MB --> PA\n    ES --> PA\n    AI --> SA[\"安全认证\"]\n    SA --> PC\n```",
+      "diagrams": [
+        {
+          "title": "总览结构",
+          "code": "flowchart TD\n    U[\"用户\"] -->|发出需求| AI[\"AI Agent\"]\n    AI -->|查询| KB[\"知识库\"]\n    AI -->|获取场景| AS[\"Agent Store\"]\n    AS -->|提供| SK[\"Skills\"]\n    AI -->|调用| VM[\"视频模块 (SEDANCE2.0)\"]\n    AI -->|远程交互| RC[\"手机 App 远程控制\"]\n    AI -->|设置| SC[\"调度器 (定时任务)\"]\n    AI -->|安全防护| SM[\"安全机制\"]\n    AI -->|模型选择| MS[\"模型选择器 (HZ)\"]\n    MS -->|推荐| LM[\"本地模型\"]\n    MS -->|推荐| CM[\"云端模型\"]\n    LM -->|下载/启动| MDL[\"模型下载 & 启动\"]\n    CM -->|调用| API[\"OpenAI / ANTHROPIC 公共 API\"]\n    MDL -->|供给| AI\n    API -->|供给| AI\n    AI -->|输出结果| U"
+        },
+        {
+          "title": "任务执行流程",
+          "code": "flowchart TD\n    R1[\"用户请求\"] --> R2[\"需求理解\"]\n    R2 --> R3[\"技能选择\"]\n    R3 --> R4[\"技能自动安装\"]\n    R4 --> R5[\"技能调用\"]\n    R5 --> R6[\"数据收集\"]\n    R6 --> R7[\"结果汇总\"]\n    R7 --> R8[\"向用户输出\"]"
+        },
+        {
+          "title": "模型管理与切换",
+          "code": "flowchart LR\n    HC[\"硬件配置检测\"] --> HR[\"HZ 推荐模型\"]\n    HR --> MC[\"模型分类\"]\n    MC --> MD[\"模型下载\"]\n    MD --> MS[\"模型启动\"]\n    MS --> CL[\"上下文长度设置\"]\n    MS --> TM[\"思考模式设置\"]\n    MS --> TS[\"Token 生成速度查看\"]\n    MS --> LM[\"本地模型使用\"]\n    MS --> CM[\"云端模型使用\"]\n    LM --> API[\"本地模型 API 暴露\"]\n    CM --> API[\"云端模型 API 暴露\"]\n    API --> TS[\"供第三方软件调用\"]"
+        },
+        {
+          "title": "远程控制与定时任务",
+          "code": "flowchart TD\n    PA[\"手机 App\"] --> QR[\"扫码连接 PC\"]\n    QR --> PC[\"电脑端 Flow AI PC\"]\n    PC --> BA[\"绑定 Agent\"]\n    BA --> CMD[\"发送指令/任务\"]\n    CMD --> AI[\"AI 执行\"]\n    AI --> SC[\"设置定时任务\"]\n    SC --> MB[\"每日早间晨报\"]\n    SC --> ES[\"晚间工作总结\"]\n    MB --> PA\n    ES --> PA\n    AI --> SA[\"安全认证\"]\n    SA --> PC"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T03:35:46+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Flow AI PC 知识图谱\n\n## 总览结构\n```mermaid\nflowchart TD\n    U[\"用户\"] -->|发出需求| AI[\"AI Agent\"]\n    AI -->|查询| KB[\"知识库\"]\n    AI -->|获取场景| AS[\"Agent Store\"]\n    AS -->|提供| SK[\"Skills\"]\n    AI -->|调用| VM[\"视频模块 (SEDANCE2.0)\"]\n    AI -->|远程交互| RC[\"手机 App 远程控制\"]\n    AI -->|设置| SC[\"调度器 (定时任务)\"]\n    AI -->|安全防护| SM[\"安全机制\"]\n    AI -->|模型选择| MS[\"模型选择器 (HZ)\"]\n    MS -->|推荐| LM[\"本地模型\"]\n    MS -->|推荐| CM[\"云端模型\"]\n    LM -->|下载/启动| MDL[\"模型下载 & 启动\"]\n    CM -->|调用| API[\"OpenAI / ANTHROPIC 公共 API\"]\n    MDL -->|供给| AI\n    API -->|供给| AI\n    AI -->|输出结果| U\n```\n\n## 任务执行流程\n```mermaid\nflowchart TD\n    R1[\"用户请求\"] --> R2[\"需求理解\"]\n    R2 --> R3[\"技能选择\"]\n    R3 --> R4[\"技能自动安装\"]\n    R4 --> R5[\"技能调用\"]\n    R5 --> R6[\"数据收集\"]\n    R6 --> R7[\"结果汇总\"]\n    R7 --> R8[\"向用户输出\"]\n```\n\n## 模型管理与切换\n```mermaid\nflowchart LR\n    HC[\"硬件配置检测\"] --> HR[\"HZ 推荐模型\"]\n    HR --> MC[\"模型分类\"]\n    MC --> MD[\"模型下载\"]\n    MD --> MS[\"模型启动\"]\n    MS --> CL[\"上下文长度设置\"]\n    MS --> TM[\"思考模式设置\"]\n    MS --> TS[\"Token 生成速度查看\"]\n    MS --> LM[\"本地模型使用\"]\n    MS --> CM[\"云端模型使用\"]\n    LM --> API[\"本地模型 API 暴露\"]\n    CM --> API[\"云端模型 API 暴露\"]\n    API --> TS[\"供第三方软件调用\"]\n```\n\n## 远程控制与定时任务\n```mermaid\nflowchart TD\n    PA[\"手机 App\"] --> QR[\"扫码连接 PC\"]\n    QR --> PC[\"电脑端 Flow AI PC\"]\n    PC --> BA[\"绑定 Agent\"]\n    BA --> CMD[\"发送指令/任务\"]\n    CMD --> AI[\"AI 执行\"]\n    AI --> SC[\"设置定时任务\"]\n    SC --> MB[\"每日早间晨报\"]\n    SC --> ES[\"晚间工作总结\"]\n    MB --> PA\n    ES --> PA\n    AI --> SA[\"安全认证\"]\n    SA --> PC\n```",
+  "diagrams": [
+    {
+      "title": "总览结构",
+      "code": "flowchart TD\n    U[\"用户\"] -->|发出需求| AI[\"AI Agent\"]\n    AI -->|查询| KB[\"知识库\"]\n    AI -->|获取场景| AS[\"Agent Store\"]\n    AS -->|提供| SK[\"Skills\"]\n    AI -->|调用| VM[\"视频模块 (SEDANCE2.0)\"]\n    AI -->|远程交互| RC[\"手机 App 远程控制\"]\n    AI -->|设置| SC[\"调度器 (定时任务)\"]\n    AI -->|安全防护| SM[\"安全机制\"]\n    AI -->|模型选择| MS[\"模型选择器 (HZ)\"]\n    MS -->|推荐| LM[\"本地模型\"]\n    MS -->|推荐| CM[\"云端模型\"]\n    LM -->|下载/启动| MDL[\"模型下载 & 启动\"]\n    CM -->|调用| API[\"OpenAI / ANTHROPIC 公共 API\"]\n    MDL -->|供给| AI\n    API -->|供给| AI\n    AI -->|输出结果| U"
+    },
+    {
+      "title": "任务执行流程",
+      "code": "flowchart TD\n    R1[\"用户请求\"] --> R2[\"需求理解\"]\n    R2 --> R3[\"技能选择\"]\n    R3 --> R4[\"技能自动安装\"]\n    R4 --> R5[\"技能调用\"]\n    R5 --> R6[\"数据收集\"]\n    R6 --> R7[\"结果汇总\"]\n    R7 --> R8[\"向用户输出\"]"
+    },
+    {
+      "title": "模型管理与切换",
+      "code": "flowchart LR\n    HC[\"硬件配置检测\"] --> HR[\"HZ 推荐模型\"]\n    HR --> MC[\"模型分类\"]\n    MC --> MD[\"模型下载\"]\n    MD --> MS[\"模型启动\"]\n    MS --> CL[\"上下文长度设置\"]\n    MS --> TM[\"思考模式设置\"]\n    MS --> TS[\"Token 生成速度查看\"]\n    MS --> LM[\"本地模型使用\"]\n    MS --> CM[\"云端模型使用\"]\n    LM --> API[\"本地模型 API 暴露\"]\n    CM --> API[\"云端模型 API 暴露\"]\n    API --> TS[\"供第三方软件调用\"]"
+    },
+    {
+      "title": "远程控制与定时任务",
+      "code": "flowchart TD\n    PA[\"手机 App\"] --> QR[\"扫码连接 PC\"]\n    QR --> PC[\"电脑端 Flow AI PC\"]\n    PC --> BA[\"绑定 Agent\"]\n    BA --> CMD[\"发送指令/任务\"]\n    CMD --> AI[\"AI 执行\"]\n    AI --> SC[\"设置定时任务\"]\n    SC --> MB[\"每日早间晨报\"]\n    SC --> ES[\"晚间工作总结\"]\n    MB --> PA\n    ES --> PA\n    AI --> SA[\"安全认证\"]\n    SA --> PC"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T03:35:46+00:00"
+}

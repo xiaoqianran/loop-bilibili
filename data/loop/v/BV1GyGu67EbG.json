@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1GyGu67EbG",
+  "title": "不用头文件也能跑C++程序？评论区这行代码藏了什么黑科技",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 543,
+  "text": "上次我发了这个视频\n说了一下我认为的和low world的最短形态\n评论区就出现了很多人给出的更短方案\n我们接下来一起看看都有哪些\n这个评论是用EXTERNC解决名称修饰问题\n但不太规范\n现在已经将代码复制到了MSDC编译器环境运行\n看看效果没有报错\n并且成功运行这个方案验证可行\n这个评论不是MSDC环境下的原理\n是直接输出文件名\n但我们可以试试MSVC编译器环境下行不行\n现在已经将代码复制到了编译器内\n可惜报错了\n但没事\n我们可以给它也加上x turn c开始编译成功了\n这里文件名没有改\n如果改成hell word就能正常输出了\n但还有个问题就是程序输出的并不是文件名\n而是文件路径\n这是一个小瑕疵\n之后的评论\n有一些就是说return0可以去除\n首先main函数的rent0在C加加中确实可以忽略\n但编程习惯最好还是在末尾写上return0\n而且写不写return0\n对本程序行数并没有影响\n最后一个讨论比较多的就是这条评论\n我在上次视频中确实说的不明确\n说的是两个软件\n没有说编译器\n但Deft c加加和vs20212的编译器确实不一样\n可我测试的两个编译器的确差不多\n总结一下\n现在在MSDC下成功运行的有两个\n还有一个方案没有成功\n视频中未展示\n在此感谢评论区的各位大佬",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1GyGu67EbG",
+  "published_at": "1785548910",
+  "fetched_at": "2026-08-06T21:32:31+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# C++ 无头文件运行方案知识图谱\n\n## 方案概览\n```mermaid\nflowchart TD\n    A1[\"使用 EXTERN \\\"C\\\" 解决名称修饰\"] --> A2[\"不符合标准规范\"]\n    A1 --> A3[\"在 MSDC 编译器环境下成功运行\"]\n    A4[\"直接输出文件名（原理）\"] --> A5[\"在 MSVC 编译器环境测试\"]\n    A5 --> A6[\"首次报错\"]\n    A6 --> A7[\"加入 EXTERN \\\"C\\\" 后编译成功\"]\n    A7 --> A8[\"文件名保持不变\"]\n    A8 --> A9[\"改为 \\\"hell word\\\" 可正常输出\"]\n    A9 --> A10[\"实际输出为文件路径（小瑕疵）\"]\n    A11[\"return 0 可省略\"] --> A12[\"保留 return 0 为编程习惯\"]\n    A12 --> A13[\"对行数无影响\"]\n    A13 --> A14[\"对程序功能无影响\"]\n    A15[\"Deft C++ 与 VS20212 编译器差异\"] --> A16[\"测试结果相近\"]\n    A3 --> A17[\"MSDC 下成功方案数 2，未成功 1\"]\n    A7 --> A17\n```\n<!-- [BV1GyGu67EbG P1 00:10] EXTERN \"C\" 解决名称修饰问题 -->\n<!-- [BV1GyGu67EbG P1 00:14] 方案不符合标准规范 -->\n<!-- [BV1GyGu67EbG P1 00:21] 在 MSDC 编译器环境下成功运行 -->\n<!-- [BV1GyGu67EbG P1 00:27] 直接输出文件名（原理） -->\n<!-- [BV1GyGu67EbG P1 00:31] 在 MSVC 编译器环境测试 -->\n<!-- [BV1GyGu67EbG P1 00:39] MSVC 首次报错 -->\n<!-- [BV1GyGu67EbG P1 00:42] 加入 EXTERN \"C\" 后编译成功 -->\n<!-- [BV1GyGu67EbG P1 00:47] 文件名保持不变 -->\n<!-- [BV1GyGu67EbG P1 00:49] 改为 \"hell word\" 可正常输出 -->\n<!-- [BV1GyGu67EbG P1 00:56] 实际输出为文件路径（小瑕疵） -->\n<!-- [BV1GyGu67EbG P1 01:01] return 0 可省略 -->\n<!-- [BV1GyGu67EbG P1 01:08] 保留 return 0 为编程习惯 -->\n<!-- [BV1GyGu67EbG P1 01:13] 对行数无影响 -->\n<!-- [BV1GyGu67EbG P1 01:21] Deft C++ 与 VS20212 编译器差异 -->\n<!-- [BV1GyGu67EbG P1 01:28] 两者测试结果相近 -->\n<!-- [BV1GyGu67EbG P1 01:31] MSDC 下成功方案数 2，未成功 1 -->\n\n## 编译环境差异与影响\n```mermaid\nflowchart LR\n    B1[\"MSDC 编译器\"] --> B4[\"使用 EXTERN \\\"C\\\" 解决名称修饰\"]\n    B2[\"MSVC 编译器\"] --> B3[\"名称修饰（Name Mangling）\"]\n    B3 --> B4\n    B4 --> B8[\"加入 EXTERN \\\"C\\\"\"]\n    B2 --> B7[\"首次报错\"]\n    B7 --> B8\n    B8 --> B9[\"编译成功\"]\n    B9 --> B10[\"输出文件路径\"]\n    B10 --> B11[\"改名为 \\\"hell word\\\" 解决\"]\n    B1 --> B5[\"方案不符合标准规范\"]\n    B2 --> B5\n    B1 --> B12[\"编译器差异对结果影响小\"]\n    B2 --> B12\n```\n<!-- [BV1GyGu67EbG P1 00:21] MSDC 编译器 -->\n<!-- [BV1GyGu67EbG P1 00:31] MSVC 编译器 -->\n<!-- [BV1GyGu67EbG P1 00:10] 使用 EXTERN \"C\" 解决名称修饰 -->\n<!-- [BV1GyGu67EbG P1 00:14] 方案不符合标准规范 -->\n<!-- [BV1GyGu67EbG P1 00:27] 直接输出文件名（原理） -->\n<!-- [BV1GyGu67EbG P1 00:39] MSVC 首次报错 -->\n<!-- [BV1GyGu67EbG P1 00:42] 加入 EXTERN \\\"C\\\" 后编译成功 -->\n<!-- [BV1GyGu67EbG P1 00:56] 输出文件路径 -->\n<!-- [BV1GyGu67EbG P1 00:49] 改名为 \\\"hell word\\\" 解决 -->\n<!-- [BV1GyGu67EbG P1 01:28] 编译器差异对结果影响小 -->\n\n## 返回值与代码风格\n```mermaid\nflowchart TD\n    C1[\"main 函数\"] --> C2[\"return 0\"]\n    C2 --> C3[\"可省略（C++）\"]\n    C2 --> C4[\"保留为编程习惯\"]\n    C4 --> C5[\"对行数无影响\"]\n    C3 --> C6[\"对功能无影响\"]\n    C4 --> C7[\"提升代码可读性\"]\n    C2 --> C8[\"编译器不强制返回值\"]\n```\n<!-- [BV1GyGu67EbG P1 01:01] return 0 可省略 -->\n<!-- [BV1GyGu67EbG P1 01:03] C++ 中 return 0 可省略 -->\n<!-- [BV1GyGu67EbG P1 01:08] 保留 return 0 为编程习惯 -->\n<!-- [BV1GyGu67EbG P1 01:13] 对行数无影响 -->",
+      "diagrams": [
+        {
+          "title": "方案概览",
+          "code": "flowchart TD\n    A1[\"使用 EXTERN \\\"C\\\" 解决名称修饰\"] --> A2[\"不符合标准规范\"]\n    A1 --> A3[\"在 MSDC 编译器环境下成功运行\"]\n    A4[\"直接输出文件名（原理）\"] --> A5[\"在 MSVC 编译器环境测试\"]\n    A5 --> A6[\"首次报错\"]\n    A6 --> A7[\"加入 EXTERN \\\"C\\\" 后编译成功\"]\n    A7 --> A8[\"文件名保持不变\"]\n    A8 --> A9[\"改为 \\\"hell word\\\" 可正常输出\"]\n    A9 --> A10[\"实际输出为文件路径（小瑕疵）\"]\n    A11[\"return 0 可省略\"] --> A12[\"保留 return 0 为编程习惯\"]\n    A12 --> A13[\"对行数无影响\"]\n    A13 --> A14[\"对程序功能无影响\"]\n    A15[\"Deft C++ 与 VS20212 编译器差异\"] --> A16[\"测试结果相近\"]\n    A3 --> A17[\"MSDC 下成功方案数 2，未成功 1\"]\n    A7 --> A17"
+        },
+        {
+          "title": "编译环境差异与影响",
+          "code": "flowchart LR\n    B1[\"MSDC 编译器\"] --> B4[\"使用 EXTERN \\\"C\\\" 解决名称修饰\"]\n    B2[\"MSVC 编译器\"] --> B3[\"名称修饰（Name Mangling）\"]\n    B3 --> B4\n    B4 --> B8[\"加入 EXTERN \\\"C\\\"\"]\n    B2 --> B7[\"首次报错\"]\n    B7 --> B8\n    B8 --> B9[\"编译成功\"]\n    B9 --> B10[\"输出文件路径\"]\n    B10 --> B11[\"改名为 \\\"hell word\\\" 解决\"]\n    B1 --> B5[\"方案不符合标准规范\"]\n    B2 --> B5\n    B1 --> B12[\"编译器差异对结果影响小\"]\n    B2 --> B12"
+        },
+        {
+          "title": "返回值与代码风格",
+          "code": "flowchart TD\n    C1[\"main 函数\"] --> C2[\"return 0\"]\n    C2 --> C3[\"可省略（C++）\"]\n    C2 --> C4[\"保留为编程习惯\"]\n    C4 --> C5[\"对行数无影响\"]\n    C3 --> C6[\"对功能无影响\"]\n    C4 --> C7[\"提升代码可读性\"]\n    C2 --> C8[\"编译器不强制返回值\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T21:41:07+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# C++ 无头文件运行方案知识图谱\n\n## 方案概览\n```mermaid\nflowchart TD\n    A1[\"使用 EXTERN \\\"C\\\" 解决名称修饰\"] --> A2[\"不符合标准规范\"]\n    A1 --> A3[\"在 MSDC 编译器环境下成功运行\"]\n    A4[\"直接输出文件名（原理）\"] --> A5[\"在 MSVC 编译器环境测试\"]\n    A5 --> A6[\"首次报错\"]\n    A6 --> A7[\"加入 EXTERN \\\"C\\\" 后编译成功\"]\n    A7 --> A8[\"文件名保持不变\"]\n    A8 --> A9[\"改为 \\\"hell word\\\" 可正常输出\"]\n    A9 --> A10[\"实际输出为文件路径（小瑕疵）\"]\n    A11[\"return 0 可省略\"] --> A12[\"保留 return 0 为编程习惯\"]\n    A12 --> A13[\"对行数无影响\"]\n    A13 --> A14[\"对程序功能无影响\"]\n    A15[\"Deft C++ 与 VS20212 编译器差异\"] --> A16[\"测试结果相近\"]\n    A3 --> A17[\"MSDC 下成功方案数 2，未成功 1\"]\n    A7 --> A17\n```\n<!-- [BV1GyGu67EbG P1 00:10] EXTERN \"C\" 解决名称修饰问题 -->\n<!-- [BV1GyGu67EbG P1 00:14] 方案不符合标准规范 -->\n<!-- [BV1GyGu67EbG P1 00:21] 在 MSDC 编译器环境下成功运行 -->\n<!-- [BV1GyGu67EbG P1 00:27] 直接输出文件名（原理） -->\n<!-- [BV1GyGu67EbG P1 00:31] 在 MSVC 编译器环境测试 -->\n<!-- [BV1GyGu67EbG P1 00:39] MSVC 首次报错 -->\n<!-- [BV1GyGu67EbG P1 00:42] 加入 EXTERN \"C\" 后编译成功 -->\n<!-- [BV1GyGu67EbG P1 00:47] 文件名保持不变 -->\n<!-- [BV1GyGu67EbG P1 00:49] 改为 \"hell word\" 可正常输出 -->\n<!-- [BV1GyGu67EbG P1 00:56] 实际输出为文件路径（小瑕疵） -->\n<!-- [BV1GyGu67EbG P1 01:01] return 0 可省略 -->\n<!-- [BV1GyGu67EbG P1 01:08] 保留 return 0 为编程习惯 -->\n<!-- [BV1GyGu67EbG P1 01:13] 对行数无影响 -->\n<!-- [BV1GyGu67EbG P1 01:21] Deft C++ 与 VS20212 编译器差异 -->\n<!-- [BV1GyGu67EbG P1 01:28] 两者测试结果相近 -->\n<!-- [BV1GyGu67EbG P1 01:31] MSDC 下成功方案数 2，未成功 1 -->\n\n## 编译环境差异与影响\n```mermaid\nflowchart LR\n    B1[\"MSDC 编译器\"] --> B4[\"使用 EXTERN \\\"C\\\" 解决名称修饰\"]\n    B2[\"MSVC 编译器\"] --> B3[\"名称修饰（Name Mangling）\"]\n    B3 --> B4\n    B4 --> B8[\"加入 EXTERN \\\"C\\\"\"]\n    B2 --> B7[\"首次报错\"]\n    B7 --> B8\n    B8 --> B9[\"编译成功\"]\n    B9 --> B10[\"输出文件路径\"]\n    B10 --> B11[\"改名为 \\\"hell word\\\" 解决\"]\n    B1 --> B5[\"方案不符合标准规范\"]\n    B2 --> B5\n    B1 --> B12[\"编译器差异对结果影响小\"]\n    B2 --> B12\n```\n<!-- [BV1GyGu67EbG P1 00:21] MSDC 编译器 -->\n<!-- [BV1GyGu67EbG P1 00:31] MSVC 编译器 -->\n<!-- [BV1GyGu67EbG P1 00:10] 使用 EXTERN \"C\" 解决名称修饰 -->\n<!-- [BV1GyGu67EbG P1 00:14] 方案不符合标准规范 -->\n<!-- [BV1GyGu67EbG P1 00:27] 直接输出文件名（原理） -->\n<!-- [BV1GyGu67EbG P1 00:39] MSVC 首次报错 -->\n<!-- [BV1GyGu67EbG P1 00:42] 加入 EXTERN \\\"C\\\" 后编译成功 -->\n<!-- [BV1GyGu67EbG P1 00:56] 输出文件路径 -->\n<!-- [BV1GyGu67EbG P1 00:49] 改名为 \\\"hell word\\\" 解决 -->\n<!-- [BV1GyGu67EbG P1 01:28] 编译器差异对结果影响小 -->\n\n## 返回值与代码风格\n```mermaid\nflowchart TD\n    C1[\"main 函数\"] --> C2[\"return 0\"]\n    C2 --> C3[\"可省略（C++）\"]\n    C2 --> C4[\"保留为编程习惯\"]\n    C4 --> C5[\"对行数无影响\"]\n    C3 --> C6[\"对功能无影响\"]\n    C4 --> C7[\"提升代码可读性\"]\n    C2 --> C8[\"编译器不强制返回值\"]\n```\n<!-- [BV1GyGu67EbG P1 01:01] return 0 可省略 -->\n<!-- [BV1GyGu67EbG P1 01:03] C++ 中 return 0 可省略 -->\n<!-- [BV1GyGu67EbG P1 01:08] 保留 return 0 为编程习惯 -->\n<!-- [BV1GyGu67EbG P1 01:13] 对行数无影响 -->",
+  "diagrams": [
+    {
+      "title": "方案概览",
+      "code": "flowchart TD\n    A1[\"使用 EXTERN \\\"C\\\" 解决名称修饰\"] --> A2[\"不符合标准规范\"]\n    A1 --> A3[\"在 MSDC 编译器环境下成功运行\"]\n    A4[\"直接输出文件名（原理）\"] --> A5[\"在 MSVC 编译器环境测试\"]\n    A5 --> A6[\"首次报错\"]\n    A6 --> A7[\"加入 EXTERN \\\"C\\\" 后编译成功\"]\n    A7 --> A8[\"文件名保持不变\"]\n    A8 --> A9[\"改为 \\\"hell word\\\" 可正常输出\"]\n    A9 --> A10[\"实际输出为文件路径（小瑕疵）\"]\n    A11[\"return 0 可省略\"] --> A12[\"保留 return 0 为编程习惯\"]\n    A12 --> A13[\"对行数无影响\"]\n    A13 --> A14[\"对程序功能无影响\"]\n    A15[\"Deft C++ 与 VS20212 编译器差异\"] --> A16[\"测试结果相近\"]\n    A3 --> A17[\"MSDC 下成功方案数 2，未成功 1\"]\n    A7 --> A17"
+    },
+    {
+      "title": "编译环境差异与影响",
+      "code": "flowchart LR\n    B1[\"MSDC 编译器\"] --> B4[\"使用 EXTERN \\\"C\\\" 解决名称修饰\"]\n    B2[\"MSVC 编译器\"] --> B3[\"名称修饰（Name Mangling）\"]\n    B3 --> B4\n    B4 --> B8[\"加入 EXTERN \\\"C\\\"\"]\n    B2 --> B7[\"首次报错\"]\n    B7 --> B8\n    B8 --> B9[\"编译成功\"]\n    B9 --> B10[\"输出文件路径\"]\n    B10 --> B11[\"改名为 \\\"hell word\\\" 解决\"]\n    B1 --> B5[\"方案不符合标准规范\"]\n    B2 --> B5\n    B1 --> B12[\"编译器差异对结果影响小\"]\n    B2 --> B12"
+    },
+    {
+      "title": "返回值与代码风格",
+      "code": "flowchart TD\n    C1[\"main 函数\"] --> C2[\"return 0\"]\n    C2 --> C3[\"可省略（C++）\"]\n    C2 --> C4[\"保留为编程习惯\"]\n    C4 --> C5[\"对行数无影响\"]\n    C3 --> C6[\"对功能无影响\"]\n    C4 --> C7[\"提升代码可读性\"]\n    C2 --> C8[\"编译器不强制返回值\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:41:07+00:00"
+}

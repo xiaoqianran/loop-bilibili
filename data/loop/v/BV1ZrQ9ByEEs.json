@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1ZrQ9ByEEs",
+  "title": "使用Holopix快速制作模拟经营游戏02-资源系统【Holopix AI x Godot】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3554,
+  "text": "在上期视频中\n我们搭建了模拟经营游戏的基本交互框架\n包括物品的生成\n移动吸附到网格以及删除等等功能\n本期视频中\n我将向你展示如何搭建一个基本的自然框架\n以及如何高效的制作各种不同的物体\n首先为大家展示一下\n本期视频最后可以做到的效果\n像这样\n我们在上期视频的基础之上\n可以进行物体的放置\n然后呢\n这些物体会根据自己的属性产出不同的资源\n像是这个它就会产生这个幼苗或者是这个水井\n它就会产出这个水资源\n然后等到我们资源攒够了以后\n就可以去根据相应的资源\n放置出其他不同的物体\n比如说现在有了足够的资源\n我们可以放置一块菜地\n而菜地可以去生成这一个产品的资源\n然后我们还可以放置一个堆肥\n它可以用来产生金币\n最后等到资源足够以后\n我们就可以去帮助我们这些狗物\n同时呢我们还可以看到\n当我们鼠标放在左边的这些物体上呢\n也会相应的显示自己需要的资源\n这也是我们今天会实现的一个功能\n首先我们来为游戏搭建资源系统\n资源系统本质上就是存储在场景\n主脚本当中的一系列变量呃\n我们场景中的各种物体\n可以根据某个规则去进行\n对这个变量进行添加或删除\n那么这就涉及到两个东西\n一个是刚刚跟大家说的这些变量\n他们可以像我这样直接写在里边\n也可以做成一个资源放在外面进行储存\n然后呢就是物体\n我们本次要在上次的基础之上\n为物体添加这么两个功能\n一个是invent\n它它确定了这个物体\n每隔多少时间就要修改玩家的某项属性\n另一个呢是他的cost\n就是说产生这个物品的时候\n他需要的花费\n具体来讲呢它其实是两个research资源\n首先给大家看一下这两个RESCE资源是怎样的\n先来看一下这个隐ENT资源\n它其中只有三个属性\n一个是要操作的属性\n一个是要操作的数量\n最后是要操作的时间\n间隔就是每隔多长时间就会触发\n然后上面呢有一个枚举\n它记录了我们能够操作的属性\n进行这样的保存以后\n我们就可以呃在我们普通的这个物体脚本里面\n在最上面去添加这样的一个数组\n添加好了以后\n给它加上export的前缀\n那么就可以在这里进行添加了\n像是这样点击这个添加元素\n然后我们点新建\n这里就会有一个invent resource\n因为我们在这里已经限定了\n这必须是一个invent resource的那个数组\n那么我们再点击REMORESOURCE\n就可以进行下一步的编辑了\n可以看到我们可以选择刚刚枚举当中\n列出的那些属性\n然后呢可以进行这一个东西的设置\n然后同样的cost也是类似的\ncost里面的也就只存两个\n一个是要操作的属性以及可以操作的数值\n那么写完这两个之后\n我们再返回到我们的物体脚本当中\n添加这么几个函数\n这几个函数大家大概知道它意思就好\n然后给到AI\n它完全可以帮你写出这个东西来\n第一个是set up events呃\n它大概的作用就是在调用的时候\n去为每一个疑问它创建一个timer\n这个timer会循环计数\n每次都会触发一个函数\n这个函数的名字就是下一个就是on event time out\n它的作用就是每次这个timer到时到时间了\n它就会进行触发呃\n修改我们相应的这一个属性\n接着我们来看一下物体按钮的这一个修改\n大家可以看到这次我们给它添加了四个panel\n然后每个下面有这样相对应的UI\n以及它对应的这一个label\n这样我们可以进行后续的修改\n让它可以就是看得到他花费的东西\n比如说而且呢因为我们用的是这一个grade\n所以我们在隐藏掉某一个看到的时候\n它可以自动的进行这一个排版\n那么到脚本中呢\n我们这次的按钮大概是加了这么几函数\n首先我们会在ready的时候呢\n去读取到我们即将生成的item的cost\n也就是我们这个按钮上所承载的\n那个物体的cost\n然后呢他会update这个cost的label\n基本上就是将各种名字的这一个呃\npanel中的文字对它进行相应的赋值\n如果它值是零的话\n就自动给他隐藏\n大概就这么一个功能\n然后呢这里还有一个就是has enough resource\n就是在调用的时候\n它会去检测呃\n当前玩家是不是有足够的资源\n去生成这一个物体呃\n指具体的方式和之前写那个呃\n检查event的时候类似\n基本上就是去检查它每项呃cost\n然后如果不满足的话\n就return force就可以了\n这个大家可以完全可以把需求给到AI\n让他给写就好了\n然后最后是一个PICOST\n就是说如果检查好了以后\n我们后续会调用pixp cost\n就相应的去把这些属性给它删掉\n那么我们物品按钮的相应的修改\n也基本上就写好了\n接下来我就向大家完整地展示一下这套流程\n具体的工作方式\n我们如何高效的去制作这样一些物体\n首先这次我们还是用到了hello pex这一个网站\n除了左侧的这些基础功能呢\n他们最近上新了一个自由画布的功能\n我们这次就用它来完成我们物品的制作\n我们进入以后\n可以看到它是一个大概像这样的界面\n它的功能基本上就是一个图片集合\n但是其中往外扩展了AI的功能\n我们可以在左侧以对话的形式\n一张一张图片的生成\n比如说我现在生成一个盆栽\n点击生成\n稍等片刻之后\n我们就得到了像这样的一个图片\n当然因为我没有限定他的风格等等之类的\n所以他就是这种状态\n我们可以到别的地方去把它给抠出来\n然后就可以放到游戏里面去用了\n除此以外呢\nholo picks还给我们提供了其他非常方便的功能\n像是这个自由视角呢\n可以帮我把刚刚制作的那个美术素材\n一键的给他转成三视图啊或者六视图啊\n方便我们游戏当中不同角度的物体的放置\n呃此外呢它还有万能渲染\n像这种呢\n可以把我们美术素材非常方便的\n改成别的画风的风格\n方便我们快速的去尝试不同的游戏风格\n这也极大提高了我们制作游戏的效率\n那么我们如何去高效的产出我们需要的资源呢\n这里给了大家一个方法\n首先大家可以看到这样一张图片\n这是我从网上找的一张\n我的差不多的意向的一个图片\n那么我们可以点击这里的模板\n然后在这里点击场景元素拆分\n然后把我们的这张图片从别的地方粘贴过来\n点击作为参考图\n然后进行生成\n它就会像后面这样把他的资源全部都拆出来\n然后我们去自己把它切分出来\n把集中呃觉得可以用的拆分出来就可以了\n如果你像这里生成的不是很满意啊\n那你可以让多生成几次呃\n总有一次就可以用的\n然后我就把它拆出来就可以了\n这样就非常的方便呃\n然后至于背景呢\n我是给到他了这样一个提示词\n大家可以参考一下\n就是30度轴侧农场视角的这一个空白场地\n背景图片\n周围是树木\n中间是草丛\n它就可以进行正常的生成了\n或者大家也可以先用这个AI生成一个\n像这样的游戏\n比如说是这里\n我就让它生成了一个农场游戏的背景图片\n然后我没有让他把正源清空\n它仍然就有些东西\n那此时我们就可以用这个场景元素拆分\n把里面的资源都给拆出来\n就可以用到游戏当中去了\n那么像这样生成好了以后\n我们进到PS\n把他们一个一个的抠出来\n然后在这里给他们进行相应的命名\n然后统一的给它导出就可以了\n需要注意的是\n对于背景呢我们需要扣两个图片\n一个是一个背景\n一个是一个前景\n就是这样才能产生一个正确的遮挡关系\n大家可以看到这些树是一个前景\n那么把它们全部导到游戏引擎里面去以后\n我们来进行相应的设置\n首先我们像上次一样新建我们的这一个物体\n然后呢\n我们在这里可以把我们的这个图片给他改掉\n可以看到这里就可以随便改成别的图片啊\n改成我们相应的图片\n然后就是去配置我们相应的东西了\n首先这个水井我们需要的就是\n它会花费一定的这一个\n他会每秒钟生产一个水\n然后呢它会花费20块钱\n这样就可以了\n如果你想让它顺便花费别的\n你可以再添加一个\n然后再加一个cost\n然后这里再加一个\n比如说他还会cos的一个SEDLING\n就是那个幼苗cos一个\n这样的话他就必须消耗一个幼苗\n才能呃产生这一个水井的这个物体\n像这样呢\n我们一个一个的给它进行配置\n就可以完成我们配置了\n把这些都配置好了以后\n我们就可以回到游戏里去看了\n首先像这样\n我们的这一个物体就都在这里显示出来了\n我们可以放一个房子进来\n那这里也会相应的进行减少\n然后放一个苗圃进来\n然后钱数也会减少\n同时呢这个幼苗会每两秒每两秒的产生两个\n我们可以再等一会儿再放一个这个水井\n然后再放一个苗圃\n再来一个水井\n再来一个水井\n这样的话我们水的速度会快很多\n然后呢我们可以来一个菜地\n然后稍等一会呢\n可以再来一个堆肥的东西\n这样呢我们这个金币也可以开始正在增长\n大概像这样\n我们就完成了\n我们这一个基本的资源系统的制作\n那么像这样的\n我们就完成了模拟经营\n游戏基本资源系统的制作\n本期视频内容基本就是这样\n我把项目链接放在了简介里\n大家可以根据自己需要去下载\n那么我们下期视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ZrQ9ByEEs",
+  "published_at": "1774972799",
+  "fetched_at": "2026-08-08T04:28:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Holopix 模拟经营游戏资源系统图谱\n\n## 资源系统总览 [BV1ZrQ9ByEEs P1 01:07]\n```mermaid\nflowchart TD\n    GS[\"GameScene\"] --> RV[\"ResourceVariables\"]\n    GS --> OS[\"ObjectScript\"]\n    OS --> IR[\"InventResource\"]\n    OS --> CR[\"CostResource\"]\n    IR --> IT[\"IntervalTime\"]\n    IR --> TA[\"TargetAttribute\"]\n    IR --> AM[\"Amount\"]\n    CR --> RA[\"RequiredAttribute\"]\n    CR --> RAmt[\"RequiredAmount\"]\n    OS --> TS[\"TimerSystem\"]\n    TS --> IR\n    UI[\"UIButton\"] --> CR\n    UI --> PA[\"PlayerAttributes\"]\n    UI --> RV\n    IR --> RG[\"ResourceGeneration\"]\n    RG --> RV\n    CR --> RC[\"ResourceConsumption\"]\n    RC --> PA\n```\n\n## InventResource 结构 [BV1ZrQ9ByEEs P1 01:35]\n```mermaid\nflowchart TD\n    IR[\"InventResource\"]\n    IT[\"IntervalTime\"]\n    TA[\"TargetAttribute\"]\n    AM[\"Amount\"]\n    EA[\"EnumAttributes\"]\n    TT[\"TimerTrigger\"]\n    AV[\"AddToVariable\"]\n    RV[\"RemoveFromVariable\"]\n    IR --> IT\n    IR --> TA\n    IR --> AM\n    TA --> EA\n    IT --> TT\n    TT --> AV\n    TT --> RV\n    AV --> RV\n```\n\n## CostResource 结构 [BV1ZrQ9ByEEs P1 01:42]\n```mermaid\nflowchart TD\n    CR[\"CostResource\"]\n    RA[\"RequiredAttribute\"]\n    RAmt[\"RequiredAmount\"]\n    CE[\"CheckEnough\"]\n    CRR[\"CostCheckResult\"]\n    IFB[\"InsufficientFeedback\"]\n    DC[\"DeductCost\"]\n    UIU[\"UIUpdate\"]\n    CR --> RA\n    CR --> RAmt\n    CE --> CRR\n    CRR --> DC\n    CRR --> IFB\n    DC --> UIU\n    UIU --> RA\n```\n\n## UI按钮工作流 [BV1ZrQ9ByEEs P1 03:24]\n```mermaid\nflowchart TD\n    UI[\"UIButton\"]\n    RE[\"ReadyEvent\"]\n    LC[\"LoadCost\"]\n    UL[\"UpdateLabels\"]\n    HER[\"HasEnoughResource\"]\n    OC[\"OnClick\"]\n    TP[\"TriggerPlacement\"]\n    DC[\"DeductCost\"]\n    RF[\"RefreshUI\"]\n    UI --> RE\n    RE --> LC\n    LC --> UL\n    UL --> HER\n    HER --> OC\n    OC --> TP\n    TP --> DC\n    DC --> RF\n    RF --> UI\n```\n\n## AI资产制作流程 [BV1ZrQ9ByEEs P1 05:04]\n```mermaid\nflowchart TD\n    HP[\"HelloPex\"]\n    PR[\"Prompt\"]\n    GI[\"GenerateImage\"]\n    FC[\"FreeCanvas\"]\n    SSE[\"SplitSceneElements\"]\n    EA[\"ExportAssets\"]\n    IE[\"ImportToEngine\"]\n    AS[\"AssignSprite\"]\n    CO[\"ConfigureObject\"]\n    HP --> PR\n    PR --> GI\n    GI --> FC\n    FC --> SSE\n    SSE --> EA\n    EA --> IE\n    IE --> AS\n    AS --> CO\n```",
+      "diagrams": [
+        {
+          "title": "资源系统总览",
+          "code": "flowchart TD\n    GS[\"GameScene\"] --> RV[\"ResourceVariables\"]\n    GS --> OS[\"ObjectScript\"]\n    OS --> IR[\"InventResource\"]\n    OS --> CR[\"CostResource\"]\n    IR --> IT[\"IntervalTime\"]\n    IR --> TA[\"TargetAttribute\"]\n    IR --> AM[\"Amount\"]\n    CR --> RA[\"RequiredAttribute\"]\n    CR --> RAmt[\"RequiredAmount\"]\n    OS --> TS[\"TimerSystem\"]\n    TS --> IR\n    UI[\"UIButton\"] --> CR\n    UI --> PA[\"PlayerAttributes\"]\n    UI --> RV\n    IR --> RG[\"ResourceGeneration\"]\n    RG --> RV\n    CR --> RC[\"ResourceConsumption\"]\n    RC --> PA"
+        },
+        {
+          "title": "InventResource 结构",
+          "code": "flowchart TD\n    IR[\"InventResource\"]\n    IT[\"IntervalTime\"]\n    TA[\"TargetAttribute\"]\n    AM[\"Amount\"]\n    EA[\"EnumAttributes\"]\n    TT[\"TimerTrigger\"]\n    AV[\"AddToVariable\"]\n    RV[\"RemoveFromVariable\"]\n    IR --> IT\n    IR --> TA\n    IR --> AM\n    TA --> EA\n    IT --> TT\n    TT --> AV\n    TT --> RV\n    AV --> RV"
+        },
+        {
+          "title": "CostResource 结构",
+          "code": "flowchart TD\n    CR[\"CostResource\"]\n    RA[\"RequiredAttribute\"]\n    RAmt[\"RequiredAmount\"]\n    CE[\"CheckEnough\"]\n    CRR[\"CostCheckResult\"]\n    IFB[\"InsufficientFeedback\"]\n    DC[\"DeductCost\"]\n    UIU[\"UIUpdate\"]\n    CR --> RA\n    CR --> RAmt\n    CE --> CRR\n    CRR --> DC\n    CRR --> IFB\n    DC --> UIU\n    UIU --> RA"
+        },
+        {
+          "title": "UI按钮工作流",
+          "code": "flowchart TD\n    UI[\"UIButton\"]\n    RE[\"ReadyEvent\"]\n    LC[\"LoadCost\"]\n    UL[\"UpdateLabels\"]\n    HER[\"HasEnoughResource\"]\n    OC[\"OnClick\"]\n    TP[\"TriggerPlacement\"]\n    DC[\"DeductCost\"]\n    RF[\"RefreshUI\"]\n    UI --> RE\n    RE --> LC\n    LC --> UL\n    UL --> HER\n    HER --> OC\n    OC --> TP\n    TP --> DC\n    DC --> RF\n    RF --> UI"
+        },
+        {
+          "title": "AI资产制作流程",
+          "code": "flowchart TD\n    HP[\"HelloPex\"]\n    PR[\"Prompt\"]\n    GI[\"GenerateImage\"]\n    FC[\"FreeCanvas\"]\n    SSE[\"SplitSceneElements\"]\n    EA[\"ExportAssets\"]\n    IE[\"ImportToEngine\"]\n    AS[\"AssignSprite\"]\n    CO[\"ConfigureObject\"]\n    HP --> PR\n    PR --> GI\n    GI --> FC\n    FC --> SSE\n    SSE --> EA\n    EA --> IE\n    IE --> AS\n    AS --> CO"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T04:35:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Holopix 模拟经营游戏资源系统图谱\n\n## 资源系统总览 [BV1ZrQ9ByEEs P1 01:07]\n```mermaid\nflowchart TD\n    GS[\"GameScene\"] --> RV[\"ResourceVariables\"]\n    GS --> OS[\"ObjectScript\"]\n    OS --> IR[\"InventResource\"]\n    OS --> CR[\"CostResource\"]\n    IR --> IT[\"IntervalTime\"]\n    IR --> TA[\"TargetAttribute\"]\n    IR --> AM[\"Amount\"]\n    CR --> RA[\"RequiredAttribute\"]\n    CR --> RAmt[\"RequiredAmount\"]\n    OS --> TS[\"TimerSystem\"]\n    TS --> IR\n    UI[\"UIButton\"] --> CR\n    UI --> PA[\"PlayerAttributes\"]\n    UI --> RV\n    IR --> RG[\"ResourceGeneration\"]\n    RG --> RV\n    CR --> RC[\"ResourceConsumption\"]\n    RC --> PA\n```\n\n## InventResource 结构 [BV1ZrQ9ByEEs P1 01:35]\n```mermaid\nflowchart TD\n    IR[\"InventResource\"]\n    IT[\"IntervalTime\"]\n    TA[\"TargetAttribute\"]\n    AM[\"Amount\"]\n    EA[\"EnumAttributes\"]\n    TT[\"TimerTrigger\"]\n    AV[\"AddToVariable\"]\n    RV[\"RemoveFromVariable\"]\n    IR --> IT\n    IR --> TA\n    IR --> AM\n    TA --> EA\n    IT --> TT\n    TT --> AV\n    TT --> RV\n    AV --> RV\n```\n\n## CostResource 结构 [BV1ZrQ9ByEEs P1 01:42]\n```mermaid\nflowchart TD\n    CR[\"CostResource\"]\n    RA[\"RequiredAttribute\"]\n    RAmt[\"RequiredAmount\"]\n    CE[\"CheckEnough\"]\n    CRR[\"CostCheckResult\"]\n    IFB[\"InsufficientFeedback\"]\n    DC[\"DeductCost\"]\n    UIU[\"UIUpdate\"]\n    CR --> RA\n    CR --> RAmt\n    CE --> CRR\n    CRR --> DC\n    CRR --> IFB\n    DC --> UIU\n    UIU --> RA\n```\n\n## UI按钮工作流 [BV1ZrQ9ByEEs P1 03:24]\n```mermaid\nflowchart TD\n    UI[\"UIButton\"]\n    RE[\"ReadyEvent\"]\n    LC[\"LoadCost\"]\n    UL[\"UpdateLabels\"]\n    HER[\"HasEnoughResource\"]\n    OC[\"OnClick\"]\n    TP[\"TriggerPlacement\"]\n    DC[\"DeductCost\"]\n    RF[\"RefreshUI\"]\n    UI --> RE\n    RE --> LC\n    LC --> UL\n    UL --> HER\n    HER --> OC\n    OC --> TP\n    TP --> DC\n    DC --> RF\n    RF --> UI\n```\n\n## AI资产制作流程 [BV1ZrQ9ByEEs P1 05:04]\n```mermaid\nflowchart TD\n    HP[\"HelloPex\"]\n    PR[\"Prompt\"]\n    GI[\"GenerateImage\"]\n    FC[\"FreeCanvas\"]\n    SSE[\"SplitSceneElements\"]\n    EA[\"ExportAssets\"]\n    IE[\"ImportToEngine\"]\n    AS[\"AssignSprite\"]\n    CO[\"ConfigureObject\"]\n    HP --> PR\n    PR --> GI\n    GI --> FC\n    FC --> SSE\n    SSE --> EA\n    EA --> IE\n    IE --> AS\n    AS --> CO\n```",
+  "diagrams": [
+    {
+      "title": "资源系统总览",
+      "code": "flowchart TD\n    GS[\"GameScene\"] --> RV[\"ResourceVariables\"]\n    GS --> OS[\"ObjectScript\"]\n    OS --> IR[\"InventResource\"]\n    OS --> CR[\"CostResource\"]\n    IR --> IT[\"IntervalTime\"]\n    IR --> TA[\"TargetAttribute\"]\n    IR --> AM[\"Amount\"]\n    CR --> RA[\"RequiredAttribute\"]\n    CR --> RAmt[\"RequiredAmount\"]\n    OS --> TS[\"TimerSystem\"]\n    TS --> IR\n    UI[\"UIButton\"] --> CR\n    UI --> PA[\"PlayerAttributes\"]\n    UI --> RV\n    IR --> RG[\"ResourceGeneration\"]\n    RG --> RV\n    CR --> RC[\"ResourceConsumption\"]\n    RC --> PA"
+    },
+    {
+      "title": "InventResource 结构",
+      "code": "flowchart TD\n    IR[\"InventResource\"]\n    IT[\"IntervalTime\"]\n    TA[\"TargetAttribute\"]\n    AM[\"Amount\"]\n    EA[\"EnumAttributes\"]\n    TT[\"TimerTrigger\"]\n    AV[\"AddToVariable\"]\n    RV[\"RemoveFromVariable\"]\n    IR --> IT\n    IR --> TA\n    IR --> AM\n    TA --> EA\n    IT --> TT\n    TT --> AV\n    TT --> RV\n    AV --> RV"
+    },
+    {
+      "title": "CostResource 结构",
+      "code": "flowchart TD\n    CR[\"CostResource\"]\n    RA[\"RequiredAttribute\"]\n    RAmt[\"RequiredAmount\"]\n    CE[\"CheckEnough\"]\n    CRR[\"CostCheckResult\"]\n    IFB[\"InsufficientFeedback\"]\n    DC[\"DeductCost\"]\n    UIU[\"UIUpdate\"]\n    CR --> RA\n    CR --> RAmt\n    CE --> CRR\n    CRR --> DC\n    CRR --> IFB\n    DC --> UIU\n    UIU --> RA"
+    },
+    {
+      "title": "UI按钮工作流",
+      "code": "flowchart TD\n    UI[\"UIButton\"]\n    RE[\"ReadyEvent\"]\n    LC[\"LoadCost\"]\n    UL[\"UpdateLabels\"]\n    HER[\"HasEnoughResource\"]\n    OC[\"OnClick\"]\n    TP[\"TriggerPlacement\"]\n    DC[\"DeductCost\"]\n    RF[\"RefreshUI\"]\n    UI --> RE\n    RE --> LC\n    LC --> UL\n    UL --> HER\n    HER --> OC\n    OC --> TP\n    TP --> DC\n    DC --> RF\n    RF --> UI"
+    },
+    {
+      "title": "AI资产制作流程",
+      "code": "flowchart TD\n    HP[\"HelloPex\"]\n    PR[\"Prompt\"]\n    GI[\"GenerateImage\"]\n    FC[\"FreeCanvas\"]\n    SSE[\"SplitSceneElements\"]\n    EA[\"ExportAssets\"]\n    IE[\"ImportToEngine\"]\n    AS[\"AssignSprite\"]\n    CO[\"ConfigureObject\"]\n    HP --> PR\n    PR --> GI\n    GI --> FC\n    FC --> SSE\n    SSE --> EA\n    EA --> IE\n    IE --> AS\n    AS --> CO"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T04:35:36+00:00"
+}

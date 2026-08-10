@@ -1,0 +1,82 @@
+{
+  "bvid": "BV11rXpBMExQ",
+  "title": "AI写代码只需10秒，你Review要2小时？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1050,
+  "text": "AI写代码只要十秒\n你review要两小时\n这个信任税才是web coding真正的瓶颈\n昨天MIRO发布了LINSTRO\n压注的方向是让AI自己证明代码是对的\n大家好\n这里是LLM x factors\n一个专注于拆解大语言模型时代\n底层逻辑的频道\nLINSTRONG是第一个专为零四设计的开源代码\nAgent\n120B总参数只有6B活跃a patch2.0\n完全开源成本只有cloud office的192\n先说一个关键概念\n形式验证就是用数学证明代码是对的\n传统模式AI写代码仍然review\n发现bug改了再review\n但形式验证不一样\n人只需要写清楚你要什么\nAI负责写代码和证明令自动验证\n人类从逐行审查变成了定义需求\n看看性能数据\n先看开源对比\nGLM五七百四十四比参数评分16.6\nKimi k2.5\n万亿参数20.1\n宽3.5\n跑四次能到25.4\nLINXSTRO只有6B活跃参数\n跑四次直接29.3\n参数量差几十倍\n分数反而更高\n再看cloud对比\nsonnet跑一次549美元\n23.7分\nLINUXSTRO跑两次36美元\n26.3分\n直接抄sonnet跑16次\n290美元\n31.9分\n公道话\nOPPOS拿了39.6分\n仍是质量之王\n但代价是1650美元\n秘诀在两个地方悉数MOE架构\n120B参数里只有6B在干活\n更关键的是\n令本身就是完美验证器并行跑很多次\n每次自动验证错的人\n对的流\n不需要人判断对错\n机器自己判断\n但也别太乐观\nhack news上有个尖锐质疑单词21.9分\n连HIKO都不如\n为什么选它\n答案是他的设计就不是单次球队\n而是多次尝试加自动验证\n但真正的局限不能忽略\n连四生态小众评测\n偏数学不代表工程场景\n从数学证明到生产代码中间还有巨大鸿沟\n回到我的核心判断\nAI编程\n现在的经济学生成成本趋近于零\n审查成本居高不下\n这个信任税是整个产业链真正的瓶颈\n谁能解决信任问题\n谁就解锁下一个数量级的生产力\nlinx rap本质是一个方向性信号\n未来AI编程不是让AI更聪明\n避免bug\n而是让AI用数学证明没有bug\n从概率正确走向数学确定信任问题的终极解法\n不是更好的review\n而是根本不需要review\n总结LINSCHO\n首个LINX开源agent\n6B活跃参数成本opus的192\n但比模型更重要的是方向\nAI编程的下一步不是更快写代码\n而是让AI自己证明代码是对的\n这个方向值得每个AI从业者关注\n这里是LLM x factors\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV11rXpBMExQ",
+  "published_at": "1774580400",
+  "fetched_at": "2026-08-09T00:19:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI写代码与形式验证概览\n\n## 总览  \n[BV11rXpBMExQ P1 00:02] AI写代码只要十秒  \n[BV11rXpBMExQ P1 00:04] 传统review需两小时  \n[BV11rXpBMExQ P1 00:06] “信任税”是Web coding的瓶颈  \n[BV11rXpBMExQ P1 00:38] 形式验证＝用数学证明代码正确  \n\n```mermaid\nflowchart TD\n    A[\"AI 生成代码（10 秒）\"] --> B[\"传统 Review（≈2 小时）\"]\n    A --> C[\"形式验证（数学证明）\"]\n    B --> D[\"高信任税\"]\n    C --> D\n    D --> E[\"生产力瓶颈\"]\n```\n\n## 形式验证流程  \n[BV11rXpBMExQ P1 00:48] 人只需写需求  \n[BV11rXpBMExQ P1 00:51] AI 负责写代码并证明  \n[BV11rXpBMExQ P1 00:54] 人类从逐行审查转为定义需求  \n\n```mermaid\nflowchart LR\n    R1[\"定义需求\"] --> R2[\"AI 生成代码\"]\n    R2 --> R3[\"AI 进行形式验证\"]\n    R3 --> R4[\"自动验证结果\"]\n    R4 --> R5[\"人类无需逐行审查\"]\n```\n\n## 性能与成本对比  \n[BV11rXpBMExQ P1 01:01] GLM 参数评分 16.6  \n[BV11rXpBMExQ P1 01:13] LINXSTRO 6 B 活跃参数，分数 29.3  \n[BV11rXpBMExQ P1 01:23] Sonnet 1 次 549 美元，得分 23.7  \n[BV11rXpBMExQ P1 01:27] LINXSTRO 2 次 36 美元，得分 26.3  \n[BV11rXpBMExQ P1 01:36] OPPOS 1650 美元，得分 39.6  \n\n```mermaid\nflowchart TD\n    GLM[\"GLM<br/>参数 574‑744<br/>分数 16.6\"]\n    KIMI[\"Kimi<br/>2.5 万亿参数<br/>分数 20.1\"]\n    LINX[\"LINXSTRO<br/>6 B 活跃参数<br/>分数 29.3\"]\n    SONNET[\"Sonnet<br/>1 次 549 $<br/>分数 23.7\"]\n    LINX_COST[\"LINXSTRO<br/>2 次 36 $<br/>分数 26.3\"]\n    OPPOS[\"OPPOS<br/>1650 $<br/>分数 39.6\"]\n    GLM -->|对比| SONNET\n    KIMI -->|对比| OPPOS\n    LINX -->|对比| LINX_COST\n```\n\n## 信任税与产业瓶颈  \n[BV11rXpBMExQ P1 00:09] MIRO 发布 LINSTRO  \n[BV11rXpBMExQ P1 02:27] 审查成本居高不下  \n[BV11rXpBMExQ P1 02:32] 能解决信任问题者将解锁新生产力  \n[BV11rXpBMExQ P1 02:36] LINX RAP 本质是方向性信号  \n\n```mermaid\nflowchart LR\n    T1[\"高审查成本（信任税）\"] --> T2[\"产业链瓶颈\"]\n    T2 --> T3[\"需求：可信代码\"]\n    T3 --> T4[\"形式验证/数学证明\"]\n    T4 --> T5[\"解锁下一个数量级的生产力\"]\n```\n\n## 未来AI编程方向  \n[BV11rXpBMExQ P1 02:41] 目标：AI 用数学证明没有 bug  \n[BV11rXpBMExQ P1 02:44] 从概率正确 → 数学确定  \n[BV11rXpBMExQ P1 03:01] 下一步不是更快写代码  \n[BV11rXpBMExQ P1 03:04] 而是让 AI 自己证明代码正确  \n\n```mermaid\nflowchart TD\n    F1[\"当前：AI 生成代码 → 人工 Review\"] --> F2[\"问题：高信任税\"]\n    F2 --> F3[\"转向：形式验证（数学证明）\"]\n    F3 --> F4[\"结果：无需人工 Review\"]\n    F4 --> F5[\"实现：AI 自主证明代码正确\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"AI 生成代码（10 秒）\"] --> B[\"传统 Review（≈2 小时）\"]\n    A --> C[\"形式验证（数学证明）\"]\n    B --> D[\"高信任税\"]\n    C --> D\n    D --> E[\"生产力瓶颈\"]"
+        },
+        {
+          "title": "形式验证流程",
+          "code": "flowchart LR\n    R1[\"定义需求\"] --> R2[\"AI 生成代码\"]\n    R2 --> R3[\"AI 进行形式验证\"]\n    R3 --> R4[\"自动验证结果\"]\n    R4 --> R5[\"人类无需逐行审查\"]"
+        },
+        {
+          "title": "性能与成本对比",
+          "code": "flowchart TD\n    GLM[\"GLM<br/>参数 574‑744<br/>分数 16.6\"]\n    KIMI[\"Kimi<br/>2.5 万亿参数<br/>分数 20.1\"]\n    LINX[\"LINXSTRO<br/>6 B 活跃参数<br/>分数 29.3\"]\n    SONNET[\"Sonnet<br/>1 次 549 $<br/>分数 23.7\"]\n    LINX_COST[\"LINXSTRO<br/>2 次 36 $<br/>分数 26.3\"]\n    OPPOS[\"OPPOS<br/>1650 $<br/>分数 39.6\"]\n    GLM -->|对比| SONNET\n    KIMI -->|对比| OPPOS\n    LINX -->|对比| LINX_COST"
+        },
+        {
+          "title": "信任税与产业瓶颈",
+          "code": "flowchart LR\n    T1[\"高审查成本（信任税）\"] --> T2[\"产业链瓶颈\"]\n    T2 --> T3[\"需求：可信代码\"]\n    T3 --> T4[\"形式验证/数学证明\"]\n    T4 --> T5[\"解锁下一个数量级的生产力\"]"
+        },
+        {
+          "title": "未来AI编程方向",
+          "code": "flowchart TD\n    F1[\"当前：AI 生成代码 → 人工 Review\"] --> F2[\"问题：高信任税\"]\n    F2 --> F3[\"转向：形式验证（数学证明）\"]\n    F3 --> F4[\"结果：无需人工 Review\"]\n    F4 --> F5[\"实现：AI 自主证明代码正确\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T00:19:22+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI写代码与形式验证概览\n\n## 总览  \n[BV11rXpBMExQ P1 00:02] AI写代码只要十秒  \n[BV11rXpBMExQ P1 00:04] 传统review需两小时  \n[BV11rXpBMExQ P1 00:06] “信任税”是Web coding的瓶颈  \n[BV11rXpBMExQ P1 00:38] 形式验证＝用数学证明代码正确  \n\n```mermaid\nflowchart TD\n    A[\"AI 生成代码（10 秒）\"] --> B[\"传统 Review（≈2 小时）\"]\n    A --> C[\"形式验证（数学证明）\"]\n    B --> D[\"高信任税\"]\n    C --> D\n    D --> E[\"生产力瓶颈\"]\n```\n\n## 形式验证流程  \n[BV11rXpBMExQ P1 00:48] 人只需写需求  \n[BV11rXpBMExQ P1 00:51] AI 负责写代码并证明  \n[BV11rXpBMExQ P1 00:54] 人类从逐行审查转为定义需求  \n\n```mermaid\nflowchart LR\n    R1[\"定义需求\"] --> R2[\"AI 生成代码\"]\n    R2 --> R3[\"AI 进行形式验证\"]\n    R3 --> R4[\"自动验证结果\"]\n    R4 --> R5[\"人类无需逐行审查\"]\n```\n\n## 性能与成本对比  \n[BV11rXpBMExQ P1 01:01] GLM 参数评分 16.6  \n[BV11rXpBMExQ P1 01:13] LINXSTRO 6 B 活跃参数，分数 29.3  \n[BV11rXpBMExQ P1 01:23] Sonnet 1 次 549 美元，得分 23.7  \n[BV11rXpBMExQ P1 01:27] LINXSTRO 2 次 36 美元，得分 26.3  \n[BV11rXpBMExQ P1 01:36] OPPOS 1650 美元，得分 39.6  \n\n```mermaid\nflowchart TD\n    GLM[\"GLM<br/>参数 574‑744<br/>分数 16.6\"]\n    KIMI[\"Kimi<br/>2.5 万亿参数<br/>分数 20.1\"]\n    LINX[\"LINXSTRO<br/>6 B 活跃参数<br/>分数 29.3\"]\n    SONNET[\"Sonnet<br/>1 次 549 $<br/>分数 23.7\"]\n    LINX_COST[\"LINXSTRO<br/>2 次 36 $<br/>分数 26.3\"]\n    OPPOS[\"OPPOS<br/>1650 $<br/>分数 39.6\"]\n    GLM -->|对比| SONNET\n    KIMI -->|对比| OPPOS\n    LINX -->|对比| LINX_COST\n```\n\n## 信任税与产业瓶颈  \n[BV11rXpBMExQ P1 00:09] MIRO 发布 LINSTRO  \n[BV11rXpBMExQ P1 02:27] 审查成本居高不下  \n[BV11rXpBMExQ P1 02:32] 能解决信任问题者将解锁新生产力  \n[BV11rXpBMExQ P1 02:36] LINX RAP 本质是方向性信号  \n\n```mermaid\nflowchart LR\n    T1[\"高审查成本（信任税）\"] --> T2[\"产业链瓶颈\"]\n    T2 --> T3[\"需求：可信代码\"]\n    T3 --> T4[\"形式验证/数学证明\"]\n    T4 --> T5[\"解锁下一个数量级的生产力\"]\n```\n\n## 未来AI编程方向  \n[BV11rXpBMExQ P1 02:41] 目标：AI 用数学证明没有 bug  \n[BV11rXpBMExQ P1 02:44] 从概率正确 → 数学确定  \n[BV11rXpBMExQ P1 03:01] 下一步不是更快写代码  \n[BV11rXpBMExQ P1 03:04] 而是让 AI 自己证明代码正确  \n\n```mermaid\nflowchart TD\n    F1[\"当前：AI 生成代码 → 人工 Review\"] --> F2[\"问题：高信任税\"]\n    F2 --> F3[\"转向：形式验证（数学证明）\"]\n    F3 --> F4[\"结果：无需人工 Review\"]\n    F4 --> F5[\"实现：AI 自主证明代码正确\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"AI 生成代码（10 秒）\"] --> B[\"传统 Review（≈2 小时）\"]\n    A --> C[\"形式验证（数学证明）\"]\n    B --> D[\"高信任税\"]\n    C --> D\n    D --> E[\"生产力瓶颈\"]"
+    },
+    {
+      "title": "形式验证流程",
+      "code": "flowchart LR\n    R1[\"定义需求\"] --> R2[\"AI 生成代码\"]\n    R2 --> R3[\"AI 进行形式验证\"]\n    R3 --> R4[\"自动验证结果\"]\n    R4 --> R5[\"人类无需逐行审查\"]"
+    },
+    {
+      "title": "性能与成本对比",
+      "code": "flowchart TD\n    GLM[\"GLM<br/>参数 574‑744<br/>分数 16.6\"]\n    KIMI[\"Kimi<br/>2.5 万亿参数<br/>分数 20.1\"]\n    LINX[\"LINXSTRO<br/>6 B 活跃参数<br/>分数 29.3\"]\n    SONNET[\"Sonnet<br/>1 次 549 $<br/>分数 23.7\"]\n    LINX_COST[\"LINXSTRO<br/>2 次 36 $<br/>分数 26.3\"]\n    OPPOS[\"OPPOS<br/>1650 $<br/>分数 39.6\"]\n    GLM -->|对比| SONNET\n    KIMI -->|对比| OPPOS\n    LINX -->|对比| LINX_COST"
+    },
+    {
+      "title": "信任税与产业瓶颈",
+      "code": "flowchart LR\n    T1[\"高审查成本（信任税）\"] --> T2[\"产业链瓶颈\"]\n    T2 --> T3[\"需求：可信代码\"]\n    T3 --> T4[\"形式验证/数学证明\"]\n    T4 --> T5[\"解锁下一个数量级的生产力\"]"
+    },
+    {
+      "title": "未来AI编程方向",
+      "code": "flowchart TD\n    F1[\"当前：AI 生成代码 → 人工 Review\"] --> F2[\"问题：高信任税\"]\n    F2 --> F3[\"转向：形式验证（数学证明）\"]\n    F3 --> F4[\"结果：无需人工 Review\"]\n    F4 --> F5[\"实现：AI 自主证明代码正确\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T00:19:22+00:00"
+}

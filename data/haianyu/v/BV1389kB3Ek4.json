@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1389kB3Ek4",
+  "title": "107. DeepSeek V4如何使用Attention Sink忽略上下文？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 727,
+  "text": "今天的问题是\ndeep seek v4是如何使用attention think技巧\n来忽略上下文的\n那么在V4技术报告当中就提到了\n他们使用了attention sink技巧\n来使得有些头可以忽略掉大部分的上下文\n也使得这个权重的总和可以不为一\n甚至接近于零\n这是怎么做到的呢\n答案是他为每个头设置了可学习的SYNLOG\n那么我们来分析一下传统的注意力计算\n怎么算呢\n它是投独立计算的\n就是说这里的这个Q头和这里的K转制头\n算出来A头\n然后和V头加权平均\n算出来O头那头和头之间独立\n互不干扰\n那么如果没有这个sync logic\n那么它在这个做soft max的时候是逐行做的\n也就是说123怎么做soft max呢\n就是比如说一就是E的一次方\n然后除以E的一次方\n加上E的二次方\n加E的三次方\n然后他的这个每行的和数为一的\n而由于他给每个头设置了一个可学习的sync logic\n比如说这里呢可视化的时候用了四个头\n就意味着有四个logic\n比如说4320\n那么也就意味着第一个头\n它有一个SYCHOLOGT是四\n这就导致了他在注计算这个注意力权重的时候\n要在分母这里加上一个E的四次方\n这个四来自于这里的这个sync logic\n那来分析一下会有什么影响呢\n那么不难发现\n原来这一行的总和应该是唯一的\n这是soft max的性质\n但是由于加上了一个E的四次方\n它的总和就小于一了\n那么在小于一的情况下\n我们再去算一下这个加权平均\n就是说是拿这个乘以V1\n然后这个乘以V2\n这个乘以V3跳到这里来\n那么可以发现\n就是他的这个注意力权重和是小于一的\n也就是说它可以让比如说V1\n前面的这个数字变得很小\n就忽略掉了\n第一个token就是他所谓的忽略上下文",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1389kB3Ek4",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:16:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

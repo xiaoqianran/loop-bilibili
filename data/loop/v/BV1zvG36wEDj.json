@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1zvG36wEDj",
+  "title": "Codex自动化逆向破解环境搭建：100%下载和安装codex，软件逆向破解技术【二进制安全逆向，游戏安全，软件安全，网络安全，CTF比赛必备基础，封包技术】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2155,
+  "text": "哈喽大家好\n我是小迪老师\n那今天这个视频呢\n我们来讲一下TODEX的下载和安装\ncodex呢现在已经改名叫ChatGPT了啊\n非常符合OpenAI这家人工智能公司的产品命名啊\n那为什么要讲这个东西呢\n下载这个东西实在是太简单了对吧\n那有的同学呢他的电脑环境有点问题啊\n就是你下载下来之后呢没法安装\n所以说呢我们要照顾一下这群朋友\n所以说要让大家百分之百的能够\n用上这样一个东西啊\n为什么呢\n因为太让人着急了\n你看这个同学啊\n拿这个codex看一下这个啊\n你看这个就是codex\n看到没有\n去掉卡密验证\n简简单单几个字啊\n然后呢就把这个程序啊给干掉了\n去掉卡密了对吧\n那么还有其他的看一下这个\n看这个也是给他干开了\n哎呦这能不让人着急吗\n是不是要我外寄啊\n看下这个啊\n目前已经加载成功了\n这个也是破开了啊\nOK所以说呢我们要装上这个东西啊\n非常着急\n那怎么去下载呢\n有两种方法啊\n第一个方法呢就是应用商店直接下载\n如果说你的这个电脑下载下来之后\n没有办法正常安装的话\n那你就等待方法二\n等着我讲方法二就可以了好吧\n先看方法一哈\n首先应用商店直接下载\n怎么去下载呢\n你直接去搜索这个微软商店\n搜索完成之后呢\n看到这个图标啊\n这个就是官网微软应用商店的一个官网\n然后呢点进去点进去之后呢\n呃在这在这儿呢你去搜索chat jp t改名了啊\n以前呢叫codex\n现在叫ChatGPT\n那然后找到带图标的这个啊\n千万不要点错了\n然后呢你再看这个找到这个之后\n你看这个公司名字叫做OpenAI\n那这就对上了对吧\n然后呢点击下载\n下载完成之后呢\n可能会在浏览器的右上角有一个下载\n然后呢你你可能还需要手动的进行一个安装\n懂我意思吧\n好OK那这就是第一个安装的方法\n非常简单\n好方法二\n那如果说你那个电脑这个点击安装的时候\n发现各种各样的错误提示\n那怎么办呢\n你就用方法二方法二非常简单\n它就是不再依赖这个商店的界面\n也不再依赖双机的安装\n而是拿到这个安装包之后呢\n我们通过一个东西叫做power shell啊\n通过这个微软自带的一个命令行这个系统\n然后来进行一个直接的安装\n首先第一步我们要找到什么呢\n找到这个chat gbt的这个啊\n跟那个搜索步骤是一样的啊\n找到他这个链接\n这个就是链接看到没有这个VKS啊\n前边就是链接\n后边就不要了啊\n那第二步呢是打开什么东西呢\n第二步是打开这样一个网站\n看到没有这样一个网站\n这个网站呢就是一个解析的网站\n打开之后就是这样子的\n然后呢你就把这个china jb t的这个链接\n你就把这个链接看到没有这个链接\n然后呢直接粘到这\n粘到这儿之后呢\n选择这个right tail啊\nRetail\n然后呢点击对号\n这个时候你往下翻\n他就解析出来了\n看到没有\n那么在里边选哪个呢\n选这个啊\n叉64杠这个点MSIX看两个\n一个是小数点之后的这个后缀\n一个呢就是X664\n不要不要选错了\n不要选那个a arm64啊\n不要选那个选这个\n然后点击就下载下来了\n那么下载下来之后怎么办呢\n我先模拟啊\n模仿下载一下啊\n好未下载文件有潜在的安全风险去你的\n对不对\n你点击这儿\n然后呢点击允许下载\n甭管是什么浏览器\n你都可以做呃\n对照的一个操作\n你就允许下载就可以了\n好你看很快啊\n这700多兆就下载下来了\n下载下来之后呢\n我们要打开这个文件夹来\n我去找一个新文件夹放放起来哈得嘞\n这个文件夹就还不错啊\n这个文件夹没有太长好\n那么现在呢我们得到这个文件夹的一个地址啊\n就是D盘download\n然后它下边的这个这个文件看到没有\n那么这个时候呢我们就可以打开这个power shell了\n怎么去打开power shell呢\n你就在这个里边去找\n然后找这个P开头的啊\n实际上你搜也行\n直接在这搜\n哎这个电脑应该都有的\n或者说你就点左下角\n然后你往下找P嗯\n来啊不是P啊\n找这个微软的这个微软power shell\nWindows power shell\n它全名是windows power shell\n然后呢你就运行一下\n看到没有\n好\n打开power shell之后\n然后再做一件事\n做什么事呢\n把这个命令复制一下来\n你看这个命令\n他是不是跟你的这个路径对不上啊\n所以说你要把这个路径呢改一改\n你找一个什么呢\n找一个记事本\n来我找一个记事本\n你看我们这个路径是D盘downloads\n对不对\nD盘download来\n我就把这个东西呢看到没有\n你你到这儿啊粘贴一下对吧\n那后边这个文件夹的名称呢也对不上\n这是这是之前一个老的\n现在这个是新的\n看到没有\n来\n我粘贴一下\n看到没有\n这个就是一个完整的命令了\n好拿到这个命令之后呢\n来鼠标右键复制或者CTRLC复制\n然后呢找到我们的power shell\n唉\n这个时候你粘贴回车好\n如果说没有任何错误的话\n没有什么红色的这个字体报错\n就说明安装成功了\n就直接就安上了\n安上之后\n你就可以在里边呢\n找到C开头的这个ChatGPT了\n然后点击运行就可以了\n好吧\n那如果说你在执行完这行命令\n有什么其他疑问啊\n你可以在群里边呢给小迪老师留言\n小莉老师呢会告诉你怎么去操作\nOK那这个的话就是我们codex\n或者说ChatGPT安装的两种方法\n大家可以去实践一下\n我们下期再见\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zvG36wEDj",
+  "published_at": "1785567387",
+  "fetched_at": "2026-08-07T08:25:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# ChatGPT（原Codex）安装方法图谱\n\n## 总览 [BV1zvG36wEDj P1 01:05]\n```mermaid\nflowchart TD\n    A[\"两种安装方法\"] --> B[\"方法一：Microsoft Store\"]\n    A --> C[\"方法二：直接下载 + PowerShell\"]\n```\n\n## 方法一：Microsoft Store 下载与安装 [BV1zvG36wEDj P1 01:19]\n```mermaid\nflowchart TD\n    S1[\"在Microsoft Store搜索\"] --> S2[\"找到ChatGPT（OpenAI）图标\"]\n    S2 --> S3[\"点击下载\"]\n    S3 --> S4[\"浏览器显示下载文件\"]\n    S4 --> S5[\"手动运行安装程序\"]\n    S5 --> S6[\"安装完成，可运行\"]\n```\n\n## 方法二：直接下载 + PowerShell 安装 [BV1zvG36wEDj P1 02:05]\n```mermaid\nflowchart TD\n    D1[\"获取ChatGPT下载链接\"] --> D2[\"打开解析网站\"]\n    D2 --> D3[\"粘贴链接并选择Retail\"]\n    D3 --> D4[\"选择x64 MSIX 包\"]\n    D4 --> D5[\"下载文件\"]\n    D5 --> D6[\"将文件放入 D:\\\\download 文件夹\"]\n    D6 --> D7[\"打开 Windows PowerShell\"]\n    D7 --> D8[\"编辑命令中的路径\"]\n    D8 --> D9[\"粘贴并执行命令\"]\n    D9 --> D10[\"若无错误，安装成功\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"两种安装方法\"] --> B[\"方法一：Microsoft Store\"]\n    A --> C[\"方法二：直接下载 + PowerShell\"]"
+        },
+        {
+          "title": "方法一：Microsoft Store 下载与安装",
+          "code": "flowchart TD\n    S1[\"在Microsoft Store搜索\"] --> S2[\"找到ChatGPT（OpenAI）图标\"]\n    S2 --> S3[\"点击下载\"]\n    S3 --> S4[\"浏览器显示下载文件\"]\n    S4 --> S5[\"手动运行安装程序\"]\n    S5 --> S6[\"安装完成，可运行\"]"
+        },
+        {
+          "title": "方法二：直接下载 + PowerShell 安装",
+          "code": "flowchart TD\n    D1[\"获取ChatGPT下载链接\"] --> D2[\"打开解析网站\"]\n    D2 --> D3[\"粘贴链接并选择Retail\"]\n    D3 --> D4[\"选择x64 MSIX 包\"]\n    D4 --> D5[\"下载文件\"]\n    D5 --> D6[\"将文件放入 D:\\\\download 文件夹\"]\n    D6 --> D7[\"打开 Windows PowerShell\"]\n    D7 --> D8[\"编辑命令中的路径\"]\n    D8 --> D9[\"粘贴并执行命令\"]\n    D9 --> D10[\"若无错误，安装成功\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T08:25:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# ChatGPT（原Codex）安装方法图谱\n\n## 总览 [BV1zvG36wEDj P1 01:05]\n```mermaid\nflowchart TD\n    A[\"两种安装方法\"] --> B[\"方法一：Microsoft Store\"]\n    A --> C[\"方法二：直接下载 + PowerShell\"]\n```\n\n## 方法一：Microsoft Store 下载与安装 [BV1zvG36wEDj P1 01:19]\n```mermaid\nflowchart TD\n    S1[\"在Microsoft Store搜索\"] --> S2[\"找到ChatGPT（OpenAI）图标\"]\n    S2 --> S3[\"点击下载\"]\n    S3 --> S4[\"浏览器显示下载文件\"]\n    S4 --> S5[\"手动运行安装程序\"]\n    S5 --> S6[\"安装完成，可运行\"]\n```\n\n## 方法二：直接下载 + PowerShell 安装 [BV1zvG36wEDj P1 02:05]\n```mermaid\nflowchart TD\n    D1[\"获取ChatGPT下载链接\"] --> D2[\"打开解析网站\"]\n    D2 --> D3[\"粘贴链接并选择Retail\"]\n    D3 --> D4[\"选择x64 MSIX 包\"]\n    D4 --> D5[\"下载文件\"]\n    D5 --> D6[\"将文件放入 D:\\\\download 文件夹\"]\n    D6 --> D7[\"打开 Windows PowerShell\"]\n    D7 --> D8[\"编辑命令中的路径\"]\n    D8 --> D9[\"粘贴并执行命令\"]\n    D9 --> D10[\"若无错误，安装成功\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"两种安装方法\"] --> B[\"方法一：Microsoft Store\"]\n    A --> C[\"方法二：直接下载 + PowerShell\"]"
+    },
+    {
+      "title": "方法一：Microsoft Store 下载与安装",
+      "code": "flowchart TD\n    S1[\"在Microsoft Store搜索\"] --> S2[\"找到ChatGPT（OpenAI）图标\"]\n    S2 --> S3[\"点击下载\"]\n    S3 --> S4[\"浏览器显示下载文件\"]\n    S4 --> S5[\"手动运行安装程序\"]\n    S5 --> S6[\"安装完成，可运行\"]"
+    },
+    {
+      "title": "方法二：直接下载 + PowerShell 安装",
+      "code": "flowchart TD\n    D1[\"获取ChatGPT下载链接\"] --> D2[\"打开解析网站\"]\n    D2 --> D3[\"粘贴链接并选择Retail\"]\n    D3 --> D4[\"选择x64 MSIX 包\"]\n    D4 --> D5[\"下载文件\"]\n    D5 --> D6[\"将文件放入 D:\\\\download 文件夹\"]\n    D6 --> D7[\"打开 Windows PowerShell\"]\n    D7 --> D8[\"编辑命令中的路径\"]\n    D8 --> D9[\"粘贴并执行命令\"]\n    D9 --> D10[\"若无错误，安装成功\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:25:59+00:00"
+}

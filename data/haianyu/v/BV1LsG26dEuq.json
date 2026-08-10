@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1LsG26dEuq",
+  "title": "136. BERT和GPT的可视化有多像？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 405,
+  "text": "今天的问题是BT和GBT的可视化有多像\n实际上仅编码器与仅解码器\n它的可视化是非常像的\n只有编码器加解码器\n才和他俩的可视化有显著差异\n那么编码器加解码器怎么可视化呢\n后面再说\n再来看一下encode only和decode only如何可视化\n首先有一个矩阵X对于第一层它是直线入\n对于中间层\n它上一层的输出X投影\n得到了QKV这里的Q横着切K的转置竖着切\n它俩相乘相当于是做内积算出来\n注意力矩阵和V相乘\n相当于是做加权平均算出来这里的O\n然后有残差连接\n要从注意力层的输入连向注意力层的输出\n这注意力层的输出又作为前馈网络层的输入\n而前馈网络层会让向量先变长后变短\n并且前馈网络层也是有残差连接的\n这个就是encode only\n那么decode only g p t和它的唯一不同在哪呢\n就在于注意力矩阵的这个右上角是有掩码的\n除此之外\nencode only和decode only的可串化都完全相同",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1LsG26dEuq",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:57+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

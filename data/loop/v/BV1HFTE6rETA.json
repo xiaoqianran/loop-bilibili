@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1HFTE6rETA",
+  "title": "【中配】我在Unity和Godot中制作了同一款游戏，哪个引擎更好？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4647,
+  "text": "游戏设计师thomas grove vehere\n我已经在unity中创建了一款简单游戏\n然后在高度值中重新制作\n以便测试这两个引擎的性能和易用性差异\n今天我要和大家分享一些测试结果\n最近我和儿子一直在开发一款恐怖艺术游戏\n今天我不会过多谈论游戏本身\n只聊它在这两个引擎中的运行情况\n我会讲讲两个引擎之间的一些数据差异\n以及使用这两个引擎的一些个人看法\n所以当我在unity中完成那些之后\n我决定也许我也应该在高德中尝试制作这个\n因为工作量还算可控\n在unity中完成这些之后\n我决定也许应该在GODOT中也尝试制作这个游戏\n因为这是一个可控的规模\n所以当我在unity中完成这些之后\n我决定也许应该也在GODOT里试试做这个\n因为这个规模还算可控\n很长一段时间以来\n我一直非常想看到这两个引擎的逐项对比\n使用这两个引擎时都需要先安装\n你使用任何一款引擎时\n首先会遇到的问题是你得先安装它\n你的硬盘还有足够的空间吗\n而且你的硬盘有足够的空间吗\n你的硬盘空间够不够都是个问题吧\n把它们加在一起\n光是安装unity就需要大约21GB的硬盘空间\n如果你的电脑没有很多空闲硬盘空间\n你可能不得不选择一个比unity更清亮的引擎\n如果你的电脑没有太多可用硬盘空间\n你可能得选择一个比unity更小的引擎\n从桌面点击编辑器到项目加载完成\n需要多长时间\n如果你的电脑没有足够的空闲硬盘空间\n你可能得选择一个比unity更小的引擎\n所以总共GODOT从零到进入我的项目\n用了13.5秒\n而unity做同样的事情用了1分20秒\n时长相差5.4倍\n需要多长时间\n总共从零加载到进入项目\nGODOT用了13.5秒\n而unity用了1分20秒\n时间差距是5.4倍\n但是只是一些基本的灯光和基本纹理\n在一个房间里\n用来真正看看抖动滤镜在不同场景下的表现\n所以会有一些时候我只能走到角落里\n试图重新对齐角色位置\n但你可以看到我无法做到完全一致的视觉效果\n我从unity版本开始\n而且我并没有在unity版本中特别努力做美术\n因为最终的游戏美术是我儿子做的\n只是用了一些基本的灯光和基本纹理\n来展示其中一个房间\n以便真正看看抖动滤镜在不同场景下的效果\n嗯但不管怎样\n我觉得两者看起来都不错\n实际上我更喜欢good dota版本的样子\n你知道我在如何让建筑角落渐变为黑色\n这件事上花了更多心思\n我在两个版本中都做了这个效果\n但我在GODOT版本中用的更灵活\n嗯不过总的来说我觉得两者看起来都不错\n实际上我更喜欢GODOT版本的呈现方式\n你知道我在让建筑角落渐变为黑色方面\n花了更多时间\n不过总的来说我觉得两者看起来都不错\n实际上我更喜欢GODOT版本的样子\n你知道的\n我在处理建筑角落渐引到黑色这方面\n多花了点功夫\n两者我都有做\n但我在got out版本里用的更广泛一些\n两个版本中我都有跟随摄像机\n但在GODOT版本中\n我自己写了一个解决方案\n我一开始有点犹豫\n但最终我更喜欢这个方案\n让我们看看关于这个就说几点吧\n两个版本我都有跟随摄像机\n更偏向于定性的东西\n不过在GODOT版本里\n我自己写了一个解决方案来实现它\n一开始我有点犹豫\n但最后我更喜欢这个方案\n而不是unity的那个\n现在你可能会认为go to的版本可能会更快\n因为我已经在unity中做过一次了\n现在你可能会认为高out版本可能会更快\n因为我已经做过一次了\n所以第二次做这个并不难\n但是重新做已经做过的事情\n我实在提不起什么动力\n不过有一个好处是积极的一面\n我确实认为在很多情况下\n我找到了稍微更好的架构来做事情\n因为我一开始就预知了最终目标\n他们真的希望你用T姿势而不是A姿势\n但我对unity非常熟悉\n而对good dote还很陌生\n不过有一点好处\n有一点积极的方面是我确实认为在很多情况下\n我找到了稍微好一点的架构来做事情\n这只是因为我事先就知道要达到什么目标\n他们真的希望你用teapots\n而不是apples\n我的角色不是a pose\n然后如果你不打算使用根运动\n他们真的希望你不要在角色上设置根运动\n当然有办法绕过这个问题\n你可以在blender中移除根运动\n有人甚至为got out写了一个插件\n可以重写文件\n去除根运动\n有时候挺让人沮丧的\n我可以举两个例子\n就说需要绑定角色的动画吧\n在unity的动画系统里\n你可以导入一个T字式或A字势的角色\n两种都可以\n它就会在你的角色上播放动画\n你可以用根运动\n也可以不用两种都可以\n而GODOT在这方面的灵活性就没那么强\n当然也有办法绕过这些限制\n但我的角色不是A姿势\ngout需要几个步骤来识别动画\n有点像是将它们保存为资源\n然后映射到另一个动画部中或类似的东西\n很多时候你必须让某个东西变成独特的\n举例来说\n如果你用mix ammo\n你可以下载不带根运动的动画版本\n好吧\n你得点击它\n它才会展开\n有人甚至写了GODOT的插件\n可以重写文件\n去掉根运动\n很多时候你得让某个东西变成unique\n说至少让他只编辑那一个实例\n而不是到处都改\nGODD有好几个步骤需要你来识别动画\n保存为资源\n然后映射到另一个动画部之类的地方\n脚本编译都需要相当明显的时间\n我认为unity的URP目前来看\n比GODOT的渲染管线要成熟一些\n尤其是在某些方面\n我有一些非常具体的需求\n比如我想做一个色彩抖动效果\n但它被应用在了透明处理之前\n而我希望它在透明处理之后应用\n所以我不得不自己写一个HLSL\n你们叫什么来着\n合成器类型的着色器\n这对我来说有点困难\n虽然最终他能完成我需要的一切\n但我认为在那里损失了一点性能\n这个我们后面会看到\n最后我不知道能不能在编辑器里展示几个例子\n让我快速打开一下\n如果你不熟悉这个编辑器\n有很多东西会被隐藏起来\n比如很多时候你会看到这样的东西\n教程可能会说哦\n只需要修改这个材质上的某个属性就行了\nYou might need to the resi\ngot out版本用了半秒\nunity编译\n基本上相同的脚本用了15.5秒\n相差31倍\n还有另一种方法就是这个你实际上可以改成\n例如选定的场景和依赖项\n或选定的资源和依赖项\n或除之外的所有资源\n还有一点需要记住\n所以当我第一次导出这个项目时\n我得到了一个相当大的文件\n大小比我预期的要大很多\n因为我以为它会像unity那样包含资源\n而且它包含了项目中的所有资源\n然后在导出时我加了这个排除项\n这样就不会包含那个文件夹\n所以当我第一次导出这个项目时\n文件大小挺大的\n比我预期的要大得多\n因为我以为它会像unity那样包含资源\n而且它确实包含了我项目中所有的资源\n所以仍然有20倍的差距\n但不像第一次那么严重\n在GODOT版本中\n我优化了角色材质\n让整个角色只使用一种材质\n为了在对象上使用不同的脚本而多添加节点\n这没问题\n一旦你的项目完成了\n你想要构建它\n正如我刚才展示的\n对于PC来说\n构建项目需要多长时间\n嗯我第一次在两个引擎中构建时\nunity用了15分钟\ngot out只要两秒到两秒半\n相差341倍\n但后来我又导出了unity\n第二次导出结果快了很多\n所以当我第一次导出这个项目时\n文件大小非常大\n比我预期的要大得多\n因为我以为他会像unity那样包含资源\n结果他把我项目中的所有资源都包含进去了\n所以还是相差20倍\n但不像第一次那么夸张\n我有点不想再导出一次\n但我想要一个公平的性能对比\n除了之外的所有资源\n你可以实际将其更改为\n例如选定的场景及相关资源\n或选定的资源及相关资源\n或除指定向外的所有资源\n所以unity版本中衬衫是一种材质\n鞋子是一种材质\n皮肤是一种材质\n就像我底下的这段文字那样\n但不管怎样\n一旦你不包含所有源文件\n你的项目就会小很多\n这其实是unity默认就会做的\nGODOT也能做到\n但你需要自己手动设置\n我想这就是我能想到的\n使用GODOT的不好的地方了\n不能在一个游戏对象上放置多个脚本组件\n确实需要一点时间来适应\n但我现在已经没问题了\n但后来我又导出了一次unity\n第二次导出到PC的\n结果快了很多\n最后我认为我们有一个性能对比\n当我第一次想比较两个游戏的帧率时\n得到了一个令人震惊的结果\n看起来GODOT在编辑器中给我950帧\n而unity在200到300帧之间\n所以还是有20倍的差距\n但没有第一次那么夸张\n一个只显示逻辑和物理部分\n另一个显示渲染部分\n在gout的版本中\n我优化了角色材质\n让整个角色只使用一种材质\n所以现在这个游戏设定为60帧每秒运行\n但我关闭了垂直同步\n来看我的性能如何\n看看我有多少余量\n也只是想了解引擎的性能\n在GOODLE版本中\n我优化了角色的材质\n使其整个角色只使用一种材质\n而unity版本没有经过优化\n现在我制作了GODOT版本的另一个构建\n我把全局光照从体速GI改成了光照贴图\nGI在GODOT版本中\n唯一影响我帧率的是GPU使用量材质只有皮肤\n这样我才能得到一个公平的比较\n现在我要点击两个构建版本\n看看游戏加载需要多长时间\n你可以看到GODOT游戏在两秒九帧内完成加载\n而unity游戏大约需要十秒半\n这大约是五倍的启动时间差异\n最后我想我们这里有一个性能对比\n我在GODOT版本中也得到了高达630的帧率\n我的是95%GPU和8%CPU\n而unity是76%\ngpu 29%cpu\n结果发现GODOT实际上有两个性能分析器\n我做了那个改动\n同时也调整了一点分辨率\n你知道几年前的商业行为\n我决定重启电脑\n再试一次这两个测试\n但这次不运行\nGoddunity\nda vinci resolve和OBS\n在后台两个引擎都非常强大\n所以结果有点inconclusive\n但unity在编辑器中有相当大的开销\n最终导出的版本快的惊人\n在这个简陋的场景中能达到650\n甚至有时730帧\n有趣的是资源的使用方式的差异\ngoat版本的GPU\n我想这就是你会用的词\n更多关于实际游戏的内容\n在以后的视频中\n我能够在两者中都做出我想要的东西\n我会在之后更详细地谈谈\n角色控制器和一些相关的东西\n我会在之后更详细地谈论\n角色控制器和一些其他的东西\n感谢收听\n祝你有美好的一天\n我还让good dot版本的帧率达到了630\n简而言之\n我可能会继续在这个项目里使用GODO\n只因为里面的每一样东西都让我感觉更定制化\n而且有很多好处\n特别是如果你的电脑硬盘空间不大的话\n希望这些对你有帮助\n简而言之\n我可能会继续在这个项目中使用GODO\n仅仅因为他的一切对我来说感觉更定制化一些\n而且有很多好处\n尤其是如果你在硬盘空间不多的电脑上运行\n可以说如果我们看这些数据\nGODOT在除了最终输出帧率之外的\n每个指标上都击败了unity\n而且它们非常接近\n两者都远远超过了我60帧每秒的余量\n我达到了600左右\n所以我还有十倍的帧率余量可以挥霍\n所以我不太担心那方面的性能\n希望这个视频有趣\n谢谢再见\n关于实际游戏的内容会在以后的视频里讲\n我会在后面更详细的讲\n角色控制器和一些相关的东西\n稍后我会更详细地谈谈\n角色控制器和一些相关的东西\n用你想用的引擎就好\n用什么引擎都可以\n而且它有太多好处了\n特别是如果你用的电脑硬盘空间不大的话\n而且有非常多的好处\n特别是如果你的电脑硬盘空间不大的话\n而且有太多的好处\n特别是如果你在一台硬盘\n空间不大的电脑上运行的话\n谢谢再见\n谢谢大家再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HFTE6rETA",
+  "published_at": "1782997797",
+  "fetched_at": "2026-08-10T08:26:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Unity vs Godot 对比图谱\n\n## 环境准备与安装需求 [BV1HFTE6rETA P1 01:26]\n```mermaid\nflowchart TD\n    U[Unity] -->|约21GB磁盘空间| DS[硬盘空间需求]\n    G[Godot] -->|更小磁盘占用| DS\n    DS --> Choose[根据硬盘剩余空间选择引擎]\n    U --> InstallU[安装Unity]\n    G --> InstallG[安装Godot]\n    InstallU --> CheckU[检查硬盘空间]\n    InstallG --> CheckG[检查硬盘空间]\n    CheckU -->|不足| Choose\n    CheckG -->|不足| Choose\n```\n\n## 启动加载时间比较 [BV1HFTE6rETA P1 01:53-02:14]\n```mermaid\nflowchart TD\n    Start[项目启动] --> LoadU[Unity加载]\n    Start --> LoadG[Godot加载]\n    LoadU --> TimeU[1分20秒]\n    LoadG --> TimeG[13.5秒]\n    TimeU --> RatioU[5.4倍慢于Godot]\n    TimeG --> RatioG[5.4倍快于Unity]\n    LoadU --> Basic[基本灯光+纹理]\n    LoadG --> Basic\n```\n\n## 构建导出时间比较 [BV1HFTE6rETA P1 08:50-08:56]\n```mermaid\nflowchart TD\n    BuildStart[开始构建] --> BuildU[Unity构建]\n    BuildStart --> BuildG[Godot构建]\n    BuildU --> TimeU[15分钟]\n    BuildG --> TimeG[2秒~2.5秒]\n    TimeU --> RatioU[341倍慢于Godot]\n    TimeG --> RatioG[341倍快于Unity]\n    BuildU --> ExportOptU[首次导出文件大]\n    BuildG --> ExportOptG[排除资源后文件小]\n    ExportOptU --> SizeDiff[约20倍大小差异]\n    ExportOptG --> SizeDiff\n```\n\n## 运行时帧率与资源使用 [BV1HFTE6rETA P1 10:34-12:05]\n```mermaid\nflowchart TD\n    Runtime[运行时性能] --> FPSU[Unity FPS 200-300]\n    Runtime --> FPSG[Godot FPS 950]\n    FPSG --> HighFPS[最高630 FPS 实测]\n    FPSU --> LowFPS[Unity 76% GPU 29% CPU]\n    FPSG --> HighGPU[Godot 95% GPU 8% CPU]\n    FPSG --> MaterialOpt[单材质优化]\n    MaterialOpt --> GPUUsage[降低GPU负载]\n    FPSU --> NoOpt[未做材质优化]\n    GPUUsage --> PerfResult[Godot 在所有指标上优于Unity]\n```\n\n## 功能灵活性与实现方式 [BV1HFTE6rETA P1 04:07-05:46]\n```mermaid\nflowchart TD\n    Feature[功能实现] --> CamFollow[摄像机跟随]\n    CamFollow --> UnityCam[Unity 默认实现]\n    CamFollow --> GodotCam[Godot 自定义脚本]\n    Feature --> RootMotion[根运动]\n    RootMotion --> UnityRM[Unity 支持根运动]\n    RootMotion --> GodotRM[Godot 限制根运动]\n    GodotRM --> Plugin[插件或手动去除根运动]\n    UnityRM --> PluginNone[无需插件]\n    Animation[动画导入] --> UnityAnim[Unity 可直接导入 T/A Pose]\n    Animation --> GodotAnim[Godot 需多步骤识别]\n    GodotAnim --> Steps[保存为资源 → 映射 → 唯一实例]\n    Steps --> Plugin[可用插件重写文件]\n```",
+      "diagrams": [
+        {
+          "title": "环境准备与安装需求",
+          "code": "flowchart TD\n    U[Unity] -->|约21GB磁盘空间| DS[硬盘空间需求]\n    G[Godot] -->|更小磁盘占用| DS\n    DS --> Choose[根据硬盘剩余空间选择引擎]\n    U --> InstallU[安装Unity]\n    G --> InstallG[安装Godot]\n    InstallU --> CheckU[检查硬盘空间]\n    InstallG --> CheckG[检查硬盘空间]\n    CheckU -->|不足| Choose\n    CheckG -->|不足| Choose"
+        },
+        {
+          "title": "启动加载时间比较 [BV1HFTE6rETA P1 01:53-02:14]",
+          "code": "flowchart TD\n    Start[项目启动] --> LoadU[Unity加载]\n    Start --> LoadG[Godot加载]\n    LoadU --> TimeU[1分20秒]\n    LoadG --> TimeG[13.5秒]\n    TimeU --> RatioU[5.4倍慢于Godot]\n    TimeG --> RatioG[5.4倍快于Unity]\n    LoadU --> Basic[基本灯光+纹理]\n    LoadG --> Basic"
+        },
+        {
+          "title": "构建导出时间比较 [BV1HFTE6rETA P1 08:50-08:56]",
+          "code": "flowchart TD\n    BuildStart[开始构建] --> BuildU[Unity构建]\n    BuildStart --> BuildG[Godot构建]\n    BuildU --> TimeU[15分钟]\n    BuildG --> TimeG[2秒~2.5秒]\n    TimeU --> RatioU[341倍慢于Godot]\n    TimeG --> RatioG[341倍快于Unity]\n    BuildU --> ExportOptU[首次导出文件大]\n    BuildG --> ExportOptG[排除资源后文件小]\n    ExportOptU --> SizeDiff[约20倍大小差异]\n    ExportOptG --> SizeDiff"
+        },
+        {
+          "title": "运行时帧率与资源使用 [BV1HFTE6rETA P1 10:34-12:05]",
+          "code": "flowchart TD\n    Runtime[运行时性能] --> FPSU[Unity FPS 200-300]\n    Runtime --> FPSG[Godot FPS 950]\n    FPSG --> HighFPS[最高630 FPS 实测]\n    FPSU --> LowFPS[Unity 76% GPU 29% CPU]\n    FPSG --> HighGPU[Godot 95% GPU 8% CPU]\n    FPSG --> MaterialOpt[单材质优化]\n    MaterialOpt --> GPUUsage[降低GPU负载]\n    FPSU --> NoOpt[未做材质优化]\n    GPUUsage --> PerfResult[Godot 在所有指标上优于Unity]"
+        },
+        {
+          "title": "功能灵活性与实现方式 [BV1HFTE6rETA P1 04:07-05:46]",
+          "code": "flowchart TD\n    Feature[功能实现] --> CamFollow[摄像机跟随]\n    CamFollow --> UnityCam[Unity 默认实现]\n    CamFollow --> GodotCam[Godot 自定义脚本]\n    Feature --> RootMotion[根运动]\n    RootMotion --> UnityRM[Unity 支持根运动]\n    RootMotion --> GodotRM[Godot 限制根运动]\n    GodotRM --> Plugin[插件或手动去除根运动]\n    UnityRM --> PluginNone[无需插件]\n    Animation[动画导入] --> UnityAnim[Unity 可直接导入 T/A Pose]\n    Animation --> GodotAnim[Godot 需多步骤识别]\n    GodotAnim --> Steps[保存为资源 → 映射 → 唯一实例]\n    Steps --> Plugin[可用插件重写文件]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T08:26:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Unity vs Godot 对比图谱\n\n## 环境准备与安装需求 [BV1HFTE6rETA P1 01:26]\n```mermaid\nflowchart TD\n    U[Unity] -->|约21GB磁盘空间| DS[硬盘空间需求]\n    G[Godot] -->|更小磁盘占用| DS\n    DS --> Choose[根据硬盘剩余空间选择引擎]\n    U --> InstallU[安装Unity]\n    G --> InstallG[安装Godot]\n    InstallU --> CheckU[检查硬盘空间]\n    InstallG --> CheckG[检查硬盘空间]\n    CheckU -->|不足| Choose\n    CheckG -->|不足| Choose\n```\n\n## 启动加载时间比较 [BV1HFTE6rETA P1 01:53-02:14]\n```mermaid\nflowchart TD\n    Start[项目启动] --> LoadU[Unity加载]\n    Start --> LoadG[Godot加载]\n    LoadU --> TimeU[1分20秒]\n    LoadG --> TimeG[13.5秒]\n    TimeU --> RatioU[5.4倍慢于Godot]\n    TimeG --> RatioG[5.4倍快于Unity]\n    LoadU --> Basic[基本灯光+纹理]\n    LoadG --> Basic\n```\n\n## 构建导出时间比较 [BV1HFTE6rETA P1 08:50-08:56]\n```mermaid\nflowchart TD\n    BuildStart[开始构建] --> BuildU[Unity构建]\n    BuildStart --> BuildG[Godot构建]\n    BuildU --> TimeU[15分钟]\n    BuildG --> TimeG[2秒~2.5秒]\n    TimeU --> RatioU[341倍慢于Godot]\n    TimeG --> RatioG[341倍快于Unity]\n    BuildU --> ExportOptU[首次导出文件大]\n    BuildG --> ExportOptG[排除资源后文件小]\n    ExportOptU --> SizeDiff[约20倍大小差异]\n    ExportOptG --> SizeDiff\n```\n\n## 运行时帧率与资源使用 [BV1HFTE6rETA P1 10:34-12:05]\n```mermaid\nflowchart TD\n    Runtime[运行时性能] --> FPSU[Unity FPS 200-300]\n    Runtime --> FPSG[Godot FPS 950]\n    FPSG --> HighFPS[最高630 FPS 实测]\n    FPSU --> LowFPS[Unity 76% GPU 29% CPU]\n    FPSG --> HighGPU[Godot 95% GPU 8% CPU]\n    FPSG --> MaterialOpt[单材质优化]\n    MaterialOpt --> GPUUsage[降低GPU负载]\n    FPSU --> NoOpt[未做材质优化]\n    GPUUsage --> PerfResult[Godot 在所有指标上优于Unity]\n```\n\n## 功能灵活性与实现方式 [BV1HFTE6rETA P1 04:07-05:46]\n```mermaid\nflowchart TD\n    Feature[功能实现] --> CamFollow[摄像机跟随]\n    CamFollow --> UnityCam[Unity 默认实现]\n    CamFollow --> GodotCam[Godot 自定义脚本]\n    Feature --> RootMotion[根运动]\n    RootMotion --> UnityRM[Unity 支持根运动]\n    RootMotion --> GodotRM[Godot 限制根运动]\n    GodotRM --> Plugin[插件或手动去除根运动]\n    UnityRM --> PluginNone[无需插件]\n    Animation[动画导入] --> UnityAnim[Unity 可直接导入 T/A Pose]\n    Animation --> GodotAnim[Godot 需多步骤识别]\n    GodotAnim --> Steps[保存为资源 → 映射 → 唯一实例]\n    Steps --> Plugin[可用插件重写文件]\n```",
+  "diagrams": [
+    {
+      "title": "环境准备与安装需求",
+      "code": "flowchart TD\n    U[Unity] -->|约21GB磁盘空间| DS[硬盘空间需求]\n    G[Godot] -->|更小磁盘占用| DS\n    DS --> Choose[根据硬盘剩余空间选择引擎]\n    U --> InstallU[安装Unity]\n    G --> InstallG[安装Godot]\n    InstallU --> CheckU[检查硬盘空间]\n    InstallG --> CheckG[检查硬盘空间]\n    CheckU -->|不足| Choose\n    CheckG -->|不足| Choose"
+    },
+    {
+      "title": "启动加载时间比较 [BV1HFTE6rETA P1 01:53-02:14]",
+      "code": "flowchart TD\n    Start[项目启动] --> LoadU[Unity加载]\n    Start --> LoadG[Godot加载]\n    LoadU --> TimeU[1分20秒]\n    LoadG --> TimeG[13.5秒]\n    TimeU --> RatioU[5.4倍慢于Godot]\n    TimeG --> RatioG[5.4倍快于Unity]\n    LoadU --> Basic[基本灯光+纹理]\n    LoadG --> Basic"
+    },
+    {
+      "title": "构建导出时间比较 [BV1HFTE6rETA P1 08:50-08:56]",
+      "code": "flowchart TD\n    BuildStart[开始构建] --> BuildU[Unity构建]\n    BuildStart --> BuildG[Godot构建]\n    BuildU --> TimeU[15分钟]\n    BuildG --> TimeG[2秒~2.5秒]\n    TimeU --> RatioU[341倍慢于Godot]\n    TimeG --> RatioG[341倍快于Unity]\n    BuildU --> ExportOptU[首次导出文件大]\n    BuildG --> ExportOptG[排除资源后文件小]\n    ExportOptU --> SizeDiff[约20倍大小差异]\n    ExportOptG --> SizeDiff"
+    },
+    {
+      "title": "运行时帧率与资源使用 [BV1HFTE6rETA P1 10:34-12:05]",
+      "code": "flowchart TD\n    Runtime[运行时性能] --> FPSU[Unity FPS 200-300]\n    Runtime --> FPSG[Godot FPS 950]\n    FPSG --> HighFPS[最高630 FPS 实测]\n    FPSU --> LowFPS[Unity 76% GPU 29% CPU]\n    FPSG --> HighGPU[Godot 95% GPU 8% CPU]\n    FPSG --> MaterialOpt[单材质优化]\n    MaterialOpt --> GPUUsage[降低GPU负载]\n    FPSU --> NoOpt[未做材质优化]\n    GPUUsage --> PerfResult[Godot 在所有指标上优于Unity]"
+    },
+    {
+      "title": "功能灵活性与实现方式 [BV1HFTE6rETA P1 04:07-05:46]",
+      "code": "flowchart TD\n    Feature[功能实现] --> CamFollow[摄像机跟随]\n    CamFollow --> UnityCam[Unity 默认实现]\n    CamFollow --> GodotCam[Godot 自定义脚本]\n    Feature --> RootMotion[根运动]\n    RootMotion --> UnityRM[Unity 支持根运动]\n    RootMotion --> GodotRM[Godot 限制根运动]\n    GodotRM --> Plugin[插件或手动去除根运动]\n    UnityRM --> PluginNone[无需插件]\n    Animation[动画导入] --> UnityAnim[Unity 可直接导入 T/A Pose]\n    Animation --> GodotAnim[Godot 需多步骤识别]\n    GodotAnim --> Steps[保存为资源 → 映射 → 唯一实例]\n    Steps --> Plugin[可用插件重写文件]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:26:54+00:00"
+}

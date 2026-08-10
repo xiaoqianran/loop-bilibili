@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1tsVd66Egc",
+  "title": "【唐老狮】UE系列之C++四部曲 — C++进阶",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2485,
+  "text": "Hello\n你好\n我是唐老师\n欢迎收看我的视频\n本节课我们将正式开始学习C加加境界\n那我们这节课呢首先来学习关于现代C加加\n那本节课的主要学习目标有以下三点\n一是了解C加加版本的变化\n二是现代C加加是什么\n三是U1支持的C加加版本\n那首先我们来学习第一点\n了解C加加版本的变化\n那么C加加主要经历了以下版本的变化\n从1998年的第一个版本C加加981\n直到03年的C加加零三\n以及11年的CC加加一一\n2014年的C加加14\n以及2017年的C加加17\n还有2020年的C加加20\n以及2023年的C加加23\n那你会发现C加加后面的这个版本号98031\n其实就是对应的年份\n那么从2011年开始呢\n这个ISOC加加的标准委员会一直就按照了\n约为每3年更新一次的这个节奏去推进C加加版本的更迭\n但是这个3年一次的这个目标节奏\n它不是一个铁律\n并且它标准的发布不代表编译器完全支持\n什么意思呢\n就不见得他一定是要3年发布一次\n那么按照理论上来说的话\n26年应该会出现一个C加加二六的版本\n那么具体的发布时间呢\n其实没有一个准确的时间\n都要具体看这个委员会是否会进行更新\n并且即使有更新版本的这个C加加了过后\n但是如果你使用的这个IDE的版本较低\n它可能也不支持最新版本的这个C加加\n因此我们在使用的时候\n一定要看我们当前的编译器是否支持对应版本的C加加\n才能去使用其中的一些新功能\n那么每一次更新呢\n它主要就会添加一些新的内容\n第一就是新的一些语言的特性\n比如说有一些新的语法或者说使用的规则\n第二就是一些标准库的能力\n就是它可能会发布一些封装好的一些完成特定功能的一些代码\n你去学会怎么去使用它就行了\n那么以下呢就列举了在各个版本当中主要更新的一些内容\n比如C加加九八就是C加加的一套最基本的规则\n那么STAL也成型了\n那么这个STL也是我们C加加进阶当中要核心去学习的内容\n那么在C加加零三这个版本当中呢\n它主要就是修订去补了一些漏洞\n那么C加加11呢就加入了一些新的功能\n比如说我们的右值引用\n还有移动构造\n纳姆达表达式以及智能指针并发库等等的内容\n那么在C加加14当中\n就把C加加11理得更顺了\n并且增加了这种泛型的纳姆达表达式\n然后还有一些容器算法的增强\n那么在C加17当中加入了一些结构化绑定\n还有什么并行算法等等的一些内容\n那么在C加加20当中\n主要加入了一些模板的约束\n以及rages\n还有携程等等的功能\n那么在C加加二三当中\n主要就是对C加加二零的路线上去进行了一些补全\n那你会发现其实在对应的一些版本当中\n它可能有的会出现一些比较新的一些内容\n而有的他只是去对以前的内容去进行一些啊\n就是完善和修正\n所以对应的C加加的版本\n它能够用的一些语法或者说一些功能也是不一样的\n比如说在我们的C加加零三或者一一当中\n就没有办法去使用C加加二零或者二三版本的一些新内容\n那么这个是需要注意的\n那么对于我们来说\n为什么要去了解这些版本呢\n那其实主要就是为了引出我们现代C加加是什么\n那么经常我们会听到有人提到什么现代C加加\n那其实现代C加加通常不是指的某一个固定的版本\n而是从我们C加加11开始逐步形成的一套主流的写法和理念\n到了C加加14和17这两个版本的时候\n变得更加的成熟\n而C加加二零和二三就再次去增强了这样的一些理念\n那么核心就用一句话去理解\n其实就可以了\n所谓的现代C加加就是用较新版本的C加加的语言和标准库的能力\n去写出更少坑的C加加代码\n因此我们在课程学习当中\n也需要去学习这些较新版本的C加加的相关内容\n那就可以去遵循现代C加加的一些规范\n那么其实我们C加加前三部曲当中\n已经学习了很多现代C加加的知识了\n比如说我们在学习一些知识的时候\n会提到诶\n这个是C加加哪一个版本提出的一种新的用法\n而我们在即将开始的这个C加加进阶的知识体系学习当中\n那么就会有大量的相关的一些内容的学习\n那我们在C加加进阶当中就会提及很多这些现代C加加\n这些版本的一些知识点\n比如说会有C加加一七\n还有二零等等版本的一些内容\n也是现在的一些主流的用法\n那我们在整个学习的过程当中\n会提到我们学习的这个知识点主要来自于C加加的哪个版本\n那么在使用对应版本的C加加的时候\n你就知道哪些能用\n哪些不能用了\n好那么这个就是我们现代C加加的一个概念\n那我们接下来再来看U1当中支持的C加加版本有哪些呢\n那么虽然U1当中可以通过修改配置的方式\n去决定使用的C加加的版本\n但是它不是官方保证的\n一般每个版本的U1其实都会有一个默认的版本\n比如说在U14当中\n它默认就是C加加一四\n而U15.0到5.2之间呢\n它使用的是C加加17\n那么在U15.3起呢\n他使用的就是C加加二零\n并且你需要注意的就是\n即使U1它默认使用了对应的某个C加加的版本\n也不能完全代表你可以在这个UV当中使用这个版本当中的\n所有的新的一些特性\n它有的新特性它可能也是不支持的\n因此这也是为什么我们要去学这个现代C加加\n也就是我们C加加后面版本的一些知识点的原因\n就是因为随着U1版本的更新\n它其实支持的这个C加加的版本也越来越高了\n那我们学习了这些新版本当中的一些知识点的话\n可以更有利于我们基于现代C加加的编程方式去进行一个开发好\n那么以上呢其实就是关于我们现代C加加的相关的一些知识\n那么其实主要目的就是告诉大家\n在C加加进阶当中\n我们会学习很多新版本当中的一些知识点\n那最后我们来进行一个简单的总结\n那么首先我们这节课讲了三个知识点\n第一就是了解了C加加版本的变化\n那么他的98031114172023\n其实就是对应的年份\n那么每个版本呢其实都是在之前的版本的基础上\n去添加和改进的一些功能\n第二呢就是现代C加加是什么\n其实一般指的就是从11开始往后逐步形成的一套主流的编程的写法\n用较新版本的C加加的语言和标准库的能力\n去写出更少坑的C加加代码\n那第三呢就是U1支持的C加加版本\n其实目前最新的U1其实支持的是C加加二零这个版本\n那么以上呢就是本节课的所有内容\n那么谢谢您的聆听\n敬请期待我的下一个视频再会",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1tsVd66Egc",
+  "published_at": "1780315200",
+  "fetched_at": "2026-08-10T07:04:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# C++ 版本与现代概念图谱\n\n## C++ 版本时间线\n```mermaid\nflowchart LR\n    V98[\"C++98 (1998)\"]\n    V03[\"C++03 (2003)\"]\n    V11[\"C++11 (2011)\"]\n    V14[\"C++14 (2014)\"]\n    V17[\"C++17 (2017)\"]\n    V20[\"C++20 (2020)\"]\n    V23[\"C++23 (2023)\"]\n    UpdateCycle[\"≈3-year update cycle\"]\n    Committee[\"ISO C++ Committee\"]\n    Note[\"Standard release ≠ compiler support\"]\n    V98 --> V03 --> V11 --> V14 --> V17 --> V20 --> V23\n    V11 --> UpdateCycle\n    UpdateCycle --> V14\n    UpdateCycle --> V17\n    UpdateCycle --> V20\n    UpdateCycle --> V23\n    Committee --> UpdateCycle\n    V23 --> Note\n```\n\n## 现代 C++ 定义\n```mermaid\nflowchart TD\n    ModernCpp[\"Modern C++\"]\n    StartCpp11[\"Start from C++11\"]\n    CoreFeatures[\"New language features\"]\n    StdLibAdv[\"Standard library enhancements\"]\n    LessBugs[\"Write less buggy code\"]\n    Usage[\"Use newer language & library capabilities\"]\n    Goal[\"Reduce pitfalls\"]\n    Maturity[\"C++14 & C++17 mature\"]\n    Extension[\"C++20 & C++23 extend ideas\"]\n    ModernCpp --> StartCpp11\n    StartCpp11 --> CoreFeatures\n    StartCpp11 --> StdLibAdv\n    CoreFeatures --> LessBugs\n    StdLibAdv --> LessBugs\n    LessBugs --> Usage\n    Usage --> Goal\n    ModernCpp --> Maturity\n    ModernCpp --> Extension\n```\n\n## UE 对 C++ 版本的支持\n```mermaid\nflowchart TD\n    UE[\"UE (Unreal Engine)\"]\n    Configurable[\"Configurable C++ version\"]\n    DefaultVersion[\"Default C++ version per UE release\"]\n    UE4_14[\"UE 4.14\"]\n    UE5_0_5_2[\"UE 5.0–5.2\"]\n    UE5_3[\"UE 5.3+\"]\n    Cpp14[\"C++14\"]\n    Cpp17[\"C++17\"]\n    Cpp20[\"C++20\"]\n    SupportLimitation[\"Not all features guaranteed\"]\n    CompilerCheck[\"Check compiler support\"]\n    UE --> Configurable\n    UE --> DefaultVersion\n    UE4_14 --> Cpp14\n    UE5_0_5_2 --> Cpp17\n    UE5_3 --> Cpp20\n    DefaultVersion --> SupportLimitation\n    Configurable --> CompilerCheck\n```\n\n## 版本更新与使用注意事项\n```mermaid\nflowchart TD\n    VersionUpdate[\"C++ version update\"]\n    NewFeatures[\"New language features\"]\n    StdLibFeatures[\"Standard library features\"]\n    AddImprovement[\"Add/Improve functionality\"]\n    UseNewFeatures[\"Can use new features\"]\n    CompilerSupport[\"Compiler support needed\"]\n    IDEVersion[\"IDE version\"]\n    ReleaseSchedule[\"≈3-year release (not strict)\"]\n    Uncertainty[\"No exact release date\"]\n    VersionUpdate --> NewFeatures\n    VersionUpdate --> StdLibFeatures\n    NewFeatures --> AddImprovement\n    StdLibFeatures --> AddImprovement\n    AddImprovement --> UseNewFeatures\n    CompilerSupport --> UseNewFeatures\n    IDEVersion --> CompilerSupport\n    ReleaseSchedule --> VersionUpdate\n    Uncertainty --> ReleaseSchedule\n```",
+      "diagrams": [
+        {
+          "title": "C++ 版本时间线",
+          "code": "flowchart LR\n    V98[\"C++98 (1998)\"]\n    V03[\"C++03 (2003)\"]\n    V11[\"C++11 (2011)\"]\n    V14[\"C++14 (2014)\"]\n    V17[\"C++17 (2017)\"]\n    V20[\"C++20 (2020)\"]\n    V23[\"C++23 (2023)\"]\n    UpdateCycle[\"≈3-year update cycle\"]\n    Committee[\"ISO C++ Committee\"]\n    Note[\"Standard release ≠ compiler support\"]\n    V98 --> V03 --> V11 --> V14 --> V17 --> V20 --> V23\n    V11 --> UpdateCycle\n    UpdateCycle --> V14\n    UpdateCycle --> V17\n    UpdateCycle --> V20\n    UpdateCycle --> V23\n    Committee --> UpdateCycle\n    V23 --> Note"
+        },
+        {
+          "title": "现代 C++ 定义",
+          "code": "flowchart TD\n    ModernCpp[\"Modern C++\"]\n    StartCpp11[\"Start from C++11\"]\n    CoreFeatures[\"New language features\"]\n    StdLibAdv[\"Standard library enhancements\"]\n    LessBugs[\"Write less buggy code\"]\n    Usage[\"Use newer language & library capabilities\"]\n    Goal[\"Reduce pitfalls\"]\n    Maturity[\"C++14 & C++17 mature\"]\n    Extension[\"C++20 & C++23 extend ideas\"]\n    ModernCpp --> StartCpp11\n    StartCpp11 --> CoreFeatures\n    StartCpp11 --> StdLibAdv\n    CoreFeatures --> LessBugs\n    StdLibAdv --> LessBugs\n    LessBugs --> Usage\n    Usage --> Goal\n    ModernCpp --> Maturity\n    ModernCpp --> Extension"
+        },
+        {
+          "title": "UE 对 C++ 版本的支持",
+          "code": "flowchart TD\n    UE[\"UE (Unreal Engine)\"]\n    Configurable[\"Configurable C++ version\"]\n    DefaultVersion[\"Default C++ version per UE release\"]\n    UE4_14[\"UE 4.14\"]\n    UE5_0_5_2[\"UE 5.0–5.2\"]\n    UE5_3[\"UE 5.3+\"]\n    Cpp14[\"C++14\"]\n    Cpp17[\"C++17\"]\n    Cpp20[\"C++20\"]\n    SupportLimitation[\"Not all features guaranteed\"]\n    CompilerCheck[\"Check compiler support\"]\n    UE --> Configurable\n    UE --> DefaultVersion\n    UE4_14 --> Cpp14\n    UE5_0_5_2 --> Cpp17\n    UE5_3 --> Cpp20\n    DefaultVersion --> SupportLimitation\n    Configurable --> CompilerCheck"
+        },
+        {
+          "title": "版本更新与使用注意事项",
+          "code": "flowchart TD\n    VersionUpdate[\"C++ version update\"]\n    NewFeatures[\"New language features\"]\n    StdLibFeatures[\"Standard library features\"]\n    AddImprovement[\"Add/Improve functionality\"]\n    UseNewFeatures[\"Can use new features\"]\n    CompilerSupport[\"Compiler support needed\"]\n    IDEVersion[\"IDE version\"]\n    ReleaseSchedule[\"≈3-year release (not strict)\"]\n    Uncertainty[\"No exact release date\"]\n    VersionUpdate --> NewFeatures\n    VersionUpdate --> StdLibFeatures\n    NewFeatures --> AddImprovement\n    StdLibFeatures --> AddImprovement\n    AddImprovement --> UseNewFeatures\n    CompilerSupport --> UseNewFeatures\n    IDEVersion --> CompilerSupport\n    ReleaseSchedule --> VersionUpdate\n    Uncertainty --> ReleaseSchedule"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T07:04:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# C++ 版本与现代概念图谱\n\n## C++ 版本时间线\n```mermaid\nflowchart LR\n    V98[\"C++98 (1998)\"]\n    V03[\"C++03 (2003)\"]\n    V11[\"C++11 (2011)\"]\n    V14[\"C++14 (2014)\"]\n    V17[\"C++17 (2017)\"]\n    V20[\"C++20 (2020)\"]\n    V23[\"C++23 (2023)\"]\n    UpdateCycle[\"≈3-year update cycle\"]\n    Committee[\"ISO C++ Committee\"]\n    Note[\"Standard release ≠ compiler support\"]\n    V98 --> V03 --> V11 --> V14 --> V17 --> V20 --> V23\n    V11 --> UpdateCycle\n    UpdateCycle --> V14\n    UpdateCycle --> V17\n    UpdateCycle --> V20\n    UpdateCycle --> V23\n    Committee --> UpdateCycle\n    V23 --> Note\n```\n\n## 现代 C++ 定义\n```mermaid\nflowchart TD\n    ModernCpp[\"Modern C++\"]\n    StartCpp11[\"Start from C++11\"]\n    CoreFeatures[\"New language features\"]\n    StdLibAdv[\"Standard library enhancements\"]\n    LessBugs[\"Write less buggy code\"]\n    Usage[\"Use newer language & library capabilities\"]\n    Goal[\"Reduce pitfalls\"]\n    Maturity[\"C++14 & C++17 mature\"]\n    Extension[\"C++20 & C++23 extend ideas\"]\n    ModernCpp --> StartCpp11\n    StartCpp11 --> CoreFeatures\n    StartCpp11 --> StdLibAdv\n    CoreFeatures --> LessBugs\n    StdLibAdv --> LessBugs\n    LessBugs --> Usage\n    Usage --> Goal\n    ModernCpp --> Maturity\n    ModernCpp --> Extension\n```\n\n## UE 对 C++ 版本的支持\n```mermaid\nflowchart TD\n    UE[\"UE (Unreal Engine)\"]\n    Configurable[\"Configurable C++ version\"]\n    DefaultVersion[\"Default C++ version per UE release\"]\n    UE4_14[\"UE 4.14\"]\n    UE5_0_5_2[\"UE 5.0–5.2\"]\n    UE5_3[\"UE 5.3+\"]\n    Cpp14[\"C++14\"]\n    Cpp17[\"C++17\"]\n    Cpp20[\"C++20\"]\n    SupportLimitation[\"Not all features guaranteed\"]\n    CompilerCheck[\"Check compiler support\"]\n    UE --> Configurable\n    UE --> DefaultVersion\n    UE4_14 --> Cpp14\n    UE5_0_5_2 --> Cpp17\n    UE5_3 --> Cpp20\n    DefaultVersion --> SupportLimitation\n    Configurable --> CompilerCheck\n```\n\n## 版本更新与使用注意事项\n```mermaid\nflowchart TD\n    VersionUpdate[\"C++ version update\"]\n    NewFeatures[\"New language features\"]\n    StdLibFeatures[\"Standard library features\"]\n    AddImprovement[\"Add/Improve functionality\"]\n    UseNewFeatures[\"Can use new features\"]\n    CompilerSupport[\"Compiler support needed\"]\n    IDEVersion[\"IDE version\"]\n    ReleaseSchedule[\"≈3-year release (not strict)\"]\n    Uncertainty[\"No exact release date\"]\n    VersionUpdate --> NewFeatures\n    VersionUpdate --> StdLibFeatures\n    NewFeatures --> AddImprovement\n    StdLibFeatures --> AddImprovement\n    AddImprovement --> UseNewFeatures\n    CompilerSupport --> UseNewFeatures\n    IDEVersion --> CompilerSupport\n    ReleaseSchedule --> VersionUpdate\n    Uncertainty --> ReleaseSchedule\n```",
+  "diagrams": [
+    {
+      "title": "C++ 版本时间线",
+      "code": "flowchart LR\n    V98[\"C++98 (1998)\"]\n    V03[\"C++03 (2003)\"]\n    V11[\"C++11 (2011)\"]\n    V14[\"C++14 (2014)\"]\n    V17[\"C++17 (2017)\"]\n    V20[\"C++20 (2020)\"]\n    V23[\"C++23 (2023)\"]\n    UpdateCycle[\"≈3-year update cycle\"]\n    Committee[\"ISO C++ Committee\"]\n    Note[\"Standard release ≠ compiler support\"]\n    V98 --> V03 --> V11 --> V14 --> V17 --> V20 --> V23\n    V11 --> UpdateCycle\n    UpdateCycle --> V14\n    UpdateCycle --> V17\n    UpdateCycle --> V20\n    UpdateCycle --> V23\n    Committee --> UpdateCycle\n    V23 --> Note"
+    },
+    {
+      "title": "现代 C++ 定义",
+      "code": "flowchart TD\n    ModernCpp[\"Modern C++\"]\n    StartCpp11[\"Start from C++11\"]\n    CoreFeatures[\"New language features\"]\n    StdLibAdv[\"Standard library enhancements\"]\n    LessBugs[\"Write less buggy code\"]\n    Usage[\"Use newer language & library capabilities\"]\n    Goal[\"Reduce pitfalls\"]\n    Maturity[\"C++14 & C++17 mature\"]\n    Extension[\"C++20 & C++23 extend ideas\"]\n    ModernCpp --> StartCpp11\n    StartCpp11 --> CoreFeatures\n    StartCpp11 --> StdLibAdv\n    CoreFeatures --> LessBugs\n    StdLibAdv --> LessBugs\n    LessBugs --> Usage\n    Usage --> Goal\n    ModernCpp --> Maturity\n    ModernCpp --> Extension"
+    },
+    {
+      "title": "UE 对 C++ 版本的支持",
+      "code": "flowchart TD\n    UE[\"UE (Unreal Engine)\"]\n    Configurable[\"Configurable C++ version\"]\n    DefaultVersion[\"Default C++ version per UE release\"]\n    UE4_14[\"UE 4.14\"]\n    UE5_0_5_2[\"UE 5.0–5.2\"]\n    UE5_3[\"UE 5.3+\"]\n    Cpp14[\"C++14\"]\n    Cpp17[\"C++17\"]\n    Cpp20[\"C++20\"]\n    SupportLimitation[\"Not all features guaranteed\"]\n    CompilerCheck[\"Check compiler support\"]\n    UE --> Configurable\n    UE --> DefaultVersion\n    UE4_14 --> Cpp14\n    UE5_0_5_2 --> Cpp17\n    UE5_3 --> Cpp20\n    DefaultVersion --> SupportLimitation\n    Configurable --> CompilerCheck"
+    },
+    {
+      "title": "版本更新与使用注意事项",
+      "code": "flowchart TD\n    VersionUpdate[\"C++ version update\"]\n    NewFeatures[\"New language features\"]\n    StdLibFeatures[\"Standard library features\"]\n    AddImprovement[\"Add/Improve functionality\"]\n    UseNewFeatures[\"Can use new features\"]\n    CompilerSupport[\"Compiler support needed\"]\n    IDEVersion[\"IDE version\"]\n    ReleaseSchedule[\"≈3-year release (not strict)\"]\n    Uncertainty[\"No exact release date\"]\n    VersionUpdate --> NewFeatures\n    VersionUpdate --> StdLibFeatures\n    NewFeatures --> AddImprovement\n    StdLibFeatures --> AddImprovement\n    AddImprovement --> UseNewFeatures\n    CompilerSupport --> UseNewFeatures\n    IDEVersion --> CompilerSupport\n    ReleaseSchedule --> VersionUpdate\n    Uncertainty --> ReleaseSchedule"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T07:04:59+00:00"
+}

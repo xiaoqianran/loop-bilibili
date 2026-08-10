@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1cMKU69EgX",
+  "title": "【python教程】全网最简单的Deepseek本地部署方法，谁都可以照抄！手把手教你怎么在PyCharm中部署deepseek",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1981,
+  "text": "现在人工智能真的很火\n前一段时间deep sick还掀起了一股热闹\n你是否跟上了节奏\n已经用上了呢\n我相信有些人已经用上了\n但也有很多问题\n比如用着用着就服务器正忙\n或者泄露了公司隐私等等\n甚至有人可能还没有上好\n不慌不慌\n今天博主就手把手带大家\n实现在PX中快速配置本地运行的大语言\ndeep sk模型\n首先我们来看一下已经安装好的一个效果啊\n我们可以这里让他写一个小程序\n比如说请给我用Python写一个猜字小游戏\n开车\n啊可以看到也非常的快\n对不对\n那只是他用的是这个英文啊\n这个你可以在后面对话当中啊\n要求他使用中文啊\n那我们这里暂停一下啊\n比如说你就说什么后续请用中文回复嗯\n这样就也是OK的好了\n现在就不展示了\n好\n我们看一下怎么去给它进行一个模型的下载\n以及配置好\n这就暂停一下\n首先这里我们要打开我们的浏览器\n搜索一个欧拉马回声\n嗯找到这个链接\n点开点开之后呢\n这里有个什么download\n我们点击这里下载即可\n但是这个如果没有搭梯子的话\n它会下载的很慢啊\n这里呢博主已经帮你们准备好了啊\n就是这个啊一键三连啊\n私信博主要即可啊\n得到这个安装包之后\n我们直接双击打开啊\n然后按点击这个install安装即可\n啊因为我这里什么已经安装啊\n所以我们这里不进一步安装了啊\n取消啊\n你的肯定是什么\n直接安装\n有一个进度条的\n等待它一个安装\nOK嗯有些人可能之前也有也有安装过\n我们来检测一下\n怎么有没有安装啊\n打开我们的CMD搜索一个什么欧AMA回车啊\n这样子就表示什么已经安装好了啊\n如果你是这样显示的\nOK这个欧拉玛已经下载好之后呢啊\n第二步找到这上面有个搜索搜索模型\n找到我们的deep sick\n点开啊\n这里呢有很多个模型啊\n供我们选择\n这跟我们的电脑性能是息息相关的啊\n这里呢我们就选一个8B的啊\n8B的5.2G啊\n还能接受我用的就是这个啊\n点开\n那么在使用这个什么\n这里有个命令复制它\n点击这里啊\n然后什么去运行即可\n这样子他就可以帮你什么\n下载这个deep sick的这个语言模型了\n回车啊\n因为我这里已经下载好了\n所以就不需要下载了\n直接就可以问他\n比如说你是谁\n那如果你没有下载\n它会什么\n有一个进度条在这里下载的\n那你等待下载就可以了\nOK他在回复\n那么这个东西其实是很大的\n我们刚看了一下\n他是5.2个G\n对不对啊\n5.2G啊\n如果你不想下载\n或者说你啊网络也很慢之类的哇\n博主这里也给你准备好了\n总之一键三连啊\n私信博主就可以得到啊\nOK如果说这个两个东西都已经完成了\n一个是ORAMA已经安装好\n以及什么这个deep sick这个模型已经安装好了\n接着我们就打开我们的排唱啊\n第三步啊\n打开我们的排唱好\n找到这里主菜单设置\nOK然后呢找到这个插件啊\n我们这里呢要安装一个插件叫什么\n就是这个啊PROCESSERAI啊\n就这个东西啊\n你你去安装的时候呢\n要从这里去安装啊\n啊这是已安装\n这里是什么\n你还没有安装\n那就到这个应用市场里面去找啊\n搜索这几个英文字母就可以了\n然后安装\n安装好之后呢\n就什么应用完确定啊\n等待一个重启一下idea啊\n排唱啊\n排唱就即可了\n好这里安装好之后啊\n你像我这样已经已安装了\n那再点开我们的这第四步了\n工具找到刚刚安装好的这个插件\n然后找到什么这个支持的一个模型\n找到我们的欧拉A\n找到好之后呢\n然后什么we refresh models啊\n更新一下你的这个模型啊\n就能得到什么\n我们刚刚安装好的这个deep sick这个模型\nOK然后什么应用确定就即可了\n这个时候什么你找到你的欧拉玛\n然后选择你的deep sick杠R1这个模型啊\n就能使用了\n所以总共就这么几步啊\n第一步就是要安装这个欧拉马\n第二步安装这个DEPSICK这个模型\n第三步呢要在我们的配charm练安装插件啊\n就是这个插件\n第四步找到这个插件\n然后找到它支持的这个欧拉玛这个模型本地啊\n刷新我们的模型\n然后因用确定啊\n然后什么在这边你就可以看到了\n看到这个小标标\n点开它就可以使用了\n总共这么几步\n很简单啊\n好那我们讲一下\n如果说你不是自己用命令在这里下载的啊\n要就直接用我这个已经下载好的\n怎么用呢\n打开我们的这个此电脑C盘\n然后什么呢\n用户然后你自己的那个用户名啊\n跟我的不一样啊\n然后这里有个什么小这个文件夹\n点ORAMA点开\n然后找到我们的models\n然后把这两个文件什么复制到这里面来即可啊\n这样就可以用了啊\n就不需要自己去下载了\n所以你不要重复\n就是说又在这里使用这个命令啊\nU把它复制啊\n就任选其一做就可以了\n要么自己下载\n就是自己去下载\n要么呢就什么啊\n直接复制这个放到那个对应的目录下面去啊\n也就是这个目录啊\n这是什么你自己的用户名\nOK这就是如何在这个配charm啊\n去配置这个本地的deep sic模型",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cMKU69EgX",
+  "published_at": "1784535901",
+  "fetched_at": "2026-08-10T07:25:45+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 本地部署知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    S[\"开始部署\"] --> A1[\"安装 Ollama（本地大语言模型运行时）\"]\n    A1 --> A2[\"获取 DeepSeek 模型\"]\n    A2 --> A3[\"在 PyCharm 安装 ProcessorAI 插件\"]\n    A3 --> A4[\"在插件中配置本地模型\"]\n    A4 --> A5[\"验证模型可用：在 IDE 中对话\"]\n    A5 --> END[\"部署完成\"]\n```\n\n## Ollama 下载与安装\n```mermaid\nflowchart TD\n    O1[\"打开浏览器\"] --> O2[\"搜索 \\\"Ollama\\\" 下载页面\"]\n    O2 --> O3[\"点击下载链接或使用博主提供的一键包\"]\n    O3 --> O4[\"运行安装程序\"]\n    O4 --> O5[\"在 CMD 中输入 `ollama` 检查是否成功\"]\n    O5 --> O6[\"若显示 Ollama 命令提示，表示安装成功\"]\n    O6 --> O7[\"完成 Ollama 安装\"]\n```\n\n## DeepSeek 模型获取\n```mermaid\nflowchart TD\n    M1[\"获取模型方式选择\"] -->|命令下载| M2[\"在终端执行 `ollama pull deepseek`\"]\n    M1 -->|手动复制| M3[\"使用博主提供的模型压缩包\"]\n    M2 --> M4[\"出现进度条，等待下载完成\"]\n    M4 --> M5[\"模型已存于本地 Ollama 目录\"]\n    M3 --> M6[\"打开 C:\\\\Users\\\\<用户名>\\\\.ollama\\\\models\"]\n    M6 --> M7[\"将模型文件复制到该目录\"]\n    M7 --> M5\n    M5 --> M8[\"模型准备就绪，可供插件调用\"]\n```\n\n## PyCharm 插件安装与配置\n```mermaid\nflowchart TD\n    P1[\"打开 PyCharm\"] --> P2[\"进入 Settings（设置）\"]\n    P2 --> P3[\"打开 Plugins（插件）页面\"]\n    P3 --> P4[\"搜索并安装 \\\"ProcessorAI\\\" 插件\"]\n    P4 --> P5[\"重启 PyCharm 使插件生效\"]\n    P5 --> P6[\"再次进入 Settings → ProcessorAI\"]\n    P6 --> P7[\"选择本地 Ollama 模型源\"]\n    P7 --> P8[\"刷新模型列表\"]\n    P8 --> P9[\"在列表中勾选 DeepSeek 模型\"]\n    P9 --> P10[\"点击 Apply 并关闭设置\"]\n    P10 --> P11[\"在 IDE 中打开对话窗口测试模型\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    S[\"开始部署\"] --> A1[\"安装 Ollama（本地大语言模型运行时）\"]\n    A1 --> A2[\"获取 DeepSeek 模型\"]\n    A2 --> A3[\"在 PyCharm 安装 ProcessorAI 插件\"]\n    A3 --> A4[\"在插件中配置本地模型\"]\n    A4 --> A5[\"验证模型可用：在 IDE 中对话\"]\n    A5 --> END[\"部署完成\"]"
+        },
+        {
+          "title": "Ollama 下载与安装",
+          "code": "flowchart TD\n    O1[\"打开浏览器\"] --> O2[\"搜索 \\\"Ollama\\\" 下载页面\"]\n    O2 --> O3[\"点击下载链接或使用博主提供的一键包\"]\n    O3 --> O4[\"运行安装程序\"]\n    O4 --> O5[\"在 CMD 中输入 `ollama` 检查是否成功\"]\n    O5 --> O6[\"若显示 Ollama 命令提示，表示安装成功\"]\n    O6 --> O7[\"完成 Ollama 安装\"]"
+        },
+        {
+          "title": "DeepSeek 模型获取",
+          "code": "flowchart TD\n    M1[\"获取模型方式选择\"] -->|命令下载| M2[\"在终端执行 `ollama pull deepseek`\"]\n    M1 -->|手动复制| M3[\"使用博主提供的模型压缩包\"]\n    M2 --> M4[\"出现进度条，等待下载完成\"]\n    M4 --> M5[\"模型已存于本地 Ollama 目录\"]\n    M3 --> M6[\"打开 C:\\\\Users\\\\<用户名>\\\\.ollama\\\\models\"]\n    M6 --> M7[\"将模型文件复制到该目录\"]\n    M7 --> M5\n    M5 --> M8[\"模型准备就绪，可供插件调用\"]"
+        },
+        {
+          "title": "PyCharm 插件安装与配置",
+          "code": "flowchart TD\n    P1[\"打开 PyCharm\"] --> P2[\"进入 Settings（设置）\"]\n    P2 --> P3[\"打开 Plugins（插件）页面\"]\n    P3 --> P4[\"搜索并安装 \\\"ProcessorAI\\\" 插件\"]\n    P4 --> P5[\"重启 PyCharm 使插件生效\"]\n    P5 --> P6[\"再次进入 Settings → ProcessorAI\"]\n    P6 --> P7[\"选择本地 Ollama 模型源\"]\n    P7 --> P8[\"刷新模型列表\"]\n    P8 --> P9[\"在列表中勾选 DeepSeek 模型\"]\n    P9 --> P10[\"点击 Apply 并关闭设置\"]\n    P10 --> P11[\"在 IDE 中打开对话窗口测试模型\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T07:26:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 本地部署知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    S[\"开始部署\"] --> A1[\"安装 Ollama（本地大语言模型运行时）\"]\n    A1 --> A2[\"获取 DeepSeek 模型\"]\n    A2 --> A3[\"在 PyCharm 安装 ProcessorAI 插件\"]\n    A3 --> A4[\"在插件中配置本地模型\"]\n    A4 --> A5[\"验证模型可用：在 IDE 中对话\"]\n    A5 --> END[\"部署完成\"]\n```\n\n## Ollama 下载与安装\n```mermaid\nflowchart TD\n    O1[\"打开浏览器\"] --> O2[\"搜索 \\\"Ollama\\\" 下载页面\"]\n    O2 --> O3[\"点击下载链接或使用博主提供的一键包\"]\n    O3 --> O4[\"运行安装程序\"]\n    O4 --> O5[\"在 CMD 中输入 `ollama` 检查是否成功\"]\n    O5 --> O6[\"若显示 Ollama 命令提示，表示安装成功\"]\n    O6 --> O7[\"完成 Ollama 安装\"]\n```\n\n## DeepSeek 模型获取\n```mermaid\nflowchart TD\n    M1[\"获取模型方式选择\"] -->|命令下载| M2[\"在终端执行 `ollama pull deepseek`\"]\n    M1 -->|手动复制| M3[\"使用博主提供的模型压缩包\"]\n    M2 --> M4[\"出现进度条，等待下载完成\"]\n    M4 --> M5[\"模型已存于本地 Ollama 目录\"]\n    M3 --> M6[\"打开 C:\\\\Users\\\\<用户名>\\\\.ollama\\\\models\"]\n    M6 --> M7[\"将模型文件复制到该目录\"]\n    M7 --> M5\n    M5 --> M8[\"模型准备就绪，可供插件调用\"]\n```\n\n## PyCharm 插件安装与配置\n```mermaid\nflowchart TD\n    P1[\"打开 PyCharm\"] --> P2[\"进入 Settings（设置）\"]\n    P2 --> P3[\"打开 Plugins（插件）页面\"]\n    P3 --> P4[\"搜索并安装 \\\"ProcessorAI\\\" 插件\"]\n    P4 --> P5[\"重启 PyCharm 使插件生效\"]\n    P5 --> P6[\"再次进入 Settings → ProcessorAI\"]\n    P6 --> P7[\"选择本地 Ollama 模型源\"]\n    P7 --> P8[\"刷新模型列表\"]\n    P8 --> P9[\"在列表中勾选 DeepSeek 模型\"]\n    P9 --> P10[\"点击 Apply 并关闭设置\"]\n    P10 --> P11[\"在 IDE 中打开对话窗口测试模型\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    S[\"开始部署\"] --> A1[\"安装 Ollama（本地大语言模型运行时）\"]\n    A1 --> A2[\"获取 DeepSeek 模型\"]\n    A2 --> A3[\"在 PyCharm 安装 ProcessorAI 插件\"]\n    A3 --> A4[\"在插件中配置本地模型\"]\n    A4 --> A5[\"验证模型可用：在 IDE 中对话\"]\n    A5 --> END[\"部署完成\"]"
+    },
+    {
+      "title": "Ollama 下载与安装",
+      "code": "flowchart TD\n    O1[\"打开浏览器\"] --> O2[\"搜索 \\\"Ollama\\\" 下载页面\"]\n    O2 --> O3[\"点击下载链接或使用博主提供的一键包\"]\n    O3 --> O4[\"运行安装程序\"]\n    O4 --> O5[\"在 CMD 中输入 `ollama` 检查是否成功\"]\n    O5 --> O6[\"若显示 Ollama 命令提示，表示安装成功\"]\n    O6 --> O7[\"完成 Ollama 安装\"]"
+    },
+    {
+      "title": "DeepSeek 模型获取",
+      "code": "flowchart TD\n    M1[\"获取模型方式选择\"] -->|命令下载| M2[\"在终端执行 `ollama pull deepseek`\"]\n    M1 -->|手动复制| M3[\"使用博主提供的模型压缩包\"]\n    M2 --> M4[\"出现进度条，等待下载完成\"]\n    M4 --> M5[\"模型已存于本地 Ollama 目录\"]\n    M3 --> M6[\"打开 C:\\\\Users\\\\<用户名>\\\\.ollama\\\\models\"]\n    M6 --> M7[\"将模型文件复制到该目录\"]\n    M7 --> M5\n    M5 --> M8[\"模型准备就绪，可供插件调用\"]"
+    },
+    {
+      "title": "PyCharm 插件安装与配置",
+      "code": "flowchart TD\n    P1[\"打开 PyCharm\"] --> P2[\"进入 Settings（设置）\"]\n    P2 --> P3[\"打开 Plugins（插件）页面\"]\n    P3 --> P4[\"搜索并安装 \\\"ProcessorAI\\\" 插件\"]\n    P4 --> P5[\"重启 PyCharm 使插件生效\"]\n    P5 --> P6[\"再次进入 Settings → ProcessorAI\"]\n    P6 --> P7[\"选择本地 Ollama 模型源\"]\n    P7 --> P8[\"刷新模型列表\"]\n    P8 --> P9[\"在列表中勾选 DeepSeek 模型\"]\n    P9 --> P10[\"点击 Apply 并关闭设置\"]\n    P10 --> P11[\"在 IDE 中打开对话窗口测试模型\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T07:26:00+00:00"
+}

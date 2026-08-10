@@ -1,0 +1,66 @@
+{
+  "bvid": "BV17Y356TEZu",
+  "title": "189. 为什么反向传播的本质是乘雅可比矩阵？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 982,
+  "text": "今天的问题是\n为什么反向传播的本质是成雅可比矩阵\n假设神经网络的输入是行向量\nX包含X1和X二两个元素\n输出是另一个行向量\nY包含Y1和Y2\n神经网络的作用就是通过一个映射函数\nF将X映射到Y在行向量记号下\n有向量板链式法则\n即偏L偏X等于偏L\n偏Y乘以偏Y\n偏X相当于形向量等于行向量乘以一个矩阵\n这个乘法为什么成立\n顺着绿色的箭头看第一个箭头指向偏L偏X\n因为X是行向量\n根据梯度形状保留的原则\n标量L对X的偏导也是行向量里面的元素\n分别是偏L偏X1和偏L偏X2\n第二个箭头指向偏L偏Y\n同理它也是行向量\n元素是偏L偏Y1和偏L偏Y2\n第三个箭头指向偏Y偏X\n这就是雅克比矩阵\n它的第I行第J列定义为YI对XJ的偏导数\n按照定义展开就得到了蓝色矩阵\n它的第一行二列元素是偏Y1\n偏X2\n即Y1对X2的偏导数\n现在验证一下这个乘法\n以结果行向量的第一项为例\n即偏L偏X1\n需要用行向量\n偏L偏Y乘以雅克比矩阵的第一列\n得到偏L偏Y1乘以偏Y1\n偏X1加上偏L偏Y2乘以偏Y2\n偏X1\n这正好是大一高数里的标量链式法则\n这说明标量链式法则被打包到了\n向量链式法则中\n有人可能会问\n真实的神经网络中\n输入和输出往往是矩阵或高维张量\n而不是简单的行向量\n这时候怎么办呢\n第一种方法可以简单地把它们全部展平\n为一维的行向量\n这样就可以继续使用刚刚的矩阵乘法\n第二种方法不展平\n直接用张量链式法则\n偏L偏X等于偏L偏Y广义矩阵成偏Y偏X\n注意用浅蓝色小字标注了广义矩阵乘\n为什么叫广义矩阵称\n看橘色的图像\n此时偏L偏X是一个矩阵\n偏L偏Y也是一个矩阵\n而偏Y偏X是矩阵\n对矩阵的求导是一个四维的雅可比张量\n具体而言\n偏L偏X的第I行第J列定义为偏L偏xi j\n而四维亚可比\n张亮的DIJKL的元素定义为偏YIJ\n偏XKL一个二维矩阵和一个四维张量\n应该怎么进行广义矩阵乘法呢\n答案是对I和J这两个共享维度进行乘加求和\n在数学上这个操作叫做张量缩\n并\n而在代码实现中\n比如在PYTORCH里不需要手动写多层循环\n直接用一行爱因斯坦求和约定\ntorch到INSUM就能高效完成\n不难发现\n向量乘以矩阵收缩为一个向量\n恰似矩阵乘以四维张量收缩为一个矩阵\n也就是说\n标量链式法则和向量链式法则\n都可以看作张量链式法则的特例\n而神经网络反向传播的本质就是梯度\n广义矩阵乘以雅可比张量",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV17Y356TEZu",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:12:28+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 反向传播本质是雅可比矩阵的关系图谱\n\n## 基础向量链式法则\n```mermaid\nflowchart TD\n    X[\"输入行向量 X (X1, X2)\"]\n    F[\"映射函数 F\"]\n    Y[\"输出行向量 Y (Y1, Y2)\"]\n    L[\"标量损失 L\"]\n    dL_dY[\"∂L/∂Y (行向量)\"]\n    dY_dX[\"∂Y/∂X (雅可比矩阵)\"]\n    dL_dX[\"∂L/∂X (行向量)\"]\n    chain[\"向量链式法则: dL/dX = dL/dY · dY/dX\"]\n\n    X -->|输入| F\n    F -->|映射| Y\n    Y -->|用于计算| L\n    L -->|对 Y 求导| dL_dY\n    dL_dY -->|左乘| dY_dX\n    dY_dX -->|右乘| dL_dX\n    dL_dY -->|左乘| chain\n    dY_dX -->|右乘| chain\n    chain --> dL_dX\n```\n\n## 雅可比矩阵定义与乘法示例\n```mermaid\nflowchart LR\n    J[\"雅可比矩阵 J = ∂Y/∂X\"]\n    J11[\"J₁₁ = ∂Y₁/∂X₁\"]\n    J12[\"J₁₂ = ∂Y₁/∂X₂\"]\n    J21[\"J₂₁ = ∂Y₂/∂X₁\"]\n    J22[\"J₂₂ = ∂Y₂/∂X₂\"]\n    dL_dY[\"∂L/∂Y = [∂L/∂Y₁, ∂L/∂Y₂]\"]\n    dL_dX[\"∂L/∂X = [∂L/∂X₁, ∂L/∂X₂]\"]\n    col1[\"J 的第一列 (∂Y₁/∂X₁, ∂Y₂/∂X₁)ᵀ\"]\n    col2[\"J 的第二列 (∂Y₁/∂X₂, ∂Y₂/∂X₂)ᵀ\"]\n    term1[\"∂L/∂Y₁·∂Y₁/∂X₁\"]\n    term2[\"∂L/∂Y₂·∂Y₂/∂X₁\"]\n    sum1[\"∂L/∂X₁ = term1 + term2\"]\n\n    J --> J11\n    J --> J12\n    J --> J21\n    J --> J22\n    dL_dY -->|左乘| col1\n    dL_dY -->|左乘| col2\n    col1 --> term1\n    col1 --> term2\n    term1 --> sum1\n    term2 --> sum1\n    sum1 --> dL_dX\n```\n\n## 高维张量推广与广义矩阵乘法\n```mermaid\nflowchart TD\n    Xt[\"输入张量 X (高维)\"]\n    Yt[\"输出张量 Y (高维)\"]\n    Ft[\"映射函数 F (张量)\"]\n    Lt[\"标量损失 L\"]\n    dL_dYt[\"∂L/∂Y (张量)\"]\n    J4[\"四维雅可比张量 ∂Y/∂X (I,J,K,L)\"]\n    dL_dXt[\"∂L/∂X (张量)\"]\n    contract[\"广义矩阵乘法：在共享维度 I、J 上求和\"]\n    flatten[\"展平为行向量后使用普通雅可比矩阵\"]\n    tensorChain[\"张量链式法则：dL/dX = dL/dY ⊗ ∂Y/∂X\"]\n\n    Xt --> Ft\n    Ft --> Yt\n    Yt --> Lt\n    Lt --> dL_dYt\n    dL_dYt --> contract\n    J4 --> contract\n    contract --> dL_dXt\n    dL_dXt --> tensorChain\n    Xt --> flatten\n    flatten --> dL_dXt\n```",
+      "diagrams": [
+        {
+          "title": "基础向量链式法则",
+          "code": "flowchart TD\n    X[\"输入行向量 X (X1, X2)\"]\n    F[\"映射函数 F\"]\n    Y[\"输出行向量 Y (Y1, Y2)\"]\n    L[\"标量损失 L\"]\n    dL_dY[\"∂L/∂Y (行向量)\"]\n    dY_dX[\"∂Y/∂X (雅可比矩阵)\"]\n    dL_dX[\"∂L/∂X (行向量)\"]\n    chain[\"向量链式法则: dL/dX = dL/dY · dY/dX\"]\n\n    X -->|输入| F\n    F -->|映射| Y\n    Y -->|用于计算| L\n    L -->|对 Y 求导| dL_dY\n    dL_dY -->|左乘| dY_dX\n    dY_dX -->|右乘| dL_dX\n    dL_dY -->|左乘| chain\n    dY_dX -->|右乘| chain\n    chain --> dL_dX"
+        },
+        {
+          "title": "雅可比矩阵定义与乘法示例",
+          "code": "flowchart LR\n    J[\"雅可比矩阵 J = ∂Y/∂X\"]\n    J11[\"J₁₁ = ∂Y₁/∂X₁\"]\n    J12[\"J₁₂ = ∂Y₁/∂X₂\"]\n    J21[\"J₂₁ = ∂Y₂/∂X₁\"]\n    J22[\"J₂₂ = ∂Y₂/∂X₂\"]\n    dL_dY[\"∂L/∂Y = [∂L/∂Y₁, ∂L/∂Y₂]\"]\n    dL_dX[\"∂L/∂X = [∂L/∂X₁, ∂L/∂X₂]\"]\n    col1[\"J 的第一列 (∂Y₁/∂X₁, ∂Y₂/∂X₁)ᵀ\"]\n    col2[\"J 的第二列 (∂Y₁/∂X₂, ∂Y₂/∂X₂)ᵀ\"]\n    term1[\"∂L/∂Y₁·∂Y₁/∂X₁\"]\n    term2[\"∂L/∂Y₂·∂Y₂/∂X₁\"]\n    sum1[\"∂L/∂X₁ = term1 + term2\"]\n\n    J --> J11\n    J --> J12\n    J --> J21\n    J --> J22\n    dL_dY -->|左乘| col1\n    dL_dY -->|左乘| col2\n    col1 --> term1\n    col1 --> term2\n    term1 --> sum1\n    term2 --> sum1\n    sum1 --> dL_dX"
+        },
+        {
+          "title": "高维张量推广与广义矩阵乘法",
+          "code": "flowchart TD\n    Xt[\"输入张量 X (高维)\"]\n    Yt[\"输出张量 Y (高维)\"]\n    Ft[\"映射函数 F (张量)\"]\n    Lt[\"标量损失 L\"]\n    dL_dYt[\"∂L/∂Y (张量)\"]\n    J4[\"四维雅可比张量 ∂Y/∂X (I,J,K,L)\"]\n    dL_dXt[\"∂L/∂X (张量)\"]\n    contract[\"广义矩阵乘法：在共享维度 I、J 上求和\"]\n    flatten[\"展平为行向量后使用普通雅可比矩阵\"]\n    tensorChain[\"张量链式法则：dL/dX = dL/dY ⊗ ∂Y/∂X\"]\n\n    Xt --> Ft\n    Ft --> Yt\n    Yt --> Lt\n    Lt --> dL_dYt\n    dL_dYt --> contract\n    J4 --> contract\n    contract --> dL_dXt\n    dL_dXt --> tensorChain\n    Xt --> flatten\n    flatten --> dL_dXt"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T18:16:31+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 反向传播本质是雅可比矩阵的关系图谱\n\n## 基础向量链式法则\n```mermaid\nflowchart TD\n    X[\"输入行向量 X (X1, X2)\"]\n    F[\"映射函数 F\"]\n    Y[\"输出行向量 Y (Y1, Y2)\"]\n    L[\"标量损失 L\"]\n    dL_dY[\"∂L/∂Y (行向量)\"]\n    dY_dX[\"∂Y/∂X (雅可比矩阵)\"]\n    dL_dX[\"∂L/∂X (行向量)\"]\n    chain[\"向量链式法则: dL/dX = dL/dY · dY/dX\"]\n\n    X -->|输入| F\n    F -->|映射| Y\n    Y -->|用于计算| L\n    L -->|对 Y 求导| dL_dY\n    dL_dY -->|左乘| dY_dX\n    dY_dX -->|右乘| dL_dX\n    dL_dY -->|左乘| chain\n    dY_dX -->|右乘| chain\n    chain --> dL_dX\n```\n\n## 雅可比矩阵定义与乘法示例\n```mermaid\nflowchart LR\n    J[\"雅可比矩阵 J = ∂Y/∂X\"]\n    J11[\"J₁₁ = ∂Y₁/∂X₁\"]\n    J12[\"J₁₂ = ∂Y₁/∂X₂\"]\n    J21[\"J₂₁ = ∂Y₂/∂X₁\"]\n    J22[\"J₂₂ = ∂Y₂/∂X₂\"]\n    dL_dY[\"∂L/∂Y = [∂L/∂Y₁, ∂L/∂Y₂]\"]\n    dL_dX[\"∂L/∂X = [∂L/∂X₁, ∂L/∂X₂]\"]\n    col1[\"J 的第一列 (∂Y₁/∂X₁, ∂Y₂/∂X₁)ᵀ\"]\n    col2[\"J 的第二列 (∂Y₁/∂X₂, ∂Y₂/∂X₂)ᵀ\"]\n    term1[\"∂L/∂Y₁·∂Y₁/∂X₁\"]\n    term2[\"∂L/∂Y₂·∂Y₂/∂X₁\"]\n    sum1[\"∂L/∂X₁ = term1 + term2\"]\n\n    J --> J11\n    J --> J12\n    J --> J21\n    J --> J22\n    dL_dY -->|左乘| col1\n    dL_dY -->|左乘| col2\n    col1 --> term1\n    col1 --> term2\n    term1 --> sum1\n    term2 --> sum1\n    sum1 --> dL_dX\n```\n\n## 高维张量推广与广义矩阵乘法\n```mermaid\nflowchart TD\n    Xt[\"输入张量 X (高维)\"]\n    Yt[\"输出张量 Y (高维)\"]\n    Ft[\"映射函数 F (张量)\"]\n    Lt[\"标量损失 L\"]\n    dL_dYt[\"∂L/∂Y (张量)\"]\n    J4[\"四维雅可比张量 ∂Y/∂X (I,J,K,L)\"]\n    dL_dXt[\"∂L/∂X (张量)\"]\n    contract[\"广义矩阵乘法：在共享维度 I、J 上求和\"]\n    flatten[\"展平为行向量后使用普通雅可比矩阵\"]\n    tensorChain[\"张量链式法则：dL/dX = dL/dY ⊗ ∂Y/∂X\"]\n\n    Xt --> Ft\n    Ft --> Yt\n    Yt --> Lt\n    Lt --> dL_dYt\n    dL_dYt --> contract\n    J4 --> contract\n    contract --> dL_dXt\n    dL_dXt --> tensorChain\n    Xt --> flatten\n    flatten --> dL_dXt\n```",
+  "diagrams": [
+    {
+      "title": "基础向量链式法则",
+      "code": "flowchart TD\n    X[\"输入行向量 X (X1, X2)\"]\n    F[\"映射函数 F\"]\n    Y[\"输出行向量 Y (Y1, Y2)\"]\n    L[\"标量损失 L\"]\n    dL_dY[\"∂L/∂Y (行向量)\"]\n    dY_dX[\"∂Y/∂X (雅可比矩阵)\"]\n    dL_dX[\"∂L/∂X (行向量)\"]\n    chain[\"向量链式法则: dL/dX = dL/dY · dY/dX\"]\n\n    X -->|输入| F\n    F -->|映射| Y\n    Y -->|用于计算| L\n    L -->|对 Y 求导| dL_dY\n    dL_dY -->|左乘| dY_dX\n    dY_dX -->|右乘| dL_dX\n    dL_dY -->|左乘| chain\n    dY_dX -->|右乘| chain\n    chain --> dL_dX"
+    },
+    {
+      "title": "雅可比矩阵定义与乘法示例",
+      "code": "flowchart LR\n    J[\"雅可比矩阵 J = ∂Y/∂X\"]\n    J11[\"J₁₁ = ∂Y₁/∂X₁\"]\n    J12[\"J₁₂ = ∂Y₁/∂X₂\"]\n    J21[\"J₂₁ = ∂Y₂/∂X₁\"]\n    J22[\"J₂₂ = ∂Y₂/∂X₂\"]\n    dL_dY[\"∂L/∂Y = [∂L/∂Y₁, ∂L/∂Y₂]\"]\n    dL_dX[\"∂L/∂X = [∂L/∂X₁, ∂L/∂X₂]\"]\n    col1[\"J 的第一列 (∂Y₁/∂X₁, ∂Y₂/∂X₁)ᵀ\"]\n    col2[\"J 的第二列 (∂Y₁/∂X₂, ∂Y₂/∂X₂)ᵀ\"]\n    term1[\"∂L/∂Y₁·∂Y₁/∂X₁\"]\n    term2[\"∂L/∂Y₂·∂Y₂/∂X₁\"]\n    sum1[\"∂L/∂X₁ = term1 + term2\"]\n\n    J --> J11\n    J --> J12\n    J --> J21\n    J --> J22\n    dL_dY -->|左乘| col1\n    dL_dY -->|左乘| col2\n    col1 --> term1\n    col1 --> term2\n    term1 --> sum1\n    term2 --> sum1\n    sum1 --> dL_dX"
+    },
+    {
+      "title": "高维张量推广与广义矩阵乘法",
+      "code": "flowchart TD\n    Xt[\"输入张量 X (高维)\"]\n    Yt[\"输出张量 Y (高维)\"]\n    Ft[\"映射函数 F (张量)\"]\n    Lt[\"标量损失 L\"]\n    dL_dYt[\"∂L/∂Y (张量)\"]\n    J4[\"四维雅可比张量 ∂Y/∂X (I,J,K,L)\"]\n    dL_dXt[\"∂L/∂X (张量)\"]\n    contract[\"广义矩阵乘法：在共享维度 I、J 上求和\"]\n    flatten[\"展平为行向量后使用普通雅可比矩阵\"]\n    tensorChain[\"张量链式法则：dL/dX = dL/dY ⊗ ∂Y/∂X\"]\n\n    Xt --> Ft\n    Ft --> Yt\n    Yt --> Lt\n    Lt --> dL_dYt\n    dL_dYt --> contract\n    J4 --> contract\n    contract --> dL_dXt\n    dL_dXt --> tensorChain\n    Xt --> flatten\n    flatten --> dL_dXt"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:16:31+00:00"
+}

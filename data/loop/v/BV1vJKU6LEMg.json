@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1vJKU6LEMg",
+  "title": "学枢 · XUESHU——基于 LangGraph 的多智能体个性化学习平台（覆盖学情画像、资源生成、路径规划与学习评估的超级学习 Agent）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3271,
+  "text": "各位评委老师好\n学书\n接下来我将通过一段真实的学习流程\n介绍他解决了什么问题\n又是怎样工作的\n现在的学生缺少的是连续的学习任务和反馈\n我们把诊断资源\n路径和练习连接成一个持续闭环\n帮助学生建立起个性化学习资料\n前端采用next js react和electron\n同时覆盖web桌面端\n后端有fast API langraph和CLDE驱动\n负责多智能体协同\n长期记忆和质量审核\n技术和功能最终都要落到学生的实际使用上\n下面我们直接从一名新用户的注册开始\n首先进入学术的web端\n新用户可以直接注册账号\n并建立独立的学习数据\n注册完成后\n系统会继续了解学生的年级专业和学习目标\n这些信息不是普通的个人档案\n他们会参与后续的教材推荐\n资料生成和学习路径规划\n这是web端的整体工作区\n左侧集中主要学习入口\n顶部提供搜索任务和服务状态\n中间区域承载学习路径与学习资源\n我登录一个连续使用一个月的演示账号\n这个账号已积累诊断答题错题资料\n生成视频学习和代码挑战记录\n登录后进入工作台\n会结合学习路径\n近期表现和任务完成情况\n直接告知学生今日学习内容\n同时显示预计学习时间\n当前任务即可继续打开的资料\n该演示账号已形成35天学习规划\n呈现的是持续使用一个月后的真实学习状态\n而非刚注册时的空白页面\n第一次使用时\n学生可以先完成学习\n摸底\n系统会根据专业年级和课程\n生成不同难度的诊断题\n生成完成后\n学生可以进行答题\n并且左边会有限时时间\n如果学生对这题不知道或一知半解\n则可以在右下角点击对这道题的理解程度\n然后跳过进行下一题\n答题结束后\n系统会对回答后的题目进行打分和分析\n诊断结束后\n系统不仅给出分数\n他还会识别学生的优势知识点\n薄弱知识点和对应的判断依据\n这些结果会直接进入学习话题\n并成为后续资料生成和学习规划的基础\n学习画像会持续汇总诊断练习错题\n视频学习和代码挑战\n记录图谱中的节点\n颜色代表当前知识点的掌握程度\n节点之间的连线表示不同知识之间的关联\n点击具体节点\n可以查看系统为什么做出这一判断\n判断依据可能来自诊断题阶段\n测验错题或者代码挑战\n因此这里显示的不是一个没有来源的分数\n而是一组能够持续更新\n可以追溯的学习证据\n接下来是课程知识库\n知识库会结合学生的专业学期和当前课程\n推荐教材\n同时支持搜索和导入公开学习内容\n教材加入书架后\n可以直接阅读正文和检索内容系统\n还可以生成本书的知识图谱\n这里展示的不只是学生当前学过的几个知识点\n而是书籍章节概念和示例之间的整体关系\n有了学习基础以后\n我们进入智能教师\n智能教师会读取当前学习画像\n科目路径和历史记忆\n学生也可以选择不同教学风格的教师进行答疑\n智能教师不仅能够回答问题\n他还可以理解并执行软件操作指令\n例如我要求他打开资源中心里的一份二叉树\n题目解析系统会查找已经存在的资料\n然后自动进入资源中心\n并打开对应内容\n除了文字提问\n学生还可以上传自己的学习文件\n系统支持图片\nPdf word ppt\nexcel文本表格和代码文件\n上传一道算法题以后\n智能教师会识别题目内容\n同时结合学生当前的薄弱知识点\n分析错误原因并给出解题步骤\n同时还可以在右侧的轨迹和参与者中\n看到具体哪些智能体参与了生成\n并且看到生成过程\n除了文字回答\n智能教师还支持数字人讲解\n刚才生成的回答可以直接交给数字人进行播报\n所以面对较长的讲义的学生进费阅读\n最小可以像听老师上课一样完成\n先帮你把题目拆解清楚\n然后带一步推导解法\n题目重述\n确认理解\n除了及时答疑系统\n还可以将学习需求转化为正式当前知识讲义\n思维导图题库题目解析\n代码示例\n视频和课件\n八种资料类型\n面对复杂任务\n系统不会立即盲目生成\n他会先形成一份可以修改的生成计划\n学生确认后再进入正式生成过程\n生成过程中\n不同智能体分别负责需求理解内容生成\n质量审核和最终审核\n只有通过审核的版本才会进入资源和学习路径\n如果其中一部分生成失败系统\n也可以只重拾失败内容\n不需要将整个任务全部重来\n生成完成的资料会统一进入源中心\n学生可以继续阅读导出\n或者手动将资料挂载到对应的科目路径\n对代码示例系统还可以生成可交互的执行演示\n他会依据真实的程序执行轨迹\n同步展示当前代码行变量状态和算法过程\n学生可以控制播放暂停和执行进度\n逐步关程序究竟是怎样运行的\n这样原本静态的代码就变成了\n可以观察和理解的动态过程\n在阅读资料时\n学生也不需要退出当前页面\n再去寻找答疑入口\n点击资料右下角就可以随时呼出\n智能教师\n系统会自动带入当前资料的标题和内容\n学生还可以选中一段文字\n让老师直接解释这一部分\n因为当前资料已经自动成为问答上下文\n所以学生不需要重新描述自己正在看什么\n份资料\n产生的问答记录也会独立保存\n后续可以继续追问\n不方便打字时\n还可以直接和智能教师进行语音交流\n浣熊老师换个角度\n用更直观的方式再给你讲一遍JJAR的核心逻辑\nsh完成资料准备以后\n我们来看学习路径\n学术的学习规划分成两层\n第一层是科目路径\n每门课程都有有独立的学习目标\n知识点\n学习资料和学习周期\n当前账号中数据结构与算法拥有一条35天\n学习路径\n已经完成86%\n不同科目的内容会分别规划\n不会被换成一条模糊的任务清单\n科目路径生成后也不会立即占用学生的日程\n他会先保持待启用状态\n学生可以检查路径内容\n再决定从哪一天开始学习\n启用以后\n这门课程才会可以总学习路径\n统一安排\n已经完成的路径\n不占用当前日程\n但过往学习结果和能力判断仍被系统保留\n第二层是总学习路径\n总学习路径负责统筹所有已经启用的科目\n他结合每天可以使用的时间\n任务优先级和实际完成情况\n跨科目的学习顺序\n每天的任务都会显示预计时间\n完成状态和关联资料\n学生可以从路径中直接打开讲义视频或练习\n当天的完成结果\n也会继续影响后面几天的任务安排\n学习过程中产生的练习会记录每道题的结果\n回答错误的题目也会自动进入错题记录\n同时保留题目正确答案\n错误原因和相关知识点\n会根据错题修正知识点掌握程度\n并影响下一轮的资料生成和任务\n推荐抽象成一张图\n图\n由顶点和边组成\n顶点就是人或者城市\n学书还提供视频学习功能\n学生可以搜索视频\n也可以导入已有视频进行学习\n系统会记录观看进度和学习笔记\n学习结束后还可以生成视频摘要和复习题\n视频观看与答题结果\n同样会写回学习路径和学习画像\n接下来展示代码挑战\n代码挑战会结合当天课程和薄弱知识点\n生成编程题\n我先提交一个存在错误的代码\n版本系统会在受限环境中真实运行代码\n再根据隐藏测试用例给出通过数量和最终得分\n如果代码存在问题\n界面会显示运行输出错误位置失败\n用例和改进方向\n修改代码以后\n我们再次提交\n当全部测试用例通过系统会给出100分\n这次代码挑战的结果也会进入学习画像\n成为相关知识点新的掌握依据\n现在回到学习画像\n可以看到刚才的代码挑战\n已经成为新的判断证据\n系统记录的不只是一次分数\n还包括对应的知识点\n错误原因以及修改之后是否真正掌握\n为了让智能教师保持长期连续性\n学术采用了三重G架构\n第一是工作记忆\n用于保存当前正在进行的绘画和任务\n第二层是情景记忆\n用于保存经过压缩的历史学习过程\n第三层是语义记忆\n用于保存相对稳定的学习目标和学习偏好\n三层记统一存储在本机SKLIDE数据库中\n当上下文接近全局token预算时\n系统会自动压缩早期内容\n只检索当前问题真正需要的历史信息\n这样既能保持长期学习的连续性\n也能避免上下文不断增长\n在设置页面中\n学生还可以调整学期学习目标\n学习偏好和教师风格\n同时查看模型\n语音课件和数字人服务的连接状态\n还有学习笔记功能\n用户在浏览资料时可以选中段落\n添加笔记\n系统会保留原文和资料来源\n笔记完成后将自动保存到资源中心\n方便后续查看和复习\n最后还有学习市场用户可以分享学习路径\n单份资料或资源包\n也可以把其他用户发布的优质内容\n添加到自己的资源中心\n从市场添加的学习路径会单独保存\n不会覆盖原有路径\n视频演示到此为止\n感谢观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1vJKU6LEMg",
+  "published_at": "1784529100",
+  "fetched_at": "2026-08-07T05:32:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 学枢平台知识图谱\n\n## 系统整体架构总览 [BV1vJKU6LEMg P1 00:11]\n```mermaid\nflowchart TD\n    FE[\"前端\"] -->|采用| Tech[\"Next.js<br/>React<br/>Electron\"]\n    FE -->|覆盖| WD[\"Web<br/>桌面端\"]\n    BE[\"后端\"] -->|使用| API[\"FastAPI\"]\n    BE -->|驱动| LG[\"LangGraph\"]\n    BE -->|驱动| CLDE[\"CLDE\"]\n    BE -->|提供| MA[\"多智能体协同\"]\n    MA -->|包含| LTM[\"长期记忆\"]\n    MA -->|包含| QA[\"质量审核\"]\n    FE -->|服务于| SU[\"学生实际使用\"]\n    BE -->|服务于| SU\n```\n\n## 学习闭环流程 [BV1vJKU6LEMg P1 00:06]\n```mermaid\nflowchart TD\n    Reg[\"注册账号\"] --> Info[\"收集年级、专业、学习目标\"]\n    Info --> Diag[\"生成诊断题\"]\n    Diag --> Score[\"答题打分与分析\"]\n    Score --> Profile[\"形成学习画像\"]\n    Profile --> ResGen[\"生成学习资源\"]\n    ResGen --> PathPlan[\"规划学习路径\"]\n    PathPlan --> Daily[\"每日学习任务\"]\n    Daily --> Feedback[\"完成情况反馈\"]\n    Feedback --> Update[\"更新学习画像\"]\n```\n\n## 多智能体协同工作流 [BV1vJKU6LEMg P1 02:58]\n```mermaid\nflowchart TD\n    Demand[\"需求理解\"] --> Content[\"内容生成\"]\n    Content --> QA[\"质量审核\"]\n    QA --> Final[\"最终审核\"]\n    Final --> Publish[\"资源发布到资源中心\"]\n    Content -->|失败| RetryPart[\"部分重试\"]\n    QA -->|失败| RetryPart\n    RetryPart --> Content\n```\n\n## 学习路径层级结构 [BV1vJKU6LEMg P1 03:49]\n```mermaid\nflowchart TD\n    SubjPath[\"科目路径\"]\n    SubjPath --> Goal[\"学习目标\"]\n    SubjPath --> KP[\"知识点\"]\n    SubjPath --> Mat[\"学习资料\"]\n    SubjPath --> Cycle[\"学习周期\"]\n    TotalPath[\"总学习路径\"] --> SubjPath\n    TotalPath --> DailySched[\"每日任务安排\"]\n    DailySched --> TimeEst[\"预计时间\"]\n    DailySched --> Status[\"完成状态\"]\n    DailySched --> Activate[\"激活状态\"]\n    Activate -->|启用| SubjPath\n```",
+      "diagrams": [
+        {
+          "title": "系统整体架构总览",
+          "code": "flowchart TD\n    FE[\"前端\"] -->|采用| Tech[\"Next.js<br/>React<br/>Electron\"]\n    FE -->|覆盖| WD[\"Web<br/>桌面端\"]\n    BE[\"后端\"] -->|使用| API[\"FastAPI\"]\n    BE -->|驱动| LG[\"LangGraph\"]\n    BE -->|驱动| CLDE[\"CLDE\"]\n    BE -->|提供| MA[\"多智能体协同\"]\n    MA -->|包含| LTM[\"长期记忆\"]\n    MA -->|包含| QA[\"质量审核\"]\n    FE -->|服务于| SU[\"学生实际使用\"]\n    BE -->|服务于| SU"
+        },
+        {
+          "title": "学习闭环流程",
+          "code": "flowchart TD\n    Reg[\"注册账号\"] --> Info[\"收集年级、专业、学习目标\"]\n    Info --> Diag[\"生成诊断题\"]\n    Diag --> Score[\"答题打分与分析\"]\n    Score --> Profile[\"形成学习画像\"]\n    Profile --> ResGen[\"生成学习资源\"]\n    ResGen --> PathPlan[\"规划学习路径\"]\n    PathPlan --> Daily[\"每日学习任务\"]\n    Daily --> Feedback[\"完成情况反馈\"]\n    Feedback --> Update[\"更新学习画像\"]"
+        },
+        {
+          "title": "多智能体协同工作流",
+          "code": "flowchart TD\n    Demand[\"需求理解\"] --> Content[\"内容生成\"]\n    Content --> QA[\"质量审核\"]\n    QA --> Final[\"最终审核\"]\n    Final --> Publish[\"资源发布到资源中心\"]\n    Content -->|失败| RetryPart[\"部分重试\"]\n    QA -->|失败| RetryPart\n    RetryPart --> Content"
+        },
+        {
+          "title": "学习路径层级结构",
+          "code": "flowchart TD\n    SubjPath[\"科目路径\"]\n    SubjPath --> Goal[\"学习目标\"]\n    SubjPath --> KP[\"知识点\"]\n    SubjPath --> Mat[\"学习资料\"]\n    SubjPath --> Cycle[\"学习周期\"]\n    TotalPath[\"总学习路径\"] --> SubjPath\n    TotalPath --> DailySched[\"每日任务安排\"]\n    DailySched --> TimeEst[\"预计时间\"]\n    DailySched --> Status[\"完成状态\"]\n    DailySched --> Activate[\"激活状态\"]\n    Activate -->|启用| SubjPath"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T05:32:26+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 学枢平台知识图谱\n\n## 系统整体架构总览 [BV1vJKU6LEMg P1 00:11]\n```mermaid\nflowchart TD\n    FE[\"前端\"] -->|采用| Tech[\"Next.js<br/>React<br/>Electron\"]\n    FE -->|覆盖| WD[\"Web<br/>桌面端\"]\n    BE[\"后端\"] -->|使用| API[\"FastAPI\"]\n    BE -->|驱动| LG[\"LangGraph\"]\n    BE -->|驱动| CLDE[\"CLDE\"]\n    BE -->|提供| MA[\"多智能体协同\"]\n    MA -->|包含| LTM[\"长期记忆\"]\n    MA -->|包含| QA[\"质量审核\"]\n    FE -->|服务于| SU[\"学生实际使用\"]\n    BE -->|服务于| SU\n```\n\n## 学习闭环流程 [BV1vJKU6LEMg P1 00:06]\n```mermaid\nflowchart TD\n    Reg[\"注册账号\"] --> Info[\"收集年级、专业、学习目标\"]\n    Info --> Diag[\"生成诊断题\"]\n    Diag --> Score[\"答题打分与分析\"]\n    Score --> Profile[\"形成学习画像\"]\n    Profile --> ResGen[\"生成学习资源\"]\n    ResGen --> PathPlan[\"规划学习路径\"]\n    PathPlan --> Daily[\"每日学习任务\"]\n    Daily --> Feedback[\"完成情况反馈\"]\n    Feedback --> Update[\"更新学习画像\"]\n```\n\n## 多智能体协同工作流 [BV1vJKU6LEMg P1 02:58]\n```mermaid\nflowchart TD\n    Demand[\"需求理解\"] --> Content[\"内容生成\"]\n    Content --> QA[\"质量审核\"]\n    QA --> Final[\"最终审核\"]\n    Final --> Publish[\"资源发布到资源中心\"]\n    Content -->|失败| RetryPart[\"部分重试\"]\n    QA -->|失败| RetryPart\n    RetryPart --> Content\n```\n\n## 学习路径层级结构 [BV1vJKU6LEMg P1 03:49]\n```mermaid\nflowchart TD\n    SubjPath[\"科目路径\"]\n    SubjPath --> Goal[\"学习目标\"]\n    SubjPath --> KP[\"知识点\"]\n    SubjPath --> Mat[\"学习资料\"]\n    SubjPath --> Cycle[\"学习周期\"]\n    TotalPath[\"总学习路径\"] --> SubjPath\n    TotalPath --> DailySched[\"每日任务安排\"]\n    DailySched --> TimeEst[\"预计时间\"]\n    DailySched --> Status[\"完成状态\"]\n    DailySched --> Activate[\"激活状态\"]\n    Activate -->|启用| SubjPath\n```",
+  "diagrams": [
+    {
+      "title": "系统整体架构总览",
+      "code": "flowchart TD\n    FE[\"前端\"] -->|采用| Tech[\"Next.js<br/>React<br/>Electron\"]\n    FE -->|覆盖| WD[\"Web<br/>桌面端\"]\n    BE[\"后端\"] -->|使用| API[\"FastAPI\"]\n    BE -->|驱动| LG[\"LangGraph\"]\n    BE -->|驱动| CLDE[\"CLDE\"]\n    BE -->|提供| MA[\"多智能体协同\"]\n    MA -->|包含| LTM[\"长期记忆\"]\n    MA -->|包含| QA[\"质量审核\"]\n    FE -->|服务于| SU[\"学生实际使用\"]\n    BE -->|服务于| SU"
+    },
+    {
+      "title": "学习闭环流程",
+      "code": "flowchart TD\n    Reg[\"注册账号\"] --> Info[\"收集年级、专业、学习目标\"]\n    Info --> Diag[\"生成诊断题\"]\n    Diag --> Score[\"答题打分与分析\"]\n    Score --> Profile[\"形成学习画像\"]\n    Profile --> ResGen[\"生成学习资源\"]\n    ResGen --> PathPlan[\"规划学习路径\"]\n    PathPlan --> Daily[\"每日学习任务\"]\n    Daily --> Feedback[\"完成情况反馈\"]\n    Feedback --> Update[\"更新学习画像\"]"
+    },
+    {
+      "title": "多智能体协同工作流",
+      "code": "flowchart TD\n    Demand[\"需求理解\"] --> Content[\"内容生成\"]\n    Content --> QA[\"质量审核\"]\n    QA --> Final[\"最终审核\"]\n    Final --> Publish[\"资源发布到资源中心\"]\n    Content -->|失败| RetryPart[\"部分重试\"]\n    QA -->|失败| RetryPart\n    RetryPart --> Content"
+    },
+    {
+      "title": "学习路径层级结构",
+      "code": "flowchart TD\n    SubjPath[\"科目路径\"]\n    SubjPath --> Goal[\"学习目标\"]\n    SubjPath --> KP[\"知识点\"]\n    SubjPath --> Mat[\"学习资料\"]\n    SubjPath --> Cycle[\"学习周期\"]\n    TotalPath[\"总学习路径\"] --> SubjPath\n    TotalPath --> DailySched[\"每日任务安排\"]\n    DailySched --> TimeEst[\"预计时间\"]\n    DailySched --> Status[\"完成状态\"]\n    DailySched --> Activate[\"激活状态\"]\n    Activate -->|启用| SubjPath"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:32:26+00:00"
+}

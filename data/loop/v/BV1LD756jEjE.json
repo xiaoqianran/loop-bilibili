@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1LD756jEjE",
+  "title": "《Godot知识》物理帧和渲染帧的区别与理解",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1376,
+  "text": "这一期来理清一下process和physis process的区别\n它们都是格斗底层每一帧去自动调用的函数\n为了区分出区别\n我定义了两个方法的计数器\n这个process tps是process调用的时候\n每一次调用都会给他计算一次\n同样的这个PHYSISTT\n也是在physis process调用的时候去计数一次\n然后我还定义了一个timer\n当timer也就是大于等于一\n经过一秒的时候\n就将这两个计数器的值输出到控制台上\n然后再将它们都归零\n然后这个timer count是实验次数\n我让他们每一秒都输出一次\n需要实验三次\n三秒之后\n我就将引擎的最大帧率设置成144\n前面的一开始是没有设置最大帧率的\n第三次之后他将帧率设置到144\n然后再输出它们的值\n每输出三次就修改最大帧率\n来测试这两个方法的区别\n最后一次将最大的帧率设置成30帧\n直接运行场景\n可以看到这里已经开始运行了\n这里我们可以看到\n前三次我们有限制引擎的最大帧率\nprocess是尽可能快的跑\n它已经跑到900多\n每次\n也就是说他一秒被调用了900多次\n而face is基本保持在每秒60帧\n三秒之后\n我将引擎的最大帧率限制在了144\nProcess\n它基本也是限制在了144附近上下浮动\n但是face is它依然是60帧每秒\n又过了三秒之后\n引擎的最大帧率被限制在了30\nprocess就被限制在了30\n但是这个PHYSIS依旧是在每秒60帧上下浮动\n这就说明physis process和process的区别\n就在于physis process是以固定的帧率去被调用的\n它是固定在了每秒60帧上下浮动\n而process是根据你的设备情况去调用的\n如果你不设置帧率的上限\n你的设备能跑多快\n它就会调用多快\n这样一对比就可以知道什么时候去用哪一个\nfish process的帧率很固定\n基本是每秒60帧\n所以它可以用来进行稳定的物理运算\n例如我这里这个例子\n我这里创建了两个角色\nplayer one和player two\n然后我在脚本里定义了一个移速\n他们共用这一个移速\n一个在process里面去移动它的X轴\n一个呢是在physis process里面去移动\n直接运行\n看一下\n可以看到一样的移速情况下\nplayer one它会比player two移动的要快\n就是上面这个\n因为它被调用的次数是很多次的\n它取决于你的设备的上限\n我刚刚测试的时候\n它是被调用了900多次\n而physis process它基本上就是调用了60次\n所以他们俩的区别就很明显了\n现在我把帧率限制在60帧每秒\n这样子process和physis process都是在每秒60帧\n再次运行\n可以看到他们俩速度现在是一样的了\n一般情况下我们不去限制process的帧率上限\n因为它一般是用于视觉效果的设计\n例如这个游戏动画\n你的设备越好\n帧率越高\n它就看起来流畅\n就是使用了process去渲染\n但是角色的移动速度是一样的\n不能说因为你的设备比较好\n帧率高\n你的角色移速就比我快\n你只能是看起来比我流畅\n我们的速度肯定是一样的\n最后总结一下就是physis process适用于物理运算的\n因为它默认固定是每秒60帧的\n而process可以理解为渲染帧\n一般是用于与帧率相关的视觉效果的设计\n才会使用到它",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1LD756jEjE",
+  "published_at": "1782467360",
+  "fetched_at": "2026-08-07T06:41:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot Process 与 PhysicsProcess 知识图谱\n\n## 1. 基本概念与调用关系 [BV1LD756jEjE P1 01:36-01:42][BV1LD756jEjE P1 02:21-02:29]\n```mermaid\nflowchart TD\n    A1[\"_process\"] --> C1[\"Process 调用次数/秒\"]\n    C1 --> D1[\"受设备性能 & 最大帧率影响（可变）\"]\n    B1[\"Engine 最大帧率\"] --> D1\n    F1[\"设备性能\"] --> D1\n\n    A2[\"_physics_process\"] --> C2[\"Physics 调用次数/秒\"]\n    C2 --> E1[\"固定约 60 FPS（不受最大帧率影响）\"]\n```\n\n## 2. 不同最大帧率下的调用频率 [BV1LD756jEjE P1 01:50-02:11]\n```mermaid\nflowchart TD\n    S1[\"未限制最大帧率\"] --> P1[\"Process 调用次数\"]\n    P1 --> V1[\"~900 次/秒\"]\n    S1 --> P2[\"_physics_process 调用次数\"]\n    P2 --> F[\"~60 次/秒\"]\n\n    S2[\"最大帧率 144\"] --> P1\n    P1 --> V2[\"~144 次/秒\"]\n    S2 --> P2\n    P2 --> F\n\n    S3[\"最大帧率 30\"] --> P1\n    P1 --> V3[\"~30 次/秒\"]\n    S3 --> P2\n    P2 --> F\n```\n\n## 3. 何时使用 _process 与 _physics_process [BV1LD756jEjE P1 03:58-04:07]\n```mermaid\nflowchart TD\n    D0[\"需要执行的逻辑\"] --> D1[\"物理运算（稳定帧率）\"]\n    D0 --> D2[\"视觉渲染/动画\"]\n    D1 --> D3[\"使用 _physics_process\"]\n    D2 --> D4[\"使用 _process\"]\n    D3 --> D6[\"固定 60 FPS\"]\n    D4 --> D5[\"帧率可变\"]\n    D5 --> D7[\"受设备性能影响\"]\n    D4 --> D8[\"提升流畅度（视觉）\"]\n```\n\n## 4. 示例：移动速度对比 [BV1LD756jEjE P1 03:00-03:32][BV1LD756jEjE P1 03:44-03:50]\n```mermaid\nflowchart TD\n    E0[\"示例场景\"] --> E1[\"两个角色: player_one, player_two\"]\n    E1 --> E2[\"共享移动速度变量\"]\n    E2 --> E3[\"player_one 在 _process 移动\"]\n    E2 --> E4[\"player_two 在 _physics_process 移动\"]\n    E3 --> E5[\"高 Process 调用率时 player_one 更快\"]\n    E4 --> E5\n    E5 --> E7[\"调用次数: Process ~900, Physics ~60\"]\n    E6[\"限制帧率至 60\"] --> E7\n    E7 --> E8[\"调用频率决定移动快慢\"]\n```",
+      "diagrams": [
+        {
+          "title": "1. 基本概念与调用关系 [BV1LD756jEjE P1 01:36-01:42][BV1LD756jEjE P1 02:21-02:29]",
+          "code": "flowchart TD\n    A1[\"_process\"] --> C1[\"Process 调用次数/秒\"]\n    C1 --> D1[\"受设备性能 & 最大帧率影响（可变）\"]\n    B1[\"Engine 最大帧率\"] --> D1\n    F1[\"设备性能\"] --> D1\n\n    A2[\"_physics_process\"] --> C2[\"Physics 调用次数/秒\"]\n    C2 --> E1[\"固定约 60 FPS（不受最大帧率影响）\"]"
+        },
+        {
+          "title": "2. 不同最大帧率下的调用频率 [BV1LD756jEjE P1 01:50-02:11]",
+          "code": "flowchart TD\n    S1[\"未限制最大帧率\"] --> P1[\"Process 调用次数\"]\n    P1 --> V1[\"~900 次/秒\"]\n    S1 --> P2[\"_physics_process 调用次数\"]\n    P2 --> F[\"~60 次/秒\"]\n\n    S2[\"最大帧率 144\"] --> P1\n    P1 --> V2[\"~144 次/秒\"]\n    S2 --> P2\n    P2 --> F\n\n    S3[\"最大帧率 30\"] --> P1\n    P1 --> V3[\"~30 次/秒\"]\n    S3 --> P2\n    P2 --> F"
+        },
+        {
+          "title": "3. 何时使用 _process 与 _physics_process [BV1LD756jEjE P1 03:58-04:07]",
+          "code": "flowchart TD\n    D0[\"需要执行的逻辑\"] --> D1[\"物理运算（稳定帧率）\"]\n    D0 --> D2[\"视觉渲染/动画\"]\n    D1 --> D3[\"使用 _physics_process\"]\n    D2 --> D4[\"使用 _process\"]\n    D3 --> D6[\"固定 60 FPS\"]\n    D4 --> D5[\"帧率可变\"]\n    D5 --> D7[\"受设备性能影响\"]\n    D4 --> D8[\"提升流畅度（视觉）\"]"
+        },
+        {
+          "title": "4. 示例：移动速度对比 [BV1LD756jEjE P1 03:00-03:32][BV1LD756jEjE P1 03:44-03:50]",
+          "code": "flowchart TD\n    E0[\"示例场景\"] --> E1[\"两个角色: player_one, player_two\"]\n    E1 --> E2[\"共享移动速度变量\"]\n    E2 --> E3[\"player_one 在 _process 移动\"]\n    E2 --> E4[\"player_two 在 _physics_process 移动\"]\n    E3 --> E5[\"高 Process 调用率时 player_one 更快\"]\n    E4 --> E5\n    E5 --> E7[\"调用次数: Process ~900, Physics ~60\"]\n    E6[\"限制帧率至 60\"] --> E7\n    E7 --> E8[\"调用频率决定移动快慢\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T06:41:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot Process 与 PhysicsProcess 知识图谱\n\n## 1. 基本概念与调用关系 [BV1LD756jEjE P1 01:36-01:42][BV1LD756jEjE P1 02:21-02:29]\n```mermaid\nflowchart TD\n    A1[\"_process\"] --> C1[\"Process 调用次数/秒\"]\n    C1 --> D1[\"受设备性能 & 最大帧率影响（可变）\"]\n    B1[\"Engine 最大帧率\"] --> D1\n    F1[\"设备性能\"] --> D1\n\n    A2[\"_physics_process\"] --> C2[\"Physics 调用次数/秒\"]\n    C2 --> E1[\"固定约 60 FPS（不受最大帧率影响）\"]\n```\n\n## 2. 不同最大帧率下的调用频率 [BV1LD756jEjE P1 01:50-02:11]\n```mermaid\nflowchart TD\n    S1[\"未限制最大帧率\"] --> P1[\"Process 调用次数\"]\n    P1 --> V1[\"~900 次/秒\"]\n    S1 --> P2[\"_physics_process 调用次数\"]\n    P2 --> F[\"~60 次/秒\"]\n\n    S2[\"最大帧率 144\"] --> P1\n    P1 --> V2[\"~144 次/秒\"]\n    S2 --> P2\n    P2 --> F\n\n    S3[\"最大帧率 30\"] --> P1\n    P1 --> V3[\"~30 次/秒\"]\n    S3 --> P2\n    P2 --> F\n```\n\n## 3. 何时使用 _process 与 _physics_process [BV1LD756jEjE P1 03:58-04:07]\n```mermaid\nflowchart TD\n    D0[\"需要执行的逻辑\"] --> D1[\"物理运算（稳定帧率）\"]\n    D0 --> D2[\"视觉渲染/动画\"]\n    D1 --> D3[\"使用 _physics_process\"]\n    D2 --> D4[\"使用 _process\"]\n    D3 --> D6[\"固定 60 FPS\"]\n    D4 --> D5[\"帧率可变\"]\n    D5 --> D7[\"受设备性能影响\"]\n    D4 --> D8[\"提升流畅度（视觉）\"]\n```\n\n## 4. 示例：移动速度对比 [BV1LD756jEjE P1 03:00-03:32][BV1LD756jEjE P1 03:44-03:50]\n```mermaid\nflowchart TD\n    E0[\"示例场景\"] --> E1[\"两个角色: player_one, player_two\"]\n    E1 --> E2[\"共享移动速度变量\"]\n    E2 --> E3[\"player_one 在 _process 移动\"]\n    E2 --> E4[\"player_two 在 _physics_process 移动\"]\n    E3 --> E5[\"高 Process 调用率时 player_one 更快\"]\n    E4 --> E5\n    E5 --> E7[\"调用次数: Process ~900, Physics ~60\"]\n    E6[\"限制帧率至 60\"] --> E7\n    E7 --> E8[\"调用频率决定移动快慢\"]\n```",
+  "diagrams": [
+    {
+      "title": "1. 基本概念与调用关系 [BV1LD756jEjE P1 01:36-01:42][BV1LD756jEjE P1 02:21-02:29]",
+      "code": "flowchart TD\n    A1[\"_process\"] --> C1[\"Process 调用次数/秒\"]\n    C1 --> D1[\"受设备性能 & 最大帧率影响（可变）\"]\n    B1[\"Engine 最大帧率\"] --> D1\n    F1[\"设备性能\"] --> D1\n\n    A2[\"_physics_process\"] --> C2[\"Physics 调用次数/秒\"]\n    C2 --> E1[\"固定约 60 FPS（不受最大帧率影响）\"]"
+    },
+    {
+      "title": "2. 不同最大帧率下的调用频率 [BV1LD756jEjE P1 01:50-02:11]",
+      "code": "flowchart TD\n    S1[\"未限制最大帧率\"] --> P1[\"Process 调用次数\"]\n    P1 --> V1[\"~900 次/秒\"]\n    S1 --> P2[\"_physics_process 调用次数\"]\n    P2 --> F[\"~60 次/秒\"]\n\n    S2[\"最大帧率 144\"] --> P1\n    P1 --> V2[\"~144 次/秒\"]\n    S2 --> P2\n    P2 --> F\n\n    S3[\"最大帧率 30\"] --> P1\n    P1 --> V3[\"~30 次/秒\"]\n    S3 --> P2\n    P2 --> F"
+    },
+    {
+      "title": "3. 何时使用 _process 与 _physics_process [BV1LD756jEjE P1 03:58-04:07]",
+      "code": "flowchart TD\n    D0[\"需要执行的逻辑\"] --> D1[\"物理运算（稳定帧率）\"]\n    D0 --> D2[\"视觉渲染/动画\"]\n    D1 --> D3[\"使用 _physics_process\"]\n    D2 --> D4[\"使用 _process\"]\n    D3 --> D6[\"固定 60 FPS\"]\n    D4 --> D5[\"帧率可变\"]\n    D5 --> D7[\"受设备性能影响\"]\n    D4 --> D8[\"提升流畅度（视觉）\"]"
+    },
+    {
+      "title": "4. 示例：移动速度对比 [BV1LD756jEjE P1 03:00-03:32][BV1LD756jEjE P1 03:44-03:50]",
+      "code": "flowchart TD\n    E0[\"示例场景\"] --> E1[\"两个角色: player_one, player_two\"]\n    E1 --> E2[\"共享移动速度变量\"]\n    E2 --> E3[\"player_one 在 _process 移动\"]\n    E2 --> E4[\"player_two 在 _physics_process 移动\"]\n    E3 --> E5[\"高 Process 调用率时 player_one 更快\"]\n    E4 --> E5\n    E5 --> E7[\"调用次数: Process ~900, Physics ~60\"]\n    E6[\"限制帧率至 60\"] --> E7\n    E7 --> E8[\"调用频率决定移动快慢\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:41:36+00:00"
+}

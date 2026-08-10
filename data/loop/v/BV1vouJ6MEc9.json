@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1vouJ6MEc9",
+  "title": "谁才是DeepSeek的最佳坐骑？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2102,
+  "text": "上周deep sk发布V4flash正式版之后\n能力已经非常可用了\n但众所周知\ndeep sk一直没有官方的HEYS\n只能搭配第三方框架来使用\n但第三方的框架又有很多\n对于模型的能力具体有多大影响\n哪个效果最好\n哪个速度最快\n哪个又最省钱\n这些一直都没人测试\n那今天咱们来全部测一下这次我选的codex\nCloud code\nOpen code\nz code和reasons\n这几个我常用的框架\n都统一接入dev sic的官方API\n思考程度开到max来做本轮测试\n我看目前网上测试模型能力的视频\n主要是一句话\n生成一个HTML的小游戏\n也算是一种参考\n不过我们来测点不一样的\n我用真实项目搭了七个测试题\n三道是debug\n一道功能开发\n两道信息类的和一道数据处理\n每个题目都有几个大项\n每个大项里又有一些小项\n都有各自对应的分值\n一次通过拿满分\n两次通过拿一半的分值\n三次通过得1/4的分值\n五个参赛选手都已经跑完了\n我们来看一下具体情况\n首先是最简单的一个编程题\n算是开场热身\n一上来codex1骑绝尘\n第一轮就拿下了91分\nopen code和cloud code也表现不错\n第一轮都在70以上\n把验收情况反馈回去\n第二轮各个选手全部通过最终成绩\ncodex遥遥领先\n耗时14分钟\n速度最快的是z code\n8分钟\n最慢的是cloud code\n用了半个小时\n难道说deep sk真的针对codex做了优化\n先不急\n这只是热身场\n真正的强度从第二题开始\n果然啊到了第二题\n各个选手都败下阵来\nbug的难度超出了模型的能力范畴\ncodex更是一反第一题的表现\n直接拉的花了80多分钟时间拿了最低的分\n甚至第三轮还把前面改对的地方改错了\n表现比较好的是cloud code和z code都拿了70多分\ncloud code得分稍高\n且速度更快\nC后的则是改队bug数是最多的\n另外两位选手算是中间表现\n接下来看第三题\n可以看到codex痛定思痛\n决定发力了\n首轮取得了最高分\n结果第二轮又把第一轮修好的bug改错了\n导致最后又成了最后一名\n而其他几位选手则是稳扎稳打\nz cod依靠第一轮的优势拿下第一\n还是老话说的好啊\n跑得快不一定赢不跌跟头才是成功\n虽然codex用了足足85分钟\n跑的还是最慢的\ncloud code本轮速度最快\n用了25分钟\nz code花了38分钟\n也非常优秀\n接下来进入第四题功能开发\n看来开发新功能对于deep sick还是要宽松一点\n各个选手首轮就拿下了不错的成绩\nC code rhython\ncloud code都是95\n而codex和open code80\n在三轮修改后\nz code犯了和codex一样的错误\n把之前做好的功能弄坏了\n只剩90分\nrisks和cloud code拿下第一\nrisks在这一轮速度最快只用了22分钟\n在几个小时搏斗之后\n来点简单的信息推理\n就是从一堆信息中理出一个正确的事实\n这个题并不算难\n我以为都能一轮满分的结果\ncodex犯了一个小错误\n第二轮才改对\n用时也是最多\n马上来到第六题\n信息核查\n我准备了20篇参考文献里面十篇是真实的\n十篇是虚假的\n虚假论文里三篇是凭空捏造\n对AI来说不难分辨\n七篇是从真实论文里修改出来的\n让AI来核实\n几位选手得分很统一\n都是辨别错了一篇\n但有一点不一样\n其他几位选手都是把一篇真实论文\n当成了虚假的\n而cloud code是把一篇虚假论文当成了真实的\n这两种哪个更恶劣\n我也不好说\n就扣的统一分值\n最后一题是数据处理类型的\n难度也不高\n各位选手都拿了95.5\n看来这个题目后续还要加强一下难度\n汇总七道题的总得分和总耗时\n咱们来看一下\n先看得分\n其实区别并不是很大\ncodex是得分最低的一个\n也有600分\n虽然第一题表现惊人\n但后续总是频繁犯错\n最终遗憾落败\ncloud code表现最好\n拿下621分\nz code和REACKS也没有落后多少\ncodex排在第四\n速度方面\ncloud code在得分最高的同时速度最快\nc code则是得分第二高\n速度第二快\n并且和cloud code非常接近\n最慢的是risks\n比优秀选手慢了半个小时\ncodex在速度上也表现不佳\n而且codex干活时给出的阶段性反馈很少\n体感上也非常糟糕\n最后我们来看一下另一个很重要的指标价格\n看看各位选手都花了多少\nc code非常省钱\n只花了四块七\nopen code d2花了四块八\ncloud code跟codex都是六块多\nracks最贵花了七块五\n性价比是这样\nZ扣的价格最低的同时得分第二\n而且和得分第一的cloud code比\n价格有明显优势\n得分却非常接近\n所以在本次测试中\n综合性能速度和价格\n让我们恭喜z code成为deep sk的最佳坐骑\n其实也不意外\n毕竟GLOM和deep sick一样没有眼睛\n所以适配确实不错\n以上就是本期视频的内容\n等过几天DOC和官方的harness发布后\n我也会第一时间做一个测试\n包括正式版V4pro的性能\n大家如果有兴趣可以点个关注\n我们下期视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1vouJ6MEc9",
+  "published_at": "1786013808",
+  "fetched_at": "2026-08-06T20:41:09+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 框架性能总览\n\n## 测试结构与评估维度 [BV1vouJ6MEc9 P1 00:37]\n\n```mermaid\nflowchart TD\n    TS[\"测试整体\"]\n    QT[\"七道题目\"]\n    QT1[\"调试 (3)\"]\n    QT2[\"功能开发 (1)\"]\n    QT3[\"信息推理 (2)\"]\n    QT4[\"数据处理 (1)\"]\n    SR[\"评分规则\"]\n    SR1[\"首次通过：满分\"]\n    SR2[\"二次通过：½分\"]\n    SR3[\"三次通过：¼分\"]\n    FW[\"框架候选\"]\n    FW1[\"Codex\"]\n    FW2[\"CloudCode\"]\n    FW3[\"OpenCode\"]\n    FW4[\"ZCode\"]\n    FW5[\"Risks\"]\n    MT[\"评估维度\"]\n    MT1[\"得分\"]\n    MT2[\"耗时\"]\n    MT3[\"费用\"]\n\n    TS --> QT\n    QT --> QT1\n    QT --> QT2\n    QT --> QT3\n    QT --> QT4\n\n    TS --> SR\n    SR --> SR1\n    SR --> SR2\n    SR --> SR3\n\n    TS --> FW\n    FW --> FW1\n    FW --> FW2\n    FW --> FW3\n    FW --> FW4\n    FW --> FW5\n\n    TS --> MT\n    MT --> MT1\n    MT --> MT2\n    MT --> MT3\n```\n\n## 框架性能概览 [BV1vouJ6MEc9 P1 03:35]\n\n```mermaid\nflowchart TD\n    C1[\"Codex\"]\n    C1S[\"得分 600\"]\n    C1T[\"耗时 85 min\"]\n    C1C[\"费用 ~6 元\"]\n\n    C2[\"CloudCode\"]\n    C2S[\"得分 621\"]\n    C2T[\"耗时 25 min\"]\n    C2C[\"费用 ~6 元\"]\n\n    C3[\"OpenCode\"]\n    C3S[\"得分 约600\"]\n    C3T[\"耗时 约30 min\"]\n    C3C[\"费用 4.8 元\"]\n\n    C4[\"ZCode\"]\n    C4S[\"得分 约618\"]\n    C4T[\"耗时 38 min\"]\n    C4C[\"费用 最低\"]\n\n    C5[\"Risks\"]\n    C5S[\"得分 约610\"]\n    C5T[\"耗时 最慢\"]\n    C5C[\"费用 7.5 元\"]\n\n    C1 --> C1S\n    C1 --> C1T\n    C1 --> C1C\n\n    C2 --> C2S\n    C2 --> C2T\n    C2 --> C2C\n\n    C3 --> C3S\n    C3 --> C3T\n    C3 --> C3C\n\n    C4 --> C4S\n    C4 --> C4T\n    C4 --> C4C\n\n    C5 --> C5S\n    C5 --> C5T\n    C5 --> C5C\n```\n\n## 最佳坐骑决策流程 [BV1vouJ6MEc9 P1 04:33]\n\n```mermaid\nflowchart LR\n    S[\"开始评估\"]\n    SC[\"检查得分\"]\n    ST[\"检查速度\"]\n    CO[\"检查费用\"]\n    COMB[\"综合比较（得分↑、速度↑、费用↓）\"]\n    BEST[\"选择 ZCode 为最佳坐骑\"]\n\n    S --> SC\n    SC --> ST\n    ST --> CO\n    CO --> COMB\n    COMB --> BEST\n```",
+      "diagrams": [
+        {
+          "title": "测试结构与评估维度",
+          "code": "flowchart TD\n    TS[\"测试整体\"]\n    QT[\"七道题目\"]\n    QT1[\"调试 (3)\"]\n    QT2[\"功能开发 (1)\"]\n    QT3[\"信息推理 (2)\"]\n    QT4[\"数据处理 (1)\"]\n    SR[\"评分规则\"]\n    SR1[\"首次通过：满分\"]\n    SR2[\"二次通过：½分\"]\n    SR3[\"三次通过：¼分\"]\n    FW[\"框架候选\"]\n    FW1[\"Codex\"]\n    FW2[\"CloudCode\"]\n    FW3[\"OpenCode\"]\n    FW4[\"ZCode\"]\n    FW5[\"Risks\"]\n    MT[\"评估维度\"]\n    MT1[\"得分\"]\n    MT2[\"耗时\"]\n    MT3[\"费用\"]\n\n    TS --> QT\n    QT --> QT1\n    QT --> QT2\n    QT --> QT3\n    QT --> QT4\n\n    TS --> SR\n    SR --> SR1\n    SR --> SR2\n    SR --> SR3\n\n    TS --> FW\n    FW --> FW1\n    FW --> FW2\n    FW --> FW3\n    FW --> FW4\n    FW --> FW5\n\n    TS --> MT\n    MT --> MT1\n    MT --> MT2\n    MT --> MT3"
+        },
+        {
+          "title": "框架性能概览",
+          "code": "flowchart TD\n    C1[\"Codex\"]\n    C1S[\"得分 600\"]\n    C1T[\"耗时 85 min\"]\n    C1C[\"费用 ~6 元\"]\n\n    C2[\"CloudCode\"]\n    C2S[\"得分 621\"]\n    C2T[\"耗时 25 min\"]\n    C2C[\"费用 ~6 元\"]\n\n    C3[\"OpenCode\"]\n    C3S[\"得分 约600\"]\n    C3T[\"耗时 约30 min\"]\n    C3C[\"费用 4.8 元\"]\n\n    C4[\"ZCode\"]\n    C4S[\"得分 约618\"]\n    C4T[\"耗时 38 min\"]\n    C4C[\"费用 最低\"]\n\n    C5[\"Risks\"]\n    C5S[\"得分 约610\"]\n    C5T[\"耗时 最慢\"]\n    C5C[\"费用 7.5 元\"]\n\n    C1 --> C1S\n    C1 --> C1T\n    C1 --> C1C\n\n    C2 --> C2S\n    C2 --> C2T\n    C2 --> C2C\n\n    C3 --> C3S\n    C3 --> C3T\n    C3 --> C3C\n\n    C4 --> C4S\n    C4 --> C4T\n    C4 --> C4C\n\n    C5 --> C5S\n    C5 --> C5T\n    C5 --> C5C"
+        },
+        {
+          "title": "最佳坐骑决策流程",
+          "code": "flowchart LR\n    S[\"开始评估\"]\n    SC[\"检查得分\"]\n    ST[\"检查速度\"]\n    CO[\"检查费用\"]\n    COMB[\"综合比较（得分↑、速度↑、费用↓）\"]\n    BEST[\"选择 ZCode 为最佳坐骑\"]\n\n    S --> SC\n    SC --> ST\n    ST --> CO\n    CO --> COMB\n    COMB --> BEST"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T20:41:27+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 框架性能总览\n\n## 测试结构与评估维度 [BV1vouJ6MEc9 P1 00:37]\n\n```mermaid\nflowchart TD\n    TS[\"测试整体\"]\n    QT[\"七道题目\"]\n    QT1[\"调试 (3)\"]\n    QT2[\"功能开发 (1)\"]\n    QT3[\"信息推理 (2)\"]\n    QT4[\"数据处理 (1)\"]\n    SR[\"评分规则\"]\n    SR1[\"首次通过：满分\"]\n    SR2[\"二次通过：½分\"]\n    SR3[\"三次通过：¼分\"]\n    FW[\"框架候选\"]\n    FW1[\"Codex\"]\n    FW2[\"CloudCode\"]\n    FW3[\"OpenCode\"]\n    FW4[\"ZCode\"]\n    FW5[\"Risks\"]\n    MT[\"评估维度\"]\n    MT1[\"得分\"]\n    MT2[\"耗时\"]\n    MT3[\"费用\"]\n\n    TS --> QT\n    QT --> QT1\n    QT --> QT2\n    QT --> QT3\n    QT --> QT4\n\n    TS --> SR\n    SR --> SR1\n    SR --> SR2\n    SR --> SR3\n\n    TS --> FW\n    FW --> FW1\n    FW --> FW2\n    FW --> FW3\n    FW --> FW4\n    FW --> FW5\n\n    TS --> MT\n    MT --> MT1\n    MT --> MT2\n    MT --> MT3\n```\n\n## 框架性能概览 [BV1vouJ6MEc9 P1 03:35]\n\n```mermaid\nflowchart TD\n    C1[\"Codex\"]\n    C1S[\"得分 600\"]\n    C1T[\"耗时 85 min\"]\n    C1C[\"费用 ~6 元\"]\n\n    C2[\"CloudCode\"]\n    C2S[\"得分 621\"]\n    C2T[\"耗时 25 min\"]\n    C2C[\"费用 ~6 元\"]\n\n    C3[\"OpenCode\"]\n    C3S[\"得分 约600\"]\n    C3T[\"耗时 约30 min\"]\n    C3C[\"费用 4.8 元\"]\n\n    C4[\"ZCode\"]\n    C4S[\"得分 约618\"]\n    C4T[\"耗时 38 min\"]\n    C4C[\"费用 最低\"]\n\n    C5[\"Risks\"]\n    C5S[\"得分 约610\"]\n    C5T[\"耗时 最慢\"]\n    C5C[\"费用 7.5 元\"]\n\n    C1 --> C1S\n    C1 --> C1T\n    C1 --> C1C\n\n    C2 --> C2S\n    C2 --> C2T\n    C2 --> C2C\n\n    C3 --> C3S\n    C3 --> C3T\n    C3 --> C3C\n\n    C4 --> C4S\n    C4 --> C4T\n    C4 --> C4C\n\n    C5 --> C5S\n    C5 --> C5T\n    C5 --> C5C\n```\n\n## 最佳坐骑决策流程 [BV1vouJ6MEc9 P1 04:33]\n\n```mermaid\nflowchart LR\n    S[\"开始评估\"]\n    SC[\"检查得分\"]\n    ST[\"检查速度\"]\n    CO[\"检查费用\"]\n    COMB[\"综合比较（得分↑、速度↑、费用↓）\"]\n    BEST[\"选择 ZCode 为最佳坐骑\"]\n\n    S --> SC\n    SC --> ST\n    ST --> CO\n    CO --> COMB\n    COMB --> BEST\n```",
+  "diagrams": [
+    {
+      "title": "测试结构与评估维度",
+      "code": "flowchart TD\n    TS[\"测试整体\"]\n    QT[\"七道题目\"]\n    QT1[\"调试 (3)\"]\n    QT2[\"功能开发 (1)\"]\n    QT3[\"信息推理 (2)\"]\n    QT4[\"数据处理 (1)\"]\n    SR[\"评分规则\"]\n    SR1[\"首次通过：满分\"]\n    SR2[\"二次通过：½分\"]\n    SR3[\"三次通过：¼分\"]\n    FW[\"框架候选\"]\n    FW1[\"Codex\"]\n    FW2[\"CloudCode\"]\n    FW3[\"OpenCode\"]\n    FW4[\"ZCode\"]\n    FW5[\"Risks\"]\n    MT[\"评估维度\"]\n    MT1[\"得分\"]\n    MT2[\"耗时\"]\n    MT3[\"费用\"]\n\n    TS --> QT\n    QT --> QT1\n    QT --> QT2\n    QT --> QT3\n    QT --> QT4\n\n    TS --> SR\n    SR --> SR1\n    SR --> SR2\n    SR --> SR3\n\n    TS --> FW\n    FW --> FW1\n    FW --> FW2\n    FW --> FW3\n    FW --> FW4\n    FW --> FW5\n\n    TS --> MT\n    MT --> MT1\n    MT --> MT2\n    MT --> MT3"
+    },
+    {
+      "title": "框架性能概览",
+      "code": "flowchart TD\n    C1[\"Codex\"]\n    C1S[\"得分 600\"]\n    C1T[\"耗时 85 min\"]\n    C1C[\"费用 ~6 元\"]\n\n    C2[\"CloudCode\"]\n    C2S[\"得分 621\"]\n    C2T[\"耗时 25 min\"]\n    C2C[\"费用 ~6 元\"]\n\n    C3[\"OpenCode\"]\n    C3S[\"得分 约600\"]\n    C3T[\"耗时 约30 min\"]\n    C3C[\"费用 4.8 元\"]\n\n    C4[\"ZCode\"]\n    C4S[\"得分 约618\"]\n    C4T[\"耗时 38 min\"]\n    C4C[\"费用 最低\"]\n\n    C5[\"Risks\"]\n    C5S[\"得分 约610\"]\n    C5T[\"耗时 最慢\"]\n    C5C[\"费用 7.5 元\"]\n\n    C1 --> C1S\n    C1 --> C1T\n    C1 --> C1C\n\n    C2 --> C2S\n    C2 --> C2T\n    C2 --> C2C\n\n    C3 --> C3S\n    C3 --> C3T\n    C3 --> C3C\n\n    C4 --> C4S\n    C4 --> C4T\n    C4 --> C4C\n\n    C5 --> C5S\n    C5 --> C5T\n    C5 --> C5C"
+    },
+    {
+      "title": "最佳坐骑决策流程",
+      "code": "flowchart LR\n    S[\"开始评估\"]\n    SC[\"检查得分\"]\n    ST[\"检查速度\"]\n    CO[\"检查费用\"]\n    COMB[\"综合比较（得分↑、速度↑、费用↓）\"]\n    BEST[\"选择 ZCode 为最佳坐骑\"]\n\n    S --> SC\n    SC --> ST\n    ST --> CO\n    CO --> COMB\n    COMB --> BEST"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:41:27+00:00"
+}

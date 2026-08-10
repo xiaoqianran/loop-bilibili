@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1WfKf6bEdS",
+  "title": "为什么有人死活不换Claude Code",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 658,
+  "text": "就像呃最近几个月最明显\n大家互联网上都开始调侃cursor了是吧\n对我正想问这个问题\n呃就呃呃\n我我昨天看到一个非常搞笑的短视频啊\n他就是模拟自己是这个AI的老板嘛\n这个AI这个AI开了一个会\n他说这个科特同学啊\n这个最近业绩不太好\n嗯啊这个去年你的表现是特别好的\n但是你今年的表现好像已经没有\ncloud code和codex表现优异了\n你没有给我任何的惊喜感\n对啊\n你交付的速度开始变慢了啊\n怎么回事\n所以我决定下个月开始不再聘用你\n我要取消各自的这个订阅费用了啊\n那这个事情很容易发生啊\n是呃那为什么人就还有人坚持在科室台上用呢\n就是比如说我们公司也有呃\n这个这个程序员的小伙伴\n他就是习惯了那个页面\n习惯了vs code的那个页面\n然后他也觉得cursor的那个页面跟vs code很像\n那他就坚持在那用\n他就觉得我你要我换成codex\n因为codex跟cloud code现在就是非常呃\n除了你在vs code里面装插件去用这两个产品啊\n你如果用他自己的那个原生的AP\n他的体验就是你根本不需要看代码对吧\n他他想营造的感觉也是你不需要看代码\n你只要口喷你的需求\n我就帮你解决\n你最终看的是结果\n你应该说的是交付物\n你不需要验收\n中间改了这一行\n改了什么东西\n改了多少对吧\n不需要去验证这么多\n那对于有些这个特定工种\n或者有习惯路径依赖的同学\n那他就会觉得不适应啊\n他就他就不想切换\n它有它有非常强的切换\n就这个事情是不容小觑的\n但只能说我们说从长期来看\n那确实挑战非常大\n现在这些通用的大产品实在是威力太猛",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1WfKf6bEdS",
+  "published_at": "1782990540",
+  "fetched_at": "2026-08-07T00:32:03+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Claude Code 使用阻力知识图谱\n\n## 总览图 [BV1WfKf6bEdS P1 00:07‑00:21]\n```mermaid\nflowchart TD\n    A1[\"用户习惯 VS Code 界面\"] --> A2[\"倾向使用 Cursor 因 UI 类似\"]\n    A2 --> A3[\"坚持在 VS Code 页面使用 Claude Code\"]\n    B1[\"路径依赖（习惯的工作流）\"] --> B2[\"对切换新工具感到不适应\"]\n    B2 --> B3[\"不想切换到 Codex / Cloud Code\"]\n    C1[\"对代码可视化的需求\"] --> C2[\"期望 AI 直接给出结果\"]\n    C2 --> C3[\"不需要查看或验证代码细节\"]\n    D1[\"AI 绩效评估\"] --> D2[\"去年表现优秀\"]\n    D2 --> D3[\"今年交付速度变慢、缺乏惊喜\"]\n    D3 --> D4[\"决定取消订阅费用\"]\n    D4 --> D5[\"用户仍可能坚持使用\"]\n    D5 --> A1\n    D5 --> B1\n    D5 --> C1\n```\n\n## 切换阻力因果链 [BV1WfKf6bEdS P1 01:10‑01:18]\n```mermaid\nflowchart TD\n    E1[\"习惯 VS Code 页面\"] --> E2[\"使用 Cursor 时感受相似\"]\n    E2 --> E3[\"产生路径依赖\"]\n    E3 --> E4[\"对新 UI（Codex/Cloud Code）适应困难\"]\n    E4 --> E5[\"产生不适感\"]\n    E5 --> E6[\"拒绝切换\"]\n    F1[\"对代码可视化的需求\"] --> F2[\"AI 设计为无需查看代码\"]\n    F2 --> F3[\"用户需口述需求\"]\n    F3 --> F4[\"交付结果为唯一关注点\"]\n    F4 --> E5\n```\n\n## AI 视角的绩效评估与决策 [BV1WfKf6bEdS P1 00:14‑00:29]\n```mermaid\nflowchart TD\n    G1[\"AI 老板召开会议\"] --> G2[\"回顾去年优秀表现\"]\n    G2 --> G3[\"评估今年交付速度下降\"]\n    G3 --> G4[\"缺乏惊喜感\"]\n    G4 --> G5[\"决定下个月不再聘用 Claude Code\"]\n    G5 --> G6[\"取消用户订阅费用\"]\n    G6 --> G7[\"用户可能继续使用（因阻力）\"]\n    G7 --> G1\n```",
+      "diagrams": [
+        {
+          "title": "总览图 [BV1WfKf6bEdS P1 00:07‑00:21]",
+          "code": "flowchart TD\n    A1[\"用户习惯 VS Code 界面\"] --> A2[\"倾向使用 Cursor 因 UI 类似\"]\n    A2 --> A3[\"坚持在 VS Code 页面使用 Claude Code\"]\n    B1[\"路径依赖（习惯的工作流）\"] --> B2[\"对切换新工具感到不适应\"]\n    B2 --> B3[\"不想切换到 Codex / Cloud Code\"]\n    C1[\"对代码可视化的需求\"] --> C2[\"期望 AI 直接给出结果\"]\n    C2 --> C3[\"不需要查看或验证代码细节\"]\n    D1[\"AI 绩效评估\"] --> D2[\"去年表现优秀\"]\n    D2 --> D3[\"今年交付速度变慢、缺乏惊喜\"]\n    D3 --> D4[\"决定取消订阅费用\"]\n    D4 --> D5[\"用户仍可能坚持使用\"]\n    D5 --> A1\n    D5 --> B1\n    D5 --> C1"
+        },
+        {
+          "title": "切换阻力因果链 [BV1WfKf6bEdS P1 01:10‑01:18]",
+          "code": "flowchart TD\n    E1[\"习惯 VS Code 页面\"] --> E2[\"使用 Cursor 时感受相似\"]\n    E2 --> E3[\"产生路径依赖\"]\n    E3 --> E4[\"对新 UI（Codex/Cloud Code）适应困难\"]\n    E4 --> E5[\"产生不适感\"]\n    E5 --> E6[\"拒绝切换\"]\n    F1[\"对代码可视化的需求\"] --> F2[\"AI 设计为无需查看代码\"]\n    F2 --> F3[\"用户需口述需求\"]\n    F3 --> F4[\"交付结果为唯一关注点\"]\n    F4 --> E5"
+        },
+        {
+          "title": "AI 视角的绩效评估与决策 [BV1WfKf6bEdS P1 00:14‑00:29]",
+          "code": "flowchart TD\n    G1[\"AI 老板召开会议\"] --> G2[\"回顾去年优秀表现\"]\n    G2 --> G3[\"评估今年交付速度下降\"]\n    G3 --> G4[\"缺乏惊喜感\"]\n    G4 --> G5[\"决定下个月不再聘用 Claude Code\"]\n    G5 --> G6[\"取消用户订阅费用\"]\n    G6 --> G7[\"用户可能继续使用（因阻力）\"]\n    G7 --> G1"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T00:32:17+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Claude Code 使用阻力知识图谱\n\n## 总览图 [BV1WfKf6bEdS P1 00:07‑00:21]\n```mermaid\nflowchart TD\n    A1[\"用户习惯 VS Code 界面\"] --> A2[\"倾向使用 Cursor 因 UI 类似\"]\n    A2 --> A3[\"坚持在 VS Code 页面使用 Claude Code\"]\n    B1[\"路径依赖（习惯的工作流）\"] --> B2[\"对切换新工具感到不适应\"]\n    B2 --> B3[\"不想切换到 Codex / Cloud Code\"]\n    C1[\"对代码可视化的需求\"] --> C2[\"期望 AI 直接给出结果\"]\n    C2 --> C3[\"不需要查看或验证代码细节\"]\n    D1[\"AI 绩效评估\"] --> D2[\"去年表现优秀\"]\n    D2 --> D3[\"今年交付速度变慢、缺乏惊喜\"]\n    D3 --> D4[\"决定取消订阅费用\"]\n    D4 --> D5[\"用户仍可能坚持使用\"]\n    D5 --> A1\n    D5 --> B1\n    D5 --> C1\n```\n\n## 切换阻力因果链 [BV1WfKf6bEdS P1 01:10‑01:18]\n```mermaid\nflowchart TD\n    E1[\"习惯 VS Code 页面\"] --> E2[\"使用 Cursor 时感受相似\"]\n    E2 --> E3[\"产生路径依赖\"]\n    E3 --> E4[\"对新 UI（Codex/Cloud Code）适应困难\"]\n    E4 --> E5[\"产生不适感\"]\n    E5 --> E6[\"拒绝切换\"]\n    F1[\"对代码可视化的需求\"] --> F2[\"AI 设计为无需查看代码\"]\n    F2 --> F3[\"用户需口述需求\"]\n    F3 --> F4[\"交付结果为唯一关注点\"]\n    F4 --> E5\n```\n\n## AI 视角的绩效评估与决策 [BV1WfKf6bEdS P1 00:14‑00:29]\n```mermaid\nflowchart TD\n    G1[\"AI 老板召开会议\"] --> G2[\"回顾去年优秀表现\"]\n    G2 --> G3[\"评估今年交付速度下降\"]\n    G3 --> G4[\"缺乏惊喜感\"]\n    G4 --> G5[\"决定下个月不再聘用 Claude Code\"]\n    G5 --> G6[\"取消用户订阅费用\"]\n    G6 --> G7[\"用户可能继续使用（因阻力）\"]\n    G7 --> G1\n```",
+  "diagrams": [
+    {
+      "title": "总览图 [BV1WfKf6bEdS P1 00:07‑00:21]",
+      "code": "flowchart TD\n    A1[\"用户习惯 VS Code 界面\"] --> A2[\"倾向使用 Cursor 因 UI 类似\"]\n    A2 --> A3[\"坚持在 VS Code 页面使用 Claude Code\"]\n    B1[\"路径依赖（习惯的工作流）\"] --> B2[\"对切换新工具感到不适应\"]\n    B2 --> B3[\"不想切换到 Codex / Cloud Code\"]\n    C1[\"对代码可视化的需求\"] --> C2[\"期望 AI 直接给出结果\"]\n    C2 --> C3[\"不需要查看或验证代码细节\"]\n    D1[\"AI 绩效评估\"] --> D2[\"去年表现优秀\"]\n    D2 --> D3[\"今年交付速度变慢、缺乏惊喜\"]\n    D3 --> D4[\"决定取消订阅费用\"]\n    D4 --> D5[\"用户仍可能坚持使用\"]\n    D5 --> A1\n    D5 --> B1\n    D5 --> C1"
+    },
+    {
+      "title": "切换阻力因果链 [BV1WfKf6bEdS P1 01:10‑01:18]",
+      "code": "flowchart TD\n    E1[\"习惯 VS Code 页面\"] --> E2[\"使用 Cursor 时感受相似\"]\n    E2 --> E3[\"产生路径依赖\"]\n    E3 --> E4[\"对新 UI（Codex/Cloud Code）适应困难\"]\n    E4 --> E5[\"产生不适感\"]\n    E5 --> E6[\"拒绝切换\"]\n    F1[\"对代码可视化的需求\"] --> F2[\"AI 设计为无需查看代码\"]\n    F2 --> F3[\"用户需口述需求\"]\n    F3 --> F4[\"交付结果为唯一关注点\"]\n    F4 --> E5"
+    },
+    {
+      "title": "AI 视角的绩效评估与决策 [BV1WfKf6bEdS P1 00:14‑00:29]",
+      "code": "flowchart TD\n    G1[\"AI 老板召开会议\"] --> G2[\"回顾去年优秀表现\"]\n    G2 --> G3[\"评估今年交付速度下降\"]\n    G3 --> G4[\"缺乏惊喜感\"]\n    G4 --> G5[\"决定下个月不再聘用 Claude Code\"]\n    G5 --> G6[\"取消用户订阅费用\"]\n    G6 --> G7[\"用户可能继续使用（因阻力）\"]\n    G7 --> G1"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T00:32:17+00:00"
+}

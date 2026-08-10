@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1K5Kw6PEaG",
+  "title": "本地语音 AI 又升级了！10个新模型、GGUF量化、流式ASR语音输入｜audio.cpp",
+  "status": "ok",
+  "language": "zh",
+  "chars": 3060,
+  "text": "请评估本项目\n加入中英文支持\n下午三点前交给我\n下午三点前交给我\n上期视频我介绍了audio.cpp\n当时我把它比作音频版的llama.cpp\n仅仅过了几天\n它又一次大升级\n不仅一口气新增了10个模型\n还支持加载GGUF量化版\n并且落地了流式生成\nthe decision to travel slowly\nthere are moments when the idea of speed becomes\n甚至现在\n你看到的这个语音输入法\n就是用它做的\n操作界面上\n基础用法没变\n主要改动是增加了多语言支持\nGGUF量化转换\n还有音色库管理\n接下来我先挑几个有特点的新模型\n直接给你看效果\n再详细介绍前面那个语音输入法\n然后是这次很重要的一个能力\nGGUF量化\n最后统一说一下整合包怎么升级\n以及模型下载的一些细节\n上次没讲到的地方\n这次一起补上\n先看这次新增的模型\n它们主要集中在TTS和ASR两个标签下\nTTS里最有特点的是\nIndex TTS2和Supertonic 3\nIndex TTS2 它支持从文本内容\n推断语气的声音合成\n高级参数里写上情感参考文本\n模型会根据这段文本来推断情绪\n然后合成语音\n比如这段文本\n合成出来的语音\n大概率会带愤怒和失望的语气\n请把桌上的文件整理好\n下午三点前交给我\n我再把情感强度调成0.8\n重新合成\n语气听上去就会更强烈\n请把桌上的文件整理好\n下午三点前交给我\n如果去掉情感参考文本\n勾选从朗读文本推断\n那合成出来的就是这种效果\n请把桌上的文件整理好\n下午三点前交给我\n需要注意的是Index TTS2比较吃显存\n显卡配置低的话就用Moss系列\n或者上期介绍的Qwen3 TTS 0.6B\nSupertonic3的特点是速度快\n而且支持流式生成\n生成模式切换到流式\n第一次生成会重载后台服务\n会多出一段加载时间\n第二次就快了\n所以建议第一次\n用一小段文本来预热一下\nLook   I know what you're thinking\nHere he goes again\nThe guy in the metal suit\nthe walking ego with a repulsor problem\nabout to make a speech\nlike it's a press conference\n流式的好处主要体现在长文本合成上\n可以边合成边输出语音\n不用像离线模式那样\n要等所有文本合成结束\n才返回完整的语音\n需要注意的是\n这个模型不支持中文\n中文的流式合成\n现在只有VoxCPM2支持\n不过目前效果还在优化当中\n但首字延迟高\n流式生成则边接收文字边分段合成\n中间有卡顿\n想使用中文流式可以再等等\nTTS说完  再看语音转写\n这次也新增了5个模型\n先说结论\n中文转写推荐用Qwen3 ASR 1.7B HF\n准确率相当高\n显存够的话就用VibeVoice ASR\n能力更强\n不仅准还支持多人对话\n要速度就用Nemotron 3.5 ASR 0.6B\n但它中文识别的准确率要差一些\n这是同一段音频三个模型的识别对比\n我把它们的结果丢给AI打分\n最终判定QWebn 3 ASR 1.7B HF转写的最准确\nNemotron 3.5 ASR 0.6B\n同时支持离线和流式\n勾选最下面的流式转写\n它就会边识别边吐字\n这种模式非常适合语音输入\n实时对话这些场景\n不用等音频全部识别完才返回结果\n我本地的语音输入就是拿它做的\n具体实施过程其实不复杂\n我先写了一份大致需求\n描述下功能要求\n然后交给Codex\n因为服务端是现成的\n直接调用audio.cpp的服务\n代码只需要做语音输入  发送\n显示这一层\n大概半小时就完成了\n后面调试用了10分钟左右\n具体用法\n先启动run_server_asr_stream服务\n再运行run_speaktype\n按住Ctrl+Shift+Space打开麦克风\n然后把光标放进你的文本编辑软件里\n记事本 Obsidian都可以\n对着麦克风说话\n内容就直接转写过来了\n这次升级真正重要的\n不是模型又多了几个\n如果想换行\n期间你说完一句打个回车\n需要说明一点\n这程序只是个demo\n主要是为了验证用audio.cpp\n开发落地应用的可能性\n在它上面可以开发出Web UI界面\n可以做实时语音对话\n可以接OpenAI风格的API\n往下还有刚才的语音输入\n浏览器扩展以及其他桌面应用等等\n都可以做\n现在回过头\n把这次界面上的几个改动过一遍\n右上角语言\n现在支持繁体和英文\n切换时大概有1到2秒的延时\n另一个新增功能是内置音频管理\n上传参考音频\n写好对应的文本\n然后点保存\n就会自动存到内置音频列表里\n不用的可以选中删除\n界面上这次最大的功能更新\n是模型的量化管理\n点开GGUF\n下面提示可转换的就能进行量化\n先选几位量化\n然后点转换按钮\n量化的好处是显存占用更小\n对于没有显卡的机器\nCPU运行量化版速度也更快\n比如这个VibeVoice ASR模型\n原始模型加载后大概要占16G显存\n8G显存根本就跑不动\n但把它转成Q4量化版以后\n加载就没问题了\n但是大参数模型转换比较慢\n像我这次用了20多分钟\n当有GGUF时\n点这里加载模型\n后台服务会优先加载量化版\n需要提醒一点\n目前audio.cpp并不支持\n其他框架转换的GGUF\n并且也只有部分模型现在可以转换\n在列表里选模型时\n能不能转换下面都有提示\n转好的量化版不想用也可以直接删掉\n就能恢复原始权重\n目前audio.cpp已经完整支持\n30个语音模型\n所有模型的能力特点\n我都整理成了配套笔记\n可以通过这张表格来速查\n链接我放在评论区置顶\n最后说一下整合包怎么升级\n以及模型下载\n第一个链接是新的完整版整合包\n如果你之前没安装过\n就下这个\n上期安装过的\n点第二个链接下载升级包\n解压以后复制里面的所有文件\n覆盖到原来整合包目录下\n然后全部替换就升级好了\n以后更新可以直接点update\n程序会自动检测\n有新版本会自动下载\n双击run_webui打开界面\n这个启动窗口第一次要等几十秒\n程序加载完会自动打开网页\n再说下模型下载\n目前audio.cpp的模型\n都要从hugging face上下载\n并且不支持手动放模型\n国内网络如果下载有问题\n可以试一下这里填上代理地址\n另外有个别模型\n像Stable Audio这个系列\n需要在hugging face上申请\n具体操作步骤是这样\n先注册一个免费的hugging face账号\n然后到这个地址填写申请表单\n申请通过后\n再点你的hugging face头像\n菜单底部Access Tokens\n创建一个新Token  选只读\n复制创建的Token\n粘贴到Web UI的Token框里\n就可以下载模型了\n模型下载机制是先在models目录下\n创建一个临时下载目录\n就是这个文件夹\n进来能看到正在下载的模型\n全部下载完成后\n程序会自动创建重命名模型文件夹\n下载过程中中断也没关系\n继续点下载按钮\n会断点续传\n下载完成后点刷新\n就可以加载模型了\n程序也会自检模型文件的完整性\n缺文件会提示模型不完整\n新上手的朋友\n想了解界面基础操作以及其他常用模型\n可以看 语音AI系统化了 那期视频\n本期视频的配套笔记\n链接我放在评论区置顶\n整合包使用中的问题\n或者好的点子想法\n都可以在评论区留言\n我会定期收集整理\n更新版本\n这里是AI探索与发现\n感谢观看  下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1K5Kw6PEaG",
+  "published_at": "1784358315",
+  "fetched_at": "2026-08-09T02:56:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T03:15:17+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T03:15:17+00:00"
+}

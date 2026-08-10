@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1qQ7z6QEZS",
+  "title": "Godot 4.7隐藏神技！一行代码实现运行时绘图画板🚀#Godot4 #游戏开发 #可绘制纹理 #运行时绘图 #DrawableTexture #Godot",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1336,
+  "text": "你好\n在本教程中的大家\n我将确保使用drawable texture two d类并实现到四\n截至录制此视频时\n这是在Godot 4.7测试版中新增的功能\n可绘制纹理只是一个二维纹理\n支持通过blit调用向自身绘制\n这意味着你可以生成纹理并在运行时进行编辑\n对于这个示例\n我有一个简单的二维场景，包含主节点和主相机\n我将添加一个Sprite 2D节点\n这是我们生成纹理并后续编辑的对象\n我们将首先为该精灵创建脚本\n我们需要创建一个可绘制纹理变量，变量\n绘制碗纹理\n我们将将其设置为drawable texture 2D\n我想创建一个保存纹理尺寸的变量\n所以变量纹理尺寸\n这将是一个向量整数\n然后\n我直接\n将其设为512x512像素\n在x和y轴中，接下来在ready函数\n函数ready\n我们将设置draw_texture为draw_texture_2d.new\n我们需要设置可绘制纹理\n我们将使用setup函数来完成\n因此运行draw_texture.setup传入宽度\n纹理尺寸.x和高度纹理尺寸.y\n然后需要传入格式\n我们暂时使用RGB8格式\n接下来传入颜色值\n所以颜色选我喜欢的青色\n你可以选择不填写颜色值\n将默认使用白色\n最后一个参数是\n是否启用Mipmap\n这部分我不会在视频中详细讲解\n暂时默认为false\n这对本教程足够\n接下来需要将精灵的纹理设置为可绘制纹理\n设为dra_texture\n所以texture赋值为drawable_texture\n如果运行\n你会看到\n我们有了蓝色方块\n我将展示如何直接绘制其他纹理到此\n刚刚创建的可绘制纹理\n我将使用常规图标纹理拖放并设为常量\n我们将使用blit_rect函数进行绘制\n所以我们将绘制纹理点\n先分割破坏第一部分\n我们需要传入一个rec到i对象\n所以破坏到i的第一个参数是位置\n我将传入192和192作为坐标\n然后尺寸设为64x64\n接下来\n我们需要传入我们的图像\n我直接传入icon\n暂时保持其余参数默认设置\n如果运行这段代码\n你会看到Godot标志已嵌入纹理\n这不是独立精灵\n这是一个整体纹理\n现在\n我发现绘制纯色的最佳方法\n是创建一个空白图像叠加\n然后后续更改颜色\n稍后会更清楚\n创建变量\n命名为source_image，设为image类型\n创建空对象\n将宽度和高度设为1像素\n然后映射为false\n图像格式与纹理格式一致\n所以设为RGB8A8\n用source替换icon\n在调制部分选择颜色\n执行color\n取橙色并运行\n现在原Godot标志位置出现空白橙色方块\n要实现视频开头的动态绘制效果\n首先创建处理函数\n函数process\n检查鼠标是否点击\n如果输入检测到\n鼠标按钮按下\n左键按下\n创建局部变量pause\n这是两个局部变量获取全局鼠标位置\n用于计算纹理位置\n变量texture_position\n设为向量\n第一个参数为local_pos.x\n加上纹理宽度的一半\n同样处理y轴\n将代码复制并修改为y\n将旧绘制函数复制过来\n需要调整部分内容\n根据当前位置调整\n我们说这是纹理暂停点x和纹理暂停点y\n我还要把它画得更小一些\n所以从64分解到8\n现在如果你运行这个\n你会看到我们可以在纹理上绘制所有内容",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qQ7z6QEZS",
+  "published_at": "1780621257",
+  "fetched_at": "2026-08-08T15:50:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

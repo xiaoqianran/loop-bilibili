@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1cJoGB7Eop",
+  "title": "DeepSeek v4 爆火，我翻出一块亏了30万的华为昇腾AI板子",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1431,
+  "text": "这块华为盛腾的板子让我亏了30万\ndeep sk v4刚发布\n全网都在吹华为算力\n但作为做过工业AI硬件的人\n我看到这个消息差点气笑了\n同一套华为升腾的架构\n我3年前亏了整整30万\n更离谱的是\n技术做成了却被逼砍掉\n如果当时没被砍\n这块板子\n很可能就是国产AI工业落地的早期样板\n这是我们的PCB版资料\n这块是FPGA\n这块是FBA的DDR\n这块是VPX的连接器\n升腾的芯片在这里\n这个连接器大概就是这个样子\n这是我们22年做的PCB版\n现在只有光盘子了\n这个是FPG\n这个是VPX连接器\n这个是升腾的连接器\n这块还剩了一个升腾\n它连接的时候应该是放在这里\n是这个样子的\n这个升腾处理器是台积电给华为代工的\n最后一版\n我准备留着收藏了\n至于这30万到底是怎么蒸发的\n我先卖个关子\n咱们结尾揭秘\n我是贵金修仙\n今天不念虚的参数\n我直接翻出当年被制裁逼停的工程费案\n带大家来看看真实的国产AI算力\n在工业落地时到底是个怎么样的地狱级难度\n先看这张当时的系统架构图\n很多非硬件专业的朋友\n可能以为搞AI就是买张显卡插在主板上就行了\n但在真实的专业应用里没那么简单\n大家看左边\n为了保证极低延迟的图像采集\n前端接入了cam link和SDI这些工业高清视频流\n看link单路带宽最高能到6G多路同时进来\nCPU根本扛不住\n所以在真实的使用环境下\n必须有中间这颗FPG作为一个高速的中转站\n很多人以为AI就是一张显卡\n但真实的工业现场更像一条流水线\n摄像头是矿泉水的生产线\nFPG是分拣机器\n生铜芯片才是最终检测的AI大佬\nFPJ负责把海量视频规整好\n再通过高速的PCIE通道\n源源不断的喂给右下角的真正大佬\n华为阿特拉斯200加速模块\n当时我们使用的是一颗小小的升腾三系列\n而今天deep sk使用的是成千上万的升腾的九系列\n这就像从一台工作站\n变成了一整个的AI数据中心\n从一颗芯片到一整个的AI超级工厂\n现在看主板真容\n左边这个黑色模块\n内部就是华为的升腾310AI处理器\n这时候肯定有懂行的朋友要杠了\n修仙DP sick用的是升腾950集群\n你拿个端测的310搁\n这蹭什么热点\n不是乱蹭\n无论是端测的310还是云测的950\n底层都是同宗同源的达芬奇架构\n它们的核心就是那个极其暴力的矩阵乘法单元\n我们在端测怎么榨干这颗芯片的算力\n云端那成千上万张卡就是怎么协同作战的\n当年画这块板子踩了不少坑\nPCIE3.0的信号完整性\nFPG和阿特拉斯模块的供电时序\n稍微差几毫秒\n系统就崩溃\n但这些技术困难我们都克服了\n软件硬件全部调通\n那为什么最后还是亏了30万呢\n因为在22年\n客户的需求是英伟达和全国产的升腾双线并行\n但就要大功告成了\n突然华为遭遇到制裁\n台积电断供\n我们这行的产品生命周期特别长\n客户问了一个问题\n这颗芯片3年后还能买得到吗\n出于后续芯片断供风险的考虑\n只能忍痛挥刀砍掉了升腾县\n前期投入的30万研发经费直接打水漂\n最终只交付了英伟达的板卡\n当年这块板子是失败的\n但是今天deep sick把这条路走通了\n所以今天回看这套30万的废案\n再看看deep sk v4在全球交出的超神答卷\n作为硬件人真的五味杂陈\n又极其自豪\n国产算力不仅没死\n还硬生生杀出了一条血路\n3年前我们被迫砍掉国产算力\n3年后国产算力开始砍别人了\n当年我们担心芯片断供\n今天别人开始担心算力断供\n你们觉得deep sk v4能彻底撼动OpenAI吗\n在评论区留下你的看法\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cJoGB7Eop",
+  "published_at": "1777005984",
+  "fetched_at": "2026-08-09T19:10:04+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T19:21:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T19:21:50+00:00"
+}

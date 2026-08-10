@@ -1,0 +1,66 @@
+{
+  "bvid": "BV13oMn6PEHt",
+  "title": "腾讯免费送10亿token！Claude Code和Cursor直接用，小程序成长计划领取指南",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 375,
+  "text": "别再花钱买token了\n腾讯1000000000token免费领\n今天我教你先说福利有多猛\n10亿混元文本模型的token\n加上10万张AI生图额度\n7月1号到年底都零零\ncloud cod以及cursor\n这些热门工具拿到K就能使用\n首先登录公众号后台\n点击行业能力的小程序成长计划进来\n就能看到云开发资源及混元免费token这个入口\n点击领取就可以\n我之前已经领完了\n所以显示的是去使用\n第一次进来是领取按钮\n领取完之后点击去使用\n就会跳转到腾讯云AI工具界面\n找到base url l这里第一次使用要新建K\n然后就可以复制K\n就可以拿到这些常用的AI工具中去使用了\n腾讯也准备了这些热门工具的配置教程\n或者做就可以\n活动截止到12月31号\n想用的抓紧领\n点赞收藏\n找不到可以翻出来再看\n但超过1000\n我将出一期应用AI进行小程序开发的详细教程",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV13oMn6PEHt",
+  "published_at": "1783599802",
+  "fetched_at": "2026-08-06T22:12:28+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 腾讯免费送10亿 token 与工具使用指南\n\n## 概览\n```mermaid\nflowchart TD\n    A[\"腾讯免费 10亿 token\"]\n    B[\"10万张 AI 生图额度\"]\n    C[\"适用于 Cloud Code、Cursor 等热门工具\"]\n    D[\"领取入口：小程序成长计划\"]\n    E[\"活动期限：7月1日‑12月31日\"]\n    F[\"领取后生成 K\"]\n    G[\"K 用于调用 AI 工具\"]\n    H[\"腾讯提供配置教程\"]\n    I[\"可直接复制 K 使用\"]\n    J[\"活动结束后需自行付费\"]\n\n    A --> D\n    B --> D\n    D --> F\n    F --> G\n    G --> C\n    C --> H\n    C --> I\n    E --> D\n    J --> G\n```\n\n## 领取流程\n```mermaid\nflowchart TD\n    S1[\"登录公众号后台\"]\n    S2[\"点击行业能力 → 小程序成长计划\"]\n    S3[\"看到云开发资源及混元免费 token 入口\"]\n    S4[\"点击领取\"]\n    S5[\"首次显示领取按钮\"]\n    S6[\"领取后出现‘去使用’按钮\"]\n    S7[\"点击‘去使用’跳转腾讯云 AI 工具界面\"]\n    S8[\"首次使用需新建 K\"]\n    S9[\"复制 K\"]\n    S10[\"完成领取流程\"]\n\n    S1 --> S2\n    S2 --> S3\n    S3 --> S4\n    S4 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 --> S8\n    S8 --> S9\n    S9 --> S10\n```\n\n## 工具使用路径\n```mermaid\nflowchart TD\n    T1[\"打开腾讯云 AI 工具界面\"]\n    T2[\"选择 Cloud Code / Cursor 等工具\"]\n    T3[\"粘贴已复制的 K\"]\n    T4[\"访问 base URL\"]\n    T5[\"使用免费 token 进行调用\"]\n    T6[\"参考腾讯提供的配置教程\"]\n    T7[\"完成 AI 功能集成\"]\n    T8[\"如超出免费额度需自行付费\"]\n\n    T1 --> T2\n    T2 --> T3\n    T3 --> T4\n    T4 --> T5\n    T5 --> T6\n    T6 --> T7\n    T7 --> T8\n```",
+      "diagrams": [
+        {
+          "title": "概览",
+          "code": "flowchart TD\n    A[\"腾讯免费 10亿 token\"]\n    B[\"10万张 AI 生图额度\"]\n    C[\"适用于 Cloud Code、Cursor 等热门工具\"]\n    D[\"领取入口：小程序成长计划\"]\n    E[\"活动期限：7月1日‑12月31日\"]\n    F[\"领取后生成 K\"]\n    G[\"K 用于调用 AI 工具\"]\n    H[\"腾讯提供配置教程\"]\n    I[\"可直接复制 K 使用\"]\n    J[\"活动结束后需自行付费\"]\n\n    A --> D\n    B --> D\n    D --> F\n    F --> G\n    G --> C\n    C --> H\n    C --> I\n    E --> D\n    J --> G"
+        },
+        {
+          "title": "领取流程",
+          "code": "flowchart TD\n    S1[\"登录公众号后台\"]\n    S2[\"点击行业能力 → 小程序成长计划\"]\n    S3[\"看到云开发资源及混元免费 token 入口\"]\n    S4[\"点击领取\"]\n    S5[\"首次显示领取按钮\"]\n    S6[\"领取后出现‘去使用’按钮\"]\n    S7[\"点击‘去使用’跳转腾讯云 AI 工具界面\"]\n    S8[\"首次使用需新建 K\"]\n    S9[\"复制 K\"]\n    S10[\"完成领取流程\"]\n\n    S1 --> S2\n    S2 --> S3\n    S3 --> S4\n    S4 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 --> S8\n    S8 --> S9\n    S9 --> S10"
+        },
+        {
+          "title": "工具使用路径",
+          "code": "flowchart TD\n    T1[\"打开腾讯云 AI 工具界面\"]\n    T2[\"选择 Cloud Code / Cursor 等工具\"]\n    T3[\"粘贴已复制的 K\"]\n    T4[\"访问 base URL\"]\n    T5[\"使用免费 token 进行调用\"]\n    T6[\"参考腾讯提供的配置教程\"]\n    T7[\"完成 AI 功能集成\"]\n    T8[\"如超出免费额度需自行付费\"]\n\n    T1 --> T2\n    T2 --> T3\n    T3 --> T4\n    T4 --> T5\n    T5 --> T6\n    T6 --> T7\n    T7 --> T8"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T22:12:40+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 腾讯免费送10亿 token 与工具使用指南\n\n## 概览\n```mermaid\nflowchart TD\n    A[\"腾讯免费 10亿 token\"]\n    B[\"10万张 AI 生图额度\"]\n    C[\"适用于 Cloud Code、Cursor 等热门工具\"]\n    D[\"领取入口：小程序成长计划\"]\n    E[\"活动期限：7月1日‑12月31日\"]\n    F[\"领取后生成 K\"]\n    G[\"K 用于调用 AI 工具\"]\n    H[\"腾讯提供配置教程\"]\n    I[\"可直接复制 K 使用\"]\n    J[\"活动结束后需自行付费\"]\n\n    A --> D\n    B --> D\n    D --> F\n    F --> G\n    G --> C\n    C --> H\n    C --> I\n    E --> D\n    J --> G\n```\n\n## 领取流程\n```mermaid\nflowchart TD\n    S1[\"登录公众号后台\"]\n    S2[\"点击行业能力 → 小程序成长计划\"]\n    S3[\"看到云开发资源及混元免费 token 入口\"]\n    S4[\"点击领取\"]\n    S5[\"首次显示领取按钮\"]\n    S6[\"领取后出现‘去使用’按钮\"]\n    S7[\"点击‘去使用’跳转腾讯云 AI 工具界面\"]\n    S8[\"首次使用需新建 K\"]\n    S9[\"复制 K\"]\n    S10[\"完成领取流程\"]\n\n    S1 --> S2\n    S2 --> S3\n    S3 --> S4\n    S4 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 --> S8\n    S8 --> S9\n    S9 --> S10\n```\n\n## 工具使用路径\n```mermaid\nflowchart TD\n    T1[\"打开腾讯云 AI 工具界面\"]\n    T2[\"选择 Cloud Code / Cursor 等工具\"]\n    T3[\"粘贴已复制的 K\"]\n    T4[\"访问 base URL\"]\n    T5[\"使用免费 token 进行调用\"]\n    T6[\"参考腾讯提供的配置教程\"]\n    T7[\"完成 AI 功能集成\"]\n    T8[\"如超出免费额度需自行付费\"]\n\n    T1 --> T2\n    T2 --> T3\n    T3 --> T4\n    T4 --> T5\n    T5 --> T6\n    T6 --> T7\n    T7 --> T8\n```",
+  "diagrams": [
+    {
+      "title": "概览",
+      "code": "flowchart TD\n    A[\"腾讯免费 10亿 token\"]\n    B[\"10万张 AI 生图额度\"]\n    C[\"适用于 Cloud Code、Cursor 等热门工具\"]\n    D[\"领取入口：小程序成长计划\"]\n    E[\"活动期限：7月1日‑12月31日\"]\n    F[\"领取后生成 K\"]\n    G[\"K 用于调用 AI 工具\"]\n    H[\"腾讯提供配置教程\"]\n    I[\"可直接复制 K 使用\"]\n    J[\"活动结束后需自行付费\"]\n\n    A --> D\n    B --> D\n    D --> F\n    F --> G\n    G --> C\n    C --> H\n    C --> I\n    E --> D\n    J --> G"
+    },
+    {
+      "title": "领取流程",
+      "code": "flowchart TD\n    S1[\"登录公众号后台\"]\n    S2[\"点击行业能力 → 小程序成长计划\"]\n    S3[\"看到云开发资源及混元免费 token 入口\"]\n    S4[\"点击领取\"]\n    S5[\"首次显示领取按钮\"]\n    S6[\"领取后出现‘去使用’按钮\"]\n    S7[\"点击‘去使用’跳转腾讯云 AI 工具界面\"]\n    S8[\"首次使用需新建 K\"]\n    S9[\"复制 K\"]\n    S10[\"完成领取流程\"]\n\n    S1 --> S2\n    S2 --> S3\n    S3 --> S4\n    S4 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 --> S8\n    S8 --> S9\n    S9 --> S10"
+    },
+    {
+      "title": "工具使用路径",
+      "code": "flowchart TD\n    T1[\"打开腾讯云 AI 工具界面\"]\n    T2[\"选择 Cloud Code / Cursor 等工具\"]\n    T3[\"粘贴已复制的 K\"]\n    T4[\"访问 base URL\"]\n    T5[\"使用免费 token 进行调用\"]\n    T6[\"参考腾讯提供的配置教程\"]\n    T7[\"完成 AI 功能集成\"]\n    T8[\"如超出免费额度需自行付费\"]\n\n    T1 --> T2\n    T2 --> T3\n    T3 --> T4\n    T4 --> T5\n    T5 --> T6\n    T6 --> T7\n    T7 --> T8"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:12:40+00:00"
+}

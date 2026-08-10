@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1kX546QEjG",
+  "title": "保姆级Claude Code速成，必学！简单！【附完整文档】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4057,
+  "text": "cloud code可能是现在用AI最该装的工具之一\n这期视频就手把手教你从安装到掌握它的用法\n而且能确保你在国内网络环境直连的情况下\n也能正常的安装使用\n同时你会明白AI agent主要的一些概念\n包括harness啊\nMCP啊\nskills啊\n记忆啊等\n毕竟像skills和MCP这些概念\n就是cloud code背后的公司ANTHROPIC发明的\n先说两个误区啊\n第一认为cla code只是程序员的工具\n它确实写代码非常好用\n但也能当做通用的agent\n能做自动化啊\n控制浏览器\n开发skills啊\n做PPT啊\n操作飞书啊\n剪视频啊\n第二个误区\n很多人认为用cloud code就必须要订阅cloud啊\n国内直连就不能用\n那事实上呢coud code只是一层壳\n大多国产模型也能用在这层壳里面\n我还整理了文档\n一步步照着做就可以留下评论\n我会让我的cloud code自动发给你\n先来安装cla code本体啊\n我们以windows为例\n因为windows上的安装会复杂一些\n最简单无脑的安装方法呢\n就是下载任意一个免费的\n能在电脑本地执行命令的AI agent\n比如免费的脆中国版呢\n然后你就告诉他停\n用尽一切方法帮我安装上dot code\n那为了让你搞清楚\n这个安装过程究竟会发生什么\n也避免你去下载额外的东西\n我还是教大家手动的一步一步安装上\n首先在电脑搜索栏搜索power shell\n以管理员身份运行\n你就会看到这个命令行了\n就可以在这里运行安装命令\n我屏幕上呢列出了几种不同的\n可以下载安装cloud code的命令\n那本质上呢他们是借助电脑上自带的\n不同的各种安装工具\n取不同的源下载和安装\n那这几个里面\n大部分在国内网络环境运行是会失败的\n如果你不知道如何解决呢\n我推荐你就用这一条命令下载\n安装成功后\n它会提示你环境变量也帮你添加了\n为了让它生效\n需要重启一下power shell\n然后输入cloud\n它就运行起来了\n你会看到这个cloud的界面\n尽管它报错\n提示我们处在ANTHROPIC\n不服务的国家或者地区\n但还是恭喜你啊\n安装成功了\n现在我们来解决这个报错\ncloud code和open cloud\nhermes agent等产品一样\n本质上是一个壳\n一种驾驭大模型的方式\n即harness\n本质上harness负责调度背后的模型\n负责思考\n这样讲cloud code能驾驭国产模型应该就很好理解了\n那当我们输入一条命令的时候\n这个harness\n比如cloud code会反反复复调用几十上百次的大模型\n这也是为什么他们的执行时间\n往往比我们用豆包之类的产品的时候要久的多\n可以用在cloud code里面的国产模型其实很多\n我算了一下\n目前国产第一梯队模型里面\n性价比最高的是KIMIK2.6\n它的价格是cloud opus4.7的16\n而且它在这里面是支持最多模态的\n包括图片啊\n视频啊\n在开发前端剪辑视频或者制作PPT这种任务里\n模型能够识别图片就很重要啊\n因为可以让模型通过视觉能力检查页面\n自己获得一些反馈\n独立开发一些软件或者处理一些通用任务\nK2.6的能力是完全够用\n所以以它为例\n回到刚才的power shell运行窗口\n输入这两条命令\n这时候呢就打开了cloud code的配置文件\n添加这一行保存\n并且关闭\n这时候再次运行cloud呢\n他会问你是否能够信任当前的目录\n直接按enter确认就可以了\n你看啊\n已经没有之前的报错了\n我们绕过了这个软件对地区的检测\n按两次CTRL加C呀\n可以关闭cloud\n回到正常的命令界面\n我们再次打开刚才这个配置文件会发现啊\n因为我们运行过一次cloud\n多了很多配置啊\n别管它\n我们再添加一段配置\n用来指定它使用的模型\n还需要一个API key\n从KIMI的开放平台API key的管理页面就能获取\n你要是第一次用的话\n可以只充十块钱感受一下\n填完这个APIKE之后\n保存配置文件\n再试一次\n运行cloud\n我和他打招呼说你好\n他正常的回复说明成功了\n并且上面显示当前的模型为KIMIK2.6\n那你可能会想啊\n还不是和一般的AI一样\n都是对话吗\n那区别在于它可以直接操作你的电脑读写文件\n安装工具\n控制浏览器文件\n这一点就非常重要\n它给AI提供了无限的可以持久保存的记忆\n当我们运行cloud命令的时候\n当时显示的是哪个目录\n那这个目录就会成为他的工作目录\n可以通过CD这个命令进入任意一个文件夹目录\n比如我们创建一个hello world\n然后CD进去再执行cloud\n现在我们来尝试让cloud code控制浏览器\n以此来完成一些自动化的任务\n我们不是说这个视频会有配套的文档吗\n到时候也是用同样的方式\n让AI控制浏览器发给下面评论的人\n为了达成这一点\n我们要安装一个MCP\nMCP可以理解成blood code\n去连接外部工具的一个接口\n像mc p market之类的网站\n就能找到很多的MCP控制浏览器\n用到的是playwright mc p\n通过这一条命令可以安装\n安装后再次打开cloud\n在cloud里面\n任何时候你按下斜杠\n可以看到它内置的各种命令\n输入斜杠\nMCP可以看到所有我们安装的MCP\n看啊它已经安装成功了\n但是有报错\n按ESC可以返回上一级\n那现在要解决这个报错\n我们已经不用像之前那样\n手动执行各种命令去解决报错了\n直接让cloud code自己去想办法\n那他现在正在运行啊\n我解释一下他这个乱七八糟的界面\n这里是我们的输入\n这种白色的是模型\n想要对我们说的话\n灰色的呢是模型阅读的文件\n绿点和红点都是模型调用的工具\n绿色是成功的\n红色是有报错\n最下面这个橙色的一直在那边跳啊\n其实就是cloud正在工作的意思\n以及他工作了多长时间\n输出了多少token这些信息\n那你仔细看它执行过程的话\n会看到他帮我们安装好了node之类的依赖环境\n解决各种报错\n全都搞定后\n它提醒我们要重启一下cloud code\n重启后呢会发现没有上次的聊天记录了\n呃需要输入一杠resume\n可以找到之前所有的历史对话\n通过方向键选择确认后呢\n就回到了之前那个上下文\n你可能觉得啊要解决这么多报错\n感觉好麻烦\n但实际上你装过几个MCP之后呢\n他们常见的依赖就是那几个\n所以以后就不太会有报错了\n现在我们让AI控制浏览器到百度去搜索\n什么是MCP\n然后选两篇优质的内容阅读\n再保存到一个本地的文件看啊\n他咔咔一通跑\n然后成功了这一整套安装控制浏览器的MCP\n再让它执行的流程呢\n你不一定要照着做\n我是想让你知道啊\n以后你再想安装什么开源项目或者命令行工具\n都可以直接让这个cloud code帮你安装运行\n包括前段时间很多人花500块钱去找别人\n安装的open cloud\n通过hoot code都是可以轻松安装的\n所以彻底摆脱痛苦了\n另外大家应该注意到\n刚才过程中\nAI每运行一条命令都需要我批准\n他才能继续执行\n我按了大概有几十次的同意啊\n堪称噩梦\n完全没有自动化的感觉\n这是cloud code默认的权限模式\n它还有很多其他的权限模式\n这里我列出了所有模式的区别以及开启的方式\n如果你比较清楚自己在做什么\n可以使用最激进的bypass permissions\n绝大部分命令啊都不再需要你批准\n这是我最常用的方式\n其实还是比较安全的\n我们再回到刚才和cloud的对话窗口啊\n有一个词叫上下文腐烂\n也就是当上下文占用过多的时候\n模型会越来越笨\n因此啊有意识地管理上下文是非常重要的\n那怎么知道目前用了多少上下文呢\n你可以输入一杠context\n看当前上下文的占用情况\n会明确标注出有多少是你的对话造成的\n有多少是你安装的MCP工具\n有多少是skills\n看目前总共用了50%\n那当这个上下文占用达到一个阈值的时候\n会自动触发compact\n你可以理解为就是总结前面的所有内容\n就释放掉大部分的上下文\n但我更推荐你手动去compact\n当完成了一些阶段性的任务\n前面的上下文还有一点点用\n但又没那么有用的时候\n就通过一杠compact来触发\n你看啊\ncompact之后\n上下文的使用从之前的50降到了16%\n如果上下文已经完全没有意义了呢\n就通过一杠clear来清空上下文\n要记住啊\n上下文里的信息永远都是临时的重要内容\n你都让AI直接写到文件里\n成为永久的记忆\n接下来我们要让AI把刚刚创建的\n什么是MCP这个文件的内容啊\n制作成一个小视频\n我们需要安装一个视频\nSkills skills\n你可以理解成是给cloud code装的一个现成的能力包\n它既像MCP一样让AI能够连接外部的服务\n同时啊还预设了大量提示词\n用来指导AI如何完成某一个特定的工作\n像skill hub这类网站呢\n可以找到大量优质的skills\n让你快速体会到cloud code的强大\n我们装一个可以通过编程来剪辑视频的skills\n叫hyper frames\n我们这次直接把安装的命令发给AI\n让他帮我们去安装\n那他发现了我们电脑连git都没有装\n他直接帮我们装上了\n如果你是Mac呢\n就没有这个问题\n安装完后它提示我们重启一下cloud code\n通过一杠skills命令\n可以看到所有安装的skills\n通过输入at可以选择一个工作目录下的文件\n我们选择之前生成的markdown文件\n什么是MCP\n让AI根据这个文件去制作科普视频\n那他第一次做完呢也不是特别满意\n就可以截图发给模型\n让他再调整调整\n看看最终效果\n他先是展示了没有MCP的情况\n然后是有MCP的情况\n动画震撼大气\n原理解释直观易懂\n我很满意啊\n虽然说cloud code还有很多的命令我们没有覆盖\n但这也符合二八定律\n就是最常用的\n其实只有那20%的命令\n我基本上都告诉你了\n希望大家可以去实践一下\n并且在评论区告诉我你的运行体验\n或者你还想了解什么更进阶的用法",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1kX546QEjG",
+  "published_at": "1778490135",
+  "fetched_at": "2026-08-06T19:23:39+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Cloud Code 知识图谱\n\n## 总览概念图 [BV1kX546QEjG P1 00:11]\n```mermaid\nflowchart TD\n    CC[\"Cloud Code\"] --> AI[\"AI Agent\"]\n    AI --> H[\"Harness\"]\n    H --> M[\"模型 (Model)\"]\n    M --> KM[\"KIMI K2.6（国产模型）\"]\n    CC --> SK[\"Skills\"]\n    CC --> MCP[\"MCP\"]\n    CC --> MEM[\"记忆 (Memory)\"]\n    CC --> PERM[\"权限模式 (Permissions)\"]\n    CC --> CTX[\"上下文管理 (Context)\"]\n    AI --> ANTH[\"Anthropic（公司）\"]\n    ANTH --> OC[\"Open Cloud\"]\n    OC --> CC\n```\n\n## Windows 安装与配置流程 [BV1kX546QEjG P1 01:27] [BV1kX546QEjG P1 01:54] [BV1kX546QEjG P1 02:07]\n```mermaid\nflowchart TD\n    PS[\"PowerShell（管理员）\"] --> CMD[\"下载/安装命令\"]\n    CMD --> INST[\"执行安装\"]\n    INST --> EV[\"环境变量自动添加\"]\n    EV --> RESTART[\"重启 PowerShell\"]\n    RESTART --> RUN[\"运行 cloud\"]\n    RUN --> ERR[\"地区限制报错\"]\n    ERR --> BYPASS[\"编辑配置文件绕过\"]\n    BYPASS --> ADD_MODEL[\"添加模型行\"]\n    ADD_MODEL --> ADD_KEY[\"添加 API Key\"]\n    ADD_KEY --> SAVE[\"保存配置\"]\n    SAVE --> TEST[\"测试：问候 ‘你好’\"]\n    TEST --> SUCCESS[\"显示模型 KIMI K2.6，回复成功\"]\n```\n\n## Harness 与模型调用机制 [BV1kX546QEjG P1 02:15] [BV1kX546QEjG P1 02:38] [BV1kX546QEjG P1 02:46]\n```mermaid\nflowchart TD\n    H[\"Harness\"] --> CC[\"Cloud Code\"]\n    CC --> CALL[\"调用模型\"]\n    CALL --> LOOP[\"循环 10‑100 次\"]\n    LOOP --> TIME[\"执行时间较长\"]\n    CALL --> LM[\"本地/国产模型\"]\n    LM --> KM[\"KIMI K2.6\"]\n    KM --> MOD[\"多模态（图像、视频）\"]\n    KM --> COST[\"性价比高（≈1/16 Cloud Opus4.7）\"]\n    CALL --> REM[\"远程模型（Anthropic）\"]\n    REM --> LIMIT[\"受地区限制\"]\n```\n\n## 权限模式与上下文管理 [BV1kX546QEjG P1 07:16] [BV1kX546QEjG P1 07:38] [BV1kX546QEjG P1 07:50]\n```mermaid\nflowchart TD\n    PERM[\"权限模式\"] --> DEFAULT[\"默认（需逐条批准）\"]\n    PERM --> BYPASS[\"bypass permissions（激进）\"]\n    DEFAULT --> APPROVE[\"用户批准每条命令\"]\n    BYPASS --> AUTO[\"大多数命令免批准\"]\n    CTX[\"上下文使用\"] --> CORRUPT[\"上下文腐烂（占用过多）\"]\n    CORRUPT --> TOKEN[\"Token 使用率上升\"]\n    CTX --> COMPACT[\"/compact 手动压缩\"]\n    COMPACT --> REDUCE[\"使用率从 50% → 16%\"]\n    CTX --> CLEAR[\"/clear 清空上下文\"]\n    CTX --> RESUME[\"/resume 恢复历史对话\"]\n```\n\n## MCP 与 Skills 使用流程 [BV1kX546QEjG P1 05:01] [BV1kX546QEjG P1 05:08] [BV1kX546QEjG P1 09:11]\n```mermaid\nflowchart TD\n    MCP_INSTALL[\"安装 MCP（playwright）\"] --> CLOUD[\"在 Cloud Code 中\"]\n    CLOUD --> SLASH[\"输入 ‘/’ 列出命令\"]\n    SLASH --> LIST_MCP[\"查看已装 MCP\"]\n    LIST_MCP --> SELECT[\"选择浏览器控制 MCP\"]\n    SELECT --> AUTO[\"AI 自动控制浏览器搜索 ‘MCP’ 并保存文件\"]\n    SKILL_INSTALL[\"安装 Skill（hyper frames）\"] --> CLOUD2[\"在 Cloud Code 中\"]\n    CLOUD2 --> SKILL_CMD[\"/skills 查看已装 Skills\"]\n    SKILL_CMD --> AT_CMD[\"/at 选择工作目录文件\"]\n    AT_CMD --> VIDEO[\"生成科普视频\"]\n    VIDEO --> GIT_CHECK[\"检测 Git 未装 → 自动安装\"]\n    GIT_CHECK --> RESTART2[\"提示重启 Cloud Code\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览概念图",
+          "code": "flowchart TD\n    CC[\"Cloud Code\"] --> AI[\"AI Agent\"]\n    AI --> H[\"Harness\"]\n    H --> M[\"模型 (Model)\"]\n    M --> KM[\"KIMI K2.6（国产模型）\"]\n    CC --> SK[\"Skills\"]\n    CC --> MCP[\"MCP\"]\n    CC --> MEM[\"记忆 (Memory)\"]\n    CC --> PERM[\"权限模式 (Permissions)\"]\n    CC --> CTX[\"上下文管理 (Context)\"]\n    AI --> ANTH[\"Anthropic（公司）\"]\n    ANTH --> OC[\"Open Cloud\"]\n    OC --> CC"
+        },
+        {
+          "title": "Windows 安装与配置流程",
+          "code": "flowchart TD\n    PS[\"PowerShell（管理员）\"] --> CMD[\"下载/安装命令\"]\n    CMD --> INST[\"执行安装\"]\n    INST --> EV[\"环境变量自动添加\"]\n    EV --> RESTART[\"重启 PowerShell\"]\n    RESTART --> RUN[\"运行 cloud\"]\n    RUN --> ERR[\"地区限制报错\"]\n    ERR --> BYPASS[\"编辑配置文件绕过\"]\n    BYPASS --> ADD_MODEL[\"添加模型行\"]\n    ADD_MODEL --> ADD_KEY[\"添加 API Key\"]\n    ADD_KEY --> SAVE[\"保存配置\"]\n    SAVE --> TEST[\"测试：问候 ‘你好’\"]\n    TEST --> SUCCESS[\"显示模型 KIMI K2.6，回复成功\"]"
+        },
+        {
+          "title": "Harness 与模型调用机制",
+          "code": "flowchart TD\n    H[\"Harness\"] --> CC[\"Cloud Code\"]\n    CC --> CALL[\"调用模型\"]\n    CALL --> LOOP[\"循环 10‑100 次\"]\n    LOOP --> TIME[\"执行时间较长\"]\n    CALL --> LM[\"本地/国产模型\"]\n    LM --> KM[\"KIMI K2.6\"]\n    KM --> MOD[\"多模态（图像、视频）\"]\n    KM --> COST[\"性价比高（≈1/16 Cloud Opus4.7）\"]\n    CALL --> REM[\"远程模型（Anthropic）\"]\n    REM --> LIMIT[\"受地区限制\"]"
+        },
+        {
+          "title": "权限模式与上下文管理",
+          "code": "flowchart TD\n    PERM[\"权限模式\"] --> DEFAULT[\"默认（需逐条批准）\"]\n    PERM --> BYPASS[\"bypass permissions（激进）\"]\n    DEFAULT --> APPROVE[\"用户批准每条命令\"]\n    BYPASS --> AUTO[\"大多数命令免批准\"]\n    CTX[\"上下文使用\"] --> CORRUPT[\"上下文腐烂（占用过多）\"]\n    CORRUPT --> TOKEN[\"Token 使用率上升\"]\n    CTX --> COMPACT[\"/compact 手动压缩\"]\n    COMPACT --> REDUCE[\"使用率从 50% → 16%\"]\n    CTX --> CLEAR[\"/clear 清空上下文\"]\n    CTX --> RESUME[\"/resume 恢复历史对话\"]"
+        },
+        {
+          "title": "MCP 与 Skills 使用流程",
+          "code": "flowchart TD\n    MCP_INSTALL[\"安装 MCP（playwright）\"] --> CLOUD[\"在 Cloud Code 中\"]\n    CLOUD --> SLASH[\"输入 ‘/’ 列出命令\"]\n    SLASH --> LIST_MCP[\"查看已装 MCP\"]\n    LIST_MCP --> SELECT[\"选择浏览器控制 MCP\"]\n    SELECT --> AUTO[\"AI 自动控制浏览器搜索 ‘MCP’ 并保存文件\"]\n    SKILL_INSTALL[\"安装 Skill（hyper frames）\"] --> CLOUD2[\"在 Cloud Code 中\"]\n    CLOUD2 --> SKILL_CMD[\"/skills 查看已装 Skills\"]\n    SKILL_CMD --> AT_CMD[\"/at 选择工作目录文件\"]\n    AT_CMD --> VIDEO[\"生成科普视频\"]\n    VIDEO --> GIT_CHECK[\"检测 Git 未装 → 自动安装\"]\n    GIT_CHECK --> RESTART2[\"提示重启 Cloud Code\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T19:23:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Cloud Code 知识图谱\n\n## 总览概念图 [BV1kX546QEjG P1 00:11]\n```mermaid\nflowchart TD\n    CC[\"Cloud Code\"] --> AI[\"AI Agent\"]\n    AI --> H[\"Harness\"]\n    H --> M[\"模型 (Model)\"]\n    M --> KM[\"KIMI K2.6（国产模型）\"]\n    CC --> SK[\"Skills\"]\n    CC --> MCP[\"MCP\"]\n    CC --> MEM[\"记忆 (Memory)\"]\n    CC --> PERM[\"权限模式 (Permissions)\"]\n    CC --> CTX[\"上下文管理 (Context)\"]\n    AI --> ANTH[\"Anthropic（公司）\"]\n    ANTH --> OC[\"Open Cloud\"]\n    OC --> CC\n```\n\n## Windows 安装与配置流程 [BV1kX546QEjG P1 01:27] [BV1kX546QEjG P1 01:54] [BV1kX546QEjG P1 02:07]\n```mermaid\nflowchart TD\n    PS[\"PowerShell（管理员）\"] --> CMD[\"下载/安装命令\"]\n    CMD --> INST[\"执行安装\"]\n    INST --> EV[\"环境变量自动添加\"]\n    EV --> RESTART[\"重启 PowerShell\"]\n    RESTART --> RUN[\"运行 cloud\"]\n    RUN --> ERR[\"地区限制报错\"]\n    ERR --> BYPASS[\"编辑配置文件绕过\"]\n    BYPASS --> ADD_MODEL[\"添加模型行\"]\n    ADD_MODEL --> ADD_KEY[\"添加 API Key\"]\n    ADD_KEY --> SAVE[\"保存配置\"]\n    SAVE --> TEST[\"测试：问候 ‘你好’\"]\n    TEST --> SUCCESS[\"显示模型 KIMI K2.6，回复成功\"]\n```\n\n## Harness 与模型调用机制 [BV1kX546QEjG P1 02:15] [BV1kX546QEjG P1 02:38] [BV1kX546QEjG P1 02:46]\n```mermaid\nflowchart TD\n    H[\"Harness\"] --> CC[\"Cloud Code\"]\n    CC --> CALL[\"调用模型\"]\n    CALL --> LOOP[\"循环 10‑100 次\"]\n    LOOP --> TIME[\"执行时间较长\"]\n    CALL --> LM[\"本地/国产模型\"]\n    LM --> KM[\"KIMI K2.6\"]\n    KM --> MOD[\"多模态（图像、视频）\"]\n    KM --> COST[\"性价比高（≈1/16 Cloud Opus4.7）\"]\n    CALL --> REM[\"远程模型（Anthropic）\"]\n    REM --> LIMIT[\"受地区限制\"]\n```\n\n## 权限模式与上下文管理 [BV1kX546QEjG P1 07:16] [BV1kX546QEjG P1 07:38] [BV1kX546QEjG P1 07:50]\n```mermaid\nflowchart TD\n    PERM[\"权限模式\"] --> DEFAULT[\"默认（需逐条批准）\"]\n    PERM --> BYPASS[\"bypass permissions（激进）\"]\n    DEFAULT --> APPROVE[\"用户批准每条命令\"]\n    BYPASS --> AUTO[\"大多数命令免批准\"]\n    CTX[\"上下文使用\"] --> CORRUPT[\"上下文腐烂（占用过多）\"]\n    CORRUPT --> TOKEN[\"Token 使用率上升\"]\n    CTX --> COMPACT[\"/compact 手动压缩\"]\n    COMPACT --> REDUCE[\"使用率从 50% → 16%\"]\n    CTX --> CLEAR[\"/clear 清空上下文\"]\n    CTX --> RESUME[\"/resume 恢复历史对话\"]\n```\n\n## MCP 与 Skills 使用流程 [BV1kX546QEjG P1 05:01] [BV1kX546QEjG P1 05:08] [BV1kX546QEjG P1 09:11]\n```mermaid\nflowchart TD\n    MCP_INSTALL[\"安装 MCP（playwright）\"] --> CLOUD[\"在 Cloud Code 中\"]\n    CLOUD --> SLASH[\"输入 ‘/’ 列出命令\"]\n    SLASH --> LIST_MCP[\"查看已装 MCP\"]\n    LIST_MCP --> SELECT[\"选择浏览器控制 MCP\"]\n    SELECT --> AUTO[\"AI 自动控制浏览器搜索 ‘MCP’ 并保存文件\"]\n    SKILL_INSTALL[\"安装 Skill（hyper frames）\"] --> CLOUD2[\"在 Cloud Code 中\"]\n    CLOUD2 --> SKILL_CMD[\"/skills 查看已装 Skills\"]\n    SKILL_CMD --> AT_CMD[\"/at 选择工作目录文件\"]\n    AT_CMD --> VIDEO[\"生成科普视频\"]\n    VIDEO --> GIT_CHECK[\"检测 Git 未装 → 自动安装\"]\n    GIT_CHECK --> RESTART2[\"提示重启 Cloud Code\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览概念图",
+      "code": "flowchart TD\n    CC[\"Cloud Code\"] --> AI[\"AI Agent\"]\n    AI --> H[\"Harness\"]\n    H --> M[\"模型 (Model)\"]\n    M --> KM[\"KIMI K2.6（国产模型）\"]\n    CC --> SK[\"Skills\"]\n    CC --> MCP[\"MCP\"]\n    CC --> MEM[\"记忆 (Memory)\"]\n    CC --> PERM[\"权限模式 (Permissions)\"]\n    CC --> CTX[\"上下文管理 (Context)\"]\n    AI --> ANTH[\"Anthropic（公司）\"]\n    ANTH --> OC[\"Open Cloud\"]\n    OC --> CC"
+    },
+    {
+      "title": "Windows 安装与配置流程",
+      "code": "flowchart TD\n    PS[\"PowerShell（管理员）\"] --> CMD[\"下载/安装命令\"]\n    CMD --> INST[\"执行安装\"]\n    INST --> EV[\"环境变量自动添加\"]\n    EV --> RESTART[\"重启 PowerShell\"]\n    RESTART --> RUN[\"运行 cloud\"]\n    RUN --> ERR[\"地区限制报错\"]\n    ERR --> BYPASS[\"编辑配置文件绕过\"]\n    BYPASS --> ADD_MODEL[\"添加模型行\"]\n    ADD_MODEL --> ADD_KEY[\"添加 API Key\"]\n    ADD_KEY --> SAVE[\"保存配置\"]\n    SAVE --> TEST[\"测试：问候 ‘你好’\"]\n    TEST --> SUCCESS[\"显示模型 KIMI K2.6，回复成功\"]"
+    },
+    {
+      "title": "Harness 与模型调用机制",
+      "code": "flowchart TD\n    H[\"Harness\"] --> CC[\"Cloud Code\"]\n    CC --> CALL[\"调用模型\"]\n    CALL --> LOOP[\"循环 10‑100 次\"]\n    LOOP --> TIME[\"执行时间较长\"]\n    CALL --> LM[\"本地/国产模型\"]\n    LM --> KM[\"KIMI K2.6\"]\n    KM --> MOD[\"多模态（图像、视频）\"]\n    KM --> COST[\"性价比高（≈1/16 Cloud Opus4.7）\"]\n    CALL --> REM[\"远程模型（Anthropic）\"]\n    REM --> LIMIT[\"受地区限制\"]"
+    },
+    {
+      "title": "权限模式与上下文管理",
+      "code": "flowchart TD\n    PERM[\"权限模式\"] --> DEFAULT[\"默认（需逐条批准）\"]\n    PERM --> BYPASS[\"bypass permissions（激进）\"]\n    DEFAULT --> APPROVE[\"用户批准每条命令\"]\n    BYPASS --> AUTO[\"大多数命令免批准\"]\n    CTX[\"上下文使用\"] --> CORRUPT[\"上下文腐烂（占用过多）\"]\n    CORRUPT --> TOKEN[\"Token 使用率上升\"]\n    CTX --> COMPACT[\"/compact 手动压缩\"]\n    COMPACT --> REDUCE[\"使用率从 50% → 16%\"]\n    CTX --> CLEAR[\"/clear 清空上下文\"]\n    CTX --> RESUME[\"/resume 恢复历史对话\"]"
+    },
+    {
+      "title": "MCP 与 Skills 使用流程",
+      "code": "flowchart TD\n    MCP_INSTALL[\"安装 MCP（playwright）\"] --> CLOUD[\"在 Cloud Code 中\"]\n    CLOUD --> SLASH[\"输入 ‘/’ 列出命令\"]\n    SLASH --> LIST_MCP[\"查看已装 MCP\"]\n    LIST_MCP --> SELECT[\"选择浏览器控制 MCP\"]\n    SELECT --> AUTO[\"AI 自动控制浏览器搜索 ‘MCP’ 并保存文件\"]\n    SKILL_INSTALL[\"安装 Skill（hyper frames）\"] --> CLOUD2[\"在 Cloud Code 中\"]\n    CLOUD2 --> SKILL_CMD[\"/skills 查看已装 Skills\"]\n    SKILL_CMD --> AT_CMD[\"/at 选择工作目录文件\"]\n    AT_CMD --> VIDEO[\"生成科普视频\"]\n    VIDEO --> GIT_CHECK[\"检测 Git 未装 → 自动安装\"]\n    GIT_CHECK --> RESTART2[\"提示重启 Cloud Code\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:23:59+00:00"
+}

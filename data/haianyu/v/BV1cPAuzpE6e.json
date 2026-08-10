@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1cPAuzpE6e",
+  "title": "56. 为什么多个Sub-Agent也可以共享前缀KV Cache？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 640,
+  "text": "今天的问题是\n为什么多个sub agent也可以共享前缀k v cash\n假设讨论的情况是\n为每一个sub ent只提供干净且复用的上下文\n环境干净\n在这里指的是\n每个subway h子都有一个独立的上下文\n让他专注于自己的任务\n防止信息的干扰而复用\n指的是有一些公共的必要的背景知识\n可以从负agency那里去继承\n或者说负agency给他一个背景知识的文档\n让它们共享这个前缀\n那在这种情况下讨论一下\n就以SJIN的REDX为例\n需要明确的是服务端或者说云端\n它会维护多个请求的公共前缀\n也就是redx through\n第二点就是推理服务通常是无状态的\n打引号\n这里指的是他是认字不认人的\n就不区分张三还是李四\n在他看来呢\n发来的都是一串token id\n这有一个重要的理解是\n如果两个用户先后发送一句话\n就是海安宇是一名B站up主\n另外一个用户发送海安与不是一名B站up主\n他和只有一个用户连发两句话\n就是海安与是名up主不满意\n改了一下\n改成了海安宇\n不是一名B站up主\n在推理引擎看来是一样的\n因为它是认字不认人的\n不区分张三还是李四\n都是一串token的id\n那么在这种情况下理解一下\n为什么可以共享前缀kb catch呢\n假设他们都继承了必要且公共的背景知识\n把它放在前缀\n这样的话\n就意味着这个背景知识\n只用生成一份公共的前缀缓存\n为什么呢\n如果独立的生成这样的一路\n然后再斜着这样生成一路\n它其实是重复了\n所以呢没有必要为这个地方分成两份kv cash\n可以共享",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cPAuzpE6e",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:18:24+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

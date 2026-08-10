@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1DauA6nEQH",
+  "title": "OpenCode 发文称 DeepSeek 单日吞下 8 万亿 Token，传递出哪些信号？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 992,
+  "text": "open code发文称\ndeep seek单日吞下8000000000000token\n传递出哪些信号\n第一位网友回答道\n我更好奇的是deep sk究竟有多少算力才能提供这么大的token产能\n刚才查了一下\nDIXIK算力可能已经饱和了\n连续执行任务到一半中断崩溃\n不得已换到GLM5.2执行了查询800000000token\n好几个网站引用应该可信\nGLM给出的结论是\ndeep seek用约0.6到1.3几瓦OpenAI的12\n支撑了全球第一的token吞吐效率是美国的2~5倍\n优势不在硬件\n全在算法架构\nmoo激进化\n加加MANA加加缓存\n按全球目前30几瓦的AI算力装置容量测算\n如果其他模型也采用他们这种优化策略\n硬件价格立即就要崩了\n因为可以提供等效60~150几瓦的token需求\n第二位网友回答道\n如果是全部的访问确实低得超出想象\n这意味着AI的普及率远远低于预期\nagent的市场潜力极大\n当然了\n实际情况\n这仅仅是open code\n单一软件的访问量就相对合理\n因为程序员们使用的agent软件更加多元化\n数十种不同的agent软件分担了流量之后\n总使用量应该还是会比这高一个数量级就相对合理\n如果按照此前其他媒体断章取义的想法\n它是全部调用量来看\n那我在想法里说了\n程序员中度使用单线程\n不开子绘\n画\n不开多会话\n不加班\n不摸鱼\n八小时持续跑agent1天的开销大约在1亿\ntoken这里只计算白天跑的\n半夜跑长城任务的都不算\n我这个估算用量真的是不高不低的中等水平\n很多用AI编程的同行都可以证实这一点\n8000000000000token开销意味着一天平均只有8万人在使用\n而中国的程序员有1000万\n全世界的程序员有4000万\n8万人使用\n意味着哪怕deep sk这个token消耗量顶流的模型\n使用人数也不到程序员的1%\n这个消耗量比我想象的要低了整整一个数量级\n因为我原本预测程序员使用AI的比例能达到10%\n而从这样的数据来看\n恐怕很难达到最后\n第三位网友表示\nopen code的白嫖用户\n听说deep sk v4plus0731已经强到跟GLM5.21个档次了\n昨天想试试\n之前在open code里面用deep six flash都挺流畅的\n昨天结果卡的一笔走了两三个回合\n还报错了\n切hi3\n结果说hi3没得用了\n最后只能用NEMO2.5",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1DauA6nEQH",
+  "published_at": "1785851519",
+  "fetched_at": "2026-08-07T23:30:45+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 单日 Token 吞吐及其信号图谱\n\n## 总览信号 [BV1DauA6nEQH P1 00:01] [BV1DauA6nEQH P1 00:45] [BV1DauA6nEQH P1 00:58] [BV1DauA6nEQH P1 01:11] [BV1DauA6nEQH P1 01:15]\n```mermaid\nflowchart TD\n    A1[\"DeepSeek 单日吞下 8 × 10¹² Token\"] --> B1[\"高效算力利用\"]\n    B1 --> C1[\"算法/架构优势\"]\n    C1 --> D1[\"硬件成本下降预期\"]\n    B1 --> E1[\"相对低的 AI 普及率\"]\n    E1 --> F1[\"Agent 市场潜力大\"]\n    D1 --> G1[\"硬件价格可能崩盘\"]\n```\n\n## 功耗效率对比 [BV1DauA6nEQH P1 00:33] [BV1DauA6nEQH P1 00:38]\n```mermaid\nflowchart LR\n    A2[\"DeepSeek 功耗 0.6‑1.3 W\"] --> B2[\"相当于 OpenAI 12 W 的 5‑20%\"]\n    B2 --> C2[\"Token 吞吐效率是美国水平的 2‑5 倍\"]\n    C2 --> D2[\"单位功耗产出更多 Token\"]\n```\n\n## 使用量与程序员基数估算 [BV1DauA6nEQH P1 02:09] [BV1DauA6nEQH P1 02:13] [BV1DauA6nEQH P1 02:16] [BV1DauA6nEQH P1 02:20] [BV1DauA6nEQH P1 02:33]\n```mermaid\nflowchart TD\n    A3[\"每日 Token 消耗 8 × 10¹²\"] --> B3[\"估计活跃用户约 8 万人\"]\n    B3 --> C3[\"中国程序员 1000 万人\"]\n    B3 --> D3[\"全球程序员 4000 万人\"]\n    B3 --> E3[\"实际使用占程序员总数 < 1%\"]\n    E3 --> F3[\"原预测 AI 使用率 10%（显著高于实际）\"]\n```\n\n## 硬件市场潜在冲击 [BV1DauA6nEQH P1 00:58] [BV1DauA6nEQH P1 01:00]\n```mermaid\nflowchart TD\n    A4[\"DeepSeek 采用高效算法优化\"] --> B4[\"等效提供 60‑150 W 的 Token 需求\"]\n    B4 --> C4[\"若其他模型采用同策，硬件需求下降\"]\n    C4 --> D4[\"硬件价格可能快速下跌\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览信号",
+          "code": "flowchart TD\n    A1[\"DeepSeek 单日吞下 8 × 10¹² Token\"] --> B1[\"高效算力利用\"]\n    B1 --> C1[\"算法/架构优势\"]\n    C1 --> D1[\"硬件成本下降预期\"]\n    B1 --> E1[\"相对低的 AI 普及率\"]\n    E1 --> F1[\"Agent 市场潜力大\"]\n    D1 --> G1[\"硬件价格可能崩盘\"]"
+        },
+        {
+          "title": "功耗效率对比",
+          "code": "flowchart LR\n    A2[\"DeepSeek 功耗 0.6‑1.3 W\"] --> B2[\"相当于 OpenAI 12 W 的 5‑20%\"]\n    B2 --> C2[\"Token 吞吐效率是美国水平的 2‑5 倍\"]\n    C2 --> D2[\"单位功耗产出更多 Token\"]"
+        },
+        {
+          "title": "使用量与程序员基数估算",
+          "code": "flowchart TD\n    A3[\"每日 Token 消耗 8 × 10¹²\"] --> B3[\"估计活跃用户约 8 万人\"]\n    B3 --> C3[\"中国程序员 1000 万人\"]\n    B3 --> D3[\"全球程序员 4000 万人\"]\n    B3 --> E3[\"实际使用占程序员总数 < 1%\"]\n    E3 --> F3[\"原预测 AI 使用率 10%（显著高于实际）\"]"
+        },
+        {
+          "title": "硬件市场潜在冲击",
+          "code": "flowchart TD\n    A4[\"DeepSeek 采用高效算法优化\"] --> B4[\"等效提供 60‑150 W 的 Token 需求\"]\n    B4 --> C4[\"若其他模型采用同策，硬件需求下降\"]\n    C4 --> D4[\"硬件价格可能快速下跌\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T23:31:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 单日 Token 吞吐及其信号图谱\n\n## 总览信号 [BV1DauA6nEQH P1 00:01] [BV1DauA6nEQH P1 00:45] [BV1DauA6nEQH P1 00:58] [BV1DauA6nEQH P1 01:11] [BV1DauA6nEQH P1 01:15]\n```mermaid\nflowchart TD\n    A1[\"DeepSeek 单日吞下 8 × 10¹² Token\"] --> B1[\"高效算力利用\"]\n    B1 --> C1[\"算法/架构优势\"]\n    C1 --> D1[\"硬件成本下降预期\"]\n    B1 --> E1[\"相对低的 AI 普及率\"]\n    E1 --> F1[\"Agent 市场潜力大\"]\n    D1 --> G1[\"硬件价格可能崩盘\"]\n```\n\n## 功耗效率对比 [BV1DauA6nEQH P1 00:33] [BV1DauA6nEQH P1 00:38]\n```mermaid\nflowchart LR\n    A2[\"DeepSeek 功耗 0.6‑1.3 W\"] --> B2[\"相当于 OpenAI 12 W 的 5‑20%\"]\n    B2 --> C2[\"Token 吞吐效率是美国水平的 2‑5 倍\"]\n    C2 --> D2[\"单位功耗产出更多 Token\"]\n```\n\n## 使用量与程序员基数估算 [BV1DauA6nEQH P1 02:09] [BV1DauA6nEQH P1 02:13] [BV1DauA6nEQH P1 02:16] [BV1DauA6nEQH P1 02:20] [BV1DauA6nEQH P1 02:33]\n```mermaid\nflowchart TD\n    A3[\"每日 Token 消耗 8 × 10¹²\"] --> B3[\"估计活跃用户约 8 万人\"]\n    B3 --> C3[\"中国程序员 1000 万人\"]\n    B3 --> D3[\"全球程序员 4000 万人\"]\n    B3 --> E3[\"实际使用占程序员总数 < 1%\"]\n    E3 --> F3[\"原预测 AI 使用率 10%（显著高于实际）\"]\n```\n\n## 硬件市场潜在冲击 [BV1DauA6nEQH P1 00:58] [BV1DauA6nEQH P1 01:00]\n```mermaid\nflowchart TD\n    A4[\"DeepSeek 采用高效算法优化\"] --> B4[\"等效提供 60‑150 W 的 Token 需求\"]\n    B4 --> C4[\"若其他模型采用同策，硬件需求下降\"]\n    C4 --> D4[\"硬件价格可能快速下跌\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览信号",
+      "code": "flowchart TD\n    A1[\"DeepSeek 单日吞下 8 × 10¹² Token\"] --> B1[\"高效算力利用\"]\n    B1 --> C1[\"算法/架构优势\"]\n    C1 --> D1[\"硬件成本下降预期\"]\n    B1 --> E1[\"相对低的 AI 普及率\"]\n    E1 --> F1[\"Agent 市场潜力大\"]\n    D1 --> G1[\"硬件价格可能崩盘\"]"
+    },
+    {
+      "title": "功耗效率对比",
+      "code": "flowchart LR\n    A2[\"DeepSeek 功耗 0.6‑1.3 W\"] --> B2[\"相当于 OpenAI 12 W 的 5‑20%\"]\n    B2 --> C2[\"Token 吞吐效率是美国水平的 2‑5 倍\"]\n    C2 --> D2[\"单位功耗产出更多 Token\"]"
+    },
+    {
+      "title": "使用量与程序员基数估算",
+      "code": "flowchart TD\n    A3[\"每日 Token 消耗 8 × 10¹²\"] --> B3[\"估计活跃用户约 8 万人\"]\n    B3 --> C3[\"中国程序员 1000 万人\"]\n    B3 --> D3[\"全球程序员 4000 万人\"]\n    B3 --> E3[\"实际使用占程序员总数 < 1%\"]\n    E3 --> F3[\"原预测 AI 使用率 10%（显著高于实际）\"]"
+    },
+    {
+      "title": "硬件市场潜在冲击",
+      "code": "flowchart TD\n    A4[\"DeepSeek 采用高效算法优化\"] --> B4[\"等效提供 60‑150 W 的 Token 需求\"]\n    B4 --> C4[\"若其他模型采用同策，硬件需求下降\"]\n    C4 --> D4[\"硬件价格可能快速下跌\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T23:31:24+00:00"
+}

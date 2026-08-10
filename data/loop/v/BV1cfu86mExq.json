@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1cfu86mExq",
+  "title": "admAgent 升级｜deepseek-v4-flash 支持图片识别",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 791,
+  "text": "大家好\n欢迎大家来到小白也会部署本地大冒险\n今天我给大家嗯演示一下我们本期更新的内容\n我们已经大家看到了\nADM这个软件已经打开我\n我们进入agent页面\n大家可以看到我这里有一个对话记录\n就是我给了他一张图片\n然后让他提取图片的信息\n然后他就可以直接给我分析了\n但是大家仔细看一下\n当我问的时候\n实际上我是用我\n我是用这个这个文本模型\n大家知道这个龙猫或者是deep sk这种\n它是不能识别图片的\n但我们本期新增的功能\n就是让文本的大模型同样是可以有呃\n识别图片的功能\n好\n我给大家演示一下\n我们随便用嗯\n截一张图\n我们随便截一张图\n就把这个图标然后复制过来\n然后让他提取图片信息\n好\n我们切到deep deep sc v4flash\n然后我们就发送出去\n我们观察一下啊\n看他能不能把这个刚才我截图的这张图片信息\n提取出来\n好大家看他已经提取出来了\n说这是一个蓝色的图片夹\n文件夹名称为嗯\n这个是吧对呀\n完全正确啊\n所以说这个大家看是怎么怎么去实现它啊\n我给大家讲一下\n首先我们那个内置了两个模型\n一个deep sk\n一个我们自己的图片识别的模型\n嗯当我们在默认设置的时候\n打开这个设置\n默认设置的时候\n这里有一个多模态模型\n大家可以看到它是直接用到这个内置的这个\n图片识别模型\n也就是说\n虽然我们用纯文本模型去让它识别图片\n但它实际上内部是掉了一个skill\n大家看左边这里skill这里嗯有一个vision\n就是有这样我我内置了一个就图片识别的skill\n它就会自动调用这个这个云端的这个图片识别\n就是那个多模态的这个模型\n这个AD m image model这个模型来去识别图片\n然后把信息丢给再回来丢给这个deep sick\n然后由deep sick去嗯推理分析要做什么\n这样就无缝的识别了\n就是一个文本模型也可以去识别图片啊\n本期主要我们更新的内容就是这些\n欢迎大家观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cfu86mExq",
+  "published_at": "1786106722",
+  "fetched_at": "2026-08-09T13:36:55+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "timeout after 180.0s",
+      "updated_at": "2026-08-09T13:40:12+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "timeout after 180.0s",
+  "analysis_updated_at": "2026-08-09T13:40:12+00:00"
+}

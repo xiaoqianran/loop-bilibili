@@ -1,0 +1,74 @@
+{
+  "bvid": "BV14M5Q6fEbD",
+  "title": "Godot 引擎 3D 入门：开发你的首款 3D 游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1183,
+  "text": "欢迎所有人加入这个新手3D游戏开发课\n这节课我们来认识一下格斗引擎\n来认识一下格斗引擎\n那个斗到底是什么\n嘎啊go to就是个游戏开发工具\n说白了就是做游戏用的\n他是个全能工具\n能帮你搞定游戏里的所有东西\n从角色物理效果到复杂的玩法设计\n而且格斗还是开源的\n也就是说谁都能查看修改\n还能直接动手改它的源码\n正因如此\n让他不断进步\n全球开发者的持续贡献\ngood斗能在多个平台上同时开发2D和3D游戏\n你能在windows linux\n手机甚至网页上运行自己制作的游戏\n现在你可能会问为啥选个do\n现在市面上有不少引擎\n比如unity或unreal engine\n其实格斗优势不少\n对新手特别友好\n第一一起来完全不花钱\n不用付版税\n没有隐藏收费游戏\n赚的钱全归你\n第二体积小\n运行快\n下载即用\n不用安装\n最后这个最关键\n这门编程语言新手上手超容易\ngood do自带脚本语言\ngd script语法跟Python很像\n所以只要你懂点Python\n上手特别快\n根本不用愁好\n接下来教你怎么装格斗\n首先打开good dod官网\n我这就能看到这是官网首页\n接下来点一下4.5版本下面的下载按钮\n这里有两个版本可供选择\n一个是标准版本\n另一个是tat版本\n咱们这节课用的是标准版\n正好它只支持gd script\n那就点它就行\n就会自动开始下载\n你就能下载到4.5版本\n我已经下好了\n这里就不重复运行了\n往下看就是系统要求\n现在大部分电脑都能轻松满足\n下载完直接解压就行\n里面就一个能直接运行的程序\n点一下就接着就会进入格斗项目管理器\n想新建项目点这里就行\n给项目起个名字\n选个保存位置\n渲染器选forward plus\n这是默认设置\n基本适用于绝大多数项目\n点击创建后\nGUDO编辑器就会打开\n这界面\n刚开始可能有点复杂\n别担心\n我们一步步来熟悉重点区域\n我用一个旧项目带你快速看看\n这个是我以前做的项目\n左上角\n这这里就是场景面板\n这里就能管理游戏里的所有对象\nGood doi\n所有东西都是节点\n节点按树状结构组织\n这种结构就叫场景\n咱们就在这打开主场景列表里\n能看到角色玩家\n这些节点右边就是检查器面板\n从场景面板选中一个节点后\n检查器就会显示它的全部属性\n位置\n旋转缩放和颜色都能在这里调整\n比如我现在选中的是玩家\n这个面板能让你微调它的位置\n旋转和缩放\n左下角是文件系统面板\n这里可以管理项目里的所有文件脚本\n3D模型音效图片全在这里\n正中央就是3D工作区面积最大的一块\n用来搭建和观察你的3D场景\n右键可旋转视角\n用滚轮缩放\n也可以拖动来移动\n想切到2D点一下这里的2D标签就行\n写代码点这里进脚本编辑\n今天的内容就先到这里\n现在你已经了解了斗编辑器界面\n下期视频里我们一起从零开始建个新项目\n再加第一个节点\n今天这个项目只是我旧版本里的一个演示\n感谢收看\n下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14M5Q6fEbD",
+  "published_at": "1778744067",
+  "fetched_at": "2026-08-09T14:51:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 3D 入门知识图谱\n\n## Godot 引擎优势\n\n```mermaid\nflowchart TD\n    A[\"全能工具，可处理角色物理、玩法设计\"]\n    B[\"开源，可查看修改源码\"]\n    C[\"跨平台：Windows、Linux、手机、网页\"]\n    D[\"免费，无版税\"]\n    E[\"体积小，运行快，免安装\"]\n    F[\"内置 GDScript，语法类似 Python，上手快\"]\n    G[\"适合新手\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    B --> G\n    D --> G\n    F --> G\n```\n\n## 安装 Godot 步骤\n\n```mermaid\nflowchart TD\n    I[\"打开 Godot 官网\"]\n    J[\"选择 4.5 版本\"]\n    K[\"点击下载（标准版）\"]\n    L[\"下载完成后解压\"]\n    M[\"运行可执行程序\"]\n    N[\"进入项目管理器\"]\n    O[\"新建项目\"]\n    I --> J --> K --> L --> M --> N --> O\n```\n\n## 编辑器界面结构\n\n```mermaid\nflowchart TD\n    P[\"场景面板（左上）\"]\n    Q[\"文件系统面板（左下）\"]\n    R[\"检查器面板（右侧）\"]\n    S[\"3D 工作区（中间）\"]\n    T[\"2D/3D 切换标签\"]\n    U[\"脚本编辑入口\"]\n    V[\"节点树结构形成场景\"]\n    P --> V\n    Q --> V\n    R --> V\n    S --> V\n    T --> S\n    U --> R\n```\n\n## 新建项目工作流\n\n```mermaid\nflowchart TD\n    W[\"输入项目名称\"]\n    X[\"选择保存位置\"]\n    Y[\"渲染器：Forward+（默认）\"]\n    Z[\"点击创建\"]\n    AA[\"打开编辑器\"]\n    W --> X --> Y --> Z --> AA\n```",
+      "diagrams": [
+        {
+          "title": "Godot 引擎优势",
+          "code": "flowchart TD\n    A[\"全能工具，可处理角色物理、玩法设计\"]\n    B[\"开源，可查看修改源码\"]\n    C[\"跨平台：Windows、Linux、手机、网页\"]\n    D[\"免费，无版税\"]\n    E[\"体积小，运行快，免安装\"]\n    F[\"内置 GDScript，语法类似 Python，上手快\"]\n    G[\"适合新手\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    B --> G\n    D --> G\n    F --> G"
+        },
+        {
+          "title": "安装 Godot 步骤",
+          "code": "flowchart TD\n    I[\"打开 Godot 官网\"]\n    J[\"选择 4.5 版本\"]\n    K[\"点击下载（标准版）\"]\n    L[\"下载完成后解压\"]\n    M[\"运行可执行程序\"]\n    N[\"进入项目管理器\"]\n    O[\"新建项目\"]\n    I --> J --> K --> L --> M --> N --> O"
+        },
+        {
+          "title": "编辑器界面结构",
+          "code": "flowchart TD\n    P[\"场景面板（左上）\"]\n    Q[\"文件系统面板（左下）\"]\n    R[\"检查器面板（右侧）\"]\n    S[\"3D 工作区（中间）\"]\n    T[\"2D/3D 切换标签\"]\n    U[\"脚本编辑入口\"]\n    V[\"节点树结构形成场景\"]\n    P --> V\n    Q --> V\n    R --> V\n    S --> V\n    T --> S\n    U --> R"
+        },
+        {
+          "title": "新建项目工作流",
+          "code": "flowchart TD\n    W[\"输入项目名称\"]\n    X[\"选择保存位置\"]\n    Y[\"渲染器：Forward+（默认）\"]\n    Z[\"点击创建\"]\n    AA[\"打开编辑器\"]\n    W --> X --> Y --> Z --> AA"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T14:52:38+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 3D 入门知识图谱\n\n## Godot 引擎优势\n\n```mermaid\nflowchart TD\n    A[\"全能工具，可处理角色物理、玩法设计\"]\n    B[\"开源，可查看修改源码\"]\n    C[\"跨平台：Windows、Linux、手机、网页\"]\n    D[\"免费，无版税\"]\n    E[\"体积小，运行快，免安装\"]\n    F[\"内置 GDScript，语法类似 Python，上手快\"]\n    G[\"适合新手\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    B --> G\n    D --> G\n    F --> G\n```\n\n## 安装 Godot 步骤\n\n```mermaid\nflowchart TD\n    I[\"打开 Godot 官网\"]\n    J[\"选择 4.5 版本\"]\n    K[\"点击下载（标准版）\"]\n    L[\"下载完成后解压\"]\n    M[\"运行可执行程序\"]\n    N[\"进入项目管理器\"]\n    O[\"新建项目\"]\n    I --> J --> K --> L --> M --> N --> O\n```\n\n## 编辑器界面结构\n\n```mermaid\nflowchart TD\n    P[\"场景面板（左上）\"]\n    Q[\"文件系统面板（左下）\"]\n    R[\"检查器面板（右侧）\"]\n    S[\"3D 工作区（中间）\"]\n    T[\"2D/3D 切换标签\"]\n    U[\"脚本编辑入口\"]\n    V[\"节点树结构形成场景\"]\n    P --> V\n    Q --> V\n    R --> V\n    S --> V\n    T --> S\n    U --> R\n```\n\n## 新建项目工作流\n\n```mermaid\nflowchart TD\n    W[\"输入项目名称\"]\n    X[\"选择保存位置\"]\n    Y[\"渲染器：Forward+（默认）\"]\n    Z[\"点击创建\"]\n    AA[\"打开编辑器\"]\n    W --> X --> Y --> Z --> AA\n```",
+  "diagrams": [
+    {
+      "title": "Godot 引擎优势",
+      "code": "flowchart TD\n    A[\"全能工具，可处理角色物理、玩法设计\"]\n    B[\"开源，可查看修改源码\"]\n    C[\"跨平台：Windows、Linux、手机、网页\"]\n    D[\"免费，无版税\"]\n    E[\"体积小，运行快，免安装\"]\n    F[\"内置 GDScript，语法类似 Python，上手快\"]\n    G[\"适合新手\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    B --> G\n    D --> G\n    F --> G"
+    },
+    {
+      "title": "安装 Godot 步骤",
+      "code": "flowchart TD\n    I[\"打开 Godot 官网\"]\n    J[\"选择 4.5 版本\"]\n    K[\"点击下载（标准版）\"]\n    L[\"下载完成后解压\"]\n    M[\"运行可执行程序\"]\n    N[\"进入项目管理器\"]\n    O[\"新建项目\"]\n    I --> J --> K --> L --> M --> N --> O"
+    },
+    {
+      "title": "编辑器界面结构",
+      "code": "flowchart TD\n    P[\"场景面板（左上）\"]\n    Q[\"文件系统面板（左下）\"]\n    R[\"检查器面板（右侧）\"]\n    S[\"3D 工作区（中间）\"]\n    T[\"2D/3D 切换标签\"]\n    U[\"脚本编辑入口\"]\n    V[\"节点树结构形成场景\"]\n    P --> V\n    Q --> V\n    R --> V\n    S --> V\n    T --> S\n    U --> R"
+    },
+    {
+      "title": "新建项目工作流",
+      "code": "flowchart TD\n    W[\"输入项目名称\"]\n    X[\"选择保存位置\"]\n    Y[\"渲染器：Forward+（默认）\"]\n    Z[\"点击创建\"]\n    AA[\"打开编辑器\"]\n    W --> X --> Y --> Z --> AA"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T14:52:38+00:00"
+}

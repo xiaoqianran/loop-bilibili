@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1bcGA6pEWZ",
+  "title": "Deepseek V4正式版更新，Codex/ChatGPT桌面版原生接入无中转-手把手教",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1033,
+  "text": "噢那今天在7月的最后一天呃\n这个DVC和vs flash正式版终于更新了\n然后性能当然是有很大的提高\n但是我感觉最关注的这个点就是\n他这边可以原生支持这个response的这个协议\n就是说responses API的话\n它就可以直接原生支持CODX\n然后现在我就简单演示一下\n傻瓜操作之前也能接codex\n但需要用CV switch进行\n可或\n导致AAPI消耗的那个\n就是他这个消耗的token比较多\n现在就可以直接原声接入了\n非常方便\n首先就是你那个context现在变成拆了GBT了\n直接打开应用商店\n直接搜索chat几句\n哎这就有啊\n我这边装过了\n你直接就点安装\n直接点安装好\n这边点完安装之后\n它就会自动安装之后你在网上搜索这个deep sic\n直接百度搜索DC进入DC的开放平台\n进来之后嗯\n没有注册的就可以注册一下\n注册完了之后\n额就可以打开这个接口文档的工具\n这有一个接入A证的工具\n有个codex的值\n把你接进来之后\n因为现在它刚更新的是vs flash的这个新版正式版\n所以只有这个现在支持这个responses这个协议\n最便协议\n然后你就比较推荐用这个直接用脚本嗯\nMac只直接用这个\n然后windows的话用POWERSHIP\n我这个windows我用这个演示\n哇直接打开控制台\n然后把它粘贴进去\n而这个东西粘贴之前\n你需要先保证你的call带值启动过\n就他启动完之后\n它会创建一个配置文件才存在\n然后他会把一些设置文件加载到配置文件里\n如果你没有启动的话\n需要先启动一下呃\n我这边已经启动过了\n然后我这边已经是正常启动\nEXCEC这边已经介入了\n如果你没有启用话\n就启动下\n不用登录\n然后把这一行代码点贴近的这个power shell\n直接回车\n然后他这就可以选择你设置配置这个code\n使用this flash或者使用this pro\n但pro它支持\n现在不支持吗\n那就输一\n然后他这边就配置完成了\n然后接下来就会让你输API\n正常的话\n他会让你输APIAPI\n你通过这个官方文档这个地方\n就是这APIT新建一个APIK\n然后你随便命名\n然后把这个AP复制\n复制完之后粘贴到这\n然后回车就OK了\n如果不行\n你就重启一下codex\n重复一下这个操作就OK了\n然后它就自动进去了\n嗯OK但具体的性能测试我还没有测\n但现在就通不用转接\n而且DPC的性能更强了\n我感觉可靠性还是可以的\n后续我会再做一些其他的测试\n现在的话想用的话\n可以直接先用起来",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1bcGA6pEWZ",
+  "published_at": "1785490489",
+  "fetched_at": "2026-08-08T04:14:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deepseek V4 正式版更新 接入流程图谱\n\n## 更新特性概览 [BV1bcGA6pEWZ P1 00:12]\n```mermaid\nflowchart TD\n    A1[\"DVC 与 vs flash 正式版更新\"] --> A2[\"性能显著提升\"]\n    A1 --> A3[\"原生支持 Responses 协议\"]\n    A3 --> A4[\"直接支持 CODX\"]\n    A3 --> A5[\"无需中转\"]\n    A4 --> A6[\"Token 消耗降低\"]\n    A2 --> A7[\"整体可靠性提升\"]\n    A5 --> A8[\"使用更简便\"]\n    A6 --> A9[\"成本更低\"]\n    A7 --> A10[\"用户体验改善\"]\n```\n\n## 安装与注册流程 [BV1bcGA6pEWZ P1 00:44]\n```mermaid\nflowchart TD\n    B1[\"打开应用商店\"] --> B2[\"搜索 Chat\"]\n    B2 --> B3[\"点击安装\"]\n    B3 --> B4[\"安装完成\"]\n    B4 --> B5[\"打开浏览器搜索 DeepSeek\"]\n    B5 --> B6[\"进入 DeepSeek 开放平台\"]\n    B6 --> B7[\"注册账号（若未注册）\"]\n    B7 --> B8[\"登录平台\"]\n    B8 --> B9[\"打开接口文档工具\"]\n    B9 --> B10[\"获取 Codex 值\"]\n```\n\n## Windows PowerShell 配置流程 [BV1bcGA6pEWZ P1 01:49]\n```mermaid\nflowchart TD\n    C1[\"打开 PowerShell 控制台\"] --> C2[\"确认 EXCEC 已启动\"]\n    C2 --> C3[\"粘贴配置脚本\"]\n    C3 --> C4[\"选择使用 this flash / this pro\"]\n    C4 --> C5[\"完成配置\"]\n    C5 --> C6[\"输入 API Key\"]\n    C6 --> C7[\"回车确认\"]\n    C7 --> C8[\"若失败 → 重启 Codex 并重试\"]\n    C8 --> C9[\"配置成功\"]\n```\n\n## API Key 创建与绑定 [BV1bcGA6pEWZ P1 02:42]\n```mermaid\nflowchart TD\n    D1[\"进入官方文档 API 页面\"] --> D2[\"新建 API Key\"]\n    D2 --> D3[\"为 Key 命名\"]\n    D3 --> D4[\"复制生成的 Key\"]\n    D4 --> D5[\"粘贴到 PowerShell 配置中\"]\n    D5 --> D6[\"回车确认\"]\n    D6 --> D7[\"验证连接成功\"]\n```\n\n## 性能与可靠性预期 [BV1bcGA6pEWZ P1 03:14]\n```mermaid\nflowchart TD\n    E1[\"无需中转直接接入\"] --> E2[\"DPC 性能更强\"]\n    E2 --> E3[\"Token 消耗进一步降低\"]\n    E1 --> E4[\"整体可靠性可接受\"]\n    E4 --> E5[\"仍需后续性能测试\"]\n    E5 --> E6[\"计划进行更多可靠性验证\"]\n```",
+      "diagrams": [
+        {
+          "title": "更新特性概览",
+          "code": "flowchart TD\n    A1[\"DVC 与 vs flash 正式版更新\"] --> A2[\"性能显著提升\"]\n    A1 --> A3[\"原生支持 Responses 协议\"]\n    A3 --> A4[\"直接支持 CODX\"]\n    A3 --> A5[\"无需中转\"]\n    A4 --> A6[\"Token 消耗降低\"]\n    A2 --> A7[\"整体可靠性提升\"]\n    A5 --> A8[\"使用更简便\"]\n    A6 --> A9[\"成本更低\"]\n    A7 --> A10[\"用户体验改善\"]"
+        },
+        {
+          "title": "安装与注册流程",
+          "code": "flowchart TD\n    B1[\"打开应用商店\"] --> B2[\"搜索 Chat\"]\n    B2 --> B3[\"点击安装\"]\n    B3 --> B4[\"安装完成\"]\n    B4 --> B5[\"打开浏览器搜索 DeepSeek\"]\n    B5 --> B6[\"进入 DeepSeek 开放平台\"]\n    B6 --> B7[\"注册账号（若未注册）\"]\n    B7 --> B8[\"登录平台\"]\n    B8 --> B9[\"打开接口文档工具\"]\n    B9 --> B10[\"获取 Codex 值\"]"
+        },
+        {
+          "title": "Windows PowerShell 配置流程",
+          "code": "flowchart TD\n    C1[\"打开 PowerShell 控制台\"] --> C2[\"确认 EXCEC 已启动\"]\n    C2 --> C3[\"粘贴配置脚本\"]\n    C3 --> C4[\"选择使用 this flash / this pro\"]\n    C4 --> C5[\"完成配置\"]\n    C5 --> C6[\"输入 API Key\"]\n    C6 --> C7[\"回车确认\"]\n    C7 --> C8[\"若失败 → 重启 Codex 并重试\"]\n    C8 --> C9[\"配置成功\"]"
+        },
+        {
+          "title": "API Key 创建与绑定",
+          "code": "flowchart TD\n    D1[\"进入官方文档 API 页面\"] --> D2[\"新建 API Key\"]\n    D2 --> D3[\"为 Key 命名\"]\n    D3 --> D4[\"复制生成的 Key\"]\n    D4 --> D5[\"粘贴到 PowerShell 配置中\"]\n    D5 --> D6[\"回车确认\"]\n    D6 --> D7[\"验证连接成功\"]"
+        },
+        {
+          "title": "性能与可靠性预期",
+          "code": "flowchart TD\n    E1[\"无需中转直接接入\"] --> E2[\"DPC 性能更强\"]\n    E2 --> E3[\"Token 消耗进一步降低\"]\n    E1 --> E4[\"整体可靠性可接受\"]\n    E4 --> E5[\"仍需后续性能测试\"]\n    E5 --> E6[\"计划进行更多可靠性验证\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T04:14:58+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deepseek V4 正式版更新 接入流程图谱\n\n## 更新特性概览 [BV1bcGA6pEWZ P1 00:12]\n```mermaid\nflowchart TD\n    A1[\"DVC 与 vs flash 正式版更新\"] --> A2[\"性能显著提升\"]\n    A1 --> A3[\"原生支持 Responses 协议\"]\n    A3 --> A4[\"直接支持 CODX\"]\n    A3 --> A5[\"无需中转\"]\n    A4 --> A6[\"Token 消耗降低\"]\n    A2 --> A7[\"整体可靠性提升\"]\n    A5 --> A8[\"使用更简便\"]\n    A6 --> A9[\"成本更低\"]\n    A7 --> A10[\"用户体验改善\"]\n```\n\n## 安装与注册流程 [BV1bcGA6pEWZ P1 00:44]\n```mermaid\nflowchart TD\n    B1[\"打开应用商店\"] --> B2[\"搜索 Chat\"]\n    B2 --> B3[\"点击安装\"]\n    B3 --> B4[\"安装完成\"]\n    B4 --> B5[\"打开浏览器搜索 DeepSeek\"]\n    B5 --> B6[\"进入 DeepSeek 开放平台\"]\n    B6 --> B7[\"注册账号（若未注册）\"]\n    B7 --> B8[\"登录平台\"]\n    B8 --> B9[\"打开接口文档工具\"]\n    B9 --> B10[\"获取 Codex 值\"]\n```\n\n## Windows PowerShell 配置流程 [BV1bcGA6pEWZ P1 01:49]\n```mermaid\nflowchart TD\n    C1[\"打开 PowerShell 控制台\"] --> C2[\"确认 EXCEC 已启动\"]\n    C2 --> C3[\"粘贴配置脚本\"]\n    C3 --> C4[\"选择使用 this flash / this pro\"]\n    C4 --> C5[\"完成配置\"]\n    C5 --> C6[\"输入 API Key\"]\n    C6 --> C7[\"回车确认\"]\n    C7 --> C8[\"若失败 → 重启 Codex 并重试\"]\n    C8 --> C9[\"配置成功\"]\n```\n\n## API Key 创建与绑定 [BV1bcGA6pEWZ P1 02:42]\n```mermaid\nflowchart TD\n    D1[\"进入官方文档 API 页面\"] --> D2[\"新建 API Key\"]\n    D2 --> D3[\"为 Key 命名\"]\n    D3 --> D4[\"复制生成的 Key\"]\n    D4 --> D5[\"粘贴到 PowerShell 配置中\"]\n    D5 --> D6[\"回车确认\"]\n    D6 --> D7[\"验证连接成功\"]\n```\n\n## 性能与可靠性预期 [BV1bcGA6pEWZ P1 03:14]\n```mermaid\nflowchart TD\n    E1[\"无需中转直接接入\"] --> E2[\"DPC 性能更强\"]\n    E2 --> E3[\"Token 消耗进一步降低\"]\n    E1 --> E4[\"整体可靠性可接受\"]\n    E4 --> E5[\"仍需后续性能测试\"]\n    E5 --> E6[\"计划进行更多可靠性验证\"]\n```",
+  "diagrams": [
+    {
+      "title": "更新特性概览",
+      "code": "flowchart TD\n    A1[\"DVC 与 vs flash 正式版更新\"] --> A2[\"性能显著提升\"]\n    A1 --> A3[\"原生支持 Responses 协议\"]\n    A3 --> A4[\"直接支持 CODX\"]\n    A3 --> A5[\"无需中转\"]\n    A4 --> A6[\"Token 消耗降低\"]\n    A2 --> A7[\"整体可靠性提升\"]\n    A5 --> A8[\"使用更简便\"]\n    A6 --> A9[\"成本更低\"]\n    A7 --> A10[\"用户体验改善\"]"
+    },
+    {
+      "title": "安装与注册流程",
+      "code": "flowchart TD\n    B1[\"打开应用商店\"] --> B2[\"搜索 Chat\"]\n    B2 --> B3[\"点击安装\"]\n    B3 --> B4[\"安装完成\"]\n    B4 --> B5[\"打开浏览器搜索 DeepSeek\"]\n    B5 --> B6[\"进入 DeepSeek 开放平台\"]\n    B6 --> B7[\"注册账号（若未注册）\"]\n    B7 --> B8[\"登录平台\"]\n    B8 --> B9[\"打开接口文档工具\"]\n    B9 --> B10[\"获取 Codex 值\"]"
+    },
+    {
+      "title": "Windows PowerShell 配置流程",
+      "code": "flowchart TD\n    C1[\"打开 PowerShell 控制台\"] --> C2[\"确认 EXCEC 已启动\"]\n    C2 --> C3[\"粘贴配置脚本\"]\n    C3 --> C4[\"选择使用 this flash / this pro\"]\n    C4 --> C5[\"完成配置\"]\n    C5 --> C6[\"输入 API Key\"]\n    C6 --> C7[\"回车确认\"]\n    C7 --> C8[\"若失败 → 重启 Codex 并重试\"]\n    C8 --> C9[\"配置成功\"]"
+    },
+    {
+      "title": "API Key 创建与绑定",
+      "code": "flowchart TD\n    D1[\"进入官方文档 API 页面\"] --> D2[\"新建 API Key\"]\n    D2 --> D3[\"为 Key 命名\"]\n    D3 --> D4[\"复制生成的 Key\"]\n    D4 --> D5[\"粘贴到 PowerShell 配置中\"]\n    D5 --> D6[\"回车确认\"]\n    D6 --> D7[\"验证连接成功\"]"
+    },
+    {
+      "title": "性能与可靠性预期",
+      "code": "flowchart TD\n    E1[\"无需中转直接接入\"] --> E2[\"DPC 性能更强\"]\n    E2 --> E3[\"Token 消耗进一步降低\"]\n    E1 --> E4[\"整体可靠性可接受\"]\n    E4 --> E5[\"仍需后续性能测试\"]\n    E5 --> E6[\"计划进行更多可靠性验证\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T04:14:58+00:00"
+}

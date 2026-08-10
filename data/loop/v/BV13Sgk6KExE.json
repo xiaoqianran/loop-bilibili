@@ -1,0 +1,58 @@
+{
+  "bvid": "BV13Sgk6KExE",
+  "title": "「DSv4GA」我把DeepSeek做到悬挂演示网页做成了动态壁纸！！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 47,
+  "text": "♪ 开往又火 ♪\n♪ 奈何奈何奈何 ♪\n♪ 私欲在爆炸中划过挥霍 ♪\n♪ 清楚少年眼中清澈 ♪",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV13Sgk6KExE",
+  "published_at": "1784719122",
+  "fetched_at": "2026-08-10T02:58:58+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DSv4GA 视频字幕知识图谱\n\n## 歌词与关键词映射\n```mermaid\nflowchart TD\n    L1[\"开往又火\"] --> K1[\"开往\"]\n    L1 --> K2[\"火\"]\n    L2[\"奈何奈何奈何\"] --> K3[\"奈何\"]\n    L3[\"私欲在爆炸中划过挥霍\"] --> K4[\"私欲\"]\n    L3 --> K5[\"爆炸\"]\n    L3 --> K6[\"挥霍\"]\n    L4[\"清楚少年眼中清澈\"] --> K7[\"清楚\"]\n    L4 --> K8[\"少年\"]\n    L4 --> K9[\"清澈\"]\n    L1 --> L2 --> L3 --> L4\n```\n\n## 关键词内部关系\n```mermaid\nflowchart TD\n    K1[\"开往\"] --> K2[\"火\"]\n    K4[\"私欲\"] --> K5[\"爆炸\"]\n    K5 --> K6[\"挥霍\"]\n    K7[\"清楚\"] --> K8[\"少年\"]\n    K8 --> K9[\"清澈\"]\n```",
+      "diagrams": [
+        {
+          "title": "歌词与关键词映射",
+          "code": "flowchart TD\n    L1[\"开往又火\"] --> K1[\"开往\"]\n    L1 --> K2[\"火\"]\n    L2[\"奈何奈何奈何\"] --> K3[\"奈何\"]\n    L3[\"私欲在爆炸中划过挥霍\"] --> K4[\"私欲\"]\n    L3 --> K5[\"爆炸\"]\n    L3 --> K6[\"挥霍\"]\n    L4[\"清楚少年眼中清澈\"] --> K7[\"清楚\"]\n    L4 --> K8[\"少年\"]\n    L4 --> K9[\"清澈\"]\n    L1 --> L2 --> L3 --> L4"
+        },
+        {
+          "title": "关键词内部关系",
+          "code": "flowchart TD\n    K1[\"开往\"] --> K2[\"火\"]\n    K4[\"私欲\"] --> K5[\"爆炸\"]\n    K5 --> K6[\"挥霍\"]\n    K7[\"清楚\"] --> K8[\"少年\"]\n    K8 --> K9[\"清澈\"]"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-10T02:59:17+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DSv4GA 视频字幕知识图谱\n\n## 歌词与关键词映射\n```mermaid\nflowchart TD\n    L1[\"开往又火\"] --> K1[\"开往\"]\n    L1 --> K2[\"火\"]\n    L2[\"奈何奈何奈何\"] --> K3[\"奈何\"]\n    L3[\"私欲在爆炸中划过挥霍\"] --> K4[\"私欲\"]\n    L3 --> K5[\"爆炸\"]\n    L3 --> K6[\"挥霍\"]\n    L4[\"清楚少年眼中清澈\"] --> K7[\"清楚\"]\n    L4 --> K8[\"少年\"]\n    L4 --> K9[\"清澈\"]\n    L1 --> L2 --> L3 --> L4\n```\n\n## 关键词内部关系\n```mermaid\nflowchart TD\n    K1[\"开往\"] --> K2[\"火\"]\n    K4[\"私欲\"] --> K5[\"爆炸\"]\n    K5 --> K6[\"挥霍\"]\n    K7[\"清楚\"] --> K8[\"少年\"]\n    K8 --> K9[\"清澈\"]\n```",
+  "diagrams": [
+    {
+      "title": "歌词与关键词映射",
+      "code": "flowchart TD\n    L1[\"开往又火\"] --> K1[\"开往\"]\n    L1 --> K2[\"火\"]\n    L2[\"奈何奈何奈何\"] --> K3[\"奈何\"]\n    L3[\"私欲在爆炸中划过挥霍\"] --> K4[\"私欲\"]\n    L3 --> K5[\"爆炸\"]\n    L3 --> K6[\"挥霍\"]\n    L4[\"清楚少年眼中清澈\"] --> K7[\"清楚\"]\n    L4 --> K8[\"少年\"]\n    L4 --> K9[\"清澈\"]\n    L1 --> L2 --> L3 --> L4"
+    },
+    {
+      "title": "关键词内部关系",
+      "code": "flowchart TD\n    K1[\"开往\"] --> K2[\"火\"]\n    K4[\"私欲\"] --> K5[\"爆炸\"]\n    K5 --> K6[\"挥霍\"]\n    K7[\"清楚\"] --> K8[\"少年\"]\n    K8 --> K9[\"清澈\"]"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T02:59:17+00:00"
+}

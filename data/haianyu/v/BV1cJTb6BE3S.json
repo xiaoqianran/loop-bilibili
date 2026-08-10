@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1cJTb6BE3S",
+  "title": "[103]. Reflexion：Agent经典论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2452,
+  "text": "今天我们来介绍一篇关于语言智能体\n通过语言反馈进行自我强化学习的工作\n标题叫做reflection\n全称是reflection language agents with verbal reinforcement learning\n传统强化学习需要大量样本和模型微调\n成本高\n且难以直接用于大语言模型\n智能体reflection的做法是不更新模型权重\n而是让智能体在执行任务后\n根据环境反馈生成文字形式的自我反思\n并把反思存入情节记忆\n在下一轮尝试时作为额外上下文来改进决策\n论文在序列\n决策推理和代码生成三类任务上进行了验证\n结果显示\n加入reflection后\n智能体的成功率有明显提升\n下面看一下摘要\n翻译大语言模型正越来越多地被用作\n目标驱动的智能体\n与游戏编译器API等外部环境交互\n然而如何让这些语言智能体\n从试错中快速有效地学习\n仍是一个挑战\n因为传统强化学习方法\n需要大量训练样本和昂贵的模型微调\n本文提出reflection1种不通过更新权重\n而是通过语言反馈来强化智能体的框架\n具体而言\nreflection智能体\n会对任务反馈信号进行口头反思\n然后将反思文本保存在情节记忆缓冲区中\n以便在后续尝试中做出更好的决策\n该框架足够灵活\n可以整合不同类型和来源的反馈信号\n并在多种任务上显著超越机械智能体\n包括序列决策\n编程和语言推理\n例如reflection\n在human evil编程基准上达到91%的pass\nSet one\n准确率超过此前GPT4达到的80%\n本文还开展了消融实验和分析\n研究了不同反馈信号\n反馈整合方法和智能体类型的影响\n并开源了代码演示和数据集\n下面看一下这张图\n这张图展示了reflection在决策\n编程和推理三类任务上的统一流程\n流程从左到右分为五步\n任务轨迹\n评估反思和下一次轨迹\n以第一列决策任务为例\n智能体需要先清理平底锅并放到台面上\n它在执行中产生了错误的动作\n评估模块判断为幻觉错误\n于是自我反思模块用文字指出\n智能体试图从不存在的炉头拿起平底锅\n并建议在下一步从正确的炉头取锅\n中间列式编程任务\n智能体生成的括号匹配函数没有通过单元测试\n反思指出它只检查了括号总数相等\n而忽略了括号顺序\n第三列是推理任务\n智能体一开始错误地认为\n两个人有多个共同职业\n反思后修正为只回答小说家\n可以看到reflection\n把环境给出的二元或标量反馈\n转换成具体的文字经验\n用于指导下一次尝试\n下面看一下这张图\n这张图是reflection的整体框架\n图中包含四个核心模块\nactor是一个大语言模型\n负责根据当前观察生成动作和文本trajectory\n记录当前交互的短期历史\nevaluate接收轨迹并输出奖励或反馈\n可以是预定义启发式单元测试结果\n也可以是另一个语言模型给出的判断\nself reflection模块同样是一个语言模型\n他根据评估信号和当前记忆\n生成文字形式的反思\n并将反思存入experience\n长期记忆下一轮决策时\nactor会同时参考短期轨迹和长期记忆\n从而避免重复之前的错误\n整个框架的关键在于\n把稀疏的反馈信号扩展成语义\n更丰富的文字提示\n下面看一下这段伪代码\n这段算法描述了reflection的核心迭代流程\n首先初始化三个模型\nActor\nevaluate和self reflection\n其中策略由actor模型和GEMM共同决定\n算法先用策略生成一条初始轨迹\n用evaluate打分\n再用self reflection生成初始反思并放入记忆\n然后进入循环\n在evaluator判定成功或达到最大尝试次数之前\n智能体不断根据带有记忆的策略生成新轨迹\nevaluator打分\nSelf reflection\n生成新的反思并追加到记忆中\n这个过程等价于让智能体在每次失败后\n都写下经验总结\n下一次再读这些总结来改进行为\n而不需要修改底层模型的权重\n下面看一下这张图\n这张图是reflection在a l f word序列\n决策任务上的实验结果\n左图显示\n单独使用react的成功率\n在整个迭代过程中增长缓慢\n最终大约只有75%\n而加入reflection后\n无论是用启发式评估还是用GPT评估\n成功率都能上升到接近95%\n并且随着尝试次数持续提高\n右图进一步把失败原因\n分为幻觉和低效规划两类\n可以看到这两类错误的比例\n在加入reflection后明显下降\n其中幻觉错误下降的更快\n这说明把失败的长期轨迹总结成反思\n并写入记忆\n确实能帮助智能体纠正错误动作和避免重复\n低效搜索\n下面看一下这张图\n这张图展示了reflection在hot pot\nQA推理任务上的表现\n左图对比了code加reflection\nreact加reflection与各自基线加入reflection后\n成功率都有提升\n中间图在提供真实上下文的设定下\n比较coat与coat加reflection\nreflection从初始的约60%\n逐步提升到约77%\n右图是情节记忆的消融实验\n只加入最近轨迹记忆只能带来小幅提升\n而在此基础上再加入自我反思\n准确率又有约8%的绝对提升\n这支持了论文的观点\n单纯的精炼不如有反思引导的精炼有效\n下面看一下这个表\n这个表汇总了reflection\n在代码生成任务上的paset one\n结果在human evil Python上\nreflection达到91%\n高于此前GPT4取得的80%\n在human evil rust上\nreflection达到68%\n也高于GPT4的60%\n在Lt code hard Python上\nreflection达到15%\n是GPT-47.5%的两倍左右\n不过在MB p p Python上\nreflection的77.1%\n略低于GPT4的80.1%\n这一点在论文中也做了讨论\n可能与测试用例产生的假阳性有关\n总体来看\nreflection在多数编程基准上\n取得了更高的单次通过率",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cJTb6BE3S",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:16+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

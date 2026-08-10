@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1t2gm6kEbu",
+  "title": "让deepseek写周杰伦风格的小甜歌钢琴曲是什么样的",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 51,
+  "text": "让deep sick写一首周杰伦风格的小甜歌\n钢琴曲跟他说了\n要求他很认真\n我们听一下\n看有没有那个味",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1t2gm6kEbu",
+  "published_at": "1784766984",
+  "fetched_at": "2026-08-06T19:50:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 周杰伦风格小甜歌生成与评估\n\n## 生成流程\n```mermaid\nflowchart TD\n    A1[\"输入提示\"]\n    A2[\"指定风格：周杰伦\"]\n    A3[\"指定类型：小甜歌\"]\n    A4[\"指定乐器：钢琴\"]\n    A5[\"设置要求：认真\"]\n    A6[\"调用DeepSeek模型\"]\n    A7[\"模型生成歌曲文本\"]\n    A8[\"文本转钢琴谱\"]\n    A9[\"生成音频文件\"]\n    A10[\"完成初稿\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n    A9 --> A10\n```\n\n## 评估与迭代\n```mermaid\nflowchart TD\n    B1[\"播放生成的音频\"]\n    B2[\"主观聆听\"]\n    B3[\"判断是否有周杰伦味道\"]\n    B4[\"判断是否甜美\"]\n    B5[\"是否满足要求\"]\n    B6[\"满意 → 结束\"]\n    B7[\"不满意 → 调整提示\"]\n    B8[\"修改提示：加强周杰伦元素\"]\n    B9[\"修改提示：增强甜美感\"]\n    B10[\"返回生成流程\"]\n\n    B1 --> B2\n    B2 --> B3\n    B2 --> B4\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B7 --> B8\n    B7 --> B9\n    B8 --> B10\n    B9 --> B10\n    B10 --> B1\n```",
+      "diagrams": [
+        {
+          "title": "生成流程",
+          "code": "flowchart TD\n    A1[\"输入提示\"]\n    A2[\"指定风格：周杰伦\"]\n    A3[\"指定类型：小甜歌\"]\n    A4[\"指定乐器：钢琴\"]\n    A5[\"设置要求：认真\"]\n    A6[\"调用DeepSeek模型\"]\n    A7[\"模型生成歌曲文本\"]\n    A8[\"文本转钢琴谱\"]\n    A9[\"生成音频文件\"]\n    A10[\"完成初稿\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n    A9 --> A10"
+        },
+        {
+          "title": "评估与迭代",
+          "code": "flowchart TD\n    B1[\"播放生成的音频\"]\n    B2[\"主观聆听\"]\n    B3[\"判断是否有周杰伦味道\"]\n    B4[\"判断是否甜美\"]\n    B5[\"是否满足要求\"]\n    B6[\"满意 → 结束\"]\n    B7[\"不满意 → 调整提示\"]\n    B8[\"修改提示：加强周杰伦元素\"]\n    B9[\"修改提示：增强甜美感\"]\n    B10[\"返回生成流程\"]\n\n    B1 --> B2\n    B2 --> B3\n    B2 --> B4\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B7 --> B8\n    B7 --> B9\n    B8 --> B10\n    B9 --> B10\n    B10 --> B1"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-06T19:50:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 周杰伦风格小甜歌生成与评估\n\n## 生成流程\n```mermaid\nflowchart TD\n    A1[\"输入提示\"]\n    A2[\"指定风格：周杰伦\"]\n    A3[\"指定类型：小甜歌\"]\n    A4[\"指定乐器：钢琴\"]\n    A5[\"设置要求：认真\"]\n    A6[\"调用DeepSeek模型\"]\n    A7[\"模型生成歌曲文本\"]\n    A8[\"文本转钢琴谱\"]\n    A9[\"生成音频文件\"]\n    A10[\"完成初稿\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n    A9 --> A10\n```\n\n## 评估与迭代\n```mermaid\nflowchart TD\n    B1[\"播放生成的音频\"]\n    B2[\"主观聆听\"]\n    B3[\"判断是否有周杰伦味道\"]\n    B4[\"判断是否甜美\"]\n    B5[\"是否满足要求\"]\n    B6[\"满意 → 结束\"]\n    B7[\"不满意 → 调整提示\"]\n    B8[\"修改提示：加强周杰伦元素\"]\n    B9[\"修改提示：增强甜美感\"]\n    B10[\"返回生成流程\"]\n\n    B1 --> B2\n    B2 --> B3\n    B2 --> B4\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B7 --> B8\n    B7 --> B9\n    B8 --> B10\n    B9 --> B10\n    B10 --> B1\n```",
+  "diagrams": [
+    {
+      "title": "生成流程",
+      "code": "flowchart TD\n    A1[\"输入提示\"]\n    A2[\"指定风格：周杰伦\"]\n    A3[\"指定类型：小甜歌\"]\n    A4[\"指定乐器：钢琴\"]\n    A5[\"设置要求：认真\"]\n    A6[\"调用DeepSeek模型\"]\n    A7[\"模型生成歌曲文本\"]\n    A8[\"文本转钢琴谱\"]\n    A9[\"生成音频文件\"]\n    A10[\"完成初稿\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A8 --> A9\n    A9 --> A10"
+    },
+    {
+      "title": "评估与迭代",
+      "code": "flowchart TD\n    B1[\"播放生成的音频\"]\n    B2[\"主观聆听\"]\n    B3[\"判断是否有周杰伦味道\"]\n    B4[\"判断是否甜美\"]\n    B5[\"是否满足要求\"]\n    B6[\"满意 → 结束\"]\n    B7[\"不满意 → 调整提示\"]\n    B8[\"修改提示：加强周杰伦元素\"]\n    B9[\"修改提示：增强甜美感\"]\n    B10[\"返回生成流程\"]\n\n    B1 --> B2\n    B2 --> B3\n    B2 --> B4\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6\n    B5 --> B7\n    B7 --> B8\n    B7 --> B9\n    B8 --> B10\n    B9 --> B10\n    B10 --> B1"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:50:48+00:00"
+}

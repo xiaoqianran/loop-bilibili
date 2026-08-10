@@ -1,0 +1,26 @@
+{
+  "bvid": "BV18e7p6FE1J",
+  "title": "156. 最简单的transformer反向传播可视化能有多简单？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 790,
+  "text": "今天的问题是最简单的\ntransformer反向传播可视化能有多简单\n结论先行\n只要把前向传播当中的QKAVOX反过来\n变成XOVAKQ\n并且在恰当的位置标记梯度符号和矩阵切分\n就可以得到一个和前向传播一样\n直观的可视化方案\n在理解这个问题之前\n提一下本视频的前置内容\n也就是宝藏问题\n101和109\n一个视频给出了极简的transformer可视化方案\n另一个推导了注意力层的梯度\n把这两个视频结合并加入前馈网络层\n就是今天的完整全图\n由于是分析反向传播\n我们要倒着看\n从前馈网络层的输出\n也就是这里的X的梯度开始分析\n线性层的反向传播非常简单\n就是让输出张量的梯度去乘以权重矩阵的转置\n前馈网络在前向传播时是先乘以w up变长\n再乘以w done变短\n那么在反向传播时\n我们只需要拿这个DX先乘以w down的转置\n反向变长\n再乘以w up的转置\n反向变短\n就可以得到这里的DO\n也就是注意力层的输出梯度\n接着看注意力层的反向传播\n这里需要用到之前推导过的两个重要公式\n第一个公式是DP等于DO乘以V的转置\n为了图解保持清爽\n这里统一用A来表示注意力\n矩阵不区分有没有做soft max中间插的那一步求导\n具体看右边的公式即可对应到图上\n我们把这里的DAO按行切分\n把V的转置按列切分\n行向量和列向量做内积就能算出来\n这里的DA算出DA之后\n根据第二个公式\nDQ等于DS乘以K\n也就是拿这个算好的DA去乘以这里的K矩阵\n就可以得到DQ相当于梯度顺利流回了Q矩阵\n把整个过程对比梳理一下\n前向传播是Q按行分K的转置\n按列分做内积\n算出A矩阵\n再和V相乘进行加权平均\n最后维度先变长后变短\n而反向传播\n就像是对称的一体两面\n拿输出梯度的DX先反向变长\n再反向变短\n得到DO然后DAO按行分V的转置\n按列分做内积\n算出来A矩阵的梯度\n最后再乘以K把梯度流回Q矩阵\n整个流程对称且优雅",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18e7p6FE1J",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

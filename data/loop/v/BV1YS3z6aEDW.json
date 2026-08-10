@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1YS3z6aEDW",
+  "title": "Codex连接FreeCAD，把你的需求讲给AI，自动完成机械3D建模",
+  "status": "ok",
+  "language": "zh",
+  "chars": 1595,
+  "text": "先看几个模型。\n一套带标准三通、变径和法兰的 316L 管路总成；\n一台包含箱体、轴承、蜗轮蜗杆和紧固件的减速器；\n还有一个根据二维图纸生成的泵盖。\n这些模型不是我用鼠标一点一点画出来的，\n而是 AI Agent 连接 FreeCAD 以后，\n根据三种不同形式的输入自动生成的。\n目前已经有 Zoo Design Studio、Adam CAD、\nCADAM 等文生 CAD 工具，可以根据语言生成机械零件。\n我采用的是另一条路线：\n让 Codex 通过 MCP 直接操作免费的 FreeCAD。\nFreeCAD 同时兼容 Windows、\nLinux 和 macOS，可以在官网免费下载。\n相比连接传统商业 CAD，FreeCAD 有几个明显优势。\n它免费开源，不需要额外购买 CAD 席位或自动化模块；\n软件的大部分功能都能通过 Python 控制，\nAgent 可以直接创建、修改、检查和导出模型；\n设计文件也保存在本地，配置容易复现。\n传统 CAD 的工业功能更加成熟，\n但接入 Agent 往往还要处理授权、插件、系统和 API 版本。\n尤其对 macOS 用户来说，FreeCAD 可以原生安装，\n做个人实验和教学的门槛更低。\n配置过程很简单。\n首先安装 FreeCAD。\n然后把开源项目 neka-nat/freecad-mcp 的网页发给 Codex，\n直接告诉它：\n“帮我把 Codex 和 FreeCAD 连接起来，并完成测试。”\nCodex 会根据网页说明安装 FreeCAD 插件、\n注册 MCP 服务并配置本地连接。\n完成后重启 FreeCAD，再开一个新的 Codex 任务，\n让它创建一个简单模型进行验证。\n当 FreeCAD 中出现测试模型，\n并且 Codex 能读取模型信息和返回预览图，连接就成功了。\n之后就可以直接用自然语言下达机械设计任务。\n配置完成以后，我用三种不同的输入方式做了三个测试，\n看看这套工具能不能真正完成 AI 自主机械设计。\n第一个案例，我给出的是一份简单的工程需求：\n“生成一段能够承受 8 公斤内压的管道，材料为 316L，DN25，\n长度 300 毫米。”\n随后我继续要求它增加两端法兰、DN25 标准三通、\n100 毫米支管、DN25 转 DN40 变径和 DN40 法兰。\nAI 不只按照尺寸画模型，\n还自主查询 EN 10253-4 和厂家资料，读取 STEP 标准件，\n最终完成一套由直管、三通、支管、变径和法兰组成的管路总成。\n所以第一种输入，是提供工程参数和功能要求，\n让 Agent 自主查询标准并完成设计。\n第二个案例，我只给了一句很概括的提示：\n“创建一个蜗轮蜗杆减速器，\n并按照合理的子装配体范围自上而下建模。”\nAI 自己确定 30 比 1 的概念方案，创建顶层装配，再拆分成箱体、\n蜗杆输入、蜗轮输出、密封与紧固件四部分。\n最终模型包含轴、齿轮、轴承、油封、端盖和螺栓等 78 个几何对象，\n并输出完整装配图和内部结构图。\n第二种输入，是只描述目标，\n让 Agent 自己拆解任务并生成复杂概念装配。\n正式制造参数仍需工程师确定。\n第三个案例的输入是一张泵盖二维图纸。\nAI 识别图纸中的轮廓、凸台、孔位和尺寸，生成三维泵盖，\n并建立可以驱动模型更新的参数表。\n第三种输入，是直接交给 Agent 一张二维工程图，\n让它完成尺寸提取和三维重建。\n这期视频最重要的不是三个模型本身，而是跑通这条流程：\n安装 FreeCAD，把 MCP 项目网页交给 Codex，\n让它完成配置和测试，然后直接用语言或图纸提出设计任务。\n连接成功以后，Codex 就能操作 FreeCAD，\n把设计要求变成可以继续编辑和导出的工程模型。\nAI 仍然需要工程师验收，\n但这套工具已经可以替我们完成大量查资料、建模和装配工作。",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YS3z6aEDW",
+  "published_at": "1785253740",
+  "fetched_at": "2026-08-09T02:54:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Codex 与 FreeCAD 整体工作流与关键要点\n\n## 整体工作流\n```mermaid\nflowchart TD\n    A1[\"安装 FreeCAD\"] --> A2[\"提供 MCP 项目网页给 Codex\"]\n    A2 --> A3[\"指示 Codex 连接并测试\"]\n    A3 --> A4[\"Codex 安装插件并注册 MCP\"]\n    A4 --> A5[\"重启 FreeCAD\"]\n    A5 --> A6[\"创建测试模型验证连接\"]\n    A6 --> A7[\"连接成功：可读取模型信息\"]\n    A7 --> A8[\"使用自然语言下达设计任务\"]\n    A8 --> A9[\"AI 生成或修改模型\"]\n    A9 --> A10[\"工程师进行验收\"]\n```\n<!-- A1 [BV1YS3z6aEDW P1 01:21] -->\n<!-- A2 [BV1YS3z6aEDW P1 01:23] -->\n<!-- A3 [BV1YS3z6aEDW P1 01:28] -->\n<!-- A4 [BV1YS3z6aEDW P1 01:32] -->\n<!-- A5 [BV1YS3z6aEDW P1 01:39] -->\n<!-- A6 [BV1YS3z6aEDW P1 01:43] -->\n<!-- A7 [BV1YS3z6aEDW P1 01:48] -->\n<!-- A8 [BV1YS3z6aEDW P1 01:52] -->\n<!-- A9 [BV1YS3z6aEDW P1 02:07] -->\n<!-- A10 [BV1YS3z6aEDW P1 04:12] -->\n\n## 输入方式与模型生成\n```mermaid\nflowchart LR\n    B1[\"工程参数输入\\n(管路案例)\"] --> B2[\"AI 查询标准 EN 10253-4 等\"]\n    B2 --> B3[\"生成管路总成模型\"]\n    B4[\"高层描述输入\\n(减速器案例)\"] --> B5[\"AI 确定概念方案 30:1\"]\n    B5 --> B6[\"拆解为箱体、蜗轮、蜗杆、紧固件等子装配\"]\n    B6 --> B7[\"生成完整装配模型\"]\n    B8[\"二维图纸输入\\n(泵盖案例)\"] --> B9[\"AI 识别轮廓、孔位、尺寸\"]\n    B9 --> B10[\"生成 3D 泵盖并建立参数表\"]\n    B3 --> B11[\"输出装配图、STEP 文件\"]\n    B7 --> B11\n    B10 --> B11\n```\n<!-- B1 [BV1YS3z6aEDW P1 02:10] -->\n<!-- B2 [BV1YS3z6aEDW P1 02:30] -->\n<!-- B3 [BV1YS3z6aEDW P1 02:41] -->\n<!-- B4 [BV1YS3z6aEDW P1 02:54] -->\n<!-- B5 [BV1YS3z6aEDW P1 03:00] -->\n<!-- B6 [BV1YS3z6aEDW P1 03:06] -->\n<!-- B7 [BV1YS3z6aEDW P1 03:18] -->\n<!-- B8 [BV1YS3z6aEDW P1 03:33] -->\n<!-- B9 [BV1YS3z6aEDW P1 03:36] -->\n<!-- B10 [BV1YS3z6aEDW P1 03:42] -->\n<!-- B11 [BV1YS3z6aEDW P1 04:06] -->\n\n## FreeCAD 优势与限制\n```mermaid\nflowchart TD\n    C1[\"免费开源\"] --> C2[\"无需额外 CAD 许可证\"]\n    C3[\"跨平台兼容\\nWindows/Linux/macOS\"] --> C4[\"macOS 原生安装，门槛低\"]\n    C5[\"Python 可控\\n创建/修改/检查/导出\"] --> C6[\"本地保存设计文件，易复现\"]\n    C7[\"传统 CAD 功能成熟\"] --> C8[\"需处理授权、插件、API 版本\"]\n    C1 --> C5\n    C3 --> C5\n    C2 --> C8\n    C4 --> C8\n```\n<!-- C1 [BV1YS3z6aEDW P1 00:50] -->\n<!-- C2 [BV1YS3z6aEDW P1 00:50] -->\n<!-- C3 [BV1YS3z6aEDW P1 00:40] -->\n<!-- C4 [BV1YS3z6aEDW P1 01:13] -->\n<!-- C5 [BV1YS3z6aEDW P1 00:54] -->\n<!-- C6 [BV1YS3z6aEDW P1 01:03] -->\n<!-- C7 [BV1YS3z6aEDW P1 01:06] -->\n<!-- C8 [BV1YS3z6aEDW P1 01:08] -->",
+      "diagrams": [
+        {
+          "title": "整体工作流",
+          "code": "flowchart TD\n    A1[\"安装 FreeCAD\"] --> A2[\"提供 MCP 项目网页给 Codex\"]\n    A2 --> A3[\"指示 Codex 连接并测试\"]\n    A3 --> A4[\"Codex 安装插件并注册 MCP\"]\n    A4 --> A5[\"重启 FreeCAD\"]\n    A5 --> A6[\"创建测试模型验证连接\"]\n    A6 --> A7[\"连接成功：可读取模型信息\"]\n    A7 --> A8[\"使用自然语言下达设计任务\"]\n    A8 --> A9[\"AI 生成或修改模型\"]\n    A9 --> A10[\"工程师进行验收\"]"
+        },
+        {
+          "title": "输入方式与模型生成",
+          "code": "flowchart LR\n    B1[\"工程参数输入\\n(管路案例)\"] --> B2[\"AI 查询标准 EN 10253-4 等\"]\n    B2 --> B3[\"生成管路总成模型\"]\n    B4[\"高层描述输入\\n(减速器案例)\"] --> B5[\"AI 确定概念方案 30:1\"]\n    B5 --> B6[\"拆解为箱体、蜗轮、蜗杆、紧固件等子装配\"]\n    B6 --> B7[\"生成完整装配模型\"]\n    B8[\"二维图纸输入\\n(泵盖案例)\"] --> B9[\"AI 识别轮廓、孔位、尺寸\"]\n    B9 --> B10[\"生成 3D 泵盖并建立参数表\"]\n    B3 --> B11[\"输出装配图、STEP 文件\"]\n    B7 --> B11\n    B10 --> B11"
+        },
+        {
+          "title": "FreeCAD 优势与限制",
+          "code": "flowchart TD\n    C1[\"免费开源\"] --> C2[\"无需额外 CAD 许可证\"]\n    C3[\"跨平台兼容\\nWindows/Linux/macOS\"] --> C4[\"macOS 原生安装，门槛低\"]\n    C5[\"Python 可控\\n创建/修改/检查/导出\"] --> C6[\"本地保存设计文件，易复现\"]\n    C7[\"传统 CAD 功能成熟\"] --> C8[\"需处理授权、插件、API 版本\"]\n    C1 --> C5\n    C3 --> C5\n    C2 --> C8\n    C4 --> C8"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T02:55:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Codex 与 FreeCAD 整体工作流与关键要点\n\n## 整体工作流\n```mermaid\nflowchart TD\n    A1[\"安装 FreeCAD\"] --> A2[\"提供 MCP 项目网页给 Codex\"]\n    A2 --> A3[\"指示 Codex 连接并测试\"]\n    A3 --> A4[\"Codex 安装插件并注册 MCP\"]\n    A4 --> A5[\"重启 FreeCAD\"]\n    A5 --> A6[\"创建测试模型验证连接\"]\n    A6 --> A7[\"连接成功：可读取模型信息\"]\n    A7 --> A8[\"使用自然语言下达设计任务\"]\n    A8 --> A9[\"AI 生成或修改模型\"]\n    A9 --> A10[\"工程师进行验收\"]\n```\n<!-- A1 [BV1YS3z6aEDW P1 01:21] -->\n<!-- A2 [BV1YS3z6aEDW P1 01:23] -->\n<!-- A3 [BV1YS3z6aEDW P1 01:28] -->\n<!-- A4 [BV1YS3z6aEDW P1 01:32] -->\n<!-- A5 [BV1YS3z6aEDW P1 01:39] -->\n<!-- A6 [BV1YS3z6aEDW P1 01:43] -->\n<!-- A7 [BV1YS3z6aEDW P1 01:48] -->\n<!-- A8 [BV1YS3z6aEDW P1 01:52] -->\n<!-- A9 [BV1YS3z6aEDW P1 02:07] -->\n<!-- A10 [BV1YS3z6aEDW P1 04:12] -->\n\n## 输入方式与模型生成\n```mermaid\nflowchart LR\n    B1[\"工程参数输入\\n(管路案例)\"] --> B2[\"AI 查询标准 EN 10253-4 等\"]\n    B2 --> B3[\"生成管路总成模型\"]\n    B4[\"高层描述输入\\n(减速器案例)\"] --> B5[\"AI 确定概念方案 30:1\"]\n    B5 --> B6[\"拆解为箱体、蜗轮、蜗杆、紧固件等子装配\"]\n    B6 --> B7[\"生成完整装配模型\"]\n    B8[\"二维图纸输入\\n(泵盖案例)\"] --> B9[\"AI 识别轮廓、孔位、尺寸\"]\n    B9 --> B10[\"生成 3D 泵盖并建立参数表\"]\n    B3 --> B11[\"输出装配图、STEP 文件\"]\n    B7 --> B11\n    B10 --> B11\n```\n<!-- B1 [BV1YS3z6aEDW P1 02:10] -->\n<!-- B2 [BV1YS3z6aEDW P1 02:30] -->\n<!-- B3 [BV1YS3z6aEDW P1 02:41] -->\n<!-- B4 [BV1YS3z6aEDW P1 02:54] -->\n<!-- B5 [BV1YS3z6aEDW P1 03:00] -->\n<!-- B6 [BV1YS3z6aEDW P1 03:06] -->\n<!-- B7 [BV1YS3z6aEDW P1 03:18] -->\n<!-- B8 [BV1YS3z6aEDW P1 03:33] -->\n<!-- B9 [BV1YS3z6aEDW P1 03:36] -->\n<!-- B10 [BV1YS3z6aEDW P1 03:42] -->\n<!-- B11 [BV1YS3z6aEDW P1 04:06] -->\n\n## FreeCAD 优势与限制\n```mermaid\nflowchart TD\n    C1[\"免费开源\"] --> C2[\"无需额外 CAD 许可证\"]\n    C3[\"跨平台兼容\\nWindows/Linux/macOS\"] --> C4[\"macOS 原生安装，门槛低\"]\n    C5[\"Python 可控\\n创建/修改/检查/导出\"] --> C6[\"本地保存设计文件，易复现\"]\n    C7[\"传统 CAD 功能成熟\"] --> C8[\"需处理授权、插件、API 版本\"]\n    C1 --> C5\n    C3 --> C5\n    C2 --> C8\n    C4 --> C8\n```\n<!-- C1 [BV1YS3z6aEDW P1 00:50] -->\n<!-- C2 [BV1YS3z6aEDW P1 00:50] -->\n<!-- C3 [BV1YS3z6aEDW P1 00:40] -->\n<!-- C4 [BV1YS3z6aEDW P1 01:13] -->\n<!-- C5 [BV1YS3z6aEDW P1 00:54] -->\n<!-- C6 [BV1YS3z6aEDW P1 01:03] -->\n<!-- C7 [BV1YS3z6aEDW P1 01:06] -->\n<!-- C8 [BV1YS3z6aEDW P1 01:08] -->",
+  "diagrams": [
+    {
+      "title": "整体工作流",
+      "code": "flowchart TD\n    A1[\"安装 FreeCAD\"] --> A2[\"提供 MCP 项目网页给 Codex\"]\n    A2 --> A3[\"指示 Codex 连接并测试\"]\n    A3 --> A4[\"Codex 安装插件并注册 MCP\"]\n    A4 --> A5[\"重启 FreeCAD\"]\n    A5 --> A6[\"创建测试模型验证连接\"]\n    A6 --> A7[\"连接成功：可读取模型信息\"]\n    A7 --> A8[\"使用自然语言下达设计任务\"]\n    A8 --> A9[\"AI 生成或修改模型\"]\n    A9 --> A10[\"工程师进行验收\"]"
+    },
+    {
+      "title": "输入方式与模型生成",
+      "code": "flowchart LR\n    B1[\"工程参数输入\\n(管路案例)\"] --> B2[\"AI 查询标准 EN 10253-4 等\"]\n    B2 --> B3[\"生成管路总成模型\"]\n    B4[\"高层描述输入\\n(减速器案例)\"] --> B5[\"AI 确定概念方案 30:1\"]\n    B5 --> B6[\"拆解为箱体、蜗轮、蜗杆、紧固件等子装配\"]\n    B6 --> B7[\"生成完整装配模型\"]\n    B8[\"二维图纸输入\\n(泵盖案例)\"] --> B9[\"AI 识别轮廓、孔位、尺寸\"]\n    B9 --> B10[\"生成 3D 泵盖并建立参数表\"]\n    B3 --> B11[\"输出装配图、STEP 文件\"]\n    B7 --> B11\n    B10 --> B11"
+    },
+    {
+      "title": "FreeCAD 优势与限制",
+      "code": "flowchart TD\n    C1[\"免费开源\"] --> C2[\"无需额外 CAD 许可证\"]\n    C3[\"跨平台兼容\\nWindows/Linux/macOS\"] --> C4[\"macOS 原生安装，门槛低\"]\n    C5[\"Python 可控\\n创建/修改/检查/导出\"] --> C6[\"本地保存设计文件，易复现\"]\n    C7[\"传统 CAD 功能成熟\"] --> C8[\"需处理授权、插件、API 版本\"]\n    C1 --> C5\n    C3 --> C5\n    C2 --> C8\n    C4 --> C8"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T02:55:00+00:00"
+}

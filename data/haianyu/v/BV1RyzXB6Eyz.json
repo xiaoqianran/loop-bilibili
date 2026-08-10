@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1RyzXB6Eyz",
+  "title": "4. SmoothQuant：一种转嫁压力的LLM量化方法【每天一个宝藏名词】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 154,
+  "text": "Smooth quants\n是由m i it函数实验室\n提出的一种大模型量化方法\n它能够让权重和激活同时量化的巴比特\n通过一个数学上的等价变换\n将激活举中难以量化的离群点压力\n转化到权重上\n正如这张图所示\n从而让两者都变得好量化\n目前smooth quant在GITHUB上开源\nstar已经超过了1600个",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RyzXB6Eyz",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

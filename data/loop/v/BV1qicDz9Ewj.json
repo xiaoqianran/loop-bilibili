@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1qicDz9Ewj",
+  "title": "OpenClaw控制Unity自动做游戏？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 348,
+  "text": "好现在我已经成功的把open co连接上了的\nunity的编辑器\n我要试一下\n让他去操作的unity\n哦我想让他在场景里用自带的cube\n去简单搭建一个小房间\n看他能不能做到\n可能会稍微久一点啊\n好的现在已经做好了\n花了大概23分钟的样子吧\n我来看一下它的好\n大家看他确实是搭建了很多的这种家具\n而且是用普通的CUBA\n大概就是这个效果\n首先他能做的事情不止这些\n这些可以后面再继续探索\n我想展示的就是它能够控制的效果\n大概就是这个情况\n而它其实就是基于GIHU上这一个NC p for unity\n这个项目\n而这个开源项目呢\n它其实提供了很多个工具\n可以在英语里做很多事情\n那这套教程呢我会把它放在我的评论区\n有一个背书的文档链接里面\n每一步我都写的很清楚了\n我就分享出来给大家一起探讨交流一下",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qicDz9Ewj",
+  "published_at": "1773392426",
+  "fetched_at": "2026-08-10T08:46:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# OpenCo 与 Unity 自动化构建知识图谱\n\n## 总览：OpenCo 与 Unity 的连接与场景构建\n```mermaid\nflowchart TD\n    A1[\"OpenCo (OpenCo)\"] --> A3[\"建立与 Unity 编辑器的连接\"]\n    A2[\"Unity 编辑器\"] --> A3\n    A3 --> A4[\"发送控制指令\"]\n    A4 --> A5[\"使用内置 Cube 原语\"]\n    A5 --> A6[\"构建小房间布局\"]\n    A6 --> A7[\"生成家具对象\"]\n    A7 --> A8[\"构建时长约 23 分钟\"]\n    A8 --> A9[\"可视化结果：带家具的小房间\"]\n```\n\n## 项目基础与工具集合\n```mermaid\nflowchart TD\n    B1[\"开源项目\"] --> B2[\"GIHU NCp for Unity\"]\n    B2 --> B3[\"提供多种工具\"]\n    B3 --> B4[\"场景构建工具\"]\n    B3 --> B5[\"对象放置工具\"]\n    B3 --> B6[\"自动化脚本工具\"]\n    B4 --> B7[\"支持多种 Unity 任务\"]\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8[\"可进一步探索的潜力\"]\n    B9[\"教程文档（评论区链接）\"] --> B10[\"逐步操作指南\"]\n```\n\n## 演示流程：从指令到完整场景\n```mermaid\nflowchart TD\n    C1[\"起始：OpenCo 已连接\"] --> C2[\"指令：创建 Cube\"]\n    C2 --> C3[\"排列 Cube 形成墙体\"]\n    C3 --> C4[\"添加地板与天花板\"]\n    C4 --> C5[\"放置家具对象\"]\n    C5 --> C6[\"微调位置\"]\n    C6 --> C7[\"完成场景构建\"]\n    C7 --> C8[\"观察最终效果\"]\n    C8 --> C9[\"考虑进一步功能\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览：OpenCo 与 Unity 的连接与场景构建",
+          "code": "flowchart TD\n    A1[\"OpenCo (OpenCo)\"] --> A3[\"建立与 Unity 编辑器的连接\"]\n    A2[\"Unity 编辑器\"] --> A3\n    A3 --> A4[\"发送控制指令\"]\n    A4 --> A5[\"使用内置 Cube 原语\"]\n    A5 --> A6[\"构建小房间布局\"]\n    A6 --> A7[\"生成家具对象\"]\n    A7 --> A8[\"构建时长约 23 分钟\"]\n    A8 --> A9[\"可视化结果：带家具的小房间\"]"
+        },
+        {
+          "title": "项目基础与工具集合",
+          "code": "flowchart TD\n    B1[\"开源项目\"] --> B2[\"GIHU NCp for Unity\"]\n    B2 --> B3[\"提供多种工具\"]\n    B3 --> B4[\"场景构建工具\"]\n    B3 --> B5[\"对象放置工具\"]\n    B3 --> B6[\"自动化脚本工具\"]\n    B4 --> B7[\"支持多种 Unity 任务\"]\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8[\"可进一步探索的潜力\"]\n    B9[\"教程文档（评论区链接）\"] --> B10[\"逐步操作指南\"]"
+        },
+        {
+          "title": "演示流程：从指令到完整场景",
+          "code": "flowchart TD\n    C1[\"起始：OpenCo 已连接\"] --> C2[\"指令：创建 Cube\"]\n    C2 --> C3[\"排列 Cube 形成墙体\"]\n    C3 --> C4[\"添加地板与天花板\"]\n    C4 --> C5[\"放置家具对象\"]\n    C5 --> C6[\"微调位置\"]\n    C6 --> C7[\"完成场景构建\"]\n    C7 --> C8[\"观察最终效果\"]\n    C8 --> C9[\"考虑进一步功能\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T08:46:14+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# OpenCo 与 Unity 自动化构建知识图谱\n\n## 总览：OpenCo 与 Unity 的连接与场景构建\n```mermaid\nflowchart TD\n    A1[\"OpenCo (OpenCo)\"] --> A3[\"建立与 Unity 编辑器的连接\"]\n    A2[\"Unity 编辑器\"] --> A3\n    A3 --> A4[\"发送控制指令\"]\n    A4 --> A5[\"使用内置 Cube 原语\"]\n    A5 --> A6[\"构建小房间布局\"]\n    A6 --> A7[\"生成家具对象\"]\n    A7 --> A8[\"构建时长约 23 分钟\"]\n    A8 --> A9[\"可视化结果：带家具的小房间\"]\n```\n\n## 项目基础与工具集合\n```mermaid\nflowchart TD\n    B1[\"开源项目\"] --> B2[\"GIHU NCp for Unity\"]\n    B2 --> B3[\"提供多种工具\"]\n    B3 --> B4[\"场景构建工具\"]\n    B3 --> B5[\"对象放置工具\"]\n    B3 --> B6[\"自动化脚本工具\"]\n    B4 --> B7[\"支持多种 Unity 任务\"]\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8[\"可进一步探索的潜力\"]\n    B9[\"教程文档（评论区链接）\"] --> B10[\"逐步操作指南\"]\n```\n\n## 演示流程：从指令到完整场景\n```mermaid\nflowchart TD\n    C1[\"起始：OpenCo 已连接\"] --> C2[\"指令：创建 Cube\"]\n    C2 --> C3[\"排列 Cube 形成墙体\"]\n    C3 --> C4[\"添加地板与天花板\"]\n    C4 --> C5[\"放置家具对象\"]\n    C5 --> C6[\"微调位置\"]\n    C6 --> C7[\"完成场景构建\"]\n    C7 --> C8[\"观察最终效果\"]\n    C8 --> C9[\"考虑进一步功能\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览：OpenCo 与 Unity 的连接与场景构建",
+      "code": "flowchart TD\n    A1[\"OpenCo (OpenCo)\"] --> A3[\"建立与 Unity 编辑器的连接\"]\n    A2[\"Unity 编辑器\"] --> A3\n    A3 --> A4[\"发送控制指令\"]\n    A4 --> A5[\"使用内置 Cube 原语\"]\n    A5 --> A6[\"构建小房间布局\"]\n    A6 --> A7[\"生成家具对象\"]\n    A7 --> A8[\"构建时长约 23 分钟\"]\n    A8 --> A9[\"可视化结果：带家具的小房间\"]"
+    },
+    {
+      "title": "项目基础与工具集合",
+      "code": "flowchart TD\n    B1[\"开源项目\"] --> B2[\"GIHU NCp for Unity\"]\n    B2 --> B3[\"提供多种工具\"]\n    B3 --> B4[\"场景构建工具\"]\n    B3 --> B5[\"对象放置工具\"]\n    B3 --> B6[\"自动化脚本工具\"]\n    B4 --> B7[\"支持多种 Unity 任务\"]\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8[\"可进一步探索的潜力\"]\n    B9[\"教程文档（评论区链接）\"] --> B10[\"逐步操作指南\"]"
+    },
+    {
+      "title": "演示流程：从指令到完整场景",
+      "code": "flowchart TD\n    C1[\"起始：OpenCo 已连接\"] --> C2[\"指令：创建 Cube\"]\n    C2 --> C3[\"排列 Cube 形成墙体\"]\n    C3 --> C4[\"添加地板与天花板\"]\n    C4 --> C5[\"放置家具对象\"]\n    C5 --> C6[\"微调位置\"]\n    C6 --> C7[\"完成场景构建\"]\n    C7 --> C8[\"观察最终效果\"]\n    C8 --> C9[\"考虑进一步功能\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:46:14+00:00"
+}

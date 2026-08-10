@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1fwgZ6pE8r",
+  "title": "tinyAnimationEngine 项目展示｜基于 Vulkan 与 ImGui 的实时 3D 动画编辑引擎",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1055,
+  "text": "大家好\n这是我基于开源项目二次开发的tiny animation engine\n一个使用C加加20VN\n和因故意构建的实时3D动画编辑引擎\n我可以通过创建动画状态机控制器\n设计角色动画的播放混合与切换规则\n在使用sequencer统一驱动场景中\n模型的transform和动画状态编排镜头\n并输出完整的视频序列\n接下来我将重点展示在该项目中\n有我设计并实现的核心功能\n我实现了多模型导入功能\n用户导入FBX文件后\n程序会自动判断\n其中包含的是模型还是动画数据\n本次演示使用MIXM资产\n当文件仅包含动画而不包含模型时\n可以选择场景中已有的角色\n通过骨骼映射将动画重定向并应用到该角色上\n用户可以直接将模型从资源浏览器拖入场景\n并通过可视化操作工具调整模型的位置\n旋转和缩放\n接下来是animator controller\n用户可以为角色创建动画状态机\n将不同的动画片段配置为状态\n并设置状态之间的过渡规则\n再通过参数触发器等方式控制过渡条件\n实现不同动作之间的自然切换与平滑混合\n效果展示\n此外单个状态还可以配置为意为混合空间\n根据参数值动态混合walk与run等动画\n接下来是sequencer\n用户可以通过可视化界面统一编排模型\n运动和角色动画\n在animator关键帧中指定初始状态并添加参数\n修改或缺一个事件\n从而在特定时间驱动animator controller完成状态切换\nsequencer还会对时间轴事件进行累积计算\n实时预览角色在任意时刻应呈现的姿势\n此外transform\n关键帧可以控制模型或摄像机的位置\n旋转和缩放\n并通过不同的中间帧混合模式\n调整运动与过渡效果嗯\n这里就是添加了一个缓进缓出的平滑效果\n场景中可以添加多个摄像机实体\n并通过sequencer控制它们的运动和镜头切换\n此外我还实现了peep画中画预览窗口\n用户可以实时查看指定摄像机的画面\n方便进行机位调整和镜头调试\nsequencer中的全局camera轨道\n用于控制摄像机的切换与跟随\n从而编排不同时间段的拍摄机位\n并确定最终视频录制时的镜头调度\n此外场景序列和动画控制器\n均支持序列化保存与加载\n方便用户持久化编辑结果\n并在后续继续使用\n完成整个序列的编排后\n用户即可启动视频录制程序\n会按照设定的帧率\n基于sequencer当前调度的摄像机逐帧渲染画面\n并将结果编码合成为完整的视频文件\n此外我还为引擎接入了MCP\n使AI agent能够读取场景信息\n查询资产并捕获当前渲染画面\n最后展示一下开头序列的输出视频",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1fwgZ6pE8r",
+  "published_at": "1785105312",
+  "fetched_at": "2026-08-06T21:30:50+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# tinyAnimationEngine 知识图谱\n\n## Engine Overview\n```mermaid\nflowchart TD\n    A1[\"tinyAnimationEngine\"] --> A2[\"模型导入模块\"]\n    A1 --> A3[\"Animator Controller\"]\n    A1 --> A4[\"Sequencer\"]\n    A1 --> A5[\"Transform关键帧\"]\n    A1 --> A6[\"摄像机系统\"]\n    A1 --> A7[\"序列化保存/加载\"]\n    A1 --> A8[\"MCP AI Agent 接口\"]\n    A2 --> A9[\"FBX文件解析\"]\n    A2 --> A10[\"模型/动画判别\"]\n    A3 --> A11[\"动画状态机\"]\n    A3 --> A12[\"状态切换规则\"]\n    A3 --> A13[\"参数触发器\"]\n    A4 --> A14[\"统一时间轴\"]\n    A4 --> A15[\"模型运动编排\"]\n    A4 --> A16[\"角色动画驱动\"]\n    A4 --> A17[\"摄像机轨道控制\"]\n    A5 --> A18[\"位置/旋转/缩放关键帧\"]\n    A5 --> A19[\"缓进缓出混合模式\"]\n    A6 --> A20[\"多摄像机实体\"]\n    A6 --> A21[\"Peep画中画预览\"]\n    A6 --> A22[\"全局Camera轨道\"]\n    A7 --> A23[\"场景序列序列化\"]\n    A7 --> A24[\"动画控制器序列化\"]\n    A8 --> A25[\"读取场景信息\"]\n    A8 --> A26[\"查询资产\"]\n    A8 --> A27[\"捕获渲染画面\"]\n```\n\n## Animation Import & Mapping Workflow\n```mermaid\nflowchart LR\n    B1[\"用户拖入FBX文件\"] --> B2[\"系统解析文件\"]\n    B2 --> B3[\"判别模型数据\"]\n    B2 --> B4[\"判别动画数据\"]\n    B3 --> B5[\"模型加载至场景\"]\n    B4 --> B6[\"若无模型: 选择已有角色\"]\n    B6 --> B7[\"骨骼映射: 动画重定向\"]\n    B5 --> B8[\"模型可视化调整: 位置/旋转/缩放\"]\n    B7 --> B8\n    B8 --> B9[\"创建 Animator Controller\"]\n    B9 --> B10[\"配置动画状态机: 状态+片段\"]\n    B10 --> B11[\"设置过渡规则 + 参数触发\"]\n    B11 --> B12[\"在Sequencer时间轴上驱动\"]\n```\n\n## Sequencer 功能细分\n```mermaid\nflowchart TD\n    C1[\"Sequencer UI\"] --> C2[\"时间轴编辑\"]\n    C2 --> C3[\"模型Transform关键帧\"]\n    C2 --> C4[\"Animator 参数关键帧\"]\n    C2 --> C5[\"摄像机轨道关键帧\"]\n    C3 --> C6[\"位置/旋转/缩放\"]\n    C3 --> C7[\"缓进缓出混合\"]\n    C4 --> C8[\"状态切换触发\"]\n    C5 --> C9[\"摄像机位置/切换\"]\n    C5 --> C10[\"全局Camera轨道\"]\n    C9 --> C11[\"Peep画中画预览\"]\n    C2 --> C12[\"事件累积计算\"]\n    C12 --> C13[\"实时预览角色姿势\"]\n    C12 --> C14[\"实时预览摄像机视角\"]\n    C13 --> C15[\"输出视频帧渲染\"]\n    C14 --> C15\n```",
+      "diagrams": [
+        {
+          "title": "Engine Overview",
+          "code": "flowchart TD\n    A1[\"tinyAnimationEngine\"] --> A2[\"模型导入模块\"]\n    A1 --> A3[\"Animator Controller\"]\n    A1 --> A4[\"Sequencer\"]\n    A1 --> A5[\"Transform关键帧\"]\n    A1 --> A6[\"摄像机系统\"]\n    A1 --> A7[\"序列化保存/加载\"]\n    A1 --> A8[\"MCP AI Agent 接口\"]\n    A2 --> A9[\"FBX文件解析\"]\n    A2 --> A10[\"模型/动画判别\"]\n    A3 --> A11[\"动画状态机\"]\n    A3 --> A12[\"状态切换规则\"]\n    A3 --> A13[\"参数触发器\"]\n    A4 --> A14[\"统一时间轴\"]\n    A4 --> A15[\"模型运动编排\"]\n    A4 --> A16[\"角色动画驱动\"]\n    A4 --> A17[\"摄像机轨道控制\"]\n    A5 --> A18[\"位置/旋转/缩放关键帧\"]\n    A5 --> A19[\"缓进缓出混合模式\"]\n    A6 --> A20[\"多摄像机实体\"]\n    A6 --> A21[\"Peep画中画预览\"]\n    A6 --> A22[\"全局Camera轨道\"]\n    A7 --> A23[\"场景序列序列化\"]\n    A7 --> A24[\"动画控制器序列化\"]\n    A8 --> A25[\"读取场景信息\"]\n    A8 --> A26[\"查询资产\"]\n    A8 --> A27[\"捕获渲染画面\"]"
+        },
+        {
+          "title": "Animation Import & Mapping Workflow",
+          "code": "flowchart LR\n    B1[\"用户拖入FBX文件\"] --> B2[\"系统解析文件\"]\n    B2 --> B3[\"判别模型数据\"]\n    B2 --> B4[\"判别动画数据\"]\n    B3 --> B5[\"模型加载至场景\"]\n    B4 --> B6[\"若无模型: 选择已有角色\"]\n    B6 --> B7[\"骨骼映射: 动画重定向\"]\n    B5 --> B8[\"模型可视化调整: 位置/旋转/缩放\"]\n    B7 --> B8\n    B8 --> B9[\"创建 Animator Controller\"]\n    B9 --> B10[\"配置动画状态机: 状态+片段\"]\n    B10 --> B11[\"设置过渡规则 + 参数触发\"]\n    B11 --> B12[\"在Sequencer时间轴上驱动\"]"
+        },
+        {
+          "title": "Sequencer 功能细分",
+          "code": "flowchart TD\n    C1[\"Sequencer UI\"] --> C2[\"时间轴编辑\"]\n    C2 --> C3[\"模型Transform关键帧\"]\n    C2 --> C4[\"Animator 参数关键帧\"]\n    C2 --> C5[\"摄像机轨道关键帧\"]\n    C3 --> C6[\"位置/旋转/缩放\"]\n    C3 --> C7[\"缓进缓出混合\"]\n    C4 --> C8[\"状态切换触发\"]\n    C5 --> C9[\"摄像机位置/切换\"]\n    C5 --> C10[\"全局Camera轨道\"]\n    C9 --> C11[\"Peep画中画预览\"]\n    C2 --> C12[\"事件累积计算\"]\n    C12 --> C13[\"实时预览角色姿势\"]\n    C12 --> C14[\"实时预览摄像机视角\"]\n    C13 --> C15[\"输出视频帧渲染\"]\n    C14 --> C15"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T21:31:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# tinyAnimationEngine 知识图谱\n\n## Engine Overview\n```mermaid\nflowchart TD\n    A1[\"tinyAnimationEngine\"] --> A2[\"模型导入模块\"]\n    A1 --> A3[\"Animator Controller\"]\n    A1 --> A4[\"Sequencer\"]\n    A1 --> A5[\"Transform关键帧\"]\n    A1 --> A6[\"摄像机系统\"]\n    A1 --> A7[\"序列化保存/加载\"]\n    A1 --> A8[\"MCP AI Agent 接口\"]\n    A2 --> A9[\"FBX文件解析\"]\n    A2 --> A10[\"模型/动画判别\"]\n    A3 --> A11[\"动画状态机\"]\n    A3 --> A12[\"状态切换规则\"]\n    A3 --> A13[\"参数触发器\"]\n    A4 --> A14[\"统一时间轴\"]\n    A4 --> A15[\"模型运动编排\"]\n    A4 --> A16[\"角色动画驱动\"]\n    A4 --> A17[\"摄像机轨道控制\"]\n    A5 --> A18[\"位置/旋转/缩放关键帧\"]\n    A5 --> A19[\"缓进缓出混合模式\"]\n    A6 --> A20[\"多摄像机实体\"]\n    A6 --> A21[\"Peep画中画预览\"]\n    A6 --> A22[\"全局Camera轨道\"]\n    A7 --> A23[\"场景序列序列化\"]\n    A7 --> A24[\"动画控制器序列化\"]\n    A8 --> A25[\"读取场景信息\"]\n    A8 --> A26[\"查询资产\"]\n    A8 --> A27[\"捕获渲染画面\"]\n```\n\n## Animation Import & Mapping Workflow\n```mermaid\nflowchart LR\n    B1[\"用户拖入FBX文件\"] --> B2[\"系统解析文件\"]\n    B2 --> B3[\"判别模型数据\"]\n    B2 --> B4[\"判别动画数据\"]\n    B3 --> B5[\"模型加载至场景\"]\n    B4 --> B6[\"若无模型: 选择已有角色\"]\n    B6 --> B7[\"骨骼映射: 动画重定向\"]\n    B5 --> B8[\"模型可视化调整: 位置/旋转/缩放\"]\n    B7 --> B8\n    B8 --> B9[\"创建 Animator Controller\"]\n    B9 --> B10[\"配置动画状态机: 状态+片段\"]\n    B10 --> B11[\"设置过渡规则 + 参数触发\"]\n    B11 --> B12[\"在Sequencer时间轴上驱动\"]\n```\n\n## Sequencer 功能细分\n```mermaid\nflowchart TD\n    C1[\"Sequencer UI\"] --> C2[\"时间轴编辑\"]\n    C2 --> C3[\"模型Transform关键帧\"]\n    C2 --> C4[\"Animator 参数关键帧\"]\n    C2 --> C5[\"摄像机轨道关键帧\"]\n    C3 --> C6[\"位置/旋转/缩放\"]\n    C3 --> C7[\"缓进缓出混合\"]\n    C4 --> C8[\"状态切换触发\"]\n    C5 --> C9[\"摄像机位置/切换\"]\n    C5 --> C10[\"全局Camera轨道\"]\n    C9 --> C11[\"Peep画中画预览\"]\n    C2 --> C12[\"事件累积计算\"]\n    C12 --> C13[\"实时预览角色姿势\"]\n    C12 --> C14[\"实时预览摄像机视角\"]\n    C13 --> C15[\"输出视频帧渲染\"]\n    C14 --> C15\n```",
+  "diagrams": [
+    {
+      "title": "Engine Overview",
+      "code": "flowchart TD\n    A1[\"tinyAnimationEngine\"] --> A2[\"模型导入模块\"]\n    A1 --> A3[\"Animator Controller\"]\n    A1 --> A4[\"Sequencer\"]\n    A1 --> A5[\"Transform关键帧\"]\n    A1 --> A6[\"摄像机系统\"]\n    A1 --> A7[\"序列化保存/加载\"]\n    A1 --> A8[\"MCP AI Agent 接口\"]\n    A2 --> A9[\"FBX文件解析\"]\n    A2 --> A10[\"模型/动画判别\"]\n    A3 --> A11[\"动画状态机\"]\n    A3 --> A12[\"状态切换规则\"]\n    A3 --> A13[\"参数触发器\"]\n    A4 --> A14[\"统一时间轴\"]\n    A4 --> A15[\"模型运动编排\"]\n    A4 --> A16[\"角色动画驱动\"]\n    A4 --> A17[\"摄像机轨道控制\"]\n    A5 --> A18[\"位置/旋转/缩放关键帧\"]\n    A5 --> A19[\"缓进缓出混合模式\"]\n    A6 --> A20[\"多摄像机实体\"]\n    A6 --> A21[\"Peep画中画预览\"]\n    A6 --> A22[\"全局Camera轨道\"]\n    A7 --> A23[\"场景序列序列化\"]\n    A7 --> A24[\"动画控制器序列化\"]\n    A8 --> A25[\"读取场景信息\"]\n    A8 --> A26[\"查询资产\"]\n    A8 --> A27[\"捕获渲染画面\"]"
+    },
+    {
+      "title": "Animation Import & Mapping Workflow",
+      "code": "flowchart LR\n    B1[\"用户拖入FBX文件\"] --> B2[\"系统解析文件\"]\n    B2 --> B3[\"判别模型数据\"]\n    B2 --> B4[\"判别动画数据\"]\n    B3 --> B5[\"模型加载至场景\"]\n    B4 --> B6[\"若无模型: 选择已有角色\"]\n    B6 --> B7[\"骨骼映射: 动画重定向\"]\n    B5 --> B8[\"模型可视化调整: 位置/旋转/缩放\"]\n    B7 --> B8\n    B8 --> B9[\"创建 Animator Controller\"]\n    B9 --> B10[\"配置动画状态机: 状态+片段\"]\n    B10 --> B11[\"设置过渡规则 + 参数触发\"]\n    B11 --> B12[\"在Sequencer时间轴上驱动\"]"
+    },
+    {
+      "title": "Sequencer 功能细分",
+      "code": "flowchart TD\n    C1[\"Sequencer UI\"] --> C2[\"时间轴编辑\"]\n    C2 --> C3[\"模型Transform关键帧\"]\n    C2 --> C4[\"Animator 参数关键帧\"]\n    C2 --> C5[\"摄像机轨道关键帧\"]\n    C3 --> C6[\"位置/旋转/缩放\"]\n    C3 --> C7[\"缓进缓出混合\"]\n    C4 --> C8[\"状态切换触发\"]\n    C5 --> C9[\"摄像机位置/切换\"]\n    C5 --> C10[\"全局Camera轨道\"]\n    C9 --> C11[\"Peep画中画预览\"]\n    C2 --> C12[\"事件累积计算\"]\n    C12 --> C13[\"实时预览角色姿势\"]\n    C12 --> C14[\"实时预览摄像机视角\"]\n    C13 --> C15[\"输出视频帧渲染\"]\n    C14 --> C15"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:31:05+00:00"
+}

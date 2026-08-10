@@ -1,0 +1,74 @@
+{
+  "bvid": "BV14N3M6wE7F",
+  "title": "UE5 第一人称射击游戏 (FPS)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2175,
+  "text": "大家好\n欢迎来到我的YOUTUBE教程系列\n我将带您完成从第三人称角色\n创建第一人称射击游戏的过程\n如果您是MMO或游戏的粉丝\n请不要忘记将我的游戏列入愿望清单\n提出您的论坛留下来\n您的超级对我来说意义重大\n在本教程系列中\n我将演示如何使用虚幻引擎五\n开发更高级的第一人称射击游戏\n选择将从基本设置开始\n因此在开放的mp3版本上\n打开虚幻引擎五模版地图\n在我们深入教程之前\n请确保您已订阅我的频道\n并点击通知小玲\n这样您就不会错过任何未来的剧集\n我将介绍许多令人兴奋的方面\n包括剧学关卡设计\nI enemy\n还有更多好了\n我们开始第一集吧\n基本设置\n如果您是虚幻引擎五的新手或一般开发人员\n请不要担心\n我会为你创造路上的每一步\n首先找到第三人称角色蓝图\n内容提供商\n这个蓝图是由模板提供的\n作品是起点\n我们要做的第一件事就是修复相机钓竿组件\n以免玩家弄乱\n这一步将是与播放器无缝连接\n现在相机池已经解决了玩家网格问题\n我们需要最简单的副插座\n我更喜欢使用颈部\n而不是头部作为副套接字\n对于相机\n这是给你挑选一些动画\n因为很多头部运动使用颈部作为副套接字\n提供的功能可能会导致相机体验作弊\n相机移动更流畅\n感觉更自然\n设定长度目标零\n就像这样\n请记住\n始终保存\n然后选择跟随相机\n找到未选中的使用手掌控制旋转属性\n在此选项中\n其右由摄像头翱翔静态图像旋转\n网络控制\n让我们以第一人称视角环顾四周\n让我们添加一点点位置\n这样看起来会好一点\n接下来我们将启用使用控制旋转爪哇\n此选项\n允许我们的角色根据控件的输入进行旋转\n从而为我们提供充分的控制字符方向\n接下来从虚幻引擎市场下载一些资源嗯\n我将留下描述的链接\n所以ANIMA是一个入门包和十个金银\n军事武器什么军事武器营包十\n只需将工具导入到您的项目中即可\n现在我们已经将动画包导入到我们的项目中\n现在我们需要将这些动画重新定位到U15\nMono c i n\n您可以继续从该包中删除\n额外的任何不必要的怪物\n在本教程中\n我们不需要这些\n现在选择所有动画\n然后右键单击\n然后选择免费目标动画资源\n并复制我们的免费目标动画资源\n接下来选择合适的COIC缓速器\n本例中是从U14到U15\nmono chin之后\n回答你已选择的呼叫正确的骨骼测量\n您可以从第三人称正确或蓝图中\n验证您使用的是哪一个\n然后做一些前缀\n如果你想要的话\n那是完全可选的\n我会制作FPS\n然后选择要将这些动画导出到的位置\n然后找到并打开您的动画蓝图\n首先前往acro of locomotion\n然后首先前往WALLERKRUN\n在那里您可以通过双击型\n然后按删除来进行功能区\n连接键盘\n然后找到layer apple nd purple节点\n这是非常有用的节点\n一个大测验\n您可以在身体上植入不同的动画\n例如下半身和上半身\n现在先生或者您刚刚导入了项目的空闲动画\n不是那样的\n对\n请注意那个\n啊好吧\n这个而且有这么多的动静\n我认为最好复制动画\n当然这是可选的\n但我喜欢这样做\n因此在三个主要部分上复制动画\n新的\n例如静态的\n请记住LLC项目\n然后设置静态\n删除所有这些框架\n你这里有双按\n现在它是静态的\n稍后我们将添加一些程序动作\n现在打开并做\n与在墙上所做的基本完全相同的事情\n所以选择原来的空闲\n然后做那个层\n当然你可以复制粘贴\n是的是的\n然后连接起来\n接下来您要做的就是指定传输过滤器\n您可以尝试不同的脊柱骨骼\n这就是动画在上半身和下半身分开的地方嗯\n你可以检查一下正确的名字\n记得把P拦截设置为那个\n否则不起作用\n接下来在偶像之洲中做同样的事情\n你可以复制粘贴\n也可以自己写\n你也可以像我一样调整相机位置\n而我之前在g member做的一件事\n就是disciple东方旋转互动运动\n修复了叽叽喳喳的旋转\n好的\n让我们上下旋转移动制作\n再次转到您的动画蓝图和union craft\n这里留出一点空间\n现在你已经找到修改或变换\n修改骨骼节点\n并将其连接起来\n现在即用除旋转削之外的所有消\n那个蓝色的插件\n然后设置旋转模式\n已添加到xx事务\n您可以保留该组件空间\n现在您必须定义骨骼\n选择您的第一个骨骼及脊柱骨骼\n然后你可以像这样复制两次\n选择书籍二和书籍三\n现在组成变量\n旋转变量\n你可以这样宣传它\n例如将其命名为rotation\n然后将其连接到所有这三个销钉上\n然后在这里进行活动制作\n并腾出一点空间\n您实际上可以折叠s t e e note\n这是在蓝图上做的非常好的事情\n顶部小鼠外观\n对大多数人来说不是更好\n但当然是看起来\n然后设置该旋转变量\n现在您必须获取该角色\n所以得到这个角色\n然后你必须控制旋转分割它\n并使用那个音调\n首先你有减号\n记得在360这里切换\n然后你将它乘以一\n就像这样\n最后检查它是否大于108\n然后选择flow\n现在不是整数\n而是浮点之类的\n第三连接A和P最后要做的就是除以三\n因为你有大约三个点移动\n这就是为什么要旋转旋转旋转\n你可以折叠这个函数\n进行一些你想要的编辑\n然后你就可以把他变成纯演员\n直到你必须返回为止\n就这样\n然后连接它\n编译并保存返回事件飞船\n并将其挂在旋转器上\n像这样好啦\n本期节目就到此结束吧\n在下一集中\n我们将介绍如何添加武器和左手浸泡器\n是的\n感谢您收听必收听下一个视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14N3M6wE7F",
+  "published_at": "1784968013",
+  "fetched_at": "2026-08-10T03:43:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# UE5 FPS 教程知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    S[\"开始：基本设置\"] --> C[\"相机设置\"]\n    C --> I[\"导入动画包\"]\n    I --> R[\"动画重定向（U14→U15）\"]\n    R --> A[\"设置动画蓝图层\"]\n    A --> Rot[\"添加旋转控制逻辑\"]\n    Rot --> F[\"编译并保存\"]\n    F --> N[\"下一集：添加武器与左手持枪\"]\n```\n- 开始：基本设置 [BV14N3M6wE7F P1 00:57]  \n- 相机设置 [BV14N3M6wE7F P1 01:18]  \n- 导入动画包 [BV14N3M6wE7F P1 02:32]  \n- 动画重定向（U14→U15） [BV14N3M6wE7F P1 03:39]  \n- 设置动画蓝图层 [BV14N3M6wE7F P1 04:18]  \n- 添加旋转控制逻辑 [BV14N3M6wE7F P1 08:14]  \n- 编译并保存 [BV14N3M6wE7F P1 11:52]  \n- 下一集：添加武器与左手持枪 [BV14N3M6wE7F P1 12:04]  \n\n## 相机设置流程\n```mermaid\nflowchart TD\n    FP[\"找到第三人称角色蓝图\"] --> Fix[\"修复相机Boom组件\"]\n    Fix --> Neck[\"使用颈部Socket代替头部\"]\n    Neck --> Follow[\"设置Follow Camera\"]\n    Follow --> CtrlRot[\"启用Use Controller Rotation\"]\n```\n- 找到第三人称角色蓝图 [BV14N3M6wE7F P1 01:07]  \n- 修复相机Boom组件 [BV14N3M6wE7F P1 01:18]  \n- 使用颈部Socket代替头部 [BV14N3M6wE7F P1 01:36]  \n- 设置Follow Camera [BV14N3M6wE7F P1 02:01]  \n- 启用Use Controller Rotation [BV14N3M6wE7F P1 02:25]  \n\n## 动画导入与重定向\n```mermaid\nflowchart TD\n    DL[\"下载 ANIMA 动画包\"] --> Imp[\"导入项目\"]\n    Imp --> Ret[\"从 U14 重定向到 U15\"]\n    Ret --> Copy[\"复制动画到 FPS 目录\"]\n    Copy --> Layers[\"在动画蓝图中创建上/下半身层\"]\n```\n- 下载 ANIMA 动画包 [BV14N3M6wE7F P1 02:32]  \n- 导入项目 [BV14N3M6wE7F P1 02:57]  \n- 从 U14 重定向到 U15 [BV14N3M6wE7F P1 03:39]  \n- 复制动画到 FPS 目录 [BV14N3M6wE7F P1 04:02]  \n- 在动画蓝图中创建上/下半身层 [BV14N3M6wE7F P1 04:44]  \n\n## 角色旋转控制逻辑\n```mermaid\nflowchart TD\n    Var[\"创建 Rotation 变量\"] --> Spine[\"选择脊柱骨骼\"]\n    Spine --> Input[\"根据输入计算旋转值\"]\n    Input --> Clamp[\"Clamp 大于 108°\"]\n    Clamp --> Div[\"除以 3（平均三点）\"]\n    Div --> Apply[\"将结果应用于角色\"]\n```\n- 创建 Rotation 变量 [BV14N3M6wE7F P1 09:35]  \n- 选择脊柱骨骼 [BV14N3M6wE7F P1 09:14]  \n- 根据输入计算旋转值 [BV14N3M6wE7F P1 10:45]  \n- Clamp 大于 108° [BV14N3M6wE7F P1 10:53]  \n- 除以 3（平均三点） [BV14N3M6wE7F P1 11:13]  \n- 将结果应用于角色 [BV14N3M6wE7F P1 11:48]  ",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    S[\"开始：基本设置\"] --> C[\"相机设置\"]\n    C --> I[\"导入动画包\"]\n    I --> R[\"动画重定向（U14→U15）\"]\n    R --> A[\"设置动画蓝图层\"]\n    A --> Rot[\"添加旋转控制逻辑\"]\n    Rot --> F[\"编译并保存\"]\n    F --> N[\"下一集：添加武器与左手持枪\"]"
+        },
+        {
+          "title": "相机设置流程",
+          "code": "flowchart TD\n    FP[\"找到第三人称角色蓝图\"] --> Fix[\"修复相机Boom组件\"]\n    Fix --> Neck[\"使用颈部Socket代替头部\"]\n    Neck --> Follow[\"设置Follow Camera\"]\n    Follow --> CtrlRot[\"启用Use Controller Rotation\"]"
+        },
+        {
+          "title": "动画导入与重定向",
+          "code": "flowchart TD\n    DL[\"下载 ANIMA 动画包\"] --> Imp[\"导入项目\"]\n    Imp --> Ret[\"从 U14 重定向到 U15\"]\n    Ret --> Copy[\"复制动画到 FPS 目录\"]\n    Copy --> Layers[\"在动画蓝图中创建上/下半身层\"]"
+        },
+        {
+          "title": "角色旋转控制逻辑",
+          "code": "flowchart TD\n    Var[\"创建 Rotation 变量\"] --> Spine[\"选择脊柱骨骼\"]\n    Spine --> Input[\"根据输入计算旋转值\"]\n    Input --> Clamp[\"Clamp 大于 108°\"]\n    Clamp --> Div[\"除以 3（平均三点）\"]\n    Div --> Apply[\"将结果应用于角色\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T03:43:53+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# UE5 FPS 教程知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    S[\"开始：基本设置\"] --> C[\"相机设置\"]\n    C --> I[\"导入动画包\"]\n    I --> R[\"动画重定向（U14→U15）\"]\n    R --> A[\"设置动画蓝图层\"]\n    A --> Rot[\"添加旋转控制逻辑\"]\n    Rot --> F[\"编译并保存\"]\n    F --> N[\"下一集：添加武器与左手持枪\"]\n```\n- 开始：基本设置 [BV14N3M6wE7F P1 00:57]  \n- 相机设置 [BV14N3M6wE7F P1 01:18]  \n- 导入动画包 [BV14N3M6wE7F P1 02:32]  \n- 动画重定向（U14→U15） [BV14N3M6wE7F P1 03:39]  \n- 设置动画蓝图层 [BV14N3M6wE7F P1 04:18]  \n- 添加旋转控制逻辑 [BV14N3M6wE7F P1 08:14]  \n- 编译并保存 [BV14N3M6wE7F P1 11:52]  \n- 下一集：添加武器与左手持枪 [BV14N3M6wE7F P1 12:04]  \n\n## 相机设置流程\n```mermaid\nflowchart TD\n    FP[\"找到第三人称角色蓝图\"] --> Fix[\"修复相机Boom组件\"]\n    Fix --> Neck[\"使用颈部Socket代替头部\"]\n    Neck --> Follow[\"设置Follow Camera\"]\n    Follow --> CtrlRot[\"启用Use Controller Rotation\"]\n```\n- 找到第三人称角色蓝图 [BV14N3M6wE7F P1 01:07]  \n- 修复相机Boom组件 [BV14N3M6wE7F P1 01:18]  \n- 使用颈部Socket代替头部 [BV14N3M6wE7F P1 01:36]  \n- 设置Follow Camera [BV14N3M6wE7F P1 02:01]  \n- 启用Use Controller Rotation [BV14N3M6wE7F P1 02:25]  \n\n## 动画导入与重定向\n```mermaid\nflowchart TD\n    DL[\"下载 ANIMA 动画包\"] --> Imp[\"导入项目\"]\n    Imp --> Ret[\"从 U14 重定向到 U15\"]\n    Ret --> Copy[\"复制动画到 FPS 目录\"]\n    Copy --> Layers[\"在动画蓝图中创建上/下半身层\"]\n```\n- 下载 ANIMA 动画包 [BV14N3M6wE7F P1 02:32]  \n- 导入项目 [BV14N3M6wE7F P1 02:57]  \n- 从 U14 重定向到 U15 [BV14N3M6wE7F P1 03:39]  \n- 复制动画到 FPS 目录 [BV14N3M6wE7F P1 04:02]  \n- 在动画蓝图中创建上/下半身层 [BV14N3M6wE7F P1 04:44]  \n\n## 角色旋转控制逻辑\n```mermaid\nflowchart TD\n    Var[\"创建 Rotation 变量\"] --> Spine[\"选择脊柱骨骼\"]\n    Spine --> Input[\"根据输入计算旋转值\"]\n    Input --> Clamp[\"Clamp 大于 108°\"]\n    Clamp --> Div[\"除以 3（平均三点）\"]\n    Div --> Apply[\"将结果应用于角色\"]\n```\n- 创建 Rotation 变量 [BV14N3M6wE7F P1 09:35]  \n- 选择脊柱骨骼 [BV14N3M6wE7F P1 09:14]  \n- 根据输入计算旋转值 [BV14N3M6wE7F P1 10:45]  \n- Clamp 大于 108° [BV14N3M6wE7F P1 10:53]  \n- 除以 3（平均三点） [BV14N3M6wE7F P1 11:13]  \n- 将结果应用于角色 [BV14N3M6wE7F P1 11:48]  ",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    S[\"开始：基本设置\"] --> C[\"相机设置\"]\n    C --> I[\"导入动画包\"]\n    I --> R[\"动画重定向（U14→U15）\"]\n    R --> A[\"设置动画蓝图层\"]\n    A --> Rot[\"添加旋转控制逻辑\"]\n    Rot --> F[\"编译并保存\"]\n    F --> N[\"下一集：添加武器与左手持枪\"]"
+    },
+    {
+      "title": "相机设置流程",
+      "code": "flowchart TD\n    FP[\"找到第三人称角色蓝图\"] --> Fix[\"修复相机Boom组件\"]\n    Fix --> Neck[\"使用颈部Socket代替头部\"]\n    Neck --> Follow[\"设置Follow Camera\"]\n    Follow --> CtrlRot[\"启用Use Controller Rotation\"]"
+    },
+    {
+      "title": "动画导入与重定向",
+      "code": "flowchart TD\n    DL[\"下载 ANIMA 动画包\"] --> Imp[\"导入项目\"]\n    Imp --> Ret[\"从 U14 重定向到 U15\"]\n    Ret --> Copy[\"复制动画到 FPS 目录\"]\n    Copy --> Layers[\"在动画蓝图中创建上/下半身层\"]"
+    },
+    {
+      "title": "角色旋转控制逻辑",
+      "code": "flowchart TD\n    Var[\"创建 Rotation 变量\"] --> Spine[\"选择脊柱骨骼\"]\n    Spine --> Input[\"根据输入计算旋转值\"]\n    Input --> Clamp[\"Clamp 大于 108°\"]\n    Clamp --> Div[\"除以 3（平均三点）\"]\n    Div --> Apply[\"将结果应用于角色\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T03:43:53+00:00"
+}

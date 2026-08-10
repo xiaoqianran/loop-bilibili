@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1qkM36QEkG",
+  "title": "一键采集公众号文章，deepseek二创！一键复制！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 180,
+  "text": "做公众号最头疼的就是转载文章复制过来\n格式全乱\n图片要重新传\n排版要重做一篇\n至少折腾半小时\n后来发现了这个采集器\n彻底解放双手\n粘贴文章链接\n一键采集标题封面\n正文图片全部保留原格式\n一键复制\n直接粘贴到公众号编辑器\n内置AI润色改写\n支持逐段优化\n需自备deep sick导出HTML批量下载图片\n从此告别手动排版\n十秒搞定一篇文章进群免费发主页\n有群入口",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qkM36QEkG",
+  "published_at": "1783499808",
+  "fetched_at": "2026-08-08T18:21:42+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 公众号文章一键采集与AI润色流程图谱\n\n## 总览\n```mermaid\nflowchart TD\n    P1[\"问题：转载文章复制\"] --> PP1[\"痛点：格式乱、图片需重新上传、排版需重做\"]\n    PP1 --> TC1[\"耗时：至少半小时\"]\n    TC1 --> S1[\"解决方案：采集器\"]\n    S1 --> ST1[\"步骤：粘贴文章链接\"]\n    ST1 --> ST2[\"一键采集标题与封面\"]\n    ST2 --> ST3[\"正文图片保留原格式\"]\n    ST3 --> ST4[\"一键复制\"]\n    ST4 --> ST5[\"粘贴到公众号编辑器\"]\n    ST5 --> AI1[\"内置AI润色改写\"]\n    AI1 --> OPT1[\"支持逐段优化\"]\n    OPT1 --> REQ1[\"需自备deep sick导出HTML并批量下载图片\"]\n    REQ1 --> RES1[\"结果：告别手动排版，十秒搞定，免费发主页，提供群入口\"]\n```\n- 问题（转载文章复制）[BV1qkM36QEkG P1 00:00]  \n- 痛点（格式全乱）[BV1qkM36QEkG P1 00:03]  \n- 痛点（图片要重新传）[BV1qkM36QEkG P1 00:04]  \n- 痛点（排版要重做）[BV1qkM36QEkG P1 00:05]  \n- 耗时（至少折腾半小时）[BV1qkM36QEkG P1 00:07]  \n- 解决方案（采集器）[BV1qkM36QEkG P1 00:08]  \n- 步骤（粘贴文章链接）[BV1qkM36QEkG P1 00:11]  \n- 步骤（一键采集标题封面）[BV1qkM36QEkG P1 00:13]  \n- 步骤（正文图片全部保留原格式）[BV1qkM36QEkG P1 00:15]  \n- 步骤（一键复制）[BV1qkM36QEkG P1 00:18]  \n- 步骤（直接粘贴到公众号编辑器）[BV1qkM36QEkG P1 00:19]  \n- 功能（内置AI润色改写）[BV1qkM36QEkG P1 00:21]  \n- 功能（支持逐段优化）[BV1qkM36QEkG P1 00:22]  \n- 需求（需自备deep sick导出HTML批量下载图片）[BV1qkM36QEkG P1 00:24]  \n- 结果（告别手动排版）[BV1qkM36QEkG P1 00:28]  \n- 结果（十秒搞定一篇文章）[BV1qkM36QEkG P1 00:30]  \n- 结果（有群入口）[BV1qkM36QEkG P1 00:33]  \n\n## 详细采集与发布流程\n```mermaid\nflowchart LR\n    A[\"粘贴文章链接\"] --> B[\"一键采集标题与封面\"]\n    B --> C[\"保留正文图片原格式\"]\n    C --> D[\"一键复制内容\"]\n    D --> E[\"粘贴到公众号编辑器\"]\n    E --> F[\"（可选）AI润色改写\"]\n    F --> G[\"逐段优化\"]\n    G --> H[\"发布至公众号\"]\n```\n- 粘贴文章链接[BV1qkM36QEkG P1 00:11]  \n- 一键采集标题与封面[BV1qkM36QEkG P1 00:13]  \n- 保留正文图片原格式[BV1qkM36QEkG P1 00:15]  \n- 一键复制内容[BV1qkM36QEkG P1 00:18]  \n- 粘贴到公众号编辑器[BV1qkM36QEkG P1 00:19]  \n- AI润色改写[BV1qkM36QEkG P1 00:21]  \n- 逐段优化[BV1qkM36QEkG P1 00:22]  \n\n## 需求与依赖\n```mermaid\nflowchart TD\n    R1[\"采集器工具\"] --> R2[\"用户提供deep sick\"]\n    R2 --> R3[\"导出HTML\"]\n    R3 --> R4[\"批量下载图片\"]\n    R4 --> R5[\"完整采集与复制功能\"]\n```\n- 采集器工具（内置AI）[BV1qkM36QEkG P1 00:08]  \n- deep sick（需自备）[BV1qkM36QEkG P1 00:24]  \n- 导出HTML[BV1qkM36QEkG P1 00:24]  \n- 批量下载图片[BV1qkM36QEkG P1 00:24]  \n\n## 主要收益\n```mermaid\nflowchart LR\n    B1[\"节省时间\"] --> B2[\"无需手动排版\"]\n    B2 --> B3[\"图片保持原格式\"]\n    B3 --> B4[\"十秒完成文章\"]\n    B4 --> B5[\"可直接进群免费发布主页\"]\n    B5 --> B6[\"提供群入口\"]\n```\n- 节省时间（至少半小时→十秒）[BV1qkM36QEkG P1 00:07, 00:30]  \n- 告别手动排版[BV1qkM36QEkG P1 00:28]  \n- 图片保持原格式[BV1qkM36QEkG P1 00:15]  \n- 十秒搞定一篇文章[BV1qkM36QEkG P1 00:30]  \n- 进群免费发布主页[BV1qkM36QEkG P1 00:30]  \n- 有群入口[BV1qkM36QEkG P1 00:33]  ",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    P1[\"问题：转载文章复制\"] --> PP1[\"痛点：格式乱、图片需重新上传、排版需重做\"]\n    PP1 --> TC1[\"耗时：至少半小时\"]\n    TC1 --> S1[\"解决方案：采集器\"]\n    S1 --> ST1[\"步骤：粘贴文章链接\"]\n    ST1 --> ST2[\"一键采集标题与封面\"]\n    ST2 --> ST3[\"正文图片保留原格式\"]\n    ST3 --> ST4[\"一键复制\"]\n    ST4 --> ST5[\"粘贴到公众号编辑器\"]\n    ST5 --> AI1[\"内置AI润色改写\"]\n    AI1 --> OPT1[\"支持逐段优化\"]\n    OPT1 --> REQ1[\"需自备deep sick导出HTML并批量下载图片\"]\n    REQ1 --> RES1[\"结果：告别手动排版，十秒搞定，免费发主页，提供群入口\"]"
+        },
+        {
+          "title": "详细采集与发布流程",
+          "code": "flowchart LR\n    A[\"粘贴文章链接\"] --> B[\"一键采集标题与封面\"]\n    B --> C[\"保留正文图片原格式\"]\n    C --> D[\"一键复制内容\"]\n    D --> E[\"粘贴到公众号编辑器\"]\n    E --> F[\"（可选）AI润色改写\"]\n    F --> G[\"逐段优化\"]\n    G --> H[\"发布至公众号\"]"
+        },
+        {
+          "title": "需求与依赖",
+          "code": "flowchart TD\n    R1[\"采集器工具\"] --> R2[\"用户提供deep sick\"]\n    R2 --> R3[\"导出HTML\"]\n    R3 --> R4[\"批量下载图片\"]\n    R4 --> R5[\"完整采集与复制功能\"]"
+        },
+        {
+          "title": "主要收益",
+          "code": "flowchart LR\n    B1[\"节省时间\"] --> B2[\"无需手动排版\"]\n    B2 --> B3[\"图片保持原格式\"]\n    B3 --> B4[\"十秒完成文章\"]\n    B4 --> B5[\"可直接进群免费发布主页\"]\n    B5 --> B6[\"提供群入口\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T18:22:29+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 公众号文章一键采集与AI润色流程图谱\n\n## 总览\n```mermaid\nflowchart TD\n    P1[\"问题：转载文章复制\"] --> PP1[\"痛点：格式乱、图片需重新上传、排版需重做\"]\n    PP1 --> TC1[\"耗时：至少半小时\"]\n    TC1 --> S1[\"解决方案：采集器\"]\n    S1 --> ST1[\"步骤：粘贴文章链接\"]\n    ST1 --> ST2[\"一键采集标题与封面\"]\n    ST2 --> ST3[\"正文图片保留原格式\"]\n    ST3 --> ST4[\"一键复制\"]\n    ST4 --> ST5[\"粘贴到公众号编辑器\"]\n    ST5 --> AI1[\"内置AI润色改写\"]\n    AI1 --> OPT1[\"支持逐段优化\"]\n    OPT1 --> REQ1[\"需自备deep sick导出HTML并批量下载图片\"]\n    REQ1 --> RES1[\"结果：告别手动排版，十秒搞定，免费发主页，提供群入口\"]\n```\n- 问题（转载文章复制）[BV1qkM36QEkG P1 00:00]  \n- 痛点（格式全乱）[BV1qkM36QEkG P1 00:03]  \n- 痛点（图片要重新传）[BV1qkM36QEkG P1 00:04]  \n- 痛点（排版要重做）[BV1qkM36QEkG P1 00:05]  \n- 耗时（至少折腾半小时）[BV1qkM36QEkG P1 00:07]  \n- 解决方案（采集器）[BV1qkM36QEkG P1 00:08]  \n- 步骤（粘贴文章链接）[BV1qkM36QEkG P1 00:11]  \n- 步骤（一键采集标题封面）[BV1qkM36QEkG P1 00:13]  \n- 步骤（正文图片全部保留原格式）[BV1qkM36QEkG P1 00:15]  \n- 步骤（一键复制）[BV1qkM36QEkG P1 00:18]  \n- 步骤（直接粘贴到公众号编辑器）[BV1qkM36QEkG P1 00:19]  \n- 功能（内置AI润色改写）[BV1qkM36QEkG P1 00:21]  \n- 功能（支持逐段优化）[BV1qkM36QEkG P1 00:22]  \n- 需求（需自备deep sick导出HTML批量下载图片）[BV1qkM36QEkG P1 00:24]  \n- 结果（告别手动排版）[BV1qkM36QEkG P1 00:28]  \n- 结果（十秒搞定一篇文章）[BV1qkM36QEkG P1 00:30]  \n- 结果（有群入口）[BV1qkM36QEkG P1 00:33]  \n\n## 详细采集与发布流程\n```mermaid\nflowchart LR\n    A[\"粘贴文章链接\"] --> B[\"一键采集标题与封面\"]\n    B --> C[\"保留正文图片原格式\"]\n    C --> D[\"一键复制内容\"]\n    D --> E[\"粘贴到公众号编辑器\"]\n    E --> F[\"（可选）AI润色改写\"]\n    F --> G[\"逐段优化\"]\n    G --> H[\"发布至公众号\"]\n```\n- 粘贴文章链接[BV1qkM36QEkG P1 00:11]  \n- 一键采集标题与封面[BV1qkM36QEkG P1 00:13]  \n- 保留正文图片原格式[BV1qkM36QEkG P1 00:15]  \n- 一键复制内容[BV1qkM36QEkG P1 00:18]  \n- 粘贴到公众号编辑器[BV1qkM36QEkG P1 00:19]  \n- AI润色改写[BV1qkM36QEkG P1 00:21]  \n- 逐段优化[BV1qkM36QEkG P1 00:22]  \n\n## 需求与依赖\n```mermaid\nflowchart TD\n    R1[\"采集器工具\"] --> R2[\"用户提供deep sick\"]\n    R2 --> R3[\"导出HTML\"]\n    R3 --> R4[\"批量下载图片\"]\n    R4 --> R5[\"完整采集与复制功能\"]\n```\n- 采集器工具（内置AI）[BV1qkM36QEkG P1 00:08]  \n- deep sick（需自备）[BV1qkM36QEkG P1 00:24]  \n- 导出HTML[BV1qkM36QEkG P1 00:24]  \n- 批量下载图片[BV1qkM36QEkG P1 00:24]  \n\n## 主要收益\n```mermaid\nflowchart LR\n    B1[\"节省时间\"] --> B2[\"无需手动排版\"]\n    B2 --> B3[\"图片保持原格式\"]\n    B3 --> B4[\"十秒完成文章\"]\n    B4 --> B5[\"可直接进群免费发布主页\"]\n    B5 --> B6[\"提供群入口\"]\n```\n- 节省时间（至少半小时→十秒）[BV1qkM36QEkG P1 00:07, 00:30]  \n- 告别手动排版[BV1qkM36QEkG P1 00:28]  \n- 图片保持原格式[BV1qkM36QEkG P1 00:15]  \n- 十秒搞定一篇文章[BV1qkM36QEkG P1 00:30]  \n- 进群免费发布主页[BV1qkM36QEkG P1 00:30]  \n- 有群入口[BV1qkM36QEkG P1 00:33]  ",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    P1[\"问题：转载文章复制\"] --> PP1[\"痛点：格式乱、图片需重新上传、排版需重做\"]\n    PP1 --> TC1[\"耗时：至少半小时\"]\n    TC1 --> S1[\"解决方案：采集器\"]\n    S1 --> ST1[\"步骤：粘贴文章链接\"]\n    ST1 --> ST2[\"一键采集标题与封面\"]\n    ST2 --> ST3[\"正文图片保留原格式\"]\n    ST3 --> ST4[\"一键复制\"]\n    ST4 --> ST5[\"粘贴到公众号编辑器\"]\n    ST5 --> AI1[\"内置AI润色改写\"]\n    AI1 --> OPT1[\"支持逐段优化\"]\n    OPT1 --> REQ1[\"需自备deep sick导出HTML并批量下载图片\"]\n    REQ1 --> RES1[\"结果：告别手动排版，十秒搞定，免费发主页，提供群入口\"]"
+    },
+    {
+      "title": "详细采集与发布流程",
+      "code": "flowchart LR\n    A[\"粘贴文章链接\"] --> B[\"一键采集标题与封面\"]\n    B --> C[\"保留正文图片原格式\"]\n    C --> D[\"一键复制内容\"]\n    D --> E[\"粘贴到公众号编辑器\"]\n    E --> F[\"（可选）AI润色改写\"]\n    F --> G[\"逐段优化\"]\n    G --> H[\"发布至公众号\"]"
+    },
+    {
+      "title": "需求与依赖",
+      "code": "flowchart TD\n    R1[\"采集器工具\"] --> R2[\"用户提供deep sick\"]\n    R2 --> R3[\"导出HTML\"]\n    R3 --> R4[\"批量下载图片\"]\n    R4 --> R5[\"完整采集与复制功能\"]"
+    },
+    {
+      "title": "主要收益",
+      "code": "flowchart LR\n    B1[\"节省时间\"] --> B2[\"无需手动排版\"]\n    B2 --> B3[\"图片保持原格式\"]\n    B3 --> B4[\"十秒完成文章\"]\n    B4 --> B5[\"可直接进群免费发布主页\"]\n    B5 --> B6[\"提供群入口\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T18:22:29+00:00"
+}

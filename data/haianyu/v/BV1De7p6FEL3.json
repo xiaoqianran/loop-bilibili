@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1De7p6FEL3",
+  "title": "154. 为什么投机解码确保每轮至少产出一个 token？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 865,
+  "text": "今天的问题是\n为什么投机解码确保每轮至少产出一个头肯\n结论先行\n就算首个草稿token被彻底拒绝\n导致后续草稿全部作废\n大模型也能利用已经算好的分布\n当场通过拒绝采样机制重新采样出一个token\n这就确保了每轮必然会推进\n不会因为草稿模型太弱而卡死\n我们回顾一下投机解码里小模型串行打草稿\n相当于传统的decode\n大模型并行的验证\n相当于增量的pref\n假设用户发来一段提示词\n海安语\n首先大模型和小模型都要做PREFLE\n生成kv cash\n因为后面的计算肯定要用到\n然后首个token是由大模型直接采样得到的\n这一步不需要小模型去猜\n如果还要猜的话\n就得多验证一步\n多此一举\n小模型拿到大模型生成的这个首token\n去做串行的decode\n这里可以有一个小优化\n就是如果大模型先PREFU\n小模型再pref\n这个时候可以把大模型的这个手token拼上\n之前的海安语\n这四个token一起放在小模型里面做pref\n这样就可以省掉前面这一小条\n这是个很小的优化\n之前没化是因为它优化的幅度比较小好\n然后假设小模型最后得到了概率预测\n他针对这个首token\n给出了下一个token的概率预测是艺名\n再针对艺名给出了下一个词的概率预测\n是B站大模型\n拿着这个手token是他自己采样出来的\n以及两个草稿token\n就是一名和B站去做并行的增量PREFU验证\n这样就同时得到了三个概率预测\n分别对应着三个位置\n前面两个用来校验\n如果都通过了的话\n这里还能多出一个奖励的token\n那么问题来了\n最坏的情况是什么呢\n就是小模型预测的第一个草稿token\n也就是艺名当场就被拒绝了\n有没有问题呢\n其实问题不大\n因为大模型当场就触发了拒绝采样的\n重采样机制\n就在这里重新采样一下就可以了\n具体来说重采样怎么采呢\n就是在修正后的分布上重新采样\n偏向小模型低估的那些token\n作为这一步真实的输出\n采样出另一个符合大模型分布的token\n不管小模型有多弱\n大模型验证第一步的时候\n总能配合重采样机制\n确保产出一个绝对符合大模型水平的token",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1De7p6FEL3",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:06+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1YCTY6qEMZ",
+  "title": "160. 如何对注意力头剪枝？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 828,
+  "text": "今天的问题是如何对注意力头减脂\n就以HuggingFace的实现为例\n假设原来有四个头\n我们减掉两个头\n还剩下两个头\n在这种情况下\n我们来分析一下整个纬度的变化\n理解的关键在于\n对于WQWK\nWV和WO这四个投影矩阵都需要砍掉一半\n对于标准的transformer w q w k w v\n还有WO原本都是d model乘以d model的方阵\n但现在我们需要对它们进行裁剪\n对于wq wk wv在做矩阵乘法时\n我们需要保留左半部分\n也就是把它们的右半部分砍掉\n而对于WO在做矩阵乘法时\n我们需要保留上半部分\n也就是把它的下半部分砍掉\n具体来看\n在没有减之前\n整个QKV的维度和d model是一样宽的\n因为有四个头\n所以d model是单头维度DK的四倍\n但现在我们提前进行了减脂\n所以它们整体的宽度就只剩下二分之d model了\n也就是说矩阵变窄了\n图中虚线框出来的这一部分就是被剪掉的\n两个头对应的通道\n在计算时依然是个头独立计算\n比如第一个Q头和第一个K头的转置\n进行矩阵乘法\n算出第一个注意力矩阵A\n再与第一个V头进行矩阵乘法\n得到第一个输出\nO这里要注意头本身的维度\nDK是完全没有改变的\n我们只是减少了投的总个数\n接着我们把各个头计算出的输出拼回来\n得到O撇\n这时候之前默默无闻的W矩阵就派上大用场了\n现在的O撇只有两个头的宽度\n但我们通过乘以裁剪后的woo\n它的形状是二分之d model乘以d model相乘之后\n就能把特征维度还原回原本的DEMODEL\n这样就保证了每一层的输入和输出维度一致\n特征维度不会在层与层之间变得越来越短\n最后我们要明确注意力\n头减脂和MQA这两个概念的区别\n在MQA也就是多查询注意力中\nQ的头个数是保持不变的\n仅仅把K和V的头砍到剩下一个\n而对于注意力头减脂\n我们是一视同仁的\nQKV的头都会被同步砍掉\n总结一下注意力\n头减脂不仅需要同步裁剪QKV\n还要利用好W矩阵来重新投影恢复特征维度\n避免特征越变越窄",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YCTY6qEMZ",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

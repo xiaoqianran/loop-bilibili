@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1nZAozDEw2",
+  "title": "仅483MB，千问Qwen3.5的0.8B小模型真的有用吗？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 738,
+  "text": "喂啊千万的新的小模型下好了啊\n千万3点五啊\n0.8B2B4B9B嗯\n先更新拉马CPP\n然后更\n然后编译啊\ngap啊\n按按上次已经说过的\n怎么编译的啊\n好出去吃个饭回来\n编译完了啊\n联系完了以后啊\n把这个兵把这些文件啊复制\n啊旧的这些呢就先做备份\n旧的先做备份\n啊新的编译好就直接复制过去\n好\n啊就可以开始\n好啦啊呃这几个版本的速度测下来了啊\n这零点RBQ4啊\n137啊\ntoken每秒有时候138\n有时候136啊的描述打标应该是可以的\n虽然说也只有0.8B啊\n再次\n2B2B的速度瞬间只剩下60多克每秒了\nQ 4km\n嗯这四壁只剩下34\n图个每秒啊\n都可以达标啊\n对\n这九币就只剩下28托克每秒了\n速度就跟那个35BA3B差不多了\n运行一下这个最小的这个\n现在应该录屏应该会慢一点\n0.8倍啊\n它有个问题\n他不会停\n他会不停的跑\n不停的跑啊\n陷入死循环了\n怎么办呢\n应该可以吧\n看一下能不能解决啊\n啊啊就这样就不会一直重复了啊\n之前单你看单位一直重复\n可以死循环啊\n这里死循环加这个参数就可以了啊\n啊加这个1.5就可以了\n这样就不会死循环了啊\n加这个参数以后的速度明显变慢了啊\n只有100多个每秒了\n你你来就是嗯提示词工程学好一点啊\n这样他就可以分可以达标了一个啊\n啊最主要是这个命令就可以了\n还有这个全部加载到显存上面就更快啊\n110token可以接受啊\n这个速度可以接受\n就是0.8BQ4就够了就可以了啊\n就可以达标了\n用来AI跑图啊\n那些反推提示词够用啦\n可以啦\n速度很快\n所以接下来就看怎么做成那种VUI\n或者介入康复I\n然后批量达标啊\n低成本批量达标\n他这个模型只有500兆瓦\n他这个模型只有500兆\n应该手机都可以吧\n呃放到路由器里面也可以\n应该可以\n嗯好就这样了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1nZAozDEw2",
+  "published_at": "1772531627",
+  "fetched_at": "2026-08-09T23:23:36+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 千问 Qwen3.5 0.8B 小模型实战知识图谱\n\n## 编译与部署流程\n```mermaid\nflowchart TD\n    A[\"下载 0.8B 小模型\"] --> B[\"更新 LLaMA‑CPP\"]\n    B --> C[\"编译模型\"]\n    C --> D[\"备份旧文件\"]\n    D --> E[\"复制新编译文件\"]\n    E --> F[\"准备测试\"]\n```\n关键步骤时间戳：下载模型 [BV1nZAozDEw2 P1 00:00]，更新 LLaMA‑CPP [BV1nZAozDEw2 P1 00:09]，编译完成 [BV1nZAozDEw2 P1 00:14]，备份旧文件 [BV1nZAozDEw2 P1 00:42]，复制新文件 [BV1nZAozDEw2 P1 01:06]，进入测试阶段 [BV1nZAozDEw2 P1 01:08]\n\n## 性能指标与对比\n```mermaid\nflowchart LR\n    A[\"0.8B 模型原始速度 136‑138 token/s\"] --> B[\"2B 模型速度约 60 token/s\"]\n    A --> C[\"0.8B 模型在低负载下约 34‑35 token/s\"]\n    D[\"添加参数 1.5 后速度 ~100 token/s\"] --> E[\"可接受阈值 110 token/s\"]\n    C --> D\n```\n关键指标时间戳：0.8B 原始速度 [BV1nZAozDEw2 P1 01:17]，2B 速度下降 [BV1nZAozDEw2 P1 01:46]，低负载 34‑35 token/s [BV1nZAozDEw2 P1 02:03]，参数调优后 100 token/s [BV1nZAozDEw2 P1 04:22]，可接受阈值 110 token/s [BV1nZAozDEw2 P1 05:00]\n\n## 无限循环问题与解决方案\n```mermaid\nflowchart TD\n    A[\"模型出现无限循环\"] --> B[\"原因：缺少限制参数\"]\n    B --> C[\"加入参数 1.5\"]\n    C --> D[\"循环停止\"]\n    C --> E[\"速度下降至约 100 token/s\"]\n```\n问题与修复时间戳：无限循环出现 [BV1nZAozDEw2 P1 03:18]，加入参数 1.5 解决 [BV1nZAozDEw2 P1 04:03]，修复后速度变化 [BV1nZAozDEw2 P1 04:22]\n\n## 低成本部署场景\n```mermaid\nflowchart LR\n    A[\"模型体积约 500 MB\"] --> B[\"可在手机运行\"]\n    A --> C[\"可在路由器运行\"]\n    B --> D[\"适用于 VUI 应用\"]\n    C --> D\n    D --> E[\"支持康复交互\"]\n    A --> F[\"实现低成本批量达标\"]\n```\n部署信息时间戳：模型体积 500 MB [BV1nZAozDEw2 P1 05:39]，手机可运行 [BV1nZAozDEw2 P1 05:45]，路由器可运行 [BV1nZAozDEw2 P1 05:49]，低成本批量达标目标 [BV1nZAozDEw2 P1 05:36]，VUI 与康复场景 [BV1nZAozDEw2 P1 05:24]",
+      "diagrams": [
+        {
+          "title": "编译与部署流程",
+          "code": "flowchart TD\n    A[\"下载 0.8B 小模型\"] --> B[\"更新 LLaMA‑CPP\"]\n    B --> C[\"编译模型\"]\n    C --> D[\"备份旧文件\"]\n    D --> E[\"复制新编译文件\"]\n    E --> F[\"准备测试\"]"
+        },
+        {
+          "title": "性能指标与对比",
+          "code": "flowchart LR\n    A[\"0.8B 模型原始速度 136‑138 token/s\"] --> B[\"2B 模型速度约 60 token/s\"]\n    A --> C[\"0.8B 模型在低负载下约 34‑35 token/s\"]\n    D[\"添加参数 1.5 后速度 ~100 token/s\"] --> E[\"可接受阈值 110 token/s\"]\n    C --> D"
+        },
+        {
+          "title": "无限循环问题与解决方案",
+          "code": "flowchart TD\n    A[\"模型出现无限循环\"] --> B[\"原因：缺少限制参数\"]\n    B --> C[\"加入参数 1.5\"]\n    C --> D[\"循环停止\"]\n    C --> E[\"速度下降至约 100 token/s\"]"
+        },
+        {
+          "title": "低成本部署场景",
+          "code": "flowchart LR\n    A[\"模型体积约 500 MB\"] --> B[\"可在手机运行\"]\n    A --> C[\"可在路由器运行\"]\n    B --> D[\"适用于 VUI 应用\"]\n    C --> D\n    D --> E[\"支持康复交互\"]\n    A --> F[\"实现低成本批量达标\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T23:23:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 千问 Qwen3.5 0.8B 小模型实战知识图谱\n\n## 编译与部署流程\n```mermaid\nflowchart TD\n    A[\"下载 0.8B 小模型\"] --> B[\"更新 LLaMA‑CPP\"]\n    B --> C[\"编译模型\"]\n    C --> D[\"备份旧文件\"]\n    D --> E[\"复制新编译文件\"]\n    E --> F[\"准备测试\"]\n```\n关键步骤时间戳：下载模型 [BV1nZAozDEw2 P1 00:00]，更新 LLaMA‑CPP [BV1nZAozDEw2 P1 00:09]，编译完成 [BV1nZAozDEw2 P1 00:14]，备份旧文件 [BV1nZAozDEw2 P1 00:42]，复制新文件 [BV1nZAozDEw2 P1 01:06]，进入测试阶段 [BV1nZAozDEw2 P1 01:08]\n\n## 性能指标与对比\n```mermaid\nflowchart LR\n    A[\"0.8B 模型原始速度 136‑138 token/s\"] --> B[\"2B 模型速度约 60 token/s\"]\n    A --> C[\"0.8B 模型在低负载下约 34‑35 token/s\"]\n    D[\"添加参数 1.5 后速度 ~100 token/s\"] --> E[\"可接受阈值 110 token/s\"]\n    C --> D\n```\n关键指标时间戳：0.8B 原始速度 [BV1nZAozDEw2 P1 01:17]，2B 速度下降 [BV1nZAozDEw2 P1 01:46]，低负载 34‑35 token/s [BV1nZAozDEw2 P1 02:03]，参数调优后 100 token/s [BV1nZAozDEw2 P1 04:22]，可接受阈值 110 token/s [BV1nZAozDEw2 P1 05:00]\n\n## 无限循环问题与解决方案\n```mermaid\nflowchart TD\n    A[\"模型出现无限循环\"] --> B[\"原因：缺少限制参数\"]\n    B --> C[\"加入参数 1.5\"]\n    C --> D[\"循环停止\"]\n    C --> E[\"速度下降至约 100 token/s\"]\n```\n问题与修复时间戳：无限循环出现 [BV1nZAozDEw2 P1 03:18]，加入参数 1.5 解决 [BV1nZAozDEw2 P1 04:03]，修复后速度变化 [BV1nZAozDEw2 P1 04:22]\n\n## 低成本部署场景\n```mermaid\nflowchart LR\n    A[\"模型体积约 500 MB\"] --> B[\"可在手机运行\"]\n    A --> C[\"可在路由器运行\"]\n    B --> D[\"适用于 VUI 应用\"]\n    C --> D\n    D --> E[\"支持康复交互\"]\n    A --> F[\"实现低成本批量达标\"]\n```\n部署信息时间戳：模型体积 500 MB [BV1nZAozDEw2 P1 05:39]，手机可运行 [BV1nZAozDEw2 P1 05:45]，路由器可运行 [BV1nZAozDEw2 P1 05:49]，低成本批量达标目标 [BV1nZAozDEw2 P1 05:36]，VUI 与康复场景 [BV1nZAozDEw2 P1 05:24]",
+  "diagrams": [
+    {
+      "title": "编译与部署流程",
+      "code": "flowchart TD\n    A[\"下载 0.8B 小模型\"] --> B[\"更新 LLaMA‑CPP\"]\n    B --> C[\"编译模型\"]\n    C --> D[\"备份旧文件\"]\n    D --> E[\"复制新编译文件\"]\n    E --> F[\"准备测试\"]"
+    },
+    {
+      "title": "性能指标与对比",
+      "code": "flowchart LR\n    A[\"0.8B 模型原始速度 136‑138 token/s\"] --> B[\"2B 模型速度约 60 token/s\"]\n    A --> C[\"0.8B 模型在低负载下约 34‑35 token/s\"]\n    D[\"添加参数 1.5 后速度 ~100 token/s\"] --> E[\"可接受阈值 110 token/s\"]\n    C --> D"
+    },
+    {
+      "title": "无限循环问题与解决方案",
+      "code": "flowchart TD\n    A[\"模型出现无限循环\"] --> B[\"原因：缺少限制参数\"]\n    B --> C[\"加入参数 1.5\"]\n    C --> D[\"循环停止\"]\n    C --> E[\"速度下降至约 100 token/s\"]"
+    },
+    {
+      "title": "低成本部署场景",
+      "code": "flowchart LR\n    A[\"模型体积约 500 MB\"] --> B[\"可在手机运行\"]\n    A --> C[\"可在路由器运行\"]\n    B --> D[\"适用于 VUI 应用\"]\n    C --> D\n    D --> E[\"支持康复交互\"]\n    A --> F[\"实现低成本批量达标\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T23:23:54+00:00"
+}

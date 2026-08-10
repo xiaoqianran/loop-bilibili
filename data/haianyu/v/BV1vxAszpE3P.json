@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1vxAszpE3P",
+  "title": "[11] 跑robust-kbench测试LLM写算子，附Agent提示词【每周一个宝藏实验】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 944,
+  "text": "本周的实验室大模型能解算怎么的\n第三个实验要测试下这个robust的k bench\n就是测试作者已经生存好的算子\n看看大模型下算子效果如何\n实验环境是auto dio上短租的RTX5090单卡\n参考的就是这个robust的KBENCH\n但是这一次呢只花了一个小时\n为什么呢\n因为这一次使用了KIMI的agent\n就是kimi code\n那么只给他写了一个提示词\n它就自动的帮我把数线全部做完了\n所以呢就直接用一个提示词\n就代替实验所测的步骤了\n那么今后如果比较简单的\n就像这样能跑完的实验\n那就不用再写实验所测的步骤了\n好接下来看一下实验指导手册\n那么这一次呢全基于KIMI\n就没有很细节\n首先就是要去租一个5090\n然后环境的话还是老伙伴\n就是这个就不再赘述\n它是很稳定的\n然后呢要安装一下KIMICLI\n那么就直接在服务器诶\n假设现在已经做好了\n然后呢把它粘贴进去\n然后我试了一下\n就是这一串指令呢是非常稳\n就是20分钟什么都不需要搞\nKIMI就会安装好\n安装好之后呢\n就去登录KIMI\n那么就是我们在这里新建一个控制台\n然后装好之后呢\n是可以直接登录的\n就是直接写一个KIMI\n没有额外的配置\n像这样回车\n这个时候呢那个KIMI就会让我们去输一下log啊\n就可以登录\n然后这里呢可能会有一个问题是\n它经常会让我们去授权他的命令\n但是呢可以直接在这里就是改一下这个KIMI\n然后这里有个configure\n就这个\n然后把这里的这个改成true\n它就再也不会让我们去授权了\n他就拥有权限了\n默认拥有权限\n然后怎么让它把它跑起来呢\n就直接把这个提示器发给他就可以了\n就是你是一个自动化实验助手安装\n现在呢要去跑什么\n要特别要让他注意一下\n就是GITHUB呢需要进行一个学术加速\n那现在实验环境是什么\n然后就说不需要跑太多\n就是跑一个最小化的实线就可以了\n然后呢\n它就会自动的把把我们的这个GITHUB仓库拉下来\n然后就已经开始跑了\n然后这个他就会说哦现在跑完了\n然后呢测出了一个最小化的\n就是这个就是已经测试通过了\n像这样啊\n然后呢会给我们一个呃示例\n然后呢这个视力也是可以跑的\n然后在上面跑一下就可以了\n就像这样\n那可以看到他确实是呃运行了一下\n这个算子的对比\n并且呢测出来了一些加速比",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1vxAszpE3P",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:18:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1N3u86SE6v",
+  "title": "DeepSeek-V4-Flash-0731 本地2080Ti推理测试",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1412,
+  "text": "大家晚上好呀\n今天带你们看个狠活\n八张2080ti一起跑\nDeep sick v4 flash\n用的还是拉玛CPP的量化版GGF哦\n主打一个硬核折腾\n咱是巴卡测试平台\nAK整机功耗778瓦的电费战神\n先说结论\n链路是通的模型能跑没炸\n不过注意啦\n是层切分\n不是那种所有卡一起使劲的张量并行哦\n待机326瓦感觉还行\n跑起来直接778瓦\n毕竟只有一张卡在认真干活\n剩下七张在摸鱼\n这里没有使用任何推测解码的手段\n基本上速度都很稳定\n在21token1秒左右\n而DEPSK官方的API可以轻松100token1秒\n我们稍微等一会儿\n等这个coding编码相关的问答结束\n再试一下创意写作部分是不是有速度影响\n这里还是问那个最搞笑的问题\n用S300pm u2击落金丹修士\n来看看我们48N6E拦截弹好不好用\n速度还是非常稳定的\n21token\n在不使用推测解码的情况下\n问答类型不影响速度\n写代码21token1秒也就能用的水平吧\n写作文速度也一样\n稳定得让人安心\n也让人心碎\nDISPARK的验证机制开销很大\ndraft猜的不准的时候\n纯纯给GPU加班\n这里使用了d spark进行推测解码\n偶尔速度会超过基线的21token1秒\n但是只要有错误的token就会降低\n总的推理速度\n并没有很明显的速度提升\n创意写作部分问题更加明显\n现在这个deep sick v4flash的推荐\ntemperature是一\n这个直接导致创意写错的d spark接受率大幅下降\n这个12token1秒还不如不开任何推测解码\n毕竟很多人本地跑\ndeep seek就是为了创业类的写作\n还有问答的\n开了迪斯bug之后\n写代码21token1秒跟原版差不多\n偶尔快一点\n等于白折腾\n写作文直接掉到了13\ntoken1秒比原来慢了四成\n这波属于是反向优化写作\n12.93\ntoken1秒降40%\n教科书级的负优化接受率才0.205\n猜十次中两次\n这draft是来搞笑的吧\n写代码21.16\ntoken1秒勉强追平\n没有功劳也有苦劳\n接受率0.467\n好一点\n但也只是没亏而已\n乐观算100token1秒100万\ntoken电费才一点一元\n感觉还行\n200token1秒更狠\n0.54元跟白嫖差不多\n但官方API输出也才二元\n百万token还不用\n你养八张显卡\n这不更香吗\n换成27B小模型\n单流61token1秒优化一下\n还能到一百一百token1秒诶\n八张卡的牌面直接找回来了\n多并发易开\n600token1秒起飞\n百万token电费才九分钱\n四舍五入等于不要钱\n云端输出2.4美元\n百万token\n什么冤大头专用\n打扰了17元百万token\n对0.09元百万token差了快两个数量级\n这波必须占本地日用量四到160亿tokens\n谁在用这么智商税的模型啊\n还全是prompt\n纯纯的智商检测\n还不如我们本地部署\n结论就一句\n这模型搁这堆卡上不合适\n要么API\n要么换小模型\n别硬磕了\n就一行胖的include\n直接把整个KDA构建干碎了\nGCC12和NVCC当场打起来\n凶手就是他为了图融合加的一行include\n一晚上全白干\n这仓库连个编译检查的action都没有\ncommit质量全靠信仰\n总结巴卡2080ti跑deep sick v4flash能跑\n但毫无性价比\n真想省钱又快\n跑小一点的dance模型\n比如千问3.82107B性价比直接拉满",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1N3u86SE6v",
+  "published_at": "1786114718",
+  "fetched_at": "2026-08-09T08:41:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek-V4-Flash 本地 2080Ti 推理测试知识图谱\n\n## 硬件部署概览 [BV1N3u86SE6v P1 00:14]\n\n```mermaid\nflowchart TD\n    A1[\"8 x 2080Ti\"]\n    A2[\"总功耗 778W (运行)\"]\n    A3[\"待机功耗 326W\"]\n    A4[\"层切分 (layer‑splitting)\"]\n    A5[\"非张量并行\"]\n    A6[\"单卡主力工作\"]\n    A7[\"其余 7 卡空闲\"]\n    A8[\"部署平台: 巴卡测试平台\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A4 --> A5\n    A4 --> A6\n    A6 --> A7\n    A1 --> A8\n```\n\n## 推理速度与模式比较 [BV1N3u86SE6v P1 00:41]\n\n```mermaid\nflowchart TD\n    B1[\"无推测解码\"]\n    B2[\"稳定 21 token/s\"]\n    B3[\"问答/写代码/写作文均相同\"]\n    B4[\"使用 d‑spark 推测解码\"]\n    B5[\"偶尔 >21 token/s\"]\n    B6[\"错误 token 降速\"]\n    B7[\"整体无明显提升\"]\n    B8[\"创意写作 12 token/s 更慢\"]\n    B9[\"温度参数导致接受率下降\"]\n\n    B1 --> B2\n    B2 --> B3\n    B4 --> B5\n    B4 --> B6\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8\n    B8 --> B9\n```\n\n## 成本对比分析 [BV1N3u86SE6v P1 03:05]\n\n```mermaid\nflowchart TD\n    C1[\"本地功耗成本\"]\n    C2[\"≈ 0.01 元/百万 token\"]\n    C3[\"API 成本\"]\n    C4[\"≈ 2.4 美元/百万 token\"]\n    C5[\"云端输出 2.4 美元\"]\n    C6[\"本地 0.09 元/百万 token\"]\n    C7[\"差距近 2 量级\"]\n    C8[\"多并发可达 600 token/s\"]\n    C9[\"成本仍低于云端\"]\n\n    C1 --> C2\n    C3 --> C4\n    C4 --> C5\n    C2 --> C6\n    C6 --> C7\n    C8 --> C9\n    C9 --> C2\n```\n\n## 推荐决策 [BV1N3u86SE6v P1 03:58]\n\n```mermaid\nflowchart TD\n    D1[\"模型 DeepSeek‑V4‑Flash\"]\n    D2[\"在 8x2080Ti 上不合适\"]\n    D3[\"使用 API\"]\n    D4[\"或换小模型 (千问3.8 2.1B)\"]\n    D5[\"避免硬磕\"]\n    D6[\"提升性价比\"]\n    D7[\"本地部署更省钱\"]\n    D8[\"结论: API 或小模型 更佳\"]\n\n    D1 --> D2\n    D2 --> D3\n    D2 --> D4\n    D3 --> D5\n    D4 --> D5\n    D5 --> D6\n    D6 --> D7\n    D7 --> D8\n```",
+      "diagrams": [
+        {
+          "title": "硬件部署概览",
+          "code": "flowchart TD\n    A1[\"8 x 2080Ti\"]\n    A2[\"总功耗 778W (运行)\"]\n    A3[\"待机功耗 326W\"]\n    A4[\"层切分 (layer‑splitting)\"]\n    A5[\"非张量并行\"]\n    A6[\"单卡主力工作\"]\n    A7[\"其余 7 卡空闲\"]\n    A8[\"部署平台: 巴卡测试平台\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A4 --> A5\n    A4 --> A6\n    A6 --> A7\n    A1 --> A8"
+        },
+        {
+          "title": "推理速度与模式比较",
+          "code": "flowchart TD\n    B1[\"无推测解码\"]\n    B2[\"稳定 21 token/s\"]\n    B3[\"问答/写代码/写作文均相同\"]\n    B4[\"使用 d‑spark 推测解码\"]\n    B5[\"偶尔 >21 token/s\"]\n    B6[\"错误 token 降速\"]\n    B7[\"整体无明显提升\"]\n    B8[\"创意写作 12 token/s 更慢\"]\n    B9[\"温度参数导致接受率下降\"]\n\n    B1 --> B2\n    B2 --> B3\n    B4 --> B5\n    B4 --> B6\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8\n    B8 --> B9"
+        },
+        {
+          "title": "成本对比分析",
+          "code": "flowchart TD\n    C1[\"本地功耗成本\"]\n    C2[\"≈ 0.01 元/百万 token\"]\n    C3[\"API 成本\"]\n    C4[\"≈ 2.4 美元/百万 token\"]\n    C5[\"云端输出 2.4 美元\"]\n    C6[\"本地 0.09 元/百万 token\"]\n    C7[\"差距近 2 量级\"]\n    C8[\"多并发可达 600 token/s\"]\n    C9[\"成本仍低于云端\"]\n\n    C1 --> C2\n    C3 --> C4\n    C4 --> C5\n    C2 --> C6\n    C6 --> C7\n    C8 --> C9\n    C9 --> C2"
+        },
+        {
+          "title": "推荐决策",
+          "code": "flowchart TD\n    D1[\"模型 DeepSeek‑V4‑Flash\"]\n    D2[\"在 8x2080Ti 上不合适\"]\n    D3[\"使用 API\"]\n    D4[\"或换小模型 (千问3.8 2.1B)\"]\n    D5[\"避免硬磕\"]\n    D6[\"提升性价比\"]\n    D7[\"本地部署更省钱\"]\n    D8[\"结论: API 或小模型 更佳\"]\n\n    D1 --> D2\n    D2 --> D3\n    D2 --> D4\n    D3 --> D5\n    D4 --> D5\n    D5 --> D6\n    D6 --> D7\n    D7 --> D8"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T08:48:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek-V4-Flash 本地 2080Ti 推理测试知识图谱\n\n## 硬件部署概览 [BV1N3u86SE6v P1 00:14]\n\n```mermaid\nflowchart TD\n    A1[\"8 x 2080Ti\"]\n    A2[\"总功耗 778W (运行)\"]\n    A3[\"待机功耗 326W\"]\n    A4[\"层切分 (layer‑splitting)\"]\n    A5[\"非张量并行\"]\n    A6[\"单卡主力工作\"]\n    A7[\"其余 7 卡空闲\"]\n    A8[\"部署平台: 巴卡测试平台\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A4 --> A5\n    A4 --> A6\n    A6 --> A7\n    A1 --> A8\n```\n\n## 推理速度与模式比较 [BV1N3u86SE6v P1 00:41]\n\n```mermaid\nflowchart TD\n    B1[\"无推测解码\"]\n    B2[\"稳定 21 token/s\"]\n    B3[\"问答/写代码/写作文均相同\"]\n    B4[\"使用 d‑spark 推测解码\"]\n    B5[\"偶尔 >21 token/s\"]\n    B6[\"错误 token 降速\"]\n    B7[\"整体无明显提升\"]\n    B8[\"创意写作 12 token/s 更慢\"]\n    B9[\"温度参数导致接受率下降\"]\n\n    B1 --> B2\n    B2 --> B3\n    B4 --> B5\n    B4 --> B6\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8\n    B8 --> B9\n```\n\n## 成本对比分析 [BV1N3u86SE6v P1 03:05]\n\n```mermaid\nflowchart TD\n    C1[\"本地功耗成本\"]\n    C2[\"≈ 0.01 元/百万 token\"]\n    C3[\"API 成本\"]\n    C4[\"≈ 2.4 美元/百万 token\"]\n    C5[\"云端输出 2.4 美元\"]\n    C6[\"本地 0.09 元/百万 token\"]\n    C7[\"差距近 2 量级\"]\n    C8[\"多并发可达 600 token/s\"]\n    C9[\"成本仍低于云端\"]\n\n    C1 --> C2\n    C3 --> C4\n    C4 --> C5\n    C2 --> C6\n    C6 --> C7\n    C8 --> C9\n    C9 --> C2\n```\n\n## 推荐决策 [BV1N3u86SE6v P1 03:58]\n\n```mermaid\nflowchart TD\n    D1[\"模型 DeepSeek‑V4‑Flash\"]\n    D2[\"在 8x2080Ti 上不合适\"]\n    D3[\"使用 API\"]\n    D4[\"或换小模型 (千问3.8 2.1B)\"]\n    D5[\"避免硬磕\"]\n    D6[\"提升性价比\"]\n    D7[\"本地部署更省钱\"]\n    D8[\"结论: API 或小模型 更佳\"]\n\n    D1 --> D2\n    D2 --> D3\n    D2 --> D4\n    D3 --> D5\n    D4 --> D5\n    D5 --> D6\n    D6 --> D7\n    D7 --> D8\n```",
+  "diagrams": [
+    {
+      "title": "硬件部署概览",
+      "code": "flowchart TD\n    A1[\"8 x 2080Ti\"]\n    A2[\"总功耗 778W (运行)\"]\n    A3[\"待机功耗 326W\"]\n    A4[\"层切分 (layer‑splitting)\"]\n    A5[\"非张量并行\"]\n    A6[\"单卡主力工作\"]\n    A7[\"其余 7 卡空闲\"]\n    A8[\"部署平台: 巴卡测试平台\"]\n\n    A1 --> A2\n    A1 --> A3\n    A1 --> A4\n    A4 --> A5\n    A4 --> A6\n    A6 --> A7\n    A1 --> A8"
+    },
+    {
+      "title": "推理速度与模式比较",
+      "code": "flowchart TD\n    B1[\"无推测解码\"]\n    B2[\"稳定 21 token/s\"]\n    B3[\"问答/写代码/写作文均相同\"]\n    B4[\"使用 d‑spark 推测解码\"]\n    B5[\"偶尔 >21 token/s\"]\n    B6[\"错误 token 降速\"]\n    B7[\"整体无明显提升\"]\n    B8[\"创意写作 12 token/s 更慢\"]\n    B9[\"温度参数导致接受率下降\"]\n\n    B1 --> B2\n    B2 --> B3\n    B4 --> B5\n    B4 --> B6\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8\n    B8 --> B9"
+    },
+    {
+      "title": "成本对比分析",
+      "code": "flowchart TD\n    C1[\"本地功耗成本\"]\n    C2[\"≈ 0.01 元/百万 token\"]\n    C3[\"API 成本\"]\n    C4[\"≈ 2.4 美元/百万 token\"]\n    C5[\"云端输出 2.4 美元\"]\n    C6[\"本地 0.09 元/百万 token\"]\n    C7[\"差距近 2 量级\"]\n    C8[\"多并发可达 600 token/s\"]\n    C9[\"成本仍低于云端\"]\n\n    C1 --> C2\n    C3 --> C4\n    C4 --> C5\n    C2 --> C6\n    C6 --> C7\n    C8 --> C9\n    C9 --> C2"
+    },
+    {
+      "title": "推荐决策",
+      "code": "flowchart TD\n    D1[\"模型 DeepSeek‑V4‑Flash\"]\n    D2[\"在 8x2080Ti 上不合适\"]\n    D3[\"使用 API\"]\n    D4[\"或换小模型 (千问3.8 2.1B)\"]\n    D5[\"避免硬磕\"]\n    D6[\"提升性价比\"]\n    D7[\"本地部署更省钱\"]\n    D8[\"结论: API 或小模型 更佳\"]\n\n    D1 --> D2\n    D2 --> D3\n    D2 --> D4\n    D3 --> D5\n    D4 --> D5\n    D5 --> D6\n    D6 --> D7\n    D7 --> D8"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T08:48:34+00:00"
+}

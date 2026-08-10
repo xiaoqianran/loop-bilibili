@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1YFJn6aEyH",
+  "title": "Codex控制blender自动建模，傻瓜式安装教程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 965,
+  "text": "发现好多人还不知道怎么在codex中\n直接呃让blender替我们自动化的建模对吧\n那其实嗯我觉得是挺简单的\n我们只需要准备一个blender\n5.1的版本就可以了\n然后之后我们直接都交给codex\n那么话不多说\n我们现在来演示\n那其实第一步你就是需要呃\n你就告诉他帮我连接上blender\n5.1的MCP接口\n目的呢是确保你能直接在blender中进行建模呃\n那么它就会呃自动检查一下嗯\n完事之后呢\n嗯就是前期第一步你需要再点开这个计划模式\n因为计划模式它才才会出来这个窗口\n就是它提醒我们嗯\n就是他要这样操作\n然后你来检查一下\n如果对的话\n你就实施计划就可以\n嗯其实我们到这就什么都不用点就可以\n之后实施完了之后呢\n嗯他自己就安装好了\n然后你就是按照它的提醒\n然后退出重启codex就可以了\n安装之后呢\n我就打开\n打开之后呢\n默认是这样的\n你按N键\n然后调出右侧面板\n可以看到有一个blender的MCP对吧\n嗯那这块的意思就是你要不要连接你如果一点\n那么codex它就可以帮你啊\n在blender中自动化建模了\n嗯那这块呢我其实自己也试了一两个案例啊\n其实还行吧\n你要说能用嘛\n肯定能用\n但是效果也一般般\n比如第一个这个我就告诉他\n我说blender\n你帮我做三个模型\n风力发电机\n光伏板\n还有储物箱\n那么它生出来的呃\n其实是这样的\n它的好处就是它每一个这个元素\n它都可以可拆分的\n包括光伏什么的\n然后渲染模式下呢\n其实看还凑合啊对吧\n但是你要说特别精细\n那肯定跟人现在比还是差一些嗯\n你如果想改一下他的一个背景对吧\n就需要我们进行调试了嗯\n再一个就是它也可以生成一些这个\n卡通的一个IP形象\n但是生成了反正也是\n首先我是给他一个三视图\n接着生出来可能是这样的\n哈哈就差点意思\n这个胳膊腿都有点像青蛙对吧\n接着呢我让他\n我说你这个跟我三视图对比一下能怎么样\n要继续优化一下嗯\n目前我的看出来是这个正视图的这个形态不对\n测试图看着这个脸很长\n而你生成的脸很短\n然后尾巴也不像这个鳄鱼尾巴\n那我也给他圈了一下\n至于这个素材是我网上直接这个网上找到\n最后呢咱也可以看一下它的一个效果\n他这块其实灯光什么的也帮我们安装好了\n但是你要说好看吗\n嗯还需要自己的精细化处理\n但是如果再迭代几个版本\n我就不知道怎么样了\n肯定会越来越好\n期待",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YFJn6aEyH",
+  "published_at": "1781348172",
+  "fetched_at": "2026-08-08T20:37:50+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Codex 控制 Blender 自动建模教程知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"准备 Blender 5.1\"] --> A2[\"在 Codex 中指令连接 Blender MCP 接口\"]\n    A2 --> A3[\"Codex 检查连接状态\"]\n    A3 --> A4[\"打开计划模式 (Plan Mode)\"]\n    A4 --> A5[\"确认弹窗提示并实施计划\"]\n    A5 --> A6[\"Codex 完成安装并提示重启\"]\n    A6 --> A7[\"重启 Codex\"]\n    A7 --> A8[\"打开 Blender，按 N 键呼出右侧面板\"]\n    A8 --> A9[\"在面板中找到并激活 Blender MCP\"]\n    A9 --> A10[\"向 Codex 发出建模指令\"]\n    A10 --> A11[\"Codex 在 Blender 中自动生成模型\"]\n    A11 --> A12[\"如需细节调整，进入调试/迭代流程\"]\n```\n- 关键步骤时间戳：  \n  - 准备 Blender 5.1 → [BV1YFJn6aEyH P1 00:06]  \n  - 连接 Blender MCP → [BV1YFJn6aEyH P1 00:15]  \n  - 打开计划模式 → [BV1YFJn6aEyH P1 00:25]  \n  - 实施计划 → [BV1YFJn6aEyH P1 00:33]  \n  - 重启 Codex → [BV1YFJn6aEyH P1 00:42]  \n  - 打开侧面板 → [BV1YFJn6aEyH P1 00:47]  \n\n## 连接与计划模式细节\n```mermaid\nflowchart LR\n    B1[\"指令：连接 Blender 5.1 MCP\"] --> B2[\"Codex 自动检查接口可用性\"]\n    B2 --> B3[\"若检查通过，弹出计划模式窗口\"]\n    B3 --> B4[\"用户在窗口中确认操作\"]\n    B4 --> B5[\"点击‘实施计划’\"]\n    B5 --> B6[\"Codex 完成后台安装\"]\n    B6 --> B7[\"提示用户重启 Codex\"]\n```\n- 时间戳参考：  \n  - 连接指令 → [BV1YFJn6aEyH P1 00:15]  \n  - 检查接口 → [BV1YFJn6aEyH P1 00:22]  \n  - 打开计划模式窗口 → [BV1YFJn6aEyH P1 00:28]  \n  - 实施计划 → [BV1YFJn6aEyH P1 00:34]  \n  - 安装完成提示 → [BV1YFJn6aEyH P1 00:38]  \n\n## 建模指令与生成结果\n```mermaid\nflowchart TD\n    C1[\"向 Codex 发送建模请求\"] --> C2[\"请求内容：3 个模型\\n- 风力发电机\\n- 光伏板\\n- 储物箱\"]\n    C2 --> C3[\"Codex 在 Blender 中生成模型\"]\n    C3 --> C4[\"每个模型元素可拆分\"]\n    C4 --> C5[\"渲染预览效果一般\"]\n    C5 --> C6[\"与手工建模质量对比：略逊\"]\n```\n- 时间戳参考：  \n  - 发出建模请求 → [BV1YFJn6aEyH P1 01:04]  \n  - 生成模型 → [BV1YFJn6aEyH P1 01:12]  \n  - 可拆分特性 → [BV1YFJn6aEyH P1 01:14]  \n  - 渲染效果 → [BV1YFJn6aEyH P1 01:22]  \n\n## 调试、迭代与细节优化\n```mermaid\nflowchart TD\n    D1[\"需要修改背景或细节\"] --> D2[\"进入调试模式\"]\n    D2 --> D3[\"提供三视图参考图\"]\n    D3 --> D4[\"Codex 生成卡通 IP 形象\"]\n    D4 --> D5[\"比较生成结果与参考图\"]\n    D5 --> D6[\"发现前视图比例、面部、尾巴问题\"]\n    D6 --> D7[\"手动标记并反馈给 Codex\"]\n    D7 --> D8[\"迭代生成新版本\"]\n    D8 --> D9[\"灯光自动配置，但需后期美化\"]\n    D9 --> D10[\"多次迭代后效果提升\"]\n```\n- 时间戳参考：  \n  - 调试需求 → [BV1YFJn6aEyH P1 01:28]  \n  - 提供三视图 → [BV1YFJn6aEyH P1 01:38]  \n  - 生成卡通形象 → [BV1YFJn6aEyH P1 01:35]  \n  - 结果对比与问题 → [BV1YFJn6aEyH P1 01:50]  \n  - 迭代与灯光 → [BV1YFJn6aEyH P1 02:05]  \n  - 期待提升 → [BV1YFJn6aEyH P1 02:14]",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"准备 Blender 5.1\"] --> A2[\"在 Codex 中指令连接 Blender MCP 接口\"]\n    A2 --> A3[\"Codex 检查连接状态\"]\n    A3 --> A4[\"打开计划模式 (Plan Mode)\"]\n    A4 --> A5[\"确认弹窗提示并实施计划\"]\n    A5 --> A6[\"Codex 完成安装并提示重启\"]\n    A6 --> A7[\"重启 Codex\"]\n    A7 --> A8[\"打开 Blender，按 N 键呼出右侧面板\"]\n    A8 --> A9[\"在面板中找到并激活 Blender MCP\"]\n    A9 --> A10[\"向 Codex 发出建模指令\"]\n    A10 --> A11[\"Codex 在 Blender 中自动生成模型\"]\n    A11 --> A12[\"如需细节调整，进入调试/迭代流程\"]"
+        },
+        {
+          "title": "连接与计划模式细节",
+          "code": "flowchart LR\n    B1[\"指令：连接 Blender 5.1 MCP\"] --> B2[\"Codex 自动检查接口可用性\"]\n    B2 --> B3[\"若检查通过，弹出计划模式窗口\"]\n    B3 --> B4[\"用户在窗口中确认操作\"]\n    B4 --> B5[\"点击‘实施计划’\"]\n    B5 --> B6[\"Codex 完成后台安装\"]\n    B6 --> B7[\"提示用户重启 Codex\"]"
+        },
+        {
+          "title": "建模指令与生成结果",
+          "code": "flowchart TD\n    C1[\"向 Codex 发送建模请求\"] --> C2[\"请求内容：3 个模型\\n- 风力发电机\\n- 光伏板\\n- 储物箱\"]\n    C2 --> C3[\"Codex 在 Blender 中生成模型\"]\n    C3 --> C4[\"每个模型元素可拆分\"]\n    C4 --> C5[\"渲染预览效果一般\"]\n    C5 --> C6[\"与手工建模质量对比：略逊\"]"
+        },
+        {
+          "title": "调试、迭代与细节优化",
+          "code": "flowchart TD\n    D1[\"需要修改背景或细节\"] --> D2[\"进入调试模式\"]\n    D2 --> D3[\"提供三视图参考图\"]\n    D3 --> D4[\"Codex 生成卡通 IP 形象\"]\n    D4 --> D5[\"比较生成结果与参考图\"]\n    D5 --> D6[\"发现前视图比例、面部、尾巴问题\"]\n    D6 --> D7[\"手动标记并反馈给 Codex\"]\n    D7 --> D8[\"迭代生成新版本\"]\n    D8 --> D9[\"灯光自动配置，但需后期美化\"]\n    D9 --> D10[\"多次迭代后效果提升\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T20:38:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Codex 控制 Blender 自动建模教程知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"准备 Blender 5.1\"] --> A2[\"在 Codex 中指令连接 Blender MCP 接口\"]\n    A2 --> A3[\"Codex 检查连接状态\"]\n    A3 --> A4[\"打开计划模式 (Plan Mode)\"]\n    A4 --> A5[\"确认弹窗提示并实施计划\"]\n    A5 --> A6[\"Codex 完成安装并提示重启\"]\n    A6 --> A7[\"重启 Codex\"]\n    A7 --> A8[\"打开 Blender，按 N 键呼出右侧面板\"]\n    A8 --> A9[\"在面板中找到并激活 Blender MCP\"]\n    A9 --> A10[\"向 Codex 发出建模指令\"]\n    A10 --> A11[\"Codex 在 Blender 中自动生成模型\"]\n    A11 --> A12[\"如需细节调整，进入调试/迭代流程\"]\n```\n- 关键步骤时间戳：  \n  - 准备 Blender 5.1 → [BV1YFJn6aEyH P1 00:06]  \n  - 连接 Blender MCP → [BV1YFJn6aEyH P1 00:15]  \n  - 打开计划模式 → [BV1YFJn6aEyH P1 00:25]  \n  - 实施计划 → [BV1YFJn6aEyH P1 00:33]  \n  - 重启 Codex → [BV1YFJn6aEyH P1 00:42]  \n  - 打开侧面板 → [BV1YFJn6aEyH P1 00:47]  \n\n## 连接与计划模式细节\n```mermaid\nflowchart LR\n    B1[\"指令：连接 Blender 5.1 MCP\"] --> B2[\"Codex 自动检查接口可用性\"]\n    B2 --> B3[\"若检查通过，弹出计划模式窗口\"]\n    B3 --> B4[\"用户在窗口中确认操作\"]\n    B4 --> B5[\"点击‘实施计划’\"]\n    B5 --> B6[\"Codex 完成后台安装\"]\n    B6 --> B7[\"提示用户重启 Codex\"]\n```\n- 时间戳参考：  \n  - 连接指令 → [BV1YFJn6aEyH P1 00:15]  \n  - 检查接口 → [BV1YFJn6aEyH P1 00:22]  \n  - 打开计划模式窗口 → [BV1YFJn6aEyH P1 00:28]  \n  - 实施计划 → [BV1YFJn6aEyH P1 00:34]  \n  - 安装完成提示 → [BV1YFJn6aEyH P1 00:38]  \n\n## 建模指令与生成结果\n```mermaid\nflowchart TD\n    C1[\"向 Codex 发送建模请求\"] --> C2[\"请求内容：3 个模型\\n- 风力发电机\\n- 光伏板\\n- 储物箱\"]\n    C2 --> C3[\"Codex 在 Blender 中生成模型\"]\n    C3 --> C4[\"每个模型元素可拆分\"]\n    C4 --> C5[\"渲染预览效果一般\"]\n    C5 --> C6[\"与手工建模质量对比：略逊\"]\n```\n- 时间戳参考：  \n  - 发出建模请求 → [BV1YFJn6aEyH P1 01:04]  \n  - 生成模型 → [BV1YFJn6aEyH P1 01:12]  \n  - 可拆分特性 → [BV1YFJn6aEyH P1 01:14]  \n  - 渲染效果 → [BV1YFJn6aEyH P1 01:22]  \n\n## 调试、迭代与细节优化\n```mermaid\nflowchart TD\n    D1[\"需要修改背景或细节\"] --> D2[\"进入调试模式\"]\n    D2 --> D3[\"提供三视图参考图\"]\n    D3 --> D4[\"Codex 生成卡通 IP 形象\"]\n    D4 --> D5[\"比较生成结果与参考图\"]\n    D5 --> D6[\"发现前视图比例、面部、尾巴问题\"]\n    D6 --> D7[\"手动标记并反馈给 Codex\"]\n    D7 --> D8[\"迭代生成新版本\"]\n    D8 --> D9[\"灯光自动配置，但需后期美化\"]\n    D9 --> D10[\"多次迭代后效果提升\"]\n```\n- 时间戳参考：  \n  - 调试需求 → [BV1YFJn6aEyH P1 01:28]  \n  - 提供三视图 → [BV1YFJn6aEyH P1 01:38]  \n  - 生成卡通形象 → [BV1YFJn6aEyH P1 01:35]  \n  - 结果对比与问题 → [BV1YFJn6aEyH P1 01:50]  \n  - 迭代与灯光 → [BV1YFJn6aEyH P1 02:05]  \n  - 期待提升 → [BV1YFJn6aEyH P1 02:14]",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"准备 Blender 5.1\"] --> A2[\"在 Codex 中指令连接 Blender MCP 接口\"]\n    A2 --> A3[\"Codex 检查连接状态\"]\n    A3 --> A4[\"打开计划模式 (Plan Mode)\"]\n    A4 --> A5[\"确认弹窗提示并实施计划\"]\n    A5 --> A6[\"Codex 完成安装并提示重启\"]\n    A6 --> A7[\"重启 Codex\"]\n    A7 --> A8[\"打开 Blender，按 N 键呼出右侧面板\"]\n    A8 --> A9[\"在面板中找到并激活 Blender MCP\"]\n    A9 --> A10[\"向 Codex 发出建模指令\"]\n    A10 --> A11[\"Codex 在 Blender 中自动生成模型\"]\n    A11 --> A12[\"如需细节调整，进入调试/迭代流程\"]"
+    },
+    {
+      "title": "连接与计划模式细节",
+      "code": "flowchart LR\n    B1[\"指令：连接 Blender 5.1 MCP\"] --> B2[\"Codex 自动检查接口可用性\"]\n    B2 --> B3[\"若检查通过，弹出计划模式窗口\"]\n    B3 --> B4[\"用户在窗口中确认操作\"]\n    B4 --> B5[\"点击‘实施计划’\"]\n    B5 --> B6[\"Codex 完成后台安装\"]\n    B6 --> B7[\"提示用户重启 Codex\"]"
+    },
+    {
+      "title": "建模指令与生成结果",
+      "code": "flowchart TD\n    C1[\"向 Codex 发送建模请求\"] --> C2[\"请求内容：3 个模型\\n- 风力发电机\\n- 光伏板\\n- 储物箱\"]\n    C2 --> C3[\"Codex 在 Blender 中生成模型\"]\n    C3 --> C4[\"每个模型元素可拆分\"]\n    C4 --> C5[\"渲染预览效果一般\"]\n    C5 --> C6[\"与手工建模质量对比：略逊\"]"
+    },
+    {
+      "title": "调试、迭代与细节优化",
+      "code": "flowchart TD\n    D1[\"需要修改背景或细节\"] --> D2[\"进入调试模式\"]\n    D2 --> D3[\"提供三视图参考图\"]\n    D3 --> D4[\"Codex 生成卡通 IP 形象\"]\n    D4 --> D5[\"比较生成结果与参考图\"]\n    D5 --> D6[\"发现前视图比例、面部、尾巴问题\"]\n    D6 --> D7[\"手动标记并反馈给 Codex\"]\n    D7 --> D8[\"迭代生成新版本\"]\n    D8 --> D9[\"灯光自动配置，但需后期美化\"]\n    D9 --> D10[\"多次迭代后效果提升\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T20:38:05+00:00"
+}

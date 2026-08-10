@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1H9oQB4EMj",
+  "title": "做Godot中文字典，我迷茫了。 如何成为真正的自学神器？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 766,
+  "text": "大家好\n今天我们来看一下这个歌\n多中文字典现在是什么样了\n我新加入了运算符哦\n这边是运算符的展示\n运算符还是很多的\n但是有很多运算符像我们新手来说\n根本就用不上\n让我先给他加进来\n后续看看再怎么去优化它\n然后做了一个node2D的这个属性\n常用的属性我也给做进来了\n他的英文名\n中文名\n然后在引擎中的截图\n这边显示是代码的一个操作\n用\n代码如何改变它的属性嗯\n旋转缩放斜切\n这个我还没有理解\n然后他是跟特效有关系的\n目前我还没有做他的这个事例\n全局位置这些都做完了\n然后做了两个方法进来\n做到方法的时候呢\n我就感觉到这个迷茫\n我最开始在戈多这个帮助里看到这个的时候\n我是很迷惑的\n就是它的返回值啊\n这也是它的返回值啊\n这是无返回值的一个\n然后这一段呢是它的方法名\n他这个方法是应用于缩放\n然后它的参数名\n这是它的参数名\n下边呢是参数类型\n它后边跟着的就是参数类型\n我把这些都做了一个中文的一个翻译\n然后右侧还是用这个代码来改变呃\n如何这个方法该如何用啊\n在函数里该如何调用它\n然后也写了一些注释\n但是我依然很迷茫\n就是字儿少了\n说不清楚他具体该怎么用\n字儿多了又感觉很混乱\n他的阅读性又变得很差\n我就陷入了这个自我的迷茫怀疑当中\n这个字典到底是不是大家需要的一个字典\n如果一年以后\n两年以后我回来用这个字典看这个字典\n我又能不能看得明白\n陷入到了啊这种迷茫当中\n我目前还没有想到解决方法\n那我就继续的往下做\n继续的去加入它的方法\n然后做新的节点\n这么逐步的往下做\n然后像关键字啊\n还有这个转换符\n占位符\n还有一大堆东西需要往里填\n我就先往里做\n然后做到后期的时候呢\n看一看要该怎么优化它\n目前来看\n这并不是我心心目当中的一个\n自学的一个啊软件\n然后喜欢我的朋友请一键三连关注我\n看看我们下期这个字典有没有一个新的变化\n好我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1H9oQB4EMj",
+  "published_at": "1777111183",
+  "fetched_at": "2026-08-07T01:42:06+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 中文字典开发知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    OP[\"运算符\"]\n    ATTR[\"Node2D 常用属性\"]\n    METHOD[\"方法（如缩放）\"]\n    PARAM[\"参数名、类型\"]\n    TRANSL[\"中文翻译\"]\n    CODE[\"代码调用示例\"]\n    NOTE[\"注释\"]\n    OPT[\"后期优化\"]\n    READ[\"阅读性\"]\n    COMPLEX[\"信息完整度\"]\n    FUTURE[\"长期可读性评估\"]\n    OP --> ATTR\n    ATTR --> METHOD\n    METHOD --> PARAM\n    PARAM --> TRANSL\n    TRANSL --> CODE\n    CODE --> NOTE\n    NOTE --> OPT\n    OPT --> READ\n    READ --> COMPLEX\n    COMPLEX --> FUTURE\n```\n\n## 开发流程\n```mermaid\nflowchart LR\n    A1[\"加入运算符\"] --> A2[\"加入 Node2D 属性\"]\n    A2 --> A3[\"添加方法（缩放等）\"]\n    A3 --> A4[\"编写中文翻译与注释\"]\n    A4 --> A5[\"在代码中调用并测试\"]\n    A5 --> A6[\"出现迷茫：返回值、用法不清\"]\n    A6 --> A7[\"继续添加新节点、关键字、占位符\"]\n    A7 --> A8[\"后期审视并优化字典结构\"]\n    A8 --> A9[\"评估可读性与信息量平衡\"]\n```\n\n## 可读性与信息量权衡\n```mermaid\nflowchart TD\n    B1[\"字少\"] --> B2[\"阅读性高\"]\n    B1 --> B3[\"信息不足\"]\n    B4[\"字多\"] --> B5[\"信息完整\"]\n    B4 --> B6[\"阅读性下降\"]\n    B2 --> B7[\"易于快速查找\"]\n    B3 --> B8[\"用户可能困惑\"]\n    B5 --> B9[\"覆盖更多用例\"]\n    B6 --> B10[\"需要额外学习成本\"]\n    B7 --> B11[\"提升用户体验\"]\n    B8 --> B11\n    B9 --> B11\n    B10 --> B11\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    OP[\"运算符\"]\n    ATTR[\"Node2D 常用属性\"]\n    METHOD[\"方法（如缩放）\"]\n    PARAM[\"参数名、类型\"]\n    TRANSL[\"中文翻译\"]\n    CODE[\"代码调用示例\"]\n    NOTE[\"注释\"]\n    OPT[\"后期优化\"]\n    READ[\"阅读性\"]\n    COMPLEX[\"信息完整度\"]\n    FUTURE[\"长期可读性评估\"]\n    OP --> ATTR\n    ATTR --> METHOD\n    METHOD --> PARAM\n    PARAM --> TRANSL\n    TRANSL --> CODE\n    CODE --> NOTE\n    NOTE --> OPT\n    OPT --> READ\n    READ --> COMPLEX\n    COMPLEX --> FUTURE"
+        },
+        {
+          "title": "开发流程",
+          "code": "flowchart LR\n    A1[\"加入运算符\"] --> A2[\"加入 Node2D 属性\"]\n    A2 --> A3[\"添加方法（缩放等）\"]\n    A3 --> A4[\"编写中文翻译与注释\"]\n    A4 --> A5[\"在代码中调用并测试\"]\n    A5 --> A6[\"出现迷茫：返回值、用法不清\"]\n    A6 --> A7[\"继续添加新节点、关键字、占位符\"]\n    A7 --> A8[\"后期审视并优化字典结构\"]\n    A8 --> A9[\"评估可读性与信息量平衡\"]"
+        },
+        {
+          "title": "可读性与信息量权衡",
+          "code": "flowchart TD\n    B1[\"字少\"] --> B2[\"阅读性高\"]\n    B1 --> B3[\"信息不足\"]\n    B4[\"字多\"] --> B5[\"信息完整\"]\n    B4 --> B6[\"阅读性下降\"]\n    B2 --> B7[\"易于快速查找\"]\n    B3 --> B8[\"用户可能困惑\"]\n    B5 --> B9[\"覆盖更多用例\"]\n    B6 --> B10[\"需要额外学习成本\"]\n    B7 --> B11[\"提升用户体验\"]\n    B8 --> B11\n    B9 --> B11\n    B10 --> B11"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T01:42:15+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 中文字典开发知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    OP[\"运算符\"]\n    ATTR[\"Node2D 常用属性\"]\n    METHOD[\"方法（如缩放）\"]\n    PARAM[\"参数名、类型\"]\n    TRANSL[\"中文翻译\"]\n    CODE[\"代码调用示例\"]\n    NOTE[\"注释\"]\n    OPT[\"后期优化\"]\n    READ[\"阅读性\"]\n    COMPLEX[\"信息完整度\"]\n    FUTURE[\"长期可读性评估\"]\n    OP --> ATTR\n    ATTR --> METHOD\n    METHOD --> PARAM\n    PARAM --> TRANSL\n    TRANSL --> CODE\n    CODE --> NOTE\n    NOTE --> OPT\n    OPT --> READ\n    READ --> COMPLEX\n    COMPLEX --> FUTURE\n```\n\n## 开发流程\n```mermaid\nflowchart LR\n    A1[\"加入运算符\"] --> A2[\"加入 Node2D 属性\"]\n    A2 --> A3[\"添加方法（缩放等）\"]\n    A3 --> A4[\"编写中文翻译与注释\"]\n    A4 --> A5[\"在代码中调用并测试\"]\n    A5 --> A6[\"出现迷茫：返回值、用法不清\"]\n    A6 --> A7[\"继续添加新节点、关键字、占位符\"]\n    A7 --> A8[\"后期审视并优化字典结构\"]\n    A8 --> A9[\"评估可读性与信息量平衡\"]\n```\n\n## 可读性与信息量权衡\n```mermaid\nflowchart TD\n    B1[\"字少\"] --> B2[\"阅读性高\"]\n    B1 --> B3[\"信息不足\"]\n    B4[\"字多\"] --> B5[\"信息完整\"]\n    B4 --> B6[\"阅读性下降\"]\n    B2 --> B7[\"易于快速查找\"]\n    B3 --> B8[\"用户可能困惑\"]\n    B5 --> B9[\"覆盖更多用例\"]\n    B6 --> B10[\"需要额外学习成本\"]\n    B7 --> B11[\"提升用户体验\"]\n    B8 --> B11\n    B9 --> B11\n    B10 --> B11\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    OP[\"运算符\"]\n    ATTR[\"Node2D 常用属性\"]\n    METHOD[\"方法（如缩放）\"]\n    PARAM[\"参数名、类型\"]\n    TRANSL[\"中文翻译\"]\n    CODE[\"代码调用示例\"]\n    NOTE[\"注释\"]\n    OPT[\"后期优化\"]\n    READ[\"阅读性\"]\n    COMPLEX[\"信息完整度\"]\n    FUTURE[\"长期可读性评估\"]\n    OP --> ATTR\n    ATTR --> METHOD\n    METHOD --> PARAM\n    PARAM --> TRANSL\n    TRANSL --> CODE\n    CODE --> NOTE\n    NOTE --> OPT\n    OPT --> READ\n    READ --> COMPLEX\n    COMPLEX --> FUTURE"
+    },
+    {
+      "title": "开发流程",
+      "code": "flowchart LR\n    A1[\"加入运算符\"] --> A2[\"加入 Node2D 属性\"]\n    A2 --> A3[\"添加方法（缩放等）\"]\n    A3 --> A4[\"编写中文翻译与注释\"]\n    A4 --> A5[\"在代码中调用并测试\"]\n    A5 --> A6[\"出现迷茫：返回值、用法不清\"]\n    A6 --> A7[\"继续添加新节点、关键字、占位符\"]\n    A7 --> A8[\"后期审视并优化字典结构\"]\n    A8 --> A9[\"评估可读性与信息量平衡\"]"
+    },
+    {
+      "title": "可读性与信息量权衡",
+      "code": "flowchart TD\n    B1[\"字少\"] --> B2[\"阅读性高\"]\n    B1 --> B3[\"信息不足\"]\n    B4[\"字多\"] --> B5[\"信息完整\"]\n    B4 --> B6[\"阅读性下降\"]\n    B2 --> B7[\"易于快速查找\"]\n    B3 --> B8[\"用户可能困惑\"]\n    B5 --> B9[\"覆盖更多用例\"]\n    B6 --> B10[\"需要额外学习成本\"]\n    B7 --> B11[\"提升用户体验\"]\n    B8 --> B11\n    B9 --> B11\n    B10 --> B11"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:42:15+00:00"
+}

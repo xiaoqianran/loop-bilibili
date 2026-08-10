@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1ZBMX6iEqh",
+  "title": "【AI 全栈架构】Electron + LangGraph 企业级 AI 工作流实战｜Agent 编排引擎与桌面 AI 应用开发一次讲透",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 611,
+  "text": "我们今天给大家来介绍的是\n基于electron和non graph的整个AI工作流\n编排应用的实现啊\n然后这一部分呢大家学习完之后呢\n可以吸取一些内容呢\n作为自己在简历中间的项目重难点啊\n放到简历里面\n然后呢我们整个介绍会围绕呃\nelection的基础进阶啊\n我们会基于election forward来去搭建这样一个工程\n然后呢一步一步来去实现对应的一些细节内容\n然后呢再基于electron来开发\n类似于扣子跟DEFI的界面\n在本地模型部署\n然后呢再基于long graph来做AI编排相关的工作啊\n最终呢我们会把所有的来打通\n然后呢包括模型\n包括这个election\n在包括long graph编排部分的啊\n所有的这些细节内容\n最终完成的一个效果呢\n给大家来演示看一看\n在这个界面层啊\n包含的有各个这个常见的几个节点\n包括开始节点\n然后呢大模型节点大模型\n我们这里呢会选择用千问三杠0.6B\n这个我们待会会教大家\n如何如何去在本地去部署\n然后呢我们还会去调用相关的工具\n比如说呃我们给大家示例里面啊\n像加减乘除一些算额逻辑运算的一些操作\n在呢通过条件分支到结束节点整个编排的过程\n然后编排实现之后呢\n我们待会会通过控制台来给大家去演示一下\n它最终调用的效果啊\n这一部分呢在我们这个呃新增的项目实战\n中间有详细的介绍\n到时候呢可以去找咨询老师去了解啊\n领取相关的这个资料\n也是大家听完课以后去找咨询老师\n可以去咨询了解",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ZBMX6iEqh",
+  "published_at": "1785754500",
+  "fetched_at": "2026-08-09T18:08:52+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI全栈架构知识图谱\n\n## 总览图\n<!-- [BV1ZBMX6iEqh P1 00:25] Electron UI -->\n<!-- [BV1ZBMX6iEqh P1 00:32] LangGraph 编排 -->\n<!-- [BV1ZBMX6iEqh P1 01:00] 本地模型（千问3.0 0.6B） -->\n```mermaid\nflowchart LR\n    E[\"Electron UI<br/>桌面交互层\"] --> L[\"LangGraph<br/>工作流编排引擎\"]\n    L --> M[\"本地模型<br/>千问3.0 0.6B\"]\n    M --> T[\"工具插件<br/>算术运算等\"]\n    T --> E\n```\n\n## 工作流节点图\n<!-- [BV1ZBMX6iEqh P1 00:54] 开始节点 -->\n<!-- [BV1ZBMX6iEqh P1 00:56] 大模型节点 -->\n<!-- [BV1ZBMX6iEqh P1 01:06] 算术操作节点 -->\n<!-- [BV1ZBMX6iEqh P1 01:09] 条件分支 -->\n<!-- [BV1ZBMX6iEqh P1 01:13] 结束节点 -->\n```mermaid\nflowchart TD\n    S[\"开始节点\"] --> M[\"大模型节点<br/>千问3.0 0.6B\"]\n    M --> A[\"算术操作节点<br/>加/减/乘/除\"]\n    A --> C[\"条件分支\"]\n    C -->|满足| E[\"结束节点\"]\n    C -->|不满足| A\n```\n\n## 实施步骤图\n<!-- [BV1ZBMX6iEqh P1 00:19] 基于 LangGraph 搭建工程 -->\n<!-- [BV1ZBMX6iEqh P1 01:00] 本地部署模型 -->\n<!-- [BV1ZBMX6iEqh P1 00:25] 开发 Electron 界面 -->\n<!-- [BV1ZBMX6iEqh P1 01:04] 集成模型与工具 -->\n<!-- [BV1ZBMX6iEqh P1 01:13] 演示与控制台调用 -->\n```mermaid\nflowchart TD\n    step1[\"步骤1<br/>基于 LangGraph 搭建工程\"] --> step2[\"步骤2<br/>本地部署模型\"]\n    step2 --> step3[\"步骤3<br/>开发 Electron 界面\"]\n    step3 --> step4[\"步骤4<br/>集成模型与工具\"]\n    step4 --> step5[\"步骤5<br/>演示与控制台调用\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart LR\n    E[\"Electron UI<br/>桌面交互层\"] --> L[\"LangGraph<br/>工作流编排引擎\"]\n    L --> M[\"本地模型<br/>千问3.0 0.6B\"]\n    M --> T[\"工具插件<br/>算术运算等\"]\n    T --> E"
+        },
+        {
+          "title": "工作流节点图",
+          "code": "flowchart TD\n    S[\"开始节点\"] --> M[\"大模型节点<br/>千问3.0 0.6B\"]\n    M --> A[\"算术操作节点<br/>加/减/乘/除\"]\n    A --> C[\"条件分支\"]\n    C -->|满足| E[\"结束节点\"]\n    C -->|不满足| A"
+        },
+        {
+          "title": "实施步骤图",
+          "code": "flowchart TD\n    step1[\"步骤1<br/>基于 LangGraph 搭建工程\"] --> step2[\"步骤2<br/>本地部署模型\"]\n    step2 --> step3[\"步骤3<br/>开发 Electron 界面\"]\n    step3 --> step4[\"步骤4<br/>集成模型与工具\"]\n    step4 --> step5[\"步骤5<br/>演示与控制台调用\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T18:09:04+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI全栈架构知识图谱\n\n## 总览图\n<!-- [BV1ZBMX6iEqh P1 00:25] Electron UI -->\n<!-- [BV1ZBMX6iEqh P1 00:32] LangGraph 编排 -->\n<!-- [BV1ZBMX6iEqh P1 01:00] 本地模型（千问3.0 0.6B） -->\n```mermaid\nflowchart LR\n    E[\"Electron UI<br/>桌面交互层\"] --> L[\"LangGraph<br/>工作流编排引擎\"]\n    L --> M[\"本地模型<br/>千问3.0 0.6B\"]\n    M --> T[\"工具插件<br/>算术运算等\"]\n    T --> E\n```\n\n## 工作流节点图\n<!-- [BV1ZBMX6iEqh P1 00:54] 开始节点 -->\n<!-- [BV1ZBMX6iEqh P1 00:56] 大模型节点 -->\n<!-- [BV1ZBMX6iEqh P1 01:06] 算术操作节点 -->\n<!-- [BV1ZBMX6iEqh P1 01:09] 条件分支 -->\n<!-- [BV1ZBMX6iEqh P1 01:13] 结束节点 -->\n```mermaid\nflowchart TD\n    S[\"开始节点\"] --> M[\"大模型节点<br/>千问3.0 0.6B\"]\n    M --> A[\"算术操作节点<br/>加/减/乘/除\"]\n    A --> C[\"条件分支\"]\n    C -->|满足| E[\"结束节点\"]\n    C -->|不满足| A\n```\n\n## 实施步骤图\n<!-- [BV1ZBMX6iEqh P1 00:19] 基于 LangGraph 搭建工程 -->\n<!-- [BV1ZBMX6iEqh P1 01:00] 本地部署模型 -->\n<!-- [BV1ZBMX6iEqh P1 00:25] 开发 Electron 界面 -->\n<!-- [BV1ZBMX6iEqh P1 01:04] 集成模型与工具 -->\n<!-- [BV1ZBMX6iEqh P1 01:13] 演示与控制台调用 -->\n```mermaid\nflowchart TD\n    step1[\"步骤1<br/>基于 LangGraph 搭建工程\"] --> step2[\"步骤2<br/>本地部署模型\"]\n    step2 --> step3[\"步骤3<br/>开发 Electron 界面\"]\n    step3 --> step4[\"步骤4<br/>集成模型与工具\"]\n    step4 --> step5[\"步骤5<br/>演示与控制台调用\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart LR\n    E[\"Electron UI<br/>桌面交互层\"] --> L[\"LangGraph<br/>工作流编排引擎\"]\n    L --> M[\"本地模型<br/>千问3.0 0.6B\"]\n    M --> T[\"工具插件<br/>算术运算等\"]\n    T --> E"
+    },
+    {
+      "title": "工作流节点图",
+      "code": "flowchart TD\n    S[\"开始节点\"] --> M[\"大模型节点<br/>千问3.0 0.6B\"]\n    M --> A[\"算术操作节点<br/>加/减/乘/除\"]\n    A --> C[\"条件分支\"]\n    C -->|满足| E[\"结束节点\"]\n    C -->|不满足| A"
+    },
+    {
+      "title": "实施步骤图",
+      "code": "flowchart TD\n    step1[\"步骤1<br/>基于 LangGraph 搭建工程\"] --> step2[\"步骤2<br/>本地部署模型\"]\n    step2 --> step3[\"步骤3<br/>开发 Electron 界面\"]\n    step3 --> step4[\"步骤4<br/>集成模型与工具\"]\n    step4 --> step5[\"步骤5<br/>演示与控制台调用\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T18:09:04+00:00"
+}

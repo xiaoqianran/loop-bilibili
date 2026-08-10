@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1pyQtBmEjk",
+  "title": "我做了个claude app！和官方一模一样？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1468,
+  "text": "我竟然基于cloud code泄露源码\n一比一照着官方的前端复刻了一个cloud app\n还把它开源了\n不仅界面长得几乎和官方app1模一样\n你甚至可以自己接入cloud中转站\n和各路模型供应商的任意模型\n只要你有API就能接进去\n体验和官方app一样的畅聊\n比如网页搜索这种\n我随便问一个问题\n只要你的API支持网页搜索\n体验将和官方几乎无区别\n各种复杂文件的上传与分析也都能实现\n为了展示实力\n我这里直接把51万型cloud code泄露源码\n压缩包丢进聊天框里\n直接让他根据源码分析cloud code记忆系统\n十来分钟后\napp也是轻松完成任务\n完成的质量还很高\n凝练又不失信息量\n直接顺着这个记忆系统的话题\n让他写一份架构文档\n文档编写体验也和官方一模一样\n上面这些只是cloud code本身就有的基础功能\n我除了只是套壳\n前端还做了很多cloud app里才有的功能\n包括不限于从零写一个中国象棋游戏\n我这里用mini max做演示\n因为它比较快\n点开后app右边渲染HTML直接就能游玩\n然后是手动压缩模型的上下文\n这个功能club code本身也有\n不过我加了个和官方app1模一样的动画\n显示压缩后随便问个问题测试一下\n还有呢还能像官方app那样\n在设置里个性化定制你的风格\n这些修改后都能生效\n还能改为暗色模式\n还有呢能编辑你的artifact\n这是我从cloud官方网站上爬下来的\n所有50来个artifact事例都是爬完整代码下来\n实时渲染的\n可以直完或接修改\n还有呢能创建你的project\n像官方app那样\n你可以为你的场景创建专属的project\n搭建独属于你的知识库\n还有呢app还能连接并辅助你的GITHUB仓库\n我在app里绑定了我GITHUB账号\n可以直接选中项目里的文件或文件夹给cloud读\n让cloud辅助你开发\n我这里就拿我这个app项目举个例\n随便选了个read me\n点MD和文件夹\n让mini max总结一下我的这个app项目\n还有呢app还能导入管理并使用你的各种skills\n我用用skill creator这个skill作为示例\n示范一下目前的功能\n就我所展示的这些\n然后马上将会推出research功能\n我做的这个app还原度和完成度\n应该算是最逼近cloud app的原生体验的了\napp体验上确实还有很多细节不如正版cloud\n但是个人认为\n其实用性已经大于GPT和GEMINI的网页端\n关键是支持接入国产模型\n也可接入中转站\n我把这个项目完全开源到了GITHUB\n可以直接去release里下载最新版本\n前面介绍过的功能已经100%可用\n但这个项目我会不断更新\n主要修复那些我可能没发现的bug\n可以看到界面顶上的cheat\nCOWORK和code\n我只做了chat\n如果我的项目反响还不错\n那我下一步要攻破的就是COWORK\n至于为什么要做这个项目\n事情是这样的\n主包一直在想\n为什么就没人拿cod code聊天呢\n明明咱们用国内的中转站API\n接着最顶级的模型到cc里帮我们打工\n却还得开一个网页版AI为我们出谋划策\n毕竟是quit code太局限了\n命令行不直观\n操作不方便不说\n就连cloud code本身的系统提示词\n也不是为聊天准备的\n这就导致了cod code再强也只是个超级打工人\n所以必须要有能高效操作的图形化界面\n才能成为我们工作的时候的外置大脑\n这也就是我做这个项目的原因\n让大家拿着最强模型的API\n能更方便地发挥出他全部的实力\n谢谢大家的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1pyQtBmEjk",
+  "published_at": "1776091046",
+  "fetched_at": "2026-08-07T13:22:15+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Cloud App 复刻项目知识图谱\n\n## 总览\n```mermaid\nflowchart TD\nA1[\"基于 cloud code 泄露源码复刻官方前端\"] --> A2[\"界面几乎与官方 app 相同\"]\nA1 --> A3[\"开源发布至 GitHub\"]\nA2 --> A4[\"支持接入任意模型 API\"]\nA4 --> A5[\"网页搜索、文件上传与分析等功能\"]\nA3 --> A6[\"提供 51 万行 cloud code 源码压缩包\"]\nA6 --> A7[\"模型分析记忆系统并生成文档\"]\nA5 --> A8[\"模型压缩上下文并展示动画\"]\nA2 --> A9[\"个性化设置：暗色模式、风格定制\"]\nA9 --> A10[\"编辑 artifact、创建 project、知识库\"]\nA10 --> A11[\"绑定 GitHub，读取项目文件\"]\nA11 --> A12[\"使用 skill creator 管理 skills\"]\nA12 --> A13[\"计划推出 research 功能\"]\n```\n\n## 功能实现流程\n```mermaid\nflowchart LR\nB1[\"上传源码压缩包\"] --> B2[\"模型读取并分析 cloud code 记忆系统\"]\nB2 --> B3[\"生成架构文档\"]\nB3 --> B4[\"前端渲染 HTML，展示中国象棋 (mini‑max)\"]\nB4 --> B5[\"压缩模型上下文并展示动画\"]\nB5 --> B6[\"用户在设置中定制风格/暗色模式\"]\nB6 --> B7[\"编辑 artifact 或创建 project\"]\nB7 --> B8[\"绑定 GitHub，选择文件/文件夹\"]\nB8 --> B9[\"使用 mini‑max 总结项目 README\"]\nB9 --> B10[\"导入/管理 skills（skill creator 示例）\"]\n```\n\n## 未来路线图\n```mermaid\nflowchart TD\nC1[\"当前已实现 100% 功能\"] --> C2[\"持续更新，修复 bug\"]\nC2 --> C3[\"完善 UI 细节，接近正版 cloud\"]\nC3 --> C4[\"推出 research 功能\"]\nC4 --> C5[\"攻克 COWORK 功能\"]\nC5 --> C6[\"实现更高效的图形化交互\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\nA1[\"基于 cloud code 泄露源码复刻官方前端\"] --> A2[\"界面几乎与官方 app 相同\"]\nA1 --> A3[\"开源发布至 GitHub\"]\nA2 --> A4[\"支持接入任意模型 API\"]\nA4 --> A5[\"网页搜索、文件上传与分析等功能\"]\nA3 --> A6[\"提供 51 万行 cloud code 源码压缩包\"]\nA6 --> A7[\"模型分析记忆系统并生成文档\"]\nA5 --> A8[\"模型压缩上下文并展示动画\"]\nA2 --> A9[\"个性化设置：暗色模式、风格定制\"]\nA9 --> A10[\"编辑 artifact、创建 project、知识库\"]\nA10 --> A11[\"绑定 GitHub，读取项目文件\"]\nA11 --> A12[\"使用 skill creator 管理 skills\"]\nA12 --> A13[\"计划推出 research 功能\"]"
+        },
+        {
+          "title": "功能实现流程",
+          "code": "flowchart LR\nB1[\"上传源码压缩包\"] --> B2[\"模型读取并分析 cloud code 记忆系统\"]\nB2 --> B3[\"生成架构文档\"]\nB3 --> B4[\"前端渲染 HTML，展示中国象棋 (mini‑max)\"]\nB4 --> B5[\"压缩模型上下文并展示动画\"]\nB5 --> B6[\"用户在设置中定制风格/暗色模式\"]\nB6 --> B7[\"编辑 artifact 或创建 project\"]\nB7 --> B8[\"绑定 GitHub，选择文件/文件夹\"]\nB8 --> B9[\"使用 mini‑max 总结项目 README\"]\nB9 --> B10[\"导入/管理 skills（skill creator 示例）\"]"
+        },
+        {
+          "title": "未来路线图",
+          "code": "flowchart TD\nC1[\"当前已实现 100% 功能\"] --> C2[\"持续更新，修复 bug\"]\nC2 --> C3[\"完善 UI 细节，接近正版 cloud\"]\nC3 --> C4[\"推出 research 功能\"]\nC4 --> C5[\"攻克 COWORK 功能\"]\nC5 --> C6[\"实现更高效的图形化交互\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T13:22:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Cloud App 复刻项目知识图谱\n\n## 总览\n```mermaid\nflowchart TD\nA1[\"基于 cloud code 泄露源码复刻官方前端\"] --> A2[\"界面几乎与官方 app 相同\"]\nA1 --> A3[\"开源发布至 GitHub\"]\nA2 --> A4[\"支持接入任意模型 API\"]\nA4 --> A5[\"网页搜索、文件上传与分析等功能\"]\nA3 --> A6[\"提供 51 万行 cloud code 源码压缩包\"]\nA6 --> A7[\"模型分析记忆系统并生成文档\"]\nA5 --> A8[\"模型压缩上下文并展示动画\"]\nA2 --> A9[\"个性化设置：暗色模式、风格定制\"]\nA9 --> A10[\"编辑 artifact、创建 project、知识库\"]\nA10 --> A11[\"绑定 GitHub，读取项目文件\"]\nA11 --> A12[\"使用 skill creator 管理 skills\"]\nA12 --> A13[\"计划推出 research 功能\"]\n```\n\n## 功能实现流程\n```mermaid\nflowchart LR\nB1[\"上传源码压缩包\"] --> B2[\"模型读取并分析 cloud code 记忆系统\"]\nB2 --> B3[\"生成架构文档\"]\nB3 --> B4[\"前端渲染 HTML，展示中国象棋 (mini‑max)\"]\nB4 --> B5[\"压缩模型上下文并展示动画\"]\nB5 --> B6[\"用户在设置中定制风格/暗色模式\"]\nB6 --> B7[\"编辑 artifact 或创建 project\"]\nB7 --> B8[\"绑定 GitHub，选择文件/文件夹\"]\nB8 --> B9[\"使用 mini‑max 总结项目 README\"]\nB9 --> B10[\"导入/管理 skills（skill creator 示例）\"]\n```\n\n## 未来路线图\n```mermaid\nflowchart TD\nC1[\"当前已实现 100% 功能\"] --> C2[\"持续更新，修复 bug\"]\nC2 --> C3[\"完善 UI 细节，接近正版 cloud\"]\nC3 --> C4[\"推出 research 功能\"]\nC4 --> C5[\"攻克 COWORK 功能\"]\nC5 --> C6[\"实现更高效的图形化交互\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\nA1[\"基于 cloud code 泄露源码复刻官方前端\"] --> A2[\"界面几乎与官方 app 相同\"]\nA1 --> A3[\"开源发布至 GitHub\"]\nA2 --> A4[\"支持接入任意模型 API\"]\nA4 --> A5[\"网页搜索、文件上传与分析等功能\"]\nA3 --> A6[\"提供 51 万行 cloud code 源码压缩包\"]\nA6 --> A7[\"模型分析记忆系统并生成文档\"]\nA5 --> A8[\"模型压缩上下文并展示动画\"]\nA2 --> A9[\"个性化设置：暗色模式、风格定制\"]\nA9 --> A10[\"编辑 artifact、创建 project、知识库\"]\nA10 --> A11[\"绑定 GitHub，读取项目文件\"]\nA11 --> A12[\"使用 skill creator 管理 skills\"]\nA12 --> A13[\"计划推出 research 功能\"]"
+    },
+    {
+      "title": "功能实现流程",
+      "code": "flowchart LR\nB1[\"上传源码压缩包\"] --> B2[\"模型读取并分析 cloud code 记忆系统\"]\nB2 --> B3[\"生成架构文档\"]\nB3 --> B4[\"前端渲染 HTML，展示中国象棋 (mini‑max)\"]\nB4 --> B5[\"压缩模型上下文并展示动画\"]\nB5 --> B6[\"用户在设置中定制风格/暗色模式\"]\nB6 --> B7[\"编辑 artifact 或创建 project\"]\nB7 --> B8[\"绑定 GitHub，选择文件/文件夹\"]\nB8 --> B9[\"使用 mini‑max 总结项目 README\"]\nB9 --> B10[\"导入/管理 skills（skill creator 示例）\"]"
+    },
+    {
+      "title": "未来路线图",
+      "code": "flowchart TD\nC1[\"当前已实现 100% 功能\"] --> C2[\"持续更新，修复 bug\"]\nC2 --> C3[\"完善 UI 细节，接近正版 cloud\"]\nC3 --> C4[\"推出 research 功能\"]\nC4 --> C5[\"攻克 COWORK 功能\"]\nC5 --> C6[\"实现更高效的图形化交互\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T13:22:25+00:00"
+}

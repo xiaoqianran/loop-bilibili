@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1h3G36mEGJ",
+  "title": "免费本地大模型一键部署工具，解压即用，有手就行！不用再折腾环境变量了！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 530,
+  "text": "完全本地离线运行\n不信的话\n你可以把网线拔了试试\n照样能跑\n最近很多朋友想体验本地AI\n但真正开始使用的时候\n会发现配置过程还是有一定门槛\n各种环境设置模型选择参数调整\n第一次接触的朋友来说确实比较复杂\n这段时间测试了不少相关工具\n发现有一款对新手比较\n它最大的特点就是简单\n不需要复杂\n设置开之后就可以直接选择适合自己的模型\n软件里面已经按照不同用途进行了分类\n比如聊天对话图片生成翻译代码\n辅助文章整理内容总结等\n每个模型都会显示相关信息\n包括模型大小\n运行需求等\n同时也会根据你的电脑配置\n推荐比较合适的模型\n比如你的电脑只有8GB显存\n就比较适合运行7B左右的小模型\n如果有12GB到16GB显存\n可以尝试14B左右的模型\n配置越高\n能够运行的模型参数也就越大\n这里提醒一下\n不要盲目追求大模型\n如果显存或者内存不够强行运行\n可能会出现爆显存\n运行缓慢\n甚至直接无法启动的问题\n选择好之后\n点击获取并启动即可\n运行过程中还可以调整上下文长度\n开启思考模式\n同时查看CPU内存\n显存占用情况\n相当于电脑里面多了一个智能助手\n除此之外\n它也支持标准接口调用\n可以满足更多使用场景\n整体体验下来\n对于想尝试AI\n但又不想研究复杂配置的朋友来说\n还是比较友好的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1h3G36mEGJ",
+  "published_at": "1785572259",
+  "fetched_at": "2026-08-09T07:57:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T08:00:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T08:00:36+00:00"
+}

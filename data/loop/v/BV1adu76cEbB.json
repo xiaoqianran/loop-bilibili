@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1adu76cEbB",
+  "title": "【2026最新版】绝对是B站讲的最细的Spring AI2.0保姆级教程，Langchain4j+DeepSeek+Spring AI Alibaba，建议收藏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1448,
+  "text": "真心希望各位观众老爷们不要白嫖你的三连\n是我更新的spring ai2.0出来有一阵了啊\n最近抽空看了一下更新\n说明重要的更新其实就五个\n想要第一时间了解最新java AI动态的同学\n可以关注我\n我从spring AI0.1讲到1.0\n再到现在的2.0\n以及A证的开发\n第一点更新\n他抛弃了spring boot3和spring6\n必须要基于spring boot4和spring7\n其实我挺反感这种为了追版本而进行更新\n因为spring boot4和spring7其实也没有什么新特性\n并且spring boot4还要用idea2025以上\n那一上来还没开始用\n你就得全套的去更新\n并且一些第三方的中间件到底兼容的怎么样呢\n这也是一个风险\n那第二点更新我觉得非常好啊\n他为了更好的支持react agent\n重构了tool的设计\n之前tools的解析是在查的model\n现在上浮到了上层的child client的advisor中\n这样做有两个好处\n一个呢是通过日志advisor\n我们可以监控到tools传递的信息\n那以前的版本啊\n因为tools的解析是在底层的查的model\n所以上层的他的日志advise\n根本就监控不到force到底传了哪些信息给大模型\n完全是一个黑盒\n那现在通过日志就可以非常直观的查看\n所以我觉得这一点更新非常好\n那另外就是为了更好的实现A整体\n它基于内置的波欧calling递归advisor\n可以完成agent tic机制\n也就是根据任务观察思考\n然后调用to并且不断迭代\n不断自我纠错\n直到任务的完成\n所以这点更新也是spring AI迈向agent非常关键的一步\n进而呢\nspring AI还设计出了一套agent utils的agent的开发库\n它是一个逆向了cloud code的agent的工具库\n可以帮助我们更好的去开发agent的\n并且它是必须要基于spring ai2.0的\n那第四个更新呢是MCP的DREAMMABLE\nHTTP的传输方式\n取代了已经废弃的SSE\n成为了默认的传输协议\n那第五个更新加入了一个按需加载的tool\nAdviser\n叫做to OL search for a calling advise\n它可以在请求大模型之前啊\n根据当前的任务提示词\n然后检索和当前对话相关的图发给大模型\n这样呢既节省了token\n也能够有效的减少噪音\n提升推理的质量\n那除此之外其实就没有什么亮点的新特性了\n唯一能够打动我使用spring ai2.0的动力啊\n你可能就是spring AI agent的UTILS来进行开发agent题\n但是其实现在java的agent体的框架啊\n你像spring AI\n阿里巴巴agent framework\n还有agent scope跟java其实都做的不错\n所以现在spring AI\n它的定位就是简单的单轮模型对话\n他对自己的定位非常的清晰\n我只做各个大模型的基本对接\n还有tom cp rag的基本实现\n那应用层的agent的扩展\nHits engineering\n你们就把我当做基座来进行扩展就行了\n我做好底座\n你们做好上层的扩展\n这就是spring AI的定位\n其实我觉得这样也挺好啊\n各自为战\n做好自己擅长的领域\n那接下来我们就来学习spring AI吧\n我会通过入门加实战\n结合两个实战项目\n智能客服\n还有企业级rag知识库系统\n带你学习spring AI\n那需要课程笔记代码的同学可以留下666",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1adu76cEbB",
+  "published_at": "1786013522",
+  "fetched_at": "2026-08-10T08:05:39+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Spring AI 2.0 更新关系图谱\n\n## 更新概览\n```mermaid\nflowchart TD\n    U1[\"更新 1：基于 Spring Boot 4 & Spring 7\"] --> R1[\"需要 Spring Boot 4 (IDEA 2025+)\"]\n    U1 --> R2[\"兼容性风险：第三方中间件\"]\n    U2[\"更新 2：Tool 设计重构，支持 React Agent\"] --> D1[\"原：Tool 解析在 Model 层\"]\n    U2 --> D2[\"新：上层 ChildClient Advisor\"]\n    D2 --> L1[\"通过 LogAdvisor 监控 Tool 信息\"]\n    D1 --> B1[\"监控不到，形成黑盒\"]\n    U3[\"更新 3：Agent Utils 与递归 Advisor\"] --> C1[\"内置 Calling 递归 Advisor\"]\n    C1 --> C2[\"实现 Agent TIC 机制\"]\n    C2 --> C3[\"观察 → 思考 → 调用 → 迭代\"]\n    C3 --> C4[\"自我纠错 → 任务完成\"]\n    U4[\"更新 4：MCP DREAMMABLE HTTP 传输\"] --> S1[\"取代废弃的 SSE\"]\n    S1 --> D3[\"成为默认传输协议\"]\n    U5[\"更新 5：按需加载 Adviser Tool\"] --> A1[\"请求大模型前检索相关图\"]\n    A1 --> A2[\"节省 Token\"]\n    A1 --> A3[\"降低噪音\"]\n    A1 --> A4[\"提升推理质量\"]\n```\n\n## Tool 重构与日志监控\n```mermaid\nflowchart TD\n    OldParse[\"旧版 Tool 解析在 Model 层\"] --> NoLog[\"无法通过日志监控\"]\n    NoLog --> BlackBox[\"信息黑盒\"]\n    NewDesign[\"新版 Tool 设计上浮至 ChildClient Advisor\"] --> LogAdv[\"LogAdvisor 记录 Tool 传递信息\"]\n    LogAdv --> Monitor[\"可直观查看传递内容\"]\n    Monitor --> Benefit1[\"提升调试效率\"]\n    Monitor --> Benefit2[\"支持 React Agent\"]\n    NewDesign --> Support[\"更好支持 React Agent\"]\n    Support --> Benefit3[\"Agent 开发更便捷\"]\n```\n\n## Agent Utils 与递归 Advisor\n```mermaid\nflowchart TD\n    Utils[\"Agent Utils（逆向 Cloud Code）\"] --> Base[\"基于 Spring AI 2.0\"]\n    Base --> RecAdvisor[\"内置 Calling 递归 Advisor\"]\n    RecAdvisor --> TIC[\"Agent TIC 机制\"]\n    TIC --> Observe[\"观察任务\"]\n    Observe --> Think[\"思考方案\"]\n    Think --> Call[\"调用子任务\"]\n    Call --> Iterate[\"循环迭代\"]\n    Iterate --> SelfCorrect[\"自我纠错\"]\n    SelfCorrect --> Complete[\"任务完成\"]\n    Complete --> Value[\"关键一步：迈向完整 Agent\"]\n```\n\n## MCP DREAMMABLE HTTP 传输\n```mermaid\nflowchart TD\n    SSE[\"SSE（已废弃）\"] --> Deprecate[\"不再推荐使用\"]\n    Deprecate --> Dream[\"DREAMMABLE HTTP 传输\"]\n    Dream --> Default[\"默认传输协议\"]\n    Default --> Benefit1[\"更稳定的连接\"]\n    Default --> Benefit2[\"兼容性提升\"]\n    Default --> Benefit3[\"简化配置\"]\n```\n\n## 按需加载 Adviser Tool\n```mermaid\nflowchart TD\n    Adviser[\"Adviser Tool（按需加载）\"] --> PreReq[\"请求大模型前\"]\n    PreReq --> Prompt[\"依据当前任务提示词\"]\n    Prompt --> Retrieve[\"检索与对话相关的图谱\"]\n    Retrieve --> Send[\"将图谱发送给大模型\"]\n    Send --> TokenSave[\"节省 Token\"]\n    Send --> NoiseReduce[\"降低噪音\"]\n    Send --> InferImprove[\"提升推理质量\"]\n    InferImprove --> Outcome[\"更精准的模型响应\"]\n```",
+      "diagrams": [
+        {
+          "title": "更新概览",
+          "code": "flowchart TD\n    U1[\"更新 1：基于 Spring Boot 4 & Spring 7\"] --> R1[\"需要 Spring Boot 4 (IDEA 2025+)\"]\n    U1 --> R2[\"兼容性风险：第三方中间件\"]\n    U2[\"更新 2：Tool 设计重构，支持 React Agent\"] --> D1[\"原：Tool 解析在 Model 层\"]\n    U2 --> D2[\"新：上层 ChildClient Advisor\"]\n    D2 --> L1[\"通过 LogAdvisor 监控 Tool 信息\"]\n    D1 --> B1[\"监控不到，形成黑盒\"]\n    U3[\"更新 3：Agent Utils 与递归 Advisor\"] --> C1[\"内置 Calling 递归 Advisor\"]\n    C1 --> C2[\"实现 Agent TIC 机制\"]\n    C2 --> C3[\"观察 → 思考 → 调用 → 迭代\"]\n    C3 --> C4[\"自我纠错 → 任务完成\"]\n    U4[\"更新 4：MCP DREAMMABLE HTTP 传输\"] --> S1[\"取代废弃的 SSE\"]\n    S1 --> D3[\"成为默认传输协议\"]\n    U5[\"更新 5：按需加载 Adviser Tool\"] --> A1[\"请求大模型前检索相关图\"]\n    A1 --> A2[\"节省 Token\"]\n    A1 --> A3[\"降低噪音\"]\n    A1 --> A4[\"提升推理质量\"]"
+        },
+        {
+          "title": "Tool 重构与日志监控",
+          "code": "flowchart TD\n    OldParse[\"旧版 Tool 解析在 Model 层\"] --> NoLog[\"无法通过日志监控\"]\n    NoLog --> BlackBox[\"信息黑盒\"]\n    NewDesign[\"新版 Tool 设计上浮至 ChildClient Advisor\"] --> LogAdv[\"LogAdvisor 记录 Tool 传递信息\"]\n    LogAdv --> Monitor[\"可直观查看传递内容\"]\n    Monitor --> Benefit1[\"提升调试效率\"]\n    Monitor --> Benefit2[\"支持 React Agent\"]\n    NewDesign --> Support[\"更好支持 React Agent\"]\n    Support --> Benefit3[\"Agent 开发更便捷\"]"
+        },
+        {
+          "title": "Agent Utils 与递归 Advisor",
+          "code": "flowchart TD\n    Utils[\"Agent Utils（逆向 Cloud Code）\"] --> Base[\"基于 Spring AI 2.0\"]\n    Base --> RecAdvisor[\"内置 Calling 递归 Advisor\"]\n    RecAdvisor --> TIC[\"Agent TIC 机制\"]\n    TIC --> Observe[\"观察任务\"]\n    Observe --> Think[\"思考方案\"]\n    Think --> Call[\"调用子任务\"]\n    Call --> Iterate[\"循环迭代\"]\n    Iterate --> SelfCorrect[\"自我纠错\"]\n    SelfCorrect --> Complete[\"任务完成\"]\n    Complete --> Value[\"关键一步：迈向完整 Agent\"]"
+        },
+        {
+          "title": "MCP DREAMMABLE HTTP 传输",
+          "code": "flowchart TD\n    SSE[\"SSE（已废弃）\"] --> Deprecate[\"不再推荐使用\"]\n    Deprecate --> Dream[\"DREAMMABLE HTTP 传输\"]\n    Dream --> Default[\"默认传输协议\"]\n    Default --> Benefit1[\"更稳定的连接\"]\n    Default --> Benefit2[\"兼容性提升\"]\n    Default --> Benefit3[\"简化配置\"]"
+        },
+        {
+          "title": "按需加载 Adviser Tool",
+          "code": "flowchart TD\n    Adviser[\"Adviser Tool（按需加载）\"] --> PreReq[\"请求大模型前\"]\n    PreReq --> Prompt[\"依据当前任务提示词\"]\n    Prompt --> Retrieve[\"检索与对话相关的图谱\"]\n    Retrieve --> Send[\"将图谱发送给大模型\"]\n    Send --> TokenSave[\"节省 Token\"]\n    Send --> NoiseReduce[\"降低噪音\"]\n    Send --> InferImprove[\"提升推理质量\"]\n    InferImprove --> Outcome[\"更精准的模型响应\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T08:06:02+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Spring AI 2.0 更新关系图谱\n\n## 更新概览\n```mermaid\nflowchart TD\n    U1[\"更新 1：基于 Spring Boot 4 & Spring 7\"] --> R1[\"需要 Spring Boot 4 (IDEA 2025+)\"]\n    U1 --> R2[\"兼容性风险：第三方中间件\"]\n    U2[\"更新 2：Tool 设计重构，支持 React Agent\"] --> D1[\"原：Tool 解析在 Model 层\"]\n    U2 --> D2[\"新：上层 ChildClient Advisor\"]\n    D2 --> L1[\"通过 LogAdvisor 监控 Tool 信息\"]\n    D1 --> B1[\"监控不到，形成黑盒\"]\n    U3[\"更新 3：Agent Utils 与递归 Advisor\"] --> C1[\"内置 Calling 递归 Advisor\"]\n    C1 --> C2[\"实现 Agent TIC 机制\"]\n    C2 --> C3[\"观察 → 思考 → 调用 → 迭代\"]\n    C3 --> C4[\"自我纠错 → 任务完成\"]\n    U4[\"更新 4：MCP DREAMMABLE HTTP 传输\"] --> S1[\"取代废弃的 SSE\"]\n    S1 --> D3[\"成为默认传输协议\"]\n    U5[\"更新 5：按需加载 Adviser Tool\"] --> A1[\"请求大模型前检索相关图\"]\n    A1 --> A2[\"节省 Token\"]\n    A1 --> A3[\"降低噪音\"]\n    A1 --> A4[\"提升推理质量\"]\n```\n\n## Tool 重构与日志监控\n```mermaid\nflowchart TD\n    OldParse[\"旧版 Tool 解析在 Model 层\"] --> NoLog[\"无法通过日志监控\"]\n    NoLog --> BlackBox[\"信息黑盒\"]\n    NewDesign[\"新版 Tool 设计上浮至 ChildClient Advisor\"] --> LogAdv[\"LogAdvisor 记录 Tool 传递信息\"]\n    LogAdv --> Monitor[\"可直观查看传递内容\"]\n    Monitor --> Benefit1[\"提升调试效率\"]\n    Monitor --> Benefit2[\"支持 React Agent\"]\n    NewDesign --> Support[\"更好支持 React Agent\"]\n    Support --> Benefit3[\"Agent 开发更便捷\"]\n```\n\n## Agent Utils 与递归 Advisor\n```mermaid\nflowchart TD\n    Utils[\"Agent Utils（逆向 Cloud Code）\"] --> Base[\"基于 Spring AI 2.0\"]\n    Base --> RecAdvisor[\"内置 Calling 递归 Advisor\"]\n    RecAdvisor --> TIC[\"Agent TIC 机制\"]\n    TIC --> Observe[\"观察任务\"]\n    Observe --> Think[\"思考方案\"]\n    Think --> Call[\"调用子任务\"]\n    Call --> Iterate[\"循环迭代\"]\n    Iterate --> SelfCorrect[\"自我纠错\"]\n    SelfCorrect --> Complete[\"任务完成\"]\n    Complete --> Value[\"关键一步：迈向完整 Agent\"]\n```\n\n## MCP DREAMMABLE HTTP 传输\n```mermaid\nflowchart TD\n    SSE[\"SSE（已废弃）\"] --> Deprecate[\"不再推荐使用\"]\n    Deprecate --> Dream[\"DREAMMABLE HTTP 传输\"]\n    Dream --> Default[\"默认传输协议\"]\n    Default --> Benefit1[\"更稳定的连接\"]\n    Default --> Benefit2[\"兼容性提升\"]\n    Default --> Benefit3[\"简化配置\"]\n```\n\n## 按需加载 Adviser Tool\n```mermaid\nflowchart TD\n    Adviser[\"Adviser Tool（按需加载）\"] --> PreReq[\"请求大模型前\"]\n    PreReq --> Prompt[\"依据当前任务提示词\"]\n    Prompt --> Retrieve[\"检索与对话相关的图谱\"]\n    Retrieve --> Send[\"将图谱发送给大模型\"]\n    Send --> TokenSave[\"节省 Token\"]\n    Send --> NoiseReduce[\"降低噪音\"]\n    Send --> InferImprove[\"提升推理质量\"]\n    InferImprove --> Outcome[\"更精准的模型响应\"]\n```",
+  "diagrams": [
+    {
+      "title": "更新概览",
+      "code": "flowchart TD\n    U1[\"更新 1：基于 Spring Boot 4 & Spring 7\"] --> R1[\"需要 Spring Boot 4 (IDEA 2025+)\"]\n    U1 --> R2[\"兼容性风险：第三方中间件\"]\n    U2[\"更新 2：Tool 设计重构，支持 React Agent\"] --> D1[\"原：Tool 解析在 Model 层\"]\n    U2 --> D2[\"新：上层 ChildClient Advisor\"]\n    D2 --> L1[\"通过 LogAdvisor 监控 Tool 信息\"]\n    D1 --> B1[\"监控不到，形成黑盒\"]\n    U3[\"更新 3：Agent Utils 与递归 Advisor\"] --> C1[\"内置 Calling 递归 Advisor\"]\n    C1 --> C2[\"实现 Agent TIC 机制\"]\n    C2 --> C3[\"观察 → 思考 → 调用 → 迭代\"]\n    C3 --> C4[\"自我纠错 → 任务完成\"]\n    U4[\"更新 4：MCP DREAMMABLE HTTP 传输\"] --> S1[\"取代废弃的 SSE\"]\n    S1 --> D3[\"成为默认传输协议\"]\n    U5[\"更新 5：按需加载 Adviser Tool\"] --> A1[\"请求大模型前检索相关图\"]\n    A1 --> A2[\"节省 Token\"]\n    A1 --> A3[\"降低噪音\"]\n    A1 --> A4[\"提升推理质量\"]"
+    },
+    {
+      "title": "Tool 重构与日志监控",
+      "code": "flowchart TD\n    OldParse[\"旧版 Tool 解析在 Model 层\"] --> NoLog[\"无法通过日志监控\"]\n    NoLog --> BlackBox[\"信息黑盒\"]\n    NewDesign[\"新版 Tool 设计上浮至 ChildClient Advisor\"] --> LogAdv[\"LogAdvisor 记录 Tool 传递信息\"]\n    LogAdv --> Monitor[\"可直观查看传递内容\"]\n    Monitor --> Benefit1[\"提升调试效率\"]\n    Monitor --> Benefit2[\"支持 React Agent\"]\n    NewDesign --> Support[\"更好支持 React Agent\"]\n    Support --> Benefit3[\"Agent 开发更便捷\"]"
+    },
+    {
+      "title": "Agent Utils 与递归 Advisor",
+      "code": "flowchart TD\n    Utils[\"Agent Utils（逆向 Cloud Code）\"] --> Base[\"基于 Spring AI 2.0\"]\n    Base --> RecAdvisor[\"内置 Calling 递归 Advisor\"]\n    RecAdvisor --> TIC[\"Agent TIC 机制\"]\n    TIC --> Observe[\"观察任务\"]\n    Observe --> Think[\"思考方案\"]\n    Think --> Call[\"调用子任务\"]\n    Call --> Iterate[\"循环迭代\"]\n    Iterate --> SelfCorrect[\"自我纠错\"]\n    SelfCorrect --> Complete[\"任务完成\"]\n    Complete --> Value[\"关键一步：迈向完整 Agent\"]"
+    },
+    {
+      "title": "MCP DREAMMABLE HTTP 传输",
+      "code": "flowchart TD\n    SSE[\"SSE（已废弃）\"] --> Deprecate[\"不再推荐使用\"]\n    Deprecate --> Dream[\"DREAMMABLE HTTP 传输\"]\n    Dream --> Default[\"默认传输协议\"]\n    Default --> Benefit1[\"更稳定的连接\"]\n    Default --> Benefit2[\"兼容性提升\"]\n    Default --> Benefit3[\"简化配置\"]"
+    },
+    {
+      "title": "按需加载 Adviser Tool",
+      "code": "flowchart TD\n    Adviser[\"Adviser Tool（按需加载）\"] --> PreReq[\"请求大模型前\"]\n    PreReq --> Prompt[\"依据当前任务提示词\"]\n    Prompt --> Retrieve[\"检索与对话相关的图谱\"]\n    Retrieve --> Send[\"将图谱发送给大模型\"]\n    Send --> TokenSave[\"节省 Token\"]\n    Send --> NoiseReduce[\"降低噪音\"]\n    Send --> InferImprove[\"提升推理质量\"]\n    InferImprove --> Outcome[\"更精准的模型响应\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:06:02+00:00"
+}

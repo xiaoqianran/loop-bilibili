@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1bR7k67EH1",
+  "title": "27届unity游戏开发求职作品",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1201,
+  "text": "大家好\n这是我的unity求职作品\n这项目是由unity客户端和自研的C加加服务端构成\n接下来就开启服务端\n并进入游戏\n一步步展示\n这是游戏账号登录注册\n由于技术有限\n这些账号管理是直接储存在本地上的\n登录好账号进来就是房间大厅系统了\n这大概的流程就是玩家创建房间\n成为房主\n房主等待其他玩家加入并开始游戏\n这里的设计就是只有房主处于房间内\n其他玩家才能看到房间存在\n以及一些房间名重复之类的问题\n完善吧\n进入游戏就能看到其他玩家了\n不过得事先说明的是\n由于实力还没够\n这游戏还有些值得优化的地方\n就比如目前能看到人物的动作幅度过大\n以及玩家之间相互看到对方的移动行为会有点不畅\n网络层用的是UDP加put to Buff\n同步是状态同步\n权威是混合权威\n不过大部分\n这里声音有点杂\n是因为多人关掉一边声音就正常了\n子弹射击方面\n现在展示一下背包和箱子的交互\n这里我是仿三角洲的不同区域和多尺寸物品\n物品也是能正常旋转的\n不过当时想着做的越多\nbug越多\n所以就只随便完成了旋转\n就导致只有向右的旋转\n看的还挺呆\n接下来就是AI系统了\n这个AI用的就是状态机和A寻路了\n以及我简单给他做了个扇形的前方视野探测功能\n在他没有检测玩家时\n会在以一个中心点的一定范围内进行随机目的地寻路移动\n这里就是恰好向后移动\n检测到了我\n然后开始对我的跟随\n接下来简单的展示一下AI通过A算法寻路绕路\n这里也可以很明显看到的问题\nAI的攻击动画和实际不符无法一致\n也就是AI攻击动画时明明有向前移动感觉\n但实际上只能在原地踏步\n反正当时我找了半天都不知道怎么解决\n也希望有解决办法的大佬指明一下\n关于这个AI的寻路\n其实一开始还有个问题\n开始我做的时候没办法在服务端检测到场景里的障碍物\n导致AI无法准确绕路\n就算绕路了\n也有时会穿障碍物\n后来我用cc他帮我做了个工具脚本\n将A的网格地图导出数据到外部给服务端识别\n不过原理我没怎么深究\n反正大概思路就是这样\n接下来展示的是用书\n我热更新也是比较简单\n反正这游戏域外都这么潦草\n所以这里中文乱码我也懒得修复了\n然后就是可以中途加入游戏\n不过还会看到早已死去的AI起来再死一次\n存档系统也是用put Buff直接存在本地的\n这个存档就是退出游戏自动存档\n进入游戏自动读档\n也做了一些分离吧\n就是玩家存自己的房主\n存自己加外界的\n比如AI和箱子\n最后说一下结语吧\n发之前我看了一下其他大佬的求职作品\n感觉和他们相比\n我这个无论是UI还是技术掌握方面都是被吊起来打啊\n这款项目前我还信誓旦旦要花时间好好完成打磨\n但随着时间过去\n就大概认真做了两三个月吧\n就耐不下心准备草草结束了\n过程中学习的技术都是一知半解\n甚至其实后期有不少的book都是cc帮我解决的\n我会将我的简历发在评论区\n希望有大佬能指点一下\n我想找个暑期实习\n学历方面只是个普通的民本\n希望不要以大厂条件拷打我啊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1bR7k67EH1",
+  "published_at": "1780651700",
+  "fetched_at": "2026-08-10T00:49:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Unity 求职作品知识图谱\n\n## 系统结构总览\n```mermaid\nflowchart TD\n    Client[\"Unity 客户端\"]\n    Server[\"C++ 服务端\"]\n    Login[\"账号登录/注册 (本地存储)\"]\n    Lobby[\"房间大厅系统\"]\n    Room[\"创建房间 (房主)\"]\n    Players[\"其他玩家加入\"]\n    Game[\"游戏场景\"]\n    AI[\"AI 系统\"]\n    Inventory[\"背包/箱子交互\"]\n    Save[\"存档系统 (PutBuff)\"]\n    HotUpdate[\"热更新 (简易)\"]\n\n    Client --> Server\n    Client --> Login\n    Login --> Lobby\n    Lobby --> Room\n    Room --> Players\n    Players --> Game\n    Game --> AI\n    Game --> Inventory\n    Game --> Save\n    Save --> HotUpdate\n```\n- 项目结构: [BV1bR7k67EH1 P1 00:03]  \n- 登录注册本地存储: [BV1bR7k67EH1 P1 00:18-00:23]  \n- 房间创建与房主流程: [BV1bR7k67EH1 P1 00:39-00:43]  \n- 进入游戏可见其他玩家: [BV1bR7k67EH1 P1 01:03]  \n\n## 网络同步与权威模型\n```mermaid\nflowchart LR\n    Network[\"网络层: UDP + PutToBuff\"]\n    Sync[\"状态同步\"]\n    Authority[\"混合权威\"]\n    Issues[\"动作幅度大、移动不畅\"]\n    Optimization[\"待优化\"]\n\n    Network --> Sync\n    Sync --> Authority\n    Authority --> Issues\n    Issues --> Optimization\n```\n- 网络层实现: [BV1bR7k67EH1 P1 01:21]  \n- 同步方式: [BV1bR7k67EH1 P1 01:25]  \n- 权威模型: [BV1bR7k67EH1 P1 01:27]  \n- 需要优化的表现: [BV1bR7k67EH1 P1 01:12-01:16]  \n\n## AI 行为与寻路流程\n```mermaid\nflowchart TD\n    StateMachine[\"状态机\"]\n    AStar[\"A* 寻路\"]\n    Vision[\"扇形前方视野探测\"]\n    RandomMove[\"随机目的地移动\"]\n    Detect[\"检测玩家\"]\n    Follow[\"跟随玩家\"]\n    AttackAnim[\"攻击动画\"]\n    AttackIssue[\"动画与实际不符\"]\n    ObstacleDetect[\"障碍物检测\"]\n    GridExport[\"网格导出工具脚本\"]\n    PathFinding[\"路径规划\"]\n\n    StateMachine --> AStar\n    StateMachine --> Vision\n    Vision --> RandomMove\n    RandomMove --> Detect\n    Detect --> Follow\n    Follow --> AttackAnim\n    AttackAnim --> AttackIssue\n    ObstacleDetect --> PathFinding\n    GridExport --> ObstacleDetect\n```\n- AI 使用状态机与 A* 寻路: [BV1bR7k67EH1 P1 02:41-02:44]  \n- 前方视野扇形探测: [BV1bR7k67EH1 P1 02:44-02:48]  \n- 随机移动与玩家检测: [BV1bR7k67EH1 P1 02:50-02:57]  \n- 攻击动画与实际不符: [BV1bR7k67EH1 P1 03:30-03:37]  \n- 障碍物检测问题与网格导出: [BV1bR7k67EH1 P1 03:55-04:06]  \n\n## 存档与热更新机制\n```mermaid\nflowchart TD\n    SaveLocal[\"本地存档 (PutBuff)\"]\n    AutoSave[\"退出自动存档\"]\n    AutoLoad[\"进入自动读档\"]\n    Separate[\"玩家/房主存档分离\"]\n    HotUpdate[\"热更新 (简易)\"]\n    Issue[\"中文乱码未修复\"]\n\n    SaveLocal --> AutoSave\n    SaveLocal --> AutoLoad\n    SaveLocal --> Separate\n    Separate --> HotUpdate\n    HotUpdate --> Issue\n```\n- 存档使用 PutBuff 本地保存: [BV1bR7k67EH1 P1 05:53-06:03]  \n- 自动存档/读档流程: [BV1bR7k67EH1 P1 06:00-06:03]  \n- 存档分离（玩家/房主、AI、箱子）: [BV1bR7k67EH1 P1 06:42-06:49]  \n- 热更新概述: [BV1bR7k67EH1 P1 04:33-04:34]  \n- 中文乱码问题: [BV1bR7k67EH1 P1 05:15]  ",
+      "diagrams": [
+        {
+          "title": "系统结构总览",
+          "code": "flowchart TD\n    Client[\"Unity 客户端\"]\n    Server[\"C++ 服务端\"]\n    Login[\"账号登录/注册 (本地存储)\"]\n    Lobby[\"房间大厅系统\"]\n    Room[\"创建房间 (房主)\"]\n    Players[\"其他玩家加入\"]\n    Game[\"游戏场景\"]\n    AI[\"AI 系统\"]\n    Inventory[\"背包/箱子交互\"]\n    Save[\"存档系统 (PutBuff)\"]\n    HotUpdate[\"热更新 (简易)\"]\n\n    Client --> Server\n    Client --> Login\n    Login --> Lobby\n    Lobby --> Room\n    Room --> Players\n    Players --> Game\n    Game --> AI\n    Game --> Inventory\n    Game --> Save\n    Save --> HotUpdate"
+        },
+        {
+          "title": "网络同步与权威模型",
+          "code": "flowchart LR\n    Network[\"网络层: UDP + PutToBuff\"]\n    Sync[\"状态同步\"]\n    Authority[\"混合权威\"]\n    Issues[\"动作幅度大、移动不畅\"]\n    Optimization[\"待优化\"]\n\n    Network --> Sync\n    Sync --> Authority\n    Authority --> Issues\n    Issues --> Optimization"
+        },
+        {
+          "title": "AI 行为与寻路流程",
+          "code": "flowchart TD\n    StateMachine[\"状态机\"]\n    AStar[\"A* 寻路\"]\n    Vision[\"扇形前方视野探测\"]\n    RandomMove[\"随机目的地移动\"]\n    Detect[\"检测玩家\"]\n    Follow[\"跟随玩家\"]\n    AttackAnim[\"攻击动画\"]\n    AttackIssue[\"动画与实际不符\"]\n    ObstacleDetect[\"障碍物检测\"]\n    GridExport[\"网格导出工具脚本\"]\n    PathFinding[\"路径规划\"]\n\n    StateMachine --> AStar\n    StateMachine --> Vision\n    Vision --> RandomMove\n    RandomMove --> Detect\n    Detect --> Follow\n    Follow --> AttackAnim\n    AttackAnim --> AttackIssue\n    ObstacleDetect --> PathFinding\n    GridExport --> ObstacleDetect"
+        },
+        {
+          "title": "存档与热更新机制",
+          "code": "flowchart TD\n    SaveLocal[\"本地存档 (PutBuff)\"]\n    AutoSave[\"退出自动存档\"]\n    AutoLoad[\"进入自动读档\"]\n    Separate[\"玩家/房主存档分离\"]\n    HotUpdate[\"热更新 (简易)\"]\n    Issue[\"中文乱码未修复\"]\n\n    SaveLocal --> AutoSave\n    SaveLocal --> AutoLoad\n    SaveLocal --> Separate\n    Separate --> HotUpdate\n    HotUpdate --> Issue"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T00:50:06+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Unity 求职作品知识图谱\n\n## 系统结构总览\n```mermaid\nflowchart TD\n    Client[\"Unity 客户端\"]\n    Server[\"C++ 服务端\"]\n    Login[\"账号登录/注册 (本地存储)\"]\n    Lobby[\"房间大厅系统\"]\n    Room[\"创建房间 (房主)\"]\n    Players[\"其他玩家加入\"]\n    Game[\"游戏场景\"]\n    AI[\"AI 系统\"]\n    Inventory[\"背包/箱子交互\"]\n    Save[\"存档系统 (PutBuff)\"]\n    HotUpdate[\"热更新 (简易)\"]\n\n    Client --> Server\n    Client --> Login\n    Login --> Lobby\n    Lobby --> Room\n    Room --> Players\n    Players --> Game\n    Game --> AI\n    Game --> Inventory\n    Game --> Save\n    Save --> HotUpdate\n```\n- 项目结构: [BV1bR7k67EH1 P1 00:03]  \n- 登录注册本地存储: [BV1bR7k67EH1 P1 00:18-00:23]  \n- 房间创建与房主流程: [BV1bR7k67EH1 P1 00:39-00:43]  \n- 进入游戏可见其他玩家: [BV1bR7k67EH1 P1 01:03]  \n\n## 网络同步与权威模型\n```mermaid\nflowchart LR\n    Network[\"网络层: UDP + PutToBuff\"]\n    Sync[\"状态同步\"]\n    Authority[\"混合权威\"]\n    Issues[\"动作幅度大、移动不畅\"]\n    Optimization[\"待优化\"]\n\n    Network --> Sync\n    Sync --> Authority\n    Authority --> Issues\n    Issues --> Optimization\n```\n- 网络层实现: [BV1bR7k67EH1 P1 01:21]  \n- 同步方式: [BV1bR7k67EH1 P1 01:25]  \n- 权威模型: [BV1bR7k67EH1 P1 01:27]  \n- 需要优化的表现: [BV1bR7k67EH1 P1 01:12-01:16]  \n\n## AI 行为与寻路流程\n```mermaid\nflowchart TD\n    StateMachine[\"状态机\"]\n    AStar[\"A* 寻路\"]\n    Vision[\"扇形前方视野探测\"]\n    RandomMove[\"随机目的地移动\"]\n    Detect[\"检测玩家\"]\n    Follow[\"跟随玩家\"]\n    AttackAnim[\"攻击动画\"]\n    AttackIssue[\"动画与实际不符\"]\n    ObstacleDetect[\"障碍物检测\"]\n    GridExport[\"网格导出工具脚本\"]\n    PathFinding[\"路径规划\"]\n\n    StateMachine --> AStar\n    StateMachine --> Vision\n    Vision --> RandomMove\n    RandomMove --> Detect\n    Detect --> Follow\n    Follow --> AttackAnim\n    AttackAnim --> AttackIssue\n    ObstacleDetect --> PathFinding\n    GridExport --> ObstacleDetect\n```\n- AI 使用状态机与 A* 寻路: [BV1bR7k67EH1 P1 02:41-02:44]  \n- 前方视野扇形探测: [BV1bR7k67EH1 P1 02:44-02:48]  \n- 随机移动与玩家检测: [BV1bR7k67EH1 P1 02:50-02:57]  \n- 攻击动画与实际不符: [BV1bR7k67EH1 P1 03:30-03:37]  \n- 障碍物检测问题与网格导出: [BV1bR7k67EH1 P1 03:55-04:06]  \n\n## 存档与热更新机制\n```mermaid\nflowchart TD\n    SaveLocal[\"本地存档 (PutBuff)\"]\n    AutoSave[\"退出自动存档\"]\n    AutoLoad[\"进入自动读档\"]\n    Separate[\"玩家/房主存档分离\"]\n    HotUpdate[\"热更新 (简易)\"]\n    Issue[\"中文乱码未修复\"]\n\n    SaveLocal --> AutoSave\n    SaveLocal --> AutoLoad\n    SaveLocal --> Separate\n    Separate --> HotUpdate\n    HotUpdate --> Issue\n```\n- 存档使用 PutBuff 本地保存: [BV1bR7k67EH1 P1 05:53-06:03]  \n- 自动存档/读档流程: [BV1bR7k67EH1 P1 06:00-06:03]  \n- 存档分离（玩家/房主、AI、箱子）: [BV1bR7k67EH1 P1 06:42-06:49]  \n- 热更新概述: [BV1bR7k67EH1 P1 04:33-04:34]  \n- 中文乱码问题: [BV1bR7k67EH1 P1 05:15]  ",
+  "diagrams": [
+    {
+      "title": "系统结构总览",
+      "code": "flowchart TD\n    Client[\"Unity 客户端\"]\n    Server[\"C++ 服务端\"]\n    Login[\"账号登录/注册 (本地存储)\"]\n    Lobby[\"房间大厅系统\"]\n    Room[\"创建房间 (房主)\"]\n    Players[\"其他玩家加入\"]\n    Game[\"游戏场景\"]\n    AI[\"AI 系统\"]\n    Inventory[\"背包/箱子交互\"]\n    Save[\"存档系统 (PutBuff)\"]\n    HotUpdate[\"热更新 (简易)\"]\n\n    Client --> Server\n    Client --> Login\n    Login --> Lobby\n    Lobby --> Room\n    Room --> Players\n    Players --> Game\n    Game --> AI\n    Game --> Inventory\n    Game --> Save\n    Save --> HotUpdate"
+    },
+    {
+      "title": "网络同步与权威模型",
+      "code": "flowchart LR\n    Network[\"网络层: UDP + PutToBuff\"]\n    Sync[\"状态同步\"]\n    Authority[\"混合权威\"]\n    Issues[\"动作幅度大、移动不畅\"]\n    Optimization[\"待优化\"]\n\n    Network --> Sync\n    Sync --> Authority\n    Authority --> Issues\n    Issues --> Optimization"
+    },
+    {
+      "title": "AI 行为与寻路流程",
+      "code": "flowchart TD\n    StateMachine[\"状态机\"]\n    AStar[\"A* 寻路\"]\n    Vision[\"扇形前方视野探测\"]\n    RandomMove[\"随机目的地移动\"]\n    Detect[\"检测玩家\"]\n    Follow[\"跟随玩家\"]\n    AttackAnim[\"攻击动画\"]\n    AttackIssue[\"动画与实际不符\"]\n    ObstacleDetect[\"障碍物检测\"]\n    GridExport[\"网格导出工具脚本\"]\n    PathFinding[\"路径规划\"]\n\n    StateMachine --> AStar\n    StateMachine --> Vision\n    Vision --> RandomMove\n    RandomMove --> Detect\n    Detect --> Follow\n    Follow --> AttackAnim\n    AttackAnim --> AttackIssue\n    ObstacleDetect --> PathFinding\n    GridExport --> ObstacleDetect"
+    },
+    {
+      "title": "存档与热更新机制",
+      "code": "flowchart TD\n    SaveLocal[\"本地存档 (PutBuff)\"]\n    AutoSave[\"退出自动存档\"]\n    AutoLoad[\"进入自动读档\"]\n    Separate[\"玩家/房主存档分离\"]\n    HotUpdate[\"热更新 (简易)\"]\n    Issue[\"中文乱码未修复\"]\n\n    SaveLocal --> AutoSave\n    SaveLocal --> AutoLoad\n    SaveLocal --> Separate\n    Separate --> HotUpdate\n    HotUpdate --> Issue"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T00:50:06+00:00"
+}

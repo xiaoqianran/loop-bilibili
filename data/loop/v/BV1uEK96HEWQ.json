@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1uEK96HEWQ",
+  "title": "claude code最舒适的图形化软件？给你codex一般的体验感",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1259,
+  "text": "事情的起因系up发现codex真的是太好用了\n可惜只能用plus\n如果想要洗镜灯\n还是只能用cloud code接deep seek平民版\n但是由于a soul的超级敏感肌和全英文界面\n以及up的cloud账号又被封掉了\n所以一般都是用cloud code命令行形式\n但是这样对up这种小白还是太难了\n虽然在versus code里面使用修复了很多\n但是还是和codex使用体验上有差别\n比如说不能直观的看到有什么skill\n装了哪些插件\napp在GITHUB上面找到了一个开源项目\n叫做token ecode\n尽管有了一个JI\n但是还是不是很满意\n因此up将这个项目克隆了下来\n自己web coding改版重置了一下\n下面是这个软件小小的展示\n右下角点击头像可以显示热力图\n看看你哪一天使用的token最多\n以及常用模型和输入输出\ntoken在右侧边栏可以显示你装了哪些skill\n点击翻译\n可以把这些skill翻译成中文\n当然需要自己填一下大模型的API\n点进去也可以对整个skill进行翻译\n像这里就把整个skill都翻译了很清晰\n而且可以在里面对你的skill进行编辑和微调\n点这个按钮可以下载你和cloud code的对话分享出去\n这里是文件列表\n你可以对里面的文件进行预览\n当然也可以对列表里面的文件进行编辑\n里面的代码编辑起来也是很修复的\n这里是cloud code的插件市场\n可以一键安装对应插件\n在设置里面可以对界面的风格和皮肤\n进行自己的选择\n也可以自定义自己的头像和agent的头像\n当然也不仅是deep sk\n其他第三方的供应商都是可以接入的\n除了异性里面的供应商\n还可以自己填ULL和API\n而且还支持cc switch对模型的切换\n这里可以检查你的cloud code的版本\n想要更新或者切换版本都是一键可以做到的\n好的有点酒\n那我们先不管了\n这里可以添加MD服务器\n让agent可以操作其他软件\n这里可以写些绘画\n可用向下文\n并且一键压缩好的\n让我们实操一下\n这是up的本地音乐播放器\n可以看到是没有配置歌曲封面\n艺术家\n还有标题信息的\n可以说是非常非常的不好看\n让我们把舞台给到token i code这里输入提示词\n可以看到agent已经开始孜孜不倦的工作了\n那祝他好运吧\n趁这个时机\n我们先来预览一下目前有哪些界面\n还是有比较多的样式的\n好的做完了看看效果如何\nAO切下一首歌看看\n感觉格调一下子就上来了\n往下多切几首歌看看呐\n不错不错\n挺有氛围的\n出了点小瑕疵\n就是有些歌曲的标题还是未知的\n我们把问题反馈给token\nI code\n也许等待他发完毕\nOK了我们来看看效果\n这下处理好了\n感觉还是很不错的\n你多不对不对\n朋友不是谭咏麟的朋友吗\n出了点小问题\n不过问题不大\n再修一下就好了\nTwo thousand years later\nOK了\n也许完美完成任务了\n这个项目up会开源到GITHUB上的代码\n什么都是codex写的\n写的太烂\n骂了他就不要骂阿姆\n拉死就行\n感谢观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1uEK96HEWQ",
+  "published_at": "1782746465",
+  "fetched_at": "2026-08-08T11:53:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Claude Code 图形化软件知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    C1[\"Codex (plus)\"] -->|仅限 plus| C2[\"功能受限\"]\n    C3[\"Cloud Code (CLI)\"] -->|命令行使用| C4[\"对小白难度高\"]\n    G1[\"GitHub 开源项目\"] -->|克隆并改版| G2[\"Token ecode\"]\n    G2 -->|提供| G3[\"接近 Codex 的体验\"]\n    G2 -->|基于| G4[\"Web UI\"]\n    G4 -->|替代| C3\n```\n\n## 主要功能\n```mermaid\nflowchart TD\n    F1[\"热图（使用量/日期）\"]\n    F2[\"Token 侧边栏显示已装 skill\"]\n    F3[\"Skill 翻译（自动/手动）\"]\n    F4[\"插件市场（单键安装）\"]\n    F5[\"界面主题与皮肤自定义\"]\n    F6[\"自定义头像 & Agent 头像\"]\n    F7[\"模型切换（cc switch）\"]\n    F8[\"版本检查与一键更新\"]\n    F9[\"MD 服务器接入\"]\n    F10[\"第三方供应商接入\"]\n    F11[\"自定义 URL 与 API\"]\n    F12[\"文件列表预览 & 编辑\"]\n    F13[\"下载对话分享\"]\n\n    F1 --> F2\n    F2 --> F3\n    F3 --> F12\n    F4 --> F5\n    F5 --> F6\n    F6 --> F7\n    F7 --> F8\n    F8 --> F9\n    F9 --> F10\n    F10 --> F11\n    F11 --> F12\n    F12 --> F13\n```\n\n## 使用流程\n```mermaid\nflowchart LR\n    S0[\"开始：发现 Codex 好用但受限\"] --> S1[\"克隆 token ecode 项目\"]\n    S1 --> S2[\"在 Web UI 上进行改版\"]\n    S2 --> S3[\"填写大模型 API Key\"]\n    S3 --> S4[\"打开 UI 查看热图 & Token 侧栏\"]\n    S4 --> S5[\"翻译或编辑 Skill\"]\n    S5 --> S6[\"在插件市场安装所需插件\"]\n    S6 --> S7[\"切换模型或更新版本\"]\n    S7 --> S8[\"预览/编辑文件列表\"]\n    S8 --> S9[\"下载对话并分享\"]\n    S9 --> S10[\"完成\"]\n```\n\n## 扩展与集成\n```mermaid\nflowchart TD\n    E1[\"第三方供应商\"] --> E2[\"自定义 URL 与 API\"]\n    E2 --> E3[\"MD 服务器\"]\n    E3 --> E4[\"Agent 可操作其他软件\"]\n    E4 --> E5[\"深度集成（如 deep sk）\"]\n    E5 --> E6[\"模型切换（cc switch）\"]\n    E6 --> E7[\"版本管理\"]\n    E7 --> E1\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    C1[\"Codex (plus)\"] -->|仅限 plus| C2[\"功能受限\"]\n    C3[\"Cloud Code (CLI)\"] -->|命令行使用| C4[\"对小白难度高\"]\n    G1[\"GitHub 开源项目\"] -->|克隆并改版| G2[\"Token ecode\"]\n    G2 -->|提供| G3[\"接近 Codex 的体验\"]\n    G2 -->|基于| G4[\"Web UI\"]\n    G4 -->|替代| C3"
+        },
+        {
+          "title": "主要功能",
+          "code": "flowchart TD\n    F1[\"热图（使用量/日期）\"]\n    F2[\"Token 侧边栏显示已装 skill\"]\n    F3[\"Skill 翻译（自动/手动）\"]\n    F4[\"插件市场（单键安装）\"]\n    F5[\"界面主题与皮肤自定义\"]\n    F6[\"自定义头像 & Agent 头像\"]\n    F7[\"模型切换（cc switch）\"]\n    F8[\"版本检查与一键更新\"]\n    F9[\"MD 服务器接入\"]\n    F10[\"第三方供应商接入\"]\n    F11[\"自定义 URL 与 API\"]\n    F12[\"文件列表预览 & 编辑\"]\n    F13[\"下载对话分享\"]\n\n    F1 --> F2\n    F2 --> F3\n    F3 --> F12\n    F4 --> F5\n    F5 --> F6\n    F6 --> F7\n    F7 --> F8\n    F8 --> F9\n    F9 --> F10\n    F10 --> F11\n    F11 --> F12\n    F12 --> F13"
+        },
+        {
+          "title": "使用流程",
+          "code": "flowchart LR\n    S0[\"开始：发现 Codex 好用但受限\"] --> S1[\"克隆 token ecode 项目\"]\n    S1 --> S2[\"在 Web UI 上进行改版\"]\n    S2 --> S3[\"填写大模型 API Key\"]\n    S3 --> S4[\"打开 UI 查看热图 & Token 侧栏\"]\n    S4 --> S5[\"翻译或编辑 Skill\"]\n    S5 --> S6[\"在插件市场安装所需插件\"]\n    S6 --> S7[\"切换模型或更新版本\"]\n    S7 --> S8[\"预览/编辑文件列表\"]\n    S8 --> S9[\"下载对话并分享\"]\n    S9 --> S10[\"完成\"]"
+        },
+        {
+          "title": "扩展与集成",
+          "code": "flowchart TD\n    E1[\"第三方供应商\"] --> E2[\"自定义 URL 与 API\"]\n    E2 --> E3[\"MD 服务器\"]\n    E3 --> E4[\"Agent 可操作其他软件\"]\n    E4 --> E5[\"深度集成（如 deep sk）\"]\n    E5 --> E6[\"模型切换（cc switch）\"]\n    E6 --> E7[\"版本管理\"]\n    E7 --> E1"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T11:53:56+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Claude Code 图形化软件知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    C1[\"Codex (plus)\"] -->|仅限 plus| C2[\"功能受限\"]\n    C3[\"Cloud Code (CLI)\"] -->|命令行使用| C4[\"对小白难度高\"]\n    G1[\"GitHub 开源项目\"] -->|克隆并改版| G2[\"Token ecode\"]\n    G2 -->|提供| G3[\"接近 Codex 的体验\"]\n    G2 -->|基于| G4[\"Web UI\"]\n    G4 -->|替代| C3\n```\n\n## 主要功能\n```mermaid\nflowchart TD\n    F1[\"热图（使用量/日期）\"]\n    F2[\"Token 侧边栏显示已装 skill\"]\n    F3[\"Skill 翻译（自动/手动）\"]\n    F4[\"插件市场（单键安装）\"]\n    F5[\"界面主题与皮肤自定义\"]\n    F6[\"自定义头像 & Agent 头像\"]\n    F7[\"模型切换（cc switch）\"]\n    F8[\"版本检查与一键更新\"]\n    F9[\"MD 服务器接入\"]\n    F10[\"第三方供应商接入\"]\n    F11[\"自定义 URL 与 API\"]\n    F12[\"文件列表预览 & 编辑\"]\n    F13[\"下载对话分享\"]\n\n    F1 --> F2\n    F2 --> F3\n    F3 --> F12\n    F4 --> F5\n    F5 --> F6\n    F6 --> F7\n    F7 --> F8\n    F8 --> F9\n    F9 --> F10\n    F10 --> F11\n    F11 --> F12\n    F12 --> F13\n```\n\n## 使用流程\n```mermaid\nflowchart LR\n    S0[\"开始：发现 Codex 好用但受限\"] --> S1[\"克隆 token ecode 项目\"]\n    S1 --> S2[\"在 Web UI 上进行改版\"]\n    S2 --> S3[\"填写大模型 API Key\"]\n    S3 --> S4[\"打开 UI 查看热图 & Token 侧栏\"]\n    S4 --> S5[\"翻译或编辑 Skill\"]\n    S5 --> S6[\"在插件市场安装所需插件\"]\n    S6 --> S7[\"切换模型或更新版本\"]\n    S7 --> S8[\"预览/编辑文件列表\"]\n    S8 --> S9[\"下载对话并分享\"]\n    S9 --> S10[\"完成\"]\n```\n\n## 扩展与集成\n```mermaid\nflowchart TD\n    E1[\"第三方供应商\"] --> E2[\"自定义 URL 与 API\"]\n    E2 --> E3[\"MD 服务器\"]\n    E3 --> E4[\"Agent 可操作其他软件\"]\n    E4 --> E5[\"深度集成（如 deep sk）\"]\n    E5 --> E6[\"模型切换（cc switch）\"]\n    E6 --> E7[\"版本管理\"]\n    E7 --> E1\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    C1[\"Codex (plus)\"] -->|仅限 plus| C2[\"功能受限\"]\n    C3[\"Cloud Code (CLI)\"] -->|命令行使用| C4[\"对小白难度高\"]\n    G1[\"GitHub 开源项目\"] -->|克隆并改版| G2[\"Token ecode\"]\n    G2 -->|提供| G3[\"接近 Codex 的体验\"]\n    G2 -->|基于| G4[\"Web UI\"]\n    G4 -->|替代| C3"
+    },
+    {
+      "title": "主要功能",
+      "code": "flowchart TD\n    F1[\"热图（使用量/日期）\"]\n    F2[\"Token 侧边栏显示已装 skill\"]\n    F3[\"Skill 翻译（自动/手动）\"]\n    F4[\"插件市场（单键安装）\"]\n    F5[\"界面主题与皮肤自定义\"]\n    F6[\"自定义头像 & Agent 头像\"]\n    F7[\"模型切换（cc switch）\"]\n    F8[\"版本检查与一键更新\"]\n    F9[\"MD 服务器接入\"]\n    F10[\"第三方供应商接入\"]\n    F11[\"自定义 URL 与 API\"]\n    F12[\"文件列表预览 & 编辑\"]\n    F13[\"下载对话分享\"]\n\n    F1 --> F2\n    F2 --> F3\n    F3 --> F12\n    F4 --> F5\n    F5 --> F6\n    F6 --> F7\n    F7 --> F8\n    F8 --> F9\n    F9 --> F10\n    F10 --> F11\n    F11 --> F12\n    F12 --> F13"
+    },
+    {
+      "title": "使用流程",
+      "code": "flowchart LR\n    S0[\"开始：发现 Codex 好用但受限\"] --> S1[\"克隆 token ecode 项目\"]\n    S1 --> S2[\"在 Web UI 上进行改版\"]\n    S2 --> S3[\"填写大模型 API Key\"]\n    S3 --> S4[\"打开 UI 查看热图 & Token 侧栏\"]\n    S4 --> S5[\"翻译或编辑 Skill\"]\n    S5 --> S6[\"在插件市场安装所需插件\"]\n    S6 --> S7[\"切换模型或更新版本\"]\n    S7 --> S8[\"预览/编辑文件列表\"]\n    S8 --> S9[\"下载对话并分享\"]\n    S9 --> S10[\"完成\"]"
+    },
+    {
+      "title": "扩展与集成",
+      "code": "flowchart TD\n    E1[\"第三方供应商\"] --> E2[\"自定义 URL 与 API\"]\n    E2 --> E3[\"MD 服务器\"]\n    E3 --> E4[\"Agent 可操作其他软件\"]\n    E4 --> E5[\"深度集成（如 deep sk）\"]\n    E5 --> E6[\"模型切换（cc switch）\"]\n    E6 --> E7[\"版本管理\"]\n    E7 --> E1"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T11:53:56+00:00"
+}

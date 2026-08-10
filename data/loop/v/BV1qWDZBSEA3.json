@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1qWDZBSEA3",
+  "title": "锐评Claude Code七种安装方式，由夯到拉。",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 477,
+  "text": "好多人问如何安装cloud code\n今天我们来锐评下官方给出的七种安装方式\n由夯到拉\n还有一种官方宣布以废弃的安装方式\n现在同样好用\n一命令行安装官方推荐的安装方式\n挂上梯子可一键安装\n我们给到顶级2HOMEBREW安装\n适合Mac用户\n需要挂上梯子或者配置国内源\n缺点是没法自动更新\n我们给到人上人swing get安装\n不用梯子也能装\n但windows下坑比较多\n不推荐我们给到NPC4\nvs code插件\n跨平台\nlinux Mac windows下都能用\n不用梯子\n可视化界面直接给到夯五\ncloud desktop app需要外区手机号登录注册\n还可能被封号\n别折腾了\n拉完了6cloud web网页端使用同上\n国内不能用\n拉完了\n7jet brains插件可在idea pycharm中使用\n不需要梯子\n目前仍然是beta版\n适合程序员尝鲜\n纯NPC8node js npm\n这是官方声明已经废弃的安装方式\n但是现在仍然可用\n不需要梯子\n尤其适合在LINUX下使用\n我们给到人上人\n本视频仅供娱乐\n每个人的使用习惯不同\n适合自己的才是最好的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qWDZBSEA3",
+  "published_at": "1775795115",
+  "fetched_at": "2026-08-10T09:46:15+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Claude Code 安装方式知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A[\"官方命令行安装\"] -->|需要梯子| B[\"一键安装\"]\n    C[\"Homebrew (Mac)\"] -->|需要梯子或国内源| D[\"手动更新\"]\n    E[\"swing get 安装\"] -->|无需梯子| F[\"Windows 兼容性差\"]\n    G[\"VS Code 插件\"] -->|跨平台| H[\"无需梯子\"]\n    I[\"Cloud Desktop App\"] -->|需外区手机号| J[\"可能封号\"]\n    K[\"Cloud Web 网页端\"] -->|同上| L[\"国内不可用\"]\n    M[\"JetBrains 插件\"] -->|无需梯子| N[\"Beta 版，适合尝鲜\"]\n    O[\"已废弃的安装方式\"] -->|仍可用| P[\"Linux 推荐，无需梯子\"]\n```\n关键节点时间戳：官方命令行安装 [BV1qWDZBSEA3 P1 00:13]; Homebrew (Mac) [BV1qWDZBSEA3 P1 00:21]; swing get 安装 [BV1qWDZBSEA3 P1 00:28]; VS Code 插件 [BV1qWDZBSEA3 P1 00:38]; Cloud Desktop App [BV1qWDZBSEA3 P1 00:47]; Cloud Web 网页端 [BV1qWDZBSEA3 P1 00:57]; JetBrains 插件 [BV1qWDZBSEA3 P1 01:04]; 已废弃的安装方式 [BV1qWDZBSEA3 P1 01:12]\n\n## 选择决策流程\n```mermaid\nflowchart TD\n    Start[\"选择安装方式\"] --> OS{\"操作系统\"}\n    OS -->|Mac| MacChoice[\"Homebrew (需梯子)\"]\n    OS -->|Windows| WinChoice[\"swing get (需注意兼容性)\"]\n    OS -->|Linux| LinuxChoice[\"已废弃方式 (无需梯子)\"]\n    MacChoice --> LadderMac{\"是否可用梯子\"}\n    WinChoice --> LadderWin{\"是否可用梯子\"}\n    LinuxChoice --> LadderLinux{\"是否需要梯子\"}\n    LadderMac -->|是| CmdLine[\"官方命令行安装\"]\n    LadderMac -->|否| VSCode[\"VS Code 插件\"]\n    LadderWin -->|是| CmdLine\n    LadderWin -->|否| VSCode\n    LadderLinux -->|否| Deprecated[\"已废弃的安装方式\"]\n    LadderLinux -->|是| CmdLine\n```\n关键节点时间戳：操作系统判断 [BV1qWDZBSEA3 P1 00:21]; Mac 选择 [BV1qWDZBSEA3 P1 00:21]; Windows 选择 [BV1qWDZBSEA3 P1 00:28]; Linux 选择 [BV1qWDZBSEA3 P1 01:12]; 梯子可用判断 [BV1qWDZBSEA3 P1 00:13]; 官方命令行安装 [BV1qWDZBSEA3 P1 00:13]; VS Code 插件 [BV1qWDZBSEA3 P1 00:38]; 已废弃方式 [BV1qWDZBSEA3 P1 01:12]\n\n## 优缺点对比\n```mermaid\nflowchart LR\n    CmdLine[\"官方命令行安装\"] -->|优点| C1[\"一键安装\"]\n    CmdLine -->|缺点| C2[\"需梯子\"]\n    Homebrew[\"Homebrew (Mac)\"] -->|优点| H1[\"适合 Mac\"]\n    Homebrew -->|缺点| H2[\"需梯子或国内源，无法自动更新\"]\n    SwingGet[\"swing get 安装\"] -->|优点| S1[\"无需梯子\"]\n    SwingGet -->|缺点| S2[\"Windows 下坑多，不推荐\"]\n    VSCode[\"VS Code 插件\"] -->|优点| V1[\"跨平台，无需梯子，可视化\"]\n    VSCode -->|缺点| V2[\"功能受限\"]\n    CloudDesktop[\"Cloud Desktop App\"] -->|缺点| CD1[\"需外区手机号，可能封号\"]\n    CloudWeb[\"Cloud Web 网页端\"] -->|缺点| CW1[\"国内不可用\"]\n    JetBrains[\"JetBrains 插件\"] -->|优点| J1[\"无需梯子，适合尝鲜\"]\n    JetBrains -->|缺点| J2[\"仍是 Beta 版\"]\n    Deprecated[\"已废弃的安装方式\"] -->|优点| D1[\"无需梯子，Linux 推荐\"]\n    Deprecated -->|缺点| D2[\"官方已声明废弃\"]\n```\n关键节点时间戳：官方命令行安装优缺点 [BV1qWDZBSEA3 P1 00:13]; Homebrew 优缺点 [BV1qWDZBSEA3 P1 00:21]; swing get 优缺点 [BV1qWDZBSEA3 P1 00:28]; VS Code 插件优缺点 [BV1qWDZBSEA3 P1 00:38]; Cloud Desktop App 缺点 [BV1qWDZBSEA3 P1 00:47]; Cloud Web 缺点 [BV1qWDZBSEA3 P1 00:57]; JetBrains 插件优缺点 [BV1qWDZBSEA3 P1 01:04]; 已废弃方式优缺点 [BV1qWDZBSEA3 P1 01:12]",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A[\"官方命令行安装\"] -->|需要梯子| B[\"一键安装\"]\n    C[\"Homebrew (Mac)\"] -->|需要梯子或国内源| D[\"手动更新\"]\n    E[\"swing get 安装\"] -->|无需梯子| F[\"Windows 兼容性差\"]\n    G[\"VS Code 插件\"] -->|跨平台| H[\"无需梯子\"]\n    I[\"Cloud Desktop App\"] -->|需外区手机号| J[\"可能封号\"]\n    K[\"Cloud Web 网页端\"] -->|同上| L[\"国内不可用\"]\n    M[\"JetBrains 插件\"] -->|无需梯子| N[\"Beta 版，适合尝鲜\"]\n    O[\"已废弃的安装方式\"] -->|仍可用| P[\"Linux 推荐，无需梯子\"]"
+        },
+        {
+          "title": "选择决策流程",
+          "code": "flowchart TD\n    Start[\"选择安装方式\"] --> OS{\"操作系统\"}\n    OS -->|Mac| MacChoice[\"Homebrew (需梯子)\"]\n    OS -->|Windows| WinChoice[\"swing get (需注意兼容性)\"]\n    OS -->|Linux| LinuxChoice[\"已废弃方式 (无需梯子)\"]\n    MacChoice --> LadderMac{\"是否可用梯子\"}\n    WinChoice --> LadderWin{\"是否可用梯子\"}\n    LinuxChoice --> LadderLinux{\"是否需要梯子\"}\n    LadderMac -->|是| CmdLine[\"官方命令行安装\"]\n    LadderMac -->|否| VSCode[\"VS Code 插件\"]\n    LadderWin -->|是| CmdLine\n    LadderWin -->|否| VSCode\n    LadderLinux -->|否| Deprecated[\"已废弃的安装方式\"]\n    LadderLinux -->|是| CmdLine"
+        },
+        {
+          "title": "优缺点对比",
+          "code": "flowchart LR\n    CmdLine[\"官方命令行安装\"] -->|优点| C1[\"一键安装\"]\n    CmdLine -->|缺点| C2[\"需梯子\"]\n    Homebrew[\"Homebrew (Mac)\"] -->|优点| H1[\"适合 Mac\"]\n    Homebrew -->|缺点| H2[\"需梯子或国内源，无法自动更新\"]\n    SwingGet[\"swing get 安装\"] -->|优点| S1[\"无需梯子\"]\n    SwingGet -->|缺点| S2[\"Windows 下坑多，不推荐\"]\n    VSCode[\"VS Code 插件\"] -->|优点| V1[\"跨平台，无需梯子，可视化\"]\n    VSCode -->|缺点| V2[\"功能受限\"]\n    CloudDesktop[\"Cloud Desktop App\"] -->|缺点| CD1[\"需外区手机号，可能封号\"]\n    CloudWeb[\"Cloud Web 网页端\"] -->|缺点| CW1[\"国内不可用\"]\n    JetBrains[\"JetBrains 插件\"] -->|优点| J1[\"无需梯子，适合尝鲜\"]\n    JetBrains -->|缺点| J2[\"仍是 Beta 版\"]\n    Deprecated[\"已废弃的安装方式\"] -->|优点| D1[\"无需梯子，Linux 推荐\"]\n    Deprecated -->|缺点| D2[\"官方已声明废弃\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T09:46:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Claude Code 安装方式知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A[\"官方命令行安装\"] -->|需要梯子| B[\"一键安装\"]\n    C[\"Homebrew (Mac)\"] -->|需要梯子或国内源| D[\"手动更新\"]\n    E[\"swing get 安装\"] -->|无需梯子| F[\"Windows 兼容性差\"]\n    G[\"VS Code 插件\"] -->|跨平台| H[\"无需梯子\"]\n    I[\"Cloud Desktop App\"] -->|需外区手机号| J[\"可能封号\"]\n    K[\"Cloud Web 网页端\"] -->|同上| L[\"国内不可用\"]\n    M[\"JetBrains 插件\"] -->|无需梯子| N[\"Beta 版，适合尝鲜\"]\n    O[\"已废弃的安装方式\"] -->|仍可用| P[\"Linux 推荐，无需梯子\"]\n```\n关键节点时间戳：官方命令行安装 [BV1qWDZBSEA3 P1 00:13]; Homebrew (Mac) [BV1qWDZBSEA3 P1 00:21]; swing get 安装 [BV1qWDZBSEA3 P1 00:28]; VS Code 插件 [BV1qWDZBSEA3 P1 00:38]; Cloud Desktop App [BV1qWDZBSEA3 P1 00:47]; Cloud Web 网页端 [BV1qWDZBSEA3 P1 00:57]; JetBrains 插件 [BV1qWDZBSEA3 P1 01:04]; 已废弃的安装方式 [BV1qWDZBSEA3 P1 01:12]\n\n## 选择决策流程\n```mermaid\nflowchart TD\n    Start[\"选择安装方式\"] --> OS{\"操作系统\"}\n    OS -->|Mac| MacChoice[\"Homebrew (需梯子)\"]\n    OS -->|Windows| WinChoice[\"swing get (需注意兼容性)\"]\n    OS -->|Linux| LinuxChoice[\"已废弃方式 (无需梯子)\"]\n    MacChoice --> LadderMac{\"是否可用梯子\"}\n    WinChoice --> LadderWin{\"是否可用梯子\"}\n    LinuxChoice --> LadderLinux{\"是否需要梯子\"}\n    LadderMac -->|是| CmdLine[\"官方命令行安装\"]\n    LadderMac -->|否| VSCode[\"VS Code 插件\"]\n    LadderWin -->|是| CmdLine\n    LadderWin -->|否| VSCode\n    LadderLinux -->|否| Deprecated[\"已废弃的安装方式\"]\n    LadderLinux -->|是| CmdLine\n```\n关键节点时间戳：操作系统判断 [BV1qWDZBSEA3 P1 00:21]; Mac 选择 [BV1qWDZBSEA3 P1 00:21]; Windows 选择 [BV1qWDZBSEA3 P1 00:28]; Linux 选择 [BV1qWDZBSEA3 P1 01:12]; 梯子可用判断 [BV1qWDZBSEA3 P1 00:13]; 官方命令行安装 [BV1qWDZBSEA3 P1 00:13]; VS Code 插件 [BV1qWDZBSEA3 P1 00:38]; 已废弃方式 [BV1qWDZBSEA3 P1 01:12]\n\n## 优缺点对比\n```mermaid\nflowchart LR\n    CmdLine[\"官方命令行安装\"] -->|优点| C1[\"一键安装\"]\n    CmdLine -->|缺点| C2[\"需梯子\"]\n    Homebrew[\"Homebrew (Mac)\"] -->|优点| H1[\"适合 Mac\"]\n    Homebrew -->|缺点| H2[\"需梯子或国内源，无法自动更新\"]\n    SwingGet[\"swing get 安装\"] -->|优点| S1[\"无需梯子\"]\n    SwingGet -->|缺点| S2[\"Windows 下坑多，不推荐\"]\n    VSCode[\"VS Code 插件\"] -->|优点| V1[\"跨平台，无需梯子，可视化\"]\n    VSCode -->|缺点| V2[\"功能受限\"]\n    CloudDesktop[\"Cloud Desktop App\"] -->|缺点| CD1[\"需外区手机号，可能封号\"]\n    CloudWeb[\"Cloud Web 网页端\"] -->|缺点| CW1[\"国内不可用\"]\n    JetBrains[\"JetBrains 插件\"] -->|优点| J1[\"无需梯子，适合尝鲜\"]\n    JetBrains -->|缺点| J2[\"仍是 Beta 版\"]\n    Deprecated[\"已废弃的安装方式\"] -->|优点| D1[\"无需梯子，Linux 推荐\"]\n    Deprecated -->|缺点| D2[\"官方已声明废弃\"]\n```\n关键节点时间戳：官方命令行安装优缺点 [BV1qWDZBSEA3 P1 00:13]; Homebrew 优缺点 [BV1qWDZBSEA3 P1 00:21]; swing get 优缺点 [BV1qWDZBSEA3 P1 00:28]; VS Code 插件优缺点 [BV1qWDZBSEA3 P1 00:38]; Cloud Desktop App 缺点 [BV1qWDZBSEA3 P1 00:47]; Cloud Web 缺点 [BV1qWDZBSEA3 P1 00:57]; JetBrains 插件优缺点 [BV1qWDZBSEA3 P1 01:04]; 已废弃方式优缺点 [BV1qWDZBSEA3 P1 01:12]",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A[\"官方命令行安装\"] -->|需要梯子| B[\"一键安装\"]\n    C[\"Homebrew (Mac)\"] -->|需要梯子或国内源| D[\"手动更新\"]\n    E[\"swing get 安装\"] -->|无需梯子| F[\"Windows 兼容性差\"]\n    G[\"VS Code 插件\"] -->|跨平台| H[\"无需梯子\"]\n    I[\"Cloud Desktop App\"] -->|需外区手机号| J[\"可能封号\"]\n    K[\"Cloud Web 网页端\"] -->|同上| L[\"国内不可用\"]\n    M[\"JetBrains 插件\"] -->|无需梯子| N[\"Beta 版，适合尝鲜\"]\n    O[\"已废弃的安装方式\"] -->|仍可用| P[\"Linux 推荐，无需梯子\"]"
+    },
+    {
+      "title": "选择决策流程",
+      "code": "flowchart TD\n    Start[\"选择安装方式\"] --> OS{\"操作系统\"}\n    OS -->|Mac| MacChoice[\"Homebrew (需梯子)\"]\n    OS -->|Windows| WinChoice[\"swing get (需注意兼容性)\"]\n    OS -->|Linux| LinuxChoice[\"已废弃方式 (无需梯子)\"]\n    MacChoice --> LadderMac{\"是否可用梯子\"}\n    WinChoice --> LadderWin{\"是否可用梯子\"}\n    LinuxChoice --> LadderLinux{\"是否需要梯子\"}\n    LadderMac -->|是| CmdLine[\"官方命令行安装\"]\n    LadderMac -->|否| VSCode[\"VS Code 插件\"]\n    LadderWin -->|是| CmdLine\n    LadderWin -->|否| VSCode\n    LadderLinux -->|否| Deprecated[\"已废弃的安装方式\"]\n    LadderLinux -->|是| CmdLine"
+    },
+    {
+      "title": "优缺点对比",
+      "code": "flowchart LR\n    CmdLine[\"官方命令行安装\"] -->|优点| C1[\"一键安装\"]\n    CmdLine -->|缺点| C2[\"需梯子\"]\n    Homebrew[\"Homebrew (Mac)\"] -->|优点| H1[\"适合 Mac\"]\n    Homebrew -->|缺点| H2[\"需梯子或国内源，无法自动更新\"]\n    SwingGet[\"swing get 安装\"] -->|优点| S1[\"无需梯子\"]\n    SwingGet -->|缺点| S2[\"Windows 下坑多，不推荐\"]\n    VSCode[\"VS Code 插件\"] -->|优点| V1[\"跨平台，无需梯子，可视化\"]\n    VSCode -->|缺点| V2[\"功能受限\"]\n    CloudDesktop[\"Cloud Desktop App\"] -->|缺点| CD1[\"需外区手机号，可能封号\"]\n    CloudWeb[\"Cloud Web 网页端\"] -->|缺点| CW1[\"国内不可用\"]\n    JetBrains[\"JetBrains 插件\"] -->|优点| J1[\"无需梯子，适合尝鲜\"]\n    JetBrains -->|缺点| J2[\"仍是 Beta 版\"]\n    Deprecated[\"已废弃的安装方式\"] -->|优点| D1[\"无需梯子，Linux 推荐\"]\n    Deprecated -->|缺点| D2[\"官方已声明废弃\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T09:46:35+00:00"
+}

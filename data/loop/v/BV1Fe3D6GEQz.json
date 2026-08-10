@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1Fe3D6GEQz",
+  "title": "deepseek生成的明日方舟同人游戏，模仿加拿大不归路，素材均可替换！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 398,
+  "text": "点击这里可以查看角色属性\n切克西地图从伊比利亚到炎国嫌系当前位置\n胜利条件为30天\n这里可以进行细节\n10/20\n25\n29天会有袭击事件\n不可跳过\n其中29会有boss级单位\n很菜\n角色会有对话\n后期会加一些好玩的对话\n远程角色可以消耗弹药来进行射击\n弹药消耗完毕\n进入近战状态\n怎么感觉近战比远程猛\n会有特殊事件\n现在有两个\n斯卡蒂的攻击力目前是最高的\n可以在路上捡到干员\n除了出息的四个外\n还有其他三个干员可以捡到\n大家可以自行探索\n医疗干员会自带一个医疗箱\n按H恢复50血\n没油了\n我靠原版加拿大不归路油耗近\n是可以步行换车的\n后面加一下\n孩子们\n我穷凶了\n接下来就是重复内容\n可以跳到后面看boss战\n按enter键可以切换干员\n最后boss1杀马拉暂时只会远程40伤害\n一发500血不会太难\n熊姐没事看我银灰秀秀秀\n思一下马拉\n孩子们我回来了\n我们安全了\n在西蛋后面打算弄个123结结",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Fe3D6GEQz",
+  "published_at": "1785638250",
+  "fetched_at": "2026-08-08T06:55:49+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 明日方舟同人游戏要点图谱\n\n## 游戏概览\n```mermaid\nflowchart TD\n    A0[\"游戏开始\"]\n    A1[\"地图：伊比利亚 → 炎国\"]\n    A2[\"胜利条件：30天\"]\n    A3[\"29天触发袭击事件（含Boss）\"]\n    A4[\"角色对话（后期加入）\"]\n    A5[\"游戏结束\"]\n    A0 --> A1\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n```\n[BV1Fe3D6GEQz P1 00:22]、[BV1Fe3D6GEQz P1 00:27]、[BV1Fe3D6GEQz P1 00:38]、[BV1Fe3D6GEQz P1 00:49]\n\n## 角色状态与战斗流程\n```mermaid\nflowchart TD\n    B0[\"远程角色\"]\n    B1[\"消耗弹药射击\"]\n    B2[\"弹药耗尽\"]\n    B3[\"进入近战状态\"]\n    B4[\"近战更猛\"]\n    B5[\"Boss级单位（29天）\"]\n    B0 --> B1 --> B2 --> B3 --> B4\n    B4 --> B5\n```\n[BV1Fe3D6GEQz P1 01:01]、[BV1Fe3D6GEQz P1 01:04]、[BV1Fe3D6GEQz P1 01:05]、[BV1Fe3D6GEQz P1 01:14]、[BV1Fe3D6GEQz P1 00:41]\n\n## 干员获取与支援\n```mermaid\nflowchart TD\n    C0[\"路上可捡到干员\"]\n    C1[\"四个出息干员\"]\n    C2[\"另外三个干员\"]\n    C3[\"医疗干员自带医疗箱\"]\n    C4[\"按 H 恢复 50 血\"]\n    C0 --> C1\n    C0 --> C2\n    C3 --> C4\n```\n[BV1Fe3D6GEQz P1 01:31]、[BV1Fe3D6GEQz P1 01:40]、[BV1Fe3D6GEQz P1 01:42]、[BV1Fe3D6GEQz P1 01:48]、[BV1Fe3D6GEQz P1 01:50]\n\n## 关键操作与Boss战\n```mermaid\nflowchart TD\n    D0[\"按 Enter 切换干员\"]\n    D1[\"Boss1：杀马拉\"]\n    D2[\"远程伤害 40\"]\n    D3[\"一发 500 血\"]\n    D4[\"不难击败\"]\n    D0 --> D1\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n```\n[BV1Fe3D6GEQz P1 03:37]、[BV1Fe3D6GEQz P1 04:05]、[BV1Fe3D6GEQz P1 04:05]、[BV1Fe3D6GEQz P1 04:10]、[BV1Fe3D6GEQz P1 04:10]",
+      "diagrams": [
+        {
+          "title": "游戏概览",
+          "code": "flowchart TD\n    A0[\"游戏开始\"]\n    A1[\"地图：伊比利亚 → 炎国\"]\n    A2[\"胜利条件：30天\"]\n    A3[\"29天触发袭击事件（含Boss）\"]\n    A4[\"角色对话（后期加入）\"]\n    A5[\"游戏结束\"]\n    A0 --> A1\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5"
+        },
+        {
+          "title": "角色状态与战斗流程",
+          "code": "flowchart TD\n    B0[\"远程角色\"]\n    B1[\"消耗弹药射击\"]\n    B2[\"弹药耗尽\"]\n    B3[\"进入近战状态\"]\n    B4[\"近战更猛\"]\n    B5[\"Boss级单位（29天）\"]\n    B0 --> B1 --> B2 --> B3 --> B4\n    B4 --> B5"
+        },
+        {
+          "title": "干员获取与支援",
+          "code": "flowchart TD\n    C0[\"路上可捡到干员\"]\n    C1[\"四个出息干员\"]\n    C2[\"另外三个干员\"]\n    C3[\"医疗干员自带医疗箱\"]\n    C4[\"按 H 恢复 50 血\"]\n    C0 --> C1\n    C0 --> C2\n    C3 --> C4"
+        },
+        {
+          "title": "关键操作与Boss战",
+          "code": "flowchart TD\n    D0[\"按 Enter 切换干员\"]\n    D1[\"Boss1：杀马拉\"]\n    D2[\"远程伤害 40\"]\n    D3[\"一发 500 血\"]\n    D4[\"不难击败\"]\n    D0 --> D1\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T06:56:06+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 明日方舟同人游戏要点图谱\n\n## 游戏概览\n```mermaid\nflowchart TD\n    A0[\"游戏开始\"]\n    A1[\"地图：伊比利亚 → 炎国\"]\n    A2[\"胜利条件：30天\"]\n    A3[\"29天触发袭击事件（含Boss）\"]\n    A4[\"角色对话（后期加入）\"]\n    A5[\"游戏结束\"]\n    A0 --> A1\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n```\n[BV1Fe3D6GEQz P1 00:22]、[BV1Fe3D6GEQz P1 00:27]、[BV1Fe3D6GEQz P1 00:38]、[BV1Fe3D6GEQz P1 00:49]\n\n## 角色状态与战斗流程\n```mermaid\nflowchart TD\n    B0[\"远程角色\"]\n    B1[\"消耗弹药射击\"]\n    B2[\"弹药耗尽\"]\n    B3[\"进入近战状态\"]\n    B4[\"近战更猛\"]\n    B5[\"Boss级单位（29天）\"]\n    B0 --> B1 --> B2 --> B3 --> B4\n    B4 --> B5\n```\n[BV1Fe3D6GEQz P1 01:01]、[BV1Fe3D6GEQz P1 01:04]、[BV1Fe3D6GEQz P1 01:05]、[BV1Fe3D6GEQz P1 01:14]、[BV1Fe3D6GEQz P1 00:41]\n\n## 干员获取与支援\n```mermaid\nflowchart TD\n    C0[\"路上可捡到干员\"]\n    C1[\"四个出息干员\"]\n    C2[\"另外三个干员\"]\n    C3[\"医疗干员自带医疗箱\"]\n    C4[\"按 H 恢复 50 血\"]\n    C0 --> C1\n    C0 --> C2\n    C3 --> C4\n```\n[BV1Fe3D6GEQz P1 01:31]、[BV1Fe3D6GEQz P1 01:40]、[BV1Fe3D6GEQz P1 01:42]、[BV1Fe3D6GEQz P1 01:48]、[BV1Fe3D6GEQz P1 01:50]\n\n## 关键操作与Boss战\n```mermaid\nflowchart TD\n    D0[\"按 Enter 切换干员\"]\n    D1[\"Boss1：杀马拉\"]\n    D2[\"远程伤害 40\"]\n    D3[\"一发 500 血\"]\n    D4[\"不难击败\"]\n    D0 --> D1\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4\n```\n[BV1Fe3D6GEQz P1 03:37]、[BV1Fe3D6GEQz P1 04:05]、[BV1Fe3D6GEQz P1 04:05]、[BV1Fe3D6GEQz P1 04:10]、[BV1Fe3D6GEQz P1 04:10]",
+  "diagrams": [
+    {
+      "title": "游戏概览",
+      "code": "flowchart TD\n    A0[\"游戏开始\"]\n    A1[\"地图：伊比利亚 → 炎国\"]\n    A2[\"胜利条件：30天\"]\n    A3[\"29天触发袭击事件（含Boss）\"]\n    A4[\"角色对话（后期加入）\"]\n    A5[\"游戏结束\"]\n    A0 --> A1\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5"
+    },
+    {
+      "title": "角色状态与战斗流程",
+      "code": "flowchart TD\n    B0[\"远程角色\"]\n    B1[\"消耗弹药射击\"]\n    B2[\"弹药耗尽\"]\n    B3[\"进入近战状态\"]\n    B4[\"近战更猛\"]\n    B5[\"Boss级单位（29天）\"]\n    B0 --> B1 --> B2 --> B3 --> B4\n    B4 --> B5"
+    },
+    {
+      "title": "干员获取与支援",
+      "code": "flowchart TD\n    C0[\"路上可捡到干员\"]\n    C1[\"四个出息干员\"]\n    C2[\"另外三个干员\"]\n    C3[\"医疗干员自带医疗箱\"]\n    C4[\"按 H 恢复 50 血\"]\n    C0 --> C1\n    C0 --> C2\n    C3 --> C4"
+    },
+    {
+      "title": "关键操作与Boss战",
+      "code": "flowchart TD\n    D0[\"按 Enter 切换干员\"]\n    D1[\"Boss1：杀马拉\"]\n    D2[\"远程伤害 40\"]\n    D3[\"一发 500 血\"]\n    D4[\"不难击败\"]\n    D0 --> D1\n    D1 --> D2\n    D2 --> D3\n    D3 --> D4"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T06:56:06+00:00"
+}

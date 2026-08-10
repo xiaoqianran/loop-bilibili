@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1xu3M6bEjJ",
+  "title": "洛克王国自动化",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 847,
+  "text": "这里给大家带来自己开发的\n洛克王国自动化助手\n涵盖多种功能\n自动打PVP\n新版刷庇护所炫彩刷花杀鬼火\n自动青草团\n一键看花\n重杀花\n重打传说精灵等等功能\n本软件仅为图像识别\n配合USB键鼠驱动进行制作\n不读取游戏内存\n目前是要用到单独的一个USB硬件\n原理跟单片机一样\n网上十几20块一个\n但是为了让小伙伴们体验一下\n主包内置了interception内核驱动\n可以通过安装驱动\n不用硬件也能体验\n接下来讲一下我们的智能PVP功能\n目前主包研究的大牌解队可以稳定挂上大师\n上大师\n以后每天晚上睡觉挂一下\n第二天能刷100以上的代币\n小伙伴不用每天肝一色获取代币了\n软件设置丰富\n可以自定义阵容\n遇到克制宠物会自己切换\n还有很多操作可以适用很多体系队\n根本判断不出是不是真人对战\n以下是程序自己的对战\n小伙伴们鉴赏一下\n接下来是自动看每天的新售花种有没有炫彩\n然后出现炫彩会自动警报暂停\n然后就是自动清花种和组队打花种\n主包也是用这个方法出了三四只炫彩花种\n小伙伴有多余的小号\n有满体力\n可以用本程序进行刷花重啦\n下面是自动打传说精灵\n还有就是想刷庇护所炫彩的小伙伴们\nS3赛季修复了\n不能互刷刷取炫彩主包\n研究出了新版的刷庇护所\n炫彩\n可以通过传送到各个开启的庇护所上\n下果实的方式刷取炫彩\n刷出炫彩\n通过邮箱的形式提起小伙伴\n然后还有许多的减负小功能\n比如自动丢球\n无后摇\n丢球自动放生\n自动净化\n自动收集等功能\n同时也有刷花\n刷鬼火等必备功能\n刷鬼火支持上下和上下左右两种路径\n刷花可以自动调时间\n最后是重磅功能\n自动清理草团\n需要小伙伴们把书本全部走一遍\n变成草团\nAI会自动识别草团进行战斗\n并识别是不是异色\n试一色可以停止运行\n然后发邮箱通知小伙伴们\n也可以识别到\n噩梦或者奇异血脉的自动捕捉等等\n接下来是鉴赏清理草团的时刻\n主包为了测试狂抓了3000球\n可以看到清理效果还是很好的\n小伙伴们想免费体验一下的话\n可以加入主播下面简介的QQ群\n后续主包会更新自动跑图\n自动捕捉等减负功能",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1xu3M6bEjJ",
+  "published_at": "1784971223",
+  "fetched_at": "2026-08-08T13:33:39+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 洛克王国自动化助手知识图谱\n\n## 功能总览\n```mermaid\nflowchart TD\nA[\"洛克王国自动化助手\"] --> B1[\"自动打PVP\"]\nA --> B2[\"刷庇护所炫彩\"]\nA --> B3[\"自动青草团\"]\nA --> B4[\"自动看花/炫彩检测\"]\nA --> B5[\"重打传说精灵\"]\nA --> B6[\"自动丢球/无后摇/放生\"]\nA --> B7[\"自动净化/收集\"]\nA --> B8[\"自动清理草团\"]\n```\n\n## 智能PVP流程\n```mermaid\nflowchart LR\nStart[\"启动智能PVP\"] --> Detect[\"检测对手阵容\"]\nDetect --> Switch[\"克制宠物自动切换\"]\nSwitch --> Fight[\"自动对战\"]\nFight --> Result[\"判断是否真人对战\"]\nResult -->|是| End[\"结束\"]\nResult -->|否| Loop[\"继续自动对战\"]\nLoop --> Detect\n```\n\n## 炫彩花种监测与刷取\n```mermaid\nflowchart TD\nA[\"每日检查新售花种\"] --> B[\"检测炫彩出现\"]\nB --> C[\"警报并暂停\"]\nC --> D[\"自动清除花种\"]\nD --> E[\"组队打花种\"]\nE --> F[\"获取炫彩\"]\nF --> G[\"通过邮箱通知\"]\n```\n\n## 庇护所炫彩刷取方案\n```mermaid\nflowchart LR\nStart[\"启动庇护所刷取\"] --> Transport[\"传送至开启的庇护所\"]\nTransport --> Harvest[\"下果实获取炫彩\"]\nHarvest --> Collect[\"收集炫彩\"]\nCollect --> Notify[\"通过邮箱提取\"]\n```\n\n## 草团自动清理机制\n```mermaid\nflowchart TD\nInit[\"遍历全图书本\"] --> Generate[\"生成草团\"]\nGenerate --> AI[\"AI识别草团\"]\nAI --> Battle[\"自动战斗\"]\nBattle --> Check[\"识别异色/噩梦/奇异血脉\"]\nCheck -->|发现| Capture[\"自动捕捉\"]\nCheck -->|未发现| End[\"结束\"]\nCapture --> Notify[\"邮件通知\"]\n```",
+      "diagrams": [
+        {
+          "title": "功能总览",
+          "code": "flowchart TD\nA[\"洛克王国自动化助手\"] --> B1[\"自动打PVP\"]\nA --> B2[\"刷庇护所炫彩\"]\nA --> B3[\"自动青草团\"]\nA --> B4[\"自动看花/炫彩检测\"]\nA --> B5[\"重打传说精灵\"]\nA --> B6[\"自动丢球/无后摇/放生\"]\nA --> B7[\"自动净化/收集\"]\nA --> B8[\"自动清理草团\"]"
+        },
+        {
+          "title": "智能PVP流程",
+          "code": "flowchart LR\nStart[\"启动智能PVP\"] --> Detect[\"检测对手阵容\"]\nDetect --> Switch[\"克制宠物自动切换\"]\nSwitch --> Fight[\"自动对战\"]\nFight --> Result[\"判断是否真人对战\"]\nResult -->|是| End[\"结束\"]\nResult -->|否| Loop[\"继续自动对战\"]\nLoop --> Detect"
+        },
+        {
+          "title": "炫彩花种监测与刷取",
+          "code": "flowchart TD\nA[\"每日检查新售花种\"] --> B[\"检测炫彩出现\"]\nB --> C[\"警报并暂停\"]\nC --> D[\"自动清除花种\"]\nD --> E[\"组队打花种\"]\nE --> F[\"获取炫彩\"]\nF --> G[\"通过邮箱通知\"]"
+        },
+        {
+          "title": "庇护所炫彩刷取方案",
+          "code": "flowchart LR\nStart[\"启动庇护所刷取\"] --> Transport[\"传送至开启的庇护所\"]\nTransport --> Harvest[\"下果实获取炫彩\"]\nHarvest --> Collect[\"收集炫彩\"]\nCollect --> Notify[\"通过邮箱提取\"]"
+        },
+        {
+          "title": "草团自动清理机制",
+          "code": "flowchart TD\nInit[\"遍历全图书本\"] --> Generate[\"生成草团\"]\nGenerate --> AI[\"AI识别草团\"]\nAI --> Battle[\"自动战斗\"]\nBattle --> Check[\"识别异色/噩梦/奇异血脉\"]\nCheck -->|发现| Capture[\"自动捕捉\"]\nCheck -->|未发现| End[\"结束\"]\nCapture --> Notify[\"邮件通知\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T13:34:31+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 洛克王国自动化助手知识图谱\n\n## 功能总览\n```mermaid\nflowchart TD\nA[\"洛克王国自动化助手\"] --> B1[\"自动打PVP\"]\nA --> B2[\"刷庇护所炫彩\"]\nA --> B3[\"自动青草团\"]\nA --> B4[\"自动看花/炫彩检测\"]\nA --> B5[\"重打传说精灵\"]\nA --> B6[\"自动丢球/无后摇/放生\"]\nA --> B7[\"自动净化/收集\"]\nA --> B8[\"自动清理草团\"]\n```\n\n## 智能PVP流程\n```mermaid\nflowchart LR\nStart[\"启动智能PVP\"] --> Detect[\"检测对手阵容\"]\nDetect --> Switch[\"克制宠物自动切换\"]\nSwitch --> Fight[\"自动对战\"]\nFight --> Result[\"判断是否真人对战\"]\nResult -->|是| End[\"结束\"]\nResult -->|否| Loop[\"继续自动对战\"]\nLoop --> Detect\n```\n\n## 炫彩花种监测与刷取\n```mermaid\nflowchart TD\nA[\"每日检查新售花种\"] --> B[\"检测炫彩出现\"]\nB --> C[\"警报并暂停\"]\nC --> D[\"自动清除花种\"]\nD --> E[\"组队打花种\"]\nE --> F[\"获取炫彩\"]\nF --> G[\"通过邮箱通知\"]\n```\n\n## 庇护所炫彩刷取方案\n```mermaid\nflowchart LR\nStart[\"启动庇护所刷取\"] --> Transport[\"传送至开启的庇护所\"]\nTransport --> Harvest[\"下果实获取炫彩\"]\nHarvest --> Collect[\"收集炫彩\"]\nCollect --> Notify[\"通过邮箱提取\"]\n```\n\n## 草团自动清理机制\n```mermaid\nflowchart TD\nInit[\"遍历全图书本\"] --> Generate[\"生成草团\"]\nGenerate --> AI[\"AI识别草团\"]\nAI --> Battle[\"自动战斗\"]\nBattle --> Check[\"识别异色/噩梦/奇异血脉\"]\nCheck -->|发现| Capture[\"自动捕捉\"]\nCheck -->|未发现| End[\"结束\"]\nCapture --> Notify[\"邮件通知\"]\n```",
+  "diagrams": [
+    {
+      "title": "功能总览",
+      "code": "flowchart TD\nA[\"洛克王国自动化助手\"] --> B1[\"自动打PVP\"]\nA --> B2[\"刷庇护所炫彩\"]\nA --> B3[\"自动青草团\"]\nA --> B4[\"自动看花/炫彩检测\"]\nA --> B5[\"重打传说精灵\"]\nA --> B6[\"自动丢球/无后摇/放生\"]\nA --> B7[\"自动净化/收集\"]\nA --> B8[\"自动清理草团\"]"
+    },
+    {
+      "title": "智能PVP流程",
+      "code": "flowchart LR\nStart[\"启动智能PVP\"] --> Detect[\"检测对手阵容\"]\nDetect --> Switch[\"克制宠物自动切换\"]\nSwitch --> Fight[\"自动对战\"]\nFight --> Result[\"判断是否真人对战\"]\nResult -->|是| End[\"结束\"]\nResult -->|否| Loop[\"继续自动对战\"]\nLoop --> Detect"
+    },
+    {
+      "title": "炫彩花种监测与刷取",
+      "code": "flowchart TD\nA[\"每日检查新售花种\"] --> B[\"检测炫彩出现\"]\nB --> C[\"警报并暂停\"]\nC --> D[\"自动清除花种\"]\nD --> E[\"组队打花种\"]\nE --> F[\"获取炫彩\"]\nF --> G[\"通过邮箱通知\"]"
+    },
+    {
+      "title": "庇护所炫彩刷取方案",
+      "code": "flowchart LR\nStart[\"启动庇护所刷取\"] --> Transport[\"传送至开启的庇护所\"]\nTransport --> Harvest[\"下果实获取炫彩\"]\nHarvest --> Collect[\"收集炫彩\"]\nCollect --> Notify[\"通过邮箱提取\"]"
+    },
+    {
+      "title": "草团自动清理机制",
+      "code": "flowchart TD\nInit[\"遍历全图书本\"] --> Generate[\"生成草团\"]\nGenerate --> AI[\"AI识别草团\"]\nAI --> Battle[\"自动战斗\"]\nBattle --> Check[\"识别异色/噩梦/奇异血脉\"]\nCheck -->|发现| Capture[\"自动捕捉\"]\nCheck -->|未发现| End[\"结束\"]\nCapture --> Notify[\"邮件通知\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T13:34:31+00:00"
+}

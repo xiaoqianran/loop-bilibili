@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1Abgy6tE33",
+  "title": "【免费】Claude Code 便携版发布！内置免费模型，无需配置环境，解压即用",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 372,
+  "text": "大家好\n我是萌包子\n今天给大家带来一款我打包好的cloud code便携版本\n无需配置\n解压即用\n可以前往我的个人主页下载\n下载到本地直接解压\n这里有几个脚本文件\n文档中有介绍\n如果之前有安装过\n可以先重置一下配置\n启动cloud code\n直接回车就可以使用了\n已经内置了open code免费模型\n无需登录\n无需科学上网\n无需配置API\n正常情况下\n其他目录不能直接启动\n如果想在其他目录使用\n可以使用脚本添加一下环境变量\n在终端中输入KLAGUPORTABLE回车启动\n如果想简单一点\n可以创建一个副本\n重命名一个简洁的名字\n写一个网站看看效果\n写好了来看一下效果\n还是很不错的\n让他给自己写一个网页\n特点有点小\n微调一下\n改好了\n刷新一下页面\n再调整一下简介的显示宽度\n好了再刷新一下\n整体效果还是非常不错的喔\n头有好多\n还有你妈妈真的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Abgy6tE33",
+  "published_at": "1784735370",
+  "fetched_at": "2026-08-08T10:54:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Claude Code 便携版使用图谱\n\n## 总览使用流程\n```mermaid\nflowchart TD\n    D1[\"下载页面\"] --> D2[\"下载压缩包并解压\"]\n    D2 --> D3[\"脚本文件目录\"]\n    D3 --> D4[\"（可选）重置配置\"]\n    D4 --> D5[\"启动 Cloud Code\"]\n    D5 --> D6[\"回车使用\"]\n    D6 --> D7[\"内置免费模型\"]\n    D7 --> D8[\"无需登录\"]\n    D7 --> D9[\"无需科学上网\"]\n    D7 --> D10[\"无需配置 API\"]\n```\n<!-- [BV1Abgy6tE33 P1 00:14] 下载页面 -->\n<!-- [BV1Abgy6tE33 P1 00:23] 下载压缩包并解压 -->\n<!-- [BV1Abgy6tE33 P1 00:28] 脚本文件目录 -->\n<!-- [BV1Abgy6tE33 P1 00:37] （可选）重置配置 -->\n<!-- [BV1Abgy6tE33 P1 00:41] 启动 Cloud Code -->\n<!-- [BV1Abgy6tE33 P1 00:43] 回车使用 -->\n<!-- [BV1Abgy6tE33 P1 00:47] 内置免费模型 -->\n<!-- [BV1Abgy6tE33 P1 00:50] 无需登录 -->\n<!-- [BV1Abgy6tE33 P1 00:52] 无需科学上网 -->\n<!-- [BV1Abgy6tE33 P1 00:53] 无需配置 API -->\n\n## 其他目录使用环境变量\n```mermaid\nflowchart TD\n    E1[\"其他目录不能直接启动\"] --> E2[\"运行环境变量脚本\"]\n    E2 --> E3[\"设置 KLAGUPORTABLE\"]\n    E3 --> E4[\"终端输入 KLAGUPORTABLE 回车启动\"]\n```\n<!-- [BV1Abgy6tE33 P1 01:07] 其他目录不能直接启动 -->\n<!-- [BV1Abgy6tE33 P1 01:14] 运行环境变量脚本 -->\n<!-- [BV1Abgy6tE33 P1 01:17] 设置 KLAGUPORTABLE -->\n<!-- [BV1Abgy6tE33 P1 01:23] 终端输入 KLAGUPORTABLE 回车启动 -->\n\n## 简化使用：复制、重命名与网页测试\n```mermaid\nflowchart TD\n    S1[\"创建副本\"] --> S2[\"重命名为简洁名称\"]\n    S2 --> S3[\"编写网站代码\"]\n    S3 --> S4[\"运行查看效果\"]\n    S4 --> S5[\"调整页面宽度\"]\n    S5 --> S6[\"刷新页面\"]\n    S6 --> S7[\"整体效果满意\"]\n```\n<!-- [BV1Abgy6tE33 P1 01:31] 创建副本 -->\n<!-- [BV1Abgy6tE33 P1 01:33] 重命名为简洁名称 -->\n<!-- [BV1Abgy6tE33 P1 01:45] 编写网站代码 -->\n<!-- [BV1Abgy6tE33 P1 02:31] 运行查看效果 -->\n<!-- [BV1Abgy6tE33 P1 04:23] 调整页面宽度 -->\n<!-- [BV1Abgy6tE33 P1 04:34] 刷新页面 -->\n<!-- [BV1Abgy6tE33 P1 05:21] 整体效果满意 -->\n\n## 功能特性概览\n```mermaid\nflowchart LR\n    F1[\"内置 Open Code 免费模型\"] --> F2[\"无需登录\"]\n    F1 --> F3[\"无需科学上网\"]\n    F1 --> F4[\"无需配置 API\"]\n    F1 --> F5[\"体积小、易微调\"]\n```\n<!-- [BV1Abgy6tE33 P1 00:47] 内置 Open Code 免费模型 -->\n<!-- [BV1Abgy6tE33 P1 00:50] 无需登录 -->\n<!-- [BV1Abgy6tE33 P1 00:52] 无需科学上网 -->\n<!-- [BV1Abgy6tE33 P1 00:53] 无需配置 API -->\n<!-- [BV1Abgy6tE33 P1 03:55] 体积小、易微调 -->",
+      "diagrams": [
+        {
+          "title": "总览使用流程",
+          "code": "flowchart TD\n    D1[\"下载页面\"] --> D2[\"下载压缩包并解压\"]\n    D2 --> D3[\"脚本文件目录\"]\n    D3 --> D4[\"（可选）重置配置\"]\n    D4 --> D5[\"启动 Cloud Code\"]\n    D5 --> D6[\"回车使用\"]\n    D6 --> D7[\"内置免费模型\"]\n    D7 --> D8[\"无需登录\"]\n    D7 --> D9[\"无需科学上网\"]\n    D7 --> D10[\"无需配置 API\"]"
+        },
+        {
+          "title": "其他目录使用环境变量",
+          "code": "flowchart TD\n    E1[\"其他目录不能直接启动\"] --> E2[\"运行环境变量脚本\"]\n    E2 --> E3[\"设置 KLAGUPORTABLE\"]\n    E3 --> E4[\"终端输入 KLAGUPORTABLE 回车启动\"]"
+        },
+        {
+          "title": "简化使用：复制、重命名与网页测试",
+          "code": "flowchart TD\n    S1[\"创建副本\"] --> S2[\"重命名为简洁名称\"]\n    S2 --> S3[\"编写网站代码\"]\n    S3 --> S4[\"运行查看效果\"]\n    S4 --> S5[\"调整页面宽度\"]\n    S5 --> S6[\"刷新页面\"]\n    S6 --> S7[\"整体效果满意\"]"
+        },
+        {
+          "title": "功能特性概览",
+          "code": "flowchart LR\n    F1[\"内置 Open Code 免费模型\"] --> F2[\"无需登录\"]\n    F1 --> F3[\"无需科学上网\"]\n    F1 --> F4[\"无需配置 API\"]\n    F1 --> F5[\"体积小、易微调\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T10:55:09+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Claude Code 便携版使用图谱\n\n## 总览使用流程\n```mermaid\nflowchart TD\n    D1[\"下载页面\"] --> D2[\"下载压缩包并解压\"]\n    D2 --> D3[\"脚本文件目录\"]\n    D3 --> D4[\"（可选）重置配置\"]\n    D4 --> D5[\"启动 Cloud Code\"]\n    D5 --> D6[\"回车使用\"]\n    D6 --> D7[\"内置免费模型\"]\n    D7 --> D8[\"无需登录\"]\n    D7 --> D9[\"无需科学上网\"]\n    D7 --> D10[\"无需配置 API\"]\n```\n<!-- [BV1Abgy6tE33 P1 00:14] 下载页面 -->\n<!-- [BV1Abgy6tE33 P1 00:23] 下载压缩包并解压 -->\n<!-- [BV1Abgy6tE33 P1 00:28] 脚本文件目录 -->\n<!-- [BV1Abgy6tE33 P1 00:37] （可选）重置配置 -->\n<!-- [BV1Abgy6tE33 P1 00:41] 启动 Cloud Code -->\n<!-- [BV1Abgy6tE33 P1 00:43] 回车使用 -->\n<!-- [BV1Abgy6tE33 P1 00:47] 内置免费模型 -->\n<!-- [BV1Abgy6tE33 P1 00:50] 无需登录 -->\n<!-- [BV1Abgy6tE33 P1 00:52] 无需科学上网 -->\n<!-- [BV1Abgy6tE33 P1 00:53] 无需配置 API -->\n\n## 其他目录使用环境变量\n```mermaid\nflowchart TD\n    E1[\"其他目录不能直接启动\"] --> E2[\"运行环境变量脚本\"]\n    E2 --> E3[\"设置 KLAGUPORTABLE\"]\n    E3 --> E4[\"终端输入 KLAGUPORTABLE 回车启动\"]\n```\n<!-- [BV1Abgy6tE33 P1 01:07] 其他目录不能直接启动 -->\n<!-- [BV1Abgy6tE33 P1 01:14] 运行环境变量脚本 -->\n<!-- [BV1Abgy6tE33 P1 01:17] 设置 KLAGUPORTABLE -->\n<!-- [BV1Abgy6tE33 P1 01:23] 终端输入 KLAGUPORTABLE 回车启动 -->\n\n## 简化使用：复制、重命名与网页测试\n```mermaid\nflowchart TD\n    S1[\"创建副本\"] --> S2[\"重命名为简洁名称\"]\n    S2 --> S3[\"编写网站代码\"]\n    S3 --> S4[\"运行查看效果\"]\n    S4 --> S5[\"调整页面宽度\"]\n    S5 --> S6[\"刷新页面\"]\n    S6 --> S7[\"整体效果满意\"]\n```\n<!-- [BV1Abgy6tE33 P1 01:31] 创建副本 -->\n<!-- [BV1Abgy6tE33 P1 01:33] 重命名为简洁名称 -->\n<!-- [BV1Abgy6tE33 P1 01:45] 编写网站代码 -->\n<!-- [BV1Abgy6tE33 P1 02:31] 运行查看效果 -->\n<!-- [BV1Abgy6tE33 P1 04:23] 调整页面宽度 -->\n<!-- [BV1Abgy6tE33 P1 04:34] 刷新页面 -->\n<!-- [BV1Abgy6tE33 P1 05:21] 整体效果满意 -->\n\n## 功能特性概览\n```mermaid\nflowchart LR\n    F1[\"内置 Open Code 免费模型\"] --> F2[\"无需登录\"]\n    F1 --> F3[\"无需科学上网\"]\n    F1 --> F4[\"无需配置 API\"]\n    F1 --> F5[\"体积小、易微调\"]\n```\n<!-- [BV1Abgy6tE33 P1 00:47] 内置 Open Code 免费模型 -->\n<!-- [BV1Abgy6tE33 P1 00:50] 无需登录 -->\n<!-- [BV1Abgy6tE33 P1 00:52] 无需科学上网 -->\n<!-- [BV1Abgy6tE33 P1 00:53] 无需配置 API -->\n<!-- [BV1Abgy6tE33 P1 03:55] 体积小、易微调 -->",
+  "diagrams": [
+    {
+      "title": "总览使用流程",
+      "code": "flowchart TD\n    D1[\"下载页面\"] --> D2[\"下载压缩包并解压\"]\n    D2 --> D3[\"脚本文件目录\"]\n    D3 --> D4[\"（可选）重置配置\"]\n    D4 --> D5[\"启动 Cloud Code\"]\n    D5 --> D6[\"回车使用\"]\n    D6 --> D7[\"内置免费模型\"]\n    D7 --> D8[\"无需登录\"]\n    D7 --> D9[\"无需科学上网\"]\n    D7 --> D10[\"无需配置 API\"]"
+    },
+    {
+      "title": "其他目录使用环境变量",
+      "code": "flowchart TD\n    E1[\"其他目录不能直接启动\"] --> E2[\"运行环境变量脚本\"]\n    E2 --> E3[\"设置 KLAGUPORTABLE\"]\n    E3 --> E4[\"终端输入 KLAGUPORTABLE 回车启动\"]"
+    },
+    {
+      "title": "简化使用：复制、重命名与网页测试",
+      "code": "flowchart TD\n    S1[\"创建副本\"] --> S2[\"重命名为简洁名称\"]\n    S2 --> S3[\"编写网站代码\"]\n    S3 --> S4[\"运行查看效果\"]\n    S4 --> S5[\"调整页面宽度\"]\n    S5 --> S6[\"刷新页面\"]\n    S6 --> S7[\"整体效果满意\"]"
+    },
+    {
+      "title": "功能特性概览",
+      "code": "flowchart LR\n    F1[\"内置 Open Code 免费模型\"] --> F2[\"无需登录\"]\n    F1 --> F3[\"无需科学上网\"]\n    F1 --> F4[\"无需配置 API\"]\n    F1 --> F5[\"体积小、易微调\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T10:55:09+00:00"
+}

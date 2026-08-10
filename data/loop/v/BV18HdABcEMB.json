@@ -1,0 +1,66 @@
+{
+  "bvid": "BV18HdABcEMB",
+  "title": "Mac上本地跑DeepSeek V4！32-35 tokens/s惊人速度，OMLX预览版实测来了！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3352,
+  "text": "各位朋友大家好\n欢迎大家关注鲲鹏talk\n那今天给大家介绍一个OMLX\n那其实我之前也介绍过这个软件\n那今天为什么又来介绍一下它呢\n是因为它目前是啊\n我了解到的就是AI在Mac上本地区运行deep sk啊\n这一类的模型的时候\n然后呃更新最快的一个呃\n如果了解过我的朋友都知道\n我平时都用AM4GDIO\n然后呢但是M4D6他最近确实不给力哈\n那个MLX\n其实前段时间就把那个支持deep sk v4的啊\n这个模型的一个呃request的合并进去了\n但是啊LMX就是i m studio\n到目前为止它还没有更新\n就是它的啊\n我每天其实哈早上起来第一件事我就刷新\n看他的这个啊模型的这个引擎有没有更新\n那目前呢我我之前呃经常用这个M499\n最主要的原因是\n因为它目前是支持两个推进引擎\n一个是哎基于拉A的CPP\n另外一个集就是MX\n那它还有一个啊\n这个是呃啊homey\n那嗯这个是专门呃给OpenAI做的那个推理\n但是用的不多哈\n就这两个\n那今天为什么来给大家介绍这个OMX呢\n那它最新有一个版本叫0.3.9啊\n这个它官网还没有更新哈\n是一个预览版呃\n大家需要去GITHUB仓库里面去下载\n那他这个版本呢是目前支持了那个\nTIPC和V4的一个模型啊\n所以呢我今天就把它啊更新到这个版本了\n其实我每天都在刷新\n我看到底谁更新了\n来啊\n我们可以看一下\n然后呢他啊他官网上有一个呃这个数据哈\n就比如说唉你如果是呃运行\n请问3.5啊\n122B啊\nMOE的模型Q4的一个量化的一个版本\n在M3ultra512G上的一个速度\n那他呃1K的上下文是五十六二K每秒\n然后到32K的时候\n还有42个token左右每秒\n那整个的一个速度还是非常快的\n然后呢比如说啊mini max啊\n2.5啊\n2.58比特啊\n他是有34个token\n所以每秒啊这个有14\n那结M5呢啊\n四比特呢有16.7个头跟左右每秒每秒\n那5.1也差不多是这个速度哈\n这些我都在本地把它运行起来了\n那正好因为我的就是这个嗯\nM3ultra512G的这个呃呃版本\n那如果想要呃更新的话呢\n也可以再稍微等两天\n如果不着急的话\n着急的话呢\n就去GITHUB上去下载这个版本\n那我现在的呃这个版本可以给大家看一下\n呃\n我现在的是这个呃\n0.3.9D1V1的一个预览版本\n那呃在这个版本上面啊去运行\n那我们进到我们的啊控制面板里面去看一下\n那么那么我目前呢是呃下了一些模型\n它呢把所有支持MX格式的模型呢\n都给我扫描出来了\n这个是在M466里面\n比如说我们的4.7flash\n还有3.5这个无审查版本的\n包括mini max2.5\n然后切换3.62107B的啊\n这个模型啊\n那一会我也可以给大家演示一下\n另外一个就是呃DEPC和V4flash\n那我们今天重点介绍的是这个模型啊\n那我们在这里面可以选择到这个模型\n然后直接的对话就行了\n如果你是首次的话\n它有个加载的一个过程\n可能稍微慢一点\n那我们可以在这里面能看到它的一个呃\n呃推理的一个呃速度\n那目前呢它是在呃prefer是3token的每秒\n然后生成是31token的每秒31\n哎\n要知道DPC和官网是35分每秒\n所以这个速度是啊\n在本地运行是可用的一个啊情况\n然后你介绍一下你自己\n那这个呢我今天呢也把它呃在呃cloud code\nopen code和小龙虾里面都去做了一个测试啊\n验证\n嗯这个是他自己的一个自我的一个介绍\n那我们在他的一个管理后台呢呃能看到嗯\n就是他目前呢它是支持啊\n通过直接去访问cloud code呀\ncode x open code呀\nopen CORE呀和PAGENT\n然后都能呃用\n然后呢呃我比较喜欢他的一点是什么\n就是它目前支持了MXVM这个推理引擎\n那目前界面上支持这个的不多哈\n可能很多人不了解呃\n这个MXVM它应该就是那个呃\n大家都知道VLMM这个推理框架\n然后所有的大模型第一时间就会优先去考虑\n支持他的这个推理的这个框架\n那呃很遗憾的是呢\n他并没有Mac版本\n所以说呢官方呢呃没有做呢\n然后社区就有人基于这个呃苹果的这个mi分支\n然后做了一个VRM的一个推理框架\n这样的话呢\n它也能够很快速的去支持一些新的模型\n那这就是om x的它的一个优势\n嗯嗯而且呢他还诶加入了比如说哦audio模型\n比如说TTS呀和那个啊SR模型\n就是它相当于可以通过它或者欧米I模型\n可以通过啊这个OMX来跑\n那所以说呢它啊还是非常不错的\n而且最近呢它更新比较啊积极的\n那其实啊这些啊推理的这种呃本地的呃软件呢\n每家都不太一样\n你比如说前一段时间呢\n就是在去年的时候\n在24年欧拉玛更新的非常的啊快\n那时候AMCD6更新的比较慢\n那到去年下半年的时候\nLMC6更新的速度呢也很快\n那到了26年OMG6更新速度慢下去了\n那现在OMX这个软件的更新速度又快了\n所以我又骑到这上面来了\n所以说其实呃在现在这个AI的这个时代哈\n就是用户没什么忠诚度\n就看谁的体验更好\n然后更新速度最快\n然后呢它里面啊\n我今天呢也简单的做了一个关于\n把deep sk v4呢做了一个呃呃基准的一个测试\n那我再跑一下啊\n大家可以稍微等一下哦\n那好的\n他现在已经跑完了哈\n那目前呢它在诶这个PPS呃\n有446个头分的左右每秒\n然后他的TPS呢是在32头分左右每秒\n这是在呃单个请求的一个呃测试的一个情况\n然后呢他的呃TTF是呃2291ms\n那这个延时也是非常低的哈\n嗯那在批量的\n比如说我们拿四个并发的时候\n然后呢他的呃啊这里面就往嗯\n啊对他有六十六十九个呃talks每秒\n然后相当于要除以个四\n就十几个token每秒\n一个并发是32啊\n然后呢呃呃两个并发是49\n五十二十五相当于额\n然后三个并发呢就相当于到20多左右呃\n所以说呢呃这个速度呃\n其实还是呃在本地个人用是完全可以接受的哈\n32token左右每秒\n那这个速度是啊完全可用的一个情况呃\n嗯目前的呃deep seek的它这个模型呢说实话啊\n就是如果你单从呃模型的能力上来看的话\n它并没有比其他的模型\n然后有很大的一个优越性\n那因为其实我本地呃用呃\n他呃就是这个MCD6还来运行呢这个MIO啊\n小米的这个模型2.5\n那他俩其实是可以pk一下的\n那目前呢我看一下这个密码好\n后面我应该会再出一期\n单独的关于米莫的这个呃推理的\n那个密码的这个token呢\n跟那个呃呃那个deep sk v4是一样的\n呃\n而且呢它这个呃小米的这个memo的这个模型呢\n它是个多模态的\n就是它可以处理图片文本和视频\n那DEPC可能还是个单文本的模型\n所以说呢小米的这个模型对于啊deep seek来说\n它还是很有优势的\n哎我也比较纳闷哈\n就是MC6呃竟然支持了MIO\n还不支持TPC和V4呃\n当然DPCKV4\n他在架构上做了很多的一些优化和调整\n所以说嗯很多推理的软件嗯\n并没有第一时间能支持它\n这个也挺正常的\n但是呃难道小米的这个架构啊\n因为我没有具体去了解过小米哈\n有可能小米的这个架构呢他没有做呃\n很深的一个就是很大的一个调整\n还是呃基于\n比如说他在上一代的模型上的那个架构很类似\n所以他就能够无缝的支持他的一个推理的呃\n大模型的一个推理\n然后呢他启动起来比较慢\n而且我本地因为已经起了一个DPC和V4\n所以说呢我们就不起它了\n当然我这个本地电脑是完全没有问题的\n是都可以起来的啊\n我就没必要去呃做这个测试了\n然后呢呃目前DPC和V4呢\n它把它放到open code里面\n和那个龙虾里面是完全没问题的\n然后在code x里面是有点小问题\n哎但是也不影响使用哈\n呃然后呢呃最后再说一下这个软件啊\n因为毕竟嗯目前嗯他支持这个哈\n而且呢呃他啊最近我还比较喜欢他一点\n是他目前也支持从哈\n嗯就是MODESCOPE上去来唉跑这个去下载这个模型\n所以说呢呃这个解决了一些网络的问题\n所以说啊我还是比较喜欢这个软件啊\n不知道是不是中国人开发的\n大概率可能是因为如果是海外的用户的话\n他大概率不会支持MOSGO这种啊模型下载的\n那今天就介绍到这儿\n感兴趣的话\n想在本地区运行DPC和V4的这个模型\n如果你的电脑的配置是256G内存以上\n就Mac\n那我建议大家来用一下这个软件\n好的\n今天就介绍到这\n谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18HdABcEMB",
+  "published_at": "1778168265",
+  "fetched_at": "2026-08-09T02:18:57+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# OMLX 与 DeepSeek V4 知识图谱\n\n## OMLX 软件概览\n```mermaid\nflowchart TD\n    OMLX[\"OMLX 软件\"]\n    V039[\"版本 0.3.9 预览版\"]\n    DSV4[\"支持 DeepSeek V4 模型\"]\n    TIPC[\"支持 TIPC 模型\"]\n    MXVM[\"支持 MXVM 推理引擎\"]\n    Audio[\"支持音频模型（TTS、SR）\"]\n    GitHub[\"从 GitHub 下载\"]\n    Mac[\"运行于 macOS\"]\n    RAM[\"要求 256GB 以上内存\"]\n    VRM[\"社区 VRM 分支（基于苹果 M 系列）\"]\n    NoMac[\"官方暂无 macOS 版\"]\n\n    OMLX --> V039\n    OMLX --> DSV4\n    OMLX --> TIPC\n    OMLX --> MXVM\n    OMLX --> Audio\n    OMLX --> GitHub\n    OMLX --> Mac\n    Mac --> RAM\n    OMLX --> VRM\n    VRM --> NoMac\n```\n\n## DeepSeek V4 性能基准\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4\"]\n    Tok1K[\"1K 上下文 56‑62K token/s\"]\n    Tok32K[\"32K 上下文 ~42 token/s\"]\n    MiniMax[\"MiniMax 2.5 约 14 token/s\"]\n    M5[\"M5 4bit 约 16.7 token/s\"]\n    PPS[\"PPS 约 446 token/s\"]\n    TPS[\"TPS 约 32 token/s\"]\n    TTF[\"TTF 约 2291 ms\"]\n    Batch4[\"并发 4 时 ~10 token/s\"]\n    Batch6[\"并发 6 时 ~15 token/s\"]\n    Batch8[\"并发 8 时 ~20 token/s\"]\n    LocalOK[\"本地运行可接受\"]\n\n    DSV4 --> Tok1K\n    DSV4 --> Tok32K\n    DSV4 --> MiniMax\n    DSV4 --> M5\n    DSV4 --> PPS\n    PPS --> TPS\n    TPS --> TTF\n    TPS --> Batch4\n    TPS --> Batch6\n    TPS --> Batch8\n    TPS --> LocalOK\n```\n\n## 更新速度与社区支持比较\n```mermaid\nflowchart TD\n    OMLXFast[\"OMLX 更新速度快\"]\n    CommunityVRM[\"社区 VRM 分支快速适配新模型\"]\n    NewModels[\"快速支持新模型（DeepSeek V4、TIPC）\"]\n    OtherSlow[\"其他软件更新慢\"]\n    AM4GDIO[\"AM4GDIO\"]\n    M4D6[\"M4D6\"]\n    LMC6[\"LMC6\"]\n    OMG6[\"OMG6\"]\n    UserExp[\"用户体验优先\"]\n    NoLoyalty[\"用户忠诚度低\"]\n    Preference[\"倾向选择更新快、体验好者\"]\n\n    OMLXFast --> CommunityVRM\n    OMLXFast --> NewModels\n    OtherSlow --> AM4GDIO\n    OtherSlow --> M4D6\n    OtherSlow --> LMC6\n    OtherSlow --> OMG6\n    UserExp --> Preference\n    NoLoyalty --> Preference\n    OMLXFast --> Preference\n```",
+      "diagrams": [
+        {
+          "title": "OMLX 软件概览",
+          "code": "flowchart TD\n    OMLX[\"OMLX 软件\"]\n    V039[\"版本 0.3.9 预览版\"]\n    DSV4[\"支持 DeepSeek V4 模型\"]\n    TIPC[\"支持 TIPC 模型\"]\n    MXVM[\"支持 MXVM 推理引擎\"]\n    Audio[\"支持音频模型（TTS、SR）\"]\n    GitHub[\"从 GitHub 下载\"]\n    Mac[\"运行于 macOS\"]\n    RAM[\"要求 256GB 以上内存\"]\n    VRM[\"社区 VRM 分支（基于苹果 M 系列）\"]\n    NoMac[\"官方暂无 macOS 版\"]\n\n    OMLX --> V039\n    OMLX --> DSV4\n    OMLX --> TIPC\n    OMLX --> MXVM\n    OMLX --> Audio\n    OMLX --> GitHub\n    OMLX --> Mac\n    Mac --> RAM\n    OMLX --> VRM\n    VRM --> NoMac"
+        },
+        {
+          "title": "DeepSeek V4 性能基准",
+          "code": "flowchart TD\n    DSV4[\"DeepSeek V4\"]\n    Tok1K[\"1K 上下文 56‑62K token/s\"]\n    Tok32K[\"32K 上下文 ~42 token/s\"]\n    MiniMax[\"MiniMax 2.5 约 14 token/s\"]\n    M5[\"M5 4bit 约 16.7 token/s\"]\n    PPS[\"PPS 约 446 token/s\"]\n    TPS[\"TPS 约 32 token/s\"]\n    TTF[\"TTF 约 2291 ms\"]\n    Batch4[\"并发 4 时 ~10 token/s\"]\n    Batch6[\"并发 6 时 ~15 token/s\"]\n    Batch8[\"并发 8 时 ~20 token/s\"]\n    LocalOK[\"本地运行可接受\"]\n\n    DSV4 --> Tok1K\n    DSV4 --> Tok32K\n    DSV4 --> MiniMax\n    DSV4 --> M5\n    DSV4 --> PPS\n    PPS --> TPS\n    TPS --> TTF\n    TPS --> Batch4\n    TPS --> Batch6\n    TPS --> Batch8\n    TPS --> LocalOK"
+        },
+        {
+          "title": "更新速度与社区支持比较",
+          "code": "flowchart TD\n    OMLXFast[\"OMLX 更新速度快\"]\n    CommunityVRM[\"社区 VRM 分支快速适配新模型\"]\n    NewModels[\"快速支持新模型（DeepSeek V4、TIPC）\"]\n    OtherSlow[\"其他软件更新慢\"]\n    AM4GDIO[\"AM4GDIO\"]\n    M4D6[\"M4D6\"]\n    LMC6[\"LMC6\"]\n    OMG6[\"OMG6\"]\n    UserExp[\"用户体验优先\"]\n    NoLoyalty[\"用户忠诚度低\"]\n    Preference[\"倾向选择更新快、体验好者\"]\n\n    OMLXFast --> CommunityVRM\n    OMLXFast --> NewModels\n    OtherSlow --> AM4GDIO\n    OtherSlow --> M4D6\n    OtherSlow --> LMC6\n    OtherSlow --> OMG6\n    UserExp --> Preference\n    NoLoyalty --> Preference\n    OMLXFast --> Preference"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T02:19:11+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# OMLX 与 DeepSeek V4 知识图谱\n\n## OMLX 软件概览\n```mermaid\nflowchart TD\n    OMLX[\"OMLX 软件\"]\n    V039[\"版本 0.3.9 预览版\"]\n    DSV4[\"支持 DeepSeek V4 模型\"]\n    TIPC[\"支持 TIPC 模型\"]\n    MXVM[\"支持 MXVM 推理引擎\"]\n    Audio[\"支持音频模型（TTS、SR）\"]\n    GitHub[\"从 GitHub 下载\"]\n    Mac[\"运行于 macOS\"]\n    RAM[\"要求 256GB 以上内存\"]\n    VRM[\"社区 VRM 分支（基于苹果 M 系列）\"]\n    NoMac[\"官方暂无 macOS 版\"]\n\n    OMLX --> V039\n    OMLX --> DSV4\n    OMLX --> TIPC\n    OMLX --> MXVM\n    OMLX --> Audio\n    OMLX --> GitHub\n    OMLX --> Mac\n    Mac --> RAM\n    OMLX --> VRM\n    VRM --> NoMac\n```\n\n## DeepSeek V4 性能基准\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4\"]\n    Tok1K[\"1K 上下文 56‑62K token/s\"]\n    Tok32K[\"32K 上下文 ~42 token/s\"]\n    MiniMax[\"MiniMax 2.5 约 14 token/s\"]\n    M5[\"M5 4bit 约 16.7 token/s\"]\n    PPS[\"PPS 约 446 token/s\"]\n    TPS[\"TPS 约 32 token/s\"]\n    TTF[\"TTF 约 2291 ms\"]\n    Batch4[\"并发 4 时 ~10 token/s\"]\n    Batch6[\"并发 6 时 ~15 token/s\"]\n    Batch8[\"并发 8 时 ~20 token/s\"]\n    LocalOK[\"本地运行可接受\"]\n\n    DSV4 --> Tok1K\n    DSV4 --> Tok32K\n    DSV4 --> MiniMax\n    DSV4 --> M5\n    DSV4 --> PPS\n    PPS --> TPS\n    TPS --> TTF\n    TPS --> Batch4\n    TPS --> Batch6\n    TPS --> Batch8\n    TPS --> LocalOK\n```\n\n## 更新速度与社区支持比较\n```mermaid\nflowchart TD\n    OMLXFast[\"OMLX 更新速度快\"]\n    CommunityVRM[\"社区 VRM 分支快速适配新模型\"]\n    NewModels[\"快速支持新模型（DeepSeek V4、TIPC）\"]\n    OtherSlow[\"其他软件更新慢\"]\n    AM4GDIO[\"AM4GDIO\"]\n    M4D6[\"M4D6\"]\n    LMC6[\"LMC6\"]\n    OMG6[\"OMG6\"]\n    UserExp[\"用户体验优先\"]\n    NoLoyalty[\"用户忠诚度低\"]\n    Preference[\"倾向选择更新快、体验好者\"]\n\n    OMLXFast --> CommunityVRM\n    OMLXFast --> NewModels\n    OtherSlow --> AM4GDIO\n    OtherSlow --> M4D6\n    OtherSlow --> LMC6\n    OtherSlow --> OMG6\n    UserExp --> Preference\n    NoLoyalty --> Preference\n    OMLXFast --> Preference\n```",
+  "diagrams": [
+    {
+      "title": "OMLX 软件概览",
+      "code": "flowchart TD\n    OMLX[\"OMLX 软件\"]\n    V039[\"版本 0.3.9 预览版\"]\n    DSV4[\"支持 DeepSeek V4 模型\"]\n    TIPC[\"支持 TIPC 模型\"]\n    MXVM[\"支持 MXVM 推理引擎\"]\n    Audio[\"支持音频模型（TTS、SR）\"]\n    GitHub[\"从 GitHub 下载\"]\n    Mac[\"运行于 macOS\"]\n    RAM[\"要求 256GB 以上内存\"]\n    VRM[\"社区 VRM 分支（基于苹果 M 系列）\"]\n    NoMac[\"官方暂无 macOS 版\"]\n\n    OMLX --> V039\n    OMLX --> DSV4\n    OMLX --> TIPC\n    OMLX --> MXVM\n    OMLX --> Audio\n    OMLX --> GitHub\n    OMLX --> Mac\n    Mac --> RAM\n    OMLX --> VRM\n    VRM --> NoMac"
+    },
+    {
+      "title": "DeepSeek V4 性能基准",
+      "code": "flowchart TD\n    DSV4[\"DeepSeek V4\"]\n    Tok1K[\"1K 上下文 56‑62K token/s\"]\n    Tok32K[\"32K 上下文 ~42 token/s\"]\n    MiniMax[\"MiniMax 2.5 约 14 token/s\"]\n    M5[\"M5 4bit 约 16.7 token/s\"]\n    PPS[\"PPS 约 446 token/s\"]\n    TPS[\"TPS 约 32 token/s\"]\n    TTF[\"TTF 约 2291 ms\"]\n    Batch4[\"并发 4 时 ~10 token/s\"]\n    Batch6[\"并发 6 时 ~15 token/s\"]\n    Batch8[\"并发 8 时 ~20 token/s\"]\n    LocalOK[\"本地运行可接受\"]\n\n    DSV4 --> Tok1K\n    DSV4 --> Tok32K\n    DSV4 --> MiniMax\n    DSV4 --> M5\n    DSV4 --> PPS\n    PPS --> TPS\n    TPS --> TTF\n    TPS --> Batch4\n    TPS --> Batch6\n    TPS --> Batch8\n    TPS --> LocalOK"
+    },
+    {
+      "title": "更新速度与社区支持比较",
+      "code": "flowchart TD\n    OMLXFast[\"OMLX 更新速度快\"]\n    CommunityVRM[\"社区 VRM 分支快速适配新模型\"]\n    NewModels[\"快速支持新模型（DeepSeek V4、TIPC）\"]\n    OtherSlow[\"其他软件更新慢\"]\n    AM4GDIO[\"AM4GDIO\"]\n    M4D6[\"M4D6\"]\n    LMC6[\"LMC6\"]\n    OMG6[\"OMG6\"]\n    UserExp[\"用户体验优先\"]\n    NoLoyalty[\"用户忠诚度低\"]\n    Preference[\"倾向选择更新快、体验好者\"]\n\n    OMLXFast --> CommunityVRM\n    OMLXFast --> NewModels\n    OtherSlow --> AM4GDIO\n    OtherSlow --> M4D6\n    OtherSlow --> LMC6\n    OtherSlow --> OMG6\n    UserExp --> Preference\n    NoLoyalty --> Preference\n    OMLXFast --> Preference"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T02:19:11+00:00"
+}

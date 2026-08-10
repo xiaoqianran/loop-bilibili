@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1agu46XEHq",
+  "title": "分享两种 Codex 接入 DeepSeek-V4-Flash 模型方案",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2206,
+  "text": "大家好\n今天这期内容我会教大家两种方法\n把deep seek v4flash大模型接入到codex中\n让codex不再局限于调用官方模型\n而是可以使用deep seek提供的强大模型\n我们知道codex默认连接的是OpenAI官方模型服务\n但它的底层请求地址和模型配置\n是可以进行调整的\n所以接入deep sk的本质就是修改codex的模型\n服务端点\n将原本发送给官方接口的请求转发到DPCAPI\n目前主要有两种实现方式\n第一种方法是使用deep seek\n官方提供的codex接入方案\n这种方式是目前比较推荐的一种接入方式\n因为它不需要额外的中转服务\n直接通过deep seek官方API与codex进行连接\n第二种方法是通过cc switch进行API中转\n这种方式更加灵活\n可以通过图形化界面管理不同模型和API服务\n它相当于在codex和deep seek API\n之间增加了一层代理\n通过cc switch管理接口转发和模型切换\n除了deep seek之外\n也方便后续接入其他兼容OpenAI API格式的模型\n接下来我会分别演示\n这两种方案的完整配置过程\n包括API获取参数设置以及实际调用效果\n首先是方法一\n使用deep seek官方提供的codex接入方案\n打开浏览器\n搜索deep seek官方网站\n进入API开放平台\n首次使用需要创建app\n点击创建新的app名称\n可以自定义\n创建完成后\n将生成的P复制并保存\n注意这个APIT只会显示一次\n关闭页面后无法再次查看\n如果丢失\n只能重新创建\n接下来打开官方接口文档\n进入agent工具接入页面\n找到codex接入说明\n官方提供了两种接入方式\n这里我们直接使用方式一\n也就是官方提供的一键配置脚本\n根据你的操作系统复制对应的命令并执行即可\n脚本执行后\n这个脚本会自动完成相关配置\n首先会备份当前codex的CONFIGTML配置文件\n保存到backup deep seek目录\n方便后续恢复\n然后生成models j s o n文件\n用于声明deep seek模型相关参数包括上下文长度\n推理等级以及工具调用格式\n让codex能够正常识别deep seek模型\n同时脚本会自动更新CONFIGTOML文件\n仅添加deep seek provider配置\n不会影响已有的MCP服务以及项目配置\n另外在写入配置之前\n脚本会进行格式校验\n如果检测到配置异常\n会直接终止操作\n避免破坏原有环境\n如果后续需要切换模型或者恢复默认配置\n也可以再次运行脚本进行管理\n在操作之前\n我的codex是未登录的状态\n接下来打开power shell\n执行官方提供的一键配置命令\n执行后会出现三个选项\n选项一用于配置deep sk v4flash\n也就是当前开放使用的版本选项\n二用于配置deep sk v4pro\n目前暂未开放\n预计后续上线选项\n三用于恢复codex默认配置\n删除所有deep seek相关设置\n这里我们选择第一个选项\n输入数字一并回车\n随后需要输入刚才在deep seek平台创建的APIP\n将保存好的P粘贴进去即可\n如果终端没有出现错误提示\n就代表配置已经完成\n现在重新打开codex\n可以看到已经不需要进行登录认证\n而是直接进入应用\n首次进入后需要做一些个性化和必要设置\n设置完成后就能看到对话界面了\n在左下角可以看到\n当前使用的模型已经切换为deep seek\n现在进行一次简单测试\n一可以看到模型能够正常响应\n说明codex已经成功接入deep seek\n如果之后不想继续使用deep sk模型\n想要恢复codex原本的默认配置\n只需要重新执行刚才的一键配置命令\n然后选择第三个选项\n脚本会提示即将执行的删除操作\n确认无误后\n输入Y继续完成后\ncodex就会恢复默认状态\n再次打开codex\n可以看到已经回到了原来的登录界面\n接着是方法二\n通过cc switch进行API中转\n同样在开始之前\ncodex处于未登录状态\n首先打开浏览器搜索cc switch\n注意确认发布者信息\n避免下载到非官方版本\n进入releases页面\n下载对应操作系统的最新版本安装包\n安装过程保持默认设置即可\n安装完成后打开cc switch\n在顶部agent工具中找到OpenAI\n点击右上角加号\n添加供应商\n供应商类型选择deep sk\n然后输入之前创建好的app\n默认模型保持默认即可\n添加完成后\n点击检测连通性\n如果能够返回正常延迟信息\n说明API配置成功\n接下来点击启用\n然后进入设置页面\n找到路由设置\n开启本地路由\n并选择为codex启用路由\n完成配置后再次打开codex\n可以看到无需进行账号授权\n直接进入codex工作界面\n左下角模型显示为deep seek\n发送一条测试消息\n可以看到模型正常返回结果\n这就说明cc switch中转配置成功\n如果之后不想继续使用中转\n只需要关闭本地路由并恢复默认配置即可\n再次打开codex就会恢复到未登录状态\n到这里\ncodex接入deep sk模型的两种方法\n就全部介绍完成了\n第一种deep seek官方方案配置简单\n稳定性更高\n第二种cc switch中转方案管理更加灵活\n适合需要频繁切换模型的用户\n大家可以根据自己的需求选择对应方式\n本期内容到此结束\n如果这期视频对你有帮助\n记得一键三连\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1agu46XEHq",
+  "published_at": "1786078225",
+  "fetched_at": "2026-08-10T03:09:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek‑V4Flash 接入 Codex 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    C[Codex] -->|默认使用| O[OpenAI 官方模型]\n    C -->|可重新配置| D[DeepSeek‑V4Flash 模型]\n    D --> M1[方法一：DeepSeek 官方接入方案]\n    D --> M2[方法二：CCSwitch 中转方案]\n    M1 -->|直接调用| API[DeepSeek 官方 API 端点]\n    M2 -->|通过代理| P[CCSwitch 代理层]\n    P --> API\n    O -->|底层请求地址和模型配置可调| C\n```\n\n## 方法一：官方一键脚本配置流程\n```mermaid\nflowchart TD\n    S1[开始] --> B1[打开浏览器]\n    B1 --> B2[访问 DeepSeek 官网 → API 开放平台]\n    B2 --> B3[创建新 App 并获取 API Key]\n    B3 --> D1[打开官方接口文档 → Agent 接入页面]\n    D1 --> D2[选择“一键配置脚本”对应操作系统]\n    D2 --> R1[在 PowerShell 执行脚本]\n    R1 --> C1[备份当前 CONFIG.toml → backup_deepseek 目录]\n    R1 --> C2[生成 models.json（声明模型参数）]\n    R1 --> C3[更新 CONFIG.toml，添加 deepseek provider]\n    C3 --> V1[脚本进行格式校验，异常则终止]\n    V1 -->|成功| O1[提示配置完成]\n    O1 --> R2[重新打开 Codex]\n    R2 --> T1[界面直接进入，无需登录]\n    T1 --> T2[左下角显示模型为 DeepSeek‑V4Flash]\n    T2 --> T3[发送测试消息，模型正常响应]\n```\n\n## 方法二：CCSwitch 中转配置流程\n```mermaid\nflowchart TD\n    S2[开始] --> D1[在浏览器搜索并下载 CCswitch]\n    D1 --> D2[确认发布者信息，下载对应 OS 安装包]\n    D2 --> I1[安装 CCswitch（保持默认设置）]\n    I1 --> O1[打开 CCswitch 程序]\n    O1 --> A1[在 Agent 工具中选择 OpenAI → 添加供应商]\n    A1 --> A2[供应商类型选择 DeepSeek，填写之前获取的 API Key]\n    A2 --> A3[保持默认模型，完成添加]\n    A3 --> T1[点击“检测连通性”，返回正常延迟即配置成功]\n    T1 --> E1[启用本地路由]\n    E1 --> E2[为 Codex 开启路由]\n    E2 --> R1[重新打开 Codex]\n    R1 --> T2[左下角模型显示 DeepSeek‑V4Flash]\n    T2 --> T3[发送测试消息，模型正常返回]\n```\n\n## 方法对比\n```mermaid\nflowchart LR\n    M1[方法一：官方方案] -->|优点| M1A[配置简单]\n    M1 -->|优点| M1B[稳定性高]\n    M1 -->|特点| M1C[无需额外代理]\n    M2[方法二：CCSwitch 方案] -->|优点| M2A[管理灵活]\n    M2 -->|优点| M2B[可接入其他兼容 OpenAI API 的模型]\n    M2 -->|特点| M2C[需要额外代理层]\n```\n\n## 恢复默认配置（两种方法通用）\n```mermaid\nflowchart TD\n    RStart[需要恢复默认] -->|方法一| M1R[运行一键脚本 → 选择第 3 项“恢复默认配置”]\n    M1R --> M1C[确认删除 DeepSeek 相关设置，输入 Y]\n    M1C --> M1D[Codex 恢复默认状态，重新出现登录界面]\n    RStart -->|方法二| M2R[在 CCswitch 中关闭本地路由 → 恢复默认路由设置]\n    M2R --> M2D[Codex 再次打开，回到未登录状态]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    C[Codex] -->|默认使用| O[OpenAI 官方模型]\n    C -->|可重新配置| D[DeepSeek‑V4Flash 模型]\n    D --> M1[方法一：DeepSeek 官方接入方案]\n    D --> M2[方法二：CCSwitch 中转方案]\n    M1 -->|直接调用| API[DeepSeek 官方 API 端点]\n    M2 -->|通过代理| P[CCSwitch 代理层]\n    P --> API\n    O -->|底层请求地址和模型配置可调| C"
+        },
+        {
+          "title": "方法一：官方一键脚本配置流程",
+          "code": "flowchart TD\n    S1[开始] --> B1[打开浏览器]\n    B1 --> B2[访问 DeepSeek 官网 → API 开放平台]\n    B2 --> B3[创建新 App 并获取 API Key]\n    B3 --> D1[打开官方接口文档 → Agent 接入页面]\n    D1 --> D2[选择“一键配置脚本”对应操作系统]\n    D2 --> R1[在 PowerShell 执行脚本]\n    R1 --> C1[备份当前 CONFIG.toml → backup_deepseek 目录]\n    R1 --> C2[生成 models.json（声明模型参数）]\n    R1 --> C3[更新 CONFIG.toml，添加 deepseek provider]\n    C3 --> V1[脚本进行格式校验，异常则终止]\n    V1 -->|成功| O1[提示配置完成]\n    O1 --> R2[重新打开 Codex]\n    R2 --> T1[界面直接进入，无需登录]\n    T1 --> T2[左下角显示模型为 DeepSeek‑V4Flash]\n    T2 --> T3[发送测试消息，模型正常响应]"
+        },
+        {
+          "title": "方法二：CCSwitch 中转配置流程",
+          "code": "flowchart TD\n    S2[开始] --> D1[在浏览器搜索并下载 CCswitch]\n    D1 --> D2[确认发布者信息，下载对应 OS 安装包]\n    D2 --> I1[安装 CCswitch（保持默认设置）]\n    I1 --> O1[打开 CCswitch 程序]\n    O1 --> A1[在 Agent 工具中选择 OpenAI → 添加供应商]\n    A1 --> A2[供应商类型选择 DeepSeek，填写之前获取的 API Key]\n    A2 --> A3[保持默认模型，完成添加]\n    A3 --> T1[点击“检测连通性”，返回正常延迟即配置成功]\n    T1 --> E1[启用本地路由]\n    E1 --> E2[为 Codex 开启路由]\n    E2 --> R1[重新打开 Codex]\n    R1 --> T2[左下角模型显示 DeepSeek‑V4Flash]\n    T2 --> T3[发送测试消息，模型正常返回]"
+        },
+        {
+          "title": "方法对比",
+          "code": "flowchart LR\n    M1[方法一：官方方案] -->|优点| M1A[配置简单]\n    M1 -->|优点| M1B[稳定性高]\n    M1 -->|特点| M1C[无需额外代理]\n    M2[方法二：CCSwitch 方案] -->|优点| M2A[管理灵活]\n    M2 -->|优点| M2B[可接入其他兼容 OpenAI API 的模型]\n    M2 -->|特点| M2C[需要额外代理层]"
+        },
+        {
+          "title": "恢复默认配置（两种方法通用）",
+          "code": "flowchart TD\n    RStart[需要恢复默认] -->|方法一| M1R[运行一键脚本 → 选择第 3 项“恢复默认配置”]\n    M1R --> M1C[确认删除 DeepSeek 相关设置，输入 Y]\n    M1C --> M1D[Codex 恢复默认状态，重新出现登录界面]\n    RStart -->|方法二| M2R[在 CCswitch 中关闭本地路由 → 恢复默认路由设置]\n    M2R --> M2D[Codex 再次打开，回到未登录状态]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T03:09:22+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek‑V4Flash 接入 Codex 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    C[Codex] -->|默认使用| O[OpenAI 官方模型]\n    C -->|可重新配置| D[DeepSeek‑V4Flash 模型]\n    D --> M1[方法一：DeepSeek 官方接入方案]\n    D --> M2[方法二：CCSwitch 中转方案]\n    M1 -->|直接调用| API[DeepSeek 官方 API 端点]\n    M2 -->|通过代理| P[CCSwitch 代理层]\n    P --> API\n    O -->|底层请求地址和模型配置可调| C\n```\n\n## 方法一：官方一键脚本配置流程\n```mermaid\nflowchart TD\n    S1[开始] --> B1[打开浏览器]\n    B1 --> B2[访问 DeepSeek 官网 → API 开放平台]\n    B2 --> B3[创建新 App 并获取 API Key]\n    B3 --> D1[打开官方接口文档 → Agent 接入页面]\n    D1 --> D2[选择“一键配置脚本”对应操作系统]\n    D2 --> R1[在 PowerShell 执行脚本]\n    R1 --> C1[备份当前 CONFIG.toml → backup_deepseek 目录]\n    R1 --> C2[生成 models.json（声明模型参数）]\n    R1 --> C3[更新 CONFIG.toml，添加 deepseek provider]\n    C3 --> V1[脚本进行格式校验，异常则终止]\n    V1 -->|成功| O1[提示配置完成]\n    O1 --> R2[重新打开 Codex]\n    R2 --> T1[界面直接进入，无需登录]\n    T1 --> T2[左下角显示模型为 DeepSeek‑V4Flash]\n    T2 --> T3[发送测试消息，模型正常响应]\n```\n\n## 方法二：CCSwitch 中转配置流程\n```mermaid\nflowchart TD\n    S2[开始] --> D1[在浏览器搜索并下载 CCswitch]\n    D1 --> D2[确认发布者信息，下载对应 OS 安装包]\n    D2 --> I1[安装 CCswitch（保持默认设置）]\n    I1 --> O1[打开 CCswitch 程序]\n    O1 --> A1[在 Agent 工具中选择 OpenAI → 添加供应商]\n    A1 --> A2[供应商类型选择 DeepSeek，填写之前获取的 API Key]\n    A2 --> A3[保持默认模型，完成添加]\n    A3 --> T1[点击“检测连通性”，返回正常延迟即配置成功]\n    T1 --> E1[启用本地路由]\n    E1 --> E2[为 Codex 开启路由]\n    E2 --> R1[重新打开 Codex]\n    R1 --> T2[左下角模型显示 DeepSeek‑V4Flash]\n    T2 --> T3[发送测试消息，模型正常返回]\n```\n\n## 方法对比\n```mermaid\nflowchart LR\n    M1[方法一：官方方案] -->|优点| M1A[配置简单]\n    M1 -->|优点| M1B[稳定性高]\n    M1 -->|特点| M1C[无需额外代理]\n    M2[方法二：CCSwitch 方案] -->|优点| M2A[管理灵活]\n    M2 -->|优点| M2B[可接入其他兼容 OpenAI API 的模型]\n    M2 -->|特点| M2C[需要额外代理层]\n```\n\n## 恢复默认配置（两种方法通用）\n```mermaid\nflowchart TD\n    RStart[需要恢复默认] -->|方法一| M1R[运行一键脚本 → 选择第 3 项“恢复默认配置”]\n    M1R --> M1C[确认删除 DeepSeek 相关设置，输入 Y]\n    M1C --> M1D[Codex 恢复默认状态，重新出现登录界面]\n    RStart -->|方法二| M2R[在 CCswitch 中关闭本地路由 → 恢复默认路由设置]\n    M2R --> M2D[Codex 再次打开，回到未登录状态]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    C[Codex] -->|默认使用| O[OpenAI 官方模型]\n    C -->|可重新配置| D[DeepSeek‑V4Flash 模型]\n    D --> M1[方法一：DeepSeek 官方接入方案]\n    D --> M2[方法二：CCSwitch 中转方案]\n    M1 -->|直接调用| API[DeepSeek 官方 API 端点]\n    M2 -->|通过代理| P[CCSwitch 代理层]\n    P --> API\n    O -->|底层请求地址和模型配置可调| C"
+    },
+    {
+      "title": "方法一：官方一键脚本配置流程",
+      "code": "flowchart TD\n    S1[开始] --> B1[打开浏览器]\n    B1 --> B2[访问 DeepSeek 官网 → API 开放平台]\n    B2 --> B3[创建新 App 并获取 API Key]\n    B3 --> D1[打开官方接口文档 → Agent 接入页面]\n    D1 --> D2[选择“一键配置脚本”对应操作系统]\n    D2 --> R1[在 PowerShell 执行脚本]\n    R1 --> C1[备份当前 CONFIG.toml → backup_deepseek 目录]\n    R1 --> C2[生成 models.json（声明模型参数）]\n    R1 --> C3[更新 CONFIG.toml，添加 deepseek provider]\n    C3 --> V1[脚本进行格式校验，异常则终止]\n    V1 -->|成功| O1[提示配置完成]\n    O1 --> R2[重新打开 Codex]\n    R2 --> T1[界面直接进入，无需登录]\n    T1 --> T2[左下角显示模型为 DeepSeek‑V4Flash]\n    T2 --> T3[发送测试消息，模型正常响应]"
+    },
+    {
+      "title": "方法二：CCSwitch 中转配置流程",
+      "code": "flowchart TD\n    S2[开始] --> D1[在浏览器搜索并下载 CCswitch]\n    D1 --> D2[确认发布者信息，下载对应 OS 安装包]\n    D2 --> I1[安装 CCswitch（保持默认设置）]\n    I1 --> O1[打开 CCswitch 程序]\n    O1 --> A1[在 Agent 工具中选择 OpenAI → 添加供应商]\n    A1 --> A2[供应商类型选择 DeepSeek，填写之前获取的 API Key]\n    A2 --> A3[保持默认模型，完成添加]\n    A3 --> T1[点击“检测连通性”，返回正常延迟即配置成功]\n    T1 --> E1[启用本地路由]\n    E1 --> E2[为 Codex 开启路由]\n    E2 --> R1[重新打开 Codex]\n    R1 --> T2[左下角模型显示 DeepSeek‑V4Flash]\n    T2 --> T3[发送测试消息，模型正常返回]"
+    },
+    {
+      "title": "方法对比",
+      "code": "flowchart LR\n    M1[方法一：官方方案] -->|优点| M1A[配置简单]\n    M1 -->|优点| M1B[稳定性高]\n    M1 -->|特点| M1C[无需额外代理]\n    M2[方法二：CCSwitch 方案] -->|优点| M2A[管理灵活]\n    M2 -->|优点| M2B[可接入其他兼容 OpenAI API 的模型]\n    M2 -->|特点| M2C[需要额外代理层]"
+    },
+    {
+      "title": "恢复默认配置（两种方法通用）",
+      "code": "flowchart TD\n    RStart[需要恢复默认] -->|方法一| M1R[运行一键脚本 → 选择第 3 项“恢复默认配置”]\n    M1R --> M1C[确认删除 DeepSeek 相关设置，输入 Y]\n    M1C --> M1D[Codex 恢复默认状态，重新出现登录界面]\n    RStart -->|方法二| M2R[在 CCswitch 中关闭本地路由 → 恢复默认路由设置]\n    M2R --> M2D[Codex 再次打开，回到未登录状态]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T03:09:22+00:00"
+}

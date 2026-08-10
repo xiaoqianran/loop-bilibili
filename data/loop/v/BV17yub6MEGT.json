@@ -1,0 +1,74 @@
+{
+  "bvid": "BV17yub6MEGT",
+  "title": "DeepSeek V4接入Codex完整教程！国产模型开启Agent编程开发，从环境配置、API接入到真实项目实战，手把手打造AI数据分析系统",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2389,
+  "text": "300万行数据完整分析系统\n自动生成可视化报告\n这些并不是人工一点点开发完成的\n而是通过deep sk v4加codex\n让AI agent的参与整个项目开发流程\n过去AI编程更多依赖海外模型\n但是现在国产模型也开始进入A证的开发阶段\ndeep sk v4正式版已经支持responses API\n可以直接接入codex\n让国产模型具备进入真实代码仓库\n理解项目结构\n修改文件\n执行命令以及持续优化的能力\n今天这节课我们就直接实战演示\n如何把deep sk v4接入codex\n并利用这套组合完成一个完整项目开发流程\n如果你想复现今天课程中的完整环境\n包括deep sk v4加codex配置文档\n项目开发资料以及课程课件\n可以在评论区扣课件领取\n首先我们来看一下整个技术链路\ndeep sk v4是底层模型\n负责理解任务\n分析代码生成解决方案\nresponses API是模型和agent的工具之间的通信协议\n负责组织输入输出以及工具调用\ncodex则作为实际的开发环境\n负责读取项目文件\n执行代码修改和运行测试\n也就是说\n这三者不是三个独立的工具\n而是一套完整的agent开发流程\n模型负责思考接口\n负责连接codex负责执行\n最终让AI从一个只能回答问题的聊天工具\n变成一个可以参与软件开发的工程助手\n很多同学可能会有一个疑问\n为什么deep sk v4现在可以接入codex\n其实关键就在responses API\n在之前\n如果想让deep sick这样的模型接入AI编程工具\n通常需要额外做协议转换\n因为不同模型厂商对于模型输出格式\n工具调用方式\n以及A证通信方式都有自己的标准\n而deep sc v4正式版的一个重要变化就是\n全面兼容responses API\nResponses api\n可以理解成agent开发中的一种统一通信方式\n它不仅可以传递用户输入\n还可以管理模型\n推理过程\n工具调用以及多轮任务执行\n而codex底层使用的就是这套通信方式\n所以当deep sk v4支持responses API后\n就可以直接接入codex\n让codex调用deep sc作为底层模型完成开发任务\n接下来我们进入实际配置\n首先需要准备deep sc API\n进入deep sk开放平台\n创建API key\n获取对应的访问凭证\n然后在codex配置文件中\n将默认模型替换成deep sick v4\n这里主要修改两个部分\n第一个是API地址\n也就是告诉codex请求发送到哪里\n第二个是模型名称\n也就是告诉codex使用哪一个模型进行推理\n配置完成之后\ncodex后续所有任务都会调用deep sc v4\n但是需要注意一点\n我们替换的是底层模型\n而不是替换codex本身\ncodex依然负责agent的工作流\n包括读取代码仓库分析\n项目结构修改文件以及执行命令\ndeep sk v4负责提供背后的推理和代码生成能力\n完成配置之后\n我们进入一个真实项目目录\n启动codex后\n它首先会读取当前项目环境\n包括项目文件结构代码文件\n配置文件以及已有开发规范\n这个时候我们就可以直接向agent提出开发需求\n例如帮我开发一个数据分析系统\n支持上传excel文件\n自动完成数据分析并生成可视化报告\n如果是传统聊天模型\n它可能只会返回一段代码\n但是A证的工作方式完全不同\n他会先分析当前项目结构\n判断应该如何实现\n然后拆解任务规划需要修改的文件\n接下来他会创建代码\n修改代码并通过运行测试不断验证结果\n如果出现错误\n他会继续分析原因\n然后进行下一轮修改\n这也是AI agent和普通代码生成最大的区别\n普通模型解决的是回答问题\n而agent解决的是完成任务\n在实际使用deep sk v4加codex开发项目的时候\n一个非常重要的技巧是\n不要直接给agent一个模糊目标\n比如帮我开发一个后台管理系统\n这种需求对于A证来说\n信息是不完整的\n更好的方式是按照软件开发流程描述需求\n例如请先分析当前项目结构\n告诉我实现这个功能需要修改哪些文件\n然后按照模块逐步完成开发\n每完成一个阶段进行测试\n这样agent会更加稳定\n对于复杂项目还可以提前准备项目规则文件\n告诉agent当前项目使用什么技术\n占代码规范是什么\n哪些文件不能修改\n测试命令是什么\n这些信息越明确\nagent最终完成任务的质量越高\n回到今天展示的数据分析系统\n整个项目就是通过DPCCV4加codex\n完成开发\n项目中不仅包含基础的数据处理能力\n还包括数据导入\n智能分析\n图表生成以及自动生成分析报告等完整流程\n在开发过程中\n开发者并不是逐行编写所有代码\n而是通过需求描述让agent理解目标\n然后不断调整和优化\n这也是未来AI编程最重要的变化\n开发者的角色正在从写代码的人\n转变为管理和指导AI完成开发的人\n当然在实际使用过程中也有几个注意事项\n第一模型能力不是全部\nagent最终效果不仅取决于模型\n还取决于项目上下文\n任务拆解方式以及工具配置\n第二大型项目不要一次性全部交给agent\n更好的方式是先分析项目再拆分任务\n然后逐步开发和验证\n第三要学会和agent协作\n高质量的需求描述\n清晰的任务拆解以及及时的结果验证\n比单纯更换一个模型更加重要\n最后总结一下deep sk v4接入codex\n真正重要的不是多了一个国产模型选择\n而是国产模型开始进入\n完整的agent的编程开发流程\n通过deep sc v4提供模型能力\n通过responses API完成连接\n再利用codex执行工程任务\n我们可以让AI真正参与项目开发\n从写一段代码到完成一个完整系统\n这就是AIA证的编程正在发生的变化\n如果你想复现今天完整的deep sk v\n四加codex配置流程\n包括配置文件\n课程课件以及项目资料\n可以在评论区扣课件领取",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV17yub6MEGT",
+  "published_at": "1786096800",
+  "fetched_at": "2026-08-09T11:53:23+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 与 Codex Agent 开发知识图谱\n\n## 总体架构概览\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4 模型\"] -->|提供推理与代码生成| ResponsesAPI[\"Responses API\"]\n    ResponsesAPI -->|统一通信协议| Codex[\"Codex 开发环境\"]\n    Codex -->|读取/修改项目文件| Repo[\"项目代码仓库\"]\n    Codex -->|执行测试并生成报告| Output[\"可视化报告 / 结果\"]\n    User[\"用户需求输入\"] -->|交给| Agent[\"Agent 工作流\"]\n    Agent -->|任务分析| DSV4\n    Agent -->|调用工具| Codex\n    Agent -->|返回结果| User\n    Repo -->|结构信息| Agent\n    Output -->|反馈给| User\n```\n\n## Responses API 的作用与兼容性\n```mermaid\nflowchart TD\n    RespAPI[\"Responses API\"] -->|统一通信方式| UnifiedComm[\"统一通信层\"]\n    UnifiedComm -->|传递用户输入| UserInput[\"用户输入\"]\n    UnifiedComm -->|管理模型推理| ModelMgmt[\"模型管理\"]\n    UnifiedComm -->|调度工具调用| ToolCall[\"工具调用\"]\n    UnifiedComm -->|支持多轮任务| MultiRound[\"多轮任务执行\"]\n    DeepSeekV4[\"DeepSeek V4 正式版\"] -->|完全兼容| RespAPI\n    Codex[\"Codex\"] -->|底层使用| RespAPI\n    Integration[\"模型 ↔ 工具 集成\"] -->|通过| RespAPI\n```\n\n## DeepSeek V4 接入 Codex 的配置步骤\n```mermaid\nflowchart TD\n    Step1[\"打开 DeepSeek 开放平台\"] --> Step2[\"创建 API Key\"]\n    Step2 --> Step3[\"获取访问凭证\"]\n    Step3 --> Step4[\"编辑 Codex 配置文件\"]\n    Step4 --> Step5[\"设置 API 地址\"]\n    Step4 --> Step6[\"设置模型名称为 DeepSeek V4\"]\n    Step5 --> Step7[\"保存配置\"]\n    Step6 --> Step7\n    Step7 --> Step8[\"重启 Codex 服务\"]\n    Step8 --> Step9[\"验证模型调用成功\"]\n```\n\n## Agent 开发流程与最佳实践\n```mermaid\nflowchart TD\n    ReqClear[\"提供清晰完整的需求描述\"] --> Analyze[\"分析项目结构\"]\n    Analyze --> ListFiles[\"列出需修改的文件\"]\n    ListFiles --> GenCode[\"生成代码模块\"]\n    GenCode --> Test[\"运行测试用例\"]\n    Test -->|通过| Deploy[\"部署或继续开发\"]\n    Test -->|失败| ErrAnalyse[\"分析错误原因\"]\n    ErrAnalyse --> Iterate[\"迭代修改代码\"]\n    Iterate --> Test\n    ReqClear --> TechRules[\"提供项目技术规范/规则\"]\n    TechRules --> Iterate\n    Deploy -->|大项目分阶段| Increment[\"采用增量任务拆解\"]\n    Increment --> Analyze\n```",
+      "diagrams": [
+        {
+          "title": "总体架构概览",
+          "code": "flowchart TD\n    DSV4[\"DeepSeek V4 模型\"] -->|提供推理与代码生成| ResponsesAPI[\"Responses API\"]\n    ResponsesAPI -->|统一通信协议| Codex[\"Codex 开发环境\"]\n    Codex -->|读取/修改项目文件| Repo[\"项目代码仓库\"]\n    Codex -->|执行测试并生成报告| Output[\"可视化报告 / 结果\"]\n    User[\"用户需求输入\"] -->|交给| Agent[\"Agent 工作流\"]\n    Agent -->|任务分析| DSV4\n    Agent -->|调用工具| Codex\n    Agent -->|返回结果| User\n    Repo -->|结构信息| Agent\n    Output -->|反馈给| User"
+        },
+        {
+          "title": "Responses API 的作用与兼容性",
+          "code": "flowchart TD\n    RespAPI[\"Responses API\"] -->|统一通信方式| UnifiedComm[\"统一通信层\"]\n    UnifiedComm -->|传递用户输入| UserInput[\"用户输入\"]\n    UnifiedComm -->|管理模型推理| ModelMgmt[\"模型管理\"]\n    UnifiedComm -->|调度工具调用| ToolCall[\"工具调用\"]\n    UnifiedComm -->|支持多轮任务| MultiRound[\"多轮任务执行\"]\n    DeepSeekV4[\"DeepSeek V4 正式版\"] -->|完全兼容| RespAPI\n    Codex[\"Codex\"] -->|底层使用| RespAPI\n    Integration[\"模型 ↔ 工具 集成\"] -->|通过| RespAPI"
+        },
+        {
+          "title": "DeepSeek V4 接入 Codex 的配置步骤",
+          "code": "flowchart TD\n    Step1[\"打开 DeepSeek 开放平台\"] --> Step2[\"创建 API Key\"]\n    Step2 --> Step3[\"获取访问凭证\"]\n    Step3 --> Step4[\"编辑 Codex 配置文件\"]\n    Step4 --> Step5[\"设置 API 地址\"]\n    Step4 --> Step6[\"设置模型名称为 DeepSeek V4\"]\n    Step5 --> Step7[\"保存配置\"]\n    Step6 --> Step7\n    Step7 --> Step8[\"重启 Codex 服务\"]\n    Step8 --> Step9[\"验证模型调用成功\"]"
+        },
+        {
+          "title": "Agent 开发流程与最佳实践",
+          "code": "flowchart TD\n    ReqClear[\"提供清晰完整的需求描述\"] --> Analyze[\"分析项目结构\"]\n    Analyze --> ListFiles[\"列出需修改的文件\"]\n    ListFiles --> GenCode[\"生成代码模块\"]\n    GenCode --> Test[\"运行测试用例\"]\n    Test -->|通过| Deploy[\"部署或继续开发\"]\n    Test -->|失败| ErrAnalyse[\"分析错误原因\"]\n    ErrAnalyse --> Iterate[\"迭代修改代码\"]\n    Iterate --> Test\n    ReqClear --> TechRules[\"提供项目技术规范/规则\"]\n    TechRules --> Iterate\n    Deploy -->|大项目分阶段| Increment[\"采用增量任务拆解\"]\n    Increment --> Analyze"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T11:54:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 与 Codex Agent 开发知识图谱\n\n## 总体架构概览\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4 模型\"] -->|提供推理与代码生成| ResponsesAPI[\"Responses API\"]\n    ResponsesAPI -->|统一通信协议| Codex[\"Codex 开发环境\"]\n    Codex -->|读取/修改项目文件| Repo[\"项目代码仓库\"]\n    Codex -->|执行测试并生成报告| Output[\"可视化报告 / 结果\"]\n    User[\"用户需求输入\"] -->|交给| Agent[\"Agent 工作流\"]\n    Agent -->|任务分析| DSV4\n    Agent -->|调用工具| Codex\n    Agent -->|返回结果| User\n    Repo -->|结构信息| Agent\n    Output -->|反馈给| User\n```\n\n## Responses API 的作用与兼容性\n```mermaid\nflowchart TD\n    RespAPI[\"Responses API\"] -->|统一通信方式| UnifiedComm[\"统一通信层\"]\n    UnifiedComm -->|传递用户输入| UserInput[\"用户输入\"]\n    UnifiedComm -->|管理模型推理| ModelMgmt[\"模型管理\"]\n    UnifiedComm -->|调度工具调用| ToolCall[\"工具调用\"]\n    UnifiedComm -->|支持多轮任务| MultiRound[\"多轮任务执行\"]\n    DeepSeekV4[\"DeepSeek V4 正式版\"] -->|完全兼容| RespAPI\n    Codex[\"Codex\"] -->|底层使用| RespAPI\n    Integration[\"模型 ↔ 工具 集成\"] -->|通过| RespAPI\n```\n\n## DeepSeek V4 接入 Codex 的配置步骤\n```mermaid\nflowchart TD\n    Step1[\"打开 DeepSeek 开放平台\"] --> Step2[\"创建 API Key\"]\n    Step2 --> Step3[\"获取访问凭证\"]\n    Step3 --> Step4[\"编辑 Codex 配置文件\"]\n    Step4 --> Step5[\"设置 API 地址\"]\n    Step4 --> Step6[\"设置模型名称为 DeepSeek V4\"]\n    Step5 --> Step7[\"保存配置\"]\n    Step6 --> Step7\n    Step7 --> Step8[\"重启 Codex 服务\"]\n    Step8 --> Step9[\"验证模型调用成功\"]\n```\n\n## Agent 开发流程与最佳实践\n```mermaid\nflowchart TD\n    ReqClear[\"提供清晰完整的需求描述\"] --> Analyze[\"分析项目结构\"]\n    Analyze --> ListFiles[\"列出需修改的文件\"]\n    ListFiles --> GenCode[\"生成代码模块\"]\n    GenCode --> Test[\"运行测试用例\"]\n    Test -->|通过| Deploy[\"部署或继续开发\"]\n    Test -->|失败| ErrAnalyse[\"分析错误原因\"]\n    ErrAnalyse --> Iterate[\"迭代修改代码\"]\n    Iterate --> Test\n    ReqClear --> TechRules[\"提供项目技术规范/规则\"]\n    TechRules --> Iterate\n    Deploy -->|大项目分阶段| Increment[\"采用增量任务拆解\"]\n    Increment --> Analyze\n```",
+  "diagrams": [
+    {
+      "title": "总体架构概览",
+      "code": "flowchart TD\n    DSV4[\"DeepSeek V4 模型\"] -->|提供推理与代码生成| ResponsesAPI[\"Responses API\"]\n    ResponsesAPI -->|统一通信协议| Codex[\"Codex 开发环境\"]\n    Codex -->|读取/修改项目文件| Repo[\"项目代码仓库\"]\n    Codex -->|执行测试并生成报告| Output[\"可视化报告 / 结果\"]\n    User[\"用户需求输入\"] -->|交给| Agent[\"Agent 工作流\"]\n    Agent -->|任务分析| DSV4\n    Agent -->|调用工具| Codex\n    Agent -->|返回结果| User\n    Repo -->|结构信息| Agent\n    Output -->|反馈给| User"
+    },
+    {
+      "title": "Responses API 的作用与兼容性",
+      "code": "flowchart TD\n    RespAPI[\"Responses API\"] -->|统一通信方式| UnifiedComm[\"统一通信层\"]\n    UnifiedComm -->|传递用户输入| UserInput[\"用户输入\"]\n    UnifiedComm -->|管理模型推理| ModelMgmt[\"模型管理\"]\n    UnifiedComm -->|调度工具调用| ToolCall[\"工具调用\"]\n    UnifiedComm -->|支持多轮任务| MultiRound[\"多轮任务执行\"]\n    DeepSeekV4[\"DeepSeek V4 正式版\"] -->|完全兼容| RespAPI\n    Codex[\"Codex\"] -->|底层使用| RespAPI\n    Integration[\"模型 ↔ 工具 集成\"] -->|通过| RespAPI"
+    },
+    {
+      "title": "DeepSeek V4 接入 Codex 的配置步骤",
+      "code": "flowchart TD\n    Step1[\"打开 DeepSeek 开放平台\"] --> Step2[\"创建 API Key\"]\n    Step2 --> Step3[\"获取访问凭证\"]\n    Step3 --> Step4[\"编辑 Codex 配置文件\"]\n    Step4 --> Step5[\"设置 API 地址\"]\n    Step4 --> Step6[\"设置模型名称为 DeepSeek V4\"]\n    Step5 --> Step7[\"保存配置\"]\n    Step6 --> Step7\n    Step7 --> Step8[\"重启 Codex 服务\"]\n    Step8 --> Step9[\"验证模型调用成功\"]"
+    },
+    {
+      "title": "Agent 开发流程与最佳实践",
+      "code": "flowchart TD\n    ReqClear[\"提供清晰完整的需求描述\"] --> Analyze[\"分析项目结构\"]\n    Analyze --> ListFiles[\"列出需修改的文件\"]\n    ListFiles --> GenCode[\"生成代码模块\"]\n    GenCode --> Test[\"运行测试用例\"]\n    Test -->|通过| Deploy[\"部署或继续开发\"]\n    Test -->|失败| ErrAnalyse[\"分析错误原因\"]\n    ErrAnalyse --> Iterate[\"迭代修改代码\"]\n    Iterate --> Test\n    ReqClear --> TechRules[\"提供项目技术规范/规则\"]\n    TechRules --> Iterate\n    Deploy -->|大项目分阶段| Increment[\"采用增量任务拆解\"]\n    Increment --> Analyze"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T11:54:30+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1keu76LEX7",
+  "title": "降维打击，使用最强数模agent速通华数杯国一！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1064,
+  "text": "大家好\n介绍一下目前数学建模领域\n最值得关注的全流程科研平台\nClassical science\n它的核心价值是\n从拿到赛提到交付一篇完整的国医级别论文\n全流程自动化完成\n它不需要你手动处理数据\n不需要一行一行写代码\n不需要熬夜赶论文格式\nclassical science能够独立跑通数学建模竞赛的完整闭环\n在技术实现上\nloop工程负责长城执行目标保持与中断恢复\ngraph工程\n把复杂研究拆成任务图\n交由多个子智能体并行完成\n让文献数据建模\n绘图和写作真正形成闭环\n接下来我们以2024年第五届华数杯\n全国大学生数学建模竞赛C题\n老外由中国的小规模模拟研究为例\n完整演示classical science\n如何从拿到赛题和原始数据开始\n自动完成数据处理\n分析\n建模结果可视化\n最终交付一篇结构完整的竞赛论文\n拿到数据后\n系统自动完成了城市景点\n交通开放时间等多元数据的清洗\n缺失值补全和异常值检测\n并生成多张分析图表\n包括热门城市全国分布图\n城市吸引力排名评价指标\n雷达图\n景点类型占比图和城市间交通网络图\n原本分散在大量表格中的规律\n被一次性呈现出来\n哪些城市旅游资源更丰富\n哪些区域热门城市更集中\n哪些城市兼具吸引力与交通便利性\n都能在途中直观看到\n进入建模阶段\n系统自动提取景点评分\n代表性城市资源丰富度\n交通可达性和游览成本等指标\n建立城市旅游吸引力评价模型\n从候选城市中\n筛选出最值得外国游客前往的50座城市\n随后结合高铁航空和城际出行时间\n构建交通网络\n进一步选出交通最便利的十座城市\n针对144小时过境免签场景系统\n把旅行问题转化为带时间约束的路径优化模型\n综合计算交通游览和必要休息时间\n在每座城市游览一个代表性经典的条件下\n规划可访问城市数量更多\n总耗时更合理的旅行路线\n最终系统自动输出城市综合排名图\ntop50城市地图交通便利度对比图\n城市关联网络和最优旅行路线图\n并将数据模型和结果\n整合成一篇完整的竞赛论文\n包括问题重述\n数据来源\n指标体系\n评价模型\n路径优化\n敏感性分析和旅游建议\n图表自动嵌入公式\n统一排版\n结论与数据来源相互对应\n不需要再手动整理代码截图\n或反复调整latex格式\n当然AI给出的是一份结构完整的初稿\n而非必须一字不改的定稿\n但他确实把整个流程中最耗时最重复的部分\n数据处理代码编写图表\n生成论文排版全部自动化的\n在专业能力方面\ncos co经过大量数模竞赛\n优秀论文和科研文献的训练\n对各类建模方法论\n典型问题场景和解决方案有系统性的理解\n能够提供可靠的分析思路和建模方案",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1keu76LEX7",
+  "published_at": "1786000896",
+  "fetched_at": "2026-08-07T22:15:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 降维打击：Classical Science 全流程平台知识图谱\n\n## 知识总览\n```mermaid\nflowchart TD\n    CS[\"Classical Science 全流程平台\"]\n    S[\"赛题获取\"]\n    DP[\"自动数据处理\"]\n    TG[\"任务图拆分\"]\n    SA[\"子智能体并行执行\"]\n    LM[\"文献数据建模\"]\n    WG[\"绘图与写作闭环\"]\n    FP[\"完整论文交付\"]\n    CS --> S\n    S --> DP\n    DP --> TG\n    TG --> SA\n    SA --> LM\n    LM --> WG\n    WG --> FP\n```\n\n## 数据处理与分析\n```mermaid\nflowchart TD\n    OD[\"原始数据\"]\n    CL[\"自动清洗\"]\n    MV[\"缺失值补全\"]\n    AV[\"异常值检测\"]\n    AG[\"生成分析图表\"]\n    HD[\"热门城市全国分布图\"]\n    RA[\"城市吸引力雷达图\"]\n    TP[\"景点类型占比图\"]\n    NT[\"城市间交通网络图\"]\n    OD --> CL\n    CL --> MV\n    MV --> AV\n    AV --> AG\n    AG --> HD\n    AG --> RA\n    AG --> TP\n    AG --> NT\n```\n\n## 建模与路径优化\n```mermaid\nflowchart TD\n    SP[\"景点评分提取\"]\n    TM[\"旅游吸引力评价模型\"]\n    TOP50[\"筛选Top50城市\"]\n    TN[\"构建交通网络\"]\n    TO[\"时间约束路径优化模型\"]\n    CT[\"计算游览+休息时间\"]\n    TOP10[\"选出交通最便利Top10城市\"]\n    OR[\"生成最优旅行路线\"]\n    CR[\"输出城市综合排名图\"]\n    SP --> TM\n    TM --> TOP50\n    TOP50 --> TN\n    TN --> TO\n    TO --> CT\n    CT --> TOP10\n    TOP10 --> OR\n    OR --> CR\n```\n\n## 论文自动生成\n```mermaid\nflowchart TD\n    DM[\"数据模型与结果\"]\n    CH[\"章节结构\"]\n    FM[\"公式与图表自动嵌入\"]\n    GP[\"图表排版\"]\n    TP[\"统一排版\"]\n    AB[\"摘要生成\"]\n    RL[\"参考文献自动整理\"]\n    DR[\"初稿生成\"]\n    RE[\"人工审校与修改\"]\n    DM --> CH\n    CH --> FM\n    FM --> GP\n    GP --> TP\n    TP --> AB\n    AB --> RL\n    RL --> DR\n    DR --> RE\n```",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    CS[\"Classical Science 全流程平台\"]\n    S[\"赛题获取\"]\n    DP[\"自动数据处理\"]\n    TG[\"任务图拆分\"]\n    SA[\"子智能体并行执行\"]\n    LM[\"文献数据建模\"]\n    WG[\"绘图与写作闭环\"]\n    FP[\"完整论文交付\"]\n    CS --> S\n    S --> DP\n    DP --> TG\n    TG --> SA\n    SA --> LM\n    LM --> WG\n    WG --> FP"
+        },
+        {
+          "title": "数据处理与分析",
+          "code": "flowchart TD\n    OD[\"原始数据\"]\n    CL[\"自动清洗\"]\n    MV[\"缺失值补全\"]\n    AV[\"异常值检测\"]\n    AG[\"生成分析图表\"]\n    HD[\"热门城市全国分布图\"]\n    RA[\"城市吸引力雷达图\"]\n    TP[\"景点类型占比图\"]\n    NT[\"城市间交通网络图\"]\n    OD --> CL\n    CL --> MV\n    MV --> AV\n    AV --> AG\n    AG --> HD\n    AG --> RA\n    AG --> TP\n    AG --> NT"
+        },
+        {
+          "title": "建模与路径优化",
+          "code": "flowchart TD\n    SP[\"景点评分提取\"]\n    TM[\"旅游吸引力评价模型\"]\n    TOP50[\"筛选Top50城市\"]\n    TN[\"构建交通网络\"]\n    TO[\"时间约束路径优化模型\"]\n    CT[\"计算游览+休息时间\"]\n    TOP10[\"选出交通最便利Top10城市\"]\n    OR[\"生成最优旅行路线\"]\n    CR[\"输出城市综合排名图\"]\n    SP --> TM\n    TM --> TOP50\n    TOP50 --> TN\n    TN --> TO\n    TO --> CT\n    CT --> TOP10\n    TOP10 --> OR\n    OR --> CR"
+        },
+        {
+          "title": "论文自动生成",
+          "code": "flowchart TD\n    DM[\"数据模型与结果\"]\n    CH[\"章节结构\"]\n    FM[\"公式与图表自动嵌入\"]\n    GP[\"图表排版\"]\n    TP[\"统一排版\"]\n    AB[\"摘要生成\"]\n    RL[\"参考文献自动整理\"]\n    DR[\"初稿生成\"]\n    RE[\"人工审校与修改\"]\n    DM --> CH\n    CH --> FM\n    FM --> GP\n    GP --> TP\n    TP --> AB\n    AB --> RL\n    RL --> DR\n    DR --> RE"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T22:15:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 降维打击：Classical Science 全流程平台知识图谱\n\n## 知识总览\n```mermaid\nflowchart TD\n    CS[\"Classical Science 全流程平台\"]\n    S[\"赛题获取\"]\n    DP[\"自动数据处理\"]\n    TG[\"任务图拆分\"]\n    SA[\"子智能体并行执行\"]\n    LM[\"文献数据建模\"]\n    WG[\"绘图与写作闭环\"]\n    FP[\"完整论文交付\"]\n    CS --> S\n    S --> DP\n    DP --> TG\n    TG --> SA\n    SA --> LM\n    LM --> WG\n    WG --> FP\n```\n\n## 数据处理与分析\n```mermaid\nflowchart TD\n    OD[\"原始数据\"]\n    CL[\"自动清洗\"]\n    MV[\"缺失值补全\"]\n    AV[\"异常值检测\"]\n    AG[\"生成分析图表\"]\n    HD[\"热门城市全国分布图\"]\n    RA[\"城市吸引力雷达图\"]\n    TP[\"景点类型占比图\"]\n    NT[\"城市间交通网络图\"]\n    OD --> CL\n    CL --> MV\n    MV --> AV\n    AV --> AG\n    AG --> HD\n    AG --> RA\n    AG --> TP\n    AG --> NT\n```\n\n## 建模与路径优化\n```mermaid\nflowchart TD\n    SP[\"景点评分提取\"]\n    TM[\"旅游吸引力评价模型\"]\n    TOP50[\"筛选Top50城市\"]\n    TN[\"构建交通网络\"]\n    TO[\"时间约束路径优化模型\"]\n    CT[\"计算游览+休息时间\"]\n    TOP10[\"选出交通最便利Top10城市\"]\n    OR[\"生成最优旅行路线\"]\n    CR[\"输出城市综合排名图\"]\n    SP --> TM\n    TM --> TOP50\n    TOP50 --> TN\n    TN --> TO\n    TO --> CT\n    CT --> TOP10\n    TOP10 --> OR\n    OR --> CR\n```\n\n## 论文自动生成\n```mermaid\nflowchart TD\n    DM[\"数据模型与结果\"]\n    CH[\"章节结构\"]\n    FM[\"公式与图表自动嵌入\"]\n    GP[\"图表排版\"]\n    TP[\"统一排版\"]\n    AB[\"摘要生成\"]\n    RL[\"参考文献自动整理\"]\n    DR[\"初稿生成\"]\n    RE[\"人工审校与修改\"]\n    DM --> CH\n    CH --> FM\n    FM --> GP\n    GP --> TP\n    TP --> AB\n    AB --> RL\n    RL --> DR\n    DR --> RE\n```",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    CS[\"Classical Science 全流程平台\"]\n    S[\"赛题获取\"]\n    DP[\"自动数据处理\"]\n    TG[\"任务图拆分\"]\n    SA[\"子智能体并行执行\"]\n    LM[\"文献数据建模\"]\n    WG[\"绘图与写作闭环\"]\n    FP[\"完整论文交付\"]\n    CS --> S\n    S --> DP\n    DP --> TG\n    TG --> SA\n    SA --> LM\n    LM --> WG\n    WG --> FP"
+    },
+    {
+      "title": "数据处理与分析",
+      "code": "flowchart TD\n    OD[\"原始数据\"]\n    CL[\"自动清洗\"]\n    MV[\"缺失值补全\"]\n    AV[\"异常值检测\"]\n    AG[\"生成分析图表\"]\n    HD[\"热门城市全国分布图\"]\n    RA[\"城市吸引力雷达图\"]\n    TP[\"景点类型占比图\"]\n    NT[\"城市间交通网络图\"]\n    OD --> CL\n    CL --> MV\n    MV --> AV\n    AV --> AG\n    AG --> HD\n    AG --> RA\n    AG --> TP\n    AG --> NT"
+    },
+    {
+      "title": "建模与路径优化",
+      "code": "flowchart TD\n    SP[\"景点评分提取\"]\n    TM[\"旅游吸引力评价模型\"]\n    TOP50[\"筛选Top50城市\"]\n    TN[\"构建交通网络\"]\n    TO[\"时间约束路径优化模型\"]\n    CT[\"计算游览+休息时间\"]\n    TOP10[\"选出交通最便利Top10城市\"]\n    OR[\"生成最优旅行路线\"]\n    CR[\"输出城市综合排名图\"]\n    SP --> TM\n    TM --> TOP50\n    TOP50 --> TN\n    TN --> TO\n    TO --> CT\n    CT --> TOP10\n    TOP10 --> OR\n    OR --> CR"
+    },
+    {
+      "title": "论文自动生成",
+      "code": "flowchart TD\n    DM[\"数据模型与结果\"]\n    CH[\"章节结构\"]\n    FM[\"公式与图表自动嵌入\"]\n    GP[\"图表排版\"]\n    TP[\"统一排版\"]\n    AB[\"摘要生成\"]\n    RL[\"参考文献自动整理\"]\n    DR[\"初稿生成\"]\n    RE[\"人工审校与修改\"]\n    DM --> CH\n    CH --> FM\n    FM --> GP\n    GP --> TP\n    TP --> AB\n    AB --> RL\n    RL --> DR\n    DR --> RE"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T22:15:34+00:00"
+}

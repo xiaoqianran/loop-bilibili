@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1YdANzcESN",
+  "title": "55. 为什么KV Cache也有LRU等缓存替换策略?【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 978,
+  "text": "今天的问题是\n为什么k b cash也有LRU等缓冲替换策略呢\n就以S结论为例\n它提供了LRULFU等缓存替换策略\n先复盘一下CPU缓存当中的LRU现在用比特计数计数越大\n表示它越旧\n反问某个块会让它计数清零\n也就是它变得更加新了\n而现在CPU缓存装不下了\n要驱逐一个快\n驱逐谁呢\n当然是驱逐\n最近最少使用的这个就是LRU和ky cash\n也有非常类似的缓冲替换的思想\n就以as s gen的REDX数为例\n假设现在有一个系统提示词和一个用户提示词\n而所有的生存呢都基于这个系统提示词\n并且每一个token它都会对应着KV\n比如说你对应K1V1\n是对应K2V2\n并且这个KV是多层的\n就是说第一层有K1V1\n第二层的也有K1V1\n虽然它的值是不一样的\n那么在以下的几种情况会出现共享公共前缀\n第一种情况跨用户就是第一个用户问你好吗\n第二个用户说你好呀\n那么这个前缀的你好\n这个token他就只需要生成一份kv cash\n第二种情况就是跨任务\n比如说多个sub agent呢\n它共享了一部分必要且公共的背景知识\n然后基于这个背景就是能说啊\n需要帮我做什么\n然后现在你是2号sub agent\n你的任务是什么\n那在这种情况下\n这个公共的背景知识\n这一部分的kv cash是可以共享的\n然后这第三种情况就是跨时间\n就虽然只有一个用户\n但他修改了提示词\n就他先发了一句话\n就是海安语\n是一名B站up主\n让他再修改了一下\n这个式子改成了不适\n变成了海安\n于不是一名B站up主\n那么在推理引擎看来呢\n它是不区分人的\n他和两个用户分别发送一句话都是一样的\n那么前面的这个kv catch呢是不需要重新生成的\n而后面的这个kv catch呢就需要重新生存\n之前从数学的角度去分析过\n那么从直观理解的话就是文字差之毫厘\n意思失之千里\n也就是说只需要改一个字\n整句话的意思呢已经大变了\n所以呢后面的就不需要重新生成kv catch\n那么回答刚才的问题\n为什么k b cash也有LRU等缓存替换策略呢\n因为CPU缓存可能装不下\n那么k b cash呢肯定也可能会装不下\n那装不下的情况下\n我是把背景知识的这一串给它丢掉呢\n还是说是把这一串它下面挂着的这些K和V给它丢掉呢\n那么这个就需要用缓存替换算法\n比如说最近在高频的使用这个背景知识\n那在这种情况下呢\n就不能轻易的把它丢掉",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YdANzcESN",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:18:27+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

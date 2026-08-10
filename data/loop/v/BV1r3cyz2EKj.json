@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1r3cyz2EKj",
+  "title": "V100 跑 Qwen3.5-27B 实测对比：vLLM vs llama.cpp，输出速度差距 4 倍？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1086,
+  "text": "大家好啊\n现在是2026年3月12日的晚上\n10:44分录这个视频呢我们还是书接上文\n昨天的时候我们已经看了呃\n使用one cat villm这个框架\n来使V100跑千万3点五三十五B的这个数据\n今天我们来看它跑千文3.527B这个数据\n这张图片实际上之前的视频当中\n我已经发布过了\n就在3月7日所发布的这个双V\n100跑千文3.5\n实测这个视频里面就有这个图像\n这个图像我们主要是参考他这个蓝色的实线\n也就是使用L8CPCOA来跑天文\n3.527B这个模型的数据\n这张图像就是他们提供给我的数据\n使用他们的框架\n分别使用单张pd503312G\n还有两张pd503312G\n还有四张pd503312G\n这三种情况所绘制出来的\n预处理速度和输出速度的图像\n那么我们可以很明确的观察到\n随着卡的数量倍增\n它的预处理速度和输出速度都有非常大的提高\n为了方便我们观察呢\n我们就把这个图像当中的\n这个蓝色的实线拿过来\n这样来方便一下对比参考\n绘制到同一张图片上\n就是这样\n那么尽管跑的是不同的模型\n就他们跑的是千分3.527BAWQ\n之前我们所测试的是纤维3.527BQ8\n这个模型\n但是同样可以进行一定程度的参考\n首先是很明显观察到的就是它的输出速度\n使用level c p来跑\n它输出速度只能达到20头ken s每秒\n但是他们所提供的数据输出速度是很高的\n在四卡32G的情况下\n输出速度可以达到80token s每秒\n那么平均下来也能够达到75token s每秒\n是这样\n然后我们可以看它这个预处理速度\n他的这个预处理速度可以看到\n使用VLLM来跑预处理速度的衰减速度太快了\n当在1万上下文的时候\n就低于了使用拉帕CVP来跑的预处理速度\n当然使用斯卡来跑\n它的预处理速度可能更高一点\n是这样\n这个大家就做一下参考就可以\n实际上我们能够观察到\n使用VLMVILLM来跑\n它的输出速度与使用LCP来跑\n它输出速度是有较大的优势\n但是预处理速度这一块可能并没有\n但是他们给我的这个是0.0.2的数据\n至于0.0.3可能还有进步\n所以这个就拿过来做一下参考就可以\n这个应该就V100的测速\n应该就到这就结束了\n因为后面\n其他的一些数据\n比如纤维3.5\n122\n比那些个数据之前都没有没有参考\n就是因为这个模型参数量太大了\n我就没有办法和之前的数据一下对比\n后面的视频\n我可能把T10跑\n这个强3.5模型的一些个数据拿过来\n和V100和M50来进行一下比较\n这个视频就录到这吧\n这个视频我还是嗯将那个基于PVE的AI服务\n部署方案的那个上架到小店的链接附在下面\n大家有需要的话可以支持一下",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1r3cyz2EKj",
+  "published_at": "1773328716",
+  "fetched_at": "2026-08-10T00:09:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# V100 运行 Qwen3.5-27B 性能关系图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    V100[\"V100 GPU\"]\n    Framework[\"onecat villm 框架\"]\n    Model[\"Qwen3.5-27B 模型\"]\n    Single[\"单卡 pd503312G\"]\n    Dual[\"双卡 pd503312G\"]\n    Quad[\"四卡 pd503312G\"]\n    Preprocess[\"预处理速度\"]\n    Output[\"输出速度\"]\n    BlueLine[\"蓝色实线 (L8CPCOA)\"]\n    RefImg[\"参考图像 (3月7)\"]\n    Observation[\"卡数 ↑ → 速度 ↑\"]\n\n    V100 --> Framework\n    Framework --> Model\n    V100 --> Single\n    V100 --> Dual\n    V100 --> Quad\n    Single --> Preprocess\n    Dual --> Preprocess\n    Quad --> Preprocess\n    Single --> Output\n    Dual --> Output\n    Quad --> Output\n    BlueLine --> Model\n    RefImg --> BlueLine\n    Single --> Observation\n    Dual --> Observation\n    Quad --> Observation\n    Observation --> Preprocess\n    Observation --> Output\n```\n- V100 GPU: [BV1r3cyz2EKj P1 00:00]  \n- onecat villm 框架: [BV1r3cyz2EKj P1 00:09]  \n- Qwen3.5-27B 模型: [BV1r3cyz2EKj P1 00:12]  \n- 单卡 pd503312G: [BV1r3cyz2EKj P1 00:45]  \n- 双卡 pd503312G: [BV1r3cyz2EKj P1 00:47]  \n- 四卡 pd503312G: [BV1r3cyz2EKj P1 00:48]  \n- 蓝色实线 (L8CPCOA): [BV1r3cyz2EKj P1 00:34]  \n- 参考图像 (3月7): [BV1r3cyz2EKj P1 00:21]  \n- 观察: 卡数 ↑ → 速度 ↑: [BV1r3cyz2EKj P1 00:55]\n\n## 输出速度比较\n```mermaid\nflowchart TD\n    LevelCP[\"Level CP\"]\n    VLLM[\"VLLM\"]\n    L8CPCOA[\"L8CPCOA\"]\n    SingleOut[\"单卡输出 20 token/s\"]\n    QuadOut[\"四卡 32G 输出 80 token/s\"]\n    AvgOut[\"平均 75 token/s\"]\n    Advantage[\"VLLM 对 L8CPCOA 的输出优势\"]\n    PreprocessLim[\"VLLM 预处理速度受限\"]\n\n    LevelCP --> SingleOut\n    L8CPCOA --> QuadOut\n    SingleOut --> AvgOut\n    QuadOut --> AvgOut\n    VLLM --> Advantage\n    Advantage --> AvgOut\n    VLLM --> PreprocessLim\n```\n- Level CP 输出 20 token/s: [BV1r3cyz2EKj P1 01:25]  \n- 四卡 32G 输出 80 token/s: [BV1r3cyz2EKj P1 01:33]  \n- 平均 75 token/s: [BV1r3cyz2EKj P1 01:36]  \n- VLLM 对 L8CPCOA 的输出优势: [BV1r3cyz2EKj P1 02:16]  \n- VLLM 预处理速度受限: [BV1r3cyz2EKj P1 02:22]\n\n## 预处理速度比较\n```mermaid\nflowchart TD\n    VLLMPrep[\"VLLM 预处理\"]\n    LLaMACVP[\"LLaMA CVP\"]\n    Context10k[\"上下文 10k\"]\n    FastDecay[\"VLLM 速度衰减快\"]\n    SlowerThanCVP[\"低于 LLaMA CVP\"]\n    ScaHigher[\"Sca 预处理略高\"]\n    DataV0_0_2[\"数据版本 0.0.2\"]\n    PotentialV0_0_3[\"潜在改进 0.0.3\"]\n\n    VLLMPrep --> FastDecay\n    FastDecay --> SlowerThanCVP\n    LLaMACVP --> SlowerThanCVP\n    VLLMPrep --> ScaHigher\n    DataV0_0_2 --> PotentialV0_0_3\n```\n- VLLM 预处理速度衰减快: [BV1r3cyz2EKj P1 01:50]  \n- 在 10k 上下文下低于 LLaMA CVP: [BV1r3cyz2EKj P1 01:57]  \n- Sca 预处理略高: [BV1r3cyz2EKj P1 02:05]  \n- 数据版本 0.0.2: [BV1r3cyz2EKj P1 02:28]  \n- 潜在改进 0.0.3: [BV1r3cyz2EKj P1 02:31]  ",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    V100[\"V100 GPU\"]\n    Framework[\"onecat villm 框架\"]\n    Model[\"Qwen3.5-27B 模型\"]\n    Single[\"单卡 pd503312G\"]\n    Dual[\"双卡 pd503312G\"]\n    Quad[\"四卡 pd503312G\"]\n    Preprocess[\"预处理速度\"]\n    Output[\"输出速度\"]\n    BlueLine[\"蓝色实线 (L8CPCOA)\"]\n    RefImg[\"参考图像 (3月7)\"]\n    Observation[\"卡数 ↑ → 速度 ↑\"]\n\n    V100 --> Framework\n    Framework --> Model\n    V100 --> Single\n    V100 --> Dual\n    V100 --> Quad\n    Single --> Preprocess\n    Dual --> Preprocess\n    Quad --> Preprocess\n    Single --> Output\n    Dual --> Output\n    Quad --> Output\n    BlueLine --> Model\n    RefImg --> BlueLine\n    Single --> Observation\n    Dual --> Observation\n    Quad --> Observation\n    Observation --> Preprocess\n    Observation --> Output"
+        },
+        {
+          "title": "输出速度比较",
+          "code": "flowchart TD\n    LevelCP[\"Level CP\"]\n    VLLM[\"VLLM\"]\n    L8CPCOA[\"L8CPCOA\"]\n    SingleOut[\"单卡输出 20 token/s\"]\n    QuadOut[\"四卡 32G 输出 80 token/s\"]\n    AvgOut[\"平均 75 token/s\"]\n    Advantage[\"VLLM 对 L8CPCOA 的输出优势\"]\n    PreprocessLim[\"VLLM 预处理速度受限\"]\n\n    LevelCP --> SingleOut\n    L8CPCOA --> QuadOut\n    SingleOut --> AvgOut\n    QuadOut --> AvgOut\n    VLLM --> Advantage\n    Advantage --> AvgOut\n    VLLM --> PreprocessLim"
+        },
+        {
+          "title": "预处理速度比较",
+          "code": "flowchart TD\n    VLLMPrep[\"VLLM 预处理\"]\n    LLaMACVP[\"LLaMA CVP\"]\n    Context10k[\"上下文 10k\"]\n    FastDecay[\"VLLM 速度衰减快\"]\n    SlowerThanCVP[\"低于 LLaMA CVP\"]\n    ScaHigher[\"Sca 预处理略高\"]\n    DataV0_0_2[\"数据版本 0.0.2\"]\n    PotentialV0_0_3[\"潜在改进 0.0.3\"]\n\n    VLLMPrep --> FastDecay\n    FastDecay --> SlowerThanCVP\n    LLaMACVP --> SlowerThanCVP\n    VLLMPrep --> ScaHigher\n    DataV0_0_2 --> PotentialV0_0_3"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T00:09:42+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# V100 运行 Qwen3.5-27B 性能关系图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    V100[\"V100 GPU\"]\n    Framework[\"onecat villm 框架\"]\n    Model[\"Qwen3.5-27B 模型\"]\n    Single[\"单卡 pd503312G\"]\n    Dual[\"双卡 pd503312G\"]\n    Quad[\"四卡 pd503312G\"]\n    Preprocess[\"预处理速度\"]\n    Output[\"输出速度\"]\n    BlueLine[\"蓝色实线 (L8CPCOA)\"]\n    RefImg[\"参考图像 (3月7)\"]\n    Observation[\"卡数 ↑ → 速度 ↑\"]\n\n    V100 --> Framework\n    Framework --> Model\n    V100 --> Single\n    V100 --> Dual\n    V100 --> Quad\n    Single --> Preprocess\n    Dual --> Preprocess\n    Quad --> Preprocess\n    Single --> Output\n    Dual --> Output\n    Quad --> Output\n    BlueLine --> Model\n    RefImg --> BlueLine\n    Single --> Observation\n    Dual --> Observation\n    Quad --> Observation\n    Observation --> Preprocess\n    Observation --> Output\n```\n- V100 GPU: [BV1r3cyz2EKj P1 00:00]  \n- onecat villm 框架: [BV1r3cyz2EKj P1 00:09]  \n- Qwen3.5-27B 模型: [BV1r3cyz2EKj P1 00:12]  \n- 单卡 pd503312G: [BV1r3cyz2EKj P1 00:45]  \n- 双卡 pd503312G: [BV1r3cyz2EKj P1 00:47]  \n- 四卡 pd503312G: [BV1r3cyz2EKj P1 00:48]  \n- 蓝色实线 (L8CPCOA): [BV1r3cyz2EKj P1 00:34]  \n- 参考图像 (3月7): [BV1r3cyz2EKj P1 00:21]  \n- 观察: 卡数 ↑ → 速度 ↑: [BV1r3cyz2EKj P1 00:55]\n\n## 输出速度比较\n```mermaid\nflowchart TD\n    LevelCP[\"Level CP\"]\n    VLLM[\"VLLM\"]\n    L8CPCOA[\"L8CPCOA\"]\n    SingleOut[\"单卡输出 20 token/s\"]\n    QuadOut[\"四卡 32G 输出 80 token/s\"]\n    AvgOut[\"平均 75 token/s\"]\n    Advantage[\"VLLM 对 L8CPCOA 的输出优势\"]\n    PreprocessLim[\"VLLM 预处理速度受限\"]\n\n    LevelCP --> SingleOut\n    L8CPCOA --> QuadOut\n    SingleOut --> AvgOut\n    QuadOut --> AvgOut\n    VLLM --> Advantage\n    Advantage --> AvgOut\n    VLLM --> PreprocessLim\n```\n- Level CP 输出 20 token/s: [BV1r3cyz2EKj P1 01:25]  \n- 四卡 32G 输出 80 token/s: [BV1r3cyz2EKj P1 01:33]  \n- 平均 75 token/s: [BV1r3cyz2EKj P1 01:36]  \n- VLLM 对 L8CPCOA 的输出优势: [BV1r3cyz2EKj P1 02:16]  \n- VLLM 预处理速度受限: [BV1r3cyz2EKj P1 02:22]\n\n## 预处理速度比较\n```mermaid\nflowchart TD\n    VLLMPrep[\"VLLM 预处理\"]\n    LLaMACVP[\"LLaMA CVP\"]\n    Context10k[\"上下文 10k\"]\n    FastDecay[\"VLLM 速度衰减快\"]\n    SlowerThanCVP[\"低于 LLaMA CVP\"]\n    ScaHigher[\"Sca 预处理略高\"]\n    DataV0_0_2[\"数据版本 0.0.2\"]\n    PotentialV0_0_3[\"潜在改进 0.0.3\"]\n\n    VLLMPrep --> FastDecay\n    FastDecay --> SlowerThanCVP\n    LLaMACVP --> SlowerThanCVP\n    VLLMPrep --> ScaHigher\n    DataV0_0_2 --> PotentialV0_0_3\n```\n- VLLM 预处理速度衰减快: [BV1r3cyz2EKj P1 01:50]  \n- 在 10k 上下文下低于 LLaMA CVP: [BV1r3cyz2EKj P1 01:57]  \n- Sca 预处理略高: [BV1r3cyz2EKj P1 02:05]  \n- 数据版本 0.0.2: [BV1r3cyz2EKj P1 02:28]  \n- 潜在改进 0.0.3: [BV1r3cyz2EKj P1 02:31]  ",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    V100[\"V100 GPU\"]\n    Framework[\"onecat villm 框架\"]\n    Model[\"Qwen3.5-27B 模型\"]\n    Single[\"单卡 pd503312G\"]\n    Dual[\"双卡 pd503312G\"]\n    Quad[\"四卡 pd503312G\"]\n    Preprocess[\"预处理速度\"]\n    Output[\"输出速度\"]\n    BlueLine[\"蓝色实线 (L8CPCOA)\"]\n    RefImg[\"参考图像 (3月7)\"]\n    Observation[\"卡数 ↑ → 速度 ↑\"]\n\n    V100 --> Framework\n    Framework --> Model\n    V100 --> Single\n    V100 --> Dual\n    V100 --> Quad\n    Single --> Preprocess\n    Dual --> Preprocess\n    Quad --> Preprocess\n    Single --> Output\n    Dual --> Output\n    Quad --> Output\n    BlueLine --> Model\n    RefImg --> BlueLine\n    Single --> Observation\n    Dual --> Observation\n    Quad --> Observation\n    Observation --> Preprocess\n    Observation --> Output"
+    },
+    {
+      "title": "输出速度比较",
+      "code": "flowchart TD\n    LevelCP[\"Level CP\"]\n    VLLM[\"VLLM\"]\n    L8CPCOA[\"L8CPCOA\"]\n    SingleOut[\"单卡输出 20 token/s\"]\n    QuadOut[\"四卡 32G 输出 80 token/s\"]\n    AvgOut[\"平均 75 token/s\"]\n    Advantage[\"VLLM 对 L8CPCOA 的输出优势\"]\n    PreprocessLim[\"VLLM 预处理速度受限\"]\n\n    LevelCP --> SingleOut\n    L8CPCOA --> QuadOut\n    SingleOut --> AvgOut\n    QuadOut --> AvgOut\n    VLLM --> Advantage\n    Advantage --> AvgOut\n    VLLM --> PreprocessLim"
+    },
+    {
+      "title": "预处理速度比较",
+      "code": "flowchart TD\n    VLLMPrep[\"VLLM 预处理\"]\n    LLaMACVP[\"LLaMA CVP\"]\n    Context10k[\"上下文 10k\"]\n    FastDecay[\"VLLM 速度衰减快\"]\n    SlowerThanCVP[\"低于 LLaMA CVP\"]\n    ScaHigher[\"Sca 预处理略高\"]\n    DataV0_0_2[\"数据版本 0.0.2\"]\n    PotentialV0_0_3[\"潜在改进 0.0.3\"]\n\n    VLLMPrep --> FastDecay\n    FastDecay --> SlowerThanCVP\n    LLaMACVP --> SlowerThanCVP\n    VLLMPrep --> ScaHigher\n    DataV0_0_2 --> PotentialV0_0_3"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T00:09:42+00:00"
+}

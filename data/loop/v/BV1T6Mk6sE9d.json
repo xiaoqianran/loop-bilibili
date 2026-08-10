@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1T6Mk6sE9d",
+  "title": "为了评估deepseek，我整了个大模型游戏能力评测bench",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1426,
+  "text": "嗯hello\n大家好\n今天来给大家继续介绍一下这个长城游戏\nbenchmark的一个进展\n然后在任务部分\n现在直接加了一个长城的\nlong verison的一个这个页面\n然后可以看看历史的一些这个进展\n现在有一个轨迹均分和中带分\n就是说嗯这个长城它就是多个版本\n然后他每个版本我会给他打打一个分\n然后嗯就可以看到每个版本的那个游\n戏的一个状态\n然后这是一个经典打砖块的一个游戏\n然后他第一第一轮的话\n他有六个判分点\n五个通过了\n一个是fail\n嗯然后看最后一轮\n最后一轮是生成了九个判分点\n八个通过\n然后可以玩一玩金这个金田打砖块\n要求就是底部的这个底板可以移动\n然后碰到墙壁和挡板会反弹\n然后play press enter\n嗯然后这个就赢了\n然后看一下最后一个版本\n就是第四个版本\n哎呦我去\n哦知道了\n他从这个就是神速度变快了\n然后另一个就是他从那个嗯方向键移动\n变成鼠标移动\n但是我觉得这种游戏鼠标移动是更有意思的\n倒是也可以\n然后因为这个之前说感觉球有点慢\n然后所以提升了这个球速\n然后要有一个开局的动画嗯\n整体功能倒是没啥问题\n然后这个整体是一个很高分的\n就是当然这是个2D游戏\n就不不够3D\n然后这是一个地牢动作的一个RPG\n这是在第一轮\n然后第一轮有四个\n这个嗯可以看到这里有一些截图嗯\n然后先玩一下第一轮吧\nW a s d\n然后按鼠标键可以打击\n然后space space是一个跳\n是一个加速\n他这个场景很简单\n然后就\n然后右侧有精力条的\n然后这是第一个版本\n然后看一下最后一个版本\n最后一个版本\n第四轮嗯\n感觉这个人物身上有点衣服了\n然后hold clip release\nspace就是现在跳了\n加了一个翻顶\n然后跳的话会翻滚\n就因为我这游戏\n应该主要就是用千万3点八生成的\n就其实每个游戏就是想弄得很好\n还是需要很多功夫\n然后主要是他会就是需要有每一轮的一个东西\n每个题目设计成本还挺高的\n需要有每一轮的一个打分点\n现在可以直接按鼠标攻击\n就感觉这种游戏看起来比较demo\n然后这个游戏是这个通关记录\n然后又有昼夜循环\n又有耐久\n然后撞车会掉\n然后最后一个版本就是从静态系统改成声望\n然后是改变之前的一个需求\n然后有11个判分点\n七个通过\n均匀\n然后其他车不动\n他这个模型还可以更进行\n这个路面还行\n然后这是这个museum的什么游戏\n啥都看不到\n看一下可以看下右上角\n就是说不要被发现\n但是这个显啥都没显示\n看之后的能不能显示\n加报警\n就还是比较奇怪的\n这个就只能看这个右侧小地图\n然后知道有没有抓住\n我要找到出口\n午夜凶零\n我感5月画廊\n我感觉设计就是说你啥也看不到\n但是也没啥画面\n然后看看这游戏\n这游戏是一个比较低的分\n按回车开始下线\n这个有点意思\n我觉得回WASD\n然后右侧鼠标可以移动\n然后有些鱼在上面飞\n貌似是look f是lift\n是哦\nF是这个手电\n然后这个整体起码他这个东西还搞得比较流畅\n这个第一版本就然后鱼也像真鱼\n然后P是potato可以拍照嗯\n但是他这个转动视角还是有限\n然后看他的别的版本是第一个版本\n就这个判断他这个总体分数比较低\n哦刚才可能就是比较后面的版本\n然后嗯海里有贝壳\n然后就可以去剪\n行那这这个现在的一个状态就介绍到这里嗯\n然后我会在飞书群里面放些例子\n然后有兴趣加入这个游戏制造的\n可以就加我的飞书群\n游戏造集群会有基本的例子嗯\n然后还有一个会有基本的造题规范\n但是没有评测的一个规范",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1T6Mk6sE9d",
+  "published_at": "1785915353",
+  "fetched_at": "2026-08-06T23:40:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 长城游戏 Benchmark 知识图谱\n\n## 版本演进概览 [BV1T6Mk6sE9d P1 00:30] [BV1T6Mk6sE9d P1 01:44] [BV1T6Mk6sE9d P1 04:21]\n```mermaid\nflowchart TD\n    V1[\"V1<br/>6 判分点<br/>5 通过 / 1 失败\"] --> V2[\"V2<br/>新增速度提升\"]\n    V2 --> V3[\"V3<br/>控制方式改为鼠标\"]\n    V3 --> V4[\"V4<br/>11 判分点<br/>7 通过<br/>加入昼夜循环、耐久、声望系统\"]\n```\n\n## 评估指标与判分点 [BV1T6Mk6sE9d P1 00:30] [BV1T6Mk6sE9d P1 00:34] [BV1T6Mk6sE9d P1 04:21]\n```mermaid\nflowchart TD\n    R1[\"第一轮\"] --> SP1[\"6 判分点\"]\n    SP1 --> P1[\"5 通过\"]\n    R2[\"最后一轮\"] --> SP2[\"9 判分点\"]\n    SP2 --> P2[\"8 通过\"]\n    V4[\"第四版\"] --> SP4[\"11 判分点\"]\n    SP4 --> P4[\"7 通过\"]\n    P1 & P2 & P4 --> Overall[\"综合得分\"]\n```\n\n## 游戏类型与核心玩法 [BV1T6Mk6sE9d P1 00:25] [BV1T6Mk6sE9d P1 02:28] [BV1T6Mk6sE9d P1 05:08]\n```mermaid\nflowchart LR\n    BB[\"打砖块<br/>底板可移动<br/>碰壁反弹\"] --> BB_Feature[\"简单物理<br/>得分判点\"]\n    RPG[\"地牢动作 RPG\"] --> RPG_Feature[\"角色移动<br/>攻击<br/>跳跃/加速\"]\n    Museum[\"隐蔽探索游戏\"] --> Museum_Feature[\"右上角视野<br/>寻找出口<br/>低分评估\"]\n    BB & RPG & Museum --> Core[\"长城游戏 Benchmark\"]\n```\n\n## 输入映射与操作指令 [BV1T6Mk6sE9d P1 02:40] [BV1T6Mk6sE9d P1 02:43] [BV1T6Mk6sE9d P1 02:48] [BV1T6Mk6sE9d P1 06:08] [BV1T6Mk6sE9d P1 06:14]\n```mermaid\nflowchart TD\n    WASD[\"WASD\"] --> Move[\"角色移动\"]\n    Mouse[\"鼠标左键\"] --> Attack[\"攻击/打击\"]\n    Space[\"Space\"] --> Jump[\"跳跃/加速\"]\n    FKey[\"F\"] --> Flashlight[\"手电照明\"]\n    PKey[\"P\"] --> Photo[\"拍照\"]\n    Move & Attack & Jump & Flashlight & Photo --> Actions[\"游戏交互\"]\n```",
+      "diagrams": [
+        {
+          "title": "版本演进概览",
+          "code": "flowchart TD\n    V1[\"V1<br/>6 判分点<br/>5 通过 / 1 失败\"] --> V2[\"V2<br/>新增速度提升\"]\n    V2 --> V3[\"V3<br/>控制方式改为鼠标\"]\n    V3 --> V4[\"V4<br/>11 判分点<br/>7 通过<br/>加入昼夜循环、耐久、声望系统\"]"
+        },
+        {
+          "title": "评估指标与判分点",
+          "code": "flowchart TD\n    R1[\"第一轮\"] --> SP1[\"6 判分点\"]\n    SP1 --> P1[\"5 通过\"]\n    R2[\"最后一轮\"] --> SP2[\"9 判分点\"]\n    SP2 --> P2[\"8 通过\"]\n    V4[\"第四版\"] --> SP4[\"11 判分点\"]\n    SP4 --> P4[\"7 通过\"]\n    P1 & P2 & P4 --> Overall[\"综合得分\"]"
+        },
+        {
+          "title": "游戏类型与核心玩法",
+          "code": "flowchart LR\n    BB[\"打砖块<br/>底板可移动<br/>碰壁反弹\"] --> BB_Feature[\"简单物理<br/>得分判点\"]\n    RPG[\"地牢动作 RPG\"] --> RPG_Feature[\"角色移动<br/>攻击<br/>跳跃/加速\"]\n    Museum[\"隐蔽探索游戏\"] --> Museum_Feature[\"右上角视野<br/>寻找出口<br/>低分评估\"]\n    BB & RPG & Museum --> Core[\"长城游戏 Benchmark\"]"
+        },
+        {
+          "title": "输入映射与操作指令",
+          "code": "flowchart TD\n    WASD[\"WASD\"] --> Move[\"角色移动\"]\n    Mouse[\"鼠标左键\"] --> Attack[\"攻击/打击\"]\n    Space[\"Space\"] --> Jump[\"跳跃/加速\"]\n    FKey[\"F\"] --> Flashlight[\"手电照明\"]\n    PKey[\"P\"] --> Photo[\"拍照\"]\n    Move & Attack & Jump & Flashlight & Photo --> Actions[\"游戏交互\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T23:41:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 长城游戏 Benchmark 知识图谱\n\n## 版本演进概览 [BV1T6Mk6sE9d P1 00:30] [BV1T6Mk6sE9d P1 01:44] [BV1T6Mk6sE9d P1 04:21]\n```mermaid\nflowchart TD\n    V1[\"V1<br/>6 判分点<br/>5 通过 / 1 失败\"] --> V2[\"V2<br/>新增速度提升\"]\n    V2 --> V3[\"V3<br/>控制方式改为鼠标\"]\n    V3 --> V4[\"V4<br/>11 判分点<br/>7 通过<br/>加入昼夜循环、耐久、声望系统\"]\n```\n\n## 评估指标与判分点 [BV1T6Mk6sE9d P1 00:30] [BV1T6Mk6sE9d P1 00:34] [BV1T6Mk6sE9d P1 04:21]\n```mermaid\nflowchart TD\n    R1[\"第一轮\"] --> SP1[\"6 判分点\"]\n    SP1 --> P1[\"5 通过\"]\n    R2[\"最后一轮\"] --> SP2[\"9 判分点\"]\n    SP2 --> P2[\"8 通过\"]\n    V4[\"第四版\"] --> SP4[\"11 判分点\"]\n    SP4 --> P4[\"7 通过\"]\n    P1 & P2 & P4 --> Overall[\"综合得分\"]\n```\n\n## 游戏类型与核心玩法 [BV1T6Mk6sE9d P1 00:25] [BV1T6Mk6sE9d P1 02:28] [BV1T6Mk6sE9d P1 05:08]\n```mermaid\nflowchart LR\n    BB[\"打砖块<br/>底板可移动<br/>碰壁反弹\"] --> BB_Feature[\"简单物理<br/>得分判点\"]\n    RPG[\"地牢动作 RPG\"] --> RPG_Feature[\"角色移动<br/>攻击<br/>跳跃/加速\"]\n    Museum[\"隐蔽探索游戏\"] --> Museum_Feature[\"右上角视野<br/>寻找出口<br/>低分评估\"]\n    BB & RPG & Museum --> Core[\"长城游戏 Benchmark\"]\n```\n\n## 输入映射与操作指令 [BV1T6Mk6sE9d P1 02:40] [BV1T6Mk6sE9d P1 02:43] [BV1T6Mk6sE9d P1 02:48] [BV1T6Mk6sE9d P1 06:08] [BV1T6Mk6sE9d P1 06:14]\n```mermaid\nflowchart TD\n    WASD[\"WASD\"] --> Move[\"角色移动\"]\n    Mouse[\"鼠标左键\"] --> Attack[\"攻击/打击\"]\n    Space[\"Space\"] --> Jump[\"跳跃/加速\"]\n    FKey[\"F\"] --> Flashlight[\"手电照明\"]\n    PKey[\"P\"] --> Photo[\"拍照\"]\n    Move & Attack & Jump & Flashlight & Photo --> Actions[\"游戏交互\"]\n```",
+  "diagrams": [
+    {
+      "title": "版本演进概览",
+      "code": "flowchart TD\n    V1[\"V1<br/>6 判分点<br/>5 通过 / 1 失败\"] --> V2[\"V2<br/>新增速度提升\"]\n    V2 --> V3[\"V3<br/>控制方式改为鼠标\"]\n    V3 --> V4[\"V4<br/>11 判分点<br/>7 通过<br/>加入昼夜循环、耐久、声望系统\"]"
+    },
+    {
+      "title": "评估指标与判分点",
+      "code": "flowchart TD\n    R1[\"第一轮\"] --> SP1[\"6 判分点\"]\n    SP1 --> P1[\"5 通过\"]\n    R2[\"最后一轮\"] --> SP2[\"9 判分点\"]\n    SP2 --> P2[\"8 通过\"]\n    V4[\"第四版\"] --> SP4[\"11 判分点\"]\n    SP4 --> P4[\"7 通过\"]\n    P1 & P2 & P4 --> Overall[\"综合得分\"]"
+    },
+    {
+      "title": "游戏类型与核心玩法",
+      "code": "flowchart LR\n    BB[\"打砖块<br/>底板可移动<br/>碰壁反弹\"] --> BB_Feature[\"简单物理<br/>得分判点\"]\n    RPG[\"地牢动作 RPG\"] --> RPG_Feature[\"角色移动<br/>攻击<br/>跳跃/加速\"]\n    Museum[\"隐蔽探索游戏\"] --> Museum_Feature[\"右上角视野<br/>寻找出口<br/>低分评估\"]\n    BB & RPG & Museum --> Core[\"长城游戏 Benchmark\"]"
+    },
+    {
+      "title": "输入映射与操作指令",
+      "code": "flowchart TD\n    WASD[\"WASD\"] --> Move[\"角色移动\"]\n    Mouse[\"鼠标左键\"] --> Attack[\"攻击/打击\"]\n    Space[\"Space\"] --> Jump[\"跳跃/加速\"]\n    FKey[\"F\"] --> Flashlight[\"手电照明\"]\n    PKey[\"P\"] --> Photo[\"拍照\"]\n    Move & Attack & Jump & Flashlight & Photo --> Actions[\"游戏交互\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:41:00+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1ytMX6VEJr",
+  "title": "【中配】DeepSeek V4 Flash加Freebuff：零成本搭建个人编程AI助手，每日自动开发6小时",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3402,
+  "text": "deep sk3天前正式发布了V4flash\n而且现在有办法免费用上它了\n每天六小时\n全球各地均可使用\n无需API密钥\n无需绑定信用卡\n没有地区限制\n马上带大家看看具体怎么操作\ndetect已将V4flash移出预览阶段\n薛定猫AI企业级自建API中转站\n500家最新大模型可供选择\ng p t cloud gemini1键切换\n诚邀代理\n如果你也想成为AI代理商\n欢迎咨询薛定猫点com1键直达正式版\n定名为deep tc v4flash\n7月31日版\n这后缀只是个日期\n也就是7月31日\n目前已在API上线并开启公测\n那么到底有哪些变动呢\n因为很多人对此感到困惑\n其实模型本身的大小没变\n架构与预览版一致\ndeep sc并未重构底层网络\n他们采取的方式是进行后训练\n也就是沿用原有模型\n额外进行了一轮针对待代理能力的专项训练\n涵盖了准确调用工具\n处理长步骤任务\n以及从错误中自我纠偏\n不再半途而废\n此外API测也迎来了两项升级\n现已原生支持responses API格式\n看这张表\n在terminal bench2.1测试中\n新版模型得分高达82.7\n预览版得分61.8\n单靠后训练就提升了21分\n在cybergen in测试中达到76.7分\n而预览版仅为38.7分\n这几乎翻了一倍\ndeep sick从7.3分跃升至54.4分\n表格中几乎每一项7月31日的flash版都优于V4pro预览版\n后者是同系列的大参数模型\nterminal bench得分82.7对\n七\n12.1\nTo latin verified\n得分70.3对55.9\nds bench heart则为59.6\n对比31.1说的直观一点\nflash批款拥有2841参数的混合专家模型\n每token紧急活约131参数\n而V4pro预览版的规模要大得多\n即便如此\n这个小模型在代理任务上却胜过了大模型\n作为对比\nopen4.8在terminal bench上的得分为85分\n而flash的82:07分仅落后约两分\n紧追目前业界最强的闭源模型之一\n且其单次请求成本仅为一美分的一小部分\n顺便坦诚说明一下\n这些数据均出自deep sk官方\n这是在他们自研的评测框架下\n以最强推理力度测出的结果\n其中的两个基准测试\nd s bench for stack和d bench heart\n均属deep tick内部数据集\n所以具体数值建议仅供参考\n但第三官方机构artificial analysis的测试也显示\n其智能指数提升了约十个点\n可见这种提升是实打实的\n绝非营销噱头\n模型权重已开源\n检查点现已发布在hacking face上\n它自带投机采样模块\n结构与deep six spark版本一致\n这也是为什么显示参数量约为344亿\n而非原本的200亿及840亿\n多出的部分适用于加速生成的草稿模型\n若你有硬件资源\n完全无需API即可自行部署\n而在API方面有两项实用改进\n该模型现已原生支持responses API格式\n并且已正式适配codex\n因此如果你使用codex作为编程智能体\n可以直接对接接flash模型\n如果你之前已经在通过API调用deep six4flash\n无需任何操作即可自动升级\n模型名称保持不变\n模型底层已升级\n无需改动\n代码定价不变\n输入价格为每百万token0.14美元\n输出价格为每百万token0.28美元\n加上缓存命中折扣\n输入成本几乎可以忽略不计\n这对代理任务的循环调用至关重要\n因为代理你会不断重复读取相同的上下文\n在长时间的编程会话中\n大部分token最终都会命中缓存\n因此将它作为代理运行时\n实际成本比标价还要低\n此外还要注意旧的模型名称deep sextut已弃用\n而DEEPSEKONER与7月24日正式下线\n现在全部统一为V4楼lash模型或者是V4pro\n在讲免费工具前先提一下V4pro目前仍是预览版\nDPC表示pro正式版很快就会推出\n预计8月初会开放pro版本的API支持\n这其实说明了他们优先发布小模型\n并宣称其性能超越自家旗舰款\n足以看出他们的战略重心\n他们想让flash成为默认的agent模型\n既便宜又快\n且性能足以支撑自动化的无人值守任务\n接下来介绍免费方案工具叫free Buff\n它是code Buff的免费版\n一款终端编程代理工具\n类似club code或codx CLI free Buff号终端内的文字广告维持运营\n这就是它的全部商业模式\n无需订阅\n没有积分制\n也没有试用期限制\n在7月31日模型发布后的第二天\n他们宣布向所有人免费开放全新的V4flash模型\n重点在于全球用户每天都能免费用三小时\n完整模式适用于美国\n加拿大\n英国及欧盟地区\n覆盖约25个国家\n且支持多种模型\n而在其他地区\nV4flash in10免费制\n7月31日\n每天可使用六小时\n所以无论你在哪看这个视频都能用安装\n只需一行命令打开终端\n运行NPM还是free Buff就行了\n如果没装node\n先去NODJS点ORG下载一个\n很快就能装好\n装完后在任意项目文件夹输入free b即可启动\n首次运行时选择模型\n我选deep sc v4flash\n因为这就是我们今天测试的对象\n它还有一个桌面版应用\n如果你不喜欢整天待在终端界面里\n本次演示我也会使用它\n这样大家就能看清屏幕上的操作了\n好让我们来做点实用的\n做一个CALENE风格的预约页面\n场景是一家叫CNARA的咖啡烘焙店\n他们提供咖啡品鉴服务\n店主需要一个能让顾客预约时间的页面\n我给他的提示词是这样的\n做一个单个HTML文件的咖啡品鉴预约应用\n将预定信息存在浏览器里\n基于规则生成可用时段\n并自动过滤掉已约满的时间\n风格要走温馨咖啡馆路线\n奶油色背景配上黄色点缀\n现在它开始运行了\n看他在做什么\n它不只是从头到尾直接写代码\n而是先规划再执行\n而且free Buff还会运行一个子代理\n专门对代码修改进行审阅\n最后还有一个浏览器操作代理能直接打开网页进行验证\n这就是那些基准测试中所谓的代理是行为\n这一切你都能实时看到\n好了\n搞定也就几分钟的事\n来看看效果\n界面很清爽\nlogo也出来了\n后台也做好了\n功能跟我要求的一模一样\n每周排班时长\n缓冲时间最短\n预定提醒全都齐了\n还设置了屏蔽日期\n自动加了试用版块\n预制演示预约功能\n虽然我没提过这个要求\n但也挺好\n我来试着预约一下周二的可选时段\n完全符合规则\n每段30分钟自动留了15分钟缓冲\n我选了下午一点的这一档确认\n预约后台马上就显示出来了\n取消按钮也正常\n刷新页面\n看看数据依然完好\n它自动配置了浏览器存储\n全程仅需一个提示词\n只需一个文件\n复杂的调度逻辑一次就跑通了\n成本归零\n如果你想进一步深入挖掘该模型\n它采用MIT协议\n这是目前最宽松的许可证之一\n你可以随意使用商用微调或直接集成进产品都没问题\n没有任何附加条件\n其次投机采样模块已经内置在同一个模型检查点中\n通常情况下你需要一个独立的草稿模型来加速生成\n但在这里草稿模型和主模型都在同一个仓库里\n在VRIM中只需开启一个参数即可\n这就是为什么模型库显示参数量为3040亿\n而非2840亿\n额外增加的权重用于速度模块\n第三点\n它提供了低高最大三个级别的推理强度设置\n你可以控制他回答前的思考时长\n之前提到的基准测试都是在最大级别下完成的\n在高和最大级别下\nDepick\n建议将输出上限设为38.4万\nGood token\n这足以说明其推理链条的长度\n哦对了\n量化版本也已发布\n现在大家已经在OEM上跑起来了\n还能在本地电脑上运行\nL m studio\n说实话\n7月31日版的flash并非最强模型\nopus s依然更胜一筹\n顶尖的闭源模型在处理高难度任务时确实仍具优势\n在NRSQL等基准测试上的差距依然明显\n54.2分\n对比69.7分\n但对于日常编程开发功能修复bug来说\n或者构建应用脚手架\n他已经绰绰有余\n比起单一模型组合方案的效果更重要\n开放权重API输出每百万token仅需28美分\n而且通过free Buff\n全球用户都能合法免费使用\n每天只需六小时\n就足以应对日常的核心工作\n无需任何花费\n想尝试的话\n安装命令\n相关链接已放在简介里\n请用在实际项目中\n别只盯着演示\n看看看他的真实表现\n这才是唯一重要的衡量标准",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ytMX6VEJr",
+  "published_at": "1785750685",
+  "fetched_at": "2026-08-08T23:30:03+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 与 FreeBuff 学习图谱\n\n## 1. 生态概览\n```mermaid\nflowchart TD\n    M1[\"V4 Flash 模型\"] --> R1[\"2023‑07‑31 发布\"]\n    M1 --> U1[\"使用限制：每日 6 小时、全球、无需 API 密钥\"]\n    M1 --> D1[\"部署方式\"]\n    D1 --> A1[\"API 调用\"]\n    D1 --> H1[\"本地自部署（需硬件）\"]\n    M1 --> L1[\"MIT 许可证\"]\n    M1 --> P1[\"定价：输入 $0.14/百万 token，输出 $0.28/百万 token\"]\n    P1 --> C1[\"缓存折扣 → 输入成本可忽略\"]\n    A1 --> F1[\"API 功能：原生 responses 格式、Codex 兼容\"]\n    H1 --> F1\n    F1 --> B1[\"FreeBuff 工具\"]\n    B1 --> BF1[\"免费版：无订阅、无积分、无试用期\"]\n    B1 --> U1\n```\n证据: [BV1ytMX6VEJr P1 00:00]、[BV1ytMX6VEJr P1 00:06]、[BV1ytMX6VEJr P1 03:30]、[BV1ytMX6VEJr P1 05:01]\n\n## 2. 性能提升与基准对比\n```mermaid\nflowchart LR\n    V4P[\"V4 Pro 预览版\"] --> PT[\"后训练（代理能力）\"]\n    PT --> V4F[\"V4 Flash（新模型）\"]\n    V4F --> TB[\"Terminal Bench 评分 82.7\"]\n    V4P --> TBp[\"Terminal Bench 评分 61.8\"]\n    V4F --> CB[\"Cybergen In 评分 76.7\"]\n    V4P --> CBp[\"Cybergen In 评分 38.7\"]\n    TB --> IMP1[\"提升 +21 分\"]\n    CB --> IMP2[\"提升约 2 倍\"]\n    V4F --> PS[\"参数：2841 混合专家模型，约 131 参数/ token\"]\n    V4F --> OC[\"对比 Open4.8：85 分 vs 82.07 分\"]\n    V4F --> CR[\"单次请求成本 ≈ 0.01 美分\"]\n```\n证据: [BV1ytMX6VEJr P1 01:25]、[BV1ytMX6VEJr P1 01:31]、[BV1ytMX6VEJr P1 01:33]、[BV1ytMX6VEJr P1 02:24]、[BV1ytMX6VEJr P1 02:34]\n\n## 3. FreeBuff 使用流程\n```mermaid\nflowchart TD\n    S1[\"安装 Node.js\"] --> S2[\"安装 freeBuff（npm）\"]\n    S2 --> S3[\"在项目目录运行 `free b` 启动\"]\n    S3 --> S4[\"首次运行选择模型：V4 Flash\"]\n    S4 --> SA[\"子代理：代码审阅\"]\n    S4 --> SB[\"子代理：浏览器操作（打开页面验证）\"]\n    SA --> C1[\"生成 HTML 代码\"]\n    SB --> C1\n    C1 --> O1[\"输出单文件预约页面\"]\n    O1 --> UI[\"用户交互：预约时段\"]\n```\n证据: [BV1ytMX6VEJr P1 05:56]、[BV1ytMX6VEJr P1 06:02]、[BV1ytMX6VEJr P1 06:07]、[BV1ytMX6VEJr P1 06:09]、[BV1ytMX6VEJr P1 07:02]、[BV1ytMX6VEJr P1 07:04]、[BV1ytMX6VEJr P1 07:06]、[BV1ytMX6VEJr P1 06:25]",
+      "diagrams": [
+        {
+          "title": "1. 生态概览",
+          "code": "flowchart TD\n    M1[\"V4 Flash 模型\"] --> R1[\"2023‑07‑31 发布\"]\n    M1 --> U1[\"使用限制：每日 6 小时、全球、无需 API 密钥\"]\n    M1 --> D1[\"部署方式\"]\n    D1 --> A1[\"API 调用\"]\n    D1 --> H1[\"本地自部署（需硬件）\"]\n    M1 --> L1[\"MIT 许可证\"]\n    M1 --> P1[\"定价：输入 $0.14/百万 token，输出 $0.28/百万 token\"]\n    P1 --> C1[\"缓存折扣 → 输入成本可忽略\"]\n    A1 --> F1[\"API 功能：原生 responses 格式、Codex 兼容\"]\n    H1 --> F1\n    F1 --> B1[\"FreeBuff 工具\"]\n    B1 --> BF1[\"免费版：无订阅、无积分、无试用期\"]\n    B1 --> U1"
+        },
+        {
+          "title": "2. 性能提升与基准对比",
+          "code": "flowchart LR\n    V4P[\"V4 Pro 预览版\"] --> PT[\"后训练（代理能力）\"]\n    PT --> V4F[\"V4 Flash（新模型）\"]\n    V4F --> TB[\"Terminal Bench 评分 82.7\"]\n    V4P --> TBp[\"Terminal Bench 评分 61.8\"]\n    V4F --> CB[\"Cybergen In 评分 76.7\"]\n    V4P --> CBp[\"Cybergen In 评分 38.7\"]\n    TB --> IMP1[\"提升 +21 分\"]\n    CB --> IMP2[\"提升约 2 倍\"]\n    V4F --> PS[\"参数：2841 混合专家模型，约 131 参数/ token\"]\n    V4F --> OC[\"对比 Open4.8：85 分 vs 82.07 分\"]\n    V4F --> CR[\"单次请求成本 ≈ 0.01 美分\"]"
+        },
+        {
+          "title": "3. FreeBuff 使用流程",
+          "code": "flowchart TD\n    S1[\"安装 Node.js\"] --> S2[\"安装 freeBuff（npm）\"]\n    S2 --> S3[\"在项目目录运行 `free b` 启动\"]\n    S3 --> S4[\"首次运行选择模型：V4 Flash\"]\n    S4 --> SA[\"子代理：代码审阅\"]\n    S4 --> SB[\"子代理：浏览器操作（打开页面验证）\"]\n    SA --> C1[\"生成 HTML 代码\"]\n    SB --> C1\n    C1 --> O1[\"输出单文件预约页面\"]\n    O1 --> UI[\"用户交互：预约时段\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T23:38:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 与 FreeBuff 学习图谱\n\n## 1. 生态概览\n```mermaid\nflowchart TD\n    M1[\"V4 Flash 模型\"] --> R1[\"2023‑07‑31 发布\"]\n    M1 --> U1[\"使用限制：每日 6 小时、全球、无需 API 密钥\"]\n    M1 --> D1[\"部署方式\"]\n    D1 --> A1[\"API 调用\"]\n    D1 --> H1[\"本地自部署（需硬件）\"]\n    M1 --> L1[\"MIT 许可证\"]\n    M1 --> P1[\"定价：输入 $0.14/百万 token，输出 $0.28/百万 token\"]\n    P1 --> C1[\"缓存折扣 → 输入成本可忽略\"]\n    A1 --> F1[\"API 功能：原生 responses 格式、Codex 兼容\"]\n    H1 --> F1\n    F1 --> B1[\"FreeBuff 工具\"]\n    B1 --> BF1[\"免费版：无订阅、无积分、无试用期\"]\n    B1 --> U1\n```\n证据: [BV1ytMX6VEJr P1 00:00]、[BV1ytMX6VEJr P1 00:06]、[BV1ytMX6VEJr P1 03:30]、[BV1ytMX6VEJr P1 05:01]\n\n## 2. 性能提升与基准对比\n```mermaid\nflowchart LR\n    V4P[\"V4 Pro 预览版\"] --> PT[\"后训练（代理能力）\"]\n    PT --> V4F[\"V4 Flash（新模型）\"]\n    V4F --> TB[\"Terminal Bench 评分 82.7\"]\n    V4P --> TBp[\"Terminal Bench 评分 61.8\"]\n    V4F --> CB[\"Cybergen In 评分 76.7\"]\n    V4P --> CBp[\"Cybergen In 评分 38.7\"]\n    TB --> IMP1[\"提升 +21 分\"]\n    CB --> IMP2[\"提升约 2 倍\"]\n    V4F --> PS[\"参数：2841 混合专家模型，约 131 参数/ token\"]\n    V4F --> OC[\"对比 Open4.8：85 分 vs 82.07 分\"]\n    V4F --> CR[\"单次请求成本 ≈ 0.01 美分\"]\n```\n证据: [BV1ytMX6VEJr P1 01:25]、[BV1ytMX6VEJr P1 01:31]、[BV1ytMX6VEJr P1 01:33]、[BV1ytMX6VEJr P1 02:24]、[BV1ytMX6VEJr P1 02:34]\n\n## 3. FreeBuff 使用流程\n```mermaid\nflowchart TD\n    S1[\"安装 Node.js\"] --> S2[\"安装 freeBuff（npm）\"]\n    S2 --> S3[\"在项目目录运行 `free b` 启动\"]\n    S3 --> S4[\"首次运行选择模型：V4 Flash\"]\n    S4 --> SA[\"子代理：代码审阅\"]\n    S4 --> SB[\"子代理：浏览器操作（打开页面验证）\"]\n    SA --> C1[\"生成 HTML 代码\"]\n    SB --> C1\n    C1 --> O1[\"输出单文件预约页面\"]\n    O1 --> UI[\"用户交互：预约时段\"]\n```\n证据: [BV1ytMX6VEJr P1 05:56]、[BV1ytMX6VEJr P1 06:02]、[BV1ytMX6VEJr P1 06:07]、[BV1ytMX6VEJr P1 06:09]、[BV1ytMX6VEJr P1 07:02]、[BV1ytMX6VEJr P1 07:04]、[BV1ytMX6VEJr P1 07:06]、[BV1ytMX6VEJr P1 06:25]",
+  "diagrams": [
+    {
+      "title": "1. 生态概览",
+      "code": "flowchart TD\n    M1[\"V4 Flash 模型\"] --> R1[\"2023‑07‑31 发布\"]\n    M1 --> U1[\"使用限制：每日 6 小时、全球、无需 API 密钥\"]\n    M1 --> D1[\"部署方式\"]\n    D1 --> A1[\"API 调用\"]\n    D1 --> H1[\"本地自部署（需硬件）\"]\n    M1 --> L1[\"MIT 许可证\"]\n    M1 --> P1[\"定价：输入 $0.14/百万 token，输出 $0.28/百万 token\"]\n    P1 --> C1[\"缓存折扣 → 输入成本可忽略\"]\n    A1 --> F1[\"API 功能：原生 responses 格式、Codex 兼容\"]\n    H1 --> F1\n    F1 --> B1[\"FreeBuff 工具\"]\n    B1 --> BF1[\"免费版：无订阅、无积分、无试用期\"]\n    B1 --> U1"
+    },
+    {
+      "title": "2. 性能提升与基准对比",
+      "code": "flowchart LR\n    V4P[\"V4 Pro 预览版\"] --> PT[\"后训练（代理能力）\"]\n    PT --> V4F[\"V4 Flash（新模型）\"]\n    V4F --> TB[\"Terminal Bench 评分 82.7\"]\n    V4P --> TBp[\"Terminal Bench 评分 61.8\"]\n    V4F --> CB[\"Cybergen In 评分 76.7\"]\n    V4P --> CBp[\"Cybergen In 评分 38.7\"]\n    TB --> IMP1[\"提升 +21 分\"]\n    CB --> IMP2[\"提升约 2 倍\"]\n    V4F --> PS[\"参数：2841 混合专家模型，约 131 参数/ token\"]\n    V4F --> OC[\"对比 Open4.8：85 分 vs 82.07 分\"]\n    V4F --> CR[\"单次请求成本 ≈ 0.01 美分\"]"
+    },
+    {
+      "title": "3. FreeBuff 使用流程",
+      "code": "flowchart TD\n    S1[\"安装 Node.js\"] --> S2[\"安装 freeBuff（npm）\"]\n    S2 --> S3[\"在项目目录运行 `free b` 启动\"]\n    S3 --> S4[\"首次运行选择模型：V4 Flash\"]\n    S4 --> SA[\"子代理：代码审阅\"]\n    S4 --> SB[\"子代理：浏览器操作（打开页面验证）\"]\n    SA --> C1[\"生成 HTML 代码\"]\n    SB --> C1\n    C1 --> O1[\"输出单文件预约页面\"]\n    O1 --> UI[\"用户交互：预约时段\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T23:38:59+00:00"
+}

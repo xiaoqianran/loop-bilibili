@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1yVKa6LELS",
+  "title": "同为阿里中间件团队出品，AgentScope 和 Spring AI Alibaba 到底怎么选？我们一口气拆解了记忆、安全沙箱、工作流等 16 个关键维度。",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3403,
+  "text": "都是阿里开源的java AI agent框架\n10case大的那个竟然不是团队重点\nagent scope和spring AI\n阿里巴巴到底选哪个\n16个维度全给你拆明白\n先说一个大背景\n这两个项目背后是同一批人\n做过double和rocket mq的阿里中间件团队\n但设计哲学完全不同\nagent scope走的是agent native路线\n把大模型当成独立的智能体大脑\n支持自主推理和工具调用\n有三层记忆和自我进化\n还有安全沙箱和多租户隔离\n目前4.6k stars spring AI\n阿里巴巴走的是workflow first路线\n把大模型当成函数来调用\n用dag图做工作流编排\n有完整的rag和ETL管道和spring生态无缝集成\n10.4K stars两个项目通过agent scope starter打通\n不是二选一\n是组合使用\n先看模型执行agent scope\n有full back model包装器\n主备模型链加自动重试加无缝切备\n用统一日志记录时间戳入餐出餐耗时和异常高\n可用能力在SDK层面就搞定了\n会话管理上\nagent state快照可以任意时刻保存完整绘画\n支持跨设备续接中断和恢复\n是一等公民\n再看spring AI\n阿里巴巴模型执行走的是spring AI的chat model\n抽象层多模型\n后端统一接口\nHIGRESS网关做模型代理走标准\nOpenAI协议\n企业可以接百炼平台\n但会话管理只有chat memory加消息窗口策略\n开发者要手动维护message列表\n框架层面没有中断恢复机制\n记忆系统是agent scope的强项\n它有三层记忆架构\n短期记忆是agent state\n运行时快照保存对话历史计划和工具结果\n长期记忆是workspace下的memory文件\nagent自己往里沉淀\n事实性知识\n持久化层\n通过agent state store写到REDIS或MYSQL\n跨设备也能恢复上下文\n工程方面有结构化压缩大内容卸载和自动兜底\n上下文超长了\n自动触发压缩重试\nSpring ai\n阿里巴巴这边记忆是被动的\nChat memory\n做消息窗口加摘要\n压缩vector store\n做语义检索\n支持redis mas和es\n但agent本身没有主动记忆和遗忘的能力\n上下文工程也只是依赖chat memory加rag\n没有框架级的压缩和兜底\nAgin scope\n用at two注解加MCP3协议tools\n点JASON声明式配置\n自动扫描注册\nmiddle ware有五个拦截节点\n覆盖agent生命周期的全链路\nMCP工具和本地工具统一权限管控\nAllow ask deny\n三态开发环境可以用mock生产环境\n移除mock就行业务代码完全不用动\nSpring ai\n阿里巴巴用at bean加at description注册工具\nspring ioc容器天然融合已有的spring项目上手更快\n它还有NUOS分布式m cp server\n提供服务发现和负载均衡\n还有一个杀手锏是API to m cp\n已有的Rest API可以零代码转成MCP工具\n对已有spring微服务的项目来说是天然优势\nreact这块spring AI阿里巴巴做的比较完整\n有现成的ETL管道\n文档读取分块嵌入向量存储一条龙\n支持Pdf word网页\n多种格式向量库对接\nRedis nevers elastic search\n不过说实话\nrag本身是个固定流程\n读取切块向量化检索\n手写一套pipeline也不复杂\n半天就能搭出来\nAgents scope\n这边rag还在补齐阶段\nV1.0正式版才会包含它\n侧重的是让agent自主检索\n而不是走管道式流程\n所以rag不应该是选型的核心考量\n开箱即用确实省事\n但手写也很简单\n编排能力上两个框架走了完全不同的路线\nagent scope是自主编排\nagent自己决定谁做什么\n涌现式自组织\n通过子智能体声明定义子任务动态委派\n同步或异步执行\n人工介入方面\nAllow ask deny\n三态智能触发高风险操作\n自动触发人工审批\n是框架及强制执行代码\n有漏洞也防得住\nSpring ai\n阿里巴巴是工作流编排开发者定义好流程\n让agent执行graph deg声明式执行图\n支持并行条件\n嵌套子图有supervisor主管分配和routine分类器\n做动态路由\n人工介入在graph节点预设触发\n开发者指定哪些节点需要人审\n还能用mermaid做可视化导出\n安全能力上\nagent scope有框架级的独有能力\ndocker容器沙箱隔离\n执行环境快照持久化\n容器漂移时快速恢复\n文件系统自动注入身份id\n全链路审计所有文件\nIO命令执行权限\n决策都有记录\n满足金融和政务合规要求\n加上三态权限控制\n代码有漏洞\n也防得住数据泄漏\nSpring ai\n阿里巴巴走的是生态级安全\nspring security提供认证授权和oo r spring cloud\n加SENTINO做限流熔断\n但差距是没有agent执行环境的专项沙箱隔离\n也没有框架级的多租户审计\nagent scope是真正的agent native\n把大模型当独立的大脑\n支持自主推理计划制定与修正\n反思harness工作区驱动自我进化\n单机到分布式多租户无缝切换\n前后端协议\n用stream events事件流推送的不只是文本\n还有思考链工具调用进度变更\nSealed class\n加强类型消息\ncontent block处理多模态载荷\nSpring ai\n阿里巴巴走的是workflow first路线\n把大模型当成不太可靠的函数\n用严格的程序边界去约束OGENICC能力\n体现在graph编排层\n从1.1.2版本开始加入agent skills\n前后端用flux响应式流式输出\ngraph节点及streaming\nspring web flux天然集成sees端点\n开箱即用\nEighteen scope\n用stream events回放完整推理过程\nMiddle ware\n五个节点注入tracing\n全链路审计日志达到合规级别\nagin scope studio做本地可视化调试测评\n用s bench基准模拟真实场景思维\n评估完成度效率\n鲁棒性和可解释性\n瑞引擎做分布式评估\n嵌入CICD\n保障迭代不退化\nSpring ai\n阿里巴巴用标准三件套\nMicrometer open telemetry\nSpring boot actuator\ndame平台\n用react flow做可视化编辑器\n加链路追踪和span分析\n还支持数据集构建和prompt版本控制\n但框架层没有独立的评估SDK\n不太适合工程化的自动测评社区\n数据方面\nagent scope java有4.6k stars\n893次提交V2.0\n迭代频率高\n背后是通义实验室加阿里中间件团队\n战略定位是java生态智能体底座\n也是团队的主要投入方向\nspring AI阿里巴巴有10.4K stars\n3210一次提交V1.1\n迭代频率中等\n背后是阿里中间件团队的SSCA团队\n就是做double nuos santal的那批人\n定位是生态桥梁\n跟进spring AI上游演进\n两个项目不是竞品\n是互补\n通过agent scope starter打通集成技术选型\n跟着团队战略方向走\n重心在agent scope\n这是16个维度的总览对比表\nagent scope赢了九项\nspring AI阿里巴巴赢了一项\n还有四项平手\naging scope在记忆安全\nAGGENTIC等核心能力上全面领先\nspring AI阿里巴巴在rap上有完整优势\n最后说选型\n第一新项目直接用agent scope\n2.0\n他是团队战略重心\nARGENTIC能力最强\n测评沙箱技艺全面领先\n第二需要工作流编排的话\n叠加graph模块就行\n引入spring AI\n阿里巴巴graph\n通过agent scope starter集成\n一句话总结agent scope做智能体大脑\nspring AI阿里巴巴graph做流程编排\n同一团队做的不是二选一\n是组合使用\n觉得有用的话\n点赞收藏加个关注\n下期内容更硬核",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1yVKa6LELS",
+  "published_at": "1784630016",
+  "fetched_at": "2026-08-09T15:11:31+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AgentScope 与 Spring AI 关键关系图谱\n\n## 总览比较\n\n```mermaid\nflowchart TD\n    Team[同一阿里中间件团队] --> AS[AgentScope]\n    Team --> SA[Spring AI]\n    AS --> AN[Agent Native 路线]\n    SA --> WF[Workflow First 路线]\n    AN --> MB[大模型作为独立大脑]\n    WF --> MF[大模型作为函数调用]\n    MB --> AR[自主推理]\n    MB --> TC[工具调用]\n    MB --> MEM[三层记忆架构]\n    MB --> SS[安全沙箱]\n    MB --> MT[多租户隔离]\n    MF --> DAG[DAG 工作流编排]\n    DAG --> RAG[RAG 与 ETL 管道]\n    DAG --> SE[Spring 生态无缝集成]\n    SE --> ES[生态级安全]\n    SS --> ES\n    AS --> IS[AgentScope Starter 统一入口]\n    SA --> IS\n```\n\n## AgentScope 记忆架构\n\n```mermaid\nflowchart TD\n    AS[AgentScope] --> STM[短期记忆 (Agent State)]\n    AS --> LTM[长期记忆 (Workspace Memory)]\n    STM --> RS[运行时快照 保存对话、计划、工具结果]\n    LTM --> MF[Memory 文件]\n    MF --> PL[持久化层]\n    PL --> Redis[Redis 存储]\n    PL --> MySQL[MySQL 存储]\n    PL --> CrossDev[跨设备上下文恢复]\n    RS --> AutoComp[自动压缩]\n    AutoComp --> Overflow[上下文超长触发]\n    Overflow --> Retry[压缩重试]\n```\n\n## 组合使用与选型流程\n\n```mermaid\nflowchart TD\n    NP[新项目] --> UseAS[直接使用 AgentScope]\n    UseAS --> BenefitAS[AgentScope 的自主智能体能力]\n    NeedWF[需要工作流编排] --> AddSA[引入 Spring AI]\n    AddSA --> BenefitSA[Spring AI 的 DAG 编排与生态集成]\n    UseAS --> Starter[AgentScope Starter]\n    AddSA --> Starter\n    Starter --> Combine[组合使用]\n    Combine --> Deploy[部署]\n    Deploy --> Cap[综合能力]\n    Cap --> BenefitAS\n    Cap --> BenefitSA\n```",
+      "diagrams": [
+        {
+          "title": "总览比较",
+          "code": "flowchart TD\n    Team[同一阿里中间件团队] --> AS[AgentScope]\n    Team --> SA[Spring AI]\n    AS --> AN[Agent Native 路线]\n    SA --> WF[Workflow First 路线]\n    AN --> MB[大模型作为独立大脑]\n    WF --> MF[大模型作为函数调用]\n    MB --> AR[自主推理]\n    MB --> TC[工具调用]\n    MB --> MEM[三层记忆架构]\n    MB --> SS[安全沙箱]\n    MB --> MT[多租户隔离]\n    MF --> DAG[DAG 工作流编排]\n    DAG --> RAG[RAG 与 ETL 管道]\n    DAG --> SE[Spring 生态无缝集成]\n    SE --> ES[生态级安全]\n    SS --> ES\n    AS --> IS[AgentScope Starter 统一入口]\n    SA --> IS"
+        },
+        {
+          "title": "AgentScope 记忆架构",
+          "code": "flowchart TD\n    AS[AgentScope] --> STM[短期记忆 (Agent State)]\n    AS --> LTM[长期记忆 (Workspace Memory)]\n    STM --> RS[运行时快照 保存对话、计划、工具结果]\n    LTM --> MF[Memory 文件]\n    MF --> PL[持久化层]\n    PL --> Redis[Redis 存储]\n    PL --> MySQL[MySQL 存储]\n    PL --> CrossDev[跨设备上下文恢复]\n    RS --> AutoComp[自动压缩]\n    AutoComp --> Overflow[上下文超长触发]\n    Overflow --> Retry[压缩重试]"
+        },
+        {
+          "title": "组合使用与选型流程",
+          "code": "flowchart TD\n    NP[新项目] --> UseAS[直接使用 AgentScope]\n    UseAS --> BenefitAS[AgentScope 的自主智能体能力]\n    NeedWF[需要工作流编排] --> AddSA[引入 Spring AI]\n    AddSA --> BenefitSA[Spring AI 的 DAG 编排与生态集成]\n    UseAS --> Starter[AgentScope Starter]\n    AddSA --> Starter\n    Starter --> Combine[组合使用]\n    Combine --> Deploy[部署]\n    Deploy --> Cap[综合能力]\n    Cap --> BenefitAS\n    Cap --> BenefitSA"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T15:12:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AgentScope 与 Spring AI 关键关系图谱\n\n## 总览比较\n\n```mermaid\nflowchart TD\n    Team[同一阿里中间件团队] --> AS[AgentScope]\n    Team --> SA[Spring AI]\n    AS --> AN[Agent Native 路线]\n    SA --> WF[Workflow First 路线]\n    AN --> MB[大模型作为独立大脑]\n    WF --> MF[大模型作为函数调用]\n    MB --> AR[自主推理]\n    MB --> TC[工具调用]\n    MB --> MEM[三层记忆架构]\n    MB --> SS[安全沙箱]\n    MB --> MT[多租户隔离]\n    MF --> DAG[DAG 工作流编排]\n    DAG --> RAG[RAG 与 ETL 管道]\n    DAG --> SE[Spring 生态无缝集成]\n    SE --> ES[生态级安全]\n    SS --> ES\n    AS --> IS[AgentScope Starter 统一入口]\n    SA --> IS\n```\n\n## AgentScope 记忆架构\n\n```mermaid\nflowchart TD\n    AS[AgentScope] --> STM[短期记忆 (Agent State)]\n    AS --> LTM[长期记忆 (Workspace Memory)]\n    STM --> RS[运行时快照 保存对话、计划、工具结果]\n    LTM --> MF[Memory 文件]\n    MF --> PL[持久化层]\n    PL --> Redis[Redis 存储]\n    PL --> MySQL[MySQL 存储]\n    PL --> CrossDev[跨设备上下文恢复]\n    RS --> AutoComp[自动压缩]\n    AutoComp --> Overflow[上下文超长触发]\n    Overflow --> Retry[压缩重试]\n```\n\n## 组合使用与选型流程\n\n```mermaid\nflowchart TD\n    NP[新项目] --> UseAS[直接使用 AgentScope]\n    UseAS --> BenefitAS[AgentScope 的自主智能体能力]\n    NeedWF[需要工作流编排] --> AddSA[引入 Spring AI]\n    AddSA --> BenefitSA[Spring AI 的 DAG 编排与生态集成]\n    UseAS --> Starter[AgentScope Starter]\n    AddSA --> Starter\n    Starter --> Combine[组合使用]\n    Combine --> Deploy[部署]\n    Deploy --> Cap[综合能力]\n    Cap --> BenefitAS\n    Cap --> BenefitSA\n```",
+  "diagrams": [
+    {
+      "title": "总览比较",
+      "code": "flowchart TD\n    Team[同一阿里中间件团队] --> AS[AgentScope]\n    Team --> SA[Spring AI]\n    AS --> AN[Agent Native 路线]\n    SA --> WF[Workflow First 路线]\n    AN --> MB[大模型作为独立大脑]\n    WF --> MF[大模型作为函数调用]\n    MB --> AR[自主推理]\n    MB --> TC[工具调用]\n    MB --> MEM[三层记忆架构]\n    MB --> SS[安全沙箱]\n    MB --> MT[多租户隔离]\n    MF --> DAG[DAG 工作流编排]\n    DAG --> RAG[RAG 与 ETL 管道]\n    DAG --> SE[Spring 生态无缝集成]\n    SE --> ES[生态级安全]\n    SS --> ES\n    AS --> IS[AgentScope Starter 统一入口]\n    SA --> IS"
+    },
+    {
+      "title": "AgentScope 记忆架构",
+      "code": "flowchart TD\n    AS[AgentScope] --> STM[短期记忆 (Agent State)]\n    AS --> LTM[长期记忆 (Workspace Memory)]\n    STM --> RS[运行时快照 保存对话、计划、工具结果]\n    LTM --> MF[Memory 文件]\n    MF --> PL[持久化层]\n    PL --> Redis[Redis 存储]\n    PL --> MySQL[MySQL 存储]\n    PL --> CrossDev[跨设备上下文恢复]\n    RS --> AutoComp[自动压缩]\n    AutoComp --> Overflow[上下文超长触发]\n    Overflow --> Retry[压缩重试]"
+    },
+    {
+      "title": "组合使用与选型流程",
+      "code": "flowchart TD\n    NP[新项目] --> UseAS[直接使用 AgentScope]\n    UseAS --> BenefitAS[AgentScope 的自主智能体能力]\n    NeedWF[需要工作流编排] --> AddSA[引入 Spring AI]\n    AddSA --> BenefitSA[Spring AI 的 DAG 编排与生态集成]\n    UseAS --> Starter[AgentScope Starter]\n    AddSA --> Starter\n    Starter --> Combine[组合使用]\n    Combine --> Deploy[部署]\n    Deploy --> Cap[综合能力]\n    Cap --> BenefitAS\n    Cap --> BenefitSA"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T15:12:16+00:00"
+}

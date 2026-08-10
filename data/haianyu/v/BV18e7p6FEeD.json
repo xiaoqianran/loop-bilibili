@@ -1,0 +1,26 @@
+{
+  "bvid": "BV18e7p6FEeD",
+  "title": "158. 最简单的含RoPE的Transformer可视化有多简单？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 740,
+  "text": "今天的问题是最简单的\n含旋转位置编码的transformer可视化有多简单\n这个视频要结合之前的两个视频\n一个是最简单的transformer可视化有多简单\n还有一个是如何理解旋转位置编码\n之前分析过\n可以用颜色来理解旋转位置编码\n两个一结合就可以得到今天的视频\n按照上一个视频的思路\n关键是把旋转位置编码的内机展开\n再重新写成内积的形式\n比起传统的内积\n其实只是多了一个R矩阵\n就这个举个例子\n假设现在是Q3和K2做内机旋转位置编码\n要在Q3前面乘一个R3\n在K2前面乘一个R2\n这里的Q和K都写成列向量\n前面再乘一个矩阵\n得到的还是列向量\n把它展开\n就是把前面的列向量变成行向量\n再和这个列向量做内积\n展开之后\n由于旋转位置编码有一个性质\n就可以简化为这里的R2-3\n相当于一个行向量乘一个矩阵\n再乘一个列向量\n这两个括起来是一个列向量\n这个相当于一个数\n由于这里可以看作一个行向量乘列向量\n也就是说Q3是一个向量\n后面括起来也是一个向量\n于是他又变成了一个内积的形式\n就写成Q3\n然后r-1K2\n后面这个相当于是矩阵乘列向量\n也是一个列向量\n就得到了这个性质\n按照这个思路\n只需要在最简单的transformer可视化的基础上\n加上颜色就行了\n先看G因为它是decoder only\n右上角保持负无穷掩码\n这个不变\n让它的主对角线以及下面平行的这些对角线\n全部打上颜色\n比如这里的R0是一种颜色\nr-1是一种颜色\nr-2是一种颜色\nBT没有因果掩码\n所以右上角的这些对角线也给它打上颜色\n再说一下\n从数轴角度怎么理解\n把主对角线这条理解为零点\n就是R0\n它等于单位阵I向右走\n相当于数轴上的R1R2R三\n向左走就是r-1r-2\n会发现和传统的可视化相比\n只是多了一个颜色而已",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18e7p6FEeD",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

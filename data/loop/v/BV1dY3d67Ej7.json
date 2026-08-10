@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1dY3d67Ej7",
+  "title": "DeepSeek V4开源登顶！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 480,
+  "text": "开源模型杀疯了\n知乎沦陷AI内容\nOpenAI用2000美元破解数学世纪难题\n今天的AI圈三件事你必须知道\n我是grout frontier\n带你60秒看完deep seek发布V4flash0731\n开源大模型\n总参数284B但激活仅13B\n以极低算力在artificial analysis\n智能指数拿下50分\n杀入开元前三\nMIT许可完全开放\n已同步上线官方API\n知乎也被AI攻陷了\nv r ex网友dark way发帖说\n打开知乎满屏GPT风味文章\n更诡异的是\n评论区还有人写我的收藏夹\n就是为这类文章而生\n楼主直呼毛骨悚然\n底下网友一针见血\n评论也是AI生成的OpenAI下一代模型\nASTRA干了件大事\n以约2000美元成本证明了十项数学难题\n包括证明非SUFIC群存在\n直接推翻CANNES刚性猜想\n十项证明全部开源\n附带LN证书和逐步推导\nGREGBROCKMAN亲自转发\nAI正在同时变得更便宜\n更强大\n也更无处不在\n当知乎评论区都可能是AI的时候\n你怎么判断对面是人是机器\n评论区聊聊crocket frontier\n每天3分钟AI不脱节",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1dY3d67Ej7",
+  "published_at": "1785680952",
+  "fetched_at": "2026-08-10T05:56:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 与 AI 生态概览\n\n## DeepSeek V4 概览\n```mermaid\nflowchart TD\n    M[\"DeepSeek V4\"] --> P[\"总参数 284B\"]\n    M --> A[\"激活参数 13B\"]\n    M --> C[\"极低算力\"]\n    C --> AI[\"Artificial Analysis\"]\n    AI --> S[\"智能指数 50分\"]\n    M --> R[\"开元前三排名\"]\n    M --> L[\"MIT 许可（完全开放）\"]\n    M --> API[\"官方 API 已上线\"]\n```\n[BV1dY3d67Ej7 P1 00:12] [BV1dY3d67Ej7 P1 00:18] [BV1dY3d67Ej7 P1 00:22] [BV1dY3d67Ej7 P1 00:24] [BV1dY3d67Ej7 P1 00:26] [BV1dY3d67Ej7 P1 00:28] [BV1dY3d67Ej7 P1 00:30]\n\n## Zhihu AI 内容泛滥\n```mermaid\nflowchart TD\n    Z[\"知乎平台\"] --> AC[\"AI 生成文章\"]\n    AC --> GPT[\"GPT 风味内容\"]\n    GPT --> CM[\"评论区 AI 生成\"]\n    CM --> UR[\"用户毛骨悚然\"]\n    UR --> NC[\"网友一针见血\"]\n    NC --> NG[\"OpenAI 下一代模型\"]\n```\n[BV1dY3d67Ej7 P1 00:00] [BV1dY3d67Ej7 P1 00:01] [BV1dY3d67Ej7 P1 00:33] [BV1dY3d67Ej7 P1 00:36] [BV1dY3d67Ej7 P1 00:38] [BV1dY3d67Ej7 P1 00:46] [BV1dY3d67Ej7 P1 00:48] [BV1dY3d67Ej7 P1 00:50]\n\n## ASTRA 数学突破\n```mermaid\nflowchart TD\n    A[\"ASTRA 项目\"] --> C[\"约 2000 美元成本\"]\n    C --> MP[\"十项数学难题\"]\n    MP --> OS[\"全部开源\"]\n    OS --> LN[\"LN 证书\"]\n    OS --> SD[\"逐步推导\"]\n    A --> GB[\"GREGBROCKMAN 转发\"]\n    MP --> NS[\"非 SUFIC 群存在证明\"]\n    MP --> CC[\"CANNES 刚性猜想推翻\"]\n```\n[BV1dY3d67Ej7 P1 00:55] [BV1dY3d67Ej7 P1 00:56] [BV1dY3d67Ej7 P1 01:00] [BV1dY3d67Ej7 P1 01:03] [BV1dY3d67Ej7 P1 01:05] [BV1dY3d67Ej7 P1 01:07] [BV1dY3d67Ej7 P1 01:10]\n\n## AI 趋势与辨识挑战\n```mermaid\nflowchart TD\n    AI[\"AI 整体趋势\"] --> CD[\"成本更低\"]\n    AI --> PI[\"性能更强\"]\n    AI --> UB[\"无处不在\"]\n    UB --> ZC[\"知乎评论区可能为 AI\"]\n    ZC --> JD[\"判断对方是人还是机器\"]\n```\n[BV1dY3d67Ej7 P1 01:12] [BV1dY3d67Ej7 P1 01:15] [BV1dY3d67Ej7 P1 01:16] [BV1dY3d67Ej7 P1 01:17] [BV1dY3d67Ej7 P1 01:20]",
+      "diagrams": [
+        {
+          "title": "DeepSeek V4 概览",
+          "code": "flowchart TD\n    M[\"DeepSeek V4\"] --> P[\"总参数 284B\"]\n    M --> A[\"激活参数 13B\"]\n    M --> C[\"极低算力\"]\n    C --> AI[\"Artificial Analysis\"]\n    AI --> S[\"智能指数 50分\"]\n    M --> R[\"开元前三排名\"]\n    M --> L[\"MIT 许可（完全开放）\"]\n    M --> API[\"官方 API 已上线\"]"
+        },
+        {
+          "title": "Zhihu AI 内容泛滥",
+          "code": "flowchart TD\n    Z[\"知乎平台\"] --> AC[\"AI 生成文章\"]\n    AC --> GPT[\"GPT 风味内容\"]\n    GPT --> CM[\"评论区 AI 生成\"]\n    CM --> UR[\"用户毛骨悚然\"]\n    UR --> NC[\"网友一针见血\"]\n    NC --> NG[\"OpenAI 下一代模型\"]"
+        },
+        {
+          "title": "ASTRA 数学突破",
+          "code": "flowchart TD\n    A[\"ASTRA 项目\"] --> C[\"约 2000 美元成本\"]\n    C --> MP[\"十项数学难题\"]\n    MP --> OS[\"全部开源\"]\n    OS --> LN[\"LN 证书\"]\n    OS --> SD[\"逐步推导\"]\n    A --> GB[\"GREGBROCKMAN 转发\"]\n    MP --> NS[\"非 SUFIC 群存在证明\"]\n    MP --> CC[\"CANNES 刚性猜想推翻\"]"
+        },
+        {
+          "title": "AI 趋势与辨识挑战",
+          "code": "flowchart TD\n    AI[\"AI 整体趋势\"] --> CD[\"成本更低\"]\n    AI --> PI[\"性能更强\"]\n    AI --> UB[\"无处不在\"]\n    UB --> ZC[\"知乎评论区可能为 AI\"]\n    ZC --> JD[\"判断对方是人还是机器\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T05:56:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 与 AI 生态概览\n\n## DeepSeek V4 概览\n```mermaid\nflowchart TD\n    M[\"DeepSeek V4\"] --> P[\"总参数 284B\"]\n    M --> A[\"激活参数 13B\"]\n    M --> C[\"极低算力\"]\n    C --> AI[\"Artificial Analysis\"]\n    AI --> S[\"智能指数 50分\"]\n    M --> R[\"开元前三排名\"]\n    M --> L[\"MIT 许可（完全开放）\"]\n    M --> API[\"官方 API 已上线\"]\n```\n[BV1dY3d67Ej7 P1 00:12] [BV1dY3d67Ej7 P1 00:18] [BV1dY3d67Ej7 P1 00:22] [BV1dY3d67Ej7 P1 00:24] [BV1dY3d67Ej7 P1 00:26] [BV1dY3d67Ej7 P1 00:28] [BV1dY3d67Ej7 P1 00:30]\n\n## Zhihu AI 内容泛滥\n```mermaid\nflowchart TD\n    Z[\"知乎平台\"] --> AC[\"AI 生成文章\"]\n    AC --> GPT[\"GPT 风味内容\"]\n    GPT --> CM[\"评论区 AI 生成\"]\n    CM --> UR[\"用户毛骨悚然\"]\n    UR --> NC[\"网友一针见血\"]\n    NC --> NG[\"OpenAI 下一代模型\"]\n```\n[BV1dY3d67Ej7 P1 00:00] [BV1dY3d67Ej7 P1 00:01] [BV1dY3d67Ej7 P1 00:33] [BV1dY3d67Ej7 P1 00:36] [BV1dY3d67Ej7 P1 00:38] [BV1dY3d67Ej7 P1 00:46] [BV1dY3d67Ej7 P1 00:48] [BV1dY3d67Ej7 P1 00:50]\n\n## ASTRA 数学突破\n```mermaid\nflowchart TD\n    A[\"ASTRA 项目\"] --> C[\"约 2000 美元成本\"]\n    C --> MP[\"十项数学难题\"]\n    MP --> OS[\"全部开源\"]\n    OS --> LN[\"LN 证书\"]\n    OS --> SD[\"逐步推导\"]\n    A --> GB[\"GREGBROCKMAN 转发\"]\n    MP --> NS[\"非 SUFIC 群存在证明\"]\n    MP --> CC[\"CANNES 刚性猜想推翻\"]\n```\n[BV1dY3d67Ej7 P1 00:55] [BV1dY3d67Ej7 P1 00:56] [BV1dY3d67Ej7 P1 01:00] [BV1dY3d67Ej7 P1 01:03] [BV1dY3d67Ej7 P1 01:05] [BV1dY3d67Ej7 P1 01:07] [BV1dY3d67Ej7 P1 01:10]\n\n## AI 趋势与辨识挑战\n```mermaid\nflowchart TD\n    AI[\"AI 整体趋势\"] --> CD[\"成本更低\"]\n    AI --> PI[\"性能更强\"]\n    AI --> UB[\"无处不在\"]\n    UB --> ZC[\"知乎评论区可能为 AI\"]\n    ZC --> JD[\"判断对方是人还是机器\"]\n```\n[BV1dY3d67Ej7 P1 01:12] [BV1dY3d67Ej7 P1 01:15] [BV1dY3d67Ej7 P1 01:16] [BV1dY3d67Ej7 P1 01:17] [BV1dY3d67Ej7 P1 01:20]",
+  "diagrams": [
+    {
+      "title": "DeepSeek V4 概览",
+      "code": "flowchart TD\n    M[\"DeepSeek V4\"] --> P[\"总参数 284B\"]\n    M --> A[\"激活参数 13B\"]\n    M --> C[\"极低算力\"]\n    C --> AI[\"Artificial Analysis\"]\n    AI --> S[\"智能指数 50分\"]\n    M --> R[\"开元前三排名\"]\n    M --> L[\"MIT 许可（完全开放）\"]\n    M --> API[\"官方 API 已上线\"]"
+    },
+    {
+      "title": "Zhihu AI 内容泛滥",
+      "code": "flowchart TD\n    Z[\"知乎平台\"] --> AC[\"AI 生成文章\"]\n    AC --> GPT[\"GPT 风味内容\"]\n    GPT --> CM[\"评论区 AI 生成\"]\n    CM --> UR[\"用户毛骨悚然\"]\n    UR --> NC[\"网友一针见血\"]\n    NC --> NG[\"OpenAI 下一代模型\"]"
+    },
+    {
+      "title": "ASTRA 数学突破",
+      "code": "flowchart TD\n    A[\"ASTRA 项目\"] --> C[\"约 2000 美元成本\"]\n    C --> MP[\"十项数学难题\"]\n    MP --> OS[\"全部开源\"]\n    OS --> LN[\"LN 证书\"]\n    OS --> SD[\"逐步推导\"]\n    A --> GB[\"GREGBROCKMAN 转发\"]\n    MP --> NS[\"非 SUFIC 群存在证明\"]\n    MP --> CC[\"CANNES 刚性猜想推翻\"]"
+    },
+    {
+      "title": "AI 趋势与辨识挑战",
+      "code": "flowchart TD\n    AI[\"AI 整体趋势\"] --> CD[\"成本更低\"]\n    AI --> PI[\"性能更强\"]\n    AI --> UB[\"无处不在\"]\n    UB --> ZC[\"知乎评论区可能为 AI\"]\n    ZC --> JD[\"判断对方是人还是机器\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T05:56:59+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1sejg6mEHW",
+  "title": "Claude Code、Codex、Hermes 都用了一圈，我发现问题不在工具",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3739,
+  "text": "我一年换了三个AI工具\n最后留下来的不是最强的\n而是最像操作系统的\n这句话听起来像是在吹open claw或者hormones\n更麻烦的是\ncloud code现在真的很强\n他有记忆\n有skills\n有定时任务\n有手机远程控制\n有slack\n生态和官方集成也越来越完整\n所以这期我们不是在说谁有功能\n谁没有\n这个说法已经过时了\n真正的问题是你的工作流最后沉淀在哪里\n我最早把AI工具分成两类\n一类是绘画型agent\n打开终端输入任务\nAI读代码\n改文件\n跑命令\n把事情做完\n然后我们会话结束\nCloud code codex cursor\n我以前把它们都归到这一类\n还有一类是平台agent\n它不只是一个聊天窗口\n他有长期的记忆\n有消息入口\n有定时任务\n你不在电脑前\n他也能继续工作\nhermes open claw都是这一类\n但是现在这个分类必须要进行修正了\n因为cloth code已经不是两年前那个开一个终端\n聊完我们就结束的工具了\nHi all cloud markdown\n项目规则\n每次启动都会加载它有auto memory\n会把构建命令调试经验偏好写进本地的memory\n它有skill可以手动调用\n也可以在相关任务里面自动加载\n它有scheduled task\n可以定时的去跑我们的提示词\n所以如果我还说cloud code只是绘画工具\n那这就是一个事实错误\n其实它正在平台化\n这就是为什么我今天这个选择会变得更有意思\n因为我不是在一个弱工具和一个强工具\n之间去做选择\n我是从一个很强的工具里面到了一个系统\n我第一次用cloud code是做一个IOS的app\n它很快自己去建数据模型\n改swift ui跑测试查报错\n作为开发工具\n它是很顶级的\n而且他的记忆机制也已经很实用\nHow to work kdown\n解决规则问题\nAUTUMMEMORY解决经验问题\n比如构建命令是什么\n测试怎么跑\n这个项目有什么代码习惯\n上次踩过什么坑之类的\n这些他都能记录\n当我遇到的问题其实不是这个\n我真正想要恢复的不是命令\n是当时我为什么要这么判断\n为什么不用这个swift data\n为什么一个看起来不太优雅的实现\n反而是为了降低后期的整合风险\n我们试了前两个方案\n为什么最后试选择第三个\n这些东西如果没有写进cloud markdown里面\n也没有被auto memory判断成值得保存的东西\n它不一定能回来\n就是代码能接上\n规则能接上\n但是我们的决策现场不一定能接得上\n这是我的第一个断点\n不是记忆有没有\n而是记忆保存的是什么\nthought code更像把经验整理成笔记\n而HARMONES\n更像把我们一起工作过的现场留下来\n后来我换到codex里面\ncodex非常适合执行改文件\n跑命令\n查工程都非常顺利\n我在上面搭过内容工作流\n获客脚本和自动化的一些任务\n但是我想把它变成一个手机上\n也能随时的去调动的一个系统\n问题就来了\n我使用codex作为执行系统\n然后open claw是手机的入口\n飞书是信息流\n中间要靠共享文档\n日志给或者是agent os去同步状态\n每一层都能用\n但是它们默认不是一个大脑\n我在手机上跟open claw说了什么\nopen que默认也不知道定时任务跑完之后\n结果要发到哪里\n也要另外去接\n这不是不能做\n我自己就搭过\n但是后来你就会发现使用的不是同一个系统\n你是在把很多东西拼凑在一起\n拼系统的问题就是前期是可以运行的\n但是后期全都是维护成本\n所以我选择留下HERMES\n不是因为它的模型更强\n恰好相反\ncloud依然很强\ncodex也很强\n但是HARMONES吸引我的是它的默认\n假设它不是先做一个聊天终端\n然后慢慢的加记忆\n加手机入口这些\n他一开始就把这些东西放在同一个运行时里面\n它的fashion store\nMemory skill\nGateway provider\n这些都不是外挂\n是它本身的系统结构\n他这件事情听起来很技术\n但是对艺人公司是非常具体的\n因为我每天不只是写代码\n我今天做产品\n明天写脚本\n后天做视频\n大后天还要去看用户的数据\n还要处理获客发布\n所以我的上下文其实是非常散乱的\n如果AI只能记住我们的构建命令是不够的\n我需要它记得我们为什么要这样做\n我们哪一天该去做什么\nPop code\n现在的skt down参考文件脚本自动触发\n这套东西已经非常完整了\n但是在我的使用感里面\n它更像是工具箱\n你把流程写进去\n它来执行harnest skill\n更像是经验资产\n我们每做完一件复杂任务\n就可以生成自己的skill\n然后踩了坑也可以patch sc\n下次遇到同类的问题\n就不是靠模型\n他自己去发挥\n而是验证我们上次已经验证过的流程\n重点不是markdown文件\n重点是系统有没有鼓励你\n把经验变成自动可复用的资产\n这个对艺人公司非常的关键\n因为一个人最大的浪费不是他做的慢\n是同一个坑\n他反复的在踩以前\n我会说像绘画型\n日本的\n他自己是没有chrome的\n现在这句话已经不能说了\n现在他们都有schedule task\n所以重点不是在谁能定时执行\n而是在定时任务跑完之后\n结果进入哪里\nCloud code\n它的schedule task核心还是围绕这个cloud code\n绘画和开发工作流\n但是HERMES他的crown和gateway是一套东西\n定时任务可以跑\n跑完可以送到消息平台\n然后消息平台继续发消息\n你还可以回到同一个消息系统里面\n这才是停牌型agent的感觉\n不是每天早上九点运行一个prompt\n而是每天早上九点系统自己干活\n然后他会在你会看的地方去汇报\n然后你就根据他的汇报继续来发出命令\n做出决策\n缺的不是更多的AI去对话\n缺的是你不在的时候\n还有AI去持续的去帮你干活\n还有一个差异是模型上的差异\ncloud code的核心还是cloud\n它可以通过很多种方式去调用\n已经不是单纯的您的API了\n但是它依然围绕cloud整体模型的这个家族去设计\n这个没有问题\n它本身模型是很强的\n但是HERMES它的位置不一样\nHERMES是provider\n我们所有几乎目前主流的大模型都可以介入\n这个HERMES\n你也可以定制自己的模型和API接入\n今天我们中文写作\n用一个模型名填英文写作\n用另一个模型或者是代码开发\n或者是我想用一个开源的模型去做都是可以的\n模型是引擎\n而不是系统本身\n这个对我来说是很重要的\n因为我真正想沉淀的不是具体\n某一个模型的功能\n是我的工作流\nSkill\n记忆消息入口\n这些都应该部署在平台层\n我的模型应该是随时可以更换的\n如果你只是用AI来写代码的话\ncloud code可能就是最好的工具\n你打开项目处理他的这个bug\n然后跑测试\n开pr它都非常强\n但是我觉得如果你用AI去实际的去做一些应用\n或者去实际形成产业链的话\n它的问题就不是代码去怎么写\n他的问题是今天比如说我们获客该不该发内容\n这个产品的数据有没有变化\n现在有没有实际的收入\n昨天那个判断今天要不要推翻\n要不要更新\n这些都不是一次绘画能解决的\n这是一个持续运行的问题\n所以我最后选择留下了HERMES\n不是因为它在某一个任务上能力更强\n而是因为它更适合承载我的工作流\ncloud code是越来越强的开发工具\nHARMES是我可以自己部署\n自己改换模型\n积累记忆的这么一个工作系统\n一个是工具\n一个是操作系统\n当然HERMES它本身并不是完美答案\n第一个就是它生态比较小\ncoud code出问题\n我们去网上一搜就会有各种的视频教程经验帖\n但是HERMES出了问题\n我们可能就要去自己去看源码\n看日志调配置这些\n第二个就是学习成本会稍微高一点\n比如profile skill\nMemory provider\n这些不是装饰的功能\n它就是HERMES的核心概念不够开箱即用\n比如说像cloud装好之后进入项目致命令\n它就可以干活\n但是HERMES装好更像是拿到了一个框架\n你要配置模型\n你要配置消息入口\n写skill\n整理memory\n决定哪些工作\n哪些记忆更适合沉淀\n哪些我们更想把它变成一个可以复用的skill\n所以它不是更轻松更好用\n它是一个更长期的东西\n如果你只是想要一个聊天型的AI\n那你就不需要选它\n如果想要一个慢慢可以探索出你自己\n工作方式的系统\n它才能有意义\n所以现在我就不再问哪一个行能力最强\n这个问题是太短期的问题了\n模型今天强\n明天可能就会有一个更强的推出来\n这个功能今天它没有\n三个月之后\n它可能就有了排行榜上\n今天这个模型排第一\n明天那个模型排第一\n我现在问的是我的工作流到底应该沉淀在哪里\n沉淀在一次会话里面\n还是几个markdown文件里面\n还是沉淀在一个我能搜索\n能修改\n能迁移\n能换模型的这样一个系统里面\n如果你只是写代码\n就选最强的开发工具\n如果你是想用AI跑通自己的工作流程和链条\n我建议选能出长期工作记忆的操作系统\n这是我最后留下HERMES的原因\n不是因为他更聪明\n是因为他更像我的公司后台好\n如果觉得视频内容对大家有用\n欢迎点赞收藏加关注\n谢谢大家\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1sejg6mEHW",
+  "published_at": "1781607600",
+  "fetched_at": "2026-08-10T06:26:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI工具生态与工作流决策图谱\n\n## AI工具分类概览 [BV1sejg6mEHW P1 00:32]\n```mermaid\nflowchart TD\n    A[\"AI工具\"] --> B[\"绘画型Agent\"]\n    A --> C[\"平台型Agent\"]\n    B --> D[\"Cloud Code\"]\n    B --> E[\"Codex\"]\n    B --> F[\"Cursor\"]\n    C --> G[\"Hermes\"]\n    C --> H[\"OpenClaw\"]\n    subgraph Rev[\"分类修正\"]\n        I[\"Cloud Code已平台化\"]:::note\n    end\n    D --> I\n    classDef note fill:#f9f,stroke:#333,stroke-width:1px;\n```\n\n## 功能对比：Cloud Code vs Hermes [BV1sejg6mEHW P1 00:12‑00:19, 04:07‑04:19]\n```mermaid\nflowchart TD\n    CC[\"Cloud Code 功能\"]\n    HM[\"Hermes 功能\"]\n    CC --> CC1[\"记忆\"]\n    CC --> CC2[\"Skill\"]\n    CC --> CC3[\"Scheduled Task\"]\n    CC --> CC4[\"远程控制\"]\n    CC --> CC5[\"Slack 集成\"]\n    HM --> HM1[\"记忆\"]\n    HM --> HM2[\"Skill\"]\n    HM --> HM3[\"Scheduled Task\"]\n    HM --> HM4[\"Gateway Provider\"]\n    HM --> HM5[\"统一运行时\"]\n    CC1 -.-> HM1\n    CC2 -.-> HM2\n    CC3 -.-> HM3\n    style CC fill:#e3f2fd,stroke:#333,stroke-width:2px\n    style HM fill:#fff3e0,stroke:#333,stroke-width:2px\n```\n\n## 选型决策流 [BV1sejg6mEHW P1 09:35‑09:41]\n```mermaid\nflowchart TD\n    Start[\"需要长期工作记忆和系统化工作流？\"] -->|是| ChooseHermes[\"选择平台型Agent（Hermes）\"]\n    Start -->|否| ChooseCloud[\"选择最强开发工具（Cloud Code）\"]\n    ChooseHermes --> Outcome1[\"支持跨会话、可替换模型、自动化\"]\n    ChooseCloud --> Outcome2[\"专注代码执行、单次任务\"]\n    classDef decision fill:#ffeb3b,stroke:#333,stroke-width:1px;\n    class Start decision;\n```\n\n## 工作流架构：Hermes 与 Cloud Code 协同 [BV1sejg6mEHW P1 03:20‑06:22]\n```mermaid\nflowchart TD\n    User[\"用户指令\"]\n    Hermes[\"Hermes (平台层)\"]\n    Cloud[\"Cloud Code (执行层)\"]\n    Slack[\"Slack / 消息平台\"]\n    Memory[\"Auto Memory\"]\n    Skill[\"Skill 库\"]\n    Schedule[\"Scheduled Task\"]\n    Report[\"报告/反馈\"]\n\n    User --> Hermes\n    Hermes -->|调用 Skill| Skill\n    Hermes -->|调度任务| Schedule\n    Schedule --> Cloud\n    Cloud -->|执行命令| Report\n    Report --> Slack\n    Slack -->|返回信息| Hermes\n    Hermes --> Memory\n    Memory -->|保存经验| Skill\n    classDef platform fill:#d0f0c0,stroke:#333,stroke-width:1px;\n    class Hermes,Cloud,Slack,Memory,Skill,Schedule,Report platform;\n```",
+      "diagrams": [
+        {
+          "title": "AI工具分类概览",
+          "code": "flowchart TD\n    A[\"AI工具\"] --> B[\"绘画型Agent\"]\n    A --> C[\"平台型Agent\"]\n    B --> D[\"Cloud Code\"]\n    B --> E[\"Codex\"]\n    B --> F[\"Cursor\"]\n    C --> G[\"Hermes\"]\n    C --> H[\"OpenClaw\"]\n    subgraph Rev[\"分类修正\"]\n        I[\"Cloud Code已平台化\"]:::note\n    end\n    D --> I\n    classDef note fill:#f9f,stroke:#333,stroke-width:1px;"
+        },
+        {
+          "title": "功能对比：Cloud Code vs Hermes [BV1sejg6mEHW P1 00:12‑00:19, 04:07‑04:19]",
+          "code": "flowchart TD\n    CC[\"Cloud Code 功能\"]\n    HM[\"Hermes 功能\"]\n    CC --> CC1[\"记忆\"]\n    CC --> CC2[\"Skill\"]\n    CC --> CC3[\"Scheduled Task\"]\n    CC --> CC4[\"远程控制\"]\n    CC --> CC5[\"Slack 集成\"]\n    HM --> HM1[\"记忆\"]\n    HM --> HM2[\"Skill\"]\n    HM --> HM3[\"Scheduled Task\"]\n    HM --> HM4[\"Gateway Provider\"]\n    HM --> HM5[\"统一运行时\"]\n    CC1 -.-> HM1\n    CC2 -.-> HM2\n    CC3 -.-> HM3\n    style CC fill:#e3f2fd,stroke:#333,stroke-width:2px\n    style HM fill:#fff3e0,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "选型决策流 [BV1sejg6mEHW P1 09:35‑09:41]",
+          "code": "flowchart TD\n    Start[\"需要长期工作记忆和系统化工作流？\"] -->|是| ChooseHermes[\"选择平台型Agent（Hermes）\"]\n    Start -->|否| ChooseCloud[\"选择最强开发工具（Cloud Code）\"]\n    ChooseHermes --> Outcome1[\"支持跨会话、可替换模型、自动化\"]\n    ChooseCloud --> Outcome2[\"专注代码执行、单次任务\"]\n    classDef decision fill:#ffeb3b,stroke:#333,stroke-width:1px;\n    class Start decision;"
+        },
+        {
+          "title": "工作流架构：Hermes 与 Cloud Code 协同 [BV1sejg6mEHW P1 03:20‑06:22]",
+          "code": "flowchart TD\n    User[\"用户指令\"]\n    Hermes[\"Hermes (平台层)\"]\n    Cloud[\"Cloud Code (执行层)\"]\n    Slack[\"Slack / 消息平台\"]\n    Memory[\"Auto Memory\"]\n    Skill[\"Skill 库\"]\n    Schedule[\"Scheduled Task\"]\n    Report[\"报告/反馈\"]\n\n    User --> Hermes\n    Hermes -->|调用 Skill| Skill\n    Hermes -->|调度任务| Schedule\n    Schedule --> Cloud\n    Cloud -->|执行命令| Report\n    Report --> Slack\n    Slack -->|返回信息| Hermes\n    Hermes --> Memory\n    Memory -->|保存经验| Skill\n    classDef platform fill:#d0f0c0,stroke:#333,stroke-width:1px;\n    class Hermes,Cloud,Slack,Memory,Skill,Schedule,Report platform;"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T06:27:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI工具生态与工作流决策图谱\n\n## AI工具分类概览 [BV1sejg6mEHW P1 00:32]\n```mermaid\nflowchart TD\n    A[\"AI工具\"] --> B[\"绘画型Agent\"]\n    A --> C[\"平台型Agent\"]\n    B --> D[\"Cloud Code\"]\n    B --> E[\"Codex\"]\n    B --> F[\"Cursor\"]\n    C --> G[\"Hermes\"]\n    C --> H[\"OpenClaw\"]\n    subgraph Rev[\"分类修正\"]\n        I[\"Cloud Code已平台化\"]:::note\n    end\n    D --> I\n    classDef note fill:#f9f,stroke:#333,stroke-width:1px;\n```\n\n## 功能对比：Cloud Code vs Hermes [BV1sejg6mEHW P1 00:12‑00:19, 04:07‑04:19]\n```mermaid\nflowchart TD\n    CC[\"Cloud Code 功能\"]\n    HM[\"Hermes 功能\"]\n    CC --> CC1[\"记忆\"]\n    CC --> CC2[\"Skill\"]\n    CC --> CC3[\"Scheduled Task\"]\n    CC --> CC4[\"远程控制\"]\n    CC --> CC5[\"Slack 集成\"]\n    HM --> HM1[\"记忆\"]\n    HM --> HM2[\"Skill\"]\n    HM --> HM3[\"Scheduled Task\"]\n    HM --> HM4[\"Gateway Provider\"]\n    HM --> HM5[\"统一运行时\"]\n    CC1 -.-> HM1\n    CC2 -.-> HM2\n    CC3 -.-> HM3\n    style CC fill:#e3f2fd,stroke:#333,stroke-width:2px\n    style HM fill:#fff3e0,stroke:#333,stroke-width:2px\n```\n\n## 选型决策流 [BV1sejg6mEHW P1 09:35‑09:41]\n```mermaid\nflowchart TD\n    Start[\"需要长期工作记忆和系统化工作流？\"] -->|是| ChooseHermes[\"选择平台型Agent（Hermes）\"]\n    Start -->|否| ChooseCloud[\"选择最强开发工具（Cloud Code）\"]\n    ChooseHermes --> Outcome1[\"支持跨会话、可替换模型、自动化\"]\n    ChooseCloud --> Outcome2[\"专注代码执行、单次任务\"]\n    classDef decision fill:#ffeb3b,stroke:#333,stroke-width:1px;\n    class Start decision;\n```\n\n## 工作流架构：Hermes 与 Cloud Code 协同 [BV1sejg6mEHW P1 03:20‑06:22]\n```mermaid\nflowchart TD\n    User[\"用户指令\"]\n    Hermes[\"Hermes (平台层)\"]\n    Cloud[\"Cloud Code (执行层)\"]\n    Slack[\"Slack / 消息平台\"]\n    Memory[\"Auto Memory\"]\n    Skill[\"Skill 库\"]\n    Schedule[\"Scheduled Task\"]\n    Report[\"报告/反馈\"]\n\n    User --> Hermes\n    Hermes -->|调用 Skill| Skill\n    Hermes -->|调度任务| Schedule\n    Schedule --> Cloud\n    Cloud -->|执行命令| Report\n    Report --> Slack\n    Slack -->|返回信息| Hermes\n    Hermes --> Memory\n    Memory -->|保存经验| Skill\n    classDef platform fill:#d0f0c0,stroke:#333,stroke-width:1px;\n    class Hermes,Cloud,Slack,Memory,Skill,Schedule,Report platform;\n```",
+  "diagrams": [
+    {
+      "title": "AI工具分类概览",
+      "code": "flowchart TD\n    A[\"AI工具\"] --> B[\"绘画型Agent\"]\n    A --> C[\"平台型Agent\"]\n    B --> D[\"Cloud Code\"]\n    B --> E[\"Codex\"]\n    B --> F[\"Cursor\"]\n    C --> G[\"Hermes\"]\n    C --> H[\"OpenClaw\"]\n    subgraph Rev[\"分类修正\"]\n        I[\"Cloud Code已平台化\"]:::note\n    end\n    D --> I\n    classDef note fill:#f9f,stroke:#333,stroke-width:1px;"
+    },
+    {
+      "title": "功能对比：Cloud Code vs Hermes [BV1sejg6mEHW P1 00:12‑00:19, 04:07‑04:19]",
+      "code": "flowchart TD\n    CC[\"Cloud Code 功能\"]\n    HM[\"Hermes 功能\"]\n    CC --> CC1[\"记忆\"]\n    CC --> CC2[\"Skill\"]\n    CC --> CC3[\"Scheduled Task\"]\n    CC --> CC4[\"远程控制\"]\n    CC --> CC5[\"Slack 集成\"]\n    HM --> HM1[\"记忆\"]\n    HM --> HM2[\"Skill\"]\n    HM --> HM3[\"Scheduled Task\"]\n    HM --> HM4[\"Gateway Provider\"]\n    HM --> HM5[\"统一运行时\"]\n    CC1 -.-> HM1\n    CC2 -.-> HM2\n    CC3 -.-> HM3\n    style CC fill:#e3f2fd,stroke:#333,stroke-width:2px\n    style HM fill:#fff3e0,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "选型决策流 [BV1sejg6mEHW P1 09:35‑09:41]",
+      "code": "flowchart TD\n    Start[\"需要长期工作记忆和系统化工作流？\"] -->|是| ChooseHermes[\"选择平台型Agent（Hermes）\"]\n    Start -->|否| ChooseCloud[\"选择最强开发工具（Cloud Code）\"]\n    ChooseHermes --> Outcome1[\"支持跨会话、可替换模型、自动化\"]\n    ChooseCloud --> Outcome2[\"专注代码执行、单次任务\"]\n    classDef decision fill:#ffeb3b,stroke:#333,stroke-width:1px;\n    class Start decision;"
+    },
+    {
+      "title": "工作流架构：Hermes 与 Cloud Code 协同 [BV1sejg6mEHW P1 03:20‑06:22]",
+      "code": "flowchart TD\n    User[\"用户指令\"]\n    Hermes[\"Hermes (平台层)\"]\n    Cloud[\"Cloud Code (执行层)\"]\n    Slack[\"Slack / 消息平台\"]\n    Memory[\"Auto Memory\"]\n    Skill[\"Skill 库\"]\n    Schedule[\"Scheduled Task\"]\n    Report[\"报告/反馈\"]\n\n    User --> Hermes\n    Hermes -->|调用 Skill| Skill\n    Hermes -->|调度任务| Schedule\n    Schedule --> Cloud\n    Cloud -->|执行命令| Report\n    Report --> Slack\n    Slack -->|返回信息| Hermes\n    Hermes --> Memory\n    Memory -->|保存经验| Skill\n    classDef platform fill:#d0f0c0,stroke:#333,stroke-width:1px;\n    class Hermes,Cloud,Slack,Memory,Skill,Schedule,Report platform;"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T06:27:35+00:00"
+}

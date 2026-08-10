@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1HWuF6FEKp",
+  "title": "DeepSeek V4 Flash 跑进 24GB 显存：Reddit r/LocalLLaMA 实测 15.4 tok/s｜284B MoE 家用实战",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3073,
+  "text": "deep seek v4flash本地跑通实战\n把284b mo跑进24G显存\n15.4TOXS6个关键数字\n284B总参数13B\n激活参数24G显存起步15.4\ntalks实测MIT开源协议em百万token上下文\n20个月前超大模型还只能跑在云端\n今天一个ready\n楼主用一张二手RTX2080ti显卡\n就把284B的开源旗舰跑起来了\n这是一场开源大模型\n从数据中心走进家庭的开端\n2026年7月31日\ndeep seek悄悄把V4flash正式版推上hiking face\n楼主video pico写下了一句\n被点赞838次的标题\nI cannot believe\nI've got deep sk v4 flash 0731a frontier model\nRunning on my home\nPc insane\n他用的是什么机器\n22G显存的二手RTX\n2080ti加123G的DDDR4内存\n91G的2bit量化模型实测\n15.4\nTokens per second\n这是一个改写游戏规则的数字\n它意味着开源大模型\n第一次可以在普通家用硬件上\n跑出可用的对话速度\n第一个284B总参数\n这是一个稀疏激活的猫架构\n专家持总量达到284B\n第二个13B激活参数\n但每个token实际只触发13b top6路由\n从128个专家里挑六个\n第三个em上下文窗口百万token上下文\n配合CSA和HCA混合注意力\n第四个0.28美元\n这是API每百万输出token的价格\n仅为V4pro的13\n某加MIT开源加家用机\n这三个词叠加在一起\n定义了2026年最重要的开源模型\n四档硬件加五档量化\n实际跑出来是4~50\ntokens per second的速度分布\n我们看三档典型配置\n入门级24G显存加128GDDD\n二五跑UDIQ3下划线\nxx s量化版8~12\ntokens per second慢\n但能对话主流级24G显存加192G\nDdd r5\n工作战UDQ4下划线K下划线XL接近无损\n15~20\nTokens per second\n可以做代码问答和agent\n入门满血即256g max studio\nUDQ8下划线K下划线\nexcel官方无损49.7\ntokens per second可以做think max长链推理1万次\nagent调用API大约三美元\n工作站一次性3000美元\n六个月回本\n选错文件就跑不起来\nOn sloth\n把0731的量化版按总内存划分成五档\n1B92G能跑弹损失大\n二被103G\n128G内存起步损失较大\n3bit110到135G\n128G1机器首选损失中等\n4bit it155 g\n192G机器主流接近无损\n8bit it162 g\n256g max studio满血\n官方无损\n这里有两个坑\n坑\n一文件103G不等于103G内存能跑\n模型加载后kv cash和上下文还会吃内存\n业界统一按128计算\n坑二四被不是无损UNSLOW\n后期改成了NEARLOSIS标注\n真正无损是UDQ8下划线\nK下划线excel只多七届\n为什么某决定了家用可行性\n因为128个专家每次只激活六个V4\nflash用的是deep seek标志性的混合专家架构\n输入token进入路由器\nRouter gate\n根据hidden state计算专家分布\n专家池128个专家里\n只激活套六路由加权聚合\n把六个专家输出按概率融合输出\ntoken给到下一层\n结果是每次推理的计算量\n接近一个13B稠密模型\n但128个专家的全部权重必须常驻内存\n这正是瓶颈不在GPU\n而在内存带宽的根本原因\n瓶颈在内存带宽不在GPU\n某架构把所有128个专家都放在内存里\n每次token生成都要从内存读取专家权重\n所以内存带宽直接决定了速度\n我们看四档配置\nDDR421338通道136GBS\n跑道15杠16tokens per second瓶颈\nDDR556008通道358GBS\n跑到大约25tokens per second\nMac统一内存800GBS以上\n跑到49.7\nTokens per second\n这就是为什么REDDY\n楼主的DDD24系统被卡在15tokens per second\n内存带宽就是天花板\n弟弟反超哥哥V4flash0731\n在九项agent基准测试中\n八项超过V4pro preview\n同一家族弟弟把哥哥打趴了\n从7.3涨到54.4\n这步一个统计误差\n这是重做后训练的结果\n架构没动\n284b more\n还是那个284b more\n但reward signal把agent policy完全重塑了\nArtificial analysis\n独立测评给出50分\nIntelligence index\nGd fil a yellow\n从1189涨到1559\n价格是更狠的一刀\n0.28美元\n每百万输出token仅为V4pro的13\nRtx\nTwenty eighty t one hundred\nAnd twenty three gigabytes d d r four\nFifteen point four tokens per second amd e p y c seventy\nFour o two\nTwenty four d d r four two one three three one hundred\nAnd thirty six gb slash as twenty eighty t\nTwenty two gigabytes three hundred\nAnd fifty ud q two\nUnderscore k underscore excel ninety one\nGigabytes two dev dot to twenty four\nGigabytes\nRtx forty\nNinety one hundred\nNinety two to two hundred\nAnd fifty six gigabytes dr five one five\nTwo zero tokens per second ud q four under sque\nCandor score\nExcel lama serve three unsloth\nTwo hundred\nAnd fifty six\nGigabytes\nMax studio\nForty nine point\nSeven tokens\nPer second\nUd queight\nUnderscore\nK underscore\nExcel unsloth studio gui\n给三档用户的推荐\n第一档个人开发者\n24G显存加128GDDDR5\n硬件投入2500美元\nUDIQ3下划线\nxx量化版\n八杠12tokens per second\n玩agent和学习门槛最低\n现用起来\n第二档创业团队\n192g max studio或DDDR5工作站\n3000~4500美元\nUDQ4下划线\nK下划线\nexcel接近无损\n25杠30tokens per second think hi\n跑长任务\n创业团队最划算\n第三档企业和重度用户256g max studio\n满血5000美元以上\nUDQ8下划线\nK下划线\nexcel官方无损\n49.7\nTokens per second\nThink max\n跑长链推理六个月回本零审核\n这是降维打击",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HWuF6FEKp",
+  "published_at": "1785812363",
+  "fetched_at": "2026-08-08T21:30:39+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 知识图谱\n\n## 架构概览 [BV1HWuF6FEKp P1 00:10]\n```mermaid\nflowchart TD\n    M[\"DeepSeek V4Flash\"] --> TP[\"总参数 284B\"]\n    M --> AP[\"激活参数 13B\"]\n    M --> EX[\"128 个专家\"]\n    EX --> RT[\"每个 token 激活 6 路由 (Top‑6)\"]\n    M --> MA[\"混合注意力 (CSA + HCA)\"]\n    M --> MR[\"权重常驻内存（RAM）\"]\n    MR --> BW[\"内存带宽决定推理速度\"]\n    AP --> CD[\"推理计算量 ≈ 13B 稠密模型\"]\n    RT --> CD\n```\n\n## 性能 vs 内存带宽 [BV1HWuF6FEKp P1 04:34]\n```mermaid\nflowchart LR\n    C1[\"配置 A：24G VRAM + 128G DDR5\"] --> BW1[\"内存带宽 136 GB/s (DDR4)\"]\n    BW1 --> T1[\"推理速度 ~15.4 tokens/s\"]\n    C2[\"配置 B：192G VRAM + DDR5\"] --> BW2[\"内存带宽 358 GB/s (DDR5)\"]\n    BW2 --> T2[\"推理速度 25‑30 tokens/s\"]\n    C3[\"配置 C：256G Max Studio\"] --> BW3[\"内存带宽 ≥800 GB/s (Mac Unified)\"]\n    BW3 --> T3[\"推理速度 49.7 tokens/s\"]\n    BW1 -.->|瓶颈| GPU[\"GPU 计算非瓶颈\"]\n    BW2 -.->|瓶颈| GPU\n    BW3 -.->|瓶颈| GPU\n```\n\n## 用户分层与硬件/成本建议 [BV1HWuF6FEKp P1 06:50]\n```mermaid\nflowchart TD\n    Tier1[\"个人开发者\\n· 24G VRAM + 128G DDR5\\n· 费用 $2,500\"] --> Q1[\"2‑bit 量化模型 (≈91 GB)\"]\n    Q1 --> S1[\"8‑12 tokens/s\"]\n    Tier2[\"创业团队\\n· 192G VRAM + DDR5\\n· 费用 $3,000‑4,500\"] --> Q2[\"4‑bit 近无损 (≈155 GB)\"]\n    Q2 --> S2[\"25‑30 tokens/s\"]\n    Tier3[\"企业/重度用户\\n· 256G Max Studio\\n· 费用 >$5,000\"] --> Q3[\"8‑bit 无损 (≈162 GB)\"]\n    Q3 --> S3[\"49.7 tokens/s\"]\n    Tier1 --> Use1[\"可运行基础对话\"]\n    Tier2 --> Use2[\"支持 agent 与代码问答\"]\n    Tier3 --> Use3[\"支持长链推理 (≈10k 步)\"]\n```",
+      "diagrams": [
+        {
+          "title": "架构概览",
+          "code": "flowchart TD\n    M[\"DeepSeek V4Flash\"] --> TP[\"总参数 284B\"]\n    M --> AP[\"激活参数 13B\"]\n    M --> EX[\"128 个专家\"]\n    EX --> RT[\"每个 token 激活 6 路由 (Top‑6)\"]\n    M --> MA[\"混合注意力 (CSA + HCA)\"]\n    M --> MR[\"权重常驻内存（RAM）\"]\n    MR --> BW[\"内存带宽决定推理速度\"]\n    AP --> CD[\"推理计算量 ≈ 13B 稠密模型\"]\n    RT --> CD"
+        },
+        {
+          "title": "性能 vs 内存带宽",
+          "code": "flowchart LR\n    C1[\"配置 A：24G VRAM + 128G DDR5\"] --> BW1[\"内存带宽 136 GB/s (DDR4)\"]\n    BW1 --> T1[\"推理速度 ~15.4 tokens/s\"]\n    C2[\"配置 B：192G VRAM + DDR5\"] --> BW2[\"内存带宽 358 GB/s (DDR5)\"]\n    BW2 --> T2[\"推理速度 25‑30 tokens/s\"]\n    C3[\"配置 C：256G Max Studio\"] --> BW3[\"内存带宽 ≥800 GB/s (Mac Unified)\"]\n    BW3 --> T3[\"推理速度 49.7 tokens/s\"]\n    BW1 -.->|瓶颈| GPU[\"GPU 计算非瓶颈\"]\n    BW2 -.->|瓶颈| GPU\n    BW3 -.->|瓶颈| GPU"
+        },
+        {
+          "title": "用户分层与硬件/成本建议",
+          "code": "flowchart TD\n    Tier1[\"个人开发者\\n· 24G VRAM + 128G DDR5\\n· 费用 $2,500\"] --> Q1[\"2‑bit 量化模型 (≈91 GB)\"]\n    Q1 --> S1[\"8‑12 tokens/s\"]\n    Tier2[\"创业团队\\n· 192G VRAM + DDR5\\n· 费用 $3,000‑4,500\"] --> Q2[\"4‑bit 近无损 (≈155 GB)\"]\n    Q2 --> S2[\"25‑30 tokens/s\"]\n    Tier3[\"企业/重度用户\\n· 256G Max Studio\\n· 费用 >$5,000\"] --> Q3[\"8‑bit 无损 (≈162 GB)\"]\n    Q3 --> S3[\"49.7 tokens/s\"]\n    Tier1 --> Use1[\"可运行基础对话\"]\n    Tier2 --> Use2[\"支持 agent 与代码问答\"]\n    Tier3 --> Use3[\"支持长链推理 (≈10k 步)\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T21:30:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 知识图谱\n\n## 架构概览 [BV1HWuF6FEKp P1 00:10]\n```mermaid\nflowchart TD\n    M[\"DeepSeek V4Flash\"] --> TP[\"总参数 284B\"]\n    M --> AP[\"激活参数 13B\"]\n    M --> EX[\"128 个专家\"]\n    EX --> RT[\"每个 token 激活 6 路由 (Top‑6)\"]\n    M --> MA[\"混合注意力 (CSA + HCA)\"]\n    M --> MR[\"权重常驻内存（RAM）\"]\n    MR --> BW[\"内存带宽决定推理速度\"]\n    AP --> CD[\"推理计算量 ≈ 13B 稠密模型\"]\n    RT --> CD\n```\n\n## 性能 vs 内存带宽 [BV1HWuF6FEKp P1 04:34]\n```mermaid\nflowchart LR\n    C1[\"配置 A：24G VRAM + 128G DDR5\"] --> BW1[\"内存带宽 136 GB/s (DDR4)\"]\n    BW1 --> T1[\"推理速度 ~15.4 tokens/s\"]\n    C2[\"配置 B：192G VRAM + DDR5\"] --> BW2[\"内存带宽 358 GB/s (DDR5)\"]\n    BW2 --> T2[\"推理速度 25‑30 tokens/s\"]\n    C3[\"配置 C：256G Max Studio\"] --> BW3[\"内存带宽 ≥800 GB/s (Mac Unified)\"]\n    BW3 --> T3[\"推理速度 49.7 tokens/s\"]\n    BW1 -.->|瓶颈| GPU[\"GPU 计算非瓶颈\"]\n    BW2 -.->|瓶颈| GPU\n    BW3 -.->|瓶颈| GPU\n```\n\n## 用户分层与硬件/成本建议 [BV1HWuF6FEKp P1 06:50]\n```mermaid\nflowchart TD\n    Tier1[\"个人开发者\\n· 24G VRAM + 128G DDR5\\n· 费用 $2,500\"] --> Q1[\"2‑bit 量化模型 (≈91 GB)\"]\n    Q1 --> S1[\"8‑12 tokens/s\"]\n    Tier2[\"创业团队\\n· 192G VRAM + DDR5\\n· 费用 $3,000‑4,500\"] --> Q2[\"4‑bit 近无损 (≈155 GB)\"]\n    Q2 --> S2[\"25‑30 tokens/s\"]\n    Tier3[\"企业/重度用户\\n· 256G Max Studio\\n· 费用 >$5,000\"] --> Q3[\"8‑bit 无损 (≈162 GB)\"]\n    Q3 --> S3[\"49.7 tokens/s\"]\n    Tier1 --> Use1[\"可运行基础对话\"]\n    Tier2 --> Use2[\"支持 agent 与代码问答\"]\n    Tier3 --> Use3[\"支持长链推理 (≈10k 步)\"]\n```",
+  "diagrams": [
+    {
+      "title": "架构概览",
+      "code": "flowchart TD\n    M[\"DeepSeek V4Flash\"] --> TP[\"总参数 284B\"]\n    M --> AP[\"激活参数 13B\"]\n    M --> EX[\"128 个专家\"]\n    EX --> RT[\"每个 token 激活 6 路由 (Top‑6)\"]\n    M --> MA[\"混合注意力 (CSA + HCA)\"]\n    M --> MR[\"权重常驻内存（RAM）\"]\n    MR --> BW[\"内存带宽决定推理速度\"]\n    AP --> CD[\"推理计算量 ≈ 13B 稠密模型\"]\n    RT --> CD"
+    },
+    {
+      "title": "性能 vs 内存带宽",
+      "code": "flowchart LR\n    C1[\"配置 A：24G VRAM + 128G DDR5\"] --> BW1[\"内存带宽 136 GB/s (DDR4)\"]\n    BW1 --> T1[\"推理速度 ~15.4 tokens/s\"]\n    C2[\"配置 B：192G VRAM + DDR5\"] --> BW2[\"内存带宽 358 GB/s (DDR5)\"]\n    BW2 --> T2[\"推理速度 25‑30 tokens/s\"]\n    C3[\"配置 C：256G Max Studio\"] --> BW3[\"内存带宽 ≥800 GB/s (Mac Unified)\"]\n    BW3 --> T3[\"推理速度 49.7 tokens/s\"]\n    BW1 -.->|瓶颈| GPU[\"GPU 计算非瓶颈\"]\n    BW2 -.->|瓶颈| GPU\n    BW3 -.->|瓶颈| GPU"
+    },
+    {
+      "title": "用户分层与硬件/成本建议",
+      "code": "flowchart TD\n    Tier1[\"个人开发者\\n· 24G VRAM + 128G DDR5\\n· 费用 $2,500\"] --> Q1[\"2‑bit 量化模型 (≈91 GB)\"]\n    Q1 --> S1[\"8‑12 tokens/s\"]\n    Tier2[\"创业团队\\n· 192G VRAM + DDR5\\n· 费用 $3,000‑4,500\"] --> Q2[\"4‑bit 近无损 (≈155 GB)\"]\n    Q2 --> S2[\"25‑30 tokens/s\"]\n    Tier3[\"企业/重度用户\\n· 256G Max Studio\\n· 费用 >$5,000\"] --> Q3[\"8‑bit 无损 (≈162 GB)\"]\n    Q3 --> S3[\"49.7 tokens/s\"]\n    Tier1 --> Use1[\"可运行基础对话\"]\n    Tier2 --> Use2[\"支持 agent 与代码问答\"]\n    Tier3 --> Use3[\"支持长链推理 (≈10k 步)\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T21:30:59+00:00"
+}

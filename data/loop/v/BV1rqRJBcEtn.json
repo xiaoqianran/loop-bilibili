@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1rqRJBcEtn",
+  "title": "hermes agent多智能体编排系统：kanban",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 576,
+  "text": "欢迎了解hermes agent的看板系统\n一个为多智能体协作而设计的任务管理引擎\n看板分为四列\n待办就绪进行中\n已完成任务\n在列间自动流转\n全程持久化到sq light永不丢失\n编排者模式是com版的核心设计\n当一个复杂目标到来时\n编排者不会亲自动手\n而是将目标拆解为多个子任务\n然后分配给不同的专家角色\n比如一个数据库迁移分析会被拆分为成本研究\n性能研究\n综合分析和最终文档四个任务\n分别交给研究员\n分析师和写手来完成\n编排者只做三件事\n分解路由汇总依赖引擎\n通过parent链接建立任务间关系\n当所有副任务完成后\n子任务自动从代办提升为就绪状态\n调度器按拓扑顺序派发\n确保数据流正确传递\n工作者经历完整生命周期\n首先被调度器分配任务\n然后在隔离工作空间中执行\n期间定期心跳上报进度\n最后通过结构化的summary加metadata\n交付成果给下游\n任何任务都可以通过block机制暂停\n等待人类输入决策\n人类通过unblock回复后\n调度器自动恢复任务并注入反馈上下文\n实现真正的人机协作\n多个智能体可以并行工作\n在不同任务上\n调度器按拓扑顺序和优先级分派任务\n最大化整体吞吐量\n让AI团队像人类团队一样高效协作\nPromise comb\n让AI团队像人类团队一样协作\n现在就试试\nHermes comband create\n开始你的第一个任务吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1rqRJBcEtn",
+  "published_at": "1777997325",
+  "fetched_at": "2026-08-07T15:05:55+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Hermes Agent 多智能体看板系统知识图谱\n\n## 系统总览 [BV1rqRJBcEtn P1 00:00]\n\n```mermaid\nflowchart TD\nKB[\"看板系统\"] --> COL[\"四列：待办、就绪、进行中、已完成\"]\nKB --> PERSIST[\"持久化至 SQLite（sq light）\"]\nKB --> ORCH[\"编排者模式（com版核心设计）\"]\nORCH --> DECOMP[\"任务分解\"]\nDECOMP --> SUB[\"子任务\"]\nSUB --> ASSIGN[\"分配给专家角色\"]\nASSIGN --> WORK[\"工作者\"]\nWORK --> SCHED[\"调度器\"]\nSCHED --> DISPATCH[\"按拓扑顺序派发\"]\nDISPATCH --> EXEC[\"执行（隔离工作空间）\"]\nEXEC --> HEART[\"定期心跳上报进度\"]\nEXEC --> SUM[\"结构化 summary + metadata\"]\nSUM --> DOWN[\"交付成果给下游\"]\nDOWN --> DONE[\"任务完成\"]\nORCH --> DEPENG[\"依赖引擎\"]\nDEPENG --> PARENT[\"parent 链接建立关系\"]\nPARENT --> READY[\"子任务完成后提升为就绪\"]\nREADY --> SCHED\n```\n\n## 任务生命周期 [BV1rqRJBcEtn P1 01:05]\n\n```mermaid\nflowchart TD\nASSIGN[\"调度器分配任务\"] --> ISOL[\"在隔离工作空间执行\"]\nISOL --> HEART[\"定期心跳上报进度\"]\nHEART --> SUM[\"生成结构化 summary + metadata\"]\nSUM --> DELIV[\"交付成果给下游\"]\nDELIV --> COMPLETE[\"任务进入已完成列\"]\n```\n\n## 编排者职责与流程 [BV1rqRJBcEtn P1 00:45]\n\n```mermaid\nflowchart TD\nORCH[\"编排者\"] --> DECOMP[\"分解\"]\nORCH --> ROUTE[\"路由\"]\nORCH --> AGG[\"汇总\"]\nORCH --> DEPENG[\"依赖引擎\"]\nDECOMP --> PARENT[\"通过 parent 链接建立任务关系\"]\nPARENT --> SUBS[\"生成子任务\"]\nSUBS --> READY[\"子任务完成后自动提升为就绪\"]\nREADY --> SCHED[\"调度器按拓扑顺序派发\"]\n```\n\n## 人机协作机制 [BV1rqRJBcEtn P1 01:18]\n\n```mermaid\nflowchart TD\nTASK[\"任何任务\"] --> BLOCK[\"通过 block 机制暂停\"]\nBLOCK --> HUMAN[\"等待人类输入决策\"]\nHUMAN --> UNBLOCK[\"人类 unblock 回复\"]\nUNBLOCK --> RESUME[\"调度器恢复任务并注入反馈上下文\"]\nRESUME --> CONTINUE[\"继续执行\"]\n```\n\n## 并行与吞吐量优化 [BV1rqRJBcEtn P1 01:31]\n\n```mermaid\nflowchart TD\nMULTI[\"多个智能体并行工作\"] --> DIFF[\"在不同任务上\"]\nMULTI --> SCHED[\"调度器按拓扑顺序和优先级分派\"]\nSCHED --> MAX[\"最大化整体吞吐量\"]\nMAX --> EFF[\"实现 AI 团队高效协作\"]\n```",
+      "diagrams": [
+        {
+          "title": "系统总览",
+          "code": "flowchart TD\nKB[\"看板系统\"] --> COL[\"四列：待办、就绪、进行中、已完成\"]\nKB --> PERSIST[\"持久化至 SQLite（sq light）\"]\nKB --> ORCH[\"编排者模式（com版核心设计）\"]\nORCH --> DECOMP[\"任务分解\"]\nDECOMP --> SUB[\"子任务\"]\nSUB --> ASSIGN[\"分配给专家角色\"]\nASSIGN --> WORK[\"工作者\"]\nWORK --> SCHED[\"调度器\"]\nSCHED --> DISPATCH[\"按拓扑顺序派发\"]\nDISPATCH --> EXEC[\"执行（隔离工作空间）\"]\nEXEC --> HEART[\"定期心跳上报进度\"]\nEXEC --> SUM[\"结构化 summary + metadata\"]\nSUM --> DOWN[\"交付成果给下游\"]\nDOWN --> DONE[\"任务完成\"]\nORCH --> DEPENG[\"依赖引擎\"]\nDEPENG --> PARENT[\"parent 链接建立关系\"]\nPARENT --> READY[\"子任务完成后提升为就绪\"]\nREADY --> SCHED"
+        },
+        {
+          "title": "任务生命周期",
+          "code": "flowchart TD\nASSIGN[\"调度器分配任务\"] --> ISOL[\"在隔离工作空间执行\"]\nISOL --> HEART[\"定期心跳上报进度\"]\nHEART --> SUM[\"生成结构化 summary + metadata\"]\nSUM --> DELIV[\"交付成果给下游\"]\nDELIV --> COMPLETE[\"任务进入已完成列\"]"
+        },
+        {
+          "title": "编排者职责与流程",
+          "code": "flowchart TD\nORCH[\"编排者\"] --> DECOMP[\"分解\"]\nORCH --> ROUTE[\"路由\"]\nORCH --> AGG[\"汇总\"]\nORCH --> DEPENG[\"依赖引擎\"]\nDECOMP --> PARENT[\"通过 parent 链接建立任务关系\"]\nPARENT --> SUBS[\"生成子任务\"]\nSUBS --> READY[\"子任务完成后自动提升为就绪\"]\nREADY --> SCHED[\"调度器按拓扑顺序派发\"]"
+        },
+        {
+          "title": "人机协作机制",
+          "code": "flowchart TD\nTASK[\"任何任务\"] --> BLOCK[\"通过 block 机制暂停\"]\nBLOCK --> HUMAN[\"等待人类输入决策\"]\nHUMAN --> UNBLOCK[\"人类 unblock 回复\"]\nUNBLOCK --> RESUME[\"调度器恢复任务并注入反馈上下文\"]\nRESUME --> CONTINUE[\"继续执行\"]"
+        },
+        {
+          "title": "并行与吞吐量优化",
+          "code": "flowchart TD\nMULTI[\"多个智能体并行工作\"] --> DIFF[\"在不同任务上\"]\nMULTI --> SCHED[\"调度器按拓扑顺序和优先级分派\"]\nSCHED --> MAX[\"最大化整体吞吐量\"]\nMAX --> EFF[\"实现 AI 团队高效协作\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T15:06:11+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Hermes Agent 多智能体看板系统知识图谱\n\n## 系统总览 [BV1rqRJBcEtn P1 00:00]\n\n```mermaid\nflowchart TD\nKB[\"看板系统\"] --> COL[\"四列：待办、就绪、进行中、已完成\"]\nKB --> PERSIST[\"持久化至 SQLite（sq light）\"]\nKB --> ORCH[\"编排者模式（com版核心设计）\"]\nORCH --> DECOMP[\"任务分解\"]\nDECOMP --> SUB[\"子任务\"]\nSUB --> ASSIGN[\"分配给专家角色\"]\nASSIGN --> WORK[\"工作者\"]\nWORK --> SCHED[\"调度器\"]\nSCHED --> DISPATCH[\"按拓扑顺序派发\"]\nDISPATCH --> EXEC[\"执行（隔离工作空间）\"]\nEXEC --> HEART[\"定期心跳上报进度\"]\nEXEC --> SUM[\"结构化 summary + metadata\"]\nSUM --> DOWN[\"交付成果给下游\"]\nDOWN --> DONE[\"任务完成\"]\nORCH --> DEPENG[\"依赖引擎\"]\nDEPENG --> PARENT[\"parent 链接建立关系\"]\nPARENT --> READY[\"子任务完成后提升为就绪\"]\nREADY --> SCHED\n```\n\n## 任务生命周期 [BV1rqRJBcEtn P1 01:05]\n\n```mermaid\nflowchart TD\nASSIGN[\"调度器分配任务\"] --> ISOL[\"在隔离工作空间执行\"]\nISOL --> HEART[\"定期心跳上报进度\"]\nHEART --> SUM[\"生成结构化 summary + metadata\"]\nSUM --> DELIV[\"交付成果给下游\"]\nDELIV --> COMPLETE[\"任务进入已完成列\"]\n```\n\n## 编排者职责与流程 [BV1rqRJBcEtn P1 00:45]\n\n```mermaid\nflowchart TD\nORCH[\"编排者\"] --> DECOMP[\"分解\"]\nORCH --> ROUTE[\"路由\"]\nORCH --> AGG[\"汇总\"]\nORCH --> DEPENG[\"依赖引擎\"]\nDECOMP --> PARENT[\"通过 parent 链接建立任务关系\"]\nPARENT --> SUBS[\"生成子任务\"]\nSUBS --> READY[\"子任务完成后自动提升为就绪\"]\nREADY --> SCHED[\"调度器按拓扑顺序派发\"]\n```\n\n## 人机协作机制 [BV1rqRJBcEtn P1 01:18]\n\n```mermaid\nflowchart TD\nTASK[\"任何任务\"] --> BLOCK[\"通过 block 机制暂停\"]\nBLOCK --> HUMAN[\"等待人类输入决策\"]\nHUMAN --> UNBLOCK[\"人类 unblock 回复\"]\nUNBLOCK --> RESUME[\"调度器恢复任务并注入反馈上下文\"]\nRESUME --> CONTINUE[\"继续执行\"]\n```\n\n## 并行与吞吐量优化 [BV1rqRJBcEtn P1 01:31]\n\n```mermaid\nflowchart TD\nMULTI[\"多个智能体并行工作\"] --> DIFF[\"在不同任务上\"]\nMULTI --> SCHED[\"调度器按拓扑顺序和优先级分派\"]\nSCHED --> MAX[\"最大化整体吞吐量\"]\nMAX --> EFF[\"实现 AI 团队高效协作\"]\n```",
+  "diagrams": [
+    {
+      "title": "系统总览",
+      "code": "flowchart TD\nKB[\"看板系统\"] --> COL[\"四列：待办、就绪、进行中、已完成\"]\nKB --> PERSIST[\"持久化至 SQLite（sq light）\"]\nKB --> ORCH[\"编排者模式（com版核心设计）\"]\nORCH --> DECOMP[\"任务分解\"]\nDECOMP --> SUB[\"子任务\"]\nSUB --> ASSIGN[\"分配给专家角色\"]\nASSIGN --> WORK[\"工作者\"]\nWORK --> SCHED[\"调度器\"]\nSCHED --> DISPATCH[\"按拓扑顺序派发\"]\nDISPATCH --> EXEC[\"执行（隔离工作空间）\"]\nEXEC --> HEART[\"定期心跳上报进度\"]\nEXEC --> SUM[\"结构化 summary + metadata\"]\nSUM --> DOWN[\"交付成果给下游\"]\nDOWN --> DONE[\"任务完成\"]\nORCH --> DEPENG[\"依赖引擎\"]\nDEPENG --> PARENT[\"parent 链接建立关系\"]\nPARENT --> READY[\"子任务完成后提升为就绪\"]\nREADY --> SCHED"
+    },
+    {
+      "title": "任务生命周期",
+      "code": "flowchart TD\nASSIGN[\"调度器分配任务\"] --> ISOL[\"在隔离工作空间执行\"]\nISOL --> HEART[\"定期心跳上报进度\"]\nHEART --> SUM[\"生成结构化 summary + metadata\"]\nSUM --> DELIV[\"交付成果给下游\"]\nDELIV --> COMPLETE[\"任务进入已完成列\"]"
+    },
+    {
+      "title": "编排者职责与流程",
+      "code": "flowchart TD\nORCH[\"编排者\"] --> DECOMP[\"分解\"]\nORCH --> ROUTE[\"路由\"]\nORCH --> AGG[\"汇总\"]\nORCH --> DEPENG[\"依赖引擎\"]\nDECOMP --> PARENT[\"通过 parent 链接建立任务关系\"]\nPARENT --> SUBS[\"生成子任务\"]\nSUBS --> READY[\"子任务完成后自动提升为就绪\"]\nREADY --> SCHED[\"调度器按拓扑顺序派发\"]"
+    },
+    {
+      "title": "人机协作机制",
+      "code": "flowchart TD\nTASK[\"任何任务\"] --> BLOCK[\"通过 block 机制暂停\"]\nBLOCK --> HUMAN[\"等待人类输入决策\"]\nHUMAN --> UNBLOCK[\"人类 unblock 回复\"]\nUNBLOCK --> RESUME[\"调度器恢复任务并注入反馈上下文\"]\nRESUME --> CONTINUE[\"继续执行\"]"
+    },
+    {
+      "title": "并行与吞吐量优化",
+      "code": "flowchart TD\nMULTI[\"多个智能体并行工作\"] --> DIFF[\"在不同任务上\"]\nMULTI --> SCHED[\"调度器按拓扑顺序和优先级分派\"]\nSCHED --> MAX[\"最大化整体吞吐量\"]\nMAX --> EFF[\"实现 AI 团队高效协作\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:06:11+00:00"
+}

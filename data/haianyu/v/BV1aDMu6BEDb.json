@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1aDMu6BEDb",
+  "title": "169. MTP为什么能一次预测多个未来 token？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1040,
+  "text": "今天的问题是\nMTP为什么能一次预测多个未来token\n在推导前先确立一个重要认识\n看到手稿中间蓝色的字\nDecoder only transformer\n输出的第I个向量\n表示模型对前I个token的理解\n顺着这个认识\n看到最上方的多层主模型\n尤其是最后一层FFN输出的紫色框区域\n也就是输出向量X在这个输出中\n第一行代表对T1的理解\n用来预测下一个位置\nT2对应上方的圈圈T2概率为0.7\n第二行代表对T1T2的理解\n用来预测下一个位置\nT3对应圈圈T3概率为0.6\n这里假设在训练阶段\n且序列总共只有三个token及T1T2和T3\n因为T4不存在主模型的第三行\n也就是对应T1T2T三整体理解的那一行\n画了橙色斜杠\n并标记为T4\n表示他在训练中被掩码遮蔽\n不参与计算\n传统方式是基于对T1的理解预测T2\n基于对T1T2的理解预测T3\n而我们要探讨的是\n如何在此基础上让模型在同一部里\n基于对T1T2的理解\n快速把未来的T4也预测出来\n有人可能会想\n为什么不直接在后面多加一个投影层\n一次性同时输出T3和T4\n答案是这样\n直接多头输出无法保证时序\n如果强行从一个向量投影出两个预测模型\n根本无法区分哪一个是T3\n哪一个是T4\n因为它们之间没有发生先后顺序的物理依赖\n而MTP的设计非常巧妙\n它采用的是串行依赖\n把视线移到下方的单层MTP1模块\n要预测T4必须引入T3做时序过渡\n顺着紫色粗箭头和绿色箭头往下看\nMTP1将主模型第二行输出\n即对T1T2的理解拼接上T3的词嵌入\n这就是右边橙色字公式\n对T1T2的理解加上T3预测T4\n而上一行则是对T1的理解\n加上T2预测T3\n那么这个拼进来的T3从哪来\n在训练阶段\nT3是已有的真实标签\n也就是ground truth\n因此可以直接拼接并列训练\n而在推理阶段\nT3则是主模型刚采样出的预测值\n也就是那个概率为0.6的预测\n我们将它的词嵌入拼入MTP1的输入\n就能顺理成章的预测出T4\n从而在时序上有了绝对保证\n顺着这个逻辑看MTP1的输出\n在三个token的训练假设下\n第一行应拥有对T1的理解和T2\n成功预测出T3对应概率为0.9的圈圈\n第二行因需要预测不存在的T4\n同样画了斜杠\n标记为T4\n最后看它为什么快\n传统的主模型有几十层\n预测T3和T4需要主模型跑两遍\n而在MTP设计中\n主模型只需跑一遍\n输出T3\n随后由极其轻量的单层MTP1顺着时序扫一下\n就能立刻预测出T4\n这就是MTP实现一次性高效率\n预测未来的底层逻辑",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1aDMu6BEDb",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:24+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

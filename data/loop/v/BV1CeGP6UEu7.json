@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1CeGP6UEu7",
+  "title": "DeepSeek V4 Flash正式版发布实测 vs GPT5.6 Luna",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2298,
+  "text": "就在今天\ndeep sk发布了他们正式的V4flash版本\n官方说大幅提升了他们整个智能体的一个能力\n整个奔驰Mark的表现\n评分已经远超了之前的V4pro这个版本\n我们来看一下它整体的一个评分表现情况哈\n可以看到在编程上面\nterminal bench2.1这边得分是82.7\n相较于GM5.2也是比他高的\n然后跟op4.8已经接近了\n那我比较关注的话是这个deep fw1这个榜单\n他也得到了54.4分\n相对于上一代的7.3分\n这个提升就非常明显了\n说明它后训练真的非常非常的重要\n也相较于pro版本也是提升非常明显的\n这个就是去考察他真实在一些开源项目里面的\n一些工程表现\n很有参考意义\n可以看到他也是比gm5.2高的\n然后跟op4.8稍微差一点\n最近的话还有一个GBT5.6LUNA版本\n这个新闻大家也知道\n就是降价吗\n降的非常便宜\n我们来看一下GBT5.6RULA这个版本\n他的每百万token只需要0.1美刀了\n也就是说六七毛钱\n下面我们进入实测环节\n我们还是准备两个项目\n也是之前各个模型测试过的\n是我真实的两个项目\n一个是图片生成A镜的这个项目\n然后我需要让他从我另外一个项目里面\n把我们整套的一个用户认证体系迁移过来\n然后需要去实现谷歌跟GITHUB认证登录\n同时还需要实现各种后端的API\n还需要保证它整个API实现的一个安全性\n那第二个实测任务的话\n我是有一个skills agent\n它是CLI终端的\n我需要把它做成一个外部UI\n那整体的话是考验它整体全战能力\n前端也有\n后端也有\n所以说我们这两个测试项目\n就考察了它整体全链路的能力\n在编码水平上\n我们来看一下它整体的一个表现吧\n好首先是这个图片生成A进程\n我们需要让他做一个落地页\n然后做认证吧\n我们先看前端部分哈\n后端的话我们单独会有GBT5.6SOL模型\n去对它实现的代码全面去做review\n所以我们先从视觉上去看它实现效果怎么样\n这个是deep seek v4新版本做的整体\n这个效果实现起来看起来也还可以\n那登录这边的话\n我们来看一下他这个谷歌登录可不可以哈\n可以看到它这个是可以登录成功的\n我们这个图片生成A进的\n它也是可以进来\n能读到我的一些信息的\n这个就相较于之前的版本提升太多了\n就一次性就搞定了\n我们这个项目\n以往你看像GEMINI3.6flash发布的时候\n他对话好几人都搞不定\n那这一个deep sv4flash正式版本\n一次性把我们整个链路复杂链路全部搞定了\n可以看到也可以了对吧\n那我们下面来看一下这一个GPP\n5.6ruler版本\n它完成的一个效果怎么样好\n这是他的落地审美上的话\n确实会比那一个deep sk v4flash会好一点好\n我们来点一下\n可以看到也是OK的\n我们来试下GITHUB登录\n也是OK的\n那说明这两个模型在我们这个复杂的项目上面\n在前端UIUX交互上实现都还挺好的\n那光从我个人的感觉的话\nGBT5.6RA这个版本写的稍微好一点\n待会我们再看一下它整体后端代码实现的情况\n到底怎么样好\n下面我们来看一下第二个项目\n第二个项目的话就是我们会有一个skuse agent嘛\n是终端的\n我们把它做成一个web ui\n那这边的话是DUPSICK写的\n也是涉及到A进的代码的修改API\n还有前端我们来试一下\n可以吗\n我们这边给了他一篇文章\n然后可以看到他的工具调用那些都是OK的好\n下面我们来看一下GPT5.6RA版本\n他的表现的话\n就UI上视觉上确实GPT5.6要好一点啊\n我们来试一下\n可以看到他这块也在thinking思考中\n我们下面来看一下他的一些其他的\n也可以看到他这块加载技能了\n就加载到我们这个需要有一个新闻提取器嘛\n完事之后他在执行一些工具调用\nOK可以看到GBT5.6RA这个版本\n他也帮我们总结出来了\n整体的实现效果也还挺好的\n那这两个项目的话\n他们在后端方面哈\n就A级的后端方面也是一次性写完的\n但前端方面的话\n两个都会有一些小问题\n都让他们去小修改了一下\n那紧接着下面我们来看一下\n我们这两个真实的项目\n我们都给到GBT5.6sol这一个模型\n让他们分别去review他们的后端代码实现\n我们最终来看一下它整体的一个评分\n结果怎么样\n好整体的评分结果出来了\n可以看到GBT5.6RULA在整体的表现里面\n它是表现的最好的\n那第二的话是deep sk v4flash\n它整体的评分也还挺好的\n那相较于之前我们测过gm5.2\n以及gm i3.6flag\n它的评分就会稍微差一点\n所以官方也说\ndeep sk v4flash在整个一个benchmark上表现\n评分已经接近gm5.2\n在我的这两个真实项目里面去评测来看的话\n差不多\n如果大家有GBT5.6RULA的访问权限\n那它的价格因为都差不多嘛\n所以说优先肯定是选用GBT5.6RA\n因为他是带着多模态的\n你可以做视觉理解\n就图片理解嘛\n那deep sk v4flash是不带多模态的\n所以你就会看到在整个UI\n如果你是写一些前端项目的话\n他的表现就会稍微差一点\n但如果是后端项目\n其实也差不太多\n通过我们这两个项目实测来看啊\n当然不代表所有的项目\n在后端表现都是这样子的\ngm5.2的话\n因为实在是抢不到嘛\n所以不推荐大家现在去使用\n期待他们下一个版本\n据说是gm5.5\n那谷歌这边的JM乃3.6\nflash的话\n我感觉他们已经秃顶放弃了\n感觉非常落后啊\n当然他其他方面非常强啊\n比如说他的多模态能力啊\n还有他的一些世界知识的能力啊\n都挺好的\nOK这就是这期视频所有的内容了\n我是阿娇\n我们下期见拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1CeGP6UEu7",
+  "published_at": "1785507542",
+  "fetched_at": "2026-08-06T20:42:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash vs GPT5.6 Luna 知识图谱\n\n## 整体评分概览 [00:03‑04:05]\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|得分 54.4| B[\"Benchmark 综合评分\"]\n    GPTR[\"GPT5.6 RULA\"] -->|得分 最高| B\n    GPTRA[\"GPT5.6 RA\"] -->|略优于 DeepSeek| DS\n    GM5[\"GM5.2\"] -->|得分 次佳| B\n    GMI[\"GM i3.6 flash\"] -->|得分 较低| B\n    B -->|生成| R[\"评分排名\"]\n    R -->|最佳模型| GPTR\n    R -->|第二名| DS\n    R -->|整体最佳| OB[\"Overall Best\"]\n```\n\n## 前端 UI 实现流程 [01:32‑02:18]\n```mermaid\nflowchart TD\n    PA[\"项目 A：图片生成落地页\"] --> LP[\"创建 Landing Page\"]\n    LP --> GA[\"实现 Google 登录\"]\n    LP --> GH[\"实现 GitHub 登录\"]\n    GA --> UI[\"前端 UI/UX 交互\"]\n    GH --> UI\n    UI --> TestDS[\"DeepSeek V4 Flash 登录测试 成功\"]\n    UI --> TestGPT[\"GPT5.6 系列 登录测试 成功\"]\n    TestDS --> AssessDS[\"UI 质量评估（DeepSeek）\"]\n    TestGPT --> AssessGPT[\"UI 质量评估（GPT5.6）\"]\n    AssessDS --> Compare[\"对比：GPT5.6 略优\"]\n```\n\n## 后端代码评审与能力对比 [03:47‑04:03]\n```mermaid\nflowchart TD\n    PB[\"项目 B：Skills Agent 转 Web UI\"] --> Conv[\"CLI → Web UI 转换\"]\n    Conv --> BC[\"后端代码实现\"]\n    BC --> ReviewDS[\"DeepSeek V4 Flash 代码 Review\"]\n    BC --> ReviewGPT[\"GPT5.6 SOL 代码 Review\"]\n    ReviewDS --> ScoreDS[\"后端评分 DeepSeek\"]\n    ReviewGPT --> ScoreGPT[\"后端评分 GPT5.6\"]\n    ScoreDS --> Merge[\"整体后端评估\"]\n    ScoreGPT --> Merge\n    Merge --> Final[\"后端表现结论：差距不大\"]\n```\n\n## 多模态 vs 单模态模型差异 [04:27‑04:38]\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|无多模态| NM[\"单模态\"]\n    GPT[\"GPT5.6 系列\"] -->|具备多模态| MM[\"多模态\"]\n    MM --> Vis[\"视觉理解（图片）\"]\n    NM --> Vis\n    Vis --> UIProj[\"前端项目适配性\"]\n    Vis --> BEProj[\"后端项目适配性\"]\n    UIProj --> RecDS[\"DeepSeek 前端略逊\"]\n    UIProj --> RecGPT[\"GPT5.6 前端略优\"]\n    BEProj --> RecDS2[\"DeepSeek 后端表现相近\"]\n    BEProj --> RecGPT2[\"GPT5.6 后端表现相近\"]\n    RecGPT --> FinalRec[\"推荐 GPT5.6（多模态）\"]\n```",
+      "diagrams": [
+        {
+          "title": "整体评分概览 [00:03‑04:05]",
+          "code": "flowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|得分 54.4| B[\"Benchmark 综合评分\"]\n    GPTR[\"GPT5.6 RULA\"] -->|得分 最高| B\n    GPTRA[\"GPT5.6 RA\"] -->|略优于 DeepSeek| DS\n    GM5[\"GM5.2\"] -->|得分 次佳| B\n    GMI[\"GM i3.6 flash\"] -->|得分 较低| B\n    B -->|生成| R[\"评分排名\"]\n    R -->|最佳模型| GPTR\n    R -->|第二名| DS\n    R -->|整体最佳| OB[\"Overall Best\"]"
+        },
+        {
+          "title": "前端 UI 实现流程 [01:32‑02:18]",
+          "code": "flowchart TD\n    PA[\"项目 A：图片生成落地页\"] --> LP[\"创建 Landing Page\"]\n    LP --> GA[\"实现 Google 登录\"]\n    LP --> GH[\"实现 GitHub 登录\"]\n    GA --> UI[\"前端 UI/UX 交互\"]\n    GH --> UI\n    UI --> TestDS[\"DeepSeek V4 Flash 登录测试 成功\"]\n    UI --> TestGPT[\"GPT5.6 系列 登录测试 成功\"]\n    TestDS --> AssessDS[\"UI 质量评估（DeepSeek）\"]\n    TestGPT --> AssessGPT[\"UI 质量评估（GPT5.6）\"]\n    AssessDS --> Compare[\"对比：GPT5.6 略优\"]"
+        },
+        {
+          "title": "后端代码评审与能力对比 [03:47‑04:03]",
+          "code": "flowchart TD\n    PB[\"项目 B：Skills Agent 转 Web UI\"] --> Conv[\"CLI → Web UI 转换\"]\n    Conv --> BC[\"后端代码实现\"]\n    BC --> ReviewDS[\"DeepSeek V4 Flash 代码 Review\"]\n    BC --> ReviewGPT[\"GPT5.6 SOL 代码 Review\"]\n    ReviewDS --> ScoreDS[\"后端评分 DeepSeek\"]\n    ReviewGPT --> ScoreGPT[\"后端评分 GPT5.6\"]\n    ScoreDS --> Merge[\"整体后端评估\"]\n    ScoreGPT --> Merge\n    Merge --> Final[\"后端表现结论：差距不大\"]"
+        },
+        {
+          "title": "多模态 vs 单模态模型差异 [04:27‑04:38]",
+          "code": "flowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|无多模态| NM[\"单模态\"]\n    GPT[\"GPT5.6 系列\"] -->|具备多模态| MM[\"多模态\"]\n    MM --> Vis[\"视觉理解（图片）\"]\n    NM --> Vis\n    Vis --> UIProj[\"前端项目适配性\"]\n    Vis --> BEProj[\"后端项目适配性\"]\n    UIProj --> RecDS[\"DeepSeek 前端略逊\"]\n    UIProj --> RecGPT[\"GPT5.6 前端略优\"]\n    BEProj --> RecDS2[\"DeepSeek 后端表现相近\"]\n    BEProj --> RecGPT2[\"GPT5.6 后端表现相近\"]\n    RecGPT --> FinalRec[\"推荐 GPT5.6（多模态）\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T20:42:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash vs GPT5.6 Luna 知识图谱\n\n## 整体评分概览 [00:03‑04:05]\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|得分 54.4| B[\"Benchmark 综合评分\"]\n    GPTR[\"GPT5.6 RULA\"] -->|得分 最高| B\n    GPTRA[\"GPT5.6 RA\"] -->|略优于 DeepSeek| DS\n    GM5[\"GM5.2\"] -->|得分 次佳| B\n    GMI[\"GM i3.6 flash\"] -->|得分 较低| B\n    B -->|生成| R[\"评分排名\"]\n    R -->|最佳模型| GPTR\n    R -->|第二名| DS\n    R -->|整体最佳| OB[\"Overall Best\"]\n```\n\n## 前端 UI 实现流程 [01:32‑02:18]\n```mermaid\nflowchart TD\n    PA[\"项目 A：图片生成落地页\"] --> LP[\"创建 Landing Page\"]\n    LP --> GA[\"实现 Google 登录\"]\n    LP --> GH[\"实现 GitHub 登录\"]\n    GA --> UI[\"前端 UI/UX 交互\"]\n    GH --> UI\n    UI --> TestDS[\"DeepSeek V4 Flash 登录测试 成功\"]\n    UI --> TestGPT[\"GPT5.6 系列 登录测试 成功\"]\n    TestDS --> AssessDS[\"UI 质量评估（DeepSeek）\"]\n    TestGPT --> AssessGPT[\"UI 质量评估（GPT5.6）\"]\n    AssessDS --> Compare[\"对比：GPT5.6 略优\"]\n```\n\n## 后端代码评审与能力对比 [03:47‑04:03]\n```mermaid\nflowchart TD\n    PB[\"项目 B：Skills Agent 转 Web UI\"] --> Conv[\"CLI → Web UI 转换\"]\n    Conv --> BC[\"后端代码实现\"]\n    BC --> ReviewDS[\"DeepSeek V4 Flash 代码 Review\"]\n    BC --> ReviewGPT[\"GPT5.6 SOL 代码 Review\"]\n    ReviewDS --> ScoreDS[\"后端评分 DeepSeek\"]\n    ReviewGPT --> ScoreGPT[\"后端评分 GPT5.6\"]\n    ScoreDS --> Merge[\"整体后端评估\"]\n    ScoreGPT --> Merge\n    Merge --> Final[\"后端表现结论：差距不大\"]\n```\n\n## 多模态 vs 单模态模型差异 [04:27‑04:38]\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|无多模态| NM[\"单模态\"]\n    GPT[\"GPT5.6 系列\"] -->|具备多模态| MM[\"多模态\"]\n    MM --> Vis[\"视觉理解（图片）\"]\n    NM --> Vis\n    Vis --> UIProj[\"前端项目适配性\"]\n    Vis --> BEProj[\"后端项目适配性\"]\n    UIProj --> RecDS[\"DeepSeek 前端略逊\"]\n    UIProj --> RecGPT[\"GPT5.6 前端略优\"]\n    BEProj --> RecDS2[\"DeepSeek 后端表现相近\"]\n    BEProj --> RecGPT2[\"GPT5.6 后端表现相近\"]\n    RecGPT --> FinalRec[\"推荐 GPT5.6（多模态）\"]\n```",
+  "diagrams": [
+    {
+      "title": "整体评分概览 [00:03‑04:05]",
+      "code": "flowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|得分 54.4| B[\"Benchmark 综合评分\"]\n    GPTR[\"GPT5.6 RULA\"] -->|得分 最高| B\n    GPTRA[\"GPT5.6 RA\"] -->|略优于 DeepSeek| DS\n    GM5[\"GM5.2\"] -->|得分 次佳| B\n    GMI[\"GM i3.6 flash\"] -->|得分 较低| B\n    B -->|生成| R[\"评分排名\"]\n    R -->|最佳模型| GPTR\n    R -->|第二名| DS\n    R -->|整体最佳| OB[\"Overall Best\"]"
+    },
+    {
+      "title": "前端 UI 实现流程 [01:32‑02:18]",
+      "code": "flowchart TD\n    PA[\"项目 A：图片生成落地页\"] --> LP[\"创建 Landing Page\"]\n    LP --> GA[\"实现 Google 登录\"]\n    LP --> GH[\"实现 GitHub 登录\"]\n    GA --> UI[\"前端 UI/UX 交互\"]\n    GH --> UI\n    UI --> TestDS[\"DeepSeek V4 Flash 登录测试 成功\"]\n    UI --> TestGPT[\"GPT5.6 系列 登录测试 成功\"]\n    TestDS --> AssessDS[\"UI 质量评估（DeepSeek）\"]\n    TestGPT --> AssessGPT[\"UI 质量评估（GPT5.6）\"]\n    AssessDS --> Compare[\"对比：GPT5.6 略优\"]"
+    },
+    {
+      "title": "后端代码评审与能力对比 [03:47‑04:03]",
+      "code": "flowchart TD\n    PB[\"项目 B：Skills Agent 转 Web UI\"] --> Conv[\"CLI → Web UI 转换\"]\n    Conv --> BC[\"后端代码实现\"]\n    BC --> ReviewDS[\"DeepSeek V4 Flash 代码 Review\"]\n    BC --> ReviewGPT[\"GPT5.6 SOL 代码 Review\"]\n    ReviewDS --> ScoreDS[\"后端评分 DeepSeek\"]\n    ReviewGPT --> ScoreGPT[\"后端评分 GPT5.6\"]\n    ScoreDS --> Merge[\"整体后端评估\"]\n    ScoreGPT --> Merge\n    Merge --> Final[\"后端表现结论：差距不大\"]"
+    },
+    {
+      "title": "多模态 vs 单模态模型差异 [04:27‑04:38]",
+      "code": "flowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|无多模态| NM[\"单模态\"]\n    GPT[\"GPT5.6 系列\"] -->|具备多模态| MM[\"多模态\"]\n    MM --> Vis[\"视觉理解（图片）\"]\n    NM --> Vis\n    Vis --> UIProj[\"前端项目适配性\"]\n    Vis --> BEProj[\"后端项目适配性\"]\n    UIProj --> RecDS[\"DeepSeek 前端略逊\"]\n    UIProj --> RecGPT[\"GPT5.6 前端略优\"]\n    BEProj --> RecDS2[\"DeepSeek 后端表现相近\"]\n    BEProj --> RecGPT2[\"GPT5.6 后端表现相近\"]\n    RecGPT --> FinalRec[\"推荐 GPT5.6（多模态）\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:42:35+00:00"
+}

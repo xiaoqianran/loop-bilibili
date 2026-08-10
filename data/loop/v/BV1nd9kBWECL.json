@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1nd9kBWECL",
+  "title": "ROI高？原创技术突破？Deepseek V4到底强在哪儿？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1102,
+  "text": "B站的朋友们大家好\n今天想和大家讨论的是ASICV4\n我个人的一些使用感受和感想\n先说结论\n我个人觉得DC c v4是一版性价比非常高\n可用性非常高的模型\n我们去评价一个模型的时候\n不仅要看它多个维度的测评指标\n还要看达到对应测评指标\n我们所需要的训练和推理成本\n我们不能抛开成本去谈最终的效果\n我们要看一个完整的性价比或者是投入产出比\n也就是ROI dusk\n他一以贯之的风格就是ROI非常高\n整个模型和技术报告是周五上午出来的嘛\n我一看到消息\n立马把手头的其他事情放在一边去\n开始看测评指标和技术报告\n那么第四个V4\n它是有以下几个特性\n第一呢是它有百万级的上下文窗口\n第二呢是在超长上下文的条件下\n单\ntoken推理的FLOS是上个版本的27%\nkv catch是上个版本的\n只有10%\n所以他的推理开销成本非常低\n所以我觉得在这种超长上下文的场景\n或者是智能体超多轮交互的场景\nDEPSV四一定是首选的基座模型\n同时呢它也有这个支持我们国产算力的推理\n这个意义其实也非常重大\n同时呢作为一个大模型的研究工作者呃\n我看到这出报告非常兴奋的一点是\n看到一些呃原创性的技术\n真正的在我们超大规模的模型训练里面\n发挥了重大作用\n包括像这个CSA和HCA呃\n混合注意机制\n来突破我们超长上下文的效率瓶颈\n第二呢就是之前已经有啊专门的论文去啊\n详细介绍了那个MHC流行约束超链接\n来优化之前的呃踩叉连接来稳定整个训练过程\n第三呢就是针对这个大模型训练过程中\n经常会遇到的loss back的问题\n就是我们的这个训练\nloss经常会出现这个刺突这样的情况\n他们是使用了anticipatory routing\n就是前瞻路由以及思维glue\n截断这两个工程技巧吧去解决的\n我觉得也是非常的有启发性\n那么我测评的时候呢\n其实是用了我自己构建的一些代码\n开发和文本生成的任务呃\n会发现其实在日常的啊\n代码开发和额日常工作相关的智能体任务上面\n对six v4表现的都非常啊完整非常好啊\n但是确实在一些比较tricky的啊\n有一点技巧的一些问题上\n会偶尔出现\n针对关键的token或者关键信息被忽略的情况\n所以确实可能和国际顶尖\n闭源模型是有一定差距的\n同时它因为不是原声多模态模型\n所以在图片视频音频文件这样的输入的情况下\n它也是有局限性的\n但是我觉得它本身也就是一个\n效率和效果的权衡吧\n所以整体来说\n我觉得DEPCCV4它就是一个性价比非常高\n并且有非常好的基础启发性啊\n这样的一个模型\n我相信也会有非常多的相关的商业应用的场景\n那么大家在使用TIPSCV4的时候\n会有什么感想或者感受\n也欢迎在评论区大家一起讨论",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1nd9kBWECL",
+  "published_at": "1777375921",
+  "fetched_at": "2026-08-10T08:17:49+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deepseek V4 知识图谱\n\n## 图1：模型特性概览 [BV1nd9kBWECL P1 00:45-00:58]\n```mermaid\nflowchart TD\n    A1[\"百万级上下文窗口\"]\n    A2[\"超长上下文 token 推理 FLOPs 27%\"]\n    A3[\"KV cache 10%\"]\n    A4[\"低推理开销\"]\n    A5[\"适用场景：超长上下文\"]\n    A6[\"适用场景：智能体多轮交互\"]\n    A7[\"支持国产算力\"]\n    A8[\"整体 ROI 高\"]\n\n    A1 --> A2\n    A1 --> A3\n    A2 --> A4\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A4 --> A7\n    A4 --> A8\n```\n\n## 图2：创新技术与训练优化 [BV1nd9kBWECL P1 01:20-02:05]\n```mermaid\nflowchart TD\n    B1[\"CSA & HCA 混合注意机制\"]\n    B2[\"突破超长上下文效率瓶颈\"]\n    B3[\"MHC 流行约束超链接\"]\n    B4[\"优化踩叉连接\"]\n    B5[\"Anticipatory Routing 前瞻路由\"]\n    B6[\"思维 glue 截断\"]\n    B7[\"解决 loss spike\"]\n    B8[\"稳定训练过程\"]\n\n    B1 --> B2\n    B3 --> B4\n    B3 --> B2\n    B5 --> B6\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8\n```\n\n## 图3：评测结果与适用场景 [BV1nd9kBWECL P1 02:09-02:46]\n```mermaid\nflowchart TD\n    C1[\"开发/文本生成任务\"]\n    C2[\"代码开发智能体任务\"]\n    C3[\"表现完整好\"]\n    C4[\"tricky 场景偶尔忽略关键 token\"]\n    C5[\"与国际闭源模型有差距\"]\n    C6[\"多模态输入局限\"]\n    C7[\"效率/效果权衡\"]\n    C8[\"高性价比 ROI\"]\n    C9[\"商业应用前景\"]\n\n    C1 --> C3\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5\n    C3 --> C7\n    C7 --> C8\n    C8 --> C9\n    C5 --> C6\n```",
+      "diagrams": [
+        {
+          "title": "图1：模型特性概览 [BV1nd9kBWECL P1 00:45-00:58]",
+          "code": "flowchart TD\n    A1[\"百万级上下文窗口\"]\n    A2[\"超长上下文 token 推理 FLOPs 27%\"]\n    A3[\"KV cache 10%\"]\n    A4[\"低推理开销\"]\n    A5[\"适用场景：超长上下文\"]\n    A6[\"适用场景：智能体多轮交互\"]\n    A7[\"支持国产算力\"]\n    A8[\"整体 ROI 高\"]\n\n    A1 --> A2\n    A1 --> A3\n    A2 --> A4\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A4 --> A7\n    A4 --> A8"
+        },
+        {
+          "title": "图2：创新技术与训练优化 [BV1nd9kBWECL P1 01:20-02:05]",
+          "code": "flowchart TD\n    B1[\"CSA & HCA 混合注意机制\"]\n    B2[\"突破超长上下文效率瓶颈\"]\n    B3[\"MHC 流行约束超链接\"]\n    B4[\"优化踩叉连接\"]\n    B5[\"Anticipatory Routing 前瞻路由\"]\n    B6[\"思维 glue 截断\"]\n    B7[\"解决 loss spike\"]\n    B8[\"稳定训练过程\"]\n\n    B1 --> B2\n    B3 --> B4\n    B3 --> B2\n    B5 --> B6\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8"
+        },
+        {
+          "title": "图3：评测结果与适用场景 [BV1nd9kBWECL P1 02:09-02:46]",
+          "code": "flowchart TD\n    C1[\"开发/文本生成任务\"]\n    C2[\"代码开发智能体任务\"]\n    C3[\"表现完整好\"]\n    C4[\"tricky 场景偶尔忽略关键 token\"]\n    C5[\"与国际闭源模型有差距\"]\n    C6[\"多模态输入局限\"]\n    C7[\"效率/效果权衡\"]\n    C8[\"高性价比 ROI\"]\n    C9[\"商业应用前景\"]\n\n    C1 --> C3\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5\n    C3 --> C7\n    C7 --> C8\n    C8 --> C9\n    C5 --> C6"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T08:18:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deepseek V4 知识图谱\n\n## 图1：模型特性概览 [BV1nd9kBWECL P1 00:45-00:58]\n```mermaid\nflowchart TD\n    A1[\"百万级上下文窗口\"]\n    A2[\"超长上下文 token 推理 FLOPs 27%\"]\n    A3[\"KV cache 10%\"]\n    A4[\"低推理开销\"]\n    A5[\"适用场景：超长上下文\"]\n    A6[\"适用场景：智能体多轮交互\"]\n    A7[\"支持国产算力\"]\n    A8[\"整体 ROI 高\"]\n\n    A1 --> A2\n    A1 --> A3\n    A2 --> A4\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A4 --> A7\n    A4 --> A8\n```\n\n## 图2：创新技术与训练优化 [BV1nd9kBWECL P1 01:20-02:05]\n```mermaid\nflowchart TD\n    B1[\"CSA & HCA 混合注意机制\"]\n    B2[\"突破超长上下文效率瓶颈\"]\n    B3[\"MHC 流行约束超链接\"]\n    B4[\"优化踩叉连接\"]\n    B5[\"Anticipatory Routing 前瞻路由\"]\n    B6[\"思维 glue 截断\"]\n    B7[\"解决 loss spike\"]\n    B8[\"稳定训练过程\"]\n\n    B1 --> B2\n    B3 --> B4\n    B3 --> B2\n    B5 --> B6\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8\n```\n\n## 图3：评测结果与适用场景 [BV1nd9kBWECL P1 02:09-02:46]\n```mermaid\nflowchart TD\n    C1[\"开发/文本生成任务\"]\n    C2[\"代码开发智能体任务\"]\n    C3[\"表现完整好\"]\n    C4[\"tricky 场景偶尔忽略关键 token\"]\n    C5[\"与国际闭源模型有差距\"]\n    C6[\"多模态输入局限\"]\n    C7[\"效率/效果权衡\"]\n    C8[\"高性价比 ROI\"]\n    C9[\"商业应用前景\"]\n\n    C1 --> C3\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5\n    C3 --> C7\n    C7 --> C8\n    C8 --> C9\n    C5 --> C6\n```",
+  "diagrams": [
+    {
+      "title": "图1：模型特性概览 [BV1nd9kBWECL P1 00:45-00:58]",
+      "code": "flowchart TD\n    A1[\"百万级上下文窗口\"]\n    A2[\"超长上下文 token 推理 FLOPs 27%\"]\n    A3[\"KV cache 10%\"]\n    A4[\"低推理开销\"]\n    A5[\"适用场景：超长上下文\"]\n    A6[\"适用场景：智能体多轮交互\"]\n    A7[\"支持国产算力\"]\n    A8[\"整体 ROI 高\"]\n\n    A1 --> A2\n    A1 --> A3\n    A2 --> A4\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A4 --> A7\n    A4 --> A8"
+    },
+    {
+      "title": "图2：创新技术与训练优化 [BV1nd9kBWECL P1 01:20-02:05]",
+      "code": "flowchart TD\n    B1[\"CSA & HCA 混合注意机制\"]\n    B2[\"突破超长上下文效率瓶颈\"]\n    B3[\"MHC 流行约束超链接\"]\n    B4[\"优化踩叉连接\"]\n    B5[\"Anticipatory Routing 前瞻路由\"]\n    B6[\"思维 glue 截断\"]\n    B7[\"解决 loss spike\"]\n    B8[\"稳定训练过程\"]\n\n    B1 --> B2\n    B3 --> B4\n    B3 --> B2\n    B5 --> B6\n    B5 --> B7\n    B6 --> B7\n    B7 --> B8"
+    },
+    {
+      "title": "图3：评测结果与适用场景 [BV1nd9kBWECL P1 02:09-02:46]",
+      "code": "flowchart TD\n    C1[\"开发/文本生成任务\"]\n    C2[\"代码开发智能体任务\"]\n    C3[\"表现完整好\"]\n    C4[\"tricky 场景偶尔忽略关键 token\"]\n    C5[\"与国际闭源模型有差距\"]\n    C6[\"多模态输入局限\"]\n    C7[\"效率/效果权衡\"]\n    C8[\"高性价比 ROI\"]\n    C9[\"商业应用前景\"]\n\n    C1 --> C3\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5\n    C3 --> C7\n    C7 --> C8\n    C8 --> C9\n    C5 --> C6"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:18:03+00:00"
+}

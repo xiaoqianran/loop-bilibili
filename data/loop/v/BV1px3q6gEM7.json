@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1px3q6gEM7",
+  "title": "此视频用于报复deepseek误判信息",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 41,
+  "text": "Hello my friend\n嘿嘿我是一只大肥鱼\n我是一只大肥鱼\n我是一只大肥鱼",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1px3q6gEM7",
+  "published_at": "1785243917",
+  "fetched_at": "2026-08-08T03:56:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 深度学习视频字幕知识图谱\n\n## 图 1：讲话者的问候与自我介绍总览\n```mermaid\nflowchart TD\n    S1[\"讲话者\"] --> EN[\"English Greeting<br/>Hello my friend\"]\n    S1 --> CN1[\"Chinese Intro with Laugh<br/>嘿嘿我是一只大肥鱼\"]\n    S1 --> CN2[\"Chinese Intro without Laugh<br/>我是一只大肥鱼\"]\n    EN --> L1[\"语言：English\"]\n    CN1 --> L2[\"语言：Chinese\"]\n    CN2 --> L2\n    CN1 --> EM1[\"情感：笑声\"]\n    CN2 --> EM2[\"情感：无\"]\n    CN1 --> ID1[\"身份描述：大肥鱼\"]\n    CN2 --> ID1\n    ID1 --> ADJ1[\"形容词：大\"]\n    ID1 --> ADJ2[\"形容词：肥\"]\n    ID1 --> OBJ[\"对象：鱼\"]\n```\n- 英文问候: [BV1px3q6gEM7 P1 00:02]  \n- 中文自我介绍（含笑）: [BV1px3q6gEM7 P1 00:07]  \n- 中文自我介绍（无笑）: [BV1px3q6gEM7 P1 00:10]  \n\n## 图 2：自我介绍的结构化流程\n```mermaid\nflowchart LR\n    A0[\"开始\"] --> A1[\"讲话者发出问候\"]\n    A1 --> A2[\"出现笑声（嘿嘿）\"]\n    A2 --> A3[\"自我介绍：我是一只大肥鱼\"]\n    A1 --> B1[\"无笑声的自我介绍\"]\n    B1 --> B2[\"自我介绍：我是一只大肥鱼\"]\n    A3 --> C1[\"确认身份：大肥鱼\"]\n    B2 --> C1\n    C1 --> D1[\"形容词：大\"]\n    C1 --> D2[\"形容词：肥\"]\n    C1 --> D3[\"对象：鱼\"]\n    D1 --> E1[\"结束\"]\n    D2 --> E1\n    D3 --> E1\n```\n- 含笑声的自我介绍: [BV1px3q6gEM7 P1 00:07]  \n- 无笑声的自我介绍: [BV1px3q6gEM7 P1 00:10]  ",
+      "diagrams": [
+        {
+          "title": "图 1：讲话者的问候与自我介绍总览",
+          "code": "flowchart TD\n    S1[\"讲话者\"] --> EN[\"English Greeting<br/>Hello my friend\"]\n    S1 --> CN1[\"Chinese Intro with Laugh<br/>嘿嘿我是一只大肥鱼\"]\n    S1 --> CN2[\"Chinese Intro without Laugh<br/>我是一只大肥鱼\"]\n    EN --> L1[\"语言：English\"]\n    CN1 --> L2[\"语言：Chinese\"]\n    CN2 --> L2\n    CN1 --> EM1[\"情感：笑声\"]\n    CN2 --> EM2[\"情感：无\"]\n    CN1 --> ID1[\"身份描述：大肥鱼\"]\n    CN2 --> ID1\n    ID1 --> ADJ1[\"形容词：大\"]\n    ID1 --> ADJ2[\"形容词：肥\"]\n    ID1 --> OBJ[\"对象：鱼\"]"
+        },
+        {
+          "title": "图 2：自我介绍的结构化流程",
+          "code": "flowchart LR\n    A0[\"开始\"] --> A1[\"讲话者发出问候\"]\n    A1 --> A2[\"出现笑声（嘿嘿）\"]\n    A2 --> A3[\"自我介绍：我是一只大肥鱼\"]\n    A1 --> B1[\"无笑声的自我介绍\"]\n    B1 --> B2[\"自我介绍：我是一只大肥鱼\"]\n    A3 --> C1[\"确认身份：大肥鱼\"]\n    B2 --> C1\n    C1 --> D1[\"形容词：大\"]\n    C1 --> D2[\"形容词：肥\"]\n    C1 --> D3[\"对象：鱼\"]\n    D1 --> E1[\"结束\"]\n    D2 --> E1\n    D3 --> E1"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-08T03:56:58+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 深度学习视频字幕知识图谱\n\n## 图 1：讲话者的问候与自我介绍总览\n```mermaid\nflowchart TD\n    S1[\"讲话者\"] --> EN[\"English Greeting<br/>Hello my friend\"]\n    S1 --> CN1[\"Chinese Intro with Laugh<br/>嘿嘿我是一只大肥鱼\"]\n    S1 --> CN2[\"Chinese Intro without Laugh<br/>我是一只大肥鱼\"]\n    EN --> L1[\"语言：English\"]\n    CN1 --> L2[\"语言：Chinese\"]\n    CN2 --> L2\n    CN1 --> EM1[\"情感：笑声\"]\n    CN2 --> EM2[\"情感：无\"]\n    CN1 --> ID1[\"身份描述：大肥鱼\"]\n    CN2 --> ID1\n    ID1 --> ADJ1[\"形容词：大\"]\n    ID1 --> ADJ2[\"形容词：肥\"]\n    ID1 --> OBJ[\"对象：鱼\"]\n```\n- 英文问候: [BV1px3q6gEM7 P1 00:02]  \n- 中文自我介绍（含笑）: [BV1px3q6gEM7 P1 00:07]  \n- 中文自我介绍（无笑）: [BV1px3q6gEM7 P1 00:10]  \n\n## 图 2：自我介绍的结构化流程\n```mermaid\nflowchart LR\n    A0[\"开始\"] --> A1[\"讲话者发出问候\"]\n    A1 --> A2[\"出现笑声（嘿嘿）\"]\n    A2 --> A3[\"自我介绍：我是一只大肥鱼\"]\n    A1 --> B1[\"无笑声的自我介绍\"]\n    B1 --> B2[\"自我介绍：我是一只大肥鱼\"]\n    A3 --> C1[\"确认身份：大肥鱼\"]\n    B2 --> C1\n    C1 --> D1[\"形容词：大\"]\n    C1 --> D2[\"形容词：肥\"]\n    C1 --> D3[\"对象：鱼\"]\n    D1 --> E1[\"结束\"]\n    D2 --> E1\n    D3 --> E1\n```\n- 含笑声的自我介绍: [BV1px3q6gEM7 P1 00:07]  \n- 无笑声的自我介绍: [BV1px3q6gEM7 P1 00:10]  ",
+  "diagrams": [
+    {
+      "title": "图 1：讲话者的问候与自我介绍总览",
+      "code": "flowchart TD\n    S1[\"讲话者\"] --> EN[\"English Greeting<br/>Hello my friend\"]\n    S1 --> CN1[\"Chinese Intro with Laugh<br/>嘿嘿我是一只大肥鱼\"]\n    S1 --> CN2[\"Chinese Intro without Laugh<br/>我是一只大肥鱼\"]\n    EN --> L1[\"语言：English\"]\n    CN1 --> L2[\"语言：Chinese\"]\n    CN2 --> L2\n    CN1 --> EM1[\"情感：笑声\"]\n    CN2 --> EM2[\"情感：无\"]\n    CN1 --> ID1[\"身份描述：大肥鱼\"]\n    CN2 --> ID1\n    ID1 --> ADJ1[\"形容词：大\"]\n    ID1 --> ADJ2[\"形容词：肥\"]\n    ID1 --> OBJ[\"对象：鱼\"]"
+    },
+    {
+      "title": "图 2：自我介绍的结构化流程",
+      "code": "flowchart LR\n    A0[\"开始\"] --> A1[\"讲话者发出问候\"]\n    A1 --> A2[\"出现笑声（嘿嘿）\"]\n    A2 --> A3[\"自我介绍：我是一只大肥鱼\"]\n    A1 --> B1[\"无笑声的自我介绍\"]\n    B1 --> B2[\"自我介绍：我是一只大肥鱼\"]\n    A3 --> C1[\"确认身份：大肥鱼\"]\n    B2 --> C1\n    C1 --> D1[\"形容词：大\"]\n    C1 --> D2[\"形容词：肥\"]\n    C1 --> D3[\"对象：鱼\"]\n    D1 --> E1[\"结束\"]\n    D2 --> E1\n    D3 --> E1"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T03:56:58+00:00"
+}

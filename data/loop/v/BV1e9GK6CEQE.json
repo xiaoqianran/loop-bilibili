@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1e9GK6CEQE",
+  "title": "零基础AI制作3D跑酷游戏|全流程教程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1351,
+  "text": "这期视频我会用5分钟\n教大家制作一个3D跑酷游戏\n无需任何编程和3D建模基础\n这是最终效果\n我们开始吧\n我是老余\n专注做精品AI游戏开发教程\n先从制作角色开始\n为了保证画面风格一致\n建议大家先生成一张游戏实机图\n再从实际图中提取角色三视图\n钱币道路障碍物\n这些物件\n角色三视图我们确保它是t pose姿态的\n方便后续自动绑骨\n准备好图片后\n我们来到triple3D工作台\n这是一个专业的AI3D建模工具\n可以通过文字或者图片\n一键生成高精度的3D模型\n我们选择这里的多视图生成模型功能\n上传三视图\n下面这里还支持分部件生成\n调整贴图和拓扑设置\n以及开启pp r材质\n这里不需要设置\n我们选择最新的V3.1高精度模型\n点击生成生成好了\n效果很不错\n细节还原的很清楚\n这里专业版提供三次免费重试机柜\n旗舰版可以无限重试\n不消耗额外积分\n接下来我们再重拓扑\n这里把它处理成游戏里不易卡顿的版本\n开启智能低模重拓扑好了\n我们可以看到这个面数和顶点数都大大降低了\n然后给角色加上动画\n在动画这里选择人物模型\n先自动绑定骨骼搜索跑步动画导出的时候\n在这里勾选上要导出的动画\n就可以连同动画一起导出\n非常方便\n长期使用的话\n可以使用右上角这里的一键发送至3D软件\n主流建模和游戏引擎\n这里都有对应插件\n接下来做游戏道路\n我们的道路是前后等宽的长方形道路\n前方和后方给同一张图片就够了\n这样道路的宽度是前后对齐的\n生成好了\n细节很不错\n我们同样给它重拓扑一下\n然后下载下来还剩下金币和障碍物\n这次我们可以使用批量图片生成模型\n来一次性生成多个模型\n上传所有要生成的图片\n打开图片自动优化\n点击生成\n很快就都生成好了\n往拓扑尼下下载下来\n接下来的步骤会用到unity AI\n这里演示\n国内版也可以使用海外版的unity AI\n新建一个3D项目\n把刚刚下载的资源解压后拖进来\n在AI这里open assistant\n先输入斜杠\nManage skills\n启用这些技能和插件\n收录这段提示词\n如果你觉得有帮助的话\n可以给我点赞收藏\n开启全自动模式\n让它自己跑\n大概半个小时后\nAI会做好一个版本\n我们试一下\n有什么问题\n直接跟他说\n在这里我告诉他跑步动画要循环播放\n障碍物模型要替换\n在他改的时候\n我们来prefect下看一下它生成的路面\n现在路面太窄\n人物都跑到扶手上去了\n停止游戏\n双击进去\n选中路面\n可以选择左边的缩放工具\n拖动修改\n也可以直接改scale\n这里的数值把八改成12\n这个宽度就大概合适了\n写提示词告诉他\n如果你想改障碍物的摆放位置或者删除\n需要连碰撞体一起修改\n不能只动模型贴图\n我稍微调整了一下障碍物的位置\n然后让他在场景中加入金币\n游戏的核心逻辑就完全做好了\n然后我们去网上随便找一个天空和素材\n使用这个版本导入拖动进去\n让它生成天空盒材质\n并应用一个3D跑酷游戏\n就这样完成了\n整个过程真的很简单\ntriple在整个游戏制作过程中\n为我提供了很大的帮助\n如果你也想做一个自己的3D游戏\n真的可以试试\n现在新用户去玩就送300能量\n足够生成十几个模型\n大家快去试试吧\n如果觉得这期视频有帮助的话\n欢迎点赞支持我\n更新更多干货教程\n视频有什么问题都可以交流\n我是专注研究AI做游戏的老驴\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1e9GK6CEQE",
+  "published_at": "1785837600",
+  "fetched_at": "2026-08-08T13:49:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T13:58:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T13:58:19+00:00"
+}

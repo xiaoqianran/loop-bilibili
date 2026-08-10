@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1ze3x6NE6F",
+  "title": "Codex DeepSeek",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 345,
+  "text": "我们先看codex deep seek\n这一节的重点是理解他在真实开发流程里\n承担什么角色\n而不是只把它当成代码生成器\nCodex deep seek\n可以从几个关键词理解deep sk配置工作原理\n前置条件\n先抓住这些概念\n后面的操作就不会只停留在按钮层面\n落地时按一条主线推进\n先明确目标\n再给codex足够上下文\n让他执行任务\n最后通过日志DF或测试审查结果\n配置的意义不只是换模型或装工具\n而是让codex在正确环境里读项目\n执行命令并稳定验证\ncodex deep seek用得越深入\n越要重视边界\n凡是会改文件\n跑命令\n访问服务或影响生产的动作\n都要保留审查和回退空间\n建议从小而明确的任务开始\n让codex说明他做了什么\n怎么验证\n稳定之后\n再把配置审查和自动化流程逐步交给他",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ze3x6NE6F",
+  "published_at": "1785580200",
+  "fetched_at": "2026-08-07T14:39:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Codex DeepSeek 学习图谱\n\n## 角色与配置意义 <!-- [BV1ze3x6NE6F P1 00:03] [BV1ze3x6NE6F P1 00:08] [BV1ze3x6NE6F P1 00:39] [BV1ze3x6NE6F P1 00:42] [BV1ze3x6NE6F P1 00:45] -->\n```mermaid\nflowchart TD\n    A1[\"Codex DeepSeek 角色\"]\n    A2[\"代码生成器（误区）\"]\n    A3[\"开发流程中的集成工具\"]\n    A4[\"配置意义：环境设定\"]\n    A5[\"读取项目代码\"]\n    A6[\"执行命令并验证\"]\n\n    A1 --> A3\n    A2 -.-> A1\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n```\n\n## 基本工作流程 <!-- [BV1ze3x6NE6F P1 00:29] [BV1ze3x6NE6F P1 00:30] [BV1ze3x6NE6F P1 00:33] [BV1ze3x6NE6F P1 00:34] [BV1ze3x6NE6F P1 01:08] [BV1ze3x6NE6F P1 01:10] -->\n```mermaid\nflowchart LR\n    B1[\"明确目标\"]\n    B2[\"提供足够上下文\"]\n    B3[\"Codex 执行任务\"]\n    B4[\"日志/测试审查结果\"]\n    B5[\"验证通过 → 稳定\"]\n    B6[\"交付配置审查与自动化\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6\n```\n\n## 边界与安全措施 <!-- [BV1ze3x6NE6F P1 00:55] [BV1ze3x6NE6F P1 00:56] [BV1ze3x6NE6F P1 00:58] [BV1ze3x6NE6F P1 01:02] -->\n```mermaid\nflowchart TD\n    C1[\"可能修改文件的动作\"]\n    C2[\"运行命令的动作\"]\n    C3[\"访问服务/影响生产\"]\n    C4[\"审查机制\"]\n    C5[\"回退空间\"]\n    C6[\"小而明确任务起步\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C6 --> C1\n    C6 --> C2\n    C6 --> C3\n```",
+      "diagrams": [
+        {
+          "title": "角色与配置意义 <!-- -->",
+          "code": "flowchart TD\n    A1[\"Codex DeepSeek 角色\"]\n    A2[\"代码生成器（误区）\"]\n    A3[\"开发流程中的集成工具\"]\n    A4[\"配置意义：环境设定\"]\n    A5[\"读取项目代码\"]\n    A6[\"执行命令并验证\"]\n\n    A1 --> A3\n    A2 -.-> A1\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6"
+        },
+        {
+          "title": "基本工作流程 <!-- -->",
+          "code": "flowchart LR\n    B1[\"明确目标\"]\n    B2[\"提供足够上下文\"]\n    B3[\"Codex 执行任务\"]\n    B4[\"日志/测试审查结果\"]\n    B5[\"验证通过 → 稳定\"]\n    B6[\"交付配置审查与自动化\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6"
+        },
+        {
+          "title": "边界与安全措施 <!-- -->",
+          "code": "flowchart TD\n    C1[\"可能修改文件的动作\"]\n    C2[\"运行命令的动作\"]\n    C3[\"访问服务/影响生产\"]\n    C4[\"审查机制\"]\n    C5[\"回退空间\"]\n    C6[\"小而明确任务起步\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C6 --> C1\n    C6 --> C2\n    C6 --> C3"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T14:39:44+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Codex DeepSeek 学习图谱\n\n## 角色与配置意义 <!-- [BV1ze3x6NE6F P1 00:03] [BV1ze3x6NE6F P1 00:08] [BV1ze3x6NE6F P1 00:39] [BV1ze3x6NE6F P1 00:42] [BV1ze3x6NE6F P1 00:45] -->\n```mermaid\nflowchart TD\n    A1[\"Codex DeepSeek 角色\"]\n    A2[\"代码生成器（误区）\"]\n    A3[\"开发流程中的集成工具\"]\n    A4[\"配置意义：环境设定\"]\n    A5[\"读取项目代码\"]\n    A6[\"执行命令并验证\"]\n\n    A1 --> A3\n    A2 -.-> A1\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n```\n\n## 基本工作流程 <!-- [BV1ze3x6NE6F P1 00:29] [BV1ze3x6NE6F P1 00:30] [BV1ze3x6NE6F P1 00:33] [BV1ze3x6NE6F P1 00:34] [BV1ze3x6NE6F P1 01:08] [BV1ze3x6NE6F P1 01:10] -->\n```mermaid\nflowchart LR\n    B1[\"明确目标\"]\n    B2[\"提供足够上下文\"]\n    B3[\"Codex 执行任务\"]\n    B4[\"日志/测试审查结果\"]\n    B5[\"验证通过 → 稳定\"]\n    B6[\"交付配置审查与自动化\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6\n```\n\n## 边界与安全措施 <!-- [BV1ze3x6NE6F P1 00:55] [BV1ze3x6NE6F P1 00:56] [BV1ze3x6NE6F P1 00:58] [BV1ze3x6NE6F P1 01:02] -->\n```mermaid\nflowchart TD\n    C1[\"可能修改文件的动作\"]\n    C2[\"运行命令的动作\"]\n    C3[\"访问服务/影响生产\"]\n    C4[\"审查机制\"]\n    C5[\"回退空间\"]\n    C6[\"小而明确任务起步\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C6 --> C1\n    C6 --> C2\n    C6 --> C3\n```",
+  "diagrams": [
+    {
+      "title": "角色与配置意义 <!-- -->",
+      "code": "flowchart TD\n    A1[\"Codex DeepSeek 角色\"]\n    A2[\"代码生成器（误区）\"]\n    A3[\"开发流程中的集成工具\"]\n    A4[\"配置意义：环境设定\"]\n    A5[\"读取项目代码\"]\n    A6[\"执行命令并验证\"]\n\n    A1 --> A3\n    A2 -.-> A1\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6"
+    },
+    {
+      "title": "基本工作流程 <!-- -->",
+      "code": "flowchart LR\n    B1[\"明确目标\"]\n    B2[\"提供足够上下文\"]\n    B3[\"Codex 执行任务\"]\n    B4[\"日志/测试审查结果\"]\n    B5[\"验证通过 → 稳定\"]\n    B6[\"交付配置审查与自动化\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6"
+    },
+    {
+      "title": "边界与安全措施 <!-- -->",
+      "code": "flowchart TD\n    C1[\"可能修改文件的动作\"]\n    C2[\"运行命令的动作\"]\n    C3[\"访问服务/影响生产\"]\n    C4[\"审查机制\"]\n    C5[\"回退空间\"]\n    C6[\"小而明确任务起步\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C6 --> C1\n    C6 --> C2\n    C6 --> C3"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T14:39:44+00:00"
+}

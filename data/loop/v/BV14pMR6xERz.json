@@ -1,0 +1,66 @@
+{
+  "bvid": "BV14pMR6xERz",
+  "title": "MiniMax-H3与Wan2.2模型对比，3秒视频51秒生成，本地视频生成AI模型评测-RTX5060Ti",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1346,
+  "text": "嗨大家好啊\n今天是mini max h3\n这个视频生成模型开源了\n然后我拿它和这个one2.2做了一个对比\n我们先看一下它的一个生成的一个效果啊\n这个生成我是生成一个三秒的视频\n然后带声音的\n他这个模型是带声音\n嘿然后这个这个是花了53秒\n然后看一下他的另外一个哈\n哇这个就非常有利\n这个嘿这个有点像那个什么啊\n街头霸王里的\n我忘了那个人人家叫啥\n叫什么什么春啊\n然后我们看一下他的一个呃提示词\n其词的话是我先写在这儿啊\n它这个提示词大概就是啊\n图片中的这个悦耳的话\n跳起来\n然后踢出了左腿\n嗯对啊\n我就要求在剔除做题\n我们看一下它这几个应该是都符合这个要求的\n嘿对踢左腿\n嘿啊也是踢左腿\n然后同时的话同时也带了一些写了一些特效\n一些特啊光影的一些提示词\n他都非常好\n你看它的底\n它这个影子哈\n嘿还有这个因为生成的太小\n不太明显\n对他这个裙摆的影子动啊\n非常符合这个啊光学的一个效果\n然后我们看一下这个Y2.2啊\nY2.2是啊\nY2.2它的一个生成在哪呢\n哎one2.2\n哦在这儿127.9秒\n我们看一下它的效果\n诶首先他没有声音万然而是没有这个声音\n然后另外的话他踢腿踢错了\n他踢了一个右腿出来\n然后还有一点的话\n它这个黄色的闪光是不知道它哪来的\n这东西很奇怪\n另外的话他也没有一些特殊的一些啊\n倒影什么的\n这些这些东西\n还有这个人为什么会发会会会发这个蓝光\n然后这都是有一些有问题的地方\n然后看一下另外一个\n另外一个是一个102秒\n这两个的话都是用这个NVFP4生成的\n虽然它的长和宽是刚刚我们看那mini max的两倍\n但是它生成的这个效果很不好\n他这个右腿又是不知道哪来这个黄\n橘黄色这个光嗯\n所以说这个弯\n而且这两个生成的这个工作流和模型\n都是经过近这近一年社区经过了反复的一些啊\n优化之后的一些工作流\n它的效果还是远远不如我们的\n今天看到的这个mini mini Mac的H3\n我们做一下对比啊是吧\n远远不如AAH3\n嘿\n另外的话咱们看一下这个显存和内存\n的占用情况啊\n因为这个copy u i\n我们这个模型他没有做这个卸载哦\n现在是内存已经下下来降下来了\n然后显存一显存是占了将近一个满\n已经被占满的一个状态\n然后内存外在跑的时候\n就是基本上都是一个45\n45G左右的一个占用\n其实他就是想把内存和显存占满啊\n但是呢我说但是我这个电脑的电脑\n这个因为它一个PCIE接口\n是用的是4.0的\n不是5.0的\n所以但是他要显显存不够用的话\n它需要用到用到内存\n内存需要和这个显存做交换的时候\n需要用到PCIE通道啊\n所以说这个是稍微影\n影响了他一个生成的一个速度\n假如我有一个PCIE5.0的一个主板的话\n它会还会再快一些\n哦对刚刚说的这个PCI通道\n就是假如副歌有这个81\n80G显存以上的显卡\n它不需要\n比如说你跑一个720P\n基本上是不需要和这个内存交换的\n所以你这个内存基本上是用不到\n也就不会有这PCIE的一个\n通道的一个要求了\n当然对于普通人员来说\n还是需要这个啊\n进入显存和内存的一个一个\n交换的一个一个过程\n所以说的话尽量还是咱们保证\n我们的一个PCI通道是4.0或5.0\n大概就这些\n然后这两天的话\n估计社区会出现这NVIMP4的一个模型\n到时候我再测一下\n好感谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14pMR6xERz",
+  "published_at": "1785768579",
+  "fetched_at": "2026-08-08T22:32:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# MiniMax-H3 vs Wan2.2 模型对比知识图谱\n\n## 总览比较\n```mermaid\nflowchart TD\n    A[MiniMax-H3] --> B[生成时长 53 秒]\n    A --> C[带声音]\n    A --> D[左腿踢出]\n    A --> E[光影、阴影特效]\n    A --> F[分辨率 较低]\n    A --> G[显存占满 ~满帧, RAM 约45 GB]\n    H[Wan2.2] --> I[生成时长 127.9 秒]\n    H --> J[无声音]\n    H --> K[右腿踢出]\n    H --> L[缺少光影, 出现黄色闪光、蓝光]\n    H --> M[分辨率 为MiniMax的两倍]\n    H --> N[显存/内存占用 与MiniMax相似]\n    A -.-> H[同属 NVFP4 工作流]\n```\n\n## 资源与性能因素\n```mermaid\nflowchart TD\n    O[显存占用 高] --> P[需要显存‑内存交换]\n    Q[PCIe 4.0] --> R[交换受限, 生成速度受影响]\n    S[PCIe 5.0] --> T[交换更快, 生成更快]\n    U[显存 ≥80 GB] --> V[可直接放入显存, 免交换]\n    W[720p 生成] --> X[基本不需显存‑内存交换]\n    O --> Y[内存占用约45 GB]\n    P --> Z[受PCIe通道带宽限制]\n```\n\n## 工作流与社区演进\n```mermaid\nflowchart LR\n    AA[NVFP4] --> AB[MiniMax-H3 生成流程]\n    AA --> AC[Wan2.2 生成流程]\n    AD[社区近一年] --> AE[多轮优化]\n    AE --> AB\n    AE --> AC\n    AF[NVIMP4 预期模型] --> AG[待社区测试]\n    AG --> AB\n    AG --> AC\n```",
+      "diagrams": [
+        {
+          "title": "总览比较",
+          "code": "flowchart TD\n    A[MiniMax-H3] --> B[生成时长 53 秒]\n    A --> C[带声音]\n    A --> D[左腿踢出]\n    A --> E[光影、阴影特效]\n    A --> F[分辨率 较低]\n    A --> G[显存占满 ~满帧, RAM 约45 GB]\n    H[Wan2.2] --> I[生成时长 127.9 秒]\n    H --> J[无声音]\n    H --> K[右腿踢出]\n    H --> L[缺少光影, 出现黄色闪光、蓝光]\n    H --> M[分辨率 为MiniMax的两倍]\n    H --> N[显存/内存占用 与MiniMax相似]\n    A -.-> H[同属 NVFP4 工作流]"
+        },
+        {
+          "title": "资源与性能因素",
+          "code": "flowchart TD\n    O[显存占用 高] --> P[需要显存‑内存交换]\n    Q[PCIe 4.0] --> R[交换受限, 生成速度受影响]\n    S[PCIe 5.0] --> T[交换更快, 生成更快]\n    U[显存 ≥80 GB] --> V[可直接放入显存, 免交换]\n    W[720p 生成] --> X[基本不需显存‑内存交换]\n    O --> Y[内存占用约45 GB]\n    P --> Z[受PCIe通道带宽限制]"
+        },
+        {
+          "title": "工作流与社区演进",
+          "code": "flowchart LR\n    AA[NVFP4] --> AB[MiniMax-H3 生成流程]\n    AA --> AC[Wan2.2 生成流程]\n    AD[社区近一年] --> AE[多轮优化]\n    AE --> AB\n    AE --> AC\n    AF[NVIMP4 预期模型] --> AG[待社区测试]\n    AG --> AB\n    AG --> AC"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T22:32:14+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# MiniMax-H3 vs Wan2.2 模型对比知识图谱\n\n## 总览比较\n```mermaid\nflowchart TD\n    A[MiniMax-H3] --> B[生成时长 53 秒]\n    A --> C[带声音]\n    A --> D[左腿踢出]\n    A --> E[光影、阴影特效]\n    A --> F[分辨率 较低]\n    A --> G[显存占满 ~满帧, RAM 约45 GB]\n    H[Wan2.2] --> I[生成时长 127.9 秒]\n    H --> J[无声音]\n    H --> K[右腿踢出]\n    H --> L[缺少光影, 出现黄色闪光、蓝光]\n    H --> M[分辨率 为MiniMax的两倍]\n    H --> N[显存/内存占用 与MiniMax相似]\n    A -.-> H[同属 NVFP4 工作流]\n```\n\n## 资源与性能因素\n```mermaid\nflowchart TD\n    O[显存占用 高] --> P[需要显存‑内存交换]\n    Q[PCIe 4.0] --> R[交换受限, 生成速度受影响]\n    S[PCIe 5.0] --> T[交换更快, 生成更快]\n    U[显存 ≥80 GB] --> V[可直接放入显存, 免交换]\n    W[720p 生成] --> X[基本不需显存‑内存交换]\n    O --> Y[内存占用约45 GB]\n    P --> Z[受PCIe通道带宽限制]\n```\n\n## 工作流与社区演进\n```mermaid\nflowchart LR\n    AA[NVFP4] --> AB[MiniMax-H3 生成流程]\n    AA --> AC[Wan2.2 生成流程]\n    AD[社区近一年] --> AE[多轮优化]\n    AE --> AB\n    AE --> AC\n    AF[NVIMP4 预期模型] --> AG[待社区测试]\n    AG --> AB\n    AG --> AC\n```",
+  "diagrams": [
+    {
+      "title": "总览比较",
+      "code": "flowchart TD\n    A[MiniMax-H3] --> B[生成时长 53 秒]\n    A --> C[带声音]\n    A --> D[左腿踢出]\n    A --> E[光影、阴影特效]\n    A --> F[分辨率 较低]\n    A --> G[显存占满 ~满帧, RAM 约45 GB]\n    H[Wan2.2] --> I[生成时长 127.9 秒]\n    H --> J[无声音]\n    H --> K[右腿踢出]\n    H --> L[缺少光影, 出现黄色闪光、蓝光]\n    H --> M[分辨率 为MiniMax的两倍]\n    H --> N[显存/内存占用 与MiniMax相似]\n    A -.-> H[同属 NVFP4 工作流]"
+    },
+    {
+      "title": "资源与性能因素",
+      "code": "flowchart TD\n    O[显存占用 高] --> P[需要显存‑内存交换]\n    Q[PCIe 4.0] --> R[交换受限, 生成速度受影响]\n    S[PCIe 5.0] --> T[交换更快, 生成更快]\n    U[显存 ≥80 GB] --> V[可直接放入显存, 免交换]\n    W[720p 生成] --> X[基本不需显存‑内存交换]\n    O --> Y[内存占用约45 GB]\n    P --> Z[受PCIe通道带宽限制]"
+    },
+    {
+      "title": "工作流与社区演进",
+      "code": "flowchart LR\n    AA[NVFP4] --> AB[MiniMax-H3 生成流程]\n    AA --> AC[Wan2.2 生成流程]\n    AD[社区近一年] --> AE[多轮优化]\n    AE --> AB\n    AE --> AC\n    AF[NVIMP4 预期模型] --> AG[待社区测试]\n    AG --> AB\n    AG --> AC"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T22:32:14+00:00"
+}

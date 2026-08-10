@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1aYuN6tEAj",
+  "title": "8月8 AI早报！GPT 5.6 Luna 正式免费！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 764,
+  "text": "欢迎收看今天8月8号的AI新闻简讯\n首先带来今日重磅头条\nOpenAI完成史诗级福利更新\nChatGPT免费版全面升级为GPT5.6\n露娜全球10亿用户文本对话不限量\n免费白嫖\n同时新增think深度推理按钮\n支持免费用户处理高难度问题\n付费用户专属的GPT5.6sol同步迭代\n统一快慢推理模式上线\n可自定义思考深度的调节滑块\n数据显示\n新版售40\n错误率暴跌68%\nLUNA错误率下降62%\n模型精准度大幅跃升\n此外业内爆料\nOpenAI终极旗舰模型ESTSTRA将于下周正式发布\n参数规模预估高达七至10万亿\n主打常识运算与多智能体协同\n将是新一代现象级AI巨兽\n第二条阿里视频大模型one3.0正式开启公测\n实现突破性功能升级\n模型最长支持30秒完整视频生成\n流畅驾驭\n一镜到底\n连续运镜等复杂镜头\n真正实现AI视频\n从单镜头生成到完整叙事的跨越\n行业首发\n一键转视频\n可快速生成产品宣传片\n教学课件\n业务汇报视频\n同时支持多图文\n多视频参考480P720P\n1080P3档API定价清晰\n商用性价比极高\n第三条\n阿里推出国内首个一站式AI语音生产力平台\nCoy voice studio\n基于顶尖的千问语音大模型打造\n包揽智能录音\n语音交互\n音频创作全场景功能\n可一键生成多角色播客有声书\n该模型强势登顶全球榜单\n包揽语音识别交互合成三项评测\n第一个人端全部功能限时免费开放\n第四条\n蚂蚁集团正式开源avenue的多智能体协作平台\n采用开源宽松的IPCH2.0协议\n专为解决多AI智能体协同难题而生\n支持各类异构智能体自由接入\n自动匹配任务\n协同作业\n多方共识\n同时搭载完善的身份认证\n细粒度权限管控等安全治理体系\n目前已在蚂蚁12大核心业务落地实战\n智能体任务完成率稳定超90%\n为企业级AI团队协作提供成熟解决方案",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1aYuN6tEAj",
+  "published_at": "1786141800",
+  "fetched_at": "2026-08-10T02:08:12+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI新闻简报 2024‑08‑08\n\n## OpenAI 更新概览  \n[BV1aYuN6tEAj P1 00:08]、[BV1aYuN6tEAj P1 00:15]、[BV1aYuN6tEAj P1 00:20]、[BV1aYuN6tEAj P1 00:37]\n\n```mermaid\nflowchart TD\n    GPT5_6_Free[\"ChatGPT 免费版升级至 GPT‑5.6\"] --> Luna_Unlimited[\"Luna：全球 10 亿用户文本对话不限量\"]\n    GPT5_6_Free --> Think_Deep_Inference[\"新增 “think 深度推理” 按钮\"]\n    Think_Deep_Inference --> Supports_High_Difficulty[\"支持免费用户处理高难度问题\"]\n    GPT5_6_Free --> Error_Rate_Drop[\"错误率下降 68%\"]\n    Luna_Unlimited --> LUNA_Error_Reduction[\"LUNA 错误率下降 62%\"]\n    GPT5_6_Free --> Model_Accuracy_Rise[\"模型精准度大幅跃升\"]\n    GPT5_6_Free --> GPT5_6_Sol_Paid[\"付费用户专属 GPT‑5.6 sol 同步迭代\"]\n    GPT5_6_Free --> Unified_Inference_Mode[\"统一快慢推理模式上线\"]\n    GPT5_6_Free --> Depth_Slider[\"可自定义思考深度的调节滑块\"]\n    ESTSTRA_Upcoming[\"ESTSTRA 终极旗舰模型即将发布\"] --> ESTSTRA_Params[\"参数规模 7‑10 万亿\"]\n    ESTSTRA_Upcoming --> ESTSTRA_Features[\"主打常识运算与多智能体协同\"]\n    ESTSTRA_Upcoming --> ESTSTRA_Impact[\"新一代现象级 AI 巨兽\"]\n    GPT5_6_Free --> ESTSTRA_Upcoming\n```\n\n## 阿里视频大模型 one3.0 功能概览  \n[BV1aYuN6tEAj P1 00:50]、[BV1aYuN6tEAj P1 00:56]、[BV1aYuN6tEAj P1 01:12]、[BV1aYuN6tEAj P1 01:22]\n\n```mermaid\nflowchart LR\n    One3_0_PublicBeta[\"one3.0 正式开启公测\"] --> Video_Length_30s[\"最长支持 30 秒完整视频生成\"]\n    Video_Length_30s --> Continuous_Shot[\"流畅驾驭“一镜到底” 连续运镜等复杂镜头\"]\n    Continuous_Shot --> Full_Narrative[\"实现从单镜头生成到完整叙事的跨越\"]\n    Full_Narrative --> OneClick_Video[\"一键转视频\"]\n    OneClick_Video --> Use_Cases[\"快速生成产品宣传片、教学课件、业务汇报视频\"]\n    Use_Cases --> Multi_Image_Text[\"同时支持多图文\"]\n    Multi_Image_Text --> Resolution_Options[\"支持 480P、720P、1080P 三档分辨率\"]\n    Resolution_Options --> API_Pricing_Clear[\"API 定价清晰\"]\n    API_Pricing_Clear --> High_Commercial_Value[\"商用性价比极高\"]\n```\n\n## 蚂蚁集团多智能体协作平台概览  \n[BV1aYuN6tEAj P1 01:53]、[BV1aYuN6tEAj P1 01:57]、[BV1aYuN6tEAj P1 02:00]、[BV1aYuN6tEAj P1 02:14]、[BV1aYuN6tEAj P1 02:17]\n\n```mermaid\nflowchart TD\n    Avenue_OpenSource[\"Avenue 开源多智能体协作平台\"] --> IPCH2_0_Protocol[\"采用宽松的 IPCH2.0 协议\"]\n    IPCH2_0_Protocol --> Designed_For_Collaboration[\"专为解决多 AI 智能体协同难题而生\"]\n    Designed_For_Collaboration --> Supports_Heterogeneous_Agents[\"支持各类异构智能体自由接入\"]\n    Supports_Heterogeneous_Agents --> Auto_Task_Matching[\"自动匹配任务\"]\n    Auto_Task_Matching --> Collaborative_Work[\"协同作业\"]\n    Collaborative_Work --> Multi_Party_Consensus[\"多方共识\"]\n    Multi_Party_Consensus --> Identity_Auth[\"搭载完善的身份认证\"]\n    Identity_Auth --> Fine_Grained_Permissions[\"细粒度权限管控等安全治理体系\"]\n    Fine_Grained_Permissions --> Security_Governance[\"安全治理体系\"]\n    Security_Governance --> Deployed_In_12_Businesses[\"已在蚂蚁 12 大核心业务落地实战\"]\n    Deployed_In_12_Businesses --> Completion_Rate[\"智能体任务完成率稳定超 90%\"]\n    Completion_Rate --> Enterprise_AI_Solution[\"为企业级 AI 团队协作提供成熟解决方案\"]\n```",
+      "diagrams": [
+        {
+          "title": "OpenAI 更新概览",
+          "code": "flowchart TD\n    GPT5_6_Free[\"ChatGPT 免费版升级至 GPT‑5.6\"] --> Luna_Unlimited[\"Luna：全球 10 亿用户文本对话不限量\"]\n    GPT5_6_Free --> Think_Deep_Inference[\"新增 “think 深度推理” 按钮\"]\n    Think_Deep_Inference --> Supports_High_Difficulty[\"支持免费用户处理高难度问题\"]\n    GPT5_6_Free --> Error_Rate_Drop[\"错误率下降 68%\"]\n    Luna_Unlimited --> LUNA_Error_Reduction[\"LUNA 错误率下降 62%\"]\n    GPT5_6_Free --> Model_Accuracy_Rise[\"模型精准度大幅跃升\"]\n    GPT5_6_Free --> GPT5_6_Sol_Paid[\"付费用户专属 GPT‑5.6 sol 同步迭代\"]\n    GPT5_6_Free --> Unified_Inference_Mode[\"统一快慢推理模式上线\"]\n    GPT5_6_Free --> Depth_Slider[\"可自定义思考深度的调节滑块\"]\n    ESTSTRA_Upcoming[\"ESTSTRA 终极旗舰模型即将发布\"] --> ESTSTRA_Params[\"参数规模 7‑10 万亿\"]\n    ESTSTRA_Upcoming --> ESTSTRA_Features[\"主打常识运算与多智能体协同\"]\n    ESTSTRA_Upcoming --> ESTSTRA_Impact[\"新一代现象级 AI 巨兽\"]\n    GPT5_6_Free --> ESTSTRA_Upcoming"
+        },
+        {
+          "title": "阿里视频大模型 one3.0 功能概览",
+          "code": "flowchart LR\n    One3_0_PublicBeta[\"one3.0 正式开启公测\"] --> Video_Length_30s[\"最长支持 30 秒完整视频生成\"]\n    Video_Length_30s --> Continuous_Shot[\"流畅驾驭“一镜到底” 连续运镜等复杂镜头\"]\n    Continuous_Shot --> Full_Narrative[\"实现从单镜头生成到完整叙事的跨越\"]\n    Full_Narrative --> OneClick_Video[\"一键转视频\"]\n    OneClick_Video --> Use_Cases[\"快速生成产品宣传片、教学课件、业务汇报视频\"]\n    Use_Cases --> Multi_Image_Text[\"同时支持多图文\"]\n    Multi_Image_Text --> Resolution_Options[\"支持 480P、720P、1080P 三档分辨率\"]\n    Resolution_Options --> API_Pricing_Clear[\"API 定价清晰\"]\n    API_Pricing_Clear --> High_Commercial_Value[\"商用性价比极高\"]"
+        },
+        {
+          "title": "蚂蚁集团多智能体协作平台概览",
+          "code": "flowchart TD\n    Avenue_OpenSource[\"Avenue 开源多智能体协作平台\"] --> IPCH2_0_Protocol[\"采用宽松的 IPCH2.0 协议\"]\n    IPCH2_0_Protocol --> Designed_For_Collaboration[\"专为解决多 AI 智能体协同难题而生\"]\n    Designed_For_Collaboration --> Supports_Heterogeneous_Agents[\"支持各类异构智能体自由接入\"]\n    Supports_Heterogeneous_Agents --> Auto_Task_Matching[\"自动匹配任务\"]\n    Auto_Task_Matching --> Collaborative_Work[\"协同作业\"]\n    Collaborative_Work --> Multi_Party_Consensus[\"多方共识\"]\n    Multi_Party_Consensus --> Identity_Auth[\"搭载完善的身份认证\"]\n    Identity_Auth --> Fine_Grained_Permissions[\"细粒度权限管控等安全治理体系\"]\n    Fine_Grained_Permissions --> Security_Governance[\"安全治理体系\"]\n    Security_Governance --> Deployed_In_12_Businesses[\"已在蚂蚁 12 大核心业务落地实战\"]\n    Deployed_In_12_Businesses --> Completion_Rate[\"智能体任务完成率稳定超 90%\"]\n    Completion_Rate --> Enterprise_AI_Solution[\"为企业级 AI 团队协作提供成熟解决方案\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T02:08:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI新闻简报 2024‑08‑08\n\n## OpenAI 更新概览  \n[BV1aYuN6tEAj P1 00:08]、[BV1aYuN6tEAj P1 00:15]、[BV1aYuN6tEAj P1 00:20]、[BV1aYuN6tEAj P1 00:37]\n\n```mermaid\nflowchart TD\n    GPT5_6_Free[\"ChatGPT 免费版升级至 GPT‑5.6\"] --> Luna_Unlimited[\"Luna：全球 10 亿用户文本对话不限量\"]\n    GPT5_6_Free --> Think_Deep_Inference[\"新增 “think 深度推理” 按钮\"]\n    Think_Deep_Inference --> Supports_High_Difficulty[\"支持免费用户处理高难度问题\"]\n    GPT5_6_Free --> Error_Rate_Drop[\"错误率下降 68%\"]\n    Luna_Unlimited --> LUNA_Error_Reduction[\"LUNA 错误率下降 62%\"]\n    GPT5_6_Free --> Model_Accuracy_Rise[\"模型精准度大幅跃升\"]\n    GPT5_6_Free --> GPT5_6_Sol_Paid[\"付费用户专属 GPT‑5.6 sol 同步迭代\"]\n    GPT5_6_Free --> Unified_Inference_Mode[\"统一快慢推理模式上线\"]\n    GPT5_6_Free --> Depth_Slider[\"可自定义思考深度的调节滑块\"]\n    ESTSTRA_Upcoming[\"ESTSTRA 终极旗舰模型即将发布\"] --> ESTSTRA_Params[\"参数规模 7‑10 万亿\"]\n    ESTSTRA_Upcoming --> ESTSTRA_Features[\"主打常识运算与多智能体协同\"]\n    ESTSTRA_Upcoming --> ESTSTRA_Impact[\"新一代现象级 AI 巨兽\"]\n    GPT5_6_Free --> ESTSTRA_Upcoming\n```\n\n## 阿里视频大模型 one3.0 功能概览  \n[BV1aYuN6tEAj P1 00:50]、[BV1aYuN6tEAj P1 00:56]、[BV1aYuN6tEAj P1 01:12]、[BV1aYuN6tEAj P1 01:22]\n\n```mermaid\nflowchart LR\n    One3_0_PublicBeta[\"one3.0 正式开启公测\"] --> Video_Length_30s[\"最长支持 30 秒完整视频生成\"]\n    Video_Length_30s --> Continuous_Shot[\"流畅驾驭“一镜到底” 连续运镜等复杂镜头\"]\n    Continuous_Shot --> Full_Narrative[\"实现从单镜头生成到完整叙事的跨越\"]\n    Full_Narrative --> OneClick_Video[\"一键转视频\"]\n    OneClick_Video --> Use_Cases[\"快速生成产品宣传片、教学课件、业务汇报视频\"]\n    Use_Cases --> Multi_Image_Text[\"同时支持多图文\"]\n    Multi_Image_Text --> Resolution_Options[\"支持 480P、720P、1080P 三档分辨率\"]\n    Resolution_Options --> API_Pricing_Clear[\"API 定价清晰\"]\n    API_Pricing_Clear --> High_Commercial_Value[\"商用性价比极高\"]\n```\n\n## 蚂蚁集团多智能体协作平台概览  \n[BV1aYuN6tEAj P1 01:53]、[BV1aYuN6tEAj P1 01:57]、[BV1aYuN6tEAj P1 02:00]、[BV1aYuN6tEAj P1 02:14]、[BV1aYuN6tEAj P1 02:17]\n\n```mermaid\nflowchart TD\n    Avenue_OpenSource[\"Avenue 开源多智能体协作平台\"] --> IPCH2_0_Protocol[\"采用宽松的 IPCH2.0 协议\"]\n    IPCH2_0_Protocol --> Designed_For_Collaboration[\"专为解决多 AI 智能体协同难题而生\"]\n    Designed_For_Collaboration --> Supports_Heterogeneous_Agents[\"支持各类异构智能体自由接入\"]\n    Supports_Heterogeneous_Agents --> Auto_Task_Matching[\"自动匹配任务\"]\n    Auto_Task_Matching --> Collaborative_Work[\"协同作业\"]\n    Collaborative_Work --> Multi_Party_Consensus[\"多方共识\"]\n    Multi_Party_Consensus --> Identity_Auth[\"搭载完善的身份认证\"]\n    Identity_Auth --> Fine_Grained_Permissions[\"细粒度权限管控等安全治理体系\"]\n    Fine_Grained_Permissions --> Security_Governance[\"安全治理体系\"]\n    Security_Governance --> Deployed_In_12_Businesses[\"已在蚂蚁 12 大核心业务落地实战\"]\n    Deployed_In_12_Businesses --> Completion_Rate[\"智能体任务完成率稳定超 90%\"]\n    Completion_Rate --> Enterprise_AI_Solution[\"为企业级 AI 团队协作提供成熟解决方案\"]\n```",
+  "diagrams": [
+    {
+      "title": "OpenAI 更新概览",
+      "code": "flowchart TD\n    GPT5_6_Free[\"ChatGPT 免费版升级至 GPT‑5.6\"] --> Luna_Unlimited[\"Luna：全球 10 亿用户文本对话不限量\"]\n    GPT5_6_Free --> Think_Deep_Inference[\"新增 “think 深度推理” 按钮\"]\n    Think_Deep_Inference --> Supports_High_Difficulty[\"支持免费用户处理高难度问题\"]\n    GPT5_6_Free --> Error_Rate_Drop[\"错误率下降 68%\"]\n    Luna_Unlimited --> LUNA_Error_Reduction[\"LUNA 错误率下降 62%\"]\n    GPT5_6_Free --> Model_Accuracy_Rise[\"模型精准度大幅跃升\"]\n    GPT5_6_Free --> GPT5_6_Sol_Paid[\"付费用户专属 GPT‑5.6 sol 同步迭代\"]\n    GPT5_6_Free --> Unified_Inference_Mode[\"统一快慢推理模式上线\"]\n    GPT5_6_Free --> Depth_Slider[\"可自定义思考深度的调节滑块\"]\n    ESTSTRA_Upcoming[\"ESTSTRA 终极旗舰模型即将发布\"] --> ESTSTRA_Params[\"参数规模 7‑10 万亿\"]\n    ESTSTRA_Upcoming --> ESTSTRA_Features[\"主打常识运算与多智能体协同\"]\n    ESTSTRA_Upcoming --> ESTSTRA_Impact[\"新一代现象级 AI 巨兽\"]\n    GPT5_6_Free --> ESTSTRA_Upcoming"
+    },
+    {
+      "title": "阿里视频大模型 one3.0 功能概览",
+      "code": "flowchart LR\n    One3_0_PublicBeta[\"one3.0 正式开启公测\"] --> Video_Length_30s[\"最长支持 30 秒完整视频生成\"]\n    Video_Length_30s --> Continuous_Shot[\"流畅驾驭“一镜到底” 连续运镜等复杂镜头\"]\n    Continuous_Shot --> Full_Narrative[\"实现从单镜头生成到完整叙事的跨越\"]\n    Full_Narrative --> OneClick_Video[\"一键转视频\"]\n    OneClick_Video --> Use_Cases[\"快速生成产品宣传片、教学课件、业务汇报视频\"]\n    Use_Cases --> Multi_Image_Text[\"同时支持多图文\"]\n    Multi_Image_Text --> Resolution_Options[\"支持 480P、720P、1080P 三档分辨率\"]\n    Resolution_Options --> API_Pricing_Clear[\"API 定价清晰\"]\n    API_Pricing_Clear --> High_Commercial_Value[\"商用性价比极高\"]"
+    },
+    {
+      "title": "蚂蚁集团多智能体协作平台概览",
+      "code": "flowchart TD\n    Avenue_OpenSource[\"Avenue 开源多智能体协作平台\"] --> IPCH2_0_Protocol[\"采用宽松的 IPCH2.0 协议\"]\n    IPCH2_0_Protocol --> Designed_For_Collaboration[\"专为解决多 AI 智能体协同难题而生\"]\n    Designed_For_Collaboration --> Supports_Heterogeneous_Agents[\"支持各类异构智能体自由接入\"]\n    Supports_Heterogeneous_Agents --> Auto_Task_Matching[\"自动匹配任务\"]\n    Auto_Task_Matching --> Collaborative_Work[\"协同作业\"]\n    Collaborative_Work --> Multi_Party_Consensus[\"多方共识\"]\n    Multi_Party_Consensus --> Identity_Auth[\"搭载完善的身份认证\"]\n    Identity_Auth --> Fine_Grained_Permissions[\"细粒度权限管控等安全治理体系\"]\n    Fine_Grained_Permissions --> Security_Governance[\"安全治理体系\"]\n    Security_Governance --> Deployed_In_12_Businesses[\"已在蚂蚁 12 大核心业务落地实战\"]\n    Deployed_In_12_Businesses --> Completion_Rate[\"智能体任务完成率稳定超 90%\"]\n    Completion_Rate --> Enterprise_AI_Solution[\"为企业级 AI 团队协作提供成熟解决方案\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T02:08:41+00:00"
+}

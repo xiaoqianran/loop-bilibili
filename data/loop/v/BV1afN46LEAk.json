@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1afN46LEAk",
+  "title": "更新--Hermes Agent 0.18.2 &Web UI 0.6.28 解压一键运行包",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3783,
+  "text": "好我们做一下升级演示哦\n呃你一般下载到会有这样一个版本的包\n这个版本的包你之前用了的话\n他就会解开解开\n至少会有这样一个目录\n就是hermisport able\n这是个便携式目录\n呃我们升级的话是怎么升呢\n进来了以后呃运行你肯定应该都会了\n直接你就在这个目录下面点呃\nstart它就运行了对吧\n呃升级是怎么升呢\n对于这个呃新解压的这个版本\n比如说你刚解压完\n你不想运行\n它就要直接升级\n那你就这样操作\n先加载环境变量呃\n然后呢把这个move要执行一下\n你看路径不一致对吧\n因为之前的包的路径是这个\n然后他现在解压到这了\n然后他会把路径修复成功\n路径修复成功以后\n那就可以开始升级了\n升级怎么升额\n先到这个hermes agent下面去嗯\n我们第一步是做什么\n应该是从代码仓库下载代码对吧\n那我不确定这个本地有没有修改\n那就先要git stash一下\n压压个赞\n好压榨完成\n我们更新代码\n仓库好\n我们把这个拉长一点看\n这是用国内的国内站进行加速的啊\n你其他的仓库也可以这样更新\n仓库更新你都可以这样子加速\n好了\n这样代码就更新完了\n更新完\n因为它是基于VENV的\n所以呢我们要把ENVVENV的环境激活\n可以看到这前面有个ENV的标识了\n然后我们执行这个命令\nuv p install杠E更新好\n这样就更新了\n你看他之前包里面的版本是0.18.0\n减号就代表这个被删掉了\n然后新建了就是加号嘛\n加号0.18.2\n这个升级了\n这个就是对0.18.0做了很多修正啊\n做了很多修正代码上的修正\n这样子hermes agent这部分就升级完了\n升级完以后我们去升级那个呃web ui\nweb ui最近就是因为升级到hermiss agent呢\n升级到0.18\n他那个web ui虽然是在频繁的升级\n但是也就是嘶嗯还是有很多小bug用的时候\n如果你感觉不太对劲\n你最好就直接回原版使用那个HERMES呃\nCCLLI就是命令行的那个方式\n或者那个TOI的界面\nHERMES他agent他他自己的那个还是要稳定一点\n那个desk top就算了\n那个desk tik top跟进嗯\n效果不是很好\n嗯嗯嗯好看\n我们开始更新这个hommix web ui的前端\nweb ui在使用便捷度上还是很高的\n比如说你可以在web ui里面先把模型啊\n那些都配好\n你做一些这种任务操作的尝试的时候\n你在里面做嗯\n遇到一些大型的任务\n你要跑的时间很久的那种任务呃\n建议还是到CIII里面去用\n它会稳定很多\n它会稳定很多\nOK这样就升级完了\n升级完了\n我们可以把这个窗口关掉\n然后来验证一下\n运行一下\n你现在一下载以后\n你直接解压缩完了\n就这一步运行起来就好了\n它呃如果不是这个路径的话\n它会提示路径修复它\n让它修复就好了\n你不用管啊\n这就运行起来了\n我们看一下默认的他会这里有提示用户名\n密码一输就能进去\n然后嗯可以去修改\n修改一个自己的比较熟悉的密码\n不要忘掉了\n忘掉这个就得重新初始化了\n好想好了\n然后他这个他这个头像是可以随机生成的\n你可以把它换一换\n比如说可以换成比较\n扎眼的\n呃他现在这个最新版本\nweb ui是0.6.28版哦\n0.6.28版\n模型配置\n呃\n这最近还是那个商汤科技有那个免费的模型哦\n呃一个月他嗯还凑合吧\n我我我觉得他那个用着还是没有什么太大问题\n免费的吗\n免费的大家可以多配一配\n反正嗯如果如果真的要用的话\n再去付费买就好了对吧嗯\n他这个我感觉其实日常用一用问题不大\n没有没有什么编号是刀\n啊然后呃平时就用它这个它这个是多模态的嗯\n256K的上下文添加好\n这样就模型就有了\n模型就有了\n然后这个视觉辅助模型要最好是专门配一下哦\n也许你有很多套餐\n你最好把它配一下\n配一个那个呃带视觉模型的\n其他问题都不大\n那然后我们返回呃新建对话\n你看它就识别到了这些这些\n然后呃\n我看看啊\n然后我们就直接创建吧\n直接创建一个绘画\n然后呃让他解读一个图片\n怎么样添加附件\n比如说我的这个头像\n解解读一下这张图片都是什么内容\n呃他这个是比较慢的啊\n我们可以去看一下另外的一个事\n呃\n就是我现在的这个环境装好了以后\n这个版本里面那个computer use\n应该是呃已经彻底OK到我们检查一下环境\n这里然后CUOA杠DRIVER\njava u c t o r哦\n你看这里都是OK的啊\n这个VN是正常的\n这只是个警告\n你不用管它\n这个是呃\n反正windows限制比较多\n他是有那个C那个什么用户安全防控的\n然后他有一些就会出\n就是呃触发这种安全警报吧\n因为你是让程序去操作电脑\n然后他这个实际上就是一种安全保护\n上面的警示\n然后HERMES的正不正常呢\n你看这命令都提示出来杠use u c t o r来看\n只要显示成这样\n就代表这个呃hermes computer use是正常的啊\n你看他这个\n还在处理呢\n也不知道会用多久呃\nCOA我们检查完了\n然后其实它是可以运行多个终端的哦\n就是比如说你那是web ui的终端在用\n那我打开以后\n我这样点杠\n这样运行呃\n有人说我要运行一下和原生的HERMES\n就这样运行\nHERMES直接回车就行\n他就会进到那个CLI终端里面去\n就命令行终端\n你看你在这边\n你在这边配的那个他其实也都有配的模型\n刚才这就是我们配的模型吗\n额商商量6.7的那个模型\n然后你看呃hermes agent0.18.2的版本啊\n7月7号更新的啊\n这就是其实就是最新版\n然后后面这个web ui这边也动起来了\n看图片内容解读\n这是图片内容解读设计风格意义呃\n他这个模型好像没有那个千问3.6\n或者那个gm厉害哦\n他好\n他没看出来\n这个是那个\n我看他写了没有\n这个笑脸男\n实际上是攻壳机动队里面的一个那个图图片啊\n图片他可能没识别到\n这个就是模型能力的问题了\n不同的模型有不同的能力分割\n那这边能不能同时用\n一样可以同时用嗯\n这边问个什么呢\n呃桌面吧\ncomputer youth的那个能力用一下呃\n桌面上都有哪些应用程序\n你看这里他computer\ncomputer use用上了computer\n这个就是CILI版本\n会比web版的这个有的时候要感觉快一些\n尤其是你用这种computer use呀这样的东西的时候\n它响应感觉上面要快一点\n比如说我说打开记事本啊\n记事本哎\n哦事集打开记事本额\n在里面输入\n今天心情不错哟\n然后保存在桌面那名称用\n20260711\n小G\n点PXG好\n就是他可以操作电脑的computer use\n就是所有程序他都能操作的\n可以看一下哦\n这就要授授权了\n我一般都是直接直接全部复权\n让他操作就行了\n如果你用的模型能力比较弱\n要谨慎呃\n最好是先开始单步授权\n看一看不怎么犯错的那种模型\n你你再这样子很准\n还有那种头部的那种模型\n比如说你用什么OPS4.74.8呃\nFiber5\n或者那个gm m啊\nGPT啊\n这样的就是很头部的这种模型的话\n你就可以放开让他搞\n因为他一般训练的都比较OK\n那个你如果新得到一个模型\n或者呃你部署的那种量化版的\n什么FP8精度呀\nQ4精度啊\nQ3精度啊\n还有Q2Q1精度那种\n嗯呃慎重啊慎重\n因为因为他搞不好\n他一犯错\n他执行速度很快的嗯\n你干成什么样都很难说哦\n所以除非是那种就是嗯比较稳定的模型\n你给它好好整一整这个computer use\n他是就是有个过程\n你看\n他把记事本好像没能打开耶\n哦你看他就换了他computer右侧去操作\n没能成功\n他说他才已经在这上面建好了\n建到哪去了\n好在这儿在这儿\n看今天心情不错哟\n哎建好了建好了哦\n嘶诶之前有有的时候是可以成功\n这可能和模型能力有关系\n我之前用那个gm m5是没有什么太大问题的哦\n这个computer youth\n反正大家自己用用就可以了嗯\n功能还是蛮不错的\n和那个play white放到一起呃\n其实用的最多的还是那个知识库\n知识库的那个功能用的最多呃\n整体上反正他现在升级这个0.6.28\n这个外部UI也有很多bug\n他有的时候一天升两个版本\n你现在看0.6.28\n你下载的时候它可能都已经嗯2930了\n所以时不时的就用那个开始讲的升级命令\n把它升一下呃\n伸一下\n然后他向他这个地方还有学习轨迹\n就比如说他学了哪些知识呃\n都是什么\n你嗯要点是什么样的\n你用一段时间以后\n这个这个web ui里面\n最近提的提供的就是这个学习轨迹\n这个功能就是你可以呃看到这样的东西\n就是他的知识是怎么增加的啊\n这个还是可以的\n比较直观\n它实际上就是对这个记忆这部分\n记忆这部分做了一个那个呃怎么说呢\n就是呃收收集和呈现吧\n你这样理解应该就可以了\n好今天就这样呃\n不对\n你运行的这个web ui版\n它是呃比如说这个CLLL的\n你这样子CTRLC他就退出了啊\n没有没有问题\n这个web版呢你如果把这个窗口关掉\n它是没有退掉的\n呃你必须要在这个目录下面运行这个点点杠stop\n才能把它彻底停掉\n才能把它彻底停掉\n你看点杠stop以后\n你这样刷新\n他无法访问了对吧\n如果你只是把浏览器关掉\n你用这个地址继继续访问它\n后台服务一直在的\n它是一个呃BS架构的这样子一种模式\n然后它跑起来的时候\n会在后端运行一个web服务器\n其实是在你本地\n然后你访问到的\n好吧啊\n希望大家使用愉快",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1afN46LEAk",
+  "published_at": "1783745053",
+  "fetched_at": "2026-08-08T23:59:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Hermes Agent 与 Web UI 升级与使用全览\n\n## Hermes Agent 升级流程 [BV1afN46LEAk P1 00:39]\n```mermaid\nflowchart TD\n    A[DownloadPackage] --> B[ExtractPackage]\n    B --> C[PathMismatchDetected]\n    C --> D[FixPath]\n    D --> E[LoadEnvironmentVariables]\n    E --> F[GitStashIfModified]\n    F --> G[PullLatestRepo]\n    G --> H[ActivateVenv]\n    H --> I[RunPipInstall]\n    I --> J[VersionUpdatedTo0.18.2]\n    J --> K[VerifyUpdateSuccess]\n    K --> L[UpgradeComplete]\n```\n\n## Web UI 使用与配置 [BV1afN46LEAk P1 04:18]\n```mermaid\nflowchart TD\n    A[StartWebUI] --> B[DefaultLoginPrompt]\n    B --> C[ChangePassword]\n    C --> D[ChangeAvatar]\n    D --> E[ConfigureModel]\n    E --> F[UseFreeModel]\n    F --> G[AddVisionModelIfNeeded]\n    G --> H[CreateNewConversation]\n    H --> I[AddImageAttachment]\n    I --> J[ImageInterpretation]\n    J --> K[PerformanceObservation]\n    K --> L[WebUIUpgradeComplete]\n```\n\n## Computer Use 功能与授权 [BV1afN46LEAk P1 07:41]\n```mermaid\nflowchart TD\n    A[OpenCLI] --> B[RunHermesCLI]\n    B --> C[ExecuteComputerUseCommand]\n    C --> D[AuthorizationPrompt]\n    D --> E[GrantFullAccess]\n    E --> F[SelectModelBasedOnCapability]\n    F --> G[SafetyWarningDisplayed]\n    G --> H[RiskManagementDecision]\n    H --> I[CommandExecutionResult]\n    I --> J[FeedbackLoopForModelAdjustment]\n```",
+      "diagrams": [
+        {
+          "title": "Hermes Agent 升级流程",
+          "code": "flowchart TD\n    A[DownloadPackage] --> B[ExtractPackage]\n    B --> C[PathMismatchDetected]\n    C --> D[FixPath]\n    D --> E[LoadEnvironmentVariables]\n    E --> F[GitStashIfModified]\n    F --> G[PullLatestRepo]\n    G --> H[ActivateVenv]\n    H --> I[RunPipInstall]\n    I --> J[VersionUpdatedTo0.18.2]\n    J --> K[VerifyUpdateSuccess]\n    K --> L[UpgradeComplete]"
+        },
+        {
+          "title": "Web UI 使用与配置",
+          "code": "flowchart TD\n    A[StartWebUI] --> B[DefaultLoginPrompt]\n    B --> C[ChangePassword]\n    C --> D[ChangeAvatar]\n    D --> E[ConfigureModel]\n    E --> F[UseFreeModel]\n    F --> G[AddVisionModelIfNeeded]\n    G --> H[CreateNewConversation]\n    H --> I[AddImageAttachment]\n    I --> J[ImageInterpretation]\n    J --> K[PerformanceObservation]\n    K --> L[WebUIUpgradeComplete]"
+        },
+        {
+          "title": "Computer Use 功能与授权",
+          "code": "flowchart TD\n    A[OpenCLI] --> B[RunHermesCLI]\n    B --> C[ExecuteComputerUseCommand]\n    C --> D[AuthorizationPrompt]\n    D --> E[GrantFullAccess]\n    E --> F[SelectModelBasedOnCapability]\n    F --> G[SafetyWarningDisplayed]\n    G --> H[RiskManagementDecision]\n    H --> I[CommandExecutionResult]\n    I --> J[FeedbackLoopForModelAdjustment]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T23:59:58+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Hermes Agent 与 Web UI 升级与使用全览\n\n## Hermes Agent 升级流程 [BV1afN46LEAk P1 00:39]\n```mermaid\nflowchart TD\n    A[DownloadPackage] --> B[ExtractPackage]\n    B --> C[PathMismatchDetected]\n    C --> D[FixPath]\n    D --> E[LoadEnvironmentVariables]\n    E --> F[GitStashIfModified]\n    F --> G[PullLatestRepo]\n    G --> H[ActivateVenv]\n    H --> I[RunPipInstall]\n    I --> J[VersionUpdatedTo0.18.2]\n    J --> K[VerifyUpdateSuccess]\n    K --> L[UpgradeComplete]\n```\n\n## Web UI 使用与配置 [BV1afN46LEAk P1 04:18]\n```mermaid\nflowchart TD\n    A[StartWebUI] --> B[DefaultLoginPrompt]\n    B --> C[ChangePassword]\n    C --> D[ChangeAvatar]\n    D --> E[ConfigureModel]\n    E --> F[UseFreeModel]\n    F --> G[AddVisionModelIfNeeded]\n    G --> H[CreateNewConversation]\n    H --> I[AddImageAttachment]\n    I --> J[ImageInterpretation]\n    J --> K[PerformanceObservation]\n    K --> L[WebUIUpgradeComplete]\n```\n\n## Computer Use 功能与授权 [BV1afN46LEAk P1 07:41]\n```mermaid\nflowchart TD\n    A[OpenCLI] --> B[RunHermesCLI]\n    B --> C[ExecuteComputerUseCommand]\n    C --> D[AuthorizationPrompt]\n    D --> E[GrantFullAccess]\n    E --> F[SelectModelBasedOnCapability]\n    F --> G[SafetyWarningDisplayed]\n    G --> H[RiskManagementDecision]\n    H --> I[CommandExecutionResult]\n    I --> J[FeedbackLoopForModelAdjustment]\n```",
+  "diagrams": [
+    {
+      "title": "Hermes Agent 升级流程",
+      "code": "flowchart TD\n    A[DownloadPackage] --> B[ExtractPackage]\n    B --> C[PathMismatchDetected]\n    C --> D[FixPath]\n    D --> E[LoadEnvironmentVariables]\n    E --> F[GitStashIfModified]\n    F --> G[PullLatestRepo]\n    G --> H[ActivateVenv]\n    H --> I[RunPipInstall]\n    I --> J[VersionUpdatedTo0.18.2]\n    J --> K[VerifyUpdateSuccess]\n    K --> L[UpgradeComplete]"
+    },
+    {
+      "title": "Web UI 使用与配置",
+      "code": "flowchart TD\n    A[StartWebUI] --> B[DefaultLoginPrompt]\n    B --> C[ChangePassword]\n    C --> D[ChangeAvatar]\n    D --> E[ConfigureModel]\n    E --> F[UseFreeModel]\n    F --> G[AddVisionModelIfNeeded]\n    G --> H[CreateNewConversation]\n    H --> I[AddImageAttachment]\n    I --> J[ImageInterpretation]\n    J --> K[PerformanceObservation]\n    K --> L[WebUIUpgradeComplete]"
+    },
+    {
+      "title": "Computer Use 功能与授权",
+      "code": "flowchart TD\n    A[OpenCLI] --> B[RunHermesCLI]\n    B --> C[ExecuteComputerUseCommand]\n    C --> D[AuthorizationPrompt]\n    D --> E[GrantFullAccess]\n    E --> F[SelectModelBasedOnCapability]\n    F --> G[SafetyWarningDisplayed]\n    G --> H[RiskManagementDecision]\n    H --> I[CommandExecutionResult]\n    I --> J[FeedbackLoopForModelAdjustment]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T23:59:58+00:00"
+}

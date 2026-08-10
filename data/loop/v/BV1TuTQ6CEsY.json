@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1TuTQ6CEsY",
+  "title": "DeepSeek V4！实测知网维普 AIGC 率从 99.5% 到1.24%！ 附指令",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 472,
+  "text": "万物皆可\nDeep seek\n总有小伙伴问我是不是也可以用来论文降重呢\n今天就给大家演示\n用deep sick快速降重的两个方法\n保证帮你从100%降低到个位数\n方法一让deep sick直接进行转写\n我们先把文章发给deep sick\n然后输入这个提示词\n不同提示词效果差别极大\n这是我测了几次指令中效果最优的\n很快就能得到一份语义不变的改写结果\n这种办法可将重复率从100%\n直接降至55%\n此方法尤其适合局部降重\n比如某段重复率过高\n直接用deep sick转写\n快速调整表述\n又保留原意\n精准解决局部重复问题\n方法二总结再扩展\n先让deep sick提取核心论点\n再让他基于学术框架重新演绎扩展\n我们这里开启联网搜索功能\n文章重复率能从55%降到5%\n对整体降重十分高效\n但是因为它改写的内容由AI生成\n改后很容易被检测出AI率过高\n所以这里我们打开学术工具I毕业\n选择降AIGC功能\n处理后的论文AI率可以达到个位数\n如果说想偷懒的话\n也可以直接用它的双降功能\n重复率和AI率直接一步到位\n最后别忘了自己检查一遍\n处理AI遗漏的小问题",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TuTQ6CEsY",
+  "published_at": "1783330061",
+  "fetched_at": "2026-08-07T09:59:42+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 降重方法图谱\n\n## 总览\n[BV1TuTQ6CEsY P1 00:10] 方法一：直接转写  \n[BV1TuTQ6CEsY P1 00:36] 方法二：提取‑扩展  \n\n```mermaid\nflowchart TD\n    A[\"DeepSeek 降重\"] --> B[\"方法一：直接转写\"]\n    A --> C[\"方法二：提取‑扩展\"]\n    B --> D[\"局部重复率高\"]\n    B --> E[\"相似度降至55%\"]\n    C --> F[\"整体重复率高\"]\n    C --> G[\"相似度降至5%\"]\n    G --> H[\"AI检测率高\"]\n    H --> I[\"使用学术工具降AIGC\"]\n    I --> J[\"AI率单个位数\"]\n```\n\n## 方法一：直接转写\n[BV1TuTQ6CEsY P1 00:12] 输入文章并使用提示词  \n[BV1TuTQ6CEsY P1 00:20] 获得语义不变的改写  \n[BV1TuTQ6CEsY P1 00:23] 重复率从100%降至55%  \n[BV1TuTQ6CEsY P1 00:27] 适用于局部降重  \n\n```mermaid\nflowchart TD\n    A[\"输入文章\"] --> B[\"使用最佳提示词\"]\n    B --> C[\"DeepSeek 转写\"]\n    C --> D[\"保持原意\"]\n    D --> E[\"相似度 55%\"]\n    E --> F[\"局部重复率降低\"]\n```\n\n## 方法二：提取‑扩展\n[BV1TuTQ6CEsY P1 00:38] 提取核心论点  \n[BV1TuTQ6CEsY P1 00:40] 基于学术框架重新演绎  \n[BV1TuTQ6CEsY P1 00:43] 开启联网搜索  \n[BV1TuTQ6CEsY P1 00:45] 相似度从55%降至5%  \n[BV1TuTQ6CEsY P1 00:50] AI生成内容易被检测  \n[BV1TuTQ6CEsY P1 00:55] 使用学术工具“降AIGC”  \n[BV1TuTQ6CEsY P1 00:58] AI率降至个位数  \n\n```mermaid\nflowchart TD\n    A[\"提取核心论点\"] --> B[\"基于学术框架演绎\"]\n    B --> C[\"开启联网搜索\"]\n    C --> D[\"整体相似度 5%\"]\n    D --> E[\"AI生成内容\"]\n    E --> F[\"AI检测率高\"]\n    F --> G[\"使用学术工具降AIGC\"]\n    G --> H[\"AI率单个位数\"]\n```\n\n## 选择指南\n[BV1TuTQ6CEsY P1 01:01] 双降功能一步到位  \n[BV1TuTQ6CEsY P1 01:06] 手动检查  \n\n```mermaid\nflowchart TD\n    A[\"需要降重？\"] -->|局部重复高| B[\"使用方法一\"]\n    A -->|整体重复高| C[\"使用方法二\"]\n    B --> D[\"检查相似率\"]\n    C --> E[\"检查相似率与AI率\"]\n    E -->|想一步完成| F[\"双降功能\"]\n    D --> G[\"手动复核\"]\n    F --> G\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"DeepSeek 降重\"] --> B[\"方法一：直接转写\"]\n    A --> C[\"方法二：提取‑扩展\"]\n    B --> D[\"局部重复率高\"]\n    B --> E[\"相似度降至55%\"]\n    C --> F[\"整体重复率高\"]\n    C --> G[\"相似度降至5%\"]\n    G --> H[\"AI检测率高\"]\n    H --> I[\"使用学术工具降AIGC\"]\n    I --> J[\"AI率单个位数\"]"
+        },
+        {
+          "title": "方法一：直接转写",
+          "code": "flowchart TD\n    A[\"输入文章\"] --> B[\"使用最佳提示词\"]\n    B --> C[\"DeepSeek 转写\"]\n    C --> D[\"保持原意\"]\n    D --> E[\"相似度 55%\"]\n    E --> F[\"局部重复率降低\"]"
+        },
+        {
+          "title": "方法二：提取‑扩展",
+          "code": "flowchart TD\n    A[\"提取核心论点\"] --> B[\"基于学术框架演绎\"]\n    B --> C[\"开启联网搜索\"]\n    C --> D[\"整体相似度 5%\"]\n    D --> E[\"AI生成内容\"]\n    E --> F[\"AI检测率高\"]\n    F --> G[\"使用学术工具降AIGC\"]\n    G --> H[\"AI率单个位数\"]"
+        },
+        {
+          "title": "选择指南",
+          "code": "flowchart TD\n    A[\"需要降重？\"] -->|局部重复高| B[\"使用方法一\"]\n    A -->|整体重复高| C[\"使用方法二\"]\n    B --> D[\"检查相似率\"]\n    C --> E[\"检查相似率与AI率\"]\n    E -->|想一步完成| F[\"双降功能\"]\n    D --> G[\"手动复核\"]\n    F --> G"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T10:00:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 降重方法图谱\n\n## 总览\n[BV1TuTQ6CEsY P1 00:10] 方法一：直接转写  \n[BV1TuTQ6CEsY P1 00:36] 方法二：提取‑扩展  \n\n```mermaid\nflowchart TD\n    A[\"DeepSeek 降重\"] --> B[\"方法一：直接转写\"]\n    A --> C[\"方法二：提取‑扩展\"]\n    B --> D[\"局部重复率高\"]\n    B --> E[\"相似度降至55%\"]\n    C --> F[\"整体重复率高\"]\n    C --> G[\"相似度降至5%\"]\n    G --> H[\"AI检测率高\"]\n    H --> I[\"使用学术工具降AIGC\"]\n    I --> J[\"AI率单个位数\"]\n```\n\n## 方法一：直接转写\n[BV1TuTQ6CEsY P1 00:12] 输入文章并使用提示词  \n[BV1TuTQ6CEsY P1 00:20] 获得语义不变的改写  \n[BV1TuTQ6CEsY P1 00:23] 重复率从100%降至55%  \n[BV1TuTQ6CEsY P1 00:27] 适用于局部降重  \n\n```mermaid\nflowchart TD\n    A[\"输入文章\"] --> B[\"使用最佳提示词\"]\n    B --> C[\"DeepSeek 转写\"]\n    C --> D[\"保持原意\"]\n    D --> E[\"相似度 55%\"]\n    E --> F[\"局部重复率降低\"]\n```\n\n## 方法二：提取‑扩展\n[BV1TuTQ6CEsY P1 00:38] 提取核心论点  \n[BV1TuTQ6CEsY P1 00:40] 基于学术框架重新演绎  \n[BV1TuTQ6CEsY P1 00:43] 开启联网搜索  \n[BV1TuTQ6CEsY P1 00:45] 相似度从55%降至5%  \n[BV1TuTQ6CEsY P1 00:50] AI生成内容易被检测  \n[BV1TuTQ6CEsY P1 00:55] 使用学术工具“降AIGC”  \n[BV1TuTQ6CEsY P1 00:58] AI率降至个位数  \n\n```mermaid\nflowchart TD\n    A[\"提取核心论点\"] --> B[\"基于学术框架演绎\"]\n    B --> C[\"开启联网搜索\"]\n    C --> D[\"整体相似度 5%\"]\n    D --> E[\"AI生成内容\"]\n    E --> F[\"AI检测率高\"]\n    F --> G[\"使用学术工具降AIGC\"]\n    G --> H[\"AI率单个位数\"]\n```\n\n## 选择指南\n[BV1TuTQ6CEsY P1 01:01] 双降功能一步到位  \n[BV1TuTQ6CEsY P1 01:06] 手动检查  \n\n```mermaid\nflowchart TD\n    A[\"需要降重？\"] -->|局部重复高| B[\"使用方法一\"]\n    A -->|整体重复高| C[\"使用方法二\"]\n    B --> D[\"检查相似率\"]\n    C --> E[\"检查相似率与AI率\"]\n    E -->|想一步完成| F[\"双降功能\"]\n    D --> G[\"手动复核\"]\n    F --> G\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"DeepSeek 降重\"] --> B[\"方法一：直接转写\"]\n    A --> C[\"方法二：提取‑扩展\"]\n    B --> D[\"局部重复率高\"]\n    B --> E[\"相似度降至55%\"]\n    C --> F[\"整体重复率高\"]\n    C --> G[\"相似度降至5%\"]\n    G --> H[\"AI检测率高\"]\n    H --> I[\"使用学术工具降AIGC\"]\n    I --> J[\"AI率单个位数\"]"
+    },
+    {
+      "title": "方法一：直接转写",
+      "code": "flowchart TD\n    A[\"输入文章\"] --> B[\"使用最佳提示词\"]\n    B --> C[\"DeepSeek 转写\"]\n    C --> D[\"保持原意\"]\n    D --> E[\"相似度 55%\"]\n    E --> F[\"局部重复率降低\"]"
+    },
+    {
+      "title": "方法二：提取‑扩展",
+      "code": "flowchart TD\n    A[\"提取核心论点\"] --> B[\"基于学术框架演绎\"]\n    B --> C[\"开启联网搜索\"]\n    C --> D[\"整体相似度 5%\"]\n    D --> E[\"AI生成内容\"]\n    E --> F[\"AI检测率高\"]\n    F --> G[\"使用学术工具降AIGC\"]\n    G --> H[\"AI率单个位数\"]"
+    },
+    {
+      "title": "选择指南",
+      "code": "flowchart TD\n    A[\"需要降重？\"] -->|局部重复高| B[\"使用方法一\"]\n    A -->|整体重复高| C[\"使用方法二\"]\n    B --> D[\"检查相似率\"]\n    C --> E[\"检查相似率与AI率\"]\n    E -->|想一步完成| F[\"双降功能\"]\n    D --> G[\"手动复核\"]\n    F --> G"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T10:00:00+00:00"
+}

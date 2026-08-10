@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1khgY64Eg8",
+  "title": "【全82集】吊打付费！目前B站最全最细的Agent智能体开发全套教程！手把手教你打造专属智能体，七天就能从小白到大神！带你从零基础入门到精通实现商业变现！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1117,
+  "text": "你是不是想学AI agent的开发\n但是一看到Python大模型\n还有LAUNCHAIN这些词\n直接就头大了\n觉得自己搞不定\n今天我就把自己踩过的坑和走过的路\n给大家捋出来\n一条最简单的路径\n不用去纠结那些复杂的理论\n小白也能够轻松的去上手\n第一步\n我们先把Python搞定\n先别慌\nPython不用学到精通\n我们的目标其实就两个\n第一能够看懂AI项目的代码\n第二能够写出来简单的逻辑功能\n很多人一上来就去啃Python的书籍\n其实这样很浪费时间的\n我把要学的Python知识点都整理成了脑图\n照着图去挑重点\n学3~4天的时间\n每天一两个小时就足够了\n记住我们是为了搞AI agent的开发去学\n而不是去当算法工程师\n所以够用就行了\n千万别死磕\n第二步\n我们要搞懂大模型\n它是AI agent的核心\n就好像车子的发动机\n没有发动机\n车子是跑不起来的\n很多人觉得大模型太难了\n看不懂里面的理论\n其实找对了路子也没有那么难\n首先丢掉网上一大堆的教程\n这样只会让你越学越乱\n先看一本书\n从零构建大模型\n你也不要逐字逐句地去抠\n抓三个重点就行\n第一个是大模型怎么去拼起来的\n第二个大模型的核心概念有哪些\n比如什么是向量\n什么是嵌入模型\n还有微调的过程是什么\n最后就是清楚大模型是怎么跑起来的\n很多人说看书是越看越迷糊\n也可以跟着我这个路线来\n都有对应的教程给你学习\n当然光看书和学理论肯定是不行的\n要尽量的去上手实操\n推荐用像阿里云\n百度这种平台\n能够用零代码或者低代码的形式做知识库\n搞工作流\n把自己的内容传上去\n试着微调一下大模型\n直观感受大模型是怎么调用的\n怎么适配自己需求的瞬间你就懂了\n第三步也是最关键的一步\n就是用long unchain做AI agent\n开发long unchain呢现在应该是最主流的框架\n直接去看官方文档就行\n如果想更简单\n也可以跟着教程过一遍\n更好理解agent的核心\n其实就一句话\nagent等于大模型加记忆加工具\n所以我们要搞懂怎么让agent自动调用工具来干活\n跟着文档里的代码一步一步地跑下来\n先跑通第一个简单的agent就算你入门了\n总结下来\n其实agent最简单的路径就三步\n第一个是搞定Python基础\n第二个用书和实操平台把大模型搞明白\n第三个就是用LUNCHAIN这种框架做代码\n实现全程不需要特别懂里边的理论\n我们只需要理解这些各个模块的处理\n逻辑就可以了\n实操为主\n小白也能够快速入门\n我也是把转AI agents开发要学的内容\n整理成一份学习路线\n先学什么后学什么\n看什么教程\n练什么项目\n还有对应的学习教程\nAI agents开发其实并不难\n难的是没有一份手把手带你入门的路线图",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1khgY64Eg8",
+  "published_at": "1784887907",
+  "fetched_at": "2026-08-07T03:10:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI Agent 开发知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"Python 基础\"] --> B[\"大模型理解\"]\n    B --> C[\"LangChain 框架\"]\n    C --> D[\"实操平台（阿里云/百度）\"]\n    D --> E[\"完成 Simple Agent 入门\"]\n```\n\n## Python 学习要点\n```mermaid\nflowchart TD\n    A[\"目标：阅读 AI 项目代码\"] --> B[\"目标：实现简单逻辑功能\"]\n    B --> C[\"重点：变量、函数、包管理\"]\n    C --> D[\"学习时长：3~4 天，每天 1-2 小时\"]\n    D --> E[\"不必精通，只需能上手\"]\n```\n\n## 大模型核心概念\n```mermaid\nflowchart TD\n    A[\"大模型拼装方式\"] --> B[\"向量表示\"]\n    B --> C[\"嵌入模型\"]\n    C --> D[\"微调过程\"]\n    D --> E[\"运行机制：模型推理\"]\n```\n\n## LangChain 框架核心组成\n```mermaid\nflowchart TD\n    A[\"大模型\"] --> B[\"记忆\"]\n    B --> C[\"工具\"]\n    C --> D[\"Agent = 大模型 + 记忆 + 工具\"]\n    D --> E[\"自动调用工具执行任务\"]\n```\n\n## 实操平台与微调流程\n```mermaid\nflowchart TD\n    A[\"选择平台：阿里云 / 百度\"] --> B[\"零代码/低代码构建知识库\"]\n    B --> C[\"创建工作流并上传内容\"]\n    C --> D[\"微调大模型\"]\n    D --> E[\"直观感受模型调用与适配需求\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"Python 基础\"] --> B[\"大模型理解\"]\n    B --> C[\"LangChain 框架\"]\n    C --> D[\"实操平台（阿里云/百度）\"]\n    D --> E[\"完成 Simple Agent 入门\"]"
+        },
+        {
+          "title": "Python 学习要点",
+          "code": "flowchart TD\n    A[\"目标：阅读 AI 项目代码\"] --> B[\"目标：实现简单逻辑功能\"]\n    B --> C[\"重点：变量、函数、包管理\"]\n    C --> D[\"学习时长：3~4 天，每天 1-2 小时\"]\n    D --> E[\"不必精通，只需能上手\"]"
+        },
+        {
+          "title": "大模型核心概念",
+          "code": "flowchart TD\n    A[\"大模型拼装方式\"] --> B[\"向量表示\"]\n    B --> C[\"嵌入模型\"]\n    C --> D[\"微调过程\"]\n    D --> E[\"运行机制：模型推理\"]"
+        },
+        {
+          "title": "LangChain 框架核心组成",
+          "code": "flowchart TD\n    A[\"大模型\"] --> B[\"记忆\"]\n    B --> C[\"工具\"]\n    C --> D[\"Agent = 大模型 + 记忆 + 工具\"]\n    D --> E[\"自动调用工具执行任务\"]"
+        },
+        {
+          "title": "实操平台与微调流程",
+          "code": "flowchart TD\n    A[\"选择平台：阿里云 / 百度\"] --> B[\"零代码/低代码构建知识库\"]\n    B --> C[\"创建工作流并上传内容\"]\n    C --> D[\"微调大模型\"]\n    D --> E[\"直观感受模型调用与适配需求\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T03:10:46+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI Agent 开发知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"Python 基础\"] --> B[\"大模型理解\"]\n    B --> C[\"LangChain 框架\"]\n    C --> D[\"实操平台（阿里云/百度）\"]\n    D --> E[\"完成 Simple Agent 入门\"]\n```\n\n## Python 学习要点\n```mermaid\nflowchart TD\n    A[\"目标：阅读 AI 项目代码\"] --> B[\"目标：实现简单逻辑功能\"]\n    B --> C[\"重点：变量、函数、包管理\"]\n    C --> D[\"学习时长：3~4 天，每天 1-2 小时\"]\n    D --> E[\"不必精通，只需能上手\"]\n```\n\n## 大模型核心概念\n```mermaid\nflowchart TD\n    A[\"大模型拼装方式\"] --> B[\"向量表示\"]\n    B --> C[\"嵌入模型\"]\n    C --> D[\"微调过程\"]\n    D --> E[\"运行机制：模型推理\"]\n```\n\n## LangChain 框架核心组成\n```mermaid\nflowchart TD\n    A[\"大模型\"] --> B[\"记忆\"]\n    B --> C[\"工具\"]\n    C --> D[\"Agent = 大模型 + 记忆 + 工具\"]\n    D --> E[\"自动调用工具执行任务\"]\n```\n\n## 实操平台与微调流程\n```mermaid\nflowchart TD\n    A[\"选择平台：阿里云 / 百度\"] --> B[\"零代码/低代码构建知识库\"]\n    B --> C[\"创建工作流并上传内容\"]\n    C --> D[\"微调大模型\"]\n    D --> E[\"直观感受模型调用与适配需求\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"Python 基础\"] --> B[\"大模型理解\"]\n    B --> C[\"LangChain 框架\"]\n    C --> D[\"实操平台（阿里云/百度）\"]\n    D --> E[\"完成 Simple Agent 入门\"]"
+    },
+    {
+      "title": "Python 学习要点",
+      "code": "flowchart TD\n    A[\"目标：阅读 AI 项目代码\"] --> B[\"目标：实现简单逻辑功能\"]\n    B --> C[\"重点：变量、函数、包管理\"]\n    C --> D[\"学习时长：3~4 天，每天 1-2 小时\"]\n    D --> E[\"不必精通，只需能上手\"]"
+    },
+    {
+      "title": "大模型核心概念",
+      "code": "flowchart TD\n    A[\"大模型拼装方式\"] --> B[\"向量表示\"]\n    B --> C[\"嵌入模型\"]\n    C --> D[\"微调过程\"]\n    D --> E[\"运行机制：模型推理\"]"
+    },
+    {
+      "title": "LangChain 框架核心组成",
+      "code": "flowchart TD\n    A[\"大模型\"] --> B[\"记忆\"]\n    B --> C[\"工具\"]\n    C --> D[\"Agent = 大模型 + 记忆 + 工具\"]\n    D --> E[\"自动调用工具执行任务\"]"
+    },
+    {
+      "title": "实操平台与微调流程",
+      "code": "flowchart TD\n    A[\"选择平台：阿里云 / 百度\"] --> B[\"零代码/低代码构建知识库\"]\n    B --> C[\"创建工作流并上传内容\"]\n    C --> D[\"微调大模型\"]\n    D --> E[\"直观感受模型调用与适配需求\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:10:46+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1qtuE6uE2T",
+  "title": "DeepSeek官方API接入Codex保姆级教程: 使用V4 Flash模型降低AI编程门槛",
+  "status": "ok",
+  "language": "zh",
+  "chars": 2555,
+  "text": "hello大家好我是DP\n因为Deepseek官方已经正式\n支持了Openai类型的API\n所以也就意味着我们可以把\nDeepseek官方API接入到Codex里来使用了\n这是一个非常容易的尝试\n而且目前来看\nDeepseek V4 Flash这个模型\n也有一定的使用场景\n所以我们录一个视频来和\n大家分享一下如何把Deepseek\n官方API接入到Codex里来使用\n首先我们需要进入准备环节\n第一件事你需要打开dpit.lib00.com\n然后在这里搜索Deepseek\n找到这期视频对应的这个文章\n把这个文章打开\n然后还是老规矩\n你需要知道的是\n这期视频对应的所有内容\n你都可以在这个文章里找到\n首先我们先看b部分\nb部分是相关的链接\n一个是Deepseek开放平台的链接\n通过这个链接\n你可以新建到API Key\n另外一个是开放平台对应的API 文本\n好我们现在回到准备环节\n第一件事你需要做的是\n准备一个Deepseek的API Key\n如果不知道API Key该怎么申请\n可以看我在这里发的这个视频\n我这里是新建了一个视频演示的key\n所以我在这里是直接给出的\n视频结束以后我会把它删除掉\n然后你的API key\n新建完了以后一定要保存好\n不要给任何人看\n不要公开\n好接下来是三个文件\n我们一个一个来看\n第一个文件是auth.json\n这个文件简单的说就\n按照这个格式来准备\n然后这里换成你的API Key\n和上面是一样的\n第二个文件是config.toml\n这个文件你可能这个\n文件里会有很多内容\n所以我把你需要替换\n的内容都列出来了\n首先第一个是provider\n这边我用的是DPWorking\n这个和这里是对应的\n所以说你的provider可以是不同的名字\n但是这两个是需要对应上的\n做完了然后这里的model是Deepseek V4 Flash\n思考模式是high\n没有问题\n然后这里这一行照抄\n关于这个deepseek-models.json这个文件\n稍后我们说\n然后在这个provider下方\n这行照抄\n这行照抄\n这行照抄\n这行要改成和我一样\n的Deepseek API的 URL\n然后这里是你的Deepseek的 key\n所以说你的key要在这个地方和这个地方进行修改同步的\n至于其他的在config.TOML文件里的内容\n你可以保持不需要改动\n好的\n接下来是关于Deepseek-models.json这个文件\n你可以通过夸克网盘下载\n也可以通过我们给的直链直接下载\n下载完了以后是个压缩包\n解压以后就可以得到这个文件\n好现在我们来进入实际操作环节\n首先这里你需要打开的是你\n用户根目录下的.Codex文件夹\n这就是Codex的统一配置文件夹\n然后一个一个来改\n第一个是点开这个auth.json\n在这里面就直接改成这个样子\n不用做任何的调整\n把key换成你的说完了\n第二个是config.toml\n这里面你一定是有很多内容的\n除非你刚开始用\n所以你重点要改的是这两行\n以及这里的5行\n但前面这三行\n如果你正常用的话是一样的\n然后这两行照着改和我们这个\n这里的1.3是一样的\n就是这两个和这里的5个\n没有问题\n然后最后把你下载到的Deepseek-models.json这个文件放在\n.codex文件夹的根目录下\n就在这个这个文件夹的目录下面\n放在最底层\n不用套任何文件夹\n然后在这里会有这么一行\n我这里写的不对\n我把它改过来\n改成这样\n这样就可以直接把这个\n就是Deepseek对应的模型映射进来\n到这里为止\n所有的设置和准备工作都已经完成了\nOK接下来我们进入测试阶段\n首先在测试开始之前\n你需要知道的一个点是\n你的Deepseek账户里需要有余额\n所有的API调用是基于预付费的\n也就是说你账户里有\n余额才能完成API的调用\n如果不知道该怎么充值的话\n可以看我在这里发的这期视频\n接下来我们打开vscode\n我用vscode下方的命令行来做演示\n你只需要打开任意一个项目文件夹就可以\n我这个项目里演示的是DP-CODEX-101\n然后在这里我直接输入\nCodex启动项目就可以了\n这时候可以看到\n默认的项目是\n使用的模型是Deepseek V4 Flash\n然后我们尝试来切换模型\n可以看到这里有Flash和Pro两个模型\n是可以切换的\n正常切换是没有问题的\n因为对Codex的兼容好像是4Flash更好一点\n所以我们用4Flash来做一个简单的演示\n我在这边输入一个内容\n收到新任务正在按照你的要求处理\n然后它你完成了\n下个任务见\n然后它就可以正常的去执行\n然后我们之前配的提示的hook也可以正常的工作\n如果对这个语音提示的hooks有兴趣的话\n可以看我在这里发的这期视频\n然后这个请求非常的简单\n然后它运行完了以后\n大概的费用是多少呢 0.02\n这就是一次的费用\n为什么我知道呢\n因为它需要等个\n3-5分钟才会刷新计费\n但是我之前做测试的时候做了相同的内容\n所以这个0.02就是我之前\n测试的时候的一个价格\nOK我们接下来来看一下相同的配置\n在Codex APP中的表现会是什么样子\n这边大家可以看到它\n显示的model是custom\n然后思考强度是可以调整\n但这个调整有没有效我还真不知道\n但是直接去使用\n相同的问题去提问是可以正确的\n正在按照你的要求处理\n是可以正确的去执行\n然后得到结果\n处理完成了下个任务见\n然后它的模型的调用也都是正确的\n所以说在Codex APP中就会出现这个\n模型无法调整的这么一个问题\n并且显示也只是显示成custome 自定义\nOK我们来做一个比较简单的总结\n首先这是一次非常非常好的测试\n为什么呢\n因为他把整个Codex使用的门槛拉得很低\n对不对? 然后他对未来可能会\n有一个很好的兼容性\n因为未来我们可以用这种\n方式来接入更多的模型\n也欢迎大家来用这种方式\n来初步的尝试一下Codex\n我觉得是一个很好的体验\n好的这就是这一期如何把\nDeepseek V4 Flash模型通过官方\n兼容的方式接入到Codex中的全部内容\n如果这期视频对你有帮助\n请帮忙点赞和转发\n如果你有相同的经验想要分享\n或者遇到相关问题\n欢迎留言\n我是DP谢谢",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qtuE6uE2T",
+  "published_at": "1786091400",
+  "fetched_at": "2026-08-08T22:46:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T22:50:20+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T22:50:20+00:00"
+}

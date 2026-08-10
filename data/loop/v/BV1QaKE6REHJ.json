@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1QaKE6REHJ",
+  "title": "2026最新！适合0基础的Unity引擎逆向课程大合集",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1303,
+  "text": "大家好啊\n这期给大家录制一下咱们这个unity引擎专题\n逆向哪一个\n第二期我们之前录过一个嗯C加加语\nE语言分类的一个一起的\n那个里面是单独讲的\n如果就是你在资源非常匮乏的情况下\n你去如何逆向这个unity引擎\n因为大部分我所演示的那个游戏\n大部分都是加密的\n所以说咱们用常规方法逆向不出来\n然后这一期就是从零基础啊\n就是你可能根本就不清楚\n这个unity引擎的什么东西\n我就录制了这样一套二期课程\n那么咱们第一第二期的里面的这个第一部分\n也就是咱们这个unity引擎逆向基础\n这套课程是完全免费的\n而且我已经完全部上传到B站了啊\n你们可以在我主页的合集里面看到\n然后我们来看一下咱们的第二部分\n他就是进阶unity引擎逆向\n咱们在这里面可以了解到\nmono以及LCPP的区别\n并且嗯用咱们这六个游戏给大家完整的去训练\n一下咱们mono逆向以及l to cpp逆向\n然后咱们看一下第三部分\n第三部分就是一些咱们的热门网游实战\n就比如咱们一些新上架的游戏嗯\n因为最近嘛是啊这个时空进化新上市\n所以说咱们就录制了一个这个施工计划的一个\n这样一个课程\n可以看到啊\n这边封面我已经做出来了\n以及咱们这个逃离塔科夫正式服嗯\n因为这两个游戏呢\n深空计划\n貌似是到现在都没有进行一个加密处理\n但是逃离塔科夫\n作为一个嗯已经上市好几年的游戏了\n它里面有很多的一些加密数据\n所以说咱们在这个LSUCPP施工计划\n可以作为一个引用前些的基础知识来告诉大家\n咱们施工计划应该去如何的进行一个\n嗯知识逆向\n当然啊咱们这个sf cpp合集里面\n还会随着每年游戏不断的上架\n咱们还会跟随咱们时代的脚步\n上市一些新的一些游戏\n逆向也是只要你购买了咱们第三部分课程\n咱们后期这里面更新的所有新游戏\n的一个逆向课程\n你都是可以免费获取到的\n当然了\n这些单独的游戏营销课程\n你也可以单买\n然后说回咱们逃离塔科夫\n它呢是作为一个比较老的游戏了\n它是一个mono\n但是它加密嗯也不算比较严重\n但是多多少少也会有点\n咱们首先就会进行一个分析\n再进行一个解密\n然后咱们再进行常规的绘制嘶\n然后如果你购买了咱们的二期课程呢\n我们会免费赠送咱们unity1期课程\nunity1期课程的课表\n就在咱们群公告里面的一个合集里面\n大家可以观看一下\n然后如果你是全套购买了咱们D23\n三个部分的unity2期课程\n我们把它称为大合集\n如果你们把咱们这个unity逆向二期大合集购买了\n咱们会免费赠送咱们unity反射系统\n以及手搓down牌CDK的\n599\n也就是他啊你学会了这套课程呢\n你可以去嗯知道咱们unity反射结构它是什么样的\n就是你可以去手搓咱们那个DPSDK的框架\n然后以及咱们的physics\n咱们的外部漏打\n就是你如果要做漏打的话\n一般都是内部去获取摄像call\n或是外部获取一些其他东西\n但是咱们这个获取到一个physics\n就可以获取到场景模型\n然后再去做三角形\n就可以知道这个敌人到底有没有可视\n然后啊\n如果你说你想看一看咱们这个到底适不适合你\n你也可以去咱们这个交流群里面去交流一下\n不买课程也没关系嘛\n咱们可以找一个地方合法的交流一下",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1QaKE6REHJ",
+  "published_at": "1784265404",
+  "fetched_at": "2026-08-10T10:05:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Unity 引擎逆向课程知识图谱\n\n## 课程整体结构\n```mermaid\nflowchart TD\n    A[\"基础逆向课程（免费）\"]\n    B[\"进阶逆向课程\"]\n    C[\"热门网游实战\"]\n    D[\"课程合集已上传至B站主页\"]\n    E[\"可单独购买游戏课程\"]\n    F[\"持续更新新游戏逆向\"]\n    G[\"购买全套获赠Unity反射系统\"]\n    H[\"获取Physics与场景模型\"]\n    A --> D\n    B --> C\n    C --> F\n    E --> F\n    G --> H\n```\n\n## 技术路线：Mono 与 IL2CPP\n```mermaid\nflowchart TD\n    M[\"Mono\"]\n    L[\"IL2CPP\"]\n    N[\"加密程度\"]\n    O[\"逆向难度\"]\n    P[\"适用于老游戏\"]\n    Q[\"适用于新游戏\"]\n    R[\"分析 → 解密 → 绘制 流程\"]\n    S[\"Physics 与场景模型获取\"]\n    T[\"常规绘制\"]\n    M --> N\n    L --> N\n    N --> O\n    M --> P\n    L --> Q\n    R --> S\n    R --> T\n    P --> R\n    Q --> R\n```\n\n## 购买与赠送机制\n```mermaid\nflowchart TD\n    U[\"购买二期课程\"]\n    V[\"免费赠送一期课程课表\"]\n    W[\"全套购买（D23）\"]\n    X[\"免费赠送Unity反射系统\"]\n    Y[\"手搓DPSDK 框架\"]\n    Z[\"获取Physics 模块\"]\n    AA[\"DPSDK 使用指南\"]\n    BB[\"599 CDK 兑换码\"]\n    U --> V\n    W --> X\n    X --> Y\n    X --> Z\n    Y --> AA\n    Z --> BB\n```\n\n## 实战工作流（以 Escape from Tarkov 为例）\n```mermaid\nflowchart TD\n    S[\"Escape from Tarkov (Mono)\"]\n    T[\"分析\"]\n    U2[\"解密\"]\n    V2[\"常规绘制\"]\n    W2[\"获取Physics\"]\n    X2[\"场景模型\"]\n    Y2[\"三角形可视性检测\"]\n    Z2[\"判断敌人是否可视\"]\n    S --> T --> U2 --> V2 --> W2 --> X2 --> Y2 --> Z2\n```",
+      "diagrams": [
+        {
+          "title": "课程整体结构",
+          "code": "flowchart TD\n    A[\"基础逆向课程（免费）\"]\n    B[\"进阶逆向课程\"]\n    C[\"热门网游实战\"]\n    D[\"课程合集已上传至B站主页\"]\n    E[\"可单独购买游戏课程\"]\n    F[\"持续更新新游戏逆向\"]\n    G[\"购买全套获赠Unity反射系统\"]\n    H[\"获取Physics与场景模型\"]\n    A --> D\n    B --> C\n    C --> F\n    E --> F\n    G --> H"
+        },
+        {
+          "title": "技术路线：Mono 与 IL2CPP",
+          "code": "flowchart TD\n    M[\"Mono\"]\n    L[\"IL2CPP\"]\n    N[\"加密程度\"]\n    O[\"逆向难度\"]\n    P[\"适用于老游戏\"]\n    Q[\"适用于新游戏\"]\n    R[\"分析 → 解密 → 绘制 流程\"]\n    S[\"Physics 与场景模型获取\"]\n    T[\"常规绘制\"]\n    M --> N\n    L --> N\n    N --> O\n    M --> P\n    L --> Q\n    R --> S\n    R --> T\n    P --> R\n    Q --> R"
+        },
+        {
+          "title": "购买与赠送机制",
+          "code": "flowchart TD\n    U[\"购买二期课程\"]\n    V[\"免费赠送一期课程课表\"]\n    W[\"全套购买（D23）\"]\n    X[\"免费赠送Unity反射系统\"]\n    Y[\"手搓DPSDK 框架\"]\n    Z[\"获取Physics 模块\"]\n    AA[\"DPSDK 使用指南\"]\n    BB[\"599 CDK 兑换码\"]\n    U --> V\n    W --> X\n    X --> Y\n    X --> Z\n    Y --> AA\n    Z --> BB"
+        },
+        {
+          "title": "实战工作流（以 Escape from Tarkov 为例）",
+          "code": "flowchart TD\n    S[\"Escape from Tarkov (Mono)\"]\n    T[\"分析\"]\n    U2[\"解密\"]\n    V2[\"常规绘制\"]\n    W2[\"获取Physics\"]\n    X2[\"场景模型\"]\n    Y2[\"三角形可视性检测\"]\n    Z2[\"判断敌人是否可视\"]\n    S --> T --> U2 --> V2 --> W2 --> X2 --> Y2 --> Z2"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T10:05:58+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Unity 引擎逆向课程知识图谱\n\n## 课程整体结构\n```mermaid\nflowchart TD\n    A[\"基础逆向课程（免费）\"]\n    B[\"进阶逆向课程\"]\n    C[\"热门网游实战\"]\n    D[\"课程合集已上传至B站主页\"]\n    E[\"可单独购买游戏课程\"]\n    F[\"持续更新新游戏逆向\"]\n    G[\"购买全套获赠Unity反射系统\"]\n    H[\"获取Physics与场景模型\"]\n    A --> D\n    B --> C\n    C --> F\n    E --> F\n    G --> H\n```\n\n## 技术路线：Mono 与 IL2CPP\n```mermaid\nflowchart TD\n    M[\"Mono\"]\n    L[\"IL2CPP\"]\n    N[\"加密程度\"]\n    O[\"逆向难度\"]\n    P[\"适用于老游戏\"]\n    Q[\"适用于新游戏\"]\n    R[\"分析 → 解密 → 绘制 流程\"]\n    S[\"Physics 与场景模型获取\"]\n    T[\"常规绘制\"]\n    M --> N\n    L --> N\n    N --> O\n    M --> P\n    L --> Q\n    R --> S\n    R --> T\n    P --> R\n    Q --> R\n```\n\n## 购买与赠送机制\n```mermaid\nflowchart TD\n    U[\"购买二期课程\"]\n    V[\"免费赠送一期课程课表\"]\n    W[\"全套购买（D23）\"]\n    X[\"免费赠送Unity反射系统\"]\n    Y[\"手搓DPSDK 框架\"]\n    Z[\"获取Physics 模块\"]\n    AA[\"DPSDK 使用指南\"]\n    BB[\"599 CDK 兑换码\"]\n    U --> V\n    W --> X\n    X --> Y\n    X --> Z\n    Y --> AA\n    Z --> BB\n```\n\n## 实战工作流（以 Escape from Tarkov 为例）\n```mermaid\nflowchart TD\n    S[\"Escape from Tarkov (Mono)\"]\n    T[\"分析\"]\n    U2[\"解密\"]\n    V2[\"常规绘制\"]\n    W2[\"获取Physics\"]\n    X2[\"场景模型\"]\n    Y2[\"三角形可视性检测\"]\n    Z2[\"判断敌人是否可视\"]\n    S --> T --> U2 --> V2 --> W2 --> X2 --> Y2 --> Z2\n```",
+  "diagrams": [
+    {
+      "title": "课程整体结构",
+      "code": "flowchart TD\n    A[\"基础逆向课程（免费）\"]\n    B[\"进阶逆向课程\"]\n    C[\"热门网游实战\"]\n    D[\"课程合集已上传至B站主页\"]\n    E[\"可单独购买游戏课程\"]\n    F[\"持续更新新游戏逆向\"]\n    G[\"购买全套获赠Unity反射系统\"]\n    H[\"获取Physics与场景模型\"]\n    A --> D\n    B --> C\n    C --> F\n    E --> F\n    G --> H"
+    },
+    {
+      "title": "技术路线：Mono 与 IL2CPP",
+      "code": "flowchart TD\n    M[\"Mono\"]\n    L[\"IL2CPP\"]\n    N[\"加密程度\"]\n    O[\"逆向难度\"]\n    P[\"适用于老游戏\"]\n    Q[\"适用于新游戏\"]\n    R[\"分析 → 解密 → 绘制 流程\"]\n    S[\"Physics 与场景模型获取\"]\n    T[\"常规绘制\"]\n    M --> N\n    L --> N\n    N --> O\n    M --> P\n    L --> Q\n    R --> S\n    R --> T\n    P --> R\n    Q --> R"
+    },
+    {
+      "title": "购买与赠送机制",
+      "code": "flowchart TD\n    U[\"购买二期课程\"]\n    V[\"免费赠送一期课程课表\"]\n    W[\"全套购买（D23）\"]\n    X[\"免费赠送Unity反射系统\"]\n    Y[\"手搓DPSDK 框架\"]\n    Z[\"获取Physics 模块\"]\n    AA[\"DPSDK 使用指南\"]\n    BB[\"599 CDK 兑换码\"]\n    U --> V\n    W --> X\n    X --> Y\n    X --> Z\n    Y --> AA\n    Z --> BB"
+    },
+    {
+      "title": "实战工作流（以 Escape from Tarkov 为例）",
+      "code": "flowchart TD\n    S[\"Escape from Tarkov (Mono)\"]\n    T[\"分析\"]\n    U2[\"解密\"]\n    V2[\"常规绘制\"]\n    W2[\"获取Physics\"]\n    X2[\"场景模型\"]\n    Y2[\"三角形可视性检测\"]\n    Z2[\"判断敌人是否可视\"]\n    S --> T --> U2 --> V2 --> W2 --> X2 --> Y2 --> Z2"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T10:05:58+00:00"
+}

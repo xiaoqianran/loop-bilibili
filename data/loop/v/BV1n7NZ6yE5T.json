@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1n7NZ6yE5T",
+  "title": "当你让deepseek v4灰度正式版和预览版做同样的游戏时",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 212,
+  "text": "继续本次测试所用的游戏素材\n这是DSV4预览版\n从let me的思维链可以看出\n可以看到他对素材贴图的理解有很大错误\n而且敌人也是直接生成在墙里了\n可以静枪换枪\n不过瞄准有米奇bug\n可以正常死亡和重新开始\n效果只能休息\n拉完了\n接下来看看灰度静息版\n可以看到习用的M思维链\n这次不仅对贴图的理解是对的\n而且还加入了音效\n这个素材的难点在于\n里面并没有标注人物的朝向\n而且素材中各种tile基本是以tile\n加权数字来命名的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1n7NZ6yE5T",
+  "published_at": "1784300437",
+  "fetched_at": "2026-08-06T16:29:23+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 当你让deepseek v4灰度正式版和预览版做同样的游戏时\n\n## 总览对比\n```mermaid\nflowchart TD\n    A[\"DSV4 预览版\"] --> B[\"贴图理解错误\"]\n    A --> C[\"敌人生成在墙内\"]\n    A --> D[\"瞄准出现米奇bug\"]\n    A --> E[\"只能休息（效果）\"]\n    A --> F[\"可切换武器\"]\n    A --> G[\"可正常死亡并重开\"]\n    H[\"DSV4 灰度静息版\"] --> I[\"贴图理解正确\"]\n    H --> J[\"加入音效\"]\n    H --> K[\"缺少人物朝向标注\"]\n    H --> L[\"Tile 以加权数字命名\"]\n```\n- 预览版开始 [BV1n7NZ6yE5T P1 00:10]  \n- 贴图理解错误 [BV1n7NZ6yE5T P1 00:32]  \n- 敌人生成在墙内 [BV1n7NZ6yE5T P1 00:36]  \n- 瞄准出现米奇bug [BV1n7NZ6yE5T P1 00:50]  \n- 可正常死亡并重开 [BV1n7NZ6yE5T P1 01:17]  \n- 效果只能休息 [BV1n7NZ6yE5T P1 01:21]  \n- 切换到灰度静息版 [BV1n7NZ6yE5T P1 01:25]  \n- 灰度版贴图正确 [BV1n7NZ6yE5T P1 01:48]  \n- 加入音效 [BV1n7NZ6yE5T P1 01:51]  \n- 缺少人物朝向标注 [BV1n7NZ6yE5T P1 05:21]  \n- Tile 以加权数字命名 [BV1n7NZ6yE5T P1 05:25]\n\n## 预览版问题链\n```mermaid\nflowchart LR\n    A[\"贴图理解错误\"] --> B[\"敌人生成在墙内\"]\n    B --> C[\"瞄准出现米奇bug\"]\n    C --> D[\"只能休息（效果）\"]\n    A --> E[\"可切换武器\"]\n    E --> F[\"可正常死亡并重开\"]\n```\n- 贴图误解导致敌人位置错误 [BV1n7NZ6yE5T P1 00:32]  \n- 敌人生成错误导致瞄准异常 [BV1n7NZ6yE5T P1 00:36]  \n- 瞄准bug导致效果受限 [BV1n7NZ6yE5T P1 00:50]  \n- 只能休息的效果表现 [BV1n7NZ6yE5T P1 01:21]  \n- 切枪功能仍可用 [BV1n7NZ6yE5T P1 00:43]  \n- 死亡与重开正常 [BV1n7NZ6yE5T P1 01:17]\n\n## 灰度版改进与难点\n```mermaid\nflowchart TD\n    A[\"贴图理解正确\"] --> B[\"场景生成正常\"]\n    A --> C[\"加入音效\"]\n    D[\"缺少人物朝向标注\"] --> E[\"角色朝向不明确\"]\n    F[\"Tile 以加权数字命名\"] --> G[\"素材解析复杂\"]\n    B --> H[\"整体表现提升\"]\n    E --> H\n    G --> H\n```\n- 正确的贴图理解提升场景生成 [BV1n7NZ6yE5T P1 01:48]  \n- 加入音效增强体验 [BV1n7NZ6yE5T P1 01:51]  \n- 素材缺少人物朝向标注导致朝向不明确 [BV1n7NZ6yE5T P1 05:21]  \n- Tile 以加权数字命名导致解析复杂 [BV1n7NZ6yE5T P1 05:25]  \n- 综合改进提升整体表现 [BV1n7NZ6yE5T P1 01:30]  ",
+      "diagrams": [
+        {
+          "title": "总览对比",
+          "code": "flowchart TD\n    A[\"DSV4 预览版\"] --> B[\"贴图理解错误\"]\n    A --> C[\"敌人生成在墙内\"]\n    A --> D[\"瞄准出现米奇bug\"]\n    A --> E[\"只能休息（效果）\"]\n    A --> F[\"可切换武器\"]\n    A --> G[\"可正常死亡并重开\"]\n    H[\"DSV4 灰度静息版\"] --> I[\"贴图理解正确\"]\n    H --> J[\"加入音效\"]\n    H --> K[\"缺少人物朝向标注\"]\n    H --> L[\"Tile 以加权数字命名\"]"
+        },
+        {
+          "title": "预览版问题链",
+          "code": "flowchart LR\n    A[\"贴图理解错误\"] --> B[\"敌人生成在墙内\"]\n    B --> C[\"瞄准出现米奇bug\"]\n    C --> D[\"只能休息（效果）\"]\n    A --> E[\"可切换武器\"]\n    E --> F[\"可正常死亡并重开\"]"
+        },
+        {
+          "title": "灰度版改进与难点",
+          "code": "flowchart TD\n    A[\"贴图理解正确\"] --> B[\"场景生成正常\"]\n    A --> C[\"加入音效\"]\n    D[\"缺少人物朝向标注\"] --> E[\"角色朝向不明确\"]\n    F[\"Tile 以加权数字命名\"] --> G[\"素材解析复杂\"]\n    B --> H[\"整体表现提升\"]\n    E --> H\n    G --> H"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T18:18:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 当你让deepseek v4灰度正式版和预览版做同样的游戏时\n\n## 总览对比\n```mermaid\nflowchart TD\n    A[\"DSV4 预览版\"] --> B[\"贴图理解错误\"]\n    A --> C[\"敌人生成在墙内\"]\n    A --> D[\"瞄准出现米奇bug\"]\n    A --> E[\"只能休息（效果）\"]\n    A --> F[\"可切换武器\"]\n    A --> G[\"可正常死亡并重开\"]\n    H[\"DSV4 灰度静息版\"] --> I[\"贴图理解正确\"]\n    H --> J[\"加入音效\"]\n    H --> K[\"缺少人物朝向标注\"]\n    H --> L[\"Tile 以加权数字命名\"]\n```\n- 预览版开始 [BV1n7NZ6yE5T P1 00:10]  \n- 贴图理解错误 [BV1n7NZ6yE5T P1 00:32]  \n- 敌人生成在墙内 [BV1n7NZ6yE5T P1 00:36]  \n- 瞄准出现米奇bug [BV1n7NZ6yE5T P1 00:50]  \n- 可正常死亡并重开 [BV1n7NZ6yE5T P1 01:17]  \n- 效果只能休息 [BV1n7NZ6yE5T P1 01:21]  \n- 切换到灰度静息版 [BV1n7NZ6yE5T P1 01:25]  \n- 灰度版贴图正确 [BV1n7NZ6yE5T P1 01:48]  \n- 加入音效 [BV1n7NZ6yE5T P1 01:51]  \n- 缺少人物朝向标注 [BV1n7NZ6yE5T P1 05:21]  \n- Tile 以加权数字命名 [BV1n7NZ6yE5T P1 05:25]\n\n## 预览版问题链\n```mermaid\nflowchart LR\n    A[\"贴图理解错误\"] --> B[\"敌人生成在墙内\"]\n    B --> C[\"瞄准出现米奇bug\"]\n    C --> D[\"只能休息（效果）\"]\n    A --> E[\"可切换武器\"]\n    E --> F[\"可正常死亡并重开\"]\n```\n- 贴图误解导致敌人位置错误 [BV1n7NZ6yE5T P1 00:32]  \n- 敌人生成错误导致瞄准异常 [BV1n7NZ6yE5T P1 00:36]  \n- 瞄准bug导致效果受限 [BV1n7NZ6yE5T P1 00:50]  \n- 只能休息的效果表现 [BV1n7NZ6yE5T P1 01:21]  \n- 切枪功能仍可用 [BV1n7NZ6yE5T P1 00:43]  \n- 死亡与重开正常 [BV1n7NZ6yE5T P1 01:17]\n\n## 灰度版改进与难点\n```mermaid\nflowchart TD\n    A[\"贴图理解正确\"] --> B[\"场景生成正常\"]\n    A --> C[\"加入音效\"]\n    D[\"缺少人物朝向标注\"] --> E[\"角色朝向不明确\"]\n    F[\"Tile 以加权数字命名\"] --> G[\"素材解析复杂\"]\n    B --> H[\"整体表现提升\"]\n    E --> H\n    G --> H\n```\n- 正确的贴图理解提升场景生成 [BV1n7NZ6yE5T P1 01:48]  \n- 加入音效增强体验 [BV1n7NZ6yE5T P1 01:51]  \n- 素材缺少人物朝向标注导致朝向不明确 [BV1n7NZ6yE5T P1 05:21]  \n- Tile 以加权数字命名导致解析复杂 [BV1n7NZ6yE5T P1 05:25]  \n- 综合改进提升整体表现 [BV1n7NZ6yE5T P1 01:30]  ",
+  "diagrams": [
+    {
+      "title": "总览对比",
+      "code": "flowchart TD\n    A[\"DSV4 预览版\"] --> B[\"贴图理解错误\"]\n    A --> C[\"敌人生成在墙内\"]\n    A --> D[\"瞄准出现米奇bug\"]\n    A --> E[\"只能休息（效果）\"]\n    A --> F[\"可切换武器\"]\n    A --> G[\"可正常死亡并重开\"]\n    H[\"DSV4 灰度静息版\"] --> I[\"贴图理解正确\"]\n    H --> J[\"加入音效\"]\n    H --> K[\"缺少人物朝向标注\"]\n    H --> L[\"Tile 以加权数字命名\"]"
+    },
+    {
+      "title": "预览版问题链",
+      "code": "flowchart LR\n    A[\"贴图理解错误\"] --> B[\"敌人生成在墙内\"]\n    B --> C[\"瞄准出现米奇bug\"]\n    C --> D[\"只能休息（效果）\"]\n    A --> E[\"可切换武器\"]\n    E --> F[\"可正常死亡并重开\"]"
+    },
+    {
+      "title": "灰度版改进与难点",
+      "code": "flowchart TD\n    A[\"贴图理解正确\"] --> B[\"场景生成正常\"]\n    A --> C[\"加入音效\"]\n    D[\"缺少人物朝向标注\"] --> E[\"角色朝向不明确\"]\n    F[\"Tile 以加权数字命名\"] --> G[\"素材解析复杂\"]\n    B --> H[\"整体表现提升\"]\n    E --> H\n    G --> H"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:18:36+00:00"
+}

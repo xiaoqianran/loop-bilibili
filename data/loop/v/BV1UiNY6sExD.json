@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1UiNY6sExD",
+  "title": "Godot3D开发全流程教程：03_游戏素材导入",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 653,
+  "text": "这个视频介绍一下素材导入\n如果你喜欢我的视频\n请给我一键三连\n我非常需要你的支持\n打开新建的项目\n先来导入素材\n我这里使用的是code monkey同款的游戏素材\n如果你也需要画评论区留言\n我发给你\nGo out\n支持常见的游戏素材资产格式导入\n非常简单\n你直接将素材文件夹拖入到文件系统窗口中\n就可以自动导入\n实例化模型\n你可以直接将模型文件拖入3D编辑工作区\n有的时候素材导入可能偏离你的预期\n此时双击模型文件\n打开导入设置窗口\n调整你的参数\n重新导入\nGOODDO特别强调一下\n目前对blender资产的支持非常好\n直接支持blender文件格式\n在导入blender文件之前\n你需要做几个配置检查\n首先你打开编辑器菜单下的编辑器设置\n找到文件系统的导入项目\n设置你的blender路径\n这里需要3.0版本以上的blender\n第二步打开项目菜单下的项目设置\n找到文件系统的导入项目\n设置blender选项为启用\n打开blender创建经典SUSAN模型\n保存为blender文件\n直接将blend文件拖入GODOT的文件系统窗口\n模型导入成功\n你可以直接使用blender修改blend文件\n找到项目目录下的文件\n使用blender打开添加一个新的网格保存\n回到GODOT\n可以看到模型文件已经自动更新\n成了最新的模型\n完全不需要额外的导出步骤\n如果你会使用blender创作游戏资产\n这将大大方便你的工作\n下个视频就开始正式的游戏逻辑的开发\n最后还是求一个一键三连制作视频不易\n我非常需要你的支持",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UiNY6sExD",
+  "published_at": "1784113200",
+  "fetched_at": "2026-08-10T08:06:04+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 3D 素材导入知识图谱\n\n## 素材导入整体流程\n```mermaid\nflowchart TD\n    A1[\"打开项目\"] --> A2[\"拖入素材文件夹\"]\n    A2 --> A3[\"自动导入\"]\n    A3 --> A4[\"实例化模型\"]\n    A4 --> A5[\"模型文件拖入3D编辑区\"]\n    A5 --> A6[\"如需调整 → 双击模型文件\"]\n    A6 --> A7[\"打开导入设置窗口\"]\n    A7 --> A8[\"调整参数\"]\n    A8 --> A9[\"重新导入\"]\n    A3 --> B1[\"Blender 资产支持\"]\n    B1 --> B2[\"配置 Blender 路径\"]\n    B2 --> B3[\"启用 Blender 导入选项\"]\n    B3 --> B4[\"保存 .blend 文件\"]\n    B4 --> B5[\"拖入 Godot 文件系统\"]\n    B5 --> B6[\"模型自动更新\"]\n    B6 --> B7[\"无需额外导出\"]\n```\n\n## Blender 资产导入配置步骤\n```mermaid\nflowchart TD\n    C1[\"打开编辑器设置\"] --> C2[\"设置 Blender 路径 (≥3.0)\"]\n    C2 --> C3[\"打开项目设置\"]\n    C3 --> C4[\"启用 Blender 导入选项\"]\n    C4 --> C5[\"在 Blender 中保存 .blend 文件\"]\n    C5 --> C6[\"将 .blend 文件拖入 Godot\"]\n    C6 --> C7[\"导入成功，模型可直接使用\"]\n    C7 --> C8[\"在 Blender 中修改 → Godot 自动更新\"]\n```\n\n## 导入异常处理流程\n```mermaid\nflowchart TD\n    D1[\"模型导入偏差\"] --> D2[\"双击模型文件\"]\n    D2 --> D3[\"打开导入设置窗口\"]\n    D3 --> D4[\"调整导入参数\"]\n    D4 --> D5[\"重新导入\"]\n    D5 --> D6[\"导入符合预期\"]\n```",
+      "diagrams": [
+        {
+          "title": "素材导入整体流程",
+          "code": "flowchart TD\n    A1[\"打开项目\"] --> A2[\"拖入素材文件夹\"]\n    A2 --> A3[\"自动导入\"]\n    A3 --> A4[\"实例化模型\"]\n    A4 --> A5[\"模型文件拖入3D编辑区\"]\n    A5 --> A6[\"如需调整 → 双击模型文件\"]\n    A6 --> A7[\"打开导入设置窗口\"]\n    A7 --> A8[\"调整参数\"]\n    A8 --> A9[\"重新导入\"]\n    A3 --> B1[\"Blender 资产支持\"]\n    B1 --> B2[\"配置 Blender 路径\"]\n    B2 --> B3[\"启用 Blender 导入选项\"]\n    B3 --> B4[\"保存 .blend 文件\"]\n    B4 --> B5[\"拖入 Godot 文件系统\"]\n    B5 --> B6[\"模型自动更新\"]\n    B6 --> B7[\"无需额外导出\"]"
+        },
+        {
+          "title": "Blender 资产导入配置步骤",
+          "code": "flowchart TD\n    C1[\"打开编辑器设置\"] --> C2[\"设置 Blender 路径 (≥3.0)\"]\n    C2 --> C3[\"打开项目设置\"]\n    C3 --> C4[\"启用 Blender 导入选项\"]\n    C4 --> C5[\"在 Blender 中保存 .blend 文件\"]\n    C5 --> C6[\"将 .blend 文件拖入 Godot\"]\n    C6 --> C7[\"导入成功，模型可直接使用\"]\n    C7 --> C8[\"在 Blender 中修改 → Godot 自动更新\"]"
+        },
+        {
+          "title": "导入异常处理流程",
+          "code": "flowchart TD\n    D1[\"模型导入偏差\"] --> D2[\"双击模型文件\"]\n    D2 --> D3[\"打开导入设置窗口\"]\n    D3 --> D4[\"调整导入参数\"]\n    D4 --> D5[\"重新导入\"]\n    D5 --> D6[\"导入符合预期\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T08:06:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 3D 素材导入知识图谱\n\n## 素材导入整体流程\n```mermaid\nflowchart TD\n    A1[\"打开项目\"] --> A2[\"拖入素材文件夹\"]\n    A2 --> A3[\"自动导入\"]\n    A3 --> A4[\"实例化模型\"]\n    A4 --> A5[\"模型文件拖入3D编辑区\"]\n    A5 --> A6[\"如需调整 → 双击模型文件\"]\n    A6 --> A7[\"打开导入设置窗口\"]\n    A7 --> A8[\"调整参数\"]\n    A8 --> A9[\"重新导入\"]\n    A3 --> B1[\"Blender 资产支持\"]\n    B1 --> B2[\"配置 Blender 路径\"]\n    B2 --> B3[\"启用 Blender 导入选项\"]\n    B3 --> B4[\"保存 .blend 文件\"]\n    B4 --> B5[\"拖入 Godot 文件系统\"]\n    B5 --> B6[\"模型自动更新\"]\n    B6 --> B7[\"无需额外导出\"]\n```\n\n## Blender 资产导入配置步骤\n```mermaid\nflowchart TD\n    C1[\"打开编辑器设置\"] --> C2[\"设置 Blender 路径 (≥3.0)\"]\n    C2 --> C3[\"打开项目设置\"]\n    C3 --> C4[\"启用 Blender 导入选项\"]\n    C4 --> C5[\"在 Blender 中保存 .blend 文件\"]\n    C5 --> C6[\"将 .blend 文件拖入 Godot\"]\n    C6 --> C7[\"导入成功，模型可直接使用\"]\n    C7 --> C8[\"在 Blender 中修改 → Godot 自动更新\"]\n```\n\n## 导入异常处理流程\n```mermaid\nflowchart TD\n    D1[\"模型导入偏差\"] --> D2[\"双击模型文件\"]\n    D2 --> D3[\"打开导入设置窗口\"]\n    D3 --> D4[\"调整导入参数\"]\n    D4 --> D5[\"重新导入\"]\n    D5 --> D6[\"导入符合预期\"]\n```",
+  "diagrams": [
+    {
+      "title": "素材导入整体流程",
+      "code": "flowchart TD\n    A1[\"打开项目\"] --> A2[\"拖入素材文件夹\"]\n    A2 --> A3[\"自动导入\"]\n    A3 --> A4[\"实例化模型\"]\n    A4 --> A5[\"模型文件拖入3D编辑区\"]\n    A5 --> A6[\"如需调整 → 双击模型文件\"]\n    A6 --> A7[\"打开导入设置窗口\"]\n    A7 --> A8[\"调整参数\"]\n    A8 --> A9[\"重新导入\"]\n    A3 --> B1[\"Blender 资产支持\"]\n    B1 --> B2[\"配置 Blender 路径\"]\n    B2 --> B3[\"启用 Blender 导入选项\"]\n    B3 --> B4[\"保存 .blend 文件\"]\n    B4 --> B5[\"拖入 Godot 文件系统\"]\n    B5 --> B6[\"模型自动更新\"]\n    B6 --> B7[\"无需额外导出\"]"
+    },
+    {
+      "title": "Blender 资产导入配置步骤",
+      "code": "flowchart TD\n    C1[\"打开编辑器设置\"] --> C2[\"设置 Blender 路径 (≥3.0)\"]\n    C2 --> C3[\"打开项目设置\"]\n    C3 --> C4[\"启用 Blender 导入选项\"]\n    C4 --> C5[\"在 Blender 中保存 .blend 文件\"]\n    C5 --> C6[\"将 .blend 文件拖入 Godot\"]\n    C6 --> C7[\"导入成功，模型可直接使用\"]\n    C7 --> C8[\"在 Blender 中修改 → Godot 自动更新\"]"
+    },
+    {
+      "title": "导入异常处理流程",
+      "code": "flowchart TD\n    D1[\"模型导入偏差\"] --> D2[\"双击模型文件\"]\n    D2 --> D3[\"打开导入设置窗口\"]\n    D3 --> D4[\"调整导入参数\"]\n    D4 --> D5[\"重新导入\"]\n    D5 --> D6[\"导入符合预期\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:06:25+00:00"
+}

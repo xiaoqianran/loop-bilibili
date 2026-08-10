@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1pdcGz4Eev",
+  "title": "✨Godot神级着色器免费升级，5大新功能直接封神 #Godot #着色器 #游戏开发 #通用过渡着色器 #开源插件 #特效制作 #Godot4 #免费工具",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 935,
+  "text": "大家好\n你们中的许多人爱上了这个通用过渡着色器\n感谢你们最好的方式就是继续支持和改进这个着色器\n今天我有个好消息因为这个着色器变得更棒了\n它更好了因为它新增了五个功能\n其中三个是由你们贡献的\n亟需解决的是如何决定过渡的起点\n之前只能从角落或中心开始\n但现在kirk kor带来了惊人的定位功能\n允许从任意坐标开始过渡\n现在你可以用经典虹膜揭示过渡实现间谍游戏梦想\n妈妈\n第二个功能修复了一个问题\n此前无法使用该着色器的画布元素启用调制属性\n现在你可以更改纹理颜色\n随心所欲巨大\n感谢黑龙\n为这个急需的修复\n下一个功能来自damian one eileen提出的问题\n发现过渡着色器可用于更多场景\n并希望实现滚动容器内容的渐显渐隐\n为了更方便\n我添加了局部和全局镜像功能\n意外效果是让着色器使用更简单\n例如\n假设我使用形状过渡类型\n在三列网格显示三角形\n现在可以旋转三角形\n并用前一维度位置功能排列成圣诞树形状\n现在进入镜像部分\n点击全局X轴镜像就创建了箭头过渡\n但如果点击局部X轴镜像\n你会发现没有变化\n这是因为X轴\n只有一个单元格\n局部镜像与全局镜像效果相同\n但看看Y轴的情况\n检查全局Y轴镜像\n整个过渡从中间镜像\n然而现在检查局部Y轴镜像\n因为我有三个单元格\n可以看到每个单元格单独镜像\n形成漂亮的尖刺效果\n结合X轴镜像\n我得到了新陷阱效果\n现在非常灵活\n继续下一个烦人问题\n之前选择过渡纹理会替换基础纹理\n相反\n现在功能正常\n当它将过渡纹理应用到实际过渡效果时\n而不是基础纹理\n现在终于是不是风在作祟\n还是出现了新奇的功能\n只需通过这个贡献从烤面包机背景掉落\n现在你可以创建这样的风效缺陷\n通过修改水平或垂直累积偏移\n实际上这是递增偏移值\n基于网格中的行或列\n离第一行越远\n每行的偏移量越大\n此外\n你可以使用累积偏移翻转复选框使偏移从最后一行或列开始\n从最后一行或列开始偏移 好的\n但这些基本上就是插件的所有更新\n你看到的大多数更新并非由我完成\n而是由像你这样的热情开发者完成\n他们只是想要更好的工具\n贡献和提出问题推动了插件的改进\n我邀请你做同样的事情\n如果你有任何能改进插件的想法\n但总之\n不管怎样\n感谢所有贡献者\n非常感谢观看\n感谢我的支持者们 下次见\n再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1pdcGz4Eev",
+  "published_at": "1770944842",
+  "fetched_at": "2026-08-07T22:24:41+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 通用过渡着色器更新概览\n\n## 功能总览\n[BV1pdcGz4Eev P1 00:15] 新增五个功能  \n[BV1pdcGz4Eev P1 00:17] 其中三个由社区贡献  \n\n```mermaid\nflowchart TD\n    Start[\"着色器更新\"] --> Features[\"新增五功能\"]\n    Features --> Loc[\"定位功能\"]\n    Features --> Fix[\"纹理应用修复\"]\n    Features --> Mirror[\"局部/全局镜像\"]\n    Features --> Offset[\"累积偏移功能\"]\n    Features --> Community[\"社区贡献驱动\"]\n```\n\n## 定位功能\n[BV1pdcGz4Eev P1 00:33] 允许从任意坐标开始过渡  \n[BV1pdcGz4Eev P1 00:37] 支持经典虹膜效果  \n\n```mermaid\nflowchart TD\n    A1[\"任意坐标起点\"] --> A2[\"解决仅角落/中心限制\"]\n    A2 --> A3[\"实现更灵活的过渡\"]\n    A3 --> A4[\"支持经典虹膜效果\"]\n```\n\n## 镜像功能\n[BV1pdcGz4Eev P1 01:18] 添加局部和全局镜像  \n[BV1pdcGz4Eev P1 01:40] 全局X轴镜像创建箭头过渡  \n[BV1pdcGz4Eev P1 02:04] 全局Y轴镜像从中间对称  \n[BV1pdcGz4Eev P1 02:11] 局部Y轴镜像对每个单元格单独作用  \n\n```mermaid\nflowchart TD\n    M1[\"全局镜像\"] --> MX[\"X轴全局镜像 → 箭头效果\"]\n    M1 --> MY[\"Y轴全局镜像 → 中心对称\"]\n    M2[\"局部镜像\"] --> LX[\"X轴局部镜像（单元格唯一）→ 与全局相同\"]\n    M2 --> LY[\"Y轴局部镜像（多单元格）→ 尖刺效果\"]\n    LX --> Combo[\"X+Y 组合 → 新陷阱效果\"]\n    LY --> Combo\n```\n\n## 累积偏移功能\n[BV1pdcGz4Eev P1 02:47] 基于网格行/列的递增偏移  \n[BV1pdcGz4Eev P1 02:58] 离第一行越远，偏移越大  \n[BV1pdcGz4Eev P1 03:01] 可通过翻转复选框从最后一行/列开始  \n\n```mermaid\nflowchart TD\n    O1[\"累积偏移设置\"] --> O2[\"按行/列递增偏移\"]\n    O2 --> O3[\"距离第一行/列越远 → 偏移量越大\"]\n    O3 --> O4[\"翻转复选框 → 从最后行/列开始偏移\"]\n```",
+      "diagrams": [
+        {
+          "title": "功能总览",
+          "code": "flowchart TD\n    Start[\"着色器更新\"] --> Features[\"新增五功能\"]\n    Features --> Loc[\"定位功能\"]\n    Features --> Fix[\"纹理应用修复\"]\n    Features --> Mirror[\"局部/全局镜像\"]\n    Features --> Offset[\"累积偏移功能\"]\n    Features --> Community[\"社区贡献驱动\"]"
+        },
+        {
+          "title": "定位功能",
+          "code": "flowchart TD\n    A1[\"任意坐标起点\"] --> A2[\"解决仅角落/中心限制\"]\n    A2 --> A3[\"实现更灵活的过渡\"]\n    A3 --> A4[\"支持经典虹膜效果\"]"
+        },
+        {
+          "title": "镜像功能",
+          "code": "flowchart TD\n    M1[\"全局镜像\"] --> MX[\"X轴全局镜像 → 箭头效果\"]\n    M1 --> MY[\"Y轴全局镜像 → 中心对称\"]\n    M2[\"局部镜像\"] --> LX[\"X轴局部镜像（单元格唯一）→ 与全局相同\"]\n    M2 --> LY[\"Y轴局部镜像（多单元格）→ 尖刺效果\"]\n    LX --> Combo[\"X+Y 组合 → 新陷阱效果\"]\n    LY --> Combo"
+        },
+        {
+          "title": "累积偏移功能",
+          "code": "flowchart TD\n    O1[\"累积偏移设置\"] --> O2[\"按行/列递增偏移\"]\n    O2 --> O3[\"距离第一行/列越远 → 偏移量越大\"]\n    O3 --> O4[\"翻转复选框 → 从最后行/列开始偏移\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T22:25:49+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 通用过渡着色器更新概览\n\n## 功能总览\n[BV1pdcGz4Eev P1 00:15] 新增五个功能  \n[BV1pdcGz4Eev P1 00:17] 其中三个由社区贡献  \n\n```mermaid\nflowchart TD\n    Start[\"着色器更新\"] --> Features[\"新增五功能\"]\n    Features --> Loc[\"定位功能\"]\n    Features --> Fix[\"纹理应用修复\"]\n    Features --> Mirror[\"局部/全局镜像\"]\n    Features --> Offset[\"累积偏移功能\"]\n    Features --> Community[\"社区贡献驱动\"]\n```\n\n## 定位功能\n[BV1pdcGz4Eev P1 00:33] 允许从任意坐标开始过渡  \n[BV1pdcGz4Eev P1 00:37] 支持经典虹膜效果  \n\n```mermaid\nflowchart TD\n    A1[\"任意坐标起点\"] --> A2[\"解决仅角落/中心限制\"]\n    A2 --> A3[\"实现更灵活的过渡\"]\n    A3 --> A4[\"支持经典虹膜效果\"]\n```\n\n## 镜像功能\n[BV1pdcGz4Eev P1 01:18] 添加局部和全局镜像  \n[BV1pdcGz4Eev P1 01:40] 全局X轴镜像创建箭头过渡  \n[BV1pdcGz4Eev P1 02:04] 全局Y轴镜像从中间对称  \n[BV1pdcGz4Eev P1 02:11] 局部Y轴镜像对每个单元格单独作用  \n\n```mermaid\nflowchart TD\n    M1[\"全局镜像\"] --> MX[\"X轴全局镜像 → 箭头效果\"]\n    M1 --> MY[\"Y轴全局镜像 → 中心对称\"]\n    M2[\"局部镜像\"] --> LX[\"X轴局部镜像（单元格唯一）→ 与全局相同\"]\n    M2 --> LY[\"Y轴局部镜像（多单元格）→ 尖刺效果\"]\n    LX --> Combo[\"X+Y 组合 → 新陷阱效果\"]\n    LY --> Combo\n```\n\n## 累积偏移功能\n[BV1pdcGz4Eev P1 02:47] 基于网格行/列的递增偏移  \n[BV1pdcGz4Eev P1 02:58] 离第一行越远，偏移越大  \n[BV1pdcGz4Eev P1 03:01] 可通过翻转复选框从最后一行/列开始  \n\n```mermaid\nflowchart TD\n    O1[\"累积偏移设置\"] --> O2[\"按行/列递增偏移\"]\n    O2 --> O3[\"距离第一行/列越远 → 偏移量越大\"]\n    O3 --> O4[\"翻转复选框 → 从最后行/列开始偏移\"]\n```",
+  "diagrams": [
+    {
+      "title": "功能总览",
+      "code": "flowchart TD\n    Start[\"着色器更新\"] --> Features[\"新增五功能\"]\n    Features --> Loc[\"定位功能\"]\n    Features --> Fix[\"纹理应用修复\"]\n    Features --> Mirror[\"局部/全局镜像\"]\n    Features --> Offset[\"累积偏移功能\"]\n    Features --> Community[\"社区贡献驱动\"]"
+    },
+    {
+      "title": "定位功能",
+      "code": "flowchart TD\n    A1[\"任意坐标起点\"] --> A2[\"解决仅角落/中心限制\"]\n    A2 --> A3[\"实现更灵活的过渡\"]\n    A3 --> A4[\"支持经典虹膜效果\"]"
+    },
+    {
+      "title": "镜像功能",
+      "code": "flowchart TD\n    M1[\"全局镜像\"] --> MX[\"X轴全局镜像 → 箭头效果\"]\n    M1 --> MY[\"Y轴全局镜像 → 中心对称\"]\n    M2[\"局部镜像\"] --> LX[\"X轴局部镜像（单元格唯一）→ 与全局相同\"]\n    M2 --> LY[\"Y轴局部镜像（多单元格）→ 尖刺效果\"]\n    LX --> Combo[\"X+Y 组合 → 新陷阱效果\"]\n    LY --> Combo"
+    },
+    {
+      "title": "累积偏移功能",
+      "code": "flowchart TD\n    O1[\"累积偏移设置\"] --> O2[\"按行/列递增偏移\"]\n    O2 --> O3[\"距离第一行/列越远 → 偏移量越大\"]\n    O3 --> O4[\"翻转复选框 → 从最后行/列开始偏移\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T22:25:49+00:00"
+}

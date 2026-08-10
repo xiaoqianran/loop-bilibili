@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1rZASzqEXq",
+  "title": "双 MI50 32G 成功运行 Qwen3.5-27B！量化版多模态实测 + 本地部署指南",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1257,
+  "text": "大家好啊\n现在是2026年2月27日的晚上\n11.31分\n录这个视频呢\n就是呃前段时间的时候\n千问3000问3.5的那个模型出来了\n最开始的时候他是只有非常大的模型\n没有量化的版本\n最近几天的时候他这个量化版本出来了\n咳\n录这个视频\n就是讲一下这个PVE当中的LXC容器\n是可以跑这个模型的了\n我们可以从这个终端当中看到\n现在它正在运行\n我们输入docker p s k d o c k e r\ndocker p s可以看到他现在正在运行的这个容器\n我们\ncat docker compose文件\n可以看到这个docker compose文件的内容\n这个是使用一个镜像来跑的\ndocker imax是使用的\n这个B8157来跑的这个镜像当中\n还包含了一个这个网页的访问的页面\n这个现在他跑的这个模型是千万3点五二十七\nBUDQ8KXL点GGF\n这个东西它应该是可以识别图片的吧\n我们尝试一下简要说明图片的内容\n这个是我上传的昨天的视频的封面\n然后我们来看看这个使用起来的效果怎么样\n他现在是\n你正在预处理的过程当中\n这个图片是昨天我发布的视频的这个图片\n昨天发布的是这个视频\n其实呃讲的内容挺挺有用的\n就是挺有深度的\n但是可能没啥意思吧\n然后就播放量还挺低的\n这个如果大家有兴趣\n可以看一看昨天所发布的一个视频\n好像他处理完成了\n他现在正在输出的过程当中\n他说这张图片是一张电脑屏幕截图\n主要展示了一个什么什么哇塞\n他这都能看出来是vs code的界面\n他甚至能看到背景当中的内容\n有什么风格的代码\n这个效果真的挺出人意料的\n就他就挺厉害的\n这个我们还可以进行一下测试\n我们从职员随风的这个图文里面\n来找一个4K上下文的测试好\n我们把这个复制过来\n我们把这个复制过来\n这个实际上是把这个little prince\n小王子的这个童话故事当中的内容\n复制原文复制过来\n然后后续跟了一个问题\nOk\n现在是他在处理的这个过程当中\n等处理完成之后\n就可以看到输出的内容\n好这个因为今天实在太晚了\n我就只先下载了这个27B的模型\n来跑了一下测速什么的\n还有什么其他的\n比如说应该是35B吧\n还是什么那些个模型还没有测\n与此同时呢\n整理了一份这个天文3.5\n本地部署与运行指南\n这个就挺详细的\n包含了什么硬件需求与选型建议\n还有对于什么推理参数的设置\n然后还有本地运行的教程\n然后再往下吧\n这个文档写得非常的详细\nOK好这个它输出完成了\n这个视频就先录到这吧\n这个文档非常的详细\n待会我会将这个这个蓝马CP的docker镜像\n上传到小店\n那个链接附在下面\n这个我把他这个价格上调了一点点\n就是附带了这个这个PDF文档\n这样就能够确保每一个\n每一个想要在本地运行的人\n都能够自己跑起来吧\n这个文档当中非常有价值的一部分就是\n就是详细的解释了一下他这个\n详详细地解释了一下\n这个通过调整层数分配策略\n解决显存不均的问题\n嘿这个视频就先录到这了\n然后还有就是和其他显卡的数据进行一些比较\n这个如果大家有需要的话\n可以支持一下\n谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1rZASzqEXq",
+  "published_at": "1772207609",
+  "fetched_at": "2026-08-08T03:46:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T03:55:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T03:55:30+00:00"
+}

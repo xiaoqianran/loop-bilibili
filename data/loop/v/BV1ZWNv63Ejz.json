@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1ZWNv63Ejz",
+  "title": "DeepSeek Flash 与 Pro 有何区别",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1323,
+  "text": "对比deep sick flash和pro两款模型\n能发现\n二者在并发承载推理表现上存在不小差别\n适合落地的业务场景也各有侧重\n如果只参考单价做选型\n很容易忽略这些关键差异\n我们先算一笔直观的账\n同样预算100元\n只看输出定价\nflash大概能买到5000万\ntoken pro仅能采购约1667万\ntoken价格相差整整三倍\n但这并不代表全盘选用flash就一定更省钱\n目前deep sick v上线flash pro两款API模型\n二者都支持思考模式\n工具调用标配100万上下文窗口\n不管是超长文档解析\n还是智能agent的串联运行\n基础功能都能覆盖\n真正拉开两款模型\n使用成本与落地效果的是定价\n并发上限和推理综合能力\n对照deep seek官方中文定价缓存未命中场景下\nflash每百万输入token1元输出二元\npro输入三元输出六元\n定价刚好三倍差距\n并发承载能力也有区分\nflash单账户并发上限2500\npro仅500\n并发代表同一时段可并行处理的请求数量\n面向高流量\n多用户同时调用的业务\n并发数值会直接影响整套系统的稳定接入方案\n不过价格并发还只是表层差异\n核心误区在于\n单一token单价更低\n不代表完成完整业务任务的综合开销更少\n从官方产品定位来看\nflash主打高速高性价比\n处理轻量化agent任务的效果和pro差距不大\npro则在深度逻辑推理\n专业知识\n解析复杂代码开发上优势突出\n简单来说\n批量E校验的标准化任务适合flash\n涉及大型代码工程\n长链路逻辑分析\n出错后返工成本极高的场景\n即便pro单价更高\n也能减少反复生成人工修正带来的额外损耗\n很多团队算账只统计单次调用的token支出\n容易漏掉任务出错后的隐性成本\n举个日常案例生成企业内部活动\n文案内容偏差仅需员工小幅修改\n这种场景优先选flash性价比更高\n但如果要完整解析大型代码仓库\n一旦模型逻辑出错\n工程师可能要耗费数小时排查调试\n这种情况下\n贵三倍的pro反而能压缩整体项目成本\n给大家一个务实的选型参考\n判断用flash还是pro可以参考三个维度\n每日调用体量\n人工复核成本\n任务出错带来的返工损耗\n调用量大\n结果容易核验失误\n影响轻微\nflash的低价与高并发优势\n会充分体现任务逻辑复杂\n人工工时成本高\n出错代价大\n更适合选用pro\n确定适配模型后\n企业还要解决采购运维用量管控\n一系列落地问题\n额度补充接口对接现有业务\n分部门分项目核算消耗\n这些环节不影响模型本身性能\n却直接决定业务能否稳定长期运转\n我们token聚合平台刚好承接这类配套需求\n客户不管选用flash还是pro\n都能通过平台一站式完成采购与接口对接\n两款模型并行使用时充值记录\n消耗账单统一在后台可视化管理\n企业还能按项目员工分配独立额度\n避免共用API key\n月底出现算力超支无法溯源的问题\n同时可以根据业务规则配置智能路由\n简单任务自动分发至flash\n高复杂度任务调度之pro\n后续想要新增其他大模型\n不用重新搭建整套调用体系\n依托现有统一入口就能测试切换\n如果你的企业正在考虑接入deep c k p i\n欢迎私信沟通\n我是牧野\n深耕算力资源赛道\n咱们下期再聊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ZWNv63Ejz",
+  "published_at": "1784099727",
+  "fetched_at": "2026-08-07T00:21:23+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek Flash 与 Pro 差异知识图谱\n\n## 定价与并发对比 (00:16‑00:57)\n```mermaid\nflowchart TD\n    F1[\"Flash token 价格：1元/百万输入，2元/百万输出\"] -->|价格比| P1[\"Pro token 价格：3元/百万输入，6元/百万输出\"]\n    F2[\"Flash 并发上限：2500 请求/秒\"] -->|并发比| P2[\"Pro 并发上限：500 请求/秒\"]\n    F1 --> Impact1[\"低单价吸引高并发场景\"]\n    P1 --> Impact2[\"高单价适合高价值、低并发任务\"]\n    Impact1 --> Decision[\"适用于大量轻量任务\"]\n    Impact2 --> Decision\n```\n\n## 选型决策维度 (02:04‑02:09)\n```mermaid\nflowchart LR\n    D1[\"每日调用体量\"] --> Choice\n    D2[\"人工复核成本\"] --> Choice\n    D3[\"任务出错返工损耗\"] --> Choice\n    Choice[\"选择模型\"] --> Flash[\"Flash：低价+高并发\"]\n    Choice --> Pro[\"Pro：深度推理+高错误成本降低\"]\n    Flash --> Suit1[\"适合批量校验、文案生成等轻量任务\"]\n    Pro --> Suit2[\"适合大型代码解析、复杂链路分析等高风险任务\"]\n```\n\n## 采购运维平台流程 (02:33‑02:58)\n```mermaid\nflowchart TD\n    Start[\"统一采购入口\"] --> TokenPlatform[\"Token 聚合平台\"]\n    TokenPlatform --> Purchase[\"一站式采购 & 接口对接\"]\n    Purchase --> Quota[\"额度补充 & 分部门核算\"]\n    Quota --> Billing[\"统一可视化账单\"]\n    Billing --> Routing[\"智能路由配置\"]\n    Routing --> AutoFlash[\"简单任务自动分配至 Flash\"]\n    Routing --> DispatchPro[\"高复杂度任务调度至 Pro\"]\n    DispatchPro --> Extend[\"新增大模型无需重建体系\"]\n```",
+      "diagrams": [
+        {
+          "title": "定价与并发对比 (00:16‑00:57)",
+          "code": "flowchart TD\n    F1[\"Flash token 价格：1元/百万输入，2元/百万输出\"] -->|价格比| P1[\"Pro token 价格：3元/百万输入，6元/百万输出\"]\n    F2[\"Flash 并发上限：2500 请求/秒\"] -->|并发比| P2[\"Pro 并发上限：500 请求/秒\"]\n    F1 --> Impact1[\"低单价吸引高并发场景\"]\n    P1 --> Impact2[\"高单价适合高价值、低并发任务\"]\n    Impact1 --> Decision[\"适用于大量轻量任务\"]\n    Impact2 --> Decision"
+        },
+        {
+          "title": "选型决策维度 (02:04‑02:09)",
+          "code": "flowchart LR\n    D1[\"每日调用体量\"] --> Choice\n    D2[\"人工复核成本\"] --> Choice\n    D3[\"任务出错返工损耗\"] --> Choice\n    Choice[\"选择模型\"] --> Flash[\"Flash：低价+高并发\"]\n    Choice --> Pro[\"Pro：深度推理+高错误成本降低\"]\n    Flash --> Suit1[\"适合批量校验、文案生成等轻量任务\"]\n    Pro --> Suit2[\"适合大型代码解析、复杂链路分析等高风险任务\"]"
+        },
+        {
+          "title": "采购运维平台流程 (02:33‑02:58)",
+          "code": "flowchart TD\n    Start[\"统一采购入口\"] --> TokenPlatform[\"Token 聚合平台\"]\n    TokenPlatform --> Purchase[\"一站式采购 & 接口对接\"]\n    Purchase --> Quota[\"额度补充 & 分部门核算\"]\n    Quota --> Billing[\"统一可视化账单\"]\n    Billing --> Routing[\"智能路由配置\"]\n    Routing --> AutoFlash[\"简单任务自动分配至 Flash\"]\n    Routing --> DispatchPro[\"高复杂度任务调度至 Pro\"]\n    DispatchPro --> Extend[\"新增大模型无需重建体系\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T00:21:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek Flash 与 Pro 差异知识图谱\n\n## 定价与并发对比 (00:16‑00:57)\n```mermaid\nflowchart TD\n    F1[\"Flash token 价格：1元/百万输入，2元/百万输出\"] -->|价格比| P1[\"Pro token 价格：3元/百万输入，6元/百万输出\"]\n    F2[\"Flash 并发上限：2500 请求/秒\"] -->|并发比| P2[\"Pro 并发上限：500 请求/秒\"]\n    F1 --> Impact1[\"低单价吸引高并发场景\"]\n    P1 --> Impact2[\"高单价适合高价值、低并发任务\"]\n    Impact1 --> Decision[\"适用于大量轻量任务\"]\n    Impact2 --> Decision\n```\n\n## 选型决策维度 (02:04‑02:09)\n```mermaid\nflowchart LR\n    D1[\"每日调用体量\"] --> Choice\n    D2[\"人工复核成本\"] --> Choice\n    D3[\"任务出错返工损耗\"] --> Choice\n    Choice[\"选择模型\"] --> Flash[\"Flash：低价+高并发\"]\n    Choice --> Pro[\"Pro：深度推理+高错误成本降低\"]\n    Flash --> Suit1[\"适合批量校验、文案生成等轻量任务\"]\n    Pro --> Suit2[\"适合大型代码解析、复杂链路分析等高风险任务\"]\n```\n\n## 采购运维平台流程 (02:33‑02:58)\n```mermaid\nflowchart TD\n    Start[\"统一采购入口\"] --> TokenPlatform[\"Token 聚合平台\"]\n    TokenPlatform --> Purchase[\"一站式采购 & 接口对接\"]\n    Purchase --> Quota[\"额度补充 & 分部门核算\"]\n    Quota --> Billing[\"统一可视化账单\"]\n    Billing --> Routing[\"智能路由配置\"]\n    Routing --> AutoFlash[\"简单任务自动分配至 Flash\"]\n    Routing --> DispatchPro[\"高复杂度任务调度至 Pro\"]\n    DispatchPro --> Extend[\"新增大模型无需重建体系\"]\n```",
+  "diagrams": [
+    {
+      "title": "定价与并发对比 (00:16‑00:57)",
+      "code": "flowchart TD\n    F1[\"Flash token 价格：1元/百万输入，2元/百万输出\"] -->|价格比| P1[\"Pro token 价格：3元/百万输入，6元/百万输出\"]\n    F2[\"Flash 并发上限：2500 请求/秒\"] -->|并发比| P2[\"Pro 并发上限：500 请求/秒\"]\n    F1 --> Impact1[\"低单价吸引高并发场景\"]\n    P1 --> Impact2[\"高单价适合高价值、低并发任务\"]\n    Impact1 --> Decision[\"适用于大量轻量任务\"]\n    Impact2 --> Decision"
+    },
+    {
+      "title": "选型决策维度 (02:04‑02:09)",
+      "code": "flowchart LR\n    D1[\"每日调用体量\"] --> Choice\n    D2[\"人工复核成本\"] --> Choice\n    D3[\"任务出错返工损耗\"] --> Choice\n    Choice[\"选择模型\"] --> Flash[\"Flash：低价+高并发\"]\n    Choice --> Pro[\"Pro：深度推理+高错误成本降低\"]\n    Flash --> Suit1[\"适合批量校验、文案生成等轻量任务\"]\n    Pro --> Suit2[\"适合大型代码解析、复杂链路分析等高风险任务\"]"
+    },
+    {
+      "title": "采购运维平台流程 (02:33‑02:58)",
+      "code": "flowchart TD\n    Start[\"统一采购入口\"] --> TokenPlatform[\"Token 聚合平台\"]\n    TokenPlatform --> Purchase[\"一站式采购 & 接口对接\"]\n    Purchase --> Quota[\"额度补充 & 分部门核算\"]\n    Quota --> Billing[\"统一可视化账单\"]\n    Billing --> Routing[\"智能路由配置\"]\n    Routing --> AutoFlash[\"简单任务自动分配至 Flash\"]\n    Routing --> DispatchPro[\"高复杂度任务调度至 Pro\"]\n    DispatchPro --> Extend[\"新增大模型无需重建体系\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T00:21:36+00:00"
+}

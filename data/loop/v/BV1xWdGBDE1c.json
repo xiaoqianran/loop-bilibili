@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1xWdGBDE1c",
+  "title": "【免费绝版】UE5 FPS神级套件：双渲染瞄具+僵尸买枪+AI队友全搞定！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1268,
+  "text": "哈喽各位B站的老铁\n今天不聊显卡\n聊点更刺激的\n你又想忽悠我买皮肤\n皮肤个鬼\n我是被unity折磨疯了\n做个FPS原型\n光开枪逻辑就写了2000行\nbug比子弹都多\n我懂\n上次我调个后坐力\n手一抖\n角色直接螺旋升天\n室友以为我在做火箭模拟器\n所以啊我今天必须给你们按头安利一个神器\nFirst person shooter kit\n简称FPS k EPIC商城直接能八听名字\n就一股智商税味儿\n也是换皮模板吧\n换皮他连皮都给你省了好吧\nTSR9falcon两把枪自带4GLOD\n远看你是个像素\n近看连弹匣卡笋都会动好\n等下LD我熟就是越远模型越糊嘛\n省性能对\n但FPSK把LD做到\n连QFE的图标都给你分远近\n强迫症直接狂喜\n真有这么细\n那后坐力咋搞\n我上次调曲线调到眼冒金星兄弟\n他直接把枪梯曲线做成资产垂直水平随机散布\n全给你画好\n拖一下就能让AK变滋水枪或者肩脱臼大炮\n这么玄学\n那我能不能一键把M4改成连喷\n能支持单发三连全自动霰弹连喷五种模式\n改一型枚举的是零编译\n卧槽\n那我岂不是对5分钟就能搓出全自动霰弹狙\n让室友怀疑人生哦\n先别吹\n多人联机呢\nAI呢我可不想当光杆司令兄弟\n他自带爆替死亡竞赛团队竞技全配好\nAI听声辨位\n瞄天瞄地比我还猥琐\n真的假的\n我上次用优异官方AI敌人全程贴墙跳探戈\nFPSK的bot会压脚步\n扔闪绕后还知道给你CLAYMORE插门缝\n我测试时被阴到摔鼠标\n那僵尸模式我就好\n这口无限波次\nMystery crate\n武器购买机\n火焰障碍全齐活\n官方还贴心的给你把僵尸调成单网格\n帧数直接不30哦\n等下单网格是啥\n就是把一堆僵尸合并成一个模型\nGPU喊舒服了\n你电脑喊谢谢啊\n行性能我服\n可我不会美术\n只想白嫖兄弟\nHUD准星击杀图标\n武器图标全部蓝图画颜色随便改\n字体随便换\n0P那热成像和双渲染瞄具呢\n我看演示里贼炫\n热成像真热感\n敌人跑两步就红到发紫\n双渲染瞄具主副画面不同\nFOV开镜外边不黑屏\n物理外挂既视感\n更离谱的是\n连瞄具灵敏度训练都给你写好\n玩家能边开镜边调倍率\n主播直接喊官方外挂\n我心动了\n可打包出来多大别一发布200G玩家当场劝退\n核心才6G\n官方把重复贴图全砍了\n还带压缩\n预设手机热点都能下完\n6G我原神更新包都比它大\n而且支持手柄\nPs5\nXBOX键位自动识别UI跟着变\n主机党也能快乐搓枪行\n最后一个问题\n我不会\nc plus4能玩吗\n全程蓝图拖拽就能拼逻辑注释\n比B站弹幕还密集\n小白三天就能做demo\n那我要是想自己加枪\n官方文档80页\n一步一步教你怎么绑骨骼\n挂瞄具\n写射击曲线\n跟着点鼠标就行\n稳价格呢别告诉我一杯咖啡\n我咖啡喝的是星巴克\n目前120块人民币\nEPIC不打折\n但别忘了省下的可是一个程序员的头发\n120买我一条发际线值\n而且今天点赞破888\n我直接评论区甩下载链接\n再送大家一份中文注释版\n工程老铁们听见没\n一键三连走起来\n不投币也行\n点个收藏防迷路\n下次更新热成像瞄大白菜是下期限定\n拿FPSK做国产cs4僵尸大逃杀\n想看就盯紧频道\n散会",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1xWdGBDE1c",
+  "published_at": "1778503263",
+  "fetched_at": "2026-08-09T23:24:09+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# UE5 FPS套件知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"FPS Kit (FPSK)\"] --> B1[\"双渲染瞄具\"]\n    A1 --> B2[\"热成像\"]\n    A1 --> B3[\"AI 队友\"]\n    A1 --> B4[\"僵尸模式\"]\n    A1 --> B5[\"包体约 6 GB\"]\n    A1 --> B6[\"支持手柄 (PS5/XBOX)\"]\n    A1 --> B7[\"蓝图全流程（拖拽）\"]\n```\n<!-- [BV1xWdGBDE1c P1 00:27] [BV1xWdGBDE1c P1 02:34] [BV1xWdGBDE1c P1 02:30] [BV1xWdGBDE1c P1 01:40] [BV1xWdGBDE1c P1 01:55] [BV1xWdGBDE1c P1 02:56] [BV1xWdGBDE1c P1 03:06] [BV1xWdGBDE1c P1 03:14] -->\n\n## 功能模块\n```mermaid\nflowchart LR\n    C1[\"后坐力调节\"] --> C2[\"枪支模式枚举（单发/三连/全自动/霰弹/连喷）\"]\n    D1[\"AI 听声辨位\"] --> D2[\"AI 压脚步 & 投掷 CLAYMORE\"]\n    E1[\"僵尸单网格合并\"] --> E2[\"降低帧数消耗\"]\n    F1[\"双渲染瞄具\"] --> F2[\"主副画面不同，FOV 开镜不黑屏\"]\n    G1[\"热成像\"] --> G2[\"敌人移动两步即红到发紫\"]\n```\n<!-- [BV1xWdGBDE1c P1 01:00] [BV1xWdGBDE1c P1 01:17] [BV1xWdGBDE1c P1 01:40] [BV1xWdGBDE1c P1 01:49] [BV1xWdGBDE1c P1 02:10] [BV1xWdGBDE1c P1 02:15] [BV1xWdGBDE1c P1 02:34] [BV1xWdGBDE1c P1 02:38] -->\n\n## 使用流程\n```mermaid\nflowchart TD\n    S0[\"导入 FPS Kit\"] --> S1[\"配置枪支（蓝图拖拽）\"]\n    S1 --> S2[\"调节后坐力曲线\"]\n    S2 --> S3[\"设置 AI 行为\"]\n    S3 --> S4[\"开启僵尸模式\"]\n    S4 --> S5[\"打包发布（约 6 GB）\"]\n```\n<!-- [BV1xWdGBDE1c P1 00:27] [BV1xWdGBDE1c P1 01:13] [BV1xWdGBDE1c P1 01:00] [BV1xWdGBDE1c P1 01:40] [BV1xWdGBDE1c P1 01:55] [BV1xWdGBDE1c P1 02:56] -->\n\n## 性能优化\n```mermaid\nflowchart LR\n    O1[\"单网格合并僵尸\"] --> O2[\"减少 Draw Call\"]\n    O2 --> O3[\"砍除重复贴图\"]\n    O3 --> O4[\"压缩包体\"]\n    O4 --> O5[\"适配移动端 & 主机\"]\n    O5 --> O6[\"省性能（LD）\"]\n```\n<!-- [BV1xWdGBDE1c P1 02:10] [BV1xWdGBDE1c P1 02:58] [BV1xWdGBDE1c P1 03:00] [BV1xWdGBDE1c P1 03:07] [BV1xWdGBDE1c P1 02:50] -->\n\n## 价格与获取\n```mermaid\nflowchart TD\n    P1[\"EPIC 商城购买\"] --> P2[\"售价 120 元人民币\"]\n    P2 --> P3[\"不打折\"]\n    P3 --> P4[\"省下程序员的头发\"]\n    P4 --> P5[\"评论区提供下载链接\"]\n```\n<!-- [BV1xWdGBDE1c P1 03:35] [BV1xWdGBDE1c P1 03:41] [BV1xWdGBDE1c P1 03:49] -->",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"FPS Kit (FPSK)\"] --> B1[\"双渲染瞄具\"]\n    A1 --> B2[\"热成像\"]\n    A1 --> B3[\"AI 队友\"]\n    A1 --> B4[\"僵尸模式\"]\n    A1 --> B5[\"包体约 6 GB\"]\n    A1 --> B6[\"支持手柄 (PS5/XBOX)\"]\n    A1 --> B7[\"蓝图全流程（拖拽）\"]"
+        },
+        {
+          "title": "功能模块",
+          "code": "flowchart LR\n    C1[\"后坐力调节\"] --> C2[\"枪支模式枚举（单发/三连/全自动/霰弹/连喷）\"]\n    D1[\"AI 听声辨位\"] --> D2[\"AI 压脚步 & 投掷 CLAYMORE\"]\n    E1[\"僵尸单网格合并\"] --> E2[\"降低帧数消耗\"]\n    F1[\"双渲染瞄具\"] --> F2[\"主副画面不同，FOV 开镜不黑屏\"]\n    G1[\"热成像\"] --> G2[\"敌人移动两步即红到发紫\"]"
+        },
+        {
+          "title": "使用流程",
+          "code": "flowchart TD\n    S0[\"导入 FPS Kit\"] --> S1[\"配置枪支（蓝图拖拽）\"]\n    S1 --> S2[\"调节后坐力曲线\"]\n    S2 --> S3[\"设置 AI 行为\"]\n    S3 --> S4[\"开启僵尸模式\"]\n    S4 --> S5[\"打包发布（约 6 GB）\"]"
+        },
+        {
+          "title": "性能优化",
+          "code": "flowchart LR\n    O1[\"单网格合并僵尸\"] --> O2[\"减少 Draw Call\"]\n    O2 --> O3[\"砍除重复贴图\"]\n    O3 --> O4[\"压缩包体\"]\n    O4 --> O5[\"适配移动端 & 主机\"]\n    O5 --> O6[\"省性能（LD）\"]"
+        },
+        {
+          "title": "价格与获取",
+          "code": "flowchart TD\n    P1[\"EPIC 商城购买\"] --> P2[\"售价 120 元人民币\"]\n    P2 --> P3[\"不打折\"]\n    P3 --> P4[\"省下程序员的头发\"]\n    P4 --> P5[\"评论区提供下载链接\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T23:24:29+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# UE5 FPS套件知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"FPS Kit (FPSK)\"] --> B1[\"双渲染瞄具\"]\n    A1 --> B2[\"热成像\"]\n    A1 --> B3[\"AI 队友\"]\n    A1 --> B4[\"僵尸模式\"]\n    A1 --> B5[\"包体约 6 GB\"]\n    A1 --> B6[\"支持手柄 (PS5/XBOX)\"]\n    A1 --> B7[\"蓝图全流程（拖拽）\"]\n```\n<!-- [BV1xWdGBDE1c P1 00:27] [BV1xWdGBDE1c P1 02:34] [BV1xWdGBDE1c P1 02:30] [BV1xWdGBDE1c P1 01:40] [BV1xWdGBDE1c P1 01:55] [BV1xWdGBDE1c P1 02:56] [BV1xWdGBDE1c P1 03:06] [BV1xWdGBDE1c P1 03:14] -->\n\n## 功能模块\n```mermaid\nflowchart LR\n    C1[\"后坐力调节\"] --> C2[\"枪支模式枚举（单发/三连/全自动/霰弹/连喷）\"]\n    D1[\"AI 听声辨位\"] --> D2[\"AI 压脚步 & 投掷 CLAYMORE\"]\n    E1[\"僵尸单网格合并\"] --> E2[\"降低帧数消耗\"]\n    F1[\"双渲染瞄具\"] --> F2[\"主副画面不同，FOV 开镜不黑屏\"]\n    G1[\"热成像\"] --> G2[\"敌人移动两步即红到发紫\"]\n```\n<!-- [BV1xWdGBDE1c P1 01:00] [BV1xWdGBDE1c P1 01:17] [BV1xWdGBDE1c P1 01:40] [BV1xWdGBDE1c P1 01:49] [BV1xWdGBDE1c P1 02:10] [BV1xWdGBDE1c P1 02:15] [BV1xWdGBDE1c P1 02:34] [BV1xWdGBDE1c P1 02:38] -->\n\n## 使用流程\n```mermaid\nflowchart TD\n    S0[\"导入 FPS Kit\"] --> S1[\"配置枪支（蓝图拖拽）\"]\n    S1 --> S2[\"调节后坐力曲线\"]\n    S2 --> S3[\"设置 AI 行为\"]\n    S3 --> S4[\"开启僵尸模式\"]\n    S4 --> S5[\"打包发布（约 6 GB）\"]\n```\n<!-- [BV1xWdGBDE1c P1 00:27] [BV1xWdGBDE1c P1 01:13] [BV1xWdGBDE1c P1 01:00] [BV1xWdGBDE1c P1 01:40] [BV1xWdGBDE1c P1 01:55] [BV1xWdGBDE1c P1 02:56] -->\n\n## 性能优化\n```mermaid\nflowchart LR\n    O1[\"单网格合并僵尸\"] --> O2[\"减少 Draw Call\"]\n    O2 --> O3[\"砍除重复贴图\"]\n    O3 --> O4[\"压缩包体\"]\n    O4 --> O5[\"适配移动端 & 主机\"]\n    O5 --> O6[\"省性能（LD）\"]\n```\n<!-- [BV1xWdGBDE1c P1 02:10] [BV1xWdGBDE1c P1 02:58] [BV1xWdGBDE1c P1 03:00] [BV1xWdGBDE1c P1 03:07] [BV1xWdGBDE1c P1 02:50] -->\n\n## 价格与获取\n```mermaid\nflowchart TD\n    P1[\"EPIC 商城购买\"] --> P2[\"售价 120 元人民币\"]\n    P2 --> P3[\"不打折\"]\n    P3 --> P4[\"省下程序员的头发\"]\n    P4 --> P5[\"评论区提供下载链接\"]\n```\n<!-- [BV1xWdGBDE1c P1 03:35] [BV1xWdGBDE1c P1 03:41] [BV1xWdGBDE1c P1 03:49] -->",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"FPS Kit (FPSK)\"] --> B1[\"双渲染瞄具\"]\n    A1 --> B2[\"热成像\"]\n    A1 --> B3[\"AI 队友\"]\n    A1 --> B4[\"僵尸模式\"]\n    A1 --> B5[\"包体约 6 GB\"]\n    A1 --> B6[\"支持手柄 (PS5/XBOX)\"]\n    A1 --> B7[\"蓝图全流程（拖拽）\"]"
+    },
+    {
+      "title": "功能模块",
+      "code": "flowchart LR\n    C1[\"后坐力调节\"] --> C2[\"枪支模式枚举（单发/三连/全自动/霰弹/连喷）\"]\n    D1[\"AI 听声辨位\"] --> D2[\"AI 压脚步 & 投掷 CLAYMORE\"]\n    E1[\"僵尸单网格合并\"] --> E2[\"降低帧数消耗\"]\n    F1[\"双渲染瞄具\"] --> F2[\"主副画面不同，FOV 开镜不黑屏\"]\n    G1[\"热成像\"] --> G2[\"敌人移动两步即红到发紫\"]"
+    },
+    {
+      "title": "使用流程",
+      "code": "flowchart TD\n    S0[\"导入 FPS Kit\"] --> S1[\"配置枪支（蓝图拖拽）\"]\n    S1 --> S2[\"调节后坐力曲线\"]\n    S2 --> S3[\"设置 AI 行为\"]\n    S3 --> S4[\"开启僵尸模式\"]\n    S4 --> S5[\"打包发布（约 6 GB）\"]"
+    },
+    {
+      "title": "性能优化",
+      "code": "flowchart LR\n    O1[\"单网格合并僵尸\"] --> O2[\"减少 Draw Call\"]\n    O2 --> O3[\"砍除重复贴图\"]\n    O3 --> O4[\"压缩包体\"]\n    O4 --> O5[\"适配移动端 & 主机\"]\n    O5 --> O6[\"省性能（LD）\"]"
+    },
+    {
+      "title": "价格与获取",
+      "code": "flowchart TD\n    P1[\"EPIC 商城购买\"] --> P2[\"售价 120 元人民币\"]\n    P2 --> P3[\"不打折\"]\n    P3 --> P4[\"省下程序员的头发\"]\n    P4 --> P5[\"评论区提供下载链接\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T23:24:29+00:00"
+}

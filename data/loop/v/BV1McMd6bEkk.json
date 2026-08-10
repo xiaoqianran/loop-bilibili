@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1McMd6bEkk",
+  "title": "打脸真快 零代码codex+deepseek 让AI训练另一个AI10元搞定强化学习火箭回收模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 891,
+  "text": "打脸真快\n零代码CODX加deep se\n让AI训练另一个AI\n十元搞定\n强化学习火箭回收模型\n注意绿色的箭头是测风力的方向和强度\n红色的箭头是火箭发动机的推力的方向和强度\n半个月前发布过一个视频\n零代码deep seek加code body\n让AI训练另一个AI\n二小时搞定\n强化学习旗杆平衡\n在最后我给了结论\n至于更为复杂的奖励函数\n如果你不告诉他如何设计\n他会帮你乱算一通\n最后几乎试了所有的方式\n然后告诉你是我错了\n我应该怎么办\n结果还是错的\n所以对于像这种训练模型的复杂的事情\n还是要靠自己的\n然而在这次的这个火箭回收模型中确实打脸了\n这个项目\n之前用code body加deep seek钢pro已经做了一段时间了\n因为无法完成降落动作\n就暂时搁置了\n重启的一个重要的原因是最新的deep sick杠\nV4杠flash杠0731\n评价很不错\n本着试试的心态\n加上尝鲜CODX\n对比一下code body就重启了这个项目\n这是一个火箭回收的强化学习训练项目\n目标是让一枚30吨重的火箭在有侧风的环境\n从10米见方的发射台上起飞\n爬升到50米高空\n平稳降落回发射台\n就像SPACEX的火箭回收一样\n之前已经用code body加deep se钢pro完成了基本的框架\n但是火箭一旦越过50米高度\n奖励就清零\n聪明的策略\n很快就学会了一个偷懒的办法\n悬停在50米下面\n一动不动\ndeep seek gflash杠073E帮我做了一轮重构\n而且是在我没有做任何提醒的情况下\n设计了height rage\nDescend\nSoft landing proximity\nProximity\nProximity landing\n共九个奖励项\n并在训练的过程中自动调整超参的大小\n完成了训练\n同时他会猜出来\n降落不成功\n可能和风力太大\n发射台太小有关\n这些挺让我吃惊的\n最终经过400轮的训练\n火箭发射回收成功率也达到98.4%\n事实证明AI是很厉害\n能大大的提高效率\n仅仅半个月后\n他离真正的独当一面已经不远了\n下一步训练个什么呢\n让我考虑考虑\n如果你有什么想训练的模型\n评论区告诉我",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1McMd6bEkk",
+  "published_at": "1785758099",
+  "fetched_at": "2026-08-08T14:39:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

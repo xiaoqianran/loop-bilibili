@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1SpNf6FERw",
+  "title": "疑似 deepseek v4 正式版模型测试",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 532,
+  "text": "这里是一次出的\n使用的是V4灰度板\n还思考强度\n好吧\n无法使用\n请输入文本\n这个阴影效果不太正常吧\n两次出\n这里用的还是high思考强度\n这里只是简化了一下启动方式\n所以不算入其中\n动物只是装饰\n无法互动\n并没有制作动画\n是直接传送过来的\n这里太亮了\n白字都有点看不太清了\n为什么有条纹\n这个也是一轮出\n这一轮只知签以项目位置与简化启动方式\n所以不算入总次数\n看起来和我想象的不太一样\n不过也比玉兰班好多了\n这么看起来似乎不错\n使用V4灰色版max思考档位制作的\n我的世界两轮出\n但也是对比前代巨大的进步\nmax的思维链似乎和high没有多大的区别\n精细度确实比high更高\n不过由于max与high的提示词本就不完全一致\n所以其实没有太大参考意义\n居然上不来了\n好吧\n那个石头我似乎没捡到\n不过石镐是可以合成的\n没有眼睛\n然后就是战地一\n这个也是两轮出\n也是max思考强度\n没有友伤\n我无疑是愤怒的\n何以为这不是只能盲射吗\n坦克炮口怎么和准星相反\n透彻失败\n这次版本更新总体来说对于阅览版提升非常大\n虽然视频中出现了一些bug\n但只要告诉DS\nDS还是能修复的\n最重要的是它的价格非常亲民\n但又有着不输旗舰的性能\n简单来说\ndeep sick王朝了\n大概就是这样",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1SpNf6FERw",
+  "published_at": "1784321128",
+  "fetched_at": "2026-08-10T07:25:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 模型测试知识图谱\n\n## 图1 模型与思考强度概览\n```mermaid\nflowchart TD\n    V4[\"V4 模型\"]\n    Gray[\"灰度/灰色版\"]\n    High[\"high 思考强度\"]\n    Max[\"max 思考强度\"]\n    Launch[\"简化启动方式\"]\n    Count[\"计入次数\"]\n    Output[\"输出结果\"]\n\n    V4 --> Gray\n    Gray --> High\n    Gray --> Max\n    High --> Launch\n    Max --> Launch\n    Launch -->|不计入| Count\n    High --> Output\n    Max --> Output\n```\n\n## 图2 思考强度对输出特征的影响\n```mermaid\nflowchart TD\n    High[\"high 思考强度\"]\n    Max[\"max 思考强度\"]\n    Shadow[\"阴影效果异常\"]\n    Stripe[\"出现条纹\"]\n    Bright[\"画面过亮\"]\n    TextClarity[\"白字不清\"]\n    Animal[\"动物仅装饰，无法互动\"]\n    FineDetail[\"精细度更高\"]\n    ChainSimilarity[\"思维链与 high 相似\"]\n    PromptDiff[\"提示词不完全一致\"]\n\n    High --> Shadow\n    High --> Stripe\n    High --> Bright\n    High --> TextClarity\n    High --> Animal\n    Max --> FineDetail\n    Max --> ChainSimilarity\n    Max --> PromptDiff\n```\n\n## 图3 发现的问题与处理路径\n```mermaid\nflowchart TD\n    Issues[\"发现的问题\"]\n    Shadow[\"阴影异常\"]\n    Stripe[\"条纹\"]\n    Bright[\"亮度过高\"]\n    TextClarity[\"文字不清\"]\n    Unusable[\"无法使用\"]\n    Bug[\"版本更新出现的 bug\"]\n    Report[\"报告给 DS\"]\n    Fix[\"DS 进行修复\"]\n\n    Issues --> Shadow\n    Issues --> Stripe\n    Issues --> Bright\n    Issues --> TextClarity\n    Issues --> Unusable\n    Issues --> Bug\n    Bug --> Report\n    Report --> Fix\n```\n\n## 图4 整体评价与关键结论\n```mermaid\nflowchart TD\n    Eval[\"整体评价\"]\n    Price[\"价格亲民\"]\n    Performance[\"性能不输旗舰\"]\n    UpdateBenefit[\"版本更新提升大\"]\n    RemainingBugs[\"仍有 bug 存在\"]\n    Recommendation[\"值得尝试\"]\n\n    Eval --> Price\n    Eval --> Performance\n    Eval --> UpdateBenefit\n    Eval --> RemainingBugs\n    RemainingBugs --> Recommendation\n```",
+      "diagrams": [
+        {
+          "title": "图1 模型与思考强度概览",
+          "code": "flowchart TD\n    V4[\"V4 模型\"]\n    Gray[\"灰度/灰色版\"]\n    High[\"high 思考强度\"]\n    Max[\"max 思考强度\"]\n    Launch[\"简化启动方式\"]\n    Count[\"计入次数\"]\n    Output[\"输出结果\"]\n\n    V4 --> Gray\n    Gray --> High\n    Gray --> Max\n    High --> Launch\n    Max --> Launch\n    Launch -->|不计入| Count\n    High --> Output\n    Max --> Output"
+        },
+        {
+          "title": "图2 思考强度对输出特征的影响",
+          "code": "flowchart TD\n    High[\"high 思考强度\"]\n    Max[\"max 思考强度\"]\n    Shadow[\"阴影效果异常\"]\n    Stripe[\"出现条纹\"]\n    Bright[\"画面过亮\"]\n    TextClarity[\"白字不清\"]\n    Animal[\"动物仅装饰，无法互动\"]\n    FineDetail[\"精细度更高\"]\n    ChainSimilarity[\"思维链与 high 相似\"]\n    PromptDiff[\"提示词不完全一致\"]\n\n    High --> Shadow\n    High --> Stripe\n    High --> Bright\n    High --> TextClarity\n    High --> Animal\n    Max --> FineDetail\n    Max --> ChainSimilarity\n    Max --> PromptDiff"
+        },
+        {
+          "title": "图3 发现的问题与处理路径",
+          "code": "flowchart TD\n    Issues[\"发现的问题\"]\n    Shadow[\"阴影异常\"]\n    Stripe[\"条纹\"]\n    Bright[\"亮度过高\"]\n    TextClarity[\"文字不清\"]\n    Unusable[\"无法使用\"]\n    Bug[\"版本更新出现的 bug\"]\n    Report[\"报告给 DS\"]\n    Fix[\"DS 进行修复\"]\n\n    Issues --> Shadow\n    Issues --> Stripe\n    Issues --> Bright\n    Issues --> TextClarity\n    Issues --> Unusable\n    Issues --> Bug\n    Bug --> Report\n    Report --> Fix"
+        },
+        {
+          "title": "图4 整体评价与关键结论",
+          "code": "flowchart TD\n    Eval[\"整体评价\"]\n    Price[\"价格亲民\"]\n    Performance[\"性能不输旗舰\"]\n    UpdateBenefit[\"版本更新提升大\"]\n    RemainingBugs[\"仍有 bug 存在\"]\n    Recommendation[\"值得尝试\"]\n\n    Eval --> Price\n    Eval --> Performance\n    Eval --> UpdateBenefit\n    Eval --> RemainingBugs\n    RemainingBugs --> Recommendation"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T07:25:26+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 模型测试知识图谱\n\n## 图1 模型与思考强度概览\n```mermaid\nflowchart TD\n    V4[\"V4 模型\"]\n    Gray[\"灰度/灰色版\"]\n    High[\"high 思考强度\"]\n    Max[\"max 思考强度\"]\n    Launch[\"简化启动方式\"]\n    Count[\"计入次数\"]\n    Output[\"输出结果\"]\n\n    V4 --> Gray\n    Gray --> High\n    Gray --> Max\n    High --> Launch\n    Max --> Launch\n    Launch -->|不计入| Count\n    High --> Output\n    Max --> Output\n```\n\n## 图2 思考强度对输出特征的影响\n```mermaid\nflowchart TD\n    High[\"high 思考强度\"]\n    Max[\"max 思考强度\"]\n    Shadow[\"阴影效果异常\"]\n    Stripe[\"出现条纹\"]\n    Bright[\"画面过亮\"]\n    TextClarity[\"白字不清\"]\n    Animal[\"动物仅装饰，无法互动\"]\n    FineDetail[\"精细度更高\"]\n    ChainSimilarity[\"思维链与 high 相似\"]\n    PromptDiff[\"提示词不完全一致\"]\n\n    High --> Shadow\n    High --> Stripe\n    High --> Bright\n    High --> TextClarity\n    High --> Animal\n    Max --> FineDetail\n    Max --> ChainSimilarity\n    Max --> PromptDiff\n```\n\n## 图3 发现的问题与处理路径\n```mermaid\nflowchart TD\n    Issues[\"发现的问题\"]\n    Shadow[\"阴影异常\"]\n    Stripe[\"条纹\"]\n    Bright[\"亮度过高\"]\n    TextClarity[\"文字不清\"]\n    Unusable[\"无法使用\"]\n    Bug[\"版本更新出现的 bug\"]\n    Report[\"报告给 DS\"]\n    Fix[\"DS 进行修复\"]\n\n    Issues --> Shadow\n    Issues --> Stripe\n    Issues --> Bright\n    Issues --> TextClarity\n    Issues --> Unusable\n    Issues --> Bug\n    Bug --> Report\n    Report --> Fix\n```\n\n## 图4 整体评价与关键结论\n```mermaid\nflowchart TD\n    Eval[\"整体评价\"]\n    Price[\"价格亲民\"]\n    Performance[\"性能不输旗舰\"]\n    UpdateBenefit[\"版本更新提升大\"]\n    RemainingBugs[\"仍有 bug 存在\"]\n    Recommendation[\"值得尝试\"]\n\n    Eval --> Price\n    Eval --> Performance\n    Eval --> UpdateBenefit\n    Eval --> RemainingBugs\n    RemainingBugs --> Recommendation\n```",
+  "diagrams": [
+    {
+      "title": "图1 模型与思考强度概览",
+      "code": "flowchart TD\n    V4[\"V4 模型\"]\n    Gray[\"灰度/灰色版\"]\n    High[\"high 思考强度\"]\n    Max[\"max 思考强度\"]\n    Launch[\"简化启动方式\"]\n    Count[\"计入次数\"]\n    Output[\"输出结果\"]\n\n    V4 --> Gray\n    Gray --> High\n    Gray --> Max\n    High --> Launch\n    Max --> Launch\n    Launch -->|不计入| Count\n    High --> Output\n    Max --> Output"
+    },
+    {
+      "title": "图2 思考强度对输出特征的影响",
+      "code": "flowchart TD\n    High[\"high 思考强度\"]\n    Max[\"max 思考强度\"]\n    Shadow[\"阴影效果异常\"]\n    Stripe[\"出现条纹\"]\n    Bright[\"画面过亮\"]\n    TextClarity[\"白字不清\"]\n    Animal[\"动物仅装饰，无法互动\"]\n    FineDetail[\"精细度更高\"]\n    ChainSimilarity[\"思维链与 high 相似\"]\n    PromptDiff[\"提示词不完全一致\"]\n\n    High --> Shadow\n    High --> Stripe\n    High --> Bright\n    High --> TextClarity\n    High --> Animal\n    Max --> FineDetail\n    Max --> ChainSimilarity\n    Max --> PromptDiff"
+    },
+    {
+      "title": "图3 发现的问题与处理路径",
+      "code": "flowchart TD\n    Issues[\"发现的问题\"]\n    Shadow[\"阴影异常\"]\n    Stripe[\"条纹\"]\n    Bright[\"亮度过高\"]\n    TextClarity[\"文字不清\"]\n    Unusable[\"无法使用\"]\n    Bug[\"版本更新出现的 bug\"]\n    Report[\"报告给 DS\"]\n    Fix[\"DS 进行修复\"]\n\n    Issues --> Shadow\n    Issues --> Stripe\n    Issues --> Bright\n    Issues --> TextClarity\n    Issues --> Unusable\n    Issues --> Bug\n    Bug --> Report\n    Report --> Fix"
+    },
+    {
+      "title": "图4 整体评价与关键结论",
+      "code": "flowchart TD\n    Eval[\"整体评价\"]\n    Price[\"价格亲民\"]\n    Performance[\"性能不输旗舰\"]\n    UpdateBenefit[\"版本更新提升大\"]\n    RemainingBugs[\"仍有 bug 存在\"]\n    Recommendation[\"值得尝试\"]\n\n    Eval --> Price\n    Eval --> Performance\n    Eval --> UpdateBenefit\n    Eval --> RemainingBugs\n    RemainingBugs --> Recommendation"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T07:25:26+00:00"
+}

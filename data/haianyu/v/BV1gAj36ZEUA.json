@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1gAj36ZEUA",
+  "title": "146. 能否有一种方法同时可视化注意力的前向和反向传播？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 663,
+  "text": "今天的问题是\n能否有一种方法\n同时可视化注意力的前向传播和反向传播\n结论先行\n可以这个问题基于之前的两期视频宝藏问题\n101和109\n109期给出了一种极简的transformer\n可视化\n100017推倒了flash attention的梯度\n把这两期结合起来\n就有了今天的这幅图\n在理解反向之前\n我们先要问前向传播的可视化怎么做\n关键在于内积和加权平均\n这里Q矩阵按行切K转置矩阵\n按列切相乘\n本质上是做内积得到注意力分数矩阵\n为了让图示更清爽\n这里统一用A表示所有的注意力分数矩阵\n不再刻意区分做soft max前后的区别\n然后用A和V相乘\n本质上是做加权平均算出来O这就是前向传播\n反向传播里最重要的公式有两个\n第一个在之前我们推导过\n它等于这里的DAO乘以V的转置\n所以我们只需要把这里的DIO暗行切开\nV的转置\n按列切开\n两者相乘就可以得到梯度的注意力矩阵\nDP为了图示清爽\n这里对应前项的字母A\n我们就统一用DA来泛指它的梯度位置\n第二个重要的梯度公式就是\nDQ等于DSS乘以K\n因此我们拿这里的注意力矩阵梯度去乘以K\n就可以得到DQ\n这时我们会发现一个很巧妙的结论\n注意力的反向传播依然可以用五个矩阵来表示\n并且矩阵的切分方式一模一样\n这五个矩阵展示了注意力\n前向和反向传播的一体两面\n并且这里是对称的\n前向传播中字母的出现顺序是QKAVO\n反向传播中顺序完全倒了过来\n变成了OVAKQ只不过在基数位置\n也就是这里的OAQ前面加上了梯度的字母D\n而在偶数位置的V和K是没有梯度符号的\n这就是它们一体两面的对称美",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gAj36ZEUA",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:28+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1RuMR6PEnu",
+  "title": "微软开源图片生成3d模型 项目，效果夯爆了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1047,
+  "text": "大家好\n今天给大家推荐的一个开源项目\n是MICROSOFT这一个3D模型生成的一个项目\n它的官网效果上显示的生成模型特别的牛嗯\n但是上次我用那个大模型\n通过缺gs s去生成的一个效果特别差\n所以我痛定思痛\n找一个这么一个强大的这个模型\n然后去生成它是需要一定的算力的\n我的算力是RTX2080ti的这么一个嗯\n这么一个模这么一个显卡\n它有22G的显显存\n一共有两张\n但是实际上我只跑了一张嗯\n可以看一看它的那个生成效果\n这个是我用GBT生成的一个\n蒸汽庞克的这么一个图片呃\n可以看到它是挺复杂的\n但是它生成的效果哎感觉还是挺好的\n虽然说嗯细节上要差一点\n毕竟我的显卡不是特别好\n我生成的这个像素是512的\n它可以选择10241536\n但是10241536我都生成失败了\n都是显卡OOM呢\n所以说512的已经是这样的一个效果了\n呃他的一些细节啊都是做得特别棒的\n如果你不细看的话\n呃还是挺不错的\n嗯这个东西的模型文件是GOB的\n可以导入到blender里面去\n呃我这儿还生成了一个项目\n这个是也是也是由那个GPT生成\n这一个卡通人物\n然后导入到radio里面去生成\n可以看看它这个效果\n效果来说呢\n哎比较粗\n怎么说还是稍微有一点粗糙的呃\n这个东西的细节没有做的那么好\n但是大差不差已经算是比较好了\n如果有更好的显卡\n可以把这个像素调高一点\n可能效果会好一点\n实测的效果感觉是挺棒的\n可以看得到呃\n这个头发背面它都已经生成了\n实际上图片是没有背面的\n像像这个蒸汽庞克\n它的背面也是没有的\n你看能看它背面也还是说嗯\n没有说是有特别严重的一个问题\n所以说这个项目已经被我实测过了\n是可以真实去跑的\n大家可以去用一用\n然后呢我在做这个部署这个项目的时候呢\n我是完全是交给AI去部署的\n用的是codex哎\n我这个这个启动这个项目的时候\n还是折腾了老久\n因为它生成的效果开始是呃有问题的\n然后我就是通过不断的给他说呃有问题\n然后最终才让我成功的跑起了这个项目\n这个项目呢用到这个大模型\n是那个codex\n是的那个GPTGPT5.6的LUNA\n最近露娜也下降\n也下调了价格\n然后我自己有一个这样的一个网关平台\n上面也可以看得到啊\n有很多很多模型\n我就是在这个平台上去去用的这个agent\n可以看到\n现在现在他的露娜的价格额也是和官网同步的\n现在相当于是0.03元嗯\n每百万token嗯\n好今天我的分享就到这呃\n我会在评论区把这个项目的地址也发出来\n大家可以下载这个代码\n自己实际跑一下\n好今天的分享就到这\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RuMR6PEnu",
+  "published_at": "1785767468",
+  "fetched_at": "2026-08-09T23:49:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 微软开源图片生成3D模型项目知识图谱\n\n## 项目总览 [BV1RuMR6PEnu P1 00:04]\n```mermaid\nflowchart TD\n    A[项目] --> B[官网演示：生成模型效果优秀]\n    A --> C[模型文件格式：GOB]\n    C --> D[可导入 Blender]\n    A --> E[使用大模型：Codex / GPT5.6 LUNA]\n    E --> F[需要一定算力]\n    F --> G[GPU 需求]\n```\n\n## 硬件与分辨率限制 [BV1RuMR6PEnu P1 00:33]\n```mermaid\nflowchart TD\n    A[GPU RTX2080Ti<br/>22GB 显存] --> B[单卡使用]\n    B --> C[分辨率 512×512<br/>成功生成]\n    B --> D[分辨率 1024×1024<br/>显存 OOM]\n    B --> E[分辨率 1536×1536<br/>显存 OOM]\n    C --> F[效果良好<br/>细节略差]\n```\n\n## 部署与运行流程 [BV1RuMR6PEnu P1 02:37]\n```mermaid\nflowchart TD\n    A[开始部署] --> B[使用 Codex 生成脚本]\n    B --> C[首次运行出现错误]\n    C --> D[反馈错误信息给 Codex]\n    D --> E[迭代修正脚本]\n    E --> F[成功运行项目]\n    F --> G[项目实际运行]\n```\n\n## 成本与模型价格 [BV1RuMR6PEnu P1 03:28]\n```mermaid\nflowchart TD\n    A[LUNA 大模型] --> B[计费方式：按 token]\n    B --> C[价格 0.03 元 / 百万 token]\n    C --> D[实际使用成本示例]\n```",
+      "diagrams": [
+        {
+          "title": "项目总览",
+          "code": "flowchart TD\n    A[项目] --> B[官网演示：生成模型效果优秀]\n    A --> C[模型文件格式：GOB]\n    C --> D[可导入 Blender]\n    A --> E[使用大模型：Codex / GPT5.6 LUNA]\n    E --> F[需要一定算力]\n    F --> G[GPU 需求]"
+        },
+        {
+          "title": "硬件与分辨率限制",
+          "code": "flowchart TD\n    A[GPU RTX2080Ti<br/>22GB 显存] --> B[单卡使用]\n    B --> C[分辨率 512×512<br/>成功生成]\n    B --> D[分辨率 1024×1024<br/>显存 OOM]\n    B --> E[分辨率 1536×1536<br/>显存 OOM]\n    C --> F[效果良好<br/>细节略差]"
+        },
+        {
+          "title": "部署与运行流程",
+          "code": "flowchart TD\n    A[开始部署] --> B[使用 Codex 生成脚本]\n    B --> C[首次运行出现错误]\n    C --> D[反馈错误信息给 Codex]\n    D --> E[迭代修正脚本]\n    E --> F[成功运行项目]\n    F --> G[项目实际运行]"
+        },
+        {
+          "title": "成本与模型价格",
+          "code": "flowchart TD\n    A[LUNA 大模型] --> B[计费方式：按 token]\n    B --> C[价格 0.03 元 / 百万 token]\n    C --> D[实际使用成本示例]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T23:49:40+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 微软开源图片生成3D模型项目知识图谱\n\n## 项目总览 [BV1RuMR6PEnu P1 00:04]\n```mermaid\nflowchart TD\n    A[项目] --> B[官网演示：生成模型效果优秀]\n    A --> C[模型文件格式：GOB]\n    C --> D[可导入 Blender]\n    A --> E[使用大模型：Codex / GPT5.6 LUNA]\n    E --> F[需要一定算力]\n    F --> G[GPU 需求]\n```\n\n## 硬件与分辨率限制 [BV1RuMR6PEnu P1 00:33]\n```mermaid\nflowchart TD\n    A[GPU RTX2080Ti<br/>22GB 显存] --> B[单卡使用]\n    B --> C[分辨率 512×512<br/>成功生成]\n    B --> D[分辨率 1024×1024<br/>显存 OOM]\n    B --> E[分辨率 1536×1536<br/>显存 OOM]\n    C --> F[效果良好<br/>细节略差]\n```\n\n## 部署与运行流程 [BV1RuMR6PEnu P1 02:37]\n```mermaid\nflowchart TD\n    A[开始部署] --> B[使用 Codex 生成脚本]\n    B --> C[首次运行出现错误]\n    C --> D[反馈错误信息给 Codex]\n    D --> E[迭代修正脚本]\n    E --> F[成功运行项目]\n    F --> G[项目实际运行]\n```\n\n## 成本与模型价格 [BV1RuMR6PEnu P1 03:28]\n```mermaid\nflowchart TD\n    A[LUNA 大模型] --> B[计费方式：按 token]\n    B --> C[价格 0.03 元 / 百万 token]\n    C --> D[实际使用成本示例]\n```",
+  "diagrams": [
+    {
+      "title": "项目总览",
+      "code": "flowchart TD\n    A[项目] --> B[官网演示：生成模型效果优秀]\n    A --> C[模型文件格式：GOB]\n    C --> D[可导入 Blender]\n    A --> E[使用大模型：Codex / GPT5.6 LUNA]\n    E --> F[需要一定算力]\n    F --> G[GPU 需求]"
+    },
+    {
+      "title": "硬件与分辨率限制",
+      "code": "flowchart TD\n    A[GPU RTX2080Ti<br/>22GB 显存] --> B[单卡使用]\n    B --> C[分辨率 512×512<br/>成功生成]\n    B --> D[分辨率 1024×1024<br/>显存 OOM]\n    B --> E[分辨率 1536×1536<br/>显存 OOM]\n    C --> F[效果良好<br/>细节略差]"
+    },
+    {
+      "title": "部署与运行流程",
+      "code": "flowchart TD\n    A[开始部署] --> B[使用 Codex 生成脚本]\n    B --> C[首次运行出现错误]\n    C --> D[反馈错误信息给 Codex]\n    D --> E[迭代修正脚本]\n    E --> F[成功运行项目]\n    F --> G[项目实际运行]"
+    },
+    {
+      "title": "成本与模型价格",
+      "code": "flowchart TD\n    A[LUNA 大模型] --> B[计费方式：按 token]\n    B --> C[价格 0.03 元 / 百万 token]\n    C --> D[实际使用成本示例]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T23:49:40+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1R5KY6YEMP",
+  "title": "kimi k3一句话生成3D坦克大战附制作全过程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 407,
+  "text": "B站的各位小伙伴大家好\n我又做了一个啊\n还是用K米K3做了一个呃\n就是咱们那个小时候玩那个\nFC里面的坦克大战啊\n3D版\n下面我们就我简给大家简单的演示一下啊\n我们开始战斗\n第一关\n你看这四个方向键\n我们哎\n喂\n靠啊\n差点自己给干掉了\n然后那个那个箱子吃了以后\n就可以就可以变子弹\n变得厉害一点啊\n连发啊\n穿甲弹\n哇哇这个厉害\n哇喔喔\n哇boss来了\n这啥玩意哎\n什么什么\n谁把我的指挥部摧毁了\n再次出击\n啊然后我们看按Y的话\n按了Y就就可以这样子拖动了对吧\n然后我们按C就变成第一人称模式了\n哎还是切回来吧\n第一人称模式太难打了\n我看防空炮是啥\n这也没飞机啊\n咋又被咋又被打了\n然后呢\n呃我下面就给大家演示一下这个制作过程啊\n啊我看评论区有有些小伙伴不相信\n说是一句一句话啊\n当然可能肯定不是简单的一句话啊\n其实也但是也就是纯纯的自然语言啊\n就去拿对着这个话筒说了那么乱七八糟\n说了一堆吧\n啊下面就给大家演示一下",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1R5KY6YEMP",
+  "published_at": "1784648533",
+  "fetched_at": "2026-08-06T20:21:06+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Kimi K3 “一句話生成”3D坦克大战知识图谱\n\n## 3D坦克大战概览\n```mermaid\nflowchart TD\n    G1[\"3D坦克大战\"]\n    P1[\"平台：K米K3\"]\n    M1[\"视角模式：俯视\"]\n    M2[\"视角模式：第一人称\"]\n    C1[\"方向键：移动\"]\n    C2[\"Y键：拖动视角\"]\n    C3[\"C键：切换第一人称\"]\n    PU[\"箱子 → 子弹升级（连发/穿甲弹）\"]\n    B1[\"Boss出现\"]\n    D1[\"第一人称模式难度提升\"]\n    G1 --> P1\n    G1 --> M1\n    G1 --> M2\n    G1 --> C1\n    G1 --> C2\n    G1 --> C3\n    G1 --> PU\n    G1 --> B1\n    M2 --> D1\n```\n<!-- [BV1R5KY6YEMP P1 00:06] – [BV1R5KY6YEMP P1 01:12] -->\n\n## 控制映射与切换\n```mermaid\nflowchart TD\n    K1[\"方向键\"] --> Mv[\"移动坦克\"]\n    K2[\"Y键\"] --> DM[\"拖动视角\"]\n    K3[\"C键\"] --> FP[\"切换第一人称模式\"]\n    FP --> Diff[\"难度提升\"]\n    Diff --> Back[\"切回俯视模式\"]\n    Back --> Mv\n```\n<!-- [BV1R5KY6YEMP P1 00:20] – [BV1R5KY6YEMP P1 01:44] -->\n\n## 游戏流程\n```mermaid\nflowchart TD\n    S[\"开始战斗\"]\n    L1[\"第一关\"]\n    Bx[\"收集箱子\"]\n    Up[\"子弹升级（连发/穿甲弹）\"]\n    Boss[\"Boss出现\"]\n    FPMode[\"切换第一人称\"]\n    Return[\"切回原模式\"]\n    Lose[\"被击中\"]\n    Retry[\"再次出击\"]\n    S --> L1\n    L1 --> Bx\n    Bx --> Up\n    Up --> Boss\n    Boss --> FPMode\n    FPMode --> Return\n    Return --> Lose\n    Lose --> Retry\n```\n<!-- [BV1R5KY6YEMP P1 00:16] – [BV1R5KY6YEMP P1 02:06] -->\n\n## 一键生成制作过程\n```mermaid\nflowchart TD\n    NL[\"自然语言描述\"]\n    Mic[\"通过话筒输入\"]\n    Engine[\"K米K3 引擎\"]\n    Parse[\"解析指令\"]\n    Gen[\"生成 3D 坦克游戏\"]\n    Out[\"输出可运行项目\"]\n    Demo[\"演示制作过程\"]\n    Skept[\"观众质疑“一句话生成”\"]\n    NL --> Mic\n    Mic --> Engine\n    Engine --> Parse\n    Parse --> Gen\n    Gen --> Out\n    Out --> Demo\n    Skept --> Demo\n```\n<!-- [BV1R5KY6YEMP P1 02:11] – [BV1R5KY6YEMP P1 02:26] -->",
+      "diagrams": [
+        {
+          "title": "3D坦克大战概览",
+          "code": "flowchart TD\n    G1[\"3D坦克大战\"]\n    P1[\"平台：K米K3\"]\n    M1[\"视角模式：俯视\"]\n    M2[\"视角模式：第一人称\"]\n    C1[\"方向键：移动\"]\n    C2[\"Y键：拖动视角\"]\n    C3[\"C键：切换第一人称\"]\n    PU[\"箱子 → 子弹升级（连发/穿甲弹）\"]\n    B1[\"Boss出现\"]\n    D1[\"第一人称模式难度提升\"]\n    G1 --> P1\n    G1 --> M1\n    G1 --> M2\n    G1 --> C1\n    G1 --> C2\n    G1 --> C3\n    G1 --> PU\n    G1 --> B1\n    M2 --> D1"
+        },
+        {
+          "title": "控制映射与切换",
+          "code": "flowchart TD\n    K1[\"方向键\"] --> Mv[\"移动坦克\"]\n    K2[\"Y键\"] --> DM[\"拖动视角\"]\n    K3[\"C键\"] --> FP[\"切换第一人称模式\"]\n    FP --> Diff[\"难度提升\"]\n    Diff --> Back[\"切回俯视模式\"]\n    Back --> Mv"
+        },
+        {
+          "title": "游戏流程",
+          "code": "flowchart TD\n    S[\"开始战斗\"]\n    L1[\"第一关\"]\n    Bx[\"收集箱子\"]\n    Up[\"子弹升级（连发/穿甲弹）\"]\n    Boss[\"Boss出现\"]\n    FPMode[\"切换第一人称\"]\n    Return[\"切回原模式\"]\n    Lose[\"被击中\"]\n    Retry[\"再次出击\"]\n    S --> L1\n    L1 --> Bx\n    Bx --> Up\n    Up --> Boss\n    Boss --> FPMode\n    FPMode --> Return\n    Return --> Lose\n    Lose --> Retry"
+        },
+        {
+          "title": "一键生成制作过程",
+          "code": "flowchart TD\n    NL[\"自然语言描述\"]\n    Mic[\"通过话筒输入\"]\n    Engine[\"K米K3 引擎\"]\n    Parse[\"解析指令\"]\n    Gen[\"生成 3D 坦克游戏\"]\n    Out[\"输出可运行项目\"]\n    Demo[\"演示制作过程\"]\n    Skept[\"观众质疑“一句话生成”\"]\n    NL --> Mic\n    Mic --> Engine\n    Engine --> Parse\n    Parse --> Gen\n    Gen --> Out\n    Out --> Demo\n    Skept --> Demo"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T20:21:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Kimi K3 “一句話生成”3D坦克大战知识图谱\n\n## 3D坦克大战概览\n```mermaid\nflowchart TD\n    G1[\"3D坦克大战\"]\n    P1[\"平台：K米K3\"]\n    M1[\"视角模式：俯视\"]\n    M2[\"视角模式：第一人称\"]\n    C1[\"方向键：移动\"]\n    C2[\"Y键：拖动视角\"]\n    C3[\"C键：切换第一人称\"]\n    PU[\"箱子 → 子弹升级（连发/穿甲弹）\"]\n    B1[\"Boss出现\"]\n    D1[\"第一人称模式难度提升\"]\n    G1 --> P1\n    G1 --> M1\n    G1 --> M2\n    G1 --> C1\n    G1 --> C2\n    G1 --> C3\n    G1 --> PU\n    G1 --> B1\n    M2 --> D1\n```\n<!-- [BV1R5KY6YEMP P1 00:06] – [BV1R5KY6YEMP P1 01:12] -->\n\n## 控制映射与切换\n```mermaid\nflowchart TD\n    K1[\"方向键\"] --> Mv[\"移动坦克\"]\n    K2[\"Y键\"] --> DM[\"拖动视角\"]\n    K3[\"C键\"] --> FP[\"切换第一人称模式\"]\n    FP --> Diff[\"难度提升\"]\n    Diff --> Back[\"切回俯视模式\"]\n    Back --> Mv\n```\n<!-- [BV1R5KY6YEMP P1 00:20] – [BV1R5KY6YEMP P1 01:44] -->\n\n## 游戏流程\n```mermaid\nflowchart TD\n    S[\"开始战斗\"]\n    L1[\"第一关\"]\n    Bx[\"收集箱子\"]\n    Up[\"子弹升级（连发/穿甲弹）\"]\n    Boss[\"Boss出现\"]\n    FPMode[\"切换第一人称\"]\n    Return[\"切回原模式\"]\n    Lose[\"被击中\"]\n    Retry[\"再次出击\"]\n    S --> L1\n    L1 --> Bx\n    Bx --> Up\n    Up --> Boss\n    Boss --> FPMode\n    FPMode --> Return\n    Return --> Lose\n    Lose --> Retry\n```\n<!-- [BV1R5KY6YEMP P1 00:16] – [BV1R5KY6YEMP P1 02:06] -->\n\n## 一键生成制作过程\n```mermaid\nflowchart TD\n    NL[\"自然语言描述\"]\n    Mic[\"通过话筒输入\"]\n    Engine[\"K米K3 引擎\"]\n    Parse[\"解析指令\"]\n    Gen[\"生成 3D 坦克游戏\"]\n    Out[\"输出可运行项目\"]\n    Demo[\"演示制作过程\"]\n    Skept[\"观众质疑“一句话生成”\"]\n    NL --> Mic\n    Mic --> Engine\n    Engine --> Parse\n    Parse --> Gen\n    Gen --> Out\n    Out --> Demo\n    Skept --> Demo\n```\n<!-- [BV1R5KY6YEMP P1 02:11] – [BV1R5KY6YEMP P1 02:26] -->",
+  "diagrams": [
+    {
+      "title": "3D坦克大战概览",
+      "code": "flowchart TD\n    G1[\"3D坦克大战\"]\n    P1[\"平台：K米K3\"]\n    M1[\"视角模式：俯视\"]\n    M2[\"视角模式：第一人称\"]\n    C1[\"方向键：移动\"]\n    C2[\"Y键：拖动视角\"]\n    C3[\"C键：切换第一人称\"]\n    PU[\"箱子 → 子弹升级（连发/穿甲弹）\"]\n    B1[\"Boss出现\"]\n    D1[\"第一人称模式难度提升\"]\n    G1 --> P1\n    G1 --> M1\n    G1 --> M2\n    G1 --> C1\n    G1 --> C2\n    G1 --> C3\n    G1 --> PU\n    G1 --> B1\n    M2 --> D1"
+    },
+    {
+      "title": "控制映射与切换",
+      "code": "flowchart TD\n    K1[\"方向键\"] --> Mv[\"移动坦克\"]\n    K2[\"Y键\"] --> DM[\"拖动视角\"]\n    K3[\"C键\"] --> FP[\"切换第一人称模式\"]\n    FP --> Diff[\"难度提升\"]\n    Diff --> Back[\"切回俯视模式\"]\n    Back --> Mv"
+    },
+    {
+      "title": "游戏流程",
+      "code": "flowchart TD\n    S[\"开始战斗\"]\n    L1[\"第一关\"]\n    Bx[\"收集箱子\"]\n    Up[\"子弹升级（连发/穿甲弹）\"]\n    Boss[\"Boss出现\"]\n    FPMode[\"切换第一人称\"]\n    Return[\"切回原模式\"]\n    Lose[\"被击中\"]\n    Retry[\"再次出击\"]\n    S --> L1\n    L1 --> Bx\n    Bx --> Up\n    Up --> Boss\n    Boss --> FPMode\n    FPMode --> Return\n    Return --> Lose\n    Lose --> Retry"
+    },
+    {
+      "title": "一键生成制作过程",
+      "code": "flowchart TD\n    NL[\"自然语言描述\"]\n    Mic[\"通过话筒输入\"]\n    Engine[\"K米K3 引擎\"]\n    Parse[\"解析指令\"]\n    Gen[\"生成 3D 坦克游戏\"]\n    Out[\"输出可运行项目\"]\n    Demo[\"演示制作过程\"]\n    Skept[\"观众质疑“一句话生成”\"]\n    NL --> Mic\n    Mic --> Engine\n    Engine --> Parse\n    Parse --> Gen\n    Gen --> Out\n    Out --> Demo\n    Skept --> Demo"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:21:19+00:00"
+}

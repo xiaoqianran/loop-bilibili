@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1Wbj66YEBa",
+  "title": "榨干DeepSeek！4.35亿Token仅花12美元，Reasonix桌面端使用全指南",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1256,
+  "text": "用AI写代码跑了三天\n项目账单居然比你半个月奶茶钱还贵\n别慌\n现在有个叫reason x的工具\n能把deep sick的调用成本\n直接砍到原来的1/5\n跑4亿多token\n也就是AI交互的计费单位\n才花不到100块人民币\n看之前记得点赞关注\n咱们马上开始\n先给大家看个实测数据\n有人用这个工具跑了4.35亿个token\n总花费才12美元\n折合成人民币也就80多块\n比普通用法省了整整五倍\n核心秘密就两个字缓存\ndeep sick本身自带前缀缓存功能\n命中的部分只收全价的1/10\n但是普通AI框架的缓存命中率\n普遍不到20%\n为啥因为缓存要命中\n要求每次发给大模型的请求前缀完全一致\n普通工具要么在系统提示里插动态时间戳\n要么工具列表顺序乱排\n删历史消息的时候从中间删\n随便哪一点都会破坏前缀一致性\n缓存直接失效\n而reason是专门为deep sick做的专属优化\n整个运行逻辑都围着缓存规则设计\n系统提示全程固定\n不插动态内容\n工具列表顺序完全锁死\n删历史消息只从尾部删\n就这三条规则\n直接把缓存命中率拉到了99.82%\n刚才说的四点35亿token里\n只有78万是按全价计费的\n剩下的全是超便宜的缓存价几乎等于白送\n说到这儿\n你可能会问\n专门适配单模型会不会不好用\n别急\n他的桌面端做的特别省心\n零基础也能快速上手\n桌面端支持windows\n苹果LINUX3大系统\n安装流程特别简单\n苹果系统拖到应用目录就行\n第一次被安全拦截\n输一行官方命令就能解决\n微软系统点仍然运行就可以装完\n只要填自己的deep sick密钥就能用\n还自动存在本地\n下次打开不用重填界面\n分得清清楚楚\n左边管历史会话\n中间是对话区域\n右边能看引用的文件缓存命中情况\n还有四种编辑模式可以切换\n陌生的老项目就开审核模式\nAI改的每一行代码都要你确认才会生效\n熟的项目开自动模式\n文件读写自动跑\n效率直接拉满\n还有多标签页功能\n同时开好几个项目互不干扰\n账单面板还能实时看花了多少钱\n不用等月底才收到天价账单\n吓一跳啊\n说到这你是不是已经心动了\n先别急\n咱也不吹的神乎其神\n他也有明确的适用边界\n它的第二层控本逻辑是模型分级\n默认用价格只有pro版本15的V4flash模型\n日常编码完全够用\n遇到复杂场景才自动升级\npro缓存加模型分级双重控本\n才做到了成本直降五倍\n但它只支持deep seek\n如果你平时要经常切换其他大模型\n或者要做数学证明\n博士及科研分析这类极端推理任务\n它就不太适合这类场景\n还是通用大模型\n更擅长给大家两个实用的小建议\n平时高频用deep sc写代码的朋友\n可以直接装桌面版\n默认选V4flash模型\n就能覆盖八成以上的日常场景\n处理陌生老项目的时候\n记得开审核模式\n避免AI乱改代码出问题\n也可以定期看看账单面板的消耗数据\n根据场景调整模型等级还能再省一笔\n下期我们会给大家实测\n用reason x跑一个完整的电商后端项目\n到底能省多少钱\n今天的内容就分享到这里啦\n如果你觉得有收获的话\n记得点赞加关注哦",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Wbj66YEBa",
+  "published_at": "1781879007",
+  "fetched_at": "2026-08-07T08:26:17+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 榨干DeepSeek！4.35亿Token仅花12美元，Reasonix桌面端使用全指南\n\n## 总览与成本节约 [BV1Wbj66YEBa P1 00:19]\n```mermaid\nflowchart TD\n    DS[\"DeepSeek API\"] --> C[\"标准计费：全价\"]\n    RX[\"Reason X 工具\"] --> MC[\"缓存机制\"]\n    MC --> PH[\"前缀一致性要求\"]\n    MC --> HR[\"缓存命中率 ↑\"]\n    HR --> CR[\"成本降低 5×\"]\n    DS --> TC[\"总计 4.35 亿 token\"]\n    TC --> FC[\"全价 token 78 万\"]\n    TC --> CC[\"缓存 token 4.3422 亿\"]\n    FC --> CostFull[\"全价费用约 $12\"]\n    CC --> CostCache[\"缓存费用≈ $0\"]\n    CostFull --> TotalCost[\"总费用 $12\"]\n    RX --> TotalCost\n```\n\n## 缓存规则与高命中率 [BV1Wbj66YEBa P1 01:03]\n```mermaid\nflowchart TD\n    Rule1[\"系统提示全程固定\"] --> HR\n    Rule2[\"工具列表顺序锁死\"] --> HR\n    Rule3[\"仅从尾部删除历史\"] --> HR\n    HR[\"缓存命中率 99.82%\"] --> CostRed[\"成本大幅下降\"]\n    HR --> CacheEff[\"缓存有效\"]\n    CostRed --> Savings[\"省钱 5 倍\"]\n```\n\n## 成本构成细分 [BV1Wbj66YEBa P1 01:11]\n```mermaid\nflowchart TD\n    TotalTokens[\"4.35 亿 token\"] --> FullPrice[\"78 万 token（全价）\"]\n    TotalTokens --> Cached[\"4.3422 亿 token（缓存）\"]\n    FullPrice --> FullCost[\"约 $12\"]\n    Cached --> CacheCost[\"几乎免费\"]\n    FullCost --> TotalCost[\"总费用 $12\"]\n    CacheCost --> TotalCost\n```\n\n## 适用范围与限制 [BV1Wbj66YEBa P1 02:39]\n```mermaid\nflowchart TD\n    ReasonX[\"Reason X\"] --> Suit[\"适用场景\"]\n    Suit --> Coding[\"DeepSeek 编码（高频）\"]\n    Suit --> Review[\"老项目审查模式\"]\n    ReasonX --> Limit[\"不适用场景\"]\n    Limit --> MultiModel[\"频繁切换其他大模型\"]\n    Limit --> MathProof[\"数学证明、科研推理\"]\n    Coding --> Install[\"桌面端安装 简单\"]\n    Review --> Install\n    Install --> Use[\"默认 V4flash 模型\"]\n    Use --> Savings[\"成本下降 5×\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览与成本节约",
+          "code": "flowchart TD\n    DS[\"DeepSeek API\"] --> C[\"标准计费：全价\"]\n    RX[\"Reason X 工具\"] --> MC[\"缓存机制\"]\n    MC --> PH[\"前缀一致性要求\"]\n    MC --> HR[\"缓存命中率 ↑\"]\n    HR --> CR[\"成本降低 5×\"]\n    DS --> TC[\"总计 4.35 亿 token\"]\n    TC --> FC[\"全价 token 78 万\"]\n    TC --> CC[\"缓存 token 4.3422 亿\"]\n    FC --> CostFull[\"全价费用约 $12\"]\n    CC --> CostCache[\"缓存费用≈ $0\"]\n    CostFull --> TotalCost[\"总费用 $12\"]\n    RX --> TotalCost"
+        },
+        {
+          "title": "缓存规则与高命中率",
+          "code": "flowchart TD\n    Rule1[\"系统提示全程固定\"] --> HR\n    Rule2[\"工具列表顺序锁死\"] --> HR\n    Rule3[\"仅从尾部删除历史\"] --> HR\n    HR[\"缓存命中率 99.82%\"] --> CostRed[\"成本大幅下降\"]\n    HR --> CacheEff[\"缓存有效\"]\n    CostRed --> Savings[\"省钱 5 倍\"]"
+        },
+        {
+          "title": "成本构成细分",
+          "code": "flowchart TD\n    TotalTokens[\"4.35 亿 token\"] --> FullPrice[\"78 万 token（全价）\"]\n    TotalTokens --> Cached[\"4.3422 亿 token（缓存）\"]\n    FullPrice --> FullCost[\"约 $12\"]\n    Cached --> CacheCost[\"几乎免费\"]\n    FullCost --> TotalCost[\"总费用 $12\"]\n    CacheCost --> TotalCost"
+        },
+        {
+          "title": "适用范围与限制",
+          "code": "flowchart TD\n    ReasonX[\"Reason X\"] --> Suit[\"适用场景\"]\n    Suit --> Coding[\"DeepSeek 编码（高频）\"]\n    Suit --> Review[\"老项目审查模式\"]\n    ReasonX --> Limit[\"不适用场景\"]\n    Limit --> MultiModel[\"频繁切换其他大模型\"]\n    Limit --> MathProof[\"数学证明、科研推理\"]\n    Coding --> Install[\"桌面端安装 简单\"]\n    Review --> Install\n    Install --> Use[\"默认 V4flash 模型\"]\n    Use --> Savings[\"成本下降 5×\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T08:26:33+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 榨干DeepSeek！4.35亿Token仅花12美元，Reasonix桌面端使用全指南\n\n## 总览与成本节约 [BV1Wbj66YEBa P1 00:19]\n```mermaid\nflowchart TD\n    DS[\"DeepSeek API\"] --> C[\"标准计费：全价\"]\n    RX[\"Reason X 工具\"] --> MC[\"缓存机制\"]\n    MC --> PH[\"前缀一致性要求\"]\n    MC --> HR[\"缓存命中率 ↑\"]\n    HR --> CR[\"成本降低 5×\"]\n    DS --> TC[\"总计 4.35 亿 token\"]\n    TC --> FC[\"全价 token 78 万\"]\n    TC --> CC[\"缓存 token 4.3422 亿\"]\n    FC --> CostFull[\"全价费用约 $12\"]\n    CC --> CostCache[\"缓存费用≈ $0\"]\n    CostFull --> TotalCost[\"总费用 $12\"]\n    RX --> TotalCost\n```\n\n## 缓存规则与高命中率 [BV1Wbj66YEBa P1 01:03]\n```mermaid\nflowchart TD\n    Rule1[\"系统提示全程固定\"] --> HR\n    Rule2[\"工具列表顺序锁死\"] --> HR\n    Rule3[\"仅从尾部删除历史\"] --> HR\n    HR[\"缓存命中率 99.82%\"] --> CostRed[\"成本大幅下降\"]\n    HR --> CacheEff[\"缓存有效\"]\n    CostRed --> Savings[\"省钱 5 倍\"]\n```\n\n## 成本构成细分 [BV1Wbj66YEBa P1 01:11]\n```mermaid\nflowchart TD\n    TotalTokens[\"4.35 亿 token\"] --> FullPrice[\"78 万 token（全价）\"]\n    TotalTokens --> Cached[\"4.3422 亿 token（缓存）\"]\n    FullPrice --> FullCost[\"约 $12\"]\n    Cached --> CacheCost[\"几乎免费\"]\n    FullCost --> TotalCost[\"总费用 $12\"]\n    CacheCost --> TotalCost\n```\n\n## 适用范围与限制 [BV1Wbj66YEBa P1 02:39]\n```mermaid\nflowchart TD\n    ReasonX[\"Reason X\"] --> Suit[\"适用场景\"]\n    Suit --> Coding[\"DeepSeek 编码（高频）\"]\n    Suit --> Review[\"老项目审查模式\"]\n    ReasonX --> Limit[\"不适用场景\"]\n    Limit --> MultiModel[\"频繁切换其他大模型\"]\n    Limit --> MathProof[\"数学证明、科研推理\"]\n    Coding --> Install[\"桌面端安装 简单\"]\n    Review --> Install\n    Install --> Use[\"默认 V4flash 模型\"]\n    Use --> Savings[\"成本下降 5×\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览与成本节约",
+      "code": "flowchart TD\n    DS[\"DeepSeek API\"] --> C[\"标准计费：全价\"]\n    RX[\"Reason X 工具\"] --> MC[\"缓存机制\"]\n    MC --> PH[\"前缀一致性要求\"]\n    MC --> HR[\"缓存命中率 ↑\"]\n    HR --> CR[\"成本降低 5×\"]\n    DS --> TC[\"总计 4.35 亿 token\"]\n    TC --> FC[\"全价 token 78 万\"]\n    TC --> CC[\"缓存 token 4.3422 亿\"]\n    FC --> CostFull[\"全价费用约 $12\"]\n    CC --> CostCache[\"缓存费用≈ $0\"]\n    CostFull --> TotalCost[\"总费用 $12\"]\n    RX --> TotalCost"
+    },
+    {
+      "title": "缓存规则与高命中率",
+      "code": "flowchart TD\n    Rule1[\"系统提示全程固定\"] --> HR\n    Rule2[\"工具列表顺序锁死\"] --> HR\n    Rule3[\"仅从尾部删除历史\"] --> HR\n    HR[\"缓存命中率 99.82%\"] --> CostRed[\"成本大幅下降\"]\n    HR --> CacheEff[\"缓存有效\"]\n    CostRed --> Savings[\"省钱 5 倍\"]"
+    },
+    {
+      "title": "成本构成细分",
+      "code": "flowchart TD\n    TotalTokens[\"4.35 亿 token\"] --> FullPrice[\"78 万 token（全价）\"]\n    TotalTokens --> Cached[\"4.3422 亿 token（缓存）\"]\n    FullPrice --> FullCost[\"约 $12\"]\n    Cached --> CacheCost[\"几乎免费\"]\n    FullCost --> TotalCost[\"总费用 $12\"]\n    CacheCost --> TotalCost"
+    },
+    {
+      "title": "适用范围与限制",
+      "code": "flowchart TD\n    ReasonX[\"Reason X\"] --> Suit[\"适用场景\"]\n    Suit --> Coding[\"DeepSeek 编码（高频）\"]\n    Suit --> Review[\"老项目审查模式\"]\n    ReasonX --> Limit[\"不适用场景\"]\n    Limit --> MultiModel[\"频繁切换其他大模型\"]\n    Limit --> MathProof[\"数学证明、科研推理\"]\n    Coding --> Install[\"桌面端安装 简单\"]\n    Review --> Install\n    Install --> Use[\"默认 V4flash 模型\"]\n    Use --> Savings[\"成本下降 5×\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:26:33+00:00"
+}

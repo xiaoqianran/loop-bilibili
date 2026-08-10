@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1D3N36AEUB",
+  "title": "彻底压榨AMD锐龙AI续航！开启NPU+核显混合推理：告别LM Studio纯核显高发热",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2280,
+  "text": "OK大家好\n我是穷白\n一个不务正业的运维呃\n我们之前的视频里面有分享过\n基于AMD的核显去跑模型的一个部署\n那我们本期视频呢主要分享的是\n基于AMDAI系列的处理器\n做一个模型的部署和实战\n然后呢我这边用的处理器是锐龙AI7的350\n然后呢我们现在现在先简单介绍一下这个CPU呃\n他整个规格上的一个提升比较明显\n就是他的集显现在是860M\n然后我们之前6900HX的集显是680M\n然后呢\n第二块就是它内置了一个NPU的算力芯片\n然后大概是50T的一个算力\n那我们本期视频呢\n主要就是基于这个CPU做一个演示\n那首先我们先介绍一下\n就是锐龙AI系列处理器的一个模型\n部署大概有几种模式\n呃第一种就是纯l m studio的模式\n这个是用的GPU\n也就是我们的核显\n走的是那么CPP的一个驱动方式\n然后第二种就是FMNPU的模式\n那这块呢是走的纯NPU的\n然后第三种就是柠檬加上锐龙AI的一个框架\n然后这个地方呢其实是一个混合调度呃\n集显负责预填充\nNPU负责输出\n那首先我们先介绍一下我们的准备工作\n当我们拿到一个新设备以后\n第一件事就是一个BIOS的共享显存的一个调整\n然后我们这边建议的话\n最少应该是16级\n如果再少的话\n有些模型就跑不了了\n然后第二块就是一个基础的驱动的更新\n那这块的更新其实相对是比较简单的\n你只要下载一个官方官网的一个更新程序\n然后做一下安装就可以了\n然后第三块就是一个运行加速运行时的配置\n那这块其实主要就是我们的呃功率啊\n这一块的一个调整\n我这边基本上是以性能为主的\n就是把功率调整会比较高\n然后第二块就是我们的NPU的一个\ntrouble模式\n然后这块的调整的话其实就是一个命令行\n我们百度都可以找到\n然后第三块就是一些软件的部署了\n那我们之前有介绍过em studio的一个部署\n那我们那就是我们的FM和我们的柠檬的话\n部署其实是一样的\n只要双击安装就可以了\n没有什么特别的\n只要你前面的准备工作都做好的话\n其实都可以正常调度起来的\n那我们这边的话\n前面为我们先介绍一下FM吧\n因为m studio我们之前已经有介绍过了\n那FM的话是呃国外的一个大神嘛\n参照那个欧拉马的方式\n做了一个基于AMDNPU驱驱动的一个软件\n然后它整体的使用方式\n其实和欧朗玛是差不多的\n包括fm list\nfm server sfm run这些\n然后他现在目前能够支持的模型的话\n是比较少的\n就大概有这些\n然后我是挑了一个相对比较新的\nGA4的A4B做了一个下载\n然后GPUSS的话我只是拉下来做一下尝试\n那我们这边其实已经是把它给跑起来了\n然后呢因为NPU和GPU它是相对独立的\n然后我的内存又够\n所以我把两个都同时跑了起来\n等下我们可以同时做个比较\n那首先我们先看一下GPU这块\nOK我们基于m studio\n那么可以看到这块调度的都是GPU\n也就是核显的一个算力\n还没有调到MPU上去\n那我再看一下FM这块\n你看他整体的输出这边掉的就是NPU好\n那我们问他们同样一个问题\nOK那我们因为他们两个相互之间没关系\n那我们就同时发问了\n啊先不管他输出什么样\n我们主要是看速度这一块\n那我们前面虽然那个M修的这块的话\n我们消息发出这个相对是有所滞后的\n但是我们可以看出来它整体的领先程度的话\n基于NPU的这块的一个调度\n其实相对我觉得是更好的\n而且你看他的一个输出嗯\n相对更为详细嗯\n而且内容也更更更更更更明确一点\n然后的话近两块\n我们就先从那个显存和那个NPV里面泄出来\n因为我们一会去掉柠檬的话\n它是两块都要用到的\n好我们都泄出来了\n那这个时候我们请出我们的混编工具柠檬\n然后呢他的能够用到的模型相对也是比较多的\n但是也是有局限的\n就是最新的这些他都没有适配\n我们要如果使用就是锐龙的AI框架的话\n嗯只能使用类似于这个下面的这一批\n或者我们去那个哈根廷face上去找带这个后缀的\n或者带啊锐龙AI这个字样的一些模型\n然后我这边用的话就是那个dev sic r e的\n然后配合NA8B的这个模型\n那我们现在做一下尝试\nOK第一步他要先把微信加载进来\n等我们把问题拷过来\n同样准备好啊\n因为他这个地方是带sink的\n所以我相对会慢一些\n我给一个相对较长的问题\n然后看一下这块的一个调度情况\n好我们点击发送\n这是观察NPU和GPU的情况\n可以明确看到NPU这块有一个波峰\n然后GPU的话是持续的一个波波峰的情况\n然而他还在做输出\n也就是说他NPU和GPU是同时调度起来\n做了分工的\n一个是负责预加预预填充\n一个是负责做输出\n然后因为他的还是那个问题吧\n就是它的模型有限\n不能像比如说我用m studio去跑的话\n我大概八十九十%的模型我都可以用\n然后但是像那个用用柠檬基于瑞\n那个就是锐龙AI的框架的话\n我能跑的模型其实是有限的\n我们可以看一下哈\n根face上目前有的这些我也找了很久\n然后只找到了几个相对合适的吧\n如果再大一点的\n我也跑不动\nOK那他整个就做完了\n那GPU这块也退下来了\n然后的话这个就是我们刚刚看到的\n真这个是这个图是我从网上截的\n那它整体的运行情况\n我们刚刚也看到了\n然后呢\n在整个实战过程中要注意的一些具体的事项吧\n就是说首先最主要的就是不要出现中文路径\n因为特别像柠檬的话\n它其实是会有问题的\n然后第二块\n就是判断一下MPU能不能被调度起来\n如果没有被调度起来的话\n要去BIOS里面把对应的一个配置去关掉\nOK那我们本期视频就分享到这呃\n大家如果感兴趣的话\n可以评论加留言\n有什么具体的问题的话\n也可以在评论区去讨论好谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1D3N36AEUB",
+  "published_at": "1783867544",
+  "fetched_at": "2026-08-08T02:16:12+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Ryzen AI 7 350 模型部署与混合推理知识图谱\n\n## 硬件概览\n[BV1D3N36AEUB P1 00:22] CPU: 锐龙AI 7 350  \n[BV1D3N36AEUB P1 00:35] 集显: 860M（比 6900HX 680M 更强）  \n[BV1D3N36AEUB P1 00:41] 内置 NPU: ~50 TOPS  \n\n```mermaid\nflowchart TD\n    CPU[\"锐龙AI 7 350 CPU\"]\n    GPU[\"集显 860M\"]\n    GPU_prev[\"6900HX 集显 680M\"]\n    NPU[\"内置 NPU (~50 TOPS)\"]\n    CPU --> GPU\n    CPU --> NPU\n    GPU_prev -.-> GPU\n```\n\n## 部署模式概览\n[BV1D3N36AEUB P1 01:00] 纯 LM Studio 模式（GPU）  \n[BV1D3N36AEUB P1 01:12] 纯 NPU 模式（FMNPU）  \n[BV1D3N36AEUB P1 01:19] 混合模式（Lemon + Ryzen AI）  \n\n```mermaid\nflowchart LR\n    LM[\"纯 LM Studio (GPU)\"]\n    FM[\"纯 NPU (FMNPU)\"]\n    Hybrid[\"混合模式 (Lemon + Ryzen AI)\"]\n    LM -->|使用| GPU[\"核显\"]\n    FM -->|使用| NPU[\"NPU\"]\n    Hybrid -->|预填充| GPU\n    Hybrid -->|输出| NPU\n```\n\n## 准备工作流程\n[BV1D3N36AEUB P1 01:29] BIOS 共享显存调节 ≥ 16  \n[BV1D3N36AEUB P1 01:39] 驱动更新（官方程序）  \n[BV1D3N36AEUB P1 01:49] 运行时功率调高（性能优先）  \n[BV1D3N36AEUB P1 02:01] NPU trouble 模式命令行配置  \n[BV1D3N36AEUB P1 02:10] 软件部署（FM / Lemon）  \n\n```mermaid\nflowchart TD\n    Start[\"获取新设备\"]\n    BIOS[\"BIOS 共享显存 ≥16\"]\n    Driver[\"更新官方驱动\"]\n    Power[\"运行时功率调高\"]\n    NPUconf[\"NPU trouble 模式命令行\"]\n    Deploy[\"部署 FM / Lemon 软件\"]\n    Start --> BIOS --> Driver --> Power --> NPUconf --> Deploy\n```\n\n## Hybrid 调度工作原理\n[BV1D3N36AEUB P1 01:22] GPU 负责预填充  \n[BV1D3N36AEUB P1 01:26] NPU 负责输出  \n[BV1D3N36AEUB P1 04:46] NPU 调度速度更快，输出更详细  \n[BV1D3N36AEUB P1 06:38] 同时调度观察到 NPU 峰值、GPU 持续波峰  \n\n```mermaid\nflowchart TD\n    Input[\"输入数据\"]\n    GPU[\"GPU 预填充\"]\n    NPU[\"NPU 输出\"]\n    Output[\"最终结果\"]\n    Input --> GPU --> NPU --> Output\n    style GPU fill:#f9f,stroke:#333,stroke-width:2px\n    style NPU fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## 实践注意事项与局限\n[BV1D3N36AEUB P1 07:56] 避免中文路径（导致 Lemon 出错）  \n[BV1D3N36AEUB P1 08:04] 检查 MPU 是否被调度，未调度需在 BIOS 关闭对应配置  \n[BV1D3N36AEUB P1 05:36] Lemon 支持模型有限，需使用带 “Ryzen AI” 或特定后缀的模型  \n[BV1D3N36AEUB P1 04:46] NPU 在速度与输出细节上优于 GPU  \n\n```mermaid\nflowchart TD\n    PathIssue[\"中文路径导致错误\"]\n    MPUCheck[\"检查 MPU 调度状态\"]\n    BIOSFix[\"BIOS 中关闭冲突配置\"]\n    ModelLim[\"Lemon 模型兼容性有限\"]\n    Compat[\"使用带 'Ryzen AI' 后缀的模型\"]\n    PathIssue -->|避免| ModelLim\n    MPUCheck -->|若未调度| BIOSFix\n    ModelLim --> Compat\n```",
+      "diagrams": [
+        {
+          "title": "硬件概览",
+          "code": "flowchart TD\n    CPU[\"锐龙AI 7 350 CPU\"]\n    GPU[\"集显 860M\"]\n    GPU_prev[\"6900HX 集显 680M\"]\n    NPU[\"内置 NPU (~50 TOPS)\"]\n    CPU --> GPU\n    CPU --> NPU\n    GPU_prev -.-> GPU"
+        },
+        {
+          "title": "部署模式概览",
+          "code": "flowchart LR\n    LM[\"纯 LM Studio (GPU)\"]\n    FM[\"纯 NPU (FMNPU)\"]\n    Hybrid[\"混合模式 (Lemon + Ryzen AI)\"]\n    LM -->|使用| GPU[\"核显\"]\n    FM -->|使用| NPU[\"NPU\"]\n    Hybrid -->|预填充| GPU\n    Hybrid -->|输出| NPU"
+        },
+        {
+          "title": "准备工作流程",
+          "code": "flowchart TD\n    Start[\"获取新设备\"]\n    BIOS[\"BIOS 共享显存 ≥16\"]\n    Driver[\"更新官方驱动\"]\n    Power[\"运行时功率调高\"]\n    NPUconf[\"NPU trouble 模式命令行\"]\n    Deploy[\"部署 FM / Lemon 软件\"]\n    Start --> BIOS --> Driver --> Power --> NPUconf --> Deploy"
+        },
+        {
+          "title": "Hybrid 调度工作原理",
+          "code": "flowchart TD\n    Input[\"输入数据\"]\n    GPU[\"GPU 预填充\"]\n    NPU[\"NPU 输出\"]\n    Output[\"最终结果\"]\n    Input --> GPU --> NPU --> Output\n    style GPU fill:#f9f,stroke:#333,stroke-width:2px\n    style NPU fill:#bbf,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "实践注意事项与局限",
+          "code": "flowchart TD\n    PathIssue[\"中文路径导致错误\"]\n    MPUCheck[\"检查 MPU 调度状态\"]\n    BIOSFix[\"BIOS 中关闭冲突配置\"]\n    ModelLim[\"Lemon 模型兼容性有限\"]\n    Compat[\"使用带 'Ryzen AI' 后缀的模型\"]\n    PathIssue -->|避免| ModelLim\n    MPUCheck -->|若未调度| BIOSFix\n    ModelLim --> Compat"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T02:24:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Ryzen AI 7 350 模型部署与混合推理知识图谱\n\n## 硬件概览\n[BV1D3N36AEUB P1 00:22] CPU: 锐龙AI 7 350  \n[BV1D3N36AEUB P1 00:35] 集显: 860M（比 6900HX 680M 更强）  \n[BV1D3N36AEUB P1 00:41] 内置 NPU: ~50 TOPS  \n\n```mermaid\nflowchart TD\n    CPU[\"锐龙AI 7 350 CPU\"]\n    GPU[\"集显 860M\"]\n    GPU_prev[\"6900HX 集显 680M\"]\n    NPU[\"内置 NPU (~50 TOPS)\"]\n    CPU --> GPU\n    CPU --> NPU\n    GPU_prev -.-> GPU\n```\n\n## 部署模式概览\n[BV1D3N36AEUB P1 01:00] 纯 LM Studio 模式（GPU）  \n[BV1D3N36AEUB P1 01:12] 纯 NPU 模式（FMNPU）  \n[BV1D3N36AEUB P1 01:19] 混合模式（Lemon + Ryzen AI）  \n\n```mermaid\nflowchart LR\n    LM[\"纯 LM Studio (GPU)\"]\n    FM[\"纯 NPU (FMNPU)\"]\n    Hybrid[\"混合模式 (Lemon + Ryzen AI)\"]\n    LM -->|使用| GPU[\"核显\"]\n    FM -->|使用| NPU[\"NPU\"]\n    Hybrid -->|预填充| GPU\n    Hybrid -->|输出| NPU\n```\n\n## 准备工作流程\n[BV1D3N36AEUB P1 01:29] BIOS 共享显存调节 ≥ 16  \n[BV1D3N36AEUB P1 01:39] 驱动更新（官方程序）  \n[BV1D3N36AEUB P1 01:49] 运行时功率调高（性能优先）  \n[BV1D3N36AEUB P1 02:01] NPU trouble 模式命令行配置  \n[BV1D3N36AEUB P1 02:10] 软件部署（FM / Lemon）  \n\n```mermaid\nflowchart TD\n    Start[\"获取新设备\"]\n    BIOS[\"BIOS 共享显存 ≥16\"]\n    Driver[\"更新官方驱动\"]\n    Power[\"运行时功率调高\"]\n    NPUconf[\"NPU trouble 模式命令行\"]\n    Deploy[\"部署 FM / Lemon 软件\"]\n    Start --> BIOS --> Driver --> Power --> NPUconf --> Deploy\n```\n\n## Hybrid 调度工作原理\n[BV1D3N36AEUB P1 01:22] GPU 负责预填充  \n[BV1D3N36AEUB P1 01:26] NPU 负责输出  \n[BV1D3N36AEUB P1 04:46] NPU 调度速度更快，输出更详细  \n[BV1D3N36AEUB P1 06:38] 同时调度观察到 NPU 峰值、GPU 持续波峰  \n\n```mermaid\nflowchart TD\n    Input[\"输入数据\"]\n    GPU[\"GPU 预填充\"]\n    NPU[\"NPU 输出\"]\n    Output[\"最终结果\"]\n    Input --> GPU --> NPU --> Output\n    style GPU fill:#f9f,stroke:#333,stroke-width:2px\n    style NPU fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## 实践注意事项与局限\n[BV1D3N36AEUB P1 07:56] 避免中文路径（导致 Lemon 出错）  \n[BV1D3N36AEUB P1 08:04] 检查 MPU 是否被调度，未调度需在 BIOS 关闭对应配置  \n[BV1D3N36AEUB P1 05:36] Lemon 支持模型有限，需使用带 “Ryzen AI” 或特定后缀的模型  \n[BV1D3N36AEUB P1 04:46] NPU 在速度与输出细节上优于 GPU  \n\n```mermaid\nflowchart TD\n    PathIssue[\"中文路径导致错误\"]\n    MPUCheck[\"检查 MPU 调度状态\"]\n    BIOSFix[\"BIOS 中关闭冲突配置\"]\n    ModelLim[\"Lemon 模型兼容性有限\"]\n    Compat[\"使用带 'Ryzen AI' 后缀的模型\"]\n    PathIssue -->|避免| ModelLim\n    MPUCheck -->|若未调度| BIOSFix\n    ModelLim --> Compat\n```",
+  "diagrams": [
+    {
+      "title": "硬件概览",
+      "code": "flowchart TD\n    CPU[\"锐龙AI 7 350 CPU\"]\n    GPU[\"集显 860M\"]\n    GPU_prev[\"6900HX 集显 680M\"]\n    NPU[\"内置 NPU (~50 TOPS)\"]\n    CPU --> GPU\n    CPU --> NPU\n    GPU_prev -.-> GPU"
+    },
+    {
+      "title": "部署模式概览",
+      "code": "flowchart LR\n    LM[\"纯 LM Studio (GPU)\"]\n    FM[\"纯 NPU (FMNPU)\"]\n    Hybrid[\"混合模式 (Lemon + Ryzen AI)\"]\n    LM -->|使用| GPU[\"核显\"]\n    FM -->|使用| NPU[\"NPU\"]\n    Hybrid -->|预填充| GPU\n    Hybrid -->|输出| NPU"
+    },
+    {
+      "title": "准备工作流程",
+      "code": "flowchart TD\n    Start[\"获取新设备\"]\n    BIOS[\"BIOS 共享显存 ≥16\"]\n    Driver[\"更新官方驱动\"]\n    Power[\"运行时功率调高\"]\n    NPUconf[\"NPU trouble 模式命令行\"]\n    Deploy[\"部署 FM / Lemon 软件\"]\n    Start --> BIOS --> Driver --> Power --> NPUconf --> Deploy"
+    },
+    {
+      "title": "Hybrid 调度工作原理",
+      "code": "flowchart TD\n    Input[\"输入数据\"]\n    GPU[\"GPU 预填充\"]\n    NPU[\"NPU 输出\"]\n    Output[\"最终结果\"]\n    Input --> GPU --> NPU --> Output\n    style GPU fill:#f9f,stroke:#333,stroke-width:2px\n    style NPU fill:#bbf,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "实践注意事项与局限",
+      "code": "flowchart TD\n    PathIssue[\"中文路径导致错误\"]\n    MPUCheck[\"检查 MPU 调度状态\"]\n    BIOSFix[\"BIOS 中关闭冲突配置\"]\n    ModelLim[\"Lemon 模型兼容性有限\"]\n    Compat[\"使用带 'Ryzen AI' 后缀的模型\"]\n    PathIssue -->|避免| ModelLim\n    MPUCheck -->|若未调度| BIOSFix\n    ModelLim --> Compat"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T02:24:45+00:00"
+}

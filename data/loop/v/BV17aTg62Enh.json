@@ -1,0 +1,66 @@
+{
+  "bvid": "BV17aTg62Enh",
+  "title": "PIKPAK自动注册机",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 129,
+  "text": "PKPACK自动化脚本\n闲鱼上一元一个账号可以自己去搜\n一个月销量都是上千单\n购买脚本可以自己去闲鱼上卖账号\n也是一份收入了\n脚本有全自动\n半自动\n全自动过验证\n完全不用管\n配合代理池可以注册几千个账号\n半自动需要手动过验证\n需要的加QQ\n258622566",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV17aTg62Enh",
+  "published_at": "1782646376",
+  "fetched_at": "2026-08-10T09:07:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# PKPACK 自动注册机 知识图谱\n\n## 总览概览\n[BV17aTg62Enh P1 00:03] [BV17aTg62Enh P1 00:08] [BV17aTg62Enh P1 00:12] [BV17aTg62Enh P1 00:19] [BV17aTg62Enh P1 00:31]\n```mermaid\nflowchart TD\n    N1[\"闲鱼账号市场\"]\n    N2[\"1元/账号\"]\n    N3[\"月销量千单\"]\n    N4[\"脚本收入\"]\n    N5[\"脚本类型\"]\n    N6[\"全自动\"]\n    N7[\"半自动\"]\n    N8[\"全自动特性\"]\n    N9[\"半自动特性\"]\n    N10[\"代理池\"]\n    N11[\"注册规模（几千）\"]\n    N12[\"QQ联系\"]\n\n    N1 --> N2\n    N2 --> N3\n    N1 --> N4\n    N4 --> N5\n    N5 --> N6\n    N5 --> N7\n    N6 --> N8\n    N7 --> N9\n    N6 --> N10\n    N10 --> N11\n    N7 --> N12\n```\n\n## 全自动注册流程\n[BV17aTg62Enh P1 00:19] [BV17aTg62Enh P1 00:24] [BV17aTg62Enh P1 00:25] [BV17aTg62Enh P1 00:27]\n```mermaid\nflowchart TD\n    A1[\"启动全自动脚本\"]\n    A2[\"加载代理池\"]\n    A3[\"自动生成账号信息\"]\n    A4[\"自动提交注册\"]\n    A5[\"自动过验证\"]\n    A6[\"完成注册\"]\n    A7[\"无需人工干预\"]\n    A8[\"可批量注册（几千）\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A6 --> A8\n```\n\n## 半自动注册流程\n[BV17aTg62Enh P1 00:31] [BV17aTg62Enh P1 00:39]\n```mermaid\nflowchart TD\n    B1[\"启动半自动脚本\"]\n    B2[\"生成账号信息\"]\n    B3[\"提交注册\"]\n    B4[\"人工过验证\"]\n    B5[\"完成注册\"]\n    B6[\"需要加QQ\"]\n    B7[\"QQ: 258622566\"]\n    B8[\"可手动控制\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B6 --> B7\n    B5 --> B8\n```",
+      "diagrams": [
+        {
+          "title": "总览概览",
+          "code": "flowchart TD\n    N1[\"闲鱼账号市场\"]\n    N2[\"1元/账号\"]\n    N3[\"月销量千单\"]\n    N4[\"脚本收入\"]\n    N5[\"脚本类型\"]\n    N6[\"全自动\"]\n    N7[\"半自动\"]\n    N8[\"全自动特性\"]\n    N9[\"半自动特性\"]\n    N10[\"代理池\"]\n    N11[\"注册规模（几千）\"]\n    N12[\"QQ联系\"]\n\n    N1 --> N2\n    N2 --> N3\n    N1 --> N4\n    N4 --> N5\n    N5 --> N6\n    N5 --> N7\n    N6 --> N8\n    N7 --> N9\n    N6 --> N10\n    N10 --> N11\n    N7 --> N12"
+        },
+        {
+          "title": "全自动注册流程",
+          "code": "flowchart TD\n    A1[\"启动全自动脚本\"]\n    A2[\"加载代理池\"]\n    A3[\"自动生成账号信息\"]\n    A4[\"自动提交注册\"]\n    A5[\"自动过验证\"]\n    A6[\"完成注册\"]\n    A7[\"无需人工干预\"]\n    A8[\"可批量注册（几千）\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A6 --> A8"
+        },
+        {
+          "title": "半自动注册流程",
+          "code": "flowchart TD\n    B1[\"启动半自动脚本\"]\n    B2[\"生成账号信息\"]\n    B3[\"提交注册\"]\n    B4[\"人工过验证\"]\n    B5[\"完成注册\"]\n    B6[\"需要加QQ\"]\n    B7[\"QQ: 258622566\"]\n    B8[\"可手动控制\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B6 --> B7\n    B5 --> B8"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T09:07:21+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# PKPACK 自动注册机 知识图谱\n\n## 总览概览\n[BV17aTg62Enh P1 00:03] [BV17aTg62Enh P1 00:08] [BV17aTg62Enh P1 00:12] [BV17aTg62Enh P1 00:19] [BV17aTg62Enh P1 00:31]\n```mermaid\nflowchart TD\n    N1[\"闲鱼账号市场\"]\n    N2[\"1元/账号\"]\n    N3[\"月销量千单\"]\n    N4[\"脚本收入\"]\n    N5[\"脚本类型\"]\n    N6[\"全自动\"]\n    N7[\"半自动\"]\n    N8[\"全自动特性\"]\n    N9[\"半自动特性\"]\n    N10[\"代理池\"]\n    N11[\"注册规模（几千）\"]\n    N12[\"QQ联系\"]\n\n    N1 --> N2\n    N2 --> N3\n    N1 --> N4\n    N4 --> N5\n    N5 --> N6\n    N5 --> N7\n    N6 --> N8\n    N7 --> N9\n    N6 --> N10\n    N10 --> N11\n    N7 --> N12\n```\n\n## 全自动注册流程\n[BV17aTg62Enh P1 00:19] [BV17aTg62Enh P1 00:24] [BV17aTg62Enh P1 00:25] [BV17aTg62Enh P1 00:27]\n```mermaid\nflowchart TD\n    A1[\"启动全自动脚本\"]\n    A2[\"加载代理池\"]\n    A3[\"自动生成账号信息\"]\n    A4[\"自动提交注册\"]\n    A5[\"自动过验证\"]\n    A6[\"完成注册\"]\n    A7[\"无需人工干预\"]\n    A8[\"可批量注册（几千）\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A6 --> A8\n```\n\n## 半自动注册流程\n[BV17aTg62Enh P1 00:31] [BV17aTg62Enh P1 00:39]\n```mermaid\nflowchart TD\n    B1[\"启动半自动脚本\"]\n    B2[\"生成账号信息\"]\n    B3[\"提交注册\"]\n    B4[\"人工过验证\"]\n    B5[\"完成注册\"]\n    B6[\"需要加QQ\"]\n    B7[\"QQ: 258622566\"]\n    B8[\"可手动控制\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B6 --> B7\n    B5 --> B8\n```",
+  "diagrams": [
+    {
+      "title": "总览概览",
+      "code": "flowchart TD\n    N1[\"闲鱼账号市场\"]\n    N2[\"1元/账号\"]\n    N3[\"月销量千单\"]\n    N4[\"脚本收入\"]\n    N5[\"脚本类型\"]\n    N6[\"全自动\"]\n    N7[\"半自动\"]\n    N8[\"全自动特性\"]\n    N9[\"半自动特性\"]\n    N10[\"代理池\"]\n    N11[\"注册规模（几千）\"]\n    N12[\"QQ联系\"]\n\n    N1 --> N2\n    N2 --> N3\n    N1 --> N4\n    N4 --> N5\n    N5 --> N6\n    N5 --> N7\n    N6 --> N8\n    N7 --> N9\n    N6 --> N10\n    N10 --> N11\n    N7 --> N12"
+    },
+    {
+      "title": "全自动注册流程",
+      "code": "flowchart TD\n    A1[\"启动全自动脚本\"]\n    A2[\"加载代理池\"]\n    A3[\"自动生成账号信息\"]\n    A4[\"自动提交注册\"]\n    A5[\"自动过验证\"]\n    A6[\"完成注册\"]\n    A7[\"无需人工干预\"]\n    A8[\"可批量注册（几千）\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A6 --> A8"
+    },
+    {
+      "title": "半自动注册流程",
+      "code": "flowchart TD\n    B1[\"启动半自动脚本\"]\n    B2[\"生成账号信息\"]\n    B3[\"提交注册\"]\n    B4[\"人工过验证\"]\n    B5[\"完成注册\"]\n    B6[\"需要加QQ\"]\n    B7[\"QQ: 258622566\"]\n    B8[\"可手动控制\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    B4 --> B5\n    B5 --> B6\n    B6 --> B7\n    B5 --> B8"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T09:07:21+00:00"
+}

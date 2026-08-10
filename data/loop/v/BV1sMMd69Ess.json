@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1sMMd69Ess",
+  "title": "DeepSeek真正可怕的 不只是Token更便宜 是它开启了另一个赛道！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1368,
+  "text": "deep seek最令美国恐惧的不是百万token\n费用更便宜\n而是最终完成任务的费用同样碾压对手模型\n因为一个任务往往需要几十轮交互\n如果模型不够优秀\n每一轮的费用加总后甚至可能比token单价更贵\n但能力更强的模型还要高\nartificial analysis最新数据显示\n在同一套AI综合能力评测中\nDeep seek v4\nFlash\n0731版的平均任务成本只有0.03美元\n综合指数为50\n而cloud feeble5\n的平均任务成本高达3.15美元\n综合指数为60\ndeep sk用不到1%的成本\n拿到了菲波五约83%的综合能力\n这个数据是不是非常炸裂\n过去大家只关心百万token的单价\n中美大模型在这个费用上差异极大\n但这反映出的数据并不准确\n道理很简单\n便宜的模型可能会在同一个任务上反复试错\n最终才完成任务\n盘点下来才发现\n虽然单次价格确实低\n但总费用一家也不便宜\n而且还消耗了大量时间\n两相比较反而损失可能更大\n我们大约使用QDR编程开发了一年多\n应该还是有些发言权的\n记得去年在调用0.1倍级别的模型\n修改一个软件逻辑时\n一次基本搞不好\n可能需要反复调用很多次\n有时改错了还得回滚\n搞到后来脾气都没了\n只能老老实实自己去改\n要么耐着性子拆解步骤\n等AI慢慢一步步搞\n但是今年发现\n0.1倍级别的模型也变得很灵光了\n一般简单任务一次搞定\n本来还想刷个手机消磨下时间\n结果根本不用等\n立马搞定\n他逼着你不断给他派发新任务\n效率确实提高了不少\nartificial analysis的统计方式\n尽管没法完整表现完成一次完整任务的消耗\n但它已经最大限度地反映了实际token的消耗\n更接近在标准化评测工作负载下\n实际产生的平均账单\n因此artificial analysis的最新数据\n依然能非常明显地反映出token的实际消耗水平\n模型好不好用\n当然是用户最有发言权\nX社交媒体上都是AI玩家的实际案例\n比如有网友表示\n一个13B激活参数的便宜flash模型\n纯靠后训练\n就把代码agent的能力干涨了七倍\n价格还是地板价\n这算是今年最大的惊喜了\n这个V4flash看的有284B总参数\n但每次推理只激活13B参数\n显存占用算力消耗远低于同效果的稠密大模型\n速度更快\n成本更低\n这就意味着部署要求更低\n可以用更少的算力资源部署该模型\n还能拿到接近顶尖cloud facebook5模型的效果\n在工具调用全站开发终端操作\n这些agent的核心场景中\nV4flash的大部分指标都追平\n甚至超过了贵好几倍的中大型模型\n部分硬核榜单已经摸到了cloud office4.8的尾巴\n这个玩法真要把美国大模型给搞死了\ndeep sk又一次开辟了一个新赛道\n之前大家都觉得模型能力要涨就得堆参数\n烧算力\n才能搞出超级优秀的大模型\n但是这次deep seek证明\n只要后训练和A键的对齐模到位\n小鸡活模型照样能干旗舰的活\n卖白菜价的token依然有钱赚\n没有人能拒绝优秀大模型的白嫖\n同样也没有人能拒绝低价的诱惑\n更要命的是性能还差不多\n美国OpenAI n t h o p k这些顶级大模型\n动辄烧钱数千亿的玩法\n越来越没有人相信了\n全球开发者正在用脚投票\n告诉美国的闭源大模型\n中国开源的优秀大模型\n正在占据全球AI模型的主流",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1sMMd69Ess",
+  "published_at": "1785761614",
+  "fetched_at": "2026-08-07T01:21:28+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 竞争力全景图谱\n\n## 成本与综合指数对比\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|平均任务成本 0.03美元| CostDS[\"成本低\"]\n    DS -->|综合指数 50| IndexDS[\"指数中等\"]\n    CF[\"Cloud Facebook5\"] -->|平均任务成本 3.15美元| CostCF[\"成本高\"]\n    CF -->|综合指数 60| IndexCF[\"指数较高\"]\n    CostDS -->|成本约为 CF 的 1%| RatioCost[\"成本差异\"]\n    IndexDS -->|指数略低于 CF| RatioIndex[\"指数差异\"]\n    RatioCost -->|性价比优势| Advantage[\"性价比高\"]\n    RatioIndex -->|仍具竞争力| Competitiveness[\"竞争力\"]\n```\n\n## 任务总费用决定因素\n```mermaid\nflowchart TD\n    TokenPrice[\"Token 单价\"] -->|影响每轮费用| RoundCost[\"单轮费用\"]\n    ModelQuality[\"模型质量\"] -->|决定交互轮数| Rounds[\"交互轮数\"]\n    Rounds -->|轮数越多，总费用越高| TotalCost[\"总任务费用\"]\n    CheapModel[\"便宜模型\"] -->|可能需要更多轮次| MoreRounds[\"增加轮数\"]\n    HighQualityModel[\"高质量模型\"] -->|减少轮次| FewerRounds[\"减少轮数\"]\n    MoreRounds --> TotalCost\n    FewerRounds --> TotalCost\n    TotalCost -->|决定实际使用成本| ActualCost[\"实际成本\"]\n```\n\n## V4 Flash 架构与性能优势\n```mermaid\nflowchart TD\n    ParamsTotal[\"总参数 284B\"] -->|仅激活| ParamsActive[\"活跃参数 13B\"]\n    ParamsActive -->|显存占用低| LowMemory[\"显存占用低\"]\n    LowMemory -->|算力需求低| LowCompute[\"算力需求低\"]\n    LowCompute -->|推理速度快| FastInference[\"推理速度快\"]\n    FastInference -->|成本更低| LowCost[\"成本更低\"]\n    LowCost -->|部署要求低| EasyDeploy[\"部署更易\"]\n    EasyDeploy -->|接近 Cloud FB5 效果| NearFB5[\"效果接近 FB5\"]\n```\n\n## 市场影响与趋势\n```mermaid\nflowchart TD\n    LowCostHighPerf[\"低成本高性能模型\"] -->|削弱| USBigModels[\"美国闭源大模型\"]\n    USBigModels -->|烧钱数千亿| HighSpend[\"高支出\"]\n    LowCostHighPerf -->|吸引| GlobalDevelopers[\"全球开发者\"]\n    GlobalDevelopers -->|投票支持| OpenSourceRise[\"开源模型崛起\"]\n    OpenSourceRise -->|占据主流| MarketShift[\"市场主流转移\"]\n    MarketShift -->|挑战美国模型主导地位| ChallengeUS[\"挑战美国主导\"]\n```",
+      "diagrams": [
+        {
+          "title": "成本与综合指数对比",
+          "code": "flowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|平均任务成本 0.03美元| CostDS[\"成本低\"]\n    DS -->|综合指数 50| IndexDS[\"指数中等\"]\n    CF[\"Cloud Facebook5\"] -->|平均任务成本 3.15美元| CostCF[\"成本高\"]\n    CF -->|综合指数 60| IndexCF[\"指数较高\"]\n    CostDS -->|成本约为 CF 的 1%| RatioCost[\"成本差异\"]\n    IndexDS -->|指数略低于 CF| RatioIndex[\"指数差异\"]\n    RatioCost -->|性价比优势| Advantage[\"性价比高\"]\n    RatioIndex -->|仍具竞争力| Competitiveness[\"竞争力\"]"
+        },
+        {
+          "title": "任务总费用决定因素",
+          "code": "flowchart TD\n    TokenPrice[\"Token 单价\"] -->|影响每轮费用| RoundCost[\"单轮费用\"]\n    ModelQuality[\"模型质量\"] -->|决定交互轮数| Rounds[\"交互轮数\"]\n    Rounds -->|轮数越多，总费用越高| TotalCost[\"总任务费用\"]\n    CheapModel[\"便宜模型\"] -->|可能需要更多轮次| MoreRounds[\"增加轮数\"]\n    HighQualityModel[\"高质量模型\"] -->|减少轮次| FewerRounds[\"减少轮数\"]\n    MoreRounds --> TotalCost\n    FewerRounds --> TotalCost\n    TotalCost -->|决定实际使用成本| ActualCost[\"实际成本\"]"
+        },
+        {
+          "title": "V4 Flash 架构与性能优势",
+          "code": "flowchart TD\n    ParamsTotal[\"总参数 284B\"] -->|仅激活| ParamsActive[\"活跃参数 13B\"]\n    ParamsActive -->|显存占用低| LowMemory[\"显存占用低\"]\n    LowMemory -->|算力需求低| LowCompute[\"算力需求低\"]\n    LowCompute -->|推理速度快| FastInference[\"推理速度快\"]\n    FastInference -->|成本更低| LowCost[\"成本更低\"]\n    LowCost -->|部署要求低| EasyDeploy[\"部署更易\"]\n    EasyDeploy -->|接近 Cloud FB5 效果| NearFB5[\"效果接近 FB5\"]"
+        },
+        {
+          "title": "市场影响与趋势",
+          "code": "flowchart TD\n    LowCostHighPerf[\"低成本高性能模型\"] -->|削弱| USBigModels[\"美国闭源大模型\"]\n    USBigModels -->|烧钱数千亿| HighSpend[\"高支出\"]\n    LowCostHighPerf -->|吸引| GlobalDevelopers[\"全球开发者\"]\n    GlobalDevelopers -->|投票支持| OpenSourceRise[\"开源模型崛起\"]\n    OpenSourceRise -->|占据主流| MarketShift[\"市场主流转移\"]\n    MarketShift -->|挑战美国模型主导地位| ChallengeUS[\"挑战美国主导\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T01:21:38+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 竞争力全景图谱\n\n## 成本与综合指数对比\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|平均任务成本 0.03美元| CostDS[\"成本低\"]\n    DS -->|综合指数 50| IndexDS[\"指数中等\"]\n    CF[\"Cloud Facebook5\"] -->|平均任务成本 3.15美元| CostCF[\"成本高\"]\n    CF -->|综合指数 60| IndexCF[\"指数较高\"]\n    CostDS -->|成本约为 CF 的 1%| RatioCost[\"成本差异\"]\n    IndexDS -->|指数略低于 CF| RatioIndex[\"指数差异\"]\n    RatioCost -->|性价比优势| Advantage[\"性价比高\"]\n    RatioIndex -->|仍具竞争力| Competitiveness[\"竞争力\"]\n```\n\n## 任务总费用决定因素\n```mermaid\nflowchart TD\n    TokenPrice[\"Token 单价\"] -->|影响每轮费用| RoundCost[\"单轮费用\"]\n    ModelQuality[\"模型质量\"] -->|决定交互轮数| Rounds[\"交互轮数\"]\n    Rounds -->|轮数越多，总费用越高| TotalCost[\"总任务费用\"]\n    CheapModel[\"便宜模型\"] -->|可能需要更多轮次| MoreRounds[\"增加轮数\"]\n    HighQualityModel[\"高质量模型\"] -->|减少轮次| FewerRounds[\"减少轮数\"]\n    MoreRounds --> TotalCost\n    FewerRounds --> TotalCost\n    TotalCost -->|决定实际使用成本| ActualCost[\"实际成本\"]\n```\n\n## V4 Flash 架构与性能优势\n```mermaid\nflowchart TD\n    ParamsTotal[\"总参数 284B\"] -->|仅激活| ParamsActive[\"活跃参数 13B\"]\n    ParamsActive -->|显存占用低| LowMemory[\"显存占用低\"]\n    LowMemory -->|算力需求低| LowCompute[\"算力需求低\"]\n    LowCompute -->|推理速度快| FastInference[\"推理速度快\"]\n    FastInference -->|成本更低| LowCost[\"成本更低\"]\n    LowCost -->|部署要求低| EasyDeploy[\"部署更易\"]\n    EasyDeploy -->|接近 Cloud FB5 效果| NearFB5[\"效果接近 FB5\"]\n```\n\n## 市场影响与趋势\n```mermaid\nflowchart TD\n    LowCostHighPerf[\"低成本高性能模型\"] -->|削弱| USBigModels[\"美国闭源大模型\"]\n    USBigModels -->|烧钱数千亿| HighSpend[\"高支出\"]\n    LowCostHighPerf -->|吸引| GlobalDevelopers[\"全球开发者\"]\n    GlobalDevelopers -->|投票支持| OpenSourceRise[\"开源模型崛起\"]\n    OpenSourceRise -->|占据主流| MarketShift[\"市场主流转移\"]\n    MarketShift -->|挑战美国模型主导地位| ChallengeUS[\"挑战美国主导\"]\n```",
+  "diagrams": [
+    {
+      "title": "成本与综合指数对比",
+      "code": "flowchart TD\n    DS[\"DeepSeek V4 Flash\"] -->|平均任务成本 0.03美元| CostDS[\"成本低\"]\n    DS -->|综合指数 50| IndexDS[\"指数中等\"]\n    CF[\"Cloud Facebook5\"] -->|平均任务成本 3.15美元| CostCF[\"成本高\"]\n    CF -->|综合指数 60| IndexCF[\"指数较高\"]\n    CostDS -->|成本约为 CF 的 1%| RatioCost[\"成本差异\"]\n    IndexDS -->|指数略低于 CF| RatioIndex[\"指数差异\"]\n    RatioCost -->|性价比优势| Advantage[\"性价比高\"]\n    RatioIndex -->|仍具竞争力| Competitiveness[\"竞争力\"]"
+    },
+    {
+      "title": "任务总费用决定因素",
+      "code": "flowchart TD\n    TokenPrice[\"Token 单价\"] -->|影响每轮费用| RoundCost[\"单轮费用\"]\n    ModelQuality[\"模型质量\"] -->|决定交互轮数| Rounds[\"交互轮数\"]\n    Rounds -->|轮数越多，总费用越高| TotalCost[\"总任务费用\"]\n    CheapModel[\"便宜模型\"] -->|可能需要更多轮次| MoreRounds[\"增加轮数\"]\n    HighQualityModel[\"高质量模型\"] -->|减少轮次| FewerRounds[\"减少轮数\"]\n    MoreRounds --> TotalCost\n    FewerRounds --> TotalCost\n    TotalCost -->|决定实际使用成本| ActualCost[\"实际成本\"]"
+    },
+    {
+      "title": "V4 Flash 架构与性能优势",
+      "code": "flowchart TD\n    ParamsTotal[\"总参数 284B\"] -->|仅激活| ParamsActive[\"活跃参数 13B\"]\n    ParamsActive -->|显存占用低| LowMemory[\"显存占用低\"]\n    LowMemory -->|算力需求低| LowCompute[\"算力需求低\"]\n    LowCompute -->|推理速度快| FastInference[\"推理速度快\"]\n    FastInference -->|成本更低| LowCost[\"成本更低\"]\n    LowCost -->|部署要求低| EasyDeploy[\"部署更易\"]\n    EasyDeploy -->|接近 Cloud FB5 效果| NearFB5[\"效果接近 FB5\"]"
+    },
+    {
+      "title": "市场影响与趋势",
+      "code": "flowchart TD\n    LowCostHighPerf[\"低成本高性能模型\"] -->|削弱| USBigModels[\"美国闭源大模型\"]\n    USBigModels -->|烧钱数千亿| HighSpend[\"高支出\"]\n    LowCostHighPerf -->|吸引| GlobalDevelopers[\"全球开发者\"]\n    GlobalDevelopers -->|投票支持| OpenSourceRise[\"开源模型崛起\"]\n    OpenSourceRise -->|占据主流| MarketShift[\"市场主流转移\"]\n    MarketShift -->|挑战美国模型主导地位| ChallengeUS[\"挑战美国主导\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:21:38+00:00"
+}

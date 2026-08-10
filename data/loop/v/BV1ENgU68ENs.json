@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1ENgU68ENs",
+  "title": "【UE5】虚幻引擎5如何实现无限世界生成",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1253,
+  "text": "要创建这样的东西\n首先我们需要创建一些网格\n不\n不是这个网格\n但这是多边形网格\n一组顶点\n边和面\n本质上网格就是由多个三角形组成的模型\n所以让我们开始吧\n所以我们前往Epic游戏启动器启动虚幻引擎\n选择空白项目名称钻石方块并点击创建按钮两千年之后\n现在我们创建了一个新项目\n让我们创建新空关卡点击关卡\n我们称之为主关卡\n同时我会复制起始关卡的物品Ctrl+C\n打开我们的主关卡Ctrl+V\n现在我们需要创建新的蓝图类\n父类是Actor\n因为我们想将其放置在场景中\n将其命名为BP钻石方块并放置在场景中\n点击播放后没有任何反应因为它为空\n首先在BP钻石方块Actor内部\n我们需要添加一个名为程序化网格组件的新组件\n同时我们可以删除所有事件只保留事件开始播放\n创建一个名为OnBeginPlay的函数\n调用创建网格部分\n让我演示创建网格部分函数的工作原理\n创建顶点数组和三角形数组\n同时将它们设为实例可编辑\n在顶点数组中选择显示3D小部件选项\n编译并保存然后前往主关卡\n现在创建四个顶点\n例如在坐标0 100 100\n0和100 100\n可以看到我们确实创建了四个顶点\n但当我点击播放时\n没有任何反应\n因为我们只创建了顶点\n但没有创建网格\n这不是我们想要的\n我们想要创建地形\n但地形由三角形构成\n所以让我们创建一个三角形\n向三角形数组添加三个元素\n这就是工作原理\n我们只需将顶点分配给三角形的角\n例如\n使用顶点0、1和2创建三角形\n所以我打印0、1、2并点击播放\n可以看到我们创建了一个三角形\n另外我们也可以启用碰撞检测\n现在碰撞体也创建完成了\n创建三角形时必须按逆时针顺序\n让我演示顺时针创建会怎样\n例如\n而不是0-1-2\n我将改为0-2-1\n这样我就顺时针创建了\n播放后你会发现什么都没发生\n但当我进入地形下方\n可以看到三角形确实生成了\n但它是倒置生成的\n这不是我们想要的\n这就是为什么必须正确创建三角形\n逆时针方向\n现在让我们创建一个正方形\n只需使用顶点1-3-2创建第二个三角形\n现在向三角形数组添加三个元素\n并赋值为1-3-2\n播放后可以看到正方形已生成\n接下来为网格设置材质\n需要创建名为uv0的新数组并调用setMaterial\n目标是我们的程序化网格组件\n同时将材质提升为变量并创建uv0数组\n数组和材质需编译安全\n前往主关卡并分配材质\n例如地面草材质\n播放后地形变为绿色\n但我们想要看到草地\n为此\n需向uv0数组添加四个元素\n因为我们有四个顶点并赋值\n第一个是0,0第二个是0,1\n第三个是1,0\n最后一个为1,1\n播放\n现在正方形显示了草地材质\n实际上你可以输入任何值\n在这些元素中\n例如输入99\n99\n99\n99\n现在材质显示得非常小\n这个数值控制材质缩放\n我也可以输入0.07\n例如播放\n现在材质缩放变得很大\n所以我更倾向于保持变量为1\n本期我们生成了网格\n接下来在后续的剧集中，我将创建一片平坦地形\n而这个玩法会稍微隐藏一些细节\n如果你喜欢这个视频\n点赞并点击订阅按钮，关注后续视频",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ENgU68ENs",
+  "published_at": "1784764105",
+  "fetched_at": "2026-08-09T21:46:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 虚幻引擎5 程序化网格生成知识图谱\n\n## 生成流程总览\n```mermaid\nflowchart TD\n    A1[\"启动 Epic 游戏启动器并打开 UE5\"]\n    A2[\"创建空白项目 ‘钻石方块’\"]\n    A3[\"创建新空关卡（主关卡）\"]\n    A4[\"复制起始关卡物品 (Ctrl+C)\"]\n    A5[\"粘贴至主关卡 (Ctrl+V)\"]\n    A6[\"创建 Blueprint 类，父类 Actor\"]\n    A7[\"在 Blueprint 中添加 Procedural Mesh 组件\"]\n    A8[\"删除默认事件，仅保留 BeginPlay\"]\n    A9[\"实现 OnBeginPlay 调用 CreateMeshPart\"]\n    A10[\"在 CreateMeshPart 中创建顶点数组\"]\n    A11[\"创建三角形数组并设为可编辑\"]\n    A12[\"编译并保存 Blueprint\"]\n    A13[\"返回主关卡放置 Blueprint 实例\"]\n    A14[\"运行游戏观察网格生成\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10 --> A11 --> A12 --> A13 --> A14\n```\n- 启动 Epic 游戏启动器并打开 UE5: [BV1ENgU68ENs P1 00:15]  \n- 创建空白项目 ‘钻石方块’: [BV1ENgU68ENs P1 00:18‑00:24]  \n- 创建新空关卡（主关卡）: [BV1ENgU68ENs P1 00:27‑00:32]  \n- 复制起始关卡物品 (Ctrl+C): [BV1ENgU68ENs P1 00:32]  \n- 粘贴至主关卡 (Ctrl+V): [BV1ENgU68ENs P1 00:38]  \n- 创建 Blueprint 类，父类 Actor: [BV1ENgU68ENs P1 00:41‑00:49]  \n- 添加 Procedural Mesh 组件: [BV1ENgU68ENs P1 01:01]  \n- 删除默认事件，仅保留 BeginPlay: [BV1ENgU68ENs P1 01:05]  \n- 实现 OnBeginPlay 调用 CreateMeshPart: [BV1ENgU68ENs P1 01:09‑01:12]  \n- 创建顶点数组: [BV1ENgU68ENs P1 01:18‑01:22]  \n- 编译并保存 Blueprint: [BV1ENgU68ENs P1 01:32]  \n\n## 三角形顶点顺序与法线方向\n```mermaid\nflowchart TD\n    T1[\"定义三角形顶点顺序\"]\n    T2[\"使用逆时针顺序 (0,1,2)\"]\n    T3[\"生成正向三角形并显示\"]\n    T4[\"启用碰撞检测\"]\n    T5[\"使用顺时针顺序 (0,2,1)\"]\n    T6[\"生成倒置三角形（不可见）\"]\n    T7[\"在地形下方可见倒置三角形\"]\n    T8[\"结论：必须使用逆时针顺序\"]\n    T1 --> T2 --> T3 --> T4\n    T1 --> T5 --> T6 --> T7\n    T3 --> T8\n    T6 --> T8\n```\n- 逆时针创建三角形并显示: [BV1ENgU68ENs P1 02:22‑02:31]  \n- 启用碰撞检测: [BV1ENgU68ENs P1 02:34‑02:38]  \n- 顺时针创建三角形: [BV1ENgU68ENs P1 02:52‑03:00]  \n- 倒置三角形在地形下方可见: [BV1ENgU68ENs P1 03:03‑03:10]  \n- 必须使用逆时针顺序的结论: [BV1ENgU68ENs P1 03:15‑03:18]  \n\n## UV 映射与材质缩放\n```mermaid\nflowchart TD\n    U1[\"创建 uv0 数组\"]\n    U2[\"为四个顶点赋 UV 坐标\"]\n    U3[\"UV0[0] = (0,0)\"]\n    U4[\"UV0[1] = (0,1)\"]\n    U5[\"UV0[2] = (1,0)\"]\n    U6[\"UV0[3] = (1,1)\"]\n    U7[\"将 UV 数组绑定到 Procedural Mesh 组件\"]\n    U8[\"创建材质变量并调用 SetMaterial\"]\n    U9[\"调节 UV 缩放值（如 99）\"]\n    U10[\"调节 UV 缩放值（如 0.07）\"]\n    U11[\"推荐保持缩放变量为 1\"]\n    U12[\"观察材质缩放效果\"]\n    U1 --> U2 --> U3 --> U4 --> U5 --> U6 --> U7 --> U8 --> U9 --> U12\n    U8 --> U10 --> U12\n    U12 --> U11\n```\n- 创建 uv0 数组并调用 SetMaterial: [BV1ENgU68ENs P1 03:45‑04:05]  \n- 为四个顶点赋 UV 坐标: [BV1ENgU68ENs P1 04:26‑04:40]  \n- 调节 UV 缩放值 99（材质显示非常小）: [BV1ENgU68ENs P1 04:55‑04:58]  \n- 调节 UV 缩放值 0.07（材质显示很大）: [BV1ENgU68ENs P1 05:07‑05:12]  \n- 推荐保持缩放变量为 1: [BV1ENgU68ENs P1 05:26]  ",
+      "diagrams": [
+        {
+          "title": "生成流程总览",
+          "code": "flowchart TD\n    A1[\"启动 Epic 游戏启动器并打开 UE5\"]\n    A2[\"创建空白项目 ‘钻石方块’\"]\n    A3[\"创建新空关卡（主关卡）\"]\n    A4[\"复制起始关卡物品 (Ctrl+C)\"]\n    A5[\"粘贴至主关卡 (Ctrl+V)\"]\n    A6[\"创建 Blueprint 类，父类 Actor\"]\n    A7[\"在 Blueprint 中添加 Procedural Mesh 组件\"]\n    A8[\"删除默认事件，仅保留 BeginPlay\"]\n    A9[\"实现 OnBeginPlay 调用 CreateMeshPart\"]\n    A10[\"在 CreateMeshPart 中创建顶点数组\"]\n    A11[\"创建三角形数组并设为可编辑\"]\n    A12[\"编译并保存 Blueprint\"]\n    A13[\"返回主关卡放置 Blueprint 实例\"]\n    A14[\"运行游戏观察网格生成\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10 --> A11 --> A12 --> A13 --> A14"
+        },
+        {
+          "title": "三角形顶点顺序与法线方向",
+          "code": "flowchart TD\n    T1[\"定义三角形顶点顺序\"]\n    T2[\"使用逆时针顺序 (0,1,2)\"]\n    T3[\"生成正向三角形并显示\"]\n    T4[\"启用碰撞检测\"]\n    T5[\"使用顺时针顺序 (0,2,1)\"]\n    T6[\"生成倒置三角形（不可见）\"]\n    T7[\"在地形下方可见倒置三角形\"]\n    T8[\"结论：必须使用逆时针顺序\"]\n    T1 --> T2 --> T3 --> T4\n    T1 --> T5 --> T6 --> T7\n    T3 --> T8\n    T6 --> T8"
+        },
+        {
+          "title": "UV 映射与材质缩放",
+          "code": "flowchart TD\n    U1[\"创建 uv0 数组\"]\n    U2[\"为四个顶点赋 UV 坐标\"]\n    U3[\"UV0[0] = (0,0)\"]\n    U4[\"UV0[1] = (0,1)\"]\n    U5[\"UV0[2] = (1,0)\"]\n    U6[\"UV0[3] = (1,1)\"]\n    U7[\"将 UV 数组绑定到 Procedural Mesh 组件\"]\n    U8[\"创建材质变量并调用 SetMaterial\"]\n    U9[\"调节 UV 缩放值（如 99）\"]\n    U10[\"调节 UV 缩放值（如 0.07）\"]\n    U11[\"推荐保持缩放变量为 1\"]\n    U12[\"观察材质缩放效果\"]\n    U1 --> U2 --> U3 --> U4 --> U5 --> U6 --> U7 --> U8 --> U9 --> U12\n    U8 --> U10 --> U12\n    U12 --> U11"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T21:48:11+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 虚幻引擎5 程序化网格生成知识图谱\n\n## 生成流程总览\n```mermaid\nflowchart TD\n    A1[\"启动 Epic 游戏启动器并打开 UE5\"]\n    A2[\"创建空白项目 ‘钻石方块’\"]\n    A3[\"创建新空关卡（主关卡）\"]\n    A4[\"复制起始关卡物品 (Ctrl+C)\"]\n    A5[\"粘贴至主关卡 (Ctrl+V)\"]\n    A6[\"创建 Blueprint 类，父类 Actor\"]\n    A7[\"在 Blueprint 中添加 Procedural Mesh 组件\"]\n    A8[\"删除默认事件，仅保留 BeginPlay\"]\n    A9[\"实现 OnBeginPlay 调用 CreateMeshPart\"]\n    A10[\"在 CreateMeshPart 中创建顶点数组\"]\n    A11[\"创建三角形数组并设为可编辑\"]\n    A12[\"编译并保存 Blueprint\"]\n    A13[\"返回主关卡放置 Blueprint 实例\"]\n    A14[\"运行游戏观察网格生成\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10 --> A11 --> A12 --> A13 --> A14\n```\n- 启动 Epic 游戏启动器并打开 UE5: [BV1ENgU68ENs P1 00:15]  \n- 创建空白项目 ‘钻石方块’: [BV1ENgU68ENs P1 00:18‑00:24]  \n- 创建新空关卡（主关卡）: [BV1ENgU68ENs P1 00:27‑00:32]  \n- 复制起始关卡物品 (Ctrl+C): [BV1ENgU68ENs P1 00:32]  \n- 粘贴至主关卡 (Ctrl+V): [BV1ENgU68ENs P1 00:38]  \n- 创建 Blueprint 类，父类 Actor: [BV1ENgU68ENs P1 00:41‑00:49]  \n- 添加 Procedural Mesh 组件: [BV1ENgU68ENs P1 01:01]  \n- 删除默认事件，仅保留 BeginPlay: [BV1ENgU68ENs P1 01:05]  \n- 实现 OnBeginPlay 调用 CreateMeshPart: [BV1ENgU68ENs P1 01:09‑01:12]  \n- 创建顶点数组: [BV1ENgU68ENs P1 01:18‑01:22]  \n- 编译并保存 Blueprint: [BV1ENgU68ENs P1 01:32]  \n\n## 三角形顶点顺序与法线方向\n```mermaid\nflowchart TD\n    T1[\"定义三角形顶点顺序\"]\n    T2[\"使用逆时针顺序 (0,1,2)\"]\n    T3[\"生成正向三角形并显示\"]\n    T4[\"启用碰撞检测\"]\n    T5[\"使用顺时针顺序 (0,2,1)\"]\n    T6[\"生成倒置三角形（不可见）\"]\n    T7[\"在地形下方可见倒置三角形\"]\n    T8[\"结论：必须使用逆时针顺序\"]\n    T1 --> T2 --> T3 --> T4\n    T1 --> T5 --> T6 --> T7\n    T3 --> T8\n    T6 --> T8\n```\n- 逆时针创建三角形并显示: [BV1ENgU68ENs P1 02:22‑02:31]  \n- 启用碰撞检测: [BV1ENgU68ENs P1 02:34‑02:38]  \n- 顺时针创建三角形: [BV1ENgU68ENs P1 02:52‑03:00]  \n- 倒置三角形在地形下方可见: [BV1ENgU68ENs P1 03:03‑03:10]  \n- 必须使用逆时针顺序的结论: [BV1ENgU68ENs P1 03:15‑03:18]  \n\n## UV 映射与材质缩放\n```mermaid\nflowchart TD\n    U1[\"创建 uv0 数组\"]\n    U2[\"为四个顶点赋 UV 坐标\"]\n    U3[\"UV0[0] = (0,0)\"]\n    U4[\"UV0[1] = (0,1)\"]\n    U5[\"UV0[2] = (1,0)\"]\n    U6[\"UV0[3] = (1,1)\"]\n    U7[\"将 UV 数组绑定到 Procedural Mesh 组件\"]\n    U8[\"创建材质变量并调用 SetMaterial\"]\n    U9[\"调节 UV 缩放值（如 99）\"]\n    U10[\"调节 UV 缩放值（如 0.07）\"]\n    U11[\"推荐保持缩放变量为 1\"]\n    U12[\"观察材质缩放效果\"]\n    U1 --> U2 --> U3 --> U4 --> U5 --> U6 --> U7 --> U8 --> U9 --> U12\n    U8 --> U10 --> U12\n    U12 --> U11\n```\n- 创建 uv0 数组并调用 SetMaterial: [BV1ENgU68ENs P1 03:45‑04:05]  \n- 为四个顶点赋 UV 坐标: [BV1ENgU68ENs P1 04:26‑04:40]  \n- 调节 UV 缩放值 99（材质显示非常小）: [BV1ENgU68ENs P1 04:55‑04:58]  \n- 调节 UV 缩放值 0.07（材质显示很大）: [BV1ENgU68ENs P1 05:07‑05:12]  \n- 推荐保持缩放变量为 1: [BV1ENgU68ENs P1 05:26]  ",
+  "diagrams": [
+    {
+      "title": "生成流程总览",
+      "code": "flowchart TD\n    A1[\"启动 Epic 游戏启动器并打开 UE5\"]\n    A2[\"创建空白项目 ‘钻石方块’\"]\n    A3[\"创建新空关卡（主关卡）\"]\n    A4[\"复制起始关卡物品 (Ctrl+C)\"]\n    A5[\"粘贴至主关卡 (Ctrl+V)\"]\n    A6[\"创建 Blueprint 类，父类 Actor\"]\n    A7[\"在 Blueprint 中添加 Procedural Mesh 组件\"]\n    A8[\"删除默认事件，仅保留 BeginPlay\"]\n    A9[\"实现 OnBeginPlay 调用 CreateMeshPart\"]\n    A10[\"在 CreateMeshPart 中创建顶点数组\"]\n    A11[\"创建三角形数组并设为可编辑\"]\n    A12[\"编译并保存 Blueprint\"]\n    A13[\"返回主关卡放置 Blueprint 实例\"]\n    A14[\"运行游戏观察网格生成\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10 --> A11 --> A12 --> A13 --> A14"
+    },
+    {
+      "title": "三角形顶点顺序与法线方向",
+      "code": "flowchart TD\n    T1[\"定义三角形顶点顺序\"]\n    T2[\"使用逆时针顺序 (0,1,2)\"]\n    T3[\"生成正向三角形并显示\"]\n    T4[\"启用碰撞检测\"]\n    T5[\"使用顺时针顺序 (0,2,1)\"]\n    T6[\"生成倒置三角形（不可见）\"]\n    T7[\"在地形下方可见倒置三角形\"]\n    T8[\"结论：必须使用逆时针顺序\"]\n    T1 --> T2 --> T3 --> T4\n    T1 --> T5 --> T6 --> T7\n    T3 --> T8\n    T6 --> T8"
+    },
+    {
+      "title": "UV 映射与材质缩放",
+      "code": "flowchart TD\n    U1[\"创建 uv0 数组\"]\n    U2[\"为四个顶点赋 UV 坐标\"]\n    U3[\"UV0[0] = (0,0)\"]\n    U4[\"UV0[1] = (0,1)\"]\n    U5[\"UV0[2] = (1,0)\"]\n    U6[\"UV0[3] = (1,1)\"]\n    U7[\"将 UV 数组绑定到 Procedural Mesh 组件\"]\n    U8[\"创建材质变量并调用 SetMaterial\"]\n    U9[\"调节 UV 缩放值（如 99）\"]\n    U10[\"调节 UV 缩放值（如 0.07）\"]\n    U11[\"推荐保持缩放变量为 1\"]\n    U12[\"观察材质缩放效果\"]\n    U1 --> U2 --> U3 --> U4 --> U5 --> U6 --> U7 --> U8 --> U9 --> U12\n    U8 --> U10 --> U12\n    U12 --> U11"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T21:48:11+00:00"
+}

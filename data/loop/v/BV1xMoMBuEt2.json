@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1xMoMBuEt2",
+  "title": "保母级配置指南！Claude Code 记忆系统，3行命令帮你狂省50% Token",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2784,
+  "text": "在cloud code里\n如何只用三行命令就能够轻松减少AI幻觉\n去掉无用捧场\n帮你节省token的\n怎么能够让cloud code永远的记住\n那些反复强调的需求\n以及在工作的时候\n按照你的工作习惯来去配合呢\n今天我们就来揭秘cloud code的记忆系统\n利用他的记忆系统\n让他更听话的去工作\n好了\n废话不多说\n点好收藏关注赞\n我们马上开始\n那提到记忆系统\n很多人可能会觉得\nAI的记忆系统是一个高大上的黑科技\n其实cloud code记忆系统它简单的离谱\n它一共就两个文件\n第一个叫cloud点MD\n那这个文件你可以自己去编辑\n你想让cloud记住什么\n直接写进去就行\n它有两个位置\n第一个在你电脑的用户目录下\n也就是在这个地址里面\n那这个是全局版\n就不管你在哪个项目里打开cloud\n它都会生效\n可能你在根目录里看不到这个文件\n因为在大多数情况下\ncloud是不需要有全局的cloud点MD文件来控制的\n否则的话每一次cloud都会携带额外的上下文\n那么另一个就在你项目的根目录下\n也叫做cloud点MD\n它只在这个项目里生效\n每一次你打开一个新的窗口\ncloud第一件事就是把这个cloud点MD从头到尾读一遍\n它就能够记住了\n是不是特别简单的机制\n那第二个就是memory点MD\n那这个文件不是你写的\n是cloud自己写的\n在你跟cloud对话的过程中\n他会把以后还用得上的这些信息\n偷偷记到memory点MD里面\n相当于是你的用户画像\n那我打开我电脑里的memory文件给你看一眼\n你看他记住了什么东西\n你看他能够记住我的名字\n了解我的背景信息\n知道我是做什么的\n重要的文件在什么样的位置\n那这些就是他悄悄记下来的笔记\n那咱们今天重点讲的是\n第一个就是cloud点MD文件\n只用几句话就能轻松的减少AI的幻觉\n去掉他无用的捧场\n以及帮你去节省token\n那么好\n怎么去使用这套记忆系统\n我们先来一个简单的例子试一试\n我们现在在根目录下新建一个cloud点MD文件\n然后打上一行字\n回复用户的时候\n说好的老板\n然后我们再打开终端跟他对话\n你会发现他就会按照我们的要求去输出了\n是不是很有意思\n当然除了你自己去改\n你也可以让cloud去写\n你可以告诉他在cloud点MD里面记住以后\n所有的回复都用中文\n这两种效果是完全一样的\n这只是一个简单的示范\ncloud点MD\n当然不能只做这么简单的事情好\n接下来的这个写法\n才能够真正让你跟AI的工作体验再上一个台阶\n那大家用AI的时候\n是不是经常遇到一些比较难受的地方\n就比如说他会无端的猜测\n那明明不确定他非要给你一个答案\n结果你一验证啊全是错的\n或者他特别喜欢夸你\n不管你做的对不对\n开口就是非常棒的问题\n你太聪明了\n他听了就想吐\n一点小问题\n他都给你写长篇大论的总结\n看上去很专业\n实际上浪费了你非常多的token\n那其实这些毛病你只需要在cloud code里写几句话\n就能够轻松解决\n我们直接找到刚才的文件目录\n打开cloud点MD\n把这几句话写进去\n在输出的时候必须遵守以下六条规则\n第一条直接给结论\n不要前置的铺垫\n第二不要复述我的问题\n不要说好的明白了\n让我来这种引导词\n第三区分大小事项\n简单的事情一句话回答复杂的问题再展开说\n第四陈述客观事实和方案\n不要用很棒的问题\n非常聪明这类捧场\n第五不要再回答末尾加多余的总结\n第六不确定的事情停下来先问\n不要瞎猜\n那加了这几句话\n你的AI就马上进入省流的无废话模式\n所有的答案都简洁有力\n不懂的地方呢也不会瞎猜\n而是直接去问你\n那我们现在先打开一个cloud code窗口\n问他一个问题\n那你看现在给你的回复就是一个有条理的\n没有任何铺垫和废话的回复\n也不会给你写什么总结\n那除了这种输出要求\n我们还能往cloud code里加什么样的规则\n我最常用的是以下这三种方法\n如果你想让cloud写代码之前先列计划和你确认\n你可以加一句\n动手之前先告诉我\n你要分几步去做\n我说继续再开始\n如果说你想让cloud修bug之前\n先确认了解了你的问题\n那就可以加一句\n修bug之前先用一句话复述我描述的问题\n确认理解对了再动手\n那如果说你想让cloud code\n不要用作为AI助手这种废话\n开头可以加一句\n直接说事\n不要用作为AI助手这种开头\n这些内容呢往cloud点MD里面一加\n那AI就能够按照这些要求继续干活了\n到这里咱们的cloud就能够记住你是谁\n同时也能够按照你的规矩来开始干活了\n好那么有人会问了\n那既然cloud点MD能够给NIH立规矩\n那是不是说cloud点MD写的越多\nAI就越听话呢\n恰恰相反\n刚才我们说每开一次新窗口\n那cloud第一件事就是把整个cloud点MD\n从头到尾读一遍\n那这意味着什么\n你写的越多\n那开头吃掉你越多的上下文额度\n他还没开始干活\n内存就已经被你的规矩占了一大半\n更要命的是是文件越长\ncloud反而去不听话\n这就是注意力被分散了\n这不是我瞎说的\n是按SOPIC官方文档的原话\n较长的文件会降低依从性\n也就是他的注意力\n那为什么你想一想\n你给一个员工50条规矩\n他能记住几条\n那三天之后就全忘了\n但是你只给他五个最核心的规矩\n那么他就能够一直记住\n严格的遵守\nAI也是一样\n规矩太多\n注意力就会分散\n注意力分散\n重点执行就不到位\n那写多少合适呢\n官方建议单个cloud点MD控制在200行以内\n那GITHUB上有一个项目啊\nOpenAI的创始团队\n那个写了一堆经典AI课的大佬\n把他关于AI写代码踩过的坑\n浓缩进了一个cloud点MD文件里\n这个文件目前已经有7万的star了\n你猜一下这个cloud点MD写了多少行\n它只有60多行\n一共就四条规则\n我们看他写的是第一条\nThink before coding\n动手之前先想清楚\n不假设\n不藏糊涂\n不确定就直接问\n第二条呢就是只写解决问题的最小代码\n没有必要的功能不要去加\n第三条呢就是只动你该动的东西\n不要顺手改进周边的代码\n第四条就是把任务转成可验证的目标\n自己完成闭环\n那就这四条\n没有任何废话\n没有任何琐碎的细节\n可以说呢\n精准把握了用户面临的四个最痛的问题\n我们看到这个示范\n就是只写那些真正需要每次都生效的高频规则\n临时的需求呢你直接在对话里跟他说就行\n不用写到cloud点\nMd\n像你叫什么做什么\n最近在搞什么项目\n让memory来记住就行\n只有那些反复提及的\n需要AI严格遵守的重要事项再写进来\n那最后总结一句是cloud点MD\n它不是cloud的说明书\n而是给cloud code去定规矩\n那规矩越精\n它越听话好了\n本期视频所有的提示词和资料\n我都已经放进了我的个人主页\n搞定空间站\n如果觉得本期视频有用\n可以点赞收藏加关注\n我是搞定\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1xMoMBuEt2",
+  "published_at": "1776993000",
+  "fetched_at": "2026-08-08T20:27:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Cloud Code 记忆系统与省 Token 配置指南\n\n## Overview of Cloud Code Memory System\n```mermaid\nflowchart TD\n    CC[\"Cloud Code\"] --> GMD[\"cloud.md (全局)\"]\n    CC --> PMD[\"cloud.md (项目)\"]\n    GMD --> UD[\"用户目录\"]\n    PMD --> PR[\"项目根目录\"]\n    CC --> MMD[\"memory.md\"]\n    CC --> RS[\"启动时读取 cloud.md\"]\n    RS --> GMD\n    RS --> PMD\n    MMD --> UP[\"用户画像（名字、背景、职责、重要文件位置）\"]\n    MMD --> TU[\"对话中自动写入\"]\n    CC --> TI[\"Token 使用\"]\n    GMD --> TI\n    PMD --> TI\n    MMD --> TI\n```\n\n## Output Simplification Rules (6)\n```mermaid\nflowchart TD\n    R1[\"1. 直接给结论\"] --> TS[\"节省 Token\"]\n    R2[\"2. 不复述问题\"] --> TS\n    R3[\"3. 不使用“好的”“明白了”“让我来”\"] --> TS\n    R4[\"4. 区分大小事项，简短回答后展开\"] --> TS\n    R5[\"5. 不在结尾添加多余总结\"] --> TS\n    R6[\"6. 不确定时先提问，避免猜测\"] --> TS\n    TS --> CR[\"简洁有力的回复\"]\n```\n\n## Best Practices for cloud.md Content\n```mermaid\nflowchart TD\n    RL[\"官方建议：单文件 ≤200 行\"] --> AS[\"注意力不分散\"]\n    AS --> HC[\"高依从性\"]\n    AS --> LT[\"低 Token 消耗\"]\n    MR[\"规矩过多\"] --> NS[\"注意力分散\"]\n    NS --> LC[\"依从性下降\"]\n    NS --> HT[\"Token 消耗上升\"]\n    CR[\"核心规矩少（≈5 条）\"] --> HC\n    CR --> LT\n    EX[\"示例：4 条核心规则\"] --> R1[\"动手前先想清楚\"]\n    EX --> R2[\"只写解决问题的最小代码\"]\n    EX --> R3[\"只动该动的东西\"]\n    EX --> R4[\"把任务转成可验证目标\"]\n    R1 --> HC\n    R2 --> HC\n    R3 --> HC\n    R4 --> HC\n    R1 --> LT\n    R2 --> LT\n    R3 --> LT\n    R4 --> LT\n```",
+      "diagrams": [
+        {
+          "title": "Overview of Cloud Code Memory System",
+          "code": "flowchart TD\n    CC[\"Cloud Code\"] --> GMD[\"cloud.md (全局)\"]\n    CC --> PMD[\"cloud.md (项目)\"]\n    GMD --> UD[\"用户目录\"]\n    PMD --> PR[\"项目根目录\"]\n    CC --> MMD[\"memory.md\"]\n    CC --> RS[\"启动时读取 cloud.md\"]\n    RS --> GMD\n    RS --> PMD\n    MMD --> UP[\"用户画像（名字、背景、职责、重要文件位置）\"]\n    MMD --> TU[\"对话中自动写入\"]\n    CC --> TI[\"Token 使用\"]\n    GMD --> TI\n    PMD --> TI\n    MMD --> TI"
+        },
+        {
+          "title": "Output Simplification Rules (6)",
+          "code": "flowchart TD\n    R1[\"1. 直接给结论\"] --> TS[\"节省 Token\"]\n    R2[\"2. 不复述问题\"] --> TS\n    R3[\"3. 不使用“好的”“明白了”“让我来”\"] --> TS\n    R4[\"4. 区分大小事项，简短回答后展开\"] --> TS\n    R5[\"5. 不在结尾添加多余总结\"] --> TS\n    R6[\"6. 不确定时先提问，避免猜测\"] --> TS\n    TS --> CR[\"简洁有力的回复\"]"
+        },
+        {
+          "title": "Best Practices for cloud.md Content",
+          "code": "flowchart TD\n    RL[\"官方建议：单文件 ≤200 行\"] --> AS[\"注意力不分散\"]\n    AS --> HC[\"高依从性\"]\n    AS --> LT[\"低 Token 消耗\"]\n    MR[\"规矩过多\"] --> NS[\"注意力分散\"]\n    NS --> LC[\"依从性下降\"]\n    NS --> HT[\"Token 消耗上升\"]\n    CR[\"核心规矩少（≈5 条）\"] --> HC\n    CR --> LT\n    EX[\"示例：4 条核心规则\"] --> R1[\"动手前先想清楚\"]\n    EX --> R2[\"只写解决问题的最小代码\"]\n    EX --> R3[\"只动该动的东西\"]\n    EX --> R4[\"把任务转成可验证目标\"]\n    R1 --> HC\n    R2 --> HC\n    R3 --> HC\n    R4 --> HC\n    R1 --> LT\n    R2 --> LT\n    R3 --> LT\n    R4 --> LT"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T20:30:56+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Cloud Code 记忆系统与省 Token 配置指南\n\n## Overview of Cloud Code Memory System\n```mermaid\nflowchart TD\n    CC[\"Cloud Code\"] --> GMD[\"cloud.md (全局)\"]\n    CC --> PMD[\"cloud.md (项目)\"]\n    GMD --> UD[\"用户目录\"]\n    PMD --> PR[\"项目根目录\"]\n    CC --> MMD[\"memory.md\"]\n    CC --> RS[\"启动时读取 cloud.md\"]\n    RS --> GMD\n    RS --> PMD\n    MMD --> UP[\"用户画像（名字、背景、职责、重要文件位置）\"]\n    MMD --> TU[\"对话中自动写入\"]\n    CC --> TI[\"Token 使用\"]\n    GMD --> TI\n    PMD --> TI\n    MMD --> TI\n```\n\n## Output Simplification Rules (6)\n```mermaid\nflowchart TD\n    R1[\"1. 直接给结论\"] --> TS[\"节省 Token\"]\n    R2[\"2. 不复述问题\"] --> TS\n    R3[\"3. 不使用“好的”“明白了”“让我来”\"] --> TS\n    R4[\"4. 区分大小事项，简短回答后展开\"] --> TS\n    R5[\"5. 不在结尾添加多余总结\"] --> TS\n    R6[\"6. 不确定时先提问，避免猜测\"] --> TS\n    TS --> CR[\"简洁有力的回复\"]\n```\n\n## Best Practices for cloud.md Content\n```mermaid\nflowchart TD\n    RL[\"官方建议：单文件 ≤200 行\"] --> AS[\"注意力不分散\"]\n    AS --> HC[\"高依从性\"]\n    AS --> LT[\"低 Token 消耗\"]\n    MR[\"规矩过多\"] --> NS[\"注意力分散\"]\n    NS --> LC[\"依从性下降\"]\n    NS --> HT[\"Token 消耗上升\"]\n    CR[\"核心规矩少（≈5 条）\"] --> HC\n    CR --> LT\n    EX[\"示例：4 条核心规则\"] --> R1[\"动手前先想清楚\"]\n    EX --> R2[\"只写解决问题的最小代码\"]\n    EX --> R3[\"只动该动的东西\"]\n    EX --> R4[\"把任务转成可验证目标\"]\n    R1 --> HC\n    R2 --> HC\n    R3 --> HC\n    R4 --> HC\n    R1 --> LT\n    R2 --> LT\n    R3 --> LT\n    R4 --> LT\n```",
+  "diagrams": [
+    {
+      "title": "Overview of Cloud Code Memory System",
+      "code": "flowchart TD\n    CC[\"Cloud Code\"] --> GMD[\"cloud.md (全局)\"]\n    CC --> PMD[\"cloud.md (项目)\"]\n    GMD --> UD[\"用户目录\"]\n    PMD --> PR[\"项目根目录\"]\n    CC --> MMD[\"memory.md\"]\n    CC --> RS[\"启动时读取 cloud.md\"]\n    RS --> GMD\n    RS --> PMD\n    MMD --> UP[\"用户画像（名字、背景、职责、重要文件位置）\"]\n    MMD --> TU[\"对话中自动写入\"]\n    CC --> TI[\"Token 使用\"]\n    GMD --> TI\n    PMD --> TI\n    MMD --> TI"
+    },
+    {
+      "title": "Output Simplification Rules (6)",
+      "code": "flowchart TD\n    R1[\"1. 直接给结论\"] --> TS[\"节省 Token\"]\n    R2[\"2. 不复述问题\"] --> TS\n    R3[\"3. 不使用“好的”“明白了”“让我来”\"] --> TS\n    R4[\"4. 区分大小事项，简短回答后展开\"] --> TS\n    R5[\"5. 不在结尾添加多余总结\"] --> TS\n    R6[\"6. 不确定时先提问，避免猜测\"] --> TS\n    TS --> CR[\"简洁有力的回复\"]"
+    },
+    {
+      "title": "Best Practices for cloud.md Content",
+      "code": "flowchart TD\n    RL[\"官方建议：单文件 ≤200 行\"] --> AS[\"注意力不分散\"]\n    AS --> HC[\"高依从性\"]\n    AS --> LT[\"低 Token 消耗\"]\n    MR[\"规矩过多\"] --> NS[\"注意力分散\"]\n    NS --> LC[\"依从性下降\"]\n    NS --> HT[\"Token 消耗上升\"]\n    CR[\"核心规矩少（≈5 条）\"] --> HC\n    CR --> LT\n    EX[\"示例：4 条核心规则\"] --> R1[\"动手前先想清楚\"]\n    EX --> R2[\"只写解决问题的最小代码\"]\n    EX --> R3[\"只动该动的东西\"]\n    EX --> R4[\"把任务转成可验证目标\"]\n    R1 --> HC\n    R2 --> HC\n    R3 --> HC\n    R4 --> HC\n    R1 --> LT\n    R2 --> LT\n    R3 --> LT\n    R4 --> LT"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T20:30:56+00:00"
+}

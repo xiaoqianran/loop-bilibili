@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1BoKN6cEiM",
+  "title": "【Godot 搬运】在 Godot 中使用 Texture2DRD 和计算着色器",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2996,
+  "text": "在Godot中构建计算着色器和视觉模拟时\n很容易意外丢失性能\n在管线的最后阶段\n你运行一个计算着色器\n它生成一张纹理\n然后在每一帧结束时将图像数据复制到CPU\n只是为了让Godot能将其重新上传到GPU进行渲染\n在本集Codex中\n我们将探讨如何使用纹理\n在Godot游戏引擎中使用TwoD RD类来消除这一低效操作\n如果你对如何将计算着色器的其他部分整合起来感兴趣\n在Godot中\n请查看我们频道的其他视频\n如果你喜欢所看到的内容\n别忘了点赞并订阅\n所以在Godot中\n常见的合理计算着色器工作流程通常如下\n创建一个独立的本地渲染设备在GPU上运行计算着色器\n计算着色器将数据写入输出图像缓冲区\n每帧运行后图像数据会被读回CPU\n并转换为Godot可用的图像格式\n随后分配给节点或精灵纹理\n最终再次发送回GPU进行渲染，这一往返过程可能昂贵\n它强制同步\n每次帧都需要额外的GPU到CPU再到GPU传输时间\n并限制每帧可处理的复杂度\n如果我们能消除图像传输\n应该能看到性能提升\n那么如何直接显示GPU生成的纹理\n完全不需要复制数据到CPU\n要解答这个问题我们需要明确管线流程\n实际上我们想要\n从高层次来看\n目标是保持所有数据在GPU上\n我们将使用Godot的纹理\nTwoD RD功能来实现\n计算着色器将像素写入纹理\n该纹理保留在GPU上，Godot主渲染器采样\n并直接绘制相同数据\n无需回传到CPU\n无需字节到图像格式转换和每帧\n重新上传一次纹理\n两个规则\n首先是计算着色器中使用image store函数写入的输出图像\n其次\n是被Godot渲染器采样的纹理\n用于屏幕绘制\n每帧图像数据不应经过CPU\nCPU只需连接组件并调度任务\n现在我们了解了起点和目标\n让我们看看如何在模拟项目中实现这一点\n要在godot中实现这个功能\n首先需要选择合适的渲染设备\ngodot最新版本提供了两种访问渲染设备的方式\n第一种是使用次级渲染器创建本地渲染设备\n这会创建一个独立的分离设备\n适用于离线计算\n常用于计算着色器，如频道中的示例\n其资源对godot主渲染器不可见\n数据必须返回CPU后才能绘制\n第二种方式是使用主渲染器获取渲染设备\n这是默认渲染设备，godot自身用于绘制帧\n并处理场景树中的所有节点\n如果纹理需要显示在屏幕上\n必须在该默认渲染设备上创建\n这是一个关键点，若使用本地渲染设备\n如大多数计算着色器示例所示\n无法直接显示纹理，必须回传数据到CPU\n对于纯GPU渲染，主渲染设备几乎是必需的\n现有代码改动不大\n只需改用获取渲染设备函数\n但稍后视频中\n我们将看到如何正确与godot渲染线程交互\n好的\n现在我们有了正确的渲染设备\n需要将设备纹理暴露给godot系统\nTexture2D\nRd是连接godot场景系统与底层渲染代码的桥梁\n不存储像素\n不上传数据\n仅指向已存在的GPU纹理\n内部\n仅保存一个元素\n由渲染设备创建的纹理资源ID\n当资源ID分配给GPU纹理后\n即可在drd中几乎任何地方使用该纹理\n普通纹理可在godot中使用\n如纹理矩形或精灵\n此Texture2D Rd对象将使图像直接显示\n无需传输到CPU\n但此方法仅当纹理本身也在主渲染设备创建时有效\n需正确设置\n现在详细看看纹理设置\n我们将创建的纹理需实现两个功能\n可在计算着色器内写入\n可被域渲染器读取\n这意味着\n我们在着色器和godot中设置的纹理格式和使用标志\n至关重要\n图像格式\nGodot需要与着色器将要写入的图像类型匹配\n例如\n在GSL中\n我们使用RGB A 32位浮点类型\n因此我们将其映射到Godot中的相同格式\n与纹理格式匹配的RGBA单浮点格式很重要\n但同样需要为该纹理应用使用标志\n标志应包含存储使用位\n这样我们可以在计算着色器中使用image store函数\n还需要采样使用位\n这样Godot可以在场景渲染时采样纹理\n如果缺少任何一个\n管线可能会崩溃\n根据需求可能需要额外标志\n但这两个是最基本的\n当使用正确格式和标志创建纹理后\n我们需要保留其资源ID\n该资源ID成为计算端与渲染端的连接\n好的\n现在看看如何将纹理绑定到计算着色器\n在着色器端\n我们的纹理在Godot端声明为image2D uniform\n这意味着我们将创建类型为image的uniform\n并将纹理资源ID附加到其中\n从这一刻起\n计算着色器可以直接向该纹理写入像素\n使用image store函数\n无需中间转换\n也不需要每帧将纹理拉取到CPU\n但还有一个事项需要处理才能正常工作\n之前提到所有渲染设备操作应在渲染线程执行\n这包括创建纹理和ID\n更新缓冲区和调度计算着色器内核\n如果从主线程执行这些操作\n在所有场景处理发生的主线程中\n大多数情况下可以正常工作\n但最终可能引发崩溃或未定义行为\n这可能非常难以排查\nGodot为此问题提供了可行方案\n我们将使用渲染服务器的render thread函数\n可用于调度初始设置和每帧计算任务\n均从主线程调用\n但实际在渲染线程执行\n主线程专注于Godot的输入和场景逻辑\n渲染线程处理\n场景绘制和GPU执行\n这种分离是必须的\n据我所知\n这似乎是引擎深层操作的组成部分\n这也意味着\n我们不再需要手动提交或同步渲染设备\nGodot会在渲染线程自动处理这些操作\n所以我们还是将这些代码注释掉\n计算过程现在运行在渲染线程上\n我们现在可以最终将结果显示到屏幕\n显示GPU纹理是这部分中最简单的环节\n我们已经将纹理资源ID分配给了d的纹理\n现在只需将该纹理分配给d到常规Godot节点\n比如精灵或纹理矩形\n我们这里使用的是纹理直接节点\n我们将使用其纹理属性建立最终连接\n每一帧\nGodot渲染器采样\n与计算着色器刚写入的同一纹理\n没有任何转换步骤\n更新是自动进行的\n因为它们在同一渲染设备运行\n无需手动复制或刷新\n这直接带来了最大的性能优势\n此时\n所有组件已连接完毕\n让我们看看这种设置带来的实际收益\n以及未谨慎操作时可能出现的问题\n计算着色器写入纹理\n纹理保留在GPU并由渲染器直接采样\n每一帧\n没有CPU读回操作\n无需将数据上传回GPU\n仅用于绘制\n这才是真正的收益\n移除了帧循环末端的主要同步点\n使性能随复杂度增加更平稳扩展\n大型网格\n更密集的场域\nGPU驱动的模拟在实时中更可行\n但此设置一旦出错也会很严格\n通常因可预测原因出错\n使用本地渲染设备\n而非主设备忘记设置纹理的采样标志\n在渲染线程外调用渲染设备函数\n过多逻辑进入渲染线程\n未清理不再需要的ID\n任何一项都可能静默破坏流程\nCPU纹理读回对调试很有用\n有时是工作流程必需的\n但不应成为最终方案\n若追求高性能且所有条件满足\n结果正是我们想要的\nGPU生成的图像数据从计算到显示全程驻留GPU\n移除CPU读回操作后循环效果\n更多性能突然变得可用\n因此在GPU是权威来源时使用此方法\n你无需因其他原因保留CPU上的数据\n并希望通过避免将数据传输到CPU来提升帧时间\n只需将其发送回GPU\n每一帧\n我强烈推荐此方案\n但最终如果你关注这一层级的性能\n你需要基准测试几种不同方案并选择最适合需求的\n希望这段视频能为你提供新工具\n在Godot中构建GPU驱动系统的工具箱里\n如果你有疑问或评论\n请告诉我\n感谢观看《寻径者典籍》\n一如既往\n永不停止尝试新事物",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1BoKN6cEiM",
+  "published_at": "1784387484",
+  "fetched_at": "2026-08-08T21:57:45+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot Texture2DRD 与计算着色器全流程图谱\n\n## 总览：GPU 计算着色器全流程概览\n```mermaid\nflowchart TD\n    A1[\"计算着色器 (Compute Shader)\"]\n    A2[\"输出图像缓冲区 (Image Buffer)\"]\n    A3[\"Texture2D RD (GPU 纹理)\"]\n    A4[\"Godot 主渲染器 (Renderer)\"]\n    A5[\"CPU (读取/上传)\"]\n    A6[\"帧同步点 (Sync)\"]\n    A7[\"性能瓶颈\"]\n    A8[\"优化目标: 全GPU路径\"]\n\n    A1 -->|写入| A2\n    A2 -->|读回| A5\n    A5 -->|上传| A3\n    A3 -->|采样渲染| A4\n    A4 -->|同步| A6\n    A6 -->|每帧调度| A1\n    A5 -->|导致| A7\n    A8 -->|保持在GPU| A1\n    A8 -->|直接使用| A3\n```\n\n## 渲染设备选择决策树\n```mermaid\nflowchart TD\n    B1[\"渲染设备获取方式\"]\n    B2[\"次级渲染器创建本地设备\"]\n    B3[\"主渲染器获取默认设备\"]\n    B4[\"适用场景: 离线计算\"]\n    B5[\"适用场景: 实时显示\"]\n    B6[\"资源可见性: 主渲染器\"]\n    B7[\"需要 CPU 回传\"]\n    B8[\"可直接采样纹理\"]\n    B9[\"决定: 使用主设备\"]\n    B10[\"决定: 使用本地设备\"]\n    B11[\"后续步骤: 使用 Texture2D RD？\"]\n\n    B1 --> B2\n    B1 --> B3\n    B2 --> B4\n    B2 --> B7\n    B3 --> B5\n    B3 --> B8\n    B4 --> B10\n    B5 --> B9\n    B9 --> B11\n    B10 --> B11\n```\n\n## Texture2DRD 创建与绑定关键步骤\n```mermaid\nflowchart TD\n    C1[\"确定纹理格式 (RGBA32F)\"]\n    C2[\"设置使用标志: Storage\"]\n    C3[\"设置使用标志: Sampling\"]\n    C4[\"创建 Texture2D RD 对象\"]\n    C5[\"获取资源 ID\"]\n    C6[\"在渲染线程创建纹理\"]\n    C7[\"在 Compute Shader 中声明 image2D uniform\"]\n    C8[\"绑定资源 ID 到 uniform\"]\n    C9[\"在 Compute Shader 中使用 imageStore 写入\"]\n    C10[\"Godot 渲染器采样纹理\"]\n    C11[\"避免 CPU 读取\"]\n    C12[\"确保在渲染线程调度\"]\n    C13[\"可能错误: 缺少标志或错误线程\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C5 --> C6\n    C6 --> C7\n    C7 --> C8\n    C8 --> C9\n    C9 --> C10\n    C10 --> C11\n    C6 --> C12\n    C12 --> C9\n    C13 --> C4\n```\n\n## 证据\n- 在管线末端将图像数据复制到 CPU 造成性能损失 [BV1BoKN6cEiM P1 00:08]  \n- 传统工作流：本地渲染设备 → 读回 CPU → 转换 → 重新上传 → 渲染，存在同步开销 [BV1BoKN6cEiM P1 00:44]、[BV1BoKN6cEiM P1 01:03]  \n- 消除图像传输可提升性能 [BV1BoKN6cEiM P1 01:19]、[BV1BoKN6cEiM P1 01:27]  \n- 使用 Texture2D RD 可保持所有数据在 GPU 上 [BV1BoKN6cEiM P1 01:41]、[BV1BoKN6cEiM P1 01:55]  \n- 两个关键规则：① Compute Shader 用 image store 写入输出图像；② 该纹理被 Godot 渲染器采样 [BV1BoKN6cEiM P1 02:03]、[BV1BoKN6cEiM P1 02:09]  \n- 渲染设备获取方式：本地渲染器（离线计算、需 CPU 回传） vs 主渲染器（实时显示、可直接采样）[BV1BoKN6cEiM P1 02:31]、[BV1BoKN6cEiM P1 03:05]、[BV1BoKN6cEiM P1 03:12]  \n- 创建 Texture2D RD 时必须匹配图像格式 (RGBA32F) 并设置 Storage 与 Sampling 标志，否则管线崩溃 [BV1BoKN6cEiM P1 05:02]、[BV1BoKN6cEiM P1 05:30]、[BV1BoKN6cEiM P1 05:36]、[BV1BoKN6cEiM P1 05:41]  \n- 在渲染线程创建纹理、绑定资源 ID、调度 Compute Shader，避免主线程直接调用导致崩溃 [BV1BoKN6cEiM P1 06:37]、[BV1BoKN6cEiM P1 07:04]、[BV1BoKN6cEiM P1 07:15]  \n- 最终渲染循环：GPU 纹理直接被渲染器采样，无需 CPU 读取或额外上传，带来显著性能提升 [BV1BoKN6cEiM P1 08:15]、[BV1BoKN6cEiM P1 08:28]  \n- 常见错误：忘记采样标志、在渲染线程外调用、过多逻辑进入渲染线程、未清理 ID 等会导致流程破坏 [BV1BoKN6cEiM P1 09:12]、[BV1BoKN6cEiM P1 09:17]、[BV1BoKN6cEiM P1 09:30]、[BV1BoKN6cEiM P1 09:35]  \n- 推荐在 GPU 为权威数据源时使用此方案，并进行基准测试选择最佳方案 [BV1BoKN6cEiM P1 10:12]、[BV1BoKN6cEiM P1 10:20]  ",
+      "diagrams": [
+        {
+          "title": "总览：GPU 计算着色器全流程概览",
+          "code": "flowchart TD\n    A1[\"计算着色器 (Compute Shader)\"]\n    A2[\"输出图像缓冲区 (Image Buffer)\"]\n    A3[\"Texture2D RD (GPU 纹理)\"]\n    A4[\"Godot 主渲染器 (Renderer)\"]\n    A5[\"CPU (读取/上传)\"]\n    A6[\"帧同步点 (Sync)\"]\n    A7[\"性能瓶颈\"]\n    A8[\"优化目标: 全GPU路径\"]\n\n    A1 -->|写入| A2\n    A2 -->|读回| A5\n    A5 -->|上传| A3\n    A3 -->|采样渲染| A4\n    A4 -->|同步| A6\n    A6 -->|每帧调度| A1\n    A5 -->|导致| A7\n    A8 -->|保持在GPU| A1\n    A8 -->|直接使用| A3"
+        },
+        {
+          "title": "渲染设备选择决策树",
+          "code": "flowchart TD\n    B1[\"渲染设备获取方式\"]\n    B2[\"次级渲染器创建本地设备\"]\n    B3[\"主渲染器获取默认设备\"]\n    B4[\"适用场景: 离线计算\"]\n    B5[\"适用场景: 实时显示\"]\n    B6[\"资源可见性: 主渲染器\"]\n    B7[\"需要 CPU 回传\"]\n    B8[\"可直接采样纹理\"]\n    B9[\"决定: 使用主设备\"]\n    B10[\"决定: 使用本地设备\"]\n    B11[\"后续步骤: 使用 Texture2D RD？\"]\n\n    B1 --> B2\n    B1 --> B3\n    B2 --> B4\n    B2 --> B7\n    B3 --> B5\n    B3 --> B8\n    B4 --> B10\n    B5 --> B9\n    B9 --> B11\n    B10 --> B11"
+        },
+        {
+          "title": "Texture2DRD 创建与绑定关键步骤",
+          "code": "flowchart TD\n    C1[\"确定纹理格式 (RGBA32F)\"]\n    C2[\"设置使用标志: Storage\"]\n    C3[\"设置使用标志: Sampling\"]\n    C4[\"创建 Texture2D RD 对象\"]\n    C5[\"获取资源 ID\"]\n    C6[\"在渲染线程创建纹理\"]\n    C7[\"在 Compute Shader 中声明 image2D uniform\"]\n    C8[\"绑定资源 ID 到 uniform\"]\n    C9[\"在 Compute Shader 中使用 imageStore 写入\"]\n    C10[\"Godot 渲染器采样纹理\"]\n    C11[\"避免 CPU 读取\"]\n    C12[\"确保在渲染线程调度\"]\n    C13[\"可能错误: 缺少标志或错误线程\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C5 --> C6\n    C6 --> C7\n    C7 --> C8\n    C8 --> C9\n    C9 --> C10\n    C10 --> C11\n    C6 --> C12\n    C12 --> C9\n    C13 --> C4"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T21:58:09+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot Texture2DRD 与计算着色器全流程图谱\n\n## 总览：GPU 计算着色器全流程概览\n```mermaid\nflowchart TD\n    A1[\"计算着色器 (Compute Shader)\"]\n    A2[\"输出图像缓冲区 (Image Buffer)\"]\n    A3[\"Texture2D RD (GPU 纹理)\"]\n    A4[\"Godot 主渲染器 (Renderer)\"]\n    A5[\"CPU (读取/上传)\"]\n    A6[\"帧同步点 (Sync)\"]\n    A7[\"性能瓶颈\"]\n    A8[\"优化目标: 全GPU路径\"]\n\n    A1 -->|写入| A2\n    A2 -->|读回| A5\n    A5 -->|上传| A3\n    A3 -->|采样渲染| A4\n    A4 -->|同步| A6\n    A6 -->|每帧调度| A1\n    A5 -->|导致| A7\n    A8 -->|保持在GPU| A1\n    A8 -->|直接使用| A3\n```\n\n## 渲染设备选择决策树\n```mermaid\nflowchart TD\n    B1[\"渲染设备获取方式\"]\n    B2[\"次级渲染器创建本地设备\"]\n    B3[\"主渲染器获取默认设备\"]\n    B4[\"适用场景: 离线计算\"]\n    B5[\"适用场景: 实时显示\"]\n    B6[\"资源可见性: 主渲染器\"]\n    B7[\"需要 CPU 回传\"]\n    B8[\"可直接采样纹理\"]\n    B9[\"决定: 使用主设备\"]\n    B10[\"决定: 使用本地设备\"]\n    B11[\"后续步骤: 使用 Texture2D RD？\"]\n\n    B1 --> B2\n    B1 --> B3\n    B2 --> B4\n    B2 --> B7\n    B3 --> B5\n    B3 --> B8\n    B4 --> B10\n    B5 --> B9\n    B9 --> B11\n    B10 --> B11\n```\n\n## Texture2DRD 创建与绑定关键步骤\n```mermaid\nflowchart TD\n    C1[\"确定纹理格式 (RGBA32F)\"]\n    C2[\"设置使用标志: Storage\"]\n    C3[\"设置使用标志: Sampling\"]\n    C4[\"创建 Texture2D RD 对象\"]\n    C5[\"获取资源 ID\"]\n    C6[\"在渲染线程创建纹理\"]\n    C7[\"在 Compute Shader 中声明 image2D uniform\"]\n    C8[\"绑定资源 ID 到 uniform\"]\n    C9[\"在 Compute Shader 中使用 imageStore 写入\"]\n    C10[\"Godot 渲染器采样纹理\"]\n    C11[\"避免 CPU 读取\"]\n    C12[\"确保在渲染线程调度\"]\n    C13[\"可能错误: 缺少标志或错误线程\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C5 --> C6\n    C6 --> C7\n    C7 --> C8\n    C8 --> C9\n    C9 --> C10\n    C10 --> C11\n    C6 --> C12\n    C12 --> C9\n    C13 --> C4\n```\n\n## 证据\n- 在管线末端将图像数据复制到 CPU 造成性能损失 [BV1BoKN6cEiM P1 00:08]  \n- 传统工作流：本地渲染设备 → 读回 CPU → 转换 → 重新上传 → 渲染，存在同步开销 [BV1BoKN6cEiM P1 00:44]、[BV1BoKN6cEiM P1 01:03]  \n- 消除图像传输可提升性能 [BV1BoKN6cEiM P1 01:19]、[BV1BoKN6cEiM P1 01:27]  \n- 使用 Texture2D RD 可保持所有数据在 GPU 上 [BV1BoKN6cEiM P1 01:41]、[BV1BoKN6cEiM P1 01:55]  \n- 两个关键规则：① Compute Shader 用 image store 写入输出图像；② 该纹理被 Godot 渲染器采样 [BV1BoKN6cEiM P1 02:03]、[BV1BoKN6cEiM P1 02:09]  \n- 渲染设备获取方式：本地渲染器（离线计算、需 CPU 回传） vs 主渲染器（实时显示、可直接采样）[BV1BoKN6cEiM P1 02:31]、[BV1BoKN6cEiM P1 03:05]、[BV1BoKN6cEiM P1 03:12]  \n- 创建 Texture2D RD 时必须匹配图像格式 (RGBA32F) 并设置 Storage 与 Sampling 标志，否则管线崩溃 [BV1BoKN6cEiM P1 05:02]、[BV1BoKN6cEiM P1 05:30]、[BV1BoKN6cEiM P1 05:36]、[BV1BoKN6cEiM P1 05:41]  \n- 在渲染线程创建纹理、绑定资源 ID、调度 Compute Shader，避免主线程直接调用导致崩溃 [BV1BoKN6cEiM P1 06:37]、[BV1BoKN6cEiM P1 07:04]、[BV1BoKN6cEiM P1 07:15]  \n- 最终渲染循环：GPU 纹理直接被渲染器采样，无需 CPU 读取或额外上传，带来显著性能提升 [BV1BoKN6cEiM P1 08:15]、[BV1BoKN6cEiM P1 08:28]  \n- 常见错误：忘记采样标志、在渲染线程外调用、过多逻辑进入渲染线程、未清理 ID 等会导致流程破坏 [BV1BoKN6cEiM P1 09:12]、[BV1BoKN6cEiM P1 09:17]、[BV1BoKN6cEiM P1 09:30]、[BV1BoKN6cEiM P1 09:35]  \n- 推荐在 GPU 为权威数据源时使用此方案，并进行基准测试选择最佳方案 [BV1BoKN6cEiM P1 10:12]、[BV1BoKN6cEiM P1 10:20]  ",
+  "diagrams": [
+    {
+      "title": "总览：GPU 计算着色器全流程概览",
+      "code": "flowchart TD\n    A1[\"计算着色器 (Compute Shader)\"]\n    A2[\"输出图像缓冲区 (Image Buffer)\"]\n    A3[\"Texture2D RD (GPU 纹理)\"]\n    A4[\"Godot 主渲染器 (Renderer)\"]\n    A5[\"CPU (读取/上传)\"]\n    A6[\"帧同步点 (Sync)\"]\n    A7[\"性能瓶颈\"]\n    A8[\"优化目标: 全GPU路径\"]\n\n    A1 -->|写入| A2\n    A2 -->|读回| A5\n    A5 -->|上传| A3\n    A3 -->|采样渲染| A4\n    A4 -->|同步| A6\n    A6 -->|每帧调度| A1\n    A5 -->|导致| A7\n    A8 -->|保持在GPU| A1\n    A8 -->|直接使用| A3"
+    },
+    {
+      "title": "渲染设备选择决策树",
+      "code": "flowchart TD\n    B1[\"渲染设备获取方式\"]\n    B2[\"次级渲染器创建本地设备\"]\n    B3[\"主渲染器获取默认设备\"]\n    B4[\"适用场景: 离线计算\"]\n    B5[\"适用场景: 实时显示\"]\n    B6[\"资源可见性: 主渲染器\"]\n    B7[\"需要 CPU 回传\"]\n    B8[\"可直接采样纹理\"]\n    B9[\"决定: 使用主设备\"]\n    B10[\"决定: 使用本地设备\"]\n    B11[\"后续步骤: 使用 Texture2D RD？\"]\n\n    B1 --> B2\n    B1 --> B3\n    B2 --> B4\n    B2 --> B7\n    B3 --> B5\n    B3 --> B8\n    B4 --> B10\n    B5 --> B9\n    B9 --> B11\n    B10 --> B11"
+    },
+    {
+      "title": "Texture2DRD 创建与绑定关键步骤",
+      "code": "flowchart TD\n    C1[\"确定纹理格式 (RGBA32F)\"]\n    C2[\"设置使用标志: Storage\"]\n    C3[\"设置使用标志: Sampling\"]\n    C4[\"创建 Texture2D RD 对象\"]\n    C5[\"获取资源 ID\"]\n    C6[\"在渲染线程创建纹理\"]\n    C7[\"在 Compute Shader 中声明 image2D uniform\"]\n    C8[\"绑定资源 ID 到 uniform\"]\n    C9[\"在 Compute Shader 中使用 imageStore 写入\"]\n    C10[\"Godot 渲染器采样纹理\"]\n    C11[\"避免 CPU 读取\"]\n    C12[\"确保在渲染线程调度\"]\n    C13[\"可能错误: 缺少标志或错误线程\"]\n\n    C1 --> C4\n    C2 --> C4\n    C3 --> C4\n    C4 --> C5\n    C5 --> C6\n    C6 --> C7\n    C7 --> C8\n    C8 --> C9\n    C9 --> C10\n    C10 --> C11\n    C6 --> C12\n    C12 --> C9\n    C13 --> C4"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T21:58:09+00:00"
+}

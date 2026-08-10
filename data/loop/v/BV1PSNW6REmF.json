@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1PSNW6REmF",
+  "title": "AICC计算化学框架：这个Agent框架让AI半自动完成计算化学研究",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1834,
+  "text": "审稿人要求补一个DFT计算\n背后往往是几个月的手工劳动\n南开大学的开源项目\nAI cc全称AI computational chemist\n给出一套框架无关的agent技能集合\n能让AI真正具备计算化学的研究能力\n它有两种用法\n一是半自动完成同行评议的计算回复\n二是作为通用工具\n独立处理日常的计算化学工作\n今天我们把这两种用法一次讲清楚\n先说第一种也是最重磅的用法\n同行评议驱动的半自动计算研究\n他的旗舰工作流叫review response\n输入是论文补充材料和审稿意见输出\n是一份经过验证的回复包\n整个流程分为五步\n第一步提取原文的方法指纹\n第二步对每条审稿意见做分类和计算规划\n这里会暂停等待用户批准\n第三步执行计算\n第四步验证结果是否真的回答了审稿人的质疑\n第五步生成回复信和补充材料\n再次等待批准\n每一步关键的科学决策都保留人工把关\n让AI做计算最大的担忧就是它会不会胡编乱造\nAI cc用两条硬规则来保证可信\n第一条新计算必须匹配原文的方法指纹\n也就是泛函色散校正\nHUBERU截断能收敛标准\n这些参数要保持一致\n有偏离\n必须明确披露\n而不是悄悄改掉\n第二条更关键\n如果计算结果与论文结论相矛盾\nagent必须立即停止自动化\n把证据交回作者\n绝不能掩盖\n绝不能粉饰这套能力不是空谈\nAI cc提供了一个硬核的基准测试\n他选取五篇发表在nature communications上的论文\n这些论文的审稿文件都明确要求补充计算\n作者们的计算答案被抹除后\n交给装备了这套技能的agent\n让他们自主回答审稿人的问题\n然后用一个六维度\n七个红旗的评分体系\n有两个独立的LLM评估模型\n把agent的报告和原作者自己的计算\n进行头对头的打分\n结果在一个评估器下\n自主agent得分65.5\n原作者只有54.7\n加入人工引导后提升到72.2\n在另一个评估器下\n原作者以72.6略胜\n也就是说已经达到了和原作者相当的水平\n第二种用法是把这套技能当成通用工具\n独立完成日常的计算化学工作\n这时候的入口是一个叫com cam workflow\n的生命周期控制器\n不管是算CEO在铂表面的吸附\n还是算氧化镁的生子\n他都按同一条流水线走\n明确目标\n搭建结构\n选择方法\n生成输入预检\n提交监控解析验证记录\nAICC特别强调一个理念\n先提出科学方案\n再选择计算软件\n同一个科学问题可以用不同的代码来实现工具\n不应该反过来决定科学\n而所有结果都要爬一条验证阶梯\n文件存在正常终止\n技术收敛科学有效\n一句话\n一个收敛的数字不等于一个结果\n这套技能覆盖了主流的计算化学软件\n分成几大类\n电子结构方面有va asp和CP\n2K做DFT和第一性原理计算\n分子量子化学有GCN做结构优化\n过渡态和光谱\n分子动力学有grow max和lamps覆盖\n从生物体系到材料的模拟\n更有特色的是机器学习式函数\n支持miss DP m d nick y p等主流框架\n以及生子计算\nPHONOPY和微动力学\nCat map\n所有计算都能通过hp c submit\n提交到本地或SLMPBS集群\n并且支持任务中断后恢复常任务也不会丢\n这两种用法背后是同一套清晰的三层架构\n第一层procedures是编排器驱动多步骤工作\n比如review response和comcam workflow\n第二层tools是针对每个软件的技能\n一共17个\n第三层knowledge是与软件无关的科学知识\n比如电化学电子结构立场\n这里有一个很优雅的判断标准\n如果换成别的软件\n这条知识还成立吗\n成立就归knowledge\n不成立才归tools\n整个项目还是harness neutral框架无关\nCloud code\nCodex cursor\nOpen code\n任何能读取指令文件的agent都能用\n总结一下\nAi\ncc是一套把计算化学专业知识固化下来的agent\n技能集合\n它既能半自动完成同行评议的计算回复\n又能作为通用工具\n独立处理日常的计算化学工作\n两种用法共享同一套三层架构\n同一条验证阶梯\n同样的不胡编乱造\n默认半自动\n每个科学决策都保留人工批准\n这或许就是未来AGGETIC计算化学的一个雏形\n本期内容来自南开大学王瑞星\n蔡京华\n刘锦成团队的开源项目AI computational chemist\n采用cc by NC开源协议\n如果这期视频对你有启发\n记得一键三连\n有任何问题欢迎在评论区留言\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1PSNW6REmF",
+  "published_at": "1783739748",
+  "fetched_at": "2026-08-10T03:31:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AICC 计算化学框架知识图谱\n\n## 总览图\n<!-- [BV1PSNW6REmF P1 00:07] AI computational chemist (AI cc) 全称 -->\n<!-- [BV1PSNW6REmF P1 00:18] 两种用法概述 -->\n<!-- [BV1PSNW6REmF P1 04:14] 三层架构说明 -->\n```mermaid\nflowchart TD\n    AICCC[\"AI computational chemist (AI cc)\"]\n    Use1[\"半自动同行评议回复\"]\n    Use2[\"通用工具 (comcam workflow)\"]\n    Arch[\"三层架构\"]\n    Proc[\"Procedures (编排器)\"]\n    Tools[\"Tools (软件技能)\"]\n    Knowledge[\"Knowledge (科学知识)\"]\n    Validate[\"统一验证阶梯\"]\n    Rule1[\"硬规则1：方法指纹匹配\"]\n    Rule2[\"硬规则2：结果冲突则停止\"]\n\n    AICCC --> Use1\n    AICCC --> Use2\n    AICCC --> Arch\n    Arch --> Proc\n    Arch --> Tools\n    Arch --> Knowledge\n    Use1 --> Validate\n    Use2 --> Validate\n    Validate --> Rule1\n    Validate --> Rule2\n```\n\n## 同行评议驱动的 Review Response 工作流\n<!-- [BV1PSNW6REmF P1 00:46] 工作流五步概述 -->\n<!-- [BV1PSNW6REmF P1 00:55] 用户批准点 -->\n<!-- [BV1PSNW6REmF P1 01:09] 关键科学决策人工把关 -->\n```mermaid\nflowchart LR\n    S1[\"步骤1：提取原文方法指纹\"]\n    S2[\"步骤2：审稿意见分类与计算规划\"]\n    Approve1[\"用户批准 (规划)\"]\n    S3[\"步骤3：执行计算\"]\n    S4[\"步骤4：验证结果回答审稿质疑\"]\n    S5[\"步骤5：生成回复信和补充材料\"]\n    Approve2[\"用户批准 (生成)\"]\n    HumanCheck[\"关键科学决策人工把关\"]\n    Rule1[\"硬规则1：新计算必须匹配方法指纹\"]\n    Rule2[\"硬规则2：结果与论文结论冲突则停止\"]\n\n    S1 --> S2 --> Approve1 --> S3 --> S4 --> S5 --> Approve2 --> HumanCheck\n    HumanCheck --> Rule1\n    HumanCheck --> Rule2\n```\n\n## 通用工具 comcam workflow 流程\n<!-- [BV1PSNW6REmF P1 02:44] 通用工具入口 -->\n<!-- [BV1PSNW6REmF P1 03:00] 关键步骤序列 -->\n```mermaid\nflowchart TD\n    Entry[\"入口：comcam workflow 生命周期控制器\"]\n    Goal[\"明确科学目标\"]\n    Build[\"搭建结构模型\"]\n    Method[\"选择计算方法\"]\n    InputCheck[\"生成输入并预检\"]\n    Submit[\"提交计算并监控解析\"]\n    Validate[\"文件正常终止 & 技术收敛\"]\n    Result[\"科学有效的结果\"]\n    Rule1[\"硬规则1：方法指纹保持一致\"]\n    Rule2[\"硬规则2：冲突结果停止并上报\"]\n\n    Entry --> Goal --> Build --> Method --> InputCheck --> Submit --> Validate --> Result\n    Result --> Rule1\n    Result --> Rule2\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    AICCC[\"AI computational chemist (AI cc)\"]\n    Use1[\"半自动同行评议回复\"]\n    Use2[\"通用工具 (comcam workflow)\"]\n    Arch[\"三层架构\"]\n    Proc[\"Procedures (编排器)\"]\n    Tools[\"Tools (软件技能)\"]\n    Knowledge[\"Knowledge (科学知识)\"]\n    Validate[\"统一验证阶梯\"]\n    Rule1[\"硬规则1：方法指纹匹配\"]\n    Rule2[\"硬规则2：结果冲突则停止\"]\n\n    AICCC --> Use1\n    AICCC --> Use2\n    AICCC --> Arch\n    Arch --> Proc\n    Arch --> Tools\n    Arch --> Knowledge\n    Use1 --> Validate\n    Use2 --> Validate\n    Validate --> Rule1\n    Validate --> Rule2"
+        },
+        {
+          "title": "同行评议驱动的 Review Response 工作流",
+          "code": "flowchart LR\n    S1[\"步骤1：提取原文方法指纹\"]\n    S2[\"步骤2：审稿意见分类与计算规划\"]\n    Approve1[\"用户批准 (规划)\"]\n    S3[\"步骤3：执行计算\"]\n    S4[\"步骤4：验证结果回答审稿质疑\"]\n    S5[\"步骤5：生成回复信和补充材料\"]\n    Approve2[\"用户批准 (生成)\"]\n    HumanCheck[\"关键科学决策人工把关\"]\n    Rule1[\"硬规则1：新计算必须匹配方法指纹\"]\n    Rule2[\"硬规则2：结果与论文结论冲突则停止\"]\n\n    S1 --> S2 --> Approve1 --> S3 --> S4 --> S5 --> Approve2 --> HumanCheck\n    HumanCheck --> Rule1\n    HumanCheck --> Rule2"
+        },
+        {
+          "title": "通用工具 comcam workflow 流程",
+          "code": "flowchart TD\n    Entry[\"入口：comcam workflow 生命周期控制器\"]\n    Goal[\"明确科学目标\"]\n    Build[\"搭建结构模型\"]\n    Method[\"选择计算方法\"]\n    InputCheck[\"生成输入并预检\"]\n    Submit[\"提交计算并监控解析\"]\n    Validate[\"文件正常终止 & 技术收敛\"]\n    Result[\"科学有效的结果\"]\n    Rule1[\"硬规则1：方法指纹保持一致\"]\n    Rule2[\"硬规则2：冲突结果停止并上报\"]\n\n    Entry --> Goal --> Build --> Method --> InputCheck --> Submit --> Validate --> Result\n    Result --> Rule1\n    Result --> Rule2"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T03:31:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AICC 计算化学框架知识图谱\n\n## 总览图\n<!-- [BV1PSNW6REmF P1 00:07] AI computational chemist (AI cc) 全称 -->\n<!-- [BV1PSNW6REmF P1 00:18] 两种用法概述 -->\n<!-- [BV1PSNW6REmF P1 04:14] 三层架构说明 -->\n```mermaid\nflowchart TD\n    AICCC[\"AI computational chemist (AI cc)\"]\n    Use1[\"半自动同行评议回复\"]\n    Use2[\"通用工具 (comcam workflow)\"]\n    Arch[\"三层架构\"]\n    Proc[\"Procedures (编排器)\"]\n    Tools[\"Tools (软件技能)\"]\n    Knowledge[\"Knowledge (科学知识)\"]\n    Validate[\"统一验证阶梯\"]\n    Rule1[\"硬规则1：方法指纹匹配\"]\n    Rule2[\"硬规则2：结果冲突则停止\"]\n\n    AICCC --> Use1\n    AICCC --> Use2\n    AICCC --> Arch\n    Arch --> Proc\n    Arch --> Tools\n    Arch --> Knowledge\n    Use1 --> Validate\n    Use2 --> Validate\n    Validate --> Rule1\n    Validate --> Rule2\n```\n\n## 同行评议驱动的 Review Response 工作流\n<!-- [BV1PSNW6REmF P1 00:46] 工作流五步概述 -->\n<!-- [BV1PSNW6REmF P1 00:55] 用户批准点 -->\n<!-- [BV1PSNW6REmF P1 01:09] 关键科学决策人工把关 -->\n```mermaid\nflowchart LR\n    S1[\"步骤1：提取原文方法指纹\"]\n    S2[\"步骤2：审稿意见分类与计算规划\"]\n    Approve1[\"用户批准 (规划)\"]\n    S3[\"步骤3：执行计算\"]\n    S4[\"步骤4：验证结果回答审稿质疑\"]\n    S5[\"步骤5：生成回复信和补充材料\"]\n    Approve2[\"用户批准 (生成)\"]\n    HumanCheck[\"关键科学决策人工把关\"]\n    Rule1[\"硬规则1：新计算必须匹配方法指纹\"]\n    Rule2[\"硬规则2：结果与论文结论冲突则停止\"]\n\n    S1 --> S2 --> Approve1 --> S3 --> S4 --> S5 --> Approve2 --> HumanCheck\n    HumanCheck --> Rule1\n    HumanCheck --> Rule2\n```\n\n## 通用工具 comcam workflow 流程\n<!-- [BV1PSNW6REmF P1 02:44] 通用工具入口 -->\n<!-- [BV1PSNW6REmF P1 03:00] 关键步骤序列 -->\n```mermaid\nflowchart TD\n    Entry[\"入口：comcam workflow 生命周期控制器\"]\n    Goal[\"明确科学目标\"]\n    Build[\"搭建结构模型\"]\n    Method[\"选择计算方法\"]\n    InputCheck[\"生成输入并预检\"]\n    Submit[\"提交计算并监控解析\"]\n    Validate[\"文件正常终止 & 技术收敛\"]\n    Result[\"科学有效的结果\"]\n    Rule1[\"硬规则1：方法指纹保持一致\"]\n    Rule2[\"硬规则2：冲突结果停止并上报\"]\n\n    Entry --> Goal --> Build --> Method --> InputCheck --> Submit --> Validate --> Result\n    Result --> Rule1\n    Result --> Rule2\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    AICCC[\"AI computational chemist (AI cc)\"]\n    Use1[\"半自动同行评议回复\"]\n    Use2[\"通用工具 (comcam workflow)\"]\n    Arch[\"三层架构\"]\n    Proc[\"Procedures (编排器)\"]\n    Tools[\"Tools (软件技能)\"]\n    Knowledge[\"Knowledge (科学知识)\"]\n    Validate[\"统一验证阶梯\"]\n    Rule1[\"硬规则1：方法指纹匹配\"]\n    Rule2[\"硬规则2：结果冲突则停止\"]\n\n    AICCC --> Use1\n    AICCC --> Use2\n    AICCC --> Arch\n    Arch --> Proc\n    Arch --> Tools\n    Arch --> Knowledge\n    Use1 --> Validate\n    Use2 --> Validate\n    Validate --> Rule1\n    Validate --> Rule2"
+    },
+    {
+      "title": "同行评议驱动的 Review Response 工作流",
+      "code": "flowchart LR\n    S1[\"步骤1：提取原文方法指纹\"]\n    S2[\"步骤2：审稿意见分类与计算规划\"]\n    Approve1[\"用户批准 (规划)\"]\n    S3[\"步骤3：执行计算\"]\n    S4[\"步骤4：验证结果回答审稿质疑\"]\n    S5[\"步骤5：生成回复信和补充材料\"]\n    Approve2[\"用户批准 (生成)\"]\n    HumanCheck[\"关键科学决策人工把关\"]\n    Rule1[\"硬规则1：新计算必须匹配方法指纹\"]\n    Rule2[\"硬规则2：结果与论文结论冲突则停止\"]\n\n    S1 --> S2 --> Approve1 --> S3 --> S4 --> S5 --> Approve2 --> HumanCheck\n    HumanCheck --> Rule1\n    HumanCheck --> Rule2"
+    },
+    {
+      "title": "通用工具 comcam workflow 流程",
+      "code": "flowchart TD\n    Entry[\"入口：comcam workflow 生命周期控制器\"]\n    Goal[\"明确科学目标\"]\n    Build[\"搭建结构模型\"]\n    Method[\"选择计算方法\"]\n    InputCheck[\"生成输入并预检\"]\n    Submit[\"提交计算并监控解析\"]\n    Validate[\"文件正常终止 & 技术收敛\"]\n    Result[\"科学有效的结果\"]\n    Rule1[\"硬规则1：方法指纹保持一致\"]\n    Rule2[\"硬规则2：冲突结果停止并上报\"]\n\n    Entry --> Goal --> Build --> Method --> InputCheck --> Submit --> Validate --> Result\n    Result --> Rule1\n    Result --> Rule2"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T03:31:50+00:00"
+}

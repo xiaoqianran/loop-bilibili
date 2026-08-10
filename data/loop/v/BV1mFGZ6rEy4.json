@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1mFGZ6rEy4",
+  "title": "免费！给DeepSeek V4接入免费的视觉分析模型！在ClaudeCode中实现多模态！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1881,
+  "text": "大家好\n我是小红猪\n今天跟大家分享如何给lipstick v4接入啊\n视觉分析模型\n然后让他可以帮我们处理\n视觉和这个图像的信息啊\n这个deep sk v4呢\n其实它还是呃这个文本的处理模型\n它是没有办法识别图像的\n不是一个多动态的模型\n那我们在日常的使用过程中\n我们会发现我们经常需要啊\n把一些图像啊发给这个模型\n让他帮我们处理\n或者是啊给他作为一些作为这个图像的引导\n让他来理解我们的意图啊\n但其实这个deep sc v4它是没有办法实现的啊\n那我现在呢呃就是可以给大家提供一个呃\n免费的方法啊\n然后可以让它能够识别图像\n这样就方便很多啊\n今天用到的平台呢\n一个就是我们的DC c v4的这个官方的啊\n这个APIK\n还有就是这个呃阿里的model scope\n这个提供了免费的这个呃推理服务\n主要是就是这两个平台\n然后它的原理呢就是通过啊\n先拦截这个你发给这个DEPSK\n发给这个deep sick的图像拦截下来\n然后先让这个呃model s scope\n就是这个呃我们接入的这个第三方的这个\n视觉分析模型来先分析这个图像的信息\n然后再将这个图像信息呃\n一起注入到你的这个啊提示词里面\n然后再发给deep sick\n然后这样呢就可以实现啊这个图像分析的功能\n那我现在我现在是呃接入了这个\n我现在是用这个啊cc switch\n然后把这个可啊\n把这个这个BBCCV4接入到cloud code里面使用\n那我们现在可以先启动这个cloud\n然后可以看到我这个模型呢\n现在是用的西格维斯库\n然后我就随便截一张图像吧\n假如就截这个图像\n然后发给他说分析这张图像\n然后他现在就在处理了\n那我们现在可以看到他说他啊\n他是不支持这个图像分析的\n那现在呢\n我们就给他引入一个图像分析的模型啊\n我们打开model s code的首页\n然后这个地址呢我会放在简介区\n你去自己注册一下\n注册完成之后呢\n需要完成啊\n在阿里云完成实名认证\n他这个是有引导的\n完成认证之后呢\n你就可以来使用了\n然后使用的方法呢\n首先呢我们先找到啊\n我们想要的这个模型啊\n我们现在额选择几个啊\n推理这个API inference这个推理服务\n然后找到一个视觉多模态的\n这个世界多不太理解的模型\n那我们假如说我们现在就使用这个啊\n千万3点五啊\n35BA3B这个模型\n然后呢\n现在我们需要把我准备好的这段提示词\n发给这个啊\ndeep sick pro啊\nThis is pro\n让他来帮我们实现这个功能\n这个里面就已经哎说明了如何去啊\n让他帮我们配置这个呃第三方的视觉分析模型\n那这个文档简单看一下\n就是可以呃\n让这个deep sick kimi等纯文本的这个模型\n通过外部视觉模型呢间接理解图像啊\n下面呢就是实现的方法\n你不用管这么多\n你就直接把这个啊\n把这个项目的这个路径啊\n把这个文档的路径啊复制给这个deep sick\n然后\n因为我这里面其实他已经\n我已经默认选了几个千问\n可以看一下千问\n因为我已经默认把这个呃\n推理服务呢设置成这个API influence\n这个请求地址\n然后模型呢啊我也默认了给他啊\n设置成了这个千万3点五\nB3属BA3B这个模型\n然后你只需要提供你的APIK就可以了啊\n你只需要提供这个就可以\n所以呢你就到这个网站的首页\n然后点击左侧的这个访问控制\n然后你注册成功\n认证成功之后\n他会给你一个默认的访问令牌\n你就直接把这个令牌复制下来\n然后在这里先把这个文档的这个呃路径\n给到这个TIPSK\n然后再把这个K给到他啊\n这是我的K\n我的K你按照\n然后让他按照这个文档帮我实现视觉分析功能\n然后呢他就会按照文档这个处理\n大概需要2分钟\n3分钟的时间\n他就会帮你处理完成了\n你就稍微等一下\n好的\n现在我们已经看到他已经说\n他已经完成了这个啊这个任务了\n然后我就截一张图\n让他来帮我分析这张图像一样的\n就是发给他\n然后问他\n哒哒哒啦哒\n然后我们看到这个图像已经分析完成了\n然后这个结果呢也是正确的\n他这个就是一个呃这个Mac os的终端窗口\n然后什么这个VR and bridge设置与验证过程\n然后呢他这个呃除了可以直接粘贴图片之外呢\n也可以直接帮你\n就按照你的这个图片的路径\n就是你给他一个路径\n他去帮你啊读取这个路径\n然后识别这个路径里面的这个图像\n同时呢也支持粘贴多张图像\n假如我现在粘贴两张图像\n然后再粘贴一张图形\n一样发给他分析图像\n你看啊\n这个两次两张图像的分析结果都是正确的\n然后呢\n这个就是给这个DPC和V4\n接入一个免费的视觉分析模型的这个方法\n然后大家可以去尝试一下",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1mFGZ6rEy4",
+  "published_at": "1779712778",
+  "fetched_at": "2026-08-06T22:10:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 免费视觉分析接入图谱\n\n## 总览\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4<br/>文本模型\"]\n    MS[\"ModelScope<br/>视觉分析模型\"]\n    APIK[\"API Key\"]\n    Cloud[\"ClaudeCode / Cloud Code\"]\n    Image[\"用户图像\"]\n    Prompt[\"提示词<br/>（含图像信息）\"]\n    Resp[\"模型响应\"]\n\n    Image --> MS\n    MS --> Prompt\n    Prompt --> DSV4\n    DSV4 --> Resp\n    Cloud --> DSV4\n    Cloud --> MS\n    Cloud --> APIK\n```\n\n## 工作流\n```mermaid\nflowchart TD\n    Start[\"用户发送图像\"]\n    Intercept[\"拦截图像\"]\n    Analyze[\"ModelScope 分析图像\"]\n    Inject[\"将分析信息注入提示词\"]\n    Send[\"发送给 DeepSeek V4\"]\n    Output[\"获取模型响应\"]\n\n    Start --> Intercept --> Analyze --> Inject --> Send --> Output\n```\n\n## 接入配置步骤\n```mermaid\nflowchart TD\n    Register[\"在 ModelScope 注册\"]\n    Verify[\"完成阿里云实名认证\"]\n    GetToken[\"获取访问令牌 (APIK)\"]\n    ChooseModel[\"选择视觉多模态模型<br/>示例: 35BA3B\"]\n    SetInference[\"设置推理服务 API\"]\n    Config[\"在 Cloud Code 配置<br/>APIK、模型、推理服务\"]\n    Done[\"完成接入\"]\n\n    Register --> Verify --> GetToken --> ChooseModel --> SetInference --> Config --> Done\n```\n\n## 图像输入方式\n```mermaid\nflowchart TD\n    PasteImg[\"粘贴单张图片\"]\n    PathImg[\"提供图片路径\"]\n    MultiPaste[\"粘贴多张图片\"]\n    Process[\"模型读取并分析图像\"]\n    Result[\"返回分析结果\"]\n\n    PasteImg --> Process\n    PathImg --> Process\n    MultiPaste --> Process\n    Process --> Result\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    DSV4[\"DeepSeek V4<br/>文本模型\"]\n    MS[\"ModelScope<br/>视觉分析模型\"]\n    APIK[\"API Key\"]\n    Cloud[\"ClaudeCode / Cloud Code\"]\n    Image[\"用户图像\"]\n    Prompt[\"提示词<br/>（含图像信息）\"]\n    Resp[\"模型响应\"]\n\n    Image --> MS\n    MS --> Prompt\n    Prompt --> DSV4\n    DSV4 --> Resp\n    Cloud --> DSV4\n    Cloud --> MS\n    Cloud --> APIK"
+        },
+        {
+          "title": "工作流",
+          "code": "flowchart TD\n    Start[\"用户发送图像\"]\n    Intercept[\"拦截图像\"]\n    Analyze[\"ModelScope 分析图像\"]\n    Inject[\"将分析信息注入提示词\"]\n    Send[\"发送给 DeepSeek V4\"]\n    Output[\"获取模型响应\"]\n\n    Start --> Intercept --> Analyze --> Inject --> Send --> Output"
+        },
+        {
+          "title": "接入配置步骤",
+          "code": "flowchart TD\n    Register[\"在 ModelScope 注册\"]\n    Verify[\"完成阿里云实名认证\"]\n    GetToken[\"获取访问令牌 (APIK)\"]\n    ChooseModel[\"选择视觉多模态模型<br/>示例: 35BA3B\"]\n    SetInference[\"设置推理服务 API\"]\n    Config[\"在 Cloud Code 配置<br/>APIK、模型、推理服务\"]\n    Done[\"完成接入\"]\n\n    Register --> Verify --> GetToken --> ChooseModel --> SetInference --> Config --> Done"
+        },
+        {
+          "title": "图像输入方式",
+          "code": "flowchart TD\n    PasteImg[\"粘贴单张图片\"]\n    PathImg[\"提供图片路径\"]\n    MultiPaste[\"粘贴多张图片\"]\n    Process[\"模型读取并分析图像\"]\n    Result[\"返回分析结果\"]\n\n    PasteImg --> Process\n    PathImg --> Process\n    MultiPaste --> Process\n    Process --> Result"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T22:10:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 免费视觉分析接入图谱\n\n## 总览\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4<br/>文本模型\"]\n    MS[\"ModelScope<br/>视觉分析模型\"]\n    APIK[\"API Key\"]\n    Cloud[\"ClaudeCode / Cloud Code\"]\n    Image[\"用户图像\"]\n    Prompt[\"提示词<br/>（含图像信息）\"]\n    Resp[\"模型响应\"]\n\n    Image --> MS\n    MS --> Prompt\n    Prompt --> DSV4\n    DSV4 --> Resp\n    Cloud --> DSV4\n    Cloud --> MS\n    Cloud --> APIK\n```\n\n## 工作流\n```mermaid\nflowchart TD\n    Start[\"用户发送图像\"]\n    Intercept[\"拦截图像\"]\n    Analyze[\"ModelScope 分析图像\"]\n    Inject[\"将分析信息注入提示词\"]\n    Send[\"发送给 DeepSeek V4\"]\n    Output[\"获取模型响应\"]\n\n    Start --> Intercept --> Analyze --> Inject --> Send --> Output\n```\n\n## 接入配置步骤\n```mermaid\nflowchart TD\n    Register[\"在 ModelScope 注册\"]\n    Verify[\"完成阿里云实名认证\"]\n    GetToken[\"获取访问令牌 (APIK)\"]\n    ChooseModel[\"选择视觉多模态模型<br/>示例: 35BA3B\"]\n    SetInference[\"设置推理服务 API\"]\n    Config[\"在 Cloud Code 配置<br/>APIK、模型、推理服务\"]\n    Done[\"完成接入\"]\n\n    Register --> Verify --> GetToken --> ChooseModel --> SetInference --> Config --> Done\n```\n\n## 图像输入方式\n```mermaid\nflowchart TD\n    PasteImg[\"粘贴单张图片\"]\n    PathImg[\"提供图片路径\"]\n    MultiPaste[\"粘贴多张图片\"]\n    Process[\"模型读取并分析图像\"]\n    Result[\"返回分析结果\"]\n\n    PasteImg --> Process\n    PathImg --> Process\n    MultiPaste --> Process\n    Process --> Result\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    DSV4[\"DeepSeek V4<br/>文本模型\"]\n    MS[\"ModelScope<br/>视觉分析模型\"]\n    APIK[\"API Key\"]\n    Cloud[\"ClaudeCode / Cloud Code\"]\n    Image[\"用户图像\"]\n    Prompt[\"提示词<br/>（含图像信息）\"]\n    Resp[\"模型响应\"]\n\n    Image --> MS\n    MS --> Prompt\n    Prompt --> DSV4\n    DSV4 --> Resp\n    Cloud --> DSV4\n    Cloud --> MS\n    Cloud --> APIK"
+    },
+    {
+      "title": "工作流",
+      "code": "flowchart TD\n    Start[\"用户发送图像\"]\n    Intercept[\"拦截图像\"]\n    Analyze[\"ModelScope 分析图像\"]\n    Inject[\"将分析信息注入提示词\"]\n    Send[\"发送给 DeepSeek V4\"]\n    Output[\"获取模型响应\"]\n\n    Start --> Intercept --> Analyze --> Inject --> Send --> Output"
+    },
+    {
+      "title": "接入配置步骤",
+      "code": "flowchart TD\n    Register[\"在 ModelScope 注册\"]\n    Verify[\"完成阿里云实名认证\"]\n    GetToken[\"获取访问令牌 (APIK)\"]\n    ChooseModel[\"选择视觉多模态模型<br/>示例: 35BA3B\"]\n    SetInference[\"设置推理服务 API\"]\n    Config[\"在 Cloud Code 配置<br/>APIK、模型、推理服务\"]\n    Done[\"完成接入\"]\n\n    Register --> Verify --> GetToken --> ChooseModel --> SetInference --> Config --> Done"
+    },
+    {
+      "title": "图像输入方式",
+      "code": "flowchart TD\n    PasteImg[\"粘贴单张图片\"]\n    PathImg[\"提供图片路径\"]\n    MultiPaste[\"粘贴多张图片\"]\n    Process[\"模型读取并分析图像\"]\n    Result[\"返回分析结果\"]\n\n    PasteImg --> Process\n    PathImg --> Process\n    MultiPaste --> Process\n    Process --> Result"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:10:47+00:00"
+}

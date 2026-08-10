@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1jaTQ6ZE6y",
+  "title": "开源仓颉.Skill，你现在可以蒸馏任何视频！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1338,
+  "text": "兄弟们\n你现在可以把任何视频蒸馏成skills了\n我这两天拿吴恩达那门2026年的\n给所有人的AI入门课\n稍微浅浅的尝试了一下\n26个视频\n整整四个多小时\n让他从视频一路跑到skill\n差不多用了一个小时\n最后拿出来的是25个agent\n可以直接调用的skill\n这结果让我说实话属实\n有点超乎我的预期\n因为仓颉skill这个项目\n我也才今年4月份才开源\n最开始做它的时候\n想法其实也挺简单的\n我不是想做一个多大的系统\n就是被一个问题卡住了\nAI能不能真的拆书\n不是把一本书总结成几条金句\n而是把书里的方法步骤\n判断标准拆出来\n变成后面agent能用的东西\n所以第一版基本围绕拆书来做\n开源之后我也没怎么宣传\n就放在那里\n结果两个多月过去\n慢慢涨到了1.3k star长得不算特别快\n但对我来说已经够说明问题了\n尤其是艺术里\n不断有人问能不能支持视频\n支持播客\n还能不能处理课程这些问题\n看多了我才意识到\n大家要的可能不是一个普通的工具\n而是一个能把长内容\n变成方法论的全新生产力工具\n所以这次2.0我就把范围放开了\n书可以处理长视频课程\n播客访谈\n只要里面有方法论\n其实也可以\n是这里我想强调一个区别\n总结和蒸馏不是一回事儿\n总结是告诉你这个内容讲了什么\n蒸馏是把里面真正能复用的东西拆出来\n比如判断框架\n操作步骤\n注意事项\n还有一些适用边界等等\n所以这些东西拆出来之后\nagent后面才有可能在别的任务里继续调用\n这次的流程大概是这样\n你可以先输入视频链接\n然后下载视频\n提取音频转成文字\n再把文字交给仓颉\nskill做蒸馏\n最后生成skill\n我没有把视频处理直接塞进仓颉skill\n这个地方我纠结过\n但最后还是拆开了\n因为一旦把下载转写音频处理都放进去\n仓颉skill会越来越重\n但其实它最核心的能力还是文本整理\n所以视频这部分我单独做成了一个video doo\nN o r d r skill\n一个负责把视频变成文字\n另一个负责把文字变成skill\n这样反而清楚一点\n温达这门课是我拿来跑的\n第一个完整测试\n用LNGCAT2.0加cloud code\n完整跑下来\n大概一个小时\n出了25个skill\n第二个测试是YOUTUBE上四个讲路engineering的视频\n总时长80多分钟\n最后蒸馏出了八个skill\n跑完之后我没有马上停\n我又追问了几个问题\n比如loop engineering到底是什么\n它适不适合用来优化app\n到底能不能拿来做内容创作\n结果他给的回答还挺具体\n不是那种可以提升效率\n优化流程的套话\n他会告诉我哪些场景适合\n哪些地方容易误用\n应该怎么拆步骤\n这点让我有点意外\n我原以为蒸馏出来的skill\n最多就是方便以后查一下\n但追问几轮之后\n我发现他真的能继续参与判断\n这也是我这次测试最大的收获\n仓颉skill可能不只是一个AI拆书工具\n它更像是一个把长内容变成agent\n能力模块的工具书\n可以你买的课程可以只要长视频\n播客访谈等等\n这些里面有结构\n有方法\n有经验都可以试着蒸馏\nVideo doo\nAnd no other\nAsk you\n我也已经开源了\n感兴趣的话可以去仓库里看一下\n我是袋鼠\n第一个继续折腾AI生产力工具的人\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1jaTQ6ZE6y",
+  "published_at": "1783326187",
+  "fetched_at": "2026-08-08T00:07:25+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 开源仓颉.Skill 知识图谱\n\n## 总览\n<!-- [BV1jaTQ6ZE6y P1 01:34] -->\n```mermaid\nflowchart TD\n    V1[\"视频链接\"] --> V2[\"下载视频\"]\n    V2 --> V3[\"提取音频\"]\n    V3 --> V4[\"转写文字\"]\n    V4 --> V5[\"仓颉Skill（文本整理）\"]\n    V5 --> V6[\"Skill 蒸馏\"]\n    V6 --> V7[\"生成 Skill\"]\n    V7 --> V8[\"Agent 调用\"]\n    V8 --> V9[\"应用场景\\n- 课程\\n- 播客\\n- 长视频\"]\n```\n\n## 蒸馏流程\n<!-- [BV1jaTQ6ZE6y P1 01:34] -->\n<!-- [BV1jaTQ6ZE6y P1 01:40] -->\n```mermaid\nflowchart LR\n    A1[\"输入视频链接\"] --> A2[\"下载视频\"]\n    A2 --> A3[\"提取音频\"]\n    A3 --> A4[\"音频转文字\"]\n    A4 --> A5[\"交给仓颉Skill\"]\n    A5 --> A6[\"Skill 蒸馏\"]\n    A6 --> A7[\"生成可调用 Skill\"]\n    A7 --> A8[\"可选：继续提问\"]\n    A8 --> A9[\"获取判断框架、步骤等\"]\n```\n\n## Summary 与 Distillation 区别\n<!-- [BV1jaTQ6ZE6y P1 01:15] -->\n<!-- [BV1jaTQ6ZE6y P1 01:20] -->\n```mermaid\nflowchart TD\n    S1[\"总结 (Summary)\"] --> S2[\"告诉内容讲了什么\"]\n    D1[\"蒸馏 (Distillation)\"] --> D2[\"提取可复用要素\"]\n    D2 --> D3[\"判断框架\"]\n    D2 --> D4[\"操作步骤\"]\n    D2 --> D5[\"注意事项\"]\n    D2 --> D6[\"适用边界\"]\n    D3 --> D7[\"Agent 后续调用\"]\n    D4 --> D7\n    D5 --> D7\n    D6 --> D7\n```\n\n## 测试案例概览\n<!-- [BV1jaTQ6ZE6y P1 02:07] -->\n<!-- [BV1jaTQ6ZE6y P1 02:16] -->\n```mermaid\nflowchart TD\n    T1[\"案例 1：AI 入门课\"] --> T1a[\"时长 4 小时\"]\n    T1a --> T1b[\"耗时约 1 小时\"]\n    T1b --> T1c[\"产出 25 个 Skill\"]\n    T2[\"案例 2：YouTube 工程视频\"] --> T2a[\"总时长 80+ 分钟\"]\n    T2a --> T2b[\"产出 8 个 Skill\"]\n    T2b --> T2c[\"后续提问：\\n- Loop engineering 含义\\n- 适用场景\\n- 内容创作可行性\"]\n    T1c --> T3[\"Skill 可用于判断、拆解步骤\"]\n    T2c --> T3\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    V1[\"视频链接\"] --> V2[\"下载视频\"]\n    V2 --> V3[\"提取音频\"]\n    V3 --> V4[\"转写文字\"]\n    V4 --> V5[\"仓颉Skill（文本整理）\"]\n    V5 --> V6[\"Skill 蒸馏\"]\n    V6 --> V7[\"生成 Skill\"]\n    V7 --> V8[\"Agent 调用\"]\n    V8 --> V9[\"应用场景\\n- 课程\\n- 播客\\n- 长视频\"]"
+        },
+        {
+          "title": "蒸馏流程",
+          "code": "flowchart LR\n    A1[\"输入视频链接\"] --> A2[\"下载视频\"]\n    A2 --> A3[\"提取音频\"]\n    A3 --> A4[\"音频转文字\"]\n    A4 --> A5[\"交给仓颉Skill\"]\n    A5 --> A6[\"Skill 蒸馏\"]\n    A6 --> A7[\"生成可调用 Skill\"]\n    A7 --> A8[\"可选：继续提问\"]\n    A8 --> A9[\"获取判断框架、步骤等\"]"
+        },
+        {
+          "title": "Summary 与 Distillation 区别",
+          "code": "flowchart TD\n    S1[\"总结 (Summary)\"] --> S2[\"告诉内容讲了什么\"]\n    D1[\"蒸馏 (Distillation)\"] --> D2[\"提取可复用要素\"]\n    D2 --> D3[\"判断框架\"]\n    D2 --> D4[\"操作步骤\"]\n    D2 --> D5[\"注意事项\"]\n    D2 --> D6[\"适用边界\"]\n    D3 --> D7[\"Agent 后续调用\"]\n    D4 --> D7\n    D5 --> D7\n    D6 --> D7"
+        },
+        {
+          "title": "测试案例概览",
+          "code": "flowchart TD\n    T1[\"案例 1：AI 入门课\"] --> T1a[\"时长 4 小时\"]\n    T1a --> T1b[\"耗时约 1 小时\"]\n    T1b --> T1c[\"产出 25 个 Skill\"]\n    T2[\"案例 2：YouTube 工程视频\"] --> T2a[\"总时长 80+ 分钟\"]\n    T2a --> T2b[\"产出 8 个 Skill\"]\n    T2b --> T2c[\"后续提问：\\n- Loop engineering 含义\\n- 适用场景\\n- 内容创作可行性\"]\n    T1c --> T3[\"Skill 可用于判断、拆解步骤\"]\n    T2c --> T3"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T00:07:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 开源仓颉.Skill 知识图谱\n\n## 总览\n<!-- [BV1jaTQ6ZE6y P1 01:34] -->\n```mermaid\nflowchart TD\n    V1[\"视频链接\"] --> V2[\"下载视频\"]\n    V2 --> V3[\"提取音频\"]\n    V3 --> V4[\"转写文字\"]\n    V4 --> V5[\"仓颉Skill（文本整理）\"]\n    V5 --> V6[\"Skill 蒸馏\"]\n    V6 --> V7[\"生成 Skill\"]\n    V7 --> V8[\"Agent 调用\"]\n    V8 --> V9[\"应用场景\\n- 课程\\n- 播客\\n- 长视频\"]\n```\n\n## 蒸馏流程\n<!-- [BV1jaTQ6ZE6y P1 01:34] -->\n<!-- [BV1jaTQ6ZE6y P1 01:40] -->\n```mermaid\nflowchart LR\n    A1[\"输入视频链接\"] --> A2[\"下载视频\"]\n    A2 --> A3[\"提取音频\"]\n    A3 --> A4[\"音频转文字\"]\n    A4 --> A5[\"交给仓颉Skill\"]\n    A5 --> A6[\"Skill 蒸馏\"]\n    A6 --> A7[\"生成可调用 Skill\"]\n    A7 --> A8[\"可选：继续提问\"]\n    A8 --> A9[\"获取判断框架、步骤等\"]\n```\n\n## Summary 与 Distillation 区别\n<!-- [BV1jaTQ6ZE6y P1 01:15] -->\n<!-- [BV1jaTQ6ZE6y P1 01:20] -->\n```mermaid\nflowchart TD\n    S1[\"总结 (Summary)\"] --> S2[\"告诉内容讲了什么\"]\n    D1[\"蒸馏 (Distillation)\"] --> D2[\"提取可复用要素\"]\n    D2 --> D3[\"判断框架\"]\n    D2 --> D4[\"操作步骤\"]\n    D2 --> D5[\"注意事项\"]\n    D2 --> D6[\"适用边界\"]\n    D3 --> D7[\"Agent 后续调用\"]\n    D4 --> D7\n    D5 --> D7\n    D6 --> D7\n```\n\n## 测试案例概览\n<!-- [BV1jaTQ6ZE6y P1 02:07] -->\n<!-- [BV1jaTQ6ZE6y P1 02:16] -->\n```mermaid\nflowchart TD\n    T1[\"案例 1：AI 入门课\"] --> T1a[\"时长 4 小时\"]\n    T1a --> T1b[\"耗时约 1 小时\"]\n    T1b --> T1c[\"产出 25 个 Skill\"]\n    T2[\"案例 2：YouTube 工程视频\"] --> T2a[\"总时长 80+ 分钟\"]\n    T2a --> T2b[\"产出 8 个 Skill\"]\n    T2b --> T2c[\"后续提问：\\n- Loop engineering 含义\\n- 适用场景\\n- 内容创作可行性\"]\n    T1c --> T3[\"Skill 可用于判断、拆解步骤\"]\n    T2c --> T3\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    V1[\"视频链接\"] --> V2[\"下载视频\"]\n    V2 --> V3[\"提取音频\"]\n    V3 --> V4[\"转写文字\"]\n    V4 --> V5[\"仓颉Skill（文本整理）\"]\n    V5 --> V6[\"Skill 蒸馏\"]\n    V6 --> V7[\"生成 Skill\"]\n    V7 --> V8[\"Agent 调用\"]\n    V8 --> V9[\"应用场景\\n- 课程\\n- 播客\\n- 长视频\"]"
+    },
+    {
+      "title": "蒸馏流程",
+      "code": "flowchart LR\n    A1[\"输入视频链接\"] --> A2[\"下载视频\"]\n    A2 --> A3[\"提取音频\"]\n    A3 --> A4[\"音频转文字\"]\n    A4 --> A5[\"交给仓颉Skill\"]\n    A5 --> A6[\"Skill 蒸馏\"]\n    A6 --> A7[\"生成可调用 Skill\"]\n    A7 --> A8[\"可选：继续提问\"]\n    A8 --> A9[\"获取判断框架、步骤等\"]"
+    },
+    {
+      "title": "Summary 与 Distillation 区别",
+      "code": "flowchart TD\n    S1[\"总结 (Summary)\"] --> S2[\"告诉内容讲了什么\"]\n    D1[\"蒸馏 (Distillation)\"] --> D2[\"提取可复用要素\"]\n    D2 --> D3[\"判断框架\"]\n    D2 --> D4[\"操作步骤\"]\n    D2 --> D5[\"注意事项\"]\n    D2 --> D6[\"适用边界\"]\n    D3 --> D7[\"Agent 后续调用\"]\n    D4 --> D7\n    D5 --> D7\n    D6 --> D7"
+    },
+    {
+      "title": "测试案例概览",
+      "code": "flowchart TD\n    T1[\"案例 1：AI 入门课\"] --> T1a[\"时长 4 小时\"]\n    T1a --> T1b[\"耗时约 1 小时\"]\n    T1b --> T1c[\"产出 25 个 Skill\"]\n    T2[\"案例 2：YouTube 工程视频\"] --> T2a[\"总时长 80+ 分钟\"]\n    T2a --> T2b[\"产出 8 个 Skill\"]\n    T2b --> T2c[\"后续提问：\\n- Loop engineering 含义\\n- 适用场景\\n- 内容创作可行性\"]\n    T1c --> T3[\"Skill 可用于判断、拆解步骤\"]\n    T2c --> T3"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T00:07:48+00:00"
+}

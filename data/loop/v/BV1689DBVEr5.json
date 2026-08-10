@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1689DBVEr5",
+  "title": "【Godot整活】我能跑过自己训练的AI吗？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3703,
+  "text": "今天让我们来做一个赛车游戏\n不过这不是普通的赛车游戏\n而是一个带自动驾驶的赛车游戏\n具体是什么意思呢\n我会在得到这个游戏引擎里\n训练几个能够自己开车的AI\n然后让他们和人类玩家\n也就是我来一较高下\n之所以有这个想法\n是因为我在网上看到了\ngood dog RL l agents的这个插件\n它是发布在GITHUB上\n以PYTORCH为后端开发的一个插件\n可以在一个道引擎的2D或者\n3D环境中做强化学习\n官方作者还为这个插件写了一篇论文\n在他们的GITHUB展示中也可以看到\n得到l a agent是可以让游戏里的AI完成从跳方块\n过马路到开飞机等各种任务的\n那么强化学习放到赛车游戏里的效果如何呢\n今天我们就来一起看看吧\n要想在游戏引擎里训练\n强化学习AI\n前几步其实和普通的游戏开发是差不多的\n都得先搭建一个游戏场景\n我在blender里建了一个简单的赛车场\n建模\n里面有90度的弯道\n180度的弯道\n还有上下坡\n导入格道后\n我又在不同位置加了一些障碍物\n来给AI多一点的挑战\n接下来我从网上下载了一个汽车模型\n然后导入了引擎\nG道自带两个简单又好用的节点\n是vehicle body车身和vehicle wheel车轮\n按照一辆车四个轮子的结构把它们组装起来\n我们的玩家就可以在个道里开上车了\n我设计的这辆车是后驱车\n后面这两个轮子会提供动力\n前面两个轮子负责转向\n所以不管是对于玩家还是AI操纵上\n都会有那么一点挑战\n高速过弯控制不好的话\n就有可能撞墙\n有了车之后\n我们就要考虑\n怎么让自动驾驶的AI来感知这个世界\n我这里是用引擎里的recast射线检测玩\n每辆车从车顶发射出29道射线\n覆盖了从-135度到正135度\n总共270度的范围\n每条射线都能检测对应方向\n前100米以内有没有障碍物\n并且把障碍物的距离告诉车辆\n像图里\n绿色的射线就代表该方向没有检测到障碍物\n红色则代表该方向的障碍物已经很近了\n大家也能看到\n大部分的射线都是集中在车辆的正前方的\n这是因为赛车游戏里\n车辆的主要运动方向就是前方\n所以我增强了前方的检测能力\n除了视线检测\n我还想让AI知道应该往哪里开\n我在赛道上加了一共有29个检查点\n平均分散在这个赛道的不同位置\n游戏运行的时候\n我就会把下一个检查点相对应\nAI的坐标也输入给AI\n帮助他找到正确的行驶方向\nOK那么下一步就是让AI学会操控车辆了\n赛车AI的操作方式和人类玩家是完全一致的\n玩家通过键盘的WSD来控制加速减速和转向\n而每个赛车AI呢也有自己一套的虚拟WASD\n在纵轴输出正1~-1之间的一个数\n来控制加减速\n在横轴输出正1~-1之间的一个处\n来控制转向\n这个阶段如果把车交给AI来开\n我们会发现他还完全不会开\n车\n动作全都是随机的\n这完全在我们的预料之中\n因为我们还没训练他们\n今天我们会采用强化学习\n他的核心思路\n就像一个胡萝卜加大棒的奖惩机制\n在赛车场或者其他环境里\n我们先制定规则\nAI在执行动作后就可能获得奖励或者惩罚\n刚开始他可能什么都不会\n但是随着训练慢慢深入\n他就会发现哪些行为会获得奖励\n而哪些行为会获得惩罚\n进而摸索出一条能够获得尽可能多奖励的路径\n在强化学习里\n奖惩机制设计的好不好\n直接决定了我们的AI能不能学到好东西\n在这款赛车游戏里\n我的规则是这样设计的\n首先怎么让AI知道他自己正在正确完成比赛呢\n如果AI可以按照正确顺序\n每通过一个检查点\n我都会给他加一分\n反过来如果方向走反回到上一个检查点\n我就会给他扣一分\n同时这条规则还限制了\nAI不能在同一个检查点多次拿分\n不然就可能会出现AI原地前后挪动\n来刷分的这种作弊行为\n其次光过检查点是不够的\n作为一个赛车游戏\n我们自然是希望AI通过检查点的速度越快越好\n所以会计算AI通过相邻两个检查点之间的耗时\n这个耗时越短\n他获得的时间奖励也就越高\n不过如果只采用这种设计\nAI就只有在成功通过下一个检查点的时候\n才能获得奖励\n在训练的初始阶段\n由于AI的行为是几乎随机的\n他可能就需要很长的时间才能偶然到达检查点\n并且获得第一次奖励\n这就会导致训练的效率特别低\n为了能够给AI一个更加频繁\n更加及时的反馈\n我会以每秒计算赛车当前的运动方向\n与下一个检查点方向的点击\n并且基于这个值给予一个微单的奖励\n这样只要赛车在朝着下一个检查点运动\n即使他还没有真正的到达\n也可以持续获得少量的奖励\n最后还有乘法\n为了让AI学会躲避障碍物\n赛车每次撞墙或者撞到障碍物的时候都会扣分\n不过考虑到游戏和现实里可能都会有蹭墙\n加速过弯的这种操作\n所以碰撞惩罚我就设计的比较低\n每次撞到墙或者障碍物只会扣0.5分\n通过这套奖惩机制\n我们就能够鼓励赛车AI尽可能按正确的顺序\n以最快的速度通过一个又一个的检查点\n同时减少不必要的碰撞\n到这里场景搭建好了\n传感器配好了\n规则也也明确了\n这里终于开始训练我们的强化学习AI了\n得到error agents\n这个插件是支持多种强化学习库和算法的\n我这里用的是stable baseline three\n这个库加上PPO近端策略优化算法\n而到error ages\n其实官方就提供了一个stable baseline three的简单模板\n下载下来一看\n会发现它是一个很基础的双层神经网络\n要知道\n现在的很多模型都是几十层甚至上百层的\n那么这个两层的小网络能胜任\n我们的自动驾驶任务\n并最终和人类玩家对抗吗\n那让我们开始训练看看结果\n我在一个环境里同时训练了多个AI\n来加快训练速度\n刚训练了3分钟时\nAI都还处于一个懵懵懂懂的状态\n哪怕是走的最远的AI\n也只是刚过了几个检查点\n就撞到墙上\n走不动了\n更多的AI则是待在节点处\n只能以很慢的速度来摸索周围的环境\n训练了6分钟后\n大部分AI都已经可以\n顺利通过前面几个检查点了\n不过碰到障碍物的时候\nAI大都还没有学会避让\n所以会在这里耽误一下才能继续\n再到后半部分\n这个带上坡的180度弯\n也给大部分的AI带来了不小的挑战\n有好几个A都会在这里撞墙\n然后不知所措\n看来训练还是需要继续的\n当训练来到15分钟的时候\n虽然车身还是有点飘忽不定\n不过已经有不少A\n都可以通过前面这几个障碍物了\n带上坡的180度弯也没有难住他们\n到了这个阶段\n虽然行为上还是有很多小失误\n但是已经可以有多个AI\n是能够顺利完成一整圈比赛的\n这就代表我们训练框架和规则设定是有效的\n接下来就是继续训练更长的时间了\n改到error agents\n是支持多开窗口并行运行来加速训练的\n我这边一共开了四个窗口来同时跑\n训练效率的提升\n那也是很明显的\n同时我也加快了每个模拟环境里的时间速度\n来把效率尽量拉满\n而且如果只是训练A的话\n其实并不需要渲染画面\n让它在后台以无头模式运行\n就还能进一步提升一点速度\n这种模式下\n我们主要通过命令行的输出来观察训练过程\n可以看到单窗口一倍速的时候\nAI的学习速度大概是30帧每秒\n现在有了多窗口并行和时间加速之后\n就已经达到400帧每秒左右了\n这套设置下\n我花了一个多小时把AI训练到了100万步\n接下来就来看他现在的表现吧\n比赛一开始\n这几个AI都十分默契的选择了内弯\n这个最短的路线\nAI的行驶轨迹都相当的平滑\n面对前面这几个障碍物\n有的AI虽然不小心蹭到了墙\n但还是都通过了\n从刚才这个大转弯能看出来\n现在的AI在过弯的时候\n对于过弯路线的掌握已经是很熟练的了\n不过在下面这个90度弯\n我还是借助更好的车身姿态来超越了三个AI\n一举来到了第二名\n接下来我和这个排名最前的AI\n在很长一段时间里都陷入了焦灼的对抗\n一直来到比赛第三圈\n我们之间还没有分出胜负\n不过最终我还是借助比AI更好的车技\n比他们率先几秒到达了终点\n然后拿到了第一\n我耗时约2分14秒\n最快的AI耗时约2分19秒之间\n只相隔约五秒的差距\n在比赛的过程中\n其实我们人类玩家对战AI还是有点优势的\n我们的眼睛可以看到赛车前方\n比100米更远的障碍物\n并且在路线的选择和真人的控制上\n都会比AI更优一点\n不过人类偶尔还是会出现失误\nAI则很少会犯重大错误\n每当人类玩家出现失误的时候\n就是AI抓紧反超的机会\n项圈跑下来\n如果人类玩家没失误\n那么胜算还是比AI大的\n但是如果人类玩家出现失误的话\n那么结局就说不定了\nOK以上就是我们今天在一个dog引擎里面整的活\n我们搭了一个赛车游戏场景\n制定了强化学习的规则\n并且训练出了一些自动驾驶AI\n最后让他们和玩家来了一场比赛\nget到err agents确实是一个很好玩的库\n从他们的GITHUB展示的内容来看\n这个插件还可以做自动泊车\nFPS射击等更加进阶的人物\n如果你有在虚拟环境里做强化学习的需求\n或者单纯对gdro agents感兴趣\n也十分推荐大家去看一看\n说不定就能挖出一些不一样的玩法呢\n如果你喜欢这个视频的话\n别忘了给up主一键三连\n这也是对我创作内容最大的支持\n接下来我会继续更新一些\n基于格道引擎的游戏开发教学\n如果不想错过的话\n一定要记得关注哦\n那么让我们下个视频再见\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1689DBVEr5",
+  "published_at": "1777459815",
+  "fetched_at": "2026-08-07T08:26:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 整活：赛车 AI 强化学习知识图谱\n\n## 系统总体结构\n```mermaid\nflowchart TD\n    GE[\"Godot 引擎\"] --> SC[\"赛道场景\"]\n    GE --> CM[\"汽车模型\"]\n    CM --> VBody[\"Vehicle Body（车身）\"]\n    CM --> VWheel[\"Vehicle Wheel（车轮）\"]\n    VBody --> Car[\"可控车辆\"]\n    Car --> Sensors[\"射线感知系统\"]\n    Car --> CP[\"检查点系统\"]\n    Sensors --> AI[\"强化学习 AI 代理\"]\n    CP --> AI\n    AI --> RL[\"Stable‑Baselines3 PPO\"]\n    RL --> Train[\"训练循环\"]\n    Train --> RS[\"奖励系统\"]\n    Human[\"人类玩家\"] --> GE\n    Human --> Competition[\"比赛对抗\"]\n    AI --> Competition\n```\n\n## 感知与输入\n```mermaid\nflowchart TD\n    CarTop[\"车辆顶部\"] --> Raycast[\"发射 29 条射线\"]\n    Raycast --> Dir[\"方向 -135°~+135°\"]\n    Dir --> Dist[\"障碍物距离（≤100m）\"]\n    Dist --> ObsInfo[\"最近障碍信息\"]\n    CP[\"下一个检查点\"] --> CPPos[\"检查点坐标\"]\n    CarPos[\"车辆坐标\"] --> Vec[\"车辆→检查点向量\"]\n    ObsInfo --> AIInput[\"感知输入\"]\n    Vec --> AIInput\n    AIInput --> AI[\"AI 代理（虚拟 WASD）\"]\n```\n\n## 奖励机制设计\n```mermaid\nflowchart TD\n    Pass[\"通过检查点 +1\"] --> Total[\"累计奖励\"]\n    Rev[\"逆向返回上一个检查点 -1\"] --> Total\n    NoRepeat[\"同检查点不可重复得分\"] --> Total\n    Speed[\"相邻检查点耗时越短奖励越高\"] --> Total\n    Align[\"每秒方向对齐度微奖励\"] --> Total\n    Collide[\"碰撞或撞墙 -0.5\"] --> Total\n    Total --> RL[\"强化学习更新\"]\n```\n\n## 训练进度与结果\n```mermaid\nflowchart TD\n    Parallel[\"多窗口并行（4）\"] --> Accel[\"时间加速\"]\n    Accel --> FPS[\"帧率 30→400 FPS\"]\n    FPS --> Steps[\"累计 1,000,000 步\"]\n    Steps --> Early[\"早期：随机动作，仅少检查点\"]\n    Early --> Mid[\"中期：通过前几检查点，仍碰撞\"]\n    Mid --> Late[\"后期：完整一圈，少失误\"]\n    Late --> Eval[\"性能评估\"]\n    Eval --> Human[\"人类耗时 2分14秒\"]\n    Eval --> AIFast[\"最快 AI 耗时 2分19秒\"]\n    Eval --> Gap[\"差距约 5 秒\"]\n```",
+      "diagrams": [
+        {
+          "title": "系统总体结构",
+          "code": "flowchart TD\n    GE[\"Godot 引擎\"] --> SC[\"赛道场景\"]\n    GE --> CM[\"汽车模型\"]\n    CM --> VBody[\"Vehicle Body（车身）\"]\n    CM --> VWheel[\"Vehicle Wheel（车轮）\"]\n    VBody --> Car[\"可控车辆\"]\n    Car --> Sensors[\"射线感知系统\"]\n    Car --> CP[\"检查点系统\"]\n    Sensors --> AI[\"强化学习 AI 代理\"]\n    CP --> AI\n    AI --> RL[\"Stable‑Baselines3 PPO\"]\n    RL --> Train[\"训练循环\"]\n    Train --> RS[\"奖励系统\"]\n    Human[\"人类玩家\"] --> GE\n    Human --> Competition[\"比赛对抗\"]\n    AI --> Competition"
+        },
+        {
+          "title": "感知与输入",
+          "code": "flowchart TD\n    CarTop[\"车辆顶部\"] --> Raycast[\"发射 29 条射线\"]\n    Raycast --> Dir[\"方向 -135°~+135°\"]\n    Dir --> Dist[\"障碍物距离（≤100m）\"]\n    Dist --> ObsInfo[\"最近障碍信息\"]\n    CP[\"下一个检查点\"] --> CPPos[\"检查点坐标\"]\n    CarPos[\"车辆坐标\"] --> Vec[\"车辆→检查点向量\"]\n    ObsInfo --> AIInput[\"感知输入\"]\n    Vec --> AIInput\n    AIInput --> AI[\"AI 代理（虚拟 WASD）\"]"
+        },
+        {
+          "title": "奖励机制设计",
+          "code": "flowchart TD\n    Pass[\"通过检查点 +1\"] --> Total[\"累计奖励\"]\n    Rev[\"逆向返回上一个检查点 -1\"] --> Total\n    NoRepeat[\"同检查点不可重复得分\"] --> Total\n    Speed[\"相邻检查点耗时越短奖励越高\"] --> Total\n    Align[\"每秒方向对齐度微奖励\"] --> Total\n    Collide[\"碰撞或撞墙 -0.5\"] --> Total\n    Total --> RL[\"强化学习更新\"]"
+        },
+        {
+          "title": "训练进度与结果",
+          "code": "flowchart TD\n    Parallel[\"多窗口并行（4）\"] --> Accel[\"时间加速\"]\n    Accel --> FPS[\"帧率 30→400 FPS\"]\n    FPS --> Steps[\"累计 1,000,000 步\"]\n    Steps --> Early[\"早期：随机动作，仅少检查点\"]\n    Early --> Mid[\"中期：通过前几检查点，仍碰撞\"]\n    Mid --> Late[\"后期：完整一圈，少失误\"]\n    Late --> Eval[\"性能评估\"]\n    Eval --> Human[\"人类耗时 2分14秒\"]\n    Eval --> AIFast[\"最快 AI 耗时 2分19秒\"]\n    Eval --> Gap[\"差距约 5 秒\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T08:26:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 整活：赛车 AI 强化学习知识图谱\n\n## 系统总体结构\n```mermaid\nflowchart TD\n    GE[\"Godot 引擎\"] --> SC[\"赛道场景\"]\n    GE --> CM[\"汽车模型\"]\n    CM --> VBody[\"Vehicle Body（车身）\"]\n    CM --> VWheel[\"Vehicle Wheel（车轮）\"]\n    VBody --> Car[\"可控车辆\"]\n    Car --> Sensors[\"射线感知系统\"]\n    Car --> CP[\"检查点系统\"]\n    Sensors --> AI[\"强化学习 AI 代理\"]\n    CP --> AI\n    AI --> RL[\"Stable‑Baselines3 PPO\"]\n    RL --> Train[\"训练循环\"]\n    Train --> RS[\"奖励系统\"]\n    Human[\"人类玩家\"] --> GE\n    Human --> Competition[\"比赛对抗\"]\n    AI --> Competition\n```\n\n## 感知与输入\n```mermaid\nflowchart TD\n    CarTop[\"车辆顶部\"] --> Raycast[\"发射 29 条射线\"]\n    Raycast --> Dir[\"方向 -135°~+135°\"]\n    Dir --> Dist[\"障碍物距离（≤100m）\"]\n    Dist --> ObsInfo[\"最近障碍信息\"]\n    CP[\"下一个检查点\"] --> CPPos[\"检查点坐标\"]\n    CarPos[\"车辆坐标\"] --> Vec[\"车辆→检查点向量\"]\n    ObsInfo --> AIInput[\"感知输入\"]\n    Vec --> AIInput\n    AIInput --> AI[\"AI 代理（虚拟 WASD）\"]\n```\n\n## 奖励机制设计\n```mermaid\nflowchart TD\n    Pass[\"通过检查点 +1\"] --> Total[\"累计奖励\"]\n    Rev[\"逆向返回上一个检查点 -1\"] --> Total\n    NoRepeat[\"同检查点不可重复得分\"] --> Total\n    Speed[\"相邻检查点耗时越短奖励越高\"] --> Total\n    Align[\"每秒方向对齐度微奖励\"] --> Total\n    Collide[\"碰撞或撞墙 -0.5\"] --> Total\n    Total --> RL[\"强化学习更新\"]\n```\n\n## 训练进度与结果\n```mermaid\nflowchart TD\n    Parallel[\"多窗口并行（4）\"] --> Accel[\"时间加速\"]\n    Accel --> FPS[\"帧率 30→400 FPS\"]\n    FPS --> Steps[\"累计 1,000,000 步\"]\n    Steps --> Early[\"早期：随机动作，仅少检查点\"]\n    Early --> Mid[\"中期：通过前几检查点，仍碰撞\"]\n    Mid --> Late[\"后期：完整一圈，少失误\"]\n    Late --> Eval[\"性能评估\"]\n    Eval --> Human[\"人类耗时 2分14秒\"]\n    Eval --> AIFast[\"最快 AI 耗时 2分19秒\"]\n    Eval --> Gap[\"差距约 5 秒\"]\n```",
+  "diagrams": [
+    {
+      "title": "系统总体结构",
+      "code": "flowchart TD\n    GE[\"Godot 引擎\"] --> SC[\"赛道场景\"]\n    GE --> CM[\"汽车模型\"]\n    CM --> VBody[\"Vehicle Body（车身）\"]\n    CM --> VWheel[\"Vehicle Wheel（车轮）\"]\n    VBody --> Car[\"可控车辆\"]\n    Car --> Sensors[\"射线感知系统\"]\n    Car --> CP[\"检查点系统\"]\n    Sensors --> AI[\"强化学习 AI 代理\"]\n    CP --> AI\n    AI --> RL[\"Stable‑Baselines3 PPO\"]\n    RL --> Train[\"训练循环\"]\n    Train --> RS[\"奖励系统\"]\n    Human[\"人类玩家\"] --> GE\n    Human --> Competition[\"比赛对抗\"]\n    AI --> Competition"
+    },
+    {
+      "title": "感知与输入",
+      "code": "flowchart TD\n    CarTop[\"车辆顶部\"] --> Raycast[\"发射 29 条射线\"]\n    Raycast --> Dir[\"方向 -135°~+135°\"]\n    Dir --> Dist[\"障碍物距离（≤100m）\"]\n    Dist --> ObsInfo[\"最近障碍信息\"]\n    CP[\"下一个检查点\"] --> CPPos[\"检查点坐标\"]\n    CarPos[\"车辆坐标\"] --> Vec[\"车辆→检查点向量\"]\n    ObsInfo --> AIInput[\"感知输入\"]\n    Vec --> AIInput\n    AIInput --> AI[\"AI 代理（虚拟 WASD）\"]"
+    },
+    {
+      "title": "奖励机制设计",
+      "code": "flowchart TD\n    Pass[\"通过检查点 +1\"] --> Total[\"累计奖励\"]\n    Rev[\"逆向返回上一个检查点 -1\"] --> Total\n    NoRepeat[\"同检查点不可重复得分\"] --> Total\n    Speed[\"相邻检查点耗时越短奖励越高\"] --> Total\n    Align[\"每秒方向对齐度微奖励\"] --> Total\n    Collide[\"碰撞或撞墙 -0.5\"] --> Total\n    Total --> RL[\"强化学习更新\"]"
+    },
+    {
+      "title": "训练进度与结果",
+      "code": "flowchart TD\n    Parallel[\"多窗口并行（4）\"] --> Accel[\"时间加速\"]\n    Accel --> FPS[\"帧率 30→400 FPS\"]\n    FPS --> Steps[\"累计 1,000,000 步\"]\n    Steps --> Early[\"早期：随机动作，仅少检查点\"]\n    Early --> Mid[\"中期：通过前几检查点，仍碰撞\"]\n    Mid --> Late[\"后期：完整一圈，少失误\"]\n    Late --> Eval[\"性能评估\"]\n    Eval --> Human[\"人类耗时 2分14秒\"]\n    Eval --> AIFast[\"最快 AI 耗时 2分19秒\"]\n    Eval --> Gap[\"差距约 5 秒\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:26:47+00:00"
+}

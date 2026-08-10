@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1tUNj6GEhz",
+  "title": "9.Godot 角色碰撞、检测区、预测投射设置全讲解",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3431,
+  "text": "文件保存完毕后\n我来到这里\n点击quick load\n现在就能调用这份存档\n这个flash按钮预设自带空白模板\n适配我项目里全部节点之后\n只要在任意使用该按钮的位置\n点击quick load\n这个模板就会自动弹出教程版本\n我没有做多余美化\n但如果你购买完整版游戏\n点击开机按键会触发专属特效\n不像当前教程\n只是单纯点击按钮\n没有任何视觉反馈\n目前这个按钮没有任何交互效果\n全部复制完成后\n我打开组件制作配套动画\n僧侣角色的动画可以正常播放\n效果很不错\n先关闭窗口\n我快速制作了多款僧侣角色预制体\n僧侣角色分为蓝色\n紫色\n红色和黄色四种\n我们快速关闭当前全部窗口\n先关这个面板\n再关闭另一个面板\n去我的pm场景那边把它打开\n通知界面内容篇幅较长\n我们先处理蓝色僧侣从monk button复制组件\n先在monk black button复制组件\n删除原有monk button\n再把复制内容粘贴到此处\n这份组件已经提前修改完毕\n游戏运行时不会显示多余的选中矩形\n把组件放到规范层级\n我习惯把工程资源整理的条理清晰\n删除旧版按钮粘贴我们复制好的新版按钮\n选中原有按钮并删除\n再粘贴新版按钮组件\n将按钮移动到界面居中位置\n按下保存\n关闭全部编辑面板\n拖拽红色僧侣组件\n点击组件后会弹出对应窗口\n这是两个碰撞体触发的碰撞事件\n这个bug稍后修复\n先关闭窗口\n启动游戏测试\n功能没有正常生效\n我们打开面板排查问题\n黄色僧侣的弹窗无法正常触发\n问题出在信号绑定上\n我删除了旧按钮\n替换成从僧侣预制复制的新按钮\n但忘记确认新按钮的信号是否完成绑定\n这个疏漏很低级\n蓝色僧侣按钮也存在同样问题\n选中这个按钮\n点击界面上的press\n切换回2D视图\n将紫色僧侣角色放置到画布内\n然后启动游戏\n点击按钮后就能操控僧侣在画布内自由移动角色\n调试完毕\n关闭当前编辑窗口\n切回pm场景\n找到detector area entrance\n检测区域\n确认碰撞标识名称拼写无误\n关闭面板\n调整最大生命值参数\n我将生命值上限调整至50\n现在启动游戏测试\n移动一下角色\n现在按空格键看看\n玩家没有显示UI\n肯定是UI函数出了问题\n来看看怎么回事\n发生了什么怎么回事\n我们去PAUL那边把explore复制过来看看\n确认拼写完全正确\n注意看这个opening\n核对花括号结构\n全部代码书写格式无差错\nDetector area\n检测区域内100号碰撞体的碰撞标识配置正常\n将检测区域拖拽到目标位置\n略微放大尺寸\n这个组件还有一处参数需要调整\n暂时先锁定该组件\n后续再调整\n重新启动游戏测试\n故障依旧存在\n暂时无法定位故障\n先关闭编辑窗口\n关闭面板\n延后修复bug\n删除这两个多余组件\n关闭所有弹窗\n新建文件夹\n将文件夹命名为NE\n点击ADD按钮添加新节点\n我们创建一个character bod2D\n把character body2D重命名为night\n添加animated sprite2D作为子节点\n继续添加animated sprite2D与CATIONSHIP2D之后再新增子节点\n该子节点命名为area2D\n挂载collision onship2D\n按下CTRLD复制节点为NT\n新增子节点progress bar\n按下快捷键复制该进度条\n新增marker2D标记节点\n继续添加按钮字节点\n这个按钮用于启用或禁用角色\n在新增label文字节点\n继续新增子节点camera2D\n给night添加navigation agent2D寻路节点\n在新增SHAPCAST2D形状投射节点\n给night新增普通节点重命名为sound effects\n在sound effects下创建audio stream player\n音频节点复制生成五个副本\n将shape cast2D重命名为predict cast\n选中第一个predict cast\n碰撞形状设置为圆形\n碰撞检测层级\n勾选bodies和areas\n原本想调整检测规则\n暂时搁置\n按下CTRLS保存至net场景\n找到label文字节点\n第二个progress bar重命名为shield bar\n原版进度条保留原名\n第二个area2D区域节点命名为hit box\n伤害和第一个area2D命名为detector zone\n检测区域首个音频节点命名为click audio\n复制节点\n生成dev audio\n现在我们拥有sword和shelf两组音频资源\n参数设置完成后\n按G键移动组件\nanimated sprite2D与CATIONSHIP2D按规范命名\n先处理animated sprite2D\n新建spread frames动画真资源\n在spread frames内创建idol待机动画\n开启循环与自动播放\n导入warrior角色素材\n选用idol待机动画\n点击auto slice自动切图\n全选图片\n添加动画帧角色就拥有待机动画了\n接下来我们调整CATIONSHIP2D碰撞形状\n将collision onship2D的显示颜色调整为深色\n确认按下Q键切换编辑模式\n碰撞形状保持小型圆形\n仅保留小型圆形detector zone\n检测区域设置为绿色显示\n调整predict test\n投射组件先隐藏\n避免遮挡视图\n调整尺寸后\n关闭网格\n显示隐藏检测区域的碰撞轮廓\nhead box伤害和设置为红色\n碰撞形状选用胶囊体\n轮廓调整完毕\n再略微缩小尺寸\n全部调整完成后\n沿用pm场景的制作方法\n创建selector button\n你们已经知道怎么做了\n基于描边与内边框规则调整样式\n描边outline数值设置为十文字\n字体大小调整为16\n效果可以直观看到\n缩小画布视图\n将按钮移动至界面顶部\n到monk那边\n打开monk black\n切换至僧侣场景\n打开monk black预制文件\n复制button select indicator与progress bar3个组件\n选中这三个组件\n复制切换到net场景\n完成粘贴\n删除场景内原有同类组件\n无需从零制作\n粘贴后挪动到目标位置\n完成后解锁组件\n开始自定义调整\n选中布局网格移动至界面顶部啊\n先锁定组件\n防止误触移动至分割线居中位置\n略微向下偏移\n定位到该坐标后\n锁定组件按钮\n组件同步锁定\n当前布局效果合格\n调整护盾进度条\nshield bar隐藏百分比文字\n自定义进度条颜色\nshield bar使用高亮度绿色\n该颜色应用到进度条\nstyle box flat样式\n背景设置为半透明黑色\nalpha透明度数值调整为十\n调整边框样式是制作游戏过程里很有乐趣的一部\n相比写代码\n我更喜欢界面设计\n代码虽有趣\n但报错不生效时会很麻烦\n而界面设计可以实时预览修改后的效果嗯\n不用运行代码\n等待测试反馈\n微调位置向上挪动\n整体效果没有问题\n填充fill区域\n新建style box flat\n选用浅绿配色\n效果还差一点\n选中shield bar\n将填充数值提升至50%\n继续美化样式\n选中边框\nborder全部边框alpha透明度设为零\n大家可以直观看到效果沿用之前的样式调整方案\n左上角与右上角圆角半径数值设置为五\n这个圆角样式视觉效果很不错\n打开transform变换面板\n核对参数数值五的效果适配当前界面\n将shield bar的圆角样式同步应用到普通progress bar\n打开corner radius\n圆角半径设置栏\n右上角圆角设为零\n右下角圆角设为五\n调整后的效果十分协调\n进度条背景图层同步套用这套圆角参数\n整体界面观感会更精致\n无需担心成品质量\n完整版游戏美术会大幅升级\n当前只是简易像素演示版本\n我个人不太喜欢这种简易像素风格\n关闭视图\n网格样式全部调整完毕后\n开始配置摄像机\n切换僧侣预制场景\n复制摄像机节点\n给night摄像机套用相同预设参数调整\npredict cast投射组件\n最小检测距离15\n最大检测距离40\n勾选前五组碰撞分层\n取消area2D区域的碰撞检测\n关闭区域检测\n仅保留实体碰撞体\nbodies检测\n关闭僧侣预制\n将night角色加入block building player warrior3个分组\n后续不需要warrior分组\n可以取消勾选\n全部配置完成后\n复制场景\n我们开始制作角色动画\n为角色新增多组动画\n将warrior动画的参数数值设置为十",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1tUNj6GEhz",
+  "published_at": "1783651253",
+  "fetched_at": "2026-08-09T01:28:50+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 角色碰撞、检测区、预测投射设置全讲解\n\n## 总览：角色节点结构与关键组件\n```mermaid\nflowchart TD\n    N1[\"night（CharacterBody2D）\"]\n    N2[\"AnimatedSprite2D\"]\n    N3[\"CollisionShape2D\"]\n    N4[\"Area2D（detector zone）\"]\n    N5[\"PredictCast（ShapeCast2D）\"]\n    N6[\"NavigationAgent2D\"]\n    N7[\"AudioStreamPlayer（click audio）\"]\n    N8[\"ProgressBar（shield bar）\"]\n    N9[\"Camera2D\"]\n    N10[\"Button（UI 交互）\"]\n    N11[\"Label（文字）\"]\n    N12[\"StyleBoxFlat（UI 样式）\"]\n    N13[\"CollisionLayer 设置\"]\n    N14[\"Signal 绑定\"]\n    N15[\"Test Run\"]\n\n    N1 --> N2\n    N1 --> N3\n    N1 --> N4\n    N1 --> N5\n    N1 --> N6\n    N1 --> N7\n    N1 --> N8\n    N1 --> N9\n    N10 --> N11\n    N10 --> N12\n    N12 --> N8\n    N3 --> N13\n    N10 --> N14\n    N14 --> N15\n```\n\n## 信号绑定排查与修复流程\n```mermaid\nflowchart TD\n    S1[\"删除旧按钮\"]\n    S2[\"粘贴新版按钮（从僧侣预制复制）\"]\n    S3[\"检查按钮的 Signal 绑定\"]\n    S4[\"发现未绑定\"]\n    S5[\"手动绑定对应 Signal（pressed）\"]\n    S6[\"保存并关闭编辑面板\"]\n    S7[\"启动游戏测试\"]\n    S8[\"功能正常 → 完成\"]\n    S9[\"仍未生效 → 重新检查信号路径\"]\n\n    S1 --> S2\n    S2 --> S3\n    S3 -->|未绑定| S4\n    S4 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 -->|正常| S8\n    S7 -->|异常| S9\n```\n\n## UI 样式设计与进度条定制流程\n```mermaid\nflowchart TD\n    U1[\"创建 StyleBoxFlat\"]\n    U2[\"设置 Outline（数值 10）\"]\n    U3[\"设置字体大小（16）\"]\n    U4[\"设置背景颜色（半透明黑）\"]\n    U5[\"调整 Alpha 透明度（10）\"]\n    U6[\"设置圆角半径（左上/右上 5，右下 5，左下 0）\"]\n    U7[\"将 StyleBoxFlat 应用于 Shield Bar\"]\n    U8[\"隐藏 Shield Bar 百分比文字\"]\n    U9[\"自定义进度条颜色（高亮绿色）\"]\n    U10[\"同步圆角样式至普通 ProgressBar\"]\n    U11[\"最终视觉检查\"]\n\n    U1 --> U2\n    U2 --> U3\n    U3 --> U4\n    U4 --> U5\n    U5 --> U6\n    U6 --> U7\n    U7 --> U8\n    U8 --> U9\n    U9 --> U10\n    U10 --> U11\n```",
+      "diagrams": [
+        {
+          "title": "总览：角色节点结构与关键组件",
+          "code": "flowchart TD\n    N1[\"night（CharacterBody2D）\"]\n    N2[\"AnimatedSprite2D\"]\n    N3[\"CollisionShape2D\"]\n    N4[\"Area2D（detector zone）\"]\n    N5[\"PredictCast（ShapeCast2D）\"]\n    N6[\"NavigationAgent2D\"]\n    N7[\"AudioStreamPlayer（click audio）\"]\n    N8[\"ProgressBar（shield bar）\"]\n    N9[\"Camera2D\"]\n    N10[\"Button（UI 交互）\"]\n    N11[\"Label（文字）\"]\n    N12[\"StyleBoxFlat（UI 样式）\"]\n    N13[\"CollisionLayer 设置\"]\n    N14[\"Signal 绑定\"]\n    N15[\"Test Run\"]\n\n    N1 --> N2\n    N1 --> N3\n    N1 --> N4\n    N1 --> N5\n    N1 --> N6\n    N1 --> N7\n    N1 --> N8\n    N1 --> N9\n    N10 --> N11\n    N10 --> N12\n    N12 --> N8\n    N3 --> N13\n    N10 --> N14\n    N14 --> N15"
+        },
+        {
+          "title": "信号绑定排查与修复流程",
+          "code": "flowchart TD\n    S1[\"删除旧按钮\"]\n    S2[\"粘贴新版按钮（从僧侣预制复制）\"]\n    S3[\"检查按钮的 Signal 绑定\"]\n    S4[\"发现未绑定\"]\n    S5[\"手动绑定对应 Signal（pressed）\"]\n    S6[\"保存并关闭编辑面板\"]\n    S7[\"启动游戏测试\"]\n    S8[\"功能正常 → 完成\"]\n    S9[\"仍未生效 → 重新检查信号路径\"]\n\n    S1 --> S2\n    S2 --> S3\n    S3 -->|未绑定| S4\n    S4 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 -->|正常| S8\n    S7 -->|异常| S9"
+        },
+        {
+          "title": "UI 样式设计与进度条定制流程",
+          "code": "flowchart TD\n    U1[\"创建 StyleBoxFlat\"]\n    U2[\"设置 Outline（数值 10）\"]\n    U3[\"设置字体大小（16）\"]\n    U4[\"设置背景颜色（半透明黑）\"]\n    U5[\"调整 Alpha 透明度（10）\"]\n    U6[\"设置圆角半径（左上/右上 5，右下 5，左下 0）\"]\n    U7[\"将 StyleBoxFlat 应用于 Shield Bar\"]\n    U8[\"隐藏 Shield Bar 百分比文字\"]\n    U9[\"自定义进度条颜色（高亮绿色）\"]\n    U10[\"同步圆角样式至普通 ProgressBar\"]\n    U11[\"最终视觉检查\"]\n\n    U1 --> U2\n    U2 --> U3\n    U3 --> U4\n    U4 --> U5\n    U5 --> U6\n    U6 --> U7\n    U7 --> U8\n    U8 --> U9\n    U9 --> U10\n    U10 --> U11"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T01:29:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 角色碰撞、检测区、预测投射设置全讲解\n\n## 总览：角色节点结构与关键组件\n```mermaid\nflowchart TD\n    N1[\"night（CharacterBody2D）\"]\n    N2[\"AnimatedSprite2D\"]\n    N3[\"CollisionShape2D\"]\n    N4[\"Area2D（detector zone）\"]\n    N5[\"PredictCast（ShapeCast2D）\"]\n    N6[\"NavigationAgent2D\"]\n    N7[\"AudioStreamPlayer（click audio）\"]\n    N8[\"ProgressBar（shield bar）\"]\n    N9[\"Camera2D\"]\n    N10[\"Button（UI 交互）\"]\n    N11[\"Label（文字）\"]\n    N12[\"StyleBoxFlat（UI 样式）\"]\n    N13[\"CollisionLayer 设置\"]\n    N14[\"Signal 绑定\"]\n    N15[\"Test Run\"]\n\n    N1 --> N2\n    N1 --> N3\n    N1 --> N4\n    N1 --> N5\n    N1 --> N6\n    N1 --> N7\n    N1 --> N8\n    N1 --> N9\n    N10 --> N11\n    N10 --> N12\n    N12 --> N8\n    N3 --> N13\n    N10 --> N14\n    N14 --> N15\n```\n\n## 信号绑定排查与修复流程\n```mermaid\nflowchart TD\n    S1[\"删除旧按钮\"]\n    S2[\"粘贴新版按钮（从僧侣预制复制）\"]\n    S3[\"检查按钮的 Signal 绑定\"]\n    S4[\"发现未绑定\"]\n    S5[\"手动绑定对应 Signal（pressed）\"]\n    S6[\"保存并关闭编辑面板\"]\n    S7[\"启动游戏测试\"]\n    S8[\"功能正常 → 完成\"]\n    S9[\"仍未生效 → 重新检查信号路径\"]\n\n    S1 --> S2\n    S2 --> S3\n    S3 -->|未绑定| S4\n    S4 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 -->|正常| S8\n    S7 -->|异常| S9\n```\n\n## UI 样式设计与进度条定制流程\n```mermaid\nflowchart TD\n    U1[\"创建 StyleBoxFlat\"]\n    U2[\"设置 Outline（数值 10）\"]\n    U3[\"设置字体大小（16）\"]\n    U4[\"设置背景颜色（半透明黑）\"]\n    U5[\"调整 Alpha 透明度（10）\"]\n    U6[\"设置圆角半径（左上/右上 5，右下 5，左下 0）\"]\n    U7[\"将 StyleBoxFlat 应用于 Shield Bar\"]\n    U8[\"隐藏 Shield Bar 百分比文字\"]\n    U9[\"自定义进度条颜色（高亮绿色）\"]\n    U10[\"同步圆角样式至普通 ProgressBar\"]\n    U11[\"最终视觉检查\"]\n\n    U1 --> U2\n    U2 --> U3\n    U3 --> U4\n    U4 --> U5\n    U5 --> U6\n    U6 --> U7\n    U7 --> U8\n    U8 --> U9\n    U9 --> U10\n    U10 --> U11\n```",
+  "diagrams": [
+    {
+      "title": "总览：角色节点结构与关键组件",
+      "code": "flowchart TD\n    N1[\"night（CharacterBody2D）\"]\n    N2[\"AnimatedSprite2D\"]\n    N3[\"CollisionShape2D\"]\n    N4[\"Area2D（detector zone）\"]\n    N5[\"PredictCast（ShapeCast2D）\"]\n    N6[\"NavigationAgent2D\"]\n    N7[\"AudioStreamPlayer（click audio）\"]\n    N8[\"ProgressBar（shield bar）\"]\n    N9[\"Camera2D\"]\n    N10[\"Button（UI 交互）\"]\n    N11[\"Label（文字）\"]\n    N12[\"StyleBoxFlat（UI 样式）\"]\n    N13[\"CollisionLayer 设置\"]\n    N14[\"Signal 绑定\"]\n    N15[\"Test Run\"]\n\n    N1 --> N2\n    N1 --> N3\n    N1 --> N4\n    N1 --> N5\n    N1 --> N6\n    N1 --> N7\n    N1 --> N8\n    N1 --> N9\n    N10 --> N11\n    N10 --> N12\n    N12 --> N8\n    N3 --> N13\n    N10 --> N14\n    N14 --> N15"
+    },
+    {
+      "title": "信号绑定排查与修复流程",
+      "code": "flowchart TD\n    S1[\"删除旧按钮\"]\n    S2[\"粘贴新版按钮（从僧侣预制复制）\"]\n    S3[\"检查按钮的 Signal 绑定\"]\n    S4[\"发现未绑定\"]\n    S5[\"手动绑定对应 Signal（pressed）\"]\n    S6[\"保存并关闭编辑面板\"]\n    S7[\"启动游戏测试\"]\n    S8[\"功能正常 → 完成\"]\n    S9[\"仍未生效 → 重新检查信号路径\"]\n\n    S1 --> S2\n    S2 --> S3\n    S3 -->|未绑定| S4\n    S4 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 -->|正常| S8\n    S7 -->|异常| S9"
+    },
+    {
+      "title": "UI 样式设计与进度条定制流程",
+      "code": "flowchart TD\n    U1[\"创建 StyleBoxFlat\"]\n    U2[\"设置 Outline（数值 10）\"]\n    U3[\"设置字体大小（16）\"]\n    U4[\"设置背景颜色（半透明黑）\"]\n    U5[\"调整 Alpha 透明度（10）\"]\n    U6[\"设置圆角半径（左上/右上 5，右下 5，左下 0）\"]\n    U7[\"将 StyleBoxFlat 应用于 Shield Bar\"]\n    U8[\"隐藏 Shield Bar 百分比文字\"]\n    U9[\"自定义进度条颜色（高亮绿色）\"]\n    U10[\"同步圆角样式至普通 ProgressBar\"]\n    U11[\"最终视觉检查\"]\n\n    U1 --> U2\n    U2 --> U3\n    U3 --> U4\n    U4 --> U5\n    U5 --> U6\n    U6 --> U7\n    U7 --> U8\n    U8 --> U9\n    U9 --> U10\n    U10 --> U11"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T01:29:03+00:00"
+}

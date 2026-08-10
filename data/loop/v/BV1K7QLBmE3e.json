@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1K7QLBmE3e",
+  "title": "Godot 4.7大更新来了！可视化着色器变模块，杀戮尖塔工作室升级赞助 #Godot #Godot引擎 #游戏开发 #独立游戏 #可视化着色器 #渲染更新",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1698,
+  "text": "在本周的信号中\n一个新的开发者版本发布\n视觉着色器作为模块\n新企业白金赞助商\n当然还有本周的创作者 spotlight 游戏和技巧\n欢迎来到每周新闻相关的视频节目\n我正在煮沸\n这里稍微有点冷了\n双脚冻了四点\n七点越来越近了\n这次四点版本的四七版带来了重大渲染更新\n我们现在支持最近邻缩放\n使3D缩放更加清晰\n没有任何性能损失\n我们终于为控件节点设置了自定义最大尺寸\n这是创建带有发光效果UI的质量提升功能\n现在3D节点有更好的拖放反馈\n更明确显示文件存放位置\n在尝试拖放时\n将帮助许多项目开发者\n以及使用Godot的用户\n还有更多UI新闻\n但更多是编辑器相关\n现在数组属性的空间利用更高效\n这几乎是必须的\n当然一如既往\n还有很多新增和修复功能\n作为经常使用D扩展的开发者\n让我特别关注这个新功能\n可在项目设置窗口内查看扩展\n在进入创作者 spotlight 之前\n我想提到这个视频完全由Godot制作的视频编辑器完成\n查看\nGoan\n尝试添加一些视频并加入Discord服务器\n如果你想保持更新\n并与使用Gozen编辑视频的用户交流\n请通过下方描述中的链接查看\n对于创作者 spotlight\n我为大家带来创意死亡小狗\n内容深入探讨游戏机制和功能\n你可以轻松学习并应用到自己的游戏和项目中\n如果你寻找清晰且剪辑精良的视频教程\n请访问他的频道并通过描述中的链接观看视频\n对于新观众\n我喜欢好的LSB\n而Godot语言服务器新增了关键词代码补全选项\n更好的自动补全建议\n以及更清晰的补全选项提示\n总是受欢迎的补充\n他们为代码补全选择的新图标就是这个\n而且\n当然，接下来开发版还会带来更多功能\n其中一项是视觉着色器\n因为它们将成为一个模块\n正从引擎核心中移出\n在Auto引擎中添加视觉着色器仅占可执行文件大小约3%\n即使你不选择它们\n所以这是一个不错的补充\n我希望你们能像无需内置视觉着色器一样编译\n这更像是一个可选的扩展\n扩展模块\n因为3%\n这有点多\n从下一个版本开始\n我们还能在富文本标签中通过size属性缩放图像\n会考虑字体大小\n1m等于字体大小的100%\n现在回到着色器\n因为有些更值得关注的新闻\n现在可以预览代码不同阶段的实际操作或变化\n这非常有帮助，Discord\n基本上替代了大量视觉着色器代码\n至少如果你知道如何正确使用而无需\n查找特定模块如这样对调试视觉着色器很有帮助\n对于着色器整体\n因为着色器操作较为复杂\n拥有这个选项非常实用\n接下来还有最后一条新闻\n转向本周提示和游戏推荐\n这是制作《刺杀尖塔》的团队将继续支持Godot一年\n这次他们升级为企业白金赞助\n简要提醒\n企业白金赞助仅比下一级高\n称为赞助人\n仅由一家公司使用\n现在进入本周游戏推荐\n本周游戏\n我推荐《黑洞钓鱼》\n《黑洞钓鱼》是一款关于捕捉\n培育和完美鱼类的增量游戏\n不断向池塘添加更多鱼类实验并扩大数量\n此游戏在Steam上有87篇好评\n现已上线\n如果这个游戏吸引你\n请通过描述中的链接体验\n但需在本周提示后体验游戏\n本周提示适合需要更多安全性的玩家\n因为他们正在开发在线游戏\n通过示例，比如公共网络\n你知道这个功能欺骗功能吗\n检查这个功能的作用是检测误导性字符，就像我们所有人都遇到过的那样\n用户名看起来不正确但实际错误的人\n这是因为他们使用特殊字符，比如\n误导性字符\n这个检查函数的作用基本上是检查\n名称中是否存在任何误导性字符，通过使用Unicode相关技术\n然后仅返回true或false\n如果包含这些高危字符且这些字符不存在\n这是一个非常简单的函数\n但在任何有公共网络的游戏都应使用\n这可用于检查用户名\n对于误导性字符\n聊天消息\n这只是一个整体不错的功能\n这就是本期内容\n但基本上是两周的代码相关新闻\n分段式节目\n最近出现了一些延迟\n因为我的生活中有很多事情\n我现在生活比较忙碌\n通常这种情况很快会改善\n不管怎样我们拭目以待\n非常感谢所有支持者的支持\n以及我为该系列所做的工作\n非常感谢你们的支持\n如果你想成为支持者\n请访问描述中的链接\n一如既往\n我一如既往\n下周见\n但通常这次应该确实是下周\n谢谢观看，再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1K7QLBmE3e",
+  "published_at": "1776211675",
+  "fetched_at": "2026-08-07T04:32:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 4.7 开发者版本更新知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    G0[\"Godot 4.7 开发者版本\"] --> VSM[\"视觉着色器模块化\"]\n    G0 --> RND[\"渲染与 UI 改进\"]\n    G0 --> LSP[\"语言服务器增强\"]\n    G0 --> RTE[\"富文本与图像缩放\"]\n    G0 --> DBG[\"调试/预览工具\"]\n    VSM --> MOD[\"从引擎核心抽离为可选模块 (~3% 可执行文件)\"]\n    VSM --> OPT[\"可在项目设置中启用/禁用\"]\n    RND --> NN[\"最近邻缩放（3D 缩放更清晰）\"]\n    RND --> CMAX[\"控件节点自定义最大尺寸\"]\n    RND --> GLOW[\"UI 发光效果质量提升\"]\n    RND --> DRAG[\"3D 节点拖放反馈优化\"]\n    RND --> FILE[\"文件存放位置可视化\"]\n    LSP --> KWC[\"关键词代码补全选项\"]\n    LSP --> SUG[\"更好的自动补全建议\"]\n    LSP --> ICON[\"补全图标更新\"]\n    RTE --> IMG[\"富文本标签 size 属性缩放图像\"]\n    RTE --> FONT[\"字体大小比例 (1 m = 100% 字体大小)\"]\n    DBG --> PREV[\"代码不同阶段预览\"]\n    DBG --> DIS[\"Discord 替代大量视觉着色器代码\"]\n```\n\n## 视觉着色器模块化\n```mermaid\nflowchart LR\n    VS[\"视觉着色器\"] --> EXTRACT[\"从引擎核心抽离\"]\n    EXTRACT --> SIZE[\"约占可执行文件 3%\"]\n    EXTRACT --> OPTIONAL[\"作为可选扩展模块\"]\n    OPTIONAL --> ENABLE[\"项目设置窗口可启用\"]\n    OPTIONAL --> DISABLE[\"编译时可完全移除\"]\n    ENABLE --> BENEFIT[\"保持核心体积小，按需使用\"]\n    DISABLE --> BENEFIT2[\"无需内置视觉着色器亦可运行\"]\n```\n\n## 渲染与 UI 改进\n```mermaid\nflowchart TD\n    RENDER[\"渲染更新\"] --> NN[\"最近邻缩放\"]\n    NN --> NOLOSS[\"无性能损失\"]\n    RENDER --> UI[\"UI 增强\"]\n    UI --> CMAX[\"控件节点自定义最大尺寸\"]\n    UI --> GLOW[\"发光效果质量提升\"]\n    UI --> DRAG[\"3D 节点拖放反馈改进\"]\n    UI --> FILE[\"文件存放位置更明确显示\"]\n    UI --> ARRAY[\"数组属性空间利用率提升\"]\n    ARRAY --> EFF[\"几乎必需的性能改进\"]\n```\n\n## 语言服务器与富文本增强\n```mermaid\nflowchart LR\n    LSERVER[\"语言服务器\"] --> KW[\"新增关键词代码补全选项\"]\n    LSERVER --> SUG[\"更好的自动补全建议\"]\n    LSERVER --> ICON[\"补全图标更新\"]\n    RICH[\"富文本增强\"] --> IMG[\"size 属性缩放图像\"]\n    RICH --> FONT[\"字体大小比例 (1 m = 100% 字体大小)\"]\n    IMG --> SCALE[\"在富文本标签中直接缩放\"]\n    FONT --> ADJ[\"考虑字体大小进行缩放\"]\n    KW --> IMP[\"提升开发者编码效率\"]\n    SUG --> IMP\n    ICON --> IMP\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    G0[\"Godot 4.7 开发者版本\"] --> VSM[\"视觉着色器模块化\"]\n    G0 --> RND[\"渲染与 UI 改进\"]\n    G0 --> LSP[\"语言服务器增强\"]\n    G0 --> RTE[\"富文本与图像缩放\"]\n    G0 --> DBG[\"调试/预览工具\"]\n    VSM --> MOD[\"从引擎核心抽离为可选模块 (~3% 可执行文件)\"]\n    VSM --> OPT[\"可在项目设置中启用/禁用\"]\n    RND --> NN[\"最近邻缩放（3D 缩放更清晰）\"]\n    RND --> CMAX[\"控件节点自定义最大尺寸\"]\n    RND --> GLOW[\"UI 发光效果质量提升\"]\n    RND --> DRAG[\"3D 节点拖放反馈优化\"]\n    RND --> FILE[\"文件存放位置可视化\"]\n    LSP --> KWC[\"关键词代码补全选项\"]\n    LSP --> SUG[\"更好的自动补全建议\"]\n    LSP --> ICON[\"补全图标更新\"]\n    RTE --> IMG[\"富文本标签 size 属性缩放图像\"]\n    RTE --> FONT[\"字体大小比例 (1 m = 100% 字体大小)\"]\n    DBG --> PREV[\"代码不同阶段预览\"]\n    DBG --> DIS[\"Discord 替代大量视觉着色器代码\"]"
+        },
+        {
+          "title": "视觉着色器模块化",
+          "code": "flowchart LR\n    VS[\"视觉着色器\"] --> EXTRACT[\"从引擎核心抽离\"]\n    EXTRACT --> SIZE[\"约占可执行文件 3%\"]\n    EXTRACT --> OPTIONAL[\"作为可选扩展模块\"]\n    OPTIONAL --> ENABLE[\"项目设置窗口可启用\"]\n    OPTIONAL --> DISABLE[\"编译时可完全移除\"]\n    ENABLE --> BENEFIT[\"保持核心体积小，按需使用\"]\n    DISABLE --> BENEFIT2[\"无需内置视觉着色器亦可运行\"]"
+        },
+        {
+          "title": "渲染与 UI 改进",
+          "code": "flowchart TD\n    RENDER[\"渲染更新\"] --> NN[\"最近邻缩放\"]\n    NN --> NOLOSS[\"无性能损失\"]\n    RENDER --> UI[\"UI 增强\"]\n    UI --> CMAX[\"控件节点自定义最大尺寸\"]\n    UI --> GLOW[\"发光效果质量提升\"]\n    UI --> DRAG[\"3D 节点拖放反馈改进\"]\n    UI --> FILE[\"文件存放位置更明确显示\"]\n    UI --> ARRAY[\"数组属性空间利用率提升\"]\n    ARRAY --> EFF[\"几乎必需的性能改进\"]"
+        },
+        {
+          "title": "语言服务器与富文本增强",
+          "code": "flowchart LR\n    LSERVER[\"语言服务器\"] --> KW[\"新增关键词代码补全选项\"]\n    LSERVER --> SUG[\"更好的自动补全建议\"]\n    LSERVER --> ICON[\"补全图标更新\"]\n    RICH[\"富文本增强\"] --> IMG[\"size 属性缩放图像\"]\n    RICH --> FONT[\"字体大小比例 (1 m = 100% 字体大小)\"]\n    IMG --> SCALE[\"在富文本标签中直接缩放\"]\n    FONT --> ADJ[\"考虑字体大小进行缩放\"]\n    KW --> IMP[\"提升开发者编码效率\"]\n    SUG --> IMP\n    ICON --> IMP"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T04:33:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 4.7 开发者版本更新知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    G0[\"Godot 4.7 开发者版本\"] --> VSM[\"视觉着色器模块化\"]\n    G0 --> RND[\"渲染与 UI 改进\"]\n    G0 --> LSP[\"语言服务器增强\"]\n    G0 --> RTE[\"富文本与图像缩放\"]\n    G0 --> DBG[\"调试/预览工具\"]\n    VSM --> MOD[\"从引擎核心抽离为可选模块 (~3% 可执行文件)\"]\n    VSM --> OPT[\"可在项目设置中启用/禁用\"]\n    RND --> NN[\"最近邻缩放（3D 缩放更清晰）\"]\n    RND --> CMAX[\"控件节点自定义最大尺寸\"]\n    RND --> GLOW[\"UI 发光效果质量提升\"]\n    RND --> DRAG[\"3D 节点拖放反馈优化\"]\n    RND --> FILE[\"文件存放位置可视化\"]\n    LSP --> KWC[\"关键词代码补全选项\"]\n    LSP --> SUG[\"更好的自动补全建议\"]\n    LSP --> ICON[\"补全图标更新\"]\n    RTE --> IMG[\"富文本标签 size 属性缩放图像\"]\n    RTE --> FONT[\"字体大小比例 (1 m = 100% 字体大小)\"]\n    DBG --> PREV[\"代码不同阶段预览\"]\n    DBG --> DIS[\"Discord 替代大量视觉着色器代码\"]\n```\n\n## 视觉着色器模块化\n```mermaid\nflowchart LR\n    VS[\"视觉着色器\"] --> EXTRACT[\"从引擎核心抽离\"]\n    EXTRACT --> SIZE[\"约占可执行文件 3%\"]\n    EXTRACT --> OPTIONAL[\"作为可选扩展模块\"]\n    OPTIONAL --> ENABLE[\"项目设置窗口可启用\"]\n    OPTIONAL --> DISABLE[\"编译时可完全移除\"]\n    ENABLE --> BENEFIT[\"保持核心体积小，按需使用\"]\n    DISABLE --> BENEFIT2[\"无需内置视觉着色器亦可运行\"]\n```\n\n## 渲染与 UI 改进\n```mermaid\nflowchart TD\n    RENDER[\"渲染更新\"] --> NN[\"最近邻缩放\"]\n    NN --> NOLOSS[\"无性能损失\"]\n    RENDER --> UI[\"UI 增强\"]\n    UI --> CMAX[\"控件节点自定义最大尺寸\"]\n    UI --> GLOW[\"发光效果质量提升\"]\n    UI --> DRAG[\"3D 节点拖放反馈改进\"]\n    UI --> FILE[\"文件存放位置更明确显示\"]\n    UI --> ARRAY[\"数组属性空间利用率提升\"]\n    ARRAY --> EFF[\"几乎必需的性能改进\"]\n```\n\n## 语言服务器与富文本增强\n```mermaid\nflowchart LR\n    LSERVER[\"语言服务器\"] --> KW[\"新增关键词代码补全选项\"]\n    LSERVER --> SUG[\"更好的自动补全建议\"]\n    LSERVER --> ICON[\"补全图标更新\"]\n    RICH[\"富文本增强\"] --> IMG[\"size 属性缩放图像\"]\n    RICH --> FONT[\"字体大小比例 (1 m = 100% 字体大小)\"]\n    IMG --> SCALE[\"在富文本标签中直接缩放\"]\n    FONT --> ADJ[\"考虑字体大小进行缩放\"]\n    KW --> IMP[\"提升开发者编码效率\"]\n    SUG --> IMP\n    ICON --> IMP\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    G0[\"Godot 4.7 开发者版本\"] --> VSM[\"视觉着色器模块化\"]\n    G0 --> RND[\"渲染与 UI 改进\"]\n    G0 --> LSP[\"语言服务器增强\"]\n    G0 --> RTE[\"富文本与图像缩放\"]\n    G0 --> DBG[\"调试/预览工具\"]\n    VSM --> MOD[\"从引擎核心抽离为可选模块 (~3% 可执行文件)\"]\n    VSM --> OPT[\"可在项目设置中启用/禁用\"]\n    RND --> NN[\"最近邻缩放（3D 缩放更清晰）\"]\n    RND --> CMAX[\"控件节点自定义最大尺寸\"]\n    RND --> GLOW[\"UI 发光效果质量提升\"]\n    RND --> DRAG[\"3D 节点拖放反馈优化\"]\n    RND --> FILE[\"文件存放位置可视化\"]\n    LSP --> KWC[\"关键词代码补全选项\"]\n    LSP --> SUG[\"更好的自动补全建议\"]\n    LSP --> ICON[\"补全图标更新\"]\n    RTE --> IMG[\"富文本标签 size 属性缩放图像\"]\n    RTE --> FONT[\"字体大小比例 (1 m = 100% 字体大小)\"]\n    DBG --> PREV[\"代码不同阶段预览\"]\n    DBG --> DIS[\"Discord 替代大量视觉着色器代码\"]"
+    },
+    {
+      "title": "视觉着色器模块化",
+      "code": "flowchart LR\n    VS[\"视觉着色器\"] --> EXTRACT[\"从引擎核心抽离\"]\n    EXTRACT --> SIZE[\"约占可执行文件 3%\"]\n    EXTRACT --> OPTIONAL[\"作为可选扩展模块\"]\n    OPTIONAL --> ENABLE[\"项目设置窗口可启用\"]\n    OPTIONAL --> DISABLE[\"编译时可完全移除\"]\n    ENABLE --> BENEFIT[\"保持核心体积小，按需使用\"]\n    DISABLE --> BENEFIT2[\"无需内置视觉着色器亦可运行\"]"
+    },
+    {
+      "title": "渲染与 UI 改进",
+      "code": "flowchart TD\n    RENDER[\"渲染更新\"] --> NN[\"最近邻缩放\"]\n    NN --> NOLOSS[\"无性能损失\"]\n    RENDER --> UI[\"UI 增强\"]\n    UI --> CMAX[\"控件节点自定义最大尺寸\"]\n    UI --> GLOW[\"发光效果质量提升\"]\n    UI --> DRAG[\"3D 节点拖放反馈改进\"]\n    UI --> FILE[\"文件存放位置更明确显示\"]\n    UI --> ARRAY[\"数组属性空间利用率提升\"]\n    ARRAY --> EFF[\"几乎必需的性能改进\"]"
+    },
+    {
+      "title": "语言服务器与富文本增强",
+      "code": "flowchart LR\n    LSERVER[\"语言服务器\"] --> KW[\"新增关键词代码补全选项\"]\n    LSERVER --> SUG[\"更好的自动补全建议\"]\n    LSERVER --> ICON[\"补全图标更新\"]\n    RICH[\"富文本增强\"] --> IMG[\"size 属性缩放图像\"]\n    RICH --> FONT[\"字体大小比例 (1 m = 100% 字体大小)\"]\n    IMG --> SCALE[\"在富文本标签中直接缩放\"]\n    FONT --> ADJ[\"考虑字体大小进行缩放\"]\n    KW --> IMP[\"提升开发者编码效率\"]\n    SUG --> IMP\n    ICON --> IMP"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T04:33:00+00:00"
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="site-base" content="/loop-bilibili" />
+  <title>花费数百亿token，我们实现了一个可在浏览器运行的仿安卓系统（含哔哩哔哩、支付宝、小红书、微信等多种复刻app）现支持在线体验手机智能体 · BV1yuVa6YERm</title>
+  <link rel="stylesheet" href="../../../assets/app.css?v=20260810101044" />
+</head>
+<body>
+  <div class="wrap" id="app">加载中…</div>
+  <script>
+    window.SITE_BASE = "/loop-bilibili";
+    window.SITE_ASSET_V = "20260810101044";
+  </script>
+  <script src="../../../assets/app.js?v=20260810101044"></script>
+  <script>
+    
+    SubtitleSite.renderVideo("loop", "BV1yuVa6YERm").catch(e => {
+      document.getElementById('app').textContent = String(e);
+    });
+    
+  </script>
+</body>
+</html>

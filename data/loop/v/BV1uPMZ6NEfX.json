@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1uPMZ6NEfX",
+  "title": "任何人都能读取你的 GDScript 代码 #Godot #GDScript #游戏开发 #独立游戏 #代码混淆 #源码保护 #gdma #反编译 #游戏安全",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1967,
+  "text": "我知道有些人担心如果在Godot引擎发布游戏\n他们的源代码可能会被盗\n这是我之前视频中提到过的内容\n所以我现在想澄清几个问题并解释如何实际保护自己\n如果你真的想要的话\n首先，当我们在Godot中构建游戏时到底会发生什么呢\n我们可以自己看看\n如果我们在这里创建一个简单项目然后进行构建\n然后尝试使用这个工具进行反编译\nGd re\n实际上可以看到成品代码的结构\n而我之前视频中没有意识到的是\n注释默认会被移除\n不过类名\n变量名和函数名会被保留\n所以代码基本上以明文形式存在\n任何人都可以查看\n除了注释部分\n第二个重点是这可能无关紧要\n你可能不需要为此担心\n我估计绝大多数开发的游戏\n尤其是独立开发者的作品从未完成\n从未发布\n即使发布了\n也未必能流行到被复制代码\n有人试图窃取或重用代码\n我认为更重要的是选择一个\n你熟悉且喜欢使用的引擎\n而不是被这类问题吓退\n假设\n最坏情况\n你开发了一款游戏\n反响不错\n有人盗用代码重新发布\n可能不会有什么影响\n因为你仍有官方版本\n这是大家熟知的产品\n人们会继续购买\n第三点\n是的\n你的代码受版权法保护\n但事实上\n我认为最终这有点无济于事\n因为没人想打法律官司\n尤其是资源有限的独立开发者\n所有代码都可以反编译\n所以何必在意这些呢\n只要有足够时间和耐心\n任何代码都能被反编译\n但我觉得发布代码的形式有很大区别\n与以某种形式发布你的代码\n它将会\n需要一些努力和专业知识才能让人理解\n第五点\n有些人认为所有代码都应开源\n为什么不直接以纯文本形式发布你的代码\n说实话\n我个人并不完全同意\n我热爱开源软件\n我认为这很棒\n但最终你在打造一个产品\n当你购买一辆汽车时\n他们也不会同时提供制造汽车的蓝图\n这可能是个不好的例子\n因为普通人无法制造汽车\n当你去餐厅点餐时\n他们也不会提供在家复刻这道菜的食谱\n你的源代码是你的财产\n这是你辛勤工作的成果\n我不明白为什么不能保护它\n实际上\n那么如何保护你的源代码\n有人指出goto支持代码加密或类似功能\n是的你可以加密构建文件\n但为了让任何人运行它\n加密密钥仍需包含在构建中\n这可能有一定效果\n但最终密钥仍可能被找到\n项目仍可能被解密\n你不必在项目中 exclusively 使用gd脚本\n如果你使用goto编程\n可以使用C#\n这样保护级别与Unity相当\n可以使用C++\n这样保护级别与Unreal相当\n最后\n我想谈谈gd mae\n这是我最近使用的程序\n用于我新宣布的游戏Splatter\nKing Wishlist在Steam上\n它只是将gd脚本代码混淆\n使其功能等效但不再使用英文\n难以直接阅读理解\n可能被误用或重新利用\n我可以展示效果\n你可以看到下方的插件文件夹\n已安装gd main me\n这给我们gd main选项卡\n我们可以调整设置\n启用混淆功能\n我们可以自定义顶层声明（如函数和变量）的行为\n应在文件内进行打乱排序\n是否移除注释\n空行\n等等\n会生成一个源映射文件\n这允许开发者反向查看该过程\n如果我们想查看最终产品中的源代码\n点击查看源映射并选择最新版本\n然后我们可以打开左侧任意文件\n可以看到源代码的实际内容\n以及导出文件中的等效代码\n可以看到大部分函数名已被混淆\n例如\n可以开始下一步操作\n已变为此处的无意义字符串\n同时右侧也能看到\n如果我们找到相同函数\n会显示每个符号的直接转换\n从原始源代码到导出代码的等效符号\n现在你会发现有些内容未被修改\n这是因为gd main还提供了一个ignore tokens文件\n在这个文件中\n我们可以指定不希望被修改的符号\n或由gd main进行混淆\n这在某些情况下非常有用\n例如\n这里当enemy对象有hit方法时\n因为这是用字符串表示函数名\n如果hit函数被混淆成其他名称\n这段代码将无法按预期运行\n必须注意所有存储为字符串的内容\n另一个例子是动画树\n可能有依赖特定变量或枚举的表达式\n同样需要确保这些内容被排除在gd mime之外\n否则可能会出现问题\n实际应用中会怎样\n当构建游戏时\n某些功能可能不符合预期\n此时可通过日志排查问题\n通常\n只需在ignore tokens列表添加标记\n这就是安装gd meme后的基本操作\n大多数情况下会正常工作\n这意味着如果有人使用gd re程序反编译游戏\n之前提到的代码将只是无意义字符\n他人难以窃取代码\n基本上\n我知道在多数情况下可能并不必要\n我知道有些人可能会觉得这是浪费时间\n或者认为这是对开源软件的侮辱\n但我只是想让大家了解目前有哪些资源\n有哪些可用的工具\n这样如果你担心代码被窃取\n基本上我不想因此让大家对goto失去兴趣\n因为我认为这是一个很棒的引擎\n我希望看到它更广泛地被采用\n我个人认为它足以满足大多数独立游戏的需求\n这就是全部内容\n谢谢大家\n感谢观看\n我们下次再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1uPMZ6NEfX",
+  "published_at": "1785802814",
+  "fetched_at": "2026-08-06T20:42:50+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot GDScript 代码保护知识图谱\n\n## 构建与反编译概览\n```mermaid\nflowchart TD\n    P[项目源码] --> B[构建导出]\n    B --> E[导出文件]\n    E --> R[GdRE 反编译工具]\n    R --> D[反编译结果]\n    D --> C1[类名、变量名、函数名保留]\n    D --> C2[注释被移除]\n    D --> C3[代码以明文形式存在]\n    C1 --> V[代码可直接阅读]\n    C2 --> V\n    C3 --> V\n```\n\n## 代码泄露风险与决策\n```mermaid\nflowchart TD\n    S[是否发布游戏] -->|是| P1[代码可能被反编译]\n    S -->|否| END[风险低]\n    P1 --> I[是否有官方正版]\n    I -->|有| O1[用户仍购买官方版]\n    I -->|无| O2[盗版代码可能被使用]\n    O1 --> L[影响有限]\n    O2 --> L\n    L --> C[法律保护（版权）]\n    C --> A[实际行动成本高]\n    A --> D[多数独立开发者选择不担心]\n```\n\n## 代码保护手段比较\n```mermaid\nflowchart LR\n    Start[可选保护手段] --> OB[代码混淆 (gdma)]\n    Start --> EN[构建文件加密]\n    Start --> CS[使用 C# 编写]\n    Start --> CP[使用 C++ 编写]\n    OB --> E1[保留类/函数名可选]\n    OB --> E2[生成源映射文件]\n    EN --> E3[需在构建中嵌入密钥]\n    EN --> E4[密钥可能被提取]\n    CS --> E5[保护级别类似 Unity]\n    CP --> E6[保护级别类似 Unreal]\n    E1 --> Trade[需要配置 ignore tokens]\n    Trade --> Risk[可能影响字符串引用代码]\n    EN --> Cost[增加构建复杂度]\n    Cost --> Risk\n```\n\n## gdma (gd main) 使用流程\n```mermaid\nflowchart TD\n    Install[安装 gd main 插件] --> Enable[启用混淆功能]\n    Enable --> Settings[自定义设置]\n    Settings --> Shuffle[打乱声明顺序]\n    Settings --> RemoveComments[移除注释]\n    Settings --> RemoveEmpty[移除空行]\n    Settings --> Ignore[配置 ignore tokens]\n    Ignore --> Exclude[排除特定符号]\n    Settings --> SrcMap[生成源映射文件]\n    SrcMap --> Verify[通过源映射查看原始代码]\n    Verify --> Build[构建导出游戏]\n    Build --> ObfCode[得到混淆后的代码]\n    ObfCode --> Protect[提升代码窃取难度]\n```",
+      "diagrams": [
+        {
+          "title": "构建与反编译概览",
+          "code": "flowchart TD\n    P[项目源码] --> B[构建导出]\n    B --> E[导出文件]\n    E --> R[GdRE 反编译工具]\n    R --> D[反编译结果]\n    D --> C1[类名、变量名、函数名保留]\n    D --> C2[注释被移除]\n    D --> C3[代码以明文形式存在]\n    C1 --> V[代码可直接阅读]\n    C2 --> V\n    C3 --> V"
+        },
+        {
+          "title": "代码泄露风险与决策",
+          "code": "flowchart TD\n    S[是否发布游戏] -->|是| P1[代码可能被反编译]\n    S -->|否| END[风险低]\n    P1 --> I[是否有官方正版]\n    I -->|有| O1[用户仍购买官方版]\n    I -->|无| O2[盗版代码可能被使用]\n    O1 --> L[影响有限]\n    O2 --> L\n    L --> C[法律保护（版权）]\n    C --> A[实际行动成本高]\n    A --> D[多数独立开发者选择不担心]"
+        },
+        {
+          "title": "代码保护手段比较",
+          "code": "flowchart LR\n    Start[可选保护手段] --> OB[代码混淆 (gdma)]\n    Start --> EN[构建文件加密]\n    Start --> CS[使用 C# 编写]\n    Start --> CP[使用 C++ 编写]\n    OB --> E1[保留类/函数名可选]\n    OB --> E2[生成源映射文件]\n    EN --> E3[需在构建中嵌入密钥]\n    EN --> E4[密钥可能被提取]\n    CS --> E5[保护级别类似 Unity]\n    CP --> E6[保护级别类似 Unreal]\n    E1 --> Trade[需要配置 ignore tokens]\n    Trade --> Risk[可能影响字符串引用代码]\n    EN --> Cost[增加构建复杂度]\n    Cost --> Risk"
+        },
+        {
+          "title": "gdma (gd main) 使用流程",
+          "code": "flowchart TD\n    Install[安装 gd main 插件] --> Enable[启用混淆功能]\n    Enable --> Settings[自定义设置]\n    Settings --> Shuffle[打乱声明顺序]\n    Settings --> RemoveComments[移除注释]\n    Settings --> RemoveEmpty[移除空行]\n    Settings --> Ignore[配置 ignore tokens]\n    Ignore --> Exclude[排除特定符号]\n    Settings --> SrcMap[生成源映射文件]\n    SrcMap --> Verify[通过源映射查看原始代码]\n    Verify --> Build[构建导出游戏]\n    Build --> ObfCode[得到混淆后的代码]\n    ObfCode --> Protect[提升代码窃取难度]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T20:43:07+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot GDScript 代码保护知识图谱\n\n## 构建与反编译概览\n```mermaid\nflowchart TD\n    P[项目源码] --> B[构建导出]\n    B --> E[导出文件]\n    E --> R[GdRE 反编译工具]\n    R --> D[反编译结果]\n    D --> C1[类名、变量名、函数名保留]\n    D --> C2[注释被移除]\n    D --> C3[代码以明文形式存在]\n    C1 --> V[代码可直接阅读]\n    C2 --> V\n    C3 --> V\n```\n\n## 代码泄露风险与决策\n```mermaid\nflowchart TD\n    S[是否发布游戏] -->|是| P1[代码可能被反编译]\n    S -->|否| END[风险低]\n    P1 --> I[是否有官方正版]\n    I -->|有| O1[用户仍购买官方版]\n    I -->|无| O2[盗版代码可能被使用]\n    O1 --> L[影响有限]\n    O2 --> L\n    L --> C[法律保护（版权）]\n    C --> A[实际行动成本高]\n    A --> D[多数独立开发者选择不担心]\n```\n\n## 代码保护手段比较\n```mermaid\nflowchart LR\n    Start[可选保护手段] --> OB[代码混淆 (gdma)]\n    Start --> EN[构建文件加密]\n    Start --> CS[使用 C# 编写]\n    Start --> CP[使用 C++ 编写]\n    OB --> E1[保留类/函数名可选]\n    OB --> E2[生成源映射文件]\n    EN --> E3[需在构建中嵌入密钥]\n    EN --> E4[密钥可能被提取]\n    CS --> E5[保护级别类似 Unity]\n    CP --> E6[保护级别类似 Unreal]\n    E1 --> Trade[需要配置 ignore tokens]\n    Trade --> Risk[可能影响字符串引用代码]\n    EN --> Cost[增加构建复杂度]\n    Cost --> Risk\n```\n\n## gdma (gd main) 使用流程\n```mermaid\nflowchart TD\n    Install[安装 gd main 插件] --> Enable[启用混淆功能]\n    Enable --> Settings[自定义设置]\n    Settings --> Shuffle[打乱声明顺序]\n    Settings --> RemoveComments[移除注释]\n    Settings --> RemoveEmpty[移除空行]\n    Settings --> Ignore[配置 ignore tokens]\n    Ignore --> Exclude[排除特定符号]\n    Settings --> SrcMap[生成源映射文件]\n    SrcMap --> Verify[通过源映射查看原始代码]\n    Verify --> Build[构建导出游戏]\n    Build --> ObfCode[得到混淆后的代码]\n    ObfCode --> Protect[提升代码窃取难度]\n```",
+  "diagrams": [
+    {
+      "title": "构建与反编译概览",
+      "code": "flowchart TD\n    P[项目源码] --> B[构建导出]\n    B --> E[导出文件]\n    E --> R[GdRE 反编译工具]\n    R --> D[反编译结果]\n    D --> C1[类名、变量名、函数名保留]\n    D --> C2[注释被移除]\n    D --> C3[代码以明文形式存在]\n    C1 --> V[代码可直接阅读]\n    C2 --> V\n    C3 --> V"
+    },
+    {
+      "title": "代码泄露风险与决策",
+      "code": "flowchart TD\n    S[是否发布游戏] -->|是| P1[代码可能被反编译]\n    S -->|否| END[风险低]\n    P1 --> I[是否有官方正版]\n    I -->|有| O1[用户仍购买官方版]\n    I -->|无| O2[盗版代码可能被使用]\n    O1 --> L[影响有限]\n    O2 --> L\n    L --> C[法律保护（版权）]\n    C --> A[实际行动成本高]\n    A --> D[多数独立开发者选择不担心]"
+    },
+    {
+      "title": "代码保护手段比较",
+      "code": "flowchart LR\n    Start[可选保护手段] --> OB[代码混淆 (gdma)]\n    Start --> EN[构建文件加密]\n    Start --> CS[使用 C# 编写]\n    Start --> CP[使用 C++ 编写]\n    OB --> E1[保留类/函数名可选]\n    OB --> E2[生成源映射文件]\n    EN --> E3[需在构建中嵌入密钥]\n    EN --> E4[密钥可能被提取]\n    CS --> E5[保护级别类似 Unity]\n    CP --> E6[保护级别类似 Unreal]\n    E1 --> Trade[需要配置 ignore tokens]\n    Trade --> Risk[可能影响字符串引用代码]\n    EN --> Cost[增加构建复杂度]\n    Cost --> Risk"
+    },
+    {
+      "title": "gdma (gd main) 使用流程",
+      "code": "flowchart TD\n    Install[安装 gd main 插件] --> Enable[启用混淆功能]\n    Enable --> Settings[自定义设置]\n    Settings --> Shuffle[打乱声明顺序]\n    Settings --> RemoveComments[移除注释]\n    Settings --> RemoveEmpty[移除空行]\n    Settings --> Ignore[配置 ignore tokens]\n    Ignore --> Exclude[排除特定符号]\n    Settings --> SrcMap[生成源映射文件]\n    SrcMap --> Verify[通过源映射查看原始代码]\n    Verify --> Build[构建导出游戏]\n    Build --> ObfCode[得到混淆后的代码]\n    ObfCode --> Protect[提升代码窃取难度]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:43:07+00:00"
+}

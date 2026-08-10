@@ -1,0 +1,74 @@
+{
+  "bvid": "BV15sL96SEdU",
+  "title": "28届Unity客户端求职作品集",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2497,
+  "text": "大家好\n本作品基于q framework框架\n使用MVC架构实现了波次刷怪\n自动攻击掉落升级游戏结算局外成长\n游戏热更等完整循环\n开局角色会从能力池中随机选择一项\n作为初始技能\n本项目中能力值的数据由data层配置下发\n管理逻辑\n在system层steam注册到architecture后\ncontrol通过get system获取值\n并执行随机抽选与升级怪物波次\n成就升级系统的数据内容解耦至data层\n由excel编辑后导出\n为JASON配置运行时注入system层消费\n本项目实现了一套轻量级热更新管线\n启动时从HTTP服务端拉取version点\nJASON版本清单比对本地缓存后\n按需下载最新配置文件\n随后重新合并配置各system自动重置数据池\n实现波次能力值成就等全部数值在线更新\n无需重新发版\n等钱包自己玩\n你别死就行了\n想到你压力很大的\n哪边哪边我给烟我点烟\n我点烟我点烟\n本项目为热更新配套了完整的编辑器工具链\n支持一键从一开CEO导入数值并产出\nJason plus asset bule plus version\ndot j s o n清单\n自动校验key唯一性\n外键完整性\n图标存在性等\n且支持一键发布到本地HTTP热购目录\n形成excel jason asset bl版本清单部署的闭环管线\n紧张紧张\n前锋紧张\n前锋\n两个\n角色升级后\n从能力池中随机抽取还未升级完毕的技能\n进行解锁或升级\n嗯角色与武器的运行时数值统一收敛于model\n曾以bw blapa party响应式属性承载值更新\n自动通知相应UI进行更新\n武器每帧从model读取最新值\n驱动行为升级系统修改model后\n武器自动生效\n无需直接通信\n精英怪和boss死亡后会掉落宝箱\n如果此时满足合成条件\n就会解锁\n超五配队武器由佩尔配置\n嗯嗯嗯超武合成\n嗯哼嗯\n最后一波boss出现boss AI由状态机设计\n分为等待跟随冲锋三个状态\n最后一波结束\n且场上敌人为临时游戏结束\n本项目围绕第三人称射击玩法完成角色控制\n武器开火\n敌人AI与多人同步原型验证\n武器使用对象池实现枪械开火\n子弹特效复用与生命周期回收结合对象池\n减少运行时实例化开销\n敌人寻路逻辑采用A星寻路算法\n由never messagen的设计\n本项目基于NGO采用host模式\nUDP传输\nt create30最大的设计特点是\n玩家和敌人都不直接作为网络对象\n而是通过唯一一个net condition里的两个network list\n来集中同步所有实体的位置和状态\n避免了为每个实体单独建网的开销\n玩家同步采用20HZ快照驱动\n本地玩家每50米秒发一次快照给服务器\n远端玩家用指数衰减差值\n平滑跟随本地玩家接收服务器回显做和解修正\n射击采用双轨制\n本地子弹对象池提供即时视觉反馈\n真正的命中判定走server rpc在服务端完成\n配合敌人位置历史回滚做延迟补偿\n敌人走纯服务器\n权威客户端只负责表现\n前面两个项目展示了我在game play开发上的能力\n这个项目我想重点展示的是\n当unity项目规模变大\n场景变多\n需要联网\n需要长期维护时\n我是怎么控制工程质量的\n做gameplay demo时\n我发现了一些实际的痛点列表\n滚动卡顿\n场景切换后状态丢失\nprefab引用频繁丢失\n携程滥用导致GC抖动\n在这个项目中\n我系统性地解决了这些问题\n形成了一套可复用的方法论\n做动态列表时\n200个列表item在scroll view里滚动\n每次滚读\nInstantiate destroy\n用profile1看GCLK每秒2MB\n帧率直接从60掉到20\n因此我设计了UIPFB对象池\nAPI client的网络请求和examination中的倒计时\n使用携程wait for seconds会分配内存\n因此在这个项目中\n我将把wait for seconds缓存起来\nUGUI的性能瓶颈不在渲染\n而在canvas重建\n用set active而非改alpha来切换面板\n配合每个场景独立挂panel group控制和P边界\n避免一个面板的变动\n触发整颗UI树的重建计算\n忘了在inspector里脱引用运行时\nNO reference exception是unity开发中最高频的bug\n为了解决这个score manager中的validating\nInspector bindings\n把检查集中到了start括号生命周期启动时\n一次性检查所有必须绑定缺了哪个打哪个的error\n日志精确到字段名\n而且检查失败后\n直接enabled等于false\n禁用组件\n防止后续代码拿着ANO引用操作\nunity开发中第二高频的bug\nprefab引用丢失\n场景A里拖好的prefab引用切到场景B再回来\n可能就变成Missing了\n或者同事改了prefab结构\n你的引用断了\n这个项目中\nwarning panel controller的解决思路是多级降级\n查找加运行时兜底\n一先用已有引用\n二引用丢了\n就在场景里按名字搜索\n三搜不到茶兼容救命名字都没有\n就代码动态创建一个\n连字体都从场景里自适应获取\n这个设计还有一个好处\n新场景零配置加一个新场景\n不需要手工拖\nwarning panel prefab代码自动处理\n减少了团队协作中的\n我忘了托那个面板的沟通成本啊\n这个资源加载管线的设计思路\n和游戏里的asset bl加载是一脉相承的\n本地先查缓存\n再查远程下载\n下载有进度回调\n可以驱动UI进度条\n用SHA1做内容寻址\n保证同一资源不会被重复下载\nSHA1做key文件名永远是一个合法的\n40位16进制字符串跨平台安全\n解决了UIRL可能很长\n可能包含特殊字符等于井号的问题\n这个设计借鉴了游戏存档系统的思想\n按玩家模块题型三个维度存储\n就像一个游戏存档案\n玩家关卡难度存储\n每个存档key都会自动注册到一个索引表里\n因为player pres没有列出所有key的API\n如果不维护索引清理的时候\n就必须穷举所有可能的key组合\n非常容易遗漏",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV15sL96SEdU",
+  "published_at": "1781708818",
+  "fetched_at": "2026-08-09T22:59:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 28届Unity客户端求职作品集 知识图谱\n\n## 项目整体架构概览\n```mermaid\nflowchart TD\n    D[\"Data层: 配置/Excel导出\"] -->|下发| S[\"System层: 注册Architecture\"]\n    S -->|提供| C[\"Control层: 获取System值\"]\n    C -->|执行| W[\"Wave/怪物刷怪逻辑\"]\n    C -->|执行| U[\"升级/成就系统\"]\n    S -->|消费| J[\"JSON配置注入\"]\n    J -->|驱动| M[\"Model层: 运行时数值\"]\n    M -->|通知| UI[\"UI层: 自动更新\"]\n    W -->|修改| M\n    U -->|修改| M\n```\n\n## 热更新管线流程\n```mermaid\nflowchart TD\n    H[\"启动: 拉取 version 点 (HTTP)\"] --> V[\"本地 version 清单\"]\n    V -->|比对| Dlt[\"需要下载的配置文件\"]\n    Dlt --> DL[\"下载配置 (JSON/Asset)\"]\n    DL --> Merge[\"合并到各 System\"]\n    Merge --> Reset[\"系统自动重置数据池\"]\n    Reset --> Live[\"在线更新数值/波次/成就\"]\n    Live -->|无需| Rebuild[\"重新发版\"]\n    Editor[\"编辑器工具链\"] --> Export[\"一键导出 Excel→JSON→Asset\"]\n    Export --> Verify[\"校验 key 唯一性、外键完整性、图标存在性\"]\n    Verify --> Publish[\"一键发布到本地 HTTP 热更新目录\"]\n```\n\n## 网络同步与服务器权威模型\n```mermaid\nflowchart TD\n    Net[\"Host模式 (NGO)\"] --> UDP[\"UDP 传输\"]\n    UDP --> NetCond[\"NetCondition: 两个 NetworkList\"]\n    NetCond --> Sync[\"集中同步实体位置/状态\"]\n    Sync --> Player[\"玩家快照 (20Hz)\"]\n    Player -->|每 50ms| Snap[\"发送快照到服务器\"]\n    Snap --> Server[\"服务器回滚历史位置\"]\n    Server --> Hit[\"Server RPC 命中判定\"]\n    Hit --> Comp[\"延迟补偿 (位置历史)\"]\n    Enemy[\"敌人仅在服务器运行\"] -->|表现层| Client[\"客户端仅负责渲染\"]\n```\n\n## 性能优化与资源管理策略\n```mermaid\nflowchart TD\n    List[\"动态列表 200 Item\"] -->|滚动| Inst[\"Instantiate/Destroy\"]\n    Inst -->|高 GC| Perf[\"帧率 60→20\"]\n    Perf -->|解决| UIPool[\"UIPFB 对象池\"]\n    Coroutine[\"WaitForSeconds\"] -->|分配内存| Cache[\"缓存 WaitForSeconds 实例\"]\n    Canvas[\"UGUI Canvas 重建\"] -->|耗时| SetActive[\"使用 SetActive 切换面板\"]\n    Prefab[\"Prefab 引用丢失\"] -->|多级降级| Resolve[\"按名字搜索 → 动态创建\"]\n    Resolve -->|零配置| NewScene[\"新场景自动挂载 Warning Panel\"]\n    Resource[\"资源加载管线\"] --> CacheLocal[\"本地缓存\"]\n    CacheLocal --> Remote[\"远程下载 (SHA1 key)\"]\n    Remote --> UIProg[\"下载进度回调 → UI 进度条\"]\n    SHA1[\"SHA1 内容寻址\"] -->|防重复| Key[\"唯一文件名 (40位十六进制)\"]\n```",
+      "diagrams": [
+        {
+          "title": "项目整体架构概览",
+          "code": "flowchart TD\n    D[\"Data层: 配置/Excel导出\"] -->|下发| S[\"System层: 注册Architecture\"]\n    S -->|提供| C[\"Control层: 获取System值\"]\n    C -->|执行| W[\"Wave/怪物刷怪逻辑\"]\n    C -->|执行| U[\"升级/成就系统\"]\n    S -->|消费| J[\"JSON配置注入\"]\n    J -->|驱动| M[\"Model层: 运行时数值\"]\n    M -->|通知| UI[\"UI层: 自动更新\"]\n    W -->|修改| M\n    U -->|修改| M"
+        },
+        {
+          "title": "热更新管线流程",
+          "code": "flowchart TD\n    H[\"启动: 拉取 version 点 (HTTP)\"] --> V[\"本地 version 清单\"]\n    V -->|比对| Dlt[\"需要下载的配置文件\"]\n    Dlt --> DL[\"下载配置 (JSON/Asset)\"]\n    DL --> Merge[\"合并到各 System\"]\n    Merge --> Reset[\"系统自动重置数据池\"]\n    Reset --> Live[\"在线更新数值/波次/成就\"]\n    Live -->|无需| Rebuild[\"重新发版\"]\n    Editor[\"编辑器工具链\"] --> Export[\"一键导出 Excel→JSON→Asset\"]\n    Export --> Verify[\"校验 key 唯一性、外键完整性、图标存在性\"]\n    Verify --> Publish[\"一键发布到本地 HTTP 热更新目录\"]"
+        },
+        {
+          "title": "网络同步与服务器权威模型",
+          "code": "flowchart TD\n    Net[\"Host模式 (NGO)\"] --> UDP[\"UDP 传输\"]\n    UDP --> NetCond[\"NetCondition: 两个 NetworkList\"]\n    NetCond --> Sync[\"集中同步实体位置/状态\"]\n    Sync --> Player[\"玩家快照 (20Hz)\"]\n    Player -->|每 50ms| Snap[\"发送快照到服务器\"]\n    Snap --> Server[\"服务器回滚历史位置\"]\n    Server --> Hit[\"Server RPC 命中判定\"]\n    Hit --> Comp[\"延迟补偿 (位置历史)\"]\n    Enemy[\"敌人仅在服务器运行\"] -->|表现层| Client[\"客户端仅负责渲染\"]"
+        },
+        {
+          "title": "性能优化与资源管理策略",
+          "code": "flowchart TD\n    List[\"动态列表 200 Item\"] -->|滚动| Inst[\"Instantiate/Destroy\"]\n    Inst -->|高 GC| Perf[\"帧率 60→20\"]\n    Perf -->|解决| UIPool[\"UIPFB 对象池\"]\n    Coroutine[\"WaitForSeconds\"] -->|分配内存| Cache[\"缓存 WaitForSeconds 实例\"]\n    Canvas[\"UGUI Canvas 重建\"] -->|耗时| SetActive[\"使用 SetActive 切换面板\"]\n    Prefab[\"Prefab 引用丢失\"] -->|多级降级| Resolve[\"按名字搜索 → 动态创建\"]\n    Resolve -->|零配置| NewScene[\"新场景自动挂载 Warning Panel\"]\n    Resource[\"资源加载管线\"] --> CacheLocal[\"本地缓存\"]\n    CacheLocal --> Remote[\"远程下载 (SHA1 key)\"]\n    Remote --> UIProg[\"下载进度回调 → UI 进度条\"]\n    SHA1[\"SHA1 内容寻址\"] -->|防重复| Key[\"唯一文件名 (40位十六进制)\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T23:00:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 28届Unity客户端求职作品集 知识图谱\n\n## 项目整体架构概览\n```mermaid\nflowchart TD\n    D[\"Data层: 配置/Excel导出\"] -->|下发| S[\"System层: 注册Architecture\"]\n    S -->|提供| C[\"Control层: 获取System值\"]\n    C -->|执行| W[\"Wave/怪物刷怪逻辑\"]\n    C -->|执行| U[\"升级/成就系统\"]\n    S -->|消费| J[\"JSON配置注入\"]\n    J -->|驱动| M[\"Model层: 运行时数值\"]\n    M -->|通知| UI[\"UI层: 自动更新\"]\n    W -->|修改| M\n    U -->|修改| M\n```\n\n## 热更新管线流程\n```mermaid\nflowchart TD\n    H[\"启动: 拉取 version 点 (HTTP)\"] --> V[\"本地 version 清单\"]\n    V -->|比对| Dlt[\"需要下载的配置文件\"]\n    Dlt --> DL[\"下载配置 (JSON/Asset)\"]\n    DL --> Merge[\"合并到各 System\"]\n    Merge --> Reset[\"系统自动重置数据池\"]\n    Reset --> Live[\"在线更新数值/波次/成就\"]\n    Live -->|无需| Rebuild[\"重新发版\"]\n    Editor[\"编辑器工具链\"] --> Export[\"一键导出 Excel→JSON→Asset\"]\n    Export --> Verify[\"校验 key 唯一性、外键完整性、图标存在性\"]\n    Verify --> Publish[\"一键发布到本地 HTTP 热更新目录\"]\n```\n\n## 网络同步与服务器权威模型\n```mermaid\nflowchart TD\n    Net[\"Host模式 (NGO)\"] --> UDP[\"UDP 传输\"]\n    UDP --> NetCond[\"NetCondition: 两个 NetworkList\"]\n    NetCond --> Sync[\"集中同步实体位置/状态\"]\n    Sync --> Player[\"玩家快照 (20Hz)\"]\n    Player -->|每 50ms| Snap[\"发送快照到服务器\"]\n    Snap --> Server[\"服务器回滚历史位置\"]\n    Server --> Hit[\"Server RPC 命中判定\"]\n    Hit --> Comp[\"延迟补偿 (位置历史)\"]\n    Enemy[\"敌人仅在服务器运行\"] -->|表现层| Client[\"客户端仅负责渲染\"]\n```\n\n## 性能优化与资源管理策略\n```mermaid\nflowchart TD\n    List[\"动态列表 200 Item\"] -->|滚动| Inst[\"Instantiate/Destroy\"]\n    Inst -->|高 GC| Perf[\"帧率 60→20\"]\n    Perf -->|解决| UIPool[\"UIPFB 对象池\"]\n    Coroutine[\"WaitForSeconds\"] -->|分配内存| Cache[\"缓存 WaitForSeconds 实例\"]\n    Canvas[\"UGUI Canvas 重建\"] -->|耗时| SetActive[\"使用 SetActive 切换面板\"]\n    Prefab[\"Prefab 引用丢失\"] -->|多级降级| Resolve[\"按名字搜索 → 动态创建\"]\n    Resolve -->|零配置| NewScene[\"新场景自动挂载 Warning Panel\"]\n    Resource[\"资源加载管线\"] --> CacheLocal[\"本地缓存\"]\n    CacheLocal --> Remote[\"远程下载 (SHA1 key)\"]\n    Remote --> UIProg[\"下载进度回调 → UI 进度条\"]\n    SHA1[\"SHA1 内容寻址\"] -->|防重复| Key[\"唯一文件名 (40位十六进制)\"]\n```",
+  "diagrams": [
+    {
+      "title": "项目整体架构概览",
+      "code": "flowchart TD\n    D[\"Data层: 配置/Excel导出\"] -->|下发| S[\"System层: 注册Architecture\"]\n    S -->|提供| C[\"Control层: 获取System值\"]\n    C -->|执行| W[\"Wave/怪物刷怪逻辑\"]\n    C -->|执行| U[\"升级/成就系统\"]\n    S -->|消费| J[\"JSON配置注入\"]\n    J -->|驱动| M[\"Model层: 运行时数值\"]\n    M -->|通知| UI[\"UI层: 自动更新\"]\n    W -->|修改| M\n    U -->|修改| M"
+    },
+    {
+      "title": "热更新管线流程",
+      "code": "flowchart TD\n    H[\"启动: 拉取 version 点 (HTTP)\"] --> V[\"本地 version 清单\"]\n    V -->|比对| Dlt[\"需要下载的配置文件\"]\n    Dlt --> DL[\"下载配置 (JSON/Asset)\"]\n    DL --> Merge[\"合并到各 System\"]\n    Merge --> Reset[\"系统自动重置数据池\"]\n    Reset --> Live[\"在线更新数值/波次/成就\"]\n    Live -->|无需| Rebuild[\"重新发版\"]\n    Editor[\"编辑器工具链\"] --> Export[\"一键导出 Excel→JSON→Asset\"]\n    Export --> Verify[\"校验 key 唯一性、外键完整性、图标存在性\"]\n    Verify --> Publish[\"一键发布到本地 HTTP 热更新目录\"]"
+    },
+    {
+      "title": "网络同步与服务器权威模型",
+      "code": "flowchart TD\n    Net[\"Host模式 (NGO)\"] --> UDP[\"UDP 传输\"]\n    UDP --> NetCond[\"NetCondition: 两个 NetworkList\"]\n    NetCond --> Sync[\"集中同步实体位置/状态\"]\n    Sync --> Player[\"玩家快照 (20Hz)\"]\n    Player -->|每 50ms| Snap[\"发送快照到服务器\"]\n    Snap --> Server[\"服务器回滚历史位置\"]\n    Server --> Hit[\"Server RPC 命中判定\"]\n    Hit --> Comp[\"延迟补偿 (位置历史)\"]\n    Enemy[\"敌人仅在服务器运行\"] -->|表现层| Client[\"客户端仅负责渲染\"]"
+    },
+    {
+      "title": "性能优化与资源管理策略",
+      "code": "flowchart TD\n    List[\"动态列表 200 Item\"] -->|滚动| Inst[\"Instantiate/Destroy\"]\n    Inst -->|高 GC| Perf[\"帧率 60→20\"]\n    Perf -->|解决| UIPool[\"UIPFB 对象池\"]\n    Coroutine[\"WaitForSeconds\"] -->|分配内存| Cache[\"缓存 WaitForSeconds 实例\"]\n    Canvas[\"UGUI Canvas 重建\"] -->|耗时| SetActive[\"使用 SetActive 切换面板\"]\n    Prefab[\"Prefab 引用丢失\"] -->|多级降级| Resolve[\"按名字搜索 → 动态创建\"]\n    Resolve -->|零配置| NewScene[\"新场景自动挂载 Warning Panel\"]\n    Resource[\"资源加载管线\"] --> CacheLocal[\"本地缓存\"]\n    CacheLocal --> Remote[\"远程下载 (SHA1 key)\"]\n    Remote --> UIProg[\"下载进度回调 → UI 进度条\"]\n    SHA1[\"SHA1 内容寻址\"] -->|防重复| Key[\"唯一文件名 (40位十六进制)\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T23:00:41+00:00"
+}

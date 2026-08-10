@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1zw3R6SEtL",
+  "title": "DeepSeek官方代码开源！Claude与Codex要凉？效果简直强到离谱！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3233,
+  "text": "大家好\n欢迎来到本期视频\n在过去几期视频中\n我们一直在聊deep sk v3以及flash模型\n大幅增强了它的智能体能力\n随后我们还介绍如何通过command k低成本调用它\n很deep sick的生态中一直有个缺憾\n那就是一直缺少一款原生的官方编程智能体\nAnthropic\n有CLO的OpenAI\n有codex\n谷歌也有自己的产品\nDEPC可用数\n此前需将API接入client或open code interpreter等第三方工具使用\n或者编写代码\n祈祷适配器能与模型完美兼容\n现在这一差距已基本填平\n因为在deep sk官方API文档中已经有了专属集成页面\n用于一个名为reason x的工具\n这绝对是deep sick对编程智能体最正式的一次官方集成\n接下来我们聊聊它是何方神圣\n以及它的运作原理\n还有如何配置使用\n首先什么是reason x\n它是一款运行在终端的deep sick原声编程智能体\n这里的关键词是deep sick原声\n它不是那种集成了多个模型的工具\ndeep sk在其中仅仅只是一个选项\n配合丰富的模型下拉选项\n无需任何中间转移层\n无需OpenAI兼容层\n无需适配器\n也无需代理\n整个智能体完全是基于deep seek API的原生逻辑构建的\n关于官方这点我得严谨的说明一下\n我想坦诚说明\nreason本身并非由deep sk开发\n它是一个由s engine在GITHUB上维护的开源项目\n采用MIT协议\n由社区共同开发\n目前已拥有约4600个star\n该项目仓库并未声称获得deep sick的任何官方背书\n但重点来了\ndeep sick现已将reason x直接收录进了官方API文档\n并在智能体集成板块下设有专属的快速入门页面\ndeep sick可不会随便给工具背书\n毕竟他们的文档向来极简\n教你如何使用该智能体\n并配合API提供完整的设置说明\n还附带了配置指令\n这简直就是官方认可的编程智能体了\n这就像当初G2M的情况一样\n当时他们的编程方案也是由实验室亲自清点了几款工具\n被开发商官方选中就是最好的背书\n看看reason x架构就能明白deep sick为何选中它\n因为它的整体设计与deep seek API的工作机制完美契合\nREDEB文档提到了三大核心\n第一点就是缓存优先循环\n整个智能体循环的逻辑都是为了确保提示词前缀\n在多轮对话中保持稳定\n这样deep sick的前缀缓存就能持续命中\n我们在之前的command code视频里也聊过这个\n在AI编程中\n大部分token都浪费在智能体反复读取相同的上下文上了\n而在deep sk上缓存命中能大幅降低成本\nreason x将此发挥到极致\n他们甚至发布了真实案例\n研究展示了一次400人的长时间会话\n处理了4.35亿个输入token\n且缓存命中率高达99.82%\n最终成本仅约12美元\n而非60亿美元左右\n如果不用缓存的话\n所以他们的标语简单\n直接利用前缀缓存保持稳定运行\n这非常符合deep sick的智能体设计理念\n第二个核心支柱是工具调用修复\n当模型生成的工具调用格式有误时\nreason x会自动修复\n避免对话中断\n如果你还记得的话\n这正是command k之前强调过的点\n在集成V4flash07311版时\n开源模型有时会搞砸工具调用\n通过实时修复机制\n同一模型能展现出更可靠的智能体表现\n第三大支柱是成本控制\n默认情况下reason x运行在deep stick v four flash上\n073 11更新之后\n它确实是一个非常强悍的默认配置\n遇到真正棘手的问题时\n只需输入pro\n它仅在下一轮对话中使用deep sick vic pro之后自动切回flash\n如果想全程使用pro运行preset max即可\n只需一条指令就能轻松调用高性能模型\n不必为琐碎的修改支付高昂的pro费用\n这种flash优先的策略正是我上期视频推荐的工作流\n不同的是\n它现在已内置于IG中\n现在来设置一下吧\n这绝对是我见过最简单的配置流程\n首先你需要安装node deep sc官方文档\n要求node20.10及以上版本\n但GITHUB的read me说明里要求node22\n所以直接装个较新的node版本就行\nwindows用户这样就够了\n记得还要装git for windows\n接着去deep sk平台获取你的API密钥\n然后直接进入你的项目文件夹\n运行npx reason x code就行\n无需全局安装\n也不用配环境变量\n首次运行会弹出配置向导\n让你输入API密钥\n它会自动存到你主目录的recent x config JSON文件里\n如果你倾向于常规安装\n也可以运行npm install g reason\n之后在项目中直接运行reason code即可\n此外还有用于纯对话的reason x chat\n无需额外工具权限\n通过task即可运行reason x并配合引号执行单次指令\n运行reason mix update即可自动升级\n会话中输入help即可查看完整命令手册\n功能方面\n作为社区项目\n功能完善令人惊喜\n代码编辑采用搜索与替换提案机制\n由你进行审查\n并使用apply批准\n确保智能体不会在后台静默修改你的文件\n它有先思考后执行的规划模式\n并支持每个工作区持久化绘画\n让你能随时离开项目\n回来时可接着上次的进度\n他支持studio和HTTP的MCP协议\n方便你接入外部工具\n它还内置了技能系统\n通过skill new即可创建基于markdown的技能\n它们既能内联运行\n也能作为子代理运行\n它还配有记忆系统\n涵盖用户项目反馈和参考记忆类型\n此外还有shell命令的生命周期钩子以及工作区级别的权限控制\n它甚至具备一些大型工具所没有的功能\n例如内置网页搜索\n支持moi couserrx g或medical等工具\n它支持语义代码索引\n并能通过本地奥拉码模型运行\n或任何兼容OpenAI的接口\n查瑞版桌面测试客户端支持多标签页\n而且非常接地气的集成了QQ消息功能\n你可以直接输入qq connect来连接会话\n通过QQ远程与你的编程智能体交流\n这着实让我会心一笑\n老实说\n有件事我得先说明\nreason x并非万能项目明确列出了非核心目标\n其设计初衷就是仅支持deep seek\n不支持多模型\n也没有IDE集成\n也没有离线模式\n他们把这视为特性而非局限\n因为绑定单一后端才能实现高效的前缀缓存\n以及极其激进的工具调用修复\n但这也就意味着它并非cloud code的万能替代品\n如果你想要一个能在十佳服务商间随意切换的工具\n哪怕不适合你\n他是为那些将deep seek作为主力模型的人准备的\n并且想要榨干其每一分性能的开发者\n那么他在整个大局中处于什么位置呢\n在我看来\ndeep sick正在悄然构建自己的全站生态\n先是0.7版本的更新\n让with flash真正成为了成熟的智能体模型\n接着又将其适配到了codex的响应API中\n现在连官方文档都在指引用户去使用deep sk原生智能体pro版\n默认搭载flash\n一条命令即可调用\n随着deep sk v4pro官方版呼之欲出\nreason x已经抢先适配\n输入pro就能直接上手\n准备就绪\n那么结论是什么\n依我看\n如果你把deep sk模型作为主力使用\n那reason x目前就是最契合的开发工具\n而且他被写进了deep sk官方API文档\n这意味着模型很可能正在针对这种工作流进行持续的优化和测试\n它不仅免费\n而且开源\n采用MIT协议\n用NPX2分钟就能装好\n而且它主打省钱的设计\n真的能帮你省下不少成本\n但我还是建议\n如果你想要那种订阅制服务\n不想按API用量付费\n可以对比体验一下cursor\n就DEPICC的原生配置而言\n这绝对是目前最值得关注的方案\n总的来说它确实很棒\n欢迎在评论区留下你的看法",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zw3R6SEtL",
+  "published_at": "1785664564",
+  "fetched_at": "2026-08-06T22:21:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek Reason X 知识图谱\n\n## 图1：Reason X 概览 [BV1zw3R6SEtL P1 00:56] [BV1zw3R6SEtL P1 01:26] [BV1zw3R6SEtL P1 01:39]\n```mermaid\nflowchart TD\n    R1[\"Reason X\"] --> O1[\"官方API集成页面\"]\n    R1 --> N1[\"原生编程智能体\"]\n    R1 --> O2[\"开源项目 (MIT)\"]\n    O2 --> M1[\"s engine (GitHub)\"]\n    O2 --> S1[\"≈4600 stars\"]\n    O2 --> B1[\"未获官方背书\"]\n    O1 --> D1[\"DeepSeek官方文档收录\"]\n    D1 --> Q1[\"快速入门页面\"]\n    R1 --> A1[\"无需适配器/代理\"]\n    R1 --> A2[\"基于DeepSeek API原生逻辑\"]\n    A2 --> M2[\"可选DeepSeek模型\"]\n    M2 --> D2[\"丰富模型下拉选项\"]\n    R1 --> L1[\"无中间转移层\"]\n    R1 --> U1[\"面向DeepSeek主力模型用户\"]\n```\n\n## 图2：三大核心支柱 [BV1zw3R6SEtL P1 02:24] [BV1zw3R6SEtL P1 03:13] [BV1zw3R6SEtL P1 03:35]\n```mermaid\nflowchart TD\n    C1[\"三大核心支柱\"] --> CP[\"缓存优先循环\"]\n    CP --> PS[\"提示词前缀稳定\"]\n    PS --> HC[\"缓存命中率 99.82%\"]\n    HC --> CS[\"成本≈12美元\"]\n    C1 --> TR[\"工具调用修复\"]\n    TR --> AF[\"自动修复格式错误\"]\n    AF --> PI[\"防止对话中断\"]\n    C1 --> CC[\"成本控制\"]\n    CC --> DM[\"默认运行在 DeepSeek v4 flash\"]\n    DM --> PSW[\"输入 pro 切换至 VicPro\"]\n    PSW --> FP[\"Flash 优先策略\"]\n    CP --> SB[\"单一后端实现高效缓存\"]\n    TR --> AR[\"激进的工具调用修复\"]\n```\n\n## 图3：安装与使用流程 [BV1zw3R6SEtL P1 04:13] [BV1zw3R6SEtL P1 04:32] [BV1zw3R6SEtL P1 04:41]\n```mermaid\nflowchart TD\n    I1[\"安装 Node (>=20.10)\"] --> I2[\"安装 Git for Windows\"]\n    I1 --> I3[\"获取 DeepSeek API 密钥\"]\n    I3 --> I4[\"进入项目文件夹\"]\n    I4 --> I5[\"运行 npx reasonx code\"]\n    I5 --> I6[\"首次运行弹出配置向导\"]\n    I6 --> I7[\"输入 API 密钥\"]\n    I7 --> I8[\"保存至 recent_x_config.json\"]\n    I8 --> I9[\"可选 npm install -g reason\"]\n    I9 --> I10[\"运行 reason code\"]\n    I10 --> I11[\"reasonx chat (纯对话)\"]\n    I10 --> I12[\"通过 task 运行单次指令\"]\n    I10 --> I13[\"reason mix update (升级)\"]\n    I13 --> I14[\"输入 help 查看手册\"]\n```\n\n## 图4：局限性与适用人群 [BV1zw3R6SEtL P1 06:28] [BV1zw3R6SEtL P1 06:30] [BV1zw3R6SEtL P1 06:45]\n```mermaid\nflowchart TD\n    L1[\"非核心目标\"] --> L2[\"仅支持 DeepSeek\"]\n    L2 --> L3[\"不支持多模型\"]\n    L3 --> L4[\"无 IDE 集成\"]\n    L4 --> L5[\"无离线模式\"]\n    L5 --> L6[\"视为特性\"]\n    L6 --> L7[\"高效前缀缓存\"]\n    L6 --> L8[\"激进工具调用修复\"]\n    L7 --> L9[\"非 cloud code 万能替代\"]\n    L8 --> L9\n    L9 --> T1[\"DeepSeek 主力模型开发者\"]\n    T1 --> C1[\"省钱设计\"]\n    C1 --> N1[\"不适合需要切换服务商或订阅制\"]\n    N1 --> A1[\"可对比 cursor\"]\n```",
+      "diagrams": [
+        {
+          "title": "图1：Reason X 概览",
+          "code": "flowchart TD\n    R1[\"Reason X\"] --> O1[\"官方API集成页面\"]\n    R1 --> N1[\"原生编程智能体\"]\n    R1 --> O2[\"开源项目 (MIT)\"]\n    O2 --> M1[\"s engine (GitHub)\"]\n    O2 --> S1[\"≈4600 stars\"]\n    O2 --> B1[\"未获官方背书\"]\n    O1 --> D1[\"DeepSeek官方文档收录\"]\n    D1 --> Q1[\"快速入门页面\"]\n    R1 --> A1[\"无需适配器/代理\"]\n    R1 --> A2[\"基于DeepSeek API原生逻辑\"]\n    A2 --> M2[\"可选DeepSeek模型\"]\n    M2 --> D2[\"丰富模型下拉选项\"]\n    R1 --> L1[\"无中间转移层\"]\n    R1 --> U1[\"面向DeepSeek主力模型用户\"]"
+        },
+        {
+          "title": "图2：三大核心支柱",
+          "code": "flowchart TD\n    C1[\"三大核心支柱\"] --> CP[\"缓存优先循环\"]\n    CP --> PS[\"提示词前缀稳定\"]\n    PS --> HC[\"缓存命中率 99.82%\"]\n    HC --> CS[\"成本≈12美元\"]\n    C1 --> TR[\"工具调用修复\"]\n    TR --> AF[\"自动修复格式错误\"]\n    AF --> PI[\"防止对话中断\"]\n    C1 --> CC[\"成本控制\"]\n    CC --> DM[\"默认运行在 DeepSeek v4 flash\"]\n    DM --> PSW[\"输入 pro 切换至 VicPro\"]\n    PSW --> FP[\"Flash 优先策略\"]\n    CP --> SB[\"单一后端实现高效缓存\"]\n    TR --> AR[\"激进的工具调用修复\"]"
+        },
+        {
+          "title": "图3：安装与使用流程",
+          "code": "flowchart TD\n    I1[\"安装 Node (>=20.10)\"] --> I2[\"安装 Git for Windows\"]\n    I1 --> I3[\"获取 DeepSeek API 密钥\"]\n    I3 --> I4[\"进入项目文件夹\"]\n    I4 --> I5[\"运行 npx reasonx code\"]\n    I5 --> I6[\"首次运行弹出配置向导\"]\n    I6 --> I7[\"输入 API 密钥\"]\n    I7 --> I8[\"保存至 recent_x_config.json\"]\n    I8 --> I9[\"可选 npm install -g reason\"]\n    I9 --> I10[\"运行 reason code\"]\n    I10 --> I11[\"reasonx chat (纯对话)\"]\n    I10 --> I12[\"通过 task 运行单次指令\"]\n    I10 --> I13[\"reason mix update (升级)\"]\n    I13 --> I14[\"输入 help 查看手册\"]"
+        },
+        {
+          "title": "图4：局限性与适用人群",
+          "code": "flowchart TD\n    L1[\"非核心目标\"] --> L2[\"仅支持 DeepSeek\"]\n    L2 --> L3[\"不支持多模型\"]\n    L3 --> L4[\"无 IDE 集成\"]\n    L4 --> L5[\"无离线模式\"]\n    L5 --> L6[\"视为特性\"]\n    L6 --> L7[\"高效前缀缓存\"]\n    L6 --> L8[\"激进工具调用修复\"]\n    L7 --> L9[\"非 cloud code 万能替代\"]\n    L8 --> L9\n    L9 --> T1[\"DeepSeek 主力模型开发者\"]\n    T1 --> C1[\"省钱设计\"]\n    C1 --> N1[\"不适合需要切换服务商或订阅制\"]\n    N1 --> A1[\"可对比 cursor\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T22:22:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek Reason X 知识图谱\n\n## 图1：Reason X 概览 [BV1zw3R6SEtL P1 00:56] [BV1zw3R6SEtL P1 01:26] [BV1zw3R6SEtL P1 01:39]\n```mermaid\nflowchart TD\n    R1[\"Reason X\"] --> O1[\"官方API集成页面\"]\n    R1 --> N1[\"原生编程智能体\"]\n    R1 --> O2[\"开源项目 (MIT)\"]\n    O2 --> M1[\"s engine (GitHub)\"]\n    O2 --> S1[\"≈4600 stars\"]\n    O2 --> B1[\"未获官方背书\"]\n    O1 --> D1[\"DeepSeek官方文档收录\"]\n    D1 --> Q1[\"快速入门页面\"]\n    R1 --> A1[\"无需适配器/代理\"]\n    R1 --> A2[\"基于DeepSeek API原生逻辑\"]\n    A2 --> M2[\"可选DeepSeek模型\"]\n    M2 --> D2[\"丰富模型下拉选项\"]\n    R1 --> L1[\"无中间转移层\"]\n    R1 --> U1[\"面向DeepSeek主力模型用户\"]\n```\n\n## 图2：三大核心支柱 [BV1zw3R6SEtL P1 02:24] [BV1zw3R6SEtL P1 03:13] [BV1zw3R6SEtL P1 03:35]\n```mermaid\nflowchart TD\n    C1[\"三大核心支柱\"] --> CP[\"缓存优先循环\"]\n    CP --> PS[\"提示词前缀稳定\"]\n    PS --> HC[\"缓存命中率 99.82%\"]\n    HC --> CS[\"成本≈12美元\"]\n    C1 --> TR[\"工具调用修复\"]\n    TR --> AF[\"自动修复格式错误\"]\n    AF --> PI[\"防止对话中断\"]\n    C1 --> CC[\"成本控制\"]\n    CC --> DM[\"默认运行在 DeepSeek v4 flash\"]\n    DM --> PSW[\"输入 pro 切换至 VicPro\"]\n    PSW --> FP[\"Flash 优先策略\"]\n    CP --> SB[\"单一后端实现高效缓存\"]\n    TR --> AR[\"激进的工具调用修复\"]\n```\n\n## 图3：安装与使用流程 [BV1zw3R6SEtL P1 04:13] [BV1zw3R6SEtL P1 04:32] [BV1zw3R6SEtL P1 04:41]\n```mermaid\nflowchart TD\n    I1[\"安装 Node (>=20.10)\"] --> I2[\"安装 Git for Windows\"]\n    I1 --> I3[\"获取 DeepSeek API 密钥\"]\n    I3 --> I4[\"进入项目文件夹\"]\n    I4 --> I5[\"运行 npx reasonx code\"]\n    I5 --> I6[\"首次运行弹出配置向导\"]\n    I6 --> I7[\"输入 API 密钥\"]\n    I7 --> I8[\"保存至 recent_x_config.json\"]\n    I8 --> I9[\"可选 npm install -g reason\"]\n    I9 --> I10[\"运行 reason code\"]\n    I10 --> I11[\"reasonx chat (纯对话)\"]\n    I10 --> I12[\"通过 task 运行单次指令\"]\n    I10 --> I13[\"reason mix update (升级)\"]\n    I13 --> I14[\"输入 help 查看手册\"]\n```\n\n## 图4：局限性与适用人群 [BV1zw3R6SEtL P1 06:28] [BV1zw3R6SEtL P1 06:30] [BV1zw3R6SEtL P1 06:45]\n```mermaid\nflowchart TD\n    L1[\"非核心目标\"] --> L2[\"仅支持 DeepSeek\"]\n    L2 --> L3[\"不支持多模型\"]\n    L3 --> L4[\"无 IDE 集成\"]\n    L4 --> L5[\"无离线模式\"]\n    L5 --> L6[\"视为特性\"]\n    L6 --> L7[\"高效前缀缓存\"]\n    L6 --> L8[\"激进工具调用修复\"]\n    L7 --> L9[\"非 cloud code 万能替代\"]\n    L8 --> L9\n    L9 --> T1[\"DeepSeek 主力模型开发者\"]\n    T1 --> C1[\"省钱设计\"]\n    C1 --> N1[\"不适合需要切换服务商或订阅制\"]\n    N1 --> A1[\"可对比 cursor\"]\n```",
+  "diagrams": [
+    {
+      "title": "图1：Reason X 概览",
+      "code": "flowchart TD\n    R1[\"Reason X\"] --> O1[\"官方API集成页面\"]\n    R1 --> N1[\"原生编程智能体\"]\n    R1 --> O2[\"开源项目 (MIT)\"]\n    O2 --> M1[\"s engine (GitHub)\"]\n    O2 --> S1[\"≈4600 stars\"]\n    O2 --> B1[\"未获官方背书\"]\n    O1 --> D1[\"DeepSeek官方文档收录\"]\n    D1 --> Q1[\"快速入门页面\"]\n    R1 --> A1[\"无需适配器/代理\"]\n    R1 --> A2[\"基于DeepSeek API原生逻辑\"]\n    A2 --> M2[\"可选DeepSeek模型\"]\n    M2 --> D2[\"丰富模型下拉选项\"]\n    R1 --> L1[\"无中间转移层\"]\n    R1 --> U1[\"面向DeepSeek主力模型用户\"]"
+    },
+    {
+      "title": "图2：三大核心支柱",
+      "code": "flowchart TD\n    C1[\"三大核心支柱\"] --> CP[\"缓存优先循环\"]\n    CP --> PS[\"提示词前缀稳定\"]\n    PS --> HC[\"缓存命中率 99.82%\"]\n    HC --> CS[\"成本≈12美元\"]\n    C1 --> TR[\"工具调用修复\"]\n    TR --> AF[\"自动修复格式错误\"]\n    AF --> PI[\"防止对话中断\"]\n    C1 --> CC[\"成本控制\"]\n    CC --> DM[\"默认运行在 DeepSeek v4 flash\"]\n    DM --> PSW[\"输入 pro 切换至 VicPro\"]\n    PSW --> FP[\"Flash 优先策略\"]\n    CP --> SB[\"单一后端实现高效缓存\"]\n    TR --> AR[\"激进的工具调用修复\"]"
+    },
+    {
+      "title": "图3：安装与使用流程",
+      "code": "flowchart TD\n    I1[\"安装 Node (>=20.10)\"] --> I2[\"安装 Git for Windows\"]\n    I1 --> I3[\"获取 DeepSeek API 密钥\"]\n    I3 --> I4[\"进入项目文件夹\"]\n    I4 --> I5[\"运行 npx reasonx code\"]\n    I5 --> I6[\"首次运行弹出配置向导\"]\n    I6 --> I7[\"输入 API 密钥\"]\n    I7 --> I8[\"保存至 recent_x_config.json\"]\n    I8 --> I9[\"可选 npm install -g reason\"]\n    I9 --> I10[\"运行 reason code\"]\n    I10 --> I11[\"reasonx chat (纯对话)\"]\n    I10 --> I12[\"通过 task 运行单次指令\"]\n    I10 --> I13[\"reason mix update (升级)\"]\n    I13 --> I14[\"输入 help 查看手册\"]"
+    },
+    {
+      "title": "图4：局限性与适用人群",
+      "code": "flowchart TD\n    L1[\"非核心目标\"] --> L2[\"仅支持 DeepSeek\"]\n    L2 --> L3[\"不支持多模型\"]\n    L3 --> L4[\"无 IDE 集成\"]\n    L4 --> L5[\"无离线模式\"]\n    L5 --> L6[\"视为特性\"]\n    L6 --> L7[\"高效前缀缓存\"]\n    L6 --> L8[\"激进工具调用修复\"]\n    L7 --> L9[\"非 cloud code 万能替代\"]\n    L8 --> L9\n    L9 --> T1[\"DeepSeek 主力模型开发者\"]\n    T1 --> C1[\"省钱设计\"]\n    C1 --> N1[\"不适合需要切换服务商或订阅制\"]\n    N1 --> A1[\"可对比 cursor\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:22:16+00:00"
+}

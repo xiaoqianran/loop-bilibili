@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1TxPezMEU8",
+  "title": "还有人不知道JS是性能最强的脚本语言？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 919,
+  "text": "好我是莫太香啊\n我发现还有很多人啊对JS的性能就表示惊讶\n之前做了两个视频嘛\n就是关于主流编程语言的性能对比啊\n当然这些性能对比啊\n我没有去偏袒谁哈\n嗯然后测出来的结果呢\n就是JS的性能是非常让人惊讶的\n呃因为他是非编译型语言里边呃性能最强的\n哎也不能说非编译型啊\n唉还是没有java和这个CSHB强啊\n这个怎么讲呢\n脚本语言里面吧好吧\n算是脚本语言里面这个性能最强的这个点\n我以为很多人都已经知道了啊\n但是嗯看起来不是这样啊\n也不知道是为什么\n反正就是常见的一些脚本语言啊\nPython ruby啊\nLUAJS啊啊\nJS是断档式的领先其他的一些语言的啊\n关于性能这方面\n然后他的一个缺点我也一直在吐槽好吧\n并不是说我我比较喜欢JS这个语言啊\n我不存在偏袒哪个语言\n对于语言啊\n我根本就没有那种偏袒的兴趣\n懂吧\n没有那种情绪在啊\n好的地方就说好\n不好的地方就说不好啊\n就是这么直接啊\n我也吐槽过很多次\nJS他妈的一直不加那个多线程啊\n很烦啊啊这是它最大的一个短板啊\n然后虽然说Python它的一个性能比JS慢很多很多啊\n这两个视频你可以看到啊\n最终测出来的结果啊\nJS单从比如说这个CPU密集型的一些语句来看啊\n是仅次于额java c#和go的啊\n仅次于这三个\n其他的都被他甩到哪去了都啊\n但是啊一旦涉及到多线程并行啊\n那这个时候呢JS优势就全无了好吧\n他就不一定比得过Python了\n那当然肯定也要有一种临界点吧\n因为JS比Python还是快太多了\n嗯如果只是开两个并行\n还不一定PYON能快过JS啊\n但是肯定能到达一个临界点\n然后呢YTHON就更快了\n嗯就说就说这么多吧好吧\n然后不知道的\n现在应该也已经知道了啊\n如果说想知道具体的一个数据和参数\n看一下这两个视频的对比就好了啊\n这两个视频里面的一些呃性能测试代码啊\n都是AI写的哈\n不存在这个谁偏向谁啊\n要真的是谁偏向谁\n诶刚好啊我已经做好了这个预案啊\n嗯那就是AI偏向了谁\n呵呵好吧\n这个具体的代码我也已经提供了\n如果说你觉得呃有什么不公平的\n你在这个视频下面再去留言再说呗\n好就这12种编程语言的性能对比啊\n这一期是有代码公开的啊\n这个地址也是在视频里面跟你说了啊\n仓库的地址啊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TxPezMEU8",
+  "published_at": "1772630274",
+  "fetched_at": "2026-08-09T15:28:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# JS 脚本语言性能图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A[\"单线程 CPU 密集型性能\"]\n    B[\"JS（脚本语言最高）\"]\n    C[\"Python\"]\n    D[\"Ruby\"]\n    E[\"Lua\"]\n    F[\"次于 Java、C#、Go\"]\n    G[\"Java\"]\n    H[\"C#（识别存疑）\"]\n    I[\"Go\"]\n    J[\"性能显著低于 JS\"]\n\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    B --> F\n    F --> G\n    F --> H\n    F --> I\n    C --> J\n    D --> J\n    E --> J\n```\n\n## 优势与局限\n\n```mermaid\nflowchart TD\n    S1[\"优势\"]\n    S2[\"高单线程性能（脚本语言）\"]\n    S3[\"无语言偏袒声明\"]\n    W1[\"局限\"]\n    W2[\"缺乏多线程支持\"]\n    W3[\"并发性能下降\"]\n    W4[\"在多线程场景可能不及 Python\"]\n\n    S1 --> S2\n    S1 --> S3\n    W1 --> W2\n    W2 --> W3\n    W1 --> W4\n```\n\n## 并发场景性能路径\n\n```mermaid\nflowchart LR\n    Start[\"任务类型\"]\n    ST[\"单线程 CPU 密集\"]\n    MT[\"多线程/并行\"]\n    A1[\"JS 性能领先\"]\n    A2[\"Python 性能落后\"]\n    B1[\"JS 多线程劣势\"]\n    B2[\"Python 可能超越\"]\n    C[\"并发数 ↑ → Python 更快（临界点）\"]\n    D[\"JS 优势消失\"]\n    E[\"选择语言依据并发需求\"]\n\n    Start --> ST\n    Start --> MT\n    ST --> A1\n    ST --> A2\n    MT --> B1\n    MT --> B2\n    B2 --> C\n    B1 --> D\n    C --> E\n```\n\nJS 在脚本语言中性能最强（[BV1TxPezMEU8 P1 00:14]）。  \nJS 属于非编译型语言中性能最强（[BV1TxPezMEU8 P1 00:17]）。  \n在 CPU 密集型单线程任务中，JS 仅次于 Java、C#、Go（[BV1TxPezMEU8 P1 01:16]‑[BV1TxPezMEU8 P1 01:22]）。  \nJS 缺乏多线程支持是其最大短板（[BV1TxPezMEU8 P1 01:05]‑[BV1TxPezMEU8 P1 01:07]）。  \n多线程场景下，Python 可能在并发数达到临界点后超过 JS（[BV1TxPezMEU8 P1 01:29]‑[BV1TxPezMEU8 P1 01:43]）。",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"单线程 CPU 密集型性能\"]\n    B[\"JS（脚本语言最高）\"]\n    C[\"Python\"]\n    D[\"Ruby\"]\n    E[\"Lua\"]\n    F[\"次于 Java、C#、Go\"]\n    G[\"Java\"]\n    H[\"C#（识别存疑）\"]\n    I[\"Go\"]\n    J[\"性能显著低于 JS\"]\n\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    B --> F\n    F --> G\n    F --> H\n    F --> I\n    C --> J\n    D --> J\n    E --> J"
+        },
+        {
+          "title": "优势与局限",
+          "code": "flowchart TD\n    S1[\"优势\"]\n    S2[\"高单线程性能（脚本语言）\"]\n    S3[\"无语言偏袒声明\"]\n    W1[\"局限\"]\n    W2[\"缺乏多线程支持\"]\n    W3[\"并发性能下降\"]\n    W4[\"在多线程场景可能不及 Python\"]\n\n    S1 --> S2\n    S1 --> S3\n    W1 --> W2\n    W2 --> W3\n    W1 --> W4"
+        },
+        {
+          "title": "并发场景性能路径",
+          "code": "flowchart LR\n    Start[\"任务类型\"]\n    ST[\"单线程 CPU 密集\"]\n    MT[\"多线程/并行\"]\n    A1[\"JS 性能领先\"]\n    A2[\"Python 性能落后\"]\n    B1[\"JS 多线程劣势\"]\n    B2[\"Python 可能超越\"]\n    C[\"并发数 ↑ → Python 更快（临界点）\"]\n    D[\"JS 优势消失\"]\n    E[\"选择语言依据并发需求\"]\n\n    Start --> ST\n    Start --> MT\n    ST --> A1\n    ST --> A2\n    MT --> B1\n    MT --> B2\n    B2 --> C\n    B1 --> D\n    C --> E"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T15:29:14+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# JS 脚本语言性能图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A[\"单线程 CPU 密集型性能\"]\n    B[\"JS（脚本语言最高）\"]\n    C[\"Python\"]\n    D[\"Ruby\"]\n    E[\"Lua\"]\n    F[\"次于 Java、C#、Go\"]\n    G[\"Java\"]\n    H[\"C#（识别存疑）\"]\n    I[\"Go\"]\n    J[\"性能显著低于 JS\"]\n\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    B --> F\n    F --> G\n    F --> H\n    F --> I\n    C --> J\n    D --> J\n    E --> J\n```\n\n## 优势与局限\n\n```mermaid\nflowchart TD\n    S1[\"优势\"]\n    S2[\"高单线程性能（脚本语言）\"]\n    S3[\"无语言偏袒声明\"]\n    W1[\"局限\"]\n    W2[\"缺乏多线程支持\"]\n    W3[\"并发性能下降\"]\n    W4[\"在多线程场景可能不及 Python\"]\n\n    S1 --> S2\n    S1 --> S3\n    W1 --> W2\n    W2 --> W3\n    W1 --> W4\n```\n\n## 并发场景性能路径\n\n```mermaid\nflowchart LR\n    Start[\"任务类型\"]\n    ST[\"单线程 CPU 密集\"]\n    MT[\"多线程/并行\"]\n    A1[\"JS 性能领先\"]\n    A2[\"Python 性能落后\"]\n    B1[\"JS 多线程劣势\"]\n    B2[\"Python 可能超越\"]\n    C[\"并发数 ↑ → Python 更快（临界点）\"]\n    D[\"JS 优势消失\"]\n    E[\"选择语言依据并发需求\"]\n\n    Start --> ST\n    Start --> MT\n    ST --> A1\n    ST --> A2\n    MT --> B1\n    MT --> B2\n    B2 --> C\n    B1 --> D\n    C --> E\n```\n\nJS 在脚本语言中性能最强（[BV1TxPezMEU8 P1 00:14]）。  \nJS 属于非编译型语言中性能最强（[BV1TxPezMEU8 P1 00:17]）。  \n在 CPU 密集型单线程任务中，JS 仅次于 Java、C#、Go（[BV1TxPezMEU8 P1 01:16]‑[BV1TxPezMEU8 P1 01:22]）。  \nJS 缺乏多线程支持是其最大短板（[BV1TxPezMEU8 P1 01:05]‑[BV1TxPezMEU8 P1 01:07]）。  \n多线程场景下，Python 可能在并发数达到临界点后超过 JS（[BV1TxPezMEU8 P1 01:29]‑[BV1TxPezMEU8 P1 01:43]）。",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"单线程 CPU 密集型性能\"]\n    B[\"JS（脚本语言最高）\"]\n    C[\"Python\"]\n    D[\"Ruby\"]\n    E[\"Lua\"]\n    F[\"次于 Java、C#、Go\"]\n    G[\"Java\"]\n    H[\"C#（识别存疑）\"]\n    I[\"Go\"]\n    J[\"性能显著低于 JS\"]\n\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    B --> F\n    F --> G\n    F --> H\n    F --> I\n    C --> J\n    D --> J\n    E --> J"
+    },
+    {
+      "title": "优势与局限",
+      "code": "flowchart TD\n    S1[\"优势\"]\n    S2[\"高单线程性能（脚本语言）\"]\n    S3[\"无语言偏袒声明\"]\n    W1[\"局限\"]\n    W2[\"缺乏多线程支持\"]\n    W3[\"并发性能下降\"]\n    W4[\"在多线程场景可能不及 Python\"]\n\n    S1 --> S2\n    S1 --> S3\n    W1 --> W2\n    W2 --> W3\n    W1 --> W4"
+    },
+    {
+      "title": "并发场景性能路径",
+      "code": "flowchart LR\n    Start[\"任务类型\"]\n    ST[\"单线程 CPU 密集\"]\n    MT[\"多线程/并行\"]\n    A1[\"JS 性能领先\"]\n    A2[\"Python 性能落后\"]\n    B1[\"JS 多线程劣势\"]\n    B2[\"Python 可能超越\"]\n    C[\"并发数 ↑ → Python 更快（临界点）\"]\n    D[\"JS 优势消失\"]\n    E[\"选择语言依据并发需求\"]\n\n    Start --> ST\n    Start --> MT\n    ST --> A1\n    ST --> A2\n    MT --> B1\n    MT --> B2\n    B2 --> C\n    B1 --> D\n    C --> E"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T15:29:14+00:00"
+}

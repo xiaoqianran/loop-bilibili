@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1XTNR69Ec2",
+  "title": "AI python 自动编程远程调用Call和周围遍历",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 478,
+  "text": "我们刚刚让这个AI帮我们写了一个感化call啊\n远程输入的一个方式啊\n我们来看一下这个源码\n看一下他的这个源码是这个对吧\n可以看到啊\n写了400多行\n当然了\n他这里面有一个便利啊\n这个就是我们一个喊话的一个call对吧\n点击执行喊话\n对吧\n执行成功远程调用call啊\n创建一个线程对吧\n这是他的一个源码\n我们让这个AI帮我们写的\n那么我们运行一下啊\n运行一下\n我们看一下效果\n首先我们周围便利一下啊\n可以看到啊\n李光我们看一下\n找找不找得到他\nOK那么它的偏移可能有点不一样\n但是啊但是我们可以找到一个什么\n我们来看一下周围的啊\n重新让它编译一下\n海哥同价啊\n他们的名称和偏移可能有点区别啊对吧\n还得优化一下\nOK这个铜匠有啊\n在这里对吧\n在这里啊\n然后我们调用一下执行一个喊话call\n试一下执行哎\n可以看到啊\n他确确实实能喊话出来对吧\n但是我们游戏崩掉了啊\n肯定他代码还有一点没优化好对吧\n我们再再让他截个图啊\n优化一下\n但是啊可以看到并不影响我们玩游戏啊对吧\n但是这个这个是崩掉了\nOK这个是崩掉了啊\n那么它应该是注入线程之后没有结束啊\n没关闭\nOk",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1XTNR69Ec2",
+  "published_at": "1784008421",
+  "fetched_at": "2026-08-10T08:46:15+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI Python 自动编程远程调用 Call 与周围遍历知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"AI 生成 call 代码\"]\n    A2[\"源码约 400 行\"]\n    A3[\"包含 call 便利（喊话）\"]\n    A4[\"点击执行喊话\"]\n    A5[\"创建线程并远程调用\"]\n    A6[\"喊话成功\"]\n    A7[\"游戏崩溃\"]\n    A8[\"原因：线程未关闭\"]\n    A9[\"优化：关闭线程、重编译\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A5 --> A7\n    A7 --> A8\n    A8 --> A9\n```\n- AI 生成 call 代码 [BV1XTNR69Ec2 P1 00:00]  \n- 源码约 400 行 [BV1XTNR69Ec2 P1 00:20]  \n- 包含 call 便利（喊话） [BV1XTNR69Ec2 P1 00:23]  \n- 点击执行喊话 [BV1XTNR69Ec2 P1 00:25]  \n- 创建线程并远程调用 [BV1XTNR69Ec2 P1 00:32]  \n- 喊话成功 [BV1XTNR69Ec2 P1 01:28]  \n- 游戏崩溃 [BV1XTNR69Ec2 P1 01:30]  \n- 原因：线程未关闭 [BV1XTNR69Ec2 P1 01:49]  \n- 优化：关闭线程、重编译 [BV1XTNR69Ec2 P1 01:36]\n\n## 执行与调试流程\n```mermaid\nflowchart LR\n    B1[\"编写 call 代码\"]\n    B2[\"编译源码\"]\n    B3[\"运行程序\"]\n    B4[\"调用喊话 call\"]\n    B5[\"喊话输出\"]\n    B6[\"游戏异常（崩溃）\"]\n    B7[\"定位问题：线程未结束\"]\n    B8[\"修改代码：加入线程关闭\"]\n    B9[\"重新编译并测试\"]\n    B10[\"恢复正常运行\"]\n\n    B1 --> B2 --> B3 --> B4\n    B4 --> B5\n    B4 --> B6\n    B6 --> B7 --> B8 --> B9 --> B4\n    B5 --> B10\n    B9 --> B10\n```\n- 编写 call 代码 [BV1XTNR69Ec2 P1 00:00]  \n- 编译源码 [BV1XTNR69Ec2 P1 01:04]  \n- 运行程序 [BV1XTNR69Ec2 P1 00:38]  \n- 调用喊话 call [BV1XTNR69Ec2 P1 01:22]  \n- 喊话输出成功 [BV1XTNR69Ec2 P1 01:28]  \n- 游戏异常（崩溃） [BV1XTNR69Ec2 P1 01:30]  \n- 定位问题：线程未结束 [BV1XTNR69Ec2 P1 01:49]  \n- 修改代码：加入线程关闭 [BV1XTNR69Ec2 P1 01:36]  \n- 重新编译并测试 [BV1XTNR69Ec2 P1 01:40]  \n- 恢复正常运行 [BV1XTNR69Ec2 P1 01:41]",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"AI 生成 call 代码\"]\n    A2[\"源码约 400 行\"]\n    A3[\"包含 call 便利（喊话）\"]\n    A4[\"点击执行喊话\"]\n    A5[\"创建线程并远程调用\"]\n    A6[\"喊话成功\"]\n    A7[\"游戏崩溃\"]\n    A8[\"原因：线程未关闭\"]\n    A9[\"优化：关闭线程、重编译\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A5 --> A7\n    A7 --> A8\n    A8 --> A9"
+        },
+        {
+          "title": "执行与调试流程",
+          "code": "flowchart LR\n    B1[\"编写 call 代码\"]\n    B2[\"编译源码\"]\n    B3[\"运行程序\"]\n    B4[\"调用喊话 call\"]\n    B5[\"喊话输出\"]\n    B6[\"游戏异常（崩溃）\"]\n    B7[\"定位问题：线程未结束\"]\n    B8[\"修改代码：加入线程关闭\"]\n    B9[\"重新编译并测试\"]\n    B10[\"恢复正常运行\"]\n\n    B1 --> B2 --> B3 --> B4\n    B4 --> B5\n    B4 --> B6\n    B6 --> B7 --> B8 --> B9 --> B4\n    B5 --> B10\n    B9 --> B10"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-10T08:46:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI Python 自动编程远程调用 Call 与周围遍历知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"AI 生成 call 代码\"]\n    A2[\"源码约 400 行\"]\n    A3[\"包含 call 便利（喊话）\"]\n    A4[\"点击执行喊话\"]\n    A5[\"创建线程并远程调用\"]\n    A6[\"喊话成功\"]\n    A7[\"游戏崩溃\"]\n    A8[\"原因：线程未关闭\"]\n    A9[\"优化：关闭线程、重编译\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A5 --> A7\n    A7 --> A8\n    A8 --> A9\n```\n- AI 生成 call 代码 [BV1XTNR69Ec2 P1 00:00]  \n- 源码约 400 行 [BV1XTNR69Ec2 P1 00:20]  \n- 包含 call 便利（喊话） [BV1XTNR69Ec2 P1 00:23]  \n- 点击执行喊话 [BV1XTNR69Ec2 P1 00:25]  \n- 创建线程并远程调用 [BV1XTNR69Ec2 P1 00:32]  \n- 喊话成功 [BV1XTNR69Ec2 P1 01:28]  \n- 游戏崩溃 [BV1XTNR69Ec2 P1 01:30]  \n- 原因：线程未关闭 [BV1XTNR69Ec2 P1 01:49]  \n- 优化：关闭线程、重编译 [BV1XTNR69Ec2 P1 01:36]\n\n## 执行与调试流程\n```mermaid\nflowchart LR\n    B1[\"编写 call 代码\"]\n    B2[\"编译源码\"]\n    B3[\"运行程序\"]\n    B4[\"调用喊话 call\"]\n    B5[\"喊话输出\"]\n    B6[\"游戏异常（崩溃）\"]\n    B7[\"定位问题：线程未结束\"]\n    B8[\"修改代码：加入线程关闭\"]\n    B9[\"重新编译并测试\"]\n    B10[\"恢复正常运行\"]\n\n    B1 --> B2 --> B3 --> B4\n    B4 --> B5\n    B4 --> B6\n    B6 --> B7 --> B8 --> B9 --> B4\n    B5 --> B10\n    B9 --> B10\n```\n- 编写 call 代码 [BV1XTNR69Ec2 P1 00:00]  \n- 编译源码 [BV1XTNR69Ec2 P1 01:04]  \n- 运行程序 [BV1XTNR69Ec2 P1 00:38]  \n- 调用喊话 call [BV1XTNR69Ec2 P1 01:22]  \n- 喊话输出成功 [BV1XTNR69Ec2 P1 01:28]  \n- 游戏异常（崩溃） [BV1XTNR69Ec2 P1 01:30]  \n- 定位问题：线程未结束 [BV1XTNR69Ec2 P1 01:49]  \n- 修改代码：加入线程关闭 [BV1XTNR69Ec2 P1 01:36]  \n- 重新编译并测试 [BV1XTNR69Ec2 P1 01:40]  \n- 恢复正常运行 [BV1XTNR69Ec2 P1 01:41]",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"AI 生成 call 代码\"]\n    A2[\"源码约 400 行\"]\n    A3[\"包含 call 便利（喊话）\"]\n    A4[\"点击执行喊话\"]\n    A5[\"创建线程并远程调用\"]\n    A6[\"喊话成功\"]\n    A7[\"游戏崩溃\"]\n    A8[\"原因：线程未关闭\"]\n    A9[\"优化：关闭线程、重编译\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A5 --> A7\n    A7 --> A8\n    A8 --> A9"
+    },
+    {
+      "title": "执行与调试流程",
+      "code": "flowchart LR\n    B1[\"编写 call 代码\"]\n    B2[\"编译源码\"]\n    B3[\"运行程序\"]\n    B4[\"调用喊话 call\"]\n    B5[\"喊话输出\"]\n    B6[\"游戏异常（崩溃）\"]\n    B7[\"定位问题：线程未结束\"]\n    B8[\"修改代码：加入线程关闭\"]\n    B9[\"重新编译并测试\"]\n    B10[\"恢复正常运行\"]\n\n    B1 --> B2 --> B3 --> B4\n    B4 --> B5\n    B4 --> B6\n    B6 --> B7 --> B8 --> B9 --> B4\n    B5 --> B10\n    B9 --> B10"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:46:32+00:00"
+}

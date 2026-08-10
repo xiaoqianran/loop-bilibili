@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1d1TZ6GEKT",
+  "title": "踩坑DeepSeek 接入 Codex 上下文长度只有 258K",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 286,
+  "text": "大家好啊\n录个视频\nVCC他如果你用这个codex加加接入这个哦\n不是啊\n接入这个codex codex加加会有个毛病什么呢\n他这个上下文他只有258K啊\n我还纳闷为什么感觉笨笨的呢\n我其实还挺纳闷的\n我开始没发现\n一直没注意到啊\n因为我就查了一下接入教程\n然后用了没发现到\n他只有只有二百五八K啊\n你看现在的如果我在这个里面的话\n我要是介入我自己的deep sk的这个节点啊\n他这个上下文就有一兆\n他就正儿八经有一兆啊\n大家要注意一下啊\n那个那个调制掉的很多啊\n你看这里啊\n这个才正儿八经有一兆降智降智降的特别多\n好吧呃分享一下\n就是怕你没注意到呃\n会有很大的智商下降啊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1d1TZ6GEKT",
+  "published_at": "1783133866",
+  "fetched_at": "2026-08-07T19:14:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T19:38:12+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T19:38:12+00:00"
+}

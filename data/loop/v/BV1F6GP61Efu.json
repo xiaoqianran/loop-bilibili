@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1F6GP61Efu",
+  "title": "DeepSeek V4 Flash 正式版发布：Agent 能力暴涨 6 倍，直追 Opus 4.8 | 7月31日 加急快讯",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 512,
+  "text": "欢迎收看加急新闻快讯\n今日突发\nbig GCC v4flash正式版发布\n今天下午\ndeep sick正式发布V4flash正式版API\n进入公开测试阶段\n模型架构与预览版完全一致\n仅通过重新后训练就实现了性能的大幅飞跃\n总参数284B激活13B的混合专家架构\n完全沿用了预览版\n但一个更便宜的flash版本\n在agent能力上反超了更高端的pro预览版\n最惊人的是\nDsw\n跑分从预览版的7.3分暴涨到54.4分\n提升了六倍多\nterminal bench达到82.7分\n多项基准大幅超越V4pro预览版\n在artificial analysis智能指数上\nV4flash拿下50分\n教育篮板跃升十分\n与GEMINI3.6\nflash同分\n仅比GLM5.2低一分\n登顶智能与成本的帕累托前沿\n多位开发者实测\nV4flash编程能力已接近opus4.8水平\n但价格仅约0.28美元\n每百万token原生支持responses API\n并完整适配codex工作流\n本次升级仅针对flash版本\nV4pro正式版预计8月初发布\n届时pro版出来\n性能还将进一步突破\n这条帕累托前沿曲线还远没有到尽头\n以上为本次加急快讯\n关注更多",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1F6GP61Efu",
+  "published_at": "1785506473",
+  "fetched_at": "2026-08-08T20:38:49+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T20:40:42+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T20:40:42+00:00"
+}

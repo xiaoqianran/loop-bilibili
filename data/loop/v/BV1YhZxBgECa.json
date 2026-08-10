@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1YhZxBgECa",
+  "title": "如何在godot中实现对话中的音效和动画演出",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 501,
+  "text": "没想到上期视频小火了一把\n也希赶紧把教程搓出来了\n以下的是对话文件\n也就是dialog manager3插件里拿来编辑对话的那个\n这里是一个动画中演出的效果\n实现思路来自插件作者的油管\n众所周知\n对话文件里可以用do直接执行函数\n这里面可以执行的函数有三类\n分别是sin tree中的函数\n调用对话气泡时传入的extra states参数以及auto load\n可见GITHUB官方文档\n场景的动画演出和场景是强绑定的\n于是我们把演出涉及的函数\n写在每个场景的脚本里\n这些场景根节点的函数可以直接被旧调用\n为了方便\n我们首先定义一个basic c类\n作为一切场景的父类\n这个类里可以保存\n每个场景演出都涉及到的对象\n比如主角以及每个场景里都会用到的演出\n比如主角的惊讶悲伤\n而这里的演出仅仅会在这一个场景发生\n因此写在子类里\n两个函数都是控制了玩家框框的移动\n这里的表现力来自音效\n在对话中调用了音效管理auto load的函数\n脑子抽了\n找不到代码了\nOK交到了\n这个代码全是DSS写的\n因为功能相对固定\n能够提供加载音效的含胸\n还有音效的渐入渐出\n暂停等功能\n音效的配合也很给对话加分\nOK感谢观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YhZxBgECa",
+  "published_at": "1771148434",
+  "fetched_at": "2026-08-09T20:08:41+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

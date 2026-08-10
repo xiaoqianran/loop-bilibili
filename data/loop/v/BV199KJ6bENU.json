@@ -1,0 +1,82 @@
+{
+  "bvid": "BV199KJ6bENU",
+  "title": "GPT 5.6 实战指南: 7个隐藏技巧教你省Token与提升效率",
+  "status": "ok",
+  "language": "zh",
+  "chars": 2559,
+  "text": "哈喽大家好\n我是DP, GPT-5.6发布以后\n我们进行了一些测试\n发现有一些注意的事项\n可以有效的增加订阅的耐用性\n所以录一期视频跟大家分享一下\n首先是一个免责声明\n这期视频的主要内容\n是我个人经验的一个分享\n仅供各位参考\n一切以官方公告或者文档为主\n首先我们先来看一下第一个\n你需要注意的点是\n谨慎的选择双倍上下文窗口\n什么是双倍上下文窗口呢\n就是272 k之后官方的收费可能是双倍\n这里其实不是双倍\n在我标出的两个位置\n一号位是双倍\n就是直接double翻倍\n但是在输出的部分它其实是1.5倍\n但是我为什么写双倍呢\n因为在272以后\n你的缓存读取的内容也会随着增长\n所以我想简单的把它归结为一个双倍\n好这是第一个点\n然后说完了272K之后\n大家可能觉得272K经常听说\n但是在实际项目中\n很少看到272这个数字对吧\n所以这时候需要看两个数字\n分别是272和258\n说到258大家好像就很熟悉对吧\n我们的对话中经常出现258\n258是远程压缩开始的一个标记\n那么272和258是什么关系呢\n272是出现在官方文档中的\n翻倍上下文的分界线\n258大概是272的95%\n是我们在Codex中\n可以使用的有效上下文\n一般到258这个位置\n也就是95%的时候\n就会自动进行本地压缩或者远程压缩\n是这样\n那么在GPT-5.6刚发布的时候\n官方把上下文推到了372\n那么它的有效窗口大概是353\n好到这里大家应该明白了\n什么是双倍上下文窗口\n然后什么是理论上下文窗口\n什么是有效上下文窗口\n那我们来做一个简单的计算题\n我们假设\n我们用满了353和258两个上下文窗口\n并触发了远程压缩\n然后在353和258大概差了100K\n其实不到我们就按照100K来算的\n有效上下文窗口\n也就是说你只能多用100K\n那大概占比是35%\n那你为了这多出的35%上下文\n你需要付出的是接近70%的价格\n这里还是按照双倍来计算\n我忽略了输出的1.5倍的价差\n用缓存输入的那个增长来抵消掉了\n这里说明一下\n那么如果换成价格来说\n假设你请求258K的上下文\n成本是100\n那么到了353的时候\n它的成本可能去掉了170%\n那么就是170\n那你花了多出的70\n换来的只是35%的窗口\n好说完了\n我们继续\n然后在模型和思考强度上\n在你看到视频的今天\n我们推荐的模型和思考强度是什么呢\n答案很简单\nGPT-5.6Sol + high 思考模式\n因为这是在我们整个测试下来最无脑\n最有性价比的一个方式\n然后在很早以前就是刚发布的时候\n我们会推荐复杂一点的上high或者Xhigh\n然后正常的工作上medium\n现在因为官方对思考的某些事项进行了调整\n而且我们在觉得在目前为止\n直接上high是最方便的一个方式\n所以现在我们也不再推荐medium\n然后有一个点Superpowers\n很多人包括我在内\n在5.5的时候我们都会用Superpowers\n但是到了5.6的时代\n就很简单的一个建议\n关闭掉Superpowers\n为什么呢\n因为如果你不关闭\n你会觉得模型好像没有那么好用\n但是你关闭了以后\n很多用户包括我在内\n都发现操作非常的丝滑\n体验非常的好\n所以目前来说5.5时代标配的Superpowers\n在5.6已经不再需要\n我个人理解\n这是一种模型进步带来的便利\n好的接下来我们说一下Ultra和fast\n在我看来对于一般用户建议直接关闭\n没有任何的想法\n当然如果你的任务非常非常的复杂\n你需要去使用\n那是你应该付出的成本\n但从节约TOKEN的角度来说\n那么就直接关闭掉\n什么时候推荐使用呢\n你的TOKEN在有效期内用不完\n那么你就可以考虑优先开fast\n来提高工作效率\n然后复杂的任务可以上Ultra\n但这里不是说\n大家让大家复杂的任务不用Ultra\n而是说一般的任务用high就已经足够了\n是这样\n然后接下来想跟大家讨论的是\n子代理的策略\n大家有没有发现\n在5.6 Sol 他非常喜欢\n或者非常容易地主动地去开子代理\n反正我是遇到了的\n那么在这种情况下\n我的做法非常简单\n在AGENTS.md 里进行了显性的限制\n限制它在用户没有主动要求的情况下\n不要去使用子代理\n当然\n你可以把你同意他使用子代理的策略\n放进你的AGENTS.md\n同样是进行显性的限制\nOK第七点也是我认为非常重要的一点\n就是AGENTS.md 需要进行瘦身了\n为什么呢\n因为在5.5的时候\n我们经常会复制各种各样的AGENTS.md 的内容\n觉得好的就复制过来\n感觉多多少少都会有点用\n但是5.6 感觉智力或者处理程度上\n比5.5有所进步\n那么AGENTS.md如果不进行合理的控制和处理\n会导致的结果就是模型会思考的特别多\n所以我推荐对AGENT.md进行瘦身\n首先你需要做的第一件事\n就是不再无脑的复制\n真的不要再无脑的去进行复制\n你做的正确的流程是首先复制\n复制完了以后\n对AGENTS.md 的内容要进行一遍通读\n空读以后确认这是你需要的\n你再保留\n如果不是你需要的\n或者你觉得他说的不够好的\n你就进行修改\n特别是在使用的过程中\n你发现他的工作\n没有按照你预期的进行\n那你就要去看一下\n当然这种一般都是前期的\n第一次的工作只要稳定下来\n那么就不需要动了\n所以就建议大家要关注一下这个方面\n好的\n最后我们做一个比较简单的总结\n首先上下文窗口建议控制在272以内\n官方也是因为这个原因\n把上下文窗口进行了回调\n回调了以后\n大家的体感可用TOKEN确实变多了\n如果未来官方又把上下文窗口进行了增加\n但是没有对价格进行修改的话\n还是建议大家尽量控制在272以内\n272可以带来更好的注意度和更好的完成度\n所以说长上下文并不是\n一个很好的解决问题的方法\n然后默认的模型和思考强度就是\n5.6 Sol + high\n然后建议大家关闭Superpowers\nUltra和fast针对TOKEN过剩的场景\n然后是对子代理进行显性的限制\n最后建议大家通读一下自己的AGENTS.md\n对它进行合理的瘦身和控制\nOK这就是这一期\n关于GPT 5.6一些使用心得的分享\n希望这些心得能够帮助到大家\n如果可以的话请帮忙点赞和转发\n如果你有相同的经验想要分享\n或者遇到相关问题\n欢迎留言我是DP谢谢",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV199KJ6bENU",
+  "published_at": "1784279576",
+  "fetched_at": "2026-08-09T22:52:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GPT-5.6 使用技巧图谱\n\n## 上下文窗口层级\n\n```mermaid\nflowchart TD\n    D1[\"双倍上下文窗口 (≈272K)\"]\n    T1[\"理论上下文窗口 (372K)\"]\n    E1[\"有效上下文窗口 (≈353K)\"]\n    E2[\"有效上下文 (258K, 95%)\"]\n    C1[\"本地/远程压缩触发\"]\n    N1[\"实际输出计费约 1.5 倍\"]\n    D1 -->|标记双倍| T1\n    T1 -->|实际可用| E1\n    E1 -->|接近 353K| E2\n    E2 -->|触发| C1\n    D1 -->|计费影响| N1\n```\n\n> 证据: 双倍上下文窗口概念及 272K、258K、353K 关系 [BV199KJ6bENU P1 00:26]、[BV199KJ6bENU P1 01:15]、[BV199KJ6bENU P1 02:00]。\n\n## 扩展上下文的成本收益\n\n```mermaid\nflowchart LR\n    TInc[\"额外 100K Token (≈35% 窗口)\"]\n    PInc[\"价格提升约 70%\"]\n    CRatio[\"成本比约 170%\"]\n    Decision[\"是否值得扩展\"]\n    TInc --> PInc\n    PInc --> CRatio\n    CRatio --> Decision\n```\n\n> 证据: 100K 额外 Token 带来 35% 窗口，价格约提升 70%，成本比约 170% [BV199KJ6bENU P1 02:42]、[BV199KJ6bENU P1 03:01]、[BV199KJ6bENU P1 03:11]。\n\n## 模型与思考模式推荐\n\n```mermaid\nflowchart TD\n    M1[\"默认模型: GPT-5.6 Sol\"]\n    M2[\"默认思考模式: high\"]\n    SP[\"Superpowers (关闭)\"]\n    UL[\"Ultra (TOKEN 过剩)\"]\n    FT[\"Fast (TOKEN 过剩)\"]\n    R1[\"推荐 high 思考\"]\n    R2[\"不再推荐 medium\"]\n    R3[\"官方思考调整\"]\n    M1 --> M2\n    M2 --> R1\n    M2 --> R2\n    R3 --> M2\n    SP -->|关闭后体验提升| R1\n    UL -->|复杂任务使用| R1\n    FT -->|TOKEN 余量大时使用| R1\n```\n\n> 证据: 推荐使用 GPT-5.6 Sol + high，关闭 Superpowers，Ultra/Fast 在 TOKEN 过剩时使用，medium 不再推荐 [BV199KJ6bENU P1 03:38]、[BV199KJ6bENU P1 04:20]、[BV199KJ6bENU P1 04:57]、[BV199KJ6bENU P1 05:15]。\n\n## AGENTS.md 管理流程\n\n```mermaid\nflowchart TD\n    C1[\"复制 AGENTS.md\"]\n    R1[\"通读并确认需求\"]\n    S1[\"瘦身（删除冗余）\"]\n    SA[\"子代理显性限制\"]\n    UA[\"用户主动同意时启用子代理\"]\n    I1[\"首次稳定后无需改动\"]\n    FB[\"发现异常行为时回顾\"]\n    C1 --> R1\n    R1 --> S1\n    S1 --> SA\n    SA --> UA\n    UA --> I1\n    I1 --> FB\n```\n\n> 证据: 子代理显性限制、AGENTS.md 瘦身流程、复制后审查等步骤 [BV199KJ6bENU P1 05:39]、[BV199KJ6bENU P1 06:15]、[BV199KJ6bENU P1 06:45]。\n\n## 综合建议概览\n\n```mermaid\nflowchart LR\n    Ctxt[\"上下文窗口 ≤ 272K\"]\n    Token[\"控制 TOKEN 使用\"]\n    Model[\"默认模型+思考: 5.6 Sol + high\"]\n    Super[\"关闭 Superpowers\"]\n    UltraFast[\"根据 TOKEN 余量开启 Ultra / fast\"]\n    Agents[\"AGENTS.md 瘦身并限制子代理\"]\n    Ctxt --> Token\n    Token --> Model\n    Model --> Super\n    Super --> UltraFast\n    UltraFast --> Agents\n```\n\n> 证据: 总结建议包括上下文窗口控制、默认模型+思考、关闭 Superpowers、使用 Ultra/Fast、AGENTS.md 管理 [BV199KJ6bENU P1 07:24]、[BV199KJ6bENU P1 08:02]。",
+      "diagrams": [
+        {
+          "title": "上下文窗口层级",
+          "code": "flowchart TD\n    D1[\"双倍上下文窗口 (≈272K)\"]\n    T1[\"理论上下文窗口 (372K)\"]\n    E1[\"有效上下文窗口 (≈353K)\"]\n    E2[\"有效上下文 (258K, 95%)\"]\n    C1[\"本地/远程压缩触发\"]\n    N1[\"实际输出计费约 1.5 倍\"]\n    D1 -->|标记双倍| T1\n    T1 -->|实际可用| E1\n    E1 -->|接近 353K| E2\n    E2 -->|触发| C1\n    D1 -->|计费影响| N1"
+        },
+        {
+          "title": "扩展上下文的成本收益",
+          "code": "flowchart LR\n    TInc[\"额外 100K Token (≈35% 窗口)\"]\n    PInc[\"价格提升约 70%\"]\n    CRatio[\"成本比约 170%\"]\n    Decision[\"是否值得扩展\"]\n    TInc --> PInc\n    PInc --> CRatio\n    CRatio --> Decision"
+        },
+        {
+          "title": "模型与思考模式推荐",
+          "code": "flowchart TD\n    M1[\"默认模型: GPT-5.6 Sol\"]\n    M2[\"默认思考模式: high\"]\n    SP[\"Superpowers (关闭)\"]\n    UL[\"Ultra (TOKEN 过剩)\"]\n    FT[\"Fast (TOKEN 过剩)\"]\n    R1[\"推荐 high 思考\"]\n    R2[\"不再推荐 medium\"]\n    R3[\"官方思考调整\"]\n    M1 --> M2\n    M2 --> R1\n    M2 --> R2\n    R3 --> M2\n    SP -->|关闭后体验提升| R1\n    UL -->|复杂任务使用| R1\n    FT -->|TOKEN 余量大时使用| R1"
+        },
+        {
+          "title": "AGENTS.md 管理流程",
+          "code": "flowchart TD\n    C1[\"复制 AGENTS.md\"]\n    R1[\"通读并确认需求\"]\n    S1[\"瘦身（删除冗余）\"]\n    SA[\"子代理显性限制\"]\n    UA[\"用户主动同意时启用子代理\"]\n    I1[\"首次稳定后无需改动\"]\n    FB[\"发现异常行为时回顾\"]\n    C1 --> R1\n    R1 --> S1\n    S1 --> SA\n    SA --> UA\n    UA --> I1\n    I1 --> FB"
+        },
+        {
+          "title": "综合建议概览",
+          "code": "flowchart LR\n    Ctxt[\"上下文窗口 ≤ 272K\"]\n    Token[\"控制 TOKEN 使用\"]\n    Model[\"默认模型+思考: 5.6 Sol + high\"]\n    Super[\"关闭 Superpowers\"]\n    UltraFast[\"根据 TOKEN 余量开启 Ultra / fast\"]\n    Agents[\"AGENTS.md 瘦身并限制子代理\"]\n    Ctxt --> Token\n    Token --> Model\n    Model --> Super\n    Super --> UltraFast\n    UltraFast --> Agents"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T22:54:02+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GPT-5.6 使用技巧图谱\n\n## 上下文窗口层级\n\n```mermaid\nflowchart TD\n    D1[\"双倍上下文窗口 (≈272K)\"]\n    T1[\"理论上下文窗口 (372K)\"]\n    E1[\"有效上下文窗口 (≈353K)\"]\n    E2[\"有效上下文 (258K, 95%)\"]\n    C1[\"本地/远程压缩触发\"]\n    N1[\"实际输出计费约 1.5 倍\"]\n    D1 -->|标记双倍| T1\n    T1 -->|实际可用| E1\n    E1 -->|接近 353K| E2\n    E2 -->|触发| C1\n    D1 -->|计费影响| N1\n```\n\n> 证据: 双倍上下文窗口概念及 272K、258K、353K 关系 [BV199KJ6bENU P1 00:26]、[BV199KJ6bENU P1 01:15]、[BV199KJ6bENU P1 02:00]。\n\n## 扩展上下文的成本收益\n\n```mermaid\nflowchart LR\n    TInc[\"额外 100K Token (≈35% 窗口)\"]\n    PInc[\"价格提升约 70%\"]\n    CRatio[\"成本比约 170%\"]\n    Decision[\"是否值得扩展\"]\n    TInc --> PInc\n    PInc --> CRatio\n    CRatio --> Decision\n```\n\n> 证据: 100K 额外 Token 带来 35% 窗口，价格约提升 70%，成本比约 170% [BV199KJ6bENU P1 02:42]、[BV199KJ6bENU P1 03:01]、[BV199KJ6bENU P1 03:11]。\n\n## 模型与思考模式推荐\n\n```mermaid\nflowchart TD\n    M1[\"默认模型: GPT-5.6 Sol\"]\n    M2[\"默认思考模式: high\"]\n    SP[\"Superpowers (关闭)\"]\n    UL[\"Ultra (TOKEN 过剩)\"]\n    FT[\"Fast (TOKEN 过剩)\"]\n    R1[\"推荐 high 思考\"]\n    R2[\"不再推荐 medium\"]\n    R3[\"官方思考调整\"]\n    M1 --> M2\n    M2 --> R1\n    M2 --> R2\n    R3 --> M2\n    SP -->|关闭后体验提升| R1\n    UL -->|复杂任务使用| R1\n    FT -->|TOKEN 余量大时使用| R1\n```\n\n> 证据: 推荐使用 GPT-5.6 Sol + high，关闭 Superpowers，Ultra/Fast 在 TOKEN 过剩时使用，medium 不再推荐 [BV199KJ6bENU P1 03:38]、[BV199KJ6bENU P1 04:20]、[BV199KJ6bENU P1 04:57]、[BV199KJ6bENU P1 05:15]。\n\n## AGENTS.md 管理流程\n\n```mermaid\nflowchart TD\n    C1[\"复制 AGENTS.md\"]\n    R1[\"通读并确认需求\"]\n    S1[\"瘦身（删除冗余）\"]\n    SA[\"子代理显性限制\"]\n    UA[\"用户主动同意时启用子代理\"]\n    I1[\"首次稳定后无需改动\"]\n    FB[\"发现异常行为时回顾\"]\n    C1 --> R1\n    R1 --> S1\n    S1 --> SA\n    SA --> UA\n    UA --> I1\n    I1 --> FB\n```\n\n> 证据: 子代理显性限制、AGENTS.md 瘦身流程、复制后审查等步骤 [BV199KJ6bENU P1 05:39]、[BV199KJ6bENU P1 06:15]、[BV199KJ6bENU P1 06:45]。\n\n## 综合建议概览\n\n```mermaid\nflowchart LR\n    Ctxt[\"上下文窗口 ≤ 272K\"]\n    Token[\"控制 TOKEN 使用\"]\n    Model[\"默认模型+思考: 5.6 Sol + high\"]\n    Super[\"关闭 Superpowers\"]\n    UltraFast[\"根据 TOKEN 余量开启 Ultra / fast\"]\n    Agents[\"AGENTS.md 瘦身并限制子代理\"]\n    Ctxt --> Token\n    Token --> Model\n    Model --> Super\n    Super --> UltraFast\n    UltraFast --> Agents\n```\n\n> 证据: 总结建议包括上下文窗口控制、默认模型+思考、关闭 Superpowers、使用 Ultra/Fast、AGENTS.md 管理 [BV199KJ6bENU P1 07:24]、[BV199KJ6bENU P1 08:02]。",
+  "diagrams": [
+    {
+      "title": "上下文窗口层级",
+      "code": "flowchart TD\n    D1[\"双倍上下文窗口 (≈272K)\"]\n    T1[\"理论上下文窗口 (372K)\"]\n    E1[\"有效上下文窗口 (≈353K)\"]\n    E2[\"有效上下文 (258K, 95%)\"]\n    C1[\"本地/远程压缩触发\"]\n    N1[\"实际输出计费约 1.5 倍\"]\n    D1 -->|标记双倍| T1\n    T1 -->|实际可用| E1\n    E1 -->|接近 353K| E2\n    E2 -->|触发| C1\n    D1 -->|计费影响| N1"
+    },
+    {
+      "title": "扩展上下文的成本收益",
+      "code": "flowchart LR\n    TInc[\"额外 100K Token (≈35% 窗口)\"]\n    PInc[\"价格提升约 70%\"]\n    CRatio[\"成本比约 170%\"]\n    Decision[\"是否值得扩展\"]\n    TInc --> PInc\n    PInc --> CRatio\n    CRatio --> Decision"
+    },
+    {
+      "title": "模型与思考模式推荐",
+      "code": "flowchart TD\n    M1[\"默认模型: GPT-5.6 Sol\"]\n    M2[\"默认思考模式: high\"]\n    SP[\"Superpowers (关闭)\"]\n    UL[\"Ultra (TOKEN 过剩)\"]\n    FT[\"Fast (TOKEN 过剩)\"]\n    R1[\"推荐 high 思考\"]\n    R2[\"不再推荐 medium\"]\n    R3[\"官方思考调整\"]\n    M1 --> M2\n    M2 --> R1\n    M2 --> R2\n    R3 --> M2\n    SP -->|关闭后体验提升| R1\n    UL -->|复杂任务使用| R1\n    FT -->|TOKEN 余量大时使用| R1"
+    },
+    {
+      "title": "AGENTS.md 管理流程",
+      "code": "flowchart TD\n    C1[\"复制 AGENTS.md\"]\n    R1[\"通读并确认需求\"]\n    S1[\"瘦身（删除冗余）\"]\n    SA[\"子代理显性限制\"]\n    UA[\"用户主动同意时启用子代理\"]\n    I1[\"首次稳定后无需改动\"]\n    FB[\"发现异常行为时回顾\"]\n    C1 --> R1\n    R1 --> S1\n    S1 --> SA\n    SA --> UA\n    UA --> I1\n    I1 --> FB"
+    },
+    {
+      "title": "综合建议概览",
+      "code": "flowchart LR\n    Ctxt[\"上下文窗口 ≤ 272K\"]\n    Token[\"控制 TOKEN 使用\"]\n    Model[\"默认模型+思考: 5.6 Sol + high\"]\n    Super[\"关闭 Superpowers\"]\n    UltraFast[\"根据 TOKEN 余量开启 Ultra / fast\"]\n    Agents[\"AGENTS.md 瘦身并限制子代理\"]\n    Ctxt --> Token\n    Token --> Model\n    Model --> Super\n    Super --> UltraFast\n    UltraFast --> Agents"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:54:02+00:00"
+}

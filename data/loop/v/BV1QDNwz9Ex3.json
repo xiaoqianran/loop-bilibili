@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1QDNwz9Ex3",
+  "title": "Agent 是怎么学会用 Skill 的？以OpenCode为例深入Skill底层机制",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4813,
+  "text": "Hello\n大家好\n好久不见\n今天聊一个很多人都没搞清楚的问题\nengine到底是怎么学会用skill\n我会用一次真实的调试过程把这件事情讲透\n这其内容对理解cloud CORE\nOpen core\nopen cloud这类AI安全工具的运行机制都有帮助\n去年10月\nETHOPEC通过clock coro推出了skill这个功能\n它很快就成了开发者圈子里的热门话题\n大家都在分享自己写的scare\n各种技巧满天飞\n但是有一个问题好像从来没有人认真的讲过\ns kill到底是怎么加载进烟卷的模型\n怎么知道你本地有哪些ENG卷\n他凭什么决定要用哪一个调用的时候\n背后又发生了什么\n今天我们就把这些问题一次性说清楚\n我们不聊虚的\n直接拿调试日志说话\n先说一个前提\nCLO本身是不开源的\n没办法直接看它的源码\n但好在有一个优秀的开源替代和混口\n他的skill机制跟cloud co高度相似\n代码完全公开\n今天我们就用它的源码来做参考\n得出的这个结论当然是对CLO也是同样适用的\n要理解square是怎么工作的\n首先我们要先搞懂一件更基础的事情\n就是大模型API的工具调用\n也就是所谓的托幼时是怎么样的机制\n这是整个scar机制的底层\n我们不懂这个后面的内容会看得云里雾里\n现在主流的大模型API\n比如OpenAI aesopic\n都支持在请求里面带一个tools的数组\n相当于在告你\n在告诉模型说这里有这些工具可以用\n大家可以看到我们的视频上面有显示\n就模型它看到这个tools以后\n他会判断\n就是说如果当前任务需要用某个工具的时候\n他不他不会直接告诉你那个答案\n他是在回复你首先返回一个to而又失的快\n这个意思是\n就是让你让你这个程序帮我去调用一下\n这个工具\n然后参数是这样\n然后把这个结果再返回给我\n大家可以看到就是在在页面里面那个中就拖\n又是这部分返回的\n比如说获取这个天气\n然后参数是北京嘛\n然后你的应用收到这个信号以后\n去真正的去执行这个工具\n比如说示例里面的这个获取天气\n当然还有比如包括什么读文件\n跳掉1pi这些\n然后你把拉到的结果\n再把它以to our result的形式放回到message里面\n再重新再发给模型\n然后模型看到这个结果以后才去呃\n生成最终的回答\n这个整个的流程就是你定义工具模型\n决定调哪个\n你去执行\n把结果喂回去\n最后模型继续执行下去\n我们记住这个模式\n一会你就会看到死skill是怎么精准的套用它的\n那我们背景铺垫完了\n我们先来做一个小小的实验嗯\n首先我们要知道scare文件它是放在哪里的\nopen CORE它会自动扫描几个固定目录下的square点MD\n这个文件最常用的就是目录\n就是用户的全局目录啊\n这就是所谓的点cloud下面的那个skills\n然后下面这个目录\n也就是说它跟clock可以共用同一个目录嘛\n然后我们做的示例里面是创建了个叫say hi的\n这个是skill\n就我们新建这个文件以后\n把它呃放到那个目录里头\n这个sq的嗯\n每个skill它是单独存在一个子目录里面的\n目录名就是他这个skill的名字\n如果你想让这个skill只在特定的项目里生效\n你也可以放在这个项目的根目录下头\n然后这规则是完全一样的\n我们先看一下这个say hi\n这个q say hi的\n他的只有这么几行\n很简单的一个功能\n就是呃他这边首先把name呢\ndiscretion这些描述都写好\n然后这个工具它的作用很简单\n就是就是用户跟他打招呼的时候\n你就直接对他说害\n然后告诉用户当前的时间就这么简单\n这个功能\n然后嗯我们可以把它理解成\n它是一本迷你的手册\n就是告诉模型就碰到这种情况的时候\n你该怎么做\n那问题就来了\nengine是怎么知道这个square的存在的\n这里有个很常见的误解\n我以为加了一个skr engine\n就会多了一个同名的工具\n可以直接调用\n但是事实不是这样的\n我们打开调试日志\n看一下open call发给模型的请求\n我们可以在tools这个数组里面\n我们找到一个和square有关的条目\n它的名字也叫square\n我们可以看到这个square它呃应该这么说\n我们没有在里面找到一个叫say hi的工具\n但我们只能看到一个叫square的工具\n这个square工具的描述是这样的啊\n它呃这边基本的内容\n就是说你这边有有有有一些这些可以用的\n这些工具可以使用\n比如说这边就可以看到我们提供的这个say hi\n这个工具\n然后这个工具呢他可以接受一个参数\n这个参数就也不是说这个工具应该说这个scare\n它可以接受一个参数\n叫做name\n也就是说如果模型觉得他要调用scare的时候\n它就会调用这个square这个工具\n然后把他要想要调用的这个可以调用的\n这个skill里面的内容\n这个名字当做一个参数传进来\n我们可以看到这个是嗯\n这个是这个square这个工具的描述\n它是把所有的我们本地有的square列表\n整个都钻进了这个描述\n这个discretion里头就模型\n我们这边可以看出这一点\n就是模型它并不是天生就知道你有say hi\n这个工具的\n他看到的名字的唯一的途径\n就是这个square工具里的描述\n你的可用的所有的呃SKR列表这个块\n这是skill系统\n就是open code square系统的一个核心的设计\n就是用描述\n用描述\n把square目录里面的所有工具\n都放在这个square工具的描述里头\n让模型自己去呃去读去去选用\n那模型是怎么选中并调用skill呢\n首先模型拉到那个请求以后\n他在工具列表里面看到这个有个工具\n就是care这个工具里面描述里头有看到可用的\n所有工具里面有一个工具叫做say hi\n这个say hi呢就比如说我跟模型打交道\n就是说我对它说一声hi\n他看到有say hi这个东西可以调用\n他就判断这和当前的任务是匹配的\n原于是他决定调用这个SK的工具\n我们可以在呃我们的左边可以看到\n就是这个secure呃\n传回来的内容\n就是它是因为它是个流式的输出嘛\n所以他呃也是个流式的\n传回这个工具调用的这个过程\n我们可以看到额当中有说明嗯\n他传配的内容说要调用skill这个工具\n然后他传的参数是嗯\nsay hi呃\n呃是对是say hi\n也就是说他要调用say hi这个工具\n那我们这里要注意的这点\n就是就是这个工具名是square\n不是say hi啊\n就是他传的是secure\n它的参数是say hi\n这也就验证了我们前面的这个结论啊\n就是不是说你加了一个skill\n它模型就有个工具叫做叫就是模型就加了一个\n同时加了一个工具叫say hi\n不是这样子的\n而是有一个工具叫skill\n它say hi只是它里面可用的一个技能之一\n然后我们还要注意到这里有一个id\n就是id\n这个是什么\n就是一一长就是一长串\n这个呃这个这个托就是兔耳\n这个这个什么LU什么什么\n这这一段的长长的一串的东西\n这串id很重要\n后面就会马上会用到\n然后他这首先然后还有一部分\n就是这个是一个几段流是拼起来的\n我们最终看到了input的结果\n就是name say hi\n这一步就是说模型在告诉我们的程序\n就是我要调用skill这个工具\n然后我传的参数是谁\nHi\n然后他实际上他没有拉到这个square的具体的内容\n真正执行的是额\n像这里我们是用open code去去执行执行这个say hi\n然后呃\n然后再去把这个呃sq的内容再加载回来\n那open co他拿到这个死skill\n就是拉到模型返回这个to use\n是以后他会去磁盘里面找到这个say hi的\n这个square的点MD这个文件把它给加载进来\n然后把这个结果以to our result形式注入回这个message\n是再传回去\n我们可以看到这个message是具体的内容是什么样子\n就是这里面的这个有个content的content\n里面就是嗯具体的具体的详细的\n这个里面我们原先写的那些内容\n这边我们要注意这个细节啊\n首先这个tour youth id\n就跟刚才流逝里面的那个id是完全对应的\n这是ASTRONIC这个API的约定\n他用这个id把这个调用请求\n跟调用结果给串起来\n模型才知道这条结果是在哪一次产生的\n这个工具调用里面以后调用的\n然后第二呢就是这个content是被格式化后\n为了死SKR的内容\n这个SKEE包括square的名称啊\n文件路径啊\n然后包括它sq2点MD\n这个正文原文不动的就传给了模型\n到这里我们整个逻辑就闭环了\n就是SK的内容不是启动的时候就注入上下文的\n而是等模型主动索取以后\n才以to our result的形式进入对话的历史模型\n看到这段指令以后\n再按他的要求去生成最终的回答\n那我们通过嗯深入源码来看一下这整个的机制\n首先就是skill\n工具是怎么把SKR列表给塞进到这个描述里面\n也就是变成为arrival skills这个块\n它的核心逻辑\n就在我们页面上面显示的这个sq点ts里头\n它构建工具的时候\n他会调一个skill点all的方法\n会拿到所有已经注册的SQUE\n再把这个name跟描述逐个进行拼接\n最后构成一个叫俄罗斯SPEAKOS这个块\n那这个description是负责把有哪些scare可选\n告诉模型\n然后EQ是负责在被调用的时候真正加载内容\n也就是说把日志里的tour result\ncontent的内容就是在这个呃output里头返回的值\n那square是怎么从磁盘里面被扫描出来的呢\n他这个扫描的逻辑也在此刻点ts这个文件里头\n他做的事情主要就是递归搜索所有的square\n点MD这个文件\n然后解析里面的for meal\n拿到name和discretion\n然后把正文作为content再一并的存起来\n这边大家可以看到源码里有个ADCLS这个方法\n我们粒子里面的这个say hi\n最后就是通过这个扫描的过程\n然后给提取出来的\n然后我们再来看看这个to\n是怎么最终交到模型手里的\n在这个对话循环里面\n这个功能里头\n它是通过一个PROUTS这个工具\n他会把所有注册的工具\n转换成AISDK的工具集合\n然后统一打包发送到请求当中去\n这边可以看到大家可以看到这个源码\n我们模型能够看到square的工具\n它就是通过这个这段代码的操作\n然后给注册进去的\n那我们再把所有这个环节都串联一下\n做一个总结\n首先就是你写的这些scare这些文件\nopen code它在启动的时候\n它会扫描这个磁盘\n把呃名字和描述注册进内存里面\n然后他在发请求给模型的时候\n会把skill列表都给它\n装进到一个叫skill工具的描述里头\n然后模型在看到这个skit工具的描述的时候\n它如果判断出它需要使用\n它会呃在告诉open code说是火需要加载\n然后模型嗯\n就就比如说我们这个要调用say hi的时候\n他就会呃被调用这个skill工具\n然后它的名字叫做say hi\n然后win co收到这个to our youth以后\n它会读取这个我们这个say hi的这个MD的命令\n的这个技能的正文\n然后以托尔绿托尔雷照的方式再输入回message里面\n然后在最后\n把这些东西再传回给模型\n模型在读到这个scare内容以后\n再会按照这个技能的里面的指令\n然后去生成最终的回答\n所以square从来都不是变成一个新的工具\n它而是按照一段按需注入的一个指令的\n这个文本在你需要它之前\n它只是磁盘上一个普通的markdown文件\n在模型需要的那一刻\n它才通过这套机制进入到我们整个盛夏文中\n如果你也在本地写了自己的square\n你可以比如说加一些调试语句\n加一些调试日志\n看一下\n就是嗯\n看一下这个整个过程\n是不是和我描述的是完全一致的\n有什么问题也欢迎大家在评论区里面讨论\n那这次的分享就到这里\n谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1QDNwz9Ex3",
+  "published_at": "1772880849",
+  "fetched_at": "2026-08-08T14:28:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Skill Mechanism in OpenCode (基于字幕)\n\n## Skill Invocation Pipeline\n```mermaid\nflowchart TD\n    A1[\"User Query\"] --> A2[\"LLM receives query\"]\n    A2 --> A3[\"LLM checks tools array (square)\"]\n    A3 --> A4[\"LLM decides to call a skill\"]\n    A4 --> A5[\"LLM returns tool call (square) with param 'skill name'\"]\n    A5 --> A6[\"Application receives tool call\"]\n    A6 --> A7[\"Loads skill markdown from disk\"]\n    A7 --> A8[\"Executes skill logic\"]\n    A8 --> A9[\"Returns result to LLM (to=...)\"]\n    A9 --> A10[\"LLM generates final response\"]\n```\n\n## Skill Registration & Discovery\n```mermaid\nflowchart TD\n    B1[\"OpenCode startup\"] --> B2[\"Scan predefined directories for *.md\"]\n    B2 --> B3[\"Parse each skill file (name, description, params)\"]\n    B3 --> B4[\"Register skill in memory\"]\n    B4 --> B5[\"Build square tool description (list of skills)\"]\n    B5 --> B6[\"Include square tool in tools array for LLM requests\"]\n```\n\n## Model Decision Process\n```mermaid\nflowchart TD\n    C1[\"LLM receives request with tools array\"] --> C2[\"Inspect square tool description\"]\n    C2 --> C3[\"Identify available skill names\"]\n    C3 --> C4[\"Match task requirements to skill (e.g., say hi)\"]\n    C4 --> C5[\"Select matching skill\"]\n    C5 --> C6[\"Emit tool call using square tool with param 'skill name'\"]\n```\n\n## Skill Execution Details\n```mermaid\nflowchart TD\n    D1[\"Receive tool call (square) with param\"] --> D2[\"Lookup skill by name in registry\"]\n    D2 --> D3[\"Read corresponding .md file from disk\"]\n    D3 --> D4[\"Parse content (commands)\"]\n    D4 --> D5[\"Execute skill logic (e.g., return greeting)\"]\n    D5 --> D6[\"Package result as to=... content\"]\n    D6 --> D7[\"Send back to LLM\"]\n```",
+      "diagrams": [
+        {
+          "title": "Skill Invocation Pipeline",
+          "code": "flowchart TD\n    A1[\"User Query\"] --> A2[\"LLM receives query\"]\n    A2 --> A3[\"LLM checks tools array (square)\"]\n    A3 --> A4[\"LLM decides to call a skill\"]\n    A4 --> A5[\"LLM returns tool call (square) with param 'skill name'\"]\n    A5 --> A6[\"Application receives tool call\"]\n    A6 --> A7[\"Loads skill markdown from disk\"]\n    A7 --> A8[\"Executes skill logic\"]\n    A8 --> A9[\"Returns result to LLM (to=...)\"]\n    A9 --> A10[\"LLM generates final response\"]"
+        },
+        {
+          "title": "Skill Registration & Discovery",
+          "code": "flowchart TD\n    B1[\"OpenCode startup\"] --> B2[\"Scan predefined directories for *.md\"]\n    B2 --> B3[\"Parse each skill file (name, description, params)\"]\n    B3 --> B4[\"Register skill in memory\"]\n    B4 --> B5[\"Build square tool description (list of skills)\"]\n    B5 --> B6[\"Include square tool in tools array for LLM requests\"]"
+        },
+        {
+          "title": "Model Decision Process",
+          "code": "flowchart TD\n    C1[\"LLM receives request with tools array\"] --> C2[\"Inspect square tool description\"]\n    C2 --> C3[\"Identify available skill names\"]\n    C3 --> C4[\"Match task requirements to skill (e.g., say hi)\"]\n    C4 --> C5[\"Select matching skill\"]\n    C5 --> C6[\"Emit tool call using square tool with param 'skill name'\"]"
+        },
+        {
+          "title": "Skill Execution Details",
+          "code": "flowchart TD\n    D1[\"Receive tool call (square) with param\"] --> D2[\"Lookup skill by name in registry\"]\n    D2 --> D3[\"Read corresponding .md file from disk\"]\n    D3 --> D4[\"Parse content (commands)\"]\n    D4 --> D5[\"Execute skill logic (e.g., return greeting)\"]\n    D5 --> D6[\"Package result as to=... content\"]\n    D6 --> D7[\"Send back to LLM\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T14:29:08+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Skill Mechanism in OpenCode (基于字幕)\n\n## Skill Invocation Pipeline\n```mermaid\nflowchart TD\n    A1[\"User Query\"] --> A2[\"LLM receives query\"]\n    A2 --> A3[\"LLM checks tools array (square)\"]\n    A3 --> A4[\"LLM decides to call a skill\"]\n    A4 --> A5[\"LLM returns tool call (square) with param 'skill name'\"]\n    A5 --> A6[\"Application receives tool call\"]\n    A6 --> A7[\"Loads skill markdown from disk\"]\n    A7 --> A8[\"Executes skill logic\"]\n    A8 --> A9[\"Returns result to LLM (to=...)\"]\n    A9 --> A10[\"LLM generates final response\"]\n```\n\n## Skill Registration & Discovery\n```mermaid\nflowchart TD\n    B1[\"OpenCode startup\"] --> B2[\"Scan predefined directories for *.md\"]\n    B2 --> B3[\"Parse each skill file (name, description, params)\"]\n    B3 --> B4[\"Register skill in memory\"]\n    B4 --> B5[\"Build square tool description (list of skills)\"]\n    B5 --> B6[\"Include square tool in tools array for LLM requests\"]\n```\n\n## Model Decision Process\n```mermaid\nflowchart TD\n    C1[\"LLM receives request with tools array\"] --> C2[\"Inspect square tool description\"]\n    C2 --> C3[\"Identify available skill names\"]\n    C3 --> C4[\"Match task requirements to skill (e.g., say hi)\"]\n    C4 --> C5[\"Select matching skill\"]\n    C5 --> C6[\"Emit tool call using square tool with param 'skill name'\"]\n```\n\n## Skill Execution Details\n```mermaid\nflowchart TD\n    D1[\"Receive tool call (square) with param\"] --> D2[\"Lookup skill by name in registry\"]\n    D2 --> D3[\"Read corresponding .md file from disk\"]\n    D3 --> D4[\"Parse content (commands)\"]\n    D4 --> D5[\"Execute skill logic (e.g., return greeting)\"]\n    D5 --> D6[\"Package result as to=... content\"]\n    D6 --> D7[\"Send back to LLM\"]\n```",
+  "diagrams": [
+    {
+      "title": "Skill Invocation Pipeline",
+      "code": "flowchart TD\n    A1[\"User Query\"] --> A2[\"LLM receives query\"]\n    A2 --> A3[\"LLM checks tools array (square)\"]\n    A3 --> A4[\"LLM decides to call a skill\"]\n    A4 --> A5[\"LLM returns tool call (square) with param 'skill name'\"]\n    A5 --> A6[\"Application receives tool call\"]\n    A6 --> A7[\"Loads skill markdown from disk\"]\n    A7 --> A8[\"Executes skill logic\"]\n    A8 --> A9[\"Returns result to LLM (to=...)\"]\n    A9 --> A10[\"LLM generates final response\"]"
+    },
+    {
+      "title": "Skill Registration & Discovery",
+      "code": "flowchart TD\n    B1[\"OpenCode startup\"] --> B2[\"Scan predefined directories for *.md\"]\n    B2 --> B3[\"Parse each skill file (name, description, params)\"]\n    B3 --> B4[\"Register skill in memory\"]\n    B4 --> B5[\"Build square tool description (list of skills)\"]\n    B5 --> B6[\"Include square tool in tools array for LLM requests\"]"
+    },
+    {
+      "title": "Model Decision Process",
+      "code": "flowchart TD\n    C1[\"LLM receives request with tools array\"] --> C2[\"Inspect square tool description\"]\n    C2 --> C3[\"Identify available skill names\"]\n    C3 --> C4[\"Match task requirements to skill (e.g., say hi)\"]\n    C4 --> C5[\"Select matching skill\"]\n    C5 --> C6[\"Emit tool call using square tool with param 'skill name'\"]"
+    },
+    {
+      "title": "Skill Execution Details",
+      "code": "flowchart TD\n    D1[\"Receive tool call (square) with param\"] --> D2[\"Lookup skill by name in registry\"]\n    D2 --> D3[\"Read corresponding .md file from disk\"]\n    D3 --> D4[\"Parse content (commands)\"]\n    D4 --> D5[\"Execute skill logic (e.g., return greeting)\"]\n    D5 --> D6[\"Package result as to=... content\"]\n    D6 --> D7[\"Send back to LLM\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T14:29:08+00:00"
+}

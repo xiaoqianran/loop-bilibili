@@ -1,0 +1,40 @@
+{
+  "bvid": "BV123gS65EE9",
+  "title": "IDA pro 9.4最新版下载,中文汉化加授权,新增AI功能",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 175,
+  "text": "分享一个IDA9.4260714\n这个版本啊\n最新的呃\n我们直接安装\n这里我都默认了啊\n安装成功之后呢\n我们先注全一下啊\n把这三个文件复制一下\n然后来到这个IDA的根目录啊\n我们粘贴一下\n之后双击这个授权\n然后我们看一下\nOK授权没问题了啊\n但是我们还需要再汉化一下啊\n把这个汉化补丁复制\n也放在根目录\n我们再打开一下\n已经是中文了\n呃那我们下期见啊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV123gS65EE9",
+  "published_at": "1784790719",
+  "fetched_at": "2026-08-09T08:38:04+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T09:00:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T09:00:35+00:00"
+}

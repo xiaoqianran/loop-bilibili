@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1HF3e6hE67",
+  "title": "用 Godot 从零打造“王者荣耀”式 3D MOBA 手游：服务器联机、英雄战斗与移动端优化(上)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 504,
+  "text": "大家好\n欢迎来到爱在一毛钱频道\n你想用GODOT开发一款媲美王者荣耀的移动端\n3DMOBA游戏吗\n面对多端同步和移动端性能瓶颈\n是不是感到无从下手\n这部长达18小时的硬核教程\n将为你彻底打通从零到上线的全部技术链路\n首先搞定复杂的3D资产管线\n我们将带你从mixer mo下载动画\n在blender中完成动画合并\n无缝导入go do\n利用animation tree节点实现丝滑动画切换\n配合视觉着色器\n打造流动的河流与逼真的光影烘焙\n让你的场景既美观又高效\n核心难点在于服务器权威架构课程\n手把手教你搭建独立服务器\n部署至VPS\n实现100%防作弊\n深入拆解行业及延迟补偿方案\n状态回滚实体差值与时钟同步搭配\n劳比大厅匹配系统\n轻松应对4~8人实时对战\n针对移动端\n我们实现了多点触控遥感与多分辨率适配\n通过粒子系统制作火球术\n斩击等炫酷特效\n并集成fire base\n完成玩家认证\n更有针对性的性能优化策略\n确保中低端机构和游戏机构也能稳定\n60帧运行\n从底层架构到成品发布\n这不仅仅是一门课\n更是你进军3D竞技手游开发的敲门端\n现在就三连加关注\n课程素材会自动私信发送给你\n立即从私信下载素材开始学习吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HF3e6hE67",
+  "published_at": "1785209827",
+  "fetched_at": "2026-08-08T23:30:27+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 用 Godot 打造 3D MOBA 手游知识图谱\n\n## 总览\n```mermaid\nflowchart TD\nA[\"开发需求<br/>打造媲美王者荣耀的3D MOBA手游\"] --> B[\"资产制作<br/>动画下载、合并、导入\"]\nB --> C[\"服务器搭建<br/>独立服务器、VPS部署\"]\nC --> D[\"客户端实现<br/>多点触控、分辨率适配\"]\nD --> E[\"性能优化<br/>中低端设备60帧\"]\nE --> F[\"上线发布<br/>完整技术链路\"]\n```\n\n## 资产管线\n```mermaid\nflowchart TD\nA[\"下载动画<br/>mixer mo\"] --> B[\"Blender 合并动画\"]\nB --> C[\"导入 Godot\"]\nC --> D[\"AnimationTree 实现丝滑切换\"]\nD --> E[\"视觉着色器<br/>河流光影烘焙\"]\nE --> F[\"高效场景<br/>美观且性能佳\"]\n```\n\n## 服务器与对战\n```mermaid\nflowchart TD\nA[\"搭建独立服务器\"] --> B[\"部署至 VPS\"]\nB --> C[\"实现 100% 防作弊\"]\nC --> D[\"延迟补偿方案\"]\nD --> E[\"状态回滚 + 实体差值\"]\nE --> F[\"时钟同步\"]\nF --> G[\"大厅匹配系统\"]\nG --> H[\"4~8 人实时对战\"]\n```\n\n## 移动端特性与优化\n```mermaid\nflowchart TD\nA[\"多点触控遥感\"] --> B[\"多分辨率适配\"]\nB --> C[\"粒子系统<br/>火球术\"]\nC --> D[\"斩击等炫酷特效\"]\nD --> E[\"集成 Firebase\"]\nE --> F[\"玩家认证\"]\nF --> G[\"性能优化策略\"]\nG --> H[\"中低端设备 60帧运行\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\nA[\"开发需求<br/>打造媲美王者荣耀的3D MOBA手游\"] --> B[\"资产制作<br/>动画下载、合并、导入\"]\nB --> C[\"服务器搭建<br/>独立服务器、VPS部署\"]\nC --> D[\"客户端实现<br/>多点触控、分辨率适配\"]\nD --> E[\"性能优化<br/>中低端设备60帧\"]\nE --> F[\"上线发布<br/>完整技术链路\"]"
+        },
+        {
+          "title": "资产管线",
+          "code": "flowchart TD\nA[\"下载动画<br/>mixer mo\"] --> B[\"Blender 合并动画\"]\nB --> C[\"导入 Godot\"]\nC --> D[\"AnimationTree 实现丝滑切换\"]\nD --> E[\"视觉着色器<br/>河流光影烘焙\"]\nE --> F[\"高效场景<br/>美观且性能佳\"]"
+        },
+        {
+          "title": "服务器与对战",
+          "code": "flowchart TD\nA[\"搭建独立服务器\"] --> B[\"部署至 VPS\"]\nB --> C[\"实现 100% 防作弊\"]\nC --> D[\"延迟补偿方案\"]\nD --> E[\"状态回滚 + 实体差值\"]\nE --> F[\"时钟同步\"]\nF --> G[\"大厅匹配系统\"]\nG --> H[\"4~8 人实时对战\"]"
+        },
+        {
+          "title": "移动端特性与优化",
+          "code": "flowchart TD\nA[\"多点触控遥感\"] --> B[\"多分辨率适配\"]\nB --> C[\"粒子系统<br/>火球术\"]\nC --> D[\"斩击等炫酷特效\"]\nD --> E[\"集成 Firebase\"]\nE --> F[\"玩家认证\"]\nF --> G[\"性能优化策略\"]\nG --> H[\"中低端设备 60帧运行\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T23:35:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 用 Godot 打造 3D MOBA 手游知识图谱\n\n## 总览\n```mermaid\nflowchart TD\nA[\"开发需求<br/>打造媲美王者荣耀的3D MOBA手游\"] --> B[\"资产制作<br/>动画下载、合并、导入\"]\nB --> C[\"服务器搭建<br/>独立服务器、VPS部署\"]\nC --> D[\"客户端实现<br/>多点触控、分辨率适配\"]\nD --> E[\"性能优化<br/>中低端设备60帧\"]\nE --> F[\"上线发布<br/>完整技术链路\"]\n```\n\n## 资产管线\n```mermaid\nflowchart TD\nA[\"下载动画<br/>mixer mo\"] --> B[\"Blender 合并动画\"]\nB --> C[\"导入 Godot\"]\nC --> D[\"AnimationTree 实现丝滑切换\"]\nD --> E[\"视觉着色器<br/>河流光影烘焙\"]\nE --> F[\"高效场景<br/>美观且性能佳\"]\n```\n\n## 服务器与对战\n```mermaid\nflowchart TD\nA[\"搭建独立服务器\"] --> B[\"部署至 VPS\"]\nB --> C[\"实现 100% 防作弊\"]\nC --> D[\"延迟补偿方案\"]\nD --> E[\"状态回滚 + 实体差值\"]\nE --> F[\"时钟同步\"]\nF --> G[\"大厅匹配系统\"]\nG --> H[\"4~8 人实时对战\"]\n```\n\n## 移动端特性与优化\n```mermaid\nflowchart TD\nA[\"多点触控遥感\"] --> B[\"多分辨率适配\"]\nB --> C[\"粒子系统<br/>火球术\"]\nC --> D[\"斩击等炫酷特效\"]\nD --> E[\"集成 Firebase\"]\nE --> F[\"玩家认证\"]\nF --> G[\"性能优化策略\"]\nG --> H[\"中低端设备 60帧运行\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\nA[\"开发需求<br/>打造媲美王者荣耀的3D MOBA手游\"] --> B[\"资产制作<br/>动画下载、合并、导入\"]\nB --> C[\"服务器搭建<br/>独立服务器、VPS部署\"]\nC --> D[\"客户端实现<br/>多点触控、分辨率适配\"]\nD --> E[\"性能优化<br/>中低端设备60帧\"]\nE --> F[\"上线发布<br/>完整技术链路\"]"
+    },
+    {
+      "title": "资产管线",
+      "code": "flowchart TD\nA[\"下载动画<br/>mixer mo\"] --> B[\"Blender 合并动画\"]\nB --> C[\"导入 Godot\"]\nC --> D[\"AnimationTree 实现丝滑切换\"]\nD --> E[\"视觉着色器<br/>河流光影烘焙\"]\nE --> F[\"高效场景<br/>美观且性能佳\"]"
+    },
+    {
+      "title": "服务器与对战",
+      "code": "flowchart TD\nA[\"搭建独立服务器\"] --> B[\"部署至 VPS\"]\nB --> C[\"实现 100% 防作弊\"]\nC --> D[\"延迟补偿方案\"]\nD --> E[\"状态回滚 + 实体差值\"]\nE --> F[\"时钟同步\"]\nF --> G[\"大厅匹配系统\"]\nG --> H[\"4~8 人实时对战\"]"
+    },
+    {
+      "title": "移动端特性与优化",
+      "code": "flowchart TD\nA[\"多点触控遥感\"] --> B[\"多分辨率适配\"]\nB --> C[\"粒子系统<br/>火球术\"]\nC --> D[\"斩击等炫酷特效\"]\nD --> E[\"集成 Firebase\"]\nE --> F[\"玩家认证\"]\nF --> G[\"性能优化策略\"]\nG --> H[\"中低端设备 60帧运行\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T23:35:32+00:00"
+}

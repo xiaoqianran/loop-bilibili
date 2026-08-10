@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1jS9fBaEUt",
+  "title": "Unity 6.4发布了，有什么新内容？！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4458,
+  "text": "大家好\n欢迎收看\n我是你的代码制作人\n现在unity6.4已经发布了\n这是他们的最新版本\n让我们来看看有哪些新内容\n更重要的是\n这次是一个受支持的版本\n如果你还不知道\n他们最近改变了管理unity版本的方式\n现在我们有了LTS长期支持版本\n在这之间还有受支持的版本\n所以目前的LTS版本还是6.3\n但现在我们有了6.4\n这是一个受支持的版本\n受支持\n基本上意味着\n它会获得与LTS相同级别的支持\n直到下一个版本发布为止\n所以这个版本应该非常稳定\n几乎和LTS一样稳定\n唯一不同的是\n它只会被支持到6.5发布为止\n所以是否需要这些新功能\n取决于你自己\n如果需要\n你可以升级到6.4之后\n再升级到6.5\n以此类推\n或者如果你不需要这些功能\n你也可以继续使用6.3\n你已经可以打开unity hub进入安装页面\n安装编辑器\n在这里你会看到\n6.4实际上是他们推荐的版本\n至于这些新功能\n这次的版本其实带来了很多有趣的内容\n虽然目前还没有特别大的变动\n但毫无疑问\n这个版本是在为unity的未来做准备\n比如说这一项e cs现在已经成为核心包\n也就是DOS这个强大的unity工具站\n可以让你制作运行速度极快的游戏\n这个功能直到现在\n它一直是一个需要单独安装的包\n但由于unity正在逐步整合游戏对象和ECS实体\n为了实现这一目标\n实体显然会成为引擎的核心部分\n所以为了准备未来某个时候会发生的这种合并\n现在他们把它做成了核心包\n也就是说你不需要再单独安装它了\n只要你安装了unity编辑器\n实体包就已经预装在里面了\n所以从技术层面来说\n这其实并不是一个很大的变化\n只是从外部包变成了引擎内部集成的一部分\n正如这里所说\n这种设置有助于我们推进unity的ECS实现\n使引擎和e cs能够同步开发\n这是为了打造统一引擎体验而规划的\n一系列引擎更新的一部分\n涵盖了核心CR序列化\n现代化以及完整的实体集成\n所以我们可以很清楚的看到\n他们实现unity未来发展的下一\n在他们最近的产品更新中\n他们展示了这张幻灯片\n在这里我们可以看到所有不同的迭代\n而我们现在基本上处于6.4版本\n在这个版本中\nANTIDIES现在成为引擎的核心\n为未来的所有这些更新做准备\n最终实现完整的实体集成\n如果你想了解这个非常棒的工具站\n我有自己的unity DOS课程\n除此之外\n另一个有趣的地方是\nProject auditor\n现在默认内置了\n这意味着它也不再是一个外部包\n只要你安装编辑器\n就会默认获得这个功能\n这实际上是一个非常有趣的本\n我不知道你是否了解这个工具\n就我个人而言\n我是知道他的\n但我自己还没有用过\n这是一个可以分析你整个项目的工具\n旨在帮助你发现一些潜在问题\n比如代码问题\n资源问题\n项目设置问题以及构建报告和洞察\n所以他会为你生成一份\n包含所有这些潜在修复建议的漂亮报告\n如果你同意这些修复建议\n基本上只需一键就能全部修复\n因此这绝对是一个非常有趣的工具\n可以快速对你整个项目的健康状况\n进行一次全面的检查\n这是一个非常有趣且非常实用的工具\n这一直是我待办事项清单上\n想要专门做一期视频的内容\n现在它已经成为核心包了\n我肯定会去做\n所以这是这个版本中的另一个变化\n其实并不算是技术上的变动\n它其实只是一个已经存在\n而且已经非常优秀的工具\n现在它不再是一个外部包\n而是直接内置在编辑器中\n我认为这是件好事\n因为就像我说的这个工具看起来非常有用\n尤其是对初学者来说\n如果你甚至不知道这个包的存在\n你根本不会去安装它\n但如果它已经随引擎自带\n只是作为一个新菜单出现\n那么人们可能会偶然发现它\n然后他们就会发现哦\n原来引擎里其实有这么实用的东西\n你只需要进入窗口\n然后下拉到分析\n这里就是项目审计器\n如果就是这个窗口的话\n就像我说的\n我会专门做一个完整的教程来讲解它\n但大体上我觉得它还是挺直观的\n现在在这个例子里\n我创建了一个完全空白的6.4项目\n就是为了试用这个新版本\n所以我猜这个项目其实不会显示什么内容\n但你基本上只需要点击开始分析\n它就会显示你项目中各种潜在的问题\n然后这个二维版本\n实际上有一个我认为非常重要的更新\n就是自定义渲染和后期处理\n所以基本上如果你的项目使用的是URP\n现在你可以在2D项目中\n自定义和扩展渲染流程了\n我认为之前是无法做到这一点的\n所以如果你想做一些非常巧妙复杂的渲染操作\n现在你就可以实现了\n如果你想做一些真正有趣的后期处理效果\n这个功能尤其有用\n你可以直接创建一个新的自定义渲染路径\n让你的项目呈现各种奇特的效果\n现在有一个简单的功能\n就是你可以在运行时创建精灵图集了\n我觉得这实际上会非常棒\n尤其是对于模组开发来说\n如果你还不知道\n精灵突击基本上就是这样一种东西\n它其实就是把所有动画帧或者不同图片的\n所有帧都放在一张纹理上\n这样做的好处是\n如果所有内容都在同一张纹理上\n你就可以让大量对象共用这张纹理\n而且只需要一次绘制调用就能完成渲染\n但如果你在做一些事情\n比如说模组开发\n那么玩家基本上就是把他们自己的纹理\n导入到游戏里\n由于这些纹理是在游戏构建完成之后才加入的\n你实际上无法把主游戏的纹理\n和实际的模组纹理合成到同一个图集中\n这曾经是一个限制\n但现在由于你可以在运行时创建二维精灵图集\n这意味着希望这意味着使用二维精灵的游戏\n能够支持模组\n或者说在游戏发布后添加精灵\n你可以在游戏启动时就创建精灵图集\n这样既能支持更多功能\n又能保证游戏的高性能\n另一个更新是他们重新设计了渲染统计窗口\n现在这个窗口基本上会显示一些更有用的指标\n用于分析游戏运行时场景的渲染复杂度\n这个窗口就是\n当你在游戏视图这里点击stats按钮时\n出现的就是这里\n以前这个窗口非常简单\n而现在实际上详细了很多\n同样在这个空项目里\n我们能看到各种数值\n比如帧率\nCPU和GPU真时间\n还有三角形数\n顶点数\n绘制调用等数据\n此外还能看到分配内存\n显存动画信息\n以及一键打开性能分析器的按钮\n所以说这是一个简单但很实用的体验提升\n还有一个发生变化的地方是渲染管线转换器\n所以这个工具就在你进入窗口菜单\n然后选择渲染\n接着这里你就能找到渲染管线转换器\n若你买了基于内置管线的资源\n因其将被弃用\n你可能需要将材质和着色器升级到UR\n如果是这样的话\n这个工具现在变得更好用了\n你可以看到圆管线和目标管线在行为方面\n它基本上应该执行相同的操作\n然后有一个非常简单但非常实用的功能\n就是这里关于输入系统的这个\n基本上现在鼠标相关的行为\n已经可以和输入系统包一起使用了\n这是以前不支持的功能\n我最近刚做了一个视频\n讲解如何从输入管理器转换到输入系统\n输入管理器也是未来某个时候会被弃用的\n另一个功能\n在这个视频里\n我展示了这张速查表\n说明你如何可以从输入管理器升级到输入系统\n但我当时提到过有些功能\n比如鼠标按下鼠标进入等事件\n是无法正常工作的\n但幸运的是\n现在他们已经更新了\n所以现在从输入管理器升级到输入系统\n应该非常容易\n而且不会丢失任何功能\n然后在6.4版本中\n他们做了一件\n我原本认为在技术上不可能实现的事情\n基本上在网页平台上\n他们为birth的复合作业启用了多线程\n我之前完全不知道unity的网页构建\n竟然可以做到这一点\n但显然是可以\n所以你可以使用burst的编译器\n这是一种在遵循特定规则的前提下\n让你的代码极其高效的工具\n再次强调burst是DOS的众多组件之一\n所以如果你想了解DOS\n可以去看看我关于他的免费视频课程\n而且显然你确实可以在网页端用burst\n启用多线程\n就像我说的\n我原本以为这在技术上根本不可能\n所以我非常好奇它实际运行效果如何\n所以我真的很想做一期视频\n类似于对比\n在PC上使用burst和在网页端使用burst\n看看它到底有多强\n我并不指望它能和原生的一样好\n但谁知道呢\n也许它实际上真的非常不错\n然后显然你现在可以用unity graph toolkit\n创建图形工具了\n现在这个更新其实我并不完全确定是什么\n因为据我所知\ngraph tucat已经存在有一段时间了\n我还没有用过它\n但我觉得最大的亮点是\n你现在可以用graph toke来扩展编辑器\n这是一个非常棒的工具\n可以让你构建类似这样的工具\n比如可以连接各种元素的图形\n如果你想制作一些非常实用的内部工具\n比如行为树之类的东西\n这个工具真的非常有用\n是的\n这真的很棒\n它基本上就是共享图形\n但你可以自己构建属于你的\n接下来还有一些其他内容\n比如自适应性的\n现在这个功能已经可以在主机平台上使用了\n现在它基本上支持所有这些平台\n这个工具基本上会自动调整\n你游戏中的一些设置\n以确保一切都能保持良好和高效的性能\n所以它会持续监测热状态\n比如温度\nCpu\nGPU瓶颈等等\n还有许多其他改进\n比如在动画系统中评估状态机的入口转换\n你还会看到构建配置界面的改进\n动态叠加面板改进的网格和步骤\n工作流程以及更多其他内容\n你可以在网格和过渡上预览网格体\nURP兼容模式已经被完全移除\n确认图示例得到了改进\n你现在可以禁用物理模块\n以减少构建体积\n地形图层\n现在支持拖放操作\nUI工具包也支持拖放UXML\n所以这个版本确实带来了很多新东西\n总的来说\n这绝对不是一个花哨的版本\n没有什么新的重大功能\n主要就是大量实用且扎实的体验优化\n更重要的是为unity的未来做了一些重大调整\n所以是的\n最近我觉得他们一直在采取\n大家期待已久的策略\n也就是停止做那些庞大的项目\n发布一些还没准备好的包\n而是真正专注于小儿持续的体验优化\n这一直是他们的策略\n而且我认为效果相当不错\n每次发布引擎都会有一点小提升\n同时也在为未来做准备\n比如等到6.7或6.8版本时\n随着渲染管线的合并\nECS与游戏对象的整合以及COCLR的实现\n届时会有一次巨大的飞跃\n所以他们确实在一步步地采取这些小的举措\n最终实现一个非常棒的未来\n而我对这个未来感到非常兴奋\n顺便说一下\n资产商店目前正在进行一次非常棒的促销活动\n这次是捆绑包促销\n所以你可以看到各种已经打包好的内容\n也就是说他们本身就已经有折扣了\n而且在此基础上你还可以再享受额外五折优惠\n所以你绝对可以用非常低的价格\n买到很多非常棒的东西\n比如说关于后期处理\n这里你只需花十美元\n就能获得大约十几种后期处理特效\n你可以得到故障VHS以及各种各样的特效\n还有这个全能捆绑包\n我绝对推荐这些资源\n所以只买一个捆绑包就非常值得\n或者如果你只想要视觉效果\n这里有一个包含120种精灵特效的捆绑包\n只需30美元\n或者如果你想要更真实的东西\n这里有十个超大的高质量显示资源包\n只需35美元\n或者如果你想大幅提升效率\n你可以获得所有这些超棒的编辑器工具\n这些工具每一个单独买都很棒\n所以打包购买真的非常划算\n如你所见\n有大量很棒的内容\n如果你算一下这些大概都打了九折左右\n所以通过描述中的链接去看看吧\n好吧\n感谢收看\n我们下次再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1jS9fBaEUt",
+  "published_at": "1777852800",
+  "fetched_at": "2026-08-07T03:32:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Unity 6.4 新特性图谱\n\n## 版本支持层级\n```mermaid\nflowchart TD\n    V6_3[\"6.3 LTS\"]\n    V6_4[\"6.4 Supported\"]\n    V6_5[\"6.5 Future\"]\n    SupportLevel[\"支持级别 (同等 LTS)\"]\n    Stability[\"高稳定性\"]\n    SupportEnd[\"支持结束时间\"]\n    V6_3 --> SupportLevel\n    V6_4 --> SupportLevel\n    V6_4 --> SupportEnd\n    V6_5 --> SupportEnd\n    SupportLevel --> Stability\n```\n\n## ECS 集成进引擎\n```mermaid\nflowchart TD\n    ECS_External[\"外部 ECS 包 (需单独安装)\"]\n    UnityEditor[\"Unity 编辑器\"]\n    ECS_CorePkg[\"ECS Core 包 (实体)\"]\n    Integration[\"集成到引擎内部\"]\n    Benefit[\"无需单独安装\"]\n    Future[\"实体将成为引擎核心\"]\n    ECS_External --> Integration\n    UnityEditor --> Integration\n    ECS_CorePkg --> Integration\n    Integration --> Benefit\n    Integration --> Future\n```\n\n## 新增内置工具与编辑器扩展\n```mermaid\nflowchart TD\n    ProjectAuditor[\"Project Auditor\"]\n    GraphToolkit[\"Graph Toolkit\"]\n    RenderingStats[\"渲染统计窗口\"]\n    PipelineConverter[\"渲染管线转换器\"]\n    InputMouse[\"鼠标行为 + 输入系统\"]\n    BurstWebGL[\"Burst 多线程 (WebGL)\"]\n    EditorExt[\"编辑器扩展能力\"]\n    ToolBenefit[\"提升开发体验 & 诊断效率\"]\n    ProjectAuditor --> ToolBenefit\n    RenderingStats --> ToolBenefit\n    PipelineConverter --> ToolBenefit\n    InputMouse --> ToolBenefit\n    BurstWebGL --> ToolBenefit\n    GraphToolkit --> EditorExt\n    EditorExt --> ToolBenefit\n```\n\n## 渲染、后期与资源工作流更新\n```mermaid\nflowchart TD\n    CustomRender2D[\"2D 项目自定义渲染 (URP)\"]\n    PostProcessing[\"后期处理功能\"]\n    RuntimeSpriteAtlas[\"运行时创建 Sprite Atlas\"]\n    SpriteAtlasBenefit[\"支持模组 & 高渲染效率\"]\n    InputSystemMouse[\"鼠标输入系统集成\"]\n    BurstMultithread[\"Burst 多线程 (Web)\"]\n    Performance[\"整体性能提升\"]\n    UseCase[\"复杂渲染 / 特效实现\"]\n    CustomRender2D --> UseCase\n    PostProcessing --> UseCase\n    RuntimeSpriteAtlas --> SpriteAtlasBenefit\n    SpriteAtlasBenefit --> Performance\n    InputSystemMouse --> Performance\n    BurstMultithread --> Performance\n    UseCase --> Performance\n```",
+      "diagrams": [
+        {
+          "title": "版本支持层级",
+          "code": "flowchart TD\n    V6_3[\"6.3 LTS\"]\n    V6_4[\"6.4 Supported\"]\n    V6_5[\"6.5 Future\"]\n    SupportLevel[\"支持级别 (同等 LTS)\"]\n    Stability[\"高稳定性\"]\n    SupportEnd[\"支持结束时间\"]\n    V6_3 --> SupportLevel\n    V6_4 --> SupportLevel\n    V6_4 --> SupportEnd\n    V6_5 --> SupportEnd\n    SupportLevel --> Stability"
+        },
+        {
+          "title": "ECS 集成进引擎",
+          "code": "flowchart TD\n    ECS_External[\"外部 ECS 包 (需单独安装)\"]\n    UnityEditor[\"Unity 编辑器\"]\n    ECS_CorePkg[\"ECS Core 包 (实体)\"]\n    Integration[\"集成到引擎内部\"]\n    Benefit[\"无需单独安装\"]\n    Future[\"实体将成为引擎核心\"]\n    ECS_External --> Integration\n    UnityEditor --> Integration\n    ECS_CorePkg --> Integration\n    Integration --> Benefit\n    Integration --> Future"
+        },
+        {
+          "title": "新增内置工具与编辑器扩展",
+          "code": "flowchart TD\n    ProjectAuditor[\"Project Auditor\"]\n    GraphToolkit[\"Graph Toolkit\"]\n    RenderingStats[\"渲染统计窗口\"]\n    PipelineConverter[\"渲染管线转换器\"]\n    InputMouse[\"鼠标行为 + 输入系统\"]\n    BurstWebGL[\"Burst 多线程 (WebGL)\"]\n    EditorExt[\"编辑器扩展能力\"]\n    ToolBenefit[\"提升开发体验 & 诊断效率\"]\n    ProjectAuditor --> ToolBenefit\n    RenderingStats --> ToolBenefit\n    PipelineConverter --> ToolBenefit\n    InputMouse --> ToolBenefit\n    BurstWebGL --> ToolBenefit\n    GraphToolkit --> EditorExt\n    EditorExt --> ToolBenefit"
+        },
+        {
+          "title": "渲染、后期与资源工作流更新",
+          "code": "flowchart TD\n    CustomRender2D[\"2D 项目自定义渲染 (URP)\"]\n    PostProcessing[\"后期处理功能\"]\n    RuntimeSpriteAtlas[\"运行时创建 Sprite Atlas\"]\n    SpriteAtlasBenefit[\"支持模组 & 高渲染效率\"]\n    InputSystemMouse[\"鼠标输入系统集成\"]\n    BurstMultithread[\"Burst 多线程 (Web)\"]\n    Performance[\"整体性能提升\"]\n    UseCase[\"复杂渲染 / 特效实现\"]\n    CustomRender2D --> UseCase\n    PostProcessing --> UseCase\n    RuntimeSpriteAtlas --> SpriteAtlasBenefit\n    SpriteAtlasBenefit --> Performance\n    InputSystemMouse --> Performance\n    BurstMultithread --> Performance\n    UseCase --> Performance"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T03:32:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Unity 6.4 新特性图谱\n\n## 版本支持层级\n```mermaid\nflowchart TD\n    V6_3[\"6.3 LTS\"]\n    V6_4[\"6.4 Supported\"]\n    V6_5[\"6.5 Future\"]\n    SupportLevel[\"支持级别 (同等 LTS)\"]\n    Stability[\"高稳定性\"]\n    SupportEnd[\"支持结束时间\"]\n    V6_3 --> SupportLevel\n    V6_4 --> SupportLevel\n    V6_4 --> SupportEnd\n    V6_5 --> SupportEnd\n    SupportLevel --> Stability\n```\n\n## ECS 集成进引擎\n```mermaid\nflowchart TD\n    ECS_External[\"外部 ECS 包 (需单独安装)\"]\n    UnityEditor[\"Unity 编辑器\"]\n    ECS_CorePkg[\"ECS Core 包 (实体)\"]\n    Integration[\"集成到引擎内部\"]\n    Benefit[\"无需单独安装\"]\n    Future[\"实体将成为引擎核心\"]\n    ECS_External --> Integration\n    UnityEditor --> Integration\n    ECS_CorePkg --> Integration\n    Integration --> Benefit\n    Integration --> Future\n```\n\n## 新增内置工具与编辑器扩展\n```mermaid\nflowchart TD\n    ProjectAuditor[\"Project Auditor\"]\n    GraphToolkit[\"Graph Toolkit\"]\n    RenderingStats[\"渲染统计窗口\"]\n    PipelineConverter[\"渲染管线转换器\"]\n    InputMouse[\"鼠标行为 + 输入系统\"]\n    BurstWebGL[\"Burst 多线程 (WebGL)\"]\n    EditorExt[\"编辑器扩展能力\"]\n    ToolBenefit[\"提升开发体验 & 诊断效率\"]\n    ProjectAuditor --> ToolBenefit\n    RenderingStats --> ToolBenefit\n    PipelineConverter --> ToolBenefit\n    InputMouse --> ToolBenefit\n    BurstWebGL --> ToolBenefit\n    GraphToolkit --> EditorExt\n    EditorExt --> ToolBenefit\n```\n\n## 渲染、后期与资源工作流更新\n```mermaid\nflowchart TD\n    CustomRender2D[\"2D 项目自定义渲染 (URP)\"]\n    PostProcessing[\"后期处理功能\"]\n    RuntimeSpriteAtlas[\"运行时创建 Sprite Atlas\"]\n    SpriteAtlasBenefit[\"支持模组 & 高渲染效率\"]\n    InputSystemMouse[\"鼠标输入系统集成\"]\n    BurstMultithread[\"Burst 多线程 (Web)\"]\n    Performance[\"整体性能提升\"]\n    UseCase[\"复杂渲染 / 特效实现\"]\n    CustomRender2D --> UseCase\n    PostProcessing --> UseCase\n    RuntimeSpriteAtlas --> SpriteAtlasBenefit\n    SpriteAtlasBenefit --> Performance\n    InputSystemMouse --> Performance\n    BurstMultithread --> Performance\n    UseCase --> Performance\n```",
+  "diagrams": [
+    {
+      "title": "版本支持层级",
+      "code": "flowchart TD\n    V6_3[\"6.3 LTS\"]\n    V6_4[\"6.4 Supported\"]\n    V6_5[\"6.5 Future\"]\n    SupportLevel[\"支持级别 (同等 LTS)\"]\n    Stability[\"高稳定性\"]\n    SupportEnd[\"支持结束时间\"]\n    V6_3 --> SupportLevel\n    V6_4 --> SupportLevel\n    V6_4 --> SupportEnd\n    V6_5 --> SupportEnd\n    SupportLevel --> Stability"
+    },
+    {
+      "title": "ECS 集成进引擎",
+      "code": "flowchart TD\n    ECS_External[\"外部 ECS 包 (需单独安装)\"]\n    UnityEditor[\"Unity 编辑器\"]\n    ECS_CorePkg[\"ECS Core 包 (实体)\"]\n    Integration[\"集成到引擎内部\"]\n    Benefit[\"无需单独安装\"]\n    Future[\"实体将成为引擎核心\"]\n    ECS_External --> Integration\n    UnityEditor --> Integration\n    ECS_CorePkg --> Integration\n    Integration --> Benefit\n    Integration --> Future"
+    },
+    {
+      "title": "新增内置工具与编辑器扩展",
+      "code": "flowchart TD\n    ProjectAuditor[\"Project Auditor\"]\n    GraphToolkit[\"Graph Toolkit\"]\n    RenderingStats[\"渲染统计窗口\"]\n    PipelineConverter[\"渲染管线转换器\"]\n    InputMouse[\"鼠标行为 + 输入系统\"]\n    BurstWebGL[\"Burst 多线程 (WebGL)\"]\n    EditorExt[\"编辑器扩展能力\"]\n    ToolBenefit[\"提升开发体验 & 诊断效率\"]\n    ProjectAuditor --> ToolBenefit\n    RenderingStats --> ToolBenefit\n    PipelineConverter --> ToolBenefit\n    InputMouse --> ToolBenefit\n    BurstWebGL --> ToolBenefit\n    GraphToolkit --> EditorExt\n    EditorExt --> ToolBenefit"
+    },
+    {
+      "title": "渲染、后期与资源工作流更新",
+      "code": "flowchart TD\n    CustomRender2D[\"2D 项目自定义渲染 (URP)\"]\n    PostProcessing[\"后期处理功能\"]\n    RuntimeSpriteAtlas[\"运行时创建 Sprite Atlas\"]\n    SpriteAtlasBenefit[\"支持模组 & 高渲染效率\"]\n    InputSystemMouse[\"鼠标输入系统集成\"]\n    BurstMultithread[\"Burst 多线程 (Web)\"]\n    Performance[\"整体性能提升\"]\n    UseCase[\"复杂渲染 / 特效实现\"]\n    CustomRender2D --> UseCase\n    PostProcessing --> UseCase\n    RuntimeSpriteAtlas --> SpriteAtlasBenefit\n    SpriteAtlasBenefit --> Performance\n    InputSystemMouse --> Performance\n    BurstMultithread --> Performance\n    UseCase --> Performance"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:32:34+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1aBAfzVEEm",
+  "title": "那些…我再也离不开的游戏引擎免费插件！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 5293,
+  "text": "这是一张2D精灵图表\n我们将它放到游戏引擎里手动进行切割\n然后以10ms的时间间隔来播放\n它就形成了一段动画\n这是一个游戏场景A\n这是另一个游戏场景B只需要一句代码\n我们就能从场景A切换到场景B\n但你也看出来了\n这种默认的切换方式特别生硬\n前面的手动切图也相当不方便\n那么有没有更好的方法呢\n有的朋友有的hello\n大家好\n我是吴邪\n一个满肚子奇怪想法的游戏制作人\n今天我将给大家介绍\n16款优秀且免费的歌多游戏引擎插件\n我会把它们分成五个大类\n这些工具都是吴邪长期使用和筛选后\n最后保留下来的\n完全可以称得上吴邪严选了\n好的话不多说\n请提前三连加关注\n让我们上车开始吧\n第一款a h two p\n在歌多中有三个功能非常相似的\n处理图像和动画的节点\nSpread to d\nAnimated\nspread to d和animation player\n后两个是我们常用的动画节点\n常常需要组合使用\nAnimated spread to d\n顾名思义\n可动画的2D精灵图\n如果你用这个节点来切图做动画的话\n一定遇到过这样一个问题\n就是动画做好了\n有时候还需要再手动把这些动画\n一个个复制到animation player里面去\n这就非常麻烦了\n因为歌多压根就没有提供这个功能\na s to p就是用来解决这个痛点的\n它可以把animated spare to d里的所有动画\n一键转换成animation player动画轨道\n当你再到这个轨道里面去添加帧事件\n或者进行K帧什么的\n就非常方便了\n特别适合人物或技能动画比较多的游戏\n如果你经常跟真动画打交道\n那么你就会知道\n真动画和和歌多配合的正常流程是导出导入\n切帧设置听起来简单\n但次数多了就会感觉很繁琐\nin potality是一个多格式图像与动画导入工具包\n它的核心作用是帮你把一些常用帧动画软件\n比如ASSPREAD\nCrea pencil\nto d pear和pixel rama里面制作好的动画资产\n顺畅的导入到更多项目里\n并自动生成对应的资源和节点结构\n而且不需要进行手动切图以后\n只要你在动画软件里面修改完\n歌多里面就自动同步过去了\n可以说节约了导入后切图等大量重复劳动\n让工作流程变得更加顺畅\n第三款spine插件\n在很长一段时间里\n更多引擎对谷歌动画的支持不足\n一直是开发者们关注的焦点\n但在2025年\n这一局面迎来了重要转机\n斯span官方亲自下场\n为歌多量身打造了全新的SPARAN插件\n并已完成对各多主流版本\n4.5.1和3.6.2的适配\n该插件以g t extension的方式融入到引擎中\n与歌多原生的动画\n物理和渲染系统协作的更加紧密\n对于想要追求优秀动效果的开发者来说\n这个插件无疑是连接专业动画工具\n与游戏引擎之间的关键桥梁\n第四款phanton camera\n镜头表现会直接影响游戏质感\nPhantocamera\n是一款为歌多隐形量身设计的相机插件\n灵感来源于unity中广受好评的CINEMACHINE\n它能为2D和3D项目提供智能的相机行为\n例如平滑跟随目标动态框定多个物体\n实现第三人称视角\n以及在不同机位间流畅切换等功能\nfton camera的好用体现在\n与引擎编辑器的深度集成上\n通过参数面板即可实时预览画面和死区范围\n让开发者更直观高效地完成复杂相机系统搭建\n第五款script ide\n这是一款强化更多内置脚本编辑体验的插件\n它提供了更清晰的代码结构\n视图函数与变量快速跳转\n搜索增强以及更友好的编辑界面布局\n让脚本管理更加高效\n对于项目逐渐变大的开发者来说\n它能明显提升代码组织与浏览效率\n对于习惯了vs code布局\n又想在内置代码编译器里写代码的小伙伴\n这个插件可以说是必装插件\n第六款dialogue manager\nDialogue manager\n是一款用于构建游戏对话系统的插件\n它支持变量控制\n条件判断和分支选择\n听起来是不是有点像图灵机的感觉\n没错你完全可以像写代码一样编写对话和剧情\n轻松实现剧情分流和角色互动逻辑\n特别适合RPG剧情向游戏\n或者有多个分支对话的项目\n哦对了\n他还支持了bb code和多语言本地化功能\n这两个东西可以说是正式的游戏项目中\n必不可少的功能模块\n而且使用起来还比较简单\n对游戏开发者们来说非常友好\n第七款same manager\n游戏场景切换看似简单\n但是想要把场景切换时的过度控制做好\n如果不依赖插件的话\n还是需要花不少心思的\n比如视频开头的那种生硬的切换场景就不大好\nsm manager是一款功能完整的\n场景管理和过度控制插件\n它支持了淡入淡出\n和多种高度自定义的转场效果\n技术和中小项目快速管理\n也能够满足复杂项目的场景调度需求\n第八款歌多state charts\n有限状态机常常应用于游戏中的NPC和boss\n战斗逻辑中\n在歌多的插件库中\n还是有不少和状态机相关的插件可供选择的\n但是我比较推荐这一款歌多state charts\n因为它不但可以使用节点加纯代码的方式\n来控制NPC和boss的各个阶段的行为\n而且它还有个独立界面\n可以实时的观测这些行为的逻辑流向\n非常适合有多阶段复杂boss战斗的游戏项目\n比如我的独立游戏\n史莱姆公主里的所有boss战斗逻辑\n都是使用这个插件制作的\n第九款to do manager\n在游戏开发过程中\n总会有一些以后再优化的地方\nTo do manager\n可以自动收集你在代码中写下的\nto do或者fix me标签\n并集中在编辑器底部的一个tag页面里\n显示它很像一个任务清单\n让你不会忘记以后要改进的代码位置\n适合还在使用古法编程的歌\n多游戏项目第十款sound manager\n有句话说得好\n声音才是游戏的灵魂\n当你游戏中的音乐和音效多了之后\n如果你对每个声音都单独管理\n很容易造成混乱\n更别说默认的更多音频API\n是以分贝作为单位来进行音量控制的\n我非常不习惯\nsound manager插件统一的管理了音乐和音效的播放\n支持从0~1的音量控制和切换逻辑\n比如我一般会把游戏音频分成游戏\n音乐环境音乐\n游戏音效和UI音效这四个音频通道\n这样就可以比较方便的\n单独修改各个通道的音量\n以及独立控制\n各个通道内音频文件的播放和暂停\n然后统一输出到master主通道上去\n最后形成玩家能够听到的游戏内声音效果\n它让声音变成了一个系统\n如果你的游戏对音频控制的要求还没有达到\n需要上f mode或者YY这种音频中间件的程度的话\n这款sound manager插件我是非常推荐的\n第11款歌多sf xr在制作游戏原型阶段时\n经常需要用到一些简单音效\n比如跳跃声\n攻击声等等\n这款插件可以在游戏引擎内部生成随机音效\n不需要额外寻找资源\n你可以在更多中像使用普通音频文件一样\n使用SFX2音频文件B项\n在原始SFX\n而软件中一样编辑音频文件\n特别适合用来快速开发原型或者game jam项目\n第12款csv data importer\n我们知道有很多游戏其实是数值驱动的游戏\n如果把游戏数值写死在代码里\n后期调整会非常的痛苦\n常见的处理方式是\n加游戏的所有数值\n都放到一个类似excel表格的地方进行统一管理\n如果游戏数值太多的话\n还需要进行分表分类处理\n而这个csv data importer插件\n刚好可以负责读取CSV表格数据\n当你修改表格中的数据后\n游戏里的对应数值就会自动同步更新\n不需要反复修改代码\n所有改动都会及时生效\n对于频繁调整数值的开发阶段来说\n这种工作流真的非常高效和方便\n第13款input happer\ninput helper是一个专业的设备输入管理软件\n它统一处理键盘\n手柄和其他输入设备\n简化了动作映射和按键识别\n你可以轻松设置按键重绑定\n支持多种控制器\n比如我自己游戏里的手柄\n键盘按键绑定\n就是使用这个input helper插件制作的\n说实话\n如果没有这个插件的帮助\n我可能没有办法实现\n让玩家自定义修改手柄和键盘的按键映射\n如果使用原生的歌多内置API制作的话\n我只能说非常的麻烦\n所以他就特别适合那些希望快速实现手柄键盘\n跨设备输入支持的开发者们\n第14款BRANDA3d shortcut\n这是一款让更多的3D编辑操作\n更接近blender习惯的插件\n它支持了使用GRS快捷键进行移动\n旋转和缩放\n并可以通过XYZ轴约束shift键\n精细控制\nalt键快速还原等方式来高效编辑\n对于熟悉blender的开发者来说\n学习成本几乎为零\n能够大幅提升3D场景编辑效率\n第15款\n歌多size\n游戏的优化打磨和体积控制可能变得非常重要\n更多size\n是一款用于分析游戏项目\n体积占用情况的实用插件\n它可以扫描整个各多项目文件夹\n并按文件尺寸从大到小依次排列显示\n帮助你快速定位体积异常的资源文件\n非常适合在移动端或者web项目优化阶段使用\n当然如果你想更进一步追求动物井\n那种极致的游戏体积的话\n请参考这篇文章\n我相信你还能够进一步压缩歌多游戏的尺寸\n第16款\n歌多steam\n这是一款为歌多集成V社steam works API的开源工具\n它支持在windows Mac os和LINUX平台调用steam的核心功能\n如果你计划将游戏发布到steam平台\n这几乎是绕不开的插件\n它封装了成就系统\n排行榜\n玩家统计\n云存档等常用接口\n让你无需直接对接V社的底层\nC加加SDK就能够更高效的完成平台集成呃\n我自己的游戏没有做排行榜\n不过成就系统就是使用的这个歌多\nsteam插件来制作的\n几乎没有遇到任何问题\n完全开箱即用的那种\n需要注意的一点是\n不要选错了版本\n我说的是为了避免出现bug\n你的歌多版本\n歌多steam版本和steam works版本最好能够一一对应\n可能有小伙伴会很好奇\n到底是什么人\n无私的贡献了这么多免费的歌多游戏引擎插件\n其实我稍微调研了一下\n发现很多插件背后的作者也是大有来头\n比如前面提到过的dialogue manager\nsound manager和input helper插件\n它们的作者其实是同一个人\nListen hard\n他是澳大利亚的一名资深独立游戏开发者\n还有csv data importer和戈多sf x r插件\n他们的作者也是同一人\n好于求\n从名字可以看出\n他应该是个中国人\n没错他就是B站的一名up主老裘呃\n说实话\n这个四位数的UID我是真的馋了\n可能还有很多优质的插件没有被统计进来\n比如这个physics插件\n因为过于优秀\n已经被合并到歌多引擎本体里\n并且作为了歌多的默认3D物理引擎\n这个JT3D物理引擎大家可能比较陌生\n不过这个索尼第一方3A大作地平线西之绝境\n相信大家应该不会陌生\n这款游戏里就是使用的这个开源物理引擎\nGeorge physics\n可以说\n实实在在的验证了这款3D物理引擎的实力\n也是在这位开源大佬的帮助下\n完美的将JT物理引擎\n移植到了更多游戏引擎里\n让更多的3D物理引擎\n终于达到了商业生产水平\n我只能说这简直比风息大善人还要善了呀\n我在之前的视频里就有预测过\n由于AI的进步\n更多引擎的源代码贡献者会越来越多\n现在的好消息是\n贡献者真的变多了很多\n但有个坏消息是\n最近更多引擎维护者公开抱怨\nAI生成代码正在严重冲击开源项目\n大量新贡献者利用code pilot d等工具\n提交低质量pr代码\n毫无意义\n测试结果可疑\npr描述冗长\n且提交者本人完全不懂代码逻辑\n这就导致无偿维护的审核者陷入两难\n既需要甄别错误来自AI还是性能\n开发者\n又要耗费大量精力进行沟通\n核心维护者坦言筋疲力尽\n士气低落\n甚至表示不知道还能坚持多久\n此现象还在blender和LINUX基金会等项目中\n同样泛滥\n而且还引发了开源界关于制定AI贡献政策\n和逃离GITHUB平台的广泛讨论\n说到这里\n我就不得不讲讲我自己的亲身体会了\n我是从歌多4.1版本开始使用这款引擎的\n发现\n从歌多最近的几个大版本的稳定性来看\n4.14.2和4.3还是比较稳定的\n4.4则出现了不稳定情况\n经常崩溃\n4.5也还算稳定\n也是我目前主要使用的版本\n但到了4.6版本稳定性又崩了\n在使用了一天后\n我还是选择回到了4.5版本\n所以吴邪在此呼吁一下\n希望我们每一个为更多引擎提交pr代码的\n开发者们都能够仔细review后\n在进行pr提交\n这是对我们自己的负责\n同样也是保护更多生态环境的一种美德\n如果说歌多是一款好用的开源游戏引擎\n那么以上这些插件就是让它变得更顺手\n更舒服的生产力工具\n他们不会改变你的游戏创意\n但会帮你省下大量造轮子的时间\n而时间才是独立游戏开发者们最珍贵的资源\n如果大家平常还有什么用着还不错的\n歌多插件的话\n也可以在视频下方的评论区留言交流一下\n好了\n这就是本视频的所有内容\n如果你感觉有所收获\n欢迎点赞支持一下\n如果你希望看到吴邪更多的视频内容\n请记得一定要关注和订阅我的频道\n我们下期视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1aBAfzVEEm",
+  "published_at": "1772547831",
+  "fetched_at": "2026-08-07T14:11:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 那些…我再也离不开的游戏引擎免费插件！\n\n## 插件总览\n```mermaid\nflowchart TD\n    A1[\"动画处理\"] --> A2[\"a.s to p (ASTOP)\"]\n    A1 --> A3[\"in potality\"]\n    A1 --> A4[\"spine 插件\"]\n    B1[\"相机控制\"] --> B2[\"phanton camera\"]\n    C1[\"脚本编辑\"] --> C2[\"script ide\"]\n    C1 --> C3[\"dialogue manager\"]\n    D1[\"对话系统\"] --> D2[\"dialogue manager\"]\n    D1 --> D3[\"bb code & 本地化\"]\n    E1[\"资源管理\"] --> E2[\"csv data importer\"]\n    E1 --> E3[\"input helper\"]\n    E1 --> E4[\"sound manager\"]\n    E1 --> E5[\"size 分析\"]\n    E1 --> E6[\"steam 集成\"]\n```\n\n## 动画工作流\n```mermaid\nflowchart TD\n    S1[\"2D 精灵图表 (Sprite Sheet)\"]\n    S2[\"手动切割\"]\n    S3[\"AnimatedSprite 节点\"]\n    S4[\"AnimationPlayer 节点\"]\n    S5[\"a.s to p (ASTOP) 插件\"]\n    S6[\"一键转换为 AnimationPlayer 轨道\"]\n    S7[\"帧事件 / K 帧编辑\"]\n    S8[\"适用：人物、技能动画多\"]\n    S1 --> S2 --> S3\n    S3 --> S5\n    S5 --> S6 --> S4\n    S4 --> S7 --> S8\n```\n\n## 场景切换与过渡\n```mermaid\nflowchart TD\n    SC1[\"场景 A\"]\n    SC2[\"场景 B\"]\n    SC3[\"默认切换（生硬）\"]\n    SC4[\"sm manager 插件\"]\n    SC5[\"淡入淡出\"]\n    SC6[\"自定义转场效果\"]\n    SC7[\"高度可定制\"]\n    SC8[\"适用：中小项目 & 复杂项目\"]\n    SC1 --> SC3 --> SC2\n    SC3 --> SC4\n    SC4 --> SC5\n    SC4 --> SC6\n    SC5 --> SC7\n    SC6 --> SC7 --> SC8\n```\n\n## 音频管理\n```mermaid\nflowchart TD\n    SM1[\"sound manager 插件\"]\n    SM2[\"统一音量控制 (0~1)\"]\n    SM3[\"音乐通道\"]\n    SM4[\"环境音乐通道\"]\n    SM5[\"游戏音效通道\"]\n    SM6[\"UI 音效通道\"]\n    SM7[\"通道独立音量调节\"]\n    SM8[\"适用：音频需求高的项目\"]\n    SM1 --> SM2\n    SM2 --> SM3\n    SM2 --> SM4\n    SM2 --> SM5\n    SM2 --> SM6\n    SM3 --> SM7\n    SM4 --> SM7\n    SM5 --> SM7\n    SM6 --> SM7 --> SM8\n```",
+      "diagrams": [
+        {
+          "title": "插件总览",
+          "code": "flowchart TD\n    A1[\"动画处理\"] --> A2[\"a.s to p (ASTOP)\"]\n    A1 --> A3[\"in potality\"]\n    A1 --> A4[\"spine 插件\"]\n    B1[\"相机控制\"] --> B2[\"phanton camera\"]\n    C1[\"脚本编辑\"] --> C2[\"script ide\"]\n    C1 --> C3[\"dialogue manager\"]\n    D1[\"对话系统\"] --> D2[\"dialogue manager\"]\n    D1 --> D3[\"bb code & 本地化\"]\n    E1[\"资源管理\"] --> E2[\"csv data importer\"]\n    E1 --> E3[\"input helper\"]\n    E1 --> E4[\"sound manager\"]\n    E1 --> E5[\"size 分析\"]\n    E1 --> E6[\"steam 集成\"]"
+        },
+        {
+          "title": "动画工作流",
+          "code": "flowchart TD\n    S1[\"2D 精灵图表 (Sprite Sheet)\"]\n    S2[\"手动切割\"]\n    S3[\"AnimatedSprite 节点\"]\n    S4[\"AnimationPlayer 节点\"]\n    S5[\"a.s to p (ASTOP) 插件\"]\n    S6[\"一键转换为 AnimationPlayer 轨道\"]\n    S7[\"帧事件 / K 帧编辑\"]\n    S8[\"适用：人物、技能动画多\"]\n    S1 --> S2 --> S3\n    S3 --> S5\n    S5 --> S6 --> S4\n    S4 --> S7 --> S8"
+        },
+        {
+          "title": "场景切换与过渡",
+          "code": "flowchart TD\n    SC1[\"场景 A\"]\n    SC2[\"场景 B\"]\n    SC3[\"默认切换（生硬）\"]\n    SC4[\"sm manager 插件\"]\n    SC5[\"淡入淡出\"]\n    SC6[\"自定义转场效果\"]\n    SC7[\"高度可定制\"]\n    SC8[\"适用：中小项目 & 复杂项目\"]\n    SC1 --> SC3 --> SC2\n    SC3 --> SC4\n    SC4 --> SC5\n    SC4 --> SC6\n    SC5 --> SC7\n    SC6 --> SC7 --> SC8"
+        },
+        {
+          "title": "音频管理",
+          "code": "flowchart TD\n    SM1[\"sound manager 插件\"]\n    SM2[\"统一音量控制 (0~1)\"]\n    SM3[\"音乐通道\"]\n    SM4[\"环境音乐通道\"]\n    SM5[\"游戏音效通道\"]\n    SM6[\"UI 音效通道\"]\n    SM7[\"通道独立音量调节\"]\n    SM8[\"适用：音频需求高的项目\"]\n    SM1 --> SM2\n    SM2 --> SM3\n    SM2 --> SM4\n    SM2 --> SM5\n    SM2 --> SM6\n    SM3 --> SM7\n    SM4 --> SM7\n    SM5 --> SM7\n    SM6 --> SM7 --> SM8"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T14:11:39+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 那些…我再也离不开的游戏引擎免费插件！\n\n## 插件总览\n```mermaid\nflowchart TD\n    A1[\"动画处理\"] --> A2[\"a.s to p (ASTOP)\"]\n    A1 --> A3[\"in potality\"]\n    A1 --> A4[\"spine 插件\"]\n    B1[\"相机控制\"] --> B2[\"phanton camera\"]\n    C1[\"脚本编辑\"] --> C2[\"script ide\"]\n    C1 --> C3[\"dialogue manager\"]\n    D1[\"对话系统\"] --> D2[\"dialogue manager\"]\n    D1 --> D3[\"bb code & 本地化\"]\n    E1[\"资源管理\"] --> E2[\"csv data importer\"]\n    E1 --> E3[\"input helper\"]\n    E1 --> E4[\"sound manager\"]\n    E1 --> E5[\"size 分析\"]\n    E1 --> E6[\"steam 集成\"]\n```\n\n## 动画工作流\n```mermaid\nflowchart TD\n    S1[\"2D 精灵图表 (Sprite Sheet)\"]\n    S2[\"手动切割\"]\n    S3[\"AnimatedSprite 节点\"]\n    S4[\"AnimationPlayer 节点\"]\n    S5[\"a.s to p (ASTOP) 插件\"]\n    S6[\"一键转换为 AnimationPlayer 轨道\"]\n    S7[\"帧事件 / K 帧编辑\"]\n    S8[\"适用：人物、技能动画多\"]\n    S1 --> S2 --> S3\n    S3 --> S5\n    S5 --> S6 --> S4\n    S4 --> S7 --> S8\n```\n\n## 场景切换与过渡\n```mermaid\nflowchart TD\n    SC1[\"场景 A\"]\n    SC2[\"场景 B\"]\n    SC3[\"默认切换（生硬）\"]\n    SC4[\"sm manager 插件\"]\n    SC5[\"淡入淡出\"]\n    SC6[\"自定义转场效果\"]\n    SC7[\"高度可定制\"]\n    SC8[\"适用：中小项目 & 复杂项目\"]\n    SC1 --> SC3 --> SC2\n    SC3 --> SC4\n    SC4 --> SC5\n    SC4 --> SC6\n    SC5 --> SC7\n    SC6 --> SC7 --> SC8\n```\n\n## 音频管理\n```mermaid\nflowchart TD\n    SM1[\"sound manager 插件\"]\n    SM2[\"统一音量控制 (0~1)\"]\n    SM3[\"音乐通道\"]\n    SM4[\"环境音乐通道\"]\n    SM5[\"游戏音效通道\"]\n    SM6[\"UI 音效通道\"]\n    SM7[\"通道独立音量调节\"]\n    SM8[\"适用：音频需求高的项目\"]\n    SM1 --> SM2\n    SM2 --> SM3\n    SM2 --> SM4\n    SM2 --> SM5\n    SM2 --> SM6\n    SM3 --> SM7\n    SM4 --> SM7\n    SM5 --> SM7\n    SM6 --> SM7 --> SM8\n```",
+  "diagrams": [
+    {
+      "title": "插件总览",
+      "code": "flowchart TD\n    A1[\"动画处理\"] --> A2[\"a.s to p (ASTOP)\"]\n    A1 --> A3[\"in potality\"]\n    A1 --> A4[\"spine 插件\"]\n    B1[\"相机控制\"] --> B2[\"phanton camera\"]\n    C1[\"脚本编辑\"] --> C2[\"script ide\"]\n    C1 --> C3[\"dialogue manager\"]\n    D1[\"对话系统\"] --> D2[\"dialogue manager\"]\n    D1 --> D3[\"bb code & 本地化\"]\n    E1[\"资源管理\"] --> E2[\"csv data importer\"]\n    E1 --> E3[\"input helper\"]\n    E1 --> E4[\"sound manager\"]\n    E1 --> E5[\"size 分析\"]\n    E1 --> E6[\"steam 集成\"]"
+    },
+    {
+      "title": "动画工作流",
+      "code": "flowchart TD\n    S1[\"2D 精灵图表 (Sprite Sheet)\"]\n    S2[\"手动切割\"]\n    S3[\"AnimatedSprite 节点\"]\n    S4[\"AnimationPlayer 节点\"]\n    S5[\"a.s to p (ASTOP) 插件\"]\n    S6[\"一键转换为 AnimationPlayer 轨道\"]\n    S7[\"帧事件 / K 帧编辑\"]\n    S8[\"适用：人物、技能动画多\"]\n    S1 --> S2 --> S3\n    S3 --> S5\n    S5 --> S6 --> S4\n    S4 --> S7 --> S8"
+    },
+    {
+      "title": "场景切换与过渡",
+      "code": "flowchart TD\n    SC1[\"场景 A\"]\n    SC2[\"场景 B\"]\n    SC3[\"默认切换（生硬）\"]\n    SC4[\"sm manager 插件\"]\n    SC5[\"淡入淡出\"]\n    SC6[\"自定义转场效果\"]\n    SC7[\"高度可定制\"]\n    SC8[\"适用：中小项目 & 复杂项目\"]\n    SC1 --> SC3 --> SC2\n    SC3 --> SC4\n    SC4 --> SC5\n    SC4 --> SC6\n    SC5 --> SC7\n    SC6 --> SC7 --> SC8"
+    },
+    {
+      "title": "音频管理",
+      "code": "flowchart TD\n    SM1[\"sound manager 插件\"]\n    SM2[\"统一音量控制 (0~1)\"]\n    SM3[\"音乐通道\"]\n    SM4[\"环境音乐通道\"]\n    SM5[\"游戏音效通道\"]\n    SM6[\"UI 音效通道\"]\n    SM7[\"通道独立音量调节\"]\n    SM8[\"适用：音频需求高的项目\"]\n    SM1 --> SM2\n    SM2 --> SM3\n    SM2 --> SM4\n    SM2 --> SM5\n    SM2 --> SM6\n    SM3 --> SM7\n    SM4 --> SM7\n    SM5 --> SM7\n    SM6 --> SM7 --> SM8"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T14:11:39+00:00"
+}

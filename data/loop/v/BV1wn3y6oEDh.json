@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1wn3y6oEDh",
+  "title": "Claude账号总被封？别只换IP！拆解底层逻辑，教你自查环境避开风险",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 855,
+  "text": "最近用CLA的朋友是不是都碰到过这种情况\n好好的账号突然就被限制使用了\n很多人第一反应是换个IP就能解决\n其实根本没这么简单\n今天就给大家拆解cloud的安全管控逻辑\n从网络环境自查的角度\n教大家怎么降低被误封触发验证的概率\n新手也能跟着操作\n建议先点赞收藏\n以免之后想看找不到了\n先说结论\ncloud的管控不是只看单一信号\n更像综合打分\n三类异常叠加在一起才最容易出问题\n第一层是网络风险\n比如你用的IP是不是机房共享的\n使用人数多不多\n纯净度够不够\n第二层是设备环境风险\n比如系统时区\n浏览器语言地区设置\n这些是不是和IP所在地区对得上信息\n有没有前后矛盾\n第三层是账号行为风险\n比如频繁换节点\n换地区\n同一个设备登好几个账号\n账号共用或者刚注册就大量操作\n要是高风险\nIP环境信息不匹配\n操作反常\n这几个点同时出现触发验证\n甚至被限制的概率会明显升高\n给大家两个简单的自查方法\n自己就能测环境安不安全\n第一步先查IP环境\n可以用IP pure这类检测工具\n别只看IP是哪个国家的\n重点要看这几个细节\n是住宅IP还是机房IP\nDNS有没有泄露其他位置系统时区和IP所在地\n对不对得上\n要是IP显示在海外时区\n却是国内时间\nDNS还漏了其他地区\n这种前后不一致的情况\n比单纯IP归属地部队更容易触发管控\n第二步可以用CD专项风险检测工具做检查\n这类工具是针对clue的使用场景设计的\n会同IP风险环境一致性\n连接稳定性等多个维度检测\n更有针对性\n如果检测出来风险比较高\n别着急登录账号\n先调整网络出口DNS时区和浏览器环境重新检测\n没问题了\n再用\n想要长期稳定使用的话\n建议搭配指纹浏览器和静态IP1启用\n拿ROXY指纹浏览器举例\n核心不是把环境改的有多复杂\n而是让同一个账号长期保持稳定\n统一的使用环境\n前后信息一致\n就不容易被系统判定异常\n能大幅降低被误封的概率\n好了今天的分享就到这里\n觉得今天的内容有用的话\n记得点赞收藏\n后面还会分享更多跨境运营的实用干货\n还有什么问题可以在评论区留言\n感谢你的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wn3y6oEDh",
+  "published_at": "1785307543",
+  "fetched_at": "2026-08-08T11:24:30+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T11:35:10+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T11:35:10+00:00"
+}

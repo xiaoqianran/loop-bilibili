@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1TvKN6jEZV",
+  "title": "【Unreal开源插件ComposableCameraSystem】教程-08-Modifier-基本介绍",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1716,
+  "text": "大家好\n从今天的教程开始\n我们将介绍一个重要概念\nModifire\n这里有三个嵌套放置的盒子\n接下来让我们依次走进去\n看看会发生什么\n走进第一个盒子会发现FOV发生了变化\n并且camera offset也有改变\ndebug面板的modifier1栏多了一些内容\neffective区域显示了当前哪些节点\n正在被哪个MODIFIRE影响\n而all区域显示了所有可能影响节点的MODIFIRE\n走进第二个盒子会发现FOV再次发生了变化\n并且debug面板显示paper damping\n节点也被施加了moi f\n注意all区域可以看到FOV节点\n此时有两个motif\n但只有标记为新的MULTIF\n我们左右走一下\n会发现此时相机跟随很慢\n说明单片节点确实被影响了\n走进第三个盒子\n发现camera offset发生了剧烈变化\n从modifier区域看也的确如此\n此时FOV和单品也还是保持了\n上一个盒子的数值\n退回第二个盒子\n发现又恢复到了之前的状态\n回到第一个盒子也是一样\n退出第一个盒子\n所有的MODIFER都不见了\n盒子的逻辑很简单\n开放一个MODIF类型的参数\n并在进入和离开盒子时\n分别增加和移除这个MODIF\n那么modifier究竟是什么\n我们可以右键composable camera system\n选择camera node modifier\n新增一个modifier资产\n他的第一个参数就是modifiers\n我们可以增加多个modifiers\n每个motif2都需要选择一个节点\n并选择想要设置哪些参数\n且它们的值是多少\n比如我这里选择FOV节点\n下方就会弹出来FOV节点的若干参数\n一般情况下我们只需要修改FOV值\n勾选field of view字段\n再设置为120\n回到场景里\n把第一个盒子的mod\nfast资产改为刚刚我们新建的这个\n看看效果\n可以看到FOV确实被瞬间切换为了120\ndebug面板也显示了这个信息\n顺切是因为我们这里配置的enter transition为空\n我们选择cubic transition\n并设置一个时间\nExit transition\n同理\n再回到场景里\n就可以看到现在有进入和退出的过渡了\n接下来是camera tag query\n这个参数指的是该modifier资产对哪些相机生效\n去匹配相机本身携带的tag为空的时候\n表示匹配所有相机\n这里我们选择一个all tax match\n并要求具备camera AD s这个tag\n但由于我们的相机tag是camera third camera\n所以此时modifier资产\n就不会被应用到我们的相机上\n如果我们改为只要匹配abs和third\nperson中的一个tag\n那就没问题了\n最后一个参数是优先级\n这个用在多个MODIVA资产作用于同一个节点时\n决定使用哪个MODIVA资产\n现在我们回到原来的配置\n再来看看每个modifier资产是如何运行的\n第一个modifier资产\n对camera offset和foo v两个节点进行了配置\n优先级为零\n可以看到此时camera offset和FOV确实被改变了\n过渡也和我们配置的一样\n第二个资产\n对PVODAMPING和FOV节点进行了配置\n但此时优先级为二\n因此这里的FOV配置优先级更高\n而前一个资产没有配置paper damping节点\n所以这里的paper damping节点的配置依旧会生效\n同时这里没有配置camera offset节点\n所以前一个资产的相关配置也会生效\n进入第二个盒子\n可以看到camera offset节点被第一个资产影响\n而PIVODAMPING和foo v节点被第二个资产影响\n第三个资产对camera offset和FOV节点进行了配置\n但是由于它的优先级为一\n所以此处的FOV配置不会生效\n但camera offset相关配置会生效\n可以看到的确如我们预期\n总结MODIFIRE定义了在怎样的transition下\n复写哪些节点的哪些参数\n多个modifier之间的冲突\n通过优先级解决\n下一期我们将讲解如何自定义modifier类",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TvKN6jEZV",
+  "published_at": "1784390545",
+  "fetched_at": "2026-08-09T22:48:06+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Composable Camera System Modifier 知识图谱\n\n## Modifier 概念总览 [BV1TvKN6jEZV P1 00:04]\n```mermaid\nflowchart TD\n    M0[\"Modifier\"] -->|进入盒子| M1[\"Box (Enter)\"]\n    M0 -->|退出盒子| M2[\"Box (Exit)\"]\n    M1 --> M3[\"Effective Region\\n显示当前受影响节点\"]\n    M2 --> M3\n    M0 --> M4[\"All Region\\n显示所有可能影响节点\"]\n    M0 --> M5[\"Transition\\nEnter / Exit\"]\n    M0 --> M6[\"Priority\\n决定冲突时使用的资产\"]\n    M0 --> M7[\"Affected Nodes\\nFOV、Camera Offset、Paper Damping\"]\n    M5 --> M7\n    M6 --> M7\n    M3 --> M7\n    M4 --> M7\n```\n\n## Modifier 创建与配置流程 [BV1TvKN6jEZV P1 02:22]\n```mermaid\nflowchart TD\n    C0[\"右键 Composable Camera System\"] --> C1[\"选择 Camera Node Modifier\"]\n    C1 --> C2[\"新增 Modifier 资产\"]\n    C2 --> C3[\"设置 Modifiers 列表\"]\n    C3 --> C4[\"为每个 Modifier 选择节点\"]\n    C4 --> C5[\"设置参数\\n如 FOV、Camera Offset\"]\n    C5 --> C6[\"勾选 Field of View\\n并设值 (例: 120)\"]\n    C6 --> C7[\"配置 Transition\\nEnter / Exit\"]\n    C7 --> C8[\"设置 Camera Tag Query\"]\n    C8 --> C9[\"设置 Priority\"]\n    C9 --> C10[\"完成配置并保存\"]\n```\n\n## Priority 冲突解决机制 [BV1TvKN6jEZV P1 05:24]\n```mermaid\nflowchart TD\n    P0[\"Modifier A\\nPriority 0\"] --> PA[\"影响节点\\nFOV、Camera Offset\"]\n    P1[\"Modifier B\\nPriority 2\"] --> PB[\"影响节点\\nFOV、Paper Damping\"]\n    P2[\"Modifier C\\nPriority 1\"] --> PC[\"影响节点\\nFOV、Camera Offset\"]\n    subgraph Conflict[\"同一节点/参数冲突\"]\n        FA[\"FOV\"]\n    end\n    PA --> FA\n    PB --> FA\n    PC --> FA\n    FA -->|优先级最高| PB[\"使用 Modifier B 的 FOV 配置\"]\n    subgraph OtherNodes[\"其他节点不冲突\"]\n        PO[\"Camera Offset\"] --> PA\n        PD[\"Paper Damping\"] --> PB\n    end\n```\n\n## Camera Tag Query 匹配逻辑 [BV1TvKN6jEZV P1 04:08]\n```mermaid\nflowchart TD\n    T0[\"Modifier 的 Camera Tag Query\"] --> T1[\"All (匹配所有相机)\"]\n    T0 --> T2[\"Specific Tags\\n如 camera ADS\"]\n    T2 --> T3[\"匹配结果\"]\n    C0[\"相机的 Tag\"] -->|camera third camera| C1[\"标签集合\"]\n    C1 -->|不包含 camera ADS| T3[\"不应用 Modifier\"]\n    C1 -->|包含 any of abs / third| T4[\"匹配成功\\n应用 Modifier\"]\n    T3 --> T5[\"Modifier 不生效\"]\n    T4 --> T5[\"Modifier 生效\"]\n```",
+      "diagrams": [
+        {
+          "title": "Modifier 概念总览",
+          "code": "flowchart TD\n    M0[\"Modifier\"] -->|进入盒子| M1[\"Box (Enter)\"]\n    M0 -->|退出盒子| M2[\"Box (Exit)\"]\n    M1 --> M3[\"Effective Region\\n显示当前受影响节点\"]\n    M2 --> M3\n    M0 --> M4[\"All Region\\n显示所有可能影响节点\"]\n    M0 --> M5[\"Transition\\nEnter / Exit\"]\n    M0 --> M6[\"Priority\\n决定冲突时使用的资产\"]\n    M0 --> M7[\"Affected Nodes\\nFOV、Camera Offset、Paper Damping\"]\n    M5 --> M7\n    M6 --> M7\n    M3 --> M7\n    M4 --> M7"
+        },
+        {
+          "title": "Modifier 创建与配置流程",
+          "code": "flowchart TD\n    C0[\"右键 Composable Camera System\"] --> C1[\"选择 Camera Node Modifier\"]\n    C1 --> C2[\"新增 Modifier 资产\"]\n    C2 --> C3[\"设置 Modifiers 列表\"]\n    C3 --> C4[\"为每个 Modifier 选择节点\"]\n    C4 --> C5[\"设置参数\\n如 FOV、Camera Offset\"]\n    C5 --> C6[\"勾选 Field of View\\n并设值 (例: 120)\"]\n    C6 --> C7[\"配置 Transition\\nEnter / Exit\"]\n    C7 --> C8[\"设置 Camera Tag Query\"]\n    C8 --> C9[\"设置 Priority\"]\n    C9 --> C10[\"完成配置并保存\"]"
+        },
+        {
+          "title": "Priority 冲突解决机制",
+          "code": "flowchart TD\n    P0[\"Modifier A\\nPriority 0\"] --> PA[\"影响节点\\nFOV、Camera Offset\"]\n    P1[\"Modifier B\\nPriority 2\"] --> PB[\"影响节点\\nFOV、Paper Damping\"]\n    P2[\"Modifier C\\nPriority 1\"] --> PC[\"影响节点\\nFOV、Camera Offset\"]\n    subgraph Conflict[\"同一节点/参数冲突\"]\n        FA[\"FOV\"]\n    end\n    PA --> FA\n    PB --> FA\n    PC --> FA\n    FA -->|优先级最高| PB[\"使用 Modifier B 的 FOV 配置\"]\n    subgraph OtherNodes[\"其他节点不冲突\"]\n        PO[\"Camera Offset\"] --> PA\n        PD[\"Paper Damping\"] --> PB\n    end"
+        },
+        {
+          "title": "Camera Tag Query 匹配逻辑",
+          "code": "flowchart TD\n    T0[\"Modifier 的 Camera Tag Query\"] --> T1[\"All (匹配所有相机)\"]\n    T0 --> T2[\"Specific Tags\\n如 camera ADS\"]\n    T2 --> T3[\"匹配结果\"]\n    C0[\"相机的 Tag\"] -->|camera third camera| C1[\"标签集合\"]\n    C1 -->|不包含 camera ADS| T3[\"不应用 Modifier\"]\n    C1 -->|包含 any of abs / third| T4[\"匹配成功\\n应用 Modifier\"]\n    T3 --> T5[\"Modifier 不生效\"]\n    T4 --> T5[\"Modifier 生效\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T22:48:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Composable Camera System Modifier 知识图谱\n\n## Modifier 概念总览 [BV1TvKN6jEZV P1 00:04]\n```mermaid\nflowchart TD\n    M0[\"Modifier\"] -->|进入盒子| M1[\"Box (Enter)\"]\n    M0 -->|退出盒子| M2[\"Box (Exit)\"]\n    M1 --> M3[\"Effective Region\\n显示当前受影响节点\"]\n    M2 --> M3\n    M0 --> M4[\"All Region\\n显示所有可能影响节点\"]\n    M0 --> M5[\"Transition\\nEnter / Exit\"]\n    M0 --> M6[\"Priority\\n决定冲突时使用的资产\"]\n    M0 --> M7[\"Affected Nodes\\nFOV、Camera Offset、Paper Damping\"]\n    M5 --> M7\n    M6 --> M7\n    M3 --> M7\n    M4 --> M7\n```\n\n## Modifier 创建与配置流程 [BV1TvKN6jEZV P1 02:22]\n```mermaid\nflowchart TD\n    C0[\"右键 Composable Camera System\"] --> C1[\"选择 Camera Node Modifier\"]\n    C1 --> C2[\"新增 Modifier 资产\"]\n    C2 --> C3[\"设置 Modifiers 列表\"]\n    C3 --> C4[\"为每个 Modifier 选择节点\"]\n    C4 --> C5[\"设置参数\\n如 FOV、Camera Offset\"]\n    C5 --> C6[\"勾选 Field of View\\n并设值 (例: 120)\"]\n    C6 --> C7[\"配置 Transition\\nEnter / Exit\"]\n    C7 --> C8[\"设置 Camera Tag Query\"]\n    C8 --> C9[\"设置 Priority\"]\n    C9 --> C10[\"完成配置并保存\"]\n```\n\n## Priority 冲突解决机制 [BV1TvKN6jEZV P1 05:24]\n```mermaid\nflowchart TD\n    P0[\"Modifier A\\nPriority 0\"] --> PA[\"影响节点\\nFOV、Camera Offset\"]\n    P1[\"Modifier B\\nPriority 2\"] --> PB[\"影响节点\\nFOV、Paper Damping\"]\n    P2[\"Modifier C\\nPriority 1\"] --> PC[\"影响节点\\nFOV、Camera Offset\"]\n    subgraph Conflict[\"同一节点/参数冲突\"]\n        FA[\"FOV\"]\n    end\n    PA --> FA\n    PB --> FA\n    PC --> FA\n    FA -->|优先级最高| PB[\"使用 Modifier B 的 FOV 配置\"]\n    subgraph OtherNodes[\"其他节点不冲突\"]\n        PO[\"Camera Offset\"] --> PA\n        PD[\"Paper Damping\"] --> PB\n    end\n```\n\n## Camera Tag Query 匹配逻辑 [BV1TvKN6jEZV P1 04:08]\n```mermaid\nflowchart TD\n    T0[\"Modifier 的 Camera Tag Query\"] --> T1[\"All (匹配所有相机)\"]\n    T0 --> T2[\"Specific Tags\\n如 camera ADS\"]\n    T2 --> T3[\"匹配结果\"]\n    C0[\"相机的 Tag\"] -->|camera third camera| C1[\"标签集合\"]\n    C1 -->|不包含 camera ADS| T3[\"不应用 Modifier\"]\n    C1 -->|包含 any of abs / third| T4[\"匹配成功\\n应用 Modifier\"]\n    T3 --> T5[\"Modifier 不生效\"]\n    T4 --> T5[\"Modifier 生效\"]\n```",
+  "diagrams": [
+    {
+      "title": "Modifier 概念总览",
+      "code": "flowchart TD\n    M0[\"Modifier\"] -->|进入盒子| M1[\"Box (Enter)\"]\n    M0 -->|退出盒子| M2[\"Box (Exit)\"]\n    M1 --> M3[\"Effective Region\\n显示当前受影响节点\"]\n    M2 --> M3\n    M0 --> M4[\"All Region\\n显示所有可能影响节点\"]\n    M0 --> M5[\"Transition\\nEnter / Exit\"]\n    M0 --> M6[\"Priority\\n决定冲突时使用的资产\"]\n    M0 --> M7[\"Affected Nodes\\nFOV、Camera Offset、Paper Damping\"]\n    M5 --> M7\n    M6 --> M7\n    M3 --> M7\n    M4 --> M7"
+    },
+    {
+      "title": "Modifier 创建与配置流程",
+      "code": "flowchart TD\n    C0[\"右键 Composable Camera System\"] --> C1[\"选择 Camera Node Modifier\"]\n    C1 --> C2[\"新增 Modifier 资产\"]\n    C2 --> C3[\"设置 Modifiers 列表\"]\n    C3 --> C4[\"为每个 Modifier 选择节点\"]\n    C4 --> C5[\"设置参数\\n如 FOV、Camera Offset\"]\n    C5 --> C6[\"勾选 Field of View\\n并设值 (例: 120)\"]\n    C6 --> C7[\"配置 Transition\\nEnter / Exit\"]\n    C7 --> C8[\"设置 Camera Tag Query\"]\n    C8 --> C9[\"设置 Priority\"]\n    C9 --> C10[\"完成配置并保存\"]"
+    },
+    {
+      "title": "Priority 冲突解决机制",
+      "code": "flowchart TD\n    P0[\"Modifier A\\nPriority 0\"] --> PA[\"影响节点\\nFOV、Camera Offset\"]\n    P1[\"Modifier B\\nPriority 2\"] --> PB[\"影响节点\\nFOV、Paper Damping\"]\n    P2[\"Modifier C\\nPriority 1\"] --> PC[\"影响节点\\nFOV、Camera Offset\"]\n    subgraph Conflict[\"同一节点/参数冲突\"]\n        FA[\"FOV\"]\n    end\n    PA --> FA\n    PB --> FA\n    PC --> FA\n    FA -->|优先级最高| PB[\"使用 Modifier B 的 FOV 配置\"]\n    subgraph OtherNodes[\"其他节点不冲突\"]\n        PO[\"Camera Offset\"] --> PA\n        PD[\"Paper Damping\"] --> PB\n    end"
+    },
+    {
+      "title": "Camera Tag Query 匹配逻辑",
+      "code": "flowchart TD\n    T0[\"Modifier 的 Camera Tag Query\"] --> T1[\"All (匹配所有相机)\"]\n    T0 --> T2[\"Specific Tags\\n如 camera ADS\"]\n    T2 --> T3[\"匹配结果\"]\n    C0[\"相机的 Tag\"] -->|camera third camera| C1[\"标签集合\"]\n    C1 -->|不包含 camera ADS| T3[\"不应用 Modifier\"]\n    C1 -->|包含 any of abs / third| T4[\"匹配成功\\n应用 Modifier\"]\n    T3 --> T5[\"Modifier 不生效\"]\n    T4 --> T5[\"Modifier 生效\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:48:47+00:00"
+}

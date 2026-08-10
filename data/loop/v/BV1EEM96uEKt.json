@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1EEM96uEKt",
+  "title": "Kimi K3 对决 DeepSeek V4 Flash:大10倍、贵33倍,只换来14%的智能",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3710,
+  "text": "两家实验室相隔四天\n发布了各自的开放权重模型\n其中一个体量是另一个的十倍大\n模型在两者共有的几乎所有基准上都胜出\n但你根本跑不动它\n买不到能承载它的硬件\n谁赢了\n这场胜利实际要付多大代价\n奇怪的是\n证明这一点的两个记分牌\n对一个两家实验室都没参与制造的模型\n也各执一词\n先看参数量\nHUGF显示\nKIMIK3有2.78万亿参数\nV4FI有2840亿\n差了近十倍\n两者都已开放权重发布\n但谁都没有全部激活K3\n每个token激活1040亿\nflash激活130亿\n都有约96%处于休眠\n结构相同量级相差一个数量级\nartificial analysis在同一框架下测了两者\nK3得57分\n100一个模型里排第一\nflash得50分\n排第三\n排名已经明确\n接着看价格表\nK3每百万token输入三美元\n输出15美元\nfly输入14\n每分输出28美分\n也就是说K3的输入贵21倍\n输出贵54倍\n换来的只是高出14%的实测智能\n本地方面\n苹果在售的最大max studio512GB内存\n连K3最小的版本都装不下\nFlash\n在Macbook pro上每秒34个token跑分\n赢家和机器上的赢家是两个不同的模型\n这段时间线值得记住\n萌煞于7月16日开放K3API\n11天后\n即27日发布权重dpi官方的flash版本\n在31日早上07:30\nUTC发布安slot的量化版本\n12:24分上线\n晚了四小时54分钟\nKIMIK3是萌煞首个3万亿级别的开放模型架构\n全新93层\n其中69层运行kimi dota attention\n而非标准注意力\n专家任意token只激活其中16个\n另外还有一个肆意参数的视觉编码器\n名为moon v i it\n因为K3能原声读取图像\n这个视觉编码器的分量比听上去更重\nK3在同一个模型里同时接收文本和图像\n能容纳1000000token的上下文\n也能输出1000000token v4flash支持文本DPC\n建议输出上限设在38.4万\n如果你的工作涉及截图或图表\n比较到这里就可以结束了\n不用再看跑分表\ndeep sick的答案正好相反\n2840亿参数\n每层一个共享专家加256个路由专家\n每个token只激活排名前六的专家\n130亿激活参数\n专为压低服务成本而设计\n同样的参数量\n同样的布局和4月的预览版一致\n所有提升都来自重做后训练\ndeep w一上的分数从7.3拉到了54.4\n同样的权重形状只是叫法不同\n而这足以让他在deep seek自己公布的九项基准上\nflash胜过DPCV4pro\n一个1.6万亿参数\n490亿激活的模型\n130亿激活参数击败490亿\n这是deep sick自己表格里印出来的全部论点\n它还搭载了一个名为d spark的推测解码模块\n这也是为什么HuggingFace\n把一个2840亿参数的模型\n报成3040亿\n参数大约200亿是随行的\n草稿模型负责提前猜测\n让大模型能一次确认多个token\n而不是一个一个来\n两者共有的另一点正是他们能运行起来的原因\n两者都是刻意以低精度训练的\nK3的权重98%\n以四位压缩存储\nflash的97%也是这样存的\n两者都不是事后压缩的大模型\n他们生来就是压缩的\n现在正式开打\nTerminal bench\n2.1上\n蒙莎的模型卡给K3打88.3分\nDPC的模型卡给flash82.7分\n相差5.5分\n就此定论了\n并没有\n这两个数字分别由两家公司自评\n用的还是不同的评测框架\nDEPC在脚注里称\n其评测框架即将公布\n说白了就是外界还没人见过\n但有一种方法可以核实\n答案就摆在这两份文档里\n两份模型卡都拿自家模型去对比\n同样两个外部模型gm5.2和quo pos4.8\n这两家实验室都没参与研发\n数字理应一致\n他们并不一致\nterminal benchet上\nmoon jk给GLM5.2打了82.7分\ndeep six在同一基准上\n给同一模型打了81.0分\n在open上\nMOONSHA给出84.6分\ndeep seek给出85.0分\n同样的模型\n不同的标尺\n那就用双方都引用的口径来量差距\n以opus为基准\nmoonshot的表里K3比他高3.7分\ndeep seek nb flash比他低2.3分\n这样一来差距就是六分\n而非5.5分\n现在以GLM为基准\nMUNCHA的标里\nK3比它高5.6分\ndeep seek的表里flash比他高1.7分\n这一差距为3.9分\n同样的模型\n同样的基准\n两种都说得通的答案\n3.9或六\n诚实的讲\nKIMIK3在terminal bench上大约领先4~6分\n任何给出精确到小数点的来源\n都是在兜售一种目前谁也没有的确定性\n只有第三方同时测量者比较才有意义\nartificial analysis多了\n在公布的六项正面对比中\nRouse comp gdp value gp q a humanity's last exam\nMc p atlas two lah on kimi\nK36项全胜\n差距最大的是图拉斯王\n73.2对47.8\n一位名叫菲利普的开发者用同样的提示词\n同样的框架跑了两者\n一次生成一个1万美元概念产品的落地页\n他说K3的优势在打磨字体层级更清晰\n负空间更有把握\nflash把结构文案和布局逻辑都做对了\n输在了精修上\n这就是4~6分在人眼里的样子\nK3更强\n这一点从来没什么疑问\n问题是这个更强要花多少钱\n标价相当狠\n输入贵21倍\n输出贵54倍\n但标价是个陷阱\n跑同一套智能指数评测\nfly生成了2.1亿输出token\nK3只用了1.3亿\nflash的思考量明显更大\n那就按实际用量计价\n1.3亿个K3\ntoken单价15美元和1950美元\n2.1亿个flash token\n单价28美分和58.8美元\n是33倍\n不是54倍\n冗长吃掉了flash3分之一的优势\n但仍是33倍\n把这个和高出14%的实测智能放在一起\n整个经济账一句话就说完了\n你买的不是一个更好的模型\n而是以大约30倍的价格买它\n多出的那14%\n哪怕这七分差距也要打个问号\n扳着LM给K三七十九.9分\nflash59.9分\n但也指出两者90%置信区间有重叠\n一个和噪声分不清的领先\n花钱时要谨慎\n速度上趋势相同\nArtificial analysis\n测得K3每秒输出35个token\n首个token要等3.9秒\n测试者测得flash在112~118之间\n快三倍\n而价格只是零头价\n目表上还有一行命中缓存后\nK3从三美元降到30美分\n降幅十倍\n拉虫14美分\n降到0.3美分\n降幅50倍\n如果你的工作负载会重复调用同一段长提示词\n大多数智能体任务正是如此\n这个差距不会缩小\n反而会拉大\n下面这一点才是大多数观众做决定的关键\n这些你跑得动吗\nUNSLOFT把K3量化到了单比特\n这个文件594GB\n约需610GB内存才能加载\n苹果最大的Mac studio只有512GB\n连这个模型最小的版本都装不下\nK3的实际下限是八卡\nGPU节点做张量并行\n那不是一台桌面机\n而是一整机柜\nV4flash单比特版\n82.5GBNSR推荐110\n并表示128才算稳妥起步\n这是一台买得到的机器\n马book pro或196GB工作站显卡\n已经有人在跑了\nSalvatory san filippo\n也就是ANTIRAZ写出register\n人为他用C语言写了一个专用引擎\n叫DS四M五max128GB2比特量化预填充\n每秒87个token\n生成每秒34个DEM\nSMAX上是26\n我一直在想那个仓库里的一句话\nANTRE透露\nDSS4的开发得到了GPT5.5\n5.6和cloud fable的大力协助\n由人类主导思路与调试\n让开放模型自由的引擎是用闭源模型写出来的\n最后一点区别\n对企业来说可能是唯一重要的一点\ndeep sick以m it协议发布V4flash\n想怎么用都行\nMOONSHA则把K3放在KIMIK3许可证下\nartificial analysis标注为限制商业使用\n具体是若你以推理或微调服务对外提供\n且任意12个月内收入超过2000万美元\n需与MONSHA另行签约\n超过1亿月活用户后\n界面上必须显示KIMIK3字样\n这不是MIT把两者都叫开源\n抹平了真实差异\n给你透露一个小信号\n也把不利于我的一半说给你听\nUNSLOTH量化版K3上线五天\n获得238个赞\n量化版fly上线一天已经有254个赞\n下载量仍是K3领先4.1万\n对4000时间还早\n但可运行的那个版本\n正在这项只需点一下的指标上反超\n所以结论是\n如果是调用API处理高难度任务\n比如视觉深度智能体工作长篇研究\nKIMIK3是更好的选择\n这类任务能让它的价格物有所值\n其他所有场景以及任何需要自己部署的情况\nV4fly都是答案\n因为他才是装得下的那个按任务分配\n而非按排行榜默认使用fr\n只有真正值得的任务才升级到K3\n把每张厂商跑分表都当做待验证的说法\n直到有非模型开发方的人重新测试过\n这周的证据\n就是\n两家实验室连对同一批对手的打分都对不上",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1EEM96uEKt",
+  "published_at": "1785743338",
+  "fetched_at": "2026-08-06T22:12:42+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# KIMI K3 vs DeepSeek V4 Flash 知识图谱\n\n## 模型规格比较\n```mermaid\nflowchart TD\n    A1[\"K3 参数 2.78 万亿\"] --> A2[\"Flash 参数 284 0亿\"]\n    A2 --> A3[\"参数量差≈10×\"]\n    A1 --> A4[\"K3 每 token 激活 1040 亿\"]\n    A2 --> A5[\"Flash 每 token 激活 130 亿\"]\n    A4 --> A6[\"激活比例≈96% 休眠\"]\n    A5 --> A6\n    A4 --> A7[\"K3 输入费用 $3/百万 token\"]\n    A5 --> A8[\"Flash 输入费用 $0.14/百万 token\"]\n    A7 --> A9[\"输入费用差 21×\"]\n    A8 --> A9\n    A4 --> A10[\"K3 输出费用 $15/百万 token\"]\n    A5 --> A11[\"Flash 输出费用 $0.28/百万 token\"]\n    A10 --> A12[\"输出费用差 54×\"]\n    A11 --> A12\n    A13[\"Artificial Analysis K3 得分 57\"] --> A14[\"Flash 得分 50\"]\n    A13 --> A15[\"分差 7 分\"]\n    A14 --> A15\n    A15 --> A16[\"性能提升约 14%\"]\n```\n证据: [BV1EEM96uEKt P1 00:24]、[BV1EEM96uEKt P1 00:36]\n\n## 性能评估差异\n```mermaid\nflowchart TD\n    B1[\"K3 Artificial Analysis 得分 57\"] --> B2[\"Flash Artificial Analysis 得分 50\"]\n    B2 --> B3[\"两者分差 7\"]\n    B4[\"K3 Terminal Bench 得分 88.3\"] --> B5[\"Flash Terminal Bench 得分 82.7\"]\n    B5 --> B6[\"两者分差 5.5\"]\n    B3 --> B7[\"评测框架不同\"]\n    B6 --> B7\n    B8[\"DeepSeek 公布基准\"] --> B9[\"Flash 在 9 项基准中胜出\"]\n    B9 --> B10[\"但评分体系与 K3 不同\"]\n    B7 --> B11[\"分数不可直接比较\"]\n    B10 --> B11\n    B12[\"置信区间重叠 90%\"] --> B13[\"实际领先 3–6 分\"]\n    B13 --> B14[\"结果不确定\"]\n```\n证据: [BV1EEM96uEKt P1 00:46]、[BV1EEM96uEKt P1 03:28]\n\n## 部署硬件需求\n```mermaid\nflowchart TD\n    C1[\"K3 最小模型 594 GB 文件\"] --> C2[\"需约 610 GB 内存加载\"]\n    C3[\"Apple Max Studio 内存 512 GB\"] --> C4[\"装不下 K3 最小模型\"]\n    C5[\"Flash 量化版 82.5 GB\"] --> C6[\"推荐 110 GB，128 GB 稳妥\"]\n    C7[\"可在配备 196 GB 显卡的工作站运行\"] --> C8[\"实际可部署\"]\n    C2 --> C9[\"K3 需要多卡 GPU 张量并行\"]\n    C9 --> C10[\"整机柜规模\"]\n    C6 --> C11[\"Flash 可在单机部署\"]\n    C8 --> C11\n```\n证据: [BV1EEM96uEKt P1 01:06]、[BV1EEM96uEKt P1 07:05]\n\n## 成本效益分析\n```mermaid\nflowchart TD\n    D1[\"输入费用 K3 21× Flash\"] --> D2[\"输出费用 K3 54× Flash\"]\n    D2 --> D3[\"实际使用时成本约 33×\"]\n    D4[\"性能提升约 14%\"] --> D5[\"性价比 = 性能提升 / 成本倍率\"]\n    D3 --> D5\n    D5 --> D6[\"K3 经济价值低\"]\n    D7[\"Flash 成本相对可接受\"] --> D6\n    D8[\"建议：除非对性能极致需求，否则选 Flash\"]\n```\n证据: [BV1EEM96uEKt P1 00:53]、[BV1EEM96uEKt P1 05:37]\n\n## 使用场景决策树\n```mermaid\nflowchart TD\n    E1[\"任务类型\"] -->|API 调用高难度| E2[\"选择 K3\"]\n    E1 -->|本地部署| E3[\"选择 Flash\"]\n    E2 --> E4[\"视觉/深度智能体、长篇研究\"]\n    E3 --> E5[\"任何需自行部署的场景\"]\n    E4 --> E6[\"成本可接受，性能需求高\"]\n    E5 --> E7[\"硬件受限，成本敏感\"]\n    E6 --> E8[\"最终决策：K3\"]\n    E7 --> E9[\"最终决策：Flash\"]\n```\n证据: [BV1EEM96uEKt P1 08:52]、[BV1EEM96uEKt P1 09:06]",
+      "diagrams": [
+        {
+          "title": "模型规格比较",
+          "code": "flowchart TD\n    A1[\"K3 参数 2.78 万亿\"] --> A2[\"Flash 参数 284 0亿\"]\n    A2 --> A3[\"参数量差≈10×\"]\n    A1 --> A4[\"K3 每 token 激活 1040 亿\"]\n    A2 --> A5[\"Flash 每 token 激活 130 亿\"]\n    A4 --> A6[\"激活比例≈96% 休眠\"]\n    A5 --> A6\n    A4 --> A7[\"K3 输入费用 $3/百万 token\"]\n    A5 --> A8[\"Flash 输入费用 $0.14/百万 token\"]\n    A7 --> A9[\"输入费用差 21×\"]\n    A8 --> A9\n    A4 --> A10[\"K3 输出费用 $15/百万 token\"]\n    A5 --> A11[\"Flash 输出费用 $0.28/百万 token\"]\n    A10 --> A12[\"输出费用差 54×\"]\n    A11 --> A12\n    A13[\"Artificial Analysis K3 得分 57\"] --> A14[\"Flash 得分 50\"]\n    A13 --> A15[\"分差 7 分\"]\n    A14 --> A15\n    A15 --> A16[\"性能提升约 14%\"]"
+        },
+        {
+          "title": "性能评估差异",
+          "code": "flowchart TD\n    B1[\"K3 Artificial Analysis 得分 57\"] --> B2[\"Flash Artificial Analysis 得分 50\"]\n    B2 --> B3[\"两者分差 7\"]\n    B4[\"K3 Terminal Bench 得分 88.3\"] --> B5[\"Flash Terminal Bench 得分 82.7\"]\n    B5 --> B6[\"两者分差 5.5\"]\n    B3 --> B7[\"评测框架不同\"]\n    B6 --> B7\n    B8[\"DeepSeek 公布基准\"] --> B9[\"Flash 在 9 项基准中胜出\"]\n    B9 --> B10[\"但评分体系与 K3 不同\"]\n    B7 --> B11[\"分数不可直接比较\"]\n    B10 --> B11\n    B12[\"置信区间重叠 90%\"] --> B13[\"实际领先 3–6 分\"]\n    B13 --> B14[\"结果不确定\"]"
+        },
+        {
+          "title": "部署硬件需求",
+          "code": "flowchart TD\n    C1[\"K3 最小模型 594 GB 文件\"] --> C2[\"需约 610 GB 内存加载\"]\n    C3[\"Apple Max Studio 内存 512 GB\"] --> C4[\"装不下 K3 最小模型\"]\n    C5[\"Flash 量化版 82.5 GB\"] --> C6[\"推荐 110 GB，128 GB 稳妥\"]\n    C7[\"可在配备 196 GB 显卡的工作站运行\"] --> C8[\"实际可部署\"]\n    C2 --> C9[\"K3 需要多卡 GPU 张量并行\"]\n    C9 --> C10[\"整机柜规模\"]\n    C6 --> C11[\"Flash 可在单机部署\"]\n    C8 --> C11"
+        },
+        {
+          "title": "成本效益分析",
+          "code": "flowchart TD\n    D1[\"输入费用 K3 21× Flash\"] --> D2[\"输出费用 K3 54× Flash\"]\n    D2 --> D3[\"实际使用时成本约 33×\"]\n    D4[\"性能提升约 14%\"] --> D5[\"性价比 = 性能提升 / 成本倍率\"]\n    D3 --> D5\n    D5 --> D6[\"K3 经济价值低\"]\n    D7[\"Flash 成本相对可接受\"] --> D6\n    D8[\"建议：除非对性能极致需求，否则选 Flash\"]"
+        },
+        {
+          "title": "使用场景决策树",
+          "code": "flowchart TD\n    E1[\"任务类型\"] -->|API 调用高难度| E2[\"选择 K3\"]\n    E1 -->|本地部署| E3[\"选择 Flash\"]\n    E2 --> E4[\"视觉/深度智能体、长篇研究\"]\n    E3 --> E5[\"任何需自行部署的场景\"]\n    E4 --> E6[\"成本可接受，性能需求高\"]\n    E5 --> E7[\"硬件受限，成本敏感\"]\n    E6 --> E8[\"最终决策：K3\"]\n    E7 --> E9[\"最终决策：Flash\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T22:20:50+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# KIMI K3 vs DeepSeek V4 Flash 知识图谱\n\n## 模型规格比较\n```mermaid\nflowchart TD\n    A1[\"K3 参数 2.78 万亿\"] --> A2[\"Flash 参数 284 0亿\"]\n    A2 --> A3[\"参数量差≈10×\"]\n    A1 --> A4[\"K3 每 token 激活 1040 亿\"]\n    A2 --> A5[\"Flash 每 token 激活 130 亿\"]\n    A4 --> A6[\"激活比例≈96% 休眠\"]\n    A5 --> A6\n    A4 --> A7[\"K3 输入费用 $3/百万 token\"]\n    A5 --> A8[\"Flash 输入费用 $0.14/百万 token\"]\n    A7 --> A9[\"输入费用差 21×\"]\n    A8 --> A9\n    A4 --> A10[\"K3 输出费用 $15/百万 token\"]\n    A5 --> A11[\"Flash 输出费用 $0.28/百万 token\"]\n    A10 --> A12[\"输出费用差 54×\"]\n    A11 --> A12\n    A13[\"Artificial Analysis K3 得分 57\"] --> A14[\"Flash 得分 50\"]\n    A13 --> A15[\"分差 7 分\"]\n    A14 --> A15\n    A15 --> A16[\"性能提升约 14%\"]\n```\n证据: [BV1EEM96uEKt P1 00:24]、[BV1EEM96uEKt P1 00:36]\n\n## 性能评估差异\n```mermaid\nflowchart TD\n    B1[\"K3 Artificial Analysis 得分 57\"] --> B2[\"Flash Artificial Analysis 得分 50\"]\n    B2 --> B3[\"两者分差 7\"]\n    B4[\"K3 Terminal Bench 得分 88.3\"] --> B5[\"Flash Terminal Bench 得分 82.7\"]\n    B5 --> B6[\"两者分差 5.5\"]\n    B3 --> B7[\"评测框架不同\"]\n    B6 --> B7\n    B8[\"DeepSeek 公布基准\"] --> B9[\"Flash 在 9 项基准中胜出\"]\n    B9 --> B10[\"但评分体系与 K3 不同\"]\n    B7 --> B11[\"分数不可直接比较\"]\n    B10 --> B11\n    B12[\"置信区间重叠 90%\"] --> B13[\"实际领先 3–6 分\"]\n    B13 --> B14[\"结果不确定\"]\n```\n证据: [BV1EEM96uEKt P1 00:46]、[BV1EEM96uEKt P1 03:28]\n\n## 部署硬件需求\n```mermaid\nflowchart TD\n    C1[\"K3 最小模型 594 GB 文件\"] --> C2[\"需约 610 GB 内存加载\"]\n    C3[\"Apple Max Studio 内存 512 GB\"] --> C4[\"装不下 K3 最小模型\"]\n    C5[\"Flash 量化版 82.5 GB\"] --> C6[\"推荐 110 GB，128 GB 稳妥\"]\n    C7[\"可在配备 196 GB 显卡的工作站运行\"] --> C8[\"实际可部署\"]\n    C2 --> C9[\"K3 需要多卡 GPU 张量并行\"]\n    C9 --> C10[\"整机柜规模\"]\n    C6 --> C11[\"Flash 可在单机部署\"]\n    C8 --> C11\n```\n证据: [BV1EEM96uEKt P1 01:06]、[BV1EEM96uEKt P1 07:05]\n\n## 成本效益分析\n```mermaid\nflowchart TD\n    D1[\"输入费用 K3 21× Flash\"] --> D2[\"输出费用 K3 54× Flash\"]\n    D2 --> D3[\"实际使用时成本约 33×\"]\n    D4[\"性能提升约 14%\"] --> D5[\"性价比 = 性能提升 / 成本倍率\"]\n    D3 --> D5\n    D5 --> D6[\"K3 经济价值低\"]\n    D7[\"Flash 成本相对可接受\"] --> D6\n    D8[\"建议：除非对性能极致需求，否则选 Flash\"]\n```\n证据: [BV1EEM96uEKt P1 00:53]、[BV1EEM96uEKt P1 05:37]\n\n## 使用场景决策树\n```mermaid\nflowchart TD\n    E1[\"任务类型\"] -->|API 调用高难度| E2[\"选择 K3\"]\n    E1 -->|本地部署| E3[\"选择 Flash\"]\n    E2 --> E4[\"视觉/深度智能体、长篇研究\"]\n    E3 --> E5[\"任何需自行部署的场景\"]\n    E4 --> E6[\"成本可接受，性能需求高\"]\n    E5 --> E7[\"硬件受限，成本敏感\"]\n    E6 --> E8[\"最终决策：K3\"]\n    E7 --> E9[\"最终决策：Flash\"]\n```\n证据: [BV1EEM96uEKt P1 08:52]、[BV1EEM96uEKt P1 09:06]",
+  "diagrams": [
+    {
+      "title": "模型规格比较",
+      "code": "flowchart TD\n    A1[\"K3 参数 2.78 万亿\"] --> A2[\"Flash 参数 284 0亿\"]\n    A2 --> A3[\"参数量差≈10×\"]\n    A1 --> A4[\"K3 每 token 激活 1040 亿\"]\n    A2 --> A5[\"Flash 每 token 激活 130 亿\"]\n    A4 --> A6[\"激活比例≈96% 休眠\"]\n    A5 --> A6\n    A4 --> A7[\"K3 输入费用 $3/百万 token\"]\n    A5 --> A8[\"Flash 输入费用 $0.14/百万 token\"]\n    A7 --> A9[\"输入费用差 21×\"]\n    A8 --> A9\n    A4 --> A10[\"K3 输出费用 $15/百万 token\"]\n    A5 --> A11[\"Flash 输出费用 $0.28/百万 token\"]\n    A10 --> A12[\"输出费用差 54×\"]\n    A11 --> A12\n    A13[\"Artificial Analysis K3 得分 57\"] --> A14[\"Flash 得分 50\"]\n    A13 --> A15[\"分差 7 分\"]\n    A14 --> A15\n    A15 --> A16[\"性能提升约 14%\"]"
+    },
+    {
+      "title": "性能评估差异",
+      "code": "flowchart TD\n    B1[\"K3 Artificial Analysis 得分 57\"] --> B2[\"Flash Artificial Analysis 得分 50\"]\n    B2 --> B3[\"两者分差 7\"]\n    B4[\"K3 Terminal Bench 得分 88.3\"] --> B5[\"Flash Terminal Bench 得分 82.7\"]\n    B5 --> B6[\"两者分差 5.5\"]\n    B3 --> B7[\"评测框架不同\"]\n    B6 --> B7\n    B8[\"DeepSeek 公布基准\"] --> B9[\"Flash 在 9 项基准中胜出\"]\n    B9 --> B10[\"但评分体系与 K3 不同\"]\n    B7 --> B11[\"分数不可直接比较\"]\n    B10 --> B11\n    B12[\"置信区间重叠 90%\"] --> B13[\"实际领先 3–6 分\"]\n    B13 --> B14[\"结果不确定\"]"
+    },
+    {
+      "title": "部署硬件需求",
+      "code": "flowchart TD\n    C1[\"K3 最小模型 594 GB 文件\"] --> C2[\"需约 610 GB 内存加载\"]\n    C3[\"Apple Max Studio 内存 512 GB\"] --> C4[\"装不下 K3 最小模型\"]\n    C5[\"Flash 量化版 82.5 GB\"] --> C6[\"推荐 110 GB，128 GB 稳妥\"]\n    C7[\"可在配备 196 GB 显卡的工作站运行\"] --> C8[\"实际可部署\"]\n    C2 --> C9[\"K3 需要多卡 GPU 张量并行\"]\n    C9 --> C10[\"整机柜规模\"]\n    C6 --> C11[\"Flash 可在单机部署\"]\n    C8 --> C11"
+    },
+    {
+      "title": "成本效益分析",
+      "code": "flowchart TD\n    D1[\"输入费用 K3 21× Flash\"] --> D2[\"输出费用 K3 54× Flash\"]\n    D2 --> D3[\"实际使用时成本约 33×\"]\n    D4[\"性能提升约 14%\"] --> D5[\"性价比 = 性能提升 / 成本倍率\"]\n    D3 --> D5\n    D5 --> D6[\"K3 经济价值低\"]\n    D7[\"Flash 成本相对可接受\"] --> D6\n    D8[\"建议：除非对性能极致需求，否则选 Flash\"]"
+    },
+    {
+      "title": "使用场景决策树",
+      "code": "flowchart TD\n    E1[\"任务类型\"] -->|API 调用高难度| E2[\"选择 K3\"]\n    E1 -->|本地部署| E3[\"选择 Flash\"]\n    E2 --> E4[\"视觉/深度智能体、长篇研究\"]\n    E3 --> E5[\"任何需自行部署的场景\"]\n    E4 --> E6[\"成本可接受，性能需求高\"]\n    E5 --> E7[\"硬件受限，成本敏感\"]\n    E6 --> E8[\"最终决策：K3\"]\n    E7 --> E9[\"最终决策：Flash\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:20:50+00:00"
+}

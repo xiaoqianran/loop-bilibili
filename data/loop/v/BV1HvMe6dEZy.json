@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1HvMe6dEZy",
+  "title": "1.Godot RPG 完整教程｜工程配置  TileMap  角色创建",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3079,
+  "text": "我的频道从2020年开始\n从那时起我就一头扎进了GOODO引擎\n订阅数从零起步\n一路涨到了1500位订阅者\n而且还在持续增长中\n感谢各位观众和社区给我的支持\n谢我还学会了怎么把游戏发出去\n虽然没赚到钱\n但大家的支持让我很感激\n所以我会继续做下去\n这个RPG项目做完后会传到HL上\n各位这次全靠你们的大力支持了\n我花了很多功夫打磨这套教程\n每一步都讲透\n真心期待大家的支持\n再次感谢所有订阅的朋友\n还有所有观看评论\n点赞分享的人\n好了\n那我们现在直接进入正题\n我用的版本是GODO4.6\n目前最新的稳定版\n大家可以去官网下载\n我默认你已经会操作GOODDO了\n打开后点create项目名称填dinosaur sword\nGoblin slayer\n选好保存位置\n我习惯新建个文件夹来放项目\n命名为tiny sword\nGoblin slayer\n然后点select current folder\n确认\n这就是编辑器的主界面\n我们先打开project settings\n找到纹理选项卡\n改成这个设置好\n纹理这边就搞定了\n接下来新建个文件夹\n专门用来放关卡内容\n现在把资源文件导进来导好了\n进terrain目录\n打开tile set\n然后进到level文件夹\n我们先拖一个texture rect节点进来\n改个名字\n把水域背景图拖进去\n调一下大小\n把网格对齐打开\n再把画面缩放到适合屏幕的大小\n关掉网格\n现在如果你看到的是选中状态\n那就把周围区域改成别的样式\n右键level添加一个tile map图层\n把这个图层重命名为ground\n一按CTRLD复制出来五个\n再放一个color react节点进来\n把刚才选中的节点挂到新的node2D下面\n纯粹分组用\n现在把这些组分别命名一下\n地形和岩石\n最后一组就叫杂物\n好接下来给ground已新建一个tile set\n我默认大家已经有一定基础了\n基础操作就不一步步讲了啊\n大家应该知道怎么创建tile set\n设置好之后开始设计ground图层\n一\n用绘制工具画出想要的图案就行\n这期视频我给大家看看我目前的关卡设计\n现在加快速度\n过一下前面这部分我事先做好了\n接下来做ground2的tile set\n之所以用不同的tile map图层\n是\n因为新版GOOLE里没法用一个节点处理多个图层\n所以只能把节点复制出来\n做不同类型的地面\n这套免费资源包是我从HAO下的\n专门给tile map和tile set用的\n尺寸是64X64\n用起来很方便\n画地面的时候\n我演示一下怎么分层来做出层次感\n我先设置一下\n然后教大家怎么在地面下面加一个水波效果\n再加点其他装饰上去\n大家可以看到新版本把桥移掉了啊\n但可以用这种楼梯代替我运行起来\n看看效果还不错\n设置好之后\n我们加点缀\n先点new sell state\n保持默认的sales state不变\n再点那个set\n然后直接拖拽放进去\n把水域贴图的素材拖进来\n可以看到这个水域贴图的尺寸是192X\n192之前我最早做这个游戏教程的时候\n大概是2024年\n就教过大家怎么做TOMAP动画了\n大家可以在这个视频里看到效果\n如果觉得快就放慢或者暂停一下\n试着跟着把这个tile map动画做出来\n其实就是利用tile map自带的动画功能\n也就是tile map layer的动画设置在你的游戏里\n很容易配比起见\n不同节点直接用tile map动画更方便\n可以给局部做动画\n加快下进度\n别忘了把z index设成负数\n设成五\n这样它就会显示在地面底下\n这样才能做出水波荡漾的效果\n在底层涂层铺上水波的瓦片\n趁这个机会\n感谢一下所有订阅和购买过我游戏的朋友\n接下来做延时\n进到decoration分类\n可以看到里面有灌木丛\n我们要把岩石的数据加进来\n这些岩石是铺在地面上的\n选延时的素材\n还有水的素材\n我用跟地面一样的设置\n所以什么都不用改\n进到sales\n一个一个拖进来\n一个一个拖进去好了\n现在来做同样的动画效果\n跟刚才那个tile map图层一样\n做tile map动画其实很简单\n你只要知道图片的尺寸就行\n如果是192X192\n有些是128X\n128之后要做的就是添加帧或者元素\n最后这个图有点问题\n不知道怎么回事\n我试着调大小\n但不行算了\n就这样吧\n然后选绘制工具\n把不同类型的岩石拖上去\n完美\n可以看到已经在播放了\n然后植物那边进到灌木丛分类\n这里有四种不同的图样跟延时\n同样的流程给这个tile map图层做动画\n效果还是挺有意思的\n这个尺寸是128X128\n创建好之后可以设速度\n再给每张贴图加不同的帧序列\n我设的速度是七\n大部分帧数在12左右\n每段动画时真\n然后把它们放地面上面\n营造出森林的感觉\n其实就是灌木丛\n一次性放好就行\n我随机撒了一些植被\n全选所有节点\n然后给tile map加各自节点需要加碰撞\n我不打算直接加碰撞\n而是单独加个图层来当碰撞体\n所以新建一个tile set\n然后给tile map加一个物理层\n可以看到我已经加了一个物理层搞定\n接下来用同样的步骤\n我们要创建角色主体了\n建一个character body\n2D命名为PN\n按CTRLS保存\n新建一个文件夹\n命名为unit\n然后在里面再建一个art文件夹点create\n现在来搭pm的结构\n先点中pm加子节点\nAnimated sprite\n2D就是动画精灵\n再加个子节点\n用来做碰撞判定\nCollision onship\n2D碰撞形状节点\n角色的形状和碰撞都靠它再添加一个子节点\nbright two d再加一个area\n2d\n用来做检测触发器\n给他再加一个relationship\n选中area\n按CTRLD复制一个\n第一个area改名叫detector zone\n第二个改名叫hit box\n好回到PN再加个子节点\n加一个progress bar\n用来显示血量\n再放一个button\n再添加一个子节点\n加一个label\n改名叫selector\n再加个子节点\n挂到它下面\n放一个marker2D\n再添加一个子节点\n加一个camera2D右键再添加一个子节点\n加一个timer\n找到这个timer\n改名叫user timer\n好再添加一个control节点\n用这个control节点来做一组按钮\n用来切换pm手里的工具道具\n我要加几个按钮\n先加五个\n再添加一个子节点\nnode2D纯粹分组用改名叫sound effects\n再加各自节点格斗里的音效\n用audio stream player来播点\nAudio stream player\n再点一下它\n按CTRLD复制几个\n回到动画\n点开spread frames\n我默认你已经知道怎么用animated sprite\n2D做动画了\n这次我混用了两套不同的资源包\n链接我会放在视频描述里\n一共用了两种资源\n一种是pixel frog为tiny sword出的新包\n另一种是哥布林的包\n第一套里有哥布林\n后来他又出了新的敌人包\n对我来说有点贵\n因为我没有什么收入来源\n所以就用现有的资源来做这个游戏了\n开始制作动画\n我的大部分单位和角色\n用的都是新资源包的素材\npm和其他视频里看到的角色也用新资源\n但旧的那些敌人还是用的哥布林和哥布林塔\n后面做UI和其他特效的时候也会混着用\n这个教程我就不一步步教大家怎么搭了\n我默认你已经会搭这种角色结构\n知道怎么加area2D和碰撞形状\n如果还不会\n就听我讲\n看我实际是怎么操作的\n接下来我把整套节点搭完",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HvMe6dEZy",
+  "published_at": "1783473119",
+  "fetched_at": "2026-08-08T20:06:58+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot RPG 教程知识图谱\n\n## 项目初始化与资源组织\n```mermaid\nflowchart TD\n    A1[\"使用 Godot 4.6 (最新稳定版)\"] --> B1[\"创建项目: 名称 dinosaur sword / Goblin slayer\"]\n    B1 --> C1[\"保存位置: 新建文件夹 tiny sword\"]\n    C1 --> D1[\"打开编辑器主界面\"]\n    D1 --> E1[\"打开 Project Settings → 纹理选项卡 → 设置完成\"]\n    D1 --> F1[\"新建文件夹用于关卡内容\"]\n    F1 --> G1[\"导入资源文件 (terrain, tile set, level)\"]\n    G1 --> H1[\"在场景中添加 TextureRect 节点并设置背景图\"]\n    H1 --> I1[\"添加 TileMap 图层并重命名为 ground\"]\n    I1 --> J1[\"复制 ground 图层 5 个 (Ctrl+D)\"]\n    J1 --> K1[\"添加 ColorRect 节点用于分组\"]\n    K1 --> L1[\"创建分组: 地形、岩石、杂物\"]\n```\n\n## TileMap 与 TileSet 配置流程\n```mermaid\nflowchart TD\n    A2[\"为 ground 图层创建 TileSet\"] --> B2[\"使用绘制工具绘制地面图案\"]\n    B2 --> C2[\"设置 TileSet 大小 64x64 (免费资源包)\"]\n    C2 --> D2[\"创建 ground2 TileSet（不同图层）\"]\n    D2 --> E2[\"因新版 Godot 不支持单节点多图层，复制节点实现\"]\n    E2 --> F2[\"为水域添加 TileSet，尺寸 192x192\"]\n    F2 --> G2[\"设置 Z Index 为负数，放置在地面下\"]\n    G2 --> H2[\"使用 TileMap 动画功能：设置帧序列、速度 (如 7)\"]\n    H2 --> I2[\"为装饰（灌木、岩石）创建独立 TileMap 图层并添加动画\"]\n    I2 --> J2[\"为每个 TileMap 图层添加碰撞层（新建 TileSet）\"]\n```\n\n## 角色节点结构搭建\n```mermaid\nflowchart TD\n    A3[\"创建 CharacterBody2D 节点 (命名为 PN)\"] --> B3[\"添加 AnimatedSprite2D 用于角色动画\"]\n    B3 --> C3[\"添加 CollisionShape2D 作为碰撞判定\"]\n    C3 --> D3[\"添加 Area2D → Detector Zone (用于检测)\"]\n    C3 --> E3[\"添加 Area2D → Hit Box (用于受击)\"]\n    B3 --> F3[\"添加 ProgressBar 用于血量显示\"]\n    B3 --> G3[\"添加 Button 用于交互\"]\n    B3 --> H3[\"添加 Label (命名 selector)\"]\n    B3 --> I3[\"添加 Marker2D 用于定位标记\"]\n    B3 --> J3[\"添加 Camera2D 视角控制\"]\n    B3 --> K3[\"添加 Timer (改名为 user timer)\"]\n    B3 --> L3[\"添加 Control 节点用于工具按钮组\"]\n    L3 --> M3[\"在 Control 下添加 5 个 Button\"]\n    B3 --> N3[\"添加 Node2D 分组 (命名 sound effects)\"]\n    N3 --> O3[\"在 sound effects 下添加 AudioStreamPlayer 用于音效\"]\n```\n\n## 动画与特效资源使用\n```mermaid\nflowchart TD\n    A4[\"使用两套资源包: pixel frog (tiny sword) 与 Goblin 包\"] --> B4[\"ground、rock、water 使用 pixel frog 资源\"]\n    A4 --> C4[\"角色、怪物使用 Goblin 包资源\"]\n    B4 --> D4[\"TileSet 大小 64x64，水域 192x192\"]\n    C4 --> E4[\"动画通过 TileMap 自带动画功能实现\"]\n    D4 --> F4[\"设置帧速率 (如 7) 与帧数 (约 12)\"]\n    E4 --> G4[\"为水波、灌木、岩石等添加动画层\"]\n    G4 --> H4[\"通过 Z Index 调整层级，实现水波在地面下\"]\n    F4 --> I4[\"在 TileMap 上添加碰撞层以实现交互\"]\n```",
+      "diagrams": [
+        {
+          "title": "项目初始化与资源组织",
+          "code": "flowchart TD\n    A1[\"使用 Godot 4.6 (最新稳定版)\"] --> B1[\"创建项目: 名称 dinosaur sword / Goblin slayer\"]\n    B1 --> C1[\"保存位置: 新建文件夹 tiny sword\"]\n    C1 --> D1[\"打开编辑器主界面\"]\n    D1 --> E1[\"打开 Project Settings → 纹理选项卡 → 设置完成\"]\n    D1 --> F1[\"新建文件夹用于关卡内容\"]\n    F1 --> G1[\"导入资源文件 (terrain, tile set, level)\"]\n    G1 --> H1[\"在场景中添加 TextureRect 节点并设置背景图\"]\n    H1 --> I1[\"添加 TileMap 图层并重命名为 ground\"]\n    I1 --> J1[\"复制 ground 图层 5 个 (Ctrl+D)\"]\n    J1 --> K1[\"添加 ColorRect 节点用于分组\"]\n    K1 --> L1[\"创建分组: 地形、岩石、杂物\"]"
+        },
+        {
+          "title": "TileMap 与 TileSet 配置流程",
+          "code": "flowchart TD\n    A2[\"为 ground 图层创建 TileSet\"] --> B2[\"使用绘制工具绘制地面图案\"]\n    B2 --> C2[\"设置 TileSet 大小 64x64 (免费资源包)\"]\n    C2 --> D2[\"创建 ground2 TileSet（不同图层）\"]\n    D2 --> E2[\"因新版 Godot 不支持单节点多图层，复制节点实现\"]\n    E2 --> F2[\"为水域添加 TileSet，尺寸 192x192\"]\n    F2 --> G2[\"设置 Z Index 为负数，放置在地面下\"]\n    G2 --> H2[\"使用 TileMap 动画功能：设置帧序列、速度 (如 7)\"]\n    H2 --> I2[\"为装饰（灌木、岩石）创建独立 TileMap 图层并添加动画\"]\n    I2 --> J2[\"为每个 TileMap 图层添加碰撞层（新建 TileSet）\"]"
+        },
+        {
+          "title": "角色节点结构搭建",
+          "code": "flowchart TD\n    A3[\"创建 CharacterBody2D 节点 (命名为 PN)\"] --> B3[\"添加 AnimatedSprite2D 用于角色动画\"]\n    B3 --> C3[\"添加 CollisionShape2D 作为碰撞判定\"]\n    C3 --> D3[\"添加 Area2D → Detector Zone (用于检测)\"]\n    C3 --> E3[\"添加 Area2D → Hit Box (用于受击)\"]\n    B3 --> F3[\"添加 ProgressBar 用于血量显示\"]\n    B3 --> G3[\"添加 Button 用于交互\"]\n    B3 --> H3[\"添加 Label (命名 selector)\"]\n    B3 --> I3[\"添加 Marker2D 用于定位标记\"]\n    B3 --> J3[\"添加 Camera2D 视角控制\"]\n    B3 --> K3[\"添加 Timer (改名为 user timer)\"]\n    B3 --> L3[\"添加 Control 节点用于工具按钮组\"]\n    L3 --> M3[\"在 Control 下添加 5 个 Button\"]\n    B3 --> N3[\"添加 Node2D 分组 (命名 sound effects)\"]\n    N3 --> O3[\"在 sound effects 下添加 AudioStreamPlayer 用于音效\"]"
+        },
+        {
+          "title": "动画与特效资源使用",
+          "code": "flowchart TD\n    A4[\"使用两套资源包: pixel frog (tiny sword) 与 Goblin 包\"] --> B4[\"ground、rock、water 使用 pixel frog 资源\"]\n    A4 --> C4[\"角色、怪物使用 Goblin 包资源\"]\n    B4 --> D4[\"TileSet 大小 64x64，水域 192x192\"]\n    C4 --> E4[\"动画通过 TileMap 自带动画功能实现\"]\n    D4 --> F4[\"设置帧速率 (如 7) 与帧数 (约 12)\"]\n    E4 --> G4[\"为水波、灌木、岩石等添加动画层\"]\n    G4 --> H4[\"通过 Z Index 调整层级，实现水波在地面下\"]\n    F4 --> I4[\"在 TileMap 上添加碰撞层以实现交互\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T20:27:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot RPG 教程知识图谱\n\n## 项目初始化与资源组织\n```mermaid\nflowchart TD\n    A1[\"使用 Godot 4.6 (最新稳定版)\"] --> B1[\"创建项目: 名称 dinosaur sword / Goblin slayer\"]\n    B1 --> C1[\"保存位置: 新建文件夹 tiny sword\"]\n    C1 --> D1[\"打开编辑器主界面\"]\n    D1 --> E1[\"打开 Project Settings → 纹理选项卡 → 设置完成\"]\n    D1 --> F1[\"新建文件夹用于关卡内容\"]\n    F1 --> G1[\"导入资源文件 (terrain, tile set, level)\"]\n    G1 --> H1[\"在场景中添加 TextureRect 节点并设置背景图\"]\n    H1 --> I1[\"添加 TileMap 图层并重命名为 ground\"]\n    I1 --> J1[\"复制 ground 图层 5 个 (Ctrl+D)\"]\n    J1 --> K1[\"添加 ColorRect 节点用于分组\"]\n    K1 --> L1[\"创建分组: 地形、岩石、杂物\"]\n```\n\n## TileMap 与 TileSet 配置流程\n```mermaid\nflowchart TD\n    A2[\"为 ground 图层创建 TileSet\"] --> B2[\"使用绘制工具绘制地面图案\"]\n    B2 --> C2[\"设置 TileSet 大小 64x64 (免费资源包)\"]\n    C2 --> D2[\"创建 ground2 TileSet（不同图层）\"]\n    D2 --> E2[\"因新版 Godot 不支持单节点多图层，复制节点实现\"]\n    E2 --> F2[\"为水域添加 TileSet，尺寸 192x192\"]\n    F2 --> G2[\"设置 Z Index 为负数，放置在地面下\"]\n    G2 --> H2[\"使用 TileMap 动画功能：设置帧序列、速度 (如 7)\"]\n    H2 --> I2[\"为装饰（灌木、岩石）创建独立 TileMap 图层并添加动画\"]\n    I2 --> J2[\"为每个 TileMap 图层添加碰撞层（新建 TileSet）\"]\n```\n\n## 角色节点结构搭建\n```mermaid\nflowchart TD\n    A3[\"创建 CharacterBody2D 节点 (命名为 PN)\"] --> B3[\"添加 AnimatedSprite2D 用于角色动画\"]\n    B3 --> C3[\"添加 CollisionShape2D 作为碰撞判定\"]\n    C3 --> D3[\"添加 Area2D → Detector Zone (用于检测)\"]\n    C3 --> E3[\"添加 Area2D → Hit Box (用于受击)\"]\n    B3 --> F3[\"添加 ProgressBar 用于血量显示\"]\n    B3 --> G3[\"添加 Button 用于交互\"]\n    B3 --> H3[\"添加 Label (命名 selector)\"]\n    B3 --> I3[\"添加 Marker2D 用于定位标记\"]\n    B3 --> J3[\"添加 Camera2D 视角控制\"]\n    B3 --> K3[\"添加 Timer (改名为 user timer)\"]\n    B3 --> L3[\"添加 Control 节点用于工具按钮组\"]\n    L3 --> M3[\"在 Control 下添加 5 个 Button\"]\n    B3 --> N3[\"添加 Node2D 分组 (命名 sound effects)\"]\n    N3 --> O3[\"在 sound effects 下添加 AudioStreamPlayer 用于音效\"]\n```\n\n## 动画与特效资源使用\n```mermaid\nflowchart TD\n    A4[\"使用两套资源包: pixel frog (tiny sword) 与 Goblin 包\"] --> B4[\"ground、rock、water 使用 pixel frog 资源\"]\n    A4 --> C4[\"角色、怪物使用 Goblin 包资源\"]\n    B4 --> D4[\"TileSet 大小 64x64，水域 192x192\"]\n    C4 --> E4[\"动画通过 TileMap 自带动画功能实现\"]\n    D4 --> F4[\"设置帧速率 (如 7) 与帧数 (约 12)\"]\n    E4 --> G4[\"为水波、灌木、岩石等添加动画层\"]\n    G4 --> H4[\"通过 Z Index 调整层级，实现水波在地面下\"]\n    F4 --> I4[\"在 TileMap 上添加碰撞层以实现交互\"]\n```",
+  "diagrams": [
+    {
+      "title": "项目初始化与资源组织",
+      "code": "flowchart TD\n    A1[\"使用 Godot 4.6 (最新稳定版)\"] --> B1[\"创建项目: 名称 dinosaur sword / Goblin slayer\"]\n    B1 --> C1[\"保存位置: 新建文件夹 tiny sword\"]\n    C1 --> D1[\"打开编辑器主界面\"]\n    D1 --> E1[\"打开 Project Settings → 纹理选项卡 → 设置完成\"]\n    D1 --> F1[\"新建文件夹用于关卡内容\"]\n    F1 --> G1[\"导入资源文件 (terrain, tile set, level)\"]\n    G1 --> H1[\"在场景中添加 TextureRect 节点并设置背景图\"]\n    H1 --> I1[\"添加 TileMap 图层并重命名为 ground\"]\n    I1 --> J1[\"复制 ground 图层 5 个 (Ctrl+D)\"]\n    J1 --> K1[\"添加 ColorRect 节点用于分组\"]\n    K1 --> L1[\"创建分组: 地形、岩石、杂物\"]"
+    },
+    {
+      "title": "TileMap 与 TileSet 配置流程",
+      "code": "flowchart TD\n    A2[\"为 ground 图层创建 TileSet\"] --> B2[\"使用绘制工具绘制地面图案\"]\n    B2 --> C2[\"设置 TileSet 大小 64x64 (免费资源包)\"]\n    C2 --> D2[\"创建 ground2 TileSet（不同图层）\"]\n    D2 --> E2[\"因新版 Godot 不支持单节点多图层，复制节点实现\"]\n    E2 --> F2[\"为水域添加 TileSet，尺寸 192x192\"]\n    F2 --> G2[\"设置 Z Index 为负数，放置在地面下\"]\n    G2 --> H2[\"使用 TileMap 动画功能：设置帧序列、速度 (如 7)\"]\n    H2 --> I2[\"为装饰（灌木、岩石）创建独立 TileMap 图层并添加动画\"]\n    I2 --> J2[\"为每个 TileMap 图层添加碰撞层（新建 TileSet）\"]"
+    },
+    {
+      "title": "角色节点结构搭建",
+      "code": "flowchart TD\n    A3[\"创建 CharacterBody2D 节点 (命名为 PN)\"] --> B3[\"添加 AnimatedSprite2D 用于角色动画\"]\n    B3 --> C3[\"添加 CollisionShape2D 作为碰撞判定\"]\n    C3 --> D3[\"添加 Area2D → Detector Zone (用于检测)\"]\n    C3 --> E3[\"添加 Area2D → Hit Box (用于受击)\"]\n    B3 --> F3[\"添加 ProgressBar 用于血量显示\"]\n    B3 --> G3[\"添加 Button 用于交互\"]\n    B3 --> H3[\"添加 Label (命名 selector)\"]\n    B3 --> I3[\"添加 Marker2D 用于定位标记\"]\n    B3 --> J3[\"添加 Camera2D 视角控制\"]\n    B3 --> K3[\"添加 Timer (改名为 user timer)\"]\n    B3 --> L3[\"添加 Control 节点用于工具按钮组\"]\n    L3 --> M3[\"在 Control 下添加 5 个 Button\"]\n    B3 --> N3[\"添加 Node2D 分组 (命名 sound effects)\"]\n    N3 --> O3[\"在 sound effects 下添加 AudioStreamPlayer 用于音效\"]"
+    },
+    {
+      "title": "动画与特效资源使用",
+      "code": "flowchart TD\n    A4[\"使用两套资源包: pixel frog (tiny sword) 与 Goblin 包\"] --> B4[\"ground、rock、water 使用 pixel frog 资源\"]\n    A4 --> C4[\"角色、怪物使用 Goblin 包资源\"]\n    B4 --> D4[\"TileSet 大小 64x64，水域 192x192\"]\n    C4 --> E4[\"动画通过 TileMap 自带动画功能实现\"]\n    D4 --> F4[\"设置帧速率 (如 7) 与帧数 (约 12)\"]\n    E4 --> G4[\"为水波、灌木、岩石等添加动画层\"]\n    G4 --> H4[\"通过 Z Index 调整层级，实现水波在地面下\"]\n    F4 --> I4[\"在 TileMap 上添加碰撞层以实现交互\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T20:27:30+00:00"
+}

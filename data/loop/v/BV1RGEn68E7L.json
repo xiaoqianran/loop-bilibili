@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1RGEn68E7L",
+  "title": "你说什么？你居然花100块包了deepseek一晚上然后有了它？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 722,
+  "text": "Hello\n大家好\n我是爱玩AI的小泰\n这次给大家带来的内容是\n用100块钱deep seek能做出来怎样的一个游戏\n本期视频对AI和艺人公司感兴趣的小伙伴\n可以一键三连收藏观看\n本次我们要挑战的是100块钱\n做一个不仅是自动的智能驾驶模拟器\n由AI核心深度参与\n那么我们是怎么做的呢\n接下来为大家展示\n其实大家对于AI使用最大的痛点\n就是没办法让AI工作真正落地\n无法把专业领域或者未知领域的事情\n这些比较困难的事情\n整个链路去打通\n也就无法建立AI去完成自己想做的事\n那么现在我给大家介绍一个\n解决这个痛点的实际案例\n大家可以看到\n本次的开发平台是接入了国产大模型之光\ndeep sec的clock code加unity\n左侧是cloud code在进行编码\n并且操作unity中的环境进行功能的调试\n也就是说\nAI直接绕过了\n我这个对游戏开发一窍不通的介质\n直接进行游戏的全流程开发\n是不是很不可思议\n视频的结尾我会和大家聊聊我是怎么做到的\n接下来来看我花100块钱做出的最终效果\n模拟器中的小车会自动去任务系统接取\n街区派送任务\n自动规划路线\n自动去目的地派送货物\n自动充电\n而关键的点在于\n一切都基于模拟的激光雷达和车轮控制\n这和现实世界完全一致\n这完全基于我定义的一个新的AI系统\nem cp传统开发中\nAI只能输出文本\n但游戏是一个实时物理世界\n文字描述永远隔着一层EMCP协议\n消除了这层隔阂\nAI的决策直接转化为游戏世界的物理动作\n游戏世界的感知直接喂给AI的推理\nAI不再旁观这个游戏\nAI活在这个游戏里\n好了\n谢谢大家\n本次视频就到这里\n点赞收藏超过1000\n我将开源整个项目\n包括详细讲解本次开发的所有流程\nByebye",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RGEn68E7L",
+  "published_at": "1780750601",
+  "fetched_at": "2026-08-09T02:56:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T03:14:55+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T03:14:55+00:00"
+}

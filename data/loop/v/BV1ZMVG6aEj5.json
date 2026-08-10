@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1ZMVG6aEj5",
+  "title": "如果你每天都在 Pi 里重复输入同样的 Prompt，那 pi-order 可能会直接改变你的工作流。",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 683,
+  "text": "呃大家好\n今天我是想为大家分享一个pad一个拓展啊\n这也是我自己开发的\n就拓展的有什么功能呢\n它就是用来保存我们一些比较模板化的东西\n比如说前端的有些什么提示词啊\n怎么样把设计的更美啊\n嗯他可能会有点像sq\n但是和sq还是有一点区别的\n我是这么觉得\n我是觉得他确实在最近帮我节省了一些功夫啊\n我大家为大家演示一下这个命令吧\n它是一个O的命令\n所以说还有这创建模板\n编辑模板\n发送模板\n这个我觉得都挺方便的\n你就编辑模板\n你就可以自己编辑\n嗯已经有那么吧\n比如说我看这个我们这个code0杠map\n这个是之前扣了个maps\n是一个我自己做了一个skill\n它是用来初始化一个代码的那个导航导航的\n但是现在我我认为他作为SKT有点不太合适\n我就把它搬到这个提示词模板来了\n好的\n为大家看一下\n这个是编辑描述\n编辑刚刚那是编辑描述\n这是编辑正文\n然后这样子可以比较便捷的修改\n但但如果你想额直接发送\n这样子它就会弹出来\n无论是我只认为无论是对额\n更为我觉得相比skill\n他更加个性化\n而且skill的话它它是有A证的\n它会给大模型提示一个LIAVAILABLESK的\n这样子的话\n如果是QE多起来的话\n还会额占用token啊\n还有导致真正需要的skill不被处罚\n我觉得这些都是skill目前存在的问题\n嗯还有就是我刚刚这是我刚刚开发的一个版本\n可能功能不是那么完善吧\n还没有\n我是现在是只发布在了GITHUB\n如果大家额有想法的话\n也可以也可以怎么说呢\n跟跟我说一下\n或者是提交什么的\n如果大家如果有使用派的话\n我觉得这个拓展还是挺有必要来安装的哦\n我就为大家讲到这里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ZMVG6aEj5",
+  "published_at": "1780127240",
+  "fetched_at": "2026-08-08T20:07:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# pi-order 扩展知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"pi-order 扩展\"] --> A2[\"保存模板化内容\"]\n    A2 --> A3[\"前端提示词\"]\n    A2 --> A4[\"设计美化建议\"]\n    A1 --> A5[\"创建模板\"]\n    A1 --> A6[\"编辑模板\"]\n    A1 --> A7[\"发送模板\"]\n    A1 --> A8[\"与 sq 类似但不同\"]\n    A1 --> A9[\"比 Skill 更个性化\"]\n    A9 --> A10[\"避免 token 消耗\"]\n    A9 --> A11[\"避免 Skill 被处罚\"]\n    A1 --> A12[\"已发布于 GitHub\"]\n    A12 --> A13[\"接受用户反馈\"]\n    A1 --> A14[\"建议在 Pi 中安装\"]\n```\n\n## 使用流程\n```mermaid\nflowchart TD\n    B1[\"创建模板\"] --> B2[\"编辑描述\"]\n    B2 --> B3[\"编辑正文\"]\n    B3 --> B4[\"保存修改\"]\n    B4 --> B5[\"发送模板\"]\n    B5 --> B6[\"弹出确认窗口\"]\n    B6 --> B7[\"使用于 Pi 工作流\"]\n    B5 --> B8[\"可直接发送\"]\n    B5 --> B9[\"可编辑后再发送\"]\n    B8 --> B6\n    B9 --> B6\n```\n\n## 与 Skill 的对比\n```mermaid\nflowchart TD\n    C1[\"Skill\"] --> C2[\"需要 A 证\"]\n    C2 --> C3[\"向大模型提示 LIAVAILABLESK\"]\n    C3 --> C4[\"占用 token\"]\n    C4 --> C5[\"可能导致 Skill 被处罚\"]\n    C6[\"pi-order 扩展\"] --> C7[\"无需 A 证\"]\n    C6 --> C8[\"不占用 token\"]\n    C6 --> C9[\"更个性化\"]\n    C6 --> C10[\"解决 Skill 问题\"]\n    C10 --> C1\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"pi-order 扩展\"] --> A2[\"保存模板化内容\"]\n    A2 --> A3[\"前端提示词\"]\n    A2 --> A4[\"设计美化建议\"]\n    A1 --> A5[\"创建模板\"]\n    A1 --> A6[\"编辑模板\"]\n    A1 --> A7[\"发送模板\"]\n    A1 --> A8[\"与 sq 类似但不同\"]\n    A1 --> A9[\"比 Skill 更个性化\"]\n    A9 --> A10[\"避免 token 消耗\"]\n    A9 --> A11[\"避免 Skill 被处罚\"]\n    A1 --> A12[\"已发布于 GitHub\"]\n    A12 --> A13[\"接受用户反馈\"]\n    A1 --> A14[\"建议在 Pi 中安装\"]"
+        },
+        {
+          "title": "使用流程",
+          "code": "flowchart TD\n    B1[\"创建模板\"] --> B2[\"编辑描述\"]\n    B2 --> B3[\"编辑正文\"]\n    B3 --> B4[\"保存修改\"]\n    B4 --> B5[\"发送模板\"]\n    B5 --> B6[\"弹出确认窗口\"]\n    B6 --> B7[\"使用于 Pi 工作流\"]\n    B5 --> B8[\"可直接发送\"]\n    B5 --> B9[\"可编辑后再发送\"]\n    B8 --> B6\n    B9 --> B6"
+        },
+        {
+          "title": "与 Skill 的对比",
+          "code": "flowchart TD\n    C1[\"Skill\"] --> C2[\"需要 A 证\"]\n    C2 --> C3[\"向大模型提示 LIAVAILABLESK\"]\n    C3 --> C4[\"占用 token\"]\n    C4 --> C5[\"可能导致 Skill 被处罚\"]\n    C6[\"pi-order 扩展\"] --> C7[\"无需 A 证\"]\n    C6 --> C8[\"不占用 token\"]\n    C6 --> C9[\"更个性化\"]\n    C6 --> C10[\"解决 Skill 问题\"]\n    C10 --> C1"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T20:07:37+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# pi-order 扩展知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"pi-order 扩展\"] --> A2[\"保存模板化内容\"]\n    A2 --> A3[\"前端提示词\"]\n    A2 --> A4[\"设计美化建议\"]\n    A1 --> A5[\"创建模板\"]\n    A1 --> A6[\"编辑模板\"]\n    A1 --> A7[\"发送模板\"]\n    A1 --> A8[\"与 sq 类似但不同\"]\n    A1 --> A9[\"比 Skill 更个性化\"]\n    A9 --> A10[\"避免 token 消耗\"]\n    A9 --> A11[\"避免 Skill 被处罚\"]\n    A1 --> A12[\"已发布于 GitHub\"]\n    A12 --> A13[\"接受用户反馈\"]\n    A1 --> A14[\"建议在 Pi 中安装\"]\n```\n\n## 使用流程\n```mermaid\nflowchart TD\n    B1[\"创建模板\"] --> B2[\"编辑描述\"]\n    B2 --> B3[\"编辑正文\"]\n    B3 --> B4[\"保存修改\"]\n    B4 --> B5[\"发送模板\"]\n    B5 --> B6[\"弹出确认窗口\"]\n    B6 --> B7[\"使用于 Pi 工作流\"]\n    B5 --> B8[\"可直接发送\"]\n    B5 --> B9[\"可编辑后再发送\"]\n    B8 --> B6\n    B9 --> B6\n```\n\n## 与 Skill 的对比\n```mermaid\nflowchart TD\n    C1[\"Skill\"] --> C2[\"需要 A 证\"]\n    C2 --> C3[\"向大模型提示 LIAVAILABLESK\"]\n    C3 --> C4[\"占用 token\"]\n    C4 --> C5[\"可能导致 Skill 被处罚\"]\n    C6[\"pi-order 扩展\"] --> C7[\"无需 A 证\"]\n    C6 --> C8[\"不占用 token\"]\n    C6 --> C9[\"更个性化\"]\n    C6 --> C10[\"解决 Skill 问题\"]\n    C10 --> C1\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"pi-order 扩展\"] --> A2[\"保存模板化内容\"]\n    A2 --> A3[\"前端提示词\"]\n    A2 --> A4[\"设计美化建议\"]\n    A1 --> A5[\"创建模板\"]\n    A1 --> A6[\"编辑模板\"]\n    A1 --> A7[\"发送模板\"]\n    A1 --> A8[\"与 sq 类似但不同\"]\n    A1 --> A9[\"比 Skill 更个性化\"]\n    A9 --> A10[\"避免 token 消耗\"]\n    A9 --> A11[\"避免 Skill 被处罚\"]\n    A1 --> A12[\"已发布于 GitHub\"]\n    A12 --> A13[\"接受用户反馈\"]\n    A1 --> A14[\"建议在 Pi 中安装\"]"
+    },
+    {
+      "title": "使用流程",
+      "code": "flowchart TD\n    B1[\"创建模板\"] --> B2[\"编辑描述\"]\n    B2 --> B3[\"编辑正文\"]\n    B3 --> B4[\"保存修改\"]\n    B4 --> B5[\"发送模板\"]\n    B5 --> B6[\"弹出确认窗口\"]\n    B6 --> B7[\"使用于 Pi 工作流\"]\n    B5 --> B8[\"可直接发送\"]\n    B5 --> B9[\"可编辑后再发送\"]\n    B8 --> B6\n    B9 --> B6"
+    },
+    {
+      "title": "与 Skill 的对比",
+      "code": "flowchart TD\n    C1[\"Skill\"] --> C2[\"需要 A 证\"]\n    C2 --> C3[\"向大模型提示 LIAVAILABLESK\"]\n    C3 --> C4[\"占用 token\"]\n    C4 --> C5[\"可能导致 Skill 被处罚\"]\n    C6[\"pi-order 扩展\"] --> C7[\"无需 A 证\"]\n    C6 --> C8[\"不占用 token\"]\n    C6 --> C9[\"更个性化\"]\n    C6 --> C10[\"解决 Skill 问题\"]\n    C10 --> C1"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T20:07:37+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1Kz346DEuh",
+  "title": "27届Unity客户端求职游戏demo",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 392,
+  "text": "第三人称角色控制框架\n基于状态机的角色控制\n待机状态\n移动默认进入跑步模式\n按control进入步行状态\n鼠标滚轮缩放远近\n鼠标移动相机角度\n相机不变\n下角色左右移动\n丝滑上台阶\n退出界面可通过ESC和点击按钮实现\n出现时游戏暂停\nshift进入疾跑\n短按是dash状态\n空格键跳跃\n跑步停止时\n短期内在停止状态跳跃会向前一段距离\n而待机状态跳跃就不会向前\n高处跳下不位移\n进入停止状态\n带速度和方向的跳跃下去会翻滚卸力\n左下角显示当前状态打印\n动画状态机\n通过参数控制不同动作之间的平滑切换\n动画状态机结构\n实时状态可视化驱动的调试系统\n胶囊体顶部不变\n控制下端变化来调试\n实现可跨越高度\n参数多可调节\n速度与斜坡存在关联\n脚本采用分层状态机结构\n便于拓展与维护\n角色参数由script table object管理\n数据和逻辑解耦\n注释明确\n降低阅读和维护成本\n便于理解\n感谢观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Kz346DEuh",
+  "published_at": "1785408476",
+  "fetched_at": "2026-08-09T20:30:52+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T20:44:06+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T20:44:06+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1HLMy6JEj4",
+  "title": "1.5GB显存/内存就能跑！LFM2.5-2.6B 无删减版，会思考还能调用工具",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 929,
+  "text": "liquid AI的2.6B边缘模型\n现在有了无删减版本\n它就是LFM2.52.6\nb on sensor gg u f它基于liquid AI官方底膜\nLFM2.52.6B总参数2.69\nB支持128K上下文架构是混合设计\n22个短卷积块加八个注意力层\n回答前会先思考\n制作者用ABELLASS做了行为编辑\n选出trial65并流式合并回权重\n拒绝率从基线约一90%降到一6%\n思考模式完整保留小模型\n量化最怕掉能力\n所以这套GGUF全部用i matrix校准校准集\n用了约1600000token\n告诉量化器哪些权重更敏感\n一共五个档位\nIQ4XS只有1.52GB\n是兼具Q4km级质量的甜点\nQ4km是1.67GB\n模型卡标注为经过验证的\n日常默认想要进无损可以选Q80\n体积2.87GB\n速度方面看\nliquid AI官方发布的解码数据\n在apple m5max上约每秒220token\n在AMD rain AI max plus395上\n约每秒113token\n内存占用不到2.5GB\n单张H100高并发下接近每秒一点50000token\n一天能处理约1300000000token\n这个体量级的模型\n官方定位就是边缘设备上的本地智能体\n能力方面看liquid AI官方底膜的评测数据指令\n跟随上MOTF拿到80.07\npf struct拿到85.49\n都是对比组最高工具\n调用上BFCLV4拿到56.88\n只低于于9.7B的kn3.59\nB数学上AIME25拿到51.87\n超过同组的GEMA和QN3.54\nb liquid AI官方结论是\n它与接近四倍大的模型竞争\n代码仍是大模型的强项\n无删减版没有重跑评测\n但kl散度只有0.0335\n说明行为编辑很克制\n总结1.5\nGB出头就能跑一个\n会思考\n会用工具的无删减边缘模型\nLama dot\nCPP和lm studio都支持LFM2架构单文件\nGGUF直接加载采样参数\n建议保持liquid AI官方默认temperature0.1\ntop k50重复惩罚\n1.1模型回答前总会先思考\n记得给够最大生成长度\n最后提醒\n无删减版行为与liquid AI官方原版差异很大\n使用前请自行评估合规与风险",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HLMy6JEj4",
+  "published_at": "1785931099",
+  "fetched_at": "2026-08-09T12:36:25+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

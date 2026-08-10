@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1STg46UEFd",
+  "title": "🚀Graph Engineering范式：Codex Multi-agent V2支持Kimi、MiniMax、GPT多模型混用+动态派生subagent",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4710,
+  "text": "OpenAI最近为codex最新版\n也就是0.145.0版\n推出了全新的multi agent v two\n也就是更加稳定的多智能体系统\n这次升级之后\n我们终于可以在codex中更加灵活的使用\n综合管理sub agent哈\n目前multi agent v two已经进入相对稳定阶段\n它不仅支持为不同的子agent配置\n不同的模型和推理层级\n还可以控制并发数量\n当任务恢复之后\n也能快速继续保持原来的角色分工\n它还提供了更加清晰的agent的导航和管理能力\n这意味着codex正从过去的单个超级agent哈\n逐渐升级成为一个真正的agent的调度系统\n它并不是简单的启动起sub agent呢\n让他们各自完成各自的任务\n而是让一个主agent呢充当整个任务的调度者\n主agent可以先理解和拆解任务\n再把代码探索方案设计功能开发测试验证\n代码审查等不同工作分别交给不同的sub agent等\n这些sub agent完成各自的任务之后\n主agent呢还会统一收集判断\n并且合并他们的执行结果\n最终形成完整的解决方案\n更值得关注的是\nCodex\n现在这种工作方式\n在设计思路上已经越来越接近cloud code的dynamic\nworkflow功能\n而且最近graph engineering\n这个概念在AI编程领域非常火\n像过去我们更多是在研究如何写好一条prompt\n或者是让一个agent在loop中不断执行检查和修复\n而graph engineering关注的是更高一层的问题\n也就是如何把多个agent和多个工具\n多个验证点以及不同的反馈循环\n组织成一张可以实际执行的任务图像\ncloud code的dynamic workflows\n本身就是graph engineering的一种典型实现\n它可以根据用户的目标来生成一套工作流\n再通过多个sub agent和条件分支\n并行任务和验证点完成更加复杂的任务\n而这一次codex通过multi agent v two\n让用户能够更加自由地构建和配置\n不同的sub agent哈\n虽然目前它还不能完全等同于cloud code的dynamic\nWorkflows\n也还不是一套完整的graph workflow运行时\n但从主agent的调度决策\n分工并行执行和结果汇总这些能力来看\ncodex的multi agent v two\n已经具备了非常鲜明的graph engineering特征\n好\n本期视频就为大家深度演示\ncodex中它新增的mount agent v two这个功能\n它在多种场景中的使用方式以及如何配置\n才能让codex的multi agent v two更加接近graph engineering\n好想使用这个新特性非常简单\n我们直接将codex升级到最新版\n我们只需要在终端命令行中执行codex update\n这一条命令\n就可以将我们的codex CLI升级到最新版\n在codex桌面版的最新版中\n我们同样可以使用m agent v two这个新特性\n为了让大家能够更直观地感受到在codex中\nsub agent呢它的灵活性有多强\n在这里\n我先让codex列出我已经配置好的sub agent哈\n然后我们再调用sub agent来启动一个任务\n进行测试\n好codex\n这里他列出了我配置好的这四个sub agent呢\n第一个sub agent呢他的任务是code review\n然后我为他设置的模型是KIMIK3\n第二个sub agent呢\n它的使用场景是UI产品设计与评审\n然后我为他设置的模型也是KIMIK3\n然后第三个sub agent他的任务也是代码审查\n然后我为他设置的模型是mini max模型\n然后第四个sub agent哈\n他的任务也是代码审查\n然后我为他设置的模型是GPT5.6\nso5模型\n像这样的话\n我们在codex中就可以来调用\n我们已经配置好的这些sub agent哈\n也可以直接让codex根据任务的复杂度\n来自动派生不同的sub agent哈\n在codex中这里的主agent哈\n我使用的模型就是GBD5.6so五模型\n然后我们就可以来测试一下\n让主agent哈来调用我们已经配置好的sub agent哈\n来执行任务\n这里我输入的提示词是让他用这三个sub agent哈\n对代码进行对抗审查\n然后我们就直接发送\n当我们发送这个任务之后\n这个任务会被当前的主A键能接收\n也就是我们设置的GPT5.6so模型\n然后这个主agent就会调用\n我们刚才配置好的这三个sub agent哈\n对我们的项目代码进行对抗性审查\n好这里codex提示三个审查轨道都已经启动\n在这里\n我们就可以看到正在运行的这三个sub agent哈\n然后我们可以点击第一个进行查看\n好第一个sub agent呢\n它这里正在运行\n已经运行了一分钟\n然后我们再点击查看第二个AH呢\n这个AH呢调用的是mini max模型\n我们点击好这里我们就可以看到它正在执行\n然后我们再点击查看第三个sub agent哈\n第三个sub agent哈\n我是让他单独调用的PAGENT哈\n来执行了代码审查任务\n也就是说在codex的这一些sub agent中\n我们不仅可以为这些sub agent配置\n非OpenAI官方的模型\n比如说第三方的这些KIMI模型或者是mini max等模型\n我们还能让sub agent来调用不同的这些工具\n比如说这里调用pi agent哈\n像这样的话\n我们就可以将不同任务分配给不同的模型\n这样就可以更加节省codex中GPT5.6\n它的token消耗好\n在等了几分钟之后\n这里就提示审查完成\n而且还发现了这些严重的bug\n而且我们还可以点击查看这些不同sub agent呢\n他们的输出结果\n这里是这个使用了me max模型的agent呢\n然后这是他的输出结果\n这里是发现了比较严重的代码中的问题\n他输出的这些内容都非常详细\n然后这三个sub agent呢\n他们的执行结果\n最后都会被主agent呢进行整理和分析\n并给出最终的结论\n像这样的话\n我们就完成了在codex中调用不同的sub agent\n来完成代码的对抗性审查\n然后我们可以看一下这些sub agent\n他们的配置方式\n我们可以直接在codex中点击查看\n这里是这个sub agent呢\n它的完整路径\n它会放在codex的agent这个文件夹重\n然后这是这个文件名\n这里就是这个sub agent了\n它的名称\n然后这里就是描述\n也就是使用KIMIK3模型进行代码审查\n然后这里就是具体的提示词\n在下面的这个模型这里\n我们给他设置的就是KIMIK3\n因为我是使用了cc switch\n所以在模型提供者这里就是设置的cc switch\n在模型的推理级别这里我设置的是hi\n像这样的话\n我们就可以在codex中用我们配置的sub agent呢\n来调用第三方的模型\n然后我们可以打开cc switch\n在这里我们可以看到codex\n我们直接点击这个codex\n然后在这里我们就看到我添加了KIMIK3\n然后我们点击编辑可以看一下我是如何配置的\n然后这里就是模型提供者的这个名称\n这里是KIMI的URL\n然后这里就是APIK\n在这里就是KIMI它的API的链接\n然后这里这个默认模型就是KIMIK3模型\n在prompt cash这里我设置成了enable\n在模型映射这里就对应KIMIK3\n像这样的话\n我们就可以通过cc switch这个项目\n将KIMI的API转换为支持codex的API的格式\n我们既可以在codex的sub agent中来调\n我用这个模型\n也可以将主A整的模型改成第三方模型\n但我这里还是默认使用的GBD5.6solo模型\n因为为主模型设置一个更加强大的模型\n它在调度和分配这些sub agent的时候\n会执行的更加精准和高效\n然后我们再看一下这一个sub ith呢\n看一下它的配置\n然后在下面的参数\n这里这里就是模型名称\n这里就是模型提供商\n这里就是他的思考级别\n因为mini max模型它本身就兼容codex的这种API格式\n所以在这里就不需要为mini max的这些API\n通过cc switch进行转换了\n因为我们刚才调用的KIMI的API\n它是不兼容Q带的API格式的\n所以我们刚才需要用c c switch进行转换\n但mini max的API它兼容codex\n所以我们就不需要进行转换\n就可以直接调用\n然后我们再看一下这一个sub agent哈\n它是调用了PAGENT哈\n给他设置的模型就是GPT5点点6so5模型\n然后给它设置的推理级别是hi\n像这样的话\n我们在codex中\n就分别设置了几个不同的sub agent了\n并且让他们调用了不同的模型\n甚至还可以让他们调用不同的工具\n比如说这个sub agent中让它调用了PAGENT哈\n而且在这个UI产品设计的sub agent中\n我还让他调用了skill\n也就是让他使用了super design这个skill\n在codex的插件市场\n我们就可以看到这个super design\n像这些sub agent哈\n我们既可以手动创建\n也可以让codex直接帮我们创建\n然后我们输入任务\n让他创建一个用于漏洞扫描的sub agent哈\n要求这个sub agent a使用深度安全扫描这个skill\n然后模型使用GBD5.6\nso思考级别设为extra hi\n然后我们点击发送好\n这里提示创建完成\n而且他创建的这个sub agent呢现在正在运行\n它正在分析我们的项目代码库\n然后我们还可以让codex在执行任务的时候\n动态的分配sub agent\n我输入的任务是派剩五个sub agent\n对代码进行对抗审查\n分别调用不同的GPT系列模型\n以及KIMI模型和MMAX模型\n然后我们就发送\n让codex动态的派生不同的sub agent呢\n为我们执行任务\n然后我们就看到他动态派生了这几个sub agent哈\n我们可以先点开看一下第一个sub agent好\n第一个sub agent因为调用的是KIMIK3模型\n然后调用次数过多\n这里被限制了\n然后我们再看一下第二个\n第二个sub agent呢使用的是mini max的模型\n然后他正在执行\n没有遇到速率限制\n然后我们再看一下这个使用GBT\n5.6solo模型的这个sub agent呢\n好这里它正在执行\n然后我们再继续看\n这里是另一个sub agent哈\n这里也正在执行\n像这样的话\n我们就在codex中\n让codex动态的派生了不同的sub agent\n来同时执行任务\n而且codex它还支持sub agent呢\n内嵌sub agent呢\n为了节省时间\n这里就不再为大家去演示了\n通过我们刚才的测试\n可以发现codex的multi agent v two\n这个多sub agent的功能已经非常成熟\n而且非常灵活\n我们既可以手动设置这些sub agent\n也可以让codex动态派生不同的sub agent哈\n而且我们还可以为这一些不同的sub age呢\n分配不同的模型\n还能设置他们的思考级别\ncodex它变得也越来越灵活\n在多agent方面的能力也越来越强大\n甚至已经具备graph engineering的初级范式\n在很大程度上\n我们甚至可以使用codex来完全替代cloud code好\n本期视频就做到这里\n欢迎大家点赞关注和转发\n谢谢大家观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1STg46UEFd",
+  "published_at": "1784814182",
+  "fetched_at": "2026-08-10T07:04:05+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Codex Multi‑Agent V2 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    MA[\"主 Agent\"] --> TD[\"任务拆解\"]\n    MA --> AS1[\"分配 Sub‑Agent 1\"]\n    MA --> AS2[\"分配 Sub‑Agent 2\"]\n    MA --> AS3[\"分配 Sub‑Agent 3\"]\n    MA --> AS4[\"分配 Sub‑Agent 4\"]\n    AS1 --> M1[\"模型 KIMIK3\"]\n    AS2 --> M2[\"模型 MiniMax\"]\n    AS3 --> M3[\"模型 GPT5.6\"]\n    AS4 --> M4[\"模型 GBD5.6\"]\n    AS1 --> R1[\"结果 1\"]\n    AS2 --> R2[\"结果 2\"]\n    AS3 --> R3[\"结果 3\"]\n    AS4 --> R4[\"结果 4\"]\n    R1 --> MA\n    R2 --> MA\n    R3 --> MA\n    R4 --> MA\n    MA --> DD[\"动态派生 Sub‑Agent\"]\n    MA --> CC[\"并发数量控制\"]\n```\n\n## Sub‑Agent 配置要素\n```mermaid\nflowchart LR\n    SA[\"Sub‑Agent\"] --> MO[\"模型\"]\n    SA --> PR[\"提供商\"]\n    SA --> IL[\"推理级别\"]\n    SA --> PT[\"提示词\"]\n    SA --> TL[\"调用工具\"]\n    TL --> AC[\"API 转换 (cc switch)\"]\n    MO --> RL[\"速率限制\"]\n    SA --> PA[\"文件路径\"]\n    SA --> DS[\"描述\"]\n```\n\n## 任务执行流程\n```mermaid\nflowchart TD\n    UG[\"用户目标\"] --> WG[\"生成工作流\"]\n    WG --> MS[\"主 Agent 调度\"]\n    MS --> SL[\"启动 Sub‑Agent\"]\n    SL --> PE[\"并行执行\"]\n    PE --> VP[\"验证点 / 条件分支\"]\n    VP --> RM[\"结果合并\"]\n    RM --> FS[\"形成完整解决方案\"]\n```\n\n## Graph Engineering 与 Cloud Code 关系\n```mermaid\nflowchart LR\n    GE[\"Graph Engineering\"] --> MAV2[\"Codex Multi‑Agent V2\"]\n    MAV2 --> DWF[\"Dynamic Workflow\"]\n    DWF --> CC[\"Cloud Code\"]\n    CC --> TG[\"任务图 (Task Graph)\"]\n    TG --> SAN[\"Sub‑Agent 网络\"]\n    SAN --> FL[\"反馈循环\"]\n    FL --> TI[\"工具集成\"]\n    TI --> ER[\"执行运行时\"]\n    ER --> PI[\"部分实现 (Partial Implementation)\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    MA[\"主 Agent\"] --> TD[\"任务拆解\"]\n    MA --> AS1[\"分配 Sub‑Agent 1\"]\n    MA --> AS2[\"分配 Sub‑Agent 2\"]\n    MA --> AS3[\"分配 Sub‑Agent 3\"]\n    MA --> AS4[\"分配 Sub‑Agent 4\"]\n    AS1 --> M1[\"模型 KIMIK3\"]\n    AS2 --> M2[\"模型 MiniMax\"]\n    AS3 --> M3[\"模型 GPT5.6\"]\n    AS4 --> M4[\"模型 GBD5.6\"]\n    AS1 --> R1[\"结果 1\"]\n    AS2 --> R2[\"结果 2\"]\n    AS3 --> R3[\"结果 3\"]\n    AS4 --> R4[\"结果 4\"]\n    R1 --> MA\n    R2 --> MA\n    R3 --> MA\n    R4 --> MA\n    MA --> DD[\"动态派生 Sub‑Agent\"]\n    MA --> CC[\"并发数量控制\"]"
+        },
+        {
+          "title": "Sub‑Agent 配置要素",
+          "code": "flowchart LR\n    SA[\"Sub‑Agent\"] --> MO[\"模型\"]\n    SA --> PR[\"提供商\"]\n    SA --> IL[\"推理级别\"]\n    SA --> PT[\"提示词\"]\n    SA --> TL[\"调用工具\"]\n    TL --> AC[\"API 转换 (cc switch)\"]\n    MO --> RL[\"速率限制\"]\n    SA --> PA[\"文件路径\"]\n    SA --> DS[\"描述\"]"
+        },
+        {
+          "title": "任务执行流程",
+          "code": "flowchart TD\n    UG[\"用户目标\"] --> WG[\"生成工作流\"]\n    WG --> MS[\"主 Agent 调度\"]\n    MS --> SL[\"启动 Sub‑Agent\"]\n    SL --> PE[\"并行执行\"]\n    PE --> VP[\"验证点 / 条件分支\"]\n    VP --> RM[\"结果合并\"]\n    RM --> FS[\"形成完整解决方案\"]"
+        },
+        {
+          "title": "Graph Engineering 与 Cloud Code 关系",
+          "code": "flowchart LR\n    GE[\"Graph Engineering\"] --> MAV2[\"Codex Multi‑Agent V2\"]\n    MAV2 --> DWF[\"Dynamic Workflow\"]\n    DWF --> CC[\"Cloud Code\"]\n    CC --> TG[\"任务图 (Task Graph)\"]\n    TG --> SAN[\"Sub‑Agent 网络\"]\n    SAN --> FL[\"反馈循环\"]\n    FL --> TI[\"工具集成\"]\n    TI --> ER[\"执行运行时\"]\n    ER --> PI[\"部分实现 (Partial Implementation)\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T07:04:17+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Codex Multi‑Agent V2 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    MA[\"主 Agent\"] --> TD[\"任务拆解\"]\n    MA --> AS1[\"分配 Sub‑Agent 1\"]\n    MA --> AS2[\"分配 Sub‑Agent 2\"]\n    MA --> AS3[\"分配 Sub‑Agent 3\"]\n    MA --> AS4[\"分配 Sub‑Agent 4\"]\n    AS1 --> M1[\"模型 KIMIK3\"]\n    AS2 --> M2[\"模型 MiniMax\"]\n    AS3 --> M3[\"模型 GPT5.6\"]\n    AS4 --> M4[\"模型 GBD5.6\"]\n    AS1 --> R1[\"结果 1\"]\n    AS2 --> R2[\"结果 2\"]\n    AS3 --> R3[\"结果 3\"]\n    AS4 --> R4[\"结果 4\"]\n    R1 --> MA\n    R2 --> MA\n    R3 --> MA\n    R4 --> MA\n    MA --> DD[\"动态派生 Sub‑Agent\"]\n    MA --> CC[\"并发数量控制\"]\n```\n\n## Sub‑Agent 配置要素\n```mermaid\nflowchart LR\n    SA[\"Sub‑Agent\"] --> MO[\"模型\"]\n    SA --> PR[\"提供商\"]\n    SA --> IL[\"推理级别\"]\n    SA --> PT[\"提示词\"]\n    SA --> TL[\"调用工具\"]\n    TL --> AC[\"API 转换 (cc switch)\"]\n    MO --> RL[\"速率限制\"]\n    SA --> PA[\"文件路径\"]\n    SA --> DS[\"描述\"]\n```\n\n## 任务执行流程\n```mermaid\nflowchart TD\n    UG[\"用户目标\"] --> WG[\"生成工作流\"]\n    WG --> MS[\"主 Agent 调度\"]\n    MS --> SL[\"启动 Sub‑Agent\"]\n    SL --> PE[\"并行执行\"]\n    PE --> VP[\"验证点 / 条件分支\"]\n    VP --> RM[\"结果合并\"]\n    RM --> FS[\"形成完整解决方案\"]\n```\n\n## Graph Engineering 与 Cloud Code 关系\n```mermaid\nflowchart LR\n    GE[\"Graph Engineering\"] --> MAV2[\"Codex Multi‑Agent V2\"]\n    MAV2 --> DWF[\"Dynamic Workflow\"]\n    DWF --> CC[\"Cloud Code\"]\n    CC --> TG[\"任务图 (Task Graph)\"]\n    TG --> SAN[\"Sub‑Agent 网络\"]\n    SAN --> FL[\"反馈循环\"]\n    FL --> TI[\"工具集成\"]\n    TI --> ER[\"执行运行时\"]\n    ER --> PI[\"部分实现 (Partial Implementation)\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    MA[\"主 Agent\"] --> TD[\"任务拆解\"]\n    MA --> AS1[\"分配 Sub‑Agent 1\"]\n    MA --> AS2[\"分配 Sub‑Agent 2\"]\n    MA --> AS3[\"分配 Sub‑Agent 3\"]\n    MA --> AS4[\"分配 Sub‑Agent 4\"]\n    AS1 --> M1[\"模型 KIMIK3\"]\n    AS2 --> M2[\"模型 MiniMax\"]\n    AS3 --> M3[\"模型 GPT5.6\"]\n    AS4 --> M4[\"模型 GBD5.6\"]\n    AS1 --> R1[\"结果 1\"]\n    AS2 --> R2[\"结果 2\"]\n    AS3 --> R3[\"结果 3\"]\n    AS4 --> R4[\"结果 4\"]\n    R1 --> MA\n    R2 --> MA\n    R3 --> MA\n    R4 --> MA\n    MA --> DD[\"动态派生 Sub‑Agent\"]\n    MA --> CC[\"并发数量控制\"]"
+    },
+    {
+      "title": "Sub‑Agent 配置要素",
+      "code": "flowchart LR\n    SA[\"Sub‑Agent\"] --> MO[\"模型\"]\n    SA --> PR[\"提供商\"]\n    SA --> IL[\"推理级别\"]\n    SA --> PT[\"提示词\"]\n    SA --> TL[\"调用工具\"]\n    TL --> AC[\"API 转换 (cc switch)\"]\n    MO --> RL[\"速率限制\"]\n    SA --> PA[\"文件路径\"]\n    SA --> DS[\"描述\"]"
+    },
+    {
+      "title": "任务执行流程",
+      "code": "flowchart TD\n    UG[\"用户目标\"] --> WG[\"生成工作流\"]\n    WG --> MS[\"主 Agent 调度\"]\n    MS --> SL[\"启动 Sub‑Agent\"]\n    SL --> PE[\"并行执行\"]\n    PE --> VP[\"验证点 / 条件分支\"]\n    VP --> RM[\"结果合并\"]\n    RM --> FS[\"形成完整解决方案\"]"
+    },
+    {
+      "title": "Graph Engineering 与 Cloud Code 关系",
+      "code": "flowchart LR\n    GE[\"Graph Engineering\"] --> MAV2[\"Codex Multi‑Agent V2\"]\n    MAV2 --> DWF[\"Dynamic Workflow\"]\n    DWF --> CC[\"Cloud Code\"]\n    CC --> TG[\"任务图 (Task Graph)\"]\n    TG --> SAN[\"Sub‑Agent 网络\"]\n    SAN --> FL[\"反馈循环\"]\n    FL --> TI[\"工具集成\"]\n    TI --> ER[\"执行运行时\"]\n    ER --> PI[\"部分实现 (Partial Implementation)\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T07:04:17+00:00"
+}

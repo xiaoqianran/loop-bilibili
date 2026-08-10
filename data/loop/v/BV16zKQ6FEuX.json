@@ -1,0 +1,66 @@
+{
+  "bvid": "BV16zKQ6FEuX",
+  "title": "一加6刷原生Linux跑Docker 服务！百元旧手机-微信连接Hermes Agent",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1662,
+  "text": "兄弟们\n今天来分享一个\n我自己最近一直在折腾的小设备\n就是这个1+6\n它是8+128的\n现在在闲鱼上大概就100到200块钱吧\n但是我给他刷入了post market os\n它是主线的LINUX\n就可以运行一些手机上很难实现的东西\n比如这个系统是一个类似手机的系统\n但是它的体验不怎么好\n但是可以快速的连接WIFI或者查询一些东西\n然后我们可以使用它的终端进入终端\n可以看到它会有一个基础的信息的解释\n这个是骁龙845的\n然后还有8G的内存大概\n然后我们可以使用\n可以直接进入到ERNEST的后台\n然后我们就可以在这里面\n和他进行一些基础的聊天\n因为这个键盘它适配不怎么样\n所以只能输入一些英文的\n然后但是我们主力肯定不会在这个上面\n这个上面只是做一个演示\n因为在手机端其实使用不是很方便\n所以我一般的是在电脑端进行通过SSH访问的\n然后我配置了免密登录\n所以我可以直接访问到我的设备\n反倒过来也是和刚才终端一样的界面\n可以看到其实它大概有7.37GB可以使用的\n因为他自己可能还会留一点分区\n然后的话我们可以\n其实可以看到我现在已经用了2.3G了\n现在还有4.3G可以用\n因为我平常会在上面跑一些小的项目或者脚本\n因为它可以可以很流畅的跑docker\n其实我有好多个容器已经在跑了\n然后在这个上面也可以进行HERMES的使用\n这个上面的话它就会更加的方便使用\n因为不会有输入的限制\n可能第一次进来比较慢吧\n然后进来的话确实挺正常的\n感觉速度还是可以的\n他基本上这只是一些最简单的东西\n但是吧在终端上使用确实用处不大\n所以我直接把它配置到了微信上面\n微信上面的话\n我也刚才已经试过了\n然后我觉得比较有用的就是偶尔可以开发开发\n其实用的不多\n然后的话可以和他进行一些日常的聊天\n在微信的话就比较方便了\n然后我觉得有一个更方便的\n就是我可以让他和我的Mac在同一个局域网下\n或者通过一些内网穿透的方式实现\n它们两个互联的话\n就可以让它去访问我Mac上面的应用\n比如说我在出门在外\n我可以让他给我发送我Mac上的一些文件\n比如我笔记库里面的一些笔记对吧\n我复制一下大概的路径\n其实也可以让他找\n但是路径的话它就识别的更快\n找一下\n让他发内容比较方便\n因为如果是MD文件的话\n不方便打开\n他会正在输入中\n他会进行去寻找那这个文件的地址\n然后读取文件内容给我发送\n我也试过可以发送\n比如说word文件之类的东西\n他直接就把文件发过来了\n这个其实可以很方便的实现\n而且他跑在另外一个机器上\n完全不用占用我Mac的内存\n你看他发过来的文件\n跟我这个上面的文件基本上没有任何区别\n它是直接基本上是直接复制发送过来的吧\n他是\n啊因为它是一个手机设备\n所以它对比一些那种小主机的话\n迷你主机的话\n它有一个很大的优势\n就是它的电池\n它有电池就会有续航的话\n它可以随时带出\n找到充电器\n随时插上充电器就可以用了\n而且它的内存其实是够用的\n还有我加上了一个11个G的swap\n基本上当前是完全用不上的\n他荣誉性还是可以的\n所以正常用的话\n骁龙845的话还是可以跑一些应用的\n我我是经常用来跑一些docker或者一些脚本\n其实我是做了一个\n每天让他给我推送一个消息的\n比如说每天会给我早上会给我推送一个晨读\n通过它进行AI总结\n总结一些简单的咨询给我\n然后我可以点进去查看\n然后每天早上给我发送一个他大致的一些简报\n比如说当前的电量和\n内存的负载\n我可以大致看看他还活着吗\n有能力的话\n可以在上面跑一个F2P进行\n比如说我试用了一个阿里云的服务器\n来进行F2P的外网访问\n阿里云只有两个G\n但是对比这个八个G就已经相隔特别多了\n我就可以把一些大型服务全部跑在这个上面\n然后就会就可以做各种各样的事了\n然后其实日常维护的话\n我只需要给他插上电\n用一个废旧的积木搭了个大致的容器\n给它放到某个角落就够了\n然后我是通过shell脚写的脚本\n控制它每充满多少\n会不断的充电放电\n然后进行循环\n然后每天重启一下\n当前已经稳定运行了大概几个月了\n我觉得没有任何问题",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16zKQ6FEuX",
+  "published_at": "1782727325",
+  "fetched_at": "2026-08-09T16:43:58+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 一加6 Linux 与 Docker、Hermes、WeChat 整合图谱\n\n## 系统整体结构\n```mermaid\nflowchart TD\n    D1[\"OnePlus 6\"] --> OS[\"postmarketOS (Linux)\"]\n    OS --> T1[\"Terminal / SSH\"]\n    T1 --> DCK[\"Docker Engine\"]\n    DCK --> C1[\"Docker Container A\"]\n    DCK --> C2[\"Docker Container B\"]\n    OS --> HERM[\"Hermes Agent\"]\n    HERM --> WX[\"WeChat 集成\"]\n    WX --> MAC[\"Mac (同局域网)\"]\n    D1 --> BAT[\"电池（便携）\"]\n    OS --> SWP[\"11 GB Swap\"]\n    OS --> STG[\"7.37 GB 存储 (2.3 GB 已用)\"]\n    OS --> RAM[\"8 GB RAM\"]\n```\n\n## WeChat 与 Hermes 交互流程\n```mermaid\nflowchart TD\n    WM[\"WeChat 消息\"] --> HAG[\"Hermes Agent (设备)\"]\n    HAG --> CMD[\"解析指令（如获取文件）\"]\n    CMD --> MACAPP[\"Mac 上的应用\"]\n    MACAPP --> FILE[\"目标文件 (MD/Word)\"]\n    FILE --> SEND[\"发送文件至 WeChat\"]\n    SEND --> RESP[\"WeChat 返回确认\"]\n    RESP --> WM\n```\n\n## Docker 与 F2P 使用场景\n```mermaid\nflowchart TD\n    DCK[\"Docker Engine\"] --> CON1[\"容器 1（服务）\"]\n    DCK --> CON2[\"容器 2（脚本）\"]\n    DCK --> F2P[\"F2P (Aliyun 2 GB)\"]\n    F2P --> LS[\"大型服务部署\"]\n    LS --> RUN[\"在 OnePlus 6 上运行\"]\n    RUN --> ADV[\"便携、续航优势\"]\n    RES[\"8 GB vs 2 GB 资源对比\"] --> RUN\n```",
+      "diagrams": [
+        {
+          "title": "系统整体结构",
+          "code": "flowchart TD\n    D1[\"OnePlus 6\"] --> OS[\"postmarketOS (Linux)\"]\n    OS --> T1[\"Terminal / SSH\"]\n    T1 --> DCK[\"Docker Engine\"]\n    DCK --> C1[\"Docker Container A\"]\n    DCK --> C2[\"Docker Container B\"]\n    OS --> HERM[\"Hermes Agent\"]\n    HERM --> WX[\"WeChat 集成\"]\n    WX --> MAC[\"Mac (同局域网)\"]\n    D1 --> BAT[\"电池（便携）\"]\n    OS --> SWP[\"11 GB Swap\"]\n    OS --> STG[\"7.37 GB 存储 (2.3 GB 已用)\"]\n    OS --> RAM[\"8 GB RAM\"]"
+        },
+        {
+          "title": "WeChat 与 Hermes 交互流程",
+          "code": "flowchart TD\n    WM[\"WeChat 消息\"] --> HAG[\"Hermes Agent (设备)\"]\n    HAG --> CMD[\"解析指令（如获取文件）\"]\n    CMD --> MACAPP[\"Mac 上的应用\"]\n    MACAPP --> FILE[\"目标文件 (MD/Word)\"]\n    FILE --> SEND[\"发送文件至 WeChat\"]\n    SEND --> RESP[\"WeChat 返回确认\"]\n    RESP --> WM"
+        },
+        {
+          "title": "Docker 与 F2P 使用场景",
+          "code": "flowchart TD\n    DCK[\"Docker Engine\"] --> CON1[\"容器 1（服务）\"]\n    DCK --> CON2[\"容器 2（脚本）\"]\n    DCK --> F2P[\"F2P (Aliyun 2 GB)\"]\n    F2P --> LS[\"大型服务部署\"]\n    LS --> RUN[\"在 OnePlus 6 上运行\"]\n    RUN --> ADV[\"便携、续航优势\"]\n    RES[\"8 GB vs 2 GB 资源对比\"] --> RUN"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T16:53:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 一加6 Linux 与 Docker、Hermes、WeChat 整合图谱\n\n## 系统整体结构\n```mermaid\nflowchart TD\n    D1[\"OnePlus 6\"] --> OS[\"postmarketOS (Linux)\"]\n    OS --> T1[\"Terminal / SSH\"]\n    T1 --> DCK[\"Docker Engine\"]\n    DCK --> C1[\"Docker Container A\"]\n    DCK --> C2[\"Docker Container B\"]\n    OS --> HERM[\"Hermes Agent\"]\n    HERM --> WX[\"WeChat 集成\"]\n    WX --> MAC[\"Mac (同局域网)\"]\n    D1 --> BAT[\"电池（便携）\"]\n    OS --> SWP[\"11 GB Swap\"]\n    OS --> STG[\"7.37 GB 存储 (2.3 GB 已用)\"]\n    OS --> RAM[\"8 GB RAM\"]\n```\n\n## WeChat 与 Hermes 交互流程\n```mermaid\nflowchart TD\n    WM[\"WeChat 消息\"] --> HAG[\"Hermes Agent (设备)\"]\n    HAG --> CMD[\"解析指令（如获取文件）\"]\n    CMD --> MACAPP[\"Mac 上的应用\"]\n    MACAPP --> FILE[\"目标文件 (MD/Word)\"]\n    FILE --> SEND[\"发送文件至 WeChat\"]\n    SEND --> RESP[\"WeChat 返回确认\"]\n    RESP --> WM\n```\n\n## Docker 与 F2P 使用场景\n```mermaid\nflowchart TD\n    DCK[\"Docker Engine\"] --> CON1[\"容器 1（服务）\"]\n    DCK --> CON2[\"容器 2（脚本）\"]\n    DCK --> F2P[\"F2P (Aliyun 2 GB)\"]\n    F2P --> LS[\"大型服务部署\"]\n    LS --> RUN[\"在 OnePlus 6 上运行\"]\n    RUN --> ADV[\"便携、续航优势\"]\n    RES[\"8 GB vs 2 GB 资源对比\"] --> RUN\n```",
+  "diagrams": [
+    {
+      "title": "系统整体结构",
+      "code": "flowchart TD\n    D1[\"OnePlus 6\"] --> OS[\"postmarketOS (Linux)\"]\n    OS --> T1[\"Terminal / SSH\"]\n    T1 --> DCK[\"Docker Engine\"]\n    DCK --> C1[\"Docker Container A\"]\n    DCK --> C2[\"Docker Container B\"]\n    OS --> HERM[\"Hermes Agent\"]\n    HERM --> WX[\"WeChat 集成\"]\n    WX --> MAC[\"Mac (同局域网)\"]\n    D1 --> BAT[\"电池（便携）\"]\n    OS --> SWP[\"11 GB Swap\"]\n    OS --> STG[\"7.37 GB 存储 (2.3 GB 已用)\"]\n    OS --> RAM[\"8 GB RAM\"]"
+    },
+    {
+      "title": "WeChat 与 Hermes 交互流程",
+      "code": "flowchart TD\n    WM[\"WeChat 消息\"] --> HAG[\"Hermes Agent (设备)\"]\n    HAG --> CMD[\"解析指令（如获取文件）\"]\n    CMD --> MACAPP[\"Mac 上的应用\"]\n    MACAPP --> FILE[\"目标文件 (MD/Word)\"]\n    FILE --> SEND[\"发送文件至 WeChat\"]\n    SEND --> RESP[\"WeChat 返回确认\"]\n    RESP --> WM"
+    },
+    {
+      "title": "Docker 与 F2P 使用场景",
+      "code": "flowchart TD\n    DCK[\"Docker Engine\"] --> CON1[\"容器 1（服务）\"]\n    DCK --> CON2[\"容器 2（脚本）\"]\n    DCK --> F2P[\"F2P (Aliyun 2 GB)\"]\n    F2P --> LS[\"大型服务部署\"]\n    LS --> RUN[\"在 OnePlus 6 上运行\"]\n    RUN --> ADV[\"便携、续航优势\"]\n    RES[\"8 GB vs 2 GB 资源对比\"] --> RUN"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T16:53:03+00:00"
+}

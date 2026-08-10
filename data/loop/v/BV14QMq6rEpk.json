@@ -1,0 +1,74 @@
+{
+  "bvid": "BV14QMq6rEpk",
+  "title": "[中配] 我给Claude 60万张真实UI界面后，它做出了这个",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1398,
+  "text": "我让ca帮我设计一个金融app的用户on boarding流程\n他给了我这两个方案\n这个看着还行\n但太泛了\n而这个就接地气多了\n他考虑了身份验证合规\n要求这些真实金融app会遇到的问题\n这个明显更用心\n原因就是我给cloud接入了MOBINCP\n一旦把你的AI工具连接上mobile c\n就等于给他办了一张借书卡\n可以随时查阅来自已经正式上线的\n超过60万个真实app和网站的产品界面\n用户流程以及各种动效\n现在我在浏览器里打开cloud\n连着MOBCP\n假设我们要为金融app设计用户on boarding流程\n用MOBIMCP先搜索顶级金融和银行app\n是怎么设计on boarding和开户流程的\n找出最相关的界面和用户流程\n对比不同产品的模式\n看看顶尖up到底哪里不一样\n最后让它生成一份可视化报告\n列出顶级案例\n常见模式和头部公司都在用的最佳实践嗯\n他正在拉取金融分类下的开户流程\n他研究了一些金融app的欢迎页面和相关设计\n他懂行业背景\n知道银行的用户\non boarding流程和普通产品完全不同\n报告做好了\n它提炼出所有常见模式\n取舍点和我们容易忽略的盲区\n看到想深入看的参考点\n一下就能跳到MOBIN里\n可以在里面找相似界面\n或者研究完整端到端的用户流程\n他还总结了顶尖app\n在文案和流程上到底做了哪些不同\n接下来我们开始实际搭建\n我在paper里建了个文件\n用了一个虚构的设计系统\n我在cloud桌面版打开一个新代码会话\n接入了paper cp\n附上两样东西\n刚才的研究报告和一份简单的产品需求描述\n这一不可选\n但能帮他更好地理解整体上下文\n用paper cp在这个文件里为curve提出一个on boarding流程\n并把它做出来\n任何故意偏离研究模式的地方都要标出来嗯\ncall在搭建过程中还会反推需求并解释原因\n我们在PRD里问过怎么放安全优惠引导\n才不会显得操纵用户\ncoral决定把这个引导放在on boarding\n完成之后的首页\n因为他经过研究后发现\n有一款app的开户奖励也是放在首页的\n我们不建议直接让AI1键出设计\n我们建议的正确做法是\n先用MOBIMCP好好做一番研究\n然后再让他去解决具体的设计问题\n在fake money里\n让AI智能体设计IOS的地图和筛选视图\n他直接出了这个\n可以看到有些UI还是崩的\n但如果我们先连接MOBIMCP进行研究\n他就会先仔细研究这些参考案例\n标明来源出处\n然后再给出最终的设计结果\n可以把竞品拿来投对投对比\n比如DOORDASH和uber eats\n在结账流程\n打赏设置以及订单总结页面上\n分别是怎么处理的\n或者快速查资料\n比如以下给你十个生产力app的空状态\n还能给出针对你用户的文案建议\n并说明灵感来源\n我们还见过有人跨行业混搭idea\n让MOBINVP帮你搞定各种边缘case\n去mobin com fam cp看设置教程\nMOBCP包含在任何付费mob方案里\n支持cloud antigravity\ncodex cursor等一大堆主流AI工具\n但MOBMECP无法帮我们决定什么该优先什么\n该保留什么\n该砍掉\n这部分还是得人类做主\n接下来看我们最新一期付费墙拆解\n我们研究了3000个付费墙\n看看到底什么能真正转化用户\n我们还研究了超过1000个on boarding流程\n找出真正有效的做法\n我们在那见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14QMq6rEpk",
+  "published_at": "1785865281",
+  "fetched_at": "2026-08-06T19:22:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 金融App用户Onboarding设计知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"需求：金融App用户Onboarding\"] --> A2[\"接入MOBINCP（60万+真实UI）\"]\n    A2 --> A3[\"使用MOBIMCP搜索金融App\"]\n    A3 --> A4[\"生成可视化报告\"]\n    A4 --> A5[\"提炼常见模式与盲点\"]\n    A5 --> A6[\"在Paper CP中基于报告设计Onboarding\"]\n    A6 --> A7[\"标记偏离研究的设计点\"]\n    A7 --> A8[\"完成设计并输出\"]\n```\n\n## 研究流程细节\n```mermaid\nflowchart TD\n    B1[\"在MOBIMCP搜索顶级金融/银行App\"] --> B2[\"提取Onboarding与开户流程\"]\n    B2 --> B3[\"对比不同产品模式\"]\n    B3 --> B4[\"发现行业特有需求（身份验证合规）\"]\n    B4 --> B5[\"生成报告列出案例、最佳实践\"]\n    B5 --> B6[\"可跳转至MOBIN查找相似界面\"]\n```\n\n## 设计决策路径\n```mermaid\nflowchart TD\n    C1[\"常见模式与取舍点\"] --> C2[\"安全优惠引导放置位置决策\"]\n    C2 --> C3[\"放在Onboarding完成后的首页\"]\n    C3 --> C4[\"参考已有App奖励放首页\"]\n    C4 --> C5[\"确定引导位置\"]\n    C5 --> C6[\"在设计系统中实现\"]\n```\n\n## 人机协作流程\n```mermaid\nflowchart TD\n    D1[\"AI进行案例研究\"] --> D2[\"人类审查研究来源与盲点\"]\n    D2 --> D3[\"AI基于研究生成设计\"]\n    D3 --> D4[\"标记任何偏离研究的地方\"]\n    D4 --> D5[\"人类最终批准\"]\n    D5 --> D6[\"部署到产品\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"需求：金融App用户Onboarding\"] --> A2[\"接入MOBINCP（60万+真实UI）\"]\n    A2 --> A3[\"使用MOBIMCP搜索金融App\"]\n    A3 --> A4[\"生成可视化报告\"]\n    A4 --> A5[\"提炼常见模式与盲点\"]\n    A5 --> A6[\"在Paper CP中基于报告设计Onboarding\"]\n    A6 --> A7[\"标记偏离研究的设计点\"]\n    A7 --> A8[\"完成设计并输出\"]"
+        },
+        {
+          "title": "研究流程细节",
+          "code": "flowchart TD\n    B1[\"在MOBIMCP搜索顶级金融/银行App\"] --> B2[\"提取Onboarding与开户流程\"]\n    B2 --> B3[\"对比不同产品模式\"]\n    B3 --> B4[\"发现行业特有需求（身份验证合规）\"]\n    B4 --> B5[\"生成报告列出案例、最佳实践\"]\n    B5 --> B6[\"可跳转至MOBIN查找相似界面\"]"
+        },
+        {
+          "title": "设计决策路径",
+          "code": "flowchart TD\n    C1[\"常见模式与取舍点\"] --> C2[\"安全优惠引导放置位置决策\"]\n    C2 --> C3[\"放在Onboarding完成后的首页\"]\n    C3 --> C4[\"参考已有App奖励放首页\"]\n    C4 --> C5[\"确定引导位置\"]\n    C5 --> C6[\"在设计系统中实现\"]"
+        },
+        {
+          "title": "人机协作流程",
+          "code": "flowchart TD\n    D1[\"AI进行案例研究\"] --> D2[\"人类审查研究来源与盲点\"]\n    D2 --> D3[\"AI基于研究生成设计\"]\n    D3 --> D4[\"标记任何偏离研究的地方\"]\n    D4 --> D5[\"人类最终批准\"]\n    D5 --> D6[\"部署到产品\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T19:22:31+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 金融App用户Onboarding设计知识图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"需求：金融App用户Onboarding\"] --> A2[\"接入MOBINCP（60万+真实UI）\"]\n    A2 --> A3[\"使用MOBIMCP搜索金融App\"]\n    A3 --> A4[\"生成可视化报告\"]\n    A4 --> A5[\"提炼常见模式与盲点\"]\n    A5 --> A6[\"在Paper CP中基于报告设计Onboarding\"]\n    A6 --> A7[\"标记偏离研究的设计点\"]\n    A7 --> A8[\"完成设计并输出\"]\n```\n\n## 研究流程细节\n```mermaid\nflowchart TD\n    B1[\"在MOBIMCP搜索顶级金融/银行App\"] --> B2[\"提取Onboarding与开户流程\"]\n    B2 --> B3[\"对比不同产品模式\"]\n    B3 --> B4[\"发现行业特有需求（身份验证合规）\"]\n    B4 --> B5[\"生成报告列出案例、最佳实践\"]\n    B5 --> B6[\"可跳转至MOBIN查找相似界面\"]\n```\n\n## 设计决策路径\n```mermaid\nflowchart TD\n    C1[\"常见模式与取舍点\"] --> C2[\"安全优惠引导放置位置决策\"]\n    C2 --> C3[\"放在Onboarding完成后的首页\"]\n    C3 --> C4[\"参考已有App奖励放首页\"]\n    C4 --> C5[\"确定引导位置\"]\n    C5 --> C6[\"在设计系统中实现\"]\n```\n\n## 人机协作流程\n```mermaid\nflowchart TD\n    D1[\"AI进行案例研究\"] --> D2[\"人类审查研究来源与盲点\"]\n    D2 --> D3[\"AI基于研究生成设计\"]\n    D3 --> D4[\"标记任何偏离研究的地方\"]\n    D4 --> D5[\"人类最终批准\"]\n    D5 --> D6[\"部署到产品\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"需求：金融App用户Onboarding\"] --> A2[\"接入MOBINCP（60万+真实UI）\"]\n    A2 --> A3[\"使用MOBIMCP搜索金融App\"]\n    A3 --> A4[\"生成可视化报告\"]\n    A4 --> A5[\"提炼常见模式与盲点\"]\n    A5 --> A6[\"在Paper CP中基于报告设计Onboarding\"]\n    A6 --> A7[\"标记偏离研究的设计点\"]\n    A7 --> A8[\"完成设计并输出\"]"
+    },
+    {
+      "title": "研究流程细节",
+      "code": "flowchart TD\n    B1[\"在MOBIMCP搜索顶级金融/银行App\"] --> B2[\"提取Onboarding与开户流程\"]\n    B2 --> B3[\"对比不同产品模式\"]\n    B3 --> B4[\"发现行业特有需求（身份验证合规）\"]\n    B4 --> B5[\"生成报告列出案例、最佳实践\"]\n    B5 --> B6[\"可跳转至MOBIN查找相似界面\"]"
+    },
+    {
+      "title": "设计决策路径",
+      "code": "flowchart TD\n    C1[\"常见模式与取舍点\"] --> C2[\"安全优惠引导放置位置决策\"]\n    C2 --> C3[\"放在Onboarding完成后的首页\"]\n    C3 --> C4[\"参考已有App奖励放首页\"]\n    C4 --> C5[\"确定引导位置\"]\n    C5 --> C6[\"在设计系统中实现\"]"
+    },
+    {
+      "title": "人机协作流程",
+      "code": "flowchart TD\n    D1[\"AI进行案例研究\"] --> D2[\"人类审查研究来源与盲点\"]\n    D2 --> D3[\"AI基于研究生成设计\"]\n    D3 --> D4[\"标记任何偏离研究的地方\"]\n    D4 --> D5[\"人类最终批准\"]\n    D5 --> D6[\"部署到产品\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:22:31+00:00"
+}

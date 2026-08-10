@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1sQ3964E5v",
+  "title": "DeepSeek 官方代码 Agent 来了？ReasonX 终结 Claude Code/Codex 优势",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3601,
+  "text": "大家好\n欢迎来到新一期视频\n过去几期里\n我们一直在聊deep sekv4flash\n先是0731更新\n大幅增强了他的agent能力\n然后又聊了怎么通过command code低成本使用它\n但deep sick的故事里一直少了最关键的一块\n那就是一个正儿八经的官方coding agent\nAnthropic\n有cloud code\nOpen ai\n有codex\ngoogle也有自己的工具\n而deep sick用户一直只能把API接到第三方工具里\n比如client open code\nkilo或command code\n然后祈祷这些工具和模型能配合顺利\n现在这个差距基本已经被抹平了\n因为deep sick的官方API文档里\n已经专门为一个叫RONX的工具做了集成页面\n而且这算是deep seek迄今为止\n针对coding agent最正式的一次集成\n所以我们来聊聊它是什么\n怎么用以及怎么设置\n但在那之前先说说今天的赞助商of skill\n几周前\nANTHROPIC做了一件\n没有哪家AI公司愿意做的事\n他们把自己的一款模型从全网下架了\n全球范围内还是一夜之间\n这款模型叫cloud fable5\n他太强了吗\n两周半后禁令被解除\nfable5重新上线\n而且比之前更强了一个模型\n如果被封了又重新解禁\n那说明他真的很有分量\n这正是plug现在拥有的力量\n说实话\n大多数人只用了他1%\n所以OSKILL这个周末会办一场免费的两天\nAi clock\nHX算时间是东部时间早上十点到晚上七点\n这会深入讲cloud模型\n还有十多个其他AI工具\n这活动平时是收费的\n但通过我的链接\n报名前1000名可以100%免费入场\n全球已经有超过1000万个人参加过这套训练\n两天后你就能用cloud做深度研究\n搭建artifacts和dashboards\n做完整的演示文稿\n还能设置自动化连接器\n把那些枯燥的事都自动化\n连找工作都能用上\n如果你参加\n还能解锁价值超过5100美元的奖励\n如果你对云计算哪怕有一点认真\n这场活动都别错过\n通过简介区和置顶评论里的链接\n领你的免费席位\n好了\n回到视频\n那先说remix是什么\nremix是一个原生支持DC的编码agent\n运行在终端里\n重点就在原生支持DC\n它不是那种多平台工具\n只是在一长串模型下拉菜单里\n把deep seek当成一个选项\nRENE直接对接API点DC点com\n中间没有任何转换层\n没有open air兼容层\n没有ADAPTOR\n也没有proxy\n整个agent的设计\n都是围绕deep c API的实际行为来做的\n先把官方这部分说清楚\n因为我想实话实说\nRESNE本身不是deep se做的\n它是一个开源项目\n由GITHUB上的sn en维护\n他用的是MIT许可证\n是社区开发的\n目前大概有4600多个stars\n这个仓库本身也没有声称\n得到了deep sea的官方背书\n但重点来了\nDeep sick\n现在已经把RESNE直接放进了\n他们的官方API文档里\n在agent integration下面还有自己的快速开始页面\nDPC通常不会特意给一些随便的工具\n写这些东西\n他们的文档整体都很简略\n所以当官方自己在说明怎么用这个特定的agent\n配合他们的API\n还把安装步骤和命令都写的很完整时\n这基本就是迄今为止\n最接近官方DPC编程agent的东西了\n这有点像GLM和他们的coding方案\n那次某些harness得到了实验室官方的认可\n实验室亲自选你的工具本身就是一种背书\n而且你看RISINESS的架构\n就能明白为什么DEPC会选它\n因为整个设计和deep sick的API工作方式\n完全对得上\nREMI里还提到了三大支柱\n第一个是缓存优先循环\n整个agent循环会尽量保持prompt前缀的字节稳定\n这样deep seek的prefix cash就能一轮又一轮的命中\n我们在command code的视频里讲过这个\n第二个支柱是工具调用修复\n当模型生成的工具调用有点格式不对时\nRECLAX不会直接让这轮失败\n而是会把它修好\n如果你还记得command co在集成V40731时\n强调的正是这一点\n开源模型有时会把工具调用搞砸\n而一个能在运行时顺手修正它们的框架\n能让同一个模型表现出可靠的多的agent行为\n第三个支柱是成本控制\n默认情况下reason x运行在deep seek v4flash上\n0731更新之后\n他说实话已经是个很强的默认选择了\n等你真的遇到难题时\n只要输入反斜杠slash pro\n它就只在下一轮调用deep sk v4pro\n然后再切回flash\n如果你想整个绘画都用pro\n就运行反斜杠slash reset max\n这样一来昂贵的模型虽然一步命令就能切换到\n但你不会为了每个简单的文件修改\n都付pro的价格\n这种先闪现再处理的方式\n正是我上个视频里推荐的工作流\n只不过这次是直接内置在agent里\n现在我们来设置一下\n因为这真的是我见过最简单的配置之一\n首先你需要note desec\n官方文档写的是note二十十级以上\n而GITHUB的REMI要求note22\n所以装一个新一点的node版本就行\nwindows用户还需要安装git for windows\n然后去DPC平台拿你的APIK\n接着你只要进入项目文件夹\n运行np x reason xcode就可以了\n就这么简单\n不需要全局安装\n也不用配环境变量\n第一次运行时会打开一个内置配置向导\n要求你输入APIK\n然后把它存到你主目录下的REONXCONFIG\nJSON里\n如果你想正常安装\n也可以先运行npm install g reason x\n然后在项目里直接运行reason x code\n另外还有reon ex chat\n可以只聊天不访问文件系统\nReason x run\n后面接引号里的任务就能执行一次性命令\nreason x a date可以自我升级\n在会话里help会显示完整的命令参考\n从功能上看\n这东西作为一个社区项目\n完成度意外的高\n他的编辑是以搜索替换提案的形式进行的\n你可以先看再用apply批准\n这样agent不会悄悄改写你的文件\n他还有plane模式\n先想再做\n而且每个workspace都有持久会话\n你离开向后回来还能接着上次的进度继续\n它还支持通过STDOSC和HTTP接入MCP\n所以你可以接外部工具\n这里有个scale系统\n你可以用skill moon创建基于markdown的skill\n它们可以以内连方式运行\n也可以作为子代理运行\n还有一个memory系统\n包含用户项目反馈和参考这几种记忆类型\n另外还支持shell命令的生命周期hos\n以及按workspace作用域控制权限\n它甚至有些大工具没有的功能\n比如内置网页搜索\n可以通过magic csng或medicine来用\n还有语义代码索引\n可以通过本地OEM模型\n或者任何兼容OPENAI的end point运行\n另外还有一个基于ta的预发布桌面客户端\n支持多标签页\n而且在一个非常中国式的生态里\n他们还接了QQ消息集成\n你甚至可以直接用qq connect把会话连起来\n远程通过QQ跟你的编码agent聊天\n说实话\n这个设计让我会心一笑\n我先说明一点\nreason x不是什么项目里明确写了非目标清单\n他从设计上就是只支持DPC\n不支持多厂商\n不支持id集成\n也不支持断网环境\n官方把这当成优势\n不当成限制\n因为只绑定一个后端\n才能这么激进的做BT稳定缓存和to call修复\n但这也意味着\n它不是给所有人用来替代plot lot code的\n如果你想要一个能在十家服务商之间\n来回切换的工具\n那他不是\n这是给那些已经决定把desk当日常主力\n并且想要把它性能炸到极致的人准备的\n那它在整个大局里是什么位置呢\n在我看来\n这就是deep seek在悄悄把整套技术站补齐\n先是0731更新\n把V4flash变成了真正能做agent的模型\n然后他们又把它适配到了responses API和codex\n现在他们的官方文档已经开始\n推荐大家用一个原生的deep seagent\n默认用flash切到pro\n也只要一条命令\n它是免费的\nMIT许可用NPX2分钟就能搞定\n而且这种以先省钱为核心的设计\n确实能直接省下真金白银\n如果你想要的是方案和额度\n而不是直接付API费\n我还是建议你拿它和command code一起试试\n但如果是纯粹的DIPC方案\n现在最值得关注的就是他\n总的来说他挺不错的\n顺便也欢迎在评论区告诉我你的想法\n如果你喜欢这期视频\n可以通过super thanks打赏或者点装按钮加入会员\n另外给这个视频点个赞\n再订阅我的频道\n我们下期见\n在那之前拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1sQ3964E5v",
+  "published_at": "1785670399",
+  "fetched_at": "2026-08-08T21:39:57+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T21:56:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T21:56:59+00:00"
+}

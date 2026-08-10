@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1tpub6pEqF",
+  "title": "gpt-5.6-sol  太耗 token，来试试这套组合，实测效果不错，解决 token 焦虑！",
+  "status": "ok",
+  "language": "zh",
+  "chars": 2159,
+  "text": "小伙伴们你们好\n欢迎来到三少科技\n跟着三少科技一起玩转AI编程\n最近网上有一个说法\n说是让gpt-5.6-sol\n然后呢指挥gpt-5.6-luna max\n这个模型来写代码\n可以做到一个无限子弹的一个效果\n刚好我最近呢做了一个测试\n也就是测试这几个模型\n他们去开发同样一个任务\n得出来的一个效果\n我们可以看到gpt-5.6-luna max\n这个表现还是不错的\n它排在中等的这个位置\n它是比这个gpt-5.4-mini还有\n这个gpt-5.5 xhigh的效果还要好\n可以看到这5个就是\n当时同一份提示词\n做出的一个效果\n它这里面完成的效果最好的\n其实就是这个gpt-5.6-sol\n还有gpt-5.6-terra\n这两个的一个效果\n完成度最高的\n其实就是gpt-5.6-sol\nultra的思考模式\n可以看到这个就是它的一个效果\n做出来的应用\n我感觉可以达到这个\n初级交付的一个标准\n但是的话\n实在是太耗TOKEN了\n像我目前也经常等着Openai的tibo\n去重置这个每周的使用量\n但是目前已经等了4天了\n还没看到这个重置\n所以说按照这样的趋势\n那么以后可能重置\n不会经常有\n所以说我们还是要想办法去\n降低我们的一个TOKEN的消耗\n降低TOKEN最有效的方法\n那肯定是使用gpt-5.6-luna这个模型\n毕竟它最近\n降价了80%\n当然我觉得\n在实际的应用情况中\n我们不一定非要使用这个Luna\n其实我们可以\n让gpt-5.6-sol 去多设置几个子代理\n如果说低级的模型完成不了\n叫他使用中级的\n中级的再完成不了\n再让他使用这个高级的\n这样的话\n可能可以让我们的Codex订阅\n更加的耐用\n要不然按照我目前的一个消耗\n它的一个周用量\n基本上我就两天就把它跑完了\n还是我单窗口的情况下\n如果说我跑多个窗口\n估计一天就把它消耗完了\n所以说这个也是我迫切的一个需求\n这里呢\n就是我上次用这几个模型去开发的\n同样一个app的提示词\n提示词是比较详细的\n意思就是让他开发一个效率管理的APP\n来帮助用户管理每日任务\n提高这个工作效率\n并且通过数据统计\n帮助用户了解自己的完成情况\n当时这几个\n模型完成的一个效果\n大概就是这样的\n这里面是需求\n跟模型的一个实际的交付\n其中最好的不用说\n就是这个gpt-5.6-sol\nultra的思考模式\n所以说本次视频我们同样的提示词\n也让gpt-5.6-sol\n来指挥一下Luna\n看一下它的一个效果是怎么样的\n想使用它也很简单\n大家可以跟着我的\n方法一起来操作一下\n首先我们点击设置\n配置这里\n把这个可用\n推理强度里面这个最高\n也就是代表着Max\n把它勾上\n勾上之后\n勾上之后\n首先我们给他一段这个提示词\n也就是在Codex目录下的agents\n里面创建一个配置文件\n主要是\n把这两项给它选择上\n当然这个配置其实还有很多选择的项\n大家可以用Kimi去搜索一下\n像比如有些参数\n子代理里面还可以再嵌套这个子代理\n包括给他使用哪些工具\n或者是这个沙箱等等\n应该都是可以配置的\n我们这里呢\n先让他把这个配置给配置好\n然后呢\n我们准备第7个版本的这个提示词\n提示词也是一模一样\n目前\n那他已经配置好了\n可以看到它是这样的一个配置\n然后呢我们重启一下Codecs\n我们告诉他等一下\n给你一个任务\n你来做指挥\n为Luna work来进行工作\n再接着我们把这个提示词发给他\n然后呢他就会作为这个总控\n来指挥luna来进行一个工作\n目前呢这里他已经完成了\n我们可以看到右边这\n个子代理这里这里\n这里确实选择的是\nLuna最高的这个思考模式\n然后呢总共他写代码是运行了\n将近19分钟\n并且启动这些都通过\n都可以一次性构建成功\n然后它运行了19分钟\n然后gpt-5.6-sol\n总共呢就运行了31分钟\n也就是减掉这19分钟\n他作为这个总指挥\n他还负责了一些这个代码审查\n实际编译\n运行验证和修复的工作\n我的感觉\n是他进行的这个工作是不是有点多\n毕竟他运行了11多分钟\n消耗的TOKEN也不少\n下次的话应该感觉让\n他多派几个智能体\n去把其他一些\n比如像这个代码审查\n实际编译\n和修复这些工作\n也去承担了\n要不然他整个运作过程\n我感觉还是挺多的\n包括他去控制电脑去查看这些图像\n然后这个就是他做出来的一个APP\n这APP的效果\n它的一个完成度\n我觉得还是非常不错的\n相对来说我感觉这个UI界面\n这些要差一点点\n没有做成这个中文\n其他的话\n比如像这个图标\n他也给我们配置上了\n像其他很多模型的话\n它是没有配置这个图标的\n那我用另外一个AI\n来给他打分\n也就是我们\n按照前面的这个打分标准\n他给出了一个评价\n是完成度比较高\n可以给到这个85分的一个效果\n已经是属于精装修的MVP\n综合表现和c同一档次\n仅次于b\n也就是它达到了\ngpt-5.6-terra\n完成的一个效果\n能拿到这个分数\n我感觉还是非常不错的\n后面的话可能我们优化一下流程\n给他多配备一些子代理\n让他多进行一些工作\n应该来说这个完成度会更高\n所以说感兴趣的\n小伙伴不妨去研究一下\n看看怎么样来指挥合适的这个子代理\n来做到节省TOKEN的一个费用\n好了以上呢就是本期视频的一个分享\n非常感谢大家的一个收看\n如果说喜欢我的视频\n记得点赞加关注再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1tpub6pEqF",
+  "published_at": "1786090236",
+  "fetched_at": "2026-08-09T02:55:15+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GPT‑5.6 系列模型实测与优化图谱\n\n## 模型性能总览\n```mermaid\nflowchart TD\n    M1[\"gpt-5.6-sol<br/>ultra 思考模式\"] -->|最高完成度| PERF[\"最佳效果\"]\n    M2[\"gpt-5.6-luna max\"] -->|中等表现| PERF\n    M3[\"gpt-5.6-terra\"] -->|次佳完成度| PERF\n    M4[\"gpt-5.5 xhigh\"] -->|略低于 terra| MID[\"中等效果\"]\n    M5[\"gpt-5.4 mini\"] -->|最低效果| LOW[\"低效果\"]\n    M2 -->|近期降价 80%| COST[\"成本下降\"]\n    M1 -->|TOKEN 消耗大| TOKEN[\"高 TOKEN 用量\"]\n    M2 -->|相对省 TOKEN| TOKEN\n    PERF -->|适用于高要求任务| TASK[\"复杂代码生成\"]\n    MID -->|适用于一般任务| TASK\n    LOW -->|不推荐用于关键任务| TASK\n```\n\n## 降低 TOKEN 消耗的层级代理策略\n```mermaid\nflowchart LR\n    A[\"高 TOKEN 消耗\"] --> B[\"需求降低\"]\n    B --> C[\"使用 gpt-5.6-luna (成本低)\"]\n    B --> D[\"使用 gpt-5.6-sol + 子代理\"]\n    D --> E[\"低级模型完成不了\"]\n    E --> F[\"转交中级模型\"]\n    F --> G[\"中级模型仍未完成\"]\n    G --> H[\"转交高级模型\"]\n    H --> I[\"任务完成\"]\n    I --> J[\"延长订阅使用时长\"]\n    C --> J\n    style A fill:#f9c,stroke:#333,stroke-width:2px\n    style J fill:#9f9,stroke:#333,stroke-width:2px\n```\n\n## SOL 指挥 Luna 的配置与执行流程\n```mermaid\nflowchart TD\n    S1[\"打开设置\"] --> S2[\"推理强度设为 Max\"]\n    S2 --> S3[\"在 Codex/agents 创建配置文件\"]\n    S3 --> S4[\"勾选可用子代理 & 工具\"]\n    S4 --> S5[\"准备第 7 版提示词\"]\n    S5 --> S6[\"重启 Codex\"]\n    S6 --> S7[\"向 SOL 发送任务指令\"]\n    S7 --> S8[\"SOL 成为总指挥\"]\n    S8 --> S9[\"指挥 Luna 执行工作\"]\n    S9 --> S10[\"Luna 运行 19 分钟完成代码\"]\n    S10 --> S11[\"整体流程 31 分钟（含审查、编译）\"]\n    S11 --> S12[\"生成效率管理 APP\"]\n    style S8 fill:#ff9,stroke:#333,stroke-width:2px\n    style S12 fill:#9cf,stroke:#333,stroke-width:2px\n```\n\n## 结果评估与改进方向\n```mermaid\nflowchart TD\n    E1[\"评估 AI 评分\"] --> E2[\"完成度高\"]\n    E2 --> E3[\"得分 85 分\"]\n    E3 --> E4[\"定位为精装修 MVP\"]\n    E4 --> E5[\"与 gpt-5.6-terra 效果相当\"]\n    E5 --> E6[\"UI 略逊（中文、图标缺失）\"]\n    E6 --> E7[\"建议：增加子代理承担审查、编译、修复\"]\n    E7 --> E8[\"提升完成度与 UI 质量\"]\n    style E1 fill:#cfc,stroke:#333,stroke-width:2px\n    style E8 fill:#fc9,stroke:#333,stroke-width:2px\n```",
+      "diagrams": [
+        {
+          "title": "模型性能总览",
+          "code": "flowchart TD\n    M1[\"gpt-5.6-sol<br/>ultra 思考模式\"] -->|最高完成度| PERF[\"最佳效果\"]\n    M2[\"gpt-5.6-luna max\"] -->|中等表现| PERF\n    M3[\"gpt-5.6-terra\"] -->|次佳完成度| PERF\n    M4[\"gpt-5.5 xhigh\"] -->|略低于 terra| MID[\"中等效果\"]\n    M5[\"gpt-5.4 mini\"] -->|最低效果| LOW[\"低效果\"]\n    M2 -->|近期降价 80%| COST[\"成本下降\"]\n    M1 -->|TOKEN 消耗大| TOKEN[\"高 TOKEN 用量\"]\n    M2 -->|相对省 TOKEN| TOKEN\n    PERF -->|适用于高要求任务| TASK[\"复杂代码生成\"]\n    MID -->|适用于一般任务| TASK\n    LOW -->|不推荐用于关键任务| TASK"
+        },
+        {
+          "title": "降低 TOKEN 消耗的层级代理策略",
+          "code": "flowchart LR\n    A[\"高 TOKEN 消耗\"] --> B[\"需求降低\"]\n    B --> C[\"使用 gpt-5.6-luna (成本低)\"]\n    B --> D[\"使用 gpt-5.6-sol + 子代理\"]\n    D --> E[\"低级模型完成不了\"]\n    E --> F[\"转交中级模型\"]\n    F --> G[\"中级模型仍未完成\"]\n    G --> H[\"转交高级模型\"]\n    H --> I[\"任务完成\"]\n    I --> J[\"延长订阅使用时长\"]\n    C --> J\n    style A fill:#f9c,stroke:#333,stroke-width:2px\n    style J fill:#9f9,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "SOL 指挥 Luna 的配置与执行流程",
+          "code": "flowchart TD\n    S1[\"打开设置\"] --> S2[\"推理强度设为 Max\"]\n    S2 --> S3[\"在 Codex/agents 创建配置文件\"]\n    S3 --> S4[\"勾选可用子代理 & 工具\"]\n    S4 --> S5[\"准备第 7 版提示词\"]\n    S5 --> S6[\"重启 Codex\"]\n    S6 --> S7[\"向 SOL 发送任务指令\"]\n    S7 --> S8[\"SOL 成为总指挥\"]\n    S8 --> S9[\"指挥 Luna 执行工作\"]\n    S9 --> S10[\"Luna 运行 19 分钟完成代码\"]\n    S10 --> S11[\"整体流程 31 分钟（含审查、编译）\"]\n    S11 --> S12[\"生成效率管理 APP\"]\n    style S8 fill:#ff9,stroke:#333,stroke-width:2px\n    style S12 fill:#9cf,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "结果评估与改进方向",
+          "code": "flowchart TD\n    E1[\"评估 AI 评分\"] --> E2[\"完成度高\"]\n    E2 --> E3[\"得分 85 分\"]\n    E3 --> E4[\"定位为精装修 MVP\"]\n    E4 --> E5[\"与 gpt-5.6-terra 效果相当\"]\n    E5 --> E6[\"UI 略逊（中文、图标缺失）\"]\n    E6 --> E7[\"建议：增加子代理承担审查、编译、修复\"]\n    E7 --> E8[\"提升完成度与 UI 质量\"]\n    style E1 fill:#cfc,stroke:#333,stroke-width:2px\n    style E8 fill:#fc9,stroke:#333,stroke-width:2px"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T02:55:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GPT‑5.6 系列模型实测与优化图谱\n\n## 模型性能总览\n```mermaid\nflowchart TD\n    M1[\"gpt-5.6-sol<br/>ultra 思考模式\"] -->|最高完成度| PERF[\"最佳效果\"]\n    M2[\"gpt-5.6-luna max\"] -->|中等表现| PERF\n    M3[\"gpt-5.6-terra\"] -->|次佳完成度| PERF\n    M4[\"gpt-5.5 xhigh\"] -->|略低于 terra| MID[\"中等效果\"]\n    M5[\"gpt-5.4 mini\"] -->|最低效果| LOW[\"低效果\"]\n    M2 -->|近期降价 80%| COST[\"成本下降\"]\n    M1 -->|TOKEN 消耗大| TOKEN[\"高 TOKEN 用量\"]\n    M2 -->|相对省 TOKEN| TOKEN\n    PERF -->|适用于高要求任务| TASK[\"复杂代码生成\"]\n    MID -->|适用于一般任务| TASK\n    LOW -->|不推荐用于关键任务| TASK\n```\n\n## 降低 TOKEN 消耗的层级代理策略\n```mermaid\nflowchart LR\n    A[\"高 TOKEN 消耗\"] --> B[\"需求降低\"]\n    B --> C[\"使用 gpt-5.6-luna (成本低)\"]\n    B --> D[\"使用 gpt-5.6-sol + 子代理\"]\n    D --> E[\"低级模型完成不了\"]\n    E --> F[\"转交中级模型\"]\n    F --> G[\"中级模型仍未完成\"]\n    G --> H[\"转交高级模型\"]\n    H --> I[\"任务完成\"]\n    I --> J[\"延长订阅使用时长\"]\n    C --> J\n    style A fill:#f9c,stroke:#333,stroke-width:2px\n    style J fill:#9f9,stroke:#333,stroke-width:2px\n```\n\n## SOL 指挥 Luna 的配置与执行流程\n```mermaid\nflowchart TD\n    S1[\"打开设置\"] --> S2[\"推理强度设为 Max\"]\n    S2 --> S3[\"在 Codex/agents 创建配置文件\"]\n    S3 --> S4[\"勾选可用子代理 & 工具\"]\n    S4 --> S5[\"准备第 7 版提示词\"]\n    S5 --> S6[\"重启 Codex\"]\n    S6 --> S7[\"向 SOL 发送任务指令\"]\n    S7 --> S8[\"SOL 成为总指挥\"]\n    S8 --> S9[\"指挥 Luna 执行工作\"]\n    S9 --> S10[\"Luna 运行 19 分钟完成代码\"]\n    S10 --> S11[\"整体流程 31 分钟（含审查、编译）\"]\n    S11 --> S12[\"生成效率管理 APP\"]\n    style S8 fill:#ff9,stroke:#333,stroke-width:2px\n    style S12 fill:#9cf,stroke:#333,stroke-width:2px\n```\n\n## 结果评估与改进方向\n```mermaid\nflowchart TD\n    E1[\"评估 AI 评分\"] --> E2[\"完成度高\"]\n    E2 --> E3[\"得分 85 分\"]\n    E3 --> E4[\"定位为精装修 MVP\"]\n    E4 --> E5[\"与 gpt-5.6-terra 效果相当\"]\n    E5 --> E6[\"UI 略逊（中文、图标缺失）\"]\n    E6 --> E7[\"建议：增加子代理承担审查、编译、修复\"]\n    E7 --> E8[\"提升完成度与 UI 质量\"]\n    style E1 fill:#cfc,stroke:#333,stroke-width:2px\n    style E8 fill:#fc9,stroke:#333,stroke-width:2px\n```",
+  "diagrams": [
+    {
+      "title": "模型性能总览",
+      "code": "flowchart TD\n    M1[\"gpt-5.6-sol<br/>ultra 思考模式\"] -->|最高完成度| PERF[\"最佳效果\"]\n    M2[\"gpt-5.6-luna max\"] -->|中等表现| PERF\n    M3[\"gpt-5.6-terra\"] -->|次佳完成度| PERF\n    M4[\"gpt-5.5 xhigh\"] -->|略低于 terra| MID[\"中等效果\"]\n    M5[\"gpt-5.4 mini\"] -->|最低效果| LOW[\"低效果\"]\n    M2 -->|近期降价 80%| COST[\"成本下降\"]\n    M1 -->|TOKEN 消耗大| TOKEN[\"高 TOKEN 用量\"]\n    M2 -->|相对省 TOKEN| TOKEN\n    PERF -->|适用于高要求任务| TASK[\"复杂代码生成\"]\n    MID -->|适用于一般任务| TASK\n    LOW -->|不推荐用于关键任务| TASK"
+    },
+    {
+      "title": "降低 TOKEN 消耗的层级代理策略",
+      "code": "flowchart LR\n    A[\"高 TOKEN 消耗\"] --> B[\"需求降低\"]\n    B --> C[\"使用 gpt-5.6-luna (成本低)\"]\n    B --> D[\"使用 gpt-5.6-sol + 子代理\"]\n    D --> E[\"低级模型完成不了\"]\n    E --> F[\"转交中级模型\"]\n    F --> G[\"中级模型仍未完成\"]\n    G --> H[\"转交高级模型\"]\n    H --> I[\"任务完成\"]\n    I --> J[\"延长订阅使用时长\"]\n    C --> J\n    style A fill:#f9c,stroke:#333,stroke-width:2px\n    style J fill:#9f9,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "SOL 指挥 Luna 的配置与执行流程",
+      "code": "flowchart TD\n    S1[\"打开设置\"] --> S2[\"推理强度设为 Max\"]\n    S2 --> S3[\"在 Codex/agents 创建配置文件\"]\n    S3 --> S4[\"勾选可用子代理 & 工具\"]\n    S4 --> S5[\"准备第 7 版提示词\"]\n    S5 --> S6[\"重启 Codex\"]\n    S6 --> S7[\"向 SOL 发送任务指令\"]\n    S7 --> S8[\"SOL 成为总指挥\"]\n    S8 --> S9[\"指挥 Luna 执行工作\"]\n    S9 --> S10[\"Luna 运行 19 分钟完成代码\"]\n    S10 --> S11[\"整体流程 31 分钟（含审查、编译）\"]\n    S11 --> S12[\"生成效率管理 APP\"]\n    style S8 fill:#ff9,stroke:#333,stroke-width:2px\n    style S12 fill:#9cf,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "结果评估与改进方向",
+      "code": "flowchart TD\n    E1[\"评估 AI 评分\"] --> E2[\"完成度高\"]\n    E2 --> E3[\"得分 85 分\"]\n    E3 --> E4[\"定位为精装修 MVP\"]\n    E4 --> E5[\"与 gpt-5.6-terra 效果相当\"]\n    E5 --> E6[\"UI 略逊（中文、图标缺失）\"]\n    E6 --> E7[\"建议：增加子代理承担审查、编译、修复\"]\n    E7 --> E8[\"提升完成度与 UI 质量\"]\n    style E1 fill:#cfc,stroke:#333,stroke-width:2px\n    style E8 fill:#fc9,stroke:#333,stroke-width:2px"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T02:55:25+00:00"
+}

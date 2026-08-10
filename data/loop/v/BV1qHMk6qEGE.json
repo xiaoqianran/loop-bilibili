@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1qHMk6qEGE",
+  "title": "CE+DBG寻找基地址",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1868,
+  "text": "我看这节课我们来讲一下这个debug\n以及和这个C1的一个区别\n也不能说是区别吧\n其实啊他们两个寻址其实是一样的\n其实是一样的\n先附加下游戏啊\n那么首先我们来找一下这个血量\n我们来找一下这个血量啊\n686对吧\n然后改变一下\n那怎么不打我\n奇怪啊\n哎打了\n什么鬼啊\n改变一下血量啊\n看有什么装备能改变的命中攻击力\n然后没有一个是加血的\n没有一个是加血的经验值使用\n什么玩意啊\n嗯看一下怎么改变一下血量啊\n然后这个搞不懂啊\n搞不懂为什么这个怪不打我啊\n画个地图看一下哎\n改变了对吧\n变成了685\n再次扫描\n那么这个呢\n就是我们的一个当前血量的一个地址对吧\n我们首先你看我们这个改的话\n它是有效果的对吧\n能显示\n把这条路给他打死了\n然后一般我们C1寻子啊\nC1寻子\n其实他这里我们可以看一下他这里啊\n会给这个地址下一个断点啊\n那么滴滴过去看一下\n复制一下这个地址在这个内存区域\n给他这个区域啊\n给他转换一下类型\n四字节16进制啊\n我们可以看一下他是一个怎样的行\n执行方式对吧\n你看这个2AE我们右键看什么访问了该地址\n你看这个位置它会点开一点\n它会下一个断点\n我们可以看一下对吧\n你看他变绿了对吧\n那么变绿的情况他就给你下断点了\n所以通过诶\n嘶这个还得过滤一下\n看一下过滤在哪里啊\n然后\n没找到啊\n没找到\n然后我们把这个先给他暂停了\n给关闭取消\n然后我们点一下运行\n把这个给他脱离啊\n脱离一下先\n然后我们在这里下个断点对吧\n你看他会出来一些数据啊\n访问过这个地址的数据\n这个值的数据它都会显示在这里\n他都会把那条命令行给你显示在这里\n然后呢\n这个其实啊和这个debug是一样的\n他们都是一个调试器啊\n其实他们两个都是一样的\n功能都是一样的\n附加下游戏精彩\n这好像有点难找啊\n这里好像有那么一点点难找\n我们看一下哎呀\n直接搜索吧\n什么名字啊\nWO对吧\n哦哦OK这个\n然后我们双击这个地址\n双击这个地址对吧\n转过来可以看一下\n可以看一下啊\n看一下对吧\n你看这个位置是不是和我们这里是一样的诶\n这转哪去了\nA 1a1\n它这个地址显示A1哦\n在这里对吧\n在这个位置在这个位置啊\n在这里对吧\n这里啊你看他们两个显示的形式都是一样的啊\n都是一样的对吧\n几乎是一模一样的\n所以说他们两个调试机器调试器是相差不大的\n只有这个这个汇编代码也是有也是一样的\n然后唯一的一个缺点啊\n这个不能搜索\n不能搜索值啊\n所以说这个C1用的比较多一点\n然后面在这里下一个访问的断点\n我们来看一下四字姐\n哎呦崩掉了吗\nOK啊断断下来了对吧\n断下来了啊\n他已命中对吧\n你看他断下来的位置\n是不是和我们这个访问的数据是一样的\n你看他这个1C啊\n1C对吧\n然后面运行一遍\n他又断在一断\n在一个ex加上一个八零的位置\n然后这里也是一样的对吧\n然后这里也是一样的\n他都是加上一个八零啊\n我们断在的这个位置上面\n一行代码才是你需要找的一个地址啊对吧\n然后我们可以看这个\n我们把这个断点给他删掉啊\n断点给他删掉\n断点删除运行对吧\n你看这个ex对吧\n你看这行代码EDI来源于ex\n加上一个八零\n再加八零的位置啊\n哎我操\n这不小心按到了一个快捷键啊\n啊又笑崩了\n不小心按到了一个换快捷键啊\n你看把他都换下来了\n卧槽\n嗯游戏没有崩啊\n这条这个2D挺好用的\n然后我们继续附加\n继续附加\n我们来看一下\n嗯转到这个地址一样的\n下个断点啊\n下个断点\n运行对吧\n下个访问的一个断点\n断点访问四字节断下来之后\n我们可以看一下啊\n这里有一条数据加八零的对吧\n他这里有个加八零的\n然后我们运行一遍之后\n这里又有一个加八零的对吧\n因为它是有多个数据访访问的啊\n我们可以看一下\n我们可以看一下的\n你看这个ex加上一个八零\n它上面就是一个基地址了对吧\n基地址我们空格复制出来\nEDI来源于ex加上一个八零\n上面来源于一个基地址对吧\n你看这个基地址啊\n我们记住这两行代码\nEDI来源于ex加八零对吧\n然后把这个脱离一下\n我们用CE1来看一下ex加八零\n我们找到他刚刚那个区域可以看到啊\n这里就有对吧\nEX加上一个八零\n那么我们的第一级偏移是一个八零\n我们来扫它的一个基地址\n这个可能的值就是追的ex\n我们追这个ex可直接追到一个基地址\n为什么呢\n因为他在头部就有一个基地址啊\n所以我们把这个基粒子就直接给它扫出来了\n直接把它给扫出来\n我们可以对比一下\n可以对比一下的\n拉下来对吧\n你看都是一个4848\n还有个24对吧\n它有三个基地址啊\n两个一样的\n还有一个不同的对吧\n6868\nOK然后加上一个八零\n就是我们的一个血量对吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qHMk6qEGE",
+  "published_at": "1785918383",
+  "fetched_at": "2026-08-10T09:06:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# CE+DBG 寻找基地址 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    CE[\"Cheat Engine (CE)\"]\n    DBG[\"Debugger (DBG)\"]\n    SameAddr[\"CE 与 DBG 寻址相同\"]\n    Scan[\"扫描地址\"]\n    Breakpoint[\"设置断点\"]\n    BaseAddr[\"获取基地址\"]\n    LimDBG[\"DBG 不能搜索数值\"]\n    PrefCE[\"CE 更常用\"]\n    FuncSame[\"功能相同\"]\n    Diff[\"唯一缺点: 不能搜索值\"]\n    Attach[\"附加游戏进程\"]\n    FindHP[\"定位当前血量地址\"]\n    CopyAddr[\"复制地址\"]\n    Convert[\"转换为四字节十六进制\"]\n    Filter[\"过滤结果\"]\n    Observe[\"观察访问数据\"]\n    IdentifyBase[\"识别基地址\"]\n    UseEx[\"使用 EX + 0x80 计算基址\"]\n\n    CE --> SameAddr\n    DBG --> SameAddr\n    SameAddr --> FuncSame\n    CE --> Scan\n    DBG --> Scan\n    Scan --> Breakpoint\n    Breakpoint --> BaseAddr\n    BaseAddr --> IdentifyBase\n    IdentifyBase --> UseEx\n    CE --> LimDBG\n    LimDBG --> Diff\n    Diff --> PrefCE\n    Attach --> FindHP\n    FindHP --> CopyAddr\n    CopyAddr --> Convert\n    Convert --> Filter\n    Filter --> Observe\n    Observe --> IdentifyBase\n```\n\n## 寻址流程\n```mermaid\nflowchart TD\n    Start[\"开始：附加游戏进程\"]\n    ScanHP[\"扫描血量数值 (686 → 685)\"]\n    ModifyHP[\"修改血量数值验证\"]\n    Verify[\"确认修改有效\"]\n    SetBP[\"在血量地址设置断点\"]\n    Run[\"运行游戏触发断点\"]\n    AccessData[\"记录访问该地址的指令\"]\n    IdentifyEX[\"定位 EX 寄存器来源\"]\n    CalcBase[\"计算基地址：EDI = EX + 0x80\"]\n    CopyBase[\"复制基地址\"]\n    End[\"结束：得到基地址\"]\n\n    Start --> ScanHP --> ModifyHP --> Verify --> SetBP --> Run --> AccessData --> IdentifyEX --> CalcBase --> CopyBase --> End\n```\n\n## CE 与 DBG 对比\n```mermaid\nflowchart TD\n    CE[\"Cheat Engine (CE)\"]\n    DBG[\"Debugger (DBG)\"]\n    FuncSame[\"功能相同：调试/寻址\"]\n    SearchVal[\"可搜索数值\"]\n    NoSearch[\"不能搜索数值\"]\n    C1Mode[\"C1 模式（CE）\"]\n    Preference[\"C1 使用更广\"]\n\n    CE --> FuncSame\n    DBG --> FuncSame\n    CE --> SearchVal\n    DBG --> NoSearch\n    NoSearch --> Preference\n    SearchVal --> C1Mode\n    C1Mode --> Preference\n```\n\n## 基地址计算关系\n```mermaid\nflowchart TD\n    AddrHP[\"血量地址\"]\n    EXReg[\"EX 寄存器\"]\n    Offset80[\"偏移 0x80\"]\n    EDIReg[\"EDI 寄存器\"]\n    BaseAddr[\"基地址\"]\n    Calc[\"EDI = EX + 0x80\"]\n    BP[\"断点触发访问\"]\n    DataAccess[\"访问数据记录\"]\n\n    AddrHP --> BP\n    BP --> DataAccess\n    DataAccess --> EXReg\n    EXReg --> Calc\n    Offset80 --> Calc\n    Calc --> EDIReg\n    EDIReg --> BaseAddr\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    CE[\"Cheat Engine (CE)\"]\n    DBG[\"Debugger (DBG)\"]\n    SameAddr[\"CE 与 DBG 寻址相同\"]\n    Scan[\"扫描地址\"]\n    Breakpoint[\"设置断点\"]\n    BaseAddr[\"获取基地址\"]\n    LimDBG[\"DBG 不能搜索数值\"]\n    PrefCE[\"CE 更常用\"]\n    FuncSame[\"功能相同\"]\n    Diff[\"唯一缺点: 不能搜索值\"]\n    Attach[\"附加游戏进程\"]\n    FindHP[\"定位当前血量地址\"]\n    CopyAddr[\"复制地址\"]\n    Convert[\"转换为四字节十六进制\"]\n    Filter[\"过滤结果\"]\n    Observe[\"观察访问数据\"]\n    IdentifyBase[\"识别基地址\"]\n    UseEx[\"使用 EX + 0x80 计算基址\"]\n\n    CE --> SameAddr\n    DBG --> SameAddr\n    SameAddr --> FuncSame\n    CE --> Scan\n    DBG --> Scan\n    Scan --> Breakpoint\n    Breakpoint --> BaseAddr\n    BaseAddr --> IdentifyBase\n    IdentifyBase --> UseEx\n    CE --> LimDBG\n    LimDBG --> Diff\n    Diff --> PrefCE\n    Attach --> FindHP\n    FindHP --> CopyAddr\n    CopyAddr --> Convert\n    Convert --> Filter\n    Filter --> Observe\n    Observe --> IdentifyBase"
+        },
+        {
+          "title": "寻址流程",
+          "code": "flowchart TD\n    Start[\"开始：附加游戏进程\"]\n    ScanHP[\"扫描血量数值 (686 → 685)\"]\n    ModifyHP[\"修改血量数值验证\"]\n    Verify[\"确认修改有效\"]\n    SetBP[\"在血量地址设置断点\"]\n    Run[\"运行游戏触发断点\"]\n    AccessData[\"记录访问该地址的指令\"]\n    IdentifyEX[\"定位 EX 寄存器来源\"]\n    CalcBase[\"计算基地址：EDI = EX + 0x80\"]\n    CopyBase[\"复制基地址\"]\n    End[\"结束：得到基地址\"]\n\n    Start --> ScanHP --> ModifyHP --> Verify --> SetBP --> Run --> AccessData --> IdentifyEX --> CalcBase --> CopyBase --> End"
+        },
+        {
+          "title": "CE 与 DBG 对比",
+          "code": "flowchart TD\n    CE[\"Cheat Engine (CE)\"]\n    DBG[\"Debugger (DBG)\"]\n    FuncSame[\"功能相同：调试/寻址\"]\n    SearchVal[\"可搜索数值\"]\n    NoSearch[\"不能搜索数值\"]\n    C1Mode[\"C1 模式（CE）\"]\n    Preference[\"C1 使用更广\"]\n\n    CE --> FuncSame\n    DBG --> FuncSame\n    CE --> SearchVal\n    DBG --> NoSearch\n    NoSearch --> Preference\n    SearchVal --> C1Mode\n    C1Mode --> Preference"
+        },
+        {
+          "title": "基地址计算关系",
+          "code": "flowchart TD\n    AddrHP[\"血量地址\"]\n    EXReg[\"EX 寄存器\"]\n    Offset80[\"偏移 0x80\"]\n    EDIReg[\"EDI 寄存器\"]\n    BaseAddr[\"基地址\"]\n    Calc[\"EDI = EX + 0x80\"]\n    BP[\"断点触发访问\"]\n    DataAccess[\"访问数据记录\"]\n\n    AddrHP --> BP\n    BP --> DataAccess\n    DataAccess --> EXReg\n    EXReg --> Calc\n    Offset80 --> Calc\n    Calc --> EDIReg\n    EDIReg --> BaseAddr"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T09:06:14+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# CE+DBG 寻找基地址 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    CE[\"Cheat Engine (CE)\"]\n    DBG[\"Debugger (DBG)\"]\n    SameAddr[\"CE 与 DBG 寻址相同\"]\n    Scan[\"扫描地址\"]\n    Breakpoint[\"设置断点\"]\n    BaseAddr[\"获取基地址\"]\n    LimDBG[\"DBG 不能搜索数值\"]\n    PrefCE[\"CE 更常用\"]\n    FuncSame[\"功能相同\"]\n    Diff[\"唯一缺点: 不能搜索值\"]\n    Attach[\"附加游戏进程\"]\n    FindHP[\"定位当前血量地址\"]\n    CopyAddr[\"复制地址\"]\n    Convert[\"转换为四字节十六进制\"]\n    Filter[\"过滤结果\"]\n    Observe[\"观察访问数据\"]\n    IdentifyBase[\"识别基地址\"]\n    UseEx[\"使用 EX + 0x80 计算基址\"]\n\n    CE --> SameAddr\n    DBG --> SameAddr\n    SameAddr --> FuncSame\n    CE --> Scan\n    DBG --> Scan\n    Scan --> Breakpoint\n    Breakpoint --> BaseAddr\n    BaseAddr --> IdentifyBase\n    IdentifyBase --> UseEx\n    CE --> LimDBG\n    LimDBG --> Diff\n    Diff --> PrefCE\n    Attach --> FindHP\n    FindHP --> CopyAddr\n    CopyAddr --> Convert\n    Convert --> Filter\n    Filter --> Observe\n    Observe --> IdentifyBase\n```\n\n## 寻址流程\n```mermaid\nflowchart TD\n    Start[\"开始：附加游戏进程\"]\n    ScanHP[\"扫描血量数值 (686 → 685)\"]\n    ModifyHP[\"修改血量数值验证\"]\n    Verify[\"确认修改有效\"]\n    SetBP[\"在血量地址设置断点\"]\n    Run[\"运行游戏触发断点\"]\n    AccessData[\"记录访问该地址的指令\"]\n    IdentifyEX[\"定位 EX 寄存器来源\"]\n    CalcBase[\"计算基地址：EDI = EX + 0x80\"]\n    CopyBase[\"复制基地址\"]\n    End[\"结束：得到基地址\"]\n\n    Start --> ScanHP --> ModifyHP --> Verify --> SetBP --> Run --> AccessData --> IdentifyEX --> CalcBase --> CopyBase --> End\n```\n\n## CE 与 DBG 对比\n```mermaid\nflowchart TD\n    CE[\"Cheat Engine (CE)\"]\n    DBG[\"Debugger (DBG)\"]\n    FuncSame[\"功能相同：调试/寻址\"]\n    SearchVal[\"可搜索数值\"]\n    NoSearch[\"不能搜索数值\"]\n    C1Mode[\"C1 模式（CE）\"]\n    Preference[\"C1 使用更广\"]\n\n    CE --> FuncSame\n    DBG --> FuncSame\n    CE --> SearchVal\n    DBG --> NoSearch\n    NoSearch --> Preference\n    SearchVal --> C1Mode\n    C1Mode --> Preference\n```\n\n## 基地址计算关系\n```mermaid\nflowchart TD\n    AddrHP[\"血量地址\"]\n    EXReg[\"EX 寄存器\"]\n    Offset80[\"偏移 0x80\"]\n    EDIReg[\"EDI 寄存器\"]\n    BaseAddr[\"基地址\"]\n    Calc[\"EDI = EX + 0x80\"]\n    BP[\"断点触发访问\"]\n    DataAccess[\"访问数据记录\"]\n\n    AddrHP --> BP\n    BP --> DataAccess\n    DataAccess --> EXReg\n    EXReg --> Calc\n    Offset80 --> Calc\n    Calc --> EDIReg\n    EDIReg --> BaseAddr\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    CE[\"Cheat Engine (CE)\"]\n    DBG[\"Debugger (DBG)\"]\n    SameAddr[\"CE 与 DBG 寻址相同\"]\n    Scan[\"扫描地址\"]\n    Breakpoint[\"设置断点\"]\n    BaseAddr[\"获取基地址\"]\n    LimDBG[\"DBG 不能搜索数值\"]\n    PrefCE[\"CE 更常用\"]\n    FuncSame[\"功能相同\"]\n    Diff[\"唯一缺点: 不能搜索值\"]\n    Attach[\"附加游戏进程\"]\n    FindHP[\"定位当前血量地址\"]\n    CopyAddr[\"复制地址\"]\n    Convert[\"转换为四字节十六进制\"]\n    Filter[\"过滤结果\"]\n    Observe[\"观察访问数据\"]\n    IdentifyBase[\"识别基地址\"]\n    UseEx[\"使用 EX + 0x80 计算基址\"]\n\n    CE --> SameAddr\n    DBG --> SameAddr\n    SameAddr --> FuncSame\n    CE --> Scan\n    DBG --> Scan\n    Scan --> Breakpoint\n    Breakpoint --> BaseAddr\n    BaseAddr --> IdentifyBase\n    IdentifyBase --> UseEx\n    CE --> LimDBG\n    LimDBG --> Diff\n    Diff --> PrefCE\n    Attach --> FindHP\n    FindHP --> CopyAddr\n    CopyAddr --> Convert\n    Convert --> Filter\n    Filter --> Observe\n    Observe --> IdentifyBase"
+    },
+    {
+      "title": "寻址流程",
+      "code": "flowchart TD\n    Start[\"开始：附加游戏进程\"]\n    ScanHP[\"扫描血量数值 (686 → 685)\"]\n    ModifyHP[\"修改血量数值验证\"]\n    Verify[\"确认修改有效\"]\n    SetBP[\"在血量地址设置断点\"]\n    Run[\"运行游戏触发断点\"]\n    AccessData[\"记录访问该地址的指令\"]\n    IdentifyEX[\"定位 EX 寄存器来源\"]\n    CalcBase[\"计算基地址：EDI = EX + 0x80\"]\n    CopyBase[\"复制基地址\"]\n    End[\"结束：得到基地址\"]\n\n    Start --> ScanHP --> ModifyHP --> Verify --> SetBP --> Run --> AccessData --> IdentifyEX --> CalcBase --> CopyBase --> End"
+    },
+    {
+      "title": "CE 与 DBG 对比",
+      "code": "flowchart TD\n    CE[\"Cheat Engine (CE)\"]\n    DBG[\"Debugger (DBG)\"]\n    FuncSame[\"功能相同：调试/寻址\"]\n    SearchVal[\"可搜索数值\"]\n    NoSearch[\"不能搜索数值\"]\n    C1Mode[\"C1 模式（CE）\"]\n    Preference[\"C1 使用更广\"]\n\n    CE --> FuncSame\n    DBG --> FuncSame\n    CE --> SearchVal\n    DBG --> NoSearch\n    NoSearch --> Preference\n    SearchVal --> C1Mode\n    C1Mode --> Preference"
+    },
+    {
+      "title": "基地址计算关系",
+      "code": "flowchart TD\n    AddrHP[\"血量地址\"]\n    EXReg[\"EX 寄存器\"]\n    Offset80[\"偏移 0x80\"]\n    EDIReg[\"EDI 寄存器\"]\n    BaseAddr[\"基地址\"]\n    Calc[\"EDI = EX + 0x80\"]\n    BP[\"断点触发访问\"]\n    DataAccess[\"访问数据记录\"]\n\n    AddrHP --> BP\n    BP --> DataAccess\n    DataAccess --> EXReg\n    EXReg --> Calc\n    Offset80 --> Calc\n    Calc --> EDIReg\n    EDIReg --> BaseAddr"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T09:06:14+00:00"
+}

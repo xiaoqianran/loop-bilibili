@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1kuoQB4ErM",
+  "title": "DeepseeK-V4太难用了😡美国博主破防了，模型架构存在技术壁垒，本地运行易崩溃，不建议普通家庭实验室用户现在部署，等待 GGUF 量化版本是更稳妥的选择",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3031,
+  "text": "Dz v four is out\n我已经尝试了好几个小时让这个运行起来\n我将总结到目前为止测试过的所有内容\n一些常见\n我认为大多数在频道里的观众\n正在考虑使用类似vllm的工具\n在启动过程中可能会遇到的问题\n如果你正在等待在本地环境运行\n最可能采取的行动步骤\n最快的解决途径\n存在架构上的缺失可能不会被vllm支持\n已经有相当多的人在Deep Sea的GitHub上提问\n人们正在查看能获得或预期的支持程度\n对于拥有RTX显卡的用户\n六千块墙\n这可能是\n你知道的\n如果你有两块这样的显卡\n闪存应该能装下\n没问题\n所以肯定接近成功了\n几乎到了加载完成\n阶段\n使用五十六十TIS\n两块并卸载剩余到系统内存\n但最终还是会崩溃\n我指的是所有\n所有组合尝试\n所有禁用选项\n基本上随机组合出一个配置\n但都没成功\n如果你使用强制急切执行\n应该会禁用\n大部分优化路径\n但对我都没用\n最终全部崩溃\n具体是因为当前架构缺少指令集\n我在3090显卡上测试过\n也在4090显卡上测试过\n这信息量很大\n希望能帮你节省时间\n如果你像我一样要花多个小时\n就像我一样\n我意思是\n我已经工作了好几个小时\n所以非常疲惫\n因为奥斯汀德州\n现在是凌晨八点十六分\n我心想\n新八卡机器的显存足够运行\n然后我们就会谈到这一点\n这很可能在未来短期内就会发生\n但目前我们只需在零日运行即可\n你只有零日支持\n如果你拥有数据为中心的GPU\n现在似乎没有人有零日支持，我倒是看到一个人\n呃，后续\n我无法在\nX平台上确认他们已修复了该问题（针对390s）\n因此存在可能性\n显然这应该是一个可能性\n我们将看到效率提升吗\n我们是否一定能保持相同性能水平\n当我们审视这类问题时，最大的疑问可能在于此\n这将是我的推荐方案\n大多数人获取这些的方式大概会是\n即\n我们将等待Guff\n可能需要排队等待\n或可能采用问答形式\n很可能需要较长时间来生成\n因为这些是超大型模型\n当然还有小型版本\n闪存版\n然后是旗舰级Mega版\n1.6万亿参数版\n六万亿参数\n我可能会等待Unsloth\n我的猜测是\n在这里\n我尚未看到量化工具出现\n目前尚未看到苹果用户使用的mlx工具\n现在出现了vLLM特定问题\n我浏览了相关问题\n我尝试逐一排查所有方法\n在每个独立环境中\n正如我最初开始时那样\n比如所有八块GPU\n因为我心想\n哦\n这会非常棒\n我一定能顺利运行没有任何问题\n当然它崩溃了\n并提示我架构警告，我心想\n哦\n这不太好\n现在\n我还尝试使用\n如果你愿意花时间自行调试本地设备\n通常会发布的Docker镜像\n那是预构建的\n我们将一切功能都整合在其中\n所以它可能包含\n当然最大的预期是它将运行在数据中心硬件上\n所以我尝试过确实有效\n你知道不会出现缺少转换器的问题\n比如你现在去夜版拉取它\n并要求它运行\n即使你手动更新转换器\nDocker镜像中已包含该组件\n我们其他人暂时还无法获取\n但可能很快就会到来\n当它到来时存在潜力\n但可以告诉你潜在问题不在于仅用CPU\n我也尝试过仅CPU测试\n看起来性能肯定不理想\n最可能的策略是使用卸载功能\n再次如我所说你需要\n可能需要数据中心GPU如H系列\n100B 200系列设备\n这确实主要针对此类硬件\n是否存在相关影响\n这有点有趣\n他们明确针对\n本次发布专门针对数据中心GPU\n这也是其中一部分\n我认为确实与某些效率有关\n我忘了HC相关配置\n这也是又一创新\n但另一方面\n这种进步可能以牺牲旧硬件兼容性为代价\n我还没看到H100型号\n这让我在思考\n嗯\n天啊\n不应该能在现代架构上运行吗\nBlackwell架构\n比如\n你知道的\nRTX 6000系列\n据我所读RTX 6000系列缺少某些功能\n这些功能是否全部到位\n值得探讨\n请在下方评论区告诉我\n如果你了解相关信息\n总之\n尝试了SG Lang\n两者都失败了\n尝试CPU模式\n尝试卸载策略\n尝试混合使用不同显卡\n比如\n我在各种配置中都提到过\n所以我对DeepSeek的首日体验感到沮丧\n我原本希望能运行大量\n和你们一起做些真正酷炫的事情\n但看到现在的状况\n我可以坦言必须得彻底放弃\n此刻我正要彻底放弃\n等待一些补丁发布\n因为这将是我的最佳选择\n因为我没有数据中心显卡，也不清楚是否使用DeepSeek应用\n或者是否使用DeepSI的网站\n这些信息将传到中国\n上次有些人对此感到非常震惊\n这次如果成为重大新闻\n请知晓你的信息可能传到中国\n但会有第三方提供此类服务\n这将是\n我相信本地部署和运行\n比如在美国或欧盟地区\n大概你能接触到拥有\n当然H100系列\n200系列之类的\n能够运行此模型的硬件\n我不得不说\n我仍认为这会是个优秀模型\n这个时间线简直疯狂\n我知道很多我喜欢的人\n我刚收到DeepSea项目启动的消息\n当我正在整理一篇小文章时\n讨论Quinn 27B模型\n实际上Llama Bench有新动态\n我不清楚具体情况\n但运行命令后它只会输出\n所以不知为何\n仍显示为Quinn 3.5版本\n但实际上在运行Quinn 3.6版本\n这点有点意思\n在我得知DeepSea项目出现问题后\n我心想\n天啊\n于是我直接放弃所有计划\n总之\n如果我的痛苦能帮你们少受些苦\n就让它继续吧\n如果你用多张3090显卡\n或许找能提供补丁的人\n看看他们是否愿意开源或分享\n这样大家也能体验到它确实没用\n他们的设置看起来有点复杂\n所以这不是最简单的，比如有截图\n我当时就惊呆了\n他们做了很多工作才能让它运行起来\n所以我说这可能不容易\n有人能处理文件而不\n你知道的\n写一篇详细说明他们如何成功运行的\n但或许未来三十年九十年代\n四十到九十秒\n五十到九十秒\n所有这些版本未来仍可能被支持\n但此刻我无法让它运行\n如果你能在消费级硬件上运行\n别告诉我是在H100或B2上运行的\n我不在意你在家能运行\n好的\n如果你家里有H100\n在下方评论区告诉我\n但如果你能在消费级硬件上运行\n正常\n普通的显卡\n下方评论区告诉我\n任何alpha版本也发过来\n我觉得这绝对是令人兴奋的发布\n我觉得奎恩有点剧透了\n奎恩依然表现非凡\n我能在LLM中运行奎恩\n三六在vLLM中的表现完美\n完全没有工具调用的问题\n对啊\n它的速度和性能\n尤其是全分辨率时稍慢\n比Q4版本慢很多\n但效果非常精准\n几乎完美无缺\n此刻看来\n我可能得继续等待\n大概你也一样\n告诉我你的看法\n我知道有很多人可能在想\n我本打算周末做这件事\n这可能是好事或坏事\n取决于你是否需要周末分心\n但可能是好事\n也可能是坏事\n呃\n你可能周末有空\n或者有突破性进展\n或者有人找到那些修补后的三十九文件\n那也许我们周六都会在深海里奔跑\n谁知道呢 太悲伤了\n请在下方评论区告诉我\n记得点赞订阅\n对啊\n那个视频有点令人失望\n所以我喜欢让事情运转起来\n但时不时地\n如果我也能让大家知道嘿\n你\n你会在这里碰上一堵墙\n如果你尝试的话\n你知道的\n继续磨砺 磨砺 再磨砺\n你知道我也在努力这样做\n我不想让人们浪费八小时人生\n就像我刚做的那样\n如果我能节省些时间\n有时候值得\n这也非常重要\n向所有频道成员致敬\n谢谢大家\n感谢你们为频道所做的一切\n谢谢所有的人\n我凌晨三点还在喝咖啡\n感谢一直支持我的人们\n买咖啡和爱国者\n也非常感谢\n如果你对学习如何设置软件并开始运行感兴趣\n不是针对深海\n而是其他事情\n可以在上方的视频指南中了解更多\n还可以查看下方的硬件合集了解通用AI\n希望你们今天剩下的时间愉快\n下次再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1kuoQB4ErM",
+  "published_at": "1777122619",
+  "fetched_at": "2026-08-07T15:07:17+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 本地运行知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    M[\"DeepSeek V4 模型\"] --> I[\"频繁崩溃\"]\n    I --> C[\"缺少指令集（架构限制）\"]\n    I --> V[\"vLLM 工具（不支持）\"]\n    I --> D[\"Docker 镜像（包含转换器）\"]\n    I --> CG[\"消费级 GPU（RTX 3090/4090）\"]\n    I --> DG[\"数据中心 GPU（H100/H200 等）\"]\n    C --> DG\n    C -.-> CG\n    S1[\"等待 GGUF 量化版\"] --> M\n    S2[\"使用社区补丁\"] --> M\n    G[\"GitHub Issue 社区\"] --> I\n    G --> S2\n```\n\n## 故障排查流程\n```mermaid\nflowchart TD\n    Start[\"开始尝试运行\"] --> MG[\"使用多卡 RTX 3090/4090\"]\n    MG --> Crash1[\"崩溃\"]\n    Start --> FE[\"强制急切执行\"]\n    FE --> Disable[\"禁用大部分优化路径\"]\n    Disable --> Crash2[\"崩溃\"]\n    Start --> CPU[\"仅使用 CPU\"]\n    CPU --> Perf[\"性能差\"]\n    Start --> Docker[\"使用官方 Docker 镜像\"]\n    Docker --> NoConv[\"无缺少转换器错误\"]\n    NoConv --> Crash3[\"仍然崩溃\"]\n    Crash1 --> End1[\"结论：消费级 GPU 不稳定\"]\n    Crash2 --> End1\n    Crash3 --> End1\n    End1 --> Wait[\"等待 GGUF 量化版\"]\n```\n\n## 硬件兼容性矩阵\n```mermaid\nflowchart TD\n    Instr[\"所需指令集\"] --> DC[\"数据中心 GPU（支持）\"]\n    Instr --> CC[\"消费级 GPU（不支持）\"]\n    DC --> H100[\"H100 系列\"]\n    DC --> H200[\"H200 系列\"]\n    CC --> RTX3090[\"RTX 3090\"]\n    CC --> RTX4090[\"RTX 4090\"]\n    CC --> RTX6000[\"RTX 6000 系列\"]\n    CC --> Blackwell[\"Blackwell 架构\"]\n    RTX6000 -.->?[\"功能缺失待验证\"]\n    Blackwell -.->?[\"功能完整待验证\"]\n```\n\n## 推荐决策树\n```mermaid\nflowchart TD\n    Start[\"是否具备合适硬件？\"] --> YesDC[\"拥有数据中心 GPU（H100/H200）\"]\n    Start --> NoDC[\"没有数据中心 GPU\"]\n    YesDC --> Run[\"直接运行模型\"]\n    NoDC --> HaveCons[\"拥有多块消费级 GPU（RTX 3090/4090）\"]\n    NoDC --> NoCons[\"没有多块消费级 GPU\"]\n    HaveCons --> Expect[\"预期崩溃，建议放弃\"]\n    NoCons --> Wait[\"等待 GGUF 量化版发布\"]\n    Wait --> Option[\"或关注社区补丁\"]\n    Expect --> Option\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    M[\"DeepSeek V4 模型\"] --> I[\"频繁崩溃\"]\n    I --> C[\"缺少指令集（架构限制）\"]\n    I --> V[\"vLLM 工具（不支持）\"]\n    I --> D[\"Docker 镜像（包含转换器）\"]\n    I --> CG[\"消费级 GPU（RTX 3090/4090）\"]\n    I --> DG[\"数据中心 GPU（H100/H200 等）\"]\n    C --> DG\n    C -.-> CG\n    S1[\"等待 GGUF 量化版\"] --> M\n    S2[\"使用社区补丁\"] --> M\n    G[\"GitHub Issue 社区\"] --> I\n    G --> S2"
+        },
+        {
+          "title": "故障排查流程",
+          "code": "flowchart TD\n    Start[\"开始尝试运行\"] --> MG[\"使用多卡 RTX 3090/4090\"]\n    MG --> Crash1[\"崩溃\"]\n    Start --> FE[\"强制急切执行\"]\n    FE --> Disable[\"禁用大部分优化路径\"]\n    Disable --> Crash2[\"崩溃\"]\n    Start --> CPU[\"仅使用 CPU\"]\n    CPU --> Perf[\"性能差\"]\n    Start --> Docker[\"使用官方 Docker 镜像\"]\n    Docker --> NoConv[\"无缺少转换器错误\"]\n    NoConv --> Crash3[\"仍然崩溃\"]\n    Crash1 --> End1[\"结论：消费级 GPU 不稳定\"]\n    Crash2 --> End1\n    Crash3 --> End1\n    End1 --> Wait[\"等待 GGUF 量化版\"]"
+        },
+        {
+          "title": "硬件兼容性矩阵",
+          "code": "flowchart TD\n    Instr[\"所需指令集\"] --> DC[\"数据中心 GPU（支持）\"]\n    Instr --> CC[\"消费级 GPU（不支持）\"]\n    DC --> H100[\"H100 系列\"]\n    DC --> H200[\"H200 系列\"]\n    CC --> RTX3090[\"RTX 3090\"]\n    CC --> RTX4090[\"RTX 4090\"]\n    CC --> RTX6000[\"RTX 6000 系列\"]\n    CC --> Blackwell[\"Blackwell 架构\"]\n    RTX6000 -.->?[\"功能缺失待验证\"]\n    Blackwell -.->?[\"功能完整待验证\"]"
+        },
+        {
+          "title": "推荐决策树",
+          "code": "flowchart TD\n    Start[\"是否具备合适硬件？\"] --> YesDC[\"拥有数据中心 GPU（H100/H200）\"]\n    Start --> NoDC[\"没有数据中心 GPU\"]\n    YesDC --> Run[\"直接运行模型\"]\n    NoDC --> HaveCons[\"拥有多块消费级 GPU（RTX 3090/4090）\"]\n    NoDC --> NoCons[\"没有多块消费级 GPU\"]\n    HaveCons --> Expect[\"预期崩溃，建议放弃\"]\n    NoCons --> Wait[\"等待 GGUF 量化版发布\"]\n    Wait --> Option[\"或关注社区补丁\"]\n    Expect --> Option"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T15:07:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 本地运行知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    M[\"DeepSeek V4 模型\"] --> I[\"频繁崩溃\"]\n    I --> C[\"缺少指令集（架构限制）\"]\n    I --> V[\"vLLM 工具（不支持）\"]\n    I --> D[\"Docker 镜像（包含转换器）\"]\n    I --> CG[\"消费级 GPU（RTX 3090/4090）\"]\n    I --> DG[\"数据中心 GPU（H100/H200 等）\"]\n    C --> DG\n    C -.-> CG\n    S1[\"等待 GGUF 量化版\"] --> M\n    S2[\"使用社区补丁\"] --> M\n    G[\"GitHub Issue 社区\"] --> I\n    G --> S2\n```\n\n## 故障排查流程\n```mermaid\nflowchart TD\n    Start[\"开始尝试运行\"] --> MG[\"使用多卡 RTX 3090/4090\"]\n    MG --> Crash1[\"崩溃\"]\n    Start --> FE[\"强制急切执行\"]\n    FE --> Disable[\"禁用大部分优化路径\"]\n    Disable --> Crash2[\"崩溃\"]\n    Start --> CPU[\"仅使用 CPU\"]\n    CPU --> Perf[\"性能差\"]\n    Start --> Docker[\"使用官方 Docker 镜像\"]\n    Docker --> NoConv[\"无缺少转换器错误\"]\n    NoConv --> Crash3[\"仍然崩溃\"]\n    Crash1 --> End1[\"结论：消费级 GPU 不稳定\"]\n    Crash2 --> End1\n    Crash3 --> End1\n    End1 --> Wait[\"等待 GGUF 量化版\"]\n```\n\n## 硬件兼容性矩阵\n```mermaid\nflowchart TD\n    Instr[\"所需指令集\"] --> DC[\"数据中心 GPU（支持）\"]\n    Instr --> CC[\"消费级 GPU（不支持）\"]\n    DC --> H100[\"H100 系列\"]\n    DC --> H200[\"H200 系列\"]\n    CC --> RTX3090[\"RTX 3090\"]\n    CC --> RTX4090[\"RTX 4090\"]\n    CC --> RTX6000[\"RTX 6000 系列\"]\n    CC --> Blackwell[\"Blackwell 架构\"]\n    RTX6000 -.->?[\"功能缺失待验证\"]\n    Blackwell -.->?[\"功能完整待验证\"]\n```\n\n## 推荐决策树\n```mermaid\nflowchart TD\n    Start[\"是否具备合适硬件？\"] --> YesDC[\"拥有数据中心 GPU（H100/H200）\"]\n    Start --> NoDC[\"没有数据中心 GPU\"]\n    YesDC --> Run[\"直接运行模型\"]\n    NoDC --> HaveCons[\"拥有多块消费级 GPU（RTX 3090/4090）\"]\n    NoDC --> NoCons[\"没有多块消费级 GPU\"]\n    HaveCons --> Expect[\"预期崩溃，建议放弃\"]\n    NoCons --> Wait[\"等待 GGUF 量化版发布\"]\n    Wait --> Option[\"或关注社区补丁\"]\n    Expect --> Option\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    M[\"DeepSeek V4 模型\"] --> I[\"频繁崩溃\"]\n    I --> C[\"缺少指令集（架构限制）\"]\n    I --> V[\"vLLM 工具（不支持）\"]\n    I --> D[\"Docker 镜像（包含转换器）\"]\n    I --> CG[\"消费级 GPU（RTX 3090/4090）\"]\n    I --> DG[\"数据中心 GPU（H100/H200 等）\"]\n    C --> DG\n    C -.-> CG\n    S1[\"等待 GGUF 量化版\"] --> M\n    S2[\"使用社区补丁\"] --> M\n    G[\"GitHub Issue 社区\"] --> I\n    G --> S2"
+    },
+    {
+      "title": "故障排查流程",
+      "code": "flowchart TD\n    Start[\"开始尝试运行\"] --> MG[\"使用多卡 RTX 3090/4090\"]\n    MG --> Crash1[\"崩溃\"]\n    Start --> FE[\"强制急切执行\"]\n    FE --> Disable[\"禁用大部分优化路径\"]\n    Disable --> Crash2[\"崩溃\"]\n    Start --> CPU[\"仅使用 CPU\"]\n    CPU --> Perf[\"性能差\"]\n    Start --> Docker[\"使用官方 Docker 镜像\"]\n    Docker --> NoConv[\"无缺少转换器错误\"]\n    NoConv --> Crash3[\"仍然崩溃\"]\n    Crash1 --> End1[\"结论：消费级 GPU 不稳定\"]\n    Crash2 --> End1\n    Crash3 --> End1\n    End1 --> Wait[\"等待 GGUF 量化版\"]"
+    },
+    {
+      "title": "硬件兼容性矩阵",
+      "code": "flowchart TD\n    Instr[\"所需指令集\"] --> DC[\"数据中心 GPU（支持）\"]\n    Instr --> CC[\"消费级 GPU（不支持）\"]\n    DC --> H100[\"H100 系列\"]\n    DC --> H200[\"H200 系列\"]\n    CC --> RTX3090[\"RTX 3090\"]\n    CC --> RTX4090[\"RTX 4090\"]\n    CC --> RTX6000[\"RTX 6000 系列\"]\n    CC --> Blackwell[\"Blackwell 架构\"]\n    RTX6000 -.->?[\"功能缺失待验证\"]\n    Blackwell -.->?[\"功能完整待验证\"]"
+    },
+    {
+      "title": "推荐决策树",
+      "code": "flowchart TD\n    Start[\"是否具备合适硬件？\"] --> YesDC[\"拥有数据中心 GPU（H100/H200）\"]\n    Start --> NoDC[\"没有数据中心 GPU\"]\n    YesDC --> Run[\"直接运行模型\"]\n    NoDC --> HaveCons[\"拥有多块消费级 GPU（RTX 3090/4090）\"]\n    NoDC --> NoCons[\"没有多块消费级 GPU\"]\n    HaveCons --> Expect[\"预期崩溃，建议放弃\"]\n    NoCons --> Wait[\"等待 GGUF 量化版发布\"]\n    Wait --> Option[\"或关注社区补丁\"]\n    Expect --> Option"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:07:28+00:00"
+}

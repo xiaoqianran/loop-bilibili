@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1wh3D65E8N",
+  "title": "deepseek v4 flash 配上 opencode 送的太多了，非常好用，真爽。",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 413,
+  "text": "Deep sick\n这个V4flash非常好\n真的非常好\n它这个max的上下文我都用了500K了\n一半跑了这么久\n居然连一美元也跑不了\n然后他这个送的也很多\n知道吧\n这个open code这个五美元的订阅\n这一个订阅他送多少啊\n那个我太离谱了\n我刚跑了刚跑了三小时\n这个一小时额度居然才用了3%\n然后他\n让你看看这个他他能请求多少次\n一个月能请求一百五十八千次\n15万次请求\n这也太便宜了吧\n简直就是把价格压成白菜价了\n而且他这个能力嗯能力真的不错\n我用过codex\n他这个好在哪\n就是它有1million的上下文\n而codex它只有256的上下文\n这个上下文就很长\n然后他不用经常压缩之之前那些动作也能记得\n然后这个它就一方面是这个saw用的太快了\n另一方面是这个LULA他上下文也不是很多\n所以我感觉目前现在open code配上deep sig v4\nflash max1命令的上下文\n是穷人的最佳编程选择\n非常nice",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wh3D65E8N",
+  "published_at": "1785637150",
+  "fetched_at": "2026-08-09T09:15:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 与 OpenCode 价值图谱\n\n## 总览概览 [BV1wh3D65E8N P1 00:01‑00:04]\n\n```mermaid\nflowchart TD\n    V4Flash[\"V4 Flash\"] --> LC[\"大上下文（≈500K token）\"]\n    V4Flash --> GP[\"良好性能\"]\n    OpenCode[\"OpenCode 5 USD 订阅\"] --> RQ[\"月请求量≈158 k 次\"]\n    OpenCode --> LCst[\"低成本（白菜价）\"]\n    LC --> GP\n    RQ --> GP\n    GP --> Rec[\"穷人最佳编程选择\"]\n```\n\n## DeepSeek V4 与 Codex 上下文比较 [BV1wh3D65E8N P1 00:58‑01:04]\n\n```mermaid\nflowchart LR\n    DS4[\"DeepSeek V4\"] --> CtxDS[\"上下文 1 M token\"]\n    Codex[\"Codex\"] --> CtxCd[\"上下文 256 token\"]\n    CtxDS --> CompLow[\"压缩需求低\"]\n    CtxCd --> CompHigh[\"压缩需求高\"]\n    CompLow --> RetGood[\"信息保留好\"]\n    CompHigh --> RetLim[\"信息保留受限\"]\n```\n\n## 成本、请求额度与使用效率 [BV1wh3D65E8N P1 00:30‑00:38、01:31‑01:36]\n\n```mermaid\nflowchart TD\n    Sub5[\"OpenCode 5 USD 订阅\"] --> Req158k[\"月请求量≈158 k 次\"]\n    Sub5 --> CostCheap[\"成本极低（白菜价）\"]\n    Req158k --> CostPerReq[\"单次请求成本≈0.00003 USD\"]\n    Sub5 --> Eff[\"使用效率高：1 h 配额仅用 3%（3 h 运行）\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览概览 [BV1wh3D65E8N P1 00:01‑00:04]",
+          "code": "flowchart TD\n    V4Flash[\"V4 Flash\"] --> LC[\"大上下文（≈500K token）\"]\n    V4Flash --> GP[\"良好性能\"]\n    OpenCode[\"OpenCode 5 USD 订阅\"] --> RQ[\"月请求量≈158 k 次\"]\n    OpenCode --> LCst[\"低成本（白菜价）\"]\n    LC --> GP\n    RQ --> GP\n    GP --> Rec[\"穷人最佳编程选择\"]"
+        },
+        {
+          "title": "DeepSeek V4 与 Codex 上下文比较 [BV1wh3D65E8N P1 00:58‑01:04]",
+          "code": "flowchart LR\n    DS4[\"DeepSeek V4\"] --> CtxDS[\"上下文 1 M token\"]\n    Codex[\"Codex\"] --> CtxCd[\"上下文 256 token\"]\n    CtxDS --> CompLow[\"压缩需求低\"]\n    CtxCd --> CompHigh[\"压缩需求高\"]\n    CompLow --> RetGood[\"信息保留好\"]\n    CompHigh --> RetLim[\"信息保留受限\"]"
+        },
+        {
+          "title": "成本、请求额度与使用效率 [BV1wh3D65E8N P1 00:30‑00:38、01:31‑01:36]",
+          "code": "flowchart TD\n    Sub5[\"OpenCode 5 USD 订阅\"] --> Req158k[\"月请求量≈158 k 次\"]\n    Sub5 --> CostCheap[\"成本极低（白菜价）\"]\n    Req158k --> CostPerReq[\"单次请求成本≈0.00003 USD\"]\n    Sub5 --> Eff[\"使用效率高：1 h 配额仅用 3%（3 h 运行）\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T09:15:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 与 OpenCode 价值图谱\n\n## 总览概览 [BV1wh3D65E8N P1 00:01‑00:04]\n\n```mermaid\nflowchart TD\n    V4Flash[\"V4 Flash\"] --> LC[\"大上下文（≈500K token）\"]\n    V4Flash --> GP[\"良好性能\"]\n    OpenCode[\"OpenCode 5 USD 订阅\"] --> RQ[\"月请求量≈158 k 次\"]\n    OpenCode --> LCst[\"低成本（白菜价）\"]\n    LC --> GP\n    RQ --> GP\n    GP --> Rec[\"穷人最佳编程选择\"]\n```\n\n## DeepSeek V4 与 Codex 上下文比较 [BV1wh3D65E8N P1 00:58‑01:04]\n\n```mermaid\nflowchart LR\n    DS4[\"DeepSeek V4\"] --> CtxDS[\"上下文 1 M token\"]\n    Codex[\"Codex\"] --> CtxCd[\"上下文 256 token\"]\n    CtxDS --> CompLow[\"压缩需求低\"]\n    CtxCd --> CompHigh[\"压缩需求高\"]\n    CompLow --> RetGood[\"信息保留好\"]\n    CompHigh --> RetLim[\"信息保留受限\"]\n```\n\n## 成本、请求额度与使用效率 [BV1wh3D65E8N P1 00:30‑00:38、01:31‑01:36]\n\n```mermaid\nflowchart TD\n    Sub5[\"OpenCode 5 USD 订阅\"] --> Req158k[\"月请求量≈158 k 次\"]\n    Sub5 --> CostCheap[\"成本极低（白菜价）\"]\n    Req158k --> CostPerReq[\"单次请求成本≈0.00003 USD\"]\n    Sub5 --> Eff[\"使用效率高：1 h 配额仅用 3%（3 h 运行）\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览概览 [BV1wh3D65E8N P1 00:01‑00:04]",
+      "code": "flowchart TD\n    V4Flash[\"V4 Flash\"] --> LC[\"大上下文（≈500K token）\"]\n    V4Flash --> GP[\"良好性能\"]\n    OpenCode[\"OpenCode 5 USD 订阅\"] --> RQ[\"月请求量≈158 k 次\"]\n    OpenCode --> LCst[\"低成本（白菜价）\"]\n    LC --> GP\n    RQ --> GP\n    GP --> Rec[\"穷人最佳编程选择\"]"
+    },
+    {
+      "title": "DeepSeek V4 与 Codex 上下文比较 [BV1wh3D65E8N P1 00:58‑01:04]",
+      "code": "flowchart LR\n    DS4[\"DeepSeek V4\"] --> CtxDS[\"上下文 1 M token\"]\n    Codex[\"Codex\"] --> CtxCd[\"上下文 256 token\"]\n    CtxDS --> CompLow[\"压缩需求低\"]\n    CtxCd --> CompHigh[\"压缩需求高\"]\n    CompLow --> RetGood[\"信息保留好\"]\n    CompHigh --> RetLim[\"信息保留受限\"]"
+    },
+    {
+      "title": "成本、请求额度与使用效率 [BV1wh3D65E8N P1 00:30‑00:38、01:31‑01:36]",
+      "code": "flowchart TD\n    Sub5[\"OpenCode 5 USD 订阅\"] --> Req158k[\"月请求量≈158 k 次\"]\n    Sub5 --> CostCheap[\"成本极低（白菜价）\"]\n    Req158k --> CostPerReq[\"单次请求成本≈0.00003 USD\"]\n    Sub5 --> Eff[\"使用效率高：1 h 配额仅用 3%（3 h 运行）\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T09:15:45+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "bvid": "BV16QGg6hEXu",
+  "title": "2分钟学会在任意版本Godot里制作卡牌游戏——King_-G",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 761,
+  "text": "话不必多说\n语言不必过多\n今天是卡牌插件教程资源库\nSimple card gato\n4.719枚\n同步下载这个simple cart pio oi\n旁边这个simple cards也很好用\n如果想学的话\n可以在评论区说\n可能我还会出个系列教程呢\n这个冲突不用管不冲突\n更不用管\n下载好后会多出那么多的文件夹\n但我们还是先启用插件项目项目设置插件勾上\n然后这有两个example示例可以看一下\n那现在我们来看下怎么用这个插件制作卡牌吧\n现在新建一个2D场景\n重命名为卡牌\n新建一个cut pillue节点\n这里需要两个JASON和一个卡牌场景\n然后我们把example里的卡牌场景和两个JASON\n给拖过来\n现在运行就能用了\n然后我们来看看怎么配置卡牌基础属性\npal display里这个两个属性\n分别是卡牌间隔和最大卡牌显示数量\nhand ple里的max hand size是最大手牌数量\n当然是数值越大\n能拿的卡牌越多\n现在我们来看看怎么配置这俩JASON文件\n把他俩都打开\n这个data就是由几种牌\n然后每种牌的属性名字\n正反面图片代码\n我先把最大手牌数量调回去\n然后自定义一张卡\n这些属性从上到下依次是名字\n卡面卡背代码\n最后两个应该是层级和介绍\n另一个JASON就比较简单了\n第一牌库每种牌有几个名字\n就有几张\n比如说我在这里放一个\n我刚刚自定义的牌的名字运行\n可以看到只有一张牌\n名字也正确\n我多放一些卡再看看呢\n但刚刚你看到了抽牌区的位置太靠下了\n我们得调整一下\n先运行\n然后调整一下pal position里的位置\n这个高度的Y轴默认是越大越靠下\n所以调小一点\nwok啦\n那怎么销卡或弃牌呢\n加一个button节点\n加个脚本\n连个信号\n写这么一串代码运行就行了\n但是为了完播率\n我不能亲自演示\n我得立刻",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16QGg6hEXu",
+  "published_at": "1785570433",
+  "fetched_at": "2026-08-08T13:39:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T13:42:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T13:42:47+00:00"
+}

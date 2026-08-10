@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1Y9MC6eEbL",
+  "title": "DeepSeek V4正式版+Codex工业Agent开发实战！从零手搓AI数据分析Agent，Responses API调用流程与Codex核心功能详解！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2260,
+  "text": "号称agent性能暴涨的deep sic v4正式版模型\n在全面官宣兼容了codex之后\n双剑合璧\n到底能开发出什么样惊艳的agent呢\n大家现在看到的就是这套技术方案\n真实的开发效果\n也是本期公开课最终的开发成果\n这是一套完整的工业级AI数据分析系统\n不仅能够实现全链路\n图文并茂的可视化数据分析\n以及机器学习建模预测分析\n并且还能将分析过程和关键结论一键整合\n并创建图文并茂的数据分析报告\n并且支持多版本迭代修改和一键回溯\n同时还支持海量数据库和本地\n数据的读取和导入\n项目里面以300万数据规模为例\n搭建了完整的数据分析流程\n此外agent还内置了大量的数据分析skills\n用于支持数据探索\n可视化分析及学习建模\n数据洞察和数据分析报告编写等各个环节\n并且支持skills定制化开发和载入\n此外还能够实时查询系统状态\n完整架构以及各关键环节的底层代码\n甚至啊还融合了顶尖的web design的设计理念\n主题搭配样式都能够一键切换\n怎么样\n是不是非常的酷炫\n说实话\n作为几年来一直奋战在技术一线的技术人啊\n看到国产模型能够达到如此效果\n还是非常的吃惊\n同时也非常兴奋\n因此本期公开课就为大家从零上手学习\ndeep sk v4正式版\n加扣JX工业级A证的开发技术\n完整体系\n详细介绍\nDEPSTICKV4正式版模型的核心功能特性\n以及工业agent开发技术站\n当然DEPSV4能够全面接入codex\n并借助codex最大程度释放模型性能\n最核心的一点还是在于\n全新模型全面适配了open i最新的responses API\n不同于上一代chat compilations API\n核心功能是灵活编排消息队列\nresponses API更像是OpenAI版的long chain\n开发者仅需要把模型系统\n提示词和当前任务放在一起\nresponses API就能够自动搭建起agent loop\n自动多步或者并发调用工具来执行任务\n也就是说\n上一代chat compilation API\n更加适合通过编排消息队列来搭建chat bot\n聊天机器人\n而新一代的responses API则更加适合开发agent\n这也怪不得open i在responses API迁移指南中说到\n仅仅是从chat completions API迁移到了responses API\nagent在sw bench性能方面就提升了3%\n而deep sick也是目前唯一一个\n国内全面介入responses API的大模型\n要知道\n哪怕在前段时间开源的2.8T参数的KIMIK3\n也仅仅支持上一代tract completion API\n因此公开课的第一部分\n我就将为大家深入介绍\nDPC全新兼容的responses API\n的基本语法规则和使用方法\n包括底层执行和调用逻辑\n帮大家快速奠定扎实基础\n而在了解了底层API之后\n接下来就进入到codex上手实操环节\n公开课中将详细介绍deep sk v4\n接入codex的具体方法\n包括脚本介入和cc switch介入这两种方式\n同时详细介绍新人入门codex进行开发\n必备的基础技能\n包括基础环境\n搭建三层记忆管理系统方法\n多agent和profile设计工具链和斜杠命令\nskills与MCP\n工具调用等五个最核心的功能模块\n当然为了真实介入工业级开发流程啊\n我们还需要给lipstick加codex的这套技术体系\n接上视觉能力\n才能够在真实开发过程中实现开发成果的视觉\n自我审核\n外加审美偏好对齐\n简单来说就是让agent通过看到自己的开发成果呀\n来提升开发效果\n国外科中将采用嵌入3.8作为视觉工具\n并借助MCP来提供触发接口\n完整架构\n如图所示\n而deep sk v4也只有在接入视觉能力之后啊\n才能够实现如图所示的非常惊艳的开发效果\n而在完成了一系列的基础准备工作之后啊\n公开课的下半场\n就让我们进入工业级A证的开发实战阶段\n本期公开课\n我们将同样选取目前最热门的agent的应用方向\nAI数据分析领域\n详细介绍\n如何搭建一整套工业级可用的AI数据分析系统\n其实啊经历了这么多年的发展\n工业场景下\n对于数据分析智能体早就不再是简单的提个数\n绘个图进行数据洞察分析\n得出几条结论这么简单的需求了\n而是首先要能接入各种数据源\n并至少支持百万级以上数据集的管理跟读取\n同时还要支持数据信息可视化分析\n数据洞察\n课程工程模型融合\n机器学习\n建模分等完整链路\n以及还有呢一键创建\n满足具体业务格式和指标要求的数据分析报告\n此外还要有skills功能系统\n支持上传导入跟使用自定义的skill\n从而更好的进行功能拓展\n而这也是本期公开课程\n即将为大家深入系统讲解的\nDSS4AEI数据分析系统\n作为教学项目啊\n我会从头为大家详细介绍\nAI数据分析的基本业务背景\n核心项目架构以及完整的技术选型方案\n并借助codex1步步完成项目开发\n此外为了便于同学们之后自己也能熟练操作\ncodex完成自己的项目开发\n公开课中还特地为大家准备了一份\n完整的deep sk v4技术体系\nlm wiki知识库\n以及十项deep sk v4开发专属skills\n目前全套公开课的课件脚本项目提示词\n知识库和skills等都已经上线至复范AI社区\n大家扫描屏幕上的二维码\n即可免费领取2026大模型\nagent的技术发展势头非常迅猛\n我也将持续为大家提供最前沿实用的技术教学\n感谢大家的关注和三连支持\n公开课马上开始",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Y9MC6eEbL",
+  "published_at": "1785936029",
+  "fetched_at": "2026-08-07T03:52:15+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 与 Codex 工业级 AI 数据分析 Agent 知识图谱\n\n## Overview of DeepSeek V4 & Codex Integration\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4 正式版\"] -->|兼容| Codex[\"Codex\"]\n    Codex -->|提供| ResponsesAPI[\"Responses API (OpenAI Long‑Chain)\"]\n    DSV4 -->|提升| Performance[\"性能提升 (~3%)\"]\n    ResponsesAPI -->|取代| ChatCompAPI[\"Chat Completions API\"]\n    ResponsesAPI -->|支持| AgentLoop[\"Agent Loop 自动编排\"]\n    AgentLoop -->|实现| MultiStep[\"多步或并发工具调用\"]\n    DSV4 -->|融合| WebDesign[\"Web Design 主题/样式切换\"]\n    WebDesign -->|提升| UI[\"可视化交互体验\"]\n    Codex -->|释放| ModelPower[\"模型性能最大化\"]\n```\n\n## Responses API 工作流\n```mermaid\nflowchart TD\n    PromptTask[\"提示词 + 当前任务\"] --> ResponsesAPI[\"Responses API\"]\n    ResponsesAPI --> MessageQueue[\"消息队列编排\"]\n    MessageQueue --> ToolCall[\"工具调用 (多步/并发)\"]\n    ToolCall --> Execution[\"任务执行\"]\n    Execution --> Output[\"生成输出/报告\"]\n    ResponsesAPI --> StateQuery[\"实时系统状态查询\"]\n    StateQuery -->|反馈| Execution\n    Output --> AgentLoop[\"Agent Loop 继续迭代\"]\n```\n\n## 工业级 AI 数据分析系统结构\n```mermaid\nflowchart TD\n    DataSources[\"多源数据读取 (本地/海量 DB)\"] --> DataImport[\"数据导入\"]\n    DataImport --> DataScale[\"支持百万级以上数据集\"]\n    DataScale --> Visualization[\"图文并茂可视化分析\"]\n    Visualization --> Report[\"一键生成数据分析报告\"]\n    DataScale --> MLModel[\"机器学习建模与预测\"]\n    MLModel --> Prediction[\"预测分析结果\"]\n    Report --> Skills[\"内置 Data Analysis Skills\"]\n    Skills --> CustomSkill[\"Skills 定制化开发/载入\"]\n    Report --> VersionCtrl[\"多版本迭代 & 一键回溯\"]\n    VersionCtrl --> Rollback[\"回溯历史状态\"]\n    Visualization --> WebDesign[\"Web Design 主题切换\"]\n    WebDesign --> UI[\"统一 UI 风格\"]\n```\n\n## 开发流程与关键模块\n```mermaid\nflowchart TD\n    EnvSetup[\"基础环境搭建\"] --> Memory3L[\"三层记忆管理系统\"]\n    Memory3L --> MultiAgent[\"多 Agent 设计\"]\n    MultiAgent --> Profile[\"Profile 设计\"]\n    Profile --> SlashCmd[\"斜杠命令体系\"]\n    SlashCmd --> Skills[\"Skills 与 MCP\"]\n    Skills --> ToolCall[\"工具调用模块\"]\n    ToolCall --> VisualInt[\"视觉能力接入 (Embedding 3.8)\"]\n    VisualInt --> SelfAudit[\"自我审核 & 审美对齐\"]\n    SelfAudit --> Deployment[\"项目部署与运行\"]\n```\n\n## Agent 功能模块\n```mermaid\nflowchart TD\n    DataExploration[\"数据探索\"] --> Visualization[\"可视化分析\"]\n    Visualization --> Modeling[\"机器学习建模\"]\n    Modeling --> ReportGen[\"报告生成\"]\n    ReportGen --> SkillsSys[\"Skills 功能系统\"]\n    SkillsSys --> CustomSkill[\"自定义 Skill 载入\"]\n    SkillsSys --> RealTimeMon[\"实时系统状态监控\"]\n    RealTimeMon --> VisualFeedback[\"视觉反馈 (自审)\"]\n    VisualFeedback --> SelfReview[\"自我审查\"]\n    SelfReview --> APIInt[\"API (Responses) 集成\"]\n    APIInt --> CodexInt[\"Codex 接入\"]\n```",
+      "diagrams": [
+        {
+          "title": "Overview of DeepSeek V4 & Codex Integration",
+          "code": "flowchart TD\n    DSV4[\"DeepSeek V4 正式版\"] -->|兼容| Codex[\"Codex\"]\n    Codex -->|提供| ResponsesAPI[\"Responses API (OpenAI Long‑Chain)\"]\n    DSV4 -->|提升| Performance[\"性能提升 (~3%)\"]\n    ResponsesAPI -->|取代| ChatCompAPI[\"Chat Completions API\"]\n    ResponsesAPI -->|支持| AgentLoop[\"Agent Loop 自动编排\"]\n    AgentLoop -->|实现| MultiStep[\"多步或并发工具调用\"]\n    DSV4 -->|融合| WebDesign[\"Web Design 主题/样式切换\"]\n    WebDesign -->|提升| UI[\"可视化交互体验\"]\n    Codex -->|释放| ModelPower[\"模型性能最大化\"]"
+        },
+        {
+          "title": "Responses API 工作流",
+          "code": "flowchart TD\n    PromptTask[\"提示词 + 当前任务\"] --> ResponsesAPI[\"Responses API\"]\n    ResponsesAPI --> MessageQueue[\"消息队列编排\"]\n    MessageQueue --> ToolCall[\"工具调用 (多步/并发)\"]\n    ToolCall --> Execution[\"任务执行\"]\n    Execution --> Output[\"生成输出/报告\"]\n    ResponsesAPI --> StateQuery[\"实时系统状态查询\"]\n    StateQuery -->|反馈| Execution\n    Output --> AgentLoop[\"Agent Loop 继续迭代\"]"
+        },
+        {
+          "title": "工业级 AI 数据分析系统结构",
+          "code": "flowchart TD\n    DataSources[\"多源数据读取 (本地/海量 DB)\"] --> DataImport[\"数据导入\"]\n    DataImport --> DataScale[\"支持百万级以上数据集\"]\n    DataScale --> Visualization[\"图文并茂可视化分析\"]\n    Visualization --> Report[\"一键生成数据分析报告\"]\n    DataScale --> MLModel[\"机器学习建模与预测\"]\n    MLModel --> Prediction[\"预测分析结果\"]\n    Report --> Skills[\"内置 Data Analysis Skills\"]\n    Skills --> CustomSkill[\"Skills 定制化开发/载入\"]\n    Report --> VersionCtrl[\"多版本迭代 & 一键回溯\"]\n    VersionCtrl --> Rollback[\"回溯历史状态\"]\n    Visualization --> WebDesign[\"Web Design 主题切换\"]\n    WebDesign --> UI[\"统一 UI 风格\"]"
+        },
+        {
+          "title": "开发流程与关键模块",
+          "code": "flowchart TD\n    EnvSetup[\"基础环境搭建\"] --> Memory3L[\"三层记忆管理系统\"]\n    Memory3L --> MultiAgent[\"多 Agent 设计\"]\n    MultiAgent --> Profile[\"Profile 设计\"]\n    Profile --> SlashCmd[\"斜杠命令体系\"]\n    SlashCmd --> Skills[\"Skills 与 MCP\"]\n    Skills --> ToolCall[\"工具调用模块\"]\n    ToolCall --> VisualInt[\"视觉能力接入 (Embedding 3.8)\"]\n    VisualInt --> SelfAudit[\"自我审核 & 审美对齐\"]\n    SelfAudit --> Deployment[\"项目部署与运行\"]"
+        },
+        {
+          "title": "Agent 功能模块",
+          "code": "flowchart TD\n    DataExploration[\"数据探索\"] --> Visualization[\"可视化分析\"]\n    Visualization --> Modeling[\"机器学习建模\"]\n    Modeling --> ReportGen[\"报告生成\"]\n    ReportGen --> SkillsSys[\"Skills 功能系统\"]\n    SkillsSys --> CustomSkill[\"自定义 Skill 载入\"]\n    SkillsSys --> RealTimeMon[\"实时系统状态监控\"]\n    RealTimeMon --> VisualFeedback[\"视觉反馈 (自审)\"]\n    VisualFeedback --> SelfReview[\"自我审查\"]\n    SelfReview --> APIInt[\"API (Responses) 集成\"]\n    APIInt --> CodexInt[\"Codex 接入\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T03:52:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 与 Codex 工业级 AI 数据分析 Agent 知识图谱\n\n## Overview of DeepSeek V4 & Codex Integration\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4 正式版\"] -->|兼容| Codex[\"Codex\"]\n    Codex -->|提供| ResponsesAPI[\"Responses API (OpenAI Long‑Chain)\"]\n    DSV4 -->|提升| Performance[\"性能提升 (~3%)\"]\n    ResponsesAPI -->|取代| ChatCompAPI[\"Chat Completions API\"]\n    ResponsesAPI -->|支持| AgentLoop[\"Agent Loop 自动编排\"]\n    AgentLoop -->|实现| MultiStep[\"多步或并发工具调用\"]\n    DSV4 -->|融合| WebDesign[\"Web Design 主题/样式切换\"]\n    WebDesign -->|提升| UI[\"可视化交互体验\"]\n    Codex -->|释放| ModelPower[\"模型性能最大化\"]\n```\n\n## Responses API 工作流\n```mermaid\nflowchart TD\n    PromptTask[\"提示词 + 当前任务\"] --> ResponsesAPI[\"Responses API\"]\n    ResponsesAPI --> MessageQueue[\"消息队列编排\"]\n    MessageQueue --> ToolCall[\"工具调用 (多步/并发)\"]\n    ToolCall --> Execution[\"任务执行\"]\n    Execution --> Output[\"生成输出/报告\"]\n    ResponsesAPI --> StateQuery[\"实时系统状态查询\"]\n    StateQuery -->|反馈| Execution\n    Output --> AgentLoop[\"Agent Loop 继续迭代\"]\n```\n\n## 工业级 AI 数据分析系统结构\n```mermaid\nflowchart TD\n    DataSources[\"多源数据读取 (本地/海量 DB)\"] --> DataImport[\"数据导入\"]\n    DataImport --> DataScale[\"支持百万级以上数据集\"]\n    DataScale --> Visualization[\"图文并茂可视化分析\"]\n    Visualization --> Report[\"一键生成数据分析报告\"]\n    DataScale --> MLModel[\"机器学习建模与预测\"]\n    MLModel --> Prediction[\"预测分析结果\"]\n    Report --> Skills[\"内置 Data Analysis Skills\"]\n    Skills --> CustomSkill[\"Skills 定制化开发/载入\"]\n    Report --> VersionCtrl[\"多版本迭代 & 一键回溯\"]\n    VersionCtrl --> Rollback[\"回溯历史状态\"]\n    Visualization --> WebDesign[\"Web Design 主题切换\"]\n    WebDesign --> UI[\"统一 UI 风格\"]\n```\n\n## 开发流程与关键模块\n```mermaid\nflowchart TD\n    EnvSetup[\"基础环境搭建\"] --> Memory3L[\"三层记忆管理系统\"]\n    Memory3L --> MultiAgent[\"多 Agent 设计\"]\n    MultiAgent --> Profile[\"Profile 设计\"]\n    Profile --> SlashCmd[\"斜杠命令体系\"]\n    SlashCmd --> Skills[\"Skills 与 MCP\"]\n    Skills --> ToolCall[\"工具调用模块\"]\n    ToolCall --> VisualInt[\"视觉能力接入 (Embedding 3.8)\"]\n    VisualInt --> SelfAudit[\"自我审核 & 审美对齐\"]\n    SelfAudit --> Deployment[\"项目部署与运行\"]\n```\n\n## Agent 功能模块\n```mermaid\nflowchart TD\n    DataExploration[\"数据探索\"] --> Visualization[\"可视化分析\"]\n    Visualization --> Modeling[\"机器学习建模\"]\n    Modeling --> ReportGen[\"报告生成\"]\n    ReportGen --> SkillsSys[\"Skills 功能系统\"]\n    SkillsSys --> CustomSkill[\"自定义 Skill 载入\"]\n    SkillsSys --> RealTimeMon[\"实时系统状态监控\"]\n    RealTimeMon --> VisualFeedback[\"视觉反馈 (自审)\"]\n    VisualFeedback --> SelfReview[\"自我审查\"]\n    SelfReview --> APIInt[\"API (Responses) 集成\"]\n    APIInt --> CodexInt[\"Codex 接入\"]\n```",
+  "diagrams": [
+    {
+      "title": "Overview of DeepSeek V4 & Codex Integration",
+      "code": "flowchart TD\n    DSV4[\"DeepSeek V4 正式版\"] -->|兼容| Codex[\"Codex\"]\n    Codex -->|提供| ResponsesAPI[\"Responses API (OpenAI Long‑Chain)\"]\n    DSV4 -->|提升| Performance[\"性能提升 (~3%)\"]\n    ResponsesAPI -->|取代| ChatCompAPI[\"Chat Completions API\"]\n    ResponsesAPI -->|支持| AgentLoop[\"Agent Loop 自动编排\"]\n    AgentLoop -->|实现| MultiStep[\"多步或并发工具调用\"]\n    DSV4 -->|融合| WebDesign[\"Web Design 主题/样式切换\"]\n    WebDesign -->|提升| UI[\"可视化交互体验\"]\n    Codex -->|释放| ModelPower[\"模型性能最大化\"]"
+    },
+    {
+      "title": "Responses API 工作流",
+      "code": "flowchart TD\n    PromptTask[\"提示词 + 当前任务\"] --> ResponsesAPI[\"Responses API\"]\n    ResponsesAPI --> MessageQueue[\"消息队列编排\"]\n    MessageQueue --> ToolCall[\"工具调用 (多步/并发)\"]\n    ToolCall --> Execution[\"任务执行\"]\n    Execution --> Output[\"生成输出/报告\"]\n    ResponsesAPI --> StateQuery[\"实时系统状态查询\"]\n    StateQuery -->|反馈| Execution\n    Output --> AgentLoop[\"Agent Loop 继续迭代\"]"
+    },
+    {
+      "title": "工业级 AI 数据分析系统结构",
+      "code": "flowchart TD\n    DataSources[\"多源数据读取 (本地/海量 DB)\"] --> DataImport[\"数据导入\"]\n    DataImport --> DataScale[\"支持百万级以上数据集\"]\n    DataScale --> Visualization[\"图文并茂可视化分析\"]\n    Visualization --> Report[\"一键生成数据分析报告\"]\n    DataScale --> MLModel[\"机器学习建模与预测\"]\n    MLModel --> Prediction[\"预测分析结果\"]\n    Report --> Skills[\"内置 Data Analysis Skills\"]\n    Skills --> CustomSkill[\"Skills 定制化开发/载入\"]\n    Report --> VersionCtrl[\"多版本迭代 & 一键回溯\"]\n    VersionCtrl --> Rollback[\"回溯历史状态\"]\n    Visualization --> WebDesign[\"Web Design 主题切换\"]\n    WebDesign --> UI[\"统一 UI 风格\"]"
+    },
+    {
+      "title": "开发流程与关键模块",
+      "code": "flowchart TD\n    EnvSetup[\"基础环境搭建\"] --> Memory3L[\"三层记忆管理系统\"]\n    Memory3L --> MultiAgent[\"多 Agent 设计\"]\n    MultiAgent --> Profile[\"Profile 设计\"]\n    Profile --> SlashCmd[\"斜杠命令体系\"]\n    SlashCmd --> Skills[\"Skills 与 MCP\"]\n    Skills --> ToolCall[\"工具调用模块\"]\n    ToolCall --> VisualInt[\"视觉能力接入 (Embedding 3.8)\"]\n    VisualInt --> SelfAudit[\"自我审核 & 审美对齐\"]\n    SelfAudit --> Deployment[\"项目部署与运行\"]"
+    },
+    {
+      "title": "Agent 功能模块",
+      "code": "flowchart TD\n    DataExploration[\"数据探索\"] --> Visualization[\"可视化分析\"]\n    Visualization --> Modeling[\"机器学习建模\"]\n    Modeling --> ReportGen[\"报告生成\"]\n    ReportGen --> SkillsSys[\"Skills 功能系统\"]\n    SkillsSys --> CustomSkill[\"自定义 Skill 载入\"]\n    SkillsSys --> RealTimeMon[\"实时系统状态监控\"]\n    RealTimeMon --> VisualFeedback[\"视觉反馈 (自审)\"]\n    VisualFeedback --> SelfReview[\"自我审查\"]\n    SelfReview --> APIInt[\"API (Responses) 集成\"]\n    APIInt --> CodexInt[\"Codex 接入\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:52:25+00:00"
+}

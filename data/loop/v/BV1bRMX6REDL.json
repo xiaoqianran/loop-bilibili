@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1bRMX6REDL",
+  "title": "Codex客户端适配国内模型！DeepSeek完整配置教程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 949,
+  "text": "OpenAI推出的codex代码能力备受开发者关注\n很多人想体验codex交互模式\n但是直接使用原生客户端存在不少门槛\n有没有办法让codex客户端对接国内大模型\n答案是有的\n今天完整分享适配方案\n不过原生codex默认适配境外模型接口\n国内开发者很难直接使用\n核心痛点来了\ncodex采用responses API协议\n国内deep sick这类模型使用对话补全协议\n两套协议标准不一样\n直接对接会出现404报错\n想要打通两者就需要开源工具cc switch做协议转换\n本地运行服务\n自动双向翻译接口请求与返回数据\n前期准备工作\n首先我们需要下载ChatGPT桌面客户端与cc switch\n安装包\n客户端前往官方渠道下载cc switch\n在开源平台获取\n按照系统版本安装软件\n安装流程和常规软件一致\n接下来完整实操步骤\n第一步\n准备deep sick API密钥\n前往deep seek开放平台注册开发者账号\n小额充值即可长期使用\n在API密钥栏目新建密钥复制妥善保存\n第二步\n配置c c switch\n打开安装完成的cc switch顶部导航\n选中codex分类以及右上角加号\n新增供应商\n选择预设的deep seek配置\n粘贴刚才复制的API密钥保存设置\n第三步\n开启本地路由\n重中之重\n点击左上角齿轮\n进入设置页面\n找到路由选项\n打开路由总开关\n在应用列表勾选codex\n确认路由指示灯变为绿色\n第四步\n重启客户端\n彻底退出chat gbt桌面端\n不要紧\n关闭窗口\n同时确认cc switch正常运行\n重新打开客户端模型\n成功切换为deep sick\n代表适配流程完成\n如果切换失败\n可以依次重启客户端和cc switch重试\n适配完成之后\n你可以让它读取本地项目\n编写接口\n排查代码漏洞\n运行测试命令\n只需要用自然语言描述开发需求\ncodex自动修改代码\n你审核变更内容就行\n总结一下\n借助cc switch协议转换工具\n我们就能在codex客户端顺畅使用国内大模型\n不用复杂环境配置\n疑似设置长期生效\ndeep sick的调用成本相比境外模型也更有优势\n如果这些适配教程对你有帮助\n欢迎点赞关注\n下期我会更新codex实战\n从零搭建完整项目流程\n感兴趣可以持续关注\n有问题评论区交流",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1bRMX6REDL",
+  "published_at": "1785747181",
+  "fetched_at": "2026-08-08T22:31:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Codex 客户端适配国内模型知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    O1[\"OpenAI Codex 客户端\"] -->|默认使用| R1[\"responses API 协议\"]\n    D1[\"国内 DeepSeek 模型\"] -->|使用| C1[\"对话补全协议\"]\n    R1 -->|协议不匹配| I1[\"出现 404 错误\"]\n    C1 -->|协议不匹配| I1\n    I1 -->|需要协议转换| S1[\"cc switch 开源工具\"]\n    S1 -->|本地运行服务| L1[\"自动双向翻译请求/响应\"]\n    L1 -->|实现| O1\n    L1 -->|实现| D1\n    O1 -->|成功使用| D1\n```\n\n## 适配流程\n```mermaid\nflowchart LR\n    S0[\"准备阶段\"] --> DLD[\"下载 ChatGPT 桌面客户端\"]\n    S0 --> CCS[\"下载 cc switch\"]\n    DLD -->|安装| DLDI[\"完成安装\"]\n    CCS -->|安装| CCSI[\"完成安装\"]\n    DLDI -->|准备| APIK[\"获取 DeepSeek API 密钥\"]\n    CCSI -->|准备| CFG[\"配置 cc switch\"]\n    APIK -->|粘贴密钥| CFG\n    CFG -->|开启路由| ROUTE[\"本地路由设置\"]\n    ROUTE -->|打开总开关| ROUTEON[\"路由总开关 ON\"]\n    ROUTEON -->|勾选 Codex| ROUTECHK[\"应用列表勾选 Codex\"]\n    ROUTECHK -->|确认指示灯绿| GREEN[\"路由指示灯 GREEN\"]\n    GREEN --> RESTART[\"重启 ChatGPT 客户端\"]\n    RESTART --> VERIFY[\"验证模型切换成功\"]\n    VERIFY --> DONE[\"适配完成\"]\n```\n\n## cc switch 配置细节\n```mermaid\nflowchart TD\n    NAV[\"打开 cc switch 顶部导航\"] --> CAT[\"选择 Codex 分类\"]\n    CAT --> ADD[\"点击右上角加号\"]\n    ADD --> SUP[\"新增供应商\"]\n    SUP --> PRE[\"选择 DeepSeek 预设配置\"]\n    PRE --> KEY[\"粘贴 API 密钥\"]\n    KEY --> SAVE[\"保存设置\"]\n    SAVE --> CONF[\"配置完成\"]\n```\n\n## 适配后功能使用\n```mermaid\nflowchart LR\n    READ[\"读取本地项目\"] --> INTER[\"编写接口\"]\n    INTER --> BUG[\"排查代码漏洞\"]\n    BUG --> TEST[\"运行测试命令\"]\n    TEST --> DESC[\"用自然语言描述开发需求\"]\n    DESC --> MOD[\"Codex 自动修改代码\"]\n    MOD --> AUDIT[\"人工审核变更内容\"]\n    AUDIT --> DONE[\"完成代码迭代\"]\n```\n\n## 故障排除\n```mermaid\nflowchart TD\n    FAIL[\"模型切换失败\"] --> RE1[\"重启 ChatGPT 客户端\"]\n    RE1 --> RE2[\"重启 cc switch\"]\n    RE2 --> RETRY[\"重新尝试切换\"]\n    RETRY --> CHECK[\"检查路由指示灯\"]\n    CHECK -->|绿色| SUCCESS[\"切换成功\"]\n    CHECK -->|非绿色| LOOP[\"继续排查设置\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    O1[\"OpenAI Codex 客户端\"] -->|默认使用| R1[\"responses API 协议\"]\n    D1[\"国内 DeepSeek 模型\"] -->|使用| C1[\"对话补全协议\"]\n    R1 -->|协议不匹配| I1[\"出现 404 错误\"]\n    C1 -->|协议不匹配| I1\n    I1 -->|需要协议转换| S1[\"cc switch 开源工具\"]\n    S1 -->|本地运行服务| L1[\"自动双向翻译请求/响应\"]\n    L1 -->|实现| O1\n    L1 -->|实现| D1\n    O1 -->|成功使用| D1"
+        },
+        {
+          "title": "适配流程",
+          "code": "flowchart LR\n    S0[\"准备阶段\"] --> DLD[\"下载 ChatGPT 桌面客户端\"]\n    S0 --> CCS[\"下载 cc switch\"]\n    DLD -->|安装| DLDI[\"完成安装\"]\n    CCS -->|安装| CCSI[\"完成安装\"]\n    DLDI -->|准备| APIK[\"获取 DeepSeek API 密钥\"]\n    CCSI -->|准备| CFG[\"配置 cc switch\"]\n    APIK -->|粘贴密钥| CFG\n    CFG -->|开启路由| ROUTE[\"本地路由设置\"]\n    ROUTE -->|打开总开关| ROUTEON[\"路由总开关 ON\"]\n    ROUTEON -->|勾选 Codex| ROUTECHK[\"应用列表勾选 Codex\"]\n    ROUTECHK -->|确认指示灯绿| GREEN[\"路由指示灯 GREEN\"]\n    GREEN --> RESTART[\"重启 ChatGPT 客户端\"]\n    RESTART --> VERIFY[\"验证模型切换成功\"]\n    VERIFY --> DONE[\"适配完成\"]"
+        },
+        {
+          "title": "cc switch 配置细节",
+          "code": "flowchart TD\n    NAV[\"打开 cc switch 顶部导航\"] --> CAT[\"选择 Codex 分类\"]\n    CAT --> ADD[\"点击右上角加号\"]\n    ADD --> SUP[\"新增供应商\"]\n    SUP --> PRE[\"选择 DeepSeek 预设配置\"]\n    PRE --> KEY[\"粘贴 API 密钥\"]\n    KEY --> SAVE[\"保存设置\"]\n    SAVE --> CONF[\"配置完成\"]"
+        },
+        {
+          "title": "适配后功能使用",
+          "code": "flowchart LR\n    READ[\"读取本地项目\"] --> INTER[\"编写接口\"]\n    INTER --> BUG[\"排查代码漏洞\"]\n    BUG --> TEST[\"运行测试命令\"]\n    TEST --> DESC[\"用自然语言描述开发需求\"]\n    DESC --> MOD[\"Codex 自动修改代码\"]\n    MOD --> AUDIT[\"人工审核变更内容\"]\n    AUDIT --> DONE[\"完成代码迭代\"]"
+        },
+        {
+          "title": "故障排除",
+          "code": "flowchart TD\n    FAIL[\"模型切换失败\"] --> RE1[\"重启 ChatGPT 客户端\"]\n    RE1 --> RE2[\"重启 cc switch\"]\n    RE2 --> RETRY[\"重新尝试切换\"]\n    RETRY --> CHECK[\"检查路由指示灯\"]\n    CHECK -->|绿色| SUCCESS[\"切换成功\"]\n    CHECK -->|非绿色| LOOP[\"继续排查设置\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T22:31:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Codex 客户端适配国内模型知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    O1[\"OpenAI Codex 客户端\"] -->|默认使用| R1[\"responses API 协议\"]\n    D1[\"国内 DeepSeek 模型\"] -->|使用| C1[\"对话补全协议\"]\n    R1 -->|协议不匹配| I1[\"出现 404 错误\"]\n    C1 -->|协议不匹配| I1\n    I1 -->|需要协议转换| S1[\"cc switch 开源工具\"]\n    S1 -->|本地运行服务| L1[\"自动双向翻译请求/响应\"]\n    L1 -->|实现| O1\n    L1 -->|实现| D1\n    O1 -->|成功使用| D1\n```\n\n## 适配流程\n```mermaid\nflowchart LR\n    S0[\"准备阶段\"] --> DLD[\"下载 ChatGPT 桌面客户端\"]\n    S0 --> CCS[\"下载 cc switch\"]\n    DLD -->|安装| DLDI[\"完成安装\"]\n    CCS -->|安装| CCSI[\"完成安装\"]\n    DLDI -->|准备| APIK[\"获取 DeepSeek API 密钥\"]\n    CCSI -->|准备| CFG[\"配置 cc switch\"]\n    APIK -->|粘贴密钥| CFG\n    CFG -->|开启路由| ROUTE[\"本地路由设置\"]\n    ROUTE -->|打开总开关| ROUTEON[\"路由总开关 ON\"]\n    ROUTEON -->|勾选 Codex| ROUTECHK[\"应用列表勾选 Codex\"]\n    ROUTECHK -->|确认指示灯绿| GREEN[\"路由指示灯 GREEN\"]\n    GREEN --> RESTART[\"重启 ChatGPT 客户端\"]\n    RESTART --> VERIFY[\"验证模型切换成功\"]\n    VERIFY --> DONE[\"适配完成\"]\n```\n\n## cc switch 配置细节\n```mermaid\nflowchart TD\n    NAV[\"打开 cc switch 顶部导航\"] --> CAT[\"选择 Codex 分类\"]\n    CAT --> ADD[\"点击右上角加号\"]\n    ADD --> SUP[\"新增供应商\"]\n    SUP --> PRE[\"选择 DeepSeek 预设配置\"]\n    PRE --> KEY[\"粘贴 API 密钥\"]\n    KEY --> SAVE[\"保存设置\"]\n    SAVE --> CONF[\"配置完成\"]\n```\n\n## 适配后功能使用\n```mermaid\nflowchart LR\n    READ[\"读取本地项目\"] --> INTER[\"编写接口\"]\n    INTER --> BUG[\"排查代码漏洞\"]\n    BUG --> TEST[\"运行测试命令\"]\n    TEST --> DESC[\"用自然语言描述开发需求\"]\n    DESC --> MOD[\"Codex 自动修改代码\"]\n    MOD --> AUDIT[\"人工审核变更内容\"]\n    AUDIT --> DONE[\"完成代码迭代\"]\n```\n\n## 故障排除\n```mermaid\nflowchart TD\n    FAIL[\"模型切换失败\"] --> RE1[\"重启 ChatGPT 客户端\"]\n    RE1 --> RE2[\"重启 cc switch\"]\n    RE2 --> RETRY[\"重新尝试切换\"]\n    RETRY --> CHECK[\"检查路由指示灯\"]\n    CHECK -->|绿色| SUCCESS[\"切换成功\"]\n    CHECK -->|非绿色| LOOP[\"继续排查设置\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    O1[\"OpenAI Codex 客户端\"] -->|默认使用| R1[\"responses API 协议\"]\n    D1[\"国内 DeepSeek 模型\"] -->|使用| C1[\"对话补全协议\"]\n    R1 -->|协议不匹配| I1[\"出现 404 错误\"]\n    C1 -->|协议不匹配| I1\n    I1 -->|需要协议转换| S1[\"cc switch 开源工具\"]\n    S1 -->|本地运行服务| L1[\"自动双向翻译请求/响应\"]\n    L1 -->|实现| O1\n    L1 -->|实现| D1\n    O1 -->|成功使用| D1"
+    },
+    {
+      "title": "适配流程",
+      "code": "flowchart LR\n    S0[\"准备阶段\"] --> DLD[\"下载 ChatGPT 桌面客户端\"]\n    S0 --> CCS[\"下载 cc switch\"]\n    DLD -->|安装| DLDI[\"完成安装\"]\n    CCS -->|安装| CCSI[\"完成安装\"]\n    DLDI -->|准备| APIK[\"获取 DeepSeek API 密钥\"]\n    CCSI -->|准备| CFG[\"配置 cc switch\"]\n    APIK -->|粘贴密钥| CFG\n    CFG -->|开启路由| ROUTE[\"本地路由设置\"]\n    ROUTE -->|打开总开关| ROUTEON[\"路由总开关 ON\"]\n    ROUTEON -->|勾选 Codex| ROUTECHK[\"应用列表勾选 Codex\"]\n    ROUTECHK -->|确认指示灯绿| GREEN[\"路由指示灯 GREEN\"]\n    GREEN --> RESTART[\"重启 ChatGPT 客户端\"]\n    RESTART --> VERIFY[\"验证模型切换成功\"]\n    VERIFY --> DONE[\"适配完成\"]"
+    },
+    {
+      "title": "cc switch 配置细节",
+      "code": "flowchart TD\n    NAV[\"打开 cc switch 顶部导航\"] --> CAT[\"选择 Codex 分类\"]\n    CAT --> ADD[\"点击右上角加号\"]\n    ADD --> SUP[\"新增供应商\"]\n    SUP --> PRE[\"选择 DeepSeek 预设配置\"]\n    PRE --> KEY[\"粘贴 API 密钥\"]\n    KEY --> SAVE[\"保存设置\"]\n    SAVE --> CONF[\"配置完成\"]"
+    },
+    {
+      "title": "适配后功能使用",
+      "code": "flowchart LR\n    READ[\"读取本地项目\"] --> INTER[\"编写接口\"]\n    INTER --> BUG[\"排查代码漏洞\"]\n    BUG --> TEST[\"运行测试命令\"]\n    TEST --> DESC[\"用自然语言描述开发需求\"]\n    DESC --> MOD[\"Codex 自动修改代码\"]\n    MOD --> AUDIT[\"人工审核变更内容\"]\n    AUDIT --> DONE[\"完成代码迭代\"]"
+    },
+    {
+      "title": "故障排除",
+      "code": "flowchart TD\n    FAIL[\"模型切换失败\"] --> RE1[\"重启 ChatGPT 客户端\"]\n    RE1 --> RE2[\"重启 cc switch\"]\n    RE2 --> RETRY[\"重新尝试切换\"]\n    RETRY --> CHECK[\"检查路由指示灯\"]\n    CHECK -->|绿色| SUCCESS[\"切换成功\"]\n    CHECK -->|非绿色| LOOP[\"继续排查设置\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T22:31:59+00:00"
+}

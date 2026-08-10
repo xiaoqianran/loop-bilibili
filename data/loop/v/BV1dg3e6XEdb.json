@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1dg3e6XEdb",
+  "title": "仅需25拿下GPT一个月plus教程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 266,
+  "text": "今天给大家带来的是25元充值plus教程\n可以看到目前该账号是免费版的\n返回我们的主页\n这里也可以看到是免费版\n下面打开我们的操作教程\n梅花打开终极战\n10年春\n想人问一句\n长\n输入咱们25块拿到的卡密\n点击验证CDK\n回到咱们的操作教程\n往下滑\n打开教程中的网址\n获取token\n全部复制\n不要落下\n回到充值站并粘贴到这里\n点击验证token\n看到这个界面就代表验证成功\n点击确认提交\n等待十秒左右就处理成功了\n犯法\n回到我们的GPT页面\n刷新一下\n可以看到左下角已经显示为plus了\n最后本次的账号将免费送给评论\n点赞量最高的人",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1dg3e6XEdb",
+  "published_at": "1785211113",
+  "fetched_at": "2026-08-06T20:51:05+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 仅需25拿下GPT一个月plus教程\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"检查账号为免费版\"] --> A2[\"打开操作教程\"]\n    A2 --> A3[\"输入25元卡密\"]\n    A3 --> A4[\"点击验证CDK\"]\n    A4 --> A5[\"获取Token\"]\n    A5 --> A6[\"复制完整Token\"]\n    A6 --> A7[\"返回充值站并粘贴Token\"]\n    A7 --> A8[\"点击验证Token\"]\n    A8 --> A9[\"验证成功页面\"]\n    A9 --> A10[\"点击确认提交\"]\n    A10 --> A11[\"等待约10秒\"]\n    A11 --> A12[\"刷新GPT页面\"]\n    A12 --> A13[\"左下角显示为Plus\"]\n```\n- 检查账号为免费版 [BV1dg3e6XEdb P1 00:03]  \n- 打开操作教程 [BV1dg3e6XEdb P1 00:10]  \n- 输入25元卡密 [BV1dg3e6XEdb P1 00:15]  \n- 点击验证CDK [BV1dg3e6XEdb P1 00:18]  \n- 获取Token [BV1dg3e6XEdb P1 00:24]  \n- 复制完整Token [BV1dg3e6XEdb P1 00:26]  \n- 返回充值站并粘贴Token [BV1dg3e6XEdb P1 00:28]  \n- 点击验证Token [BV1dg3e6XEdb P1 00:32]  \n- 验证成功页面 [BV1dg3e6XEdb P1 00:34]  \n- 点击确认提交 [BV1dg3e6XEdb P1 00:36]  \n- 等待约10秒 [BV1dg3e6XEdb P1 00:38]  \n- 刷新GPT页面 [BV1dg3e6XEdb P1 00:46]  \n- 左下角显示为Plus [BV1dg3e6XEdb P1 00:50]  \n\n## 详细步骤与分支\n```mermaid\nflowchart TD\n    S0[\"开始：确认当前为免费版\"] --> S1[\"打开操作教程页面\"]\n    S1 --> S2[\"在页面输入25元卡密\"]\n    S2 --> S3[\"点击‘验证CDK’按钮\"]\n    S3 -->|验证成功| S4[\"进入获取Token的页面\"]\n    S3 -->|验证失败| F1[\"提示卡密错误，重新输入\"]\n    S4 --> S5[\"复制页面上全部Token\"]\n    S5 --> S6[\"返回充值站粘贴Token\"]\n    S6 --> S7[\"点击‘验证Token’\"]\n    S7 -->|验证成功| S8[\"出现‘验证成功’提示\"]\n    S7 -->|验证失败| F2[\"提示Token错误，重新获取\"]\n    S8 --> S9[\"点击‘确认提交’\"]\n    S9 --> S10[\"等待约10秒，系统处理\"]\n    S10 --> S11[\"刷新GPT页面\"]\n    S11 --> S12[\"左下角显示‘Plus’标识\"]\n    S12 --> END[\"升级完成\"]\n    F1 --> S2\n    F2 --> S5\n```\n- 验证CDK成功 [BV1dg3e6XEdb P1 00:18]  \n- 验证Token成功 [BV1dg3e6XEdb P1 00:32]  \n- 验证成功页面出现 [BV1dg3e6XEdb P1 00:34]  \n- 点击确认提交后等待 [BV1dg3e6XEdb P1 00:36‑00:38]  \n- 刷新后看到Plus标识 [BV1dg3e6XEdb P1 00:46‑00:50]  ",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"检查账号为免费版\"] --> A2[\"打开操作教程\"]\n    A2 --> A3[\"输入25元卡密\"]\n    A3 --> A4[\"点击验证CDK\"]\n    A4 --> A5[\"获取Token\"]\n    A5 --> A6[\"复制完整Token\"]\n    A6 --> A7[\"返回充值站并粘贴Token\"]\n    A7 --> A8[\"点击验证Token\"]\n    A8 --> A9[\"验证成功页面\"]\n    A9 --> A10[\"点击确认提交\"]\n    A10 --> A11[\"等待约10秒\"]\n    A11 --> A12[\"刷新GPT页面\"]\n    A12 --> A13[\"左下角显示为Plus\"]"
+        },
+        {
+          "title": "详细步骤与分支",
+          "code": "flowchart TD\n    S0[\"开始：确认当前为免费版\"] --> S1[\"打开操作教程页面\"]\n    S1 --> S2[\"在页面输入25元卡密\"]\n    S2 --> S3[\"点击‘验证CDK’按钮\"]\n    S3 -->|验证成功| S4[\"进入获取Token的页面\"]\n    S3 -->|验证失败| F1[\"提示卡密错误，重新输入\"]\n    S4 --> S5[\"复制页面上全部Token\"]\n    S5 --> S6[\"返回充值站粘贴Token\"]\n    S6 --> S7[\"点击‘验证Token’\"]\n    S7 -->|验证成功| S8[\"出现‘验证成功’提示\"]\n    S7 -->|验证失败| F2[\"提示Token错误，重新获取\"]\n    S8 --> S9[\"点击‘确认提交’\"]\n    S9 --> S10[\"等待约10秒，系统处理\"]\n    S10 --> S11[\"刷新GPT页面\"]\n    S11 --> S12[\"左下角显示‘Plus’标识\"]\n    S12 --> END[\"升级完成\"]\n    F1 --> S2\n    F2 --> S5"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-06T20:51:21+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 仅需25拿下GPT一个月plus教程\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"检查账号为免费版\"] --> A2[\"打开操作教程\"]\n    A2 --> A3[\"输入25元卡密\"]\n    A3 --> A4[\"点击验证CDK\"]\n    A4 --> A5[\"获取Token\"]\n    A5 --> A6[\"复制完整Token\"]\n    A6 --> A7[\"返回充值站并粘贴Token\"]\n    A7 --> A8[\"点击验证Token\"]\n    A8 --> A9[\"验证成功页面\"]\n    A9 --> A10[\"点击确认提交\"]\n    A10 --> A11[\"等待约10秒\"]\n    A11 --> A12[\"刷新GPT页面\"]\n    A12 --> A13[\"左下角显示为Plus\"]\n```\n- 检查账号为免费版 [BV1dg3e6XEdb P1 00:03]  \n- 打开操作教程 [BV1dg3e6XEdb P1 00:10]  \n- 输入25元卡密 [BV1dg3e6XEdb P1 00:15]  \n- 点击验证CDK [BV1dg3e6XEdb P1 00:18]  \n- 获取Token [BV1dg3e6XEdb P1 00:24]  \n- 复制完整Token [BV1dg3e6XEdb P1 00:26]  \n- 返回充值站并粘贴Token [BV1dg3e6XEdb P1 00:28]  \n- 点击验证Token [BV1dg3e6XEdb P1 00:32]  \n- 验证成功页面 [BV1dg3e6XEdb P1 00:34]  \n- 点击确认提交 [BV1dg3e6XEdb P1 00:36]  \n- 等待约10秒 [BV1dg3e6XEdb P1 00:38]  \n- 刷新GPT页面 [BV1dg3e6XEdb P1 00:46]  \n- 左下角显示为Plus [BV1dg3e6XEdb P1 00:50]  \n\n## 详细步骤与分支\n```mermaid\nflowchart TD\n    S0[\"开始：确认当前为免费版\"] --> S1[\"打开操作教程页面\"]\n    S1 --> S2[\"在页面输入25元卡密\"]\n    S2 --> S3[\"点击‘验证CDK’按钮\"]\n    S3 -->|验证成功| S4[\"进入获取Token的页面\"]\n    S3 -->|验证失败| F1[\"提示卡密错误，重新输入\"]\n    S4 --> S5[\"复制页面上全部Token\"]\n    S5 --> S6[\"返回充值站粘贴Token\"]\n    S6 --> S7[\"点击‘验证Token’\"]\n    S7 -->|验证成功| S8[\"出现‘验证成功’提示\"]\n    S7 -->|验证失败| F2[\"提示Token错误，重新获取\"]\n    S8 --> S9[\"点击‘确认提交’\"]\n    S9 --> S10[\"等待约10秒，系统处理\"]\n    S10 --> S11[\"刷新GPT页面\"]\n    S11 --> S12[\"左下角显示‘Plus’标识\"]\n    S12 --> END[\"升级完成\"]\n    F1 --> S2\n    F2 --> S5\n```\n- 验证CDK成功 [BV1dg3e6XEdb P1 00:18]  \n- 验证Token成功 [BV1dg3e6XEdb P1 00:32]  \n- 验证成功页面出现 [BV1dg3e6XEdb P1 00:34]  \n- 点击确认提交后等待 [BV1dg3e6XEdb P1 00:36‑00:38]  \n- 刷新后看到Plus标识 [BV1dg3e6XEdb P1 00:46‑00:50]  ",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"检查账号为免费版\"] --> A2[\"打开操作教程\"]\n    A2 --> A3[\"输入25元卡密\"]\n    A3 --> A4[\"点击验证CDK\"]\n    A4 --> A5[\"获取Token\"]\n    A5 --> A6[\"复制完整Token\"]\n    A6 --> A7[\"返回充值站并粘贴Token\"]\n    A7 --> A8[\"点击验证Token\"]\n    A8 --> A9[\"验证成功页面\"]\n    A9 --> A10[\"点击确认提交\"]\n    A10 --> A11[\"等待约10秒\"]\n    A11 --> A12[\"刷新GPT页面\"]\n    A12 --> A13[\"左下角显示为Plus\"]"
+    },
+    {
+      "title": "详细步骤与分支",
+      "code": "flowchart TD\n    S0[\"开始：确认当前为免费版\"] --> S1[\"打开操作教程页面\"]\n    S1 --> S2[\"在页面输入25元卡密\"]\n    S2 --> S3[\"点击‘验证CDK’按钮\"]\n    S3 -->|验证成功| S4[\"进入获取Token的页面\"]\n    S3 -->|验证失败| F1[\"提示卡密错误，重新输入\"]\n    S4 --> S5[\"复制页面上全部Token\"]\n    S5 --> S6[\"返回充值站粘贴Token\"]\n    S6 --> S7[\"点击‘验证Token’\"]\n    S7 -->|验证成功| S8[\"出现‘验证成功’提示\"]\n    S7 -->|验证失败| F2[\"提示Token错误，重新获取\"]\n    S8 --> S9[\"点击‘确认提交’\"]\n    S9 --> S10[\"等待约10秒，系统处理\"]\n    S10 --> S11[\"刷新GPT页面\"]\n    S11 --> S12[\"左下角显示‘Plus’标识\"]\n    S12 --> END[\"升级完成\"]\n    F1 --> S2\n    F2 --> S5"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:51:21+00:00"
+}

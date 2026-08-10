@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1azM26rEWN",
+  "title": "2D像素风水面效果复刻",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 114,
+  "text": "起因是主播看见一个像素风水面\n实现的效果非常的棒\n于是就想尝试复刻一下具体原理\n这里就不展开了\n有兴趣的可以看看原视频\n接下来看看实现的效果吧\n实现了水面涟漪\n下雨打雷水深\n天气明暗等基础效果\n原视频链接和源代码我都放在评论区了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1azM26rEWN",
+  "published_at": "1785944854",
+  "fetched_at": "2026-08-09T09:03:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 2D像素风水面效果复刻 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"观看像素风水面效果\"] --> A2[\"想复刻实现原理\"]\n    A2 --> A3[\"实现基础效果\"]\n    A3 --> A4[\"水面涟漪\"]\n    A3 --> A5[\"雨打雷水深\"]\n    A3 --> A6[\"天气明暗\"]\n    A3 --> A7[\"源码与原视频链接在评论区\"]\n```\nA1: [BV1azM26rEWN P1 00:00]  \nA2: [BV1azM26rEWN P1 00:04]  \nA3: [BV1azM26rEWN P1 00:10]  \nA4: [BV1azM26rEWN P1 00:12]  \nA5: [BV1azM26rEWN P1 00:14]  \nA6: [BV1azM26rEWN P1 00:14]  \nA7: [BV1azM26rEWN P1 00:18]\n\n## 资源获取图\n```mermaid\nflowchart LR\n    R1[\"原视频链接\"] --> R2[\"评论区\"]\n    R3[\"源代码链接\"] --> R2\n```\nR1: [BV1azM26rEWN P1 00:18]  \nR3: [BV1azM26rEWN P1 00:18]  ",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A1[\"观看像素风水面效果\"] --> A2[\"想复刻实现原理\"]\n    A2 --> A3[\"实现基础效果\"]\n    A3 --> A4[\"水面涟漪\"]\n    A3 --> A5[\"雨打雷水深\"]\n    A3 --> A6[\"天气明暗\"]\n    A3 --> A7[\"源码与原视频链接在评论区\"]"
+        },
+        {
+          "title": "资源获取图",
+          "code": "flowchart LR\n    R1[\"原视频链接\"] --> R2[\"评论区\"]\n    R3[\"源代码链接\"] --> R2"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-09T09:12:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 2D像素风水面效果复刻 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"观看像素风水面效果\"] --> A2[\"想复刻实现原理\"]\n    A2 --> A3[\"实现基础效果\"]\n    A3 --> A4[\"水面涟漪\"]\n    A3 --> A5[\"雨打雷水深\"]\n    A3 --> A6[\"天气明暗\"]\n    A3 --> A7[\"源码与原视频链接在评论区\"]\n```\nA1: [BV1azM26rEWN P1 00:00]  \nA2: [BV1azM26rEWN P1 00:04]  \nA3: [BV1azM26rEWN P1 00:10]  \nA4: [BV1azM26rEWN P1 00:12]  \nA5: [BV1azM26rEWN P1 00:14]  \nA6: [BV1azM26rEWN P1 00:14]  \nA7: [BV1azM26rEWN P1 00:18]\n\n## 资源获取图\n```mermaid\nflowchart LR\n    R1[\"原视频链接\"] --> R2[\"评论区\"]\n    R3[\"源代码链接\"] --> R2\n```\nR1: [BV1azM26rEWN P1 00:18]  \nR3: [BV1azM26rEWN P1 00:18]  ",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A1[\"观看像素风水面效果\"] --> A2[\"想复刻实现原理\"]\n    A2 --> A3[\"实现基础效果\"]\n    A3 --> A4[\"水面涟漪\"]\n    A3 --> A5[\"雨打雷水深\"]\n    A3 --> A6[\"天气明暗\"]\n    A3 --> A7[\"源码与原视频链接在评论区\"]"
+    },
+    {
+      "title": "资源获取图",
+      "code": "flowchart LR\n    R1[\"原视频链接\"] --> R2[\"评论区\"]\n    R3[\"源代码链接\"] --> R2"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T09:12:03+00:00"
+}

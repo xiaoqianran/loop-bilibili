@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Vo3C65E3n",
+  "title": "【比金铲铲还爽】室友推荐的Python编程游戏网站，瞬间对Python的喜爱程度达到了1000000%！！！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 454,
+  "text": "刚高考完\n是不是只想瘫在椅子上摆烂\n打开电脑\n先打两把瓦\n再刷刷其他游戏\n一天就这么过去了\n爽是爽\n但总觉得哪里空落落的\n说实话\n打瓦打排位刷成就这些我都懂\n但你有没有想过\n与其把时间砸在纯消耗的游戏里\n不如找一款边玩边学编程的游戏\n这种游戏不是让你背单词式的学习\n而是把编程逻辑藏在关卡里\n你要指挥角色移动解谜\n打怪靠的不是手速和反应\n而是写代码\n循环条件\n判断函数调用\n不知不觉就把Python基础给玩会了\n好处真的不少\n不费脑\n但长技能不像刷题那么枯燥\n通关的成就感和打游戏一模一样\n但下线的时候\n你是真的多了一项硬本事\n为大学铺路\n不管你学什么专业\n编程基本都是刚需\n别人开学还在蒙print是什么\n你已经能写小项目了\n性价比拉满\n同样是坐一下午\n别人段位涨了两颗星\n你段位和技能双丰收血赚\n当然光靠游戏入门是不够的\n我这里整理了一套搭配游戏学习的Python入门资料\n从基础语法到实战项目都有爬虫\n自动化脚本\n小游戏开发跟着做一遍\n暑假结束你就能独立写东西了\n需要的话直接说资料和项目清单一起发\n你",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Vo3C65E3n",
+  "published_at": "1785310837",
+  "fetched_at": "2026-08-07T05:02:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Python 编程游戏学习图谱\n\n## Overview\n```mermaid\nflowchart TD\n    A1[\"高考后放松\"] --> A2[\"纯消耗游戏\"]\n    A1 --> A3[\"边玩边学编程游戏\"]\n    A3 --> A4[\"嵌入编程逻辑（循环、条件、函数）\"]\n    A4 --> A5[\"获得Python基础\"]\n    A5 --> A6[\"成就感与游戏相同\"]\n    A5 --> A7[\"提升硬本事\"]\n    A7 --> A8[\"为大学和职业铺路\"]\n```\n\n## Learning Pathway\n```mermaid\nflowchart TD\n    B1[\"玩编程游戏\"] --> B2[\"学习循环\"]\n    B1 --> B3[\"学习条件判断\"]\n    B1 --> B4[\"学习函数调用\"]\n    B2 --> B5[\"掌握基础语法\"]\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6[\"实战项目：爬虫\"]\n    B5 --> B7[\"实战项目：自动化脚本\"]\n    B5 --> B8[\"实战项目：小游戏开发\"]\n    B6 --> B9[\"独立写项目\"]\n    B7 --> B9\n    B8 --> B9\n    B9 --> B10[\"技能双丰收\"]\n```\n\n## Resource Bundle\n```mermaid\nflowchart TD\n    C1[\"基础语法教程\"]\n    C2[\"爬虫实战\"]\n    C3[\"自动化脚本教程\"]\n    C4[\"小游戏开发指南\"]\n    C5[\"项目清单\"]\n    C6[\"整体学习资料包\"]\n    C7[\"适合暑假自学\"]\n    C8[\"快速上手Python\"]\n    C1 --> C6\n    C2 --> C6\n    C3 --> C6\n    C4 --> C6\n    C5 --> C6\n    C6 --> C7\n    C6 --> C8\n```",
+      "diagrams": [
+        {
+          "title": "Overview",
+          "code": "flowchart TD\n    A1[\"高考后放松\"] --> A2[\"纯消耗游戏\"]\n    A1 --> A3[\"边玩边学编程游戏\"]\n    A3 --> A4[\"嵌入编程逻辑（循环、条件、函数）\"]\n    A4 --> A5[\"获得Python基础\"]\n    A5 --> A6[\"成就感与游戏相同\"]\n    A5 --> A7[\"提升硬本事\"]\n    A7 --> A8[\"为大学和职业铺路\"]"
+        },
+        {
+          "title": "Learning Pathway",
+          "code": "flowchart TD\n    B1[\"玩编程游戏\"] --> B2[\"学习循环\"]\n    B1 --> B3[\"学习条件判断\"]\n    B1 --> B4[\"学习函数调用\"]\n    B2 --> B5[\"掌握基础语法\"]\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6[\"实战项目：爬虫\"]\n    B5 --> B7[\"实战项目：自动化脚本\"]\n    B5 --> B8[\"实战项目：小游戏开发\"]\n    B6 --> B9[\"独立写项目\"]\n    B7 --> B9\n    B8 --> B9\n    B9 --> B10[\"技能双丰收\"]"
+        },
+        {
+          "title": "Resource Bundle",
+          "code": "flowchart TD\n    C1[\"基础语法教程\"]\n    C2[\"爬虫实战\"]\n    C3[\"自动化脚本教程\"]\n    C4[\"小游戏开发指南\"]\n    C5[\"项目清单\"]\n    C6[\"整体学习资料包\"]\n    C7[\"适合暑假自学\"]\n    C8[\"快速上手Python\"]\n    C1 --> C6\n    C2 --> C6\n    C3 --> C6\n    C4 --> C6\n    C5 --> C6\n    C6 --> C7\n    C6 --> C8"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T05:02:53+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Python 编程游戏学习图谱\n\n## Overview\n```mermaid\nflowchart TD\n    A1[\"高考后放松\"] --> A2[\"纯消耗游戏\"]\n    A1 --> A3[\"边玩边学编程游戏\"]\n    A3 --> A4[\"嵌入编程逻辑（循环、条件、函数）\"]\n    A4 --> A5[\"获得Python基础\"]\n    A5 --> A6[\"成就感与游戏相同\"]\n    A5 --> A7[\"提升硬本事\"]\n    A7 --> A8[\"为大学和职业铺路\"]\n```\n\n## Learning Pathway\n```mermaid\nflowchart TD\n    B1[\"玩编程游戏\"] --> B2[\"学习循环\"]\n    B1 --> B3[\"学习条件判断\"]\n    B1 --> B4[\"学习函数调用\"]\n    B2 --> B5[\"掌握基础语法\"]\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6[\"实战项目：爬虫\"]\n    B5 --> B7[\"实战项目：自动化脚本\"]\n    B5 --> B8[\"实战项目：小游戏开发\"]\n    B6 --> B9[\"独立写项目\"]\n    B7 --> B9\n    B8 --> B9\n    B9 --> B10[\"技能双丰收\"]\n```\n\n## Resource Bundle\n```mermaid\nflowchart TD\n    C1[\"基础语法教程\"]\n    C2[\"爬虫实战\"]\n    C3[\"自动化脚本教程\"]\n    C4[\"小游戏开发指南\"]\n    C5[\"项目清单\"]\n    C6[\"整体学习资料包\"]\n    C7[\"适合暑假自学\"]\n    C8[\"快速上手Python\"]\n    C1 --> C6\n    C2 --> C6\n    C3 --> C6\n    C4 --> C6\n    C5 --> C6\n    C6 --> C7\n    C6 --> C8\n```",
+  "diagrams": [
+    {
+      "title": "Overview",
+      "code": "flowchart TD\n    A1[\"高考后放松\"] --> A2[\"纯消耗游戏\"]\n    A1 --> A3[\"边玩边学编程游戏\"]\n    A3 --> A4[\"嵌入编程逻辑（循环、条件、函数）\"]\n    A4 --> A5[\"获得Python基础\"]\n    A5 --> A6[\"成就感与游戏相同\"]\n    A5 --> A7[\"提升硬本事\"]\n    A7 --> A8[\"为大学和职业铺路\"]"
+    },
+    {
+      "title": "Learning Pathway",
+      "code": "flowchart TD\n    B1[\"玩编程游戏\"] --> B2[\"学习循环\"]\n    B1 --> B3[\"学习条件判断\"]\n    B1 --> B4[\"学习函数调用\"]\n    B2 --> B5[\"掌握基础语法\"]\n    B3 --> B5\n    B4 --> B5\n    B5 --> B6[\"实战项目：爬虫\"]\n    B5 --> B7[\"实战项目：自动化脚本\"]\n    B5 --> B8[\"实战项目：小游戏开发\"]\n    B6 --> B9[\"独立写项目\"]\n    B7 --> B9\n    B8 --> B9\n    B9 --> B10[\"技能双丰收\"]"
+    },
+    {
+      "title": "Resource Bundle",
+      "code": "flowchart TD\n    C1[\"基础语法教程\"]\n    C2[\"爬虫实战\"]\n    C3[\"自动化脚本教程\"]\n    C4[\"小游戏开发指南\"]\n    C5[\"项目清单\"]\n    C6[\"整体学习资料包\"]\n    C7[\"适合暑假自学\"]\n    C8[\"快速上手Python\"]\n    C1 --> C6\n    C2 --> C6\n    C3 --> C6\n    C4 --> C6\n    C5 --> C6\n    C6 --> C7\n    C6 --> C8"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:02:53+00:00"
+}

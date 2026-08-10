@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1H6LV67E9A",
+  "title": "Godot 进阶 | 2D像素游戏优化指南",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3558,
+  "text": "首先我整个这个游戏的场景尺寸是\n320×320\n那在这个基础的场景当中\n我有一个可以四处移动的玩家\n以及一个摄像机节点\n它的缩放设置为了二\n以及开启了它的这个摄像机平滑跟随\n在默认的这个设置状态下\n如果我直接启动\n会发现场景是非常糊的\n这是因为我们开启了这个尽兴的采样\n所以我们需要在这个设置当中\n将它的这个纹理设置呃\n过滤改为nearest\n那为了更好的控制这些参数\n我创建了一个负极的场景\n那在这个场景当中\n我相当于设置了一个SUBVIEWPORT\n那这样的话我们很多的设置\n就可以直接在这里去进行控制\n那我就在这里将它的这个纹理采样改成了NERR\n那这样的话我们去播放这个场景\n就可以看到一个边缘锋利的结果\n那为了引出这个画面抖动的问题\n我在场景当中将一个像素图\n进行一定角度的旋转\n那在这种情况下\n如果我们去到一些像素边缘的时候\n就可以看到\n这里的这个像素是会随着我们的摄像机移动\n是变化的\n那这显然是个不太稳定的结果\n那为了取消这个问题\n我们就需要在我们的设置当中\n需要把SUBVIEWPORT的这个snap to the transform to pixel\n这个选项打开\n那我们开启之后\n就可以看到我们的整个这些像素像\n是被固定到了这个画面当中\n不会产生像之前那样的一个抖动\n但是这会给我们带来一个新的问题\n由于我们开启了这个摄像机的倍率缩放\n以及我们开启了这个摄像机跟随\n所以当我们在移动的时候\n这个角色会发生一种剧烈的抖动\n那这种抖动其实是不可控的\n我们根本没办法去取消它\n那造成它的原因\n其实就是我们开启了这个将所有的移动数据\n包括摄像机\n还有这些角色的坐标规整到整数\n那它就不会像之前那样存在一个浮点位置\n那在对齐像素的时候\n就会产生这种不自然的抖动\n那解决这个问题的办法\n其实在我测试下来只有一种\n那就是我们必须要将这个摄像机的这个缩放\n以及它的这个跟随关掉\n那这样的话在原始尺寸下\n我们就可以做到没有抖动\n同时得到一个非常平滑像素的一个结果\n那如果我们就是想要使用这个摄像机的缩放\n以及它的摄像机跟随\n那有没有办法达到和原来一样的效果呢\n那这时候我们就需要设置我们的SHADER\n那我在这里创建了另一个场景\n在这个场景下\n我们发现它的整个结构\n和我们原来的这个结构是一模一样的\n那唯一不同之处就是这里的这个SOVIEWPORT\n这个container节点\n它下面会有一个SHADER\n那这个SHADER的作用其实就是用来平移和缩放\n我们的这个画面\n那它本质上是会移动我们整个视图\n那我在这里去改变它的缩放\n可以看到它可以起到和摄像机类似的一个作用\n但是它跟摄像机是完全不一样的\n那在摄像机的移动当中\n其实它是会实时修改我们整个画面的一个渲染\n也就是说我们在这里可以看到\n当我缩小画布的时候\n这些地方它是缺失的\n我们没办法做到把整个画面缩小的一个结果\n但是我们可以去把它放大\n当我们把它放大的时候\n我们可以看到得到的结果\n跟摄像机的这个缩放比例改成21模一样的\n那与此同时\n我们在这里有一个camera的一个offset\n那这个offset其实是会移动\n我们整个这个视图可以看到\n它会让我们的这些边角露出来\n那我们通过模拟这个摄像机跟随的一个效果\n来达到和原来一样的效果\n但是又没有涉及到整个摄像机的平移\n那为了保证我们在移动的过程中\n没有像素的画面不会落在我们的视图当中\n我们需要把原先的这个SOVIEWPORT\n从我们默认设置的320放大一些\n放大到我们合适位置\n那这取决于你的玩家移动速度\n那我们在这里将它比如设置为420\n我给它的四周都放大100像素\n那其实在这里的这些操作呢\n我会在这里的这个节点当中进行控制\n我们可以看到在这个节点当中\n它会使用这里的这个\n我们在这个savior container下的这个SHADER\n他会去修改\n在这个physical process当中\n去根据玩家的这个速度来修改它的一个偏移\n那同时我们在一开始的时候\n会设置它的一些边缘\n那我在这里\n如果默认的是320×320的一个尺寸的话\n我们可以在这里修改它\n去添加一个边缘值\n以及它的一个偏移量\n其实这里还有一些问题是在我录视频过程当中\n没办法展示出来\n因为似乎它的这个帧率会被我们录制的\n这个软件去干扰\n所以它会得到一个平滑的结果\n但是我在这里其实做了一些额外的设定\n在你们自己电脑上运行这些像素软件的时候\n你们就可以知道这些设置的有用性\n首先常规的这个像素游戏的一个设置里面\n我们需要将这里的这个mod\n也就是他的这个视图的一个拉伸模式改为VIEWPORT\n然后最好是能把他的这个scale mode改成integer\n那这样的话\n它其实在我们整个画面缩放的过程当中\n不会出现我们的一个浮点数的画面\n那只有当用户呃屏幕支持\n或者说我们的这个设置支持到足够大的时候\n它才会以整数倍的形式去缩放\n那第二点就是我们需要将这个摄像机的处理的\n这个call back process一定要改成physical\n因为其实你如果不去把它改成physical的话\n我们会发现他的真画不同步的情况\n会导致我们我们这个玩家\n移动过程中的一种撕裂感\n尤其是当你的速度比较快的时候\n那除此之外的话就是我们可以选择\n而且推荐大家将这里的这个呃max fbs\n也就是我们的帧率锁定在60帧\n其实这是跟我们的这个物理帧率是同步的\n那这样的话我们可以更好地保证\n画面是不会产生撕裂\n一些特殊情况下的一个抖动\n那虽然这种情况比较少见\n但我还是想介绍一下\n在我们无论使用摄像机还是这里的这个\n嗯shadow的方式\n来进行这个不同尺度的一个变化的时候\n我们可以看到\n由于我们采用了这个临近采样的方式\n当我们的这些倍率处于一个浮点状态时\n我们的整个这个像素会得到\n一种非常奇怪的拉伸\n因为它的大小会有一种不一的变化\n那在这里\n我其实在网上参考了一些别的代码之后\n做了一个功能\n叫做这个use linear smooth\n那我们在开启这个功能之后\n我们需要将我们的整个这里的这个FLITTER\n改成linear\n那如果你在这个项目设置当中\n把它改成了news的话\n你一定要将当前的这个呃\nsavile port container的这个texture filter改成linear\n那这样的话这里的这个像素的规律就会起效\n那我们就可以看到它整个中间的这个变化状态\n就不会像之前那样的抖动了\n那我们在关掉它之后\n这是原先的这种临近的采样的变化\n那这是我们加了这种过滤之后的变化\n可以看到中间态虽然会有点糊\n但是我们最终的这个数值其实是不会再糊的\n我在这里\n先将我们这个画面的这个缩放的代码关掉\n那可以看到我们整个这个额倍率\n处于整数的时候\n它就不会出现像刚才那样的糊的感觉\n但是如果我们中间有涉及到这个摄像机的缩放\n那我们就可以得到一个不那么啊\n画面在出现不那么抖动的情况下\n得到一个数值的变化\n比如我原先可能是一\n那我可能需要把它动态变到二\n那这个过程会比我们不使用这个啊\nlinear的这种smooth来说啊\n更加丝滑\n我们需要将这里改成nearest\n那可以看到我们的整个像素\n就会避免出现这种畸变\n那在这里还有一个小问题\n那就是获取鼠标位置\n那我在这个场景当中增加了一个图片\n我在这个跟场景当中\n让这个呃\n当前鼠标位置直接付给当前的这个节点对象\n那理论上这个对象应该始终出现在鼠标位置\n但是我们在运行场景之后会发现\n它其实并不会在这个鼠标位置\n这是因为我们当前的这个视图\n是放大过后的一个视图\n也就是我当前的这个位置\n其实并不是鼠标所在的这个位置\n所以它们之间会有一个偏差\n那为了弥补这个偏差\n我在SUBLIVER这个脚本当中\n增加了一个获取真实鼠鼠标位置的一个方法\n叫做get some oppso global position\n那我们可以直接在这些我们需要获取\n就是当前这个世界坐标下的一个鼠标位置的呃\n方法当中调用这里的这个方法\n那我们可以直接通过get viewport\n获取我们当前这个世界所在的这个VIEWPORT\n那他就是我们在这里的这个SOVIEWPORT\n然后我们通过这个get parent方法\n再去获取它的复节点\n也就是我们这个soviable container\n那这样的话我们可以调用它的方法\n来获取到这个对应的世界鼠标位置\n这时候我们在运行之后就发现\n那这个物体就会真实的被放在鼠标所在的位置\n那也就是我们鼠标在当前这个世界中的位置\n能被获取到\n我已经把这节课涉及到的内容单独打包到这\n我的GITHUB格到pixel perfect这样一个REPULSORY当中\n大家有需要的话\n可以在这个路径当中下载",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1H6LV67E9A",
+  "published_at": "1778951174",
+  "fetched_at": "2026-08-09T20:22:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 2D 像素游戏优化指南\n\n## 场景与基础渲染设置\n```mermaid\nflowchart TD\n    S1[\"场景尺寸 320×320\"] --> P1[\"玩家节点（可四处移动）\"]\n    S1 --> C1[\"摄像机节点\"]\n    C1 --> Z1[\"缩放 = 2\"]\n    C1 --> SM1[\"平滑跟随 开启\"]\n    C1 --> TF1[\"纹理过滤 默认\"]\n    TF1 -->|改为| TF2[\"nearest（像素锐化）\"]\n    S1 --> SV1[\"SubViewport（负极场景）\"]\n    SV1 --> TF2\n```\n\n**关键结论与设置**  \n- 场景尺寸设为 320×320。 [BV1H6LV67E9A P1 00:00]  \n- 摄像机缩放为 2 并开启平滑跟随。 [BV1H6LV67E9A P1 00:10‑00:14]  \n- 默认纹理过滤导致画面模糊，需改为 **nearest**。 [BV1H6LV67E9A P1 00:24‑00:28]  \n- 使用 SubViewport 将纹理采样设置为 nearest，可得到锐利边缘。 [BV1H6LV67E9A P1 00:31‑00:46]\n\n## 像素抖动问题与根因\n```mermaid\nflowchart TD\n    J1[\"像素抖动出现\"] --> C2[\"摄像机缩放 + 平滑跟随\"]\n    C2 --> S2[\"像素对齐到整数坐标\"]\n    S2 --> J2[\"不自然的抖动\"]\n    J1 --> SV2[\"SubViewport snap to pixel 开启\"]\n    SV2 --> J3[\"抖动消失但出现新抖动\"]\n    J3 --> C3[\"角色在移动时剧烈抖动\"]\n    C3 -->|根因| R1[\"所有移动（包括摄像机）强制整数化\"]\n    R1 -->|解决方案| SOL1[\"关闭摄像机缩放和跟随\"]\n    SOL1 --> RES1[\"无抖动的平滑像素结果\"]\n```\n\n**关键结论与时间戳**  \n- 开启摄像机缩放和平滑跟随导致像素在摄像机移动时抖动。 [BV1H6LV67E9A P1 01:31‑01:37]  \n- 开启 SubViewport 的 **snap to pixel** 可消除抖动，但在缩放+跟随下仍会出现剧烈抖动。 [BV1H6LV67E9A P1 01:10‑01:25]  \n- 抖动根源是所有移动数据（摄像机、角色）被强制整数化。 [BV1H6LV67E9A P1 01:46‑01:59]  \n- 唯一可行的根本解决办法是关闭摄像机的缩放和跟随。 [BV1H6LV67E9A P1 02:04‑02:12]\n\n## Shader 替代摄像机平移缩放\n```mermaid\nflowchart LR\n    SH1[\"Shader（位于 SubViewport container）\"] --> OP1[\"平移 & 缩放 视图\"]\n    OP1 -->|模拟| CAM1[\"摄像机的平移/缩放 效果\"]\n    CAM1 -->|不同于| CAM2[\"摄像机实时渲染\"]\n    OP1 --> OFF1[\"Camera offset（用于显示边角）\"]\n    OFF1 --> SIM1[\"模拟摄像机跟随 效果\"]\n    SH1 --> PH1[\"在 physics_process 中根据玩家速度更新 offset\"]\n    PH1 --> ADJ1[\"根据玩家速度 调整视图偏移\"]\n    ADJ1 --> BND1[\"可调节 SubViewport 大小（如 420）\"]\n```\n\n**关键结论与时间戳**  \n- 在 SubViewport container 中添加 Shader，用于平移和缩放画面，代替摄像机的缩放功能。 [BV1H6LV67E9A P1 02:42‑02:56]  \n- Shader 通过 offset 实现摄像机跟随效果，避免摄像机本身的平移。 [BV1H6LV67E9A P1 03:26‑03:41]  \n- 在 `physics_process` 中根据玩家速度修改 offset，保持像素对齐。 [BV1H6LV67E9A P1 04:20‑04:25]  \n- 可通过放大 SubViewport（如 420）并添加边缘偏移，适配不同玩家移动速度。 [BV1H6LV67E9A P1 03:51‑04:07]\n\n## 鼠标坐标映射修正\n```mermaid\nflowchart TD\n    MV1[\"放大后的视图（SubViewport）\"] --> MISM1[\"鼠标坐标出现偏差\"]\n    MISM1 --> FIX1[\"在 SubViewport 脚本中实现 get_global_mouse_position\"]\n    FIX1 --> GET1[\"获取当前 Viewport\"]\n    GET1 --> PARENT1[\"通过 get_parent 获取 SubViewport container\"]\n    PARENT1 --> MAP1[\"返回世界坐标下的鼠标位置\"]\n    MAP1 --> CORR1[\"对象正确放置在鼠标位置\"]\n```\n\n**关键结论与时间戳**  \n- 放大视图导致鼠标坐标与实际世界坐标不匹配。 [BV1H6LV67E9A P1 08:21‑08:28]  \n- 在 SubViewport 脚本中实现 `get_global_mouse_position` 方法以获取真实世界坐标。 [BV1H6LV67E9A P1 08:35‑08:42]  \n- 通过 `get_viewport` → `get_parent` 获取 SubViewport container，进而得到正确的鼠标世界坐标。 [BV1H6LV67E9A P1 08:52‑09:08]  \n- 使用该方法后，物体能够准确跟随鼠标位置。 [BV1H6LV67E9A P1 09:11‑09:17]",
+      "diagrams": [
+        {
+          "title": "场景与基础渲染设置",
+          "code": "flowchart TD\n    S1[\"场景尺寸 320×320\"] --> P1[\"玩家节点（可四处移动）\"]\n    S1 --> C1[\"摄像机节点\"]\n    C1 --> Z1[\"缩放 = 2\"]\n    C1 --> SM1[\"平滑跟随 开启\"]\n    C1 --> TF1[\"纹理过滤 默认\"]\n    TF1 -->|改为| TF2[\"nearest（像素锐化）\"]\n    S1 --> SV1[\"SubViewport（负极场景）\"]\n    SV1 --> TF2"
+        },
+        {
+          "title": "像素抖动问题与根因",
+          "code": "flowchart TD\n    J1[\"像素抖动出现\"] --> C2[\"摄像机缩放 + 平滑跟随\"]\n    C2 --> S2[\"像素对齐到整数坐标\"]\n    S2 --> J2[\"不自然的抖动\"]\n    J1 --> SV2[\"SubViewport snap to pixel 开启\"]\n    SV2 --> J3[\"抖动消失但出现新抖动\"]\n    J3 --> C3[\"角色在移动时剧烈抖动\"]\n    C3 -->|根因| R1[\"所有移动（包括摄像机）强制整数化\"]\n    R1 -->|解决方案| SOL1[\"关闭摄像机缩放和跟随\"]\n    SOL1 --> RES1[\"无抖动的平滑像素结果\"]"
+        },
+        {
+          "title": "Shader 替代摄像机平移缩放",
+          "code": "flowchart LR\n    SH1[\"Shader（位于 SubViewport container）\"] --> OP1[\"平移 & 缩放 视图\"]\n    OP1 -->|模拟| CAM1[\"摄像机的平移/缩放 效果\"]\n    CAM1 -->|不同于| CAM2[\"摄像机实时渲染\"]\n    OP1 --> OFF1[\"Camera offset（用于显示边角）\"]\n    OFF1 --> SIM1[\"模拟摄像机跟随 效果\"]\n    SH1 --> PH1[\"在 physics_process 中根据玩家速度更新 offset\"]\n    PH1 --> ADJ1[\"根据玩家速度 调整视图偏移\"]\n    ADJ1 --> BND1[\"可调节 SubViewport 大小（如 420）\"]"
+        },
+        {
+          "title": "鼠标坐标映射修正",
+          "code": "flowchart TD\n    MV1[\"放大后的视图（SubViewport）\"] --> MISM1[\"鼠标坐标出现偏差\"]\n    MISM1 --> FIX1[\"在 SubViewport 脚本中实现 get_global_mouse_position\"]\n    FIX1 --> GET1[\"获取当前 Viewport\"]\n    GET1 --> PARENT1[\"通过 get_parent 获取 SubViewport container\"]\n    PARENT1 --> MAP1[\"返回世界坐标下的鼠标位置\"]\n    MAP1 --> CORR1[\"对象正确放置在鼠标位置\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T20:30:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 2D 像素游戏优化指南\n\n## 场景与基础渲染设置\n```mermaid\nflowchart TD\n    S1[\"场景尺寸 320×320\"] --> P1[\"玩家节点（可四处移动）\"]\n    S1 --> C1[\"摄像机节点\"]\n    C1 --> Z1[\"缩放 = 2\"]\n    C1 --> SM1[\"平滑跟随 开启\"]\n    C1 --> TF1[\"纹理过滤 默认\"]\n    TF1 -->|改为| TF2[\"nearest（像素锐化）\"]\n    S1 --> SV1[\"SubViewport（负极场景）\"]\n    SV1 --> TF2\n```\n\n**关键结论与设置**  \n- 场景尺寸设为 320×320。 [BV1H6LV67E9A P1 00:00]  \n- 摄像机缩放为 2 并开启平滑跟随。 [BV1H6LV67E9A P1 00:10‑00:14]  \n- 默认纹理过滤导致画面模糊，需改为 **nearest**。 [BV1H6LV67E9A P1 00:24‑00:28]  \n- 使用 SubViewport 将纹理采样设置为 nearest，可得到锐利边缘。 [BV1H6LV67E9A P1 00:31‑00:46]\n\n## 像素抖动问题与根因\n```mermaid\nflowchart TD\n    J1[\"像素抖动出现\"] --> C2[\"摄像机缩放 + 平滑跟随\"]\n    C2 --> S2[\"像素对齐到整数坐标\"]\n    S2 --> J2[\"不自然的抖动\"]\n    J1 --> SV2[\"SubViewport snap to pixel 开启\"]\n    SV2 --> J3[\"抖动消失但出现新抖动\"]\n    J3 --> C3[\"角色在移动时剧烈抖动\"]\n    C3 -->|根因| R1[\"所有移动（包括摄像机）强制整数化\"]\n    R1 -->|解决方案| SOL1[\"关闭摄像机缩放和跟随\"]\n    SOL1 --> RES1[\"无抖动的平滑像素结果\"]\n```\n\n**关键结论与时间戳**  \n- 开启摄像机缩放和平滑跟随导致像素在摄像机移动时抖动。 [BV1H6LV67E9A P1 01:31‑01:37]  \n- 开启 SubViewport 的 **snap to pixel** 可消除抖动，但在缩放+跟随下仍会出现剧烈抖动。 [BV1H6LV67E9A P1 01:10‑01:25]  \n- 抖动根源是所有移动数据（摄像机、角色）被强制整数化。 [BV1H6LV67E9A P1 01:46‑01:59]  \n- 唯一可行的根本解决办法是关闭摄像机的缩放和跟随。 [BV1H6LV67E9A P1 02:04‑02:12]\n\n## Shader 替代摄像机平移缩放\n```mermaid\nflowchart LR\n    SH1[\"Shader（位于 SubViewport container）\"] --> OP1[\"平移 & 缩放 视图\"]\n    OP1 -->|模拟| CAM1[\"摄像机的平移/缩放 效果\"]\n    CAM1 -->|不同于| CAM2[\"摄像机实时渲染\"]\n    OP1 --> OFF1[\"Camera offset（用于显示边角）\"]\n    OFF1 --> SIM1[\"模拟摄像机跟随 效果\"]\n    SH1 --> PH1[\"在 physics_process 中根据玩家速度更新 offset\"]\n    PH1 --> ADJ1[\"根据玩家速度 调整视图偏移\"]\n    ADJ1 --> BND1[\"可调节 SubViewport 大小（如 420）\"]\n```\n\n**关键结论与时间戳**  \n- 在 SubViewport container 中添加 Shader，用于平移和缩放画面，代替摄像机的缩放功能。 [BV1H6LV67E9A P1 02:42‑02:56]  \n- Shader 通过 offset 实现摄像机跟随效果，避免摄像机本身的平移。 [BV1H6LV67E9A P1 03:26‑03:41]  \n- 在 `physics_process` 中根据玩家速度修改 offset，保持像素对齐。 [BV1H6LV67E9A P1 04:20‑04:25]  \n- 可通过放大 SubViewport（如 420）并添加边缘偏移，适配不同玩家移动速度。 [BV1H6LV67E9A P1 03:51‑04:07]\n\n## 鼠标坐标映射修正\n```mermaid\nflowchart TD\n    MV1[\"放大后的视图（SubViewport）\"] --> MISM1[\"鼠标坐标出现偏差\"]\n    MISM1 --> FIX1[\"在 SubViewport 脚本中实现 get_global_mouse_position\"]\n    FIX1 --> GET1[\"获取当前 Viewport\"]\n    GET1 --> PARENT1[\"通过 get_parent 获取 SubViewport container\"]\n    PARENT1 --> MAP1[\"返回世界坐标下的鼠标位置\"]\n    MAP1 --> CORR1[\"对象正确放置在鼠标位置\"]\n```\n\n**关键结论与时间戳**  \n- 放大视图导致鼠标坐标与实际世界坐标不匹配。 [BV1H6LV67E9A P1 08:21‑08:28]  \n- 在 SubViewport 脚本中实现 `get_global_mouse_position` 方法以获取真实世界坐标。 [BV1H6LV67E9A P1 08:35‑08:42]  \n- 通过 `get_viewport` → `get_parent` 获取 SubViewport container，进而得到正确的鼠标世界坐标。 [BV1H6LV67E9A P1 08:52‑09:08]  \n- 使用该方法后，物体能够准确跟随鼠标位置。 [BV1H6LV67E9A P1 09:11‑09:17]",
+  "diagrams": [
+    {
+      "title": "场景与基础渲染设置",
+      "code": "flowchart TD\n    S1[\"场景尺寸 320×320\"] --> P1[\"玩家节点（可四处移动）\"]\n    S1 --> C1[\"摄像机节点\"]\n    C1 --> Z1[\"缩放 = 2\"]\n    C1 --> SM1[\"平滑跟随 开启\"]\n    C1 --> TF1[\"纹理过滤 默认\"]\n    TF1 -->|改为| TF2[\"nearest（像素锐化）\"]\n    S1 --> SV1[\"SubViewport（负极场景）\"]\n    SV1 --> TF2"
+    },
+    {
+      "title": "像素抖动问题与根因",
+      "code": "flowchart TD\n    J1[\"像素抖动出现\"] --> C2[\"摄像机缩放 + 平滑跟随\"]\n    C2 --> S2[\"像素对齐到整数坐标\"]\n    S2 --> J2[\"不自然的抖动\"]\n    J1 --> SV2[\"SubViewport snap to pixel 开启\"]\n    SV2 --> J3[\"抖动消失但出现新抖动\"]\n    J3 --> C3[\"角色在移动时剧烈抖动\"]\n    C3 -->|根因| R1[\"所有移动（包括摄像机）强制整数化\"]\n    R1 -->|解决方案| SOL1[\"关闭摄像机缩放和跟随\"]\n    SOL1 --> RES1[\"无抖动的平滑像素结果\"]"
+    },
+    {
+      "title": "Shader 替代摄像机平移缩放",
+      "code": "flowchart LR\n    SH1[\"Shader（位于 SubViewport container）\"] --> OP1[\"平移 & 缩放 视图\"]\n    OP1 -->|模拟| CAM1[\"摄像机的平移/缩放 效果\"]\n    CAM1 -->|不同于| CAM2[\"摄像机实时渲染\"]\n    OP1 --> OFF1[\"Camera offset（用于显示边角）\"]\n    OFF1 --> SIM1[\"模拟摄像机跟随 效果\"]\n    SH1 --> PH1[\"在 physics_process 中根据玩家速度更新 offset\"]\n    PH1 --> ADJ1[\"根据玩家速度 调整视图偏移\"]\n    ADJ1 --> BND1[\"可调节 SubViewport 大小（如 420）\"]"
+    },
+    {
+      "title": "鼠标坐标映射修正",
+      "code": "flowchart TD\n    MV1[\"放大后的视图（SubViewport）\"] --> MISM1[\"鼠标坐标出现偏差\"]\n    MISM1 --> FIX1[\"在 SubViewport 脚本中实现 get_global_mouse_position\"]\n    FIX1 --> GET1[\"获取当前 Viewport\"]\n    GET1 --> PARENT1[\"通过 get_parent 获取 SubViewport container\"]\n    PARENT1 --> MAP1[\"返回世界坐标下的鼠标位置\"]\n    MAP1 --> CORR1[\"对象正确放置在鼠标位置\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T20:30:28+00:00"
+}

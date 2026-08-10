@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1B8un61E6i",
+  "title": "刷了一天海外社区，才明白DeepSeek正式版意味着什么",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2161,
+  "text": "今天逛海外社区\n我发现deep sk发布后真的是太热闹了\n屏幕上这个帖翻译过来非常劲爆\n中国大模型正在接管世界\n就在这个帖里\n一群老外正在认真讨论\n他们怎么靠中国大模型降低支出\n又该配什么harness\n才能把咱们的大模型用到极致\n看到这里\n我突然觉得\n中国的大模型\n似乎好像正在变成世界文明的另一种土特产了\n这个帖子之所以爆了\n源头就是屏幕上这份open router\n8月第一周的模型榜单\n按照模型调用量排名\ndeep sick的三个版本分别拿下第一名\n第四名和第六名\n前十名里中国模型占了八个\n前四名更是清一色来自中国\n更扎眼的是\n这八个中国模型全部都是付费模型\n全世界的用户依然在真金白银的用\n放几条帖子里的网友评论给大家看一下\n一位老外程序员说\n他现在找不到比deep sick更合适的编程助手\n还补了一句\n给中国点赞\n让AI再次便宜起来\n另一位直接下了暴论\n就算GPT5.6LUNA免费\n他大概率还是会输给deep sick v4flash\n还有一串双人互动\n把我逗笑了\n一个网友先吐槽美国大模型的API太贵\n另一个人接话\n我就是喜欢API用多少付多少\n网友立刻震惊\n你居然还在给美国API付钱\n结果对方淡定回了一句哦\n我付的是deep seek\n当然也有人很酸的说\n这个讨论区大半应该都是中国人\n不要听他们的\n他们当然会说中国模型好\n结果下面的世界各地的网友立刻开始整活儿哦\n那我也只能是中国人了\n诶我没去过中国\n但我也是中国人\n当大家纷纷认领起中国身份\n评论区的空气里也就充满了快乐的气氛\n其实更多老外讨论的非常认真\ndeep seek应该配哪个harness\n用多高的思考强度\n以及模型不支持识图时该怎么解决\n你能感觉到\n当硅谷AI大厂天天诋毁中国大模型时\n海外真实用户的想法其实很朴素\n谁更便宜更好用就用谁\n他们已经把中国大模型当成日常伙伴\n开始认真研究怎样长期稳定地把它用好\n其中一条评论很典型\n他说自己把V4pro放进不同harness反复测试\n发现效果差别很大\n所以特别期待deep seek官方的harness方案\n前面说了这么多\nharness这里给大家解释一下\nharness的英文原意是马具\n你可以把大模型想成一匹很有力量的马\n他聪明\n跑得快\n但光有力量不知道往哪儿走\n也不知道怎么听你的命令\n所以harness就是让大模型\n这匹烈马能真正干活的整套系统\n如果你经常看我的视频\n常常听我说\n智能体框架\n例如codex其实就是harness最常见的一种形态\n大模型是智能体的发动机\n而harness是智能体的传动方向和刹车\n同一个deep sk模型\n在更好的智能体框架下表现会像换了一辆新车\n哪个智能体框架才是deep sick的真命天子呢\n我把海外网友讨论deep sick\nharness的帖子全看了一遍\n顺手做了个统计\n结果还蛮意外的\n大家推荐的第一名居然是codex\n23票\n应该跟DEPC刚刚支持responses API有关\n而最意外的是cloud code只有四票\n我刚开始用deep sick时\n首选是cloud code\n结果今天愿意在cc里用deep sick的人反而少太多\n我的猜测是大家嫌弃的未必是工具本身\n更可能是对背后的公司有情绪\n干脆连工具一起换\n至于票数第一的codex\n我试了一下\n配置比较复杂\n所以我后面会单独做一期deep sick如何接入codex\n以及他的表现\n真的能跟gt5.6LUNA平起平坐吗\n感兴趣的朋友现在就可以点个关注了\n肯定有人问deep sk官方推荐哪些智能体框架呢\n一共有七种\n还贴心的给了接入教程\n如果你已经装了其中一种\n就对号入座\n按照官网教程接入就好\n你可以在deep sk官网点击API文档\n再选择接入agent工具\n就能找到屏幕上这些资料\n我上一期全网播放超过50万的deep seek视频\n当时就是按照这里的说明\n在open code里接入了deep sk API\n今天我打开open call\n发现已经不需要额外配置deep sk v4flash的API了\n它已经成了open co首选的免费模型\n更夸张的是模型列表排在最前面的五个\n有四个是中国大模型\n这就是为什么一开始说到的中国大模型\n从接管你的开发工具开始\n正在接管整个世界\n不过还有一个细节特别值得注意\n这次V4flash在各项榜单上跑出的好成绩\n用的正是deep sick自研harness的极简模式\n这说明最懂自家模型的往往还是原配harness\n所以deep sk官方harness真正发布时\n我会非常期待\n把时间倒回一年半之前\ndeep sk r1让世界第一次真正看见中国大模型\n可那时的我依然很难想象\n今天中国模型会在全球开发者\n每天打开的工具中霸榜\n我看到的一位海外网友的发言太真实了\n他很认真的担心中国的显卡会不会不够用\n如果算力跟不上\n他以后可能就用不到这么便宜\n甚至接近免费的好模型了\n是时候给我们自己点个赞了\n虽然deep seek今天宣布AAPI即将涨价\n但是不管接下来的价格如何\n仍然会比任何其他前沿模型便宜\n未来怎样真正用好deep sick\n以及他们在各种harness里的最佳实践\n我都会认真做成视频分享给你\n关注我\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1B8un61E6i",
+  "published_at": "1786005375",
+  "fetched_at": "2026-08-06T16:19:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

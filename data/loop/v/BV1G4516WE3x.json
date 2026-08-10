@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1G4516WE3x",
+  "title": "CheatEngine_with_C++项目重构",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2708,
+  "text": "大家好啊\n我是迪姆哦\n这个是我的B站主页啊\n这个是我的嗯\n切我的GITHUB主\n然后这次我来介绍的一个项目\n就是呃我之前呃一直没有完成的\n就是用qt重写一个整个切点NG啊\n那么这个项目的话\n我现在已经是呃完成了\n大概整个主界面和对那个前engine的一比一的复刻\n当然我这里还有很多优化\n我是整个重写的呃\n然后现在实现的功能呢\n就是呃包含所有的那个啊数值搜索就是\n目前是支持字符串字节数组\n还有啊还有所有的浮点和整数类型\n然后我演示一下这个功能啊\n比如说我我们现在要搜索那个十位的数值\n额那么那么这里这币就有\n然后然后他也是可以带符号的\n哦也可以支持带符号的扫描\n然后我比CE多了一个功能\n就是我这边可以去对结果进行模块过滤\n那至于功能的话上的话\n我这个跟CE呃\n官方的CE基本上功能是完全是呃\n一比一的复刻\n就是在功能上我其实是没有什么太多好讲的啊\n我主要是在这个项目上的话\n那那就可以讲的就非常多了\n就我通过这个项目的话\n就是让呃所有人理解\n就是这个项目是包含了当前计算机\n整个行业内呃\n几乎所有的涵盖了所有的内容\n就比如说包括进程线程\n还有那个啊\n还有搜索\n还有软件工程等等各种各样的一些领域的模块\n就是对啊对比较比较顶尖\n比较前沿的吧\n一些一些实战经验\n就是在这个项目里面我我都包含了\n比如说在这里包含了线程池的一个运用\n然后呃这个这个模块是一个自适应缓存\n这是我用来存放扫描结果\n然后它是一个呃线程局部存储\n就是一个多线程扫描\n或用一个线程局部存储去自适应每一个线程\n然后达到那个扫描性能的一个优化的一个\n一个目的呃\n然后这里呢就是整个呃我跟CE最大不同的点\n就是这个地方是我整个啊扫描的核心\n这里设\n我这里为扫描专门设计了一个扫描的架构\n它其中就是包括一个扫描服务\n然后给那个UI层\n也就是上层去提供一个服啊扫描服务\n我这个地方是最初的一个那个架构的设计呃\n我暂时我暂时现在就是一个比较粗的设计\n我当时是只有三个模块啊\n就是一个一个N井\n一个一个扫描引擎和一个结果存储仓库\n一个那个呃扫描的一个一个显示显示模块呃\n然后的话这个结构的话现在已经过时了\n我这里面实际上有有有更多的一个模块的\n一个的一个一个架构\n呃就是他那个上层\n是先通过一个扫描的一个入口\n还有一个start engine呃\n一个STARGAIN这么一个函数\n我们去传入一个呃扫描请求啊\n我们可以看一下那个扫描请求\n它的一个架构设计\n这个包的话就是包含呃你的扫描模式\n数据数据类型大小\n然后然后然后模块的一个一个信息\n然后就是参数和那个内存过滤属性\n这些我注释都已经写在里面\n然后是呃\n然后是那个呃\n结果仓库这个的话就是专门用来存储\n所有的一个一个结构嗯\n然后显示模块的话\n它就是专门用来显示就是我所有这些这些架构\n还有这些模块\n它都是非常符合当前的软件工程啊\n就是属于非常啊\n非常那个就是呃就是呃叫什么那个那个高内聚\n低耦合的一个标准\n几乎所有模块的话\n它都是它都是能够能够\n就是它的独立性是比较高的啊\n然后的话还有一个优化的话\n就是啊我这边的话\n它像它它跟原版的C1是差不多的\n就是呃通过扫描进程接口啊\n就比如说这里这里有一些关于呃\n一些服务的接口\n比如说呃进程的接口啊\n这是进程进程内存的一个快照\n就我们扫描的时候\n这后面可以用来用来指针扫描呃\n我们扫描的时候是先保存一个进程的快照\n然后然后通过快照去访问呃\n上一个去访问那个进程\n内存已达到那个快速扫描的一个呃一个目的\n然后是嗯呃然后是那个内存的一个枚举模块\n我们默认枚举的话就是枚举所有模块\n然后带参数的模\n枚举的话就是可以呃\n就可以去根据用户\n就是你自己手动输入的一个内存的一个\n一个区域进行进行过滤\n这样的话就是扫描的区域更精准\n然后的话呃这几个模块还没实现呃\n呃我们看一下那个\n额然后我们看一下实现的嗯\n我我这里还设计了一个抽象工厂的类\n就是专门用来去呃\n去暂时用来跨模块呃\n就跨平台的去对每一个呃\n去对每一个那个那个不同平台\n去进行不同类型的实现呃\n然后这个地方我现在是只做了windows的一个\n他的一个实现\n关于内存访问和那个内存枚举\n还有模块枚举\n有进程的一些东西\n或对于进程的一些内存的话\n我的控制是这里是用的一个那个进程管理器\n当然他这个跟内容进程管理器它是不一样的\n呃就是对跟系统的话它是不一样的\n它实际上目前是呃有嗯\n有一些就主要是提供提供那个接口\n模块的一些访问嗯\n然后的话这里有一个有一个那个有关于\n就扫描指令加速的这个这个模块的话\n就是它是用来加速哦\n加速你扫描engine的一个呃一个各种的一个\n额得一个一个就是不同场景的\n比如说浮点\n还有整形啊\n整形数组\n还有这样一些一些一些加速\n然后的话这个项目这个项目的话\n我后续再去呃\n再跟大家去仔细的去讲一下\n这个这个项目的一个模块呃\n当然现在这个这个项目我已经上传到GITHUB上面哦\n大概已经开发了好一段时间\n然后去演\n然后去我暂时介绍几个功能吧\n就是他现在目前是主要是支持扫描\n还有一些呃过滤的一些一些内容啊\n他支持那个字符串字符串的扫描嗯\n就是我个这个跟CE的话啊\n我比C1多的一个功能\n就是它支持中文字符串呃\n比如说\n呃比如说我这边就直接扫那个关于浏览器的\n一个呃一个内容啊\n我们扫字符串\n就四五百度翻译吧\n哦因为这是debug模式\ndebug模式它是这样的\n就release模式它不一样啊\n我debug模式的话\n它是在线程池里面只呃我只开辟了一个线程呃\n大家可以看一下\n就是我在debug模式下的话\n它默认是好啊\n因为我这个是我这个构建的时候是release\n但是我调试的时候是debug模式\n那debug模式的话默认是只有一个线\n线程池里面只有一个线程就扫描比较快\n你看刚才扫描的那个那个百度翻译的话\n他就已经是是完美支持了嗯\n我字节数组啥的东西\n看一下这16进制十\n我就设一个浮点数吧\n浮点数的话呃\n我这边也是对CEE\n他那个一些一些之前的一些翻译做了一些呃\n那么一些比较精准的一些东西\n比如说他那个仅简单值\n很多人他就不知道是什么意思哦\n我这边是写了一个包含近似值的一个一个选项\n就是如果假如我们扫44的话\n我是默认去扫那个44它附近的一些数呃\n如果假如说你取消近似值的话\n那就是严格对应他那个他那个浮点数\n浮点数精准数值\n那这样的话就是只有200多个体系\n然后我这个项目的话\n他是整个都是用纯C加加去写的\n这个可以方便大家\n呃加强那个对项目的理解\n然后哦我后续再去更新一些\n这个项目每块的具体讲解吧\n就是每个阶段的开发\n都会遇到非常多的一些问题\n呃这个调试是比较困难\n那个我现在就就这样",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1G4516WE3x",
+  "published_at": "1778669714",
+  "fetched_at": "2026-08-10T08:26:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# CheatEngine with C++ 项目知识图谱\n\n## 项目功能概览\n- 支持的搜索类型：字符串、字节数组、整数、浮点数【BV1G4516WE3x P1 00:39】  \n- 支持带符号扫描【BV1G4516WE3x P1 01:16】  \n- 额外的模块过滤功能【BV1G4516WE3x P1 01:23】  \n- 中文字符串搜索支持【BV1G4516WE3x P1 08:40】\n\n```mermaid\nflowchart TD\n    P[\"CheatEngine 重写项目\"] --> UI[\"Qt UI 界面\"]\n    P --> REPL[\"1:1 复刻原 CE 引擎\"]\n    REPL --> FT[\"功能集合\"]\n    FT --> ST[\"数值搜索\"]\n    ST --> SSTR[\"字符串搜索\"]\n    ST --> BARR[\"字节数组搜索\"]\n    ST --> NUM[\"整数/浮点搜索\"]\n    NUM --> SIGN[\"带符号扫描\"]\n    FT --> MODF[\"模块过滤\"]\n    FT --> LANG[\"中文字符串支持\"]\n    P --> GIT[\"GitHub 开源仓库\"]\n```\n\n## 架构总览\n- 初始三大模块：扫描引擎、结果仓库、显示模块【BV1G4516WE3x P1 03:17】  \n- 高内聚低耦合设计原则【BV1G4516WE3x P1 04:50】  \n- 抽象工厂实现跨平台（当前仅 Windows）【BV1G4516WE3x P1 06:20】\n\n```mermaid\nflowchart TD\n    CORE[\"扫描核心架构\"] --> SVC[\"扫描服务\"]\n    UI[\"UI 层\"] --> SVC\n    SVC --> ENGINE[\"扫描引擎\"]\n    ENGINE --> RESULT[\"结果仓库\"]\n    RESULT --> DISPLAY[\"显示模块\"]\n    ENGINE --> TP[\"线程池\"]\n    TP --> CACHE[\"自适应缓存\"]\n    CACHE --> TLS[\"线程局部存储\"]\n    REQ[\"扫描请求结构\"] --> SVC\n    MEMSNAP[\"进程内存快照\"] --> ENGINE\n    ENUM[\"内存枚举模块\"] --> ENGINE\n    FACT[\"抽象工厂\"] --> WIN[\"Windows 实现\"]\n    WIN --> MEMSNAP\n    WIN --> ENUM\n```\n\n## 扫描工作流\n- 扫描请求包含模式、数据类型、参数、内存过滤属性【BV1G4516WE3x P1 04:03】  \n- 结果存储后交由显示模块呈现【BV1G4516WE3x P1 04:21】  \n- 支持模块过滤与加速模块【BV1G4516WE3x P1 01:23】【BV1G4516WE3x P1 07:21】\n\n```mermaid\nflowchart TD\n    INPUT[\"用户输入搜索条件\"] --> REQ[\"构建扫描请求\"]\n    REQ --> SVC[\"扫描服务\"]\n    SVC --> ENGINE[\"多线程扫描引擎\"]\n    ENGINE --> RES[\"结果存储仓库\"]\n    RES --> DISP[\"结果显示模块\"]\n    ENGINE --> FILTER[\"模块过滤\"]\n    FILTER --> DISP\n    ENGINE --> ACCEL[\"扫描加速模块\"]\n    ACCEL --> DISP\n```\n\n## 优化与性能\n- Debug 模式使用单线程线程池【BV1G4516WE3x P1 09:18】  \n- Release 模式可使用多线程【BV1G4516WE3x P1 09:31】  \n- 自适应缓存与线程局部存储提升扫描效率【BV1G4516WE3x P1 02:30】  \n- 进程快照与内存枚举实现精准指针扫描【BV1G4516WE3x P1 05:14】  \n- 加速模块针对不同数据类型优化扫描【BV1G4516WE3x P1 07:24】\n\n```mermaid\nflowchart TD\n    DEBUG[\"Debug 模式\"] --> SINGLE[\"单线程\"]\n    RELEASE[\"Release 模式\"] --> MULTI[\"多线程\"]\n    SINGLE --> TP[\"线程池\"]\n    MULTI --> TP\n    TP --> CACHE[\"自适应缓存\"]\n    CACHE --> TLS[\"线程局部存储\"]\n    SNAP[\"进程快照\"] --> PERF[\"扫描性能提升\"]\n    ENUM[\"内存枚举\"] --> FILTER[\"区域过滤\"]\n    FILTER --> PERF\n    ACCEL[\"扫描加速 (float/int/array)\"] --> PERF\n    CACHE --> PERF\n```",
+      "diagrams": [
+        {
+          "title": "项目功能概览",
+          "code": "flowchart TD\n    P[\"CheatEngine 重写项目\"] --> UI[\"Qt UI 界面\"]\n    P --> REPL[\"1:1 复刻原 CE 引擎\"]\n    REPL --> FT[\"功能集合\"]\n    FT --> ST[\"数值搜索\"]\n    ST --> SSTR[\"字符串搜索\"]\n    ST --> BARR[\"字节数组搜索\"]\n    ST --> NUM[\"整数/浮点搜索\"]\n    NUM --> SIGN[\"带符号扫描\"]\n    FT --> MODF[\"模块过滤\"]\n    FT --> LANG[\"中文字符串支持\"]\n    P --> GIT[\"GitHub 开源仓库\"]"
+        },
+        {
+          "title": "架构总览",
+          "code": "flowchart TD\n    CORE[\"扫描核心架构\"] --> SVC[\"扫描服务\"]\n    UI[\"UI 层\"] --> SVC\n    SVC --> ENGINE[\"扫描引擎\"]\n    ENGINE --> RESULT[\"结果仓库\"]\n    RESULT --> DISPLAY[\"显示模块\"]\n    ENGINE --> TP[\"线程池\"]\n    TP --> CACHE[\"自适应缓存\"]\n    CACHE --> TLS[\"线程局部存储\"]\n    REQ[\"扫描请求结构\"] --> SVC\n    MEMSNAP[\"进程内存快照\"] --> ENGINE\n    ENUM[\"内存枚举模块\"] --> ENGINE\n    FACT[\"抽象工厂\"] --> WIN[\"Windows 实现\"]\n    WIN --> MEMSNAP\n    WIN --> ENUM"
+        },
+        {
+          "title": "扫描工作流",
+          "code": "flowchart TD\n    INPUT[\"用户输入搜索条件\"] --> REQ[\"构建扫描请求\"]\n    REQ --> SVC[\"扫描服务\"]\n    SVC --> ENGINE[\"多线程扫描引擎\"]\n    ENGINE --> RES[\"结果存储仓库\"]\n    RES --> DISP[\"结果显示模块\"]\n    ENGINE --> FILTER[\"模块过滤\"]\n    FILTER --> DISP\n    ENGINE --> ACCEL[\"扫描加速模块\"]\n    ACCEL --> DISP"
+        },
+        {
+          "title": "优化与性能",
+          "code": "flowchart TD\n    DEBUG[\"Debug 模式\"] --> SINGLE[\"单线程\"]\n    RELEASE[\"Release 模式\"] --> MULTI[\"多线程\"]\n    SINGLE --> TP[\"线程池\"]\n    MULTI --> TP\n    TP --> CACHE[\"自适应缓存\"]\n    CACHE --> TLS[\"线程局部存储\"]\n    SNAP[\"进程快照\"] --> PERF[\"扫描性能提升\"]\n    ENUM[\"内存枚举\"] --> FILTER[\"区域过滤\"]\n    FILTER --> PERF\n    ACCEL[\"扫描加速 (float/int/array)\"] --> PERF\n    CACHE --> PERF"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T08:26:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# CheatEngine with C++ 项目知识图谱\n\n## 项目功能概览\n- 支持的搜索类型：字符串、字节数组、整数、浮点数【BV1G4516WE3x P1 00:39】  \n- 支持带符号扫描【BV1G4516WE3x P1 01:16】  \n- 额外的模块过滤功能【BV1G4516WE3x P1 01:23】  \n- 中文字符串搜索支持【BV1G4516WE3x P1 08:40】\n\n```mermaid\nflowchart TD\n    P[\"CheatEngine 重写项目\"] --> UI[\"Qt UI 界面\"]\n    P --> REPL[\"1:1 复刻原 CE 引擎\"]\n    REPL --> FT[\"功能集合\"]\n    FT --> ST[\"数值搜索\"]\n    ST --> SSTR[\"字符串搜索\"]\n    ST --> BARR[\"字节数组搜索\"]\n    ST --> NUM[\"整数/浮点搜索\"]\n    NUM --> SIGN[\"带符号扫描\"]\n    FT --> MODF[\"模块过滤\"]\n    FT --> LANG[\"中文字符串支持\"]\n    P --> GIT[\"GitHub 开源仓库\"]\n```\n\n## 架构总览\n- 初始三大模块：扫描引擎、结果仓库、显示模块【BV1G4516WE3x P1 03:17】  \n- 高内聚低耦合设计原则【BV1G4516WE3x P1 04:50】  \n- 抽象工厂实现跨平台（当前仅 Windows）【BV1G4516WE3x P1 06:20】\n\n```mermaid\nflowchart TD\n    CORE[\"扫描核心架构\"] --> SVC[\"扫描服务\"]\n    UI[\"UI 层\"] --> SVC\n    SVC --> ENGINE[\"扫描引擎\"]\n    ENGINE --> RESULT[\"结果仓库\"]\n    RESULT --> DISPLAY[\"显示模块\"]\n    ENGINE --> TP[\"线程池\"]\n    TP --> CACHE[\"自适应缓存\"]\n    CACHE --> TLS[\"线程局部存储\"]\n    REQ[\"扫描请求结构\"] --> SVC\n    MEMSNAP[\"进程内存快照\"] --> ENGINE\n    ENUM[\"内存枚举模块\"] --> ENGINE\n    FACT[\"抽象工厂\"] --> WIN[\"Windows 实现\"]\n    WIN --> MEMSNAP\n    WIN --> ENUM\n```\n\n## 扫描工作流\n- 扫描请求包含模式、数据类型、参数、内存过滤属性【BV1G4516WE3x P1 04:03】  \n- 结果存储后交由显示模块呈现【BV1G4516WE3x P1 04:21】  \n- 支持模块过滤与加速模块【BV1G4516WE3x P1 01:23】【BV1G4516WE3x P1 07:21】\n\n```mermaid\nflowchart TD\n    INPUT[\"用户输入搜索条件\"] --> REQ[\"构建扫描请求\"]\n    REQ --> SVC[\"扫描服务\"]\n    SVC --> ENGINE[\"多线程扫描引擎\"]\n    ENGINE --> RES[\"结果存储仓库\"]\n    RES --> DISP[\"结果显示模块\"]\n    ENGINE --> FILTER[\"模块过滤\"]\n    FILTER --> DISP\n    ENGINE --> ACCEL[\"扫描加速模块\"]\n    ACCEL --> DISP\n```\n\n## 优化与性能\n- Debug 模式使用单线程线程池【BV1G4516WE3x P1 09:18】  \n- Release 模式可使用多线程【BV1G4516WE3x P1 09:31】  \n- 自适应缓存与线程局部存储提升扫描效率【BV1G4516WE3x P1 02:30】  \n- 进程快照与内存枚举实现精准指针扫描【BV1G4516WE3x P1 05:14】  \n- 加速模块针对不同数据类型优化扫描【BV1G4516WE3x P1 07:24】\n\n```mermaid\nflowchart TD\n    DEBUG[\"Debug 模式\"] --> SINGLE[\"单线程\"]\n    RELEASE[\"Release 模式\"] --> MULTI[\"多线程\"]\n    SINGLE --> TP[\"线程池\"]\n    MULTI --> TP\n    TP --> CACHE[\"自适应缓存\"]\n    CACHE --> TLS[\"线程局部存储\"]\n    SNAP[\"进程快照\"] --> PERF[\"扫描性能提升\"]\n    ENUM[\"内存枚举\"] --> FILTER[\"区域过滤\"]\n    FILTER --> PERF\n    ACCEL[\"扫描加速 (float/int/array)\"] --> PERF\n    CACHE --> PERF\n```",
+  "diagrams": [
+    {
+      "title": "项目功能概览",
+      "code": "flowchart TD\n    P[\"CheatEngine 重写项目\"] --> UI[\"Qt UI 界面\"]\n    P --> REPL[\"1:1 复刻原 CE 引擎\"]\n    REPL --> FT[\"功能集合\"]\n    FT --> ST[\"数值搜索\"]\n    ST --> SSTR[\"字符串搜索\"]\n    ST --> BARR[\"字节数组搜索\"]\n    ST --> NUM[\"整数/浮点搜索\"]\n    NUM --> SIGN[\"带符号扫描\"]\n    FT --> MODF[\"模块过滤\"]\n    FT --> LANG[\"中文字符串支持\"]\n    P --> GIT[\"GitHub 开源仓库\"]"
+    },
+    {
+      "title": "架构总览",
+      "code": "flowchart TD\n    CORE[\"扫描核心架构\"] --> SVC[\"扫描服务\"]\n    UI[\"UI 层\"] --> SVC\n    SVC --> ENGINE[\"扫描引擎\"]\n    ENGINE --> RESULT[\"结果仓库\"]\n    RESULT --> DISPLAY[\"显示模块\"]\n    ENGINE --> TP[\"线程池\"]\n    TP --> CACHE[\"自适应缓存\"]\n    CACHE --> TLS[\"线程局部存储\"]\n    REQ[\"扫描请求结构\"] --> SVC\n    MEMSNAP[\"进程内存快照\"] --> ENGINE\n    ENUM[\"内存枚举模块\"] --> ENGINE\n    FACT[\"抽象工厂\"] --> WIN[\"Windows 实现\"]\n    WIN --> MEMSNAP\n    WIN --> ENUM"
+    },
+    {
+      "title": "扫描工作流",
+      "code": "flowchart TD\n    INPUT[\"用户输入搜索条件\"] --> REQ[\"构建扫描请求\"]\n    REQ --> SVC[\"扫描服务\"]\n    SVC --> ENGINE[\"多线程扫描引擎\"]\n    ENGINE --> RES[\"结果存储仓库\"]\n    RES --> DISP[\"结果显示模块\"]\n    ENGINE --> FILTER[\"模块过滤\"]\n    FILTER --> DISP\n    ENGINE --> ACCEL[\"扫描加速模块\"]\n    ACCEL --> DISP"
+    },
+    {
+      "title": "优化与性能",
+      "code": "flowchart TD\n    DEBUG[\"Debug 模式\"] --> SINGLE[\"单线程\"]\n    RELEASE[\"Release 模式\"] --> MULTI[\"多线程\"]\n    SINGLE --> TP[\"线程池\"]\n    MULTI --> TP\n    TP --> CACHE[\"自适应缓存\"]\n    CACHE --> TLS[\"线程局部存储\"]\n    SNAP[\"进程快照\"] --> PERF[\"扫描性能提升\"]\n    ENUM[\"内存枚举\"] --> FILTER[\"区域过滤\"]\n    FILTER --> PERF\n    ACCEL[\"扫描加速 (float/int/array)\"] --> PERF\n    CACHE --> PERF"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:26:34+00:00"
+}

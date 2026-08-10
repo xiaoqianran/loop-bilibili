@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1rUMS6wEFM",
+  "title": "Codex 额度用完，我接了 DeepSeek-V4-Flash - 做视频真香",
+  "status": "ok",
+  "language": "zh",
+  "chars": 1215,
+  "text": "大家好我是小木头\n今天我发现用DeepSeek\nV4 Flash配合HyperFrames做视频\n价廉物美\n又能保质保量完成工作\n真是蛮香的\n事情的起因是这样的\n我的Codex额度用完了\n与其马上充值\n我想着不如趁这个机会把DeepSeek\n最近的V4 Flash接进Codex试一试\n这期就跟你一起从0把它配好\n配完当场用它基于hyperframes\n做一个视频给你看看\n效果确实不错\n为什么挑V4 Flash\n几个点首先上下文有100万TOKEN\n读长文件写代码都够用\n另一方面价格便宜\n输入每百万TOKEN1.4美元\n输出2.8美元\n它本身还是个会推理的模型\n更关键的一点是\n它这次原生支持了OpenAI的responses API\n也就是Codex在用的那套协议\n所以它呢直接接近Codex\n非常方便\n先去DeepSeek开放平台建一个API key复制好\n然后打开Codex的配置文件\n加上这几行\n模型写DeepSeek V4Flash\nprovider指到DeepSeek\nbase URL就是API点DeepSeek点com\n注意别多此一举加Slash v one\nkey走环境变量\n最重要的是这一行\nwire_api要写responses不是chat\n旧教程大多写的是chat\n那是DeepSeek早期只支持chat\nCompletions的时候的写法\n现在V4 Flash原生支持responses\n再写chat反而会出问题\n这就是不少人照着老\n教程配不通的原因\n对了我这里的key是演示用的假的API key\n你记得换成自己\n真的key哦\n整好设上环境变量\n启动Codex\n顶上显示DeepSeek V4 Flash\n就说明它已经在用DeepSeek了\n随手发一句\n让他回个ok\n能正常的回\n这条链路就通了\n配好了咱们就来动真格的\n我给他一个任务\n用我平时做视频的那个skill\n做一期短视频\n讲讲agent里面skills是怎么工作的\n风格用我常用的糖果色块吧\n接下来就交给他了\n他先理解需求做规划\n然后一步步排画面\n配旁白最后渲染\n中间他会问我几个问题\n我就照着答就行\n整个过程我加速给你看\n该规划的规划\n该写的写\n该渲染的渲染\n一步没落\n渲染完出片\n这就是DeepSeek刚做出来的视频\n一期讲skills工作原理的短片\n你现在看到的\n是他从我一句需求\n一路做到成片\n回头看这一趟\n配置没想象中那么麻烦\n关键的就那一行wire_api\n做视频这种事\nV4 Flash也能接得住\n做的也不错\n速度和质量都在线\n关键成本还很低\n额度用完那点焦虑一下就没了\n所以Codex加DeepSeek\nV4 Flash看起来做视频真是蛮不错的哟\n当然了它不仅仅是做视频\n大家还可以用它在Codex做\n许许多多自己日常工作当中\n期望agent帮助你完成的工作\n这期要是对你有用\n就一键三连支持一下吧\n我是小木头\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1rUMS6wEFM",
+  "published_at": "1785978084",
+  "fetched_at": "2026-08-09T22:56:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 与 Codex 整合学习图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"Codex 额度用完\"] --> A2[\"寻找替代方案\"]\n    A2 --> A3[\"选择 DeepSeek V4 Flash\"]\n    A3 --> B1[\"优势\"]\n    B1 --> B2[\"上下文 100 万 Token\"]\n    B1 --> B3[\"价格低廉\"]\n    B1 --> B4[\"原生支持 OpenAI responses API\"]\n    B1 --> B5[\"具备推理能力\"]\n    A3 --> C1[\"接入 Codex\"]\n```\n\n## 配置步骤\n```mermaid\nflowchart TD\n    S1[\"获取 DeepSeek API Key\"] --> S2[\"将 Key 写入环境变量\"]\n    S2 --> S3[\"打开 Codex 配置文件\"]\n    S3 --> S4[\"模型设为 DeepSeek V4Flash\"]\n    S4 --> S5[\"provider 设为 DeepSeek\"]\n    S5 --> S6[\"base URL 设为 api.deepseek.com\"]\n    S6 --> S7[\"wire_api 设为 responses\"]\n    S7 --> S8[\"保存并启动 Codex\"]\n    S8 --> S9[\"界面显示 DeepSeek V4 Flash → 配置成功\"]\n```\n\n## 视频生成工作流\n```mermaid\nflowchart TD\n    T1[\"给模型任务：制作短视频讲解 skills 工作原理\"] --> T2[\"模型理解需求并规划\"]\n    T2 --> T3[\"逐步排画面\"]\n    T3 --> T4[\"配旁白\"]\n    T4 --> T5[\"渲染生成视频\"]\n    T5 --> T6[\"输出成片\"]\n```\n\n## 成本与性能\n```mermaid\nflowchart TD\n    C1[\"上下文容量 100 万 Token\"] --> C2[\"输入费用 $1.4 / 百万 Token\"]\n    C1 --> C3[\"输出费用 $2.8 / 百万 Token\"]\n    C2 --> C4[\"成本低\"]\n    C3 --> C4\n    C4 --> C5[\"速度快，质量好\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"Codex 额度用完\"] --> A2[\"寻找替代方案\"]\n    A2 --> A3[\"选择 DeepSeek V4 Flash\"]\n    A3 --> B1[\"优势\"]\n    B1 --> B2[\"上下文 100 万 Token\"]\n    B1 --> B3[\"价格低廉\"]\n    B1 --> B4[\"原生支持 OpenAI responses API\"]\n    B1 --> B5[\"具备推理能力\"]\n    A3 --> C1[\"接入 Codex\"]"
+        },
+        {
+          "title": "配置步骤",
+          "code": "flowchart TD\n    S1[\"获取 DeepSeek API Key\"] --> S2[\"将 Key 写入环境变量\"]\n    S2 --> S3[\"打开 Codex 配置文件\"]\n    S3 --> S4[\"模型设为 DeepSeek V4Flash\"]\n    S4 --> S5[\"provider 设为 DeepSeek\"]\n    S5 --> S6[\"base URL 设为 api.deepseek.com\"]\n    S6 --> S7[\"wire_api 设为 responses\"]\n    S7 --> S8[\"保存并启动 Codex\"]\n    S8 --> S9[\"界面显示 DeepSeek V4 Flash → 配置成功\"]"
+        },
+        {
+          "title": "视频生成工作流",
+          "code": "flowchart TD\n    T1[\"给模型任务：制作短视频讲解 skills 工作原理\"] --> T2[\"模型理解需求并规划\"]\n    T2 --> T3[\"逐步排画面\"]\n    T3 --> T4[\"配旁白\"]\n    T4 --> T5[\"渲染生成视频\"]\n    T5 --> T6[\"输出成片\"]"
+        },
+        {
+          "title": "成本与性能",
+          "code": "flowchart TD\n    C1[\"上下文容量 100 万 Token\"] --> C2[\"输入费用 $1.4 / 百万 Token\"]\n    C1 --> C3[\"输出费用 $2.8 / 百万 Token\"]\n    C2 --> C4[\"成本低\"]\n    C3 --> C4\n    C4 --> C5[\"速度快，质量好\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T22:57:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 与 Codex 整合学习图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"Codex 额度用完\"] --> A2[\"寻找替代方案\"]\n    A2 --> A3[\"选择 DeepSeek V4 Flash\"]\n    A3 --> B1[\"优势\"]\n    B1 --> B2[\"上下文 100 万 Token\"]\n    B1 --> B3[\"价格低廉\"]\n    B1 --> B4[\"原生支持 OpenAI responses API\"]\n    B1 --> B5[\"具备推理能力\"]\n    A3 --> C1[\"接入 Codex\"]\n```\n\n## 配置步骤\n```mermaid\nflowchart TD\n    S1[\"获取 DeepSeek API Key\"] --> S2[\"将 Key 写入环境变量\"]\n    S2 --> S3[\"打开 Codex 配置文件\"]\n    S3 --> S4[\"模型设为 DeepSeek V4Flash\"]\n    S4 --> S5[\"provider 设为 DeepSeek\"]\n    S5 --> S6[\"base URL 设为 api.deepseek.com\"]\n    S6 --> S7[\"wire_api 设为 responses\"]\n    S7 --> S8[\"保存并启动 Codex\"]\n    S8 --> S9[\"界面显示 DeepSeek V4 Flash → 配置成功\"]\n```\n\n## 视频生成工作流\n```mermaid\nflowchart TD\n    T1[\"给模型任务：制作短视频讲解 skills 工作原理\"] --> T2[\"模型理解需求并规划\"]\n    T2 --> T3[\"逐步排画面\"]\n    T3 --> T4[\"配旁白\"]\n    T4 --> T5[\"渲染生成视频\"]\n    T5 --> T6[\"输出成片\"]\n```\n\n## 成本与性能\n```mermaid\nflowchart TD\n    C1[\"上下文容量 100 万 Token\"] --> C2[\"输入费用 $1.4 / 百万 Token\"]\n    C1 --> C3[\"输出费用 $2.8 / 百万 Token\"]\n    C2 --> C4[\"成本低\"]\n    C3 --> C4\n    C4 --> C5[\"速度快，质量好\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"Codex 额度用完\"] --> A2[\"寻找替代方案\"]\n    A2 --> A3[\"选择 DeepSeek V4 Flash\"]\n    A3 --> B1[\"优势\"]\n    B1 --> B2[\"上下文 100 万 Token\"]\n    B1 --> B3[\"价格低廉\"]\n    B1 --> B4[\"原生支持 OpenAI responses API\"]\n    B1 --> B5[\"具备推理能力\"]\n    A3 --> C1[\"接入 Codex\"]"
+    },
+    {
+      "title": "配置步骤",
+      "code": "flowchart TD\n    S1[\"获取 DeepSeek API Key\"] --> S2[\"将 Key 写入环境变量\"]\n    S2 --> S3[\"打开 Codex 配置文件\"]\n    S3 --> S4[\"模型设为 DeepSeek V4Flash\"]\n    S4 --> S5[\"provider 设为 DeepSeek\"]\n    S5 --> S6[\"base URL 设为 api.deepseek.com\"]\n    S6 --> S7[\"wire_api 设为 responses\"]\n    S7 --> S8[\"保存并启动 Codex\"]\n    S8 --> S9[\"界面显示 DeepSeek V4 Flash → 配置成功\"]"
+    },
+    {
+      "title": "视频生成工作流",
+      "code": "flowchart TD\n    T1[\"给模型任务：制作短视频讲解 skills 工作原理\"] --> T2[\"模型理解需求并规划\"]\n    T2 --> T3[\"逐步排画面\"]\n    T3 --> T4[\"配旁白\"]\n    T4 --> T5[\"渲染生成视频\"]\n    T5 --> T6[\"输出成片\"]"
+    },
+    {
+      "title": "成本与性能",
+      "code": "flowchart TD\n    C1[\"上下文容量 100 万 Token\"] --> C2[\"输入费用 $1.4 / 百万 Token\"]\n    C1 --> C3[\"输出费用 $2.8 / 百万 Token\"]\n    C2 --> C4[\"成本低\"]\n    C3 --> C4\n    C4 --> C5[\"速度快，质量好\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:57:41+00:00"
+}

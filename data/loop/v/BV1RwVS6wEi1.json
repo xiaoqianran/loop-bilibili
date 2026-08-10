@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1RwVS6wEi1",
+  "title": "【干货】终于来了！AI控制godot+序列帧转动画+快速分割地图和添加碰撞！秒做游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1007,
+  "text": "大家好\n上期视频说好了\n要详细介绍将人物序列间记作为动画\nAI操控格斗以及快速添加地图分割和碰撞\n结果这两天有点忙\n今天才有时间录制\n话不多说\n直接开讲\n学习不易\n还请三连支持一下\n首先我们讲如何将制作好的序列间制作为动画\n我们打开GL项目\n创建一个2D场景\n在根节点下创建一个animating spider\n2D节点\n然后创建一个精灵真库\n如果是多张序列帧\n点击文件夹按钮滑动到最后\n按住shift点击最后一加\n这样就可以勾选全部图片\n然后点击打开\n如果是单将精灵图\n则点击网格按钮\n选择图片\n调整网格到合适的大小\n拖动批量勾选\n点击添加\n这样就完成了动画的制作\n点击播放\n根据需求调整动画帧和播放速度\n以及默认动作和是否循环等\n第二讲一下如何使用AI控制格斗实现各种操作\n这里需要用到一个history operation plugin main插件\n完整解压以后\n选择cloud和allowance文件夹\n将它们复制到你的格斗游戏项目下\n然后打开游戏\n在项目杠项目设计杠插件中开启此插件\n仔细右侧就可以看到该插件已启用\n但是还没有开启连接\n这时候进入history杠operation gun\nplugin杠main文件夹下的broker gun server文件夹\n输入CMV\n打开终端\n输入n b m run dev\n运行插件\n这时就可以成功连接了\n在这里我就不演示了\n运行以后会出现一个os token\n保存好这个token\n打开一个AI工具\n我用的是open code\n输入格斗杠\nremote杠executor\n并且把os token附在后面\n让AI使用这个插件连接歌斗即可\n第三我们讲如何快速制作地图分割和碰撞\n这里还会用到一个sprite2达西插件\n将插件解压并移动到刚才复制的ALANCE文件夹下\n然后我们打开游戏\n在项目项目设计插件中开启此插件\n然后就可以找到我们的背景地图\n右键地图的节点\n选择添加分割\n根据实际需求勾选区域\n形成一个闭环区域以后就自动切割成功\n记得打开根节点的外排序\n此系角色就可以正确被分割区域遮挡了\n然后选择此分割区域\n右键选择添加碰撞\n依旧根据实际需求勾选碰撞区域\n形成闭环\n添加结束\n这里要注意要正确设置碰撞层的图层\n否则无法发生碰撞\n到这里\n这期视频就结束了\n如果觉得对你有用的话\n麻烦一键三连支持一下\n有需要插件的朋友也可以关注up私聊获取\n谢谢大家的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RwVS6wEi1",
+  "published_at": "1780230602",
+  "fetched_at": "2026-08-08T22:17:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T22:20:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T22:20:34+00:00"
+}

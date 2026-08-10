@@ -1,0 +1,74 @@
+{
+  "bvid": "BV16ggC6DErW",
+  "title": "Agent-as-a-Router：面向编程任务的智能体模型路由框架【arXiv 2026】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3645,
+  "text": "大家好\n欢迎来到白石的物理AI与智能题组会\n今天分享一篇2026年的ARXIV论文\nAgent as router\n面向编程任务的智能体模型路由框架\n作者来自ns HPC AI lab\n阿里巴巴达摩院\n浙江大学UCBERKELEY和香港科技大学\n通讯作者包括由洋教授赵王博博士和唐佳胜研究员\n开场前先和大家同步一下\n本视频将系统讲解ACCRUITER的三大贡献\ncf循环的形式化\nACCRUIT的三大模块设计\n以及code ra bench基准的构建与实验\n发现\n转发关注\n不迷路\n这里是白石的物理AI与智能题组会每日更新\n本文标题是agent task router\nAgent tic model routing for coding tasks\n发表在arc save上\n提交于2026年6月\n将模型路由形式化为ca f循环\ncontext action feedback g的闭环\nACCRUITER通过在线积累执行反馈来缩小信息缺口\n在约1万个编程任务上达到了最低\n累计遗憾205.5\n一座周鹏飞是nice计算机学院博士生\n来自HPC AI lab研究方向\nLM智能体和模型路由通讯作者由杨教授是nice prise young prov\nHp c a i lapi\n以lass和lab优化器著称\n赵王博博士是H科斯特博士后\nm bench核心作者\n唐佳胜是阿里达摩院研究员\n代表作raid cube I/O二两千零二十六\n研究脉络从大规模训练系统到高效AI再到智能体路由\n完成了从训练效率到推理效率的迁移\n核心贡献四点\n提出agent as router框架\n将模型路由形式化为CAF循环实例化\nACCRUITER含ORCHESTRATOR\nVerifier\nMemory\n三大模块构建code ruder bench\n含约1万任务\n八个模型\n十个维度\n核心发现信息缺口\n而非推理能力是路由瓶颈\n仅提供性能统计\n就能将准确率从41.41提升到47.74\n增益15.3%\nACCRUITER在id上49.98%\n嗯上62.50%\n这三幅字图对比了路由策略的演进\n静态启发式如dimension best\n直接查表派发无记忆\n无学习训练策略\n如如tom使用分类器一次性选择\n同样没有在线反馈\nagent s router包含迭代自演化cf循环\n每次决策后验证结果反馈到下一轮上下文\n陆游策略越来越精准\n相关工作分三个领域\nLAM路由如ROTEM和FGAGE\nPete\n都是静态分类\n无在线反馈编程智能体\n如cloud code\n可si agent固定单一\nLLLM骨干上下文\nbandit如LINUX\n缺乏ACCA的上下文\n感知推理和memory\n关键差异\n首次将路由形式化为CAF循环加累积遗憾\n流式度量从根本上区别于静态分类\nCIF循环陆游是持续进化过程\n每个任务上下文包含鲜艳加历史反馈\n选模型后\nWIREFIRE给出分数和成本反馈\n写入memory成为下一轮上下文\n等价于上下文\nbandit累积遗憾是整个任务流上每一步与最优的差距之和\nACCRUITER实例化为ORCHESTRATOR\n决策层\nVerifier\n验证层\nMemory\n记忆层加工具层\n这张图展示了ACQUER完整架构\n左上ORCHESTRATOR综合dimension bs的先验\nKNN检索和任务员数据做决策\n中间WORDFIRE在沙盒中聚合ASD解析执行\n验证自一致性和lms s judge4重信号\n右边memory以任务嵌入为鉴\n在线存储\n每次反馈三个模块协同形成信息闭环\n四大设计要素\nORCHESTRATOR综合鲜艳加KNN加原数据QW3.5-0.8\nB加权投票成本及每百万token0.054美元\nVERIFA沙盒原生致信估计聚合四重信号\nmemory在线向量存储\nFive four\n2万条余弦\nKNN让历史成败直接可见\ncoda的bench\n九个段落维度加一个OD维度\n八个LLM完整观测矩阵CAF通过信息获取加积累闭环\n解决信息缺口\ncoder road bench构建分三阶段\n第一阶段从15个以上基准统一提取约1万任务\n十个维度\n第二阶段\n八个LLM生成输出进沙盒执行和LLM s judge评分\n构建观测矩阵\n第三阶段\n多路由方法在性能成本和遗憾三维度评估做PARATO分析\n实验分三层\n九个单论编码维度做id测试\n2919任务\n一个编程智能体维度做OUD测试\n176任务探测及7080任务用于校准和预热模型池八个前沿\nLMM分四档定价指标\nAvg perth\nCamerag power dollar\n主表结果\nARIEA上级id57.00\nO od75.89\nAccruiter id49.98\nCom break205.5\nOa62.50\nKrak17.0\n双最优在线bandit约46-50\n落后静态分类器id上40多\n但OOD骤降到八减21%\n低于随机31.25%\n训练后冻结的路由器\n面对分布外任务完全崩溃\nACCRUITER是唯一在OOD上超越os opus57.14%的路由器\n四个关键发现\nACCRUITER双最优证明CAF在两种场景都有效\n静态分类器OOD崩溃最直观\nLow greg id47.26\nO o d19.64\n低于随机在线\nbandit部分恢复\n但仍缺上下文感知和very fire memory\n成本效率\nAccruiter per dollar\n3.79伏特\nSoy oppos\n1.29\n更低成本更高性能\n这两张累计遗憾曲线图\n横轴任务序号\n纵轴累计遗憾\n左图id流静态路由器遗憾增长快\nACROR始终最低\n右图OUD流静态路由器曲线陡峭上升直接崩溃\nmemory积累验证经验\n使遗憾增长速度远低于所有对比方法\nPARATO前沿分析\n横轴美元成本\n纵轴avg pf accruiter\n在两个场景都以最高性能延伸前沿id约13美元\n近50%性能\nAlis opus\n花34美元\n仅43.8%\ngood的场景\nACCRUITER在前言之上独树一帜\n静态分类器在左下角成本低\n但OO的性能崩坏\nACQUA实现最优成本性能平衡\n四个极限成本估算不可观测\n缓存命中率仅为相对参考\nEDGETIC评估\n用40部非标准250步CAF实例化\n仅LM加KNN\n其他方案待探索模型池仅一个时间快照\n未来探索更多实例化方案和跨领域路由\n三大贡献\ncf框架将路由重定义为context\nSection\nFeedback\n循环等价\nBandit accruiter\n加coder router bench\n野id205.5\nOOD是7.0\n全面领先信息缺口诊断加PERFESTATS15.3%\n增益超越dimension best\n一句话\n核心瓶颈不是模型不够聪明\n而是知道的不够多\nCAF通过执行反馈在线填补信息缺口\n关键引用包括RTUN偏好学习路由\nsweet bench编程智能体基准\nLINUX的经典bandit算法\n以及cloud code和codex编程智能体系统\n以上就是agent as a router的完整讲解\n感谢观看\n欢迎评论区交流讨论\n下期再见\n以下是附录部分五个补充分析\n附录A信息缺口诊断实验\nOracle57.00\nVENILA0样本41.41加维度无变化\n41.18加性能统计跃升至47.74\n增益15.3%\n超越dimension max的47.50\n干净证明瓶颈不是推理\n而是信息不足\n附录必得分矩阵九个维度上五个不同模型分别最优\nCloud opus\n在代码生成补全多语言领先GPT5.4\n重构最优GLM5算法和bug修复\n最强QW3max测试生成遥遥领先KIMIK2.5\n数据科学和代码理解最好\n没有任何单一模型通吃\n这就是路由价值的根本来源\n附录C形式化CF循环context\n含提示加元数据加历史action选模型feedback\n分数加成本策略为历史条件\n多类别分布累计遗憾为N部\noracle最优奖励减实际奖励之和\n将路由重定义为在线学习\n每决策都是数据点记忆累积\n使后续决策趋近最优\n附录D历史视角三段演进\n2024-2025\n路由为静态分类\n无记忆\n2025-2026\n编程智能体固定LLI有任务内上下文\n无跨任务积累\n2026\nACCRUITER首次将记忆提升为第一等源语memory\n实现形成演化\n检索完整生命周期\n飞凤2万条余弦k n NC a four\n使记忆从外部辅助进化为决策\n有机子系统从雪模型到雪陆游\n弗洛伊ORA信号分析\n三重模式\nP4诊断工具\n隔离信息vs推理\n两个混淆变量\nP10异构分解\nOrchestrator verifire memory\n差异化处理\nP11分解\n委托最佳求解器\n并验证三重协同\nP4证明信息缺口新视角\nP10P11构建闭环系统\n叙事既有洞察深度\n又有系统完备性",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16ggC6DErW",
+  "published_at": "1784714814",
+  "fetched_at": "2026-08-07T06:11:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Agent-as-a-Router 知识图谱\n\n## 整体架构与核心组件\n```mermaid\nflowchart TD\n    A1[\"Agent-as-a-Router 框架\"] --> B1[\"CAF 循环\"]\n    B1 --> C1[\"Context\"]\n    B1 --> D1[\"Action\"]\n    B1 --> E1[\"Feedback\"]\n    E1 --> F1[\"Memory\"]\n    F1 --> C1\n    B1 --> G1[\"Orchestrator\"]\n    G1 --> D1\n    D1 --> H1[\"Verifier\"]\n    H1 --> I1[\"Memory Layer\"]\n    I1 --> F1\n```\n- A1: [BV16ggC6DErW P1 00:08]  \n- B1: [BV16ggC6DErW P1 00:50]  \n- C1: (Context) implied in CAF 循环定义  \n- D1: (Action) 同上  \n- E1: [BV16ggC6DErW P1 00:52]  \n- F1: (Memory) 同上  \n- G1: [BV16ggC6DErW P1 01:51]  \n- H1: [BV16ggC6DErW P1 01:53]  \n- I1: [BV16ggC6DErW P1 01:54]  \n\n## CAF 循环决策流程\n```mermaid\nflowchart LR\n    Ctx[\"Context (含历史反馈)\"] --> Act[\"选择模型 (Action)\"]\n    Act --> WF[\"WIREFIRE 评分与成本\"]\n    WF --> Mem[\"Memory 写入\"]\n    Mem --> Next[\"下一轮 Context\"]\n    Next --> Loop[\"CAF 循环\"]\n    Loop --> Ctx\n```\n- Ctx: [BV16ggC6DErW P1 03:11]  \n- Act: [BV16ggC6DErW P1 03:18]  \n- WF: [BV16ggC6DErW P1 03:19]  \n- Mem: [BV16ggC6DErW P1 03:21]  \n- Next: (隐含) 同上  \n- Loop: (CAF 循环) [BV16ggC6DErW P1 00:50]  \n\n## Code Router Benchmark 构建流水线\n```mermaid\nflowchart TD\n    TaskExtract[\"任务抽取 (~1万)\"] --> Dim[\"十个维度\"]\n    Dim --> ModelGen[\"八个 LLM 生成输出\"]\n    ModelGen --> Sandbox[\"沙盒执行\"]\n    Sandbox --> Judge[\"LLM Judge 打分\"]\n    Judge --> ObsMatrix[\"观测矩阵构建\"]\n    ObsMatrix --> Eval[\"多路由 性能/成本/遗憾 评估\"]\n    Eval --> Parato[\"Pareto 前沿分析\"]\n```\n- TaskExtract: [BV16ggC6DErW P1 04:32]  \n- Dim: [BV16ggC6DErW P1 04:36]  \n- ModelGen: [BV16ggC6DErW P1 04:38]  \n- Sandbox: (沙盒执行) 同上  \n- Judge: (LLM Judge) 同上  \n- ObsMatrix: [BV16ggC6DErW P1 04:43]  \n- Eval: [BV16ggC6DErW P1 04:45]  \n- Parato: [BV16ggC6DErW P1 04:53]  \n\n## 路由方法演进时间线\n```mermaid\nflowchart TD\n    Y1[\"2024‑2025 静态分类<br/>无记忆\"] --> Y2[\"2025‑2026 固定 LLM<br/>任务内上下文\"]\n    Y2 --> Y3[\"2026 ACCRUITER<br/>记忆增强\"]\n```\n- Y1: [BV16ggC6DErW P1 09:20]  \n- Y2: [BV16ggC6DErW P1 09:27]  \n- Y3: [BV16ggC6DErW P1 09:32]  ",
+      "diagrams": [
+        {
+          "title": "整体架构与核心组件",
+          "code": "flowchart TD\n    A1[\"Agent-as-a-Router 框架\"] --> B1[\"CAF 循环\"]\n    B1 --> C1[\"Context\"]\n    B1 --> D1[\"Action\"]\n    B1 --> E1[\"Feedback\"]\n    E1 --> F1[\"Memory\"]\n    F1 --> C1\n    B1 --> G1[\"Orchestrator\"]\n    G1 --> D1\n    D1 --> H1[\"Verifier\"]\n    H1 --> I1[\"Memory Layer\"]\n    I1 --> F1"
+        },
+        {
+          "title": "CAF 循环决策流程",
+          "code": "flowchart LR\n    Ctx[\"Context (含历史反馈)\"] --> Act[\"选择模型 (Action)\"]\n    Act --> WF[\"WIREFIRE 评分与成本\"]\n    WF --> Mem[\"Memory 写入\"]\n    Mem --> Next[\"下一轮 Context\"]\n    Next --> Loop[\"CAF 循环\"]\n    Loop --> Ctx"
+        },
+        {
+          "title": "Code Router Benchmark 构建流水线",
+          "code": "flowchart TD\n    TaskExtract[\"任务抽取 (~1万)\"] --> Dim[\"十个维度\"]\n    Dim --> ModelGen[\"八个 LLM 生成输出\"]\n    ModelGen --> Sandbox[\"沙盒执行\"]\n    Sandbox --> Judge[\"LLM Judge 打分\"]\n    Judge --> ObsMatrix[\"观测矩阵构建\"]\n    ObsMatrix --> Eval[\"多路由 性能/成本/遗憾 评估\"]\n    Eval --> Parato[\"Pareto 前沿分析\"]"
+        },
+        {
+          "title": "路由方法演进时间线",
+          "code": "flowchart TD\n    Y1[\"2024‑2025 静态分类<br/>无记忆\"] --> Y2[\"2025‑2026 固定 LLM<br/>任务内上下文\"]\n    Y2 --> Y3[\"2026 ACCRUITER<br/>记忆增强\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T06:11:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Agent-as-a-Router 知识图谱\n\n## 整体架构与核心组件\n```mermaid\nflowchart TD\n    A1[\"Agent-as-a-Router 框架\"] --> B1[\"CAF 循环\"]\n    B1 --> C1[\"Context\"]\n    B1 --> D1[\"Action\"]\n    B1 --> E1[\"Feedback\"]\n    E1 --> F1[\"Memory\"]\n    F1 --> C1\n    B1 --> G1[\"Orchestrator\"]\n    G1 --> D1\n    D1 --> H1[\"Verifier\"]\n    H1 --> I1[\"Memory Layer\"]\n    I1 --> F1\n```\n- A1: [BV16ggC6DErW P1 00:08]  \n- B1: [BV16ggC6DErW P1 00:50]  \n- C1: (Context) implied in CAF 循环定义  \n- D1: (Action) 同上  \n- E1: [BV16ggC6DErW P1 00:52]  \n- F1: (Memory) 同上  \n- G1: [BV16ggC6DErW P1 01:51]  \n- H1: [BV16ggC6DErW P1 01:53]  \n- I1: [BV16ggC6DErW P1 01:54]  \n\n## CAF 循环决策流程\n```mermaid\nflowchart LR\n    Ctx[\"Context (含历史反馈)\"] --> Act[\"选择模型 (Action)\"]\n    Act --> WF[\"WIREFIRE 评分与成本\"]\n    WF --> Mem[\"Memory 写入\"]\n    Mem --> Next[\"下一轮 Context\"]\n    Next --> Loop[\"CAF 循环\"]\n    Loop --> Ctx\n```\n- Ctx: [BV16ggC6DErW P1 03:11]  \n- Act: [BV16ggC6DErW P1 03:18]  \n- WF: [BV16ggC6DErW P1 03:19]  \n- Mem: [BV16ggC6DErW P1 03:21]  \n- Next: (隐含) 同上  \n- Loop: (CAF 循环) [BV16ggC6DErW P1 00:50]  \n\n## Code Router Benchmark 构建流水线\n```mermaid\nflowchart TD\n    TaskExtract[\"任务抽取 (~1万)\"] --> Dim[\"十个维度\"]\n    Dim --> ModelGen[\"八个 LLM 生成输出\"]\n    ModelGen --> Sandbox[\"沙盒执行\"]\n    Sandbox --> Judge[\"LLM Judge 打分\"]\n    Judge --> ObsMatrix[\"观测矩阵构建\"]\n    ObsMatrix --> Eval[\"多路由 性能/成本/遗憾 评估\"]\n    Eval --> Parato[\"Pareto 前沿分析\"]\n```\n- TaskExtract: [BV16ggC6DErW P1 04:32]  \n- Dim: [BV16ggC6DErW P1 04:36]  \n- ModelGen: [BV16ggC6DErW P1 04:38]  \n- Sandbox: (沙盒执行) 同上  \n- Judge: (LLM Judge) 同上  \n- ObsMatrix: [BV16ggC6DErW P1 04:43]  \n- Eval: [BV16ggC6DErW P1 04:45]  \n- Parato: [BV16ggC6DErW P1 04:53]  \n\n## 路由方法演进时间线\n```mermaid\nflowchart TD\n    Y1[\"2024‑2025 静态分类<br/>无记忆\"] --> Y2[\"2025‑2026 固定 LLM<br/>任务内上下文\"]\n    Y2 --> Y3[\"2026 ACCRUITER<br/>记忆增强\"]\n```\n- Y1: [BV16ggC6DErW P1 09:20]  \n- Y2: [BV16ggC6DErW P1 09:27]  \n- Y3: [BV16ggC6DErW P1 09:32]  ",
+  "diagrams": [
+    {
+      "title": "整体架构与核心组件",
+      "code": "flowchart TD\n    A1[\"Agent-as-a-Router 框架\"] --> B1[\"CAF 循环\"]\n    B1 --> C1[\"Context\"]\n    B1 --> D1[\"Action\"]\n    B1 --> E1[\"Feedback\"]\n    E1 --> F1[\"Memory\"]\n    F1 --> C1\n    B1 --> G1[\"Orchestrator\"]\n    G1 --> D1\n    D1 --> H1[\"Verifier\"]\n    H1 --> I1[\"Memory Layer\"]\n    I1 --> F1"
+    },
+    {
+      "title": "CAF 循环决策流程",
+      "code": "flowchart LR\n    Ctx[\"Context (含历史反馈)\"] --> Act[\"选择模型 (Action)\"]\n    Act --> WF[\"WIREFIRE 评分与成本\"]\n    WF --> Mem[\"Memory 写入\"]\n    Mem --> Next[\"下一轮 Context\"]\n    Next --> Loop[\"CAF 循环\"]\n    Loop --> Ctx"
+    },
+    {
+      "title": "Code Router Benchmark 构建流水线",
+      "code": "flowchart TD\n    TaskExtract[\"任务抽取 (~1万)\"] --> Dim[\"十个维度\"]\n    Dim --> ModelGen[\"八个 LLM 生成输出\"]\n    ModelGen --> Sandbox[\"沙盒执行\"]\n    Sandbox --> Judge[\"LLM Judge 打分\"]\n    Judge --> ObsMatrix[\"观测矩阵构建\"]\n    ObsMatrix --> Eval[\"多路由 性能/成本/遗憾 评估\"]\n    Eval --> Parato[\"Pareto 前沿分析\"]"
+    },
+    {
+      "title": "路由方法演进时间线",
+      "code": "flowchart TD\n    Y1[\"2024‑2025 静态分类<br/>无记忆\"] --> Y2[\"2025‑2026 固定 LLM<br/>任务内上下文\"]\n    Y2 --> Y3[\"2026 ACCRUITER<br/>记忆增强\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:11:47+00:00"
+}

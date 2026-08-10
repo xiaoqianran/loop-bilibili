@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1gFK36eE8W",
+  "title": "一个agent 搞定剪纸动画",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1187,
+  "text": "如何用codex做出这种会自己生长的剪纸动画\n开场呢\n本期视频就和大家分享一个开源agent工具\nPaper college at for codex\n作者是jane shower\n在我们下载完这个agent之后\n会获得一个完整的项目文件夹\n里面是一套完整的剪纸广告生产流程\n从创意脚本分镜和关键帧\n到动画声音合成和最终质检\n其中skill这份文件定义了整套主流程\nreferences里是视觉动画声音和质检规范\nexamples提供可以直接复用的分镜和清单模板\nscripts则是真正可以运行的node bh和FFMPC脚本\n这套工作流简单来说可以分成五个步骤\n第一步是锁定brief\n并完成脚本和分镜\nskill会先整理产品受众发布平台\n片场和画幅\n以及手里有哪些logo界面截图和品牌素材\n真实品牌资产必须使用原文件\n不能让模型临时编一个logo或者猜一个产品界面\n接着确定一个贯穿全片的视觉隐喻\n比如纸片工厂舞台\n或者这次的荒地逐渐长成家园\n在写清每一场的画面动作\n旁白和时长\n在用户确认之前\n不会急着生成关键帧\n因为改一句脚本很便宜\n重做五个镜头就很贵\n第二步是锁定剪纸视觉系统\n这里不只是写一句剪纸风\n纸张纤维半色调裁切边缘\n纸片白边阴影和品牌色都要先定义清楚\n然后只生成第一张风格锚点\n通过之后\n后续画面继续参考第一章\n上一场和真实品牌素材\n保证属于同一个纸片世界\n第三步是选择动画路线\n项目原生提供了SEDENCE这条图生视频路线\n自然碰撞和角色动作可以交给sedence logo\nUI文字和精确节奏\n适合用hyper frames简单纸片进场\n可以拆成透明PNG做本地动画\n还可以用f f m pig给静态关键帧做兜底\n当然如果比较在意生成成本\n也可以尝试换成view\nfast或者GROCK之类的视频模型\n实际做下来还有一个很明显的经验\n不要让视频模型同时完成十几个独立动作\n与其要求每一朵花\n每一棵草\n房子\n树和小船分别运动\n不如把它们合并成一次立体书\n展开动作越统一\n首尾帧越清楚\n结果通常越稳定\n第四步是声音项目\n支持普通TTS真人录音\n也支持用index t t2做本地授权声音克隆\n每场旁白分开保存\n再根据真实语音长度决定镜头时长\n音效也只放在有物理意义的动作上\n纸片滑入\n用轻柔摩擦声元素落地\n用软click\n最后留一记克制的提示音\n不需要每个动作都配满\n第五步是合成和质检\nAssemble\n这个脚本会把每场mp4\n旁白音乐和音效组合起来之后\n还要检查音视频时长\n并抽取关键帧\n制作联系表\n确认没有黑针粗糙\n切边错误文字和跳帧\n所以paper college at真正有价值的地方\n不是它能生成一张好看的剪纸图\n而是他把一条广告从灵感变成了可以反复修改\n可以检查也可以交付的工程\n好了\n以上就是本期的全部内容\n感谢大家的观看\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gFK36eE8W",
+  "published_at": "1784176085",
+  "fetched_at": "2026-08-06T22:02:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 剪纸动画 Agent 工作流图谱\n\n## 总览：完整五步流程\n```mermaid\nflowchart TD\n    A0[\"1️⃣ 锁定 Brief<br/>\"] --> A1[\"2️⃣ 锁定剪纸视觉系统<br/>\"]\n    A1 --> A2[\"3️⃣ 选择动画路线<br/>\"]\n    A2 --> A3[\"4️⃣ 声音项目<br/>\"]\n    A3 --> A4[\"5️⃣ 合成与质检<br/>\"]\n    A0 --> B0[\"项目文件结构<br/>\"]\n    B0 --> B1[\"skill 主流程定义<br/>\"]\n    B0 --> B2[\"references 规范<br/>\"]\n    B0 --> B3[\"examples 模板<br/>\"]\n    B0 --> B4[\"scripts 可运行脚本<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 00:45] -->\n<!-- [BV1gFK36eE8W P1 01:23] -->\n<!-- [BV1gFK36eE8W P1 01:45] -->\n<!-- [BV1gFK36eE8W P1 02:31] -->\n<!-- [BV1gFK36eE8W P1 02:55] -->\n<!-- [BV1gFK36eE8W P1 00:13] -->\n<!-- [BV1gFK36eE8W P1 00:25] -->\n<!-- [BV1gFK36eE8W P1 00:29] -->\n<!-- [BV1gFK36eE8W P1 00:32] -->\n<!-- [BV1gFK36eE8W P1 00:36] -->\n\n## 步骤 1：锁定 Brief 与脚本分镜\n```mermaid\nflowchart TD\n    B1[\"收集受众、平台、片场、画幅<br/>\"] --> B2[\"获取品牌资产（原文件）<br/>\"]\n    B2 --> B3[\"确定全片视觉隐喻<br/>\"]\n    B3 --> B4[\"编写每场画面动作、旁白、时长<br/>\"]\n    B4 --> B5[\"用户确认前不生成关键帧<br/>\"]\n    B5 --> B6[\"脚本改动成本低，关键帧重做成本高<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 00:49] -->\n<!-- [BV1gFK36eE8W P1 00:58] -->\n<!-- [BV1gFK36eE8W P1 01:05] -->\n<!-- [BV1gFK36eE8W P1 01:13] -->\n<!-- [BV1gFK36eE8W P1 01:18] -->\n<!-- [BV1gFK36eE8W P1 01:20] -->\n\n## 步骤 3：动画路线选择与实战经验\n```mermaid\nflowchart TD\n    C1[\"提供 SEDENCE 路线<br/>\"] --> C2[\"自然碰撞 & 角色动作 → sedence logo<br/>\"]\n    C2 --> C3[\"UI 文字 & 节奏 → hyper frames<br/>\"]\n    C3 --> C4[\"透明 PNG 本地动画<br/>\"]\n    C4 --> C5[\"FFMPEG 为关键帧兜底<br/>\"]\n    C5 --> D1[\"成本敏感可换 view/fast/GROCK<br/>\"]\n    D1 --> D2[\"经验：避免一次生成多独立动作<br/>\"]\n    D2 --> D3[\"合并为一次立体书式展开<br/>\"]\n    D3 --> D4[\"统一动作 → 清晰首尾帧 → 稳定结果<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 01:48] -->\n<!-- [BV1gFK36eE8W P1 01:51] -->\n<!-- [BV1gFK36eE8W P1 01:55] -->\n<!-- [BV1gFK36eE8W P1 02:00] -->\n<!-- [BV1gFK36eE8W P1 02:03] -->\n<!-- [BV1gFK36eE8W P1 02:09] -->\n<!-- [BV1gFK36eE8W P1 02:16] -->\n<!-- [BV1gFK36eE8W P1 02:27] -->\n<!-- [BV1gFK36eE8W P1 02:30] -->\n\n## 步骤 4：声音项目要点\n```mermaid\nflowchart TD\n    E1[\"支持 TTS 与真人录音<br/>\"] --> E2[\"本地授权声音克隆 (index t t2)<br/>\"]\n    E2 --> E3[\"每场旁白单独保存<br/>\"]\n    E3 --> E4[\"依据语音长度决定镜头时长<br/>\"]\n    E4 --> E5[\"音效仅在有物理意义的动作上<br/>\"]\n    E5 --> F1[\"示例：纸片滑入 → 轻柔摩擦声<br/>\"]\n    F1 --> F2[\"软 click 声<br/>\"]\n    F2 --> F3[\"克制提示音<br/>\"]\n    F3 --> G1[\"不必为每动作配满音效<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 02:34] -->\n<!-- [BV1gFK36eE8W P1 02:37] -->\n<!-- [BV1gFK36eE8W P1 02:41] -->\n<!-- [BV1gFK36eE8W P1 02:43] -->\n<!-- [BV1gFK36eE8W P1 02:46] -->\n<!-- [BV1gFK36eE8W P1 02:49] -->\n<!-- [BV1gFK36eE8W P1 02:52] -->\n<!-- [BV1gFK36eE8W P1 02:53] -->\n<!-- [BV1gFK36eE8W P1 02:55] -->\n\n## 步骤 5：合成、质检与交付\n```mermaid\nflowchart TD\n    H1[\"Assemble 脚本合成 mp4、旁白、音乐、音效<br/>\"] --> H2[\"检查音视频时长一致性<br/>\"]\n    H2 --> H3[\"抽取关键帧并生成联系表<br/>\"]\n    H3 --> H4[\"检测黑针、粗糙切边、文字错误、跳帧<br/>\"]\n    H4 --> I1[\"确保可反复修改、检查、交付的工程化产出<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 03:01] -->\n<!-- [BV1gFK36eE8W P1 03:06] -->\n<!-- [BV1gFK36eE8W P1 03:08] -->\n<!-- [BV1gFK36eE8W P1 03:10] -->\n<!-- [BV1gFK36eE8W P1 03:18] -->",
+      "diagrams": [
+        {
+          "title": "总览：完整五步流程",
+          "code": "flowchart TD\n    A0[\"1️⃣ 锁定 Brief<br/>\"] --> A1[\"2️⃣ 锁定剪纸视觉系统<br/>\"]\n    A1 --> A2[\"3️⃣ 选择动画路线<br/>\"]\n    A2 --> A3[\"4️⃣ 声音项目<br/>\"]\n    A3 --> A4[\"5️⃣ 合成与质检<br/>\"]\n    A0 --> B0[\"项目文件结构<br/>\"]\n    B0 --> B1[\"skill 主流程定义<br/>\"]\n    B0 --> B2[\"references 规范<br/>\"]\n    B0 --> B3[\"examples 模板<br/>\"]\n    B0 --> B4[\"scripts 可运行脚本<br/>\"]"
+        },
+        {
+          "title": "步骤 1：锁定 Brief 与脚本分镜",
+          "code": "flowchart TD\n    B1[\"收集受众、平台、片场、画幅<br/>\"] --> B2[\"获取品牌资产（原文件）<br/>\"]\n    B2 --> B3[\"确定全片视觉隐喻<br/>\"]\n    B3 --> B4[\"编写每场画面动作、旁白、时长<br/>\"]\n    B4 --> B5[\"用户确认前不生成关键帧<br/>\"]\n    B5 --> B6[\"脚本改动成本低，关键帧重做成本高<br/>\"]"
+        },
+        {
+          "title": "步骤 3：动画路线选择与实战经验",
+          "code": "flowchart TD\n    C1[\"提供 SEDENCE 路线<br/>\"] --> C2[\"自然碰撞 & 角色动作 → sedence logo<br/>\"]\n    C2 --> C3[\"UI 文字 & 节奏 → hyper frames<br/>\"]\n    C3 --> C4[\"透明 PNG 本地动画<br/>\"]\n    C4 --> C5[\"FFMPEG 为关键帧兜底<br/>\"]\n    C5 --> D1[\"成本敏感可换 view/fast/GROCK<br/>\"]\n    D1 --> D2[\"经验：避免一次生成多独立动作<br/>\"]\n    D2 --> D3[\"合并为一次立体书式展开<br/>\"]\n    D3 --> D4[\"统一动作 → 清晰首尾帧 → 稳定结果<br/>\"]"
+        },
+        {
+          "title": "步骤 4：声音项目要点",
+          "code": "flowchart TD\n    E1[\"支持 TTS 与真人录音<br/>\"] --> E2[\"本地授权声音克隆 (index t t2)<br/>\"]\n    E2 --> E3[\"每场旁白单独保存<br/>\"]\n    E3 --> E4[\"依据语音长度决定镜头时长<br/>\"]\n    E4 --> E5[\"音效仅在有物理意义的动作上<br/>\"]\n    E5 --> F1[\"示例：纸片滑入 → 轻柔摩擦声<br/>\"]\n    F1 --> F2[\"软 click 声<br/>\"]\n    F2 --> F3[\"克制提示音<br/>\"]\n    F3 --> G1[\"不必为每动作配满音效<br/>\"]"
+        },
+        {
+          "title": "步骤 5：合成、质检与交付",
+          "code": "flowchart TD\n    H1[\"Assemble 脚本合成 mp4、旁白、音乐、音效<br/>\"] --> H2[\"检查音视频时长一致性<br/>\"]\n    H2 --> H3[\"抽取关键帧并生成联系表<br/>\"]\n    H3 --> H4[\"检测黑针、粗糙切边、文字错误、跳帧<br/>\"]\n    H4 --> I1[\"确保可反复修改、检查、交付的工程化产出<br/>\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T22:03:02+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 剪纸动画 Agent 工作流图谱\n\n## 总览：完整五步流程\n```mermaid\nflowchart TD\n    A0[\"1️⃣ 锁定 Brief<br/>\"] --> A1[\"2️⃣ 锁定剪纸视觉系统<br/>\"]\n    A1 --> A2[\"3️⃣ 选择动画路线<br/>\"]\n    A2 --> A3[\"4️⃣ 声音项目<br/>\"]\n    A3 --> A4[\"5️⃣ 合成与质检<br/>\"]\n    A0 --> B0[\"项目文件结构<br/>\"]\n    B0 --> B1[\"skill 主流程定义<br/>\"]\n    B0 --> B2[\"references 规范<br/>\"]\n    B0 --> B3[\"examples 模板<br/>\"]\n    B0 --> B4[\"scripts 可运行脚本<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 00:45] -->\n<!-- [BV1gFK36eE8W P1 01:23] -->\n<!-- [BV1gFK36eE8W P1 01:45] -->\n<!-- [BV1gFK36eE8W P1 02:31] -->\n<!-- [BV1gFK36eE8W P1 02:55] -->\n<!-- [BV1gFK36eE8W P1 00:13] -->\n<!-- [BV1gFK36eE8W P1 00:25] -->\n<!-- [BV1gFK36eE8W P1 00:29] -->\n<!-- [BV1gFK36eE8W P1 00:32] -->\n<!-- [BV1gFK36eE8W P1 00:36] -->\n\n## 步骤 1：锁定 Brief 与脚本分镜\n```mermaid\nflowchart TD\n    B1[\"收集受众、平台、片场、画幅<br/>\"] --> B2[\"获取品牌资产（原文件）<br/>\"]\n    B2 --> B3[\"确定全片视觉隐喻<br/>\"]\n    B3 --> B4[\"编写每场画面动作、旁白、时长<br/>\"]\n    B4 --> B5[\"用户确认前不生成关键帧<br/>\"]\n    B5 --> B6[\"脚本改动成本低，关键帧重做成本高<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 00:49] -->\n<!-- [BV1gFK36eE8W P1 00:58] -->\n<!-- [BV1gFK36eE8W P1 01:05] -->\n<!-- [BV1gFK36eE8W P1 01:13] -->\n<!-- [BV1gFK36eE8W P1 01:18] -->\n<!-- [BV1gFK36eE8W P1 01:20] -->\n\n## 步骤 3：动画路线选择与实战经验\n```mermaid\nflowchart TD\n    C1[\"提供 SEDENCE 路线<br/>\"] --> C2[\"自然碰撞 & 角色动作 → sedence logo<br/>\"]\n    C2 --> C3[\"UI 文字 & 节奏 → hyper frames<br/>\"]\n    C3 --> C4[\"透明 PNG 本地动画<br/>\"]\n    C4 --> C5[\"FFMPEG 为关键帧兜底<br/>\"]\n    C5 --> D1[\"成本敏感可换 view/fast/GROCK<br/>\"]\n    D1 --> D2[\"经验：避免一次生成多独立动作<br/>\"]\n    D2 --> D3[\"合并为一次立体书式展开<br/>\"]\n    D3 --> D4[\"统一动作 → 清晰首尾帧 → 稳定结果<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 01:48] -->\n<!-- [BV1gFK36eE8W P1 01:51] -->\n<!-- [BV1gFK36eE8W P1 01:55] -->\n<!-- [BV1gFK36eE8W P1 02:00] -->\n<!-- [BV1gFK36eE8W P1 02:03] -->\n<!-- [BV1gFK36eE8W P1 02:09] -->\n<!-- [BV1gFK36eE8W P1 02:16] -->\n<!-- [BV1gFK36eE8W P1 02:27] -->\n<!-- [BV1gFK36eE8W P1 02:30] -->\n\n## 步骤 4：声音项目要点\n```mermaid\nflowchart TD\n    E1[\"支持 TTS 与真人录音<br/>\"] --> E2[\"本地授权声音克隆 (index t t2)<br/>\"]\n    E2 --> E3[\"每场旁白单独保存<br/>\"]\n    E3 --> E4[\"依据语音长度决定镜头时长<br/>\"]\n    E4 --> E5[\"音效仅在有物理意义的动作上<br/>\"]\n    E5 --> F1[\"示例：纸片滑入 → 轻柔摩擦声<br/>\"]\n    F1 --> F2[\"软 click 声<br/>\"]\n    F2 --> F3[\"克制提示音<br/>\"]\n    F3 --> G1[\"不必为每动作配满音效<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 02:34] -->\n<!-- [BV1gFK36eE8W P1 02:37] -->\n<!-- [BV1gFK36eE8W P1 02:41] -->\n<!-- [BV1gFK36eE8W P1 02:43] -->\n<!-- [BV1gFK36eE8W P1 02:46] -->\n<!-- [BV1gFK36eE8W P1 02:49] -->\n<!-- [BV1gFK36eE8W P1 02:52] -->\n<!-- [BV1gFK36eE8W P1 02:53] -->\n<!-- [BV1gFK36eE8W P1 02:55] -->\n\n## 步骤 5：合成、质检与交付\n```mermaid\nflowchart TD\n    H1[\"Assemble 脚本合成 mp4、旁白、音乐、音效<br/>\"] --> H2[\"检查音视频时长一致性<br/>\"]\n    H2 --> H3[\"抽取关键帧并生成联系表<br/>\"]\n    H3 --> H4[\"检测黑针、粗糙切边、文字错误、跳帧<br/>\"]\n    H4 --> I1[\"确保可反复修改、检查、交付的工程化产出<br/>\"]\n```\n<!-- [BV1gFK36eE8W P1 03:01] -->\n<!-- [BV1gFK36eE8W P1 03:06] -->\n<!-- [BV1gFK36eE8W P1 03:08] -->\n<!-- [BV1gFK36eE8W P1 03:10] -->\n<!-- [BV1gFK36eE8W P1 03:18] -->",
+  "diagrams": [
+    {
+      "title": "总览：完整五步流程",
+      "code": "flowchart TD\n    A0[\"1️⃣ 锁定 Brief<br/>\"] --> A1[\"2️⃣ 锁定剪纸视觉系统<br/>\"]\n    A1 --> A2[\"3️⃣ 选择动画路线<br/>\"]\n    A2 --> A3[\"4️⃣ 声音项目<br/>\"]\n    A3 --> A4[\"5️⃣ 合成与质检<br/>\"]\n    A0 --> B0[\"项目文件结构<br/>\"]\n    B0 --> B1[\"skill 主流程定义<br/>\"]\n    B0 --> B2[\"references 规范<br/>\"]\n    B0 --> B3[\"examples 模板<br/>\"]\n    B0 --> B4[\"scripts 可运行脚本<br/>\"]"
+    },
+    {
+      "title": "步骤 1：锁定 Brief 与脚本分镜",
+      "code": "flowchart TD\n    B1[\"收集受众、平台、片场、画幅<br/>\"] --> B2[\"获取品牌资产（原文件）<br/>\"]\n    B2 --> B3[\"确定全片视觉隐喻<br/>\"]\n    B3 --> B4[\"编写每场画面动作、旁白、时长<br/>\"]\n    B4 --> B5[\"用户确认前不生成关键帧<br/>\"]\n    B5 --> B6[\"脚本改动成本低，关键帧重做成本高<br/>\"]"
+    },
+    {
+      "title": "步骤 3：动画路线选择与实战经验",
+      "code": "flowchart TD\n    C1[\"提供 SEDENCE 路线<br/>\"] --> C2[\"自然碰撞 & 角色动作 → sedence logo<br/>\"]\n    C2 --> C3[\"UI 文字 & 节奏 → hyper frames<br/>\"]\n    C3 --> C4[\"透明 PNG 本地动画<br/>\"]\n    C4 --> C5[\"FFMPEG 为关键帧兜底<br/>\"]\n    C5 --> D1[\"成本敏感可换 view/fast/GROCK<br/>\"]\n    D1 --> D2[\"经验：避免一次生成多独立动作<br/>\"]\n    D2 --> D3[\"合并为一次立体书式展开<br/>\"]\n    D3 --> D4[\"统一动作 → 清晰首尾帧 → 稳定结果<br/>\"]"
+    },
+    {
+      "title": "步骤 4：声音项目要点",
+      "code": "flowchart TD\n    E1[\"支持 TTS 与真人录音<br/>\"] --> E2[\"本地授权声音克隆 (index t t2)<br/>\"]\n    E2 --> E3[\"每场旁白单独保存<br/>\"]\n    E3 --> E4[\"依据语音长度决定镜头时长<br/>\"]\n    E4 --> E5[\"音效仅在有物理意义的动作上<br/>\"]\n    E5 --> F1[\"示例：纸片滑入 → 轻柔摩擦声<br/>\"]\n    F1 --> F2[\"软 click 声<br/>\"]\n    F2 --> F3[\"克制提示音<br/>\"]\n    F3 --> G1[\"不必为每动作配满音效<br/>\"]"
+    },
+    {
+      "title": "步骤 5：合成、质检与交付",
+      "code": "flowchart TD\n    H1[\"Assemble 脚本合成 mp4、旁白、音乐、音效<br/>\"] --> H2[\"检查音视频时长一致性<br/>\"]\n    H2 --> H3[\"抽取关键帧并生成联系表<br/>\"]\n    H3 --> H4[\"检测黑针、粗糙切边、文字错误、跳帧<br/>\"]\n    H4 --> I1[\"确保可反复修改、检查、交付的工程化产出<br/>\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:03:02+00:00"
+}

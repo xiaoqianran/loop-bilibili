@@ -1,0 +1,58 @@
+{
+  "bvid": "BV16HTb6KESd",
+  "title": "吃token的Deepseek又涨价了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 66,
+  "text": "咕噜咕噜\n我是蓝色大肥鱼\n只会吃token\n咕噜\n收旧token\n坏token\n收别人不要的token\n啊嘿\n哈嘿嘿\n嘿嘿嘿嘿嘿嘿耶",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16HTb6KESd",
+  "published_at": "1783093595",
+  "fetched_at": "2026-08-09T04:38:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 吃 token 的 Deepseek 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"蓝色大肥鱼\"]\n    B[\"只会吃 token\"]\n    C[\"收旧 token\"]\n    D[\"收坏 token\"]\n    E[\"收别人不要的 token\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n```\n```text\nA: [BV16HTb6KESd P1 00:01]\nB: [BV16HTb6KESd P1 00:03]\nC: [BV16HTb6KESd P1 00:07]\nD: [BV16HTb6KESd P1 00:09]\nE: [BV16HTb6KESd P1 00:10]\n```\n\n## token 收集分类\n```mermaid\nflowchart TD\n    R[\"收 token\"]\n    O[\"旧 token\"]\n    X[\"坏 token\"]\n    U[\"别人不要的 token\"]\n    R --> O\n    R --> X\n    R --> U\n```\n```text\nR: [BV16HTb6KESd P1 00:07-00:10]\nO: [BV16HTb6KESd P1 00:07]\nX: [BV16HTb6KESd P1 00:09]\nU: [BV16HTb6KESd P1 00:10]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"蓝色大肥鱼\"]\n    B[\"只会吃 token\"]\n    C[\"收旧 token\"]\n    D[\"收坏 token\"]\n    E[\"收别人不要的 token\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E"
+        },
+        {
+          "title": "token 收集分类",
+          "code": "flowchart TD\n    R[\"收 token\"]\n    O[\"旧 token\"]\n    X[\"坏 token\"]\n    U[\"别人不要的 token\"]\n    R --> O\n    R --> X\n    R --> U"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-09T04:38:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 吃 token 的 Deepseek 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A[\"蓝色大肥鱼\"]\n    B[\"只会吃 token\"]\n    C[\"收旧 token\"]\n    D[\"收坏 token\"]\n    E[\"收别人不要的 token\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n```\n```text\nA: [BV16HTb6KESd P1 00:01]\nB: [BV16HTb6KESd P1 00:03]\nC: [BV16HTb6KESd P1 00:07]\nD: [BV16HTb6KESd P1 00:09]\nE: [BV16HTb6KESd P1 00:10]\n```\n\n## token 收集分类\n```mermaid\nflowchart TD\n    R[\"收 token\"]\n    O[\"旧 token\"]\n    X[\"坏 token\"]\n    U[\"别人不要的 token\"]\n    R --> O\n    R --> X\n    R --> U\n```\n```text\nR: [BV16HTb6KESd P1 00:07-00:10]\nO: [BV16HTb6KESd P1 00:07]\nX: [BV16HTb6KESd P1 00:09]\nU: [BV16HTb6KESd P1 00:10]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"蓝色大肥鱼\"]\n    B[\"只会吃 token\"]\n    C[\"收旧 token\"]\n    D[\"收坏 token\"]\n    E[\"收别人不要的 token\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E"
+    },
+    {
+      "title": "token 收集分类",
+      "code": "flowchart TD\n    R[\"收 token\"]\n    O[\"旧 token\"]\n    X[\"坏 token\"]\n    U[\"别人不要的 token\"]\n    R --> O\n    R --> X\n    R --> U"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T04:38:57+00:00"
+}

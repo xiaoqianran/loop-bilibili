@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1i5Es6yE2w",
+  "title": "再也不用切换 API Key 了！每月 17 亿免费 Token，一个接口调用众多顶级大模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 258,
+  "text": "兄弟们\n今天给大家分享一个超厉害的开源项目free map\n这个项目能让你每月免费获取\n16个顶级大模型的17亿投ken额度\n目前在GITHUB上已经狂揽8.1K星标\n绝对是AI爱好者和开发者的福音\n他整合了Gemini cloud player\n千问等16家平台的免费额度\n通过统一接口实现一键调用\n你提问后\n系统会自动为你匹配\n响应速度最快的无限速模型\n一旦当前模型出现问题\n会无缝切换到下一个可用模型\n整个过程你完全感觉不到\n最贴心的是\n16个模型的用量和速度都有清晰记录\n再也不用担心写方案写到一半突然断额度",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1i5Es6yE2w",
+  "published_at": "1780809326",
+  "fetched_at": "2026-08-09T22:10:45+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# FreeMap 项目知识图谱\n\n## 总览\n<!-- [BV1i5Es6yE2w P1 00:00] 项目名称 free map -->\n<!-- [BV1i5Es6yE2w P1 00:05] 每月 17 亿 token 免费额度 -->\n<!-- [BV1i5Es6yE2w P1 00:08] GitHub 8.1K stars -->\n```mermaid\nflowchart TD\n    A[\"FreeMap 项目\"] --> B[\"GitHub: 8.1K stars\"]\n    A --> C[\"每月 17 亿 token 免费额度\"]\n    A --> D[\"覆盖 16 大模型\"]\n    D --> E[\"Gemini\"]\n    D --> F[\"Cloud Player\"]\n    D --> G[\"千问\"]\n    D --> H[\"其他平台\"]\n    A --> I[\"统一接口\"]\n    I --> J[\"一键调用\"]\n    I --> K[\"自动匹配最快模型\"]\n    K --> L[\"模型响应\"]\n    L --> M[\"返回给用户\"]\n    K -->|模型异常| N[\"无缝切换至下一个模型\"]\n    N --> L\n    I --> O[\"记录每模型用量与速度\"]\n```\n\n## 调用流程\n<!-- [BV1i5Es6yE2w P1 00:19] 用户提问 -->\n<!-- [BV1i5Es6yE2w P1 00:20] 系统自动匹配最快模型 -->\n<!-- [BV1i5Es6yE2w P1 00:23] 模型异常时切换 -->\n```mermaid\nflowchart LR\n    U[\"用户提问\"] --> UI[\"统一接口\"]\n    UI --> SM[\"系统匹配最快模型\"]\n    SM --> R[\"模型响应\"]\n    R --> O[\"返回给用户\"]\n    SM -->|模型异常| FS[\"切换至下一个可用模型\"]\n    FS --> R\n```\n\n## 关键特性\n<!-- [BV1i5Es6yE2w P1 00:28] 用量与速度记录清晰 -->\n<!-- [BV1i5Es6yE2w P1 00:32] 无需担心中途断额度 -->\n```mermaid\nflowchart TD\n    F1[\"免费额度 17 亿 token\"] --> F2[\"覆盖 16 大模型\"]\n    F2 --> F3[\"统一接口\"]\n    F3 --> F4[\"自动匹配最快模型\"]\n    F3 --> F5[\"无缝容错切换\"]\n    F3 --> F6[\"用量与速度监控\"]\n    F5 --> F7[\"提升可靠性\"]\n    F6 --> F8[\"帮助规划使用\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"FreeMap 项目\"] --> B[\"GitHub: 8.1K stars\"]\n    A --> C[\"每月 17 亿 token 免费额度\"]\n    A --> D[\"覆盖 16 大模型\"]\n    D --> E[\"Gemini\"]\n    D --> F[\"Cloud Player\"]\n    D --> G[\"千问\"]\n    D --> H[\"其他平台\"]\n    A --> I[\"统一接口\"]\n    I --> J[\"一键调用\"]\n    I --> K[\"自动匹配最快模型\"]\n    K --> L[\"模型响应\"]\n    L --> M[\"返回给用户\"]\n    K -->|模型异常| N[\"无缝切换至下一个模型\"]\n    N --> L\n    I --> O[\"记录每模型用量与速度\"]"
+        },
+        {
+          "title": "调用流程",
+          "code": "flowchart LR\n    U[\"用户提问\"] --> UI[\"统一接口\"]\n    UI --> SM[\"系统匹配最快模型\"]\n    SM --> R[\"模型响应\"]\n    R --> O[\"返回给用户\"]\n    SM -->|模型异常| FS[\"切换至下一个可用模型\"]\n    FS --> R"
+        },
+        {
+          "title": "关键特性",
+          "code": "flowchart TD\n    F1[\"免费额度 17 亿 token\"] --> F2[\"覆盖 16 大模型\"]\n    F2 --> F3[\"统一接口\"]\n    F3 --> F4[\"自动匹配最快模型\"]\n    F3 --> F5[\"无缝容错切换\"]\n    F3 --> F6[\"用量与速度监控\"]\n    F5 --> F7[\"提升可靠性\"]\n    F6 --> F8[\"帮助规划使用\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T22:12:20+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# FreeMap 项目知识图谱\n\n## 总览\n<!-- [BV1i5Es6yE2w P1 00:00] 项目名称 free map -->\n<!-- [BV1i5Es6yE2w P1 00:05] 每月 17 亿 token 免费额度 -->\n<!-- [BV1i5Es6yE2w P1 00:08] GitHub 8.1K stars -->\n```mermaid\nflowchart TD\n    A[\"FreeMap 项目\"] --> B[\"GitHub: 8.1K stars\"]\n    A --> C[\"每月 17 亿 token 免费额度\"]\n    A --> D[\"覆盖 16 大模型\"]\n    D --> E[\"Gemini\"]\n    D --> F[\"Cloud Player\"]\n    D --> G[\"千问\"]\n    D --> H[\"其他平台\"]\n    A --> I[\"统一接口\"]\n    I --> J[\"一键调用\"]\n    I --> K[\"自动匹配最快模型\"]\n    K --> L[\"模型响应\"]\n    L --> M[\"返回给用户\"]\n    K -->|模型异常| N[\"无缝切换至下一个模型\"]\n    N --> L\n    I --> O[\"记录每模型用量与速度\"]\n```\n\n## 调用流程\n<!-- [BV1i5Es6yE2w P1 00:19] 用户提问 -->\n<!-- [BV1i5Es6yE2w P1 00:20] 系统自动匹配最快模型 -->\n<!-- [BV1i5Es6yE2w P1 00:23] 模型异常时切换 -->\n```mermaid\nflowchart LR\n    U[\"用户提问\"] --> UI[\"统一接口\"]\n    UI --> SM[\"系统匹配最快模型\"]\n    SM --> R[\"模型响应\"]\n    R --> O[\"返回给用户\"]\n    SM -->|模型异常| FS[\"切换至下一个可用模型\"]\n    FS --> R\n```\n\n## 关键特性\n<!-- [BV1i5Es6yE2w P1 00:28] 用量与速度记录清晰 -->\n<!-- [BV1i5Es6yE2w P1 00:32] 无需担心中途断额度 -->\n```mermaid\nflowchart TD\n    F1[\"免费额度 17 亿 token\"] --> F2[\"覆盖 16 大模型\"]\n    F2 --> F3[\"统一接口\"]\n    F3 --> F4[\"自动匹配最快模型\"]\n    F3 --> F5[\"无缝容错切换\"]\n    F3 --> F6[\"用量与速度监控\"]\n    F5 --> F7[\"提升可靠性\"]\n    F6 --> F8[\"帮助规划使用\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"FreeMap 项目\"] --> B[\"GitHub: 8.1K stars\"]\n    A --> C[\"每月 17 亿 token 免费额度\"]\n    A --> D[\"覆盖 16 大模型\"]\n    D --> E[\"Gemini\"]\n    D --> F[\"Cloud Player\"]\n    D --> G[\"千问\"]\n    D --> H[\"其他平台\"]\n    A --> I[\"统一接口\"]\n    I --> J[\"一键调用\"]\n    I --> K[\"自动匹配最快模型\"]\n    K --> L[\"模型响应\"]\n    L --> M[\"返回给用户\"]\n    K -->|模型异常| N[\"无缝切换至下一个模型\"]\n    N --> L\n    I --> O[\"记录每模型用量与速度\"]"
+    },
+    {
+      "title": "调用流程",
+      "code": "flowchart LR\n    U[\"用户提问\"] --> UI[\"统一接口\"]\n    UI --> SM[\"系统匹配最快模型\"]\n    SM --> R[\"模型响应\"]\n    R --> O[\"返回给用户\"]\n    SM -->|模型异常| FS[\"切换至下一个可用模型\"]\n    FS --> R"
+    },
+    {
+      "title": "关键特性",
+      "code": "flowchart TD\n    F1[\"免费额度 17 亿 token\"] --> F2[\"覆盖 16 大模型\"]\n    F2 --> F3[\"统一接口\"]\n    F3 --> F4[\"自动匹配最快模型\"]\n    F3 --> F5[\"无缝容错切换\"]\n    F3 --> F6[\"用量与速度监控\"]\n    F5 --> F7[\"提升可靠性\"]\n    F6 --> F8[\"帮助规划使用\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:12:20+00:00"
+}

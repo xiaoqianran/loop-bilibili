@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1MfLX6BE6B",
+  "title": "大模型是怎么被训练出来的",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3764,
+  "text": "老马我现在天天用ChatGPT写代码查资料\n但他到底是怎么学会说话的啊\n好问题\n很多人以为大模型是突然变聪明的\n其实他要经历三个阶段的修行\n就像一个人从婴儿学说话到上学读书\n再到进入社会\n学会做人三个阶段\n听起来像养成游戏\n哈哈你可以这么理解\n来我带你走一遍这条AI养成流水线\n这三个阶段分别做什么\n第一阶段教育训练相当于让AI读遍全世界的书\n网页百科代码论文\n万亿级别的文字\n目标是让他学会说话和懂世界\n第二阶段是监督微调\n相当于请家教一对一辅导\n用高质量的问答对教他怎么听话\n怎么回答\n第三阶段是对齐\n相当于让他去社会实习\n通过人类反馈告诉他什么该说什么\n不该说学会礼貌和安全\n最后实习完全正确\n来我们先看第一阶段预训练要读多少书啊\n万亿级别的tokens什么概念呢\n大概相当于把人类有史以来的高质量文本\n都读一遍\n维基百科GITHUB代码AXY论文\n那岂不是有很多垃圾数据\n当然所以数据清洗是第一步\n去重过滤低质内容去毒\n就像淘金要从泥沙里筛出金子\n这些数据怎么喂给模型的\n先经过一个叫TOIZER的分词器\n把蚊子切成小碎片\n比如你好世界可能切成你好世界\n或者切成你好世界\n然后每个碎片变成一个数字向量进入模型\n模型到底是怎么从这些文字里学会的\n核心任务只有一个\nNext token prediction\n预测下一个词\n比如模型看到今天天气\n他要猜下一个词是什么\n可能是很好不错糟糕\n他会给每个候选词算一个概率\n然后选概率最高的\n就这样一直猜下一个词\n对就是一直猜\n猜对了就奖励\n猜错了就惩罚\n经过万亿次猜测和修正模型\n就学会了语言的规律\n世界的知识\n甚至逻辑推理\n这有点像我小学时做的语文填空题\n哈哈非常像\n只不过模型要做几万亿道填空题\n模型内部长什么样\n主流大模型都用transformer架构\n你可以把它想象成一座大厦\n数据从底层进去\n经过层层加工\n从顶层输出\n预测结果关键有两层\n一是self attention\n也就是自注意力\n让模型知道句子中哪些词之间有关系\n比如猫和抓关系紧密\n和桌子关系弱\n二是FEEDFORWARD\n也就是前馈网络对每个词做复杂的非线性变换\n提取深层特征\n那些弯弯曲曲的箭头是什么\n那是残渣连接就像电梯让信息可以跳过某些层\n直接传递\n防止训练时信号消失\n没有他深层的模型根本训不动\n预训练得花多少钱啊\n很夸张\nGPT3用了几千张GPU\n训练了几个月\n烧了上千万美元\n现在的模型更大\n成本可能过亿\n这么多GPU怎么协同工作\n主要靠三种并行策略\n数据并行\n把数据切成多份\n每个GPU算一份模型并行\n把模型切成多份\n每个GPU存一部分流水线并行\n把计算步骤流水线化\nGPU像工厂流水线一样接力\n那损失曲线一直在下降\n是不是说明模型在学对loss越低\n说明预测越准\n但注意loss降到一定程度就不动了\n这时候模型已经学会了语言规律\n但还不会对话\n他只是个大号的填空机器\n预训练完了模型就能像ChatGPT那样聊天了吗\n差得远\n这时候的模型叫base model\n他确实很聪明\n懂数学\n会写代码\n知历史\n但他不会对话什么意思\n你问他你好\n他可能会回答你好\n是一个常见的问候语\n起源于什么什么\n他只是在续写\n不是在回答你\n他没有对话的概念\n也不知道什么该说什么\n不该说嗯\n就像一个读了所有书\n但从来没跟人说过话的天才精准\n所以接下来要进入第二阶段\n监督微调\n教他怎么听话\n监督微调需要什么数据指令和回答\n对格式是prompt和response\n比如prompt是用Python写一个快速排序\nresponse就是对应的代码和解释\n这些数据从哪来\n主要靠人工标注\n也有合成数据\n关键是质量远大于数量\n1万条高质量的指令\n数据可能比100万条垃圾数据效果更好\n那格式有什么讲究\n通常用对话模板\n比如system消息设定角色\nuser消息是问题\nassistant消息是回答\n格式不一致\n会让模型精神分裂啊\n明白了\n就像给模型请了一个超级家教\n没错\n而且这个阶段数据量小得多\n万级到10万级\n相比预训练的万亿级简直是九牛一毛\n微调是不是要重新训练整个模型\n我的显卡只有16G显存\n全量微调确实要动所有参数\n显存需求巨大\n但有个神器叫laura lawrenk adaptation\n低质适配\n他的思路很简单\n冻结原模型的大部分参数\n只在每层旁边加两个小矩阵\n训练时只更新这两个小矩阵\n参数量可能只有原来的1%\n这么少参数效果能好吗\n出乎意料的好\n因为大模型的知识已经存在\nLAURA只是在调方向\n让模型输出更符合你的需求\n16G显存跑70B模型微调\n靠的就是它那rank选多少合适\n一般8~64任务越复杂\nrank越大\n但别盲目加大rain太大\n反而过拟合模型会死记硬背\n训练数据sf t之后模型就能用了吧\n能对话了\n但还不够\n这时候的模型叫s f t model\n他会按格式回答你\n但有几个问题\n第一他可能胡说八道专业术语叫幻觉\n因为他只是模仿训练数据里的模式\n不保证真实性\n第二他可能不安全\n比如有人让他教怎么犯罪\n他可能真的交\n第三他的风格不稳定\n有时候很礼貌\n有时候很冷淡\n就像一个刚毕业的大学生\n有知识\n但不懂职场规矩\n非常贴切\n所以还需要第三阶段对其让他学会做人\n对其具体怎么做\n主流方法是OLLHF人类反馈强化学习分三步\n第一步训练奖励模型\n让人类标注员对同一个问题的多个回答排序\n哪个更好\n哪个更差\n奖励模型学习人类的偏好以后就能自动打分\n第二步\nPPO强化学习\n让模型生成回答奖励模型打分\n然后用PPO算法调整模型参数\n让它朝着高分方向优化\n第三步\nkl散度约束\n防止模型为了得高分而走火入魔\n比如生成一堆无意义的废话来骗奖励模型\nkl约束就像一根绳子\n把模型拴在原来的SFT模型附近\n这听起来像让模型参加选秀比赛\n评委打分\n然后选手根据评分调整表现\n哈哈非常形象\n而且评委也就是奖励模型也是先经过培训的\n刚才说的奖励黑客是什么意思\n这是个经典问题\n假设奖励模型喜欢看到非常好\n优秀这些词\n模型可能学会在回答里疯狂堆砌这些词\n哪怕内容狗屁不通\n就像学生发现老师只看关键词给分\n就开始在作文里塞满正能量词汇\n分高了\n但文章废了\n那kl约束就是防止这种作弊\n对kl散度\n衡量当前模型和原始SFT模型的差距\n差距太大\n就惩罚逼他回到正轨\n没有kl约束\nRL hf训练很容易崩\n所以RL hf训练很不稳定\n非常不稳定\n超参调不好模型\n要么训不动\n要么直接封掉\n这也是RL hf最难啃的骨头\nRL hf这么麻烦\n有没有更简单的方法\n由叫po direct preference optimization\n直接偏好优化RLAHF要先训练奖励模型\n再用PPO强化学习步骤多容易崩\nDPO的思路是直接把偏好数据喂给模型\n让他学会好的回答概率高\n差的回答概率低\n效果一样吗\n在很多任务上效果相当\n甚至更好\n而且训练更稳定\n不需要调PPO那一堆超参\n现在越来越多的团队用DPO替代RL hf\n那是不是以后都用DPO了\n不一定\nRLAHF在复杂场景下上限更高\nDPO更适合资源有限的团队\n选哪个\n看你的场景和算力\n讲了这么多\n实际训练时最容易踩哪些坑\n我列了六个最常见的陷阱\n你记好\n第一数据质量\nSFT阶段\n1万条高质量数据胜过100万条\n垃圾格式不统一会让模型精神分裂\n第二显存爆炸\n别一上来就全量微调\n先用LAURA试水\nRank\n从八开始掉\n第三灾难性遗忘微调\n垂直领域时混一些通用数据进去\n否则模型会变成偏科生\n第四奖励黑客RLAHF训练时定期检查输出\n发现模型开始说废话或堆砌关键词\n立刻收紧kl约束\n第五过拟合训练\nloss降了\n但验证loss生了就是过拟合早停\n家政则化简rank\n第六迷信自动指标blue Rush\n这些指标只能参考\n最终效果要靠人工评测和ab测试\n记下了\n感觉像游戏里的boss攻略\n哈哈训练大模型确实像打副本装备就是算力\n攻略就是方法论\n团队就是数据标注\n缺一不可\n老马走完这三个阶段\n模型就算毕业了吗\n对从一颗空白的语言种子\n经过预训练\n吸收世界知识\n经过SFT学会对话格式\n经过对其建立价值观\n最终变成我们每天都在用的cheat模型\n所以ChatGPT不是突然变聪明的\n而是这三个阶段层层打磨的结果\n完全正确\n预训练给他智商\nSSFT给他技能\n对其给他情商\n三者缺一不可\n那我自己想训一个领域模型该从哪步开始\n绝大多数情况你不需要从头语训练\n找一个开源的base模型做增量预训练\n注入领域知识\n然后sf t教他任务\n最后对其保证安全\n懂了这就像站在巨人的肩膀上\n没错\n而且记住数据质量大于模型大小\n大于训练技巧\n好数据是一切的基础\n感谢老马这趟AI养成之旅\n太值了\n学完了三阶段\n还有什么值得深入的方向吗\n大模型的世界远不止训练\n比如reg\n让模型先查资料再回答\n解决幻觉问题\n蒸馏\n把大模型知识压缩到小模型里\n推理优化\n让模型跑得更快\n更省显存\n还有长上下文\n让模型读整本书\n多模态\n让模型看懂图片和视频\nRed timmy\n主动找模型的安全漏洞\n感觉越学越深\n越学越有意思\nAI领域就是这样\n永远有新东西\n但掌握了今天这三阶段\n你已经有了最坚实的地基\n继续探索吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1MfLX6BE6B",
+  "published_at": "1782939600",
+  "fetched_at": "2026-08-10T04:13:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 大模型训练全流程图谱\n\n## 整体三阶段训练概览\n```mermaid\nflowchart TD\n    Start[\"模型训练起点\"] --> Pretrain[\"阶段1：预训练\\n(阅读全世界文本)\"]\n    Pretrain --> SFT[\"阶段2：监督微调\\n(高质量指令对)\"]\n    SFT --> Align[\"阶段3：对齐 (RLHF)\\n(人类反馈)\"]\n    Align --> ChatGPT[\"完成的ChatGPT模型\"]\n    %% 类比节点\n    Baby[\"婴儿学说话\"] --> School[\"上学读书\"]\n    School --> Society[\"进入社会\"]\n    Baby --> Pretrain\n    School --> SFT\n    Society --> Align\n```\n- 关键时间戳：  \n  - 阶段划分说明 → [BV1MfLX6BE6B P1 00:11]  \n  - 预训练目标 → [BV1MfLX6BE6B P1 00:32]  \n  - 监督微调概念 → [BV1MfLX6BE6B P1 04:52]  \n  - 对齐（RLHF）概述 → [BV1MfLX6BE6B P1 07:28]\n\n## 预训练数据流与学习机制\n```mermaid\nflowchart TD\n    RawData[\"原始网页、百科、代码、论文\"] --> Clean[\"数据清洗\\n去重、过滤、去毒\"]\n    Clean --> Tokenizer[\"TOIZER 分词器\"]\n    Tokenizer --> Tokens[\"离散化 token ID\"]\n    Tokens --> Transformer[\"Transformer 模型\"]\n    Transformer --> NextToken[\"Next Token 预测任务\"]\n    NextToken --> Loss[\"计算 Loss（奖励/惩罚）\"]\n    Loss --> Knowledge[\"语言、世界知识、逻辑规律\"]\n```\n- 关键时间戳：  \n  - 数据清洗说明 → [BV1MfLX6BE6B P1 01:30]  \n  - 分词器 TOIZER → [BV1MfLX6BE6B P1 01:43]  \n  - Next token 预测核心 → [BV1MfLX6BE6B P1 02:00]  \n  - 训练目标与知识获取 → [BV1MfLX6BE6B P1 02:25]\n\n## 监督微调与 LoRA 适配\n```mermaid\nflowchart TD\n    InstrData[\"高质量指令数据\\n(prompt‑response)\"] --> Format[\"统一对话格式\\nsystem / user / assistant\"]\n    Format --> FullFT[\"全量微调\\n需要大量显存\"]\n    FullFT --> LoRA[\"LoRA 低秩适配\\n冻结大部分参数\"]\n    LoRA --> Efficient[\"仅更新 ~1% 参数\"]\n    Efficient --> Performance[\"提升特定任务表现\"]\n    Performance --> Risks[\"潜在问题\\n• 幻觉 (hallucination)\\n• 安全风险\\n• 风格不稳定\"]\n```\n- 关键时间戳：  \n  - 指令数据格式说明 → [BV1MfLX6BE6B P1 05:22]  \n  - 全量微调显存需求 → [BV1MfLX6BE6B P1 05:54]  \n  - LoRA 适配思路 → [BV1MfLX6BE6B P1 06:00]  \n  - 参数占比 → [BV1MfLX6BE6B P1 06:14]  \n  - 微调后问题 → [BV1MfLX6BE6B P1 06:52]\n\n## RLHF 对齐流程与 KL 约束\n```mermaid\nflowchart TD\n    HumanPref[\"人类偏好数据\\n多答案排序\"] --> RewardModel[\"训练奖励模型\"]\n    RewardModel --> PPO[\"PPO 强化学习\"]\n    PPO --> UpdatedModel[\"更新模型参数\"]\n    UpdatedModel --> KL[\"KL 散度约束\"]\n    KL --> SafeModel[\"防止奖励黑客\\n保持与 SFT 模型接近\"]\n    SafeModel --> Aligned[\"最终对齐模型\"]\n    %% 奖励黑客示例\n    HackExample[\"奖励模型偏好关键词堆砌\"] --> KL\n```\n- 关键时间戳：  \n  - RLHF 三步概述 → [BV1MfLX6BE6B P1 07:28]  \n  - 奖励模型训练 → [BV1MfLX6BE6B P1 07:34]  \n  - PPO 过程 → [BV1MfLX6BE6B P1 07:48]  \n  - KL 约束作用 → [BV1MfLX6BE6B P1 08:58]  \n  - 奖励黑客示例 → [BV1MfLX6BE6B P1 08:26]  ",
+      "diagrams": [
+        {
+          "title": "整体三阶段训练概览",
+          "code": "flowchart TD\n    Start[\"模型训练起点\"] --> Pretrain[\"阶段1：预训练\\n(阅读全世界文本)\"]\n    Pretrain --> SFT[\"阶段2：监督微调\\n(高质量指令对)\"]\n    SFT --> Align[\"阶段3：对齐 (RLHF)\\n(人类反馈)\"]\n    Align --> ChatGPT[\"完成的ChatGPT模型\"]\n    %% 类比节点\n    Baby[\"婴儿学说话\"] --> School[\"上学读书\"]\n    School --> Society[\"进入社会\"]\n    Baby --> Pretrain\n    School --> SFT\n    Society --> Align"
+        },
+        {
+          "title": "预训练数据流与学习机制",
+          "code": "flowchart TD\n    RawData[\"原始网页、百科、代码、论文\"] --> Clean[\"数据清洗\\n去重、过滤、去毒\"]\n    Clean --> Tokenizer[\"TOIZER 分词器\"]\n    Tokenizer --> Tokens[\"离散化 token ID\"]\n    Tokens --> Transformer[\"Transformer 模型\"]\n    Transformer --> NextToken[\"Next Token 预测任务\"]\n    NextToken --> Loss[\"计算 Loss（奖励/惩罚）\"]\n    Loss --> Knowledge[\"语言、世界知识、逻辑规律\"]"
+        },
+        {
+          "title": "监督微调与 LoRA 适配",
+          "code": "flowchart TD\n    InstrData[\"高质量指令数据\\n(prompt‑response)\"] --> Format[\"统一对话格式\\nsystem / user / assistant\"]\n    Format --> FullFT[\"全量微调\\n需要大量显存\"]\n    FullFT --> LoRA[\"LoRA 低秩适配\\n冻结大部分参数\"]\n    LoRA --> Efficient[\"仅更新 ~1% 参数\"]\n    Efficient --> Performance[\"提升特定任务表现\"]\n    Performance --> Risks[\"潜在问题\\n• 幻觉 (hallucination)\\n• 安全风险\\n• 风格不稳定\"]"
+        },
+        {
+          "title": "RLHF 对齐流程与 KL 约束",
+          "code": "flowchart TD\n    HumanPref[\"人类偏好数据\\n多答案排序\"] --> RewardModel[\"训练奖励模型\"]\n    RewardModel --> PPO[\"PPO 强化学习\"]\n    PPO --> UpdatedModel[\"更新模型参数\"]\n    UpdatedModel --> KL[\"KL 散度约束\"]\n    KL --> SafeModel[\"防止奖励黑客\\n保持与 SFT 模型接近\"]\n    SafeModel --> Aligned[\"最终对齐模型\"]\n    %% 奖励黑客示例\n    HackExample[\"奖励模型偏好关键词堆砌\"] --> KL"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T04:13:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 大模型训练全流程图谱\n\n## 整体三阶段训练概览\n```mermaid\nflowchart TD\n    Start[\"模型训练起点\"] --> Pretrain[\"阶段1：预训练\\n(阅读全世界文本)\"]\n    Pretrain --> SFT[\"阶段2：监督微调\\n(高质量指令对)\"]\n    SFT --> Align[\"阶段3：对齐 (RLHF)\\n(人类反馈)\"]\n    Align --> ChatGPT[\"完成的ChatGPT模型\"]\n    %% 类比节点\n    Baby[\"婴儿学说话\"] --> School[\"上学读书\"]\n    School --> Society[\"进入社会\"]\n    Baby --> Pretrain\n    School --> SFT\n    Society --> Align\n```\n- 关键时间戳：  \n  - 阶段划分说明 → [BV1MfLX6BE6B P1 00:11]  \n  - 预训练目标 → [BV1MfLX6BE6B P1 00:32]  \n  - 监督微调概念 → [BV1MfLX6BE6B P1 04:52]  \n  - 对齐（RLHF）概述 → [BV1MfLX6BE6B P1 07:28]\n\n## 预训练数据流与学习机制\n```mermaid\nflowchart TD\n    RawData[\"原始网页、百科、代码、论文\"] --> Clean[\"数据清洗\\n去重、过滤、去毒\"]\n    Clean --> Tokenizer[\"TOIZER 分词器\"]\n    Tokenizer --> Tokens[\"离散化 token ID\"]\n    Tokens --> Transformer[\"Transformer 模型\"]\n    Transformer --> NextToken[\"Next Token 预测任务\"]\n    NextToken --> Loss[\"计算 Loss（奖励/惩罚）\"]\n    Loss --> Knowledge[\"语言、世界知识、逻辑规律\"]\n```\n- 关键时间戳：  \n  - 数据清洗说明 → [BV1MfLX6BE6B P1 01:30]  \n  - 分词器 TOIZER → [BV1MfLX6BE6B P1 01:43]  \n  - Next token 预测核心 → [BV1MfLX6BE6B P1 02:00]  \n  - 训练目标与知识获取 → [BV1MfLX6BE6B P1 02:25]\n\n## 监督微调与 LoRA 适配\n```mermaid\nflowchart TD\n    InstrData[\"高质量指令数据\\n(prompt‑response)\"] --> Format[\"统一对话格式\\nsystem / user / assistant\"]\n    Format --> FullFT[\"全量微调\\n需要大量显存\"]\n    FullFT --> LoRA[\"LoRA 低秩适配\\n冻结大部分参数\"]\n    LoRA --> Efficient[\"仅更新 ~1% 参数\"]\n    Efficient --> Performance[\"提升特定任务表现\"]\n    Performance --> Risks[\"潜在问题\\n• 幻觉 (hallucination)\\n• 安全风险\\n• 风格不稳定\"]\n```\n- 关键时间戳：  \n  - 指令数据格式说明 → [BV1MfLX6BE6B P1 05:22]  \n  - 全量微调显存需求 → [BV1MfLX6BE6B P1 05:54]  \n  - LoRA 适配思路 → [BV1MfLX6BE6B P1 06:00]  \n  - 参数占比 → [BV1MfLX6BE6B P1 06:14]  \n  - 微调后问题 → [BV1MfLX6BE6B P1 06:52]\n\n## RLHF 对齐流程与 KL 约束\n```mermaid\nflowchart TD\n    HumanPref[\"人类偏好数据\\n多答案排序\"] --> RewardModel[\"训练奖励模型\"]\n    RewardModel --> PPO[\"PPO 强化学习\"]\n    PPO --> UpdatedModel[\"更新模型参数\"]\n    UpdatedModel --> KL[\"KL 散度约束\"]\n    KL --> SafeModel[\"防止奖励黑客\\n保持与 SFT 模型接近\"]\n    SafeModel --> Aligned[\"最终对齐模型\"]\n    %% 奖励黑客示例\n    HackExample[\"奖励模型偏好关键词堆砌\"] --> KL\n```\n- 关键时间戳：  \n  - RLHF 三步概述 → [BV1MfLX6BE6B P1 07:28]  \n  - 奖励模型训练 → [BV1MfLX6BE6B P1 07:34]  \n  - PPO 过程 → [BV1MfLX6BE6B P1 07:48]  \n  - KL 约束作用 → [BV1MfLX6BE6B P1 08:58]  \n  - 奖励黑客示例 → [BV1MfLX6BE6B P1 08:26]  ",
+  "diagrams": [
+    {
+      "title": "整体三阶段训练概览",
+      "code": "flowchart TD\n    Start[\"模型训练起点\"] --> Pretrain[\"阶段1：预训练\\n(阅读全世界文本)\"]\n    Pretrain --> SFT[\"阶段2：监督微调\\n(高质量指令对)\"]\n    SFT --> Align[\"阶段3：对齐 (RLHF)\\n(人类反馈)\"]\n    Align --> ChatGPT[\"完成的ChatGPT模型\"]\n    %% 类比节点\n    Baby[\"婴儿学说话\"] --> School[\"上学读书\"]\n    School --> Society[\"进入社会\"]\n    Baby --> Pretrain\n    School --> SFT\n    Society --> Align"
+    },
+    {
+      "title": "预训练数据流与学习机制",
+      "code": "flowchart TD\n    RawData[\"原始网页、百科、代码、论文\"] --> Clean[\"数据清洗\\n去重、过滤、去毒\"]\n    Clean --> Tokenizer[\"TOIZER 分词器\"]\n    Tokenizer --> Tokens[\"离散化 token ID\"]\n    Tokens --> Transformer[\"Transformer 模型\"]\n    Transformer --> NextToken[\"Next Token 预测任务\"]\n    NextToken --> Loss[\"计算 Loss（奖励/惩罚）\"]\n    Loss --> Knowledge[\"语言、世界知识、逻辑规律\"]"
+    },
+    {
+      "title": "监督微调与 LoRA 适配",
+      "code": "flowchart TD\n    InstrData[\"高质量指令数据\\n(prompt‑response)\"] --> Format[\"统一对话格式\\nsystem / user / assistant\"]\n    Format --> FullFT[\"全量微调\\n需要大量显存\"]\n    FullFT --> LoRA[\"LoRA 低秩适配\\n冻结大部分参数\"]\n    LoRA --> Efficient[\"仅更新 ~1% 参数\"]\n    Efficient --> Performance[\"提升特定任务表现\"]\n    Performance --> Risks[\"潜在问题\\n• 幻觉 (hallucination)\\n• 安全风险\\n• 风格不稳定\"]"
+    },
+    {
+      "title": "RLHF 对齐流程与 KL 约束",
+      "code": "flowchart TD\n    HumanPref[\"人类偏好数据\\n多答案排序\"] --> RewardModel[\"训练奖励模型\"]\n    RewardModel --> PPO[\"PPO 强化学习\"]\n    PPO --> UpdatedModel[\"更新模型参数\"]\n    UpdatedModel --> KL[\"KL 散度约束\"]\n    KL --> SafeModel[\"防止奖励黑客\\n保持与 SFT 模型接近\"]\n    SafeModel --> Aligned[\"最终对齐模型\"]\n    %% 奖励黑客示例\n    HackExample[\"奖励模型偏好关键词堆砌\"] --> KL"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T04:13:48+00:00"
+}

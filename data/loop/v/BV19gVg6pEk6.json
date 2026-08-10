@@ -1,0 +1,74 @@
+{
+  "bvid": "BV19gVg6pEk6",
+  "title": "北大做了一个会自我进化的科研 Agent：AutoSci",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 843,
+  "text": "今天的科研A真的跑完一条流程就结束了\n经验留不下来\nauto赛不一样\n他有记忆\nSIMON是他的大脑\n分为长期记忆和活动记忆\nCFLOW是研究流程\n从调研到写论文\n每一步都在和这个大脑交互\n从文献搜集阶段开始\n给OTOSEI研究主题和几篇种子文献\n他就会主动去公开科研平台\n自己找论文\n读报告\n找到的文献\n奥特赛会自己消化文献的概念\n主题方法等\n在长期记忆网络中彼此连接\n跨项目沉淀\n从长期记忆里长出来的idea进入活动记忆\n得到测试\n就算失败\n这条idea也会被禁下来\n下次不再走同一条弯路\n随着流程推进\nidea变成方法\n奥特赛就自己写代码\n把实验跑起来\n收集结果\nidea方法实验证据全都在活动记忆里\n彼此互联\n每一步都以先前的尝试为依据\n到了论文写作与审稿修订环节\nauto set可以追溯记忆\n自动写作\n审稿意见来了\n他从同一张记忆网里调证据\n写REBETO版本史修订经验也留在记忆里\n在协作密集的环节可以打开SIEG\n他把单个步骤变成可复用的算子图\n执行时动态选录减掉死之\n既能纠错又省算力\n系统本身也在进化\nSay evolve\n吸收用户任务和开放环境的信号\ndream重整了3m m forge by\n成功的SAFLOW路径锻造成新技能\nMorph\n让SADAG的多智能体模板自我演化\n所以奥特赛不止积累研究成果更惊雷\n怎么把下一次研究做得更好的经验\n来看看auto赛是怎么在真实科研场景里跑通的吧\n给他一个主题\n他自己去找文献\nAlpha food\n泛素连接酶找来的论文中的概念被充分吸收\n构成一张记忆网络\n接着科研idea从记忆中长出来\n不新颖\n不可行\n离题的他自己先筛掉\n只留下最值得做的课题\n然后奥德赛真的用实验验证了他的想法\n尽管我们的预实验得到了负面的结果\n但auto赛没有把结果藏起来\n而是写进记忆\n自我更新\n最后图谱想法\n实验引用全部汇成一篇论文\n经过跨模型评审\n每个数字都真实可溯源\n不断演化的知识网络\n真实严谨\n可复现的论文\n这就是auto side",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19gVg6pEk6",
+  "published_at": "1780114967",
+  "fetched_at": "2026-08-10T07:05:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AutoSci 知识图谱\n\n## 总览：AutoSci 记忆结构与研究流程\n```mermaid\nflowchart TD\n    A[\"AutoSci 系统\"] --> B[\"SIMON（大脑）\"]\n    B --> C[\"长期记忆网络\"]\n    B --> D[\"活动记忆\"]\n    A --> E[\"CFLOW（研究流程）\"]\n    E --> F[\"文献搜集\"]\n    F --> G[\"主题/Idea 生成\"]\n    G --> H[\"实验验证\"]\n    H --> I[\"论文写作/审稿\"]\n    I --> J[\"记忆追溯 & 自动写作\"]\n    J --> K[\"系统自我进化\"]\n    K --> L[\"可复用算子图 (SIEG)\"]\n    K --> M[\"多智能体模板演化 (Morph)\"]\n    C --> G\n    D --> H\n```\n\n## 记忆流动细节\n```mermaid\nflowchart TD\n    LT[\"长期记忆\"] --> Idea[\"Idea\"]\n    Idea --> AT[\"活动记忆\"]\n    AT --> Method[\"Method\"]\n    Method --> Test[\"实验结果\"]\n    Test --> AT\n    Test --> Fail[\"失败标记\"]\n    Fail --> LT\n    AT --> Update[\"记忆更新\"]\n    Update --> LT\n```\n\n## CFLOW 研究流程细分\n```mermaid\nflowchart LR\n    CF[\"CFLOW\"] --> LC[\"文献搜集\"]\n    LC --> TG[\"研究主题生成\"]\n    TG --> LS[\"检索文献\"]\n    LS --> LD[\"文献消化\"]\n    LD --> IE[\"Idea 评估\"]\n    IE --> EV[\"实验验证\"]\n    EV --> RW[\"结果写入记忆\"]\n    RW --> PW[\"论文写作\"]\n    PW --> RE[\"审稿修订\"]\n```\n\n## 系统进化机制\n```mermaid\nflowchart TD\n    UT[\"用户任务信号\"] --> ABS[\"吸收信号\"]\n    ES[\"开放环境信号\"] --> ABS\n    ABS --> SK[\"新技能 (SAFLOW路径)\"]\n    SK --> MOR[\"Morph 多智能体自演化\"]\n    MOR --> EVO[\"系统进化\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览：AutoSci 记忆结构与研究流程",
+          "code": "flowchart TD\n    A[\"AutoSci 系统\"] --> B[\"SIMON（大脑）\"]\n    B --> C[\"长期记忆网络\"]\n    B --> D[\"活动记忆\"]\n    A --> E[\"CFLOW（研究流程）\"]\n    E --> F[\"文献搜集\"]\n    F --> G[\"主题/Idea 生成\"]\n    G --> H[\"实验验证\"]\n    H --> I[\"论文写作/审稿\"]\n    I --> J[\"记忆追溯 & 自动写作\"]\n    J --> K[\"系统自我进化\"]\n    K --> L[\"可复用算子图 (SIEG)\"]\n    K --> M[\"多智能体模板演化 (Morph)\"]\n    C --> G\n    D --> H"
+        },
+        {
+          "title": "记忆流动细节",
+          "code": "flowchart TD\n    LT[\"长期记忆\"] --> Idea[\"Idea\"]\n    Idea --> AT[\"活动记忆\"]\n    AT --> Method[\"Method\"]\n    Method --> Test[\"实验结果\"]\n    Test --> AT\n    Test --> Fail[\"失败标记\"]\n    Fail --> LT\n    AT --> Update[\"记忆更新\"]\n    Update --> LT"
+        },
+        {
+          "title": "CFLOW 研究流程细分",
+          "code": "flowchart LR\n    CF[\"CFLOW\"] --> LC[\"文献搜集\"]\n    LC --> TG[\"研究主题生成\"]\n    TG --> LS[\"检索文献\"]\n    LS --> LD[\"文献消化\"]\n    LD --> IE[\"Idea 评估\"]\n    IE --> EV[\"实验验证\"]\n    EV --> RW[\"结果写入记忆\"]\n    RW --> PW[\"论文写作\"]\n    PW --> RE[\"审稿修订\"]"
+        },
+        {
+          "title": "系统进化机制",
+          "code": "flowchart TD\n    UT[\"用户任务信号\"] --> ABS[\"吸收信号\"]\n    ES[\"开放环境信号\"] --> ABS\n    ABS --> SK[\"新技能 (SAFLOW路径)\"]\n    SK --> MOR[\"Morph 多智能体自演化\"]\n    MOR --> EVO[\"系统进化\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T07:05:18+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AutoSci 知识图谱\n\n## 总览：AutoSci 记忆结构与研究流程\n```mermaid\nflowchart TD\n    A[\"AutoSci 系统\"] --> B[\"SIMON（大脑）\"]\n    B --> C[\"长期记忆网络\"]\n    B --> D[\"活动记忆\"]\n    A --> E[\"CFLOW（研究流程）\"]\n    E --> F[\"文献搜集\"]\n    F --> G[\"主题/Idea 生成\"]\n    G --> H[\"实验验证\"]\n    H --> I[\"论文写作/审稿\"]\n    I --> J[\"记忆追溯 & 自动写作\"]\n    J --> K[\"系统自我进化\"]\n    K --> L[\"可复用算子图 (SIEG)\"]\n    K --> M[\"多智能体模板演化 (Morph)\"]\n    C --> G\n    D --> H\n```\n\n## 记忆流动细节\n```mermaid\nflowchart TD\n    LT[\"长期记忆\"] --> Idea[\"Idea\"]\n    Idea --> AT[\"活动记忆\"]\n    AT --> Method[\"Method\"]\n    Method --> Test[\"实验结果\"]\n    Test --> AT\n    Test --> Fail[\"失败标记\"]\n    Fail --> LT\n    AT --> Update[\"记忆更新\"]\n    Update --> LT\n```\n\n## CFLOW 研究流程细分\n```mermaid\nflowchart LR\n    CF[\"CFLOW\"] --> LC[\"文献搜集\"]\n    LC --> TG[\"研究主题生成\"]\n    TG --> LS[\"检索文献\"]\n    LS --> LD[\"文献消化\"]\n    LD --> IE[\"Idea 评估\"]\n    IE --> EV[\"实验验证\"]\n    EV --> RW[\"结果写入记忆\"]\n    RW --> PW[\"论文写作\"]\n    PW --> RE[\"审稿修订\"]\n```\n\n## 系统进化机制\n```mermaid\nflowchart TD\n    UT[\"用户任务信号\"] --> ABS[\"吸收信号\"]\n    ES[\"开放环境信号\"] --> ABS\n    ABS --> SK[\"新技能 (SAFLOW路径)\"]\n    SK --> MOR[\"Morph 多智能体自演化\"]\n    MOR --> EVO[\"系统进化\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览：AutoSci 记忆结构与研究流程",
+      "code": "flowchart TD\n    A[\"AutoSci 系统\"] --> B[\"SIMON（大脑）\"]\n    B --> C[\"长期记忆网络\"]\n    B --> D[\"活动记忆\"]\n    A --> E[\"CFLOW（研究流程）\"]\n    E --> F[\"文献搜集\"]\n    F --> G[\"主题/Idea 生成\"]\n    G --> H[\"实验验证\"]\n    H --> I[\"论文写作/审稿\"]\n    I --> J[\"记忆追溯 & 自动写作\"]\n    J --> K[\"系统自我进化\"]\n    K --> L[\"可复用算子图 (SIEG)\"]\n    K --> M[\"多智能体模板演化 (Morph)\"]\n    C --> G\n    D --> H"
+    },
+    {
+      "title": "记忆流动细节",
+      "code": "flowchart TD\n    LT[\"长期记忆\"] --> Idea[\"Idea\"]\n    Idea --> AT[\"活动记忆\"]\n    AT --> Method[\"Method\"]\n    Method --> Test[\"实验结果\"]\n    Test --> AT\n    Test --> Fail[\"失败标记\"]\n    Fail --> LT\n    AT --> Update[\"记忆更新\"]\n    Update --> LT"
+    },
+    {
+      "title": "CFLOW 研究流程细分",
+      "code": "flowchart LR\n    CF[\"CFLOW\"] --> LC[\"文献搜集\"]\n    LC --> TG[\"研究主题生成\"]\n    TG --> LS[\"检索文献\"]\n    LS --> LD[\"文献消化\"]\n    LD --> IE[\"Idea 评估\"]\n    IE --> EV[\"实验验证\"]\n    EV --> RW[\"结果写入记忆\"]\n    RW --> PW[\"论文写作\"]\n    PW --> RE[\"审稿修订\"]"
+    },
+    {
+      "title": "系统进化机制",
+      "code": "flowchart TD\n    UT[\"用户任务信号\"] --> ABS[\"吸收信号\"]\n    ES[\"开放环境信号\"] --> ABS\n    ABS --> SK[\"新技能 (SAFLOW路径)\"]\n    SK --> MOR[\"Morph 多智能体自演化\"]\n    MOR --> EVO[\"系统进化\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T07:05:18+00:00"
+}

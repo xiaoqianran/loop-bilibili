@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1UR98BvEha",
+  "title": "4月24日DeepSeek V4一发布，我干了件蠢事....",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2084,
+  "text": "4月24号\nDUSKV41发布\n我干了件蠢事\n我迫不及待的把它布置到本地服务器上\n跑了一下\n结果推理速度慢的离谱\n差点我把键盘都砸了\n后来一个搞国产化的朋友告诉我\n你直接用原生框架跑\n没做过适配\n当然慢\n但你猜VZ这次多猛\n他从英伟达库大生态搬到了华为can m框架上\n据说迁移后的推理速度有了质的飞跃\n你以为那些工程师天天熬夜在干啥\n那是有人在替你踩坑\n没错就在4月24号\ndeep sc v4预览版正式上线\n并且同步开源双版本\n同步推出的旗舰版V4pro总参数1.6万亿\n激活参数490亿\n经济型V4flash总参数2840亿\n激活参数131\n两款都支持百万字超长上下文输出\n长度最大384\nk token s核心参数一出来就震动了行业\nlive coding bench 93.5%\n全场最高coding force评分3206\n超越主流必然模型直接就是刷新基准记录\n而且它的编程水平已经和顶级的商业模型\n不相上下\n最炸裂的在后头\nV4这次彻底适配了华为生产芯片\n真正实现了刚才说的\nGUA生态到can框架的底层迁移\n上千个核心算子被全盘重写\n第三方测试显示\n天翼后的升腾\n950pr推理速度比英伟达H20快了近三倍\n这意味着什么\n意味着\n国内会有越来越多的企业选择国产芯片\n来部署AI\n成本更低\n合规不依赖英伟达\n这对企业来说是巨大的吸引力\n但问题是芯片有了模型\n有了谁来调\n谁来部署\n谁来保证推理不崩\n企业对AI应用开发人才的需求正在井喷\n供给跟不上\n薪资自然水涨船高\n我朋友这句话点醒了我\n2026年的AI程序员不能再只会调API了\n你得懂得把大模型真正落地到业务中\n成为能解决实际问题的人\n因为V4发布后\n越来越多的企业会把模型部署到国产芯片上\n这个趋势正在悄悄改变招聘市场的逻辑\n我查了一下今年的春招行情\nAI应用开发岗月薪6万起步的大有人在\n招聘数量比去年翻了十几倍\n阿里腾讯字节\n这些巨头早就把十几万升腾芯片的订单下了\n现在就等人来调\n等人来部署\n等人来保证推理不崩\n岗位机会就在这里\n这个缺口太大了\n但讽刺的是\n大多程序员还在学那些表面功夫\nVTUA怎么用提示词\n怎么写rag怎么搭\n这些重要吗重要\n但只懂这些\n你只能做个demo\n真正企业级AI应用需要你解决几个硬骨头\n我第一个项目就待在成本控制上\n一个agent他随便规划几步token消耗直接翻几百倍\n第二天看到账单\n差点没背过气去\n后来才知道\n一个复杂任务的token消耗\n可以是普通聊天的几十倍\n不懂模型路由不给agent的设置停止机制\n项目会把自己烧破产\n还有稳定性问题\n模型不是代码\n它会飘\n你给agent的挂五个工具\n它可能走到第三步就逻辑错乱了\n怎么设计兜底逻辑\n怎么让它在失控时自动降级到规则系统\n这些才是工程化的核心\n坦白说\n这些东西你靠看文章刷GITHUB是学不来的\n我当初也是一头雾水\n直到我参加了知乎知学堂公开课\n他不是那种灌水课\n而是直接带你从0~1交付一个能用的AI应用\n从环境搭建模型选型开始\n到rap检索策略优化\nagent的工具调度设计\n再到成本控制和性能调优\n每一步都有对应的代码和实操\n教你的不是概念\n而是动手能力\n这个课他最大的不同是他不跟你讲虚了\n第一天就直接扔给你一个真实的企业级项目\n比如搭建一个rap系统\n让你一步步优化推理速度\n控制成本\n处理异常\n你遇到的所有坑老师都提前踩过了\n直接给你模板和解决方案\n我印象最深的一个细节\n老师讲agent的任务路径偏离时\n直接给了一段兜底代码\n当模型连续三次推理结果不一致时\n自动切换到预设的规则流程\n就这么一个小模板\n解决了我之前项目里最头疼的死循环问题\n这些实战经验你在任何文档里都找不到\n而且这个公开课现在还是免费的\n我就给大家分享\n在评论区里\n课后他们还会送一份大模型agent的知识\n从0~1笔记万字详解版里面\n从模型调用\n我想上您适配到商业级项目全流程都整理好了\n说回deep sc v4\n他确实强\n但你发现没有\n如果不懂工程化落地\n连部署这一步都可能跑不顺\n更别提后面的成本控制\n稳定性都低了\nV4这次把推理速度\n上下文长度都拉到了新高度\n但工具再好\n也得有人会驾驭\nV4针对各种智能体都做了适配优化\n代码交付质量已经非常顶了\n可如果没有工程化能力\n你连他的潜力都发挥不出来\n百万字上下文是标配了\n企业再也不怕长文档处理\n但怎么设计agent的planning\n怎么防止任务路径坍塌\n怎么控制成本不爆炸\n这些恰恰是绝大多数程序员的盲区\n而这时候如果你已经通过系统学习\n具备了国产算力适配和工程化落地的能力\n你就是企业抢着要的人\n你现在面临的选择其实只有一个\n是继续在舒适的API调用里来回打转\n还是去啃一啃真正的硬骨头\n公开课名额有限\n先占个座\n总没错\n说白了这门课给你的不是一堆知识点\n而是一条已经被验证过的\n会调API到能独立交付AI项目的完整路径\n你不需要再去网上碎片化的搜跟着走一遍\n方向就清晰了\n而且群里可以直接问老师\n不用自己对着报错日志瞎琢磨\n机会不会一直等你动起来才有主动权",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UR98BvEha",
+  "published_at": "1777527972",
+  "fetched_at": "2026-08-08T09:57:42+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 知识图谱\n\n## V4 版本与性能概览  \n[BV1UR98BvEha P1 00:25] 发布预览版并同步开源双版本；[BV1UR98BvEha P1 00:31] V4pro 参数 1.6 万亿、激活 490 B；[BV1UR98BvEha P1 00:33] V4flash 参数 2840 亿、激活 131 B；[BV1UR98BvEha P1 00:37] 支持百万字上下文，最大长度 384 k token；[BV1UR98BvEha P1 00:56] 迁移至华为 Ascend（Can）框架；[BV1UR98BvEha P1 01:06] 推理速度 950 pr，约 3 倍快于 Nvidia H20；[BV1UR98BvEha P1 01:11] 国内企业将更倾向使用国产芯片。\n\n```mermaid\nflowchart TD\n    R1[\"发布日 2024‑04‑24\"] --> VERS[\"双版本发布\"]\n    VERS --> PRO[\"V4pro\"]\n    VERS --> FLASH[\"V4flash\"]\n    PRO --> P1[\"总参数 1.6 万亿\"]\n    PRO --> A1[\"激活参数 490 B\"]\n    FLASH --> P2[\"总参数 2.84 千亿\"]\n    FLASH --> A2[\"激活参数 131 B\"]\n    PRO --> CS[\"支持百万字上下文\"]\n    FLASH --> CS\n    CS --> ML[\"最大长度 384 k token\"]\n    VERS --> MIG[\"迁移至华为 Ascend (Can) 框架\"]\n    MIG --> PERF[\"推理速度提升 3 倍\"]\n    PERF --> BEN[\"Benchmark 93.5 % / 3206 分\"]\n    BEN --> IMP[\"行业影响：国产芯片采纳 ↑\"]\n```\n\n## AI 应用工程化部署流程  \n[BV1UR98BvEha P1 02:42] 公开课从环境搭建到成本控制全流程；[BV1UR98BvEha P1 02:47] 涉及 RAG 检索、agent 工具调度；[BV1UR98BvEha P1 03:10] 提供 fallback 代码模板；[BV1UR98BvEha P1 03:44] V4 推理速度与上下文长度提升。\n\n```mermaid\nflowchart LR\n    S[\"开始\"]\n    ES[\"环境搭建\"]\n    MS[\"模型选型\"]\n    FA[\"框架适配（华为 Ascend）\"]\n    CO[\"核心算子重写\"]\n    IT[\"推理性能测试\"]\n    CC[\"成本控制\"]\n    TM[\"Token 消耗管理\"]\n    AD[\"Agent 任务与工具调度\"]\n    FL[\"Fallback 兜底逻辑\"]\n    PT[\"性能调优\"]\n    DP[\"部署到生产\"]\n    MO[\"运行监控\"]\n    SU[\"项目成功交付\"]\n    S --> ES --> MS --> FA --> CO --> IT --> CC --> TM --> AD --> FL --> PT --> DP --> MO --> SU\n```\n\n## 程序员职业路径决策图  \n[BV1UR98BvEha P1 04:11] 面临唯一选择：继续 API 调用或学习工程化落地；[BV1UR98BvEha P1 04:15] 后者可获得企业抢手人才资格；[BV1UR98BvEha P1 04:18] 公开课名额有限，先占座。\n\n```mermaid\nflowchart TD\n    CUR[\"当前技能：仅会调用 API\"]\n    DP[\"决策点\"]\n    STAY[\"继续 API 调用\\n（保持现状）\"]\n    UP[\"学习工程化落地\"]\n    COURSE[\"报名公开课\"]\n    SKILLS[\"掌握国产算力适配、Agent 设计、成本控制\"]\n    DEMAND[\"AI 应用开发需求 ↑\"]\n    SALARY[\"月薪 6 万+\"]\n    OPPS[\"岗位机会大量\"]\n    ADV[\"竞争优势\"]\n    CHOICE[\"选择：成为企业抢手人才\"]\n    CUR --> DP\n    DP --> STAY\n    DP --> UP\n    UP --> COURSE --> SKILLS --> DEMAND --> SALARY --> OPPS --> ADV --> CHOICE\n```",
+      "diagrams": [
+        {
+          "title": "V4 版本与性能概览",
+          "code": "flowchart TD\n    R1[\"发布日 2024‑04‑24\"] --> VERS[\"双版本发布\"]\n    VERS --> PRO[\"V4pro\"]\n    VERS --> FLASH[\"V4flash\"]\n    PRO --> P1[\"总参数 1.6 万亿\"]\n    PRO --> A1[\"激活参数 490 B\"]\n    FLASH --> P2[\"总参数 2.84 千亿\"]\n    FLASH --> A2[\"激活参数 131 B\"]\n    PRO --> CS[\"支持百万字上下文\"]\n    FLASH --> CS\n    CS --> ML[\"最大长度 384 k token\"]\n    VERS --> MIG[\"迁移至华为 Ascend (Can) 框架\"]\n    MIG --> PERF[\"推理速度提升 3 倍\"]\n    PERF --> BEN[\"Benchmark 93.5 % / 3206 分\"]\n    BEN --> IMP[\"行业影响：国产芯片采纳 ↑\"]"
+        },
+        {
+          "title": "AI 应用工程化部署流程",
+          "code": "flowchart LR\n    S[\"开始\"]\n    ES[\"环境搭建\"]\n    MS[\"模型选型\"]\n    FA[\"框架适配（华为 Ascend）\"]\n    CO[\"核心算子重写\"]\n    IT[\"推理性能测试\"]\n    CC[\"成本控制\"]\n    TM[\"Token 消耗管理\"]\n    AD[\"Agent 任务与工具调度\"]\n    FL[\"Fallback 兜底逻辑\"]\n    PT[\"性能调优\"]\n    DP[\"部署到生产\"]\n    MO[\"运行监控\"]\n    SU[\"项目成功交付\"]\n    S --> ES --> MS --> FA --> CO --> IT --> CC --> TM --> AD --> FL --> PT --> DP --> MO --> SU"
+        },
+        {
+          "title": "程序员职业路径决策图",
+          "code": "flowchart TD\n    CUR[\"当前技能：仅会调用 API\"]\n    DP[\"决策点\"]\n    STAY[\"继续 API 调用\\n（保持现状）\"]\n    UP[\"学习工程化落地\"]\n    COURSE[\"报名公开课\"]\n    SKILLS[\"掌握国产算力适配、Agent 设计、成本控制\"]\n    DEMAND[\"AI 应用开发需求 ↑\"]\n    SALARY[\"月薪 6 万+\"]\n    OPPS[\"岗位机会大量\"]\n    ADV[\"竞争优势\"]\n    CHOICE[\"选择：成为企业抢手人才\"]\n    CUR --> DP\n    DP --> STAY\n    DP --> UP\n    UP --> COURSE --> SKILLS --> DEMAND --> SALARY --> OPPS --> ADV --> CHOICE"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T10:00:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 知识图谱\n\n## V4 版本与性能概览  \n[BV1UR98BvEha P1 00:25] 发布预览版并同步开源双版本；[BV1UR98BvEha P1 00:31] V4pro 参数 1.6 万亿、激活 490 B；[BV1UR98BvEha P1 00:33] V4flash 参数 2840 亿、激活 131 B；[BV1UR98BvEha P1 00:37] 支持百万字上下文，最大长度 384 k token；[BV1UR98BvEha P1 00:56] 迁移至华为 Ascend（Can）框架；[BV1UR98BvEha P1 01:06] 推理速度 950 pr，约 3 倍快于 Nvidia H20；[BV1UR98BvEha P1 01:11] 国内企业将更倾向使用国产芯片。\n\n```mermaid\nflowchart TD\n    R1[\"发布日 2024‑04‑24\"] --> VERS[\"双版本发布\"]\n    VERS --> PRO[\"V4pro\"]\n    VERS --> FLASH[\"V4flash\"]\n    PRO --> P1[\"总参数 1.6 万亿\"]\n    PRO --> A1[\"激活参数 490 B\"]\n    FLASH --> P2[\"总参数 2.84 千亿\"]\n    FLASH --> A2[\"激活参数 131 B\"]\n    PRO --> CS[\"支持百万字上下文\"]\n    FLASH --> CS\n    CS --> ML[\"最大长度 384 k token\"]\n    VERS --> MIG[\"迁移至华为 Ascend (Can) 框架\"]\n    MIG --> PERF[\"推理速度提升 3 倍\"]\n    PERF --> BEN[\"Benchmark 93.5 % / 3206 分\"]\n    BEN --> IMP[\"行业影响：国产芯片采纳 ↑\"]\n```\n\n## AI 应用工程化部署流程  \n[BV1UR98BvEha P1 02:42] 公开课从环境搭建到成本控制全流程；[BV1UR98BvEha P1 02:47] 涉及 RAG 检索、agent 工具调度；[BV1UR98BvEha P1 03:10] 提供 fallback 代码模板；[BV1UR98BvEha P1 03:44] V4 推理速度与上下文长度提升。\n\n```mermaid\nflowchart LR\n    S[\"开始\"]\n    ES[\"环境搭建\"]\n    MS[\"模型选型\"]\n    FA[\"框架适配（华为 Ascend）\"]\n    CO[\"核心算子重写\"]\n    IT[\"推理性能测试\"]\n    CC[\"成本控制\"]\n    TM[\"Token 消耗管理\"]\n    AD[\"Agent 任务与工具调度\"]\n    FL[\"Fallback 兜底逻辑\"]\n    PT[\"性能调优\"]\n    DP[\"部署到生产\"]\n    MO[\"运行监控\"]\n    SU[\"项目成功交付\"]\n    S --> ES --> MS --> FA --> CO --> IT --> CC --> TM --> AD --> FL --> PT --> DP --> MO --> SU\n```\n\n## 程序员职业路径决策图  \n[BV1UR98BvEha P1 04:11] 面临唯一选择：继续 API 调用或学习工程化落地；[BV1UR98BvEha P1 04:15] 后者可获得企业抢手人才资格；[BV1UR98BvEha P1 04:18] 公开课名额有限，先占座。\n\n```mermaid\nflowchart TD\n    CUR[\"当前技能：仅会调用 API\"]\n    DP[\"决策点\"]\n    STAY[\"继续 API 调用\\n（保持现状）\"]\n    UP[\"学习工程化落地\"]\n    COURSE[\"报名公开课\"]\n    SKILLS[\"掌握国产算力适配、Agent 设计、成本控制\"]\n    DEMAND[\"AI 应用开发需求 ↑\"]\n    SALARY[\"月薪 6 万+\"]\n    OPPS[\"岗位机会大量\"]\n    ADV[\"竞争优势\"]\n    CHOICE[\"选择：成为企业抢手人才\"]\n    CUR --> DP\n    DP --> STAY\n    DP --> UP\n    UP --> COURSE --> SKILLS --> DEMAND --> SALARY --> OPPS --> ADV --> CHOICE\n```",
+  "diagrams": [
+    {
+      "title": "V4 版本与性能概览",
+      "code": "flowchart TD\n    R1[\"发布日 2024‑04‑24\"] --> VERS[\"双版本发布\"]\n    VERS --> PRO[\"V4pro\"]\n    VERS --> FLASH[\"V4flash\"]\n    PRO --> P1[\"总参数 1.6 万亿\"]\n    PRO --> A1[\"激活参数 490 B\"]\n    FLASH --> P2[\"总参数 2.84 千亿\"]\n    FLASH --> A2[\"激活参数 131 B\"]\n    PRO --> CS[\"支持百万字上下文\"]\n    FLASH --> CS\n    CS --> ML[\"最大长度 384 k token\"]\n    VERS --> MIG[\"迁移至华为 Ascend (Can) 框架\"]\n    MIG --> PERF[\"推理速度提升 3 倍\"]\n    PERF --> BEN[\"Benchmark 93.5 % / 3206 分\"]\n    BEN --> IMP[\"行业影响：国产芯片采纳 ↑\"]"
+    },
+    {
+      "title": "AI 应用工程化部署流程",
+      "code": "flowchart LR\n    S[\"开始\"]\n    ES[\"环境搭建\"]\n    MS[\"模型选型\"]\n    FA[\"框架适配（华为 Ascend）\"]\n    CO[\"核心算子重写\"]\n    IT[\"推理性能测试\"]\n    CC[\"成本控制\"]\n    TM[\"Token 消耗管理\"]\n    AD[\"Agent 任务与工具调度\"]\n    FL[\"Fallback 兜底逻辑\"]\n    PT[\"性能调优\"]\n    DP[\"部署到生产\"]\n    MO[\"运行监控\"]\n    SU[\"项目成功交付\"]\n    S --> ES --> MS --> FA --> CO --> IT --> CC --> TM --> AD --> FL --> PT --> DP --> MO --> SU"
+    },
+    {
+      "title": "程序员职业路径决策图",
+      "code": "flowchart TD\n    CUR[\"当前技能：仅会调用 API\"]\n    DP[\"决策点\"]\n    STAY[\"继续 API 调用\\n（保持现状）\"]\n    UP[\"学习工程化落地\"]\n    COURSE[\"报名公开课\"]\n    SKILLS[\"掌握国产算力适配、Agent 设计、成本控制\"]\n    DEMAND[\"AI 应用开发需求 ↑\"]\n    SALARY[\"月薪 6 万+\"]\n    OPPS[\"岗位机会大量\"]\n    ADV[\"竞争优势\"]\n    CHOICE[\"选择：成为企业抢手人才\"]\n    CUR --> DP\n    DP --> STAY\n    DP --> UP\n    UP --> COURSE --> SKILLS --> DEMAND --> SALARY --> OPPS --> ADV --> CHOICE"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T10:00:16+00:00"
+}

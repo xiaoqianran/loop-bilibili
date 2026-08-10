@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1zjKz64Ewf",
+  "title": "【Godot对话系统（完结篇）】对话影响游戏场景",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4229,
+  "text": "在制作对话系统的过程中\n如何在与NPC对话之后对场景实时产生影响\n比如说给别的NPC添加对话\n今天我将使用资源化的函数来实现这个问题\n好的\n今天我们来制作完成对话的时候\n对场景产生的影响\n那么首先我们先来细化一下我们上期的东西\n在这个dio trader这里\n我们新建一个提示的标签\nLabel\n把这个label拖到上面来\n我把字体调大一点\n来到same overrights的这个方size\n这里把字体调成64\n运行一下看效果\n太大了\n我们把它调小一点吧\n48\n这样子就非常正常\n然后我们来现在来写这个他的隐藏和显示\n在我们离开的时候\n直接把它隐藏就行了\n然后我们来到player的代码里面\nplayer代码里面\n在这个在这里\n在我们获得最近的这个dio trade的时候\n我们来处理剩下的在范围内的DIOTRIOR\n先编辑所有的dio cheer\n把所有代入区的全都设置成不可见\n然后我们再让最近的DIOG的设置成车键\n来我们运行试一下\n那首先得先把这个隐藏\nOK它进入的时候它就会显示了\n然后离开的时候它就会隐藏\n那就完成了我们的上一部\n上一期视频没有完成的东西\n那完成这一步之后\n我们就来写对场景的影响\n那要思考一个问题\n对场景的影响怎么写最好\n那第一想法肯定是写函数调用的函数\n但是我这对话是用资源写的\n想在资源里面调用一个函数的话\n应该怎么办呢\n那么我们可以新建一个资源来到code这里\ndata我们新建一个脚本叫做effect\nEffect base\n然后继承资源\n那这个资源它的意义是什么\n它的意义就相当于是一个资源化的函数\n我们给它一个execute的函数\n表示执行我们的这个函数\n然后我们点下一个参数\n给下参数就叫context\n那这套台词的字典\n他的键是一个字符串\n然后它的值的话\n值的话就点个node吧\n然后在我们的这个effect base这个根的资源之中\n我们对这个execute是不能调用的\n我们需要写一堆继承的类\n这些继承的类都可以作为各自的函数进行调用\n所以我们push error effect base\n子类必须重写\nexecute函数\n那写完伊菲base的灯资源之后\n我们现在来写一个新类\n我们继承自effect base\n然后我们给它取名叫做ADD trader effect\n我们给他个类名\n然后我们附带我们之前的这个函数\n也就等于是重写ETTE的函数\n那么来想下这个资源需要什么样的变量\n那这个资源肯定需要一个double trade的变量\n我们获得dao trigger的这个场景\n然后还需要一些什么\n还需要我们dio trigger\n他需要什么样的DIOADLINE\n他需要什么样的对话\n所以我们写那既然是资源的话\n我们肯定还有个export\n这样我们可以外部输入\n那execute里面怎么写呢\n我们直接搜索context里面是否有root node这个节点\n那为什么要这样子呢\n因为我们的资源是无法获得我们的场景信息的\n所以我们需要在场景中调用这些资源的时候\n我们需要给它一个root node\n在外部给它一个根节点\n这样的话我们就可以在资源里面调用函数\n就可以相当于把函数写成资源的形式\n然后我们来写这个函数\n那添加带入trigger的这个效果\n我们需要怎么添加呢\n那肯定是需要我们添加到哪个东西下面\n所以我们得给他一个\n目标的节点路径\n然后我们给他写一个预先的提示\n算是\n你看我们的这个root\n我运行一下吧\n运行一下的话\n我们来到远程远程\n这里的话\n这是root\n是根节点\n根节点下面有个world\n这下面就是我们的这个word里面的东西\n所以说我们想要获得一个节点的话\n我们可以获得真节点\n再从根节点里面获得这个节点路径\n那就是杠root\n再down word\n再看NPC\n再往下\n那我们就先写好他的灯\n这个就是我们可以写死的东西\n然后如果想改的话\n可以在那个资源里面改\n我们先来写\n那我们先获得这个根节点\n获得根节点之后的话\n我们就可以在获得我们想要添加节点的\n这个节点\n那这里就直接写我们的target node pass\n那获得这点点之后\n我们再实例化一个新dl trigger\n实例化dio trader的话\n我们调用我们之前在DAYLOADTRIDER里面\n写了一个函数\n也就是in it\n这in it里面我们直接给它我们的DIOADLINE\n那点下初始化之后的话\n我们再将DIOTRIDER加到我们的目标节点之下\n这样的话就已经写完了我们这函数\n然后我们来到didirect manager这里\ndroad manager里面我们来解析这个影响\n那就叫execute effects\n那怎么解析影响\n我们在这里给他一个影响的参数\n那我们只要先获得我们的context就行了\n那这context里面怎么写呢\n我们直接写text root node\n等于DETREE点root\n然后我们直接调用effect的函数\nExecute\n把我们当前好的context输入到里面去\n这样的话它就会执行\n我们资源里面写好的这个函数了\n然后我们来这边补充\n我们之前写了finish diaload without choices\n和finish dialogue with choices\n那完成一句对话\n是不是就一定要执行他的影响\n所以我们来到deadline里面\n先写一个export were effects\n在这个变量里面就装了\n我们这个对话完成的时候\n所有的影响\n那choice也是同理\n我们也choice同样一个effect变量\n然后我们现在就来到我们的diald manager这里\n我们先写没有选项的时候要怎么处理\n那没有选项的话\n我们肯定要在我们跳到下一句对话之前\n就先写好他的影响\n所以我们便利他这个当前选项的所有影响\n然后再用我们当前的这个函数\n把他所有的影响进行解析\n那在这点有选项的时候的话也是同理\n在这个我们写的nice dio line这句话前面写\n先走对话的这些音响\n然后我们再把选项的影响同样便利一遍\n那这样的话就完成了我们的影响\n然后我们当中解决影响的话\n我们可以直接开始给他创建资源了\n我们来到rise这里\n新建一个资源搜索\neffect base的ADD trader effect这里\n然后我们给它命名为A名r AD\n然后我们的DIODELINE\n那就新建一个NPC吧\n按住AITCTRL加D复制给它命名为tom\n我把这个这个dio trade给删掉\n然后我们把tom移开来\n给他颜色换一下嗯\n这叫surprise\n这里颜色换一下\n换成绿色\n黄绿色\n给你保存一下\n保存完之后的话\n然后这个tom我们来给它新建一个资源\n代入gun的资源叫tom\n那汤姆的speaker name就叫汤姆汤姆的speak texture\n我们给他一个这个color的话\n设置成文刚刚保存的这个color\n然后text就叫不要帮助他感叹号\n然后这些先不写\n这些都不写\n就这样\n然后我们来到A米二这里\nA米二的A米二杠一这里\n那假设我帮助他的话\n我就要把我的这个effect添加\n添加我们的这个A米2add effect弄进去\n我们点开A米2add effect\n那这个DIODELINE\n我们拖入汤姆DIOADLINE\n然后这个target note pass\n我们来到这个汤姆这节点\n这里\n我们右键往下走\n有一个复制节点\n路径\n复制完之后\n我们再来回到艾米2s effect\n这里来\n我们CTRL加V复制\n然后这里加个杠\n那就是download word npc tom\n这是它的全入侵\n然后我们运行试一下\n那你看最开始的时候\n我进入tom的区域的时候是没有任何显示的\n然后我们现在进入艾米的区域\n我们按E和它交互\n我们先点ADD love to\nbut现在还是一样的\n没有任何反应\n我们再点my pressure\n你看这样的话\n我就可以和汤姆说话\n按E他叫我们不要去帮助他\n那这里既然要ADD trader\n那我们肯定要有个删除TRIDER\n我们和艾米说完话之后\n肯定就不能再和艾米说话了\n所以我们来这叫data\n这里我们再新建一个脚本\n叫做deleted or\neffect继承自effect base\n那这里其实代码和这边的ATTRIEFFECT\n其实是差不多的\n我直接复制粘贴\n那这里这上面讲的变量是没用的\n所以我们直接来点下酒店名\n点完了名之后\n我们直接CTRL加V粘贴\n然后把这下面的全删掉\n然后我们给他一个新的一个export变量\n叫做dio trated name\n也就是我们在场景中的DIOTRATED的名字\n那我们默认就是带入吹的\n因为一个角色\n他同时最多只能存在一个大招去掉\n所以我们这样的话是最方便的\n然后我们直接在target node这里\n获得我们代入trader name这节点\n然后把它给删掉了\n但是这里写的有点丑\n我们还是改一下吧\n那这样的话就完成了这个delete trigger effect\n这个函数的资源化\n我们来到rise这里新建一个资源\n那现在这资源继承自这个delete trader effect\n然后取名就叫A米r dl effect\n那这个tital pass我们把艾米的这个节点复制一下\n一个杠CTRL加V1\n然后我们来到这个这个dio trade name\n不用管\n然后我们来到这个艾米二杠一这里\n艾米二杠一这里\n等他说完话\n那他就会把他自己这句话给删掉\n我们把它拖进去\n然后我们运行\n你看现在我是进入艾米的视角\n它是会显示E的\n然后按E拖动说话\n我现在点下面这个\n然后它还是一样的\n没有任何改变\n然后我再来试一次\n我点上面这个\n你看我再进入这个它就没有了没有\n然后我再进入上面这个进入上面这个\n他就有我汤姆说不要帮助他\n那这就完成了\n我们跟一个角色对话之后\n他会改变场景中的情况\n那到这里的话\n我们的对话系统的这个教程就已经到此结束了\n其实大家可以自己试一下添加题目的震动效果\n这些都可以自己试一下\n然后这个自然化函数也不止\n可以运用于对话系统之中\n那这些就等大家自己去探索了\n然后我最近会学一下这个DIOLOGIC这些插件\n后面会和我自己的这些东西对比一下\n然后如果觉得好的话\n我也会拿出来说一下的\n那么就到这里了\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zjKz64Ewf",
+  "published_at": "1784457300",
+  "fetched_at": "2026-08-07T23:54:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 对话系统场景影响图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    P[\"Player\"] --> DT[\"DialogueTrigger\"]\n    DT --> DR[\"DialogueResource（含 effects）\"]\n    DR --> ER[\"EffectResource（资源化函数）\"]\n    ER --> C[\"Context（root node）\"]\n    C --> EX[\"ExecuteEffect\"]\n    EX --> SC[\"SceneChange（添加/删除 NPC）\"]\n    SC --> P\n```\n\n## Effect 资源结构\n\n```mermaid\nflowchart TD\n    EB[\"EffectBase（抽象）\"] -->|子类| AT[\"AddTraderEffect\"]\n    EB -->|子类| DT[\"DeleteTraderEffect\"]\n    AT --> EXE[\"execute(context)\"]\n    DT --> EXE2[\"execute(context)\"]\n    AT --> EV1[\"export doubleTrade\"]\n    AT --> EV2[\"export targetNodePath\"]\n    DT --> EV3[\"export traderName\"]\n    EXE --> FIND[\"在 context 中搜索 root node\"]\n    FIND --> INST[\"实例化新 Trader\"]\n    INST --> ADD[\"将实例添加到 targetNodePath\"]\n    EXE2 --> FIND2[\"在 context 中搜索 root node\"]\n    FIND2 --> DEL[\"删除指定 traderName 节点\"]\n```\n\n## 对话管理器流程\n\n```mermaid\nflowchart TD\n    DL[\"DialogueLine\"] --> FD[\"finishDialogueWithoutChoices\"]\n    FD --> EL[\"获取 effects 列表\"]\n    EL --> LOOP[\"遍历 each effect\"]\n    LOOP --> CALL[\"调用 effect.execute(context)\"]\n    CALL --> C[\"获取 Context（root node）\"]\n    C --> EX[\"执行 effect 逻辑\"]\n    EX --> ADD[\"AddTraderEffect：添加 NPC\"]\n    EX --> DEL[\"DeleteTraderEffect：删除 NPC\"]\n    ADD --> SC[\"更新 Scene\"]\n    DEL --> SC\n    SC --> DL\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    P[\"Player\"] --> DT[\"DialogueTrigger\"]\n    DT --> DR[\"DialogueResource（含 effects）\"]\n    DR --> ER[\"EffectResource（资源化函数）\"]\n    ER --> C[\"Context（root node）\"]\n    C --> EX[\"ExecuteEffect\"]\n    EX --> SC[\"SceneChange（添加/删除 NPC）\"]\n    SC --> P"
+        },
+        {
+          "title": "Effect 资源结构",
+          "code": "flowchart TD\n    EB[\"EffectBase（抽象）\"] -->|子类| AT[\"AddTraderEffect\"]\n    EB -->|子类| DT[\"DeleteTraderEffect\"]\n    AT --> EXE[\"execute(context)\"]\n    DT --> EXE2[\"execute(context)\"]\n    AT --> EV1[\"export doubleTrade\"]\n    AT --> EV2[\"export targetNodePath\"]\n    DT --> EV3[\"export traderName\"]\n    EXE --> FIND[\"在 context 中搜索 root node\"]\n    FIND --> INST[\"实例化新 Trader\"]\n    INST --> ADD[\"将实例添加到 targetNodePath\"]\n    EXE2 --> FIND2[\"在 context 中搜索 root node\"]\n    FIND2 --> DEL[\"删除指定 traderName 节点\"]"
+        },
+        {
+          "title": "对话管理器流程",
+          "code": "flowchart TD\n    DL[\"DialogueLine\"] --> FD[\"finishDialogueWithoutChoices\"]\n    FD --> EL[\"获取 effects 列表\"]\n    EL --> LOOP[\"遍历 each effect\"]\n    LOOP --> CALL[\"调用 effect.execute(context)\"]\n    CALL --> C[\"获取 Context（root node）\"]\n    C --> EX[\"执行 effect 逻辑\"]\n    EX --> ADD[\"AddTraderEffect：添加 NPC\"]\n    EX --> DEL[\"DeleteTraderEffect：删除 NPC\"]\n    ADD --> SC[\"更新 Scene\"]\n    DEL --> SC\n    SC --> DL"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T23:54:46+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 对话系统场景影响图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    P[\"Player\"] --> DT[\"DialogueTrigger\"]\n    DT --> DR[\"DialogueResource（含 effects）\"]\n    DR --> ER[\"EffectResource（资源化函数）\"]\n    ER --> C[\"Context（root node）\"]\n    C --> EX[\"ExecuteEffect\"]\n    EX --> SC[\"SceneChange（添加/删除 NPC）\"]\n    SC --> P\n```\n\n## Effect 资源结构\n\n```mermaid\nflowchart TD\n    EB[\"EffectBase（抽象）\"] -->|子类| AT[\"AddTraderEffect\"]\n    EB -->|子类| DT[\"DeleteTraderEffect\"]\n    AT --> EXE[\"execute(context)\"]\n    DT --> EXE2[\"execute(context)\"]\n    AT --> EV1[\"export doubleTrade\"]\n    AT --> EV2[\"export targetNodePath\"]\n    DT --> EV3[\"export traderName\"]\n    EXE --> FIND[\"在 context 中搜索 root node\"]\n    FIND --> INST[\"实例化新 Trader\"]\n    INST --> ADD[\"将实例添加到 targetNodePath\"]\n    EXE2 --> FIND2[\"在 context 中搜索 root node\"]\n    FIND2 --> DEL[\"删除指定 traderName 节点\"]\n```\n\n## 对话管理器流程\n\n```mermaid\nflowchart TD\n    DL[\"DialogueLine\"] --> FD[\"finishDialogueWithoutChoices\"]\n    FD --> EL[\"获取 effects 列表\"]\n    EL --> LOOP[\"遍历 each effect\"]\n    LOOP --> CALL[\"调用 effect.execute(context)\"]\n    CALL --> C[\"获取 Context（root node）\"]\n    C --> EX[\"执行 effect 逻辑\"]\n    EX --> ADD[\"AddTraderEffect：添加 NPC\"]\n    EX --> DEL[\"DeleteTraderEffect：删除 NPC\"]\n    ADD --> SC[\"更新 Scene\"]\n    DEL --> SC\n    SC --> DL\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    P[\"Player\"] --> DT[\"DialogueTrigger\"]\n    DT --> DR[\"DialogueResource（含 effects）\"]\n    DR --> ER[\"EffectResource（资源化函数）\"]\n    ER --> C[\"Context（root node）\"]\n    C --> EX[\"ExecuteEffect\"]\n    EX --> SC[\"SceneChange（添加/删除 NPC）\"]\n    SC --> P"
+    },
+    {
+      "title": "Effect 资源结构",
+      "code": "flowchart TD\n    EB[\"EffectBase（抽象）\"] -->|子类| AT[\"AddTraderEffect\"]\n    EB -->|子类| DT[\"DeleteTraderEffect\"]\n    AT --> EXE[\"execute(context)\"]\n    DT --> EXE2[\"execute(context)\"]\n    AT --> EV1[\"export doubleTrade\"]\n    AT --> EV2[\"export targetNodePath\"]\n    DT --> EV3[\"export traderName\"]\n    EXE --> FIND[\"在 context 中搜索 root node\"]\n    FIND --> INST[\"实例化新 Trader\"]\n    INST --> ADD[\"将实例添加到 targetNodePath\"]\n    EXE2 --> FIND2[\"在 context 中搜索 root node\"]\n    FIND2 --> DEL[\"删除指定 traderName 节点\"]"
+    },
+    {
+      "title": "对话管理器流程",
+      "code": "flowchart TD\n    DL[\"DialogueLine\"] --> FD[\"finishDialogueWithoutChoices\"]\n    FD --> EL[\"获取 effects 列表\"]\n    EL --> LOOP[\"遍历 each effect\"]\n    LOOP --> CALL[\"调用 effect.execute(context)\"]\n    CALL --> C[\"获取 Context（root node）\"]\n    C --> EX[\"执行 effect 逻辑\"]\n    EX --> ADD[\"AddTraderEffect：添加 NPC\"]\n    EX --> DEL[\"DeleteTraderEffect：删除 NPC\"]\n    ADD --> SC[\"更新 Scene\"]\n    DEL --> SC\n    SC --> DL"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T23:54:46+00:00"
+}

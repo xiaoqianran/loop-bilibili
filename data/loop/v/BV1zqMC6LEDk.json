@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1zqMC6LEDk",
+  "title": "又一个DeepSeek时刻到来",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1093,
+  "text": "这简直令人难以置信\n刚刚发生的事情太离谱了，两个最新数据系统才三个月前才出现\n而快速闪存模型已经获得了更新\n这简直无法想象\n我都不知道从何说起\n新闪存模型比之前的版本好得多\n许多结果都翻倍了不止\n其中一个提升了七倍\n在\n仅仅一次修订\n就在原版发布后不久\n这难道是现实吗\n情况还在变好\n看它不仅超越了之前的闪存版本\n甚至击败了五倍体积的版本\n我经常说\n基准测试并非全部\n这些还不是全部\n是的\n但变化\n这种巨大变化不容忽视\n到底发生了什么\n他们是怎么做到的\n这个经过更长时间训练的黑魔法新模型\n不\n底层模型架构和规模完全相同\n到底哪里变了\n打扰一下\n这难道是玩笑吗\n仅仅是训练后的步骤改变了\n各位亲爱的学者\n这是两分钟论文与卡罗约法耶博士\n这就是训练后步骤的力量\n你看\n它拥有相同的基底模型\n但采用了全新策略\n基底模型已包含原始知识\n然后训练步骤教会它何时使用何种能力\n如何规划\n如何检查工作并纠正错误\n想象训练前的脑部如同玩具车间的建造者\n它能看到正确组件\n但使用不当\n导致一片混乱\n经过训练后\n它学会了策略\n建立基础测试\n每个环节早期修正错误\n提前思考\n现在我们有了同样的建造者\n相同的工具箱\n相同的原始知识\n但现在我们有了更智能的操作序列\n这就是为什么微调训练能带来性能的巨大飞跃\n即使底层模型保持非常相似\n记住这个，因为你正在见证最精彩的实例之一，看吧\n这太荒谬了\n是的\n你可以下载并拥有这些权重\n永久有效\n无需五小时课程\n无周限额\n没有游戏\n这真是深海时刻\n真正的开放AI\n需要高性能机器本地运行\n是的\n或者在Lambda上运行\n或使用API\n相比前沿公司更便宜\n顺便说一句，我推迟了这个视频制作\n以便亲自测试并观察你们这些天才\n各位学者在实际中使用它\n这让你的视频效果更好\n现在\n抓紧你的论文\n各位学者\n因为如果这个领域持续发展不到一年\n我们可能拥有免费开源模型\n接近现在价值十亿美元的水平\n智能压缩到高性能笔记本运行\n几周前听起来不可能\n但现在我不再认为这是不可能\n我词穷了\n这就是开源与开放科学的力量\n生逢其时\n我们免费获得这些\n并将永久拥有\n这才是最重要的知识，令人惊叹\n但知识只有惠及大众才能改变世界\n衷心感谢所有为此努力的人\n你们是英雄\n我用Lambda复现\nAI研究论文\n往往只需几分钟\n训练自己的模型也很棒\n或微调\n现有模型\n运行推理或文本到图像/视频\n轻松搞定\n运行深海聊天机器人或代理\n超级快速\n超级可靠\nLambda 提供强大的 NVIDIA GPU 运行您的实验\n我测试论文中的想法\n我涵盖\n片刻后便有结果\n非常喜爱\n立即在 Lambda 尝试\nAI 论文",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zqMC6LEDk",
+  "published_at": "1785905717",
+  "fetched_at": "2026-08-09T21:51:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 时刻知识图谱\n\n## 模型演进与性能提升概览\n```mermaid\nflowchart TD\n    BM[\"原始基底模型\"] --> OFV[\"旧闪存模型\"]\n    BM --> NFV[\"新闪存模型\"]\n    DS[\"最新数据系统\"] --> NFV\n    NFV --> FU[\"快速闪存模型更新\"]\n    NFV --> PB[\"性能提升 (2x~7x)\"]\n    PB --> SB[\"难以置信的惊讶\"]\n    NFV --> BT[\"基准测试\"]\n    NFV --> VC[\"五倍体积版本\"]\n    OFV --> TL[\"原版发布后不久\"]\n    TL --> SB\n```\n\n## 训练后步骤的力量\n```mermaid\nflowchart TD\n    BM[\"相同基底模型\"] --> TS[\"训练后步骤\"]\n    TS --> NS[\"全新策略\"]\n    NS --> AU[\"何时使用何种能力\"]\n    NS --> EC[\"检查并纠正错误\"]\n    NS --> PL[\"规划与提前思考\"]\n    NS --> FT[\"微调\"]\n    TS --> LT[\"更长时间训练\"]\n    LT --> BMAG[\"黑魔法新模型\"]\n    AU --> PG[\"性能巨大飞跃\"]\n    EC --> PG\n    PL --> PG\n    FT --> PG\n    BM --> KI[\"原始知识嵌入\"]\n    KI --> NS\n    TS --> ET[\"早期错误修正\"]\n    ET --> NS\n    NS --> BT[\"基础测试\"]\n```\n\n## 部署与获取方式\n```mermaid\nflowchart TD\n    WD[\"可下载权重\"] --> OS[\"开源模型\"]\n    OS --> LR[\"本地高性能机器\"]\n    OS --> LMB[\"Lambda 云服务\"]\n    OS --> API[\"API 调用\"]\n    LR --> CC[\"比前沿公司更便宜\"]\n    LMB --> CC\n    API --> CC\n    OS --> NL[\"无限使用\"]\n    OS --> NC[\"无需五小时课程\"]\n    OS --> VP[\"永久有效\"]\n```\n\n## 对 AI 研究与社区的影响\n```mermaid\nflowchart TD\n    OA[\"真正的开放 AI\"] --> CB[\"惠及大众\"]\n    CB --> KS[\"知识传播\"]\n    KS --> RA[\"加速研究\"]\n    RA --> FM[\"免费开源模型\"]\n    FM --> HP[\"高性能笔记本运行\"]\n    HP --> FP[\"未来潜力（十亿美元水平）\"]\n    OA --> OS[\"开放科学\"]\n    OS --> CB\n    FM --> LD[\"一年内实现\"]\n    LD --> BV[\"十亿美元价值\"]\n    CB --> CH[\"贡献者\"]\n    CH --> GT[\"感谢\"]\n```",
+      "diagrams": [
+        {
+          "title": "模型演进与性能提升概览",
+          "code": "flowchart TD\n    BM[\"原始基底模型\"] --> OFV[\"旧闪存模型\"]\n    BM --> NFV[\"新闪存模型\"]\n    DS[\"最新数据系统\"] --> NFV\n    NFV --> FU[\"快速闪存模型更新\"]\n    NFV --> PB[\"性能提升 (2x~7x)\"]\n    PB --> SB[\"难以置信的惊讶\"]\n    NFV --> BT[\"基准测试\"]\n    NFV --> VC[\"五倍体积版本\"]\n    OFV --> TL[\"原版发布后不久\"]\n    TL --> SB"
+        },
+        {
+          "title": "训练后步骤的力量",
+          "code": "flowchart TD\n    BM[\"相同基底模型\"] --> TS[\"训练后步骤\"]\n    TS --> NS[\"全新策略\"]\n    NS --> AU[\"何时使用何种能力\"]\n    NS --> EC[\"检查并纠正错误\"]\n    NS --> PL[\"规划与提前思考\"]\n    NS --> FT[\"微调\"]\n    TS --> LT[\"更长时间训练\"]\n    LT --> BMAG[\"黑魔法新模型\"]\n    AU --> PG[\"性能巨大飞跃\"]\n    EC --> PG\n    PL --> PG\n    FT --> PG\n    BM --> KI[\"原始知识嵌入\"]\n    KI --> NS\n    TS --> ET[\"早期错误修正\"]\n    ET --> NS\n    NS --> BT[\"基础测试\"]"
+        },
+        {
+          "title": "部署与获取方式",
+          "code": "flowchart TD\n    WD[\"可下载权重\"] --> OS[\"开源模型\"]\n    OS --> LR[\"本地高性能机器\"]\n    OS --> LMB[\"Lambda 云服务\"]\n    OS --> API[\"API 调用\"]\n    LR --> CC[\"比前沿公司更便宜\"]\n    LMB --> CC\n    API --> CC\n    OS --> NL[\"无限使用\"]\n    OS --> NC[\"无需五小时课程\"]\n    OS --> VP[\"永久有效\"]"
+        },
+        {
+          "title": "对 AI 研究与社区的影响",
+          "code": "flowchart TD\n    OA[\"真正的开放 AI\"] --> CB[\"惠及大众\"]\n    CB --> KS[\"知识传播\"]\n    KS --> RA[\"加速研究\"]\n    RA --> FM[\"免费开源模型\"]\n    FM --> HP[\"高性能笔记本运行\"]\n    HP --> FP[\"未来潜力（十亿美元水平）\"]\n    OA --> OS[\"开放科学\"]\n    OS --> CB\n    FM --> LD[\"一年内实现\"]\n    LD --> BV[\"十亿美元价值\"]\n    CB --> CH[\"贡献者\"]\n    CH --> GT[\"感谢\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T21:52:23+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 时刻知识图谱\n\n## 模型演进与性能提升概览\n```mermaid\nflowchart TD\n    BM[\"原始基底模型\"] --> OFV[\"旧闪存模型\"]\n    BM --> NFV[\"新闪存模型\"]\n    DS[\"最新数据系统\"] --> NFV\n    NFV --> FU[\"快速闪存模型更新\"]\n    NFV --> PB[\"性能提升 (2x~7x)\"]\n    PB --> SB[\"难以置信的惊讶\"]\n    NFV --> BT[\"基准测试\"]\n    NFV --> VC[\"五倍体积版本\"]\n    OFV --> TL[\"原版发布后不久\"]\n    TL --> SB\n```\n\n## 训练后步骤的力量\n```mermaid\nflowchart TD\n    BM[\"相同基底模型\"] --> TS[\"训练后步骤\"]\n    TS --> NS[\"全新策略\"]\n    NS --> AU[\"何时使用何种能力\"]\n    NS --> EC[\"检查并纠正错误\"]\n    NS --> PL[\"规划与提前思考\"]\n    NS --> FT[\"微调\"]\n    TS --> LT[\"更长时间训练\"]\n    LT --> BMAG[\"黑魔法新模型\"]\n    AU --> PG[\"性能巨大飞跃\"]\n    EC --> PG\n    PL --> PG\n    FT --> PG\n    BM --> KI[\"原始知识嵌入\"]\n    KI --> NS\n    TS --> ET[\"早期错误修正\"]\n    ET --> NS\n    NS --> BT[\"基础测试\"]\n```\n\n## 部署与获取方式\n```mermaid\nflowchart TD\n    WD[\"可下载权重\"] --> OS[\"开源模型\"]\n    OS --> LR[\"本地高性能机器\"]\n    OS --> LMB[\"Lambda 云服务\"]\n    OS --> API[\"API 调用\"]\n    LR --> CC[\"比前沿公司更便宜\"]\n    LMB --> CC\n    API --> CC\n    OS --> NL[\"无限使用\"]\n    OS --> NC[\"无需五小时课程\"]\n    OS --> VP[\"永久有效\"]\n```\n\n## 对 AI 研究与社区的影响\n```mermaid\nflowchart TD\n    OA[\"真正的开放 AI\"] --> CB[\"惠及大众\"]\n    CB --> KS[\"知识传播\"]\n    KS --> RA[\"加速研究\"]\n    RA --> FM[\"免费开源模型\"]\n    FM --> HP[\"高性能笔记本运行\"]\n    HP --> FP[\"未来潜力（十亿美元水平）\"]\n    OA --> OS[\"开放科学\"]\n    OS --> CB\n    FM --> LD[\"一年内实现\"]\n    LD --> BV[\"十亿美元价值\"]\n    CB --> CH[\"贡献者\"]\n    CH --> GT[\"感谢\"]\n```",
+  "diagrams": [
+    {
+      "title": "模型演进与性能提升概览",
+      "code": "flowchart TD\n    BM[\"原始基底模型\"] --> OFV[\"旧闪存模型\"]\n    BM --> NFV[\"新闪存模型\"]\n    DS[\"最新数据系统\"] --> NFV\n    NFV --> FU[\"快速闪存模型更新\"]\n    NFV --> PB[\"性能提升 (2x~7x)\"]\n    PB --> SB[\"难以置信的惊讶\"]\n    NFV --> BT[\"基准测试\"]\n    NFV --> VC[\"五倍体积版本\"]\n    OFV --> TL[\"原版发布后不久\"]\n    TL --> SB"
+    },
+    {
+      "title": "训练后步骤的力量",
+      "code": "flowchart TD\n    BM[\"相同基底模型\"] --> TS[\"训练后步骤\"]\n    TS --> NS[\"全新策略\"]\n    NS --> AU[\"何时使用何种能力\"]\n    NS --> EC[\"检查并纠正错误\"]\n    NS --> PL[\"规划与提前思考\"]\n    NS --> FT[\"微调\"]\n    TS --> LT[\"更长时间训练\"]\n    LT --> BMAG[\"黑魔法新模型\"]\n    AU --> PG[\"性能巨大飞跃\"]\n    EC --> PG\n    PL --> PG\n    FT --> PG\n    BM --> KI[\"原始知识嵌入\"]\n    KI --> NS\n    TS --> ET[\"早期错误修正\"]\n    ET --> NS\n    NS --> BT[\"基础测试\"]"
+    },
+    {
+      "title": "部署与获取方式",
+      "code": "flowchart TD\n    WD[\"可下载权重\"] --> OS[\"开源模型\"]\n    OS --> LR[\"本地高性能机器\"]\n    OS --> LMB[\"Lambda 云服务\"]\n    OS --> API[\"API 调用\"]\n    LR --> CC[\"比前沿公司更便宜\"]\n    LMB --> CC\n    API --> CC\n    OS --> NL[\"无限使用\"]\n    OS --> NC[\"无需五小时课程\"]\n    OS --> VP[\"永久有效\"]"
+    },
+    {
+      "title": "对 AI 研究与社区的影响",
+      "code": "flowchart TD\n    OA[\"真正的开放 AI\"] --> CB[\"惠及大众\"]\n    CB --> KS[\"知识传播\"]\n    KS --> RA[\"加速研究\"]\n    RA --> FM[\"免费开源模型\"]\n    FM --> HP[\"高性能笔记本运行\"]\n    HP --> FP[\"未来潜力（十亿美元水平）\"]\n    OA --> OS[\"开放科学\"]\n    OS --> CB\n    FM --> LD[\"一年内实现\"]\n    LD --> BV[\"十亿美元价值\"]\n    CB --> CH[\"贡献者\"]\n    CH --> GT[\"感谢\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T21:52:23+00:00"
+}

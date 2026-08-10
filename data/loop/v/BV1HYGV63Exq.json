@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1HYGV63Exq",
+  "title": "缩小与gpt的差距了？flash与luna的真实对比评测",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1084,
+  "text": "上个视频测试了flash的后端代码能力\nflash作为没有多模态的模型\n对于后端的构建代码\n能更好地反映出比较真实的性能水平\n这次我们让deep seek和GPT写个订单部\n撮合引擎来继续练练手\n在评测开始之前\n我需要分享个测试得到的经验\n在使用coding agent的过程中发现\n如果使用open code的话\nflash模型的效果是要差很多的\n换用z code\ncloud code codex之后会好很多\n我使用的是cloud code作为coding agent的使用\n整体测试下来\nflash用时7分28秒\n而5.6露娜用时一分半\n这个时间差距其实还是挺大的\n并且我发现flash现在开启max思考等级后\n会反复高强度思考推理\n有点像过度思考的感觉\n所以消耗的token也很多\n这flash是接入的open code go套餐API\n露娜也是先来看基本情况\n这两个基本打平单测都是时过11\n唯一挂掉的用例是测试脚本自己写错了\n这不怪模型\n模糊测试各跑2000次\n随机操作\n零违规\n撮合逻辑都是稳当当的\n在耗时方面\n5.6\n露娜0.78秒\nflash0.77秒\n这基本一样\n那这四分差在哪\n差在数据结构GPT的实现很朴素\n找最优价格\n直接min和max扫整个字典\n算总挂单量\n又用sum重新加一遍\n这档位一多就出现了一些性能瓶颈\ndeep sick直接上堆\n用两个堆维护最优买卖加查询复杂度\no log n每个价格当缓存总量不用现场算\n甚至还用了sloth省内存工程意识\n相比之下确实更强\n但deep seek也有几个暗坑\n同价位订单他用list成交\npop头部撤单\n用remove\n这都是欧德曼操作堆里每次新增都重复铺\n是同一个价格\n挂单越多\n堆越膨胀\n必要订单成交或撤销后\n他直接物理删除\n导致订单号会被回收复用\n如果业务要求id全局唯一\n这里直接出办\n反观GPT历史订单全部保留id\n严格维护代码可维护性满满\n总结一下\ndeep sick更懂工程优化\n但藏着边界条件的坑\nGPT逻辑清晰稳健\n但底层结构太朴素\n如果真要上线\n俩人都得回炉重造\n总体来说\nflash作为一个200多币的moi模型\n能后训练做到这个程度实在是非常不错了\n作为对比的GPT5.6露娜模型\n在经历降价之后也是一个非常非常不错的选择\n整体两者在开高等级思考模式之后\n都能完成一些难度适中的任务\n相比之下\nGPT具有多模态这个非常实用的功能\n所以用起来会比deep sick flash舒服很多\n如果大家能有所收获\n还请点点赞投个币\n再者也可以关注我一下\n后续带来更多AI相关的视频",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HYGV63Exq",
+  "published_at": "1785581535",
+  "fetched_at": "2026-08-08T19:05:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# flash 与 Luna 对比评测知识图谱\n\n## 测试环境与变量\n证据: [BV1HYGV63Exq P1 00:08]、[BV1HYGV63Exq P1 00:24]、[BV1HYGV63Exq P1 00:26]\n\n```mermaid\nflowchart TD\n    A[\"订单撮合引擎任务\"] --> B[\"使用 coding agent\"]\n    B --> C[\"代码模式选择\"]\n    C --> D[\"open code（效果差）\"]\n    C --> E[\"cloud code（效果好）\"]\n    D -.-> F[\"flash 模型\"]\n    E -.-> G[\"GPT5.6 Luna 模型\"]\n```\n\n## 性能比较与数据结构差异\n证据: [BV1HYGV63Exq P1 00:31]、[BV1HYGV63Exq P1 01:07]、[BV1HYGV63Exq P1 01:12]、[BV1HYGV63Exq P1 01:23]\n\n```mermaid\nflowchart TD\n    A[\"整体耗时对比\"] -->|flash 7分28秒| B[\"flash\"]\n    A -->|Luna 1分30秒| C[\"Luna\"]\n    D[\"单笔耗时对比\"] -->|flash 0.77秒| B\n    D -->|Luna 0.78秒| C\n    E[\"数据结构实现\"] -->|GPT 朴素 min/max 扫描| B\n    E -->|Deep seek 双堆 O(log n) + sloth| C\n    F[\"性能瓶颈来源\"] -->|大档位时遍历全字典| B\n    F -->|堆膨胀导致内存/时间增长| C\n```\n\n## 实现细节、优缺点与风险\n证据: [BV1HYGV63Exq P1 01:35]、[BV1HYGV63Exq P1 01:52]、[BV1HYGV63Exq P1 02:03]、[BV1HYGV63Exq P1 02:10]\n\n```mermaid\nflowchart TD\n    A[\"Deep seek 实现细节\"] --> B[\"同价位订单使用 list\"]\n    B --> C[\"pop 头部撤单 / remove\"]\n    C --> D[\"堆膨胀 & 重复铺设\"]\n    D --> E[\"订单 ID 回收复用风险\"]\n    F[\"GPT 实现细节\"] --> G[\"历史订单 ID 保持唯一\"]\n    A --> H[\"工程优化强（堆、sloth）\"]\n    F --> I[\"逻辑清晰稳健\"]\n    H --> J[\"存在边界条件坑\"]\n    I --> K[\"底层结构朴素\"]\n    J --> L[\"生产环境需重构\"]\n    K --> L\n```",
+      "diagrams": [
+        {
+          "title": "测试环境与变量",
+          "code": "flowchart TD\n    A[\"订单撮合引擎任务\"] --> B[\"使用 coding agent\"]\n    B --> C[\"代码模式选择\"]\n    C --> D[\"open code（效果差）\"]\n    C --> E[\"cloud code（效果好）\"]\n    D -.-> F[\"flash 模型\"]\n    E -.-> G[\"GPT5.6 Luna 模型\"]"
+        },
+        {
+          "title": "性能比较与数据结构差异",
+          "code": "flowchart TD\n    A[\"整体耗时对比\"] -->|flash 7分28秒| B[\"flash\"]\n    A -->|Luna 1分30秒| C[\"Luna\"]\n    D[\"单笔耗时对比\"] -->|flash 0.77秒| B\n    D -->|Luna 0.78秒| C\n    E[\"数据结构实现\"] -->|GPT 朴素 min/max 扫描| B\n    E -->|Deep seek 双堆 O(log n) + sloth| C\n    F[\"性能瓶颈来源\"] -->|大档位时遍历全字典| B\n    F -->|堆膨胀导致内存/时间增长| C"
+        },
+        {
+          "title": "实现细节、优缺点与风险",
+          "code": "flowchart TD\n    A[\"Deep seek 实现细节\"] --> B[\"同价位订单使用 list\"]\n    B --> C[\"pop 头部撤单 / remove\"]\n    C --> D[\"堆膨胀 & 重复铺设\"]\n    D --> E[\"订单 ID 回收复用风险\"]\n    F[\"GPT 实现细节\"] --> G[\"历史订单 ID 保持唯一\"]\n    A --> H[\"工程优化强（堆、sloth）\"]\n    F --> I[\"逻辑清晰稳健\"]\n    H --> J[\"存在边界条件坑\"]\n    I --> K[\"底层结构朴素\"]\n    J --> L[\"生产环境需重构\"]\n    K --> L"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T19:06:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# flash 与 Luna 对比评测知识图谱\n\n## 测试环境与变量\n证据: [BV1HYGV63Exq P1 00:08]、[BV1HYGV63Exq P1 00:24]、[BV1HYGV63Exq P1 00:26]\n\n```mermaid\nflowchart TD\n    A[\"订单撮合引擎任务\"] --> B[\"使用 coding agent\"]\n    B --> C[\"代码模式选择\"]\n    C --> D[\"open code（效果差）\"]\n    C --> E[\"cloud code（效果好）\"]\n    D -.-> F[\"flash 模型\"]\n    E -.-> G[\"GPT5.6 Luna 模型\"]\n```\n\n## 性能比较与数据结构差异\n证据: [BV1HYGV63Exq P1 00:31]、[BV1HYGV63Exq P1 01:07]、[BV1HYGV63Exq P1 01:12]、[BV1HYGV63Exq P1 01:23]\n\n```mermaid\nflowchart TD\n    A[\"整体耗时对比\"] -->|flash 7分28秒| B[\"flash\"]\n    A -->|Luna 1分30秒| C[\"Luna\"]\n    D[\"单笔耗时对比\"] -->|flash 0.77秒| B\n    D -->|Luna 0.78秒| C\n    E[\"数据结构实现\"] -->|GPT 朴素 min/max 扫描| B\n    E -->|Deep seek 双堆 O(log n) + sloth| C\n    F[\"性能瓶颈来源\"] -->|大档位时遍历全字典| B\n    F -->|堆膨胀导致内存/时间增长| C\n```\n\n## 实现细节、优缺点与风险\n证据: [BV1HYGV63Exq P1 01:35]、[BV1HYGV63Exq P1 01:52]、[BV1HYGV63Exq P1 02:03]、[BV1HYGV63Exq P1 02:10]\n\n```mermaid\nflowchart TD\n    A[\"Deep seek 实现细节\"] --> B[\"同价位订单使用 list\"]\n    B --> C[\"pop 头部撤单 / remove\"]\n    C --> D[\"堆膨胀 & 重复铺设\"]\n    D --> E[\"订单 ID 回收复用风险\"]\n    F[\"GPT 实现细节\"] --> G[\"历史订单 ID 保持唯一\"]\n    A --> H[\"工程优化强（堆、sloth）\"]\n    F --> I[\"逻辑清晰稳健\"]\n    H --> J[\"存在边界条件坑\"]\n    I --> K[\"底层结构朴素\"]\n    J --> L[\"生产环境需重构\"]\n    K --> L\n```",
+  "diagrams": [
+    {
+      "title": "测试环境与变量",
+      "code": "flowchart TD\n    A[\"订单撮合引擎任务\"] --> B[\"使用 coding agent\"]\n    B --> C[\"代码模式选择\"]\n    C --> D[\"open code（效果差）\"]\n    C --> E[\"cloud code（效果好）\"]\n    D -.-> F[\"flash 模型\"]\n    E -.-> G[\"GPT5.6 Luna 模型\"]"
+    },
+    {
+      "title": "性能比较与数据结构差异",
+      "code": "flowchart TD\n    A[\"整体耗时对比\"] -->|flash 7分28秒| B[\"flash\"]\n    A -->|Luna 1分30秒| C[\"Luna\"]\n    D[\"单笔耗时对比\"] -->|flash 0.77秒| B\n    D -->|Luna 0.78秒| C\n    E[\"数据结构实现\"] -->|GPT 朴素 min/max 扫描| B\n    E -->|Deep seek 双堆 O(log n) + sloth| C\n    F[\"性能瓶颈来源\"] -->|大档位时遍历全字典| B\n    F -->|堆膨胀导致内存/时间增长| C"
+    },
+    {
+      "title": "实现细节、优缺点与风险",
+      "code": "flowchart TD\n    A[\"Deep seek 实现细节\"] --> B[\"同价位订单使用 list\"]\n    B --> C[\"pop 头部撤单 / remove\"]\n    C --> D[\"堆膨胀 & 重复铺设\"]\n    D --> E[\"订单 ID 回收复用风险\"]\n    F[\"GPT 实现细节\"] --> G[\"历史订单 ID 保持唯一\"]\n    A --> H[\"工程优化强（堆、sloth）\"]\n    F --> I[\"逻辑清晰稳健\"]\n    H --> J[\"存在边界条件坑\"]\n    I --> K[\"底层结构朴素\"]\n    J --> L[\"生产环境需重构\"]\n    K --> L"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T19:06:16+00:00"
+}

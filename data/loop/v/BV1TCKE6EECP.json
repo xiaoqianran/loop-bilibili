@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1TCKE6EECP",
+  "title": "[Godot教程#5] 10分钟实现能巡逻的敌人",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1858,
+  "text": "嗨大家好\n我是史泰杰\n欢迎来到我的免费孤岛RPG系列教程\n在这一集里\n我们来实现一个能够到处巡逻和攻击的敌人\n那让我们开始吧\n好首先我们先添加一个敌人的文件夹\n叫做ANIMMIES\n然后在里面添加上敌人的节点场景\n根节点是character\n2D好\n我们先添加上必要节点\n这里是碰撞\n然后是动画的script\n好让我们来制作它的帧动画\n在膨胀\n就像树枝一样\n在这里选到素材里面那个红色的武士\n没有思想\n谁没有最便宜的酒\n还我选找到爱豆\n然后调一下这个帧动画\n它的行跟列我们添加进来\n那这就是一个爱豆的动画\n我们把名字改成爱豆\n然后记得把循环给他关哦\n这个要打开\n寻光打开\n然后接下来是\n移动的动画move一样\n调一下它的行跟列好\n最后是一个攻击动画\n他这个动画我们记得要把他的循环关闭掉\n因为它只是播放一次好\n然后我们就创建一个新的脚本\n像我们记得的那样\n叫做enemy岗位\n有梦想\n好进来之后\n我们就首先实践一下一个状态机的框架\n由于这个框架之前已经说过很多遍了\n所以我们这里就快速过一下\n如果这里不熟悉的\n可以往前看我的视频\n二三跳\n我们这里实现四个状态\n一个是呃闲置\n一个是巡逻\n一个是追击\n一个是攻击\n整体就是这样子好\n然后我们来实现爱豆状态与我\n那这里我们先拿到那个\n因为我们播放动画\n所以我们先拿到那个animation sp\n有相思亡\n生又向死亡\n狂于是砸了染缸\n我们来到闲置\n这里进入闲置\n我们首先播放animation\nAnimation\n对的狂爱读动画\n仍不只身在\n但由于我们需要检测\n而玩家他的位置\n所以我们这里加一个area\n我们叫做view area\n这个就是用来检测呃\n什么时候玩家在附近的\n那我们给这个area添加上两个事件\n一个是进入\n一个是退出\n让我们创建一个玩家的引用\n如果呃有玻璃进来\n如果他是玩家\n我们就把这个引用给他复制\n如果他离开了\n我们就给他自控\n好然后这里就是如果他是空哦\n如果他飞空\n那说明玩家就在附近嘛\n我们就要变成追击状态\n这里是给个定时器\n如果闲置过久了\n我们就要退出闲置的状态\n记得退出之后时间\n那计时器重新制定\n这里巡逻状态也是一样\n如果非空\n我们就要变成追击状态\n因为有目标了\n然后每次进入的时候\n我们会随机生成一个巡逻点\n在附近\n大头也在中路的我呃\n这里写错了\n其实他应该是要加上当前的位置\n这里后面会改\n然后就是不断往巡逻点去走\n然后到了巡逻点的附近就要回到前置\n这里要给个误差\n不然他会来回抖动\n比0.05其实小了\n后面要改大了\n好\n运行一下看一下效果\n这里给一些\n这也是加上那个调试的label来看现在的状态\n我们给场景添加这些DN好\n可以看到他们不会动\n这里没漏掉了一个move and slide好\n现在能动了\n全部跑\n全部变成trace\n但是他们巡逻的时候都往同一个方向\n有没有发现\n那么巡逻的时候都往同一个方向\n就是这里对\n这里要改成这样\n哎现在左右乱抖了\n就是因为我们的误差更小了\n现在是0.05\n我们要把它改成二哦\n对\n这位置要改成二才行\n我这里没有改\n我这里显示没有改\n但是我其实改了\n所以这里要改成二就可以了\n现在是正常\n然后我们靠近它\n它就会发现我们就会变成追击状态\n但我们追击还没有实现\n所以我们现在来实现一下\nIt's in is blue\n呃如果目标是空\n我们回到爱豆嘛\n然后接下来就是不断的往敌人那里追\n然后这里速度可以比巡逻要快一点\n这样就可以不断追忆我们了\nOver it's over\nOK正常\n然后呢\n我们要给一个攻击范围\n就是敌人进入到我们的\n就玩家进入到敌人的攻击范围之后\n他就要进入攻击状态\n我们这里给一个AD k range\n那再给一个他的平方\n因为这里用平房性能会好一点\n愿你在用平板看\n如果在他范围内\n我没有找到攻击\n那攻击我们就暂时先播放攻击的动画\n如果攻击播放完了\n攻击动画播放完了\n我们就退出\n回到爱豆\nOK现在能追\n然后打我们打完之后\n他就回到爱豆\n然后重新再来一遍\n好接下来呢我们给大家展示一下还有什么问题\n就是如果我们把这个往场景里面\n多拖动一些这些障碍物\n我们可以来运行看一下的\n好我们可以发现嗯\n有些敌人他已经卡住了\n看到没有\n右上角那个敌人他已经被障碍物卡住了啊\n现在又有一个中间那个又卡住了\n那个水旁边的那个也卡住了\n我们会发现我们如果直接这样移动\n那个敌人他是会被卡住的\n那这个就是\n我们为什么要用寻路系统来进行优化\n所以我们下一节我们就讲这个寻路系统\n这次就先到这里\n谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TCKE6EECP",
+  "published_at": "1784259593",
+  "fetched_at": "2026-08-06T20:22:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 敌人 AI 知识图谱\n\n## 整体结构概览 [BV1TCKE6EECP P1 01:56]\n```mermaid\nflowchart TD\n    A1[\"Enemy (根节点)\"] --> A2[\"StateMachine\"]\n    A2 --> A3[\"Idle State\"]\n    A2 --> A4[\"Patrol State\"]\n    A2 --> A5[\"Chase State\"]\n    A2 --> A6[\"Attack State\"]\n    A3 --> A7[\"AnimationPlayer\"]\n    A4 --> A7\n    A5 --> A7\n    A6 --> A7\n    A3 --> A10[\"IdleTimer\"]\n    A4 --> A11[\"PatrolPointGenerator\"]\n    A5 --> A13[\"TargetReference\"]\n    A6 --> A9[\"AttackRangeArea\"]\n    A8[\"ViewArea (检测玩家)\"] --> A13\n    A13 --> A5\n    A5 --> A12[\"MovementComponent\"]\n    A4 --> A12\n    A3 --> A12\n    A12 --> A1\n```\n\n## 状态机转移流程 [BV1TCKE6EECP P1 02:46]\n```mermaid\nflowchart TD\n    S1[\"Idle\"] --> S5[\"IdleTimer Expired\"] --> S2[\"Patrol\"]\n    S1 --> S6[\"Player Enter ViewArea\"] --> S3[\"Chase\"]\n    S2 --> S6\n    S3 --> S9[\"Target Out of AttackRange\"] --> S2\n    S3 --> S7[\"Player Exit ViewArea\"] --> S1\n    S3 --> S4[\"Attack\"]\n    S4 --> S8[\"Attack Animation End\"] --> S3\n    S4 --> S9\n```\n\n## 巡逻行为细节 [BV1TCKE6EECP P1 03:52]\n```mermaid\nflowchart TD\n    P1[\"Enter Patrol State\"] --> P2[\"Generate Random Patrol Point\"]\n    P2 --> P3[\"Set 目标位置\"]\n    P3 --> P4[\"MoveTowards 目标\"]\n    P4 --> P5[\"到达目标附近\"]\n    P5 --> P6[\"检查误差阈值\"]\n    P6 --> P7[\"误差过小导致抖动\"] --> P8[\"调整误差阈值\"] --> P2\n    P6 --> P9[\"返回 Patrol State\"]\n```",
+      "diagrams": [
+        {
+          "title": "整体结构概览",
+          "code": "flowchart TD\n    A1[\"Enemy (根节点)\"] --> A2[\"StateMachine\"]\n    A2 --> A3[\"Idle State\"]\n    A2 --> A4[\"Patrol State\"]\n    A2 --> A5[\"Chase State\"]\n    A2 --> A6[\"Attack State\"]\n    A3 --> A7[\"AnimationPlayer\"]\n    A4 --> A7\n    A5 --> A7\n    A6 --> A7\n    A3 --> A10[\"IdleTimer\"]\n    A4 --> A11[\"PatrolPointGenerator\"]\n    A5 --> A13[\"TargetReference\"]\n    A6 --> A9[\"AttackRangeArea\"]\n    A8[\"ViewArea (检测玩家)\"] --> A13\n    A13 --> A5\n    A5 --> A12[\"MovementComponent\"]\n    A4 --> A12\n    A3 --> A12\n    A12 --> A1"
+        },
+        {
+          "title": "状态机转移流程",
+          "code": "flowchart TD\n    S1[\"Idle\"] --> S5[\"IdleTimer Expired\"] --> S2[\"Patrol\"]\n    S1 --> S6[\"Player Enter ViewArea\"] --> S3[\"Chase\"]\n    S2 --> S6\n    S3 --> S9[\"Target Out of AttackRange\"] --> S2\n    S3 --> S7[\"Player Exit ViewArea\"] --> S1\n    S3 --> S4[\"Attack\"]\n    S4 --> S8[\"Attack Animation End\"] --> S3\n    S4 --> S9"
+        },
+        {
+          "title": "巡逻行为细节",
+          "code": "flowchart TD\n    P1[\"Enter Patrol State\"] --> P2[\"Generate Random Patrol Point\"]\n    P2 --> P3[\"Set 目标位置\"]\n    P3 --> P4[\"MoveTowards 目标\"]\n    P4 --> P5[\"到达目标附近\"]\n    P5 --> P6[\"检查误差阈值\"]\n    P6 --> P7[\"误差过小导致抖动\"] --> P8[\"调整误差阈值\"] --> P2\n    P6 --> P9[\"返回 Patrol State\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T20:22:17+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 敌人 AI 知识图谱\n\n## 整体结构概览 [BV1TCKE6EECP P1 01:56]\n```mermaid\nflowchart TD\n    A1[\"Enemy (根节点)\"] --> A2[\"StateMachine\"]\n    A2 --> A3[\"Idle State\"]\n    A2 --> A4[\"Patrol State\"]\n    A2 --> A5[\"Chase State\"]\n    A2 --> A6[\"Attack State\"]\n    A3 --> A7[\"AnimationPlayer\"]\n    A4 --> A7\n    A5 --> A7\n    A6 --> A7\n    A3 --> A10[\"IdleTimer\"]\n    A4 --> A11[\"PatrolPointGenerator\"]\n    A5 --> A13[\"TargetReference\"]\n    A6 --> A9[\"AttackRangeArea\"]\n    A8[\"ViewArea (检测玩家)\"] --> A13\n    A13 --> A5\n    A5 --> A12[\"MovementComponent\"]\n    A4 --> A12\n    A3 --> A12\n    A12 --> A1\n```\n\n## 状态机转移流程 [BV1TCKE6EECP P1 02:46]\n```mermaid\nflowchart TD\n    S1[\"Idle\"] --> S5[\"IdleTimer Expired\"] --> S2[\"Patrol\"]\n    S1 --> S6[\"Player Enter ViewArea\"] --> S3[\"Chase\"]\n    S2 --> S6\n    S3 --> S9[\"Target Out of AttackRange\"] --> S2\n    S3 --> S7[\"Player Exit ViewArea\"] --> S1\n    S3 --> S4[\"Attack\"]\n    S4 --> S8[\"Attack Animation End\"] --> S3\n    S4 --> S9\n```\n\n## 巡逻行为细节 [BV1TCKE6EECP P1 03:52]\n```mermaid\nflowchart TD\n    P1[\"Enter Patrol State\"] --> P2[\"Generate Random Patrol Point\"]\n    P2 --> P3[\"Set 目标位置\"]\n    P3 --> P4[\"MoveTowards 目标\"]\n    P4 --> P5[\"到达目标附近\"]\n    P5 --> P6[\"检查误差阈值\"]\n    P6 --> P7[\"误差过小导致抖动\"] --> P8[\"调整误差阈值\"] --> P2\n    P6 --> P9[\"返回 Patrol State\"]\n```",
+  "diagrams": [
+    {
+      "title": "整体结构概览",
+      "code": "flowchart TD\n    A1[\"Enemy (根节点)\"] --> A2[\"StateMachine\"]\n    A2 --> A3[\"Idle State\"]\n    A2 --> A4[\"Patrol State\"]\n    A2 --> A5[\"Chase State\"]\n    A2 --> A6[\"Attack State\"]\n    A3 --> A7[\"AnimationPlayer\"]\n    A4 --> A7\n    A5 --> A7\n    A6 --> A7\n    A3 --> A10[\"IdleTimer\"]\n    A4 --> A11[\"PatrolPointGenerator\"]\n    A5 --> A13[\"TargetReference\"]\n    A6 --> A9[\"AttackRangeArea\"]\n    A8[\"ViewArea (检测玩家)\"] --> A13\n    A13 --> A5\n    A5 --> A12[\"MovementComponent\"]\n    A4 --> A12\n    A3 --> A12\n    A12 --> A1"
+    },
+    {
+      "title": "状态机转移流程",
+      "code": "flowchart TD\n    S1[\"Idle\"] --> S5[\"IdleTimer Expired\"] --> S2[\"Patrol\"]\n    S1 --> S6[\"Player Enter ViewArea\"] --> S3[\"Chase\"]\n    S2 --> S6\n    S3 --> S9[\"Target Out of AttackRange\"] --> S2\n    S3 --> S7[\"Player Exit ViewArea\"] --> S1\n    S3 --> S4[\"Attack\"]\n    S4 --> S8[\"Attack Animation End\"] --> S3\n    S4 --> S9"
+    },
+    {
+      "title": "巡逻行为细节",
+      "code": "flowchart TD\n    P1[\"Enter Patrol State\"] --> P2[\"Generate Random Patrol Point\"]\n    P2 --> P3[\"Set 目标位置\"]\n    P3 --> P4[\"MoveTowards 目标\"]\n    P4 --> P5[\"到达目标附近\"]\n    P5 --> P6[\"检查误差阈值\"]\n    P6 --> P7[\"误差过小导致抖动\"] --> P8[\"调整误差阈值\"] --> P2\n    P6 --> P9[\"返回 Patrol State\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:22:17+00:00"
+}

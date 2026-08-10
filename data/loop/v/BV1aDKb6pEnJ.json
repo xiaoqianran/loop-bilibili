@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1aDKb6pEnJ",
+  "title": "一个Skill 让 Agent 自动操作浏览器，告别重复枯燥任务",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3597,
+  "text": "这个skill能给任意的AI agent接入顶级的浏览器\n自动化能力\n帮你完成各种机械重复的操作\n本期视频我们使用的工具是ego light\n还有配套的skill\nEgo light\n是一个基于与chromium内核开发的全新浏览器\n核心设计理念是让agent和人类能共用同一个chrome\n进行流畅协作\nego light通过全新的架构设计\n针对传统浏览器自动化工具里面反复登录\n内存占用大\ntoken消耗高\n执行速度慢等几大痛点都进行了明显优化\n本期视频带来一个手把手的完整教程\n我们看看怎么在cloud code\nwork body等各种AI agent里面接入ego li\n熟练使用以后\n我们还能把很多工作流程沉淀成可复用的skill\n让AI能够又快又省的完成任务\n甚至还有许多固定流程\n只需要让AI编写好一个脚本\n就能全程脱离AI参与0token全自动完成工作\n好废话不多说\n我们直接开始\n我们先去ego light官网把浏览器下载一下\n目前上线的是Mac版本\n完全的免费使用\n下载完成以后\n打开安装文件\n拖拽进来就完成了\n安装ego light第一次启动的时候\n会询问我是否导入之前的浏览器配置\n这里我选择chrome导入以后\n我的chrome上所有的网站登录状态\ncookie插件\nprofile等数据都迁移到了ego li\n这些数据都是离线保存在本地设备上的\n后续AI的自动化操作都可以复用\n这些登录太彻底\n解决了传统浏览器自动化的痛点之一\n也就是重复登录的问题\n接下来我们来测试一下\n这里我先用cloud code接入\n打开终端\n输入cloud来启动cloud code\n进来以后\n我们可以直接敲斜线\nEgo browser\n调用ego light的skill\nego light第一次启动的时候\n会自动扫描电脑上已经安装的agent\n自动把skill存放到agent的对应目录里面\n零配置就能使用它的skill\n非常的方便\n滑把虾\n最近经常让chat gbt帮我画一些信息图\n作为补充材料\n插到视频里面去\n用传统方法需要打开chat gbt的对话框\n点击创建图片\n然后填入提示词\n等待图片生成\n最后下载这套流程至少占用两到3分钟\n现在就可以直接交给AI去做了\n我输入提示词\n进入chat gbt的网页端\n选择生成图片功能\n16比九的信息图\n深色背景展示传统浏览器自动化的痛点\n等待图片生成完毕以后\n把图片下载到桌面\n并且重新命名为时间下划线图片主题\n接下来AI就开始工作了\n我们可以随时监控他的工作过程\nego li右上角有一个数字的小图标\n点击就展开了它的核心工作页面space\n每个space都是一个独立的工作空间\n其中蓝色的就是agent正在控制的\n其余的则是我\n也就是用户正在控制的agent\n可以同时创建多个space\n在后台并行执行任务\n与此同时\n我依然可以正常浏览网页\n双方互不干扰\n之前我使用的playwright pop tier\n这种传统浏览器自动化工具\n如果想让多个agent并行工作\n每个任务通常会需要启动一个\n独立的浏览器实例\n并且复制一份profile\n因此会产生大量的内存和进程开销\nspace架构就很好地解决了内存占用量大的痛点\n根据官方文档的数据\n相比\n传统方案\n它可以将内存跟进程的开销降低几十倍\n我们再来看一下cloud code里面的执行过程\ncloud code驱动浏览器的时候\n把所有的操作判断\n输入输出等全部写在了一段node js的hair dock里面\n然后发送给浏览器一次\n执行这段代码还能进行逻辑判断\n数组处理等等\n并且进行多次的工具调用\n比如这段AI操作浏览器填入画图指令\n然后等待一秒再点击发送两个动作\n只用一次交互就搞定了\n这样有效降低了模型与浏览器之间的交互次数\n任务完成的更快\ntoken消耗也更少\n我们继续任务\n过了一会儿\n图片生成好了\nAI也帮我放到了桌面上面\n在这个例子里面可以看到\n得益于全新的架构设计\nego light在登陆状态\n保持资源占用\ntoken消耗和执行速度方面提升明显\n实际表现很不错\n接下来我们可以把这个过程再固化成skill\n这里输入提示词\n创建一个新的skill\n把刚才操作的全过程\n还有遇到的问题都提炼出来\n保存到skill里面\n后面我只要让你生成图片\n你就可以调用这个skill完成AI\n帮我们创建了skill\n把这个任务里面可以复用的知识都提炼了进去\n后续我只需要调用这个生图skill\n就能又快又好的完成任务\n我们来测试一下\n这里我输入斜线\n调用刚才创建的技能\n再画张图来试一试\n我们看到skill跟ego light配合起来\n效率极高\n写了一大段控制命令\n只用了一次交互就完成了\n从打开页面到点击发送按钮之间所有的操作\n我们再来对比一下最后的token开销\n左边是第一次让am摸索自己试错的开销\n右边则是有了skill加持\n下面的token开销\nskill跟eagle light配合起来使用非常不错\n有了将近四倍的效率提升\n我们再通过一个例子\n看看ego light配合skill效率有多高\n还是调用刚才创建的skill\n开启多个space\n画十张图给我选\n主题如下\n我们看到在ego light里面\nAI同时开启了十个space并行画图\n我们只需要等待AI工作完成以后\n选择一个最喜欢的图片就可以了\n一次性把画图的效率提高了十倍\n非常的棒\n我们来看一个复杂一些的例子\n最近沃克巴蒂的热度很高\n很多人把重复的办公任务交给沃克巴蒂来做\n取得了不错的效果\n接下来我们就给work body安装上ego browser skill\n让它解锁浏览器自动化的能力\n让办公效率更上一个台阶\n在work巴蒂左侧边栏找到专家技能连接器\n添加ego browser技能\nskill安装好了\n我们用一个办公任务来实测一下\n比如现在我是一个电商运营岗的人员\n我现在需要采集竞品商品的评论\n挖掘用户最关心的需求点\n我们先调用ego brother skill\n查看这个商品的评论区\n然后按时间倒序排序\n抓取前100条评论\n把所有的评论保存到一个CSV文件里面\n开始之前记得打开允许完全访问A\n在ego light里面打开了一个全新的space\n来处理这个工作\n他找到了商品的评论\n然后按时间倒序排序\n并且不不停的滚动来刷出更多的评论\n过了一会儿\n沃克巴蒂成功完成了任务\n抓取到了100条数据\n并且保存到了CSV文件里面\n我们注意到抓取评论是一个固定的流程\n其实并不需要AI进行智能化的控制\n我们可以直接把它编写成一个固定的脚本\n这里输入提示词\n你把刚才的所有过程汇总成一个shell脚本\n脚本接收一个参数\n也就是电商网站的链接\n执行脚本就能获得前100条评论\n并且保存到一个CSV文件里面\n脚本写完\n你先做一轮测试\n很快work克body为我们编写完成了脚本\n并且他已经自测通过了\n我们打开看一下\nAA以编程的方式把刚才的步骤都固定下来了\n在这个脚本里面用JS代码分步骤完成了任务\n比如第一步打开网页\n第二步打开评论抽屉\n第三步按时间倒序排序\n我们也来测试一下\n打开一个命令行终端\n填上脚本地址\n后面接一个商品网址\n然后回车执行\n我们进入ego light\n就可以看到脚本正在飞速的自动执行\n不依赖任何的agent\n0token\n零成本就完成了任务\n最后也输出了CSV文件\n取得了相同的效果\n非常的不错\n借助ego light跟work body的组合能力\n我们还可以发挥想象力\n做一些更好玩更复杂的操作\n我计划本月21日到25日从青岛出发\n前往苏州跟厦门两地游玩\n你搜索票务信息\n然后结合种草攻略\n还有这几日的天气给我出一个行程规划\n可以开启多个space并行工作\n提高效率\n我们看到work body调用ego li\n同时开启了三个space并行工作\n一个查询票务信息\n一个查询天气\n还有一个查询种草攻略\n最后为我们输出了行程规划\n包含天气情况\n应该怎么乘车\n还有每一天的时间表\n内容详实\n效果非常不错\n我们再来看一个例子\n我想找java开发相关的工作\n我最大的诉求就是公司离家近\n请结合百度地图\n还有两个主要的招聘网站\n帮我搜索离家近的最适合的岗位\n20个输出成CSV文件\n给我挑选\nAI调用ego light\n打开地图网站\n先确认我家的位置\n然后在招聘网站上面\n找到了青岛java开发的相关岗位\n接下来又调用用地图确认距离\n最后输出了完整的CSV文件\n我们打开就可以看到20个候选岗位\n而且按照距离远近进行了排序\n这些复杂的案例\nego light都能很好的帮我完成\n而且对比我之前用过的浏览器自动化工具\ntoken消耗更更低\n执行速度更快好\n本期视频就到这里\n感谢大家\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1aDKb6pEnJ",
+  "published_at": "1784616903",
+  "fetched_at": "2026-08-09T12:26:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Ego Light 与 Skill 自动化学习图谱\n\n## 1. Ego Light 架构与优势  \n00:11 - Ego Light 基于 Chromium 内核，支持 Agent 与人类共用 Chrome。  \n00:22 - 针对传统浏览器自动化的重复登录、内存占用、token 消耗、执行慢等痛点进行优化。  \n00:28 - 实现低内存、低 token、快速执行。\n\n```mermaid\nflowchart TD\n    A1[\"Chromium 内核\"] --> A2[\"Agent 与 人类共享 Chrome\"]\n    A2 --> A3[\"导入 Chrome 配置 (Cookie, Profile)\"]\n    A3 --> B1[\"优势\"]\n    B1 --> B2[\"免重复登录\"]\n    B1 --> B3[\"低内存占用\"]\n    B1 --> B4[\"低 token 消耗\"]\n    B1 --> B5[\"更快执行速度\"]\n```\n\n## 2. Skill 生命周期  \n01:01 - 下载并安装 Ego Light（Mac 版）。  \n01:40 - Skill 自动检测、零配置使用。  \n04:14 - 记录完整操作并保存为可复用的 Skill。\n\n```mermaid\nflowchart TD\n    S1[\"下载 Ego Light (Mac)\"] --> S2[\"安装 (拖拽)\"]\n    S2 --> S3[\"首次启动导入 Chrome 配置\"]\n    S3 --> S4[\"Skill 自动检测并存放\"]\n    S4 --> S5[\"零配置使用\"]\n    S5 --> S6[\"在 Cloud Code / Work Body 调用\"]\n    S6 --> S7[\"记录操作步骤\"]\n    S7 --> S8[\"保存为 Skill\"]\n    S8 --> S9[\"后续复用\"]\n```\n\n## 3. Space 并行执行模型  \n02:34 - Ego Light 右上角数字图标打开 Space 页面。  \n02:49 - 可创建多个独立 Space 并行任务。  \n03:13 - 相比传统方案，显著降低内存和 token 开销。\n\n```mermaid\nflowchart TD\n    E1[\"Ego Light\"] --> E2[\"Space 管理器\"]\n    E2 --> E3[\"创建多个 Space\"]\n    E3 --> E4[\"并行执行任务\"]\n    E4 --> E5[\"每个 Space 独立 UI\"]\n    E5 --> E6[\"用户与 Agent 不干扰\"]\n    E4 --> E7[\"降低内存 & token 开销\"]\n```\n\n## 4. Cloud Code 与 Ego Light 交互模型  \n03:25 - Cloud Code 将操作写入 NodeJS 脚本。  \n03:44 - 一次性发送至 Ego Light，执行多步骤。  \n03:48 - 单次交互完成，提升速度并降低 token 消耗。\n\n```mermaid\nflowchart TD\n    C1[\"Cloud Code\"] --> C2[\"编写 NodeJS 脚本 (Hair Dock)\"]\n    C2 --> C3[\"一次性发送至 Ego Light\"]\n    C3 --> C4[\"浏览器执行多步骤\"]\n    C4 --> C5[\"单次交互完成\"]\n    C5 --> C6[\"提升速度 & 降低 token\"]\n```\n\n## 5. 典型应用案例  \n06:45 - 评论抓取流程固化为 0 token 脚本。  \n07:44 - 旅行规划使用多个 Space 并行查询。  \n08:19 - 求职搜索结合地图与招聘网站，输出排序 CSV。\n\n```mermaid\nflowchart TD\n    U1[\"案例 1: 评论抓取\"] --> U2[\"调用 ego browser skill\"]\n    U2 --> U3[\"打开商品页面\"]\n    U3 --> U4[\"倒序排序\"]\n    U4 --> U5[\"抓取前100条评论\"]\n    U5 --> U6[\"保存 CSV\"]\n    U6 --> U7[\"生成固定脚本 (0 token)\"]\n    U7 --> U8[\"复用\"]\n    U8 --> U9[\"案例 2: 旅行规划\"]\n    U9 --> U10[\"开启多个 Space: 票务、天气、攻略\"]\n    U10 --> U11[\"并行处理\"]\n    U11 --> U12[\"输出行程规划\"]\n    U12 --> U13[\"案例 3: 求职搜索\"]\n    U13 --> U14[\"使用地图 & 招聘网站\"]\n    U14 --> U15[\"筛选距离最近的岗位\"]\n    U15 --> U16[\"输出 CSV 排序\"]\n```",
+      "diagrams": [
+        {
+          "title": "1. Ego Light 架构与优势",
+          "code": "flowchart TD\n    A1[\"Chromium 内核\"] --> A2[\"Agent 与 人类共享 Chrome\"]\n    A2 --> A3[\"导入 Chrome 配置 (Cookie, Profile)\"]\n    A3 --> B1[\"优势\"]\n    B1 --> B2[\"免重复登录\"]\n    B1 --> B3[\"低内存占用\"]\n    B1 --> B4[\"低 token 消耗\"]\n    B1 --> B5[\"更快执行速度\"]"
+        },
+        {
+          "title": "2. Skill 生命周期",
+          "code": "flowchart TD\n    S1[\"下载 Ego Light (Mac)\"] --> S2[\"安装 (拖拽)\"]\n    S2 --> S3[\"首次启动导入 Chrome 配置\"]\n    S3 --> S4[\"Skill 自动检测并存放\"]\n    S4 --> S5[\"零配置使用\"]\n    S5 --> S6[\"在 Cloud Code / Work Body 调用\"]\n    S6 --> S7[\"记录操作步骤\"]\n    S7 --> S8[\"保存为 Skill\"]\n    S8 --> S9[\"后续复用\"]"
+        },
+        {
+          "title": "3. Space 并行执行模型",
+          "code": "flowchart TD\n    E1[\"Ego Light\"] --> E2[\"Space 管理器\"]\n    E2 --> E3[\"创建多个 Space\"]\n    E3 --> E4[\"并行执行任务\"]\n    E4 --> E5[\"每个 Space 独立 UI\"]\n    E5 --> E6[\"用户与 Agent 不干扰\"]\n    E4 --> E7[\"降低内存 & token 开销\"]"
+        },
+        {
+          "title": "4. Cloud Code 与 Ego Light 交互模型",
+          "code": "flowchart TD\n    C1[\"Cloud Code\"] --> C2[\"编写 NodeJS 脚本 (Hair Dock)\"]\n    C2 --> C3[\"一次性发送至 Ego Light\"]\n    C3 --> C4[\"浏览器执行多步骤\"]\n    C4 --> C5[\"单次交互完成\"]\n    C5 --> C6[\"提升速度 & 降低 token\"]"
+        },
+        {
+          "title": "5. 典型应用案例",
+          "code": "flowchart TD\n    U1[\"案例 1: 评论抓取\"] --> U2[\"调用 ego browser skill\"]\n    U2 --> U3[\"打开商品页面\"]\n    U3 --> U4[\"倒序排序\"]\n    U4 --> U5[\"抓取前100条评论\"]\n    U5 --> U6[\"保存 CSV\"]\n    U6 --> U7[\"生成固定脚本 (0 token)\"]\n    U7 --> U8[\"复用\"]\n    U8 --> U9[\"案例 2: 旅行规划\"]\n    U9 --> U10[\"开启多个 Space: 票务、天气、攻略\"]\n    U10 --> U11[\"并行处理\"]\n    U11 --> U12[\"输出行程规划\"]\n    U12 --> U13[\"案例 3: 求职搜索\"]\n    U13 --> U14[\"使用地图 & 招聘网站\"]\n    U14 --> U15[\"筛选距离最近的岗位\"]\n    U15 --> U16[\"输出 CSV 排序\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T12:26:26+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Ego Light 与 Skill 自动化学习图谱\n\n## 1. Ego Light 架构与优势  \n00:11 - Ego Light 基于 Chromium 内核，支持 Agent 与人类共用 Chrome。  \n00:22 - 针对传统浏览器自动化的重复登录、内存占用、token 消耗、执行慢等痛点进行优化。  \n00:28 - 实现低内存、低 token、快速执行。\n\n```mermaid\nflowchart TD\n    A1[\"Chromium 内核\"] --> A2[\"Agent 与 人类共享 Chrome\"]\n    A2 --> A3[\"导入 Chrome 配置 (Cookie, Profile)\"]\n    A3 --> B1[\"优势\"]\n    B1 --> B2[\"免重复登录\"]\n    B1 --> B3[\"低内存占用\"]\n    B1 --> B4[\"低 token 消耗\"]\n    B1 --> B5[\"更快执行速度\"]\n```\n\n## 2. Skill 生命周期  \n01:01 - 下载并安装 Ego Light（Mac 版）。  \n01:40 - Skill 自动检测、零配置使用。  \n04:14 - 记录完整操作并保存为可复用的 Skill。\n\n```mermaid\nflowchart TD\n    S1[\"下载 Ego Light (Mac)\"] --> S2[\"安装 (拖拽)\"]\n    S2 --> S3[\"首次启动导入 Chrome 配置\"]\n    S3 --> S4[\"Skill 自动检测并存放\"]\n    S4 --> S5[\"零配置使用\"]\n    S5 --> S6[\"在 Cloud Code / Work Body 调用\"]\n    S6 --> S7[\"记录操作步骤\"]\n    S7 --> S8[\"保存为 Skill\"]\n    S8 --> S9[\"后续复用\"]\n```\n\n## 3. Space 并行执行模型  \n02:34 - Ego Light 右上角数字图标打开 Space 页面。  \n02:49 - 可创建多个独立 Space 并行任务。  \n03:13 - 相比传统方案，显著降低内存和 token 开销。\n\n```mermaid\nflowchart TD\n    E1[\"Ego Light\"] --> E2[\"Space 管理器\"]\n    E2 --> E3[\"创建多个 Space\"]\n    E3 --> E4[\"并行执行任务\"]\n    E4 --> E5[\"每个 Space 独立 UI\"]\n    E5 --> E6[\"用户与 Agent 不干扰\"]\n    E4 --> E7[\"降低内存 & token 开销\"]\n```\n\n## 4. Cloud Code 与 Ego Light 交互模型  \n03:25 - Cloud Code 将操作写入 NodeJS 脚本。  \n03:44 - 一次性发送至 Ego Light，执行多步骤。  \n03:48 - 单次交互完成，提升速度并降低 token 消耗。\n\n```mermaid\nflowchart TD\n    C1[\"Cloud Code\"] --> C2[\"编写 NodeJS 脚本 (Hair Dock)\"]\n    C2 --> C3[\"一次性发送至 Ego Light\"]\n    C3 --> C4[\"浏览器执行多步骤\"]\n    C4 --> C5[\"单次交互完成\"]\n    C5 --> C6[\"提升速度 & 降低 token\"]\n```\n\n## 5. 典型应用案例  \n06:45 - 评论抓取流程固化为 0 token 脚本。  \n07:44 - 旅行规划使用多个 Space 并行查询。  \n08:19 - 求职搜索结合地图与招聘网站，输出排序 CSV。\n\n```mermaid\nflowchart TD\n    U1[\"案例 1: 评论抓取\"] --> U2[\"调用 ego browser skill\"]\n    U2 --> U3[\"打开商品页面\"]\n    U3 --> U4[\"倒序排序\"]\n    U4 --> U5[\"抓取前100条评论\"]\n    U5 --> U6[\"保存 CSV\"]\n    U6 --> U7[\"生成固定脚本 (0 token)\"]\n    U7 --> U8[\"复用\"]\n    U8 --> U9[\"案例 2: 旅行规划\"]\n    U9 --> U10[\"开启多个 Space: 票务、天气、攻略\"]\n    U10 --> U11[\"并行处理\"]\n    U11 --> U12[\"输出行程规划\"]\n    U12 --> U13[\"案例 3: 求职搜索\"]\n    U13 --> U14[\"使用地图 & 招聘网站\"]\n    U14 --> U15[\"筛选距离最近的岗位\"]\n    U15 --> U16[\"输出 CSV 排序\"]\n```",
+  "diagrams": [
+    {
+      "title": "1. Ego Light 架构与优势",
+      "code": "flowchart TD\n    A1[\"Chromium 内核\"] --> A2[\"Agent 与 人类共享 Chrome\"]\n    A2 --> A3[\"导入 Chrome 配置 (Cookie, Profile)\"]\n    A3 --> B1[\"优势\"]\n    B1 --> B2[\"免重复登录\"]\n    B1 --> B3[\"低内存占用\"]\n    B1 --> B4[\"低 token 消耗\"]\n    B1 --> B5[\"更快执行速度\"]"
+    },
+    {
+      "title": "2. Skill 生命周期",
+      "code": "flowchart TD\n    S1[\"下载 Ego Light (Mac)\"] --> S2[\"安装 (拖拽)\"]\n    S2 --> S3[\"首次启动导入 Chrome 配置\"]\n    S3 --> S4[\"Skill 自动检测并存放\"]\n    S4 --> S5[\"零配置使用\"]\n    S5 --> S6[\"在 Cloud Code / Work Body 调用\"]\n    S6 --> S7[\"记录操作步骤\"]\n    S7 --> S8[\"保存为 Skill\"]\n    S8 --> S9[\"后续复用\"]"
+    },
+    {
+      "title": "3. Space 并行执行模型",
+      "code": "flowchart TD\n    E1[\"Ego Light\"] --> E2[\"Space 管理器\"]\n    E2 --> E3[\"创建多个 Space\"]\n    E3 --> E4[\"并行执行任务\"]\n    E4 --> E5[\"每个 Space 独立 UI\"]\n    E5 --> E6[\"用户与 Agent 不干扰\"]\n    E4 --> E7[\"降低内存 & token 开销\"]"
+    },
+    {
+      "title": "4. Cloud Code 与 Ego Light 交互模型",
+      "code": "flowchart TD\n    C1[\"Cloud Code\"] --> C2[\"编写 NodeJS 脚本 (Hair Dock)\"]\n    C2 --> C3[\"一次性发送至 Ego Light\"]\n    C3 --> C4[\"浏览器执行多步骤\"]\n    C4 --> C5[\"单次交互完成\"]\n    C5 --> C6[\"提升速度 & 降低 token\"]"
+    },
+    {
+      "title": "5. 典型应用案例",
+      "code": "flowchart TD\n    U1[\"案例 1: 评论抓取\"] --> U2[\"调用 ego browser skill\"]\n    U2 --> U3[\"打开商品页面\"]\n    U3 --> U4[\"倒序排序\"]\n    U4 --> U5[\"抓取前100条评论\"]\n    U5 --> U6[\"保存 CSV\"]\n    U6 --> U7[\"生成固定脚本 (0 token)\"]\n    U7 --> U8[\"复用\"]\n    U8 --> U9[\"案例 2: 旅行规划\"]\n    U9 --> U10[\"开启多个 Space: 票务、天气、攻略\"]\n    U10 --> U11[\"并行处理\"]\n    U11 --> U12[\"输出行程规划\"]\n    U12 --> U13[\"案例 3: 求职搜索\"]\n    U13 --> U14[\"使用地图 & 招聘网站\"]\n    U14 --> U15[\"筛选距离最近的岗位\"]\n    U15 --> U16[\"输出 CSV 排序\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T12:26:26+00:00"
+}

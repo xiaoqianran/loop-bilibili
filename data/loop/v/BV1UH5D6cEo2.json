@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1UH5D6cEo2",
+  "title": "Claude接入deepseekv4模型真实花费",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 504,
+  "text": "最近测试了一下cloud\n接入deep 模型\n花费的确是非常的低\n这一天是我让嗯\nDEPSG帮我去写了一个贪吃蛇的游戏\n然后这里是把贪吃蛇游戏改了一下\n然后这一天呢是大约一个小时\n我连续跟他交互\n让他帮我写了一个agent\n然后这里的话就是把这个agent做了一些修改\n然后总共花费了就是六毛八\n总共请求的次数呢是63次\ntoken是这些\n如果你也想试一下的话\n在这个DPC官网这里\n你可以找到说怎么样去接入这个cloud code\n如果你想从零安装CLCODE的话\n直接跳到这里来\n你去按照这个步骤一步一步的去执行\n然后windows怎么配置变量\n然后Mac怎么配\n配完之后你要进到哪个目录\n然后去输入什么内容\n这里都已经写好了\n按照这个步骤来\n或者你也可以用cursor或tree之类的\nAIIDE自然语言告诉他\n让他帮你去安装这个cloud code\n安装完就可以使用deep seek了\n另外我整理了一下我自己怎么样去接deep7格\n大概的步骤是我用cursor或tree帮我装完克拉code\n然后我装了cc switch\n然后在cc switch里配的deep希克模型\n下个视频我会再详细的分享一下",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UH5D6cEo2",
+  "published_at": "1778718869",
+  "fetched_at": "2026-08-09T19:06:23+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T19:21:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T19:21:28+00:00"
+}

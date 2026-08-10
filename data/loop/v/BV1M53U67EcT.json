@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1M53U67EcT",
+  "title": "[中配]2026年最适合你每款GPU的本地AI模型 - Kai",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4143,
+  "text": "别再问什么是最好的本地人工智能模型了\n老实说这个问题本身就是错的\n决定你家里能跑什么模型的问题其实更简单\n你的显卡有多少显存\n这一个数字就帮你选好了模型\n所以看完这个视频\n你就会知道该装哪个模型\n完全基于你现有的硬件\n不管你是RTX4090老3060MACBOOK还是核显\n我都会告诉你模型名字\n其他内容忽略的真实注意事项\n以及上手的确切命令\n先说个前提\n暂时忘掉参数量\n现在一个压缩过的270亿参数模型\n占用的内存\n可能比去年一些30亿参数模型还少\n门槛就是提升的这么快\n所以找到你的显存数字\n然后跟着对应硬件走\n我们从最底层开始\n这一档\n你们大多数人都有4~8GB显存\n比如二手游戏卡\nRtx 3050g t x1660\nRtx2060\nRtx 40608g b a amd r x7600\n或者共享内存够用的核显都是这一档\n如果你在想\n那我只能凑合个弱智模型了\n这想法过时了\n这里的最佳选择是中国实验室name page\n推出的30亿参数模型\n它们4.2版本很小\n但他做到了这个体基本不该允许的事\n他的诀窍是循环transformer不是堆更多层\n而是把已有的层跑多次\n所以它像大模型一样思考\n却不用存储大模型\n你获得能力省掉内存开销就这么落地了\n在智能体任务编程和推理上\n这个30亿模型打败了90亿的困\n3.5和120亿的JA4\n它比三倍四倍于自身大小的模型得分还高\n单看编程在cw bench验证的真实GITHUB问题修复上\n它解决了63%\n大约是同等规模困的两倍\n对于这么小的模型\n这数字有点不像话\n而在g p k i a diamond上\n一个残酷的研究升级科学考试\n他得了87分\n这分数一年前旗舰模型还在吹\n现在在笔记本上只需2GB显存就能跑\n那它适合干什么\n本地杂活标记和整理文件分类\n支持工单标注数据\n这些量大的工作需要速度和隐私\n不需要每次调用都花钱的超大智能体\n他也能当真正的助手\n配合像open claw这样的框架\n完全离线处理多部办公任务和深度研究\n而且在这两项上打败了那个90亿模型\n它支持25万6000个token上下文\n所以能一次记住整个代码库或一堆文档\n而且只占2GB\n无需联网\n不花钱\n推理能力还超过去年的中型模型\n这就是新底线\n从这里开始只会更好\n第二档8~24GB\n如果你有RTX306012GB\nRtx3070\nRtx4060\nTi r t x4070\nAMD7900GRE或者16GB统一内存的Macbook pro\n这档现在最有意思\n现在我们可以贪心点\n这里有点不真实了\n通常270亿模型在这里完全跑不动\n全精度需要大约54GB\n即使思维量化也要18GB\n对这张卡太大\n离手机更远\n一家叫prism m l的初创公司\n来自CALTECH的团队解决了这个问题\n他们把宽的270亿模型压缩到\n几乎什么都没有\n他们管结果叫BSI诀窍\n在这里不是普通量化\n他们把每个权重都重训成三个值之一\n一十或正一三值化\n每个权重不到二位\n从上到下网络里没有任何全精度\n后门效果惊人\n高质量版5.9GB\n迷你版3.9GB\n一个270亿参数模型\n磁盘占用比全精度20亿模型还小\n而且这3.9GB版本能装进IPHONE真手机\n这是第一个能在你口袋里设备上跑的\n27B级模型\n推理工具调用甚至读图\n直觉告诉你\n他们肯定把脑子弄坏了\n大多数情况下并没有三指版\n保留了原版95%的分数\n因为手机版保留了90%\n数学和编程几乎不变\n而这里让它不仅仅是杂技\n拿这个模型最激进的普通四维班\n比王赛的一位版得分更高\n内存还少用2.5倍\n这比值比每个人信任的量化更好\n也不慢\n在RTX5090上\n每秒超过160个token\n在MACBOOK的M5芯片上也快到\n感觉及时\n这是能日常使用的\n不是实验室演示\n而且免费好拿\nAPACHE2许可证\n通过MLX在任何现代Mac原生运行CUDA跑\n在NVIDIA卡上\n完整26万2000个token上下文文下载\n用lama指向它完事\nprism l l管这叫智能密度\n我觉得这才是今年真正的故事\n这么聪明的模型以前需要真正的GPU\n现在他在普通卡上就能跑\n还有富余\n每一步跑起来都分文不花\n第三档24~96GB\n现在你真有空间了\n32GB的5090双卡或者大统一内存的Mac\n所以这里你不再压缩\n直接跑全质量的好模型\n而这个好模型正是bonus原本雕刻出来的那个宽\n3.62701QUAN称它为小模型中的旗舰级\n编程分数也称得起这吹捧\n在g p q a diamond上得87.8分\n与数倍于自身大小的模型不相上下\n全精度下需要约54GB\n在这里终于装得下\n还有余量跑长上下文\n但这些推理模型有个隐藏代价\n本地跑时你会深深感受到\n他们在回答前会先思考\n有时数千个token\n每个token都是你干等的时间\n所以一个叫bottle cap\n人工智能的小欧洲团队推出了微调版\n来修这个问题\n联合创始人不是无名之辈\n他是THOMASMICHELO\n发明word arvec的研究员\n他们管它叫thinking cap\n同一模型\n同一答案\n但学会了不过度思考\n平均少用约一半的推理\ntoken输出质量相同\n有些提示词下快十倍\n我想说清楚\n因为网上都传错了\n模型没有更聪明\n他用更少的废话达到相同分数\n当你等着它时\n这才是你真正感受到的升级\n所以这一档最佳做法是\n搭配全质量跑QN3.6\n加载thinking cat微调\n就能得到响应时间减半的旗舰编程\n这档适合谁\n整天对着本地模型编程烦透\n看他思考的人和云端一样的智能\n体现在在桌上\n没有每次回答前漫长的尴尬停顿\n第四档\n现在我们完全离开游戏卡\n96~192 gb\n这是工作站领域\n由一个小盒子定义\n他重写了整党的数学\nNVIDIA的d j x spark\n1.2kg放显示器\n下面128GB统一内存约4000美元\n它能装下4000美元显卡都加载不了的模型\n为这个盒子专门打造的模型\n在7月21日发布\nLaguna s2.1\n来自旧金山初创公司pool side\n一个开放权重编程模型\n真让人意外\n他有1180亿参数\n但每次只有80亿活跃\n这就是专家混合大部分模型在每个token上休眠\n这种稀疏性\n正是它能在单个spark上快速运行的原因\n惊喜在这里\n在terminal bench上\n一个智能体驱动真实终端的长期编程测试\nLAGUNA得分70%\n击败了1.6万亿参数的deep secure旗舰\n他击败了约14倍于自身大小的模型\n菩萨称它为西方最强开放权重模型\n在同类中\n这说法大体成立在deep ser上\n上40%一个更难的任务\n万亿参数开源模型通常得分低于十\n而且不只是图表上的数字\n在一次连续50分钟运行中\n无人协助\nLaga\n从空文件夹构建了一个可工作的浏览器引擎\n然后用真实chromium渲染页面\n逐像素对比来证明它有效\n他不完美\n普塞也坦然承认\n他可能对简单任务思考太久\n偶尔弄错不熟悉的工具格式\n但一个开源模型会自我争论\n直到测试通过\n这确实是新东西\n他支持高达百万token上下文\n开放许可证\n从训练第一天到发布不到九周\n这样的发布节奏本身就是一种警告\n而获取它很容易权重\n从第一天就在HuggingFace上\nVLLMSGLANG和ALARMA都能直接在本地跑\nN v i d i a\n甚至调优了它在单个spark上运行\n这是为使用而生\n不是供人瞻仰前沿及智能体编程\n六个月前还锁在云API里\n现在跑在能装进背包的盒子里\n最高档192~384GB\n两个这样的spark连起来或者专业服务器\n很少人能到这一档\n但如果你到了\n奖励是地球上最好的非中美开源模型\n他叫motif3\n来自韩国初创公司motif technologies\n3140亿参数专家混合\n而且是我们尊重的地方\n它是从零构建\n不是别人模型的微调\n内部是悉数设计384个专家网络\n每个token只有少数几个激活\n所以每次大约130亿参数在工作\n大脑子运行便宜\n它排在哪里\n在artificial analysis上\n行业主要智能排名中\nmotif3是全球第三好的开放权重模型\n只有KIMIK3和GLM5.2在它前面\n如果你不熟悉artificial analysis\n他是这个领域最接近中立记分牌的东西\n一个指数\n把一系列硬推理和遗传测试综合成一个数字\n在它上面排第三\n同时是你能自己托管的模型\n这很了不起\n看看他所在的圈子\n它上面的两个模型是中国巨头KIMIK3单\n一个就是2.8万亿参数\n某一规模只有那个零头\n来自大多数人没听说过的公司\n却紧随其后\n3140亿很大\n但稀疏且量化为八位后\n大约300GB推进量化还能更小\n正好在双spark或单服务器预算内\n为什么一个前三的开源模型对你特别重要\n因为开放权重意味着\n你可以下载在你自己的墙后面运行\n没人能限速涨价\n或者在产品更新中拿走它\n这就是整个阶梯五档\n五个模型\n每一个都在能放桌上的硬件上跑\n所以我们再来排列一次4~8级BNBAGE\n8~24 gb bonsai\n24~96 gb\n带thinking cap的queen\n96~192 gb\nspark上的LAGUNA\n再往上moi现在城市的缺点\n因为我不想夸大\n这些都不是GPT5.6或cloud fable封闭前沿\n在这些编程测试中仍约90分\n本地仍然落后\n这是你能拥有的最好\n不是存在的最好\n那你怎么选\n我能给的最简单规则\n找能装进显存\n且留点余量给上下文的的最大模型\n就跑那个装得下时更大\n依然赢\n几乎就这么简单\n但真正头条不是列表上任何一个模型\n而是今天能装进你机器的模型\n比半年前那个好太多了\n底线在上升\n而且上升很快\n如果你从没做过\n别想太多\nALLAMA一次安装一个命令alarma run\n然后模型名l m studio\n同样担待友好窗口和下载按钮\n拟离私有模型大约10分钟\n不是一周末\n因为这里每个模型在HuggingFace上免费下载\n下载对应档的模型\n今晚装上\n看看自己硬件到底能干什么\n我真觉得会吓你一跳\n如果这帮你省了一周的试错\n订阅吧\n我每周在这里解析本地人工智能技术站\n下次见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1M53U67EcT",
+  "published_at": "1785624236",
+  "fetched_at": "2026-08-06T21:02:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 本地AI模型选择与技术关系图谱\n\n## 显存档位与对应模型\n```mermaid\nflowchart TD\n    T1[\"4~8GB 显存\"] --> M1[\"30B 中国实验室模型\"]\n    T2[\"8~24GB 显存\"] --> M2[\"27B Prism BSI模型\"]\n    T3[\"24~96GB 显存\"] --> M3[\"3.6B Bonus模型\"]\n    T4[\"96~192GB 显存\"] --> M4[\"Laguna S2.1\"]\n    T5[\"192~384GB 显存\"] --> M5[\"motif3\"]\n```\n\n## 模型压缩与加速技术\n```mermaid\nflowchart TD\n    LT[\"循环 Transformer\"] --> RL[\"层多次运行\"]\n    BSI[\"BSI 压缩\"] --> WQ[\"每权重3值重训\"]\n    WQ --> Mini[\"3.9GB 迷你版\"]\n    WQ --> High[\"5.9GB 高质量版\"]\n    TC[\"thinking cap 微调\"] --> RLt[\"减少推理延迟\"]\n    RLt --> HL[\"推理延迟减半\"]\n    HL --> TE[\"每 token 少用约一半推理\"]\n```\n\n## 高端模型特性与应用\n```mermaid\nflowchart TD\n    LAG[\"Laguna S2.1\"] --> P1[\"1180B 参数\"]\n    P1 --> A1[\"80B 活跃\"]\n    A1 --> SP[\"稀疏激活\"]\n    SP --> BS[\"70% Terminal Bench\"]\n    BS --> DB[\"击败 1.6T Deep Secure\"]\n    LAG --> OW[\"开放权重\"]\n    LAG --> RD[\"7月21日发布\"]\n    LAG --> UC[\"单 Spark 运行浏览器引擎\"]\n    MOT[\"motif3\"] --> P2[\"3140B 参数\"]\n    P2 --> EX[\"384 专家网络\"]\n    EX --> AT[\"每 token 少数激活\"]\n    AT --> R3[\"全球第3 开放模型\"]\n    MOT --> OW2[\"开放许可证\"]\n```\n\n## 本地部署流程概览\n```mermaid\nflowchart TD\n    IC[\"ALLAMA 安装命令\"] --> MD[\"从 HuggingFace 下载模型\"]\n    MD --> RC[\"alarma run 启动\"]\n    RC --> FW[\"OpenClaw 框架集成\"]\n    FW --> OFF[\"完全离线运行\"]\n    OFF --> PR[\"本地隐私保护\"]\n    OFF --> COST[\"无需付费\"]\n    RC --> GPU[\"CUDA/NVIDIA 支持\"]\n    RC --> MAC[\"MLX 原生 Mac 支持\"]\n    RC --> TC[\"260k token 上下文\"]\n    TC --> UA[\"本地编程助手\"]\n```",
+      "diagrams": [
+        {
+          "title": "显存档位与对应模型",
+          "code": "flowchart TD\n    T1[\"4~8GB 显存\"] --> M1[\"30B 中国实验室模型\"]\n    T2[\"8~24GB 显存\"] --> M2[\"27B Prism BSI模型\"]\n    T3[\"24~96GB 显存\"] --> M3[\"3.6B Bonus模型\"]\n    T4[\"96~192GB 显存\"] --> M4[\"Laguna S2.1\"]\n    T5[\"192~384GB 显存\"] --> M5[\"motif3\"]"
+        },
+        {
+          "title": "模型压缩与加速技术",
+          "code": "flowchart TD\n    LT[\"循环 Transformer\"] --> RL[\"层多次运行\"]\n    BSI[\"BSI 压缩\"] --> WQ[\"每权重3值重训\"]\n    WQ --> Mini[\"3.9GB 迷你版\"]\n    WQ --> High[\"5.9GB 高质量版\"]\n    TC[\"thinking cap 微调\"] --> RLt[\"减少推理延迟\"]\n    RLt --> HL[\"推理延迟减半\"]\n    HL --> TE[\"每 token 少用约一半推理\"]"
+        },
+        {
+          "title": "高端模型特性与应用",
+          "code": "flowchart TD\n    LAG[\"Laguna S2.1\"] --> P1[\"1180B 参数\"]\n    P1 --> A1[\"80B 活跃\"]\n    A1 --> SP[\"稀疏激活\"]\n    SP --> BS[\"70% Terminal Bench\"]\n    BS --> DB[\"击败 1.6T Deep Secure\"]\n    LAG --> OW[\"开放权重\"]\n    LAG --> RD[\"7月21日发布\"]\n    LAG --> UC[\"单 Spark 运行浏览器引擎\"]\n    MOT[\"motif3\"] --> P2[\"3140B 参数\"]\n    P2 --> EX[\"384 专家网络\"]\n    EX --> AT[\"每 token 少数激活\"]\n    AT --> R3[\"全球第3 开放模型\"]\n    MOT --> OW2[\"开放许可证\"]"
+        },
+        {
+          "title": "本地部署流程概览",
+          "code": "flowchart TD\n    IC[\"ALLAMA 安装命令\"] --> MD[\"从 HuggingFace 下载模型\"]\n    MD --> RC[\"alarma run 启动\"]\n    RC --> FW[\"OpenClaw 框架集成\"]\n    FW --> OFF[\"完全离线运行\"]\n    OFF --> PR[\"本地隐私保护\"]\n    OFF --> COST[\"无需付费\"]\n    RC --> GPU[\"CUDA/NVIDIA 支持\"]\n    RC --> MAC[\"MLX 原生 Mac 支持\"]\n    RC --> TC[\"260k token 上下文\"]\n    TC --> UA[\"本地编程助手\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T21:03:10+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 本地AI模型选择与技术关系图谱\n\n## 显存档位与对应模型\n```mermaid\nflowchart TD\n    T1[\"4~8GB 显存\"] --> M1[\"30B 中国实验室模型\"]\n    T2[\"8~24GB 显存\"] --> M2[\"27B Prism BSI模型\"]\n    T3[\"24~96GB 显存\"] --> M3[\"3.6B Bonus模型\"]\n    T4[\"96~192GB 显存\"] --> M4[\"Laguna S2.1\"]\n    T5[\"192~384GB 显存\"] --> M5[\"motif3\"]\n```\n\n## 模型压缩与加速技术\n```mermaid\nflowchart TD\n    LT[\"循环 Transformer\"] --> RL[\"层多次运行\"]\n    BSI[\"BSI 压缩\"] --> WQ[\"每权重3值重训\"]\n    WQ --> Mini[\"3.9GB 迷你版\"]\n    WQ --> High[\"5.9GB 高质量版\"]\n    TC[\"thinking cap 微调\"] --> RLt[\"减少推理延迟\"]\n    RLt --> HL[\"推理延迟减半\"]\n    HL --> TE[\"每 token 少用约一半推理\"]\n```\n\n## 高端模型特性与应用\n```mermaid\nflowchart TD\n    LAG[\"Laguna S2.1\"] --> P1[\"1180B 参数\"]\n    P1 --> A1[\"80B 活跃\"]\n    A1 --> SP[\"稀疏激活\"]\n    SP --> BS[\"70% Terminal Bench\"]\n    BS --> DB[\"击败 1.6T Deep Secure\"]\n    LAG --> OW[\"开放权重\"]\n    LAG --> RD[\"7月21日发布\"]\n    LAG --> UC[\"单 Spark 运行浏览器引擎\"]\n    MOT[\"motif3\"] --> P2[\"3140B 参数\"]\n    P2 --> EX[\"384 专家网络\"]\n    EX --> AT[\"每 token 少数激活\"]\n    AT --> R3[\"全球第3 开放模型\"]\n    MOT --> OW2[\"开放许可证\"]\n```\n\n## 本地部署流程概览\n```mermaid\nflowchart TD\n    IC[\"ALLAMA 安装命令\"] --> MD[\"从 HuggingFace 下载模型\"]\n    MD --> RC[\"alarma run 启动\"]\n    RC --> FW[\"OpenClaw 框架集成\"]\n    FW --> OFF[\"完全离线运行\"]\n    OFF --> PR[\"本地隐私保护\"]\n    OFF --> COST[\"无需付费\"]\n    RC --> GPU[\"CUDA/NVIDIA 支持\"]\n    RC --> MAC[\"MLX 原生 Mac 支持\"]\n    RC --> TC[\"260k token 上下文\"]\n    TC --> UA[\"本地编程助手\"]\n```",
+  "diagrams": [
+    {
+      "title": "显存档位与对应模型",
+      "code": "flowchart TD\n    T1[\"4~8GB 显存\"] --> M1[\"30B 中国实验室模型\"]\n    T2[\"8~24GB 显存\"] --> M2[\"27B Prism BSI模型\"]\n    T3[\"24~96GB 显存\"] --> M3[\"3.6B Bonus模型\"]\n    T4[\"96~192GB 显存\"] --> M4[\"Laguna S2.1\"]\n    T5[\"192~384GB 显存\"] --> M5[\"motif3\"]"
+    },
+    {
+      "title": "模型压缩与加速技术",
+      "code": "flowchart TD\n    LT[\"循环 Transformer\"] --> RL[\"层多次运行\"]\n    BSI[\"BSI 压缩\"] --> WQ[\"每权重3值重训\"]\n    WQ --> Mini[\"3.9GB 迷你版\"]\n    WQ --> High[\"5.9GB 高质量版\"]\n    TC[\"thinking cap 微调\"] --> RLt[\"减少推理延迟\"]\n    RLt --> HL[\"推理延迟减半\"]\n    HL --> TE[\"每 token 少用约一半推理\"]"
+    },
+    {
+      "title": "高端模型特性与应用",
+      "code": "flowchart TD\n    LAG[\"Laguna S2.1\"] --> P1[\"1180B 参数\"]\n    P1 --> A1[\"80B 活跃\"]\n    A1 --> SP[\"稀疏激活\"]\n    SP --> BS[\"70% Terminal Bench\"]\n    BS --> DB[\"击败 1.6T Deep Secure\"]\n    LAG --> OW[\"开放权重\"]\n    LAG --> RD[\"7月21日发布\"]\n    LAG --> UC[\"单 Spark 运行浏览器引擎\"]\n    MOT[\"motif3\"] --> P2[\"3140B 参数\"]\n    P2 --> EX[\"384 专家网络\"]\n    EX --> AT[\"每 token 少数激活\"]\n    AT --> R3[\"全球第3 开放模型\"]\n    MOT --> OW2[\"开放许可证\"]"
+    },
+    {
+      "title": "本地部署流程概览",
+      "code": "flowchart TD\n    IC[\"ALLAMA 安装命令\"] --> MD[\"从 HuggingFace 下载模型\"]\n    MD --> RC[\"alarma run 启动\"]\n    RC --> FW[\"OpenClaw 框架集成\"]\n    FW --> OFF[\"完全离线运行\"]\n    OFF --> PR[\"本地隐私保护\"]\n    OFF --> COST[\"无需付费\"]\n    RC --> GPU[\"CUDA/NVIDIA 支持\"]\n    RC --> MAC[\"MLX 原生 Mac 支持\"]\n    RC --> TC[\"260k token 上下文\"]\n    TC --> UA[\"本地编程助手\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:03:10+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV127g96dEXM",
+  "title": "[X-agent] 与Godot引擎相连的专用AI开发工具",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1660,
+  "text": "Hello\n大家好\n我是局域联网\n最近呢结合我学到的agent开发知识\n以及我自己在做GODOT游戏项目里遇到的痛点\n做了一个面向于GODOT引擎的agent的桌面客户端\n叫做x agent\n它本身是基于PAGENT的\n我做了扩展和工具的补全以及用户界面\n对于GODOT项目会更加的方便和友好\n在这里做一个简单的教学\n给想要尝试的朋友们\n展示一下它的整体流程和使用方式\n首先是下载\n下载方式是在GITHUB上直接搜索x agent\n或者是从我姐姐的链接里面进入这里\n然后下载最新的release版本即可\n下载完成后是一个单EXE文件\n直接打开即可\n启动后你会看到有三个报警\n首先第一个是如果你没有安装pad的话\n它会提醒你需要安装\n因为我们这个项目是基于派而制作的\n安装完派之后\n你就会配置供应商\n配置供应商\n也就是我们所说的配置ipai key\n好\n点击配置供应商\n如果你有cc switch的话\n它支持从cc switch里面导入\n点击导入之后你会获得\n这就是我在cc switch上的三个三个API\n然后我点击启用\n模型及配置成功\n如果你没有的话\n也没关系\n可以从这里的预设里面配置API key\n然后获取最新模型\n然后替换到就可以保存并启用了\n最后一个即是写入他的path即可\n接下来我们的所有配置就全部完成了\n然后就是正式使用\n首先我们需要打开一个项目\n选择一个文件夹\n可以是空文件夹\n也可以是一个已有的项目\n因为agent是需要在一个确定的文件夹里面\n作为工作区域来进行使用的\n选择完文件夹之后\n我们就可以切换模型\n切换思考强度\n是否隐藏思考\n这个思考不会影响到真正的思考强度\n只是控制显示\nOK这个时候我们就可以进行正常的使用\n比如给他发一个\n好你会发现它可以调用工具来进行查看\n了解你这个项目里面现在有什么\n这个时候他已经知道了\n这是一个别彩百分块的复刻项目\n接下来就是我们的重头戏\n也就是和\ngoat t的联动\n这里我们提供了很多关于GODOT的工具\n我们把它全部启用\n启用完成后到这个GODOT编辑器RPC里面去\n首先选择一个真实的GODOT引擎\n然后安装这个RPC连接项目\n到当前的这个文件夹里面去\n安装完成之后启动编辑器\n这个时候\n项目里面会自动会有一个\n我们这个连接的插件\n这个插件是自动启用的\n同时它已经注册起来了\n这个时候我们就可以启动桥接\n启动桥接完成之后ping一下\n如果这里的ping展示正常已连接的话\n那么在对话内就可以使用了\n这个时候我们可以看一下\n这里就已经增加到了\n我们刚刚是新增加了几个工具\n我们来进行测试一下\n好他正常的调用起来了\n引擎里面的运行项目\n他已经了解到里面所有的运行日志\n是否停止运行\n而且他这里调用起来的是我们编辑器里面\n引擎所运行的项目\n而不是没有这些工具的时候\n用无头模式调定起来的\n无头模式调用起来的\n他是无法知道里面的报错以及下方的提示的\n我可以直接问\n好他会跟我讲\n完全没有报错\n这就是我们所提供的插件\n在goat的项目里面会起到的效果\n最后一个是我们的插件\n在插件管理这里\n你可以管理现有的派所拥有的插件和扩展\n而我们呢也提供了一个关于GODOT的\n一键安装的pad插件\n安装完成之后\n你会看到这里增加了很多关于GODOT编码\n以及使用系统上面的一些技能和提示词\n这一块我们还没有详细的仔细的去优化\n这一块\n只是有了一个大概的图形\n所以这就是我们目前这个x agent所用的全部功能\n我觉得他使用上面来说已经非常可用了\n可以解决我以前很多勾勒的项目\n测试里面的痛点\n比如说找不到报错\n比如说他不能实际的拉起\n他不能实际的拉起我的调试器里面的报错\n甚至说他连输出里面的报错\n都需要用MCP来提供它\n但现在通过插件连接到编辑器之后\n我和编辑器的操作都会在AI方面\n可见\n调试也会非非常的轻松\n那么这一期简短的介绍和教学就到这里\n我后续会更新更多相关的功能\n下一个版本应该会对于GODOT的引擎文档\n作为一个重点的突破\n那么这里是局域联网\n我们下次再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV127g96dEXM",
+  "published_at": "1785076075",
+  "fetched_at": "2026-08-08T20:32:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# X-agent 与 Godot 引擎的 AI 开发工具概览\n\n## 总览 (关键功能) [BV127g96dEXM P1 00:10] [BV127g96dEXM P1 01:03]\n```mermaid\nflowchart TD\n    A[\"x-agent 客户端\"]\n    B[\"基于 PAGENT\"]\n    C[\"UI 扩展\"]\n    D[\"GODOT 引擎集成\"]\n    E[\"工具插件库\"]\n    F[\"API Key 配置\"]\n    G[\"模型管理\"]\n    H[\"桥接插件\"]\n    I[\"用户交互\"]\n    J[\"调试支持\"]\n    A --> B\n    A --> C\n    A --> D\n    D --> E\n    D --> H\n    A --> F\n    A --> G\n    A --> I\n    A --> J\n```\n\n## 安装与配置流程 (下载、安装 PAD、配置供应商) [BV127g96dEXM P1 00:35] [BV127g96dEXM P1 01:27]\n```mermaid\nflowchart TD\n    A[\"下载 x-agent (GitHub Release)\"]\n    B[\"单 EXE 文件\"]\n    C[\"启动客户端\"]\n    D[\"检查 PAD 安装\"]\n    E[\"提示安装 PAD\"]\n    F[\"配置供应商 (API Key)\"]\n    G[\"导入 CC Switch API\"]\n    H[\"使用预设 API Key\"]\n    I[\"获取最新模型\"]\n    J[\"保存并启用模型\"]\n    K[\"写入路径\"]\n    L[\"完成配置\"]\n    A --> B --> C --> D\n    D --> E\n    D --> F\n    F --> G --> J\n    F --> H --> I --> J\n    J --> K --> L\n```\n\n## 项目使用流程 (打开项目、切换模型、交互) [BV127g96dEXM P1 02:10] [BV127g96dEXM P1 02:44]\n```mermaid\nflowchart TD\n    A[\"打开项目文件夹\"]\n    B[\"空文件夹或已有项目\"]\n    C[\"设定工作区\"]\n    D[\"切换模型\"]\n    E[\"调节思考强度\"]\n    F[\"显示/隐藏思考\"]\n    G[\"发送指令给 AI\"]\n    H[\"AI 调用工具\"]\n    I[\"获取项目信息\"]\n    J[\"交互结果\"]\n    A --> B --> C\n    C --> D\n    D --> E --> F\n    C --> G --> H --> I --> J\n```\n\n## GODOT 编辑器桥接 (启用插件、RPC 连接、桥接测试) [BV127g96dEXM P1 03:19] [BV127g96dEXM P1 04:36]\n```mermaid\nflowchart TD\n    A[\"启用 GODOT 工具插件\"]\n    B[\"打开 GODOT 编辑器\"]\n    C[\"安装 RPC 连接插件\"]\n    D[\"插件自动启用并注册\"]\n    E[\"启动桥接\"]\n    F[\"Ping 连接检测\"]\n    G[\"连接成功\"]\n    H[\"在对话中使用插件\"]\n    I[\"调用编辑器功能\"]\n    J[\"获取运行日志\"]\n    K[\"控制项目运行/停止\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I\n    I --> J\n    I --> K\n```\n\n## 功能与优势 (工具调用、调试、报错捕获) [BV127g96dEXM P1 04:40] [BV127g96dEXM P1 06:55]\n```mermaid\nflowchart TD\n    A[\"工具调用 (API)\"]\n    B[\"实时日志获取\"]\n    C[\"错误捕获\"]\n    D[\"调试信息展示\"]\n    E[\"无头模式限制\"]\n    F[\"AI 辅助调试\"]\n    G[\"插件管理\"]\n    H[\"一键安装 PAD 插件\"]\n    I[\"系统提示词\"]\n    J[\"提升开发效率\"]\n    A --> B --> C --> D --> F\n    E --> A\n    G --> H --> I --> J\n    F --> J\n```\n",
+      "diagrams": [
+        {
+          "title": "总览 (关键功能)",
+          "code": "flowchart TD\n    A[\"x-agent 客户端\"]\n    B[\"基于 PAGENT\"]\n    C[\"UI 扩展\"]\n    D[\"GODOT 引擎集成\"]\n    E[\"工具插件库\"]\n    F[\"API Key 配置\"]\n    G[\"模型管理\"]\n    H[\"桥接插件\"]\n    I[\"用户交互\"]\n    J[\"调试支持\"]\n    A --> B\n    A --> C\n    A --> D\n    D --> E\n    D --> H\n    A --> F\n    A --> G\n    A --> I\n    A --> J"
+        },
+        {
+          "title": "安装与配置流程 (下载、安装 PAD、配置供应商)",
+          "code": "flowchart TD\n    A[\"下载 x-agent (GitHub Release)\"]\n    B[\"单 EXE 文件\"]\n    C[\"启动客户端\"]\n    D[\"检查 PAD 安装\"]\n    E[\"提示安装 PAD\"]\n    F[\"配置供应商 (API Key)\"]\n    G[\"导入 CC Switch API\"]\n    H[\"使用预设 API Key\"]\n    I[\"获取最新模型\"]\n    J[\"保存并启用模型\"]\n    K[\"写入路径\"]\n    L[\"完成配置\"]\n    A --> B --> C --> D\n    D --> E\n    D --> F\n    F --> G --> J\n    F --> H --> I --> J\n    J --> K --> L"
+        },
+        {
+          "title": "项目使用流程 (打开项目、切换模型、交互)",
+          "code": "flowchart TD\n    A[\"打开项目文件夹\"]\n    B[\"空文件夹或已有项目\"]\n    C[\"设定工作区\"]\n    D[\"切换模型\"]\n    E[\"调节思考强度\"]\n    F[\"显示/隐藏思考\"]\n    G[\"发送指令给 AI\"]\n    H[\"AI 调用工具\"]\n    I[\"获取项目信息\"]\n    J[\"交互结果\"]\n    A --> B --> C\n    C --> D\n    D --> E --> F\n    C --> G --> H --> I --> J"
+        },
+        {
+          "title": "GODOT 编辑器桥接 (启用插件、RPC 连接、桥接测试)",
+          "code": "flowchart TD\n    A[\"启用 GODOT 工具插件\"]\n    B[\"打开 GODOT 编辑器\"]\n    C[\"安装 RPC 连接插件\"]\n    D[\"插件自动启用并注册\"]\n    E[\"启动桥接\"]\n    F[\"Ping 连接检测\"]\n    G[\"连接成功\"]\n    H[\"在对话中使用插件\"]\n    I[\"调用编辑器功能\"]\n    J[\"获取运行日志\"]\n    K[\"控制项目运行/停止\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I\n    I --> J\n    I --> K"
+        },
+        {
+          "title": "功能与优势 (工具调用、调试、报错捕获)",
+          "code": "flowchart TD\n    A[\"工具调用 (API)\"]\n    B[\"实时日志获取\"]\n    C[\"错误捕获\"]\n    D[\"调试信息展示\"]\n    E[\"无头模式限制\"]\n    F[\"AI 辅助调试\"]\n    G[\"插件管理\"]\n    H[\"一键安装 PAD 插件\"]\n    I[\"系统提示词\"]\n    J[\"提升开发效率\"]\n    A --> B --> C --> D --> F\n    E --> A\n    G --> H --> I --> J\n    F --> J"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T20:37:27+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# X-agent 与 Godot 引擎的 AI 开发工具概览\n\n## 总览 (关键功能) [BV127g96dEXM P1 00:10] [BV127g96dEXM P1 01:03]\n```mermaid\nflowchart TD\n    A[\"x-agent 客户端\"]\n    B[\"基于 PAGENT\"]\n    C[\"UI 扩展\"]\n    D[\"GODOT 引擎集成\"]\n    E[\"工具插件库\"]\n    F[\"API Key 配置\"]\n    G[\"模型管理\"]\n    H[\"桥接插件\"]\n    I[\"用户交互\"]\n    J[\"调试支持\"]\n    A --> B\n    A --> C\n    A --> D\n    D --> E\n    D --> H\n    A --> F\n    A --> G\n    A --> I\n    A --> J\n```\n\n## 安装与配置流程 (下载、安装 PAD、配置供应商) [BV127g96dEXM P1 00:35] [BV127g96dEXM P1 01:27]\n```mermaid\nflowchart TD\n    A[\"下载 x-agent (GitHub Release)\"]\n    B[\"单 EXE 文件\"]\n    C[\"启动客户端\"]\n    D[\"检查 PAD 安装\"]\n    E[\"提示安装 PAD\"]\n    F[\"配置供应商 (API Key)\"]\n    G[\"导入 CC Switch API\"]\n    H[\"使用预设 API Key\"]\n    I[\"获取最新模型\"]\n    J[\"保存并启用模型\"]\n    K[\"写入路径\"]\n    L[\"完成配置\"]\n    A --> B --> C --> D\n    D --> E\n    D --> F\n    F --> G --> J\n    F --> H --> I --> J\n    J --> K --> L\n```\n\n## 项目使用流程 (打开项目、切换模型、交互) [BV127g96dEXM P1 02:10] [BV127g96dEXM P1 02:44]\n```mermaid\nflowchart TD\n    A[\"打开项目文件夹\"]\n    B[\"空文件夹或已有项目\"]\n    C[\"设定工作区\"]\n    D[\"切换模型\"]\n    E[\"调节思考强度\"]\n    F[\"显示/隐藏思考\"]\n    G[\"发送指令给 AI\"]\n    H[\"AI 调用工具\"]\n    I[\"获取项目信息\"]\n    J[\"交互结果\"]\n    A --> B --> C\n    C --> D\n    D --> E --> F\n    C --> G --> H --> I --> J\n```\n\n## GODOT 编辑器桥接 (启用插件、RPC 连接、桥接测试) [BV127g96dEXM P1 03:19] [BV127g96dEXM P1 04:36]\n```mermaid\nflowchart TD\n    A[\"启用 GODOT 工具插件\"]\n    B[\"打开 GODOT 编辑器\"]\n    C[\"安装 RPC 连接插件\"]\n    D[\"插件自动启用并注册\"]\n    E[\"启动桥接\"]\n    F[\"Ping 连接检测\"]\n    G[\"连接成功\"]\n    H[\"在对话中使用插件\"]\n    I[\"调用编辑器功能\"]\n    J[\"获取运行日志\"]\n    K[\"控制项目运行/停止\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I\n    I --> J\n    I --> K\n```\n\n## 功能与优势 (工具调用、调试、报错捕获) [BV127g96dEXM P1 04:40] [BV127g96dEXM P1 06:55]\n```mermaid\nflowchart TD\n    A[\"工具调用 (API)\"]\n    B[\"实时日志获取\"]\n    C[\"错误捕获\"]\n    D[\"调试信息展示\"]\n    E[\"无头模式限制\"]\n    F[\"AI 辅助调试\"]\n    G[\"插件管理\"]\n    H[\"一键安装 PAD 插件\"]\n    I[\"系统提示词\"]\n    J[\"提升开发效率\"]\n    A --> B --> C --> D --> F\n    E --> A\n    G --> H --> I --> J\n    F --> J\n```\n",
+  "diagrams": [
+    {
+      "title": "总览 (关键功能)",
+      "code": "flowchart TD\n    A[\"x-agent 客户端\"]\n    B[\"基于 PAGENT\"]\n    C[\"UI 扩展\"]\n    D[\"GODOT 引擎集成\"]\n    E[\"工具插件库\"]\n    F[\"API Key 配置\"]\n    G[\"模型管理\"]\n    H[\"桥接插件\"]\n    I[\"用户交互\"]\n    J[\"调试支持\"]\n    A --> B\n    A --> C\n    A --> D\n    D --> E\n    D --> H\n    A --> F\n    A --> G\n    A --> I\n    A --> J"
+    },
+    {
+      "title": "安装与配置流程 (下载、安装 PAD、配置供应商)",
+      "code": "flowchart TD\n    A[\"下载 x-agent (GitHub Release)\"]\n    B[\"单 EXE 文件\"]\n    C[\"启动客户端\"]\n    D[\"检查 PAD 安装\"]\n    E[\"提示安装 PAD\"]\n    F[\"配置供应商 (API Key)\"]\n    G[\"导入 CC Switch API\"]\n    H[\"使用预设 API Key\"]\n    I[\"获取最新模型\"]\n    J[\"保存并启用模型\"]\n    K[\"写入路径\"]\n    L[\"完成配置\"]\n    A --> B --> C --> D\n    D --> E\n    D --> F\n    F --> G --> J\n    F --> H --> I --> J\n    J --> K --> L"
+    },
+    {
+      "title": "项目使用流程 (打开项目、切换模型、交互)",
+      "code": "flowchart TD\n    A[\"打开项目文件夹\"]\n    B[\"空文件夹或已有项目\"]\n    C[\"设定工作区\"]\n    D[\"切换模型\"]\n    E[\"调节思考强度\"]\n    F[\"显示/隐藏思考\"]\n    G[\"发送指令给 AI\"]\n    H[\"AI 调用工具\"]\n    I[\"获取项目信息\"]\n    J[\"交互结果\"]\n    A --> B --> C\n    C --> D\n    D --> E --> F\n    C --> G --> H --> I --> J"
+    },
+    {
+      "title": "GODOT 编辑器桥接 (启用插件、RPC 连接、桥接测试)",
+      "code": "flowchart TD\n    A[\"启用 GODOT 工具插件\"]\n    B[\"打开 GODOT 编辑器\"]\n    C[\"安装 RPC 连接插件\"]\n    D[\"插件自动启用并注册\"]\n    E[\"启动桥接\"]\n    F[\"Ping 连接检测\"]\n    G[\"连接成功\"]\n    H[\"在对话中使用插件\"]\n    I[\"调用编辑器功能\"]\n    J[\"获取运行日志\"]\n    K[\"控制项目运行/停止\"]\n    A --> B --> C --> D --> E --> F --> G --> H --> I\n    I --> J\n    I --> K"
+    },
+    {
+      "title": "功能与优势 (工具调用、调试、报错捕获)",
+      "code": "flowchart TD\n    A[\"工具调用 (API)\"]\n    B[\"实时日志获取\"]\n    C[\"错误捕获\"]\n    D[\"调试信息展示\"]\n    E[\"无头模式限制\"]\n    F[\"AI 辅助调试\"]\n    G[\"插件管理\"]\n    H[\"一键安装 PAD 插件\"]\n    I[\"系统提示词\"]\n    J[\"提升开发效率\"]\n    A --> B --> C --> D --> F\n    E --> A\n    G --> H --> I --> J\n    F --> J"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T20:37:27+00:00"
+}

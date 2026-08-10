@@ -1,0 +1,74 @@
+{
+  "bvid": "BV14dj36pEJ6",
+  "title": "零基础学软件逆向：解放双手！AI自动化逆向破解！某外挂卡密网络验证软件演示【二进制安全逆向，游戏安全，软件安全，网络安全，CTF比赛必备基础，封包技术】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 988,
+  "text": "今天呢我们继续给同学们去搭建这个AEI\n自动化逆向分析\n自动破解的这个这个东西啊\n我们来看一下全面深入的逆向分析\n就这么一个简单的提示词啊\n就完美破解授权\n也不需要其他的\n那就让他去破解\n然后待会呢我们就来看一下调教的这个效果哈\n目前呢是还在调教过程中\n然后他还在分析\n我们来看一下\n好他现在呢已经找到这个心跳的\n这个安装的这个验证了哈\n你看这个思考的这个速度还是非常快的啊\n你看不再exit process好\n他也找到这个安装了\n跟昨天那个是一样聪明的哈\n一样聪明的\n不仅去做这个逆向破解\n而且呢还会生成完整的这个分析报告嗯\n啊这是我自己电脑的东西啊\n我自己电脑也在跑这个AI智能体啊\n现在也在跑\n稍等稍等一下哈\n破解版DL已生成\n它生成到哪儿了\n我还不知道啊\n可能是这个一会呢他会提供报告的\n我们暂停一下吧\n但这个时间还蛮久的啊\n暂停一下好\n现在呢他就把这个报告呢已经完成了\n然后破解的位置呢也给我们分析出来了\n然后这个DL呢我们就拷贝出来\n拷贝到这边吧\n这个就先不管了\n先把它还原成以前的名字\n然后呢这个回收站这里有一个加载器的\n把这个加载器拷贝过来\n登录成功了\n看到没有\n也是破解开了\n破解开了啊\n然后\n去执行一下\n破解好了是吧\n这个verification啊\nsuccess成功了\n就是验证成功了啊\n破解成功\nOK那这个调教呢我们就调教完了\n他这个呢我是给他拉了1234\n拉了四次啊\n拉回来了呃\n所以说如果说大家啊大家想调教的话\n嗯有需要去安装这个智能体的\n那可以联系这个小迪老师\n然后呢可以给大家去调教一下啊\n这个不同的智能体啊\n不同的那个AI大模型啊\n它具有这个随机性\n针对某个特定的方向呢\n你就得调教\n你不调教的话\n他就没有办法\n一次性的就把这个东西呢给你破解开啊\n大概就这么个意思啊\n呃我的微信呢是爱杠小迪\n还有一个备用微信I小迪668\n一般呢嗯我的联系方式\n如果说封控了\n我会发在这个上面\n大家能来这个网站就可以了\n或者说看我这个B站主页也是可以的\n避震逆向安全\n小迪小迪老师\nOK那这个的话呢\n就是我们今天这个视频的一个演示的一个全\n全部内容哈\n想搭建的想调教的啊\n搭建也接搭建\n就是懒人懒人用啊\n不想搭\n那我来给你搭对吧\n有一个时间成本的\n然后加调教\n搭建加调教都可以给大家做啊\n你搭建好了\n我也可以给你调教也是可以的\n好那这个视频呢我们就进行到这了哈",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14dj36pEJ6",
+  "published_at": "1781602993",
+  "fetched_at": "2026-08-10T07:26:41+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 零基础学软件逆向：AI自动化逆向破解知识图谱\n\n## Overview\n\n```mermaid\nflowchart TD\n    A1[\"AEI 自动化逆向分析系统\"]\n    A2[\"用户提供提示词\"]\n    A3[\"AI 智能体\"]\n    A4[\"逆向分析过程\"]\n    A5[\"生成分析报告\"]\n    A6[\"生成破解版 DL\"]\n    A7[\"加载器拷贝 & 文件还原\"]\n    A8[\"验证成功\"]\n    A9[\"调教（训练）\"]\n    A10[\"联系小迪老师\"]\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A3 --> A9\n    A9 --> A3\n    A9 --> A10\n```\n\n## Automated Reverse Engineering Workflow\n\n```mermaid\nflowchart LR\n    B1[\"输入提示词（授权破解）\"]\n    B2[\"AI 智能体分析目标软件\"]\n    B3[\"定位心跳验证机制\"]\n    B4[\"生成完整分析报告\"]\n    B5[\"生成破解版 DL 文件\"]\n    B6[\"拷贝报告 & 还原文件名\"]\n    B7[\"加载器复制至目标目录\"]\n    B8[\"执行并验证 success\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8\n```\n\n## Training & Model Customization Loop\n\n```mermaid\nflowchart TD\n    C1[\"用户需求：特定方向破解\"]\n    C2[\"AI 大模型（随机性）\"]\n    C3[\"调教过程：拉 1、2、3、4 次\"]\n    C4[\"模型适配特定方向\"]\n    C5[\"提升一次性破解成功率\"]\n    C1 --> C2\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5\n```\n\n## Service Offering & Contact\n\n```mermaid\nflowchart LR\n    D1[\"懒人使用：搭建 + 调教\"]\n    D2[\"自行搭建 & 调教\"]\n    D3[\"时间成本\"]\n    D4[\"联系小迪老师（微信：爱杠小迪 / 备用：I小迪668）\"]\n    D5[\"获取 AI 智能体或定制调教\"]\n    D1 --> D3\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5\n```",
+      "diagrams": [
+        {
+          "title": "Overview",
+          "code": "flowchart TD\n    A1[\"AEI 自动化逆向分析系统\"]\n    A2[\"用户提供提示词\"]\n    A3[\"AI 智能体\"]\n    A4[\"逆向分析过程\"]\n    A5[\"生成分析报告\"]\n    A6[\"生成破解版 DL\"]\n    A7[\"加载器拷贝 & 文件还原\"]\n    A8[\"验证成功\"]\n    A9[\"调教（训练）\"]\n    A10[\"联系小迪老师\"]\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A3 --> A9\n    A9 --> A3\n    A9 --> A10"
+        },
+        {
+          "title": "Automated Reverse Engineering Workflow",
+          "code": "flowchart LR\n    B1[\"输入提示词（授权破解）\"]\n    B2[\"AI 智能体分析目标软件\"]\n    B3[\"定位心跳验证机制\"]\n    B4[\"生成完整分析报告\"]\n    B5[\"生成破解版 DL 文件\"]\n    B6[\"拷贝报告 & 还原文件名\"]\n    B7[\"加载器复制至目标目录\"]\n    B8[\"执行并验证 success\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8"
+        },
+        {
+          "title": "Training & Model Customization Loop",
+          "code": "flowchart TD\n    C1[\"用户需求：特定方向破解\"]\n    C2[\"AI 大模型（随机性）\"]\n    C3[\"调教过程：拉 1、2、3、4 次\"]\n    C4[\"模型适配特定方向\"]\n    C5[\"提升一次性破解成功率\"]\n    C1 --> C2\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5"
+        },
+        {
+          "title": "Service Offering & Contact",
+          "code": "flowchart LR\n    D1[\"懒人使用：搭建 + 调教\"]\n    D2[\"自行搭建 & 调教\"]\n    D3[\"时间成本\"]\n    D4[\"联系小迪老师（微信：爱杠小迪 / 备用：I小迪668）\"]\n    D5[\"获取 AI 智能体或定制调教\"]\n    D1 --> D3\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T07:27:01+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 零基础学软件逆向：AI自动化逆向破解知识图谱\n\n## Overview\n\n```mermaid\nflowchart TD\n    A1[\"AEI 自动化逆向分析系统\"]\n    A2[\"用户提供提示词\"]\n    A3[\"AI 智能体\"]\n    A4[\"逆向分析过程\"]\n    A5[\"生成分析报告\"]\n    A6[\"生成破解版 DL\"]\n    A7[\"加载器拷贝 & 文件还原\"]\n    A8[\"验证成功\"]\n    A9[\"调教（训练）\"]\n    A10[\"联系小迪老师\"]\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A3 --> A9\n    A9 --> A3\n    A9 --> A10\n```\n\n## Automated Reverse Engineering Workflow\n\n```mermaid\nflowchart LR\n    B1[\"输入提示词（授权破解）\"]\n    B2[\"AI 智能体分析目标软件\"]\n    B3[\"定位心跳验证机制\"]\n    B4[\"生成完整分析报告\"]\n    B5[\"生成破解版 DL 文件\"]\n    B6[\"拷贝报告 & 还原文件名\"]\n    B7[\"加载器复制至目标目录\"]\n    B8[\"执行并验证 success\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8\n```\n\n## Training & Model Customization Loop\n\n```mermaid\nflowchart TD\n    C1[\"用户需求：特定方向破解\"]\n    C2[\"AI 大模型（随机性）\"]\n    C3[\"调教过程：拉 1、2、3、4 次\"]\n    C4[\"模型适配特定方向\"]\n    C5[\"提升一次性破解成功率\"]\n    C1 --> C2\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5\n```\n\n## Service Offering & Contact\n\n```mermaid\nflowchart LR\n    D1[\"懒人使用：搭建 + 调教\"]\n    D2[\"自行搭建 & 调教\"]\n    D3[\"时间成本\"]\n    D4[\"联系小迪老师（微信：爱杠小迪 / 备用：I小迪668）\"]\n    D5[\"获取 AI 智能体或定制调教\"]\n    D1 --> D3\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5\n```",
+  "diagrams": [
+    {
+      "title": "Overview",
+      "code": "flowchart TD\n    A1[\"AEI 自动化逆向分析系统\"]\n    A2[\"用户提供提示词\"]\n    A3[\"AI 智能体\"]\n    A4[\"逆向分析过程\"]\n    A5[\"生成分析报告\"]\n    A6[\"生成破解版 DL\"]\n    A7[\"加载器拷贝 & 文件还原\"]\n    A8[\"验证成功\"]\n    A9[\"调教（训练）\"]\n    A10[\"联系小迪老师\"]\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n    A3 --> A9\n    A9 --> A3\n    A9 --> A10"
+    },
+    {
+      "title": "Automated Reverse Engineering Workflow",
+      "code": "flowchart LR\n    B1[\"输入提示词（授权破解）\"]\n    B2[\"AI 智能体分析目标软件\"]\n    B3[\"定位心跳验证机制\"]\n    B4[\"生成完整分析报告\"]\n    B5[\"生成破解版 DL 文件\"]\n    B6[\"拷贝报告 & 还原文件名\"]\n    B7[\"加载器复制至目标目录\"]\n    B8[\"执行并验证 success\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8"
+    },
+    {
+      "title": "Training & Model Customization Loop",
+      "code": "flowchart TD\n    C1[\"用户需求：特定方向破解\"]\n    C2[\"AI 大模型（随机性）\"]\n    C3[\"调教过程：拉 1、2、3、4 次\"]\n    C4[\"模型适配特定方向\"]\n    C5[\"提升一次性破解成功率\"]\n    C1 --> C2\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5"
+    },
+    {
+      "title": "Service Offering & Contact",
+      "code": "flowchart LR\n    D1[\"懒人使用：搭建 + 调教\"]\n    D2[\"自行搭建 & 调教\"]\n    D3[\"时间成本\"]\n    D4[\"联系小迪老师（微信：爱杠小迪 / 备用：I小迪668）\"]\n    D5[\"获取 AI 智能体或定制调教\"]\n    D1 --> D3\n    D2 --> D3\n    D3 --> D4\n    D4 --> D5"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T07:27:01+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1wJoyBqE6z",
+  "title": "2026AI视频新王！FramePack解锁两分钟高清动画，最低6GB显存可运行，超丝滑动态，图生视频高质量生成！包含首尾帧，生成高质量AI视频的正确打开姿势",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2156,
+  "text": "黎明镐大神前天又开源了一个新专案\n可以一次生成长达60秒的影片\n的猫只需要一张图\n就能生成整整一分钟的丝滑视频\n而且重点来了\n他居然只要6GB显卡内存就能跑起来\n你没有听错\n实测显存占用真的只要6GB\n这是我们熟知的control net\ni see light focus的开发者张吕敏博士最新王炸作品\nFrame pack\n我们来看一下项目页介绍的技术原理\nframe pack在生成视频时会预测下一帧的画面\n同时参考上下文动画\n再根据每一帧的重要性来分配显卡资源\n关键画面疯狂加显卡Buff\n就像学霸画重点重要画面开小灶\n普通画面就吃大锅饭\n最牛的是\n原本渲染一帧要烧1536个token\n现在直接砍到192个\n大大的节省了显存的占用\n接下来我们就进入康复UI\n体验一下敏神的全新的AI视频技术\n这边KG大神也连夜非常高效的推出了\n支持分frame pack技术的come fu i插件\n不过目前这个插件还没有入库\n所以我们要到GITHUB上面把压缩包download下载下来\n减压后\n手动把它放置到CONFUI跟目录的custom nodes\n文件夹里面\n然后重启一下CFUI启动器\n就会自动部署这个插件所必需的环境了\n接下来就是要部署frame pack对应的模型\n首先是encoder v a e和seek clip\n在插件主页都有提供对应的模型下载地址\n然后就是主模型\n这里可以用米神提供的原版模型\n它是分为好几个文件\n一共是25.6GB左右的大小\n而KJ也把这个主模型进行了转化\n做成了单个模型文件\n并进行了FP8和bf16的量化版\n这里懒人包我也给大家整理好了\n大家根据这里面的提示\n把四大金刚模型分别放置到CONFUI\n对应的目录即可\n而这里的主模型大家二选一就可以了\n米神原版的是多个文件的\n这里建议大家下载kg转换过的单文件模型\n使用起来会更加的方便\n接下来我们就进入CPUI\n打开我提前给大家手搓好的frying pack工作流\n我们来过一下这个工作流\n这个工作流实际上我们要做的就是两件事\n一就是在这里上传一张图片进来\n二就是在这里填写上对应的提示词\n为了让大家更好地填写提示词\n米神也很贴心的给我们准备了一段\nchat gbt的训练模板\n只需要把这段文字复制一下\n然后进入GPT4O\n直接把这段提示词粘贴过来\n这时候GBT4O就会告诉我们\n已经懂我们的意思了\n提示我们上传图片进来\n这时候直接把图片上传过来\n然后GBT4O就会根据训练的要求\n把画面要展示的动态提示词返回给我们\n那么我们把这一段提示词复制到frame pack\n工作流里面\n接着上面是主模型的选择\n我这里用到的是kg的单文件的节点\n选择容量体积小一点的FP8版本\n下面是clip和VAE的选择\n这里实际用到的就是会员模型的\nclip和VAE类型\n这里选择会员video\n最下面click视觉加载器模型\n选择sick clip vision patch14\n然后这里的图片处理模块需要注意的是\n这个640的数值不要改动它\n这个数值是固定的\n只要一改变这个数值\n工作流就会报错\n这个模块实际就是会自动根据算法的要求\n把我们上传的图片进行压缩处理\n自动缩放成合适的大小\n然后传输进frame pack的采样器\n这里的步数就是生成视频的帧数率\n目前测试效果最好的是30帧每秒\n如果这里设置成30\n那么后面视频合并节点的帧数率\n也应该保持一样的设置\n这里的t take是起到加速的功能\n建议大家开启哈\n下面的参数和阈值全部都保持默认值\n就是最好的效果了\n接着是这个total second length\n就是设置生成视频的总时长\n最大可以支持60秒一分钟的长视频\n然后就是非常重要的这个GPU memory参数\n默认值是六\n这个数值越大就会占用越少的显存\n但渲染速度也会随之变慢\n默认值六的数值下\n工作流跑起来占用的显存也是非常高的\n这样的显存占用大部分的显卡是跑不起来的\n那么我们只需要把这个数值从六增加到40\n这时候神奇的事情就发生了\n总显存占用就直接降到了仅仅6GB的大小\n非常的夸张\n这里我测试了不同数值下\n显存的占用和生成的时间\n基本数值在十以下都是占用较高的显存的\n但如果继续加大这个数值\n显存就开始逐渐下降了\n但到达40后啊\n再增加这个数值显存就不会下降了\n也就是6GB的显存是frame pack的最低标准了\n这里上传一张斗破小医仙的图片\n提示词\n输入这个女孩坐在树桩上轻拨琴弦\n只见优雅滑动\n秋风拂过\n落叶伴随旋律缓缓飘落\n画面如诗如梦\n可以看到啊\nFree pack\n在角色保持度和动作自然度方面\n真的是一点都不输市面上付费的AI视频软件\n整个动态也是非常丝滑流畅的\n接着上传一张二次元小姐姐的图片\n提示词输入这个女孩轻盈的在雪山小径上行走\n双马尾随风摆动\n阳光洒落在她身上\n仿佛走进了梦幻童话世界\n可以看到人物的走路动作也是非常自然的\n包括地面反射出来的画面也是完全没有问题的\n好的小伙伴们\n本期视频就是分享到这了\n视频中用到的工作流和模型\n我已经打包好上存到网盘上面了\n有需要的小伙伴可以在评论区给我留言\n我会逐一分享给你\n下一期我们再来聊一聊frame pack的首尾帧玩法\n小伙伴们\n我们下期见拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wJoyBqE6z",
+  "published_at": "1777289848",
+  "fetched_at": "2026-08-08T01:56:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# FramePack 知识图谱\n\n## FramePack技术概览 [BV1wJoyBqE6z P1 00:27] [BV1wJoyBqE6z P1 00:33] [BV1wJoyBqE6z P1 00:44]\n```mermaid\nflowchart TD\n    A1[\"FramePack技术\"]\n    A2[\"预测下一帧\"]\n    A3[\"参考上下文动画\"]\n    A4[\"根据帧重要性分配显卡资源\"]\n    A5[\"关键帧加显卡Buff\"]\n    A6[\"普通帧共享资源\"]\n    A7[\"Token数从1536降至192\"]\n    A8[\"显存占用大幅降低\"]\n\n    A1 --> A2\n    A1 --> A3\n    A2 --> A4\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A5 --> A8\n    A6 --> A8\n    A7 --> A8\n```\n\n## 安装与模型部署流程 [BV1wJoyBqE6z P1 01:00] [BV1wJoyBqE6z P1 01:10] [BV1wJoyBqE6z P1 01:15] [BV1wJoyBqE6z P1 01:21]\n```mermaid\nflowchart TD\n    B1[\"下载come fu i插件压缩包\"]\n    B2[\"解压后放入 CONFUI/custom nodes\"]\n    B3[\"重启 CFUI 启动器\"]\n    B4[\"部署 FramePack 模型\"]\n    B5[\"下载 Encoder VAE 与 CLIP 模型\"]\n    B6[\"下载主模型（多文件）\"]\n    B7[\"KG 单文件模型（FP8/BF16 量化）\"]\n    B8[\"将四大金刚模型放入对应目录\"]\n    B9[\"选择单文件或多文件主模型\"]\n    B10[\"完成模型部署\"]\n\n    B1 --> B2 --> B3 --> B4\n    B4 --> B5\n    B4 --> B6\n    B4 --> B7\n    B5 --> B8\n    B6 --> B8\n    B7 --> B8\n    B8 --> B9 --> B10\n```\n\n## 工作流关键参数设置 [BV1wJoyBqE6z P1 02:14] [BV1wJoyBqE6z P1 02:20] [BV1wJoyBqE6z P1 02:30] [BV1wJoyBqE6z P1 03:38] [BV1wJoyBqE6z P1 04:06] [BV1wJoyBqE6z P1 04:28]\n```mermaid\nflowchart TD\n    C1[\"上传图片\"]\n    C2[\"生成提示词（GPT4O）\"]\n    C3[\"将提示词输入 FramePack\"]\n    C4[\"帧率设置为 30 fps\"]\n    C5[\"保持 640 固定尺寸\"]\n    C6[\"t_take 加速功能开启\"]\n    C7[\"阈值保持默认\"]\n    C8[\"total second length ≤ 60 s\"]\n    C9[\"GPU memory 参数默认 6\"]\n    C10[\"将 GPU memory 调至 40 → 显存降至 6 GB\"]\n    C11[\"运行工作流生成视频\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10 --> C11\n```\n\n## GPU Memory 参数与显存占用关系 [BV1wJoyBqE6z P1 04:09] [BV1wJoyBqE6z P1 04:26] [BV1wJoyBqE6z P1 04:41] [BV1wJoyBqE6z P1 04:45]\n```mermaid\nflowchart LR\n    D1[\"GPU memory 参数\"]\n    D2[\"数值增大\"]\n    D3[\"显存占用下降\"]\n    D4[\"数值 ≤ 10 时显存仍高\"]\n    D5[\"数值 ≈ 40 时显存最低 6 GB\"]\n    D6[\"数值 > 40 时显存不再下降\"]\n    D7[\"6 GB 为 FramePack 最低显存标准\"]\n\n    D1 --> D2 --> D3\n    D3 --> D4\n    D3 --> D5 --> D6 --> D7\n```",
+      "diagrams": [
+        {
+          "title": "FramePack技术概览",
+          "code": "flowchart TD\n    A1[\"FramePack技术\"]\n    A2[\"预测下一帧\"]\n    A3[\"参考上下文动画\"]\n    A4[\"根据帧重要性分配显卡资源\"]\n    A5[\"关键帧加显卡Buff\"]\n    A6[\"普通帧共享资源\"]\n    A7[\"Token数从1536降至192\"]\n    A8[\"显存占用大幅降低\"]\n\n    A1 --> A2\n    A1 --> A3\n    A2 --> A4\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A5 --> A8\n    A6 --> A8\n    A7 --> A8"
+        },
+        {
+          "title": "安装与模型部署流程",
+          "code": "flowchart TD\n    B1[\"下载come fu i插件压缩包\"]\n    B2[\"解压后放入 CONFUI/custom nodes\"]\n    B3[\"重启 CFUI 启动器\"]\n    B4[\"部署 FramePack 模型\"]\n    B5[\"下载 Encoder VAE 与 CLIP 模型\"]\n    B6[\"下载主模型（多文件）\"]\n    B7[\"KG 单文件模型（FP8/BF16 量化）\"]\n    B8[\"将四大金刚模型放入对应目录\"]\n    B9[\"选择单文件或多文件主模型\"]\n    B10[\"完成模型部署\"]\n\n    B1 --> B2 --> B3 --> B4\n    B4 --> B5\n    B4 --> B6\n    B4 --> B7\n    B5 --> B8\n    B6 --> B8\n    B7 --> B8\n    B8 --> B9 --> B10"
+        },
+        {
+          "title": "工作流关键参数设置",
+          "code": "flowchart TD\n    C1[\"上传图片\"]\n    C2[\"生成提示词（GPT4O）\"]\n    C3[\"将提示词输入 FramePack\"]\n    C4[\"帧率设置为 30 fps\"]\n    C5[\"保持 640 固定尺寸\"]\n    C6[\"t_take 加速功能开启\"]\n    C7[\"阈值保持默认\"]\n    C8[\"total second length ≤ 60 s\"]\n    C9[\"GPU memory 参数默认 6\"]\n    C10[\"将 GPU memory 调至 40 → 显存降至 6 GB\"]\n    C11[\"运行工作流生成视频\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10 --> C11"
+        },
+        {
+          "title": "GPU Memory 参数与显存占用关系",
+          "code": "flowchart LR\n    D1[\"GPU memory 参数\"]\n    D2[\"数值增大\"]\n    D3[\"显存占用下降\"]\n    D4[\"数值 ≤ 10 时显存仍高\"]\n    D5[\"数值 ≈ 40 时显存最低 6 GB\"]\n    D6[\"数值 > 40 时显存不再下降\"]\n    D7[\"6 GB 为 FramePack 最低显存标准\"]\n\n    D1 --> D2 --> D3\n    D3 --> D4\n    D3 --> D5 --> D6 --> D7"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T01:56:42+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# FramePack 知识图谱\n\n## FramePack技术概览 [BV1wJoyBqE6z P1 00:27] [BV1wJoyBqE6z P1 00:33] [BV1wJoyBqE6z P1 00:44]\n```mermaid\nflowchart TD\n    A1[\"FramePack技术\"]\n    A2[\"预测下一帧\"]\n    A3[\"参考上下文动画\"]\n    A4[\"根据帧重要性分配显卡资源\"]\n    A5[\"关键帧加显卡Buff\"]\n    A6[\"普通帧共享资源\"]\n    A7[\"Token数从1536降至192\"]\n    A8[\"显存占用大幅降低\"]\n\n    A1 --> A2\n    A1 --> A3\n    A2 --> A4\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A5 --> A8\n    A6 --> A8\n    A7 --> A8\n```\n\n## 安装与模型部署流程 [BV1wJoyBqE6z P1 01:00] [BV1wJoyBqE6z P1 01:10] [BV1wJoyBqE6z P1 01:15] [BV1wJoyBqE6z P1 01:21]\n```mermaid\nflowchart TD\n    B1[\"下载come fu i插件压缩包\"]\n    B2[\"解压后放入 CONFUI/custom nodes\"]\n    B3[\"重启 CFUI 启动器\"]\n    B4[\"部署 FramePack 模型\"]\n    B5[\"下载 Encoder VAE 与 CLIP 模型\"]\n    B6[\"下载主模型（多文件）\"]\n    B7[\"KG 单文件模型（FP8/BF16 量化）\"]\n    B8[\"将四大金刚模型放入对应目录\"]\n    B9[\"选择单文件或多文件主模型\"]\n    B10[\"完成模型部署\"]\n\n    B1 --> B2 --> B3 --> B4\n    B4 --> B5\n    B4 --> B6\n    B4 --> B7\n    B5 --> B8\n    B6 --> B8\n    B7 --> B8\n    B8 --> B9 --> B10\n```\n\n## 工作流关键参数设置 [BV1wJoyBqE6z P1 02:14] [BV1wJoyBqE6z P1 02:20] [BV1wJoyBqE6z P1 02:30] [BV1wJoyBqE6z P1 03:38] [BV1wJoyBqE6z P1 04:06] [BV1wJoyBqE6z P1 04:28]\n```mermaid\nflowchart TD\n    C1[\"上传图片\"]\n    C2[\"生成提示词（GPT4O）\"]\n    C3[\"将提示词输入 FramePack\"]\n    C4[\"帧率设置为 30 fps\"]\n    C5[\"保持 640 固定尺寸\"]\n    C6[\"t_take 加速功能开启\"]\n    C7[\"阈值保持默认\"]\n    C8[\"total second length ≤ 60 s\"]\n    C9[\"GPU memory 参数默认 6\"]\n    C10[\"将 GPU memory 调至 40 → 显存降至 6 GB\"]\n    C11[\"运行工作流生成视频\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10 --> C11\n```\n\n## GPU Memory 参数与显存占用关系 [BV1wJoyBqE6z P1 04:09] [BV1wJoyBqE6z P1 04:26] [BV1wJoyBqE6z P1 04:41] [BV1wJoyBqE6z P1 04:45]\n```mermaid\nflowchart LR\n    D1[\"GPU memory 参数\"]\n    D2[\"数值增大\"]\n    D3[\"显存占用下降\"]\n    D4[\"数值 ≤ 10 时显存仍高\"]\n    D5[\"数值 ≈ 40 时显存最低 6 GB\"]\n    D6[\"数值 > 40 时显存不再下降\"]\n    D7[\"6 GB 为 FramePack 最低显存标准\"]\n\n    D1 --> D2 --> D3\n    D3 --> D4\n    D3 --> D5 --> D6 --> D7\n```",
+  "diagrams": [
+    {
+      "title": "FramePack技术概览",
+      "code": "flowchart TD\n    A1[\"FramePack技术\"]\n    A2[\"预测下一帧\"]\n    A3[\"参考上下文动画\"]\n    A4[\"根据帧重要性分配显卡资源\"]\n    A5[\"关键帧加显卡Buff\"]\n    A6[\"普通帧共享资源\"]\n    A7[\"Token数从1536降至192\"]\n    A8[\"显存占用大幅降低\"]\n\n    A1 --> A2\n    A1 --> A3\n    A2 --> A4\n    A3 --> A4\n    A4 --> A5\n    A4 --> A6\n    A5 --> A8\n    A6 --> A8\n    A7 --> A8"
+    },
+    {
+      "title": "安装与模型部署流程",
+      "code": "flowchart TD\n    B1[\"下载come fu i插件压缩包\"]\n    B2[\"解压后放入 CONFUI/custom nodes\"]\n    B3[\"重启 CFUI 启动器\"]\n    B4[\"部署 FramePack 模型\"]\n    B5[\"下载 Encoder VAE 与 CLIP 模型\"]\n    B6[\"下载主模型（多文件）\"]\n    B7[\"KG 单文件模型（FP8/BF16 量化）\"]\n    B8[\"将四大金刚模型放入对应目录\"]\n    B9[\"选择单文件或多文件主模型\"]\n    B10[\"完成模型部署\"]\n\n    B1 --> B2 --> B3 --> B4\n    B4 --> B5\n    B4 --> B6\n    B4 --> B7\n    B5 --> B8\n    B6 --> B8\n    B7 --> B8\n    B8 --> B9 --> B10"
+    },
+    {
+      "title": "工作流关键参数设置",
+      "code": "flowchart TD\n    C1[\"上传图片\"]\n    C2[\"生成提示词（GPT4O）\"]\n    C3[\"将提示词输入 FramePack\"]\n    C4[\"帧率设置为 30 fps\"]\n    C5[\"保持 640 固定尺寸\"]\n    C6[\"t_take 加速功能开启\"]\n    C7[\"阈值保持默认\"]\n    C8[\"total second length ≤ 60 s\"]\n    C9[\"GPU memory 参数默认 6\"]\n    C10[\"将 GPU memory 调至 40 → 显存降至 6 GB\"]\n    C11[\"运行工作流生成视频\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10 --> C11"
+    },
+    {
+      "title": "GPU Memory 参数与显存占用关系",
+      "code": "flowchart LR\n    D1[\"GPU memory 参数\"]\n    D2[\"数值增大\"]\n    D3[\"显存占用下降\"]\n    D4[\"数值 ≤ 10 时显存仍高\"]\n    D5[\"数值 ≈ 40 时显存最低 6 GB\"]\n    D6[\"数值 > 40 时显存不再下降\"]\n    D7[\"6 GB 为 FramePack 最低显存标准\"]\n\n    D1 --> D2 --> D3\n    D3 --> D4\n    D3 --> D5 --> D6 --> D7"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T01:56:42+00:00"
+}

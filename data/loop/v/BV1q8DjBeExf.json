@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1q8DjBeExf",
+  "title": "【2026最新版】大模型推理框架VLLM 原理详解！把大模型推理最重要的两个阶段及核心问题+技能全都讲明白，大模型入门教程，从0基础小白到大神只要这套就够了！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 383,
+  "text": "今晚呢咱们这边呢直播的这个内容呢是我们来去解读呃\n剖析一下这个V2M推理引擎啊\n那这个东西呢它实际上是比较核心的\n对于这个大模型来说啊\n就是我们来去学习大模型的过程当中呢\n肯定要去了解这个呃推理引擎相关的一些原理机制啊\n包括它里面的一些这个相关的一些概念好\n那这里面首先老师先来去做一个简单的自我介绍啊\n那这里面老师本人呢叫陈博\n然后从事算法十余年了\n然后并且呢拥有丰富的教学经验啊\n这里面有同学谈到课件啊\n那课件这个课后可以分享给同学们啊\n啊这个这个课后把这个老师讲的这个PPT啊分享给同学们\n然后呢过往的履历呢\n这里面除了在咱们这个马氏集团呢\n来去讲这个人工智能和这个大模型相关的这个课程内容之外呢\n然后还在企业里面呢\n实际上经常做一些企业的这个内训啊\n然后那涵盖的一些技术呢实际上涉及到NLP呀\n图像识别呀\n然后包括大模型\n机器学习\n深度学习等等啊\n这些技术啊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1q8DjBeExf",
+  "published_at": "1775632869",
+  "fetched_at": "2026-08-07T16:08:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 大模型推理与 VLLM 引擎概览\n\n## 知识概览\n```mermaid\nflowchart TD\n    VLLM[\"VLLM 推理引擎\"]\n    Model[\"大模型\"]\n    Infer[\"推理过程\"]\n    Speaker[\"陈博\"]\n    TeachExp[\"教学经验\"]\n    Slides[\"课件分享\"]\n    PPT[\"PPT\"]\n    NLP[\"NLP\"]\n    Vision[\"图像识别\"]\n    ML[\"机器学习\"]\n    DL[\"深度学习\"]\n    Company[\"马氏集团\"]\n\n    VLLM --> Model\n    VLLM --> Infer\n    Model --> Infer\n    Speaker --> TeachExp\n    Speaker --> Slides\n    Slides --> PPT\n    Speaker --> Model\n    Model --> NLP\n    Model --> Vision\n    Model --> ML\n    Model --> DL\n    Company --> Speaker\n```\nVLLM 推理引擎: [BV1q8DjBeExf P1 00:07]  \n大模型: [BV1q8DjBeExf P1 00:18]  \n推理过程: [BV1q8DjBeExf P1 00:20]  \n陈博: [BV1q8DjBeExf P1 00:36]  \n教学经验: [BV1q8DjBeExf P1 00:41]  \n课件分享: [BV1q8DjBeExf P1 00:45]  \nPPT: [BV1q8DjBeExf P1 00:49]  \nNLP: [BV1q8DjBeExf P1 01:10]  \n图像识别: [BV1q8DjBeExf P1 01:14]  \n机器学习: [BV1q8DjBeExf P1 01:17]  \n深度学习: [BV1q8DjBeExf P1 01:18]  \n马氏集团: [BV1q8DjBeExf P1 01:00]  \n\n## 学习路径\n```mermaid\nflowchart LR\n    Start[\"了解 VLLM 推理引擎\"]\n    Step1[\"学习大模型概念\"]\n    Step2[\"掌握 NLP 基础\"]\n    Step3[\"掌握图像识别技术\"]\n    Step4[\"掌握机器学习方法\"]\n    Step5[\"掌握深度学习技巧\"]\n    End[\"完成课程学习\"]\n\n    Start --> Step1\n    Step1 --> Step2\n    Step2 --> Step3\n    Step3 --> Step4\n    Step4 --> Step5\n    Step5 --> End\n```\n了解 VLLM 推理引擎: [BV1q8DjBeExf P1 00:07]  \n学习大模型概念: [BV1q8DjBeExf P1 00:18]  \n掌握 NLP 基础: [BV1q8DjBeExf P1 01:10]  \n掌握图像识别技术: [BV1q8DjBeExf P1 01:14]  \n掌握机器学习方法: [BV1q8DjBeExf P1 01:17]  \n掌握深度学习技巧: [BV1q8DjBeExf P1 01:18]  \n完成课程学习: [BV1q8DjBeExf P1 00:45]  ",
+      "diagrams": [
+        {
+          "title": "知识概览",
+          "code": "flowchart TD\n    VLLM[\"VLLM 推理引擎\"]\n    Model[\"大模型\"]\n    Infer[\"推理过程\"]\n    Speaker[\"陈博\"]\n    TeachExp[\"教学经验\"]\n    Slides[\"课件分享\"]\n    PPT[\"PPT\"]\n    NLP[\"NLP\"]\n    Vision[\"图像识别\"]\n    ML[\"机器学习\"]\n    DL[\"深度学习\"]\n    Company[\"马氏集团\"]\n\n    VLLM --> Model\n    VLLM --> Infer\n    Model --> Infer\n    Speaker --> TeachExp\n    Speaker --> Slides\n    Slides --> PPT\n    Speaker --> Model\n    Model --> NLP\n    Model --> Vision\n    Model --> ML\n    Model --> DL\n    Company --> Speaker"
+        },
+        {
+          "title": "学习路径",
+          "code": "flowchart LR\n    Start[\"了解 VLLM 推理引擎\"]\n    Step1[\"学习大模型概念\"]\n    Step2[\"掌握 NLP 基础\"]\n    Step3[\"掌握图像识别技术\"]\n    Step4[\"掌握机器学习方法\"]\n    Step5[\"掌握深度学习技巧\"]\n    End[\"完成课程学习\"]\n\n    Start --> Step1\n    Step1 --> Step2\n    Step2 --> Step3\n    Step3 --> Step4\n    Step4 --> Step5\n    Step5 --> End"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-07T16:09:12+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 大模型推理与 VLLM 引擎概览\n\n## 知识概览\n```mermaid\nflowchart TD\n    VLLM[\"VLLM 推理引擎\"]\n    Model[\"大模型\"]\n    Infer[\"推理过程\"]\n    Speaker[\"陈博\"]\n    TeachExp[\"教学经验\"]\n    Slides[\"课件分享\"]\n    PPT[\"PPT\"]\n    NLP[\"NLP\"]\n    Vision[\"图像识别\"]\n    ML[\"机器学习\"]\n    DL[\"深度学习\"]\n    Company[\"马氏集团\"]\n\n    VLLM --> Model\n    VLLM --> Infer\n    Model --> Infer\n    Speaker --> TeachExp\n    Speaker --> Slides\n    Slides --> PPT\n    Speaker --> Model\n    Model --> NLP\n    Model --> Vision\n    Model --> ML\n    Model --> DL\n    Company --> Speaker\n```\nVLLM 推理引擎: [BV1q8DjBeExf P1 00:07]  \n大模型: [BV1q8DjBeExf P1 00:18]  \n推理过程: [BV1q8DjBeExf P1 00:20]  \n陈博: [BV1q8DjBeExf P1 00:36]  \n教学经验: [BV1q8DjBeExf P1 00:41]  \n课件分享: [BV1q8DjBeExf P1 00:45]  \nPPT: [BV1q8DjBeExf P1 00:49]  \nNLP: [BV1q8DjBeExf P1 01:10]  \n图像识别: [BV1q8DjBeExf P1 01:14]  \n机器学习: [BV1q8DjBeExf P1 01:17]  \n深度学习: [BV1q8DjBeExf P1 01:18]  \n马氏集团: [BV1q8DjBeExf P1 01:00]  \n\n## 学习路径\n```mermaid\nflowchart LR\n    Start[\"了解 VLLM 推理引擎\"]\n    Step1[\"学习大模型概念\"]\n    Step2[\"掌握 NLP 基础\"]\n    Step3[\"掌握图像识别技术\"]\n    Step4[\"掌握机器学习方法\"]\n    Step5[\"掌握深度学习技巧\"]\n    End[\"完成课程学习\"]\n\n    Start --> Step1\n    Step1 --> Step2\n    Step2 --> Step3\n    Step3 --> Step4\n    Step4 --> Step5\n    Step5 --> End\n```\n了解 VLLM 推理引擎: [BV1q8DjBeExf P1 00:07]  \n学习大模型概念: [BV1q8DjBeExf P1 00:18]  \n掌握 NLP 基础: [BV1q8DjBeExf P1 01:10]  \n掌握图像识别技术: [BV1q8DjBeExf P1 01:14]  \n掌握机器学习方法: [BV1q8DjBeExf P1 01:17]  \n掌握深度学习技巧: [BV1q8DjBeExf P1 01:18]  \n完成课程学习: [BV1q8DjBeExf P1 00:45]  ",
+  "diagrams": [
+    {
+      "title": "知识概览",
+      "code": "flowchart TD\n    VLLM[\"VLLM 推理引擎\"]\n    Model[\"大模型\"]\n    Infer[\"推理过程\"]\n    Speaker[\"陈博\"]\n    TeachExp[\"教学经验\"]\n    Slides[\"课件分享\"]\n    PPT[\"PPT\"]\n    NLP[\"NLP\"]\n    Vision[\"图像识别\"]\n    ML[\"机器学习\"]\n    DL[\"深度学习\"]\n    Company[\"马氏集团\"]\n\n    VLLM --> Model\n    VLLM --> Infer\n    Model --> Infer\n    Speaker --> TeachExp\n    Speaker --> Slides\n    Slides --> PPT\n    Speaker --> Model\n    Model --> NLP\n    Model --> Vision\n    Model --> ML\n    Model --> DL\n    Company --> Speaker"
+    },
+    {
+      "title": "学习路径",
+      "code": "flowchart LR\n    Start[\"了解 VLLM 推理引擎\"]\n    Step1[\"学习大模型概念\"]\n    Step2[\"掌握 NLP 基础\"]\n    Step3[\"掌握图像识别技术\"]\n    Step4[\"掌握机器学习方法\"]\n    Step5[\"掌握深度学习技巧\"]\n    End[\"完成课程学习\"]\n\n    Start --> Step1\n    Step1 --> Step2\n    Step2 --> Step3\n    Step3 --> Step4\n    Step4 --> Step5\n    Step5 --> End"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T16:09:12+00:00"
+}

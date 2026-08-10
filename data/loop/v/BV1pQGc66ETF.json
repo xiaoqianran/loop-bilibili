@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1pQGc66ETF",
+  "title": "API格式是什么？路由服务是啥？一些Agent小技巧",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2510,
+  "text": "前几天我在用cloud code的时候\n发现了一件有趣的事情\n我在c c switch设置了第三方的API\n但始终不能让AI回答\n然后我接入了deep sick的官方API\nAI却成功回答了\n这就很神奇了\n本是同根生\n都是AI\n凭啥deep seek的能接入一些小众的AI\n就不能接入呢\n哎你别说API的接入虽然都是填写API请求地址\nApi ke\n然后如果是国外的一些agent的工具再映射一下\n但这其中每个AI还真就不一样了\n继续听我说下去\n然后我注意到了c ct switch中的一个选项API格式\n这是什么东西\n不查不知道\n一查我就大彻大悟\n原来cloud code的API格式是aerropic messenger API\n但AGONISEAI他们的API格式是OpenAI chat completions\n没错\nAPI格式的不同\n导致了cloud code不能直接接入IGNEI的API\n那么API格式是什么\n能不能把格式转换呢\n这其中就用到了c ct switch的路由服务\n路由服务又有什么用\n当我们在一些AI对话客户端提问时\n我们的问题会被打包成JSON格式\n并且发送给API提供商\nAPI提供商解析该字符串\n计算出答案\n然后再打包成JASON返回\n让AI做出回应\n用一个例子来讲\n在未来2030年\n餐厅全部被机器人取代\n你直接跟服务机器人点餐\n说我要一份宫爆鸡丁\n微辣\n不要花生\n但是这个服务机器人听不懂\n怎么解决这个问题呢\n于是服务机器人递上来一份菜单\n你可以在测定栏目填写菜名\n宫爆鸡丁口味微辣\n备注\n不要花生\n然后服务机器人识别\n转换成了类似下面的JSON格式\n然后这个JASON传到了后厨\n后厨机器人成功读懂做完菜\n然后给你上菜了\n每个不同的AIAPI提供商提供的API格式可能不同\n但大多都是国外的巨头\n例如cloud母公司的API是aerropic messages API\n谷歌为GEMINI多模态设计了GERMANI\nNegative generate content api\n然后OpenAI chat completions API\n也就是OpenAI chat\n这是目前行业事业标准的对话API生态最广\n被无数开源项目和国内厂商\n例如deep sick智谱AI所兼容\nOpenAI responses API是OpenAI较新的有状态对话API\n每种格式的具体JASON就不讲了\n除非你是AI开发的\n普通人\n不用深入研究\n为什么需要这种JASON的API格式呢\n其实仔细想想\n我们能自己分析出来的\n简单分析一下\n我们和AI对话\n除了我们输入的提示词\n如果你用的是智能体\n那AI会有人设\n这个也会一同发送给API提供商\n包括我们都知道AI还有温度\n随机种子\n上下文等\n这些都需要发送\n如果没有JASON这种真工工\n整整的格式信息就全部乱套了\n这是拓展一下\n如果是多模态AI\n你给AI发送图片\nJASON这种纯文本格式怎么存储呢\n没错聪明的你能想到被16式编码\n把图片转换成base64编码\n这是一种通用的安全的\n能把任意文件转换成文本的编码\n安全指的是使用ASCII中的安全字符\nBBBBLUE本身并没有任何加密\n深层来讲\n其实根据刚刚讲的\n你也能分析到没错\n提示词温度上下文等内容\n如果直接发送大模型\n服务器根本看不懂\n使用JASON格式\n每个信息走自己的路\n该去干啥干啥\n所以开头提到的不同API格式不能直接兼容\n的理解就很简单了\n每个API格式转换后的JASON的结构和模式不同\n虽然都是JASON\n具体我们对比cloud和GERMANY的API格式\n你就能发现明显不同\n能不能转换呢\n当然能啊\n机器switch中我们可以开启路由服务\ncodex是OpenAI responses API\ncloud code是astropic messages API\nGERMANY就是GERMANY\nNegative generate content api\n了解这些后\n我们去搜索一下你的API提供商的API格式\n比如agonize AI就是open AI check格式\n在设置开启路由服务\n然后来到编辑供应商界面\n把你供应商的API格式填写进去\n比如我的就是OpenAI chat好的\n然后开启进入cloud code\n你就能发现AI回复了\n所以路由服务就是用来转换不同API格式的\n相当于一个翻译官\n原理是把agent的工具的请求发往本地的HTTP local host\n15721\n然后翻译具体的话除了AI开发的人员\n普通人就没有太必要深度了解了\n但是c ct switch的路由夫有一些潜在的安全风险\n此前的版本如V13.12.3\n存在一个DORS策略过于宽松的漏洞\n允许任意网站向本地代理发送请求\n虽然最新版本可能已经修复\n但这提醒我们\n软件漏洞只存在了\n使用路由服务时\n如果操作不当\n可能会影响codex官方分登录状态\n或触发官方的风控机制\n开发者文档中特别提到的相关风险\n将官方流量通过代理路由出去\n其请求特征可能与官方期望不符\n存在服务商风控系统拦截的风险\n没有任何工具能保证百分百安全\n不过不用太在意啊\ncodex太麻烦了\ncloud code又封号\n接入第三方也会限制功能\n例如联网搜索HERMES在windows安装特别麻烦\n而且我用不了open cloud\n我认为不太安全\n所以呢我用open code\n那么在开头\n为什么我直接接入DEVCCV4就行了呢\n虽然前面又说他是OpenAI chat格式\n不用开启路由服务\n又能直接接入clo code\n因为它同时也兼容cloud code的API格式\nc c switch中有的API提供商应该都比较好兼容吧\n应该吧\n因为别的我没试过\n当然在编辑供应商的时候\n一些对话工具可能会有API端点\n也就是API end point\n这个我也不太懂\n你们按照自己的API提供上文档去看\n不会的问AI吧\n好的\n那么这里是我的频道\n如果你喜欢我们的视频\n不妨点个赞\n支持一下后续的视频\n我会更倾向于实践\n感谢你能看到这里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1pQGc66ETF",
+  "published_at": "1785464169",
+  "fetched_at": "2026-08-09T11:59:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T12:15:53+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T12:15:53+00:00"
+}

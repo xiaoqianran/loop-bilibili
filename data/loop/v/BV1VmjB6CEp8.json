@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1VmjB6CEp8",
+  "title": "Godot 4.7：灯光就位，好戏开场！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 588,
+  "text": "经过3年打磨\n各多次如美酒一般越陈越香\n如今我们为您带来了全新的4.7版本\n不再需要借助自发光材质\n配合全局光照来模拟发光区域\n使用array light three d\n直接实时渲染三维空间中的矩形光\n为场景创造更柔和的阴影和更逼真的反射效果\n在纹理上绘图从未如此简单\n大家期盼已久的HDR支持\n在不影响容器其他部分的情况下\n平移旋转或缩放CTRL节点\npass three d的点现在可以吸附到碰撞体上\n编辑器内可以高亮选中节点\n几何体上最近的顶点\n还可以点击并拖拽到其他网格上的顶点\n轻松创建单向碰撞\n甚至可以将单向方向设置为全局方向\n即使碰撞形状再旋转\n节点中的拖拽和排序变得更加方便\n更加直观\n3D编辑器可以在对象移动时自动跟随了\n高速下载引擎与导出模板\n可以在检查器中右键点击选择类别或一组属性\n快速复制粘贴它们的值\n新的2D场景绘图模式\n快速散布二维场景中的收集品\n敌人或装饰物\n新增了3D节点的轨迹\n球式旋转更接近blender等常用建模软件\n可以按需下载目标平台的导出模板\n了节省用户的带宽和存储空间\n新增虚拟遥感功能\n默认支持固定动态和跟随三种模式\n允许灵活调整3D粒子的缩放和旋转\n新增了安卓平台的画中画支持\n允许安卓编辑器移动和调整\n嵌入式游戏窗口的大小\n以上是4.7版本的更新概览\n更多内容需要您亲自下载体验\n对新版本满意吗\n欢迎您在弹幕和评论区交流",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VmjB6CEp8",
+  "published_at": "1781864040",
+  "fetched_at": "2026-08-07T00:12:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 4.7 功能关系图谱\n\n## 总览\n```mermaid\nflowchart TD\n    V4_7[\"Godot 4.7 版本\"] --> LGT[\"全局光照模拟发光（不再需要自发光材质）\"]\n    V4_7 --> HDR[\"HDR 支持\"]\n    V4_7 --> DRAW2D[\"2D 场景绘图模式\"]\n    V4_7 --> TRAJ3D[\"3D 节点轨迹（球式旋转）\"]\n    V4_7 --> VRS[\"虚拟遥感功能（固定/动态/跟随）\"]\n    V4_7 --> ANDROID[\"安卓平台画中画支持\"]\n    V4_7 --> EXPORT[\"按需下载导出模板（节省带宽/存储）\"]\n    V4_7 --> EDIT[\"编辑器交互改进\"]\n    LGT --> ARRAY[\"Array Light Three D（矩形光实时渲染）\"]\n    LGT --> SHADOW[\"柔和阴影 & 逼真反射\"]\n    HDR --> TEXTURE[\"纹理绘图更简易\"]\n    DRAW2D --> COLLECT[\"快速散布收集品、敌人、装饰物\"]\n    TRAJ3D --> BLEND[\"球式旋转接近 Blender 等建模软件\"]\n    VRS --> MODE[\"默认三种模式：固定、动态、跟随\"]\n    VRS --> SCALE_ROT[\"灵活调整 3D 粒子缩放与旋转\"]\n    ANDROID --> WINSIZE[\"嵌入式游戏窗口大小可调\"]\n    EXPORT --> SPEED[\"高速下载引擎\"]\n    EDIT --> DRAG[\"节点拖拽、排序更方便直观\"]\n    EDIT --> HIGHLIGHT[\"编辑器内高亮选中节点、最近顶点\"]\n    EDIT --> SINGLECOL[\"单向碰撞创建与全局方向设置\"]\n    EDIT --> FOLLOW[\"3D 编辑器对象移动时自动跟随\"]\n```\n<!-- [BV1VmjB6CEp8 P1 00:07] [BV1VmjB6CEp8 P1 00:25] [BV1VmjB6CEp8 P1 00:24] [BV1VmjB6CEp8 P1 01:36] [BV1VmjB6CEp8 P1 01:50] [BV1VmjB6CEp8 P1 02:03] [BV1VmjB6CEp8 P1 01:15] [BV1VmjB6CEp8 P1 01:07] -->\n\n## 光照与发光\n```mermaid\nflowchart LR\n    NO_SELF[\"不再需要自发光材质\"] --> GLOBAL[\"配合全局光照模拟发光区域\"]\n    GLOBAL --> ARRAY3D[\"使用 Array Light Three D\"]\n    ARRAY3D --> RECT[\"实时渲染矩形光\"]\n    RECT --> SOFT_SHADOW[\"更柔和的阴影\"]\n    RECT --> REAL_REFLECT[\"更逼真的反射效果\"]\n    HDR_SUPPORT[\"HDR 支持\"] --> TEXTURE_DRAW[\"纹理上绘图更简单\"]\n```\n<!-- [BV1VmjB6CEp8 P1 00:07] [BV1VmjB6CEp8 P1 00:10] [BV1VmjB6CEp8 P1 00:14] [BV1VmjB6CEp8 P1 00:16] [BV1VmjB6CEp8 P1 00:21] [BV1VmjB6CEp8 P1 00:25] -->\n\n## 编辑器交互改进\n```mermaid\nflowchart TD\n    DRAG_SORT[\"节点拖拽与排序更方便直观\"] --> HIGHLIGHT[\"编辑器内高亮选中节点\"]\n    HIGHLIGHT --> VERTEX[\"显示几何体最近的顶点\"]\n    VERTEX --> CLICK_DRAG[\"点击并拖拽到其他网格顶点\"]\n    SINGLE_COLL[\"轻松创建单向碰撞\"] --> GLOBAL_DIR[\"可将单向方向设为全局方向\"]\n    GLOBAL_DIR --> ROTATE[\"即使碰撞形状再旋转仍有效\"]\n    DRAG_SORT --> SINGLE_COLL\n    FOLLOW3D[\"3D 编辑器对象移动时自动跟随\"] --> DRAG_SORT\n```\n<!-- [BV1VmjB6CEp8 P1 01:01] [BV1VmjB6CEp8 P1 01:04] [BV1VmjB6CEp8 P1 00:45] [BV1VmjB6CEp8 P1 00:47] [BV1VmjB6CEp8 P1 00:53] [BV1VmjB6CEp8 P1 00:55] [BV1VmjB6CEp8 P1 00:58] [BV1VmjB6CEp8 P1 01:07] -->\n\n## 平台与导出功能\n```mermaid\nflowchart LR\n    DOWNLOAD[\"高速下载引擎\"] --> TEMPLATE[\"按需下载目标平台导出模板\"]\n    TEMPLATE --> SAVE[\"节省用户带宽和存储空间\"]\n    ANDROID_PIP[\"安卓平台画中画支持\"] --> MOVE_RESIZE[\"允许编辑器移动、调整嵌入式游戏窗口大小\"]\n    EXPORT_OPT[\"检查器右键选择属性类别或组\"] --> QUICK_COPY[\"快速复制粘贴属性值\"]\n```\n<!-- [BV1VmjB6CEp8 P1 01:15] [BV1VmjB6CEp8 P1 01:44] [BV1VmjB6CEp8 P1 01:46] [BV1VmjB6CEp8 P1 02:03] [BV1VmjB6CEp8 P1 02:08] [BV1VmjB6CEp8 P1 02:10] [BV1VmjB6CEp8 P1 01:18] [BV1VmjB6CEp8 P1 01:21] -->",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    V4_7[\"Godot 4.7 版本\"] --> LGT[\"全局光照模拟发光（不再需要自发光材质）\"]\n    V4_7 --> HDR[\"HDR 支持\"]\n    V4_7 --> DRAW2D[\"2D 场景绘图模式\"]\n    V4_7 --> TRAJ3D[\"3D 节点轨迹（球式旋转）\"]\n    V4_7 --> VRS[\"虚拟遥感功能（固定/动态/跟随）\"]\n    V4_7 --> ANDROID[\"安卓平台画中画支持\"]\n    V4_7 --> EXPORT[\"按需下载导出模板（节省带宽/存储）\"]\n    V4_7 --> EDIT[\"编辑器交互改进\"]\n    LGT --> ARRAY[\"Array Light Three D（矩形光实时渲染）\"]\n    LGT --> SHADOW[\"柔和阴影 & 逼真反射\"]\n    HDR --> TEXTURE[\"纹理绘图更简易\"]\n    DRAW2D --> COLLECT[\"快速散布收集品、敌人、装饰物\"]\n    TRAJ3D --> BLEND[\"球式旋转接近 Blender 等建模软件\"]\n    VRS --> MODE[\"默认三种模式：固定、动态、跟随\"]\n    VRS --> SCALE_ROT[\"灵活调整 3D 粒子缩放与旋转\"]\n    ANDROID --> WINSIZE[\"嵌入式游戏窗口大小可调\"]\n    EXPORT --> SPEED[\"高速下载引擎\"]\n    EDIT --> DRAG[\"节点拖拽、排序更方便直观\"]\n    EDIT --> HIGHLIGHT[\"编辑器内高亮选中节点、最近顶点\"]\n    EDIT --> SINGLECOL[\"单向碰撞创建与全局方向设置\"]\n    EDIT --> FOLLOW[\"3D 编辑器对象移动时自动跟随\"]"
+        },
+        {
+          "title": "光照与发光",
+          "code": "flowchart LR\n    NO_SELF[\"不再需要自发光材质\"] --> GLOBAL[\"配合全局光照模拟发光区域\"]\n    GLOBAL --> ARRAY3D[\"使用 Array Light Three D\"]\n    ARRAY3D --> RECT[\"实时渲染矩形光\"]\n    RECT --> SOFT_SHADOW[\"更柔和的阴影\"]\n    RECT --> REAL_REFLECT[\"更逼真的反射效果\"]\n    HDR_SUPPORT[\"HDR 支持\"] --> TEXTURE_DRAW[\"纹理上绘图更简单\"]"
+        },
+        {
+          "title": "编辑器交互改进",
+          "code": "flowchart TD\n    DRAG_SORT[\"节点拖拽与排序更方便直观\"] --> HIGHLIGHT[\"编辑器内高亮选中节点\"]\n    HIGHLIGHT --> VERTEX[\"显示几何体最近的顶点\"]\n    VERTEX --> CLICK_DRAG[\"点击并拖拽到其他网格顶点\"]\n    SINGLE_COLL[\"轻松创建单向碰撞\"] --> GLOBAL_DIR[\"可将单向方向设为全局方向\"]\n    GLOBAL_DIR --> ROTATE[\"即使碰撞形状再旋转仍有效\"]\n    DRAG_SORT --> SINGLE_COLL\n    FOLLOW3D[\"3D 编辑器对象移动时自动跟随\"] --> DRAG_SORT"
+        },
+        {
+          "title": "平台与导出功能",
+          "code": "flowchart LR\n    DOWNLOAD[\"高速下载引擎\"] --> TEMPLATE[\"按需下载目标平台导出模板\"]\n    TEMPLATE --> SAVE[\"节省用户带宽和存储空间\"]\n    ANDROID_PIP[\"安卓平台画中画支持\"] --> MOVE_RESIZE[\"允许编辑器移动、调整嵌入式游戏窗口大小\"]\n    EXPORT_OPT[\"检查器右键选择属性类别或组\"] --> QUICK_COPY[\"快速复制粘贴属性值\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T00:13:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 4.7 功能关系图谱\n\n## 总览\n```mermaid\nflowchart TD\n    V4_7[\"Godot 4.7 版本\"] --> LGT[\"全局光照模拟发光（不再需要自发光材质）\"]\n    V4_7 --> HDR[\"HDR 支持\"]\n    V4_7 --> DRAW2D[\"2D 场景绘图模式\"]\n    V4_7 --> TRAJ3D[\"3D 节点轨迹（球式旋转）\"]\n    V4_7 --> VRS[\"虚拟遥感功能（固定/动态/跟随）\"]\n    V4_7 --> ANDROID[\"安卓平台画中画支持\"]\n    V4_7 --> EXPORT[\"按需下载导出模板（节省带宽/存储）\"]\n    V4_7 --> EDIT[\"编辑器交互改进\"]\n    LGT --> ARRAY[\"Array Light Three D（矩形光实时渲染）\"]\n    LGT --> SHADOW[\"柔和阴影 & 逼真反射\"]\n    HDR --> TEXTURE[\"纹理绘图更简易\"]\n    DRAW2D --> COLLECT[\"快速散布收集品、敌人、装饰物\"]\n    TRAJ3D --> BLEND[\"球式旋转接近 Blender 等建模软件\"]\n    VRS --> MODE[\"默认三种模式：固定、动态、跟随\"]\n    VRS --> SCALE_ROT[\"灵活调整 3D 粒子缩放与旋转\"]\n    ANDROID --> WINSIZE[\"嵌入式游戏窗口大小可调\"]\n    EXPORT --> SPEED[\"高速下载引擎\"]\n    EDIT --> DRAG[\"节点拖拽、排序更方便直观\"]\n    EDIT --> HIGHLIGHT[\"编辑器内高亮选中节点、最近顶点\"]\n    EDIT --> SINGLECOL[\"单向碰撞创建与全局方向设置\"]\n    EDIT --> FOLLOW[\"3D 编辑器对象移动时自动跟随\"]\n```\n<!-- [BV1VmjB6CEp8 P1 00:07] [BV1VmjB6CEp8 P1 00:25] [BV1VmjB6CEp8 P1 00:24] [BV1VmjB6CEp8 P1 01:36] [BV1VmjB6CEp8 P1 01:50] [BV1VmjB6CEp8 P1 02:03] [BV1VmjB6CEp8 P1 01:15] [BV1VmjB6CEp8 P1 01:07] -->\n\n## 光照与发光\n```mermaid\nflowchart LR\n    NO_SELF[\"不再需要自发光材质\"] --> GLOBAL[\"配合全局光照模拟发光区域\"]\n    GLOBAL --> ARRAY3D[\"使用 Array Light Three D\"]\n    ARRAY3D --> RECT[\"实时渲染矩形光\"]\n    RECT --> SOFT_SHADOW[\"更柔和的阴影\"]\n    RECT --> REAL_REFLECT[\"更逼真的反射效果\"]\n    HDR_SUPPORT[\"HDR 支持\"] --> TEXTURE_DRAW[\"纹理上绘图更简单\"]\n```\n<!-- [BV1VmjB6CEp8 P1 00:07] [BV1VmjB6CEp8 P1 00:10] [BV1VmjB6CEp8 P1 00:14] [BV1VmjB6CEp8 P1 00:16] [BV1VmjB6CEp8 P1 00:21] [BV1VmjB6CEp8 P1 00:25] -->\n\n## 编辑器交互改进\n```mermaid\nflowchart TD\n    DRAG_SORT[\"节点拖拽与排序更方便直观\"] --> HIGHLIGHT[\"编辑器内高亮选中节点\"]\n    HIGHLIGHT --> VERTEX[\"显示几何体最近的顶点\"]\n    VERTEX --> CLICK_DRAG[\"点击并拖拽到其他网格顶点\"]\n    SINGLE_COLL[\"轻松创建单向碰撞\"] --> GLOBAL_DIR[\"可将单向方向设为全局方向\"]\n    GLOBAL_DIR --> ROTATE[\"即使碰撞形状再旋转仍有效\"]\n    DRAG_SORT --> SINGLE_COLL\n    FOLLOW3D[\"3D 编辑器对象移动时自动跟随\"] --> DRAG_SORT\n```\n<!-- [BV1VmjB6CEp8 P1 01:01] [BV1VmjB6CEp8 P1 01:04] [BV1VmjB6CEp8 P1 00:45] [BV1VmjB6CEp8 P1 00:47] [BV1VmjB6CEp8 P1 00:53] [BV1VmjB6CEp8 P1 00:55] [BV1VmjB6CEp8 P1 00:58] [BV1VmjB6CEp8 P1 01:07] -->\n\n## 平台与导出功能\n```mermaid\nflowchart LR\n    DOWNLOAD[\"高速下载引擎\"] --> TEMPLATE[\"按需下载目标平台导出模板\"]\n    TEMPLATE --> SAVE[\"节省用户带宽和存储空间\"]\n    ANDROID_PIP[\"安卓平台画中画支持\"] --> MOVE_RESIZE[\"允许编辑器移动、调整嵌入式游戏窗口大小\"]\n    EXPORT_OPT[\"检查器右键选择属性类别或组\"] --> QUICK_COPY[\"快速复制粘贴属性值\"]\n```\n<!-- [BV1VmjB6CEp8 P1 01:15] [BV1VmjB6CEp8 P1 01:44] [BV1VmjB6CEp8 P1 01:46] [BV1VmjB6CEp8 P1 02:03] [BV1VmjB6CEp8 P1 02:08] [BV1VmjB6CEp8 P1 02:10] [BV1VmjB6CEp8 P1 01:18] [BV1VmjB6CEp8 P1 01:21] -->",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    V4_7[\"Godot 4.7 版本\"] --> LGT[\"全局光照模拟发光（不再需要自发光材质）\"]\n    V4_7 --> HDR[\"HDR 支持\"]\n    V4_7 --> DRAW2D[\"2D 场景绘图模式\"]\n    V4_7 --> TRAJ3D[\"3D 节点轨迹（球式旋转）\"]\n    V4_7 --> VRS[\"虚拟遥感功能（固定/动态/跟随）\"]\n    V4_7 --> ANDROID[\"安卓平台画中画支持\"]\n    V4_7 --> EXPORT[\"按需下载导出模板（节省带宽/存储）\"]\n    V4_7 --> EDIT[\"编辑器交互改进\"]\n    LGT --> ARRAY[\"Array Light Three D（矩形光实时渲染）\"]\n    LGT --> SHADOW[\"柔和阴影 & 逼真反射\"]\n    HDR --> TEXTURE[\"纹理绘图更简易\"]\n    DRAW2D --> COLLECT[\"快速散布收集品、敌人、装饰物\"]\n    TRAJ3D --> BLEND[\"球式旋转接近 Blender 等建模软件\"]\n    VRS --> MODE[\"默认三种模式：固定、动态、跟随\"]\n    VRS --> SCALE_ROT[\"灵活调整 3D 粒子缩放与旋转\"]\n    ANDROID --> WINSIZE[\"嵌入式游戏窗口大小可调\"]\n    EXPORT --> SPEED[\"高速下载引擎\"]\n    EDIT --> DRAG[\"节点拖拽、排序更方便直观\"]\n    EDIT --> HIGHLIGHT[\"编辑器内高亮选中节点、最近顶点\"]\n    EDIT --> SINGLECOL[\"单向碰撞创建与全局方向设置\"]\n    EDIT --> FOLLOW[\"3D 编辑器对象移动时自动跟随\"]"
+    },
+    {
+      "title": "光照与发光",
+      "code": "flowchart LR\n    NO_SELF[\"不再需要自发光材质\"] --> GLOBAL[\"配合全局光照模拟发光区域\"]\n    GLOBAL --> ARRAY3D[\"使用 Array Light Three D\"]\n    ARRAY3D --> RECT[\"实时渲染矩形光\"]\n    RECT --> SOFT_SHADOW[\"更柔和的阴影\"]\n    RECT --> REAL_REFLECT[\"更逼真的反射效果\"]\n    HDR_SUPPORT[\"HDR 支持\"] --> TEXTURE_DRAW[\"纹理上绘图更简单\"]"
+    },
+    {
+      "title": "编辑器交互改进",
+      "code": "flowchart TD\n    DRAG_SORT[\"节点拖拽与排序更方便直观\"] --> HIGHLIGHT[\"编辑器内高亮选中节点\"]\n    HIGHLIGHT --> VERTEX[\"显示几何体最近的顶点\"]\n    VERTEX --> CLICK_DRAG[\"点击并拖拽到其他网格顶点\"]\n    SINGLE_COLL[\"轻松创建单向碰撞\"] --> GLOBAL_DIR[\"可将单向方向设为全局方向\"]\n    GLOBAL_DIR --> ROTATE[\"即使碰撞形状再旋转仍有效\"]\n    DRAG_SORT --> SINGLE_COLL\n    FOLLOW3D[\"3D 编辑器对象移动时自动跟随\"] --> DRAG_SORT"
+    },
+    {
+      "title": "平台与导出功能",
+      "code": "flowchart LR\n    DOWNLOAD[\"高速下载引擎\"] --> TEMPLATE[\"按需下载目标平台导出模板\"]\n    TEMPLATE --> SAVE[\"节省用户带宽和存储空间\"]\n    ANDROID_PIP[\"安卓平台画中画支持\"] --> MOVE_RESIZE[\"允许编辑器移动、调整嵌入式游戏窗口大小\"]\n    EXPORT_OPT[\"检查器右键选择属性类别或组\"] --> QUICK_COPY[\"快速复制粘贴属性值\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T00:13:03+00:00"
+}

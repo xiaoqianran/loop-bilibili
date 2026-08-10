@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1RW3S6FEzv",
+  "title": "桌面应用迁移 DeepSeek V4 Flash正式版对比Pro预览版",
+  "status": "ok",
+  "language": "zh",
+  "chars": 3120,
+  "text": "大家好，我是iBobby\n近期我会带来3个DeepSeek相关视频\n本期视频将对比V4 Flash正式版和V4 Pro预览版\n看看官方说的“正式版Flash Agent基准测试远超预览版Pro”\n在我的这一个场景内是否成立\n不会复读新闻，都是实测\n省流：逻辑方面确实超过了预览版 Pro\n但是正经编程的话等 Pro 正式版\n第二个视频是介绍我写的一个开源项目\nCodex Rosetta\n很多别的工具，比如CC Switch、Codex++\n都可以完成Chat Completions API到Codex所需的Responses API的转换\n我这个工具的目标是适配更多Codex原生能力\n目前我测出来表现比DeepSeek官方的Responses API效果还要好\n第三个视频是DeepSeek API的缓存策略分析\n我通过Codex Rosetta使用DeepSeek的时候\n窗口大小使用到500k\n基本上缓存未命中的输入Token在900k左右\n这显然不正常\n我目前已经有一些思路了，还没彻底完工\n好，回到本期视频的正式 Flash 对比预览 Pro\n我先下个结论：\nFlash 工程能力更强，但不能无人值守\nPro 相对安全，但是功能性和可信度不够\n效果就是都不能vibe coding\n不敢vibe啊\n接下来我就不重复说正式版、预览版了\n说到Flash就是正式版，说到Pro就是预览版\n本期视频会分为这些部分：\n实验环境、开发任务介绍、实验设计、实验执行、实验结果、总结\n实验环境：macOS 26，Coding Agent是Codex 0.145.0\n没有用官方的Responses API\n一是Pro不支持，二是实测下来我的中间层Rosetta\nChat请求翻译效果比直接用官方的Responses好\n开发任务介绍：让它构建一个应用\n昨天我想把Cockpit Tools这个AI服务订阅\n本地反代工具的Codex部分抽出来\n让运行更轻量\n我用的是DeepSeek V4 Pro\n一是以防奥特曼封我的号\n二是为了攒点数据，用于分析DeepSeek的缓存\n弄到一半实在受不了了\nDeepSeek这开发能力也太弱了\n最后用GPT-5.6-Sol完工的\n大概有这些问题：\n指令遵循差：\nAGENTS.md里面写的必须要写测试，它不写\n查文档意愿低：\n宁可自己猜API\n我把文档给它了\n这次它查了文档\n同一个窗口里下次碰到问题还是自己猜\n任务完成幻觉高：\n经常没完全完成\n只写了前端、没写后端之类的\n就汇报完成了\n我个人感觉效率只有 GPT-5.6-Sol 的 1/3\n当然，我Codex的AGENTS.md是给GPT-5.5优化的\n系统提示词也是直接抄的5.6-Sol\n给DeepSeek用肯定是有问题的\n但是这些都弄好估计也就提升到1/2 5.6-Sol的能力\n实验设计：\n这两个模型one-shot能力，\n也就是一段简单的描述让它完成任务\n做这种迁移都是不够的\n一次根本做不完，会留下一大堆bug\n所以必须有一个监督者来\n正好昨晚发了V4 Flash正式版\n我今天干脆让GPT-5.6-Sol代我来在隔离环境再次开发\n之后为了方便，我就称它为Orchestrator\n把昨天的session给它\n让它读取我的需求来重新带DeepSeek做开发、验收\n模拟人，不得自己干预代码\nOrchestrator自己探测本地空闲端口\n让DeepSeek开发的时候作为默认端口，调试用\n不过系统提示词还是5.6-sol的那一套\n我还没有去做调研DeepSeek的系统提示词要怎么写\n等DeepSeek Harness发了抄这个更好\n实验执行：\n执行途中还发生一个问题\n昨天那个反代工具我已经写好了并且在用\n突然之间Codex连不上了\n我还以为我写出bug了\n调查了一圈，发现是正在开发的Flash\n把我主机生产的反代进程给杀了\n我确实没做沙箱或者虚拟机\n只是让它在空闲的端口\n我指定的文件夹里工作\n然后我就让Orchestrator给Flash的AGENTS.md里写清楚\n禁止pkill、killall\n但是我忘记了一点\nCodex必须开新的session才会重新读取AGENTS.md\n后来它又执行了类似的命令\nOrchestrator准备好的Shell Guard拦下来了\nPro是先根据自己的端口获取了PID\n但没做更多验证\n确认这个端口属于自己\n所以只能算比Flash安全\n但不绝对安全\n另外，我在用GPT的时候也偶尔会遇到杀错进程的情况，\n所以重要的环境还是要人工审批\n实验结论\nFlash自己写的测试全过\nPro有1/3没过\n我也不知道它怎么敢结束了\nFlash工具调用更多\n对危险命令没有感知\nPro猜API更多\n有更明显的思维循环\n最终成果\n我没有人工验收\n我怕这些东西给我惊吓\n我还是人工验收一下吧\n这样结论有说服力\n我也是第一次看\n上面的是Flash\n打开看一下\n啊？\n一直加载中啊\n到这里面看一下\n那Flash验收大失败\n再看这个Pro的\nPro也是空的\n这两个模型真的是\n一对笑面虎，两头乌角鲨\n这个呢\n它也没有更多的日志\n没办法两个全都验收失败\nOrchestrator做代码级验收的总结是\nFlash主要是更高层的逻辑推理问题\n有隐藏得较深的bug\n比如拖拽\nDOM操作\n数据覆盖等问题\nPro的问题更基础\n前端使用了后端不存在的路由\n代码里有未接入业务逻辑的字段\nimport问题等\n反正很多\n接下来说一下Token用量\n缓存和成本\nFlash的窗口最后是占用900k\n整个实验API缓存命中580M\n未命中2.1M\n输出504k\n理想化最佳输入\n未命中应该是context-输出\n等于395k\n但实际是2.1M\n将近5倍了\n所以目前Rosetta还有优化空间\n根据我的另一个测试\n官方Responses的命中率更低\nFlash中间有过一次工具数量突然从29变成了30\nDeepSeek官方的Chat协议不支持后置工具\n工具都是前置的\n所以这一次直接未命中\n重建了422k缓存\n在无法控制Codex和\nDeepSeek时\n这个问题在Rosetta是比较好修的\n已经解决了\nFlash最终成本是14.72\nPro窗口比Flash用得更少\n只用了666k\n但是任务完成结果也更差\n按照前面的算法\n理想化未命中是384k\n实际是1.1M\n成本11.60\n其实缓存命中方面还有个Token Block的概念\n但是影响比较小\n放到第三个视频里面详细解释\n总结一下，其实\n开头省流就说过了\n正经开发还是得等正式版Pro\n最后我再说说我的想法\n牢O和A÷就不说了\n都是邪恶的资本泡沫堆起来的能力\n我们国内其实比起Kimi\n我更喜欢的还是DeepSeek\n虽说梁圣想把C端的用户赶走\n但是我们这些小鲸鱼就赖在鲸鱼娘身边了\n主要是我不太喜欢订阅制\n用起来太累\n没用完焦虑\n用完了也焦虑\n还是一个便宜的API更舒服\n从结果上来说\nKimi是有重大意义的\n只有你做对的时候\n竞争对手才会痛骂你\n总之期待我们的国产模型越来越好吧\nPro正式版发点力啊\n后端逻辑不说Opus 4.8\n好歹超过4.5吧\n哦对\n还有评测\n我看很多人都喜欢测前端\n虽说前端也很震撼\n但是我的想法是\n前端做得不好\n人可以看见\n可以去调整\n后端逻辑强不强\n直接决定了coding\n到底能不能vibe\n好，本期视频就到这里了\n敬请期待接下来的 2 个视频\n我的Codex Rosetta就快做好了\n我估计主要就优化DeepSeek了\n其他模型不管了\n毕竟我自己也不用",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RW3S6FEzv",
+  "published_at": "1785611589",
+  "fetched_at": "2026-08-07T01:00:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 与 Pro 迁移对比知识图谱\n\n## 总体特性比较\n```mermaid\nflowchart TD\n    Flash[\"Flash 正式版\"] -->|工程能力强| Ability[\"更强的工程能力\"]\n    Flash -->|安全性低| Safety[\"安全性不足（易杀进程）\"]\n    Flash -->|测试通过率| TestPass[\"自测全部通过\"]\n    Flash -->|工具调用| ToolUse[\"调用更多工具\"]\n    Flash -->|隐藏bug| HiddenBug[\"高层逻辑/隐藏 bug（拖拽、DOM、数据覆盖）\"]\n\n    Pro[\"Pro 预览版\"] -->|安全性相对高| Safety2[\"相对安全（端口验证）\"]\n    Pro -->|功能/可信度不足| FuncCred[\"功能/可信度不足\"]\n    Pro -->|测试通过率| TestPass2[\"约 2/3 测试通过\"]\n    Pro -->|API猜测| ApiGuess[\"更频繁猜测 API\"]\n    Pro -->|基础问题| BasicBug[\"前端路由缺失、字段未接入、import 问题\"]\n```\n\n## 实验流程与角色\n```mermaid\nflowchart TD\n    Env[\"实验环境<br/>macOS 26, Coding Agent 0.145.0\"] --> Task[\"开发任务<br/>构建 AI 应用\"]\n    Task --> Design[\"实验设计<br/>one‑shot 描述 + 监督者\"]\n    Design --> Orchestrator[\"Orchestrator<br/>(GPT‑5.6‑Sol)\"]\n    Orchestrator -->|读取需求| FlashRun[\"运行 Flash 正式版\"]\n    Orchestrator -->|读取需求| ProRun[\"运行 Pro 预览版\"]\n    FlashRun --> Exec[\"执行<br/>端口探测、写入 AGENTS.md\"]\n    ProRun --> Exec\n    Exec --> Issue[\"执行中问题<br/>Flash 杀进程、Pro 端口验证\"]\n    Issue --> Fix[\"修复措施<br/>Shell Guard、手动 session 重启\"]\n    Fix --> Result[\"实验结果\"]\n    Result --> Summary[\"实验结论\"]\n```\n\n## Token 使用与成本分析\n```mermaid\nflowchart TD\n    FlashWindow[\"Flash 窗口占用 900k Token\"] --> CacheFlash[\"缓存命中 580M\"]\n    CacheFlash --> MissFlash[\"未命中 2.1M (≈5×理想)\"]\n    MissFlash --> CostFlash[\"成本 14.72\"]\n    ProWindow[\"Pro 窗口占用 666k Token\"] --> CachePro[\"缓存命中 较低\"]\n    CachePro --> MissPro[\"未命中 1.1M (≈3×理想)\"]\n    MissPro --> CostPro[\"成本 11.60\"]\n    CostFlash --> Compare[\"Flash 成本更高\"]\n    CostPro --> Compare\n    Compare --> Insight[\"缓存命中率是优化重点\"]\n```",
+      "diagrams": [
+        {
+          "title": "总体特性比较",
+          "code": "flowchart TD\n    Flash[\"Flash 正式版\"] -->|工程能力强| Ability[\"更强的工程能力\"]\n    Flash -->|安全性低| Safety[\"安全性不足（易杀进程）\"]\n    Flash -->|测试通过率| TestPass[\"自测全部通过\"]\n    Flash -->|工具调用| ToolUse[\"调用更多工具\"]\n    Flash -->|隐藏bug| HiddenBug[\"高层逻辑/隐藏 bug（拖拽、DOM、数据覆盖）\"]\n\n    Pro[\"Pro 预览版\"] -->|安全性相对高| Safety2[\"相对安全（端口验证）\"]\n    Pro -->|功能/可信度不足| FuncCred[\"功能/可信度不足\"]\n    Pro -->|测试通过率| TestPass2[\"约 2/3 测试通过\"]\n    Pro -->|API猜测| ApiGuess[\"更频繁猜测 API\"]\n    Pro -->|基础问题| BasicBug[\"前端路由缺失、字段未接入、import 问题\"]"
+        },
+        {
+          "title": "实验流程与角色",
+          "code": "flowchart TD\n    Env[\"实验环境<br/>macOS 26, Coding Agent 0.145.0\"] --> Task[\"开发任务<br/>构建 AI 应用\"]\n    Task --> Design[\"实验设计<br/>one‑shot 描述 + 监督者\"]\n    Design --> Orchestrator[\"Orchestrator<br/>(GPT‑5.6‑Sol)\"]\n    Orchestrator -->|读取需求| FlashRun[\"运行 Flash 正式版\"]\n    Orchestrator -->|读取需求| ProRun[\"运行 Pro 预览版\"]\n    FlashRun --> Exec[\"执行<br/>端口探测、写入 AGENTS.md\"]\n    ProRun --> Exec\n    Exec --> Issue[\"执行中问题<br/>Flash 杀进程、Pro 端口验证\"]\n    Issue --> Fix[\"修复措施<br/>Shell Guard、手动 session 重启\"]\n    Fix --> Result[\"实验结果\"]\n    Result --> Summary[\"实验结论\"]"
+        },
+        {
+          "title": "Token 使用与成本分析",
+          "code": "flowchart TD\n    FlashWindow[\"Flash 窗口占用 900k Token\"] --> CacheFlash[\"缓存命中 580M\"]\n    CacheFlash --> MissFlash[\"未命中 2.1M (≈5×理想)\"]\n    MissFlash --> CostFlash[\"成本 14.72\"]\n    ProWindow[\"Pro 窗口占用 666k Token\"] --> CachePro[\"缓存命中 较低\"]\n    CachePro --> MissPro[\"未命中 1.1M (≈3×理想)\"]\n    MissPro --> CostPro[\"成本 11.60\"]\n    CostFlash --> Compare[\"Flash 成本更高\"]\n    CostPro --> Compare\n    Compare --> Insight[\"缓存命中率是优化重点\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T01:00:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 与 Pro 迁移对比知识图谱\n\n## 总体特性比较\n```mermaid\nflowchart TD\n    Flash[\"Flash 正式版\"] -->|工程能力强| Ability[\"更强的工程能力\"]\n    Flash -->|安全性低| Safety[\"安全性不足（易杀进程）\"]\n    Flash -->|测试通过率| TestPass[\"自测全部通过\"]\n    Flash -->|工具调用| ToolUse[\"调用更多工具\"]\n    Flash -->|隐藏bug| HiddenBug[\"高层逻辑/隐藏 bug（拖拽、DOM、数据覆盖）\"]\n\n    Pro[\"Pro 预览版\"] -->|安全性相对高| Safety2[\"相对安全（端口验证）\"]\n    Pro -->|功能/可信度不足| FuncCred[\"功能/可信度不足\"]\n    Pro -->|测试通过率| TestPass2[\"约 2/3 测试通过\"]\n    Pro -->|API猜测| ApiGuess[\"更频繁猜测 API\"]\n    Pro -->|基础问题| BasicBug[\"前端路由缺失、字段未接入、import 问题\"]\n```\n\n## 实验流程与角色\n```mermaid\nflowchart TD\n    Env[\"实验环境<br/>macOS 26, Coding Agent 0.145.0\"] --> Task[\"开发任务<br/>构建 AI 应用\"]\n    Task --> Design[\"实验设计<br/>one‑shot 描述 + 监督者\"]\n    Design --> Orchestrator[\"Orchestrator<br/>(GPT‑5.6‑Sol)\"]\n    Orchestrator -->|读取需求| FlashRun[\"运行 Flash 正式版\"]\n    Orchestrator -->|读取需求| ProRun[\"运行 Pro 预览版\"]\n    FlashRun --> Exec[\"执行<br/>端口探测、写入 AGENTS.md\"]\n    ProRun --> Exec\n    Exec --> Issue[\"执行中问题<br/>Flash 杀进程、Pro 端口验证\"]\n    Issue --> Fix[\"修复措施<br/>Shell Guard、手动 session 重启\"]\n    Fix --> Result[\"实验结果\"]\n    Result --> Summary[\"实验结论\"]\n```\n\n## Token 使用与成本分析\n```mermaid\nflowchart TD\n    FlashWindow[\"Flash 窗口占用 900k Token\"] --> CacheFlash[\"缓存命中 580M\"]\n    CacheFlash --> MissFlash[\"未命中 2.1M (≈5×理想)\"]\n    MissFlash --> CostFlash[\"成本 14.72\"]\n    ProWindow[\"Pro 窗口占用 666k Token\"] --> CachePro[\"缓存命中 较低\"]\n    CachePro --> MissPro[\"未命中 1.1M (≈3×理想)\"]\n    MissPro --> CostPro[\"成本 11.60\"]\n    CostFlash --> Compare[\"Flash 成本更高\"]\n    CostPro --> Compare\n    Compare --> Insight[\"缓存命中率是优化重点\"]\n```",
+  "diagrams": [
+    {
+      "title": "总体特性比较",
+      "code": "flowchart TD\n    Flash[\"Flash 正式版\"] -->|工程能力强| Ability[\"更强的工程能力\"]\n    Flash -->|安全性低| Safety[\"安全性不足（易杀进程）\"]\n    Flash -->|测试通过率| TestPass[\"自测全部通过\"]\n    Flash -->|工具调用| ToolUse[\"调用更多工具\"]\n    Flash -->|隐藏bug| HiddenBug[\"高层逻辑/隐藏 bug（拖拽、DOM、数据覆盖）\"]\n\n    Pro[\"Pro 预览版\"] -->|安全性相对高| Safety2[\"相对安全（端口验证）\"]\n    Pro -->|功能/可信度不足| FuncCred[\"功能/可信度不足\"]\n    Pro -->|测试通过率| TestPass2[\"约 2/3 测试通过\"]\n    Pro -->|API猜测| ApiGuess[\"更频繁猜测 API\"]\n    Pro -->|基础问题| BasicBug[\"前端路由缺失、字段未接入、import 问题\"]"
+    },
+    {
+      "title": "实验流程与角色",
+      "code": "flowchart TD\n    Env[\"实验环境<br/>macOS 26, Coding Agent 0.145.0\"] --> Task[\"开发任务<br/>构建 AI 应用\"]\n    Task --> Design[\"实验设计<br/>one‑shot 描述 + 监督者\"]\n    Design --> Orchestrator[\"Orchestrator<br/>(GPT‑5.6‑Sol)\"]\n    Orchestrator -->|读取需求| FlashRun[\"运行 Flash 正式版\"]\n    Orchestrator -->|读取需求| ProRun[\"运行 Pro 预览版\"]\n    FlashRun --> Exec[\"执行<br/>端口探测、写入 AGENTS.md\"]\n    ProRun --> Exec\n    Exec --> Issue[\"执行中问题<br/>Flash 杀进程、Pro 端口验证\"]\n    Issue --> Fix[\"修复措施<br/>Shell Guard、手动 session 重启\"]\n    Fix --> Result[\"实验结果\"]\n    Result --> Summary[\"实验结论\"]"
+    },
+    {
+      "title": "Token 使用与成本分析",
+      "code": "flowchart TD\n    FlashWindow[\"Flash 窗口占用 900k Token\"] --> CacheFlash[\"缓存命中 580M\"]\n    CacheFlash --> MissFlash[\"未命中 2.1M (≈5×理想)\"]\n    MissFlash --> CostFlash[\"成本 14.72\"]\n    ProWindow[\"Pro 窗口占用 666k Token\"] --> CachePro[\"缓存命中 较低\"]\n    CachePro --> MissPro[\"未命中 1.1M (≈3×理想)\"]\n    MissPro --> CostPro[\"成本 11.60\"]\n    CostFlash --> Compare[\"Flash 成本更高\"]\n    CostPro --> Compare\n    Compare --> Insight[\"缓存命中率是优化重点\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:00:59+00:00"
+}

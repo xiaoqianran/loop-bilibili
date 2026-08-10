@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1xD3J6FEzM",
+  "title": "显存焦虑救星！Qwen3.6-35B-A3B越狱版，无审查+多模态+Agent，低显存也能飞速跑起",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1177,
+  "text": "今天开始我将录制一系列\n我购买5060ti16G显卡后\n新手小白\n在学习AI的路上进行了哪些尝试和踩过的坑\n这一期介绍部署一个本地模型\n宽3.6到35BA3B越狱版\n大家在没有遇到官方模型\n抱歉我无法回答\n这模型一遇到用户就喊\n没问题\n包在我身上\n宽3.6-35BA3B越狱版\n它不光敢说敢干\n而且智商在线\n连6G显存的老旧显卡都能喂饱\n集成显卡都能运行\n祝你实现本地AI的自由\n先说名字\n35B听着像服务器才扛得住的巨无霸队吧\n但人家偷偷用了某混合专家架构\n啥意思呢\n就像吃自助35盘菜摆在那儿\n但每次只挑三盘吃\n所以虽然总餐数量是35B\n但实际运行时只激活约3B\n显存压力直接降到地板\n更绝的是他的无审查特性\n官方模型是戴安全帽的打工人\n他是穿机车皮衣的冒险家\n不挑问题\n不设边界\n属于那种你问啥他答啥\n你让他干啥\n他真干的激进版\n别以为越狱版就是傻大粗\n实测中文理解代码能力\n甚至看图实物表现直接对标闭源模型\n第一梯队\n这模型最骚的操作是什么\n多模态支持装上approach\n多模态权重后\n它直接变成本地bank vision截图\n读代码分析UI界面\nOCR识别一张图扔进去\n它连画面里的代码逻辑都能给你扒出来\n更厉害的是\n它原生支持agent自动执行\n你不需要开终端敲命令\n他自己能写代码\n调工具\n联网查资料\n全程本地跑完\n不要token\n不要APK\n不要联网\n本地AI\n从聊天工具直接升舱成数字打工员\n怎么跑起来\n三步走\n小白也能跟上\n第一步\n去哈根face货物站下载量化版显存档\n注意4090\n直接上Q4KP或Q4km8G显卡\n刷IQ2M别贪心\n稳定第一\n第二步下载拉玛酷引擎\n支持N卡A卡\n甚至集成显卡\n纯CPU硬抗都行\n第三步运行一键脚本\n记住两个救命参数\n能够999全量化上满现存利用率拉满\n君者必须加\n不然中文输出可能变成天书或无限复读\n跑起来只是开始\n真正香的是对接A真法拉莫库的输出接口\n指向127.0.0点\n幺八千零八十位\n1APIT随便填个123\n直接喂给HERMES或open club\n瞬间你本地就多了个24小时待命\n不眠不休的AI助理\n它不仅能陪你聊天\n还能自动写脚本\n分析数据\n调用本地工具\n本地部署的终极形态就是模型自由加agent\n自由钱包不痛体验拉满我本机的配置很一般\ncc u is400F显示5060ti16G内存\nDDDR四三十二G\n我本机测试的速度给大家参考一下\n使用IQ2M最低版本时平均是100偷个每秒\n使用IQ4NL自低版本时平均是8TOK\n每秒差距很大\n100token每秒时很是流畅啊\n最后总结一下\n低门槛\n无审查\n多模态agent自由\n适合想本地部署\n显存有限\n又想要高质量体验的同学\n部署超简单\n小白朋友折腾起来吧\n操作文档链接\n我放评论区\n跟着文档一步步操作\n半小时就实现token自由了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1xD3J6FEzM",
+  "published_at": "1785341598",
+  "fetched_at": "2026-08-09T05:35:56+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "HTTP 524: {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-524/\",\"title\":\"Error 524: A timeout occurred\",\"status\":524,\"detail\":\"The origin web server did not return a complete response within the 120-second Proxy Read Timeout window. The connection was established, but the origin took too long to respond.\",\"instance\":\"a2848792dc6dfd8f\",\"error_code\":524,\"error_name\":\"origin_response_timeout\",\"error_category\":\"origin\",\"ray_id\":\"a2848792dc6dfd8f\",\"timestamp\":\"2026-08-09T06:00:37Z\",\"zone\":\"integrate.api.nvidia.com\",\"cloudflare_error\":true,\"retryable\":true,\"retry_after\":120,\"owner_action_required\":true,\"what_you_should_do\":\"**Wait and retry.** Back off for at least 120 seconds. If the error persists, the website operator should che",
+      "updated_at": "2026-08-09T06:00:37+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "HTTP 524: {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-524/\",\"title\":\"Error 524: A timeout occurred\",\"status\":524,\"detail\":\"The origin web server did not return a complete response within the 120-second Proxy Read Timeout window. The connection was established, but the origin took too long to respond.\",\"instance\":\"a2848792dc6dfd8f\",\"error_code\":524,\"error_name\":\"origin_response_timeout\",\"error_category\":\"origin\",\"ray_id\":\"a2848792dc6dfd8f\",\"timestamp\":\"2026-08-09T06:00:37Z\",\"zone\":\"integrate.api.nvidia.com\",\"cloudflare_error\":true,\"retryable\":true,\"retry_after\":120,\"owner_action_required\":true,\"what_you_should_do\":\"**Wait and retry.** Back off for at least 120 seconds. If the error persists, the website operator should che",
+  "analysis_updated_at": "2026-08-09T06:00:37+00:00"
+}

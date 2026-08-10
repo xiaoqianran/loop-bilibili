@@ -1,0 +1,66 @@
+{
+  "bvid": "BV16EVF6TEdg",
+  "title": "一个人玩游戏ai弹幕开源",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 308,
+  "text": "开源AI弹幕项目\n我已经完成了弹幕AI\n一个人无聊可以让AI当观众点击右下角\n然后选择第一个解压后相继打开\n第一次等待时间可能有点长\n然后就能使用了\n并且这一次新增了麦克风模式\n让您对AI观众做一回虚拟主播\n接下来介绍大家关心的成本问题\n以25号计算\n总成本是0.334元\n能使用时间在一个多小时屏幕中的140万\ntoken是我之后测试了一翼模型\n接下来做一个简单的未来功能介绍\n第一让弹幕的风格能呈现大家喜欢的\n主播的直播间风格\n这方面目前我也在强行\n现在增加了工序化弹幕库作为过渡\n第二不同的弹幕特效\n这个倒是很好完成\n下一次会加入第三礼物功能\n关于礼物功能制作项游戏困难暂时无法完成\n同时也欢迎大家提出宝贵意见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16EVF6TEdg",
+  "published_at": "1779761640",
+  "fetched_at": "2026-08-07T03:41:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 开源AI弹幕项目知识图谱\n\n## 系统概览\n```mermaid\nflowchart TD\n    A1[\"开源AI弹幕项目\"]\n    A2[\"AI观众模块\"]\n    A3[\"麦克风模式\"]\n    A4[\"弹幕风格库\"]\n    A5[\"弹幕特效\"]\n    A6[\"礼物功能（待实现）\"]\n    A7[\"成本模型\"]\n    A1 --> A2\n    A2 --> A3\n    A2 --> A4\n    A2 --> A5\n    A2 --> A6\n    A1 --> A7\n```\n<!--\nA1: 开源AI弹幕项目 [BV16EVF6TEdg P1 00:00]\nA2: AI观众模块（“一个人无聊可以让AI当观众”）[BV16EVF6TEdg P1 00:01]\nA3: 麦克风模式（新增）[BV16EVF6TEdg P1 00:14]\nA4: 弹幕风格库（工序化弹幕库）[BV16EVF6TEdg P1 00:44]\nA5: 弹幕特效（不同特效）[BV16EVF6TEdg P1 00:49]\nA6: 礼物功能（暂未实现）[BV16EVF6TEdg P1 00:54]\nA7: 成本模型（总成本0.334元）[BV16EVF6TEdg P1 00:20-00:26]\n-->\n\n## 使用流程\n```mermaid\nflowchart TD\n    B1[\"打开游戏\"]\n    B2[\"点击右下角\"]\n    B3[\"选择第一个弹幕AI\"]\n    B4[\"解压文件\"]\n    B5[\"首次等待（较长）\"]\n    B6[\"AI弹幕可用\"]\n    B7[\"启用麦克风模式（可选）\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6\n    B6 --> B7\n```\n<!--\nB1: 打开游戏（隐含）[BV16EVF6TEdg P1 00:01]\nB2: 点击右下角[BV16EVF6TEdg P1 00:01]\nB3: 选择第一个弹幕AI[BV16EVF6TEdg P1 00:07]\nB4: 解压文件[BV16EVF6TEdg P1 00:07]\nB5: 首次等待（可能有点长）[BV16EVF6TEdg P1 00:10]\nB6: AI弹幕可用[BV16EVF6TEdg P1 00:13]\nB7: 启用麦克风模式（新增）[BV16EVF6TEdg P1 00:14]\n-->\n\n## 未来功能路线图\n```mermaid\nflowchart TD\n    C1[\"弹幕风格匹配主播直播间\"]\n    C2[\"工序化弹幕库（过渡）\"]\n    C3[\"多样弹幕特效\"]\n    C4[\"礼物功能\"]\n    C5[\"用户反馈与改进\"]\n    C1 --> C2\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5\n```\n<!--\nC1: 弹幕风格匹配主播直播间[BV16EVF6TEdg P1 00:38-00:42]\nC2: 工序化弹幕库（过渡）[BV16EVF6TEdg P1 00:44]\nC3: 多样弹幕特效[BV16EVF6TEdg P1 00:49]\nC4: 礼物功能（计划中）[BV16EVF6TEdg P1 00:51-00:54]\nC5: 用户反馈与改进[BV16EVF6TEdg P1 00:58]\n-->",
+      "diagrams": [
+        {
+          "title": "系统概览",
+          "code": "flowchart TD\n    A1[\"开源AI弹幕项目\"]\n    A2[\"AI观众模块\"]\n    A3[\"麦克风模式\"]\n    A4[\"弹幕风格库\"]\n    A5[\"弹幕特效\"]\n    A6[\"礼物功能（待实现）\"]\n    A7[\"成本模型\"]\n    A1 --> A2\n    A2 --> A3\n    A2 --> A4\n    A2 --> A5\n    A2 --> A6\n    A1 --> A7"
+        },
+        {
+          "title": "使用流程",
+          "code": "flowchart TD\n    B1[\"打开游戏\"]\n    B2[\"点击右下角\"]\n    B3[\"选择第一个弹幕AI\"]\n    B4[\"解压文件\"]\n    B5[\"首次等待（较长）\"]\n    B6[\"AI弹幕可用\"]\n    B7[\"启用麦克风模式（可选）\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6\n    B6 --> B7"
+        },
+        {
+          "title": "未来功能路线图",
+          "code": "flowchart TD\n    C1[\"弹幕风格匹配主播直播间\"]\n    C2[\"工序化弹幕库（过渡）\"]\n    C3[\"多样弹幕特效\"]\n    C4[\"礼物功能\"]\n    C5[\"用户反馈与改进\"]\n    C1 --> C2\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T03:41:33+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 开源AI弹幕项目知识图谱\n\n## 系统概览\n```mermaid\nflowchart TD\n    A1[\"开源AI弹幕项目\"]\n    A2[\"AI观众模块\"]\n    A3[\"麦克风模式\"]\n    A4[\"弹幕风格库\"]\n    A5[\"弹幕特效\"]\n    A6[\"礼物功能（待实现）\"]\n    A7[\"成本模型\"]\n    A1 --> A2\n    A2 --> A3\n    A2 --> A4\n    A2 --> A5\n    A2 --> A6\n    A1 --> A7\n```\n<!--\nA1: 开源AI弹幕项目 [BV16EVF6TEdg P1 00:00]\nA2: AI观众模块（“一个人无聊可以让AI当观众”）[BV16EVF6TEdg P1 00:01]\nA3: 麦克风模式（新增）[BV16EVF6TEdg P1 00:14]\nA4: 弹幕风格库（工序化弹幕库）[BV16EVF6TEdg P1 00:44]\nA5: 弹幕特效（不同特效）[BV16EVF6TEdg P1 00:49]\nA6: 礼物功能（暂未实现）[BV16EVF6TEdg P1 00:54]\nA7: 成本模型（总成本0.334元）[BV16EVF6TEdg P1 00:20-00:26]\n-->\n\n## 使用流程\n```mermaid\nflowchart TD\n    B1[\"打开游戏\"]\n    B2[\"点击右下角\"]\n    B3[\"选择第一个弹幕AI\"]\n    B4[\"解压文件\"]\n    B5[\"首次等待（较长）\"]\n    B6[\"AI弹幕可用\"]\n    B7[\"启用麦克风模式（可选）\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6\n    B6 --> B7\n```\n<!--\nB1: 打开游戏（隐含）[BV16EVF6TEdg P1 00:01]\nB2: 点击右下角[BV16EVF6TEdg P1 00:01]\nB3: 选择第一个弹幕AI[BV16EVF6TEdg P1 00:07]\nB4: 解压文件[BV16EVF6TEdg P1 00:07]\nB5: 首次等待（可能有点长）[BV16EVF6TEdg P1 00:10]\nB6: AI弹幕可用[BV16EVF6TEdg P1 00:13]\nB7: 启用麦克风模式（新增）[BV16EVF6TEdg P1 00:14]\n-->\n\n## 未来功能路线图\n```mermaid\nflowchart TD\n    C1[\"弹幕风格匹配主播直播间\"]\n    C2[\"工序化弹幕库（过渡）\"]\n    C3[\"多样弹幕特效\"]\n    C4[\"礼物功能\"]\n    C5[\"用户反馈与改进\"]\n    C1 --> C2\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5\n```\n<!--\nC1: 弹幕风格匹配主播直播间[BV16EVF6TEdg P1 00:38-00:42]\nC2: 工序化弹幕库（过渡）[BV16EVF6TEdg P1 00:44]\nC3: 多样弹幕特效[BV16EVF6TEdg P1 00:49]\nC4: 礼物功能（计划中）[BV16EVF6TEdg P1 00:51-00:54]\nC5: 用户反馈与改进[BV16EVF6TEdg P1 00:58]\n-->",
+  "diagrams": [
+    {
+      "title": "系统概览",
+      "code": "flowchart TD\n    A1[\"开源AI弹幕项目\"]\n    A2[\"AI观众模块\"]\n    A3[\"麦克风模式\"]\n    A4[\"弹幕风格库\"]\n    A5[\"弹幕特效\"]\n    A6[\"礼物功能（待实现）\"]\n    A7[\"成本模型\"]\n    A1 --> A2\n    A2 --> A3\n    A2 --> A4\n    A2 --> A5\n    A2 --> A6\n    A1 --> A7"
+    },
+    {
+      "title": "使用流程",
+      "code": "flowchart TD\n    B1[\"打开游戏\"]\n    B2[\"点击右下角\"]\n    B3[\"选择第一个弹幕AI\"]\n    B4[\"解压文件\"]\n    B5[\"首次等待（较长）\"]\n    B6[\"AI弹幕可用\"]\n    B7[\"启用麦克风模式（可选）\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6\n    B6 --> B7"
+    },
+    {
+      "title": "未来功能路线图",
+      "code": "flowchart TD\n    C1[\"弹幕风格匹配主播直播间\"]\n    C2[\"工序化弹幕库（过渡）\"]\n    C3[\"多样弹幕特效\"]\n    C4[\"礼物功能\"]\n    C5[\"用户反馈与改进\"]\n    C1 --> C2\n    C2 --> C3\n    C3 --> C4\n    C4 --> C5"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:41:33+00:00"
+}

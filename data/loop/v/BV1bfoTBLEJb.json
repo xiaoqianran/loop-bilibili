@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1bfoTBLEJb",
+  "title": "ollama,llama.cpp,LMstudio性能对比",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2185,
+  "text": "大家好啊\n今天就是来录制一下本地部署大模型\n到底用哪一种方式是最合适的\n也不能说最合适啊\n就是看以下他们的一个性能对比啊\n有三个软件\n一个呢是欧AMA\n一个是拉玛CPP\n还有一个呢是lm studio\n来第一个第一个我们先来看这个欧拉玛啊\n看下欧拉玛\nOk\n我们全部用同一种模型啊\n同一个模型\n而且用它的同一个量化的版本\n来看一下我自己本地呃\n欧拉曼的话是部署了\n就是部署了这个千问3.6\n35B的这个模型\n然后可以看一下欧拉玛\n他额3.63105B的话\n他其实也是一个量化版本\n它量化版本也是啊\n呃四比特啊\n四比特的一个量化版本啊\nQ4杠K杠M啊\n这个量化版本\n然后那个i m studio\n还有拉玛CPP啊\n我们现在我现在自己本地的话\n也全部都在那个hoi face\n和那个魔塔社区上面去下载了同一个量化版本\n可以看下我的这个AI模型啊\n嗯看也是使用的是千问3.63105B啊\n呃杠ASMB啊\n杠UD啊\nQ4杠K杠M啊\n都是用的四比特的一个量化版本啊\n它们大小基本都是一个额\n将近是23G的一个大小嗯\n来先看下第一个是欧拉玛\n欧拉玛看一下\n再看看下这里的一个显存啊\n现在我没有运行的时候\n看我自己本身显存是有1.9G嗯\n然后我现在呢就先用欧拉玛去做个对话啊\n看一下我的内存占用\n嗯相当于他从1.9G就直接2G\n直接涨到了27G\n这个模型本本身的这个呃那个文件大小的话\n来给你看一下\n看一下这个文件本身大小\n将近只有就只有23G\n但实际它在使用这JPU进行推理的时候呢\n他直接给我飙到了27.2G啊\n就相当于直接占了我将近25个G啊\n25.3个G的额线存嗯\n这首我拉马\n用的来\n我们把这个欧拉玛给直接退掉\n把这个显存给释放掉\n看一下显存直接就降下来了\n现在已经是1.6G啊\n1.6g\nOK嗯再来起一个\n再来再起一个拉马CPP\n拉满CPP啊\nOk\n用拉网app啊\n这我准备了准准备好了\n他这个命令啊\n直接看哦\n刚忘忘记说了\n刚刚忘记说欧拉玛呃\n我使用的是同一种量化模型\n而且他们所有这三种模型\n它使用的上下文的长度都使用的是32K啊\n啊1024去乘以上32\n算出来的这个杠C32768哈\n这个值啊\n这里指定了一些参数啊\n这个杠M呢就是我的模型的位置啊\n是JUGJUF的格式的\n然后端口是呃8080啊\n然后这个上下文的长度呢是32K啊\n32k\n然后呢这是这个用GPU加速啊\n就是全部使用GPU去计算\nOK来起一下\n现在用的是拉马CPP\n看一下它呃\n现在还没有启动\n稍等一下\nOK这个呃拉满CPP已经起来了\n也用的是同一种模型\n看一下它内存占用啊\n相当于我是有将近1.9G\n到了这个23.4G啊\n就是说我将近是占了是21.4G的一个\n先从啊\n我指定的端口是8080啊\n直接访问8080啊\nOK嗯嗯用的也是这个切分3.6\n35B高A3BQ4量化版本啊\n嗯嗯来最简单的\n看一下看一下他的输输出的速度啊\n嗯看到了没有啊\n它显存占用的话就只有额\n相当于是21.5G左右的一个显存占用\n然后看他的输出token呃\n思考就不说了\n只能看他输出输出token其实是108点\n就相当于108个token每秒\n这个速度非常快啊\n就明显会比欧拉马减省将近呃\n四个多G的线程\n明显要比欧拉玛节省四个多G的显存\n很明显非常明显\nOK嗯然后呢这里就先停下\n停下这个拉玛CPP\n然后再使用最后一种\n就是那个LM499\n看一下他写成已经释放出来了嗯\n显存已经释放出来了\n看服务已经停掉了\n服务已经停掉了\nOK再使用最后一种好\ni m studio来看一下\nOK使用arm studio啊\n现在我看一下\n来看他现在开始默认加载我之前的模型\n看下显存占用\n也是23.4G\n看到了没有\n看一下他的这个输出啊\n显存占用l m studio和这个拉满CPP啊\n是完全一致的\n而他token token的输出速度也是\n这将近是100一个token每秒\n非常明显啊\n就是如果说是完全一个新手小白\n你自己本地要玩这个IM模型\n你可以用这个欧拉玛嗯\n它主要是现在生态做的不错\n但其实它的这个输出性能上什么的要比啊\n就是arm studio和拉玛CPP差非常多\n来把显存给释放掉\n释放掉\n刚刚应该是没有\n把这个拉玛去看一下他的一个输出啊\n输出的话重新可以去启动去看一下啊\n最简单的来做一个测试啊\n看到了没有\n飙升到27.1G的显存\n就明显要比啊就拉满CPP和RM4studio啊\n直接就是将近多了四个G的显存\n这个我之前我就就是从哪一个版本开始\n更新以后的话\n我就发现了啊\n他现在就是它占用显存就明显增大了啊\n本身我们正常的一个模型的话啊\n模型比如说它是一个6G的模型\n你实际要使用将近十个G的显存才能跑的起来\n就明显要比我们的这个模型的文件要大很多啊\n他到底用到哪里啊\n这个算力到底用在哪里啊\n也不明白\ntoken的输出的速度\n因为他这里没有任何的计算啊\n所以也看不出来啊\n这个欧拉玛其实\n不太建议用啊\n真的是不太建议用啊\n就是说嗯\n因为如果你真的要上服务器啊什么的话\n完全是要用这个VRM和这个啊\n那个SVG浪啊\n这些现在用这个欧拉玛确实不太行啊\n他速度还有这个推理速度\n还有显存占用明显大了非常多\nOk\nOK啊\n那就到这里啊\n有什么问题的话\n可以私信我啊\n私信我\n如果有什么需要帮助的啊\n也完全可以私信我啊\n我可以做一",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1bfoTBLEJb",
+  "published_at": "1776952145",
+  "fetched_at": "2026-08-10T01:17:55+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 本地大模型部署工具对比图谱\n\n## Overview of Deployment Tools\n```mermaid\nflowchart TD\n    T1[\"Ollama\"] -->|使用| M[[\"千问 3.6 35B 量化模型\"]]\n    T2[\"llama.cpp\"] -->|使用| M\n    T3[\"LM Studio\"] -->|使用| M\n    M -->|文件大小| FS[\"约 23 GB\"]\n    M -->|量化方式| Q[\"4‑bit Q4_K_M\"]\n    M -->|上下文长度| C[\"32 K\"]\n    T1 -->|GPU 加速| GPU[\"GPU 计算\"]\n    T2 -->|GPU 加速| GPU\n    T3 -->|GPU 加速| GPU\n    D[\"模型下载来源\"] -->|提供| M\n```\n\n## VRAM Consumption Comparison\n```mermaid\nflowchart TD\n    O_idle[\"Ollama 空闲 VRAM ≈ 1.9 GB\"] --> O_run[\"Ollama 推理中\"]\n    O_run --> O_mem[\"Ollama 实际占用 ≈ 27 GB\"]\n    L_idle[\"llama.cpp 空闲 VRAM ≈ 1.9 GB\"] --> L_run[\"llama.cpp 推理中\"]\n    L_run --> L_mem[\"llama.cpp 实际占用 ≈ 21.5 GB\"]\n    S_idle[\"LM Studio 空闲 VRAM ≈ 1.9 GB\"] --> S_run[\"LM Studio 推理中\"]\n    S_run --> S_mem[\"LM Studio 实际占用 ≈ 23.4 GB\"]\n    O_mem -.->|比| L_mem[\"+~5 GB\"]\n    O_mem -.->|比| S_mem[\"+~3.6 GB\"]\n```\n\n## Token Throughput & Recommendation\n```mermaid\nflowchart TD\n    O_speed[\"Ollama Token 速率 未给出（较慢）\"]\n    L_speed[\"llama.cpp 108 token/s\"]\n    S_speed[\"LM Studio 100 token/s\"]\n    L_speed -->|高效| MemEff[\"显存利用率高\"]\n    S_speed -->|高效| MemEff\n    O_speed -->|低效| MemEff\n    O_rec[\"不推荐使用 Ollama\"] -->|依据| O_speed\n    O_rec -->|依据| O_mem[\"显存占用高\"]\n    Rec1[\"推荐使用 llama.cpp 或 LM Studio\"] -->|依据| L_speed\n    Rec1 -->|依据| S_speed\n    Rec1 -->|依据| MemEff\n    Newbie[\"新手可尝试 Ollama\"] -->|冲突观点| O_rec\n```\n",
+      "diagrams": [
+        {
+          "title": "Overview of Deployment Tools",
+          "code": "flowchart TD\n    T1[\"Ollama\"] -->|使用| M[[\"千问 3.6 35B 量化模型\"]]\n    T2[\"llama.cpp\"] -->|使用| M\n    T3[\"LM Studio\"] -->|使用| M\n    M -->|文件大小| FS[\"约 23 GB\"]\n    M -->|量化方式| Q[\"4‑bit Q4_K_M\"]\n    M -->|上下文长度| C[\"32 K\"]\n    T1 -->|GPU 加速| GPU[\"GPU 计算\"]\n    T2 -->|GPU 加速| GPU\n    T3 -->|GPU 加速| GPU\n    D[\"模型下载来源\"] -->|提供| M"
+        },
+        {
+          "title": "VRAM Consumption Comparison",
+          "code": "flowchart TD\n    O_idle[\"Ollama 空闲 VRAM ≈ 1.9 GB\"] --> O_run[\"Ollama 推理中\"]\n    O_run --> O_mem[\"Ollama 实际占用 ≈ 27 GB\"]\n    L_idle[\"llama.cpp 空闲 VRAM ≈ 1.9 GB\"] --> L_run[\"llama.cpp 推理中\"]\n    L_run --> L_mem[\"llama.cpp 实际占用 ≈ 21.5 GB\"]\n    S_idle[\"LM Studio 空闲 VRAM ≈ 1.9 GB\"] --> S_run[\"LM Studio 推理中\"]\n    S_run --> S_mem[\"LM Studio 实际占用 ≈ 23.4 GB\"]\n    O_mem -.->|比| L_mem[\"+~5 GB\"]\n    O_mem -.->|比| S_mem[\"+~3.6 GB\"]"
+        },
+        {
+          "title": "Token Throughput & Recommendation",
+          "code": "flowchart TD\n    O_speed[\"Ollama Token 速率 未给出（较慢）\"]\n    L_speed[\"llama.cpp 108 token/s\"]\n    S_speed[\"LM Studio 100 token/s\"]\n    L_speed -->|高效| MemEff[\"显存利用率高\"]\n    S_speed -->|高效| MemEff\n    O_speed -->|低效| MemEff\n    O_rec[\"不推荐使用 Ollama\"] -->|依据| O_speed\n    O_rec -->|依据| O_mem[\"显存占用高\"]\n    Rec1[\"推荐使用 llama.cpp 或 LM Studio\"] -->|依据| L_speed\n    Rec1 -->|依据| S_speed\n    Rec1 -->|依据| MemEff\n    Newbie[\"新手可尝试 Ollama\"] -->|冲突观点| O_rec"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T01:18:08+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 本地大模型部署工具对比图谱\n\n## Overview of Deployment Tools\n```mermaid\nflowchart TD\n    T1[\"Ollama\"] -->|使用| M[[\"千问 3.6 35B 量化模型\"]]\n    T2[\"llama.cpp\"] -->|使用| M\n    T3[\"LM Studio\"] -->|使用| M\n    M -->|文件大小| FS[\"约 23 GB\"]\n    M -->|量化方式| Q[\"4‑bit Q4_K_M\"]\n    M -->|上下文长度| C[\"32 K\"]\n    T1 -->|GPU 加速| GPU[\"GPU 计算\"]\n    T2 -->|GPU 加速| GPU\n    T3 -->|GPU 加速| GPU\n    D[\"模型下载来源\"] -->|提供| M\n```\n\n## VRAM Consumption Comparison\n```mermaid\nflowchart TD\n    O_idle[\"Ollama 空闲 VRAM ≈ 1.9 GB\"] --> O_run[\"Ollama 推理中\"]\n    O_run --> O_mem[\"Ollama 实际占用 ≈ 27 GB\"]\n    L_idle[\"llama.cpp 空闲 VRAM ≈ 1.9 GB\"] --> L_run[\"llama.cpp 推理中\"]\n    L_run --> L_mem[\"llama.cpp 实际占用 ≈ 21.5 GB\"]\n    S_idle[\"LM Studio 空闲 VRAM ≈ 1.9 GB\"] --> S_run[\"LM Studio 推理中\"]\n    S_run --> S_mem[\"LM Studio 实际占用 ≈ 23.4 GB\"]\n    O_mem -.->|比| L_mem[\"+~5 GB\"]\n    O_mem -.->|比| S_mem[\"+~3.6 GB\"]\n```\n\n## Token Throughput & Recommendation\n```mermaid\nflowchart TD\n    O_speed[\"Ollama Token 速率 未给出（较慢）\"]\n    L_speed[\"llama.cpp 108 token/s\"]\n    S_speed[\"LM Studio 100 token/s\"]\n    L_speed -->|高效| MemEff[\"显存利用率高\"]\n    S_speed -->|高效| MemEff\n    O_speed -->|低效| MemEff\n    O_rec[\"不推荐使用 Ollama\"] -->|依据| O_speed\n    O_rec -->|依据| O_mem[\"显存占用高\"]\n    Rec1[\"推荐使用 llama.cpp 或 LM Studio\"] -->|依据| L_speed\n    Rec1 -->|依据| S_speed\n    Rec1 -->|依据| MemEff\n    Newbie[\"新手可尝试 Ollama\"] -->|冲突观点| O_rec\n```\n",
+  "diagrams": [
+    {
+      "title": "Overview of Deployment Tools",
+      "code": "flowchart TD\n    T1[\"Ollama\"] -->|使用| M[[\"千问 3.6 35B 量化模型\"]]\n    T2[\"llama.cpp\"] -->|使用| M\n    T3[\"LM Studio\"] -->|使用| M\n    M -->|文件大小| FS[\"约 23 GB\"]\n    M -->|量化方式| Q[\"4‑bit Q4_K_M\"]\n    M -->|上下文长度| C[\"32 K\"]\n    T1 -->|GPU 加速| GPU[\"GPU 计算\"]\n    T2 -->|GPU 加速| GPU\n    T3 -->|GPU 加速| GPU\n    D[\"模型下载来源\"] -->|提供| M"
+    },
+    {
+      "title": "VRAM Consumption Comparison",
+      "code": "flowchart TD\n    O_idle[\"Ollama 空闲 VRAM ≈ 1.9 GB\"] --> O_run[\"Ollama 推理中\"]\n    O_run --> O_mem[\"Ollama 实际占用 ≈ 27 GB\"]\n    L_idle[\"llama.cpp 空闲 VRAM ≈ 1.9 GB\"] --> L_run[\"llama.cpp 推理中\"]\n    L_run --> L_mem[\"llama.cpp 实际占用 ≈ 21.5 GB\"]\n    S_idle[\"LM Studio 空闲 VRAM ≈ 1.9 GB\"] --> S_run[\"LM Studio 推理中\"]\n    S_run --> S_mem[\"LM Studio 实际占用 ≈ 23.4 GB\"]\n    O_mem -.->|比| L_mem[\"+~5 GB\"]\n    O_mem -.->|比| S_mem[\"+~3.6 GB\"]"
+    },
+    {
+      "title": "Token Throughput & Recommendation",
+      "code": "flowchart TD\n    O_speed[\"Ollama Token 速率 未给出（较慢）\"]\n    L_speed[\"llama.cpp 108 token/s\"]\n    S_speed[\"LM Studio 100 token/s\"]\n    L_speed -->|高效| MemEff[\"显存利用率高\"]\n    S_speed -->|高效| MemEff\n    O_speed -->|低效| MemEff\n    O_rec[\"不推荐使用 Ollama\"] -->|依据| O_speed\n    O_rec -->|依据| O_mem[\"显存占用高\"]\n    Rec1[\"推荐使用 llama.cpp 或 LM Studio\"] -->|依据| L_speed\n    Rec1 -->|依据| S_speed\n    Rec1 -->|依据| MemEff\n    Newbie[\"新手可尝试 Ollama\"] -->|冲突观点| O_rec"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T01:18:08+00:00"
+}

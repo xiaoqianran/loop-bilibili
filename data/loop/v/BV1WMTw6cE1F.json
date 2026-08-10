@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1WMTw6cE1F",
+  "title": "让AI制作的游戏角色动画循环更顺滑",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1018,
+  "text": "你用视频大模型生成了一个游戏里\n角色的待机动画\n首尾帧相同\n但是在游戏里播放\n看上去却不像是循环动画衔接的地方\n特别卡壳\n今天教大家一个让这种AI做出来的角色\n循环动画变顺滑的后期技巧\n我们这里用达芬奇的免费版\n可能其他主流剪辑软件也行\n思路都差不多\n但达芬奇有免费版就很香\n我们先把背景抠掉\n今天这个视频不是教抠图的\n这一步就不详细说了\n相关的方法可以看我之前这个视频\n我们把抠好图的视频复制两份连起来\n然后接下来我们用肉眼先大致微调一下\n把两份衔接的地方前后都剪掉几帧\n把它们拼起来再播放一下\n让衔接的地方保持大致连贯\n可能需要多调整几次\n没有特别大的跳跃或者运动变速就可以\n不需要太完美\n现在我们看到衔接的地方\n其实还是有明显的拼接感\n接下来是最重要的一步\n我们要来消除这个拼接感\n我们点开顶上这个特效库\n在工具箱里找到视频转场\n在视频转场这边有一个叫平滑剪接的特效\n我们把它拖到两段视频衔接的地方松手\n这里有一个小限制\n就是连接的地方必须两段视频都要被剪掉几帧\n不然他是拖不上来的\n然后我们再播放一遍\n是不是就看到连接的地方变得平滑多了\n几乎看不出来拼接的痕迹\n但这还没结束\n我们要导出的是一整段能循环的视频\n我们要把正好能循环的这段给他准确的切出来\n接下来这段操作是土办法\n因为我其实不是专业的剪辑\n可能算是骚操作\n如果有更高效的操作方法\n欢迎在评论弹幕里告诉我\n我们把第二段视频复制一个\n把它拖到上面这个视频轨道里\n我们只把它当成尺子\n我们把刚才左边这段被截掉的重新拖回来\n然后将右边边界拖到原先视频开始的地方\n就得到了被截掉的这一段\n再把这一段拖到左边视频的开头和它对齐\n我们就知道左边的视频要切掉多少了\n把它切掉\n然后我们把其他视频段都删掉\n只留下刚才丈量好的这一段\n把它复制三份\n首尾连接在一起\n然后复制第四份\n把它拖到上方的轨道\n并和中间对齐\n我们稍后还要把它当尺子\n我们在连接的地方添加上平滑剪接看一遍嗯\n如预期很流畅\n然后选中这三段视频\n右击选择新建复合片段\n它们就合成一段了\n然后我们把光标拖到上方这个尺子视频的左边\n按command b\nwindows上是control b\n把它切开\n右边同理也切开\n我们只留中间这段\n把其他都删掉\n中间这段就是我们要导出的部分\n我们验证一下\n把这段复制一份\n然后播放\n预料之中非常的顺滑\n然后我们把刚才复制的这份删掉\n只导出前面这段就OK了\n导出的方法是基础操作就不演示了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1WMTw6cE1F",
+  "published_at": "1782862500",
+  "fetched_at": "2026-08-08T20:39:12+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T20:56:56+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T20:56:56+00:00"
+}

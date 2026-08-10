@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1RuMC6eEuN",
+  "title": "海螺H3，4060，16+8配置10秒视频参考！！这才是真正的多模态！4060笔电。",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1176,
+  "text": "快速讲解啊\n前两天发了一个视频\n讲的就是这个4060呃\n16G内存加8G显存\n可以使用海螺这个H3模型\n当时我就已经表示很惊讶了\n现在还有更惊讶的\n就这两三天这个生态就得到了一定的完善\n也有很多的加速节点出来\n现在我已经可以跑15秒钟的480P视频\n十秒钟的600P视频\n以及这个7~8秒的768P的视频质量的话\n可以给你们看一下\n都是用自己电脑跑的呃\n呃768P是这样\n跑的是一个动态壁纸\n然后的话540P其实也没多好\n主要看的是这个480P的一个15秒美啊\n你看天空多美啊\n漂泊者\n你看是烟花诶\n好美啊\n画面可能会有一点点的下降质量\n但是声音表述\n视频内容\n对我的一个文字的遵循度全没有出问题\n做得很好\n而且这个加速出来之后\n真的可以给我们节省很多问题啊\n像昨天呃\n前两天的时候\n我当时488.99秒\n我记得很清楚\n跑的是一个480P的五秒视频\n当时我已经很惊讶了\n现在这个时间已经可以\n可以在4060上跑一个7~8秒\n到540P的视频了\n你看天空多美啊\n漂泊者\n你看是烟花诶\n好美啊\n你看啊\n当然这些加速节点很多人说过了\n但我说的不是加速节点\n这是一个多模态的模型\n我们知道吧\n多模态是哪\n三模声音视频图片\n但是我们现在很多人只能用纹身视频\n或者说图声视频\n我好像还没有看到\n说4060去上一个视频参考\n你们敢想吗\n4060视频参考\n我告诉你不仅能跑\n还是480P的十秒钟\n这个质量在那开心下去\n♪ 一个歌崎岖的日下 ♪\n♪ 吹不到的一夜 ♪\n他这个动作参考做的非常好啊\n给你看原视频\n啊当然我现在还不敢上这个图片参考检点\n我现在只是单纯的接入了这个声音\n跟视频的模块\n相当于现在只是一个双模的一个参考\n没敢做一个三模的参考啊\n但是我在running hub上用了一个三模参考\n跑了那些768P的视频\n可以给你们看一眼\n提了两个要求啊\n用的都是包括在running hub上\n用的都是这个INT8的减脂版本\n只有20B大小的模型\n不是原版60B的\n原版60B效果只会更好\n我估计60B甚至能超过C的噪2.01点\n首先给你看他这个保持能力\n我跟他说\n你遵循背景音乐\n他是这个结果\n背景音乐保持的很好吧\n那如果给他增加点工作量\n我说你不准保持背景音乐\n你自己写一段音乐\n他会怎么样呢\n他会不会做一个自动卡点的适配呢\n会的故事和闲的往来了上千年\n♪ 一句我信我即世的好 ♪\n妄言\n♪ 别后害我国爬山北也冬眠心 ♪\n其实这个也都是小巫见大巫\n但是他这个角色的一致性保持\n这是我用的参考图啊\n你们看一下这个角色一致性的保持\n♪ 后深后闲的往来了上千鸟 ♪\n♪ 据我心 ♪\n♪ 我前世的好望远 ♪\n♪ 别后害我国爬山北也冬眠好 ♪\n就讲这么多啊\n最后一点\n其实我这个十秒的视频参考\n付出了非常大的代价\n虽然跑通了也没爆显存\n但是花了3万273秒就这么多\n结束",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RuMC6eEuN",
+  "published_at": "1785909308",
+  "fetched_at": "2026-08-07T00:50:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 海螺 H3 多模态模型在 RTX 4060 笔记本上的性能概览\n\n## 总览图 [BV1RuMC6eEuN P1 00:07‑00:24]\n```mermaid\nflowchart TD\n    HW[\"RTX 4060 笔记本\"]\n    MEM[\"16 GB 系统内存 + 8 GB 显存\"]\n    MODEL[\"海螺 H3 多模态模型\"]\n    RES480[\"480 P 视频\"]\n    RES540[\"540 P 视频\"]\n    RES600[\"600 P 视频\"]\n    RES768[\"768 P 视频（动态壁纸）\"]\n    TIME480[\"15 秒 @480 P\"]\n    TIME540[\"≈10 秒 @540 P\"]\n    TIME768[\"7‑8 秒 @768 P\"]\n    SKY[\"天空画面\"]\n    MUSIC[\"背景音乐保持良好\"]\n    DYNAMIC[\"动态壁纸（768 P）\"]\n\n    HW --> MEM\n    HW --> MODEL\n    MODEL --> RES480\n    MODEL --> RES540\n    MODEL --> RES600\n    MODEL --> RES768\n    RES480 --> TIME480\n    RES540 --> TIME540\n    RES768 --> TIME768\n    RES480 --> SKY\n    RES540 --> SKY\n    RES768 --> DYNAMIC\n    DYNAMIC --> SKY\n    RES480 --> MUSIC\n    RES540 --> MUSIC\n    RES768 --> MUSIC\n```\n\n## 多模态概念与加速节点 [BV1RuMC6eEuN P1 01:46‑01:59]\n```mermaid\nflowchart LR\n    MULTI[\"多模态（声音、视频、图片）\"]\n    SOUND[\"声音模态\"]\n    VIDEO[\"视频模态\"]\n    IMAGE[\"图片模态\"]\n    ACCEL[\"加速节点（提升推理速度）\"]\n    BENEFIT[\"节省大量推理时间\"]\n    DOUBLE[\"双模（声音+视频）参考\"]\n    TRIPLE[\"三模（声音+视频+图片）尝试\"]\n    NONACCEL[\"非加速节点，仅模型本身\"]\n\n    MULTI --> SOUND\n    MULTI --> VIDEO\n    MULTI --> IMAGE\n    ACCEL --> BENEFIT\n    MULTI --> ACCEL\n    MULTI --> NONACCEL\n    NONACCEL --> DOUBLE\n    DOUBLE --> TRIPLE\n```\n\n## 运行配置与模型规模 [BV1RuMC6eEuN P1 03:17‑03:28]\n```mermaid\nflowchart TD\n    HUB[\"running hub 平台\"]\n    INT8[\"INT8 减脂版 20 B 模型\"]\n    ORIGINAL[\"原版 60 B 模型\"]\n    COMP[\"性能对比\"]\n    EXPECT[\"预计 60 B 超过 C 噪声 2.01 点\"]\n    REQ[\"使用 INT8 版本的两个要求\"]\n    REQ1[\"要求 1：兼容运行环境\"]\n    REQ2[\"要求 2：保持输出质量\"]\n\n    HUB --> INT8\n    HUB --> ORIGINAL\n    INT8 --> COMP\n    ORIGINAL --> COMP\n    COMP --> EXPECT\n    INT8 --> REQ\n    REQ --> REQ1\n    REQ --> REQ2\n```\n\n## 性能对比与成本 [BV1RuMC6eEuN P1 04:43‑04:50]\n```mermaid\nflowchart TD\n    REF[\"10 秒 480 P 视频参考\"]\n    RUN[\"成功跑通\"]\n    MEM[\"未爆显存\"]\n    TIME_COST[\"耗时 3 万 273 秒\"]\n    COMP_COST[\"相较于早期 488.99 秒 大幅提升\"]\n\n    REF --> RUN\n    RUN --> MEM\n    RUN --> TIME_COST\n    TIME_COST --> COMP_COST\n```",
+      "diagrams": [
+        {
+          "title": "总览图 [BV1RuMC6eEuN P1 00:07‑00:24]",
+          "code": "flowchart TD\n    HW[\"RTX 4060 笔记本\"]\n    MEM[\"16 GB 系统内存 + 8 GB 显存\"]\n    MODEL[\"海螺 H3 多模态模型\"]\n    RES480[\"480 P 视频\"]\n    RES540[\"540 P 视频\"]\n    RES600[\"600 P 视频\"]\n    RES768[\"768 P 视频（动态壁纸）\"]\n    TIME480[\"15 秒 @480 P\"]\n    TIME540[\"≈10 秒 @540 P\"]\n    TIME768[\"7‑8 秒 @768 P\"]\n    SKY[\"天空画面\"]\n    MUSIC[\"背景音乐保持良好\"]\n    DYNAMIC[\"动态壁纸（768 P）\"]\n\n    HW --> MEM\n    HW --> MODEL\n    MODEL --> RES480\n    MODEL --> RES540\n    MODEL --> RES600\n    MODEL --> RES768\n    RES480 --> TIME480\n    RES540 --> TIME540\n    RES768 --> TIME768\n    RES480 --> SKY\n    RES540 --> SKY\n    RES768 --> DYNAMIC\n    DYNAMIC --> SKY\n    RES480 --> MUSIC\n    RES540 --> MUSIC\n    RES768 --> MUSIC"
+        },
+        {
+          "title": "多模态概念与加速节点 [BV1RuMC6eEuN P1 01:46‑01:59]",
+          "code": "flowchart LR\n    MULTI[\"多模态（声音、视频、图片）\"]\n    SOUND[\"声音模态\"]\n    VIDEO[\"视频模态\"]\n    IMAGE[\"图片模态\"]\n    ACCEL[\"加速节点（提升推理速度）\"]\n    BENEFIT[\"节省大量推理时间\"]\n    DOUBLE[\"双模（声音+视频）参考\"]\n    TRIPLE[\"三模（声音+视频+图片）尝试\"]\n    NONACCEL[\"非加速节点，仅模型本身\"]\n\n    MULTI --> SOUND\n    MULTI --> VIDEO\n    MULTI --> IMAGE\n    ACCEL --> BENEFIT\n    MULTI --> ACCEL\n    MULTI --> NONACCEL\n    NONACCEL --> DOUBLE\n    DOUBLE --> TRIPLE"
+        },
+        {
+          "title": "运行配置与模型规模 [BV1RuMC6eEuN P1 03:17‑03:28]",
+          "code": "flowchart TD\n    HUB[\"running hub 平台\"]\n    INT8[\"INT8 减脂版 20 B 模型\"]\n    ORIGINAL[\"原版 60 B 模型\"]\n    COMP[\"性能对比\"]\n    EXPECT[\"预计 60 B 超过 C 噪声 2.01 点\"]\n    REQ[\"使用 INT8 版本的两个要求\"]\n    REQ1[\"要求 1：兼容运行环境\"]\n    REQ2[\"要求 2：保持输出质量\"]\n\n    HUB --> INT8\n    HUB --> ORIGINAL\n    INT8 --> COMP\n    ORIGINAL --> COMP\n    COMP --> EXPECT\n    INT8 --> REQ\n    REQ --> REQ1\n    REQ --> REQ2"
+        },
+        {
+          "title": "性能对比与成本 [BV1RuMC6eEuN P1 04:43‑04:50]",
+          "code": "flowchart TD\n    REF[\"10 秒 480 P 视频参考\"]\n    RUN[\"成功跑通\"]\n    MEM[\"未爆显存\"]\n    TIME_COST[\"耗时 3 万 273 秒\"]\n    COMP_COST[\"相较于早期 488.99 秒 大幅提升\"]\n\n    REF --> RUN\n    RUN --> MEM\n    RUN --> TIME_COST\n    TIME_COST --> COMP_COST"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T00:51:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 海螺 H3 多模态模型在 RTX 4060 笔记本上的性能概览\n\n## 总览图 [BV1RuMC6eEuN P1 00:07‑00:24]\n```mermaid\nflowchart TD\n    HW[\"RTX 4060 笔记本\"]\n    MEM[\"16 GB 系统内存 + 8 GB 显存\"]\n    MODEL[\"海螺 H3 多模态模型\"]\n    RES480[\"480 P 视频\"]\n    RES540[\"540 P 视频\"]\n    RES600[\"600 P 视频\"]\n    RES768[\"768 P 视频（动态壁纸）\"]\n    TIME480[\"15 秒 @480 P\"]\n    TIME540[\"≈10 秒 @540 P\"]\n    TIME768[\"7‑8 秒 @768 P\"]\n    SKY[\"天空画面\"]\n    MUSIC[\"背景音乐保持良好\"]\n    DYNAMIC[\"动态壁纸（768 P）\"]\n\n    HW --> MEM\n    HW --> MODEL\n    MODEL --> RES480\n    MODEL --> RES540\n    MODEL --> RES600\n    MODEL --> RES768\n    RES480 --> TIME480\n    RES540 --> TIME540\n    RES768 --> TIME768\n    RES480 --> SKY\n    RES540 --> SKY\n    RES768 --> DYNAMIC\n    DYNAMIC --> SKY\n    RES480 --> MUSIC\n    RES540 --> MUSIC\n    RES768 --> MUSIC\n```\n\n## 多模态概念与加速节点 [BV1RuMC6eEuN P1 01:46‑01:59]\n```mermaid\nflowchart LR\n    MULTI[\"多模态（声音、视频、图片）\"]\n    SOUND[\"声音模态\"]\n    VIDEO[\"视频模态\"]\n    IMAGE[\"图片模态\"]\n    ACCEL[\"加速节点（提升推理速度）\"]\n    BENEFIT[\"节省大量推理时间\"]\n    DOUBLE[\"双模（声音+视频）参考\"]\n    TRIPLE[\"三模（声音+视频+图片）尝试\"]\n    NONACCEL[\"非加速节点，仅模型本身\"]\n\n    MULTI --> SOUND\n    MULTI --> VIDEO\n    MULTI --> IMAGE\n    ACCEL --> BENEFIT\n    MULTI --> ACCEL\n    MULTI --> NONACCEL\n    NONACCEL --> DOUBLE\n    DOUBLE --> TRIPLE\n```\n\n## 运行配置与模型规模 [BV1RuMC6eEuN P1 03:17‑03:28]\n```mermaid\nflowchart TD\n    HUB[\"running hub 平台\"]\n    INT8[\"INT8 减脂版 20 B 模型\"]\n    ORIGINAL[\"原版 60 B 模型\"]\n    COMP[\"性能对比\"]\n    EXPECT[\"预计 60 B 超过 C 噪声 2.01 点\"]\n    REQ[\"使用 INT8 版本的两个要求\"]\n    REQ1[\"要求 1：兼容运行环境\"]\n    REQ2[\"要求 2：保持输出质量\"]\n\n    HUB --> INT8\n    HUB --> ORIGINAL\n    INT8 --> COMP\n    ORIGINAL --> COMP\n    COMP --> EXPECT\n    INT8 --> REQ\n    REQ --> REQ1\n    REQ --> REQ2\n```\n\n## 性能对比与成本 [BV1RuMC6eEuN P1 04:43‑04:50]\n```mermaid\nflowchart TD\n    REF[\"10 秒 480 P 视频参考\"]\n    RUN[\"成功跑通\"]\n    MEM[\"未爆显存\"]\n    TIME_COST[\"耗时 3 万 273 秒\"]\n    COMP_COST[\"相较于早期 488.99 秒 大幅提升\"]\n\n    REF --> RUN\n    RUN --> MEM\n    RUN --> TIME_COST\n    TIME_COST --> COMP_COST\n```",
+  "diagrams": [
+    {
+      "title": "总览图 [BV1RuMC6eEuN P1 00:07‑00:24]",
+      "code": "flowchart TD\n    HW[\"RTX 4060 笔记本\"]\n    MEM[\"16 GB 系统内存 + 8 GB 显存\"]\n    MODEL[\"海螺 H3 多模态模型\"]\n    RES480[\"480 P 视频\"]\n    RES540[\"540 P 视频\"]\n    RES600[\"600 P 视频\"]\n    RES768[\"768 P 视频（动态壁纸）\"]\n    TIME480[\"15 秒 @480 P\"]\n    TIME540[\"≈10 秒 @540 P\"]\n    TIME768[\"7‑8 秒 @768 P\"]\n    SKY[\"天空画面\"]\n    MUSIC[\"背景音乐保持良好\"]\n    DYNAMIC[\"动态壁纸（768 P）\"]\n\n    HW --> MEM\n    HW --> MODEL\n    MODEL --> RES480\n    MODEL --> RES540\n    MODEL --> RES600\n    MODEL --> RES768\n    RES480 --> TIME480\n    RES540 --> TIME540\n    RES768 --> TIME768\n    RES480 --> SKY\n    RES540 --> SKY\n    RES768 --> DYNAMIC\n    DYNAMIC --> SKY\n    RES480 --> MUSIC\n    RES540 --> MUSIC\n    RES768 --> MUSIC"
+    },
+    {
+      "title": "多模态概念与加速节点 [BV1RuMC6eEuN P1 01:46‑01:59]",
+      "code": "flowchart LR\n    MULTI[\"多模态（声音、视频、图片）\"]\n    SOUND[\"声音模态\"]\n    VIDEO[\"视频模态\"]\n    IMAGE[\"图片模态\"]\n    ACCEL[\"加速节点（提升推理速度）\"]\n    BENEFIT[\"节省大量推理时间\"]\n    DOUBLE[\"双模（声音+视频）参考\"]\n    TRIPLE[\"三模（声音+视频+图片）尝试\"]\n    NONACCEL[\"非加速节点，仅模型本身\"]\n\n    MULTI --> SOUND\n    MULTI --> VIDEO\n    MULTI --> IMAGE\n    ACCEL --> BENEFIT\n    MULTI --> ACCEL\n    MULTI --> NONACCEL\n    NONACCEL --> DOUBLE\n    DOUBLE --> TRIPLE"
+    },
+    {
+      "title": "运行配置与模型规模 [BV1RuMC6eEuN P1 03:17‑03:28]",
+      "code": "flowchart TD\n    HUB[\"running hub 平台\"]\n    INT8[\"INT8 减脂版 20 B 模型\"]\n    ORIGINAL[\"原版 60 B 模型\"]\n    COMP[\"性能对比\"]\n    EXPECT[\"预计 60 B 超过 C 噪声 2.01 点\"]\n    REQ[\"使用 INT8 版本的两个要求\"]\n    REQ1[\"要求 1：兼容运行环境\"]\n    REQ2[\"要求 2：保持输出质量\"]\n\n    HUB --> INT8\n    HUB --> ORIGINAL\n    INT8 --> COMP\n    ORIGINAL --> COMP\n    COMP --> EXPECT\n    INT8 --> REQ\n    REQ --> REQ1\n    REQ --> REQ2"
+    },
+    {
+      "title": "性能对比与成本 [BV1RuMC6eEuN P1 04:43‑04:50]",
+      "code": "flowchart TD\n    REF[\"10 秒 480 P 视频参考\"]\n    RUN[\"成功跑通\"]\n    MEM[\"未爆显存\"]\n    TIME_COST[\"耗时 3 万 273 秒\"]\n    COMP_COST[\"相较于早期 488.99 秒 大幅提升\"]\n\n    REF --> RUN\n    RUN --> MEM\n    RUN --> TIME_COST\n    TIME_COST --> COMP_COST"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T00:51:05+00:00"
+}

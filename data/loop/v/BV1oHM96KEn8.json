@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1oHM96KEn8",
+  "title": "为了算对 10+20*2-3.14/3，我花了5个月写自创编译器，结果还成功了？！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 608,
+  "text": "嘿好久不见\n如果你关注过我的视频\n可能记得我之前做过一个叫vest\nNOVA的解释型语言\n但今天我要告诉你一个大新闻\n就在刚才\n我刚刚发布了vs NOVA0beta七代号compiler genesis\n编译器起源\n是的\n你没有听错\n我把我那个解释器彻底干掉了\n从今天起\nvs NOVA是一个原型LVM编译器了\n故事要从五个月前说起\n那时候west NOVA还是个纯解释器\n读一行代码跑一行像个娇羞先生\n于许我做了一个决定\n重写全部重写\n把便利机芯的解析器\n换成星球l l v mi2的编译器\n这个坑一挖就是五个月\n五个月里\n我其实有时也想摆烂\n我为什么想摆烂呢\n来我给你看个最骚的操作\n我写了这样一段代码\n你们猜我的bug编译器会修出什么\n0.000000\n因为bug把浮点运算给跳过了\n现在呢看好了\nmix等于48.9\n53333\n完美整数和浮点数混合运算\n自动类型提升\n精确计算一步到位\n这就是编译器的力量\n现在vs NOVA0beta七已经在GITHUB上发布了链接\n我会放在评论区置顶\n如果你对编译原理感兴趣\n或者想看看一个野生编译器是怎么讲出来的\n欢迎去点个star或者下载下来玩一玩\n当然他还有很多不完善的地方\n比如还没有循环\n没有函数定义\n但别急\n0beta8已经在录像了\n最后感谢每一位曾经激起过我的朋友\n你们的每一个点赞\n每一条评论都是我coding的最大动力\n我是sad u s\n我们下个版本见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1oHM96KEn8",
+  "published_at": "1785741740",
+  "fetched_at": "2026-08-09T06:50:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T06:58:37+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T06:58:37+00:00"
+}

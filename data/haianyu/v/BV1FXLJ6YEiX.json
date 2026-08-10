@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1FXLJ6YEiX",
+  "title": "125. 为什么Token数相同的批次未必是负载均衡的？以WLB LLM为例【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 559,
+  "text": "今天的问题是\n为什么token数相同的批次未必是负载均衡的\n就以WLBLLM为例\n那么它是OSDI\n2025上关于大模型预训练\n4D并行负载均衡的一个工作\n它的核心思想是变传文档打包\n首先要明确为什么token数相同\n未必是负载均衡的\n本质是由于\ntransformer的注意力层是N方及计算复杂度的\n也意味着即使这两个批次他的token数是相同的\n但是由于第一个批次它有很多的长文的\n而后面一个批次全是短文档\n那在这种情况下\n第一个批次他会计算量更大\n举个例子\n比如说这个传闻量占了3/4\n短文档占了1/4\n那么简单理解就是3/4的平方\n加上1/4的平方\n很明显是大于4×4分之一的平方等\n或者说这个大三角加这个小三角的面积\n是要大于四个小三角的\n那么明确一下这里的小三角是啥意思呢\n就这个点\n它指的就是说位置I和位置J\n计算一个助理分数\n那么由于文档内部有注意力分数\n计算文档之间是没有的\n所以呢就只有这个文档\n它所对应的这个小三角要去计算注意力\n所以呢这个部分就代表了一个计算量\n那么很明显就是说有传文档的呢\n它会有更多的计算量\n那问题来了\nWLBLLM它的核心思想是什么呢\n就是说如果当前都是短文档\n那就可以多来一点token\n这样的话\n它的计算量是和一个没有多少token的长文档\n是差不多的\n这样更负载均衡",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1FXLJ6YEiX",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:15:28+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

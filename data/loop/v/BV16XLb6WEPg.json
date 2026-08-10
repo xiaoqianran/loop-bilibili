@@ -1,0 +1,66 @@
+{
+  "bvid": "BV16XLb6WEPg",
+  "title": "别再问 OpenClaw 和 Hermes 谁更强了，它们根本不是一类 Agent",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1338,
+  "text": "PERMIX最近被吹得天花乱坠\n他真的比open cloud强吗\n但这个问题可能一开始就问错了\n因为他们解决的不是同一类的问题\nopen cloud更关注的是怎么让A准系统可控\n可编排\n可接入HERMES\n更关注的是怎么让agent会学习\n会沉淀\n会成长\n所以这期我们只讲一个问题\nopen cloud与HERMES的区别究竟是什么\n别焦虑热点\n我帮你盯方法\n我陪你试\n我是猫易\n欢迎来到猫易的AI笔记\n为了讲清楚这个区别\n我们先用一个简化框架\n这里先给大家介绍两个概念\n设计驱动和学习驱动\n这两个概念是本期为了理解两者差异做了拆解\n不是官方定义哦\n为什么要分出这两个概念呢\n因为open cloud更偏设计驱动\n你要先配置好渠道工具边界\nA准路由和运行规则\nA准才能按照你的设计执行\nHERMES更偏学习驱动\n它不是让你设计好规则\n而是让他自己学会沉淀经验\n我们先看到open cloud open CD的区别点在于\n它是一个可部署\n可编排的agent gateway\n你可以配置它的渠道工具边界\nA准路由工作区和运行规则\n它不只是帮你把消息接进来\n而是让你能更完整的控制一个业务型A准系统\nOpen cloud gateway\n负责接住消息入额任务\n把任务交给后面的AI assistant\ncoding a准或工具工作流\nopen cloud的组件很清楚\n你配置系统A准按钮设计执行\n你再审计结果\n从这期的对比角度看\n它更偏设计驱动\n你要先配置好渠道工具边界和运行规则\nA准才能按你的设计执行\n再看到hermes agent hermes的区别点在于\n他更关心agent做完任务以后经验怎么留下\n普通A准完成一次任务可能就结束了\n但HERMES想解决的是这次执行经验能不能沉淀\n项目背景\n能不能保留\n做过的流程\n能不能变成skills\nHERMES为什么能自动沉淀呢\n因为他有着skill guidance的提示\n以及后台review的机制\nA准可以自己创建更新\n删除skill\n触发条件为\n每当A准累计执行了大概十轮的工具迭代\nA准就会按照当前对话历史\n让一个指A准自己判断\n刚才这段对话有没有值得沉淀成skill的经验\n如果有就记入\n所以HERMES的主线是经验沉淀成技能\n技能在后续任务里复用和改进\n但要注意自动沉淀不是天然可靠的\n如果触发条件时判断错了\n沉淀的经验就是错的\n这就是漂移物学经验污染的来源\n所以HERMX也关注记忆质量\n技能可靠性和反馈可控性\n所以open cloud和HERMES的区别可以用一张图就讲清楚\nopen cloud更偏设计驱动\n他关心的是你怎么配置渠道工具边界\nA准路由和运行规则\n让AD准按你的设计执行\nHERMES更偏学习驱动\n他关心的是他怎么判断要不要沉淀技能\n怎么生成\n下次怎么复用和改进\n所以他们不是谁更强\n而是解决的问题不同\nOPENCORD重点是让A准按你的设计执行\nHERMES的重点是让经验变成后续可复用的能力\n这就是本集最核心的区别\n所以你可以这样记\nOpen call\n重点是你设计HERMES\n重点是他学会评论区扣agent\n我把本期区别图卡发给你\n我是猫易热点\n我帮你盯方法\n我陪你试\n关注猫易\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16XLb6WEPg",
+  "published_at": "1779358843",
+  "fetched_at": "2026-08-10T03:55:10+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# OpenCloud 与 Hermes 区别图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    OC[\"OpenCloud\"] --> DD[\"设计驱动\"]\n    HM[\"Hermes\"] --> LD[\"学习驱动\"]\n    DD --> CFG[\"需要配置渠道工具边界、A准路由、运行规则\"]\n    LD --> EXP[\"需要经验沉淀成技能\"]\n    EXP --> SKILL[\"生成 Skill\"]\n    SKILL --> DRIFT[\"可能导致经验漂移（Skill 质量风险）\"]\n```\n\n<!-- [BV16XLb6WEPg P1 00:47] OpenCloud 更偏设计驱动 -->\n<!-- [BV16XLb6WEPg P1 00:59] Hermes 更偏学习驱动 -->\n<!-- [BV16XLb6WEPg P1 00:49-00:54] 设计驱动需要先配置渠道工具边界、A准路由和运行规则 -->\n<!-- [BV16XLb6WEPg P1 01:01-01:04] 学习驱动让 agent 自己学会沉淀经验 -->\n<!-- [BV16XLb6WEPg P1 02:06-02:10] Hermes 自动沉淀依赖 skill guidance 与后台 review 机制 -->\n<!-- [BV16XLb6WEPg P1 02:15-02:23] 触发条件：累计约十轮工具迭代后判断是否沉淀为 Skill -->\n<!-- [BV16XLb6WEPg P1 02:34-02:42] 自动沉淀可能导致经验漂移污染 -->\n\n## OpenCloud 工作流\n\n```mermaid\nflowchart TD\n    GW[\"OpenCloud Gateway\"]\n    MSG[\"消息接入\"]\n    DISPATCH[\"任务分发给 AI Assistant\"]\n    AGENT[\"A准 Agent\"]\n    CFG[\"配置渠道工具边界\"]\n    ROUTE[\"A准路由\"]\n    RULES[\"运行规则\"]\n    CONTROL[\"业务型 A准 系统控制\"]\n\n    MSG --> GW\n    GW --> DISPATCH\n    DISPATCH --> AGENT\n    AGENT --> CFG\n    CFG --> ROUTE\n    ROUTE --> RULES\n    RULES --> CONTROL\n```\n\n<!-- [BV16XLb6WEPg P1 01:21-01:25] OpenCloud Gateway 负责接收消息并分发任务 -->\n<!-- [BV16XLb6WEPg P1 01:10-01:13] 可以配置渠道工具边界、A准路由和运行规则 -->\n<!-- [BV16XLb6WEPg P1 01:18] 让你能更完整地控制业务型 A准 系统 -->\n\n## Hermes 经验沉淀机制\n\n```mermaid\nflowchart TD\n    EXEC[\"任务执行\"]\n    DIALOG[\"对话历史\"]\n    TRIGGER[\"触发条件（≈10 轮工具迭代）\"]\n    GUIDANCE[\"Skill Guidance 提示\"]\n    REVIEW[\"后台 Review 机制\"]\n    CREATE[\"Skill 创建\"]\n    REUSE[\"后续任务复用\"]\n    QUALITY[\"Skill 质量控制\"]\n    DRIFT[\"经验漂移风险\"]\n\n    EXEC --> DIALOG\n    DIALOG --> TRIGGER\n    TRIGGER --> GUIDANCE\n    GUIDANCE --> CREATE\n    REVIEW --> CREATE\n    CREATE --> REUSE\n    CREATE --> QUALITY\n    QUALITY --> DRIFT\n```\n\n<!-- [BV16XLb6WEPg P1 01:55-01:59] Hermes 关注任务完成后的经验沉淀 -->\n<!-- [BV16XLb6WEPg P1 02:06] 通过 skill guidance 提示实现自动沉淀 -->\n<!-- [BV16XLb6WEPg P1 02:08] 结合后台 review 机制保证质量 -->\n<!-- [BV16XLb6WEPg P1 02:15-02:23] 触发条件：累计约十轮工具迭代后判断是否沉淀 -->\n<!-- [BV16XLb6WEPg P1 02:34-02:42] 若判断错误会导致经验漂移污染 -->",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    OC[\"OpenCloud\"] --> DD[\"设计驱动\"]\n    HM[\"Hermes\"] --> LD[\"学习驱动\"]\n    DD --> CFG[\"需要配置渠道工具边界、A准路由、运行规则\"]\n    LD --> EXP[\"需要经验沉淀成技能\"]\n    EXP --> SKILL[\"生成 Skill\"]\n    SKILL --> DRIFT[\"可能导致经验漂移（Skill 质量风险）\"]"
+        },
+        {
+          "title": "OpenCloud 工作流",
+          "code": "flowchart TD\n    GW[\"OpenCloud Gateway\"]\n    MSG[\"消息接入\"]\n    DISPATCH[\"任务分发给 AI Assistant\"]\n    AGENT[\"A准 Agent\"]\n    CFG[\"配置渠道工具边界\"]\n    ROUTE[\"A准路由\"]\n    RULES[\"运行规则\"]\n    CONTROL[\"业务型 A准 系统控制\"]\n\n    MSG --> GW\n    GW --> DISPATCH\n    DISPATCH --> AGENT\n    AGENT --> CFG\n    CFG --> ROUTE\n    ROUTE --> RULES\n    RULES --> CONTROL"
+        },
+        {
+          "title": "Hermes 经验沉淀机制",
+          "code": "flowchart TD\n    EXEC[\"任务执行\"]\n    DIALOG[\"对话历史\"]\n    TRIGGER[\"触发条件（≈10 轮工具迭代）\"]\n    GUIDANCE[\"Skill Guidance 提示\"]\n    REVIEW[\"后台 Review 机制\"]\n    CREATE[\"Skill 创建\"]\n    REUSE[\"后续任务复用\"]\n    QUALITY[\"Skill 质量控制\"]\n    DRIFT[\"经验漂移风险\"]\n\n    EXEC --> DIALOG\n    DIALOG --> TRIGGER\n    TRIGGER --> GUIDANCE\n    GUIDANCE --> CREATE\n    REVIEW --> CREATE\n    CREATE --> REUSE\n    CREATE --> QUALITY\n    QUALITY --> DRIFT"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T04:04:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# OpenCloud 与 Hermes 区别图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    OC[\"OpenCloud\"] --> DD[\"设计驱动\"]\n    HM[\"Hermes\"] --> LD[\"学习驱动\"]\n    DD --> CFG[\"需要配置渠道工具边界、A准路由、运行规则\"]\n    LD --> EXP[\"需要经验沉淀成技能\"]\n    EXP --> SKILL[\"生成 Skill\"]\n    SKILL --> DRIFT[\"可能导致经验漂移（Skill 质量风险）\"]\n```\n\n<!-- [BV16XLb6WEPg P1 00:47] OpenCloud 更偏设计驱动 -->\n<!-- [BV16XLb6WEPg P1 00:59] Hermes 更偏学习驱动 -->\n<!-- [BV16XLb6WEPg P1 00:49-00:54] 设计驱动需要先配置渠道工具边界、A准路由和运行规则 -->\n<!-- [BV16XLb6WEPg P1 01:01-01:04] 学习驱动让 agent 自己学会沉淀经验 -->\n<!-- [BV16XLb6WEPg P1 02:06-02:10] Hermes 自动沉淀依赖 skill guidance 与后台 review 机制 -->\n<!-- [BV16XLb6WEPg P1 02:15-02:23] 触发条件：累计约十轮工具迭代后判断是否沉淀为 Skill -->\n<!-- [BV16XLb6WEPg P1 02:34-02:42] 自动沉淀可能导致经验漂移污染 -->\n\n## OpenCloud 工作流\n\n```mermaid\nflowchart TD\n    GW[\"OpenCloud Gateway\"]\n    MSG[\"消息接入\"]\n    DISPATCH[\"任务分发给 AI Assistant\"]\n    AGENT[\"A准 Agent\"]\n    CFG[\"配置渠道工具边界\"]\n    ROUTE[\"A准路由\"]\n    RULES[\"运行规则\"]\n    CONTROL[\"业务型 A准 系统控制\"]\n\n    MSG --> GW\n    GW --> DISPATCH\n    DISPATCH --> AGENT\n    AGENT --> CFG\n    CFG --> ROUTE\n    ROUTE --> RULES\n    RULES --> CONTROL\n```\n\n<!-- [BV16XLb6WEPg P1 01:21-01:25] OpenCloud Gateway 负责接收消息并分发任务 -->\n<!-- [BV16XLb6WEPg P1 01:10-01:13] 可以配置渠道工具边界、A准路由和运行规则 -->\n<!-- [BV16XLb6WEPg P1 01:18] 让你能更完整地控制业务型 A准 系统 -->\n\n## Hermes 经验沉淀机制\n\n```mermaid\nflowchart TD\n    EXEC[\"任务执行\"]\n    DIALOG[\"对话历史\"]\n    TRIGGER[\"触发条件（≈10 轮工具迭代）\"]\n    GUIDANCE[\"Skill Guidance 提示\"]\n    REVIEW[\"后台 Review 机制\"]\n    CREATE[\"Skill 创建\"]\n    REUSE[\"后续任务复用\"]\n    QUALITY[\"Skill 质量控制\"]\n    DRIFT[\"经验漂移风险\"]\n\n    EXEC --> DIALOG\n    DIALOG --> TRIGGER\n    TRIGGER --> GUIDANCE\n    GUIDANCE --> CREATE\n    REVIEW --> CREATE\n    CREATE --> REUSE\n    CREATE --> QUALITY\n    QUALITY --> DRIFT\n```\n\n<!-- [BV16XLb6WEPg P1 01:55-01:59] Hermes 关注任务完成后的经验沉淀 -->\n<!-- [BV16XLb6WEPg P1 02:06] 通过 skill guidance 提示实现自动沉淀 -->\n<!-- [BV16XLb6WEPg P1 02:08] 结合后台 review 机制保证质量 -->\n<!-- [BV16XLb6WEPg P1 02:15-02:23] 触发条件：累计约十轮工具迭代后判断是否沉淀 -->\n<!-- [BV16XLb6WEPg P1 02:34-02:42] 若判断错误会导致经验漂移污染 -->",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    OC[\"OpenCloud\"] --> DD[\"设计驱动\"]\n    HM[\"Hermes\"] --> LD[\"学习驱动\"]\n    DD --> CFG[\"需要配置渠道工具边界、A准路由、运行规则\"]\n    LD --> EXP[\"需要经验沉淀成技能\"]\n    EXP --> SKILL[\"生成 Skill\"]\n    SKILL --> DRIFT[\"可能导致经验漂移（Skill 质量风险）\"]"
+    },
+    {
+      "title": "OpenCloud 工作流",
+      "code": "flowchart TD\n    GW[\"OpenCloud Gateway\"]\n    MSG[\"消息接入\"]\n    DISPATCH[\"任务分发给 AI Assistant\"]\n    AGENT[\"A准 Agent\"]\n    CFG[\"配置渠道工具边界\"]\n    ROUTE[\"A准路由\"]\n    RULES[\"运行规则\"]\n    CONTROL[\"业务型 A准 系统控制\"]\n\n    MSG --> GW\n    GW --> DISPATCH\n    DISPATCH --> AGENT\n    AGENT --> CFG\n    CFG --> ROUTE\n    ROUTE --> RULES\n    RULES --> CONTROL"
+    },
+    {
+      "title": "Hermes 经验沉淀机制",
+      "code": "flowchart TD\n    EXEC[\"任务执行\"]\n    DIALOG[\"对话历史\"]\n    TRIGGER[\"触发条件（≈10 轮工具迭代）\"]\n    GUIDANCE[\"Skill Guidance 提示\"]\n    REVIEW[\"后台 Review 机制\"]\n    CREATE[\"Skill 创建\"]\n    REUSE[\"后续任务复用\"]\n    QUALITY[\"Skill 质量控制\"]\n    DRIFT[\"经验漂移风险\"]\n\n    EXEC --> DIALOG\n    DIALOG --> TRIGGER\n    TRIGGER --> GUIDANCE\n    GUIDANCE --> CREATE\n    REVIEW --> CREATE\n    CREATE --> REUSE\n    CREATE --> QUALITY\n    QUALITY --> DRIFT"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T04:04:25+00:00"
+}

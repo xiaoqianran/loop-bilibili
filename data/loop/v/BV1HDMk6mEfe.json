@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1HDMk6mEfe",
+  "title": "逆天神器！Via浏览器你会玩？一个设置够你玩两年半了！搭载Yandex搜索引擎，直接起飞",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 629,
+  "text": "自己过的比你都是尊重\n我是谁\n你们都是我这么吃真的了\n木木IOS分享\n你们现在用的浏览器是什么呢\n可以打在公屏上哦\n最近不是用了young dex这个搜索引擎吗\n我基本上追剧找资料\n看漫画什么的\n都是用到它\n有小伙伴就说了\n这个搜索引擎确实好用\n但是不够方便呀\nsafari浏览器都不能将它设置为默认引擎进行使用\n导致每次打开都要多好几步操作\n并且不能快捷的搜索\n下载雷恩DEX这个app版本呢又没有多大必要\n这个版本确实很大\n好好好\n今天木木将你们说的问题一次性解决了\n欢迎老朋友登场\nvia浏览器大家不会陌生吧\n这款无广告不臃肿的良心浏览器真的太好用了\n内存大小才4.3个MV\n并且基本的功能它都是有的\n还支持油猴脚本\n特别是自定义的功能十分的多\n我们的主页就是自定义的\n随便把玩\n随便的进行修改\n当然了\n自定义添加搜索引擎也在它的范畴之内\n就问你这个浏览器给不给力\n接下来教大家如何添加YANDEX搜索引擎\n我们点击右下角的一个小图标\n选择设置\n点击搜索引擎这一栏\n然后再点击右上角的加号按钮\n输入好咱们的标题和地址之后\n点击储存即可\n这里注意哦\n我们这个地址跟官方的主页地址是有点区别的\n设置好之后\n我们在via浏览器中就可以为所欲为了\n届时他真的可以被看作一个追剧看漫\n学习成长的强大工具\n我们想要的东西直接搜就可以了\n这款浏览器有很多值得咱们去玩的地方\n但是因为时间原因呢\n只能是介绍这么一个玩法好了\n别的不多说了\n如果想要学习更多玩机小技巧的话",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HDMk6mEfe",
+  "published_at": "1785916609",
+  "fetched_at": "2026-08-07T01:12:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Via 浏览器知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    VB[\"Via 浏览器\"] --> NA[\"无广告\"]\n    VB --> LW[\"不臃肿\"]\n    VB --> MEM[\"内存占用 4.3 MB\"]\n    VB --> BF[\"基本功能齐全\"]\n    VB --> TM[\"支持油猴脚本\"]\n    VB --> CH[\"自定义主页\"]\n    VB --> CS[\"自定义搜索引擎\"]\n    VB --> UC[\"追剧 / 看漫画 / 学习 等使用场景\"]\n    VB --> ST[\"强大工具\"]\n    CS --> YEN[\"Yandex 搜索引擎\"]\n    YEN --> ADD[\"添加搜索引擎步骤\"]\n    SAF[\"Safari 浏览器\"] --> NS[\"不能设为默认搜索引擎\"]\n    NS --> MS[\"需多步操作\"]\n    MS --> INF[\"使用不便\"]\n    VB --> NSOL[\"Via 提供解决方案\"]\n    NSOL --> IMP[\"提升搜索体验\"]\n```\n\n## 添加 YANDEX 搜索引擎步骤\n```mermaid\nflowchart TD\n    S1[\"点击右下角小图标\"] --> S2[\"选择设置\"]\n    S2 --> S3[\"点击搜索引擎栏\"]\n    S3 --> S4[\"右上角加号按钮\"]\n    S4 --> S5[\"输入标题和地址\"]\n    S5 --> S6[\"点击储存\"]\n    S6 --> DONE[\"完成，可直接搜索\"]\n    DONE --> NOTE[\"地址与官方主页略有区别\"]\n```\n\n## Safari 与 Via 对比\n```mermaid\nflowchart LR\n    SAF[\"Safari 浏览器\"] --> C1[\"不能设为默认搜索引擎\"]\n    C1 --> C2[\"需多步操作\"]\n    C2 --> C3[\"使用不便\"]\n    VIA[\"Via 浏览器\"] --> C4[\"可自定义搜索引擎\"]\n    C4 --> C5[\"一步添加 Yandex\"]\n    C5 --> C6[\"提升搜索体验\"]\n    C3 -.-> C6\n```\n\n## 使用场景\n```mermaid\nflowchart TD\n    VB[\"Via 浏览器\"] --> WS[\"追剧\"]\n    VB --> WC[\"看漫画\"]\n    VB --> RS[\"查资料\"]\n    VB --> LS[\"学习成长\"]\n    VB --> PL[\"插件支持\"]\n    VB --> CF[\"收藏功能\"]\n    VB --> UI[\"可自定义 UI\"]\n    WS --> DS[\"直接搜索剧集\"]\n    WC --> DS\n    RS --> DS\n    LS --> DS\n    UI --> DS\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    VB[\"Via 浏览器\"] --> NA[\"无广告\"]\n    VB --> LW[\"不臃肿\"]\n    VB --> MEM[\"内存占用 4.3 MB\"]\n    VB --> BF[\"基本功能齐全\"]\n    VB --> TM[\"支持油猴脚本\"]\n    VB --> CH[\"自定义主页\"]\n    VB --> CS[\"自定义搜索引擎\"]\n    VB --> UC[\"追剧 / 看漫画 / 学习 等使用场景\"]\n    VB --> ST[\"强大工具\"]\n    CS --> YEN[\"Yandex 搜索引擎\"]\n    YEN --> ADD[\"添加搜索引擎步骤\"]\n    SAF[\"Safari 浏览器\"] --> NS[\"不能设为默认搜索引擎\"]\n    NS --> MS[\"需多步操作\"]\n    MS --> INF[\"使用不便\"]\n    VB --> NSOL[\"Via 提供解决方案\"]\n    NSOL --> IMP[\"提升搜索体验\"]"
+        },
+        {
+          "title": "添加 YANDEX 搜索引擎步骤",
+          "code": "flowchart TD\n    S1[\"点击右下角小图标\"] --> S2[\"选择设置\"]\n    S2 --> S3[\"点击搜索引擎栏\"]\n    S3 --> S4[\"右上角加号按钮\"]\n    S4 --> S5[\"输入标题和地址\"]\n    S5 --> S6[\"点击储存\"]\n    S6 --> DONE[\"完成，可直接搜索\"]\n    DONE --> NOTE[\"地址与官方主页略有区别\"]"
+        },
+        {
+          "title": "Safari 与 Via 对比",
+          "code": "flowchart LR\n    SAF[\"Safari 浏览器\"] --> C1[\"不能设为默认搜索引擎\"]\n    C1 --> C2[\"需多步操作\"]\n    C2 --> C3[\"使用不便\"]\n    VIA[\"Via 浏览器\"] --> C4[\"可自定义搜索引擎\"]\n    C4 --> C5[\"一步添加 Yandex\"]\n    C5 --> C6[\"提升搜索体验\"]\n    C3 -.-> C6"
+        },
+        {
+          "title": "使用场景",
+          "code": "flowchart TD\n    VB[\"Via 浏览器\"] --> WS[\"追剧\"]\n    VB --> WC[\"看漫画\"]\n    VB --> RS[\"查资料\"]\n    VB --> LS[\"学习成长\"]\n    VB --> PL[\"插件支持\"]\n    VB --> CF[\"收藏功能\"]\n    VB --> UI[\"可自定义 UI\"]\n    WS --> DS[\"直接搜索剧集\"]\n    WC --> DS\n    RS --> DS\n    LS --> DS\n    UI --> DS"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T01:12:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Via 浏览器知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    VB[\"Via 浏览器\"] --> NA[\"无广告\"]\n    VB --> LW[\"不臃肿\"]\n    VB --> MEM[\"内存占用 4.3 MB\"]\n    VB --> BF[\"基本功能齐全\"]\n    VB --> TM[\"支持油猴脚本\"]\n    VB --> CH[\"自定义主页\"]\n    VB --> CS[\"自定义搜索引擎\"]\n    VB --> UC[\"追剧 / 看漫画 / 学习 等使用场景\"]\n    VB --> ST[\"强大工具\"]\n    CS --> YEN[\"Yandex 搜索引擎\"]\n    YEN --> ADD[\"添加搜索引擎步骤\"]\n    SAF[\"Safari 浏览器\"] --> NS[\"不能设为默认搜索引擎\"]\n    NS --> MS[\"需多步操作\"]\n    MS --> INF[\"使用不便\"]\n    VB --> NSOL[\"Via 提供解决方案\"]\n    NSOL --> IMP[\"提升搜索体验\"]\n```\n\n## 添加 YANDEX 搜索引擎步骤\n```mermaid\nflowchart TD\n    S1[\"点击右下角小图标\"] --> S2[\"选择设置\"]\n    S2 --> S3[\"点击搜索引擎栏\"]\n    S3 --> S4[\"右上角加号按钮\"]\n    S4 --> S5[\"输入标题和地址\"]\n    S5 --> S6[\"点击储存\"]\n    S6 --> DONE[\"完成，可直接搜索\"]\n    DONE --> NOTE[\"地址与官方主页略有区别\"]\n```\n\n## Safari 与 Via 对比\n```mermaid\nflowchart LR\n    SAF[\"Safari 浏览器\"] --> C1[\"不能设为默认搜索引擎\"]\n    C1 --> C2[\"需多步操作\"]\n    C2 --> C3[\"使用不便\"]\n    VIA[\"Via 浏览器\"] --> C4[\"可自定义搜索引擎\"]\n    C4 --> C5[\"一步添加 Yandex\"]\n    C5 --> C6[\"提升搜索体验\"]\n    C3 -.-> C6\n```\n\n## 使用场景\n```mermaid\nflowchart TD\n    VB[\"Via 浏览器\"] --> WS[\"追剧\"]\n    VB --> WC[\"看漫画\"]\n    VB --> RS[\"查资料\"]\n    VB --> LS[\"学习成长\"]\n    VB --> PL[\"插件支持\"]\n    VB --> CF[\"收藏功能\"]\n    VB --> UI[\"可自定义 UI\"]\n    WS --> DS[\"直接搜索剧集\"]\n    WC --> DS\n    RS --> DS\n    LS --> DS\n    UI --> DS\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    VB[\"Via 浏览器\"] --> NA[\"无广告\"]\n    VB --> LW[\"不臃肿\"]\n    VB --> MEM[\"内存占用 4.3 MB\"]\n    VB --> BF[\"基本功能齐全\"]\n    VB --> TM[\"支持油猴脚本\"]\n    VB --> CH[\"自定义主页\"]\n    VB --> CS[\"自定义搜索引擎\"]\n    VB --> UC[\"追剧 / 看漫画 / 学习 等使用场景\"]\n    VB --> ST[\"强大工具\"]\n    CS --> YEN[\"Yandex 搜索引擎\"]\n    YEN --> ADD[\"添加搜索引擎步骤\"]\n    SAF[\"Safari 浏览器\"] --> NS[\"不能设为默认搜索引擎\"]\n    NS --> MS[\"需多步操作\"]\n    MS --> INF[\"使用不便\"]\n    VB --> NSOL[\"Via 提供解决方案\"]\n    NSOL --> IMP[\"提升搜索体验\"]"
+    },
+    {
+      "title": "添加 YANDEX 搜索引擎步骤",
+      "code": "flowchart TD\n    S1[\"点击右下角小图标\"] --> S2[\"选择设置\"]\n    S2 --> S3[\"点击搜索引擎栏\"]\n    S3 --> S4[\"右上角加号按钮\"]\n    S4 --> S5[\"输入标题和地址\"]\n    S5 --> S6[\"点击储存\"]\n    S6 --> DONE[\"完成，可直接搜索\"]\n    DONE --> NOTE[\"地址与官方主页略有区别\"]"
+    },
+    {
+      "title": "Safari 与 Via 对比",
+      "code": "flowchart LR\n    SAF[\"Safari 浏览器\"] --> C1[\"不能设为默认搜索引擎\"]\n    C1 --> C2[\"需多步操作\"]\n    C2 --> C3[\"使用不便\"]\n    VIA[\"Via 浏览器\"] --> C4[\"可自定义搜索引擎\"]\n    C4 --> C5[\"一步添加 Yandex\"]\n    C5 --> C6[\"提升搜索体验\"]\n    C3 -.-> C6"
+    },
+    {
+      "title": "使用场景",
+      "code": "flowchart TD\n    VB[\"Via 浏览器\"] --> WS[\"追剧\"]\n    VB --> WC[\"看漫画\"]\n    VB --> RS[\"查资料\"]\n    VB --> LS[\"学习成长\"]\n    VB --> PL[\"插件支持\"]\n    VB --> CF[\"收藏功能\"]\n    VB --> UI[\"可自定义 UI\"]\n    WS --> DS[\"直接搜索剧集\"]\n    WC --> DS\n    RS --> DS\n    LS --> DS\n    UI --> DS"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:12:28+00:00"
+}

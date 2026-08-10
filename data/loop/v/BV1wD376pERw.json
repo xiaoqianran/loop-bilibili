@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1wD376pERw",
+  "title": "为了评估deepseek，我整了个大模型游戏能力评测bench",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2800,
+  "text": "然后接下来主要介绍我想介绍的新的东西啊\n就是这个弄了个这个嗯AI控制台\n这个是干什么用的呢\n就是说嗯给一个是给评测用的\n另一个是不评测也可以用\n就说嗯它基于一个那个颗粒的一个proxy API\n进行了一个改造\n然后他可以就是说让这些agent都充当做\n这个API的方式\n然后啊被调用\n具体来说的话\n就我可以在这个啊open嗯\n在这个叫啥gm的这个z code里面\n就就除了他其他的那个终端也行\n然后比如这个mini max杠M3\n你可能以为他是掉了一个open aid\n结合它实际上不是他是直接调的\n这个就是把这个桌面端当这个接口使用\n就可以去调啊\n为什么这样做呢\n因为我是之后是要测这个agent的\n而不是测到一个裸AAPI的一个能力\n然后比如说这个\n还有还有这个就是嗯街悦的3.7\n还有小米的2.5pro\n都是通过这个open code啊\n通过这个我前面弄这个颗粒转了一层\n就相当于是他直接走了open code\n测了open code的能力\n然后这个千问3.7plus\n就直接测的那个就是千问颗粒这个能力\n然后可以看一下\n然后这个就可以看他是不是空的\n然后可以发现这个是封了\n然后呢像这个千问3.8max ri\n它背后的话就是这个嗯\n背后的话就是这个quarter颗粒\n然后现在开始试一试\n向这个千问可以发给你是谁\n看看他能不能这样回复嗯\n可能非技术看不懂这个区别\n你会看他回放\n我是千万扣的对吧\n这个就很清很清晰了\n就是我对他搞的是没问题的\n是空的嗯\n然后换成这个\n然后这个他应该说我是coder嗯\n你就是如果你用z code\n你就会发现它就不会回复这个东西\n他还说是千万code\n这可能是个之前上下文的问题对吧\n那再来这时候应该他会说我是coder好吧\n他说他z code嗯\n哦那那这个我应该是直接通过API接进来的\n然后这个额度没有了\n然后是什么max对MINMAX\n他这个他就不会说他是Z口的\n因为那个刚才那个相关3.8\n我是通过HTTP那种给API接进来的\n哦选错了\n选open错了\n应该选对了\n再来一个\n然后对\n然后这个也是成功启动了\n就MINIMAX\n嗯感觉看起来好像也是接成AAPI的命令\nmax m3不清楚呃\n然后呢反正就差不多这么个功能吧\n然后开始看这个重头戏\n就是弄了一个这个游戏评估的\n这个是干嘛用的呢\n就是说嗯首先前面讲介绍这个功能\n就是为了我可以去评这个模型\n加AH的一起去评\n我可以发个消息\n就直接发给这个A卷加模型这个结合体去评\n相当于我就在评它的模型\n加哈尼斯的一个综合能力\n然后比如说你看这个排名\n他就有这个cod颗粒\n然后加默认的默认就是千万3点八\n然后然后因为这是测了不同的题目啊\n然后这就会有个lid bd嗯\n然后这是一个测试集\n就我现在造了这个应该有60题了\n然后然后我要再筛一筛嗯\n就对就是现在就可以选要跑哪些题\n然后可以选跑哪些模型\n我演示一下就选了个题对吧\n然后这里就可以加模型\n然后你看他这个选项都是哪些\n有这个纤维颗粒吧\nOpen code\n然后coder颗粒\ncod颗粒CN\n然后code x\n然后KIMI颗粒对吧\n就这些东西\n然后像这个还有个比较有意思的\n就是可以检测我这个KIMI账号这个key他的余额吗\n因为KIMI他有相关的这个接口\n你会发现这个五小时窗口和这个周窗口都是零\n然后检测我两个call的克嗯\nCLID这个key啊\n两个key其中一个是这个提示我这个额度\n7月27嗯\n早上八点重置\n另一个额度是还够\n就是说嗯为什么我要搞这么一个东西\n控制台这个东西一个是说我可以同时评这个\n我要批量评几十道题或者几百道题\n批量评它这个模型加item一起去评对吧\n而不是说大家全都用同一个item\n比如说都用open code\n或者同都用我一个我评测房间内这一个AINT\n这样就说他自家模型在自家A选的理论上来说\n效果应该是需要是最好的\n然后为什么要有这个东西呢\n就是说首先KIMI他的那个嗯就600多元套餐\n699套餐它的量只有199的三倍\n那么实际上如果你可以买三个199套餐\n就意味着你省了100块钱啊\n不知道说明白没\n如果知道这个事情呢\n应该很容易理解\n就说我买了两个key对吧\n嗯然后我就可以轮换\n有的有个key\n它有的都用完了\n我就通过我这个东西\n它自动轮换切换成另一个key\n然后可以让我接着跑\n而不要我手动人工切换\n就是干这干这个事情的一个目的\n然后比如说你看这样提米啊\n2.7\n然后验证就可以\n你可以验证他这个是不是通的\n这个这个转换这个东西\n然后呢\n我再找一找到之前已经跑完的题目的一个效果\n就是说他可以跑这个多个题目嘛\n我每个题我都设置了这个评估点\n然后通过这个AHMJT的方式去评估\n然后你看这就是我使用这个千问3.8\n生成的一个效果\n然后是一个可交互的一个有点像那个叫啥嗯\n反正我也没还没玩呢\n就是嗯我还不知道咋玩对\n反正随便点点吧\n反正就是可交互的网页\n然后去不同的模型同时去跑\n然后对比它们之间的一个效果\n这是搞这个东西的一个目的\n然后看谁已经成功了的\n啊这个咋玩也不知道哦\n就是都可以点击\n然后可以搞一些东西\n反正就是到时候我是要我的A怎么去评对吧\n就是说他知道这个规则\n然后你看这个都是FA尔\n就是说这个做的不好\n虽然是完成了\n看看这\nuse1到六取1~6\nOK啊\n1~6\n还是还是不管怎么玩\n大玩WASD木\n然后space action\n这个这个这个我估计我估计这个模型\n这个题做的不怎么样\n然后所以看这个评估嘛\n全fail嘛\n因为现在还在做题的过程中\n就是最后你会发现我估计它整体难度会很高\n就是因为我设计设计就这样了\n就说就算听米K3的话\n他可能也做不了很好\n这个不知道刚演示没有这个演示\n看这ands ma\n哦这个这个页面看起来有点意思\n干嘛的还是不知道\n但是它页面整体做起来比较有意思\n就可以点的地方很多\n就我做了个评估系统嘛对吧\n然后设计了一些题目嘛对吧\n然后他可以截屏不同的agent的对吧\n他们的游戏能力\n就是感觉没有找到这个模型\n做的特别好的一个演示\n就感觉很多都做的不咋地\n然后我跳的这个参赛选手已经是撑了3.8了\n让他自己先做一遍\n之后之后我会对比这个就是嗯deep sig的新版本\n加他自己的harness\n然后加这个\n然后再去对比ti\n再对比这个千万308嗯\n这三三个模型之处比\n这一看就全fairy\n之后把它搞成那个搞成那个中文的\n这一看笑的太多了\n就是说生存看起来深沉的\n但是这个评测为A乘一平\n就是一坨还行\n就实际上看模型越来越强\n但实际上比较难的题\n它其实还是做的不好的行吧\n这个项目我感觉差不多也讲清楚\n就不是那种这个题是做的比较好的\n就是我感觉是做了一个这个嗯3D模拟的\n然后可以操作这个地图\n就是一个3D沙盘一样的一个东西\n就还是挺有意思的\n行那这期视频就到这里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wD376pERw",
+  "published_at": "1785065651",
+  "fetched_at": "2026-08-08T05:25:42+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 控制台与游戏能力评测工作流图谱\n\n## 总体结构概览\n```mermaid\nflowchart TD\n    C1[\"AI 控制台\"] --> P1[\"颗粒 Proxy API（改造后）\"]\n    P1 --> A1[\"Agent 充当 API\"]\n    A1 --> OC[\"Open Code 调用方式\"]\n    A1 --> ZC[\"Z Code 桌面端接口\"]\n    A1 --> HT[\"HTTP API 直接调用\"]\n    C1 --> KM[\"KIMI Key 管理\"]\n    KM --> K1[\"Key A（额度监控）\"]\n    KM --> K2[\"Key B（额度监控）\"]\n    K1 --> SW[\"自动轮换\"]\n    K2 --> SW\n    C1 --> EV[\"模型评测模块\"]\n    EV --> QSET[\"题目集（60 题）\"]\n    EV --> MOD[\"模型列表（MiniMax、M3、千问等）\"]\n    EV --> RES[\"评测结果展示（交互网页）\"]\n```\n\n## 评测工作流\n```mermaid\nflowchart LR\n    S1[\"选择题目集\"] --> S2[\"选择模型\"]\n    S2 --> S3[\"发送评测请求至控制台\"]\n    S3 --> S4[\"模型通过对应调用方式（Open/Z/HTTP）响应\"]\n    S4 --> S5[\"截屏/记录模型输出\"]\n    S5 --> S6[\"计算评估分数（AHMJT 方法）\"]\n    S6 --> S7[\"对比不同模型成绩\"]\n    S7 --> S8[\"生成交互式评测报告\"]\n```\n\n## KIMI Key 轮换逻辑\n```mermaid\nflowchart TD\n    KMA[\"KIMI Key A\"] --> MONA[\"额度监控\"]\n    KMB[\"KIMI Key B\"] --> MONB[\"额度监控\"]\n    MONA -->|额度耗尽| SW[\"自动切换至另一 Key\"]\n    MONB -->|额度耗尽| SW\n    SW -->|切换完成| USR[\"继续评测请求\"]\n    USR --> C1[\"AI 控制台\"]\n```\n\n## 调用方式对比\n```mermaid\nflowchart LR\n    OM[\"Open Code\"] -->|直接走 Open API| API1[\"评测 API\"]\n    ZM[\"Z Code\"] -->|桌面端包装为 API| API2[\"评测 API\"]\n    HTM[\"HTTP API\"] -->|直接 HTTP 调用| API3[\"评测 API\"]\n    API1 --> AG1[\"Agent（评测能力）\"]\n    API2 --> AG1\n    API3 --> AG1\n    AG1 --> EV[\"模型评测模块\"]\n    subgraph 调用方式\n        OM\n        ZM\n        HTM\n    end\n```\n\n## 评测结果展示与交互\n```mermaid\nflowchart TD\n    RES[\"评测结果页面\"] --> BTN[\"切换模型按钮\"]\n    RES --> CHART[\"成绩对比图表\"]\n    RES --> LOG[\"模型输出日志\"]\n    RES --> SCR[\"截屏展示\"]\n    BTN --> MOD[\"选择不同模型\"]\n    MOD --> RES\n```",
+      "diagrams": [
+        {
+          "title": "总体结构概览",
+          "code": "flowchart TD\n    C1[\"AI 控制台\"] --> P1[\"颗粒 Proxy API（改造后）\"]\n    P1 --> A1[\"Agent 充当 API\"]\n    A1 --> OC[\"Open Code 调用方式\"]\n    A1 --> ZC[\"Z Code 桌面端接口\"]\n    A1 --> HT[\"HTTP API 直接调用\"]\n    C1 --> KM[\"KIMI Key 管理\"]\n    KM --> K1[\"Key A（额度监控）\"]\n    KM --> K2[\"Key B（额度监控）\"]\n    K1 --> SW[\"自动轮换\"]\n    K2 --> SW\n    C1 --> EV[\"模型评测模块\"]\n    EV --> QSET[\"题目集（60 题）\"]\n    EV --> MOD[\"模型列表（MiniMax、M3、千问等）\"]\n    EV --> RES[\"评测结果展示（交互网页）\"]"
+        },
+        {
+          "title": "评测工作流",
+          "code": "flowchart LR\n    S1[\"选择题目集\"] --> S2[\"选择模型\"]\n    S2 --> S3[\"发送评测请求至控制台\"]\n    S3 --> S4[\"模型通过对应调用方式（Open/Z/HTTP）响应\"]\n    S4 --> S5[\"截屏/记录模型输出\"]\n    S5 --> S6[\"计算评估分数（AHMJT 方法）\"]\n    S6 --> S7[\"对比不同模型成绩\"]\n    S7 --> S8[\"生成交互式评测报告\"]"
+        },
+        {
+          "title": "KIMI Key 轮换逻辑",
+          "code": "flowchart TD\n    KMA[\"KIMI Key A\"] --> MONA[\"额度监控\"]\n    KMB[\"KIMI Key B\"] --> MONB[\"额度监控\"]\n    MONA -->|额度耗尽| SW[\"自动切换至另一 Key\"]\n    MONB -->|额度耗尽| SW\n    SW -->|切换完成| USR[\"继续评测请求\"]\n    USR --> C1[\"AI 控制台\"]"
+        },
+        {
+          "title": "调用方式对比",
+          "code": "flowchart LR\n    OM[\"Open Code\"] -->|直接走 Open API| API1[\"评测 API\"]\n    ZM[\"Z Code\"] -->|桌面端包装为 API| API2[\"评测 API\"]\n    HTM[\"HTTP API\"] -->|直接 HTTP 调用| API3[\"评测 API\"]\n    API1 --> AG1[\"Agent（评测能力）\"]\n    API2 --> AG1\n    API3 --> AG1\n    AG1 --> EV[\"模型评测模块\"]\n    subgraph 调用方式\n        OM\n        ZM\n        HTM\n    end"
+        },
+        {
+          "title": "评测结果展示与交互",
+          "code": "flowchart TD\n    RES[\"评测结果页面\"] --> BTN[\"切换模型按钮\"]\n    RES --> CHART[\"成绩对比图表\"]\n    RES --> LOG[\"模型输出日志\"]\n    RES --> SCR[\"截屏展示\"]\n    BTN --> MOD[\"选择不同模型\"]\n    MOD --> RES"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T05:25:53+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 控制台与游戏能力评测工作流图谱\n\n## 总体结构概览\n```mermaid\nflowchart TD\n    C1[\"AI 控制台\"] --> P1[\"颗粒 Proxy API（改造后）\"]\n    P1 --> A1[\"Agent 充当 API\"]\n    A1 --> OC[\"Open Code 调用方式\"]\n    A1 --> ZC[\"Z Code 桌面端接口\"]\n    A1 --> HT[\"HTTP API 直接调用\"]\n    C1 --> KM[\"KIMI Key 管理\"]\n    KM --> K1[\"Key A（额度监控）\"]\n    KM --> K2[\"Key B（额度监控）\"]\n    K1 --> SW[\"自动轮换\"]\n    K2 --> SW\n    C1 --> EV[\"模型评测模块\"]\n    EV --> QSET[\"题目集（60 题）\"]\n    EV --> MOD[\"模型列表（MiniMax、M3、千问等）\"]\n    EV --> RES[\"评测结果展示（交互网页）\"]\n```\n\n## 评测工作流\n```mermaid\nflowchart LR\n    S1[\"选择题目集\"] --> S2[\"选择模型\"]\n    S2 --> S3[\"发送评测请求至控制台\"]\n    S3 --> S4[\"模型通过对应调用方式（Open/Z/HTTP）响应\"]\n    S4 --> S5[\"截屏/记录模型输出\"]\n    S5 --> S6[\"计算评估分数（AHMJT 方法）\"]\n    S6 --> S7[\"对比不同模型成绩\"]\n    S7 --> S8[\"生成交互式评测报告\"]\n```\n\n## KIMI Key 轮换逻辑\n```mermaid\nflowchart TD\n    KMA[\"KIMI Key A\"] --> MONA[\"额度监控\"]\n    KMB[\"KIMI Key B\"] --> MONB[\"额度监控\"]\n    MONA -->|额度耗尽| SW[\"自动切换至另一 Key\"]\n    MONB -->|额度耗尽| SW\n    SW -->|切换完成| USR[\"继续评测请求\"]\n    USR --> C1[\"AI 控制台\"]\n```\n\n## 调用方式对比\n```mermaid\nflowchart LR\n    OM[\"Open Code\"] -->|直接走 Open API| API1[\"评测 API\"]\n    ZM[\"Z Code\"] -->|桌面端包装为 API| API2[\"评测 API\"]\n    HTM[\"HTTP API\"] -->|直接 HTTP 调用| API3[\"评测 API\"]\n    API1 --> AG1[\"Agent（评测能力）\"]\n    API2 --> AG1\n    API3 --> AG1\n    AG1 --> EV[\"模型评测模块\"]\n    subgraph 调用方式\n        OM\n        ZM\n        HTM\n    end\n```\n\n## 评测结果展示与交互\n```mermaid\nflowchart TD\n    RES[\"评测结果页面\"] --> BTN[\"切换模型按钮\"]\n    RES --> CHART[\"成绩对比图表\"]\n    RES --> LOG[\"模型输出日志\"]\n    RES --> SCR[\"截屏展示\"]\n    BTN --> MOD[\"选择不同模型\"]\n    MOD --> RES\n```",
+  "diagrams": [
+    {
+      "title": "总体结构概览",
+      "code": "flowchart TD\n    C1[\"AI 控制台\"] --> P1[\"颗粒 Proxy API（改造后）\"]\n    P1 --> A1[\"Agent 充当 API\"]\n    A1 --> OC[\"Open Code 调用方式\"]\n    A1 --> ZC[\"Z Code 桌面端接口\"]\n    A1 --> HT[\"HTTP API 直接调用\"]\n    C1 --> KM[\"KIMI Key 管理\"]\n    KM --> K1[\"Key A（额度监控）\"]\n    KM --> K2[\"Key B（额度监控）\"]\n    K1 --> SW[\"自动轮换\"]\n    K2 --> SW\n    C1 --> EV[\"模型评测模块\"]\n    EV --> QSET[\"题目集（60 题）\"]\n    EV --> MOD[\"模型列表（MiniMax、M3、千问等）\"]\n    EV --> RES[\"评测结果展示（交互网页）\"]"
+    },
+    {
+      "title": "评测工作流",
+      "code": "flowchart LR\n    S1[\"选择题目集\"] --> S2[\"选择模型\"]\n    S2 --> S3[\"发送评测请求至控制台\"]\n    S3 --> S4[\"模型通过对应调用方式（Open/Z/HTTP）响应\"]\n    S4 --> S5[\"截屏/记录模型输出\"]\n    S5 --> S6[\"计算评估分数（AHMJT 方法）\"]\n    S6 --> S7[\"对比不同模型成绩\"]\n    S7 --> S8[\"生成交互式评测报告\"]"
+    },
+    {
+      "title": "KIMI Key 轮换逻辑",
+      "code": "flowchart TD\n    KMA[\"KIMI Key A\"] --> MONA[\"额度监控\"]\n    KMB[\"KIMI Key B\"] --> MONB[\"额度监控\"]\n    MONA -->|额度耗尽| SW[\"自动切换至另一 Key\"]\n    MONB -->|额度耗尽| SW\n    SW -->|切换完成| USR[\"继续评测请求\"]\n    USR --> C1[\"AI 控制台\"]"
+    },
+    {
+      "title": "调用方式对比",
+      "code": "flowchart LR\n    OM[\"Open Code\"] -->|直接走 Open API| API1[\"评测 API\"]\n    ZM[\"Z Code\"] -->|桌面端包装为 API| API2[\"评测 API\"]\n    HTM[\"HTTP API\"] -->|直接 HTTP 调用| API3[\"评测 API\"]\n    API1 --> AG1[\"Agent（评测能力）\"]\n    API2 --> AG1\n    API3 --> AG1\n    AG1 --> EV[\"模型评测模块\"]\n    subgraph 调用方式\n        OM\n        ZM\n        HTM\n    end"
+    },
+    {
+      "title": "评测结果展示与交互",
+      "code": "flowchart TD\n    RES[\"评测结果页面\"] --> BTN[\"切换模型按钮\"]\n    RES --> CHART[\"成绩对比图表\"]\n    RES --> LOG[\"模型输出日志\"]\n    RES --> SCR[\"截屏展示\"]\n    BTN --> MOD[\"选择不同模型\"]\n    MOD --> RES"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T05:25:53+00:00"
+}

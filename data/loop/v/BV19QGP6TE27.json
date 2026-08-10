@@ -1,0 +1,74 @@
+{
+  "bvid": "BV19QGP6TE27",
+  "title": "用Godot尝试一下复刻自己RPG的主界面",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 427,
+  "text": "用格斗做了一下之前RVG的主界面\n先来看看up之前主要用了什么插件\n粒子插件\n魔法圆环插件\n还有一个标题\n多图层插件\nOK主要就是这三个插件了\n那么用gal代码复刻出这三个插件的效果\n就可以了\n这边我们先打开游戏看看效果\n我们可以看到鼠标放置到选项上\n会有音效以及光标所在的选项\n会有呼吸缩放的效果\n后面的魔法阵图像则会围绕着中心旋转\n我们再回到阁楼看看\n这里up的录屏按钮挡住脚本按钮了\n就不献丑了\n来看看up复刻后的效果\n这里从左侧进入试用的animation player\n动画节点按钮悬停呼吸效果\n用sin函数做的pop\n这里没写球星\n所以呼吸会围着走向角放大\n粒子特效用的是g pop articles2D节点\n这边显示用的是point light2D节点\n充当点光源\n当初做RPG的时候是拜托画师老师调节图片亮度\n利用多图层插件做出帧动画效果来实现的\n现在只需要单一节点即可\n非常方便\n视频到这里也马上结束了\n可以给up主一个免费的赞吗\n感谢",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19QGP6TE27",
+  "published_at": "1785500471",
+  "fetched_at": "2026-08-07T23:03:36+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 用Godot复刻RPG主界面知识图谱\n\n## 插件概览 [BV19QGP6TE27 P1 00:05-00:11]\n```mermaid\nflowchart TD\n    P1[\"粒子插件\"]\n    P2[\"魔法圆环插件\"]\n    P3[\"多图层插件\"]\n    Title[\"标题\"]\n    P1 --> Title\n    P2 --> Title\n    P3 --> Title\n```\n\n## 交互效果链 [BV19QGP6TE27 P1 00:38-00:46]\n```mermaid\nflowchart LR\n    Hover[\"鼠标悬停选项\"]\n    Sound[\"播放音效\"]\n    Cursor[\"光标高亮\"]\n    Breath[\"呼吸缩放效果\"]\n    Rotate[\"魔法阵围绕中心旋转\"]\n    Hover --> Sound\n    Hover --> Cursor\n    Hover --> Breath\n    Breath --> Rotate\n```\n\n## 复刻实现细节 [BV19QGP6TE27 P1 01:02-01:20]\n```mermaid\nflowchart TD\n    AnimPlayer[\"AnimationPlayer\"]\n    HoverEffect[\"节点悬停呼吸效果\"]\n    SinPop[\"sin函数实现pop\"]\n    Particle[\"粒子特效: gpop particles2D\"]\n    Light2D[\"点光源: point light2D\"]\n    LightRole[\"充当点光源\"]\n    MultiLayer[\"多图层插件\"]\n    FrameAnim[\"帧动画实现\"]\n    SingleNode[\"单一节点实现\"]\n    AnimPlayer --> HoverEffect\n    HoverEffect --> SinPop\n    AnimPlayer --> Particle\n    AnimPlayer --> Light2D\n    Light2D --> LightRole\n    MultiLayer --> FrameAnim\n    FrameAnim --> SingleNode\n```\n\n## 效果对比：多图层 vs 单一节点 [BV19QGP6TE27 P1 01:23-01:34]\n```mermaid\nflowchart LR\n    Multi[\"多图层插件 + 帧动画\"]\n    Single[\"单一节点\"]\n    OldEffect[\"实现RPG主界面（原）\"]\n    NewEffect[\"实现RPG主界面（现）\"]\n    Complexity[\"实现更复杂\"]\n    Convenience[\"实现更方便\"]\n    Multi --> OldEffect\n    Single --> NewEffect\n    OldEffect --> Complexity\n    NewEffect --> Convenience\n```",
+      "diagrams": [
+        {
+          "title": "插件概览 [BV19QGP6TE27 P1 00:05-00:11]",
+          "code": "flowchart TD\n    P1[\"粒子插件\"]\n    P2[\"魔法圆环插件\"]\n    P3[\"多图层插件\"]\n    Title[\"标题\"]\n    P1 --> Title\n    P2 --> Title\n    P3 --> Title"
+        },
+        {
+          "title": "交互效果链 [BV19QGP6TE27 P1 00:38-00:46]",
+          "code": "flowchart LR\n    Hover[\"鼠标悬停选项\"]\n    Sound[\"播放音效\"]\n    Cursor[\"光标高亮\"]\n    Breath[\"呼吸缩放效果\"]\n    Rotate[\"魔法阵围绕中心旋转\"]\n    Hover --> Sound\n    Hover --> Cursor\n    Hover --> Breath\n    Breath --> Rotate"
+        },
+        {
+          "title": "复刻实现细节 [BV19QGP6TE27 P1 01:02-01:20]",
+          "code": "flowchart TD\n    AnimPlayer[\"AnimationPlayer\"]\n    HoverEffect[\"节点悬停呼吸效果\"]\n    SinPop[\"sin函数实现pop\"]\n    Particle[\"粒子特效: gpop particles2D\"]\n    Light2D[\"点光源: point light2D\"]\n    LightRole[\"充当点光源\"]\n    MultiLayer[\"多图层插件\"]\n    FrameAnim[\"帧动画实现\"]\n    SingleNode[\"单一节点实现\"]\n    AnimPlayer --> HoverEffect\n    HoverEffect --> SinPop\n    AnimPlayer --> Particle\n    AnimPlayer --> Light2D\n    Light2D --> LightRole\n    MultiLayer --> FrameAnim\n    FrameAnim --> SingleNode"
+        },
+        {
+          "title": "效果对比：多图层 vs 单一节点 [BV19QGP6TE27 P1 01:23-01:34]",
+          "code": "flowchart LR\n    Multi[\"多图层插件 + 帧动画\"]\n    Single[\"单一节点\"]\n    OldEffect[\"实现RPG主界面（原）\"]\n    NewEffect[\"实现RPG主界面（现）\"]\n    Complexity[\"实现更复杂\"]\n    Convenience[\"实现更方便\"]\n    Multi --> OldEffect\n    Single --> NewEffect\n    OldEffect --> Complexity\n    NewEffect --> Convenience"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T23:03:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 用Godot复刻RPG主界面知识图谱\n\n## 插件概览 [BV19QGP6TE27 P1 00:05-00:11]\n```mermaid\nflowchart TD\n    P1[\"粒子插件\"]\n    P2[\"魔法圆环插件\"]\n    P3[\"多图层插件\"]\n    Title[\"标题\"]\n    P1 --> Title\n    P2 --> Title\n    P3 --> Title\n```\n\n## 交互效果链 [BV19QGP6TE27 P1 00:38-00:46]\n```mermaid\nflowchart LR\n    Hover[\"鼠标悬停选项\"]\n    Sound[\"播放音效\"]\n    Cursor[\"光标高亮\"]\n    Breath[\"呼吸缩放效果\"]\n    Rotate[\"魔法阵围绕中心旋转\"]\n    Hover --> Sound\n    Hover --> Cursor\n    Hover --> Breath\n    Breath --> Rotate\n```\n\n## 复刻实现细节 [BV19QGP6TE27 P1 01:02-01:20]\n```mermaid\nflowchart TD\n    AnimPlayer[\"AnimationPlayer\"]\n    HoverEffect[\"节点悬停呼吸效果\"]\n    SinPop[\"sin函数实现pop\"]\n    Particle[\"粒子特效: gpop particles2D\"]\n    Light2D[\"点光源: point light2D\"]\n    LightRole[\"充当点光源\"]\n    MultiLayer[\"多图层插件\"]\n    FrameAnim[\"帧动画实现\"]\n    SingleNode[\"单一节点实现\"]\n    AnimPlayer --> HoverEffect\n    HoverEffect --> SinPop\n    AnimPlayer --> Particle\n    AnimPlayer --> Light2D\n    Light2D --> LightRole\n    MultiLayer --> FrameAnim\n    FrameAnim --> SingleNode\n```\n\n## 效果对比：多图层 vs 单一节点 [BV19QGP6TE27 P1 01:23-01:34]\n```mermaid\nflowchart LR\n    Multi[\"多图层插件 + 帧动画\"]\n    Single[\"单一节点\"]\n    OldEffect[\"实现RPG主界面（原）\"]\n    NewEffect[\"实现RPG主界面（现）\"]\n    Complexity[\"实现更复杂\"]\n    Convenience[\"实现更方便\"]\n    Multi --> OldEffect\n    Single --> NewEffect\n    OldEffect --> Complexity\n    NewEffect --> Convenience\n```",
+  "diagrams": [
+    {
+      "title": "插件概览 [BV19QGP6TE27 P1 00:05-00:11]",
+      "code": "flowchart TD\n    P1[\"粒子插件\"]\n    P2[\"魔法圆环插件\"]\n    P3[\"多图层插件\"]\n    Title[\"标题\"]\n    P1 --> Title\n    P2 --> Title\n    P3 --> Title"
+    },
+    {
+      "title": "交互效果链 [BV19QGP6TE27 P1 00:38-00:46]",
+      "code": "flowchart LR\n    Hover[\"鼠标悬停选项\"]\n    Sound[\"播放音效\"]\n    Cursor[\"光标高亮\"]\n    Breath[\"呼吸缩放效果\"]\n    Rotate[\"魔法阵围绕中心旋转\"]\n    Hover --> Sound\n    Hover --> Cursor\n    Hover --> Breath\n    Breath --> Rotate"
+    },
+    {
+      "title": "复刻实现细节 [BV19QGP6TE27 P1 01:02-01:20]",
+      "code": "flowchart TD\n    AnimPlayer[\"AnimationPlayer\"]\n    HoverEffect[\"节点悬停呼吸效果\"]\n    SinPop[\"sin函数实现pop\"]\n    Particle[\"粒子特效: gpop particles2D\"]\n    Light2D[\"点光源: point light2D\"]\n    LightRole[\"充当点光源\"]\n    MultiLayer[\"多图层插件\"]\n    FrameAnim[\"帧动画实现\"]\n    SingleNode[\"单一节点实现\"]\n    AnimPlayer --> HoverEffect\n    HoverEffect --> SinPop\n    AnimPlayer --> Particle\n    AnimPlayer --> Light2D\n    Light2D --> LightRole\n    MultiLayer --> FrameAnim\n    FrameAnim --> SingleNode"
+    },
+    {
+      "title": "效果对比：多图层 vs 单一节点 [BV19QGP6TE27 P1 01:23-01:34]",
+      "code": "flowchart LR\n    Multi[\"多图层插件 + 帧动画\"]\n    Single[\"单一节点\"]\n    OldEffect[\"实现RPG主界面（原）\"]\n    NewEffect[\"实现RPG主界面（现）\"]\n    Complexity[\"实现更复杂\"]\n    Convenience[\"实现更方便\"]\n    Multi --> OldEffect\n    Single --> NewEffect\n    OldEffect --> Complexity\n    NewEffect --> Convenience"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T23:03:48+00:00"
+}

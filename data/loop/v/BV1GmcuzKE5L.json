@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1GmcuzKE5L",
+  "title": "为什么没有人谈论这款免费的3D软件？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4158,
+  "text": "说到制作复杂材质\n目前业界标准是substance designer\n但如果有人不想为adobe的订阅付费怎么办\n那么在这种情况下\n有一款小巧的软件叫做material maker\n令人惊讶的是\n它拥有许多designer的功能\n那么这款软件到底是什么\n你又能用它做些什么\nmaterial maker最初是一个小型的业余项目\n大约在2018年\n由一位名为ROZA的开发者创建\n首次发布于2018年\n它最初只是一个基于GODOT游戏引擎构建的简单\n程序化纹理生成器\n开发者选择了GODOT作为基础\n它不仅受到GODOT节点式架构的启发\n也被其易用性所吸引\nmaterial maker的早期版本功能相当有限\n只有大约20个基础节点可以让你尝试\n但这个概念非常有前景\n一个开源工具\n通过类似substance designer的工作流程\n来制作PPR贴图\n随着时间的推移\n这个项目得到了极大的发展\n最初只是一个用来捣鼓纹理的小工具\n如今已经演变成一款相当强大的软件\n拥有大量节点社区资助以及第三方贡献者\n而现在他甚至还拥有了纹理绘制功能\n而且这一切都是免费的\nmaterial maker在2022年发布的1.0版本\n达到了一个重要的里程碑\n标志着它作为一款稳定工具的成熟\n自那以后\n它持续进化\n去年发布的1.4版本\n2025年又增加了更多功能和优化\n还有最近发布的1.5版本\n就在一两周前发布的这个版本\n让它变得更好了\n而且这个项目是在艾米丽开源许可证下维护的\n开发非常活跃\n他们甚至还计划在steam上线\n所以如果你对这款软件感兴趣\n以下是它的一些核心工具和功能\n首先你会通过在图表中连接节点来构建材质\n正如我之前说的\n内置节点超过200个\n涵盖了生成器\n包括图案噪声滤镜变换混合器等节点\n可以创建或修改纹理\n你可以将它们串联起来\n生成复杂的效果\n独特的是\nmaterial maker不会在每个节点渲染中间图像\n相反它会一直合并着色代码\n直到需要时才渲染\n这意味着纹理在你选择导出之前\n始终保持分辨率无关\n如果内置库还不够用\n你甚至可以通过组合现有节点\n或编写自己的GLSL代码来创建自定义节点\n或者编写着色器代码\n这对于PB2材质来说非常棒\n因为你可以轻松生成各种类型的纹理贴图\n包括反照率\n法线粗糙度\n金属度\n环境遮蔽等\n这些共同定义了一个PB2材质\n此外还提供了实时三维预览\n你可以将材质应用到内置的球体\n立方体\n甚至自定义三维模型上\n并观察它在不同光照下的效果\n当你对材质满意后\n就可以导出它了\n导出内容可以只是图片文件\n也可以是适用于游戏引擎的完整材质\n它还可以输出guard和unity\n可直接使用的材质文件\n甚至还支持unreal engine\n此外node graph的材质制作器\n还包含了一个实验性的三维绘画模式\n这有点类似于轻量版的substance painter\n你可以加载一个三维模型\n并直接在其上绘画\n使用的画笔可以同时绘制多个通道\n它的强大之处在于\n你的画笔可以是程序化的\n你还可以在不同的映射模式下用图案进行绘画\n比如画笔空间\n屏幕空间\n纹理空间等等\n绘画系统还支持图层功能\n这包括绘画图层\n程序化\n图层\n遮罩图层等\n用于实现复杂的贴图工作流程\n虽然这个功能还在不断完善中\n但我认为它是材质制作器软件中\n一个很棒的全能特性\n顺便说一下\n他还有一个在线社区中心\n用户可以在这里分享材质\n节点组\n画笔等内容\n该软件还链接到一个包含数百种免费\n材质和节点的网站库\n这些都是由社区成员贡献的\n你可以下载并在自己的项目中使用\n或者自己也可以参与贡献\n实际上\n我觉得使用材质制作器\n就像是在一个程序化纹理的沙盒中玩耍\n例如你可以从一个珍珠噪声节点开始\n将其输入到阈值滤镜中\n以获得斑点图案\n在与砖块图案节点进行混合\n最后连接到一个PBR材质节点\n从而输出最终的贴图\n在整个过程中\n二维预览会显示每个节点的输出\n而三维预览则可以让你旋转带有你材质的模型\n以检查其外观效果\n那么material maker与业界标准的substance designer\n相比如何呢\n首先正如我之前所说\nmaterial maker是完全免费且开源的\n相比之下\nsubstance designer是一款付费产品\n要么作为adobe订阅的一部分\n要么需要一次性购买许可\n此外substance的LINUX版本\n只包含在昂贵的企业级套餐中\n对于独立用户或学生来说\nmaterial maker的价格实际上是无可匹敌的\n而substance designer可能是一笔不小的投资\n尤其是从长期来看\n而且material maker采用MIT许可证\n这也意味着\n你几乎可以毫无限制的使用或修改它\n而substance designer实际上是专有且闭源的\n在功能和工具方面\nsubstance designer非常成熟\n我的意思是\n他已经在生产环境中被验证了十多年\n在不同行业中\n它拥有数百个节点和滤镜\n这远远超过了material maker目前的数量\n此外它还拥有一些高级功能\n比如强大的二维矢量绘图工具\n实例化扫描处理\n以及与substance source库的集成\nmaterial maker起初规模很小\n但他已经成长了起来\n我的意思是\n现在他已经提供了200多个节点\n正如我之前所说\n涵盖了大多数常见需求\n包括生成器\n噪声形状混合等\n此外还有一些独特的节点\n比如3DSDF节点\n然而作为材质设计师\nmaterial maker仍然有一些功能可能缺失\n或者处理的不够优雅\n比如designer的库中包含了各种专用节点\n例如用于地形\n各种噪声\n程序化划痕等\n而且它还支持像FX maps这样的功能\n可以实现自定义编码逻辑\n而material maker的节点集合虽然很丰富\n但可能会缺少某些特殊的节点\n用户有时会注意到\n某些substance节点的特殊等价节点\n在material maker中缺失\n但实际上MATERIMAKER可以制作大多数常见的材质\n比如不同类型的木材\n砖块\n金属等\n甚至还可以制作相当复杂的材质\n但极其复杂的材质\n由于substance拥有更广泛的工具集\n可能会更容易实现\nmaterial maker的一个优势是集成了三维绘制功能\n而substance designer本身并不具备这一点\n因为adobe将其拆分为substance\npainter和substance designer\n但说实话\n即使在adobe收购air orthmic之前\n情况也是如此\n因此MATERIMAKER试图在一个程序中\n同时涵盖designer和部分painter的功能\n所以如果你需要尽可能强大的功能\nsubstance无疑是目前最好的选择\n但material maker作为一款免费的工具\n表现却出乎意料的强大\n并且在许多不同的使用场景下\n正在逐步缩小差距\n说到易用性和学习曲线\n这方面其实是双向的\nSubstance designer\n拥有经过多年打磨的用户体验和界面\n因此非常流畅且生活便利性很高\n它具备许多功能\n比如可停靠的面板\n自定义快捷键\n主界面\n内置教程等\n此外由于substance的流行\n关于他的学习资源非常丰富\n包括教程\n课程和文档\n不过designer的功能深度很大\n尤其对新手来说\n可能会让人感到不知所措\n此外用户还需要熟悉技术美术相关的概念\n另一方面\nmaterial maker旨在更加易于上手且轻量化\n但这并不意味着它就非常简单\n它的界面功能性强且相当直观\n尤其是如果你之前用过像blender或unreal\n这样的节点编辑器\n由于基于勾到的界面\n他可能没有adobe那种极致的精致感\n实际上\n一些用户觉得某些用户体验元素有些笨拙\n例如热键自定义有限\n或者是高的风格的对话窗口\nmaterial maker的学习资源较少\n因此你不会找到太多相关的教程或课程\n而且它的社区虽然友好\n但规模要小得多\n话虽如此\nmaterial maker的简洁性对初学者来说是有益的\n一开始需要学习的节点更少\n而且社区提供的材质视力非常适合学习\n如果你是初学者或者刚开始制作材质\n实际上你可能会在material maker中\n比在substance中更快上手制作材质\n因为它的功能范围更窄\n界面也更简单一些\n此外substance designer还受益于其行业标准的地位\n这意味着它可以适配不同的工作流程\n无论是unreal\nUnity vendor\nmayor等\n都可以通过导出贴图或直接集成来实现\n许多引擎都通过插件支持substance文件\n而adobe的生态系统也意味着你可以在substance\npainter designer和SAMPER之间无缝的往返传递材质\n正如你现在所知道的\nmaterial maker是专为游戏引擎使用而设计的\n它可以导出任何引擎都能使用的PB2贴图\n而且他还专门为got out提供了一键导出预设\n此外也支持unity和unreal\n对于GODOT引擎用户来说\nmaterial maker几乎已经成为生态系统的一部分\n所以你可以导出一个GODOT材质资源\n直接可以使用\n这对高到的开发者来说非常棒\n在unreal和unity中\n你需要使用导出的贴图\n或者在unreal engine5中运行提供的脚本\n来重建材质\nsubstance的集成则更为直接\n我是说对于那些引擎来说\n通过substance engine实现\n但归根结底\n这两种工具输出的最终产品是一样的\n一个显著的区别是\n如果你使用其文件格式和引擎插件\nsubstance材质可以在引擎中保持程序化\n而material maker导出的材质是烘焙过的\n这意味着它没有在引擎中实时调整\n程序化生成的功能\n但对于大多数游戏开发用途来说\n这样已经足够了\n通常只需要位图\n但对于高端用例\n比如在编辑器或游戏中允许材质参数调整\nsubstance就有优势\n而且表现更好好了\n就是这些内容\n如果你喜欢这个视频\n请给他点个赞\n另外请订阅频道\n以便收到更多类似的视频\n非常感谢您的观看\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1GmcuzKE5L",
+  "published_at": "1770696000",
+  "fetched_at": "2026-08-09T01:08:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Material Maker 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"Material Maker 起源\"] --> A2[\"2018 年 ROZA 创建\"]\n    A2 --> A3[\"基于 Godot 引擎的程序化纹理生成器\"]\n    A3 --> A4[\"开源、MIT 许可证\"]\n    A4 --> A5[\"2022 年 1.0 版里程碑\"]\n    A5 --> A6[\"后续 1.4、1.5 版持续迭代\"]\n    A6 --> A7[\"社区资助、第三方贡献\"]\n    A7 --> A8[\"计划上线 Steam\"]\n    A8 --> A9[\"免费、跨平台使用\"]\n```\n\n## 节点式材质制作流程\n```mermaid\nflowchart TD\n    B1[\"创建节点图\"] --> B2[\"选择内置节点（200+）\"]\n    B2 --> B3[\"连接节点生成纹理\"]\n    B3 --> B4[\"实时二维预览\"]\n    B3 --> B5[\"实时三维预览（球体/立方体/自定义模型）\"]\n    B4 --> B6[\"调整节点参数\"]\n    B5 --> B6\n    B6 --> B7[\"导出贴图或完整材质\"]\n    B7 --> B8[\"图片文件 / Unity / Unreal / Godot 等\"]\n```\n\n## 功能对比：Material Maker vs Substance Designer\n```mermaid\nflowchart LR\n    C1[\"Material Maker\"] --> C2[\"免费、开源 (MIT)\"]\n    C1 --> C3[\"200+ 节点，支持自定义 GLSL\"]\n    C1 --> C4[\"内置三维绘画模式（类 Substance Painter）\"]\n    C1 --> C5[\"节点渲染延迟，分辨率无关\"]\n    C1 --> C6[\"社区库、在线社区中心\"]\n    D1[\"Substance Designer\"] --> D2[\"付费（Adobe 订阅或一次性授权）\"]\n    D1 --> D3[\"数百节点，成熟的二维矢量绘图工具\"]\n    D1 --> D4[\"与 Substance Source 库深度集成\"]\n    D1 --> D5[\"专业级功能、长期行业验证\"]\n    D1 --> D6[\"丰富学习资源、插件直接支持多引擎\"]\n    C1 -. 对比 .-> D1\n    C2 -. 价格优势 .-> D2\n    C3 -. 节点数量 .-> D3\n    C4 -. 绘画功能 .-> D3\n    C5 -. 渲染方式 .-> D5\n    C6 -. 社区贡献 .-> D6\n```\n\n## 导出与引擎集成路径\n```mermaid\nflowchart TD\n    E1[\"完成材质节点图\"] --> E2[\"选择导出目标\"]\n    E2 --> E3[\"位图文件 (PNG/JPG)\"]\n    E2 --> E4[\"PBR 贴图套件（Albedo、Normal、Roughness、Metallic、AO）\"]\n    E4 --> E5[\"Unity / Unreal / Godot 导入\"]\n    E5 --> E6[\"在引擎中使用烘焙贴图\"]\n    E2 --> E7[\"一键导出预设（针对 Godot）\"]\n    E7 --> E8[\"直接生成 Godot 材质资源\"]\n    E2 --> E9[\"脚本支持（Unreal Engine 5）\"]\n    E9 --> E10[\"自动重建材质\"]\n```\n\n## 许可证、社区与生态\n```mermaid\nflowchart TD\n    F1[\"MIT 许可证\"] --> F2[\"几乎无限制使用、修改\"]\n    F1 --> F3[\"开源代码托管\"]\n    F2 --> F4[\"社区贡献节点、画笔、材质\"]\n    F3 --> F4\n    F4 --> F5[\"在线社区中心\"]\n    F5 --> F6[\"数百免费材质与节点库\"]\n    F6 --> F7[\"用户可下载或自行贡献\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"Material Maker 起源\"] --> A2[\"2018 年 ROZA 创建\"]\n    A2 --> A3[\"基于 Godot 引擎的程序化纹理生成器\"]\n    A3 --> A4[\"开源、MIT 许可证\"]\n    A4 --> A5[\"2022 年 1.0 版里程碑\"]\n    A5 --> A6[\"后续 1.4、1.5 版持续迭代\"]\n    A6 --> A7[\"社区资助、第三方贡献\"]\n    A7 --> A8[\"计划上线 Steam\"]\n    A8 --> A9[\"免费、跨平台使用\"]"
+        },
+        {
+          "title": "节点式材质制作流程",
+          "code": "flowchart TD\n    B1[\"创建节点图\"] --> B2[\"选择内置节点（200+）\"]\n    B2 --> B3[\"连接节点生成纹理\"]\n    B3 --> B4[\"实时二维预览\"]\n    B3 --> B5[\"实时三维预览（球体/立方体/自定义模型）\"]\n    B4 --> B6[\"调整节点参数\"]\n    B5 --> B6\n    B6 --> B7[\"导出贴图或完整材质\"]\n    B7 --> B8[\"图片文件 / Unity / Unreal / Godot 等\"]"
+        },
+        {
+          "title": "功能对比：Material Maker vs Substance Designer",
+          "code": "flowchart LR\n    C1[\"Material Maker\"] --> C2[\"免费、开源 (MIT)\"]\n    C1 --> C3[\"200+ 节点，支持自定义 GLSL\"]\n    C1 --> C4[\"内置三维绘画模式（类 Substance Painter）\"]\n    C1 --> C5[\"节点渲染延迟，分辨率无关\"]\n    C1 --> C6[\"社区库、在线社区中心\"]\n    D1[\"Substance Designer\"] --> D2[\"付费（Adobe 订阅或一次性授权）\"]\n    D1 --> D3[\"数百节点，成熟的二维矢量绘图工具\"]\n    D1 --> D4[\"与 Substance Source 库深度集成\"]\n    D1 --> D5[\"专业级功能、长期行业验证\"]\n    D1 --> D6[\"丰富学习资源、插件直接支持多引擎\"]\n    C1 -. 对比 .-> D1\n    C2 -. 价格优势 .-> D2\n    C3 -. 节点数量 .-> D3\n    C4 -. 绘画功能 .-> D3\n    C5 -. 渲染方式 .-> D5\n    C6 -. 社区贡献 .-> D6"
+        },
+        {
+          "title": "导出与引擎集成路径",
+          "code": "flowchart TD\n    E1[\"完成材质节点图\"] --> E2[\"选择导出目标\"]\n    E2 --> E3[\"位图文件 (PNG/JPG)\"]\n    E2 --> E4[\"PBR 贴图套件（Albedo、Normal、Roughness、Metallic、AO）\"]\n    E4 --> E5[\"Unity / Unreal / Godot 导入\"]\n    E5 --> E6[\"在引擎中使用烘焙贴图\"]\n    E2 --> E7[\"一键导出预设（针对 Godot）\"]\n    E7 --> E8[\"直接生成 Godot 材质资源\"]\n    E2 --> E9[\"脚本支持（Unreal Engine 5）\"]\n    E9 --> E10[\"自动重建材质\"]"
+        },
+        {
+          "title": "许可证、社区与生态",
+          "code": "flowchart TD\n    F1[\"MIT 许可证\"] --> F2[\"几乎无限制使用、修改\"]\n    F1 --> F3[\"开源代码托管\"]\n    F2 --> F4[\"社区贡献节点、画笔、材质\"]\n    F3 --> F4\n    F4 --> F5[\"在线社区中心\"]\n    F5 --> F6[\"数百免费材质与节点库\"]\n    F6 --> F7[\"用户可下载或自行贡献\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T01:09:13+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Material Maker 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"Material Maker 起源\"] --> A2[\"2018 年 ROZA 创建\"]\n    A2 --> A3[\"基于 Godot 引擎的程序化纹理生成器\"]\n    A3 --> A4[\"开源、MIT 许可证\"]\n    A4 --> A5[\"2022 年 1.0 版里程碑\"]\n    A5 --> A6[\"后续 1.4、1.5 版持续迭代\"]\n    A6 --> A7[\"社区资助、第三方贡献\"]\n    A7 --> A8[\"计划上线 Steam\"]\n    A8 --> A9[\"免费、跨平台使用\"]\n```\n\n## 节点式材质制作流程\n```mermaid\nflowchart TD\n    B1[\"创建节点图\"] --> B2[\"选择内置节点（200+）\"]\n    B2 --> B3[\"连接节点生成纹理\"]\n    B3 --> B4[\"实时二维预览\"]\n    B3 --> B5[\"实时三维预览（球体/立方体/自定义模型）\"]\n    B4 --> B6[\"调整节点参数\"]\n    B5 --> B6\n    B6 --> B7[\"导出贴图或完整材质\"]\n    B7 --> B8[\"图片文件 / Unity / Unreal / Godot 等\"]\n```\n\n## 功能对比：Material Maker vs Substance Designer\n```mermaid\nflowchart LR\n    C1[\"Material Maker\"] --> C2[\"免费、开源 (MIT)\"]\n    C1 --> C3[\"200+ 节点，支持自定义 GLSL\"]\n    C1 --> C4[\"内置三维绘画模式（类 Substance Painter）\"]\n    C1 --> C5[\"节点渲染延迟，分辨率无关\"]\n    C1 --> C6[\"社区库、在线社区中心\"]\n    D1[\"Substance Designer\"] --> D2[\"付费（Adobe 订阅或一次性授权）\"]\n    D1 --> D3[\"数百节点，成熟的二维矢量绘图工具\"]\n    D1 --> D4[\"与 Substance Source 库深度集成\"]\n    D1 --> D5[\"专业级功能、长期行业验证\"]\n    D1 --> D6[\"丰富学习资源、插件直接支持多引擎\"]\n    C1 -. 对比 .-> D1\n    C2 -. 价格优势 .-> D2\n    C3 -. 节点数量 .-> D3\n    C4 -. 绘画功能 .-> D3\n    C5 -. 渲染方式 .-> D5\n    C6 -. 社区贡献 .-> D6\n```\n\n## 导出与引擎集成路径\n```mermaid\nflowchart TD\n    E1[\"完成材质节点图\"] --> E2[\"选择导出目标\"]\n    E2 --> E3[\"位图文件 (PNG/JPG)\"]\n    E2 --> E4[\"PBR 贴图套件（Albedo、Normal、Roughness、Metallic、AO）\"]\n    E4 --> E5[\"Unity / Unreal / Godot 导入\"]\n    E5 --> E6[\"在引擎中使用烘焙贴图\"]\n    E2 --> E7[\"一键导出预设（针对 Godot）\"]\n    E7 --> E8[\"直接生成 Godot 材质资源\"]\n    E2 --> E9[\"脚本支持（Unreal Engine 5）\"]\n    E9 --> E10[\"自动重建材质\"]\n```\n\n## 许可证、社区与生态\n```mermaid\nflowchart TD\n    F1[\"MIT 许可证\"] --> F2[\"几乎无限制使用、修改\"]\n    F1 --> F3[\"开源代码托管\"]\n    F2 --> F4[\"社区贡献节点、画笔、材质\"]\n    F3 --> F4\n    F4 --> F5[\"在线社区中心\"]\n    F5 --> F6[\"数百免费材质与节点库\"]\n    F6 --> F7[\"用户可下载或自行贡献\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"Material Maker 起源\"] --> A2[\"2018 年 ROZA 创建\"]\n    A2 --> A3[\"基于 Godot 引擎的程序化纹理生成器\"]\n    A3 --> A4[\"开源、MIT 许可证\"]\n    A4 --> A5[\"2022 年 1.0 版里程碑\"]\n    A5 --> A6[\"后续 1.4、1.5 版持续迭代\"]\n    A6 --> A7[\"社区资助、第三方贡献\"]\n    A7 --> A8[\"计划上线 Steam\"]\n    A8 --> A9[\"免费、跨平台使用\"]"
+    },
+    {
+      "title": "节点式材质制作流程",
+      "code": "flowchart TD\n    B1[\"创建节点图\"] --> B2[\"选择内置节点（200+）\"]\n    B2 --> B3[\"连接节点生成纹理\"]\n    B3 --> B4[\"实时二维预览\"]\n    B3 --> B5[\"实时三维预览（球体/立方体/自定义模型）\"]\n    B4 --> B6[\"调整节点参数\"]\n    B5 --> B6\n    B6 --> B7[\"导出贴图或完整材质\"]\n    B7 --> B8[\"图片文件 / Unity / Unreal / Godot 等\"]"
+    },
+    {
+      "title": "功能对比：Material Maker vs Substance Designer",
+      "code": "flowchart LR\n    C1[\"Material Maker\"] --> C2[\"免费、开源 (MIT)\"]\n    C1 --> C3[\"200+ 节点，支持自定义 GLSL\"]\n    C1 --> C4[\"内置三维绘画模式（类 Substance Painter）\"]\n    C1 --> C5[\"节点渲染延迟，分辨率无关\"]\n    C1 --> C6[\"社区库、在线社区中心\"]\n    D1[\"Substance Designer\"] --> D2[\"付费（Adobe 订阅或一次性授权）\"]\n    D1 --> D3[\"数百节点，成熟的二维矢量绘图工具\"]\n    D1 --> D4[\"与 Substance Source 库深度集成\"]\n    D1 --> D5[\"专业级功能、长期行业验证\"]\n    D1 --> D6[\"丰富学习资源、插件直接支持多引擎\"]\n    C1 -. 对比 .-> D1\n    C2 -. 价格优势 .-> D2\n    C3 -. 节点数量 .-> D3\n    C4 -. 绘画功能 .-> D3\n    C5 -. 渲染方式 .-> D5\n    C6 -. 社区贡献 .-> D6"
+    },
+    {
+      "title": "导出与引擎集成路径",
+      "code": "flowchart TD\n    E1[\"完成材质节点图\"] --> E2[\"选择导出目标\"]\n    E2 --> E3[\"位图文件 (PNG/JPG)\"]\n    E2 --> E4[\"PBR 贴图套件（Albedo、Normal、Roughness、Metallic、AO）\"]\n    E4 --> E5[\"Unity / Unreal / Godot 导入\"]\n    E5 --> E6[\"在引擎中使用烘焙贴图\"]\n    E2 --> E7[\"一键导出预设（针对 Godot）\"]\n    E7 --> E8[\"直接生成 Godot 材质资源\"]\n    E2 --> E9[\"脚本支持（Unreal Engine 5）\"]\n    E9 --> E10[\"自动重建材质\"]"
+    },
+    {
+      "title": "许可证、社区与生态",
+      "code": "flowchart TD\n    F1[\"MIT 许可证\"] --> F2[\"几乎无限制使用、修改\"]\n    F1 --> F3[\"开源代码托管\"]\n    F2 --> F4[\"社区贡献节点、画笔、材质\"]\n    F3 --> F4\n    F4 --> F5[\"在线社区中心\"]\n    F5 --> F6[\"数百免费材质与节点库\"]\n    F6 --> F7[\"用户可下载或自行贡献\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T01:09:13+00:00"
+}

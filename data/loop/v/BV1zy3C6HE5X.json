@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1zy3C6HE5X",
+  "title": "面试官问：多个AI Agent之间如何进行通信与协作？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1422,
+  "text": "面试官要是问你\n多个AIA证之间到底是怎么通信\n怎么协作的\n你可千万别只回答API或者发个消息\n那样\n面试官一听就知道\n你没做过真正的agent的深度开发\n以前咱们只要调调API写写prompt就能拿offer\n但现在不行了\n现在的企业级需求是AI员工组成百上千个agent\n既能各司其职\n又能无缝协作\n大家好\n我是一速\n如果你能讲清楚agent的之间是怎么握手的\n怎么保证任务不传丢且不烧钱的\n你就是具备全局视野的架构师\nA2A协议就是咱们通往中高级开发的入场券\n好咱们正式进入A2A的深度解析\n首先我要辟个谣\n别听外面瞎忽悠\n同一个实例里的多agent\n根本不用A2A协议进程内\n直接函数调用共享内存就行了\n瞎搞协议纯属脱裤子放屁\n只有跨实力\n跨服务边界才需要上A2A\n这点你面试时先甩出来\n直接降维打击\n那跨实力的A2A到底怎么做\n它绝不是简单的聊天\n在工程实现上必须包含三个最关键的逻辑层\n第一层服务发现与路由\n同学们成千上万的agent\n你不能靠硬编码\n更不能发广播\n广播唤醒引发的无效上下文加载\n那是按token计费的灾难\n你需要一套agent注册中心\n加语义路由网关A证上线\n把能力摘要注册进去\n调用方通过语义检索找人网关精准分发\n这才是生产级的找人机制\n第二层能力对齐与schema拦截这层非常关键\n大模型有幻觉\n乱传上下文就是烧钱\n所以成熟的架构必须强制定义输入\n输出的jason schema\n而且要做前置语法拦截\n格式不对\n直接打回\n千万别让接收方的大模型去猜意思\n猜的token全是浪费\n第三层也是最核心的状态\n交接与指针传递\n很多理论派让agent互传全量记忆库\n兄弟们\n那是上下文雪崩\n传着传着token就爆了\n真正的做法是传压缩摘要加存储指针\nA阵内\n把细节存到REDIS或向量库\n只把key和结论交给A真B必须要细节自己去查\n按需加载\n彻底锁死上下文膨胀\n讲到这\n肯定有同学问\n那MCP协议和A2A到底有啥区别\n一句话总结\nMCP解决的是脑和手的关系\n让模型调用工具长出四肢\nA2A解决的是脑和脑的关系\n是不同决策主体的社交规则\n面试时把这个脑手和脑脑的比喻抛出来\n面试官绝对觉得你层级分得清\n但是同学们工程落地有三个著名的深水区痛点\n你不解决\n系统壁挂\n第一个坑\n上下文雪崩与token刺客纯靠agent互相聊天\n传上下文成本是指数级爆炸的\n怎么破\n采用专家流水线模式\n就像有些团队用codex加gt写代码\n用opus做审查和初计划一样便宜\n模型干粗活昂贵\n模型做决策\n专职专岗\n第二个坑\n吉连失效与死循环\n一串agent互相绕圈子\n几秒钟内耗尽token预算系统雪崩怎么破\n必须在网关层设置硬性熔断机制\n规定最大调用深度不能超过三\n单次任务TTL超时直接杀掉\n绝不含糊\n第三个坑\n权限穿透低权限agent诱骗高权限agent执行敏感操作\n怎么破\n引入权限向下对齐原则\n高权限agent接收到低权限的请求时\n自动降级为低权限执行\n彻底封死越权漏洞\n最后咱们来做个总结\n面对这道面试题\n你要给面试官展示一个完整的闭环\n首先厘青铜实力与跨实力的边界\n其次讲透\n用schema拦截和指针传递来切断token雪崩\n最后用专家流水线和硬性熔断来填坑\n当你能把这些点串起来时\n你传递的核心理念就是你不仅能设计系统\n更是一个懂成本控制\n能保命出活的工程架构师\n这才是大模型时代真正的核心竞争力\n好今天咱们就讲到这里\n下次再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zy3C6HE5X",
+  "published_at": "1785310283",
+  "fetched_at": "2026-08-09T00:20:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T00:29:07+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T00:29:07+00:00"
+}

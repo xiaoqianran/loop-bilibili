@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1gHuJ6AEnk",
+  "title": "多Agent系统从Loop到Graph，从循环走向分权。",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3760,
+  "text": "百米决赛刚冲线\n运动员还没喘匀\n有人突然掏出裁判哨\n又给自己竖起积分牌\n冠军是我\n判罚有效\n听着像段子\n可换成agent\n很多系统正这么工作\n自己写代码跑测试\n在亲自宣布通过\n问题不止在他可能跑错\n而是从起跑判罚到计分赛场始终只有他一个人\n你再塞进几个A阵\n如果大家只会往前冲\n系统依然不会纠偏\ngraph engineering要做的就是重新分权\n谁执行谁检查\n谁能退回换路\n甚至吹停比赛\ngraph engineering这个词在7月突然火了\nopen cloud作者peter steinberger发了一句提问\n我们还在聊loop\n还是已经转向graph\n这句只有九个英文单词的推文\n很快拿到近300万浏览\n几个小时后\nHANHUSTON发了一张动图\n标题更直接\nloop engineering已死\ngraph engineering登场\n但有人追问定义时\n他自己回了一句\n没人知道它是什么\n一个没有统一定义的词\n我们先把最容易误解的地方说清楚\ngraph没有把loop淘汰\n每个agent节点内部通常还在跑自己的loop\ngraph处理的是多个loop之间的关系\n为什么之前大家先聊loop\n因为agent工程还有一层更大的背景叫HERN模型\n不是你造的\n你给他准备的提示词\n唱下文\n工具和运行环境都属于harness prompt engineering\n研究一条提示词怎么写\nContest engineering\n研究模型该看到哪些信息\nLoop engineering\n再往前一步\n它让模型根据状态和反馈持续运行\nloop一直是agent的基础\n他看到结果决定下一步接着调用工具观察变化\n再继续修正目标上下文权限\n验证方法和退出条件都在这个循环里\n单个loop的优势很明显\n它简单反应快\n改计划也方便\n小任务里一个清楚的loop往往最好用\n麻烦出现在任务变长以后\nloop本身也有不同形式\n有的按对话回合推进\n有的盯着目标没完成就继续\n有的按时间定期运行\n还有的会主动观察环境\n再决定是否行动\n无论哪一种核心都是反馈回来以后继续调整\n如果生产结果\n检查结果和方向判断都由同一个loop完成\n他看到的是同一套上下文\n沿用的是同一套假设\n还可能相信自己刚刚给出的解释\n执行的很顺\n不代表方向就是对的\n这是需要拆开的\n不只是工作步骤\n更重要的是判断权\n有人负责把事情做出来\n有人独立检查结果\n还要有人隔一段时间重新看目标有没有走偏\n我们可以把它们看成三种loop\n第一种是做事循环\n他搜索资料\n写代码\n生成内容修复问题\n他的目标是把眼前工作往前推\n第二种是检查循环\n他不接着替执行者干活\n他应该跑测试\n核对约束\n找反例\n他关心的不是你做了多少\n而是结果到底能不能通过\n第三种是方向循环\n它看得更慢\n也看得更远\n同一个问题\n为什么反复出现成本还值不值得\n用户真的接受这个结果吗\n最初目标还合理吗\n注意这三种角色不等于三个聊天机器人\ngraphic的节点可以是agent\n也可以是工具确定性\n程序验证器或者人\n关键不是节点名字\n关键是他拿到什么信息\n又拥有什么权限\n社区目前比较清楚的一点是\ngraph会组织多个执行单元\n谁先做\n谁能并行检查\n失败后退回哪里\n什么时候必须让人介入\n这些关系比图上有多少方框更重要\n但社区还有不少问题没谈拢\n多大规模才值得从loop教到graph路线\n应该提前画好\n还是运行中再生成多个agent\n只是接力\n还是要互相校准\n这些问题现在都没有统一答案\n大家相对统一的是稳定步骤和权限要先受约束\n但具体任务分支和角色可以动态到什么程度\n这部分仍在探索\n所以graph engineering现在更像一组工程问题\n而不是一份固定标准节点状态\n分支和重视其实早已有成熟时间\nline graph和auto jin都在处理图示工作流\n传统工作流系统也一直在做类似控制\n这轮讨论的新意不是发明了图\n而是图里的agent越来越自主\n也越来越难预测\n如果所有箭头都指指向继续\n那它只是一条画得更复杂的流水线\n真正的检查关口必须能改变路径\n它可以退回换路阻断或者升级给人\n这也是graph和普通接力工作流的区别\n研究A证做完交给写作A证\n写作A证再交给排版A证\n这当然是写作\n但他还不一定具备纠偏能力\n更强的做法是让一个agent实现另一个独立评审\n再有一个专门找反例\n必要时还要有人重新检查最初目标\n他们不止接力\n还会互相挑战\n甚至阻断彼此\n这里最容易踩的坑是交接太空上游只说一句\n我完成了\n下游只能继续相信它\n有效交接至少要带四类东西\n成果证据限制\n还有没解决的问题\n交接还要回答几个现实问题\n接收方为什么该相信这份结果\n他能看到哪些过程证据\n哪些假设还没验证\n下一步允许做什么\n又禁止做什么\n这些信息缺一块\n比如说实现loop交出代码\n同时交出测试结果和已知限制\n检查loop不听他怎么解释自己\n而是直接运行测试核对约束\n再主动找反例\n这样检查才有独立性\n检查失败以后\n路径也要写清楚\n退回给谁\n允许重试几次\n什么时候升级\n给人已经花掉多少预算\n这些都不能等出事后再决定\n权限也要跟着角色收紧\n负责检查的节点\n不该顺手改掉自己正在检查的结果\n负责搜索的节点也未必需要生产环境权限\n职责分开以后\n工具权限也要分开\n还有预算和人工闸口\n一个节点最多能调用多少次模型\n失败几次后必须停\n哪些动作需要人确认\n如果这些边界不清楚\n动态graph很容易一路扩张\n结果可能是任务没完成\n成本先失控\ngraph也不一定要提前划死稳定步骤\n权限验收和人工闸口\n可以先定好这次任务到底拆几份\n走哪条支路\n可以边做边调外层先定边界\n内部再按任务变化\n有人把运行中临时形成的任务依赖叫做work graph\n这个说法有助于理解\n但它还不是统一术语\n更不是已经验证完成的工程结论\n不要看到新名词就急着把所有流程改名\n而且work graph这个词本身也有歧义\n有人用它描述一次运行里临时形成的任务依赖\n但ASSANA早就用work graph指另一套工作数据模型\n同一个名字并不代表同一种技术定义\n换成程序结构来看会更直观\nPrompt engineering\n像单参数函数\nContext engineering\n像拿到多组上下文的函数\nHarness\n再把工具权限和运行环境接进来\nloop让程序读取反馈持续调整到了graph\n多个带状态的节点被连到一起\n任务可以分支可以汇合检查\n失败后可以回退\n必要时还能停下来\n等人确认路径里\n如果重新进入就结点就会出现环偶线状态机\n可以帮助理解这种控制关系\n系统根据结果在不同状态之间切换\n直到满足退出条件\n但这只是类比\n图论和状态机\n都不是今天才出现的新技术\n真正变化的是agent子节点本身\n它会自己拆任务\n改计划\n调用工具\n还可能直接修改真实环境\n过去工作流和分布式系统里的控制方法\n现在要面对更自主\n更不确定的节点\n这也是传统workflow和agent graph的差别\n传统步骤通常按预设逻辑执行\nagent节点却可能自己找路\n临时改计划\n它还能调用工具\n影响真实环境\n控制对象变得更主动\n以后\n验收权限和否决权都要重新设计\n那什么任务值得用graph\n任务最好能拆成相对独立的部分\n不同部分需要不同信息工具或权限\n中间结果可以单独验收\n失败后也只想重做局部广泛搜索和并行探索\n通常更适合多agent\n因为多个方向可以同时推进\n某一路失败也不必推倒全部结果\n这是协调成本\n可能换来更快的探索和局部回复\n比如多agent research\n一个节点查技术资料\n另一个查市场信息\n还有节点核对来源和矛盾点\n这些方向能并行展开\n各路结果再汇总\n比一条线从头查到尾更有机会受益\n严格顺序的任务就不一样\n每一步都依赖上一步\n所有agent还频繁修改同一份内容\n这时多开几个agent可能只会增加沟通和冲突\n一个清楚的loop更省事儿\n成本也不能忽略\nenter public的官方工程\n文章提到\n多agent\nresearch系统的token使用量大约是普通聊天的15倍\n15倍不是小数目\n它意味着更多调用更长等待\n还有更多协调失败的机会\nGoogle research\ngoogle DeepMind和MIT的实验也给出一个提醒\n多agent在可并行任务上可能提升\n但在严格顺序任务里表现可能下降\n所以不要把A证数量当成系统能力的直接指标\n下次再看到一张graph\n可以先问三个问题\n他比一个loop多解决了什么关系\n检查结果能不能真的退回换路或叫停\n新增的协调成本是否小于\n独立判断和局部恢复带来的收益\n如果这三个问题都答不清\ngraph很可能只是架构图变复杂了\n如果任务能拆开\n中间结果能独立验收\n还确实需要不同信息工具或权限\n这时graph才更可能带来净收益\nloop没死\n他继续负责让局部工作往前走\ngraph要解决的是多个loop怎么分工交接\n纠偏和停手\n从一个清楚的loop开始\n需要分权时再画graph\n记住这句话\n做不到纠偏graph只是一张更贵的流程图\n做得到工程问题才会从一个agent怎样反复做事\n变成多个loop\n怎样协作\n又怎样避免一起走偏",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gHuJ6AEnk",
+  "published_at": "1786016645",
+  "fetched_at": "2026-08-10T05:55:15+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 多Agent系统从Loop到Graph知识图谱\n\n## 总览\n```mermaid\nflowchart LR\n    L1[\"Loop (单个agent基础)\"] -->|处理状态与反馈| L2[\"Loop内部多种形式\"]\n    L2 -->|驱动| G1[\"Graph Engineering\"]\n    G1 -->|组织| N1[\"多个Loop之间的关系\"]\n    N1 -->|分配| R1[\"执行权限\"]\n    N1 -->|分配| R2[\"检查权限\"]\n    N1 -->|分配| R3[\"退回/换路权限\"]\n    N1 -->|分配| R4[\"吹停/人工介入\"]\n    G1 -->|解决| P1[\"纠偏与停手\"]\n    G1 -->|保持| L1\n```\n\n## Loop的三种类型\n```mermaid\nflowchart LR\n    T1[\"做事 Loop\"] -->|搜索、写代码、生成内容| T1A[\"推动工作前进\"]\n    T2[\"检查 Loop\"] -->|跑测试、核对约束、找反例| T2A[\"验证结果是否通过\"]\n    T3[\"方向 Loop\"] -->|评估成本、用户接受度、目标合理性| T3A[\"决定是否继续或调整方向\"]\n    T1 -->|提供输出给| T2\n    T2 -->|提供评估给| T3\n    T3 -->|反馈给| T1\n    style T1 fill:#f9f,stroke:#333,stroke-width:2px\n    style T2 fill:#9ff,stroke:#333,stroke-width:2px\n    style T3 fill:#ff9,stroke:#333,stroke-width:2px\n```\n\n## Graph Engineering 的权限与职责分配\n```mermaid\nflowchart LR\n    G1[\"Graph 节点 (Agent/工具/人)\"] -->|执行| EX[\"执行单元\"]\n    G1 -->|检查| CH[\"检查单元\"]\n    G1 -->|退回/换路| RB[\"回退/换路单元\"]\n    G1 -->|吹停/人工介入| HI[\"人工介入单元\"]\n    EX -->|产生结果| CH\n    CH -->|若不通过| RB\n    RB -->|可回到| EX\n    RB -->|必要时| HI\n    HI -->|决定继续或终止| EX\n    style EX fill:#cfc,stroke:#333,stroke-width:2px\n    style CH fill:#ccf,stroke:#333,stroke-width:2px\n    style RB fill:#fcc,stroke:#333,stroke-width:2px\n    style HI fill:#fc9,stroke:#333,stroke-width:2px\n```\n\n## 有效交接的四类要素\n```mermaid\nflowchart LR\n    H1[\"交接要素\"] -->|1. 成果证据与限制| A1[\"成果证据 & 限制\"]\n    H1 -->|2. 未解决问题| A2[\"未解决的问题\"]\n    H1 -->|3. 可信度说明| A3[\"接收方为何可信\"]\n    H1 -->|4. 过程与假设信息| A4[\"过程证据 & 未验证假设\"]\n    A3 -->|包含| B1[\"可见过程证据\"]\n    A3 -->|包含| B2[\"下一步允许/禁止操作\"]\n    A4 -->|支持| B1\n    A4 -->|支持| B2\n    style H1 fill:#eef,stroke:#333,stroke-width:2px\n```\n\n## 评估是否使用 Graph 的三个关键问题\n```mermaid\nflowchart LR\n    Q1[\"比 Loop 多解决了哪些关系？\"] -->|若无新增关系| NO1[\"可能仅是复杂的流程图\"]\n    Q2[\"检查结果能否真正退回、换路或叫停？\"] -->|若不能| NO2[\"缺乏纠偏能力\"]\n    Q3[\"新增的协调成本是否小于独立判断与局部恢复的收益？\"] -->|若成本大于收益| NO3[\"不值得使用 Graph\"]\n    NO1 --> END[\"慎用 Graph\"]\n    NO2 --> END\n    NO3 --> END\n    style Q1 fill:#ddf,stroke:#333,stroke-width:2px\n    style Q2 fill:#ddf,stroke:#333,stroke-width:2px\n    style Q3 fill:#ddf,stroke:#333,stroke-width:2px\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart LR\n    L1[\"Loop (单个agent基础)\"] -->|处理状态与反馈| L2[\"Loop内部多种形式\"]\n    L2 -->|驱动| G1[\"Graph Engineering\"]\n    G1 -->|组织| N1[\"多个Loop之间的关系\"]\n    N1 -->|分配| R1[\"执行权限\"]\n    N1 -->|分配| R2[\"检查权限\"]\n    N1 -->|分配| R3[\"退回/换路权限\"]\n    N1 -->|分配| R4[\"吹停/人工介入\"]\n    G1 -->|解决| P1[\"纠偏与停手\"]\n    G1 -->|保持| L1"
+        },
+        {
+          "title": "Loop的三种类型",
+          "code": "flowchart LR\n    T1[\"做事 Loop\"] -->|搜索、写代码、生成内容| T1A[\"推动工作前进\"]\n    T2[\"检查 Loop\"] -->|跑测试、核对约束、找反例| T2A[\"验证结果是否通过\"]\n    T3[\"方向 Loop\"] -->|评估成本、用户接受度、目标合理性| T3A[\"决定是否继续或调整方向\"]\n    T1 -->|提供输出给| T2\n    T2 -->|提供评估给| T3\n    T3 -->|反馈给| T1\n    style T1 fill:#f9f,stroke:#333,stroke-width:2px\n    style T2 fill:#9ff,stroke:#333,stroke-width:2px\n    style T3 fill:#ff9,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "Graph Engineering 的权限与职责分配",
+          "code": "flowchart LR\n    G1[\"Graph 节点 (Agent/工具/人)\"] -->|执行| EX[\"执行单元\"]\n    G1 -->|检查| CH[\"检查单元\"]\n    G1 -->|退回/换路| RB[\"回退/换路单元\"]\n    G1 -->|吹停/人工介入| HI[\"人工介入单元\"]\n    EX -->|产生结果| CH\n    CH -->|若不通过| RB\n    RB -->|可回到| EX\n    RB -->|必要时| HI\n    HI -->|决定继续或终止| EX\n    style EX fill:#cfc,stroke:#333,stroke-width:2px\n    style CH fill:#ccf,stroke:#333,stroke-width:2px\n    style RB fill:#fcc,stroke:#333,stroke-width:2px\n    style HI fill:#fc9,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "有效交接的四类要素",
+          "code": "flowchart LR\n    H1[\"交接要素\"] -->|1. 成果证据与限制| A1[\"成果证据 & 限制\"]\n    H1 -->|2. 未解决问题| A2[\"未解决的问题\"]\n    H1 -->|3. 可信度说明| A3[\"接收方为何可信\"]\n    H1 -->|4. 过程与假设信息| A4[\"过程证据 & 未验证假设\"]\n    A3 -->|包含| B1[\"可见过程证据\"]\n    A3 -->|包含| B2[\"下一步允许/禁止操作\"]\n    A4 -->|支持| B1\n    A4 -->|支持| B2\n    style H1 fill:#eef,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "评估是否使用 Graph 的三个关键问题",
+          "code": "flowchart LR\n    Q1[\"比 Loop 多解决了哪些关系？\"] -->|若无新增关系| NO1[\"可能仅是复杂的流程图\"]\n    Q2[\"检查结果能否真正退回、换路或叫停？\"] -->|若不能| NO2[\"缺乏纠偏能力\"]\n    Q3[\"新增的协调成本是否小于独立判断与局部恢复的收益？\"] -->|若成本大于收益| NO3[\"不值得使用 Graph\"]\n    NO1 --> END[\"慎用 Graph\"]\n    NO2 --> END\n    NO3 --> END\n    style Q1 fill:#ddf,stroke:#333,stroke-width:2px\n    style Q2 fill:#ddf,stroke:#333,stroke-width:2px\n    style Q3 fill:#ddf,stroke:#333,stroke-width:2px"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T05:55:27+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 多Agent系统从Loop到Graph知识图谱\n\n## 总览\n```mermaid\nflowchart LR\n    L1[\"Loop (单个agent基础)\"] -->|处理状态与反馈| L2[\"Loop内部多种形式\"]\n    L2 -->|驱动| G1[\"Graph Engineering\"]\n    G1 -->|组织| N1[\"多个Loop之间的关系\"]\n    N1 -->|分配| R1[\"执行权限\"]\n    N1 -->|分配| R2[\"检查权限\"]\n    N1 -->|分配| R3[\"退回/换路权限\"]\n    N1 -->|分配| R4[\"吹停/人工介入\"]\n    G1 -->|解决| P1[\"纠偏与停手\"]\n    G1 -->|保持| L1\n```\n\n## Loop的三种类型\n```mermaid\nflowchart LR\n    T1[\"做事 Loop\"] -->|搜索、写代码、生成内容| T1A[\"推动工作前进\"]\n    T2[\"检查 Loop\"] -->|跑测试、核对约束、找反例| T2A[\"验证结果是否通过\"]\n    T3[\"方向 Loop\"] -->|评估成本、用户接受度、目标合理性| T3A[\"决定是否继续或调整方向\"]\n    T1 -->|提供输出给| T2\n    T2 -->|提供评估给| T3\n    T3 -->|反馈给| T1\n    style T1 fill:#f9f,stroke:#333,stroke-width:2px\n    style T2 fill:#9ff,stroke:#333,stroke-width:2px\n    style T3 fill:#ff9,stroke:#333,stroke-width:2px\n```\n\n## Graph Engineering 的权限与职责分配\n```mermaid\nflowchart LR\n    G1[\"Graph 节点 (Agent/工具/人)\"] -->|执行| EX[\"执行单元\"]\n    G1 -->|检查| CH[\"检查单元\"]\n    G1 -->|退回/换路| RB[\"回退/换路单元\"]\n    G1 -->|吹停/人工介入| HI[\"人工介入单元\"]\n    EX -->|产生结果| CH\n    CH -->|若不通过| RB\n    RB -->|可回到| EX\n    RB -->|必要时| HI\n    HI -->|决定继续或终止| EX\n    style EX fill:#cfc,stroke:#333,stroke-width:2px\n    style CH fill:#ccf,stroke:#333,stroke-width:2px\n    style RB fill:#fcc,stroke:#333,stroke-width:2px\n    style HI fill:#fc9,stroke:#333,stroke-width:2px\n```\n\n## 有效交接的四类要素\n```mermaid\nflowchart LR\n    H1[\"交接要素\"] -->|1. 成果证据与限制| A1[\"成果证据 & 限制\"]\n    H1 -->|2. 未解决问题| A2[\"未解决的问题\"]\n    H1 -->|3. 可信度说明| A3[\"接收方为何可信\"]\n    H1 -->|4. 过程与假设信息| A4[\"过程证据 & 未验证假设\"]\n    A3 -->|包含| B1[\"可见过程证据\"]\n    A3 -->|包含| B2[\"下一步允许/禁止操作\"]\n    A4 -->|支持| B1\n    A4 -->|支持| B2\n    style H1 fill:#eef,stroke:#333,stroke-width:2px\n```\n\n## 评估是否使用 Graph 的三个关键问题\n```mermaid\nflowchart LR\n    Q1[\"比 Loop 多解决了哪些关系？\"] -->|若无新增关系| NO1[\"可能仅是复杂的流程图\"]\n    Q2[\"检查结果能否真正退回、换路或叫停？\"] -->|若不能| NO2[\"缺乏纠偏能力\"]\n    Q3[\"新增的协调成本是否小于独立判断与局部恢复的收益？\"] -->|若成本大于收益| NO3[\"不值得使用 Graph\"]\n    NO1 --> END[\"慎用 Graph\"]\n    NO2 --> END\n    NO3 --> END\n    style Q1 fill:#ddf,stroke:#333,stroke-width:2px\n    style Q2 fill:#ddf,stroke:#333,stroke-width:2px\n    style Q3 fill:#ddf,stroke:#333,stroke-width:2px\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart LR\n    L1[\"Loop (单个agent基础)\"] -->|处理状态与反馈| L2[\"Loop内部多种形式\"]\n    L2 -->|驱动| G1[\"Graph Engineering\"]\n    G1 -->|组织| N1[\"多个Loop之间的关系\"]\n    N1 -->|分配| R1[\"执行权限\"]\n    N1 -->|分配| R2[\"检查权限\"]\n    N1 -->|分配| R3[\"退回/换路权限\"]\n    N1 -->|分配| R4[\"吹停/人工介入\"]\n    G1 -->|解决| P1[\"纠偏与停手\"]\n    G1 -->|保持| L1"
+    },
+    {
+      "title": "Loop的三种类型",
+      "code": "flowchart LR\n    T1[\"做事 Loop\"] -->|搜索、写代码、生成内容| T1A[\"推动工作前进\"]\n    T2[\"检查 Loop\"] -->|跑测试、核对约束、找反例| T2A[\"验证结果是否通过\"]\n    T3[\"方向 Loop\"] -->|评估成本、用户接受度、目标合理性| T3A[\"决定是否继续或调整方向\"]\n    T1 -->|提供输出给| T2\n    T2 -->|提供评估给| T3\n    T3 -->|反馈给| T1\n    style T1 fill:#f9f,stroke:#333,stroke-width:2px\n    style T2 fill:#9ff,stroke:#333,stroke-width:2px\n    style T3 fill:#ff9,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "Graph Engineering 的权限与职责分配",
+      "code": "flowchart LR\n    G1[\"Graph 节点 (Agent/工具/人)\"] -->|执行| EX[\"执行单元\"]\n    G1 -->|检查| CH[\"检查单元\"]\n    G1 -->|退回/换路| RB[\"回退/换路单元\"]\n    G1 -->|吹停/人工介入| HI[\"人工介入单元\"]\n    EX -->|产生结果| CH\n    CH -->|若不通过| RB\n    RB -->|可回到| EX\n    RB -->|必要时| HI\n    HI -->|决定继续或终止| EX\n    style EX fill:#cfc,stroke:#333,stroke-width:2px\n    style CH fill:#ccf,stroke:#333,stroke-width:2px\n    style RB fill:#fcc,stroke:#333,stroke-width:2px\n    style HI fill:#fc9,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "有效交接的四类要素",
+      "code": "flowchart LR\n    H1[\"交接要素\"] -->|1. 成果证据与限制| A1[\"成果证据 & 限制\"]\n    H1 -->|2. 未解决问题| A2[\"未解决的问题\"]\n    H1 -->|3. 可信度说明| A3[\"接收方为何可信\"]\n    H1 -->|4. 过程与假设信息| A4[\"过程证据 & 未验证假设\"]\n    A3 -->|包含| B1[\"可见过程证据\"]\n    A3 -->|包含| B2[\"下一步允许/禁止操作\"]\n    A4 -->|支持| B1\n    A4 -->|支持| B2\n    style H1 fill:#eef,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "评估是否使用 Graph 的三个关键问题",
+      "code": "flowchart LR\n    Q1[\"比 Loop 多解决了哪些关系？\"] -->|若无新增关系| NO1[\"可能仅是复杂的流程图\"]\n    Q2[\"检查结果能否真正退回、换路或叫停？\"] -->|若不能| NO2[\"缺乏纠偏能力\"]\n    Q3[\"新增的协调成本是否小于独立判断与局部恢复的收益？\"] -->|若成本大于收益| NO3[\"不值得使用 Graph\"]\n    NO1 --> END[\"慎用 Graph\"]\n    NO2 --> END\n    NO3 --> END\n    style Q1 fill:#ddf,stroke:#333,stroke-width:2px\n    style Q2 fill:#ddf,stroke:#333,stroke-width:2px\n    style Q3 fill:#ddf,stroke:#333,stroke-width:2px"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T05:55:27+00:00"
+}

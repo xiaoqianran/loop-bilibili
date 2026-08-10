@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1DHuJ6wEkM",
+  "title": "DeepSeek宣布即将调价，Meta发布MuseCode终端agent【2026.08.06AI科技晚报】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1214,
+  "text": "欢迎收看AI科技日报\n今日meta发布MSCODE终端agent字解CD real time音视频\n全双工大模型上车\n豆包deep six宣布API服务调价\n带您一览今日15条精选资讯新闻\n首先来看模型发布与能力更新\n针对开发者需求\nNETA官方发布MSCODE终端智能体与spark1.2模型\n支持行内原声编程与全双工语音协同\n字节跳动\nC的团队发布原声音视频\n全双工大模型\nSeed real time\n把中断响应延迟缩短到200ms以内\n用户可在豆包体验极速视觉与连贯语音对打\n阿里通1000万上线千万image杠\n3.0图像大模型API\n每张高分辨率合成低至0.03美元\n全面提升中文渲染与复杂光影表现\n马岩ending团队开源轻量模型\n零浪3.0flash完整权重\n主打高token喷涂与精细化agent的工具调用\n同步上架\nharding face与魔哒美堂\nlong cat杠2.0期间\n大模型全量免费上线\nopen toe平台\n开发者免配置API密钥\n即可直接体验\n百万长文本推理与超高并发代码分析\n深度求索\n官方发布告示\n因高并发请求导致算力集群持续满载\n扩容成本上升\n开放平台API的提示\ntoken及专属节点服务即将大幅调价\n下面关注行业动态与算力\n基建系统科学家jeff in确认离职\n谷歌结束20余年谷歌生涯\n联合DeepMind顶尖专家创办disco luo pai\n专注于自动化智能体与系统及AI基础设施\n商业航天领头羊SPACEX启动太空算力计划\n在星链卫星集群中部署AI节点\n硬件选用英伟达via ruben架构\n突破陆地能耗瓶颈\n云算力提供商GUA\n与ANTHROPIC签署100亿美元算力租赁大单\n将为其提供数万塔级专属集群\n全力保障下一代基座模型的研发\n眼镜边缘计算平台call fr正式开源\nCOUFLAIROS智能体操作系统\n基于workers边缘架构\n提供带权限校验与沙箱防护的零代码agent\n工作空间\n接下来关注投融资与商业化动态\n消息称\n吃be sick拟重启第二轮巨额股权融资\n投前估值冲刺5000亿元人民币\n所融资金将全量倾斜向\n百万卡级超级数据中心建设\n针对苹果发起的诉讼\n欧派AI向联邦法院提交动议\n申请彻底驳回\n直言对方指控缺乏证据\n意在掩盖人才流失\n下面我们来看看开发者生态与开源前沿\n小米机器人实验室\n开源聚深智能模型\n小米robotics\n杠一全量开放推理代码与预训练检查点\n实现视觉感知与机械臂操作的端到端高效统一\n京东开源AI视频编辑系统joy AI video edit\n专为电商与短视频优化\n支持自然语言指令\n实现秒级局部画面重构与物体替换\n开发者开源平台prime intellect\n开源prime agent框架\n引入递归语言模型RLM架构赋能编程agent\n在复杂多文件任务中的自我纠错与长城推演\n以上就是今天的全部内容\n感谢收看\n我们明天再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1DHuJ6wEkM",
+  "published_at": "1786016838",
+  "fetched_at": "2026-08-07T13:23:04+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI科技晚报知识图谱\n\n## MSCODE 终端 Agent 概览\n```mermaid\nflowchart TD\nM1[\"Meta\"] --> M2[\"MSCODE 终端 Agent\"]\nM2 --> M3[\"Spark 1.2 模型\"]\nM2 --> M4[\"实时音视频 (Real‑time)\"]\nM2 --> M5[\"全双工语音协同\"]\nM5 --> M6[\"行内原声编程\"]\nM4 --> M7[\"低延迟响应 (<200ms)\"]\nM3 --> M8[\"支持开发者需求\"]\nM8 --> M9[\"API 调用 & Agent 工具\"]\nM9 --> M10[\"跨模态交互\"]\n```\n\n## DeepSeek API 调价原因与影响\n```mermaid\nflowchart TD\nD1[\"DeepSeek\"] --> D2[\"API 服务\"]\nD2 --> D3[\"当前价格\"]\nD2 --> D4[\"高并发请求\"]\nD4 --> D5[\"算力集群满载\"]\nD5 --> D6[\"扩容成本上升\"]\nD6 --> D7[\"Token 与专属节点服务调价\"]\nD7 --> D8[\"开发者成本增加\"]\nD3 --> D9[\"用户体验风险\"]\nD9 --> D10[\"需求转向其他平台\"]\n```\n\n## SpaceX 星链 AI 计算计划\n```mermaid\nflowchart TD\nS1[\"SpaceX\"] --> S2[\"星链卫星集群\"]\nS2 --> S3[\"部署 AI 节点\"]\nS3 --> S4[\"硬件：Nvidia ViaRubin 架构\"]\nS4 --> S5[\"突破陆地能耗瓶颈\"]\nS3 --> S6[\"云算力提供商 GUA\"]\nS6 --> S7[\"与 Anthropic 签署 100亿美元 租赁\"]\nS7 --> S8[\"提供数万塔级专属集群\"]\nS8 --> S9[\"保障下一代基座模型研发\"]\nS5 --> S10[\"提升太空算力可用性\"]\n```\n\n## 开源开发者生态与工具链\n```mermaid\nflowchart TD\nX1[\"小米机器人实验室\"] --> X2[\"开源 DeepSense 智能模型\"]\nX2 --> X3[\"全量开放推理代码\"]\nX2 --> X4[\"预训练检查点\"]\nX3 --> X5[\"视觉感知 & 机械臂端到端\"]\nJD1[\"京东 AI 视频编辑系统\"] --> JD2[\"Joy AI Video Edit\"]\nJD2 --> JD3[\"自然语言指令\"]\nJD3 --> JD4[\"秒级局部画面重构 & 物体替换\"]\nPI1[\"Prime Intellect 平台\"] --> PI2[\"Prime Agent 框架\"]\nPI2 --> PI3[\"递归语言模型 (RLM)\"]\nPI3 --> PI4[\"编程 Agent 赋能\"]\nPI4 --> PI5[\"多文件任务自我纠错\"]\nPI5 --> PI6[\"长程推演能力\"]\nX5 --> PI1\n```",
+      "diagrams": [
+        {
+          "title": "MSCODE 终端 Agent 概览",
+          "code": "flowchart TD\nM1[\"Meta\"] --> M2[\"MSCODE 终端 Agent\"]\nM2 --> M3[\"Spark 1.2 模型\"]\nM2 --> M4[\"实时音视频 (Real‑time)\"]\nM2 --> M5[\"全双工语音协同\"]\nM5 --> M6[\"行内原声编程\"]\nM4 --> M7[\"低延迟响应 (<200ms)\"]\nM3 --> M8[\"支持开发者需求\"]\nM8 --> M9[\"API 调用 & Agent 工具\"]\nM9 --> M10[\"跨模态交互\"]"
+        },
+        {
+          "title": "DeepSeek API 调价原因与影响",
+          "code": "flowchart TD\nD1[\"DeepSeek\"] --> D2[\"API 服务\"]\nD2 --> D3[\"当前价格\"]\nD2 --> D4[\"高并发请求\"]\nD4 --> D5[\"算力集群满载\"]\nD5 --> D6[\"扩容成本上升\"]\nD6 --> D7[\"Token 与专属节点服务调价\"]\nD7 --> D8[\"开发者成本增加\"]\nD3 --> D9[\"用户体验风险\"]\nD9 --> D10[\"需求转向其他平台\"]"
+        },
+        {
+          "title": "SpaceX 星链 AI 计算计划",
+          "code": "flowchart TD\nS1[\"SpaceX\"] --> S2[\"星链卫星集群\"]\nS2 --> S3[\"部署 AI 节点\"]\nS3 --> S4[\"硬件：Nvidia ViaRubin 架构\"]\nS4 --> S5[\"突破陆地能耗瓶颈\"]\nS3 --> S6[\"云算力提供商 GUA\"]\nS6 --> S7[\"与 Anthropic 签署 100亿美元 租赁\"]\nS7 --> S8[\"提供数万塔级专属集群\"]\nS8 --> S9[\"保障下一代基座模型研发\"]\nS5 --> S10[\"提升太空算力可用性\"]"
+        },
+        {
+          "title": "开源开发者生态与工具链",
+          "code": "flowchart TD\nX1[\"小米机器人实验室\"] --> X2[\"开源 DeepSense 智能模型\"]\nX2 --> X3[\"全量开放推理代码\"]\nX2 --> X4[\"预训练检查点\"]\nX3 --> X5[\"视觉感知 & 机械臂端到端\"]\nJD1[\"京东 AI 视频编辑系统\"] --> JD2[\"Joy AI Video Edit\"]\nJD2 --> JD3[\"自然语言指令\"]\nJD3 --> JD4[\"秒级局部画面重构 & 物体替换\"]\nPI1[\"Prime Intellect 平台\"] --> PI2[\"Prime Agent 框架\"]\nPI2 --> PI3[\"递归语言模型 (RLM)\"]\nPI3 --> PI4[\"编程 Agent 赋能\"]\nPI4 --> PI5[\"多文件任务自我纠错\"]\nPI5 --> PI6[\"长程推演能力\"]\nX5 --> PI1"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T13:23:23+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI科技晚报知识图谱\n\n## MSCODE 终端 Agent 概览\n```mermaid\nflowchart TD\nM1[\"Meta\"] --> M2[\"MSCODE 终端 Agent\"]\nM2 --> M3[\"Spark 1.2 模型\"]\nM2 --> M4[\"实时音视频 (Real‑time)\"]\nM2 --> M5[\"全双工语音协同\"]\nM5 --> M6[\"行内原声编程\"]\nM4 --> M7[\"低延迟响应 (<200ms)\"]\nM3 --> M8[\"支持开发者需求\"]\nM8 --> M9[\"API 调用 & Agent 工具\"]\nM9 --> M10[\"跨模态交互\"]\n```\n\n## DeepSeek API 调价原因与影响\n```mermaid\nflowchart TD\nD1[\"DeepSeek\"] --> D2[\"API 服务\"]\nD2 --> D3[\"当前价格\"]\nD2 --> D4[\"高并发请求\"]\nD4 --> D5[\"算力集群满载\"]\nD5 --> D6[\"扩容成本上升\"]\nD6 --> D7[\"Token 与专属节点服务调价\"]\nD7 --> D8[\"开发者成本增加\"]\nD3 --> D9[\"用户体验风险\"]\nD9 --> D10[\"需求转向其他平台\"]\n```\n\n## SpaceX 星链 AI 计算计划\n```mermaid\nflowchart TD\nS1[\"SpaceX\"] --> S2[\"星链卫星集群\"]\nS2 --> S3[\"部署 AI 节点\"]\nS3 --> S4[\"硬件：Nvidia ViaRubin 架构\"]\nS4 --> S5[\"突破陆地能耗瓶颈\"]\nS3 --> S6[\"云算力提供商 GUA\"]\nS6 --> S7[\"与 Anthropic 签署 100亿美元 租赁\"]\nS7 --> S8[\"提供数万塔级专属集群\"]\nS8 --> S9[\"保障下一代基座模型研发\"]\nS5 --> S10[\"提升太空算力可用性\"]\n```\n\n## 开源开发者生态与工具链\n```mermaid\nflowchart TD\nX1[\"小米机器人实验室\"] --> X2[\"开源 DeepSense 智能模型\"]\nX2 --> X3[\"全量开放推理代码\"]\nX2 --> X4[\"预训练检查点\"]\nX3 --> X5[\"视觉感知 & 机械臂端到端\"]\nJD1[\"京东 AI 视频编辑系统\"] --> JD2[\"Joy AI Video Edit\"]\nJD2 --> JD3[\"自然语言指令\"]\nJD3 --> JD4[\"秒级局部画面重构 & 物体替换\"]\nPI1[\"Prime Intellect 平台\"] --> PI2[\"Prime Agent 框架\"]\nPI2 --> PI3[\"递归语言模型 (RLM)\"]\nPI3 --> PI4[\"编程 Agent 赋能\"]\nPI4 --> PI5[\"多文件任务自我纠错\"]\nPI5 --> PI6[\"长程推演能力\"]\nX5 --> PI1\n```",
+  "diagrams": [
+    {
+      "title": "MSCODE 终端 Agent 概览",
+      "code": "flowchart TD\nM1[\"Meta\"] --> M2[\"MSCODE 终端 Agent\"]\nM2 --> M3[\"Spark 1.2 模型\"]\nM2 --> M4[\"实时音视频 (Real‑time)\"]\nM2 --> M5[\"全双工语音协同\"]\nM5 --> M6[\"行内原声编程\"]\nM4 --> M7[\"低延迟响应 (<200ms)\"]\nM3 --> M8[\"支持开发者需求\"]\nM8 --> M9[\"API 调用 & Agent 工具\"]\nM9 --> M10[\"跨模态交互\"]"
+    },
+    {
+      "title": "DeepSeek API 调价原因与影响",
+      "code": "flowchart TD\nD1[\"DeepSeek\"] --> D2[\"API 服务\"]\nD2 --> D3[\"当前价格\"]\nD2 --> D4[\"高并发请求\"]\nD4 --> D5[\"算力集群满载\"]\nD5 --> D6[\"扩容成本上升\"]\nD6 --> D7[\"Token 与专属节点服务调价\"]\nD7 --> D8[\"开发者成本增加\"]\nD3 --> D9[\"用户体验风险\"]\nD9 --> D10[\"需求转向其他平台\"]"
+    },
+    {
+      "title": "SpaceX 星链 AI 计算计划",
+      "code": "flowchart TD\nS1[\"SpaceX\"] --> S2[\"星链卫星集群\"]\nS2 --> S3[\"部署 AI 节点\"]\nS3 --> S4[\"硬件：Nvidia ViaRubin 架构\"]\nS4 --> S5[\"突破陆地能耗瓶颈\"]\nS3 --> S6[\"云算力提供商 GUA\"]\nS6 --> S7[\"与 Anthropic 签署 100亿美元 租赁\"]\nS7 --> S8[\"提供数万塔级专属集群\"]\nS8 --> S9[\"保障下一代基座模型研发\"]\nS5 --> S10[\"提升太空算力可用性\"]"
+    },
+    {
+      "title": "开源开发者生态与工具链",
+      "code": "flowchart TD\nX1[\"小米机器人实验室\"] --> X2[\"开源 DeepSense 智能模型\"]\nX2 --> X3[\"全量开放推理代码\"]\nX2 --> X4[\"预训练检查点\"]\nX3 --> X5[\"视觉感知 & 机械臂端到端\"]\nJD1[\"京东 AI 视频编辑系统\"] --> JD2[\"Joy AI Video Edit\"]\nJD2 --> JD3[\"自然语言指令\"]\nJD3 --> JD4[\"秒级局部画面重构 & 物体替换\"]\nPI1[\"Prime Intellect 平台\"] --> PI2[\"Prime Agent 框架\"]\nPI2 --> PI3[\"递归语言模型 (RLM)\"]\nPI3 --> PI4[\"编程 Agent 赋能\"]\nPI4 --> PI5[\"多文件任务自我纠错\"]\nPI5 --> PI6[\"长程推演能力\"]\nX5 --> PI1"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T13:23:23+00:00"
+}

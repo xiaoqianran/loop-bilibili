@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1JBu76CE9K",
+  "title": "【DeepSeek V4】大模型原理剖析从入门到精通教程，零基础手把手带你精通使用DeepSeek V4！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1305,
+  "text": "咱们首先呢来聊一聊这个V4到底有多强啊\n在这个4月底的时候啊\n事实上出了这个什么呢\n呃出了这个deep sk和V4啊\n这个时间点非常的巧妙啊\n大家知不知道这个时间点巧妙在哪啊\n就是那个GPT刚刚出一个新的版本啊\n然后这个deep sink v4呢\n事实上就紧跟着过了一天还是两天呀\n就紧跟着出了一个deep sk v4啊\n其实这个东西呢巧不巧呢\n你说哈哈其实就是等着他们先出之后啊\n然后再来一款这种开源的爆炸的产品啊\n那这张图呢实际上是老师从这个什么呢\n从这个呃这个论文上面截了一张图啊\n那其实大家看左边啊\n左侧这个页面左侧实际上它有1234567\n实际上有七个数的列\n那这里面七个数的列呢\n它相当于是说呃摆什么呢\n摆着画笔呃\n这个有画笔啊\n他这个七的列呢\n它相当于是说把一些比如说通识的知识\n它叫knowledge\n还有像reasoning推理能力啊\n他把一些模型做了对比\n比如说有deep sk v4啊\n这个最新出的这个deep sk开源还有什么呢\n还有cloud4.6\n还有GBT5.4\n包括这个谷歌的GERMANY3.1\n他做一些对比啊\n但它并不是每一项都是排第一啊\n啊\n但是呢它实际上基本上实际上是名列前茅的啊\n而且这里面事实上有很多的模型\n事实上是闭源的\n那那这点很重要啊\n咱们这个deep sv4事实上是开源的啊\n事实上免费的\n而且他的这个协议事实上是谁都能用的\n甚至你可以部署在自己电脑里面去来使用\n都没有问题\n这点非常的友好\n非常的关键啊\n那它事实上甚至是有些呢可以排在第一呃\n有些呢实际上和这些闭源的模型呢\n实际上是非常接近的啊\n还有什么呢\n还有很重要的就是咱们说大模型\n大模型最近呢在企业里面啊\n都在去做一些什么呢\n智能体对吧\nagent的智能体\n那你看这样就这块它有一个A呃ERGETIC呃\ncapabilities啊\n智能体的这个能力\n那这方面的指标是让你看到哎\n他这里面也是什么呢\n也是把这个指标的基本上排在了前三吧\n你可以看到啊\n基本上在前三\n这点对于我们平时在企业里面去做一些呃\n智能化的开发呀\n事实上是非常重要的啊\n这边吉邵峰同学问老师\n开源是开源代码还是权重啊\n实上这里面呃代码它首先是开源的\n在deep sk上面实际上是可以直接去看到\n可以去下载的\n那权重呢\n实际上他也是直接把这个把这个模型呢\n事实上给放到上面\n咱们可以去下载\n可以去download去下载去使用啊\n那这一次这个deep sk v4啊\n关于这个模型呢\n它实际上是万亿级别的啊\n实际上是万亿级别参数\n那这个实际上是非常非常大的一个模型啊\n啊那你可见他的能力实际上是非常非常强的啊\n以前咱们说模型都是千亿级别的参数\n这一次呢达到了万亿级别的参数啊\n那这个还是非常非常厉害\n当然它有两个版本啊\n它有一个版本呢叫做这个deep sk v4pro\n就大家可以看到右边这边有这个deep sk v4pro啊\n这个相当于就是一个完全版啊\ndeep sk v4pro就是个完全版\n这还有一个flash啊\nflash就是相对小的一个版本\n它有两个版本啊\n那这个pro就是能力最强的这个版本\nflash呢就是它的一个小的版本",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1JBu76CE9K",
+  "published_at": "1786001169",
+  "fetched_at": "2026-08-09T16:45:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 知识结构图谱\n\n## 图 1：发布时机与竞争关系\n\n```mermaid\nflowchart TD\n    GPT_New_Version[\"GPT 新版本发布\"]:::event\n    DeepSeek_V4_Release[\"DeepSeek V4 发布\"]:::event\n    Timing_Advantage[\"时间点巧合优势\"]:::note\n\n    GPT_New_Version -->|紧随其后| DeepSeek_V4_Release\n    DeepSeek_V4_Release --> Timing_Advantage\n    GPT_New_Version --> Timing_Advantage\n\n    classDef event fill:#e0f7fa,stroke:#006064;\n    classDef note fill:#fff3e0,stroke:#bf360c;\n```\n\n- **[BV1JBu76CE9K P1 00:21]** GPT 新版本发布  \n- **[BV1JBu76CE9K P1 00:27]** DeepSeek V4 发布（紧跟1‑2 天）  \n- **[BV1JBu76CE9K P1 00:19]** 时间点巧合优势  \n\n## 图 2：能力列与模型对比\n\n```mermaid\nflowchart LR\n    col1[\"1️⃣ Knowledge（通识知识）\"]:::col\n    col2[\"2️⃣ Reasoning（推理能力）\"]:::col\n    col3[\"3️⃣ …\"]:::col\n    col4[\"4️⃣ …\"]:::col\n    col5[\"5️⃣ …\"]:::col\n    col6[\"6️⃣ …\"]:::col\n    col7[\"7️⃣ …\"]:::col\n\n    subgraph Model_Comparison[\"模型对比\"]\n        DeepSeek_V4[\"DeepSeek V4\"]\n        Cloud4_6[\"Cloud 4.6\"]\n        GBT5_4[\"GBT 5.4\"]\n        Germany3_1[\"Google GERMANY 3.1\"]\n    end\n\n    DeepSeek_V4 -->|在多数列前列| col1\n    DeepSeek_V4 -->|在多数列前列| col2\n    Cloud4_6 -->|部分列竞争| col1\n    GBT5_4 -->|部分列竞争| col2\n    Germany3_1 -->|部分列竞争| col1\n\n    classDef col fill:#f1f8e9,stroke:#33691e;\n    classDef Model_Comparison fill:#e8eaf6,stroke:#1a237e;\n```\n\n- **[BV1JBu76CE9K P1 01:01‑01:13]** 7 列对应 Knowledge、Reasoning 等能力  \n- **[BV1JBu76CE9K P1 01:15‑01:28]** 对比 DeepSeek V4、Cloud 4.6、GBT 5.4、GERMANY 3.1  \n- **[BV1JBu76CE9K P1 01:31‑01:35]** DeepSeek V4 名列前茅（非全部第一）  \n\n## 图 3：开源属性与可部署性\n\n```mermaid\nflowchart TD\n    Code_Open[\"代码开源\"]:::feature\n    Weights_Open[\"权重开源\"]:::feature\n    License_Free[\"免费、宽松协议\"]:::feature\n    Deploy_Local[\"本地部署可行\"]:::feature\n\n    Code_Open -->|可下载| Repo[\"GitHub/官方仓库\"]\n    Weights_Open -->|可下载| Model[\"模型文件\"]\n    License_Free -->|任意使用| Users[\"所有用户\"]\n    Deploy_Local -->|无需额外授权| Users\n\n    classDef feature fill:#fffde7,stroke:#f57f17;\n```\n\n- **[BV1JBu76CE9K P1 01:38‑01:45]** 开源、免费、宽松协议  \n- **[BV1JBu76CE9K P1 01:48‑01:52]** 可在本地电脑部署使用  \n- **[BV1JBu76CE9K P1 02:40‑02:55]** 代码与权重均可直接下载  \n\n## 图 4：版本划分与参数规模\n\n```mermaid\nflowchart LR\n    V4[\"DeepSeek V4\\n（万亿参数）\"]:::base\n    Params[\"≈ 1 万亿参数\"]:::detail\n    V4pro[\"V4 Pro（完整版）\"]:::variant\n    Flash[\"Flash（轻量版）\"]:::variant\n\n    V4 --> Params\n    V4 --> V4pro\n    V4 --> Flash\n\n    V4pro -->|能力最强| HighCap[\"高性能\"]\n    Flash -->|体积更小| LowCap[\"轻量化\"]\n\n    classDef base fill:#e3f2fd,stroke:#0d47a1;\n    classDef detail fill:#e8f5e9,stroke:#1b5e20;\n    classDef variant fill:#fff3e0,stroke:#e65100;\n```\n\n- **[BV1JBu76CE9K P1 03:01‑03:06]** DeepSeek V4 参数规模达万亿级别  \n- **[BV1JBu76CE9K P1 03:21‑03:26]** V4 Pro 为完整版本（能力最强）  \n- **[BV1JBu76CE9K P1 03:37‑03:44]** Flash 为轻量版（体积更小）  ",
+      "diagrams": [
+        {
+          "title": "图 1：发布时机与竞争关系",
+          "code": "flowchart TD\n    GPT_New_Version[\"GPT 新版本发布\"]:::event\n    DeepSeek_V4_Release[\"DeepSeek V4 发布\"]:::event\n    Timing_Advantage[\"时间点巧合优势\"]:::note\n\n    GPT_New_Version -->|紧随其后| DeepSeek_V4_Release\n    DeepSeek_V4_Release --> Timing_Advantage\n    GPT_New_Version --> Timing_Advantage\n\n    classDef event fill:#e0f7fa,stroke:#006064;\n    classDef note fill:#fff3e0,stroke:#bf360c;"
+        },
+        {
+          "title": "图 2：能力列与模型对比",
+          "code": "flowchart LR\n    col1[\"1️⃣ Knowledge（通识知识）\"]:::col\n    col2[\"2️⃣ Reasoning（推理能力）\"]:::col\n    col3[\"3️⃣ …\"]:::col\n    col4[\"4️⃣ …\"]:::col\n    col5[\"5️⃣ …\"]:::col\n    col6[\"6️⃣ …\"]:::col\n    col7[\"7️⃣ …\"]:::col\n\n    subgraph Model_Comparison[\"模型对比\"]\n        DeepSeek_V4[\"DeepSeek V4\"]\n        Cloud4_6[\"Cloud 4.6\"]\n        GBT5_4[\"GBT 5.4\"]\n        Germany3_1[\"Google GERMANY 3.1\"]\n    end\n\n    DeepSeek_V4 -->|在多数列前列| col1\n    DeepSeek_V4 -->|在多数列前列| col2\n    Cloud4_6 -->|部分列竞争| col1\n    GBT5_4 -->|部分列竞争| col2\n    Germany3_1 -->|部分列竞争| col1\n\n    classDef col fill:#f1f8e9,stroke:#33691e;\n    classDef Model_Comparison fill:#e8eaf6,stroke:#1a237e;"
+        },
+        {
+          "title": "图 3：开源属性与可部署性",
+          "code": "flowchart TD\n    Code_Open[\"代码开源\"]:::feature\n    Weights_Open[\"权重开源\"]:::feature\n    License_Free[\"免费、宽松协议\"]:::feature\n    Deploy_Local[\"本地部署可行\"]:::feature\n\n    Code_Open -->|可下载| Repo[\"GitHub/官方仓库\"]\n    Weights_Open -->|可下载| Model[\"模型文件\"]\n    License_Free -->|任意使用| Users[\"所有用户\"]\n    Deploy_Local -->|无需额外授权| Users\n\n    classDef feature fill:#fffde7,stroke:#f57f17;"
+        },
+        {
+          "title": "图 4：版本划分与参数规模",
+          "code": "flowchart LR\n    V4[\"DeepSeek V4\\n（万亿参数）\"]:::base\n    Params[\"≈ 1 万亿参数\"]:::detail\n    V4pro[\"V4 Pro（完整版）\"]:::variant\n    Flash[\"Flash（轻量版）\"]:::variant\n\n    V4 --> Params\n    V4 --> V4pro\n    V4 --> Flash\n\n    V4pro -->|能力最强| HighCap[\"高性能\"]\n    Flash -->|体积更小| LowCap[\"轻量化\"]\n\n    classDef base fill:#e3f2fd,stroke:#0d47a1;\n    classDef detail fill:#e8f5e9,stroke:#1b5e20;\n    classDef variant fill:#fff3e0,stroke:#e65100;"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T16:53:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 知识结构图谱\n\n## 图 1：发布时机与竞争关系\n\n```mermaid\nflowchart TD\n    GPT_New_Version[\"GPT 新版本发布\"]:::event\n    DeepSeek_V4_Release[\"DeepSeek V4 发布\"]:::event\n    Timing_Advantage[\"时间点巧合优势\"]:::note\n\n    GPT_New_Version -->|紧随其后| DeepSeek_V4_Release\n    DeepSeek_V4_Release --> Timing_Advantage\n    GPT_New_Version --> Timing_Advantage\n\n    classDef event fill:#e0f7fa,stroke:#006064;\n    classDef note fill:#fff3e0,stroke:#bf360c;\n```\n\n- **[BV1JBu76CE9K P1 00:21]** GPT 新版本发布  \n- **[BV1JBu76CE9K P1 00:27]** DeepSeek V4 发布（紧跟1‑2 天）  \n- **[BV1JBu76CE9K P1 00:19]** 时间点巧合优势  \n\n## 图 2：能力列与模型对比\n\n```mermaid\nflowchart LR\n    col1[\"1️⃣ Knowledge（通识知识）\"]:::col\n    col2[\"2️⃣ Reasoning（推理能力）\"]:::col\n    col3[\"3️⃣ …\"]:::col\n    col4[\"4️⃣ …\"]:::col\n    col5[\"5️⃣ …\"]:::col\n    col6[\"6️⃣ …\"]:::col\n    col7[\"7️⃣ …\"]:::col\n\n    subgraph Model_Comparison[\"模型对比\"]\n        DeepSeek_V4[\"DeepSeek V4\"]\n        Cloud4_6[\"Cloud 4.6\"]\n        GBT5_4[\"GBT 5.4\"]\n        Germany3_1[\"Google GERMANY 3.1\"]\n    end\n\n    DeepSeek_V4 -->|在多数列前列| col1\n    DeepSeek_V4 -->|在多数列前列| col2\n    Cloud4_6 -->|部分列竞争| col1\n    GBT5_4 -->|部分列竞争| col2\n    Germany3_1 -->|部分列竞争| col1\n\n    classDef col fill:#f1f8e9,stroke:#33691e;\n    classDef Model_Comparison fill:#e8eaf6,stroke:#1a237e;\n```\n\n- **[BV1JBu76CE9K P1 01:01‑01:13]** 7 列对应 Knowledge、Reasoning 等能力  \n- **[BV1JBu76CE9K P1 01:15‑01:28]** 对比 DeepSeek V4、Cloud 4.6、GBT 5.4、GERMANY 3.1  \n- **[BV1JBu76CE9K P1 01:31‑01:35]** DeepSeek V4 名列前茅（非全部第一）  \n\n## 图 3：开源属性与可部署性\n\n```mermaid\nflowchart TD\n    Code_Open[\"代码开源\"]:::feature\n    Weights_Open[\"权重开源\"]:::feature\n    License_Free[\"免费、宽松协议\"]:::feature\n    Deploy_Local[\"本地部署可行\"]:::feature\n\n    Code_Open -->|可下载| Repo[\"GitHub/官方仓库\"]\n    Weights_Open -->|可下载| Model[\"模型文件\"]\n    License_Free -->|任意使用| Users[\"所有用户\"]\n    Deploy_Local -->|无需额外授权| Users\n\n    classDef feature fill:#fffde7,stroke:#f57f17;\n```\n\n- **[BV1JBu76CE9K P1 01:38‑01:45]** 开源、免费、宽松协议  \n- **[BV1JBu76CE9K P1 01:48‑01:52]** 可在本地电脑部署使用  \n- **[BV1JBu76CE9K P1 02:40‑02:55]** 代码与权重均可直接下载  \n\n## 图 4：版本划分与参数规模\n\n```mermaid\nflowchart LR\n    V4[\"DeepSeek V4\\n（万亿参数）\"]:::base\n    Params[\"≈ 1 万亿参数\"]:::detail\n    V4pro[\"V4 Pro（完整版）\"]:::variant\n    Flash[\"Flash（轻量版）\"]:::variant\n\n    V4 --> Params\n    V4 --> V4pro\n    V4 --> Flash\n\n    V4pro -->|能力最强| HighCap[\"高性能\"]\n    Flash -->|体积更小| LowCap[\"轻量化\"]\n\n    classDef base fill:#e3f2fd,stroke:#0d47a1;\n    classDef detail fill:#e8f5e9,stroke:#1b5e20;\n    classDef variant fill:#fff3e0,stroke:#e65100;\n```\n\n- **[BV1JBu76CE9K P1 03:01‑03:06]** DeepSeek V4 参数规模达万亿级别  \n- **[BV1JBu76CE9K P1 03:21‑03:26]** V4 Pro 为完整版本（能力最强）  \n- **[BV1JBu76CE9K P1 03:37‑03:44]** Flash 为轻量版（体积更小）  ",
+  "diagrams": [
+    {
+      "title": "图 1：发布时机与竞争关系",
+      "code": "flowchart TD\n    GPT_New_Version[\"GPT 新版本发布\"]:::event\n    DeepSeek_V4_Release[\"DeepSeek V4 发布\"]:::event\n    Timing_Advantage[\"时间点巧合优势\"]:::note\n\n    GPT_New_Version -->|紧随其后| DeepSeek_V4_Release\n    DeepSeek_V4_Release --> Timing_Advantage\n    GPT_New_Version --> Timing_Advantage\n\n    classDef event fill:#e0f7fa,stroke:#006064;\n    classDef note fill:#fff3e0,stroke:#bf360c;"
+    },
+    {
+      "title": "图 2：能力列与模型对比",
+      "code": "flowchart LR\n    col1[\"1️⃣ Knowledge（通识知识）\"]:::col\n    col2[\"2️⃣ Reasoning（推理能力）\"]:::col\n    col3[\"3️⃣ …\"]:::col\n    col4[\"4️⃣ …\"]:::col\n    col5[\"5️⃣ …\"]:::col\n    col6[\"6️⃣ …\"]:::col\n    col7[\"7️⃣ …\"]:::col\n\n    subgraph Model_Comparison[\"模型对比\"]\n        DeepSeek_V4[\"DeepSeek V4\"]\n        Cloud4_6[\"Cloud 4.6\"]\n        GBT5_4[\"GBT 5.4\"]\n        Germany3_1[\"Google GERMANY 3.1\"]\n    end\n\n    DeepSeek_V4 -->|在多数列前列| col1\n    DeepSeek_V4 -->|在多数列前列| col2\n    Cloud4_6 -->|部分列竞争| col1\n    GBT5_4 -->|部分列竞争| col2\n    Germany3_1 -->|部分列竞争| col1\n\n    classDef col fill:#f1f8e9,stroke:#33691e;\n    classDef Model_Comparison fill:#e8eaf6,stroke:#1a237e;"
+    },
+    {
+      "title": "图 3：开源属性与可部署性",
+      "code": "flowchart TD\n    Code_Open[\"代码开源\"]:::feature\n    Weights_Open[\"权重开源\"]:::feature\n    License_Free[\"免费、宽松协议\"]:::feature\n    Deploy_Local[\"本地部署可行\"]:::feature\n\n    Code_Open -->|可下载| Repo[\"GitHub/官方仓库\"]\n    Weights_Open -->|可下载| Model[\"模型文件\"]\n    License_Free -->|任意使用| Users[\"所有用户\"]\n    Deploy_Local -->|无需额外授权| Users\n\n    classDef feature fill:#fffde7,stroke:#f57f17;"
+    },
+    {
+      "title": "图 4：版本划分与参数规模",
+      "code": "flowchart LR\n    V4[\"DeepSeek V4\\n（万亿参数）\"]:::base\n    Params[\"≈ 1 万亿参数\"]:::detail\n    V4pro[\"V4 Pro（完整版）\"]:::variant\n    Flash[\"Flash（轻量版）\"]:::variant\n\n    V4 --> Params\n    V4 --> V4pro\n    V4 --> Flash\n\n    V4pro -->|能力最强| HighCap[\"高性能\"]\n    Flash -->|体积更小| LowCap[\"轻量化\"]\n\n    classDef base fill:#e3f2fd,stroke:#0d47a1;\n    classDef detail fill:#e8f5e9,stroke:#1b5e20;\n    classDef variant fill:#fff3e0,stroke:#e65100;"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T16:53:43+00:00"
+}

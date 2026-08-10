@@ -1,0 +1,66 @@
+{
+  "bvid": "BV19YV364E7y",
+  "title": "当你不小心用C++重构了Cheat Engine又加了MCP之后的感受",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 829,
+  "text": "啊这边我是用我自己用C加加重构出来的CEE\n然后呢又加了一个MCP的功能啊\n然后这样他就可以用了\n他现在可以做基本的自动逆向分析\n然后你就发现了\n其实我就算现在不给他这个反汇编引擎的接口\n和汇编引擎的接口\n它其实都可以逆向分析的\n虽然我已经给了他了\n扫描器都给了\n因为如果说你不给反航编引擎或这个汇编引擎\n这些东西啊\n他自己也可以自己去AI去翻译机器码\nAI去翻译汇编指令为机器码\n他可以这么去干啊\n那只要有读写内存\n读写N个字节\n那就行了\n他就可以去自己翻译啊\n那么如果说你你给他了更多的分析功能\n它有一个什么好处呢\n那他当然是这个分析起来会更省事\n不需要自己呃逐句的去翻译这样的东西是吧\n所以说返回片功能我还是给它接上了啊\n又或者说扫描内存的功能啊\n我们是多线程扫描\n就是说看你的CPU有多强\n你的CPU支持12个线程呢\n那么它就可以派发12个线程进行扫描\n它是一个非常方便的事情\n所以其实我们总结一下啊\n我们总结一下\n其实很多人觉得AI是不是很牛逼呀\n其实真正牛逼的这就是在这边这个东西啊\nMCP呀\n他这边其实牛逼的还是你写的功能啊\n因为你写的功能厉害了之后\n他才能把你的东西发挥到上限\n发挥到一个很高的地步\n如果说你这个功能本来就很弱弱鸡啊\n那么他其实发挥不到一个很高的地步的\n所以说这就是为什么\n有的人已经把那个什么功能都写了对吧\n各个CE的功能啊\n还有甚至说接上了内核成啊对吧啊\n那么他就会很强大\n所以说这边依赖的还是你的技术啊\n就你写好记\n你写好东西之后\n你你有一个很好的核心\n然后加个MCP就行\n其实加MCP并不难\n就只是加几条指令对吧\n顶多几十条\n几百条\n几千条对吧啊牛逼的叫几千条\n其实一般来说几百条几十条都差不多\n如果你只实现了一个啊\n打开能打开进程呢\n能读写它的内存呢\n它确实也能AI帮你进行返回编这些东西呃\n逆向这些东西\n但是他肯定没有像人家这种IDA的\nMCP这种东西强啊\n也肯定没有X64debug MCP这种东西强\n这是肯定的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19YV364E7y",
+  "published_at": "1780137195",
+  "fetched_at": "2026-08-07T05:31:03+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# CEE 与 MCP 知识图谱\n\n## 整体结构概览\n```mermaid\nflowchart TD\n    CEE[\"C++ 重构的 CEE\"] --> AutoRev[\"基本自动逆向分析\"]\n    CEE --> MemRW[\"读写内存 (N字节)\"]\n    CEE --> ReturnFrag[\"返回片功能\"]\n    CEE --> Scan[\"扫描内存功能\"]\n    MCP[\"MCP 功能\"] --> AutoRev\n    MCP --> AITrans[\"AI 翻译机器码/汇编指令\"]\n    MCP --> MultiThread[\"多线程扫描\"]\n    MultiThread --> Scan\n    CPU[\"CPU 支持的线程数\"] --> MultiThread\n```\n\n## MCP 的作用与局限\n```mermaid\nflowchart TD\n    MCP[\"MCP 功能\"] --> Perf[\"分析效率提升\"]\n    MCP --> Effort[\"降低手动翻译工作\"]\n    MCP --> Impl[\"实现约几百条指令\"]\n    MCP --> Dep[\"依赖用户自定义核心功能\"]\n    Dep --> UserFeat[\"用户自定义功能\"]\n    MCP --> Compare[\"相较于 IDA/X64debug 较弱\"]\n```\n\n## 多线程扫描工作流\n```mermaid\nflowchart TD\n    CPU[\"CPU 支持的线程数\"] --> ThreadPool[\"线程池（最多 CPU 线程）\"]\n    ThreadPool --> ScanTask[\"内存扫描任务\"]\n    ScanTask --> ScanResult[\"扫描结果\"]\n```",
+      "diagrams": [
+        {
+          "title": "整体结构概览",
+          "code": "flowchart TD\n    CEE[\"C++ 重构的 CEE\"] --> AutoRev[\"基本自动逆向分析\"]\n    CEE --> MemRW[\"读写内存 (N字节)\"]\n    CEE --> ReturnFrag[\"返回片功能\"]\n    CEE --> Scan[\"扫描内存功能\"]\n    MCP[\"MCP 功能\"] --> AutoRev\n    MCP --> AITrans[\"AI 翻译机器码/汇编指令\"]\n    MCP --> MultiThread[\"多线程扫描\"]\n    MultiThread --> Scan\n    CPU[\"CPU 支持的线程数\"] --> MultiThread"
+        },
+        {
+          "title": "MCP 的作用与局限",
+          "code": "flowchart TD\n    MCP[\"MCP 功能\"] --> Perf[\"分析效率提升\"]\n    MCP --> Effort[\"降低手动翻译工作\"]\n    MCP --> Impl[\"实现约几百条指令\"]\n    MCP --> Dep[\"依赖用户自定义核心功能\"]\n    Dep --> UserFeat[\"用户自定义功能\"]\n    MCP --> Compare[\"相较于 IDA/X64debug 较弱\"]"
+        },
+        {
+          "title": "多线程扫描工作流",
+          "code": "flowchart TD\n    CPU[\"CPU 支持的线程数\"] --> ThreadPool[\"线程池（最多 CPU 线程）\"]\n    ThreadPool --> ScanTask[\"内存扫描任务\"]\n    ScanTask --> ScanResult[\"扫描结果\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T05:31:11+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# CEE 与 MCP 知识图谱\n\n## 整体结构概览\n```mermaid\nflowchart TD\n    CEE[\"C++ 重构的 CEE\"] --> AutoRev[\"基本自动逆向分析\"]\n    CEE --> MemRW[\"读写内存 (N字节)\"]\n    CEE --> ReturnFrag[\"返回片功能\"]\n    CEE --> Scan[\"扫描内存功能\"]\n    MCP[\"MCP 功能\"] --> AutoRev\n    MCP --> AITrans[\"AI 翻译机器码/汇编指令\"]\n    MCP --> MultiThread[\"多线程扫描\"]\n    MultiThread --> Scan\n    CPU[\"CPU 支持的线程数\"] --> MultiThread\n```\n\n## MCP 的作用与局限\n```mermaid\nflowchart TD\n    MCP[\"MCP 功能\"] --> Perf[\"分析效率提升\"]\n    MCP --> Effort[\"降低手动翻译工作\"]\n    MCP --> Impl[\"实现约几百条指令\"]\n    MCP --> Dep[\"依赖用户自定义核心功能\"]\n    Dep --> UserFeat[\"用户自定义功能\"]\n    MCP --> Compare[\"相较于 IDA/X64debug 较弱\"]\n```\n\n## 多线程扫描工作流\n```mermaid\nflowchart TD\n    CPU[\"CPU 支持的线程数\"] --> ThreadPool[\"线程池（最多 CPU 线程）\"]\n    ThreadPool --> ScanTask[\"内存扫描任务\"]\n    ScanTask --> ScanResult[\"扫描结果\"]\n```",
+  "diagrams": [
+    {
+      "title": "整体结构概览",
+      "code": "flowchart TD\n    CEE[\"C++ 重构的 CEE\"] --> AutoRev[\"基本自动逆向分析\"]\n    CEE --> MemRW[\"读写内存 (N字节)\"]\n    CEE --> ReturnFrag[\"返回片功能\"]\n    CEE --> Scan[\"扫描内存功能\"]\n    MCP[\"MCP 功能\"] --> AutoRev\n    MCP --> AITrans[\"AI 翻译机器码/汇编指令\"]\n    MCP --> MultiThread[\"多线程扫描\"]\n    MultiThread --> Scan\n    CPU[\"CPU 支持的线程数\"] --> MultiThread"
+    },
+    {
+      "title": "MCP 的作用与局限",
+      "code": "flowchart TD\n    MCP[\"MCP 功能\"] --> Perf[\"分析效率提升\"]\n    MCP --> Effort[\"降低手动翻译工作\"]\n    MCP --> Impl[\"实现约几百条指令\"]\n    MCP --> Dep[\"依赖用户自定义核心功能\"]\n    Dep --> UserFeat[\"用户自定义功能\"]\n    MCP --> Compare[\"相较于 IDA/X64debug 较弱\"]"
+    },
+    {
+      "title": "多线程扫描工作流",
+      "code": "flowchart TD\n    CPU[\"CPU 支持的线程数\"] --> ThreadPool[\"线程池（最多 CPU 线程）\"]\n    ThreadPool --> ScanTask[\"内存扫描任务\"]\n    ScanTask --> ScanResult[\"扫描结果\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:31:11+00:00"
+}

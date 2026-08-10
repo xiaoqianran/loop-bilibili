@@ -1,0 +1,66 @@
+{
+  "bvid": "BV146Lg6SEhX",
+  "title": "我发现了deepseek的重大bug，可以看别的用户的聊天！！！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 64,
+  "text": "我发现了一个DEBASIC的困动态漏洞\n只需要输入新听这个嗯\n英文net要再用监控out括前\n他就能看别的用户的一些数据\n如这样",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV146Lg6SEhX",
+  "published_at": "1778914522",
+  "fetched_at": "2026-08-07T15:37:31+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 动态漏洞知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A[\"DEBASIC 动态漏洞发现\"] --> B[\"触发条件：输入特定指令\"]\n    B --> C[\"监控输出通道\"]\n    C --> D[\"读取其他用户数据\"]\n```\n\n- DEBASIC 动态漏洞发现 [BV146Lg6SEhX P1 00:00]  \n- 触发条件：输入特定指令 [BV146Lg6SEhX P1 00:03]  \n- 监控输出通道 [BV146Lg6SEhX P1 00:06]  \n- 读取其他用户数据 [BV146Lg6SEhX P1 00:08]  \n\n## 漏洞利用流程\n\n```mermaid\nflowchart TD\n    S1[\"步骤 1：发现漏洞\"] --> S2[\"步骤 2：构造输入\"]\n    S2 --> S3[\"步骤 3：利用监控输出\"]\n    S3 --> S4[\"步骤 4：获取目标用户信息\"]\n```\n\n- 步骤 1：发现漏洞 [BV146Lg6SEhX P1 00:00]  \n- 步骤 2：构造输入 [BV146Lg6SEhX P1 00:03]  \n- 步骤 3：利用监控输出 [BV146Lg6SEhX P1 00:06]  \n- 步骤 4：获取目标用户信息 [BV146Lg6SEhX P1 00:08]  \n\n## 数据泄露影响\n\n```mermaid\nflowchart TD\n    D1[\"可见数据类型\"] --> D2[\"用户聊天记录\"]\n    D1 --> D3[\"用户个人信息\"]\n    D2 --> D4[\"隐私风险\"]\n    D3 --> D4\n```\n\n- 可见数据类型 [BV146Lg6SEhX P1 00:08]  \n- 用户聊天记录 [BV146Lg6SEhX P1 00:08]  \n- 用户个人信息 [BV146Lg6SEhX P1 00:08]  \n- 隐私风险 [BV146Lg6SEhX P1 00:08]  ",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A[\"DEBASIC 动态漏洞发现\"] --> B[\"触发条件：输入特定指令\"]\n    B --> C[\"监控输出通道\"]\n    C --> D[\"读取其他用户数据\"]"
+        },
+        {
+          "title": "漏洞利用流程",
+          "code": "flowchart TD\n    S1[\"步骤 1：发现漏洞\"] --> S2[\"步骤 2：构造输入\"]\n    S2 --> S3[\"步骤 3：利用监控输出\"]\n    S3 --> S4[\"步骤 4：获取目标用户信息\"]"
+        },
+        {
+          "title": "数据泄露影响",
+          "code": "flowchart TD\n    D1[\"可见数据类型\"] --> D2[\"用户聊天记录\"]\n    D1 --> D3[\"用户个人信息\"]\n    D2 --> D4[\"隐私风险\"]\n    D3 --> D4"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T15:37:40+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 动态漏洞知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A[\"DEBASIC 动态漏洞发现\"] --> B[\"触发条件：输入特定指令\"]\n    B --> C[\"监控输出通道\"]\n    C --> D[\"读取其他用户数据\"]\n```\n\n- DEBASIC 动态漏洞发现 [BV146Lg6SEhX P1 00:00]  \n- 触发条件：输入特定指令 [BV146Lg6SEhX P1 00:03]  \n- 监控输出通道 [BV146Lg6SEhX P1 00:06]  \n- 读取其他用户数据 [BV146Lg6SEhX P1 00:08]  \n\n## 漏洞利用流程\n\n```mermaid\nflowchart TD\n    S1[\"步骤 1：发现漏洞\"] --> S2[\"步骤 2：构造输入\"]\n    S2 --> S3[\"步骤 3：利用监控输出\"]\n    S3 --> S4[\"步骤 4：获取目标用户信息\"]\n```\n\n- 步骤 1：发现漏洞 [BV146Lg6SEhX P1 00:00]  \n- 步骤 2：构造输入 [BV146Lg6SEhX P1 00:03]  \n- 步骤 3：利用监控输出 [BV146Lg6SEhX P1 00:06]  \n- 步骤 4：获取目标用户信息 [BV146Lg6SEhX P1 00:08]  \n\n## 数据泄露影响\n\n```mermaid\nflowchart TD\n    D1[\"可见数据类型\"] --> D2[\"用户聊天记录\"]\n    D1 --> D3[\"用户个人信息\"]\n    D2 --> D4[\"隐私风险\"]\n    D3 --> D4\n```\n\n- 可见数据类型 [BV146Lg6SEhX P1 00:08]  \n- 用户聊天记录 [BV146Lg6SEhX P1 00:08]  \n- 用户个人信息 [BV146Lg6SEhX P1 00:08]  \n- 隐私风险 [BV146Lg6SEhX P1 00:08]  ",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A[\"DEBASIC 动态漏洞发现\"] --> B[\"触发条件：输入特定指令\"]\n    B --> C[\"监控输出通道\"]\n    C --> D[\"读取其他用户数据\"]"
+    },
+    {
+      "title": "漏洞利用流程",
+      "code": "flowchart TD\n    S1[\"步骤 1：发现漏洞\"] --> S2[\"步骤 2：构造输入\"]\n    S2 --> S3[\"步骤 3：利用监控输出\"]\n    S3 --> S4[\"步骤 4：获取目标用户信息\"]"
+    },
+    {
+      "title": "数据泄露影响",
+      "code": "flowchart TD\n    D1[\"可见数据类型\"] --> D2[\"用户聊天记录\"]\n    D1 --> D3[\"用户个人信息\"]\n    D2 --> D4[\"隐私风险\"]\n    D3 --> D4"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:37:40+00:00"
+}

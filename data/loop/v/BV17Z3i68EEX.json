@@ -1,0 +1,66 @@
+{
+  "bvid": "BV17Z3i68EEX",
+  "title": "1亿token什么概念？DeepSeek 1亿 token 9块钱，拿来玩还是太贵",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1292,
+  "text": "三天100000000token8块三毛四\n也就聊了几句\n每天用一次解决了两个问题\n第二天用的是flash版\n修改了20来个文件\n完全不能用\n后面细说\n这是第一次订阅API\n之前一直使用网页版本的deep seek\n我不是程序员\n2025年初\ndeep seek21火爆全网时\n出于好奇\n第一次接触AI编程\n写一些小脚本\n浏览器插件什么的\n感觉网页版本已经很能满足需求了\n不过在这agent遍地走的时代\n使用网页AI来写代码已经算是古法AI编程了\n古法AI编程最痛苦的是需要手动上传文件\n手动复制生成后的代码\n写写小脚本还行\n大一点的项目会很痛苦\n这是我之前用网页端\n让deep sick写的浏览器启动页\n为了方便使用电脑\n到目前已经有了上千个文件\n十几万行屎山代码都是deep sick的功劳\n现在修改一个功能要上传的文件越来越多\n而因为代码过长\nAI返回的经常不是完整的代码\n需要仔细看他改了哪里\n大多时候还得让它再生成一次\n修改后的完整代码\ndeep seek这专家模式出来之后\n没用上几天\n就说资源紧张\n文件也上传不了\n也不能使用网络搜索\n基本处于不可用的状态\n而快速模式往往需要很多轮对话\n才有可能解决一个问题\n每次都要上传一堆文件\n直到前几天也是烦了\n怒充十元尝尝API的咸蛋\n第一次订阅了API\n第一次安装cloud code\n还挺紧张\n甚至能问出这样的问题\n不过充了钱就是不一样\nagent用起来是真的爽\n这种爽感很难形容\n可能是我刚从繁琐的复制粘贴中解放出来\n现在只需要下命令\n其他一切交给工具\n就呆呆看着他干活\n心情也是很愉悦的\n这大概就是为什么说是vibe coding\n分为编程了吧\n不过哪怕是最有性价比的deep seek\n也不是能随便拿来玩的\n像我这样要是敞开来玩\n一天干掉23亿\n都有可能\n每个月都得好几百\n因为cloud code能拿到很多文件作为上下文\n几十个文件\n平均每个几百行\n随便聊一聊就是千万token\n就算deep sick的缓存命中率极高\n也遭不住\n看网上说用flash版本写代码最有性价比\n于是第二天就尝试使用了flash版\n也可能是我不会用改动\n涉及20来个文件\n用grill me这个技能前面的交流总结都挺好的\n但写出来的代码惊为天人\n我确实不知道能说些什么\n最终根本无法运行各种死循环\n第三天是改用了pro版本才解决了问题\n所以前面说三天用了三次\n只解决了两个问题\n当然还有很多很多需要完善的地方\n但我十块钱的皇帝体验卡已经到期了\n最近都说V4正式版比现在的预览版要强\n都在期待正式版\n那我也等正式版出来再来体验了\n感觉现在的AI已经足够强大\n只是算力不足\n希望算力上来后\n价格能下来\n让我这外行也能随便拿来玩\n现在的AI如果不是作为生产力\n还真不是普通人的玩具\n拿来玩的话\n每个月随便用\n只要30块钱\n这样我觉得才比较合适\n相当于二游的一张月卡\n这东西确实是会上瘾\n短暂用了三天\n甚至会有戒断反应\n以前看到代码都觉得是天书\n在deep seek出来之前\n觉得我这辈子都不会写代码\n当然现在也只是会点基础\nAI确实让不可能成为可能",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV17Z3i68EEX",
+  "published_at": "1785249575",
+  "fetched_at": "2026-08-06T19:31:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 1亿 token 概念与 DeepSeek 使用路径\n\n## 总览图\n```mermaid\nflowchart TD\n    WV[\"网页版本\"] --> UF[\"手动上传文件\"]\n    WV --> SS[\"适合小脚本\"]\n    WV --> LP[\"大项目痛点\"]\n    API[\"API 订阅\"] --> AM[\"Agent 模式\"]\n    API --> CC[\"Cloud Code\"]\n    CC --> TC[\"高 token 消耗\"]\n    FV[\"Flash 版\"] --> CP[\"性价比更高\"]\n    PV[\"Pro 版\"] --> RS[\"解决运行问题\"]\n    TC --> CHR[\"缓存命中率高\"]\n    CHR -->|仍不足| TC\n    AM --> VBC[\"Vibe Coding 体验\"]\n```\n\n## 使用流程图\n```mermaid\nflowchart TD\n    SA[\"订阅 API\"] --> IC[\"安装 Cloud Code\"]\n    IC --> UF[\"上传文件（多）\"]\n    UF --> RA[\"运行 Agent\"]\n    RA --> RC[\"获取代码\"]\n    RC --> RCV[\"代码完整？\"]\n    RCV -->|否| RG[\"重新生成\"]\n    RG --> RC\n    RCV -->|是| DP[\"部署\"]\n    DP --> IR[\"问题解决\"]\n```\n\n## 成本与性价比决策图\n```mermaid\nflowchart TD\n    TP[\"1 亿 token 价格 9 元\"] --> MB[\"每月预算几百元\"]\n    MB --> FT[\"项目规模\"]\n    FT --> ET[\"预计 token 用量\"]\n    ET --> FV[\"是否可行？\"]\n    FV -->|否| AF[\"使用 Flash 版\"]\n    FV -->|否| AP[\"使用 Pro 版\"]\n    FV -->|是| VBC[\"Vibe Coding 体验\"]\n    EP[\"订阅到期\"] --> RN[\"是否续费\"]\n    RN -->|续费| SA\n    RN -->|不续| ALT[\"转向其他方案\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    WV[\"网页版本\"] --> UF[\"手动上传文件\"]\n    WV --> SS[\"适合小脚本\"]\n    WV --> LP[\"大项目痛点\"]\n    API[\"API 订阅\"] --> AM[\"Agent 模式\"]\n    API --> CC[\"Cloud Code\"]\n    CC --> TC[\"高 token 消耗\"]\n    FV[\"Flash 版\"] --> CP[\"性价比更高\"]\n    PV[\"Pro 版\"] --> RS[\"解决运行问题\"]\n    TC --> CHR[\"缓存命中率高\"]\n    CHR -->|仍不足| TC\n    AM --> VBC[\"Vibe Coding 体验\"]"
+        },
+        {
+          "title": "使用流程图",
+          "code": "flowchart TD\n    SA[\"订阅 API\"] --> IC[\"安装 Cloud Code\"]\n    IC --> UF[\"上传文件（多）\"]\n    UF --> RA[\"运行 Agent\"]\n    RA --> RC[\"获取代码\"]\n    RC --> RCV[\"代码完整？\"]\n    RCV -->|否| RG[\"重新生成\"]\n    RG --> RC\n    RCV -->|是| DP[\"部署\"]\n    DP --> IR[\"问题解决\"]"
+        },
+        {
+          "title": "成本与性价比决策图",
+          "code": "flowchart TD\n    TP[\"1 亿 token 价格 9 元\"] --> MB[\"每月预算几百元\"]\n    MB --> FT[\"项目规模\"]\n    FT --> ET[\"预计 token 用量\"]\n    ET --> FV[\"是否可行？\"]\n    FV -->|否| AF[\"使用 Flash 版\"]\n    FV -->|否| AP[\"使用 Pro 版\"]\n    FV -->|是| VBC[\"Vibe Coding 体验\"]\n    EP[\"订阅到期\"] --> RN[\"是否续费\"]\n    RN -->|续费| SA\n    RN -->|不续| ALT[\"转向其他方案\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T19:31:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 1亿 token 概念与 DeepSeek 使用路径\n\n## 总览图\n```mermaid\nflowchart TD\n    WV[\"网页版本\"] --> UF[\"手动上传文件\"]\n    WV --> SS[\"适合小脚本\"]\n    WV --> LP[\"大项目痛点\"]\n    API[\"API 订阅\"] --> AM[\"Agent 模式\"]\n    API --> CC[\"Cloud Code\"]\n    CC --> TC[\"高 token 消耗\"]\n    FV[\"Flash 版\"] --> CP[\"性价比更高\"]\n    PV[\"Pro 版\"] --> RS[\"解决运行问题\"]\n    TC --> CHR[\"缓存命中率高\"]\n    CHR -->|仍不足| TC\n    AM --> VBC[\"Vibe Coding 体验\"]\n```\n\n## 使用流程图\n```mermaid\nflowchart TD\n    SA[\"订阅 API\"] --> IC[\"安装 Cloud Code\"]\n    IC --> UF[\"上传文件（多）\"]\n    UF --> RA[\"运行 Agent\"]\n    RA --> RC[\"获取代码\"]\n    RC --> RCV[\"代码完整？\"]\n    RCV -->|否| RG[\"重新生成\"]\n    RG --> RC\n    RCV -->|是| DP[\"部署\"]\n    DP --> IR[\"问题解决\"]\n```\n\n## 成本与性价比决策图\n```mermaid\nflowchart TD\n    TP[\"1 亿 token 价格 9 元\"] --> MB[\"每月预算几百元\"]\n    MB --> FT[\"项目规模\"]\n    FT --> ET[\"预计 token 用量\"]\n    ET --> FV[\"是否可行？\"]\n    FV -->|否| AF[\"使用 Flash 版\"]\n    FV -->|否| AP[\"使用 Pro 版\"]\n    FV -->|是| VBC[\"Vibe Coding 体验\"]\n    EP[\"订阅到期\"] --> RN[\"是否续费\"]\n    RN -->|续费| SA\n    RN -->|不续| ALT[\"转向其他方案\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    WV[\"网页版本\"] --> UF[\"手动上传文件\"]\n    WV --> SS[\"适合小脚本\"]\n    WV --> LP[\"大项目痛点\"]\n    API[\"API 订阅\"] --> AM[\"Agent 模式\"]\n    API --> CC[\"Cloud Code\"]\n    CC --> TC[\"高 token 消耗\"]\n    FV[\"Flash 版\"] --> CP[\"性价比更高\"]\n    PV[\"Pro 版\"] --> RS[\"解决运行问题\"]\n    TC --> CHR[\"缓存命中率高\"]\n    CHR -->|仍不足| TC\n    AM --> VBC[\"Vibe Coding 体验\"]"
+    },
+    {
+      "title": "使用流程图",
+      "code": "flowchart TD\n    SA[\"订阅 API\"] --> IC[\"安装 Cloud Code\"]\n    IC --> UF[\"上传文件（多）\"]\n    UF --> RA[\"运行 Agent\"]\n    RA --> RC[\"获取代码\"]\n    RC --> RCV[\"代码完整？\"]\n    RCV -->|否| RG[\"重新生成\"]\n    RG --> RC\n    RCV -->|是| DP[\"部署\"]\n    DP --> IR[\"问题解决\"]"
+    },
+    {
+      "title": "成本与性价比决策图",
+      "code": "flowchart TD\n    TP[\"1 亿 token 价格 9 元\"] --> MB[\"每月预算几百元\"]\n    MB --> FT[\"项目规模\"]\n    FT --> ET[\"预计 token 用量\"]\n    ET --> FV[\"是否可行？\"]\n    FV -->|否| AF[\"使用 Flash 版\"]\n    FV -->|否| AP[\"使用 Pro 版\"]\n    FV -->|是| VBC[\"Vibe Coding 体验\"]\n    EP[\"订阅到期\"] --> RN[\"是否续费\"]\n    RN -->|续费| SA\n    RN -->|不续| ALT[\"转向其他方案\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:31:57+00:00"
+}

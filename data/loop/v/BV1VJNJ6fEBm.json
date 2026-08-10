@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1VJNJ6fEBm",
+  "title": "实测｜旧手机改造本地 AI 小服务器，局域网内调用手机模型聊天，电脑、智能设备都能接。#openclaw #千问大模型 #端側AI #小龙虾 #Token",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 680,
+  "text": "当你翻出了家里面吃灰的旧手机\n鬼使神差的点击了这个应用\n手不听使唤的点击了底部的设置按钮\n突然你又控制不住\n开始滑动屏幕\n滑着滑着滑到了HTTPAPI\n这里没忍住\n你点击复制了局域网链接\n转头就把这个链接粘贴进了小龙虾的设置里面\n你又回到手机\n又顺手复制了密钥\n又把密钥粘贴进了小龙虾的对应位置\n然后你点击了保存\n保存完后你又回到了手机\n又鬼使神差的点击了启动按钮\n很好\n这样你就启动了HTTPAPI服务\n忽然你又指尖一滑\n点击了底部的模型按钮\n一眼就看到了加载按钮\n于是你手比脑子快\n直接点击了下去搞定\n现在你就能在小龙虾里面\n调用手机本地模型进行聊天了\n现在咱们直接上手实测\n在小龙虾里面调用手机本地模型进行聊天\n到底是什么体验\n来我们问一些小龙虾一些问题\n很好\n他现在回复我们了\n这个问题太过于简单\n我们可以问一些测试模型\n问的一些智力问题\n我这边准备了一个问题粘贴进去发送给他\n这里顺便跟各位精神股东说一句\n他可不只局限于小龙虾\nHermes agent\nAI玩具\nAi\n小智等智能体工具\n都可以使用调用到这个HTTPAPI服务\n这就相当于你的手机就是一个小型的AI服务器\n使用场景也非常广泛\n不管是景区导览还是门店客服\n或者是说一些自动化脚本都可以使用它\n在一些轻量化任务\n或者说有用到大语言模型的地方\n他都可以用得上很好\n模型\n已经对我们上面发的智力测试问题进行回复了\n这个回复的质量怎么样\n各位精神股东可以在评论区打出你的看法\n如果各位精神股东想看手机模型能玩哪些花活\n可以在评论区里面打出来\n我会挑选一个点赞量最高的\n我在下期直接出一个实测视频",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VJNJ6fEBm",
+  "published_at": "1783686360",
+  "fetched_at": "2026-08-07T23:56:27+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 旧手机改造本地 AI 小服务器知识图谱\n\n## 总体改造流程\n```mermaid\nflowchart TD\n    A1[\"打开旧手机应用\"] --> A2[\"进入设置\"]\n    A2 --> A3[\"复制局域网链接\"]\n    A2 --> A4[\"复制密钥\"]\n    A3 --> A5[\"在小龙虾粘贴链接\"]\n    A4 --> A6[\"在小龙虾粘贴密钥\"]\n    A5 --> A7[\"保存设置\"]\n    A6 --> A7\n    A7 --> A8[\"启动 HTTPAPI 服务\"]\n    A8 --> A9[\"点击模型按钮\"]\n    A9 --> A10[\"加载模型\"]\n    A10 --> A11[\"在小龙虾聊天\"]\n```\n<!-- [BV1VJNJ6fEBm P1 00:00] 打开旧手机应用 -->\n<!-- [BV1VJNJ6fEBm P1 00:13] 复制局域网链接 -->\n<!-- [BV1VJNJ6fEBm P1 00:20] 复制密钥 -->\n<!-- [BV1VJNJ6fEBm P1 00:26] 保存设置 -->\n<!-- [BV1VJNJ6fEBm P1 00:30] 启动 HTTPAPI 服务 -->\n<!-- [BV1VJNJ6fEBm P1 00:40] 点击模型按钮并加载模型 -->\n<!-- [BV1VJNJ6fEBm P1 00:45] 在小龙虾进行聊天 -->\n\n## HTTPAPI 调用关系\n```mermaid\nflowchart TD\n    S[\"手机本地模型 (HTTPAPI)\"]\n    C1[\"小龙虾客户端\"]\n    C2[\"Hermes agent\"]\n    C3[\"AI玩具\"]\n    C4[\"小智等智能体\"]\n    C1 -->|调用| S\n    C2 -->|调用| S\n    C3 -->|调用| S\n    C4 -->|调用| S\n    S -->|返回响应| C1\n    S -->|返回响应| C2\n    S -->|返回响应| C3\n    S -->|返回响应| C4\n```\n<!-- [BV1VJNJ6fEBm P1 01:34] 其他工具（Hermes agent、AI玩具、小智等）可调用 HTTPAPI -->\n<!-- [BV1VJNJ6fEBm P1 01:40] 手机成为小型 AI 服务器 -->\n\n## 典型使用场景\n```mermaid\nflowchart LR\n    S[\"手机 AI 服务器\"]\n    SC1[\"景区导览\"]\n    SC2[\"门店客服\"]\n    SC3[\"自动化脚本\"]\n    SC4[\"轻量化任务\"]\n    SC5[\"大语言模型相关任务\"]\n    S --> SC1\n    S --> SC2\n    S --> SC3\n    S --> SC4\n    S --> SC5\n```\n<!-- [BV1VJNJ6fEBm P1 01:48] 场景：景区导览 -->\n<!-- [BV1VJNJ6fEBm P1 01:50] 场景：门店客服 -->\n<!-- [BV1VJNJ6fEBm P1 01:53] 场景：自动化脚本 -->\n<!-- [BV1VJNJ6fEBm P1 01:55] 场景：轻量化任务 -->\n<!-- [BV1VJNJ6fEBm P1 01:57] 场景：大语言模型相关任务 -->",
+      "diagrams": [
+        {
+          "title": "总体改造流程",
+          "code": "flowchart TD\n    A1[\"打开旧手机应用\"] --> A2[\"进入设置\"]\n    A2 --> A3[\"复制局域网链接\"]\n    A2 --> A4[\"复制密钥\"]\n    A3 --> A5[\"在小龙虾粘贴链接\"]\n    A4 --> A6[\"在小龙虾粘贴密钥\"]\n    A5 --> A7[\"保存设置\"]\n    A6 --> A7\n    A7 --> A8[\"启动 HTTPAPI 服务\"]\n    A8 --> A9[\"点击模型按钮\"]\n    A9 --> A10[\"加载模型\"]\n    A10 --> A11[\"在小龙虾聊天\"]"
+        },
+        {
+          "title": "HTTPAPI 调用关系",
+          "code": "flowchart TD\n    S[\"手机本地模型 (HTTPAPI)\"]\n    C1[\"小龙虾客户端\"]\n    C2[\"Hermes agent\"]\n    C3[\"AI玩具\"]\n    C4[\"小智等智能体\"]\n    C1 -->|调用| S\n    C2 -->|调用| S\n    C3 -->|调用| S\n    C4 -->|调用| S\n    S -->|返回响应| C1\n    S -->|返回响应| C2\n    S -->|返回响应| C3\n    S -->|返回响应| C4"
+        },
+        {
+          "title": "典型使用场景",
+          "code": "flowchart LR\n    S[\"手机 AI 服务器\"]\n    SC1[\"景区导览\"]\n    SC2[\"门店客服\"]\n    SC3[\"自动化脚本\"]\n    SC4[\"轻量化任务\"]\n    SC5[\"大语言模型相关任务\"]\n    S --> SC1\n    S --> SC2\n    S --> SC3\n    S --> SC4\n    S --> SC5"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T00:05:21+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 旧手机改造本地 AI 小服务器知识图谱\n\n## 总体改造流程\n```mermaid\nflowchart TD\n    A1[\"打开旧手机应用\"] --> A2[\"进入设置\"]\n    A2 --> A3[\"复制局域网链接\"]\n    A2 --> A4[\"复制密钥\"]\n    A3 --> A5[\"在小龙虾粘贴链接\"]\n    A4 --> A6[\"在小龙虾粘贴密钥\"]\n    A5 --> A7[\"保存设置\"]\n    A6 --> A7\n    A7 --> A8[\"启动 HTTPAPI 服务\"]\n    A8 --> A9[\"点击模型按钮\"]\n    A9 --> A10[\"加载模型\"]\n    A10 --> A11[\"在小龙虾聊天\"]\n```\n<!-- [BV1VJNJ6fEBm P1 00:00] 打开旧手机应用 -->\n<!-- [BV1VJNJ6fEBm P1 00:13] 复制局域网链接 -->\n<!-- [BV1VJNJ6fEBm P1 00:20] 复制密钥 -->\n<!-- [BV1VJNJ6fEBm P1 00:26] 保存设置 -->\n<!-- [BV1VJNJ6fEBm P1 00:30] 启动 HTTPAPI 服务 -->\n<!-- [BV1VJNJ6fEBm P1 00:40] 点击模型按钮并加载模型 -->\n<!-- [BV1VJNJ6fEBm P1 00:45] 在小龙虾进行聊天 -->\n\n## HTTPAPI 调用关系\n```mermaid\nflowchart TD\n    S[\"手机本地模型 (HTTPAPI)\"]\n    C1[\"小龙虾客户端\"]\n    C2[\"Hermes agent\"]\n    C3[\"AI玩具\"]\n    C4[\"小智等智能体\"]\n    C1 -->|调用| S\n    C2 -->|调用| S\n    C3 -->|调用| S\n    C4 -->|调用| S\n    S -->|返回响应| C1\n    S -->|返回响应| C2\n    S -->|返回响应| C3\n    S -->|返回响应| C4\n```\n<!-- [BV1VJNJ6fEBm P1 01:34] 其他工具（Hermes agent、AI玩具、小智等）可调用 HTTPAPI -->\n<!-- [BV1VJNJ6fEBm P1 01:40] 手机成为小型 AI 服务器 -->\n\n## 典型使用场景\n```mermaid\nflowchart LR\n    S[\"手机 AI 服务器\"]\n    SC1[\"景区导览\"]\n    SC2[\"门店客服\"]\n    SC3[\"自动化脚本\"]\n    SC4[\"轻量化任务\"]\n    SC5[\"大语言模型相关任务\"]\n    S --> SC1\n    S --> SC2\n    S --> SC3\n    S --> SC4\n    S --> SC5\n```\n<!-- [BV1VJNJ6fEBm P1 01:48] 场景：景区导览 -->\n<!-- [BV1VJNJ6fEBm P1 01:50] 场景：门店客服 -->\n<!-- [BV1VJNJ6fEBm P1 01:53] 场景：自动化脚本 -->\n<!-- [BV1VJNJ6fEBm P1 01:55] 场景：轻量化任务 -->\n<!-- [BV1VJNJ6fEBm P1 01:57] 场景：大语言模型相关任务 -->",
+  "diagrams": [
+    {
+      "title": "总体改造流程",
+      "code": "flowchart TD\n    A1[\"打开旧手机应用\"] --> A2[\"进入设置\"]\n    A2 --> A3[\"复制局域网链接\"]\n    A2 --> A4[\"复制密钥\"]\n    A3 --> A5[\"在小龙虾粘贴链接\"]\n    A4 --> A6[\"在小龙虾粘贴密钥\"]\n    A5 --> A7[\"保存设置\"]\n    A6 --> A7\n    A7 --> A8[\"启动 HTTPAPI 服务\"]\n    A8 --> A9[\"点击模型按钮\"]\n    A9 --> A10[\"加载模型\"]\n    A10 --> A11[\"在小龙虾聊天\"]"
+    },
+    {
+      "title": "HTTPAPI 调用关系",
+      "code": "flowchart TD\n    S[\"手机本地模型 (HTTPAPI)\"]\n    C1[\"小龙虾客户端\"]\n    C2[\"Hermes agent\"]\n    C3[\"AI玩具\"]\n    C4[\"小智等智能体\"]\n    C1 -->|调用| S\n    C2 -->|调用| S\n    C3 -->|调用| S\n    C4 -->|调用| S\n    S -->|返回响应| C1\n    S -->|返回响应| C2\n    S -->|返回响应| C3\n    S -->|返回响应| C4"
+    },
+    {
+      "title": "典型使用场景",
+      "code": "flowchart LR\n    S[\"手机 AI 服务器\"]\n    SC1[\"景区导览\"]\n    SC2[\"门店客服\"]\n    SC3[\"自动化脚本\"]\n    SC4[\"轻量化任务\"]\n    SC5[\"大语言模型相关任务\"]\n    S --> SC1\n    S --> SC2\n    S --> SC3\n    S --> SC4\n    S --> SC5"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T00:05:21+00:00"
+}

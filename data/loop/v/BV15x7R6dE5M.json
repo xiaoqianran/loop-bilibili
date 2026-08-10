@@ -1,0 +1,74 @@
+{
+  "bvid": "BV15x7R6dE5M",
+  "title": "Unity特效性能怎么救？Particle System一键转GPU粒子 GPU拖尾 帧数暴涨十倍 到百倍 游戏特效性能优化 兼容微信小游戏 FX",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1555,
+  "text": "大家好\n经过一个月的努力呢\n我们的GPU粒子终于大功告成\n同时也实现了微信小游戏\n抖音小游戏等平台的支持\n好我们先看一下PC端的性能表现\n这里是创建的game object啊\n这里是1万个随机创建的\n避免大家误以为只能渲染一种\n这个是使用这个mesh render进行渲染的\n我们还可以使用切换到好\n万事通屏的高性能渲染器\n大家可以看到啊\n尽管开启了这半透明物体的渲染排序\n它的性能也是非常高的\n当然了我们也可以看一下原始的例子\n它的帧数\n好由于它的周靠也太多\n他肯定一下子就卡爆\n但是由于原始粒子呢\n他的很多例子是播放一遍的啊\n我们看不出效果\n再来一次\n好一瞬间它的帧数最低是七帧\n好是一个非常明显的性能翻倍啊\n即使是使用game object\n我们也可以看到啊\n它的帧数有一个至少有十倍的提升好\n另外呢我们也实现了这个GPU拖尾粒子的支持\n1万个拖尾\n为什么这里拖尾它是一个实时运动的\n反而要比我们静态的这个粒子特效\n帧数要高那么多呢\n拖尾它必须要依赖运行时\n因为他要记录一下它的一个运动轨迹\n必然的依赖了一些运行时\n既然用到了运行时呢\n我们就把它给做到极致\n也是用了compute shader去做一个GPU的计算\n在不支持的平台呢\n我们再回滚到用job\n比如说现在jobs也支持这个web gl平台\nOK我们继续看一下web端的表现好\n同样是随机创建1万个GPU粒子\nGame object\n它的帧数是70多帧\n那我们切换到万人同屏插件的高性能渲染器好\n他的帧数就可以打满了\n因为这里使用的是合批渲染好\n当然同时也支持CPU拖尾粒子啊\n也是1万个\n因为这个拖尾它必须要依赖运行时脚本\n所以说我们就顺带的给他做了一个合批渲染好\n最后我们在unity编辑中详细看一下它的用法好\n这里有一个粒子特效\n我们可以看到啊\n它比较复杂\n炸开的时候呢\n还有一系列的细小的拖尾\n都完美的还原\n我们可以看一下它的原始的粒子效果\n好这里可以看到啊\n它是由大概十个粒子特效统一构成\n好包括了这些个拖尾和普通的特效一块组成的\n我们构建之后呢\n就完美的复刻了它的效果\n但是呢同时它只有一个game object\n也就是一个mesh和一个材质\n也就是说他可能从原来的十个周扣\n降低到现在的一个周扣\n同时呢它没有任何运行时的脚本\n也就是不依赖这个CPU计算了\n他没有party system\n而是纯SHADER进行播放\n好我们可以找一个粒子特效演示一下\n如何进行转换\n好以这个特效为例啊\n我们右键创建一个builder\n然后直接点击构建它\n就生成了我们的TPU粒子\n好\n我们只用现有的party system\n就可以构建出我们的GPU粒子\n好但是它的发射个数太少了\n我们把它改成50好\n这样就比较美观了哈\n我们重新构建一下\n好这就可以得到一个完美的效果\n好虽然它不依赖运行时脚本\n但是我们也可以进行简单的调参\n比如说我们这个材质面板啊\n我们提供了一些功能\n比如说我们可以设置它的播放速度\n以及我们可以设置它的发射距离好\n这样炸的更开一些\n好\n当然我们也可以在创建的时候\n设置它的播放时间\n也就是time点time好\n他呢就可以根据这个时间完整播放\n它的生命周期\n因为这个粒子它可能是循环\n也可能不是循环的\n只需要播放一遍好\n这就是GPU粒子好\n最后我们来看一下GPU拖尾\n好它同样创建的是game object\n好然后我们直接去移动它的位置\n就可以得到拖尾的效果\n我们找一个进行演示啊\n好同样的也是直接创建builder\n然后开始构建\n它会自动的去识别你这个是拖尾还是普通粒子\n由于它这个GPU拖尾呢\n它依赖运行时\n我们需要运行起来啊\n好这样拖动呢就产生了toy\n好然后我们同时拖动两个\n好的这就是GPU粒子的拖尾效果\n感谢大家的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV15x7R6dE5M",
+  "published_at": "1780536600",
+  "fetched_at": "2026-08-10T07:26:25+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Unity特效性能优化知识图谱\n\n## GPU粒子性能提升对比 【BV15x7R6dE5M P1 01:17】\n\n```mermaid\nflowchart TD\n    CPU粒子[\"CPU粒子 (GameObject)\"]\n    GPU粒子[\"GPU粒子 (GameObject)\"]\n    低帧率[\"帧数最低 7 fps\"]\n    高帧率[\"帧数提升 ≥10 倍\"]\n    半透明排序[\"开启半透明渲染排序\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n\n    CPU粒子 --> 低帧率\n    GPU粒子 --> 高帧率\n    CPU粒子 --> 半透明排序\n    GPU粒子 --> 半透明排序\n    半透明排序 --> 高性能渲染器\n    高性能渲染器 --> 高帧率\n```\n\n## GPU拖尾实现机制 【BV15x7R6dE5M P1 01:53】\n\n```mermaid\nflowchart TD\n    GPU拖尾[\"GPU拖尾粒子\"]\n    运行时记录[\"运行时记录运动轨迹\"]\n    ComputeShader[\"Compute Shader 进行 GPU 计算\"]\n    JobFallback[\"不支持平台 → 使用 Job 系统 (WebGL)\"]\n    合批渲染[\"合批渲染优化\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n    CPU拖尾[\"CPU 拖尾粒子 (1万)\"]\n\n    GPU拖尾 --> 运行时记录\n    运行时记录 --> ComputeShader\n    ComputeShader --> 合批渲染\n    GPU拖尾 --> JobFallback\n    JobFallback --> 合批渲染\n    合批渲染 --> 高性能渲染器\n    CPU拖尾 --> 合批渲染\n```\n\n## GPU粒子创建与调参流程 【BV15x7R6dE5M P1 04:06】\n\n```mermaid\nflowchart LR\n    Builder创建[\"右键创建 Builder\"]\n    构建粒子[\"点击构建 → 生成 TPU 粒子\"]\n    不依赖脚本[\"不依赖运行时脚本\"]\n    调整发射数[\"发射数 → 50\"]\n    调整距离[\"发射距离\"]\n    调整速度[\"播放速度\"]\n    生命周期设置[\"设置生命周期 / 是否循环\"]\n    播放时间[\"设置播放时间 (time)\"]\n\n    Builder创建 --> 构建粒子\n    构建粒子 --> 不依赖脚本\n    不依赖脚本 --> 调整发射数\n    调整发射数 --> 调整距离\n    调整距离 --> 调整速度\n    调整速度 --> 生命周期设置\n    生命周期设置 --> 播放时间\n```\n\n## 跨平台兼容与渲染器选择 【BV15x7R6dE5M P1 02:12】\n\n```mermaid\nflowchart TD\n    PC平台[\"PC 端\"]\n    WebGL平台[\"WebGL (Web 端)\"]\n    微信小游戏[\"微信小游戏\"]\n    抖音小游戏[\"抖音小游戏\"]\n    GPU粒子[\"GPU 粒子 (1 万)\"]\n    CPU粒子[\"CPU 粒子 (1 万)\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n    合批渲染[\"合批渲染\"]\n    Job系统[\"Job 系统 fallback\"]\n    满帧[\"帧数满帧\"]\n    70帧[\"约 70 fps\"]\n\n    PC平台 --> GPU粒子\n    PC平台 --> 高性能渲染器\n    高性能渲染器 --> 满帧\n\n    WebGL平台 --> GPU粒子\n    GPU粒子 --> 70帧\n    70帧 --> 合批渲染\n    合批渲染 --> 满帧\n\n    微信小游戏 --> GPU粒子\n    抖音小游戏 --> GPU粒子\n    GPU粒子 --> Job系统\n    Job系统 --> 合批渲染\n\n    CPU粒子 --> 合批渲染\n```",
+      "diagrams": [
+        {
+          "title": "GPU粒子性能提升对比 【BV15x7R6dE5M P1 01:17】",
+          "code": "flowchart TD\n    CPU粒子[\"CPU粒子 (GameObject)\"]\n    GPU粒子[\"GPU粒子 (GameObject)\"]\n    低帧率[\"帧数最低 7 fps\"]\n    高帧率[\"帧数提升 ≥10 倍\"]\n    半透明排序[\"开启半透明渲染排序\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n\n    CPU粒子 --> 低帧率\n    GPU粒子 --> 高帧率\n    CPU粒子 --> 半透明排序\n    GPU粒子 --> 半透明排序\n    半透明排序 --> 高性能渲染器\n    高性能渲染器 --> 高帧率"
+        },
+        {
+          "title": "GPU拖尾实现机制 【BV15x7R6dE5M P1 01:53】",
+          "code": "flowchart TD\n    GPU拖尾[\"GPU拖尾粒子\"]\n    运行时记录[\"运行时记录运动轨迹\"]\n    ComputeShader[\"Compute Shader 进行 GPU 计算\"]\n    JobFallback[\"不支持平台 → 使用 Job 系统 (WebGL)\"]\n    合批渲染[\"合批渲染优化\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n    CPU拖尾[\"CPU 拖尾粒子 (1万)\"]\n\n    GPU拖尾 --> 运行时记录\n    运行时记录 --> ComputeShader\n    ComputeShader --> 合批渲染\n    GPU拖尾 --> JobFallback\n    JobFallback --> 合批渲染\n    合批渲染 --> 高性能渲染器\n    CPU拖尾 --> 合批渲染"
+        },
+        {
+          "title": "GPU粒子创建与调参流程 【BV15x7R6dE5M P1 04:06】",
+          "code": "flowchart LR\n    Builder创建[\"右键创建 Builder\"]\n    构建粒子[\"点击构建 → 生成 TPU 粒子\"]\n    不依赖脚本[\"不依赖运行时脚本\"]\n    调整发射数[\"发射数 → 50\"]\n    调整距离[\"发射距离\"]\n    调整速度[\"播放速度\"]\n    生命周期设置[\"设置生命周期 / 是否循环\"]\n    播放时间[\"设置播放时间 (time)\"]\n\n    Builder创建 --> 构建粒子\n    构建粒子 --> 不依赖脚本\n    不依赖脚本 --> 调整发射数\n    调整发射数 --> 调整距离\n    调整距离 --> 调整速度\n    调整速度 --> 生命周期设置\n    生命周期设置 --> 播放时间"
+        },
+        {
+          "title": "跨平台兼容与渲染器选择 【BV15x7R6dE5M P1 02:12】",
+          "code": "flowchart TD\n    PC平台[\"PC 端\"]\n    WebGL平台[\"WebGL (Web 端)\"]\n    微信小游戏[\"微信小游戏\"]\n    抖音小游戏[\"抖音小游戏\"]\n    GPU粒子[\"GPU 粒子 (1 万)\"]\n    CPU粒子[\"CPU 粒子 (1 万)\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n    合批渲染[\"合批渲染\"]\n    Job系统[\"Job 系统 fallback\"]\n    满帧[\"帧数满帧\"]\n    70帧[\"约 70 fps\"]\n\n    PC平台 --> GPU粒子\n    PC平台 --> 高性能渲染器\n    高性能渲染器 --> 满帧\n\n    WebGL平台 --> GPU粒子\n    GPU粒子 --> 70帧\n    70帧 --> 合批渲染\n    合批渲染 --> 满帧\n\n    微信小游戏 --> GPU粒子\n    抖音小游戏 --> GPU粒子\n    GPU粒子 --> Job系统\n    Job系统 --> 合批渲染\n\n    CPU粒子 --> 合批渲染"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T07:26:39+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Unity特效性能优化知识图谱\n\n## GPU粒子性能提升对比 【BV15x7R6dE5M P1 01:17】\n\n```mermaid\nflowchart TD\n    CPU粒子[\"CPU粒子 (GameObject)\"]\n    GPU粒子[\"GPU粒子 (GameObject)\"]\n    低帧率[\"帧数最低 7 fps\"]\n    高帧率[\"帧数提升 ≥10 倍\"]\n    半透明排序[\"开启半透明渲染排序\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n\n    CPU粒子 --> 低帧率\n    GPU粒子 --> 高帧率\n    CPU粒子 --> 半透明排序\n    GPU粒子 --> 半透明排序\n    半透明排序 --> 高性能渲染器\n    高性能渲染器 --> 高帧率\n```\n\n## GPU拖尾实现机制 【BV15x7R6dE5M P1 01:53】\n\n```mermaid\nflowchart TD\n    GPU拖尾[\"GPU拖尾粒子\"]\n    运行时记录[\"运行时记录运动轨迹\"]\n    ComputeShader[\"Compute Shader 进行 GPU 计算\"]\n    JobFallback[\"不支持平台 → 使用 Job 系统 (WebGL)\"]\n    合批渲染[\"合批渲染优化\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n    CPU拖尾[\"CPU 拖尾粒子 (1万)\"]\n\n    GPU拖尾 --> 运行时记录\n    运行时记录 --> ComputeShader\n    ComputeShader --> 合批渲染\n    GPU拖尾 --> JobFallback\n    JobFallback --> 合批渲染\n    合批渲染 --> 高性能渲染器\n    CPU拖尾 --> 合批渲染\n```\n\n## GPU粒子创建与调参流程 【BV15x7R6dE5M P1 04:06】\n\n```mermaid\nflowchart LR\n    Builder创建[\"右键创建 Builder\"]\n    构建粒子[\"点击构建 → 生成 TPU 粒子\"]\n    不依赖脚本[\"不依赖运行时脚本\"]\n    调整发射数[\"发射数 → 50\"]\n    调整距离[\"发射距离\"]\n    调整速度[\"播放速度\"]\n    生命周期设置[\"设置生命周期 / 是否循环\"]\n    播放时间[\"设置播放时间 (time)\"]\n\n    Builder创建 --> 构建粒子\n    构建粒子 --> 不依赖脚本\n    不依赖脚本 --> 调整发射数\n    调整发射数 --> 调整距离\n    调整距离 --> 调整速度\n    调整速度 --> 生命周期设置\n    生命周期设置 --> 播放时间\n```\n\n## 跨平台兼容与渲染器选择 【BV15x7R6dE5M P1 02:12】\n\n```mermaid\nflowchart TD\n    PC平台[\"PC 端\"]\n    WebGL平台[\"WebGL (Web 端)\"]\n    微信小游戏[\"微信小游戏\"]\n    抖音小游戏[\"抖音小游戏\"]\n    GPU粒子[\"GPU 粒子 (1 万)\"]\n    CPU粒子[\"CPU 粒子 (1 万)\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n    合批渲染[\"合批渲染\"]\n    Job系统[\"Job 系统 fallback\"]\n    满帧[\"帧数满帧\"]\n    70帧[\"约 70 fps\"]\n\n    PC平台 --> GPU粒子\n    PC平台 --> 高性能渲染器\n    高性能渲染器 --> 满帧\n\n    WebGL平台 --> GPU粒子\n    GPU粒子 --> 70帧\n    70帧 --> 合批渲染\n    合批渲染 --> 满帧\n\n    微信小游戏 --> GPU粒子\n    抖音小游戏 --> GPU粒子\n    GPU粒子 --> Job系统\n    Job系统 --> 合批渲染\n\n    CPU粒子 --> 合批渲染\n```",
+  "diagrams": [
+    {
+      "title": "GPU粒子性能提升对比 【BV15x7R6dE5M P1 01:17】",
+      "code": "flowchart TD\n    CPU粒子[\"CPU粒子 (GameObject)\"]\n    GPU粒子[\"GPU粒子 (GameObject)\"]\n    低帧率[\"帧数最低 7 fps\"]\n    高帧率[\"帧数提升 ≥10 倍\"]\n    半透明排序[\"开启半透明渲染排序\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n\n    CPU粒子 --> 低帧率\n    GPU粒子 --> 高帧率\n    CPU粒子 --> 半透明排序\n    GPU粒子 --> 半透明排序\n    半透明排序 --> 高性能渲染器\n    高性能渲染器 --> 高帧率"
+    },
+    {
+      "title": "GPU拖尾实现机制 【BV15x7R6dE5M P1 01:53】",
+      "code": "flowchart TD\n    GPU拖尾[\"GPU拖尾粒子\"]\n    运行时记录[\"运行时记录运动轨迹\"]\n    ComputeShader[\"Compute Shader 进行 GPU 计算\"]\n    JobFallback[\"不支持平台 → 使用 Job 系统 (WebGL)\"]\n    合批渲染[\"合批渲染优化\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n    CPU拖尾[\"CPU 拖尾粒子 (1万)\"]\n\n    GPU拖尾 --> 运行时记录\n    运行时记录 --> ComputeShader\n    ComputeShader --> 合批渲染\n    GPU拖尾 --> JobFallback\n    JobFallback --> 合批渲染\n    合批渲染 --> 高性能渲染器\n    CPU拖尾 --> 合批渲染"
+    },
+    {
+      "title": "GPU粒子创建与调参流程 【BV15x7R6dE5M P1 04:06】",
+      "code": "flowchart LR\n    Builder创建[\"右键创建 Builder\"]\n    构建粒子[\"点击构建 → 生成 TPU 粒子\"]\n    不依赖脚本[\"不依赖运行时脚本\"]\n    调整发射数[\"发射数 → 50\"]\n    调整距离[\"发射距离\"]\n    调整速度[\"播放速度\"]\n    生命周期设置[\"设置生命周期 / 是否循环\"]\n    播放时间[\"设置播放时间 (time)\"]\n\n    Builder创建 --> 构建粒子\n    构建粒子 --> 不依赖脚本\n    不依赖脚本 --> 调整发射数\n    调整发射数 --> 调整距离\n    调整距离 --> 调整速度\n    调整速度 --> 生命周期设置\n    生命周期设置 --> 播放时间"
+    },
+    {
+      "title": "跨平台兼容与渲染器选择 【BV15x7R6dE5M P1 02:12】",
+      "code": "flowchart TD\n    PC平台[\"PC 端\"]\n    WebGL平台[\"WebGL (Web 端)\"]\n    微信小游戏[\"微信小游戏\"]\n    抖音小游戏[\"抖音小游戏\"]\n    GPU粒子[\"GPU 粒子 (1 万)\"]\n    CPU粒子[\"CPU 粒子 (1 万)\"]\n    高性能渲染器[\"万人同屏高性能渲染器\"]\n    合批渲染[\"合批渲染\"]\n    Job系统[\"Job 系统 fallback\"]\n    满帧[\"帧数满帧\"]\n    70帧[\"约 70 fps\"]\n\n    PC平台 --> GPU粒子\n    PC平台 --> 高性能渲染器\n    高性能渲染器 --> 满帧\n\n    WebGL平台 --> GPU粒子\n    GPU粒子 --> 70帧\n    70帧 --> 合批渲染\n    合批渲染 --> 满帧\n\n    微信小游戏 --> GPU粒子\n    抖音小游戏 --> GPU粒子\n    GPU粒子 --> Job系统\n    Job系统 --> 合批渲染\n\n    CPU粒子 --> 合批渲染"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T07:26:39+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1H5Ka6yEiq",
+  "title": "第1课 为什么需要 vLLM",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1444,
+  "text": "哈喽大家好\n最近呢\n我在想着去做一期关于VIM的一个课程\n然后呢来去详细的呃\n来去分析一下\n这个BM为什么会嗯成为一个大语言模型呃\n运行的一个呃主要的一个呃呃一个系统对\n然后呢今天的话是我们的一个第一次课\n然后呢我们这次的话呢主要是来自呃了解一下\n就是为什么会需要VM这个系统\n然后VM的话呢这里有他的一个地址对\n然后VM的话呢它是一个面向大圆\n大圆模型的一个推理\n和在线服务的一个高性能的系统\n那么通过一系列的技术\n一些比较比较繁琐的一些技术\n包括什么动态批处理\nKVCCH管理\n还有一些嗯高效的注意力计算等等\n他来去提高GPU的利用率\n然后呢还有就是推理推理\n吞吐量和服务的并发能力\n对这个呢可能听起来比较比较比较术语一点\n那么简单来说呢\n就是VM\n他是在这个大模型和他的和我们的业务请求\n之间呢\n就是把我们的请求呢组织起来\n然后呢就是还有进行一个GPU的显示管理\n然后呢来去执行这个模型的推理\n简单来说呢就是说我们的大\n我们的我们可以把把我们的这个大模型呢\n理解成一个比较强大的一个嗯计算器\n那么呢我们要但是这个计算器呢\n它在运行的过程中呢\n会有一些资源的开销嗯\n或者说性能的下降啊等等一些问题\n然后VM呢他就是来去实现一个工程化的一个呃\n一个落地\n能够让这个大模型呢能够去真正的去\n呃服务于每一个每一个普通人\nOK那么呢大模型它在嗯\n那么VM的话呢\n它主要是解决了一些\n就是说在运行过程中的话呢\n大拇车在运行过程中的一些一些问题\n嗯那么呢就是说大模型能够运行的话呢\n它也嗯并不是说它就可以被被\n被被能够被部署成一个在线的服务\n然后呢被我们普通人去使用它\n所以呢VM的话呢就是要解决一些工程化的问题\n那么这里的话呢就简单的列了一些\n我们呃在他解决的一些问题\n他遇到的一些问题\n以及他VM中的应一些应对的一些机制\n比如说呢\n可能会遇到就是GPU的利用率不高的问题\n那么它会通过一些continuous spension\n然后呢来去做这个连续批处理\n然后呢来去提高GPU的利用率\n比如说呢它有一些内存管理的一些问题\n比如说kv catch\n他有这个呃碎片的浪费\n然后呢通过一些呃一呃快表blog table\n还有就是PATIENTATION\n然后呢来去更加精细化的来去管理\n我们的这个呃内存\n还有就是promote提示词的一些重复计算的问题\n那么有一些prefix\ncan can ch的一些技术来去避免重复计算\n比如说我们一个很长的一个提示词\n然后呢可能会阻塞我们的decode\n一个还有一个过程\n然后呢可能会通过一些trunk preview来去呃\n来去缓解这个这些这些问题\n再比如说呢就是请求之间的一些啊\n计算计算和显存的一些资源争抢的问题\n那么就有一个调度器来去解决这样的一些嗯\n资源分配的问题\n再比如说就是说执行的时候呢\n这个就像GPU的时候呢开销比较高\n那么会有一些嗯算子融合\n还有就是一些扩大graph的一些高效的编译\n再比如说我们一张卡放不下什么的\n放不下我们的大模型\n我们可以有一些变形的一些技术等等等等\n所以呢就是说VM的话呢\n其实是解决了很多的一些工程上的一些问题\n对这些问题的话呢\n我觉得都是比较值得去嗯\n我们可能去投入一些精力来去好好的去嗯\n去有一些比较深入的了解吧\n对所以呢简单来说呢就是BM的话呢\n它既不是大模型\n它也不是一个模型的训练框架\n它就是它是一个就是让已经被训练好的\n一个模型\n能够被高效的部署和服务的一个推理系统\nOK这就是我们的这个第一次课程",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1H5Ka6yEiq",
+  "published_at": "1784657199",
+  "fetched_at": "2026-08-08T17:29:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T17:39:51+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T17:39:51+00:00"
+}

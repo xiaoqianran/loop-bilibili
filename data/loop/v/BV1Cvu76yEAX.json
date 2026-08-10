@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1Cvu76yEAX",
+  "title": "【UE C++ 笔记】09 从纯蓝图转 C++ 智能指针 虚幻引擎",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2968,
+  "text": "哈喽各位小伙伴大家好啊\n那么咱们接着上一期接着来看指针啊\n那么首先是这个对象自身指针\n他就和我们在蓝图那边这个自身道理差不多啊\n这个呢还是比较好理解的啊\n当我们看到这个东西的时候\n这个就是我们对象这个自身\n然后我们也可以把它作为一个参数啊\n传递给外部函数\n然后我们接下来往下看这个智能指针\n智能指针呢一共有四个类型\n那么它的功能呢是用来管理\n普通C加加的对象啊\n比方说结构体\n还有这个自定义的这个非object类啊\n然后还有这个生命周期引用技术管理内存\n然后呢他是严谨包裹这两种东西的啊\n就是这个actor和这个组件\n那么也就是说actor和组件\n它是属于计息管控的啊\n那么所谓的GC就是咱们的那个反射回收系统\n这两套内存体系是不能混用的啊\n那么我们来看第一个\n那么它的格式呢就是这样的\n前面是它的变量定义加个变量名\n那后边是咱们创建的时候要用一个这个形式啊\n通俗理解\n那么他就是个钥匙啊\n可以复制多把钥匙\n每复制一把钥匙呢\n这个钥匙基数加一\n所有钥匙全部销毁之后啊\n那么这个对象呢也被销毁了\n这里叫释放\n那咱们来看一下他的演示啊\n那首先呢我们是定义了一个结构体\n然后结构体里面呢咱们只放了一个成员啊\n咱们这是用来模拟的\n然后紧接下来呢我们就创建这个共享指针\n咱们可以看到啊\n这一段就是对应的这一段\n那么等号后边呢就是对应着这一段\n这个就是一个创建的方法\n然后我们用我们创建那个共享指针啊\n去截指针\n可以控制我们结构体里边这个成员啊\n对他进行赋值之类的\n那么我们这个智能指针啊\n他都可以包裹哪些东西啊\n普通的结构体\n普通的这个类啊\n还有咱们U加加这边的这个UI啊\n然后这个数组和这个容器啊\n然后这时候呢\n我们把智能指针上边创建好的这个变量啊\n又把它赋值给了一个新的变量\n那么正常在数据处理当中呢\n我们是把这里边的值赋给它\n但是在我们智能指针当中呢就不是这样了\n那么我们这个智能指针呢是一份文档啊\n就是咱们创建的这个对象\n然后呢定义的第一个变量啊\n就是相当于拿到了一把钥匙\n就是计数等于一\n那么我们通过这一段对它进行了一个赋值\n这时候呢相当于把钥匙复制了一把\n但是我们这个文档是没有动的啊\n这一份文档是没有动的\n门档没有复制\n然后我们钥匙多了一把\n这样式的话呢就变成了二啊\n咱们有两把钥匙了\n也就是说当我们销毁了这个东西的时候\n它还存在啊\n只要有一把钥匙存在\n那咱们定义的这个东西在智能指针里边\n他就不会被销毁啊\n只有我们这两个东西它都被销毁了\n这个文档才会被销毁在智能指针这边啊\n这个智能指针的赋值\n跟咱们传统的那个变量赋值是不一样的啊\n然后我们再来往下看\n这个叫做共享引用啊\n跟我们上边这个智能指针类似啊\n引用机制基本上是完全相同的\n那么这个是它的定义格式\n这是它的创建格式\n然后这个东西呢初始化必须赋值啊\n永远不允许为空啊\n它通常是用来做我们的这个U加加这边的UI\n在做这个UI啊\n和这个插件开发的时候高频使用\n然后呢他也可以进行隐式的转换啊\n它可以转换成我们另外三种类型\n那么通俗理解呢就是一把不允许为空的钥匙啊\n从诞生起就必须绑定对象\n不会出现空钥匙\n他也是钥匙啊\n他不管数据\n咱们这里边呢是区分了数据和钥匙啊\n这么两个概念\n那么下边呢是他的一个演示啊\n包括创建赋值\n咱们创建完了就必须立马就给他一个值啊\n然后这就是影视的进行一个转换\n然后我们再来看这个弱指针\n这个是它的这个定义格式啊\n这是它的创建格式啊\n啊\n它的创建格式呢\n是只能从已有的智能指针和这个共享引用赋值\n得到\n它是不能直接创建的啊\n然后这个东西它有什么用呢\n通俗理解就是是个备忘录啊\n记录房子地址\n但不算钥匙\n不能直接开门\n他一般只是看房子还在不在啊\n在就临时拿一把钥匙\n这个东西通\n通常就是用来观察我们创建的东西还在不在啊\n那么下边是他的示例\n我们可以通过这个把它转成这个弱指针\n然后通过这个看一下我们这个东西\n它还在不在啊\n如果在呢\n我们就临时拿一把钥匙啊\n对他的值进行修改\n然后我们再来看这个独占指针啊\n他是独占所有权\n只能有一个持有者禁止拷贝啊\n但是可以转移所有权\n那么这个是它的格式啊\n这个是它的创建方法\n那通俗点理解呢就是唯一一把钥匙不能复制\n只能把钥匙完整的交给别人\n交出之后自己手里就没有钥匙了\n那么也就证明交出之后啊\n他自己就销毁了\n这里也是啊\n我们通过它的变量类型\n然后创建了一个独占指针\n然后我们通过这个函数\n把我们的独占指针交出去了\n那这里也是演示了一下他是如何交出去的啊\n好那么以上呢就是这四种种指针的类型啊\n他们那个单词比较接近啊\n有点不太好区分咳\n然后我们再来看u object的弱指针\n那它跟上边那个弱智的那类型是差不多的啊\n它的通俗理解呢就是u object的版本的备忘录\n它只记录对象地址\n不会阻止G7销毁对象\n咱们可以通过一个特定的命令\n检查对象是否存活\n这个东西也是用来查看的啊\n就是看一下咱们这个定义的指针\n它是否还存活\n那这个是它的类型\n然后我们创建了一个变量\n然后把我们的这个类就给了我们\n这个变量给完之后呢\n然后我们紧接下来用这个方法啊\n这这是个实例了\n这个实例的这个方法去看一下\n咱们这个东西还存不存在\n是否还活着啊\n如果活着\n然后就怎么怎么样啊\n这就是一个u object的弱指针\n那么它是属于计息范围的啊\n也就是说那个反射回收范围的\n然后我们再来看我们这个反射回收的\n这么一个校验啊\n那么这块其实他已经演示了\n但是我们也可以直接把这个拿过来去校验\n也就是说我们通过这种方式啊\n创建一个指针的时候\n我们可以直接来校验\n那么上边这个效应啊\n就是这个短的\n这个它是可以记录\n我们当前这个指针是否被标记为要销毁\n所以说通常呢我们就用这上边\n这一个就可以了啊\n这个呢基本上是不用的\n就是这个这个基本上是不用的啊\n那么它也有它相应的这个解释啊\n大家自己看一下就行了\n反正这个东西你就记住啊\n有这么个东西\n但基本上是不用的\n上面这个就非常好\n然后我们再来看这个利用对象说明符\n保护我们这个u object的人啊\n就是防止被机器回收\n这是个重点啊\n那么这是它的创建格式啊\n就是上边标记一下\n然后下边再来定义我们这个指针类型\n那么这个指针类型呢其实它只有两类啊\n一个是actor\n一个是组件啊\n这两种东西必须得加上这个啊\n要不然的话他就会被机息随时回收啊\n然后我们还不知道\n我们再去访问他的时候\n就变成了野指针访问\n那这个时候呢咱这程序就崩溃了啊\n那么通俗理解呢\n就是咱们这个变量说明符相当于给机器登记啊\n我正在使用这个东西\n请不要回收它啊\n如果咱们不登记的话\n就看不见这个引用\n那么这块有三个写法的这么一个小示例啊\n那这个是正确的\n就是必须得带上这个东西\n那么第二个例子呢就是没有咱们这个东西啊\n然后计息看不到这个引用随时可能被回收\n然后这个指针就变成野指针了\n然后一般我们操作这个u object指针的时候\n必须先校验\n然后再操作啊\n这个简写的形式咱们自己写的话\n尽可能就不要用了啊\n但但是我们看到别人简写\n咱们得理解啊\n上下这两个其实是一样的\n还是带上这个东西比较好啊\n这样子的话对于咱们新手比较友好啊\n然后下边有四条总结啊\n大家自己看一下就行了\n那么以上呢就是关于指针的后续内容\n全部都在这儿了啊\n那么感谢大家收看本期",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Cvu76yEAX",
+  "published_at": "1786010400",
+  "fetched_at": "2026-08-09T22:33:31+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# UE C++ 智能指针知识图谱\n\n## 智能指针概览 [BV1Cvu76yEAX P1 00:29] [BV1Cvu76yEAX P1 01:09]\n```mermaid\nflowchart TD\n    SP[\"对象自身指针\"] -->|作为参数| Func[\"外部函数\"]\n    SP -->|与蓝图对应| Blueprint[\"蓝图自身指针\"]\n    SharedPtr[\"共享指针 (TSharedPtr)\"] -->|管理内存| RefCount[\"引用计数\"]\n    SharedRef[\"共享引用 (TSharedRef)\"] -->|管理内存| RefCount\n    WeakPtr[\"弱指针 (TWeakPtr)\"] -->|观察对象| ObjAlive[\"对象是否存活\"]\n    UniquePtr[\"独占指针 (TUniquePtr)\"] -->|唯一所有权| Owner[\"唯一持有者\"]\n    UObjectWeakPtr[\"UObject 弱指针\"] -->|记录UObject地址| GC[\"GC（反射回收）\"]\n    ObjectSpecifier[\"对象说明符\"] -->|标记防回收| ActorComp[\"Actor / 组件\"]\n    ActorComp -->|受 GC 影响| GC\n    SharedPtr -->|可转为| WeakPtr\n    SharedRef -->|可转为| WeakPtr\n    UniquePtr -->|不可拷贝| NoCopy[\"禁止拷贝\"]\n    UniquePtr -->|可转移所有权| Transfer[\"所有权转移\"]\n```\n\n## 共享指针引用计数流程 [BV1Cvu76yEAX P1 01:27] [BV1Cvu76yEAX P1 03:14]\n```mermaid\nflowchart TD\n    Create[\"创建共享指针\"] --> RC1[\"引用计数 = 1\"]\n    Copy[\"复制共享指针\"] --> RCInc[\"引用计数 + 1\"]\n    Destroy[\"销毁一个共享指针实例\"] --> RCDec[\"引用计数 - 1\"]\n    RCZero[\"引用计数 = 0\"] --> Release[\"释放对象\"]\n    RC1 --> Copy\n    Copy --> RCInc\n    RCInc --> Destroy\n    Destroy --> RCDec\n    RCDec --> RCZero\n```\n\n## 弱指针使用与对象存活检查 [BV1Cvu76yEAX P1 04:52] [BV1Cvu76yEAX P1 05:31]\n```mermaid\nflowchart TD\n    Obtain[\"从共享指针/共享引用获取弱指针\"] --> Check[\"检查对象是否存活\"]\n    Check -->|是| Lock[\"将弱指针锁定为临时共享指针\"]\n    Lock --> Use[\"使用对象\"]\n    Use --> End[\"结束使用\"]\n    Check -->|否| EndDead[\"对象已销毁，结束\"]\n```\n\n## 独占指针所有权转移流程 [BV1Cvu76yEAX P1 05:43] [BV1Cvu76yEAX P1 06:15]\n```mermaid\nflowchart TD\n    CreateU[\"创建独占指针\"] --> OwnerA[\"持有者 A\"]\n    Transfer[\"转移所有权\"] --> OwnerB[\"持有者 B\"]\n    DestroyA[\"销毁持有者 A\"] --> InvalidA[\"A 失去钥匙\"]\n    OwnerB --> UseB[\"B 使用对象\"]\n    UseB --> EndU[\"结束\"]\n    OwnerA --> Transfer\n    OwnerA --> DestroyA\n```",
+      "diagrams": [
+        {
+          "title": "智能指针概览",
+          "code": "flowchart TD\n    SP[\"对象自身指针\"] -->|作为参数| Func[\"外部函数\"]\n    SP -->|与蓝图对应| Blueprint[\"蓝图自身指针\"]\n    SharedPtr[\"共享指针 (TSharedPtr)\"] -->|管理内存| RefCount[\"引用计数\"]\n    SharedRef[\"共享引用 (TSharedRef)\"] -->|管理内存| RefCount\n    WeakPtr[\"弱指针 (TWeakPtr)\"] -->|观察对象| ObjAlive[\"对象是否存活\"]\n    UniquePtr[\"独占指针 (TUniquePtr)\"] -->|唯一所有权| Owner[\"唯一持有者\"]\n    UObjectWeakPtr[\"UObject 弱指针\"] -->|记录UObject地址| GC[\"GC（反射回收）\"]\n    ObjectSpecifier[\"对象说明符\"] -->|标记防回收| ActorComp[\"Actor / 组件\"]\n    ActorComp -->|受 GC 影响| GC\n    SharedPtr -->|可转为| WeakPtr\n    SharedRef -->|可转为| WeakPtr\n    UniquePtr -->|不可拷贝| NoCopy[\"禁止拷贝\"]\n    UniquePtr -->|可转移所有权| Transfer[\"所有权转移\"]"
+        },
+        {
+          "title": "共享指针引用计数流程",
+          "code": "flowchart TD\n    Create[\"创建共享指针\"] --> RC1[\"引用计数 = 1\"]\n    Copy[\"复制共享指针\"] --> RCInc[\"引用计数 + 1\"]\n    Destroy[\"销毁一个共享指针实例\"] --> RCDec[\"引用计数 - 1\"]\n    RCZero[\"引用计数 = 0\"] --> Release[\"释放对象\"]\n    RC1 --> Copy\n    Copy --> RCInc\n    RCInc --> Destroy\n    Destroy --> RCDec\n    RCDec --> RCZero"
+        },
+        {
+          "title": "弱指针使用与对象存活检查",
+          "code": "flowchart TD\n    Obtain[\"从共享指针/共享引用获取弱指针\"] --> Check[\"检查对象是否存活\"]\n    Check -->|是| Lock[\"将弱指针锁定为临时共享指针\"]\n    Lock --> Use[\"使用对象\"]\n    Use --> End[\"结束使用\"]\n    Check -->|否| EndDead[\"对象已销毁，结束\"]"
+        },
+        {
+          "title": "独占指针所有权转移流程",
+          "code": "flowchart TD\n    CreateU[\"创建独占指针\"] --> OwnerA[\"持有者 A\"]\n    Transfer[\"转移所有权\"] --> OwnerB[\"持有者 B\"]\n    DestroyA[\"销毁持有者 A\"] --> InvalidA[\"A 失去钥匙\"]\n    OwnerB --> UseB[\"B 使用对象\"]\n    UseB --> EndU[\"结束\"]\n    OwnerA --> Transfer\n    OwnerA --> DestroyA"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T22:46:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# UE C++ 智能指针知识图谱\n\n## 智能指针概览 [BV1Cvu76yEAX P1 00:29] [BV1Cvu76yEAX P1 01:09]\n```mermaid\nflowchart TD\n    SP[\"对象自身指针\"] -->|作为参数| Func[\"外部函数\"]\n    SP -->|与蓝图对应| Blueprint[\"蓝图自身指针\"]\n    SharedPtr[\"共享指针 (TSharedPtr)\"] -->|管理内存| RefCount[\"引用计数\"]\n    SharedRef[\"共享引用 (TSharedRef)\"] -->|管理内存| RefCount\n    WeakPtr[\"弱指针 (TWeakPtr)\"] -->|观察对象| ObjAlive[\"对象是否存活\"]\n    UniquePtr[\"独占指针 (TUniquePtr)\"] -->|唯一所有权| Owner[\"唯一持有者\"]\n    UObjectWeakPtr[\"UObject 弱指针\"] -->|记录UObject地址| GC[\"GC（反射回收）\"]\n    ObjectSpecifier[\"对象说明符\"] -->|标记防回收| ActorComp[\"Actor / 组件\"]\n    ActorComp -->|受 GC 影响| GC\n    SharedPtr -->|可转为| WeakPtr\n    SharedRef -->|可转为| WeakPtr\n    UniquePtr -->|不可拷贝| NoCopy[\"禁止拷贝\"]\n    UniquePtr -->|可转移所有权| Transfer[\"所有权转移\"]\n```\n\n## 共享指针引用计数流程 [BV1Cvu76yEAX P1 01:27] [BV1Cvu76yEAX P1 03:14]\n```mermaid\nflowchart TD\n    Create[\"创建共享指针\"] --> RC1[\"引用计数 = 1\"]\n    Copy[\"复制共享指针\"] --> RCInc[\"引用计数 + 1\"]\n    Destroy[\"销毁一个共享指针实例\"] --> RCDec[\"引用计数 - 1\"]\n    RCZero[\"引用计数 = 0\"] --> Release[\"释放对象\"]\n    RC1 --> Copy\n    Copy --> RCInc\n    RCInc --> Destroy\n    Destroy --> RCDec\n    RCDec --> RCZero\n```\n\n## 弱指针使用与对象存活检查 [BV1Cvu76yEAX P1 04:52] [BV1Cvu76yEAX P1 05:31]\n```mermaid\nflowchart TD\n    Obtain[\"从共享指针/共享引用获取弱指针\"] --> Check[\"检查对象是否存活\"]\n    Check -->|是| Lock[\"将弱指针锁定为临时共享指针\"]\n    Lock --> Use[\"使用对象\"]\n    Use --> End[\"结束使用\"]\n    Check -->|否| EndDead[\"对象已销毁，结束\"]\n```\n\n## 独占指针所有权转移流程 [BV1Cvu76yEAX P1 05:43] [BV1Cvu76yEAX P1 06:15]\n```mermaid\nflowchart TD\n    CreateU[\"创建独占指针\"] --> OwnerA[\"持有者 A\"]\n    Transfer[\"转移所有权\"] --> OwnerB[\"持有者 B\"]\n    DestroyA[\"销毁持有者 A\"] --> InvalidA[\"A 失去钥匙\"]\n    OwnerB --> UseB[\"B 使用对象\"]\n    UseB --> EndU[\"结束\"]\n    OwnerA --> Transfer\n    OwnerA --> DestroyA\n```",
+  "diagrams": [
+    {
+      "title": "智能指针概览",
+      "code": "flowchart TD\n    SP[\"对象自身指针\"] -->|作为参数| Func[\"外部函数\"]\n    SP -->|与蓝图对应| Blueprint[\"蓝图自身指针\"]\n    SharedPtr[\"共享指针 (TSharedPtr)\"] -->|管理内存| RefCount[\"引用计数\"]\n    SharedRef[\"共享引用 (TSharedRef)\"] -->|管理内存| RefCount\n    WeakPtr[\"弱指针 (TWeakPtr)\"] -->|观察对象| ObjAlive[\"对象是否存活\"]\n    UniquePtr[\"独占指针 (TUniquePtr)\"] -->|唯一所有权| Owner[\"唯一持有者\"]\n    UObjectWeakPtr[\"UObject 弱指针\"] -->|记录UObject地址| GC[\"GC（反射回收）\"]\n    ObjectSpecifier[\"对象说明符\"] -->|标记防回收| ActorComp[\"Actor / 组件\"]\n    ActorComp -->|受 GC 影响| GC\n    SharedPtr -->|可转为| WeakPtr\n    SharedRef -->|可转为| WeakPtr\n    UniquePtr -->|不可拷贝| NoCopy[\"禁止拷贝\"]\n    UniquePtr -->|可转移所有权| Transfer[\"所有权转移\"]"
+    },
+    {
+      "title": "共享指针引用计数流程",
+      "code": "flowchart TD\n    Create[\"创建共享指针\"] --> RC1[\"引用计数 = 1\"]\n    Copy[\"复制共享指针\"] --> RCInc[\"引用计数 + 1\"]\n    Destroy[\"销毁一个共享指针实例\"] --> RCDec[\"引用计数 - 1\"]\n    RCZero[\"引用计数 = 0\"] --> Release[\"释放对象\"]\n    RC1 --> Copy\n    Copy --> RCInc\n    RCInc --> Destroy\n    Destroy --> RCDec\n    RCDec --> RCZero"
+    },
+    {
+      "title": "弱指针使用与对象存活检查",
+      "code": "flowchart TD\n    Obtain[\"从共享指针/共享引用获取弱指针\"] --> Check[\"检查对象是否存活\"]\n    Check -->|是| Lock[\"将弱指针锁定为临时共享指针\"]\n    Lock --> Use[\"使用对象\"]\n    Use --> End[\"结束使用\"]\n    Check -->|否| EndDead[\"对象已销毁，结束\"]"
+    },
+    {
+      "title": "独占指针所有权转移流程",
+      "code": "flowchart TD\n    CreateU[\"创建独占指针\"] --> OwnerA[\"持有者 A\"]\n    Transfer[\"转移所有权\"] --> OwnerB[\"持有者 B\"]\n    DestroyA[\"销毁持有者 A\"] --> InvalidA[\"A 失去钥匙\"]\n    OwnerB --> UseB[\"B 使用对象\"]\n    UseB --> EndU[\"结束\"]\n    OwnerA --> Transfer\n    OwnerA --> DestroyA"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:46:35+00:00"
+}

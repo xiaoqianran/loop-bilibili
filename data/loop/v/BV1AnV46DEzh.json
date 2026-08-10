@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1AnV46DEzh",
+  "title": "大模型推理之调度优化【第十二期】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2701,
+  "text": "袁志会帮你咀嚼SG浪\n让你一听就懂\n大家好啊\n前两个小节给大家讲到了\n推测解码和attention bend\n那这个小节的话\n我们来讲讲S7浪中\n一般默认打开的两个优化手段\n主要以科普的目的为主吧\n然后首先是库大graph嗯\n库大graph是因为大家提供了一个优化技术\n它主要是一个录制回放的模式呃\n去节省这个CPU的开销啊\n其实在我们每次调用这个GPUCARL的时候呢\nCPU呢其实也都会做很多准备工作\n你特别是在大模型推理的这个decoding阶段\n其实是存在这种大量的这种小的curl的计算的\n因为它的整个矩阵比较小\n然后呢kernel比较多啊\n然后有好多个transformer block\n然后呢每个block里面有好几个kernel\n算下来在执行一次的时候\n每一个token他的这个啊整个KO的准备工作的话\n耗时占比就会比较高啊\n比如说像这个这个一些kernel\n比如像layer lamy呀\nQVQQV的projection啊\nM2P啊\n这些kernel嗯\n他们呢都是一些相对来说比较小的坑了啊\n然后呢呃就会导致整体的时间占比比较高\n那通过扩大graph的这种方式呢\n我们是把这个kernel的调用呢\n录制成了这个一个graph啊\n编译成的是一个那叫做graph execution的\n这样的一个东西啊\n呃呃就是执行的时候呢就不需要CPU进行参与了\n那可以看下面这个图哈\n就是两种不同的模式下\n他们CPU和GPU执行的一个时间占比的一个情况啊\n那下面这种的话\n就是CPU只会在初始的这个输入这一块\n做一些准备\n然后呢就一直在GPU上进行运行\n那后面CPU就不需要参与了\nOK那这个库graph的话\n它呃其实对这个性能提升还是比较有效的\n然后呢它但是它也存在一些限制\n首先是图的结构\n它必须啊固定\n那比如说这个矩阵大小它是不能动的啊\n那那就涉及到两个维度啊\n第一个是besides\n第二个的话是序列长度\n那就是序列长度的话它不能变的话\n嗯我们在decoding阶段\n由于它的这个sequence learn是一\n所以他是OK的啊\n但是在profile阶段的话可能就不太行\n因为呃我们不知道有多少个prompt进来\n然后呢这个他的这个长度也不确定啊\n所以说它会变来变去\n所以就是profile阶段呢其实不太合适\n另外一个点的话就是PERFUE\n它本来也是这个矩阵比较大啊\n所以说它相对来说的话\n他的这个CPU的开销相对来说会小一些啊\n所以说我们一般是在decoding阶段\n用这个扩大graph嗯\n那第二个的话就是bad size这个维度啊\n那这个BESIZE的话其实它也不太能够确定\n因为我们也不清楚\n我们当前的这个batch是多大嗯\n因为我们是有一个continuous spin\n这样一个机制嘛\n所以我们不知道我们当前的batch是多大\n那由于它无法固定的话\n所以我们采用的这种策略\n就是录制多个better size qugraph啊\n那匹配到哪一个就用哪一个啊\n那我们目前decoding阶段的话\n它的这个bt size最大值呢\n其实就是我们之前提到的一个参数叫max running request\n所以说我们在启动这个参数的时候\n我们其实只要嗯在这个matx many requests\n这个之下啊\n构建多组的这样的一个BESIZE就行了\n一般来讲的话我们是通过指定这个二的倍数啊\n递增多组啊\n然后呢第二个限制的话\n就是它不支持动态的这样的一个控制流\n也就是你的这个kernel的执行顺序和数量\n一定要是固定的\n第三个的话就是说它不能够在这个过程中呢\n去嗯去做这个memory的这样的一个就是MALLOC和free啊\n那这个其实没啥影响\n一般来讲的话\n我们还希望他的所有的执行\n其实在ISL启动的时候\n就已经把显存都给预制好了啊\n我们只会去引用这些这些现存\n而不会去呃MELOO和free他们\n那这三个限制在S当中\n其实都不是很大的问题啊\n那我们在计算中只需要去使用对应的参数\n就可以打开这个feature\n然后呢S档中的日志中\n一般你打开以后呢\n会存在这样一个capture ka graph这样一些日志啊\n然后呢由于你要进行录制嘛\n所以说刚开始启初始的启动速度会比较慢\n它会有多个嗯BRASIZE的这个graph的录制\n然后呢如果说这个by size的这个特别多啊\n然后他呢也会占有一些额外的显存空间\n但是一般来讲不会构成什么大的问题\n那接下来我们讲一下另外一个就是重要的优化\n那它其实也是我们调度器的一个\n呃核心的这样一个目标吧\n然后呢\n它是通过并行的执行不同类型的这个操作\n避免相互等待这样一个优化\n那核心思想就是说让CPUGPU网络同时的忙起来\n而不是进行串行的等待\n那我们第一个overlap叫做CPU和GPU之间的overlap\n那没有overlap之前的话\nCPU先处理BH1的数据\n然后呢GPU啊再处理被设计的数据\n然后呢CPU在准备batch2的数据\n然后然后依次这样一个执行\n那它这个CPU和GPU之间就会存在很多气泡\n然后呢这个有了overlap以后\n它就能并行起来了\n他只会在第一步的话准备BH1的时候呢\nGPU是空闲的\n后面的话GPU在处理BH1的时候\nGPU就已经在准备BH2了\n所以说他们就一直并行下来\n然后呢这种方式的话就没有气泡了嗯\n那第二种的话是叫做计算和通信的overlap\n那思想是类似的哈\n我们接下来可以看一看\n就是我们具体的一个实现过程呃\n那左侧的话是这个GPU和CPU的这样\nOVERLAB的一个伪代码啊\n它利用的是这个叫Python s n i I/O的这样一个\n来实现的这个非阻塞的这样的一个调度嗯\n可以看一下\n具体看一下这个代码啊\n它使用的是一个双双缓冲的一个机制嗯\n它有两个变量\n一个是batch a\n一个是batch b\n那CPU在GPU处理BHA的时候呢\n他就会去准备这个BHB\n然后等待这个BHA呢\n一旦被这个GPU处理完以后呢\n他又开始准备新的数据塞到这个BHA里面去\n所以说啊就通过这个换装缓冲\n我们就可以实现一个\n就是他们那个非阻塞的调度了啊\n那右侧的话是这个通信的这样的一个overlap\n他的核心思想就是利用了这个扩大的stream啊\n多个扩大stream\n那一个扩大stream的话\n简单理解\n就是\n你可以认为是它是一个GPU上的一个流水线啊\n那计算的话就把它放到stream0里面\n然后呢通信的就放到stream1里面\n避免它们啊产生这个阻塞\nOK以上就是我们今天讲的两个知识点嗯\n今天就到这里吧\n再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1AnV46DEzh",
+  "published_at": "1780050600",
+  "fetched_at": "2026-08-08T16:13:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 大模型推理调度优化知识图谱\n\n## 总览图（[BV1AnV46DEzh P1 01:20]）  \n```mermaid\nflowchart TD\n    A[\"默认解码阶段 CPU 参与准备\"]\n    B[\"CPU 开销高\"]\n    C[\"两种优化手段\"]\n    D[\"Graph Execution (扩大 graph)\"]\n    E[\"Overlap 调度\"]\n    F[\"提升推理性能\"]\n\n    A --> B\n    B --> C\n    C --> D\n    C --> E\n    D --> F\n    E --> F\n```\n\n## Graph Execution 工作流与限制（[BV1AnV46DEzh P1 02:00]）  \n```mermaid\nflowchart TD\n    A[\"录制 kernel 调用\"]\n    B[\"生成 Graph\"]\n    C[\"Graph Execution (GPU 直接执行)\"]\n    D[\"省去 CPU 参与\"]\n    E[\"图结构固定（矩阵大小、序列长度）\"]\n    F[\"不支持动态控制流\"]\n    G[\"不支持运行时 malloc/free\"]\n    H[\"需要预分配显存\"]\n    I[\"适用于 decoding 阶段\"]\n    J[\"为不同 batch size 录制多个 Graph (BESIZE)\"]\n\n    A --> B --> C --> D\n    C --> E\n    C --> F\n    C --> G\n    C --> H\n    D --> I\n    J --> A\n```\n\n## CPU‑GPU Overlap 流程（[BV1AnV46DEzh P1 05:00]）  \n```mermaid\nflowchart TD\n    G[\"双缓冲机制 (batch A / batch B)\"]\n    A[\"CPU 准备 batch1 (BH1)\"]\n    B[\"GPU 空闲\"]\n    C[\"GPU 处理 BH1\"]\n    D[\"CPU 同时准备 batch2 (BH2)\"]\n    E[\"GPU 处理 BH2\"]\n    F[\"并行执行，无气泡\"]\n    H[\"CPU 与 GPU 同步 via 双缓冲\"]\n    I[\"降低等待时间\"]\n    J[\"提升吞吐量\"]\n\n    G --> A\n    G --> D\n    A --> B\n    B --> C\n    C --> D\n    D --> E\n    E --> F\n    D --> H\n    H --> I\n    I --> J\n```\n\n## 计算‑通信 Overlap（Stream）实现（[BV1AnV46DEzh P1 06:00]）  \n```mermaid\nflowchart TD\n    A[\"计算任务放入 stream0\"]\n    B[\"通信任务放入 stream1\"]\n    F[\"使用 CUDA Stream API\"]\n    C[\"多 stream 扩大流水线\"]\n    G[\"独立调度计算和通信\"]\n    D[\"避免计算/通信阻塞\"]\n    H[\"提升整体带宽利用率\"]\n    I[\"降低延迟\"]\n    J[\"适用于大模型推理\"]\n\n    A --> F\n    B --> F\n    F --> C\n    C --> G\n    G --> D\n    D --> H\n    H --> I\n    I --> J\n```",
+      "diagrams": [
+        {
+          "title": "总览图（）",
+          "code": "flowchart TD\n    A[\"默认解码阶段 CPU 参与准备\"]\n    B[\"CPU 开销高\"]\n    C[\"两种优化手段\"]\n    D[\"Graph Execution (扩大 graph)\"]\n    E[\"Overlap 调度\"]\n    F[\"提升推理性能\"]\n\n    A --> B\n    B --> C\n    C --> D\n    C --> E\n    D --> F\n    E --> F"
+        },
+        {
+          "title": "Graph Execution 工作流与限制（）",
+          "code": "flowchart TD\n    A[\"录制 kernel 调用\"]\n    B[\"生成 Graph\"]\n    C[\"Graph Execution (GPU 直接执行)\"]\n    D[\"省去 CPU 参与\"]\n    E[\"图结构固定（矩阵大小、序列长度）\"]\n    F[\"不支持动态控制流\"]\n    G[\"不支持运行时 malloc/free\"]\n    H[\"需要预分配显存\"]\n    I[\"适用于 decoding 阶段\"]\n    J[\"为不同 batch size 录制多个 Graph (BESIZE)\"]\n\n    A --> B --> C --> D\n    C --> E\n    C --> F\n    C --> G\n    C --> H\n    D --> I\n    J --> A"
+        },
+        {
+          "title": "CPU‑GPU Overlap 流程（）",
+          "code": "flowchart TD\n    G[\"双缓冲机制 (batch A / batch B)\"]\n    A[\"CPU 准备 batch1 (BH1)\"]\n    B[\"GPU 空闲\"]\n    C[\"GPU 处理 BH1\"]\n    D[\"CPU 同时准备 batch2 (BH2)\"]\n    E[\"GPU 处理 BH2\"]\n    F[\"并行执行，无气泡\"]\n    H[\"CPU 与 GPU 同步 via 双缓冲\"]\n    I[\"降低等待时间\"]\n    J[\"提升吞吐量\"]\n\n    G --> A\n    G --> D\n    A --> B\n    B --> C\n    C --> D\n    D --> E\n    E --> F\n    D --> H\n    H --> I\n    I --> J"
+        },
+        {
+          "title": "计算‑通信 Overlap（Stream）实现（）",
+          "code": "flowchart TD\n    A[\"计算任务放入 stream0\"]\n    B[\"通信任务放入 stream1\"]\n    F[\"使用 CUDA Stream API\"]\n    C[\"多 stream 扩大流水线\"]\n    G[\"独立调度计算和通信\"]\n    D[\"避免计算/通信阻塞\"]\n    H[\"提升整体带宽利用率\"]\n    I[\"降低延迟\"]\n    J[\"适用于大模型推理\"]\n\n    A --> F\n    B --> F\n    F --> C\n    C --> G\n    G --> D\n    D --> H\n    H --> I\n    I --> J"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T16:13:49+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 大模型推理调度优化知识图谱\n\n## 总览图（[BV1AnV46DEzh P1 01:20]）  \n```mermaid\nflowchart TD\n    A[\"默认解码阶段 CPU 参与准备\"]\n    B[\"CPU 开销高\"]\n    C[\"两种优化手段\"]\n    D[\"Graph Execution (扩大 graph)\"]\n    E[\"Overlap 调度\"]\n    F[\"提升推理性能\"]\n\n    A --> B\n    B --> C\n    C --> D\n    C --> E\n    D --> F\n    E --> F\n```\n\n## Graph Execution 工作流与限制（[BV1AnV46DEzh P1 02:00]）  \n```mermaid\nflowchart TD\n    A[\"录制 kernel 调用\"]\n    B[\"生成 Graph\"]\n    C[\"Graph Execution (GPU 直接执行)\"]\n    D[\"省去 CPU 参与\"]\n    E[\"图结构固定（矩阵大小、序列长度）\"]\n    F[\"不支持动态控制流\"]\n    G[\"不支持运行时 malloc/free\"]\n    H[\"需要预分配显存\"]\n    I[\"适用于 decoding 阶段\"]\n    J[\"为不同 batch size 录制多个 Graph (BESIZE)\"]\n\n    A --> B --> C --> D\n    C --> E\n    C --> F\n    C --> G\n    C --> H\n    D --> I\n    J --> A\n```\n\n## CPU‑GPU Overlap 流程（[BV1AnV46DEzh P1 05:00]）  \n```mermaid\nflowchart TD\n    G[\"双缓冲机制 (batch A / batch B)\"]\n    A[\"CPU 准备 batch1 (BH1)\"]\n    B[\"GPU 空闲\"]\n    C[\"GPU 处理 BH1\"]\n    D[\"CPU 同时准备 batch2 (BH2)\"]\n    E[\"GPU 处理 BH2\"]\n    F[\"并行执行，无气泡\"]\n    H[\"CPU 与 GPU 同步 via 双缓冲\"]\n    I[\"降低等待时间\"]\n    J[\"提升吞吐量\"]\n\n    G --> A\n    G --> D\n    A --> B\n    B --> C\n    C --> D\n    D --> E\n    E --> F\n    D --> H\n    H --> I\n    I --> J\n```\n\n## 计算‑通信 Overlap（Stream）实现（[BV1AnV46DEzh P1 06:00]）  \n```mermaid\nflowchart TD\n    A[\"计算任务放入 stream0\"]\n    B[\"通信任务放入 stream1\"]\n    F[\"使用 CUDA Stream API\"]\n    C[\"多 stream 扩大流水线\"]\n    G[\"独立调度计算和通信\"]\n    D[\"避免计算/通信阻塞\"]\n    H[\"提升整体带宽利用率\"]\n    I[\"降低延迟\"]\n    J[\"适用于大模型推理\"]\n\n    A --> F\n    B --> F\n    F --> C\n    C --> G\n    G --> D\n    D --> H\n    H --> I\n    I --> J\n```",
+  "diagrams": [
+    {
+      "title": "总览图（）",
+      "code": "flowchart TD\n    A[\"默认解码阶段 CPU 参与准备\"]\n    B[\"CPU 开销高\"]\n    C[\"两种优化手段\"]\n    D[\"Graph Execution (扩大 graph)\"]\n    E[\"Overlap 调度\"]\n    F[\"提升推理性能\"]\n\n    A --> B\n    B --> C\n    C --> D\n    C --> E\n    D --> F\n    E --> F"
+    },
+    {
+      "title": "Graph Execution 工作流与限制（）",
+      "code": "flowchart TD\n    A[\"录制 kernel 调用\"]\n    B[\"生成 Graph\"]\n    C[\"Graph Execution (GPU 直接执行)\"]\n    D[\"省去 CPU 参与\"]\n    E[\"图结构固定（矩阵大小、序列长度）\"]\n    F[\"不支持动态控制流\"]\n    G[\"不支持运行时 malloc/free\"]\n    H[\"需要预分配显存\"]\n    I[\"适用于 decoding 阶段\"]\n    J[\"为不同 batch size 录制多个 Graph (BESIZE)\"]\n\n    A --> B --> C --> D\n    C --> E\n    C --> F\n    C --> G\n    C --> H\n    D --> I\n    J --> A"
+    },
+    {
+      "title": "CPU‑GPU Overlap 流程（）",
+      "code": "flowchart TD\n    G[\"双缓冲机制 (batch A / batch B)\"]\n    A[\"CPU 准备 batch1 (BH1)\"]\n    B[\"GPU 空闲\"]\n    C[\"GPU 处理 BH1\"]\n    D[\"CPU 同时准备 batch2 (BH2)\"]\n    E[\"GPU 处理 BH2\"]\n    F[\"并行执行，无气泡\"]\n    H[\"CPU 与 GPU 同步 via 双缓冲\"]\n    I[\"降低等待时间\"]\n    J[\"提升吞吐量\"]\n\n    G --> A\n    G --> D\n    A --> B\n    B --> C\n    C --> D\n    D --> E\n    E --> F\n    D --> H\n    H --> I\n    I --> J"
+    },
+    {
+      "title": "计算‑通信 Overlap（Stream）实现（）",
+      "code": "flowchart TD\n    A[\"计算任务放入 stream0\"]\n    B[\"通信任务放入 stream1\"]\n    F[\"使用 CUDA Stream API\"]\n    C[\"多 stream 扩大流水线\"]\n    G[\"独立调度计算和通信\"]\n    D[\"避免计算/通信阻塞\"]\n    H[\"提升整体带宽利用率\"]\n    I[\"降低延迟\"]\n    J[\"适用于大模型推理\"]\n\n    A --> F\n    B --> F\n    F --> C\n    C --> G\n    G --> D\n    D --> H\n    H --> I\n    I --> J"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T16:13:49+00:00"
+}

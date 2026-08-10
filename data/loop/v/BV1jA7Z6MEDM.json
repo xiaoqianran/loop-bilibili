@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1jA7Z6MEDM",
+  "title": "白菜价双卡 p40 ，跑大模型不如单V100？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1259,
+  "text": "大家好\n我是根骨\n昨天群里有小伙伴在问我\n他说呃我最近发现有个叫P40\n一个特斯拉的显卡\n它的显存有48G\n他看非常便宜\n才1700多块钱一张\n他问我\n到底用这张显卡能不能跑35B的大模型\n然后呢\n还有一个问题\n就是它说比这个V100的显卡是吧\nV100显卡大概是六七千块钱一张是吧\n那比这个显卡怎么样\n然后我先说结论啊\n千万不要去花钱去买这个P40的显卡\n你别看它的显存高\n但实际上它在这个和V100的比的话\n至少比它弱个4~5倍\n首先我们看数据啊\n为什么P40的显卡会比V100\n这个弱这么多啊\n第一的话它没有这个矩阵硬件加速\n这个就是叫tensor CORE\n那只能靠KA这个核心运算\n那V100的话\n它有640个这样一个tensor color是吧\n第二的话它的带宽只有380GB\n你像V100的话\n它有900个九百九百GB啊\n比它快了个三倍\n第三的话它基于的是PCIE这个3.0\n它它有单卡内部通信啊\n也就是说它可以不用去那个靠接口去通信\n零卡顿延时\n最后就是它的架构整体会落后\n这个V100至少是一个技术啊\n就是一个大的这个技术框架啊\n就是P40\n它是上一代的这个技术架构\n所以说它天然的不支持像OM这一框架啊是吧\n还有欧拉玛可能都不支持它\n只能够去支持那个拉马框架\n好\n这里我详细给大家讲一下为什么带宽如此重要\n因为很多带宽大家可能忽略的啊\n一般是看库打核心啊\n还有还有看他的那个是显存啊是吧\n然后这个带宽为什么会这么重要呢是吧\n因为大模型每推理生成一个token\nGPU需要读取模型权重一遍\n然后带宽就相当于它的高速公路\n它能够每秒钟给token的这个流输送多少水啊\n就是你可以看这个水管的这个大小\n就算它那个源头这个这个泵啊是吧\n这个哭打非常强\n但是他那个水管很细\n它也每秒的token数也会低\n大概就是这个情况\n这个P40这个这个太低了\n是340GB啊\nP那个V100是九百九百GB\n所以说这块的话天然就比他快个2.6倍啊\n第二的话就是他刚刚说了\n就是靠这个显存硬堆是没有用的\n他第一是要他的一个硬件矩阵计算\n这样一个是吧\n就最新的架构\n它推理框架需要去去支持\n那V100\n他通知所有的主流框架\n像像哈哈根face的那个大模型啊是吧\n呃这个这个tensor啊是吧\n欧拉玛呀是吧\nPTOUCH啊\n包括VRM啊是吧\n他都支持\n但是呢那个P版几乎都不支持\n所以说你可能买了这个东西\n它跑都跑不起来\n跑不跑都跑不起来\n就可能就只能用这个拉玛框架了\n所以说你看到他1000多块钱一一张新卡\n他也是有原因的是吧\n那是别别被他48G的显存给骗了好\n所以说所以说最后他致命的短板就就是啊\n就是卡在这个通信上\n和那个呃整体的这个推理框架落后\n和这个艰难的兼容性适配上啊\n并不是说他这个显存没有用\n但是显存这么高\n用来打游戏也不行\n因为他也不支持那个是吧\nDDLS是吧\n就是那个深度学习啊\n也不支持光追\n所以说你玩大型的3D游戏也没啥用\n所以说P40的话\n建议大家不要去选了\n不要去选好\n这堂课就分享到这里\n你学会了吗",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1jA7Z6MEDM",
+  "published_at": "1780547442",
+  "fetched_at": "2026-08-09T03:59:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# P40 与 V100 显卡对比知识图谱\n\n## 总览比较\n```mermaid\nflowchart LR\n    P40[\"P40 显卡\"]\n    V100[\"V100 显卡\"]\n    MemP40[\"显存 48GB\"]\n    MemV100[\"显存 未标明\"]\n    BandwidthP40[\"带宽 380 GB/s\"]\n    BandwidthV100[\"带宽 900 GB/s\"]\n    TensorCoreP40[\"无 Tensor Core\"]\n    TensorCoreV100[\"640 Tensor Core\"]\n    ArchOld[\"上一代架构\"]\n    ArchNew[\"新一代架构\"]\n    CommP40[\"PCIe 3.0，需外部接口\"]\n    CommV100[\"单卡内部通信，低延迟\"]\n    PerformanceDiff[\"性能约弱 4‑5 倍\"]\n    Recommendation[\"不推荐购买 P40\"]\n\n    P40 --> MemP40\n    V100 --> MemV100\n    P40 --> BandwidthP40\n    V100 --> BandwidthV100\n    P40 --> TensorCoreP40\n    V100 --> TensorCoreV100\n    P40 --> ArchOld\n    V100 --> ArchNew\n    P40 --> CommP40\n    V100 --> CommV100\n\n    BandwidthP40 --> PerformanceDiff\n    TensorCoreP40 --> PerformanceDiff\n    ArchOld --> PerformanceDiff\n    CommP40 --> PerformanceDiff\n\n    PerformanceDiff --> Recommendation\n```\n\n## 性能瓶颈因素\n```mermaid\nflowchart TD\n    LackTensorCore[\"缺少 Tensor Core\"]\n    LowBandwidth[\"带宽低 (380 GB/s)\"]\n    PCIeLimitation[\"PCIe 3.0，外部通信\"]\n    OldArch[\"旧架构\"]\n    InferenceSlow[\"推理性能弱 4‑5×\"]\n    TokenRateLow[\"每秒 token 生成数低\"]\n    MemorySizeIrrelevant[\"显存大但不提升性能\"]\n    Result[\"不适合大模型推理\"]\n\n    LackTensorCore --> InferenceSlow\n    LowBandwidth --> InferenceSlow\n    PCIeLimitation --> InferenceSlow\n    OldArch --> InferenceSlow\n    InferenceSlow --> TokenRateLow\n    TokenRateLow --> Result\n    MemorySizeIrrelevant --> Result\n```\n\n## 带宽对大模型推理的影响\n```mermaid\nflowchart LR\n    LargeModel[\"大模型推理\"]\n    WeightRead[\"读取模型权重\"]\n    Bandwidth[\"显卡带宽\"]\n    HighBandwidth[\"高带宽 (900 GB/s)\"]\n    LowBandwidth[\"低带宽 (380 GB/s)\"]\n    TokenGeneration[\"生成 token\"]\n    HighTokenRate[\"高 token 速率\"]\n    LowTokenRate[\"低 token 速率\"]\n    Performance[\"整体推理性能\"]\n    Diff[\"性能差 2.6×\"]\n\n    LargeModel --> WeightRead\n    WeightRead --> Bandwidth\n    Bandwidth --> TokenGeneration\n\n    HighBandwidth --> HighTokenRate\n    LowBandwidth --> LowTokenRate\n\n    HighTokenRate --> Performance\n    LowTokenRate --> Performance\n\n    LowTokenRate --> Diff\n    HighTokenRate --> Diff\n```\n\n## 框架兼容性与适用场景\n```mermaid\nflowchart LR\n    V100[\"V100\"]\n    P40[\"P40\"]\n    SupportedFrameworksV100[\"支持 TensorFlow、PyTorch、LLaMA 等\"]\n    SupportedFrameworksP40[\"仅支持 LLaMA（拉马）\"]\n    InferenceCapabilityV100[\"可跑主流大模型\"]\n    InferenceCapabilityP40[\"受限，可能跑不起来\"]\n    GamingSuitabilityV100[\"可用于游戏（光追）\"]\n    GamingSuitabilityP40[\"不支持光追，游戏性能差\"]\n    Recommendation[\"避免选购 P40\"]\n\n    V100 --> SupportedFrameworksV100\n    SupportedFrameworksV100 --> InferenceCapabilityV100\n    V100 --> GamingSuitabilityV100\n\n    P40 --> SupportedFrameworksP40\n    SupportedFrameworksP40 --> InferenceCapabilityP40\n    P40 --> GamingSuitabilityP40\n\n    InferenceCapabilityP40 --> Recommendation\n    GamingSuitabilityP40 --> Recommendation\n```",
+      "diagrams": [
+        {
+          "title": "总览比较",
+          "code": "flowchart LR\n    P40[\"P40 显卡\"]\n    V100[\"V100 显卡\"]\n    MemP40[\"显存 48GB\"]\n    MemV100[\"显存 未标明\"]\n    BandwidthP40[\"带宽 380 GB/s\"]\n    BandwidthV100[\"带宽 900 GB/s\"]\n    TensorCoreP40[\"无 Tensor Core\"]\n    TensorCoreV100[\"640 Tensor Core\"]\n    ArchOld[\"上一代架构\"]\n    ArchNew[\"新一代架构\"]\n    CommP40[\"PCIe 3.0，需外部接口\"]\n    CommV100[\"单卡内部通信，低延迟\"]\n    PerformanceDiff[\"性能约弱 4‑5 倍\"]\n    Recommendation[\"不推荐购买 P40\"]\n\n    P40 --> MemP40\n    V100 --> MemV100\n    P40 --> BandwidthP40\n    V100 --> BandwidthV100\n    P40 --> TensorCoreP40\n    V100 --> TensorCoreV100\n    P40 --> ArchOld\n    V100 --> ArchNew\n    P40 --> CommP40\n    V100 --> CommV100\n\n    BandwidthP40 --> PerformanceDiff\n    TensorCoreP40 --> PerformanceDiff\n    ArchOld --> PerformanceDiff\n    CommP40 --> PerformanceDiff\n\n    PerformanceDiff --> Recommendation"
+        },
+        {
+          "title": "性能瓶颈因素",
+          "code": "flowchart TD\n    LackTensorCore[\"缺少 Tensor Core\"]\n    LowBandwidth[\"带宽低 (380 GB/s)\"]\n    PCIeLimitation[\"PCIe 3.0，外部通信\"]\n    OldArch[\"旧架构\"]\n    InferenceSlow[\"推理性能弱 4‑5×\"]\n    TokenRateLow[\"每秒 token 生成数低\"]\n    MemorySizeIrrelevant[\"显存大但不提升性能\"]\n    Result[\"不适合大模型推理\"]\n\n    LackTensorCore --> InferenceSlow\n    LowBandwidth --> InferenceSlow\n    PCIeLimitation --> InferenceSlow\n    OldArch --> InferenceSlow\n    InferenceSlow --> TokenRateLow\n    TokenRateLow --> Result\n    MemorySizeIrrelevant --> Result"
+        },
+        {
+          "title": "带宽对大模型推理的影响",
+          "code": "flowchart LR\n    LargeModel[\"大模型推理\"]\n    WeightRead[\"读取模型权重\"]\n    Bandwidth[\"显卡带宽\"]\n    HighBandwidth[\"高带宽 (900 GB/s)\"]\n    LowBandwidth[\"低带宽 (380 GB/s)\"]\n    TokenGeneration[\"生成 token\"]\n    HighTokenRate[\"高 token 速率\"]\n    LowTokenRate[\"低 token 速率\"]\n    Performance[\"整体推理性能\"]\n    Diff[\"性能差 2.6×\"]\n\n    LargeModel --> WeightRead\n    WeightRead --> Bandwidth\n    Bandwidth --> TokenGeneration\n\n    HighBandwidth --> HighTokenRate\n    LowBandwidth --> LowTokenRate\n\n    HighTokenRate --> Performance\n    LowTokenRate --> Performance\n\n    LowTokenRate --> Diff\n    HighTokenRate --> Diff"
+        },
+        {
+          "title": "框架兼容性与适用场景",
+          "code": "flowchart LR\n    V100[\"V100\"]\n    P40[\"P40\"]\n    SupportedFrameworksV100[\"支持 TensorFlow、PyTorch、LLaMA 等\"]\n    SupportedFrameworksP40[\"仅支持 LLaMA（拉马）\"]\n    InferenceCapabilityV100[\"可跑主流大模型\"]\n    InferenceCapabilityP40[\"受限，可能跑不起来\"]\n    GamingSuitabilityV100[\"可用于游戏（光追）\"]\n    GamingSuitabilityP40[\"不支持光追，游戏性能差\"]\n    Recommendation[\"避免选购 P40\"]\n\n    V100 --> SupportedFrameworksV100\n    SupportedFrameworksV100 --> InferenceCapabilityV100\n    V100 --> GamingSuitabilityV100\n\n    P40 --> SupportedFrameworksP40\n    SupportedFrameworksP40 --> InferenceCapabilityP40\n    P40 --> GamingSuitabilityP40\n\n    InferenceCapabilityP40 --> Recommendation\n    GamingSuitabilityP40 --> Recommendation"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T04:00:11+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# P40 与 V100 显卡对比知识图谱\n\n## 总览比较\n```mermaid\nflowchart LR\n    P40[\"P40 显卡\"]\n    V100[\"V100 显卡\"]\n    MemP40[\"显存 48GB\"]\n    MemV100[\"显存 未标明\"]\n    BandwidthP40[\"带宽 380 GB/s\"]\n    BandwidthV100[\"带宽 900 GB/s\"]\n    TensorCoreP40[\"无 Tensor Core\"]\n    TensorCoreV100[\"640 Tensor Core\"]\n    ArchOld[\"上一代架构\"]\n    ArchNew[\"新一代架构\"]\n    CommP40[\"PCIe 3.0，需外部接口\"]\n    CommV100[\"单卡内部通信，低延迟\"]\n    PerformanceDiff[\"性能约弱 4‑5 倍\"]\n    Recommendation[\"不推荐购买 P40\"]\n\n    P40 --> MemP40\n    V100 --> MemV100\n    P40 --> BandwidthP40\n    V100 --> BandwidthV100\n    P40 --> TensorCoreP40\n    V100 --> TensorCoreV100\n    P40 --> ArchOld\n    V100 --> ArchNew\n    P40 --> CommP40\n    V100 --> CommV100\n\n    BandwidthP40 --> PerformanceDiff\n    TensorCoreP40 --> PerformanceDiff\n    ArchOld --> PerformanceDiff\n    CommP40 --> PerformanceDiff\n\n    PerformanceDiff --> Recommendation\n```\n\n## 性能瓶颈因素\n```mermaid\nflowchart TD\n    LackTensorCore[\"缺少 Tensor Core\"]\n    LowBandwidth[\"带宽低 (380 GB/s)\"]\n    PCIeLimitation[\"PCIe 3.0，外部通信\"]\n    OldArch[\"旧架构\"]\n    InferenceSlow[\"推理性能弱 4‑5×\"]\n    TokenRateLow[\"每秒 token 生成数低\"]\n    MemorySizeIrrelevant[\"显存大但不提升性能\"]\n    Result[\"不适合大模型推理\"]\n\n    LackTensorCore --> InferenceSlow\n    LowBandwidth --> InferenceSlow\n    PCIeLimitation --> InferenceSlow\n    OldArch --> InferenceSlow\n    InferenceSlow --> TokenRateLow\n    TokenRateLow --> Result\n    MemorySizeIrrelevant --> Result\n```\n\n## 带宽对大模型推理的影响\n```mermaid\nflowchart LR\n    LargeModel[\"大模型推理\"]\n    WeightRead[\"读取模型权重\"]\n    Bandwidth[\"显卡带宽\"]\n    HighBandwidth[\"高带宽 (900 GB/s)\"]\n    LowBandwidth[\"低带宽 (380 GB/s)\"]\n    TokenGeneration[\"生成 token\"]\n    HighTokenRate[\"高 token 速率\"]\n    LowTokenRate[\"低 token 速率\"]\n    Performance[\"整体推理性能\"]\n    Diff[\"性能差 2.6×\"]\n\n    LargeModel --> WeightRead\n    WeightRead --> Bandwidth\n    Bandwidth --> TokenGeneration\n\n    HighBandwidth --> HighTokenRate\n    LowBandwidth --> LowTokenRate\n\n    HighTokenRate --> Performance\n    LowTokenRate --> Performance\n\n    LowTokenRate --> Diff\n    HighTokenRate --> Diff\n```\n\n## 框架兼容性与适用场景\n```mermaid\nflowchart LR\n    V100[\"V100\"]\n    P40[\"P40\"]\n    SupportedFrameworksV100[\"支持 TensorFlow、PyTorch、LLaMA 等\"]\n    SupportedFrameworksP40[\"仅支持 LLaMA（拉马）\"]\n    InferenceCapabilityV100[\"可跑主流大模型\"]\n    InferenceCapabilityP40[\"受限，可能跑不起来\"]\n    GamingSuitabilityV100[\"可用于游戏（光追）\"]\n    GamingSuitabilityP40[\"不支持光追，游戏性能差\"]\n    Recommendation[\"避免选购 P40\"]\n\n    V100 --> SupportedFrameworksV100\n    SupportedFrameworksV100 --> InferenceCapabilityV100\n    V100 --> GamingSuitabilityV100\n\n    P40 --> SupportedFrameworksP40\n    SupportedFrameworksP40 --> InferenceCapabilityP40\n    P40 --> GamingSuitabilityP40\n\n    InferenceCapabilityP40 --> Recommendation\n    GamingSuitabilityP40 --> Recommendation\n```",
+  "diagrams": [
+    {
+      "title": "总览比较",
+      "code": "flowchart LR\n    P40[\"P40 显卡\"]\n    V100[\"V100 显卡\"]\n    MemP40[\"显存 48GB\"]\n    MemV100[\"显存 未标明\"]\n    BandwidthP40[\"带宽 380 GB/s\"]\n    BandwidthV100[\"带宽 900 GB/s\"]\n    TensorCoreP40[\"无 Tensor Core\"]\n    TensorCoreV100[\"640 Tensor Core\"]\n    ArchOld[\"上一代架构\"]\n    ArchNew[\"新一代架构\"]\n    CommP40[\"PCIe 3.0，需外部接口\"]\n    CommV100[\"单卡内部通信，低延迟\"]\n    PerformanceDiff[\"性能约弱 4‑5 倍\"]\n    Recommendation[\"不推荐购买 P40\"]\n\n    P40 --> MemP40\n    V100 --> MemV100\n    P40 --> BandwidthP40\n    V100 --> BandwidthV100\n    P40 --> TensorCoreP40\n    V100 --> TensorCoreV100\n    P40 --> ArchOld\n    V100 --> ArchNew\n    P40 --> CommP40\n    V100 --> CommV100\n\n    BandwidthP40 --> PerformanceDiff\n    TensorCoreP40 --> PerformanceDiff\n    ArchOld --> PerformanceDiff\n    CommP40 --> PerformanceDiff\n\n    PerformanceDiff --> Recommendation"
+    },
+    {
+      "title": "性能瓶颈因素",
+      "code": "flowchart TD\n    LackTensorCore[\"缺少 Tensor Core\"]\n    LowBandwidth[\"带宽低 (380 GB/s)\"]\n    PCIeLimitation[\"PCIe 3.0，外部通信\"]\n    OldArch[\"旧架构\"]\n    InferenceSlow[\"推理性能弱 4‑5×\"]\n    TokenRateLow[\"每秒 token 生成数低\"]\n    MemorySizeIrrelevant[\"显存大但不提升性能\"]\n    Result[\"不适合大模型推理\"]\n\n    LackTensorCore --> InferenceSlow\n    LowBandwidth --> InferenceSlow\n    PCIeLimitation --> InferenceSlow\n    OldArch --> InferenceSlow\n    InferenceSlow --> TokenRateLow\n    TokenRateLow --> Result\n    MemorySizeIrrelevant --> Result"
+    },
+    {
+      "title": "带宽对大模型推理的影响",
+      "code": "flowchart LR\n    LargeModel[\"大模型推理\"]\n    WeightRead[\"读取模型权重\"]\n    Bandwidth[\"显卡带宽\"]\n    HighBandwidth[\"高带宽 (900 GB/s)\"]\n    LowBandwidth[\"低带宽 (380 GB/s)\"]\n    TokenGeneration[\"生成 token\"]\n    HighTokenRate[\"高 token 速率\"]\n    LowTokenRate[\"低 token 速率\"]\n    Performance[\"整体推理性能\"]\n    Diff[\"性能差 2.6×\"]\n\n    LargeModel --> WeightRead\n    WeightRead --> Bandwidth\n    Bandwidth --> TokenGeneration\n\n    HighBandwidth --> HighTokenRate\n    LowBandwidth --> LowTokenRate\n\n    HighTokenRate --> Performance\n    LowTokenRate --> Performance\n\n    LowTokenRate --> Diff\n    HighTokenRate --> Diff"
+    },
+    {
+      "title": "框架兼容性与适用场景",
+      "code": "flowchart LR\n    V100[\"V100\"]\n    P40[\"P40\"]\n    SupportedFrameworksV100[\"支持 TensorFlow、PyTorch、LLaMA 等\"]\n    SupportedFrameworksP40[\"仅支持 LLaMA（拉马）\"]\n    InferenceCapabilityV100[\"可跑主流大模型\"]\n    InferenceCapabilityP40[\"受限，可能跑不起来\"]\n    GamingSuitabilityV100[\"可用于游戏（光追）\"]\n    GamingSuitabilityP40[\"不支持光追，游戏性能差\"]\n    Recommendation[\"避免选购 P40\"]\n\n    V100 --> SupportedFrameworksV100\n    SupportedFrameworksV100 --> InferenceCapabilityV100\n    V100 --> GamingSuitabilityV100\n\n    P40 --> SupportedFrameworksP40\n    SupportedFrameworksP40 --> InferenceCapabilityP40\n    P40 --> GamingSuitabilityP40\n\n    InferenceCapabilityP40 --> Recommendation\n    GamingSuitabilityP40 --> Recommendation"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T04:00:11+00:00"
+}

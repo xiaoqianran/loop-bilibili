@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1MTun6aENf",
+  "title": "【DeepSeek V4 Flash教程】2分钟接入Codex！打造低成本AI编程助手（Windows/macOS通用）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 904,
+  "text": "Hello\n大家好\n我是比泰的内容运KIKI\n今天给大家分享如何2分钟把deep sk接入codex\n低成本打造自己的AI助手\n第一步做好配置前的准备\n先确认电脑里已经安装cod x\n安装完成后\n至少启动一次\n让系统自动生成需要的配置文件\n然后完全退出codex\nwindows用户可以打开任务管理器\n检查codex相关进程是否已经全部关闭\n避免后面修改配置时没有生效\n第二步\n申请deep sea API p\n打开DEPC开放平台\n注册并登录账号\n进入控制台后\n先确认账户中有可用余额\n因为API会按照实际用量收费\n接着打开API key页面\n点击创建API key\nkey生成后要立即复制并保存在安全的位置\n因为关闭页面后可能无法再次查看完整内容\n这里一定要注意APIKE相当于你的账号密码\n不要再录屏截图或公开项目中展示\n也不要上传到代码仓库\n如果不小心泄露\n请立刻在控制台删除就批\n然后重新创建\n第三步\n把deep seek接入codex\n打开deep seek官方提供的codex接入文档\n官方提供了自动脚本和手动修改配置两种方式\n为了减少出错\n这里推荐直接运行官方脚本\n根据自己的电脑系统复制对应命令\nMac os和LINUX用户打开终端运行windows用户打开POWERSHELL\n运行粘贴命令后\n按下回车脚本会自动进入模型选择界面\n在模型列表中选择deep sk v4flash\n选择模型后\n根据提示粘贴刚才创建的APIKE\n输入时要注意录屏和屏幕共享\n不要暴露完整key页面显示insulation complete\n就说明新的配置已经写入完成\n第四步重新启动并验证模型\n现在重新打开codex\n第一次启动时\n界面通常会显示当前模型名称\n部分版本后续可能显示为自定义\n一般不影响使用\n我们可以直接输入\n帮我确认一下现在使用的是哪个模型\n如果返回结果显示deep seek v4flash\n就说明接入成功\n如果以后想切换回OpenAI官方模型\n也可以按照官方文档运行\n恢复默认配置的脚本\n在终端粘贴命令后\n选择模型时选择三即可\n想看更多AI工具和web coding实操教程\n记得关注小师妹",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1MTun6aENf",
+  "published_at": "1786008176",
+  "fetched_at": "2026-08-09T12:25:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 接入 Codex 流程图谱\n\n## 总体流程概览\n```mermaid\nflowchart TD\n    A1[\"开始\"] --> A2[\"安装 Codex\"]\n    A2 --> A3[\"确保已启动一次并生成配置文件\"]\n    A3 --> A4[\"完全退出 Codex 并关闭相关进程\"]\n    A4 --> A5[\"获取 DeepSeek API Key\"]\n    A5 --> A6[\"运行官方接入脚本\"]\n    A6 --> A7[\"模型选择界面\"]\n    A7 --> A8[\"选择 DeepSeek V4 Flash\"]\n    A8 --> A9[\"粘贴 API Key\"]\n    A9 --> A10[\"配置写入完成\"]\n    A10 --> A11[\"重新启动 Codex\"]\n    A11 --> A12[\"查询当前模型\"]\n    A12 --> A13[\"若显示 DeepSeek V4 Flash → 接入成功\"]\n    A12 --> A14[\"若需切换回 OpenAI 官方模型 → 运行恢复脚本\"]\n```\n\n## 配置准备步骤\n```mermaid\nflowchart TD\n    B1[\"确认已安装 Codex\"] --> B2[\"启动 Codex 至少一次\"]\n    B2 --> B3[\"系统自动生成配置文件\"]\n    B3 --> B4[\"完全退出 Codex\"]\n    B4 --> B5[\"打开任务管理器（Windows）\"]\n    B5 --> B6[\"检查并结束所有 Codex 相关进程\"]\n    B6 --> B7[\"确保无残留进程，防止后续配置修改失效\"]\n```\n\n## 获取与管理 API Key\n```mermaid\nflowchart TD\n    C1[\"打开 DeepSeek 开放平台\"] --> C2[\"注册并登录账号\"]\n    C2 --> C3[\"进入控制台\"]\n    C3 --> C4[\"确认账户有可用余额\"]\n    C4 --> C5[\"打开 API Key 页面\"]\n    C5 --> C6[\"点击创建 API Key\"]\n    C6 --> C7[\"复制并安全保存 Key\"]\n    C7 --> C8[\"避免录屏、截图或公开展示\"]\n    C8 --> C9[\"不要上传至代码仓库\"]\n    C9 --> C10[\"若泄露 → 在控制台删除并重新创建\"]\n```\n\n## 脚本接入与模型验证\n```mermaid\nflowchart TD\n    D1[\"打开 DeepSeek 官方 Codex 接入文档\"] --> D2[\"选择运行官方脚本\"]\n    D2 --> D3[\"根据操作系统复制对应命令\"]\n    D3 --> D4[\"在终端/PowerShell 粘贴并回车\"]\n    D4 --> D5[\"进入模型选择界面\"]\n    D5 --> D6[\"选择 DeepSeek V4 Flash\"]\n    D6 --> D7[\"粘贴已复制的 API Key\"]\n    D7 --> D8[\"完成配置写入（显示 'installation complete'）\"]\n    D8 --> D9[\"重新打开 Codex\"]\n    D9 --> D10[\"输入查询当前模型的指令\"]\n    D10 --> D11[\"返回结果显示 DeepSeek V4 Flash → 接入成功\"]\n    D11 --> D12[\"如需切换回 OpenAI 官方模型 → 运行恢复默认配置脚本\"]\n```",
+      "diagrams": [
+        {
+          "title": "总体流程概览",
+          "code": "flowchart TD\n    A1[\"开始\"] --> A2[\"安装 Codex\"]\n    A2 --> A3[\"确保已启动一次并生成配置文件\"]\n    A3 --> A4[\"完全退出 Codex 并关闭相关进程\"]\n    A4 --> A5[\"获取 DeepSeek API Key\"]\n    A5 --> A6[\"运行官方接入脚本\"]\n    A6 --> A7[\"模型选择界面\"]\n    A7 --> A8[\"选择 DeepSeek V4 Flash\"]\n    A8 --> A9[\"粘贴 API Key\"]\n    A9 --> A10[\"配置写入完成\"]\n    A10 --> A11[\"重新启动 Codex\"]\n    A11 --> A12[\"查询当前模型\"]\n    A12 --> A13[\"若显示 DeepSeek V4 Flash → 接入成功\"]\n    A12 --> A14[\"若需切换回 OpenAI 官方模型 → 运行恢复脚本\"]"
+        },
+        {
+          "title": "配置准备步骤",
+          "code": "flowchart TD\n    B1[\"确认已安装 Codex\"] --> B2[\"启动 Codex 至少一次\"]\n    B2 --> B3[\"系统自动生成配置文件\"]\n    B3 --> B4[\"完全退出 Codex\"]\n    B4 --> B5[\"打开任务管理器（Windows）\"]\n    B5 --> B6[\"检查并结束所有 Codex 相关进程\"]\n    B6 --> B7[\"确保无残留进程，防止后续配置修改失效\"]"
+        },
+        {
+          "title": "获取与管理 API Key",
+          "code": "flowchart TD\n    C1[\"打开 DeepSeek 开放平台\"] --> C2[\"注册并登录账号\"]\n    C2 --> C3[\"进入控制台\"]\n    C3 --> C4[\"确认账户有可用余额\"]\n    C4 --> C5[\"打开 API Key 页面\"]\n    C5 --> C6[\"点击创建 API Key\"]\n    C6 --> C7[\"复制并安全保存 Key\"]\n    C7 --> C8[\"避免录屏、截图或公开展示\"]\n    C8 --> C9[\"不要上传至代码仓库\"]\n    C9 --> C10[\"若泄露 → 在控制台删除并重新创建\"]"
+        },
+        {
+          "title": "脚本接入与模型验证",
+          "code": "flowchart TD\n    D1[\"打开 DeepSeek 官方 Codex 接入文档\"] --> D2[\"选择运行官方脚本\"]\n    D2 --> D3[\"根据操作系统复制对应命令\"]\n    D3 --> D4[\"在终端/PowerShell 粘贴并回车\"]\n    D4 --> D5[\"进入模型选择界面\"]\n    D5 --> D6[\"选择 DeepSeek V4 Flash\"]\n    D6 --> D7[\"粘贴已复制的 API Key\"]\n    D7 --> D8[\"完成配置写入（显示 'installation complete'）\"]\n    D8 --> D9[\"重新打开 Codex\"]\n    D9 --> D10[\"输入查询当前模型的指令\"]\n    D10 --> D11[\"返回结果显示 DeepSeek V4 Flash → 接入成功\"]\n    D11 --> D12[\"如需切换回 OpenAI 官方模型 → 运行恢复默认配置脚本\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T12:26:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 接入 Codex 流程图谱\n\n## 总体流程概览\n```mermaid\nflowchart TD\n    A1[\"开始\"] --> A2[\"安装 Codex\"]\n    A2 --> A3[\"确保已启动一次并生成配置文件\"]\n    A3 --> A4[\"完全退出 Codex 并关闭相关进程\"]\n    A4 --> A5[\"获取 DeepSeek API Key\"]\n    A5 --> A6[\"运行官方接入脚本\"]\n    A6 --> A7[\"模型选择界面\"]\n    A7 --> A8[\"选择 DeepSeek V4 Flash\"]\n    A8 --> A9[\"粘贴 API Key\"]\n    A9 --> A10[\"配置写入完成\"]\n    A10 --> A11[\"重新启动 Codex\"]\n    A11 --> A12[\"查询当前模型\"]\n    A12 --> A13[\"若显示 DeepSeek V4 Flash → 接入成功\"]\n    A12 --> A14[\"若需切换回 OpenAI 官方模型 → 运行恢复脚本\"]\n```\n\n## 配置准备步骤\n```mermaid\nflowchart TD\n    B1[\"确认已安装 Codex\"] --> B2[\"启动 Codex 至少一次\"]\n    B2 --> B3[\"系统自动生成配置文件\"]\n    B3 --> B4[\"完全退出 Codex\"]\n    B4 --> B5[\"打开任务管理器（Windows）\"]\n    B5 --> B6[\"检查并结束所有 Codex 相关进程\"]\n    B6 --> B7[\"确保无残留进程，防止后续配置修改失效\"]\n```\n\n## 获取与管理 API Key\n```mermaid\nflowchart TD\n    C1[\"打开 DeepSeek 开放平台\"] --> C2[\"注册并登录账号\"]\n    C2 --> C3[\"进入控制台\"]\n    C3 --> C4[\"确认账户有可用余额\"]\n    C4 --> C5[\"打开 API Key 页面\"]\n    C5 --> C6[\"点击创建 API Key\"]\n    C6 --> C7[\"复制并安全保存 Key\"]\n    C7 --> C8[\"避免录屏、截图或公开展示\"]\n    C8 --> C9[\"不要上传至代码仓库\"]\n    C9 --> C10[\"若泄露 → 在控制台删除并重新创建\"]\n```\n\n## 脚本接入与模型验证\n```mermaid\nflowchart TD\n    D1[\"打开 DeepSeek 官方 Codex 接入文档\"] --> D2[\"选择运行官方脚本\"]\n    D2 --> D3[\"根据操作系统复制对应命令\"]\n    D3 --> D4[\"在终端/PowerShell 粘贴并回车\"]\n    D4 --> D5[\"进入模型选择界面\"]\n    D5 --> D6[\"选择 DeepSeek V4 Flash\"]\n    D6 --> D7[\"粘贴已复制的 API Key\"]\n    D7 --> D8[\"完成配置写入（显示 'installation complete'）\"]\n    D8 --> D9[\"重新打开 Codex\"]\n    D9 --> D10[\"输入查询当前模型的指令\"]\n    D10 --> D11[\"返回结果显示 DeepSeek V4 Flash → 接入成功\"]\n    D11 --> D12[\"如需切换回 OpenAI 官方模型 → 运行恢复默认配置脚本\"]\n```",
+  "diagrams": [
+    {
+      "title": "总体流程概览",
+      "code": "flowchart TD\n    A1[\"开始\"] --> A2[\"安装 Codex\"]\n    A2 --> A3[\"确保已启动一次并生成配置文件\"]\n    A3 --> A4[\"完全退出 Codex 并关闭相关进程\"]\n    A4 --> A5[\"获取 DeepSeek API Key\"]\n    A5 --> A6[\"运行官方接入脚本\"]\n    A6 --> A7[\"模型选择界面\"]\n    A7 --> A8[\"选择 DeepSeek V4 Flash\"]\n    A8 --> A9[\"粘贴 API Key\"]\n    A9 --> A10[\"配置写入完成\"]\n    A10 --> A11[\"重新启动 Codex\"]\n    A11 --> A12[\"查询当前模型\"]\n    A12 --> A13[\"若显示 DeepSeek V4 Flash → 接入成功\"]\n    A12 --> A14[\"若需切换回 OpenAI 官方模型 → 运行恢复脚本\"]"
+    },
+    {
+      "title": "配置准备步骤",
+      "code": "flowchart TD\n    B1[\"确认已安装 Codex\"] --> B2[\"启动 Codex 至少一次\"]\n    B2 --> B3[\"系统自动生成配置文件\"]\n    B3 --> B4[\"完全退出 Codex\"]\n    B4 --> B5[\"打开任务管理器（Windows）\"]\n    B5 --> B6[\"检查并结束所有 Codex 相关进程\"]\n    B6 --> B7[\"确保无残留进程，防止后续配置修改失效\"]"
+    },
+    {
+      "title": "获取与管理 API Key",
+      "code": "flowchart TD\n    C1[\"打开 DeepSeek 开放平台\"] --> C2[\"注册并登录账号\"]\n    C2 --> C3[\"进入控制台\"]\n    C3 --> C4[\"确认账户有可用余额\"]\n    C4 --> C5[\"打开 API Key 页面\"]\n    C5 --> C6[\"点击创建 API Key\"]\n    C6 --> C7[\"复制并安全保存 Key\"]\n    C7 --> C8[\"避免录屏、截图或公开展示\"]\n    C8 --> C9[\"不要上传至代码仓库\"]\n    C9 --> C10[\"若泄露 → 在控制台删除并重新创建\"]"
+    },
+    {
+      "title": "脚本接入与模型验证",
+      "code": "flowchart TD\n    D1[\"打开 DeepSeek 官方 Codex 接入文档\"] --> D2[\"选择运行官方脚本\"]\n    D2 --> D3[\"根据操作系统复制对应命令\"]\n    D3 --> D4[\"在终端/PowerShell 粘贴并回车\"]\n    D4 --> D5[\"进入模型选择界面\"]\n    D5 --> D6[\"选择 DeepSeek V4 Flash\"]\n    D6 --> D7[\"粘贴已复制的 API Key\"]\n    D7 --> D8[\"完成配置写入（显示 'installation complete'）\"]\n    D8 --> D9[\"重新打开 Codex\"]\n    D9 --> D10[\"输入查询当前模型的指令\"]\n    D10 --> D11[\"返回结果显示 DeepSeek V4 Flash → 接入成功\"]\n    D11 --> D12[\"如需切换回 OpenAI 官方模型 → 运行恢复默认配置脚本\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T12:26:00+00:00"
+}

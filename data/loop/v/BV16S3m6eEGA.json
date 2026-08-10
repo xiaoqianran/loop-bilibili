@@ -1,0 +1,82 @@
+{
+  "bvid": "BV16S3m6eEGA",
+  "title": "DeepSeek为什么能把KV Cache压得这么小？从GQA到MLA",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4060,
+  "text": "上一期我们讲到AI每生成一个新的token\n都要把历史token对应的key和value保存下来\n这些被保存的结果就是kv cash上下文越长\n需要保存的key和value越多\n当上下文达到几10万甚至100万个token时\nkv cash就可能占用非常大的显存\n但deep sick公布过一个非常夸张的数据\n在deep sick VR的技术报告中\n相比上一代deep seek67\n比他的kv cash减少了93.3%\n最大生成吞吐量提升到了5.76倍\n到了DPCK3\n这套架构仍然被继续使用\n它的名字叫做m la\n也就是multi hate latent attention\n多头潜在注意力\n那么deep sick到底做了什么\n为什么同样需要处理历史信息\n它保存的kv cash却可以小这么多\n要看懂MLA\n我们需要先从普通的多头注意力开始\n假设一个模型有八个注意力头\n你可以把它们理解成八个观察问题的不同视角\n有的注意力头可能更关注人物关系\n有的更关注时间顺序\n有的更关注数字\n还有的更关注语法结构\n在普通的多头注意力\n也就是MHA中\n每个注意力头通常都有自己的一套query\nkey和value\n也就是说\n八个query头对应八组key以及八组value模型\n每处理一个历史token\n都要在每一层中保存这八组key和value\n如果只有几十个token\n这可能没有什么\n但如果上下文中有10万个token\n就需要保存10万份\n如果上下文达到1000000token\n就需要保存接近100万份\n而且这还只是模型中的一层\n大型模型可能有几十层\n每一层都需要保存自己的历史key和value\n最终kv cash就会变得非常庞大\n那能不能少保存几组key和value\n可以一种比较激进的方法叫做MQA\n也就是multi query attention\n普通MHA中\n每个query头都有自己独立的key和value\n而MQA让所有query头共享同一组key和value\n还是八个query头\n但不再保存八组key和value\n而是只保存一组\n在这个简化例子中\nkv cash就可以从八份缩小到一份\n而且每次生成新token时\n需要读取的历史key和value也变小了\n推理速度可以明显提高\n不过这种共享也可能太激进\n原来八个注意力头各自拥有不同的key和value\n可以从不同角度组织和读取历史信息\n现在所有query头都只能使用同一套\nkey和value模型的表达能力可能因此受到影响\n所以人们又提出了一种折中方案\nGQA也就是grouped query attention\n他不让每个query头都拥有独立的key和value\n也不让所有query头全部挤在同一组key和value上\n而是把query头分成几个小组\n例如还是八个query头\n我们可以把他们分成两组\n前四个query头共享第一组key和value\n后四个query头共享第二组key和value\n这样模型只需要保存两组key和value\n比普通MHA的八组小得多\n但又比MQA只保留一组\n拥有更多的表达空间\n所以GQA可以理解成\nMHA和MQA之间的一种折中\nGQA论文将它定义为实用\n比query头少\n但又不只有一组的KV头\n让一组QUI投共享一组key和value\n论文实验中GQA取得了接近MHA的质量\n同时拥有接近MQA的推理速度\n现在我们已经有了三种结构\nMHA8个query头保存八组key和value\nGQA8个query头可能只保存两组key和value\nMQA8个query头只保存一组key和value\n从MHA变成GQA或者MQA\n本质上是在做一件事\n减少需要保存的KV头数量\n原来要保存八份\n现在只保存两份或者一份kv cash自然会缩小\n但deep seek的ma思路又向前走了一步\n他问的不是我们应该保存几组完整的key和value\n而是我们真的有必要把这些完整展开的key和value\n全部保存下来吗\n假设一个token进入注意力层以后\n原本会生成多组完整的key和value\n普通MHA会直接把这些结果全部放进KV\ncash g q a和MQA则会减小key和value的组数\n但无论保存八组\n两组还是一组\n本质上仍然是在保存展开后的key和value mla\n换了一种方法\n他先把当前token中与key和value有关的信息\n压缩成一个维度更低的潜在向量\n这个潜在向量可以理解成一份体积更小的压缩\n表示模型不再把所有注意力头展开后\n等完整key和value全部保存下来\n而是主要保存这个经过压缩的潜在向量\n等到后面需要进行注意力计算时\n再通过相应的投影把它转换成各个注意力头\n需要使用的信息\n或者以数学上等价的方式直接参与计算\nDPCC的技术报告\n将m la的核心描述为\n对key和value进行低质联合压缩\n并在推理时缓存压缩后的潜在表示\n我们可以把它想象成一套设计图\n普通MHA的做法是\n每生产一件产品就提前制作八套完整零件\n并把八套零件全部放进仓库\nGQA是指提前保存两套零件\nMQA是指保存一套零件\n而m la不是简单减少零件套数\n它保存的是一份更加紧凑的设计模板\n等到某个注意力头真正需要使用时\n再通过对应的加工方式得到他需要的信息\n所以从GQA到MLA\n变化的不只是保存多少组key和value\n更重要的是缓存中保存的东西本身发生了变化\nGQA和MQA主要是在减少KV投的数量\nM2A则是把原本庞大的key和value信息\n联合压缩进一个更小的潜在空间\n这就是latent这个词的来源\nlatent表示潜在的压缩的内部\n表示模型不直接保存所有完整展开的结果\n而是保存一份更紧凑\n但仍然能够支持后续计算的信息\n不过这里还有一个麻烦\n我们在前面的视频中讲过\n注意力机制还需要位置信息\ndeep sick使用了rope\n也就是旋转位置编码\nrope会根据token所在的位置\n对query和key进行旋转\n这意味着T中不仅包含偷看的内容信息\n还混合了位置信息\n如果直接把所有key压缩到一个低维向量里\n位置旋转就可能和压缩过程纠缠在一起\n后面想要高效复用压缩结果就会变得困难\n所以m la又做了一层处理\n他把key中负责内容匹配的部分\n和负责roll p位置编码的部分进行拆分\n内容相关的key和value可以进行低质联合压缩\n位置相关的key\n则使用一个更小的独立部分进行保存\n最终缓存中主要保留的是压缩后的KV\n潜在向量\n再加上一小部分与位置有关的key信息\nDBCKV3技术报告中的MLA结构\n也明确\n把压缩后的KV前\n在向量和应用rope的位置key分开处理\n所以m la并不是简单\n把完整kv cash塞进一个压缩包\n他需要重新设计注意力计算过程\n哪些信息可以压缩\n哪些投影可以合并哪些位置\n相关的信息必须单独保存\n模型在训练时就需要适应这套结构\n这样在推理过程中\n它才能只缓存紧凑的潜在表示\n而不是保存全部展开后的key和value\n现在我们再把几种方案放到一起\n普通MHA\n每个query头都有自己独立的key和value\n优点是每个注意力头拥有较大的独立表达空间\n缺点是kv cash最大\nMQA所有query投共享同一组key和value\nkv cash最小读取效率很高\n但共享程度很大\n模型能力可能面临更明显的取舍\nGQA8query头分组\n每组共享一套key和value\n它在缓存大小\n推理速度和模型能力之间寻找平衡\n而MLA不只是让注意力投共享key和value\n他把多个注意力头需要的KV信息\n先压缩成一个低为前\n再表示缓存中主要保存这份压缩表示\n以及少量位置相关信息\n需要进行注意力计算时\n再通过投影使用这些信息\n所以可以用两句话概括它们之间的区别\n从MHA到MQA和GQA是在减少\n需要保存多少组key和value\n从GQA到MLA\n则是在改变kv cash到底保存什么\n一个是减少副本数量\n另一个是压缩信息本身\n这也是为什么\nma可以在保留多头注意力能力的同时\n把kv cash压的非常小\n根据deep sk v2公布的对比结果\nMLA帮助它相较deep sick67B\n将kv cash减少了93.3%\n同时最大生成吞吐量提升到5.76倍\n这并不意味着所有模型使用MLA后\n都一定会得到完全相同的数字\n这个结果来自deep seek VR\n与其指定对焦模型之间的比较\n但它至少说明对于掌上下文大模型来说\n改变kv cash的表示方式\n可能带来非常巨大的推理效率提升\n而deep sk v3继续采用MLA\n也是因为\n这套结构已经在deep sk v2中得到了验证\n因此deep sick能够把kv cash压的这么小\n不是因为他不再需要历史信息\n也不是因为他把大量历史token直接删除了\n他做的事不再保存所有完整展开的key和value\n而是把历史token中的KV信息\n压缩成更加紧凑的潜在表示\n在需要时再让不同注意力投从这份表示中\n获得自己需要的信息\n最终整个过程可以概括成一条路线\nMHA每个query头保存自己的key和value\nMQA所有query头共享一组key和value\nGQA1组query头共享一组key和value\nma把key和value联合压缩\n主要缓存低为潜在表示\n所以MIA真正厉害的地方\n不只是少保存几组KV\n而是他重新回答了一个更根本的问题\n模型为了记住历史到底必须保存多少信息\n不过DEPC它有另一个经常被提到的特点\nDEPCT三一共有6710一个参数\n但每处理一个token时\n实际只激活其中大约370亿个参数\n剩下的几千亿参数并不会全部同时参与\n这一次计算\n他是怎么做到的\n这就要讲到DPC可的另一项核心架构\nMore\n也就是混合专家模型\n为什么一个拥有6710亿参数的模型\n每次只需要使用其中一小部分\n这就是下一期要讲的问题",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16S3m6eEGA",
+  "published_at": "1785595582",
+  "fetched_at": "2026-08-07T12:41:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek KV Cache 压缩演进图谱\n\n## 总览：KV 缓存演进路线\n```mermaid\nflowchart LR\n    MHA[\"多头注意力 (MHA)\"] -->|减少 KV 组数| MQA[\"多查询注意力 (MQA)\"]\n    MHA -->|折中方案| GQA[\"分组查询注意力 (GQA)\"]\n    GQA -->|压缩 KV 信息| MLA[\"多潜在注意力 (MLA)\"]\n    MQA -->|极端共享| KV_Reduce1[\"KV 组数 1\"]\n    GQA -->|分组共享| KV_Reduce2[\"KV 组数 2\"]\n    MLA -->|低秩联合压缩| KV_Compress[\"KV 信息压缩\"]\n    KV_Reduce1 --> Cache_Small[\"缓存更小\"]\n    KV_Reduce2 --> Cache_Medium[\"缓存中等\"]\n    KV_Compress --> Cache_Small\n    Cache_Small --> Speed_Up[\"推理速度提升\"]\n    Cache_Medium --> Speed_Mod[\"适度提升\"]\n    Speed_Up --> Quality_High[\"保持质量\"]\n    Speed_Mod --> Quality_Mid[\"略有质量折衷\"]\n```\n\n## 多头注意力 (MHA) 的 KV 结构\n```mermaid\nflowchart TD\n    Layer[\"模型层\"] --> Queries[\"8 个 Query 头\"]\n    Queries --> KV_Groups[\"8 组 Key/Value\"]\n    KV_Groups --> Cache_Large[\"KV 缓存体积大\"]\n    KV_Groups --> Expressiveness[\"表达能力强\"]\n    Cache_Large --> Memory_High[\"显存占用高\"]\n    Expressiveness --> Quality_High[\"质量最佳\"]\n    Memory_High --> Speed_Low[\"推理速度受限\"]\n```\n\n## MQA 与 GQA 的折中方案\n```mermaid\nflowchart TD\n    MQA[\"多查询注意力 (MQA)\"] --> Shared_KV[\"所有 Query 共享 1 组 KV\"]\n    GQA[\"分组查询注意力 (GQA)\"] --> Grouped_KV[\"查询分组共享 KV\"]\n    Shared_KV --> Cache_Min[\"缓存最小\"]\n    Grouped_KV --> Cache_Med[\"缓存中等\"]\n    Cache_Min --> Speed_Max[\"推理速度最高\"]\n    Cache_Med --> Speed_Med[\"推理速度适中\"]\n    Speed_Max --> Expr_Low[\"表达能力受限\"]\n    Speed_Med --> Expr_Med[\"表达能力折中\"]\n```\n\n## MLA 的低秩联合压缩机制\n```mermaid\nflowchart LR\n    Token[\"输入 Token\"] --> FullKV[\"完整 KV (内容 + 位置)\"]\n    FullKV --> Split[\"拆分 KV\"]\n    Split --> ContentKV[\"内容相关 KV\"]\n    Split --> PosKV[\"位置相关 KV\"]\n    ContentKV --> Compress[\"低秩联合压缩\"]\n    Compress --> Latent[\"潜在向量 (压缩后)\"]\n    PosKV --> Pos_Small[\"小尺寸位置 KV\"]\n    Latent --> Cache[\"缓存：潜在向量 + 小位置 KV\"]\n    Pos_Small --> Cache\n    Cache --> Projection[\"按 Head 投影恢复 KV\"]\n    Projection --> Attention[\"注意力计算\"]\n    Attention --> Output[\"输出结果\"]\n```\n\n## DeepSeek V2 (MLA) 的效果对比\n```mermaid\nflowchart TD\n    V1[\"DeepSeek V1 (MHA)\"] --> BaselineKV[\"KV 缓存基准\"]\n    V2[\"DeepSeek V2 (MLA)\"] --> MLA_KV[\"压缩后 KV\"]\n    BaselineKV --> KV_Large[\"缓存大\"]\n    MLA_KV --> KV_Small[\"缓存缩小 93.3%\"]\n    KV_Large --> Throughput1[\"吞吐量基准\"]\n    KV_Small --> Throughput2[\"吞吐量提升 5.76×\"]\n    Throughput1 --> Perf1[\"推理效率低\"]\n    Throughput2 --> Perf2[\"推理效率高\"]\n    Perf2 --> Quality[\"保持多头注意力质量\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览：KV 缓存演进路线",
+          "code": "flowchart LR\n    MHA[\"多头注意力 (MHA)\"] -->|减少 KV 组数| MQA[\"多查询注意力 (MQA)\"]\n    MHA -->|折中方案| GQA[\"分组查询注意力 (GQA)\"]\n    GQA -->|压缩 KV 信息| MLA[\"多潜在注意力 (MLA)\"]\n    MQA -->|极端共享| KV_Reduce1[\"KV 组数 1\"]\n    GQA -->|分组共享| KV_Reduce2[\"KV 组数 2\"]\n    MLA -->|低秩联合压缩| KV_Compress[\"KV 信息压缩\"]\n    KV_Reduce1 --> Cache_Small[\"缓存更小\"]\n    KV_Reduce2 --> Cache_Medium[\"缓存中等\"]\n    KV_Compress --> Cache_Small\n    Cache_Small --> Speed_Up[\"推理速度提升\"]\n    Cache_Medium --> Speed_Mod[\"适度提升\"]\n    Speed_Up --> Quality_High[\"保持质量\"]\n    Speed_Mod --> Quality_Mid[\"略有质量折衷\"]"
+        },
+        {
+          "title": "多头注意力 (MHA) 的 KV 结构",
+          "code": "flowchart TD\n    Layer[\"模型层\"] --> Queries[\"8 个 Query 头\"]\n    Queries --> KV_Groups[\"8 组 Key/Value\"]\n    KV_Groups --> Cache_Large[\"KV 缓存体积大\"]\n    KV_Groups --> Expressiveness[\"表达能力强\"]\n    Cache_Large --> Memory_High[\"显存占用高\"]\n    Expressiveness --> Quality_High[\"质量最佳\"]\n    Memory_High --> Speed_Low[\"推理速度受限\"]"
+        },
+        {
+          "title": "MQA 与 GQA 的折中方案",
+          "code": "flowchart TD\n    MQA[\"多查询注意力 (MQA)\"] --> Shared_KV[\"所有 Query 共享 1 组 KV\"]\n    GQA[\"分组查询注意力 (GQA)\"] --> Grouped_KV[\"查询分组共享 KV\"]\n    Shared_KV --> Cache_Min[\"缓存最小\"]\n    Grouped_KV --> Cache_Med[\"缓存中等\"]\n    Cache_Min --> Speed_Max[\"推理速度最高\"]\n    Cache_Med --> Speed_Med[\"推理速度适中\"]\n    Speed_Max --> Expr_Low[\"表达能力受限\"]\n    Speed_Med --> Expr_Med[\"表达能力折中\"]"
+        },
+        {
+          "title": "MLA 的低秩联合压缩机制",
+          "code": "flowchart LR\n    Token[\"输入 Token\"] --> FullKV[\"完整 KV (内容 + 位置)\"]\n    FullKV --> Split[\"拆分 KV\"]\n    Split --> ContentKV[\"内容相关 KV\"]\n    Split --> PosKV[\"位置相关 KV\"]\n    ContentKV --> Compress[\"低秩联合压缩\"]\n    Compress --> Latent[\"潜在向量 (压缩后)\"]\n    PosKV --> Pos_Small[\"小尺寸位置 KV\"]\n    Latent --> Cache[\"缓存：潜在向量 + 小位置 KV\"]\n    Pos_Small --> Cache\n    Cache --> Projection[\"按 Head 投影恢复 KV\"]\n    Projection --> Attention[\"注意力计算\"]\n    Attention --> Output[\"输出结果\"]"
+        },
+        {
+          "title": "DeepSeek V2 (MLA) 的效果对比",
+          "code": "flowchart TD\n    V1[\"DeepSeek V1 (MHA)\"] --> BaselineKV[\"KV 缓存基准\"]\n    V2[\"DeepSeek V2 (MLA)\"] --> MLA_KV[\"压缩后 KV\"]\n    BaselineKV --> KV_Large[\"缓存大\"]\n    MLA_KV --> KV_Small[\"缓存缩小 93.3%\"]\n    KV_Large --> Throughput1[\"吞吐量基准\"]\n    KV_Small --> Throughput2[\"吞吐量提升 5.76×\"]\n    Throughput1 --> Perf1[\"推理效率低\"]\n    Throughput2 --> Perf2[\"推理效率高\"]\n    Perf2 --> Quality[\"保持多头注意力质量\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T12:41:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek KV Cache 压缩演进图谱\n\n## 总览：KV 缓存演进路线\n```mermaid\nflowchart LR\n    MHA[\"多头注意力 (MHA)\"] -->|减少 KV 组数| MQA[\"多查询注意力 (MQA)\"]\n    MHA -->|折中方案| GQA[\"分组查询注意力 (GQA)\"]\n    GQA -->|压缩 KV 信息| MLA[\"多潜在注意力 (MLA)\"]\n    MQA -->|极端共享| KV_Reduce1[\"KV 组数 1\"]\n    GQA -->|分组共享| KV_Reduce2[\"KV 组数 2\"]\n    MLA -->|低秩联合压缩| KV_Compress[\"KV 信息压缩\"]\n    KV_Reduce1 --> Cache_Small[\"缓存更小\"]\n    KV_Reduce2 --> Cache_Medium[\"缓存中等\"]\n    KV_Compress --> Cache_Small\n    Cache_Small --> Speed_Up[\"推理速度提升\"]\n    Cache_Medium --> Speed_Mod[\"适度提升\"]\n    Speed_Up --> Quality_High[\"保持质量\"]\n    Speed_Mod --> Quality_Mid[\"略有质量折衷\"]\n```\n\n## 多头注意力 (MHA) 的 KV 结构\n```mermaid\nflowchart TD\n    Layer[\"模型层\"] --> Queries[\"8 个 Query 头\"]\n    Queries --> KV_Groups[\"8 组 Key/Value\"]\n    KV_Groups --> Cache_Large[\"KV 缓存体积大\"]\n    KV_Groups --> Expressiveness[\"表达能力强\"]\n    Cache_Large --> Memory_High[\"显存占用高\"]\n    Expressiveness --> Quality_High[\"质量最佳\"]\n    Memory_High --> Speed_Low[\"推理速度受限\"]\n```\n\n## MQA 与 GQA 的折中方案\n```mermaid\nflowchart TD\n    MQA[\"多查询注意力 (MQA)\"] --> Shared_KV[\"所有 Query 共享 1 组 KV\"]\n    GQA[\"分组查询注意力 (GQA)\"] --> Grouped_KV[\"查询分组共享 KV\"]\n    Shared_KV --> Cache_Min[\"缓存最小\"]\n    Grouped_KV --> Cache_Med[\"缓存中等\"]\n    Cache_Min --> Speed_Max[\"推理速度最高\"]\n    Cache_Med --> Speed_Med[\"推理速度适中\"]\n    Speed_Max --> Expr_Low[\"表达能力受限\"]\n    Speed_Med --> Expr_Med[\"表达能力折中\"]\n```\n\n## MLA 的低秩联合压缩机制\n```mermaid\nflowchart LR\n    Token[\"输入 Token\"] --> FullKV[\"完整 KV (内容 + 位置)\"]\n    FullKV --> Split[\"拆分 KV\"]\n    Split --> ContentKV[\"内容相关 KV\"]\n    Split --> PosKV[\"位置相关 KV\"]\n    ContentKV --> Compress[\"低秩联合压缩\"]\n    Compress --> Latent[\"潜在向量 (压缩后)\"]\n    PosKV --> Pos_Small[\"小尺寸位置 KV\"]\n    Latent --> Cache[\"缓存：潜在向量 + 小位置 KV\"]\n    Pos_Small --> Cache\n    Cache --> Projection[\"按 Head 投影恢复 KV\"]\n    Projection --> Attention[\"注意力计算\"]\n    Attention --> Output[\"输出结果\"]\n```\n\n## DeepSeek V2 (MLA) 的效果对比\n```mermaid\nflowchart TD\n    V1[\"DeepSeek V1 (MHA)\"] --> BaselineKV[\"KV 缓存基准\"]\n    V2[\"DeepSeek V2 (MLA)\"] --> MLA_KV[\"压缩后 KV\"]\n    BaselineKV --> KV_Large[\"缓存大\"]\n    MLA_KV --> KV_Small[\"缓存缩小 93.3%\"]\n    KV_Large --> Throughput1[\"吞吐量基准\"]\n    KV_Small --> Throughput2[\"吞吐量提升 5.76×\"]\n    Throughput1 --> Perf1[\"推理效率低\"]\n    Throughput2 --> Perf2[\"推理效率高\"]\n    Perf2 --> Quality[\"保持多头注意力质量\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览：KV 缓存演进路线",
+      "code": "flowchart LR\n    MHA[\"多头注意力 (MHA)\"] -->|减少 KV 组数| MQA[\"多查询注意力 (MQA)\"]\n    MHA -->|折中方案| GQA[\"分组查询注意力 (GQA)\"]\n    GQA -->|压缩 KV 信息| MLA[\"多潜在注意力 (MLA)\"]\n    MQA -->|极端共享| KV_Reduce1[\"KV 组数 1\"]\n    GQA -->|分组共享| KV_Reduce2[\"KV 组数 2\"]\n    MLA -->|低秩联合压缩| KV_Compress[\"KV 信息压缩\"]\n    KV_Reduce1 --> Cache_Small[\"缓存更小\"]\n    KV_Reduce2 --> Cache_Medium[\"缓存中等\"]\n    KV_Compress --> Cache_Small\n    Cache_Small --> Speed_Up[\"推理速度提升\"]\n    Cache_Medium --> Speed_Mod[\"适度提升\"]\n    Speed_Up --> Quality_High[\"保持质量\"]\n    Speed_Mod --> Quality_Mid[\"略有质量折衷\"]"
+    },
+    {
+      "title": "多头注意力 (MHA) 的 KV 结构",
+      "code": "flowchart TD\n    Layer[\"模型层\"] --> Queries[\"8 个 Query 头\"]\n    Queries --> KV_Groups[\"8 组 Key/Value\"]\n    KV_Groups --> Cache_Large[\"KV 缓存体积大\"]\n    KV_Groups --> Expressiveness[\"表达能力强\"]\n    Cache_Large --> Memory_High[\"显存占用高\"]\n    Expressiveness --> Quality_High[\"质量最佳\"]\n    Memory_High --> Speed_Low[\"推理速度受限\"]"
+    },
+    {
+      "title": "MQA 与 GQA 的折中方案",
+      "code": "flowchart TD\n    MQA[\"多查询注意力 (MQA)\"] --> Shared_KV[\"所有 Query 共享 1 组 KV\"]\n    GQA[\"分组查询注意力 (GQA)\"] --> Grouped_KV[\"查询分组共享 KV\"]\n    Shared_KV --> Cache_Min[\"缓存最小\"]\n    Grouped_KV --> Cache_Med[\"缓存中等\"]\n    Cache_Min --> Speed_Max[\"推理速度最高\"]\n    Cache_Med --> Speed_Med[\"推理速度适中\"]\n    Speed_Max --> Expr_Low[\"表达能力受限\"]\n    Speed_Med --> Expr_Med[\"表达能力折中\"]"
+    },
+    {
+      "title": "MLA 的低秩联合压缩机制",
+      "code": "flowchart LR\n    Token[\"输入 Token\"] --> FullKV[\"完整 KV (内容 + 位置)\"]\n    FullKV --> Split[\"拆分 KV\"]\n    Split --> ContentKV[\"内容相关 KV\"]\n    Split --> PosKV[\"位置相关 KV\"]\n    ContentKV --> Compress[\"低秩联合压缩\"]\n    Compress --> Latent[\"潜在向量 (压缩后)\"]\n    PosKV --> Pos_Small[\"小尺寸位置 KV\"]\n    Latent --> Cache[\"缓存：潜在向量 + 小位置 KV\"]\n    Pos_Small --> Cache\n    Cache --> Projection[\"按 Head 投影恢复 KV\"]\n    Projection --> Attention[\"注意力计算\"]\n    Attention --> Output[\"输出结果\"]"
+    },
+    {
+      "title": "DeepSeek V2 (MLA) 的效果对比",
+      "code": "flowchart TD\n    V1[\"DeepSeek V1 (MHA)\"] --> BaselineKV[\"KV 缓存基准\"]\n    V2[\"DeepSeek V2 (MLA)\"] --> MLA_KV[\"压缩后 KV\"]\n    BaselineKV --> KV_Large[\"缓存大\"]\n    MLA_KV --> KV_Small[\"缓存缩小 93.3%\"]\n    KV_Large --> Throughput1[\"吞吐量基准\"]\n    KV_Small --> Throughput2[\"吞吐量提升 5.76×\"]\n    Throughput1 --> Perf1[\"推理效率低\"]\n    Throughput2 --> Perf2[\"推理效率高\"]\n    Perf2 --> Quality[\"保持多头注意力质量\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T12:41:48+00:00"
+}

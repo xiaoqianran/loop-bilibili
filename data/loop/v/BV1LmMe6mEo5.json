@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1LmMe6mEo5",
+  "title": "vLLM-Omni v0.24.0 震撼发布",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 648,
+  "text": "Feel lm omni版本零点二四点零已正式发布\n此次更新新增对更多新模型的支持并提升了现有模型的性能\nDream zero是一款联合预测动作与视频的世界模型\n在未见过的任务中实现了强大的零样本表现\n以下视频展示了机器人在三个摄像头视角场景中执行不同动作\n第一个场景：从桌面上拿起蓝色环并放入木制托盘\n第二个场景：从打开的抽屉中取出折叠物\n将物品移至右侧并放置在橱柜上\nThellm omni现在支持多种加速方法\n最新版本比原始仓库快269倍\nLingbot map是用于3D流重建的工具\n输入一系列图像作为数据源\n并重建场景的3D点云地图\n左侧为不同角度的输入图像\n右侧展示从多视角生成的3D点云地图\nVllmlomni现已支持Lingbot map的离线推理模式\n在线流式处理即将支持\nLLM Omni现支持Joy AI——一个开放的实时视频语言交互系统\n专为事件驱动场景设计，如实时翻译\n实时解说\n实时计数\n监控与告警\nHelios是实时长视频生成模型\n当前演示支持实时交互式生成\n用户输入提示生成视频\n生成过程中输入新提示\n视频内容实时平滑过渡\nCosmos三是一个多模态世界模型\n我们逐步优化完整生成流程\n表格报告各环节运行时间\n并与两项对比数据\n与前次优化的提升及原基线的累积提升\n最终配置使文本转图像提升4.22%\n零点二二百分比\n文本转视频提升88.0%\n图像转视频提升15.7\n六个百分点\n并提升视频转视频11.8\n六个百分点\n并提升视频转视频11.8\n六个百分点，较基线提升",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1LmMe6mEo5",
+  "published_at": "1783474965",
+  "fetched_at": "2026-08-09T06:39:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

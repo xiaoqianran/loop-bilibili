@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1Et5J6dEqD",
+  "title": "9分钟讲完Godot所有节点",
+  "status": "ok",
+  "language": "zh",
+  "chars": 3505,
+  "text": "各位观众，我们回来了。\nGodot 节点详解系列第三集。\n我还没疯，今天要讲完所有 2D 节点。\n一集搞定。\n拿点零食，跟我一起探索所有 2D 节点。\n今天用这个 tileset 和角色做演示。\n下载链接在简介里。\n如果要用，请支持原作者。\n我们开始吧。\nNode2D。\nNode2D 是所有 2D 节点的基类。\n它管理旋转、位置和缩放。\n今天要讲的节点都继承自 Node2D。\nCamera2D。它定义了场景的观察视角。\n很简单。包含旋转和位置参数，\n还能通过拖拽和平滑让镜头更舒服。\nAnimatedSprite2D 和 Sprite2D。它们\n用于在屏幕上渲染 2D 纹理。可以显示\n大图集的一部分。AnimatedSprite2D 内置了\n精灵表动画工具。\nCollisionObject2D。\n它不能单独使用，\n但作为所有碰撞物体的基类。它有碰撞层\n和启用开关等属性。\nPhysicsBody2D。\n它同样不能\n单独使用，是所有受物理影响的 2D 物体的基类。\nCollisionShape2D 和 CollisionPolygon2D。下面要讲的节点\n都需要碰撞形状。它必须是物理体的子节点，\n你可以在检查器里设置形状。\nStaticBody2D。\nStaticBody2D\n是不可移动的物理体。\n但其他物理体可以受它影响。\n它可以\n用作墙壁、地板或天花板。如果移动它，它不会\n推动其他物体，而是直接瞬移。AnimatableBody2D。\nAnimatableBody2D。\n它和 StaticBody2D 几乎一样，只是它可以\n移动。它仍不受重力影响，但如果你通过代码\n或动画移动它，\n它会推动挡路的其他物理体。\nRigidBody2D。\n它受重力和其它物理体影响。\n用于所有可移动、非玩家直接控制的\n物理物品。\nCharacterBody2D。\n它是专为玩家控制\n设计的物理体。内置了通过代码\n在物理模拟中精确控制移动的功能。\nJoin2D 不能单独使用，它是所有 2D 物理关节的基类。\n这些节点用于连接两个物理体，Godot 包含以下 2D\n关节。\nDampened Spring Joint2D。\n它像弹簧一样连接两个物理体，\n包含弹簧长度、刚度\n和阻尼参数。\nGroove Joint2D。\n名字有点让人困惑，但它\n像活塞一样连接两个物理体，只能沿一个\n运动轴伸缩。\n最后是 Pin Joint2D。\n它用于将两个物理体\n钉在一起。它们在一个点连接，可以自由旋转。\nArea2D。\nArea2D 有两种用途。\n一，检测碰撞对象\n是否进入或离开。\n二，拥有独立物理和音频设置的空间区域。\n你可以改变重力、风、音频通道，从而创建\n水下区域或零重力区域。\nAudioListener2D。\n默认相机是 2D 音频的监听点，但如果你想从其他\n位置收听，可以用这个节点设置监听点。\nAudioStreamPlayer2D。\n这是 Godot 的 2D 音频源。\n它可以从空间某点播放音频，包含所有常用音频设置。\n音量、音调、范围、衰减。\nCPUParticles2D 和 GPUParticles2D。\n这是 Godot 的 2D 粒子系统。\n可以构建很多有趣酷炫的粒子系统。\n参数非常多，这里无法详述，但我觉得粒子\n系统很直观。\n学习的好方法就是添加到场景中\n调整参数。\nTileMap。\nTileMap 节点很庞大，这里无法详述。\n它用于构建 2D 瓦片地图。\n是绘制瓦片地图和设置瓦片集的内置工具。\nGodot 还能为瓦片地图分配物理层和导航层。\n功能非常强大。\n我会在文档链接中提供更多教程。\n现在聊聊 Godot 的 2D 光照。\nCanvasModulate 节点。\n设置 2D 阴影需要它。\n它先让场景变暗，以便 2D 光源重新照亮。\nLight2D 节点。\n不能单独使用，是所有 2D 光源的基类。\n包含光色、能量和混合模式设置。\nPointLight2D。\n点光源用于从一个点照亮场景。\n但你需要给它一个纹理。\n这决定了光的外观。\n它并非中心一个点向四周发光，\n而是用这个纹理来照亮场景。\n那为何叫点光源，不叫纹理光源？\n因为它从中心投射阴影。\n光照用纹理，阴影投射则从点出发。\nDirectionalLight2D。\nDirectionalLight2D 用于一次性照亮整个场景。\n它模拟太阳或月亮，从一个角度照射，\n阴影不会像点光源那样随距离扭曲。\nLightOccluder2D。\nLightOccluder2D 是用于在场景中投射阴影的形状。\n你可以设置物体的形状，它就会据此\n在场景中投射阴影。\nLine2D。\nLine2D 节点顾名思义。\n通过向数组添加点来绘制 2D 线条。\n它有很多样式属性，比如宽度、渐变，\n以及线条拐角的圆角和渲染方式。\nMarker2D。Marker2D 是一个调试节点。它就是个 Node2D，只是在编辑器中显示位置和旋转。\n可用于标记不可见节点或空间中的点。\n空间中的点。\nMeshInstance2D。\nMeshInstance2D 节点用于在 2D 中渲染网格，也就是 3D 模型。\n它有渲染网格和材质的属性。\nMultiMeshInstance2D。\nMultiMeshInstance2D 可高效渲染大量网格。\n建议在大量网格密集时使用。\n比如一片草地。\nNavigationRegion2D、NavigationLink2D 和 NavigationObstacle2D。\n这些节点用于设置 2D 寻路。\n比 3D 寻路节点复杂些，因为需要手动设置导航区域。\n手动设置。\n而 3D 中有自动生成导航网格的工具。\n文档中有关于 2D 寻路设置的详细说明，链接在简介里。\nParallaxLayer 和 ParallaxBackground 节点。\nParallaxLayer 和 ParallaxBackground 用于在 2D 场景中设置视差滚动背景。\n设置视差滚动背景。\n任何 2D 图形都可以，只要它们是相应视差层的子节点。\n相应视差层的子节点。\nPath2D 和 PathFollow2D。\nPath2D 和 PathFollow2D 节点用于设置 2D 路径或曲线，\n然后用 PathFollow2D 节点将另一个节点绑定到该路径。\nPolygon2D。\nPolygon2D 节点允许你在 2D 中设置形状。\n你可以在此数组中添加多边形点，或者直接在编辑器中拖放。\n或者直接在编辑器中拖放。\nRaycast2D。\nRaycast2D 节点用于检测直线碰撞。\n它能报告是否命中、碰撞点和碰撞对象。\nShapecast2D。\nShapecast2D 与 Raycast2D 类似，但用形状\n检测碰撞。\nRaycast 发射无限细的线，而 Shapecast 发射形状，比如矩形\n或圆形。\nRemoteTransform2D。\nRemoteTransform2D 节点能将自身变换同步给另一节点。\n它相当于该节点的虚拟父级，但非实际层级父级。\n可设置是否影响位置、旋转、缩放或全部。\nSkeleton2D、Bone2D 和 PhysicalBone2D。\n这些节点用于搭建 2D 骨骼和骨骼动画。\n有第三方软件可制作骨骼，\n但 Godot 也支持在引擎内自建骨骼。\n构建和管理 2D 骨骼涉及很多内容。\n文档有详细说明。\n链接在简介。\nVisibleOnScreenNotifier2D 和 VisibleOnScreenEnabler2D。\n这些节点用于检测视觉元素是否在屏幕上。\nNotifier 在可见时发送信号，\nEnabler 在可见时自动启用自身。\nCanvasGroup。\nCanvasGroup 节点可将所有子节点合并为一次绘制调用。\n适合合并纹理，比如\n半透明瓶子及其内容。\n最后是 BackBufferCopy。\nBackBufferCopy 节点用于捕获屏幕区域，供\n着色器使用。\n可定义捕获区域，在着色器中通过\n`hint_screen_texture` 变量访问。\n好了，以上就是所有 2D 节点。\n有人可能注意到我漏了 TouchScreenButton。\n它会归入 UI 节点。\n下期视频讲所有 UI 和窗口节点。\n应该就全覆盖了。\n然后我会把它们整合成一个长视频。\n一个视频涵盖所有节点。\n感谢大家对本系列的支持。\n做起来很开心，听到你们的反馈也很开心。\n订阅以观看下期。\n下次见，拜拜。",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Et5J6dEqD",
+  "published_at": "1778428316",
+  "fetched_at": "2026-08-09T08:41:23+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "timeout after 180.0s",
+      "updated_at": "2026-08-09T09:03:53+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "timeout after 180.0s",
+  "analysis_updated_at": "2026-08-09T09:03:53+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1hTGu6CE73",
+  "title": "DeepSeek V4-Flash正式版API接入Codex，手把手教程！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1999,
+  "text": "Hello\n大家好\n这里是白话上位机\n那我们白话上位机给大家带来的教程是\ndeep sk v4正式版的API如何接入codex agent的工具\n就在昨天\n也就是2026年7月31号的时候呢\ndeep sk正式在官网发布了这样一个模型啊\nV4的正式版模型就叫做deep sk v4flash\n同时呢也在官网更新了这个\n如何把这个deep sic的API\n正式的介入codex agent工具啊\n所以说呢我们今天呢就以这个codex agent工具为例\n来给大家手把手的带大家来操作一下\n如何把这个deep sk v4的正式版的API\n接入codex agent的工具啊\n好了\n那么我们先来看第一步啊\n第一步就是首先我们需要在这个呃\n你这个windows系统的一个微软的商店里边\n搜索chat gbt或者是搜索codex\n注意啊\n我们扣这个codex呢跟chat gbt对吧\n你搜索起来只是名字不一样\n但是里面我们需要下载的程序\n都是这样一个程序啊\n注意啊\n下载这个ChatGPT好了\n我们这里先点击安装\n我们先来等它安装啊\n同时呢我们还需要再看另外一个\n因为呢我们是不是等会需要把这个deep sick的API\n给接入到这个codex agent特工具对吧\n所以说我们这里呢需要你需要\n如果没有充值过这个DEVSKAPI的话呢\n可以用这个微信或支付宝\n你现在充个十块钱\n20块钱来测试一下\n然后呢在你充值完之后呢\n它这里呢会显示一些DEBU呃\nseek的API keys信息啊\n那么我们这里呢等会儿会创建一个这个API key啊\n比如说我们这里先有一个test吧\ncodex好了\n我们这里呢等会儿等它安装完之后\n我们再来把这个deep sea API ke来复制一下好了\n先等它来安装一下\n可以看到它安装还需要一会儿是吧\n那么我们先来看一下这个官网的教程吧\n首先我们可以看到啊\n我们在这个运行这个呃一键脚本之前呢\n需要先确保你这个电脑端已经安装\n并且已经运行过这个ChatGPT\n至少运行过一次啊\n所以说我们等会需要在安装完之后\n我们先来打开这个ChatGPT好了\n他这个时候下载有点慢好了\n他现在已经下载完了对吧\n那么我们先来打开一下\n好了\n我们先等它来打开\n好了我们这我们这里呢可以看到啊\n这个我们在打开这个ChatGPT之后呢\n它出现了这样一个登录的界面对吧\n那么我们先不要管它\n我们这个时候呢\n按照这个教程就直接来执行脚本了\n那么我们首先是不是需要把这个来复制一下\n然后打开我们的power shell对吧\n好了\n然后呢以管理员身份来运行\n点击是直接把这个脚本给粘过来好了\n他这个时候是不是会提示我们来选择\n你是想要使用这个D这个deep sk\nV4flash的正式版的模型\n还是说要使用之前的V4pro的model对吧\n那我们可以选择一\n然后呢\n这个时候我们是不是要把这个刚才的\n我们这里是不是有一个这个deep seek API ke\n那么这里呢为了这个隐私啊\n因为这个地因为这个APIKE呢\n你尽量不要暴露给别人吧\n所以呢我们这里先好了\n我这个时候已经把我的APIKE给复制进来了\n好了\n这个时候我们可以看到它已经执行成功了对吧\n那么我们就来把它关掉\nOK那么关掉完之后呢\n我们这个时候呢就直接来进入这个ChatGPT\n好了\n我们刚才是不是也已经复制了一个API key\n那这个时候呢你可以把它给输入进来\n点击continue好了\n点击skip跳过\nOK这个时候把它关掉\n然后呢我们再来重启一遍\n再来重启一遍\n这个时候呢我们来选择一个model啊\n然后呢\n那么我们再把这个chat gp退出完之后\n再来重启一下\n注意啊\n你执行完脚本之后再来重启一下这个ChatGPT\n它就出现这样的一个情况了\n这已经是配置成功了对吧\n我们这里可以选择model是V4flash\n还是这个V4pro对吧\n我们这里比如说可以呃问一下\n比如说你给我写一个介绍\nDeep sect\nmarkdown文档\n我们看看能不能这个执行成功啊\n我们来测试一下\n好了\n这可以看到他这个时候已经在开始用了对吧\n在开始执行了\n好了\n那么我们就等吧\n等他把这个问题执行完吧\n我们来看一下效果\n因为呢从其实呢到这里为止呢\n我们其实已经按照这个教程呢\n把这个deep sk v4的正式版IPI已经接入codex了\n好了他稍微这个解答问题要稍微花一点时间\n好了他现在已经执行成功了\n那么我们稍微来打开这个markdown来看一下啊\n啊可以看到大致效果还行是吧\n那么这个呢就是我们呃\n今天这个所有这个教程的全部啦\n就是如何带大家来这个把deep sc v4版的正式API\n给接入codex的\n那么本期视频教程如果对你有帮助的话呢\n也可以多多支持一下我们白话三味记\n也欢迎大家在评论区讨论交流相关的技术啊\n那么我们下期视频再见\n谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hTGu6CE73",
+  "published_at": "1785559484",
+  "fetched_at": "2026-08-06T21:10:50+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4‑Flash API 接入 Codex Agent 流程图谱\n\n## 总体流程概览\n```mermaid\nflowchart TD\n    A1[\"安装 ChatGPT / Codex（Microsoft Store）\"]\n    A2[\"获取 DeepSeek API Key（充值 → 创建 Key）\"]\n    A3[\"打开 PowerShell（管理员）\"]\n    A4[\"执行一键脚本并粘贴 API Key\"]\n    A5[\"选择模型：V4Flash 或 V4Pro\"]\n    A6[\"重启 ChatGPT 使配置生效\"]\n    A7[\"测试：让模型生成 Markdown 文档\"]\n    A8[\"验证输出 → 完成接入\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n```\n\n## 环境准备\n```mermaid\nflowchart LR\n    B1[\"在 Windows Microsoft Store 搜索并安装 ChatGPT（或 Codex）\"]\n    B2[\"首次运行 ChatGPT，完成登录界面（可忽略）\"]\n    B3[\"确保已成功安装并运行一次\"]\n    B4[\"准备 PowerShell（以管理员身份）\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n```\n\n## API Key 获取与脚本配置\n```mermaid\nflowchart TD\n    C1[\"未拥有 DeepSeek API Key 时\"]\n    C2[\"使用微信/支付宝充值（10‑20 元）\"]\n    C3[\"在 DeepSeek 官网创建 API Key\"]\n    C4[\"复制生成的 API Key\"]\n    C5[\"打开 PowerShell（管理员）\"]\n    C6[\"粘贴脚本并粘贴 API Key\"]\n    C7[\"脚本执行成功提示\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7\n```\n\n## 模型选择、重启与功能测试\n```mermaid\nflowchart LR\n    D1[\"脚本运行后弹出模型选择\"]\n    D2[\"选择 V4Flash（正式版）或 V4Pro\"]\n    D3[\"确认选择后关闭脚本窗口\"]\n    D4[\"重启 ChatGPT 使配置生效\"]\n    D5[\"在 ChatGPT 中输入测试指令（如生成 DeepSeek 介绍的 Markdown）\"]\n    D6[\"观察模型输出，确认正常运行\"]\n\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6\n```",
+      "diagrams": [
+        {
+          "title": "总体流程概览",
+          "code": "flowchart TD\n    A1[\"安装 ChatGPT / Codex（Microsoft Store）\"]\n    A2[\"获取 DeepSeek API Key（充值 → 创建 Key）\"]\n    A3[\"打开 PowerShell（管理员）\"]\n    A4[\"执行一键脚本并粘贴 API Key\"]\n    A5[\"选择模型：V4Flash 或 V4Pro\"]\n    A6[\"重启 ChatGPT 使配置生效\"]\n    A7[\"测试：让模型生成 Markdown 文档\"]\n    A8[\"验证输出 → 完成接入\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8"
+        },
+        {
+          "title": "环境准备",
+          "code": "flowchart LR\n    B1[\"在 Windows Microsoft Store 搜索并安装 ChatGPT（或 Codex）\"]\n    B2[\"首次运行 ChatGPT，完成登录界面（可忽略）\"]\n    B3[\"确保已成功安装并运行一次\"]\n    B4[\"准备 PowerShell（以管理员身份）\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4"
+        },
+        {
+          "title": "API Key 获取与脚本配置",
+          "code": "flowchart TD\n    C1[\"未拥有 DeepSeek API Key 时\"]\n    C2[\"使用微信/支付宝充值（10‑20 元）\"]\n    C3[\"在 DeepSeek 官网创建 API Key\"]\n    C4[\"复制生成的 API Key\"]\n    C5[\"打开 PowerShell（管理员）\"]\n    C6[\"粘贴脚本并粘贴 API Key\"]\n    C7[\"脚本执行成功提示\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7"
+        },
+        {
+          "title": "模型选择、重启与功能测试",
+          "code": "flowchart LR\n    D1[\"脚本运行后弹出模型选择\"]\n    D2[\"选择 V4Flash（正式版）或 V4Pro\"]\n    D3[\"确认选择后关闭脚本窗口\"]\n    D4[\"重启 ChatGPT 使配置生效\"]\n    D5[\"在 ChatGPT 中输入测试指令（如生成 DeepSeek 介绍的 Markdown）\"]\n    D6[\"观察模型输出，确认正常运行\"]\n\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T21:10:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4‑Flash API 接入 Codex Agent 流程图谱\n\n## 总体流程概览\n```mermaid\nflowchart TD\n    A1[\"安装 ChatGPT / Codex（Microsoft Store）\"]\n    A2[\"获取 DeepSeek API Key（充值 → 创建 Key）\"]\n    A3[\"打开 PowerShell（管理员）\"]\n    A4[\"执行一键脚本并粘贴 API Key\"]\n    A5[\"选择模型：V4Flash 或 V4Pro\"]\n    A6[\"重启 ChatGPT 使配置生效\"]\n    A7[\"测试：让模型生成 Markdown 文档\"]\n    A8[\"验证输出 → 完成接入\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8\n```\n\n## 环境准备\n```mermaid\nflowchart LR\n    B1[\"在 Windows Microsoft Store 搜索并安装 ChatGPT（或 Codex）\"]\n    B2[\"首次运行 ChatGPT，完成登录界面（可忽略）\"]\n    B3[\"确保已成功安装并运行一次\"]\n    B4[\"准备 PowerShell（以管理员身份）\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n```\n\n## API Key 获取与脚本配置\n```mermaid\nflowchart TD\n    C1[\"未拥有 DeepSeek API Key 时\"]\n    C2[\"使用微信/支付宝充值（10‑20 元）\"]\n    C3[\"在 DeepSeek 官网创建 API Key\"]\n    C4[\"复制生成的 API Key\"]\n    C5[\"打开 PowerShell（管理员）\"]\n    C6[\"粘贴脚本并粘贴 API Key\"]\n    C7[\"脚本执行成功提示\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7\n```\n\n## 模型选择、重启与功能测试\n```mermaid\nflowchart LR\n    D1[\"脚本运行后弹出模型选择\"]\n    D2[\"选择 V4Flash（正式版）或 V4Pro\"]\n    D3[\"确认选择后关闭脚本窗口\"]\n    D4[\"重启 ChatGPT 使配置生效\"]\n    D5[\"在 ChatGPT 中输入测试指令（如生成 DeepSeek 介绍的 Markdown）\"]\n    D6[\"观察模型输出，确认正常运行\"]\n\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6\n```",
+  "diagrams": [
+    {
+      "title": "总体流程概览",
+      "code": "flowchart TD\n    A1[\"安装 ChatGPT / Codex（Microsoft Store）\"]\n    A2[\"获取 DeepSeek API Key（充值 → 创建 Key）\"]\n    A3[\"打开 PowerShell（管理员）\"]\n    A4[\"执行一键脚本并粘贴 API Key\"]\n    A5[\"选择模型：V4Flash 或 V4Pro\"]\n    A6[\"重启 ChatGPT 使配置生效\"]\n    A7[\"测试：让模型生成 Markdown 文档\"]\n    A8[\"验证输出 → 完成接入\"]\n\n    A1 --> A2\n    A2 --> A3\n    A3 --> A4\n    A4 --> A5\n    A5 --> A6\n    A6 --> A7\n    A7 --> A8"
+    },
+    {
+      "title": "环境准备",
+      "code": "flowchart LR\n    B1[\"在 Windows Microsoft Store 搜索并安装 ChatGPT（或 Codex）\"]\n    B2[\"首次运行 ChatGPT，完成登录界面（可忽略）\"]\n    B3[\"确保已成功安装并运行一次\"]\n    B4[\"准备 PowerShell（以管理员身份）\"]\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4"
+    },
+    {
+      "title": "API Key 获取与脚本配置",
+      "code": "flowchart TD\n    C1[\"未拥有 DeepSeek API Key 时\"]\n    C2[\"使用微信/支付宝充值（10‑20 元）\"]\n    C3[\"在 DeepSeek 官网创建 API Key\"]\n    C4[\"复制生成的 API Key\"]\n    C5[\"打开 PowerShell（管理员）\"]\n    C6[\"粘贴脚本并粘贴 API Key\"]\n    C7[\"脚本执行成功提示\"]\n\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7"
+    },
+    {
+      "title": "模型选择、重启与功能测试",
+      "code": "flowchart LR\n    D1[\"脚本运行后弹出模型选择\"]\n    D2[\"选择 V4Flash（正式版）或 V4Pro\"]\n    D3[\"确认选择后关闭脚本窗口\"]\n    D4[\"重启 ChatGPT 使配置生效\"]\n    D5[\"在 ChatGPT 中输入测试指令（如生成 DeepSeek 介绍的 Markdown）\"]\n    D6[\"观察模型输出，确认正常运行\"]\n\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:10:57+00:00"
+}

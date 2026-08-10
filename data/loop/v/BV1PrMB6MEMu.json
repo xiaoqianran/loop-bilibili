@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1PrMB6MEMu",
+  "title": "是的，deepseek崩了，天才程序员们可以去休息了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 150,
+  "text": "Db sic\n它崩了啊哈哈\n我这里怎么我这里他响应了半天也响应不了\n他就是崩了\n虽然他说他这里恢复了\n但是我这里还是不行\n这个open code他这里依然还是绷的状态\n我试着换其他模型啊\n比如用这个吧\n哦可以\n那说明是只是deep sick这一个模型崩了\n对deep sick他崩了\n现在依然没有恢复",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1PrMB6MEMu",
+  "published_at": "1785856798",
+  "fetched_at": "2026-08-07T05:21:09+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek 模型崩溃情境图谱\n\n## 模型状态总览  \n[BV1PrMB6MEMu P1 00:06], [BV1PrMB6MEMu P1 00:10], [BV1PrMB6MEMu P1 00:21]\n\n```mermaid\nflowchart TD\n    DS[\"DeepSeek 模型\"] --> Resp[\"响应异常\"]\n    Resp --> NotOK[\"不可用\"]\n    DS --> RecoverClaim[\"声称已恢复\"]\n    RecoverClaim --> NotOK\n    OC[\"Open Code\"] --> Stuck[\"状态绷住\"]\n    Other[\"其他模型\"] --> OK[\"正常响应\"]\n    OK --> DS_Crash[\"确认 DeepSeek 崩溃\"]\n    DS_Crash --> NotOK\n```\n\n## 故障诊断流程  \n[BV1PrMB6MEMu P1 00:02], [BV1PrMB6MEMu P1 00:15], [BV1PrMB6MEMu P1 00:20]\n\n```mermaid\nflowchart LR\n    Start[\"检测响应延迟\"] --> Check[\"响应成功？\"]\n    Check -->|否| TryOther[\"切换至其他模型\"]\n    TryOther --> OtherOK[\"其他模型响应正常\"]\n    OtherOK --> Confirm[\"确认特定模型崩溃\"]\n    Confirm --> DS_Crash[\"DeepSeek 崩溃\"]\n    Check -->|是| End[\"系统正常\"]\n```\n\n## 应对措施与决策  \n[BV1PrMB6MEMu P1 00:15], [BV1PrMB6MEMu P1 00:21]\n\n```mermaid\nflowchart TD\n    Issue[\"DeepSeek 崩溃\"] --> Action1[\"使用其他模型\"]\n    Action1 --> Continue[\"继续业务\"]\n    Issue --> Action2[\"监控恢复状态\"]\n    Action2 --> Wait[\"等待恢复\"]\n    Wait -->|恢复| Resume[\"恢复 DeepSeek 使用\"]\n    Wait -->|仍未恢复| Escalate[\"考虑替代方案\"]\n```",
+      "diagrams": [
+        {
+          "title": "模型状态总览",
+          "code": "flowchart TD\n    DS[\"DeepSeek 模型\"] --> Resp[\"响应异常\"]\n    Resp --> NotOK[\"不可用\"]\n    DS --> RecoverClaim[\"声称已恢复\"]\n    RecoverClaim --> NotOK\n    OC[\"Open Code\"] --> Stuck[\"状态绷住\"]\n    Other[\"其他模型\"] --> OK[\"正常响应\"]\n    OK --> DS_Crash[\"确认 DeepSeek 崩溃\"]\n    DS_Crash --> NotOK"
+        },
+        {
+          "title": "故障诊断流程",
+          "code": "flowchart LR\n    Start[\"检测响应延迟\"] --> Check[\"响应成功？\"]\n    Check -->|否| TryOther[\"切换至其他模型\"]\n    TryOther --> OtherOK[\"其他模型响应正常\"]\n    OtherOK --> Confirm[\"确认特定模型崩溃\"]\n    Confirm --> DS_Crash[\"DeepSeek 崩溃\"]\n    Check -->|是| End[\"系统正常\"]"
+        },
+        {
+          "title": "应对措施与决策",
+          "code": "flowchart TD\n    Issue[\"DeepSeek 崩溃\"] --> Action1[\"使用其他模型\"]\n    Action1 --> Continue[\"继续业务\"]\n    Issue --> Action2[\"监控恢复状态\"]\n    Action2 --> Wait[\"等待恢复\"]\n    Wait -->|恢复| Resume[\"恢复 DeepSeek 使用\"]\n    Wait -->|仍未恢复| Escalate[\"考虑替代方案\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T05:21:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek 模型崩溃情境图谱\n\n## 模型状态总览  \n[BV1PrMB6MEMu P1 00:06], [BV1PrMB6MEMu P1 00:10], [BV1PrMB6MEMu P1 00:21]\n\n```mermaid\nflowchart TD\n    DS[\"DeepSeek 模型\"] --> Resp[\"响应异常\"]\n    Resp --> NotOK[\"不可用\"]\n    DS --> RecoverClaim[\"声称已恢复\"]\n    RecoverClaim --> NotOK\n    OC[\"Open Code\"] --> Stuck[\"状态绷住\"]\n    Other[\"其他模型\"] --> OK[\"正常响应\"]\n    OK --> DS_Crash[\"确认 DeepSeek 崩溃\"]\n    DS_Crash --> NotOK\n```\n\n## 故障诊断流程  \n[BV1PrMB6MEMu P1 00:02], [BV1PrMB6MEMu P1 00:15], [BV1PrMB6MEMu P1 00:20]\n\n```mermaid\nflowchart LR\n    Start[\"检测响应延迟\"] --> Check[\"响应成功？\"]\n    Check -->|否| TryOther[\"切换至其他模型\"]\n    TryOther --> OtherOK[\"其他模型响应正常\"]\n    OtherOK --> Confirm[\"确认特定模型崩溃\"]\n    Confirm --> DS_Crash[\"DeepSeek 崩溃\"]\n    Check -->|是| End[\"系统正常\"]\n```\n\n## 应对措施与决策  \n[BV1PrMB6MEMu P1 00:15], [BV1PrMB6MEMu P1 00:21]\n\n```mermaid\nflowchart TD\n    Issue[\"DeepSeek 崩溃\"] --> Action1[\"使用其他模型\"]\n    Action1 --> Continue[\"继续业务\"]\n    Issue --> Action2[\"监控恢复状态\"]\n    Action2 --> Wait[\"等待恢复\"]\n    Wait -->|恢复| Resume[\"恢复 DeepSeek 使用\"]\n    Wait -->|仍未恢复| Escalate[\"考虑替代方案\"]\n```",
+  "diagrams": [
+    {
+      "title": "模型状态总览",
+      "code": "flowchart TD\n    DS[\"DeepSeek 模型\"] --> Resp[\"响应异常\"]\n    Resp --> NotOK[\"不可用\"]\n    DS --> RecoverClaim[\"声称已恢复\"]\n    RecoverClaim --> NotOK\n    OC[\"Open Code\"] --> Stuck[\"状态绷住\"]\n    Other[\"其他模型\"] --> OK[\"正常响应\"]\n    OK --> DS_Crash[\"确认 DeepSeek 崩溃\"]\n    DS_Crash --> NotOK"
+    },
+    {
+      "title": "故障诊断流程",
+      "code": "flowchart LR\n    Start[\"检测响应延迟\"] --> Check[\"响应成功？\"]\n    Check -->|否| TryOther[\"切换至其他模型\"]\n    TryOther --> OtherOK[\"其他模型响应正常\"]\n    OtherOK --> Confirm[\"确认特定模型崩溃\"]\n    Confirm --> DS_Crash[\"DeepSeek 崩溃\"]\n    Check -->|是| End[\"系统正常\"]"
+    },
+    {
+      "title": "应对措施与决策",
+      "code": "flowchart TD\n    Issue[\"DeepSeek 崩溃\"] --> Action1[\"使用其他模型\"]\n    Action1 --> Continue[\"继续业务\"]\n    Issue --> Action2[\"监控恢复状态\"]\n    Action2 --> Wait[\"等待恢复\"]\n    Wait -->|恢复| Resume[\"恢复 DeepSeek 使用\"]\n    Wait -->|仍未恢复| Escalate[\"考虑替代方案\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:21:24+00:00"
+}

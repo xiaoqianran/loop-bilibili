@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1Fv3j6CEeb",
+  "title": "godot mcp新版本cli工具安装、使用演示",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 209,
+  "text": "启用MCP插件后\n打开插件页面\nC r y tools\n点击应用\nDocker lea\n会自动从GITHUB下载对应版本的颗粒工具\n到项目根目录\nJDM非P\n如果下载失败\n选择夸克网盘\n手动下载并解压到对应目录下\n点击opens gay and gay pib\n下载配套scale文件发给AI\n让他给自己安装\n我这里使用的是call duck\n所以会安装到CODK目录下\n打开CODK验证下是否可以调用\n后面是案例演示",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Fv3j6CEeb",
+  "published_at": "1785045356",
+  "fetched_at": "2026-08-09T09:13:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot MCP CLI 工具安装与使用概览\n\n## 安装流程总览\n<!-- [BV1Fv3j6CEeb P1 00:00] -->\n```mermaid\nflowchart TD\n    A1[\"启用 MCP 插件\"] --> A2[\"打开插件页面\"]\n    A2 --> A3[\"点击 Cry tools\"]\n    A3 --> A4[\"点击应用\"]\n    A4 --> A5[\"Docker 自动从 GitHub 下载对应版本的颗粒工具\"]\n    A5 --> A6[\"下载至项目根目录\"]\n    A6 --> A7[\"打开 CODK 验证是否可调用\"]\n    A7 --> A8[\"案例演示\"]\n```\n\n## 失败处理与手动安装\n<!-- [BV1Fv3j6CEeb P1 00:14] -->\n```mermaid\nflowchart TD\n    B1[\"下载失败\"] --> B2[\"选择夸克网盘\"]\n    B2 --> B3[\"手动下载并解压至对应目录\"]\n    B3 --> B4[\"打开 CODK 验证安装\"]\n    B4 --> B5[\"完成安装，可继续使用\"]\n```",
+      "diagrams": [
+        {
+          "title": "安装流程总览",
+          "code": "flowchart TD\n    A1[\"启用 MCP 插件\"] --> A2[\"打开插件页面\"]\n    A2 --> A3[\"点击 Cry tools\"]\n    A3 --> A4[\"点击应用\"]\n    A4 --> A5[\"Docker 自动从 GitHub 下载对应版本的颗粒工具\"]\n    A5 --> A6[\"下载至项目根目录\"]\n    A6 --> A7[\"打开 CODK 验证是否可调用\"]\n    A7 --> A8[\"案例演示\"]"
+        },
+        {
+          "title": "失败处理与手动安装",
+          "code": "flowchart TD\n    B1[\"下载失败\"] --> B2[\"选择夸克网盘\"]\n    B2 --> B3[\"手动下载并解压至对应目录\"]\n    B3 --> B4[\"打开 CODK 验证安装\"]\n    B4 --> B5[\"完成安装，可继续使用\"]"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-09T09:14:01+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot MCP CLI 工具安装与使用概览\n\n## 安装流程总览\n<!-- [BV1Fv3j6CEeb P1 00:00] -->\n```mermaid\nflowchart TD\n    A1[\"启用 MCP 插件\"] --> A2[\"打开插件页面\"]\n    A2 --> A3[\"点击 Cry tools\"]\n    A3 --> A4[\"点击应用\"]\n    A4 --> A5[\"Docker 自动从 GitHub 下载对应版本的颗粒工具\"]\n    A5 --> A6[\"下载至项目根目录\"]\n    A6 --> A7[\"打开 CODK 验证是否可调用\"]\n    A7 --> A8[\"案例演示\"]\n```\n\n## 失败处理与手动安装\n<!-- [BV1Fv3j6CEeb P1 00:14] -->\n```mermaid\nflowchart TD\n    B1[\"下载失败\"] --> B2[\"选择夸克网盘\"]\n    B2 --> B3[\"手动下载并解压至对应目录\"]\n    B3 --> B4[\"打开 CODK 验证安装\"]\n    B4 --> B5[\"完成安装，可继续使用\"]\n```",
+  "diagrams": [
+    {
+      "title": "安装流程总览",
+      "code": "flowchart TD\n    A1[\"启用 MCP 插件\"] --> A2[\"打开插件页面\"]\n    A2 --> A3[\"点击 Cry tools\"]\n    A3 --> A4[\"点击应用\"]\n    A4 --> A5[\"Docker 自动从 GitHub 下载对应版本的颗粒工具\"]\n    A5 --> A6[\"下载至项目根目录\"]\n    A6 --> A7[\"打开 CODK 验证是否可调用\"]\n    A7 --> A8[\"案例演示\"]"
+    },
+    {
+      "title": "失败处理与手动安装",
+      "code": "flowchart TD\n    B1[\"下载失败\"] --> B2[\"选择夸克网盘\"]\n    B2 --> B3[\"手动下载并解压至对应目录\"]\n    B3 --> B4[\"打开 CODK 验证安装\"]\n    B4 --> B5[\"完成安装，可继续使用\"]"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T09:14:01+00:00"
+}

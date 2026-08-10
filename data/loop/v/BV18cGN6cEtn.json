@@ -1,0 +1,82 @@
+{
+  "bvid": "BV18cGN6cEtn",
+  "title": "兄弟们，DeepSeek 家最小的模型，把自家大哥打懵了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1377,
+  "text": "大家好\n我是测试的好兄弟\n先问大家一个问\n题\n有没有想过你手底下最不起眼的实习生\n有一天把全公司最贵的高级总监给干趴下了\n这不是什么职场爽文\n这是deep sick昨天真干出来的事\nV4flash deep sick家里最小的模型\n7月31号正式版API上线公测\n一上来就干翻自家大哥\nV4pro预览版靠的是啥\nA镇的能力\n说白了就是让AI不光会聊天\n还会自己撸袖子干活\n开终端\n写代码\n跑测试\n调接口一条龙\n以前你说帮我部署一下\n且回你好的呢\n然后就没有然后了\n现在你说帮我部署一下\n他直接开干\n敲命令跑测试\n报错了\n自己翻日志\n改代码再跑一遍\n干完还给你交个工\n你以为你在跟AI聊天\n其实你多了个不要钱的打工人\n数字给你们摆一下\n终端操作测试82.7\n软件开发测试54.4\n全站开发测试68.7\n网络安全测试76.7\n什么水平\n就是他已经从陪聊机器人重训成了数字实习生\n不摸鱼\n不喊累\n不要加班费\n还随叫随到\n跟以前到底啥区别\n一句话\n以前是我教你怎么做\n现在是我直接帮你做多轮工具\n调用是他的看家本领\n一边干活一边看\n结果失败了\n换个思路接着来\n就像个真工程师\n当然发工资的时候他也没露过面\n更狠的是\n这次官方原生支持response cpi\n还给OpenAI的codex做了一件适配\n以前你想用deep sick顶替codex的后端\n得先折腾一堆中转代理\n那难度不亚于给你家路由器刷个第三方固件\n现在官方一行脚本接上就走\n比自己买咖啡还快\n价格还是那个字香\n输出100万\ntoken两毛八美金\n输入一毛四\n换算成人民币\n输出也就两块多\ngo AI给你写一整页代码\n那些闭源大厂同样输出动辄十几美金\n你知道那是什么概念吗\n就是弗莱尔特编刚买完菜那边还没凑够首付\n而且上下文窗口100万个token\n三本三体一次性塞进去\n他读完还能给你整理成大纲\n一口气不带喘的\n换我三本三体\n我得看一年\n提醒一句\n你要是搞批量任务\n记得躲开\n北京时间上午9~12点\n下午两点到六点\n这俩高峰时段\n官方收两倍价\n省钱这种事抠出来的才是真的\n还有个事儿挺重要\n7月24号起\n老模型名\ndeep sick chat和DEEPSECCZONA正式退役了\n代码里还在用旧名的接口\n直接给你报错\n一点情面不讲\n就像你还拿着旧门禁卡刷公司大门\n刷到怀疑人生\n赶紧改成deep sick v4flash或者deep sick v4pro\n改完记得跑一遍\n别让街口半夜给你放冷枪\n顺便提一嘴\n想用识图的朋友注意了\ndeep sick的看图能力\n6月18号就在网页版和app端上线了\n分镜参考图截图一致性检查那边都能干\n但API这边正式版暂时还是纯文本视觉\n接API还得再等等\n不过做内容的朋友们\n咱们的视频工作流理\n他当策划大脑\n用正合适写分镜定角色\n出题是词整字幕\n这些纯文本的活儿他全包\n注意他出的是策划\n不是成片\n别拿它当视频生成器使\n那真不是他的活儿\n最后一句\n让拆自己干活安全\n这根弦别松\n沙箱\n给他套上权限\n默认只读密钥\n别喂到他嘴里\n操作日志留一份\n防他哪天抽风\n哦对了\nV4pro正式版\n8月初九到更强的推理\n三档推理强度随便调\n到时候数字实习生直接升数字总监\n工资依然不用发行了\nflash这个价能不能把碧源大厂干翻\n评论区聊聊\n点个关注\n我是测试的好兄弟\n下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18cGN6cEtn",
+  "published_at": "1785502159",
+  "fetched_at": "2026-08-06T22:12:09+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deep Sick 模型知识图谱\n\n## 模型概览与关键特性 [BV18cGN6cEtn P1 00:16]\n```mermaid\nflowchart TD\n    V4flash[\"V4flash（最小模型）\"]\n    V4pro[\"V4pro（预览版）\"]\n    Chat[\"聊天能力\"]\n    Terminal[\"终端操作能力\"]\n    Vision[\"视觉（看图）能力\"]\n    Pricing[\"定价\"]\n    OutputCost[\"输出 token 0.28 USD\"]\n    InputCost[\"输入 token 0.14 USD\"]\n    Context[\"上下文窗口 1,000,000 token\"]\n    ResponseCPI[\"官方原生支持 response CPI\"]\n    CodexAdapt[\"适配 OpenAI Codex\"]\n\n    V4flash --> Chat\n    V4flash --> Terminal\n    V4flash --> Vision\n    V4pro --> Terminal\n    V4pro --> ResponseCPI\n    V4pro --> CodexAdapt\n    Pricing --> OutputCost\n    Pricing --> InputCost\n    V4flash --> Context\n    V4pro --> Context\n```\n\n## 能力执行流程 [BV18cGN6cEtn P1 00:37]\n```mermaid\nflowchart TD\n    UserReq[\"用户请求：部署/开发任务\"]\n    OpenTerm[\"AI 开终端\"]\n    WriteCode[\"AI 编写代码\"]\n    RunTest[\"AI 运行测试\"]\n    ErrorCheck[\"检测错误？\"]\n    Debug[\"AI 调试（翻日志、改代码）\"]\n    Deliver[\"交付成果\"]\n\n    UserReq --> OpenTerm\n    OpenTerm --> WriteCode\n    WriteCode --> RunTest\n    RunTest --> ErrorCheck\n    ErrorCheck -- 是 --> Debug\n    Debug --> RunTest\n    ErrorCheck -- 否 --> Deliver\n```\n\n## 版本迁移与兼容性 [BV18cGN6cEtn P1 02:22]\n```mermaid\nflowchart TD\n    OldModels[\"deep sick chat / DEEPSECCZONA\"]\n    Deprecation[\"2023‑07‑24 退役\"]\n    Update[\"升级至 v4flash / v4pro\"]\n    NewFeatures[\"新特性\"]\n    RespCPI[\"response CPI 支持\"]\n    Codex[\"Codex 适配\"]\n    VisionAPI[\"视觉 API（待开放）\"]\n\n    OldModels --> Deprecation\n    Deprecation --> Update\n    Update --> NewFeatures\n    NewFeatures --> RespCPI\n    NewFeatures --> Codex\n    NewFeatures --> VisionAPI\n```\n\n## 成本与安全最佳实践 [BV18cGN6cEtn P1 02:12]\n```mermaid\nflowchart TD\n    PeakTimes[\"北京时段 9‑12 & 14‑18\"]\n    DoublePrice[\"官方收取双倍费用\"]\n    AvoidPeak[\"避开高峰时段\"]\n    SaveCost[\"降低成本\"]\n    Sandbox[\"沙箱环境\"]\n    ReadOnlyKey[\"默认只读密钥\"]\n    Log[\"操作日志留存\"]\n    SafeOps[\"防抽风安全\"]\n\n    PeakTimes --> DoublePrice\n    AvoidPeak --> SaveCost\n    Sandbox --> ReadOnlyKey\n    Sandbox --> Log\n    ReadOnlyKey --> SafeOps\n    Log --> SafeOps\n```\n\n## 视频创作工作流应用 [BV18cGN6cEtn P1 03:00]\n```mermaid\nflowchart TD\n    Planning[\"策划（大脑）\"]\n    Storyboard[\"分镜/角色设定\"]\n    Script[\"脚本/字幕撰写\"]\n    Content[\"纯文本内容生成\"]\n    NotVideoGen[\"不生成成片视频\"]\n\n    Planning --> Storyboard\n    Storyboard --> Script\n    Script --> Content\n    Content --> NotVideoGen\n```",
+      "diagrams": [
+        {
+          "title": "模型概览与关键特性",
+          "code": "flowchart TD\n    V4flash[\"V4flash（最小模型）\"]\n    V4pro[\"V4pro（预览版）\"]\n    Chat[\"聊天能力\"]\n    Terminal[\"终端操作能力\"]\n    Vision[\"视觉（看图）能力\"]\n    Pricing[\"定价\"]\n    OutputCost[\"输出 token 0.28 USD\"]\n    InputCost[\"输入 token 0.14 USD\"]\n    Context[\"上下文窗口 1,000,000 token\"]\n    ResponseCPI[\"官方原生支持 response CPI\"]\n    CodexAdapt[\"适配 OpenAI Codex\"]\n\n    V4flash --> Chat\n    V4flash --> Terminal\n    V4flash --> Vision\n    V4pro --> Terminal\n    V4pro --> ResponseCPI\n    V4pro --> CodexAdapt\n    Pricing --> OutputCost\n    Pricing --> InputCost\n    V4flash --> Context\n    V4pro --> Context"
+        },
+        {
+          "title": "能力执行流程",
+          "code": "flowchart TD\n    UserReq[\"用户请求：部署/开发任务\"]\n    OpenTerm[\"AI 开终端\"]\n    WriteCode[\"AI 编写代码\"]\n    RunTest[\"AI 运行测试\"]\n    ErrorCheck[\"检测错误？\"]\n    Debug[\"AI 调试（翻日志、改代码）\"]\n    Deliver[\"交付成果\"]\n\n    UserReq --> OpenTerm\n    OpenTerm --> WriteCode\n    WriteCode --> RunTest\n    RunTest --> ErrorCheck\n    ErrorCheck -- 是 --> Debug\n    Debug --> RunTest\n    ErrorCheck -- 否 --> Deliver"
+        },
+        {
+          "title": "版本迁移与兼容性",
+          "code": "flowchart TD\n    OldModels[\"deep sick chat / DEEPSECCZONA\"]\n    Deprecation[\"2023‑07‑24 退役\"]\n    Update[\"升级至 v4flash / v4pro\"]\n    NewFeatures[\"新特性\"]\n    RespCPI[\"response CPI 支持\"]\n    Codex[\"Codex 适配\"]\n    VisionAPI[\"视觉 API（待开放）\"]\n\n    OldModels --> Deprecation\n    Deprecation --> Update\n    Update --> NewFeatures\n    NewFeatures --> RespCPI\n    NewFeatures --> Codex\n    NewFeatures --> VisionAPI"
+        },
+        {
+          "title": "成本与安全最佳实践",
+          "code": "flowchart TD\n    PeakTimes[\"北京时段 9‑12 & 14‑18\"]\n    DoublePrice[\"官方收取双倍费用\"]\n    AvoidPeak[\"避开高峰时段\"]\n    SaveCost[\"降低成本\"]\n    Sandbox[\"沙箱环境\"]\n    ReadOnlyKey[\"默认只读密钥\"]\n    Log[\"操作日志留存\"]\n    SafeOps[\"防抽风安全\"]\n\n    PeakTimes --> DoublePrice\n    AvoidPeak --> SaveCost\n    Sandbox --> ReadOnlyKey\n    Sandbox --> Log\n    ReadOnlyKey --> SafeOps\n    Log --> SafeOps"
+        },
+        {
+          "title": "视频创作工作流应用",
+          "code": "flowchart TD\n    Planning[\"策划（大脑）\"]\n    Storyboard[\"分镜/角色设定\"]\n    Script[\"脚本/字幕撰写\"]\n    Content[\"纯文本内容生成\"]\n    NotVideoGen[\"不生成成片视频\"]\n\n    Planning --> Storyboard\n    Storyboard --> Script\n    Script --> Content\n    Content --> NotVideoGen"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T22:12:27+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deep Sick 模型知识图谱\n\n## 模型概览与关键特性 [BV18cGN6cEtn P1 00:16]\n```mermaid\nflowchart TD\n    V4flash[\"V4flash（最小模型）\"]\n    V4pro[\"V4pro（预览版）\"]\n    Chat[\"聊天能力\"]\n    Terminal[\"终端操作能力\"]\n    Vision[\"视觉（看图）能力\"]\n    Pricing[\"定价\"]\n    OutputCost[\"输出 token 0.28 USD\"]\n    InputCost[\"输入 token 0.14 USD\"]\n    Context[\"上下文窗口 1,000,000 token\"]\n    ResponseCPI[\"官方原生支持 response CPI\"]\n    CodexAdapt[\"适配 OpenAI Codex\"]\n\n    V4flash --> Chat\n    V4flash --> Terminal\n    V4flash --> Vision\n    V4pro --> Terminal\n    V4pro --> ResponseCPI\n    V4pro --> CodexAdapt\n    Pricing --> OutputCost\n    Pricing --> InputCost\n    V4flash --> Context\n    V4pro --> Context\n```\n\n## 能力执行流程 [BV18cGN6cEtn P1 00:37]\n```mermaid\nflowchart TD\n    UserReq[\"用户请求：部署/开发任务\"]\n    OpenTerm[\"AI 开终端\"]\n    WriteCode[\"AI 编写代码\"]\n    RunTest[\"AI 运行测试\"]\n    ErrorCheck[\"检测错误？\"]\n    Debug[\"AI 调试（翻日志、改代码）\"]\n    Deliver[\"交付成果\"]\n\n    UserReq --> OpenTerm\n    OpenTerm --> WriteCode\n    WriteCode --> RunTest\n    RunTest --> ErrorCheck\n    ErrorCheck -- 是 --> Debug\n    Debug --> RunTest\n    ErrorCheck -- 否 --> Deliver\n```\n\n## 版本迁移与兼容性 [BV18cGN6cEtn P1 02:22]\n```mermaid\nflowchart TD\n    OldModels[\"deep sick chat / DEEPSECCZONA\"]\n    Deprecation[\"2023‑07‑24 退役\"]\n    Update[\"升级至 v4flash / v4pro\"]\n    NewFeatures[\"新特性\"]\n    RespCPI[\"response CPI 支持\"]\n    Codex[\"Codex 适配\"]\n    VisionAPI[\"视觉 API（待开放）\"]\n\n    OldModels --> Deprecation\n    Deprecation --> Update\n    Update --> NewFeatures\n    NewFeatures --> RespCPI\n    NewFeatures --> Codex\n    NewFeatures --> VisionAPI\n```\n\n## 成本与安全最佳实践 [BV18cGN6cEtn P1 02:12]\n```mermaid\nflowchart TD\n    PeakTimes[\"北京时段 9‑12 & 14‑18\"]\n    DoublePrice[\"官方收取双倍费用\"]\n    AvoidPeak[\"避开高峰时段\"]\n    SaveCost[\"降低成本\"]\n    Sandbox[\"沙箱环境\"]\n    ReadOnlyKey[\"默认只读密钥\"]\n    Log[\"操作日志留存\"]\n    SafeOps[\"防抽风安全\"]\n\n    PeakTimes --> DoublePrice\n    AvoidPeak --> SaveCost\n    Sandbox --> ReadOnlyKey\n    Sandbox --> Log\n    ReadOnlyKey --> SafeOps\n    Log --> SafeOps\n```\n\n## 视频创作工作流应用 [BV18cGN6cEtn P1 03:00]\n```mermaid\nflowchart TD\n    Planning[\"策划（大脑）\"]\n    Storyboard[\"分镜/角色设定\"]\n    Script[\"脚本/字幕撰写\"]\n    Content[\"纯文本内容生成\"]\n    NotVideoGen[\"不生成成片视频\"]\n\n    Planning --> Storyboard\n    Storyboard --> Script\n    Script --> Content\n    Content --> NotVideoGen\n```",
+  "diagrams": [
+    {
+      "title": "模型概览与关键特性",
+      "code": "flowchart TD\n    V4flash[\"V4flash（最小模型）\"]\n    V4pro[\"V4pro（预览版）\"]\n    Chat[\"聊天能力\"]\n    Terminal[\"终端操作能力\"]\n    Vision[\"视觉（看图）能力\"]\n    Pricing[\"定价\"]\n    OutputCost[\"输出 token 0.28 USD\"]\n    InputCost[\"输入 token 0.14 USD\"]\n    Context[\"上下文窗口 1,000,000 token\"]\n    ResponseCPI[\"官方原生支持 response CPI\"]\n    CodexAdapt[\"适配 OpenAI Codex\"]\n\n    V4flash --> Chat\n    V4flash --> Terminal\n    V4flash --> Vision\n    V4pro --> Terminal\n    V4pro --> ResponseCPI\n    V4pro --> CodexAdapt\n    Pricing --> OutputCost\n    Pricing --> InputCost\n    V4flash --> Context\n    V4pro --> Context"
+    },
+    {
+      "title": "能力执行流程",
+      "code": "flowchart TD\n    UserReq[\"用户请求：部署/开发任务\"]\n    OpenTerm[\"AI 开终端\"]\n    WriteCode[\"AI 编写代码\"]\n    RunTest[\"AI 运行测试\"]\n    ErrorCheck[\"检测错误？\"]\n    Debug[\"AI 调试（翻日志、改代码）\"]\n    Deliver[\"交付成果\"]\n\n    UserReq --> OpenTerm\n    OpenTerm --> WriteCode\n    WriteCode --> RunTest\n    RunTest --> ErrorCheck\n    ErrorCheck -- 是 --> Debug\n    Debug --> RunTest\n    ErrorCheck -- 否 --> Deliver"
+    },
+    {
+      "title": "版本迁移与兼容性",
+      "code": "flowchart TD\n    OldModels[\"deep sick chat / DEEPSECCZONA\"]\n    Deprecation[\"2023‑07‑24 退役\"]\n    Update[\"升级至 v4flash / v4pro\"]\n    NewFeatures[\"新特性\"]\n    RespCPI[\"response CPI 支持\"]\n    Codex[\"Codex 适配\"]\n    VisionAPI[\"视觉 API（待开放）\"]\n\n    OldModels --> Deprecation\n    Deprecation --> Update\n    Update --> NewFeatures\n    NewFeatures --> RespCPI\n    NewFeatures --> Codex\n    NewFeatures --> VisionAPI"
+    },
+    {
+      "title": "成本与安全最佳实践",
+      "code": "flowchart TD\n    PeakTimes[\"北京时段 9‑12 & 14‑18\"]\n    DoublePrice[\"官方收取双倍费用\"]\n    AvoidPeak[\"避开高峰时段\"]\n    SaveCost[\"降低成本\"]\n    Sandbox[\"沙箱环境\"]\n    ReadOnlyKey[\"默认只读密钥\"]\n    Log[\"操作日志留存\"]\n    SafeOps[\"防抽风安全\"]\n\n    PeakTimes --> DoublePrice\n    AvoidPeak --> SaveCost\n    Sandbox --> ReadOnlyKey\n    Sandbox --> Log\n    ReadOnlyKey --> SafeOps\n    Log --> SafeOps"
+    },
+    {
+      "title": "视频创作工作流应用",
+      "code": "flowchart TD\n    Planning[\"策划（大脑）\"]\n    Storyboard[\"分镜/角色设定\"]\n    Script[\"脚本/字幕撰写\"]\n    Content[\"纯文本内容生成\"]\n    NotVideoGen[\"不生成成片视频\"]\n\n    Planning --> Storyboard\n    Storyboard --> Script\n    Script --> Content\n    Content --> NotVideoGen"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:12:27+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1Xsuc67ExR",
+  "title": "DeepSeek V4 Flash 接入 Codex + 识图，2 分钟搞定！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 833,
+  "text": "这几天deep set v4flash模型正式发布\n公测了agent能力强\n性价比极高\n直接秒了一大半\n其他模型更香的是\n它原生支持了responses API\n只要2分钟\n我就能带你把deep sick接入codex并成功识图\n节省上百块订阅费\n首先打开deep set的API开放平台\n创建一个APIK\n这是调用AI大模型的凭证\n一定要保存好\n然后打开deep set官方文档\n可以看到它提供了一键配置脚本\n能够自动完成接入codex的配置\n注意运行前要确保已经安装codex命令行工具\n或者chat gbt桌面app\n并且至少运行过一次\n然后根据操作系统复制对应的命令\n打开终端粘贴命令并执行脚本\n会引导你选择接入哪个模型\n输入一使用V4flash回车\n然后输入前面获取到的APIK\n注意不要对外泄露哦\n回车刷刷刷脚本就会修改codex配置\n把deep sec接入到codex中了\n最后重新打开codex\n看到了对应的模型名称\n就可以愉快的对话\n使用了\n桌面app也已经成功接入了\n不用单独配置\n是不是很简单\n比我之前分享的\n用cc switch工具来接入国产模型要方便多了\n请大家在弹幕打出良胜恩情\n还不完哇\n好棒好棒真厉害\n不过可惜的是\ndeep set v4flash是纯文本模型\n不能识别理解图片\n所以我们需要给AI编程工具装一个识图skill\n引导AI用另一个多模态视觉模型来帮他看图\n先准备一个支持图片理解的视觉模型\n比如最新的千问3.8max\n并且到对应的大模型平台获取到模型的APIK\n然后直接在codex中发一段提示词\n让AI帮你完成识图skill的安装和配置\n安装完成后\n当AI需要看图时\n识图skill就会自动把图片发给视觉模型\n让他把图片内容转成文字描述\n再交给deep set\n继续推理好了\n这下学习AI编程的门槛更低了\n那我之前出过codex的保姆级教程\n放到了我免费开源的AI编程零基础教程上\n有帮助的话\n记得点赞收藏三连哦\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Xsuc67ExR",
+  "published_at": "1785839075",
+  "fetched_at": "2026-08-06T16:29:09+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1An9UBkEUk",
+  "title": "C语言趣味游戏项目：三国杀，大一计算机巩固C语言，练习实战必备！（源码+素材）带你一步步从零做出一个小游戏！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 29,
+  "text": "顺手牵羊\n杀\n♪ 闪 ♪\n杀闪杀\n杀\n♪ 闪 ♪\n过河拆桥",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1An9UBkEUk",
+  "published_at": "1777448507",
+  "fetched_at": "2026-08-10T06:14:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# C语言趣味游戏项目：三国杀卡牌知识图谱\n\n## 卡牌类型概览\n```mermaid\nflowchart TD\n    A1[\"杀（Attack）\"] -->|被| B1[\"闪（Dodge）\"]\n    A2[\"顺手牵羊（Steal）\"] -->|可在| A1\n    A3[\"过河拆桥（Discard）\"] -->|可在| A1\n    A4[\"杀闪杀（Attack‑Dodge‑Attack Combo）\"] -->|组合| A1\n    B1 -->|抵消| A1\n```\n\n顺手牵羊: [BV1An9UBkEUk P1 00:36]  \n杀: [BV1An9UBkEUk P1 00:42]、[BV1An9UBkEUk P1 00:57]  \n闪: [BV1An9UBkEUk P1 00:44]、[BV1An9UBkEUk P1 01:00]  \n杀闪杀: [BV1An9UBkEUk P1 00:48]  \n过河拆桥: [BV1An9UBkEUk P1 01:04]\n\n## 游戏回合流程\n```mermaid\nflowchart LR\n    S[\"回合开始\"] --> D[\"抽两张牌\"]\n    D --> P[\"出牌阶段\"]\n    P --> A[\"使用 杀\"]\n    A --> R[\"对手使用 闪（可选）\"]\n    R --> S2[\"使用 顺手牵羊（可选）\"]\n    S2 --> D2[\"使用 过河拆桥（可选）\"]\n    D2 --> E[\"回合结束\"]\n```\n\n使用 杀: [BV1An9UBkEUk P1 00:42]、[BV1An9UBkEUk P1 00:57]  \n使用 闪: [BV1An9UBkEUk P1 00:44]、[BV1An9UBkEUk P1 01:00]  \n使用 顺手牵羊: [BV1An9UBkEUk P1 00:36]  \n使用 过河拆桥: [BV1An9UBkEUk P1 01:04]\n\n## 卡牌使用决策\n```mermaid\nflowchart TD\n    H1[\"手中有 杀\"] --> D1[\"决定是否使用\"]\n    H2[\"手中有 闪\"] --> D2[\"决定是否保留\"]\n    H3[\"手中有 顺手牵羊\"] --> D3[\"决定是否抢牌\"]\n    H4[\"手中有 过河拆桥\"] --> D4[\"决定是否拆除装备\"]\n    D1 --> O1[\"攻击成功或被闪抵消\"]\n    D2 --> O2[\"保留闪以防对手攻击\"]\n    D3 --> O3[\"夺取对手手牌\"]\n    D4 --> O4[\"削弱对手装备\"]\n```\n\n手中有 杀: [BV1An9UBkEUk P1 00:42]、[BV1An9UBkEUk P1 00:57]  \n手中有 闪: [BV1An9UBkEUk P1 00:44]、[BV1An9UBkEUk P1 01:00]  \n手中有 顺手牵羊: [BV1An9UBkEUk P1 00:36]  \n手中有 过河拆桥: [BV1An9UBkEUk P1 01:04]",
+      "diagrams": [
+        {
+          "title": "卡牌类型概览",
+          "code": "flowchart TD\n    A1[\"杀（Attack）\"] -->|被| B1[\"闪（Dodge）\"]\n    A2[\"顺手牵羊（Steal）\"] -->|可在| A1\n    A3[\"过河拆桥（Discard）\"] -->|可在| A1\n    A4[\"杀闪杀（Attack‑Dodge‑Attack Combo）\"] -->|组合| A1\n    B1 -->|抵消| A1"
+        },
+        {
+          "title": "游戏回合流程",
+          "code": "flowchart LR\n    S[\"回合开始\"] --> D[\"抽两张牌\"]\n    D --> P[\"出牌阶段\"]\n    P --> A[\"使用 杀\"]\n    A --> R[\"对手使用 闪（可选）\"]\n    R --> S2[\"使用 顺手牵羊（可选）\"]\n    S2 --> D2[\"使用 过河拆桥（可选）\"]\n    D2 --> E[\"回合结束\"]"
+        },
+        {
+          "title": "卡牌使用决策",
+          "code": "flowchart TD\n    H1[\"手中有 杀\"] --> D1[\"决定是否使用\"]\n    H2[\"手中有 闪\"] --> D2[\"决定是否保留\"]\n    H3[\"手中有 顺手牵羊\"] --> D3[\"决定是否抢牌\"]\n    H4[\"手中有 过河拆桥\"] --> D4[\"决定是否拆除装备\"]\n    D1 --> O1[\"攻击成功或被闪抵消\"]\n    D2 --> O2[\"保留闪以防对手攻击\"]\n    D3 --> O3[\"夺取对手手牌\"]\n    D4 --> O4[\"削弱对手装备\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T06:15:21+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# C语言趣味游戏项目：三国杀卡牌知识图谱\n\n## 卡牌类型概览\n```mermaid\nflowchart TD\n    A1[\"杀（Attack）\"] -->|被| B1[\"闪（Dodge）\"]\n    A2[\"顺手牵羊（Steal）\"] -->|可在| A1\n    A3[\"过河拆桥（Discard）\"] -->|可在| A1\n    A4[\"杀闪杀（Attack‑Dodge‑Attack Combo）\"] -->|组合| A1\n    B1 -->|抵消| A1\n```\n\n顺手牵羊: [BV1An9UBkEUk P1 00:36]  \n杀: [BV1An9UBkEUk P1 00:42]、[BV1An9UBkEUk P1 00:57]  \n闪: [BV1An9UBkEUk P1 00:44]、[BV1An9UBkEUk P1 01:00]  \n杀闪杀: [BV1An9UBkEUk P1 00:48]  \n过河拆桥: [BV1An9UBkEUk P1 01:04]\n\n## 游戏回合流程\n```mermaid\nflowchart LR\n    S[\"回合开始\"] --> D[\"抽两张牌\"]\n    D --> P[\"出牌阶段\"]\n    P --> A[\"使用 杀\"]\n    A --> R[\"对手使用 闪（可选）\"]\n    R --> S2[\"使用 顺手牵羊（可选）\"]\n    S2 --> D2[\"使用 过河拆桥（可选）\"]\n    D2 --> E[\"回合结束\"]\n```\n\n使用 杀: [BV1An9UBkEUk P1 00:42]、[BV1An9UBkEUk P1 00:57]  \n使用 闪: [BV1An9UBkEUk P1 00:44]、[BV1An9UBkEUk P1 01:00]  \n使用 顺手牵羊: [BV1An9UBkEUk P1 00:36]  \n使用 过河拆桥: [BV1An9UBkEUk P1 01:04]\n\n## 卡牌使用决策\n```mermaid\nflowchart TD\n    H1[\"手中有 杀\"] --> D1[\"决定是否使用\"]\n    H2[\"手中有 闪\"] --> D2[\"决定是否保留\"]\n    H3[\"手中有 顺手牵羊\"] --> D3[\"决定是否抢牌\"]\n    H4[\"手中有 过河拆桥\"] --> D4[\"决定是否拆除装备\"]\n    D1 --> O1[\"攻击成功或被闪抵消\"]\n    D2 --> O2[\"保留闪以防对手攻击\"]\n    D3 --> O3[\"夺取对手手牌\"]\n    D4 --> O4[\"削弱对手装备\"]\n```\n\n手中有 杀: [BV1An9UBkEUk P1 00:42]、[BV1An9UBkEUk P1 00:57]  \n手中有 闪: [BV1An9UBkEUk P1 00:44]、[BV1An9UBkEUk P1 01:00]  \n手中有 顺手牵羊: [BV1An9UBkEUk P1 00:36]  \n手中有 过河拆桥: [BV1An9UBkEUk P1 01:04]",
+  "diagrams": [
+    {
+      "title": "卡牌类型概览",
+      "code": "flowchart TD\n    A1[\"杀（Attack）\"] -->|被| B1[\"闪（Dodge）\"]\n    A2[\"顺手牵羊（Steal）\"] -->|可在| A1\n    A3[\"过河拆桥（Discard）\"] -->|可在| A1\n    A4[\"杀闪杀（Attack‑Dodge‑Attack Combo）\"] -->|组合| A1\n    B1 -->|抵消| A1"
+    },
+    {
+      "title": "游戏回合流程",
+      "code": "flowchart LR\n    S[\"回合开始\"] --> D[\"抽两张牌\"]\n    D --> P[\"出牌阶段\"]\n    P --> A[\"使用 杀\"]\n    A --> R[\"对手使用 闪（可选）\"]\n    R --> S2[\"使用 顺手牵羊（可选）\"]\n    S2 --> D2[\"使用 过河拆桥（可选）\"]\n    D2 --> E[\"回合结束\"]"
+    },
+    {
+      "title": "卡牌使用决策",
+      "code": "flowchart TD\n    H1[\"手中有 杀\"] --> D1[\"决定是否使用\"]\n    H2[\"手中有 闪\"] --> D2[\"决定是否保留\"]\n    H3[\"手中有 顺手牵羊\"] --> D3[\"决定是否抢牌\"]\n    H4[\"手中有 过河拆桥\"] --> D4[\"决定是否拆除装备\"]\n    D1 --> O1[\"攻击成功或被闪抵消\"]\n    D2 --> O2[\"保留闪以防对手攻击\"]\n    D3 --> O3[\"夺取对手手牌\"]\n    D4 --> O4[\"削弱对手装备\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T06:15:21+00:00"
+}

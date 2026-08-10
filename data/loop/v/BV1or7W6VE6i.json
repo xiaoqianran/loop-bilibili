@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1or7W6VE6i",
+  "title": "原生全双工模型JoyAI-VL-Interaction已被vLLM-Omni支持！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 227,
+  "text": "The l l m o i just support joy ai an open real time video language interaction system\n它专为事件驱动场景设计，例如实时翻译\n现场解说\n计数\n监控与警报\n它可以持续监控视频流并决定何时发言\n保持静默或转交至后台代理\n在检测视频流中的目标事件时可维持约两秒的响应延迟\n代理委托复杂子任务可转交给API代理\n而系统仍在持续观察街道\n继续与人类实时互动\n自主进行\n你是如何\n他",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1or7W6VE6i",
+  "published_at": "1782574528",
+  "fetched_at": "2026-08-10T02:18:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Joy AI-VL Interaction 知识图谱\n\n## 系统整体架构\n```mermaid\nflowchart TD\n    LLM[\"LLM (Joy AI)\"]\n    VS[\"视频流\"]\n    ED[\"事件检测\"]\n    RD[\"响应决策\"]\n    SO[\"语音输出\"]\n    SM[\"保持静默\"]\n    BA[\"后台代理\"]\n    API[\"API 代理\"]\n    HI[\"与人类实时交互\"]\n    SO[\"语音输出\"]\n    SO --> HI\n    RD --> SO\n    RD --> SM\n    RD --> API\n    API --> BA\n    VS --> ED\n    ED --> RD\n    LLM --> VS\n    LLM --> SO\n    LLM --> HI\n    LLM --> BA\n```\n\n## 事件响应流程\n```mermaid\nflowchart LR\n    S1[\"视频流持续监控\"]\n    D1[\"检测目标事件\"]\n    D2[\"约2秒响应延迟\"]\n    D3[\"决定是否发言\"]\n    A1[\"发言\"]\n    A2[\"保持静默\"]\n    A3[\"委托至 API 代理\"]\n    C1[\"继续观察并交互\"]\n\n    S1 --> D1\n    D1 --> D2\n    D2 --> D3\n    D3 --> A1\n    D3 --> A2\n    D3 --> A3\n    A1 --> C1\n    A2 --> C1\n    A3 --> C1\n```\n\n## 适用场景与任务\n```mermaid\nflowchart TD\n    SC[\"事件驱动场景\"]\n    RT[\"实时翻译\"]\n    LC[\"现场解说\"]\n    CN[\"计数\"]\n    MA[\"监控与警报\"]\n    OT[\"其他潜在任务\"]\n    EX[\"实际应用示例\"]\n\n    SC --> RT\n    SC --> LC\n    SC --> CN\n    SC --> MA\n    SC --> OT\n    RT --> EX\n    LC --> EX\n    CN --> EX\n    MA --> EX\n    OT --> EX\n```",
+      "diagrams": [
+        {
+          "title": "系统整体架构",
+          "code": "flowchart TD\n    LLM[\"LLM (Joy AI)\"]\n    VS[\"视频流\"]\n    ED[\"事件检测\"]\n    RD[\"响应决策\"]\n    SO[\"语音输出\"]\n    SM[\"保持静默\"]\n    BA[\"后台代理\"]\n    API[\"API 代理\"]\n    HI[\"与人类实时交互\"]\n    SO[\"语音输出\"]\n    SO --> HI\n    RD --> SO\n    RD --> SM\n    RD --> API\n    API --> BA\n    VS --> ED\n    ED --> RD\n    LLM --> VS\n    LLM --> SO\n    LLM --> HI\n    LLM --> BA"
+        },
+        {
+          "title": "事件响应流程",
+          "code": "flowchart LR\n    S1[\"视频流持续监控\"]\n    D1[\"检测目标事件\"]\n    D2[\"约2秒响应延迟\"]\n    D3[\"决定是否发言\"]\n    A1[\"发言\"]\n    A2[\"保持静默\"]\n    A3[\"委托至 API 代理\"]\n    C1[\"继续观察并交互\"]\n\n    S1 --> D1\n    D1 --> D2\n    D2 --> D3\n    D3 --> A1\n    D3 --> A2\n    D3 --> A3\n    A1 --> C1\n    A2 --> C1\n    A3 --> C1"
+        },
+        {
+          "title": "适用场景与任务",
+          "code": "flowchart TD\n    SC[\"事件驱动场景\"]\n    RT[\"实时翻译\"]\n    LC[\"现场解说\"]\n    CN[\"计数\"]\n    MA[\"监控与警报\"]\n    OT[\"其他潜在任务\"]\n    EX[\"实际应用示例\"]\n\n    SC --> RT\n    SC --> LC\n    SC --> CN\n    SC --> MA\n    SC --> OT\n    RT --> EX\n    LC --> EX\n    CN --> EX\n    MA --> EX\n    OT --> EX"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T02:18:39+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Joy AI-VL Interaction 知识图谱\n\n## 系统整体架构\n```mermaid\nflowchart TD\n    LLM[\"LLM (Joy AI)\"]\n    VS[\"视频流\"]\n    ED[\"事件检测\"]\n    RD[\"响应决策\"]\n    SO[\"语音输出\"]\n    SM[\"保持静默\"]\n    BA[\"后台代理\"]\n    API[\"API 代理\"]\n    HI[\"与人类实时交互\"]\n    SO[\"语音输出\"]\n    SO --> HI\n    RD --> SO\n    RD --> SM\n    RD --> API\n    API --> BA\n    VS --> ED\n    ED --> RD\n    LLM --> VS\n    LLM --> SO\n    LLM --> HI\n    LLM --> BA\n```\n\n## 事件响应流程\n```mermaid\nflowchart LR\n    S1[\"视频流持续监控\"]\n    D1[\"检测目标事件\"]\n    D2[\"约2秒响应延迟\"]\n    D3[\"决定是否发言\"]\n    A1[\"发言\"]\n    A2[\"保持静默\"]\n    A3[\"委托至 API 代理\"]\n    C1[\"继续观察并交互\"]\n\n    S1 --> D1\n    D1 --> D2\n    D2 --> D3\n    D3 --> A1\n    D3 --> A2\n    D3 --> A3\n    A1 --> C1\n    A2 --> C1\n    A3 --> C1\n```\n\n## 适用场景与任务\n```mermaid\nflowchart TD\n    SC[\"事件驱动场景\"]\n    RT[\"实时翻译\"]\n    LC[\"现场解说\"]\n    CN[\"计数\"]\n    MA[\"监控与警报\"]\n    OT[\"其他潜在任务\"]\n    EX[\"实际应用示例\"]\n\n    SC --> RT\n    SC --> LC\n    SC --> CN\n    SC --> MA\n    SC --> OT\n    RT --> EX\n    LC --> EX\n    CN --> EX\n    MA --> EX\n    OT --> EX\n```",
+  "diagrams": [
+    {
+      "title": "系统整体架构",
+      "code": "flowchart TD\n    LLM[\"LLM (Joy AI)\"]\n    VS[\"视频流\"]\n    ED[\"事件检测\"]\n    RD[\"响应决策\"]\n    SO[\"语音输出\"]\n    SM[\"保持静默\"]\n    BA[\"后台代理\"]\n    API[\"API 代理\"]\n    HI[\"与人类实时交互\"]\n    SO[\"语音输出\"]\n    SO --> HI\n    RD --> SO\n    RD --> SM\n    RD --> API\n    API --> BA\n    VS --> ED\n    ED --> RD\n    LLM --> VS\n    LLM --> SO\n    LLM --> HI\n    LLM --> BA"
+    },
+    {
+      "title": "事件响应流程",
+      "code": "flowchart LR\n    S1[\"视频流持续监控\"]\n    D1[\"检测目标事件\"]\n    D2[\"约2秒响应延迟\"]\n    D3[\"决定是否发言\"]\n    A1[\"发言\"]\n    A2[\"保持静默\"]\n    A3[\"委托至 API 代理\"]\n    C1[\"继续观察并交互\"]\n\n    S1 --> D1\n    D1 --> D2\n    D2 --> D3\n    D3 --> A1\n    D3 --> A2\n    D3 --> A3\n    A1 --> C1\n    A2 --> C1\n    A3 --> C1"
+    },
+    {
+      "title": "适用场景与任务",
+      "code": "flowchart TD\n    SC[\"事件驱动场景\"]\n    RT[\"实时翻译\"]\n    LC[\"现场解说\"]\n    CN[\"计数\"]\n    MA[\"监控与警报\"]\n    OT[\"其他潜在任务\"]\n    EX[\"实际应用示例\"]\n\n    SC --> RT\n    SC --> LC\n    SC --> CN\n    SC --> MA\n    SC --> OT\n    RT --> EX\n    LC --> EX\n    CN --> EX\n    MA --> EX\n    OT --> EX"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T02:18:39+00:00"
+}

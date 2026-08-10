@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1CcZ9BeEA6",
+  "title": "Zed —— “Visual Studio Code 杀手” —— 现已登陆 Windows！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3976,
+  "text": "大家好\n我是game from scratched mike\n我们从一个黑暗而孤独的地方开始这期视频\n那是哪里呢\n其实那是命令行界面\n更具体的说是我的命令行界面\n我现在要执行这个命令\n原因非常明确\n我想让你们看看我正在运行什么操作系统\n我这样做是有原因的\n你会注意到我现在运行的是windows11\n这和我们接下来要做的事情非常相关\n以前你是做不到这件事的\n但现在可以了\n这还挺酷的\n所以我们要做的第一步就是打开这个文件夹\n这是一个高档的示例项目\n这样我就有东西可以和你们演示了\n接下来我要运行一个叫做Z的东西\nZ是一个编辑器\n接下来我想让你们注意一下\n它打开的速度有多快\n所以砰的一下项目就打开了\n嘭\n这就是Z令人印象深刻的地方\n顺便说一句\n如果我刚才吓到你的猫了\n我表示抱歉\n所以现在我们可以看到我们已经进入了Z\n其实Z已经推出好几年了\n我之前还专门做过一期关于他的视频\nthat背后的整个理念就是追求性能\n它是用rust编写的\n我知道我刚才那句话\n肯定会在评论区引发一些反rust的评论\n但这确实是一个以性能为核心的编辑器\n从你刚刚看到的快速启动\n到现在的表现都是如此\n虽然我现在放大界面看起来没什么特别的\n但实际上他在窗口中文字渲染时用上了GPU加速\nz ed的所有方面都围绕性能展开\n这点非常酷\n但问题是直到现在你都无法在windows上运行它\n现在你可以了\n这可是一个重大进展\n我真的很喜欢这一点\n坦白说我用that的次数不多\n但每次用起来都觉得非常流畅\n还有一种很干净利落的感觉\n当然现在是人工智能的时代\n所以这些乱七八糟的东西也都在这里\n你会注意到\n在这里有你的智能体按钮等等\n但有趣的是\n你可以接入你自己的\n比如说我有一个GEMINI账号\n举个例子\n我把GEMINI接入进来了\n实际上\n你可以把它连接到各种不同的模型上使用\n所以我会来到这里\n你可以进行配置\n你可以添加各种不同的LLM模型和外部\n智能体等等\n同时你可以添加你自己的模型\n或者使用他们提供的免费版本\n我们马上会回过头来讲一下它的结构定价等等\n你只需要知道这些功能都是可用的\n而且这些功能都是你常见的AI功能\n所以我可以到这里来\n让我直接选中这段代码\n然后我到这边来问一句\n这段代码是做什么的\n然后我会把选中的内容给他\n像这样添加属性\n然后我们就可以运行它们了\n当然接下来他会把请求发送给GEMINI\nGEMINI会处理这些内容\n然后返回并准确回答这段代码实际上做了什么\n当然你也可以让他做其他事情\n比如在项目层面工作\n处理编辑等等\n所以在AI的世界里\n这已经是常态了\n所以这些功能都已经集成进来了\n这里很棒的一点是\n他们并没有强迫你使用他们的系统\n如果你已经有类似的东西\n比如说我这里有GEMINI\n我现在在用GEMINI\n但如果我想在不同模型之间切换\n我可以\n如果我想添加新的模型也可以\n所以这些功能也都集成在这里了\n我们这边还可以进行调试\n这点非常酷\n我们还有一个终端\n还有一点让我印象很深刻的是\n在我操作的时候\n这些功能弹出的速度真的很快\n你同样也可以获得内联辅助\n所以如果你需要终端命令方面的帮助\n也可以在这里生成\n当然你的AI已经完全集成进来了\n然后你还可以进行预测编辑\n如果你愿意\n这里可以进入Z相关的内容\n或者你也可以设置并使用copilot\n来进行文本预测等功能\n然后你还有通知功能\n这些功能都可以在那里进行配置\n你会注意到这里有很多不同的选项\n这里是你的项目数\n同样速度非常非常快\n这里我们还有get集成功能\n如果你需要的话\n也可以在这里使用\n这里有大纲面板\n它会再次分解我们代码的大纲结构\n你会注意到它能够识别gd script\n我马上会给你展示他的语言支持\n我还会谈谈我现在在用that时遇到的一个问题\n就是这个你会注意到这个运行失败了\n那是因为我无法让语言服务器工作\n而原因是他需要NC或net cat\n而这些在windows上没有\n所以这是一个新的windows端口\n但你还是会遇到一些问题\n即使用WSL顺便说一下\n它确实支持windows的LINUX子系统\n但它还是无法连接上\n所以我还得再研究一下\n所以要知道这在Mac和LINUX上确实运行的更好\n事实就是如此\n还有一个他们现在大力推进的功能\n就是这里有一个协作选项\n你可以进行实时编辑\n语音聊天\n共享笔记等等\n如果你和别人一起协作编写代码\n这也是这个工具的一个关键功能\n最后我们来看一下设置\n你可以看到这里有大量的设置可以进行配置\n比如说我把字体大小调大了\n这样你们能看得更清楚\n我们还有多种不同的主题可选\n我等会儿会用另一种方式给你们展示这些主题\n我之前也提到过\n比如说在语言方面\n它确实使用了语言服务器\n而这正是我在windows上遇到问题的地方\n但如果我们往下滚动到页面底部\n你会注意到支持多种不同的编程语言\n你还会发现这里也有gd script和JDSHADER\n其实这些是我作为扩展添加进去\n你可以看到这里有一个扩展系统可用\n有很多扩展\n其中很多只是简单的主题等等\n但不仅限于此\n所以这个编辑器也有很好的社区支持\n所以随着我们继续往下滚动\n可以看到有相当多的扩展可用\n所有这些都可以在这里找到\n现在我之前提到过主题\n其实按下CTRL加shift加P\n我把它设置成使用visual studio的快捷键\n当然你也可以用你喜欢的任何快捷键\n另外对于你们当中喜欢自虐的人来说\n这里还有一个可以轻松切换的VI模式\n我有点忘了他具体在哪里了\n在这里vi模式\nVIN模式\n所以如果你想用V模式\n这里也都集成好了\n我已经把WM的所有快捷键都忘了\n所以我根本不敢想用它\n不过这里我们继续command shift p\n你可以看到\n这里会显示你当前可用的各种不同命令\n或者我们可以这样输入theme主题选择器\n就是这个\n然后我就可以选择另一个主题了\n比如说在这里咔一下就换成了不同的浅色主题\n你没注意到切换有多快\n这才是关键所在\n关于这一点\n这正是我非常喜欢的地方\n所以如果你觉得像visual studio code这样的编辑器\n对你来说太臃肿了\n而你又愿意多花点力气去适应\n所以同样地如果你想要代码补全等功能\n你就得自己去配置语言服务器\n但一旦你搞定了这些\n如果你想换一个没那么臃肿\n更加注重性能的编辑器\nz ed也许就非常适合你\n顺便说一下\n这就是z ed\nZ可以在z dive上获取\n不知道为什么\n我刚才一瞬间还以为呃那个词是什么来着\n正着念反着念\n但那应该是Z的的\n总之这个编辑器可以免费下载\n完全免费支持Mac linux\n现在还支持windows\n你看这里最新的公告\nZ现在已经可以在windows上使用了\n这也是我今天特意要介绍它的原因\n我们再来简单回顾一下\n我们之前已经聊过这里的几个重点\n所有的AI功能都已经集成进来了\n它非常快\n它是用rust从零开始编写的\n并且在运行过程中会利用多个CPU核心和你的GPU\n它支持协作功能\n我得说他真的很快\n你可能会想为什么我的编辑器需要这么快\n但当你用过一个很快的编辑器\n再回去用慢一点的\n你就会明白为什么喜欢快的了\n而且现在它已经可以在windows上使用了\n这真的很棒\n它确实集成了调试器\n支持集成了git\n支持预测编辑\n智能代理编辑以及远程开发\n它还拥有我们刚才看到的VI模式等等\n此外他们目前还在开发更多功能\n你可以在那里了解这些功能都有哪些\n而且所有这些扩展也都可以使用\n这点很不错\n最后回到这里\n最新的消息是\nZ现在已经可以在windows上使用了\n所以他现在已经上线速度快\n原声支持随时为你的团队准备好\n实际上\n我觉得他们在让Z的正常运行时\n遇到了很多困难\n因为Mac和LINUX拥有的许多子系统\nZ的并不一定具备\n他确实说内置了WSL\n但不知为何\n他没有从WSL识别到我的NC或net cap\n所以我也不太清楚是怎么回事\n不过这确实有点学习曲线\n毕竟它对windows来说还是新的\n所以要有心理准备体验\n可能不会像在Mac或LINUX上那样完美无瑕\n如果你还没有在任何平台上试用过这个\n我建议你去试试看\n同样你可能会开始意识到自己\n之前没注意到的速度优势\n关于这个工具还有一点需要了解\n那就是成本\n就我个人而言\n它是免费的\n这里显示有2000次被接受的边际预测\n我完全不知道那是什么意思\n但反正我用的是自己的服务提供商\n所以我觉得这没什么大不了的\n因为你可以无限制的使用自己的API密钥\n或者像cloud code这样的外部代理\n不过它也有一个付费版本\n就是pro版\n提供无限次编辑预测\n包含五美元的代币\n超出五美元后按用量计费\n如果你想把它和他们的AI功能结合使用\n可以选择pro版\n此外还有一个企业版提供更多额外功能\n你可以直接去试用一下\n非常方便\n另外如果你想了解pro版是否适合你\n也可以试用pro版\n不过我认为对于我们大多数人来说\n尤其是只是作为一个比较随意的编辑者\n个人版就已经足够用了\n我自己用的还不够多\n还没遇到必须升级到pro版的情况\n所以如果你用过并且是pro会员\n你为什么会选择付费升级呢\n请在下方评论区告诉我你的想法\n女士们\n先生们\n这就是ZIED\n可以在Z的deep上获取\n而且最重要的是\n现在也已经支持windows了\n再次强调\n如果你正在寻找一款轻量级\n但功能强大的快速代码编辑器\nZ是个不错的选择\n它非常有吸引力\n尤其是在我看来\nvisual studio coo正在变得越来越臃肿\n而且像sublime text这样的其他编辑器\n开箱即用的功能又不够多\n所以对我来说\nthat恰好处于一个完美的中间地带\n我觉得我会继续用它一段时间\n所以欢迎大家告诉我\n你对that的看法\n我们下次再聊再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1CcZ9BeEA6",
+  "published_at": "1771473600",
+  "fetched_at": "2026-08-07T02:22:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Zed 编辑器知识图谱\n\n## Zed 编辑器概览\n```mermaid\nflowchart TD\n    ZED[\"Zed 编辑器\"]\n    RUST[\"使用 Rust 编写\"]\n    PERF[\"性能为核心\"]\n    FAST[\"快速启动\"]\n    GPU[\"GPU 加速文字渲染\"]\n    CPU[\"利用多核 CPU\"]\n    CROSS[\"跨平台：Mac、Linux、Windows\"]\n    FREE[\"免费、开源\"]\n    AI[\"内置 AI 功能\"]\n    EXT[\"丰富扩展系统\"]\n    THEMES[\"多主题与配色\"]\n    VI[\"VI 模式支持\"]\n    DBG[\"集成调试器\"]\n    GIT[\"Git 集成\"]\n    COLLAB[\"实时协作、语音聊天、共享笔记\"]\n\n    ZED --> RUST\n    ZED --> PERF\n    PERF --> FAST\n    PERF --> GPU\n    PERF --> CPU\n    ZED --> CROSS\n    ZED --> FREE\n    ZED --> AI\n    ZED --> EXT\n    ZED --> THEMES\n    ZED --> VI\n    ZED --> DBG\n    ZED --> GIT\n    ZED --> COLLAB\n```\n\n## AI 功能工作流\n```mermaid\nflowchart TD\n    SELECT[\"用户选中代码\"]\n    SEND[\"发送代码至 Gemini（或其他 LLM）\"]\n    PROCESS[\"LLM 处理并生成响应\"]\n    DISPLAY[\"在编辑器中显示解释或建议\"]\n    PREDICT[\"预测编辑 / 自动补全\"]\n    TERMHELP[\"终端命令帮助\"]\n    MODEL_SWITCH[\"切换不同 LLM 模型\"]\n    ADD_MODEL[\"添加自定义模型或使用免费模型\"]\n    CONFIG[\"AI 功能配置\"]\n\n    SELECT --> SEND\n    SEND --> PROCESS\n    PROCESS --> DISPLAY\n    DISPLAY --> PREDICT\n    DISPLAY --> TERMHELP\n    CONFIG --> MODEL_SWITCH\n    CONFIG --> ADD_MODEL\n    MODEL_SWITCH --> SEND\n    ADD_MODEL --> SEND\n```\n\n## Windows 支持与限制\n```mermaid\nflowchart TD\n    WIN_SUPPORT[\"Windows 支持（已上线）\"]\n    PREV_NO[\"之前不支持\"]\n    ISSUE_NETCAT[\"缺少 netcat / NC\"]\n    LANG_SERVER[\"语言服务器依赖 netcat\"]\n    WSL[\"WSL 集成\"]\n    WSL_ISSUE[\"WSL 未识别 netcat\"]\n    WORKAROUND[\"使用外部 LLM 或自行配置\"]\n    MAC_LINUX[\"在 macOS / Linux 上运行良好\"]\n    LIMITS[\"仍有学习曲线与兼容性问题\"]\n\n    WIN_SUPPORT --> PREV_NO\n    WIN_SUPPORT --> ISSUE_NETCAT\n    ISSUE_NETCAT --> LANG_SERVER\n    WIN_SUPPORT --> WSL\n    WSL --> WSL_ISSUE\n    ISSUE_NETCAT --> WORKAROUND\n    MAC_LINUX --> WIN_SUPPORT\n    WIN_SUPPORT --> LIMITS\n```\n\n## 定价与使用决策\n```mermaid\nflowchart TD\n    FREE_VER[\"免费版\"]\n    PRO_VER[\"Pro 版\"]\n    ENTERPRISE[\"企业版\"]\n    FEATURES_FREE[\"基本功能、AI 集成、无限制插件\"]\n    FEATURES_PRO[\"无限次编辑预测、5 美元代币、付费后按量计费\"]\n    FEATURES_ENT[\"更多企业级功能\"]\n    NEEDS[\"使用需求\"]\n    BUDGET[\"预算考量\"]\n    DECIDE[\"选择合适版本\"]\n\n    FREE_VER --> FEATURES_FREE\n    PRO_VER --> FEATURES_PRO\n    ENTERPRISE --> FEATURES_ENT\n    NEEDS --> DECIDE\n    BUDGET --> DECIDE\n    DECIDE --> FREE_VER\n    DECIDE --> PRO_VER\n    DECIDE --> ENTERPRISE\n```",
+      "diagrams": [
+        {
+          "title": "Zed 编辑器概览",
+          "code": "flowchart TD\n    ZED[\"Zed 编辑器\"]\n    RUST[\"使用 Rust 编写\"]\n    PERF[\"性能为核心\"]\n    FAST[\"快速启动\"]\n    GPU[\"GPU 加速文字渲染\"]\n    CPU[\"利用多核 CPU\"]\n    CROSS[\"跨平台：Mac、Linux、Windows\"]\n    FREE[\"免费、开源\"]\n    AI[\"内置 AI 功能\"]\n    EXT[\"丰富扩展系统\"]\n    THEMES[\"多主题与配色\"]\n    VI[\"VI 模式支持\"]\n    DBG[\"集成调试器\"]\n    GIT[\"Git 集成\"]\n    COLLAB[\"实时协作、语音聊天、共享笔记\"]\n\n    ZED --> RUST\n    ZED --> PERF\n    PERF --> FAST\n    PERF --> GPU\n    PERF --> CPU\n    ZED --> CROSS\n    ZED --> FREE\n    ZED --> AI\n    ZED --> EXT\n    ZED --> THEMES\n    ZED --> VI\n    ZED --> DBG\n    ZED --> GIT\n    ZED --> COLLAB"
+        },
+        {
+          "title": "AI 功能工作流",
+          "code": "flowchart TD\n    SELECT[\"用户选中代码\"]\n    SEND[\"发送代码至 Gemini（或其他 LLM）\"]\n    PROCESS[\"LLM 处理并生成响应\"]\n    DISPLAY[\"在编辑器中显示解释或建议\"]\n    PREDICT[\"预测编辑 / 自动补全\"]\n    TERMHELP[\"终端命令帮助\"]\n    MODEL_SWITCH[\"切换不同 LLM 模型\"]\n    ADD_MODEL[\"添加自定义模型或使用免费模型\"]\n    CONFIG[\"AI 功能配置\"]\n\n    SELECT --> SEND\n    SEND --> PROCESS\n    PROCESS --> DISPLAY\n    DISPLAY --> PREDICT\n    DISPLAY --> TERMHELP\n    CONFIG --> MODEL_SWITCH\n    CONFIG --> ADD_MODEL\n    MODEL_SWITCH --> SEND\n    ADD_MODEL --> SEND"
+        },
+        {
+          "title": "Windows 支持与限制",
+          "code": "flowchart TD\n    WIN_SUPPORT[\"Windows 支持（已上线）\"]\n    PREV_NO[\"之前不支持\"]\n    ISSUE_NETCAT[\"缺少 netcat / NC\"]\n    LANG_SERVER[\"语言服务器依赖 netcat\"]\n    WSL[\"WSL 集成\"]\n    WSL_ISSUE[\"WSL 未识别 netcat\"]\n    WORKAROUND[\"使用外部 LLM 或自行配置\"]\n    MAC_LINUX[\"在 macOS / Linux 上运行良好\"]\n    LIMITS[\"仍有学习曲线与兼容性问题\"]\n\n    WIN_SUPPORT --> PREV_NO\n    WIN_SUPPORT --> ISSUE_NETCAT\n    ISSUE_NETCAT --> LANG_SERVER\n    WIN_SUPPORT --> WSL\n    WSL --> WSL_ISSUE\n    ISSUE_NETCAT --> WORKAROUND\n    MAC_LINUX --> WIN_SUPPORT\n    WIN_SUPPORT --> LIMITS"
+        },
+        {
+          "title": "定价与使用决策",
+          "code": "flowchart TD\n    FREE_VER[\"免费版\"]\n    PRO_VER[\"Pro 版\"]\n    ENTERPRISE[\"企业版\"]\n    FEATURES_FREE[\"基本功能、AI 集成、无限制插件\"]\n    FEATURES_PRO[\"无限次编辑预测、5 美元代币、付费后按量计费\"]\n    FEATURES_ENT[\"更多企业级功能\"]\n    NEEDS[\"使用需求\"]\n    BUDGET[\"预算考量\"]\n    DECIDE[\"选择合适版本\"]\n\n    FREE_VER --> FEATURES_FREE\n    PRO_VER --> FEATURES_PRO\n    ENTERPRISE --> FEATURES_ENT\n    NEEDS --> DECIDE\n    BUDGET --> DECIDE\n    DECIDE --> FREE_VER\n    DECIDE --> PRO_VER\n    DECIDE --> ENTERPRISE"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T02:22:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Zed 编辑器知识图谱\n\n## Zed 编辑器概览\n```mermaid\nflowchart TD\n    ZED[\"Zed 编辑器\"]\n    RUST[\"使用 Rust 编写\"]\n    PERF[\"性能为核心\"]\n    FAST[\"快速启动\"]\n    GPU[\"GPU 加速文字渲染\"]\n    CPU[\"利用多核 CPU\"]\n    CROSS[\"跨平台：Mac、Linux、Windows\"]\n    FREE[\"免费、开源\"]\n    AI[\"内置 AI 功能\"]\n    EXT[\"丰富扩展系统\"]\n    THEMES[\"多主题与配色\"]\n    VI[\"VI 模式支持\"]\n    DBG[\"集成调试器\"]\n    GIT[\"Git 集成\"]\n    COLLAB[\"实时协作、语音聊天、共享笔记\"]\n\n    ZED --> RUST\n    ZED --> PERF\n    PERF --> FAST\n    PERF --> GPU\n    PERF --> CPU\n    ZED --> CROSS\n    ZED --> FREE\n    ZED --> AI\n    ZED --> EXT\n    ZED --> THEMES\n    ZED --> VI\n    ZED --> DBG\n    ZED --> GIT\n    ZED --> COLLAB\n```\n\n## AI 功能工作流\n```mermaid\nflowchart TD\n    SELECT[\"用户选中代码\"]\n    SEND[\"发送代码至 Gemini（或其他 LLM）\"]\n    PROCESS[\"LLM 处理并生成响应\"]\n    DISPLAY[\"在编辑器中显示解释或建议\"]\n    PREDICT[\"预测编辑 / 自动补全\"]\n    TERMHELP[\"终端命令帮助\"]\n    MODEL_SWITCH[\"切换不同 LLM 模型\"]\n    ADD_MODEL[\"添加自定义模型或使用免费模型\"]\n    CONFIG[\"AI 功能配置\"]\n\n    SELECT --> SEND\n    SEND --> PROCESS\n    PROCESS --> DISPLAY\n    DISPLAY --> PREDICT\n    DISPLAY --> TERMHELP\n    CONFIG --> MODEL_SWITCH\n    CONFIG --> ADD_MODEL\n    MODEL_SWITCH --> SEND\n    ADD_MODEL --> SEND\n```\n\n## Windows 支持与限制\n```mermaid\nflowchart TD\n    WIN_SUPPORT[\"Windows 支持（已上线）\"]\n    PREV_NO[\"之前不支持\"]\n    ISSUE_NETCAT[\"缺少 netcat / NC\"]\n    LANG_SERVER[\"语言服务器依赖 netcat\"]\n    WSL[\"WSL 集成\"]\n    WSL_ISSUE[\"WSL 未识别 netcat\"]\n    WORKAROUND[\"使用外部 LLM 或自行配置\"]\n    MAC_LINUX[\"在 macOS / Linux 上运行良好\"]\n    LIMITS[\"仍有学习曲线与兼容性问题\"]\n\n    WIN_SUPPORT --> PREV_NO\n    WIN_SUPPORT --> ISSUE_NETCAT\n    ISSUE_NETCAT --> LANG_SERVER\n    WIN_SUPPORT --> WSL\n    WSL --> WSL_ISSUE\n    ISSUE_NETCAT --> WORKAROUND\n    MAC_LINUX --> WIN_SUPPORT\n    WIN_SUPPORT --> LIMITS\n```\n\n## 定价与使用决策\n```mermaid\nflowchart TD\n    FREE_VER[\"免费版\"]\n    PRO_VER[\"Pro 版\"]\n    ENTERPRISE[\"企业版\"]\n    FEATURES_FREE[\"基本功能、AI 集成、无限制插件\"]\n    FEATURES_PRO[\"无限次编辑预测、5 美元代币、付费后按量计费\"]\n    FEATURES_ENT[\"更多企业级功能\"]\n    NEEDS[\"使用需求\"]\n    BUDGET[\"预算考量\"]\n    DECIDE[\"选择合适版本\"]\n\n    FREE_VER --> FEATURES_FREE\n    PRO_VER --> FEATURES_PRO\n    ENTERPRISE --> FEATURES_ENT\n    NEEDS --> DECIDE\n    BUDGET --> DECIDE\n    DECIDE --> FREE_VER\n    DECIDE --> PRO_VER\n    DECIDE --> ENTERPRISE\n```",
+  "diagrams": [
+    {
+      "title": "Zed 编辑器概览",
+      "code": "flowchart TD\n    ZED[\"Zed 编辑器\"]\n    RUST[\"使用 Rust 编写\"]\n    PERF[\"性能为核心\"]\n    FAST[\"快速启动\"]\n    GPU[\"GPU 加速文字渲染\"]\n    CPU[\"利用多核 CPU\"]\n    CROSS[\"跨平台：Mac、Linux、Windows\"]\n    FREE[\"免费、开源\"]\n    AI[\"内置 AI 功能\"]\n    EXT[\"丰富扩展系统\"]\n    THEMES[\"多主题与配色\"]\n    VI[\"VI 模式支持\"]\n    DBG[\"集成调试器\"]\n    GIT[\"Git 集成\"]\n    COLLAB[\"实时协作、语音聊天、共享笔记\"]\n\n    ZED --> RUST\n    ZED --> PERF\n    PERF --> FAST\n    PERF --> GPU\n    PERF --> CPU\n    ZED --> CROSS\n    ZED --> FREE\n    ZED --> AI\n    ZED --> EXT\n    ZED --> THEMES\n    ZED --> VI\n    ZED --> DBG\n    ZED --> GIT\n    ZED --> COLLAB"
+    },
+    {
+      "title": "AI 功能工作流",
+      "code": "flowchart TD\n    SELECT[\"用户选中代码\"]\n    SEND[\"发送代码至 Gemini（或其他 LLM）\"]\n    PROCESS[\"LLM 处理并生成响应\"]\n    DISPLAY[\"在编辑器中显示解释或建议\"]\n    PREDICT[\"预测编辑 / 自动补全\"]\n    TERMHELP[\"终端命令帮助\"]\n    MODEL_SWITCH[\"切换不同 LLM 模型\"]\n    ADD_MODEL[\"添加自定义模型或使用免费模型\"]\n    CONFIG[\"AI 功能配置\"]\n\n    SELECT --> SEND\n    SEND --> PROCESS\n    PROCESS --> DISPLAY\n    DISPLAY --> PREDICT\n    DISPLAY --> TERMHELP\n    CONFIG --> MODEL_SWITCH\n    CONFIG --> ADD_MODEL\n    MODEL_SWITCH --> SEND\n    ADD_MODEL --> SEND"
+    },
+    {
+      "title": "Windows 支持与限制",
+      "code": "flowchart TD\n    WIN_SUPPORT[\"Windows 支持（已上线）\"]\n    PREV_NO[\"之前不支持\"]\n    ISSUE_NETCAT[\"缺少 netcat / NC\"]\n    LANG_SERVER[\"语言服务器依赖 netcat\"]\n    WSL[\"WSL 集成\"]\n    WSL_ISSUE[\"WSL 未识别 netcat\"]\n    WORKAROUND[\"使用外部 LLM 或自行配置\"]\n    MAC_LINUX[\"在 macOS / Linux 上运行良好\"]\n    LIMITS[\"仍有学习曲线与兼容性问题\"]\n\n    WIN_SUPPORT --> PREV_NO\n    WIN_SUPPORT --> ISSUE_NETCAT\n    ISSUE_NETCAT --> LANG_SERVER\n    WIN_SUPPORT --> WSL\n    WSL --> WSL_ISSUE\n    ISSUE_NETCAT --> WORKAROUND\n    MAC_LINUX --> WIN_SUPPORT\n    WIN_SUPPORT --> LIMITS"
+    },
+    {
+      "title": "定价与使用决策",
+      "code": "flowchart TD\n    FREE_VER[\"免费版\"]\n    PRO_VER[\"Pro 版\"]\n    ENTERPRISE[\"企业版\"]\n    FEATURES_FREE[\"基本功能、AI 集成、无限制插件\"]\n    FEATURES_PRO[\"无限次编辑预测、5 美元代币、付费后按量计费\"]\n    FEATURES_ENT[\"更多企业级功能\"]\n    NEEDS[\"使用需求\"]\n    BUDGET[\"预算考量\"]\n    DECIDE[\"选择合适版本\"]\n\n    FREE_VER --> FEATURES_FREE\n    PRO_VER --> FEATURES_PRO\n    ENTERPRISE --> FEATURES_ENT\n    NEEDS --> DECIDE\n    BUDGET --> DECIDE\n    DECIDE --> FREE_VER\n    DECIDE --> PRO_VER\n    DECIDE --> ENTERPRISE"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:22:59+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1T3o5BaEoG",
+  "title": "国产大模型那么多，为啥所有人都盯着新的DeepSeek V4？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1121,
+  "text": "deep sick终于发布了新版本V4\n确定支持华为升腾芯片\n官方表示\n性能比肩顶级闭源模型\nagent的能力大幅提高100万\n上下文成为标配\nAI圈子里的人夸疯了\n行业外的普通人\n看了新闻却还是有点懵\n啥意思\n至于吗\n一年多以前deep sick的巨大行业意义\n不搞AI也都能理解\n中国在开局落后美国大模型技术两年左右时间\n同时还被美国出口管制\n封锁了芯片算力的情况下\n终于出现一个天才选手\n想出办法\n用较少的芯片算力\n训练出一个世界前沿的强力大模型\n而且还开源\n相当于他们开了一家特别好吃的馆子\n不仅对所有顾客免费\n还将关键的原材料配料表做法公开\n然而现在其他国产大模型多了\ndeep sick这次还有那么惊艳吗\n先说一个好理解的deep sk v4憋了这么久\n是在憋一个\n之前没有国产大模型真正跑通的事情\n跟国产芯片做全面适配\n其实AI公司和英伟达AMD的合作不仅仅是买芯片\n发布大模型前\n一般还需要提前把模型给他们做性能优化\n有点类似于国产手机厂商跟高通的合作关系\n然而有外媒报道\n这次deep sick之所以推迟了V4的发布时间\n就是因为给了华为和寒武纪\n这个早期的访问权限\n花了几个月\n和华为寒武纪合作\n重写了模型底层代码的部分模块\n来\n确保V4能在华为最新的升腾芯片上流畅运行\n其实去年deep sick刚刚横空出世时\n曾经尝试过绕开英伟达\n可当时客观条件还不成熟\n反复失败后\n最终放弃了全面使用国产芯片的计划\n但这次deep sick等到了刚刚公开亮相的华为\n升腾950pr这件事一旦跑通\n对整个中国AI大模型\n中国芯片的意义可以说是无法估量的\n一方面\n在军事政企金融这些相对敏感的部门\n而且不影响性能\n另一方面\nGPU的特性决定了国产芯片一旦可用\n就有机会在制程较低的情况下\n通过堆叠来解决算力问题\n美国出口管制带来的消极影响将进一步降低\n如果这次V4的性能确实如传闻所说\n在长上下文编程任务上能和cloud拆GBT掰手腕\n那未来通过国产算力就能用上前沿模型\n不用再担心美国芯片出口管制的影响\n其实从适配国产芯片这件事上可以看出\ndeep sick真正的意义\n从不仅仅是为中国人争一口气\n而是从更专业的角度拓宽整个中国AI的可能性\n推动整个行业的发展\n除了芯片\ndeep sick在去年的基础上\n进一步抬高了开源的标准\n通过它可以看到\n中国大魔新路线开始完整的成型\n不是单点追一个最强的跑分分数\n而是把开源低成本agent国产芯片\n适配基础设施公开\n这些东西捆成一整套方法论\n圈内之所以热忱的追捧deep sick\n是\n因为\n他是极少数不被日活流水\n估值捆绑的中国科技公司\n在他身上确实能看到\n新一代中国科技行业的更多可能性",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1T3o5BaEoG",
+  "published_at": "1777024363",
+  "fetched_at": "2026-08-09T20:43:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T20:55:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T20:55:47+00:00"
+}

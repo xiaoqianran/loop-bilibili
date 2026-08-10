@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1XgXABoE8j",
+  "title": "分享一个用 AI 做帧动画的方法",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 220,
+  "text": "分享一下我最近用AI做帧序列图的方法\n流程不复杂\n一用AI先生成素材图\n先把角色形象定下来\n二用AI生成动作视频\n比如待机走路攻击这些动作\n这里最好注意一下\n首尾针都尽量用同一张素材图控制\n这样一致性会更好\n三再用GEMINI做个视频切图小工具\n把视频拆成一张张图片\n我建议工具最好带这些功能\n预览镜像设置\n导出大小批量下载\n这样最后就能得到自己想要的真序列素材了\n对独立开发来说\n我觉得这个方法还挺实用的\n达到理想的效果后下载就行了\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1XgXABoE8j",
+  "published_at": "1774310408",
+  "fetched_at": "2026-08-09T19:39:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 用 AI 做帧动画的方法概览\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"方法概述\"] --> A2[\"步骤1：AI生成素材图\"]\n    A2 --> A3[\"步骤2：AI生成动作视频\"]\n    A3 --> A4[\"步骤3：使用GEMINI切图\"]\n    A4 --> A5[\"得到帧序列素材\"]\n    A5 --> A6[\"适用于独立开发\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:05] [BV1XgXABoE8j P1 00:09] [BV1XgXABoE8j P1 00:22]\n\n## 详细流程\n```mermaid\nflowchart TD\n    B1[\"确定角色形象\"] --> B2[\"AI生成素材图\"]\n    B2 --> B3[\"AI生成动作视频（待机/走路/攻击）\"]\n    B3 --> B4[\"首尾针使用同一素材图\"]\n    B4 --> B5[\"使用GEMINI切图工具\"]\n    B5 --> B6[\"预览镜像设置\"]\n    B5 --> B7[\"导出大小批量下载\"]\n    B6 --> B8[\"检查一致性\"]\n    B7 --> B8\n    B8 --> B9[\"获得完整帧序列素材\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:07] [BV1XgXABoE8j P1 00:12] [BV1XgXABoE8j P1 00:17] [BV1XgXABoE8j P1 00:31] [BV1XgXABoE8j P1 00:33] [BV1XgXABoE8j P1 00:35]\n\n## 工具功能需求\n```mermaid\nflowchart TD\n    C1[\"视频切图工具\"] --> C2[\"功能：预览镜像设置\"]\n    C1 --> C3[\"功能：导出大小\"]\n    C1 --> C4[\"功能：批量下载\"]\n    C2 --> C5[\"提升切图准确性\"]\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"满足工作流需求\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:28] [BV1XgXABoE8j P1 00:31] [BV1XgXABoE8j P1 00:33] [BV1XgXABoE8j P1 00:35]\n\n## 一致性注意点\n```mermaid\nflowchart TD\n    D1[\"首尾针同一素材图\"] --> D2[\"保持视觉一致性\"]\n    D2 --> D3[\"提升动画连贯性\"]\n    D3 --> D4[\"整体效果更好\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:17] [BV1XgXABoE8j P1 00:21]\n\n## 实用性评价\n```mermaid\nflowchart TD\n    E1[\"对独立开发实用\"] --> E2[\"方法简洁\"]\n    E2 --> E3[\"达到理想效果后下载\"]\n    E3 --> E4[\"快速获取帧序列\"]\n    E4 --> E5[\"提升开发效率\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:38] [BV1XgXABoE8j P1 00:40] [BV1XgXABoE8j P1 00:46]",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"方法概述\"] --> A2[\"步骤1：AI生成素材图\"]\n    A2 --> A3[\"步骤2：AI生成动作视频\"]\n    A3 --> A4[\"步骤3：使用GEMINI切图\"]\n    A4 --> A5[\"得到帧序列素材\"]\n    A5 --> A6[\"适用于独立开发\"]"
+        },
+        {
+          "title": "详细流程",
+          "code": "flowchart TD\n    B1[\"确定角色形象\"] --> B2[\"AI生成素材图\"]\n    B2 --> B3[\"AI生成动作视频（待机/走路/攻击）\"]\n    B3 --> B4[\"首尾针使用同一素材图\"]\n    B4 --> B5[\"使用GEMINI切图工具\"]\n    B5 --> B6[\"预览镜像设置\"]\n    B5 --> B7[\"导出大小批量下载\"]\n    B6 --> B8[\"检查一致性\"]\n    B7 --> B8\n    B8 --> B9[\"获得完整帧序列素材\"]"
+        },
+        {
+          "title": "工具功能需求",
+          "code": "flowchart TD\n    C1[\"视频切图工具\"] --> C2[\"功能：预览镜像设置\"]\n    C1 --> C3[\"功能：导出大小\"]\n    C1 --> C4[\"功能：批量下载\"]\n    C2 --> C5[\"提升切图准确性\"]\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"满足工作流需求\"]"
+        },
+        {
+          "title": "一致性注意点",
+          "code": "flowchart TD\n    D1[\"首尾针同一素材图\"] --> D2[\"保持视觉一致性\"]\n    D2 --> D3[\"提升动画连贯性\"]\n    D3 --> D4[\"整体效果更好\"]"
+        },
+        {
+          "title": "实用性评价",
+          "code": "flowchart TD\n    E1[\"对独立开发实用\"] --> E2[\"方法简洁\"]\n    E2 --> E3[\"达到理想效果后下载\"]\n    E3 --> E4[\"快速获取帧序列\"]\n    E4 --> E5[\"提升开发效率\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T19:49:13+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 用 AI 做帧动画的方法概览\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"方法概述\"] --> A2[\"步骤1：AI生成素材图\"]\n    A2 --> A3[\"步骤2：AI生成动作视频\"]\n    A3 --> A4[\"步骤3：使用GEMINI切图\"]\n    A4 --> A5[\"得到帧序列素材\"]\n    A5 --> A6[\"适用于独立开发\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:05] [BV1XgXABoE8j P1 00:09] [BV1XgXABoE8j P1 00:22]\n\n## 详细流程\n```mermaid\nflowchart TD\n    B1[\"确定角色形象\"] --> B2[\"AI生成素材图\"]\n    B2 --> B3[\"AI生成动作视频（待机/走路/攻击）\"]\n    B3 --> B4[\"首尾针使用同一素材图\"]\n    B4 --> B5[\"使用GEMINI切图工具\"]\n    B5 --> B6[\"预览镜像设置\"]\n    B5 --> B7[\"导出大小批量下载\"]\n    B6 --> B8[\"检查一致性\"]\n    B7 --> B8\n    B8 --> B9[\"获得完整帧序列素材\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:07] [BV1XgXABoE8j P1 00:12] [BV1XgXABoE8j P1 00:17] [BV1XgXABoE8j P1 00:31] [BV1XgXABoE8j P1 00:33] [BV1XgXABoE8j P1 00:35]\n\n## 工具功能需求\n```mermaid\nflowchart TD\n    C1[\"视频切图工具\"] --> C2[\"功能：预览镜像设置\"]\n    C1 --> C3[\"功能：导出大小\"]\n    C1 --> C4[\"功能：批量下载\"]\n    C2 --> C5[\"提升切图准确性\"]\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"满足工作流需求\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:28] [BV1XgXABoE8j P1 00:31] [BV1XgXABoE8j P1 00:33] [BV1XgXABoE8j P1 00:35]\n\n## 一致性注意点\n```mermaid\nflowchart TD\n    D1[\"首尾针同一素材图\"] --> D2[\"保持视觉一致性\"]\n    D2 --> D3[\"提升动画连贯性\"]\n    D3 --> D4[\"整体效果更好\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:17] [BV1XgXABoE8j P1 00:21]\n\n## 实用性评价\n```mermaid\nflowchart TD\n    E1[\"对独立开发实用\"] --> E2[\"方法简洁\"]\n    E2 --> E3[\"达到理想效果后下载\"]\n    E3 --> E4[\"快速获取帧序列\"]\n    E4 --> E5[\"提升开发效率\"]\n```\n时间戳: [BV1XgXABoE8j P1 00:38] [BV1XgXABoE8j P1 00:40] [BV1XgXABoE8j P1 00:46]",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"方法概述\"] --> A2[\"步骤1：AI生成素材图\"]\n    A2 --> A3[\"步骤2：AI生成动作视频\"]\n    A3 --> A4[\"步骤3：使用GEMINI切图\"]\n    A4 --> A5[\"得到帧序列素材\"]\n    A5 --> A6[\"适用于独立开发\"]"
+    },
+    {
+      "title": "详细流程",
+      "code": "flowchart TD\n    B1[\"确定角色形象\"] --> B2[\"AI生成素材图\"]\n    B2 --> B3[\"AI生成动作视频（待机/走路/攻击）\"]\n    B3 --> B4[\"首尾针使用同一素材图\"]\n    B4 --> B5[\"使用GEMINI切图工具\"]\n    B5 --> B6[\"预览镜像设置\"]\n    B5 --> B7[\"导出大小批量下载\"]\n    B6 --> B8[\"检查一致性\"]\n    B7 --> B8\n    B8 --> B9[\"获得完整帧序列素材\"]"
+    },
+    {
+      "title": "工具功能需求",
+      "code": "flowchart TD\n    C1[\"视频切图工具\"] --> C2[\"功能：预览镜像设置\"]\n    C1 --> C3[\"功能：导出大小\"]\n    C1 --> C4[\"功能：批量下载\"]\n    C2 --> C5[\"提升切图准确性\"]\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"满足工作流需求\"]"
+    },
+    {
+      "title": "一致性注意点",
+      "code": "flowchart TD\n    D1[\"首尾针同一素材图\"] --> D2[\"保持视觉一致性\"]\n    D2 --> D3[\"提升动画连贯性\"]\n    D3 --> D4[\"整体效果更好\"]"
+    },
+    {
+      "title": "实用性评价",
+      "code": "flowchart TD\n    E1[\"对独立开发实用\"] --> E2[\"方法简洁\"]\n    E2 --> E3[\"达到理想效果后下载\"]\n    E3 --> E4[\"快速获取帧序列\"]\n    E4 --> E5[\"提升开发效率\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T19:49:13+00:00"
+}

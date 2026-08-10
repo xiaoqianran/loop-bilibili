@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1HdGA61EMX",
+  "title": "Deepseek正式版发布，强大到反天罡！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 419,
+  "text": "就在刚刚\ndeep sick发布了V4flash的正式版\n现在他可以无缝接入codex\n再也不用第三方中转了\n这不是简单的版本号更新\n模型架构没变\n但agent能力暴涨\n在terminal bench2.1上拿下82.7分\n直接逼近open4.8水平\n现在的VFLASH在agent任务上\n质量和价格已经超越vs pro与篮板\n而且这次原生支持了responses a API\n全面适配codex\n也就是说\n像codex cloud code这种agent软件\n再也不需要第三方软件折腾\n现在我们只需要根据官方的操作\n使用一串代码就能够实现codex的无缝接入\n操作步骤如下\n第一打开终端\n将这串代码输入进去\n按回车选择执行操作\n一在填写自己的deep sick API密钥\n就可以部署成功密钥\n需要前往deep seek官网进行获取\n需要注意的是\n模型在更改之后\ncodex的历史工作将会清除\n但插件和skill会保留下来\n务必提前备份",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HdGA61EMX",
+  "published_at": "1785509722",
+  "fetched_at": "2026-08-06T19:51:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deepseek V4Flash 知识图谱\n\n## V4Flash 关键特性\n```mermaid\nflowchart TD\n    A[\"正式版发布\"] --> B[\"模型架构未变\"]\n    A --> C[\"Agent 能力提升\"]\n    C --> D[\"Terminal Bench 2.1 评分 82.7\"]\n    D --> E[\"接近 OpenAI 4.8 水平\"]\n    A --> F[\"原生支持 Responses API\"]\n    F --> G[\"全面适配 Codex\"]\n    G --> H[\"无需第三方中转\"]\n    H --> I[\"适用于 Codex Cloud Code 等 agent 软件\"]\n    C --> J[\"质量/价格 超越 VSPRO 与 篮板\"]\n    J --> I\n```\n\n## Codex 无缝接入流程\n```mermaid\nflowchart TD\n    S1[\"打开终端\"] --> S2[\"输入官方提供代码串\"]\n    S2 --> S3[\"回车执行\"]\n    S3 --> S4[\"填写 Deepseek API 密钥\"]\n    S4 --> S5[\"部署成功\"]\n    S6[\"获取 API 密钥（Deepseek 官网）\"] --> S4\n    S5 --> S7[\"无缝接入 Codex\"]\n    S7 --> S8[\"完成\"]\n```\n\n## 模型更改后的注意事项\n```mermaid\nflowchart TD\n    P1[\"模型更改后\"] --> P2[\"Codex 历史工作被清除\"]\n    P1 --> P3[\"插件和 Skill 保留\"]\n    P3 --> P4[\"需提前备份\"]\n    P4 --> P5[\"手动导出备份文件\"]\n    P5 --> P6[\"避免数据丢失\"]\n    P7[\"操作前检查\"] --> P8[\"确认备份已完成\"]\n    P8 --> P6\n```",
+      "diagrams": [
+        {
+          "title": "V4Flash 关键特性",
+          "code": "flowchart TD\n    A[\"正式版发布\"] --> B[\"模型架构未变\"]\n    A --> C[\"Agent 能力提升\"]\n    C --> D[\"Terminal Bench 2.1 评分 82.7\"]\n    D --> E[\"接近 OpenAI 4.8 水平\"]\n    A --> F[\"原生支持 Responses API\"]\n    F --> G[\"全面适配 Codex\"]\n    G --> H[\"无需第三方中转\"]\n    H --> I[\"适用于 Codex Cloud Code 等 agent 软件\"]\n    C --> J[\"质量/价格 超越 VSPRO 与 篮板\"]\n    J --> I"
+        },
+        {
+          "title": "Codex 无缝接入流程",
+          "code": "flowchart TD\n    S1[\"打开终端\"] --> S2[\"输入官方提供代码串\"]\n    S2 --> S3[\"回车执行\"]\n    S3 --> S4[\"填写 Deepseek API 密钥\"]\n    S4 --> S5[\"部署成功\"]\n    S6[\"获取 API 密钥（Deepseek 官网）\"] --> S4\n    S5 --> S7[\"无缝接入 Codex\"]\n    S7 --> S8[\"完成\"]"
+        },
+        {
+          "title": "模型更改后的注意事项",
+          "code": "flowchart TD\n    P1[\"模型更改后\"] --> P2[\"Codex 历史工作被清除\"]\n    P1 --> P3[\"插件和 Skill 保留\"]\n    P3 --> P4[\"需提前备份\"]\n    P4 --> P5[\"手动导出备份文件\"]\n    P5 --> P6[\"避免数据丢失\"]\n    P7[\"操作前检查\"] --> P8[\"确认备份已完成\"]\n    P8 --> P6"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T19:52:06+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deepseek V4Flash 知识图谱\n\n## V4Flash 关键特性\n```mermaid\nflowchart TD\n    A[\"正式版发布\"] --> B[\"模型架构未变\"]\n    A --> C[\"Agent 能力提升\"]\n    C --> D[\"Terminal Bench 2.1 评分 82.7\"]\n    D --> E[\"接近 OpenAI 4.8 水平\"]\n    A --> F[\"原生支持 Responses API\"]\n    F --> G[\"全面适配 Codex\"]\n    G --> H[\"无需第三方中转\"]\n    H --> I[\"适用于 Codex Cloud Code 等 agent 软件\"]\n    C --> J[\"质量/价格 超越 VSPRO 与 篮板\"]\n    J --> I\n```\n\n## Codex 无缝接入流程\n```mermaid\nflowchart TD\n    S1[\"打开终端\"] --> S2[\"输入官方提供代码串\"]\n    S2 --> S3[\"回车执行\"]\n    S3 --> S4[\"填写 Deepseek API 密钥\"]\n    S4 --> S5[\"部署成功\"]\n    S6[\"获取 API 密钥（Deepseek 官网）\"] --> S4\n    S5 --> S7[\"无缝接入 Codex\"]\n    S7 --> S8[\"完成\"]\n```\n\n## 模型更改后的注意事项\n```mermaid\nflowchart TD\n    P1[\"模型更改后\"] --> P2[\"Codex 历史工作被清除\"]\n    P1 --> P3[\"插件和 Skill 保留\"]\n    P3 --> P4[\"需提前备份\"]\n    P4 --> P5[\"手动导出备份文件\"]\n    P5 --> P6[\"避免数据丢失\"]\n    P7[\"操作前检查\"] --> P8[\"确认备份已完成\"]\n    P8 --> P6\n```",
+  "diagrams": [
+    {
+      "title": "V4Flash 关键特性",
+      "code": "flowchart TD\n    A[\"正式版发布\"] --> B[\"模型架构未变\"]\n    A --> C[\"Agent 能力提升\"]\n    C --> D[\"Terminal Bench 2.1 评分 82.7\"]\n    D --> E[\"接近 OpenAI 4.8 水平\"]\n    A --> F[\"原生支持 Responses API\"]\n    F --> G[\"全面适配 Codex\"]\n    G --> H[\"无需第三方中转\"]\n    H --> I[\"适用于 Codex Cloud Code 等 agent 软件\"]\n    C --> J[\"质量/价格 超越 VSPRO 与 篮板\"]\n    J --> I"
+    },
+    {
+      "title": "Codex 无缝接入流程",
+      "code": "flowchart TD\n    S1[\"打开终端\"] --> S2[\"输入官方提供代码串\"]\n    S2 --> S3[\"回车执行\"]\n    S3 --> S4[\"填写 Deepseek API 密钥\"]\n    S4 --> S5[\"部署成功\"]\n    S6[\"获取 API 密钥（Deepseek 官网）\"] --> S4\n    S5 --> S7[\"无缝接入 Codex\"]\n    S7 --> S8[\"完成\"]"
+    },
+    {
+      "title": "模型更改后的注意事项",
+      "code": "flowchart TD\n    P1[\"模型更改后\"] --> P2[\"Codex 历史工作被清除\"]\n    P1 --> P3[\"插件和 Skill 保留\"]\n    P3 --> P4[\"需提前备份\"]\n    P4 --> P5[\"手动导出备份文件\"]\n    P5 --> P6[\"避免数据丢失\"]\n    P7[\"操作前检查\"] --> P8[\"确认备份已完成\"]\n    P8 --> P6"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:52:06+00:00"
+}

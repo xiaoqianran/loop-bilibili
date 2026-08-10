@@ -1,0 +1,40 @@
+{
+  "bvid": "BV11ngh6xE3s",
+  "title": "Godot 2D 实战 | 从零开发俯视角射击游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1624,
+  "text": "欢迎来到这套全新教程\n我们会在这里学习使用GODOT4\n怎么完整制作一款2D俯视角射击游戏项目\n在这套教程里\n我们会掌握最核心的基础内容\n做出一款俯视角游戏\n玩家操控角色射击\n清空房间\n抵挡一波波敌人存活下去\n如今像元气骑士挺进地牢这类游戏人气很高\n因为他们融合探索成长养成武器搭配组合玩法\n且单局游玩时长很短\n每一局体验都不一样\n所以在本教程中\n我们会复刻这些核心游戏机制\n讲解方式简洁清晰\n直白易懂\n第一章节我们会制作游戏主菜单\n学习怎么制作界面并添加动画效果\n怎么存储游戏设置参数\n以及如何实现界面切换\n过渡特效\n第二章节\n我们来制作游戏角色\n学习编写角色移动逻辑\n给角色添加血量\n实现受伤扣血功能\n我们还会搭建配套界面组件\n并着手搭建武器系统的基础框架\n下一章节我们会做一套交互性很强\n带动画效果的选择菜单\n在这个界面\n玩家可以挑选本局使用的角色与武器\n同时界面会展示对应介绍\n让玩家清楚自己所选内容的效果\n再下一个章节\n我们完善整套武器系统\n分别制作远程武器与近战武器\n添加射击\n近战打击特效\n同时学习用文字飘字来展示伤害数值\n完成武器部分后\n我们着手地牢地图生成学习\n借助随机游走算法生成房间\n搭建房间联通逻辑\n制作房间之间的走廊通道\n添加小地图\n并在每个房间生成敌人\n后续章节我们开始制作各类敌人单位\n为每个房间搭建可自定义的刷怪生成器\n补充敌人视觉特效\n让敌人也能持有武器\n实现敌人追击\n玩家对玩家造成伤害的逻辑\n之后我们制作游戏内道具\n物品制作可在商店房间购买的各类道具\n还有宝箱奖励道具\n可用于购物的金币以及更多拓展功能\n最后我们学习借助传送门\n实现关卡之间的跳转切换\n新增更多画面特效\n并学习怎么以这套完整项目为基底\n拓展游戏内容\n如果你想要提升自己的GODOT开发能力\n想要学会完整制作一款俯视角射击游戏\n这套教程就很适合你\n你可以先观看免费试看视频\n确认这套教程是否符合你的学习需求\n不用再犹豫\n现在报名\n今天就能动手开发\n大家好\n欢迎观看这套教程的第一节视频\n在正式往下学习前\n这一节内容十分关键\n我想让各位清楚\n这套教程适合什么样的人群学习\n我最不希望出现的情况\n就是各位学得十分受挫\n要么觉得教程难度过高\n要么觉得内容和自身现有水平不匹配\n视频背景画面会展示完整成品项目\n也就是我们后续所有章节\n要一步步开发出来的内容\n我们的成品项目自带背景音乐与音效\n我会把所有音频静音\n方便大家听清我的讲解\n那么我首先要说清楚的一点\n就是这套教程的适配人群\n以及他是为哪类学习者设计的\n本教程主要面向想要继续提升进阶\n开发复杂度更高项目的学习者\n也就是中等难度层级的游戏项目开发\n你可以理解成偏向中级开发项目\n教程虽然面向入门学习者\n但仅限已经扎实掌握高到基础的入门者\n这里指的是你要明白节点是什么\nsprite2D是什么\nAnimate spread\n2D是什么\nArea\n2D是什么\n信号是什么信号\n如何绑定到各类class\nclass是什么\n以及同类基础概念\n以上这些都是你提前需要掌握的高的基础\n这样跟着教程学习才不会出现卡顿\n还有一点我要和大家讲明白\n所有操作都会一步步拆解\n讲解节奏放缓\n细节全部讲透\n我们会说明每一步操作的原理\n解释选用这套方案\n而非其他方案的原因\n所以在这点上大家不必担心\n不过我还是建议各位具备牢固的基础水平\n再来学习\n再次强调\n这套教程面向想要进阶\n制作复杂度更高游戏的开发者\n另外我还要说明一下\n如果你遇到报错存在疑问\n需要建议或者技术协助\n或是想给后续章节提出优化建议\n有任何想法都可以留言发布在教程的问答板块\n我会尽力为大家解答问题\n最后和大家说明整套教程的最后一个章节\n最后一节课里我会附上邀请链接\n大家可以加入discord社群服务器\n在社群里你能获取和本教程相关的各类帮助\n也能了解我其他后续可能会学习的教程内容\n以上内容全部讲完\n我们下期视频再见\n下一期就正式开始开发我们的游戏",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV11ngh6xE3s",
+  "published_at": "1784865962",
+  "fetched_at": "2026-08-08T17:00:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "HTTP 524: {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-524/\",\"title\":\"Error 524: A timeout occurred\",\"status\":524,\"detail\":\"The origin web server did not return a complete response within the 120-second Proxy Read Timeout window. The connection was established, but the origin took too long to respond.\",\"instance\":\"a2801435a899f900\",\"error_code\":524,\"error_name\":\"origin_response_timeout\",\"error_category\":\"origin\",\"ray_id\":\"a2801435a899f900\",\"timestamp\":\"2026-08-08T17:02:48Z\",\"zone\":\"integrate.api.nvidia.com\",\"cloudflare_error\":true,\"retryable\":true,\"retry_after\":120,\"owner_action_required\":true,\"what_you_should_do\":\"**Wait and retry.** Back off for at least 120 seconds. If the error persists, the website operator should che",
+      "updated_at": "2026-08-08T17:02:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "HTTP 524: {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-524/\",\"title\":\"Error 524: A timeout occurred\",\"status\":524,\"detail\":\"The origin web server did not return a complete response within the 120-second Proxy Read Timeout window. The connection was established, but the origin took too long to respond.\",\"instance\":\"a2801435a899f900\",\"error_code\":524,\"error_name\":\"origin_response_timeout\",\"error_category\":\"origin\",\"ray_id\":\"a2801435a899f900\",\"timestamp\":\"2026-08-08T17:02:48Z\",\"zone\":\"integrate.api.nvidia.com\",\"cloudflare_error\":true,\"retryable\":true,\"retry_after\":120,\"owner_action_required\":true,\"what_you_should_do\":\"**Wait and retry.** Back off for at least 120 seconds. If the error persists, the website operator should che",
+  "analysis_updated_at": "2026-08-08T17:02:48+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1MRTd6bEbH",
+  "title": "171. 如何可视化 DeepSeek MLA（简化版）？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1100,
+  "text": "今天的问题是如何可视化deep sick m la\n在视频开始之前\n需要先明确三点\n简化原论文中的MLA机制其实比较复杂\n为了在3分钟内直击它最核心的底层逻辑\n今天做了三点简化\n第一忽略rap位置编码\n后面的视频再单独聊\n第二只讨论推理的场景\n因为在推理时Q没有缓存Q的压缩矩阵\nWDQ成解压矩阵\nWUQ可以直接合并为一个普通的权重矩阵WQ\n第三把完整的Q和K还原出来\n原论文中无需还原完整的QK\n这个优化后面再谈好\n明确三点简化后\n我们先看到最左边蓝色的输入矩阵X\n我们假设它有三行四列\n代表输入了三个token\n总共有四个头模型的尾数\nd model等于四倍的DK\nDK是头的尾数\n顺着下面这条绿色的箭头看\nX乘以权重矩阵WQ得到了Q矩阵\n它的形状同样是三行四头\n注意看右边的蓝色标注Q矩阵用完即弃\n因为在推理时我们是不需要缓存它的\n现在跟着上面这条绿色的长箭头往右看\nX乘以一个非常关键的投影矩阵WDKV\n这里的D代表down\n也就是下投影减少特征数\n降维后\n我们得到了中间这个被标为橙色的压缩矩阵\nC k v\n其中C表示compression\n压缩CKV就是压缩的kv cash\n它只有三行\n但为数比起四个头减少了\n在推理时\n我们不再保留庞大的K和V\n而是只在显存里缓存这个三行的KV\n这一步就是MLA省显存的秘密\n那么在需要计算注意力的时候\n怎么还原呢\n视线继续往右看\n顺着分叉的绿色箭头C矩阵要进行临时解压\n它乘以WUK\n也就是up k上投影增加特征数\n还原出三行四头的K矩阵\n同时它乘以WUV\n也就是up v上投影还原出三行四头的V矩阵\n和Q1样\n临时解压出来的K和V也是用完\n机器不需要常驻显存\n也就是用压缩的kv cash\n代替了传统的kv cash\n到这里\n为了计算注意力\n我们需要把这些矩阵拆成多头的形式\n我们把视线移到最下方\n可以想象把大矩阵竖着砍三刀\n切成四份\n第一份放最前面\n第二份叠在它后面\n以此类推\n这样就得到了四个堆叠的头\n每个头的尾数是DK\n我们顺着下方的流程往右看\nQ的四个头和K转制的四个头进行矩阵乘法\n得到注意力\n矩阵A再乘以V的四个头\n最后得到输出O\n注意看每个堆叠图下方的蓝色标注\n他们都写着不同\n这就是MLA精妙的地方\n虽然我们在cash里只存了CKV\n但通过不同的上投影矩阵解压出来后\nQKVAO的四个头各不相同\n个头独立计算\n它在计算本质上依然是表达力完整的MHA\n而不是共享特征的GQA或者MQA\n最后最右边这四个头的输出\n重新拼接回一张三行四头的矩阵\n但是别忘了\n后面那个代表输出投影的W矩阵依然必不可少\n经过W矩阵的投影\n我们才得到了最终输出",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1MRTd6bEbH",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

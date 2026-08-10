@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1ez3v6XE9e",
+  "title": "ai动画《亿万人...成为自己！》",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 352,
+  "text": "距离考试结束还有15分钟不行\n没时间了\n已知函数F括号X括号等于X的平方减二\nax加A的平方减一\n先化简\n这是一个完全平方\nF括号X括号等于X减A的平方减一\n所以它的顶点坐标是A和一\n我明白了这道题无解\n哼有这时间还不如多做两道题\n但是我现在有更重要的事情要做\n嗯哼哼哼哼\n奇怪试卷怎么被吹到这里来了\n小美\n小美没让你等太久吧\n刚高考完就这么急着找我\n你有什么事\n其实我\n小美人\n我喜欢你很久了\n请跟我交往吧\n我今年一定能考上清华数学系\n将来一定能给你幸福的\n♪ 我望着窗外的夜幕 ♪\n告诉我你的想法吧\n无论结果怎样\n我都能接受的\n拜托了\n对不起\n我喜欢会弹吉他的男生\n呜呜呜\n我国战士\n弹吉他的男生确实很帅啊\n不过比起弹吉他\n我还是更喜欢数学\n♪ 无敌 ♪\n♪ 树上 ♪\n♪ 楼梯 ♪\n♪ 强强自由 ♪",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ez3v6XE9e",
+  "published_at": "1785225986",
+  "fetched_at": "2026-08-09T21:54:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 《亿万人...成为自己！》知识图谱\n\n## 数学函数化简与顶点分析\n```mermaid\nflowchart TD\n    F0[\"F(x)=x^2-2\"]\n    S1[\"化简: 加 a·x + a² - 1\"]\n    CS[\"完全平方形式\"]\n    F1[\"F(x) = (x - a)^2 - 1\"]\n    V[\"顶点坐标 (a, -1)\"]\n    C[\"结论: 顶点为 (a, -1)\"]\n    N[\"主观备注: 题目可能无解\"]\n    F0 --> S1 --> CS --> F1 --> V --> C\n    C --> N\n```\n\n## 情感表达与承诺链\n```mermaid\nflowchart LR\n    SP[\"说话者\"]\n    XM[\"小美\"]\n    CF[\"我喜欢你很久了\"]\n    REQ[\"请跟我交往吧\"]\n    PR[\"我今年一定能考上清华数学系\"]\n    FUT[\"将来一定能给你幸福\"]\n    ACC[\"无论结果怎样，我都能接受\"]\n    AP[\"对不起\"]\n    PREF[\"我更喜欢数学\"]\n    MUS[\"弹吉他的男生很帅\"]\n    SP --> CF --> REQ --> PR --> FUT\n    SP --> ACC\n    SP --> AP\n    SP --> PREF\n    SP --> MUS\n```\n\n## 考试剩余时间的决策流程\n```mermaid\nflowchart TD\n    T1[\"距离考试结束还有15分钟\"]\n    TP[\"时间紧迫：没时间了\"]\n    O1[\"选项：多做两道题\"]\n    O2[\"选项：处理更重要的事情\"]\n    DEC[\"决定：处理更重要的事情\"]\n    OUT[\"结果：放弃做题\"]\n    T1 --> TP\n    TP --> O1\n    TP --> O2 --> DEC --> OUT\n```",
+      "diagrams": [
+        {
+          "title": "数学函数化简与顶点分析",
+          "code": "flowchart TD\n    F0[\"F(x)=x^2-2\"]\n    S1[\"化简: 加 a·x + a² - 1\"]\n    CS[\"完全平方形式\"]\n    F1[\"F(x) = (x - a)^2 - 1\"]\n    V[\"顶点坐标 (a, -1)\"]\n    C[\"结论: 顶点为 (a, -1)\"]\n    N[\"主观备注: 题目可能无解\"]\n    F0 --> S1 --> CS --> F1 --> V --> C\n    C --> N"
+        },
+        {
+          "title": "情感表达与承诺链",
+          "code": "flowchart LR\n    SP[\"说话者\"]\n    XM[\"小美\"]\n    CF[\"我喜欢你很久了\"]\n    REQ[\"请跟我交往吧\"]\n    PR[\"我今年一定能考上清华数学系\"]\n    FUT[\"将来一定能给你幸福\"]\n    ACC[\"无论结果怎样，我都能接受\"]\n    AP[\"对不起\"]\n    PREF[\"我更喜欢数学\"]\n    MUS[\"弹吉他的男生很帅\"]\n    SP --> CF --> REQ --> PR --> FUT\n    SP --> ACC\n    SP --> AP\n    SP --> PREF\n    SP --> MUS"
+        },
+        {
+          "title": "考试剩余时间的决策流程",
+          "code": "flowchart TD\n    T1[\"距离考试结束还有15分钟\"]\n    TP[\"时间紧迫：没时间了\"]\n    O1[\"选项：多做两道题\"]\n    O2[\"选项：处理更重要的事情\"]\n    DEC[\"决定：处理更重要的事情\"]\n    OUT[\"结果：放弃做题\"]\n    T1 --> TP\n    TP --> O1\n    TP --> O2 --> DEC --> OUT"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T21:56:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 《亿万人...成为自己！》知识图谱\n\n## 数学函数化简与顶点分析\n```mermaid\nflowchart TD\n    F0[\"F(x)=x^2-2\"]\n    S1[\"化简: 加 a·x + a² - 1\"]\n    CS[\"完全平方形式\"]\n    F1[\"F(x) = (x - a)^2 - 1\"]\n    V[\"顶点坐标 (a, -1)\"]\n    C[\"结论: 顶点为 (a, -1)\"]\n    N[\"主观备注: 题目可能无解\"]\n    F0 --> S1 --> CS --> F1 --> V --> C\n    C --> N\n```\n\n## 情感表达与承诺链\n```mermaid\nflowchart LR\n    SP[\"说话者\"]\n    XM[\"小美\"]\n    CF[\"我喜欢你很久了\"]\n    REQ[\"请跟我交往吧\"]\n    PR[\"我今年一定能考上清华数学系\"]\n    FUT[\"将来一定能给你幸福\"]\n    ACC[\"无论结果怎样，我都能接受\"]\n    AP[\"对不起\"]\n    PREF[\"我更喜欢数学\"]\n    MUS[\"弹吉他的男生很帅\"]\n    SP --> CF --> REQ --> PR --> FUT\n    SP --> ACC\n    SP --> AP\n    SP --> PREF\n    SP --> MUS\n```\n\n## 考试剩余时间的决策流程\n```mermaid\nflowchart TD\n    T1[\"距离考试结束还有15分钟\"]\n    TP[\"时间紧迫：没时间了\"]\n    O1[\"选项：多做两道题\"]\n    O2[\"选项：处理更重要的事情\"]\n    DEC[\"决定：处理更重要的事情\"]\n    OUT[\"结果：放弃做题\"]\n    T1 --> TP\n    TP --> O1\n    TP --> O2 --> DEC --> OUT\n```",
+  "diagrams": [
+    {
+      "title": "数学函数化简与顶点分析",
+      "code": "flowchart TD\n    F0[\"F(x)=x^2-2\"]\n    S1[\"化简: 加 a·x + a² - 1\"]\n    CS[\"完全平方形式\"]\n    F1[\"F(x) = (x - a)^2 - 1\"]\n    V[\"顶点坐标 (a, -1)\"]\n    C[\"结论: 顶点为 (a, -1)\"]\n    N[\"主观备注: 题目可能无解\"]\n    F0 --> S1 --> CS --> F1 --> V --> C\n    C --> N"
+    },
+    {
+      "title": "情感表达与承诺链",
+      "code": "flowchart LR\n    SP[\"说话者\"]\n    XM[\"小美\"]\n    CF[\"我喜欢你很久了\"]\n    REQ[\"请跟我交往吧\"]\n    PR[\"我今年一定能考上清华数学系\"]\n    FUT[\"将来一定能给你幸福\"]\n    ACC[\"无论结果怎样，我都能接受\"]\n    AP[\"对不起\"]\n    PREF[\"我更喜欢数学\"]\n    MUS[\"弹吉他的男生很帅\"]\n    SP --> CF --> REQ --> PR --> FUT\n    SP --> ACC\n    SP --> AP\n    SP --> PREF\n    SP --> MUS"
+    },
+    {
+      "title": "考试剩余时间的决策流程",
+      "code": "flowchart TD\n    T1[\"距离考试结束还有15分钟\"]\n    TP[\"时间紧迫：没时间了\"]\n    O1[\"选项：多做两道题\"]\n    O2[\"选项：处理更重要的事情\"]\n    DEC[\"决定：处理更重要的事情\"]\n    OUT[\"结果：放弃做题\"]\n    T1 --> TP\n    TP --> O1\n    TP --> O2 --> DEC --> OUT"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T21:56:28+00:00"
+}

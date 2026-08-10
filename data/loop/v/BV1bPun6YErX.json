@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1bPun6YErX",
+  "title": "DeepSeek V4 Flash 正式版实测：它真能做出瓦罗兰特吗？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1122,
+  "text": "这几天用codex指挥deep sic跑模拟\n感觉很好用\n闲来无事想用deep sick做个游戏\n首先看一下提示词\n基于格斗\n开发一个类似瓦罗兰特的单机战术射击游戏\nDemo\n提示词中没有限定格斗版本\n也就是说模型需要首先判断本地环境\n游戏方面需要复刻杰风韩磊那两个角色\n以及标配左轮2K大狙四把武器\n地图参考深海明珠\n因为我认为这是一个比较考验美术设计\n与几何理解的地图\n有急停和随机弹道机制\n人物的技能也需要复刻\n然后是一些有的没的\n模型选择的是open code中的jeep sekv4flash正式版\n推理强度是max\n我们把提示词给他\n可以看到deep sick开始干活了\n先是确认了一下本地环境\n然后开始了漫长的思考\n我们直接剪辑一下\n这里deep six确认完本地环境之后\n直接列的任务大纲一共12个阶段\n包括工程骨架音效\n武器地图角色技能等一系列机制\n我们快进一下\nOK家人们用了一天一夜的时间\n也是终于做完了open cos\n这两天的DJ正式版太不稳定了\n老是卡掉\n看上去完成度还挺不错的\n地图武器护甲\n角色技能\n人机UI都实现了\n并且也如实报告了游戏存在的一些小问题\n一共花费了0.3亿美元\n直接来看一下效果\n可以看到UI功能还是相对完整的\n准星有动态和静态两种模式\n这里我们直接选择默认设置control界面\n做的就比较简陋了\n我们进入游戏\n这应该是K模型也做出来了\n有基础的设计特效和音效\n但是子弹打在墙上没有弹坑\n且特效有一条奇怪的竖线\n有换弹功能\n但没有动画机\n瞄视野会变黑\n放个技能试试\n有烟雾效果\n可以飞\n可以向村民大师大招\n飞镖有点奇怪\n好吧\n这个大招应该没做好\n谁在打我\n伤害方向显示有点问题\n我死了\n开始育苗\n居然能打死人\nDAS禁言\n弹道应该是没做好\n有时候能打死人\n有时不行\n设置换人物\n切换成瑞纳视角变直了\n但是其他UI都没有变化\n黑人眼\n三人有灵魂球\n但是这个灵魂球没法交互\n大招射速加快了\n这个长得像火箭筒的\n应该是大狙了\n机瞄有模型遮盖\n标配有三连发\n天上这是什么东西\n退出游戏了\n检查一下debug\n可以看到还是存在报错的\n总结一下\n这是DC和V4plus正式版\n在open code上一次性完成的结果\n整体功能实际上是完整实现了的\n但是细节很差\n不过对于一个没有视觉能力的小参数模型\n能一次性做出一个可玩不崩溃的demo\n还是相当不错的了\nup平时工作基本上也大量使用deep sick\n让CODX写提示词\ndeep sk执行\n然后codex审查兜底\n本来还想做KIMIK3的测评的\n但是KIMI的199套餐这周被up烧完了\n只能等下周了\n大家有什么其他想看的模型打在评论区\n感谢大伙的观看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1bPun6YErX",
+  "published_at": "1786009468",
+  "fetched_at": "2026-08-08T20:38:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 实测知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    Prompt[\"提示词\\n- 基于格斗\\n- 开发类似瓦罗兰特的单机战术射击游戏\"] --> Model[\"模型\\nDeepSeek V4 Flash 正式版\\n(open code jeep sekv4flash)\"]\n    Model --> EnvCheck[\"本地环境确认\"]\n    EnvCheck --> TaskOutline[\"任务大纲（12 阶段）\\n- 工程骨架\\n- 音效\\n- 武器\\n- 地图\\n- 角色技能\\n- UI 等\"]\n    TaskOutline --> Development[\"开发过程\\n约 1 天 1 夜\"]\n    Development --> Output[\"游戏 Demo\\nUI、角色、武器、地图、技能实现\"]\n    Output --> Issues[\"细节问题\"]\n    Issues --> BulletImpact[\"子弹无弹坑\"]\n    Issues --> VisualArtifacts[\"特效竖线、无动画机、视野变黑\"]\n    Issues --> SkillBugs[\"大招未完成、伤害方向显示错误\"]\n    Issues --> UIInconsistencies[\"切换角色 UI 未更新、灵魂球不可交互\"]\n    Output --> Cost[\"成本 0.3亿美元\"]\n    Model --> Inference[\"推理强度 max\"]\n```\n\n## 开发工作流\n\n```mermaid\nflowchart LR\n    CODX[\"CODX\\n编写提示词\"] --> DeepSick[\"DeepSeek V4 Flash\\n执行任务\"]\n    DeepSick --> Review[\"CODX\\n审查与兜底\"]\n    Review --> Feedback[\"反馈\\n调整提示词或参数\"]\n    Feedback --> DeepSick\n    DeepSick --> Result[\"生成游戏 Demo\"]\n```\n\n## 细节缺陷与改进方向\n\n```mermaid\nflowchart TD\n    Defects[\"主要缺陷\"] --> Visual[\"视觉表现\"]\n    Defects --> Mechanics[\"游戏机制\"]\n    Defects --> UI[\"用户界面\"]\n    Visual --> NoBulletImpact[\"子弹无弹坑\"]\n    Visual --> ArtifactLine[\"特效竖线\"]\n    Visual --> NoAimAnim[\"瞄准视野变黑、缺少动画机\"]\n    Mechanics --> RandomTrajectory[\"弹道随机性未实现\"]\n    Mechanics --> UltimateBug[\"大招未完成、伤害方向显示错误\"]\n    Mechanics --> FlightIssue[\"飞行/大招异常\"]\n    UI --> CharSwitch[\"切换角色 UI 未同步\"]\n    UI --> SoulBall[\"灵魂球不可交互\"]\n    UI --> IncompleteHUD[\"部分 HUD 缺失\"]\n    Visual --> Lighting[\"光照/特效不足\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    Prompt[\"提示词\\n- 基于格斗\\n- 开发类似瓦罗兰特的单机战术射击游戏\"] --> Model[\"模型\\nDeepSeek V4 Flash 正式版\\n(open code jeep sekv4flash)\"]\n    Model --> EnvCheck[\"本地环境确认\"]\n    EnvCheck --> TaskOutline[\"任务大纲（12 阶段）\\n- 工程骨架\\n- 音效\\n- 武器\\n- 地图\\n- 角色技能\\n- UI 等\"]\n    TaskOutline --> Development[\"开发过程\\n约 1 天 1 夜\"]\n    Development --> Output[\"游戏 Demo\\nUI、角色、武器、地图、技能实现\"]\n    Output --> Issues[\"细节问题\"]\n    Issues --> BulletImpact[\"子弹无弹坑\"]\n    Issues --> VisualArtifacts[\"特效竖线、无动画机、视野变黑\"]\n    Issues --> SkillBugs[\"大招未完成、伤害方向显示错误\"]\n    Issues --> UIInconsistencies[\"切换角色 UI 未更新、灵魂球不可交互\"]\n    Output --> Cost[\"成本 0.3亿美元\"]\n    Model --> Inference[\"推理强度 max\"]"
+        },
+        {
+          "title": "开发工作流",
+          "code": "flowchart LR\n    CODX[\"CODX\\n编写提示词\"] --> DeepSick[\"DeepSeek V4 Flash\\n执行任务\"]\n    DeepSick --> Review[\"CODX\\n审查与兜底\"]\n    Review --> Feedback[\"反馈\\n调整提示词或参数\"]\n    Feedback --> DeepSick\n    DeepSick --> Result[\"生成游戏 Demo\"]"
+        },
+        {
+          "title": "细节缺陷与改进方向",
+          "code": "flowchart TD\n    Defects[\"主要缺陷\"] --> Visual[\"视觉表现\"]\n    Defects --> Mechanics[\"游戏机制\"]\n    Defects --> UI[\"用户界面\"]\n    Visual --> NoBulletImpact[\"子弹无弹坑\"]\n    Visual --> ArtifactLine[\"特效竖线\"]\n    Visual --> NoAimAnim[\"瞄准视野变黑、缺少动画机\"]\n    Mechanics --> RandomTrajectory[\"弹道随机性未实现\"]\n    Mechanics --> UltimateBug[\"大招未完成、伤害方向显示错误\"]\n    Mechanics --> FlightIssue[\"飞行/大招异常\"]\n    UI --> CharSwitch[\"切换角色 UI 未同步\"]\n    UI --> SoulBall[\"灵魂球不可交互\"]\n    UI --> IncompleteHUD[\"部分 HUD 缺失\"]\n    Visual --> Lighting[\"光照/特效不足\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T20:46:52+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 实测知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    Prompt[\"提示词\\n- 基于格斗\\n- 开发类似瓦罗兰特的单机战术射击游戏\"] --> Model[\"模型\\nDeepSeek V4 Flash 正式版\\n(open code jeep sekv4flash)\"]\n    Model --> EnvCheck[\"本地环境确认\"]\n    EnvCheck --> TaskOutline[\"任务大纲（12 阶段）\\n- 工程骨架\\n- 音效\\n- 武器\\n- 地图\\n- 角色技能\\n- UI 等\"]\n    TaskOutline --> Development[\"开发过程\\n约 1 天 1 夜\"]\n    Development --> Output[\"游戏 Demo\\nUI、角色、武器、地图、技能实现\"]\n    Output --> Issues[\"细节问题\"]\n    Issues --> BulletImpact[\"子弹无弹坑\"]\n    Issues --> VisualArtifacts[\"特效竖线、无动画机、视野变黑\"]\n    Issues --> SkillBugs[\"大招未完成、伤害方向显示错误\"]\n    Issues --> UIInconsistencies[\"切换角色 UI 未更新、灵魂球不可交互\"]\n    Output --> Cost[\"成本 0.3亿美元\"]\n    Model --> Inference[\"推理强度 max\"]\n```\n\n## 开发工作流\n\n```mermaid\nflowchart LR\n    CODX[\"CODX\\n编写提示词\"] --> DeepSick[\"DeepSeek V4 Flash\\n执行任务\"]\n    DeepSick --> Review[\"CODX\\n审查与兜底\"]\n    Review --> Feedback[\"反馈\\n调整提示词或参数\"]\n    Feedback --> DeepSick\n    DeepSick --> Result[\"生成游戏 Demo\"]\n```\n\n## 细节缺陷与改进方向\n\n```mermaid\nflowchart TD\n    Defects[\"主要缺陷\"] --> Visual[\"视觉表现\"]\n    Defects --> Mechanics[\"游戏机制\"]\n    Defects --> UI[\"用户界面\"]\n    Visual --> NoBulletImpact[\"子弹无弹坑\"]\n    Visual --> ArtifactLine[\"特效竖线\"]\n    Visual --> NoAimAnim[\"瞄准视野变黑、缺少动画机\"]\n    Mechanics --> RandomTrajectory[\"弹道随机性未实现\"]\n    Mechanics --> UltimateBug[\"大招未完成、伤害方向显示错误\"]\n    Mechanics --> FlightIssue[\"飞行/大招异常\"]\n    UI --> CharSwitch[\"切换角色 UI 未同步\"]\n    UI --> SoulBall[\"灵魂球不可交互\"]\n    UI --> IncompleteHUD[\"部分 HUD 缺失\"]\n    Visual --> Lighting[\"光照/特效不足\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    Prompt[\"提示词\\n- 基于格斗\\n- 开发类似瓦罗兰特的单机战术射击游戏\"] --> Model[\"模型\\nDeepSeek V4 Flash 正式版\\n(open code jeep sekv4flash)\"]\n    Model --> EnvCheck[\"本地环境确认\"]\n    EnvCheck --> TaskOutline[\"任务大纲（12 阶段）\\n- 工程骨架\\n- 音效\\n- 武器\\n- 地图\\n- 角色技能\\n- UI 等\"]\n    TaskOutline --> Development[\"开发过程\\n约 1 天 1 夜\"]\n    Development --> Output[\"游戏 Demo\\nUI、角色、武器、地图、技能实现\"]\n    Output --> Issues[\"细节问题\"]\n    Issues --> BulletImpact[\"子弹无弹坑\"]\n    Issues --> VisualArtifacts[\"特效竖线、无动画机、视野变黑\"]\n    Issues --> SkillBugs[\"大招未完成、伤害方向显示错误\"]\n    Issues --> UIInconsistencies[\"切换角色 UI 未更新、灵魂球不可交互\"]\n    Output --> Cost[\"成本 0.3亿美元\"]\n    Model --> Inference[\"推理强度 max\"]"
+    },
+    {
+      "title": "开发工作流",
+      "code": "flowchart LR\n    CODX[\"CODX\\n编写提示词\"] --> DeepSick[\"DeepSeek V4 Flash\\n执行任务\"]\n    DeepSick --> Review[\"CODX\\n审查与兜底\"]\n    Review --> Feedback[\"反馈\\n调整提示词或参数\"]\n    Feedback --> DeepSick\n    DeepSick --> Result[\"生成游戏 Demo\"]"
+    },
+    {
+      "title": "细节缺陷与改进方向",
+      "code": "flowchart TD\n    Defects[\"主要缺陷\"] --> Visual[\"视觉表现\"]\n    Defects --> Mechanics[\"游戏机制\"]\n    Defects --> UI[\"用户界面\"]\n    Visual --> NoBulletImpact[\"子弹无弹坑\"]\n    Visual --> ArtifactLine[\"特效竖线\"]\n    Visual --> NoAimAnim[\"瞄准视野变黑、缺少动画机\"]\n    Mechanics --> RandomTrajectory[\"弹道随机性未实现\"]\n    Mechanics --> UltimateBug[\"大招未完成、伤害方向显示错误\"]\n    Mechanics --> FlightIssue[\"飞行/大招异常\"]\n    UI --> CharSwitch[\"切换角色 UI 未同步\"]\n    UI --> SoulBall[\"灵魂球不可交互\"]\n    UI --> IncompleteHUD[\"部分 HUD 缺失\"]\n    Visual --> Lighting[\"光照/特效不足\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T20:46:52+00:00"
+}

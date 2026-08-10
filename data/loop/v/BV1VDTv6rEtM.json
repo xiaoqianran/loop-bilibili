@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1VDTv6rEtM",
+  "title": "终于，Claude Code 封号原因被曝光了！竟然针对中国用户，植入隐形代码？",
+  "status": "ok",
+  "language": "zh",
+  "chars": 2520,
+  "text": "这两天 Claude Code 又炸了\n国内开发者被大面积封号\n一众天才程序员就此陨落\n众所周知\nA ÷ 一直在封禁中国用户\n但之前没有人搞清楚\n自己明明都跑到美国了\n它到底是怎么把自己揪出来的\n直到昨天\n国外开发者对 Claude Code 做了逆向工程\n直接把 A ÷ 的底裤扒了下来\n原来它在客户端里偷偷藏了\n一套隐蔽的用户标记系统\n好家伙这下全世界的开发者都\n见识到了 A ÷ 的本事\n我看完整个技术分析之后\n也是被恶心到了\n下面我用傻子都能懂的语言\n给大家解释一下 Claude Code 封号的手段\n建议各位在吃饭的时候别看\n先简单概括一下 Claude Code 的封号思路\nClaude Code 会偷偷读取你\n电脑上的本地信息\n然后用一种肉眼完全看不到的方式\n悄悄给你发送给 AI 服务器的\n每一个请求打上「这个人是中国用户」的隐形标记\n传回 Anthropic 的服务器\n展开来说\nClaude Code 通过 2 条路径\n来判断你是不是中国用户\n第一条路径\n读取你电脑的系统时区\n只要你的系统时区是\n上海或者乌鲁木齐\nClaude Code 就会把你标记为中国用户\n而绝大多数中国开发者\n虽然切换了网络\n但一般不会去改电脑时区\n毕竟还要正常看时间和日历\n所以这条路径几乎能命中所有人\n第二条路径\n把你的中转地址\n跟一份域名黑名单做比对\n因为国内访问不了 Claude 的官方 API\n很多开发者和公司都是\n通过中转站来调用的\nClaude Code 会把你在\n环境变量里填的地址提取出来\n跟一份内置的域名名单做匹配\n这份名单本身也是\n被混淆加密存储的\n被逆向大佬解码后\n发现一共有 147 个域名\n真蚌埠住了\n上来就是中国顶级域名 cn\n直接腰斩\n紧接着就是百度阿里\n字节等国内大厂的域名\n诶怎么没有腾讯的\n而且连阿里和百度的\n内网域名都没放过\n这背后有故事呀\n很难想象 Anthropic 的 CEO 达里奥\n之前在百度经历了什么\n此外\nDeepSeek智谱等几乎所有国内 AI 公司\n的域名和关键词也在名单里\n剩下的大头就是各种 API\n中转服务的域名了\n看看你正在用的在里面么\n讲完了 Claude Code 怎么识别中国用户\n你可能已经觉得够离谱了\n但接下来才是真正\n让我大开眼界的部分\nClaude Code 识别出你是中国用户之后\n是怎么把这个信息传回服务器的呢\n每次你在 Claude Code 里输入提示词\n它在把请求发给 Anthropic 服务器之前\n都会在最前面拼一段系统提示词\n这段提示词里有一行\n平平无奇的日期信息长这样\n就是这行看起来人畜无害的文字\nClaude Code 会在发送请求之前\n对它动两处手脚\n第一处改日期分隔符\n如果检测到你的时区是中国时区\n日期格式会从连字符变成斜杠\n第二处修改单引号的 Unicode 编码\n根据你中转地址的匹配结果不同\nToday's 里面那个单引号\n会被替换成不同的 Unicode 字符\n分别代表不同的检测含义\n这四个字符长得一模一样\n你在编辑器和终端里\n根本看不出区别\n但在机器层面\n它们是完全不同的编码值\n这种手法叫做隐写术\n就是把秘密信息藏在\n看起来完全正常的内容里\nAnthropic 的服务器收到请求后\n只需要检查一下\n那个单引号是哪个 Unicode 字符\n日期用的是连字符还是斜杠\n立刻就能判定\n这条请求来自中国用户\n是否通过中转站\n是否和国内 AI 公司有关\n另外提醒一下\n如果你真的收到了封号邮件\n想申诉解封\n打开邮件的时候也要小心\n因为有人发现 Anthropic 的\n邮件里埋了追踪像素\n你一打开邮件\n它就能获取到你的真实 IP 地址\n相当于二次确认你在中国\n看到这里\n你会发现\nClaude Code 为了封你的号\n背后做了多大的努力\n事情大家了解了\n你们怎么看\n逆向了 Claude Code 的\n那位国外开发者老哥\n直接怒斥 Anthropic 在 Claude Code\n里嵌入了间谍软件\n虽然有人认为这不算间谍软件\n只是一种反滥用的合规措施\n但更多人认为\n在用户完全不知情的情况下 搞隐蔽标记\n就是不对\n我觉得吧\nClaude Code 不是一个普通的聊天软件\n它运行在你的终端里\n拥有文件系统权限\n能读写你的代码和配置\n甚至能执行各种 Shell 命令\n开发者把这么大的信任给了它\n结果它背着你 在每一条请求里偷偷夹带私货\n这种事情一旦被发现\n大家以后用它的时候\n心里都会有根刺\n总想着 它是不是还在背后搞别的什么小动作\n今天它能上报你的时区\n明天就能偷偷上报你所有的数据\n而且这套机制对真正\n搞大规模转售和模型蒸馏的人来说\n想绕过并不难\n改个时区\n换个域名就完事了\n最终被精准打击的\n反而是那些正常付费使用的普通开发者\n总之就是想正常用上 Claude\n现在是越来越难了\n很多人的时间和金钱\n全浪费在对抗 A ÷ 上了\n最近这段时间\n我作为一名 AI 编程博主\n明显感受到了 AI 困境和 Tokens 焦虑\n除了 Claude Code 封号之外\nOpenAI 的 Codex 在 6 月 也连搞了两波封禁\n200 刀的账号没有任何预警\n直接封停\nCursor 也是一直存在地区限制\n有不少人反映更新到 3.9 版本后\n无法使用模型了\n再看国内这边\nDeepSeek V4 正式版即将引入峰谷定价\n高峰时段 API 价格直接翻倍\n智谱的 GLM Coding Plan\n因为算力紧张\n搞了限量发售\n天天盯着都抢不到\n豆包也推出了付费专业版\n用最直接 最不绕弯子的方式告诉我\n高级版每月 500 元\n如今 AI 的能力的确是越来越强了\n但能稳定用上的门槛也越来越高了\n以前每次有新模型发布\n我都很兴奋\n现在更多的则是焦虑\n如果别人能正常用上\n最强的 AI 模型和工具\n你用不上\n生产力就会有明显的差距\n而且老板可不管你是被封号了\n还是被限流了\n活儿该干还得干\n我现在已经不奢求 AI\n再有什么突破性进展了\n只希望一件事\n就是让我正常用\n别今天封号\n明天涨价\n后天限流的\n评论区聊聊\n你们怎么看这件事\n有人中招了么",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1VDTv6rEtM",
+  "published_at": "1782898543",
+  "fetched_at": "2026-08-08T15:10:23+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T15:44:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T15:44:41+00:00"
+}

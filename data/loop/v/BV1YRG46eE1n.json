@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1YRG46eE1n",
+  "title": "Agent、Skill、Harness啥意思？一次性讲明白AI技术名词！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2365,
+  "text": "这两年AI圈的热词层出不穷\nL l m token prompt\nR a g m c p agents skill\n光是念一遍就让人头大\n这些词是怎么出现的\n各自解决什么问题\n今天用一个视频讲明白\n假设你这周末想到杭州玩\n你打开对话窗口\n随口问一句\n他很快给了一段答复\n这背后的核心就是大语言模型\nLLM他将你的话拆解为不是一个字\n也不完全等于一个词\n只是大模型理解文字的最小单元\n每个token对应着一个数字叫token id\n大模型通过计算\n预测出一个token后面最该接哪一个\n从而拼凑出完整回答\n在这个过程中\n你的提问就是prompt提示词\n不过你随口一问\nAI回答很浅显\n换一种问法\n预算2000\n帮我按天规划行程\n回答立刻好用很多\n这套把话说清楚的方法论就叫pro engineering提示词\n工厂规划旅行不可能一句话说完\n以限定预算2000又补充\n不想去网红景点\nAI都能调整推荐方向\n他是怎么记住的\n因为每次发消息时\n系统会把之前的对话一起打包发给大模型\n这就是context\n也就是我们常说的上下文\n但大模型理解上下文的长度是有限的\n随着对话不断积累\n模型会忘记最开始的内容\n一个常见的做法是\n让模型把之前的对话做一次压缩总结\n只保留关键信息\n这个被压缩过的关键信息就是memory模型的记忆\n到这里\n模型已经越来越接近我们想象中智能的样子了\n对话继续\n你接着问\n看看我之前收藏的旅行攻略\n规划行程啊\n哦模型宕机了\n他不知道你收藏的攻略是什么\n这时候就需要RAG检索增强生成\n它能读取你的私有资料\n让回答更加真实可靠\n他先把你的资料切成小片段\n存进知识库\n当你提问时\n系统检索出最相关的片段\n并作为背景资料和你的问题拼接模型\n阅读这段增强后的上下文\n给你生成准确的回复\n我们现在接触到的AI客服AI问答助手\n其实背后都是在用RAG技术\n归根结底它也只是让模型答得更好\n但大模型还不能真正干活\n你说帮我查询一下高铁票\nAI回复\n你可以打开12306\n他只会告诉你怎么做\n但没法真的查询到高铁车次\n荒神calling机智登场了\n它让大模型具备能够接入外部工具的能力\n整个机制是这样的\n程序先告诉模型有什么第三方工具可以用\n再把你的对话发过去\n当模型判断需要调用工具时\n需要输出一段结构化的函数\n调用指令程序拿到指令去查询车次\n再把结果返还给模型\n这时候模型就可以回复符合行程规划的车票有\n但这里有个工程问题\n每接入一个新工具\n就需要单独写适配代码\n不同应用之间这些工作完全无法复用\n于是有了MCP\n它让所有第三方工具的接口统一了AI程序\n只需要对接MCP这一个协议\n就能调用所有使用同一接口的工具\n很多人会把function calling和MCP混淆\n觉得不是同一个东西吗\n其实差别可大了\nFUNGUARLING是让模型按照约定格式输出调用指令\n而MCP是让所有工具都遵循同一种格式\n被模型接入\nAI能接入不同工具了\n很不错\n但你还得一步步指挥他\n能不能你就说一句\n帮我把杭州旅行安排好\n剩下全交给他可以\n这就是agent\n一个agent接到目标后会自己思考该怎么做\n整个过程他自己规划步骤\n自己调用外部工具\n自己记录每一步的结果\n诶\n这不都是我们刚刚讲过的能力吗\n对agent就是在大模型的基础上\n把这些能力打包成一个能独立干活的系统\n大模型再聪明\n也只会在文本框里\n你问一句\n他答一句\n而agent能实实在在帮你干活\n而且持续学习思考\n越干越聪明\n市面上的AI产品本质上都是agent\n都有思考规划的能力\n只是形态不同\n能自主执行的程度不同\n比如最常见的对话窗口\nQueen studio\n编程领域的CLI工具\n坤客通用领域的龙虾类桌面助手\nQubo\n坤豹这种龙虾类的桌面助手为什么会爆火\n因为他自主执行的能力上了一个台阶\n不仅能操作你的本地电脑\n定时执行任务\n还能通过社交软件和你沟通\n像一个真正帮你干活的助手\n理想情况下\nagent能完全自己安排旅行\n但实际上你还是得提醒他应该怎么干\n提醒他按天规划行程\n找本地攻略\n查高铁信息\n那么skill技能来帮你了\n你可以把所有的偏好和规则写进一个skill\n下次agent接到类似任务时\n会参考这份文件\n按规定办事\n有人说\n这不就是prompt\n是也不全是prompt\n是一次性的话术\n像便签纸\n每次用都得写\n而scale是可以重复使用的\n程序化能力\n像一本书\n有标题\n有内容\n随时可以翻翻看\n它本身就是结构化的\n可以将你所有的skill都整合在一起\n通过渐进式的纰漏机制\n会在运行过程中按需激活读取\n使用不同skill\n大大节省上下文和token\n让任务执行的成本更低\n到这里\nagent基本上已经接管了你的电脑\n但能力越大\n闯祸能力也越大\nA真的有时候会失控\n比如你让他买车票\n他买错了\n甚至直接付钱\n那么harness出现了\n就像字面意思马剧一样\n套上脱缰的agent\n约束他的失控行为\nHARNE首先将最全面的上下文提供给模型\n避免其失忆\n同时给agent划定边界\n明确哪些红线坚决不能碰\n最后能自动验收任务成果\n第一时间给出反馈\n并且引导修复\n它的核心就是构造一个AI友好工作环境\n确保在可控的范围内爆发生产力\n毕竟谁也不想一觉醒来\nagent的把你的电脑格式化了\n好了\n回到最初\n你只是和AI说了一句\n想去杭州玩\n但随着问题和需求的增多\nAI1层一层的加上了各种能力\n这些概念不是凭空冒出的黑化\n每一个都是因为上一部遇到的具体问题\n才出现的解决方案\n今天讲的是AI怎么从聊聊天变成真的能干活\n这条主线\n如果你还想知道大模型内部怎么运作\n迁移参数怎么训练\n多模态又是什么\n感兴趣的朋友请留言\n后续一个个讲清楚\n如果觉得有帮助\n记得点个关注\n咱们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1YRG46eE1n",
+  "published_at": "1779445839",
+  "fetched_at": "2026-08-06T19:33:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 技术概念图谱\n\n## AI 功能层级概览\n```mermaid\nflowchart TD\n    U[\"用户\"] --> P[\"Prompt（提示词）\"]\n    P --> LLM[\"大语言模型（LLM）\"]\n    LLM --> T[\"Token / Token ID\"]\n    LLM --> C[\"Context（上下文）\"]\n    C --> M[\"Memory（压缩记忆）\"]\n    LLM --> RAG[\"RAG（检索增强生成）\"]\n    LLM --> FC[\"Function Calling（函数调用）\"]\n    FC --> MCP[\"MCP（统一工具协议）\"]\n    LLM --> A[\"Agent（自主执行体）\"]\n    A --> SK[\"Skill（技能）\"]\n    A --> H[\"Harness（安全约束）\"]\n```\n\n## Agent 工作流程\n```mermaid\nflowchart TD\n    G[\"接收目标（Goal）\"] --> PL[\"规划步骤（Plan）\"]\n    PL --> R[\"检索信息（RAG）\"]\n    R --> FC[\"调用工具（Function Calling）\"]\n    FC --> MCP[\"统一协议（MCP）\"]\n    MCP --> EX[\"执行操作（Execute）\"]\n    EX --> RE[\"记录结果（Record）\"]\n    RE --> M[\"更新记忆（Memory）\"]\n    M --> PL\n```\n\n## Skill 与 Harness 的关系\n```mermaid\nflowchart LR\n    SK[\"Skill（可复用规则）\"] --> A[\"Agent\"]\n    A --> H[\"Harness（约束与验收）\"]\n    H --> C[\"提供完整上下文\"]\n    SK --> C\n    C --> RAG\n    RAG --> A\n```",
+      "diagrams": [
+        {
+          "title": "AI 功能层级概览",
+          "code": "flowchart TD\n    U[\"用户\"] --> P[\"Prompt（提示词）\"]\n    P --> LLM[\"大语言模型（LLM）\"]\n    LLM --> T[\"Token / Token ID\"]\n    LLM --> C[\"Context（上下文）\"]\n    C --> M[\"Memory（压缩记忆）\"]\n    LLM --> RAG[\"RAG（检索增强生成）\"]\n    LLM --> FC[\"Function Calling（函数调用）\"]\n    FC --> MCP[\"MCP（统一工具协议）\"]\n    LLM --> A[\"Agent（自主执行体）\"]\n    A --> SK[\"Skill（技能）\"]\n    A --> H[\"Harness（安全约束）\"]"
+        },
+        {
+          "title": "Agent 工作流程",
+          "code": "flowchart TD\n    G[\"接收目标（Goal）\"] --> PL[\"规划步骤（Plan）\"]\n    PL --> R[\"检索信息（RAG）\"]\n    R --> FC[\"调用工具（Function Calling）\"]\n    FC --> MCP[\"统一协议（MCP）\"]\n    MCP --> EX[\"执行操作（Execute）\"]\n    EX --> RE[\"记录结果（Record）\"]\n    RE --> M[\"更新记忆（Memory）\"]\n    M --> PL"
+        },
+        {
+          "title": "Skill 与 Harness 的关系",
+          "code": "flowchart LR\n    SK[\"Skill（可复用规则）\"] --> A[\"Agent\"]\n    A --> H[\"Harness（约束与验收）\"]\n    H --> C[\"提供完整上下文\"]\n    SK --> C\n    C --> RAG\n    RAG --> A"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T19:33:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 技术概念图谱\n\n## AI 功能层级概览\n```mermaid\nflowchart TD\n    U[\"用户\"] --> P[\"Prompt（提示词）\"]\n    P --> LLM[\"大语言模型（LLM）\"]\n    LLM --> T[\"Token / Token ID\"]\n    LLM --> C[\"Context（上下文）\"]\n    C --> M[\"Memory（压缩记忆）\"]\n    LLM --> RAG[\"RAG（检索增强生成）\"]\n    LLM --> FC[\"Function Calling（函数调用）\"]\n    FC --> MCP[\"MCP（统一工具协议）\"]\n    LLM --> A[\"Agent（自主执行体）\"]\n    A --> SK[\"Skill（技能）\"]\n    A --> H[\"Harness（安全约束）\"]\n```\n\n## Agent 工作流程\n```mermaid\nflowchart TD\n    G[\"接收目标（Goal）\"] --> PL[\"规划步骤（Plan）\"]\n    PL --> R[\"检索信息（RAG）\"]\n    R --> FC[\"调用工具（Function Calling）\"]\n    FC --> MCP[\"统一协议（MCP）\"]\n    MCP --> EX[\"执行操作（Execute）\"]\n    EX --> RE[\"记录结果（Record）\"]\n    RE --> M[\"更新记忆（Memory）\"]\n    M --> PL\n```\n\n## Skill 与 Harness 的关系\n```mermaid\nflowchart LR\n    SK[\"Skill（可复用规则）\"] --> A[\"Agent\"]\n    A --> H[\"Harness（约束与验收）\"]\n    H --> C[\"提供完整上下文\"]\n    SK --> C\n    C --> RAG\n    RAG --> A\n```",
+  "diagrams": [
+    {
+      "title": "AI 功能层级概览",
+      "code": "flowchart TD\n    U[\"用户\"] --> P[\"Prompt（提示词）\"]\n    P --> LLM[\"大语言模型（LLM）\"]\n    LLM --> T[\"Token / Token ID\"]\n    LLM --> C[\"Context（上下文）\"]\n    C --> M[\"Memory（压缩记忆）\"]\n    LLM --> RAG[\"RAG（检索增强生成）\"]\n    LLM --> FC[\"Function Calling（函数调用）\"]\n    FC --> MCP[\"MCP（统一工具协议）\"]\n    LLM --> A[\"Agent（自主执行体）\"]\n    A --> SK[\"Skill（技能）\"]\n    A --> H[\"Harness（安全约束）\"]"
+    },
+    {
+      "title": "Agent 工作流程",
+      "code": "flowchart TD\n    G[\"接收目标（Goal）\"] --> PL[\"规划步骤（Plan）\"]\n    PL --> R[\"检索信息（RAG）\"]\n    R --> FC[\"调用工具（Function Calling）\"]\n    FC --> MCP[\"统一协议（MCP）\"]\n    MCP --> EX[\"执行操作（Execute）\"]\n    EX --> RE[\"记录结果（Record）\"]\n    RE --> M[\"更新记忆（Memory）\"]\n    M --> PL"
+    },
+    {
+      "title": "Skill 与 Harness 的关系",
+      "code": "flowchart LR\n    SK[\"Skill（可复用规则）\"] --> A[\"Agent\"]\n    A --> H[\"Harness（约束与验收）\"]\n    H --> C[\"提供完整上下文\"]\n    SK --> C\n    C --> RAG\n    RAG --> A"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:33:45+00:00"
+}

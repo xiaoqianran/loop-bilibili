@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1CJ7S6sE3s",
+  "title": "给Claude Code装上代码库地图：Graphify把整个仓库变知识图谱，token直降40%",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4416,
+  "text": "GRAPFY解决了克劳德co的记忆问题\n他能把任何代码库\n转化为你眼前这样的知识图谱\n这让克劳德code以极低的token消耗\n给出更准确的答案\n它通过遍历整个代码库\n映射所有连接\n并推断连接背后的原因来实现这一点\n最棒的是它开源且完全免费\n今天我来演示如何自己上手使用\n以及它底层的运行原理\n让你立刻上手\nGRAPHIFY几个月前发布\n目前已获近6万颗星\n它能让你的AI编程助手不限于克劳德co\n但今天我们用的就是它\n将代码文档\nPDF图片和视频转化为可查询的知识图谱\n无需逐文件搜索\n我们可以把GRAPHIFY指向任意代码库\n它就会生成这样的知识图谱\n我们关心这一点\n是因为知识图谱让克劳德code能更轻松地回答\n关于该代码库的问题\n一切都已经映射完毕\nA与B\nB与C如何关联\n以及关联背后的意义一目了然\n这与朱文健app搜索形成对比\n而后者正是克劳德code等AI编程助手\n的常规工作方式\n打个不太恰当的比方\n这就像单纯用control f搜索\n与拥有一张清晰路径图之间的区别\n这让克劳德code拥有地图\n而graph搜索则完全没有\n因此使用graph fy获取更准确的答案\n所需token更少\ntoken节省幅度有多大\n有人声称高达70倍\n我觉得略有夸大\n今天演示中你会看到实际倍数低于70倍\n但仍相当可观\n这就是你应该关注他的原因\n现在来说说它的工作原理\n如何将代码库转化为这样的知识图谱\n它看起来与GRAPRAG知识库非常相似\n它们一样吗\n它和RAG有什么关系\n稍后再聊\n他通过三个不同的阶段运作\n第一阶段分析代码结构完全免费\n你在这里看到的一切都来自第一阶段\n完全确定性的\n这并不是AI在猜谜\n它实际上是遍历代码本身\n判断这段代码与另一段代码的关联\n这正是代码库的解析方式\n建立的是确定性连接\n如图所示\nTRACCEDER解析代码文件提取类函数\n导入调用图和内联注释\n本地运行无需LLM\n第二阶段处理视频和音频文件\n如果存在\n若这些文件存在\n将用faster whisper转录转为文字后\n注入知识图谱\n最后他对文档论文和图像进行第三阶段处理\n如果代码库中包含非代码文件\nPDF文档图像等都会在第三阶段被处理\n这正是大语言模型介入的地方\n对文档进行语义分析\n这份文档究竟是什么含义\n应该归入知识图谱的哪个位置\n第三阶段与此类似\n无需真正的嵌入或RAG完成上述处理后\n便开始构建知识图谱\n这里有更多技术细节\n但你只需了解它会创建节点\n也就是这些小圆圈\n每个圆圈及节点\n然后是边连接两个节点的线以及社区\n社区是性质相似节点的大型分组图\n这就是数据提取并转化为图谱的大致流程\n这之所以重要\n是因为图谱本质上是给克劳德扣的地图\n让他能更快回答问题\n此刻你可能有几个疑问\n第一如果没有代码结构怎么办\n如果指向的是一个全是markdown文件的仓库呢\n我只是想对一堆文档建知识图谱\n不想走完整RAG流程\n能这样做吗\n完全可以\nGraphfy\n甚至能将其转为obsidian知识库\n结尾再聊第二个问题\n这看起来确实和graph lag非常相似\n两者有何不同\n各适用于核实gratify\nYou light rag ragi thing\nMicrosoft graph rag\nthen graph rag setzwed的区别\nAre you embedding\nGraph fy\n完全不使用任何embedding\n第二大区别在于使用场景\nGraphfy\n最擅长也最能发挥价值的领域是代码库\n遇到大型代码库\n无论是新项目还是老项目\n想搞清楚它的结构\nGRAPHFY是最佳选择\ngraph a则更擅长处理非结构化内容\n比如你有数万份PDF或markdown文档\n只想直接查询其中内容\n想象一下这些都是政策文件\n你想查询某条政策对X是怎么规定的\n这些文档之间未必有关联\n这类内容高度非结构化\n正是graph fg的用武之地\n话虽如此\n两者的界限其实有些模糊\n就像我提到的第三遍扫描\ngratify也能做到类似的事\n在这个意义上\n它更像是一个轻量版RAG系统\n这就是GRAPHY的本质原理和价值所在\n接下来我们来实际安装并使用它\n在进入演示之前\n先说一下今天的赞助商就是我自己\n不久前我发布了克劳德code master class\n这是从零开始成为AI开发者的最佳途径\n无论你的技术背景如何\n这门课程每周更新\n还包含codex master class和克劳德os master class等进阶内容\n如果你想更认真地学习\n绝对值得一看\n在chase AI里可以找到置顶评论\n有链接安装GRAPHIFY相对简单\n有几个前置条件和安装说明\n如果你用克劳德扣\n建议让他帮你搞定\n直接打开GRAPHIFY的GITHUB链接\n我会放在下方\n复制后粘贴到克劳德扣\n告诉他帮你安装GRAPHY就行了\n如果想手动安装\n按步骤操作即可\ngraph fy不依赖特定平台\n兼容任何编程AI\n安装好GRAPHY之后\n下一个问题就是怎么用\n有哪些命令命令相当多\n多到你根本记不住\n好\n在安装GRAPHIFI时会附带一个graphfy skill词\n会告诉克劳德扣如何使用graph fy\n以及根据你的自然语言决定该用哪个命令\n话虽如此\n建议你浏览一下github ripple\n大致了解他能做什么\n功能相当丰富\n克劳德扣自己懂怎么用\n有几个命令值得了解\n输入熟GRAPHFY会对当前目录执行完整分析\n此外还有查询知识图谱的命令\n输入graphfy query或graphfy explain\n会明确指示克劳德code或你使用的编程AI\n回答问题时\n先查知识图谱\n别偷懒\n靠自己猜\n此外还有让他保持常开的命令\n输入GRAPHFY\ncloud install之后\n回答问题时就会始终使用graph fy\n无需明确指定\n它直接变成一个hook\n还有一些有趣的flag\n比如obsidian flag\n一条命令就能创建完整的obsidian vault\n并填充GRAPHIFY生成的内容\n4skill已安装\n遇到困惑直接问克劳德code就好\n他自然能理解\n现在来实际演示一下\n我们将用克劳德code分析open design\n一个相当大型的代码库\n如果你没用过open design\n它本质上是开源版的cloud design\n我已把它克隆到本地\n现在在该目录里打开克劳德code\n现在进入该目录\n输入属graph fy\n这将对整个文件夹运行GRAPHIFY\n运行6分钟后\n结果如下\n共分析了203个文件\n共获得1907个节点\n3447条边\n109个社区输出token刚好不到120K\n他列出了god nodes\n即便利范围内最核心的节点和连接\n出现了一些意想不到的关联以及推荐问题\n如果想查看这张图谱\n让它显示出来就行\n这是他构建的知识图谱\n可以看到各个社区\n他创建了109个社区\n也就是这些集群放大后\n可以看到节点及原点以及它们之间的连接边\n点击节点后\n右上角可以看到它的类型代码\n节点所属社区来源及其相邻节点\n但这个可视化效果虽然很炫\n真正的价值并不在于知识图谱本身\n这看起来很酷\n但真正的价值在于\n我们已经给cloud code提供了一张open design仓库的地图\n现在可以提问并获得准确的回答\n现在我们来测试向他提问一个关于仓库的问题\n并让他使用graph fy\n让他实际使用知识图谱\n然后用同样的问题\n在不使用GRAPHY的情况下再问一次\n让他获取答案\n看看token用量的差异\n为了对比使用与不使用GRAPHFY的token差异\n我们将向cloud code提问同一个关于仓库的问题\n第一个问题是追踪设计请求\n从web p流转到coding agents再返回的完整路径\n我们想了解这个应用的实际工作原理\n第一个标签页使用GRAPHIFY\n第二个标签页用同样的问题\n但不使用GRAPHHIFY\nGRAPHIFY技能立即加载\n可以看到graphify query等命令在执行\n我们刚才提给克劳德扣的问题\n在非GRAPHY1侧\n克劳德code启动了两个explore agent来扫描代码库\n一开始就已经用了100000token\n两边给出的答案是一样的\n都识别出了这个应用的实际工作原理\n而非GRAPHY版本需要运行那些explore agent\nexplore agent约消耗150000token\n主会话额外消耗50000token\n所以GRAPHY版本总共约消耗200000token\n而非GRAPHY版本只用了大约80000token\n约占非GRAPHY版本总成本的40%\n节省相当可观\n现在由于非GRAPHY版本已经爬取过整个代码库\n在问后续问题时\ntoken消耗不会那么离谱\n但我们这边已经构建好了知识图谱\n每次通过GRAPHY提问就不必反复消耗token\n重新扫描代码库了\n这也契合了整体记忆机制\n我们已经构建好了\n我们随时可以低成本查询它\n那么问题来了\n如果这是个持续迭代的代码库\n更新代码后\n知识图谱会怎样\n知识图谱也会更新吗\n答案是肯定的\nread me the workflow中有详细说明\n运行graphy hook install\n每次提交后自动重建\n且仅基于AST\n这不涉及任何API费用\n它只是查看实际变更了什么\n现在连接到什么\n然后重建那棵树\n对你来说零成本\n这一切以确定性方式完成\n同样适用于团队协作场景\n即使两位开发者并行操作\n同一代码库也能妥善处理\n最终你会得到一份持久且持续更新的知识图谱\n覆盖任意代码库\n可直接交给克劳德code使用\n从而获得更高效的回答\n最后我们在这里稍微提到了obsidian标志\n其实这一切同样适用于非代码类的代码库\n只是使用方式略有不同\n我们会在另一期视频中专门深入讲解\nGRAPHIFY与obsidian的结合\n以及两者之间的连接方式究竟是什么样的\n但现在你只需要了解\n我们并不局限于纯代码场景\n这是个相当灵活的工具\n今天就到这里\n我觉得这是个很棒的工具\n当你纵观这些与记忆相关的应用和插件\n那些可以配合克劳德code和codex使用的工具\n我认为graph fy的定位介于obsidian\n和真正的RAG系统之间\n与真正的RAG系统之间\n选择越多\n工具越丰富\n就越能为任务挑选最合适的方案\n不必只用obsidian\n我们未必要用markdown\n也不必大费周章\n搭建庞大的RAG基础设施\n这确实是个值得探索的折中方案\n一如既往\n欢迎留言告诉我你的想法\n想学习cloud code master class的话\n记得关注chase AI plus\n说到obsidian\n我下周将举办一场免费直播网络研讨会\n关于obsidian与克劳德code的主题链接\n我也会附在下方\n我们下次见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1CJ7S6sE3s",
+  "published_at": "1780722664",
+  "fetched_at": "2026-08-09T16:23:54+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Graphify 知识图谱全景\n\n## Overview\n```mermaid\nflowchart TD\n    A1[\"代码库\"] --> A2[\"遍历整个代码库\"]\n    A2 --> A3[\"映射所有连接\"]\n    A3 --> A4[\"推断连接背后的原因\"]\n    A4 --> A5[\"生成知识图谱\"]\n    A5 --> A6[\"令 Claude Code 记忆持久\"]\n    A5 --> A7[\"降低 token 消耗\"]\n    A6 --> A8[\"提供更准确答案\"]\n    A7 --> A8\n    A5 --> A9[\"开源、完全免费\"]\n```\n\n## 三阶段处理流水线\n```mermaid\nflowchart TD\n    S1[\"阶段 1：代码结构分析\"] --> S1a[\"TRACCEDER 解析文件\"]\n    S1a --> S1b[\"提取类/函数\"]\n    S1b --> S1c[\"生成调用图 + 内联注释\"]\n    S1c --> S1d[\"本地运行，无需 LLM\"]\n    S1 --> S2[\"阶段 2：音视频处理\"]\n    S2 --> S2a[\"若有音视频文件\"]\n    S2a --> S2b[\"使用 faster whisper 转录为文字\"]\n    S2b --> S2c[\"注入知识图谱\"]\n    S2 --> S3[\"阶段 3：文档/图像处理\"]\n    S3 --> S3a[\"PDF、图片等非代码文件\"]\n    S3a --> S3b[\"大语言模型进行语义分析\"]\n    S3b --> S3c[\"确定归属节点并加入图谱\"]\n```\n\n## Token 消耗对比\n```mermaid\nflowchart LR\n    G1[\"使用 Graphify\"] --> G1a[\"运行 explore agent\"]\n    G1a --> G1b[\"约 100 000 token\"]\n    G1b --> G1c[\"总消耗约 200 000 token\"]\n    NG1[\"不使用 Graphify\"] --> NG1a[\"运行两个 explore agent\"]\n    NG1a --> NG1b[\"约 150 000 token\"]\n    NG1b --> NG1c[\"主会话额外 50 000 token\"]\n    NG1c --> NG1d[\"总消耗约 80 000 token\"]\n    G1c -.->|对比| NG1d\n```\n\n## 自动更新机制\n```mermaid\nflowchart TD\n    U1[\"代码库提交/更新\"] --> U2[\"运行 `graphfy hook install`\"]\n    U2 --> U3[\"基于 AST 重新构建知识图谱\"]\n    U3 --> U4[\"零额外 API 成本\"]\n    U4 --> U5[\"确定性、可并行的团队协作\"]\n    U5 --> U6[\"始终提供最新的代码结构地图\"]\n```\n\n## 应用场景对比\n```mermaid\nflowchart LR\n    C1[\"代码库（结构化）\"] --> C2[\"Graphify 最适合\"]\n    C2 --> C3[\"快速生成调用关系图\"]\n    C3 --> C4[\"高效、低 token 回答\"]\n    D1[\"大量 PDF / Markdown（非结构化）\"] --> D2[\"GraphRAG / 传统 RAG 更适用\"]\n    D2 --> D3[\"直接查询文档内容\"]\n    D3 --> D4[\"无需代码解析\"]\n    C1 -. 对比 .- D1\n    C4 -. 互补 .- D4\n```",
+      "diagrams": [
+        {
+          "title": "Overview",
+          "code": "flowchart TD\n    A1[\"代码库\"] --> A2[\"遍历整个代码库\"]\n    A2 --> A3[\"映射所有连接\"]\n    A3 --> A4[\"推断连接背后的原因\"]\n    A4 --> A5[\"生成知识图谱\"]\n    A5 --> A6[\"令 Claude Code 记忆持久\"]\n    A5 --> A7[\"降低 token 消耗\"]\n    A6 --> A8[\"提供更准确答案\"]\n    A7 --> A8\n    A5 --> A9[\"开源、完全免费\"]"
+        },
+        {
+          "title": "三阶段处理流水线",
+          "code": "flowchart TD\n    S1[\"阶段 1：代码结构分析\"] --> S1a[\"TRACCEDER 解析文件\"]\n    S1a --> S1b[\"提取类/函数\"]\n    S1b --> S1c[\"生成调用图 + 内联注释\"]\n    S1c --> S1d[\"本地运行，无需 LLM\"]\n    S1 --> S2[\"阶段 2：音视频处理\"]\n    S2 --> S2a[\"若有音视频文件\"]\n    S2a --> S2b[\"使用 faster whisper 转录为文字\"]\n    S2b --> S2c[\"注入知识图谱\"]\n    S2 --> S3[\"阶段 3：文档/图像处理\"]\n    S3 --> S3a[\"PDF、图片等非代码文件\"]\n    S3a --> S3b[\"大语言模型进行语义分析\"]\n    S3b --> S3c[\"确定归属节点并加入图谱\"]"
+        },
+        {
+          "title": "Token 消耗对比",
+          "code": "flowchart LR\n    G1[\"使用 Graphify\"] --> G1a[\"运行 explore agent\"]\n    G1a --> G1b[\"约 100 000 token\"]\n    G1b --> G1c[\"总消耗约 200 000 token\"]\n    NG1[\"不使用 Graphify\"] --> NG1a[\"运行两个 explore agent\"]\n    NG1a --> NG1b[\"约 150 000 token\"]\n    NG1b --> NG1c[\"主会话额外 50 000 token\"]\n    NG1c --> NG1d[\"总消耗约 80 000 token\"]\n    G1c -.->|对比| NG1d"
+        },
+        {
+          "title": "自动更新机制",
+          "code": "flowchart TD\n    U1[\"代码库提交/更新\"] --> U2[\"运行 `graphfy hook install`\"]\n    U2 --> U3[\"基于 AST 重新构建知识图谱\"]\n    U3 --> U4[\"零额外 API 成本\"]\n    U4 --> U5[\"确定性、可并行的团队协作\"]\n    U5 --> U6[\"始终提供最新的代码结构地图\"]"
+        },
+        {
+          "title": "应用场景对比",
+          "code": "flowchart LR\n    C1[\"代码库（结构化）\"] --> C2[\"Graphify 最适合\"]\n    C2 --> C3[\"快速生成调用关系图\"]\n    C3 --> C4[\"高效、低 token 回答\"]\n    D1[\"大量 PDF / Markdown（非结构化）\"] --> D2[\"GraphRAG / 传统 RAG 更适用\"]\n    D2 --> D3[\"直接查询文档内容\"]\n    D3 --> D4[\"无需代码解析\"]\n    C1 -. 对比 .- D1\n    C4 -. 互补 .- D4"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T16:43:05+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Graphify 知识图谱全景\n\n## Overview\n```mermaid\nflowchart TD\n    A1[\"代码库\"] --> A2[\"遍历整个代码库\"]\n    A2 --> A3[\"映射所有连接\"]\n    A3 --> A4[\"推断连接背后的原因\"]\n    A4 --> A5[\"生成知识图谱\"]\n    A5 --> A6[\"令 Claude Code 记忆持久\"]\n    A5 --> A7[\"降低 token 消耗\"]\n    A6 --> A8[\"提供更准确答案\"]\n    A7 --> A8\n    A5 --> A9[\"开源、完全免费\"]\n```\n\n## 三阶段处理流水线\n```mermaid\nflowchart TD\n    S1[\"阶段 1：代码结构分析\"] --> S1a[\"TRACCEDER 解析文件\"]\n    S1a --> S1b[\"提取类/函数\"]\n    S1b --> S1c[\"生成调用图 + 内联注释\"]\n    S1c --> S1d[\"本地运行，无需 LLM\"]\n    S1 --> S2[\"阶段 2：音视频处理\"]\n    S2 --> S2a[\"若有音视频文件\"]\n    S2a --> S2b[\"使用 faster whisper 转录为文字\"]\n    S2b --> S2c[\"注入知识图谱\"]\n    S2 --> S3[\"阶段 3：文档/图像处理\"]\n    S3 --> S3a[\"PDF、图片等非代码文件\"]\n    S3a --> S3b[\"大语言模型进行语义分析\"]\n    S3b --> S3c[\"确定归属节点并加入图谱\"]\n```\n\n## Token 消耗对比\n```mermaid\nflowchart LR\n    G1[\"使用 Graphify\"] --> G1a[\"运行 explore agent\"]\n    G1a --> G1b[\"约 100 000 token\"]\n    G1b --> G1c[\"总消耗约 200 000 token\"]\n    NG1[\"不使用 Graphify\"] --> NG1a[\"运行两个 explore agent\"]\n    NG1a --> NG1b[\"约 150 000 token\"]\n    NG1b --> NG1c[\"主会话额外 50 000 token\"]\n    NG1c --> NG1d[\"总消耗约 80 000 token\"]\n    G1c -.->|对比| NG1d\n```\n\n## 自动更新机制\n```mermaid\nflowchart TD\n    U1[\"代码库提交/更新\"] --> U2[\"运行 `graphfy hook install`\"]\n    U2 --> U3[\"基于 AST 重新构建知识图谱\"]\n    U3 --> U4[\"零额外 API 成本\"]\n    U4 --> U5[\"确定性、可并行的团队协作\"]\n    U5 --> U6[\"始终提供最新的代码结构地图\"]\n```\n\n## 应用场景对比\n```mermaid\nflowchart LR\n    C1[\"代码库（结构化）\"] --> C2[\"Graphify 最适合\"]\n    C2 --> C3[\"快速生成调用关系图\"]\n    C3 --> C4[\"高效、低 token 回答\"]\n    D1[\"大量 PDF / Markdown（非结构化）\"] --> D2[\"GraphRAG / 传统 RAG 更适用\"]\n    D2 --> D3[\"直接查询文档内容\"]\n    D3 --> D4[\"无需代码解析\"]\n    C1 -. 对比 .- D1\n    C4 -. 互补 .- D4\n```",
+  "diagrams": [
+    {
+      "title": "Overview",
+      "code": "flowchart TD\n    A1[\"代码库\"] --> A2[\"遍历整个代码库\"]\n    A2 --> A3[\"映射所有连接\"]\n    A3 --> A4[\"推断连接背后的原因\"]\n    A4 --> A5[\"生成知识图谱\"]\n    A5 --> A6[\"令 Claude Code 记忆持久\"]\n    A5 --> A7[\"降低 token 消耗\"]\n    A6 --> A8[\"提供更准确答案\"]\n    A7 --> A8\n    A5 --> A9[\"开源、完全免费\"]"
+    },
+    {
+      "title": "三阶段处理流水线",
+      "code": "flowchart TD\n    S1[\"阶段 1：代码结构分析\"] --> S1a[\"TRACCEDER 解析文件\"]\n    S1a --> S1b[\"提取类/函数\"]\n    S1b --> S1c[\"生成调用图 + 内联注释\"]\n    S1c --> S1d[\"本地运行，无需 LLM\"]\n    S1 --> S2[\"阶段 2：音视频处理\"]\n    S2 --> S2a[\"若有音视频文件\"]\n    S2a --> S2b[\"使用 faster whisper 转录为文字\"]\n    S2b --> S2c[\"注入知识图谱\"]\n    S2 --> S3[\"阶段 3：文档/图像处理\"]\n    S3 --> S3a[\"PDF、图片等非代码文件\"]\n    S3a --> S3b[\"大语言模型进行语义分析\"]\n    S3b --> S3c[\"确定归属节点并加入图谱\"]"
+    },
+    {
+      "title": "Token 消耗对比",
+      "code": "flowchart LR\n    G1[\"使用 Graphify\"] --> G1a[\"运行 explore agent\"]\n    G1a --> G1b[\"约 100 000 token\"]\n    G1b --> G1c[\"总消耗约 200 000 token\"]\n    NG1[\"不使用 Graphify\"] --> NG1a[\"运行两个 explore agent\"]\n    NG1a --> NG1b[\"约 150 000 token\"]\n    NG1b --> NG1c[\"主会话额外 50 000 token\"]\n    NG1c --> NG1d[\"总消耗约 80 000 token\"]\n    G1c -.->|对比| NG1d"
+    },
+    {
+      "title": "自动更新机制",
+      "code": "flowchart TD\n    U1[\"代码库提交/更新\"] --> U2[\"运行 `graphfy hook install`\"]\n    U2 --> U3[\"基于 AST 重新构建知识图谱\"]\n    U3 --> U4[\"零额外 API 成本\"]\n    U4 --> U5[\"确定性、可并行的团队协作\"]\n    U5 --> U6[\"始终提供最新的代码结构地图\"]"
+    },
+    {
+      "title": "应用场景对比",
+      "code": "flowchart LR\n    C1[\"代码库（结构化）\"] --> C2[\"Graphify 最适合\"]\n    C2 --> C3[\"快速生成调用关系图\"]\n    C3 --> C4[\"高效、低 token 回答\"]\n    D1[\"大量 PDF / Markdown（非结构化）\"] --> D2[\"GraphRAG / 传统 RAG 更适用\"]\n    D2 --> D3[\"直接查询文档内容\"]\n    D3 --> D4[\"无需代码解析\"]\n    C1 -. 对比 .- D1\n    C4 -. 互补 .- D4"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T16:43:05+00:00"
+}

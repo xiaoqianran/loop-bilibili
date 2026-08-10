@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1o3ADzZEmg",
+  "title": "Agent Teams/Swarm究竟是什么？7分钟看懂100个Agent团战的技术原理",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3351,
+  "text": "2025年\nagent的成为了AI的主流形态\n模型开始会规划拆解任务\n自己调用工具\n但当问题变得复杂时\n再强的agent也只能同时思考有限的事情\n本质上它仍然是一个单体智能\n但复杂问题从来不是靠一个大脑就能解决的\n就像人类文明的跃迁\n靠的不只是更聪明的人\n还需要分工和协作\nAI已经足够聪明\n所以AI的下一步进化方向\n很可能不再是更强的单体agent\n而是让多个agent的协同工作\n形成真正的agent集群\n我们已经看到\n各个大模型厂商在新一代大模型中探索落地\n这种多A镜的协作模式\n比如cloud code的agent teams\n它允许多个cloud agent像一个团队一样\n在一个项目上并行工作\n每个agent特负责自己的任务部分\n并且能直接互相沟通和协调\n压缩传统串行工作所需时间\n国内的KIMI大模型甚至更早\n就开始探索多agent的方案\n在大模型训练的时候就引入了并行设计能力\n在这个基础上推出了agent swarm功能\nOpenAI在GBT5.3codex相关的文章里\n也暗示了\n下一步agent的迭代将朝着多agent的交互上做努力\n那么问题就来了\nagent teams和agent的swarm的区别是什么\n和什么agents有什么区别\n我们先从单agent的情况说起\n从单agent到agent teams\n我们知道cloud code最基础的功能就是在一个窗口上\n让一个cloud agent替你干活\n如果有多个任务\n就在一个窗口里依次串行执行\n但这样所有对话都挤在一个聊天框里\n有上下文过长的问题\n所以我们一般会自己拆分任务\n手动开多个窗口并行执行\n但这样要是各个窗口改动出现冲突\n就需要自己手动和代码\n于是cloud code又引入了sub agent功能\n通过一个主agent来控制多个子agent的工作\n效果上相当于让主A镜的替你开多个子窗口\n独立并行执行\n最后由它来自动汇总结果\n弹子agent的之间没法直接交流\n所以更适合改动相对独立\n耦合较少的任务\n于是cloud code又又引入了agent teams\n在agent teams里依然有一个主agent的角色\n他将任务通过共享任务清单的形式\n把任务给到各个子agent的子agent\n并行申领并执行任务\n并且可以互相通信\n这样多agent间协作可以更紧密\nagent的teams实测大概原理懂了\n我们用一个实际例子看下ea teams的工作流程\n我们先执行cloud update\n确保cloud code是最新版本\n然后在cloud settings点JSON文件里\n将team相关的环境变量打开\n在cloud code输入框里提到agent team\n关键词就可以触发相关功能\n比如使用agent team创建多个agent\n从不同角度讨论\n2026年还适不适合在上海买房\ncloud code就会创建多个agent并行的\n从不同角度去做头脑风暴\n最后给出一份讨论\n结果看起来挺好\n但我认为短期内它依然只能是个实验性功能\n因为它有两个比较严重的问题\n首先是token量爆炸\nsub agent方案里\n子agent会把执行上下文总结后返回给主agent\n所以上下文长度更可控\n而在agent的teams里\n则会让所有子A景的共享上下文\n每个agent的每一轮提示词\n都要包含所有agent的历史消息\n任务越往后执行token消耗就越大\n我是真的用不起\n其次是缺乏弹性并行能力\neighteen的teams的成员\n通常在任务开始时就根据角色定下来了\n很难在任务中途根据工作量动态扩容\n比如我一直想做一个关于硅基文明简史的话题\n讲述从二进制到计算机\n再到transformer等\n一系列推动AI发展的100个事件\n它分成几个阶段任务\n首先是需要一位研究员\n收集人类历史出现过哪些关键事件\n审核员筛选事件\n图片生成源\n生成100张图片\n图片审核员校验图片风格是否一致\n再让UI设计师生成网页风格\n最后才是给程序员开发网页\n这个例子中\nagent的teams只会创建六个agent\n尤其是在图片生成阶段\n可能还是由那一个图片生成员慢慢画100张图\n他不会因为发现任务量大就临时裂变出\n多给A景的同时开工\n那有方案可以解决上面提到的两个问题吗\n有让我没想到的是国内的kimi agent的swarm\n把问题给解决了\nkimi agent的swarm功能实测\n我们先来看一下执行效果\n再了解一下kimi agent is warm和agent teams的区别\n先将上面提到的硅基文明简史\n任务描述粘贴到KIMI下拉框\n选择agent a swarm执行\nKIMI会启动一个叫kimmies computer的虚拟机\nKIMIK2.5会作为主agent\n像项目经理一样\n将复杂任务拆分成多个步骤的子任务\n并现场决策生成六个子agent\n每个子agent只负责这一个阶段子任务的上下文\n这样agent的上下文更短\n注意力更聚焦\n可以大大降低幻觉和出错概率\n点击每个agent都能看到它对应的照片和角色描述\n就像一个电子员工一样\n其中研究员会在互联网上发起多轮搜索\n从国内外知名技术资讯站点\n获得几千条搜索结果\n再从里面筛选出138个候选事件\n生成一个MD格式的结果文档交付给审核员\n点击底部的all files可以找到这个结果文件\n点击查看文件内容\n可以看到研究员已经将收集的内容\n按年代进行排序\n并给出事件的历史意义\n审核员淘汰38个\n留下100个真正改变世界的技术\n以MD文档格式给到图片生成源\n图片生成员拿到审核员筛选过的文件内容后\nKIMIK2.5发现多张图片\n生成100张图片的任务时间会很长\n于是将子任务进一步拆分成五个小批次\n临时创建五个新的子agent并行去执行生图任务\n比起单个agent的挨个串行执行任务\n改成并行之后\n任务的实际运行时间会明显变短\n点击列表里的任务\n可以看到每个任务的具体执行情况\n注意看这里面会有一些失败和报错\nA级的内部会不断调整策略\n重试并最终完成子任务\n这要是在传统多个单体的A景的架构中\n一个agent的内部报错\n就算内部有重视\n也会大大增加执行耗时\n而agent的swarm架构中\n局部任务的失败并不会严重影响全局\n这样系统稳定性更高\n之后经过图片审核员\nUI设计师和程序员的协作完成了网页\n可以看到网页按时间线给出了每个年代\n影响AI的重要事件\n且美术风格一致\nkimi agent的swarm\n通过多个agent的互相协作\n只花了几分钟时间就完成了\n我可能需要花一天甚至几天才能完成的任务\nagent teams和kimi agent的swarm的区别\n最后总结下kimi agent的swarm和agent的teams的差异\n首先是架构逻辑不同\nkimi agent的swarm逻辑上更接近sub agents的增强版\n子agent之间上下文物理隔离\n只负责局部的子任务\n生成的中间结果会被总结后再返回给主agent\n这样既保证了任务聚焦\n又把token消耗压到了最低\n其次支持动态并行\nKIMIK2.5在训练时引入了并行代理\n强化学习技术\n也就是PARL\n这让他具备了动态编排的能力\n他像一个聪明的项目经理\n能根据工作量现场摇人\n比如申图任务多\n它会动态创建几十个A景的并行跑\n效率能比传统串行提升四倍以上\n最后是集成度不同\ncloud code更像是一个程序员的专业工具\n想用好agent的teams\n你需要自己配环境\n安装各种skills\n而kimi agent的swarm自带kimmies computer虚拟机\n申图搜索\n写代码\n运行网页全是开箱即用\n对普通用户来说更友好\n从单体智能到群体协作\nAI正在复刻人类文明的跃迁路径\n不是更聪明的大脑\n而是更聪明的协作\n当无数A景的学会像团队一样并肩作战\n分工配合\nAI就不再是工具\n而是队友\n而这可能才是通往通用人工智能的真正基点\n现在大家通了吗\n好啦如果你觉得这期视频对你有帮助\n记得转发给你那不成器的兄弟\n文字版的笔记见评论区\n这里是小白debug\n如果你感兴趣\n记得关注我们\n下期见\n嘟嘟嘟嘟嘟嘟嘟",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1o3ADzZEmg",
+  "published_at": "1772272800",
+  "fetched_at": "2026-08-07T02:51:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Agent Teams 与 Swarm 知识图谱\n\n## 演化路径：单体 → Teams → Swarm\n```mermaid\nflowchart TD\n    A1[\"单体 Agent\"] --> A2[\"思考范围有限\"]\n    A1 --> A3[\"上下文 token 限制\"]\n    A2 --> A4[\"需要分工协作\"]\n    A3 --> A4\n    A4 --> B1[\"Agent Teams\"]\n    A4 --> B2[\"Agent Swarm\"]\n    B1 --> B1a[\"子 Agent（共享上下文）\"]\n    B1a --> B1b[\"共享任务清单\"]\n    B1a --> B1c[\"子 Agent 互相通信\"]\n    B2 --> B2a[\"上下文物理隔离\"]\n    B2 --> B2b[\"动态并行能力\"]\n```\n\n## Agent Teams 架构与关键问题\n```mermaid\nflowchart TD\n    T1[\"主 Agent\"] --> T2[\"子 Agent\"]\n    T1 --> T3[\"共享任务清单\"]\n    T2 --> T4[\"子 Agent 互相通信\"]\n    T4 --> T5[\"Token 量爆炸\"]\n    T5 --> T9[\"主要问题\"]\n    T6[\"缺乏弹性并行能力\"] --> T9\n    T7[\"每轮提示包含全部历史\"] --> T5\n    T8[\"任务开始即定角色\"] --> T6\n```\n\n## KIMI Swarm 架构与优势\n```mermaid\nflowchart TD\n    S1[\"KIMIK2.5 主 Agent\"] --> S2[\"kimmies computer 虚拟机\"]\n    S1 --> S3[\"子 Agent（上下文隔离）\"]\n    S3 --> S4[\"上下文物理隔离\"]\n    S4 --> S5[\"Token 消耗最低\"]\n    S3 --> S6[\"动态创建子 Agent\"]\n    S6 --> S7[\"效率提升 4 倍以上\"]\n    S3 --> S8[\"局部失败不影响全局\"]\n    S1 --> S9[\"开箱即用技能\"]\n    S9 --> S10[\"对普通用户友好\"]\n```",
+      "diagrams": [
+        {
+          "title": "演化路径：单体 → Teams → Swarm",
+          "code": "flowchart TD\n    A1[\"单体 Agent\"] --> A2[\"思考范围有限\"]\n    A1 --> A3[\"上下文 token 限制\"]\n    A2 --> A4[\"需要分工协作\"]\n    A3 --> A4\n    A4 --> B1[\"Agent Teams\"]\n    A4 --> B2[\"Agent Swarm\"]\n    B1 --> B1a[\"子 Agent（共享上下文）\"]\n    B1a --> B1b[\"共享任务清单\"]\n    B1a --> B1c[\"子 Agent 互相通信\"]\n    B2 --> B2a[\"上下文物理隔离\"]\n    B2 --> B2b[\"动态并行能力\"]"
+        },
+        {
+          "title": "Agent Teams 架构与关键问题",
+          "code": "flowchart TD\n    T1[\"主 Agent\"] --> T2[\"子 Agent\"]\n    T1 --> T3[\"共享任务清单\"]\n    T2 --> T4[\"子 Agent 互相通信\"]\n    T4 --> T5[\"Token 量爆炸\"]\n    T5 --> T9[\"主要问题\"]\n    T6[\"缺乏弹性并行能力\"] --> T9\n    T7[\"每轮提示包含全部历史\"] --> T5\n    T8[\"任务开始即定角色\"] --> T6"
+        },
+        {
+          "title": "KIMI Swarm 架构与优势",
+          "code": "flowchart TD\n    S1[\"KIMIK2.5 主 Agent\"] --> S2[\"kimmies computer 虚拟机\"]\n    S1 --> S3[\"子 Agent（上下文隔离）\"]\n    S3 --> S4[\"上下文物理隔离\"]\n    S4 --> S5[\"Token 消耗最低\"]\n    S3 --> S6[\"动态创建子 Agent\"]\n    S6 --> S7[\"效率提升 4 倍以上\"]\n    S3 --> S8[\"局部失败不影响全局\"]\n    S1 --> S9[\"开箱即用技能\"]\n    S9 --> S10[\"对普通用户友好\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T02:51:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Agent Teams 与 Swarm 知识图谱\n\n## 演化路径：单体 → Teams → Swarm\n```mermaid\nflowchart TD\n    A1[\"单体 Agent\"] --> A2[\"思考范围有限\"]\n    A1 --> A3[\"上下文 token 限制\"]\n    A2 --> A4[\"需要分工协作\"]\n    A3 --> A4\n    A4 --> B1[\"Agent Teams\"]\n    A4 --> B2[\"Agent Swarm\"]\n    B1 --> B1a[\"子 Agent（共享上下文）\"]\n    B1a --> B1b[\"共享任务清单\"]\n    B1a --> B1c[\"子 Agent 互相通信\"]\n    B2 --> B2a[\"上下文物理隔离\"]\n    B2 --> B2b[\"动态并行能力\"]\n```\n\n## Agent Teams 架构与关键问题\n```mermaid\nflowchart TD\n    T1[\"主 Agent\"] --> T2[\"子 Agent\"]\n    T1 --> T3[\"共享任务清单\"]\n    T2 --> T4[\"子 Agent 互相通信\"]\n    T4 --> T5[\"Token 量爆炸\"]\n    T5 --> T9[\"主要问题\"]\n    T6[\"缺乏弹性并行能力\"] --> T9\n    T7[\"每轮提示包含全部历史\"] --> T5\n    T8[\"任务开始即定角色\"] --> T6\n```\n\n## KIMI Swarm 架构与优势\n```mermaid\nflowchart TD\n    S1[\"KIMIK2.5 主 Agent\"] --> S2[\"kimmies computer 虚拟机\"]\n    S1 --> S3[\"子 Agent（上下文隔离）\"]\n    S3 --> S4[\"上下文物理隔离\"]\n    S4 --> S5[\"Token 消耗最低\"]\n    S3 --> S6[\"动态创建子 Agent\"]\n    S6 --> S7[\"效率提升 4 倍以上\"]\n    S3 --> S8[\"局部失败不影响全局\"]\n    S1 --> S9[\"开箱即用技能\"]\n    S9 --> S10[\"对普通用户友好\"]\n```",
+  "diagrams": [
+    {
+      "title": "演化路径：单体 → Teams → Swarm",
+      "code": "flowchart TD\n    A1[\"单体 Agent\"] --> A2[\"思考范围有限\"]\n    A1 --> A3[\"上下文 token 限制\"]\n    A2 --> A4[\"需要分工协作\"]\n    A3 --> A4\n    A4 --> B1[\"Agent Teams\"]\n    A4 --> B2[\"Agent Swarm\"]\n    B1 --> B1a[\"子 Agent（共享上下文）\"]\n    B1a --> B1b[\"共享任务清单\"]\n    B1a --> B1c[\"子 Agent 互相通信\"]\n    B2 --> B2a[\"上下文物理隔离\"]\n    B2 --> B2b[\"动态并行能力\"]"
+    },
+    {
+      "title": "Agent Teams 架构与关键问题",
+      "code": "flowchart TD\n    T1[\"主 Agent\"] --> T2[\"子 Agent\"]\n    T1 --> T3[\"共享任务清单\"]\n    T2 --> T4[\"子 Agent 互相通信\"]\n    T4 --> T5[\"Token 量爆炸\"]\n    T5 --> T9[\"主要问题\"]\n    T6[\"缺乏弹性并行能力\"] --> T9\n    T7[\"每轮提示包含全部历史\"] --> T5\n    T8[\"任务开始即定角色\"] --> T6"
+    },
+    {
+      "title": "KIMI Swarm 架构与优势",
+      "code": "flowchart TD\n    S1[\"KIMIK2.5 主 Agent\"] --> S2[\"kimmies computer 虚拟机\"]\n    S1 --> S3[\"子 Agent（上下文隔离）\"]\n    S3 --> S4[\"上下文物理隔离\"]\n    S4 --> S5[\"Token 消耗最低\"]\n    S3 --> S6[\"动态创建子 Agent\"]\n    S6 --> S7[\"效率提升 4 倍以上\"]\n    S3 --> S8[\"局部失败不影响全局\"]\n    S1 --> S9[\"开箱即用技能\"]\n    S9 --> S10[\"对普通用户友好\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:51:35+00:00"
+}

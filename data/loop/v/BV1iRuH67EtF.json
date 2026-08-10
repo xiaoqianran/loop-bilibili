@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1iRuH67EtF",
+  "title": "DeepSeek第一个把价格打到地板上的它，如今第一个掉头涨价",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1348,
+  "text": "今天早上deep sick在开发者后台挂出了一句话\n计划近期整体上调API服务定价\n预计涨幅较大\n请合理安排您的使用\n过去两年这个行业的价格只有一个方向往下\n第一个把价格打到地板上的是他现在第一个掉头往上的还是他\n所以真正值得问的不是它为什么涨\n而是到底是deep seek在涨价\n还是他身后那条链子在涨价\n我先把他现在的价目表翻出来看了一遍\nV4flash这一档输入\n如果命中缓存\n每百万token两分钱\n没命中一块钱\n50倍的差价\n这个数字第一次看的时候\n我愣了一下\n后来反应过来\n这其实是一份成本自白书\n他在告诉你\n贵的不是算是存道理不复杂\n现在这批模型上下文动辄百万级\n单次输出能到384000token\n推理过程中\n那些中间状态也就是所谓的KV缓存得实实在在占着显存\n一直占到这轮对话结束\n上下文越长\n占得越久越贵\n所以推理的瓶颈这两年悄悄挪了位置\n从算力挪到了存储的容量和带宽上\n而存储今年是什么行情\n做投资的人心里都有数\n三季度传统DRAM合约价环比涨13%到18\n难的涨10%到15\n这还是相对温和的口径渠道那边传出来的原厂通知更凶\nd ram两成到三成\n闪存三成半到四成\n个别DDDR饲料号单季度直接翻了一半\n原厂把产能优先扔给了服务器和HBM通用存储就被挤成了这个样子\n行业里比较悲观的看法是\n缺口要撑到2028年再往上游走\n材料设备先进封装链条上每一环今年都在涨\n说白了推理服务商的成本曲线不是自己走出来的\n是被上游的排产表按着走的\n谁的毛利薄\n谁先扛不住\n这跟经营能力关系不大\n就是位置的问题\n这是第一条线\n但我认为更要紧的是第二条线需求端\n7月中旬\ndeep seek已经先做了一次试探\n工作日上午九点到12点\n下午两点到六点\n价格直接翻倍\n凌晨周末节假日维持原价\n这是典型的用价格杠杆逼用户错峰\n能逼到这一步\n说明高峰时段的负载是真顶不住了\nV4flash上线之后\n单模型的周调用量一度冲到数万亿\ntoken多次登上全球调用量第一\n我一开始的判断是用户涨得太快\n撑不住了\n后来把调用量的结构拆开看\n才发现事情比用户变多要深一层\n不是人变多了\n是每个人变贵了\n模型越聪明越费token\n这句话听起来别扭\n但他是这两年最真实的变化\n以前你问一个问题\n模型答一段话\n几千个token结束\n现在呢他先想一大段\n再自己去调工具\n读代码库跑一遍\n报错改完再验证一次\n一个agent的任务跑下来\n几10万上百万\ntoken是常态\n能力越强的模型越倾向于用更多的思考换更好的结果\n经济学里有个老概念叫杰文斯悖论\n瓦特把蒸汽机的煤耗降下来之后\n英国的煤炭消费不降反升\n因为便宜让它被用在了以前根本用不起的地方\n今天token单价掉了100倍\n可单位任务的消耗量涨了何止100倍\n所以token的通缩尽头是算利账单的通胀\n两条线一叠加\n结论就清楚了\n上游成本再往上顶\n单客消耗再往上冲\n中间那层做推理服务的利润被两头挤\n低价从来不是护城河\n它只是一段特定供需关系下的补贴期\n这一页现在翻过去了\n回到开头那个问题\ndeep sick涨价不是他输了\n也不是AI泡沫破了\n恰恰相反\n这是这门生意第一次被迫开始诚实的计算成本\n免费的午餐吃完了\n接下来才是真正见功夫的阶段\n我是一叶知秋\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1iRuH67EtF",
+  "published_at": "1786027921",
+  "fetched_at": "2026-08-08T10:56:17+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T11:23:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T11:23:43+00:00"
+}

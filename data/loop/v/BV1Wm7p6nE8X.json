@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Wm7p6nE8X",
+  "title": "Godot打包体积优化分享",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 875,
+  "text": "哈喽大家好呀\n这里是瞌睡君呀\n我之前写过一个小游戏\n然后想发到网页上去玩\n导出的时候发现了个问题\n大家可以跟我一起看一下是什么问题\n我这边选择全部导出点发布\n然后看一下他的打包产物\n你会发现这一个包居然有40兆\n但实际上我这边是一个小游戏\n不应该有这么大的一个体积\n然后点开看一下\n你会发现这个WASM的一个文件\n有37兆嗯\n具体这个WASM是什么呢\n它其实是这个GODOT的一个有有源码呃\n他的一个本体\n然后我这边有一个方法可以降低它的本体体积\n具体的方法是怎么做的呢\n就是我们先要把它\n我当前这一个的对应源码给下载下来\n就是这一段\n具体的一个命令是这个\n切到这一个commit\n然后我们把它的源码下载下来以后\n需要新建一个constant py\n具体的一个配置我放到了我这边的最下面\n其实就是做一个功能阉割\n比如说我们像这个配置\n就是\n可以看一下描述\n有一个优化编译优化的级别\n然后像下面我这边3D的全部都关掉了\n对\n然后在最下面把这些配置项全部都列出来了\n好把这个配置文件建好之后\n我们就需要装一下环境\n具体的就是这三个\n一个是Python\n然后这两个呃\n然后这三个环境的版本需要注意下\n大部分出问题就出在这\n然后我们就可以执行命令编译了\n这个命令的话是去清除一下缓存\n像我这边之前已经阉割过\n所以就会有这一断东西\n他会先把这一些缓存去掉\n然后再执行这个命令\n我们可以我这边可以演示一下\n需要等很久\n因为有缓存\n所以这边会稍微快一点好\n然后我们再把生成的一个文件\n它在BIM这里\n需要的就是这个放置到我们的根目录下面\n就是这\n因为之前我这边已经\n做过了\n所以\n我们现在选择这个导出\n我们现在再来看一下\n看只有24.3兆\n这个地方\n我们可以再去服务器开启下那个g zip压缩\n具体的一个配置也放在了这里\n然后一个具体的效果呢就是我没开之前\n他是没有压缩的\n它会加载50多秒\n我开了以后呢\n他这边因为压缩过只会加载五兆的内容\n然后只有14秒\n一个优化还是比较明显的\n然后我这边也会把我的那个游戏的地址\n贴到评论区\n大家可以尝试着去玩一下\n好谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Wm7p6nE8X",
+  "published_at": "1782900000",
+  "fetched_at": "2026-08-10T05:26:28+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 打包体积优化知识图谱\n\n## 图1：问题概览 [BV1Wm7p6nE8X P1 00:28-00:40]\n```mermaid\nflowchart TD\n    A[小游戏] --> B[导出为 Web]\n    B --> C[打包产物 40 MB]\n    C --> D[包含 WASM 37 MB]\n    D --> E[WASM = Godot 引擎源码]\n```\n\n## 图2：自定义构建流程 [BV1Wm7p6nE8X P1 01:00-02:39]\n```mermaid\nflowchart TD\n    A1[切换到特定 commit] --> A2[下载 Godot 源码]\n    A2 --> A3[新建 constant.py 配置文件]\n    A3 --> A4[功能阉割：关闭 3D 等]\n    A4 --> A5[安装环境：Python + ToolA + ToolB]\n    A5 --> A6[注意版本兼容]\n    A6 --> A7[执行清除缓存命令]\n    A7 --> A8[编译生成优化后 WASM]\n    A8 --> A9[产出 WASM 约 24.3 MB]\n```\n\n## 图3：部署压缩与性能提升 [BV1Wm7p6nE8X P1 03:51-04:10]\n```mermaid\nflowchart TD\n    B1[开启服务器 gzip 压缩] --> B2[压缩后下载体积约 5 MB]\n    B2 --> B3[加载时间 ↓ 从 50 s 到 14 s]\n    B3 --> B4[显著优化用户体验]\n```",
+      "diagrams": [
+        {
+          "title": "图1：问题概览 [BV1Wm7p6nE8X P1 00:28-00:40]",
+          "code": "flowchart TD\n    A[小游戏] --> B[导出为 Web]\n    B --> C[打包产物 40 MB]\n    C --> D[包含 WASM 37 MB]\n    D --> E[WASM = Godot 引擎源码]"
+        },
+        {
+          "title": "图2：自定义构建流程 [BV1Wm7p6nE8X P1 01:00-02:39]",
+          "code": "flowchart TD\n    A1[切换到特定 commit] --> A2[下载 Godot 源码]\n    A2 --> A3[新建 constant.py 配置文件]\n    A3 --> A4[功能阉割：关闭 3D 等]\n    A4 --> A5[安装环境：Python + ToolA + ToolB]\n    A5 --> A6[注意版本兼容]\n    A6 --> A7[执行清除缓存命令]\n    A7 --> A8[编译生成优化后 WASM]\n    A8 --> A9[产出 WASM 约 24.3 MB]"
+        },
+        {
+          "title": "图3：部署压缩与性能提升 [BV1Wm7p6nE8X P1 03:51-04:10]",
+          "code": "flowchart TD\n    B1[开启服务器 gzip 压缩] --> B2[压缩后下载体积约 5 MB]\n    B2 --> B3[加载时间 ↓ 从 50 s 到 14 s]\n    B3 --> B4[显著优化用户体验]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T05:26:40+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 打包体积优化知识图谱\n\n## 图1：问题概览 [BV1Wm7p6nE8X P1 00:28-00:40]\n```mermaid\nflowchart TD\n    A[小游戏] --> B[导出为 Web]\n    B --> C[打包产物 40 MB]\n    C --> D[包含 WASM 37 MB]\n    D --> E[WASM = Godot 引擎源码]\n```\n\n## 图2：自定义构建流程 [BV1Wm7p6nE8X P1 01:00-02:39]\n```mermaid\nflowchart TD\n    A1[切换到特定 commit] --> A2[下载 Godot 源码]\n    A2 --> A3[新建 constant.py 配置文件]\n    A3 --> A4[功能阉割：关闭 3D 等]\n    A4 --> A5[安装环境：Python + ToolA + ToolB]\n    A5 --> A6[注意版本兼容]\n    A6 --> A7[执行清除缓存命令]\n    A7 --> A8[编译生成优化后 WASM]\n    A8 --> A9[产出 WASM 约 24.3 MB]\n```\n\n## 图3：部署压缩与性能提升 [BV1Wm7p6nE8X P1 03:51-04:10]\n```mermaid\nflowchart TD\n    B1[开启服务器 gzip 压缩] --> B2[压缩后下载体积约 5 MB]\n    B2 --> B3[加载时间 ↓ 从 50 s 到 14 s]\n    B3 --> B4[显著优化用户体验]\n```",
+  "diagrams": [
+    {
+      "title": "图1：问题概览 [BV1Wm7p6nE8X P1 00:28-00:40]",
+      "code": "flowchart TD\n    A[小游戏] --> B[导出为 Web]\n    B --> C[打包产物 40 MB]\n    C --> D[包含 WASM 37 MB]\n    D --> E[WASM = Godot 引擎源码]"
+    },
+    {
+      "title": "图2：自定义构建流程 [BV1Wm7p6nE8X P1 01:00-02:39]",
+      "code": "flowchart TD\n    A1[切换到特定 commit] --> A2[下载 Godot 源码]\n    A2 --> A3[新建 constant.py 配置文件]\n    A3 --> A4[功能阉割：关闭 3D 等]\n    A4 --> A5[安装环境：Python + ToolA + ToolB]\n    A5 --> A6[注意版本兼容]\n    A6 --> A7[执行清除缓存命令]\n    A7 --> A8[编译生成优化后 WASM]\n    A8 --> A9[产出 WASM 约 24.3 MB]"
+    },
+    {
+      "title": "图3：部署压缩与性能提升 [BV1Wm7p6nE8X P1 03:51-04:10]",
+      "code": "flowchart TD\n    B1[开启服务器 gzip 压缩] --> B2[压缩后下载体积约 5 MB]\n    B2 --> B3[加载时间 ↓ 从 50 s 到 14 s]\n    B3 --> B4[显著优化用户体验]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T05:26:40+00:00"
+}

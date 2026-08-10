@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1JC3F6wEkD",
+  "title": "Hermes Agent Team五角色架构一人公司模型v3.1版本",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3707,
+  "text": "我偷了GI帕上137k star的王炸\n现象级的开源项目\n今天继续给大家带来新的一期\nHERMES多角色架构设计分享\n在这之前有两期赫本架构设计的视频\n合起来已经获得了十几万的播放了\n非常感谢大家的支持和喜欢\n这一期是五角色的V3.1迭代版本\n依旧是在结尾会放文档的获取方式\n主要更新的内容呢是借鉴了一个\nGI8上137k star的开源项目\nA真c agents\n给五个角色都升级了专家级的专业能力\n为了照顾到没看过之前两期节目的小伙伴\n我会把整个HERMES架构从头讲一遍\npurpose的原生能力和设计呢\n只是一个单一agent的一个人包揽所有的活\n如果你有比较高强度的使用过\n你肯定会发现其中的一些问题\n就是当1agent的一个缺陷\n就像公司只有一个人在干活\n又要做市场调研\n又要写方案\n又要检查质量\n他能做好吗\n其实很难\n所以说hermes agent team的思路很简单\n不要一个人干所有的活\n而是组建一个AI团队\n你来当老板\nAI各司其职\n这就是今天要分享的核心\n一个HERMES就是一个艺人公司的模型\n今天重点介绍的是V3.1版本\n我做了四个关键的升级\n我后面一一展开\n为什么一个人不够呢\n我们先来想一个问题\n想象一栋楼要盖起来\n结果工地上只有一个人\n他既当建筑师去画图纸\n又当电工去走电线\n然后还当水工去铺管道\n这现实吗\n实际上很难\n就算可以建好\n你敢住吗\n所以说这就是所谓的术业有专攻\n传统的单一A准则的一个问题\n就是一个AI包揽所有不同类型的工作\n会产生三个致命的问题\n第一个就是幻觉自己查资料\n自己写内容\n自己审稿\n从头到尾没有没有人监督\n错了也没人发现\n第二个是记忆污染\n不同领域的经验全混在一起\n上次写代码的经验跑去指导写文章\n写出来的东西不伦不类\n第三就是角色混乱\n该做研究的时候着急下结论\n该执行的时候呢\n又在纠结规划\n该审查的时候\n还帮着自己的错误去打辩护\n完全乱套了\n所以说一个人干所有活又累\n又有可能会出错\n如果说你有一支分工明确的小团队\n那么就可以稳步的推进项目了\n在搭建团队之前呢\n我们先搞懂四个基础的概念\n这里就借用职场的概念来给你做解释\n第一个是profile\n就是岗位说明书\n他回答了我是谁\n我该干什么\n这个是长期固定的\n就像你进公司的第一天拿到的JD\n定义了你的职责边界\n第二个是project\n就是工作文件夹\n一个具体任务的全部工作记录都放在这里\n项目做完就归档\n就像你接到一个新的项目\n开一个文件夹\n把所有东西都放到里面的子文件里面\n第三个是wiki\n就是公司的知识库\n跨项目共享的知识资产永久积累\n越用越聪明\n就像公司内部的共享文档一样\n老员工走了\n经验还存在\n第四个是筛选\n就是一次会议\n单次任务执行会后提上任务完成就归档\n下次如果同个项目重新被启用\n会直接调用之前的会议记录\n这四个概念是HERMES的基本单元\n记住一句话\n角色长期固定项目\n按需创建\n支持永久积累任务做完归档\n现在我们来认识一下团队的五个核心成员\n你可以把他们想象成一个项目组\n每个人各管一摊\n流程是这样的\n你作为老板去发布任务\n然后呢交给CORINNATE这个项目经理\n项目经理的任务就是猜任务\n分派任务\n汇总结果\n核心的原则就是管流程\n不管质量\n他只保证事情按顺序跑起来\n做的好与不好\n由另外的角色去审核\n接下来是三个一线的执行者\nresearcher研究员就是调研人员\n他的工作是收集证据\n交叉验证\n然后给每条信息标注置信度\n绿色代表可信\n黄色代表存疑\n红色代表不可靠\n核心的原则就是在源头把编造的东西阻断掉\nwriter创作者\n它只基于绿色的数据来写内容\n黄色和红色的数据根本不会出现在正文里面\n核心的原则就是只写有据可查的内容\neditor质量审计就是质检员\n也是专门来挑刺儿的\n他独立核查所有的事实\n不看生产过程\n只看最终成品\n把所有的具体数据或者日期或等等\n这种有明确的需要真实性验证的内容\n单独拎出来\n独立审核它的真实性\n核心原则就是管质量\n不管流程\n还有builder工程师负责代码的实现\n而最终的决定权永远都在human\n也就是用户本人这里这五个角色管流程的\n不管质量管研究的呢\n不管写作管质量的\n不管流程职责越清晰\n你的系统就会越稳定\n而且所有的项目经验都会存入到各个角色\n他的项目经验的文件夹里面\n现在我们来看看HERMES一个比较精妙的设计\n三层质量的防护\n你可以把它想象成机场的安检\n三道关卡\n一道一套严\n第一道源头阻断\n就像食材检验一样\n不新鲜的直接扔掉\n不许进入厨房\nresearcher用绿色黄色红色三种标记给信息打分\n黄色和红色的数据呢根本不会往下游去传递\n在源头上\n就把错误的信息给掐掉\n这是成本最低的形式\n第二道就是独立核查\n就像出厂质检一样\n质检员不看生产的过程\n只看成品的质量\neditor逐条验证writer已经引用的数据\n如果有问题打回去重新写\n最多打回去两轮\n第三道就是交付的复检\n就像发货前最后一次核对地址标签一样\neditor在发布前再次检查格式和原数据是否有误\n是否完整\n确保万无一失\n除了这三道安检呢\n还有一套信息路由的规则\n有点像文档的一个归属指引\n什么东西该放到什么地方\n规矩很清楚\n信息如果只属于某个项目\n就放项目的空间\n如果说只是临时文件\n就放入收件夹\n如果说六个月之后还有用\n那么就写进wiki的长期项目里面保存\n如果是否定的话\n就会存入到其他的位置\n这就是信息路由的规则\n在讲V3.1升级之前呢\n必须先介绍一下我们这个项目的老师\n就是agency agen\n这是一个GIP上的一个现象级开源项目\n目前有13.7万的star\n在全球的AIA这类项目里面排名前三\n它到底是什么\n简单说\n他把232个AI角色\n做成了即插即用的专家团队\n每个角色不是一个简单的提示词\n而是一整套完整的专业定义\n包括身份规则\n工作流\n交付标准\n就像一家虚拟公司的完整的员工手册一样\n它的核心理念就是不要让一个AI假装什么都懂\n而是像管理公司一样\n让每个AI只做他最擅长的一件事情\n这个理念跟我HERM的设计哲学完全一致\n所以说V3.1的升级\n直接从这里面汲取了精华\n刚开始我也以为只是一套提示词那么简单啊\n但是实际用过之后\n它的作用完全超乎我的想象\n你们也可以去尝试一下\n关于这个agency\nAgen\n对我的这个HERMES的五角色都增加了哪些内容呢\n我迁移了其中五个角色\n并给我原先的角色做了升级\nCORINNATE升级成了高级的项目经理\n学会了高级项目经理的任务拆解能力\n能把需求规范精确转化成具体的任务\n而不自行加戏\n而researcher呢升级成了趋势的研究员\n掌握了定量加定性的专业方法论\nwriter学会了内容创作者的多格式能力\n升级成了全站内容创作者\n能写多种格式\n自动适配不同的平台\neditor升级成了事实核查员\n默认哲学就是任何内容都需要修改\n还有专门的幻觉检测机制\n而build升级成了快速原型师\n三天做出可用的原型\n还能内置AABA测试\n我把这些角色原型界定到了我的HERMES里面的\n每一个角色的受点MD的文件之中\n写清楚各自的专业身份和职责\n让每一个身份角色都像专家一样去思考和执行\n现在我们把前面讲的串起来\n看看一条完整的协作流程是怎么跑的\n它像一条工厂的流水线一样\n每个工位都有明确的输入和输出\n第一步你下达任务\nCODNATE接手后\n把任务拆解成几个小任务\n子任务分派给对应的角色\n第二步\nresearcher去搜集证据\n标注好自信度之后进入第三步\nwriter呢基于标注为绿色的数据来源去写内容\n只写有据可查的内容\n第四步editor做两阶段的审计\n先查事实对不对\n再查格式\n完不完整\n通过了就放行\n不通过就打回去重做\n最后呢你来做最终的确认\n就是human是一个最终砸门的一个角色\n做最后的确认\n如果确认之后呢\nCORINNATE是做一个统一的交付\n这条流水线有一个铁律\n就是未经验证的材料不能进入正式的产出\n任何一个角色说不通过就得打回去重做\n右边的这个目录结构呢也很直观\nprofile文件夹只放角色的定义\n然后wiki呢只放共享的知识\non project就是文件夹\n放项目的文件\n跟公司的文件柜一样\n每个人都知道东西该放到哪里\nsession呢就是每次单次的绘画记录\n今天分享的内容比较多\n但核心就只有这几句话\n第一就是角色分工\n管流程的\n不管质量管研究的\n不管写作职责越清晰\n系统越稳定\n第二源头阻断未经核实的数据不进入下一游\n在最早的环节去掐断错误\n代价最小\n第三独立审计\n质检员只看成品\n不看你是怎么做的\n冷冰冰的独立验证比自我审查可靠100倍\n所以说这套HERMES的架构设计原理\n不是让一个AI干所有的活\n而是让五个AI各干各的\n你来当老板\n这也是艺人公司的模式\n而五个不同的agent的就是你的AI员工\n这就是这期hermes agent team\n五角色架构V3.1版本的所有内容\n如果有需要的可以关注一下\n并且在评论区留言\n五角色架构V3.1\n我把文档分享给大家\nOK谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1JC3F6wEkD",
+  "published_at": "1785139999",
+  "fetched_at": "2026-08-10T05:24:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Hermes Agent Team 五角色架构 V3.1 知识图谱\n\n## 整体架构概览 [BV1JC3F6wEkD P1 01:03]\n```mermaid\nflowchart TD\n    B[\"老板（Human）\"] -->|发布任务| H[\"Hermes Agent Team\"]\n    H --> C[\"CORINNATE（项目经理）\"]\n    H --> R[\"Researcher（研究员）\"]\n    H --> W[\"Writer（创作者）\"]\n    H --> E[\"Editor（质量审计）\"]\n    H --> Bld[\"Builder（工程师）\"]\n    subgraph Units[\"基本单元\"]\n        P[\"Profile（岗位说明书）\"]\n        Prj[\"Project（工作文件夹）\"]\n        Wiki[\"Wiki（知识库）\"]\n        Flt[\"Filter（筛选会议）\"]\n    end\n    C --> P\n    R --> Prj\n    W --> Wiki\n    E --> Flt\n```\n\n## 任务协作流水线 [BV1JC3F6wEkD P1 07:57]\n```mermaid\nflowchart LR\n    T[\"任务（老板下达）\"] --> C[\"CORINNATE<br/>拆解并分配\"]\n    C --> R[\"Researcher<br/>收集并标注证据\"]\n    R --> W[\"Writer<br/>基于绿色证据写作\"]\n    W --> E[\"Editor<br/>两阶段审计<br/>(事实 & 格式)\"]\n    E --> H[\"Human<br/>最终确认\"]\n    H --> C2[\"CORINNATE<br/>统一交付\"]\n```\n\n## 三层质量防护机制 [BV1JC3F6wEkD P1 04:50]\n```mermaid\nflowchart TD\n    SB[\"源头阻断<br/>Researcher标记（绿/黄/红）\"] -->|仅绿通过| IA[\"独立审计<br/>Editor核查Writer内容\"]\n    IA -->|通过后| FC[\"交付复检<br/>Editor最终格式检查\"]\n    IA -->|不通过| SB\n    FC -->|通过| D[\"交付\"]\n    FC -->|不通过| IA\n```\n\n## 信息路由规则 [BV1JC3F6wEkD P1 05:36]\n```mermaid\nflowchart LR\n    Info[\"信息\"]\n    Info -->|项目专属| PS[\"Project Space（项目文件夹）\"]\n    Info -->|临时文件| IN[\"Inbox（收件夹）\"]\n    Info -->|长期价值≥6个月| WK[\"Wiki（长期知识库）\"]\n    Info -->|其他| OT[\"其他位置\"]\n```\n\n## V3.1 角色升级细节 [BV1JC3F6wEkD P1 07:01]\n```mermaid\nflowchart TD\n    C0[\"CORINNATE\"] --> C1[\"升级为高级项目经理<br/>具备任务拆解能力\"]\n    R0[\"Researcher\"] --> R1[\"升级为趋势研究员<br/>定量+定性方法论\"]\n    W0[\"Writer\"] --> W1[\"升级为全站内容创作者<br/>多格式适配\"]\n    E0[\"Editor\"] --> E1[\"升级为事实核查员<br/>幻觉检测机制\"]\n    B0[\"Builder\"] --> B1[\"升级为快速原型师<br/>3天可用原型 + A/B 测试\"]\n```",
+      "diagrams": [
+        {
+          "title": "整体架构概览",
+          "code": "flowchart TD\n    B[\"老板（Human）\"] -->|发布任务| H[\"Hermes Agent Team\"]\n    H --> C[\"CORINNATE（项目经理）\"]\n    H --> R[\"Researcher（研究员）\"]\n    H --> W[\"Writer（创作者）\"]\n    H --> E[\"Editor（质量审计）\"]\n    H --> Bld[\"Builder（工程师）\"]\n    subgraph Units[\"基本单元\"]\n        P[\"Profile（岗位说明书）\"]\n        Prj[\"Project（工作文件夹）\"]\n        Wiki[\"Wiki（知识库）\"]\n        Flt[\"Filter（筛选会议）\"]\n    end\n    C --> P\n    R --> Prj\n    W --> Wiki\n    E --> Flt"
+        },
+        {
+          "title": "任务协作流水线",
+          "code": "flowchart LR\n    T[\"任务（老板下达）\"] --> C[\"CORINNATE<br/>拆解并分配\"]\n    C --> R[\"Researcher<br/>收集并标注证据\"]\n    R --> W[\"Writer<br/>基于绿色证据写作\"]\n    W --> E[\"Editor<br/>两阶段审计<br/>(事实 & 格式)\"]\n    E --> H[\"Human<br/>最终确认\"]\n    H --> C2[\"CORINNATE<br/>统一交付\"]"
+        },
+        {
+          "title": "三层质量防护机制",
+          "code": "flowchart TD\n    SB[\"源头阻断<br/>Researcher标记（绿/黄/红）\"] -->|仅绿通过| IA[\"独立审计<br/>Editor核查Writer内容\"]\n    IA -->|通过后| FC[\"交付复检<br/>Editor最终格式检查\"]\n    IA -->|不通过| SB\n    FC -->|通过| D[\"交付\"]\n    FC -->|不通过| IA"
+        },
+        {
+          "title": "信息路由规则",
+          "code": "flowchart LR\n    Info[\"信息\"]\n    Info -->|项目专属| PS[\"Project Space（项目文件夹）\"]\n    Info -->|临时文件| IN[\"Inbox（收件夹）\"]\n    Info -->|长期价值≥6个月| WK[\"Wiki（长期知识库）\"]\n    Info -->|其他| OT[\"其他位置\"]"
+        },
+        {
+          "title": "V3.1 角色升级细节",
+          "code": "flowchart TD\n    C0[\"CORINNATE\"] --> C1[\"升级为高级项目经理<br/>具备任务拆解能力\"]\n    R0[\"Researcher\"] --> R1[\"升级为趋势研究员<br/>定量+定性方法论\"]\n    W0[\"Writer\"] --> W1[\"升级为全站内容创作者<br/>多格式适配\"]\n    E0[\"Editor\"] --> E1[\"升级为事实核查员<br/>幻觉检测机制\"]\n    B0[\"Builder\"] --> B1[\"升级为快速原型师<br/>3天可用原型 + A/B 测试\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T05:26:27+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Hermes Agent Team 五角色架构 V3.1 知识图谱\n\n## 整体架构概览 [BV1JC3F6wEkD P1 01:03]\n```mermaid\nflowchart TD\n    B[\"老板（Human）\"] -->|发布任务| H[\"Hermes Agent Team\"]\n    H --> C[\"CORINNATE（项目经理）\"]\n    H --> R[\"Researcher（研究员）\"]\n    H --> W[\"Writer（创作者）\"]\n    H --> E[\"Editor（质量审计）\"]\n    H --> Bld[\"Builder（工程师）\"]\n    subgraph Units[\"基本单元\"]\n        P[\"Profile（岗位说明书）\"]\n        Prj[\"Project（工作文件夹）\"]\n        Wiki[\"Wiki（知识库）\"]\n        Flt[\"Filter（筛选会议）\"]\n    end\n    C --> P\n    R --> Prj\n    W --> Wiki\n    E --> Flt\n```\n\n## 任务协作流水线 [BV1JC3F6wEkD P1 07:57]\n```mermaid\nflowchart LR\n    T[\"任务（老板下达）\"] --> C[\"CORINNATE<br/>拆解并分配\"]\n    C --> R[\"Researcher<br/>收集并标注证据\"]\n    R --> W[\"Writer<br/>基于绿色证据写作\"]\n    W --> E[\"Editor<br/>两阶段审计<br/>(事实 & 格式)\"]\n    E --> H[\"Human<br/>最终确认\"]\n    H --> C2[\"CORINNATE<br/>统一交付\"]\n```\n\n## 三层质量防护机制 [BV1JC3F6wEkD P1 04:50]\n```mermaid\nflowchart TD\n    SB[\"源头阻断<br/>Researcher标记（绿/黄/红）\"] -->|仅绿通过| IA[\"独立审计<br/>Editor核查Writer内容\"]\n    IA -->|通过后| FC[\"交付复检<br/>Editor最终格式检查\"]\n    IA -->|不通过| SB\n    FC -->|通过| D[\"交付\"]\n    FC -->|不通过| IA\n```\n\n## 信息路由规则 [BV1JC3F6wEkD P1 05:36]\n```mermaid\nflowchart LR\n    Info[\"信息\"]\n    Info -->|项目专属| PS[\"Project Space（项目文件夹）\"]\n    Info -->|临时文件| IN[\"Inbox（收件夹）\"]\n    Info -->|长期价值≥6个月| WK[\"Wiki（长期知识库）\"]\n    Info -->|其他| OT[\"其他位置\"]\n```\n\n## V3.1 角色升级细节 [BV1JC3F6wEkD P1 07:01]\n```mermaid\nflowchart TD\n    C0[\"CORINNATE\"] --> C1[\"升级为高级项目经理<br/>具备任务拆解能力\"]\n    R0[\"Researcher\"] --> R1[\"升级为趋势研究员<br/>定量+定性方法论\"]\n    W0[\"Writer\"] --> W1[\"升级为全站内容创作者<br/>多格式适配\"]\n    E0[\"Editor\"] --> E1[\"升级为事实核查员<br/>幻觉检测机制\"]\n    B0[\"Builder\"] --> B1[\"升级为快速原型师<br/>3天可用原型 + A/B 测试\"]\n```",
+  "diagrams": [
+    {
+      "title": "整体架构概览",
+      "code": "flowchart TD\n    B[\"老板（Human）\"] -->|发布任务| H[\"Hermes Agent Team\"]\n    H --> C[\"CORINNATE（项目经理）\"]\n    H --> R[\"Researcher（研究员）\"]\n    H --> W[\"Writer（创作者）\"]\n    H --> E[\"Editor（质量审计）\"]\n    H --> Bld[\"Builder（工程师）\"]\n    subgraph Units[\"基本单元\"]\n        P[\"Profile（岗位说明书）\"]\n        Prj[\"Project（工作文件夹）\"]\n        Wiki[\"Wiki（知识库）\"]\n        Flt[\"Filter（筛选会议）\"]\n    end\n    C --> P\n    R --> Prj\n    W --> Wiki\n    E --> Flt"
+    },
+    {
+      "title": "任务协作流水线",
+      "code": "flowchart LR\n    T[\"任务（老板下达）\"] --> C[\"CORINNATE<br/>拆解并分配\"]\n    C --> R[\"Researcher<br/>收集并标注证据\"]\n    R --> W[\"Writer<br/>基于绿色证据写作\"]\n    W --> E[\"Editor<br/>两阶段审计<br/>(事实 & 格式)\"]\n    E --> H[\"Human<br/>最终确认\"]\n    H --> C2[\"CORINNATE<br/>统一交付\"]"
+    },
+    {
+      "title": "三层质量防护机制",
+      "code": "flowchart TD\n    SB[\"源头阻断<br/>Researcher标记（绿/黄/红）\"] -->|仅绿通过| IA[\"独立审计<br/>Editor核查Writer内容\"]\n    IA -->|通过后| FC[\"交付复检<br/>Editor最终格式检查\"]\n    IA -->|不通过| SB\n    FC -->|通过| D[\"交付\"]\n    FC -->|不通过| IA"
+    },
+    {
+      "title": "信息路由规则",
+      "code": "flowchart LR\n    Info[\"信息\"]\n    Info -->|项目专属| PS[\"Project Space（项目文件夹）\"]\n    Info -->|临时文件| IN[\"Inbox（收件夹）\"]\n    Info -->|长期价值≥6个月| WK[\"Wiki（长期知识库）\"]\n    Info -->|其他| OT[\"其他位置\"]"
+    },
+    {
+      "title": "V3.1 角色升级细节",
+      "code": "flowchart TD\n    C0[\"CORINNATE\"] --> C1[\"升级为高级项目经理<br/>具备任务拆解能力\"]\n    R0[\"Researcher\"] --> R1[\"升级为趋势研究员<br/>定量+定性方法论\"]\n    W0[\"Writer\"] --> W1[\"升级为全站内容创作者<br/>多格式适配\"]\n    E0[\"Editor\"] --> E1[\"升级为事实核查员<br/>幻觉检测机制\"]\n    B0[\"Builder\"] --> B1[\"升级为快速原型师<br/>3天可用原型 + A/B 测试\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T05:26:27+00:00"
+}

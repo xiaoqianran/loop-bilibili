@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1Xx5p69EEv",
+  "title": "AI帮你做游戏？Godot MCP+Codex保姆级教程，5分钟做出无尽跑酷",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 961,
+  "text": "今天我们将使用Godot构建一个简单的无限跑场景\n使用Codex和Goto MCP集成\n这其实非常有趣\n因为我们不需要手动编写所有代码\n我们将让Codex直接与Goto项目交互并自动构建场景\n首先打开Codex应用程序\n在Windows上按Ctrl+逗号，Mac上按Command+逗号\n在设置面板中打开设置\n选择MCP服务器选项卡\n点击添加服务器按钮创建新MCP服务器连接\n接下来打开Goto MCP的GitHub页面\n我将在下方描述中提供链接继续\n请确保安装最新版Node.js\n因为MCP服务器需要它才能正确运行\n向下滚动GitHub页面直到找到其他MCP部分\n你会看到服务器配置详情\n将所需字段复制到Codex的服务器名称\n输入任意名称\n然后复制命令字段，精确复制GitHub页面的参数部分\n现在设置环境变量\n前往Goto引擎可执行文件的位置\n添加名为debug的环境键\n所有信息填写完成后\n点击保存\n然后重启Codex\n现在打开Goto，Codex将自动检测连接\n你会看到确认MCP连接\n并开始扫描Goto项目\n当提示时\n提供你的Goto项目路径\n以便Codex正确访问项目\n连接成功后\n我想测试\nCodex是否真正理解当前项目\n所以我让它检查我的场景\n因为我创建了粉色背景\n但背景在游戏时不可见\nCodex自动开始调查问题\n短暂等待后\n它识别了显示问题并修复了\n好了\n粉色背景终于在游戏中可见\n老实说这已经感觉很酷了\n我给Codex这个提示\n不错\n现在看到粉色背景显示了\n我想添加一个在背景前无限奔跑的角色\n可以添加一些树木在后面并让树木滚动\n这样我们知道角色在奔跑\n然后Codex开始生成无限跑场景\n几分钟后\n它报告任务已完成\n我按下播放键，可以看到背景变化\n但角色和树木消失了\n于是我让codex修复这个问题\n这次它检查了渲染层级并更新了树木和角色的z轴顺序\n修复后一切完美运行\n当我按下F5键运行游戏\n角色无限奔跑\n树木在背景中平滑移动\n说实话\n最终效果看起来惊人地好\n仅用几个提示词\n这个流程其实非常强大\n因为codex能直接检查并修改你的项目，同时持续迭代\n自然使用提示词如果你想自己尝试\n查看下方描述中的链接\n如果这个视频帮到了你\n请务必点赞\n订阅并告诉我下一个想制作的游戏\n使用AI工具和Goto",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Xx5p69EEv",
+  "published_at": "1778477400",
+  "fetched_at": "2026-08-06T22:30:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot MCP + Codex 教程知识图谱\n\n## 总览 [BV1Xx5p69EEv P1 00:00]\n```mermaid\nflowchart TD\n    A1[\"打开 Codex 应用\"]\n    A2[\"在设置面板选择 MCP 服务器选项卡\"]\n    A3[\"添加新 MCP 服务器并填写名称、命令字段\"]\n    A4[\"设置环境变量 debug 并指向 Goto 引擎可执行文件\"]\n    A5[\"保存并重启 Codex\"]\n    A6[\"打开 Goto 项目，Codex 自动检测并连接 MCP\"]\n    A7[\"提供项目路径，Codex 扫描项目\"]\n    A8[\"使用提示词让 Codex 生成无限跑场景\"]\n    A9[\"运行游戏 (F5) 检查效果\"]\n    A10[\"如有问题，使用提示词让 Codex 检查并修复\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10\n```\n\n## MCP 服务器配置流程 [BV1Xx5p69EEv P1 00:21]\n```mermaid\nflowchart TD\n    B1[\"打开 Codex 设置 (Ctrl+, / Command+,)\"]\n    B2[\"选择 MCP 服务器选项卡\"]\n    B3[\"点击 添加服务器 按钮\"]\n    B4[\"在 GitHub Goto MCP 页面找到服务器配置详情\"]\n    B5[\"复制服务器名称字段\"]\n    B6[\"复制命令字段（参数）\"]\n    B7[\"在 Codex 中粘贴名称和命令\"]\n    B8[\"设置环境变量 debug 指向 Goto 引擎\"]\n    B9[\"保存配置并重启 Codex\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9\n```\n\n## 场景生成与渲染层级修复 [BV1Xx5p69EEv P1 01:53]\n```mermaid\nflowchart TD\n    C1[\"提示 Codex 添加粉色背景\"]\n    C2[\"Codex 检测背景在游戏中不可见\"]\n    C3[\"Codex 自动修复显示问题\"]\n    C4[\"提示 Codex 添加无限奔跑角色\"]\n    C5[\"提示 Codex 添加后方树木并滚动\"]\n    C6[\"Codex 生成无限跑场景\"]\n    C7[\"运行后发现角色和树木消失\"]\n    C8[\"提示 Codex 检查渲染层级\"]\n    C9[\"Codex 更新角色、树木的 Z 轴顺序\"]\n    C10[\"场景渲染正常，角色奔跑，树木平滑移动\"]\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10\n```\n\n## 提示词驱动的迭代流程 [BV1Xx5p69EEv P1 03:01]\n```mermaid\nflowchart TD\n    D1[\"使用简短提示词控制 Codex\"]\n    D2[\"Codex 直接检查并修改项目\"]\n    D3[\"持续迭代：提示 → 生成/修复 → 运行 → 反馈\"]\n    D4[\"少量提示即可完成复杂功能\"]\n    D5[\"AI 与 Goto 结合提升开发效率\"]\n    D1 --> D2 --> D3 --> D4 --> D5\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"打开 Codex 应用\"]\n    A2[\"在设置面板选择 MCP 服务器选项卡\"]\n    A3[\"添加新 MCP 服务器并填写名称、命令字段\"]\n    A4[\"设置环境变量 debug 并指向 Goto 引擎可执行文件\"]\n    A5[\"保存并重启 Codex\"]\n    A6[\"打开 Goto 项目，Codex 自动检测并连接 MCP\"]\n    A7[\"提供项目路径，Codex 扫描项目\"]\n    A8[\"使用提示词让 Codex 生成无限跑场景\"]\n    A9[\"运行游戏 (F5) 检查效果\"]\n    A10[\"如有问题，使用提示词让 Codex 检查并修复\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10"
+        },
+        {
+          "title": "MCP 服务器配置流程",
+          "code": "flowchart TD\n    B1[\"打开 Codex 设置 (Ctrl+, / Command+,)\"]\n    B2[\"选择 MCP 服务器选项卡\"]\n    B3[\"点击 添加服务器 按钮\"]\n    B4[\"在 GitHub Goto MCP 页面找到服务器配置详情\"]\n    B5[\"复制服务器名称字段\"]\n    B6[\"复制命令字段（参数）\"]\n    B7[\"在 Codex 中粘贴名称和命令\"]\n    B8[\"设置环境变量 debug 指向 Goto 引擎\"]\n    B9[\"保存配置并重启 Codex\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9"
+        },
+        {
+          "title": "场景生成与渲染层级修复",
+          "code": "flowchart TD\n    C1[\"提示 Codex 添加粉色背景\"]\n    C2[\"Codex 检测背景在游戏中不可见\"]\n    C3[\"Codex 自动修复显示问题\"]\n    C4[\"提示 Codex 添加无限奔跑角色\"]\n    C5[\"提示 Codex 添加后方树木并滚动\"]\n    C6[\"Codex 生成无限跑场景\"]\n    C7[\"运行后发现角色和树木消失\"]\n    C8[\"提示 Codex 检查渲染层级\"]\n    C9[\"Codex 更新角色、树木的 Z 轴顺序\"]\n    C10[\"场景渲染正常，角色奔跑，树木平滑移动\"]\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10"
+        },
+        {
+          "title": "提示词驱动的迭代流程",
+          "code": "flowchart TD\n    D1[\"使用简短提示词控制 Codex\"]\n    D2[\"Codex 直接检查并修改项目\"]\n    D3[\"持续迭代：提示 → 生成/修复 → 运行 → 反馈\"]\n    D4[\"少量提示即可完成复杂功能\"]\n    D5[\"AI 与 Goto 结合提升开发效率\"]\n    D1 --> D2 --> D3 --> D4 --> D5"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T22:30:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot MCP + Codex 教程知识图谱\n\n## 总览 [BV1Xx5p69EEv P1 00:00]\n```mermaid\nflowchart TD\n    A1[\"打开 Codex 应用\"]\n    A2[\"在设置面板选择 MCP 服务器选项卡\"]\n    A3[\"添加新 MCP 服务器并填写名称、命令字段\"]\n    A4[\"设置环境变量 debug 并指向 Goto 引擎可执行文件\"]\n    A5[\"保存并重启 Codex\"]\n    A6[\"打开 Goto 项目，Codex 自动检测并连接 MCP\"]\n    A7[\"提供项目路径，Codex 扫描项目\"]\n    A8[\"使用提示词让 Codex 生成无限跑场景\"]\n    A9[\"运行游戏 (F5) 检查效果\"]\n    A10[\"如有问题，使用提示词让 Codex 检查并修复\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10\n```\n\n## MCP 服务器配置流程 [BV1Xx5p69EEv P1 00:21]\n```mermaid\nflowchart TD\n    B1[\"打开 Codex 设置 (Ctrl+, / Command+,)\"]\n    B2[\"选择 MCP 服务器选项卡\"]\n    B3[\"点击 添加服务器 按钮\"]\n    B4[\"在 GitHub Goto MCP 页面找到服务器配置详情\"]\n    B5[\"复制服务器名称字段\"]\n    B6[\"复制命令字段（参数）\"]\n    B7[\"在 Codex 中粘贴名称和命令\"]\n    B8[\"设置环境变量 debug 指向 Goto 引擎\"]\n    B9[\"保存配置并重启 Codex\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9\n```\n\n## 场景生成与渲染层级修复 [BV1Xx5p69EEv P1 01:53]\n```mermaid\nflowchart TD\n    C1[\"提示 Codex 添加粉色背景\"]\n    C2[\"Codex 检测背景在游戏中不可见\"]\n    C3[\"Codex 自动修复显示问题\"]\n    C4[\"提示 Codex 添加无限奔跑角色\"]\n    C5[\"提示 Codex 添加后方树木并滚动\"]\n    C6[\"Codex 生成无限跑场景\"]\n    C7[\"运行后发现角色和树木消失\"]\n    C8[\"提示 Codex 检查渲染层级\"]\n    C9[\"Codex 更新角色、树木的 Z 轴顺序\"]\n    C10[\"场景渲染正常，角色奔跑，树木平滑移动\"]\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10\n```\n\n## 提示词驱动的迭代流程 [BV1Xx5p69EEv P1 03:01]\n```mermaid\nflowchart TD\n    D1[\"使用简短提示词控制 Codex\"]\n    D2[\"Codex 直接检查并修改项目\"]\n    D3[\"持续迭代：提示 → 生成/修复 → 运行 → 反馈\"]\n    D4[\"少量提示即可完成复杂功能\"]\n    D5[\"AI 与 Goto 结合提升开发效率\"]\n    D1 --> D2 --> D3 --> D4 --> D5\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"打开 Codex 应用\"]\n    A2[\"在设置面板选择 MCP 服务器选项卡\"]\n    A3[\"添加新 MCP 服务器并填写名称、命令字段\"]\n    A4[\"设置环境变量 debug 并指向 Goto 引擎可执行文件\"]\n    A5[\"保存并重启 Codex\"]\n    A6[\"打开 Goto 项目，Codex 自动检测并连接 MCP\"]\n    A7[\"提供项目路径，Codex 扫描项目\"]\n    A8[\"使用提示词让 Codex 生成无限跑场景\"]\n    A9[\"运行游戏 (F5) 检查效果\"]\n    A10[\"如有问题，使用提示词让 Codex 检查并修复\"]\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10"
+    },
+    {
+      "title": "MCP 服务器配置流程",
+      "code": "flowchart TD\n    B1[\"打开 Codex 设置 (Ctrl+, / Command+,)\"]\n    B2[\"选择 MCP 服务器选项卡\"]\n    B3[\"点击 添加服务器 按钮\"]\n    B4[\"在 GitHub Goto MCP 页面找到服务器配置详情\"]\n    B5[\"复制服务器名称字段\"]\n    B6[\"复制命令字段（参数）\"]\n    B7[\"在 Codex 中粘贴名称和命令\"]\n    B8[\"设置环境变量 debug 指向 Goto 引擎\"]\n    B9[\"保存配置并重启 Codex\"]\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9"
+    },
+    {
+      "title": "场景生成与渲染层级修复",
+      "code": "flowchart TD\n    C1[\"提示 Codex 添加粉色背景\"]\n    C2[\"Codex 检测背景在游戏中不可见\"]\n    C3[\"Codex 自动修复显示问题\"]\n    C4[\"提示 Codex 添加无限奔跑角色\"]\n    C5[\"提示 Codex 添加后方树木并滚动\"]\n    C6[\"Codex 生成无限跑场景\"]\n    C7[\"运行后发现角色和树木消失\"]\n    C8[\"提示 Codex 检查渲染层级\"]\n    C9[\"Codex 更新角色、树木的 Z 轴顺序\"]\n    C10[\"场景渲染正常，角色奔跑，树木平滑移动\"]\n    C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9 --> C10"
+    },
+    {
+      "title": "提示词驱动的迭代流程",
+      "code": "flowchart TD\n    D1[\"使用简短提示词控制 Codex\"]\n    D2[\"Codex 直接检查并修改项目\"]\n    D3[\"持续迭代：提示 → 生成/修复 → 运行 → 反馈\"]\n    D4[\"少量提示即可完成复杂功能\"]\n    D5[\"AI 与 Goto 结合提升开发效率\"]\n    D1 --> D2 --> D3 --> D4 --> D5"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:30:57+00:00"
+}

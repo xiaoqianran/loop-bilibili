@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1Va3b6PEhp",
+  "title": "UE5.6虚幻引擎植物库一键实现季节变换功能介绍",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1927,
+  "text": "大家好\n我把U15的植物库重新分类整理了一下\n先让大家看一下效果\n可以一键实现我们的季节变换\n从春天到秋天有个过渡\n然后是从秋天到冬天有个过渡\n给大家讲一下做法\n先把这三个参数集我们删除掉\n这三个参数集放在plant下面\n参数集和副材质这个文件夹\n我们先看一下副材质是有四种的\n第一种是常绿的\n秋天不会变色\n冬天也不会掉落的针叶树居多的叶子材质\n第二种是秋天不变色\n冬天会发生落叶的材质\n第三种就是类似我们枫叶银杏这种秋天变色\n冬天落叶的材质\n花瓣材质就是冬天会落的材质\n这四个材质实例就对应我们四个副材质\n常绿材质是不需要有参数及的\n因为它秋天和冬天都不会产生变化\n冬天时候只会被气雪覆盖\n做动画的时候\n我们把这三个参数集\n直接丢到我们的动画序列里面\n然后点加号\n把他们的参数都添加进来\n然后回到第零帧\n给所有的参数都打上关键帧\n到秋天这个节点的时候也全部加上关键帧\n我们把这一排自动创建的关键帧啊放在后面\n然后我们先回到第零帧\n秋天变色的这个参数我们先改到零\n把叶子改成绿色\n好\n切到最后一针\n冬天花瓣会落下来\n我们改成一叶子会掉落的参数\n我们都改成一\n好非常简单\n我们播放一下就OK了\n我们可以把这些参数集\n放在我们任意一个序列动画里面\n实现季节的变换\n我们看一下树的类型\n我们先把这个树的名字改成中文\n如果不知道它落叶情况的话\n我们可以问一下豆包\n这里输入秋天和冬天叶子什么状态\n豆包就会给出非常详细的解释\n好我们回到优异五\n打开任意一个材质啊\n根据豆包的提示\n我们把材质改成相对应的材质实例\n把数库重新上传到课程链接了\n大家需要重新下载一下\n好\n下面给大家讲一下\n如何把我们的max数据库导入到U15\n我们选出书库的第122卷呃\n这个是CR材质\n然后选出这六个紫薇啊\n把他们拖入到我们的场景\n然后付给它们相同的材质\n因为它们是同一组\n因为第五个材质是这种竖流的材质\n我们不需要啊\n把六棵树全部选住\n给它们一个编辑网格体的命令点\n第五个元素向下翻好\n在这里面输入五\n选择id5好按delete键全部删除掉\n右击把这个材质也删除掉啊\n现在是一个主枝干\n然后是这个嫩枝的材质\n是我们这个最后是一个叶子\n一个花瓣\n点击同步回到UE15\n找一个测试的关卡\n然后我们导进来找到data smith\n选择导入\n放在我们plant下面好找到花束\n然后点确定\n选择导入\n导入完以后\n我们任选一棵树\n按两下G再按下F键好\n我们看一下\n看看有什么问题\n然后按下CTRL加B键\n找到他们所在的位置\n好找到这个材质文件夹\n需要我们用材质库的材质把它们都替换一下\n我们任选一个花束\n找到这四个材质\n把它们全部复制到这里面\n把这个名字我们CTRL加C复制一下\n在这四个材质后面我们加个紫薇的后缀\n这样我们好找一点\n紫薇的颜色秋天会变色\n大家注意一下\n然后我们找到这棵树\n看一下细节\n这我们枝干我们先保存一下\n我们把这个材质替换给他\n我们按下F2\nCTRL加C复制一下\n然后我们删除这个材质好点\n这个箭头好\nCTRL加V把我们这个材质替换给他\n这样做的好处是\n我们不需要把这六棵树一棵一棵点开\n重新一个一个上材质\n非常浪费时间啊\n这个方法是一样的\nCTRL加C删除好名字\n替换好\n点击替换引用\n剩下这两个材质方法也是一样的\n我暂停一下好\n替\n换完以后\n我们把这个副材质可以删除掉了\n这样干净一点\n然后我们先从枝干开始把贴图替换一下\n进入到贴图这个文件夹好树干的法线\n我们先替换贴图也一样\n然后找到嫩枝\n我们双击一下\n先把法线替换一下\n再把贴图替换一下\n好高光\n这个贴图我们不需要可以直接删除掉\n下面是我们的叶子\n我们找一下\n那同样替换一下\n透明贴图\n把这个也删除掉\n哦还有一个花瓣\n把高光贴图也删除掉\n然后我们再来观察一下\n回到我们的网格体文件夹\n选中这六棵树\n我们右击批量重命名\n先把这个前缀删除掉\n我们直接输入mt下划线\nPM下划线好\n先应用一下\n我们再一次重命名\n把我们这个英文名改成中文名\n如果我们这样一个一个敲的话\n非常慢\n好CTRL加Z复制\nCTRL加V粘贴\n把这名字改成紫薇\nOK应用一下\n好选出这六个紫薇\n我们直接拖到这里选择移动\n然后把这个文件夹就可以删除掉了\n好继续把这个也删除掉\n这样干净一点\n然后再找到这六个紫薇\n然后右击把nut打开\n好文件夹也改一下\n前面加一个V杠122\n这样我们好找一点啊\n最后是这个风啊\n如果大家感觉这个风有点太大的话\n我们可以自己改一下啊\n改的时候我们材质的参数要改成一样\n如果我们想嫩枝的风的风的参数是0.2的话\n把叶子和花瓣的参数也相应改成0.2\n想让风大一点的话\n也可以把这个参数加大好\n这节课就先到这里\n我们下节课再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Va3b6PEhp",
+  "published_at": "1785418479",
+  "fetched_at": "2026-08-09T22:32:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# UE5.6植物库季节变换知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    PL[\"植物库\"] --> PS[\"参数集\"]\n    PL --> SM[\"副材质文件夹\"]\n    SM --> MI[\"材质实例\"]\n    PS --> SA[\"季节动画序列\"]\n    MI --> SA\n    SA --> SP[\"春季\"]\n    SA --> SU[\"夏季\"]\n    SA --> AU[\"秋季\"]\n    SA --> WI[\"冬季\"]\n    AU --> TR[\"秋→冬 过渡\"]\n    WI --> TR2[\"冬→春 过渡\"]\n```\n\n## 副材质分类\n\n```mermaid\nflowchart TD\n    SMF[\"副材质文件夹\"] --> EM[\"常绿材质\"]\n    SMF --> AN[\"秋天不变色材质\"]\n    SMF --> AC[\"秋天变色材质\"]\n    SMF --> FP[\"花瓣/落叶材质\"]\n    EM --> NP[\"无需参数\"]\n    AN --> FL[\"冬季落叶\"]\n    AC --> CC[\"秋季变色\"]\n    AC --> FL2[\"冬季落叶\"]\n    FP --> FL3[\"冬季落叶\"]\n```\n\n## 季节动画关键帧设置流程\n\n```mermaid\nflowchart TD\n    PS[\"三个参数集\"] --> AddSeq[\"添加到动画序列\"]\n    AddSeq --> AddKey[\"为每帧添加关键帧\"]\n    AddKey --> Zero[\"零帧关键帧\"]\n    Zero --> Spring[\"春季关键帧\"]\n    Zero --> Autumn[\"秋季关键帧\"]\n    Zero --> Winter[\"冬季关键帧\"]\n    Spring --> SetGreen[\"叶子设为绿色\"]\n    Autumn --> SetColor[\"叶子秋季变色\"]\n    Winter --> SetFall[\"叶子/花瓣落下\"]\n    SetFall --> Play[\"播放验证\"]\n```\n\n## 批量材质替换与重命名\n\n```mermaid\nflowchart TD\n    SelTrees[\"选中六棵树\"] --> CopyMat[\"复制目标材质\"]\n    CopyMat --> PasteMat[\"粘贴替换\"]\n    PasteMat --> DelOld[\"删除旧材质\"]\n    DelOld --> RefReplace[\"点击替换引用\"]\n    RefReplace --> Clean[\"删除副材质\"]\n    Clean --> RenamePref[\"批量去前缀\"]\n    RenamePref --> RenameCN[\"改为中文名\"]\n    RenameCN --> Apply[\"应用并保存\"]\n```\n\n## 风力参数统一调整\n\n```mermaid\nflowchart TD\n    WindParam[\"风力参数\"] --> SetBranch[\"枝干 0.2\"]\n    SetBranch --> SetLeaf[\"叶子 0.2\"]\n    SetLeaf --> SetPetal[\"花瓣 0.2\"]\n    WindParam --> Increase[\"增大风力\"]\n    Increase --> ApplyInc[\"应用增大值\"]\n    WindParam --> Decrease[\"减小风力\"]\n    Decrease --> ApplyDec[\"应用减小值\"]\n    ApplyInc --> Save[\"保存设置\"]\n    ApplyDec --> Save\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    PL[\"植物库\"] --> PS[\"参数集\"]\n    PL --> SM[\"副材质文件夹\"]\n    SM --> MI[\"材质实例\"]\n    PS --> SA[\"季节动画序列\"]\n    MI --> SA\n    SA --> SP[\"春季\"]\n    SA --> SU[\"夏季\"]\n    SA --> AU[\"秋季\"]\n    SA --> WI[\"冬季\"]\n    AU --> TR[\"秋→冬 过渡\"]\n    WI --> TR2[\"冬→春 过渡\"]"
+        },
+        {
+          "title": "副材质分类",
+          "code": "flowchart TD\n    SMF[\"副材质文件夹\"] --> EM[\"常绿材质\"]\n    SMF --> AN[\"秋天不变色材质\"]\n    SMF --> AC[\"秋天变色材质\"]\n    SMF --> FP[\"花瓣/落叶材质\"]\n    EM --> NP[\"无需参数\"]\n    AN --> FL[\"冬季落叶\"]\n    AC --> CC[\"秋季变色\"]\n    AC --> FL2[\"冬季落叶\"]\n    FP --> FL3[\"冬季落叶\"]"
+        },
+        {
+          "title": "季节动画关键帧设置流程",
+          "code": "flowchart TD\n    PS[\"三个参数集\"] --> AddSeq[\"添加到动画序列\"]\n    AddSeq --> AddKey[\"为每帧添加关键帧\"]\n    AddKey --> Zero[\"零帧关键帧\"]\n    Zero --> Spring[\"春季关键帧\"]\n    Zero --> Autumn[\"秋季关键帧\"]\n    Zero --> Winter[\"冬季关键帧\"]\n    Spring --> SetGreen[\"叶子设为绿色\"]\n    Autumn --> SetColor[\"叶子秋季变色\"]\n    Winter --> SetFall[\"叶子/花瓣落下\"]\n    SetFall --> Play[\"播放验证\"]"
+        },
+        {
+          "title": "批量材质替换与重命名",
+          "code": "flowchart TD\n    SelTrees[\"选中六棵树\"] --> CopyMat[\"复制目标材质\"]\n    CopyMat --> PasteMat[\"粘贴替换\"]\n    PasteMat --> DelOld[\"删除旧材质\"]\n    DelOld --> RefReplace[\"点击替换引用\"]\n    RefReplace --> Clean[\"删除副材质\"]\n    Clean --> RenamePref[\"批量去前缀\"]\n    RenamePref --> RenameCN[\"改为中文名\"]\n    RenameCN --> Apply[\"应用并保存\"]"
+        },
+        {
+          "title": "风力参数统一调整",
+          "code": "flowchart TD\n    WindParam[\"风力参数\"] --> SetBranch[\"枝干 0.2\"]\n    SetBranch --> SetLeaf[\"叶子 0.2\"]\n    SetLeaf --> SetPetal[\"花瓣 0.2\"]\n    WindParam --> Increase[\"增大风力\"]\n    Increase --> ApplyInc[\"应用增大值\"]\n    WindParam --> Decrease[\"减小风力\"]\n    Decrease --> ApplyDec[\"应用减小值\"]\n    ApplyInc --> Save[\"保存设置\"]\n    ApplyDec --> Save"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T22:42:27+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# UE5.6植物库季节变换知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    PL[\"植物库\"] --> PS[\"参数集\"]\n    PL --> SM[\"副材质文件夹\"]\n    SM --> MI[\"材质实例\"]\n    PS --> SA[\"季节动画序列\"]\n    MI --> SA\n    SA --> SP[\"春季\"]\n    SA --> SU[\"夏季\"]\n    SA --> AU[\"秋季\"]\n    SA --> WI[\"冬季\"]\n    AU --> TR[\"秋→冬 过渡\"]\n    WI --> TR2[\"冬→春 过渡\"]\n```\n\n## 副材质分类\n\n```mermaid\nflowchart TD\n    SMF[\"副材质文件夹\"] --> EM[\"常绿材质\"]\n    SMF --> AN[\"秋天不变色材质\"]\n    SMF --> AC[\"秋天变色材质\"]\n    SMF --> FP[\"花瓣/落叶材质\"]\n    EM --> NP[\"无需参数\"]\n    AN --> FL[\"冬季落叶\"]\n    AC --> CC[\"秋季变色\"]\n    AC --> FL2[\"冬季落叶\"]\n    FP --> FL3[\"冬季落叶\"]\n```\n\n## 季节动画关键帧设置流程\n\n```mermaid\nflowchart TD\n    PS[\"三个参数集\"] --> AddSeq[\"添加到动画序列\"]\n    AddSeq --> AddKey[\"为每帧添加关键帧\"]\n    AddKey --> Zero[\"零帧关键帧\"]\n    Zero --> Spring[\"春季关键帧\"]\n    Zero --> Autumn[\"秋季关键帧\"]\n    Zero --> Winter[\"冬季关键帧\"]\n    Spring --> SetGreen[\"叶子设为绿色\"]\n    Autumn --> SetColor[\"叶子秋季变色\"]\n    Winter --> SetFall[\"叶子/花瓣落下\"]\n    SetFall --> Play[\"播放验证\"]\n```\n\n## 批量材质替换与重命名\n\n```mermaid\nflowchart TD\n    SelTrees[\"选中六棵树\"] --> CopyMat[\"复制目标材质\"]\n    CopyMat --> PasteMat[\"粘贴替换\"]\n    PasteMat --> DelOld[\"删除旧材质\"]\n    DelOld --> RefReplace[\"点击替换引用\"]\n    RefReplace --> Clean[\"删除副材质\"]\n    Clean --> RenamePref[\"批量去前缀\"]\n    RenamePref --> RenameCN[\"改为中文名\"]\n    RenameCN --> Apply[\"应用并保存\"]\n```\n\n## 风力参数统一调整\n\n```mermaid\nflowchart TD\n    WindParam[\"风力参数\"] --> SetBranch[\"枝干 0.2\"]\n    SetBranch --> SetLeaf[\"叶子 0.2\"]\n    SetLeaf --> SetPetal[\"花瓣 0.2\"]\n    WindParam --> Increase[\"增大风力\"]\n    Increase --> ApplyInc[\"应用增大值\"]\n    WindParam --> Decrease[\"减小风力\"]\n    Decrease --> ApplyDec[\"应用减小值\"]\n    ApplyInc --> Save[\"保存设置\"]\n    ApplyDec --> Save\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    PL[\"植物库\"] --> PS[\"参数集\"]\n    PL --> SM[\"副材质文件夹\"]\n    SM --> MI[\"材质实例\"]\n    PS --> SA[\"季节动画序列\"]\n    MI --> SA\n    SA --> SP[\"春季\"]\n    SA --> SU[\"夏季\"]\n    SA --> AU[\"秋季\"]\n    SA --> WI[\"冬季\"]\n    AU --> TR[\"秋→冬 过渡\"]\n    WI --> TR2[\"冬→春 过渡\"]"
+    },
+    {
+      "title": "副材质分类",
+      "code": "flowchart TD\n    SMF[\"副材质文件夹\"] --> EM[\"常绿材质\"]\n    SMF --> AN[\"秋天不变色材质\"]\n    SMF --> AC[\"秋天变色材质\"]\n    SMF --> FP[\"花瓣/落叶材质\"]\n    EM --> NP[\"无需参数\"]\n    AN --> FL[\"冬季落叶\"]\n    AC --> CC[\"秋季变色\"]\n    AC --> FL2[\"冬季落叶\"]\n    FP --> FL3[\"冬季落叶\"]"
+    },
+    {
+      "title": "季节动画关键帧设置流程",
+      "code": "flowchart TD\n    PS[\"三个参数集\"] --> AddSeq[\"添加到动画序列\"]\n    AddSeq --> AddKey[\"为每帧添加关键帧\"]\n    AddKey --> Zero[\"零帧关键帧\"]\n    Zero --> Spring[\"春季关键帧\"]\n    Zero --> Autumn[\"秋季关键帧\"]\n    Zero --> Winter[\"冬季关键帧\"]\n    Spring --> SetGreen[\"叶子设为绿色\"]\n    Autumn --> SetColor[\"叶子秋季变色\"]\n    Winter --> SetFall[\"叶子/花瓣落下\"]\n    SetFall --> Play[\"播放验证\"]"
+    },
+    {
+      "title": "批量材质替换与重命名",
+      "code": "flowchart TD\n    SelTrees[\"选中六棵树\"] --> CopyMat[\"复制目标材质\"]\n    CopyMat --> PasteMat[\"粘贴替换\"]\n    PasteMat --> DelOld[\"删除旧材质\"]\n    DelOld --> RefReplace[\"点击替换引用\"]\n    RefReplace --> Clean[\"删除副材质\"]\n    Clean --> RenamePref[\"批量去前缀\"]\n    RenamePref --> RenameCN[\"改为中文名\"]\n    RenameCN --> Apply[\"应用并保存\"]"
+    },
+    {
+      "title": "风力参数统一调整",
+      "code": "flowchart TD\n    WindParam[\"风力参数\"] --> SetBranch[\"枝干 0.2\"]\n    SetBranch --> SetLeaf[\"叶子 0.2\"]\n    SetLeaf --> SetPetal[\"花瓣 0.2\"]\n    WindParam --> Increase[\"增大风力\"]\n    Increase --> ApplyInc[\"应用增大值\"]\n    WindParam --> Decrease[\"减小风力\"]\n    Decrease --> ApplyDec[\"应用减小值\"]\n    ApplyInc --> Save[\"保存设置\"]\n    ApplyDec --> Save"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:42:27+00:00"
+}

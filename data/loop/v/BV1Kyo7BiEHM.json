@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Kyo7BiEHM",
+  "title": "刚更的 DeepSeek V4！实测一键把 AIGC 率从 100% 干到 0%",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 378,
+  "text": "就在今天\ndeep sick发布了V4版本\n我帮大家测试了一下\n使用这个deep sk v4模型配合指令\nAIGC率可以直接改到零\n现在咱们先去豆包生成一段文本\n现在直接把豆包生成的内容去知网检测\n好家伙\n直接百分百AIGC率\n现在我们用deep sk修改一遍\n再来查询\n先复制提示词指令和要修改的内容\n粘贴到deep sick里\n记住一定要选择专家模式\n打开深度思考\n关闭联网搜索\n这样效果最好\n修改时间比较长\n基本上得两到3分钟\n改好一段内容我就直接跳过了\n现在我们把修改好的内容去知网再查询一遍\n看到了吗\nAIGZ律直接修改到了零\n哈哈当然这样改写结果不一定稳定\n有时候也会出现改了几次\n只降低1%的情况\n这个时候就可以用我们的ACG学术助手来修改\n支持上传文档一键修改\n特别适合文本字数多的同学\n指令我已打包好啦\n点赞评论ACG学术助手可以找我领取",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Kyo7BiEHM",
+  "published_at": "1777080600",
+  "fetched_at": "2026-08-07T06:32:16+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 AIGC率降至零 实验流程图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A[\"生成文本（豆包）\"] --> B[\"检测AIGC率（知网）\"]\n    B --> C[\"AIGC率 100%\"]\n    C --> D[\"使用DeepSeek V4修改\"]\n    D --> E[\"设置：专家模式、深度思考、关闭联网搜索\"]\n    E --> F[\"修改耗时 2-3 分钟\"]\n    F --> G[\"再次检测AIGC率\"]\n    G --> H[\"AIGC率 0%\"]\n    H --> I[\"若未降至0% → 使用ACG学术助手\"]\n    I --> J[\"上传文档 一键批量修改\"]\n```\n[BV1Kyo7BiEHM P1 00:09] [BV1Kyo7BiEHM P1 01:26] [BV1Kyo7BiEHM P1 01:27] [BV1Kyo7BiEHM P1 01:29] [BV1Kyo7BiEHM P1 01:36] [BV1Kyo7BiEHM P1 01:45] [BV1Kyo7BiEHM P1 02:32] [BV1Kyo7BiEHM P1 02:33] [BV1Kyo7BiEHM P1 02:38] [BV1Kyo7BiEHM P1 02:41]\n\n## DeepSeek V4 设置与效果\n```mermaid\nflowchart LR\n    E1[\"专家模式\"] -->|必选| MOD[\"DeepSeek V4 修改\"]\n    E2[\"深度思考 开启\"] --> MOD\n    E3[\"关闭联网搜索\"] --> MOD\n    MOD --> T[\"修改时长 2-3 分钟\"]\n    T --> R[\"AIGC率 降至 0%（多数情况）\"]\n    R --> S[\"不稳定时 可能仅降 1%\"]\n```\n[BV1Kyo7BiEHM P1 01:36] [BV1Kyo7BiEHM P1 01:38] [BV1Kyo7BiEHM P1 01:40] [BV1Kyo7BiEHM P1 01:45] [BV1Kyo7BiEHM P1 01:46] [BV1Kyo7BiEHM P1 02:33] [BV1Kyo7BiEHM P1 02:38] [BV1Kyo7BiEHM P1 02:40]\n\n## ACG学术助手 备选方案\n```mermaid\nflowchart TD\n    S[\"AIGC率 未降至 0%\"] --> A[\"使用ACG学术助手\"]\n    A --> B[\"上传文档\"]\n    B --> C[\"一键批量修改\"]\n    C --> D[\"适用于文本字数多的情况\"]\n```\n[BV1Kyo7BiEHM P1 02:38] [BV1Kyo7BiEHM P1 02:40] [BV1Kyo7BiEHM P1 02:41] [BV1Kyo7BiEHM P1 02:49]",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A[\"生成文本（豆包）\"] --> B[\"检测AIGC率（知网）\"]\n    B --> C[\"AIGC率 100%\"]\n    C --> D[\"使用DeepSeek V4修改\"]\n    D --> E[\"设置：专家模式、深度思考、关闭联网搜索\"]\n    E --> F[\"修改耗时 2-3 分钟\"]\n    F --> G[\"再次检测AIGC率\"]\n    G --> H[\"AIGC率 0%\"]\n    H --> I[\"若未降至0% → 使用ACG学术助手\"]\n    I --> J[\"上传文档 一键批量修改\"]"
+        },
+        {
+          "title": "DeepSeek V4 设置与效果",
+          "code": "flowchart LR\n    E1[\"专家模式\"] -->|必选| MOD[\"DeepSeek V4 修改\"]\n    E2[\"深度思考 开启\"] --> MOD\n    E3[\"关闭联网搜索\"] --> MOD\n    MOD --> T[\"修改时长 2-3 分钟\"]\n    T --> R[\"AIGC率 降至 0%（多数情况）\"]\n    R --> S[\"不稳定时 可能仅降 1%\"]"
+        },
+        {
+          "title": "ACG学术助手 备选方案",
+          "code": "flowchart TD\n    S[\"AIGC率 未降至 0%\"] --> A[\"使用ACG学术助手\"]\n    A --> B[\"上传文档\"]\n    B --> C[\"一键批量修改\"]\n    C --> D[\"适用于文本字数多的情况\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T06:32:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 AIGC率降至零 实验流程图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A[\"生成文本（豆包）\"] --> B[\"检测AIGC率（知网）\"]\n    B --> C[\"AIGC率 100%\"]\n    C --> D[\"使用DeepSeek V4修改\"]\n    D --> E[\"设置：专家模式、深度思考、关闭联网搜索\"]\n    E --> F[\"修改耗时 2-3 分钟\"]\n    F --> G[\"再次检测AIGC率\"]\n    G --> H[\"AIGC率 0%\"]\n    H --> I[\"若未降至0% → 使用ACG学术助手\"]\n    I --> J[\"上传文档 一键批量修改\"]\n```\n[BV1Kyo7BiEHM P1 00:09] [BV1Kyo7BiEHM P1 01:26] [BV1Kyo7BiEHM P1 01:27] [BV1Kyo7BiEHM P1 01:29] [BV1Kyo7BiEHM P1 01:36] [BV1Kyo7BiEHM P1 01:45] [BV1Kyo7BiEHM P1 02:32] [BV1Kyo7BiEHM P1 02:33] [BV1Kyo7BiEHM P1 02:38] [BV1Kyo7BiEHM P1 02:41]\n\n## DeepSeek V4 设置与效果\n```mermaid\nflowchart LR\n    E1[\"专家模式\"] -->|必选| MOD[\"DeepSeek V4 修改\"]\n    E2[\"深度思考 开启\"] --> MOD\n    E3[\"关闭联网搜索\"] --> MOD\n    MOD --> T[\"修改时长 2-3 分钟\"]\n    T --> R[\"AIGC率 降至 0%（多数情况）\"]\n    R --> S[\"不稳定时 可能仅降 1%\"]\n```\n[BV1Kyo7BiEHM P1 01:36] [BV1Kyo7BiEHM P1 01:38] [BV1Kyo7BiEHM P1 01:40] [BV1Kyo7BiEHM P1 01:45] [BV1Kyo7BiEHM P1 01:46] [BV1Kyo7BiEHM P1 02:33] [BV1Kyo7BiEHM P1 02:38] [BV1Kyo7BiEHM P1 02:40]\n\n## ACG学术助手 备选方案\n```mermaid\nflowchart TD\n    S[\"AIGC率 未降至 0%\"] --> A[\"使用ACG学术助手\"]\n    A --> B[\"上传文档\"]\n    B --> C[\"一键批量修改\"]\n    C --> D[\"适用于文本字数多的情况\"]\n```\n[BV1Kyo7BiEHM P1 02:38] [BV1Kyo7BiEHM P1 02:40] [BV1Kyo7BiEHM P1 02:41] [BV1Kyo7BiEHM P1 02:49]",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A[\"生成文本（豆包）\"] --> B[\"检测AIGC率（知网）\"]\n    B --> C[\"AIGC率 100%\"]\n    C --> D[\"使用DeepSeek V4修改\"]\n    D --> E[\"设置：专家模式、深度思考、关闭联网搜索\"]\n    E --> F[\"修改耗时 2-3 分钟\"]\n    F --> G[\"再次检测AIGC率\"]\n    G --> H[\"AIGC率 0%\"]\n    H --> I[\"若未降至0% → 使用ACG学术助手\"]\n    I --> J[\"上传文档 一键批量修改\"]"
+    },
+    {
+      "title": "DeepSeek V4 设置与效果",
+      "code": "flowchart LR\n    E1[\"专家模式\"] -->|必选| MOD[\"DeepSeek V4 修改\"]\n    E2[\"深度思考 开启\"] --> MOD\n    E3[\"关闭联网搜索\"] --> MOD\n    MOD --> T[\"修改时长 2-3 分钟\"]\n    T --> R[\"AIGC率 降至 0%（多数情况）\"]\n    R --> S[\"不稳定时 可能仅降 1%\"]"
+    },
+    {
+      "title": "ACG学术助手 备选方案",
+      "code": "flowchart TD\n    S[\"AIGC率 未降至 0%\"] --> A[\"使用ACG学术助手\"]\n    A --> B[\"上传文档\"]\n    B --> C[\"一键批量修改\"]\n    C --> D[\"适用于文本字数多的情况\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T06:32:32+00:00"
+}

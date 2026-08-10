@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1pnReBuE22",
+  "title": "最适合跑hermes的本地模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 874,
+  "text": "哈喽我可能发现了一个很适合苹果电脑运行的\n一个呃HERMES本地代理的一个模型\n那就是这个模型呃\n千问3.6\n35\nA3B4比特\n这个模型这模型精度不高\n但是它很适合agent3那二进行训练\n它能跑到大概96呃\n头疼每秒啊\n是这个样子\n然后但是这个模型在跑之前得要去做个设置\n就在这个设置模型设置里边的这个地方\n点开这个\n把这个启用思考给关掉\n这样的话整个模型会跑的很快\n然后它也不会占用太大的功耗\n然后我们可以来做一个呃测试\n就是我这边有obs店\n里边有一个这个我之前做的一个\nOPC园区的调研资料\n然后我最近要去做一个演讲\n所以我需要他去查看这些调研资料\n然后去做这样的一个演讲\n然后我这边所启用的这个模型绘画\n就是啊默认就是这个我本地的模型\n然后我这边发送他就会去思考\n咦这边为什么会报错好\n他现在在那调用一些工具\n然后进行思考\n那速度会很快\n他现在已经找到了这个文件夹\n然后去弄\n我可以看到\n我现在已经输出在174瓦\n这样的一个功率\n现在开始进行呃\n蛮复杂的进行思考和奔跑\n然后再稍微等一等\n好的\n在经过了大约半分钟的等待吧\n他这边已经整理出来了一个这样的东西\n去看一下整体的结果如何\n应该在这个文件夹下有个演讲框架\n然后来了是这样子的一个内容\n那整体里面的结构\n它其实呃会结合这个里边我所之前做的调研\n然后这个调研是拿mini max来做的\n那我的整体感觉是用了半天吧\n整体感觉是它这个本地跑的整个速度\n然后以及是它的智能程度\n跟mini max2.7差不了太多\n真的差不了太多\n然后而且速度很快\n所以非常推荐大家去用\n我不知道呃\n还有其他的地方有没有人用到这个地方\n可以出来沟通一下\n交流一下\n总之就很推荐大家把这个去启用\n关闭深度思考\n然后他它所需要的是24GB的内存以上\n你就可以跑这个模型了啊\n记得下载这个叫OMLX去下载这个模型\n它是一个35B的A3B的一个注意力模型\n就他每次只激活3B的这样一个参数\n然后又做了四比特量化\n所以整个模型跑起来是非常快的好的\n如果有更好的模型\n欢迎在评论区推荐给我\n那本期视频就这个样子\n嗯拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1pnReBuE22",
+  "published_at": "1777863084",
+  "fetched_at": "2026-08-09T03:25:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Hermes 本地模型使用指南\n\n## 模型概览与硬件要求 [BV1pnReBuE22 P1 00:00]\n```mermaid\nflowchart TD\n    A[\"适用于苹果电脑的本地 Hermes 代理模型\"]\n    B[\"模型名称：千问3.6 35 A3B4比特\"]\n    C[\"模型特性：低精度、适合 Agent 训练\"]\n    D[\"硬件需求：24GB 以上内存\"]\n    E[\"下载渠道：OMLX\"]\n    F[\"设置要求：关闭深度思考\"]\n    G[\"运行优势：约 96 token/s，功耗约 174W\"]\n    H[\"推荐使用\"]\n\n    A --> B\n    B --> C\n    B --> D\n    B --> E\n    B --> F\n    B --> G\n    G --> H\n```\n\n## 配置步骤详解 [BV1pnReBuE22 P1 00:30]\n```mermaid\nflowchart TD\n    S1[\"打开模型设置\"]\n    S2[\"定位‘启用思考’选项\"]\n    S3[\"关闭‘启用思考’\"]\n    S4[\"保存设置\"]\n    S5[\"确保内存 ≥24GB\"]\n    S6[\"使用 OMLX 下载模型\"]\n    S7[\"完成配置\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7\n```\n\n## 性能特性与对比 [BV1pnReBuE22 P1 01:23]\n```mermaid\nflowchart TD\n    P5[\"模型大小 35B\"]\n    P4[\"激活参数 3B\"]\n    P3[\"量化：4-bit\"]\n    P1[\"速度约 96 token/s\"]\n    P2[\"功耗约 174W\"]\n    P6[\"与 mini max 2.7 性能相近\"]\n\n    P5 --> P4 --> P3 --> P1\n    P1 --> P2\n    P1 --> P6\n```\n\n## 应用工作流示例 [BV1pnReBuE22 P1 00:46]\n```mermaid\nflowchart TD\n    W1[\"准备调研资料 (OPC 园区)\"]\n    W2[\"启动本地模型\"]\n    W3[\"模型读取文件夹\"]\n    W4[\"生成演讲框架\"]\n    W5[\"输出结果\"]\n\n    W1 --> W2 --> W3 --> W4 --> W5\n```",
+      "diagrams": [
+        {
+          "title": "模型概览与硬件要求",
+          "code": "flowchart TD\n    A[\"适用于苹果电脑的本地 Hermes 代理模型\"]\n    B[\"模型名称：千问3.6 35 A3B4比特\"]\n    C[\"模型特性：低精度、适合 Agent 训练\"]\n    D[\"硬件需求：24GB 以上内存\"]\n    E[\"下载渠道：OMLX\"]\n    F[\"设置要求：关闭深度思考\"]\n    G[\"运行优势：约 96 token/s，功耗约 174W\"]\n    H[\"推荐使用\"]\n\n    A --> B\n    B --> C\n    B --> D\n    B --> E\n    B --> F\n    B --> G\n    G --> H"
+        },
+        {
+          "title": "配置步骤详解",
+          "code": "flowchart TD\n    S1[\"打开模型设置\"]\n    S2[\"定位‘启用思考’选项\"]\n    S3[\"关闭‘启用思考’\"]\n    S4[\"保存设置\"]\n    S5[\"确保内存 ≥24GB\"]\n    S6[\"使用 OMLX 下载模型\"]\n    S7[\"完成配置\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7"
+        },
+        {
+          "title": "性能特性与对比",
+          "code": "flowchart TD\n    P5[\"模型大小 35B\"]\n    P4[\"激活参数 3B\"]\n    P3[\"量化：4-bit\"]\n    P1[\"速度约 96 token/s\"]\n    P2[\"功耗约 174W\"]\n    P6[\"与 mini max 2.7 性能相近\"]\n\n    P5 --> P4 --> P3 --> P1\n    P1 --> P2\n    P1 --> P6"
+        },
+        {
+          "title": "应用工作流示例",
+          "code": "flowchart TD\n    W1[\"准备调研资料 (OPC 园区)\"]\n    W2[\"启动本地模型\"]\n    W3[\"模型读取文件夹\"]\n    W4[\"生成演讲框架\"]\n    W5[\"输出结果\"]\n\n    W1 --> W2 --> W3 --> W4 --> W5"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T03:25:40+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Hermes 本地模型使用指南\n\n## 模型概览与硬件要求 [BV1pnReBuE22 P1 00:00]\n```mermaid\nflowchart TD\n    A[\"适用于苹果电脑的本地 Hermes 代理模型\"]\n    B[\"模型名称：千问3.6 35 A3B4比特\"]\n    C[\"模型特性：低精度、适合 Agent 训练\"]\n    D[\"硬件需求：24GB 以上内存\"]\n    E[\"下载渠道：OMLX\"]\n    F[\"设置要求：关闭深度思考\"]\n    G[\"运行优势：约 96 token/s，功耗约 174W\"]\n    H[\"推荐使用\"]\n\n    A --> B\n    B --> C\n    B --> D\n    B --> E\n    B --> F\n    B --> G\n    G --> H\n```\n\n## 配置步骤详解 [BV1pnReBuE22 P1 00:30]\n```mermaid\nflowchart TD\n    S1[\"打开模型设置\"]\n    S2[\"定位‘启用思考’选项\"]\n    S3[\"关闭‘启用思考’\"]\n    S4[\"保存设置\"]\n    S5[\"确保内存 ≥24GB\"]\n    S6[\"使用 OMLX 下载模型\"]\n    S7[\"完成配置\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7\n```\n\n## 性能特性与对比 [BV1pnReBuE22 P1 01:23]\n```mermaid\nflowchart TD\n    P5[\"模型大小 35B\"]\n    P4[\"激活参数 3B\"]\n    P3[\"量化：4-bit\"]\n    P1[\"速度约 96 token/s\"]\n    P2[\"功耗约 174W\"]\n    P6[\"与 mini max 2.7 性能相近\"]\n\n    P5 --> P4 --> P3 --> P1\n    P1 --> P2\n    P1 --> P6\n```\n\n## 应用工作流示例 [BV1pnReBuE22 P1 00:46]\n```mermaid\nflowchart TD\n    W1[\"准备调研资料 (OPC 园区)\"]\n    W2[\"启动本地模型\"]\n    W3[\"模型读取文件夹\"]\n    W4[\"生成演讲框架\"]\n    W5[\"输出结果\"]\n\n    W1 --> W2 --> W3 --> W4 --> W5\n```",
+  "diagrams": [
+    {
+      "title": "模型概览与硬件要求",
+      "code": "flowchart TD\n    A[\"适用于苹果电脑的本地 Hermes 代理模型\"]\n    B[\"模型名称：千问3.6 35 A3B4比特\"]\n    C[\"模型特性：低精度、适合 Agent 训练\"]\n    D[\"硬件需求：24GB 以上内存\"]\n    E[\"下载渠道：OMLX\"]\n    F[\"设置要求：关闭深度思考\"]\n    G[\"运行优势：约 96 token/s，功耗约 174W\"]\n    H[\"推荐使用\"]\n\n    A --> B\n    B --> C\n    B --> D\n    B --> E\n    B --> F\n    B --> G\n    G --> H"
+    },
+    {
+      "title": "配置步骤详解",
+      "code": "flowchart TD\n    S1[\"打开模型设置\"]\n    S2[\"定位‘启用思考’选项\"]\n    S3[\"关闭‘启用思考’\"]\n    S4[\"保存设置\"]\n    S5[\"确保内存 ≥24GB\"]\n    S6[\"使用 OMLX 下载模型\"]\n    S7[\"完成配置\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7"
+    },
+    {
+      "title": "性能特性与对比",
+      "code": "flowchart TD\n    P5[\"模型大小 35B\"]\n    P4[\"激活参数 3B\"]\n    P3[\"量化：4-bit\"]\n    P1[\"速度约 96 token/s\"]\n    P2[\"功耗约 174W\"]\n    P6[\"与 mini max 2.7 性能相近\"]\n\n    P5 --> P4 --> P3 --> P1\n    P1 --> P2\n    P1 --> P6"
+    },
+    {
+      "title": "应用工作流示例",
+      "code": "flowchart TD\n    W1[\"准备调研资料 (OPC 园区)\"]\n    W2[\"启动本地模型\"]\n    W3[\"模型读取文件夹\"]\n    W4[\"生成演讲框架\"]\n    W5[\"输出结果\"]\n\n    W1 --> W2 --> W3 --> W4 --> W5"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T03:25:40+00:00"
+}

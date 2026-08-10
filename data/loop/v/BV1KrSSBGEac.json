@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1KrSSBGEac",
+  "title": "容灾，我用一个故事讲清楚",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3390,
+  "text": "这几个词听过吧\n这几个词也听过吧\n但你清楚它们的实现原理吗\n如果你全都听过\n但并不理解它们的核心区别和实现原理\n那么恭喜你来对了地方\n今天这期视频我就用一个故事通俗易懂的给你讲清楚\n想象一下\n你刚跳槽到一家创业公司\n年薪百万\n老板对你寄予厚望\n你三下5÷2开发出一个软件\n往城市A的机房A里一部署系统跑得飞起\n一切完美\n可突然有一天\n机房网络断了\n不是几分钟\n是整整一天\n你的系统彻底离线\n用户骂娘\n老板盯着你的眼神\n能把你当场开除\n唯一的好消息是数据没丢\n但你以为这就结束了\n不真正的故事才刚刚开始\n于是你想了个办法\n然后把机房A的数据定时备份到机房B\n平时机房B睡大觉\n一旦机房A挂了\n你就手动启动机房B恢复备份数据\n再改个域名解析\n把用户流量切过去\n虽然恢复的花几个小时\n但至少不用干\n等一整天了\n你给它取名叫同城冷贝\n你把这个方案告诉老板\n老板说我不懂\n只想知道下次出事业务多久能恢复\n数据丢多少\n于是你想到了RT o r p o RT全称recovery time objective\n即恢复时间\n目标指的是从灾难发生时到业务系统恢复服务所需要的最短时间\nRPO全称recovery point objective\n即恢复点目标指的是灾难发生时到最近一次数据备份的时间\nRT关注于系统的可用性多久能恢复\nRPO关注于数据的完整性\n丢了多久的数据\n因为同城冷贝在故障时需要启动应用和数据库并做数据恢复\nRTO一般是小市级老板认为不适合生产业务\n于是你把它部署在测试环境\n为了减少恢复时间\n你把故障恢复时的工作前置做好\n让机房B的应用和数据库平时保持运行\n机房A的数据库和机房B的数据库形成主备集群并实时同步数据\n当故障时\n数据库进行主备切换\n再改一下域名解析流量刷的就到机房B了\n你给它取名叫同城热备\n这一下RT o缩到了分钟级\nRPO也很小\n老板终于同意在生产环境部署了同城冷备和同城热备\n都属于同城容灾\n可根据具体业务连续性的要求\n选择冷备或热备方案\n同城双活\n到后来你的软件被一家互联网公司看中\n他们看了你的方案\n摇摇头\n你们这个热背平时备份机闲着\n资源浪费啊\n而且切换还得手动\n万一你半夜睡着了呢\n还有主备环境配置\n万一不一样\n切过去崩了怎么办\n你一想对啊\n那就改\n于是你在流量入口增加了一个调度层\n可以是动态域名解析\n在云环境中也可直接使用负载均衡器\n它不仅能按比例分配流量到两个机房\n还能自动探测应用健康状态\n实现故障流量的快速切换\n这提升了资源利用率\n也使得切换更加自动化\n但还有个问题\n两个机房的应用都要读写数据库\n如果数据库各写各的数据不就乱套了吗\n你想了个折中的办法\n所有写操作都发往主机房的主数据库\n再同步到备机房的从库\n读操作呢就禁读各自机房的库\n这样数据一致\n贝库还能分担独压力\n你给它取名叫同城双活\n它能实现分钟级的RT两地三中心\n这家互联网公司用着挺爽\n直到有一天他们问\n万一发生洪水地震\n整个城市都瘫了\n你这两个机房不都完蛋了吗\n你一拍脑袋对啊\n得再找个异地\n于是你在另一个城市B的机房C又部署了一套数据库\n把城市A的数据实时备份过去\n这样即使城市A全挂了\n也能用城市B的数据恢复\n你给它取名叫异地灾备\n但光有备份不放心\n万一真要用的时候恢复不了呢\n所以你还在机房C搭建应用环境\n并定期将一部分生产流量切换过去\n以验证整个容灾恢复流程\n你给它取名叫容灾演练\n最终由位于两个城市A和B3个机房ABC共同组成的这套部署架构\n你给它取名叫两地三中心\n异地双火\n没过多久\n一家大型金融公司买了你的软件\n他们提了个更狠的要求\n我们受监管\n不能只恢复数据\n必须持续提供服务\n万一城市A没了业务得立马在别的地方跑起来\n传统的异地灾备在灾难发生后恢复服务需要较长时间\n如果配置不一致\n耗时可能更长\n为了实现持续服务的目标\n你决定将异地备用的机房盘活\n让他也能对外提供服务\n与主机房形成跨地域的双活架构\n你给它取名叫异地双活\n那直接把同城双活的模式搬到异地\n行不行不行\n因为异地机房之间通过跨城专线互联网络延迟成了大麻烦\n比如北京到上海相距超1000km\n就算用高速专线一次网络传输也得30ms以上\n一个数据库写操作往返就得60ms\n而同城机房距离按30km左右\n预估延迟在2ms左右\n这比同城机房的延迟高了十倍不止\n在高频金融交易等场景中\n如果从机房C写到机房B再同步到机房C才可以读取\n这更新效率实在难以接受\n看来并没有这么简单\n既然跨机房的时延不能接受\n那你想到能否规避掉跨机房调用呢\n要不就让每个机房的应用只读写本机房的数据库\n各自为主\n互不打扰\n真就彻底分居了吗\n虽然各写各的\n但机房A应用要读机房C数据C\n一机房C应用要读机房A数据怎么办呢\n那就双向同步呗\n保证两边都有全量数据切换的时候\n也能持续提供服务\n那如何实现双向同步呢\n你发现很多公司都开发出了数据同步中间件来实现\n业内也有一些开源的数据同步中间件可选用\n这时你又担心了\n跨城专线距离这么远\n万一网络抖动甚至直接中断\n那如何保证数据一致呢\n好在数据同步中间件有自动重试机制\n直到重试成功并达成两边数据一致为止\n虽然彻底分居了\n但两口子还是因为要共享全量数据而藕断丝连\n那后面还会不会再吵架呢\n会老司机告诉你一定会\n如果机房A和机房C各自写各自的数据还好\n万一都要写同一条数据呢\n这时他们意见不一\n问题就来了\n比如用户短时间内发了两个修改数据\n第一的请求\n一条请求到机房A要修改D1等于一\n一条请求到机房C要修改D1等于二\n那到底以谁为准呢\n靠时间戳\n但两台机器的时钟很难完全一致\n搞不好后改的\n因为时间早反而被覆盖\n那不乱套了\n作为干过运维的老司机\n你应该不会寄希望于时钟服务吧\n那数据层面不好做文章\n能否从源头给他掐断呢\n不再允许用户对一个数据的请求分发到两个机房\n思路好像没问题\n那需要在应用层之前加一层路由规则\n让同一个用户的相关请求只分发到一个机房\n具体如何实现呢\n那就需要应用配合做改造了\n比如根据域名或URL路径等来区分不同的业务\n并路由到不同的机房\ned的对应应用只作为热备读写\n都在本机防完成\n这种方式对业务关联关系的梳理要求较高\n需要将有业务交互的应用都配置在一个机房\n完成业务逻辑闭环\n避免跨机房调用\n此外也可以根据用户id计算哈希值\n将用户根据不同的哈希值分别路由到不同的机房\n这样也可以避免同一用户修改同一数据的请求发生\n另外根据地理位置来路由也是很常见的方式\n比如酒店预订的业务\n涉及酒店和用户\n他们在相同的地理位置\n一般默认是本地就近预订\n如果是华北区域的用户\n默认到北京机房\n华南区域的用户默认到广州机房\n这样可以把用户的请求分流到不同的机房了\n至此一个较为完善的异地双活方案\n形成不同的用户请求分发到不同的机房\n并在各自机房完成业务闭环和数据读写\n同时双向同步\n保证机房都有全量数据\n当两地域的任意机房挂了\n都能快速切换到异地\n并承载全部流量\n另外路由规则配置就近访问\n也能大幅提升系统性能\n需要注意的是\n对于一些全局强移植数据\n如系统全局配置等\n仍需要通过协主读从的方案来实现\n我们的原则是优先保证核心业务双活\n而非全部业务双活\n异地多活业务越做越大\n你的系统被一家跨国企业看中\n需要在国内国外部署多套环境\n你给它取名叫异地多活\n由于异地多活是在异地双活的基础上扩建了其他地域\n本质上方案仍可以服用\n于是异地多活就变成了这样\n随着扩建的机房越来越多\n数据双向同步的链路越来越复杂\n系统实现难度也越来越大\n为了降低复杂度\n于是你设定了一个中心机房\n所有机房数据先同步到中心机房\n再由中心机房同步到其他机房\n好处是架构简化了\n扩展多少机房\n其他非中心机房也不用关注\n它\n只需要和中心机房做好数据同步就行\n不过这个对中心机房要求较高\n如果中心机房挂了\n需要保证其他机房也能重新被选为中心机房\n实际落地中异地多活\n对跨域网络数据一致性要求极高\n一般只有大型跨国企业云厂商才玩得转\n好了容灾这件事我就这样讲成了一个故事\n从一个差点被开除的倒霉蛋\n到能应对同城故障\n地狱灾难全球部署的架构师\n这一路走来其实就是系统架构\n随着业务需求不断演进的过程\n下次有人问你单点部署同城容灾\n同城双活\n两地三中心\n异地双活\n异地多活\n你把这个故事讲给他听\n毕竟故事比概念好记多了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1KrSSBGEac",
+  "published_at": "1775400571",
+  "fetched_at": "2026-08-07T05:03:10+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 容灾方案知识图谱\n\n## 容灾方案层级概览\n```mermaid\nflowchart TD\n    A[\"单点部署\"] --> B[\"同城冷备\"]\n    B --> C[\"同城热备\"]\n    C --> D[\"同城双活\"]\n    D --> E[\"异地灾备\"]\n    E --> F[\"异地双活\"]\n    F --> G[\"异地多活\"]\n    G --> H[\"两地三中心\"]\n```\n\n## RTO 与 RPO 关系\n```mermaid\nflowchart TD\n    R1[\"RTO：恢复时间目标\"] --> R2[\"业务可用性恢复时长\"]\n    R3[\"RPO：恢复点目标\"] --> R4[\"数据丢失时长\"]\n    R5[\"同城冷备\"] --> R1\n    R5 --> R3\n    R6[\"同城热备\"] --> R1\n    R6 --> R3\n    R7[\"同城双活\"] --> R1\n    R7 --> R3\n    R8[\"异地双活\"] --> R1\n    R8 --> R3\n    style R5 fill:#f9f,stroke:#333,stroke-width:1px\n    style R6 fill:#bbf,stroke:#333,stroke-width:1px\n    style R7 fill:#bfb,stroke:#333,stroke-width:1px\n    style R8 fill:#fbf,stroke:#333,stroke-width:1px\n```\n\n## 同城冷备、热备、双活 流程对比\n```mermaid\nflowchart TD\n    C1[\"机房A 主库\"] --> C3[\"定时备份\"]\n    C3 --> C2[\"机房B 备库\"]\n    C2 --> C4[\"手动切换\"]\n    C4 --> C5[\"域名解析切换\"]\n    C5 --> C1\n    C1 --> C6[\"实时同步\"]\n    C6 --> C2\n    C2 --> C7[\"自动故障切换\"]\n    C7 --> C8[\"业务持续运行\"]\n    style C3 fill:#eef,stroke:#333,stroke-width:1px\n    style C6 fill:#eef,stroke:#333,stroke-width:1px\n    style C7 fill:#eef,stroke:#333,stroke-width:1px\n```\n\n## 异地多活中心机房模型\n```mermaid\nflowchart TD\n    M2[\"机房A\"] --> M5[\"双向同步链路\"] --> M1[\"中心机房\"]\n    M3[\"机房B\"] --> M5\n    M4[\"机房C\"] --> M5\n    M1 --> M6[\"数据写入路由\"]\n    M6 --> M2\n    M6 --> M3\n    M6 --> M4\n    M7[\"用户请求路由\"] --> M2\n    M7 --> M3\n    M7 --> M4\n    M2 --> M8[\"故障切换\"]\n    M3 --> M8\n    M4 --> M8\n    M8 --> M1\n    M1 --> M9[\"中心机房容错\"]\n    style M5 fill:#ddf,stroke:#333,stroke-width:1px\n    style M6 fill:#ddf,stroke:#333,stroke-width:1px\n    style M8 fill:#fdd,stroke:#333,stroke-width:1px\n```",
+      "diagrams": [
+        {
+          "title": "容灾方案层级概览",
+          "code": "flowchart TD\n    A[\"单点部署\"] --> B[\"同城冷备\"]\n    B --> C[\"同城热备\"]\n    C --> D[\"同城双活\"]\n    D --> E[\"异地灾备\"]\n    E --> F[\"异地双活\"]\n    F --> G[\"异地多活\"]\n    G --> H[\"两地三中心\"]"
+        },
+        {
+          "title": "RTO 与 RPO 关系",
+          "code": "flowchart TD\n    R1[\"RTO：恢复时间目标\"] --> R2[\"业务可用性恢复时长\"]\n    R3[\"RPO：恢复点目标\"] --> R4[\"数据丢失时长\"]\n    R5[\"同城冷备\"] --> R1\n    R5 --> R3\n    R6[\"同城热备\"] --> R1\n    R6 --> R3\n    R7[\"同城双活\"] --> R1\n    R7 --> R3\n    R8[\"异地双活\"] --> R1\n    R8 --> R3\n    style R5 fill:#f9f,stroke:#333,stroke-width:1px\n    style R6 fill:#bbf,stroke:#333,stroke-width:1px\n    style R7 fill:#bfb,stroke:#333,stroke-width:1px\n    style R8 fill:#fbf,stroke:#333,stroke-width:1px"
+        },
+        {
+          "title": "同城冷备、热备、双活 流程对比",
+          "code": "flowchart TD\n    C1[\"机房A 主库\"] --> C3[\"定时备份\"]\n    C3 --> C2[\"机房B 备库\"]\n    C2 --> C4[\"手动切换\"]\n    C4 --> C5[\"域名解析切换\"]\n    C5 --> C1\n    C1 --> C6[\"实时同步\"]\n    C6 --> C2\n    C2 --> C7[\"自动故障切换\"]\n    C7 --> C8[\"业务持续运行\"]\n    style C3 fill:#eef,stroke:#333,stroke-width:1px\n    style C6 fill:#eef,stroke:#333,stroke-width:1px\n    style C7 fill:#eef,stroke:#333,stroke-width:1px"
+        },
+        {
+          "title": "异地多活中心机房模型",
+          "code": "flowchart TD\n    M2[\"机房A\"] --> M5[\"双向同步链路\"] --> M1[\"中心机房\"]\n    M3[\"机房B\"] --> M5\n    M4[\"机房C\"] --> M5\n    M1 --> M6[\"数据写入路由\"]\n    M6 --> M2\n    M6 --> M3\n    M6 --> M4\n    M7[\"用户请求路由\"] --> M2\n    M7 --> M3\n    M7 --> M4\n    M2 --> M8[\"故障切换\"]\n    M3 --> M8\n    M4 --> M8\n    M8 --> M1\n    M1 --> M9[\"中心机房容错\"]\n    style M5 fill:#ddf,stroke:#333,stroke-width:1px\n    style M6 fill:#ddf,stroke:#333,stroke-width:1px\n    style M8 fill:#fdd,stroke:#333,stroke-width:1px"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T05:03:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 容灾方案知识图谱\n\n## 容灾方案层级概览\n```mermaid\nflowchart TD\n    A[\"单点部署\"] --> B[\"同城冷备\"]\n    B --> C[\"同城热备\"]\n    C --> D[\"同城双活\"]\n    D --> E[\"异地灾备\"]\n    E --> F[\"异地双活\"]\n    F --> G[\"异地多活\"]\n    G --> H[\"两地三中心\"]\n```\n\n## RTO 与 RPO 关系\n```mermaid\nflowchart TD\n    R1[\"RTO：恢复时间目标\"] --> R2[\"业务可用性恢复时长\"]\n    R3[\"RPO：恢复点目标\"] --> R4[\"数据丢失时长\"]\n    R5[\"同城冷备\"] --> R1\n    R5 --> R3\n    R6[\"同城热备\"] --> R1\n    R6 --> R3\n    R7[\"同城双活\"] --> R1\n    R7 --> R3\n    R8[\"异地双活\"] --> R1\n    R8 --> R3\n    style R5 fill:#f9f,stroke:#333,stroke-width:1px\n    style R6 fill:#bbf,stroke:#333,stroke-width:1px\n    style R7 fill:#bfb,stroke:#333,stroke-width:1px\n    style R8 fill:#fbf,stroke:#333,stroke-width:1px\n```\n\n## 同城冷备、热备、双活 流程对比\n```mermaid\nflowchart TD\n    C1[\"机房A 主库\"] --> C3[\"定时备份\"]\n    C3 --> C2[\"机房B 备库\"]\n    C2 --> C4[\"手动切换\"]\n    C4 --> C5[\"域名解析切换\"]\n    C5 --> C1\n    C1 --> C6[\"实时同步\"]\n    C6 --> C2\n    C2 --> C7[\"自动故障切换\"]\n    C7 --> C8[\"业务持续运行\"]\n    style C3 fill:#eef,stroke:#333,stroke-width:1px\n    style C6 fill:#eef,stroke:#333,stroke-width:1px\n    style C7 fill:#eef,stroke:#333,stroke-width:1px\n```\n\n## 异地多活中心机房模型\n```mermaid\nflowchart TD\n    M2[\"机房A\"] --> M5[\"双向同步链路\"] --> M1[\"中心机房\"]\n    M3[\"机房B\"] --> M5\n    M4[\"机房C\"] --> M5\n    M1 --> M6[\"数据写入路由\"]\n    M6 --> M2\n    M6 --> M3\n    M6 --> M4\n    M7[\"用户请求路由\"] --> M2\n    M7 --> M3\n    M7 --> M4\n    M2 --> M8[\"故障切换\"]\n    M3 --> M8\n    M4 --> M8\n    M8 --> M1\n    M1 --> M9[\"中心机房容错\"]\n    style M5 fill:#ddf,stroke:#333,stroke-width:1px\n    style M6 fill:#ddf,stroke:#333,stroke-width:1px\n    style M8 fill:#fdd,stroke:#333,stroke-width:1px\n```",
+  "diagrams": [
+    {
+      "title": "容灾方案层级概览",
+      "code": "flowchart TD\n    A[\"单点部署\"] --> B[\"同城冷备\"]\n    B --> C[\"同城热备\"]\n    C --> D[\"同城双活\"]\n    D --> E[\"异地灾备\"]\n    E --> F[\"异地双活\"]\n    F --> G[\"异地多活\"]\n    G --> H[\"两地三中心\"]"
+    },
+    {
+      "title": "RTO 与 RPO 关系",
+      "code": "flowchart TD\n    R1[\"RTO：恢复时间目标\"] --> R2[\"业务可用性恢复时长\"]\n    R3[\"RPO：恢复点目标\"] --> R4[\"数据丢失时长\"]\n    R5[\"同城冷备\"] --> R1\n    R5 --> R3\n    R6[\"同城热备\"] --> R1\n    R6 --> R3\n    R7[\"同城双活\"] --> R1\n    R7 --> R3\n    R8[\"异地双活\"] --> R1\n    R8 --> R3\n    style R5 fill:#f9f,stroke:#333,stroke-width:1px\n    style R6 fill:#bbf,stroke:#333,stroke-width:1px\n    style R7 fill:#bfb,stroke:#333,stroke-width:1px\n    style R8 fill:#fbf,stroke:#333,stroke-width:1px"
+    },
+    {
+      "title": "同城冷备、热备、双活 流程对比",
+      "code": "flowchart TD\n    C1[\"机房A 主库\"] --> C3[\"定时备份\"]\n    C3 --> C2[\"机房B 备库\"]\n    C2 --> C4[\"手动切换\"]\n    C4 --> C5[\"域名解析切换\"]\n    C5 --> C1\n    C1 --> C6[\"实时同步\"]\n    C6 --> C2\n    C2 --> C7[\"自动故障切换\"]\n    C7 --> C8[\"业务持续运行\"]\n    style C3 fill:#eef,stroke:#333,stroke-width:1px\n    style C6 fill:#eef,stroke:#333,stroke-width:1px\n    style C7 fill:#eef,stroke:#333,stroke-width:1px"
+    },
+    {
+      "title": "异地多活中心机房模型",
+      "code": "flowchart TD\n    M2[\"机房A\"] --> M5[\"双向同步链路\"] --> M1[\"中心机房\"]\n    M3[\"机房B\"] --> M5\n    M4[\"机房C\"] --> M5\n    M1 --> M6[\"数据写入路由\"]\n    M6 --> M2\n    M6 --> M3\n    M6 --> M4\n    M7[\"用户请求路由\"] --> M2\n    M7 --> M3\n    M7 --> M4\n    M2 --> M8[\"故障切换\"]\n    M3 --> M8\n    M4 --> M8\n    M8 --> M1\n    M1 --> M9[\"中心机房容错\"]\n    style M5 fill:#ddf,stroke:#333,stroke-width:1px\n    style M6 fill:#ddf,stroke:#333,stroke-width:1px\n    style M8 fill:#fdd,stroke:#333,stroke-width:1px"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:03:25+00:00"
+}

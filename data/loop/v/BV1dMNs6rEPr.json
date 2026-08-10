@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1dMNs6rEPr",
+  "title": "如何解决ai生成像素图的问题？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 254,
+  "text": "用AI制作游戏听起来很容易\n要求AI为你生成一个特定的像素角色\n首先我要求AI在纯色背景下生成像素士兵\n很快他给了我这个一个洋红色背景上的\n经典像素士兵\n此时如果你放大就会发现它根本不是像素图\n而是用高精度伪装成了像素图像\n所以我创造了精灵工坊\n选择你的AI图片\n单击背景将其删除\n将图像重建到实际的像素网格上\n然后放大并修复局部的切割错误\n其实也没必要抠的多干净\n后面像素会处理掉的\n在这里得到一个干净的轮廓\n选择真实的输出尺寸\n它在GITHUB上是免费的\n并且支持AI助手直接使用\n导入到你的游戏中使用吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1dMNs6rEPr",
+  "published_at": "1783740685",
+  "fetched_at": "2026-08-07T17:09:58+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 像素图后处理知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"AI生成像素角色需求\"] --> B1[\"AI输出非真实像素图像\"]\n    B1 --> C1[\"需后处理为像素网格\"]\n    C1 --> D1[\"使用精灵工坊\"]\n    D1 --> E1[\"选择AI图片\"]\n    D1 --> F1[\"删除背景\"]\n    D1 --> G1[\"重建像素网格\"]\n    D1 --> H1[\"放大并修复切割错误\"]\n    D1 --> I1[\"得到干净轮廓\"]\n    D1 --> J1[\"选择真实输出尺寸\"]\n    J1 --> K1[\"导入游戏使用\"]\n```\n<!-- Evidence: [BV1dMNs6rEPr P1 00:00], [BV1dMNs6rEPr P1 00:02], [BV1dMNs6rEPr P1 00:05], [BV1dMNs6rEPr P1 00:16], [BV1dMNs6rEPr P1 00:19], [BV1dMNs6rEPr P1 00:22], [BV1dMNs6rEPr P1 00:24], [BV1dMNs6rEPr P1 00:26], [BV1dMNs6rEPr P1 00:28], [BV1dMNs6rEPr P1 00:30], [BV1dMNs6rEPr P1 00:38], [BV1dMNs6rEPr P1 00:40], [BV1dMNs6rEPr P1 00:55] -->\n\n## 详细工作流\n\n```mermaid\nflowchart LR\n    S1[\"选择AI生成图片\"] --> S2[\"单击背景删除\"]\n    S2 --> S3[\"重建到像素网格\"]\n    S3 --> S4[\"放大\"]\n    S4 --> S5[\"局部切割错误修复\"]\n    S5 --> S6[\"轮廓清理\"]\n    S6 --> S7[\"设定输出尺寸\"]\n    S7 --> S8[\"导出并导入游戏\"]\n```\n<!-- Evidence: [BV1dMNs6rEPr P1 00:24], [BV1dMNs6rEPr P1 00:26], [BV1dMNs6rEPr P1 00:28], [BV1dMNs6rEPr P1 00:30], [BV1dMNs6rEPr P1 00:38], [BV1dMNs6rEPr P1 00:40], [BV1dMNs6rEPr P1 00:55] -->\n\n## 工具特性\n\n```mermaid\nflowchart TD\n    T1[\"精灵工坊\"] --> T2[\"免费（GitHub）\"]\n    T1 --> T3[\"支持AI助手直接使用\"]\n    T1 --> T4[\"适用于游戏像素资源\"]\n    T2 --> T5[\"开源代码\"]\n    T2 --> T6[\"跨平台运行\"]\n    T3 --> T7[\"可直接导入AI生成图像\"]\n    T4 --> T8[\"生成干净像素轮廓\"]\n```\n<!-- Evidence: [BV1dMNs6rEPr P1 00:51], [BV1dMNs6rEPr P1 00:52] -->\n\n## 抠图细节决策\n\n```mermaid\nflowchart TD\n    D1[\"是否需要完全抠图？\"] -->|不必| D2[\"保留部分背景\"]\n    D1 -->|需要| D3[\"手动精细抠图\"]\n    D2 --> D4[\"后期像素处理修复\"]\n    D3 --> D4\n    D2 --> D5[\"降低工作量\"]\n    D3 --> D6[\"提高精度\"]\n    D5 --> D8[\"时间成本\"]\n    D6 --> D8\n    D4 --> D7[\"最终像素质量\"]\n    D8 --> D7\n```\n<!-- Evidence: [BV1dMNs6rEPr P1 00:34], [BV1dMNs6rEPr P1 00:36] -->",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"AI生成像素角色需求\"] --> B1[\"AI输出非真实像素图像\"]\n    B1 --> C1[\"需后处理为像素网格\"]\n    C1 --> D1[\"使用精灵工坊\"]\n    D1 --> E1[\"选择AI图片\"]\n    D1 --> F1[\"删除背景\"]\n    D1 --> G1[\"重建像素网格\"]\n    D1 --> H1[\"放大并修复切割错误\"]\n    D1 --> I1[\"得到干净轮廓\"]\n    D1 --> J1[\"选择真实输出尺寸\"]\n    J1 --> K1[\"导入游戏使用\"]"
+        },
+        {
+          "title": "详细工作流",
+          "code": "flowchart LR\n    S1[\"选择AI生成图片\"] --> S2[\"单击背景删除\"]\n    S2 --> S3[\"重建到像素网格\"]\n    S3 --> S4[\"放大\"]\n    S4 --> S5[\"局部切割错误修复\"]\n    S5 --> S6[\"轮廓清理\"]\n    S6 --> S7[\"设定输出尺寸\"]\n    S7 --> S8[\"导出并导入游戏\"]"
+        },
+        {
+          "title": "工具特性",
+          "code": "flowchart TD\n    T1[\"精灵工坊\"] --> T2[\"免费（GitHub）\"]\n    T1 --> T3[\"支持AI助手直接使用\"]\n    T1 --> T4[\"适用于游戏像素资源\"]\n    T2 --> T5[\"开源代码\"]\n    T2 --> T6[\"跨平台运行\"]\n    T3 --> T7[\"可直接导入AI生成图像\"]\n    T4 --> T8[\"生成干净像素轮廓\"]"
+        },
+        {
+          "title": "抠图细节决策",
+          "code": "flowchart TD\n    D1[\"是否需要完全抠图？\"] -->|不必| D2[\"保留部分背景\"]\n    D1 -->|需要| D3[\"手动精细抠图\"]\n    D2 --> D4[\"后期像素处理修复\"]\n    D3 --> D4\n    D2 --> D5[\"降低工作量\"]\n    D3 --> D6[\"提高精度\"]\n    D5 --> D8[\"时间成本\"]\n    D6 --> D8\n    D4 --> D7[\"最终像素质量\"]\n    D8 --> D7"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T17:10:39+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 像素图后处理知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    A1[\"AI生成像素角色需求\"] --> B1[\"AI输出非真实像素图像\"]\n    B1 --> C1[\"需后处理为像素网格\"]\n    C1 --> D1[\"使用精灵工坊\"]\n    D1 --> E1[\"选择AI图片\"]\n    D1 --> F1[\"删除背景\"]\n    D1 --> G1[\"重建像素网格\"]\n    D1 --> H1[\"放大并修复切割错误\"]\n    D1 --> I1[\"得到干净轮廓\"]\n    D1 --> J1[\"选择真实输出尺寸\"]\n    J1 --> K1[\"导入游戏使用\"]\n```\n<!-- Evidence: [BV1dMNs6rEPr P1 00:00], [BV1dMNs6rEPr P1 00:02], [BV1dMNs6rEPr P1 00:05], [BV1dMNs6rEPr P1 00:16], [BV1dMNs6rEPr P1 00:19], [BV1dMNs6rEPr P1 00:22], [BV1dMNs6rEPr P1 00:24], [BV1dMNs6rEPr P1 00:26], [BV1dMNs6rEPr P1 00:28], [BV1dMNs6rEPr P1 00:30], [BV1dMNs6rEPr P1 00:38], [BV1dMNs6rEPr P1 00:40], [BV1dMNs6rEPr P1 00:55] -->\n\n## 详细工作流\n\n```mermaid\nflowchart LR\n    S1[\"选择AI生成图片\"] --> S2[\"单击背景删除\"]\n    S2 --> S3[\"重建到像素网格\"]\n    S3 --> S4[\"放大\"]\n    S4 --> S5[\"局部切割错误修复\"]\n    S5 --> S6[\"轮廓清理\"]\n    S6 --> S7[\"设定输出尺寸\"]\n    S7 --> S8[\"导出并导入游戏\"]\n```\n<!-- Evidence: [BV1dMNs6rEPr P1 00:24], [BV1dMNs6rEPr P1 00:26], [BV1dMNs6rEPr P1 00:28], [BV1dMNs6rEPr P1 00:30], [BV1dMNs6rEPr P1 00:38], [BV1dMNs6rEPr P1 00:40], [BV1dMNs6rEPr P1 00:55] -->\n\n## 工具特性\n\n```mermaid\nflowchart TD\n    T1[\"精灵工坊\"] --> T2[\"免费（GitHub）\"]\n    T1 --> T3[\"支持AI助手直接使用\"]\n    T1 --> T4[\"适用于游戏像素资源\"]\n    T2 --> T5[\"开源代码\"]\n    T2 --> T6[\"跨平台运行\"]\n    T3 --> T7[\"可直接导入AI生成图像\"]\n    T4 --> T8[\"生成干净像素轮廓\"]\n```\n<!-- Evidence: [BV1dMNs6rEPr P1 00:51], [BV1dMNs6rEPr P1 00:52] -->\n\n## 抠图细节决策\n\n```mermaid\nflowchart TD\n    D1[\"是否需要完全抠图？\"] -->|不必| D2[\"保留部分背景\"]\n    D1 -->|需要| D3[\"手动精细抠图\"]\n    D2 --> D4[\"后期像素处理修复\"]\n    D3 --> D4\n    D2 --> D5[\"降低工作量\"]\n    D3 --> D6[\"提高精度\"]\n    D5 --> D8[\"时间成本\"]\n    D6 --> D8\n    D4 --> D7[\"最终像素质量\"]\n    D8 --> D7\n```\n<!-- Evidence: [BV1dMNs6rEPr P1 00:34], [BV1dMNs6rEPr P1 00:36] -->",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"AI生成像素角色需求\"] --> B1[\"AI输出非真实像素图像\"]\n    B1 --> C1[\"需后处理为像素网格\"]\n    C1 --> D1[\"使用精灵工坊\"]\n    D1 --> E1[\"选择AI图片\"]\n    D1 --> F1[\"删除背景\"]\n    D1 --> G1[\"重建像素网格\"]\n    D1 --> H1[\"放大并修复切割错误\"]\n    D1 --> I1[\"得到干净轮廓\"]\n    D1 --> J1[\"选择真实输出尺寸\"]\n    J1 --> K1[\"导入游戏使用\"]"
+    },
+    {
+      "title": "详细工作流",
+      "code": "flowchart LR\n    S1[\"选择AI生成图片\"] --> S2[\"单击背景删除\"]\n    S2 --> S3[\"重建到像素网格\"]\n    S3 --> S4[\"放大\"]\n    S4 --> S5[\"局部切割错误修复\"]\n    S5 --> S6[\"轮廓清理\"]\n    S6 --> S7[\"设定输出尺寸\"]\n    S7 --> S8[\"导出并导入游戏\"]"
+    },
+    {
+      "title": "工具特性",
+      "code": "flowchart TD\n    T1[\"精灵工坊\"] --> T2[\"免费（GitHub）\"]\n    T1 --> T3[\"支持AI助手直接使用\"]\n    T1 --> T4[\"适用于游戏像素资源\"]\n    T2 --> T5[\"开源代码\"]\n    T2 --> T6[\"跨平台运行\"]\n    T3 --> T7[\"可直接导入AI生成图像\"]\n    T4 --> T8[\"生成干净像素轮廓\"]"
+    },
+    {
+      "title": "抠图细节决策",
+      "code": "flowchart TD\n    D1[\"是否需要完全抠图？\"] -->|不必| D2[\"保留部分背景\"]\n    D1 -->|需要| D3[\"手动精细抠图\"]\n    D2 --> D4[\"后期像素处理修复\"]\n    D3 --> D4\n    D2 --> D5[\"降低工作量\"]\n    D3 --> D6[\"提高精度\"]\n    D5 --> D8[\"时间成本\"]\n    D6 --> D8\n    D4 --> D7[\"最终像素质量\"]\n    D8 --> D7"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T17:10:39+00:00"
+}

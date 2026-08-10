@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1MMDDBmEwa",
+  "title": "技术更强为什么没火？Hermes Agent vs OpenClaw 深度拆解",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1496,
+  "text": "最近AI圈有个很有意思的现象\n技术更强的东西反而没有引起应有的轰动\n2026年1月\n一个奥地利开发者用一个小时做的小工具\n在三周内狂揽250000github star\n连JASON皇都亲自站出来说\n这是他有史以来见过最重要的软件发布\n同一个月\n另一个开源A真的项目也悄悄上线了\n它支持200多个模型\n有真正的自改进能力\n系统比open cloud复杂得多\n结果呢四个月过去了\n他的stars还不到前者的16\n这就是hermes agent和open cloud的故事\n今天这期我们来好好拆解一下\n为什么技术更扎实的东西反而没有火\n先说open cloud\n因为它太特殊了\n他的创始人peter steinberger是个传奇人物\n花了13年做出PSPDF\nKATE卖了1亿美元\n然后bun not消失了3年\n2025年底\n他回归AI领域\n做的第一个项目就是open cloud\n一开始它叫cloud bot\n因为太像cloud\n被ANTHROPIC发商标投诉\n改名MODEBT\n三天后又改名open cloud\n然后就爆炸了\n它发布的时机特别好\n2026年1月\n整个AI圈都在找一个真正能帮用户做事\n而不是只聊天的agent\nopen cloud刚好填了这个空\n而且当时还延伸了MOTEBOOK\n一个社交网络\n只允许AI发帖\n这条新闻在全球媒体刷屏了\n创始人本身\nstan burger卖掉公司\nburn out回归\n做出世界最快的开源项目\n被OpenAI招聘\n这个叙事好到连编剧都编不出来\n然后是hermes agent\n他2026年2月底发布\n来自north research\n一家融了7000万美元\n专注去中心化AI的实验室\n技术层面\n它几乎在每一个维度都比open cloud强\n它有自改进循环\n每完成15个任务会自动复盘\n把成功的模式写成可复用的技能\n下次遇到类似问题直接调用\n它有四层记忆系统\n热数据常驻上下文\n冷数据组向量检索\n还能自己保存重要信息\n它支持200多个模型\n不绑定任何提供商\n而且他是零遥测的\n数据永远不会离开你的服务器\n那为什么没有人那么热烈的讨论它呢\n首先它没有mod book等价的引爆事件\nHERMES的自改进需要几周才能感知到价值\nopen cloud安装后5分钟你就知道他能干什么\n而且他缺少故事\nstein burger有卖掉公司\nbun not回归改变世界的完整故事\nnorth research只是一个公司\n背后没有隐发共鸣的个人叙事\n再加上他推出的时候不太好\nopen cloud已经吸走了所有注意力\nHERMES发布什\n整个社区已经在讨论下一个open cloud是什么\n而不是open cloud的挑战者来了\n但我真正想说的是\nHERMES的故事\n其实是一个关于技术\n价值和传播能力的经典案例\n技术更强不等于一定会赢\nopen cloud证明能在客厅里讲清楚的产品\n就是比需要看文档才能理解的产品更容易传播\n如果你看过他的源码\n就会发现\npeter没说错\n从来不亲自review代码\nHERMES证明了在特定场景下\n真正有价值的技术创新可以安静的存在\n不需要VR\n对于真正需要它的人来说\n在乎隐私的开发者\n需要本地运行的团队\n想要agent真正学会自己工作流的人\nHERMES可能才是答案\n但是如果你已经不是一个新手\n并且工作流也稳定了\n或许并不需要再安装一个HERMES来消耗你的token\n这期的本质上是一个选择题\n你是要一个5分钟内让你惊叹的工具\n还是一个六个月后让你离不开的系统\n没有标准答案\n取决于你要什么\n千万别没需求创造需求",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1MMDDBmEwa",
+  "published_at": "1775961895",
+  "fetched_at": "2026-08-09T01:39:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Hermes Agent 与 Open Cloud 对比图谱\n\n## 项目概览\n```mermaid\nflowchart TD\n    O1[\"Open Cloud\"] --> O2[\"发布: 2026‑01\"]\n    O1 --> O3[\"创始人: Peter Steinberger (传奇)\"]\n    O1 --> O4[\"技术: 5 分钟即显效用\"]\n    O1 --> O5[\"传播: 媒体刷屏、故事丰富\"]\n    O1 --> O6[\"Stars: 250k（3 周）\"]\n\n    H1[\"Hermes Agent\"] --> H2[\"发布: 2026‑02\"]\n    H1 --> H3[\"团队: North Research，融资 $70 M\"]\n    H1 --> H4[\"技术: 自改进循环、四层记忆\"]\n    H1 --> H5[\"传播: 缺乏引爆事件、故事薄弱\"]\n    H1 --> H6[\"Stars: < 16% Open Cloud（4 月）\"]\n\n    O3 --> O5\n    H3 --> H5\n```\nEvidence:  \n- Open Cloud 发布: [BV1MMDDBmEwa P1 01:00]  \n- Hermes Agent 发布: [BV1MMDDBmEwa P1 01:24]  \n- Open Cloud 250k stars: [BV1MMDDBmEwa P1 00:09]‑[BV1MMDDBmEwa P1 00:12]  \n- Hermes stars <16%: [BV1MMDDBmEwa P1 00:27]‑[BV1MMDDBmEwa P1 00:29]  \n- Peter Steinberger 背景: [BV1MMDDBmEwa P1 00:38]‑[BV1MMDDBmEwa P1 00:44]  \n- North Research 融资: [BV1MMDDBmEwa P1 01:27]‑[BV1MMDDBmEwa P1 01:29]  \n- Hermes 技术特性: [BV1MMDDBmEwa P1 01:34]‑[BV1MMDDBmEwa P1 01:51]\n\n## 影响传播的关键因素\n```mermaid\nflowchart TD\n    F1[\"故事叙事\"] -->|强→| H1[\"高传播\"]\n    F2[\"引爆事件\"] -->|有→| H1\n    F3[\"即时可见价值\"] -->|5 分钟演示→| H1\n    F4[\"发布时间竞争\"] -->|被前者抢占→| L1[\"低传播\"]\n    F5[\"技术强度\"] -->|不决定传播| L1\n\n    H1 --> O1[\"Open Cloud 成功\"]\n    L1 --> O2[\"Hermes 低关注\"]\n```\nEvidence:  \n- 缺乏等价的 mod book 引爆: [BV1MMDDBmEwa P1 01:56]  \n- 自改进价值需数周显现: [BV1MMDDBmEwa P1 01:59]  \n- Open Cloud 5 分钟即显效用: [BV1MMDDBmEwa P1 02:02]  \n- 故事薄弱（创始人、公司缺乏个人叙事）: [BV1MMDDBmEwa P1 02:06]‑[BV1MMDDBmEwa P1 02:12]  \n- 发布时间被 Open Cloud 抢占: [BV1MMDDBmEwa P1 02:15]‑[BV1MMDDBmEwa P1 02:18]\n\n## 选型决策路径\n```mermaid\nflowchart TD\n    S[\"需求评估\"] --> Q1{\"需要快速惊叹的工具？\"}\n    Q1 -- 是 --> A1[\"选择 Open Cloud（5 分钟即感受）\"]\n    Q1 -- 否 --> Q2{\"重视隐私、本地运行、长期自学习？\"}\n    Q2 -- 是 --> A2[\"选择 Hermes Agent（零遥测、本地部署）\"]\n    Q2 -- 否 --> A3[\"可不装任何新 Agent\"]\n\n    A1 --> D1[\"适合新手或想快速展示\"]\n    A2 --> D2[\"适合隐私敏感、工作流自动化\"]\n    A3 --> D3[\"已有成熟工作流，省 token\"]\n```\nEvidence:  \n- 选择题阐述: [BV1MMDDBmEwa P1 03:07]‑[BV1MMDDBmEwa P1 03:14]  \n- Hermes 适合隐私开发者、本地团队: [BV1MMDDBmEwa P1 02:48]‑[BV1MMDDBmEwa P1 02:53]  \n- Open Cloud 5 分钟惊艳: [BV1MMDDBmEwa P1 03:07]‑[BV1MMDDBmEwa P1 03:10]",
+      "diagrams": [
+        {
+          "title": "项目概览",
+          "code": "flowchart TD\n    O1[\"Open Cloud\"] --> O2[\"发布: 2026‑01\"]\n    O1 --> O3[\"创始人: Peter Steinberger (传奇)\"]\n    O1 --> O4[\"技术: 5 分钟即显效用\"]\n    O1 --> O5[\"传播: 媒体刷屏、故事丰富\"]\n    O1 --> O6[\"Stars: 250k（3 周）\"]\n\n    H1[\"Hermes Agent\"] --> H2[\"发布: 2026‑02\"]\n    H1 --> H3[\"团队: North Research，融资 $70 M\"]\n    H1 --> H4[\"技术: 自改进循环、四层记忆\"]\n    H1 --> H5[\"传播: 缺乏引爆事件、故事薄弱\"]\n    H1 --> H6[\"Stars: < 16% Open Cloud（4 月）\"]\n\n    O3 --> O5\n    H3 --> H5"
+        },
+        {
+          "title": "影响传播的关键因素",
+          "code": "flowchart TD\n    F1[\"故事叙事\"] -->|强→| H1[\"高传播\"]\n    F2[\"引爆事件\"] -->|有→| H1\n    F3[\"即时可见价值\"] -->|5 分钟演示→| H1\n    F4[\"发布时间竞争\"] -->|被前者抢占→| L1[\"低传播\"]\n    F5[\"技术强度\"] -->|不决定传播| L1\n\n    H1 --> O1[\"Open Cloud 成功\"]\n    L1 --> O2[\"Hermes 低关注\"]"
+        },
+        {
+          "title": "选型决策路径",
+          "code": "flowchart TD\n    S[\"需求评估\"] --> Q1{\"需要快速惊叹的工具？\"}\n    Q1 -- 是 --> A1[\"选择 Open Cloud（5 分钟即感受）\"]\n    Q1 -- 否 --> Q2{\"重视隐私、本地运行、长期自学习？\"}\n    Q2 -- 是 --> A2[\"选择 Hermes Agent（零遥测、本地部署）\"]\n    Q2 -- 否 --> A3[\"可不装任何新 Agent\"]\n\n    A1 --> D1[\"适合新手或想快速展示\"]\n    A2 --> D2[\"适合隐私敏感、工作流自动化\"]\n    A3 --> D3[\"已有成熟工作流，省 token\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T01:39:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Hermes Agent 与 Open Cloud 对比图谱\n\n## 项目概览\n```mermaid\nflowchart TD\n    O1[\"Open Cloud\"] --> O2[\"发布: 2026‑01\"]\n    O1 --> O3[\"创始人: Peter Steinberger (传奇)\"]\n    O1 --> O4[\"技术: 5 分钟即显效用\"]\n    O1 --> O5[\"传播: 媒体刷屏、故事丰富\"]\n    O1 --> O6[\"Stars: 250k（3 周）\"]\n\n    H1[\"Hermes Agent\"] --> H2[\"发布: 2026‑02\"]\n    H1 --> H3[\"团队: North Research，融资 $70 M\"]\n    H1 --> H4[\"技术: 自改进循环、四层记忆\"]\n    H1 --> H5[\"传播: 缺乏引爆事件、故事薄弱\"]\n    H1 --> H6[\"Stars: < 16% Open Cloud（4 月）\"]\n\n    O3 --> O5\n    H3 --> H5\n```\nEvidence:  \n- Open Cloud 发布: [BV1MMDDBmEwa P1 01:00]  \n- Hermes Agent 发布: [BV1MMDDBmEwa P1 01:24]  \n- Open Cloud 250k stars: [BV1MMDDBmEwa P1 00:09]‑[BV1MMDDBmEwa P1 00:12]  \n- Hermes stars <16%: [BV1MMDDBmEwa P1 00:27]‑[BV1MMDDBmEwa P1 00:29]  \n- Peter Steinberger 背景: [BV1MMDDBmEwa P1 00:38]‑[BV1MMDDBmEwa P1 00:44]  \n- North Research 融资: [BV1MMDDBmEwa P1 01:27]‑[BV1MMDDBmEwa P1 01:29]  \n- Hermes 技术特性: [BV1MMDDBmEwa P1 01:34]‑[BV1MMDDBmEwa P1 01:51]\n\n## 影响传播的关键因素\n```mermaid\nflowchart TD\n    F1[\"故事叙事\"] -->|强→| H1[\"高传播\"]\n    F2[\"引爆事件\"] -->|有→| H1\n    F3[\"即时可见价值\"] -->|5 分钟演示→| H1\n    F4[\"发布时间竞争\"] -->|被前者抢占→| L1[\"低传播\"]\n    F5[\"技术强度\"] -->|不决定传播| L1\n\n    H1 --> O1[\"Open Cloud 成功\"]\n    L1 --> O2[\"Hermes 低关注\"]\n```\nEvidence:  \n- 缺乏等价的 mod book 引爆: [BV1MMDDBmEwa P1 01:56]  \n- 自改进价值需数周显现: [BV1MMDDBmEwa P1 01:59]  \n- Open Cloud 5 分钟即显效用: [BV1MMDDBmEwa P1 02:02]  \n- 故事薄弱（创始人、公司缺乏个人叙事）: [BV1MMDDBmEwa P1 02:06]‑[BV1MMDDBmEwa P1 02:12]  \n- 发布时间被 Open Cloud 抢占: [BV1MMDDBmEwa P1 02:15]‑[BV1MMDDBmEwa P1 02:18]\n\n## 选型决策路径\n```mermaid\nflowchart TD\n    S[\"需求评估\"] --> Q1{\"需要快速惊叹的工具？\"}\n    Q1 -- 是 --> A1[\"选择 Open Cloud（5 分钟即感受）\"]\n    Q1 -- 否 --> Q2{\"重视隐私、本地运行、长期自学习？\"}\n    Q2 -- 是 --> A2[\"选择 Hermes Agent（零遥测、本地部署）\"]\n    Q2 -- 否 --> A3[\"可不装任何新 Agent\"]\n\n    A1 --> D1[\"适合新手或想快速展示\"]\n    A2 --> D2[\"适合隐私敏感、工作流自动化\"]\n    A3 --> D3[\"已有成熟工作流，省 token\"]\n```\nEvidence:  \n- 选择题阐述: [BV1MMDDBmEwa P1 03:07]‑[BV1MMDDBmEwa P1 03:14]  \n- Hermes 适合隐私开发者、本地团队: [BV1MMDDBmEwa P1 02:48]‑[BV1MMDDBmEwa P1 02:53]  \n- Open Cloud 5 分钟惊艳: [BV1MMDDBmEwa P1 03:07]‑[BV1MMDDBmEwa P1 03:10]",
+  "diagrams": [
+    {
+      "title": "项目概览",
+      "code": "flowchart TD\n    O1[\"Open Cloud\"] --> O2[\"发布: 2026‑01\"]\n    O1 --> O3[\"创始人: Peter Steinberger (传奇)\"]\n    O1 --> O4[\"技术: 5 分钟即显效用\"]\n    O1 --> O5[\"传播: 媒体刷屏、故事丰富\"]\n    O1 --> O6[\"Stars: 250k（3 周）\"]\n\n    H1[\"Hermes Agent\"] --> H2[\"发布: 2026‑02\"]\n    H1 --> H3[\"团队: North Research，融资 $70 M\"]\n    H1 --> H4[\"技术: 自改进循环、四层记忆\"]\n    H1 --> H5[\"传播: 缺乏引爆事件、故事薄弱\"]\n    H1 --> H6[\"Stars: < 16% Open Cloud（4 月）\"]\n\n    O3 --> O5\n    H3 --> H5"
+    },
+    {
+      "title": "影响传播的关键因素",
+      "code": "flowchart TD\n    F1[\"故事叙事\"] -->|强→| H1[\"高传播\"]\n    F2[\"引爆事件\"] -->|有→| H1\n    F3[\"即时可见价值\"] -->|5 分钟演示→| H1\n    F4[\"发布时间竞争\"] -->|被前者抢占→| L1[\"低传播\"]\n    F5[\"技术强度\"] -->|不决定传播| L1\n\n    H1 --> O1[\"Open Cloud 成功\"]\n    L1 --> O2[\"Hermes 低关注\"]"
+    },
+    {
+      "title": "选型决策路径",
+      "code": "flowchart TD\n    S[\"需求评估\"] --> Q1{\"需要快速惊叹的工具？\"}\n    Q1 -- 是 --> A1[\"选择 Open Cloud（5 分钟即感受）\"]\n    Q1 -- 否 --> Q2{\"重视隐私、本地运行、长期自学习？\"}\n    Q2 -- 是 --> A2[\"选择 Hermes Agent（零遥测、本地部署）\"]\n    Q2 -- 否 --> A3[\"可不装任何新 Agent\"]\n\n    A1 --> D1[\"适合新手或想快速展示\"]\n    A2 --> D2[\"适合隐私敏感、工作流自动化\"]\n    A3 --> D3[\"已有成熟工作流，省 token\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T01:39:41+00:00"
+}

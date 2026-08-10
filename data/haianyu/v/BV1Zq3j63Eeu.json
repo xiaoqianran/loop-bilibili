@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Zq3j63Eeu",
+  "title": "191. 如何可视化LoRA？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 172,
+  "text": "今天的问题是如何可视化LAURA在全量微调当中\n要更新这个大大的权重矩阵W\n而在LAURA微调当中\n会把这个大大的权重矩阵W冻住\n不更新\n然后增加一个旁路\n这个旁路由一个瘦高的小矩阵\nA乘一个扁平的小矩阵B得来\n再乘以一个缩放系数\n阿尔法除以R这两个矩阵的乘积\n形状和W的形状相同\n所以就可以和W相加\n写在同一个括号里\n最终还可以合并回一个矩阵",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Zq3j63Eeu",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:12:23+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# LoRA 可视化知识图谱\n\n## 总览 [BV1Zq3j63Eeu P1 00:00]\n```mermaid\nflowchart TD\n    FT[全量微调] -->|更新| W[权重矩阵 W]\n    LoRA[LoRA 微调] -->|冻结| W\n    LoRA -->|增加| Side[旁路]\n    Side -->|与| W\n```\n\n## 旁路构成 [BV1Zq3j63Eeu P1 00:15]\n```mermaid\nflowchart TD\n    Side[旁路] --> A[\"矩阵 A (瘦高)\"]\n    Side --> B[\"矩阵 B (扁平)\"]\n    A --> AB[\"A × B\"]\n    B --> AB\n    AB --> Scale[\"* α / r\"]\n    Scale --> Prod[\"产物 (形状同 W)\"]\n    Prod --> Add[\"W + 产物\"]\n```\n\n## 合并回单矩阵 [BV1Zq3j63Eeu P1 00:33]\n```mermaid\nflowchart TD\n    Add[\"W + 产物\"] --> Merge[\"合并回单矩阵\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览 [BV1Zq3j63Eeu P1 00:00]",
+          "code": "flowchart TD\n    FT[全量微调] -->|更新| W[权重矩阵 W]\n    LoRA[LoRA 微调] -->|冻结| W\n    LoRA -->|增加| Side[旁路]\n    Side -->|与| W"
+        },
+        {
+          "title": "旁路构成 [BV1Zq3j63Eeu P1 00:15]",
+          "code": "flowchart TD\n    Side[旁路] --> A[\"矩阵 A (瘦高)\"]\n    Side --> B[\"矩阵 B (扁平)\"]\n    A --> AB[\"A × B\"]\n    B --> AB\n    AB --> Scale[\"* α / r\"]\n    Scale --> Prod[\"产物 (形状同 W)\"]\n    Prod --> Add[\"W + 产物\"]"
+        },
+        {
+          "title": "合并回单矩阵 [BV1Zq3j63Eeu P1 00:33]",
+          "code": "flowchart TD\n    Add[\"W + 产物\"] --> Merge[\"合并回单矩阵\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T18:15:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# LoRA 可视化知识图谱\n\n## 总览 [BV1Zq3j63Eeu P1 00:00]\n```mermaid\nflowchart TD\n    FT[全量微调] -->|更新| W[权重矩阵 W]\n    LoRA[LoRA 微调] -->|冻结| W\n    LoRA -->|增加| Side[旁路]\n    Side -->|与| W\n```\n\n## 旁路构成 [BV1Zq3j63Eeu P1 00:15]\n```mermaid\nflowchart TD\n    Side[旁路] --> A[\"矩阵 A (瘦高)\"]\n    Side --> B[\"矩阵 B (扁平)\"]\n    A --> AB[\"A × B\"]\n    B --> AB\n    AB --> Scale[\"* α / r\"]\n    Scale --> Prod[\"产物 (形状同 W)\"]\n    Prod --> Add[\"W + 产物\"]\n```\n\n## 合并回单矩阵 [BV1Zq3j63Eeu P1 00:33]\n```mermaid\nflowchart TD\n    Add[\"W + 产物\"] --> Merge[\"合并回单矩阵\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览 [BV1Zq3j63Eeu P1 00:00]",
+      "code": "flowchart TD\n    FT[全量微调] -->|更新| W[权重矩阵 W]\n    LoRA[LoRA 微调] -->|冻结| W\n    LoRA -->|增加| Side[旁路]\n    Side -->|与| W"
+    },
+    {
+      "title": "旁路构成 [BV1Zq3j63Eeu P1 00:15]",
+      "code": "flowchart TD\n    Side[旁路] --> A[\"矩阵 A (瘦高)\"]\n    Side --> B[\"矩阵 B (扁平)\"]\n    A --> AB[\"A × B\"]\n    B --> AB\n    AB --> Scale[\"* α / r\"]\n    Scale --> Prod[\"产物 (形状同 W)\"]\n    Prod --> Add[\"W + 产物\"]"
+    },
+    {
+      "title": "合并回单矩阵 [BV1Zq3j63Eeu P1 00:33]",
+      "code": "flowchart TD\n    Add[\"W + 产物\"] --> Merge[\"合并回单矩阵\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:15:28+00:00"
+}

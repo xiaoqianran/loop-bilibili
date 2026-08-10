@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1KxNV6hEiH",
+  "title": "我自掏腰包做了个codex公益站 欢迎大家前来免费使用！已同步更新5.6系列模型！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 433,
+  "text": "项目都已经爆红了\n你还在让一个模型从头到尾硬扛吗\ncodex现在新增三款GBT5.6模型\nSota luna\n真正难的不是模型越多越好\n而是你有没有把任务交给合适的模型\n先看这个快要交付的项目需求文档一团乱\n终端全是报错\n换到codex CEO\n负责复杂开放的任务\n需要更多分析和打磨\nTERRA是日常开发的全能选手\n露娜适合明确重复结构化的工作\n比如提取分类转换和整理摘要\n再看effort light\n适合快速明确的小任务\nmedium在速度和深度之间平衡\nhigh high和extra high\n留给多步骤\n多来源和复杂取舍\n它不是换模型\n而是让当前模型在回答前投入更多推理\n档位越高\n也不代表每次都更好\n先从能完成任务的最低档开始\n所以我的选择很简单复杂\n改代码用SOE\n日常项目\n用terror重复整理\n用LUNA\n先是DF不够\n再往上加\n如果你还在被报错和旧代码拖住\n去视频顶部看我放的codex公益站入口\n想交流模型怎么选\n或者遇到使用问题进群问就行",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1KxNV6hEiH",
+  "published_at": "1784332800",
+  "fetched_at": "2026-08-08T21:17:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Codex 5.6 模型选型知识图谱\n\n## 1. 模型族层级与定位\n```mermaid\nflowchart TD\n    S1[\"Sota\"] -->|属于| G5[\"GBT5.6 系列\"]\n    L1[\"Luna\"] -->|属于| G5\n    T1[\"TERRA\"] -->|属于| G5\n    EL[\"Effort Light\"] -->|属于| G5\n    M1[\"Medium\"] -->|属于| G5\n    H1[\"High\"] -->|属于| G5\n    EH[\"Extra High\"] -->|属于| G5\n\n    T1 -->|定位| A1[\"全能选手·日常开发\"]\n    L1 -->|定位| A2[\"结构化重复任务<br/>提取、分类、转换、摘要\"]\n    EL -->|定位| A3[\"快速明确的小任务\"]\n    M1 -->|定位| A4[\"速度与深度平衡\"]\n    H1 -->|定位| A5[\"多步骤·多来源·复杂取舍\"]\n    EH -->|定位| A5\n```\n[BV1KxNV6hEiH P1 00:03] codex现在新增三款GBT5.6模型  \n[BV1KxNV6hEiH P1 00:06] Sota luna  \n[BV1KxNV6hEiH P1 00:20] TERRA是日常开发的全能选手  \n[BV1KxNV6hEiH P1 00:22] 露娜适合明确重复结构化的工作  \n[BV1KxNV6hEiH P1 00:27] 适合快速明确的小任务  \n[BV1KxNV6hEiH P1 00:29] medium在速度和深度之间平衡  \n[BV1KxNV6hEiH P1 00:31] high high和extra high  \n\n## 2. 任务特征 → 模型匹配决策流程\n```mermaid\nflowchart TD\n    Start[\"任务特征评估\"] --> Q1{\"是否结构化、重复？\"}\n    Q1 -- 是 --> L1[\"选用 Luna\"]\n    Q1 -- 否 --> Q2{\"是否需要快速完成小任务？\"}\n    Q2 -- 是 --> EL[\"选用 Effort Light\"]\n    Q2 -- 否 --> Q3{\"是否对速度与深度有均衡需求？\"}\n    Q3 -- 是 --> M1[\"选用 Medium\"]\n    Q3 -- 否 --> Q4{\"是否涉及多步骤、多来源、复杂取舍？\"}\n    Q4 -- 是 --> H1[\"选用 High / Extra High\"]\n    Q4 -- 否 --> T1[\"选用 TERRA（全能）\"]\n```\n[BV1KxNV6hEiH P1 00:22] 露娜适合明确重复结构化的工作  \n[BV1KxNV6hEiH P1 00:27] 适合快速明确的小任务  \n[BV1KxNV6hEiH P1 00:29] medium在速度和深度之间平衡  \n[BV1KxNV6hEiH P1 00:31] high high和extra high  \n\n## 3. 推理深度与模型档位关系\n```mermaid\nflowchart TD\n    TierLow[\"低档位<br/>(如 Effort Light)\"] -->|提升推理投入| TierMid[\"中档位<br/>(Medium)\"]\n    TierMid -->|进一步提升| TierHigh[\"高档位<br/>(High/Extra High)\"]\n    TierHigh -->|更多推理| BetterResult[\"更深入的答案\"]\n    TierLow -->|可能足够| Sufficient[\"任务已完成\"]\n    Note[\"档位越高不一定每次更好\"] --> TierLow\n    Note --> TierMid\n    Note --> TierHigh\n    Start[\"先从最低能完成任务的档位开始\"] --> TierLow\n```\n[BV1KxNV6hEiH P1 00:34] 它不是换模型  \n[BV1KxNV6hEiH P1 00:35] 而是让当前模型在回答前投入更多推理  \n[BV1KxNV6hEiH P1 00:38] 档位越高  \n[BV1KxNV6hEiH P1 00:39] 也不代表每次都更好  \n[BV1KxNV6hEiH P1 00:40] 先从能完成任务的最低档开始  \n\n## 4. 实际使用建议\n```mermaid\nflowchart TD\n    ChangeCode[\"代码改动\"] --> SOE[\"使用 SOE\"]\n    DailyProj[\"日常项目\"] --> TERRA[\"使用 TERRA 进行重复整理\"]\n    StructuredTask[\"结构化任务\"] --> LUNA[\"使用 Luna\"]\n    DFInsuff[\"DF 不够\"] --> Upgrade[\"提升档位\"]\n    Upgrade --> TERRA\n    Upgrade --> LUNA\n```\n[BV1KxNV6hEiH P1 00:44] 改代码用SOE  \n[BV1KxNV6hEiH P1 00:46] 日常项目 用terror重复整理  \n[BV1KxNV6hEiH P1 00:47] 用LUNA  \n[BV1KxNV6hEiH P1 00:47] 先是DF不够  \n[BV1KxNV6hEiH P1 00:48] 再往上加  ",
+      "diagrams": [
+        {
+          "title": "1. 模型族层级与定位",
+          "code": "flowchart TD\n    S1[\"Sota\"] -->|属于| G5[\"GBT5.6 系列\"]\n    L1[\"Luna\"] -->|属于| G5\n    T1[\"TERRA\"] -->|属于| G5\n    EL[\"Effort Light\"] -->|属于| G5\n    M1[\"Medium\"] -->|属于| G5\n    H1[\"High\"] -->|属于| G5\n    EH[\"Extra High\"] -->|属于| G5\n\n    T1 -->|定位| A1[\"全能选手·日常开发\"]\n    L1 -->|定位| A2[\"结构化重复任务<br/>提取、分类、转换、摘要\"]\n    EL -->|定位| A3[\"快速明确的小任务\"]\n    M1 -->|定位| A4[\"速度与深度平衡\"]\n    H1 -->|定位| A5[\"多步骤·多来源·复杂取舍\"]\n    EH -->|定位| A5"
+        },
+        {
+          "title": "2. 任务特征 → 模型匹配决策流程",
+          "code": "flowchart TD\n    Start[\"任务特征评估\"] --> Q1{\"是否结构化、重复？\"}\n    Q1 -- 是 --> L1[\"选用 Luna\"]\n    Q1 -- 否 --> Q2{\"是否需要快速完成小任务？\"}\n    Q2 -- 是 --> EL[\"选用 Effort Light\"]\n    Q2 -- 否 --> Q3{\"是否对速度与深度有均衡需求？\"}\n    Q3 -- 是 --> M1[\"选用 Medium\"]\n    Q3 -- 否 --> Q4{\"是否涉及多步骤、多来源、复杂取舍？\"}\n    Q4 -- 是 --> H1[\"选用 High / Extra High\"]\n    Q4 -- 否 --> T1[\"选用 TERRA（全能）\"]"
+        },
+        {
+          "title": "3. 推理深度与模型档位关系",
+          "code": "flowchart TD\n    TierLow[\"低档位<br/>(如 Effort Light)\"] -->|提升推理投入| TierMid[\"中档位<br/>(Medium)\"]\n    TierMid -->|进一步提升| TierHigh[\"高档位<br/>(High/Extra High)\"]\n    TierHigh -->|更多推理| BetterResult[\"更深入的答案\"]\n    TierLow -->|可能足够| Sufficient[\"任务已完成\"]\n    Note[\"档位越高不一定每次更好\"] --> TierLow\n    Note --> TierMid\n    Note --> TierHigh\n    Start[\"先从最低能完成任务的档位开始\"] --> TierLow"
+        },
+        {
+          "title": "4. 实际使用建议",
+          "code": "flowchart TD\n    ChangeCode[\"代码改动\"] --> SOE[\"使用 SOE\"]\n    DailyProj[\"日常项目\"] --> TERRA[\"使用 TERRA 进行重复整理\"]\n    StructuredTask[\"结构化任务\"] --> LUNA[\"使用 Luna\"]\n    DFInsuff[\"DF 不够\"] --> Upgrade[\"提升档位\"]\n    Upgrade --> TERRA\n    Upgrade --> LUNA"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T21:17:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Codex 5.6 模型选型知识图谱\n\n## 1. 模型族层级与定位\n```mermaid\nflowchart TD\n    S1[\"Sota\"] -->|属于| G5[\"GBT5.6 系列\"]\n    L1[\"Luna\"] -->|属于| G5\n    T1[\"TERRA\"] -->|属于| G5\n    EL[\"Effort Light\"] -->|属于| G5\n    M1[\"Medium\"] -->|属于| G5\n    H1[\"High\"] -->|属于| G5\n    EH[\"Extra High\"] -->|属于| G5\n\n    T1 -->|定位| A1[\"全能选手·日常开发\"]\n    L1 -->|定位| A2[\"结构化重复任务<br/>提取、分类、转换、摘要\"]\n    EL -->|定位| A3[\"快速明确的小任务\"]\n    M1 -->|定位| A4[\"速度与深度平衡\"]\n    H1 -->|定位| A5[\"多步骤·多来源·复杂取舍\"]\n    EH -->|定位| A5\n```\n[BV1KxNV6hEiH P1 00:03] codex现在新增三款GBT5.6模型  \n[BV1KxNV6hEiH P1 00:06] Sota luna  \n[BV1KxNV6hEiH P1 00:20] TERRA是日常开发的全能选手  \n[BV1KxNV6hEiH P1 00:22] 露娜适合明确重复结构化的工作  \n[BV1KxNV6hEiH P1 00:27] 适合快速明确的小任务  \n[BV1KxNV6hEiH P1 00:29] medium在速度和深度之间平衡  \n[BV1KxNV6hEiH P1 00:31] high high和extra high  \n\n## 2. 任务特征 → 模型匹配决策流程\n```mermaid\nflowchart TD\n    Start[\"任务特征评估\"] --> Q1{\"是否结构化、重复？\"}\n    Q1 -- 是 --> L1[\"选用 Luna\"]\n    Q1 -- 否 --> Q2{\"是否需要快速完成小任务？\"}\n    Q2 -- 是 --> EL[\"选用 Effort Light\"]\n    Q2 -- 否 --> Q3{\"是否对速度与深度有均衡需求？\"}\n    Q3 -- 是 --> M1[\"选用 Medium\"]\n    Q3 -- 否 --> Q4{\"是否涉及多步骤、多来源、复杂取舍？\"}\n    Q4 -- 是 --> H1[\"选用 High / Extra High\"]\n    Q4 -- 否 --> T1[\"选用 TERRA（全能）\"]\n```\n[BV1KxNV6hEiH P1 00:22] 露娜适合明确重复结构化的工作  \n[BV1KxNV6hEiH P1 00:27] 适合快速明确的小任务  \n[BV1KxNV6hEiH P1 00:29] medium在速度和深度之间平衡  \n[BV1KxNV6hEiH P1 00:31] high high和extra high  \n\n## 3. 推理深度与模型档位关系\n```mermaid\nflowchart TD\n    TierLow[\"低档位<br/>(如 Effort Light)\"] -->|提升推理投入| TierMid[\"中档位<br/>(Medium)\"]\n    TierMid -->|进一步提升| TierHigh[\"高档位<br/>(High/Extra High)\"]\n    TierHigh -->|更多推理| BetterResult[\"更深入的答案\"]\n    TierLow -->|可能足够| Sufficient[\"任务已完成\"]\n    Note[\"档位越高不一定每次更好\"] --> TierLow\n    Note --> TierMid\n    Note --> TierHigh\n    Start[\"先从最低能完成任务的档位开始\"] --> TierLow\n```\n[BV1KxNV6hEiH P1 00:34] 它不是换模型  \n[BV1KxNV6hEiH P1 00:35] 而是让当前模型在回答前投入更多推理  \n[BV1KxNV6hEiH P1 00:38] 档位越高  \n[BV1KxNV6hEiH P1 00:39] 也不代表每次都更好  \n[BV1KxNV6hEiH P1 00:40] 先从能完成任务的最低档开始  \n\n## 4. 实际使用建议\n```mermaid\nflowchart TD\n    ChangeCode[\"代码改动\"] --> SOE[\"使用 SOE\"]\n    DailyProj[\"日常项目\"] --> TERRA[\"使用 TERRA 进行重复整理\"]\n    StructuredTask[\"结构化任务\"] --> LUNA[\"使用 Luna\"]\n    DFInsuff[\"DF 不够\"] --> Upgrade[\"提升档位\"]\n    Upgrade --> TERRA\n    Upgrade --> LUNA\n```\n[BV1KxNV6hEiH P1 00:44] 改代码用SOE  \n[BV1KxNV6hEiH P1 00:46] 日常项目 用terror重复整理  \n[BV1KxNV6hEiH P1 00:47] 用LUNA  \n[BV1KxNV6hEiH P1 00:47] 先是DF不够  \n[BV1KxNV6hEiH P1 00:48] 再往上加  ",
+  "diagrams": [
+    {
+      "title": "1. 模型族层级与定位",
+      "code": "flowchart TD\n    S1[\"Sota\"] -->|属于| G5[\"GBT5.6 系列\"]\n    L1[\"Luna\"] -->|属于| G5\n    T1[\"TERRA\"] -->|属于| G5\n    EL[\"Effort Light\"] -->|属于| G5\n    M1[\"Medium\"] -->|属于| G5\n    H1[\"High\"] -->|属于| G5\n    EH[\"Extra High\"] -->|属于| G5\n\n    T1 -->|定位| A1[\"全能选手·日常开发\"]\n    L1 -->|定位| A2[\"结构化重复任务<br/>提取、分类、转换、摘要\"]\n    EL -->|定位| A3[\"快速明确的小任务\"]\n    M1 -->|定位| A4[\"速度与深度平衡\"]\n    H1 -->|定位| A5[\"多步骤·多来源·复杂取舍\"]\n    EH -->|定位| A5"
+    },
+    {
+      "title": "2. 任务特征 → 模型匹配决策流程",
+      "code": "flowchart TD\n    Start[\"任务特征评估\"] --> Q1{\"是否结构化、重复？\"}\n    Q1 -- 是 --> L1[\"选用 Luna\"]\n    Q1 -- 否 --> Q2{\"是否需要快速完成小任务？\"}\n    Q2 -- 是 --> EL[\"选用 Effort Light\"]\n    Q2 -- 否 --> Q3{\"是否对速度与深度有均衡需求？\"}\n    Q3 -- 是 --> M1[\"选用 Medium\"]\n    Q3 -- 否 --> Q4{\"是否涉及多步骤、多来源、复杂取舍？\"}\n    Q4 -- 是 --> H1[\"选用 High / Extra High\"]\n    Q4 -- 否 --> T1[\"选用 TERRA（全能）\"]"
+    },
+    {
+      "title": "3. 推理深度与模型档位关系",
+      "code": "flowchart TD\n    TierLow[\"低档位<br/>(如 Effort Light)\"] -->|提升推理投入| TierMid[\"中档位<br/>(Medium)\"]\n    TierMid -->|进一步提升| TierHigh[\"高档位<br/>(High/Extra High)\"]\n    TierHigh -->|更多推理| BetterResult[\"更深入的答案\"]\n    TierLow -->|可能足够| Sufficient[\"任务已完成\"]\n    Note[\"档位越高不一定每次更好\"] --> TierLow\n    Note --> TierMid\n    Note --> TierHigh\n    Start[\"先从最低能完成任务的档位开始\"] --> TierLow"
+    },
+    {
+      "title": "4. 实际使用建议",
+      "code": "flowchart TD\n    ChangeCode[\"代码改动\"] --> SOE[\"使用 SOE\"]\n    DailyProj[\"日常项目\"] --> TERRA[\"使用 TERRA 进行重复整理\"]\n    StructuredTask[\"结构化任务\"] --> LUNA[\"使用 Luna\"]\n    DFInsuff[\"DF 不够\"] --> Upgrade[\"提升档位\"]\n    Upgrade --> TERRA\n    Upgrade --> LUNA"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T21:17:41+00:00"
+}

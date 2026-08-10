@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1DEoaBUEQ9",
+  "title": "UE5蓝图/材质看不懂？用GetTheMeaning 2.0一键AI解读（插件演示）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 776,
+  "text": "嗨朋友们\n令人激动的get mini2.0版本终于来了\n这个插件\n我开发它的初衷是帮助我快速梳理蓝图逻辑\n我们来快速回顾一下1.0版本的功能\n这个插件就是解决AI读不了蓝图这个痛点\n我们随便选一个蓝图来举例子\n这个蓝图节点还是有一定量的内容\n浏览器中选中它\n右键导出为AI可读文档\n这时我们再将它传给AI\n就可以快速理解他的逻辑了\nOK看起来真的很不错\n大家用过的反响也很好\n接下来我为大家介绍get的mini插件\n2.0版本的新增功能\n一复杂蓝图往往不是独立存在\n我们打开引用查看器\n奥加shift加二\n框选住所有相关节点\n在引用查看器界面\n直接右键导出所有为AI可读文档\n此时一下导出六个文档\n就是框选中的这六个蓝图转写的\n拿到这些文件以后\n再次推荐使用notebook aom来帮助全面的学习理解\n将所有文件拖入MMM\n最适合全局的去处理多文件\n多视频的分析\n他很快的总结全局思路\n你也可以让它生成思维导图\n新增第二个功能是后台呼声最高的材质转写\n我们挑一个材质打开看一下其中逻辑\n还可以不是特别的复杂\n只内嵌一层材质函数\n有意思的是\n这是一个纯城市化的材质\n纯数学计算出来的泡泡效果\n用我的插件转写材质\n也如同转写蓝图一样操作\n打开引用查看器框\n选所有相关节点\n导出两个材质\n文档导出成功\n非常好\n有了这样的文档\n加上AI的解析\n你的SHADER能力会更上一层楼\n又一里着色器语言是HLSL\n我们转出这个文档来\n看一下他是否能知道完成GLSL的复写\n在SHADER托里可以直接看到效果\n复制代码过来\n可以看到泡泡材质大部分视觉特性还是很好的\n被复现了\n这种粘质感\n液态融合等等\n这作为副线SHADER的地基代码完全够用\nget mini2.0版本更新介绍到此就结束了\n想要插件的小伙伴可以评论或者私信\n也欢迎加入我的专属开发分享群\n获取更多工具",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1DEoaBUEQ9",
+  "published_at": "1776915054",
+  "fetched_at": "2026-08-09T21:13:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T21:16:38+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T21:16:38+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1twKa6XEs7",
+  "title": "英伟达全新AI简直是效率怪兽！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1516,
+  "text": "嗯一个拥有300亿参数的新开源免费AI模型\n可以同时处理图像\n视频和音频\n嗯为什么要这样做\n在这个领域还有很多其他免费的系统\n比如令人惊叹的JA4\n那么这个模型相比那些有什么更出色的地方\n两个词吞吐量和成本效率好吧\n这在实际应用中意味着什么\n现在各位学者请抓紧你们的论文\n因为他每小时几乎能处理十小时的视频\n这几乎是实时速度的十倍\n这速度简直疯狂哇\n哦比QUI3OMI快了将近三倍\n而在处理文档时\n速度甚至能提升到七倍\n如果你想在本地运行它\n你需要类似这样的设备\n或者一块高性能的桌面级GPU\n我们说的是大约25GB的视频内存\n这可不是你手机能跑得动的\n如果要在云端运行\n我用的是lambda好\n那么他们是怎么做到的呢\n他们的秘诀是什么\n其实他有五个方面做的非常好\n但有一个方面做的不太好\n亲爱的学者们\n这里是由carolly zi FA哈博士主持的2分钟论文\n首先成员层的扩展与上下文长度呈线性关系\n而不是二次方关系\n这是什么意思\n这意味着你可以把你所有的资源都用上\n你拥有的文档越多\n视频或音频越长\n这个模型的优势就越大\n所以如果你在运行\n一个需要大规模处理这些内容的在线系统\n这将会非常惊人\n第二当音频输入时\n这一侧会将原始音频波转换为标记\n但方式与其他地方不同\n通常这里会有一个语音识别模型\n这些模型通常非常庞大且昂贵\n并且会剥离输入中的所有情感和语调\n但这个模型能够保留所有这些数据\n同时依然能很好的完成任务\n因此比起在上面再运行一个\n像whisper那样的独立模型\n成本要低得多\n第三当你输入一张图片或视频时\n许多上一代的技术会把它压缩成不同的宽高比\n而这个模型则保持原样\n然后哦看看这个三维卷积\n现在我们要认真聊聊了\n许多其他技术都是逐帧处理视频\n这样处理这些视频需要大量的计算\n在这里三维卷积会同时处理一组帧\n它会同时查看一包针\n因此能够大幅压缩数据更快更便宜\n第四点\n这真的很有趣\n也有些出乎意料\n你本来会以为这里会有一个庞大的独立\nCLIP模型\n这些模型本质上是预测\n哪些文本能很好的匹配图片\n这里你也需要这个功能\n但这里有个诀窍\n并不是用一个独立的CRIP模型\n不这里实际上是将三个模型进行蒸馏\n一个用于图像与文本的匹配\n一个用于细节处理\n还有一个用于目标分割\n现在这三个模型都被压缩进了\n一个小型的编码器\n神经网络中\n再次强调非常高效\n第五点高效的视频采样\n这一点很不错\n到目前为止\n我们已经把比如说一个包含300帧的视频\n输入到了神经网络中\n这依然是大量的数据\n但事实证明\n并不是所有针都是完全独特的\n比如说许多真共享相同的背景\n而这一点最终会把这些重复的信息剔除掉\n这样做你猜对了\n会让成本更低\n效率更高\n好学术性的问题来了\n那么它附带的许可证是什么\n我最希望看到的是APARTS2.0\n这种高度宽松的许可证\n但我在这里没有看到他有自己的许可证\n这通常不是个好消息\n但在这种情况下\n比我想象的要好\n允许衍生作品和商业用途\n另一方面\n他需要一些署名\n并且在专利授权方面稍微严格一些\n如果说APACHE2.0是满分十分的话\n我认为这个大概是七分\n我们在这里也不会回避谈论它的局限性\n那么还有其他的吗\n哦有的\n如果你只是做纯文本推理或者纯编程\n我可能会考虑别的选择\n它并不是最聪明的开源模型\n不是的\n但如果你需要多模态输入\n比如需要超快超低成本D处理音频或视频\n那这个就是你的选择\n所以现在我们已经拥有了\n可以自主拥有和运行的免费开源AI模型\n这在未来只会变得越来越重要\n而且由于我们现在有这么多模型\n它们开始变得各有所长\n他们正在不同的方向上变得更加出色\n所以我们这些学者能够免费获得\n更好的模型和更多的价值",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1twKa6XEs7",
+  "published_at": "1784630574",
+  "fetched_at": "2026-08-09T22:57:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI模型全貌\n\n## 总览图\n```mermaid\nflowchart TD\n    M[\"300B 参数开源模型\"]\n    MM[\"多模态输入<br/>图像 / 视频 / 音频\"]\n    ADV[\"优势<br/>吞吐量 & 成本效率\"]\n    REAL[\"近实时 10× 速度\"]\n    DOC[\"文档处理 7× 加速\"]\n    GPU[\"≈25GB 显存桌面 GPU\"]\n    CLOUD[\"云端 Lambda 运行\"]\n    LIC[\"许可证<br/>APARTS2.0 类似（约 7/10）\"]\n    USAGE[\"适用场景<br/>大规模多模态系统\"]\n    END[\"免费可自行部署\"]\n\n    M --> MM\n    M --> ADV\n    ADV --> REAL\n    ADV --> DOC\n    ADV --> USAGE\n    USAGE --> GPU\n    USAGE --> CLOUD\n    M --> LIC\n    LIC --> END\n```\n\n## 性能细节图\n```mermaid\nflowchart TD\n    SCALE[\"成员层扩展<br/>与上下文长度线性关系\"]\n    RES[\"资源利用率提升\"]\n    AUDIO[\"音频转标记<br/>保留情感与语调\"]\n    WHISPER[\"独立 Whisper 模型<br/>昂贵且剥离情感\"]\n    COST[\"整体成本更低\"]\n    IMG[\"图像/视频保持原始分辨率\"]\n    CONV3D[\"三维卷积<br/>同步处理帧组\"]\n    COMP[\"计算压缩<br/>更快更便宜\"]\n    DISTILL[\"蒸馏 3 模型合并<br/>小型编码器\"]\n    IMG_TEXT[\"图像‑文本匹配\"]\n    DETAIL[\"细节处理\"]\n    SEG[\"目标分割\"]\n    SAMPLE[\"高效视频采样<br/>剔除重复帧\"]\n    EFF[\"成本/效率提升\"]\n\n    SCALE --> RES\n    AUDIO --> COST\n    WHISPER --> COST\n    IMG --> CONV3D\n    CONV3D --> COMP\n    DISTILL --> IMG_TEXT\n    DISTILL --> DETAIL\n    DISTILL --> SEG\n    SAMPLE --> EFF\n    COMP --> EFF\n    RES --> EFF\n```\n\n## 适用性与局限图\n```mermaid\nflowchart TD\n    SCENARIOS[\"适用：超快、超低成本<br/>音频/视频处理\"]\n    LIMIT[\"局限：非最聪明的<br/>纯文本/编程模型\"]\n    ALT[\"可选：其他开源模型\"]\n    LICENSE[\"许可证<br/>允许衍生、商业用<br/>需署名、专利稍严\"]\n    IMPACT[\"未来重要性<br/>免费模型提升价值\"]\n\n    SCENARIOS --> LICENSE\n    LIMIT --> ALT\n    SCENARIOS --> IMPACT\n    LICENSE --> IMPACT\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    M[\"300B 参数开源模型\"]\n    MM[\"多模态输入<br/>图像 / 视频 / 音频\"]\n    ADV[\"优势<br/>吞吐量 & 成本效率\"]\n    REAL[\"近实时 10× 速度\"]\n    DOC[\"文档处理 7× 加速\"]\n    GPU[\"≈25GB 显存桌面 GPU\"]\n    CLOUD[\"云端 Lambda 运行\"]\n    LIC[\"许可证<br/>APARTS2.0 类似（约 7/10）\"]\n    USAGE[\"适用场景<br/>大规模多模态系统\"]\n    END[\"免费可自行部署\"]\n\n    M --> MM\n    M --> ADV\n    ADV --> REAL\n    ADV --> DOC\n    ADV --> USAGE\n    USAGE --> GPU\n    USAGE --> CLOUD\n    M --> LIC\n    LIC --> END"
+        },
+        {
+          "title": "性能细节图",
+          "code": "flowchart TD\n    SCALE[\"成员层扩展<br/>与上下文长度线性关系\"]\n    RES[\"资源利用率提升\"]\n    AUDIO[\"音频转标记<br/>保留情感与语调\"]\n    WHISPER[\"独立 Whisper 模型<br/>昂贵且剥离情感\"]\n    COST[\"整体成本更低\"]\n    IMG[\"图像/视频保持原始分辨率\"]\n    CONV3D[\"三维卷积<br/>同步处理帧组\"]\n    COMP[\"计算压缩<br/>更快更便宜\"]\n    DISTILL[\"蒸馏 3 模型合并<br/>小型编码器\"]\n    IMG_TEXT[\"图像‑文本匹配\"]\n    DETAIL[\"细节处理\"]\n    SEG[\"目标分割\"]\n    SAMPLE[\"高效视频采样<br/>剔除重复帧\"]\n    EFF[\"成本/效率提升\"]\n\n    SCALE --> RES\n    AUDIO --> COST\n    WHISPER --> COST\n    IMG --> CONV3D\n    CONV3D --> COMP\n    DISTILL --> IMG_TEXT\n    DISTILL --> DETAIL\n    DISTILL --> SEG\n    SAMPLE --> EFF\n    COMP --> EFF\n    RES --> EFF"
+        },
+        {
+          "title": "适用性与局限图",
+          "code": "flowchart TD\n    SCENARIOS[\"适用：超快、超低成本<br/>音频/视频处理\"]\n    LIMIT[\"局限：非最聪明的<br/>纯文本/编程模型\"]\n    ALT[\"可选：其他开源模型\"]\n    LICENSE[\"许可证<br/>允许衍生、商业用<br/>需署名、专利稍严\"]\n    IMPACT[\"未来重要性<br/>免费模型提升价值\"]\n\n    SCENARIOS --> LICENSE\n    LIMIT --> ALT\n    SCENARIOS --> IMPACT\n    LICENSE --> IMPACT"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T22:59:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI模型全貌\n\n## 总览图\n```mermaid\nflowchart TD\n    M[\"300B 参数开源模型\"]\n    MM[\"多模态输入<br/>图像 / 视频 / 音频\"]\n    ADV[\"优势<br/>吞吐量 & 成本效率\"]\n    REAL[\"近实时 10× 速度\"]\n    DOC[\"文档处理 7× 加速\"]\n    GPU[\"≈25GB 显存桌面 GPU\"]\n    CLOUD[\"云端 Lambda 运行\"]\n    LIC[\"许可证<br/>APARTS2.0 类似（约 7/10）\"]\n    USAGE[\"适用场景<br/>大规模多模态系统\"]\n    END[\"免费可自行部署\"]\n\n    M --> MM\n    M --> ADV\n    ADV --> REAL\n    ADV --> DOC\n    ADV --> USAGE\n    USAGE --> GPU\n    USAGE --> CLOUD\n    M --> LIC\n    LIC --> END\n```\n\n## 性能细节图\n```mermaid\nflowchart TD\n    SCALE[\"成员层扩展<br/>与上下文长度线性关系\"]\n    RES[\"资源利用率提升\"]\n    AUDIO[\"音频转标记<br/>保留情感与语调\"]\n    WHISPER[\"独立 Whisper 模型<br/>昂贵且剥离情感\"]\n    COST[\"整体成本更低\"]\n    IMG[\"图像/视频保持原始分辨率\"]\n    CONV3D[\"三维卷积<br/>同步处理帧组\"]\n    COMP[\"计算压缩<br/>更快更便宜\"]\n    DISTILL[\"蒸馏 3 模型合并<br/>小型编码器\"]\n    IMG_TEXT[\"图像‑文本匹配\"]\n    DETAIL[\"细节处理\"]\n    SEG[\"目标分割\"]\n    SAMPLE[\"高效视频采样<br/>剔除重复帧\"]\n    EFF[\"成本/效率提升\"]\n\n    SCALE --> RES\n    AUDIO --> COST\n    WHISPER --> COST\n    IMG --> CONV3D\n    CONV3D --> COMP\n    DISTILL --> IMG_TEXT\n    DISTILL --> DETAIL\n    DISTILL --> SEG\n    SAMPLE --> EFF\n    COMP --> EFF\n    RES --> EFF\n```\n\n## 适用性与局限图\n```mermaid\nflowchart TD\n    SCENARIOS[\"适用：超快、超低成本<br/>音频/视频处理\"]\n    LIMIT[\"局限：非最聪明的<br/>纯文本/编程模型\"]\n    ALT[\"可选：其他开源模型\"]\n    LICENSE[\"许可证<br/>允许衍生、商业用<br/>需署名、专利稍严\"]\n    IMPACT[\"未来重要性<br/>免费模型提升价值\"]\n\n    SCENARIOS --> LICENSE\n    LIMIT --> ALT\n    SCENARIOS --> IMPACT\n    LICENSE --> IMPACT\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    M[\"300B 参数开源模型\"]\n    MM[\"多模态输入<br/>图像 / 视频 / 音频\"]\n    ADV[\"优势<br/>吞吐量 & 成本效率\"]\n    REAL[\"近实时 10× 速度\"]\n    DOC[\"文档处理 7× 加速\"]\n    GPU[\"≈25GB 显存桌面 GPU\"]\n    CLOUD[\"云端 Lambda 运行\"]\n    LIC[\"许可证<br/>APARTS2.0 类似（约 7/10）\"]\n    USAGE[\"适用场景<br/>大规模多模态系统\"]\n    END[\"免费可自行部署\"]\n\n    M --> MM\n    M --> ADV\n    ADV --> REAL\n    ADV --> DOC\n    ADV --> USAGE\n    USAGE --> GPU\n    USAGE --> CLOUD\n    M --> LIC\n    LIC --> END"
+    },
+    {
+      "title": "性能细节图",
+      "code": "flowchart TD\n    SCALE[\"成员层扩展<br/>与上下文长度线性关系\"]\n    RES[\"资源利用率提升\"]\n    AUDIO[\"音频转标记<br/>保留情感与语调\"]\n    WHISPER[\"独立 Whisper 模型<br/>昂贵且剥离情感\"]\n    COST[\"整体成本更低\"]\n    IMG[\"图像/视频保持原始分辨率\"]\n    CONV3D[\"三维卷积<br/>同步处理帧组\"]\n    COMP[\"计算压缩<br/>更快更便宜\"]\n    DISTILL[\"蒸馏 3 模型合并<br/>小型编码器\"]\n    IMG_TEXT[\"图像‑文本匹配\"]\n    DETAIL[\"细节处理\"]\n    SEG[\"目标分割\"]\n    SAMPLE[\"高效视频采样<br/>剔除重复帧\"]\n    EFF[\"成本/效率提升\"]\n\n    SCALE --> RES\n    AUDIO --> COST\n    WHISPER --> COST\n    IMG --> CONV3D\n    CONV3D --> COMP\n    DISTILL --> IMG_TEXT\n    DISTILL --> DETAIL\n    DISTILL --> SEG\n    SAMPLE --> EFF\n    COMP --> EFF\n    RES --> EFF"
+    },
+    {
+      "title": "适用性与局限图",
+      "code": "flowchart TD\n    SCENARIOS[\"适用：超快、超低成本<br/>音频/视频处理\"]\n    LIMIT[\"局限：非最聪明的<br/>纯文本/编程模型\"]\n    ALT[\"可选：其他开源模型\"]\n    LICENSE[\"许可证<br/>允许衍生、商业用<br/>需署名、专利稍严\"]\n    IMPACT[\"未来重要性<br/>免费模型提升价值\"]\n\n    SCENARIOS --> LICENSE\n    LIMIT --> ALT\n    SCENARIOS --> IMPACT\n    LICENSE --> IMPACT"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:59:19+00:00"
+}

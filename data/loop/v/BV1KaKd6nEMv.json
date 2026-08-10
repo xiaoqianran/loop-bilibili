@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1KaKd6nEMv",
+  "title": "UE5.8 改变一切！高斯泼溅爆发，开源 3D AI 来了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3851,
+  "text": "本周虚幻引擎带来了一系列重磅AI更新\nMatch toma human\n全新的原生MCP支持\n以及无标记点动作捕捉动画\n不仅如此\n我们还迎来了全新的开源3D以及图像模型\n表现非常亮眼\n同时3D高斯建设点技术\n也获得了AUTODESK等行业巨头的支持\n以及HOUDINI及\n今天我们将与pixel artistry一起聊聊\n这些以及其他更多内容\n在开始本期AI新闻视频前\n我们不能不提虚幻引擎5.8的发布\n因为它包含了一些重要的AI功能\n你不仅应该了解\n还能将它们集成到你的工作流程中\n在游戏等应用中\n你会发现它现在已经可用了\n我想他才发布没几天\n它附带了一些非常酷的功能\n我们将在本视频中介绍\n我们会介绍重要功能\n现在开始\n第一个第一个功能基本上是meta human creator\n现在有一个升级叫做mesh to metahuman\n这个功能很酷\n因为你可能知道meta human creator\n之前就已经能够将3D角色的面部\n融合到meta human网格上\n从而获得好得多的拓扑结构\n而现在他们更是百尺竿头更进一优\n简单来说\n现在这条是很完整的\n是放歌连同头部转换成一个meta human角色\n并且同时获得像这里展示的这种meta human拓扑结构\n这一切都在一个工作流中完成\n所以基本上我们现在就可以创建一个AIM网格\n然后把它导入虚幻引擎5.8\n然后基本上对这个角色进行约束\n并将其转换成一个meta human网格\n最终就能得到非常出色的拓扑结构\n就像这样\n这种方法当然能省下大量时间\n我们肯定会在接下来的视频里深入聊聊\n所以记得保持关注\n那么虚幻引擎的第二个重要更新当然是MCP\n你可能已经知道\n虚幻引擎之前就已经有一些MCP\n或者说插件来把智能体连接上去\n但现在它已经是原生支持了\n相用起来容易得多\n也直观的多\n它会为你的智能体提供了更多可用工具\n比如PCGNIAGARA和蓝图\n而且运行起来顺畅太多了\n我当然是测试过的相关视频\n就在我的频道里\n我也尝试用同样的PC机来建造整座城市\n这确实可行\n但根据我的研究\n从某些角度来看\n它还是一些局限\n如果你把它和一些免费插件结合起来\n或者说现在它不算插件\n更像是一个附加组件\n比如wipe ue\n你就能获得一套终极配置\n而且那个web ue插件也是免费的\n是的\n你不仅可以把它连接到cloud code\n还能连到codex\n你还可以连接到GEMINI\n或者尝试连接到MIRO\n或者其他任何开源大语言模型也行\n而且这多半是可行的\n大家也可以在评论区告诉我\n是否想看到这个MCP\n与某个开源大语言模型搭配使用\n因为如果大家想看\n我正考虑为此做一期视频\n而且虚幻引擎5.8的新功能还没完\n因为它甚至包含了无标记点动作捕捉\n这当然非常酷\n因为现在你基本上无需动捕服\n就能拍摄自己的任何视频\n而虚幻引擎就能追踪你的动作\n然后你就能从中提取出谷歌\n再这将其应用到你的C角色上\n这当然非常棒\n因为它能让你即使预算有限\n无需购买整套动作捕捉服\n如今借助AI也能实现动作捕捉\n我们也来看一些例子\n例如你可以看到YOUTUBE频道smart polly\n已经用一些例子展示过了\n你可以看到左边是你的视频\n中间部分则是你的动画网格\n这就是虚幻引擎5.8的角色\n这当然非常酷\n因为可以看到它的精度相当高\n而且追踪起来也很容易\n这让我想起了revolution去年发布的产品\n他们也把动作捕捉功能整合了进去\n不过很酷的是\n有这件事需要注意\n如我所见\n摄像机是固定不动的\n所以这线显是个限制\n毕竟摄像机是固定的\n如果换成运动镜头\n处理起来可能还是会相当复杂\n但我认为这绝对是迈向正确方向的酷炫一步\n这样一来\n你只需出门拍摄自己的动作\n构建个人动画库\n用于虚幻引擎\n接下来两家大公司宣布\n他们将支持高斯建设点技术\n并真正将其作为优先事项\n因此mini22将高斯建设点提升为一等公民\n公告的大意如此\n他们确实引入了相关支持\n你不仅能在软件内渲染它们\n使用它们\n还能对它们进行重光照\n这就绝对对是合情合理的\n因为如果你看过我之前的视频\n会发现我们有很多开源方案\n比如union world\n比如triple splat\n他们甚至能在低显存上运行\n再说triple splat\n它可以在8GB显存上运行\n他现在已原神预装在CONFUI中\n而且效果相当惊人\n而AUTODESKARNO的新版本也开始试吃高斯建设点\n这本质上是一个渲染工具\n可以连接到3D s max maya和HOUDINI\n所以这又像是一种双重支持\n不仅他们开始支持选这种技术\n而且还能在引擎内部直接对它进行重新打光\n我觉得这确实很有道理\n太棒了\n因为我看到AI生成的高斯建设点技术\n取得了巨大进展\n甚至还有4D高斯建设捕捉这类生成技术\n确实开辟了全新的探索领域\n我觉得肯定会被用在电影等等领域\n下一个重磅消息是\n我们迎来了一款新的3DAR势能器\n它尚未发布\n他们刚刚发布了一篇论文\n他的名字是flux3D\n他看起来确实前途无量\n我最初看到这个的时候\n因为它有一个非常突出的亮点\n重点不在于几何体本身\n但你可以看到这里的贴图精度相当高\n这里你会看到一些例子\n它的流程基本上是先获取输入图像\n然后对其进行高斯渲染\n然后它会据此生成网格\n这绝对是篇很有意思的文章\n我们也会把链接放在视频下方\n他的许可是知识共享署名许可\n所以基本上你也可以免费使用\n这里你会看到一些例子\n简单来说就是获取一个输入图像\n然后他会利用多视角进行转换\n你会注意到一个现象\n这是我们以前从未见过的\n那就是他在利用文字生成纹理方面\n表现的相当出色\n举个例子\n你可以在这里看到嗯\n比如这个汤罐的标签或者鸡肉罐头的标签\n诸如此类\n但你也会看到\n他在这里也很好地捕捉到了一些细节\n以及纹理本身的渲染效果\n这些都源于输入的图像\n当然我们会在下方附上链接\n方便大家阅读\n我觉得这篇论文非常有意思\n或许你甚至可以把这两种技术结合起来\n从而创造出更好的结果\n但这绝对是一篇非常值得一读的文章\n绝对值得一看\n这里还有更多事例\n可以和其他免费的AI生成器进行对比\n通常来说\nflux产出的东西质量确实很高\n结合我刚才提到的纹理精度\n你在这里能看得更明白\n会看到\n例如在这个品克薯片盒子上\n它也能相当准确地识别\n这确实非常令人兴奋\n因为这正是我们最终追求的目标\n实现纹理的精确性\n所以这就绝对是值得一看的酷炫内容\n我们看到的另一篇有趣的论文来自stability AI\n这个名字有点让人困惑\n因为我觉得之前有些其他东西的\n命名方式很相似\n但考虑到他们实际开发的东西\n这名字其实很合理\n所以他们确实有一个能控制形状的纹身\n3D生成模型\n基本上你可以指定形状应该出现在哪里\n或者不应该出现在哪里\n并且还能设置约束条件\n这实际上非常重要\n我希望未来我们能拥有更多\n对生成过程有更强的控制力\n让我们能够设定一些基本体\n然后生成完全就是我们想象中的那种形状\n我认为目前硬表面建模是个难点\n因为现在的生成技术通常偏向天马行空\n当然他们做得已经很不错了\n但如果能在此基础上加以控制\n那就太神奇了\n我真的很期待看到这种控制能力\n能比如说triple和HONION这样的工具结合起来\n在这些工具里你可以创建基本体\n比如哦没错\n这确实啥都没有\n那样的话就真的真的说得通了\n目前再次强调\n它还只是带约束条件的文本转3D\n但所有内容都已发布\n你可以尝试在本地运行它\n最后但同样重要的是\n我们有CRAYER2.0\n这同样非常酷\n我们之所以介绍它\n主要是因为因为他现在开源了\n这当然很棒\ncreate2.0是一个功能非常强大的AI图像生成器\n显然他能在很多方面帮到你\n比如创建纹理\n当然你也能为角色输入图像\n或者为你的游戏等创建所需的各种素材\n你甚至可以用他们刚发布的权重来训练\nLAURA模型\n如果对这个方向感兴趣\n想了解更多\n记得告诉我\n这很令人兴奋\n但基本上这些权重已经可用了\n你还会看看到可以对KOREA2进行微调\n举个例子\n我这里提到了OSTEROSAI工具包\n你现在也可以直接在confusion中使用它\n所以一定记得去试试看\n你基本上可以在这里找到工作流\n以及它的下载链接\n你唯一需要做的就是更新一下confusion\n然后确保下载你在这里看到的这个workflow\n然后你记笔记本上就可以自己试试了嗯\n这功能真的很酷\n并且告诉我你对这个新工具的看法呃\n先把时间还给STEFAN\n还有最后一件事要提一下\n就是我们正在期待CDX2.5\n而且已经经有泄露的消息称\n它将支持长达30秒的4K视频\n并且能处理多达50个参考\n这太疯狂了\n我真的很想亲自测试一下\n看看它的效果到底有多稳定\n毕竟我们现在已经有像SEDENCE\n2.0这样的工具了\n但大多数时候我们只做短时长的生成\n然后再把它们拼接起来\n因为一次性生成的时间越长\n准确性就越低\n并且开始出现幻象\n30秒听起来确实很厉害\n但但关键还是得看他在这个场景下\n能多准确地遵循参考图像\n这么一想确实有道理\n好吧\n我想我们很快就能见分晓了\n如果你们想看更多关于视频AI的内容\n请在评论区告诉我\n因为我真的很喜欢\n尝试把3D动态预览片段整合起来\n然后用像SDANCE这样的AI工具来渲染好了\n各位这种内容就到这里\n请在下方评论区告诉我们\n你们接下来想看什么内容\n当然别忘了订阅STEFAN的频道\n我的频道会很有帮助\n下期视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1KaKd6nEMv",
+  "published_at": "1782790747",
+  "fetched_at": "2026-08-10T06:25:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# UE5.8 AI 更新知识图谱\n\n## 图1: UE5.8 AI 功能总览\n（[BV1KaKd6nEMv P1 00:52]、[BV1KaKd6nEMv P1 01:46]、[BV1KaKd6nEMv P1 03:05]、[BV1KaKd6nEMv P1 04:27]、[BV1KaKd6nEMv P1 05:50]）\n\n```mermaid\nflowchart TD\n    A[\"UE5.8 AI 更新\"]\n    B[\"MetaHuman Mesh→MetaHuman 工作流\"]\n    C[\"原生 MCP 支持\"]\n    D[\"无标记点动作捕捉\"]\n    E[\"Gaussian Splat 支持\"]\n    F[\"Flux3D 3D AI 模型\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n```\n\n## 图2: MetaHuman 工作流\n（[BV1KaKd6nEMv P1 00:52]、[BV1KaKd6nEMv P1 01:01]、[BV1KaKd6nEMv P1 01:25]、[BV1KaKd6nEMv P1 01:32]、[BV1KaKd6nEMv P1 01:34]、[BV1KaKd6nEMv P1 01:36]、[BV1KaKd6nEMv P1 01:38]、[BV1KaKd6nEMv P1 01:39]）\n\n```mermaid\nflowchart LR\n    M0[\"已有 3D 角色\"]\n    M1[\"创建 AIM 网格\"]\n    M2[\"导入 UE5.8\"]\n    M3[\"对角色应用约束\"]\n    M4[\"转换为 MetaHuman 网格\"]\n    M5[\"获得优化拓扑结构\"]\n    M6[\"导出为 MetaHuman 资产\"]\n    M7[\"在游戏/VR 中使用\"]\n    M8[\"保存优化资产\"]\n    M0 --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8\n```\n\n## 图3: 原生 MCP 集成与扩展\n（[BV1KaKd6nEMv P1 01:46]、[BV1KaKd6nEMv P1 02:07]、[BV1KaKd6nEMv P1 02:30]、[BV1KaKd6nEMv P1 02:40]、[BV1KaKd6nEMv P1 02:42]、[BV1KaKd6nEMv P1 02:43]、[BV1KaKd6nEMv P1 02:45]、[BV1KaKd6nEMv P1 02:47]、[BV1KaKd6nEMv P1 02:50]）\n\n```mermaid\nflowchart TD\n    N1[\"原生 MCP 支持\"]\n    N2[\"PCG Niagara\"]\n    N3[\"蓝图\"]\n    N4[\"免费插件（如 wipe UE）\"]\n    N5[\"Web UE 附加组件\"]\n    N6[\"连接 Cloud Code\"]\n    N7[\"连接 Codex\"]\n    N8[\"连接 Gemini\"]\n    N9[\"连接 Miro / 其他开源 LLM\"]\n    N1 --> N2\n    N1 --> N3\n    N4 --> N5\n    N5 --> N6\n    N5 --> N7\n    N5 --> N8\n    N5 --> N9\n```\n\n## 图4: Gaussian Splat 生态系统\n（[BV1KaKd6nEMv P1 04:27]、[BV1KaKd6nEMv P1 04:41]、[BV1KaKd6nEMv P1 04:55]、[BV1KaKd6nEMv P1 04:58]、[BV1KaKd6nEMv P1 05:03]、[BV1KaKd6nEMv P1 05:05]、[BV1KaKd6nEMv P1 05:11]、[BV1KaKd6nEMv P1 05:15]）\n\n```mermaid\nflowchart LR\n    G1[\"Gaussian Splat 技术\"]\n    G2[\"Autodesk 支持\"]\n    G3[\"Houdini 支持\"]\n    G4[\"低显存运行（8GB）\"]\n    G5[\"实时渲染\"]\n    G6[\"引擎内重新光照\"]\n    G7[\"开源方案（union world, triple splat）\"]\n    G8[\"集成至 UE5.8\"]\n    G1 --> G2\n    G1 --> G3\n    G1 --> G4\n    G4 --> G5\n    G5 --> G6\n    G7 --> G1\n    G1 --> G8\n```\n\n## 图5: Flux3D 工作流\n（[BV1KaKd6nEMv P1 05:50]、[BV1KaKd6nEMv P1 06:04]、[BV1KaKd6nEMv P1 06:07]、[BV1KaKd6nEMv P1 06:09]、[BV1KaKd6nEMv P1 06:11]、[BV1KaKd6nEMv P1 06:36]、[BV1KaKd6nEMv P1 06:15]、[BV1KaKd6nEMv P1 06:19]）\n\n```mermaid\nflowchart TD\n    F1[\"输入图像\"]\n    F2[\"多视角转换\"]\n    F3[\"Gaussian 渲染\"]\n    F4[\"网格生成\"]\n    F5[\"高分辨率纹理\"]\n    F6[\"带约束的文本到 3D\"]\n    F7[\"CC BY 许可证\"]\n    F8[\"免费使用\"]\n    F1 --> F2 --> F3 --> F4 --> F5 --> F6\n    F5 --> F7 --> F8\n```",
+      "diagrams": [
+        {
+          "title": "图1: UE5.8 AI 功能总览",
+          "code": "flowchart TD\n    A[\"UE5.8 AI 更新\"]\n    B[\"MetaHuman Mesh→MetaHuman 工作流\"]\n    C[\"原生 MCP 支持\"]\n    D[\"无标记点动作捕捉\"]\n    E[\"Gaussian Splat 支持\"]\n    F[\"Flux3D 3D AI 模型\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F"
+        },
+        {
+          "title": "图2: MetaHuman 工作流",
+          "code": "flowchart LR\n    M0[\"已有 3D 角色\"]\n    M1[\"创建 AIM 网格\"]\n    M2[\"导入 UE5.8\"]\n    M3[\"对角色应用约束\"]\n    M4[\"转换为 MetaHuman 网格\"]\n    M5[\"获得优化拓扑结构\"]\n    M6[\"导出为 MetaHuman 资产\"]\n    M7[\"在游戏/VR 中使用\"]\n    M8[\"保存优化资产\"]\n    M0 --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8"
+        },
+        {
+          "title": "图3: 原生 MCP 集成与扩展",
+          "code": "flowchart TD\n    N1[\"原生 MCP 支持\"]\n    N2[\"PCG Niagara\"]\n    N3[\"蓝图\"]\n    N4[\"免费插件（如 wipe UE）\"]\n    N5[\"Web UE 附加组件\"]\n    N6[\"连接 Cloud Code\"]\n    N7[\"连接 Codex\"]\n    N8[\"连接 Gemini\"]\n    N9[\"连接 Miro / 其他开源 LLM\"]\n    N1 --> N2\n    N1 --> N3\n    N4 --> N5\n    N5 --> N6\n    N5 --> N7\n    N5 --> N8\n    N5 --> N9"
+        },
+        {
+          "title": "图4: Gaussian Splat 生态系统",
+          "code": "flowchart LR\n    G1[\"Gaussian Splat 技术\"]\n    G2[\"Autodesk 支持\"]\n    G3[\"Houdini 支持\"]\n    G4[\"低显存运行（8GB）\"]\n    G5[\"实时渲染\"]\n    G6[\"引擎内重新光照\"]\n    G7[\"开源方案（union world, triple splat）\"]\n    G8[\"集成至 UE5.8\"]\n    G1 --> G2\n    G1 --> G3\n    G1 --> G4\n    G4 --> G5\n    G5 --> G6\n    G7 --> G1\n    G1 --> G8"
+        },
+        {
+          "title": "图5: Flux3D 工作流",
+          "code": "flowchart TD\n    F1[\"输入图像\"]\n    F2[\"多视角转换\"]\n    F3[\"Gaussian 渲染\"]\n    F4[\"网格生成\"]\n    F5[\"高分辨率纹理\"]\n    F6[\"带约束的文本到 3D\"]\n    F7[\"CC BY 许可证\"]\n    F8[\"免费使用\"]\n    F1 --> F2 --> F3 --> F4 --> F5 --> F6\n    F5 --> F7 --> F8"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T06:26:42+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# UE5.8 AI 更新知识图谱\n\n## 图1: UE5.8 AI 功能总览\n（[BV1KaKd6nEMv P1 00:52]、[BV1KaKd6nEMv P1 01:46]、[BV1KaKd6nEMv P1 03:05]、[BV1KaKd6nEMv P1 04:27]、[BV1KaKd6nEMv P1 05:50]）\n\n```mermaid\nflowchart TD\n    A[\"UE5.8 AI 更新\"]\n    B[\"MetaHuman Mesh→MetaHuman 工作流\"]\n    C[\"原生 MCP 支持\"]\n    D[\"无标记点动作捕捉\"]\n    E[\"Gaussian Splat 支持\"]\n    F[\"Flux3D 3D AI 模型\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n```\n\n## 图2: MetaHuman 工作流\n（[BV1KaKd6nEMv P1 00:52]、[BV1KaKd6nEMv P1 01:01]、[BV1KaKd6nEMv P1 01:25]、[BV1KaKd6nEMv P1 01:32]、[BV1KaKd6nEMv P1 01:34]、[BV1KaKd6nEMv P1 01:36]、[BV1KaKd6nEMv P1 01:38]、[BV1KaKd6nEMv P1 01:39]）\n\n```mermaid\nflowchart LR\n    M0[\"已有 3D 角色\"]\n    M1[\"创建 AIM 网格\"]\n    M2[\"导入 UE5.8\"]\n    M3[\"对角色应用约束\"]\n    M4[\"转换为 MetaHuman 网格\"]\n    M5[\"获得优化拓扑结构\"]\n    M6[\"导出为 MetaHuman 资产\"]\n    M7[\"在游戏/VR 中使用\"]\n    M8[\"保存优化资产\"]\n    M0 --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8\n```\n\n## 图3: 原生 MCP 集成与扩展\n（[BV1KaKd6nEMv P1 01:46]、[BV1KaKd6nEMv P1 02:07]、[BV1KaKd6nEMv P1 02:30]、[BV1KaKd6nEMv P1 02:40]、[BV1KaKd6nEMv P1 02:42]、[BV1KaKd6nEMv P1 02:43]、[BV1KaKd6nEMv P1 02:45]、[BV1KaKd6nEMv P1 02:47]、[BV1KaKd6nEMv P1 02:50]）\n\n```mermaid\nflowchart TD\n    N1[\"原生 MCP 支持\"]\n    N2[\"PCG Niagara\"]\n    N3[\"蓝图\"]\n    N4[\"免费插件（如 wipe UE）\"]\n    N5[\"Web UE 附加组件\"]\n    N6[\"连接 Cloud Code\"]\n    N7[\"连接 Codex\"]\n    N8[\"连接 Gemini\"]\n    N9[\"连接 Miro / 其他开源 LLM\"]\n    N1 --> N2\n    N1 --> N3\n    N4 --> N5\n    N5 --> N6\n    N5 --> N7\n    N5 --> N8\n    N5 --> N9\n```\n\n## 图4: Gaussian Splat 生态系统\n（[BV1KaKd6nEMv P1 04:27]、[BV1KaKd6nEMv P1 04:41]、[BV1KaKd6nEMv P1 04:55]、[BV1KaKd6nEMv P1 04:58]、[BV1KaKd6nEMv P1 05:03]、[BV1KaKd6nEMv P1 05:05]、[BV1KaKd6nEMv P1 05:11]、[BV1KaKd6nEMv P1 05:15]）\n\n```mermaid\nflowchart LR\n    G1[\"Gaussian Splat 技术\"]\n    G2[\"Autodesk 支持\"]\n    G3[\"Houdini 支持\"]\n    G4[\"低显存运行（8GB）\"]\n    G5[\"实时渲染\"]\n    G6[\"引擎内重新光照\"]\n    G7[\"开源方案（union world, triple splat）\"]\n    G8[\"集成至 UE5.8\"]\n    G1 --> G2\n    G1 --> G3\n    G1 --> G4\n    G4 --> G5\n    G5 --> G6\n    G7 --> G1\n    G1 --> G8\n```\n\n## 图5: Flux3D 工作流\n（[BV1KaKd6nEMv P1 05:50]、[BV1KaKd6nEMv P1 06:04]、[BV1KaKd6nEMv P1 06:07]、[BV1KaKd6nEMv P1 06:09]、[BV1KaKd6nEMv P1 06:11]、[BV1KaKd6nEMv P1 06:36]、[BV1KaKd6nEMv P1 06:15]、[BV1KaKd6nEMv P1 06:19]）\n\n```mermaid\nflowchart TD\n    F1[\"输入图像\"]\n    F2[\"多视角转换\"]\n    F3[\"Gaussian 渲染\"]\n    F4[\"网格生成\"]\n    F5[\"高分辨率纹理\"]\n    F6[\"带约束的文本到 3D\"]\n    F7[\"CC BY 许可证\"]\n    F8[\"免费使用\"]\n    F1 --> F2 --> F3 --> F4 --> F5 --> F6\n    F5 --> F7 --> F8\n```",
+  "diagrams": [
+    {
+      "title": "图1: UE5.8 AI 功能总览",
+      "code": "flowchart TD\n    A[\"UE5.8 AI 更新\"]\n    B[\"MetaHuman Mesh→MetaHuman 工作流\"]\n    C[\"原生 MCP 支持\"]\n    D[\"无标记点动作捕捉\"]\n    E[\"Gaussian Splat 支持\"]\n    F[\"Flux3D 3D AI 模型\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F"
+    },
+    {
+      "title": "图2: MetaHuman 工作流",
+      "code": "flowchart LR\n    M0[\"已有 3D 角色\"]\n    M1[\"创建 AIM 网格\"]\n    M2[\"导入 UE5.8\"]\n    M3[\"对角色应用约束\"]\n    M4[\"转换为 MetaHuman 网格\"]\n    M5[\"获得优化拓扑结构\"]\n    M6[\"导出为 MetaHuman 资产\"]\n    M7[\"在游戏/VR 中使用\"]\n    M8[\"保存优化资产\"]\n    M0 --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8"
+    },
+    {
+      "title": "图3: 原生 MCP 集成与扩展",
+      "code": "flowchart TD\n    N1[\"原生 MCP 支持\"]\n    N2[\"PCG Niagara\"]\n    N3[\"蓝图\"]\n    N4[\"免费插件（如 wipe UE）\"]\n    N5[\"Web UE 附加组件\"]\n    N6[\"连接 Cloud Code\"]\n    N7[\"连接 Codex\"]\n    N8[\"连接 Gemini\"]\n    N9[\"连接 Miro / 其他开源 LLM\"]\n    N1 --> N2\n    N1 --> N3\n    N4 --> N5\n    N5 --> N6\n    N5 --> N7\n    N5 --> N8\n    N5 --> N9"
+    },
+    {
+      "title": "图4: Gaussian Splat 生态系统",
+      "code": "flowchart LR\n    G1[\"Gaussian Splat 技术\"]\n    G2[\"Autodesk 支持\"]\n    G3[\"Houdini 支持\"]\n    G4[\"低显存运行（8GB）\"]\n    G5[\"实时渲染\"]\n    G6[\"引擎内重新光照\"]\n    G7[\"开源方案（union world, triple splat）\"]\n    G8[\"集成至 UE5.8\"]\n    G1 --> G2\n    G1 --> G3\n    G1 --> G4\n    G4 --> G5\n    G5 --> G6\n    G7 --> G1\n    G1 --> G8"
+    },
+    {
+      "title": "图5: Flux3D 工作流",
+      "code": "flowchart TD\n    F1[\"输入图像\"]\n    F2[\"多视角转换\"]\n    F3[\"Gaussian 渲染\"]\n    F4[\"网格生成\"]\n    F5[\"高分辨率纹理\"]\n    F6[\"带约束的文本到 3D\"]\n    F7[\"CC BY 许可证\"]\n    F8[\"免费使用\"]\n    F1 --> F2 --> F3 --> F4 --> F5 --> F6\n    F5 --> F7 --> F8"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T06:26:42+00:00"
+}

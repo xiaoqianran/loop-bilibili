@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1RGuJ6MEWs",
+  "title": "Blender二次元渲染助手V2.5更新！新增卡通天空盒！一键制作卡渲MMD！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1490,
+  "text": "Hello\n大家好\n我是paper\n经过几个月的迭代\n咱们的blender2次元渲染助手\n终于是实现了他的宿命\n这一次我用AI给大家调试了一下\n加了这个卡通天空的功能\n这次咱们就不用担心自己没有合适的天空盒了\n那这个天空的色彩\n它是专门针对我们的二次元人物进行设计的\n我们也可以在这里点击它\n选择切换到本地环境图啊\n你可以上传一个自己的环境图像\n作为一个HDR图片给你方便了\n省去了这个在这里面添加的步骤也是非常简单\n而且它是内置的\n这张图片是我设计好让去处理的\n它是AI自行生成\n同时也是是用这个算法把它做成了HDRI的\n我觉得效果也是非常不错\n可以看到在我们的人物样样上\n看到它整体的环境色彩还是不错的\n如果说我们直接给他恢复看一下\n黑的时候就是这样子\n那左边的这个羊羊是没有加任何渲染的\n羊羊右边这个装方已\n他是只加了一个灯\n和我们鸳鸯一样的功率\n它只是为了让我们的人物有光影是吧\n我们来看下对比\n如果说你在没有任何光源的环境下\n咱们泱泱的卡通人物渲染\n可以看出来这个整体的效果\n他的贴图比较好\n所以说我们整体的效果不怎么啊\n上渲染也是不错的\n但是如果说我们加入了我们的环境光照\n唉\n这个时候你是不是整体来看颜色和质感\n包括这个背景的颜色特别适配\n和整体的羚羊的玄灵色调\n这是我觉得可以看到是有很大提升的\n然后人物了\n可以看到他在不上渲染之前是不是很丑是吧\n虽说咱们的二层渲染\n包括之前做的卡通米亚\n已经起到了很好的效果了\n至少我们只有一个描边\n那我们先来点下试试\n我们先选中我们人物\n然后点一下添加描边\n好TR描边完就是这样的效果\n它本身其实并没有对你的人物贴图做太多影响\n这个时候我们点一下卡通明暗\n没有兼容材质是吧\n为什么\n这是因为你这个材质当前还是BSDF\n这个MND材质\n它是我们直接从这个md tools导入的\n所以说没有这个blender材质\n也就是说没有原理化BSDF\n这个时候我们在MD这个菜单中\n也就是在我们的md two的菜单中选择给他\n选择这个转换给blender\n转换给blender\n完成之后\n咱们再回到我们的插件\n我们点击这个卡通米面\n点击应用\nOK啊\n这个效果是不是立竿见影就出来了\n这个时候如果你觉得还不够好\n我们可以直接把把这个灯shift加D复制一份\n直接原位粘过来\n这个时候你就能看到这个效果了啊\n说他眼白默认的这个模型材质\n眼白是比较淡的\n所以说你可以去把这个材质拆分一下\n我再把眼白的材质分一下\n把他这个眼白提亮一些就可以了\n你也可以在这里找到眼白\n如果说你不拆分材质\n那你在这里找到眼白\n这里有个立柱是吧\n可以看到他对他的影响\n把这光照影响给他反向调低一点\n这个时候野蛮就出来了\nOK其实整体的效果大家也可以看到是比较好的\n如果说你不想要花太多功夫\n点一下M1tools\n点一下我的渲染出入\n点一下描边\n点一下这个卡通米亚\n要把这个默认的AGX高对比改为中高对比哎\n这个时候效果立马就出来了\n如果你再加个卡通天空哎\n就点1234\n点个四步就能完成一个基础的渲染\n非常的强大\n所以说这也是我非常开心\n终于把这个插件能做到给新手装上\n即用的一个程度了啊\n这个插件呢我会给大家发链接\n它其实你在这个blender pr设置中\n直接在获取拓展中搜索offer\n那你就能直接搜到\n直接安装就可以了\n如果说你这个插件是吧\n用的版本比较老\n或者说你这个用不了\n那我就把这个链接好\n快广网盘链接发到这个评论区\n你直接在这个评论区安装也可以的\n目前啊我的插件支持\n从4.1到5.2都是可以的\nOK感谢大家观看\n喜欢记得点赞三连\n继续支持一下\n我们",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1RGuJ6MEWs",
+  "published_at": "1786017224",
+  "fetched_at": "2026-08-08T13:37:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Blender二次元渲染助手 V2.5 知识图谱\n\n## 功能总览\n```mermaid\nflowchart TD\n    A[插件 \"Blender二次元渲染助手 V2.5\"]\n    B[\"卡通天空盒 (内置 HDRI)\"]\n    C[\"自定义 HDRI 上传\"]\n    D[\"描边 (Outline)\"]\n    E[\"卡通明暗 (Cartoon Shading)\"]\n    F[\"材质转换 (MD Tools → Blender)\"]\n    G[\"灯光强度调节\"]\n    H[\"快速渲染四步\"]\n    I[\"兼容 Blender 4.1‑5.2\"]\n    J[\"一键安装 (Blender 插件市场)\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    A --> G\n    A --> H\n    A --> I\n    A --> J\n```\n\n## 卡通天空使用流程\n```mermaid\nflowchart LR\n    A[打开插件] --> B[点击“卡通天空”]\n    B --> C{选择方式}\n    C -->|内置 HDRI| D[使用预设卡通 HDRI]\n    C -->|上传自定义| E[上传 HDR 图片]\n    D --> F[应用天空盒]\n    E --> F\n    F --> G[检查环境光设置]\n    G --> H[渲染预览]\n```\n\n## 材质转换与渲染设置\n```mermaid\nflowchart TD\n    A[导入 MD Tools 材质] --> B[材质为 BSDF]\n    B --> C[打开 MD Two 菜单]\n    C --> D[选择“转换为 Blender 材质”]\n    D --> E[材质转换完成]\n    E --> F[启用卡通明暗]\n    F --> G[添加描边]\n    G --> H[调节灯光强度]\n    H --> I[完成渲染设置]\n```\n\n## 快速渲染四步\n```mermaid\nflowchart LR\n    A[打开 M1tools] --> B[点击“渲染出入”]\n    B --> C[启用“描边”]\n    C --> D[选择“卡通米亚” (Cartoon Shading)]\n    D --> E[将 AGX 对比度调为中高]\n    E --> F[添加卡通天空]\n    F --> G[点击“应用”]\n    G --> H[完成渲染，效果即显]\n```",
+      "diagrams": [
+        {
+          "title": "功能总览",
+          "code": "flowchart TD\n    A[插件 \"Blender二次元渲染助手 V2.5\"]\n    B[\"卡通天空盒 (内置 HDRI)\"]\n    C[\"自定义 HDRI 上传\"]\n    D[\"描边 (Outline)\"]\n    E[\"卡通明暗 (Cartoon Shading)\"]\n    F[\"材质转换 (MD Tools → Blender)\"]\n    G[\"灯光强度调节\"]\n    H[\"快速渲染四步\"]\n    I[\"兼容 Blender 4.1‑5.2\"]\n    J[\"一键安装 (Blender 插件市场)\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    A --> G\n    A --> H\n    A --> I\n    A --> J"
+        },
+        {
+          "title": "卡通天空使用流程",
+          "code": "flowchart LR\n    A[打开插件] --> B[点击“卡通天空”]\n    B --> C{选择方式}\n    C -->|内置 HDRI| D[使用预设卡通 HDRI]\n    C -->|上传自定义| E[上传 HDR 图片]\n    D --> F[应用天空盒]\n    E --> F\n    F --> G[检查环境光设置]\n    G --> H[渲染预览]"
+        },
+        {
+          "title": "材质转换与渲染设置",
+          "code": "flowchart TD\n    A[导入 MD Tools 材质] --> B[材质为 BSDF]\n    B --> C[打开 MD Two 菜单]\n    C --> D[选择“转换为 Blender 材质”]\n    D --> E[材质转换完成]\n    E --> F[启用卡通明暗]\n    F --> G[添加描边]\n    G --> H[调节灯光强度]\n    H --> I[完成渲染设置]"
+        },
+        {
+          "title": "快速渲染四步",
+          "code": "flowchart LR\n    A[打开 M1tools] --> B[点击“渲染出入”]\n    B --> C[启用“描边”]\n    C --> D[选择“卡通米亚” (Cartoon Shading)]\n    D --> E[将 AGX 对比度调为中高]\n    E --> F[添加卡通天空]\n    F --> G[点击“应用”]\n    G --> H[完成渲染，效果即显]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T13:38:40+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Blender二次元渲染助手 V2.5 知识图谱\n\n## 功能总览\n```mermaid\nflowchart TD\n    A[插件 \"Blender二次元渲染助手 V2.5\"]\n    B[\"卡通天空盒 (内置 HDRI)\"]\n    C[\"自定义 HDRI 上传\"]\n    D[\"描边 (Outline)\"]\n    E[\"卡通明暗 (Cartoon Shading)\"]\n    F[\"材质转换 (MD Tools → Blender)\"]\n    G[\"灯光强度调节\"]\n    H[\"快速渲染四步\"]\n    I[\"兼容 Blender 4.1‑5.2\"]\n    J[\"一键安装 (Blender 插件市场)\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    A --> G\n    A --> H\n    A --> I\n    A --> J\n```\n\n## 卡通天空使用流程\n```mermaid\nflowchart LR\n    A[打开插件] --> B[点击“卡通天空”]\n    B --> C{选择方式}\n    C -->|内置 HDRI| D[使用预设卡通 HDRI]\n    C -->|上传自定义| E[上传 HDR 图片]\n    D --> F[应用天空盒]\n    E --> F\n    F --> G[检查环境光设置]\n    G --> H[渲染预览]\n```\n\n## 材质转换与渲染设置\n```mermaid\nflowchart TD\n    A[导入 MD Tools 材质] --> B[材质为 BSDF]\n    B --> C[打开 MD Two 菜单]\n    C --> D[选择“转换为 Blender 材质”]\n    D --> E[材质转换完成]\n    E --> F[启用卡通明暗]\n    F --> G[添加描边]\n    G --> H[调节灯光强度]\n    H --> I[完成渲染设置]\n```\n\n## 快速渲染四步\n```mermaid\nflowchart LR\n    A[打开 M1tools] --> B[点击“渲染出入”]\n    B --> C[启用“描边”]\n    C --> D[选择“卡通米亚” (Cartoon Shading)]\n    D --> E[将 AGX 对比度调为中高]\n    E --> F[添加卡通天空]\n    F --> G[点击“应用”]\n    G --> H[完成渲染，效果即显]\n```",
+  "diagrams": [
+    {
+      "title": "功能总览",
+      "code": "flowchart TD\n    A[插件 \"Blender二次元渲染助手 V2.5\"]\n    B[\"卡通天空盒 (内置 HDRI)\"]\n    C[\"自定义 HDRI 上传\"]\n    D[\"描边 (Outline)\"]\n    E[\"卡通明暗 (Cartoon Shading)\"]\n    F[\"材质转换 (MD Tools → Blender)\"]\n    G[\"灯光强度调节\"]\n    H[\"快速渲染四步\"]\n    I[\"兼容 Blender 4.1‑5.2\"]\n    J[\"一键安装 (Blender 插件市场)\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    A --> G\n    A --> H\n    A --> I\n    A --> J"
+    },
+    {
+      "title": "卡通天空使用流程",
+      "code": "flowchart LR\n    A[打开插件] --> B[点击“卡通天空”]\n    B --> C{选择方式}\n    C -->|内置 HDRI| D[使用预设卡通 HDRI]\n    C -->|上传自定义| E[上传 HDR 图片]\n    D --> F[应用天空盒]\n    E --> F\n    F --> G[检查环境光设置]\n    G --> H[渲染预览]"
+    },
+    {
+      "title": "材质转换与渲染设置",
+      "code": "flowchart TD\n    A[导入 MD Tools 材质] --> B[材质为 BSDF]\n    B --> C[打开 MD Two 菜单]\n    C --> D[选择“转换为 Blender 材质”]\n    D --> E[材质转换完成]\n    E --> F[启用卡通明暗]\n    F --> G[添加描边]\n    G --> H[调节灯光强度]\n    H --> I[完成渲染设置]"
+    },
+    {
+      "title": "快速渲染四步",
+      "code": "flowchart LR\n    A[打开 M1tools] --> B[点击“渲染出入”]\n    B --> C[启用“描边”]\n    C --> D[选择“卡通米亚” (Cartoon Shading)]\n    D --> E[将 AGX 对比度调为中高]\n    E --> F[添加卡通天空]\n    F --> G[点击“应用”]\n    G --> H[完成渲染，效果即显]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T13:38:40+00:00"
+}

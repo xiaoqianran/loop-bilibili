@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1j53o6JEpM",
+  "title": "我把激光视觉追踪升级到了525 FPS，还能自动击破气球",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 976,
+  "text": "这是正常速度下的激光追踪\n这是使用240帧外部相机拍摄的慢动作\n而这是系统自动识别锁定并击破气球的瞬间\n哈喽大家好\n上一期\n我完成了从目标识别到激光跟随的完整闭环\n但只要目标移动的足够快\n系统仍然未受到相机帧率\n算法延迟和增进更新速度的限制\n所以这一期我更换了新的高速工业相机\n并完成了共轴安装\n镜头标定残差补偿和高速追踪的优化\n最终相机每秒可以采集约525帧\n上把最终每秒更新约450次\n目标位置振镜控制接近400HZ\n也就是大约每2.5ms更新一次激光方向\n这套系统究竟能不能真正的锁定一个\n自由飞行的小目标\n那么接下来我就给大家看看我升级的设备\n就是这个海康机器人的黑白相机\n它的一个原生分辨率\n可以达到720×540\n在700微秒的曝光下\n可以达到每秒525帧\n那么接下来我们就来看看它的一个效果\n我用的相机是尼康比赛六三\n我们来看一下在240帧的拍摄下\n我们这个激光能不能准确的跟随\n我们的一个文字开始测试\nOK我们来看看前挪右挪\n上挪下挪\n后挪前挪\nOK快速甩\n更快速的进行一个甩动\n有多快就要甩多快\n有多快\n需要甩头\n看操作前后进行一个甩动\n上上下下左右前后前后前后嗯\n然后一然后\n搞个急停急停急停急停\n七星\nOk\n那么接下来我们就演示激光\n能不能在23米开外追踪一个气球\n并且能把气球打爆\nOK那么我们就直接开始\n把气球放入到我们的一个相机的一个范围\nOK大家看到没有\n激光就直接把气球给打爆了\nOk ok\n那么接下来呢我就讲讲一下我这套系统\n它的一个原理\n整套系统可以分为六个部分\n首先高速工业相机负责采集画面\n优佬负责发现目标并确认类别\n发现目标以后\n算法最终会在目标附近建立动态的范围\n并通过光流模板匹配和运动预测\n持续更新目标位置\n随后标定模型\n把相机画面的像素坐标转换成XY\n两路镇静控制电压\n最后再由USB32执行镇静和激光控制指令\n把激光快速移动到目标位置\n更形象的说\nyo就像侦察兵负责确认他是谁\n算法最终折向追踪兵平均2.2ms更新一次\n它在哪里\n这套系统已经完成了\n从视觉采集目标追踪到激光\n执行了高速化升级\n但气球和固定平面上的目标\n并不等于真实飞行中的蚊子\n真正的飞行目标还未带来三维距离变化\n移交遮挡以及毫无规律的突然转向\n那么下一期我们就继续挑战这套系统\n究竟能不能真正的锁定一个自由飞行的小目标\n好谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1j53o6JEpM",
+  "published_at": "1785722400",
+  "fetched_at": "2026-08-09T03:16:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 激光视觉追踪系统知识图谱\n\n## 系统整体结构\n```mermaid\nflowchart TD\n    C1[\"高速工业相机<br/>525 FPS\"] --> D1[\"目标检测算法<br/>发现目标并确认类别\"]\n    D1 --> D2[\"动态范围建立<br/>目标附近\"]\n    D2 --> D3[\"光流模板匹配<br/>+ 运动预测\"]\n    D3 --> D4[\"持续更新目标位置\"]\n    D4 --> M1[\"标定模型<br/>像素→XY坐标\"]\n    M1 --> C2[\"两路镇静控制电压\"]\n    C2 --> U1[\"USB32执行指令\"]\n    U1 --> L1[\"激光驱动<br/>快速指向目标\"]\n```\n\n## 高速采集与更新链路\n```mermaid\nflowchart TD\n    Cam[\"相机采集<br/>525帧/秒\"] --> Proc[\"图像处理\"]\n    Proc --> Detect[\"目标检测\"]\n    Detect --> Update[\"2.2 ms 更新一次\"]\n    Update --> Mirror[\"振镜控制<br/>≈400 Hz\"]\n    Mirror --> LaserDir[\"激光方向更新<br/>≈2.5 ms/次\"]\n    LaserDir --> Action[\"激光指向目标\"]\n```\n\n## 性能指标与限制\n```mermaid\nflowchart TD\n    FPS[\"相机帧率<br/>525 FPS\"] --> Upd[\"每秒更新≈450 次\"]\n    Upd --> MirrorHz[\"振镜频率≈400 Hz\"]\n    MirrorHz --> Lat[\"系统总延迟≈2.2 ms\"]\n    Lat --> SpeedLim[\"目标速度上限\"]\n    SpeedLim --> Challenge[\"真实飞行目标挑战\"]\n    Challenge --> Occlusion[\"遮挡\"]\n    Challenge --> DepthChange[\"三维距离变化\"]\n    Challenge --> SuddenTurn[\"不规则转向\"]\n```\n\n## 实验演示流程\n```mermaid\nflowchart TD\n    Setup[\"放置气球<br/>距离≈23 m\"] --> Capture[\"相机捕获画面\"]\n    Capture --> Detect[\"算法锁定气球\"]\n    Detect --> Aim[\"激光对准气球\"]\n    Aim --> Fire[\"激光发射\"]\n    Fire --> Burst[\"气球爆炸\"]\n```\n\n## 未来挑战与改进方向\n```mermaid\nflowchart TD\n    Current[\"当前系统<br/>固定平面目标\"] --> Gap[\"与真实飞行目标差距\"]\n    Gap --> Dim3[\"三维距离变化\"]\n    Gap --> Occl[\"遮挡\"]\n    Gap --> Turn[\"突然转向\"]\n    Dim3 --> Next[\"下一期计划\"]\n    Occl --> Next\n    Turn --> Next\n    Next --> Goal[\"实现自由飞行小目标锁定\"]\n```",
+      "diagrams": [
+        {
+          "title": "系统整体结构",
+          "code": "flowchart TD\n    C1[\"高速工业相机<br/>525 FPS\"] --> D1[\"目标检测算法<br/>发现目标并确认类别\"]\n    D1 --> D2[\"动态范围建立<br/>目标附近\"]\n    D2 --> D3[\"光流模板匹配<br/>+ 运动预测\"]\n    D3 --> D4[\"持续更新目标位置\"]\n    D4 --> M1[\"标定模型<br/>像素→XY坐标\"]\n    M1 --> C2[\"两路镇静控制电压\"]\n    C2 --> U1[\"USB32执行指令\"]\n    U1 --> L1[\"激光驱动<br/>快速指向目标\"]"
+        },
+        {
+          "title": "高速采集与更新链路",
+          "code": "flowchart TD\n    Cam[\"相机采集<br/>525帧/秒\"] --> Proc[\"图像处理\"]\n    Proc --> Detect[\"目标检测\"]\n    Detect --> Update[\"2.2 ms 更新一次\"]\n    Update --> Mirror[\"振镜控制<br/>≈400 Hz\"]\n    Mirror --> LaserDir[\"激光方向更新<br/>≈2.5 ms/次\"]\n    LaserDir --> Action[\"激光指向目标\"]"
+        },
+        {
+          "title": "性能指标与限制",
+          "code": "flowchart TD\n    FPS[\"相机帧率<br/>525 FPS\"] --> Upd[\"每秒更新≈450 次\"]\n    Upd --> MirrorHz[\"振镜频率≈400 Hz\"]\n    MirrorHz --> Lat[\"系统总延迟≈2.2 ms\"]\n    Lat --> SpeedLim[\"目标速度上限\"]\n    SpeedLim --> Challenge[\"真实飞行目标挑战\"]\n    Challenge --> Occlusion[\"遮挡\"]\n    Challenge --> DepthChange[\"三维距离变化\"]\n    Challenge --> SuddenTurn[\"不规则转向\"]"
+        },
+        {
+          "title": "实验演示流程",
+          "code": "flowchart TD\n    Setup[\"放置气球<br/>距离≈23 m\"] --> Capture[\"相机捕获画面\"]\n    Capture --> Detect[\"算法锁定气球\"]\n    Detect --> Aim[\"激光对准气球\"]\n    Aim --> Fire[\"激光发射\"]\n    Fire --> Burst[\"气球爆炸\"]"
+        },
+        {
+          "title": "未来挑战与改进方向",
+          "code": "flowchart TD\n    Current[\"当前系统<br/>固定平面目标\"] --> Gap[\"与真实飞行目标差距\"]\n    Gap --> Dim3[\"三维距离变化\"]\n    Gap --> Occl[\"遮挡\"]\n    Gap --> Turn[\"突然转向\"]\n    Dim3 --> Next[\"下一期计划\"]\n    Occl --> Next\n    Turn --> Next\n    Next --> Goal[\"实现自由飞行小目标锁定\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T03:16:19+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 激光视觉追踪系统知识图谱\n\n## 系统整体结构\n```mermaid\nflowchart TD\n    C1[\"高速工业相机<br/>525 FPS\"] --> D1[\"目标检测算法<br/>发现目标并确认类别\"]\n    D1 --> D2[\"动态范围建立<br/>目标附近\"]\n    D2 --> D3[\"光流模板匹配<br/>+ 运动预测\"]\n    D3 --> D4[\"持续更新目标位置\"]\n    D4 --> M1[\"标定模型<br/>像素→XY坐标\"]\n    M1 --> C2[\"两路镇静控制电压\"]\n    C2 --> U1[\"USB32执行指令\"]\n    U1 --> L1[\"激光驱动<br/>快速指向目标\"]\n```\n\n## 高速采集与更新链路\n```mermaid\nflowchart TD\n    Cam[\"相机采集<br/>525帧/秒\"] --> Proc[\"图像处理\"]\n    Proc --> Detect[\"目标检测\"]\n    Detect --> Update[\"2.2 ms 更新一次\"]\n    Update --> Mirror[\"振镜控制<br/>≈400 Hz\"]\n    Mirror --> LaserDir[\"激光方向更新<br/>≈2.5 ms/次\"]\n    LaserDir --> Action[\"激光指向目标\"]\n```\n\n## 性能指标与限制\n```mermaid\nflowchart TD\n    FPS[\"相机帧率<br/>525 FPS\"] --> Upd[\"每秒更新≈450 次\"]\n    Upd --> MirrorHz[\"振镜频率≈400 Hz\"]\n    MirrorHz --> Lat[\"系统总延迟≈2.2 ms\"]\n    Lat --> SpeedLim[\"目标速度上限\"]\n    SpeedLim --> Challenge[\"真实飞行目标挑战\"]\n    Challenge --> Occlusion[\"遮挡\"]\n    Challenge --> DepthChange[\"三维距离变化\"]\n    Challenge --> SuddenTurn[\"不规则转向\"]\n```\n\n## 实验演示流程\n```mermaid\nflowchart TD\n    Setup[\"放置气球<br/>距离≈23 m\"] --> Capture[\"相机捕获画面\"]\n    Capture --> Detect[\"算法锁定气球\"]\n    Detect --> Aim[\"激光对准气球\"]\n    Aim --> Fire[\"激光发射\"]\n    Fire --> Burst[\"气球爆炸\"]\n```\n\n## 未来挑战与改进方向\n```mermaid\nflowchart TD\n    Current[\"当前系统<br/>固定平面目标\"] --> Gap[\"与真实飞行目标差距\"]\n    Gap --> Dim3[\"三维距离变化\"]\n    Gap --> Occl[\"遮挡\"]\n    Gap --> Turn[\"突然转向\"]\n    Dim3 --> Next[\"下一期计划\"]\n    Occl --> Next\n    Turn --> Next\n    Next --> Goal[\"实现自由飞行小目标锁定\"]\n```",
+  "diagrams": [
+    {
+      "title": "系统整体结构",
+      "code": "flowchart TD\n    C1[\"高速工业相机<br/>525 FPS\"] --> D1[\"目标检测算法<br/>发现目标并确认类别\"]\n    D1 --> D2[\"动态范围建立<br/>目标附近\"]\n    D2 --> D3[\"光流模板匹配<br/>+ 运动预测\"]\n    D3 --> D4[\"持续更新目标位置\"]\n    D4 --> M1[\"标定模型<br/>像素→XY坐标\"]\n    M1 --> C2[\"两路镇静控制电压\"]\n    C2 --> U1[\"USB32执行指令\"]\n    U1 --> L1[\"激光驱动<br/>快速指向目标\"]"
+    },
+    {
+      "title": "高速采集与更新链路",
+      "code": "flowchart TD\n    Cam[\"相机采集<br/>525帧/秒\"] --> Proc[\"图像处理\"]\n    Proc --> Detect[\"目标检测\"]\n    Detect --> Update[\"2.2 ms 更新一次\"]\n    Update --> Mirror[\"振镜控制<br/>≈400 Hz\"]\n    Mirror --> LaserDir[\"激光方向更新<br/>≈2.5 ms/次\"]\n    LaserDir --> Action[\"激光指向目标\"]"
+    },
+    {
+      "title": "性能指标与限制",
+      "code": "flowchart TD\n    FPS[\"相机帧率<br/>525 FPS\"] --> Upd[\"每秒更新≈450 次\"]\n    Upd --> MirrorHz[\"振镜频率≈400 Hz\"]\n    MirrorHz --> Lat[\"系统总延迟≈2.2 ms\"]\n    Lat --> SpeedLim[\"目标速度上限\"]\n    SpeedLim --> Challenge[\"真实飞行目标挑战\"]\n    Challenge --> Occlusion[\"遮挡\"]\n    Challenge --> DepthChange[\"三维距离变化\"]\n    Challenge --> SuddenTurn[\"不规则转向\"]"
+    },
+    {
+      "title": "实验演示流程",
+      "code": "flowchart TD\n    Setup[\"放置气球<br/>距离≈23 m\"] --> Capture[\"相机捕获画面\"]\n    Capture --> Detect[\"算法锁定气球\"]\n    Detect --> Aim[\"激光对准气球\"]\n    Aim --> Fire[\"激光发射\"]\n    Fire --> Burst[\"气球爆炸\"]"
+    },
+    {
+      "title": "未来挑战与改进方向",
+      "code": "flowchart TD\n    Current[\"当前系统<br/>固定平面目标\"] --> Gap[\"与真实飞行目标差距\"]\n    Gap --> Dim3[\"三维距离变化\"]\n    Gap --> Occl[\"遮挡\"]\n    Gap --> Turn[\"突然转向\"]\n    Dim3 --> Next[\"下一期计划\"]\n    Occl --> Next\n    Turn --> Next\n    Next --> Goal[\"实现自由飞行小目标锁定\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T03:16:19+00:00"
+}

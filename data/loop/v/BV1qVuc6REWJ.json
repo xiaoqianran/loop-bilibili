@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1qVuc6REWJ",
+  "title": "游戏渲染教程——创建体积云",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 5125,
+  "text": "大家好\n今天呢我们来学习体积云的实现\n我们来打开unity的场景\n直接打开我们的场景\n十杠五\n那这个场景是呢\n是跟我们之前学习做这个水面渲染和瀑布的\n这个材质渲染的场景呢是一样的\n然后呢我们就是基于当前的这个场景\n来给他做一个体均匀的一个实现\n这边呢大概调了一个他的一个角度\n然后呢\n我们现在就是按照我们上节课实现的\n这个bloom的方法\n我们可以呢先把这个bloom的脚本呢\n给他复制一个出来\n我们把它叫做valumetric cloud\n我们把它呢起名叫这个名字\n体积云\n然后把这个bloom呢全都替换成audio metric cloud\n然后这些呢是先不要这些呢也是把它先都删除\n然后对于我们的这个体积云的一个深的实现呢\n我们可以先把它先定义一个pass好了\n我们把它叫做oometric cloud\n这是我们新加的一个pass\n这些呢全都不要\n那么渲染的时候呢\n我们直接用这个pass来进行一个渲染\n因为大部分的实现呢\n我们这边是不需要20实现体积云的时候呢\n是不需要这个多pass的\n所以呢我们这边就生命这一个pass应该就够了\n如果在实现过程之中呢\n我们发现还有需要再加其他新的pass的时候呢\n我们再加好这里\n完了以后呢\n我们在这个SHADER里头呢\n添加一下我们今天的新的pass\n把它叫做audiometric pass\n然后在这里\n把它添加上去\n添加一个新的pass\n这边呢是\n直接先return它\n啊这边添加完以后呢\n我们在我们的FX tuck里头呢\n把它也给它添加进来\n这个是在我们的render pipeline里头的\n这里我添加一个行的\n我们呢就把它叫做do wordometric cloud\n然后呢实现在这里\n看看我们的setting有没有实现出来\n你的setting呢是在这里\n所以呢这边呢我们就给它\n这边的setting还没实现\n我们要把它添加到我们的post FX settings里头\n把它呢添加进来\n就叫他\n我给matric cloud\n然后呢这个就是56metric settings\n那在这边呢进行一个引用\n这里呢直接就是调用它的一个render\n好的random\n我们看一下\n应该是不需要HDR这些的\n就能把它删掉\n现在看一下\n创建好了以后呢\n我们就把这个给它添加上去个bloom\nFX setting啊\n这边这个没听见\n好现在呢我们这个体积云的setting界面的就有了\n我们把它勾选一下\n看看是不是正常的加载到了\n我们在这个时代里头呢\n给他修改一下\n这个报错应该是跟他是无关的\n我们draw的时候呢是调用的它哦\n还没有\n这里的话应该是\n你用完了以后在这里调用了\n这个就是它\n我们看看为什么没有被绘制出来\n哦现在是没有调用我们的这个后期处理\n因为刚才呢把这块给它关掉了\n好现在就有了框架\n这块呢我们就完成了\n然后接下来呢\n我们就是往里头不断的来填充内容了\n那如何来实现它呢\n我们还是要借助于我们之前做的这些反射\n折射的方法\n我们是要使用REMATCHING的方法\n来进行我们的cloud的一个绘制\n就是\n使用\n来回去体积云\n那这样的话首先我们第一步是什么呢\n要把我们的这个重建他的世界坐标\n然我们首先呢拿到他的这个roll depth\n这个方法呢在之前呢全都是使用过的\n使用位置纹理中呢\n创建它的三维坐标\n第一步呢是跟他一样的\n只不过这个SSO呢\n它是创在我们的观察坐标系里头\n然后这个呢我们就创建在世界坐标系里\n然后呢我们把它的NDC坐标\n以及他的word position给它重建出来\n我们可以return一个它\n这是我们目前的\n然后呢\n我们来开始做他的这个remain的一个绘制\n我们可以同样的跟其他一样\n我们创建一个新的图文件\n用来处理我们具体的算法\n我们在里头呢添加一个新的好\n应该添加在post FX里头\n我们给它起名叫whumetric cloud\n把他这名字呢给他替换掉\n这些都不用\n可以创建一个方法\n我们把它叫做什么呢\n我们把它叫做一个load4的\n叫cloud remating\n把传递进来的是我们的这个reposition word space\n下面的一个word position\n然后呢每次迭代的一个position\n然后呢再传递一个它的UV\n我们使用它呢进行我们的一个计算\n在我们在这几个都不用了\n先给它关掉\nmichelle rematch计算\n我们把具体生成出来的这个呢叫做cloud\n这边呢还要把他的头文件呢给它包进来\n这样子的话呢我们就可以直接调用它了\n传递一个什么呢\n我们把它的世界坐标系下面的摄像机的位置呢\n给他传递进来\n从这个摄像机的位置呢来开始计算\n然后这个position呢就是我们的这个这里得到的值\n因为它是float4的\n我们只要它的XYZ坐标就可以了\n然后UV呢比较简单\n就是我们的input的scream uv计算完以后呢\n我们把它return出来看一下\n然后怎么计算呢\n具体的实现呢都是在这里\n首先我们先得到世界空间坐标系下的坐标\n这个呢是这里word position\n然后呢\n再得到我们世界空间坐标系下的相机的方向\n相机的方向\n那是谁呢\n这个应该就是从他传递来的\n我们可以这样写\n这个值呢就不需要从这边来传的\n因为这个word space camera pose的话好像也不用传\n我看看我们这个值有没有\n之前有没有把它传递进来过哦\n传递进来的可以了\n那是没问题的\n既然他已经是一个全局的变量的话\n那我们这边就不用传递进来了\n我们这边呢直接把它拿到\n然后我们的世界空间坐标系\n下面的一个相机的方向呢就有了\n相机朝向\n每一个具体的这个坐标点的方向呢就有了\n然后呢我们来算它的上级方向\n到这些点的它的一个深度\n我们用length来进行一个计算\n这个呢就是就是他了word position减去啊\n这那是它的一个深度\n然后计算的时候呢\n因为我们这个体积物的话\n我们是需要一个计算的一个范围的\n我们不能在整个这个场景里头进行计算\n我们需要有一个容器\n用这个容器呢来限制\n我们当前来绘制这个体积物的一个范围\n所以呢我们在这边呢\n要创建一系列的一个包围盒\n我们需要一个包围盒来进行一个计算\n那这个值呢我们是从哪里计算比较好\n我们可能是需要来创建一个新的\n我们需要知道一个AABB这么一个包围盒\n那这两个值呢\n我们也是要从c#脚本里头呢\n给它传递进来\n这边呢我们可以把它声明在什么地方呢\n直接声明可能不是很方便\n我们最好在这个场景里头呢\n给它创建出来一个包围盒\n那这样子的话\n我们在场景里头可能先创建一个吧\n我们把它叫做cloud的一个范围\n我们可以创建一个三维几何体\n叫它cube吧\n然后给它叫做\nloud好了\n然后我们用它的这个大小呢来进行一个控制\n做成一个fonder\n打开就郑大吧\n好然后呢\n我们现在是需要把它的这个大小呢\n给它传递进来嗯\n我们可以把它挂载在我们的这个post FX manager上面\n那我就创建一个\n我们要来一会呢\n要来访问他\n访问他的话\n我们最好样子应该就可以了\n然后呢我们把它挂载上去就可以了\n然后在我们的这一\n我们在他random的时候呢\n把这些参数呢给它传递进去\n传递cloud包围盒\n我们是需要用post FX manager manager\n之前呢做过一个他的instance\n直接访问他的instance\n用instance呢来访问这个cloud transform\n最好能做一个判断\n因为是持有我们当前这个场景里头\n才需要它挂载一个cloud的一个包围盒\n在我们之前像做bloom吗\n或者说SSO的时候呢是不需要的\n所以呢这个上面是不一定是一直挂载的\n挂载这个cloud的transformed这样子来做\n好把他呢挂上来\n有它以后我们就可以来判断它的这个大小了\n它的这个包围盒的最小值就是这样子\n拿到它当前的这个cloud的位置\n减去它的一个缩放\n最大值呢就是加上它缩放的一半\n这样子的话呢它最小和最大呢就都有了\n然后我们把这两个值呢给他set vector\n这样的话呢这两个值就OK了\n好我们又可以再回到我们的she的这边\n来完成我们现在这里的一个计算\n那计算的是什么呢\n就是我们当前这个光线\n或者说是我们叫做相机方向\n因为这个相机方向呢是指向不同的这个顶点的\n我们把它这个方向呢和我们的这个包围盒\n来进行一个求交的一个计算\n如果超出的部分呢\n我们就是不再计算它的这个体积云的\n一个效果了\n我们只计算在他的这个包围盒之内的\n体积云的效果\n所以呢我们这边可能还要再加一个\n新的一个方法来做这一步\n我们可以把它呢叫做REBOX\nRebox dist\n他要知道这几个参数\n肯定是我们的这个包围盒的最小值\n最大的值BOUN次M\n老3points max还要知道世界相机的位置\nNote3\n最后一个呢就是我们的反转世界空间\n这个光线的方向\n这个是它的边界框最小值\n边框最大值\n然后世界相机的位置是个\n它这个计算呢其实就是套公式\n我这边呢就直接把之前直接实现的方法呢\n给他贴出来了\n这个返回的是什么呢\n一个是它的焦点距离\n我们的这个包围盒的一个距离\n然后呢\n还有一个是判断焦点是否是在这个包围盒内\n这个函数的一个返回值\n有了它以后呢\n我们再回到我们刚才的这个这里的\ncrowd reaction这块\n我们现在呢就可以用它来做一个\n求交的一个计算了\n我们直接得到当前的这个光线方向\n和我们的包围盒\n求教以后\n他得到的一个信息\n刚才跟大家讲解过了\n这个呢它是返回两个值\n一个是它的距离\n还有一个是确定这个焦点\n是否是在我们这个包围盒内\n所以呢我们第一个值list to box是什么呢\n相机到我们的这个AABB包围盒\n就是它的容器的一个距离\n第二个值呢变Y就是返回光线是否在容器中\n我们这边呢加上一个判断\n返回两个值\n相机到容器距离和光线是否在容器中\n好这样子的话我们可以先return一个\n我们先来看一下\n哦这个呢跟我们的预期是一样的\n是不是只有在容器内的时候呢\n它是一个有颜色的\n否则呢他就是个零\n因为我们这边返回的第二个值是个max0\n或者他是不是在容器外呢\n它全都是零\n在容器内呢它都是有值的\n然后我们返回一下他这个距离\n距离这应该都是大于这个零的\n所以的看不出来\n好然后我们再来计算与这个容器的一个交点\n那我们有了它一开始的位置\n然后呢又有它的方向\n又有它的距离\n那么就很容易计算出来它的安全point\n他的交点就是它从这个相机的位置\n再加上他的这个方向\n然后呢乘以它的距离\n就是他的一个焦点\n然后呢我们再计算这个相机到物体的距离\n和这个相机到容器的距离\n再跟我们它是否在这个容器内呢\n给它做个比较\n来看看\n这个距离减去这个相机到容器的距离和事物\n在它之内\n然后呢\n我们会用它呢在跟我们的这个在REMATING的时候\n来给它进行一个对比\n那我们这个值呢先保留在这里\n然后我们开始来做他的reaction\n我们用一个for循环循环多少次呢\n我们先把定义成为size loop\n然后这个size loop是多少呢\n我们可以先把它定义成为一个常量\n假如说是我们先循环512层\n我们先看一下它的这个效果怎么样\n我们只有计算这个焦点在这个范围内的时候\n的相应的值\n所以呢我们这边最好再加上一个它的offset\n这个值呢要从外部呢传进来了\n等于一个ray offset strength\n这些参数呢我们是把它叫做计算体积\n云密度相关\n这个呢我们把它叫做\n计算题体积云的容器相关\n我们会把这个值呢也给它传递进来\n写一下\n这是跟密度相关的\n他这个是这个值\n好这持久了以后呢\n我们先把它给它\n我们每次迭代的时候呢\n他的entry point呢都会递增它的这个值\n这我们新的reports呢\n就是在我们这个焦点的基础上呢\n递增一个这个值\n然后我们再来看一下这个值还要再递增一下\n我们需要step size\n每次在递增完以后呢\n它的这个值呢也要再添加一下\n我们也得用几个值来把它作为控制\n直接套用之前写好的一个公式\n还是要传递两个参数\nstep和race step\n这两个呢全都是跟密度计算相关的\n然后他们俩呢全都是从这里呢\n从c#这边呢传递进来的\n这样子的我们每次递增的这个值呢\n也就是计算好了\n然后接下来我们就要算他的这个密度了\n因为密度呢他直接就是返回到我们渲染出来的\n他的这个体积云的一个形态\n那我们可以在下节课来把这个最关键的这步骤\n把它实现出来\n以及按他的这个密度这一块功能呢\n给它实现出来\n那今天这节课呢先给大家讲解到这里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qVuc6REWJ",
+  "published_at": "1785934200",
+  "fetched_at": "2026-08-07T14:10:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 体积云实现知识图谱\n\n## 总览概览 [00:32-01:26]\n```mermaid\nflowchart TD\n    S1[\"场景（基于水面/瀑布）\"] --> P1[\"体积云渲染 Pass\"]\n    P1 --> SH[\"Shader（加入体积云 Pass）\"]\n    SH --> FX[\"后期 FX 管线（PostFX Manager）\"]\n    FX --> OUT[\"最终画面（体积云效果）\"]\n    SET[\"体积云 Settings（密度、步长、偏移等）\"] --> P1\n    SET --> SH\n```\n\n## Pass 集成流程 [00:32-02:52]\n```mermaid\nflowchart TD\n    A1[\"复制 Bloom 脚本\"] --> A2[\"重命名为 VolumetricCloud\"]\n    A2 --> A3[\"替换脚本内部 Bloom 为 VolumetricCloud\"]\n    A3 --> A4[\"创建新 Pass（VolumetricCloud Pass）\"]\n    A4 --> A5[\"在 Shader 中添加该 Pass\"]\n    A5 --> A6[\"在 Render Pipeline 中注册 Pass\"]\n    A6 --> A7[\"在 PostFX Manager 中加入 Pass\"]\n    A7 --> A8[\"完成 Pass 集成\"]\n```\n\n## 体积云光线行进算法 [06:13-19:10]\n```mermaid\nflowchart TD\n    B1[\"重建世界坐标\\n- 获取相机位置\\n- 计算 NDC 与 world position\"] --> B2[\"计算相机射线方向\"]\n    B2 --> B3[\"构建云体 AABB（包围盒）\"]\n    B3 --> B4[\"Ray‑Box 交点检测（Rebox）\"]\n    B4 -->|相交| B5[\"确定入口点 & 最大行进距离\"]\n    B5 --> B6[\"循环采样（默认 512 步）\"]\n    B6 --> B7[\"在每步计算密度\\n- 使用 density、offset、stepSize 参数\"]\n    B7 --> B8[\"累积颜色/雾度\"]\n    B8 --> B9[\"输出体积云颜色\"]\n    B4 -->|不相交| B10[\"返回零（不渲染）\"]\n```\n\n## 设置与数据流动 [03:27-04:56、11:27-12:12、15:01-16:55]\n```mermaid\nflowchart TD\n    C1[\"VolumetricCloud Settings 资产\"] --> C2[\"包含参数：\\n密度、步长、偏移、AABB 大小\"]\n    C2 --> C3[\"C# 脚本读取并传递给 Shader\"]\n    C3 --> SH[\"Shader（用于 Ray‑Marching）\"]\n    C3 --> FX[\"PostFX Manager（持有 Settings）\"]\n    FX --> P1[\"体积云 Pass 使用 Settings 参数\"]\n    B3[\"AABB 计算\"] --> C2\n    B7[\"密度计算\"] --> C2\n```",
+      "diagrams": [
+        {
+          "title": "总览概览 [00:32-01:26]",
+          "code": "flowchart TD\n    S1[\"场景（基于水面/瀑布）\"] --> P1[\"体积云渲染 Pass\"]\n    P1 --> SH[\"Shader（加入体积云 Pass）\"]\n    SH --> FX[\"后期 FX 管线（PostFX Manager）\"]\n    FX --> OUT[\"最终画面（体积云效果）\"]\n    SET[\"体积云 Settings（密度、步长、偏移等）\"] --> P1\n    SET --> SH"
+        },
+        {
+          "title": "Pass 集成流程 [00:32-02:52]",
+          "code": "flowchart TD\n    A1[\"复制 Bloom 脚本\"] --> A2[\"重命名为 VolumetricCloud\"]\n    A2 --> A3[\"替换脚本内部 Bloom 为 VolumetricCloud\"]\n    A3 --> A4[\"创建新 Pass（VolumetricCloud Pass）\"]\n    A4 --> A5[\"在 Shader 中添加该 Pass\"]\n    A5 --> A6[\"在 Render Pipeline 中注册 Pass\"]\n    A6 --> A7[\"在 PostFX Manager 中加入 Pass\"]\n    A7 --> A8[\"完成 Pass 集成\"]"
+        },
+        {
+          "title": "体积云光线行进算法 [06:13-19:10]",
+          "code": "flowchart TD\n    B1[\"重建世界坐标\\n- 获取相机位置\\n- 计算 NDC 与 world position\"] --> B2[\"计算相机射线方向\"]\n    B2 --> B3[\"构建云体 AABB（包围盒）\"]\n    B3 --> B4[\"Ray‑Box 交点检测（Rebox）\"]\n    B4 -->|相交| B5[\"确定入口点 & 最大行进距离\"]\n    B5 --> B6[\"循环采样（默认 512 步）\"]\n    B6 --> B7[\"在每步计算密度\\n- 使用 density、offset、stepSize 参数\"]\n    B7 --> B8[\"累积颜色/雾度\"]\n    B8 --> B9[\"输出体积云颜色\"]\n    B4 -->|不相交| B10[\"返回零（不渲染）\"]"
+        },
+        {
+          "title": "设置与数据流动 [03:27-04:56、11:27-12:12、15:01-16:55]",
+          "code": "flowchart TD\n    C1[\"VolumetricCloud Settings 资产\"] --> C2[\"包含参数：\\n密度、步长、偏移、AABB 大小\"]\n    C2 --> C3[\"C# 脚本读取并传递给 Shader\"]\n    C3 --> SH[\"Shader（用于 Ray‑Marching）\"]\n    C3 --> FX[\"PostFX Manager（持有 Settings）\"]\n    FX --> P1[\"体积云 Pass 使用 Settings 参数\"]\n    B3[\"AABB 计算\"] --> C2\n    B7[\"密度计算\"] --> C2"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T14:10:23+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 体积云实现知识图谱\n\n## 总览概览 [00:32-01:26]\n```mermaid\nflowchart TD\n    S1[\"场景（基于水面/瀑布）\"] --> P1[\"体积云渲染 Pass\"]\n    P1 --> SH[\"Shader（加入体积云 Pass）\"]\n    SH --> FX[\"后期 FX 管线（PostFX Manager）\"]\n    FX --> OUT[\"最终画面（体积云效果）\"]\n    SET[\"体积云 Settings（密度、步长、偏移等）\"] --> P1\n    SET --> SH\n```\n\n## Pass 集成流程 [00:32-02:52]\n```mermaid\nflowchart TD\n    A1[\"复制 Bloom 脚本\"] --> A2[\"重命名为 VolumetricCloud\"]\n    A2 --> A3[\"替换脚本内部 Bloom 为 VolumetricCloud\"]\n    A3 --> A4[\"创建新 Pass（VolumetricCloud Pass）\"]\n    A4 --> A5[\"在 Shader 中添加该 Pass\"]\n    A5 --> A6[\"在 Render Pipeline 中注册 Pass\"]\n    A6 --> A7[\"在 PostFX Manager 中加入 Pass\"]\n    A7 --> A8[\"完成 Pass 集成\"]\n```\n\n## 体积云光线行进算法 [06:13-19:10]\n```mermaid\nflowchart TD\n    B1[\"重建世界坐标\\n- 获取相机位置\\n- 计算 NDC 与 world position\"] --> B2[\"计算相机射线方向\"]\n    B2 --> B3[\"构建云体 AABB（包围盒）\"]\n    B3 --> B4[\"Ray‑Box 交点检测（Rebox）\"]\n    B4 -->|相交| B5[\"确定入口点 & 最大行进距离\"]\n    B5 --> B6[\"循环采样（默认 512 步）\"]\n    B6 --> B7[\"在每步计算密度\\n- 使用 density、offset、stepSize 参数\"]\n    B7 --> B8[\"累积颜色/雾度\"]\n    B8 --> B9[\"输出体积云颜色\"]\n    B4 -->|不相交| B10[\"返回零（不渲染）\"]\n```\n\n## 设置与数据流动 [03:27-04:56、11:27-12:12、15:01-16:55]\n```mermaid\nflowchart TD\n    C1[\"VolumetricCloud Settings 资产\"] --> C2[\"包含参数：\\n密度、步长、偏移、AABB 大小\"]\n    C2 --> C3[\"C# 脚本读取并传递给 Shader\"]\n    C3 --> SH[\"Shader（用于 Ray‑Marching）\"]\n    C3 --> FX[\"PostFX Manager（持有 Settings）\"]\n    FX --> P1[\"体积云 Pass 使用 Settings 参数\"]\n    B3[\"AABB 计算\"] --> C2\n    B7[\"密度计算\"] --> C2\n```",
+  "diagrams": [
+    {
+      "title": "总览概览 [00:32-01:26]",
+      "code": "flowchart TD\n    S1[\"场景（基于水面/瀑布）\"] --> P1[\"体积云渲染 Pass\"]\n    P1 --> SH[\"Shader（加入体积云 Pass）\"]\n    SH --> FX[\"后期 FX 管线（PostFX Manager）\"]\n    FX --> OUT[\"最终画面（体积云效果）\"]\n    SET[\"体积云 Settings（密度、步长、偏移等）\"] --> P1\n    SET --> SH"
+    },
+    {
+      "title": "Pass 集成流程 [00:32-02:52]",
+      "code": "flowchart TD\n    A1[\"复制 Bloom 脚本\"] --> A2[\"重命名为 VolumetricCloud\"]\n    A2 --> A3[\"替换脚本内部 Bloom 为 VolumetricCloud\"]\n    A3 --> A4[\"创建新 Pass（VolumetricCloud Pass）\"]\n    A4 --> A5[\"在 Shader 中添加该 Pass\"]\n    A5 --> A6[\"在 Render Pipeline 中注册 Pass\"]\n    A6 --> A7[\"在 PostFX Manager 中加入 Pass\"]\n    A7 --> A8[\"完成 Pass 集成\"]"
+    },
+    {
+      "title": "体积云光线行进算法 [06:13-19:10]",
+      "code": "flowchart TD\n    B1[\"重建世界坐标\\n- 获取相机位置\\n- 计算 NDC 与 world position\"] --> B2[\"计算相机射线方向\"]\n    B2 --> B3[\"构建云体 AABB（包围盒）\"]\n    B3 --> B4[\"Ray‑Box 交点检测（Rebox）\"]\n    B4 -->|相交| B5[\"确定入口点 & 最大行进距离\"]\n    B5 --> B6[\"循环采样（默认 512 步）\"]\n    B6 --> B7[\"在每步计算密度\\n- 使用 density、offset、stepSize 参数\"]\n    B7 --> B8[\"累积颜色/雾度\"]\n    B8 --> B9[\"输出体积云颜色\"]\n    B4 -->|不相交| B10[\"返回零（不渲染）\"]"
+    },
+    {
+      "title": "设置与数据流动 [03:27-04:56、11:27-12:12、15:01-16:55]",
+      "code": "flowchart TD\n    C1[\"VolumetricCloud Settings 资产\"] --> C2[\"包含参数：\\n密度、步长、偏移、AABB 大小\"]\n    C2 --> C3[\"C# 脚本读取并传递给 Shader\"]\n    C3 --> SH[\"Shader（用于 Ray‑Marching）\"]\n    C3 --> FX[\"PostFX Manager（持有 Settings）\"]\n    FX --> P1[\"体积云 Pass 使用 Settings 参数\"]\n    B3[\"AABB 计算\"] --> C2\n    B7[\"密度计算\"] --> C2"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T14:10:23+00:00"
+}

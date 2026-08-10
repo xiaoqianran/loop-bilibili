@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1hjd2BWEGS",
+  "title": "[27] SlimAttention：一种和FlashAttention分块策略不同的注意力【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2622,
+  "text": "今天我们来介绍一篇关于大语言模型\n在CPU上推力加速的工作\n标题是inference performance optimization\nFor large language models on cpu\n这篇论文发布于2024年7月\n随着大语言模型规模不断增长\n在GPU资源受限的场景下\n利用CPU进行推理部署成了一个值得关注的方向\nCPU部署不受显存容量限制\n可以避免KV缓存溢出\n还能支持更长的上下文\n这篇工作围绕CPU上的大模型推理\n提出了三方面优化\n一是名为SLIMITTENTION的注意力机制优化\n二是对KV缓存进行NT8量化压缩\n三是基于one ccl的分布式推理优化实验\n覆盖了queen lammatchator\nJONBACKQUIN等多个主流模型\n下面看下摘要\n翻译大语言模型\n在各类任务上\n展现了出色的性能和广阔的应用前景\n然而在低资源环境中\n高性能的部署\n大语言模型已成为工业界关注的焦点\n当GPU硬件资源受限时\n可以考虑在CPU上进行替代部署\n为了缓解硬件资源带来的财务负担和约束\n优化推理性能是必要的\n本文介绍了一套易于部署的推理性能优化方案\n旨在加速大语言模型在CPU上的运行\n该方案实现了一种在确保精度的同时\n减小KV缓存大小的方法\n论文还提出了一种分布式推理优化方法\n并基于无奈pi集体通信库进行了实现\n此外论文针对常用的大语言模型\n进行了专门的优化\n代码已开源在GITHUB点com intellects faster\nTransformer\n下面\n看一下这张图\n这张图展示了slim attention的核心计算流程\nSlim attention\n本质上是将query和key之间的得分矩阵\n做一位分解\n在计算顺序上\n他先计算一个水平方向的得分\n然后对这个得分应用soft max\n得到的soft max结果在与对应的value相乘\n产生一部分输出\n这个过程对下一个数据块重复进行\n使用相同的得分缓冲区\n从理论上讲\n每个线程只需要维护一个块大小的缓冲区\n从而减少内存占用并提高计算效率\n图中计算顺序按12345678依次进行\n中间结果的大小与第一步相同\n下面看一下这张图\n这张图展示了flash tension的计算流程\n用于与slim tension进行对比\nflash tension最初在GPU上提出\n它本质上是将得分矩阵做二维分解\n也就是分块处理\n在计算过程中\n每个线程只需要维护一个单独的块\n然而由于一个块无法覆盖\nsoft max方向上的全部数据\n在计算过程中需要对最终结果进行迭代修正\n图中可以看到计算顺序需要穿插修正步骤\n用圆圈零表示中间修正操作\n相比之下\nSLIMTENTION没有冗余计算\n但需要一个更大的中间缓冲区\n下面看一下这个公式\n这个公式给出了生成单个token\n10KV缓存的缓存量\n公式中B表示批次大小\nlea和low\n分别表示输入序列长度和输出序列长度\nNHD表示注意力头的数量\ns head表示头的大小\nL表示层数\nSD表示数据类型大小系数\n二是因为同时包含key和value两部分\n论文以拉玛二杠7B为例进行了说明\n头数为32\n头大小为128\n层数为32\n假设批次大小为256\n输入输出序列长度均为1024\n使用FP16或bf16\n数据类型\n所需的最大KV缓存约为128GB\n这凸显了在大批次推理场景下\nKV缓存优化的重要性\n下面看一下这张图\n这张图展示了KV缓存\n因T8量化中维护独立缩放因子的方式\n为了有效减小KV缓存大小\n论文实现了NT8KV缓存方案\n为了确保INT8表示能紧密逼近\n更高精度的数据类型\n论文为每个token的每个注意力头\n都维护了一个独立的缩放值\n这张图以表格形式展示了这一思想\n行对应序列位置列对应不同的头\n每个单元格都有自己的缩放值\n这种方法以可接受的存储增长为代价\n实现了对KV缓存的细粒度调节\n在不显著降低模型输出质量的前提下\n提高了内存使用效率\n下面看一下这张图\n这张图展示了自定义内核的数据流和工作流程\n论文设计了一个知识混合数据类型的矩阵\n乘法内核\nquery使用bf16精度\nkey和value被量化为INT8后存入缓存\n在计算过程中\nb two meat math或soft max操作\n在FB32精度下进行最终输出\n再转回bf16\n该内核能够处理INT8数据\n并在执行期间动态转换为FP32\n转换过程分为两步\n首先通过AVX512指令\n将英特八转为int32\n然后再将英特三二转为FP32\n这一设计\n充分利用了现代X86架构的FMA指令集\n以实现优化的计算吞吐\n下面看一下这张图\n这张图展示了基于one ccl的分布式推理架构\n系统包含一个主节点和多个工作节点\n主节点负责接收用户输入\n进行字符串分词管理推理\n搜索和输出生成不同于广播\n完整的嵌入向量系统\n指广播token id工作节点各自查表得到嵌入\n表\n示每个工作节点独立执行嵌入层\n解码层和分类层\n然后将计算得到的top结果传回主节点\n这种设计减少了节点间的通信量\n此外论文还提出了零拷贝优化\n让计算模块在通信前的最后一个操作\n直接将结果写入通信模块的位置\n避免额外的数据拷贝\n下面看一下这个表\n这个表对比了slim tension和flash tension\n在不同输入长度下的性能测试\n使用LM27B模型\n批次大小为一\n数据是生成第一个token时\n每个注意力层的平均耗时单位为毫秒\n数值越低越好\n输入长度从256到4096不等\n当输入为256时\nflash tension耗时约10.85ms\nslim tension约1.10ms\n随着输入长度增加到4096\nflash tension耗时增长到约540ms\nslim tension约392ms\n在所有测试的输入长度下\nSILIMTENSION在CPU上的耗时都低于flash tension\n下面看一下这个表\n这个表展示了分布式推理方案\n在拉玛270B模型上的延迟表现\n测试配置为输入token数1024\n输出token数128\n批次大小为一\n使用两个CPU插槽时\n下一个token的生成延迟\n约为249.7ms\n扩展到八个插槽后\n延迟下降到约87.7ms\n论文指出\n使用四台裸机服务器\n共八个插槽运行分布式方案\n相比单台服务器两个插槽\n可以获得约2.85倍的性能提升\n这表明该分布式方案具备良好的可扩展性",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hjd2BWEGS",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:17:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

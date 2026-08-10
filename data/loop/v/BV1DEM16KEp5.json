@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1DEM16KEp5",
+  "title": "【2026最新版】这绝对是B站讲的最好的LangGraph学习教程，从环境搭建到完整代码实战，干货满满少踩坑，新手也能够轻松上手【马士兵‑AI大模型】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 710,
+  "text": "好那下面呢我们就正式进入long graph的学习\n首先呢这节课我们来看一下第一章啊\n本节课我主要来给大家讲讲解一下\n第一章我们主要来给大家去讲解的内容有哪些\n首先呢我会给大家介绍一下long graph是什么\n以及它的核心特点\n后面呢我会给大家去0~1操作一下long graph\n这个环境\n他怎么去配置啊\n当然我会从啊Python开始给大家去安装一个Python环境\n然后再去创建一个long graph这样的项目\n配置这个环境啊\n看看需要安装什么样的依赖等等啊\n好后面呢我会给大家去先写一个long graph\n简单的案例\n我们来了解一下long graph的这种呃编程\n它的API的一种形式是什么样子的\n当然在这个案例里面\n我会给大家介绍它里面啊有my message state\n这么一个状态和整个呃graph啊\n你叫做流也好\n叫做图也好啊\n整个graph呢我们看看它怎么去调用\n调用的过程里面有一些什么样的注意细节\n好\n最后呢我会用long graph来去构建一个\n咱们之前在啊long cha里面学习的agent啊\n那样的一个案例\n也就是说呃本来呢我们可以用long china agent来去实现\n那我们看一看相同这样的agent\n在底层的long graph中应该怎么去实现啊\n好最后呢我会给大家介绍一下呃\nFunctional api\n这个和long graph的呃\n这种API呢其实就是graph API\n它是并行的\n那这是两种类型的API啊\n那咱们现在在市面上\n其实graph API是用的最多的\n那function API呢大家作为了解就可以好\n那么这一小节我们总体介绍\n第一章节就先说到这里啊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1DEM16KEp5",
+  "published_at": "1785934451",
+  "fetched_at": "2026-08-09T22:51:24+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# LongGraph 学习结构图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A[\"LongGraph\"] --> B[\"核心特点\"]\n    A --> C[\"环境搭建\"]\n    A --> D[\"API 类型\"]\n    D --> E[\"Graph API（并行）\"]\n    D --> F[\"Functional API\"]\n    A --> G[\"示例案例\"]\n    G --> H[\"Agent 实现\"]\n```\n- LongGraph 定义 [BV1DEM16KEp5 P1 00:12]  \n- 核心特点 [BV1DEM16KEp5 P1 00:15]  \n- 环境搭建概览 [BV1DEM16KEp5 P1 00:21]  \n- API 类型概述 [BV1DEM16KEp5 P1 01:27]  \n- Graph API 并行特性 [BV1DEM16KEp5 P1 01:33]  \n- Functional API 介绍 [BV1DEM16KEp5 P1 01:27]  \n- 示例案例概览 [BV1DEM16KEp5 P1 00:38]  \n- Agent 实现示例 [BV1DEM16KEp5 P1 01:08]\n\n## 环境搭建流程\n```mermaid\nflowchart TD\n    A[\"安装 Python 环境\"] --> B[\"创建 LongGraph 项目\"]\n    B --> C[\"安装依赖\"]\n    C --> D[\"配置项目环境\"]\n```\n- 安装 Python 环境 [BV1DEM16KEp5 P1 00:23]  \n- 创建 LongGraph 项目 [BV1DEM16KEp5 P1 00:28]  \n- 安装依赖 [BV1DEM16KEp5 P1 00:32]  \n- 配置项目环境 [BV1DEM16KEp5 P1 00:35]\n\n## API 类型对比\n```mermaid\nflowchart LR\n    A[\"Graph API（并行）\"] --> B[\"适用于并发任务\"]\n    A --> C[\"常见使用场景\"]\n    D[\"Functional API\"] --> E[\"适用于函数式调用\"]\n    D --> F[\"可组合的功能块\"]\n```\n- Graph API 并行特性 [BV1DEM16KEp5 P1 01:33]  \n- Functional API 介绍 [BV1DEM16KEp5 P1 01:27]  \n- 市场使用情况（Graph API 为主） [BV1DEM16KEp5 P1 01:38]\n\n## 示例案例执行流程\n```mermaid\nflowchart TD\n    A[\"编写简单案例代码\"] --> B[\"使用 my_message_state 状态\"]\n    B --> C[\"调用 LongGraph\"]\n    C --> D[\"注意调用细节\"]\n```\n- 编写简单案例 [BV1DEM16KEp5 P1 00:38]  \n- my_message_state 状态介绍 [BV1DEM16KEp5 P1 00:47]  \n- 调用 LongGraph [BV1DEM16KEp5 P1 00:58]  \n- 调用细节注意点 [BV1DEM16KEp5 P1 01:01]  ",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A[\"LongGraph\"] --> B[\"核心特点\"]\n    A --> C[\"环境搭建\"]\n    A --> D[\"API 类型\"]\n    D --> E[\"Graph API（并行）\"]\n    D --> F[\"Functional API\"]\n    A --> G[\"示例案例\"]\n    G --> H[\"Agent 实现\"]"
+        },
+        {
+          "title": "环境搭建流程",
+          "code": "flowchart TD\n    A[\"安装 Python 环境\"] --> B[\"创建 LongGraph 项目\"]\n    B --> C[\"安装依赖\"]\n    C --> D[\"配置项目环境\"]"
+        },
+        {
+          "title": "API 类型对比",
+          "code": "flowchart LR\n    A[\"Graph API（并行）\"] --> B[\"适用于并发任务\"]\n    A --> C[\"常见使用场景\"]\n    D[\"Functional API\"] --> E[\"适用于函数式调用\"]\n    D --> F[\"可组合的功能块\"]"
+        },
+        {
+          "title": "示例案例执行流程",
+          "code": "flowchart TD\n    A[\"编写简单案例代码\"] --> B[\"使用 my_message_state 状态\"]\n    B --> C[\"调用 LongGraph\"]\n    C --> D[\"注意调用细节\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T22:52:31+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# LongGraph 学习结构图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A[\"LongGraph\"] --> B[\"核心特点\"]\n    A --> C[\"环境搭建\"]\n    A --> D[\"API 类型\"]\n    D --> E[\"Graph API（并行）\"]\n    D --> F[\"Functional API\"]\n    A --> G[\"示例案例\"]\n    G --> H[\"Agent 实现\"]\n```\n- LongGraph 定义 [BV1DEM16KEp5 P1 00:12]  \n- 核心特点 [BV1DEM16KEp5 P1 00:15]  \n- 环境搭建概览 [BV1DEM16KEp5 P1 00:21]  \n- API 类型概述 [BV1DEM16KEp5 P1 01:27]  \n- Graph API 并行特性 [BV1DEM16KEp5 P1 01:33]  \n- Functional API 介绍 [BV1DEM16KEp5 P1 01:27]  \n- 示例案例概览 [BV1DEM16KEp5 P1 00:38]  \n- Agent 实现示例 [BV1DEM16KEp5 P1 01:08]\n\n## 环境搭建流程\n```mermaid\nflowchart TD\n    A[\"安装 Python 环境\"] --> B[\"创建 LongGraph 项目\"]\n    B --> C[\"安装依赖\"]\n    C --> D[\"配置项目环境\"]\n```\n- 安装 Python 环境 [BV1DEM16KEp5 P1 00:23]  \n- 创建 LongGraph 项目 [BV1DEM16KEp5 P1 00:28]  \n- 安装依赖 [BV1DEM16KEp5 P1 00:32]  \n- 配置项目环境 [BV1DEM16KEp5 P1 00:35]\n\n## API 类型对比\n```mermaid\nflowchart LR\n    A[\"Graph API（并行）\"] --> B[\"适用于并发任务\"]\n    A --> C[\"常见使用场景\"]\n    D[\"Functional API\"] --> E[\"适用于函数式调用\"]\n    D --> F[\"可组合的功能块\"]\n```\n- Graph API 并行特性 [BV1DEM16KEp5 P1 01:33]  \n- Functional API 介绍 [BV1DEM16KEp5 P1 01:27]  \n- 市场使用情况（Graph API 为主） [BV1DEM16KEp5 P1 01:38]\n\n## 示例案例执行流程\n```mermaid\nflowchart TD\n    A[\"编写简单案例代码\"] --> B[\"使用 my_message_state 状态\"]\n    B --> C[\"调用 LongGraph\"]\n    C --> D[\"注意调用细节\"]\n```\n- 编写简单案例 [BV1DEM16KEp5 P1 00:38]  \n- my_message_state 状态介绍 [BV1DEM16KEp5 P1 00:47]  \n- 调用 LongGraph [BV1DEM16KEp5 P1 00:58]  \n- 调用细节注意点 [BV1DEM16KEp5 P1 01:01]  ",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A[\"LongGraph\"] --> B[\"核心特点\"]\n    A --> C[\"环境搭建\"]\n    A --> D[\"API 类型\"]\n    D --> E[\"Graph API（并行）\"]\n    D --> F[\"Functional API\"]\n    A --> G[\"示例案例\"]\n    G --> H[\"Agent 实现\"]"
+    },
+    {
+      "title": "环境搭建流程",
+      "code": "flowchart TD\n    A[\"安装 Python 环境\"] --> B[\"创建 LongGraph 项目\"]\n    B --> C[\"安装依赖\"]\n    C --> D[\"配置项目环境\"]"
+    },
+    {
+      "title": "API 类型对比",
+      "code": "flowchart LR\n    A[\"Graph API（并行）\"] --> B[\"适用于并发任务\"]\n    A --> C[\"常见使用场景\"]\n    D[\"Functional API\"] --> E[\"适用于函数式调用\"]\n    D --> F[\"可组合的功能块\"]"
+    },
+    {
+      "title": "示例案例执行流程",
+      "code": "flowchart TD\n    A[\"编写简单案例代码\"] --> B[\"使用 my_message_state 状态\"]\n    B --> C[\"调用 LongGraph\"]\n    C --> D[\"注意调用细节\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:52:31+00:00"
+}

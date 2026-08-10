@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1qXKc67ETF",
+  "title": "Godot 4 2.5D横版动作游戏开发教程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1091,
+  "text": "大家好\n我是RYAN1名专注的游戏开发者兼数字艺术家\n这门课课\n我们会用3D世界\n打造一款2D风格的典型游戏\n在3D世界中\n不过在开始具体内容之前\n我知道你心里有个大疑问\n这门课能给你带来什么核心收获\n答案是\n我希望你从第一课开始\n就感觉自己正在做一款真正的游戏\n而且希望你们能学到一些思路\n关于使用专业级游戏素材进行开发的知识\n这样你就能自然而然地掌握这些知识\n所以我花了很多心思来制作这门课的素材\n你将获得高质量角色流畅动画\n精致材质和炫酷粒子特效\n还有漂亮的关卡模块供你搭配使用\n这些素材是课程附赠的超值福利\n因为你可以用它们尝试各种新点子\n学完课程后还能继续设计你的专属关卡\n好了\n来来来说说这门课具体要做什么\n玩家可以用2D方式探索这个世界\n我们会用gd script实现这些操作\n比如奔跑\n跳跃和近战攻击\n接着学习如何控制动画\n灵活运用多种动画节点\n比如状态机节点\n混合节点和一次性节点\n这样你处理复杂的动画设置时\n灵活性会强得多\n接下来看敌人\n我会教你让他他沿着平台巡逻\n还能检测边缘和障碍物\n从而判断何时掉头\n这些行为都通过request功能实现\n这是游戏开发中必须掌握的关键技术\n用来驾驭物理引擎\n视觉效果有于游戏体验的重要一环\n我会教你如何通过脚本控制dz子\n以及如何为剑的挥砍动作制作特效动画\n想给玩家增加更多挑战\n我们来做一个尖刺陷阱\n这里学习如何用碰撞形状检测物理对象\n以及如何用物理层管理碰撞检测\n需要让玩家活下去的道具\n生命恢复道具登场\n要让这个道具生效完成\n玩家生命系统\n实现屏幕上新型UI\n最后我们会设置一扇终点门作为关卡的目标点\n还会讲解游戏结束界面和重新开始按钮的制作\n学完本课程后\n你就能把游戏导出为可执行文件\n在朋友面前好好秀一把\n如果你想提升自己的编程能力\n这门课也能让你收获满满\n我们会讲解GODOT游戏开发的核心思想\n游戏生命周期函数\n许多游戏引擎都共用这些概念\n理解这些函数\n能帮你为未来的职业发展打下扎实的基础\n你还会学到一些基础编程概念\n比如如何使用变量和常量\n如何创建函数\n如何用条件判断和控制程序流程\n比如if语句和for循环\n我们还会讲到gd script的一些独特功能\n比如如何使用注解\n以及如何用信号在脚本之间通信\n但我想让你知道这门课不是以写代码为主\n也就是说如果你已经了解一些编程基础概念\n学起来会轻松很多\n这个课程里你会学到很多东西\n这段视频我没法全讲完以后\n我还会继续加新内容\n比如未加新章节来讲怎么做收集金币\n还有今年夏天晚点再讲怎么发射子弹好了\n就这些\n我已经等不及在课程里见到你了\n等着看你做出超酷的游戏",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qXKc67ETF",
+  "published_at": "1784363530",
+  "fetched_at": "2026-08-08T16:00:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 4 2.5D横版动作游戏开发教程 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    CG[\"课程目标\"] --> S3D[\"2D风格在3D世界\"]\n    CG --> HA[\"高质量素材\"]\n    HA --> GF[\"游戏功能\"]\n    GF --> LO[\"学习收获\"]\n    LO --> EG[\"导出可执行文件\"]\n    LO --> PW[\"专业工作流\"]\n    PW --> CS[\"社区展示\"]\n    HA --> CM[\"角色动画、材质、粒子\"]\n    CM --> GF\n```\n\n## 玩家控制与动画\n\n```mermaid\nflowchart TD\n    PI[\"玩家输入\"] --> GS[\"GDScript 控制\"]\n    GS --> Run[\"奔跑动作\"]\n    GS --> Jump[\"跳跃动作\"]\n    GS --> Attack[\"近战攻击\"]\n    Run --> AS[\"动画系统\"]\n    Jump --> AS\n    Attack --> AS\n    AS --> SM[\"状态机节点\"]\n    AS --> BN[\"混合节点\"]\n    AS --> OS[\"一次性节点\"]\n    AS --> VE[\"视觉效果\"]\n    VE --> PF[\"粒子特效\"]\n```\n\n## 敌人行为与关卡陷阱\n\n```mermaid\nflowchart TD\n    EP[\"敌人巡逻\"] --> PD[\"平台检测\"]\n    PD --> ED[\"边缘检测\"]\n    PD --> OD[\"障碍检测\"]\n    ED --> TD[\"掉头决策\"]\n    OD --> TD\n    TD --> RF[\"request 功能\"]\n    ST[\"尖刺陷阱\"] --> CS2[\"碰撞形状\"]\n    CS2 --> PL[\"物理层管理\"]\n    PL --> DTP[\"对玩家造成伤害\"]\n    HP[\"生命恢复道具\"] --> HS[\"玩家生命系统\"]\n    HS --> UI[\"屏幕 UI 更新\"]\n```\n\n## 编程概念与引擎基础\n\n```mermaid\nflowchart TD\n    Var[\"变量\"] --> Func[\"函数\"]\n    Const[\"常量\"] --> Func\n    Func --> IF[\"if 条件判断\"]\n    IF --> For[\"for 循环\"]\n    For --> Ann[\"GDScript 注解\"]\n    Ann --> Sig[\"信号通信\"]\n    Sig --> GLF[\"游戏生命周期函数\"]\n    GLF --> EC[\"通用引擎概念\"]\n    EC --> CF[\"职业发展基础\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    CG[\"课程目标\"] --> S3D[\"2D风格在3D世界\"]\n    CG --> HA[\"高质量素材\"]\n    HA --> GF[\"游戏功能\"]\n    GF --> LO[\"学习收获\"]\n    LO --> EG[\"导出可执行文件\"]\n    LO --> PW[\"专业工作流\"]\n    PW --> CS[\"社区展示\"]\n    HA --> CM[\"角色动画、材质、粒子\"]\n    CM --> GF"
+        },
+        {
+          "title": "玩家控制与动画",
+          "code": "flowchart TD\n    PI[\"玩家输入\"] --> GS[\"GDScript 控制\"]\n    GS --> Run[\"奔跑动作\"]\n    GS --> Jump[\"跳跃动作\"]\n    GS --> Attack[\"近战攻击\"]\n    Run --> AS[\"动画系统\"]\n    Jump --> AS\n    Attack --> AS\n    AS --> SM[\"状态机节点\"]\n    AS --> BN[\"混合节点\"]\n    AS --> OS[\"一次性节点\"]\n    AS --> VE[\"视觉效果\"]\n    VE --> PF[\"粒子特效\"]"
+        },
+        {
+          "title": "敌人行为与关卡陷阱",
+          "code": "flowchart TD\n    EP[\"敌人巡逻\"] --> PD[\"平台检测\"]\n    PD --> ED[\"边缘检测\"]\n    PD --> OD[\"障碍检测\"]\n    ED --> TD[\"掉头决策\"]\n    OD --> TD\n    TD --> RF[\"request 功能\"]\n    ST[\"尖刺陷阱\"] --> CS2[\"碰撞形状\"]\n    CS2 --> PL[\"物理层管理\"]\n    PL --> DTP[\"对玩家造成伤害\"]\n    HP[\"生命恢复道具\"] --> HS[\"玩家生命系统\"]\n    HS --> UI[\"屏幕 UI 更新\"]"
+        },
+        {
+          "title": "编程概念与引擎基础",
+          "code": "flowchart TD\n    Var[\"变量\"] --> Func[\"函数\"]\n    Const[\"常量\"] --> Func\n    Func --> IF[\"if 条件判断\"]\n    IF --> For[\"for 循环\"]\n    For --> Ann[\"GDScript 注解\"]\n    Ann --> Sig[\"信号通信\"]\n    Sig --> GLF[\"游戏生命周期函数\"]\n    GLF --> EC[\"通用引擎概念\"]\n    EC --> CF[\"职业发展基础\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T16:00:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 4 2.5D横版动作游戏开发教程 知识图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    CG[\"课程目标\"] --> S3D[\"2D风格在3D世界\"]\n    CG --> HA[\"高质量素材\"]\n    HA --> GF[\"游戏功能\"]\n    GF --> LO[\"学习收获\"]\n    LO --> EG[\"导出可执行文件\"]\n    LO --> PW[\"专业工作流\"]\n    PW --> CS[\"社区展示\"]\n    HA --> CM[\"角色动画、材质、粒子\"]\n    CM --> GF\n```\n\n## 玩家控制与动画\n\n```mermaid\nflowchart TD\n    PI[\"玩家输入\"] --> GS[\"GDScript 控制\"]\n    GS --> Run[\"奔跑动作\"]\n    GS --> Jump[\"跳跃动作\"]\n    GS --> Attack[\"近战攻击\"]\n    Run --> AS[\"动画系统\"]\n    Jump --> AS\n    Attack --> AS\n    AS --> SM[\"状态机节点\"]\n    AS --> BN[\"混合节点\"]\n    AS --> OS[\"一次性节点\"]\n    AS --> VE[\"视觉效果\"]\n    VE --> PF[\"粒子特效\"]\n```\n\n## 敌人行为与关卡陷阱\n\n```mermaid\nflowchart TD\n    EP[\"敌人巡逻\"] --> PD[\"平台检测\"]\n    PD --> ED[\"边缘检测\"]\n    PD --> OD[\"障碍检测\"]\n    ED --> TD[\"掉头决策\"]\n    OD --> TD\n    TD --> RF[\"request 功能\"]\n    ST[\"尖刺陷阱\"] --> CS2[\"碰撞形状\"]\n    CS2 --> PL[\"物理层管理\"]\n    PL --> DTP[\"对玩家造成伤害\"]\n    HP[\"生命恢复道具\"] --> HS[\"玩家生命系统\"]\n    HS --> UI[\"屏幕 UI 更新\"]\n```\n\n## 编程概念与引擎基础\n\n```mermaid\nflowchart TD\n    Var[\"变量\"] --> Func[\"函数\"]\n    Const[\"常量\"] --> Func\n    Func --> IF[\"if 条件判断\"]\n    IF --> For[\"for 循环\"]\n    For --> Ann[\"GDScript 注解\"]\n    Ann --> Sig[\"信号通信\"]\n    Sig --> GLF[\"游戏生命周期函数\"]\n    GLF --> EC[\"通用引擎概念\"]\n    EC --> CF[\"职业发展基础\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    CG[\"课程目标\"] --> S3D[\"2D风格在3D世界\"]\n    CG --> HA[\"高质量素材\"]\n    HA --> GF[\"游戏功能\"]\n    GF --> LO[\"学习收获\"]\n    LO --> EG[\"导出可执行文件\"]\n    LO --> PW[\"专业工作流\"]\n    PW --> CS[\"社区展示\"]\n    HA --> CM[\"角色动画、材质、粒子\"]\n    CM --> GF"
+    },
+    {
+      "title": "玩家控制与动画",
+      "code": "flowchart TD\n    PI[\"玩家输入\"] --> GS[\"GDScript 控制\"]\n    GS --> Run[\"奔跑动作\"]\n    GS --> Jump[\"跳跃动作\"]\n    GS --> Attack[\"近战攻击\"]\n    Run --> AS[\"动画系统\"]\n    Jump --> AS\n    Attack --> AS\n    AS --> SM[\"状态机节点\"]\n    AS --> BN[\"混合节点\"]\n    AS --> OS[\"一次性节点\"]\n    AS --> VE[\"视觉效果\"]\n    VE --> PF[\"粒子特效\"]"
+    },
+    {
+      "title": "敌人行为与关卡陷阱",
+      "code": "flowchart TD\n    EP[\"敌人巡逻\"] --> PD[\"平台检测\"]\n    PD --> ED[\"边缘检测\"]\n    PD --> OD[\"障碍检测\"]\n    ED --> TD[\"掉头决策\"]\n    OD --> TD\n    TD --> RF[\"request 功能\"]\n    ST[\"尖刺陷阱\"] --> CS2[\"碰撞形状\"]\n    CS2 --> PL[\"物理层管理\"]\n    PL --> DTP[\"对玩家造成伤害\"]\n    HP[\"生命恢复道具\"] --> HS[\"玩家生命系统\"]\n    HS --> UI[\"屏幕 UI 更新\"]"
+    },
+    {
+      "title": "编程概念与引擎基础",
+      "code": "flowchart TD\n    Var[\"变量\"] --> Func[\"函数\"]\n    Const[\"常量\"] --> Func\n    Func --> IF[\"if 条件判断\"]\n    IF --> For[\"for 循环\"]\n    For --> Ann[\"GDScript 注解\"]\n    Ann --> Sig[\"信号通信\"]\n    Sig --> GLF[\"游戏生命周期函数\"]\n    GLF --> EC[\"通用引擎概念\"]\n    EC --> CF[\"职业发展基础\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T16:00:34+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1t5G361EDM",
+  "title": "震撼!DS V4 正式版原生联网实测：一次搜索低至0.2分钱",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 531,
+  "text": "大家好\n昨天国产第一AI deep seek\n不是出了D4V4正式版吗\n我就看了一眼官网文档\n发现DSS支持原性联网功能了\n于是我花重金实测了DS的联网搜索\n把返回结构和单次费用扒了个底朝天\n结果发现费用低的可怕\n先修返回结构\nvs的联网搜索\n即在新的responses API里提供老接口\n直接400季节\n用法很简单\ntools里加一个web search就行\n模型自己决定搜不搜\n但是你拿到的不是搜索结果列表\n而是动作记录模型\n搜了没搜\n搜了什么词\n打开了哪个网页\n我要的标题摘要引用链接了\n一个都没有\n搜索结果全被服务端直接塞进模型上下文\nAPI服外土小娜U挖料\n只有模型主动open page的时候才给你再修费用\n官方价输入一块钱\n100万个token缓存命中只要两分钱\n实测一次完整搜索7000多\n修入token1000\n修球算下来不到一分钱\n连续测了十几次\n一共只花了四分钱\n我还把2400多星连续响应全扫了一遍\n搜索动作即有搜索词\n没有任何ULL全响应\nURLG出现四次\n全在open page里标记字段\n零段\n黑盒注入实锤\n不过这些坑我都填完了\n本地A键已经成功接入DSS联网搜索\n你们看小金鱼现在越来越牛逼了\n国内第一AJ和国内第一AI握手成功",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1t5G361EDM",
+  "published_at": "1785566861",
+  "fetched_at": "2026-08-07T05:52:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DS V4 原生联网功能概览\n\n## 知识总览\n```mermaid\nflowchart TD\n    A1[\"DS V4 正式版发布\"] --> A2[\"支持原生联网功能\"]\n    A2 --> A3[\"新增 responses API (兼容旧接口)\"]\n    A3 --> A4[\"使用方式：tools 添加 web search\"]\n    A4 --> A5[\"模型自行决定是否搜索\"]\n    A5 --> A6[\"返回结构：动作记录（搜索词、打开页面）\"]\n    A6 --> A7[\"搜索结果嵌入模型上下文\"]\n    A7 --> A8[\"仅在模型主动 open page 时产生额外费用\"]\n```\n- DS V4 正式版发布 【BV1t5G361EDM P1 00:03】  \n- 支持原生联网功能 【BV1t5G361EDM P1 00:07】  \n- 新增 responses API (兼容旧接口) 【BV1t5G361EDM P1 00:21】  \n- 使用方式：tools 添加 web search 【BV1t5G361EDM P1 00:27】  \n- 模型自行决定是否搜索 【BV1t5G361EDM P1 00:31】  \n- 返回结构：动作记录（搜索词、打开页面） 【BV1t5G361EDM P1 00:36-00:38】  \n- 搜索结果嵌入模型上下文 【BV1t5G361EDM P1 00:42】  \n- 仅在模型主动 open page 时产生额外费用 【BV1t5G361EDM P1 00:49】\n\n## 成本结构与实测数据\n```mermaid\nflowchart TD\n    B1[\"官方定价：1 元/请求\"] --> B2[\"缓存命中：100 万 token 费用 0.02 元\"]\n    B2 --> B3[\"实测单次搜索 token 使用约 1000\"]\n    B3 --> B4[\"单次费用约 <0.01 元\"]\n    B4 --> B5[\"十余次测试总费用约 0.04 元\"]\n    B5 --> B6[\"搜索动作记录不含完整 URL\"]\n    B6 --> B7[\"URL 仅在 open page 标记出现（约 4 次）\"]\n```\n- 官方定价 1 元 【BV1t5G361EDM P1 00:53】  \n- 100 万 token 缓存 0.02 元 【BV1t5G361EDM P1 00:55】  \n- 单次搜索 token 约 1000 【BV1t5G361EDM P1 01:02】  \n- 单次费用 <0.01 元 【BV1t5G361EDM P1 01:03】  \n- 十余次总费用 0.04 元 【BV1t5G361EDM P1 01:07】\n\n## 实测流程\n```mermaid\nflowchart LR\n    C1[\"发起搜索请求\"] --> C2[\"API 返回动作记录\"]\n    C2 --> C3[\"模型决定是否搜索\"]\n    C3 -->|搜索| C4[\"记录搜索词\"]\n    C4 --> C5[\"模型可选择 open page\"]\n    C5 -->|打开页面| C6[\"产生额外费用\"]\n    C5 -->|不打开| C7[\"仅消耗 token 费用\"]\n```\n- 发起搜索请求 【BV1t5G361EDM P1 00:27】  \n- API 返回动作记录 【BV1t5G361EDM P1 00:31-00:38】  \n- 模型决定是否搜索 【BV1t5G361EDM P1 00:31】  \n- 记录搜索词 【BV1t5G361EDM P1 00:36】  \n- 模型可选择 open page 【BV1t5G361EDM P1 00:49】  \n- 产生额外费用 【BV1t5G361EDM P1 00:49】  \n- 仅消耗 token 费用 【BV1t5G361EDM P1 01:03】",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    A1[\"DS V4 正式版发布\"] --> A2[\"支持原生联网功能\"]\n    A2 --> A3[\"新增 responses API (兼容旧接口)\"]\n    A3 --> A4[\"使用方式：tools 添加 web search\"]\n    A4 --> A5[\"模型自行决定是否搜索\"]\n    A5 --> A6[\"返回结构：动作记录（搜索词、打开页面）\"]\n    A6 --> A7[\"搜索结果嵌入模型上下文\"]\n    A7 --> A8[\"仅在模型主动 open page 时产生额外费用\"]"
+        },
+        {
+          "title": "成本结构与实测数据",
+          "code": "flowchart TD\n    B1[\"官方定价：1 元/请求\"] --> B2[\"缓存命中：100 万 token 费用 0.02 元\"]\n    B2 --> B3[\"实测单次搜索 token 使用约 1000\"]\n    B3 --> B4[\"单次费用约 <0.01 元\"]\n    B4 --> B5[\"十余次测试总费用约 0.04 元\"]\n    B5 --> B6[\"搜索动作记录不含完整 URL\"]\n    B6 --> B7[\"URL 仅在 open page 标记出现（约 4 次）\"]"
+        },
+        {
+          "title": "实测流程",
+          "code": "flowchart LR\n    C1[\"发起搜索请求\"] --> C2[\"API 返回动作记录\"]\n    C2 --> C3[\"模型决定是否搜索\"]\n    C3 -->|搜索| C4[\"记录搜索词\"]\n    C4 --> C5[\"模型可选择 open page\"]\n    C5 -->|打开页面| C6[\"产生额外费用\"]\n    C5 -->|不打开| C7[\"仅消耗 token 费用\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T05:52:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DS V4 原生联网功能概览\n\n## 知识总览\n```mermaid\nflowchart TD\n    A1[\"DS V4 正式版发布\"] --> A2[\"支持原生联网功能\"]\n    A2 --> A3[\"新增 responses API (兼容旧接口)\"]\n    A3 --> A4[\"使用方式：tools 添加 web search\"]\n    A4 --> A5[\"模型自行决定是否搜索\"]\n    A5 --> A6[\"返回结构：动作记录（搜索词、打开页面）\"]\n    A6 --> A7[\"搜索结果嵌入模型上下文\"]\n    A7 --> A8[\"仅在模型主动 open page 时产生额外费用\"]\n```\n- DS V4 正式版发布 【BV1t5G361EDM P1 00:03】  \n- 支持原生联网功能 【BV1t5G361EDM P1 00:07】  \n- 新增 responses API (兼容旧接口) 【BV1t5G361EDM P1 00:21】  \n- 使用方式：tools 添加 web search 【BV1t5G361EDM P1 00:27】  \n- 模型自行决定是否搜索 【BV1t5G361EDM P1 00:31】  \n- 返回结构：动作记录（搜索词、打开页面） 【BV1t5G361EDM P1 00:36-00:38】  \n- 搜索结果嵌入模型上下文 【BV1t5G361EDM P1 00:42】  \n- 仅在模型主动 open page 时产生额外费用 【BV1t5G361EDM P1 00:49】\n\n## 成本结构与实测数据\n```mermaid\nflowchart TD\n    B1[\"官方定价：1 元/请求\"] --> B2[\"缓存命中：100 万 token 费用 0.02 元\"]\n    B2 --> B3[\"实测单次搜索 token 使用约 1000\"]\n    B3 --> B4[\"单次费用约 <0.01 元\"]\n    B4 --> B5[\"十余次测试总费用约 0.04 元\"]\n    B5 --> B6[\"搜索动作记录不含完整 URL\"]\n    B6 --> B7[\"URL 仅在 open page 标记出现（约 4 次）\"]\n```\n- 官方定价 1 元 【BV1t5G361EDM P1 00:53】  \n- 100 万 token 缓存 0.02 元 【BV1t5G361EDM P1 00:55】  \n- 单次搜索 token 约 1000 【BV1t5G361EDM P1 01:02】  \n- 单次费用 <0.01 元 【BV1t5G361EDM P1 01:03】  \n- 十余次总费用 0.04 元 【BV1t5G361EDM P1 01:07】\n\n## 实测流程\n```mermaid\nflowchart LR\n    C1[\"发起搜索请求\"] --> C2[\"API 返回动作记录\"]\n    C2 --> C3[\"模型决定是否搜索\"]\n    C3 -->|搜索| C4[\"记录搜索词\"]\n    C4 --> C5[\"模型可选择 open page\"]\n    C5 -->|打开页面| C6[\"产生额外费用\"]\n    C5 -->|不打开| C7[\"仅消耗 token 费用\"]\n```\n- 发起搜索请求 【BV1t5G361EDM P1 00:27】  \n- API 返回动作记录 【BV1t5G361EDM P1 00:31-00:38】  \n- 模型决定是否搜索 【BV1t5G361EDM P1 00:31】  \n- 记录搜索词 【BV1t5G361EDM P1 00:36】  \n- 模型可选择 open page 【BV1t5G361EDM P1 00:49】  \n- 产生额外费用 【BV1t5G361EDM P1 00:49】  \n- 仅消耗 token 费用 【BV1t5G361EDM P1 01:03】",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    A1[\"DS V4 正式版发布\"] --> A2[\"支持原生联网功能\"]\n    A2 --> A3[\"新增 responses API (兼容旧接口)\"]\n    A3 --> A4[\"使用方式：tools 添加 web search\"]\n    A4 --> A5[\"模型自行决定是否搜索\"]\n    A5 --> A6[\"返回结构：动作记录（搜索词、打开页面）\"]\n    A6 --> A7[\"搜索结果嵌入模型上下文\"]\n    A7 --> A8[\"仅在模型主动 open page 时产生额外费用\"]"
+    },
+    {
+      "title": "成本结构与实测数据",
+      "code": "flowchart TD\n    B1[\"官方定价：1 元/请求\"] --> B2[\"缓存命中：100 万 token 费用 0.02 元\"]\n    B2 --> B3[\"实测单次搜索 token 使用约 1000\"]\n    B3 --> B4[\"单次费用约 <0.01 元\"]\n    B4 --> B5[\"十余次测试总费用约 0.04 元\"]\n    B5 --> B6[\"搜索动作记录不含完整 URL\"]\n    B6 --> B7[\"URL 仅在 open page 标记出现（约 4 次）\"]"
+    },
+    {
+      "title": "实测流程",
+      "code": "flowchart LR\n    C1[\"发起搜索请求\"] --> C2[\"API 返回动作记录\"]\n    C2 --> C3[\"模型决定是否搜索\"]\n    C3 -->|搜索| C4[\"记录搜索词\"]\n    C4 --> C5[\"模型可选择 open page\"]\n    C5 -->|打开页面| C6[\"产生额外费用\"]\n    C5 -->|不打开| C7[\"仅消耗 token 费用\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T05:52:57+00:00"
+}

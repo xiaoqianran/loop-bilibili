@@ -1,0 +1,26 @@
+{
+  "bvid": "BV19s3K6zEXQ",
+  "title": "187. 为什么MLA无需显式解压Q和K？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1101,
+  "text": "今天的问题是\n为什么m la无需显示解压Q和K\n在宝藏问题171当中\n我们可视化了m la\n但当时使用了Q和K显示解压的简化版\n而今天将会展示真实的m la\n同理今天也暂时省略了rap位置编码\n我们先看到中间这个蓝色的输入矩阵X\n顺着上面的绿色箭头\n看到WDQ这里的字母D代表down\n也就是降维压缩乘以它之后\n就得到了压缩后的Q\n既做CQC表示compression压缩\n那么压缩完怎么恢复呢\n视线往右看\nWUQ里的字母U代表up\n也就是升为解压CQ乘以WUQ得到解压后的Q\n再看下面这条绿色箭头X乘以WDKV之后\n得到了压缩后的kv cash即作CKV\n这里可以看到\n见K和职位是共享同一个压缩矩阵\nCKV的解压时\nKV乘以WUK得到KCKV乘以WUV得到V\n这里有人可能会问\n压缩后的CQ和CCTV本身是不分投的\n解压之后怎么知道第一个头在哪里\n我们看到CQ旁边的WUQ这组紫色方框\n这涉及矩阵乘法的一个经典拆分\n如果我们把解压矩阵WUQ竖着切开\n分成第一块\n第二块\n第三块\n第四块\n那么CQ乘以第一块WUQ1\n得到的恰好就是第一个头的Q1\n其他头以此类推\n虽然所有头都共享同一个压缩矩阵\n但因为每个头拥有自己独有的解压矩阵\n所以每个头依然是完全独立的\n看图最下面我们把解压之后的Q和K竖着切开\n四个头堆叠起来\n四个头的Q是不同的\n四个头的K转制也是不同的\n相乘得到的注意力矩阵A也是不同的\n这就说明m la在本质上依然是标准的MHA\n也就是多头注意力\n而不是MQA既然本质是多头注意力\n为什么推理时不需要显示解压呢\n以第一个头为例\n传统注意力计算是Q1乘以K1的转置\n我们把刚才的解压公式带进去\nQ1写作CQ乘以WUQ1\nK1写作CKV乘以WUK1\n那么Q1乘以K1的转置\n就等于CQ乘以WUQ1\n再乘以括号里CKV乘以WUK1的整体转置\n根据矩阵转置的性质\n括号展开后位置交换\n并加上转置变成WUK1的转置\n乘以CKV的转置\n此时利用矩阵乘法结合律\n我们可以把中间的WUQ1乘以WUK1的转置\n先用括号括起来\n预先乘好等号\n最后一行CQ乘以这个预先算好的乘积\n再乘以CKV的转置\n原本需要先把CQ和CKV\n分别解压成高维的Q1和K1\n现在通过矩阵结合律解压\n矩阵在模型加载时就已经融合成了一个矩阵\n推理时直接用CQ和CKV计算\n完全绕过了解压过程\n以此类推\n其他几个头也是同样的逻辑\n最后问一个问题\n解压后Q和K头的维度必须相同\n否则无法算点击注意力\n但是压缩后的CQ和CKV的维度必须相同吗\n答案是可以不同\n论文中CQ的维度高于CKV的维度\n但解压矩阵的存在\n保证了最后可以顺利计算矩阵乘法",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19s3K6zEXQ",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:12:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

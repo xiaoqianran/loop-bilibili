@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1o9N76oEp4",
+  "title": "有了这3个Skills合集站，DeepSeek V4才真的是无敌的存在，新手小白也能玩转AI赛道（附合集站安装包）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 456,
+  "text": "DIXCKV4pro很香对吧\n但你不装skills\n相当于买了台法拉利\n只开市区\n还没上过高速\n我最近把全网翻了个遍\n删了30多个skills站\n最后能用的就三个\n第一个全网最大的skills仓库\n146万个开源skills什么概念\n你脑子里能想到的需求它全有\n但大归大问题是质量参差不齐\n上次我找个翻译skill试了五个才找到能用的\n适合什么人\n你知道自己要什么\n愿意自己挑自己试的来\n这就对了\n不适合什么人\n想即装即用\n不想折腾的往下看\n第二个\n第二个skills store精品店\n这个不一样\n里面的skills都经过审核\n安装流程规范\n不用担心踩雷数量没那么多\n但每个都能用\n我最近几个主力skills全是从这装的\n第三个排行榜网站陈抄作业专用\n你要是不知道装什么好\n别纠结\n直接上来看榜单\n热度排序\n质量评分\n用户评价全列好了\n我每周上来扫一眼榜单\n看到感兴趣的直接装\n最适合什么时候用\n没想法的时候上来溜一圈\n灵感就有了\n大家收藏截屏\n挑一个装上再走\n不然明天又忘了\n2026年让skills给你打工",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1o9N76oEp4",
+  "published_at": "1783672049",
+  "fetched_at": "2026-08-07T01:10:41+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Skills 资源图谱\n\n## 总览\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4\"]\n    RepoA[\"全网最大 Skills 仓库<br/>≈146万开源 Skills\"]\n    RepoB[\"精品 Skills Store<br/>审核+规范安装\"]\n    RepoC[\"排行榜 Skills 网站<br/>热度/质量/评价\"]\n    QualityVar[\"质量参差不齐\"]\n    Vetting[\"全部通过审核\"]\n    InstallStd[\"安装流程规范\"]\n    UseCaseA[\"适合愿意自行挑选、试用者\"]\n    UseCaseB[\"适合想即装即用、免折腾者\"]\n    UseCaseC[\"适合不知选什么、寻灵感者\"]\n    DSV4 --> RepoA\n    DSV4 --> RepoB\n    DSV4 --> RepoC\n    RepoA --> QualityVar\n    RepoB --> Vetting\n    RepoB --> InstallStd\n    RepoA --> UseCaseA\n    RepoB --> UseCaseB\n    RepoC --> UseCaseC\n```\n\n## 使用决策流程\n```mermaid\nflowchart TD\n    Start[\"开始：是否明确需求？\"]\n    KnowNeed[\"明确需求\"]\n    UnknownNeed[\"不明确需求\"]\n    WantPlugAndPlay[\"想即装即用\"]\n    DontWantTinker[\"不想折腾\"]\n    GoRepoB[\"使用 精品 Store\"]\n    GoRepoC[\"使用 排行榜 网站\"]\n    GoRepoA[\"使用 全网仓库\"]\n    End[\"选择并安装 Skills\"]\n    Start --> KnowNeed\n    Start --> UnknownNeed\n    KnowNeed --> WantPlugAndPlay\n    KnowNeed --> DontWantTinker\n    WantPlugAndPlay --> GoRepoB\n    DontWantTinker --> GoRepoB\n    UnknownNeed --> GoRepoC\n    GoRepoB --> End\n    GoRepoC --> End\n    GoRepoA --> End\n```\n\n## 排行榜挑选与安装步骤\n```mermaid\nflowchart TD\n    OpenSite[\"打开 排行榜 Skills 网站\"]\n    ViewMetrics[\"查看 热度 排序、质量 评分、用户 评价\"]\n    PickSkill[\"挑选感兴趣的 Skill\"]\n    InstallSkill[\"安装选中的 Skill\"]\n    UseSkill[\"在 DeepSeek V4 中使用\"]\n    WeeklyCheck[\"每周浏览榜单获取灵感\"]\n    Capture[\"收藏/截屏 记录\"]\n    ForgetPrevention[\"立即安装防止遗忘\"]\n    End[\"完成\"]\n    OpenSite --> ViewMetrics\n    ViewMetrics --> PickSkill\n    PickSkill --> InstallSkill\n    InstallSkill --> UseSkill\n    UseSkill --> End\n    WeeklyCheck --> OpenSite\n    Capture --> PickSkill\n    ForgetPrevention --> InstallSkill\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    DSV4[\"DeepSeek V4\"]\n    RepoA[\"全网最大 Skills 仓库<br/>≈146万开源 Skills\"]\n    RepoB[\"精品 Skills Store<br/>审核+规范安装\"]\n    RepoC[\"排行榜 Skills 网站<br/>热度/质量/评价\"]\n    QualityVar[\"质量参差不齐\"]\n    Vetting[\"全部通过审核\"]\n    InstallStd[\"安装流程规范\"]\n    UseCaseA[\"适合愿意自行挑选、试用者\"]\n    UseCaseB[\"适合想即装即用、免折腾者\"]\n    UseCaseC[\"适合不知选什么、寻灵感者\"]\n    DSV4 --> RepoA\n    DSV4 --> RepoB\n    DSV4 --> RepoC\n    RepoA --> QualityVar\n    RepoB --> Vetting\n    RepoB --> InstallStd\n    RepoA --> UseCaseA\n    RepoB --> UseCaseB\n    RepoC --> UseCaseC"
+        },
+        {
+          "title": "使用决策流程",
+          "code": "flowchart TD\n    Start[\"开始：是否明确需求？\"]\n    KnowNeed[\"明确需求\"]\n    UnknownNeed[\"不明确需求\"]\n    WantPlugAndPlay[\"想即装即用\"]\n    DontWantTinker[\"不想折腾\"]\n    GoRepoB[\"使用 精品 Store\"]\n    GoRepoC[\"使用 排行榜 网站\"]\n    GoRepoA[\"使用 全网仓库\"]\n    End[\"选择并安装 Skills\"]\n    Start --> KnowNeed\n    Start --> UnknownNeed\n    KnowNeed --> WantPlugAndPlay\n    KnowNeed --> DontWantTinker\n    WantPlugAndPlay --> GoRepoB\n    DontWantTinker --> GoRepoB\n    UnknownNeed --> GoRepoC\n    GoRepoB --> End\n    GoRepoC --> End\n    GoRepoA --> End"
+        },
+        {
+          "title": "排行榜挑选与安装步骤",
+          "code": "flowchart TD\n    OpenSite[\"打开 排行榜 Skills 网站\"]\n    ViewMetrics[\"查看 热度 排序、质量 评分、用户 评价\"]\n    PickSkill[\"挑选感兴趣的 Skill\"]\n    InstallSkill[\"安装选中的 Skill\"]\n    UseSkill[\"在 DeepSeek V4 中使用\"]\n    WeeklyCheck[\"每周浏览榜单获取灵感\"]\n    Capture[\"收藏/截屏 记录\"]\n    ForgetPrevention[\"立即安装防止遗忘\"]\n    End[\"完成\"]\n    OpenSite --> ViewMetrics\n    ViewMetrics --> PickSkill\n    PickSkill --> InstallSkill\n    InstallSkill --> UseSkill\n    UseSkill --> End\n    WeeklyCheck --> OpenSite\n    Capture --> PickSkill\n    ForgetPrevention --> InstallSkill"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T01:10:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Skills 资源图谱\n\n## 总览\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4\"]\n    RepoA[\"全网最大 Skills 仓库<br/>≈146万开源 Skills\"]\n    RepoB[\"精品 Skills Store<br/>审核+规范安装\"]\n    RepoC[\"排行榜 Skills 网站<br/>热度/质量/评价\"]\n    QualityVar[\"质量参差不齐\"]\n    Vetting[\"全部通过审核\"]\n    InstallStd[\"安装流程规范\"]\n    UseCaseA[\"适合愿意自行挑选、试用者\"]\n    UseCaseB[\"适合想即装即用、免折腾者\"]\n    UseCaseC[\"适合不知选什么、寻灵感者\"]\n    DSV4 --> RepoA\n    DSV4 --> RepoB\n    DSV4 --> RepoC\n    RepoA --> QualityVar\n    RepoB --> Vetting\n    RepoB --> InstallStd\n    RepoA --> UseCaseA\n    RepoB --> UseCaseB\n    RepoC --> UseCaseC\n```\n\n## 使用决策流程\n```mermaid\nflowchart TD\n    Start[\"开始：是否明确需求？\"]\n    KnowNeed[\"明确需求\"]\n    UnknownNeed[\"不明确需求\"]\n    WantPlugAndPlay[\"想即装即用\"]\n    DontWantTinker[\"不想折腾\"]\n    GoRepoB[\"使用 精品 Store\"]\n    GoRepoC[\"使用 排行榜 网站\"]\n    GoRepoA[\"使用 全网仓库\"]\n    End[\"选择并安装 Skills\"]\n    Start --> KnowNeed\n    Start --> UnknownNeed\n    KnowNeed --> WantPlugAndPlay\n    KnowNeed --> DontWantTinker\n    WantPlugAndPlay --> GoRepoB\n    DontWantTinker --> GoRepoB\n    UnknownNeed --> GoRepoC\n    GoRepoB --> End\n    GoRepoC --> End\n    GoRepoA --> End\n```\n\n## 排行榜挑选与安装步骤\n```mermaid\nflowchart TD\n    OpenSite[\"打开 排行榜 Skills 网站\"]\n    ViewMetrics[\"查看 热度 排序、质量 评分、用户 评价\"]\n    PickSkill[\"挑选感兴趣的 Skill\"]\n    InstallSkill[\"安装选中的 Skill\"]\n    UseSkill[\"在 DeepSeek V4 中使用\"]\n    WeeklyCheck[\"每周浏览榜单获取灵感\"]\n    Capture[\"收藏/截屏 记录\"]\n    ForgetPrevention[\"立即安装防止遗忘\"]\n    End[\"完成\"]\n    OpenSite --> ViewMetrics\n    ViewMetrics --> PickSkill\n    PickSkill --> InstallSkill\n    InstallSkill --> UseSkill\n    UseSkill --> End\n    WeeklyCheck --> OpenSite\n    Capture --> PickSkill\n    ForgetPrevention --> InstallSkill\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    DSV4[\"DeepSeek V4\"]\n    RepoA[\"全网最大 Skills 仓库<br/>≈146万开源 Skills\"]\n    RepoB[\"精品 Skills Store<br/>审核+规范安装\"]\n    RepoC[\"排行榜 Skills 网站<br/>热度/质量/评价\"]\n    QualityVar[\"质量参差不齐\"]\n    Vetting[\"全部通过审核\"]\n    InstallStd[\"安装流程规范\"]\n    UseCaseA[\"适合愿意自行挑选、试用者\"]\n    UseCaseB[\"适合想即装即用、免折腾者\"]\n    UseCaseC[\"适合不知选什么、寻灵感者\"]\n    DSV4 --> RepoA\n    DSV4 --> RepoB\n    DSV4 --> RepoC\n    RepoA --> QualityVar\n    RepoB --> Vetting\n    RepoB --> InstallStd\n    RepoA --> UseCaseA\n    RepoB --> UseCaseB\n    RepoC --> UseCaseC"
+    },
+    {
+      "title": "使用决策流程",
+      "code": "flowchart TD\n    Start[\"开始：是否明确需求？\"]\n    KnowNeed[\"明确需求\"]\n    UnknownNeed[\"不明确需求\"]\n    WantPlugAndPlay[\"想即装即用\"]\n    DontWantTinker[\"不想折腾\"]\n    GoRepoB[\"使用 精品 Store\"]\n    GoRepoC[\"使用 排行榜 网站\"]\n    GoRepoA[\"使用 全网仓库\"]\n    End[\"选择并安装 Skills\"]\n    Start --> KnowNeed\n    Start --> UnknownNeed\n    KnowNeed --> WantPlugAndPlay\n    KnowNeed --> DontWantTinker\n    WantPlugAndPlay --> GoRepoB\n    DontWantTinker --> GoRepoB\n    UnknownNeed --> GoRepoC\n    GoRepoB --> End\n    GoRepoC --> End\n    GoRepoA --> End"
+    },
+    {
+      "title": "排行榜挑选与安装步骤",
+      "code": "flowchart TD\n    OpenSite[\"打开 排行榜 Skills 网站\"]\n    ViewMetrics[\"查看 热度 排序、质量 评分、用户 评价\"]\n    PickSkill[\"挑选感兴趣的 Skill\"]\n    InstallSkill[\"安装选中的 Skill\"]\n    UseSkill[\"在 DeepSeek V4 中使用\"]\n    WeeklyCheck[\"每周浏览榜单获取灵感\"]\n    Capture[\"收藏/截屏 记录\"]\n    ForgetPrevention[\"立即安装防止遗忘\"]\n    End[\"完成\"]\n    OpenSite --> ViewMetrics\n    ViewMetrics --> PickSkill\n    PickSkill --> InstallSkill\n    InstallSkill --> UseSkill\n    UseSkill --> End\n    WeeklyCheck --> OpenSite\n    Capture --> PickSkill\n    ForgetPrevention --> InstallSkill"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:10:54+00:00"
+}

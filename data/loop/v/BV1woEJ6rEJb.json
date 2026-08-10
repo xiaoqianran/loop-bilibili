@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1woEJ6rEJb",
+  "title": "🤣👉Cargo残废成这样rust开发者都吹得起来",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4333,
+  "text": "大家好\n欢迎来到下划线\n下划线自然选择下划线下划线的频道\n2026年5月14号\nrust更新了2026年的提案状态\n同时也修改了提案发布的节奏\n由之前的半年发布一次\n修改为一年发布一次\n因此这次的提案数量\n相较于25hr也有明显的增加\n在2026提案中\n25个是25H2的延续提案\n同时有40一个新提案\n之前使用的五种提案分类也不再适用\n我将它们分成了以下十类\n计划以四五期视频进行分步解读\n首先来看cargo与create主题\n作为一名rust开发者\n你肯定熟悉那些由rust c clip\n甚至于rust analyzer提供的link\n那紧致的包裹感让人安心\n也让我们参与其他项目时更加轻松\n不会把时间浪费在不必要的细节上\n然而cargo本身却没有提供足够的检查能力\n这导致许多只会出现在cargo dota里的问题\n无法被发现\n最常见的便是导入的库\n因为代码变更而未被使用\n我们不得不借助cargo\nshare等开过插件来解决这类问题\n这个提案的目标就是\n将已经在net e中实现的cargo检查系统\n优化至与rust c和clip同等质量并稳定化\n让原生工具链能够覆盖\nrust的项目中的方方面面\n而不仅仅是dot2S中的代码\n理解项目依赖关系图\n调试版本冲突以及分析依赖项中使用的features\n是rust项目依赖管理的常见需求\ncargo目前提供的TRIE指令\n用于输出项目的依赖数\n但其目前仅为静态工具\n缺乏交互性\n探索大型或复杂的依赖关系图十分困难\n不得不管道传递给RPGRP等工具做额外处理\n这个提案想为coco tree添加交互模式\n提升探索依赖图的体验\n这将允许用户通过按键对依赖图执行操作\n并提供额外的能力和视觉改进\n用户将能够高效的导航和分析其依赖图\n对于一个大型rust项目而言\n其必然由多个package组成\n更像是一个整体\n而不是几个独立的包\n但如果想将它们各自发布\n就会面临一个问题\n怎么表示这些package是我发布的\n且与其他的包有关系\n目前的解决方案是手动添加命名空间\n比如TOKYOUTU\n但这样的方式并非优雅\n如果其他人发布了TOKYOUTUS\n很多人可能并不知道自己导入了错误的包\n这导致了信任危机\n开发者在使用类似命名方式的包时\n需要去确认他们是否是官方出品\n这个提案希望引入命名空间\n允许package的作者在命名空间下发布其他的package\n对发布者而言\n可以将项目内部适合拆分的子模块\n拆成命名空间下独立的package发布和维护\n它可以独立版本\n独立依赖独立发布\n对使用者而言\n可以从命名上直接判断哪些package出自官方\n避免信任危机\n并且在代码中像使用create的子模块一样\n使用哪些子package作为25H2的延续提案\n目前cargo支持已部分实现编译器设计\n也达成一致\n并部分实现\n这个主题下其他的提案用户感知并不明显\n我们简单过一下\nPop private\n允许生命依赖库是否对外不可见\n能够防止意外暴露\n强化语音化版本检查\n同时减少无脑噪音体验\n计划在这个提案年\n实现并稳定RFC中描述的公共依赖项的MVP\nCargo plumbing\n把cargo从黑盒拆分成一系列模块化的底层指令\n让其他工具能更灵活地与cargo集成\n去年本提案入选GSOC\n因此取得了一些进展\n但目前对具体的实施方案仍处于重构当中\ncargo scrape现在写一个最简单的rust程序\n至少也得创建cargo dotal和main dota2S两个文件\n这个提案就是要让rust支持单文件脚本\n像Python那样一个文件就可以跑起来\n目前其并没有遇到过多的阻塞问题\n主播预计这个提案年就能够完成\nCargo seven chicks\n在cargo publish时自动检查语义化版本约束\n阻止发布者做出违背语义化版本的API变更\n其在2025年\nlint数量由120个增长到242个\n而lint执行时间却减为原来的14\n但其仍有许多工作需要完成\n作者预计可能在2028年才能正式稳定\n编译器\n核心主题主要聚焦于rust c的改进\n这也是rust拓展自己生态的重要手段\nrust标准库对API的稳定性有着极其严格的承诺\n一旦某个API稳定下来\n必须永久保持不变\n这当然保证了相互兼容\n但也意味着\n我们很难去修复那些不够完美的设计\n比如command的API\n或者让MUTEXT默认不中毒等等\n目前想修改标准库中\n稳定API的唯一办法是废弃旧API\n并引入一个新名字\n但这不仅让人在起名字时抓耳挠腮\n而且会给整个生态带来跟进压力\n这个提案引入了基于1edition的中导出方案\n它允许同一个标准库路径\n在不同的EDEDITION中指向不同的底层实现\n这样一来\n标准库可以通过e edition进行API演进\n而旧代码依然可以通过使用旧e edition保持兼容\n除了语法上的易用性外\n另一个阻碍\na think在rust的生态中被广泛使用的原因便是\na sync编译后的状态基因过于臃肿\n尤其是当多个A性格函数嵌套起来\n最终状态机的体积会相当离谱\n这就会导致future明明逻辑不复杂\n但类型大小一侧大得吓人\n这可能带来难以解释的战役\n初嵌入式和内核场景里更是直接劝退使用者\n这两个提案的核心目标就是优化状态机的生成\nI think a stay machine optimization\n负责在生成状态机时\n直接优化掉不必要的状态和分支\nA sa future memory optimization\n负责让状态机内存更加紧凑\n未来还会探索两条更底层的路线\n一种是把被组合起来的future做更深的内联\n另一种是研究\n能不能更直接的利用LVM自带的coral tin机制\n来做布局和优化\nrust离真正的编译器执行差的不是语法\n而是编译器架构\n今天宏展开名称解析\ntreat求解等等\n耦合的太紧\n宏展开想知道某个类型或函数的信息\n但求解器又要求整个grade展开完成后\n才能稳定工作\ntrade求解\n默认还要看到当前CRIT内的所有implement\n这导致编译器不能在展开到一半的时候\n停印象去编译并执行当下某个create ne的函数\n这个提案要做两件事\n第一给TRA体求解器加一个受限模式\n某些展开期运行的函数可以通过特殊标记\n使他们只看到上游create内的treat employment\n看不到本create内还没有完全展开的内容\n以避免编译器函数的执行结果\n反过来影响他自己的可见employment集合\n这种循环依赖问题\n第二是把现在一体化的求解器做query化改造\n让兵器更像一个可中断\n可局部求职的系统\n为MICROFUNCTION或其他create内操作逻辑提供实现路径\n甚至为编译器内建的互操作生成器铺路\n剩下的提案中也有next\nSOVER和普洛尼这样的重量级\n让我们一起来看看吧\nDictionary passing their experiment\n今天rust编译器在很多阶段会事后再推一次\nTrade\n结论类型检查时算过一次\n到了借用检查代码生成等获取阶段\n又会按需把对应implement重新找一遍\n这个提案\n就是想在rust c里实验那种字典传递风格\n在前面把哪个约束到底由哪个implement满足\n一次性决定好\nAssumption on bounders\n今天rust在处理for生命周期A\n这类bounder的时候\n并不会完整记录\n那些和被绑定生命周期相关的VR约束\n这导致编译器会在遇到高阶生命周期约束时\n遗忘信息\n轻则爆出让人摸不着头脑的错误\n重则出现健全性问题\n这个提案的目标是\n把今天只在有限场景内工作的编译器特性\n重新设置成对所有bounder都适用的通用机制\nEmil move elimination\n在rust中值经常先在某个地方构造出来\n再被move到最终位置\n理论上\n编译器应该尽量把这些move消除\n但在实践中\n一旦对象的地址被观察过\nrust c往往不敢做这件事\n最后落成不少memory copy或占到站的复制\n提案的核心想法是修改ML中move操作的语义\n如果一个值被末\n其分配区域就能被视为释放出来了\n从而让后续变量有机会直接复用这段存储\n作为延续提案\n其在今年4月1号正式公开了最新的RFC\n并且在实验新分支上\n已经能够为rust c带来\n二到5%的性能提升\nnext sover rust的trait系统很强\n但支撑它的treat求解器\n却已经背负了过多的历史包袱\n以及有许多长期存在的健全性问题\nnext server的目标就是把TRE体求解\n从到处散落的选择逻辑\n改造成一个更统一的go serving系统\n编译器不再只是问这个约束该选哪个employment\n而是把问题表达成在当前参数环境下\n这个goal能不能被证明\n他希望最终完全替代旧的treat server\n负责treat bd证明关联类型归一化等核心操作\n同时修复长期存在的健全性问题\n解锁未来类型系统能力\n并尽可能改善编译时间\n如果说next server是rust类型系统的地基翻新\n那POLONIANS就是rust借用检查器的核心升级\n今天的NLL已经不再简单\n认为一个引用活到整个块作用域结束时\n而是基于MIL和控制流\n判断引用实际活跃到哪里\n但NAL仍然有自己的表达极限\n比如查到了就返回引用\n查不到就插入再返回这一类代码\n人能看出两个分支并不冲突\n但当前介入检查器有时会认为\n既然某个分支把引用返回回去了\n那这个容器在整个函数后续路径里\n都可能还处于被借用的状态\nPOLONIUS的思路是换一种方式理解引用\n他不再把生命周期看成哪个程序点还存活\n而是把它看成一个来源域\n这个来源于里记录的不是一段抽象的存活空间\n而是若干次具体的借用项\n于是借用检查器要回答的问题\n就从过去的这个生命周期覆盖了哪些程序点\n变成了在当前这个程序位置\n这个来源域里可能包含哪些具体引用\n普洛尼斯可以沿着控制流在每个程序位置\n分别计算这些禁用项之间的包含关系\n某个借用只在sum声之中存在\n就不应该污染N分支\n某格引用已经被覆盖掉\n它携带的旧引用也不应该继续影响后续的判断\n这也是普洛尼ENCE和NLL最核心的区别\nNLL更像是在追踪生命周期覆盖到哪里\n而普洛尼斯更像是追踪具体借用从哪里\n流到了哪里\n最新的CI提案也说明\nrust团队准备让BLOONS阿尔法和next sover\n进入rust的CI流程\n比较他们在真实编译器测试中的行为差异\n以便在稳定化前持续发现回归问题",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1woEJ6rEJb",
+  "published_at": "1780750040",
+  "fetched_at": "2026-08-09T06:14:25+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Rust 2026 年提案与 Cargo、编译器改进关系图谱\n\n## Cargo 提案概览\n```mermaid\nflowchart TD\n    CP[\"Cargo 提案总览\"] --> CI[\"交互式依赖图 (Cargo Interactive)\"]\n    CP --> NS[\"命名空间发布 (Namespace)\"]\n    CP --> PP[\"Pop Private (私有依赖可见性)\"]\n    CP --> PL[\"Cargo Plumbing (模块化底层指令)\"]\n    CP --> SC[\"Cargo Scrape (单文件脚本)\"]\n    CP --> SCk[\"Cargo Seven Chicks (语义化版本检查)\"]\n    CP --> ME[\"Move Elimination (移动消除优化)\"]\n    CI --> UI[\"用户交互导航 & 可视化\"]\n    NS --> PN[\"Package Namespace (包命名空间)\"]\n    PP --> SV[\"防止意外暴露\"]\n    PL --> TO[\"工具链灵活集成\"]\n    SC --> PY[\"类似 Python 单文件运行\"]\n    SCk --> SVc[\"阻止违规 API 变更\"]\n    ME --> PF[\"提升 2‑5% 性能\"]\n```\n\n## 依赖管理流程改进\n```mermaid\nflowchart LR\n    TR[\"Cargo TRIE (静态依赖计数)\"] --> LIM[\"缺乏交互性、难以探索大型依赖图\"]\n    LIM --> IG[\"交互式依赖图提案\"]\n    IG --> NAV[\"键盘操作导航 & 分析\"]\n    IG --> VIS[\"视觉增强 (高亮、布局)\"]\n    NS[\"命名空间发布提案\"] --> PN[\"为子模块创建独立 package\"]\n    PN --> REL[\"独立版本、独立依赖\"]\n    REL --> TRUST[\"用户可直接判断官方包，降低信任危机\"]\n```\n\n## 编译器提案链\n```mermaid\nflowchart TD\n    ME[\"Move Elimination\"] --> PERF[\"减少不必要的 move & copy\"]\n    NSrv[\"Next Server (统一求解器)\"] --> UNIF[\"统一约束求解逻辑\"]\n    POL[\"Polonius (借用检查升级)\"] --> ACC[\"更精确的借用来源追踪\"]\n    NLL[\"NLL (非词法生命周期)\"] --> LIM2[\"仍有表达极限\"]\n    CI[\"CI 集成提案\"] --> TEST[\"在真实编译器测试中比较行为差异\"]\n    ME --> UNIF\n    UNIF --> ACC\n    ACC --> LIM2\n    LIM2 --> TEST\n```",
+      "diagrams": [
+        {
+          "title": "Cargo 提案概览",
+          "code": "flowchart TD\n    CP[\"Cargo 提案总览\"] --> CI[\"交互式依赖图 (Cargo Interactive)\"]\n    CP --> NS[\"命名空间发布 (Namespace)\"]\n    CP --> PP[\"Pop Private (私有依赖可见性)\"]\n    CP --> PL[\"Cargo Plumbing (模块化底层指令)\"]\n    CP --> SC[\"Cargo Scrape (单文件脚本)\"]\n    CP --> SCk[\"Cargo Seven Chicks (语义化版本检查)\"]\n    CP --> ME[\"Move Elimination (移动消除优化)\"]\n    CI --> UI[\"用户交互导航 & 可视化\"]\n    NS --> PN[\"Package Namespace (包命名空间)\"]\n    PP --> SV[\"防止意外暴露\"]\n    PL --> TO[\"工具链灵活集成\"]\n    SC --> PY[\"类似 Python 单文件运行\"]\n    SCk --> SVc[\"阻止违规 API 变更\"]\n    ME --> PF[\"提升 2‑5% 性能\"]"
+        },
+        {
+          "title": "依赖管理流程改进",
+          "code": "flowchart LR\n    TR[\"Cargo TRIE (静态依赖计数)\"] --> LIM[\"缺乏交互性、难以探索大型依赖图\"]\n    LIM --> IG[\"交互式依赖图提案\"]\n    IG --> NAV[\"键盘操作导航 & 分析\"]\n    IG --> VIS[\"视觉增强 (高亮、布局)\"]\n    NS[\"命名空间发布提案\"] --> PN[\"为子模块创建独立 package\"]\n    PN --> REL[\"独立版本、独立依赖\"]\n    REL --> TRUST[\"用户可直接判断官方包，降低信任危机\"]"
+        },
+        {
+          "title": "编译器提案链",
+          "code": "flowchart TD\n    ME[\"Move Elimination\"] --> PERF[\"减少不必要的 move & copy\"]\n    NSrv[\"Next Server (统一求解器)\"] --> UNIF[\"统一约束求解逻辑\"]\n    POL[\"Polonius (借用检查升级)\"] --> ACC[\"更精确的借用来源追踪\"]\n    NLL[\"NLL (非词法生命周期)\"] --> LIM2[\"仍有表达极限\"]\n    CI[\"CI 集成提案\"] --> TEST[\"在真实编译器测试中比较行为差异\"]\n    ME --> UNIF\n    UNIF --> ACC\n    ACC --> LIM2\n    LIM2 --> TEST"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T06:14:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Rust 2026 年提案与 Cargo、编译器改进关系图谱\n\n## Cargo 提案概览\n```mermaid\nflowchart TD\n    CP[\"Cargo 提案总览\"] --> CI[\"交互式依赖图 (Cargo Interactive)\"]\n    CP --> NS[\"命名空间发布 (Namespace)\"]\n    CP --> PP[\"Pop Private (私有依赖可见性)\"]\n    CP --> PL[\"Cargo Plumbing (模块化底层指令)\"]\n    CP --> SC[\"Cargo Scrape (单文件脚本)\"]\n    CP --> SCk[\"Cargo Seven Chicks (语义化版本检查)\"]\n    CP --> ME[\"Move Elimination (移动消除优化)\"]\n    CI --> UI[\"用户交互导航 & 可视化\"]\n    NS --> PN[\"Package Namespace (包命名空间)\"]\n    PP --> SV[\"防止意外暴露\"]\n    PL --> TO[\"工具链灵活集成\"]\n    SC --> PY[\"类似 Python 单文件运行\"]\n    SCk --> SVc[\"阻止违规 API 变更\"]\n    ME --> PF[\"提升 2‑5% 性能\"]\n```\n\n## 依赖管理流程改进\n```mermaid\nflowchart LR\n    TR[\"Cargo TRIE (静态依赖计数)\"] --> LIM[\"缺乏交互性、难以探索大型依赖图\"]\n    LIM --> IG[\"交互式依赖图提案\"]\n    IG --> NAV[\"键盘操作导航 & 分析\"]\n    IG --> VIS[\"视觉增强 (高亮、布局)\"]\n    NS[\"命名空间发布提案\"] --> PN[\"为子模块创建独立 package\"]\n    PN --> REL[\"独立版本、独立依赖\"]\n    REL --> TRUST[\"用户可直接判断官方包，降低信任危机\"]\n```\n\n## 编译器提案链\n```mermaid\nflowchart TD\n    ME[\"Move Elimination\"] --> PERF[\"减少不必要的 move & copy\"]\n    NSrv[\"Next Server (统一求解器)\"] --> UNIF[\"统一约束求解逻辑\"]\n    POL[\"Polonius (借用检查升级)\"] --> ACC[\"更精确的借用来源追踪\"]\n    NLL[\"NLL (非词法生命周期)\"] --> LIM2[\"仍有表达极限\"]\n    CI[\"CI 集成提案\"] --> TEST[\"在真实编译器测试中比较行为差异\"]\n    ME --> UNIF\n    UNIF --> ACC\n    ACC --> LIM2\n    LIM2 --> TEST\n```",
+  "diagrams": [
+    {
+      "title": "Cargo 提案概览",
+      "code": "flowchart TD\n    CP[\"Cargo 提案总览\"] --> CI[\"交互式依赖图 (Cargo Interactive)\"]\n    CP --> NS[\"命名空间发布 (Namespace)\"]\n    CP --> PP[\"Pop Private (私有依赖可见性)\"]\n    CP --> PL[\"Cargo Plumbing (模块化底层指令)\"]\n    CP --> SC[\"Cargo Scrape (单文件脚本)\"]\n    CP --> SCk[\"Cargo Seven Chicks (语义化版本检查)\"]\n    CP --> ME[\"Move Elimination (移动消除优化)\"]\n    CI --> UI[\"用户交互导航 & 可视化\"]\n    NS --> PN[\"Package Namespace (包命名空间)\"]\n    PP --> SV[\"防止意外暴露\"]\n    PL --> TO[\"工具链灵活集成\"]\n    SC --> PY[\"类似 Python 单文件运行\"]\n    SCk --> SVc[\"阻止违规 API 变更\"]\n    ME --> PF[\"提升 2‑5% 性能\"]"
+    },
+    {
+      "title": "依赖管理流程改进",
+      "code": "flowchart LR\n    TR[\"Cargo TRIE (静态依赖计数)\"] --> LIM[\"缺乏交互性、难以探索大型依赖图\"]\n    LIM --> IG[\"交互式依赖图提案\"]\n    IG --> NAV[\"键盘操作导航 & 分析\"]\n    IG --> VIS[\"视觉增强 (高亮、布局)\"]\n    NS[\"命名空间发布提案\"] --> PN[\"为子模块创建独立 package\"]\n    PN --> REL[\"独立版本、独立依赖\"]\n    REL --> TRUST[\"用户可直接判断官方包，降低信任危机\"]"
+    },
+    {
+      "title": "编译器提案链",
+      "code": "flowchart TD\n    ME[\"Move Elimination\"] --> PERF[\"减少不必要的 move & copy\"]\n    NSrv[\"Next Server (统一求解器)\"] --> UNIF[\"统一约束求解逻辑\"]\n    POL[\"Polonius (借用检查升级)\"] --> ACC[\"更精确的借用来源追踪\"]\n    NLL[\"NLL (非词法生命周期)\"] --> LIM2[\"仍有表达极限\"]\n    CI[\"CI 集成提案\"] --> TEST[\"在真实编译器测试中比较行为差异\"]\n    ME --> UNIF\n    UNIF --> ACC\n    ACC --> LIM2\n    LIM2 --> TEST"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T06:14:43+00:00"
+}

@@ -1,0 +1,58 @@
+{
+  "bvid": "BV19MNs6rE4S",
+  "title": "Claude：原来是中国用户，该封!",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 17,
+  "text": "哇这是什么\n糟了拔我吧\n你太可恶了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19MNs6rE4S",
+  "published_at": "1783740493",
+  "fetched_at": "2026-08-09T21:56:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Claude：原来是中国用户，该封!\n\n## 图1：情绪与表达概览\n```mermaid\nflowchart TD\nS[\"说话者\"] --> U1[\"哇这是什么\"]\nS --> U2[\"糟了拔我吧\"]\nS --> U3[\"你太可恶了\"]\nU1 --> E1[\"惊讶\"]\nU2 --> E2[\"担忧\"]\nU3 --> E3[\"愤怒\"]\nE1 --> C[\"情境未知\"]\nE2 --> C\nE3 --> C\n```\n\n## 图2：情绪属性对比\n```mermaid\nflowchart TD\nE1[\"惊讶\"] --> A1[\"口头感叹\"]\nE2[\"担忧\"] --> A2[\"请求帮助\"]\nE3[\"愤怒\"] --> A3[\"指责\"]\nE1 --> I1[\"正向情绪? 否\"]\nE2 --> I2[\"负向情绪? 是\"]\nE3 --> I3[\"负向情绪? 是\"]\nI1 --> D[\"情绪强度低\"]\nI2 --> D\nI3 --> D\nD --> R[\"可能导致对话升级\"]\n```",
+      "diagrams": [
+        {
+          "title": "图1：情绪与表达概览",
+          "code": "flowchart TD\nS[\"说话者\"] --> U1[\"哇这是什么\"]\nS --> U2[\"糟了拔我吧\"]\nS --> U3[\"你太可恶了\"]\nU1 --> E1[\"惊讶\"]\nU2 --> E2[\"担忧\"]\nU3 --> E3[\"愤怒\"]\nE1 --> C[\"情境未知\"]\nE2 --> C\nE3 --> C"
+        },
+        {
+          "title": "图2：情绪属性对比",
+          "code": "flowchart TD\nE1[\"惊讶\"] --> A1[\"口头感叹\"]\nE2[\"担忧\"] --> A2[\"请求帮助\"]\nE3[\"愤怒\"] --> A3[\"指责\"]\nE1 --> I1[\"正向情绪? 否\"]\nE2 --> I2[\"负向情绪? 是\"]\nE3 --> I3[\"负向情绪? 是\"]\nI1 --> D[\"情绪强度低\"]\nI2 --> D\nI3 --> D\nD --> R[\"可能导致对话升级\"]"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-09T21:58:38+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Claude：原来是中国用户，该封!\n\n## 图1：情绪与表达概览\n```mermaid\nflowchart TD\nS[\"说话者\"] --> U1[\"哇这是什么\"]\nS --> U2[\"糟了拔我吧\"]\nS --> U3[\"你太可恶了\"]\nU1 --> E1[\"惊讶\"]\nU2 --> E2[\"担忧\"]\nU3 --> E3[\"愤怒\"]\nE1 --> C[\"情境未知\"]\nE2 --> C\nE3 --> C\n```\n\n## 图2：情绪属性对比\n```mermaid\nflowchart TD\nE1[\"惊讶\"] --> A1[\"口头感叹\"]\nE2[\"担忧\"] --> A2[\"请求帮助\"]\nE3[\"愤怒\"] --> A3[\"指责\"]\nE1 --> I1[\"正向情绪? 否\"]\nE2 --> I2[\"负向情绪? 是\"]\nE3 --> I3[\"负向情绪? 是\"]\nI1 --> D[\"情绪强度低\"]\nI2 --> D\nI3 --> D\nD --> R[\"可能导致对话升级\"]\n```",
+  "diagrams": [
+    {
+      "title": "图1：情绪与表达概览",
+      "code": "flowchart TD\nS[\"说话者\"] --> U1[\"哇这是什么\"]\nS --> U2[\"糟了拔我吧\"]\nS --> U3[\"你太可恶了\"]\nU1 --> E1[\"惊讶\"]\nU2 --> E2[\"担忧\"]\nU3 --> E3[\"愤怒\"]\nE1 --> C[\"情境未知\"]\nE2 --> C\nE3 --> C"
+    },
+    {
+      "title": "图2：情绪属性对比",
+      "code": "flowchart TD\nE1[\"惊讶\"] --> A1[\"口头感叹\"]\nE2[\"担忧\"] --> A2[\"请求帮助\"]\nE3[\"愤怒\"] --> A3[\"指责\"]\nE1 --> I1[\"正向情绪? 否\"]\nE2 --> I2[\"负向情绪? 是\"]\nE3 --> I3[\"负向情绪? 是\"]\nI1 --> D[\"情绪强度低\"]\nI2 --> D\nI3 --> D\nD --> R[\"可能导致对话升级\"]"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T21:58:38+00:00"
+}

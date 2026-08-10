@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1nPdEBZEre",
+  "title": "10分钟AI游戏开发课|AI生成像素风游戏UI界面",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1223,
+  "text": "做游戏开发的朋友们\n你们一定想过用AI帮你生成全套游戏UI\n这期视频我会全流程演示\n从AI生成UI到导入游戏项目的过程\n首先进入HOOPEX网站\n使用自由画布功能\n自由画布功能涵盖了很多适配游戏开发的模板\n我们这次主要会用到它的渐变元素\n拆分上传一张游戏截图\n点击生成\n之前没有注册过的朋友也可以使用我的邀请码\n567253注册一下\n这样双方都能获得免费的算力\n分成好了\n效果还不错\n有一些额外生成的部分\n这里不用管\n我们让AI把这些变成空的\n可以看到里面的文字\n数字和填充颜色都被清空了\n再把这张作为参考图\n选择模板\n使用界面元素拆分模板\n直接点击生成\n可以看到血量条被很好的拆出来了\n再拆一次\n这次都拆分好了\n我们只需要用到爱心和金币旁\n下载下来\n来到这里\n使用一键抠图功能去除一下背景\n去除行了\n我们下载下来把下载的图片拖动进来\n使用矩形选区工具\n我们只需要保证我们需要的UI界面的矩形区域\n内没有其他物件就可以了\n处理好之后\n我们导出一下文件\n导出的文件导入unity\n在sprite mode这里选择multiple\n点击fed editor\n在SELECE这里选择automatic\n自动点击slice apply\n这样所有的UI组件就被拆分好了\n我们回到之前的状态栏\n图层右键状态栏\n新建一个UI下的image场景中\n按F聚焦到他身上\n调整一下它的位置和大小\n注意对齐方式\n在这里我们也要选择左上对齐\n按住alt点击给它命名为hot\n然后把我们之前建立的血量条拖动到hot下面\n成为hot的子物件\n全部选中这些图片\n调整它的大小\n给之前设定的黑色边框可以换一个颜色\n这个血量条就成功放在游戏中了\n接下来是金币的UI\n我们还是在状态栏下面新建一个UI下的image\n然后把金币UI拖动进去\n调整一下大小\n在这里设置对齐方式\n按住alt点击右上角带\n与左上角右上角对齐的模块\n可以按住shift\n同时对其他的参照点\n本身它的参照点是默认在物件的中心\n如果按住shift再点击这个\n那它的参照点就从中心变成了右上角\nXY坐标\n就会从中心的坐标变成它右上角的坐标\n然后我们要确认一下状态栏\nthe canvas这里的设置ui scale mode是scale with screen size\n也需要预留文字去设置它的金币值\n可以快速设置一下\n这样子我们就成功把UI放到游戏中了\n这个系列的教程每个月都会更新\n可以在评论区留下你想学习的内容\n我们还可以通过HOLOPEX的一键成导功能\n帮助我们去生成一些技能图标\n选择这个像素RPG道具icon的模型\n输入火球术技能图标\n点击生成效果不错\n大家也可以多试试HOOPEX的其他功能\n例如上传我们的NPC图片\n选择一键表情图模板\n它就能一次性生成很多表情\n来配合不同的剧情发展\n我能上传一个游戏截图\n选择这个app icon\n它就能直接帮我们生成游戏图标\n天天的教程就到这里\n欢迎您在评论区交流",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1nPdEBZEre",
+  "published_at": "1776600000",
+  "fetched_at": "2026-08-07T08:36:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI生成像素风游戏UI流程图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"开始: 需求生成 UI\"] --> B1[\"访问 HOOPEX 网站\"]\n    B1 --> C1[\"上传游戏截图\"]\n    C1 --> D1[\"AI 生成 UI 元素（使用渐变模板）\"]\n    D1 --> E1[\"清除文字、数字、填充颜色\"]\n    E1 --> F1[\"导出 UI 资源（PNG）\"]\n    F1 --> G1[\"导入 Unity 项目\"]\n    G1 --> H1[\"自动切片 (Slice)\"]\n    H1 --> I1[\"设置 Canvas UI Scale Mode\"]\n    I1 --> J1[\"在场景中放置 UI（血量条、金币）\"]\n    J1 --> K1[\"完成 UI 集成\"]\n```\n\n## Unity 导入与切片细节\n```mermaid\nflowchart TD\n    A2[\"导出 PNG 文件\"] --> B2[\"在 Unity 导入文件\"]\n    B2 --> C2[\"Sprite Mode: Multiple\"]\n    C2 --> D2[\"打开 Sprite Editor\"]\n    D2 --> E2[\"Slice Mode: Automatic\"]\n    E2 --> F2[\"Apply 切片\"]\n    F2 --> G2[\"得到 UI 组件（血量条、金币等）\"]\n    G2 --> H2[\"在 Canvas 新建 Image 对象\"]\n    H2 --> I2[\"分配对应 Sprite\"]\n    I2 --> J2[\"设置对齐方式（左上/右上）\"]\n    J2 --> K2[\"Alt+点击 命名为 hot/coin\"]\n    K2 --> L2[\"完成 UI 组件设置\"]\n```\n\n## 对齐方式与参照点技巧\n```mermaid\nflowchart TD\n    A3[\"默认参照点: 中心\"] --> B3[\"Alt+点击 设置名称（hot/coin）\"]\n    B3 --> C3[\"选择左上对齐\"]\n    C3 --> D3[\"Shift+点击 改变参照点\"]\n    D3 --> E3[\"参照点: 右上角\"]\n    E3 --> F3[\"XY 坐标基于参照点\"]\n    F3 --> G3[\"应用于血量条/金币 UI\"]\n    G3 --> H3[\"实现精确对齐 UI 元素\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"开始: 需求生成 UI\"] --> B1[\"访问 HOOPEX 网站\"]\n    B1 --> C1[\"上传游戏截图\"]\n    C1 --> D1[\"AI 生成 UI 元素（使用渐变模板）\"]\n    D1 --> E1[\"清除文字、数字、填充颜色\"]\n    E1 --> F1[\"导出 UI 资源（PNG）\"]\n    F1 --> G1[\"导入 Unity 项目\"]\n    G1 --> H1[\"自动切片 (Slice)\"]\n    H1 --> I1[\"设置 Canvas UI Scale Mode\"]\n    I1 --> J1[\"在场景中放置 UI（血量条、金币）\"]\n    J1 --> K1[\"完成 UI 集成\"]"
+        },
+        {
+          "title": "Unity 导入与切片细节",
+          "code": "flowchart TD\n    A2[\"导出 PNG 文件\"] --> B2[\"在 Unity 导入文件\"]\n    B2 --> C2[\"Sprite Mode: Multiple\"]\n    C2 --> D2[\"打开 Sprite Editor\"]\n    D2 --> E2[\"Slice Mode: Automatic\"]\n    E2 --> F2[\"Apply 切片\"]\n    F2 --> G2[\"得到 UI 组件（血量条、金币等）\"]\n    G2 --> H2[\"在 Canvas 新建 Image 对象\"]\n    H2 --> I2[\"分配对应 Sprite\"]\n    I2 --> J2[\"设置对齐方式（左上/右上）\"]\n    J2 --> K2[\"Alt+点击 命名为 hot/coin\"]\n    K2 --> L2[\"完成 UI 组件设置\"]"
+        },
+        {
+          "title": "对齐方式与参照点技巧",
+          "code": "flowchart TD\n    A3[\"默认参照点: 中心\"] --> B3[\"Alt+点击 设置名称（hot/coin）\"]\n    B3 --> C3[\"选择左上对齐\"]\n    C3 --> D3[\"Shift+点击 改变参照点\"]\n    D3 --> E3[\"参照点: 右上角\"]\n    E3 --> F3[\"XY 坐标基于参照点\"]\n    F3 --> G3[\"应用于血量条/金币 UI\"]\n    G3 --> H3[\"实现精确对齐 UI 元素\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T08:36:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI生成像素风游戏UI流程图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"开始: 需求生成 UI\"] --> B1[\"访问 HOOPEX 网站\"]\n    B1 --> C1[\"上传游戏截图\"]\n    C1 --> D1[\"AI 生成 UI 元素（使用渐变模板）\"]\n    D1 --> E1[\"清除文字、数字、填充颜色\"]\n    E1 --> F1[\"导出 UI 资源（PNG）\"]\n    F1 --> G1[\"导入 Unity 项目\"]\n    G1 --> H1[\"自动切片 (Slice)\"]\n    H1 --> I1[\"设置 Canvas UI Scale Mode\"]\n    I1 --> J1[\"在场景中放置 UI（血量条、金币）\"]\n    J1 --> K1[\"完成 UI 集成\"]\n```\n\n## Unity 导入与切片细节\n```mermaid\nflowchart TD\n    A2[\"导出 PNG 文件\"] --> B2[\"在 Unity 导入文件\"]\n    B2 --> C2[\"Sprite Mode: Multiple\"]\n    C2 --> D2[\"打开 Sprite Editor\"]\n    D2 --> E2[\"Slice Mode: Automatic\"]\n    E2 --> F2[\"Apply 切片\"]\n    F2 --> G2[\"得到 UI 组件（血量条、金币等）\"]\n    G2 --> H2[\"在 Canvas 新建 Image 对象\"]\n    H2 --> I2[\"分配对应 Sprite\"]\n    I2 --> J2[\"设置对齐方式（左上/右上）\"]\n    J2 --> K2[\"Alt+点击 命名为 hot/coin\"]\n    K2 --> L2[\"完成 UI 组件设置\"]\n```\n\n## 对齐方式与参照点技巧\n```mermaid\nflowchart TD\n    A3[\"默认参照点: 中心\"] --> B3[\"Alt+点击 设置名称（hot/coin）\"]\n    B3 --> C3[\"选择左上对齐\"]\n    C3 --> D3[\"Shift+点击 改变参照点\"]\n    D3 --> E3[\"参照点: 右上角\"]\n    E3 --> F3[\"XY 坐标基于参照点\"]\n    F3 --> G3[\"应用于血量条/金币 UI\"]\n    G3 --> H3[\"实现精确对齐 UI 元素\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"开始: 需求生成 UI\"] --> B1[\"访问 HOOPEX 网站\"]\n    B1 --> C1[\"上传游戏截图\"]\n    C1 --> D1[\"AI 生成 UI 元素（使用渐变模板）\"]\n    D1 --> E1[\"清除文字、数字、填充颜色\"]\n    E1 --> F1[\"导出 UI 资源（PNG）\"]\n    F1 --> G1[\"导入 Unity 项目\"]\n    G1 --> H1[\"自动切片 (Slice)\"]\n    H1 --> I1[\"设置 Canvas UI Scale Mode\"]\n    I1 --> J1[\"在场景中放置 UI（血量条、金币）\"]\n    J1 --> K1[\"完成 UI 集成\"]"
+    },
+    {
+      "title": "Unity 导入与切片细节",
+      "code": "flowchart TD\n    A2[\"导出 PNG 文件\"] --> B2[\"在 Unity 导入文件\"]\n    B2 --> C2[\"Sprite Mode: Multiple\"]\n    C2 --> D2[\"打开 Sprite Editor\"]\n    D2 --> E2[\"Slice Mode: Automatic\"]\n    E2 --> F2[\"Apply 切片\"]\n    F2 --> G2[\"得到 UI 组件（血量条、金币等）\"]\n    G2 --> H2[\"在 Canvas 新建 Image 对象\"]\n    H2 --> I2[\"分配对应 Sprite\"]\n    I2 --> J2[\"设置对齐方式（左上/右上）\"]\n    J2 --> K2[\"Alt+点击 命名为 hot/coin\"]\n    K2 --> L2[\"完成 UI 组件设置\"]"
+    },
+    {
+      "title": "对齐方式与参照点技巧",
+      "code": "flowchart TD\n    A3[\"默认参照点: 中心\"] --> B3[\"Alt+点击 设置名称（hot/coin）\"]\n    B3 --> C3[\"选择左上对齐\"]\n    C3 --> D3[\"Shift+点击 改变参照点\"]\n    D3 --> E3[\"参照点: 右上角\"]\n    E3 --> F3[\"XY 坐标基于参照点\"]\n    F3 --> G3[\"应用于血量条/金币 UI\"]\n    G3 --> H3[\"实现精确对齐 UI 元素\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:36:16+00:00"
+}

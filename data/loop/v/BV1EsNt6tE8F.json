@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1EsNt6tE8F",
+  "title": "卡牌游戏做300张卡就崩？这才是商业游戏的架构真相",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 795,
+  "text": "很多人觉得卡牌游戏做到两三百张卡\n最难的是数值平衡\n其实并不是\n真正让程序最难维护的是策划\n一句简单的话\n我又想到一张新卡\n很多新手做卡牌开发都会踩一个坑\n每张卡牌单独洗一套独立脚本\n火球术\n治疗术\n抽牌逻辑各自对应一个独立脚本互不通用\n初期看不出问题\n但卡牌数量越多\n冗余的私有逻辑就越堆积\n100张卡还能勉强维护\n一旦达到300张500张\n整个代码库会彻底僵化\n没人敢随意改动\n因为任何一次小修改都可能连锁崩坏\n几十张卡牌的结算逻辑\n成熟的商业卡牌项目绝对不会这么做\n商业项目的主流解法很简单\n不拆分卡牌\n只拆分战斗效果\n伤害格挡\n抽牌回血增减bug\n每一种功能都是一个独立的effect模块\n这套架构下卡牌本身没有任何专属逻辑\n只是一个效果组合器\n负责将不同的effect按顺序组装结算\n普通攻击牌就是单纯的伤害effect\n重击牌就是伤害effect叠加易伤debuff effect\n今天我们就用工程模拟实现一张特色卡牌\n失控实验\n它的效果很复杂\n八点伤害自身叠加两层虚弱\n抽两张牌\n随机弃一张手牌\n按新手写法\n这张特殊卡牌大概率要单独新增一套专属脚本\n继续堆积冗余代码\n但在模块化架构中\n完全不用新增任何战斗逻辑\n不用写一行新代码\n我们只需要拼接四个现成的effect模块程序\n就会自动按顺序完成全部结算\n更高效的是\n我们只需调换effect的执行顺序\n不用改任何代码\n就能直接改变这张卡牌的实战节奏和整体强度\n这就是商业卡牌游戏\n能轻松迭代数百张卡牌的核心原因\n程序维护的核心从来不是一张张独立卡牌\n而是一套可复用\n可自由组合的effect模块系统\n这套系统可以全面复用适配遗物药水\n敌人技能\n地图事件等所有游戏内容\n优质游戏项目的迭代靠的不是堆砌代码\n而是无限的模块组合玩法\n下一期我们拆解杀戮尖塔最核心的隐藏设计\n礼物系统如何不改动战斗代码\n就能持续新增玩法\n拓展游戏内容",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1EsNt6tE8F",
+  "published_at": "1784035582",
+  "fetched_at": "2026-08-08T05:24:27+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 卡牌游戏模块化架构概览\n\n## 卡牌数量与代码维护风险\n\n```mermaid\nflowchart TD\nA1[\"卡牌数量增加\"] --> A2[\"每张卡独立脚本\"]\nA2 --> A3[\"代码冗余堆积\"]\nA3 --> A4[\"维护难度上升\"]\nA4 --> A5[\"代码库僵化，改动风险高\"]\n```\n- 代码冗余堆积导致维护困难 [BV1EsNt6tE8F P1 00:26‑00:37]\n\n## 商业项目的模块化架构\n\n```mermaid\nflowchart TD\nB1[\"卡牌（无专属逻辑）\"] --> B2[\"效果组合器\"]\nB2 --> B3[\"Effect 模块库\"]\nB3 --> B4[\"伤害 effect\"]\nB3 --> B5[\"格挡 effect\"]\nB3 --> B6[\"抽牌 effect\"]\nB3 --> B7[\"回血/增减 effect\"]\nB3 --> B8[\"debuff effect\"]\n```\n- 商业项目不拆分卡牌，只拆分战斗效果 [BV1EsNt6tE8F P1 00:45‑00:56]\n\n## 通过组合 Effect 实现复杂卡牌\n\n```mermaid\nflowchart TD\nC1[\"需求：复杂卡牌效果\"] --> C2[\"挑选现成 effect\"]\nC2 --> C3[\"伤害 effect\"]\nC2 --> C4[\"自身伤害 + 虚弱 debuff\"]\nC2 --> C5[\"抽牌 effect\"]\nC2 --> C6[\"随机弃牌 effect\"]\nC3 --> C7[\"组合顺序设定\"]\nC4 --> C7\nC5 --> C7\nC6 --> C7\nC7 --> C8[\"生成卡牌效果\"]\nC8 --> C9[\"运行时按顺序结算\"]\nC9 --> C10[\"调换顺序 → 改变强度/节奏\"]\n```\n- 只需拼接现成 effect，无需新增代码 [BV1EsNt6tE8F P1 01:16‑01:40]\n\n## Effect 系统的全局复用范围\n\n```mermaid\nflowchart TD\nD1[\"Effect 模块系统\"] --> D2[\"卡牌\"]\nD1 --> D3[\"遗物\"]\nD1 --> D4[\"药水\"]\nD1 --> D5[\"敌人技能\"]\nD1 --> D6[\"地图事件\"]\n```\n- 模块化系统支撑卡牌、遗物、药水、敌人技能、地图事件等全部内容的迭代 [BV1EsNt6tE8F P1 02:00‑02:14]",
+      "diagrams": [
+        {
+          "title": "卡牌数量与代码维护风险",
+          "code": "flowchart TD\nA1[\"卡牌数量增加\"] --> A2[\"每张卡独立脚本\"]\nA2 --> A3[\"代码冗余堆积\"]\nA3 --> A4[\"维护难度上升\"]\nA4 --> A5[\"代码库僵化，改动风险高\"]"
+        },
+        {
+          "title": "商业项目的模块化架构",
+          "code": "flowchart TD\nB1[\"卡牌（无专属逻辑）\"] --> B2[\"效果组合器\"]\nB2 --> B3[\"Effect 模块库\"]\nB3 --> B4[\"伤害 effect\"]\nB3 --> B5[\"格挡 effect\"]\nB3 --> B6[\"抽牌 effect\"]\nB3 --> B7[\"回血/增减 effect\"]\nB3 --> B8[\"debuff effect\"]"
+        },
+        {
+          "title": "通过组合 Effect 实现复杂卡牌",
+          "code": "flowchart TD\nC1[\"需求：复杂卡牌效果\"] --> C2[\"挑选现成 effect\"]\nC2 --> C3[\"伤害 effect\"]\nC2 --> C4[\"自身伤害 + 虚弱 debuff\"]\nC2 --> C5[\"抽牌 effect\"]\nC2 --> C6[\"随机弃牌 effect\"]\nC3 --> C7[\"组合顺序设定\"]\nC4 --> C7\nC5 --> C7\nC6 --> C7\nC7 --> C8[\"生成卡牌效果\"]\nC8 --> C9[\"运行时按顺序结算\"]\nC9 --> C10[\"调换顺序 → 改变强度/节奏\"]"
+        },
+        {
+          "title": "Effect 系统的全局复用范围",
+          "code": "flowchart TD\nD1[\"Effect 模块系统\"] --> D2[\"卡牌\"]\nD1 --> D3[\"遗物\"]\nD1 --> D4[\"药水\"]\nD1 --> D5[\"敌人技能\"]\nD1 --> D6[\"地图事件\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T05:24:40+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 卡牌游戏模块化架构概览\n\n## 卡牌数量与代码维护风险\n\n```mermaid\nflowchart TD\nA1[\"卡牌数量增加\"] --> A2[\"每张卡独立脚本\"]\nA2 --> A3[\"代码冗余堆积\"]\nA3 --> A4[\"维护难度上升\"]\nA4 --> A5[\"代码库僵化，改动风险高\"]\n```\n- 代码冗余堆积导致维护困难 [BV1EsNt6tE8F P1 00:26‑00:37]\n\n## 商业项目的模块化架构\n\n```mermaid\nflowchart TD\nB1[\"卡牌（无专属逻辑）\"] --> B2[\"效果组合器\"]\nB2 --> B3[\"Effect 模块库\"]\nB3 --> B4[\"伤害 effect\"]\nB3 --> B5[\"格挡 effect\"]\nB3 --> B6[\"抽牌 effect\"]\nB3 --> B7[\"回血/增减 effect\"]\nB3 --> B8[\"debuff effect\"]\n```\n- 商业项目不拆分卡牌，只拆分战斗效果 [BV1EsNt6tE8F P1 00:45‑00:56]\n\n## 通过组合 Effect 实现复杂卡牌\n\n```mermaid\nflowchart TD\nC1[\"需求：复杂卡牌效果\"] --> C2[\"挑选现成 effect\"]\nC2 --> C3[\"伤害 effect\"]\nC2 --> C4[\"自身伤害 + 虚弱 debuff\"]\nC2 --> C5[\"抽牌 effect\"]\nC2 --> C6[\"随机弃牌 effect\"]\nC3 --> C7[\"组合顺序设定\"]\nC4 --> C7\nC5 --> C7\nC6 --> C7\nC7 --> C8[\"生成卡牌效果\"]\nC8 --> C9[\"运行时按顺序结算\"]\nC9 --> C10[\"调换顺序 → 改变强度/节奏\"]\n```\n- 只需拼接现成 effect，无需新增代码 [BV1EsNt6tE8F P1 01:16‑01:40]\n\n## Effect 系统的全局复用范围\n\n```mermaid\nflowchart TD\nD1[\"Effect 模块系统\"] --> D2[\"卡牌\"]\nD1 --> D3[\"遗物\"]\nD1 --> D4[\"药水\"]\nD1 --> D5[\"敌人技能\"]\nD1 --> D6[\"地图事件\"]\n```\n- 模块化系统支撑卡牌、遗物、药水、敌人技能、地图事件等全部内容的迭代 [BV1EsNt6tE8F P1 02:00‑02:14]",
+  "diagrams": [
+    {
+      "title": "卡牌数量与代码维护风险",
+      "code": "flowchart TD\nA1[\"卡牌数量增加\"] --> A2[\"每张卡独立脚本\"]\nA2 --> A3[\"代码冗余堆积\"]\nA3 --> A4[\"维护难度上升\"]\nA4 --> A5[\"代码库僵化，改动风险高\"]"
+    },
+    {
+      "title": "商业项目的模块化架构",
+      "code": "flowchart TD\nB1[\"卡牌（无专属逻辑）\"] --> B2[\"效果组合器\"]\nB2 --> B3[\"Effect 模块库\"]\nB3 --> B4[\"伤害 effect\"]\nB3 --> B5[\"格挡 effect\"]\nB3 --> B6[\"抽牌 effect\"]\nB3 --> B7[\"回血/增减 effect\"]\nB3 --> B8[\"debuff effect\"]"
+    },
+    {
+      "title": "通过组合 Effect 实现复杂卡牌",
+      "code": "flowchart TD\nC1[\"需求：复杂卡牌效果\"] --> C2[\"挑选现成 effect\"]\nC2 --> C3[\"伤害 effect\"]\nC2 --> C4[\"自身伤害 + 虚弱 debuff\"]\nC2 --> C5[\"抽牌 effect\"]\nC2 --> C6[\"随机弃牌 effect\"]\nC3 --> C7[\"组合顺序设定\"]\nC4 --> C7\nC5 --> C7\nC6 --> C7\nC7 --> C8[\"生成卡牌效果\"]\nC8 --> C9[\"运行时按顺序结算\"]\nC9 --> C10[\"调换顺序 → 改变强度/节奏\"]"
+    },
+    {
+      "title": "Effect 系统的全局复用范围",
+      "code": "flowchart TD\nD1[\"Effect 模块系统\"] --> D2[\"卡牌\"]\nD1 --> D3[\"遗物\"]\nD1 --> D4[\"药水\"]\nD1 --> D5[\"敌人技能\"]\nD1 --> D6[\"地图事件\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T05:24:40+00:00"
+}

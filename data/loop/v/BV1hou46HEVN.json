@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1hou46HEVN",
+  "title": "【吊打付费】B站最全最细的AI Agent开发零基础教程，2026最新版，包含所有干货！七天就能从小白到大神！少走99%的弯路！学完即就业，带你玩转AI！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 602,
+  "text": "想拿到40KA证的产品搞offer\n你需要训练到什么水平\n今天一次性讲透\n不要再被速成短视频误导\n不少人自学AI\n今天研究提示词\n明天上手扣子搭建机器人\n看似接触很多内容\n但是浅尝辄止\n没有深入钻研\n网上到处宣传几天速成AI岗位\n实话实说\n全是吸引流量的噱头\n想要拿到靠谱高薪offer\n普通人至少需要踏实深耕90天\n不然连面试门槛都触碰不到\n完整的学习路线\n我整理好了\n建议先收藏\n第一个月搭建底层认知\n弄懂大模型\nLLM和agent核心本质\n多看行业报告\n技术案例\n建立基础认知框架\n搞清楚智能体到底能解决什么业务问题\n第二个月\n攻克核心硬技能\n深耕提示词工程\n吃透RG完整链路\n掌握文本切片向量\n召回结果排序逻辑\n熟悉agent主流架构\n经典设计范式完成这一阶段学习才算正式入门\n第三个月也是决定面试成败的关键阶段\n挑选真实业务场景落地\n至少两套完整项目\n完整走完整套产品流程\n市场调研需求梳理输出PRD\n依托各类外部工具搭建MVP\n循序渐进\n实现业务闭环\n踏踏实实走完三个阶段\n你才有足够底气冲击agent的产品岗位\n现实很残酷\n九成学习者总想寻找捷径\n期待短时间速成\n高薪工作只会不断被营销内容消耗\n很少愿意沉下心动手落地项目\n这套路线不适合急于求成\n只想躺赢的人\n如果你真心想要转型AI赛道\n全靠大模型学习资料\n教学视频\n实战项目素材我已经整理完毕\n想要资料的朋友评论打agent直接全部领取",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hou46HEVN",
+  "published_at": "1786090800",
+  "fetched_at": "2026-08-10T07:15:36+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI Agent 零基础 90 天学习路线图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    Start[\"开始学习\"] --> M1[\"第一月：基础认知\"]\n    M1 --> M2[\"第二月：核心硬技能\"]\n    M2 --> M3[\"第三月：项目落地\"]\n    M3 --> Offer[\"冲击高薪 Offer\"]\n```\n\n- 第一月基础认知 (00:26‑00:33)  \n- 第二月核心硬技能 (00:38‑00:45)  \n- 第三月项目落地 (00:51‑01:03)  \n- 90 天深耕可冲击高薪 Offer (00:20‑00:22)  \n\n## 第一月：基础认知构建\n\n```mermaid\nflowchart TD\n    DModel[\"理解大模型\"] --> LLM[\"掌握 LLM & Agent 本质\"]\n    LLM --> Reports[\"阅读行业报告\"]\n    Reports --> Cases[\"学习技术案例\"]\n    Cases --> Framework[\"建立认知框架\"]\n    Framework --> BizProb[\"明确业务问题\"]\n```\n\n- 理解大模型 (00:28)  \n- 掌握 LLM & Agent 本质 (00:29)  \n- 阅读行业报告 (00:30)  \n- 学习技术案例 (00:31)  \n- 建立认知框架 (00:32)  \n- 明确业务问题 (00:33)  \n\n## 第二月：核心硬技能\n\n```mermaid\nflowchart TD\n    Prompt[\"深耕提示词工程\"] --> RG[\"吃透 RG 完整链路\"]\n    RG --> Vector[\"掌握文本切片向量\"]\n    Vector --> Rank[\"熟悉召回结果排序逻辑\"]\n    Rank --> Arch[\"了解主流 Agent 架构\"]\n    Arch --> Pattern[\"学习经典设计范式\"]\n    Pattern --> Entry[\"正式入门\"]\n```\n\n- 提示词工程 (00:38)  \n- RG 完整链路 (00:39)  \n- 文本切片向量 (00:41)  \n- 召回排序逻辑 (00:42)  \n- 主流 Agent 架构 (00:43)  \n- 经典设计范式 (00:45)  \n- 正式入门 (00:45)  \n\n## 第三月：项目落地与面试准备\n\n```mermaid\nflowchart TD\n    Scene[\"挑选真实业务场景\"] --> Projects[\"完成两套完整项目\"]\n    Projects --> PRD[\"市场调研 & 输出 PRD\"]\n    PRD --> MVP[\"搭建 MVP（外部工具）\"]\n    MVP --> Loop[\"实现业务闭环\"]\n    Loop --> Confidence[\"获得面试底气\"]\n```\n\n- 挑选真实业务场景 (00:51)  \n- 完成两套完整项目 (00:52)  \n- 市场调研 & PRD (00:55)  \n- 搭建 MVP（外部工具） (00:58)  \n- 实现业务闭环 (01:01)  \n- 获得面试底气 (01:03)  \n\n## 学习资源获取方式\n\n```mermaid\nflowchart TD\n    Materials[\"大模型学习资料\"] --> Videos[\"教学视频\"]\n    Videos --> ProjectsRes[\"实战项目素材\"]\n    ProjectsRes --> Comment[\"评论 \\\"打agent\\\" 获取\"]\n```\n\n- 大模型学习资料 (01:20)  \n- 教学视频 (01:22)  \n- 实战项目素材已整理 (01:22)  \n- 评论「打agent」获取全部资料 (01:24)  ",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    Start[\"开始学习\"] --> M1[\"第一月：基础认知\"]\n    M1 --> M2[\"第二月：核心硬技能\"]\n    M2 --> M3[\"第三月：项目落地\"]\n    M3 --> Offer[\"冲击高薪 Offer\"]"
+        },
+        {
+          "title": "第一月：基础认知构建",
+          "code": "flowchart TD\n    DModel[\"理解大模型\"] --> LLM[\"掌握 LLM & Agent 本质\"]\n    LLM --> Reports[\"阅读行业报告\"]\n    Reports --> Cases[\"学习技术案例\"]\n    Cases --> Framework[\"建立认知框架\"]\n    Framework --> BizProb[\"明确业务问题\"]"
+        },
+        {
+          "title": "第二月：核心硬技能",
+          "code": "flowchart TD\n    Prompt[\"深耕提示词工程\"] --> RG[\"吃透 RG 完整链路\"]\n    RG --> Vector[\"掌握文本切片向量\"]\n    Vector --> Rank[\"熟悉召回结果排序逻辑\"]\n    Rank --> Arch[\"了解主流 Agent 架构\"]\n    Arch --> Pattern[\"学习经典设计范式\"]\n    Pattern --> Entry[\"正式入门\"]"
+        },
+        {
+          "title": "第三月：项目落地与面试准备",
+          "code": "flowchart TD\n    Scene[\"挑选真实业务场景\"] --> Projects[\"完成两套完整项目\"]\n    Projects --> PRD[\"市场调研 & 输出 PRD\"]\n    PRD --> MVP[\"搭建 MVP（外部工具）\"]\n    MVP --> Loop[\"实现业务闭环\"]\n    Loop --> Confidence[\"获得面试底气\"]"
+        },
+        {
+          "title": "学习资源获取方式",
+          "code": "flowchart TD\n    Materials[\"大模型学习资料\"] --> Videos[\"教学视频\"]\n    Videos --> ProjectsRes[\"实战项目素材\"]\n    ProjectsRes --> Comment[\"评论 \\\"打agent\\\" 获取\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T07:15:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI Agent 零基础 90 天学习路线图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    Start[\"开始学习\"] --> M1[\"第一月：基础认知\"]\n    M1 --> M2[\"第二月：核心硬技能\"]\n    M2 --> M3[\"第三月：项目落地\"]\n    M3 --> Offer[\"冲击高薪 Offer\"]\n```\n\n- 第一月基础认知 (00:26‑00:33)  \n- 第二月核心硬技能 (00:38‑00:45)  \n- 第三月项目落地 (00:51‑01:03)  \n- 90 天深耕可冲击高薪 Offer (00:20‑00:22)  \n\n## 第一月：基础认知构建\n\n```mermaid\nflowchart TD\n    DModel[\"理解大模型\"] --> LLM[\"掌握 LLM & Agent 本质\"]\n    LLM --> Reports[\"阅读行业报告\"]\n    Reports --> Cases[\"学习技术案例\"]\n    Cases --> Framework[\"建立认知框架\"]\n    Framework --> BizProb[\"明确业务问题\"]\n```\n\n- 理解大模型 (00:28)  \n- 掌握 LLM & Agent 本质 (00:29)  \n- 阅读行业报告 (00:30)  \n- 学习技术案例 (00:31)  \n- 建立认知框架 (00:32)  \n- 明确业务问题 (00:33)  \n\n## 第二月：核心硬技能\n\n```mermaid\nflowchart TD\n    Prompt[\"深耕提示词工程\"] --> RG[\"吃透 RG 完整链路\"]\n    RG --> Vector[\"掌握文本切片向量\"]\n    Vector --> Rank[\"熟悉召回结果排序逻辑\"]\n    Rank --> Arch[\"了解主流 Agent 架构\"]\n    Arch --> Pattern[\"学习经典设计范式\"]\n    Pattern --> Entry[\"正式入门\"]\n```\n\n- 提示词工程 (00:38)  \n- RG 完整链路 (00:39)  \n- 文本切片向量 (00:41)  \n- 召回排序逻辑 (00:42)  \n- 主流 Agent 架构 (00:43)  \n- 经典设计范式 (00:45)  \n- 正式入门 (00:45)  \n\n## 第三月：项目落地与面试准备\n\n```mermaid\nflowchart TD\n    Scene[\"挑选真实业务场景\"] --> Projects[\"完成两套完整项目\"]\n    Projects --> PRD[\"市场调研 & 输出 PRD\"]\n    PRD --> MVP[\"搭建 MVP（外部工具）\"]\n    MVP --> Loop[\"实现业务闭环\"]\n    Loop --> Confidence[\"获得面试底气\"]\n```\n\n- 挑选真实业务场景 (00:51)  \n- 完成两套完整项目 (00:52)  \n- 市场调研 & PRD (00:55)  \n- 搭建 MVP（外部工具） (00:58)  \n- 实现业务闭环 (01:01)  \n- 获得面试底气 (01:03)  \n\n## 学习资源获取方式\n\n```mermaid\nflowchart TD\n    Materials[\"大模型学习资料\"] --> Videos[\"教学视频\"]\n    Videos --> ProjectsRes[\"实战项目素材\"]\n    ProjectsRes --> Comment[\"评论 \\\"打agent\\\" 获取\"]\n```\n\n- 大模型学习资料 (01:20)  \n- 教学视频 (01:22)  \n- 实战项目素材已整理 (01:22)  \n- 评论「打agent」获取全部资料 (01:24)  ",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    Start[\"开始学习\"] --> M1[\"第一月：基础认知\"]\n    M1 --> M2[\"第二月：核心硬技能\"]\n    M2 --> M3[\"第三月：项目落地\"]\n    M3 --> Offer[\"冲击高薪 Offer\"]"
+    },
+    {
+      "title": "第一月：基础认知构建",
+      "code": "flowchart TD\n    DModel[\"理解大模型\"] --> LLM[\"掌握 LLM & Agent 本质\"]\n    LLM --> Reports[\"阅读行业报告\"]\n    Reports --> Cases[\"学习技术案例\"]\n    Cases --> Framework[\"建立认知框架\"]\n    Framework --> BizProb[\"明确业务问题\"]"
+    },
+    {
+      "title": "第二月：核心硬技能",
+      "code": "flowchart TD\n    Prompt[\"深耕提示词工程\"] --> RG[\"吃透 RG 完整链路\"]\n    RG --> Vector[\"掌握文本切片向量\"]\n    Vector --> Rank[\"熟悉召回结果排序逻辑\"]\n    Rank --> Arch[\"了解主流 Agent 架构\"]\n    Arch --> Pattern[\"学习经典设计范式\"]\n    Pattern --> Entry[\"正式入门\"]"
+    },
+    {
+      "title": "第三月：项目落地与面试准备",
+      "code": "flowchart TD\n    Scene[\"挑选真实业务场景\"] --> Projects[\"完成两套完整项目\"]\n    Projects --> PRD[\"市场调研 & 输出 PRD\"]\n    PRD --> MVP[\"搭建 MVP（外部工具）\"]\n    MVP --> Loop[\"实现业务闭环\"]\n    Loop --> Confidence[\"获得面试底气\"]"
+    },
+    {
+      "title": "学习资源获取方式",
+      "code": "flowchart TD\n    Materials[\"大模型学习资料\"] --> Videos[\"教学视频\"]\n    Videos --> ProjectsRes[\"实战项目素材\"]\n    ProjectsRes --> Comment[\"评论 \\\"打agent\\\" 获取\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T07:15:48+00:00"
+}

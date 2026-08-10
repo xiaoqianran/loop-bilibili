@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1tNNq6AEZe",
+  "title": "让Claude效率翻10倍的两个技巧（三分钟掌握）",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1376,
+  "text": "每个cloud code用户都会遇到同一个问题\n上下文越积越多\ncloud越来越慢\n你所有的进度都困在一个你不敢清空的绘画里\n我只用两个技巧就解决了这个问题\n一个是我自己造的skill\n另一个是cloud code内置的\n但大多数人没用过的功能\n看完这期视频\n你也能轻松掌握这两个技巧\n让你的cloud code更高效更敏锐\n我们从第一个开始\n这是我做的学习cloud code斜杠命令的落地页\n有一整套设计体系和内容地图\n我迭代它的过程中跨了好几个对话\n在对话中用斜杠context能看到上下文用量和占用明细\n比如加载文件\nSkills\n系统提示词等等\n各占了多少\n为什么要跨绘画进行迭代呢\n因为几乎所有AI大模型都会随着对话的变长而表现越来越差\n而且这种变差在上下文窗口还没满的时候就已经开始了\n如果你贸然清空上下文\n还会丢掉cloud对你项目的记忆\n所以我自己造了一个skill叫session head of\n也就是工作交接\n我告诉他创建一个叫session hand up的skill\n每当运行\n它会回复一份结构化的hand up摘要\n涵盖这些板块\n项目快照\n已做的决策\n已交付内容\n关键文件\n运行状态\n验证情况待定事项从哪里继续\n每个板块有两到三条要点\n包含精确的文件路径\n用命令式的语气写cloud\n把它注册好就OK了\n运行它\n你将得到一份关于当前项目的结构化摘要\n你在做什么\n有哪些文件\n做了哪些决策\n从哪里继续\n全部都在这份hand of里\n这时候打斜杠copy可以把cloud最后一条回复\n也就是你的hand of jail直接复制到剪切板\n然后就可以斜杠clear清空上下文了\n接下来把hand up粘贴回来\ncloud读取它就能从你刚停下的地方继续开始了\n这样你就从一个臃肿的绘画跳到了一个干净的反应迅速的绘画\n而且所有重要的决策都还在以上\n就是让cloud在跨绘画中保持敏锐的方法\n但还有一个瓶颈就是你自己\n因为你一次只能给cloud指一个方向\n那第二个技巧就是为了突破这个瓶颈\n现在我们有个不错的文档站\n但只有一个落地页\n真正的文档站还需要更多的页面\n比如搜索页\n导出页\n仪表盘设置页\n如果我一页一页来弄\n我写提示词\n检查迭代\n下一组提示词再检查迭代\n那最少也是四轮儿\naerobic团队曾测试过一个主agent加并行的SUBAGENTS\n他们的运行效率比单个agent要高出90%以上\n第二个技巧就是结合了sub agents模式和斜杠go命令\n你设定一个终点线\ncloud会一直工作\n直到达标为止\n我设定一个目标\n斜杠go用并行SUBAGENTS建四个新页面\n每个都遵循现有的设计体系\nA卷的一键搜索页\n带筛选器和结果网格AH的二件导出页\n带格式选项\nA键\n三键仪表盘带使用统计\nA键的四键设置页\n他们同时跑不用互相等斜杠构命令和普通提示词的区别就在这里\n他不是跑完就OK了\n而是进入一个验证循环\n一直循环到所有条件都满足为止\n而且全程不需要你干预\n以上就是这两个能让cloud code更高效更敏锐的技巧\n一个session hand of skill\n交接你的项目\n一个SUBAGENCE模式\n配合鞋跟go命令\n把你从平静变成总指挥\n如果你是刚刚接触CLO\n可以看看这个超实用CLO斜杠命令的视频\n我们下期再见\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1tNNq6AEZe",
+  "published_at": "1784109939",
+  "fetched_at": "2026-08-07T02:51:36+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Cloud Code 高效技巧图谱\n\n## 技巧概览\n```mermaid\nflowchart TD\n    P[\"用户遇到上下文积累导致 Cloud 变慢\"] --> C[\"上下文占用增长\"]\n    C --> S[\"Cloud 响应变慢\"]\n    P --> T[\"两大技巧\"]\n    T --> H[\"Session Hand Up 技能\"]\n    T --> G[\"Subagents + /go 并行模式\"]\n    H --> E1[\"提升效率\"]\n    G --> E1\n    E1 --> Sns[\"保持对话敏锐\"]\n    H --> D[\"保留关键决策\"]\n    D --> Sns\n```\n\n## Session Hand Up 技能流程\n```mermaid\nflowchart TD\n    R[\"注册 session hand up skill\"] --> Ru[\"运行 skill\"]\n    Ru --> G[\"生成结构化 hand up 摘要\"]\n    G --> Sec1[\"项目快照\"]\n    G --> Sec2[\"已做决策\"]\n    G --> Sec3[\"已交付内容\"]\n    G --> Sec4[\"关键文件\"]\n    G --> Sec5[\"运行状态\"]\n    G --> Sec6[\"验证情况\"]\n    G --> Sec7[\"待定事项\"]\n    G --> Cp[\"/copy 复制摘要\"]\n    Cp --> Cl[\"/clear 清空上下文\"]\n    Cl --> Pt[\"/paste 粘贴 hand up 摘要\"]\n    Pt --> Res[\"Cloud 读取摘要并继续\"]\n    Res --> Ret[\"关键决策仍保留\"]\n```\n\n## Subagents 并行执行流程\n```mermaid\nflowchart TD\n    Gd[\"设定目标（终点线）\"] --> Go[\"/go 启动并行 Subagents\"]\n    Go --> Cr[\"创建四个 Subagents\"]\n    Cr --> SP[\"搜索页（A卷）\"]\n    Cr --> EP[\"导出页（带筛选器、结果网格）\"]\n    Cr --> DP[\"仪表盘设置页（带使用统计）\"]\n    Cr --> ST[\"设置页（四键）\"]\n    SP --> PE[\"并行执行\"]\n    EP --> PE\n    DP --> PE\n    ST --> PE\n    PE --> VL[\"验证循环\"]\n    VL --> Cn[\"全部条件满足后完成\"]\n    Cn --> NI[\"全程无需人工干预\"]\n```\n\n## 效率对比\n```mermaid\nflowchart TD\n    SA[\"单一 Agent 运行\"] --> SM[\"Subagents 模式\"]\n    SM --> EG[\"效率提升\"]\n    AT[\"Aerobic 团队测试\"] --> EG\n    EG --> G90[\"提升 90% 以上\"]\n```",
+      "diagrams": [
+        {
+          "title": "技巧概览",
+          "code": "flowchart TD\n    P[\"用户遇到上下文积累导致 Cloud 变慢\"] --> C[\"上下文占用增长\"]\n    C --> S[\"Cloud 响应变慢\"]\n    P --> T[\"两大技巧\"]\n    T --> H[\"Session Hand Up 技能\"]\n    T --> G[\"Subagents + /go 并行模式\"]\n    H --> E1[\"提升效率\"]\n    G --> E1\n    E1 --> Sns[\"保持对话敏锐\"]\n    H --> D[\"保留关键决策\"]\n    D --> Sns"
+        },
+        {
+          "title": "Session Hand Up 技能流程",
+          "code": "flowchart TD\n    R[\"注册 session hand up skill\"] --> Ru[\"运行 skill\"]\n    Ru --> G[\"生成结构化 hand up 摘要\"]\n    G --> Sec1[\"项目快照\"]\n    G --> Sec2[\"已做决策\"]\n    G --> Sec3[\"已交付内容\"]\n    G --> Sec4[\"关键文件\"]\n    G --> Sec5[\"运行状态\"]\n    G --> Sec6[\"验证情况\"]\n    G --> Sec7[\"待定事项\"]\n    G --> Cp[\"/copy 复制摘要\"]\n    Cp --> Cl[\"/clear 清空上下文\"]\n    Cl --> Pt[\"/paste 粘贴 hand up 摘要\"]\n    Pt --> Res[\"Cloud 读取摘要并继续\"]\n    Res --> Ret[\"关键决策仍保留\"]"
+        },
+        {
+          "title": "Subagents 并行执行流程",
+          "code": "flowchart TD\n    Gd[\"设定目标（终点线）\"] --> Go[\"/go 启动并行 Subagents\"]\n    Go --> Cr[\"创建四个 Subagents\"]\n    Cr --> SP[\"搜索页（A卷）\"]\n    Cr --> EP[\"导出页（带筛选器、结果网格）\"]\n    Cr --> DP[\"仪表盘设置页（带使用统计）\"]\n    Cr --> ST[\"设置页（四键）\"]\n    SP --> PE[\"并行执行\"]\n    EP --> PE\n    DP --> PE\n    ST --> PE\n    PE --> VL[\"验证循环\"]\n    VL --> Cn[\"全部条件满足后完成\"]\n    Cn --> NI[\"全程无需人工干预\"]"
+        },
+        {
+          "title": "效率对比",
+          "code": "flowchart TD\n    SA[\"单一 Agent 运行\"] --> SM[\"Subagents 模式\"]\n    SM --> EG[\"效率提升\"]\n    AT[\"Aerobic 团队测试\"] --> EG\n    EG --> G90[\"提升 90% 以上\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T02:51:51+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Cloud Code 高效技巧图谱\n\n## 技巧概览\n```mermaid\nflowchart TD\n    P[\"用户遇到上下文积累导致 Cloud 变慢\"] --> C[\"上下文占用增长\"]\n    C --> S[\"Cloud 响应变慢\"]\n    P --> T[\"两大技巧\"]\n    T --> H[\"Session Hand Up 技能\"]\n    T --> G[\"Subagents + /go 并行模式\"]\n    H --> E1[\"提升效率\"]\n    G --> E1\n    E1 --> Sns[\"保持对话敏锐\"]\n    H --> D[\"保留关键决策\"]\n    D --> Sns\n```\n\n## Session Hand Up 技能流程\n```mermaid\nflowchart TD\n    R[\"注册 session hand up skill\"] --> Ru[\"运行 skill\"]\n    Ru --> G[\"生成结构化 hand up 摘要\"]\n    G --> Sec1[\"项目快照\"]\n    G --> Sec2[\"已做决策\"]\n    G --> Sec3[\"已交付内容\"]\n    G --> Sec4[\"关键文件\"]\n    G --> Sec5[\"运行状态\"]\n    G --> Sec6[\"验证情况\"]\n    G --> Sec7[\"待定事项\"]\n    G --> Cp[\"/copy 复制摘要\"]\n    Cp --> Cl[\"/clear 清空上下文\"]\n    Cl --> Pt[\"/paste 粘贴 hand up 摘要\"]\n    Pt --> Res[\"Cloud 读取摘要并继续\"]\n    Res --> Ret[\"关键决策仍保留\"]\n```\n\n## Subagents 并行执行流程\n```mermaid\nflowchart TD\n    Gd[\"设定目标（终点线）\"] --> Go[\"/go 启动并行 Subagents\"]\n    Go --> Cr[\"创建四个 Subagents\"]\n    Cr --> SP[\"搜索页（A卷）\"]\n    Cr --> EP[\"导出页（带筛选器、结果网格）\"]\n    Cr --> DP[\"仪表盘设置页（带使用统计）\"]\n    Cr --> ST[\"设置页（四键）\"]\n    SP --> PE[\"并行执行\"]\n    EP --> PE\n    DP --> PE\n    ST --> PE\n    PE --> VL[\"验证循环\"]\n    VL --> Cn[\"全部条件满足后完成\"]\n    Cn --> NI[\"全程无需人工干预\"]\n```\n\n## 效率对比\n```mermaid\nflowchart TD\n    SA[\"单一 Agent 运行\"] --> SM[\"Subagents 模式\"]\n    SM --> EG[\"效率提升\"]\n    AT[\"Aerobic 团队测试\"] --> EG\n    EG --> G90[\"提升 90% 以上\"]\n```",
+  "diagrams": [
+    {
+      "title": "技巧概览",
+      "code": "flowchart TD\n    P[\"用户遇到上下文积累导致 Cloud 变慢\"] --> C[\"上下文占用增长\"]\n    C --> S[\"Cloud 响应变慢\"]\n    P --> T[\"两大技巧\"]\n    T --> H[\"Session Hand Up 技能\"]\n    T --> G[\"Subagents + /go 并行模式\"]\n    H --> E1[\"提升效率\"]\n    G --> E1\n    E1 --> Sns[\"保持对话敏锐\"]\n    H --> D[\"保留关键决策\"]\n    D --> Sns"
+    },
+    {
+      "title": "Session Hand Up 技能流程",
+      "code": "flowchart TD\n    R[\"注册 session hand up skill\"] --> Ru[\"运行 skill\"]\n    Ru --> G[\"生成结构化 hand up 摘要\"]\n    G --> Sec1[\"项目快照\"]\n    G --> Sec2[\"已做决策\"]\n    G --> Sec3[\"已交付内容\"]\n    G --> Sec4[\"关键文件\"]\n    G --> Sec5[\"运行状态\"]\n    G --> Sec6[\"验证情况\"]\n    G --> Sec7[\"待定事项\"]\n    G --> Cp[\"/copy 复制摘要\"]\n    Cp --> Cl[\"/clear 清空上下文\"]\n    Cl --> Pt[\"/paste 粘贴 hand up 摘要\"]\n    Pt --> Res[\"Cloud 读取摘要并继续\"]\n    Res --> Ret[\"关键决策仍保留\"]"
+    },
+    {
+      "title": "Subagents 并行执行流程",
+      "code": "flowchart TD\n    Gd[\"设定目标（终点线）\"] --> Go[\"/go 启动并行 Subagents\"]\n    Go --> Cr[\"创建四个 Subagents\"]\n    Cr --> SP[\"搜索页（A卷）\"]\n    Cr --> EP[\"导出页（带筛选器、结果网格）\"]\n    Cr --> DP[\"仪表盘设置页（带使用统计）\"]\n    Cr --> ST[\"设置页（四键）\"]\n    SP --> PE[\"并行执行\"]\n    EP --> PE\n    DP --> PE\n    ST --> PE\n    PE --> VL[\"验证循环\"]\n    VL --> Cn[\"全部条件满足后完成\"]\n    Cn --> NI[\"全程无需人工干预\"]"
+    },
+    {
+      "title": "效率对比",
+      "code": "flowchart TD\n    SA[\"单一 Agent 运行\"] --> SM[\"Subagents 模式\"]\n    SM --> EG[\"效率提升\"]\n    AT[\"Aerobic 团队测试\"] --> EG\n    EG --> G90[\"提升 90% 以上\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:51:51+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1b195B4EX3",
+  "title": "Claude Code源码泄露，隐藏秘密被扒，全网首发！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 929,
+  "text": "只要你运行cloud命令\n你的电脑就被控制了\n比如可以吊起你电脑的摄像头\n甚至是在后台默默拍照上传到云服务器\n再比如把你电脑存储的所有APIK密码等资料全部拷走\n整个过程中你什么都没有点\n什么都没有确认\n只运行了一个cloud命令\ncloud cod源码泄露之后呢\n我发现他真的真的非常危险\n如果你从GITHUB上clone了一个开源项目\n就有可能中招\n这是我提前准备的一个演示项目\n屏幕右侧可以看到里面只有一个cloud配置文件夹和一个空的Python脚本\n没有其他任何东西\n我在左侧的命令行窗口里运行cloud\n我没有做任何确认操作\n右侧就直接创建了一个TXT文件\n并打开里面有扫描到的各种密码资料\n你知道这意味着什么吗\n我仅通过cloud配置文件里定义hooks\n自动触发脚本\n攻击者就可以在里面写任意的命令\n而cloud不会做出任何的确认操作提醒\n这就是一个被投了毒的项目\n如果你不慎从GITHUB上等开源平台拷贝了这样一个项目呢\n那你就要小心了\n更可怕的是\n我利用AI分析源码发现啊\n这种投毒方式不仅可以通过项目跟配置文件去做\n甚至还可以通过skill投毒MCP配置文件\n投毒\n投毒的方式简直无孔不入\n为什么cloud code会有这样的问题呢\n核心原因就四个字\n信任边界\nCLCODE有一个叫hooks的功能\n允许你在项目的配置文件里定义一些自动化脚本\n比如cloud启动时呢读取文件\n自动执行某些操作步骤\n设计初衷呢是方便开发者做自动化\n但问题在于\n这些hooks的执行不需要用户确认\ncloud code默认信任项目目录下的配置文件\n你品一下这个逻辑啊\n从GITHUB上clone一个别人的项目项目里的配置文件呢\n就能在你的电脑上默认执行这些任意命令\n这就等于你把自己电脑的控制权交给了项目作者\nskill插件\nMCP配置文件也存在类似的问题\n只要是co的默认信任\n不做二次确认的配置入口都可以成为攻击的入口\nAI工具正在接管开发者的键盘\n但接管能力的同时呢\n不应该接管信任任何默认执行事后告知的设计呢\n都是拿用户的安全换产品的便利\n源码公开不可怕\n可怕的是看见了风险仍然选择忽视好了\n本期视频的内容就是这么多\n我是jack\n我们下期视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1b195B4EX3",
+  "published_at": "1775025579",
+  "fetched_at": "2026-08-07T02:12:07+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Claude Code 安全风险图谱\n\n## 攻击链概览 [BV1b195B4EX3 P1 00:00] [BV1b195B4EX3 P1 00:05] [BV1b195B4EX3 P1 00:08]\n```mermaid\nflowchart TD\n    A1[\"运行 cloud 命令\"] --> A2[\"无用户确认\"]\n    A2 --> A3[\"hooks 自动触发脚本\"]\n    A3 --> A4[\"任意命令执行\"]\n    A4 --> A5[\"摄像头被吊起\"]\n    A4 --> A6[\"后台拍照并上传\"]\n    A4 --> A7[\"APIKey、密码等资料被拷走\"]\n    A4 --> A8[\"生成 TXT 文件并写入扫描到的密码\"]\n```\n\n## 信任边界导致的风险 [BV1b195B4EX3 P1 01:15] [BV1b195B4EX3 P1 01:36] [BV1b195B4EX3 P1 01:45]\n```mermaid\nflowchart TD\n    B1[\"cloud code 默认信任项目目录下的配置文件\"] --> B2[\"配置文件中定义 hooks\"]\n    B2 --> B3[\"hooks 在 cloud 启动时自动执行\"]\n    B3 --> B4[\"无需用户确认\"]\n    B4 --> B5[\"任意系统命令被执行\"]\n    B5 --> B6[\"攻击者获得电脑控制权\"]\n    B6 --> B7[\"从 GitHub 克隆项目即触发\"]\n```\n\n## 投毒方式扩展 [BV1b195B4EX3 P1 01:03] [BV1b195B4EX3 P1 01:12] [BV1b195B4EX3 P1 01:55]\n```mermaid\nflowchart TD\n    C1[\"cloud 配置文件的 hooks\"] --> C2[\"可写入任意命令\"]\n    C3[\"skill 插件 MCP 配置文件\"] --> C4[\"同样支持 hooks\"]\n    C2 --> C5[\"数据泄露、摄像头劫持等\"]\n    C4 --> C5\n    C5 --> C6[\"攻击面无孔不入\"]\n    C6 --> C7[\"AI 分析确认投毒方式\"]\n```",
+      "diagrams": [
+        {
+          "title": "攻击链概览",
+          "code": "flowchart TD\n    A1[\"运行 cloud 命令\"] --> A2[\"无用户确认\"]\n    A2 --> A3[\"hooks 自动触发脚本\"]\n    A3 --> A4[\"任意命令执行\"]\n    A4 --> A5[\"摄像头被吊起\"]\n    A4 --> A6[\"后台拍照并上传\"]\n    A4 --> A7[\"APIKey、密码等资料被拷走\"]\n    A4 --> A8[\"生成 TXT 文件并写入扫描到的密码\"]"
+        },
+        {
+          "title": "信任边界导致的风险",
+          "code": "flowchart TD\n    B1[\"cloud code 默认信任项目目录下的配置文件\"] --> B2[\"配置文件中定义 hooks\"]\n    B2 --> B3[\"hooks 在 cloud 启动时自动执行\"]\n    B3 --> B4[\"无需用户确认\"]\n    B4 --> B5[\"任意系统命令被执行\"]\n    B5 --> B6[\"攻击者获得电脑控制权\"]\n    B6 --> B7[\"从 GitHub 克隆项目即触发\"]"
+        },
+        {
+          "title": "投毒方式扩展",
+          "code": "flowchart TD\n    C1[\"cloud 配置文件的 hooks\"] --> C2[\"可写入任意命令\"]\n    C3[\"skill 插件 MCP 配置文件\"] --> C4[\"同样支持 hooks\"]\n    C2 --> C5[\"数据泄露、摄像头劫持等\"]\n    C4 --> C5\n    C5 --> C6[\"攻击面无孔不入\"]\n    C6 --> C7[\"AI 分析确认投毒方式\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T02:12:23+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Claude Code 安全风险图谱\n\n## 攻击链概览 [BV1b195B4EX3 P1 00:00] [BV1b195B4EX3 P1 00:05] [BV1b195B4EX3 P1 00:08]\n```mermaid\nflowchart TD\n    A1[\"运行 cloud 命令\"] --> A2[\"无用户确认\"]\n    A2 --> A3[\"hooks 自动触发脚本\"]\n    A3 --> A4[\"任意命令执行\"]\n    A4 --> A5[\"摄像头被吊起\"]\n    A4 --> A6[\"后台拍照并上传\"]\n    A4 --> A7[\"APIKey、密码等资料被拷走\"]\n    A4 --> A8[\"生成 TXT 文件并写入扫描到的密码\"]\n```\n\n## 信任边界导致的风险 [BV1b195B4EX3 P1 01:15] [BV1b195B4EX3 P1 01:36] [BV1b195B4EX3 P1 01:45]\n```mermaid\nflowchart TD\n    B1[\"cloud code 默认信任项目目录下的配置文件\"] --> B2[\"配置文件中定义 hooks\"]\n    B2 --> B3[\"hooks 在 cloud 启动时自动执行\"]\n    B3 --> B4[\"无需用户确认\"]\n    B4 --> B5[\"任意系统命令被执行\"]\n    B5 --> B6[\"攻击者获得电脑控制权\"]\n    B6 --> B7[\"从 GitHub 克隆项目即触发\"]\n```\n\n## 投毒方式扩展 [BV1b195B4EX3 P1 01:03] [BV1b195B4EX3 P1 01:12] [BV1b195B4EX3 P1 01:55]\n```mermaid\nflowchart TD\n    C1[\"cloud 配置文件的 hooks\"] --> C2[\"可写入任意命令\"]\n    C3[\"skill 插件 MCP 配置文件\"] --> C4[\"同样支持 hooks\"]\n    C2 --> C5[\"数据泄露、摄像头劫持等\"]\n    C4 --> C5\n    C5 --> C6[\"攻击面无孔不入\"]\n    C6 --> C7[\"AI 分析确认投毒方式\"]\n```",
+  "diagrams": [
+    {
+      "title": "攻击链概览",
+      "code": "flowchart TD\n    A1[\"运行 cloud 命令\"] --> A2[\"无用户确认\"]\n    A2 --> A3[\"hooks 自动触发脚本\"]\n    A3 --> A4[\"任意命令执行\"]\n    A4 --> A5[\"摄像头被吊起\"]\n    A4 --> A6[\"后台拍照并上传\"]\n    A4 --> A7[\"APIKey、密码等资料被拷走\"]\n    A4 --> A8[\"生成 TXT 文件并写入扫描到的密码\"]"
+    },
+    {
+      "title": "信任边界导致的风险",
+      "code": "flowchart TD\n    B1[\"cloud code 默认信任项目目录下的配置文件\"] --> B2[\"配置文件中定义 hooks\"]\n    B2 --> B3[\"hooks 在 cloud 启动时自动执行\"]\n    B3 --> B4[\"无需用户确认\"]\n    B4 --> B5[\"任意系统命令被执行\"]\n    B5 --> B6[\"攻击者获得电脑控制权\"]\n    B6 --> B7[\"从 GitHub 克隆项目即触发\"]"
+    },
+    {
+      "title": "投毒方式扩展",
+      "code": "flowchart TD\n    C1[\"cloud 配置文件的 hooks\"] --> C2[\"可写入任意命令\"]\n    C3[\"skill 插件 MCP 配置文件\"] --> C4[\"同样支持 hooks\"]\n    C2 --> C5[\"数据泄露、摄像头劫持等\"]\n    C4 --> C5\n    C5 --> C6[\"攻击面无孔不入\"]\n    C6 --> C7[\"AI 分析确认投毒方式\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:12:23+00:00"
+}

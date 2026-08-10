@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1dWMH6yEmU",
+  "title": "《Godot知识》tween动画的基础操作与使用_1",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1862,
+  "text": "twin动画也叫补间动画\n在格斗3.0当中\n它是以节点的形式存在的\n在格斗四中\n它已经完全转为了纯代码实例化的轻量级对象\n它可以直接在gd script语法当中去使用\n这一期简单的认识一下twin的基础\n使用创建twin动画的方式非常简单\n直接定义一个twin变量名\n类型是twin等于create tin\n这样就创建完成了\ntwin动化的操作当中\n最常用的就是tune property\n这个属性\n它需要填入四个值\n第一个是你要操作的对象\n我这里有一个spider to d\n它是一个格斗的logo\n我想要操作它\n就要在这里写一个SPITOD\n直接引用它\n第二个值是对象的属性\n需要加双引号\n比如我想修改这个spider to d的位置\n也就是position\n第三个值是要对position这个属性要修改成多少\n现在他的位置是五十一百\n我想要把它修改成一百一百\n这里就要写letter two100\n最后一个值是持续时间\n也就是spider to d的position\n这个属性从五十一百变成一百一百\n他的这个时间持续多久\n我这里写一秒\n这样他的四个值就填写完成了\n可以看到spy to d从一开始位置移到这个位置\n也就是它的X轴从50~100\n经过了一秒的时间\n修改一下\n我让他的Y轴也变化一下\n也移动50\n这样它就X轴和Y轴同时都运动\ntwin property可以修改指定对象节点的很多属性\n基本在检查器这一边\n你可以看到的属性它都可以修改\n我这里又写了一个twin property\n让他去修改module这个属性的阿尔法值\n把它修改成0.0\n持续时间为一秒\n也就是这个值将它从255变成零\n持续时间为一秒\n它的透明度变成零\n所以看不见了\n但其实他是还在的\n从远程这里可以看到\n这个spider to d依旧是存在的\n第二个方法是interval插入停顿时间\ntwin动画默认是顺序播放的\n我这里的顺序就是先移动后变透明\n我在这两个当中插入一个train interval\n时间就是等待一秒\n先修改position\n然后等一秒变透明\n第三个方法是twin call back\n触发回调函数\n我这里写了一个释放spy to d节点的方法\n叫SPIDIE\n并且触发的时候会先输出这一句话到控制台上\n然后再销毁\n在这个地方使用train call back\n然后调用spider die\n这里输出了刚刚写的那句话\n远程这里可以看到这个节点下面已经没有了\nspider to d已经被销毁了\n第四个方法是twin method平滑执行方法\n可以把它理解为twin poverty\n以及这个twin call bt\n结合了这个方法也是需要四个值\n我添加了一个label节点在这个位置\n然后还写了一个score update方法\n去更新label节点的显示\nto method需要四个值\n第一个就是它需要调用的方法\n第二个和第三个值就是它的参数变化\n我这里写0~100\n持续时间为两秒\n注意这个地方的变化\n这就是two method的作用\n过渡的目标不是属性\n而是需要传参的函数\n也就是前面两个twin property\n以及twin call back的结合\n第五个是turn away\n这是格斗4.7更新后新增的特性\n它的作用是等待某个信号发出后再执行\n后面的动画\n也就是起到暂停的作用\n它需要的值是一个信号\n我在这里添加一个button按钮\n我把它放到了这个位置\n这里我要写等待这个button按钮被按下的信号\n然后我将这个TUNAWAY换个位置\n把它放到这里\n它和interval一样\n也是起到暂停的作用\n所以我先将interval给注释掉\n等会我再讲一下它们俩的区别\n这里的执行顺序应该是spider to d\n移动了他的position\n然后他要等待我按下button按钮发出信号之后\n才会执行这个透明变化\n然后是下面的这些代码\n可以看到它并没有变透明\n它只是移动了位置\n当我点击了下一步发出信号之后\n它就开始透明了\n接下来的代码都执行了\n这就是TUNAWAY的作用\n它与interval的区别\n就是interval要设置具体的等待时间\n而await是等待信号\n由于它是格斗4.7之后更新的\n暂时还没有遇到相关的应用场景\n只是目前了解到他是这样子的一个作用\ntwin动画一些比较基础的操作与使用\n就是这些\n还有一些更高级的\n例如队列并行创新播放\n防卡死机制\n晃动算法\n行为微调等\n剩下的这些留到下一期视频再做记录",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1dWMH6yEmU",
+  "published_at": "1783598135",
+  "fetched_at": "2026-08-07T16:01:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot Tween 动画知识图谱\n\n## 概览\n```mermaid\nflowchart TD\n    A0[\"Tween 动画 (补间动画)\"] --> A1[\"节点形式 (格斗3.0)\"]\n    A0 --> A2[\"代码实例化对象 (格斗4)\"]\n    A0 --> A3[\"创建方式: var tween = create_tween()\"]\n    A0 --> A4[\"核心方法\"]\n    A4 --> B1[\"tween_property\"]\n    A4 --> B2[\"tween_interval\"]\n    A4 --> B3[\"tween_callback\"]\n    A4 --> B4[\"tween_method\"]\n    A4 --> B5[\"tween_await (turn_away)\"]\n    A4 --> C1[\"高级特性\"]\n    C1 --> C2[\"队列并行播放\"]\n    C1 --> C3[\"防卡死机制\"]\n    C1 --> C4[\"晃动算法\"]\n    C1 --> C5[\"行为微调\"]\n```\n- **A0**: [BV1dWMH6yEmU P1 00:00]  \n- **A1**: [BV1dWMH6yEmU P1 00:03]  \n- **A2**: [BV1dWMH6yEmU P1 00:06]  \n- **A3**: [BV1dWMH6yEmU P1 00:19]  \n- **B1**: [BV1dWMH6yEmU P1 00:34]  \n- **B2**: [BV1dWMH6yEmU P1 02:52]  \n- **B3**: [BV1dWMH6yEmU P1 03:12]  \n- **B4**: [BV1dWMH6yEmU P1 04:09]  \n- **B5**: [BV1dWMH6yEmU P1 05:12]  \n- **C1**: [BV1dWMH6yEmU P1 06:55]  \n\n## tween_property 使用流程\n```mermaid\nflowchart LR\n    S0[\"创建 Tween 实例\"] --> S1[\"var tween = create_tween()\"]\n    S1 --> S2[\"指定目标对象: spider_node\"]\n    S2 --> S3[\"属性名称: \\\"position\\\"\"]\n    S3 --> S4[\"结束值: Vector2(100,100)\"]\n    S4 --> S5[\"持续时间: 1 秒\"]\n    S5 --> S6[\"tween.tween_property(spider_node, \\\"position\\\", Vector2(100,100), 1)\"]\n    S6 --> S7[\"X 轴从 50 → 100\"]\n    S6 --> S8[\"Y 轴同步变化\"]\n    S7 --> S9[\"动画结束后位置为 (100,100)\"]\n```\n- **S0**: [BV1dWMH6yEmU P1 00:16]  \n- **S1**: [BV1dWMH6yEmU P1 00:28]  \n- **S2**: [BV1dWMH6yEmU P1 00:39]  \n- **S3**: [BV1dWMH6yEmU P1 00:59]  \n- **S4**: [BV1dWMH6yEmU P1 01:11]  \n- **S5**: [BV1dWMH6yEmU P1 01:34]  \n- **S6**: [BV1dWMH6yEmU P1 01:37]  \n- **S7**: [BV1dWMH6yEmU P1 01:43]  \n- **S8**: [BV1dWMH6yEmU P1 02:00]  \n\n## 顺序控制：interval 与 await 的比较\n```mermaid\nflowchart TD\n    I0[\"Tween 序列开始\"] --> I1[\"tween_property: 移动位置\"]\n    I1 --> I2[\"tween_interval: 等待 1 秒\"]\n    I2 --> I3[\"tween_property: 透明度渐变\"]\n    I0 --> A0[\"Tween 序列开始 (await)\"]\n    A0 --> A1[\"tween_property: 移动位置\"]\n    A1 --> A2[\"tween_await: 等待 button 按下信号\"]\n    A2 --> A3[\"tween_property: 透明度渐变\"]\n    I2 -.->|固定时间| A2\n    A2 -.->|信号触发| I2\n```\n- **I0**: [BV1dWMH6yEmU P1 02:55]  \n- **I1**: [BV1dWMH6yEmU P1 02:57]  \n- **I2**: [BV1dWMH6yEmU P1 03:04]  \n- **I3**: [BV1dWMH6yEmU P1 03:08]  \n- **A0**: [BV1dWMH6yEmU P1 05:12]  \n- **A1**: [BV1dWMH6yEmU P1 05:42]  \n- **A2**: [BV1dWMH6yEmU P1 05:48]  \n- **A3**: [BV1dWMH6yEmU P1 06:12]  \n- **Difference note**: [BV1dWMH6yEmU P1 06:38]  \n\n## tween_callback 触发回调\n```mermaid\nflowchart LR\n    C0[\"设置回调\"] --> C1[\"tween_callback( func )\"]\n    C1 --> C2[\"打印信息到控制台\"]\n    C2 --> C3[\"调用 spider_die() 销毁节点\"]\n    C3 --> C4[\"节点从场景中移除\"]\n```\n- **C0**: [BV1dWMH6yEmU P1 03:12]  \n- **C1**: [BV1dWMH6yEmU P1 03:14]  \n- **C2**: [BV1dWMH6yEmU P1 03:23]  \n- **C3**: [BV1dWMH6yEmU P1 03:28]  \n- **C4**: [BV1dWMH6yEmU P1 03:54]  \n\n## tween_method 平滑执行函数\n```mermaid\nflowchart TD\n    M0[\"创建 Tween\"] --> M1[\"tween_method( target_method, start_val, end_val, duration )\"]\n    M1 --> M2[\"目标方法: score_update\"]\n    M2 --> M3[\"参数变化: 0 → 100\"]\n    M3 --> M4[\"持续时间: 2 秒\"]\n    M4 --> M5[\"在 label 节点上更新显示\"]\n```\n- **M0**: [BV1dWMH6yEmU P1 04:09]  \n- **M1**: [BV1dWMH6yEmU P1 04:14]  \n- **M2**: [BV1dWMH6yEmU P1 04:25]  \n- **M3**: [BV1dWMH6yEmU P1 04:42]  \n- **M4**: [BV1dWMH6yEmU P1 04:46]  \n- **M5**: [BV1dWMH6yEmU P1 04:28]  ",
+      "diagrams": [
+        {
+          "title": "概览",
+          "code": "flowchart TD\n    A0[\"Tween 动画 (补间动画)\"] --> A1[\"节点形式 (格斗3.0)\"]\n    A0 --> A2[\"代码实例化对象 (格斗4)\"]\n    A0 --> A3[\"创建方式: var tween = create_tween()\"]\n    A0 --> A4[\"核心方法\"]\n    A4 --> B1[\"tween_property\"]\n    A4 --> B2[\"tween_interval\"]\n    A4 --> B3[\"tween_callback\"]\n    A4 --> B4[\"tween_method\"]\n    A4 --> B5[\"tween_await (turn_away)\"]\n    A4 --> C1[\"高级特性\"]\n    C1 --> C2[\"队列并行播放\"]\n    C1 --> C3[\"防卡死机制\"]\n    C1 --> C4[\"晃动算法\"]\n    C1 --> C5[\"行为微调\"]"
+        },
+        {
+          "title": "tween_property 使用流程",
+          "code": "flowchart LR\n    S0[\"创建 Tween 实例\"] --> S1[\"var tween = create_tween()\"]\n    S1 --> S2[\"指定目标对象: spider_node\"]\n    S2 --> S3[\"属性名称: \\\"position\\\"\"]\n    S3 --> S4[\"结束值: Vector2(100,100)\"]\n    S4 --> S5[\"持续时间: 1 秒\"]\n    S5 --> S6[\"tween.tween_property(spider_node, \\\"position\\\", Vector2(100,100), 1)\"]\n    S6 --> S7[\"X 轴从 50 → 100\"]\n    S6 --> S8[\"Y 轴同步变化\"]\n    S7 --> S9[\"动画结束后位置为 (100,100)\"]"
+        },
+        {
+          "title": "顺序控制：interval 与 await 的比较",
+          "code": "flowchart TD\n    I0[\"Tween 序列开始\"] --> I1[\"tween_property: 移动位置\"]\n    I1 --> I2[\"tween_interval: 等待 1 秒\"]\n    I2 --> I3[\"tween_property: 透明度渐变\"]\n    I0 --> A0[\"Tween 序列开始 (await)\"]\n    A0 --> A1[\"tween_property: 移动位置\"]\n    A1 --> A2[\"tween_await: 等待 button 按下信号\"]\n    A2 --> A3[\"tween_property: 透明度渐变\"]\n    I2 -.->|固定时间| A2\n    A2 -.->|信号触发| I2"
+        },
+        {
+          "title": "tween_callback 触发回调",
+          "code": "flowchart LR\n    C0[\"设置回调\"] --> C1[\"tween_callback( func )\"]\n    C1 --> C2[\"打印信息到控制台\"]\n    C2 --> C3[\"调用 spider_die() 销毁节点\"]\n    C3 --> C4[\"节点从场景中移除\"]"
+        },
+        {
+          "title": "tween_method 平滑执行函数",
+          "code": "flowchart TD\n    M0[\"创建 Tween\"] --> M1[\"tween_method( target_method, start_val, end_val, duration )\"]\n    M1 --> M2[\"目标方法: score_update\"]\n    M2 --> M3[\"参数变化: 0 → 100\"]\n    M3 --> M4[\"持续时间: 2 秒\"]\n    M4 --> M5[\"在 label 节点上更新显示\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T16:07:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot Tween 动画知识图谱\n\n## 概览\n```mermaid\nflowchart TD\n    A0[\"Tween 动画 (补间动画)\"] --> A1[\"节点形式 (格斗3.0)\"]\n    A0 --> A2[\"代码实例化对象 (格斗4)\"]\n    A0 --> A3[\"创建方式: var tween = create_tween()\"]\n    A0 --> A4[\"核心方法\"]\n    A4 --> B1[\"tween_property\"]\n    A4 --> B2[\"tween_interval\"]\n    A4 --> B3[\"tween_callback\"]\n    A4 --> B4[\"tween_method\"]\n    A4 --> B5[\"tween_await (turn_away)\"]\n    A4 --> C1[\"高级特性\"]\n    C1 --> C2[\"队列并行播放\"]\n    C1 --> C3[\"防卡死机制\"]\n    C1 --> C4[\"晃动算法\"]\n    C1 --> C5[\"行为微调\"]\n```\n- **A0**: [BV1dWMH6yEmU P1 00:00]  \n- **A1**: [BV1dWMH6yEmU P1 00:03]  \n- **A2**: [BV1dWMH6yEmU P1 00:06]  \n- **A3**: [BV1dWMH6yEmU P1 00:19]  \n- **B1**: [BV1dWMH6yEmU P1 00:34]  \n- **B2**: [BV1dWMH6yEmU P1 02:52]  \n- **B3**: [BV1dWMH6yEmU P1 03:12]  \n- **B4**: [BV1dWMH6yEmU P1 04:09]  \n- **B5**: [BV1dWMH6yEmU P1 05:12]  \n- **C1**: [BV1dWMH6yEmU P1 06:55]  \n\n## tween_property 使用流程\n```mermaid\nflowchart LR\n    S0[\"创建 Tween 实例\"] --> S1[\"var tween = create_tween()\"]\n    S1 --> S2[\"指定目标对象: spider_node\"]\n    S2 --> S3[\"属性名称: \\\"position\\\"\"]\n    S3 --> S4[\"结束值: Vector2(100,100)\"]\n    S4 --> S5[\"持续时间: 1 秒\"]\n    S5 --> S6[\"tween.tween_property(spider_node, \\\"position\\\", Vector2(100,100), 1)\"]\n    S6 --> S7[\"X 轴从 50 → 100\"]\n    S6 --> S8[\"Y 轴同步变化\"]\n    S7 --> S9[\"动画结束后位置为 (100,100)\"]\n```\n- **S0**: [BV1dWMH6yEmU P1 00:16]  \n- **S1**: [BV1dWMH6yEmU P1 00:28]  \n- **S2**: [BV1dWMH6yEmU P1 00:39]  \n- **S3**: [BV1dWMH6yEmU P1 00:59]  \n- **S4**: [BV1dWMH6yEmU P1 01:11]  \n- **S5**: [BV1dWMH6yEmU P1 01:34]  \n- **S6**: [BV1dWMH6yEmU P1 01:37]  \n- **S7**: [BV1dWMH6yEmU P1 01:43]  \n- **S8**: [BV1dWMH6yEmU P1 02:00]  \n\n## 顺序控制：interval 与 await 的比较\n```mermaid\nflowchart TD\n    I0[\"Tween 序列开始\"] --> I1[\"tween_property: 移动位置\"]\n    I1 --> I2[\"tween_interval: 等待 1 秒\"]\n    I2 --> I3[\"tween_property: 透明度渐变\"]\n    I0 --> A0[\"Tween 序列开始 (await)\"]\n    A0 --> A1[\"tween_property: 移动位置\"]\n    A1 --> A2[\"tween_await: 等待 button 按下信号\"]\n    A2 --> A3[\"tween_property: 透明度渐变\"]\n    I2 -.->|固定时间| A2\n    A2 -.->|信号触发| I2\n```\n- **I0**: [BV1dWMH6yEmU P1 02:55]  \n- **I1**: [BV1dWMH6yEmU P1 02:57]  \n- **I2**: [BV1dWMH6yEmU P1 03:04]  \n- **I3**: [BV1dWMH6yEmU P1 03:08]  \n- **A0**: [BV1dWMH6yEmU P1 05:12]  \n- **A1**: [BV1dWMH6yEmU P1 05:42]  \n- **A2**: [BV1dWMH6yEmU P1 05:48]  \n- **A3**: [BV1dWMH6yEmU P1 06:12]  \n- **Difference note**: [BV1dWMH6yEmU P1 06:38]  \n\n## tween_callback 触发回调\n```mermaid\nflowchart LR\n    C0[\"设置回调\"] --> C1[\"tween_callback( func )\"]\n    C1 --> C2[\"打印信息到控制台\"]\n    C2 --> C3[\"调用 spider_die() 销毁节点\"]\n    C3 --> C4[\"节点从场景中移除\"]\n```\n- **C0**: [BV1dWMH6yEmU P1 03:12]  \n- **C1**: [BV1dWMH6yEmU P1 03:14]  \n- **C2**: [BV1dWMH6yEmU P1 03:23]  \n- **C3**: [BV1dWMH6yEmU P1 03:28]  \n- **C4**: [BV1dWMH6yEmU P1 03:54]  \n\n## tween_method 平滑执行函数\n```mermaid\nflowchart TD\n    M0[\"创建 Tween\"] --> M1[\"tween_method( target_method, start_val, end_val, duration )\"]\n    M1 --> M2[\"目标方法: score_update\"]\n    M2 --> M3[\"参数变化: 0 → 100\"]\n    M3 --> M4[\"持续时间: 2 秒\"]\n    M4 --> M5[\"在 label 节点上更新显示\"]\n```\n- **M0**: [BV1dWMH6yEmU P1 04:09]  \n- **M1**: [BV1dWMH6yEmU P1 04:14]  \n- **M2**: [BV1dWMH6yEmU P1 04:25]  \n- **M3**: [BV1dWMH6yEmU P1 04:42]  \n- **M4**: [BV1dWMH6yEmU P1 04:46]  \n- **M5**: [BV1dWMH6yEmU P1 04:28]  ",
+  "diagrams": [
+    {
+      "title": "概览",
+      "code": "flowchart TD\n    A0[\"Tween 动画 (补间动画)\"] --> A1[\"节点形式 (格斗3.0)\"]\n    A0 --> A2[\"代码实例化对象 (格斗4)\"]\n    A0 --> A3[\"创建方式: var tween = create_tween()\"]\n    A0 --> A4[\"核心方法\"]\n    A4 --> B1[\"tween_property\"]\n    A4 --> B2[\"tween_interval\"]\n    A4 --> B3[\"tween_callback\"]\n    A4 --> B4[\"tween_method\"]\n    A4 --> B5[\"tween_await (turn_away)\"]\n    A4 --> C1[\"高级特性\"]\n    C1 --> C2[\"队列并行播放\"]\n    C1 --> C3[\"防卡死机制\"]\n    C1 --> C4[\"晃动算法\"]\n    C1 --> C5[\"行为微调\"]"
+    },
+    {
+      "title": "tween_property 使用流程",
+      "code": "flowchart LR\n    S0[\"创建 Tween 实例\"] --> S1[\"var tween = create_tween()\"]\n    S1 --> S2[\"指定目标对象: spider_node\"]\n    S2 --> S3[\"属性名称: \\\"position\\\"\"]\n    S3 --> S4[\"结束值: Vector2(100,100)\"]\n    S4 --> S5[\"持续时间: 1 秒\"]\n    S5 --> S6[\"tween.tween_property(spider_node, \\\"position\\\", Vector2(100,100), 1)\"]\n    S6 --> S7[\"X 轴从 50 → 100\"]\n    S6 --> S8[\"Y 轴同步变化\"]\n    S7 --> S9[\"动画结束后位置为 (100,100)\"]"
+    },
+    {
+      "title": "顺序控制：interval 与 await 的比较",
+      "code": "flowchart TD\n    I0[\"Tween 序列开始\"] --> I1[\"tween_property: 移动位置\"]\n    I1 --> I2[\"tween_interval: 等待 1 秒\"]\n    I2 --> I3[\"tween_property: 透明度渐变\"]\n    I0 --> A0[\"Tween 序列开始 (await)\"]\n    A0 --> A1[\"tween_property: 移动位置\"]\n    A1 --> A2[\"tween_await: 等待 button 按下信号\"]\n    A2 --> A3[\"tween_property: 透明度渐变\"]\n    I2 -.->|固定时间| A2\n    A2 -.->|信号触发| I2"
+    },
+    {
+      "title": "tween_callback 触发回调",
+      "code": "flowchart LR\n    C0[\"设置回调\"] --> C1[\"tween_callback( func )\"]\n    C1 --> C2[\"打印信息到控制台\"]\n    C2 --> C3[\"调用 spider_die() 销毁节点\"]\n    C3 --> C4[\"节点从场景中移除\"]"
+    },
+    {
+      "title": "tween_method 平滑执行函数",
+      "code": "flowchart TD\n    M0[\"创建 Tween\"] --> M1[\"tween_method( target_method, start_val, end_val, duration )\"]\n    M1 --> M2[\"目标方法: score_update\"]\n    M2 --> M3[\"参数变化: 0 → 100\"]\n    M3 --> M4[\"持续时间: 2 秒\"]\n    M4 --> M5[\"在 label 节点上更新显示\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T16:07:30+00:00"
+}

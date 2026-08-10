@@ -1,0 +1,74 @@
+{
+  "bvid": "BV171Mo67E14",
+  "title": "Godot可能是AI时代最能圆你游戏梦的引擎",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 940,
+  "text": "如果在AI盛行的时代\n你想要做一个属于自己的独立游戏\n或者说小型的游戏demo\n我认为go out是你的不二选择\n这里插一个题外话\n这是建立在你不打算把游戏当做你的主业职业\n来进行规划的\n如果你希望靠这个找一份工作\n我还是推荐你使用unity优异团结或者是cocos\n那我为什么会在这里推荐你\n用GODOT来做自己的独立游戏呢\n主要原因是go out对AI天然适配\n首先是引行类对象的编写\n我们在做cocos呃\nunity ue e这些蓝图预制体的编写的时候\nAI会经常出错\n写起来非常吃力\n而且完成不了太复杂的操作情况\n当然我们也可以用MCP来解决这个问题\n但是go out天然就不存在这个问题\n因为go out把这些项目状态暴露成了更简单可读\n可修改的文本\n而其他引擎则不是明文的\n所以AI操作起来会相对吃力一些\n第二个是勾到的\n它有内置的CLI控制脚本\n这就使得go out天然的能够用AI来进行运行\n调试截图等操作\n虽然unity近期也发布了它的CLI版本\n但是这个CLI还处于早期的测试阶段呃\n相对不稳定\n而且unity在国内的商业地位比较尴尬\n对于对于业余的个人开发者来说\n可能不是最好的选择\n接下来我用一个简单的事例来向大家展示\n在go out和codex的配合下\n能做到什么程度\n有哪些能力\n这是我接下来要录视频的一个项目\n这是我用GODOT揭露了小游戏广告的一个事例\n然后我在这里希望从零开始创建这个事例\n方便下一期视频给大家单独展示\n在这里我直接让codex从零开始创建项目\n然后实现这个广告的按钮的触发\n然后接入广告的流程\n还有最后截图进行测试和返回\n这里我们可以看到codex把go out的运行界面截图\n并且返回给我们\n包括UI的布局和一系列的操作\n我是零介入的\n完全由AI实现\n那AI在这个过程中\n它能够直接编写UI界面\n虽然这个UI界面丑了一些\n这个我们可以后续调整\n在这过程中\nGPT对它进行了运行和截图分析\n并且拿到了go docli的输出\n根据输出的内容来判断自己做的内容\n是不是正确\n这些功能就能够让纯小白的开发者\n用AI0操作引擎实现相当多的内容\n基本上大多数的游戏开发都可以通过AI来实现\n我今天的分享就到这里\n大家感兴趣的可以去进行尝试",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV171Mo67E14",
+  "published_at": "1785777270",
+  "fetched_at": "2026-08-07T08:35:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 与 AI 时代的游戏开发图谱\n\n## 选择游戏引擎决策树\n```mermaid\nflowchart TD\n    A[\"开发目标\"] --> B{\"是否以游戏为职业\"}\n    B -->|是| C[\"推荐 Unity 或 Cocos\"]\n    B -->|否| D[\"考虑独立/业余项目\"]\n    D --> E{\"是否需要 AI 辅助\"}\n    E -->|需要| F[\"选择 Godot\"]\n    E -->|不需要| G[\"可选 Unity、Cocos、其他\"]\n    C --> H[\"Unity: 商业地位不稳 (国内)\"]\n    C --> I[\"Cocos: 适合移动\"]\n    F --> J[\"Godot: 文本化资源 + 内置 CLI\"]\n    J --> K[\"AI 易编辑 UI、脚本\"]\n    K --> L[\"零介入实现项目\"]\n```\n\n## Godot 对 AI 的天然适配特性\n```mermaid\nflowchart LR\n    A[\"Godot 场景文件 (TScn) 为可读文本\"] --> B[\"AI 可直接修改属性\"]\n    A --> C[\"资源路径、节点结构明晰\"]\n    D[\"内置 CLI (godot --script)\"] --> E[\"可通过命令行运行项目\"]\n    D --> F[\"支持自动化调试、截图\"]\n    B --> G[\"AI 生成 UI 布局\"]\n    C --> G\n    E --> H[\"AI 调用运行结果\"]\n    F --> H\n    G --> I[\"后期手动美化 UI\"]\n    H --> J[\"GPT 分析运行输出\"]\n    J --> K[\"判断实现是否正确\"]\n```\n\n## AI 驱动的 Godot 开发流程示例\n```mermaid\nflowchart TD\n    A[\"Codex: 创建 Godot 项目\"] --> B[\"生成 UI 场景文件\"]\n    B --> C[\"添加广告按钮节点\"]\n    C --> D[\"接入广告 SDK 流程\"]\n    D --> E[\"运行项目并截图\"]\n    E --> F[\"GPT 读取截图与日志\"]\n    F --> G[\"判断 UI 与功能是否符合预期\"]\n    G --> H{\"符合?\"}\n    H -->|是| I[\"项目完成，准备发布\"]\n    H -->|否| J[\"返回 Codex 修正代码\"]\n    J --> B\n```\n\n## Unity 与 Godot 在 AI 使用上的对比\n```mermaid\nflowchart LR\n    A[\"Unity\"] --> B[\"近期推出 CLI 版本\"]\n    B --> C[\"仍在早期测试，稳定性低\"]\n    A --> D[\"商业地位在国内尴尬\"]\n    E[\"Godot\"] --> F[\"自带成熟 CLI\"]\n    F --> G[\"稳定可用于 AI 自动化\"]\n    E --> H[\"资源文件为明文，可直接编辑\"]\n    H --> I[\"AI 易生成/修改脚本与 UI\"]\n    C --> J[\"AI 操作相对吃力\"]\n    G --> K[\"AI 操作更流畅\"]\n    D --> L[\"业余个人开发者不佳选择\"]\n    K --> M[\"推荐业余/零代码项目\"]\n```",
+      "diagrams": [
+        {
+          "title": "选择游戏引擎决策树",
+          "code": "flowchart TD\n    A[\"开发目标\"] --> B{\"是否以游戏为职业\"}\n    B -->|是| C[\"推荐 Unity 或 Cocos\"]\n    B -->|否| D[\"考虑独立/业余项目\"]\n    D --> E{\"是否需要 AI 辅助\"}\n    E -->|需要| F[\"选择 Godot\"]\n    E -->|不需要| G[\"可选 Unity、Cocos、其他\"]\n    C --> H[\"Unity: 商业地位不稳 (国内)\"]\n    C --> I[\"Cocos: 适合移动\"]\n    F --> J[\"Godot: 文本化资源 + 内置 CLI\"]\n    J --> K[\"AI 易编辑 UI、脚本\"]\n    K --> L[\"零介入实现项目\"]"
+        },
+        {
+          "title": "Godot 对 AI 的天然适配特性",
+          "code": "flowchart LR\n    A[\"Godot 场景文件 (TScn) 为可读文本\"] --> B[\"AI 可直接修改属性\"]\n    A --> C[\"资源路径、节点结构明晰\"]\n    D[\"内置 CLI (godot --script)\"] --> E[\"可通过命令行运行项目\"]\n    D --> F[\"支持自动化调试、截图\"]\n    B --> G[\"AI 生成 UI 布局\"]\n    C --> G\n    E --> H[\"AI 调用运行结果\"]\n    F --> H\n    G --> I[\"后期手动美化 UI\"]\n    H --> J[\"GPT 分析运行输出\"]\n    J --> K[\"判断实现是否正确\"]"
+        },
+        {
+          "title": "AI 驱动的 Godot 开发流程示例",
+          "code": "flowchart TD\n    A[\"Codex: 创建 Godot 项目\"] --> B[\"生成 UI 场景文件\"]\n    B --> C[\"添加广告按钮节点\"]\n    C --> D[\"接入广告 SDK 流程\"]\n    D --> E[\"运行项目并截图\"]\n    E --> F[\"GPT 读取截图与日志\"]\n    F --> G[\"判断 UI 与功能是否符合预期\"]\n    G --> H{\"符合?\"}\n    H -->|是| I[\"项目完成，准备发布\"]\n    H -->|否| J[\"返回 Codex 修正代码\"]\n    J --> B"
+        },
+        {
+          "title": "Unity 与 Godot 在 AI 使用上的对比",
+          "code": "flowchart LR\n    A[\"Unity\"] --> B[\"近期推出 CLI 版本\"]\n    B --> C[\"仍在早期测试，稳定性低\"]\n    A --> D[\"商业地位在国内尴尬\"]\n    E[\"Godot\"] --> F[\"自带成熟 CLI\"]\n    F --> G[\"稳定可用于 AI 自动化\"]\n    E --> H[\"资源文件为明文，可直接编辑\"]\n    H --> I[\"AI 易生成/修改脚本与 UI\"]\n    C --> J[\"AI 操作相对吃力\"]\n    G --> K[\"AI 操作更流畅\"]\n    D --> L[\"业余个人开发者不佳选择\"]\n    K --> M[\"推荐业余/零代码项目\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T08:35:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 与 AI 时代的游戏开发图谱\n\n## 选择游戏引擎决策树\n```mermaid\nflowchart TD\n    A[\"开发目标\"] --> B{\"是否以游戏为职业\"}\n    B -->|是| C[\"推荐 Unity 或 Cocos\"]\n    B -->|否| D[\"考虑独立/业余项目\"]\n    D --> E{\"是否需要 AI 辅助\"}\n    E -->|需要| F[\"选择 Godot\"]\n    E -->|不需要| G[\"可选 Unity、Cocos、其他\"]\n    C --> H[\"Unity: 商业地位不稳 (国内)\"]\n    C --> I[\"Cocos: 适合移动\"]\n    F --> J[\"Godot: 文本化资源 + 内置 CLI\"]\n    J --> K[\"AI 易编辑 UI、脚本\"]\n    K --> L[\"零介入实现项目\"]\n```\n\n## Godot 对 AI 的天然适配特性\n```mermaid\nflowchart LR\n    A[\"Godot 场景文件 (TScn) 为可读文本\"] --> B[\"AI 可直接修改属性\"]\n    A --> C[\"资源路径、节点结构明晰\"]\n    D[\"内置 CLI (godot --script)\"] --> E[\"可通过命令行运行项目\"]\n    D --> F[\"支持自动化调试、截图\"]\n    B --> G[\"AI 生成 UI 布局\"]\n    C --> G\n    E --> H[\"AI 调用运行结果\"]\n    F --> H\n    G --> I[\"后期手动美化 UI\"]\n    H --> J[\"GPT 分析运行输出\"]\n    J --> K[\"判断实现是否正确\"]\n```\n\n## AI 驱动的 Godot 开发流程示例\n```mermaid\nflowchart TD\n    A[\"Codex: 创建 Godot 项目\"] --> B[\"生成 UI 场景文件\"]\n    B --> C[\"添加广告按钮节点\"]\n    C --> D[\"接入广告 SDK 流程\"]\n    D --> E[\"运行项目并截图\"]\n    E --> F[\"GPT 读取截图与日志\"]\n    F --> G[\"判断 UI 与功能是否符合预期\"]\n    G --> H{\"符合?\"}\n    H -->|是| I[\"项目完成，准备发布\"]\n    H -->|否| J[\"返回 Codex 修正代码\"]\n    J --> B\n```\n\n## Unity 与 Godot 在 AI 使用上的对比\n```mermaid\nflowchart LR\n    A[\"Unity\"] --> B[\"近期推出 CLI 版本\"]\n    B --> C[\"仍在早期测试，稳定性低\"]\n    A --> D[\"商业地位在国内尴尬\"]\n    E[\"Godot\"] --> F[\"自带成熟 CLI\"]\n    F --> G[\"稳定可用于 AI 自动化\"]\n    E --> H[\"资源文件为明文，可直接编辑\"]\n    H --> I[\"AI 易生成/修改脚本与 UI\"]\n    C --> J[\"AI 操作相对吃力\"]\n    G --> K[\"AI 操作更流畅\"]\n    D --> L[\"业余个人开发者不佳选择\"]\n    K --> M[\"推荐业余/零代码项目\"]\n```",
+  "diagrams": [
+    {
+      "title": "选择游戏引擎决策树",
+      "code": "flowchart TD\n    A[\"开发目标\"] --> B{\"是否以游戏为职业\"}\n    B -->|是| C[\"推荐 Unity 或 Cocos\"]\n    B -->|否| D[\"考虑独立/业余项目\"]\n    D --> E{\"是否需要 AI 辅助\"}\n    E -->|需要| F[\"选择 Godot\"]\n    E -->|不需要| G[\"可选 Unity、Cocos、其他\"]\n    C --> H[\"Unity: 商业地位不稳 (国内)\"]\n    C --> I[\"Cocos: 适合移动\"]\n    F --> J[\"Godot: 文本化资源 + 内置 CLI\"]\n    J --> K[\"AI 易编辑 UI、脚本\"]\n    K --> L[\"零介入实现项目\"]"
+    },
+    {
+      "title": "Godot 对 AI 的天然适配特性",
+      "code": "flowchart LR\n    A[\"Godot 场景文件 (TScn) 为可读文本\"] --> B[\"AI 可直接修改属性\"]\n    A --> C[\"资源路径、节点结构明晰\"]\n    D[\"内置 CLI (godot --script)\"] --> E[\"可通过命令行运行项目\"]\n    D --> F[\"支持自动化调试、截图\"]\n    B --> G[\"AI 生成 UI 布局\"]\n    C --> G\n    E --> H[\"AI 调用运行结果\"]\n    F --> H\n    G --> I[\"后期手动美化 UI\"]\n    H --> J[\"GPT 分析运行输出\"]\n    J --> K[\"判断实现是否正确\"]"
+    },
+    {
+      "title": "AI 驱动的 Godot 开发流程示例",
+      "code": "flowchart TD\n    A[\"Codex: 创建 Godot 项目\"] --> B[\"生成 UI 场景文件\"]\n    B --> C[\"添加广告按钮节点\"]\n    C --> D[\"接入广告 SDK 流程\"]\n    D --> E[\"运行项目并截图\"]\n    E --> F[\"GPT 读取截图与日志\"]\n    F --> G[\"判断 UI 与功能是否符合预期\"]\n    G --> H{\"符合?\"}\n    H -->|是| I[\"项目完成，准备发布\"]\n    H -->|否| J[\"返回 Codex 修正代码\"]\n    J --> B"
+    },
+    {
+      "title": "Unity 与 Godot 在 AI 使用上的对比",
+      "code": "flowchart LR\n    A[\"Unity\"] --> B[\"近期推出 CLI 版本\"]\n    B --> C[\"仍在早期测试，稳定性低\"]\n    A --> D[\"商业地位在国内尴尬\"]\n    E[\"Godot\"] --> F[\"自带成熟 CLI\"]\n    F --> G[\"稳定可用于 AI 自动化\"]\n    E --> H[\"资源文件为明文，可直接编辑\"]\n    H --> I[\"AI 易生成/修改脚本与 UI\"]\n    C --> J[\"AI 操作相对吃力\"]\n    G --> K[\"AI 操作更流畅\"]\n    D --> L[\"业余个人开发者不佳选择\"]\n    K --> M[\"推荐业余/零代码项目\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T08:35:34+00:00"
+}

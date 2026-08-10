@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1XmdgBxEWV",
+  "title": "GameMaker 2026：支持TypeScript、C#、3D等新特性",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3814,
+  "text": "大家好\n我是game for scratch的mike\n今天我们有关于game maker的最新消息\ngame maker已经存在很长一段时间了\n我们将要看看2026年会有哪些新内容\n首先提醒一下各位\n有一个新的humble bundle\n对游戏开发者来说很有吸引力\n特别是unreal和unity的开发者\n你可以在hive mind那里获得多达63个捆绑包\n里面有许多适用于这两款游戏引擎的资源\n这里有很多重复的内容\n所以我没有专门为他做一期视频\n但我还是想提醒大家\n这个捆绑包已经上线了\n这个优惠真的非常划算\n当然如果你还没有拥有它的话\n说到unreal和unity\n还有god dut\n目前也有春季捆绑包在进行中\n相关链接都在下方\n结账时记得使用代码SP60可以立减60美元\n好了\n回到game maker的话题\n正如我之前说的\ngay maker是一款已经存在很久的游戏引擎\n最早于1999年发布\n它最初由一位名叫Mark over mars的人开发\n叫做ANAMMO\n之后慢慢的加入了新功能\n后来又加入了拖拽功能\n还有它专有的游戏语言\ng ml也被加入进来了\n然后在2007年\nYOYO接手了game maker\n并开始将其定位为更专业的游戏引擎\n2012年推出了studio版本\n他们开始增加更多的平台支持\n比如windows Mac移动端\nHTML等等\n后来他们甚至还加入了对主机平台的支持\n然后到了2021年\n浏览器公司opera收购了game maker\n并一直运营至今\ngame maker其实面向的是各类用户\n你可以看到这里有一个完全免费的版本\n不需要信用卡就可以直接体验\n如果你愿意\n可以将你的游戏发布到gx games\n它基本上允许你使用全部功能\n只是你可以发布的平台会有限制\n然后还有一个专业版\n你还可以针对各种不同的主机等平台进行发布\n如果你在开发大型主机游戏\n也有企业级选项\n所以他其实面向所有人\n而且GAMAKER过去也取得了相当不错的成功\n用game maker制作的一些游戏\n比如undertale hypolite drifter\nHotline miami\n还有大量的独立游戏\nvampire多年来做的所有东西都是用game maker制作的\n这大致能让你有个概念\n这些只是用它发布的一部分作品\n顺便说一句\n这个列表还在不断延伸\n我其实从来没找到这个添加更多列表的尽头\n所以你可以想象一下\n它已经被用来制作了大量的游戏\n再说一次\nHOTLINEMIAMI也是他的一个重大成功案例\n但说实话\n这个列表似乎真的可以无限延伸下去\n所以我们就不继续了\n我们就在这里停一下\n但这里的关键是\n他们刚刚发布了这个路线图更新等等\n我们得到了几个关键的信息\n其中一个重要的内容就是\n他们一直在开发的这个新的game maker运行时\n希望他们不会开始对这个运行时收取费用吧\n不管怎样\n关于X的情况\n今年全年将在多个平台上进行beta测试\n他们还宣布了game maker的长期支持版本\n以及下一代gm RT\n所以我们有了LTS版本\n这些就像是稳定版本\n如果你要开发一款游戏\n并且希望在整个开发过程中都使用同一个版本\n那你就应该选择这些版本\n你可以看到他们今年将会发布的各种不同版本\n以及这些版本的发布时间\n所以下一个主要的LTS版本\n将在2026年第二季度推出\n它会作为一个单独的安装包进行部署\n其中一个重要的变化是\n他们把很多功能都移到了插件中\n这样就可以单独为编辑器更新这些插件\n而且几年前编辑器还进行了彻底的重写\n其实我最近对这个编辑器印象非常深刻\n但现在他们已经把这些插件分离出来了\n你不需要等到LT更新才能获得他们\n所以无论是代码编辑器\n起始页面\n项目工具还是prefab构建器都有了改进\n大家期待已久的prefab构建器\n终于可以让创作者们相互创建和分享预制体了\n这可是个大事\n但我认为大多数游戏开发者\n最期待的还是这个全新的运行时\n所以下一代的运行时已经可以使用了\n所以他现在是目前还处于测试阶段\n但接下来几个月就会在移动和主机平台上线\n并将在今年剩余时间内逐步开放\n在0.20版本发布时\n他们将实现九十九百分之的兼容性功能\n支持安卓switch以及3D功能\n我们马上就会讲到这个\n他们还将开放gm RT的源代码\n这不是开源\n这是源代码可用\n这里有一个关键区别\n所以你可以访问修改\n并基于它进行构建\n企业用户也可以访问主机版本的源代码\n商业发行游戏仍然需要有效的许可证\n完整细节可以在那边的许可协议中找到\n所以这不是开源\n但确实提供了源代码\n如果你需要调试或修改内容等\n这会很方便\n接下来我们在3D领域也有了一些改进\n现在game maker一直都是一个二维游戏引擎\n它确实有一些三维功能\n你可以在这里看到它实际运行的视频\n但大多数情况下\n这其实是伪3D\n其实讽刺的是\n大多数game maker的二维技术上来说\n都是在三维中伪造的二维\n但所有工具都是为二维开发而设计的\n所以他们正在增加更多的三维功能\n有趣的是\n在我看来\n这个领域里的所有工具\n比如game maker\ndefault g develop都在增加三维功能\n所以他们将会加入模型加载的支持\n这样你就可以加载gr t f文件了\n后续将加入更多格式\n认为GOTF格式已够大多数人使用\n他们后来还说\n他们会把blender作为开发环境的重点\n这对我来说很合理\n而且max maya以及其他工具也都可以导出\nGLTF格式\n所以说实话\n只支持GLTF对大多数人来说已经足够了\n他们还会加入场景图功能\n场景图就是把你场景中的所有元素组织在一起\n的一种方式\n所以使用场景图来构建复杂的世界和环境\n可以简化对三维世界的处理\n他们还会改进里面的三维数学工具\n显然你需要做一些像矩阵数学\n四元数之类的运算\n我总是把这个词念错\n还有其他类似的东西在进行用三维计算时\n你实际上需要亲自动手完成大量工作\n而相关的工具其实并没有真正准备好\n你可能会想继续往下看\n去看看这个视频\n这样就能了解GAMAKER中三维到底是怎么运作的\n不过他们正在添加一些功能\n让这一切变得更容易\n此外还将加入对GLTF文件的简单动画支持\n不过这项新增功能最酷的地方在于\n至少它能让你创建三维模型\n你可以将其渲染为二维精灵\n或者在二维世界中以三维形式呈现\n因此你可以利用现有的二维功能\n结合这些三维模型制作出2.5维的游戏\n这样你可以让你的主角是3D的\n而世界是二维的等等\n或者你也可以制作一个完全的三维游戏\n只是要知道这个工具在使用时会有点和你作对\n这里我们还有一个重要的功能就是CLI\n也就是命令行工具\n所以如果你想做持续集成\n也就是能够在项目外部进行构建\n通过API与项目交互\n而不是通过IDE\n他们正在开发工具来对接给maker项目\n通过API和命令行接口实现\n这些工具是为那些想要构建自定义工具\n来操作game maker项目的用户准备的\n我开发了一套命令行工具\n可以让你与项目进行交互\n从简单的构建运行编译到更复杂的操作\n比如创建项目添加精灵\n为项目添加事件等等\n所以CRI工具也将以APACHE许可证开源\n现在已经可以使用了\n大家可以去看看\n所以这是已经可以用的东西\n非常酷\n而且有一项大家期待已久的重要功能嗯\nGame maker\n说实话\n我记得\n我在2025年做过一个关于game maker的视频\n我原以为我们会比现在更早\n更明显的看到这些新功能\n不过现在我们终于看到新增了额外的语言支持\n这次主要新增了两种语言\ntap cript和JAVASCRIPT\ntap cript是JAVASCRIPT的超级\n这些被称为一等语言\n有趣的是\n每当他们称某种语言为一等语言时\n他们从来不会把其他语言称为二等语言\n这还挺奇怪的\n所以基本上这意味着\n你在任何可以使用JAMAL的地方\n都可以用JAVASCRIPT或typescript\n所以如果你不想用他们自家的专有语言\n现在你就可以直接用JAVASCRIPT或typescript了\n另外C的支持也即将到来\n但C会以代理的方式实现\n基本上你可以用C编写库或代码\n然后通过GMLJAVASCRIPT或typescript来调用这些代码\n所以值得注意的是\n当C支持上线时\ngm RT和C运行时都会同时存在于内存中\n并且两个垃圾回收器都会运行\n这是需要注意的一点\n此外他们还在继续与外部合作伙伴合作\n开发扩展\n他们已经发布了新的扩展生成器工具\n这让GMS2和gm RT项目能够与外部库进行交互\n并提供了一个统一的接口来弥合差距\n所以你现在拥有了这些功能\n最近的扩展包括steam switch r对付mod discord\n苹果和谷歌应用内购买opera广告\nphoton多人游戏的支持\n还有razor的virus DK\n在多人游戏领域也有一些改进\n我们也为这些工具带来了新的扩展\nphoton也即将推出\n而且还有更多内容即将上线\n女士们先生们\n这就是我们在2026年game maker的发展现状\n今年将会有新的编程语言推出\n运行时基本上将在多个平台上脱离测试阶段\nIDE插件l ts长期支持版本\nGMRT的源码也将开放\n此外还会加入3D应用\n比如3D动画\n3D模型等\n欢迎在下方评论区留言告诉我你的想法\n我们下次再聊再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1XmdgBxEWV",
+  "published_at": "1778338800",
+  "fetched_at": "2026-08-07T03:51:05+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GameMaker 2026 关键特性图谱\n\n## 概览时间线\n```mermaid\nflowchart LR\nN1999[\"1999: 首次发布\"] --> N2007[\"2007: YOYO接手\"]\nN2007 --> N2012[\"2012: Studio 版本\"]\nN2012 --> N2021[\"2021: Opera 收购\"]\nN2021 --> N2026[\"2026 Q2: LTS 版本发布\"]\nN2026 --> NNextGen[\"下一代 GM Runtime\"]\nNNextGen --> NPlugin[\"插件化编辑器\"]\nNPlugin --> N3D[\"新增 3D 功能\"]\nN3D --> NLang[\"新增 TypeScript / JavaScript 支持\"]\nNLang --> NC[\"即将支持 C（代理方式）\"]\n```\n\n## 插件化功能模块\n```mermaid\nflowchart TD\nCore[\"核心引擎\"] --> Plugin[\"插件系统\"]\nPlugin --> Prefab[\"Prefab 构建器\"]\nPlugin --> SceneGraph[\"场景图功能\"]\nPlugin --> ModelLoad[\"模型加载\"]\nModelLoad --> GLTF[\"GLTF 文件支持\"]\nGLTF --> Anim[\"GLTF 动画支持\"]\nCore --> CLI[\"CLI（命令行工具）\"]\nCore --> ExtGen[\"扩展生成器\"]\n```\n\n## 语言支持结构\n```mermaid\nflowchart LR\nGML[\"GML（专有语言）\"]\nTS[\"TypeScript\"]\nJS[\"JavaScript\"]\nCProxy[\"C（代理）\"]\nBridge[\"GML ↔ JS/TS 桥接\"]\nFirstClass[\"一等语言标识\"]\nGML --> FirstClass\nTS --> FirstClass\nJS --> FirstClass\nFirstClass --> Bridge\nCProxy --> Bridge\n```\n\n## 三维功能路径\n```mermaid\nflowchart TD\nPseudo3D[\"伪 3D（基于 2D）\"]\nTrue3D[\"真实 3D 功能\"]\nModelLoad[\"模型加载（GLTF）\"]\nSceneGraph3D[\"场景图组织\"]\nMathTools[\"3D 数学工具（矩阵/四元数）\"]\nRender25D[\"2.5D 渲染\"]\nFull3D[\"完整 3D 游戏\"]\nPseudo3D --> True3D\nTrue3D --> ModelLoad\nModelLoad --> SceneGraph3D\nSceneGraph3D --> MathTools\nModelLoad --> Render25D\nRender25D --> Full3D\n```",
+      "diagrams": [
+        {
+          "title": "概览时间线",
+          "code": "flowchart LR\nN1999[\"1999: 首次发布\"] --> N2007[\"2007: YOYO接手\"]\nN2007 --> N2012[\"2012: Studio 版本\"]\nN2012 --> N2021[\"2021: Opera 收购\"]\nN2021 --> N2026[\"2026 Q2: LTS 版本发布\"]\nN2026 --> NNextGen[\"下一代 GM Runtime\"]\nNNextGen --> NPlugin[\"插件化编辑器\"]\nNPlugin --> N3D[\"新增 3D 功能\"]\nN3D --> NLang[\"新增 TypeScript / JavaScript 支持\"]\nNLang --> NC[\"即将支持 C（代理方式）\"]"
+        },
+        {
+          "title": "插件化功能模块",
+          "code": "flowchart TD\nCore[\"核心引擎\"] --> Plugin[\"插件系统\"]\nPlugin --> Prefab[\"Prefab 构建器\"]\nPlugin --> SceneGraph[\"场景图功能\"]\nPlugin --> ModelLoad[\"模型加载\"]\nModelLoad --> GLTF[\"GLTF 文件支持\"]\nGLTF --> Anim[\"GLTF 动画支持\"]\nCore --> CLI[\"CLI（命令行工具）\"]\nCore --> ExtGen[\"扩展生成器\"]"
+        },
+        {
+          "title": "语言支持结构",
+          "code": "flowchart LR\nGML[\"GML（专有语言）\"]\nTS[\"TypeScript\"]\nJS[\"JavaScript\"]\nCProxy[\"C（代理）\"]\nBridge[\"GML ↔ JS/TS 桥接\"]\nFirstClass[\"一等语言标识\"]\nGML --> FirstClass\nTS --> FirstClass\nJS --> FirstClass\nFirstClass --> Bridge\nCProxy --> Bridge"
+        },
+        {
+          "title": "三维功能路径",
+          "code": "flowchart TD\nPseudo3D[\"伪 3D（基于 2D）\"]\nTrue3D[\"真实 3D 功能\"]\nModelLoad[\"模型加载（GLTF）\"]\nSceneGraph3D[\"场景图组织\"]\nMathTools[\"3D 数学工具（矩阵/四元数）\"]\nRender25D[\"2.5D 渲染\"]\nFull3D[\"完整 3D 游戏\"]\nPseudo3D --> True3D\nTrue3D --> ModelLoad\nModelLoad --> SceneGraph3D\nSceneGraph3D --> MathTools\nModelLoad --> Render25D\nRender25D --> Full3D"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T03:51:22+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GameMaker 2026 关键特性图谱\n\n## 概览时间线\n```mermaid\nflowchart LR\nN1999[\"1999: 首次发布\"] --> N2007[\"2007: YOYO接手\"]\nN2007 --> N2012[\"2012: Studio 版本\"]\nN2012 --> N2021[\"2021: Opera 收购\"]\nN2021 --> N2026[\"2026 Q2: LTS 版本发布\"]\nN2026 --> NNextGen[\"下一代 GM Runtime\"]\nNNextGen --> NPlugin[\"插件化编辑器\"]\nNPlugin --> N3D[\"新增 3D 功能\"]\nN3D --> NLang[\"新增 TypeScript / JavaScript 支持\"]\nNLang --> NC[\"即将支持 C（代理方式）\"]\n```\n\n## 插件化功能模块\n```mermaid\nflowchart TD\nCore[\"核心引擎\"] --> Plugin[\"插件系统\"]\nPlugin --> Prefab[\"Prefab 构建器\"]\nPlugin --> SceneGraph[\"场景图功能\"]\nPlugin --> ModelLoad[\"模型加载\"]\nModelLoad --> GLTF[\"GLTF 文件支持\"]\nGLTF --> Anim[\"GLTF 动画支持\"]\nCore --> CLI[\"CLI（命令行工具）\"]\nCore --> ExtGen[\"扩展生成器\"]\n```\n\n## 语言支持结构\n```mermaid\nflowchart LR\nGML[\"GML（专有语言）\"]\nTS[\"TypeScript\"]\nJS[\"JavaScript\"]\nCProxy[\"C（代理）\"]\nBridge[\"GML ↔ JS/TS 桥接\"]\nFirstClass[\"一等语言标识\"]\nGML --> FirstClass\nTS --> FirstClass\nJS --> FirstClass\nFirstClass --> Bridge\nCProxy --> Bridge\n```\n\n## 三维功能路径\n```mermaid\nflowchart TD\nPseudo3D[\"伪 3D（基于 2D）\"]\nTrue3D[\"真实 3D 功能\"]\nModelLoad[\"模型加载（GLTF）\"]\nSceneGraph3D[\"场景图组织\"]\nMathTools[\"3D 数学工具（矩阵/四元数）\"]\nRender25D[\"2.5D 渲染\"]\nFull3D[\"完整 3D 游戏\"]\nPseudo3D --> True3D\nTrue3D --> ModelLoad\nModelLoad --> SceneGraph3D\nSceneGraph3D --> MathTools\nModelLoad --> Render25D\nRender25D --> Full3D\n```",
+  "diagrams": [
+    {
+      "title": "概览时间线",
+      "code": "flowchart LR\nN1999[\"1999: 首次发布\"] --> N2007[\"2007: YOYO接手\"]\nN2007 --> N2012[\"2012: Studio 版本\"]\nN2012 --> N2021[\"2021: Opera 收购\"]\nN2021 --> N2026[\"2026 Q2: LTS 版本发布\"]\nN2026 --> NNextGen[\"下一代 GM Runtime\"]\nNNextGen --> NPlugin[\"插件化编辑器\"]\nNPlugin --> N3D[\"新增 3D 功能\"]\nN3D --> NLang[\"新增 TypeScript / JavaScript 支持\"]\nNLang --> NC[\"即将支持 C（代理方式）\"]"
+    },
+    {
+      "title": "插件化功能模块",
+      "code": "flowchart TD\nCore[\"核心引擎\"] --> Plugin[\"插件系统\"]\nPlugin --> Prefab[\"Prefab 构建器\"]\nPlugin --> SceneGraph[\"场景图功能\"]\nPlugin --> ModelLoad[\"模型加载\"]\nModelLoad --> GLTF[\"GLTF 文件支持\"]\nGLTF --> Anim[\"GLTF 动画支持\"]\nCore --> CLI[\"CLI（命令行工具）\"]\nCore --> ExtGen[\"扩展生成器\"]"
+    },
+    {
+      "title": "语言支持结构",
+      "code": "flowchart LR\nGML[\"GML（专有语言）\"]\nTS[\"TypeScript\"]\nJS[\"JavaScript\"]\nCProxy[\"C（代理）\"]\nBridge[\"GML ↔ JS/TS 桥接\"]\nFirstClass[\"一等语言标识\"]\nGML --> FirstClass\nTS --> FirstClass\nJS --> FirstClass\nFirstClass --> Bridge\nCProxy --> Bridge"
+    },
+    {
+      "title": "三维功能路径",
+      "code": "flowchart TD\nPseudo3D[\"伪 3D（基于 2D）\"]\nTrue3D[\"真实 3D 功能\"]\nModelLoad[\"模型加载（GLTF）\"]\nSceneGraph3D[\"场景图组织\"]\nMathTools[\"3D 数学工具（矩阵/四元数）\"]\nRender25D[\"2.5D 渲染\"]\nFull3D[\"完整 3D 游戏\"]\nPseudo3D --> True3D\nTrue3D --> ModelLoad\nModelLoad --> SceneGraph3D\nSceneGraph3D --> MathTools\nModelLoad --> Render25D\nRender25D --> Full3D"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:51:22+00:00"
+}

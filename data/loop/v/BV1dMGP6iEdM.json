@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1dMGP6iEdM",
+  "title": "性能暴涨30%+拥抱Codex/Responses API技术体系，DeepSeek V4正式版模型深度解读+性能评测！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2626,
+  "text": "仅凭模型后训练的优化模型\n性能就能暴涨超过30%啊\n一个推理激活的参数量只有13B的模型\n居然就逼近了cloud open4.8模型的性能\n这就是deep c v4flash正式版\n时隔三个月\ndeep stick v4的正式版模型终于陆续登场\n就在7月31号下午\nV4flash的正式版率先亮相\n相比三个月前的预览版\n正式版flash模型保持的架构和模型参数不变\n仍然是284B\n总参数量13B激活参数的MOE模型\n但正式版重新进行了模型的后训练\n不仅agent这个编程的性能实现了跨越式的增长\n而且模型的响应格式也进行了全面升级\n在原先的open i compilation API的基础上\n进一步适配了open i的responses API\n并且官宣正式全面介入codex生态\n本期播客为你深度解读DPCV4flash模型\n特性和性能评测结果\n并为大家详细介绍V4模型\n介入全新的harness a h的API\nresponses API的使用方法\n以及介入cortex的完整流程\n帮助大家零门槛上手\n使用全新的DPCV4正式版模型\n同时公开课的文字版资料\nOpenAI responses API的使用方法\n以及codex接入的文字版教程\n都已经上线至复范AI社区\n大家扫描屏幕的二维码即可免费领取\n首先是性能方面\n根据官方发布的评测结果\nDEPCV4flash已经全面超越了gm5.2\n和DEPCV4pro的预览版\n甚至在一些评分指标上\n已经逼近了open4.8模型啊\n而根据实际的测试结果来看\n模型的编程性能\nAH的性能以及对真实物理世界的理解能力\n都进步巨大\n甚至困扰DEPC已久的\n鸭子骑自行车的SVG动画生成\n都被V4flash正式版轻松拿下\n简直和此前的V4预览版判若两个模型啊\n当然如果说性能进步是常规迭代\n那么本次V4正式版模型\n惯性拥抱open i的responses API技术体系\n则预示着正式版模型将会是全面兼容OpenAI\ncodex技术生态的原生A政策基座模型\n而这对于开发者来说\n无疑是一次巨大的底层API开发范式的转变啊\n同时也预示着8月即将发布的deep sick harness agent\n将会和open i的基础通信范式保持一致\n那么接下来就让我为大家简单解释一下\n到底什么是responses API以及其技术使用方法\n然后再详细介绍如何将DPC\nV4正式版模型接入扣JX\n在过去很长一段时间啊\nopen i制定的chat compilations通信标准\n是唯一跨模型统一的模型底层动机规范\n那么哪怕是前段时间刚上线不久的KIMIK3模型\n底层仍然采用的是chat compilations\n作为基础模型响应格式\n这其实是一种面向消息队列的\n高效编辑的一类API呀\n开发者可以非常高效的完成messages的列表编辑\n并通过修改消息列表来引导模型完成任务\n但或许是因为消息队列的编辑\n只适合打造聊天机器人\n而不适合打造agent\n于是去年3月11号\nopen i推出了全新的全面适配agent任务的模型\n调用新范式responses API\n而我当时也在第一时间对其进行了解读和评测\n不同于chat compilation API是面向对话来构建应用\nresponses API是一种面向任务来构建应用的\n更加高级的API\n用户只需要描述任务关联工具设置提示词\n就能自动构建一个agent的loop循环\n非常高效\n或者你也可以将其理解成responses API\n就是OpenAI版的long cha\n而现在EPCV4正式版模型\n也是国内首个全面介入responses API的模型啊\n而我们也第一时间对其整体性能表现\n进行了深度评测\n在海量工具skills和MCP调度情况下\n运行非常稳定\n同时我们在第一时间制作了DEPC\nresponses API的接入指南和使用教程\n并上线至付范AI社区\n大扫码即可免费领取\n当然对于deep siv4模型来说\n全面拥抱responses API体系\n也就意味着可以无缝接入codex完整功能生态\n而官方给出的V4正式版\n接入codex的流程也非常简单啊\n只需要一行命令即可同步切换codex\nCLI codex app和HIGBT的基座模型\n将其切换为deep sc v4正式版模型\n同时完成原始配置的备份\n并且可以随时复原\n以windows系统为例\n完整切换机动模型的流程如下\n首先先打开power shell\n然后输入IRM命令\n从DPC官方下载codex配置文件\n修改脚本并自动运行\n然后根据提示进行模型选取或者恢复原始配置\n配置过程可以根据实际情况\n选择V4flash或者pro正式版模型\n并根据提示设置APIKE设置完成后\n只要看到installation complete则的提示\n就说明配置成功\n而如果之后要切换模型\n或者恢复codex的原始配置\n则再次运行相同脚本并进行相应选择即可\n然后打开HIGBT或者codex应用\n看到左下方是deep seek\n并且模型是自定义\n就说明已经配置成功了\n接下来即可进行任意对话或者执行各类任务\n整个过程非常简单\n并且codex CLI也会同步发生修改\n而紧接着\n我们就在codex命令行中\n对V4的flash正式版模型进行了一轮深度评测\n期间我们让V4flash围绕着一个3万多行\n一条指令即可完成整个的codex的plan test\nsub agent的web search等各项功能的驱动\n并最终完成代码库的审核优化测试\n一整管整流程非常顺畅高效\n这次depc vs flash模型发布非常迅速啊\n在API全面上线\n同时模型权重也正式在hagin face上开源\n当然V4flash其实还只是开胃菜\n还只是接下来V4pro正式版和deep sk版\nCloud code\ndeep seek harness agent发布的前奏\n按照30%的性能涨幅预期啊\n我们有理由相信\nV4pro正式版将会是全球第一款\n性能全面超越OPPO4.8\n的全新一代开源旗舰模型\n好了\n以上就是本期视频的全部内容\n感谢大家的关注和三连支持\n更多DPC与V4正式版的学习资料\n技术文档模型部署跟A证的开发教程等\n都已经上线至复办AI技术社区\n打扫码即可领取\n我是九天\n专注为大家提供最扎实优质的技术内容\n我们下个视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1dMGP6iEdM",
+  "published_at": "1785513464",
+  "fetched_at": "2026-08-07T04:02:09+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 模型知识图谱\n\n## 1. 模型概览\n```mermaid\nflowchart TD\n    M[V4Flash模型] --> P13B[参数量13B]\n    M --> MoE[MoE结构]\n    M --> T284B[总参数284B]\n    M --> A13B[激活参数13B]\n    M --> ArchSame[架构保持不变]\n    ArchSame --> PrevPreview[前版预览模型]\n    M --> PostTrain[后训练]\n    PostTrain --> PerfBoost[性能提升≈30%]\n    PerfBoost --> RespAPI[拥抱Responses API]\n    RespAPI --> CodexCompat[兼容Codex生态]\n    M --> Release[7月31日正式发布]\n```\n\n## 2. 性能提升\n```mermaid\nflowchart TD\n    V4[V4Flash模型] --> ProgPerf[编程性能提升]\n    V4 --> AHPerf[AH性能提升]\n    V4 --> PhysWorld[真实物理世界理解提升]\n    V4 --> DuckBike[鸭子骑自行车SVG任务完成]\n    ProgPerf --> Eval[评估指标]\n    AHPerf --> Eval\n    PhysWorld --> Eval\n    DuckBike --> Eval\n    Eval --> GM5_2[超越GM5.2]\n    Eval --> V4ProPrev[超越V4Pro预览版]\n    Eval --> NearOpen48[逼近Open4.8模型]\n    RealTest[实际测试结果] --> CrossTask[跨任务进步巨大]\n    CrossTask --> GapClosed[原有性能瓶颈已关闭]\n```\n\n## 3. API 对比：Chat Compilation vs Responses\n```mermaid\nflowchart TD\n    ChatAPI[Chat Compilation API] --> Bot[面向聊天机器人]\n    RespAPI[Responses API] --> Agent[面向任务 Agent]\n    ChatAPI --> MsgEdit[消息队列编辑]\n    MsgEdit --> Bot\n    RespAPI --> TaskOriented[任务导向]\n    TaskOriented --> Prompt[描述任务+工具提示词]\n    Prompt --> AutoLoop[自动构建 Agent Loop]\n    AutoLoop --> HighLevel[更高级 API]\n    HighLevel --> OpenAI_LongChat[OpenAI 版 LongChat]\n    DomesticFirst[国内首个全面介入] --> RespAPI\n```\n\n## 4. Codex 集成步骤（Windows 示例）\n```mermaid\nflowchart TD\n    PS[打开 PowerShell] --> IRM[输入 IRM 命令]\n    IRM --> Download[下载 Codex 配置文件]\n    Download --> Modify[修改脚本]\n    Modify --> Run[运行脚本]\n    Run --> Choose[选择 V4Flash 或 V4Pro 正式版模型]\n    Choose --> SetKey[设置 API Key]\n    SetKey --> InstallDone[出现 “installation complete” 提示]\n    InstallDone --> VerifyLabel[左下角显示 DeepSeek 标识]\n    VerifyLabel --> VerifyModel[模型显示为自定义]\n    VerifyModel --> Success[配置成功提示]\n    Success --> SwitchCLI[Codex CLI 同步切换]\n    SwitchCLI --> Backup[备份原始配置]\n    Backup --> Restore[需要时恢复原始配置]\n    Restore --> Repeat[再次运行相同脚本完成切换或恢复]\n```\n\n## 5. 评测工作流\n```mermaid\nflowchart TD\n    Code30k[30k 行代码库] --> OneInstr[单条指令完成全部任务]\n    OneInstr --> PlanTest[Codex Plan Test]\n    PlanTest --> WebSearch[子 Agent Web Search]\n    WebSearch --> ReviewOpt[代码库审查与优化]\n    ReviewOpt --> Smooth[流程顺畅]\n    Smooth --> Efficient[高效执行]\n    Efficient --> Result[评测结果成功]\n    Result --> DepcFlashRelease[Depc vs Flash 模型发布]\n    DepcFlashRelease --> APIFull[API 全面上线]\n    APIFull --> WeightsOpen[模型权重在 HuggingFace 开源]\n    WeightsOpen --> FutureV4Pro[V4Pro 正式版预告]\n    FutureV4Pro --> Perf30[预期性能涨幅 30%]\n    Perf30 --> GlobalFirst[有望成为全球首款全面超越 Open4.8 的开源旗舰模型]\n```",
+      "diagrams": [
+        {
+          "title": "1. 模型概览",
+          "code": "flowchart TD\n    M[V4Flash模型] --> P13B[参数量13B]\n    M --> MoE[MoE结构]\n    M --> T284B[总参数284B]\n    M --> A13B[激活参数13B]\n    M --> ArchSame[架构保持不变]\n    ArchSame --> PrevPreview[前版预览模型]\n    M --> PostTrain[后训练]\n    PostTrain --> PerfBoost[性能提升≈30%]\n    PerfBoost --> RespAPI[拥抱Responses API]\n    RespAPI --> CodexCompat[兼容Codex生态]\n    M --> Release[7月31日正式发布]"
+        },
+        {
+          "title": "2. 性能提升",
+          "code": "flowchart TD\n    V4[V4Flash模型] --> ProgPerf[编程性能提升]\n    V4 --> AHPerf[AH性能提升]\n    V4 --> PhysWorld[真实物理世界理解提升]\n    V4 --> DuckBike[鸭子骑自行车SVG任务完成]\n    ProgPerf --> Eval[评估指标]\n    AHPerf --> Eval\n    PhysWorld --> Eval\n    DuckBike --> Eval\n    Eval --> GM5_2[超越GM5.2]\n    Eval --> V4ProPrev[超越V4Pro预览版]\n    Eval --> NearOpen48[逼近Open4.8模型]\n    RealTest[实际测试结果] --> CrossTask[跨任务进步巨大]\n    CrossTask --> GapClosed[原有性能瓶颈已关闭]"
+        },
+        {
+          "title": "3. API 对比：Chat Compilation vs Responses",
+          "code": "flowchart TD\n    ChatAPI[Chat Compilation API] --> Bot[面向聊天机器人]\n    RespAPI[Responses API] --> Agent[面向任务 Agent]\n    ChatAPI --> MsgEdit[消息队列编辑]\n    MsgEdit --> Bot\n    RespAPI --> TaskOriented[任务导向]\n    TaskOriented --> Prompt[描述任务+工具提示词]\n    Prompt --> AutoLoop[自动构建 Agent Loop]\n    AutoLoop --> HighLevel[更高级 API]\n    HighLevel --> OpenAI_LongChat[OpenAI 版 LongChat]\n    DomesticFirst[国内首个全面介入] --> RespAPI"
+        },
+        {
+          "title": "4. Codex 集成步骤（Windows 示例）",
+          "code": "flowchart TD\n    PS[打开 PowerShell] --> IRM[输入 IRM 命令]\n    IRM --> Download[下载 Codex 配置文件]\n    Download --> Modify[修改脚本]\n    Modify --> Run[运行脚本]\n    Run --> Choose[选择 V4Flash 或 V4Pro 正式版模型]\n    Choose --> SetKey[设置 API Key]\n    SetKey --> InstallDone[出现 “installation complete” 提示]\n    InstallDone --> VerifyLabel[左下角显示 DeepSeek 标识]\n    VerifyLabel --> VerifyModel[模型显示为自定义]\n    VerifyModel --> Success[配置成功提示]\n    Success --> SwitchCLI[Codex CLI 同步切换]\n    SwitchCLI --> Backup[备份原始配置]\n    Backup --> Restore[需要时恢复原始配置]\n    Restore --> Repeat[再次运行相同脚本完成切换或恢复]"
+        },
+        {
+          "title": "5. 评测工作流",
+          "code": "flowchart TD\n    Code30k[30k 行代码库] --> OneInstr[单条指令完成全部任务]\n    OneInstr --> PlanTest[Codex Plan Test]\n    PlanTest --> WebSearch[子 Agent Web Search]\n    WebSearch --> ReviewOpt[代码库审查与优化]\n    ReviewOpt --> Smooth[流程顺畅]\n    Smooth --> Efficient[高效执行]\n    Efficient --> Result[评测结果成功]\n    Result --> DepcFlashRelease[Depc vs Flash 模型发布]\n    DepcFlashRelease --> APIFull[API 全面上线]\n    APIFull --> WeightsOpen[模型权重在 HuggingFace 开源]\n    WeightsOpen --> FutureV4Pro[V4Pro 正式版预告]\n    FutureV4Pro --> Perf30[预期性能涨幅 30%]\n    Perf30 --> GlobalFirst[有望成为全球首款全面超越 Open4.8 的开源旗舰模型]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T04:02:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 模型知识图谱\n\n## 1. 模型概览\n```mermaid\nflowchart TD\n    M[V4Flash模型] --> P13B[参数量13B]\n    M --> MoE[MoE结构]\n    M --> T284B[总参数284B]\n    M --> A13B[激活参数13B]\n    M --> ArchSame[架构保持不变]\n    ArchSame --> PrevPreview[前版预览模型]\n    M --> PostTrain[后训练]\n    PostTrain --> PerfBoost[性能提升≈30%]\n    PerfBoost --> RespAPI[拥抱Responses API]\n    RespAPI --> CodexCompat[兼容Codex生态]\n    M --> Release[7月31日正式发布]\n```\n\n## 2. 性能提升\n```mermaid\nflowchart TD\n    V4[V4Flash模型] --> ProgPerf[编程性能提升]\n    V4 --> AHPerf[AH性能提升]\n    V4 --> PhysWorld[真实物理世界理解提升]\n    V4 --> DuckBike[鸭子骑自行车SVG任务完成]\n    ProgPerf --> Eval[评估指标]\n    AHPerf --> Eval\n    PhysWorld --> Eval\n    DuckBike --> Eval\n    Eval --> GM5_2[超越GM5.2]\n    Eval --> V4ProPrev[超越V4Pro预览版]\n    Eval --> NearOpen48[逼近Open4.8模型]\n    RealTest[实际测试结果] --> CrossTask[跨任务进步巨大]\n    CrossTask --> GapClosed[原有性能瓶颈已关闭]\n```\n\n## 3. API 对比：Chat Compilation vs Responses\n```mermaid\nflowchart TD\n    ChatAPI[Chat Compilation API] --> Bot[面向聊天机器人]\n    RespAPI[Responses API] --> Agent[面向任务 Agent]\n    ChatAPI --> MsgEdit[消息队列编辑]\n    MsgEdit --> Bot\n    RespAPI --> TaskOriented[任务导向]\n    TaskOriented --> Prompt[描述任务+工具提示词]\n    Prompt --> AutoLoop[自动构建 Agent Loop]\n    AutoLoop --> HighLevel[更高级 API]\n    HighLevel --> OpenAI_LongChat[OpenAI 版 LongChat]\n    DomesticFirst[国内首个全面介入] --> RespAPI\n```\n\n## 4. Codex 集成步骤（Windows 示例）\n```mermaid\nflowchart TD\n    PS[打开 PowerShell] --> IRM[输入 IRM 命令]\n    IRM --> Download[下载 Codex 配置文件]\n    Download --> Modify[修改脚本]\n    Modify --> Run[运行脚本]\n    Run --> Choose[选择 V4Flash 或 V4Pro 正式版模型]\n    Choose --> SetKey[设置 API Key]\n    SetKey --> InstallDone[出现 “installation complete” 提示]\n    InstallDone --> VerifyLabel[左下角显示 DeepSeek 标识]\n    VerifyLabel --> VerifyModel[模型显示为自定义]\n    VerifyModel --> Success[配置成功提示]\n    Success --> SwitchCLI[Codex CLI 同步切换]\n    SwitchCLI --> Backup[备份原始配置]\n    Backup --> Restore[需要时恢复原始配置]\n    Restore --> Repeat[再次运行相同脚本完成切换或恢复]\n```\n\n## 5. 评测工作流\n```mermaid\nflowchart TD\n    Code30k[30k 行代码库] --> OneInstr[单条指令完成全部任务]\n    OneInstr --> PlanTest[Codex Plan Test]\n    PlanTest --> WebSearch[子 Agent Web Search]\n    WebSearch --> ReviewOpt[代码库审查与优化]\n    ReviewOpt --> Smooth[流程顺畅]\n    Smooth --> Efficient[高效执行]\n    Efficient --> Result[评测结果成功]\n    Result --> DepcFlashRelease[Depc vs Flash 模型发布]\n    DepcFlashRelease --> APIFull[API 全面上线]\n    APIFull --> WeightsOpen[模型权重在 HuggingFace 开源]\n    WeightsOpen --> FutureV4Pro[V4Pro 正式版预告]\n    FutureV4Pro --> Perf30[预期性能涨幅 30%]\n    Perf30 --> GlobalFirst[有望成为全球首款全面超越 Open4.8 的开源旗舰模型]\n```",
+  "diagrams": [
+    {
+      "title": "1. 模型概览",
+      "code": "flowchart TD\n    M[V4Flash模型] --> P13B[参数量13B]\n    M --> MoE[MoE结构]\n    M --> T284B[总参数284B]\n    M --> A13B[激活参数13B]\n    M --> ArchSame[架构保持不变]\n    ArchSame --> PrevPreview[前版预览模型]\n    M --> PostTrain[后训练]\n    PostTrain --> PerfBoost[性能提升≈30%]\n    PerfBoost --> RespAPI[拥抱Responses API]\n    RespAPI --> CodexCompat[兼容Codex生态]\n    M --> Release[7月31日正式发布]"
+    },
+    {
+      "title": "2. 性能提升",
+      "code": "flowchart TD\n    V4[V4Flash模型] --> ProgPerf[编程性能提升]\n    V4 --> AHPerf[AH性能提升]\n    V4 --> PhysWorld[真实物理世界理解提升]\n    V4 --> DuckBike[鸭子骑自行车SVG任务完成]\n    ProgPerf --> Eval[评估指标]\n    AHPerf --> Eval\n    PhysWorld --> Eval\n    DuckBike --> Eval\n    Eval --> GM5_2[超越GM5.2]\n    Eval --> V4ProPrev[超越V4Pro预览版]\n    Eval --> NearOpen48[逼近Open4.8模型]\n    RealTest[实际测试结果] --> CrossTask[跨任务进步巨大]\n    CrossTask --> GapClosed[原有性能瓶颈已关闭]"
+    },
+    {
+      "title": "3. API 对比：Chat Compilation vs Responses",
+      "code": "flowchart TD\n    ChatAPI[Chat Compilation API] --> Bot[面向聊天机器人]\n    RespAPI[Responses API] --> Agent[面向任务 Agent]\n    ChatAPI --> MsgEdit[消息队列编辑]\n    MsgEdit --> Bot\n    RespAPI --> TaskOriented[任务导向]\n    TaskOriented --> Prompt[描述任务+工具提示词]\n    Prompt --> AutoLoop[自动构建 Agent Loop]\n    AutoLoop --> HighLevel[更高级 API]\n    HighLevel --> OpenAI_LongChat[OpenAI 版 LongChat]\n    DomesticFirst[国内首个全面介入] --> RespAPI"
+    },
+    {
+      "title": "4. Codex 集成步骤（Windows 示例）",
+      "code": "flowchart TD\n    PS[打开 PowerShell] --> IRM[输入 IRM 命令]\n    IRM --> Download[下载 Codex 配置文件]\n    Download --> Modify[修改脚本]\n    Modify --> Run[运行脚本]\n    Run --> Choose[选择 V4Flash 或 V4Pro 正式版模型]\n    Choose --> SetKey[设置 API Key]\n    SetKey --> InstallDone[出现 “installation complete” 提示]\n    InstallDone --> VerifyLabel[左下角显示 DeepSeek 标识]\n    VerifyLabel --> VerifyModel[模型显示为自定义]\n    VerifyModel --> Success[配置成功提示]\n    Success --> SwitchCLI[Codex CLI 同步切换]\n    SwitchCLI --> Backup[备份原始配置]\n    Backup --> Restore[需要时恢复原始配置]\n    Restore --> Repeat[再次运行相同脚本完成切换或恢复]"
+    },
+    {
+      "title": "5. 评测工作流",
+      "code": "flowchart TD\n    Code30k[30k 行代码库] --> OneInstr[单条指令完成全部任务]\n    OneInstr --> PlanTest[Codex Plan Test]\n    PlanTest --> WebSearch[子 Agent Web Search]\n    WebSearch --> ReviewOpt[代码库审查与优化]\n    ReviewOpt --> Smooth[流程顺畅]\n    Smooth --> Efficient[高效执行]\n    Efficient --> Result[评测结果成功]\n    Result --> DepcFlashRelease[Depc vs Flash 模型发布]\n    DepcFlashRelease --> APIFull[API 全面上线]\n    APIFull --> WeightsOpen[模型权重在 HuggingFace 开源]\n    WeightsOpen --> FutureV4Pro[V4Pro 正式版预告]\n    FutureV4Pro --> Perf30[预期性能涨幅 30%]\n    Perf30 --> GlobalFirst[有望成为全球首款全面超越 Open4.8 的开源旗舰模型]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T04:02:24+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Jq3z66EDp",
+  "title": "4.角色动画的添加",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4968,
+  "text": "嗨小伙伴们大家好啊\n我们又见面了\n那么上一节课我们实现了我们角色的控制旋转\n就是我们可以来来根据我们这个鼠标的拖动\n然后来转动我们的视角啊\n那么这个时候呢很多同学都发现了\n我们这个角色呢\n他是以一种这个APOSE这种形态\n然后来出现的\n我们可以来看一下是吧\n它是一个a pose\n并不像我们平常玩游戏的那种角色是吧\n你可以这里动一动头\n动一动脚动一动\n哪怕我这移动\n我的脚也跟个木头一样\n它是没有任何旋转的\n为什么呢\n是因为我们的动画角色\n就是我们的角色呢还没有添加我们的动画\n那么现在呢我可以给它来添加一个动画\n这样那么它就可以来动起来了\n那么怎么样来添加这个动画呢\n我们找到我们的这个BP player\n然后呢点击我们的动画网格体\n然后点击视角\n我们可以来观一下\n来看一下\n我们此时呢就选中了我们的网格体了\n然后呢我们找到有一个什么呢\n动画这个栏目有一个什么呢\n动画的这个模式\n我们先选择是比较简单的使用我们动画资产\n然后这个时候呢我们找一个资产\n我们的可以到我给你的呃文件夹里边access\n然后找到什么呢\n我们这个city z是\n然后得到这个animation\n然后进站\n然后是进站里边找进一个动画叫IDO\n有一个idol\n一个combo的\n我们只选择这种普通的这种idol就可以了\n然后选到这里\n我们再点击赋值\n这个时候呢可以在我们这个预览窗口里边\n就可以看到这个东呃\n这个小人儿呢\n他就已经有动画开始来回的晃动了\n那么这个时候我们点击编译\n再点击运行\n那么我们这个小人就已经可以来晃动了\n和刚刚我们那种apples s它是不一样的啦\n那么这个时候我们再次移动的时候呢\n你会发现什么\n这个腿是没有办法来动的\n那么腿没有办法来动\n我们怎么呢\n我们怎么样能让它我在这站着\n没有任何输入的时候呢\n那么他就是站立这种情况\n当我们开始移动的时候呢\n就想让他腿然后动起来\n那么这个时候呢我们就不能用我们的什么呢\n用这种动画资产了\n我们得用虚虚幻里边的另一种模式叫什么呢\n使用动画蓝图\nanimation是blue print\n用这种方式\n然后来进行\n那么既然用这种方式呢\n我们就需要新建一个什么动画蓝图\n那么我给大家讲一下\n如何来新建我们的动画蓝图\n咳我们还是到这个主菜单\n我返回返回到什么呢\n呃返回到我们的这个主内容文件夹吧\n此时此刻吧\n咱这个文件夹比较乱\n所以我们简单的做一个整理\n你像这三个是吧\n他都是输入\n那我们新建一个文件夹\n咳咳就叫什么input\n然后把我们这三个呢全给他扔到这个input里边\n然后输入到input里边以后呢\n那么我们再来新建一个文文件\n叫什么叫动画蓝图\n我们点击右键可以看到这里有一个动画蓝图\n我们选择\n然后这个时候呢\n它会提示我们需要选择一个骨架\n那么我们这个骨架呢\n就选择中间这个这个男性角色的骨架\n不要选这个僵尸的和这个女性的\n我们呢本次做的是一个男性的\n所以我们选择男性骨架\n然后点击创建\n一般情况下呢\n我们这个呃虚幻的命名规范里边\n动画蓝图呢是ABP开头是app\n然后再加个player\napp就是animation\n是blueprint的\n它这个叫简写吧\n然后我们点击一下保存\n然后我们打开\n然后这个时候呢\n我们已经新建好咱的动画蓝图了\n我们就可以把这个新的动画蓝图呢\n复制到我们的这个普通蓝图上面\n然后选择好以后\n先选选中我们这个动画蓝图\n然后选到这里\n点击这个赋值\n这样我们在运行你会发现啊它没有任何效果\n为什么呢\n因为我们动画蓝图里边还没有添加任何东西\n我们先进入动画蓝图里边儿\n那么在动画蓝图里边呢\n我们点开以后会看到一个什么呢\n有一个输出的pose\n这个输出POS\n就表明\n这个他会把这个这个结果输出到\n我们这个动画小人上面\n这个要显示什么东西\n你往这里输出什么东西\n这个小时它就会显示成什么样\n我们再把刚刚输入那个idol\n然后我来输入进去\n然后我们来试一\n此时此刻啊它是一个APOSE\n可以来看一下\n那我们刚把刚刚的那个动画的这个序列帧吧\n给它输入上去一点\n然后再点运行\n哎此时此刻\n那么它又变了\n这个呢就实现我们刚刚用那种动画资产的方式\n然后能实现的功能\n那么这个时候呢它是没有办法来进行变化的\n我们呢可以来给他\n加一些其他的东西\n那么这个是动画资产\n我们呢也可以把动画资产给他删掉\n而用一种什么呢\n叫做动画状态机的\n我们点击右键输入什么状态机\n输入下直接什么steam machine\n按照这个状态机\n在状态机里面呢我们会存放很多的这种角色\n这种状态就是动画的状态\n那么在动画状态里面\n它也可以来进行我们不同姿势的切换\n在这个里边就可以实现我们的复杂功能了\n那么这里有一个这个出口\n我们和它这个结果连上以后\n我们再双击进去\n那么这里有个入口\n在入口的这个右边呢\n我们可以按住\n然后拉一下就可以放置一个什么呢\n状态的这个状态呢我们可以起个名字叫什么\nAdult\n就是站立状态\n我们点击进去以后呢\n它也是有一个输出\n结果\n我们把我们把刚刚那个IDO给它输入进去是吧\n近战的输入\n然后给他放进去\n这个时候呢我们再点击运行\n你会发现这个效果呢\n和我们刚刚这个效果其实是一样的\n没有任何区别\n那么这个你说我我用了这么多次\n再弄它\n这个效果还是一样\n那你这个动画状态机有什么功能呢\n那么下面我要开始来进行给它加复杂功能了\n我们可以再从这个状态机里边\n再拉一个一个状态出来\n可以起个什么呢\n行走是吧\n就是work\nLK吧\n行吧\nWork\n那么在work里面呢\n我们双击进去\n可以把我们的行走\n然后给他来加上去\n我们还是选择近战的这个\n那么这个时候我们点击编译\n再点击编译呢\n我们的正下方它有一个警告\n这种黄色化石警告提示什么\n从idol到work呢\n没有那个什么值\n就是它永远都到不了\n没有这个判断值\n他没有办法判断我怎么样能从idol到work\n那么这个时候我我们呢需要加一个条件\n那么我们从怎么样能从我们站立到这个走动呢\n是不是得我们得有一个速度啊是吧\n我们只有有速度的时候\n才能表明你从站立就是静止不动状态\n才能到我们这个移动的状态\n所以我们点到这个条件里边\n他是什么呢\n它得是表明它正在移动\n他什么时候开始移动呢\n就是就是他速度不为零的时候\n那么我们就需要一个变量\n然后来判断它现在它的速度是不是零\n那我们如何来进行判断呢\n可以到我们这个事件图表这里\n在事件图片这里呢\n他长得很像我们的这个角色的这个蓝图吧\n可以看到它里边这个实验图表是吧\n也有很多咱这个自定义的这个事件\n那么在我们这个动画蓝图里边也可以\n那么这个是什么呢\n它是更新我们这个动画蓝图\n还有一个什么try get p的这个honor\n就尝试获取我们这个胖的这个拥有者\n在这个拥有者呢我们可以给他来转化一下\n那么在那之前呢\n我可以哦添加一个新的我们这个事件吧\n那么可以点到这个\n可以点到可以到我们左边有个这个函数\n有个重载\n我们可以重载哪个呢\n我们可以重载一下这个开始事件\n开始游玩或者画呢初初始化\n那么两个都可以\n我们以一个开始为例吧是吧\n在开始事件这里呢\n我们可以拿到你的这个动画里的这个拥有者\n然后把他尝试给转化成什么的\n转化成我们的角色蓝图cut to\n然后BP player\n这个时候呢我们可以来打印一下\n如果他转化成功了\n我们可以让他来打印一个什么\nHello\n如果失败呢\n我们改一下吧\n可以改成成功\n那么失败呢就转化成失败\n那么我们呢可以来检测一下\n然后点击运行在我们的这个左上角呢\n这个地方它又显示成功了\n就代表它是可以转换成我们的BP player的\n转换成BP player以后呢\n那么我们呢就可以来获得这个角色的这个\n移动组件了\n我们直接从它这个地方来拖出来\nget什么呢\nGet move component\n就是我们这个移动组件\n再通过移动组件呢\n我们是不是就能拿到它的速度啊\nGet vlov l o c i t y\n这个呢就可以拿到我们这个角色\n实施他这个移动速度了\n拿到移动速度以后呢\n那么我们就可以什么了\n判断一下它的大小是不是等于零是吧\n只有当它不等于零的时候\n如果他此时此刻它速度不等于零\n那是不是说明它正在运动啊是吧\n那这个时候你就可以判断出\n我们这个角色是不是在移动了\n那么这个时候我们只是显示在这个初始化\n这里的\n我们需要每秒钟都要来判断一下\n它是否在大于零\n那么这个时候我们应该怎么操作呢\n先把这个事件给他断开\n然后呢把我们这个转化给他提成一个变量\n就是把我们的这个呃角色蓝图的引用吧\n然后来给他保存一下\n保存的名字叫什么\n就叫这个BP player吧\n行吧\n然后呢在上面这个它会每秒钟\n就是每秒钟都会运行到这个函数\n它会自动来运行\n那么在这个函数里边\n每秒钟它可以运行什么30次或者60次\n这个呢根据你的游戏的帧率\n然后来决定的\n那么我们给它把他这个速度给它转换到这里\n然后把他这个BP player再给他连上来\n然后呢我们拿到他速度了是吧\n我们需要判断一下他这个速度是不是等于零\n那么有一个什么呢\nlearn有有一个长度\n我们只要X值和Y值就行了\n因为我们在Z轴上面有单独的判断\n我们只判断它在地面上\n就X轴和Y轴\n它这个速度是否等于零\n这个长度是否等于零\n那么我们是吧\nN1A2接近吧\n接近等于是否等于零\n然后它会输出一个判断值是否等于零\n然后呢\n我们呢可以给它创建成一个什么一个变量\n分成一倍量\n然后给他连上\n这样的话我们没每帧都可以来拿到你这个值了\n那么这个值呢我们可以给它起个名字叫什么呢\nis move是吧\n判断一下它是否在移动\n然后呢\n我们再返回到你的这个到你这个条件里边\n从站立到行走\n是不是只要我们判断这个一字幕它是真的\n那就代表它正在移动是吧\n我们直接把它移过来\n那么这个时候还有一个反向条件的\n我能从站立到行走\n是不是我也能从行走\n然后往站立\n然后来往回走啊\n那么可以从这个行走\n然后往站立\n这里呢我们再拉一根线在里边\n也可以来输出一些条件\n什么呢\nIs move\n我我们可以判断一下它是否是移动的\n然后给它加一个反向的就行了是吧\nnot给它反转一下\n当然这刚刚我想到一个新的问题\n我这也是判断错误的\n那么它是否等于零呢\n它是否等于零\n这种情况下\n如果它等于零\n是代表它没有移动\n所以我们需要添加一个相反的\n就是一个是感叹号\n给他反转一下\n这个是布尔值\n这样呢我们点击编译\n然后点击运行\n然后我们来看一下行走\n你看当我们开始点的时候就可以来走了\n这样呢我们什么都不点\n他就开始来这晃是吧\n是一种IDO状态\n当我们点击这个鼠标W\n点击我们这个键盘的W键\n他又开始来播放行动界面\n但是播放不上\n你会发现它卡着不动了\n他到这一帧卡着不动了\n这个原因是什么造成的\n那是因为我们在运行的时候呢\n没有把它\n没有呢\n把它设为什么循环\n那么我们再到这个work里边\n把你的这个序列帧呢\n然后给它点击循环就行了\n再看我IDO点了没有\n那么IDO也点一下好\n我们再点击运行\n可以看一下\n到这样的话\n那么他就可以一直然后来循环了\n那他现在报错了\n我们看一下如何来进行解决\n呃点击叉号\n那么原因是什么呢\n就是刚刚他在获取的时候呢\n提示我们这个BP player它是空的哦\n原因是啥呢\n是因为这个begin play啊\n它这个运行这个顺序比较靠后\n它这里开始运行的时候呢\n这里还没有开始运行\n或者它同步运行的运行的时候呢\n发现我们这个是BP player\n它是空的\n还没给它赋值\n所以这个时候呢\n那么他获取这个velocity\n他肯定会失败了\n那么这个时候呢我们就不能用这个begin play了\n我们给它断开\n然后删掉\n这个时候我们可以用一个其他函数\n我们到这个重载这里可以看一下什么INITORALIZE\n这个初始化的时候\n这个呢他的这个运行的时机呢会更早一些\n我们用这个\n然后来连一下试试\n然后点击编译运行\n这个时候呢我们随便走两步\n然后就退出\n这个时候\n那么报错就解决了行\n那么我们今天的教学呢\n那么就到这里\n如果大家看的可以的话\n或者呃想长时间来追我们这个系列\n那么欢迎大家呢点赞投币\n然后顺带来关注一波\n那么今天我们的教程呢就到此结束\n感谢大家的观看\n好我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Jq3z66EDp",
+  "published_at": "1785252006",
+  "fetched_at": "2026-08-10T06:56:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 角色动画添加知识图谱\n\n## 动画添加方法总览\n```mermaid\nflowchart TD\n    A[\"角色默认 A-Pose（无动画）\"] --> B[\"使用动画资产直接赋值\"]\n    B --> C[\"播放 Idle 动画（仅上半身）\"]\n    A --> D[\"使用动画蓝图（Animation Blueprint）\"]\n    D --> E[\"创建 ABP 并关联角色骨架\"]\n    E --> F[\"在 ABP 中建立状态机\"]\n    F --> G[\"Idle 状态 + Walk 状态\"]\n    G --> H[\"通过速度变量控制状态切换\"]\n```\n\n## 动画蓝图创建与状态机配置\n```mermaid\nflowchart TD\n    A[\"右键 → Animation Blueprint\"] --> B[\"选择角色对应的 Skeleton（男性）\"]\n    B --> C[\"命名规范：ABP_Player\"]\n    C --> D[\"打开 ABP，默认输出 Pose\"]\n    D --> E[\"添加 State Machine 节点\"]\n    E --> F[\"在 State Machine 中创建 Idle 状态\"]\n    E --> G[\"在 State Machine 中创建 Walk 状态\"]\n    F --> H[\"Idle 中绑定 Idle 动画序列\"]\n    G --> I[\"Walk 中绑定 Walk 动画序列\"]\n    H --> J[\"Idle → Walk 转换条件：IsMoving 为 true\"]\n    I --> K[\"Walk → Idle 转换条件：IsMoving 为 false\"]\n```\n\n## 运行时速度检测与状态切换\n```mermaid\nflowchart TD\n    A[\"AnimBP Event Blueprint Update\"] --> B[\"Try Get Owner\"]\n    B --> C[\"Cast to BP_Player\"]\n    C --> D[\"Get Movement Component\"]\n    D --> E[\"Get Velocity (Vector)\"]\n    E --> F[\"计算 XY 平面长度（Speed）\"]\n    F --> G[\"Speed > 0 ?\"]\n    G -->|True| H[\"Set Bool IsMoving = true\"]\n    G -->|False| I[\"Set Bool IsMoving = false\"]\n    H --> J[\"驱动 State Machine 转换到 Walk\"]\n    I --> K[\"驱动 State Machine 转换到 Idle\"]\n```",
+      "diagrams": [
+        {
+          "title": "动画添加方法总览",
+          "code": "flowchart TD\n    A[\"角色默认 A-Pose（无动画）\"] --> B[\"使用动画资产直接赋值\"]\n    B --> C[\"播放 Idle 动画（仅上半身）\"]\n    A --> D[\"使用动画蓝图（Animation Blueprint）\"]\n    D --> E[\"创建 ABP 并关联角色骨架\"]\n    E --> F[\"在 ABP 中建立状态机\"]\n    F --> G[\"Idle 状态 + Walk 状态\"]\n    G --> H[\"通过速度变量控制状态切换\"]"
+        },
+        {
+          "title": "动画蓝图创建与状态机配置",
+          "code": "flowchart TD\n    A[\"右键 → Animation Blueprint\"] --> B[\"选择角色对应的 Skeleton（男性）\"]\n    B --> C[\"命名规范：ABP_Player\"]\n    C --> D[\"打开 ABP，默认输出 Pose\"]\n    D --> E[\"添加 State Machine 节点\"]\n    E --> F[\"在 State Machine 中创建 Idle 状态\"]\n    E --> G[\"在 State Machine 中创建 Walk 状态\"]\n    F --> H[\"Idle 中绑定 Idle 动画序列\"]\n    G --> I[\"Walk 中绑定 Walk 动画序列\"]\n    H --> J[\"Idle → Walk 转换条件：IsMoving 为 true\"]\n    I --> K[\"Walk → Idle 转换条件：IsMoving 为 false\"]"
+        },
+        {
+          "title": "运行时速度检测与状态切换",
+          "code": "flowchart TD\n    A[\"AnimBP Event Blueprint Update\"] --> B[\"Try Get Owner\"]\n    B --> C[\"Cast to BP_Player\"]\n    C --> D[\"Get Movement Component\"]\n    D --> E[\"Get Velocity (Vector)\"]\n    E --> F[\"计算 XY 平面长度（Speed）\"]\n    F --> G[\"Speed > 0 ?\"]\n    G -->|True| H[\"Set Bool IsMoving = true\"]\n    G -->|False| I[\"Set Bool IsMoving = false\"]\n    H --> J[\"驱动 State Machine 转换到 Walk\"]\n    I --> K[\"驱动 State Machine 转换到 Idle\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T06:58:38+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 角色动画添加知识图谱\n\n## 动画添加方法总览\n```mermaid\nflowchart TD\n    A[\"角色默认 A-Pose（无动画）\"] --> B[\"使用动画资产直接赋值\"]\n    B --> C[\"播放 Idle 动画（仅上半身）\"]\n    A --> D[\"使用动画蓝图（Animation Blueprint）\"]\n    D --> E[\"创建 ABP 并关联角色骨架\"]\n    E --> F[\"在 ABP 中建立状态机\"]\n    F --> G[\"Idle 状态 + Walk 状态\"]\n    G --> H[\"通过速度变量控制状态切换\"]\n```\n\n## 动画蓝图创建与状态机配置\n```mermaid\nflowchart TD\n    A[\"右键 → Animation Blueprint\"] --> B[\"选择角色对应的 Skeleton（男性）\"]\n    B --> C[\"命名规范：ABP_Player\"]\n    C --> D[\"打开 ABP，默认输出 Pose\"]\n    D --> E[\"添加 State Machine 节点\"]\n    E --> F[\"在 State Machine 中创建 Idle 状态\"]\n    E --> G[\"在 State Machine 中创建 Walk 状态\"]\n    F --> H[\"Idle 中绑定 Idle 动画序列\"]\n    G --> I[\"Walk 中绑定 Walk 动画序列\"]\n    H --> J[\"Idle → Walk 转换条件：IsMoving 为 true\"]\n    I --> K[\"Walk → Idle 转换条件：IsMoving 为 false\"]\n```\n\n## 运行时速度检测与状态切换\n```mermaid\nflowchart TD\n    A[\"AnimBP Event Blueprint Update\"] --> B[\"Try Get Owner\"]\n    B --> C[\"Cast to BP_Player\"]\n    C --> D[\"Get Movement Component\"]\n    D --> E[\"Get Velocity (Vector)\"]\n    E --> F[\"计算 XY 平面长度（Speed）\"]\n    F --> G[\"Speed > 0 ?\"]\n    G -->|True| H[\"Set Bool IsMoving = true\"]\n    G -->|False| I[\"Set Bool IsMoving = false\"]\n    H --> J[\"驱动 State Machine 转换到 Walk\"]\n    I --> K[\"驱动 State Machine 转换到 Idle\"]\n```",
+  "diagrams": [
+    {
+      "title": "动画添加方法总览",
+      "code": "flowchart TD\n    A[\"角色默认 A-Pose（无动画）\"] --> B[\"使用动画资产直接赋值\"]\n    B --> C[\"播放 Idle 动画（仅上半身）\"]\n    A --> D[\"使用动画蓝图（Animation Blueprint）\"]\n    D --> E[\"创建 ABP 并关联角色骨架\"]\n    E --> F[\"在 ABP 中建立状态机\"]\n    F --> G[\"Idle 状态 + Walk 状态\"]\n    G --> H[\"通过速度变量控制状态切换\"]"
+    },
+    {
+      "title": "动画蓝图创建与状态机配置",
+      "code": "flowchart TD\n    A[\"右键 → Animation Blueprint\"] --> B[\"选择角色对应的 Skeleton（男性）\"]\n    B --> C[\"命名规范：ABP_Player\"]\n    C --> D[\"打开 ABP，默认输出 Pose\"]\n    D --> E[\"添加 State Machine 节点\"]\n    E --> F[\"在 State Machine 中创建 Idle 状态\"]\n    E --> G[\"在 State Machine 中创建 Walk 状态\"]\n    F --> H[\"Idle 中绑定 Idle 动画序列\"]\n    G --> I[\"Walk 中绑定 Walk 动画序列\"]\n    H --> J[\"Idle → Walk 转换条件：IsMoving 为 true\"]\n    I --> K[\"Walk → Idle 转换条件：IsMoving 为 false\"]"
+    },
+    {
+      "title": "运行时速度检测与状态切换",
+      "code": "flowchart TD\n    A[\"AnimBP Event Blueprint Update\"] --> B[\"Try Get Owner\"]\n    B --> C[\"Cast to BP_Player\"]\n    C --> D[\"Get Movement Component\"]\n    D --> E[\"Get Velocity (Vector)\"]\n    E --> F[\"计算 XY 平面长度（Speed）\"]\n    F --> G[\"Speed > 0 ?\"]\n    G -->|True| H[\"Set Bool IsMoving = true\"]\n    G -->|False| I[\"Set Bool IsMoving = false\"]\n    H --> J[\"驱动 State Machine 转换到 Walk\"]\n    I --> K[\"驱动 State Machine 转换到 Idle\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T06:58:38+00:00"
+}

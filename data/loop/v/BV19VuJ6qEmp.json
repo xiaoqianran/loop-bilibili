@@ -1,0 +1,74 @@
+{
+  "bvid": "BV19VuJ6qEmp",
+  "title": "DeepSeek V4接入Codex，0.24元跑完3个真实任务！从0到1开发AI数据分析系统，国产大模型开启Agent编程新时代，完整实战流程公开",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 746,
+  "text": "仅需0.24元\n就可以让AI帮你完成三个真实开发任务\n从代码编写功能实现到完整项目搭建\nDEPSKV4接入codex后\n正在改变AI编程的工作方式\n这就是本期课程要带大家实战体验的\nDPCCV4加codex完整开发流程\n过去我们想让AI参与项目开发\n往往需要强大的模型能力\n复杂的开发环境以及大量人工调试\n但现在随着DPTKV4正式兼容response API\n并且可以无缝接入codex\n国产大模型\n也开始具备完成复杂工程项目开发的能力\n在这节课里\n我们不会只展示简单的代码生成\n而是带大家完整跑通deep sk v4\n加codex的真实开发链路\n整个课程会完成三个实战任务\n第一个任务完成deep sk v4接入codex的完整配置\n让AI具备agent编程能力\n第二个任务通过自然语言描述需求\n让codex驱动deep sk v4完成复杂代码开发\n包括功能设计\n代码生成和持续优化\n第三个任务也是本次课程的核心案例\n使用deep sk v4加codex\n从零搭建一个完整的AI数据分析系统\n这个系统可以接入真实数据\n完成数据处理\n智能分析\n图表生成并自动输出图文并茂的数据分析报告\n整个过程中我们会拆解DEPC和V4\n为什么能够接入codex responses API\n在agent的开发中到底扮演什么角色\n如何通过正确的方法让AI从辅助写代码\n真正进化到自主完成项目开发\n学完这节课\n你不仅能够掌握deep sk v4加codex的使用方法\n还可以获得一套完整的A证项目开发思路\n以及一个可以真实运行的AI数据分析系统案例\n课程配套准备了完整项目代码\n开发流程和关键提示词\n如果你想亲自跑通这套AI编程工作流\n评论区\n扣课件领取资料\n后续开发过程中可以直接对照学习\n不需要再从零摸索",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19VuJ6qEmp",
+  "published_at": "1786016858",
+  "fetched_at": "2026-08-07T15:17:24+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 + Codex 实战知识图谱\n\n## 1. 整体概览\n**关键时间戳**：  \n- 仅需0.24元 → [BV19VuJ6qEmp P1 00:00]  \n- DeepSeek V4 接入 Codex → [BV19VuJ6qEmp P1 00:06]  \n- 兼容 response API → [BV19VuJ6qEmp P1 00:20]  \n- 支持 3 个真实任务 → [BV19VuJ6qEmp P1 00:01]\n\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4\"] -->|接入| COD[\"Codex\"]\n    COD -->|提供| API[\"Response API\"]\n    API -->|赋能| AGENT[\"Agent 编程能力\"]\n    DSV4 -->|改变| WORK[\"AI 编程工作方式\"]\n    COD -->|降低| COST[\"成本 0.24元\"]\n    DSV4 -->|支持| TASKS[\"3 个真实开发任务\"]\n    AGENT -->|实现| AUTOPROJ[\"自主项目开发\"]\n```\n\n## 2. 三个实战任务流程\n**关键时间戳**：  \n- 任务1 完整配置 → [BV19VuJ6qEmp P1 00:36]  \n- 任务2 自然语言驱动 → [BV19VuJ6qEmp P1 00:42]  \n- 任务3 搭建 AI 数据分析系统 → [BV19VuJ6qEmp P1 00:49]\n\n```mermaid\nflowchart LR\n    subgraph Task1[\"任务 1：配置 & Agent 能力\"]\n        T1_CONF[\"完整配置 DeepSeek V4 + Codex\"]\n        T1_AGENT[\"获得 Agent 编程能力\"]\n        T1_CONF --> T1_AGENT\n    end\n\n    subgraph Task2[\"任务 2：自然语言驱动开发\"]\n        T2_NL[\"自然语言描述需求\"]\n        T2_DRIVE[\"Codex 驱动 DeepSeek V4\"]\n        T2_DESIGN[\"功能设计\"]\n        T2_GEN[\"代码生成\"]\n        T2_OPT[\"持续优化\"]\n        T2_NL --> T2_DRIVE --> T2_DESIGN --> T2_GEN --> T2_OPT\n    end\n\n    subgraph Task3[\"任务 3：AI 数据分析系统\"]\n        T3_BUILD[\"从零搭建系统\"]\n        T3_DATA[\"接入真实数据\"]\n        T3_PROC[\"数据处理\"]\n        T3_ANAL[\"智能分析\"]\n        T3_CHART[\"图表生成\"]\n        T3_REPORT[\"自动输出图文报告\"]\n        T3_BUILD --> T3_DATA --> T3_PROC --> T3_ANAL --> T3_CHART --> T3_REPORT\n    end\n\n    Task1 --> Task2 --> Task3\n```\n\n## 3. Response API 在 Agent 开发中的角色\n**关键时间戳**：  \n- 兼容 response API → [BV19VuJ6qEmp P1 00:20]  \n- 解析为何能够接入 → [BV19VuJ6qEmp P1 01:05]  \n- Agent 开发角色 → [BV19VuJ6qEmp P1 01:10]\n\n```mermaid\nflowchart TD\n    API[\"Response API\"] -->|简化| AGENT_DEV[\"Agent 开发\"]\n    AGENT_DEV -->|无需| BIG_MODEL[\"强大模型能力\"]\n    AGENT_DEV -->|无需| COMPLEX_ENV[\"复杂开发环境\"]\n    AGENT_DEV -->|无需| MANUAL_DEBUG[\"大量人工调试\"]\n    API -->|实现| AUTONOMOUS[\"AI 从辅助写代码 到自主完成项目\"]\n```\n\n## 4. 学习路径与收获\n**关键时间戳**：  \n- 学完本节课的收获 → [BV19VuJ6qEmp P1 01:17]  \n- 配套项目代码与提示词 → [BV19VuJ6qEmp P1 01:27]  \n- 自主跑通工作流 → [BV19VuJ6qEmp P1 01:30]\n\n```mermaid\nflowchart LR\n    START[\"学习 DeepSeek V4 + Codex 使用方法\"] --> STEP1[\"掌握完整配置流程\"]\n    STEP1 --> STEP2[\"理解自然语言驱动开发链路\"]\n    STEP2 --> STEP3[\"构建 AI 数据分析系统案例\"]\n    STEP3 --> OUTCOME[\"获得项目开发思路 & 可运行系统\"]\n    OUTCOME --> RES[\"获取项目代码、关键提示词\"]\n    RES --> RUN[\"自行跑通 AI 编程工作流\"]\n```",
+      "diagrams": [
+        {
+          "title": "1. 整体概览",
+          "code": "flowchart TD\n    DSV4[\"DeepSeek V4\"] -->|接入| COD[\"Codex\"]\n    COD -->|提供| API[\"Response API\"]\n    API -->|赋能| AGENT[\"Agent 编程能力\"]\n    DSV4 -->|改变| WORK[\"AI 编程工作方式\"]\n    COD -->|降低| COST[\"成本 0.24元\"]\n    DSV4 -->|支持| TASKS[\"3 个真实开发任务\"]\n    AGENT -->|实现| AUTOPROJ[\"自主项目开发\"]"
+        },
+        {
+          "title": "2. 三个实战任务流程",
+          "code": "flowchart LR\n    subgraph Task1[\"任务 1：配置 & Agent 能力\"]\n        T1_CONF[\"完整配置 DeepSeek V4 + Codex\"]\n        T1_AGENT[\"获得 Agent 编程能力\"]\n        T1_CONF --> T1_AGENT\n    end\n\n    subgraph Task2[\"任务 2：自然语言驱动开发\"]\n        T2_NL[\"自然语言描述需求\"]\n        T2_DRIVE[\"Codex 驱动 DeepSeek V4\"]\n        T2_DESIGN[\"功能设计\"]\n        T2_GEN[\"代码生成\"]\n        T2_OPT[\"持续优化\"]\n        T2_NL --> T2_DRIVE --> T2_DESIGN --> T2_GEN --> T2_OPT\n    end\n\n    subgraph Task3[\"任务 3：AI 数据分析系统\"]\n        T3_BUILD[\"从零搭建系统\"]\n        T3_DATA[\"接入真实数据\"]\n        T3_PROC[\"数据处理\"]\n        T3_ANAL[\"智能分析\"]\n        T3_CHART[\"图表生成\"]\n        T3_REPORT[\"自动输出图文报告\"]\n        T3_BUILD --> T3_DATA --> T3_PROC --> T3_ANAL --> T3_CHART --> T3_REPORT\n    end\n\n    Task1 --> Task2 --> Task3"
+        },
+        {
+          "title": "3. Response API 在 Agent 开发中的角色",
+          "code": "flowchart TD\n    API[\"Response API\"] -->|简化| AGENT_DEV[\"Agent 开发\"]\n    AGENT_DEV -->|无需| BIG_MODEL[\"强大模型能力\"]\n    AGENT_DEV -->|无需| COMPLEX_ENV[\"复杂开发环境\"]\n    AGENT_DEV -->|无需| MANUAL_DEBUG[\"大量人工调试\"]\n    API -->|实现| AUTONOMOUS[\"AI 从辅助写代码 到自主完成项目\"]"
+        },
+        {
+          "title": "4. 学习路径与收获",
+          "code": "flowchart LR\n    START[\"学习 DeepSeek V4 + Codex 使用方法\"] --> STEP1[\"掌握完整配置流程\"]\n    STEP1 --> STEP2[\"理解自然语言驱动开发链路\"]\n    STEP2 --> STEP3[\"构建 AI 数据分析系统案例\"]\n    STEP3 --> OUTCOME[\"获得项目开发思路 & 可运行系统\"]\n    OUTCOME --> RES[\"获取项目代码、关键提示词\"]\n    RES --> RUN[\"自行跑通 AI 编程工作流\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T15:17:38+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 + Codex 实战知识图谱\n\n## 1. 整体概览\n**关键时间戳**：  \n- 仅需0.24元 → [BV19VuJ6qEmp P1 00:00]  \n- DeepSeek V4 接入 Codex → [BV19VuJ6qEmp P1 00:06]  \n- 兼容 response API → [BV19VuJ6qEmp P1 00:20]  \n- 支持 3 个真实任务 → [BV19VuJ6qEmp P1 00:01]\n\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4\"] -->|接入| COD[\"Codex\"]\n    COD -->|提供| API[\"Response API\"]\n    API -->|赋能| AGENT[\"Agent 编程能力\"]\n    DSV4 -->|改变| WORK[\"AI 编程工作方式\"]\n    COD -->|降低| COST[\"成本 0.24元\"]\n    DSV4 -->|支持| TASKS[\"3 个真实开发任务\"]\n    AGENT -->|实现| AUTOPROJ[\"自主项目开发\"]\n```\n\n## 2. 三个实战任务流程\n**关键时间戳**：  \n- 任务1 完整配置 → [BV19VuJ6qEmp P1 00:36]  \n- 任务2 自然语言驱动 → [BV19VuJ6qEmp P1 00:42]  \n- 任务3 搭建 AI 数据分析系统 → [BV19VuJ6qEmp P1 00:49]\n\n```mermaid\nflowchart LR\n    subgraph Task1[\"任务 1：配置 & Agent 能力\"]\n        T1_CONF[\"完整配置 DeepSeek V4 + Codex\"]\n        T1_AGENT[\"获得 Agent 编程能力\"]\n        T1_CONF --> T1_AGENT\n    end\n\n    subgraph Task2[\"任务 2：自然语言驱动开发\"]\n        T2_NL[\"自然语言描述需求\"]\n        T2_DRIVE[\"Codex 驱动 DeepSeek V4\"]\n        T2_DESIGN[\"功能设计\"]\n        T2_GEN[\"代码生成\"]\n        T2_OPT[\"持续优化\"]\n        T2_NL --> T2_DRIVE --> T2_DESIGN --> T2_GEN --> T2_OPT\n    end\n\n    subgraph Task3[\"任务 3：AI 数据分析系统\"]\n        T3_BUILD[\"从零搭建系统\"]\n        T3_DATA[\"接入真实数据\"]\n        T3_PROC[\"数据处理\"]\n        T3_ANAL[\"智能分析\"]\n        T3_CHART[\"图表生成\"]\n        T3_REPORT[\"自动输出图文报告\"]\n        T3_BUILD --> T3_DATA --> T3_PROC --> T3_ANAL --> T3_CHART --> T3_REPORT\n    end\n\n    Task1 --> Task2 --> Task3\n```\n\n## 3. Response API 在 Agent 开发中的角色\n**关键时间戳**：  \n- 兼容 response API → [BV19VuJ6qEmp P1 00:20]  \n- 解析为何能够接入 → [BV19VuJ6qEmp P1 01:05]  \n- Agent 开发角色 → [BV19VuJ6qEmp P1 01:10]\n\n```mermaid\nflowchart TD\n    API[\"Response API\"] -->|简化| AGENT_DEV[\"Agent 开发\"]\n    AGENT_DEV -->|无需| BIG_MODEL[\"强大模型能力\"]\n    AGENT_DEV -->|无需| COMPLEX_ENV[\"复杂开发环境\"]\n    AGENT_DEV -->|无需| MANUAL_DEBUG[\"大量人工调试\"]\n    API -->|实现| AUTONOMOUS[\"AI 从辅助写代码 到自主完成项目\"]\n```\n\n## 4. 学习路径与收获\n**关键时间戳**：  \n- 学完本节课的收获 → [BV19VuJ6qEmp P1 01:17]  \n- 配套项目代码与提示词 → [BV19VuJ6qEmp P1 01:27]  \n- 自主跑通工作流 → [BV19VuJ6qEmp P1 01:30]\n\n```mermaid\nflowchart LR\n    START[\"学习 DeepSeek V4 + Codex 使用方法\"] --> STEP1[\"掌握完整配置流程\"]\n    STEP1 --> STEP2[\"理解自然语言驱动开发链路\"]\n    STEP2 --> STEP3[\"构建 AI 数据分析系统案例\"]\n    STEP3 --> OUTCOME[\"获得项目开发思路 & 可运行系统\"]\n    OUTCOME --> RES[\"获取项目代码、关键提示词\"]\n    RES --> RUN[\"自行跑通 AI 编程工作流\"]\n```",
+  "diagrams": [
+    {
+      "title": "1. 整体概览",
+      "code": "flowchart TD\n    DSV4[\"DeepSeek V4\"] -->|接入| COD[\"Codex\"]\n    COD -->|提供| API[\"Response API\"]\n    API -->|赋能| AGENT[\"Agent 编程能力\"]\n    DSV4 -->|改变| WORK[\"AI 编程工作方式\"]\n    COD -->|降低| COST[\"成本 0.24元\"]\n    DSV4 -->|支持| TASKS[\"3 个真实开发任务\"]\n    AGENT -->|实现| AUTOPROJ[\"自主项目开发\"]"
+    },
+    {
+      "title": "2. 三个实战任务流程",
+      "code": "flowchart LR\n    subgraph Task1[\"任务 1：配置 & Agent 能力\"]\n        T1_CONF[\"完整配置 DeepSeek V4 + Codex\"]\n        T1_AGENT[\"获得 Agent 编程能力\"]\n        T1_CONF --> T1_AGENT\n    end\n\n    subgraph Task2[\"任务 2：自然语言驱动开发\"]\n        T2_NL[\"自然语言描述需求\"]\n        T2_DRIVE[\"Codex 驱动 DeepSeek V4\"]\n        T2_DESIGN[\"功能设计\"]\n        T2_GEN[\"代码生成\"]\n        T2_OPT[\"持续优化\"]\n        T2_NL --> T2_DRIVE --> T2_DESIGN --> T2_GEN --> T2_OPT\n    end\n\n    subgraph Task3[\"任务 3：AI 数据分析系统\"]\n        T3_BUILD[\"从零搭建系统\"]\n        T3_DATA[\"接入真实数据\"]\n        T3_PROC[\"数据处理\"]\n        T3_ANAL[\"智能分析\"]\n        T3_CHART[\"图表生成\"]\n        T3_REPORT[\"自动输出图文报告\"]\n        T3_BUILD --> T3_DATA --> T3_PROC --> T3_ANAL --> T3_CHART --> T3_REPORT\n    end\n\n    Task1 --> Task2 --> Task3"
+    },
+    {
+      "title": "3. Response API 在 Agent 开发中的角色",
+      "code": "flowchart TD\n    API[\"Response API\"] -->|简化| AGENT_DEV[\"Agent 开发\"]\n    AGENT_DEV -->|无需| BIG_MODEL[\"强大模型能力\"]\n    AGENT_DEV -->|无需| COMPLEX_ENV[\"复杂开发环境\"]\n    AGENT_DEV -->|无需| MANUAL_DEBUG[\"大量人工调试\"]\n    API -->|实现| AUTONOMOUS[\"AI 从辅助写代码 到自主完成项目\"]"
+    },
+    {
+      "title": "4. 学习路径与收获",
+      "code": "flowchart LR\n    START[\"学习 DeepSeek V4 + Codex 使用方法\"] --> STEP1[\"掌握完整配置流程\"]\n    STEP1 --> STEP2[\"理解自然语言驱动开发链路\"]\n    STEP2 --> STEP3[\"构建 AI 数据分析系统案例\"]\n    STEP3 --> OUTCOME[\"获得项目开发思路 & 可运行系统\"]\n    OUTCOME --> RES[\"获取项目代码、关键提示词\"]\n    RES --> RUN[\"自行跑通 AI 编程工作流\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:17:38+00:00"
+}

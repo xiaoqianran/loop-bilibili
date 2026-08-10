@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1rm9kBoEkH",
+  "title": "DeepSeek V4 开发Godot能行吗？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 529,
+  "text": "峰哥牛逼\n一边把绳子切断\n箱子掉在地上\n把质量调大\n箱子触底直接炸开了\n绳子也是非常Q弹了\n再看看摩擦力和弹性\n像素快直接停不下来了\n这是我用DEPSV4fresh做的一个格斗游戏demo\n这么一个demo总共花了多少钱呢\n七毛一来简单复盘一下整个开发的过程\n这里在cod code中全程使用了super powers插件\n首先进行了一番苏格拉底式提问\n然后他就写文档\n最后开启了六个supper agent进行代码的实现\n第一版是有问题的\n运行场景\n箱子直接就飞走了\n反馈了一下情况\n这时superpowers的debug工作就开始了\n最终的版本就做好了吗\n问题不大\n问题不大\n现在总算是好了\n整个过程中\ncod code加deep sick这套组合对于各种工具\nskill插件以及super agent的创建上都没有太大的问题\n这也符合官方发文说的\n对各种A准产品进行了适配和优化\n目前deep sick没有推出订阅服务\n对于业余做开发的朋友来说\n用这套按量付费的模式其实还是划得来的\n不愧是把普惠写在了标题上\n这也是我一开始担心余额不够\n用flash模型去做这个测试\n一样还是低估了呃\n峰哥的实力好吧\n峰哥牛逼牛逼\n那我们还是下个视频见\nSee you",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1rm9kBoEkH",
+  "published_at": "1777600800",
+  "fetched_at": "2026-08-06T18:42:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 与 Godot 开发知识图谱\n\n## 开发总览流程\n```mermaid\nflowchart TD\n    A[\"需求/概念\"] --> B[\"使用 DEPSV4fresh + Godot\"]\n    B --> C[\"引入 super powers 插件\"]\n    C --> D[\"创建 6 个 super agent\"]\n    D --> E[\"编写代码 (cod code)\"]\n    E --> F[\"调试 (superpowers debug)\"]\n    F --> G[\"测试场景\"]\n    G --> H[\"发现问题 (箱子飞走)\"]\n    H --> I[\"修复问题\"]\n    I --> J[\"优化 & 适配\"]\n    J --> K[\"完成格斗游戏 Demo\"]\n```\n\n## 关键工具与概念\n```mermaid\nflowchart LR\n    A1[\"DEPSV4fresh (DeepSeek V4)\"] --> B1[\"cod code\"]\n    B1 --> C1[\"super powers 插件\"]\n    C1 --> D1[\"super agent\"]\n    D1 --> E1[\"skill 插件\"]\n    E1 --> F1[\"无订阅服务\"]\n    F1 --> G1[\"按量付费模式\"]\n    G1 --> H1[\"官方适配 & 优化\"]\n```\n\n## 成本与适用人群\n```mermaid\nflowchart TD\n    A2[\"按量付费模式\"] --> B2[\"适合业余开发者\"]\n    B2 --> C2[\"成本低估风险\"]\n    C2 --> D2[\"余额不足担忧\"]\n    D2 --> E2[\"普惠定位（标题）\"]\n    E2 --> F2[\"最终决定：继续使用\"]\n```",
+      "diagrams": [
+        {
+          "title": "开发总览流程",
+          "code": "flowchart TD\n    A[\"需求/概念\"] --> B[\"使用 DEPSV4fresh + Godot\"]\n    B --> C[\"引入 super powers 插件\"]\n    C --> D[\"创建 6 个 super agent\"]\n    D --> E[\"编写代码 (cod code)\"]\n    E --> F[\"调试 (superpowers debug)\"]\n    F --> G[\"测试场景\"]\n    G --> H[\"发现问题 (箱子飞走)\"]\n    H --> I[\"修复问题\"]\n    I --> J[\"优化 & 适配\"]\n    J --> K[\"完成格斗游戏 Demo\"]"
+        },
+        {
+          "title": "关键工具与概念",
+          "code": "flowchart LR\n    A1[\"DEPSV4fresh (DeepSeek V4)\"] --> B1[\"cod code\"]\n    B1 --> C1[\"super powers 插件\"]\n    C1 --> D1[\"super agent\"]\n    D1 --> E1[\"skill 插件\"]\n    E1 --> F1[\"无订阅服务\"]\n    F1 --> G1[\"按量付费模式\"]\n    G1 --> H1[\"官方适配 & 优化\"]"
+        },
+        {
+          "title": "成本与适用人群",
+          "code": "flowchart TD\n    A2[\"按量付费模式\"] --> B2[\"适合业余开发者\"]\n    B2 --> C2[\"成本低估风险\"]\n    C2 --> D2[\"余额不足担忧\"]\n    D2 --> E2[\"普惠定位（标题）\"]\n    E2 --> F2[\"最终决定：继续使用\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T18:42:53+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 与 Godot 开发知识图谱\n\n## 开发总览流程\n```mermaid\nflowchart TD\n    A[\"需求/概念\"] --> B[\"使用 DEPSV4fresh + Godot\"]\n    B --> C[\"引入 super powers 插件\"]\n    C --> D[\"创建 6 个 super agent\"]\n    D --> E[\"编写代码 (cod code)\"]\n    E --> F[\"调试 (superpowers debug)\"]\n    F --> G[\"测试场景\"]\n    G --> H[\"发现问题 (箱子飞走)\"]\n    H --> I[\"修复问题\"]\n    I --> J[\"优化 & 适配\"]\n    J --> K[\"完成格斗游戏 Demo\"]\n```\n\n## 关键工具与概念\n```mermaid\nflowchart LR\n    A1[\"DEPSV4fresh (DeepSeek V4)\"] --> B1[\"cod code\"]\n    B1 --> C1[\"super powers 插件\"]\n    C1 --> D1[\"super agent\"]\n    D1 --> E1[\"skill 插件\"]\n    E1 --> F1[\"无订阅服务\"]\n    F1 --> G1[\"按量付费模式\"]\n    G1 --> H1[\"官方适配 & 优化\"]\n```\n\n## 成本与适用人群\n```mermaid\nflowchart TD\n    A2[\"按量付费模式\"] --> B2[\"适合业余开发者\"]\n    B2 --> C2[\"成本低估风险\"]\n    C2 --> D2[\"余额不足担忧\"]\n    D2 --> E2[\"普惠定位（标题）\"]\n    E2 --> F2[\"最终决定：继续使用\"]\n```",
+  "diagrams": [
+    {
+      "title": "开发总览流程",
+      "code": "flowchart TD\n    A[\"需求/概念\"] --> B[\"使用 DEPSV4fresh + Godot\"]\n    B --> C[\"引入 super powers 插件\"]\n    C --> D[\"创建 6 个 super agent\"]\n    D --> E[\"编写代码 (cod code)\"]\n    E --> F[\"调试 (superpowers debug)\"]\n    F --> G[\"测试场景\"]\n    G --> H[\"发现问题 (箱子飞走)\"]\n    H --> I[\"修复问题\"]\n    I --> J[\"优化 & 适配\"]\n    J --> K[\"完成格斗游戏 Demo\"]"
+    },
+    {
+      "title": "关键工具与概念",
+      "code": "flowchart LR\n    A1[\"DEPSV4fresh (DeepSeek V4)\"] --> B1[\"cod code\"]\n    B1 --> C1[\"super powers 插件\"]\n    C1 --> D1[\"super agent\"]\n    D1 --> E1[\"skill 插件\"]\n    E1 --> F1[\"无订阅服务\"]\n    F1 --> G1[\"按量付费模式\"]\n    G1 --> H1[\"官方适配 & 优化\"]"
+    },
+    {
+      "title": "成本与适用人群",
+      "code": "flowchart TD\n    A2[\"按量付费模式\"] --> B2[\"适合业余开发者\"]\n    B2 --> C2[\"成本低估风险\"]\n    C2 --> D2[\"余额不足担忧\"]\n    D2 --> E2[\"普惠定位（标题）\"]\n    E2 --> F2[\"最终决定：继续使用\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:42:53+00:00"
+}

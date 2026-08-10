@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1iDub6PEhB",
+  "title": "这才是真的破解wifi教程！利用Kali破解WiFi教程！零基础入门到入狱教学！看完这套就够了/网络安全2026最新入门教程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1055,
+  "text": "刚搬进出租屋\n一时嘴硬\n拒绝了房东加50块包WIFI的提议\n直接说我可以搞定\n结果打开手机一看\n附近全是加密WIFI\n这下直接傻眼了\n那我没网咋活呀\n别急\n一天一个晚安小知识\n今天要学的是咖喱破解WIFI密码\n郑重声明\n本视频仅为网络安全技术科普\n所有操作均在合法测试环境完成\n无任何实际攻击行为\n请严守法律底线\n切勿将技术用于非法途径\n教程开始之前\nup已经把相关的网安基础学习路线\n网安学习必备工具\n电子学习书籍\n高清教学视频\n晚安面试题都已经准备好\n放在pl区了\n给个三连全部打包带走喔\n赶快冲呀\n各位同学大家好\n我是怡景网安学院的瑞恩\n本次呢给大家分享的一个内容\n是利用卡里来破解WIFI密码啊\n那么我们本次分享\n到时候这个笔记\n大家可以在评论区或者呢私信up主\n来进行一个获取啊\n那么我们这边利用咖喱来进行\n破解WIFI密码的一个过程呢\n首先大家需要去准备四个东西啊\n准备工具\n那么在这里呢我们首先第一个啊\n你需要有一个电脑啊\n笔记本电脑啊\n或者是台式电脑\n那么这个呢就大家需要去安装一个VMM软件好\n那么这是第一个\n那么第二个呢就是需要有一个USB的无线网卡啊\n需要有一个USB的无线网卡\n那么这个可以给大家看一下啊\n我这边用到的一个就是这样的一个东西啊\n这个大家可以直接去某宝或者某东\n上面去买就可以了啊\n挺便宜的\n一个二三十块钱就能够买得到啊\n这个大家可以自己去看一下\nOK啊这是第二个东西啊\n那么第三个呢\n就是我们需要的一个卡里操作系统啊\nKILINUX的一个操作系统啊\n然后第四个就是一个破解字典\n或者叫做密码字典啊\n这个是我们需要准备到的东西啊\n那么我这边呢是已经有了\n首先这是我们的一个凯里操作系统啊\n好那么这边呢打开看里操作系统之后\n我们需要把我们的一个无线网卡\n进行一个接入好\n然后我这边呢来介入一下啊\n那么他这边呢我们插到这个USB接口上\n它会弹出一个提示啊\n让我们选择是连接到主机还是虚拟机\n这边选择连接到卡里LINUX就可以了\n好那么连接之后我们首先打开一个终端\n这边字体给大家放大一些啊\n打开一个终端\n然后我们输入一个叫做ARI\n啊这边先把这个关掉啊\nARI来查看我们的一个网网卡信息啊\n这边首先这边可以看到啊\n有一个WLAN0这样的一个无线网卡\n那么这个就是我所使用到的一个无线网卡\n或者呢大家也可以使用if configure\nif configure啊\n它下面呢也会有一个WLAN0这样的一个网卡\n那么这个就说明我们的一个网卡连接成功啊\n那么这边我给大家写一下这个笔记",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1iDub6PEhB",
+  "published_at": "1786088852",
+  "fetched_at": "2026-08-10T08:55:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# WiFi 破解知识图谱\n\n## 图1：破解WiFi所需准备\n[BV1iDub6PEhB P1 01:11] 电脑需求  \n[BV1iDub6PEhB P1 01:15] VMM 软件  \n[BV1iDub6PEhB P1 01:21] USB 无线网卡  \n[BV1iDub6PEhB P1 01:49] 卡里操作系统（识别存疑）  \n[BV1iDub6PEhB P1 01:59] 密码字典  \n\n```mermaid\nflowchart TD\n    C1[\"电脑\"] --> V1[\"VMM 软件\"]\n    C1 --> U1[\"USB 无线网卡\"]\n    U1 --> K1[\"卡里操作系统（识别存疑）\"]\n    K1 --> D1[\"密码字典\"]\n```\n\n## 图2：破解流程概览\n[BV1iDub6PEhB P1 02:21] 插入 USB 无线网卡  \n[BV1iDub6PEhB P1 02:25] 选择连接到卡里LINUX  \n[BV1iDub6PEhB P1 02:31] 打开终端  \n[BV1iDub6PEhB P1 02:41] 运行 ARI（识别存疑）查看网卡信息  \n[BV1iDub6PEhB P1 02:54] 确认 WLAN0 接口  \n\n```mermaid\nflowchart TD\n    S1[\"插入 USB 无线网卡\"] --> S2[\"选择连接到卡里LINUX\"]\n    S2 --> S3[\"打开终端\"]\n    S3 --> S4[\"运行 ARI（识别存疑）查看网卡信息\"]\n    S4 --> S5[\"确认 WLAN0 接口\"]\n```\n\n## 图3：伦理与法律声明\n[BV1iDub6PEhB P1 00:14] 科普目的声明  \n[BV1iDub6PEhB P1 00:16] 合法测试环境  \n[BV1iDub6PEhB P1 00:18] 无实际攻击行为  \n[BV1iDub6PEhB P1 00:19] 严守法律底线  \n[BV1iDub6PEhB P1 00:20] 禁止非法用途  \n\n```mermaid\nflowchart TD\n    E1[\"科普目的声明\"] --> E2[\"合法测试环境\"]\n    E2 --> E3[\"无实际攻击行为\"]\n    E1 --> E4[\"严守法律底线\"]\n    E4 --> E5[\"禁止非法用途\"]\n```",
+      "diagrams": [
+        {
+          "title": "图1：破解WiFi所需准备",
+          "code": "flowchart TD\n    C1[\"电脑\"] --> V1[\"VMM 软件\"]\n    C1 --> U1[\"USB 无线网卡\"]\n    U1 --> K1[\"卡里操作系统（识别存疑）\"]\n    K1 --> D1[\"密码字典\"]"
+        },
+        {
+          "title": "图2：破解流程概览",
+          "code": "flowchart TD\n    S1[\"插入 USB 无线网卡\"] --> S2[\"选择连接到卡里LINUX\"]\n    S2 --> S3[\"打开终端\"]\n    S3 --> S4[\"运行 ARI（识别存疑）查看网卡信息\"]\n    S4 --> S5[\"确认 WLAN0 接口\"]"
+        },
+        {
+          "title": "图3：伦理与法律声明",
+          "code": "flowchart TD\n    E1[\"科普目的声明\"] --> E2[\"合法测试环境\"]\n    E2 --> E3[\"无实际攻击行为\"]\n    E1 --> E4[\"严守法律底线\"]\n    E4 --> E5[\"禁止非法用途\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T08:55:27+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# WiFi 破解知识图谱\n\n## 图1：破解WiFi所需准备\n[BV1iDub6PEhB P1 01:11] 电脑需求  \n[BV1iDub6PEhB P1 01:15] VMM 软件  \n[BV1iDub6PEhB P1 01:21] USB 无线网卡  \n[BV1iDub6PEhB P1 01:49] 卡里操作系统（识别存疑）  \n[BV1iDub6PEhB P1 01:59] 密码字典  \n\n```mermaid\nflowchart TD\n    C1[\"电脑\"] --> V1[\"VMM 软件\"]\n    C1 --> U1[\"USB 无线网卡\"]\n    U1 --> K1[\"卡里操作系统（识别存疑）\"]\n    K1 --> D1[\"密码字典\"]\n```\n\n## 图2：破解流程概览\n[BV1iDub6PEhB P1 02:21] 插入 USB 无线网卡  \n[BV1iDub6PEhB P1 02:25] 选择连接到卡里LINUX  \n[BV1iDub6PEhB P1 02:31] 打开终端  \n[BV1iDub6PEhB P1 02:41] 运行 ARI（识别存疑）查看网卡信息  \n[BV1iDub6PEhB P1 02:54] 确认 WLAN0 接口  \n\n```mermaid\nflowchart TD\n    S1[\"插入 USB 无线网卡\"] --> S2[\"选择连接到卡里LINUX\"]\n    S2 --> S3[\"打开终端\"]\n    S3 --> S4[\"运行 ARI（识别存疑）查看网卡信息\"]\n    S4 --> S5[\"确认 WLAN0 接口\"]\n```\n\n## 图3：伦理与法律声明\n[BV1iDub6PEhB P1 00:14] 科普目的声明  \n[BV1iDub6PEhB P1 00:16] 合法测试环境  \n[BV1iDub6PEhB P1 00:18] 无实际攻击行为  \n[BV1iDub6PEhB P1 00:19] 严守法律底线  \n[BV1iDub6PEhB P1 00:20] 禁止非法用途  \n\n```mermaid\nflowchart TD\n    E1[\"科普目的声明\"] --> E2[\"合法测试环境\"]\n    E2 --> E3[\"无实际攻击行为\"]\n    E1 --> E4[\"严守法律底线\"]\n    E4 --> E5[\"禁止非法用途\"]\n```",
+  "diagrams": [
+    {
+      "title": "图1：破解WiFi所需准备",
+      "code": "flowchart TD\n    C1[\"电脑\"] --> V1[\"VMM 软件\"]\n    C1 --> U1[\"USB 无线网卡\"]\n    U1 --> K1[\"卡里操作系统（识别存疑）\"]\n    K1 --> D1[\"密码字典\"]"
+    },
+    {
+      "title": "图2：破解流程概览",
+      "code": "flowchart TD\n    S1[\"插入 USB 无线网卡\"] --> S2[\"选择连接到卡里LINUX\"]\n    S2 --> S3[\"打开终端\"]\n    S3 --> S4[\"运行 ARI（识别存疑）查看网卡信息\"]\n    S4 --> S5[\"确认 WLAN0 接口\"]"
+    },
+    {
+      "title": "图3：伦理与法律声明",
+      "code": "flowchart TD\n    E1[\"科普目的声明\"] --> E2[\"合法测试环境\"]\n    E2 --> E3[\"无实际攻击行为\"]\n    E1 --> E4[\"严守法律底线\"]\n    E4 --> E5[\"禁止非法用途\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:55:27+00:00"
+}

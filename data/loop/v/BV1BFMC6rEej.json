@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1BFMC6rEej",
+  "title": "基于deepseekV4Flash+codex参数化全自动抓取分析反推学习系统【B站AI创造公开赛】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 31,
+  "text": "Hello\n我是菲尔\n上一次给你们分享了护手的秘籍之后呢\n很多",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1BFMC6rEej",
+  "published_at": "1785916045",
+  "fetched_at": "2026-08-07T12:20:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 基于deepseekV4Flash+codex参数化全自动抓取分析反推学习系统\n\n## 总览\n```mermaid\nflowchart TD\n    G[\"Greeting\"]\n    S[\"Speaker: 菲尔\"]\n    P[\"Reference: 上一次分享护手的秘籍\"]\n    A[\"Audience reaction: 很多\"]\n    G --> S\n    S --> P\n    P --> A\n```\n\n## 流程\n```mermaid\nflowchart LR\n    start[\"开始: Hello\"] --> speaker[\"我是菲尔\"]\n    speaker --> reference[\"上一次给你们分享了护手的秘籍之后呢\"]\n    reference --> reaction[\"很多\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    G[\"Greeting\"]\n    S[\"Speaker: 菲尔\"]\n    P[\"Reference: 上一次分享护手的秘籍\"]\n    A[\"Audience reaction: 很多\"]\n    G --> S\n    S --> P\n    P --> A"
+        },
+        {
+          "title": "流程",
+          "code": "flowchart LR\n    start[\"开始: Hello\"] --> speaker[\"我是菲尔\"]\n    speaker --> reference[\"上一次给你们分享了护手的秘籍之后呢\"]\n    reference --> reaction[\"很多\"]"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-07T12:20:55+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 基于deepseekV4Flash+codex参数化全自动抓取分析反推学习系统\n\n## 总览\n```mermaid\nflowchart TD\n    G[\"Greeting\"]\n    S[\"Speaker: 菲尔\"]\n    P[\"Reference: 上一次分享护手的秘籍\"]\n    A[\"Audience reaction: 很多\"]\n    G --> S\n    S --> P\n    P --> A\n```\n\n## 流程\n```mermaid\nflowchart LR\n    start[\"开始: Hello\"] --> speaker[\"我是菲尔\"]\n    speaker --> reference[\"上一次给你们分享了护手的秘籍之后呢\"]\n    reference --> reaction[\"很多\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    G[\"Greeting\"]\n    S[\"Speaker: 菲尔\"]\n    P[\"Reference: 上一次分享护手的秘籍\"]\n    A[\"Audience reaction: 很多\"]\n    G --> S\n    S --> P\n    P --> A"
+    },
+    {
+      "title": "流程",
+      "code": "flowchart LR\n    start[\"开始: Hello\"] --> speaker[\"我是菲尔\"]\n    speaker --> reference[\"上一次给你们分享了护手的秘籍之后呢\"]\n    reference --> reaction[\"很多\"]"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T12:20:55+00:00"
+}

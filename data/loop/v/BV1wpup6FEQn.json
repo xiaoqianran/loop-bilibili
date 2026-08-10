@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1wpup6FEQn",
+  "title": "别死背引擎参数！这才是Godot正确的学习方式！真正高效的游戏引擎学习：可视化交互实验教学",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 437,
+  "text": "不少新手入门游戏引擎上来\n第一件事就是死啃官方文档\n硬背一堆参数\n最近我发现一个神仙项目\nGo out controls and ui guide\n这个项目没有做任何完整demo游戏\n而是把勾搭整套核心UI控件系统\n直接做成了交互式实操实验室\n随便改control节点调布局参数\n界面效果实时刷新\n所见即所得\n它最核心的价值根本不是罗列知识点\n而是颠覆了传统的技术学习方式\n以前学习被动看文字\n别人告诉你每个参数干什么\n自己吃透系统底层的运行原理\n从工程架构层面拆解\n它就是一套标准的数据驱动可视化教学系统\n文字教程负责讲清概念\n交互面板\n模拟引擎\n真实行为\n实时渲染\n同步输出\n视觉反馈\n这套架构思路通用性极强\n绝不只适配GODOTUI\n不管是游戏引擎\n底层计算机专业课各类算法\n还是现在火热的AI大模型\n全都能做成这种交互式实验教学工具\n这也是我非常看好未来技术教育工具\n值得深挖的赛道\n想解锁更多实用干货\n游戏工程高效学习方法\n别忘了点赞关注\n持续吃透游戏开发核心逻辑",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wpup6FEQn",
+  "published_at": "1786022235",
+  "fetched_at": "2026-08-08T12:37:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 可视化交互实验教学系统概览\n\n## 学习方式对比\n```mermaid\nflowchart LR\n    TL[\"传统学习方式\"] --> PR[\"被动阅读文字\"]\n    TL --> PM[\"死背参数\"]\n    TL --> LF[\"反馈有限\"]\n    IL[\"交互式实验室\"] --> RF[\"实时视觉反馈\"]\n    IL --> PA[\"随意调节参数\"]\n    IL --> IR[\"所见即所得\"]\n    IL --> KD[\"深入系统原理\"]\n```\n\n## 可视化交互实验教学系统结构\n```mermaid\nflowchart LR\n    DS[\"数据驱动可视化教学系统\"] --> TT[\"文字教程（概念）\"]\n    DS --> IP[\"交互面板（模拟引擎）\"]\n    IP --> RB[\"真实行为\"]\n    IP --> RTR[\"实时渲染\"]\n    RB --> SO[\"同步输出\"]\n    RTR --> VF[\"视觉反馈\"]\n    SO --> VF\n    VF --> WYS[\"所见即所得\"]\n    CV[\"颠覆传统学习方式\"] --> DS\n```\n\n## 适用范围与未来赛道\n```mermaid\nflowchart LR\n    GA[\"通用适用性\"] --> GU[\"Godot UI\"]\n    GA --> GE[\"其他游戏引擎\"]\n    GA --> AL[\"底层算法课程\"]\n    GA --> AI[\"AI 大模型\"]\n    GU --> IT[\"交互式实验教学工具\"]\n    GE --> IT\n    AL --> IT\n    AI --> IT\n    IT --> FUT[\"未来技术教育工具\"]\n    FUT --> INV[\"值得深挖的赛道\"]\n```",
+      "diagrams": [
+        {
+          "title": "学习方式对比",
+          "code": "flowchart LR\n    TL[\"传统学习方式\"] --> PR[\"被动阅读文字\"]\n    TL --> PM[\"死背参数\"]\n    TL --> LF[\"反馈有限\"]\n    IL[\"交互式实验室\"] --> RF[\"实时视觉反馈\"]\n    IL --> PA[\"随意调节参数\"]\n    IL --> IR[\"所见即所得\"]\n    IL --> KD[\"深入系统原理\"]"
+        },
+        {
+          "title": "可视化交互实验教学系统结构",
+          "code": "flowchart LR\n    DS[\"数据驱动可视化教学系统\"] --> TT[\"文字教程（概念）\"]\n    DS --> IP[\"交互面板（模拟引擎）\"]\n    IP --> RB[\"真实行为\"]\n    IP --> RTR[\"实时渲染\"]\n    RB --> SO[\"同步输出\"]\n    RTR --> VF[\"视觉反馈\"]\n    SO --> VF\n    VF --> WYS[\"所见即所得\"]\n    CV[\"颠覆传统学习方式\"] --> DS"
+        },
+        {
+          "title": "适用范围与未来赛道",
+          "code": "flowchart LR\n    GA[\"通用适用性\"] --> GU[\"Godot UI\"]\n    GA --> GE[\"其他游戏引擎\"]\n    GA --> AL[\"底层算法课程\"]\n    GA --> AI[\"AI 大模型\"]\n    GU --> IT[\"交互式实验教学工具\"]\n    GE --> IT\n    AL --> IT\n    AI --> IT\n    IT --> FUT[\"未来技术教育工具\"]\n    FUT --> INV[\"值得深挖的赛道\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T12:39:02+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 可视化交互实验教学系统概览\n\n## 学习方式对比\n```mermaid\nflowchart LR\n    TL[\"传统学习方式\"] --> PR[\"被动阅读文字\"]\n    TL --> PM[\"死背参数\"]\n    TL --> LF[\"反馈有限\"]\n    IL[\"交互式实验室\"] --> RF[\"实时视觉反馈\"]\n    IL --> PA[\"随意调节参数\"]\n    IL --> IR[\"所见即所得\"]\n    IL --> KD[\"深入系统原理\"]\n```\n\n## 可视化交互实验教学系统结构\n```mermaid\nflowchart LR\n    DS[\"数据驱动可视化教学系统\"] --> TT[\"文字教程（概念）\"]\n    DS --> IP[\"交互面板（模拟引擎）\"]\n    IP --> RB[\"真实行为\"]\n    IP --> RTR[\"实时渲染\"]\n    RB --> SO[\"同步输出\"]\n    RTR --> VF[\"视觉反馈\"]\n    SO --> VF\n    VF --> WYS[\"所见即所得\"]\n    CV[\"颠覆传统学习方式\"] --> DS\n```\n\n## 适用范围与未来赛道\n```mermaid\nflowchart LR\n    GA[\"通用适用性\"] --> GU[\"Godot UI\"]\n    GA --> GE[\"其他游戏引擎\"]\n    GA --> AL[\"底层算法课程\"]\n    GA --> AI[\"AI 大模型\"]\n    GU --> IT[\"交互式实验教学工具\"]\n    GE --> IT\n    AL --> IT\n    AI --> IT\n    IT --> FUT[\"未来技术教育工具\"]\n    FUT --> INV[\"值得深挖的赛道\"]\n```",
+  "diagrams": [
+    {
+      "title": "学习方式对比",
+      "code": "flowchart LR\n    TL[\"传统学习方式\"] --> PR[\"被动阅读文字\"]\n    TL --> PM[\"死背参数\"]\n    TL --> LF[\"反馈有限\"]\n    IL[\"交互式实验室\"] --> RF[\"实时视觉反馈\"]\n    IL --> PA[\"随意调节参数\"]\n    IL --> IR[\"所见即所得\"]\n    IL --> KD[\"深入系统原理\"]"
+    },
+    {
+      "title": "可视化交互实验教学系统结构",
+      "code": "flowchart LR\n    DS[\"数据驱动可视化教学系统\"] --> TT[\"文字教程（概念）\"]\n    DS --> IP[\"交互面板（模拟引擎）\"]\n    IP --> RB[\"真实行为\"]\n    IP --> RTR[\"实时渲染\"]\n    RB --> SO[\"同步输出\"]\n    RTR --> VF[\"视觉反馈\"]\n    SO --> VF\n    VF --> WYS[\"所见即所得\"]\n    CV[\"颠覆传统学习方式\"] --> DS"
+    },
+    {
+      "title": "适用范围与未来赛道",
+      "code": "flowchart LR\n    GA[\"通用适用性\"] --> GU[\"Godot UI\"]\n    GA --> GE[\"其他游戏引擎\"]\n    GA --> AL[\"底层算法课程\"]\n    GA --> AI[\"AI 大模型\"]\n    GU --> IT[\"交互式实验教学工具\"]\n    GE --> IT\n    AL --> IT\n    AI --> IT\n    IT --> FUT[\"未来技术教育工具\"]\n    FUT --> INV[\"值得深挖的赛道\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T12:39:02+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1t1oHBnE2x",
+  "title": "【中配】为什么 Godot 4 中的动画树令人难以置信地有用",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2834,
+  "text": "嗨这就是我们今天要做的\n我们有一个角色可以上下左右移动\n而且每个方向都有对应的攻击动画\n如果你用过类似的精灵图\n你可能也有这样的设置\n获取最后一次朝向方向转换成字符串\n然后根据当前的动作播放相应的动画\n而今天我们要用动画数来重新实现它\n首先我们要添加一个动画数\n动画数需要知道我们的动画播放器\n所以我们要先指定它\n接下来我们要决定使用什么类型的树根节点\n树根可以简单到只是一个混合空间\n也可以复杂到多层嵌套的状态\n基随着学习的深入\n我们会逐步搭建更复杂的内容\n所以先从简单一点的开始\n首先我们要重新实现奔跑动画\n所以可以选择一个二维混合空间\n如果我点击这个\n然后打开动画书面板\n就能看到这里的混合空间\n基本原理是我们在空间里定义动画\n根据当前状态最接近哪个动画\n就播放那个动画\n我们可以选择这个工具来添加动画\n既然先做奔跑动画\n我就添加向上跑\n向下跑\n向左跑和向右跑差不多\n就这样可以看到\n如果我把这里拖上去\n就是向上跑\n拖下去\n就是向下跑\n往左拖\n就是向左跑\n往右拖\n就是向右跑\n但这里有个小问题\n暂时还看不出来\n如果把游标拖到两个动画之间的中点位置\n效果就不太对\n这是因为连续混合模式是为3D动画设计的\n适用于动画之间可以相互混合的情况\n我们应该用这两个选项中的一个离散或捕获\n这两种模式的表现非常相似\n离散模式会根据当前状态最接近的动画来播放\n但每次切换动画时都会从第一帧开始\n捕获模式几乎完全一样\n区别在于它会从切换前的帧继续播放\n不过我们的例子我就用离散模式\n当然我们想通过代码来设置这个值\n所以我先不用之前的动画拆掉脚本\n给他一个新脚本\n我就叫他player animation tree\n首先我这样设置脚本\n我导出动画数\n获取了角色\n当然我们可以通过拖拽来分配动画数\n我们点击这里可以看到参数部分\n如果想设置这些\n只需要访问动画数\n并调用set函数\n然后我们点击这个节点\n把它拖拽到函数里\n然后只需给想要的变量赋值\n这里我就获取角色的速度并归一化\n打开游戏\n向左跑和向右跑都能用\n但有个问题\n向上跑时角色朝下\n向下跑时角色朝上\n主要是因为在GODOT里\n一代表上至少在2D里是这样\n我们可以在内部翻转速度来修复这个问题\n也可以直接在动画树里翻转动画\n我更倾向于在树里做\n所以我来这样做\n这样就正常了\n那待机动化呢\n嗯要解决这个问题的话\n要是能再有一个混合空间可选就好了\n我们就要这样做\n我们要把根节点切换成状态机\n但在那之前我实在不想重新设置这个混合空间\n所以我们可以选择它\n然后另存为\n我把它放在animations文件夹里\n命名为player around blend\n然后我们可以把树的根节点改成状态机\n如果想加载之前的空间\n只需右键选择加载\n现在我来把这个改成run\n如果点击播放按钮\n我们就把它设置为当前活动状态\n基本概述是这样的\n我们可以选择在起始和奔跑之间创建转换\n首次启动游戏时会从起始转换到初始状态\n我们也可以添加不同的动画状态\n按需切换\n所以我们来添加一个新的\n我来添加一个新的二维混合空间\n我把这个叫idol\n用和之前一样的方式设置\n选择离散模式\n添加待机向下\n待机向上向左向右的动画\n如果想测试效果\n只需点击播放按钮\n然后把光标这样移动\n那怎么在这些状态之间切换呢\n如果我在奔跑和待机之间画一条转换\n它会立即切换\n相比之下\n要是能根据条件在这些状态之间切换就好了\n所以我来选择转换\n在advance下设置条件\n我们叫它idol\n然后对奔跑做同样的操作\n创建待机到奔跑的转换\n设置advance为run\n我们甚至可以测试这个\n如果选择动画树\n可以看到现在有条件了\n叫idol和RN\n打开idol就切换到待机\n只打开run就切换到奔跑\n也可以看到\n现在有待机用的混合空间和奔跑用的混合空间\n所以我们需要稍微改动一下代码\n来处理这个情况\n回到脚本\n添加另一个set函数\n传入待机的混合空间\n因为不再是顶层节点了\n这个参数也需要改一下\n所以删掉那个拖入奔跑的混合空间\n然后自然还要设置条件\n我们可以根据是否在移动来设置待机\n然后调用两个set函数\n第一个传入idol\n第二个传入run\n最后还要修复一下\n保存最后的朝向方向\n如果正在移动\n就把它设为归一化后的速度\n不传入原始速度\n而是传入这个最后的朝向方向\n这样就成功了\n可以看到我们可以在四个方向待机了\n但分别设置这些参数很烦人\n因为它们检测的是同一个东西\n如果能在树里直接检测角色的速度就好了\n不是吗\n嗯可以的\n那我们来看一下表达式\n首先我们把这个高级表达式的根节点改成player\n然后回到树里\n不用这个条件直接测试速度\n如果速度计算结果为真\n就从待机切换到奔跑\n对于这里可以检测not velocity\n当然也要移除那个条件\n也不需要在这里设置这些了\n这样完美运行表达式\n就像是对根节点自动运行的条件\n但我们还有一个状态要添加\n来添加一个新的混合空间\n我叫它attack\n用同样的方式设置\n然后在这里当角色的attacking变量为真时\n可以从奔跑或待机转换到攻击\n这只是我在攻击时存储在角色上的一个变量\n然后对奔跑做同样的操作\n攻击结束后\n我就让他回到待机状态\n对于这个只需检测not attacking\n然后最后一件事是设置攻击的混合位置\n就这样我们有了四个方向的攻击\n但当然这还不是树能做到的\n全部用动画状态机确实很酷\n但如果我们想让所有动画变慢呢\n用动画播放器的话\n只需设置一个时间缩放变量\n用动画数的话需要多一点点工作\n所以作为最后一层复杂度\n我们要加上这个像之前保存混合空间一样\n我来保存状态机\n然后把根节点设置成动画\n节点混合数\n这是所有节点中最复杂的\n我也把这个重命名为player states\n就像之前移动混合空间一样\n这里也需要更新动画\n我还会重命名player states\n就像之前移动混合空间时一样\n我们也需要更新这里的动画\n用这个可以做的一件很酷的事\n是添加一个时间缩放节点\n如果打开游戏\n它仍然正常运行\n这其中一个很酷的功能是\n我们可以添加一个时间缩放\n节点和其他参数一样\n也可以通过代码来设置\n用同样的方式添加set函数并拖进来\n这里所有动画会以五倍速度播放\n如果想根据角色移动速度改变动画速度\n这样的功能就很有用了\n如果动画树不工作\n确保把active状态设在这里\n有时候在做一些东西时\n这个一直active会很烦人\n所以可以禁用它\n在ready函数里调用animation tree active\n并设为true\n如果你的动画数不工作\n确保将活动状态设置在这里\n有很多节点可以玩\n也有不少不同的设置方式可以用\n你可以禁用它\n然后在ready函数中调用animation tree\nActive\n并设置为true\n目前就讲到这里有大量节点可以让你探索使用\n也有许多不同的配置方式可选\n但就动画数而言\n这些就是基础内容了\n目前的内容大概就是这些了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1t1oHBnE2x",
+  "published_at": "1776813293",
+  "fetched_at": "2026-08-09T09:12:05+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 4 动画树知识图谱\n\n## 动画树总览 [BV1t1oHBnE2x P1 00:15]\n```mermaid\nflowchart TD\n    AT[\"AnimationTree\"] --> AP[\"AnimationPlayer\"]\n    AT --> SM[\"StateMachine (根节点)\"]\n    AT --> BSRun[\"BlendSpace2D (跑步)\"]\n    AT --> BSIdle[\"BlendSpace2D (待机)\"]\n    AT --> TS[\"TimeScale 节点\"]\n    AT --> AF[\"Active 标志\"]\n    BSRun --> MD[\"模式: 离散\"]\n    BSIdle --> MD\n    SM --> TIdleRun[\"转移: Idle → Run\"]\n    SM --> TRunAttack[\"转移: Run → Attack\"]\n    SM --> TAttackIdle[\"转移: Attack → Idle\"]\n    TIdleRun --> CondVel[\"条件: velocity ≠ 0\"]\n    TRunAttack --> CondAtk[\"条件: attacking = true\"]\n    TAttackIdle --> CondNotAtk[\"条件: not attacking\"]\n    Script[\"脚本: player_animation_tree\"] --> ParamDir[\"参数: direction\"]\n    Script --> ParamSpeed[\"参数: speed\"]\n    ParamDir --> BSRun\n    ParamDir --> BSIdle\n    ParamSpeed --> BSRun\n    ParamSpeed --> BSIdle\n    TS --> SpeedVar[\"变量: time_scale\"]\n    SpeedVar --> AT\n    AF --> AT\n```\n\n## 设置奔跑 BlendSpace2D 流程 [BV1t1oHBnE2x P1 00:35]\n```mermaid\nflowchart TD\n    Step1[\"添加 AnimationTree\"] --> Step2[\"指定 AnimationPlayer\"]\n    Step2 --> Step3[\"打开动画面板\"]\n    Step3 --> Step4[\"创建 BlendSpace2D (二维混合空间)\"]\n    Step4 --> Step5[\"添加向上跑 动画\"]\n    Step5 --> Step6[\"添加向下跑 动画\"]\n    Step6 --> Step7[\"添加向左跑 动画\"]\n    Step7 --> Step8[\"添加向右跑 动画\"]\n    Step8 --> Step9[\"设置模式为 离散\"]\n    Step9 --> Step10[\"保存为 player_around_blend\"]\n    Step10 --> Step11[\"在树中设为活动状态\"]\n    Step11 --> Step12[\"点击播放按钮 测试光标移动\"]\n```\n\n## 方向修正逻辑 [BV1t1oHBnE2x P1 01:55]\n```mermaid\nflowchart TD\n    GetVel[\"获取角色速度\"] --> Norm[\"归一化速度\"]\n    Norm --> DirCheck[\"方向检查\"]\n    DirCheck --> UpDownFix[\"若向上/向下 方向翻转\"]\n    UpDownFix --> OptionScript[\"在脚本中翻转速度\"]\n    UpDownFix --> OptionTree[\"在动画树中翻转动画\"]\n    OptionScript --> SetDirParam[\"设置 direction 参数\"]\n    OptionTree --> SetDirParam\n    SetDirParam --> BSRun[\"BlendSpace2D (跑步)\"]\n    SetDirParam --> BSIdle[\"BlendSpace2D (待机)\"]\n```\n\n## 状态机条件切换 [BV1t1oHBnE2x P1 03:19]\n```mermaid\nflowchart TD\n    StateIdle[\"状态: Idle\"] --> TransIdleRun[\"转移: Idle → Run\"]\n    StateRun[\"状态: Run\"] --> TransRunAttack[\"转移: Run → Attack\"]\n    StateAttack[\"状态: Attack\"] --> TransAttackIdle[\"转移: Attack → Idle\"]\n    TransIdleRun --> CondVel[\"条件: velocity ≠ 0\"]\n    TransRunAttack --> CondAtk[\"条件: attacking = true\"]\n    TransAttackIdle --> CondNotAtk[\"条件: not attacking\"]\n    CondVel --> SetBlend[\"设置 BlendSpace 为跑步\"]\n    CondAtk --> SetBlendAtk[\"设置 BlendSpace 为攻击\"]\n    CondNotAtk --> SetBlendIdle[\"返回 BlendSpace 为待机\"]\n    SetBlend --> StateRun\n    SetBlendAtk --> StateAttack\n    SetBlendIdle --> StateIdle\n```\n\n## 时间缩放使用 [BV1t1oHBnE2x P1 06:02]\n```mermaid\nflowchart TD\n    AddTS[\"添加 TimeScale 节点\"] --> SetVar[\"创建变量 time_scale\"]\n    SetVar --> Connect[\"连接到 AnimationTree\"]\n    Connect --> CodeSet[\"代码: 根据角色速度设置 time_scale\"]\n    CodeSet --> Speed5x[\"示例: 5 倍速播放\"]\n    AddTS --> OptionActive[\"可选: 在 ready 中激活 AnimationTree\"]\n    OptionActive --> Activate[\"设置 active = true\"]\n    Activate --> AT[\"AnimationTree\"]\n```",
+      "diagrams": [
+        {
+          "title": "动画树总览",
+          "code": "flowchart TD\n    AT[\"AnimationTree\"] --> AP[\"AnimationPlayer\"]\n    AT --> SM[\"StateMachine (根节点)\"]\n    AT --> BSRun[\"BlendSpace2D (跑步)\"]\n    AT --> BSIdle[\"BlendSpace2D (待机)\"]\n    AT --> TS[\"TimeScale 节点\"]\n    AT --> AF[\"Active 标志\"]\n    BSRun --> MD[\"模式: 离散\"]\n    BSIdle --> MD\n    SM --> TIdleRun[\"转移: Idle → Run\"]\n    SM --> TRunAttack[\"转移: Run → Attack\"]\n    SM --> TAttackIdle[\"转移: Attack → Idle\"]\n    TIdleRun --> CondVel[\"条件: velocity ≠ 0\"]\n    TRunAttack --> CondAtk[\"条件: attacking = true\"]\n    TAttackIdle --> CondNotAtk[\"条件: not attacking\"]\n    Script[\"脚本: player_animation_tree\"] --> ParamDir[\"参数: direction\"]\n    Script --> ParamSpeed[\"参数: speed\"]\n    ParamDir --> BSRun\n    ParamDir --> BSIdle\n    ParamSpeed --> BSRun\n    ParamSpeed --> BSIdle\n    TS --> SpeedVar[\"变量: time_scale\"]\n    SpeedVar --> AT\n    AF --> AT"
+        },
+        {
+          "title": "设置奔跑 BlendSpace2D 流程",
+          "code": "flowchart TD\n    Step1[\"添加 AnimationTree\"] --> Step2[\"指定 AnimationPlayer\"]\n    Step2 --> Step3[\"打开动画面板\"]\n    Step3 --> Step4[\"创建 BlendSpace2D (二维混合空间)\"]\n    Step4 --> Step5[\"添加向上跑 动画\"]\n    Step5 --> Step6[\"添加向下跑 动画\"]\n    Step6 --> Step7[\"添加向左跑 动画\"]\n    Step7 --> Step8[\"添加向右跑 动画\"]\n    Step8 --> Step9[\"设置模式为 离散\"]\n    Step9 --> Step10[\"保存为 player_around_blend\"]\n    Step10 --> Step11[\"在树中设为活动状态\"]\n    Step11 --> Step12[\"点击播放按钮 测试光标移动\"]"
+        },
+        {
+          "title": "方向修正逻辑",
+          "code": "flowchart TD\n    GetVel[\"获取角色速度\"] --> Norm[\"归一化速度\"]\n    Norm --> DirCheck[\"方向检查\"]\n    DirCheck --> UpDownFix[\"若向上/向下 方向翻转\"]\n    UpDownFix --> OptionScript[\"在脚本中翻转速度\"]\n    UpDownFix --> OptionTree[\"在动画树中翻转动画\"]\n    OptionScript --> SetDirParam[\"设置 direction 参数\"]\n    OptionTree --> SetDirParam\n    SetDirParam --> BSRun[\"BlendSpace2D (跑步)\"]\n    SetDirParam --> BSIdle[\"BlendSpace2D (待机)\"]"
+        },
+        {
+          "title": "状态机条件切换",
+          "code": "flowchart TD\n    StateIdle[\"状态: Idle\"] --> TransIdleRun[\"转移: Idle → Run\"]\n    StateRun[\"状态: Run\"] --> TransRunAttack[\"转移: Run → Attack\"]\n    StateAttack[\"状态: Attack\"] --> TransAttackIdle[\"转移: Attack → Idle\"]\n    TransIdleRun --> CondVel[\"条件: velocity ≠ 0\"]\n    TransRunAttack --> CondAtk[\"条件: attacking = true\"]\n    TransAttackIdle --> CondNotAtk[\"条件: not attacking\"]\n    CondVel --> SetBlend[\"设置 BlendSpace 为跑步\"]\n    CondAtk --> SetBlendAtk[\"设置 BlendSpace 为攻击\"]\n    CondNotAtk --> SetBlendIdle[\"返回 BlendSpace 为待机\"]\n    SetBlend --> StateRun\n    SetBlendAtk --> StateAttack\n    SetBlendIdle --> StateIdle"
+        },
+        {
+          "title": "时间缩放使用",
+          "code": "flowchart TD\n    AddTS[\"添加 TimeScale 节点\"] --> SetVar[\"创建变量 time_scale\"]\n    SetVar --> Connect[\"连接到 AnimationTree\"]\n    Connect --> CodeSet[\"代码: 根据角色速度设置 time_scale\"]\n    CodeSet --> Speed5x[\"示例: 5 倍速播放\"]\n    AddTS --> OptionActive[\"可选: 在 ready 中激活 AnimationTree\"]\n    OptionActive --> Activate[\"设置 active = true\"]\n    Activate --> AT[\"AnimationTree\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T09:13:53+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 4 动画树知识图谱\n\n## 动画树总览 [BV1t1oHBnE2x P1 00:15]\n```mermaid\nflowchart TD\n    AT[\"AnimationTree\"] --> AP[\"AnimationPlayer\"]\n    AT --> SM[\"StateMachine (根节点)\"]\n    AT --> BSRun[\"BlendSpace2D (跑步)\"]\n    AT --> BSIdle[\"BlendSpace2D (待机)\"]\n    AT --> TS[\"TimeScale 节点\"]\n    AT --> AF[\"Active 标志\"]\n    BSRun --> MD[\"模式: 离散\"]\n    BSIdle --> MD\n    SM --> TIdleRun[\"转移: Idle → Run\"]\n    SM --> TRunAttack[\"转移: Run → Attack\"]\n    SM --> TAttackIdle[\"转移: Attack → Idle\"]\n    TIdleRun --> CondVel[\"条件: velocity ≠ 0\"]\n    TRunAttack --> CondAtk[\"条件: attacking = true\"]\n    TAttackIdle --> CondNotAtk[\"条件: not attacking\"]\n    Script[\"脚本: player_animation_tree\"] --> ParamDir[\"参数: direction\"]\n    Script --> ParamSpeed[\"参数: speed\"]\n    ParamDir --> BSRun\n    ParamDir --> BSIdle\n    ParamSpeed --> BSRun\n    ParamSpeed --> BSIdle\n    TS --> SpeedVar[\"变量: time_scale\"]\n    SpeedVar --> AT\n    AF --> AT\n```\n\n## 设置奔跑 BlendSpace2D 流程 [BV1t1oHBnE2x P1 00:35]\n```mermaid\nflowchart TD\n    Step1[\"添加 AnimationTree\"] --> Step2[\"指定 AnimationPlayer\"]\n    Step2 --> Step3[\"打开动画面板\"]\n    Step3 --> Step4[\"创建 BlendSpace2D (二维混合空间)\"]\n    Step4 --> Step5[\"添加向上跑 动画\"]\n    Step5 --> Step6[\"添加向下跑 动画\"]\n    Step6 --> Step7[\"添加向左跑 动画\"]\n    Step7 --> Step8[\"添加向右跑 动画\"]\n    Step8 --> Step9[\"设置模式为 离散\"]\n    Step9 --> Step10[\"保存为 player_around_blend\"]\n    Step10 --> Step11[\"在树中设为活动状态\"]\n    Step11 --> Step12[\"点击播放按钮 测试光标移动\"]\n```\n\n## 方向修正逻辑 [BV1t1oHBnE2x P1 01:55]\n```mermaid\nflowchart TD\n    GetVel[\"获取角色速度\"] --> Norm[\"归一化速度\"]\n    Norm --> DirCheck[\"方向检查\"]\n    DirCheck --> UpDownFix[\"若向上/向下 方向翻转\"]\n    UpDownFix --> OptionScript[\"在脚本中翻转速度\"]\n    UpDownFix --> OptionTree[\"在动画树中翻转动画\"]\n    OptionScript --> SetDirParam[\"设置 direction 参数\"]\n    OptionTree --> SetDirParam\n    SetDirParam --> BSRun[\"BlendSpace2D (跑步)\"]\n    SetDirParam --> BSIdle[\"BlendSpace2D (待机)\"]\n```\n\n## 状态机条件切换 [BV1t1oHBnE2x P1 03:19]\n```mermaid\nflowchart TD\n    StateIdle[\"状态: Idle\"] --> TransIdleRun[\"转移: Idle → Run\"]\n    StateRun[\"状态: Run\"] --> TransRunAttack[\"转移: Run → Attack\"]\n    StateAttack[\"状态: Attack\"] --> TransAttackIdle[\"转移: Attack → Idle\"]\n    TransIdleRun --> CondVel[\"条件: velocity ≠ 0\"]\n    TransRunAttack --> CondAtk[\"条件: attacking = true\"]\n    TransAttackIdle --> CondNotAtk[\"条件: not attacking\"]\n    CondVel --> SetBlend[\"设置 BlendSpace 为跑步\"]\n    CondAtk --> SetBlendAtk[\"设置 BlendSpace 为攻击\"]\n    CondNotAtk --> SetBlendIdle[\"返回 BlendSpace 为待机\"]\n    SetBlend --> StateRun\n    SetBlendAtk --> StateAttack\n    SetBlendIdle --> StateIdle\n```\n\n## 时间缩放使用 [BV1t1oHBnE2x P1 06:02]\n```mermaid\nflowchart TD\n    AddTS[\"添加 TimeScale 节点\"] --> SetVar[\"创建变量 time_scale\"]\n    SetVar --> Connect[\"连接到 AnimationTree\"]\n    Connect --> CodeSet[\"代码: 根据角色速度设置 time_scale\"]\n    CodeSet --> Speed5x[\"示例: 5 倍速播放\"]\n    AddTS --> OptionActive[\"可选: 在 ready 中激活 AnimationTree\"]\n    OptionActive --> Activate[\"设置 active = true\"]\n    Activate --> AT[\"AnimationTree\"]\n```",
+  "diagrams": [
+    {
+      "title": "动画树总览",
+      "code": "flowchart TD\n    AT[\"AnimationTree\"] --> AP[\"AnimationPlayer\"]\n    AT --> SM[\"StateMachine (根节点)\"]\n    AT --> BSRun[\"BlendSpace2D (跑步)\"]\n    AT --> BSIdle[\"BlendSpace2D (待机)\"]\n    AT --> TS[\"TimeScale 节点\"]\n    AT --> AF[\"Active 标志\"]\n    BSRun --> MD[\"模式: 离散\"]\n    BSIdle --> MD\n    SM --> TIdleRun[\"转移: Idle → Run\"]\n    SM --> TRunAttack[\"转移: Run → Attack\"]\n    SM --> TAttackIdle[\"转移: Attack → Idle\"]\n    TIdleRun --> CondVel[\"条件: velocity ≠ 0\"]\n    TRunAttack --> CondAtk[\"条件: attacking = true\"]\n    TAttackIdle --> CondNotAtk[\"条件: not attacking\"]\n    Script[\"脚本: player_animation_tree\"] --> ParamDir[\"参数: direction\"]\n    Script --> ParamSpeed[\"参数: speed\"]\n    ParamDir --> BSRun\n    ParamDir --> BSIdle\n    ParamSpeed --> BSRun\n    ParamSpeed --> BSIdle\n    TS --> SpeedVar[\"变量: time_scale\"]\n    SpeedVar --> AT\n    AF --> AT"
+    },
+    {
+      "title": "设置奔跑 BlendSpace2D 流程",
+      "code": "flowchart TD\n    Step1[\"添加 AnimationTree\"] --> Step2[\"指定 AnimationPlayer\"]\n    Step2 --> Step3[\"打开动画面板\"]\n    Step3 --> Step4[\"创建 BlendSpace2D (二维混合空间)\"]\n    Step4 --> Step5[\"添加向上跑 动画\"]\n    Step5 --> Step6[\"添加向下跑 动画\"]\n    Step6 --> Step7[\"添加向左跑 动画\"]\n    Step7 --> Step8[\"添加向右跑 动画\"]\n    Step8 --> Step9[\"设置模式为 离散\"]\n    Step9 --> Step10[\"保存为 player_around_blend\"]\n    Step10 --> Step11[\"在树中设为活动状态\"]\n    Step11 --> Step12[\"点击播放按钮 测试光标移动\"]"
+    },
+    {
+      "title": "方向修正逻辑",
+      "code": "flowchart TD\n    GetVel[\"获取角色速度\"] --> Norm[\"归一化速度\"]\n    Norm --> DirCheck[\"方向检查\"]\n    DirCheck --> UpDownFix[\"若向上/向下 方向翻转\"]\n    UpDownFix --> OptionScript[\"在脚本中翻转速度\"]\n    UpDownFix --> OptionTree[\"在动画树中翻转动画\"]\n    OptionScript --> SetDirParam[\"设置 direction 参数\"]\n    OptionTree --> SetDirParam\n    SetDirParam --> BSRun[\"BlendSpace2D (跑步)\"]\n    SetDirParam --> BSIdle[\"BlendSpace2D (待机)\"]"
+    },
+    {
+      "title": "状态机条件切换",
+      "code": "flowchart TD\n    StateIdle[\"状态: Idle\"] --> TransIdleRun[\"转移: Idle → Run\"]\n    StateRun[\"状态: Run\"] --> TransRunAttack[\"转移: Run → Attack\"]\n    StateAttack[\"状态: Attack\"] --> TransAttackIdle[\"转移: Attack → Idle\"]\n    TransIdleRun --> CondVel[\"条件: velocity ≠ 0\"]\n    TransRunAttack --> CondAtk[\"条件: attacking = true\"]\n    TransAttackIdle --> CondNotAtk[\"条件: not attacking\"]\n    CondVel --> SetBlend[\"设置 BlendSpace 为跑步\"]\n    CondAtk --> SetBlendAtk[\"设置 BlendSpace 为攻击\"]\n    CondNotAtk --> SetBlendIdle[\"返回 BlendSpace 为待机\"]\n    SetBlend --> StateRun\n    SetBlendAtk --> StateAttack\n    SetBlendIdle --> StateIdle"
+    },
+    {
+      "title": "时间缩放使用",
+      "code": "flowchart TD\n    AddTS[\"添加 TimeScale 节点\"] --> SetVar[\"创建变量 time_scale\"]\n    SetVar --> Connect[\"连接到 AnimationTree\"]\n    Connect --> CodeSet[\"代码: 根据角色速度设置 time_scale\"]\n    CodeSet --> Speed5x[\"示例: 5 倍速播放\"]\n    AddTS --> OptionActive[\"可选: 在 ready 中激活 AnimationTree\"]\n    OptionActive --> Activate[\"设置 active = true\"]\n    Activate --> AT[\"AnimationTree\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T09:13:53+00:00"
+}

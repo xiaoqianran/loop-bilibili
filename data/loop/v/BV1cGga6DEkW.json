@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1cGga6DEkW",
+  "title": "Day27 向量的点乘 怪物巡逻视锥检测",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4172,
+  "text": "Hello\n各位亲爱的观众朋友\n大家好\n我是小毅\n今天继续给大家带来每日一练啊\n今天的话讲的是这个\n用这个点乘来得到一个视野范围\n我们游戏的话\n那些怪物他不是会有一种巡逻嘛对吧\n就是说呃呃是看见了你之后\n会朝你走过来去攻击你\n对吧\n嗯这个的话可以用点乘来实现一个视锥啊\n就是说他这个前方有一个这样的一个锥形的\n一个视野范围是吧\n进入了之后呢\n就可以看到看到看到敌人啊\n看到玩家\n然后的话\n当然如果说中间有遮挡的话\n他就看不见啊\n当然这个的话呃\n为什么还看得到呢\n啊他的位置位置忘记重置了对吧\nSZZ的话往下降一点\n哦不对啊\n为什么还是看得到呢\n等一下我看看\n哦他没有挡住对吧\n嗯好因为我因为我设置的是啊\n是它的这个高度加一啊\n你看挡住了之后\n挡住了之后有遮挡物\n有的障碍物就就就不会不会去\n不会看到了对吧\n如果说没挡住\n没挡住的话\n就看得到玩家\n挡住的话\n看不到玩家对吧\n这样就是通过这个点乘来得到这个视锥\n再加上一个试验检测\n加上一个试验检测\n就可以\n就可以得得到一个这个呃这个视锥检测了啊\n视锥检测了\n然后呃它的原理是是什么呢\n它这个其实就是一个一个点乘的一个应用啊\n首先的话我们就是比方说我重新画一个吧\n哈呃啊比方说这个是这个是玩家的这个FORWORD\n对吧啊\nfor word它是一个单位长度的一个一个向量是吧\n然后这个点的话我们称之为D点啊\n这个是A点\n然后另一个的话就是你的一个角度\n一个角度\n比方说就是这样的一个也是个单位向量对吧\n这个单位向量就是说\n这比方说这个地方是你的敌人对吧\n是你的目标啊\ntarget然后你通过这个呃\n通过这个呃坐标相减\n然后再给它一个normal normalize对吧\n单单位化得到一个单位向量\n单位向量\n然后就是这个\n然后的话你再你再做一个垂线对吧\n这个是B这个是C好\n然后然后就然后就可以得到这么一个啊\n这么一个三角形原理的话\n就是比方说这个角是theta角\n然后我们的cos theta就等于呃AC的模\n比上ab的模啊\n然后又由于ab呢ab是单位向量\n对不对\n所以说cos cos c大就是AC的模啊\n那么这个AC又是什么呢\n就是这个点乘啊\n点乘点乘的话就是AB乘以这个AD对吧\nAB乘以AD它也等于AC啊\n它也等于AC\n所以说所以说这样呢\n我们我们就可以就可以知道\n这个cos theta和这个点乘是有关系的对吧\n是有关系的啊\n因为点乘的话就是呃向量\n一个向量往另一个向量向量做投影嘛对吧\nAB向量往AB向量做投影\n就是AC啊\n所以说它们都是一样的\n那么我们只要满足是吧\n只要满足这个\n额这个cos theta它小于这个点乘对吧啊\n点乘dot a b乘以ACAD啊\n那么那么就可以就可以就可以\n就是来检测是否在就可以来检测是否在这个呃\n检测是否在这个角度里啊\n在角度里啊啊因为你小\n你看你想一下嘛\n就小鱼的时候\n这个点乘的话啊\n点乘的话它它就会是吧\n它它比方说\n是啊比方说嗯你这个要比它大的时候是吧\n就是说他这个投影的AC比它大\n那它肯定是在这边是吧\n肯定是在这边啊\n在这边啊\n这样的话就比就会比AC大了对吧啊\n这点成就会比就会比AC大了啊\n就比cos AC的大了\n所以所以说这样就可以判断\n是否在这个角度里好\n然后然后有了这个之后呢\n然后我们解决第二个问题\n就是说呃是否有遮挡对吧\n你在这个视锥里是吧\n如果说有遮挡啊\n那就遮挡的话\n我们就用那个实验检测对吧\n用那个用那个呃physics点这个request对吧\n然后就是说如果说这个射线遮挡它\n它不是它遮挡它的层\n他这个层层级呢是遮挡物的话\n那么我们就呃我们就不检测它了啊\nrequest嗯然后的话第一个的话是要不就是射线\n要不就起水的终止位置\n然后距离\n然后还有遮挡的层级对吧\n然后这样来来检测好\n我们知道之后\n我们就可以来写代码对吧\n写代码好\n我们可以\n我们可以先给他删掉对吧\n先给删掉\n好吧这些这些不用不用删吧对吧\n然后我们把这个这个里边给他删掉吧\n好我们就有一个这样的一个can say target\n能否看到目标的这么一个方法\n然后首先首先我们上面几个成员变量\n第一个transform target的\n就是说目标目标的这个transform\n第二个的话就是will distance\n就是说啊能看到的距离对吧\n比方说我们这个怪物\n他的视野\n他这个是个锥形嘛对吧\n他的这个视野是有限的\n那他这个半径半径的话就是这个这will distance啊\n这个这个这个半径啊\n就是就是这个distance啊\n然后这个的话就是范围C塔角对吧好\n然后我们可以继续对吧\n它的范围它的它的距离是88米对吧\n然后他的角度是120度啊\n然后第三个是遮挡遮挡物的层级啊\n我们用一个layer mask来来存储遮挡物的层级\n就是有什么东西会遮挡它呢对吧\n有什么东西会遮挡它好\n首先的话我们我们得到一个初始位置对吧\n初始位置啊\nvictor3点嗯\norigin初始位置等于target position是吧\n我们一般会加一个victor呃\n3.2啊\n为什么为什么要加这个呢\n因为的话我们我们游戏中\n他们我们设置这个玩家的这个position\n一般就是在脚底对吧\n比方说我们这个是个人啊\n我们的possession一般设置在玩家的脚底\n所以我们要加一个玩家的高度\n对玩家的高度\n最好的话就是你你能量出它的高度来呃\n看他的视野位置对吧\n或者说你你起码要加点东西对吧\n加点高度啊\n然后这样的话才才真实对吧\n才真实\n不然的话容易容易怎么样呢\n如果说在这个地方直接直接发射射线的话\n就可能比方说这个地方地形有个凸起\n很小的凸起\n直接这个地形就给你挡住了\n就很离谱\n对不对啊\n就很不合实际\n所以我们要加一点高度啊\n好所以说我们让他的origin的位置呢\n加上这个victor3点up啊\n然后我们给目标的位置\n给目标的位置也加上这个啊\nvictor3啊\ntarget position呢\nTarget possession\n然后就等于它的位置加上加上\n也就依旧加上1.5啊\n这样的话它的高度就有了哈\n然后的话我们再让这个呃这样再得到一个to target\n就是说他们呃之间的一个这个向量啊\nTarget\ntarget就是末减初对吧\n末减出末target\nPosting an origin\n就得到了它们之间的一个向量\n然后我们我们还要得到它们之间的距离啊\nfloat真正的距离对吧\n等于to target点magnitude对吧\n得到它们之间的距离啊\n然后我们就是如果说这个距离\n距离大于真正的距离\n大于我们设置好的能看到的距离\n那我们就看不到\n对不对\n就return false啊\n我们看不到就return force\n然后啊距离检测得完成了\n然后我们现在就要看这个是否在我们的范围里\n对吧\n我们就可以弄一个\n我们可以得到这个单位向量对吧\n就是direct呃\n等于呃to target\n点normalized的对吧\n就得到一个方向向量啊\n我们指向敌人的方向向量\n然后我们再根据我们刚才讲的那个点乘对吧\n嗯点乘就等于额victor3点dot点乘啊\n点成的话就是玩家的这个前方哎\n然后还有一个刚刚的一个角度对吧\n啊玩家的玩家的前方对吧\n这个然后和角度进行一个点乘对吧\n就得到了这个点乘的值\n然后还有一个就是它的这个呃\n呃这个cos的值对吧\ncos的值\n啊cos的value对吧\n额就等于额MAH点cos\n然后的话是呃适口的角度乘以0.5\n乘以乘以它一个角度啊\n角度转弧度\n因为传的是弧度啊\n啊我要传这个啊\n因为的话我们给的这个视野范围\n它是它是一个这样的对吧\n一个这样的\n所以说我们需要除以二才是踩他一边的啊\n才是它一边的啊\n有了这个之后呢\n我们就可以判断是吧\n就得判断了啊\n就如果说额co额dot的值小于cos value的值\n那么就说明什么啊\n就说明它呃说明他不在对吧\n不在\n啊return false啊\n就说明他不在不在这个这个视野范围里对吧\n不在这个视野范围里\n哎那我干这个地方是不是讲错了额\ncos theta小于点乘的值的时候\n检测是否在血范围\n啊没有没有讲错\n没有讲错\n啊这个的话就这个的话就不在啊\n这话就不在\n然后的话咳\n然后我们的话\n再这个的话就可以判断他在不在了对吧\n我们可以来直接来测试一下\n好我们最后最后最后再return个错吧\n嗯如果return true\nTRUE啊\n有它是一个数好\n我们现在可以来测试一下对吧\n呃稍等我调一下啊\n啊发现问题\n他这个的话不是origin\n不是target的\n是transform\n点position\n这样的话就没问题了\n好然后我们来看一下对吧啊\n这样的话就可以了对吧\n在这个视野范围里就看到玩家是吧\n出了这个视野范围就看不到啊\n以及说是呃距离是吧\n距离大了\n距离大了也看不到了对吧\n距离小的看得到了\n然后视野视野小看得到\n视野大看不到了对吧啊\n所以说这个就实现了\n然后的话我们就再做一个障碍物的一个检测\n就我们这个就我们这个physics对吧\n如果说嗯\n点recast\n我们用它这个初始位置\n终止位置\n这个重载origin是吧\n嗯首先呢是一个呃初始位置\n然后第二个的话是\n第二的话是他的这个射线的方向\n第三个的话是他的距离对吧\n最大的距离呃\n射线的距离对吧\n第四个的话是他的遮挡层\n遮挡层级呀\n如果说他们\n呃他们射到了射到了遮挡物\n那么就return false\n剩下的呢就return true啊\nwaiter true就完事了对吧\n完事了啊\n有遮挡物的时候就没有啊\n然后的话我们再再画一个射线啊\n画好在我们再画一个射线debug\n点卓锐画一个射线对吧啊\n初始位置\n然后他的他的这个呃目标位置\n然后它的颜色对吧嗯\n额目标位置嘛\n额是啊\n这是这是这样一个重载啊\n也行吧\n好然后我们可以来看一下\n然后进行一个特别狠的划线对吧\n然然然后的话就可以很直很直观的\n就可以看到额\n在范围里可以看得到人的粗距离的话看不到\n对吧啊这样的一个视锥\n然后的话这个如果东西有球遮挡\n那你也看不到了对吧\n有车有遮挡住\n我看不到了\n离开遮挡遮挡物就看得到了\n好\n这样就实现了一个啊\n怪物的这个驯鹿的一个视锥检测啊\n好那么就是这样\n谢谢大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cGga6DEkW",
+  "published_at": "1784858393",
+  "fetched_at": "2026-08-09T21:42:40+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 视锥检测知识图谱\n\n## 视锥检测整体结构\n```mermaid\nflowchart TD\n    A1[\"怪物巡逻\"] --> A2[\"计算视锥\"]\n    A2 --> A3[\"距离检测\"]\n    A2 --> A4[\"角度检测 (点乘)\"]\n    A2 --> A5[\"遮挡检测 (Raycast)\"]\n    A3 --> A6[\"距离超出 ?\"]\n    A6 -- 是 --> A9[\"返回 false (不可见)\"]\n    A6 -- 否 --> A7[\"继续\"]\n    A4 --> A8[\"角度在视野范围内 ?\"]\n    A8 -- 是 --> A7\n    A8 -- 否 --> A9\n    A5 --> A10[\"射线命中遮挡物 ?\"]\n    A10 -- 是 --> A9\n    A10 -- 否 --> A11[\"返回 true (可见)\"]\n    A7 --> A11\n    A11 --> A12[\"行为决定\"]\n```\n\n## 角度检测细节\n```mermaid\nflowchart TD\n    B1[\"目标位置\"] --> B2[\"向量 = Target - Origin\"]\n    B3[\"怪物位置 + 高度偏移\"] --> B2\n    B2 --> B4[\"方向单位向量 = normalize(向量)\"]\n    B5[\"怪物前向 forward (单位向量)\"] --> B6[\"dot = forward · 方向单位向量\"]\n    B4 --> B6\n    B6 --> B7[\"cos(视野角/2)\"]\n    B6 --> B8[\"dot >= cos(视野角/2) ?\"]\n    B8 -- 是 --> B9[\"在视野角内\"]\n    B8 -- 否 --> B10[\"不在视野角内\"]\n```\n\n## 遮挡检测细节\n```mermaid\nflowchart TD\n    C1[\"射线起点 (origin)\"] --> C2[\"射线方向 (方向单位向量)\"]\n    C3[\"最大距离 (willDistance)\"] --> C4[\"遮挡层 mask (LayerMask)\"]\n    C1 --> C5[\"Physics.Raycast(origin, direction, out hit, MaxDist, LayerMask)\"]\n    C2 --> C5\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"射线命中 ?\"]\n    C6 -- 是 --> C7[\"命中遮挡物 ?\"]\n    C7 -- 是 --> C8[\"返回 false\"]\n    C7 -- 否 --> C9[\"返回 true\"]\n    C6 -- 否 --> C9\n```\n\n## 关键参数与成员变量\n```mermaid\nflowchart TD\n    D1[\"Transform target\"] --> D5[\"计算 toTarget & dirNorm\"]\n    D2[\"float willDistance (视距)\"] --> D5\n    D3[\"float viewAngle (视角)\"] --> D5\n    D4[\"LayerMask obstacleMask\"] --> D5\n    D5 --> D6[\"执行距离、角度、遮挡检查\"]\n    D6 --> D7[\"返回可见性 (true/false)\"]\n```",
+      "diagrams": [
+        {
+          "title": "视锥检测整体结构",
+          "code": "flowchart TD\n    A1[\"怪物巡逻\"] --> A2[\"计算视锥\"]\n    A2 --> A3[\"距离检测\"]\n    A2 --> A4[\"角度检测 (点乘)\"]\n    A2 --> A5[\"遮挡检测 (Raycast)\"]\n    A3 --> A6[\"距离超出 ?\"]\n    A6 -- 是 --> A9[\"返回 false (不可见)\"]\n    A6 -- 否 --> A7[\"继续\"]\n    A4 --> A8[\"角度在视野范围内 ?\"]\n    A8 -- 是 --> A7\n    A8 -- 否 --> A9\n    A5 --> A10[\"射线命中遮挡物 ?\"]\n    A10 -- 是 --> A9\n    A10 -- 否 --> A11[\"返回 true (可见)\"]\n    A7 --> A11\n    A11 --> A12[\"行为决定\"]"
+        },
+        {
+          "title": "角度检测细节",
+          "code": "flowchart TD\n    B1[\"目标位置\"] --> B2[\"向量 = Target - Origin\"]\n    B3[\"怪物位置 + 高度偏移\"] --> B2\n    B2 --> B4[\"方向单位向量 = normalize(向量)\"]\n    B5[\"怪物前向 forward (单位向量)\"] --> B6[\"dot = forward · 方向单位向量\"]\n    B4 --> B6\n    B6 --> B7[\"cos(视野角/2)\"]\n    B6 --> B8[\"dot >= cos(视野角/2) ?\"]\n    B8 -- 是 --> B9[\"在视野角内\"]\n    B8 -- 否 --> B10[\"不在视野角内\"]"
+        },
+        {
+          "title": "遮挡检测细节",
+          "code": "flowchart TD\n    C1[\"射线起点 (origin)\"] --> C2[\"射线方向 (方向单位向量)\"]\n    C3[\"最大距离 (willDistance)\"] --> C4[\"遮挡层 mask (LayerMask)\"]\n    C1 --> C5[\"Physics.Raycast(origin, direction, out hit, MaxDist, LayerMask)\"]\n    C2 --> C5\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"射线命中 ?\"]\n    C6 -- 是 --> C7[\"命中遮挡物 ?\"]\n    C7 -- 是 --> C8[\"返回 false\"]\n    C7 -- 否 --> C9[\"返回 true\"]\n    C6 -- 否 --> C9"
+        },
+        {
+          "title": "关键参数与成员变量",
+          "code": "flowchart TD\n    D1[\"Transform target\"] --> D5[\"计算 toTarget & dirNorm\"]\n    D2[\"float willDistance (视距)\"] --> D5\n    D3[\"float viewAngle (视角)\"] --> D5\n    D4[\"LayerMask obstacleMask\"] --> D5\n    D5 --> D6[\"执行距离、角度、遮挡检查\"]\n    D6 --> D7[\"返回可见性 (true/false)\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T21:43:20+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 视锥检测知识图谱\n\n## 视锥检测整体结构\n```mermaid\nflowchart TD\n    A1[\"怪物巡逻\"] --> A2[\"计算视锥\"]\n    A2 --> A3[\"距离检测\"]\n    A2 --> A4[\"角度检测 (点乘)\"]\n    A2 --> A5[\"遮挡检测 (Raycast)\"]\n    A3 --> A6[\"距离超出 ?\"]\n    A6 -- 是 --> A9[\"返回 false (不可见)\"]\n    A6 -- 否 --> A7[\"继续\"]\n    A4 --> A8[\"角度在视野范围内 ?\"]\n    A8 -- 是 --> A7\n    A8 -- 否 --> A9\n    A5 --> A10[\"射线命中遮挡物 ?\"]\n    A10 -- 是 --> A9\n    A10 -- 否 --> A11[\"返回 true (可见)\"]\n    A7 --> A11\n    A11 --> A12[\"行为决定\"]\n```\n\n## 角度检测细节\n```mermaid\nflowchart TD\n    B1[\"目标位置\"] --> B2[\"向量 = Target - Origin\"]\n    B3[\"怪物位置 + 高度偏移\"] --> B2\n    B2 --> B4[\"方向单位向量 = normalize(向量)\"]\n    B5[\"怪物前向 forward (单位向量)\"] --> B6[\"dot = forward · 方向单位向量\"]\n    B4 --> B6\n    B6 --> B7[\"cos(视野角/2)\"]\n    B6 --> B8[\"dot >= cos(视野角/2) ?\"]\n    B8 -- 是 --> B9[\"在视野角内\"]\n    B8 -- 否 --> B10[\"不在视野角内\"]\n```\n\n## 遮挡检测细节\n```mermaid\nflowchart TD\n    C1[\"射线起点 (origin)\"] --> C2[\"射线方向 (方向单位向量)\"]\n    C3[\"最大距离 (willDistance)\"] --> C4[\"遮挡层 mask (LayerMask)\"]\n    C1 --> C5[\"Physics.Raycast(origin, direction, out hit, MaxDist, LayerMask)\"]\n    C2 --> C5\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"射线命中 ?\"]\n    C6 -- 是 --> C7[\"命中遮挡物 ?\"]\n    C7 -- 是 --> C8[\"返回 false\"]\n    C7 -- 否 --> C9[\"返回 true\"]\n    C6 -- 否 --> C9\n```\n\n## 关键参数与成员变量\n```mermaid\nflowchart TD\n    D1[\"Transform target\"] --> D5[\"计算 toTarget & dirNorm\"]\n    D2[\"float willDistance (视距)\"] --> D5\n    D3[\"float viewAngle (视角)\"] --> D5\n    D4[\"LayerMask obstacleMask\"] --> D5\n    D5 --> D6[\"执行距离、角度、遮挡检查\"]\n    D6 --> D7[\"返回可见性 (true/false)\"]\n```",
+  "diagrams": [
+    {
+      "title": "视锥检测整体结构",
+      "code": "flowchart TD\n    A1[\"怪物巡逻\"] --> A2[\"计算视锥\"]\n    A2 --> A3[\"距离检测\"]\n    A2 --> A4[\"角度检测 (点乘)\"]\n    A2 --> A5[\"遮挡检测 (Raycast)\"]\n    A3 --> A6[\"距离超出 ?\"]\n    A6 -- 是 --> A9[\"返回 false (不可见)\"]\n    A6 -- 否 --> A7[\"继续\"]\n    A4 --> A8[\"角度在视野范围内 ?\"]\n    A8 -- 是 --> A7\n    A8 -- 否 --> A9\n    A5 --> A10[\"射线命中遮挡物 ?\"]\n    A10 -- 是 --> A9\n    A10 -- 否 --> A11[\"返回 true (可见)\"]\n    A7 --> A11\n    A11 --> A12[\"行为决定\"]"
+    },
+    {
+      "title": "角度检测细节",
+      "code": "flowchart TD\n    B1[\"目标位置\"] --> B2[\"向量 = Target - Origin\"]\n    B3[\"怪物位置 + 高度偏移\"] --> B2\n    B2 --> B4[\"方向单位向量 = normalize(向量)\"]\n    B5[\"怪物前向 forward (单位向量)\"] --> B6[\"dot = forward · 方向单位向量\"]\n    B4 --> B6\n    B6 --> B7[\"cos(视野角/2)\"]\n    B6 --> B8[\"dot >= cos(视野角/2) ?\"]\n    B8 -- 是 --> B9[\"在视野角内\"]\n    B8 -- 否 --> B10[\"不在视野角内\"]"
+    },
+    {
+      "title": "遮挡检测细节",
+      "code": "flowchart TD\n    C1[\"射线起点 (origin)\"] --> C2[\"射线方向 (方向单位向量)\"]\n    C3[\"最大距离 (willDistance)\"] --> C4[\"遮挡层 mask (LayerMask)\"]\n    C1 --> C5[\"Physics.Raycast(origin, direction, out hit, MaxDist, LayerMask)\"]\n    C2 --> C5\n    C3 --> C5\n    C4 --> C5\n    C5 --> C6[\"射线命中 ?\"]\n    C6 -- 是 --> C7[\"命中遮挡物 ?\"]\n    C7 -- 是 --> C8[\"返回 false\"]\n    C7 -- 否 --> C9[\"返回 true\"]\n    C6 -- 否 --> C9"
+    },
+    {
+      "title": "关键参数与成员变量",
+      "code": "flowchart TD\n    D1[\"Transform target\"] --> D5[\"计算 toTarget & dirNorm\"]\n    D2[\"float willDistance (视距)\"] --> D5\n    D3[\"float viewAngle (视角)\"] --> D5\n    D4[\"LayerMask obstacleMask\"] --> D5\n    D5 --> D6[\"执行距离、角度、遮挡检查\"]\n    D6 --> D7[\"返回可见性 (true/false)\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T21:43:20+00:00"
+}

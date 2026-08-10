@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1w7Nj6eEBh",
+  "title": "【开源】阿里 page-agent 项目冲上 Github 热榜🔥",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1383,
+  "text": "现在我的双手是完全没有操作电脑的\n阿里的一个项目叫page agent\n在GITHUB上开源\n并获得了25.5K的一个star\n最近呢在GITHUB上面冲上了热榜\n他是MIT的开源协议\n我们可以看到它的更新还是比较频繁的\n在我录视频的时候\n17小时前它就更新了\n我们来到他的官网\n看一下他是怎么介绍的\n他的标题写的是你网站的AI操作员\n其实在这个操作网站这一块\n我们很多agent都能实现这样的作用\n比如说codex有这个brother user\n就可以来帮助咱们操作网站\n但是呢阿里的这个项目\n我觉得还是有他的一些独到的地方\n就是之前咱们都是在用一个外挂式的agent\n他来操作网页\n然后呢\n这个项目它相当于是把呃\nagent嵌入到了你的这个网站中\n所以呢它并不像是一个第三方的一个\n外挂的一个agent\n而是是给网站的开发者或者管理员来用的\n就是我们可以用这个项目来\n去嵌入到自己的网站产品中\n来提升我们产品的AI属性\n当然了\n我们也可以把它嵌入到其他的网站来使用\n比如说我打开收藏夹\n我已经把这个拖进来了\n如果没拖的话\n可以把这个PAGAGENT这样\n直接拖拽到自己的这个网站收藏夹中\n拖进来以后\n他就在这块儿了\n然后我们来先演示一下啊\n就首先它是提供了一个免费的大模型的API的\n所以我们可以直接来用\n我们点开B站的创作中心\n然后在这样的一个第三方网站的页面上面\n我们可以直接点这个PAGENT的\n点了以后\n我们可以看到这块弹出来了一个准备就绪\n我们现在来说一段任务\n然后看他能不能实现\n帮我去B站的专栏里面进行投稿\n投稿的内容你来自行的合理杜撰即可\n好发给他\n我们可以看到浏览器上面出现了一个箭头\n然后它现在显示正在思考诶\n他点了专栏投稿\n我们看一下他会不会点新的创作好\n他点了新的创作\n现在就进入到了这个创作中心\n现在我的双手是完全没有操作电脑的啊\n他在这个创作中心里面填了标题\n他应该会再填正文\n好\n他现在填了正文\n我们看一下他会不会发布哦\n他还会勾选创作声明\n好他点了发布好\n这个时候我的专栏就已经提交成功了\n好我先暂停到这个AI的任务\n我们可以看到他这个任务里面详细的记录了\n他做了哪些事情\n好我们退出\n我们点击查看\n我们可以看到这个专栏\n刚才的这个page agent就帮我们已经发布成功了\n好我们把这个专栏先删掉\nOK所以刚才试了一下这个阿里的配置\nagent还是挺好用的\n我们点击它的文档来看一下\n我们可以看到它是一个基于盗墓进行分析\n所以它并不是像有一些呃\n这种brother ya的实现方案\n它其实是通过这种多模态的视觉模型\n来对这个网页进行分析\n当然这样的做法不能说是好或坏\n就是各有利弊\n我们也可以看到他这块做了一个对比\n就是PAGENT和brother user\n它适合哪一类的\n这个用户可以看到\n其实这个page inderson他的目标并不是取代brother user\n它的作用就是来给咱们自己的产品做内嵌\n然后呢网站开发者来去用增强用户体验\n也就是他畅想的未来的网页\n可能并不是说你要给一个人机进行呃\n点击的一个页面\n你还要提供一个可以理解用户意图\n可以用自然语言操作的AI助手好\n今天就演示这些更详细的功能\n大家可以登录它的官网来进行一些探索\n大家对这块技术路线的观点\n也可以在评论区讨论讨论好\n今天就分享这些\n我们下次见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1w7Nj6eEBh",
+  "published_at": "1783656240",
+  "fetched_at": "2026-08-10T09:45:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Page-Agent 项目知识图谱\n\n## Overview 【BV1w7Nj6eEBh P1 00:02, 00:05, 00:07, 00:10, 00:15】\n```mermaid\nflowchart TD\n    A[\"Page-Agent 项目\"]\n    B[\"开源于 GitHub\"]\n    C[\"MIT 许可证\"]\n    D[\"25.5K Stars\"]\n    E[\"冲上热榜\"]\n    F[\"更新频繁（17小时前）\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n```\n\n## 嵌入方式 vs 传统外挂 【BV1w7Nj6eEBh P1 00:38, 00:42, 00:49, 00:52, 00:59】\n```mermaid\nflowchart TD\n    A1[\"传统外挂 Agent\"]\n    B1[\"外部注入网页\"]\n    C1[\"Page-Agent 嵌入式 Agent\"]\n    D1[\"嵌入网站内部\"]\n    E1[\"供开发者/管理员使用\"]\n    F1[\"提升产品 AI 属性\"]\n    A1 --> B1\n    C1 --> D1\n    C1 --> E1\n    C1 --> F1\n    D1 --> F1\n```\n\n## 功能演示工作流 【BV1w7Nj6eEBh P1 01:12, 01:16, 01:29, 01:36, 01:43, 02:16】\n```mermaid\nflowchart TD\n    S[\"启动 Page-Agent\"]\n    A2[\"调用免费大模型 API\"]\n    B2[\"打开 B站创作中心页面\"]\n    C2[\"点击 Page-Agent 按钮\"]\n    D2[\"AI 思考并执行任务\"]\n    E2[\"填写标题\"]\n    F2[\"填写正文\"]\n    G2[\"勾选创作声明\"]\n    H2[\"发布投稿\"]\n    I2[\"任务记录与日志\"]\n    S --> A2 --> B2 --> C2 --> D2 --> E2 --> F2 --> G2 --> H2 --> I2\n```\n\n## 技术实现与对比 【BV1w7Nj6eEBh P1 02:45, 02:52, 02:57, 03:04, 03:07, 03:14】\n```mermaid\nflowchart TD\n    V[\"Page-Agent 实现\"]\n    W[\"Brother User 实现\"]\n    T[\"多模态视觉模型\"]\n    U[\"网页内容分析\"]\n    X[\"对比：内嵌 vs 外挂\"]\n    Y[\"目标：提升用户体验\"]\n    Z[\"不取代 Brother User\"]\n    V --> T --> U\n    W --> T\n    V --> X\n    X --> Y\n    X --> Z\n```",
+      "diagrams": [
+        {
+          "title": "Overview 【BV1w7Nj6eEBh P1 00:02, 00:05, 00:07, 00:10, 00:15】",
+          "code": "flowchart TD\n    A[\"Page-Agent 项目\"]\n    B[\"开源于 GitHub\"]\n    C[\"MIT 许可证\"]\n    D[\"25.5K Stars\"]\n    E[\"冲上热榜\"]\n    F[\"更新频繁（17小时前）\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F"
+        },
+        {
+          "title": "嵌入方式 vs 传统外挂 【BV1w7Nj6eEBh P1 00:38, 00:42, 00:49, 00:52, 00:59】",
+          "code": "flowchart TD\n    A1[\"传统外挂 Agent\"]\n    B1[\"外部注入网页\"]\n    C1[\"Page-Agent 嵌入式 Agent\"]\n    D1[\"嵌入网站内部\"]\n    E1[\"供开发者/管理员使用\"]\n    F1[\"提升产品 AI 属性\"]\n    A1 --> B1\n    C1 --> D1\n    C1 --> E1\n    C1 --> F1\n    D1 --> F1"
+        },
+        {
+          "title": "功能演示工作流 【BV1w7Nj6eEBh P1 01:12, 01:16, 01:29, 01:36, 01:43, 02:16】",
+          "code": "flowchart TD\n    S[\"启动 Page-Agent\"]\n    A2[\"调用免费大模型 API\"]\n    B2[\"打开 B站创作中心页面\"]\n    C2[\"点击 Page-Agent 按钮\"]\n    D2[\"AI 思考并执行任务\"]\n    E2[\"填写标题\"]\n    F2[\"填写正文\"]\n    G2[\"勾选创作声明\"]\n    H2[\"发布投稿\"]\n    I2[\"任务记录与日志\"]\n    S --> A2 --> B2 --> C2 --> D2 --> E2 --> F2 --> G2 --> H2 --> I2"
+        },
+        {
+          "title": "技术实现与对比 【BV1w7Nj6eEBh P1 02:45, 02:52, 02:57, 03:04, 03:07, 03:14】",
+          "code": "flowchart TD\n    V[\"Page-Agent 实现\"]\n    W[\"Brother User 实现\"]\n    T[\"多模态视觉模型\"]\n    U[\"网页内容分析\"]\n    X[\"对比：内嵌 vs 外挂\"]\n    Y[\"目标：提升用户体验\"]\n    Z[\"不取代 Brother User\"]\n    V --> T --> U\n    W --> T\n    V --> X\n    X --> Y\n    X --> Z"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T09:45:16+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Page-Agent 项目知识图谱\n\n## Overview 【BV1w7Nj6eEBh P1 00:02, 00:05, 00:07, 00:10, 00:15】\n```mermaid\nflowchart TD\n    A[\"Page-Agent 项目\"]\n    B[\"开源于 GitHub\"]\n    C[\"MIT 许可证\"]\n    D[\"25.5K Stars\"]\n    E[\"冲上热榜\"]\n    F[\"更新频繁（17小时前）\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n```\n\n## 嵌入方式 vs 传统外挂 【BV1w7Nj6eEBh P1 00:38, 00:42, 00:49, 00:52, 00:59】\n```mermaid\nflowchart TD\n    A1[\"传统外挂 Agent\"]\n    B1[\"外部注入网页\"]\n    C1[\"Page-Agent 嵌入式 Agent\"]\n    D1[\"嵌入网站内部\"]\n    E1[\"供开发者/管理员使用\"]\n    F1[\"提升产品 AI 属性\"]\n    A1 --> B1\n    C1 --> D1\n    C1 --> E1\n    C1 --> F1\n    D1 --> F1\n```\n\n## 功能演示工作流 【BV1w7Nj6eEBh P1 01:12, 01:16, 01:29, 01:36, 01:43, 02:16】\n```mermaid\nflowchart TD\n    S[\"启动 Page-Agent\"]\n    A2[\"调用免费大模型 API\"]\n    B2[\"打开 B站创作中心页面\"]\n    C2[\"点击 Page-Agent 按钮\"]\n    D2[\"AI 思考并执行任务\"]\n    E2[\"填写标题\"]\n    F2[\"填写正文\"]\n    G2[\"勾选创作声明\"]\n    H2[\"发布投稿\"]\n    I2[\"任务记录与日志\"]\n    S --> A2 --> B2 --> C2 --> D2 --> E2 --> F2 --> G2 --> H2 --> I2\n```\n\n## 技术实现与对比 【BV1w7Nj6eEBh P1 02:45, 02:52, 02:57, 03:04, 03:07, 03:14】\n```mermaid\nflowchart TD\n    V[\"Page-Agent 实现\"]\n    W[\"Brother User 实现\"]\n    T[\"多模态视觉模型\"]\n    U[\"网页内容分析\"]\n    X[\"对比：内嵌 vs 外挂\"]\n    Y[\"目标：提升用户体验\"]\n    Z[\"不取代 Brother User\"]\n    V --> T --> U\n    W --> T\n    V --> X\n    X --> Y\n    X --> Z\n```",
+  "diagrams": [
+    {
+      "title": "Overview 【BV1w7Nj6eEBh P1 00:02, 00:05, 00:07, 00:10, 00:15】",
+      "code": "flowchart TD\n    A[\"Page-Agent 项目\"]\n    B[\"开源于 GitHub\"]\n    C[\"MIT 许可证\"]\n    D[\"25.5K Stars\"]\n    E[\"冲上热榜\"]\n    F[\"更新频繁（17小时前）\"]\n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F"
+    },
+    {
+      "title": "嵌入方式 vs 传统外挂 【BV1w7Nj6eEBh P1 00:38, 00:42, 00:49, 00:52, 00:59】",
+      "code": "flowchart TD\n    A1[\"传统外挂 Agent\"]\n    B1[\"外部注入网页\"]\n    C1[\"Page-Agent 嵌入式 Agent\"]\n    D1[\"嵌入网站内部\"]\n    E1[\"供开发者/管理员使用\"]\n    F1[\"提升产品 AI 属性\"]\n    A1 --> B1\n    C1 --> D1\n    C1 --> E1\n    C1 --> F1\n    D1 --> F1"
+    },
+    {
+      "title": "功能演示工作流 【BV1w7Nj6eEBh P1 01:12, 01:16, 01:29, 01:36, 01:43, 02:16】",
+      "code": "flowchart TD\n    S[\"启动 Page-Agent\"]\n    A2[\"调用免费大模型 API\"]\n    B2[\"打开 B站创作中心页面\"]\n    C2[\"点击 Page-Agent 按钮\"]\n    D2[\"AI 思考并执行任务\"]\n    E2[\"填写标题\"]\n    F2[\"填写正文\"]\n    G2[\"勾选创作声明\"]\n    H2[\"发布投稿\"]\n    I2[\"任务记录与日志\"]\n    S --> A2 --> B2 --> C2 --> D2 --> E2 --> F2 --> G2 --> H2 --> I2"
+    },
+    {
+      "title": "技术实现与对比 【BV1w7Nj6eEBh P1 02:45, 02:52, 02:57, 03:04, 03:07, 03:14】",
+      "code": "flowchart TD\n    V[\"Page-Agent 实现\"]\n    W[\"Brother User 实现\"]\n    T[\"多模态视觉模型\"]\n    U[\"网页内容分析\"]\n    X[\"对比：内嵌 vs 外挂\"]\n    Y[\"目标：提升用户体验\"]\n    Z[\"不取代 Brother User\"]\n    V --> T --> U\n    W --> T\n    V --> X\n    X --> Y\n    X --> Z"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T09:45:16+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1XPoNB5EQy",
+  "title": "[17] FlashAttention-1论文解读 【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3826,
+  "text": "今天我们来介绍一篇关于transformer模型\n加速与内存优化的重要工作\n标题叫做flash attension\n全称是面向输入输出感知的\n快速且内存高效的精确注意力机制\n这篇论文来自斯坦福大学等机构发表\n在2022年\n我们知道\ntransformer模型已经成为自然语言\n处理和计算机视觉领域最主流的架构\n但他的自注意力模块在处理长序列时\n有一个致命弱点\n时间和内存复杂度都会随着序列长度的增加\n呈平方级增长\n也就是说序列越长\n计算越慢\n占用的显存越多\n之前有很多近似注意力方法试图解决这个问题\n但他们往往以牺牲模型精度为代价\n而且很多方法在实际运行中并没有取得\n真正的WALKLOCK加速效果\nflash attension的核心思想非常独特\n他不从算法近似入手\n而是从硬件的内存层级特性出发\n提出了输入输出感知的精确注意力算法\n在不改变模型计算结果的前提下\n大幅减少了GPU高带宽\n显存和片上高速缓存之间的数据搬运次数\n从而实现了既快又省内存的精确注意力计算\n下面看一下摘要\n翻译传送门模型在处理长序列时既慢又耗内存\n因为自注意力机制的时间和内存\n复杂度与序列长度成平方关系\n近似注意力方法\n试图通过牺牲模型质量来降低计算复杂度\n但往往无法实现真正的WALKLOCK加速\n作者认为\n以往工作忽略了一个关键原则\n那就是让注意力算法具备输入输出感知能力\n也就是充分考虑GPU\n不同层级内存之间的读写开销\n本文提出了flash attention\n一种输入输出感知的精确注意力算法\n它通过分块计算来减少GPU高带宽\n显存与片上高速缓存之间的内存读写次数\n作者分析了flash attention的输入输出复杂度\n证明它比标准注意力需要更少的高带宽\n显存访问次数\n并且对于各种高速缓存大小都是最优的\n作者还将flash attention扩展到了快稀疏注意力\n得到了一种比所有现有近似注意力方法都\n更快的近似算法\n实验结果表明\nflash attention在bot large上\n比MLPERF训练速度记录快15%\n在GPT2上实现三倍加速\n在长城任务基准上实现2.4倍加速\nflash attention和快吸收flash attention\n让transformer能够处理更长的上下文\n从而获得更高质量的模型\n在GPT2上困惑度降低了0.7\n在长文档分类任务上提升了6.4个百分点\n并且首次实现了\n在pass x挑战和pass256挑战上\n超越随机猜测的性能\n下面看一下这张图\n这张图展示了flash attention最核心的思想\n包含了三个关键信息\n最左边是GPU的内存层级\n金字塔最顶端是片上高速缓存\nSREM速度最快\n每秒可以传输19tb数据\n但容量只有20兆\n中间是高带宽显存\nHBM速度是每秒1.5tb\n容量有40GB\n最下面是主内存\n关键问题在于\n虽然HBM容量大\n但它的读写速度比SREM慢了\n一个数量级标准\n注意力实现需要把巨大的N乘N\n注意力矩阵反复在HBM上读写\n这成了性能瓶颈\n中间部分展示了flash attention的分块计算策略\n它将查询矩阵键矩阵和值矩阵分成小块\n从HBM加载到快速的SRAM上\n在SRAM上完成注意力计算\n最后只把结果写回HBM\n避免了在中间过程中\n把巨大的注意力矩阵写回慢速的HBM\n最右边的柱状图\n展示了在gt2上的实际加速效果\nplatters s的标准实现需要超过15ms\n而flash retention\n通过把所有注意力操作融合成一个GPU内核\n只需要大约2ms\n实现了7.6倍的注意力计算加速\n下面看一下这个公式\n这个公式展示了标准注意力机制的计算流程\n给定输入序列对应的查询矩阵\nQ键矩阵\nK和值矩阵V\n首先计算注意力分数\n矩阵S等于Q乘以K的转置\n这是一个N乘N的矩阵\n然后对S的每一行做soft max\n得到注意力权重矩阵P\n这也是一个N乘N的矩阵\n最后将P和V相乘\n得到输出矩阵O问题就出在这里\n标准实现会把S和P这两个巨大的N乘N矩阵\n都物化到HBM上\n当序列长度N很大时\n比如GPT2中N等于1024\n这两个矩阵占用的显存是平方级增长的\n而且由于soft max等操作是内存受限的\n大量的hp m读写\n导致实际运行速度非常慢\nflash attention的目标就是\n在不修改这个数学公式的前提下\n通过更聪明的计算调度\n来\n避免把这些巨大的中间矩阵\n写到慢速的HBM上\n下面看一下这张图\n这张图从三个角度验证了\nflash attention在输入输出效率上的优势\n最左边是标准注意力和flash attention\n在GPT2medium模型上的对比表\n虽然flash attention的计算量\nGFLOPS从66.6\n增加到了75.2\n这是因为在反向传播中\n需要重新计算一些中间结果\n但它的高带宽显存读写量从40.3GB\n骤降到了4.4GB\n降幅接近十倍\n运行时间也从41.7ms\n降到了7.3ms\n快了近六倍\n这充分说明减少hp m访问次数是提速的关键\n中间这张图展示了分块大小对性能的影响\n随着分块增大\nhp m访问次数减少\n运行时间也随之下降\n但分块太大又会导致超出SRAM容量\n右边这张图展示了快稀疏flash attention的加速效果\n随着菲林块比例降低\n也就是稀疏度提高快\n稀疏flash attention的运行时间线性下降\n比稠密的flash attention更快\n下面看一下这个表\n这个表展示了flash attention\n在端到端训练GPT2模型时的加速效果\n对于g p t r small模型\n使用HuggingFace实现需要9.5天\n使用METRONLM需要4.7天\n而使用flash attention只需要2.7天\n实现了3.5倍的加速\n对于GPT2medium模型\nhugin face需要21天\nmea tron l m需要11.5天\nflash attention只需要6.9天\n实现了三倍加速\n值得注意的是\n所有这些实现在open web text的数据集上的\n困惑度都是相同的\n这说明flash attention只是加速了计算\n完全没有影响模型的训练质量和最终精度\n这个实验是在八块A100GPU上完成的\n充分证明了flash attention\n在实际大规模训练中的价值\n下面看一下这个表\n这个表展示了在长城注意力基准测试\nL2A上的对比结果\nLRA包含多个需要建模长距离依赖的任务\n比如列表操作文本分类检索\n图像分类和路径查找表中\n第一行是标准transformer\n平均准确率是59.3\nflash attention的平均准确率达到了59.8\n同时实现了2.4倍的加速\n快析出flash attention的平均准确率是59.6\n加速比达到了2.8倍\n与各种近似注意力方法相比\n比如lan former linear attention\nPerformer\nLocal attention\nreformer和sniff\nflash attention和快吸收flash attention不仅在速度上更快\n而且在准确率上也普遍更高或持平\n这非常有意义\n因为它说明flash attention不需要像近似方法那样\n牺牲模型质量\n就能实现甚至更快的运行速度\n下面看一下这张图\n这张图展示了不同注意力实现\n随着序列长度变化的运行时和内存占用情况\n左图是前项加后项的运行时间标准\n注意力的运行时间随着序列长度平方增长\n而flash attention和快吸收\nflash attention的运行时间增长更为缓慢\n图中标注了几个交叉点\n可以看到\n在序列长度512~1024之间\n一些近似方法开始比标准注意力快\n但flash attention在短序列上仍然比近似方法更快\n更重要的是快稀疏\nflash attention在所有序列长度下\n都比所有其他方法快\n右图是内存占用标准精确注意力的内存占用\n随着序列长度平方增长\n而flash attention和快吸收flash attention的内存占用\n与序列长度呈线性关系\n在序列长度64K时\nflash attention比标准精确\n注意力节省了20倍的内存\n即使与informer这种近似方法相比\n也节省了两倍的内存\n下面看一下这个表\n这个表展示了flash attention最具突破性的实验结果\n即在path x和path256\n这两个极端长城依赖基准测试上的表现\npath x的序列长度达到16K\npath256的序列长度更是达到了64K\n在这两个任务上之前\n所有的transformer模型\n要么因为显存不足而无法运行\n要么只能达到随机猜测的水平\n表中用叉号表示失败\n而flash attention\n首次让transformer\n在pass x上取得了61.4的准确率\n突破了随机猜测的瓶颈\n快稀疏flash attention更进一步\n在pass256上取得了63.1的准确率\n同样突破了随机水平\n这是历史上第一个\n在这两个挑战任务上\n取得非随机性能的transformer模型\n这个实验充分说明\nflash attention不仅让transformer更快更省内存\n更重要的是它解锁了处理超长序列的能力\n从而开启了全新的应用场景和模型能力",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1XPoNB5EQy",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:17:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

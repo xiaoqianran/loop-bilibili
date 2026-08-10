@@ -1,0 +1,26 @@
+{
+  "bvid": "BV16qZLBxEZt",
+  "title": "31. FlashAttention v2版本如何省略掩码上三角矩阵计算？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1114,
+  "text": "今天的问题是\nflash attention v2版本是如何省略\n沿马上三角计算的\n我们先来回顾一下传统的decode\nUNONLY的transformer当中的这个掩码\n那么在这里讨论的时候\n忽略掉多头和根号D\n首先需要算一个A就是注意力分数矩阵\n其中AIJ是由QI和KJ做内积算出来的\n表示注意力分数\n然后我们会加上一个掩码\n具体来说呢是一个右上角的掩码\n它的值是负无穷大\n目的是不要看到后面的词\n然后它的效果是在逐函做soft max之后\n所有的负无穷大都会被归零\n像这样\n由于第一行当中只有一个元素\n不是负无穷\n所以呢第一行只有一个一\n然后第二行呢有两个元素\n所以呢它就是两个数\n然后它们的和为一\n同理第三行有三个数合为一\n以此类推\n然后要乘以V在这里用到了一个矩阵\n分块乘法的一种想法\n就是把左边的这个矩阵呢分的特别的细\n然后右边这个矩阵呢只需要切分\n按行切分\n像这样\n然后用矩阵分块乘法\n就这个一乘以V1\n零乘以V2\n以此类推\n所以就算出来第一个就是V1\n相当于他不看到后面的词\n然后呢第二行呢就是这个零乘以V1\n0.8乘以V2\n相当于是个加权平均\n以此类推\n那这个是传统的decoder\nOnly transformer\n接下来来看一下flash tan的计算\n之前说过\n他会把它分成tile\n这个tile呢它可以是多行的\n比如说这里的这个q tile\n然后一个线程块会把它从HBM搬运到s s ram\n就是这里的Q2搬运进来\n然后K1搬运进来去\n算一下这个注意力分数小块就是A21\n对应的是这个\n注意这里的A21是没有必要写回HBM的\n因为这里的A用完就可以把它丢掉\n然后我们会把这里的V1给搬运进来\n然后A21和V1算出来一个小块O2\n然后特别要注意几个细节\n首先就是这个O2它不是最终的结果\n而是要进行一个修正累加\n因为我们可以观察一下\n会发现这个第二行的这个O2\n它是由多个V1V2算出来的\n所以呢我们要进行一个累加\n其次呢因为之前做的这个是在线soft max\n还要进行一个修正\n然后会发现其实这个A21它对应的\n其实你可以理解为这里的这个0.2\n就解释了为什么要把这个V1搬进来\n然后算出来的\n为什么是O2\n可以用这个图来理解\n然后我们考虑一下\n假设现在搬进来的是这个Q1和KN\n那么他有G1吗\n但是没有记忆\n因为Q1和KN算出来的是什么呢\n算出来的是这个右上角的小块\n但是它在这个注意力矩阵\n那它是负无穷大\n那他根本就不会有贡献\n那么我们就没有必要\n所以如何省略呢\n当然是\n我们就干脆就不要帮这个里的这个\nKN和VN了\n就是说如果它对应的注意力分数是这个负无穷\n那主要就不用搬\n那这样的话他就可以更快",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16qZLBxEZt",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:19:13+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1yuT46iEw5",
+  "title": "你用AI写了半年代码可能【还没入门】！90%的程序员能力卡在L2，到底如何提升大模型程序员能力？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1839,
+  "text": "你用AI写了半年代码可能还没入门\n沃顿商学院把AI编程分为六个段位\n90%的人卡在A2\n有人用了半年AI每天复制粘贴调permit\n觉得自己已经很熟练了\n有人让AI跨文件改代码\n跑测试\n生成pr\n觉得自己已经到了天花板\n还有人已经开始让agent的自己跑任务\n自己验证\n自己修bug\n基本不碰代码了\n这三类人表面上都在用AI写代码\n但实际上相差了整整一个时代\n沃顿商学院的研究员戴安夏pro\n做过一个很有意思的类比\n他把人与AI的关系分为六个层级\n对标自动驾驶的L0到L5\n我看完之后才发现\n绝大多数用AI写代码的程序员\n其实只停留在L2L0是加大版自动补全\n你从HIGBT里复制粘贴代码\nAI只是让你打字快了一点\n每个字符落到代码库里都依然需要经过你的手\nL1是实习生\n你让AI写单元测试\n写注释\n写小函数\n你会逐行审查AI有用\n但你的工作方式没有根本变化\nL2是初级开发模型能跨多个文件改代码\n能理解项目结构\n能和你结对编程\n但关键点在于你仍然要review每一行def\n很多人就卡在了这里\n他们觉得已经很科幻了\nAI能改项目\n能跑命令\n能生成pr\n能解释代码\n于是他们以为自己已经到顶了\n但问题是L2只是更强的结对编程\n还不是软件生产方式的变化\nL3是带安全员的外mo大部分代码由AI生成\n人类变成全职的coding reviver\n你不在主要写代码\n而是在多个agent\n多个分支\n多个def之间来回切换\n这听起来很先进\n但也很痛苦\n你的生活变成了看DI看地府还是看地府\nAI写代码的速度上来了\n但你的review能力成了瓶颈\nL4是无人出租车\n你不在逐行看代码\n而是写spec定计划\n设计测试规定边界\n然后让agent自己跑一段时间\n你回来看的不是每一行代码\n而是测试结果\n任务完成情况\n风险报告\n你的角色已经不像程序员\n更像EMPM\n架构师和质检系统设计者的混合体\nL5是黑灯工厂\n没人看AI写的代码\n人类不再靠读代码建立信任\n而是靠测试模拟验证\n回滚监控和工具链来证明系统能跑\n这才是真正意义上的agent编程\n那问题来了\n你觉得自己在哪一层\n我见过太多人花大价钱买最强模型\n研究各种promise技巧\n最后还是停留在一问一答式的聊天里\n他们以为自己插的是模型\n其实差的是架构\ndeep sk v4和cloud offs4.7的差距有多大\n如果你只停留在L0到L1问\n报错写函数生成小片段\n但很多模型的差距不会大到颠覆体验\n如果你在L2\ncloud这类顶级模型的优势会开始明显\n因为它更能处理复杂上下文和多步骤任务\n但真正的分水岭在L3到L4\n到了这里问题已经不是哪个模型更为写代码\n而是你有没有测试体系\n有没有任务边界\n有没有让agent的自己验证结果的机制\n模型只是发动机\n真正决定你能不能往上走的是整套工程系统\n从L2到L4\n不是换一个更强的cloud deep\nSK或JPT就能自动跨过去的\n你需要的是一整套AH的编程方法\n任务拆解\n上下文\n工程测试闭环权限边界失败复盘和消费验证\n我是在知乎知学堂的大模型应用开发实战营里\n才真正把从L2到L4这条路走通\n他不是教你怎么调permit\n而是带你从0~1把AG能跑通\n把循环搭好\n把工程化部署做完\n每一块都是自己动手敲\n不是听听课就完事\n那个课程里对我最大的帮助就是两件事\n第一件事是让我看清了\nL3和L4的真实工作方式\n原来不是我的代码写的不够好\n是我根本不知道\n应该把精力\n从写代码转移到设计边界和验证规则上\n第二件事是拿到了直接能用的工程模板\nagent的工具\n调用策略\n验证机制的设计框架失败\n重试的配置方案\n这些东西我自己摸索了一整年都没攒齐\n课程理事直接带着我跑通\n省了太多时间\n学完之后\n我把组里一个之前一直卡在AI改代码\n经常跑偏的项目重新搭了一遍\n用课程里学的那套方法\n先把任务边界和验证条件写清楚\n然后让agent等在闭环里自己跑\n上线之后\n之前那种改完代码要逐行检查\n两三个小时的情况基本没有了\n我现在只需要看测试报告和任务完成状况就行\n如果你现在也在L2卡着\n感觉AI很强\n但自己还是那个review代码的人\n不知道该怎么往上走\n我建议你先花两天时间去听一下\n那个免费公开课\n它能帮你先看清L3和L4\n到底需要什么样的技术站\n你缺的到底是什么入口呢\n我就给大家分享在评论区里\n有需要的可以自己去看看\n不是换个更强的模型就能跨过去\n你得先知道自己现在在哪一层\n才能知道自己下一步该往哪走",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1yuT46iEw5",
+  "published_at": "1783080014",
+  "fetched_at": "2026-08-10T10:05:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 编程层级与进阶路径\n\n## 总览：AI 编程六层级 (L0‑L5)\n\n```mermaid\nflowchart TD\n    L0[\"L0: 基础自动补全（复制粘贴）\"]\n    L1[\"L1: 实习生（单行审查）\"]\n    L2[\"L2: 初级开发（跨文件改代码）\"]\n    L3[\"L3: AI 主导代码生成 + 人类审查\"]\n    L4[\"L4: 规范化 spec + agent 自动运行\"]\n    L5[\"L5: 黑灯工厂（全自动，测试验证）\"]\n    L0 --> L1\n    L1 --> L2\n    L2 --> L3\n    L3 --> L4\n    L4 --> L5\n```\n\n## 从 L2 到 L4 的关键转变要素\n\n```mermaid\nflowchart TD\n    ReviewBottleneck[\"代码逐行 Review 成瓶颈\"]\n    TestingSystem[\"完整测试体系\"]\n    TaskBoundary[\"明确任务边界\"]\n    AgentVerification[\"Agent 自主验证机制\"]\n    EngineeringStack[\"整套工程系统（上下文、部署、闭环）\"]\n    ModelEngine[\"模型仅是发动机\"]\n    Transition[\"从模型切换到系统\"]\n    ReviewBottleneck --> TestingSystem\n    TestingSystem --> TaskBoundary\n    TaskBoundary --> AgentVerification\n    AgentVerification --> EngineeringStack\n    EngineeringStack --> ModelEngine\n    ModelEngine --> Transition\n```\n\n## 角色变化随层级提升\n\n```mermaid\nflowchart TD\n    RoleL0[\"L0 角色：代码复制者\"]\n    RoleL1[\"L1 角色：单行审查者\"]\n    RoleL2[\"L2 角色：跨文件协作开发者\"]\n    RoleL3[\"L3 角色：AI 生成代码的审查者\"]\n    RoleL4[\"L4 角色：Spec 设计与结果监控者\"]\n    RoleL5[\"L5 角色：系统验证与运营者\"]\n    RoleL0 --> RoleL1\n    RoleL1 --> RoleL2\n    RoleL2 --> RoleL3\n    RoleL3 --> RoleL4\n    RoleL4 --> RoleL5\n```\n\n## 学习路径建议\n\n```mermaid\nflowchart TD\n    SelfAssess[\"自我层级评估\"]\n    FreeCourse[\"免费公开课\"]\n    UnderstandL3L4[\"了解 L3/L4 工作方式\"]\n    LearnTemplates[\"学习工程模板（agent、调用策略）\"]\n    Practice[\"实践任务拆解与闭环\"]\n    Upgrade[\"提升至 L3/L4\"]\n    Community[\"评论区/资源分享\"]\n    SelfAssess --> FreeCourse\n    FreeCourse --> UnderstandL3L4\n    UnderstandL3L4 --> LearnTemplates\n    LearnTemplates --> Practice\n    Practice --> Upgrade\n    Community --> SelfAssess\n```",
+      "diagrams": [
+        {
+          "title": "总览：AI 编程六层级 (L0‑L5)",
+          "code": "flowchart TD\n    L0[\"L0: 基础自动补全（复制粘贴）\"]\n    L1[\"L1: 实习生（单行审查）\"]\n    L2[\"L2: 初级开发（跨文件改代码）\"]\n    L3[\"L3: AI 主导代码生成 + 人类审查\"]\n    L4[\"L4: 规范化 spec + agent 自动运行\"]\n    L5[\"L5: 黑灯工厂（全自动，测试验证）\"]\n    L0 --> L1\n    L1 --> L2\n    L2 --> L3\n    L3 --> L4\n    L4 --> L5"
+        },
+        {
+          "title": "从 L2 到 L4 的关键转变要素",
+          "code": "flowchart TD\n    ReviewBottleneck[\"代码逐行 Review 成瓶颈\"]\n    TestingSystem[\"完整测试体系\"]\n    TaskBoundary[\"明确任务边界\"]\n    AgentVerification[\"Agent 自主验证机制\"]\n    EngineeringStack[\"整套工程系统（上下文、部署、闭环）\"]\n    ModelEngine[\"模型仅是发动机\"]\n    Transition[\"从模型切换到系统\"]\n    ReviewBottleneck --> TestingSystem\n    TestingSystem --> TaskBoundary\n    TaskBoundary --> AgentVerification\n    AgentVerification --> EngineeringStack\n    EngineeringStack --> ModelEngine\n    ModelEngine --> Transition"
+        },
+        {
+          "title": "角色变化随层级提升",
+          "code": "flowchart TD\n    RoleL0[\"L0 角色：代码复制者\"]\n    RoleL1[\"L1 角色：单行审查者\"]\n    RoleL2[\"L2 角色：跨文件协作开发者\"]\n    RoleL3[\"L3 角色：AI 生成代码的审查者\"]\n    RoleL4[\"L4 角色：Spec 设计与结果监控者\"]\n    RoleL5[\"L5 角色：系统验证与运营者\"]\n    RoleL0 --> RoleL1\n    RoleL1 --> RoleL2\n    RoleL2 --> RoleL3\n    RoleL3 --> RoleL4\n    RoleL4 --> RoleL5"
+        },
+        {
+          "title": "学习路径建议",
+          "code": "flowchart TD\n    SelfAssess[\"自我层级评估\"]\n    FreeCourse[\"免费公开课\"]\n    UnderstandL3L4[\"了解 L3/L4 工作方式\"]\n    LearnTemplates[\"学习工程模板（agent、调用策略）\"]\n    Practice[\"实践任务拆解与闭环\"]\n    Upgrade[\"提升至 L3/L4\"]\n    Community[\"评论区/资源分享\"]\n    SelfAssess --> FreeCourse\n    FreeCourse --> UnderstandL3L4\n    UnderstandL3L4 --> LearnTemplates\n    LearnTemplates --> Practice\n    Practice --> Upgrade\n    Community --> SelfAssess"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T10:05:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 编程层级与进阶路径\n\n## 总览：AI 编程六层级 (L0‑L5)\n\n```mermaid\nflowchart TD\n    L0[\"L0: 基础自动补全（复制粘贴）\"]\n    L1[\"L1: 实习生（单行审查）\"]\n    L2[\"L2: 初级开发（跨文件改代码）\"]\n    L3[\"L3: AI 主导代码生成 + 人类审查\"]\n    L4[\"L4: 规范化 spec + agent 自动运行\"]\n    L5[\"L5: 黑灯工厂（全自动，测试验证）\"]\n    L0 --> L1\n    L1 --> L2\n    L2 --> L3\n    L3 --> L4\n    L4 --> L5\n```\n\n## 从 L2 到 L4 的关键转变要素\n\n```mermaid\nflowchart TD\n    ReviewBottleneck[\"代码逐行 Review 成瓶颈\"]\n    TestingSystem[\"完整测试体系\"]\n    TaskBoundary[\"明确任务边界\"]\n    AgentVerification[\"Agent 自主验证机制\"]\n    EngineeringStack[\"整套工程系统（上下文、部署、闭环）\"]\n    ModelEngine[\"模型仅是发动机\"]\n    Transition[\"从模型切换到系统\"]\n    ReviewBottleneck --> TestingSystem\n    TestingSystem --> TaskBoundary\n    TaskBoundary --> AgentVerification\n    AgentVerification --> EngineeringStack\n    EngineeringStack --> ModelEngine\n    ModelEngine --> Transition\n```\n\n## 角色变化随层级提升\n\n```mermaid\nflowchart TD\n    RoleL0[\"L0 角色：代码复制者\"]\n    RoleL1[\"L1 角色：单行审查者\"]\n    RoleL2[\"L2 角色：跨文件协作开发者\"]\n    RoleL3[\"L3 角色：AI 生成代码的审查者\"]\n    RoleL4[\"L4 角色：Spec 设计与结果监控者\"]\n    RoleL5[\"L5 角色：系统验证与运营者\"]\n    RoleL0 --> RoleL1\n    RoleL1 --> RoleL2\n    RoleL2 --> RoleL3\n    RoleL3 --> RoleL4\n    RoleL4 --> RoleL5\n```\n\n## 学习路径建议\n\n```mermaid\nflowchart TD\n    SelfAssess[\"自我层级评估\"]\n    FreeCourse[\"免费公开课\"]\n    UnderstandL3L4[\"了解 L3/L4 工作方式\"]\n    LearnTemplates[\"学习工程模板（agent、调用策略）\"]\n    Practice[\"实践任务拆解与闭环\"]\n    Upgrade[\"提升至 L3/L4\"]\n    Community[\"评论区/资源分享\"]\n    SelfAssess --> FreeCourse\n    FreeCourse --> UnderstandL3L4\n    UnderstandL3L4 --> LearnTemplates\n    LearnTemplates --> Practice\n    Practice --> Upgrade\n    Community --> SelfAssess\n```",
+  "diagrams": [
+    {
+      "title": "总览：AI 编程六层级 (L0‑L5)",
+      "code": "flowchart TD\n    L0[\"L0: 基础自动补全（复制粘贴）\"]\n    L1[\"L1: 实习生（单行审查）\"]\n    L2[\"L2: 初级开发（跨文件改代码）\"]\n    L3[\"L3: AI 主导代码生成 + 人类审查\"]\n    L4[\"L4: 规范化 spec + agent 自动运行\"]\n    L5[\"L5: 黑灯工厂（全自动，测试验证）\"]\n    L0 --> L1\n    L1 --> L2\n    L2 --> L3\n    L3 --> L4\n    L4 --> L5"
+    },
+    {
+      "title": "从 L2 到 L4 的关键转变要素",
+      "code": "flowchart TD\n    ReviewBottleneck[\"代码逐行 Review 成瓶颈\"]\n    TestingSystem[\"完整测试体系\"]\n    TaskBoundary[\"明确任务边界\"]\n    AgentVerification[\"Agent 自主验证机制\"]\n    EngineeringStack[\"整套工程系统（上下文、部署、闭环）\"]\n    ModelEngine[\"模型仅是发动机\"]\n    Transition[\"从模型切换到系统\"]\n    ReviewBottleneck --> TestingSystem\n    TestingSystem --> TaskBoundary\n    TaskBoundary --> AgentVerification\n    AgentVerification --> EngineeringStack\n    EngineeringStack --> ModelEngine\n    ModelEngine --> Transition"
+    },
+    {
+      "title": "角色变化随层级提升",
+      "code": "flowchart TD\n    RoleL0[\"L0 角色：代码复制者\"]\n    RoleL1[\"L1 角色：单行审查者\"]\n    RoleL2[\"L2 角色：跨文件协作开发者\"]\n    RoleL3[\"L3 角色：AI 生成代码的审查者\"]\n    RoleL4[\"L4 角色：Spec 设计与结果监控者\"]\n    RoleL5[\"L5 角色：系统验证与运营者\"]\n    RoleL0 --> RoleL1\n    RoleL1 --> RoleL2\n    RoleL2 --> RoleL3\n    RoleL3 --> RoleL4\n    RoleL4 --> RoleL5"
+    },
+    {
+      "title": "学习路径建议",
+      "code": "flowchart TD\n    SelfAssess[\"自我层级评估\"]\n    FreeCourse[\"免费公开课\"]\n    UnderstandL3L4[\"了解 L3/L4 工作方式\"]\n    LearnTemplates[\"学习工程模板（agent、调用策略）\"]\n    Practice[\"实践任务拆解与闭环\"]\n    Upgrade[\"提升至 L3/L4\"]\n    Community[\"评论区/资源分享\"]\n    SelfAssess --> FreeCourse\n    FreeCourse --> UnderstandL3L4\n    UnderstandL3L4 --> LearnTemplates\n    LearnTemplates --> Practice\n    Practice --> Upgrade\n    Community --> SelfAssess"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T10:05:24+00:00"
+}

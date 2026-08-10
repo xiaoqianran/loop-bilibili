@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1hETD6mERB",
+  "title": "170. vLLM 投机解码首token合并 prefill 这个小技巧是怎么来的？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1058,
+  "text": "今天的问题是\nVLLM中投机解码草稿模型首token合并pref\n这个小技巧是怎么来的\n顺带提一句\n这个技巧不是VLLM独有的\n在sg land的ego投机解码实现里\n也有几乎一样的逻辑\n就是把主模型生成的next token\n拼到草稿模型的extend输入末尾\nVLLM和sg land殊途同归\n都用了这个思路来省掉草稿模型的第一次decode\n我们先把视线放到最上面\n一行主模型的PREFIE流程\n这里prompt是三个token\n海安与对应Q矩阵\n有三行K的转置是三列注意力矩阵\nA是一个33的方阵\n并且已经画出了因果掩码\n也就是每个位置只能看到自己和前面的token\n经过注意力层和前馈网络层\n最后输出X注意X的最右边这个式子\n它不是prompt里的token\n而是主模型PREFW之后通过采样得到的手token\n接下来看草稿模型\n需要强调的是\n草稿模型的kv cash是他自己算出来的\n不是从大模型复制过来的\n大模型和小模型是两个独立的模型\nKV不互通\n新增的KV用橘色表示\n草稿模型的PREFILE中Q变成了四行\n比上面多了一行\n多出来的一行\n对应刚才主模型生成的那个手token\n是它被拼到了prompt的末尾\n所以草稿模型的PREFILE输入其实是海安与市\n一共四个token k的转置对应变成四列\n注意力矩阵A也扩展成44因果\n严马保持\n为什么要这样拼\n如果不拼草稿模型\nprefer完prompt之后\n还需要单独做一次decode\n才能拿到第一个草稿token\n现在把主模型已经生成的首token\n直接放到草稿模型的PREFILE输入末尾\n草稿模型跑完\n这次PREFL采样位置就自然落在这个手token之后\n直接输出的就是第一个草稿token\n再看最下面这行草稿模型的decode\n此时Q只有一行代表单token推理\n对应一名K的转置变成了五列\n因为前面preview阶段已经缓存了四个token的\nkey和value\n再加上上一部PREFW末尾采样出的token译名\n所以是五列经过FFN输出一个草稿\ntoken及B站\n这个技巧有一个很重要的前提\n主模型必须先完成PREFU草稿模型\n才能拿到手token去做拼接\n如果两个模型同时启动\nPREFILE草稿模型通常更小更快\n先跑完了\n但此时主模型的手token还没生成出来\n那就没法拼\n这种情况下只能退回到常规做法\n也就是让草稿模型用手token作为起点去做抵扣\n总的来说\n这个优化的收益不大不小\n但在推理引擎里\n属于那种能省一步是一步的实用技巧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hETD6mERB",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

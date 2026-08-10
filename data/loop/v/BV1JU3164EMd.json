@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1JU3164EMd",
+  "title": "Godot入门宝典第一期：为什么不学Scratch了？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 467,
+  "text": "很多同学的scratch作品都非常厉害\n但是你有没有想过\n在我们做的游戏越来越复杂的时候\nscratch已经限制了我们自己的脚步呢\n举个简单的例子\n当我要实现这样的效果\n点击开始游戏的时候\n进入游戏界面\n我们需要先广播一个信号\n然后收到信号的角色云藏自己\n然后在需要绿旗被点击的时候再显示自己\n这个操作倒也说得过去\n就是有些繁琐\n但是下一个操作呢\n如果我们要实现一个scratch里的大地图\n就要先创建一个角色\n然后在造型一上画一个小点\n造型二画一个地图\n然后放大造型一后再切换回造型二\n说实话\n当时我第一次看到这个操作的时候都被惊到了\n我的脑海里不禁浮现出了这样的画面\n我只能说这个操作听起来非常的反常\n像我们上面说的这些操作\n其实已经有很多游戏引擎帮我们解决了\n那我们是不是可以不用花大量时间\n在这些复杂操作上\n而是专注于我们的游戏呢\n所以我决定开启一个系列GODOT入门宝典\n帮助大家从scratch出发\n快速进入到真正的游戏创作阶段\n感兴趣的同学可以点赞收藏一下\n防止后面课程更新的时候刷不到\n这里是猫猫游戏工坊\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1JU3164EMd",
+  "published_at": "1785319871",
+  "fetched_at": "2026-08-07T00:02:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot入门宝典 vs Scratch 关系图谱\n\n## Scratch 的局限与复杂操作\n```mermaid\nflowchart TD\n    A1[\"Scratch 作品复杂度提升\"] --> B1[\"需要广播信号\"]\n    B1 --> C1[\"角色隐藏自身\"]\n    C1 --> D1[\"绿旗点击后再显示\"]\n    A1 --> E1[\"大地图实现需多造型切换\"]\n    E1 --> F1[\"创建角色\"]\n    F1 --> G1[\"造型一：小点\"]\n    G1 --> H1[\"造型二：完整地图\"]\n    H1 --> I1[\"放大造型一后切换回造型二\"]\n    style A1 fill:#f9f,stroke:#333,stroke-width:2px\n    style I1 fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## Godot 解决方案概览\n```mermaid\nflowchart LR\n    A2[\"Godot 引擎\"] --> B2[\"简化信号广播与响应\"]\n    B2 --> C2[\"节点系统直接控制显示隐藏\"]\n    A2 --> D2[\"内置场景管理实现大地图\"]\n    D2 --> E2[\"无需手动切换造型\"]\n    A2 --> F2[\"专注游戏逻辑与创意\"]\n    F2 --> G2[\"加速从 Scratch 到 真正游戏创作\"]\n    style A2 fill:#cfc,stroke:#333,stroke-width:2px\n    style G2 fill:#fc9,stroke:#333,stroke-width:2px\n```\n\n## 从 Scratch 到 Godot 的转型路径\n```mermaid\nflowchart TD\n    S1[\"熟悉 Scratch 基础\"] --> S2[\"识别 Scratch 繁琐操作\"]\n    S2 --> S3[\"了解 Godot 能力\"]\n    S3 --> S4[\"学习 Godot 场景与节点\"]\n    S4 --> S5[\"迁移项目结构\"]\n    S5 --> S6[\"实现同等功能更简洁\"]\n    style S1 fill:#eef,stroke:#333,stroke-width:2px\n    style S6 fill:#efe,stroke:#333,stroke-width:2px\n```",
+      "diagrams": [
+        {
+          "title": "Scratch 的局限与复杂操作",
+          "code": "flowchart TD\n    A1[\"Scratch 作品复杂度提升\"] --> B1[\"需要广播信号\"]\n    B1 --> C1[\"角色隐藏自身\"]\n    C1 --> D1[\"绿旗点击后再显示\"]\n    A1 --> E1[\"大地图实现需多造型切换\"]\n    E1 --> F1[\"创建角色\"]\n    F1 --> G1[\"造型一：小点\"]\n    G1 --> H1[\"造型二：完整地图\"]\n    H1 --> I1[\"放大造型一后切换回造型二\"]\n    style A1 fill:#f9f,stroke:#333,stroke-width:2px\n    style I1 fill:#bbf,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "Godot 解决方案概览",
+          "code": "flowchart LR\n    A2[\"Godot 引擎\"] --> B2[\"简化信号广播与响应\"]\n    B2 --> C2[\"节点系统直接控制显示隐藏\"]\n    A2 --> D2[\"内置场景管理实现大地图\"]\n    D2 --> E2[\"无需手动切换造型\"]\n    A2 --> F2[\"专注游戏逻辑与创意\"]\n    F2 --> G2[\"加速从 Scratch 到 真正游戏创作\"]\n    style A2 fill:#cfc,stroke:#333,stroke-width:2px\n    style G2 fill:#fc9,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "从 Scratch 到 Godot 的转型路径",
+          "code": "flowchart TD\n    S1[\"熟悉 Scratch 基础\"] --> S2[\"识别 Scratch 繁琐操作\"]\n    S2 --> S3[\"了解 Godot 能力\"]\n    S3 --> S4[\"学习 Godot 场景与节点\"]\n    S4 --> S5[\"迁移项目结构\"]\n    S5 --> S6[\"实现同等功能更简洁\"]\n    style S1 fill:#eef,stroke:#333,stroke-width:2px\n    style S6 fill:#efe,stroke:#333,stroke-width:2px"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T00:03:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot入门宝典 vs Scratch 关系图谱\n\n## Scratch 的局限与复杂操作\n```mermaid\nflowchart TD\n    A1[\"Scratch 作品复杂度提升\"] --> B1[\"需要广播信号\"]\n    B1 --> C1[\"角色隐藏自身\"]\n    C1 --> D1[\"绿旗点击后再显示\"]\n    A1 --> E1[\"大地图实现需多造型切换\"]\n    E1 --> F1[\"创建角色\"]\n    F1 --> G1[\"造型一：小点\"]\n    G1 --> H1[\"造型二：完整地图\"]\n    H1 --> I1[\"放大造型一后切换回造型二\"]\n    style A1 fill:#f9f,stroke:#333,stroke-width:2px\n    style I1 fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## Godot 解决方案概览\n```mermaid\nflowchart LR\n    A2[\"Godot 引擎\"] --> B2[\"简化信号广播与响应\"]\n    B2 --> C2[\"节点系统直接控制显示隐藏\"]\n    A2 --> D2[\"内置场景管理实现大地图\"]\n    D2 --> E2[\"无需手动切换造型\"]\n    A2 --> F2[\"专注游戏逻辑与创意\"]\n    F2 --> G2[\"加速从 Scratch 到 真正游戏创作\"]\n    style A2 fill:#cfc,stroke:#333,stroke-width:2px\n    style G2 fill:#fc9,stroke:#333,stroke-width:2px\n```\n\n## 从 Scratch 到 Godot 的转型路径\n```mermaid\nflowchart TD\n    S1[\"熟悉 Scratch 基础\"] --> S2[\"识别 Scratch 繁琐操作\"]\n    S2 --> S3[\"了解 Godot 能力\"]\n    S3 --> S4[\"学习 Godot 场景与节点\"]\n    S4 --> S5[\"迁移项目结构\"]\n    S5 --> S6[\"实现同等功能更简洁\"]\n    style S1 fill:#eef,stroke:#333,stroke-width:2px\n    style S6 fill:#efe,stroke:#333,stroke-width:2px\n```",
+  "diagrams": [
+    {
+      "title": "Scratch 的局限与复杂操作",
+      "code": "flowchart TD\n    A1[\"Scratch 作品复杂度提升\"] --> B1[\"需要广播信号\"]\n    B1 --> C1[\"角色隐藏自身\"]\n    C1 --> D1[\"绿旗点击后再显示\"]\n    A1 --> E1[\"大地图实现需多造型切换\"]\n    E1 --> F1[\"创建角色\"]\n    F1 --> G1[\"造型一：小点\"]\n    G1 --> H1[\"造型二：完整地图\"]\n    H1 --> I1[\"放大造型一后切换回造型二\"]\n    style A1 fill:#f9f,stroke:#333,stroke-width:2px\n    style I1 fill:#bbf,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "Godot 解决方案概览",
+      "code": "flowchart LR\n    A2[\"Godot 引擎\"] --> B2[\"简化信号广播与响应\"]\n    B2 --> C2[\"节点系统直接控制显示隐藏\"]\n    A2 --> D2[\"内置场景管理实现大地图\"]\n    D2 --> E2[\"无需手动切换造型\"]\n    A2 --> F2[\"专注游戏逻辑与创意\"]\n    F2 --> G2[\"加速从 Scratch 到 真正游戏创作\"]\n    style A2 fill:#cfc,stroke:#333,stroke-width:2px\n    style G2 fill:#fc9,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "从 Scratch 到 Godot 的转型路径",
+      "code": "flowchart TD\n    S1[\"熟悉 Scratch 基础\"] --> S2[\"识别 Scratch 繁琐操作\"]\n    S2 --> S3[\"了解 Godot 能力\"]\n    S3 --> S4[\"学习 Godot 场景与节点\"]\n    S4 --> S5[\"迁移项目结构\"]\n    S5 --> S6[\"实现同等功能更简洁\"]\n    style S1 fill:#eef,stroke:#333,stroke-width:2px\n    style S6 fill:#efe,stroke:#333,stroke-width:2px"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T00:03:03+00:00"
+}

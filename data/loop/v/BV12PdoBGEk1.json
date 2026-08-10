@@ -1,0 +1,66 @@
+{
+  "bvid": "BV12PdoBGEk1",
+  "title": "80亿参数压到1.15GB！Bonsai：浏览器里直接跑的1-bit大模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 638,
+  "text": "你敢信吗\n一个80亿参数的大模型\n压缩到只有1.15GB\n塞进手机里\n每秒还能跑出40个token\n不用联网\n不用云服务器\n打开浏览器就能对话\n先解释一下一减beat意味着什么\n我们现在用的主流大模型\n比如宽拉马\n每个参数用16位浮点数存储\n一个80亿参数的模型\n大概要占14~16GB内存\nCHRISTMAL是一家从加州理工夫化的AI实验室\n创始团队是做神经网络压缩的硬核研究者\n他们拿过cosla ventures bonc\n目前发布了三个尺寸8B版\n80亿参数\n1.15gb\n在M4pro Mac上跑每秒130一个token\n在RTX4090上跑每秒368个token\n异形帮赛非常简单\nGITHUB上有一个帮赛简demo仓库\n支持Mac的metal和MLX\nwindows和LINUX的CODA和vocal崩塞\n有几个值得一提的技术亮点\n第一他已经被合并到lama cpp上游了\nCPU metal c u d von4个后端都已支持\n这意味着任何能跑拉马崩\nSAI改变的不是AI模型本身的能力天花板\n而是让这种能力变得无处不在\n以前想用一个80亿参数的模型\n你得有一张至少16GB显存的显卡\n或者租一台云服务器\n巴塞向我们展示了一个清晰的方向\nAI的未来不只是更大的模型\n也是更小更快更高效的模型\n当一个80亿参数的大模型压缩到1.15GB\n还能保持竞争力\n当你能在浏览器里零安装跑起一个AI\n当一部手机每秒能生成40个token\n很多以前做不到的事突然就变得可行了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV12PdoBGEk1",
+  "published_at": "1776592020",
+  "fetched_at": "2026-08-09T17:48:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Bonsai 1-bit 大模型知识图谱\n\n## 模型压缩概览 [BV12PdoBGEk1 P1 00:00] [BV12PdoBGEk1 P1 00:03] [BV12PdoBGEk1 P1 00:08] [BV12PdoBGEk1 P1 00:11]\n```mermaid\nflowchart TD\n    A[\"80B 参数模型\"]\n    B[\"16位浮点存储 (≈14‑16GB)\"]\n    C[\"1‑bit 压缩技术\"]\n    D[\"1.15GB 模型体积\"]\n    E[\"可在手机运行\"]\n    F[\"每秒 40 token 生成\"]\n    G[\"无需网络/云\"]\n    H[\"浏览器直接对话\"]\n\n    A --> B\n    A --> C\n    C --> D\n    D --> E\n    E --> F\n    D --> G\n    D --> H\n```\n\n## 技术亮点与平台支持 [BV12PdoBGEk1 P1 01:06] [BV12PdoBGEk1 P1 01:22] [BV12PdoBGEk1 P1 00:48]\n```mermaid\nflowchart LR\n    G[\"GitHub Demo 仓库\"]\n    A[\"合并至 llama.cpp 上游\"]\n    B[\"CPU 后端支持\"]\n    C[\"Metal 后端支持\"]\n    D[\"CUDA 后端支持\"]\n    E[\"Windows/Linux 支持 (CODA, vocal)\"]\n    F[\"Mac Metal + MLX 支持\"]\n    H[\"M4 Pro Mac：130 token/s\"]\n    I[\"RTX4090：368 token/s\"]\n\n    G --> A\n    G --> F\n    G --> E\n    A --> B\n    A --> C\n    A --> D\n    F --> H\n    D --> I\n```\n\n## 应用影响与未来方向 [BV12PdoBGEk1 P1 01:47] [BV12PdoBGEk1 P1 02:01] [BV12PdoBGEk1 P1 02:14]\n```mermaid\nflowchart TD\n    A[\"传统需求：≥16GB 显存或云服务器\"]\n    B[\"浏览器零安装运行\"]\n    C[\"手机每秒 40 token 生成\"]\n    D[\"更小、更快、更高效的模型\"]\n    E[\"保持竞争力\"]\n    F[\"开启新场景与应用\"]\n    G[\"AI 未来：不止更大模型\"]\n\n    A --> B\n    A --> C\n    D --> E\n    D --> G\n    E --> F\n    B --> F\n    C --> F\n```\n",
+      "diagrams": [
+        {
+          "title": "模型压缩概览",
+          "code": "flowchart TD\n    A[\"80B 参数模型\"]\n    B[\"16位浮点存储 (≈14‑16GB)\"]\n    C[\"1‑bit 压缩技术\"]\n    D[\"1.15GB 模型体积\"]\n    E[\"可在手机运行\"]\n    F[\"每秒 40 token 生成\"]\n    G[\"无需网络/云\"]\n    H[\"浏览器直接对话\"]\n\n    A --> B\n    A --> C\n    C --> D\n    D --> E\n    E --> F\n    D --> G\n    D --> H"
+        },
+        {
+          "title": "技术亮点与平台支持",
+          "code": "flowchart LR\n    G[\"GitHub Demo 仓库\"]\n    A[\"合并至 llama.cpp 上游\"]\n    B[\"CPU 后端支持\"]\n    C[\"Metal 后端支持\"]\n    D[\"CUDA 后端支持\"]\n    E[\"Windows/Linux 支持 (CODA, vocal)\"]\n    F[\"Mac Metal + MLX 支持\"]\n    H[\"M4 Pro Mac：130 token/s\"]\n    I[\"RTX4090：368 token/s\"]\n\n    G --> A\n    G --> F\n    G --> E\n    A --> B\n    A --> C\n    A --> D\n    F --> H\n    D --> I"
+        },
+        {
+          "title": "应用影响与未来方向",
+          "code": "flowchart TD\n    A[\"传统需求：≥16GB 显存或云服务器\"]\n    B[\"浏览器零安装运行\"]\n    C[\"手机每秒 40 token 生成\"]\n    D[\"更小、更快、更高效的模型\"]\n    E[\"保持竞争力\"]\n    F[\"开启新场景与应用\"]\n    G[\"AI 未来：不止更大模型\"]\n\n    A --> B\n    A --> C\n    D --> E\n    D --> G\n    E --> F\n    B --> F\n    C --> F"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T17:49:04+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Bonsai 1-bit 大模型知识图谱\n\n## 模型压缩概览 [BV12PdoBGEk1 P1 00:00] [BV12PdoBGEk1 P1 00:03] [BV12PdoBGEk1 P1 00:08] [BV12PdoBGEk1 P1 00:11]\n```mermaid\nflowchart TD\n    A[\"80B 参数模型\"]\n    B[\"16位浮点存储 (≈14‑16GB)\"]\n    C[\"1‑bit 压缩技术\"]\n    D[\"1.15GB 模型体积\"]\n    E[\"可在手机运行\"]\n    F[\"每秒 40 token 生成\"]\n    G[\"无需网络/云\"]\n    H[\"浏览器直接对话\"]\n\n    A --> B\n    A --> C\n    C --> D\n    D --> E\n    E --> F\n    D --> G\n    D --> H\n```\n\n## 技术亮点与平台支持 [BV12PdoBGEk1 P1 01:06] [BV12PdoBGEk1 P1 01:22] [BV12PdoBGEk1 P1 00:48]\n```mermaid\nflowchart LR\n    G[\"GitHub Demo 仓库\"]\n    A[\"合并至 llama.cpp 上游\"]\n    B[\"CPU 后端支持\"]\n    C[\"Metal 后端支持\"]\n    D[\"CUDA 后端支持\"]\n    E[\"Windows/Linux 支持 (CODA, vocal)\"]\n    F[\"Mac Metal + MLX 支持\"]\n    H[\"M4 Pro Mac：130 token/s\"]\n    I[\"RTX4090：368 token/s\"]\n\n    G --> A\n    G --> F\n    G --> E\n    A --> B\n    A --> C\n    A --> D\n    F --> H\n    D --> I\n```\n\n## 应用影响与未来方向 [BV12PdoBGEk1 P1 01:47] [BV12PdoBGEk1 P1 02:01] [BV12PdoBGEk1 P1 02:14]\n```mermaid\nflowchart TD\n    A[\"传统需求：≥16GB 显存或云服务器\"]\n    B[\"浏览器零安装运行\"]\n    C[\"手机每秒 40 token 生成\"]\n    D[\"更小、更快、更高效的模型\"]\n    E[\"保持竞争力\"]\n    F[\"开启新场景与应用\"]\n    G[\"AI 未来：不止更大模型\"]\n\n    A --> B\n    A --> C\n    D --> E\n    D --> G\n    E --> F\n    B --> F\n    C --> F\n```\n",
+  "diagrams": [
+    {
+      "title": "模型压缩概览",
+      "code": "flowchart TD\n    A[\"80B 参数模型\"]\n    B[\"16位浮点存储 (≈14‑16GB)\"]\n    C[\"1‑bit 压缩技术\"]\n    D[\"1.15GB 模型体积\"]\n    E[\"可在手机运行\"]\n    F[\"每秒 40 token 生成\"]\n    G[\"无需网络/云\"]\n    H[\"浏览器直接对话\"]\n\n    A --> B\n    A --> C\n    C --> D\n    D --> E\n    E --> F\n    D --> G\n    D --> H"
+    },
+    {
+      "title": "技术亮点与平台支持",
+      "code": "flowchart LR\n    G[\"GitHub Demo 仓库\"]\n    A[\"合并至 llama.cpp 上游\"]\n    B[\"CPU 后端支持\"]\n    C[\"Metal 后端支持\"]\n    D[\"CUDA 后端支持\"]\n    E[\"Windows/Linux 支持 (CODA, vocal)\"]\n    F[\"Mac Metal + MLX 支持\"]\n    H[\"M4 Pro Mac：130 token/s\"]\n    I[\"RTX4090：368 token/s\"]\n\n    G --> A\n    G --> F\n    G --> E\n    A --> B\n    A --> C\n    A --> D\n    F --> H\n    D --> I"
+    },
+    {
+      "title": "应用影响与未来方向",
+      "code": "flowchart TD\n    A[\"传统需求：≥16GB 显存或云服务器\"]\n    B[\"浏览器零安装运行\"]\n    C[\"手机每秒 40 token 生成\"]\n    D[\"更小、更快、更高效的模型\"]\n    E[\"保持竞争力\"]\n    F[\"开启新场景与应用\"]\n    G[\"AI 未来：不止更大模型\"]\n\n    A --> B\n    A --> C\n    D --> E\n    D --> G\n    E --> F\n    B --> F\n    C --> F"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T17:49:04+00:00"
+}

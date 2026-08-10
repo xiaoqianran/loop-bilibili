@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1qm3a6SEQ8",
+  "title": "为什么机器人控制抛弃了大模型？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1727,
+  "text": "熊大俺最近看到个新鲜事\n说有个机器人系统\n用一块普通的RTX4090显卡\n一秒能做30多次决策\n显存还不到1GB哦\n那可不简单\n现在大多数让机器人看懂画面\n听懂指令的系统走的都是同一个范式\n先把眼睛看到的画面\n整个经过一个大语言模型处理再出来变成动作\n这个路径叫V到L到A\n那不就是眼睛先报告给大脑\n大脑想完了再动\n差不多\n不过这个大语言模型参数少说几百亿\n每做一次推理就要几百毫秒\n显存占用少则七八个G\n多则十几个G\n那机器人动一下\n等半天嘞\n跟俺追蝴蝶似的\n目标都飞走了\n还愣在原地\n没想好往哪儿扑\n所以很多号称实时的系统\n实际控制频率还不到每秒十次\n这对流水线上抓取\n家里协助操作这些场景来说根本不够用\n那比俺掏蜂窝反应还慢嘞\n大模型听着本事挺大\n咋到这就不顶用了\n华中科技大学和华为的研究者\n最近在IHC上提出了一个方案\n叫tubo vol a\n他们重新想了一个根本问题\n大语言模型在这个控制链条里\n到底是不是必须的\n那不是想省事儿\n人家跑得快也用不上\n听懂指令\n需要语言理解\n这没错\n但问题是\n现在的做法是\n让视觉和语言交互产生的所有信息\n全部先经过大语言模型\n他同时做推理\n做规划\n生成自然语言\n可机器人要做的不过是看到杯子的位置\n然后伸手去拿这一步\n你不必让整个大语言模型来写一篇文章\n才能完成这个动作\n所以他本事再大\n在这个岗位上使不上劲\n你看这张对比图\n对应fire ra\n左边是传统路线\n视觉特征\n先传入大语言模型的表示空间与指令融合\n再解码出动作\n这条路径叫V到L到A\n右边是托波VRA的路线\n视觉和语言分开编码\n两个流直接交互\n跳过那个大语言模型\n它们叫V加L到A跳过那个大家伙\n他俩自己怎么对上话\n视觉画面用视觉编码器DNOVE3提取特征指令\n用轻量文本编码器boot提取特征\n两边各自提取出来的信息\n传入一个双向交叉注意力模块\n视觉根据指令找到画面里最相关的区域指令\n根据画面内容调整对应的特征\n表示那两边像对表一样\n一个说看杯子\n一个说我找杯子对\n来回校准六层之后\n对其好的融合特征\n再与机器人的当前状态一起\n传入一个轻量动作解码器\n一次性输出12部连续动作序列六层校准\n一层比一层\n对的准没错\n整个流程就是一个前向传播\n没有逐字生成的过程\n跟以前靠大语言模型在中间当中介不同\n现在是两边直接在特征层面上对齐\n你说杯子画面里哪个区域的特征和杯子最匹配\n就把那个区域的信息提取出来啊\n那等于不走那个大仓库\n两边直接对答案啦\n对整个模型只有2亿个参数\n大约是同类系统派净值推理时\n显存占用0.9GB\n不到主流方案的1/10\n端到端延迟31.2ms\n比不固定93.6ms快了将近两倍\n每秒能做超过32次完整决策\n32次\n就是说一秒里\n他能连续做出32个完整的动作决策啊\n对而且每次不是只动一步\n而是输出未来12步的动作序列\n相当于系统对接下来接近0.4秒的运动轨迹\n都有了规划\n这对抓取操作\n这些需要连续动作配合的任务极其关键\n那性能还中不中\n别是省了力气\n任务也完不成了\n在liberal这套标准机器人操作基准测试里\n全部2000次测试\n取得了平均97.7%的成功率\n比参数大十多倍的配股0.8个百分点\n俺滴娘嘞\n参数少了那么多\n任务完成得还更好\n在真实机器人平台上抓滚筒\n以扑克牌\n按订书机叠三个碗\n四个任务的成功率都在80%以上\n各方面超过了派众突\n用的就是一套普通桌面机械臂\n没有专用工业传感器\n没有改造过的灯光环境\n拿liberal上预训练好的模型\n用几十条真人视觉数据微调了不到一天\n那个又轻又快的结构在现实世界里也站得住\n俺懂了\n就是把中间那个碍事的大家伙搬走了路\n反而通了对大语言模型\n在这个控制闭环里\n本质上是一个过渡的中转站\n把他从主路上移走\n系统反而更轻更快\n结果也丝毫不差\n熊大俺明白了\n所以传统方法就是让视觉先经过大语言模型\n再变成动作\nTurbo valle\n不经过那个大模型\n让视觉和语言直接交互\n再输出\n动作更轻更快\n性能同样出色\n不俺想说的是\n当翠花站在你面前的时候\n你老是努力去猜她的心思\n然后再小心翼翼的行动\n但其实你只要靠你对翠花本能好感行动\n他就能明白你的想法\n剩下的只需要交给缘分就行了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qm3a6SEQ8",
+  "published_at": "1785451107",
+  "fetched_at": "2026-08-08T11:25:16+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 机器人控制系统：传统 V‑L‑A 与 Turbo VRA 对比\n\n## 总览概览 [BV1qm3a6SEQ8 P1 00:20]  \n```mermaid\nflowchart TD\n    TradVLA[\"传统路径 V→L→A\"] --> IssueLatency[\"高延迟（≈100 ms）\"]\n    TradVLA --> IssueMem[\"高显存需求（7‑10 GB）\"]\n    TradVLA --> IssueFreq[\"低控制频率（<10 Hz）\"]\n    TurboVRA[\"Turbo VRA 路径\"] --> BenefitSpeed[\"低延迟 & 高频率\"]\n    TurboVRA --> BenefitSuccess[\"高成功率\"]\n    IssueLatency --> TurboVRA\n    IssueMem --> TurboVRA\n    IssueFreq --> TurboVRA\n```\n\n## 传统路径细节 [BV1qm3a6SEQ8 P1 00:20]  \n```mermaid\nflowchart TD\n    VIn[\"视觉输入\"]\n    VFeat[\"视觉特征提取\"]\n    LLM[\"大语言模型（LLM）\"]\n    LLMInfer[\"LLM 推理（几百毫秒）\"]\n    ActionCmd[\"动作指令生成\"]\n    RobotAct[\"机器人执行动作\"]\n    Params[\"参数：数百亿\"]\n    Mem[\"显存：7‑10 GB\"]\n    Latency[\"推理延迟：几百 ms\"]\n\n    VIn --> VFeat --> LLM --> LLMInfer --> ActionCmd --> RobotAct\n    LLM --> Params\n    LLM --> Mem\n    LLMInfer --> Latency\n```\n\n## Turbo VRA 流程 [BV1qm3a6SEQ8 P1 02:14]  \n```mermaid\nflowchart TD\n    VIn[\"视觉输入\"]\n    DNOVE3[\"视觉编码器 DNOVE3\"]\n    LInstr[\"语言指令\"]\n    BootEnc[\"轻量文本编码器 boot\"]\n    CrossAttn[\"双向交叉注意力模块\"]\n    Fusion[\"融合特征\"]\n    RState[\"机器人当前状态\"]\n    LightDec[\"轻量动作解码器\"]\n    ActionSeq[\"12 步连续动作序列\"]\n    Execute[\"执行动作\"]\n\n    VIn --> DNOVE3 --> CrossAttn\n    LInstr --> BootEnc --> CrossAttn\n    CrossAttn --> Fusion --> LightDec\n    RState --> LightDec\n    LightDec --> ActionSeq --> Execute\n```\n\n## 性能对比 [BV1qm3a6SEQ8 P1 03:32]  \n```mermaid\nflowchart TD\n    TradParams[\"传统参数：≈100 B\"]\n    TurboParams[\"Turbo 参数：0.2 B\"]\n    TradMem[\"传统显存：≈8 GB\"]\n    TurboMem[\"Turbo 显存：0.9 GB\"]\n    TradLatency[\"传统延迟：93.6 ms\"]\n    TurboLatency[\"Turbo 延迟：31.2 ms\"]\n    TradFreq[\"传统频率：<10 Hz\"]\n    TurboFreq[\"Turbo 频率：>32 Hz\"]\n    TradSuccess[\"传统成功率：≈96 %\"]\n    TurboSuccess[\"Turbo 成功率：97.7 %\"]\n\n    TradParams -->|higher| TurboParams\n    TradMem -->|higher| TurboMem\n    TradLatency -->|higher| TurboLatency\n    TradFreq -->|lower| TurboFreq\n    TradSuccess -->|slightly lower| TurboSuccess\n```\n\n## 应用场景与结果 [BV1qm3a6SEQ8 P1 04:21]  \n```mermaid\nflowchart TD\n    Benchmark[\"Libreal 基准测试（2000 次）\"]\n    RealWorld[\"真实机器人平台\"]\n    Task1[\"抓取滚筒\"]\n    Task2[\"扑克牌堆叠\"]\n    Task3[\"订书机叠碗\"]\n    Task4[\"其他任务\"]\n    SuccessRate[\"平均成功率 97.7 %\"]\n    HighPass[\"四任务成功率 ≥80 %\"]\n\n    Benchmark --> SuccessRate\n    RealWorld --> Task1\n    RealWorld --> Task2\n    RealWorld --> Task3\n    RealWorld --> Task4\n    Task1 --> HighPass\n    Task2 --> HighPass\n    Task3 --> HighPass\n    Task4 --> HighPass\n```",
+      "diagrams": [
+        {
+          "title": "总览概览",
+          "code": "flowchart TD\n    TradVLA[\"传统路径 V→L→A\"] --> IssueLatency[\"高延迟（≈100 ms）\"]\n    TradVLA --> IssueMem[\"高显存需求（7‑10 GB）\"]\n    TradVLA --> IssueFreq[\"低控制频率（<10 Hz）\"]\n    TurboVRA[\"Turbo VRA 路径\"] --> BenefitSpeed[\"低延迟 & 高频率\"]\n    TurboVRA --> BenefitSuccess[\"高成功率\"]\n    IssueLatency --> TurboVRA\n    IssueMem --> TurboVRA\n    IssueFreq --> TurboVRA"
+        },
+        {
+          "title": "传统路径细节",
+          "code": "flowchart TD\n    VIn[\"视觉输入\"]\n    VFeat[\"视觉特征提取\"]\n    LLM[\"大语言模型（LLM）\"]\n    LLMInfer[\"LLM 推理（几百毫秒）\"]\n    ActionCmd[\"动作指令生成\"]\n    RobotAct[\"机器人执行动作\"]\n    Params[\"参数：数百亿\"]\n    Mem[\"显存：7‑10 GB\"]\n    Latency[\"推理延迟：几百 ms\"]\n\n    VIn --> VFeat --> LLM --> LLMInfer --> ActionCmd --> RobotAct\n    LLM --> Params\n    LLM --> Mem\n    LLMInfer --> Latency"
+        },
+        {
+          "title": "Turbo VRA 流程",
+          "code": "flowchart TD\n    VIn[\"视觉输入\"]\n    DNOVE3[\"视觉编码器 DNOVE3\"]\n    LInstr[\"语言指令\"]\n    BootEnc[\"轻量文本编码器 boot\"]\n    CrossAttn[\"双向交叉注意力模块\"]\n    Fusion[\"融合特征\"]\n    RState[\"机器人当前状态\"]\n    LightDec[\"轻量动作解码器\"]\n    ActionSeq[\"12 步连续动作序列\"]\n    Execute[\"执行动作\"]\n\n    VIn --> DNOVE3 --> CrossAttn\n    LInstr --> BootEnc --> CrossAttn\n    CrossAttn --> Fusion --> LightDec\n    RState --> LightDec\n    LightDec --> ActionSeq --> Execute"
+        },
+        {
+          "title": "性能对比",
+          "code": "flowchart TD\n    TradParams[\"传统参数：≈100 B\"]\n    TurboParams[\"Turbo 参数：0.2 B\"]\n    TradMem[\"传统显存：≈8 GB\"]\n    TurboMem[\"Turbo 显存：0.9 GB\"]\n    TradLatency[\"传统延迟：93.6 ms\"]\n    TurboLatency[\"Turbo 延迟：31.2 ms\"]\n    TradFreq[\"传统频率：<10 Hz\"]\n    TurboFreq[\"Turbo 频率：>32 Hz\"]\n    TradSuccess[\"传统成功率：≈96 %\"]\n    TurboSuccess[\"Turbo 成功率：97.7 %\"]\n\n    TradParams -->|higher| TurboParams\n    TradMem -->|higher| TurboMem\n    TradLatency -->|higher| TurboLatency\n    TradFreq -->|lower| TurboFreq\n    TradSuccess -->|slightly lower| TurboSuccess"
+        },
+        {
+          "title": "应用场景与结果",
+          "code": "flowchart TD\n    Benchmark[\"Libreal 基准测试（2000 次）\"]\n    RealWorld[\"真实机器人平台\"]\n    Task1[\"抓取滚筒\"]\n    Task2[\"扑克牌堆叠\"]\n    Task3[\"订书机叠碗\"]\n    Task4[\"其他任务\"]\n    SuccessRate[\"平均成功率 97.7 %\"]\n    HighPass[\"四任务成功率 ≥80 %\"]\n\n    Benchmark --> SuccessRate\n    RealWorld --> Task1\n    RealWorld --> Task2\n    RealWorld --> Task3\n    RealWorld --> Task4\n    Task1 --> HighPass\n    Task2 --> HighPass\n    Task3 --> HighPass\n    Task4 --> HighPass"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T11:25:37+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 机器人控制系统：传统 V‑L‑A 与 Turbo VRA 对比\n\n## 总览概览 [BV1qm3a6SEQ8 P1 00:20]  \n```mermaid\nflowchart TD\n    TradVLA[\"传统路径 V→L→A\"] --> IssueLatency[\"高延迟（≈100 ms）\"]\n    TradVLA --> IssueMem[\"高显存需求（7‑10 GB）\"]\n    TradVLA --> IssueFreq[\"低控制频率（<10 Hz）\"]\n    TurboVRA[\"Turbo VRA 路径\"] --> BenefitSpeed[\"低延迟 & 高频率\"]\n    TurboVRA --> BenefitSuccess[\"高成功率\"]\n    IssueLatency --> TurboVRA\n    IssueMem --> TurboVRA\n    IssueFreq --> TurboVRA\n```\n\n## 传统路径细节 [BV1qm3a6SEQ8 P1 00:20]  \n```mermaid\nflowchart TD\n    VIn[\"视觉输入\"]\n    VFeat[\"视觉特征提取\"]\n    LLM[\"大语言模型（LLM）\"]\n    LLMInfer[\"LLM 推理（几百毫秒）\"]\n    ActionCmd[\"动作指令生成\"]\n    RobotAct[\"机器人执行动作\"]\n    Params[\"参数：数百亿\"]\n    Mem[\"显存：7‑10 GB\"]\n    Latency[\"推理延迟：几百 ms\"]\n\n    VIn --> VFeat --> LLM --> LLMInfer --> ActionCmd --> RobotAct\n    LLM --> Params\n    LLM --> Mem\n    LLMInfer --> Latency\n```\n\n## Turbo VRA 流程 [BV1qm3a6SEQ8 P1 02:14]  \n```mermaid\nflowchart TD\n    VIn[\"视觉输入\"]\n    DNOVE3[\"视觉编码器 DNOVE3\"]\n    LInstr[\"语言指令\"]\n    BootEnc[\"轻量文本编码器 boot\"]\n    CrossAttn[\"双向交叉注意力模块\"]\n    Fusion[\"融合特征\"]\n    RState[\"机器人当前状态\"]\n    LightDec[\"轻量动作解码器\"]\n    ActionSeq[\"12 步连续动作序列\"]\n    Execute[\"执行动作\"]\n\n    VIn --> DNOVE3 --> CrossAttn\n    LInstr --> BootEnc --> CrossAttn\n    CrossAttn --> Fusion --> LightDec\n    RState --> LightDec\n    LightDec --> ActionSeq --> Execute\n```\n\n## 性能对比 [BV1qm3a6SEQ8 P1 03:32]  \n```mermaid\nflowchart TD\n    TradParams[\"传统参数：≈100 B\"]\n    TurboParams[\"Turbo 参数：0.2 B\"]\n    TradMem[\"传统显存：≈8 GB\"]\n    TurboMem[\"Turbo 显存：0.9 GB\"]\n    TradLatency[\"传统延迟：93.6 ms\"]\n    TurboLatency[\"Turbo 延迟：31.2 ms\"]\n    TradFreq[\"传统频率：<10 Hz\"]\n    TurboFreq[\"Turbo 频率：>32 Hz\"]\n    TradSuccess[\"传统成功率：≈96 %\"]\n    TurboSuccess[\"Turbo 成功率：97.7 %\"]\n\n    TradParams -->|higher| TurboParams\n    TradMem -->|higher| TurboMem\n    TradLatency -->|higher| TurboLatency\n    TradFreq -->|lower| TurboFreq\n    TradSuccess -->|slightly lower| TurboSuccess\n```\n\n## 应用场景与结果 [BV1qm3a6SEQ8 P1 04:21]  \n```mermaid\nflowchart TD\n    Benchmark[\"Libreal 基准测试（2000 次）\"]\n    RealWorld[\"真实机器人平台\"]\n    Task1[\"抓取滚筒\"]\n    Task2[\"扑克牌堆叠\"]\n    Task3[\"订书机叠碗\"]\n    Task4[\"其他任务\"]\n    SuccessRate[\"平均成功率 97.7 %\"]\n    HighPass[\"四任务成功率 ≥80 %\"]\n\n    Benchmark --> SuccessRate\n    RealWorld --> Task1\n    RealWorld --> Task2\n    RealWorld --> Task3\n    RealWorld --> Task4\n    Task1 --> HighPass\n    Task2 --> HighPass\n    Task3 --> HighPass\n    Task4 --> HighPass\n```",
+  "diagrams": [
+    {
+      "title": "总览概览",
+      "code": "flowchart TD\n    TradVLA[\"传统路径 V→L→A\"] --> IssueLatency[\"高延迟（≈100 ms）\"]\n    TradVLA --> IssueMem[\"高显存需求（7‑10 GB）\"]\n    TradVLA --> IssueFreq[\"低控制频率（<10 Hz）\"]\n    TurboVRA[\"Turbo VRA 路径\"] --> BenefitSpeed[\"低延迟 & 高频率\"]\n    TurboVRA --> BenefitSuccess[\"高成功率\"]\n    IssueLatency --> TurboVRA\n    IssueMem --> TurboVRA\n    IssueFreq --> TurboVRA"
+    },
+    {
+      "title": "传统路径细节",
+      "code": "flowchart TD\n    VIn[\"视觉输入\"]\n    VFeat[\"视觉特征提取\"]\n    LLM[\"大语言模型（LLM）\"]\n    LLMInfer[\"LLM 推理（几百毫秒）\"]\n    ActionCmd[\"动作指令生成\"]\n    RobotAct[\"机器人执行动作\"]\n    Params[\"参数：数百亿\"]\n    Mem[\"显存：7‑10 GB\"]\n    Latency[\"推理延迟：几百 ms\"]\n\n    VIn --> VFeat --> LLM --> LLMInfer --> ActionCmd --> RobotAct\n    LLM --> Params\n    LLM --> Mem\n    LLMInfer --> Latency"
+    },
+    {
+      "title": "Turbo VRA 流程",
+      "code": "flowchart TD\n    VIn[\"视觉输入\"]\n    DNOVE3[\"视觉编码器 DNOVE3\"]\n    LInstr[\"语言指令\"]\n    BootEnc[\"轻量文本编码器 boot\"]\n    CrossAttn[\"双向交叉注意力模块\"]\n    Fusion[\"融合特征\"]\n    RState[\"机器人当前状态\"]\n    LightDec[\"轻量动作解码器\"]\n    ActionSeq[\"12 步连续动作序列\"]\n    Execute[\"执行动作\"]\n\n    VIn --> DNOVE3 --> CrossAttn\n    LInstr --> BootEnc --> CrossAttn\n    CrossAttn --> Fusion --> LightDec\n    RState --> LightDec\n    LightDec --> ActionSeq --> Execute"
+    },
+    {
+      "title": "性能对比",
+      "code": "flowchart TD\n    TradParams[\"传统参数：≈100 B\"]\n    TurboParams[\"Turbo 参数：0.2 B\"]\n    TradMem[\"传统显存：≈8 GB\"]\n    TurboMem[\"Turbo 显存：0.9 GB\"]\n    TradLatency[\"传统延迟：93.6 ms\"]\n    TurboLatency[\"Turbo 延迟：31.2 ms\"]\n    TradFreq[\"传统频率：<10 Hz\"]\n    TurboFreq[\"Turbo 频率：>32 Hz\"]\n    TradSuccess[\"传统成功率：≈96 %\"]\n    TurboSuccess[\"Turbo 成功率：97.7 %\"]\n\n    TradParams -->|higher| TurboParams\n    TradMem -->|higher| TurboMem\n    TradLatency -->|higher| TurboLatency\n    TradFreq -->|lower| TurboFreq\n    TradSuccess -->|slightly lower| TurboSuccess"
+    },
+    {
+      "title": "应用场景与结果",
+      "code": "flowchart TD\n    Benchmark[\"Libreal 基准测试（2000 次）\"]\n    RealWorld[\"真实机器人平台\"]\n    Task1[\"抓取滚筒\"]\n    Task2[\"扑克牌堆叠\"]\n    Task3[\"订书机叠碗\"]\n    Task4[\"其他任务\"]\n    SuccessRate[\"平均成功率 97.7 %\"]\n    HighPass[\"四任务成功率 ≥80 %\"]\n\n    Benchmark --> SuccessRate\n    RealWorld --> Task1\n    RealWorld --> Task2\n    RealWorld --> Task3\n    RealWorld --> Task4\n    Task1 --> HighPass\n    Task2 --> HighPass\n    Task3 --> HighPass\n    Task4 --> HighPass"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T11:25:37+00:00"
+}

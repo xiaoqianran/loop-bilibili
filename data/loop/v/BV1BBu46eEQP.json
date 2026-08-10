@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1BBu46eEQP",
+  "title": "【2026】最新版大模型推理框架vLLM原理详解！手把手带你搞懂大模型推理最重要的两个阶段及核心问题，从小白到大神只要这套就够了！让你少走99%弯路！AI大模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1587,
+  "text": "老师给大家带来一节公开课\n那咱们今天晚上要来聊一下\n如何优化大语言模型推理里面的吞吐\n那这个问题其实往往会作为一个面试的时候\n最近面试官常问的这样一个问题\n那为了把这个问题给大家去答好\n其实我们需要首先懂三件事情\n从这个问题里面\n首先第一个什么是这个吞吐\n大家需要理解什么是吞吐\n什么是所谓的吞吐量\n首先讲一讲什么是大模型的这个推理\n大模型的推理它的本质是去做什么事情\n那这点首先需要去明白\n那我们理解了大模型是如何去做推理的\n之后\n就会涉及到如何去来对它进行一个优化\n那事实上是第三件事情对吧\n那如果你可以很好理解这三件事情\n那事实上这个问题就可以去答出来\n那这个吞吐\n事实上指的就是你同一时间\n或者说在一段时间内\n比如说一秒或者多少毫秒时间内\n你可以处理完的请求的数量\n那对于我们的大语言模型来说\n对于LLM来说\n那也就是你在一段时间内可以处理多少个\npromote请求\n当然这里面我们往往会以tokens\n处理多少个token去作为一个单位\nOK好\n今晚分为一些小的点\n那也就是说今天晚上讲完之后\n大家应该就可以去明白\n比如像kv cash\n比如说像批处理\n比如说像PATTENSION\n包括像这种VR项目\n它里面的架构是怎么做的\n包括它里面的智能调度讲解\n包括这个大圆模型这种推理引擎\n它里面的智能调度是怎么去做的\nOK好\n那老师本人呢叫陈博\n从事算法十多年了\n并且拥有丰富的一个教学经验\n那这里面大家如果在人工智能\n包括大模型这块\n有相关的一些偏算法这块的问题\n欢迎大家来问老师\nK老师在大模型课程里面\n实际上也是负责偏算法微调这一部分的\n那首先呢咱们先来去了解一下\n什么是这个大模型\n那这一页如果我们简单来说的话\n就是大模型的本质\n它事实上是来去预测下一时刻的token啊是什么\n也就是说比如我们一开始的时候\n给这个大圆模型一个输入the dog\n接着这个大语言模型\n就中间这个矩形框相当于是个大语言模型啊\n这张图相当于是画了三个时间点\n相当于是time step1\n第一时刻time stem2\n第二时刻time stem3\n第三时刻在第一时刻呢\n就是在一开始\n那the dog这个输入相当于是传入给了这个大模型\n这个大模型呢\n就根据前面这个输入来去给出下一个词吧\n咱们说简单点\n然后那给出的这个下一个词它就会怎么着呢\n你会看到这条线就会把它拿过来\n拼接到刚才的the dog身后\n那也就是说在第二时刻的时候\n这个输入就变成了the dog set\n这the dog set这三个词呢就交给了这个大语言模型\n然后他再给出下一个词是什么啊\n比如说给出下一个词是done\n这个沿着这条线\n你会发现这个给出的上一设给出结果\n又传入到了下一时刻\n作为输入的一部分\n那也就是说举一反三\n在第三时刻的时候\n这个输入变成了the dog set down\n交给这个大语言模型\n对不对\n哎再往上给出哎\n第三时刻的一个输出\n那这边呢就叫做EOS啊\n那往往EOS呢就是一个比较特殊的这样\n一个标志位\n它代表着什么呢\n它其实写全了\n你可以理解为它叫end of sentence\n就是一个句子的一个结尾\n那当这个大语言模型\n输出这样特殊的标识符的时候啊\n那就没有第四时刻了\n就没有下一时刻了就结束了\n那也就是说最终的一个final output\n最终一个输出就是the dog这个输入\n然后加上后面的一个时刻\n两个时刻\n三个时刻的输出\n当然最后我们打印出来的时候\n那这个EOS这个特殊标识符就不用再打印出来了\n那也就是the dog set down啊\n输出就完事了啊\n那这个就是大语言模型\n大模型\n它每一时刻或者说它生成的这样一个过程\n它每一时刻都是给出下一时刻的一个token\n那这个咱们其实有一个具体的一个中文对应的\n它叫词源啊\n也就是说\n它甚至这个力度比一个词的力度还要更小",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1BBu46eEQP",
+  "published_at": "1786074896",
+  "fetched_at": "2026-08-08T02:34:47+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T02:38:25+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T02:38:25+00:00"
+}

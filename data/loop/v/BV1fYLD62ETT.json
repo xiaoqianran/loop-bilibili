@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1fYLD62ETT",
+  "title": "AI已经能做3D RTS游戏了！(1)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1160,
+  "text": "嗯这两天呢\n就是我纯用AI做一个RTSS的游戏嘛\n那就是基于three js网页版来做的\n用的工具呢是codex\n直接看下效果吧\n啊现军营\n建这个坦克的工厂\n然后建空军基地啊\n这是AI ink AI它的这个自动的这个建造\n其实我的玩法呢是想偏这种战斗的爽感的\n这样的一个RT s也是我一直想想做的\n想玩的这种刨冰的速度\n速度速度也特别快\n都不想搞那些资源采访那些\n你看这个冰豹的\n他所有的这个逻辑啊\n全是他得X实现的\n包括这个建模啊\n当然他现在是比较简单的\n这种就是类似于low坡内的这种这种模型\n都是它自己生成的\n然后设置了一个5分钟的这个冷却时间\n5分钟之内是不允许发冷工期的\n先把这个队伍先组织好\n5分钟\n到了应该这个这个敌人会主动的进攻我们了\n再次建点基地吧\n来了你看已经来了\n坦克林好使\n啊这几个只是一个初版的demo啊\n啊你看这个包括这个粒子的效果都实现了\n我们主动出气打下去\n然后飞机过来\n从从侧面到清空\n然后自动还会编好队\n编好队形\n他还是必须自动盘旋翼嘛\n别慌\n我就喜欢这种这种这种大场面的\n那包括这个颜色啊\n颜色也是它\n但这个有点问题\n飞机太容易死\n包括这个蓝色啊\n这个黄色\n我这边坦克上和飞机上\n我的这个建筑上黄色都是它自己生成的\n它自动\n这是自己的标记\n啊这是一个出版吧\n其实还有很多问题\n这模型你说three js建的不好\n那你自己用AI做一些路框景更逼真一点的那种\n那替换到就是了\n这个场面游戏对象比较多\n因为其他的风格可能有点吃力\n然后进这个编队\n我现在还没做\n但他好像是现在自己会编队打过来打过来\nA过来补兵的\n罗宾的这么一个游戏啊\nRT4rt4应该在游戏里面算是比较复杂的\n如果这个二代能搞定的话\n我觉得后面还是可期的\n那他知道他知道自己默认会有个编队\n看这粒子的效果\n设计的效果\n这个基本上那是我用的是5.5吧\nDd5.5\n但现在如果是那个效果最好的是cloud的co co5\n当然这两天人给下架了\n不给非美国公民用的那个就更强\n你可以看网上的一些呃\n一些这个国外网友或者一些例子\n真的是就是呃一段提示词\n然后直接干几个小时生成一个完整的游戏\n他自己会测试不停的迭代完整的游戏\n然后那个富盛就是猎豹的那个CEO傅盛\n他不是用那个飞沃五做了一个红警嘛\n那我试试看\n我用这个codex\n我就CPT能不能做成来做一个\n而且3D版那样看的话也是可以的\n但是用这个呢\n就是说你要这个要要分步骤\n不停的跟他对话的交互来完成\n因为我比较本人还是比较喜欢玩这个RT s游戏\n所以速度这个游戏\n但是你说three js对吧\n他不是网页版的\n怎么办对吧\n那可以啊\nC加S\n现在比如说你要把它这个适配成小游戏\n微信小游戏也很简单啊\n有适配的工具\n而不是说网页版就没前途好吧\n我下一步会继续来啊\n玩上这个游戏",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1fYLD62ETT",
+  "published_at": "1781671779",
+  "fetched_at": "2026-08-06T21:00:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 生成 3D RTS 游戏知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    AI_Codex[\"AI (Codex)\"] -->|生成代码| Game_Demo[\"游戏 Demo\"]\n    Game_Demo -->|基于| ThreeJS_Web[\"Three.js (网页版)\"]\n    Game_Demo --> Units_Tank[\"单位：坦克\"]\n    Game_Demo --> Units_Airplane[\"单位：飞机\"]\n    Game_Demo --> Buildings_Camp[\"建筑：军营\"]\n    Game_Demo --> Buildings_Factory[\"建筑：坦克工厂\"]\n    Game_Demo --> Particle_Effects[\"粒子特效\"]\n    AI_Codex --> Auto_Build[\"自动建造\"]\n    AI_Codex --> Auto_Squad[\"自动编队\"]\n    AI_Codex --> Cooldown_5min[\"5 分钟冷却\"]\n    AI_Codex --> Color_Generation[\"颜色自动生成\"]\n    Simple_Models[\"模型简化 (low‑poly)\"] -->|限制| Game_Demo\n    ThreeJS_Web --> Platform_WeChat[\"微信小游戏适配\"]\n```\n\n## 工作流图\n```mermaid\nflowchart TD\n    Prompt_Design[\"设计 Prompt\"]\n    Codex_Interaction[\"与 Codex 对话\"]\n    Code_Generation[\"代码生成\"]\n    ThreeJS_Integration[\"集成到 Three.js\"]\n    Auto_Test_Iterate[\"自动测试 & 迭代\"]\n    Deploy_Web[\"部署为网页\"]\n    Deploy_WeChat[\"可选：部署为微信小游戏\"]\n    Feedback_Loop[\"反馈 → 重新设计 Prompt\"]\n\n    Prompt_Design --> Codex_Interaction --> Code_Generation --> ThreeJS_Integration --> Auto_Test_Iterate --> Deploy_Web\n    Deploy_Web --> Deploy_WeChat\n    Feedback_Loop --> Prompt_Design\n```\n\n## 功能与问题对照图\n```mermaid\nflowchart TD\n    Feature_Auto_Build[\"自动建造\"]\n    Feature_Auto_Squad[\"自动编队\"]\n    Feature_Cooldown[\"5 分钟冷却限制\"]\n    Feature_Color_Gen[\"颜色自动生成\"]\n    Feature_Particle[\"粒子特效实现\"]\n\n    Issue_Simple_Models[\"模型过于简化\"]\n    Issue_Plane_Fragile[\"飞机易死亡\"]\n    Issue_Tool_Access[\"Codex 访问受限（非美国公民）\"]\n    Issue_Resource_Management[\"不想实现资源管理\"]\n\n    Feature_Auto_Build -->|提升| Gameplay_Flow[\"游戏流程\"]\n    Feature_Auto_Squad -->|提升| Gameplay_Flow\n    Feature_Cooldown -->|平衡| Gameplay_Flow\n    Feature_Color_Gen -->|美化| Visuals[\"视觉效果\"]\n    Feature_Particle -->|美化| Visuals\n\n    Issue_Simple_Models -->|降低| Visuals\n    Issue_Plane_Fragile -->|削弱| Gameplay_Flow\n    Issue_Tool_Access -->|限制| Development[\"开发进度\"]\n    Issue_Resource_Management -->|省略| Game_Complexity[\"游戏复杂度\"]\n```\n\n## 平台适配路径图\n```mermaid\nflowchart TD\n    ThreeJS_Web[\"Three.js (网页)\"]\n    CSharp_Support[\"C# / Unity 适配工具\"]\n    WeChat_MiniGame_Tool[\"微信小游戏适配工具\"]\n    Platform_Export[\"导出为多平台\"]\n    Limitations_NonUS[\"非美国公民使用受限\"]\n    Alternative_Cloud[\"使用 Cloud 模型 (如 CoCo5)\"]\n\n    ThreeJS_Web -->|可选| CSharp_Support\n    CSharp_Support --> WeChat_MiniGame_Tool\n    WeChat_MiniGame_Tool --> Platform_Export\n    Limitations_NonUS -->|影响| Alternative_Cloud\n    Alternative_Cloud -->|补充| Development[\"开发资源\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    AI_Codex[\"AI (Codex)\"] -->|生成代码| Game_Demo[\"游戏 Demo\"]\n    Game_Demo -->|基于| ThreeJS_Web[\"Three.js (网页版)\"]\n    Game_Demo --> Units_Tank[\"单位：坦克\"]\n    Game_Demo --> Units_Airplane[\"单位：飞机\"]\n    Game_Demo --> Buildings_Camp[\"建筑：军营\"]\n    Game_Demo --> Buildings_Factory[\"建筑：坦克工厂\"]\n    Game_Demo --> Particle_Effects[\"粒子特效\"]\n    AI_Codex --> Auto_Build[\"自动建造\"]\n    AI_Codex --> Auto_Squad[\"自动编队\"]\n    AI_Codex --> Cooldown_5min[\"5 分钟冷却\"]\n    AI_Codex --> Color_Generation[\"颜色自动生成\"]\n    Simple_Models[\"模型简化 (low‑poly)\"] -->|限制| Game_Demo\n    ThreeJS_Web --> Platform_WeChat[\"微信小游戏适配\"]"
+        },
+        {
+          "title": "工作流图",
+          "code": "flowchart TD\n    Prompt_Design[\"设计 Prompt\"]\n    Codex_Interaction[\"与 Codex 对话\"]\n    Code_Generation[\"代码生成\"]\n    ThreeJS_Integration[\"集成到 Three.js\"]\n    Auto_Test_Iterate[\"自动测试 & 迭代\"]\n    Deploy_Web[\"部署为网页\"]\n    Deploy_WeChat[\"可选：部署为微信小游戏\"]\n    Feedback_Loop[\"反馈 → 重新设计 Prompt\"]\n\n    Prompt_Design --> Codex_Interaction --> Code_Generation --> ThreeJS_Integration --> Auto_Test_Iterate --> Deploy_Web\n    Deploy_Web --> Deploy_WeChat\n    Feedback_Loop --> Prompt_Design"
+        },
+        {
+          "title": "功能与问题对照图",
+          "code": "flowchart TD\n    Feature_Auto_Build[\"自动建造\"]\n    Feature_Auto_Squad[\"自动编队\"]\n    Feature_Cooldown[\"5 分钟冷却限制\"]\n    Feature_Color_Gen[\"颜色自动生成\"]\n    Feature_Particle[\"粒子特效实现\"]\n\n    Issue_Simple_Models[\"模型过于简化\"]\n    Issue_Plane_Fragile[\"飞机易死亡\"]\n    Issue_Tool_Access[\"Codex 访问受限（非美国公民）\"]\n    Issue_Resource_Management[\"不想实现资源管理\"]\n\n    Feature_Auto_Build -->|提升| Gameplay_Flow[\"游戏流程\"]\n    Feature_Auto_Squad -->|提升| Gameplay_Flow\n    Feature_Cooldown -->|平衡| Gameplay_Flow\n    Feature_Color_Gen -->|美化| Visuals[\"视觉效果\"]\n    Feature_Particle -->|美化| Visuals\n\n    Issue_Simple_Models -->|降低| Visuals\n    Issue_Plane_Fragile -->|削弱| Gameplay_Flow\n    Issue_Tool_Access -->|限制| Development[\"开发进度\"]\n    Issue_Resource_Management -->|省略| Game_Complexity[\"游戏复杂度\"]"
+        },
+        {
+          "title": "平台适配路径图",
+          "code": "flowchart TD\n    ThreeJS_Web[\"Three.js (网页)\"]\n    CSharp_Support[\"C# / Unity 适配工具\"]\n    WeChat_MiniGame_Tool[\"微信小游戏适配工具\"]\n    Platform_Export[\"导出为多平台\"]\n    Limitations_NonUS[\"非美国公民使用受限\"]\n    Alternative_Cloud[\"使用 Cloud 模型 (如 CoCo5)\"]\n\n    ThreeJS_Web -->|可选| CSharp_Support\n    CSharp_Support --> WeChat_MiniGame_Tool\n    WeChat_MiniGame_Tool --> Platform_Export\n    Limitations_NonUS -->|影响| Alternative_Cloud\n    Alternative_Cloud -->|补充| Development[\"开发资源\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T21:00:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 生成 3D RTS 游戏知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    AI_Codex[\"AI (Codex)\"] -->|生成代码| Game_Demo[\"游戏 Demo\"]\n    Game_Demo -->|基于| ThreeJS_Web[\"Three.js (网页版)\"]\n    Game_Demo --> Units_Tank[\"单位：坦克\"]\n    Game_Demo --> Units_Airplane[\"单位：飞机\"]\n    Game_Demo --> Buildings_Camp[\"建筑：军营\"]\n    Game_Demo --> Buildings_Factory[\"建筑：坦克工厂\"]\n    Game_Demo --> Particle_Effects[\"粒子特效\"]\n    AI_Codex --> Auto_Build[\"自动建造\"]\n    AI_Codex --> Auto_Squad[\"自动编队\"]\n    AI_Codex --> Cooldown_5min[\"5 分钟冷却\"]\n    AI_Codex --> Color_Generation[\"颜色自动生成\"]\n    Simple_Models[\"模型简化 (low‑poly)\"] -->|限制| Game_Demo\n    ThreeJS_Web --> Platform_WeChat[\"微信小游戏适配\"]\n```\n\n## 工作流图\n```mermaid\nflowchart TD\n    Prompt_Design[\"设计 Prompt\"]\n    Codex_Interaction[\"与 Codex 对话\"]\n    Code_Generation[\"代码生成\"]\n    ThreeJS_Integration[\"集成到 Three.js\"]\n    Auto_Test_Iterate[\"自动测试 & 迭代\"]\n    Deploy_Web[\"部署为网页\"]\n    Deploy_WeChat[\"可选：部署为微信小游戏\"]\n    Feedback_Loop[\"反馈 → 重新设计 Prompt\"]\n\n    Prompt_Design --> Codex_Interaction --> Code_Generation --> ThreeJS_Integration --> Auto_Test_Iterate --> Deploy_Web\n    Deploy_Web --> Deploy_WeChat\n    Feedback_Loop --> Prompt_Design\n```\n\n## 功能与问题对照图\n```mermaid\nflowchart TD\n    Feature_Auto_Build[\"自动建造\"]\n    Feature_Auto_Squad[\"自动编队\"]\n    Feature_Cooldown[\"5 分钟冷却限制\"]\n    Feature_Color_Gen[\"颜色自动生成\"]\n    Feature_Particle[\"粒子特效实现\"]\n\n    Issue_Simple_Models[\"模型过于简化\"]\n    Issue_Plane_Fragile[\"飞机易死亡\"]\n    Issue_Tool_Access[\"Codex 访问受限（非美国公民）\"]\n    Issue_Resource_Management[\"不想实现资源管理\"]\n\n    Feature_Auto_Build -->|提升| Gameplay_Flow[\"游戏流程\"]\n    Feature_Auto_Squad -->|提升| Gameplay_Flow\n    Feature_Cooldown -->|平衡| Gameplay_Flow\n    Feature_Color_Gen -->|美化| Visuals[\"视觉效果\"]\n    Feature_Particle -->|美化| Visuals\n\n    Issue_Simple_Models -->|降低| Visuals\n    Issue_Plane_Fragile -->|削弱| Gameplay_Flow\n    Issue_Tool_Access -->|限制| Development[\"开发进度\"]\n    Issue_Resource_Management -->|省略| Game_Complexity[\"游戏复杂度\"]\n```\n\n## 平台适配路径图\n```mermaid\nflowchart TD\n    ThreeJS_Web[\"Three.js (网页)\"]\n    CSharp_Support[\"C# / Unity 适配工具\"]\n    WeChat_MiniGame_Tool[\"微信小游戏适配工具\"]\n    Platform_Export[\"导出为多平台\"]\n    Limitations_NonUS[\"非美国公民使用受限\"]\n    Alternative_Cloud[\"使用 Cloud 模型 (如 CoCo5)\"]\n\n    ThreeJS_Web -->|可选| CSharp_Support\n    CSharp_Support --> WeChat_MiniGame_Tool\n    WeChat_MiniGame_Tool --> Platform_Export\n    Limitations_NonUS -->|影响| Alternative_Cloud\n    Alternative_Cloud -->|补充| Development[\"开发资源\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    AI_Codex[\"AI (Codex)\"] -->|生成代码| Game_Demo[\"游戏 Demo\"]\n    Game_Demo -->|基于| ThreeJS_Web[\"Three.js (网页版)\"]\n    Game_Demo --> Units_Tank[\"单位：坦克\"]\n    Game_Demo --> Units_Airplane[\"单位：飞机\"]\n    Game_Demo --> Buildings_Camp[\"建筑：军营\"]\n    Game_Demo --> Buildings_Factory[\"建筑：坦克工厂\"]\n    Game_Demo --> Particle_Effects[\"粒子特效\"]\n    AI_Codex --> Auto_Build[\"自动建造\"]\n    AI_Codex --> Auto_Squad[\"自动编队\"]\n    AI_Codex --> Cooldown_5min[\"5 分钟冷却\"]\n    AI_Codex --> Color_Generation[\"颜色自动生成\"]\n    Simple_Models[\"模型简化 (low‑poly)\"] -->|限制| Game_Demo\n    ThreeJS_Web --> Platform_WeChat[\"微信小游戏适配\"]"
+    },
+    {
+      "title": "工作流图",
+      "code": "flowchart TD\n    Prompt_Design[\"设计 Prompt\"]\n    Codex_Interaction[\"与 Codex 对话\"]\n    Code_Generation[\"代码生成\"]\n    ThreeJS_Integration[\"集成到 Three.js\"]\n    Auto_Test_Iterate[\"自动测试 & 迭代\"]\n    Deploy_Web[\"部署为网页\"]\n    Deploy_WeChat[\"可选：部署为微信小游戏\"]\n    Feedback_Loop[\"反馈 → 重新设计 Prompt\"]\n\n    Prompt_Design --> Codex_Interaction --> Code_Generation --> ThreeJS_Integration --> Auto_Test_Iterate --> Deploy_Web\n    Deploy_Web --> Deploy_WeChat\n    Feedback_Loop --> Prompt_Design"
+    },
+    {
+      "title": "功能与问题对照图",
+      "code": "flowchart TD\n    Feature_Auto_Build[\"自动建造\"]\n    Feature_Auto_Squad[\"自动编队\"]\n    Feature_Cooldown[\"5 分钟冷却限制\"]\n    Feature_Color_Gen[\"颜色自动生成\"]\n    Feature_Particle[\"粒子特效实现\"]\n\n    Issue_Simple_Models[\"模型过于简化\"]\n    Issue_Plane_Fragile[\"飞机易死亡\"]\n    Issue_Tool_Access[\"Codex 访问受限（非美国公民）\"]\n    Issue_Resource_Management[\"不想实现资源管理\"]\n\n    Feature_Auto_Build -->|提升| Gameplay_Flow[\"游戏流程\"]\n    Feature_Auto_Squad -->|提升| Gameplay_Flow\n    Feature_Cooldown -->|平衡| Gameplay_Flow\n    Feature_Color_Gen -->|美化| Visuals[\"视觉效果\"]\n    Feature_Particle -->|美化| Visuals\n\n    Issue_Simple_Models -->|降低| Visuals\n    Issue_Plane_Fragile -->|削弱| Gameplay_Flow\n    Issue_Tool_Access -->|限制| Development[\"开发进度\"]\n    Issue_Resource_Management -->|省略| Game_Complexity[\"游戏复杂度\"]"
+    },
+    {
+      "title": "平台适配路径图",
+      "code": "flowchart TD\n    ThreeJS_Web[\"Three.js (网页)\"]\n    CSharp_Support[\"C# / Unity 适配工具\"]\n    WeChat_MiniGame_Tool[\"微信小游戏适配工具\"]\n    Platform_Export[\"导出为多平台\"]\n    Limitations_NonUS[\"非美国公民使用受限\"]\n    Alternative_Cloud[\"使用 Cloud 模型 (如 CoCo5)\"]\n\n    ThreeJS_Web -->|可选| CSharp_Support\n    CSharp_Support --> WeChat_MiniGame_Tool\n    WeChat_MiniGame_Tool --> Platform_Export\n    Limitations_NonUS -->|影响| Alternative_Cloud\n    Alternative_Cloud -->|补充| Development[\"开发资源\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T21:00:48+00:00"
+}

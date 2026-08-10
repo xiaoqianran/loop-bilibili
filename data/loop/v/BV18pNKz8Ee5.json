@@ -1,0 +1,66 @@
+{
+  "bvid": "BV18pNKz8Ee5",
+  "title": "杀疯了！DeepSeek最新论文DualPath，大模型推理成本直接砍半！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3979,
+  "text": "这段时间DEPSG联合了清华和北大\n发表了一篇新论文\n名字叫做duo pass\n他只用了一个超简单的思想\n就把大模型推理吞吐量直接翻了近两倍\n我也深入学习了一波\n今天给大家分享一下\n对我以后会单开一个合集\n用来发布一些我看过的前言或者经典的论文\n进行讲解\n大家如果有想学习的论文\n可以把名字打在弹幕或者评论区中\n我会抽出一些来进行讲解\n然后在正式讲论文之前呢\n我先把看懂这篇论文\n必须的两个前置知识讲明白\n一个是kv catch\n第二个就是pd分离架构\n知道的可以将进度条拉到这个地方\n哎呀来跳过\n首先第一个KVK\n它是大模型在推理阶段\n最核心的一种优化技术啊\n没有之一\n简单说transformer在自回归生成的时候\n每算一个新的token\n都要用到之前所有历史的token的KV\n注意向量\nkv catch呢\n就是把这些已经算过的KV向量给它缓存起来\n下次用直接取\n不用重复计算\n可以大幅度的降低推理延迟和所需的算力啊\n如果想详细了解t v k ch的底层原理啊\n可以去看我的这一期视频\n搞懂了kv catch之后呢\n有没有发现大模型的整个推理流程\n其实可以拆分为两个完全独立的阶段\n也就是论文里的核心概念P1阶段和第一阶段\nP1全称叫做prefer engine\n也叫做预填充阶段\n他负责从用户输入完整的prompt开始\n到模型生成第一个token为止\n全流程都叫PE\n举个我之前在kv cash视频里用过的例子\n当用户输入一个我字的时候\n模型从读取这个\n我算完所有的注意力权重到生成这个I字\n这整个过程就是P阶段\n而DEE呢它的全称叫做decoder engine\n也就是解码阶段\n从第一个token生成之后\n模型开始一个一个的token\n自回归往外蹦\n直到输出完整回答的首个字\n回归过程全都是第一阶段\n像现在这个例子\n我到爱是PE阶段\n而爱到吃还有吃到苹果都属于第一阶段\n此时肯定有同学问你整个推理流程吗\n为啥非要拆分成这两个阶段呢\n哎核心的原因就在于\n这两个阶段的硬件要求简直天差地别\n硬塞在同一张GPU上跑\n只会两头都拉垮\n要么性能不够用\n要么算力全浪费\n先看P1阶段\n咱们平时用大模型输入的这个prompt\n是不是从来都不只是单个的一个字啊\n往往是长提问系统提示词\n多轮对话加在一起\n动不动就成千上万的token\n而这个阶段模型要并行的处理\n整个prom的全量序列啊\n生成完整的QQV3个矩阵\n然后计算量呢也是直接拉满\n是典型的算力密集型的任务\n核心的瓶颈就是GPU的算力啊够不够强\n再看D1阶段\nP1阶段已经把所有problem的k v catch\n全算好了\nDE全程是不是只需要拿着这一份现成的KV\n每次只需要输入上一轮生成的单个token\n做增量计算就行\n说白了第一就是一个token\n一个token往外蹦啊\n单次计算量极小\n所以他不怎么吃这个GPU的算力\n你想想一个吃蒜粒\n一个不吃硬\n塞在同一张GPU上跑\n必然会出现算力冗余\n所以工业界就想出了一招\n诶\n干脆把这两个阶段彻底拆开\n也就是所谓的pd分离架构\n搞两个独立的GPU集群\nPEE集群全上算力拉满的高端GPU\n把并行的计算效率拉到最高\n而第一集群呢不用顶尖的算力\n只需要能保证生成的流畅度就行\n但这里还有个更致命的成本问题\n就是显存是真的贵啊\n大模型厂商\n这个线上服务要扛几10万甚至\n上百万的并发绘画\n一个70B的中型模型\n单条长绘画的KV开局量化之后\n也至少要几个G\n你再乘上几10万的这个绘画量\n全存在这个显存里头\n我相信没有几家公司能扛得住这个成本\n所以现在工业界的标准解决方案呢\n就是把这个kv catch放到远端的分布式SSD\n存储里\nSSD相比显存来讲\n那肯定便宜了\n至少几十上百倍吧是吧\n相对来讲性价比就高很多\n同时呢配合这个pd分离的无状态设计\n每一轮对话生成结束之后呢\nDE就把本轮更新后的这个完整全量kv catch\n异步持久化到这个远端的SSD当中\n然后立刻清空\n放在本地显存里的kv catch\n转身呢去处理下一个请求是吧\n保证不会和用户的这个会话长期绑定好\n一句话总结\npd分离架构呢就是让专业的人干专业的事\n较好的解决了两个阶段的资源需求冲突的问题\n到现在啊\n所有看懂这篇论文的前置知识\n就全给大家铺垫完了\n但是呢pd分离架构又引出了一个新的致命问题\n在多轮对话的场景下\n所有kv catch的读取压力\n几乎全集中在PE的存储网卡上\n而DE的存储网卡\n几乎95%以上的时间都在闲置\n这里的存储网卡\nSNIC指的就是负责和远端SSD做传输的网卡\n我给大家走一遍完整的多轮对话流程\n你瞬间就懂\n先看第一轮对话\n用户首次发起提问啊\n此时SSD里头啊\n还有这个PE\nDE里头都没有任何的历史上下文\n然后调度器把请求分配给空闲的这个PE节点\nPEE完成预填充\n然后算出用户prom对应的初始k v catch\n生成第一个输出的token\n而此时PEE通过计算网卡也就是个CNIC\n他是专门负责GPU之间内部通信的一个专用网卡\n和这个外面的这个SNC这个存储网卡\n物理上完全隔离\n把初始的kv catch加上首个token\n一次性的传给调度器分配的这个DE节点\n然后DE节点呢拿着这份KV\n在本地显存里头完成自回归的生成\n生成结束之后呢\n通过自己的存储网卡\n把本轮更新后的这个完整\n全量的kv catch异步覆盖\n写入远端的这个SSD当中\n然后立刻释放本地的显存\n处理下一个请求\n首轮看上去好像没啥问题对吧\n现在到了第二轮对话啊\n核心的痛点来了\n用户第一轮的完整KP\nDE早就释放了这个显存\n所以这个绘画和之前的DE其实没有任何\n绑定关系\n现在用户发起第二轮提问\n比如说啊把刚刚的解题步骤再详细拆解一下\n由于传统的pd分离架构的核心设计是职责\n完全隔离\nPEE只负责预填充这部分\n所以新的用户请求呢\n会被调度器重新分配给一个空闲的PE节点\n而这个P节点要处理完整的pond\n也是第一轮的完整对话\n上下文加上第二轮的新提问\n其中95%以上都是历史内容\n对应的KVKH全存在这个远端的SSD当中\n我们知道要做完整的注意力计算\n理解上下文的语义\nPE必须把用户全量的历史kv catch\n通过自己的存储网卡\n在几百毫秒内\n一次性的从远端的SSD里头\n加载到自己的GPU显存当中\n就像我之前说的一个32K上下文的绘画TV\n开局就占用几个GB甚至几10GB\n在多轮对话A卷的任务\n这种KV命中率大于95%以上的\n这种场景下\nPEE的绝大部分工作\n都是从远端的SSD里头去读取KVK去\n而不随机计算\n因为你必须先读才能计算后续的内容\n所以存储的这个IO\n直接就成了PE的绝对瓶颈\n等PE1把完整的KV算完\n也就包含用户第二轮的新增的kv catch\n和历史的kv catch\n就会通过计算网卡传给新的第一节点\n然后立刻清空显存\n处理下一次的这个请求\n第一接收到KV后就开始自回归输出\n这个过程可能会持续几秒甚至几十秒\n具体看他输出内容有多长对吧\n而这个过程当中呢\n全程第一的存储网卡都是完全空闲的\n只有等本轮生存完全结束\n第一才会把更新后的TV catch\n慢悠悠的通过这个存储网卡\n异步的写入远端存储\n为啥能慢悠悠的写呢\n因为用户已经拿到了完整的回答\n写入KV只是为了用户下一轮的复用\n所以哪怕晚了几秒\n甚至晚几十秒血\n也完全不影响当前用户的体验\n但P1的存储网卡完全不一样\n它必须在几百毫秒内快速的读完KV\n不然就无法做后续的计算\n用户的首字延迟就会非常的卡\n而这个是线上服务的一个红线\n哎到这里\n当前pd分离架构下的问题终于讲解清楚了\n就是高并发场景下\nPE的存储网卡会被源源不断的读取请求\n持续打满\n就堵得水泄不通吧是吧\nGPU哪怕算力过剩\n也只能干等着数据\n而DE的存储网卡呢\n除了偶尔写一次KV几乎全程都在躺平\n这部分的带宽资源完全就被浪费掉了\n而DEPSG的这篇新的论文\n就是为了解决这个问题的\n它的核心思路嘎嘎简单\n既然第一的网卡闲着也是闲着\n那能不能让DE也去帮PE去拉远程存储的\n这个KPKH呢\n哎这就是duo pass的核心设计\n双路径KPKH加载架构\n原来的传统架构里\nKV开局只有一条路径能走\n只能从远端存储先到P1的存储网卡\n再到P1的GPU里\n所有的流量全挤在这一条路上\n而duo pass呢新增了第二条高速路\nTV catch可以先从远端传输\n通过第一闲置的存储网卡拉到D1的节点里头\n当PE1需要计算的时候\nD1再通过集群里的计算网卡\n直接将KV传给P1\n这样就从原来的KV\n这也就是论文都要pass的由来\nduo就是双数的意思嘛\nAPASS就是路径嘛\n原来所有的流量都挤在P1的存储网卡里头\n现在被分流到了第一闲置的存储网卡中\n直接拉高了整个集群的可用存储带宽的上限\n最后给大家看一下论文里的实测数据\n在离线推理的情况下\nreal pass相比传统架构最高\n把吞吐量提升了1.87倍\n而在在线服务场景\n也就是我们平时用的大模型API服务\n平均吞吐量提升了1.96倍\n最关键的是\n这个方案完全兼容现有的pd分离架构\n你不需要去换硬件\n不需要改模型\n只需要修改推理框架的调度逻辑\n就能拿到近两倍的性能提升\n推理的成本直接砍半欧了\n以上就是deep sik这篇论文的完整拆解\n其实这期视频\n我主要的精力都花在背景介绍上了\n论文本身的方案\n其实还是很简单的\n但是吧我看了一下我视频的粉丝画像\n大多都是在校学生\n如果我不讲清楚背景是啥\n直接说论文\n你们可能听到什么像啊\nP啊D啊啥的\n直接就懵逼了\n所以我觉得还是有必要花大量篇幅\n来讲解这个的\n最后如果这期视频对你有帮助的话呢\n麻烦点赞收藏加关注\n你的支持是我更新视频的最大动力\n咱们下期视频见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18pNKz8Ee5",
+  "published_at": "1772942701",
+  "fetched_at": "2026-08-10T07:03:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DualPath 论文知识图谱\n\n## Overview of Inference & PD Separation [BV18pNKz8Ee5 P1 00:38-01:41]\n```mermaid\nflowchart TD\n    PromptInput[\"Prompt 输入\"] --> PE[\"Prefer Engine (PE) 预填充阶段\"]\n    PE --> KVFull[\"完整 KV Cache（全量）\"]\n    KVFull --> RemoteSSD[\"远端 SSD 存储\"]\n    PE --> CNIC[\"计算网卡 (CNIC)\"]\n    CNIC --> DE[\"Decoder Engine (DE) 解码阶段\"]\n    DE --> KVInc[\"增量 KV（单 token）\"]\n    KVInc --> RemoteSSD\n    RemoteSSD --> SNIC[\"存储网卡 (SNIC)\"]\n    SNIC --> PE\n    subgraph PE_Cluster[\"PE GPU 集群 (高算力)\"]\n        PE\n    end\n    subgraph DE_Cluster[\"DE GPU 集群 (低算力)\"]\n        DE\n    end\n```\n\n## DualPath KV Loading Architecture [BV18pNKz8Ee5 P1 07:56-08:30]\n```mermaid\nflowchart TD\n    RemoteSSD[\"远端 SSD\"]\n    IdleSNIC[\"闲置存储网卡 (SNIC)\"]\n    ComputeCNIC[\"计算网卡 (CNIC)\"]\n    PE[\"Prefer Engine (PE)\"]\n    DE[\"Decoder Engine (DE)\"]\n    KVData[\"KV 数据\"]\n    TraditionalPath[\"传统单路径\"]\n    DualPath1[\"DualPath 路径 1 (PE)\"]\n    DualPath2[\"DualPath 路径 2 (DE)\"]\n\n    RemoteSSD --> TraditionalPath\n    TraditionalPath --> PE\n    RemoteSSD --> DualPath1\n    DualPath1 --> PE\n    RemoteSSD --> IdleSNIC\n    IdleSNIC --> DualPath2\n    DualPath2 --> DE\n    DE --> ComputeCNIC\n    ComputeCNIC --> PE\n    PE --> KVData\n    DE --> KVData\n```\n\n## Performance Gains & Compatibility [BV18pNKz8Ee5 P1 08:46-09:08]\n```mermaid\nflowchart TD\n    TraditionalArch[\"传统架构\"]\n    DualPathArch[\"DualPath 架构\"]\n    ThroughputTrad[\"吞吐量 (传统)\"]\n    ThroughputDP[\"吞吐量提升 1.87× (离线) / 1.96× (在线)\"]\n    LatencyTrad[\"延迟 (传统)\"]\n    LatencyDP[\"延迟降低\"]\n    CostTrad[\"成本 (传统)\"]\n    CostDP[\"成本降低约 50%\"]\n    Compatibility[\"兼容现有 PD 分离，无需硬件/模型改动\"]\n\n    TraditionalArch --> ThroughputTrad\n    TraditionalArch --> LatencyTrad\n    TraditionalArch --> CostTrad\n\n    DualPathArch --> ThroughputDP\n    DualPathArch --> LatencyDP\n    DualPathArch --> CostDP\n    DualPathArch --> Compatibility\n```",
+      "diagrams": [
+        {
+          "title": "Overview of Inference & PD Separation [BV18pNKz8Ee5 P1 00:38-01:41]",
+          "code": "flowchart TD\n    PromptInput[\"Prompt 输入\"] --> PE[\"Prefer Engine (PE) 预填充阶段\"]\n    PE --> KVFull[\"完整 KV Cache（全量）\"]\n    KVFull --> RemoteSSD[\"远端 SSD 存储\"]\n    PE --> CNIC[\"计算网卡 (CNIC)\"]\n    CNIC --> DE[\"Decoder Engine (DE) 解码阶段\"]\n    DE --> KVInc[\"增量 KV（单 token）\"]\n    KVInc --> RemoteSSD\n    RemoteSSD --> SNIC[\"存储网卡 (SNIC)\"]\n    SNIC --> PE\n    subgraph PE_Cluster[\"PE GPU 集群 (高算力)\"]\n        PE\n    end\n    subgraph DE_Cluster[\"DE GPU 集群 (低算力)\"]\n        DE\n    end"
+        },
+        {
+          "title": "DualPath KV Loading Architecture [BV18pNKz8Ee5 P1 07:56-08:30]",
+          "code": "flowchart TD\n    RemoteSSD[\"远端 SSD\"]\n    IdleSNIC[\"闲置存储网卡 (SNIC)\"]\n    ComputeCNIC[\"计算网卡 (CNIC)\"]\n    PE[\"Prefer Engine (PE)\"]\n    DE[\"Decoder Engine (DE)\"]\n    KVData[\"KV 数据\"]\n    TraditionalPath[\"传统单路径\"]\n    DualPath1[\"DualPath 路径 1 (PE)\"]\n    DualPath2[\"DualPath 路径 2 (DE)\"]\n\n    RemoteSSD --> TraditionalPath\n    TraditionalPath --> PE\n    RemoteSSD --> DualPath1\n    DualPath1 --> PE\n    RemoteSSD --> IdleSNIC\n    IdleSNIC --> DualPath2\n    DualPath2 --> DE\n    DE --> ComputeCNIC\n    ComputeCNIC --> PE\n    PE --> KVData\n    DE --> KVData"
+        },
+        {
+          "title": "Performance Gains & Compatibility [BV18pNKz8Ee5 P1 08:46-09:08]",
+          "code": "flowchart TD\n    TraditionalArch[\"传统架构\"]\n    DualPathArch[\"DualPath 架构\"]\n    ThroughputTrad[\"吞吐量 (传统)\"]\n    ThroughputDP[\"吞吐量提升 1.87× (离线) / 1.96× (在线)\"]\n    LatencyTrad[\"延迟 (传统)\"]\n    LatencyDP[\"延迟降低\"]\n    CostTrad[\"成本 (传统)\"]\n    CostDP[\"成本降低约 50%\"]\n    Compatibility[\"兼容现有 PD 分离，无需硬件/模型改动\"]\n\n    TraditionalArch --> ThroughputTrad\n    TraditionalArch --> LatencyTrad\n    TraditionalArch --> CostTrad\n\n    DualPathArch --> ThroughputDP\n    DualPathArch --> LatencyDP\n    DualPathArch --> CostDP\n    DualPathArch --> Compatibility"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T07:04:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DualPath 论文知识图谱\n\n## Overview of Inference & PD Separation [BV18pNKz8Ee5 P1 00:38-01:41]\n```mermaid\nflowchart TD\n    PromptInput[\"Prompt 输入\"] --> PE[\"Prefer Engine (PE) 预填充阶段\"]\n    PE --> KVFull[\"完整 KV Cache（全量）\"]\n    KVFull --> RemoteSSD[\"远端 SSD 存储\"]\n    PE --> CNIC[\"计算网卡 (CNIC)\"]\n    CNIC --> DE[\"Decoder Engine (DE) 解码阶段\"]\n    DE --> KVInc[\"增量 KV（单 token）\"]\n    KVInc --> RemoteSSD\n    RemoteSSD --> SNIC[\"存储网卡 (SNIC)\"]\n    SNIC --> PE\n    subgraph PE_Cluster[\"PE GPU 集群 (高算力)\"]\n        PE\n    end\n    subgraph DE_Cluster[\"DE GPU 集群 (低算力)\"]\n        DE\n    end\n```\n\n## DualPath KV Loading Architecture [BV18pNKz8Ee5 P1 07:56-08:30]\n```mermaid\nflowchart TD\n    RemoteSSD[\"远端 SSD\"]\n    IdleSNIC[\"闲置存储网卡 (SNIC)\"]\n    ComputeCNIC[\"计算网卡 (CNIC)\"]\n    PE[\"Prefer Engine (PE)\"]\n    DE[\"Decoder Engine (DE)\"]\n    KVData[\"KV 数据\"]\n    TraditionalPath[\"传统单路径\"]\n    DualPath1[\"DualPath 路径 1 (PE)\"]\n    DualPath2[\"DualPath 路径 2 (DE)\"]\n\n    RemoteSSD --> TraditionalPath\n    TraditionalPath --> PE\n    RemoteSSD --> DualPath1\n    DualPath1 --> PE\n    RemoteSSD --> IdleSNIC\n    IdleSNIC --> DualPath2\n    DualPath2 --> DE\n    DE --> ComputeCNIC\n    ComputeCNIC --> PE\n    PE --> KVData\n    DE --> KVData\n```\n\n## Performance Gains & Compatibility [BV18pNKz8Ee5 P1 08:46-09:08]\n```mermaid\nflowchart TD\n    TraditionalArch[\"传统架构\"]\n    DualPathArch[\"DualPath 架构\"]\n    ThroughputTrad[\"吞吐量 (传统)\"]\n    ThroughputDP[\"吞吐量提升 1.87× (离线) / 1.96× (在线)\"]\n    LatencyTrad[\"延迟 (传统)\"]\n    LatencyDP[\"延迟降低\"]\n    CostTrad[\"成本 (传统)\"]\n    CostDP[\"成本降低约 50%\"]\n    Compatibility[\"兼容现有 PD 分离，无需硬件/模型改动\"]\n\n    TraditionalArch --> ThroughputTrad\n    TraditionalArch --> LatencyTrad\n    TraditionalArch --> CostTrad\n\n    DualPathArch --> ThroughputDP\n    DualPathArch --> LatencyDP\n    DualPathArch --> CostDP\n    DualPathArch --> Compatibility\n```",
+  "diagrams": [
+    {
+      "title": "Overview of Inference & PD Separation [BV18pNKz8Ee5 P1 00:38-01:41]",
+      "code": "flowchart TD\n    PromptInput[\"Prompt 输入\"] --> PE[\"Prefer Engine (PE) 预填充阶段\"]\n    PE --> KVFull[\"完整 KV Cache（全量）\"]\n    KVFull --> RemoteSSD[\"远端 SSD 存储\"]\n    PE --> CNIC[\"计算网卡 (CNIC)\"]\n    CNIC --> DE[\"Decoder Engine (DE) 解码阶段\"]\n    DE --> KVInc[\"增量 KV（单 token）\"]\n    KVInc --> RemoteSSD\n    RemoteSSD --> SNIC[\"存储网卡 (SNIC)\"]\n    SNIC --> PE\n    subgraph PE_Cluster[\"PE GPU 集群 (高算力)\"]\n        PE\n    end\n    subgraph DE_Cluster[\"DE GPU 集群 (低算力)\"]\n        DE\n    end"
+    },
+    {
+      "title": "DualPath KV Loading Architecture [BV18pNKz8Ee5 P1 07:56-08:30]",
+      "code": "flowchart TD\n    RemoteSSD[\"远端 SSD\"]\n    IdleSNIC[\"闲置存储网卡 (SNIC)\"]\n    ComputeCNIC[\"计算网卡 (CNIC)\"]\n    PE[\"Prefer Engine (PE)\"]\n    DE[\"Decoder Engine (DE)\"]\n    KVData[\"KV 数据\"]\n    TraditionalPath[\"传统单路径\"]\n    DualPath1[\"DualPath 路径 1 (PE)\"]\n    DualPath2[\"DualPath 路径 2 (DE)\"]\n\n    RemoteSSD --> TraditionalPath\n    TraditionalPath --> PE\n    RemoteSSD --> DualPath1\n    DualPath1 --> PE\n    RemoteSSD --> IdleSNIC\n    IdleSNIC --> DualPath2\n    DualPath2 --> DE\n    DE --> ComputeCNIC\n    ComputeCNIC --> PE\n    PE --> KVData\n    DE --> KVData"
+    },
+    {
+      "title": "Performance Gains & Compatibility [BV18pNKz8Ee5 P1 08:46-09:08]",
+      "code": "flowchart TD\n    TraditionalArch[\"传统架构\"]\n    DualPathArch[\"DualPath 架构\"]\n    ThroughputTrad[\"吞吐量 (传统)\"]\n    ThroughputDP[\"吞吐量提升 1.87× (离线) / 1.96× (在线)\"]\n    LatencyTrad[\"延迟 (传统)\"]\n    LatencyDP[\"延迟降低\"]\n    CostTrad[\"成本 (传统)\"]\n    CostDP[\"成本降低约 50%\"]\n    Compatibility[\"兼容现有 PD 分离，无需硬件/模型改动\"]\n\n    TraditionalArch --> ThroughputTrad\n    TraditionalArch --> LatencyTrad\n    TraditionalArch --> CostTrad\n\n    DualPathArch --> ThroughputDP\n    DualPathArch --> LatencyDP\n    DualPathArch --> CostDP\n    DualPathArch --> Compatibility"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T07:04:03+00:00"
+}

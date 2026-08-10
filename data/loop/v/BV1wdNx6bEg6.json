@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1wdNx6bEg6",
+  "title": "Godot 4 忍者平台游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2223,
+  "text": "早上好\n下午好\n晚上好\n无论您身在何处\n无论何时\n我的名字是本杰明\n欢迎来到这个歌多教程系列\n在这个系列中\n我们将制作一款忍者平台游戏\n比如忍者龙剑传\n如果你曾经玩过这个游戏或者信使\n如果你曾经玩过这个游戏\n这是我设置的势力项目\n我们有我们的小忍者\n我们可以爬来爬去\n我们可以用剑攻击和这些坏人战斗\n我们击中一个\n我们就会受到伤害\n你可以看到我们可以哎呀\n我们这里有一个基本的小项目\n这就是我们要做的\n现在我们最终要做的可能不仅仅是这些\n我们最终可能会添加好吧\n我当然想最终添加某种来自这个敌人的射弹\n但这将是一个很好的起点\n那么是什么让这个项目与众不同\n来自其他平台游戏\n还有其他平台游戏教程视频吗\n嗯首先是近战\n这本身就是一个话题\n所以我们将在本系列中解决这个问题\n另一个主要区别在这里是我们将管理一个角色\n身体的上半部分和身体的下半部分\n本质上有两种不同的状态\n因为我们希望能够将它们分开\n以便让玩家\n不仅仅是在站立动画中进行攻击\n有很多游戏都出来了\n那里要求你在想要攻击时停下来\n但在这个游戏中\n我们的角色可以一边跳跃\n一边攻击他们\n在奔跑\n当他们站着\n无论如何\n那是因为我们已经分开了\n将角色动画分成上半部分和下半部分\n我们可以分别管理他们\n在我们的游戏里面\n那么这是给谁的呢\n本教程系列适合使用过高斗的人之前\n但您对引擎仍然相当陌生\n您不必是终极用户\n他也适合对编程有基本了解的人\n所以如果你从来没有以前编程过\n而且你以前从未使用过格斗\n那么我会引导你远离这个系列\n如果你想了解编程的基础知识\n你可以谷歌搜索\n初学者编程视频教程\n如果你想学习嘎斗的基础知识\n我实际上链接到我自己的视频之一\n您可以查看该视频是为绝对的人准备的\n戈多的初学者\n好的\n让我们开始吧\n本系列将使用格斗4.4\n但他会可能适用于任何未来的格斗四版本\n如果你还没有格斗\n你可以去dodo engine or b下载最新版本的引擎\n它是完全免费和开源的\n所以就游戏引擎而言\n它也很小\n所以如果你愿意的话\n就去做吧\n还没有\n如果你确实有歌多\n那么你就会打开歌多\n你要创建一个新项目\n所以让我们在这里这样做\n我已经打开了GD\n我要创建浏览\n我要选择格斗作为教程\n这是\n我想在其中创建这个项目\n并将其称为ninja platformer\n我将保持其他一切不变\n并进行创建和编辑\n曾经\n歌多打开了\n迎接我们的是这个3D场景\n我们要做一个2D游戏索引\n我们将单击此处\n创建一个新的2D场景\n我们将点击这个\n我要给这个世界打电话\n我要按crisis来保存它\n这样就能挽救这一幕了\n现在如果我们按下这里的播放按钮\n格斗将尝试运行游戏\n但它需要有一个主场景\n这仅仅意味着每次按下播放按钮时\n都会运行的场景\n所以我们要选择curry来选择当前的世界场景\n它将在这里运行游戏\n现在这是新的好\n4.4\n实际上\n我们可以在编辑游戏的同一窗口中运行游戏\n为了做到这一点\n我们将单击此处的这三个小点\n然后取消单机\n让游戏工作区漂浮在下一个地方\n所以取消选中它\n现在他只会将其嵌入到下一场比赛中\n如果我们再次运行游戏\n然后他就在这个窗口内运行游戏\n当我们正在处理该项目时\n这更方便\n我们暂时就这样设置\n我们可以通过游戏选项卡访问正在运行的游戏\n所以我们可以点击返回2D\n这是我们编辑游戏和游戏世界的地方\n然后我们点击游戏选项卡\n现在我们又回到这里实际运行游戏了\n如果你来自某个地方\n就像YELODY\n你一定会非常熟悉\n让我们首先导入一些资产\n因此您将从描述中的文件夹中下载资源\n其中将有一个zip文件夹\n或者它将是GITHUB页面的链接\nGITHUB页面\n您可以在其中下载此SP文件夹\n我将把所有这些资源拖到这里\n然后将它们放入葛洲中\n现在在文件系统中\n我的头可能掩盖了其中的一些\n当我们观看视频时\n我会尽力意识到这一点\n所以我们能做的第一件事就是拖过去\n让我们拖过这架敌方无人机\n我们将在这里抓住无人机\n并将其拖入我们的世界\n现在如果我们运行游戏\n我们可以看到它\n但它在那里非常小\n因此我们需要为像素艺术游戏设置项目设置\n为此我们将进入项目项目设置\n如果您没有打开高级设置\n则需要检查一下\n我们去窗口\n我们将视口宽度设置为320\n适口高度设置为180\n现在这将给我们一个16X9的比例\n这是我们要瞄准的\n纵横比它也非常小\n如果我们再次运行游戏\n我们会看到现在我们的游戏窗口很小\n我们想将其放大\n所以如果我们回到在项目设置中\n我们可以将窗口宽度覆盖设置为\n1280x720\n这会将其放大哦\n那四次是多少\n我认为\n然后我们将画布项目的拉伸模式设置为\n开始了\n我们将停止并再次运行游戏\n现在它的规模扩大了\n这样看起来好多了\n然而看看我们的角色在这里看起来多么模糊\n那不是我们想要的\n不适用于像素艺术游戏\n因此我们将返回项目设置\n然后搜索过滤器\n讽刺的是\n我们要过滤或过滤\n然后我们要选择纹理\n并使用默认纹理过滤器\n我们将把它交换到最近的\n这是我们想要的像素艺术游戏的默认值\n现在当我们运行项目时\n我们应该看到它是正确的\n清晰的显示像素艺术\n我们现在可以删除这架无人机\n现在我们游戏中的敌人\n这就是下一个视频的敌人\n视频我们将开始为忍者创建角色\n非常感谢\n如果您喜欢这个视频\n请观看我的网站上的课程\n目前有一个捆绑包正在出售\n将不会更长的牛肉\n或在本月后出售\n并喜欢该视频\n并订阅该频道\n我们下一篇再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1wdNx6bEg6",
+  "published_at": "1783752428",
+  "fetched_at": "2026-08-09T09:14:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 4 忍者平台游戏学习图谱\n\n## 总览  \n[BV1wdNx6bEg6 P1 00:09]、[BV1wdNx6bEg6 P1 01:46]、[BV1wdNx6bEg6 P1 02:04]、[BV1wdNx6bEg6 P1 02:48]  \n```mermaid\nflowchart TD\n    SeriesGoal[\"制作忍者平台游戏\"] --> Inspiration[\"参考忍者龙剑传\"]\n    SeriesGoal --> Features[\"爬墙、剑攻击、跳跃攻击\"]\n    Features --> AnimationSplit[\"上半身/下半身动画分离\"]\n    SeriesGoal --> Engine[\"Godot 4.4（免费开源）\"]\n    SeriesGoal --> TargetAudience[\"适合有编程基础且不熟悉Godot的用户\"]\n    SeriesGoal --> Outcome[\"后续可添加敌人射弹等功能\"]\n```\n\n## 项目创建流程  \n[BV1wdNx6bEg6 P1 03:23]、[BV1wdNx6bEg6 P1 03:58]、[BV1wdNx6bEg6 P1 04:12]、[BV1wdNx6bEg6 P1 04:21]  \n```mermaid\nflowchart TD\n    OpenEngine[\"打开Godot\"] --> NewProject[\"创建新项目\"]\n    NewProject --> NameProject[\"命名为'ninja platformer'\"]\n    NameProject --> KeepDefaults[\"保持默认设置\"]\n    KeepDefaults --> Create2DScene[\"创建2D场景\"]\n    Create2DScene --> SetMainScene[\"设为主场景\"]\n    SetMainScene --> RunGame[\"运行游戏测试\"]\n    RunGame --> Confirm[\"确认项目创建成功\"]\n```\n\n## 像素艺术设置流程  \n[BV1wdNx6bEg6 P1 06:22]、[BV1wdNx6bEg6 P1 06:28]、[BV1wdNx6bEg6 P1 06:59]、[BV1wdNx6bEg6 P1 07:42]、[BV1wdNx6bEg6 P1 07:57]  \n```mermaid\nflowchart TD\n    OpenProjectSettings[\"打开项目设置\"] --> SetViewport[\"视口宽320×180，高180\"]\n    SetViewport --> SetWindowSize[\"窗口大小1280×720\"]\n    SetWindowSize --> SetStretchMode[\"拉伸模式: 2D\"]\n    SetStretchMode --> SetTextureFilter[\"纹理过滤: 最近邻\"]\n    SetTextureFilter --> RunGameCheck[\"运行游戏检查像素显示\"]\n    RunGameCheck --> Result[\"清晰像素艺术显示\"]\n```\n\n## 资产导入与测试流程  \n[BV1wdNx6bEg6 P1 05:27]、[BV1wdNx6bEg6 P1 06:01]、[BV1wdNx6bEg6 P1 06:10]、[BV1wdNx6bEg6 P1 07:57]、[BV1wdNx6bEg6 P1 08:08]  \n```mermaid\nflowchart TD\n    DownloadAssets[\"从GitHub下载资源ZIP\"] --> ExtractAssets[\"解压获取SP文件夹\"]\n    ExtractAssets --> DragAssets[\"拖入项目文件系统\"]\n    DragAssets --> AddDrone[\"添加无人机占位物\"]\n    AddDrone --> RunGameShow[\"运行游戏查看无人机\"]\n    RunGameShow --> RemoveDrone[\"删除无人机占位物\"]\n    RemoveDrone --> ReadyForEnemy[\"准备添加敌人\"]\n    ReadyForEnemy --> NextVideo[\"进入下一视频创建角色\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    SeriesGoal[\"制作忍者平台游戏\"] --> Inspiration[\"参考忍者龙剑传\"]\n    SeriesGoal --> Features[\"爬墙、剑攻击、跳跃攻击\"]\n    Features --> AnimationSplit[\"上半身/下半身动画分离\"]\n    SeriesGoal --> Engine[\"Godot 4.4（免费开源）\"]\n    SeriesGoal --> TargetAudience[\"适合有编程基础且不熟悉Godot的用户\"]\n    SeriesGoal --> Outcome[\"后续可添加敌人射弹等功能\"]"
+        },
+        {
+          "title": "项目创建流程",
+          "code": "flowchart TD\n    OpenEngine[\"打开Godot\"] --> NewProject[\"创建新项目\"]\n    NewProject --> NameProject[\"命名为'ninja platformer'\"]\n    NameProject --> KeepDefaults[\"保持默认设置\"]\n    KeepDefaults --> Create2DScene[\"创建2D场景\"]\n    Create2DScene --> SetMainScene[\"设为主场景\"]\n    SetMainScene --> RunGame[\"运行游戏测试\"]\n    RunGame --> Confirm[\"确认项目创建成功\"]"
+        },
+        {
+          "title": "像素艺术设置流程",
+          "code": "flowchart TD\n    OpenProjectSettings[\"打开项目设置\"] --> SetViewport[\"视口宽320×180，高180\"]\n    SetViewport --> SetWindowSize[\"窗口大小1280×720\"]\n    SetWindowSize --> SetStretchMode[\"拉伸模式: 2D\"]\n    SetStretchMode --> SetTextureFilter[\"纹理过滤: 最近邻\"]\n    SetTextureFilter --> RunGameCheck[\"运行游戏检查像素显示\"]\n    RunGameCheck --> Result[\"清晰像素艺术显示\"]"
+        },
+        {
+          "title": "资产导入与测试流程",
+          "code": "flowchart TD\n    DownloadAssets[\"从GitHub下载资源ZIP\"] --> ExtractAssets[\"解压获取SP文件夹\"]\n    ExtractAssets --> DragAssets[\"拖入项目文件系统\"]\n    DragAssets --> AddDrone[\"添加无人机占位物\"]\n    AddDrone --> RunGameShow[\"运行游戏查看无人机\"]\n    RunGameShow --> RemoveDrone[\"删除无人机占位物\"]\n    RemoveDrone --> ReadyForEnemy[\"准备添加敌人\"]\n    ReadyForEnemy --> NextVideo[\"进入下一视频创建角色\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T09:15:06+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 4 忍者平台游戏学习图谱\n\n## 总览  \n[BV1wdNx6bEg6 P1 00:09]、[BV1wdNx6bEg6 P1 01:46]、[BV1wdNx6bEg6 P1 02:04]、[BV1wdNx6bEg6 P1 02:48]  \n```mermaid\nflowchart TD\n    SeriesGoal[\"制作忍者平台游戏\"] --> Inspiration[\"参考忍者龙剑传\"]\n    SeriesGoal --> Features[\"爬墙、剑攻击、跳跃攻击\"]\n    Features --> AnimationSplit[\"上半身/下半身动画分离\"]\n    SeriesGoal --> Engine[\"Godot 4.4（免费开源）\"]\n    SeriesGoal --> TargetAudience[\"适合有编程基础且不熟悉Godot的用户\"]\n    SeriesGoal --> Outcome[\"后续可添加敌人射弹等功能\"]\n```\n\n## 项目创建流程  \n[BV1wdNx6bEg6 P1 03:23]、[BV1wdNx6bEg6 P1 03:58]、[BV1wdNx6bEg6 P1 04:12]、[BV1wdNx6bEg6 P1 04:21]  \n```mermaid\nflowchart TD\n    OpenEngine[\"打开Godot\"] --> NewProject[\"创建新项目\"]\n    NewProject --> NameProject[\"命名为'ninja platformer'\"]\n    NameProject --> KeepDefaults[\"保持默认设置\"]\n    KeepDefaults --> Create2DScene[\"创建2D场景\"]\n    Create2DScene --> SetMainScene[\"设为主场景\"]\n    SetMainScene --> RunGame[\"运行游戏测试\"]\n    RunGame --> Confirm[\"确认项目创建成功\"]\n```\n\n## 像素艺术设置流程  \n[BV1wdNx6bEg6 P1 06:22]、[BV1wdNx6bEg6 P1 06:28]、[BV1wdNx6bEg6 P1 06:59]、[BV1wdNx6bEg6 P1 07:42]、[BV1wdNx6bEg6 P1 07:57]  \n```mermaid\nflowchart TD\n    OpenProjectSettings[\"打开项目设置\"] --> SetViewport[\"视口宽320×180，高180\"]\n    SetViewport --> SetWindowSize[\"窗口大小1280×720\"]\n    SetWindowSize --> SetStretchMode[\"拉伸模式: 2D\"]\n    SetStretchMode --> SetTextureFilter[\"纹理过滤: 最近邻\"]\n    SetTextureFilter --> RunGameCheck[\"运行游戏检查像素显示\"]\n    RunGameCheck --> Result[\"清晰像素艺术显示\"]\n```\n\n## 资产导入与测试流程  \n[BV1wdNx6bEg6 P1 05:27]、[BV1wdNx6bEg6 P1 06:01]、[BV1wdNx6bEg6 P1 06:10]、[BV1wdNx6bEg6 P1 07:57]、[BV1wdNx6bEg6 P1 08:08]  \n```mermaid\nflowchart TD\n    DownloadAssets[\"从GitHub下载资源ZIP\"] --> ExtractAssets[\"解压获取SP文件夹\"]\n    ExtractAssets --> DragAssets[\"拖入项目文件系统\"]\n    DragAssets --> AddDrone[\"添加无人机占位物\"]\n    AddDrone --> RunGameShow[\"运行游戏查看无人机\"]\n    RunGameShow --> RemoveDrone[\"删除无人机占位物\"]\n    RemoveDrone --> ReadyForEnemy[\"准备添加敌人\"]\n    ReadyForEnemy --> NextVideo[\"进入下一视频创建角色\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    SeriesGoal[\"制作忍者平台游戏\"] --> Inspiration[\"参考忍者龙剑传\"]\n    SeriesGoal --> Features[\"爬墙、剑攻击、跳跃攻击\"]\n    Features --> AnimationSplit[\"上半身/下半身动画分离\"]\n    SeriesGoal --> Engine[\"Godot 4.4（免费开源）\"]\n    SeriesGoal --> TargetAudience[\"适合有编程基础且不熟悉Godot的用户\"]\n    SeriesGoal --> Outcome[\"后续可添加敌人射弹等功能\"]"
+    },
+    {
+      "title": "项目创建流程",
+      "code": "flowchart TD\n    OpenEngine[\"打开Godot\"] --> NewProject[\"创建新项目\"]\n    NewProject --> NameProject[\"命名为'ninja platformer'\"]\n    NameProject --> KeepDefaults[\"保持默认设置\"]\n    KeepDefaults --> Create2DScene[\"创建2D场景\"]\n    Create2DScene --> SetMainScene[\"设为主场景\"]\n    SetMainScene --> RunGame[\"运行游戏测试\"]\n    RunGame --> Confirm[\"确认项目创建成功\"]"
+    },
+    {
+      "title": "像素艺术设置流程",
+      "code": "flowchart TD\n    OpenProjectSettings[\"打开项目设置\"] --> SetViewport[\"视口宽320×180，高180\"]\n    SetViewport --> SetWindowSize[\"窗口大小1280×720\"]\n    SetWindowSize --> SetStretchMode[\"拉伸模式: 2D\"]\n    SetStretchMode --> SetTextureFilter[\"纹理过滤: 最近邻\"]\n    SetTextureFilter --> RunGameCheck[\"运行游戏检查像素显示\"]\n    RunGameCheck --> Result[\"清晰像素艺术显示\"]"
+    },
+    {
+      "title": "资产导入与测试流程",
+      "code": "flowchart TD\n    DownloadAssets[\"从GitHub下载资源ZIP\"] --> ExtractAssets[\"解压获取SP文件夹\"]\n    ExtractAssets --> DragAssets[\"拖入项目文件系统\"]\n    DragAssets --> AddDrone[\"添加无人机占位物\"]\n    AddDrone --> RunGameShow[\"运行游戏查看无人机\"]\n    RunGameShow --> RemoveDrone[\"删除无人机占位物\"]\n    RemoveDrone --> ReadyForEnemy[\"准备添加敌人\"]\n    ReadyForEnemy --> NextVideo[\"进入下一视频创建角色\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T09:15:06+00:00"
+}

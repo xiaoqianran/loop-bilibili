@@ -1,0 +1,58 @@
+{
+  "bvid": "BV1hoMC6aEoP",
+  "title": "Deepseek V4 Flash正式版花了三天半制作的恐怖游戏demo",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 21,
+  "text": "爸爸\n那些花开得可红了\n你不是一直想见我吗",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hoMC6aEoP",
+  "published_at": "1785934224",
+  "fetched_at": "2026-08-06T23:22:57+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deepseek V4 Flash正式版恐怖游戏demo 字幕词语结构\n\n## 第一句词语顺序\n```mermaid\nflowchart LR\nA1[\"那\"] --> A2[\"些\"]\nA2 --> A3[\"花\"]\nA3 --> A4[\"开\"]\nA4 --> A5[\"得\"]\nA5 --> A6[\"可\"]\nA6 --> A7[\"红\"]\nA7 --> A8[\"了\"]\n```\n\n## 第二句词语顺序\n```mermaid\nflowchart LR\nB1[\"你\"] --> B2[\"不\"]\nB2 --> B3[\"是\"]\nB3 --> B4[\"一\"]\nB4 --> B5[\"直\"]\nB5 --> B6[\"想\"]\nB6 --> B7[\"见\"]\nB7 --> B8[\"我\"]\nB8 --> B9[\"吗\"]\n```",
+      "diagrams": [
+        {
+          "title": "第一句词语顺序",
+          "code": "flowchart LR\nA1[\"那\"] --> A2[\"些\"]\nA2 --> A3[\"花\"]\nA3 --> A4[\"开\"]\nA4 --> A5[\"得\"]\nA5 --> A6[\"可\"]\nA6 --> A7[\"红\"]\nA7 --> A8[\"了\"]"
+        },
+        {
+          "title": "第二句词语顺序",
+          "code": "flowchart LR\nB1[\"你\"] --> B2[\"不\"]\nB2 --> B3[\"是\"]\nB3 --> B4[\"一\"]\nB4 --> B5[\"直\"]\nB5 --> B6[\"想\"]\nB6 --> B7[\"见\"]\nB7 --> B8[\"我\"]\nB8 --> B9[\"吗\"]"
+        }
+      ],
+      "diagram_count": 2,
+      "error": "",
+      "updated_at": "2026-08-06T23:30:46+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 2
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deepseek V4 Flash正式版恐怖游戏demo 字幕词语结构\n\n## 第一句词语顺序\n```mermaid\nflowchart LR\nA1[\"那\"] --> A2[\"些\"]\nA2 --> A3[\"花\"]\nA3 --> A4[\"开\"]\nA4 --> A5[\"得\"]\nA5 --> A6[\"可\"]\nA6 --> A7[\"红\"]\nA7 --> A8[\"了\"]\n```\n\n## 第二句词语顺序\n```mermaid\nflowchart LR\nB1[\"你\"] --> B2[\"不\"]\nB2 --> B3[\"是\"]\nB3 --> B4[\"一\"]\nB4 --> B5[\"直\"]\nB5 --> B6[\"想\"]\nB6 --> B7[\"见\"]\nB7 --> B8[\"我\"]\nB8 --> B9[\"吗\"]\n```",
+  "diagrams": [
+    {
+      "title": "第一句词语顺序",
+      "code": "flowchart LR\nA1[\"那\"] --> A2[\"些\"]\nA2 --> A3[\"花\"]\nA3 --> A4[\"开\"]\nA4 --> A5[\"得\"]\nA5 --> A6[\"可\"]\nA6 --> A7[\"红\"]\nA7 --> A8[\"了\"]"
+    },
+    {
+      "title": "第二句词语顺序",
+      "code": "flowchart LR\nB1[\"你\"] --> B2[\"不\"]\nB2 --> B3[\"是\"]\nB3 --> B4[\"一\"]\nB4 --> B5[\"直\"]\nB5 --> B6[\"想\"]\nB6 --> B7[\"见\"]\nB7 --> B8[\"我\"]\nB8 --> B9[\"吗\"]"
+    }
+  ],
+  "diagram_count": 2,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:30:46+00:00"
+}

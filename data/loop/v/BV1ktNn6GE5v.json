@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1ktNn6GE5v",
+  "title": "【Godot对话系统】三步完成数据驱动与选项分支",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1344,
+  "text": "大家好啊\n今天我们将开始格斗对话系统的第一期\n本期我们将完成对话系统\n最基本的数据驱动和分支管理\n首先我们先创建最基本的对话数据\n我们新建脚本\n继承自资源\n然后我们给它命名为dialoid line\n我们来到脚本中\n给它定义一个类名\n这个新资源代表了我们每一句话的各种属性\n定义类名\n我们就可以直接创建这个资源文件\n我们来创建一个新的文件夹\n叫code\n把这个带有乐line拖到code里面\n再新建一个文件夹\nrise表示词源\n新建一个资源搜索\nDialloadline\n我们给它命名为A米\n这就表示AMY说的第一句话\n目前他还没有任何的属性\n我们来为他添加\n我们点开diaload line的代码\n定义三只属性\n这三个属性分别代表了说话者的名字\n说话者的立绘以及说话的内容\n我们在第三个属性前面加上MOTILI\n这样的话可以让他的文本框变大\n文来到AMY1这里\n输入说话者为AMY\n把我们的这个决斗自带的icon拖到里面去\n作为SPEER的议会\n我们说下他的第一句话\n你好\n完成第一句话的编辑之后\n我们可以新建一个属性\n因为我们没有准备这个素材\n所以我们用颜色来区分人物\n能给AMY选为粉色\n然后新建储存一下\n完成这一步之后\n我们来连接不同的原对话\n我们在dayload line中新建一行代码\n那么这个属性的意义就是下一个圆对话\n这样的话只要给出了第一句对话\n那么我们后面的对话都会由上一次对话给出\n我们只需在玩家交互时跳转到下一对话即可\n我们来创建一个新的diaload line\n给它命名为A米二\n也就是A米说的第二句话\n然后我们按刚才的步骤给它赋值\n输入第二句话\n写完之后\n我们把A米二拖入艾米一的下一个对话中\n这样的话我们就完成了直线式的对话连接\n接下来我们来构建选项分支\n我们来到TOD新建一个脚本\nchoice继承同样子资源\n我们给它一个类名叫choice\n那么这这个属性可以作为我们原对话中的选项\n我们可以先给他定义几个属性\n第一个就是文本\n也就作为选项的文本\n我们同样也还加上MOTILI\n然后第二个属性是选择该选项\n会跳转到的下一个对话\n那么完成这两个变量之后\n我们再来到diaload line的代码中\n给他新建一个数组变量\n这一步其实就已经完成了\n我们对代码分支的构建\n当一个圆对话有选项的时候\n我们去向我们选中选项的下一个圆对话\n也就是choice的nature styload line\n当无选项的时候\n我们去向该对话自己的nature styload line\n那么我们现在来到资源文件夹\n再新建两个资源\n我们搜索choice\n第一个choice命名为艾米二杠一\n作为艾米第二者原对话的第一个选项\n然后我们再新建一个资源\n同样是choice命名为艾米二杠二\nA米二杠一的text\n我们写下my pleasure\n也就意味着我会帮你去清你的房子\n二杠二写下\ni d love to拉扯点点点\n表示我不愿意\n然后我们把MMR这里choices新建两个元素\n第一阵放艾米2~1\n第二的放艾米尔的二\n那么这里我们就已经完成了基础数据的构建\n我们可以从一个圆对话跳向下一个原对话\n也可以从一个圆对话中的一个选项\n跳向下一个原对话\n这就是我们的直线性和分支式的这个逐渐",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ktNn6GE5v",
+  "published_at": "1783679400",
+  "fetched_at": "2026-08-07T19:13:50+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T19:25:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T19:25:57+00:00"
+}

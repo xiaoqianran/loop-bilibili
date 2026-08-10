@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1tgSdBoEsL",
+  "title": "【硬核】Embedding：AI 如何把万物变成向量",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3962,
+  "text": "在B站搜DNA动了出来的不是生物课\n是帅哥美女合集\n搜下饭视频出来的不是做饭教程\n是吵架名场面和鬼畜\n这些词字面意思和真实意思完全不一样\n没有人写过一条规则\n告诉AI下饭在B站等于好看\n他自己学会的怎么学的\n在讲transformer那期\n我们提过embedding层\n把每个词变成一个向量\n但当时跳过了一个关键问题\n这些向量是怎么训练出来的\n今天我们从头拆解\n从最朴素的编码方式开始\n到一篇改变整个NLP的论文\n再到今天驱动搜索和问答的现代模型\n每一步都比上一部更深一层\n嗯最最简单的方式就是给每个词编个号\n假设词表只有四个词\n猫狗汽车飞机\n猫等于1000\n狗等于0100\n汽车等于0010\n飞机等于0001\n这叫one hot编码\n每个词占一个维度\n自己的位置是一\n其他全是零\n问题来了\n猫和狗的距离等于猫和飞机的距离都是根号二\n在one hot的世界里\n所有词都一样远\n他根本不知道猫和狗是同类\n而且中文有5万个常用词\n每个词就是一个5万维的向量\n其中4万9999个位置是零\n我们需要一种更聪明的编码\n让意思相近的词坐标也相近\n2013年\n谷歌发了一篇论文\n他的核心想法只有一句话\n一个词的意思取决于它周围出现的词\n这不是什么新发现\n语言学家费斯1957年就说过\n你想了解一个词\n看他和谁混在一起就知道了\n想想看咖啡这个词周围经常出现什么\n喝杯电苦\n拿铁茶这个词呢\n喝杯苦苦龙井\n它们的上下文高度重叠\n这就暗示了他们的意思很接近\nWord to whack\n做的事情\n就是把这个直觉变成了数学\n具体怎么做\nWord to work\n提出了两种方法\n第一种叫CBOW\n给你周围的词猜中间是什么词\n第二种叫skip gram\n反过来给你中心词猜周围有什么词\n两种方法像照镜子一样互为倒影\n实践中skip gram效果更好\n尤其是对那些出现次数少的词\n因为每个词能产生更多的训练样本\n我们用skip gram来讲后面的细节\n每个词一开始都有一组随机数字作为自己的坐标\n但这里有个问题\n模型要预测咖啡旁边最可能出现谁\n预测的方法是比较两个词有多像\n但如果每个词只有一套数字\n那咖啡和自己永远最像\n模型会说\n咖啡旁边最可能出现的是咖啡\n这就像让学生自己给自己打分\n永远都是满分\n没有意义\n所以word to work给每个词准备了两套数字\n一套是出题用的\n当这个词是中心词的时候\n一套是答题用的\n当这个词出现在别人旁边的时候\n出题的数字和答题的数字不一样\n所以咖啡出题的时候不会总是选中自己\n训练完之后\n只留出题那套数字作为最终的词向量\n现在训练目标是什么\n给一个中心词咖啡我们希望模型预测它的上下文查的概率高\n最直接的方法是soft max算咖啡和词表里每一个词的点击\n然后做一次规划\n此表有5万个词\n每训练一步就要算5万次\n点击太慢了\nWord to vec\n用了一个聪明的变换\n不再问5万个词里哪个最可能\n而是只问几个yes or NO的问题\n查是不是咖啡的上下文是H是不是是飞机\n是不是不是紫色\n是不是不是正样本真正出现在上下文里的词\n负样本随机抽几个无关的词\n这就是负采样\n翻译成人话就是第一项\n把正样本的点击往大了推\n后面的像把负样本的点击往小了压\n每一步只算十几个词\n不是5万个\n从OV降到OK训练速度提升了上千倍\n还有一个小技巧\n负样本不是均匀随机抽的\n而是按瓷瓶的3/4次方采样\n为什么纯按词频抽的是乐\n占了绝大多数\n罕见词几乎永远抽不到3/4次方\n把分布压平了一点\n给罕见词更多出场机会\n到这里\nword two week的训练机器就打好了两个矩阵复采样滑动窗口\n但关键问题是这样训练出来的向量真的有语义吗\n把这些拼在一起看\n给中心词\n咖啡模型\n要预测茶出现在上下文的概率\n预测靠什么\n靠咖啡和茶两个向量的点积\n关键来了\n点击什么时候大两个向量方向越接近\n点击越大\n所以每一次训练模型为了把预测做准\n就会把咖啡的向量往茶的方向推一点儿\n反过来\n当茶是中心词时\n模型也要预测咖啡\n茶的向量也会往咖啡方向推\n而飞机几乎不出现在咖啡旁边\n所以它们的向量从来不会被推到一起\n负采样还会主动把他们推远\n这件事在几10亿个句子上重复\n咖啡和茶反复互相靠近\n猫和狗反复互相靠近\n北京和上海反复互相靠近\n这就是为什么只靠预测上下文这一件事儿\n就能让向量空间自动组织出语义结构\n不需要人工标注\n不需要任何知识库\n只要有足够多的句子\n统计规律会替你完成一切\n更不可思议的是\n在transformer那期我们见过这个例子\nking减去man加上woman\n约等于queen\n东京减去日本\n加上法国约等于巴黎\n当时我们展示了这个现象\n但没有解释他为什么会出现这些结构从哪来\n是魔法吗\n不是2014年\nLEY和GOLDBERG证明了word to wake的复采样\n其实在影视的分解一个贡献统计矩阵\nking和queen在语料里出现的语境高度相似\nman和woman也是\n而且这两对之间的差异模式是平行的\n所以向量空间里就会出现平行的方向\n但这不是万能的\n很多人拿king queen当word two week的招牌\n但实际上他只对一致的二元的关系有效\n比如性别国家首都时态变化\n对多义的复杂的关系效果很差\n更有意思的是\n如果你不手动排除输入词king减man加woman的最近邻居\n其实是king自己所谓的类比效果\n有一部分是评测方法的偏差\n这个魔法有真实的数学基础\n也有真实的局限\n但word to wake有一个更根本的局限\n我们刚才说的所有向量都是静态的一个词\n不管出现在什么句子里\n永远是同一个向量\n苹果这个词在我吃了一个苹果里是水果\n在苹果发布了新手机里是公司\n同一个词不同意思\nWere to work\n只能给它一个向量\n这个向量被迫夹在水果和科技公司中间\n两头不靠\n怎么解决\n2018年第一个突破来自LO\n他的做法是先给每个词一个基础向量\n然后用一个双向LSTM读完整个句子\n从左往右读一遍\n从右往左读一遍\n两个方向的信息拼在一起\n这样吃了一个苹果里的苹果\n因为左边有吃了\n右边有句号\n它的向量被上下文修饰成了水果的方向\nELO还发现了一件有趣的事儿\n不同层捕捉不同信息\n底层更懂语法\n高层更懂语义\n但L某有一个局限\n两个方向是分开训练的\n就像一个人先用左眼看了一遍\n再用右眼看了一遍\n但从来没有两只眼睛同时看过\n从左往右读的时候看不到右边的信息\n2018年底\nbar特用了一个更激进的方案\n用transformer的注意力机制\n让每个词同时看到句子里所有其他词\n吃了一个苹果\n苹果注意到了\n吃了知道自己是水果\n苹果发布了新手机\n苹果注意到了\n发布手机\n知道自己是公司同一个词不同上下文不同向量\n但是巴尔特有一个陷阱\n很多人以为直接拿button的cl s向量就能当句子的embedding\n实际效果呢在句子相似度任务上\nCLS的相关性只有29分\n比glove简单平均还差\n为什么\n因为barter的cl s是为下一句预测训练的\n不是为总结整个句子的语义训练的button很强\n但它不是一个好的具向量模型\n至少不是直接拿来就能用的\n2019年\nsentence bert解决了这个问题\n做法很简单\n拿两个一模一样的bird共享权重\n一个编码句子A1个编码句子B各自做一次mean pulling\n得到两个具向量\n然后训练目标是相似的句子向量靠近不相似的向量远离效果立竿见影\n之前用BERT比较1万对句子要65个小时\n现在五秒\n因为每句话只编码一次\n之后\n所有比较都是向量\n点击这个相似靠近不相似远离的训练方法\n有一个名字对比学习\n听起来和word two week的正负样本一样没错\n核心思路一脉相承\n但现代对比学习有几个关键升级\n第一imbengeable negatives\n一个batch里有1024对句子\n每对句子把其他1023个当副样本\n不用额外采样\n就有1000多个负样本\n第2hard negatives随机负样本太简单\n如何做番茄炒蛋和量子力学导论模型\n闭着眼都知道不一样\n真正难的是这种如何做番茄炒蛋和番茄炒蛋的热量是多少\n词几乎一样\n但问的完全不是一回事\n模型必须把这两个推远\n同时如何做番茄炒蛋和西红柿鸡蛋的做法表述完全不同\n但意思一样\n模型必须把这两个拉近\n能区分这些才叫真正理解语义\n为什么对比学习有效\n本质上和word to work是同一个道理\nWord to work\n说经常一起出现的词向量要靠近对比学习\n说意思相同的句子向量要靠近被反复拉到一起的东西\n最终就会靠在一起\nWord two week\n靠的是贡献统计\n对比学习靠的是标注的相似\n对监督信号不同\n但几何原理完全一样\n今天最强的embedding模型BGEE5GTE都用了同一套组合拳\n第一阶段在几10亿个弱标注文本队上预训练\n第二阶段在几百万个精标数据上微调\n再加上hard negative挖掘和一个巧妙的设计\n查询和文档\n用不同的方式编码告诉模型\n这是一个问题\n还是这是一篇文章\n这些模型输入一段话\n输出一个768维或1024维的向量\n这个向量就是这段话的语义坐标\n回头看这段历史\n从one hot到world to wc\n我们学会了让意思相近的词靠近\n从word to vec到ELO和BT\n我们学会了让同一个词在不同语境里有不同的坐标\n从BT到sentence birt\n我们学会了把整段话压缩成一个向量\n核心思想从来没变过意思相近的东西\n坐标就应该相近\n这个简单的想法从一篇2013年的论文开始\n用了10年\n一步一步变成了今天AI理解语言的基石\n人类花了10年才学会怎么把语言翻译成坐标\n而这个翻译正在改变一切",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1tgSdBoEsL",
+  "published_at": "1775447850",
+  "fetched_at": "2026-08-09T23:37:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Embedding 知识图谱\n\n## 图谱 1：Embedding 发展概览\n```mermaid\nflowchart TD\n    O1[\"One‑Hot 编码\"] --> W1[\"Word2Vec（CBOW / Skip‑Gram）\"]\n    W1 --> NS[\"负采样 (Negative Sampling)\"]\n    NS --> SE[\"静态词向量 (Static Embedding)\"]\n    SE --> CE[\"上下文感知词向量 (Contextual Embedding)\"]\n    CE --> CL[\"对比学习句向量 (Contrastive Learning)\"]\n    CL --> LM[\"大规模预训练模型 (Large Model)\"]\n```\n支持: [BV1tgSdBoEsL P1 00:49]、[BV1tgSdBoEsL P1 01:39]、[BV1tgSdBoEsL P1 04:22]、[BV1tgSdBoEsL P1 07:26]、[BV1tgSdBoEsL P1 08:36]、[BV1tgSdBoEsL P1 10:10]、[BV1tgSdBoEsL P1 11:20]\n\n## 图谱 2：Word2Vec 训练机制\n```mermaid\nflowchart LR\n    SG[\"Skip‑Gram 模型\"] --> IS[\"输入词向量 (Input)\"]\n    SG --> OS[\"输出词向量 (Output)\"]\n    IS --> POS[\"正样本预测\"]\n    OS --> NEG[\"负样本采样\"]\n    POS --> OBJ[\"最大化正样本相似度\"]\n    NEG --> OBJ\n    OBJ --> UP[\"梯度更新 → 调整向量\"]\n```\n支持: [BV1tgSdBoEsL P1 02:20]、[BV1tgSdBoEsL P1 02:38]、[BV1tgSdBoEsL P1 03:16]、[BV1tgSdBoEsL P1 04:25]\n\n## 图谱 3：静态嵌入的局限与上下文嵌入的突破\n```mermaid\nflowchart TD\n    SE[\"静态词向量\"] --> AMB[\"同形异义词歧义\"]\n    AMB --> PROB[\"语义表达受限\"]\n    PROB --> ELMO[\"ELMo：双向 LSTM 生成上下文向量\"]\n    PROB --> BERT[\"BERT：Transformer 注意力全局感知\"]\n    ELMO --> CONT[\"上下文感知词向量\"]\n    BERT --> CONT\n```\n支持: [BV1tgSdBoEsL P1 07:26]、[BV1tgSdBoEsL P1 07:49]、[BV1tgSdBoEsL P1 08:36]、[BV1tgSdBoEsL P1 08:56]\n\n## 图谱 4：句向量对比学习（Sentence‑BERT）\n```mermaid\nflowchart LR\n    SB[\"Sentence‑BERT 双塔结构\"] --> ENC[\"共享 BERT 编码器\"]\n    ENC --> MP[\"Mean Pooling 获得句向量\"]\n    MP --> CL[\"对比损失：相似句拉近 / 不相似句拉远\"]\n    CL --> INB[\"批内负样本 (In‑Batch Negatives)\"]\n    CL --> HN[\"硬负样本 (Hard Negatives)\"]\n```\n支持: [BV1tgSdBoEsL P1 09:26]、[BV1tgSdBoEsL P1 09:38]、[BV1tgSdBoEsL P1 10:13]、[BV1tgSdBoEsL P1 10:18]\n\n## 图谱 5：现代 Embedding 训练与应用流水线\n```mermaid\nflowchart TD\n    PRE[\"大规模弱标注语料预训练\"] --> FT[\"有标注数据微调\"]\n    FT --> Q[\"查询向量编码\"]\n    FT --> D[\"文档向量编码\"]\n    Q --> SIM[\"向量相似度计算\"]\n    D --> SIM\n    SIM --> RET[\"检索/匹配结果\"]\n```\n支持: [BV1tgSdBoEsL P1 11:20]、[BV1tgSdBoEsL P1 11:30]、[BV1tgSdBoEsL P1 11:38]",
+      "diagrams": [
+        {
+          "title": "图谱 1：Embedding 发展概览",
+          "code": "flowchart TD\n    O1[\"One‑Hot 编码\"] --> W1[\"Word2Vec（CBOW / Skip‑Gram）\"]\n    W1 --> NS[\"负采样 (Negative Sampling)\"]\n    NS --> SE[\"静态词向量 (Static Embedding)\"]\n    SE --> CE[\"上下文感知词向量 (Contextual Embedding)\"]\n    CE --> CL[\"对比学习句向量 (Contrastive Learning)\"]\n    CL --> LM[\"大规模预训练模型 (Large Model)\"]"
+        },
+        {
+          "title": "图谱 2：Word2Vec 训练机制",
+          "code": "flowchart LR\n    SG[\"Skip‑Gram 模型\"] --> IS[\"输入词向量 (Input)\"]\n    SG --> OS[\"输出词向量 (Output)\"]\n    IS --> POS[\"正样本预测\"]\n    OS --> NEG[\"负样本采样\"]\n    POS --> OBJ[\"最大化正样本相似度\"]\n    NEG --> OBJ\n    OBJ --> UP[\"梯度更新 → 调整向量\"]"
+        },
+        {
+          "title": "图谱 3：静态嵌入的局限与上下文嵌入的突破",
+          "code": "flowchart TD\n    SE[\"静态词向量\"] --> AMB[\"同形异义词歧义\"]\n    AMB --> PROB[\"语义表达受限\"]\n    PROB --> ELMO[\"ELMo：双向 LSTM 生成上下文向量\"]\n    PROB --> BERT[\"BERT：Transformer 注意力全局感知\"]\n    ELMO --> CONT[\"上下文感知词向量\"]\n    BERT --> CONT"
+        },
+        {
+          "title": "图谱 4：句向量对比学习（Sentence‑BERT）",
+          "code": "flowchart LR\n    SB[\"Sentence‑BERT 双塔结构\"] --> ENC[\"共享 BERT 编码器\"]\n    ENC --> MP[\"Mean Pooling 获得句向量\"]\n    MP --> CL[\"对比损失：相似句拉近 / 不相似句拉远\"]\n    CL --> INB[\"批内负样本 (In‑Batch Negatives)\"]\n    CL --> HN[\"硬负样本 (Hard Negatives)\"]"
+        },
+        {
+          "title": "图谱 5：现代 Embedding 训练与应用流水线",
+          "code": "flowchart TD\n    PRE[\"大规模弱标注语料预训练\"] --> FT[\"有标注数据微调\"]\n    FT --> Q[\"查询向量编码\"]\n    FT --> D[\"文档向量编码\"]\n    Q --> SIM[\"向量相似度计算\"]\n    D --> SIM\n    SIM --> RET[\"检索/匹配结果\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T23:38:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Embedding 知识图谱\n\n## 图谱 1：Embedding 发展概览\n```mermaid\nflowchart TD\n    O1[\"One‑Hot 编码\"] --> W1[\"Word2Vec（CBOW / Skip‑Gram）\"]\n    W1 --> NS[\"负采样 (Negative Sampling)\"]\n    NS --> SE[\"静态词向量 (Static Embedding)\"]\n    SE --> CE[\"上下文感知词向量 (Contextual Embedding)\"]\n    CE --> CL[\"对比学习句向量 (Contrastive Learning)\"]\n    CL --> LM[\"大规模预训练模型 (Large Model)\"]\n```\n支持: [BV1tgSdBoEsL P1 00:49]、[BV1tgSdBoEsL P1 01:39]、[BV1tgSdBoEsL P1 04:22]、[BV1tgSdBoEsL P1 07:26]、[BV1tgSdBoEsL P1 08:36]、[BV1tgSdBoEsL P1 10:10]、[BV1tgSdBoEsL P1 11:20]\n\n## 图谱 2：Word2Vec 训练机制\n```mermaid\nflowchart LR\n    SG[\"Skip‑Gram 模型\"] --> IS[\"输入词向量 (Input)\"]\n    SG --> OS[\"输出词向量 (Output)\"]\n    IS --> POS[\"正样本预测\"]\n    OS --> NEG[\"负样本采样\"]\n    POS --> OBJ[\"最大化正样本相似度\"]\n    NEG --> OBJ\n    OBJ --> UP[\"梯度更新 → 调整向量\"]\n```\n支持: [BV1tgSdBoEsL P1 02:20]、[BV1tgSdBoEsL P1 02:38]、[BV1tgSdBoEsL P1 03:16]、[BV1tgSdBoEsL P1 04:25]\n\n## 图谱 3：静态嵌入的局限与上下文嵌入的突破\n```mermaid\nflowchart TD\n    SE[\"静态词向量\"] --> AMB[\"同形异义词歧义\"]\n    AMB --> PROB[\"语义表达受限\"]\n    PROB --> ELMO[\"ELMo：双向 LSTM 生成上下文向量\"]\n    PROB --> BERT[\"BERT：Transformer 注意力全局感知\"]\n    ELMO --> CONT[\"上下文感知词向量\"]\n    BERT --> CONT\n```\n支持: [BV1tgSdBoEsL P1 07:26]、[BV1tgSdBoEsL P1 07:49]、[BV1tgSdBoEsL P1 08:36]、[BV1tgSdBoEsL P1 08:56]\n\n## 图谱 4：句向量对比学习（Sentence‑BERT）\n```mermaid\nflowchart LR\n    SB[\"Sentence‑BERT 双塔结构\"] --> ENC[\"共享 BERT 编码器\"]\n    ENC --> MP[\"Mean Pooling 获得句向量\"]\n    MP --> CL[\"对比损失：相似句拉近 / 不相似句拉远\"]\n    CL --> INB[\"批内负样本 (In‑Batch Negatives)\"]\n    CL --> HN[\"硬负样本 (Hard Negatives)\"]\n```\n支持: [BV1tgSdBoEsL P1 09:26]、[BV1tgSdBoEsL P1 09:38]、[BV1tgSdBoEsL P1 10:13]、[BV1tgSdBoEsL P1 10:18]\n\n## 图谱 5：现代 Embedding 训练与应用流水线\n```mermaid\nflowchart TD\n    PRE[\"大规模弱标注语料预训练\"] --> FT[\"有标注数据微调\"]\n    FT --> Q[\"查询向量编码\"]\n    FT --> D[\"文档向量编码\"]\n    Q --> SIM[\"向量相似度计算\"]\n    D --> SIM\n    SIM --> RET[\"检索/匹配结果\"]\n```\n支持: [BV1tgSdBoEsL P1 11:20]、[BV1tgSdBoEsL P1 11:30]、[BV1tgSdBoEsL P1 11:38]",
+  "diagrams": [
+    {
+      "title": "图谱 1：Embedding 发展概览",
+      "code": "flowchart TD\n    O1[\"One‑Hot 编码\"] --> W1[\"Word2Vec（CBOW / Skip‑Gram）\"]\n    W1 --> NS[\"负采样 (Negative Sampling)\"]\n    NS --> SE[\"静态词向量 (Static Embedding)\"]\n    SE --> CE[\"上下文感知词向量 (Contextual Embedding)\"]\n    CE --> CL[\"对比学习句向量 (Contrastive Learning)\"]\n    CL --> LM[\"大规模预训练模型 (Large Model)\"]"
+    },
+    {
+      "title": "图谱 2：Word2Vec 训练机制",
+      "code": "flowchart LR\n    SG[\"Skip‑Gram 模型\"] --> IS[\"输入词向量 (Input)\"]\n    SG --> OS[\"输出词向量 (Output)\"]\n    IS --> POS[\"正样本预测\"]\n    OS --> NEG[\"负样本采样\"]\n    POS --> OBJ[\"最大化正样本相似度\"]\n    NEG --> OBJ\n    OBJ --> UP[\"梯度更新 → 调整向量\"]"
+    },
+    {
+      "title": "图谱 3：静态嵌入的局限与上下文嵌入的突破",
+      "code": "flowchart TD\n    SE[\"静态词向量\"] --> AMB[\"同形异义词歧义\"]\n    AMB --> PROB[\"语义表达受限\"]\n    PROB --> ELMO[\"ELMo：双向 LSTM 生成上下文向量\"]\n    PROB --> BERT[\"BERT：Transformer 注意力全局感知\"]\n    ELMO --> CONT[\"上下文感知词向量\"]\n    BERT --> CONT"
+    },
+    {
+      "title": "图谱 4：句向量对比学习（Sentence‑BERT）",
+      "code": "flowchart LR\n    SB[\"Sentence‑BERT 双塔结构\"] --> ENC[\"共享 BERT 编码器\"]\n    ENC --> MP[\"Mean Pooling 获得句向量\"]\n    MP --> CL[\"对比损失：相似句拉近 / 不相似句拉远\"]\n    CL --> INB[\"批内负样本 (In‑Batch Negatives)\"]\n    CL --> HN[\"硬负样本 (Hard Negatives)\"]"
+    },
+    {
+      "title": "图谱 5：现代 Embedding 训练与应用流水线",
+      "code": "flowchart TD\n    PRE[\"大规模弱标注语料预训练\"] --> FT[\"有标注数据微调\"]\n    FT --> Q[\"查询向量编码\"]\n    FT --> D[\"文档向量编码\"]\n    Q --> SIM[\"向量相似度计算\"]\n    D --> SIM\n    SIM --> RET[\"检索/匹配结果\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T23:38:47+00:00"
+}

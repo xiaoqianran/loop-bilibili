@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1MWNL66EzQ",
+  "title": "Godot 重制星露谷物语：农场经营/钓鱼/昼夜循环/战斗系统完整教程(上)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 398,
+  "text": "大家好\n本课程由爱在一毛钱进行翻译配音\n如果课程对你有帮助\n请不要吝啬你手中免费三连和关注三连\n加关注\n立即查看私信\n根据私信提供的下载地址下载本教程\n配套的资源素材和完整的游戏源码\n我将一步步引导您完成学习过程\n你还在等什么\n在本教程中\n我们将使用GODOT引擎\n重新打造一个类似星露谷物语的游戏\n我们将实现种植不同植物的系统\n钓鱼游戏可以销售各种帽子的职业系统\n以及那些真正能够执行特定操作的交互式机器\n游戏中存在昼夜循环机制\n同时还会有降雨效果\n我们具备了基础战斗系统以及角色互动机制\n为了制作这款游戏\n我们将运用许多高度的高级功能\n比如自动平铺布局\n动画术技术\n资源管理系统\n各种编辑工具以及着色器相关技术\n同时我们还会利用GODOT自带的硬件监测工具\n来优化游戏的性能表现\n如果你目前还局限于基础级别的GODOT项目开发\n那么这套课程必将帮助你拓展能力范围\n让你更熟练的运用那些功能\n更",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1MWNL66EzQ",
+  "published_at": "1783728600",
+  "fetched_at": "2026-08-08T21:29:57+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 重制星露谷物语教程知识图谱\n\n## 总览图\n[BV1MWNL66EzQ P1 00:23] Godot 引擎  \n[BV1MWNL66EzQ P1 00:24] 类星露谷游戏  \n[BV1MWNL66EzQ P1 00:27] 种植系统  \n[BV1MWNL66EzQ P1 00:29] 钓鱼系统、职业/帽子系统  \n[BV1MWNL66EzQ P1 00:32] 交互式机器  \n[BV1MWNL66EzQ P1 00:35] 昼夜循环  \n[BV1MWNL66EzQ P1 00:37] 降雨效果  \n[BV1MWNL66EzQ P1 00:38] 基础战斗系统  \n[BV1MWNL66EzQ P1 00:41] 高级功能（自动平铺布局、动画技术、资源管理系统、编辑工具、着色器技术）  \n[BV1MWNL66EzQ P1 00:49] 硬件监测工具  \n[BV1MWNL66EzQ P1 00:52] 性能优化  \n[BV1MWNL66EzQ P1 01:01] 拓展开发能力  \n\n```mermaid\nflowchart TD\n    G1[\"Godot 引擎\"]\n    G2[\"星露谷类游戏\"]\n    S1[\"种植系统\"]\n    S2[\"钓鱼系统\"]\n    S3[\"职业/帽子系统\"]\n    S4[\"交互式机器\"]\n    S5[\"昼夜循环\"]\n    S6[\"降雨效果\"]\n    S7[\"战斗系统\"]\n    S8[\"角色互动\"]\n    ADV1[\"自动平铺布局\"]\n    ADV2[\"动画技术\"]\n    ADV3[\"资源管理系统\"]\n    ADV4[\"编辑工具\"]\n    ADV5[\"着色器技术\"]\n    ADV6[\"硬件监测\"]\n    GOAL[\"拓展开发能力\"]\n\n    G1 --> G2\n    G2 --> S1\n    G2 --> S2\n    G2 --> S3\n    G2 --> S4\n    G2 --> S5\n    G2 --> S6\n    G2 --> S7\n    G2 --> S8\n    G2 --> ADV1\n    G2 --> ADV2\n    G2 --> ADV3\n    G2 --> ADV4\n    G2 --> ADV5\n    G2 --> ADV6\n    ADV1 --> S1\n    ADV2 --> S4\n    ADV3 --> S1\n    ADV3 --> S2\n    ADV5 --> ADV6\n    ADV6 --> GOAL\n    GOAL --> S7\n```\n\n## 开发流程图\n[BV1MWNL66EzQ P1 00:23] 环境搭建  \n[BV1MWNL66EzQ P1 00:27] 实现种植系统  \n[BV1MWNL66EzQ P1 00:29] 实现钓鱼系统  \n[BV1MWNL66EzQ P1 00:32] 实现职业/帽子系统  \n[BV1MWNL66EzQ P1 00:35] 实现机器交互  \n[BV1MWNL66EzQ P1 00:37] 实现昼夜循环  \n[BV1MWNL66EzQ P1 00:38] 实现天气（降雨）  \n[BV1MWNL66EzQ P1 00:41] 实现战斗系统  \n[BV1MWNL66EzQ P1 00:49] 性能优化  \n[BV1MWNL66EzQ P1 01:01] 完整项目交付  \n\n```mermaid\nflowchart LR\n    Step1[\"环境搭建\"]\n    Step2[\"资源导入\"]\n    Step3[\"实现种植系统\"]\n    Step4[\"实现钓鱼系统\"]\n    Step5[\"实现职业/帽子系统\"]\n    Step6[\"实现机器交互\"]\n    Step7[\"实现昼夜循环\"]\n    Step8[\"实现天气（降雨）\"]\n    Step9[\"实现战斗系统\"]\n    Step10[\"性能优化\"]\n    Step11[\"完整项目交付\"]\n\n    Step1 --> Step2\n    Step2 --> Step3\n    Step3 --> Step4\n    Step4 --> Step5\n    Step5 --> Step6\n    Step6 --> Step7\n    Step7 --> Step8\n    Step8 --> Step9\n    Step9 --> Step10\n    Step10 --> Step11\n```\n\n## 技术依赖图\n[BV1MWNL66EzQ P1 00:44] 自动平铺布局 → 资源管理系统  \n[BV1MWNL66EzQ P1 00:45] 动画技术 → 交互式机器  \n[BV1MWNL66EzQ P1 00:47] 着色器技术 → 硬件监测  \n[BV1MWNL66EzQ P1 00:52] 硬件监测 → 性能优化  \n\n```mermaid\nflowchart TD\n    AutoTile[\"自动平铺布局\"]\n    ResMgr[\"资源管理系统\"]\n    AnimTech[\"动画技术\"]\n    Machine[\"交互式机器\"]\n    Shader[\"着色器技术\"]\n    HWMon[\"硬件监测\"]\n    PerfOpt[\"性能优化\"]\n\n    AutoTile --> ResMgr\n    AnimTech --> Machine\n    Shader --> HWMon\n    HWMon --> PerfOpt\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    G1[\"Godot 引擎\"]\n    G2[\"星露谷类游戏\"]\n    S1[\"种植系统\"]\n    S2[\"钓鱼系统\"]\n    S3[\"职业/帽子系统\"]\n    S4[\"交互式机器\"]\n    S5[\"昼夜循环\"]\n    S6[\"降雨效果\"]\n    S7[\"战斗系统\"]\n    S8[\"角色互动\"]\n    ADV1[\"自动平铺布局\"]\n    ADV2[\"动画技术\"]\n    ADV3[\"资源管理系统\"]\n    ADV4[\"编辑工具\"]\n    ADV5[\"着色器技术\"]\n    ADV6[\"硬件监测\"]\n    GOAL[\"拓展开发能力\"]\n\n    G1 --> G2\n    G2 --> S1\n    G2 --> S2\n    G2 --> S3\n    G2 --> S4\n    G2 --> S5\n    G2 --> S6\n    G2 --> S7\n    G2 --> S8\n    G2 --> ADV1\n    G2 --> ADV2\n    G2 --> ADV3\n    G2 --> ADV4\n    G2 --> ADV5\n    G2 --> ADV6\n    ADV1 --> S1\n    ADV2 --> S4\n    ADV3 --> S1\n    ADV3 --> S2\n    ADV5 --> ADV6\n    ADV6 --> GOAL\n    GOAL --> S7"
+        },
+        {
+          "title": "开发流程图",
+          "code": "flowchart LR\n    Step1[\"环境搭建\"]\n    Step2[\"资源导入\"]\n    Step3[\"实现种植系统\"]\n    Step4[\"实现钓鱼系统\"]\n    Step5[\"实现职业/帽子系统\"]\n    Step6[\"实现机器交互\"]\n    Step7[\"实现昼夜循环\"]\n    Step8[\"实现天气（降雨）\"]\n    Step9[\"实现战斗系统\"]\n    Step10[\"性能优化\"]\n    Step11[\"完整项目交付\"]\n\n    Step1 --> Step2\n    Step2 --> Step3\n    Step3 --> Step4\n    Step4 --> Step5\n    Step5 --> Step6\n    Step6 --> Step7\n    Step7 --> Step8\n    Step8 --> Step9\n    Step9 --> Step10\n    Step10 --> Step11"
+        },
+        {
+          "title": "技术依赖图",
+          "code": "flowchart TD\n    AutoTile[\"自动平铺布局\"]\n    ResMgr[\"资源管理系统\"]\n    AnimTech[\"动画技术\"]\n    Machine[\"交互式机器\"]\n    Shader[\"着色器技术\"]\n    HWMon[\"硬件监测\"]\n    PerfOpt[\"性能优化\"]\n\n    AutoTile --> ResMgr\n    AnimTech --> Machine\n    Shader --> HWMon\n    HWMon --> PerfOpt"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T21:30:37+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 重制星露谷物语教程知识图谱\n\n## 总览图\n[BV1MWNL66EzQ P1 00:23] Godot 引擎  \n[BV1MWNL66EzQ P1 00:24] 类星露谷游戏  \n[BV1MWNL66EzQ P1 00:27] 种植系统  \n[BV1MWNL66EzQ P1 00:29] 钓鱼系统、职业/帽子系统  \n[BV1MWNL66EzQ P1 00:32] 交互式机器  \n[BV1MWNL66EzQ P1 00:35] 昼夜循环  \n[BV1MWNL66EzQ P1 00:37] 降雨效果  \n[BV1MWNL66EzQ P1 00:38] 基础战斗系统  \n[BV1MWNL66EzQ P1 00:41] 高级功能（自动平铺布局、动画技术、资源管理系统、编辑工具、着色器技术）  \n[BV1MWNL66EzQ P1 00:49] 硬件监测工具  \n[BV1MWNL66EzQ P1 00:52] 性能优化  \n[BV1MWNL66EzQ P1 01:01] 拓展开发能力  \n\n```mermaid\nflowchart TD\n    G1[\"Godot 引擎\"]\n    G2[\"星露谷类游戏\"]\n    S1[\"种植系统\"]\n    S2[\"钓鱼系统\"]\n    S3[\"职业/帽子系统\"]\n    S4[\"交互式机器\"]\n    S5[\"昼夜循环\"]\n    S6[\"降雨效果\"]\n    S7[\"战斗系统\"]\n    S8[\"角色互动\"]\n    ADV1[\"自动平铺布局\"]\n    ADV2[\"动画技术\"]\n    ADV3[\"资源管理系统\"]\n    ADV4[\"编辑工具\"]\n    ADV5[\"着色器技术\"]\n    ADV6[\"硬件监测\"]\n    GOAL[\"拓展开发能力\"]\n\n    G1 --> G2\n    G2 --> S1\n    G2 --> S2\n    G2 --> S3\n    G2 --> S4\n    G2 --> S5\n    G2 --> S6\n    G2 --> S7\n    G2 --> S8\n    G2 --> ADV1\n    G2 --> ADV2\n    G2 --> ADV3\n    G2 --> ADV4\n    G2 --> ADV5\n    G2 --> ADV6\n    ADV1 --> S1\n    ADV2 --> S4\n    ADV3 --> S1\n    ADV3 --> S2\n    ADV5 --> ADV6\n    ADV6 --> GOAL\n    GOAL --> S7\n```\n\n## 开发流程图\n[BV1MWNL66EzQ P1 00:23] 环境搭建  \n[BV1MWNL66EzQ P1 00:27] 实现种植系统  \n[BV1MWNL66EzQ P1 00:29] 实现钓鱼系统  \n[BV1MWNL66EzQ P1 00:32] 实现职业/帽子系统  \n[BV1MWNL66EzQ P1 00:35] 实现机器交互  \n[BV1MWNL66EzQ P1 00:37] 实现昼夜循环  \n[BV1MWNL66EzQ P1 00:38] 实现天气（降雨）  \n[BV1MWNL66EzQ P1 00:41] 实现战斗系统  \n[BV1MWNL66EzQ P1 00:49] 性能优化  \n[BV1MWNL66EzQ P1 01:01] 完整项目交付  \n\n```mermaid\nflowchart LR\n    Step1[\"环境搭建\"]\n    Step2[\"资源导入\"]\n    Step3[\"实现种植系统\"]\n    Step4[\"实现钓鱼系统\"]\n    Step5[\"实现职业/帽子系统\"]\n    Step6[\"实现机器交互\"]\n    Step7[\"实现昼夜循环\"]\n    Step8[\"实现天气（降雨）\"]\n    Step9[\"实现战斗系统\"]\n    Step10[\"性能优化\"]\n    Step11[\"完整项目交付\"]\n\n    Step1 --> Step2\n    Step2 --> Step3\n    Step3 --> Step4\n    Step4 --> Step5\n    Step5 --> Step6\n    Step6 --> Step7\n    Step7 --> Step8\n    Step8 --> Step9\n    Step9 --> Step10\n    Step10 --> Step11\n```\n\n## 技术依赖图\n[BV1MWNL66EzQ P1 00:44] 自动平铺布局 → 资源管理系统  \n[BV1MWNL66EzQ P1 00:45] 动画技术 → 交互式机器  \n[BV1MWNL66EzQ P1 00:47] 着色器技术 → 硬件监测  \n[BV1MWNL66EzQ P1 00:52] 硬件监测 → 性能优化  \n\n```mermaid\nflowchart TD\n    AutoTile[\"自动平铺布局\"]\n    ResMgr[\"资源管理系统\"]\n    AnimTech[\"动画技术\"]\n    Machine[\"交互式机器\"]\n    Shader[\"着色器技术\"]\n    HWMon[\"硬件监测\"]\n    PerfOpt[\"性能优化\"]\n\n    AutoTile --> ResMgr\n    AnimTech --> Machine\n    Shader --> HWMon\n    HWMon --> PerfOpt\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    G1[\"Godot 引擎\"]\n    G2[\"星露谷类游戏\"]\n    S1[\"种植系统\"]\n    S2[\"钓鱼系统\"]\n    S3[\"职业/帽子系统\"]\n    S4[\"交互式机器\"]\n    S5[\"昼夜循环\"]\n    S6[\"降雨效果\"]\n    S7[\"战斗系统\"]\n    S8[\"角色互动\"]\n    ADV1[\"自动平铺布局\"]\n    ADV2[\"动画技术\"]\n    ADV3[\"资源管理系统\"]\n    ADV4[\"编辑工具\"]\n    ADV5[\"着色器技术\"]\n    ADV6[\"硬件监测\"]\n    GOAL[\"拓展开发能力\"]\n\n    G1 --> G2\n    G2 --> S1\n    G2 --> S2\n    G2 --> S3\n    G2 --> S4\n    G2 --> S5\n    G2 --> S6\n    G2 --> S7\n    G2 --> S8\n    G2 --> ADV1\n    G2 --> ADV2\n    G2 --> ADV3\n    G2 --> ADV4\n    G2 --> ADV5\n    G2 --> ADV6\n    ADV1 --> S1\n    ADV2 --> S4\n    ADV3 --> S1\n    ADV3 --> S2\n    ADV5 --> ADV6\n    ADV6 --> GOAL\n    GOAL --> S7"
+    },
+    {
+      "title": "开发流程图",
+      "code": "flowchart LR\n    Step1[\"环境搭建\"]\n    Step2[\"资源导入\"]\n    Step3[\"实现种植系统\"]\n    Step4[\"实现钓鱼系统\"]\n    Step5[\"实现职业/帽子系统\"]\n    Step6[\"实现机器交互\"]\n    Step7[\"实现昼夜循环\"]\n    Step8[\"实现天气（降雨）\"]\n    Step9[\"实现战斗系统\"]\n    Step10[\"性能优化\"]\n    Step11[\"完整项目交付\"]\n\n    Step1 --> Step2\n    Step2 --> Step3\n    Step3 --> Step4\n    Step4 --> Step5\n    Step5 --> Step6\n    Step6 --> Step7\n    Step7 --> Step8\n    Step8 --> Step9\n    Step9 --> Step10\n    Step10 --> Step11"
+    },
+    {
+      "title": "技术依赖图",
+      "code": "flowchart TD\n    AutoTile[\"自动平铺布局\"]\n    ResMgr[\"资源管理系统\"]\n    AnimTech[\"动画技术\"]\n    Machine[\"交互式机器\"]\n    Shader[\"着色器技术\"]\n    HWMon[\"硬件监测\"]\n    PerfOpt[\"性能优化\"]\n\n    AutoTile --> ResMgr\n    AnimTech --> Machine\n    Shader --> HWMon\n    HWMon --> PerfOpt"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T21:30:37+00:00"
+}

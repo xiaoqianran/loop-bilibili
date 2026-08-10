@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1pZQpBYERk",
+  "title": "Godot开发神器！99%的人都忽略的这个节点，竟然能完美解决传送门指引问题 #Godot #Godot引擎 #Godot4 #游戏开发 #独立游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1084,
+  "text": "所以我想要介绍一个我很少使用的节点\n但在开发我的新Steam游戏时遇到了一个功能\n这似乎需要使用它\n所以我打算展示这个功能\n希望能帮助到大家\n如果你有类似需求的话\n那我先运行游戏\n这样我可以详细解释\n核心循环是\n击败敌人完成波次\n无论主要目标是什么\n当击败最终波次时\n会出现传送门\n当我消灭这个敌人后\n传送门应该会生成\n你可以看到传送门上方的小箭头\n我希望当传送门在视野内时\n箭头出现在传送门上方\n但当传送门移出视野后\n我想让箭头跟随玩家移动\n保持在屏幕上并指向传送门位置\n最初我想到\n你知道的\n可以直接用距离计算\n检查玩家是否靠近传送门\n然后让箭头显示在传送门上方\n但后来我想到\n如果存在不同缩放级别\n所以我不确定会不会有缩放\n但显然会影响距离计算\n最终我决定使用内置节点\n这就是效果展示\n当传送门移出屏幕时\n箭头会跟随玩家移动\n始终指向传送门所在位置\n然后自动返回\n让我演示具体操作\n不过\n在我的传送门场景中\n我使用了名为屏幕可见通知器的节点\n2D\n这就是我要讲的节点\n它只是一个矩形\n查阅文档后\n非常基础\n只有一个名为是否在屏幕上的函数\n如果你调用这个函数\n会返回布尔值\n判断该矩形是否在屏幕上可见\n这个节点非常直接\n这就像一个完美的使用案例\n在这个例子中\n在这个门户箭头节点中，我只是获取对我的门户的引用\n然后我在视图中有一个名为portal的变量\n显然你不需要包裹在获取函数中\n但我觉得还是展示如何使用比较好\n这就是其余代码\n如果你但再次\n超级简洁的设置\n没有距离计算\n只是使用Godot内置节点的常见案例\n老实说我不记得上次使用这个节点是什么时候了\n所以也希望这个对你们来说同样容易遗忘\n现在我不想只让视频到这里结束\n我还想谈谈一个类似的节点\n我只需在这里添加它来展示\n它叫做屏幕可见启用器\n这也是很少有教程会覆盖的内容\n甚至我自己在视频中从未提及过\n但如果你将这个附加到节点上\n它会根据是否渲染到屏幕自动启用或禁用该节点的处理\n如果它被你知道地显示在屏幕上\n它并不继承自屏幕可见通知器\n所以使用相同的逻辑\n如果你在屏幕上定义的矩形区域\n父节点将进行处理\n否则将禁用\n但如果你不了解这两个节点\n可见性节点确实需要了解它们\n尽管使用场景稍显小众\n但确实对需要少量更新的开发者非常有帮助\n最近几周我错过了一些教程\n所以我仍会继续做教程\n但最近一直在忙我的Steam发布项目\n名为Evil\n或在录制时\nSteam页面正在审核中\n不管怎样\n这是一个漫长的过程\n但一旦发布\n我是说\n根据进展如何\n我应该会有更多时间做教程\n所以我计划了一些高质量教程\n敬请期待这些内容",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1pZQpBYERk",
+  "published_at": "1776040547",
+  "fetched_at": "2026-08-06T22:01:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 传送门指引节点关系图谱\n\n## 总览概览\n[BV1pZQpBYERk P1 00:00]\n\n```mermaid\nflowchart TD\n    A[\"需求：玩家指向传送门的箭头\"]\n    B[\"传送门出现于击败最终波次后\"]\n    C[\"使用 ScreenVisibilityNotifier2D 节点\"]\n    D[\"函数 is_on_screen() 返回布尔\"]\n    E[\"在屏幕内：箭头显示在传送门上方\"]\n    F[\"在屏幕外：箭头跟随玩家并指向传送门\"]\n    G[\"可选：ScreenVisibilityEnabler 用于自动启用/禁用处理\"]\n\n    A --> B\n    B --> C\n    C --> D\n    D -->|true| E\n    D -->|false| F\n    C --> G\n```\n\n## 箭头显示工作流\n[BV1pZQpBYERk P1 00:18]\n\n```mermaid\nflowchart TD\n    A1[\"玩家击败最终波次\"]\n    B1[\"生成传送门\"]\n    C1[\"ScreenVisibilityNotifier2D 检测可见性\"]\n    D1[\"is_on_screen() 为 true\"]\n    E1[\"在传送门上方显示箭头\"]\n    F1[\"is_on_screen() 为 false\"]\n    G1[\"箭头位置设为玩家位置\"]\n    H1[\"箭头指向传送门坐标\"]\n\n    A1 --> B1 --> C1\n    C1 --> D1 --> E1\n    C1 --> F1 --> G1 --> H1\n```\n\n## 屏幕可见性节点对比\n[BV1pZQpBYERk P1 02:00]\n\n```mermaid\nflowchart TD\n    A2[\"ScreenVisibilityNotifier2D\"]\n    B2[\"提供 is_on_screen() 方法\"]\n    C2[\"仅判断可见性，不影响节点处理\"]\n    D2[\"ScreenVisibilityEnabler\"]\n    E2[\"自动启用/禁用挂载节点的 _process/_physics_process\"]\n    F2[\"不继承自 ScreenVisibilityNotifier2D\"]\n    G2[\"适用于需要在屏幕外暂停更新的节点\"]\n\n    A2 --> B2 --> C2\n    D2 --> E2\n    D2 --> F2\n    D2 --> G2\n```",
+      "diagrams": [
+        {
+          "title": "总览概览",
+          "code": "flowchart TD\n    A[\"需求：玩家指向传送门的箭头\"]\n    B[\"传送门出现于击败最终波次后\"]\n    C[\"使用 ScreenVisibilityNotifier2D 节点\"]\n    D[\"函数 is_on_screen() 返回布尔\"]\n    E[\"在屏幕内：箭头显示在传送门上方\"]\n    F[\"在屏幕外：箭头跟随玩家并指向传送门\"]\n    G[\"可选：ScreenVisibilityEnabler 用于自动启用/禁用处理\"]\n\n    A --> B\n    B --> C\n    C --> D\n    D -->|true| E\n    D -->|false| F\n    C --> G"
+        },
+        {
+          "title": "箭头显示工作流",
+          "code": "flowchart TD\n    A1[\"玩家击败最终波次\"]\n    B1[\"生成传送门\"]\n    C1[\"ScreenVisibilityNotifier2D 检测可见性\"]\n    D1[\"is_on_screen() 为 true\"]\n    E1[\"在传送门上方显示箭头\"]\n    F1[\"is_on_screen() 为 false\"]\n    G1[\"箭头位置设为玩家位置\"]\n    H1[\"箭头指向传送门坐标\"]\n\n    A1 --> B1 --> C1\n    C1 --> D1 --> E1\n    C1 --> F1 --> G1 --> H1"
+        },
+        {
+          "title": "屏幕可见性节点对比",
+          "code": "flowchart TD\n    A2[\"ScreenVisibilityNotifier2D\"]\n    B2[\"提供 is_on_screen() 方法\"]\n    C2[\"仅判断可见性，不影响节点处理\"]\n    D2[\"ScreenVisibilityEnabler\"]\n    E2[\"自动启用/禁用挂载节点的 _process/_physics_process\"]\n    F2[\"不继承自 ScreenVisibilityNotifier2D\"]\n    G2[\"适用于需要在屏幕外暂停更新的节点\"]\n\n    A2 --> B2 --> C2\n    D2 --> E2\n    D2 --> F2\n    D2 --> G2"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T22:01:34+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 传送门指引节点关系图谱\n\n## 总览概览\n[BV1pZQpBYERk P1 00:00]\n\n```mermaid\nflowchart TD\n    A[\"需求：玩家指向传送门的箭头\"]\n    B[\"传送门出现于击败最终波次后\"]\n    C[\"使用 ScreenVisibilityNotifier2D 节点\"]\n    D[\"函数 is_on_screen() 返回布尔\"]\n    E[\"在屏幕内：箭头显示在传送门上方\"]\n    F[\"在屏幕外：箭头跟随玩家并指向传送门\"]\n    G[\"可选：ScreenVisibilityEnabler 用于自动启用/禁用处理\"]\n\n    A --> B\n    B --> C\n    C --> D\n    D -->|true| E\n    D -->|false| F\n    C --> G\n```\n\n## 箭头显示工作流\n[BV1pZQpBYERk P1 00:18]\n\n```mermaid\nflowchart TD\n    A1[\"玩家击败最终波次\"]\n    B1[\"生成传送门\"]\n    C1[\"ScreenVisibilityNotifier2D 检测可见性\"]\n    D1[\"is_on_screen() 为 true\"]\n    E1[\"在传送门上方显示箭头\"]\n    F1[\"is_on_screen() 为 false\"]\n    G1[\"箭头位置设为玩家位置\"]\n    H1[\"箭头指向传送门坐标\"]\n\n    A1 --> B1 --> C1\n    C1 --> D1 --> E1\n    C1 --> F1 --> G1 --> H1\n```\n\n## 屏幕可见性节点对比\n[BV1pZQpBYERk P1 02:00]\n\n```mermaid\nflowchart TD\n    A2[\"ScreenVisibilityNotifier2D\"]\n    B2[\"提供 is_on_screen() 方法\"]\n    C2[\"仅判断可见性，不影响节点处理\"]\n    D2[\"ScreenVisibilityEnabler\"]\n    E2[\"自动启用/禁用挂载节点的 _process/_physics_process\"]\n    F2[\"不继承自 ScreenVisibilityNotifier2D\"]\n    G2[\"适用于需要在屏幕外暂停更新的节点\"]\n\n    A2 --> B2 --> C2\n    D2 --> E2\n    D2 --> F2\n    D2 --> G2\n```",
+  "diagrams": [
+    {
+      "title": "总览概览",
+      "code": "flowchart TD\n    A[\"需求：玩家指向传送门的箭头\"]\n    B[\"传送门出现于击败最终波次后\"]\n    C[\"使用 ScreenVisibilityNotifier2D 节点\"]\n    D[\"函数 is_on_screen() 返回布尔\"]\n    E[\"在屏幕内：箭头显示在传送门上方\"]\n    F[\"在屏幕外：箭头跟随玩家并指向传送门\"]\n    G[\"可选：ScreenVisibilityEnabler 用于自动启用/禁用处理\"]\n\n    A --> B\n    B --> C\n    C --> D\n    D -->|true| E\n    D -->|false| F\n    C --> G"
+    },
+    {
+      "title": "箭头显示工作流",
+      "code": "flowchart TD\n    A1[\"玩家击败最终波次\"]\n    B1[\"生成传送门\"]\n    C1[\"ScreenVisibilityNotifier2D 检测可见性\"]\n    D1[\"is_on_screen() 为 true\"]\n    E1[\"在传送门上方显示箭头\"]\n    F1[\"is_on_screen() 为 false\"]\n    G1[\"箭头位置设为玩家位置\"]\n    H1[\"箭头指向传送门坐标\"]\n\n    A1 --> B1 --> C1\n    C1 --> D1 --> E1\n    C1 --> F1 --> G1 --> H1"
+    },
+    {
+      "title": "屏幕可见性节点对比",
+      "code": "flowchart TD\n    A2[\"ScreenVisibilityNotifier2D\"]\n    B2[\"提供 is_on_screen() 方法\"]\n    C2[\"仅判断可见性，不影响节点处理\"]\n    D2[\"ScreenVisibilityEnabler\"]\n    E2[\"自动启用/禁用挂载节点的 _process/_physics_process\"]\n    F2[\"不继承自 ScreenVisibilityNotifier2D\"]\n    G2[\"适用于需要在屏幕外暂停更新的节点\"]\n\n    A2 --> B2 --> C2\n    D2 --> E2\n    D2 --> F2\n    D2 --> G2"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T22:01:34+00:00"
+}

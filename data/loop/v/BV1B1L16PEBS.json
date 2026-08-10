@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1B1L16PEBS",
+  "title": "继小米 Mimo 之后又一个免费 Token 机会！ 一键接入 Claude Code · 国产 4 大模型随便测！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 711,
+  "text": "在上期视频免费领取到小米7e token之后\n我又找到了一个新的能够免费领取token\n并且使用国内顶级开源模型的方法\n今天分享给大家\n我们只需要进入到硅基流动的官网\n注册一个账号\n进入后台之后\n完成实名认证后\n就可以成功领取到16元的代金券\n并且如果您每成功邀请一个新的用户\n都可以再领取一个新的代金券\n注意这个代金券是可以直接使用模型的\n而且硅基流动比较好的地方就在于\n它能够支持使用g r m deep seek\nkimi mini max等大量的顶级国产开源模型\n并且我们可以非常简单地将它们接入到cloud code\n等AI编程工具之中\n我们还是先在左侧的API密钥\n这里创建一个新的密钥\n然后还是用到cs switch这个工具\n打开cs witch\n点击右上角的加号\n选择硅基流动\n在这里输入我们前面创建的APIKE即可\n关键是模型名称配置\n我们回到堆积流动的模型广场\n点击我们想要使用的模型\n然后在这里复制模型的名称\n回到cc s b ch\n将模型的名称填入到这里\n配置完成之后\n我们点击添加并启用这个新的配置\n启用完成之后\n我们可以使用我开发的web launch工具\n目前还在处于内测阶段\n它可以快速的帮我们打开一个cloud绘画\n在这里我们来下发一个任务\n来验证一下是否配置成功\n之前总有朋友问我推荐使用什么国产大模型\n但现在的情况就是\n没有任何一个模型在任何的领域都是顶级的\n其实这需要我们根据我们的实际场景去找到\n适合我们场景的模型\n但现在我们在这里就可以免费的去进行测试\n然后找到我们业务场景中更加好用的模型\n好本期视频就到这里\n我是林克AI实战助\n如果你想看更多的实战\n麻烦点个关注\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1B1L16PEBS",
+  "published_at": "1779262306",
+  "fetched_at": "2026-08-10T01:07:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 免费 Token 与国产模型使用全流程图谱\n\n## 免费 Token 获取与使用全流程\n```mermaid\nflowchart TD\n    A1[\"打开硅基流动官网\"] --> A2[\"注册账号\"]\n    A2 --> A3[\"完成实名认证\"]\n    A3 --> A4[\"领取 16 元代金券\"]\n    A4 --> A5[\"邀请新用户可获额外代金券\"]\n    A5 --> A6[\"代金券可直接用于模型调用\"]\n    A6 --> A7[\"结束\"]\n```\n<!-- Evidence: [BV1B1L16PEBS P1 00:09]、[BV1B1L16PEBS P1 00:11]、[BV1B1L16PEBS P1 00:12]、[BV1B1L16PEBS P1 00:13]、[BV1B1L16PEBS P1 00:14]、[BV1B1L16PEBS P1 00:16]、[BV1B1L16PEBS P1 00:19]、[BV1B1L16PEBS P1 00:22]、[BV1B1L16PEBS P1 00:24] -->\n\n## API Key 创建与模型配置\n```mermaid\nflowchart TD\n    B1[\"登录硅基流动后台\"] --> B2[\"创建 API 密钥\"]\n    B2 --> B3[\"打开 cswitch 工具\"]\n    B3 --> B4[\"点击右上角加号\"]\n    B4 --> B5[\"选择硅基流动\"]\n    B5 --> B6[\"输入前一步创建的 API Key\"]\n    B6 --> B7[\"复制目标模型名称\"]\n    B7 --> B8[\"在 cswitch 中粘贴模型名称\"]\n    B8 --> B9[\"添加并启用配置\"]\n    B9 --> B10[\"配置完成\"]\n```\n<!-- Evidence: [BV1B1L16PEBS P1 00:38]、[BV1B1L16PEBS P1 00:40]、[BV1B1L16PEBS P1 00:41]、[BV1B1L16PEBS P1 00:44]、[BV1B1L16PEBS P1 00:45]、[BV1B1L16PEBS P1 00:47]、[BV1B1L16PEBS P1 00:48]、[BV1B1L16PEBS P1 00:51]、[BV1B1L16PEBS P1 00:53]、[BV1B1L16PEBS P1 00:55]、[BV1B1L16PEBS P1 00:57]、[BV1B1L16PEBS P1 00:59]、[BV1B1L16PEBS P1 01:01]、[BV1B1L16PEBS P1 01:02]、[BV1B1L16PEBS P1 01:03] -->\n\n## 模型测试流程\n```mermaid\nflowchart TD\n    C1[\"启用模型配置\"] --> C2[\"使用 Web Launch 工具\"]\n    C2 --> C3[\"打开 Cloud 绘画界面\"]\n    C3 --> C4[\"下发测试任务\"]\n    C4 --> C5[\"验证配置是否成功\"]\n    C5 --> C6[\"结束\"]\n```\n<!-- Evidence: [BV1B1L16PEBS P1 01:06]、[BV1B1L16PEBS P1 01:07]、[BV1B1L16PEBS P1 01:10]、[BV1B1L16PEBS P1 01:12]、[BV1B1L16PEBS P1 01:14]、[BV1B1L16PEBS P1 01:16] -->\n\n## 模型选择原则\n```mermaid\nflowchart LR\n    D1[\"市场上暂无全能模型\"] --> D2[\"根据实际业务场景需求\"]\n    D2 --> D3[\"免费测试多款国产模型\"]\n    D3 --> D4[\"比较性能与适配度\"]\n    D4 --> D5[\"选出最适合业务场景的模型\"]\n    D5 --> D6[\"结束\"]\n```\n<!-- Evidence: [BV1B1L16PEBS P1 01:18]、[BV1B1L16PEBS P1 01:21]、[BV1B1L16PEBS P1 01:23]、[BV1B1L16PEBS P1 01:26]、[BV1B1L16PEBS P1 01:29]、[BV1B1L16PEBS P1 01:31]、[BV1B1L16PEBS P1 01:34] -->",
+      "diagrams": [
+        {
+          "title": "免费 Token 获取与使用全流程",
+          "code": "flowchart TD\n    A1[\"打开硅基流动官网\"] --> A2[\"注册账号\"]\n    A2 --> A3[\"完成实名认证\"]\n    A3 --> A4[\"领取 16 元代金券\"]\n    A4 --> A5[\"邀请新用户可获额外代金券\"]\n    A5 --> A6[\"代金券可直接用于模型调用\"]\n    A6 --> A7[\"结束\"]"
+        },
+        {
+          "title": "API Key 创建与模型配置",
+          "code": "flowchart TD\n    B1[\"登录硅基流动后台\"] --> B2[\"创建 API 密钥\"]\n    B2 --> B3[\"打开 cswitch 工具\"]\n    B3 --> B4[\"点击右上角加号\"]\n    B4 --> B5[\"选择硅基流动\"]\n    B5 --> B6[\"输入前一步创建的 API Key\"]\n    B6 --> B7[\"复制目标模型名称\"]\n    B7 --> B8[\"在 cswitch 中粘贴模型名称\"]\n    B8 --> B9[\"添加并启用配置\"]\n    B9 --> B10[\"配置完成\"]"
+        },
+        {
+          "title": "模型测试流程",
+          "code": "flowchart TD\n    C1[\"启用模型配置\"] --> C2[\"使用 Web Launch 工具\"]\n    C2 --> C3[\"打开 Cloud 绘画界面\"]\n    C3 --> C4[\"下发测试任务\"]\n    C4 --> C5[\"验证配置是否成功\"]\n    C5 --> C6[\"结束\"]"
+        },
+        {
+          "title": "模型选择原则",
+          "code": "flowchart LR\n    D1[\"市场上暂无全能模型\"] --> D2[\"根据实际业务场景需求\"]\n    D2 --> D3[\"免费测试多款国产模型\"]\n    D3 --> D4[\"比较性能与适配度\"]\n    D4 --> D5[\"选出最适合业务场景的模型\"]\n    D5 --> D6[\"结束\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T01:08:09+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 免费 Token 与国产模型使用全流程图谱\n\n## 免费 Token 获取与使用全流程\n```mermaid\nflowchart TD\n    A1[\"打开硅基流动官网\"] --> A2[\"注册账号\"]\n    A2 --> A3[\"完成实名认证\"]\n    A3 --> A4[\"领取 16 元代金券\"]\n    A4 --> A5[\"邀请新用户可获额外代金券\"]\n    A5 --> A6[\"代金券可直接用于模型调用\"]\n    A6 --> A7[\"结束\"]\n```\n<!-- Evidence: [BV1B1L16PEBS P1 00:09]、[BV1B1L16PEBS P1 00:11]、[BV1B1L16PEBS P1 00:12]、[BV1B1L16PEBS P1 00:13]、[BV1B1L16PEBS P1 00:14]、[BV1B1L16PEBS P1 00:16]、[BV1B1L16PEBS P1 00:19]、[BV1B1L16PEBS P1 00:22]、[BV1B1L16PEBS P1 00:24] -->\n\n## API Key 创建与模型配置\n```mermaid\nflowchart TD\n    B1[\"登录硅基流动后台\"] --> B2[\"创建 API 密钥\"]\n    B2 --> B3[\"打开 cswitch 工具\"]\n    B3 --> B4[\"点击右上角加号\"]\n    B4 --> B5[\"选择硅基流动\"]\n    B5 --> B6[\"输入前一步创建的 API Key\"]\n    B6 --> B7[\"复制目标模型名称\"]\n    B7 --> B8[\"在 cswitch 中粘贴模型名称\"]\n    B8 --> B9[\"添加并启用配置\"]\n    B9 --> B10[\"配置完成\"]\n```\n<!-- Evidence: [BV1B1L16PEBS P1 00:38]、[BV1B1L16PEBS P1 00:40]、[BV1B1L16PEBS P1 00:41]、[BV1B1L16PEBS P1 00:44]、[BV1B1L16PEBS P1 00:45]、[BV1B1L16PEBS P1 00:47]、[BV1B1L16PEBS P1 00:48]、[BV1B1L16PEBS P1 00:51]、[BV1B1L16PEBS P1 00:53]、[BV1B1L16PEBS P1 00:55]、[BV1B1L16PEBS P1 00:57]、[BV1B1L16PEBS P1 00:59]、[BV1B1L16PEBS P1 01:01]、[BV1B1L16PEBS P1 01:02]、[BV1B1L16PEBS P1 01:03] -->\n\n## 模型测试流程\n```mermaid\nflowchart TD\n    C1[\"启用模型配置\"] --> C2[\"使用 Web Launch 工具\"]\n    C2 --> C3[\"打开 Cloud 绘画界面\"]\n    C3 --> C4[\"下发测试任务\"]\n    C4 --> C5[\"验证配置是否成功\"]\n    C5 --> C6[\"结束\"]\n```\n<!-- Evidence: [BV1B1L16PEBS P1 01:06]、[BV1B1L16PEBS P1 01:07]、[BV1B1L16PEBS P1 01:10]、[BV1B1L16PEBS P1 01:12]、[BV1B1L16PEBS P1 01:14]、[BV1B1L16PEBS P1 01:16] -->\n\n## 模型选择原则\n```mermaid\nflowchart LR\n    D1[\"市场上暂无全能模型\"] --> D2[\"根据实际业务场景需求\"]\n    D2 --> D3[\"免费测试多款国产模型\"]\n    D3 --> D4[\"比较性能与适配度\"]\n    D4 --> D5[\"选出最适合业务场景的模型\"]\n    D5 --> D6[\"结束\"]\n```\n<!-- Evidence: [BV1B1L16PEBS P1 01:18]、[BV1B1L16PEBS P1 01:21]、[BV1B1L16PEBS P1 01:23]、[BV1B1L16PEBS P1 01:26]、[BV1B1L16PEBS P1 01:29]、[BV1B1L16PEBS P1 01:31]、[BV1B1L16PEBS P1 01:34] -->",
+  "diagrams": [
+    {
+      "title": "免费 Token 获取与使用全流程",
+      "code": "flowchart TD\n    A1[\"打开硅基流动官网\"] --> A2[\"注册账号\"]\n    A2 --> A3[\"完成实名认证\"]\n    A3 --> A4[\"领取 16 元代金券\"]\n    A4 --> A5[\"邀请新用户可获额外代金券\"]\n    A5 --> A6[\"代金券可直接用于模型调用\"]\n    A6 --> A7[\"结束\"]"
+    },
+    {
+      "title": "API Key 创建与模型配置",
+      "code": "flowchart TD\n    B1[\"登录硅基流动后台\"] --> B2[\"创建 API 密钥\"]\n    B2 --> B3[\"打开 cswitch 工具\"]\n    B3 --> B4[\"点击右上角加号\"]\n    B4 --> B5[\"选择硅基流动\"]\n    B5 --> B6[\"输入前一步创建的 API Key\"]\n    B6 --> B7[\"复制目标模型名称\"]\n    B7 --> B8[\"在 cswitch 中粘贴模型名称\"]\n    B8 --> B9[\"添加并启用配置\"]\n    B9 --> B10[\"配置完成\"]"
+    },
+    {
+      "title": "模型测试流程",
+      "code": "flowchart TD\n    C1[\"启用模型配置\"] --> C2[\"使用 Web Launch 工具\"]\n    C2 --> C3[\"打开 Cloud 绘画界面\"]\n    C3 --> C4[\"下发测试任务\"]\n    C4 --> C5[\"验证配置是否成功\"]\n    C5 --> C6[\"结束\"]"
+    },
+    {
+      "title": "模型选择原则",
+      "code": "flowchart LR\n    D1[\"市场上暂无全能模型\"] --> D2[\"根据实际业务场景需求\"]\n    D2 --> D3[\"免费测试多款国产模型\"]\n    D3 --> D4[\"比较性能与适配度\"]\n    D4 --> D5[\"选出最适合业务场景的模型\"]\n    D5 --> D6[\"结束\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T01:08:09+00:00"
+}

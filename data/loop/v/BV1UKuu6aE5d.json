@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1UKuu6aE5d",
+  "title": "中国发布10万亿参数AI模型，震惊全球！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4798,
+  "text": "10万亿参数\n这是金融时报今早披露的消息\n如果属实\n这将是目前已知规模最大的模型\nTIKTOK的母公司字节跳动\n目前正处于模型训练阶段\nmeta刚推出的编程代理\n简直是冲着clothe code来的\nOpenAI向10亿用户免费开放旗舰模型\n同时无意中证实了一个规模更大的模型\n已蓄势待发\n以上这一切都发生在过去48小时内\n我们先从字节跳动说起\n毕竟这才是真正重量级的消息\n金融时报周五报道称\n援引知情人士消息\n字节跳动正在训练一款参数高达10万亿的模型\n路透社随即跟进报道\n这次的规模提升绝非小幅迭代\n与国内现有的模型相比\n这完全是另一个量级\n月之暗面的KIMIK3\n直到不久前\n他还是业内的参数标杆\n其参数为2.8万亿\n而字节跳动的模型规模将是它的三倍多\n在KIMIK3发布前\n国内的领跑者是通义千问和长毛2.0\n以及deep seek v s pro\n两者的总参数量均为1.6万亿\n还有少数中国实验室也跨过了万亿门槛\n因此从六个月前这一生态的水平到\n字节跳动的目标已提升近一个数量级\n但必须说明的是\n因为参数量常被当作衡量优劣的唯一标准\n参数是指数值设置模型\n在从数据中学习模式\n并生成答案时所设定的数值\n从而完成任务\n这是一种衡量规模的粗略指标\n规模往往与模型能力成正比\n但两者并非一回事\n从来都不是\n很多臃肿的模型\n都曾败给过那些训练更精良的小模型\n所以单凭规模说明不了什么\n真正值得深究的是金融时报所做的对比\n想要直接对美国领先模型进行基准测试\n难度极大\n因为ANTHROPIC和OpenAI早已不再公开\n其模型的参数量\n无论是cloud还是gt系列\n如今已无人再公布这些数据\n金融时报引用的都是行业估算值\n根据这些估算\nANTHROPIC最先进的系统\nMISSOS5参数规模约在8万亿左右\n而fable5约为5万亿\n这意味着\n字节跳动\n研发的绝非仅仅是国内领先水平的模型\n他们瞄准的是全球第一梯队规模\n甚至可能超过ANTHROPIC已知的最大模型\n这一点确实发人深省\n过去几年\n国内实验室的主流叙事一直是高效更小\n更廉价更精巧\n在有限算力下极致挖掘潜能\n但这次他们彻底反其道而行之\n决定在行业顶尖水平上与一家公司正面较量\n且该市场中从未有人能在规模上超越它\n路透社明确表示\n他们目前无法立即核实该报道\n而字节跳动未回应置评请求\n这一点大家留意一下\n此外还要考虑时间周期\n该模型目前正处于预训练阶段\n这通常需要3~6个月之后才能进入微调环节\n随后才能发布\n所以短期内不会有产品问世\n但这一发展趋势已非常明确\n中国企业不断加快发布周期\n以紧跟全球竞赛的步伐\n他们始终在寻求一种平衡\n既要打造更强大的系统\n又不能让成本高到无法承受\n要支撑10万亿参数规模的运行\n后者的难度会大得多\n这也说明他们对实现前者有多么渴望\n这才是重点所在\n如今人人都在用AI\n但几乎没人能靠它赚钱\n差距不在于能否用上\n而在于是否懂得用在哪里\n马克库班的策略是学会开发AI代理\n去找小魏企业聊聊\n帮他们解决那些没时间处理的琐事\n知道我如果刚大学毕业会做什么吗\n我会去接触中小企业\n学会构建AI代理后去帮他们做客户引流\n跟进客户预约排期催账\n每天重复回答那五个同样的客服问题\n对焦头烂额的老板\n这些工作价值连城\n他们愿花几千块交给AI处理\n所以我整理了一份11页的报告\n涵盖了七种AI代理\n目前企业愿为代理支付3000至1万美元\n报告标明了各公司所需代理类型\n以及如何发掘有需求的客户\n无需编程链接\n在下方免费领取\n与此同时\nmeta终于决定昨天不再继续观望\n正式发布了musical的测试版\n这是一款运行在终端的AI编程代理\n尤其最新的muse spark1.2模型驱动\n扎克伯格还亲自发文推荐\n称其能完成复杂的工程任务\n在大规模代码库中\n从项目分析方案规划\n代码编写工具调用到结果验证\n实现全流程闭环\n这意味着\nmatter OpenAI和ANTHROPIC如今站在了同一起跑线\n争夺着相同的开发者群体战况\n正如当年的MACOS之争\n目前支持LINUX1行终端命令即可安装\n它的核心卖点是你能直接下达完整需求\n而非零碎代码\n比如修复跨模块的bug或是添加功能\n重构大型项目\n他会先读取代码库\n制定计划\n修改文件\n然后运行测试\n并根据反馈持续调整\n在架构层面\n其核心是一个相当简单的智能体循环\n但meta为其配备了一组异步后台智能体\n用以增强主智能体的表现\n关键在于\n这些后台智能体会贯穿整个绘画持续运行\n他们无需为每个任务重新启动\n而是持续运行\n省去了反复加载相同上下文的开销\n他们还能独立执行后续步骤\n并自行判断何时反馈给主代理\n从而降低延迟\n以及一个减少了对你依赖的主代理\n在处理复杂的多步任务时尤为显著\n再来看看运行时设计\n这是muse最精妙之处\n它维护了一份本地事件日志\n详尽记录了模型调用\n将工具运行审批和代码修改按序记录在案\n这份日志是唯一可信的数据源\n这意味着整个运行过程都能被精确回放\n即便程序崩溃\n重启后也能安全恢复\n智能体可以直接从中断点继续运行\n无需从头再来\n也不会在常任务中产生奇怪的偏差\n这就是放心挂机和时刻盯防的区别\n除此之外\n谢还有内置的技能\n使用plan指令拆解任务\n并在执行前征得你的确认\n而grill指令会反复对方案进行压力测试\n直到确保方案足够可靠\n而slash go会朝着你设定的目标不断推进\n直至任务最终完成\n不出所料\n评论区立刻有人询问muse code是否会开源\n扎克伯格回应称\n很快会有更多相关信息分享\n这种回答通常意味着最终会开源\n只是时间早晚的问题\nMuse buk\n1.2的底层模型\n是在一点一版本基础上的升级\n重点强化了代码生成调试\n复杂问题处理及代码库理解能力\n在端到端开发流程中\nmeta大幅提升了编程任务的训练算力\n并丰富了训练环境的多样性\n尽管声称模型保留了其通用智能体的性能基准\n测试的结果依然如故\n坦率地说\nterminal bench2.1的测试指标相当犀利\n该测试旨在评估智能体在终端环境下的任务\n完成能力\nnews spark1.2仅输给了opus5max这款模型\n而在deep sk1.1测试中\n它位列opus s5max之后\n以及gt5.6tero max之后\n这项基准测试含金量极高\n涵盖了五种编程语言\n90一个代码库中的113项任务\n包括typescript go\nPython JavaScript和rust\n且每一项都配备了人工编写的功能\n验证程序及回归测试\n而在meta基于400项任务的内部基准测试中\n这些任务源自真实的内部合并请求\n涵盖漏洞修复功能\n开发重构及清理\n工作表现依然仅次于opus5max\n虽处处第二无缘榜首\n但首秀已足够强悍\n这也明确揭示了meta在基准测试中\n对标的竞争对史\n他们将性能提升归功于三点\n首先是muse bk1.2的联合训练\n通过miss code与模型的联合训练\n确保了两者能协同运作\n结合智能体操作轨迹\n由拒绝采样引入针对目标执行优化训练\n并实现了上下文压缩\n同时将子智能体链接与muse code工具集融入训练\n以提升模型兼容性\n即框架\n第二是长城能力\n即通过对整个代码库生成进行大规模训练\n来升任大型端到端项目以及自动化研究模型\n能通过规划编排工作流程\n并利用目标条件约束\n确保方向不偏\n并利用上下文压缩保留信息\n以维持持续执行\n第三是自我提升\nmeta利用muse spark1.1升\n成了高难度的编程环境和指令遵循模板\n随后让模型评估候选方案\n对需求的满足程度为1.2\n版本构建可扩展的训练数据\n并将指令遵循能力提升至超越上一代\n定价方面\n他们的策略非常激进\n标准版价格为一美元\n25美分\n每百万输入token缓存\n输入15\n每分四美元\n25美分\n每百万输出token\n而贡献者版本输入只需十美分\n缓存二美分\n输出20美分\n这哪是定价\n简直是在招兵买马\n接下来看OpenAI\n他们本周做了一件\n其他人想做却做不起的事\nJpd5.6\nLUNA现在完全免费\n并为全球约10亿用户提供无限量文本对话\nLUNA是GPT5.6系列中体量最小的模型\n专为超快响应而生\n主打低成本\n定位在TERRA和四奥之下\n从今天起\n它将成为免费版和plus用户的默认模型\n直接取代gt5.5\n同时免费版ChatGPT也新增了深度思考按钮\n遇到难题时可让模型深度推理\n这是首次免费用户可以主动选择调高推理强度\n但要注意细则无限仅限文本对话文件上\n我爱你除外\n图像生成语音及其他功能仍受原有额度限制\n你依然会触及上限\n骚也随之同步升级了\n这一变化\n比标题看起来更有深意\n在之前的ChatGPT版本中\n即时模式与思考模式几乎像是两个独立的人格\n语调和格式都截然不同\n在两者间切换\n就像完全换了个模型\n现在SL能以可调速度统一处理一切任务\n唯一的区别只是推理时长不同\n那种割裂感彻底消失了\n原本ChatGPT专属的五级推理滑块\n现在已内置在标准聊天界面中\n向所有人开放\n最直观的变化是sop在废话连篇了\n以OpenAI的事例为例\n有人询问下班后从米胜区骑车去海滩\n会不会凌晨落汤鸡\n旧版即时模式会给出大量关于降雨的废话\n涵盖风速气温\n海雾\n海滩危险预警\n还有一条备注\n穿纯棉TD可能会觉得黏糊\n新模型直接给出结论\n你不会被淋湿\n真正的问题是逆风\n西风时速10~20英里\n建议带件薄风衣\n随后当用户追问我05:30出发时\n旧版本会重复播报整个天气\n而新版本只更新变动的部分\n不仅如此\n底层还有一个更大的升级\n尽管整个gt5.6系列的事实准确性大幅提升\n并在金融医疗领域进行测试\n以及法律这三个领域进行了测试\n这些领域对事实错误零容忍\n评分标准极其严苛\n只要回复中出现一处事实错误\n诊断回答即被判定为不合格\n在此标准下\nSL的错误率比GPT5.5\ninstant低了68%\n而LUNA的错误率则低了62%\n但这免费版只是开胃菜\n业内人士六有爆料称\nOpenAI正准备在下周推出\n代号为extra的下一代旗舰模型\n这是一个全新的预训练模型\n也是OpenAI自GPT4.5以来\n训练规模最大的模型\n以及代号为mu4的最新内部检查点\n已进入候选发布阶段\n即正式上线前的最终版本\n其实线索一直都在\n早在7月30日那天\nopen ai1段预览视频被迅速删除\n但有用户截到了屏幕\n截图\n显示出了一闪而过的new3字样\n本周更多泄露信息证实mu4已在进行内部测试\n从new到move这一系列已悄然进化到了第四代\n最有趣的是\nOpenAI其实早已公开\n此事却没人发现\n8月1日\n他们发布了一篇关于数学的博客文章\n称其模型解决了十个开放数学难题\n困扰数学界十多年之久\n文中还顺带提及了内部代号extra的项目\n称其为下一个重大模型\n至于具体功能\n目前的泄露信息显示\n它主打长周期多智能体协作及多个AI实例\n协同工作数小时\n甚至耗时数天\n共同攻克一个复杂的难题\n目前流传着两种参数版本\n有媒体称其规模是GPT5.6的两倍\n而开发者估测GPT4.5约为5万亿参数\n这使ASTRA达到了七到10万亿参数规模极其惊人\n且拥有更强大的基础设施优化\n加之今年有大量新算力上线\n其运行成本甚至可能低于\nANTHROPIC的missiles5\n为何说OpenAI此时此刻\n拥有行业最强的后训练能力\n这正是GPT5.5能够达成如此性能的关键\n它对比missile唯一的短板就在于预训练基础\n而ASTRA正是将这一短板补齐\n为史上最庞大的预训练基座\n在史上最强基座上进行顶级微调\n目标只有一个\n将gt5.5踢下榜首\n无论他是以压倒性优势胜出\n还是以微弱优势险胜\n下周就会见分晓\n这就是目前的局势\n很好奇你们怎么看\n欢迎在评论区留言\n感谢观看\n我们下期再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UKuu6aE5d",
+  "published_at": "1786151046",
+  "fetched_at": "2026-08-10T05:55:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI模型与行业动态全景\n\n## 规模对比与行业定位\n```mermaid\nflowchart TD\n    BTD[\"ByteDance 10万亿参数模型\"] -->|规模约为| KIM[\"KIMIK3 2.8万亿\"]\n    BTD -->|约为| DL[\"国内领跑者（通义千问/长毛2.0） 1.6万亿\"]\n    BTD -->|约为| ANTH[\"Anthropic MISSOS5 8万亿\"]\n    BTD -->|目标| GT[\"全球第一梯队\"]\n    ANTH -->|竞争| OP[\"OpenAI 未公开参数\"]\n    OP -->|估算| F5[\"GPT5.6 系列\"]\n    F5 -->|对标| BTD\n    KIM -->|曾是| 标杆[\"行业参数标杆\"]\n    标杆 -->|被| 超越[\"ByteDance 10万亿\"]\n```\n\n## ByteDance模型训练与发布流程\n```mermaid\nflowchart TD\n    A[\"媒体披露 (金融时报)\"] --> B[\"模型训练阶段\"]\n    B --> C[\"预训练 3~6个月\"]\n    C --> D[\"进入微调阶段\"]\n    D --> E[\"计划发布\"]\n    E --> F[\"短期无产品问世\"]\n    F --> G[\"长期提升行业竞争力\"]\n    G --> H[\"成本与算力平衡挑战\"]\n```\n\n## Meta Muse 编程代理架构\n```mermaid\nflowchart TD\n    Core[\"Muse Core Agent\"] --> Async[\"异步后台智能体\"]\n    Core --> Log[\"本地事件日志\"]\n    Core --> Plan[\"plan 指令 (任务拆解)\"]\n    Core --> Grill[\"grill 指令 (方案压力测试)\"]\n    Core --> Slash[\"slash-go 指令 (目标推进)\"]\n    Log --> Read[\"读取代码库\"]\n    Read --> Modify[\"修改文件\"]\n    Modify --> Test[\"运行测试\"]\n    Test --> Feedback[\"根据反馈持续调整\"]\n    Async -->|增强| Core\n    Feedback --> Core\n```\n\n## OpenAI LUNA 与 GPT 系列定位\n```mermaid\nflowchart TD\n    LUNA[\"LUNA (GPT5.6 最小模型)\"] --> Free[\"免费版默认模型\"]\n    LUNA --> Plus[\"Plus 用户默认模型\"]\n    LUNA --> Replace[\"取代 GT5.5\"]\n    LUNA --> DeepThink[\"深度思考按钮\"]\n    DeepThink -->|提升| 推理强度\n    GPT5[\"GPT5.6 系列\"] --> Cost[\"低成本定位\"]\n    Cost -->|对标| ByteDance[\"ByteDance 10万亿模型\"]\n    OpenAI[\"OpenAI 生态\"] --> LUNA\n    OpenAI --> Extra[\"代号 Extra（下一代旗舰）\"]\n```\n\n## 行业竞争与未来趋势\n```mermaid\nflowchart TD\n    ByteDanceGoal[\"ByteDance 目标：全球第一梯队\"] --> ASTRA[\"ASTRA (7~10万亿 参数)\"]\n    ASTRA -->|成本激进| Pricing[\"低价策略\"]\n    OpenAIExtra[\"OpenAI Extra\"] -->|预训练规模| Largest[\"史上最大预训练\"]\n    Largest -->|竞争| ByteDanceGoal\n    Benchmark[\"行业基准测试\"] -->|对标| MetaMuse[\"Meta Muse\"]\n    MetaMuse -->|表现| 第二名[\"次于 Opus5max\"]\n    Market[\"市场份额争夺\"] --> ByteDanceGoal\n    Market --> OpenAIExtra\n    Market --> ASTRA\n```",
+      "diagrams": [
+        {
+          "title": "规模对比与行业定位",
+          "code": "flowchart TD\n    BTD[\"ByteDance 10万亿参数模型\"] -->|规模约为| KIM[\"KIMIK3 2.8万亿\"]\n    BTD -->|约为| DL[\"国内领跑者（通义千问/长毛2.0） 1.6万亿\"]\n    BTD -->|约为| ANTH[\"Anthropic MISSOS5 8万亿\"]\n    BTD -->|目标| GT[\"全球第一梯队\"]\n    ANTH -->|竞争| OP[\"OpenAI 未公开参数\"]\n    OP -->|估算| F5[\"GPT5.6 系列\"]\n    F5 -->|对标| BTD\n    KIM -->|曾是| 标杆[\"行业参数标杆\"]\n    标杆 -->|被| 超越[\"ByteDance 10万亿\"]"
+        },
+        {
+          "title": "ByteDance模型训练与发布流程",
+          "code": "flowchart TD\n    A[\"媒体披露 (金融时报)\"] --> B[\"模型训练阶段\"]\n    B --> C[\"预训练 3~6个月\"]\n    C --> D[\"进入微调阶段\"]\n    D --> E[\"计划发布\"]\n    E --> F[\"短期无产品问世\"]\n    F --> G[\"长期提升行业竞争力\"]\n    G --> H[\"成本与算力平衡挑战\"]"
+        },
+        {
+          "title": "Meta Muse 编程代理架构",
+          "code": "flowchart TD\n    Core[\"Muse Core Agent\"] --> Async[\"异步后台智能体\"]\n    Core --> Log[\"本地事件日志\"]\n    Core --> Plan[\"plan 指令 (任务拆解)\"]\n    Core --> Grill[\"grill 指令 (方案压力测试)\"]\n    Core --> Slash[\"slash-go 指令 (目标推进)\"]\n    Log --> Read[\"读取代码库\"]\n    Read --> Modify[\"修改文件\"]\n    Modify --> Test[\"运行测试\"]\n    Test --> Feedback[\"根据反馈持续调整\"]\n    Async -->|增强| Core\n    Feedback --> Core"
+        },
+        {
+          "title": "OpenAI LUNA 与 GPT 系列定位",
+          "code": "flowchart TD\n    LUNA[\"LUNA (GPT5.6 最小模型)\"] --> Free[\"免费版默认模型\"]\n    LUNA --> Plus[\"Plus 用户默认模型\"]\n    LUNA --> Replace[\"取代 GT5.5\"]\n    LUNA --> DeepThink[\"深度思考按钮\"]\n    DeepThink -->|提升| 推理强度\n    GPT5[\"GPT5.6 系列\"] --> Cost[\"低成本定位\"]\n    Cost -->|对标| ByteDance[\"ByteDance 10万亿模型\"]\n    OpenAI[\"OpenAI 生态\"] --> LUNA\n    OpenAI --> Extra[\"代号 Extra（下一代旗舰）\"]"
+        },
+        {
+          "title": "行业竞争与未来趋势",
+          "code": "flowchart TD\n    ByteDanceGoal[\"ByteDance 目标：全球第一梯队\"] --> ASTRA[\"ASTRA (7~10万亿 参数)\"]\n    ASTRA -->|成本激进| Pricing[\"低价策略\"]\n    OpenAIExtra[\"OpenAI Extra\"] -->|预训练规模| Largest[\"史上最大预训练\"]\n    Largest -->|竞争| ByteDanceGoal\n    Benchmark[\"行业基准测试\"] -->|对标| MetaMuse[\"Meta Muse\"]\n    MetaMuse -->|表现| 第二名[\"次于 Opus5max\"]\n    Market[\"市场份额争夺\"] --> ByteDanceGoal\n    Market --> OpenAIExtra\n    Market --> ASTRA"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T05:55:54+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI模型与行业动态全景\n\n## 规模对比与行业定位\n```mermaid\nflowchart TD\n    BTD[\"ByteDance 10万亿参数模型\"] -->|规模约为| KIM[\"KIMIK3 2.8万亿\"]\n    BTD -->|约为| DL[\"国内领跑者（通义千问/长毛2.0） 1.6万亿\"]\n    BTD -->|约为| ANTH[\"Anthropic MISSOS5 8万亿\"]\n    BTD -->|目标| GT[\"全球第一梯队\"]\n    ANTH -->|竞争| OP[\"OpenAI 未公开参数\"]\n    OP -->|估算| F5[\"GPT5.6 系列\"]\n    F5 -->|对标| BTD\n    KIM -->|曾是| 标杆[\"行业参数标杆\"]\n    标杆 -->|被| 超越[\"ByteDance 10万亿\"]\n```\n\n## ByteDance模型训练与发布流程\n```mermaid\nflowchart TD\n    A[\"媒体披露 (金融时报)\"] --> B[\"模型训练阶段\"]\n    B --> C[\"预训练 3~6个月\"]\n    C --> D[\"进入微调阶段\"]\n    D --> E[\"计划发布\"]\n    E --> F[\"短期无产品问世\"]\n    F --> G[\"长期提升行业竞争力\"]\n    G --> H[\"成本与算力平衡挑战\"]\n```\n\n## Meta Muse 编程代理架构\n```mermaid\nflowchart TD\n    Core[\"Muse Core Agent\"] --> Async[\"异步后台智能体\"]\n    Core --> Log[\"本地事件日志\"]\n    Core --> Plan[\"plan 指令 (任务拆解)\"]\n    Core --> Grill[\"grill 指令 (方案压力测试)\"]\n    Core --> Slash[\"slash-go 指令 (目标推进)\"]\n    Log --> Read[\"读取代码库\"]\n    Read --> Modify[\"修改文件\"]\n    Modify --> Test[\"运行测试\"]\n    Test --> Feedback[\"根据反馈持续调整\"]\n    Async -->|增强| Core\n    Feedback --> Core\n```\n\n## OpenAI LUNA 与 GPT 系列定位\n```mermaid\nflowchart TD\n    LUNA[\"LUNA (GPT5.6 最小模型)\"] --> Free[\"免费版默认模型\"]\n    LUNA --> Plus[\"Plus 用户默认模型\"]\n    LUNA --> Replace[\"取代 GT5.5\"]\n    LUNA --> DeepThink[\"深度思考按钮\"]\n    DeepThink -->|提升| 推理强度\n    GPT5[\"GPT5.6 系列\"] --> Cost[\"低成本定位\"]\n    Cost -->|对标| ByteDance[\"ByteDance 10万亿模型\"]\n    OpenAI[\"OpenAI 生态\"] --> LUNA\n    OpenAI --> Extra[\"代号 Extra（下一代旗舰）\"]\n```\n\n## 行业竞争与未来趋势\n```mermaid\nflowchart TD\n    ByteDanceGoal[\"ByteDance 目标：全球第一梯队\"] --> ASTRA[\"ASTRA (7~10万亿 参数)\"]\n    ASTRA -->|成本激进| Pricing[\"低价策略\"]\n    OpenAIExtra[\"OpenAI Extra\"] -->|预训练规模| Largest[\"史上最大预训练\"]\n    Largest -->|竞争| ByteDanceGoal\n    Benchmark[\"行业基准测试\"] -->|对标| MetaMuse[\"Meta Muse\"]\n    MetaMuse -->|表现| 第二名[\"次于 Opus5max\"]\n    Market[\"市场份额争夺\"] --> ByteDanceGoal\n    Market --> OpenAIExtra\n    Market --> ASTRA\n```",
+  "diagrams": [
+    {
+      "title": "规模对比与行业定位",
+      "code": "flowchart TD\n    BTD[\"ByteDance 10万亿参数模型\"] -->|规模约为| KIM[\"KIMIK3 2.8万亿\"]\n    BTD -->|约为| DL[\"国内领跑者（通义千问/长毛2.0） 1.6万亿\"]\n    BTD -->|约为| ANTH[\"Anthropic MISSOS5 8万亿\"]\n    BTD -->|目标| GT[\"全球第一梯队\"]\n    ANTH -->|竞争| OP[\"OpenAI 未公开参数\"]\n    OP -->|估算| F5[\"GPT5.6 系列\"]\n    F5 -->|对标| BTD\n    KIM -->|曾是| 标杆[\"行业参数标杆\"]\n    标杆 -->|被| 超越[\"ByteDance 10万亿\"]"
+    },
+    {
+      "title": "ByteDance模型训练与发布流程",
+      "code": "flowchart TD\n    A[\"媒体披露 (金融时报)\"] --> B[\"模型训练阶段\"]\n    B --> C[\"预训练 3~6个月\"]\n    C --> D[\"进入微调阶段\"]\n    D --> E[\"计划发布\"]\n    E --> F[\"短期无产品问世\"]\n    F --> G[\"长期提升行业竞争力\"]\n    G --> H[\"成本与算力平衡挑战\"]"
+    },
+    {
+      "title": "Meta Muse 编程代理架构",
+      "code": "flowchart TD\n    Core[\"Muse Core Agent\"] --> Async[\"异步后台智能体\"]\n    Core --> Log[\"本地事件日志\"]\n    Core --> Plan[\"plan 指令 (任务拆解)\"]\n    Core --> Grill[\"grill 指令 (方案压力测试)\"]\n    Core --> Slash[\"slash-go 指令 (目标推进)\"]\n    Log --> Read[\"读取代码库\"]\n    Read --> Modify[\"修改文件\"]\n    Modify --> Test[\"运行测试\"]\n    Test --> Feedback[\"根据反馈持续调整\"]\n    Async -->|增强| Core\n    Feedback --> Core"
+    },
+    {
+      "title": "OpenAI LUNA 与 GPT 系列定位",
+      "code": "flowchart TD\n    LUNA[\"LUNA (GPT5.6 最小模型)\"] --> Free[\"免费版默认模型\"]\n    LUNA --> Plus[\"Plus 用户默认模型\"]\n    LUNA --> Replace[\"取代 GT5.5\"]\n    LUNA --> DeepThink[\"深度思考按钮\"]\n    DeepThink -->|提升| 推理强度\n    GPT5[\"GPT5.6 系列\"] --> Cost[\"低成本定位\"]\n    Cost -->|对标| ByteDance[\"ByteDance 10万亿模型\"]\n    OpenAI[\"OpenAI 生态\"] --> LUNA\n    OpenAI --> Extra[\"代号 Extra（下一代旗舰）\"]"
+    },
+    {
+      "title": "行业竞争与未来趋势",
+      "code": "flowchart TD\n    ByteDanceGoal[\"ByteDance 目标：全球第一梯队\"] --> ASTRA[\"ASTRA (7~10万亿 参数)\"]\n    ASTRA -->|成本激进| Pricing[\"低价策略\"]\n    OpenAIExtra[\"OpenAI Extra\"] -->|预训练规模| Largest[\"史上最大预训练\"]\n    Largest -->|竞争| ByteDanceGoal\n    Benchmark[\"行业基准测试\"] -->|对标| MetaMuse[\"Meta Muse\"]\n    MetaMuse -->|表现| 第二名[\"次于 Opus5max\"]\n    Market[\"市场份额争夺\"] --> ByteDanceGoal\n    Market --> OpenAIExtra\n    Market --> ASTRA"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T05:55:54+00:00"
+}

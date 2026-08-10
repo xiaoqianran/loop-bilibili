@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1zAub6KEEY",
+  "title": "零成本使用GLM5.2和其他零token大模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 612,
+  "text": "兄弟们重大发现\n同样都是通过免API的技术方式介入的\n同一种类型的大模型\n不同的版本给我们的效果也会不一样\n下面我们就用目前最新发布的G2M\n5.2和5.1做一个对比\n但是我们的HERMES\n首先呢这里接的是质朴的G2M5.1\n我们把这三个问题抛给他\n看看他回答的怎么样\n这三个问题看似很简单\n其实都是经过精心设计的\n分别代表了这个模型的推理能力\n计算能力和他的语言能力\n这里我们可以看到\n质谱5.1是调用了工具之后做出来的\n这三道题\n首先我们不看它的结果到底正不正确\n我们拿它跟gm5.2来做个对比\n这里我们用斜杠mod命令来做一个切换\n我们还是选择第一个用本地web大模型转换服务\n因为这个是目前为止最为省token的技术\n没有之一\n如果大家对这套技术有需求或者有兴趣\n都可以在评论区留言\n这里面包含了我们所有的web转大模型的模型\n这里我们选择G2M5.2\nG 2m5.2\n是我们目前国内大模型最新的一个\n我们还是把刚才给5.1的问题\n同样交给5.2去做回答\n这里我们不论哪个模型回答的好与坏\n单从解题方法上\n5.2直接给出我们答案\n而没有调用任何的工具\n从这一点证明\n然后我们再对比一下两者的结果\n千绝句\n这里的话双方也是按照要求编写的\n三元一次方程的结果\n两者答案是一样的\n然后但是在日期推算的问题上\n5.2给我们的答案是1月3日星期六\n而5.1给的是1月4日星期天\n那么他俩到底谁是对的\n大家可以在评论区给我答案",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zAub6KEEY",
+  "published_at": "1786097697",
+  "fetched_at": "2026-08-10T05:28:32+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-10T05:35:29+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-10T05:35:29+00:00"
+}

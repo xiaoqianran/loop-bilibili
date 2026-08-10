@@ -1,0 +1,26 @@
+{
+  "bvid": "BV14wEM6UEpT",
+  "title": "cc接入deepseek 提高缓存命中率",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 273,
+  "text": "嗯我们都知道通过cc接入deep sick\n使用CC会随机注入一些文字\n导致我们的那个嗯deep sk的嗯\n命中缓存概率大幅下降\n就比如说我之前配置啊\n每天的额命中率只有90%左右\n90%出头\n然后我们该怎么样来减少它的那个随机注入呢\n使我们的缓存命中大幅上升\n首先我们打开我们的呃CD CD code\n打开它的嗯扩展设置\n打开的配置文件\n在配置文件中加入这样一行\n使它生成的随机字值为零\n这样的话就能减少它的随机注入\n可以看到在我设置完之后\n设置完之后\n它的缓存命中基本上稳定了\n在了95%左右\n95%左右\n这样的话就能减少我们的token使用",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV14wEM6UEpT",
+  "published_at": "1780901122",
+  "fetched_at": "2026-08-09T14:21:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1hrjR6DEao",
+  "title": "程序员必看：扫码登录实现原理是怎样的？问倒一大片。。面试前一定要看完！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1636,
+  "text": "five four three two one扫码登录\n它的实现原理是什么\n基本上大部分互联网应用的都会有PC端\napp端\n那为了让用户登录更加的便捷\n以及呢提升用户和app的使用粘性\n扫码登录基本上适用于所有这种多平台的应用\n所以在互联网公司面试的时候呢\n经常会问到啊\n哈喽大家好\n我是徐庶\n来给大家讲一下扫码登录它的实现原理\n不管是任何应用的扫描登录场景啊\n都可以分成五大步\n第一步生成一个二维码\n第二步扫码\n第三步\n第四步确认登录\n第五步登录成功之后正常访问\n那从业务流程来说呢\n我们又可以简化成三步\n生成二维码\n扫码确认登录\n所以我们只需要搞清楚这三步\n我们分别做了什么\n那就可以非常简单的回答这道面试题\n首先第一步生成二维码\n当我们去请求登录页\n就会去生成一个二维码\n那在这个过程当中\n前端和后端分别做了什么呢\n我们来分析一下\n首先PC端它会去请求后端要求生成一个二维码\n那在后端就会去生成一个全局唯一的二维码id\n这个二维码id有什么用呢\n它主要是保存当前二维码的状态\n因为前端需要根据不同的状态给用户\n去展示不同的结果\n所以在REDIS当中呢\n就会去保存当前的二维码和状态\n然后把当前的二维码id呢返回给前端\n然后去生成二维码\n那二维码的图片生成呢\n可以放在前端来进行生成\n当然也可以放在后端来进行生成\n两种方式都可以\n我不在这里细讲\n那此时的这个二维码它就绑定了二维码的id\n等待用户进行扫描\n所以这一步主要就干了两件事情\n第一步生成二维码的id\n并且保存它的状态到release当中\n第二步根据二维码的id生成一个二维码的图片\n那二维码生成之后呢\nPC端跟后端就会去建立一个轮询的请求\n不断的根据二维码id去查询二维码状态\n一旦状态发生了改变\n界面也会同步的改变\n当然除了轮询的方式\n也可以通过长链接来去获取二维码状态\n比如说WEBSOCKETSSE都可以\n那我大概看了一下\n你像淘宝他就是用的轮询抖音呢\n他就是用的长链接\n大家有兴趣自己可以去看一下\n那这个时候我们就可以掏出我们的手机\n来进行扫码\n那扫完之后又会发生什么流程呢\n我们来说一下\n那我们要扫码之前啊\n首先肯定要保证我们的手机端\n他已经是登录的状态\n没有登录肯定是不能扫码的\n那么登录之后进行扫码呢\n就会携带手机端的用户token\n以及二维码的id去请求后端\n那么在后端呢又会去校验手机端的用户token\n如果校验成功\n就代表手机端已经登录\n我直接根据手机端的用户去登录即可\n那么这个时候我们就可以去变更二维码的状态\n为已扫描\n此时PC端的轮询\n他查询到状态呢\n就会把界面呈现为待确认的这样的一个状态\n然后呢我们的后端就可以去生成一个临时token\n跟当前的这个二维码呢来进行关联起来\n这样就可以保证当前的二维码\n它只会被扫描一次\n然后把这个临时的token给他\n反返回给我们的手机端\n所以第二步扫码\n最主要就是把手机端的用户token给他\n传到后端\n作为PC端的登录证明\n此时我们的手机端跟PC端的\n就会同时呈现待确认的状态\n这个时候如果我们点击手机端的确认登录\n那手机端就会携带它之前生成的这个临时token\n去请求后端\n后端呢就会根据临时token去拿到二维码的id\n再根据二维码的id呢去变更二维码的状态\n然后呢去执行登录的逻辑\n生成一个PC端的用户token\n然后呢把PC端的token\n还有用户信息保存在REDIS当中\n以及呢临时的token它也可以删掉了\n因为扫码登录已经结束了\n最后呢PC端轮询的请求呢\n它就会监控到二维码的状态\n变成了已使用\n以及呢还会响应pc token给PC端\n最终整个登录就完成了\n在PC端呢就可以愉快的去使用\n对应的应用功能了\n当然里面呢还有很多的细节\n所以我在这里给大家准备了一个\n扫描登录的完整的示例代码\n大家需要的话\n可以在评论区扣666\n自己去完整的体验一遍好\n那我就给大家讲到这里\n如果视频对你有帮助\n可以给徐庶老师一个三连支持\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hrjR6DEao",
+  "published_at": "1782293749",
+  "fetched_at": "2026-08-07T02:02:49+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 扫码登录实现原理图谱\n\n## 整体流程概览\n```mermaid\nflowchart LR\n    A1[\"PC 请求生成二维码\"] --> A2[\"后端生成唯一二维码ID\"]\n    A2 --> A3[\"状态保存至 Redis\"]\n    A3 --> A4[\"前端/后端生成二维码图片\"]\n    A4 --> B1[\"手机端已登录\"]\n    B1 --> B2[\"手机扫码携带用户Token + 二维码ID\"]\n    B2 --> C1[\"后端校验Token并生成临时Token\"]\n    C1 --> D1[\"手机确认登录\"]\n    D1 --> E1[\"后端生成 PC 端Token 并标记二维码已使用\"]\n    E1 --> F1[\"PC 端轮询获取状态并获得 PC Token\"]\n    F1 --> G1[\"PC 端完成登录，使用业务功能\"]\n```\n\n- 生成二维码ID、保存状态、生成图片等步骤对应 **[BV1hrjR6DEao P1 01:03‑01:31]**  \n- 手机端扫码并携带信息对应 **[BV1hrjR6DEao P1 02:35‑02:46]**  \n- 后端校验并生成临时Token对应 **[BV1hrjR6DEao P1 02:50‑03:15]**  \n- 手机确认登录并完成流程对应 **[BV1hrjR6DEao P1 03:41‑04:07]**  \n\n## 生成二维码细节\n```mermaid\nflowchart TD\n    PC[\"PC 端请求登录页\"] --> BE[\"后端生成全局唯一二维码ID\"]\n    BE --> RS[\"在 Redis 中保存二维码状态（初始）\"]\n    RS --> ID[\"返回二维码ID给前端\"]\n    ID --> IMG[\"前端或后端根据ID生成二维码图片\"]\n    IMG --> DISP[\"前端展示二维码\"]\n    DISP --> POLL[\"PC 端开启轮询查询二维码状态\"]\n```\n\n- 二维码ID生成与状态保存对应 **[BV1hrjR6DEao P1 01:03‑01:21]**  \n- 二维码图片生成方式对应 **[BV1hrjR6DEao P1 01:29‑01:31]**  \n- PC 端轮询请求对应 **[BV1hrjR6DEao P1 01:59‑02:02]**  \n\n## 扫码确认登录细节\n```mermaid\nflowchart TD\n    MOBILE[\"手机端已登录\"] --> SCAN[\"扫码，携带用户Token 与 二维码ID\"]\n    SCAN --> BEV[\"后端校验手机Token\"]\n    BEV --> STATE[\"状态变更为‘已扫描’\"]\n    STATE --> TEMP[\"后端生成临时Token并关联二维码ID\"]\n    TEMP --> RETURN[\"临时Token返回给手机端\"]\n```\n\n- 手机扫码携带信息对应 **[BV1hrjR6DEao P1 02:40‑02:46]**  \n- 后端校验Token对应 **[BV1hrjR6DEao P1 02:50‑02:53]**  \n- 二维码状态变更与临时Token生成对应 **[BV1hrjR6DEao P1 03:01‑03:15]**  \n\n## 登录完成与 PC 端获取 Token\n```mermaid\nflowchart TD\n    CONFIRM[\"手机端点击确认登录\"] --> TMP[\"携带临时Token请求后端\"]\n    TMP --> VALID[\"后端根据临时Token获取二维码ID\"]\n    VALID --> UPDATE[\"变更二维码状态为‘已使用’\"]\n    UPDATE --> PCTOKEN[\"生成 PC 端Token 并保存用户信息至 Redis\"]\n    PCTOKEN --> CLEAN[\"删除临时Token\"]\n    CLEAN --> POLL2[\"PC 端轮询检测状态为‘已使用’\"]\n    POLL2 --> SEND[\"后端返回 PC Token 给 PC 端\"]\n    SEND --> DONE[\"PC 端完成登录，可使用业务功能\"]\n```\n\n- 手机确认并发送临时Token对应 **[BV1hrjR6DEao P1 03:41‑03:55]**  \n- 状态变更为已使用并生成 PC Token对应 **[BV1hrjR6DEao P1 04:00‑04:07]**  \n- PC 端轮询获取已使用状态并得到 PC Token对应 **[BV1hrjR6DEao P1 04:15‑04:22]**  ",
+      "diagrams": [
+        {
+          "title": "整体流程概览",
+          "code": "flowchart LR\n    A1[\"PC 请求生成二维码\"] --> A2[\"后端生成唯一二维码ID\"]\n    A2 --> A3[\"状态保存至 Redis\"]\n    A3 --> A4[\"前端/后端生成二维码图片\"]\n    A4 --> B1[\"手机端已登录\"]\n    B1 --> B2[\"手机扫码携带用户Token + 二维码ID\"]\n    B2 --> C1[\"后端校验Token并生成临时Token\"]\n    C1 --> D1[\"手机确认登录\"]\n    D1 --> E1[\"后端生成 PC 端Token 并标记二维码已使用\"]\n    E1 --> F1[\"PC 端轮询获取状态并获得 PC Token\"]\n    F1 --> G1[\"PC 端完成登录，使用业务功能\"]"
+        },
+        {
+          "title": "生成二维码细节",
+          "code": "flowchart TD\n    PC[\"PC 端请求登录页\"] --> BE[\"后端生成全局唯一二维码ID\"]\n    BE --> RS[\"在 Redis 中保存二维码状态（初始）\"]\n    RS --> ID[\"返回二维码ID给前端\"]\n    ID --> IMG[\"前端或后端根据ID生成二维码图片\"]\n    IMG --> DISP[\"前端展示二维码\"]\n    DISP --> POLL[\"PC 端开启轮询查询二维码状态\"]"
+        },
+        {
+          "title": "扫码确认登录细节",
+          "code": "flowchart TD\n    MOBILE[\"手机端已登录\"] --> SCAN[\"扫码，携带用户Token 与 二维码ID\"]\n    SCAN --> BEV[\"后端校验手机Token\"]\n    BEV --> STATE[\"状态变更为‘已扫描’\"]\n    STATE --> TEMP[\"后端生成临时Token并关联二维码ID\"]\n    TEMP --> RETURN[\"临时Token返回给手机端\"]"
+        },
+        {
+          "title": "登录完成与 PC 端获取 Token",
+          "code": "flowchart TD\n    CONFIRM[\"手机端点击确认登录\"] --> TMP[\"携带临时Token请求后端\"]\n    TMP --> VALID[\"后端根据临时Token获取二维码ID\"]\n    VALID --> UPDATE[\"变更二维码状态为‘已使用’\"]\n    UPDATE --> PCTOKEN[\"生成 PC 端Token 并保存用户信息至 Redis\"]\n    PCTOKEN --> CLEAN[\"删除临时Token\"]\n    CLEAN --> POLL2[\"PC 端轮询检测状态为‘已使用’\"]\n    POLL2 --> SEND[\"后端返回 PC Token 给 PC 端\"]\n    SEND --> DONE[\"PC 端完成登录，可使用业务功能\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T02:03:06+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 扫码登录实现原理图谱\n\n## 整体流程概览\n```mermaid\nflowchart LR\n    A1[\"PC 请求生成二维码\"] --> A2[\"后端生成唯一二维码ID\"]\n    A2 --> A3[\"状态保存至 Redis\"]\n    A3 --> A4[\"前端/后端生成二维码图片\"]\n    A4 --> B1[\"手机端已登录\"]\n    B1 --> B2[\"手机扫码携带用户Token + 二维码ID\"]\n    B2 --> C1[\"后端校验Token并生成临时Token\"]\n    C1 --> D1[\"手机确认登录\"]\n    D1 --> E1[\"后端生成 PC 端Token 并标记二维码已使用\"]\n    E1 --> F1[\"PC 端轮询获取状态并获得 PC Token\"]\n    F1 --> G1[\"PC 端完成登录，使用业务功能\"]\n```\n\n- 生成二维码ID、保存状态、生成图片等步骤对应 **[BV1hrjR6DEao P1 01:03‑01:31]**  \n- 手机端扫码并携带信息对应 **[BV1hrjR6DEao P1 02:35‑02:46]**  \n- 后端校验并生成临时Token对应 **[BV1hrjR6DEao P1 02:50‑03:15]**  \n- 手机确认登录并完成流程对应 **[BV1hrjR6DEao P1 03:41‑04:07]**  \n\n## 生成二维码细节\n```mermaid\nflowchart TD\n    PC[\"PC 端请求登录页\"] --> BE[\"后端生成全局唯一二维码ID\"]\n    BE --> RS[\"在 Redis 中保存二维码状态（初始）\"]\n    RS --> ID[\"返回二维码ID给前端\"]\n    ID --> IMG[\"前端或后端根据ID生成二维码图片\"]\n    IMG --> DISP[\"前端展示二维码\"]\n    DISP --> POLL[\"PC 端开启轮询查询二维码状态\"]\n```\n\n- 二维码ID生成与状态保存对应 **[BV1hrjR6DEao P1 01:03‑01:21]**  \n- 二维码图片生成方式对应 **[BV1hrjR6DEao P1 01:29‑01:31]**  \n- PC 端轮询请求对应 **[BV1hrjR6DEao P1 01:59‑02:02]**  \n\n## 扫码确认登录细节\n```mermaid\nflowchart TD\n    MOBILE[\"手机端已登录\"] --> SCAN[\"扫码，携带用户Token 与 二维码ID\"]\n    SCAN --> BEV[\"后端校验手机Token\"]\n    BEV --> STATE[\"状态变更为‘已扫描’\"]\n    STATE --> TEMP[\"后端生成临时Token并关联二维码ID\"]\n    TEMP --> RETURN[\"临时Token返回给手机端\"]\n```\n\n- 手机扫码携带信息对应 **[BV1hrjR6DEao P1 02:40‑02:46]**  \n- 后端校验Token对应 **[BV1hrjR6DEao P1 02:50‑02:53]**  \n- 二维码状态变更与临时Token生成对应 **[BV1hrjR6DEao P1 03:01‑03:15]**  \n\n## 登录完成与 PC 端获取 Token\n```mermaid\nflowchart TD\n    CONFIRM[\"手机端点击确认登录\"] --> TMP[\"携带临时Token请求后端\"]\n    TMP --> VALID[\"后端根据临时Token获取二维码ID\"]\n    VALID --> UPDATE[\"变更二维码状态为‘已使用’\"]\n    UPDATE --> PCTOKEN[\"生成 PC 端Token 并保存用户信息至 Redis\"]\n    PCTOKEN --> CLEAN[\"删除临时Token\"]\n    CLEAN --> POLL2[\"PC 端轮询检测状态为‘已使用’\"]\n    POLL2 --> SEND[\"后端返回 PC Token 给 PC 端\"]\n    SEND --> DONE[\"PC 端完成登录，可使用业务功能\"]\n```\n\n- 手机确认并发送临时Token对应 **[BV1hrjR6DEao P1 03:41‑03:55]**  \n- 状态变更为已使用并生成 PC Token对应 **[BV1hrjR6DEao P1 04:00‑04:07]**  \n- PC 端轮询获取已使用状态并得到 PC Token对应 **[BV1hrjR6DEao P1 04:15‑04:22]**  ",
+  "diagrams": [
+    {
+      "title": "整体流程概览",
+      "code": "flowchart LR\n    A1[\"PC 请求生成二维码\"] --> A2[\"后端生成唯一二维码ID\"]\n    A2 --> A3[\"状态保存至 Redis\"]\n    A3 --> A4[\"前端/后端生成二维码图片\"]\n    A4 --> B1[\"手机端已登录\"]\n    B1 --> B2[\"手机扫码携带用户Token + 二维码ID\"]\n    B2 --> C1[\"后端校验Token并生成临时Token\"]\n    C1 --> D1[\"手机确认登录\"]\n    D1 --> E1[\"后端生成 PC 端Token 并标记二维码已使用\"]\n    E1 --> F1[\"PC 端轮询获取状态并获得 PC Token\"]\n    F1 --> G1[\"PC 端完成登录，使用业务功能\"]"
+    },
+    {
+      "title": "生成二维码细节",
+      "code": "flowchart TD\n    PC[\"PC 端请求登录页\"] --> BE[\"后端生成全局唯一二维码ID\"]\n    BE --> RS[\"在 Redis 中保存二维码状态（初始）\"]\n    RS --> ID[\"返回二维码ID给前端\"]\n    ID --> IMG[\"前端或后端根据ID生成二维码图片\"]\n    IMG --> DISP[\"前端展示二维码\"]\n    DISP --> POLL[\"PC 端开启轮询查询二维码状态\"]"
+    },
+    {
+      "title": "扫码确认登录细节",
+      "code": "flowchart TD\n    MOBILE[\"手机端已登录\"] --> SCAN[\"扫码，携带用户Token 与 二维码ID\"]\n    SCAN --> BEV[\"后端校验手机Token\"]\n    BEV --> STATE[\"状态变更为‘已扫描’\"]\n    STATE --> TEMP[\"后端生成临时Token并关联二维码ID\"]\n    TEMP --> RETURN[\"临时Token返回给手机端\"]"
+    },
+    {
+      "title": "登录完成与 PC 端获取 Token",
+      "code": "flowchart TD\n    CONFIRM[\"手机端点击确认登录\"] --> TMP[\"携带临时Token请求后端\"]\n    TMP --> VALID[\"后端根据临时Token获取二维码ID\"]\n    VALID --> UPDATE[\"变更二维码状态为‘已使用’\"]\n    UPDATE --> PCTOKEN[\"生成 PC 端Token 并保存用户信息至 Redis\"]\n    PCTOKEN --> CLEAN[\"删除临时Token\"]\n    CLEAN --> POLL2[\"PC 端轮询检测状态为‘已使用’\"]\n    POLL2 --> SEND[\"后端返回 PC Token 给 PC 端\"]\n    SEND --> DONE[\"PC 端完成登录，可使用业务功能\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T02:03:06+00:00"
+}

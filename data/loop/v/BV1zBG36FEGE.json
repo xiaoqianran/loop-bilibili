@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1zBG36FEGE",
+  "title": "deepseekV4flash glm5.2 gpt我的世界大比拼",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1137,
+  "text": "这gm m5.2的生成的\n看一下\n太阳了\n又帅又成功滑\n没有没有让它直接生成滑冰\n但是这个打不了右键\n防止方式是可以的\n额平安就行\n然后生成的纹理也对\n怎么有动画就一打就碎\n我整个操作也还可以\n地图这边有雾蒙蒙的感觉\n哎有晚上\n可以整个地图也是有往前走的\n然后晚上天上有星空\n好这是gm5.2的6月\n然后我们看一下\n继续我们看看GBT的这使用GBT5.65做的\n它叫芳华原野\n竟然是这样\n是飞的呢\n嘶左键破坏\n右键放置F切换飞行\n这天有点蓝\n然后也有个太阳\n不喜欢漂亮\n但是这个的纹理\n明显的没有5.2的好\n但是操作没问题\n他的操作是这样\n我们活跃这些都是问题\n打掉这一打也能打碎\n也是没有动画所应该也还好\n也没想着加入\n这个是东路\n有问题\n也有太阳\n那整个的地图地图应该也可以往外扩\n地地图也会生成\n然后也有夜晚有光影效果\n这个夜晚的星星有没有\n这应该就是整个的夜晚了一个太阳\n然后也有一些星星\n就是他不如那个黑的明星\n然后这个是GBT的\n然后我们看\nDeep sic\n这是用deep sc生成的\n这个sap就是嗯整个的过程哎\n有点像空心的生成的\n这块也有花哎\n这花能打掉哎\n蹦一下可以\n但是好像下不来哦\n能下来\nF是切换啊\n飞行FF是切换飞行一样的\n但这个花插槽都能打掉\n然后也能补好\n但是他的模型可能有点问题\n这玩的都是空心的\n这上面都是空的\n应该修一下也可以\n但是也都是用的同样的提示词用于修\n然后花也能打掉\n然后远方来说也有这种雾蒙蒙的感觉\n也是都没有动画\n直接一打就碎\n然后地图也可以对外扩展\n就是这个建模像穿模的感觉\n这个部分有点问题\n看看他有没有夜晚上面也有个太阳要落山了\n也是有夜晚的\n就这样我再玩一会\n这个可玩性会差一点\n这明显的就是他这块的模型建建立的不太好\n少了一块东西\n一个夜晚\n这太阳下去了\n这个月亮起来了\n先生先生\n这个没有星星\n就是一个夜空\nFPS与FUS坐标\n大概就这样\n然后整体感觉来讲的话\n我觉得最好的可能最做的比较好的一点\n就是这个gm5.2\n这个可能还是在现在来讲\n就是在HDM2里边\n以现在这个test来说\n它是最好最完成度最高的一个呃\n只不过它确实有一个差的点\n就是这块儿这个草它打不碎啊\n整个的不仅跟deep sc\n跟那个演示的我的世界可能也基本是一致的\n然后第二个可能我会选择这个这个GBT的\n虽然GBT的也不太好\n如果这个deep sc的\n它是做的这块\n整个都是合起来的\n比如说模型没什么问题\n这个的肯定是最好的一个\n因为GBT它的花草都没有生成这些东西\n然后deep sk它就是生成了\n虽然提示词里边给的是额随意\n但他这个确实生成了\n只不只\n不过他的唯一的败笔就是这个模型的这部分\n整个的完成度也是差不多行\n大概就是这样",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zBG36FEGE",
+  "published_at": "1785567796",
+  "fetched_at": "2026-08-08T04:15:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 深度学习生成的《我的世界》地图对比图谱\n\n## 总览：生成模型与特征对应关系\n```mermaid\nflowchart TD\n    GM5_2[\"gm5.2\"]\n    GBT[\"GBT\"]\n    DeepSC[\"DeepSC\"]\n\n    Sun[\"太阳\"]\n    Night[\"夜晚\"]\n    Stars[\"星星\"]\n    Textures[\"纹理质量\"]\n    Animation[\"动画效果\"]\n    Breakable[\"可破坏方块\"]\n    Expand[\"地图可扩展\"]\n    ModelQuality[\"模型完整度\"]\n\n    GM5_2 -->|有| Sun\n    GM5_2 -->|有| Night\n    GM5_2 -->|有| Stars\n    GM5_2 -->|高| Textures\n    GM5_2 -->|缺失| Animation\n    GM5_2 -->|缺失| Breakable\n    GM5_2 -->|有| Expand\n    GM5_2 -->|高| ModelQuality\n\n    GBT -->|有| Sun\n    GBT -->|有| Night\n    GBT -->|少| Stars\n    GBT -->|中| Textures\n    GBT -->|缺失| Animation\n    GBT -->|有| Breakable\n    GBT -->|有| Expand\n    GBT -->|中| ModelQuality\n\n    DeepSC -->|有| Sun\n    DeepSC -->|有| Night\n    DeepSC -->|有| Stars\n    DeepSC -->|中| Textures\n    DeepSC -->|缺失| Animation\n    DeepSC -->|有| Breakable\n    DeepSC -->|有| Expand\n    DeepSC -->|中| ModelQuality\n```\n\n## 优缺点对照\n```mermaid\nflowchart TD\n    GM5_2[\"gm5.2\"]\n    GBT[\"GBT\"]\n    DeepSC[\"DeepSC\"]\n\n    GoodTex[\"纹理好\"]\n    GoodComp[\"完成度高\"]\n    GoodSun[\"太阳表现佳\"]\n    NoBreakGrass[\"草方块不可破\"]\n    NoAnim[\"无动画\"]\n    ModelIssue[\"模型局部缺陷\"]\n\n    GM5_2 --> GoodTex\n    GM5_2 --> GoodComp\n    GM5_2 --> GoodSun\n    GM5_2 --> NoBreakGrass\n    GM5_2 --> NoAnim\n    GM5_2 --> ModelIssue\n\n    GBT --> GoodComp\n    GBT --> GoodSun\n    GBT --> NoAnim\n    GBT --> NoBreakGrass\n    GBT --> ModelIssue\n\n    DeepSC --> GoodComp\n    DeepSC --> NoAnim\n    DeepSC --> ModelIssue\n```\n\n## 生成流程与关键环节\n```mermaid\nflowchart TD\n    Prompt[\"提示词 (Prompt)\"]\n    ModelSelect[\"模型选择\"]\n    Generation[\"世界生成\"]\n    TextureAdj[\"纹理调整\"]\n    AnimCheck[\"动画检查\"]\n    ExpandOpt[\"扩展地图选项\"]\n    PostProcess[\"后处理\"]\n    Result[\"生成的地图 (Result)\"]\n\n    Prompt --> ModelSelect\n    ModelSelect --> Generation\n    Generation --> TextureAdj\n    TextureAdj --> AnimCheck\n    AnimCheck --> ExpandOpt\n    ExpandOpt --> PostProcess\n    PostProcess --> Result\n```",
+      "diagrams": [
+        {
+          "title": "总览：生成模型与特征对应关系",
+          "code": "flowchart TD\n    GM5_2[\"gm5.2\"]\n    GBT[\"GBT\"]\n    DeepSC[\"DeepSC\"]\n\n    Sun[\"太阳\"]\n    Night[\"夜晚\"]\n    Stars[\"星星\"]\n    Textures[\"纹理质量\"]\n    Animation[\"动画效果\"]\n    Breakable[\"可破坏方块\"]\n    Expand[\"地图可扩展\"]\n    ModelQuality[\"模型完整度\"]\n\n    GM5_2 -->|有| Sun\n    GM5_2 -->|有| Night\n    GM5_2 -->|有| Stars\n    GM5_2 -->|高| Textures\n    GM5_2 -->|缺失| Animation\n    GM5_2 -->|缺失| Breakable\n    GM5_2 -->|有| Expand\n    GM5_2 -->|高| ModelQuality\n\n    GBT -->|有| Sun\n    GBT -->|有| Night\n    GBT -->|少| Stars\n    GBT -->|中| Textures\n    GBT -->|缺失| Animation\n    GBT -->|有| Breakable\n    GBT -->|有| Expand\n    GBT -->|中| ModelQuality\n\n    DeepSC -->|有| Sun\n    DeepSC -->|有| Night\n    DeepSC -->|有| Stars\n    DeepSC -->|中| Textures\n    DeepSC -->|缺失| Animation\n    DeepSC -->|有| Breakable\n    DeepSC -->|有| Expand\n    DeepSC -->|中| ModelQuality"
+        },
+        {
+          "title": "优缺点对照",
+          "code": "flowchart TD\n    GM5_2[\"gm5.2\"]\n    GBT[\"GBT\"]\n    DeepSC[\"DeepSC\"]\n\n    GoodTex[\"纹理好\"]\n    GoodComp[\"完成度高\"]\n    GoodSun[\"太阳表现佳\"]\n    NoBreakGrass[\"草方块不可破\"]\n    NoAnim[\"无动画\"]\n    ModelIssue[\"模型局部缺陷\"]\n\n    GM5_2 --> GoodTex\n    GM5_2 --> GoodComp\n    GM5_2 --> GoodSun\n    GM5_2 --> NoBreakGrass\n    GM5_2 --> NoAnim\n    GM5_2 --> ModelIssue\n\n    GBT --> GoodComp\n    GBT --> GoodSun\n    GBT --> NoAnim\n    GBT --> NoBreakGrass\n    GBT --> ModelIssue\n\n    DeepSC --> GoodComp\n    DeepSC --> NoAnim\n    DeepSC --> ModelIssue"
+        },
+        {
+          "title": "生成流程与关键环节",
+          "code": "flowchart TD\n    Prompt[\"提示词 (Prompt)\"]\n    ModelSelect[\"模型选择\"]\n    Generation[\"世界生成\"]\n    TextureAdj[\"纹理调整\"]\n    AnimCheck[\"动画检查\"]\n    ExpandOpt[\"扩展地图选项\"]\n    PostProcess[\"后处理\"]\n    Result[\"生成的地图 (Result)\"]\n\n    Prompt --> ModelSelect\n    ModelSelect --> Generation\n    Generation --> TextureAdj\n    TextureAdj --> AnimCheck\n    AnimCheck --> ExpandOpt\n    ExpandOpt --> PostProcess\n    PostProcess --> Result"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-08T04:15:30+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 深度学习生成的《我的世界》地图对比图谱\n\n## 总览：生成模型与特征对应关系\n```mermaid\nflowchart TD\n    GM5_2[\"gm5.2\"]\n    GBT[\"GBT\"]\n    DeepSC[\"DeepSC\"]\n\n    Sun[\"太阳\"]\n    Night[\"夜晚\"]\n    Stars[\"星星\"]\n    Textures[\"纹理质量\"]\n    Animation[\"动画效果\"]\n    Breakable[\"可破坏方块\"]\n    Expand[\"地图可扩展\"]\n    ModelQuality[\"模型完整度\"]\n\n    GM5_2 -->|有| Sun\n    GM5_2 -->|有| Night\n    GM5_2 -->|有| Stars\n    GM5_2 -->|高| Textures\n    GM5_2 -->|缺失| Animation\n    GM5_2 -->|缺失| Breakable\n    GM5_2 -->|有| Expand\n    GM5_2 -->|高| ModelQuality\n\n    GBT -->|有| Sun\n    GBT -->|有| Night\n    GBT -->|少| Stars\n    GBT -->|中| Textures\n    GBT -->|缺失| Animation\n    GBT -->|有| Breakable\n    GBT -->|有| Expand\n    GBT -->|中| ModelQuality\n\n    DeepSC -->|有| Sun\n    DeepSC -->|有| Night\n    DeepSC -->|有| Stars\n    DeepSC -->|中| Textures\n    DeepSC -->|缺失| Animation\n    DeepSC -->|有| Breakable\n    DeepSC -->|有| Expand\n    DeepSC -->|中| ModelQuality\n```\n\n## 优缺点对照\n```mermaid\nflowchart TD\n    GM5_2[\"gm5.2\"]\n    GBT[\"GBT\"]\n    DeepSC[\"DeepSC\"]\n\n    GoodTex[\"纹理好\"]\n    GoodComp[\"完成度高\"]\n    GoodSun[\"太阳表现佳\"]\n    NoBreakGrass[\"草方块不可破\"]\n    NoAnim[\"无动画\"]\n    ModelIssue[\"模型局部缺陷\"]\n\n    GM5_2 --> GoodTex\n    GM5_2 --> GoodComp\n    GM5_2 --> GoodSun\n    GM5_2 --> NoBreakGrass\n    GM5_2 --> NoAnim\n    GM5_2 --> ModelIssue\n\n    GBT --> GoodComp\n    GBT --> GoodSun\n    GBT --> NoAnim\n    GBT --> NoBreakGrass\n    GBT --> ModelIssue\n\n    DeepSC --> GoodComp\n    DeepSC --> NoAnim\n    DeepSC --> ModelIssue\n```\n\n## 生成流程与关键环节\n```mermaid\nflowchart TD\n    Prompt[\"提示词 (Prompt)\"]\n    ModelSelect[\"模型选择\"]\n    Generation[\"世界生成\"]\n    TextureAdj[\"纹理调整\"]\n    AnimCheck[\"动画检查\"]\n    ExpandOpt[\"扩展地图选项\"]\n    PostProcess[\"后处理\"]\n    Result[\"生成的地图 (Result)\"]\n\n    Prompt --> ModelSelect\n    ModelSelect --> Generation\n    Generation --> TextureAdj\n    TextureAdj --> AnimCheck\n    AnimCheck --> ExpandOpt\n    ExpandOpt --> PostProcess\n    PostProcess --> Result\n```",
+  "diagrams": [
+    {
+      "title": "总览：生成模型与特征对应关系",
+      "code": "flowchart TD\n    GM5_2[\"gm5.2\"]\n    GBT[\"GBT\"]\n    DeepSC[\"DeepSC\"]\n\n    Sun[\"太阳\"]\n    Night[\"夜晚\"]\n    Stars[\"星星\"]\n    Textures[\"纹理质量\"]\n    Animation[\"动画效果\"]\n    Breakable[\"可破坏方块\"]\n    Expand[\"地图可扩展\"]\n    ModelQuality[\"模型完整度\"]\n\n    GM5_2 -->|有| Sun\n    GM5_2 -->|有| Night\n    GM5_2 -->|有| Stars\n    GM5_2 -->|高| Textures\n    GM5_2 -->|缺失| Animation\n    GM5_2 -->|缺失| Breakable\n    GM5_2 -->|有| Expand\n    GM5_2 -->|高| ModelQuality\n\n    GBT -->|有| Sun\n    GBT -->|有| Night\n    GBT -->|少| Stars\n    GBT -->|中| Textures\n    GBT -->|缺失| Animation\n    GBT -->|有| Breakable\n    GBT -->|有| Expand\n    GBT -->|中| ModelQuality\n\n    DeepSC -->|有| Sun\n    DeepSC -->|有| Night\n    DeepSC -->|有| Stars\n    DeepSC -->|中| Textures\n    DeepSC -->|缺失| Animation\n    DeepSC -->|有| Breakable\n    DeepSC -->|有| Expand\n    DeepSC -->|中| ModelQuality"
+    },
+    {
+      "title": "优缺点对照",
+      "code": "flowchart TD\n    GM5_2[\"gm5.2\"]\n    GBT[\"GBT\"]\n    DeepSC[\"DeepSC\"]\n\n    GoodTex[\"纹理好\"]\n    GoodComp[\"完成度高\"]\n    GoodSun[\"太阳表现佳\"]\n    NoBreakGrass[\"草方块不可破\"]\n    NoAnim[\"无动画\"]\n    ModelIssue[\"模型局部缺陷\"]\n\n    GM5_2 --> GoodTex\n    GM5_2 --> GoodComp\n    GM5_2 --> GoodSun\n    GM5_2 --> NoBreakGrass\n    GM5_2 --> NoAnim\n    GM5_2 --> ModelIssue\n\n    GBT --> GoodComp\n    GBT --> GoodSun\n    GBT --> NoAnim\n    GBT --> NoBreakGrass\n    GBT --> ModelIssue\n\n    DeepSC --> GoodComp\n    DeepSC --> NoAnim\n    DeepSC --> ModelIssue"
+    },
+    {
+      "title": "生成流程与关键环节",
+      "code": "flowchart TD\n    Prompt[\"提示词 (Prompt)\"]\n    ModelSelect[\"模型选择\"]\n    Generation[\"世界生成\"]\n    TextureAdj[\"纹理调整\"]\n    AnimCheck[\"动画检查\"]\n    ExpandOpt[\"扩展地图选项\"]\n    PostProcess[\"后处理\"]\n    Result[\"生成的地图 (Result)\"]\n\n    Prompt --> ModelSelect\n    ModelSelect --> Generation\n    Generation --> TextureAdj\n    TextureAdj --> AnimCheck\n    AnimCheck --> ExpandOpt\n    ExpandOpt --> PostProcess\n    PostProcess --> Result"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T04:15:30+00:00"
+}

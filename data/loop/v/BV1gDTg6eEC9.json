@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1gDTg6eEC9",
+  "title": "免费使用 DeepSeek V4 Flash 模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 978,
+  "text": "大家好\n我是牧尘\n欢迎来到我的频道\n好东西我只用最便宜的\n今天给大家分享一个免费使用deep sick v\n4flash模型的方法\n并且通过eo bird\n让我们的agent成功调用deep sick去干活\n本期视频相关网址都会放在视频下方\n那么废话不多说\n直接开始\n先打开商汤科技日日新的官网\n点击token plan\n可以看到目前正在免费公测阶段\n他们自由的两个模型\n每五小时支持1500次调用\nDeep sick with4 flash\n每五小时500次调用\n而且支持hermes agent和open cloud接入\n也就是爱马仕和小龙虾都可以通过API key\n调用他们提供的模型\n怎么在codex或者cloud上用\n后面会讲\n接下来点控制台注册一个账号\n登录进去\n可以看到直接显示了你的账户\n这是我刚注册的三个模型\n可以免费试用\n然后我们新增一个API key\n点击新增拿到API key复制保存好\n待会用\n下面给大家介绍一下echo bird\n简单说它是一个网关工具\n装在你电脑上之后\n所有A证都可以通过它连到各种大模型的API\n去GITHUB搜索EDISON7609\nEcho bird\n找到这个开源项目\n打开release页面\n根据你的系统下载对应版本\n好说回操作\n打开之后左边有个导航栏\n这期主要用到两个模型中心和应用管理\n先点模型中心点添加模型名称\n写日日新OpenAI地址书\nHT p s slash token到SENSNOVA到CN\n斜杠V1模型\n选deep seek v4flash API密钥填刚才注册的key配置\n晚点保存\ncloud桌面端用斜杠ANTHROPIC点应用管理\n我用的是HERMES桌面端\ncloud或codex的话\n直接选对应的启动就行\n启动之后网关就绪\n模型里也能看到日日新的免费模型了\n目前hermes codex\ncloud code这三个agent用下来\n我感觉还是HERMES更顺手一点\n他的skill系统有个特点\n你日常跟他对话\n让他干活的过程中\n技能会自动升级\n自动保存黑科贝尔的这个工具也非常推荐\n配置很简单\n在A证上用国内模型或者中转站都方便\n大家可以去试试\n本期的视频内容就到这儿\n如果对你有帮助\n麻烦点赞收藏加关注\n有错误的话\n可以在评论区指正\n好东西\n我只用最便宜的\n我们下期视频见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1gDTg6eEC9",
+  "published_at": "1782647395",
+  "fetched_at": "2026-08-07T22:43:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-07T22:44:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-07T22:44:00+00:00"
+}

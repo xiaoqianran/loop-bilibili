@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1MRME6oEhx",
+  "title": "[104]. kimi的注意力残差：论文精读【每天一个宝藏论文】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3377,
+  "text": "今天我们来介绍一篇关于大语言模型\n残差连接改进的工作\n标题叫做attention residuals\n简称attention Rest\n现代大语言模型普遍使用带PRENORM的残差连接\n每一层都把上一层输出和当前层变换结果\n做等权相加\n这种固定权重的累加方式会随着模型深度增加\n导致隐藏状态幅度不断膨胀\n同时削弱浅层信息的贡献\n艾特Rest的核心思路是\n把这种固定累加替换成\n沿深度方向的注意力机制\n让每一层都能根据当前输入\n选择性地聚合之前所有层的输出\n为了解决全连接\n注意力在大规模训练中的显存和通信开销\n论文又提出了block arton race\n把相邻层分组为块\n只在快级别上做注意力\n从而把开销从与层数成正比降到与快数成正比\n实验表明\n这一改进在缩放定律和下游任务上都稳定\n优于标准残差连接\n下面看一下摘要\n翻译残差连接与PRENORM\n是现代大语言模型的标准组件\n但它们以固定单位权重累加所有层的输出\n这种均匀聚合会导致隐藏状态\n随深度无节制增长\n并逐渐稀释每一层的贡献\n论文提出了attention residues\n简称attention race\n他用对前面各层输出的soft max\n注意力替代固定累加\n使每一层能够以学到的与输入相关的权重\n选择性的聚合\n早期表示\n为了解决在大规模模型训练中\n对所有前面层输出做注意力的显存和通信开销\n论文引入了block arton dress\n它将层划分为若干块\n并在会计表示上做注意力\n从而在保留全连接ITUNRISE大部分收益的同时\n降低显存占用\n结合基于缓存的流水线通信和两阶段计算策略\nBlock atton race\n成为标准残差连接的实用即插即用替代方案\n开销很小\n缩放定律实验证实\n这一改进在不同模型尺寸下\n一致成立消融实验\n验证了内容相关的深度选择机制的收益\n论文进一步将ATTENRISE集成到kimi linear架构中\n总参数量480亿\n激活参数30亿\n并在1.4t token上进行预训练\n结果显示\natton race缓解了PRENORM稀释问题\n使输出幅度和梯度分布更加均匀\n并在所有评估的下游任务上都取得了提升\n下面看一下这张图\n这张图对比了三种残差连接方式\n左边是标准残差\n每一层都把上一层输出和当前层\n结果做等权相加\n所有层的贡献权重都是一\n中间是全连接\nAttention residuals\n也就是full autuarise\n每一层在接收输入时会用学到的注意力权重\n对之前所有层的输出做加权聚合\n权重由当前层的伪查询向量\n和各层输出的键向量计算得到\n右边是会计attention recedu\n也就是block atterrace\n它把相邻的注意力层和MLP层先聚合成块\n每个块内部用标准残差累加\n快与快之间再用注意力聚合\n这样每个位置需要关注的历史表示数量\n就从层数级别降到了快数级别\n下面看一下这个公式\n这个公式是attention residuals的核心定义\nDL层的隐藏状态\n等于对之前所有层输出的加权和权重\n是soft max归一化后的注意力权重\n这里的求和项从零到L1\n其中第零项对应token嵌入\n其余项对应前面各层变换后的输出\n与传统残差连接中所有权重固定为一不同\n这里的每个权重都是由输入决定的\n这个公式把固定累加变成了可学习的内容\n相关的深度注意力聚合\n下面看一下这组公式\n他们描述了注意力权重具体怎么算\n第一个公式给出soft max注意力权重\n它等于当前层查询与某个原层键之间\n的核函数得分\n除以当前层查询与所有原层键之间得分的总和\n第二个公式定义了查询和键\n每一层有一个可学习的伪查询向量作为查询键\n和值相同\n当原位置为零时\n是token嵌入\n当原位置大于等于一时\n是相应层的变换输出\n第三个公式说明\n输入到当前层的就是所有值向量\n按注意力权重加权后的和\n另外核函数内部使用了r m s norm\n这样可以防止输出幅度较大的层\n在soft max中占据主导地位\n下面看一下这个公式\n这个公式是blocker aten rice的块内累加\n它将全部层划分为N个块\n每个块包含S等于总层数除以块数的层\n第N个块内所有层输出的和\n就是这个快的快表示通过这种方式\n原本需要对每一层单独做注意力表示的\n存储和通信\n现在被压缩成了对快表示进行操作\n从而把跨层注意力的存储和通信\n复杂度从与层数成正比降到与快速成正比\n下面看一下这段伪代码\n这段代码展示了block ten Rest的前向过程\n代码定义了两个主要函数\nblock attend Rest和forward block atrice\n负责在快表式上做注意力\n他把已完成的快表示\n和当前块的部分和堆叠起来作为值\n经过归一化后\n计算键\n再用可学习的伪查询权重计算log\n最后做soft max并加权求和得到输出\nforward函数则描述了单层的前向流程\n首先用block atlas得到当前层的输入\n然后经过自注意力和MLP\n并把MLP的输出累加到partial block中\n当到达快边界时\npartial block被追加到blocks列表中\n开启下一个快\n这段代码体现了block arton dress\n如何把快内残差累加和快间注意力结合在一起\n下面看一下这段伪代码\n这段算法描述了block atterrs的两阶段计算策略\n第一阶段是并行的快间注意力\n把当前块内所有层的伪查询堆成查询矩阵\n把所有已完成的块表示作为键和值一次性计算\n注意力得到每个层的中间输出以及soft max统计量\n包括最大值和对数求和指数\n第二阶段是顺序的\n快内注意力加在线soft max合并对块内每一层\n先用第一阶段的输出初始化\n再对当前块内不断演化的部分和做注意力\n最后通过在线soft max把两部分结果合并起来\n并更新部分和两阶段设计的好处是\n快间注意力可以一次性批量计算\n摊销了内存访问开销\n块内部分则保持顺序计算\n与标准残差连接的输入输出量级相近\n下面看一下这张图\n这张图展示了缩放定律实验的结果\n横轴是计算量单位是PFLOP每秒乘以天\n纵轴是验证损失\n图中三条曲线分别对应标准PRENE机械\nfor attern Rest和block attern Rest\n可以看到在相同计算量下\n两种atn rise的验证损失都低于极限\n而且三条曲线的斜率相近\n具体来看\n在约5.6p flops states的计算量下\nblock itterrace的验证损失为1.692\n而基线为1.714\n这相当于可以用约1.25倍的计算优势\n达到基线相同的损失水平\n同时full atterrace和block atterrace\n在大规模下的差距很小\n说明快化近似几乎保留了全连接版本的效果\n下面看一下这张图\n这张图对比了基线和block atterrs\n在训练过程中的动态\n左边是验证损失曲线\nblock atterri在训练全程都低于基线\n且差距在衰减阶段逐渐拉大\n中间是各transformer块\n在训练结束时的输出幅度\n基线呈现出随深度单调增长的趋势\n幅度在后期超过十\n这正是PRENORM稀释问题的表现\n而block atterrace的输出幅度\n被限制在一个较小的范围内\n呈现有界的周期性波动\n右边是梯度幅度\n基线在前几层的梯度幅度非常大\n随后迅速下降\nblock atterrace的梯度分布则更加均匀\n这说明注意力权重机制\n确实缓解了深层输出膨胀和梯度不均的问题\n下面看一下这张图\n这张图展示了学到的深度注意力权重分布\n四个子图分别对应\nfor atterrace在注意力之前\nfor atterrace在MLP之前\nblock at terrace在注意力之前\n和block atterrace在MLP之前\n每个子图的横轴是原位置\n纵轴是当前层\n可以观察到三个现象\n第一局部性仍然很强\n每个层最主要关注的还是紧邻的前一层\n表现为对角线颜色较深\n第2token嵌入在浅层保持较高的权重\n尤其是在注意力之前\n第三存在一些非对角线的集中区域\n说明网络学到了跨越多个层的跳连对比\nFUL和block两种版本\nblock atrs保留了FULATTERRICE的主要结构\n只是分布更加锐利和集中",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1MRME6oEhx",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:13:12+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1v9Kv6yEZh",
+  "title": "Kimi K3这次是真的把游戏开发的桌子掀翻了!",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1325,
+  "text": "你敢相信吗\n这是我用KIMI最新发布的K3模型\n用一行提示词制作出来的游戏demo\n是的\n你没有听错\n只有一行提示词\n跟着我一起做\n你也可以快速做出属于你的小游戏\nKIMI目前已经在网页端上线了\n他们最新的K3模型分为K3max和K3集群\nMax\nK3集群max可以调动更多的子agent\n功能更加的强大\n先让我们来欣赏一下\n大神们用K3web出的游戏作品\n好那我们转移到桌面端的KIMI\n开始我们的游戏制作吧\n我们还是得请出我们的老朋友GODOT游戏引擎\n之前我给大家展示过\n用codex加GODOT制作2D小游戏\n不过有很多缺陷需要我们不断的去调试优化\n但KIMI的新模型直接可以让我们一步到位\n免去那些繁琐的步骤\n我们可以先去i teach\n准备好合适的免费游戏素材\n我这里找到的是属于top down2D游戏的人物素材\n很多RPG游戏都采用这种画风\n可以看到它有多种动作可供我们使用\n效果也是非常的棒\n地图素材呢我也不是很挑\n只要是免费的\n符合我预期的画风就可以了\n可以看到它还附带了很多的小摆件\n供我们后期使用\n最后就是我们的小怪素材了\n我选择用比较经典的史莱姆作为小怪\n整体看下来\n所有的游戏素材就有点新露骨的味道了\n我会把它们每一个素材包全部都归类好\n分为enemy maps player这三个素材包\n我们可以先来查看一下人物素材的贴图有哪些\n效果究竟怎么样\n这里是人物动作的分类\n有攻击动作\n站立动作\n还有跑步动作\n攻击动作是一张完整的序列帧图\nKIMI到时候会自动识别\n且帮我们分类好这些动作内容\n接下来按部就班\n查看一下地图和小怪的素材就可以了\n这里我就不一一展示了\n接下来的操作方法也很简单\n打开KIMI的work模式\n在项目中打开现有的文件夹\n选择我们刚刚放置素材的文件夹即可\n最后将项目的权限调整为全部允许\n这样我们后续会少点很多的按钮\n模型调整为K3集群max\n这样制作前的所有准备工作\n我们就已经全部完成了\n开始的第一步\n我们要先把KIMI和高dot的MCP连接起来\n这样方便k me在GODOT中编写代码\n这里可以直接复制粘贴我的提示词K3模型\n把任务跑完后\n我们可以查看原有的文件夹中\n多出了一些部署的MCP文件\n这就代表KIMI已经成功连接到了高do\n那么接下来就开始我们的第二步\n把所有的游戏素材一股脑的全都丢给K3模型\n并且还能说明我们想要达到的游戏效果\n还有游戏设定等等等等\n任务已经跑完了\n我也只用了一句提示词\n可以看到K3集群调用了很多的子agent\n并且给了他们不同的任务分工\n每个人都负责处理自己的模块\n这样在并发处理任务的时候\n效率会更高\n最后让我们打开GODOT\n来检验一下最新的K3模型\n到底交给了我们一份怎样的答卷\n刚进入游戏\n整体的效果就已经惊艳到了我\n这基本符合我的预期水平\n人物角色的跑动\n站立时的呼吸动作\n还有地图资源等等等\n都被完美地加载了出来\n而且史莱姆小怪也会自动追踪主角\n主角也可以攻击小怪\n整体的血量设定也是比较符合常规的\n但是我们可不要忘了\n我们全程只用了一行的提示词\nK3模型\n就帮助我们做出了这样高质量的写游戏demo\nK3模型可以算得上\n是全球顶尖的开源模型之一了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1v9Kv6yEZh",
+  "published_at": "1784429381",
+  "fetched_at": "2026-08-06T19:23:12+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# KIMI K3模型游戏制作知识图谱\n\n## K3模型概览\n```mermaid\nflowchart TD\n    K3Model[\"K3模型\"]\n    K3max[\"K3max（单模型）\"]\n    K3ClusterMax[\"K3集群max（多子agent）\"]\n    Web[\"KIMI网页端\"]\n    Desktop[\"KIMI桌面端\"]\n    GODOT[\"GODOT游戏引擎\"]\n    Prompt[\"单行提示词\"]\n    Demo[\"生成游戏Demo\"]\n    Advantage[\"免除繁琐步骤\"]\n    Capability[\"更强功能/并发\"]\n\n    K3Model --> K3max\n    K3Model --> K3ClusterMax\n    K3Model --> Web\n    K3Model --> Desktop\n    Desktop --> GODOT\n    Prompt --> K3Model\n    K3Model --> Demo\n    K3Model --> Advantage\n    K3ClusterMax --> Capability\n```\n\n## 素材准备流程\n```mermaid\nflowchart TD\n    Assets[\"游戏素材准备\"]\n    TopDown2D[\"Top‑down 2D人物素材\"]\n    RPGStyle[\"RPG画风\"]\n    Actions[\"多动作（攻击/站立/跑步）\"]\n    Maps[\"地图素材\"]\n    Enemies[\"小怪素材（史莱姆）\"]\n    Extras[\"小摆件\"]\n    Free[\"免费且符合画风\"]\n    Categorize[\"分类为 enemy / maps / player\"]\n    enemy[\"enemy 包\"]\n    maps[\"maps 包\"]\n    player[\"player 包\"]\n    Review[\"查看贴图效果\"]\n\n    Assets --> TopDown2D\n    TopDown2D --> RPGStyle\n    TopDown2D --> Actions\n    Assets --> Maps\n    Assets --> Enemies\n    Enemies --> Extras\n    Assets --> Free\n    Free --> Categorize\n    Categorize --> enemy\n    Categorize --> maps\n    Categorize --> player\n    Review --> Actions\n```\n\n## KIMI工作模式操作步骤\n```mermaid\nflowchart TD\n    WorkMode[\"打开 KIMI work 模式\"]\n    OpenFolder[\"在项目中打开现有文件夹\"]\n    SelectFolder[\"选择放置素材的文件夹\"]\n    SetPermissions[\"项目权限设为全部允许\"]\n    ChooseModel[\"模型设为 K3集群max\"]\n    ConnectMCP[\"KIMI 与 GODOT MCP 连接\"]\n    RunTask[\"运行提示词任务\"]\n    GenerateMCPFiles[\"生成 MCP 文件\"]\n    VerifyConnection[\"确认 KIMI 已连接 GODOT\"]\n    LoadAssets[\"将所有素材丢给 K3模型\"]\n    SpecifyGoal[\"说明游戏效果/设定\"]\n    TaskComplete[\"任务完成\"]\n    ReviewResult[\"在 GODOT 中检验结果\"]\n\n    WorkMode --> OpenFolder --> SelectFolder --> SetPermissions --> ChooseModel --> ConnectMCP --> RunTask --> GenerateMCPFiles --> VerifyConnection --> LoadAssets --> SpecifyGoal --> TaskComplete --> ReviewResult\n```\n\n## K3模型并发与结果\n```mermaid\nflowchart TD\n    SinglePrompt[\"仅一行提示词\"]\n    Cluster[\"K3集群max 调用子 agents\"]\n    SubAgents[\"子 agents 分工\"]\n    Parallel[\"并发处理任务\"]\n    Efficiency[\"提升效率\"]\n    Output[\"生成游戏代码/资源\"]\n    DemoLoad[\"在 GODOT 加载\"]\n    CharacterAnim[\"角色跑动/站立呼吸\"]\n    MapLoad[\"地图资源加载\"]\n    EnemyAI[\"史莱姆自动追踪\"]\n    Combat[\"主角攻击小怪\"]\n    Quality[\"高质量 Demo\"]\n\n    SinglePrompt --> Cluster\n    Cluster --> SubAgents\n    SubAgents --> Parallel\n    Parallel --> Efficiency\n    Efficiency --> Output\n    Output --> DemoLoad\n    DemoLoad --> CharacterAnim\n    DemoLoad --> MapLoad\n    DemoLoad --> EnemyAI\n    EnemyAI --> Combat\n    Output --> Quality\n```",
+      "diagrams": [
+        {
+          "title": "K3模型概览",
+          "code": "flowchart TD\n    K3Model[\"K3模型\"]\n    K3max[\"K3max（单模型）\"]\n    K3ClusterMax[\"K3集群max（多子agent）\"]\n    Web[\"KIMI网页端\"]\n    Desktop[\"KIMI桌面端\"]\n    GODOT[\"GODOT游戏引擎\"]\n    Prompt[\"单行提示词\"]\n    Demo[\"生成游戏Demo\"]\n    Advantage[\"免除繁琐步骤\"]\n    Capability[\"更强功能/并发\"]\n\n    K3Model --> K3max\n    K3Model --> K3ClusterMax\n    K3Model --> Web\n    K3Model --> Desktop\n    Desktop --> GODOT\n    Prompt --> K3Model\n    K3Model --> Demo\n    K3Model --> Advantage\n    K3ClusterMax --> Capability"
+        },
+        {
+          "title": "素材准备流程",
+          "code": "flowchart TD\n    Assets[\"游戏素材准备\"]\n    TopDown2D[\"Top‑down 2D人物素材\"]\n    RPGStyle[\"RPG画风\"]\n    Actions[\"多动作（攻击/站立/跑步）\"]\n    Maps[\"地图素材\"]\n    Enemies[\"小怪素材（史莱姆）\"]\n    Extras[\"小摆件\"]\n    Free[\"免费且符合画风\"]\n    Categorize[\"分类为 enemy / maps / player\"]\n    enemy[\"enemy 包\"]\n    maps[\"maps 包\"]\n    player[\"player 包\"]\n    Review[\"查看贴图效果\"]\n\n    Assets --> TopDown2D\n    TopDown2D --> RPGStyle\n    TopDown2D --> Actions\n    Assets --> Maps\n    Assets --> Enemies\n    Enemies --> Extras\n    Assets --> Free\n    Free --> Categorize\n    Categorize --> enemy\n    Categorize --> maps\n    Categorize --> player\n    Review --> Actions"
+        },
+        {
+          "title": "KIMI工作模式操作步骤",
+          "code": "flowchart TD\n    WorkMode[\"打开 KIMI work 模式\"]\n    OpenFolder[\"在项目中打开现有文件夹\"]\n    SelectFolder[\"选择放置素材的文件夹\"]\n    SetPermissions[\"项目权限设为全部允许\"]\n    ChooseModel[\"模型设为 K3集群max\"]\n    ConnectMCP[\"KIMI 与 GODOT MCP 连接\"]\n    RunTask[\"运行提示词任务\"]\n    GenerateMCPFiles[\"生成 MCP 文件\"]\n    VerifyConnection[\"确认 KIMI 已连接 GODOT\"]\n    LoadAssets[\"将所有素材丢给 K3模型\"]\n    SpecifyGoal[\"说明游戏效果/设定\"]\n    TaskComplete[\"任务完成\"]\n    ReviewResult[\"在 GODOT 中检验结果\"]\n\n    WorkMode --> OpenFolder --> SelectFolder --> SetPermissions --> ChooseModel --> ConnectMCP --> RunTask --> GenerateMCPFiles --> VerifyConnection --> LoadAssets --> SpecifyGoal --> TaskComplete --> ReviewResult"
+        },
+        {
+          "title": "K3模型并发与结果",
+          "code": "flowchart TD\n    SinglePrompt[\"仅一行提示词\"]\n    Cluster[\"K3集群max 调用子 agents\"]\n    SubAgents[\"子 agents 分工\"]\n    Parallel[\"并发处理任务\"]\n    Efficiency[\"提升效率\"]\n    Output[\"生成游戏代码/资源\"]\n    DemoLoad[\"在 GODOT 加载\"]\n    CharacterAnim[\"角色跑动/站立呼吸\"]\n    MapLoad[\"地图资源加载\"]\n    EnemyAI[\"史莱姆自动追踪\"]\n    Combat[\"主角攻击小怪\"]\n    Quality[\"高质量 Demo\"]\n\n    SinglePrompt --> Cluster\n    Cluster --> SubAgents\n    SubAgents --> Parallel\n    Parallel --> Efficiency\n    Efficiency --> Output\n    Output --> DemoLoad\n    DemoLoad --> CharacterAnim\n    DemoLoad --> MapLoad\n    DemoLoad --> EnemyAI\n    EnemyAI --> Combat\n    Output --> Quality"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-06T19:23:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# KIMI K3模型游戏制作知识图谱\n\n## K3模型概览\n```mermaid\nflowchart TD\n    K3Model[\"K3模型\"]\n    K3max[\"K3max（单模型）\"]\n    K3ClusterMax[\"K3集群max（多子agent）\"]\n    Web[\"KIMI网页端\"]\n    Desktop[\"KIMI桌面端\"]\n    GODOT[\"GODOT游戏引擎\"]\n    Prompt[\"单行提示词\"]\n    Demo[\"生成游戏Demo\"]\n    Advantage[\"免除繁琐步骤\"]\n    Capability[\"更强功能/并发\"]\n\n    K3Model --> K3max\n    K3Model --> K3ClusterMax\n    K3Model --> Web\n    K3Model --> Desktop\n    Desktop --> GODOT\n    Prompt --> K3Model\n    K3Model --> Demo\n    K3Model --> Advantage\n    K3ClusterMax --> Capability\n```\n\n## 素材准备流程\n```mermaid\nflowchart TD\n    Assets[\"游戏素材准备\"]\n    TopDown2D[\"Top‑down 2D人物素材\"]\n    RPGStyle[\"RPG画风\"]\n    Actions[\"多动作（攻击/站立/跑步）\"]\n    Maps[\"地图素材\"]\n    Enemies[\"小怪素材（史莱姆）\"]\n    Extras[\"小摆件\"]\n    Free[\"免费且符合画风\"]\n    Categorize[\"分类为 enemy / maps / player\"]\n    enemy[\"enemy 包\"]\n    maps[\"maps 包\"]\n    player[\"player 包\"]\n    Review[\"查看贴图效果\"]\n\n    Assets --> TopDown2D\n    TopDown2D --> RPGStyle\n    TopDown2D --> Actions\n    Assets --> Maps\n    Assets --> Enemies\n    Enemies --> Extras\n    Assets --> Free\n    Free --> Categorize\n    Categorize --> enemy\n    Categorize --> maps\n    Categorize --> player\n    Review --> Actions\n```\n\n## KIMI工作模式操作步骤\n```mermaid\nflowchart TD\n    WorkMode[\"打开 KIMI work 模式\"]\n    OpenFolder[\"在项目中打开现有文件夹\"]\n    SelectFolder[\"选择放置素材的文件夹\"]\n    SetPermissions[\"项目权限设为全部允许\"]\n    ChooseModel[\"模型设为 K3集群max\"]\n    ConnectMCP[\"KIMI 与 GODOT MCP 连接\"]\n    RunTask[\"运行提示词任务\"]\n    GenerateMCPFiles[\"生成 MCP 文件\"]\n    VerifyConnection[\"确认 KIMI 已连接 GODOT\"]\n    LoadAssets[\"将所有素材丢给 K3模型\"]\n    SpecifyGoal[\"说明游戏效果/设定\"]\n    TaskComplete[\"任务完成\"]\n    ReviewResult[\"在 GODOT 中检验结果\"]\n\n    WorkMode --> OpenFolder --> SelectFolder --> SetPermissions --> ChooseModel --> ConnectMCP --> RunTask --> GenerateMCPFiles --> VerifyConnection --> LoadAssets --> SpecifyGoal --> TaskComplete --> ReviewResult\n```\n\n## K3模型并发与结果\n```mermaid\nflowchart TD\n    SinglePrompt[\"仅一行提示词\"]\n    Cluster[\"K3集群max 调用子 agents\"]\n    SubAgents[\"子 agents 分工\"]\n    Parallel[\"并发处理任务\"]\n    Efficiency[\"提升效率\"]\n    Output[\"生成游戏代码/资源\"]\n    DemoLoad[\"在 GODOT 加载\"]\n    CharacterAnim[\"角色跑动/站立呼吸\"]\n    MapLoad[\"地图资源加载\"]\n    EnemyAI[\"史莱姆自动追踪\"]\n    Combat[\"主角攻击小怪\"]\n    Quality[\"高质量 Demo\"]\n\n    SinglePrompt --> Cluster\n    Cluster --> SubAgents\n    SubAgents --> Parallel\n    Parallel --> Efficiency\n    Efficiency --> Output\n    Output --> DemoLoad\n    DemoLoad --> CharacterAnim\n    DemoLoad --> MapLoad\n    DemoLoad --> EnemyAI\n    EnemyAI --> Combat\n    Output --> Quality\n```",
+  "diagrams": [
+    {
+      "title": "K3模型概览",
+      "code": "flowchart TD\n    K3Model[\"K3模型\"]\n    K3max[\"K3max（单模型）\"]\n    K3ClusterMax[\"K3集群max（多子agent）\"]\n    Web[\"KIMI网页端\"]\n    Desktop[\"KIMI桌面端\"]\n    GODOT[\"GODOT游戏引擎\"]\n    Prompt[\"单行提示词\"]\n    Demo[\"生成游戏Demo\"]\n    Advantage[\"免除繁琐步骤\"]\n    Capability[\"更强功能/并发\"]\n\n    K3Model --> K3max\n    K3Model --> K3ClusterMax\n    K3Model --> Web\n    K3Model --> Desktop\n    Desktop --> GODOT\n    Prompt --> K3Model\n    K3Model --> Demo\n    K3Model --> Advantage\n    K3ClusterMax --> Capability"
+    },
+    {
+      "title": "素材准备流程",
+      "code": "flowchart TD\n    Assets[\"游戏素材准备\"]\n    TopDown2D[\"Top‑down 2D人物素材\"]\n    RPGStyle[\"RPG画风\"]\n    Actions[\"多动作（攻击/站立/跑步）\"]\n    Maps[\"地图素材\"]\n    Enemies[\"小怪素材（史莱姆）\"]\n    Extras[\"小摆件\"]\n    Free[\"免费且符合画风\"]\n    Categorize[\"分类为 enemy / maps / player\"]\n    enemy[\"enemy 包\"]\n    maps[\"maps 包\"]\n    player[\"player 包\"]\n    Review[\"查看贴图效果\"]\n\n    Assets --> TopDown2D\n    TopDown2D --> RPGStyle\n    TopDown2D --> Actions\n    Assets --> Maps\n    Assets --> Enemies\n    Enemies --> Extras\n    Assets --> Free\n    Free --> Categorize\n    Categorize --> enemy\n    Categorize --> maps\n    Categorize --> player\n    Review --> Actions"
+    },
+    {
+      "title": "KIMI工作模式操作步骤",
+      "code": "flowchart TD\n    WorkMode[\"打开 KIMI work 模式\"]\n    OpenFolder[\"在项目中打开现有文件夹\"]\n    SelectFolder[\"选择放置素材的文件夹\"]\n    SetPermissions[\"项目权限设为全部允许\"]\n    ChooseModel[\"模型设为 K3集群max\"]\n    ConnectMCP[\"KIMI 与 GODOT MCP 连接\"]\n    RunTask[\"运行提示词任务\"]\n    GenerateMCPFiles[\"生成 MCP 文件\"]\n    VerifyConnection[\"确认 KIMI 已连接 GODOT\"]\n    LoadAssets[\"将所有素材丢给 K3模型\"]\n    SpecifyGoal[\"说明游戏效果/设定\"]\n    TaskComplete[\"任务完成\"]\n    ReviewResult[\"在 GODOT 中检验结果\"]\n\n    WorkMode --> OpenFolder --> SelectFolder --> SetPermissions --> ChooseModel --> ConnectMCP --> RunTask --> GenerateMCPFiles --> VerifyConnection --> LoadAssets --> SpecifyGoal --> TaskComplete --> ReviewResult"
+    },
+    {
+      "title": "K3模型并发与结果",
+      "code": "flowchart TD\n    SinglePrompt[\"仅一行提示词\"]\n    Cluster[\"K3集群max 调用子 agents\"]\n    SubAgents[\"子 agents 分工\"]\n    Parallel[\"并发处理任务\"]\n    Efficiency[\"提升效率\"]\n    Output[\"生成游戏代码/资源\"]\n    DemoLoad[\"在 GODOT 加载\"]\n    CharacterAnim[\"角色跑动/站立呼吸\"]\n    MapLoad[\"地图资源加载\"]\n    EnemyAI[\"史莱姆自动追踪\"]\n    Combat[\"主角攻击小怪\"]\n    Quality[\"高质量 Demo\"]\n\n    SinglePrompt --> Cluster\n    Cluster --> SubAgents\n    SubAgents --> Parallel\n    Parallel --> Efficiency\n    Efficiency --> Output\n    Output --> DemoLoad\n    DemoLoad --> CharacterAnim\n    DemoLoad --> MapLoad\n    DemoLoad --> EnemyAI\n    EnemyAI --> Combat\n    Output --> Quality"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T19:23:36+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1J13n6pEgN",
+  "title": "用godot做的RTS游戏（小小记录下",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 5353,
+  "text": "这次这个是个小小的展示吧\n或者说算是一个demo甚至成品\n毕竟我测试下来该有且该实现的功能都有了\n这次是用AI做的一个RTS的小游戏\n素材\n用的是我之前看到的非常好康的tiny sword\n素材包\n我大概照着这个素材做了个RTS的游戏\n比较小的一个游戏\n实际花的时间大概是半周多吧\n可能更短\n我觉得现在展示的功能\n应该花了一半多的时间吧\n剩下的很多时间都是我在自己测试新东西\n如果用素材包里的素材的话\n很快就做好了\n但后面要拓展内容的话\n就花了很多时间\n结果这部分内容做得不好\n也没上\n这里展示的是开场了\n按理来说我打算只给开局100金币的\n不过我没改做出现在展示用的时间里\n自己调入也花了些时间\nAI时好时坏的感觉\n有时候能调好\n而且动画也剪裁得对\n有时候又不能好怪\n现在是框选工人去采矿和伐木\n说实话那个框选\n按理来说应该有个框的显示才对\n但是一直都弄不出来\n很奇怪\n然后顶部那里的食物资源暂时是还没用上\n本来想的是可以造生产食物的设施\n比如农田啥的\n然后加上素材包里本来就有的羊的素材\n做成根据人口消耗食物的设定\n但是自己弄素材的画特别麻烦\n建筑还好\n主要是如果要做出这类画风差不多的动画\n真会很麻烦\n农田的话\n自己给工人加点动画也不难\n食物系统本来是打算实装了\n但是我发现同期弄的兵种效果感觉不太好\n而且难协调\n所以就没和实物系统一起实装\n用AI补充下美术的话\n感觉怎么调都很奇怪\n感觉不是我想要的效果\n后面打完这局还会展示下雨天效果\n下的对局以及展示下做的那个兵种\n感觉就美术这块耗时巨大\n2D的话要追求的东西蛮多的\n甚至这个段位还是我偷懒\n减少了一些状态帧做的233\n不过如果加上了实物系统\n我觉得最基本的系统应该是都做好了资源产出\n还有建造系统\n把地图扩大些\n甚至塞些野怪金矿\n对哦我没做城堡的建造\n做了城堡的建造就可以在外面开分矿\n分基地啥的了\n会更完善一点\n不过也很简单\n就是了\n多加一个建筑而已\n金矿旁边就是个中立建筑\n我把素材包\n剩余的哥布林统统打包塞进去了\n可以直接花费资源在里面雇佣数值\n可能偏低了点\n除此之外还有些装饰我也没加上去\n比如草石头什么的\n还有云\n不过这些装饰部分也不急着做吧\n建造系统就是单纯的放个地基\n然后工人去敲\n我本来叫AI帮我做了多个工人上去敲\n能加速\n不过我还没测试\n升没生效\n距离也有些问题吧\n不过基本上能实现就行\n后面要继续做内容深化的话\n调下距离更符合动画效果就好了\n这就OK了\n不过玩的时候我发现了个bug\n也不知道能不能被看出来对哦\n花费比较多时间的\n还有个就是这个前后遮挡关系\n特别是血条\n这个血条的前后遮挡关系怎么弄都不得\n就是会被挡住\n我想的是他应该是跟单位一起显示的\n弄了好久都没弄好\n就放弃了\n在操作上我自己还添加了个双击\n选中屏幕内相同的单位\n然后JI所说他还给我弄了个编队系统\n不做视频\n我还想不起来了\n不过正如我以前所说过的\n应该说过吧\n我好像记得某期视频我说过\n我也不太喜欢编队\n所以这个编队系统我也没测试过\n能用就行\n敌人方面我让AI写了个比较简单的AI\n感觉还是差点火候\n这里前面拖了点时间发育\n不过应该还是能够打过的\n战斗上可能还是有点问题\n做的有点呆呆的\n有些单位还是会卡住或者呆滞\n看到最边边那个毛病了吗\n卡住了\n我记得我之前做好兵种的内容的时候\n已经调好这些数据了的\n结合接下来的有些兵种的攻击距离\n我估计AI是又偷偷趁我不注意改了\n一开始我没想着这个会有多大\n所以也没做个备忘录啥的\n现在看来这个做个备忘录还是很重要的\n音效这块我都没做\n我还没想好咋做\n理论上扔给AI也行吧\n这块我还没具体想好\n呜\n之前我还看到好多用D老师V4\n正式版做的东西哇\n一整个期待了\n结果好像扯远了\n那个防御塔是能让弓箭手驻扎上去的\n并且城堡和兵营也是能驻扎\n除了兵营\n弓箭手驻扎上去都会有一定的提升\n我甚至觉得现在这样稍微改造下\n甚至能做个塔防\n比如元素TD和宝石TD啥的\n元素TD很简单\n直接画条线\n拉高下周围就行了\n宝石梯D我可能还得画个墙之类的建筑\n不过总的来说应该都是可行的吧\n思路打开的话好像能做更多东西\n甚至做个自走棋啥的\n虽然那类型我没咋玩过\n不过总觉得好像会需要更多的美术素材\n呜\n果然难的是美术资源这块\n这里是展示中立建筑的\n因为地图我没画太大\n所以为了方便测试\n我就把中立建筑放到这里了\n按现有的素材包的话\n应该是把他也当做一个兵种啥的吧\n我总觉得有点不太合\n所以我把这三个挪到了雇佣上\n说不定也可以做成中立单位\n在地图上\n我记得这两个素材包也有个战败动画来的\n我觉得有点怪\n所以就改成淡化的方式了\n然后现在能看出的问题也有些\n不过我还没想好到底要不要改\n后面就不说了\n纯展示了道\n但是我还是会打字\n说的只是不播放语音了而已\n♪ My life flashed before my eyes ♪\n♪ Raise or blade lips and daggers up in your eyes baby ♪\n♪ Your love is a crime danger by day ♪\n♪ Put your evil in the night ♪\n♪ My life flashed before my eyes ♪\n♪ Bombs over broadway for fire in the sky baby ♪\n♪ Your love is a crime dangered by day ♪\n♪ But she evil in the night night ♪\n♪ Take your bbabbut ♪\n♪ She evil in the night night ♪\n♪ Bomb over broadway for fire in the sky ♪\n♪ You lit up like a fool moon ♪\n♪ Yeah ♪\n♪ I heard you were the baddest on the street ♪\n♪ Hey ♪\n♪ You're working like this snow ♪\n♪ Little criminal ♪\n♪ I'm calling the police ♪\n♪ Keep me on a leash tonight ♪\n♪ There's nowhere for me to hide ♪\n♪ See you on the other side ♪\n♪ high呀high ♪\n♪ My life flashed before my eyes ♪\n♪ Raise or blade lips and daggers up in your eyes baby ♪\n♪ Your love is a crime danger by day ♪\n♪ But your evil in the night ♪\n♪ My life f before my eyes ♪\n♪ Bombs over broadway for fire in the sky baby ♪\n♪ Your love is a crime dangerbbabe ♪\n♪ But shevil in the night night ♪\n♪ Change your by day ♪\n♪ But you even in the night ♪\n♪ Oh yeah ♪\n♪ Bomb on the raw way for fire in the sky ♪\n♪ Hey ♪\n♪ I can tell your heart ♪\n♪ Cold like a fallen ♪\n♪ Angel ♪\n♪ Walking in your sleeve ♪\nHey\n♪ I guess you're just a loso ♪\n♪ But when the moon comes out to turn into a bee ♪\n♪ Keep me on a leash tonight ♪\n♪ I hide ♪\n♪ There's no way for me to ht for me ♪\n♪ Hei see you on the other side ♪\n♪ Hiya ♪\n♪ Hi ♪\n♪ And my life flashed before my eyes raise a play ♪\n♪ Lips and dages up in your eyes ♪\n♪ Bab be your love is a crime danger by day ♪\n♪ But your evil in the night ♪\n♪ My life flashed before my eyes ♪\n♪ Bombs over a broadway for fire in the sky ♪\n♪ Baby ♪\n♪ Your love is a crime ranger by day ♪\n♪ But shevil in the night ♪\n♪ I hey ♪\n♪ Hey ♪\n♪ Yeah ♪\n♪ Yeah ♪\n♪ Dank you by day ♪\n♪ But you're ral in the night ♪\n♪ I am ♪\n♪ Plow afar away for fire in the sky ♪\n♪ Hey ♪\nHey\n♪ Hey ♪\n♪ He ♪\n♪ Bongo the raw way for fire in the sky ♪\nI met a man\n♪ Who had a son ♪\n♪ But he lost him to the world ♪\n♪ He said my son was a singer ♪\n♪ He wrote songs ♪\nYou never heard it\n♪ Took his life ♪\nHe gave it up before profits\nEver turned\n♪ Rm said ♪\n♪ I don't mean to linger ♪\nCan i sing you just one verse\n♪ It goes your soul is a star ♪\n♪ It's a love ♪\n♪ I can see it ♪\n♪ Your soul is a star ♪\n♪ Who am i to believe in your soul is a star ♪\n♪ It's alive ♪\n♪ I can see it wu ♪\n♪ Oh oh you know you ♪\n♪ I know ♪\n♪ Yeah ♪\n♪ I met a girl ♪\n♪ Who was a gone kept the bullet in my jeans ♪\n♪ She said papa was a sinner ♪\n♪ Playing guide ♪\n♪ Behind the scene ♪\n♪ She win love ♪\n♪ But she got fame and power from the thieves ♪\n♪ There's eyes something bigger when the wealdy ♪\n♪ What seems you're not ♪\n♪ Just so is a star tonight ♪\n♪ I can see it your soul is a star ♪\n♪ Who am i to believe in your soul is the stars alive ♪\n♪ I can see it wu woah ♪\n♪ Somehow ♪\n♪ I can see it your soul is a star ♪\n♪ Am ♪\n♪ I to believe in your soul is the stars ♪\n♪ So alii can see it ♪\n♪ Yeah ♪\n♪ Yeah ♪\nYeah\nYeah\n♪ I like this song is a star ♪\n♪ I hope you love ♪\n♪ Your soul is a star ♪\n♪ How long ♪\n♪ 呜呜呜啊啊 ♪\n♪ I know you are a soul is a star tonight ♪\n♪ I can see it ♪\n♪ Your soul is a star ♪\n♪ Don't you leaving your soul is a star ♪\n♪ It's a love ♪\n♪ I can see it ♪\n♪ Oh oh oh if only you ♪\n♪ I know your love is a d ♪\n♪ Your soul is a star ♪\n♪ Your soul is a star ♪\n♪ WO狂 ♪\nKnow you are my",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1J13n6pEgN",
+  "published_at": "1785332312",
+  "fetched_at": "2026-08-08T06:41:33+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 用godot做的RTS游戏知识图谱\n\n## 图1：RTS Demo 核心系统概览\n```mermaid\nflowchart TD\n    S1[\"素材包 (tiny sword)\"]\n    AI[\"AI (游戏逻辑)\"]\n    RS[\"资源系统\\n- 金矿\\n- 食物\"]\n    BS[\"建造系统\\n- 放地基 → 工人敲\"]\n    UN[\"单位\\n- 工人\\n- 兵种\"]\n    UI[\"UI 元素\\n- 开局 100 金币\\n- 框选显示\"]\n    INT[\"交互\\n- 双击选中同类单位\"]\n    EXT[\"后续扩展方向\\n- 城堡建造\\n- 分基地\\n- 塔防/自走棋\"]\n\n    S1 --> AI\n    AI --> RS\n    AI --> BS\n    AI --> UN\n    RS --> BS\n    BS --> UN\n    UN --> UI\n    UI --> INT\n    INT --> EXT\n```\n\n## 图2：资源与建筑关系\n```mermaid\nflowchart TD\n    GM[\"金矿\"]\n    NB[\"中立建筑\"]\n    CS[\"城堡建造\"]\n    DB[\"分基地\"]\n    RP[\"资源产出\\n- 金币\\n- 食物\"]\n    BF[\"建造流程\\n- 放地基 → 工人敲\"]\n    FC[\"食物消耗\\n- 人口需求\"]\n    AR[\"美术资源挑战\"]\n\n    GM --> RP\n    NB --> RP\n    CS --> DB\n    CS --> BF\n    DB --> BF\n    BF --> UN[单位]\n    UN --> RP\n    RP --> FC\n    AR --> S1[\"素材包\"]\n    AR --> UN\n```\n\n## 图3：美术与开发挑战\n```mermaid\nflowchart TD\n    AR[\"美术资源\"]\n    AN[\"动画剪裁\"]\n    FS[\"框选显示缺失\"]\n    HB[\"血条前后遮挡\"]\n    AI[\"AI 调参不稳定\"]\n    CI[\"代码实现\"]\n    TI[\"时间投入\\n- 半周多\"]\n    SOL[\"解决思路\\n- 简化帧\\n- AI 辅助\"]\n\n    AR --> AN\n    AR --> FS\n    AR --> HB\n    AN --> CI\n    FS --> CI\n    HB --> CI\n    AI --> CI\n    TI --> AR\n    TI --> AI\n    SOL --> AN\n    SOL --> FS\n    SOL --> HB\n```\n\n## 图4：AI 与单位行为\n```mermaid\nflowchart TD\n    EA[\"敌方 AI (简单)\"]\n    WA[\"工人 AI (采矿/伐木)\"]\n    UI[\"单位交互\\n- 双击选中\"]\n    CF[\"编队系统 (未测试)\"]\n    DB[\"双击选中同类单位\"]\n    BUG[\"AI 行为不稳定\\n- 参数被改\"]\n    LOG[\"备忘录缺失\"]\n    IMP[\"后续改进方向\"]\n\n    EA --> BUG\n    WA --> BUG\n    UI --> DB\n    DB --> CF\n    CF --> IMP\n    BUG --> LOG\n    LOG --> IMP\n```\n\n## 图5：可能的后续方向\n```mermaid\nflowchart TD\n    TD[\"塔防\\n- 元素TD\\n- 宝石TD\"]\n    CH[\"自走棋\"]\n    MAP[\"地图扩展\\n- 野怪金矿\"]\n    NU[\"中立单位\\n- 中立建筑改为雇佣\"]\n    SND[\"音效制作\"]\n    UI[\"UI 扩展\\n- 食物显示\"]\n    ART[\"美术资源补充\"]\n    DEV[\"开发重点\\n- 动画、血条、框选\"]\n\n    TD --> MAP\n    CH --> MAP\n    NU --> MAP\n    SND --> UI\n    ART --> DEV\n    DEV --> TD\n    DEV --> CH\n    DEV --> NU\n```",
+      "diagrams": [
+        {
+          "title": "图1：RTS Demo 核心系统概览",
+          "code": "flowchart TD\n    S1[\"素材包 (tiny sword)\"]\n    AI[\"AI (游戏逻辑)\"]\n    RS[\"资源系统\\n- 金矿\\n- 食物\"]\n    BS[\"建造系统\\n- 放地基 → 工人敲\"]\n    UN[\"单位\\n- 工人\\n- 兵种\"]\n    UI[\"UI 元素\\n- 开局 100 金币\\n- 框选显示\"]\n    INT[\"交互\\n- 双击选中同类单位\"]\n    EXT[\"后续扩展方向\\n- 城堡建造\\n- 分基地\\n- 塔防/自走棋\"]\n\n    S1 --> AI\n    AI --> RS\n    AI --> BS\n    AI --> UN\n    RS --> BS\n    BS --> UN\n    UN --> UI\n    UI --> INT\n    INT --> EXT"
+        },
+        {
+          "title": "图2：资源与建筑关系",
+          "code": "flowchart TD\n    GM[\"金矿\"]\n    NB[\"中立建筑\"]\n    CS[\"城堡建造\"]\n    DB[\"分基地\"]\n    RP[\"资源产出\\n- 金币\\n- 食物\"]\n    BF[\"建造流程\\n- 放地基 → 工人敲\"]\n    FC[\"食物消耗\\n- 人口需求\"]\n    AR[\"美术资源挑战\"]\n\n    GM --> RP\n    NB --> RP\n    CS --> DB\n    CS --> BF\n    DB --> BF\n    BF --> UN[单位]\n    UN --> RP\n    RP --> FC\n    AR --> S1[\"素材包\"]\n    AR --> UN"
+        },
+        {
+          "title": "图3：美术与开发挑战",
+          "code": "flowchart TD\n    AR[\"美术资源\"]\n    AN[\"动画剪裁\"]\n    FS[\"框选显示缺失\"]\n    HB[\"血条前后遮挡\"]\n    AI[\"AI 调参不稳定\"]\n    CI[\"代码实现\"]\n    TI[\"时间投入\\n- 半周多\"]\n    SOL[\"解决思路\\n- 简化帧\\n- AI 辅助\"]\n\n    AR --> AN\n    AR --> FS\n    AR --> HB\n    AN --> CI\n    FS --> CI\n    HB --> CI\n    AI --> CI\n    TI --> AR\n    TI --> AI\n    SOL --> AN\n    SOL --> FS\n    SOL --> HB"
+        },
+        {
+          "title": "图4：AI 与单位行为",
+          "code": "flowchart TD\n    EA[\"敌方 AI (简单)\"]\n    WA[\"工人 AI (采矿/伐木)\"]\n    UI[\"单位交互\\n- 双击选中\"]\n    CF[\"编队系统 (未测试)\"]\n    DB[\"双击选中同类单位\"]\n    BUG[\"AI 行为不稳定\\n- 参数被改\"]\n    LOG[\"备忘录缺失\"]\n    IMP[\"后续改进方向\"]\n\n    EA --> BUG\n    WA --> BUG\n    UI --> DB\n    DB --> CF\n    CF --> IMP\n    BUG --> LOG\n    LOG --> IMP"
+        },
+        {
+          "title": "图5：可能的后续方向",
+          "code": "flowchart TD\n    TD[\"塔防\\n- 元素TD\\n- 宝石TD\"]\n    CH[\"自走棋\"]\n    MAP[\"地图扩展\\n- 野怪金矿\"]\n    NU[\"中立单位\\n- 中立建筑改为雇佣\"]\n    SND[\"音效制作\"]\n    UI[\"UI 扩展\\n- 食物显示\"]\n    ART[\"美术资源补充\"]\n    DEV[\"开发重点\\n- 动画、血条、框选\"]\n\n    TD --> MAP\n    CH --> MAP\n    NU --> MAP\n    SND --> UI\n    ART --> DEV\n    DEV --> TD\n    DEV --> CH\n    DEV --> NU"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T06:43:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 用godot做的RTS游戏知识图谱\n\n## 图1：RTS Demo 核心系统概览\n```mermaid\nflowchart TD\n    S1[\"素材包 (tiny sword)\"]\n    AI[\"AI (游戏逻辑)\"]\n    RS[\"资源系统\\n- 金矿\\n- 食物\"]\n    BS[\"建造系统\\n- 放地基 → 工人敲\"]\n    UN[\"单位\\n- 工人\\n- 兵种\"]\n    UI[\"UI 元素\\n- 开局 100 金币\\n- 框选显示\"]\n    INT[\"交互\\n- 双击选中同类单位\"]\n    EXT[\"后续扩展方向\\n- 城堡建造\\n- 分基地\\n- 塔防/自走棋\"]\n\n    S1 --> AI\n    AI --> RS\n    AI --> BS\n    AI --> UN\n    RS --> BS\n    BS --> UN\n    UN --> UI\n    UI --> INT\n    INT --> EXT\n```\n\n## 图2：资源与建筑关系\n```mermaid\nflowchart TD\n    GM[\"金矿\"]\n    NB[\"中立建筑\"]\n    CS[\"城堡建造\"]\n    DB[\"分基地\"]\n    RP[\"资源产出\\n- 金币\\n- 食物\"]\n    BF[\"建造流程\\n- 放地基 → 工人敲\"]\n    FC[\"食物消耗\\n- 人口需求\"]\n    AR[\"美术资源挑战\"]\n\n    GM --> RP\n    NB --> RP\n    CS --> DB\n    CS --> BF\n    DB --> BF\n    BF --> UN[单位]\n    UN --> RP\n    RP --> FC\n    AR --> S1[\"素材包\"]\n    AR --> UN\n```\n\n## 图3：美术与开发挑战\n```mermaid\nflowchart TD\n    AR[\"美术资源\"]\n    AN[\"动画剪裁\"]\n    FS[\"框选显示缺失\"]\n    HB[\"血条前后遮挡\"]\n    AI[\"AI 调参不稳定\"]\n    CI[\"代码实现\"]\n    TI[\"时间投入\\n- 半周多\"]\n    SOL[\"解决思路\\n- 简化帧\\n- AI 辅助\"]\n\n    AR --> AN\n    AR --> FS\n    AR --> HB\n    AN --> CI\n    FS --> CI\n    HB --> CI\n    AI --> CI\n    TI --> AR\n    TI --> AI\n    SOL --> AN\n    SOL --> FS\n    SOL --> HB\n```\n\n## 图4：AI 与单位行为\n```mermaid\nflowchart TD\n    EA[\"敌方 AI (简单)\"]\n    WA[\"工人 AI (采矿/伐木)\"]\n    UI[\"单位交互\\n- 双击选中\"]\n    CF[\"编队系统 (未测试)\"]\n    DB[\"双击选中同类单位\"]\n    BUG[\"AI 行为不稳定\\n- 参数被改\"]\n    LOG[\"备忘录缺失\"]\n    IMP[\"后续改进方向\"]\n\n    EA --> BUG\n    WA --> BUG\n    UI --> DB\n    DB --> CF\n    CF --> IMP\n    BUG --> LOG\n    LOG --> IMP\n```\n\n## 图5：可能的后续方向\n```mermaid\nflowchart TD\n    TD[\"塔防\\n- 元素TD\\n- 宝石TD\"]\n    CH[\"自走棋\"]\n    MAP[\"地图扩展\\n- 野怪金矿\"]\n    NU[\"中立单位\\n- 中立建筑改为雇佣\"]\n    SND[\"音效制作\"]\n    UI[\"UI 扩展\\n- 食物显示\"]\n    ART[\"美术资源补充\"]\n    DEV[\"开发重点\\n- 动画、血条、框选\"]\n\n    TD --> MAP\n    CH --> MAP\n    NU --> MAP\n    SND --> UI\n    ART --> DEV\n    DEV --> TD\n    DEV --> CH\n    DEV --> NU\n```",
+  "diagrams": [
+    {
+      "title": "图1：RTS Demo 核心系统概览",
+      "code": "flowchart TD\n    S1[\"素材包 (tiny sword)\"]\n    AI[\"AI (游戏逻辑)\"]\n    RS[\"资源系统\\n- 金矿\\n- 食物\"]\n    BS[\"建造系统\\n- 放地基 → 工人敲\"]\n    UN[\"单位\\n- 工人\\n- 兵种\"]\n    UI[\"UI 元素\\n- 开局 100 金币\\n- 框选显示\"]\n    INT[\"交互\\n- 双击选中同类单位\"]\n    EXT[\"后续扩展方向\\n- 城堡建造\\n- 分基地\\n- 塔防/自走棋\"]\n\n    S1 --> AI\n    AI --> RS\n    AI --> BS\n    AI --> UN\n    RS --> BS\n    BS --> UN\n    UN --> UI\n    UI --> INT\n    INT --> EXT"
+    },
+    {
+      "title": "图2：资源与建筑关系",
+      "code": "flowchart TD\n    GM[\"金矿\"]\n    NB[\"中立建筑\"]\n    CS[\"城堡建造\"]\n    DB[\"分基地\"]\n    RP[\"资源产出\\n- 金币\\n- 食物\"]\n    BF[\"建造流程\\n- 放地基 → 工人敲\"]\n    FC[\"食物消耗\\n- 人口需求\"]\n    AR[\"美术资源挑战\"]\n\n    GM --> RP\n    NB --> RP\n    CS --> DB\n    CS --> BF\n    DB --> BF\n    BF --> UN[单位]\n    UN --> RP\n    RP --> FC\n    AR --> S1[\"素材包\"]\n    AR --> UN"
+    },
+    {
+      "title": "图3：美术与开发挑战",
+      "code": "flowchart TD\n    AR[\"美术资源\"]\n    AN[\"动画剪裁\"]\n    FS[\"框选显示缺失\"]\n    HB[\"血条前后遮挡\"]\n    AI[\"AI 调参不稳定\"]\n    CI[\"代码实现\"]\n    TI[\"时间投入\\n- 半周多\"]\n    SOL[\"解决思路\\n- 简化帧\\n- AI 辅助\"]\n\n    AR --> AN\n    AR --> FS\n    AR --> HB\n    AN --> CI\n    FS --> CI\n    HB --> CI\n    AI --> CI\n    TI --> AR\n    TI --> AI\n    SOL --> AN\n    SOL --> FS\n    SOL --> HB"
+    },
+    {
+      "title": "图4：AI 与单位行为",
+      "code": "flowchart TD\n    EA[\"敌方 AI (简单)\"]\n    WA[\"工人 AI (采矿/伐木)\"]\n    UI[\"单位交互\\n- 双击选中\"]\n    CF[\"编队系统 (未测试)\"]\n    DB[\"双击选中同类单位\"]\n    BUG[\"AI 行为不稳定\\n- 参数被改\"]\n    LOG[\"备忘录缺失\"]\n    IMP[\"后续改进方向\"]\n\n    EA --> BUG\n    WA --> BUG\n    UI --> DB\n    DB --> CF\n    CF --> IMP\n    BUG --> LOG\n    LOG --> IMP"
+    },
+    {
+      "title": "图5：可能的后续方向",
+      "code": "flowchart TD\n    TD[\"塔防\\n- 元素TD\\n- 宝石TD\"]\n    CH[\"自走棋\"]\n    MAP[\"地图扩展\\n- 野怪金矿\"]\n    NU[\"中立单位\\n- 中立建筑改为雇佣\"]\n    SND[\"音效制作\"]\n    UI[\"UI 扩展\\n- 食物显示\"]\n    ART[\"美术资源补充\"]\n    DEV[\"开发重点\\n- 动画、血条、框选\"]\n\n    TD --> MAP\n    CH --> MAP\n    NU --> MAP\n    SND --> UI\n    ART --> DEV\n    DEV --> TD\n    DEV --> CH\n    DEV --> NU"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T06:43:24+00:00"
+}

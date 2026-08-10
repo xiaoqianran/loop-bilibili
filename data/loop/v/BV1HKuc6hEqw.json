@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1HKuc6hEqw",
+  "title": "Deepseek Flash 正式版夯爆了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 621,
+  "text": "我真的是力竭了\n早知道deep sick flash正式版这么便宜又好用\n那我之前不如直接等等呗\n事情是这样\n之前为了做加载地图的过渡界面\n用老的deep seek来跑\n搞了一天都没解决\n总是会有各种各样的问题\n尤其是加载后进入游戏时\n有些地形都还没加载好\n感觉就加载了个寂寞\n用deep sick flash正式版后\n他上来就是一句\n这个项目为了解决这个问题\n打了非常多的补丁\n但都不得要领\n然后他就三下5÷2的删掉了这些代码\n随后大概几分钟就写好了新的方案\n然后还真别说真的管用\n剩下这几天明显开发进度都变快了\n准备做一个demo地图\n把玩法都跑一遍\n现在先做前20%部分\n这是一个像潜水员戴夫那样\n采集加种田双循环的游戏\n所以先做采集物品\n像采药啊\n摘果子这些\n当然啦也要有任务系统\n任务系统是之前就做好的\n这次做了升级\n让阻拦道路的迷雾随着任务完成而消失\n当然虽然deep sick现在很强\n但是迷雾这样的消散效果还是得手搓的样子\n然后就是这边这个山洞了\n要做一个进入山洞后能看到内部的效果\n老师说deep sick1开始给的方案不太完美\n被我反复说了好几次才用的\n现在这个方案老方案是他工作量少\n但我会有大量的改材质的工作\n新方案是他工作量大\n但是我这边改动就少很多了\n总感觉deep sick也是和程序员一样想偷懒呢\n好啦\n虽说后面AI一定会更加厉害\n会让现在的开发也显得低效\n但闲着也是闲着\n不如还是动起来\n就这样了\n拜拜了大家",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1HKuc6hEqw",
+  "published_at": "1786006800",
+  "fetched_at": "2026-08-06T23:22:14+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Deepseek Flash 开发知识图谱\n\n## 总览：使用 Deepseek Flash 解决加载问题\n```mermaid\nflowchart TD\n    A1[\"旧 Deepseek 方案\"]\n    A2[\"加载地图过渡界面出现问题\"]\n    A3[\"加载后部分地形未完成 → 体验不佳\"]\n    A4[\"切换至 Deepseek Flash 正式版\"]\n    A5[\"几分钟内编写新加载方案\"]\n    A6[\"加载成功，开发进度明显加快\"]\n\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6\n```\n\n## 开发路径：Demo 地图前 20% 内容\n```mermaid\nflowchart LR\n    B1[\"目标：Demo 地图（前 20%）\"]\n    B2[\"实现采集系统（采药、摘果等）\"]\n    B3[\"实现种田循环\"]\n    B4[\"任务系统升级：任务完成后雾随之消散\"]\n    B5[\"手动实现雾消散效果\"]\n    B6[\"山洞内部可视化效果\"]\n    B7[\"方案选择：老方案 vs 新方案\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7\n```\n\n## 对比：老方案 vs 新方案（山洞内部效果）\n```mermaid\nflowchart TD\n    C1[\"老方案（Deepseek 1 提供）\"]\n    C2[\"工作量少\"]\n    C3[\"需大量改材质\"]\n\n    D1[\"新方案（Deepseek Flash）\"]\n    D2[\"工作量大\"]\n    D3[\"改材质工作少\"]\n\n    C1 --> C2 --> C3\n    D1 --> D2 --> D3\n\n    C2 -.->|对比依据：改材质工作量| D2\n```",
+      "diagrams": [
+        {
+          "title": "总览：使用 Deepseek Flash 解决加载问题",
+          "code": "flowchart TD\n    A1[\"旧 Deepseek 方案\"]\n    A2[\"加载地图过渡界面出现问题\"]\n    A3[\"加载后部分地形未完成 → 体验不佳\"]\n    A4[\"切换至 Deepseek Flash 正式版\"]\n    A5[\"几分钟内编写新加载方案\"]\n    A6[\"加载成功，开发进度明显加快\"]\n\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6"
+        },
+        {
+          "title": "开发路径：Demo 地图前 20% 内容",
+          "code": "flowchart LR\n    B1[\"目标：Demo 地图（前 20%）\"]\n    B2[\"实现采集系统（采药、摘果等）\"]\n    B3[\"实现种田循环\"]\n    B4[\"任务系统升级：任务完成后雾随之消散\"]\n    B5[\"手动实现雾消散效果\"]\n    B6[\"山洞内部可视化效果\"]\n    B7[\"方案选择：老方案 vs 新方案\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7"
+        },
+        {
+          "title": "对比：老方案 vs 新方案（山洞内部效果）",
+          "code": "flowchart TD\n    C1[\"老方案（Deepseek 1 提供）\"]\n    C2[\"工作量少\"]\n    C3[\"需大量改材质\"]\n\n    D1[\"新方案（Deepseek Flash）\"]\n    D2[\"工作量大\"]\n    D3[\"改材质工作少\"]\n\n    C1 --> C2 --> C3\n    D1 --> D2 --> D3\n\n    C2 -.->|对比依据：改材质工作量| D2"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T23:22:26+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Deepseek Flash 开发知识图谱\n\n## 总览：使用 Deepseek Flash 解决加载问题\n```mermaid\nflowchart TD\n    A1[\"旧 Deepseek 方案\"]\n    A2[\"加载地图过渡界面出现问题\"]\n    A3[\"加载后部分地形未完成 → 体验不佳\"]\n    A4[\"切换至 Deepseek Flash 正式版\"]\n    A5[\"几分钟内编写新加载方案\"]\n    A6[\"加载成功，开发进度明显加快\"]\n\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6\n```\n\n## 开发路径：Demo 地图前 20% 内容\n```mermaid\nflowchart LR\n    B1[\"目标：Demo 地图（前 20%）\"]\n    B2[\"实现采集系统（采药、摘果等）\"]\n    B3[\"实现种田循环\"]\n    B4[\"任务系统升级：任务完成后雾随之消散\"]\n    B5[\"手动实现雾消散效果\"]\n    B6[\"山洞内部可视化效果\"]\n    B7[\"方案选择：老方案 vs 新方案\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7\n```\n\n## 对比：老方案 vs 新方案（山洞内部效果）\n```mermaid\nflowchart TD\n    C1[\"老方案（Deepseek 1 提供）\"]\n    C2[\"工作量少\"]\n    C3[\"需大量改材质\"]\n\n    D1[\"新方案（Deepseek Flash）\"]\n    D2[\"工作量大\"]\n    D3[\"改材质工作少\"]\n\n    C1 --> C2 --> C3\n    D1 --> D2 --> D3\n\n    C2 -.->|对比依据：改材质工作量| D2\n```",
+  "diagrams": [
+    {
+      "title": "总览：使用 Deepseek Flash 解决加载问题",
+      "code": "flowchart TD\n    A1[\"旧 Deepseek 方案\"]\n    A2[\"加载地图过渡界面出现问题\"]\n    A3[\"加载后部分地形未完成 → 体验不佳\"]\n    A4[\"切换至 Deepseek Flash 正式版\"]\n    A5[\"几分钟内编写新加载方案\"]\n    A6[\"加载成功，开发进度明显加快\"]\n\n    A1 --> A2 --> A3 --> A4 --> A5 --> A6"
+    },
+    {
+      "title": "开发路径：Demo 地图前 20% 内容",
+      "code": "flowchart LR\n    B1[\"目标：Demo 地图（前 20%）\"]\n    B2[\"实现采集系统（采药、摘果等）\"]\n    B3[\"实现种田循环\"]\n    B4[\"任务系统升级：任务完成后雾随之消散\"]\n    B5[\"手动实现雾消散效果\"]\n    B6[\"山洞内部可视化效果\"]\n    B7[\"方案选择：老方案 vs 新方案\"]\n\n    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7"
+    },
+    {
+      "title": "对比：老方案 vs 新方案（山洞内部效果）",
+      "code": "flowchart TD\n    C1[\"老方案（Deepseek 1 提供）\"]\n    C2[\"工作量少\"]\n    C3[\"需大量改材质\"]\n\n    D1[\"新方案（Deepseek Flash）\"]\n    D2[\"工作量大\"]\n    D3[\"改材质工作少\"]\n\n    C1 --> C2 --> C3\n    D1 --> D2 --> D3\n\n    C2 -.->|对比依据：改材质工作量| D2"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:22:26+00:00"
+}

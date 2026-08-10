@@ -1,0 +1,26 @@
+{
+  "bvid": "BV16XLJ6YEVP",
+  "title": "121. 为什么GQA是MQA过渡到MHA的插值？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 953,
+  "text": "今天的问题是\n为什么GQA是MQA过渡到MHA的差距\n先来说什么叫差距\n比如说0.5是零过渡到一的差距\n就是说0.5是介于0~1之间的\n而GQA也是介于这两者之间的\n所以也可以看作差距\n现在回顾一下经典的多头注意力\nMHA是怎么计算的\n比如说现在分成四个头\n就要把QKV砍三刀\n得到四个头\n然后把头重叠着放\n就说第一个Q头放这第二个Q头放在背后\n第三个Q头在背后\n以此类推\n那怎么计算注意力呢\n当然是头之间是独立的\n就是说这个Q头和这个K头相乘\n相当于内积得到注意力分数\n而这个时候和后面的矩阵不会有任何干扰\n就是后面的这个头和后面这个头算出来\n这里的头不会有任何干扰\n那问题来了\nMQA是怎么算的呢\n答案是MQA为了节省k b catch\n他把k b cash的头只有一个头\n就说k b catch的头少了\n但是Q的头是不变的\n就说这三个东西Q的头都不会变\n那在这种情况下来分析一下\n现在只有一个C头了\n它就要进行一个广播\n广播出来三个虚拟头用橘色的虚线表示\n值得注意的是\n这个头它是虚拟的\n就是说它看起来它存在\n但是呢它不需要占格额外的内存\n那计算的时候依然是独立计算的\n就说这个头和这个头算出来这个头\n那后面的这个头和虚拟的这个头算出这个头\n它依然是头之间彼此不干扰\n并且要明确这里的Q有四个头\n彼此是不一样的\n这里的K有一个头\n广播出来了\n四个头\n彼此之间是一样的\n但是由于Q是不一样的\n所以这里的A的四个头也是不一样的\n然后来分析GQA\n那么GQA的想法\n就是说他的k b catch的头不要像MQA那么少\n就一个也不要像MHA那么多\n比如说它就正好有两个\n那在这种情况下怎么算呢\n答案是依然要进行广播\n比如说把K的这个头广播放到这里\n然后把这个头广播放到这里\n要计算的时候依然是投独立的\n指的就是说这个Q头和这个K头算这里的A头\n那后面的这个Q头和虚拟的这个K头\n算这里的A头\n彼此依然互不干扰\n问题来了\n为什么GQA是一种差值呢\n原因是它可以控制kb cash头的数量\n比如说GQA当中\n假如有两个头的k v cash的头\n在这种情况下\n它就相当于是GQA\n如果k b cash的头有一个\n那他就是MQA\n如果k b cash的头有Q的头那么多个\n就说最多的数量\n那在这种情况下\n它就是MHA",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16XLJ6YEVP",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:15:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

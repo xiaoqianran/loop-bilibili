@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1hBut6WEHa",
+  "title": "0代码0网络门槛，Codex国内部署使用终极解决方案！FF-Codex控制台开源！DeepSeek-V4接入+视觉增强+多版本环境管理+环境诊断修复！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1391,
+  "text": "codex接入deep sk v4正式版模型\n并配套完整视觉能力的终极解决方案\n我们团队自研的FX codex控制台开源啦\n不写一行代码\n没有任何网络门槛\n即可直接完成codex安装和更新\nDPCV4正式版模型\n接入MCP视觉能力增强\n以及多版本与隔离环境管理等等各项使用功能\n没有cc switch复杂繁琐的功能\n专为国内开发者准备\n零网络限制安装codex加介入任意模型\n加视觉能力增强\n同时兼容windows Mac os\nLINUX等操作系统\n完整项目代码和操作手册已经上线\n支付版AI社区打扫码即可免费领取\n接下来我为大家快速介绍这款IPAD\ncodex控制台的具体使用方法\n整个过程非常简单\n首先大家拿到项目之后\n点击进入development installers文件夹\n然后双击launch杠web即可开启服务\n首次启动会检测本地是否已经安装了口袋\n如果没有安装\n则会自动从国内镜像站进行下载\n并能同步保持最新版本更新\n安装完成后即可进入配置阶段\n这里我们点击继续配置\n首先可以选择是否对当前默认环境进行修改\n还是创建DEPSP专属的隔离环境\n首次使用建议在隔离环境中进行配置\n然后进入APIP配置环节\n这里我们需要同时配置deep sick的API\nKE作为基础推理模型\n以及阿里百炼的app来提供视觉模型服务\n然后确认保存\n如果到这个环节还没有安装\ncodex也会自动启动安装程序\n然后点击安装配置\n等待显示完成即可\n至此基本配置全部结束\n是不是很简单\ncodex app和codex clea是同步完成配置的\n然后现在打开chi g b t或者codex应用\n看到左下方是deep sick\n并且模型设置定义就说明已经配置成功了\n接下来即可进行任意对话或者执行各类任务\n整个过程非常简单\n而对于开发的同学\n如果要进一步的进入到codex CLI命令行环境\n则可以直接点击codex绘画启动台\n选择执行目录\n然后选择继承之前的对话或者创建新的对话\n以及可选是否给予全部的权限\n然后就可以进入到codex plea页面\n来进行自由对话了\n能够看到现在模型就已经设置成了deep sv4\nflash正式版模型\n同时啊我们也可以测试下\n目前codex加deep sk是否已经具有了视觉能力\n这里我们在当前项目目录下\n放一张非常复杂的长图啊\n这是关于30天agent\n自学开发冲刺规划的学习路径图片\n然后询问codex图片内容\n能够看到目前codex能够顺利的调用MCP工具\n并最终完成复杂视觉识别\n整个过程无需人工干预\nHOTEX会自动根据任务需求\n灵活调用视觉能力来完成识别\n至此我们的codex就已经全面介入deep cv4模型\n并且适配了新的视觉能力\n之后大家还可以借助ipad codex控制台完成\n例如codex1键更新其他各类模型的配置接入\n创建或者删除隔离环境\n拓展MCP服务系统功能\n诊断环境备份与修复等各项使用功能\n从此告别复杂配置\n文件修改\n仅需点击即可全部完成好了\n本期视频到这就全部结束了\n感谢大家的关注和三连支持\n目前ipad codex控制台的完整源码以及操作手册\n已经上线至复盘AI社区\n大扫码即可免费领取\n206大魔镜AH等技术发展势头异常dream\n我也将持续为大家提供最前沿实用的技术教学\n感谢大家的关注和三连支持\n我们下个视频再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1hBut6WEHa",
+  "published_at": "1786102803",
+  "fetched_at": "2026-08-09T07:26:22+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# FX Codex 控制台全景图谱\n\n## 知识总览 [BV1hBut6WEHa P1 00:00]\n\n```mermaid\nflowchart TD\n    A1[\"FX Codex 控制台 (开源)\"]\n    B1[\"DeepSeek-V4 正式版模型\"]\n    C1[\"MCP 视觉能力增强\"]\n    D1[\"多版本 & 隔离环境管理\"]\n    E1[\"跨平台兼容 (Windows/macOS/Linux)\"]\n    F1[\"零网络门槛 自动安装/更新\"]\n    G1[\"支付版 AI 社区 免费领取\"]\n    A1 --> B1\n    A1 --> C1\n    A1 --> D1\n    A1 --> E1\n    A1 --> F1\n    F1 --> G1\n```\n\n## 安装与配置流程 [BV1hBut6WEHa P1 00:44]\n\n```mermaid\nflowchart TD\n    S1[\"获取项目\"] --> S2[\"打开 development/installers 文件夹\"]\n    S2 --> S3[\"双击 launch-web 启动服务\"]\n    S3 --> S4[\"检测本地是否已安装口袋\"]\n    S4 -->|已安装| S5[\"进入配置阶段\"]\n    S4 -->|未安装| S6[\"从国内镜像自动下载口袋\"]\n    S6 --> S7[\"同步保持最新版本\"]\n    S7 --> S5\n    S5 --> S8[\"点击继续配置\"]\n    S8 --> S9[\"选择环境: 默认 / 创建 DEPSP 隔离环境\"]\n    S9 -->|建议| S10[\"在隔离环境中配置\"]\n    S10 --> S11[\"API 配置\"]\n    S11 --> S12[\"DeepSeek API (KE 基础模型)\"]\n    S11 --> S13[\"阿里百炼视觉模型服务\"]\n    S12 --> S14[\"确认并保存\"]\n    S13 --> S14\n    S14 --> S15[\"若未安装 Codex 自动启动安装\"]\n    S15 --> S16[\"点击安装配置，等待完成\"]\n    S16 --> S17[\"基本配置结束\"]\n```\n\n## 视觉能力使用示例 [BV1hBut6WEHa P1 02:22]\n\n```mermaid\nflowchart TD\n    V1[\"项目目录放置复杂长图\"] --> V2[\"在 Codex 对话中询问图片内容\"]\n    V2 --> V3[\"Codex 调用 MCP 视觉工具\"]\n    V3 --> V4[\"完成复杂视觉识别\"]\n    V4 --> V5[\"无需人工干预\"]\n    V5 --> V6[\"HOTEX 根据任务需求灵活调用视觉能力\"]\n```\n\n## 高级功能与扩展 [BV1hBut6WEHa P1 02:54]\n\n```mermaid\nflowchart TD\n    H1[\"Codex CLI 命令行环境\"]\n    H2[\"Codex 绘画启动台\"]\n    H3[\"环境备份与修复\"]\n    H4[\"MCP 服务系统功能拓展\"]\n    H5[\"模型更新 (Codex1 键)\"]\n    H6[\"创建 / 删除 隔离环境\"]\n    H7[\"多模型配置接入\"]\n    H1 --> H2\n    H2 --> H3\n    H3 --> H4\n    H4 --> H5\n    H5 --> H6\n    H6 --> H7\n```",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    A1[\"FX Codex 控制台 (开源)\"]\n    B1[\"DeepSeek-V4 正式版模型\"]\n    C1[\"MCP 视觉能力增强\"]\n    D1[\"多版本 & 隔离环境管理\"]\n    E1[\"跨平台兼容 (Windows/macOS/Linux)\"]\n    F1[\"零网络门槛 自动安装/更新\"]\n    G1[\"支付版 AI 社区 免费领取\"]\n    A1 --> B1\n    A1 --> C1\n    A1 --> D1\n    A1 --> E1\n    A1 --> F1\n    F1 --> G1"
+        },
+        {
+          "title": "安装与配置流程",
+          "code": "flowchart TD\n    S1[\"获取项目\"] --> S2[\"打开 development/installers 文件夹\"]\n    S2 --> S3[\"双击 launch-web 启动服务\"]\n    S3 --> S4[\"检测本地是否已安装口袋\"]\n    S4 -->|已安装| S5[\"进入配置阶段\"]\n    S4 -->|未安装| S6[\"从国内镜像自动下载口袋\"]\n    S6 --> S7[\"同步保持最新版本\"]\n    S7 --> S5\n    S5 --> S8[\"点击继续配置\"]\n    S8 --> S9[\"选择环境: 默认 / 创建 DEPSP 隔离环境\"]\n    S9 -->|建议| S10[\"在隔离环境中配置\"]\n    S10 --> S11[\"API 配置\"]\n    S11 --> S12[\"DeepSeek API (KE 基础模型)\"]\n    S11 --> S13[\"阿里百炼视觉模型服务\"]\n    S12 --> S14[\"确认并保存\"]\n    S13 --> S14\n    S14 --> S15[\"若未安装 Codex 自动启动安装\"]\n    S15 --> S16[\"点击安装配置，等待完成\"]\n    S16 --> S17[\"基本配置结束\"]"
+        },
+        {
+          "title": "视觉能力使用示例",
+          "code": "flowchart TD\n    V1[\"项目目录放置复杂长图\"] --> V2[\"在 Codex 对话中询问图片内容\"]\n    V2 --> V3[\"Codex 调用 MCP 视觉工具\"]\n    V3 --> V4[\"完成复杂视觉识别\"]\n    V4 --> V5[\"无需人工干预\"]\n    V5 --> V6[\"HOTEX 根据任务需求灵活调用视觉能力\"]"
+        },
+        {
+          "title": "高级功能与扩展",
+          "code": "flowchart TD\n    H1[\"Codex CLI 命令行环境\"]\n    H2[\"Codex 绘画启动台\"]\n    H3[\"环境备份与修复\"]\n    H4[\"MCP 服务系统功能拓展\"]\n    H5[\"模型更新 (Codex1 键)\"]\n    H6[\"创建 / 删除 隔离环境\"]\n    H7[\"多模型配置接入\"]\n    H1 --> H2\n    H2 --> H3\n    H3 --> H4\n    H4 --> H5\n    H5 --> H6\n    H6 --> H7"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T07:26:37+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# FX Codex 控制台全景图谱\n\n## 知识总览 [BV1hBut6WEHa P1 00:00]\n\n```mermaid\nflowchart TD\n    A1[\"FX Codex 控制台 (开源)\"]\n    B1[\"DeepSeek-V4 正式版模型\"]\n    C1[\"MCP 视觉能力增强\"]\n    D1[\"多版本 & 隔离环境管理\"]\n    E1[\"跨平台兼容 (Windows/macOS/Linux)\"]\n    F1[\"零网络门槛 自动安装/更新\"]\n    G1[\"支付版 AI 社区 免费领取\"]\n    A1 --> B1\n    A1 --> C1\n    A1 --> D1\n    A1 --> E1\n    A1 --> F1\n    F1 --> G1\n```\n\n## 安装与配置流程 [BV1hBut6WEHa P1 00:44]\n\n```mermaid\nflowchart TD\n    S1[\"获取项目\"] --> S2[\"打开 development/installers 文件夹\"]\n    S2 --> S3[\"双击 launch-web 启动服务\"]\n    S3 --> S4[\"检测本地是否已安装口袋\"]\n    S4 -->|已安装| S5[\"进入配置阶段\"]\n    S4 -->|未安装| S6[\"从国内镜像自动下载口袋\"]\n    S6 --> S7[\"同步保持最新版本\"]\n    S7 --> S5\n    S5 --> S8[\"点击继续配置\"]\n    S8 --> S9[\"选择环境: 默认 / 创建 DEPSP 隔离环境\"]\n    S9 -->|建议| S10[\"在隔离环境中配置\"]\n    S10 --> S11[\"API 配置\"]\n    S11 --> S12[\"DeepSeek API (KE 基础模型)\"]\n    S11 --> S13[\"阿里百炼视觉模型服务\"]\n    S12 --> S14[\"确认并保存\"]\n    S13 --> S14\n    S14 --> S15[\"若未安装 Codex 自动启动安装\"]\n    S15 --> S16[\"点击安装配置，等待完成\"]\n    S16 --> S17[\"基本配置结束\"]\n```\n\n## 视觉能力使用示例 [BV1hBut6WEHa P1 02:22]\n\n```mermaid\nflowchart TD\n    V1[\"项目目录放置复杂长图\"] --> V2[\"在 Codex 对话中询问图片内容\"]\n    V2 --> V3[\"Codex 调用 MCP 视觉工具\"]\n    V3 --> V4[\"完成复杂视觉识别\"]\n    V4 --> V5[\"无需人工干预\"]\n    V5 --> V6[\"HOTEX 根据任务需求灵活调用视觉能力\"]\n```\n\n## 高级功能与扩展 [BV1hBut6WEHa P1 02:54]\n\n```mermaid\nflowchart TD\n    H1[\"Codex CLI 命令行环境\"]\n    H2[\"Codex 绘画启动台\"]\n    H3[\"环境备份与修复\"]\n    H4[\"MCP 服务系统功能拓展\"]\n    H5[\"模型更新 (Codex1 键)\"]\n    H6[\"创建 / 删除 隔离环境\"]\n    H7[\"多模型配置接入\"]\n    H1 --> H2\n    H2 --> H3\n    H3 --> H4\n    H4 --> H5\n    H5 --> H6\n    H6 --> H7\n```",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    A1[\"FX Codex 控制台 (开源)\"]\n    B1[\"DeepSeek-V4 正式版模型\"]\n    C1[\"MCP 视觉能力增强\"]\n    D1[\"多版本 & 隔离环境管理\"]\n    E1[\"跨平台兼容 (Windows/macOS/Linux)\"]\n    F1[\"零网络门槛 自动安装/更新\"]\n    G1[\"支付版 AI 社区 免费领取\"]\n    A1 --> B1\n    A1 --> C1\n    A1 --> D1\n    A1 --> E1\n    A1 --> F1\n    F1 --> G1"
+    },
+    {
+      "title": "安装与配置流程",
+      "code": "flowchart TD\n    S1[\"获取项目\"] --> S2[\"打开 development/installers 文件夹\"]\n    S2 --> S3[\"双击 launch-web 启动服务\"]\n    S3 --> S4[\"检测本地是否已安装口袋\"]\n    S4 -->|已安装| S5[\"进入配置阶段\"]\n    S4 -->|未安装| S6[\"从国内镜像自动下载口袋\"]\n    S6 --> S7[\"同步保持最新版本\"]\n    S7 --> S5\n    S5 --> S8[\"点击继续配置\"]\n    S8 --> S9[\"选择环境: 默认 / 创建 DEPSP 隔离环境\"]\n    S9 -->|建议| S10[\"在隔离环境中配置\"]\n    S10 --> S11[\"API 配置\"]\n    S11 --> S12[\"DeepSeek API (KE 基础模型)\"]\n    S11 --> S13[\"阿里百炼视觉模型服务\"]\n    S12 --> S14[\"确认并保存\"]\n    S13 --> S14\n    S14 --> S15[\"若未安装 Codex 自动启动安装\"]\n    S15 --> S16[\"点击安装配置，等待完成\"]\n    S16 --> S17[\"基本配置结束\"]"
+    },
+    {
+      "title": "视觉能力使用示例",
+      "code": "flowchart TD\n    V1[\"项目目录放置复杂长图\"] --> V2[\"在 Codex 对话中询问图片内容\"]\n    V2 --> V3[\"Codex 调用 MCP 视觉工具\"]\n    V3 --> V4[\"完成复杂视觉识别\"]\n    V4 --> V5[\"无需人工干预\"]\n    V5 --> V6[\"HOTEX 根据任务需求灵活调用视觉能力\"]"
+    },
+    {
+      "title": "高级功能与扩展",
+      "code": "flowchart TD\n    H1[\"Codex CLI 命令行环境\"]\n    H2[\"Codex 绘画启动台\"]\n    H3[\"环境备份与修复\"]\n    H4[\"MCP 服务系统功能拓展\"]\n    H5[\"模型更新 (Codex1 键)\"]\n    H6[\"创建 / 删除 隔离环境\"]\n    H7[\"多模型配置接入\"]\n    H1 --> H2\n    H2 --> H3\n    H3 --> H4\n    H4 --> H5\n    H5 --> H6\n    H6 --> H7"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T07:26:37+00:00"
+}

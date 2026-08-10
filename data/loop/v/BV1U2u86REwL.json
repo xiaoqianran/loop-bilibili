@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1U2u86REwL",
+  "title": "国内外各大视觉模型识别工程图纸 哪家最强？【B站AI创造公开赛】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1080,
+  "text": "纯视觉的方案识别图纸建模\n市面上主流的多模态模型能力分别如何\n这次参与测试的国产的模型有KIMIK3\n以及mini max m3\n国外的模型有crow5的三款大模型\nGPT5.6的三款大模型\n以及GEMINI3.6flash\n这里再做个声明\n资金有限\n没法给每家的模型都专门优化提示词\n该测试结果为个人观点\n仅供参考\n接下来我们看下这次的测试题目\n这份图纸比上次的复杂了一点\n增加了土定强\n但总体来说也还是非常简单的图纸\n我这里给桩和土钉墙直接留了个平台\n看看能不能识别出来\n这次挑战的任务就是识别出所有的桩位和土\n定墙地坡脚线\n这是识别完后交付的答卷\n大家可以猜猜看这是哪个模型识别的效果\n首先上场的是扛把子KIMIK3\n先给大家打个样\nCHEMIX3看起来非常轻松\n就完成了这个任务\n这里的生成已经非常完美了\n除了贵\n没有缺点\n夯爆了\n国产模型的另一位选手mini max\nmini max的效果就差的有点多了\n基本完成不了任务\n也可能是装位匹配的问题\nMini max\n这里给到平基拉了\n然后是国外的大热门模型opus\nopus s装位识别还是没问题的\n就是坡脚线的位置有点对不上\n精度上差了一些\n这里角落的桩位识别错位了\n只能给到评级NPC\nSANA这根线识别的还是很标准的\n就是他很希望在角落里给我补一根桩\n结果后面的桩位和坡脚线全都错了\n遗憾落败拉了\n接下来登场的是fable了\n他的两个兄弟都拉库里了\n作为顶级模型\n他的表现如何呢\n让我们拭目以待\n我们可以看到桩位虽然有瑕疵\n但是这个线画的非常完美了\n模型也没有问题\n这里给到评级\n夯爆了\n接下来那肯定就是GPT5.6sol了\n他的实力应该没问题吧\n我们可以看到最顶级的模型\n基本素质很是很硬的\n完美通过不只是线画的非常漂亮\n而且他的桩位识别比k mix3和fable都精准很多\n基本可以给到满分了\n夯爆了\n感觉就是这次的第一非他莫属了\n少了锚杆\n这里是我算法的问题\n和模型本身没关系\n然后是tr\n他会像cw其他两个模型一样败下阵来吗\n少了一段没识别出来\n但是精度完全没问题啊\n这段完全可以靠算法弥补\n匹配上它的价格\n那绝对是夯爆了\nGPT家族的最后一位LUNA\n它的价格和不要钱一样\n看看能达到什么效果\n这里线的识别容易出现幻觉\n但是识别准确的精度是完全没问题啊\n主要是它的价格和白送的差不多\n完全可以和其他模型搭配使用\n这表现太强了\n夯爆了\n露娜的话\n我完成一个流程的花费是三分钱\n如果是k mix3的话\n得接近一块钱\n属于是性价比之王了\n最后的GEMINI3.6FASH给大家放个烟花\n辣了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1U2u86REwL",
+  "published_at": "1786112995",
+  "fetched_at": "2026-08-10T00:59:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 国内外视觉模型识别工程图纸性能图谱\n\n## 模型总体表现概览 [BV1U2u86REwL P1 00:58-05:13]\n\n```mermaid\nflowchart TD\n    D[Domestic] --> K1[\"KIMIK3\\n性能: 好\\n成本: 高\"]\n    D --> M1[\"mini max\\n性能: 差\\n成本: 低\"]\n    I[International] --> O1[\"opus\\n性能: 中\\n成本: 中\"]\n    I --> F1[\"fable\\n性能: 好\\n成本: 中\"]\n    I --> G1[\"GPT5.6sol\\n性能: 最佳\\n成本: 中\"]\n    I --> L1[\"LUNA\\n性能: 好\\n成本: 极低\"]\n    I --> GE1[\"GEMINI3.6flash\\n暂无评估\"]\n```\n\n## 识别任务与评估维度流程 [BV1U2u86REwL P1 00:31-03:56]\n\n```mermaid\nflowchart TD\n    S[开始] --> T[\"任务\\n- 识别桩位\\n- 土钉墙\\n- 坡脚线\"]\n    T --> O[输出答卷]\n    O --> E1[评估维度]\n    E1 --> C1[完整性]\n    E1 --> C2[几何准确性]\n    E1 --> C3[线条质量]\n    E1 --> C4[成本效益]\n    C1 --> R1[评分/评级]\n    C2 --> R1\n    C3 --> R1\n    C4 --> R1\n```\n\n## 性能对比与性价比决策 [BV1U2u86REwL P1 01:41-05:13]\n\n```mermaid\nflowchart TD\n    Start[开始评估] --> CostQ{成本低？}\n    CostQ -- 是 --> L1[\"LUNA\\n推荐: 高性价比\"]\n    CostQ -- 否 --> PerfQ{性能高？}\n    PerfQ -- 是 --> G1[\"GPT5.6sol\\n推荐: 最高性能\"]\n    PerfQ -- 否 --> MidQ{性能中等？}\n    MidQ -- 是 --> O1[\"opus\\n可接受\"]\n    MidQ -- 否 --> F1[\"fable\\n性能好但成本中\"]\n    O1 --> End[结束]\n    F1 --> End\n    G1 --> End\n    L1 --> End\n    CostQ -- 否 --> KQ{成本高且性能好？}\n    KQ -- 是 --> K1[\"KIMIK3\\n推荐: 性能好但成本高\"]\n    KQ -- 否 --> M1[\"mini max\\n不推荐: 性能差\"]\n    K1 --> End\n    M1 --> End\n```",
+      "diagrams": [
+        {
+          "title": "模型总体表现概览 [BV1U2u86REwL P1 00:58-05:13]",
+          "code": "flowchart TD\n    D[Domestic] --> K1[\"KIMIK3\\n性能: 好\\n成本: 高\"]\n    D --> M1[\"mini max\\n性能: 差\\n成本: 低\"]\n    I[International] --> O1[\"opus\\n性能: 中\\n成本: 中\"]\n    I --> F1[\"fable\\n性能: 好\\n成本: 中\"]\n    I --> G1[\"GPT5.6sol\\n性能: 最佳\\n成本: 中\"]\n    I --> L1[\"LUNA\\n性能: 好\\n成本: 极低\"]\n    I --> GE1[\"GEMINI3.6flash\\n暂无评估\"]"
+        },
+        {
+          "title": "识别任务与评估维度流程 [BV1U2u86REwL P1 00:31-03:56]",
+          "code": "flowchart TD\n    S[开始] --> T[\"任务\\n- 识别桩位\\n- 土钉墙\\n- 坡脚线\"]\n    T --> O[输出答卷]\n    O --> E1[评估维度]\n    E1 --> C1[完整性]\n    E1 --> C2[几何准确性]\n    E1 --> C3[线条质量]\n    E1 --> C4[成本效益]\n    C1 --> R1[评分/评级]\n    C2 --> R1\n    C3 --> R1\n    C4 --> R1"
+        },
+        {
+          "title": "性能对比与性价比决策 [BV1U2u86REwL P1 01:41-05:13]",
+          "code": "flowchart TD\n    Start[开始评估] --> CostQ{成本低？}\n    CostQ -- 是 --> L1[\"LUNA\\n推荐: 高性价比\"]\n    CostQ -- 否 --> PerfQ{性能高？}\n    PerfQ -- 是 --> G1[\"GPT5.6sol\\n推荐: 最高性能\"]\n    PerfQ -- 否 --> MidQ{性能中等？}\n    MidQ -- 是 --> O1[\"opus\\n可接受\"]\n    MidQ -- 否 --> F1[\"fable\\n性能好但成本中\"]\n    O1 --> End[结束]\n    F1 --> End\n    G1 --> End\n    L1 --> End\n    CostQ -- 否 --> KQ{成本高且性能好？}\n    KQ -- 是 --> K1[\"KIMIK3\\n推荐: 性能好但成本高\"]\n    KQ -- 否 --> M1[\"mini max\\n不推荐: 性能差\"]\n    K1 --> End\n    M1 --> End"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T00:59:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 国内外视觉模型识别工程图纸性能图谱\n\n## 模型总体表现概览 [BV1U2u86REwL P1 00:58-05:13]\n\n```mermaid\nflowchart TD\n    D[Domestic] --> K1[\"KIMIK3\\n性能: 好\\n成本: 高\"]\n    D --> M1[\"mini max\\n性能: 差\\n成本: 低\"]\n    I[International] --> O1[\"opus\\n性能: 中\\n成本: 中\"]\n    I --> F1[\"fable\\n性能: 好\\n成本: 中\"]\n    I --> G1[\"GPT5.6sol\\n性能: 最佳\\n成本: 中\"]\n    I --> L1[\"LUNA\\n性能: 好\\n成本: 极低\"]\n    I --> GE1[\"GEMINI3.6flash\\n暂无评估\"]\n```\n\n## 识别任务与评估维度流程 [BV1U2u86REwL P1 00:31-03:56]\n\n```mermaid\nflowchart TD\n    S[开始] --> T[\"任务\\n- 识别桩位\\n- 土钉墙\\n- 坡脚线\"]\n    T --> O[输出答卷]\n    O --> E1[评估维度]\n    E1 --> C1[完整性]\n    E1 --> C2[几何准确性]\n    E1 --> C3[线条质量]\n    E1 --> C4[成本效益]\n    C1 --> R1[评分/评级]\n    C2 --> R1\n    C3 --> R1\n    C4 --> R1\n```\n\n## 性能对比与性价比决策 [BV1U2u86REwL P1 01:41-05:13]\n\n```mermaid\nflowchart TD\n    Start[开始评估] --> CostQ{成本低？}\n    CostQ -- 是 --> L1[\"LUNA\\n推荐: 高性价比\"]\n    CostQ -- 否 --> PerfQ{性能高？}\n    PerfQ -- 是 --> G1[\"GPT5.6sol\\n推荐: 最高性能\"]\n    PerfQ -- 否 --> MidQ{性能中等？}\n    MidQ -- 是 --> O1[\"opus\\n可接受\"]\n    MidQ -- 否 --> F1[\"fable\\n性能好但成本中\"]\n    O1 --> End[结束]\n    F1 --> End\n    G1 --> End\n    L1 --> End\n    CostQ -- 否 --> KQ{成本高且性能好？}\n    KQ -- 是 --> K1[\"KIMIK3\\n推荐: 性能好但成本高\"]\n    KQ -- 否 --> M1[\"mini max\\n不推荐: 性能差\"]\n    K1 --> End\n    M1 --> End\n```",
+  "diagrams": [
+    {
+      "title": "模型总体表现概览 [BV1U2u86REwL P1 00:58-05:13]",
+      "code": "flowchart TD\n    D[Domestic] --> K1[\"KIMIK3\\n性能: 好\\n成本: 高\"]\n    D --> M1[\"mini max\\n性能: 差\\n成本: 低\"]\n    I[International] --> O1[\"opus\\n性能: 中\\n成本: 中\"]\n    I --> F1[\"fable\\n性能: 好\\n成本: 中\"]\n    I --> G1[\"GPT5.6sol\\n性能: 最佳\\n成本: 中\"]\n    I --> L1[\"LUNA\\n性能: 好\\n成本: 极低\"]\n    I --> GE1[\"GEMINI3.6flash\\n暂无评估\"]"
+    },
+    {
+      "title": "识别任务与评估维度流程 [BV1U2u86REwL P1 00:31-03:56]",
+      "code": "flowchart TD\n    S[开始] --> T[\"任务\\n- 识别桩位\\n- 土钉墙\\n- 坡脚线\"]\n    T --> O[输出答卷]\n    O --> E1[评估维度]\n    E1 --> C1[完整性]\n    E1 --> C2[几何准确性]\n    E1 --> C3[线条质量]\n    E1 --> C4[成本效益]\n    C1 --> R1[评分/评级]\n    C2 --> R1\n    C3 --> R1\n    C4 --> R1"
+    },
+    {
+      "title": "性能对比与性价比决策 [BV1U2u86REwL P1 01:41-05:13]",
+      "code": "flowchart TD\n    Start[开始评估] --> CostQ{成本低？}\n    CostQ -- 是 --> L1[\"LUNA\\n推荐: 高性价比\"]\n    CostQ -- 否 --> PerfQ{性能高？}\n    PerfQ -- 是 --> G1[\"GPT5.6sol\\n推荐: 最高性能\"]\n    PerfQ -- 否 --> MidQ{性能中等？}\n    MidQ -- 是 --> O1[\"opus\\n可接受\"]\n    MidQ -- 否 --> F1[\"fable\\n性能好但成本中\"]\n    O1 --> End[结束]\n    F1 --> End\n    G1 --> End\n    L1 --> End\n    CostQ -- 否 --> KQ{成本高且性能好？}\n    KQ -- 是 --> K1[\"KIMIK3\\n推荐: 性能好但成本高\"]\n    KQ -- 否 --> M1[\"mini max\\n不推荐: 性能差\"]\n    K1 --> End\n    M1 --> End"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T00:59:45+00:00"
+}

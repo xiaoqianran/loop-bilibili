@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1qt3d6DEXA",
+  "title": "DeepSeek接入Codex 还能识图 一键搞定",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1531,
+  "text": "deep sk v4flash正式版已经发布了\n这次最炸裂的一点\n原生支持codex\n什么意思\n你不用花一分钱订阅就能用上\n现在最主流的AI编程agent\n而且我今天还教你怎么给他补上识图能力\ndeep sick看不了图\n没关系\n我给他装个眼睛\n全程实操跟着做就行\n先去下一个codex\n你直接在微软商店搜ChatGPT或者codex都行\n现在他俩合并了\n是同一个东西\n下载安装打开一次\n打开之后它会让你登录\n不用管\n先别登\n我们等会用deep sick接管它\n然后去deep seek开放平台\n直接搜deep sk开放平台就能进\n或者从官网点开放平台入口进来之后\n找到API kiss这个页面点新建名字随便写\n建议写个codex\n方便你自己认\n创建完把这个key复制下来\n注意它只显示一次存好\n如果你之前没充过值\n微信支付宝充个十块钱就够你用很久了\nV4flash的价格极其便宜\n重点来了\ndeep sk官方直接出了一键接入脚本\n专门给codex用的\n打开你的power shell\n以管理员身份运行\n把官方那条脚本命令粘进去回车\n他会问你选V4flash正式版\n还是其他选一V4flash正式版\n然后他让你输入API key\n把刚才复制的那个粘进去搞定\n执行成功\n关掉codex重新打开\n这次你会发现界面变了\n他不再要你登录GPT账号了\n直接就能用\nMac端模型选择器中显示自定义即为生效\nwindows端可能显示自定义或deep sk v4flash\n显示为自定义时\n实际使用的就是你选择的deep sk模型\n随便问一句\n你好\n你是什么模型\n他回答你了\n就说明deep sick已经接管了codex\n你现在就拥有了一个完全免费的\n跑着deep sk v4flash正式版的AI编程agent\n但是有一个问题\ndeep sk v4flash目前没有多模态能力\n说人话就是他看不了图片\n你给他截个图\n他根本不知道那是什么\n怎么办\n我来给他装个眼睛\nGITHUB上有一个开源项目叫cloud vision skill\n别被名字骗了\n虽然叫cloud\n但它就是给所有没有视觉能力的模型补上\n看图功能的codex里一样能用\n你在codex里开一个新会话\n直接跟他说\n帮我安装这个skill\n然后把项目地址丢给他\n它会自动帮你把skill装好\n装完skill之后\n它需要一个能看图的模型来当眼睛\n这里我跟别人不一样\n他推荐用的是阿里千\n问我用的是\n我在小龙虾上面已经配好的多模态模型\n为什么\n因为你如果已经在小龙虾上配了一个\n比较完整的多模态模型\n比如一个token plan\n那就直接用上\n不用再去另外申请什么千问的key\n而且关键是小龙虾上的额度\n不一定每次都跑得完对吧\n那正好把一部分用量分配到codex的识图上来\ndeep sick缺什么\n你就拿小龙虾上的多模态去补资源\n充分利用\n一点都不浪费\n配置很简单\n把你小龙虾的API地址和K填进去\n模型名字选你那个多模态的搞定\n当然也可以选择阿里云百炼新用户\n有着100万免费token\n开个新会话\n随便截个图丢进去\n什么都不用说\n就问一句\n这是什么\n你会看到它自动调用了vision skill去读图了\n识别出来了\n那就全通了\n现在你有一个什么东西\n一个不用花订阅费跑着deep seek v4flash正式版\n还能看图的codex\n总结一下今天咱会了什么\n第一用官方一键脚本把deep sk接入codex\n不用cc switch\n不用折腾\n配置文件\n一条命令搞定\n第二用GITHUB上的cloud vision skill补上识图\n配上你手上已有的多模态模型资源不浪费\n觉得有用\n点个赞\n收藏一下\n有问题评论区聊",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qt3d6DEXA",
+  "published_at": "1785686832",
+  "fetched_at": "2026-08-07T00:11:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4Flash 与 Codex 一键接入与视觉扩展\n\n## Overview of Components and Relationships [BV1qt3d6DEXA P1 00:00]\n\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4Flash 正式版\"]\n    Codex[\"Codex (ChatGPT)\"]\n    Script[\"官方一键接入脚本\"]\n    APIKey[\"DeepSeek API Key\"]\n    VisionSkill[\"cloud vision skill (GitHub)\"]\n    VisionModel[\"多模态模型（阿里千问 / 小龙虾）\"]\n    User[\"使用者\"]\n    DS -->|通过脚本| Codex\n    Script -->|使用| APIKey\n    VisionSkill -->|调用| VisionModel\n    VisionSkill -->|补充看图能力给| Codex\n    User -->|获得免费 AI 编程 agent| DS\n    User -->|通过 VisionSkill 获得看图能力| Codex\n```\n\n## Integration Steps: DeepSeek V4Flash 接入 Codex [BV1qt3d6DEXA P1 00:18-01:23]\n\n```mermaid\nflowchart LR\n    A1[\"下载/打开 Codex (ChatGPT)\"] --> A2[\"不登录，保持打开状态\"]\n    A2 --> A3[\"访问 DeepSeek 开放平台\"]\n    A3 --> A4[\"新建 API 项目，命名如 'codex'\"]\n    A4 --> A5[\"复制一次性显示的 API Key\"]\n    A5 --> A6[\"以管理员身份打开 PowerShell\"]\n    A6 --> A7[\"粘贴官方一键脚本并回车\"]\n    A7 --> A8[\"选择 V4Flash 正式版\"]\n    A8 --> A9[\"输入复制的 API Key\"]\n    A9 --> A10[\"脚本执行成功\"]\n    A10 --> A11[\"关闭并重新打开 Codex\"]\n    A11 --> A12[\"界面显示自定义模型，即 DeepSeek V4Flash\"]\n    A12 --> A13[\"验证：询问模型名称，得到响应\"]\n```\n\n## Adding Vision Capability via Cloud Vision Skill [BV1qt3d6DEXA P1 01:54-02:59]\n\n```mermaid\nflowchart TD\n    B1[\"在 GitHub 找到 cloud vision skill 项目\"] --> B2[\"在 Codex 新会话中发送指令：'帮我安装这个 skill'\"]\n    B2 --> B3[\"提供项目地址\"]\n    B3 --> B4[\"Skill 自动安装完成\"]\n    B4 --> B5[\"需要指定能看图的模型\"]\n    B5 --> B6[\"选择已有多模态模型（阿里千问 / 小龙虾）\"]\n    B6 --> B7[\"配置模型 API 地址和 Key\"]\n    B7 --> B8[\"在 Codex 会话中发送图片\"]\n    B8 --> B9[\"Vision Skill 调用模型读取图片\"]\n    B9 --> B10[\"返回识别结果，视觉功能完成\"]\n```",
+      "diagrams": [
+        {
+          "title": "Overview of Components and Relationships",
+          "code": "flowchart TD\n    DS[\"DeepSeek V4Flash 正式版\"]\n    Codex[\"Codex (ChatGPT)\"]\n    Script[\"官方一键接入脚本\"]\n    APIKey[\"DeepSeek API Key\"]\n    VisionSkill[\"cloud vision skill (GitHub)\"]\n    VisionModel[\"多模态模型（阿里千问 / 小龙虾）\"]\n    User[\"使用者\"]\n    DS -->|通过脚本| Codex\n    Script -->|使用| APIKey\n    VisionSkill -->|调用| VisionModel\n    VisionSkill -->|补充看图能力给| Codex\n    User -->|获得免费 AI 编程 agent| DS\n    User -->|通过 VisionSkill 获得看图能力| Codex"
+        },
+        {
+          "title": "Integration Steps: DeepSeek V4Flash 接入 Codex [BV1qt3d6DEXA P1 00:18-01:23]",
+          "code": "flowchart LR\n    A1[\"下载/打开 Codex (ChatGPT)\"] --> A2[\"不登录，保持打开状态\"]\n    A2 --> A3[\"访问 DeepSeek 开放平台\"]\n    A3 --> A4[\"新建 API 项目，命名如 'codex'\"]\n    A4 --> A5[\"复制一次性显示的 API Key\"]\n    A5 --> A6[\"以管理员身份打开 PowerShell\"]\n    A6 --> A7[\"粘贴官方一键脚本并回车\"]\n    A7 --> A8[\"选择 V4Flash 正式版\"]\n    A8 --> A9[\"输入复制的 API Key\"]\n    A9 --> A10[\"脚本执行成功\"]\n    A10 --> A11[\"关闭并重新打开 Codex\"]\n    A11 --> A12[\"界面显示自定义模型，即 DeepSeek V4Flash\"]\n    A12 --> A13[\"验证：询问模型名称，得到响应\"]"
+        },
+        {
+          "title": "Adding Vision Capability via Cloud Vision Skill [BV1qt3d6DEXA P1 01:54-02:59]",
+          "code": "flowchart TD\n    B1[\"在 GitHub 找到 cloud vision skill 项目\"] --> B2[\"在 Codex 新会话中发送指令：'帮我安装这个 skill'\"]\n    B2 --> B3[\"提供项目地址\"]\n    B3 --> B4[\"Skill 自动安装完成\"]\n    B4 --> B5[\"需要指定能看图的模型\"]\n    B5 --> B6[\"选择已有多模态模型（阿里千问 / 小龙虾）\"]\n    B6 --> B7[\"配置模型 API 地址和 Key\"]\n    B7 --> B8[\"在 Codex 会话中发送图片\"]\n    B8 --> B9[\"Vision Skill 调用模型读取图片\"]\n    B9 --> B10[\"返回识别结果，视觉功能完成\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T00:11:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4Flash 与 Codex 一键接入与视觉扩展\n\n## Overview of Components and Relationships [BV1qt3d6DEXA P1 00:00]\n\n```mermaid\nflowchart TD\n    DS[\"DeepSeek V4Flash 正式版\"]\n    Codex[\"Codex (ChatGPT)\"]\n    Script[\"官方一键接入脚本\"]\n    APIKey[\"DeepSeek API Key\"]\n    VisionSkill[\"cloud vision skill (GitHub)\"]\n    VisionModel[\"多模态模型（阿里千问 / 小龙虾）\"]\n    User[\"使用者\"]\n    DS -->|通过脚本| Codex\n    Script -->|使用| APIKey\n    VisionSkill -->|调用| VisionModel\n    VisionSkill -->|补充看图能力给| Codex\n    User -->|获得免费 AI 编程 agent| DS\n    User -->|通过 VisionSkill 获得看图能力| Codex\n```\n\n## Integration Steps: DeepSeek V4Flash 接入 Codex [BV1qt3d6DEXA P1 00:18-01:23]\n\n```mermaid\nflowchart LR\n    A1[\"下载/打开 Codex (ChatGPT)\"] --> A2[\"不登录，保持打开状态\"]\n    A2 --> A3[\"访问 DeepSeek 开放平台\"]\n    A3 --> A4[\"新建 API 项目，命名如 'codex'\"]\n    A4 --> A5[\"复制一次性显示的 API Key\"]\n    A5 --> A6[\"以管理员身份打开 PowerShell\"]\n    A6 --> A7[\"粘贴官方一键脚本并回车\"]\n    A7 --> A8[\"选择 V4Flash 正式版\"]\n    A8 --> A9[\"输入复制的 API Key\"]\n    A9 --> A10[\"脚本执行成功\"]\n    A10 --> A11[\"关闭并重新打开 Codex\"]\n    A11 --> A12[\"界面显示自定义模型，即 DeepSeek V4Flash\"]\n    A12 --> A13[\"验证：询问模型名称，得到响应\"]\n```\n\n## Adding Vision Capability via Cloud Vision Skill [BV1qt3d6DEXA P1 01:54-02:59]\n\n```mermaid\nflowchart TD\n    B1[\"在 GitHub 找到 cloud vision skill 项目\"] --> B2[\"在 Codex 新会话中发送指令：'帮我安装这个 skill'\"]\n    B2 --> B3[\"提供项目地址\"]\n    B3 --> B4[\"Skill 自动安装完成\"]\n    B4 --> B5[\"需要指定能看图的模型\"]\n    B5 --> B6[\"选择已有多模态模型（阿里千问 / 小龙虾）\"]\n    B6 --> B7[\"配置模型 API 地址和 Key\"]\n    B7 --> B8[\"在 Codex 会话中发送图片\"]\n    B8 --> B9[\"Vision Skill 调用模型读取图片\"]\n    B9 --> B10[\"返回识别结果，视觉功能完成\"]\n```",
+  "diagrams": [
+    {
+      "title": "Overview of Components and Relationships",
+      "code": "flowchart TD\n    DS[\"DeepSeek V4Flash 正式版\"]\n    Codex[\"Codex (ChatGPT)\"]\n    Script[\"官方一键接入脚本\"]\n    APIKey[\"DeepSeek API Key\"]\n    VisionSkill[\"cloud vision skill (GitHub)\"]\n    VisionModel[\"多模态模型（阿里千问 / 小龙虾）\"]\n    User[\"使用者\"]\n    DS -->|通过脚本| Codex\n    Script -->|使用| APIKey\n    VisionSkill -->|调用| VisionModel\n    VisionSkill -->|补充看图能力给| Codex\n    User -->|获得免费 AI 编程 agent| DS\n    User -->|通过 VisionSkill 获得看图能力| Codex"
+    },
+    {
+      "title": "Integration Steps: DeepSeek V4Flash 接入 Codex [BV1qt3d6DEXA P1 00:18-01:23]",
+      "code": "flowchart LR\n    A1[\"下载/打开 Codex (ChatGPT)\"] --> A2[\"不登录，保持打开状态\"]\n    A2 --> A3[\"访问 DeepSeek 开放平台\"]\n    A3 --> A4[\"新建 API 项目，命名如 'codex'\"]\n    A4 --> A5[\"复制一次性显示的 API Key\"]\n    A5 --> A6[\"以管理员身份打开 PowerShell\"]\n    A6 --> A7[\"粘贴官方一键脚本并回车\"]\n    A7 --> A8[\"选择 V4Flash 正式版\"]\n    A8 --> A9[\"输入复制的 API Key\"]\n    A9 --> A10[\"脚本执行成功\"]\n    A10 --> A11[\"关闭并重新打开 Codex\"]\n    A11 --> A12[\"界面显示自定义模型，即 DeepSeek V4Flash\"]\n    A12 --> A13[\"验证：询问模型名称，得到响应\"]"
+    },
+    {
+      "title": "Adding Vision Capability via Cloud Vision Skill [BV1qt3d6DEXA P1 01:54-02:59]",
+      "code": "flowchart TD\n    B1[\"在 GitHub 找到 cloud vision skill 项目\"] --> B2[\"在 Codex 新会话中发送指令：'帮我安装这个 skill'\"]\n    B2 --> B3[\"提供项目地址\"]\n    B3 --> B4[\"Skill 自动安装完成\"]\n    B4 --> B5[\"需要指定能看图的模型\"]\n    B5 --> B6[\"选择已有多模态模型（阿里千问 / 小龙虾）\"]\n    B6 --> B7[\"配置模型 API 地址和 Key\"]\n    B7 --> B8[\"在 Codex 会话中发送图片\"]\n    B8 --> B9[\"Vision Skill 调用模型读取图片\"]\n    B9 --> B10[\"返回识别结果，视觉功能完成\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T00:11:48+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV163Kj6hESZ",
+  "title": "【Skill速成数模必学】保姆级课程教你10分钟用数模Skill完成数学建模 包含：下载安装、使用教学、真题模拟、降重教学、适用与所有数学建模竞赛",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2222,
+  "text": "各位同学大家好\n这里是五条数模这门课程\n我们开始讲解如何使用skill\n快速完成数学建模比赛\n你可能一次数学建模比赛都没有参加过\n代码写的也不多\n没有关系\n我们这门课程的目标只有一个\n让你学会用skill这套可以复用的建模工作流\n最后能够独立地完成一篇国奖级别的论文\n先看一下我们今天的一个路线图\n我们分六个板块\n前六个板块呢是层层递进的\n先搞清楚skill到底是什么\n它和我们平时发的提示词有什么区别\n第二个我们去讲清楚\n它在数学建模里到底能帮上什么忙\n第三就是最重要的部分怎么安装\n怎么调用\n第四给大家推荐一些国赛联赛必装的几个skill\n第五拆开我们自己做的这一套建模skill\n看看它内部的一个逻辑\n第六我们会用真题去进行一个模拟演练\n告诉大家如何去完整的去通过skill\n去完成一道真题\n第七也就是我们最有特点的部分去告诉大家\n如果很多人都使用一个skill\n我们如何去打造自己的专属论文\n防止查重呢\n对不对\n因为很多人的skill如果都用一个的话\n很多同学都会担心\n会不会出现我们生成的论文是一样的了\n我们生成的内容是一样的了\n担心这个查重率\n这里我们会着重去讲解如何把这个降下去\n现在我们正式开始第一部分认识skill\n我们先把一个最基础但特别重要的问题讲清楚\nskill到底是什么\n它和我们平时给AI发的指令差在哪\n有什么区别\n你可以把skill理解成三样东西的组合\n它不是一句临时的命令\n而是一套被固定下来\n能反复调用的专业做法\n第一样是专业知识告诉AI这类任务该怎么判断\n怎么下手\n比如建模题要先分清楚这是预测题还是优化题\n第二样是工作流程\n规定先读什么后改什么\n怎么检查结果\n比如先确定问题\n再规划模型\n最后写论文\n第三样是约束规则\n设定我们的底线哦\n不能够编造数据哦\n公式必须可编辑\n图必须由代码生成\n一句话就让你记住\nskill和我们的prop的区别是什么\n我们的prompt是这一次你怎么做\nskill是以后遇到这类事都按这套办法做\n所以他们不是替代的关系\n而是配合使用\nskill是已经定好规矩的\n你可以本质的把它理解成是由很多prompt组成\n而prompt是只负责这一次的一个具体要求\n你可能这一次有单独的一个要求给他发过去\n就是一句话的事情\n而skill是整套已经由无数个prompt组成的\n一个具体的一个格式\n如果你还是没有理解的话\n我们来打个比方\n比如说你要做海报\n你通过prompt就像你临时提的要求啊\n你会说这张海报要蓝色的标题大一点\n明天前给我啊\n这个只针对这一次有效\n你换一个任务\n你就得重新给我们的AI去发PROT\n但如果skill的话呢\n它就是一份设计规范\n你把这个技能包装在你的AI里\n做海报的时候\n你直接告诉我们的AI\n通过调用我们某个skill来做一张海报就可以了\n相当于skill就是已经一套固定的工作流程\n任何一张海报都能够复用\n稳定不走样\n那么在我们数学建模里的skill\n就是把一整套的建模规范规规定下来\n比如说你发给他以后\n第一步是进行题目阅读\n第二步是进行赛题的一个判断\n是预测题还是优化题\n把他一整套的一个数模\n数学建模的流程规范下来\n下来我们开始讲我们skill在数模中的一个用途\n数学建模本质上就是读题处理\n数据建模\n画图检验\n写论文\n这六件事几乎同时在推进一个复杂任务\n它的链条比较又长又乱\n这时skill的价值就出来了\n他会把这条链条变得一个稳定可控\n如果说没有skill的话\n会容易出现哪些问题\n首先流程靠记忆\n你在三天赛程手忙脚乱\n经常会漏掉敏感性分析模型\n检验这些能拿分的环节啊\n把这些重点看的环节给漏掉了\n第二结果不可信\nAI是很容易健忘的\n他会很容易编出来一个漂亮的结论出来\n但背背后没有任何数据\n没有公式\n没有图表支撑啊\n评委可能一眼就能看穿\n第三是论文不规范\n它会把你的公式T啊\n这一些字母呀\n这些公式呀\n符号呀啊会进行一个乱序\n会影响我们的图的图注\n然后影响我们整体论文的一个档次\n第四是改一处全篇乱\n相信有很多同学有过这种体验\n就是你发给AI一个文档\n或者说发给他一个图片\n你本意是想让他修改很小的一个部分\n结果他把其他的部分也给改了\n你再告诉他把它修改回去\n它仍然会把其他的部分再也同时修改\n这就是我们没有skill的时候\n可能会出现的一个问题\n那有了skill之后是怎么解决的呢\n他会把建模流程全部标准化\n一条证据链\n标准化成一条证据链以后呢\n会从读题数据建模图表\n检验论文这六步来一环扣一环\n首先是读题\n是把赛题拆成研究对象\n输入输出约束\n评价标准数据\n它是来处理缺失异常标准化特征工程\n并且说明为什么这么清晰\n建模部分呢\n他会选模型写清变量\n目标约束\n给出求解和原理\n图表部分呢会把结果转化成图和表\n并且每一个图每一个表之后都有文字\n检视和检验\n是敏感性分析和我们的模型检验来\n最后验证我们的结论稳不稳\n最后论文部分呢会按照这个题目组织\n然后编撰编写成一篇完整规范的稿子\n诶一篇论文对吧\n为什么这条链条很关键\n因为skill要求每一个结论都能够追溯到我们的\n数据公式\n图表或者检验\n这就是一条完整的证据链啊\nskill会让AI从一个可能是会写作文的\n变成一个会做科研的\n这样子\n正好对上了我们数模比赛评委最看重的两点\n完整性和可信度\n并且结论这些也都可以验证\n然后整体的排版也不会有乱序\n那些可以帮助我们很好地进行一个数学建模\n比赛的辅助",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV163Kj6hESZ",
+  "published_at": "1784250000",
+  "fetched_at": "2026-08-07T00:20:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Skill学习图谱\n\n## 1. Skill的定义与组成\n```mermaid\nflowchart TD\n    S[\"Skill\"] --> PK[\"专业知识\"]\n    S --> WF[\"工作流程\"]\n    S --> CR[\"约束规则\"]\n    PK -->|指导AI判断任务| T[\"任务类型判定\"]\n    WF -->|规定步骤顺序| R[\"读题→建模→写论文\"]\n    CR -->|设定底线| C1[\"不编造数据\"]\n    CR --> C2[\"公式可编辑\"]\n    CR --> C3[\"图表代码生成\"]\n    P[\"Prompt\"] -->|一次性指令| O[\"单次任务\"]\n    S --> PS[\"Prompt集合\"]\n    PS --> P\n    style S fill:#f9f,stroke:#333,stroke-width:2px\n```\n\n## 2. Skill在数学建模中的工作链\n```mermaid\nflowchart LR\n    S[\"Skill\"] --> R1[\"读题\"]\n    R1 --> R2[\"判定题型（预测/优化）\"]\n    R2 --> R3[\"数据处理\"]\n    R3 --> R4[\"模型构建\"]\n    R4 --> R5[\"图表绘制\"]\n    R5 --> R6[\"结果检验\"]\n    R6 --> R7[\"论文撰写\"]\n    R7 --> EC[\"完整证据链\"]\n    EC --> C1[\"结论可追溯\"]\n    EC --> C2[\"数据/公式/图表支撑\"]\n    style S fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## 3. 没有Skill vs 有Skill的对比\n```mermaid\nflowchart TD\n    NS[\"无Skill\"] --> M[\"记忆式流程\"]\n    M --> P1[\"漏掉敏感性分析\"]\n    M --> P2[\"结果不可信\"]\n    M --> P3[\"公式/图表乱序\"]\n    M --> P4[\"全篇改动混乱\"]\n    S[\"有Skill\"] --> SP[\"标准化流程\"]\n    SP --> EC[\"完整证据链\"]\n    EC --> R1[\"提升可信度\"]\n    EC --> R2[\"降低查重风险\"]\n    NS -.->|导致| P1\n    NS -.->|导致| P2\n    NS -.->|导致| P3\n    NS -.->|导致| P4\n    S -.->|解决| P1\n    S -.->|解决| P2\n    S -.->|解决| P3\n    S -.->|解决| P4\n    style NS fill:#fdd,stroke:#333,stroke-width:2px\n    style S fill:#dfd,stroke:#333,stroke-width:2px\n```\n\n## 4. Skill与Prompt的配合使用\n```mermaid\nflowchart TD\n    P[\"Prompt\"] -->|一次性需求| T1[\"临时指令\"]\n    S[\"Skill\"] -->|复用| T2[\"固定流程\"]\n    T1 --> A[\"单次任务完成\"]\n    T2 --> B[\"多次任务统一执行\"]\n    S --> PS[\"Prompt集合\"]\n    PS --> P\n    P -->|配合| S\n    style P fill:#ffd,stroke:#333,stroke-width:2px\n    style S fill:#cfc,stroke:#333,stroke-width:2px\n```",
+      "diagrams": [
+        {
+          "title": "1. Skill的定义与组成",
+          "code": "flowchart TD\n    S[\"Skill\"] --> PK[\"专业知识\"]\n    S --> WF[\"工作流程\"]\n    S --> CR[\"约束规则\"]\n    PK -->|指导AI判断任务| T[\"任务类型判定\"]\n    WF -->|规定步骤顺序| R[\"读题→建模→写论文\"]\n    CR -->|设定底线| C1[\"不编造数据\"]\n    CR --> C2[\"公式可编辑\"]\n    CR --> C3[\"图表代码生成\"]\n    P[\"Prompt\"] -->|一次性指令| O[\"单次任务\"]\n    S --> PS[\"Prompt集合\"]\n    PS --> P\n    style S fill:#f9f,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "2. Skill在数学建模中的工作链",
+          "code": "flowchart LR\n    S[\"Skill\"] --> R1[\"读题\"]\n    R1 --> R2[\"判定题型（预测/优化）\"]\n    R2 --> R3[\"数据处理\"]\n    R3 --> R4[\"模型构建\"]\n    R4 --> R5[\"图表绘制\"]\n    R5 --> R6[\"结果检验\"]\n    R6 --> R7[\"论文撰写\"]\n    R7 --> EC[\"完整证据链\"]\n    EC --> C1[\"结论可追溯\"]\n    EC --> C2[\"数据/公式/图表支撑\"]\n    style S fill:#bbf,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "3. 没有Skill vs 有Skill的对比",
+          "code": "flowchart TD\n    NS[\"无Skill\"] --> M[\"记忆式流程\"]\n    M --> P1[\"漏掉敏感性分析\"]\n    M --> P2[\"结果不可信\"]\n    M --> P3[\"公式/图表乱序\"]\n    M --> P4[\"全篇改动混乱\"]\n    S[\"有Skill\"] --> SP[\"标准化流程\"]\n    SP --> EC[\"完整证据链\"]\n    EC --> R1[\"提升可信度\"]\n    EC --> R2[\"降低查重风险\"]\n    NS -.->|导致| P1\n    NS -.->|导致| P2\n    NS -.->|导致| P3\n    NS -.->|导致| P4\n    S -.->|解决| P1\n    S -.->|解决| P2\n    S -.->|解决| P3\n    S -.->|解决| P4\n    style NS fill:#fdd,stroke:#333,stroke-width:2px\n    style S fill:#dfd,stroke:#333,stroke-width:2px"
+        },
+        {
+          "title": "4. Skill与Prompt的配合使用",
+          "code": "flowchart TD\n    P[\"Prompt\"] -->|一次性需求| T1[\"临时指令\"]\n    S[\"Skill\"] -->|复用| T2[\"固定流程\"]\n    T1 --> A[\"单次任务完成\"]\n    T2 --> B[\"多次任务统一执行\"]\n    S --> PS[\"Prompt集合\"]\n    PS --> P\n    P -->|配合| S\n    style P fill:#ffd,stroke:#333,stroke-width:2px\n    style S fill:#cfc,stroke:#333,stroke-width:2px"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T00:20:47+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Skill学习图谱\n\n## 1. Skill的定义与组成\n```mermaid\nflowchart TD\n    S[\"Skill\"] --> PK[\"专业知识\"]\n    S --> WF[\"工作流程\"]\n    S --> CR[\"约束规则\"]\n    PK -->|指导AI判断任务| T[\"任务类型判定\"]\n    WF -->|规定步骤顺序| R[\"读题→建模→写论文\"]\n    CR -->|设定底线| C1[\"不编造数据\"]\n    CR --> C2[\"公式可编辑\"]\n    CR --> C3[\"图表代码生成\"]\n    P[\"Prompt\"] -->|一次性指令| O[\"单次任务\"]\n    S --> PS[\"Prompt集合\"]\n    PS --> P\n    style S fill:#f9f,stroke:#333,stroke-width:2px\n```\n\n## 2. Skill在数学建模中的工作链\n```mermaid\nflowchart LR\n    S[\"Skill\"] --> R1[\"读题\"]\n    R1 --> R2[\"判定题型（预测/优化）\"]\n    R2 --> R3[\"数据处理\"]\n    R3 --> R4[\"模型构建\"]\n    R4 --> R5[\"图表绘制\"]\n    R5 --> R6[\"结果检验\"]\n    R6 --> R7[\"论文撰写\"]\n    R7 --> EC[\"完整证据链\"]\n    EC --> C1[\"结论可追溯\"]\n    EC --> C2[\"数据/公式/图表支撑\"]\n    style S fill:#bbf,stroke:#333,stroke-width:2px\n```\n\n## 3. 没有Skill vs 有Skill的对比\n```mermaid\nflowchart TD\n    NS[\"无Skill\"] --> M[\"记忆式流程\"]\n    M --> P1[\"漏掉敏感性分析\"]\n    M --> P2[\"结果不可信\"]\n    M --> P3[\"公式/图表乱序\"]\n    M --> P4[\"全篇改动混乱\"]\n    S[\"有Skill\"] --> SP[\"标准化流程\"]\n    SP --> EC[\"完整证据链\"]\n    EC --> R1[\"提升可信度\"]\n    EC --> R2[\"降低查重风险\"]\n    NS -.->|导致| P1\n    NS -.->|导致| P2\n    NS -.->|导致| P3\n    NS -.->|导致| P4\n    S -.->|解决| P1\n    S -.->|解决| P2\n    S -.->|解决| P3\n    S -.->|解决| P4\n    style NS fill:#fdd,stroke:#333,stroke-width:2px\n    style S fill:#dfd,stroke:#333,stroke-width:2px\n```\n\n## 4. Skill与Prompt的配合使用\n```mermaid\nflowchart TD\n    P[\"Prompt\"] -->|一次性需求| T1[\"临时指令\"]\n    S[\"Skill\"] -->|复用| T2[\"固定流程\"]\n    T1 --> A[\"单次任务完成\"]\n    T2 --> B[\"多次任务统一执行\"]\n    S --> PS[\"Prompt集合\"]\n    PS --> P\n    P -->|配合| S\n    style P fill:#ffd,stroke:#333,stroke-width:2px\n    style S fill:#cfc,stroke:#333,stroke-width:2px\n```",
+  "diagrams": [
+    {
+      "title": "1. Skill的定义与组成",
+      "code": "flowchart TD\n    S[\"Skill\"] --> PK[\"专业知识\"]\n    S --> WF[\"工作流程\"]\n    S --> CR[\"约束规则\"]\n    PK -->|指导AI判断任务| T[\"任务类型判定\"]\n    WF -->|规定步骤顺序| R[\"读题→建模→写论文\"]\n    CR -->|设定底线| C1[\"不编造数据\"]\n    CR --> C2[\"公式可编辑\"]\n    CR --> C3[\"图表代码生成\"]\n    P[\"Prompt\"] -->|一次性指令| O[\"单次任务\"]\n    S --> PS[\"Prompt集合\"]\n    PS --> P\n    style S fill:#f9f,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "2. Skill在数学建模中的工作链",
+      "code": "flowchart LR\n    S[\"Skill\"] --> R1[\"读题\"]\n    R1 --> R2[\"判定题型（预测/优化）\"]\n    R2 --> R3[\"数据处理\"]\n    R3 --> R4[\"模型构建\"]\n    R4 --> R5[\"图表绘制\"]\n    R5 --> R6[\"结果检验\"]\n    R6 --> R7[\"论文撰写\"]\n    R7 --> EC[\"完整证据链\"]\n    EC --> C1[\"结论可追溯\"]\n    EC --> C2[\"数据/公式/图表支撑\"]\n    style S fill:#bbf,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "3. 没有Skill vs 有Skill的对比",
+      "code": "flowchart TD\n    NS[\"无Skill\"] --> M[\"记忆式流程\"]\n    M --> P1[\"漏掉敏感性分析\"]\n    M --> P2[\"结果不可信\"]\n    M --> P3[\"公式/图表乱序\"]\n    M --> P4[\"全篇改动混乱\"]\n    S[\"有Skill\"] --> SP[\"标准化流程\"]\n    SP --> EC[\"完整证据链\"]\n    EC --> R1[\"提升可信度\"]\n    EC --> R2[\"降低查重风险\"]\n    NS -.->|导致| P1\n    NS -.->|导致| P2\n    NS -.->|导致| P3\n    NS -.->|导致| P4\n    S -.->|解决| P1\n    S -.->|解决| P2\n    S -.->|解决| P3\n    S -.->|解决| P4\n    style NS fill:#fdd,stroke:#333,stroke-width:2px\n    style S fill:#dfd,stroke:#333,stroke-width:2px"
+    },
+    {
+      "title": "4. Skill与Prompt的配合使用",
+      "code": "flowchart TD\n    P[\"Prompt\"] -->|一次性需求| T1[\"临时指令\"]\n    S[\"Skill\"] -->|复用| T2[\"固定流程\"]\n    T1 --> A[\"单次任务完成\"]\n    T2 --> B[\"多次任务统一执行\"]\n    S --> PS[\"Prompt集合\"]\n    PS --> P\n    P -->|配合| S\n    style P fill:#ffd,stroke:#333,stroke-width:2px\n    style S fill:#cfc,stroke:#333,stroke-width:2px"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T00:20:47+00:00"
+}

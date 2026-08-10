@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1UiDYBeEr2",
+  "title": "面试官：你觉得RAG为什么会出现幻觉？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1833,
+  "text": "面试官问\n你觉得RAG为什么会出现幻觉\n针对这种问题\n你有什么解决思路\n这个问题狠不狠\n非常狠\n很多同学一听到幻觉\n第一反应就是哎呀\n这是大模型本身不行\n他爱胡说八道\n如果你这么回答\n那面试基本就结束了\n为什么\n因为面试官问的不是大模型\n而是RAG\n也就是检索增强生成\n你要知道RAG是一个链条\n是从数据入库到检索再到生成的全过程\n幻觉可能发生在链条的任何一个环节\n那怎么回答才能体现你的段位呢\n大家好\n我是彭宇\n来我们往下看\n大家看这个标题\nAdvanced r a g\n高级RAG架构方案\n我们要解决幻觉\n不能只靠修修补补\n得有一套系统的全链路治理方案\n我把这个链路拆解成了五个阶段\n我们一个一个来捉妖\n看看幻觉到底藏在哪\n首先阶段一数据准备\n大家想一想\n如果源头的水就是脏的\n流出来的水能干净吗\n这就是计算机界的名言\nGarbage in garbage out\n垃圾进垃圾出\n很多时候幻觉是怎么来的\n是因为你切分数据的时候太粗暴了\n比如你设定每500个字切一段\n结果正好把一句话切断了\n上半句\n在这一段\n下半句\n再下一段模型读到了半句话\n语义都断了\n它不就开始瞎编了吗\n所以怎么解决\n看这里semantic chunking语义切分\n我们不要按字数切\n我们要按一群按段落切\n保证每一块肉都是完整的\n同时还要给数据打上标签\n告诉模型这段话出自哪里\n从源头保证食材是新鲜的\n好数据没问题了\n接下来是阶段二用户的提问\n做过落地的同学都知道\n用户怎么提问是不可控的\n比如用户问如果不吃早饭会咋样\n但你的知识库里存的是专业的医学文章\n标题叫胆囊结石的成因分析\n这时候用户的问题和数据库里的内容关键词匹配不上\n检索不到东西\n模型为了强行回答\n又开始产生幻觉了\n这怎么治\n看右边query rewriting\n问题重写\n我们再把问题扔给数据库之前\n先让大模型帮我们润色一下\n比如把不吃早饭咋样改写成长期不吃早餐对消化系统的影响\n或者用HIDE技术先生成一个假设性答案去检索\n这样就把用户模糊的问题变成了机器听得懂的指令\n接下来是核心环节阶段\n三检索\n这里有个大坑\n现在的RAG大多只用向量检索\n但我问大家一个问题\n向量检索真的万能吗\n有些专有名词\n比如产品的型号X2000\n在向量空间里可能和X1000离得很近\n一不小心就找错了\n找错了文档模型自然就回答错了\n所以高手的做法是hybrid search混合检索\n大家记住这个词\n我们要两条腿走路\n一条腿是向量检索抓语义\n另一条腿是传统的关键词检索\n抓精确匹配\n两手都要抓\n两手都要硬\n这样才能保证不仅仅是像\n而且是准\n注意了\n大家看这个紫色的卡片\n如果面试官问你如何用最低的成本最大程度减少幻觉\n你就把这一招抛出来\n重排序\n为什么这一步这么关键\n大家想我们在上一阶段\n为了不错过信息\n通常会召回一大堆文档\n比如top50个片段\n但这50个片段里可能只有第三个和第48个是有用的\n其他的48个都是噪声\n如果你把这50个全扔给大模型\n模型就会出现迷失中间现象\n被噪声带偏\n产生严重的幻觉\n所以我们要加一个cross encoder金牌模型\n他的作用就像一个严厉的教导主任\n把这50个同学重新考试\n只挑出分数最高的top5给大模型看\n把噪声过滤掉\n给模型的上下文越纯净\n幻觉就越少\n这一步是提升RAG效果的核武器\n最后终于到了大模型开口说话的环节阶段\n五声称虽然前面我们做了很多工作\n但模型有时候还是有惯性的\n比如他预训练的时候记住的是去年的旧新闻\n认为某家公司的CEO是张三\n但你检索回来的最新文档里\n明明写着昨天刚换成了李四\n他可能由于权重惯性非要和你顶嘴\n这就是知识冲突\n这时候我们要怎么控制它\n第一prompt约束\n你要明确告诉他\n不知道就说不知道\n别瞎编\n第二要求他输出引用\n请告诉我是根据哪篇文档的\n第几行说的\n一旦要求模型提供证据\n它瞎编的概率就会大幅下降\n好我们要讲的内容很多\n为了方便大家记忆\n也方便大家在面试时能够脱口而出\n我把这五个阶段的技术方案浓缩成了四个字\n大家看屏幕下方\n第一净源头数据要干净\n语义切分要做好\n第二改用户问题要改写\n让机器听得懂\n第三排\n这是重点\n一定要做混合检索和重排序\n去粗取精\n第四空\n最后用prompt控制模型\n必须有理有据\n禁改排控\n记住这四个字\n下次面试官再问你RAG幻觉怎么解决\n你就把这套组合拳打出来\n绝对能让他眼前一亮\n好这张架构图的技术要点\n就是这些\n大家理解了吗",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UiDYBeEr2",
+  "published_at": "1776240300",
+  "fetched_at": "2026-08-08T08:12:26+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# RAG 幻觉全链路治理图谱\n\n## 全链路概览 [BV1UiDYBeEr2 P1 00:24]\n```mermaid\nflowchart TD\n    D1[\"数据准备\"] --> Q1[\"用户提问\"]\n    Q1 --> S1[\"检索\"]\n    S1 --> G1[\"生成\"]\n    D1 -.-> H1[\"幻觉风险\"]\n    Q1 -.-> H1\n    S1 -.-> H1\n    G1 -.-> H1\n```\n\n## 数据准备关键措施 [BV1UiDYBeEr2 P1 00:52]\n```mermaid\nflowchart TD\n    C1[\"源数据清洁<br/>Garbage in → Garbage out\"] --> C2[\"语义切分<br/>semantic chunking\"]\n    C2 --> C3[\"完整段落<br/>避免半句切分\"]\n    C3 --> C4[\"标签标注<br/>来源信息\"]\n    C4 --> C5[\"高质量数据\"]\n```\n\n## 检索阶段混合检索与重排序 [BV1UiDYBeEr2 P1 02:22]\n```mermaid\nflowchart TD\n    R1[\"向量检索<br/>语义匹配\"] --> R3[\"混合检索<br/>Hybrid Search\"]\n    R2[\"关键词检索<br/>精确匹配\"] --> R3\n    R3 --> R4[\"重排序<br/>Cross Encoder\"]\n    R4 --> R5[\"Top‑5 过滤\"]\n    R5 --> R6[\"高质量上下文\"]\n```\n\n## 生成阶段 Prompt 控制与证据要求 [BV1UiDYBeEr2 P1 03:41]\n```mermaid\nflowchart TD\n    P1[\"Prompt 约束<br/>不知道就说不知道\"] --> P2[\"要求输出引用<br/>文档及行号\"]\n    P2 --> P3[\"降低幻觉概率\"]\n```",
+      "diagrams": [
+        {
+          "title": "全链路概览",
+          "code": "flowchart TD\n    D1[\"数据准备\"] --> Q1[\"用户提问\"]\n    Q1 --> S1[\"检索\"]\n    S1 --> G1[\"生成\"]\n    D1 -.-> H1[\"幻觉风险\"]\n    Q1 -.-> H1\n    S1 -.-> H1\n    G1 -.-> H1"
+        },
+        {
+          "title": "数据准备关键措施",
+          "code": "flowchart TD\n    C1[\"源数据清洁<br/>Garbage in → Garbage out\"] --> C2[\"语义切分<br/>semantic chunking\"]\n    C2 --> C3[\"完整段落<br/>避免半句切分\"]\n    C3 --> C4[\"标签标注<br/>来源信息\"]\n    C4 --> C5[\"高质量数据\"]"
+        },
+        {
+          "title": "检索阶段混合检索与重排序",
+          "code": "flowchart TD\n    R1[\"向量检索<br/>语义匹配\"] --> R3[\"混合检索<br/>Hybrid Search\"]\n    R2[\"关键词检索<br/>精确匹配\"] --> R3\n    R3 --> R4[\"重排序<br/>Cross Encoder\"]\n    R4 --> R5[\"Top‑5 过滤\"]\n    R5 --> R6[\"高质量上下文\"]"
+        },
+        {
+          "title": "生成阶段 Prompt 控制与证据要求",
+          "code": "flowchart TD\n    P1[\"Prompt 约束<br/>不知道就说不知道\"] --> P2[\"要求输出引用<br/>文档及行号\"]\n    P2 --> P3[\"降低幻觉概率\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T08:13:57+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# RAG 幻觉全链路治理图谱\n\n## 全链路概览 [BV1UiDYBeEr2 P1 00:24]\n```mermaid\nflowchart TD\n    D1[\"数据准备\"] --> Q1[\"用户提问\"]\n    Q1 --> S1[\"检索\"]\n    S1 --> G1[\"生成\"]\n    D1 -.-> H1[\"幻觉风险\"]\n    Q1 -.-> H1\n    S1 -.-> H1\n    G1 -.-> H1\n```\n\n## 数据准备关键措施 [BV1UiDYBeEr2 P1 00:52]\n```mermaid\nflowchart TD\n    C1[\"源数据清洁<br/>Garbage in → Garbage out\"] --> C2[\"语义切分<br/>semantic chunking\"]\n    C2 --> C3[\"完整段落<br/>避免半句切分\"]\n    C3 --> C4[\"标签标注<br/>来源信息\"]\n    C4 --> C5[\"高质量数据\"]\n```\n\n## 检索阶段混合检索与重排序 [BV1UiDYBeEr2 P1 02:22]\n```mermaid\nflowchart TD\n    R1[\"向量检索<br/>语义匹配\"] --> R3[\"混合检索<br/>Hybrid Search\"]\n    R2[\"关键词检索<br/>精确匹配\"] --> R3\n    R3 --> R4[\"重排序<br/>Cross Encoder\"]\n    R4 --> R5[\"Top‑5 过滤\"]\n    R5 --> R6[\"高质量上下文\"]\n```\n\n## 生成阶段 Prompt 控制与证据要求 [BV1UiDYBeEr2 P1 03:41]\n```mermaid\nflowchart TD\n    P1[\"Prompt 约束<br/>不知道就说不知道\"] --> P2[\"要求输出引用<br/>文档及行号\"]\n    P2 --> P3[\"降低幻觉概率\"]\n```",
+  "diagrams": [
+    {
+      "title": "全链路概览",
+      "code": "flowchart TD\n    D1[\"数据准备\"] --> Q1[\"用户提问\"]\n    Q1 --> S1[\"检索\"]\n    S1 --> G1[\"生成\"]\n    D1 -.-> H1[\"幻觉风险\"]\n    Q1 -.-> H1\n    S1 -.-> H1\n    G1 -.-> H1"
+    },
+    {
+      "title": "数据准备关键措施",
+      "code": "flowchart TD\n    C1[\"源数据清洁<br/>Garbage in → Garbage out\"] --> C2[\"语义切分<br/>semantic chunking\"]\n    C2 --> C3[\"完整段落<br/>避免半句切分\"]\n    C3 --> C4[\"标签标注<br/>来源信息\"]\n    C4 --> C5[\"高质量数据\"]"
+    },
+    {
+      "title": "检索阶段混合检索与重排序",
+      "code": "flowchart TD\n    R1[\"向量检索<br/>语义匹配\"] --> R3[\"混合检索<br/>Hybrid Search\"]\n    R2[\"关键词检索<br/>精确匹配\"] --> R3\n    R3 --> R4[\"重排序<br/>Cross Encoder\"]\n    R4 --> R5[\"Top‑5 过滤\"]\n    R5 --> R6[\"高质量上下文\"]"
+    },
+    {
+      "title": "生成阶段 Prompt 控制与证据要求",
+      "code": "flowchart TD\n    P1[\"Prompt 约束<br/>不知道就说不知道\"] --> P2[\"要求输出引用<br/>文档及行号\"]\n    P2 --> P3[\"降低幻觉概率\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T08:13:57+00:00"
+}

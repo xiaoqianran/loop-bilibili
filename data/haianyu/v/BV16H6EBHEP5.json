@@ -1,0 +1,66 @@
+{
+  "bvid": "BV16H6EBHEP5",
+  "title": "2. AWQ：一种保护关键权重的LLM量化算法【每天一个宝藏名词】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 143,
+  "text": "AWQ是由MIT行酸实验室提出的一种大模型\n量化算法\n也是m l cs的最佳论文\n它识别并保护模型中1%的关键权重\n实现了几乎无损的int4量化\nA w q\n目前已成为大模型端侧部署的工业级标准\n被英伟达TENSRTBLLM等主流推理框架支持\n可以通过pip install e1键安装",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16H6EBHEP5",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:20:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AWQ 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"AWQ\"] --> B1[\"由 MIT 行酸实验室提出\"]\n    A1 --> C1[\"MLCS 最佳论文\"]\n    A1 --> D1[\"大模型端侧部署工业级标准\"]\n```\n\n## 关键机制\n```mermaid\nflowchart TD\n    A2[\"识别关键权重\"] --> B2[\"1% 权重\"]\n    B2 --> C2[\"保护关键权重\"]\n    C2 --> D2[\"进行 int4 量化\"]\n    D2 --> E2[\"实现几乎无损的量化\"]\n```\n\n## 部署与生态\n```mermaid\nflowchart TD\n    A3[\"AWQ 支持的推理框架\"] --> B3[\"NVIDIA TensorRT-LLM\"]\n    A3 --> C3[\"其他主流框架\"]\n    A3 --> D3[\"通过 pip 安装\"]\n    D3 --> E3[\"pip install e1键\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"AWQ\"] --> B1[\"由 MIT 行酸实验室提出\"]\n    A1 --> C1[\"MLCS 最佳论文\"]\n    A1 --> D1[\"大模型端侧部署工业级标准\"]"
+        },
+        {
+          "title": "关键机制",
+          "code": "flowchart TD\n    A2[\"识别关键权重\"] --> B2[\"1% 权重\"]\n    B2 --> C2[\"保护关键权重\"]\n    C2 --> D2[\"进行 int4 量化\"]\n    D2 --> E2[\"实现几乎无损的量化\"]"
+        },
+        {
+          "title": "部署与生态",
+          "code": "flowchart TD\n    A3[\"AWQ 支持的推理框架\"] --> B3[\"NVIDIA TensorRT-LLM\"]\n    A3 --> C3[\"其他主流框架\"]\n    A3 --> D3[\"通过 pip 安装\"]\n    D3 --> E3[\"pip install e1键\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T18:18:11+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AWQ 知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"AWQ\"] --> B1[\"由 MIT 行酸实验室提出\"]\n    A1 --> C1[\"MLCS 最佳论文\"]\n    A1 --> D1[\"大模型端侧部署工业级标准\"]\n```\n\n## 关键机制\n```mermaid\nflowchart TD\n    A2[\"识别关键权重\"] --> B2[\"1% 权重\"]\n    B2 --> C2[\"保护关键权重\"]\n    C2 --> D2[\"进行 int4 量化\"]\n    D2 --> E2[\"实现几乎无损的量化\"]\n```\n\n## 部署与生态\n```mermaid\nflowchart TD\n    A3[\"AWQ 支持的推理框架\"] --> B3[\"NVIDIA TensorRT-LLM\"]\n    A3 --> C3[\"其他主流框架\"]\n    A3 --> D3[\"通过 pip 安装\"]\n    D3 --> E3[\"pip install e1键\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"AWQ\"] --> B1[\"由 MIT 行酸实验室提出\"]\n    A1 --> C1[\"MLCS 最佳论文\"]\n    A1 --> D1[\"大模型端侧部署工业级标准\"]"
+    },
+    {
+      "title": "关键机制",
+      "code": "flowchart TD\n    A2[\"识别关键权重\"] --> B2[\"1% 权重\"]\n    B2 --> C2[\"保护关键权重\"]\n    C2 --> D2[\"进行 int4 量化\"]\n    D2 --> E2[\"实现几乎无损的量化\"]"
+    },
+    {
+      "title": "部署与生态",
+      "code": "flowchart TD\n    A3[\"AWQ 支持的推理框架\"] --> B3[\"NVIDIA TensorRT-LLM\"]\n    A3 --> C3[\"其他主流框架\"]\n    A3 --> D3[\"通过 pip 安装\"]\n    D3 --> E3[\"pip install e1键\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:18:11+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1xtNV6FEt8",
+  "title": "godot小游戏程序讲解教程-连连看、记忆翻牌",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4539,
+  "text": "我们今天做一个小游戏的程序架构讲解\n就包括了一个连连看游戏和记忆翻牌游戏\n整体比较简单\n对于代码部分几乎使用AI完成\n这里也就不细讲了\n主要介绍一下结构方面的内容\n我们先来看一下演戏整体像背景\n用了一个动态的纹理\n这点我们之后再说\n之后是设计界面\n没什么好说的\n这些界面介绍一下我们所用的素材\n这里同时使用副文本做了一个超链接效果\n我们看一下游戏逻辑\n这里做了一个难度控制\n以及对应的面板\n根据设定的网格进行生成\n这里是记忆翻牌游戏\n可以看到点击后会进行翻牌\n再看一下连连看\n这两个游戏其实在很多地方是很类似的\n因此就一起做了\n在关系上他们继承自一个同样的鸡肋\n整合了相同的逻辑\n我们这里先来看一下使用了哪些素材\n这里也是将代码发布进了GITHUB上\n大家有需要可以查看一下\n这里是我们记忆翻牌游戏所使用的SHADDER\n来自格斗SHADOS网站由code vogue制作发布\n用意实现动画效果\n这里是我们连连看游戏所使用的方块表情\n有200个高清表情\n以cc0协议免费发布\n其后续我们翻牌游戏所使用的扑克牌图片\n它原始设计提供这一张整体图的\n为了方便后续续使用\n我们通过脚本将它切成了一个一个的\n这里是我们动态背景使用的纹理\n这里是我们使用的背景音乐\n由乌鸦producer制作并发布\n感谢这位老\n这里是我们使用的音效\n使用了其中的音效作为悬停\n点击匹配成功的音效\n这里我们再回到程序部分\n我们看一下文件夹分类吧\n当然这点其实是看个人习惯了\n只要清晰能找到位置在哪即可\n第一个ADDON是插件文件夹\n我们这里暂时并没有用\n我们只在之前用过格斗mp插件\n用于负责AI的完球后\n现在并没有实际意义\nassets文件夹用于存放外部资产\n包括美术音乐等\nauto load用于存放自动加载的脚本场景的\n它们会在项目运行时自动加载并持续生效\n用于我们在流程中一直需要的功能\n主要包括游戏设计\n音效\n音量\n场景跳转等\n场景文件夹用于存放场景\n脚本文件夹\n用于存放一些单独的无对应场景的脚本主题\n用于存放一下细节设计\n这里主要包括panel所使用的style样式\n和label的文本设计\n之后我们再看一下scenes文件夹\n利于每个场景单独设计文件夹\n并存放场景和脚本\n这里设计一个组件文件夹\n用于存放一些跨场景使用的\n被直接实例化的组件场景\n对于有继承关系的简单场景\n放置在一个文件夹中\n这里用于存放游戏中的卡牌和方块\n这里是游戏的鸡肋\n因为继承后的场景有一些单独的组件\n因此这里把相关场景的文件夹拆分了\n我们来看一下基础的可点击体积类\n它是游戏中方块和卡牌的鸡肋\n如名字一样\n作为可点击的物体使用\n开头的是悬停动画所使用的一些量\n对于悬停\n由于在游戏中并没有实际意义\n无需和其他地方产生交互\n因此我们直接让可点机体自己负责\n可以看到我们这里悬停时会让其轻微放大\n这里是用于控制方块大小的代码\n我们的游戏根据难度设计中的方块数量\n会自动将方块缩小到合适的大小\n课点机体留下的只有根据参数调整大小的代码\n而计算出方块需要多大的大小\n并不是方块需要自己处理的职责\n我们选择放置到外部处理\n这里是一个游戏设计脚本\n我们存储了一下游戏中的相关设计的量\n如各个难度中对应的方块数量\n以及游戏默认屏幕大小\n和各个游戏的间距设计等\n之后\n我们就可以通过这些参数计算出在各个数量下\n方块具体的大小\n而对于这些函数\n我们会让游戏在生成方块前调用\n获得其后调用方块中的大小设计函数进行设计\n这同样是因为方块本身并不需要知道\n如何计算出自己的大小\n只需要得到大小后对自身设计即可\n这里我们在积累中留下统一的\n对于twin的动画控制函数\n防止之后的悬停动画\n点击动画等之间出现冲突\n确立通过av AD的鼠标进入退出信号\n决定此时自己是否有被悬停\n通过input事件决定自己是否有被点击\n我们这里同时通过我们的音效管理器\n在悬停时生成对应音效\n它是一个自动加载的脚本\n负责游戏中的音乐和音效\n让游戏中使用席走一个统一的点\n而非自己实践\n同时这样生成的音乐也能防止切换场景时\n音乐突然中断\n能自然进行过渡\n我们这里设置游戏外和游戏中是两种音乐\n中间通过滑动进行音乐的代入淡出\n而对于音效的管理\n我们使用一个对象池系统\n我们会在接收到需要音效的信号时\n生成对应的音效\n而游戏中对于频繁的节点创建销毁\n是有一定性能损耗的\n对象池系统\n就是说我们的节点使用完成后不销毁\n而是重启后进入一个池中\n我们需要使用节点席\n也不直接创建\n而是从其中取出一个节点并进行赋值\n类似于射击游戏中的子弹等\n需要频繁创建和销毁的物体\n都可以使用这一系统以优化性能\n这里是我们用于控制BGM的\n有一段淡入淡出的设计\n这里是控制音效的对象池系统\n这里是控制音量大小的相关代码\nglow中有音频管线\n所有的发送节点都受到master管线的控制\n我们可以为其创建和分配其他的管线\n以让其受到对应管线的控制\n确立创建音乐和音效后\n自动分配到对应管线\n这里只有控制对应管线的音量即可\nVD中让对应行为连接到对应信号\n当然七夕直接用编辑器连接也行\n这里继续看继承后的连连看方块\n这里设计了方块被选择后的特效\n还有对应的去除选择的\n可以看到这里相关的代码很简洁\n没有涉及到逻辑相关的部分\n无论是对于卡牌还是方块\n我们都希望他们不主动处理游戏逻辑\n只要留出动画的调用函数\n等待游戏管理器对它的调用即可\n这里是记忆翻牌的卡牌\n可以看到稀有卡面和卡背两个节点的\n这里都加载了伪3DSHADER\n通过这1SHADER做出翻牌动画\n这段代码可以看到\n开头用了两个函数获取对应节点\n并没有实际意义\n之前AI基础代码忘修了\n可以看到我们按住CTRL键多选之后\n松开后拖曳到脚本中\n再次按住CTRL键并松开鼠标\n就能直接获取到对应节点的引用\nsetup函数中会设计卡背纹理\n虽然有多个卡背\n但其实并没有做选择卡背的功能\n这里会获取相关的纹理\n这里我们通过一个asset loader\n组件来完成相关操作\n可以看到这里有一大段黄色的路径\n这里是对应的图片纹理\n实际上怎么样都好\n这样写只是AI写起来方便而已\n这里是用于处理对应素材\n返回一定数量的随机纹理的\n会由对应的游戏管理脚本调用\n我们的卡牌和方块\n只要能接受纹理后完成设计即可\n这里获取卡面卡背的SHADER材质\n其实也没有太大意义\n直接引用其实就行\n这里是翻拍动画\n同步控制卡面卡背SHADER旋转即可\n这里是匹配动画\n记忆卡牌的代码中依旧只流出动画的调用函数\n自先不处理游戏逻辑\n接下来我们看游戏控制的相关代码\n我们先看游戏机内\n他通过继承就会变成记忆\n翻牌游戏和连连看\n如清理面板上的方块\n确定布局等基础方法\n可以看到这里的大部分函数我们都直接pass\n等待积累重写\nitem被点击的反应是游戏的主要逻辑\n我们先看看连连看\n他是继承自游戏机类的\n对于场景结构\n我们先回去看一下鸡肋\n这里我们有一个选择边框\n用于游戏中的高亮提示\n对于panel\n我们通过style设计了一个方形的中间透明的边框\n我们看一下效果\n可以看到这个边框的效果\n由于我们通常不需要多个边框\n我们只需要一个节点就行了\n如果我们需要多个高亮边框\n我们才需要一个专门的生成器来处理相关内容\n这里也是很简单的\n动画设置\n边框出现时也会根据item的大小自动调整大小\n以适配两个游戏的要求\n之后我们看一下其他的\n这个HUD条需按钮的排列\n通过信号连接对应的功能\n继续看连连看游戏\n在继承后的开始游戏函数中\n我们需要设计游戏需要的格子\n这是因为连连看游戏中我们的连线需要走外圈\n因此需要将外圈的格子空出来\n也就是行列额外加二\n这些具体的设置面板函数\n需要从我们之前的素材读取器中\n获取到对应的图片和id并进行设置\n这里是游戏主要逻辑方块被点击后的函数\n处理方块被点击后的动画表现和逻辑\nready dish场景开始时执行的函数\n这里控制HUD的按钮连接需要的信号\n其实大部分信号都能直接通过编辑器连接\n但是这种代码连接AI写起来会方便点\n不用控制场景\n之后这是一个划线的组件\n我们接收到计算出来的路径后\n根据路径计算出应该的位置\n并在对应的位置上创建LINUD\n可以看到这个划线的效果\n然后我们看一下如何计算出连连看的路径\n算法很简单\n这里就不说了\n依次判定各种情况即可\n这个路径计算器是继承自ref counted的\nref counted和正常的场景脚本不同\n它在不需要使用戏会自动释放\n我们可以将它广泛用于一些临时需要的计算器\n以及一些临时存在不需要存储的数据类型中\n我们看一下记忆翻牌游戏\n这里我们需要确认卡牌是否处于翻回动画中\n慈溪的卡牌应该是不可点击的\n这里也可以说\n为什么\n我们不应该让卡牌自己处理游戏相关逻辑\n那样就会让游戏逻辑分散\n同时我们处理一些涉及到卡牌内部的功能时\n不好对其操作\n气候的这些逻辑比较类似\n这里是具体的点击后的响应\n处理匹配逻辑之后\n我们看下一个\n这里是旧菜单\n场景结构上没什么好说的\n控件拼起来的\n这里连接信号跳转到指定场景\n当然也是其实是可以通过编辑器直接连接的\n这里显示对应面板或者加载对应场景\n然后我们看其他组件\n这是一个转场特效\n用一个黑屏作为中介\n简单的设计一个淡入淡出的特效\n我们来看一下\n这些就是通过控制color ret的透明度\n淡入淡出\n如果我们需要更多样的转场\n我们需要SHADER辅助\n之后我们来看一下动态纹理背景\n简单的一个禁令节点\n我们还是先看一下效果\n看一下节点的设计\n需要设计纹理重复并开启纹理的区域裁切\n代码就很简单了\n在开始时和细口大小变化时\n我们控制大小和细口一致\n在process中就是我们每间执行的操作\n我们通过一定速度来移动纹理的区域\n并且在纹理的X和Y和纹理相等时穷尽\n这样每当纹理移动一个循环就穷尽\n看上去就像纹理在无限循环\n我们再看一下别的\n看一下这些自动加载的功能\n这里是控制方块的大小的\n看一下场景管理器\n这里保存了各个场景的路径\n在切换时需要时加载\n作为自动加载脚本\n我们看一下远程\n它们是在程序启动时就会加载\n并一直存在\n通过一个场景管理器\n我们避免各个场景自己分别实现\n如何切换\n让切换场景走一个统一的接口\n这里是控制转场动画的参数\n利于转场动画何时出现\n我们也选择让场景管理器统一调用\n建议转角函数作为统一入口\n包括也有对背景音乐的控制\n这里我们存储的是路径\n在需要需加载\n不许用PVLOAD预加载\n一加载会让场景一直在后台存在\n在多场景下影响性能\n只有我们希望尽量缩短加载时间使用\n然后我们看一下还有什么场景没说\n机械场景比较简单\n我们直接把需要感谢的人和主页挂这里就行\n这里有一个简单的超链接效果\n让点击对应网址后跳转到对应网页\n他偷袭需要副文本label中的bb code配合\n另外对于器械场景的结构\n因为人比较小\n我们全都放置到场景结构中\n如果比较多\n我们最后使用数据结构存储之后\n需要显示时再生成\n我们看一下这个超链接效果\n看一下乌鸦大佬的主页\n再次感谢这位老提供的音乐\n代码已经发布至GITHUB上了\n大家有需要可以再看一下具体内容\n我们再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1xtNV6FEt8",
+  "published_at": "1783881387",
+  "fetched_at": "2026-08-09T14:42:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 小游戏项目结构与关键系统图谱\n\n## 项目文件夹结构概览\n```mermaid\nflowchart TD\n    A1[\"Addons (插件)\"] -->|未使用| A2[\"无实际作用\"]\n    B1[\"Assets\"] --> B2[\"美术资源\"]\n    B1 --> B3[\"音乐 & 音效\"]\n    C1[\"AutoLoad\"] --> C2[\"自动加载脚本/场景\"]\n    D1[\"Scenes\"] --> D2[\"各游戏场景文件夹\"]\n    D1 --> D3[\"HUD & UI 场景\"]\n    E1[\"Components\"] --> E2[\"跨场景可实例化组件\"]\n    E1 --> E3[\"高亮边框生成器\"]\n    F1[\"UI Styles\"] --> F2[\"Panel 样式 & Label 文本\"]\n```\n\n## 实体层级与交互职责\n```mermaid\nflowchart TD\n    B0[\"BaseClickable (鸡肋)\"] --> B1[\"Block\"]\n    B0 --> B2[\"Card\"]\n    B1 --> B3[\"LinkBlock (连连看方块)\"]\n    B2 --> B4[\"MemoryCard (记忆翻牌卡牌)\"]\n    B5[\"AnimationController\"] --> B1\n    B5 --> B2\n    B5 --> B3\n    B5 --> B4\n    B6[\"InputHandler\"] --> B1\n    B6 --> B2\n    B6 --> B3\n    B6 --> B4\n    B5 -->|控制悬停/点击动画| B6\n```\n\n## 音频管理系统\n```mermaid\nflowchart TD\n    A[\"AudioManager (AutoLoad)\"] --> B[\"BGMController\"]\n    A --> C[\"SFXPool (对象池)\"]\n    B --> D[\"FadeIn / FadeOut 逻辑\"]\n    C --> E[\"按需生成音效实例\"]\n    F[\"AudioPipelines\"] --> G[\"Master 管线\"]\n    F --> H[\"自定义管线\"]\n    G --> I[\"统一音量控制\"]\n    H --> I\n    B --> I\n    C --> I\n```\n\n## 游戏设计参数流\n```mermaid\nflowchart LR\n    D1[\"DifficultySetting\"] --> D2[\"DesignScript (存储参数)\"]\n    D2 --> D3[\"BlockCount (对应难度的方块数量)\"]\n    D3 --> D4[\"BlockSizeCalc (根据屏幕大小 & 间距计算)\"]\n    D4 --> D5[\"BlockSpawner (生成并设置方块大小)\"]\n    D1 --> D5\n```\n\n## 转场与动态背景实现\n```mermaid\nflowchart TD\n    T1[\"TransitionEffect (淡入淡出)\"] --> T2[\"TransitionShader\"]\n    T1 --> T3[\"ColorTween (透明度控制)\"]\n    B1[\"DynamicBackgroundNode\"] --> B2[\"TextureRepeater (重复纹理)\"]\n    B1 --> B3[\"TextureMovement (速度驱动平移)\"]\n    B2 --> B4[\"UV 区域裁切\"]\n    B3 --> B4\n    T1 --> B1\n```",
+      "diagrams": [
+        {
+          "title": "项目文件夹结构概览",
+          "code": "flowchart TD\n    A1[\"Addons (插件)\"] -->|未使用| A2[\"无实际作用\"]\n    B1[\"Assets\"] --> B2[\"美术资源\"]\n    B1 --> B3[\"音乐 & 音效\"]\n    C1[\"AutoLoad\"] --> C2[\"自动加载脚本/场景\"]\n    D1[\"Scenes\"] --> D2[\"各游戏场景文件夹\"]\n    D1 --> D3[\"HUD & UI 场景\"]\n    E1[\"Components\"] --> E2[\"跨场景可实例化组件\"]\n    E1 --> E3[\"高亮边框生成器\"]\n    F1[\"UI Styles\"] --> F2[\"Panel 样式 & Label 文本\"]"
+        },
+        {
+          "title": "实体层级与交互职责",
+          "code": "flowchart TD\n    B0[\"BaseClickable (鸡肋)\"] --> B1[\"Block\"]\n    B0 --> B2[\"Card\"]\n    B1 --> B3[\"LinkBlock (连连看方块)\"]\n    B2 --> B4[\"MemoryCard (记忆翻牌卡牌)\"]\n    B5[\"AnimationController\"] --> B1\n    B5 --> B2\n    B5 --> B3\n    B5 --> B4\n    B6[\"InputHandler\"] --> B1\n    B6 --> B2\n    B6 --> B3\n    B6 --> B4\n    B5 -->|控制悬停/点击动画| B6"
+        },
+        {
+          "title": "音频管理系统",
+          "code": "flowchart TD\n    A[\"AudioManager (AutoLoad)\"] --> B[\"BGMController\"]\n    A --> C[\"SFXPool (对象池)\"]\n    B --> D[\"FadeIn / FadeOut 逻辑\"]\n    C --> E[\"按需生成音效实例\"]\n    F[\"AudioPipelines\"] --> G[\"Master 管线\"]\n    F --> H[\"自定义管线\"]\n    G --> I[\"统一音量控制\"]\n    H --> I\n    B --> I\n    C --> I"
+        },
+        {
+          "title": "游戏设计参数流",
+          "code": "flowchart LR\n    D1[\"DifficultySetting\"] --> D2[\"DesignScript (存储参数)\"]\n    D2 --> D3[\"BlockCount (对应难度的方块数量)\"]\n    D3 --> D4[\"BlockSizeCalc (根据屏幕大小 & 间距计算)\"]\n    D4 --> D5[\"BlockSpawner (生成并设置方块大小)\"]\n    D1 --> D5"
+        },
+        {
+          "title": "转场与动态背景实现",
+          "code": "flowchart TD\n    T1[\"TransitionEffect (淡入淡出)\"] --> T2[\"TransitionShader\"]\n    T1 --> T3[\"ColorTween (透明度控制)\"]\n    B1[\"DynamicBackgroundNode\"] --> B2[\"TextureRepeater (重复纹理)\"]\n    B1 --> B3[\"TextureMovement (速度驱动平移)\"]\n    B2 --> B4[\"UV 区域裁切\"]\n    B3 --> B4\n    T1 --> B1"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T14:42:32+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 小游戏项目结构与关键系统图谱\n\n## 项目文件夹结构概览\n```mermaid\nflowchart TD\n    A1[\"Addons (插件)\"] -->|未使用| A2[\"无实际作用\"]\n    B1[\"Assets\"] --> B2[\"美术资源\"]\n    B1 --> B3[\"音乐 & 音效\"]\n    C1[\"AutoLoad\"] --> C2[\"自动加载脚本/场景\"]\n    D1[\"Scenes\"] --> D2[\"各游戏场景文件夹\"]\n    D1 --> D3[\"HUD & UI 场景\"]\n    E1[\"Components\"] --> E2[\"跨场景可实例化组件\"]\n    E1 --> E3[\"高亮边框生成器\"]\n    F1[\"UI Styles\"] --> F2[\"Panel 样式 & Label 文本\"]\n```\n\n## 实体层级与交互职责\n```mermaid\nflowchart TD\n    B0[\"BaseClickable (鸡肋)\"] --> B1[\"Block\"]\n    B0 --> B2[\"Card\"]\n    B1 --> B3[\"LinkBlock (连连看方块)\"]\n    B2 --> B4[\"MemoryCard (记忆翻牌卡牌)\"]\n    B5[\"AnimationController\"] --> B1\n    B5 --> B2\n    B5 --> B3\n    B5 --> B4\n    B6[\"InputHandler\"] --> B1\n    B6 --> B2\n    B6 --> B3\n    B6 --> B4\n    B5 -->|控制悬停/点击动画| B6\n```\n\n## 音频管理系统\n```mermaid\nflowchart TD\n    A[\"AudioManager (AutoLoad)\"] --> B[\"BGMController\"]\n    A --> C[\"SFXPool (对象池)\"]\n    B --> D[\"FadeIn / FadeOut 逻辑\"]\n    C --> E[\"按需生成音效实例\"]\n    F[\"AudioPipelines\"] --> G[\"Master 管线\"]\n    F --> H[\"自定义管线\"]\n    G --> I[\"统一音量控制\"]\n    H --> I\n    B --> I\n    C --> I\n```\n\n## 游戏设计参数流\n```mermaid\nflowchart LR\n    D1[\"DifficultySetting\"] --> D2[\"DesignScript (存储参数)\"]\n    D2 --> D3[\"BlockCount (对应难度的方块数量)\"]\n    D3 --> D4[\"BlockSizeCalc (根据屏幕大小 & 间距计算)\"]\n    D4 --> D5[\"BlockSpawner (生成并设置方块大小)\"]\n    D1 --> D5\n```\n\n## 转场与动态背景实现\n```mermaid\nflowchart TD\n    T1[\"TransitionEffect (淡入淡出)\"] --> T2[\"TransitionShader\"]\n    T1 --> T3[\"ColorTween (透明度控制)\"]\n    B1[\"DynamicBackgroundNode\"] --> B2[\"TextureRepeater (重复纹理)\"]\n    B1 --> B3[\"TextureMovement (速度驱动平移)\"]\n    B2 --> B4[\"UV 区域裁切\"]\n    B3 --> B4\n    T1 --> B1\n```",
+  "diagrams": [
+    {
+      "title": "项目文件夹结构概览",
+      "code": "flowchart TD\n    A1[\"Addons (插件)\"] -->|未使用| A2[\"无实际作用\"]\n    B1[\"Assets\"] --> B2[\"美术资源\"]\n    B1 --> B3[\"音乐 & 音效\"]\n    C1[\"AutoLoad\"] --> C2[\"自动加载脚本/场景\"]\n    D1[\"Scenes\"] --> D2[\"各游戏场景文件夹\"]\n    D1 --> D3[\"HUD & UI 场景\"]\n    E1[\"Components\"] --> E2[\"跨场景可实例化组件\"]\n    E1 --> E3[\"高亮边框生成器\"]\n    F1[\"UI Styles\"] --> F2[\"Panel 样式 & Label 文本\"]"
+    },
+    {
+      "title": "实体层级与交互职责",
+      "code": "flowchart TD\n    B0[\"BaseClickable (鸡肋)\"] --> B1[\"Block\"]\n    B0 --> B2[\"Card\"]\n    B1 --> B3[\"LinkBlock (连连看方块)\"]\n    B2 --> B4[\"MemoryCard (记忆翻牌卡牌)\"]\n    B5[\"AnimationController\"] --> B1\n    B5 --> B2\n    B5 --> B3\n    B5 --> B4\n    B6[\"InputHandler\"] --> B1\n    B6 --> B2\n    B6 --> B3\n    B6 --> B4\n    B5 -->|控制悬停/点击动画| B6"
+    },
+    {
+      "title": "音频管理系统",
+      "code": "flowchart TD\n    A[\"AudioManager (AutoLoad)\"] --> B[\"BGMController\"]\n    A --> C[\"SFXPool (对象池)\"]\n    B --> D[\"FadeIn / FadeOut 逻辑\"]\n    C --> E[\"按需生成音效实例\"]\n    F[\"AudioPipelines\"] --> G[\"Master 管线\"]\n    F --> H[\"自定义管线\"]\n    G --> I[\"统一音量控制\"]\n    H --> I\n    B --> I\n    C --> I"
+    },
+    {
+      "title": "游戏设计参数流",
+      "code": "flowchart LR\n    D1[\"DifficultySetting\"] --> D2[\"DesignScript (存储参数)\"]\n    D2 --> D3[\"BlockCount (对应难度的方块数量)\"]\n    D3 --> D4[\"BlockSizeCalc (根据屏幕大小 & 间距计算)\"]\n    D4 --> D5[\"BlockSpawner (生成并设置方块大小)\"]\n    D1 --> D5"
+    },
+    {
+      "title": "转场与动态背景实现",
+      "code": "flowchart TD\n    T1[\"TransitionEffect (淡入淡出)\"] --> T2[\"TransitionShader\"]\n    T1 --> T3[\"ColorTween (透明度控制)\"]\n    B1[\"DynamicBackgroundNode\"] --> B2[\"TextureRepeater (重复纹理)\"]\n    B1 --> B3[\"TextureMovement (速度驱动平移)\"]\n    B2 --> B4[\"UV 区域裁切\"]\n    B3 --> B4\n    T1 --> B1"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T14:42:32+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1BqZFBgEHn",
+  "title": "学习Godot 0天，使用AI十天制作，类幸存者小游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1130,
+  "text": "孩子们大家好\n最近看到大家都去用AI了\n我也用AI写了一个类幸存者的小游戏\n背景是赛博时代的生存主播\n现在的音量太高了\n这里我们调低一点音量\n还有把语言切换为中文\n除了代码是AI生成的以外\n游戏里面的美术和音乐也是AI生成的\n现在我们来到了休息室\n这里是战前准备的地方\n可以看到下面有五个不同的角色\n这里可以进行角色选择\n每个角色都有不同的属性和技能\n我们选择没神\n因为他的生命值最高\n容错率高\n然后可以看到左下角有一个回复仓\n我们来看看这里是局外升级数\n我们可以在这里升级角色的各项属性\n然后休息室的右上角有祭祀台和祭祀\n这里可以切换制造升级武器\n普通角色出席一共有三把武器\n这里我们可以切换武器\n目前游戏内有11种不同的武器类型\n可以随意组合\n召唤类不能穿墙\n激光旋风波环绕\n射程不理想\n辅助不是很需要\n所以我们这里选择传统的两枪一棒\n在接下来的地图很有用\n这里是蓝图制造\n根据不同品质前进的蓝图\n可以随机生成一把武器\n评级越高\n生成高品级武器的可能性越高\n然后是装备升级\n可以将制造出来的装备花费金币进行升级\n提高装备的基础属性\n现在最高是14级\n最后是左上角经纪人老乔\n他这里能够签合同和接任务\n获得DEBUFF\n提高结算倍率\n另外为了方便测试\n他这里还能看各种effect和tag的详情\n这里是effect\n能够让角色有各种各样的特殊能力\n为了方便演示\n我们选几个合适的效果\n差点忘了\n这里我们还可以看tag\n前面11个是基础tag\n每一个对应了一种武器类型\n后面的是附加tag\n能够让武器有各种不同的效果\n一把武器出席会有基础tag\n可能有附加tag\n后续角色升级可以让武器有新的tag\n现在游戏里面有三张地图\n分别是草原城市和迷宫\n这里我们选择迷宫\n在一局游戏里面\n我们的基础任务目标是找到三座信号塔激活\n然后前往撤离点撤离\n上面的等级是敌人的等级\n每当倒计时结束或者信号塔被激活\n敌人等级就会升高\n然后敌人会变强\n并且每袭击都会有一大波怪潮\n因此我们要抓紧时间撤离\n防止后面打不过敌人\n好这里我们找到了第一个信号塔\n在上面站着就可以激活\n角色升级可以选取一个升级方向\n这里我们运气不好\n三个星级都是普通品质的\n随便选一个\n这里敌人等级升到十级\n但是没有怪桥提示\n是因为现在地图上面的敌人已经到了100个\n因此没有追加敌人\n角色每升三级就可以选取一个effect\n这里我们选择豌豆射手\n把子弹变大\n能够命中更多的敌人\n地图上有一些贵重物品\n拾取后成功撤离\n可以拿回家卖金币\n但是拾取之后移速会变慢\n这里做延续就不拿了嗯\n零基础十天能写成这样\n我个人还是比较满意的啦\n虽然现在美术数据优化还有一些问题\n但是总的架构都构建的差不多了\nAI大人还是强呀",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1BqZFBgEHn",
+  "published_at": "1777199774",
+  "fetched_at": "2026-08-07T01:12:31+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot AI 10-Day Survival Game Overview\n\n## 总览图\n```mermaid\nflowchart TD\n    G1[\"游戏概念\"] --> AI1[\"AI 生成代码\"]\n    AI1 --> ART[\"AI 生成美术/音乐\"]\n    G1 --> SET[\"赛博时代背景\"]\n    G1 --> ROLE[\"角色选择\"]\n    ROLE --> WEAP[\"武器系统\"]\n    WEAP --> UPG[\"装备升级\"]\n    G1 --> MAP[\"地图系统\"]\n    MAP --> PROG[\"游戏进程\"]\n    PROG --> END[\"完成目标：激活信号塔并撤离\"]\n```\n\n## 角色与属性选择\n```mermaid\nflowchart TD\n    RS[\"角色选择界面\"] --> R1[\"角色：没神\"]\n    R1 --> HP[\"最高生命值\"]\n    R1 --> TOL[\"容错率高\"]\n    RS --> R2[\"其他角色1\"]\n    RS --> R3[\"其他角色2\"]\n    R2 --> HP2[\"普通生命值\"]\n    R3 --> HP3[\"普通生命值\"]\n```\n\n## 武器、蓝图与装备升级\n```mermaid\nflowchart TD\n    WT[\"11 种武器类型\"] --> COMB[\"自由组合（两枪一棒等）\"]\n    BLUE[\"蓝图制造\"] --> RAND[\"随机生成武器\"]\n    QUAL[\"蓝图品质评级\"] --> RAND\n    QUAL --> PROB[\"评级越高，生成高品级武器概率越大\"]\n    COMB --> EQUIP[\"制造装备\"]\n    EQUIP --> UP[\"装备升级\"]\n    UP --> GOLD[\"消耗金币\"]\n    UP --> LVL[\"最高 14 级\"]\n```\n\n## 地图、任务与敌人进度\n```mermaid\nflowchart TD\n    MAPS[\"可选地图\"] --> GRASS[\"草原\"]\n    MAPS --> CITY[\"城市\"]\n    MAPS --> MAZE[\"迷宫\"]\n    MAZE --> SIG[\"3 座信号塔\"]\n    SIG --> ACT[\"激活信号塔\"]\n    ACT --> ENLV[\"敌人等级提升\"]\n    ENLV --> ENSTR[\"敌人变强\"]\n    ENLV --> WAVE[\"大波怪潮\"]\n    WAVE --> TIME[\"时间紧迫\"]\n    TIME --> EVA[\"前往撤离点撤离\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    G1[\"游戏概念\"] --> AI1[\"AI 生成代码\"]\n    AI1 --> ART[\"AI 生成美术/音乐\"]\n    G1 --> SET[\"赛博时代背景\"]\n    G1 --> ROLE[\"角色选择\"]\n    ROLE --> WEAP[\"武器系统\"]\n    WEAP --> UPG[\"装备升级\"]\n    G1 --> MAP[\"地图系统\"]\n    MAP --> PROG[\"游戏进程\"]\n    PROG --> END[\"完成目标：激活信号塔并撤离\"]"
+        },
+        {
+          "title": "角色与属性选择",
+          "code": "flowchart TD\n    RS[\"角色选择界面\"] --> R1[\"角色：没神\"]\n    R1 --> HP[\"最高生命值\"]\n    R1 --> TOL[\"容错率高\"]\n    RS --> R2[\"其他角色1\"]\n    RS --> R3[\"其他角色2\"]\n    R2 --> HP2[\"普通生命值\"]\n    R3 --> HP3[\"普通生命值\"]"
+        },
+        {
+          "title": "武器、蓝图与装备升级",
+          "code": "flowchart TD\n    WT[\"11 种武器类型\"] --> COMB[\"自由组合（两枪一棒等）\"]\n    BLUE[\"蓝图制造\"] --> RAND[\"随机生成武器\"]\n    QUAL[\"蓝图品质评级\"] --> RAND\n    QUAL --> PROB[\"评级越高，生成高品级武器概率越大\"]\n    COMB --> EQUIP[\"制造装备\"]\n    EQUIP --> UP[\"装备升级\"]\n    UP --> GOLD[\"消耗金币\"]\n    UP --> LVL[\"最高 14 级\"]"
+        },
+        {
+          "title": "地图、任务与敌人进度",
+          "code": "flowchart TD\n    MAPS[\"可选地图\"] --> GRASS[\"草原\"]\n    MAPS --> CITY[\"城市\"]\n    MAPS --> MAZE[\"迷宫\"]\n    MAZE --> SIG[\"3 座信号塔\"]\n    SIG --> ACT[\"激活信号塔\"]\n    ACT --> ENLV[\"敌人等级提升\"]\n    ENLV --> ENSTR[\"敌人变强\"]\n    ENLV --> WAVE[\"大波怪潮\"]\n    WAVE --> TIME[\"时间紧迫\"]\n    TIME --> EVA[\"前往撤离点撤离\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T01:12:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot AI 10-Day Survival Game Overview\n\n## 总览图\n```mermaid\nflowchart TD\n    G1[\"游戏概念\"] --> AI1[\"AI 生成代码\"]\n    AI1 --> ART[\"AI 生成美术/音乐\"]\n    G1 --> SET[\"赛博时代背景\"]\n    G1 --> ROLE[\"角色选择\"]\n    ROLE --> WEAP[\"武器系统\"]\n    WEAP --> UPG[\"装备升级\"]\n    G1 --> MAP[\"地图系统\"]\n    MAP --> PROG[\"游戏进程\"]\n    PROG --> END[\"完成目标：激活信号塔并撤离\"]\n```\n\n## 角色与属性选择\n```mermaid\nflowchart TD\n    RS[\"角色选择界面\"] --> R1[\"角色：没神\"]\n    R1 --> HP[\"最高生命值\"]\n    R1 --> TOL[\"容错率高\"]\n    RS --> R2[\"其他角色1\"]\n    RS --> R3[\"其他角色2\"]\n    R2 --> HP2[\"普通生命值\"]\n    R3 --> HP3[\"普通生命值\"]\n```\n\n## 武器、蓝图与装备升级\n```mermaid\nflowchart TD\n    WT[\"11 种武器类型\"] --> COMB[\"自由组合（两枪一棒等）\"]\n    BLUE[\"蓝图制造\"] --> RAND[\"随机生成武器\"]\n    QUAL[\"蓝图品质评级\"] --> RAND\n    QUAL --> PROB[\"评级越高，生成高品级武器概率越大\"]\n    COMB --> EQUIP[\"制造装备\"]\n    EQUIP --> UP[\"装备升级\"]\n    UP --> GOLD[\"消耗金币\"]\n    UP --> LVL[\"最高 14 级\"]\n```\n\n## 地图、任务与敌人进度\n```mermaid\nflowchart TD\n    MAPS[\"可选地图\"] --> GRASS[\"草原\"]\n    MAPS --> CITY[\"城市\"]\n    MAPS --> MAZE[\"迷宫\"]\n    MAZE --> SIG[\"3 座信号塔\"]\n    SIG --> ACT[\"激活信号塔\"]\n    ACT --> ENLV[\"敌人等级提升\"]\n    ENLV --> ENSTR[\"敌人变强\"]\n    ENLV --> WAVE[\"大波怪潮\"]\n    WAVE --> TIME[\"时间紧迫\"]\n    TIME --> EVA[\"前往撤离点撤离\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    G1[\"游戏概念\"] --> AI1[\"AI 生成代码\"]\n    AI1 --> ART[\"AI 生成美术/音乐\"]\n    G1 --> SET[\"赛博时代背景\"]\n    G1 --> ROLE[\"角色选择\"]\n    ROLE --> WEAP[\"武器系统\"]\n    WEAP --> UPG[\"装备升级\"]\n    G1 --> MAP[\"地图系统\"]\n    MAP --> PROG[\"游戏进程\"]\n    PROG --> END[\"完成目标：激活信号塔并撤离\"]"
+    },
+    {
+      "title": "角色与属性选择",
+      "code": "flowchart TD\n    RS[\"角色选择界面\"] --> R1[\"角色：没神\"]\n    R1 --> HP[\"最高生命值\"]\n    R1 --> TOL[\"容错率高\"]\n    RS --> R2[\"其他角色1\"]\n    RS --> R3[\"其他角色2\"]\n    R2 --> HP2[\"普通生命值\"]\n    R3 --> HP3[\"普通生命值\"]"
+    },
+    {
+      "title": "武器、蓝图与装备升级",
+      "code": "flowchart TD\n    WT[\"11 种武器类型\"] --> COMB[\"自由组合（两枪一棒等）\"]\n    BLUE[\"蓝图制造\"] --> RAND[\"随机生成武器\"]\n    QUAL[\"蓝图品质评级\"] --> RAND\n    QUAL --> PROB[\"评级越高，生成高品级武器概率越大\"]\n    COMB --> EQUIP[\"制造装备\"]\n    EQUIP --> UP[\"装备升级\"]\n    UP --> GOLD[\"消耗金币\"]\n    UP --> LVL[\"最高 14 级\"]"
+    },
+    {
+      "title": "地图、任务与敌人进度",
+      "code": "flowchart TD\n    MAPS[\"可选地图\"] --> GRASS[\"草原\"]\n    MAPS --> CITY[\"城市\"]\n    MAPS --> MAZE[\"迷宫\"]\n    MAZE --> SIG[\"3 座信号塔\"]\n    SIG --> ACT[\"激活信号塔\"]\n    ACT --> ENLV[\"敌人等级提升\"]\n    ENLV --> ENSTR[\"敌人变强\"]\n    ENLV --> WAVE[\"大波怪潮\"]\n    WAVE --> TIME[\"时间紧迫\"]\n    TIME --> EVA[\"前往撤离点撤离\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T01:12:41+00:00"
+}

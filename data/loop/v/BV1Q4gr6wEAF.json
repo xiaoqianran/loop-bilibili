@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Q4gr6wEAF",
+  "title": "2026最新企业级Deep Agent教程，让你一次性搞懂LangChain/LangGraph/Deep Agent之间的关系，让你少走99%的弯路！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1158,
+  "text": "如果你们觉得这个视频还不错\n麻烦动动小手给个三连支持一下吧\n点赞关注转发你们的每一个鼓励\n都是我继续创作的动力\n真的非常感谢大家好了\n我们今天晚上的公开课正式开始了啊\n那今天晚上我们讲的主题是deep agent的沙箱\n后端实战\n以及呢这个斯skit agent skill een啊\n这个斯ski eden之前我们其实讲过一次的呃\n不过没关系\n我们今天其实一定要讲到这个沙箱实战的话\n一定是要讲到这个skill的啊\n否则的话呢单独讲这个沙箱没有意义啊\n这个是没办法的事情好\n那课题我们连呃\n说完之后呢\n接下来我们还是按规矩啊\n做一个简单的自我介绍啊\n我是小兵\n今年44岁了呃\n做了16年的i it编程了\n其实我做管理层做的时间不太多\n大部分都是开发\n所以你可以理解我\n你可以你可以称之我是一个马龙的前辈\n好吧啊\n所以我感觉我自己\n我自己认为我自己的代码能力贼强好\n那今天我们上课之前呢\n其实我先准备了三个问题\n第一个问题\ncloud code或者是open cloud\n为什么越来越好用了\nscale中有提示词脚本代码\n那这些scale中的脚本代码如何执行\n那如果一家企业\n如果我需要自己在企业中开发自己\n企业内部自定义的open cloud\n那最关键怎么办好吧\n我们先抛出三个问题\n这三个问题跟我们今天晚啊\n晚上讲的课程是密切相关\n好我们先一个个来啊\n那第一个问题\n我相信应该有有同学已经是\n可能已经能回答出来了\n最近大家可能应该也知道\nopen cloud以及cloud code火得一塌糊涂\n是不是它为什么那么火\n为什么越来越好用了\n其实是模型嗯\n更新之后模型变得很聪明啦\n哎这确实也算是一个原因对吧\n但我觉得最重要的原因应该是什么\n是这个cloud code或者open cloud中能够使用的skill的库\n越来越多\n不但越来越多\n而且还真他妈的功能越来越强大\n所以你会感觉哎呀这个open cloud怎么那么多好用\n真的可以帮我生成数据分析报告啊\n原来大模型本身真还不行\n哎现在可以了是吧\n那我发现加加载一个或者下载一个skill库\n诶\n他就可以了是吧\n其实我觉得这个问题的答案我认为啊\n但每个人每个人的答案\n我认为占比最大的其实就是cloud code以及open cloud中\n能够使用的skill的库\n真的是越来越多越来越多啊好吧\n所以我觉得这是一个理由\n所以他越来越好用了\n那这些SQL中有什么有提示词\n有脚本\n有各种代码\n有做数据分析的\n有帮你去获取数据的\n有帮你去生成某一些代码的\n是不是\n甚至还有人还有帮你专门测试代码和执行\n代码的4K啊\n反正我在网络上见了很多很多抖音上\n大家经常在抖音里面刷什么\n刷来大家看一下我这个open cloud呃\n这个如何牛逼牛逼\n还是那句话\n因为4K要流了",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Q4gr6wEAF",
+  "published_at": "1784703494",
+  "fetched_at": "2026-08-09T17:34:20+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 2026企业级Deep Agent学习图谱\n\n## 图1: Open Cloud 与 Cloud Code 的流行原因 [BV1Q4gr6wEAF P1 02:05]\n\n```mermaid\nflowchart TD\n    A[\"模型更新 → 更聪明\"] --> B[\"提升基础能力\"]\n    B --> C[\"Open Cloud / Cloud Code 受欢迎\"]\n    C --> D[\"Skill 库规模扩大\"]\n    D --> E[\"提供提示词、脚本、代码\"]\n    D --> F[\"支持数据分析报告生成\"]\n    D --> G[\"支持数据获取\"]\n    D --> H[\"支持代码生成与测试\"]\n    D --> I[\"支持代码执行\"]\n    E --> J[\"用户感知易用性提升\"]\n    F --> J\n    G --> J\n    H --> J\n    I --> J\n```\n\n## 图2: Skill 库在 Open Cloud 中的功能组成 [BV1Q4gr6wEAF P1 03:20]\n\n```mermaid\nflowchart LR\n    S[\"Skill 库\"] --> P[\"提示词\"]\n    S --> SC[\"脚本\"]\n    S --> C[\"代码\"]\n    S --> DA[\"数据分析\"]\n    S --> DF[\"数据获取\"]\n    S --> CG[\"代码生成\"]\n    S --> CT[\"代码测试\"]\n    S --> EX[\"代码执行\"]\n    P --> UI[\"用户交互\"]\n    SC --> AU[\"自动化任务\"]\n    C --> DEV[\"开发辅助\"]\n    DA --> RP[\"报告生成\"]\n    DF --> DS[\"数据源连接\"]\n    CG --> GP[\"生成脚本\"]\n    CT --> VT[\"验证测试\"]\n    EX --> RT[\"运行结果\"]\n```\n\n## 图3: 沙箱实现依赖 Skill 库的工作流 [BV1Q4gr6wEAF P1 00:29]\n\n```mermaid\nflowchart TD\n    A[\"沙箱环境\"] --> B[\"无 Skill 库 → 功能受限\"]\n    A --> C[\"集成 Skill 库\"]\n    C --> D[\"加载提示词/脚本\"]\n    D --> E[\"执行数据分析\"]\n    D --> F[\"执行代码生成\"]\n    D --> G[\"执行代码测试\"]\n    D --> H[\"执行代码运行\"]\n    E --> I[\"生成报告\"]\n    F --> J[\"生成代码\"]\n    G --> K[\"验证代码\"]\n    H --> L[\"运行代码\"]\n    I --> M[\"返回结果\"]\n    J --> M\n    K --> M\n    L --> M\n```",
+      "diagrams": [
+        {
+          "title": "图1: Open Cloud 与 Cloud Code 的流行原因",
+          "code": "flowchart TD\n    A[\"模型更新 → 更聪明\"] --> B[\"提升基础能力\"]\n    B --> C[\"Open Cloud / Cloud Code 受欢迎\"]\n    C --> D[\"Skill 库规模扩大\"]\n    D --> E[\"提供提示词、脚本、代码\"]\n    D --> F[\"支持数据分析报告生成\"]\n    D --> G[\"支持数据获取\"]\n    D --> H[\"支持代码生成与测试\"]\n    D --> I[\"支持代码执行\"]\n    E --> J[\"用户感知易用性提升\"]\n    F --> J\n    G --> J\n    H --> J\n    I --> J"
+        },
+        {
+          "title": "图2: Skill 库在 Open Cloud 中的功能组成",
+          "code": "flowchart LR\n    S[\"Skill 库\"] --> P[\"提示词\"]\n    S --> SC[\"脚本\"]\n    S --> C[\"代码\"]\n    S --> DA[\"数据分析\"]\n    S --> DF[\"数据获取\"]\n    S --> CG[\"代码生成\"]\n    S --> CT[\"代码测试\"]\n    S --> EX[\"代码执行\"]\n    P --> UI[\"用户交互\"]\n    SC --> AU[\"自动化任务\"]\n    C --> DEV[\"开发辅助\"]\n    DA --> RP[\"报告生成\"]\n    DF --> DS[\"数据源连接\"]\n    CG --> GP[\"生成脚本\"]\n    CT --> VT[\"验证测试\"]\n    EX --> RT[\"运行结果\"]"
+        },
+        {
+          "title": "图3: 沙箱实现依赖 Skill 库的工作流",
+          "code": "flowchart TD\n    A[\"沙箱环境\"] --> B[\"无 Skill 库 → 功能受限\"]\n    A --> C[\"集成 Skill 库\"]\n    C --> D[\"加载提示词/脚本\"]\n    D --> E[\"执行数据分析\"]\n    D --> F[\"执行代码生成\"]\n    D --> G[\"执行代码测试\"]\n    D --> H[\"执行代码运行\"]\n    E --> I[\"生成报告\"]\n    F --> J[\"生成代码\"]\n    G --> K[\"验证代码\"]\n    H --> L[\"运行代码\"]\n    I --> M[\"返回结果\"]\n    J --> M\n    K --> M\n    L --> M"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T17:34:37+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 2026企业级Deep Agent学习图谱\n\n## 图1: Open Cloud 与 Cloud Code 的流行原因 [BV1Q4gr6wEAF P1 02:05]\n\n```mermaid\nflowchart TD\n    A[\"模型更新 → 更聪明\"] --> B[\"提升基础能力\"]\n    B --> C[\"Open Cloud / Cloud Code 受欢迎\"]\n    C --> D[\"Skill 库规模扩大\"]\n    D --> E[\"提供提示词、脚本、代码\"]\n    D --> F[\"支持数据分析报告生成\"]\n    D --> G[\"支持数据获取\"]\n    D --> H[\"支持代码生成与测试\"]\n    D --> I[\"支持代码执行\"]\n    E --> J[\"用户感知易用性提升\"]\n    F --> J\n    G --> J\n    H --> J\n    I --> J\n```\n\n## 图2: Skill 库在 Open Cloud 中的功能组成 [BV1Q4gr6wEAF P1 03:20]\n\n```mermaid\nflowchart LR\n    S[\"Skill 库\"] --> P[\"提示词\"]\n    S --> SC[\"脚本\"]\n    S --> C[\"代码\"]\n    S --> DA[\"数据分析\"]\n    S --> DF[\"数据获取\"]\n    S --> CG[\"代码生成\"]\n    S --> CT[\"代码测试\"]\n    S --> EX[\"代码执行\"]\n    P --> UI[\"用户交互\"]\n    SC --> AU[\"自动化任务\"]\n    C --> DEV[\"开发辅助\"]\n    DA --> RP[\"报告生成\"]\n    DF --> DS[\"数据源连接\"]\n    CG --> GP[\"生成脚本\"]\n    CT --> VT[\"验证测试\"]\n    EX --> RT[\"运行结果\"]\n```\n\n## 图3: 沙箱实现依赖 Skill 库的工作流 [BV1Q4gr6wEAF P1 00:29]\n\n```mermaid\nflowchart TD\n    A[\"沙箱环境\"] --> B[\"无 Skill 库 → 功能受限\"]\n    A --> C[\"集成 Skill 库\"]\n    C --> D[\"加载提示词/脚本\"]\n    D --> E[\"执行数据分析\"]\n    D --> F[\"执行代码生成\"]\n    D --> G[\"执行代码测试\"]\n    D --> H[\"执行代码运行\"]\n    E --> I[\"生成报告\"]\n    F --> J[\"生成代码\"]\n    G --> K[\"验证代码\"]\n    H --> L[\"运行代码\"]\n    I --> M[\"返回结果\"]\n    J --> M\n    K --> M\n    L --> M\n```",
+  "diagrams": [
+    {
+      "title": "图1: Open Cloud 与 Cloud Code 的流行原因",
+      "code": "flowchart TD\n    A[\"模型更新 → 更聪明\"] --> B[\"提升基础能力\"]\n    B --> C[\"Open Cloud / Cloud Code 受欢迎\"]\n    C --> D[\"Skill 库规模扩大\"]\n    D --> E[\"提供提示词、脚本、代码\"]\n    D --> F[\"支持数据分析报告生成\"]\n    D --> G[\"支持数据获取\"]\n    D --> H[\"支持代码生成与测试\"]\n    D --> I[\"支持代码执行\"]\n    E --> J[\"用户感知易用性提升\"]\n    F --> J\n    G --> J\n    H --> J\n    I --> J"
+    },
+    {
+      "title": "图2: Skill 库在 Open Cloud 中的功能组成",
+      "code": "flowchart LR\n    S[\"Skill 库\"] --> P[\"提示词\"]\n    S --> SC[\"脚本\"]\n    S --> C[\"代码\"]\n    S --> DA[\"数据分析\"]\n    S --> DF[\"数据获取\"]\n    S --> CG[\"代码生成\"]\n    S --> CT[\"代码测试\"]\n    S --> EX[\"代码执行\"]\n    P --> UI[\"用户交互\"]\n    SC --> AU[\"自动化任务\"]\n    C --> DEV[\"开发辅助\"]\n    DA --> RP[\"报告生成\"]\n    DF --> DS[\"数据源连接\"]\n    CG --> GP[\"生成脚本\"]\n    CT --> VT[\"验证测试\"]\n    EX --> RT[\"运行结果\"]"
+    },
+    {
+      "title": "图3: 沙箱实现依赖 Skill 库的工作流",
+      "code": "flowchart TD\n    A[\"沙箱环境\"] --> B[\"无 Skill 库 → 功能受限\"]\n    A --> C[\"集成 Skill 库\"]\n    C --> D[\"加载提示词/脚本\"]\n    D --> E[\"执行数据分析\"]\n    D --> F[\"执行代码生成\"]\n    D --> G[\"执行代码测试\"]\n    D --> H[\"执行代码运行\"]\n    E --> I[\"生成报告\"]\n    F --> J[\"生成代码\"]\n    G --> K[\"验证代码\"]\n    H --> L[\"运行代码\"]\n    I --> M[\"返回结果\"]\n    J --> M\n    K --> M\n    L --> M"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T17:34:37+00:00"
+}

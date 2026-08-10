@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1cFuJ67Eav",
+  "title": "Kimi-3这么火 Deepseek真的落后了吗？Deepseek VS Kimi编程大对决",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 868,
+  "text": "最近kimi sign特别火\n到处都是KIMI的新闻\n而反观deep sick却几乎没有声量\n难道是deep sick真的已经落后了吗\n我们有一个基于flutter的应用\n我们想进一步提升界面的美观程度\n我们先把这个项目基线同时发给deep seek和KIMI\n可以看到两边都能完成代码基线的分析和存储\n但deep seek的输出要丰富很多\n而KIMI只有一小段\n在建立完基线后\n我们让deep seek和KIMI都修改一个相同的系统日志\n暴露出来的问题\n对比一下他们的输出结果\ndeep sick不到两秒就给出分析和代码\n而KIMI先是报了个高峰阶段无法处理\n再次尝试后又说他无法找到文件\n再次尝试后\nKIMI终于开始输出代码\n结果和deep seek差不多的\n这说明KIMI编码能力还是不错的\n当尝试在让KIMI修改一个问题时\nKIMI就反馈内容过多\n强制开始一个新的对话\nKIMI的上下文存储很有限\n而deep seek的上下文存储最多可到50mm左右\n足够进行对话式的vibe coding了\n对大多数人是完全够用的\n接着我们让deep seek和KIMI都输出超长代码\ndeep seek能输出3000多行代码文件\n而KIMI试了两次都卡在中间\ndeep seek与KIMI编程能力对比\n总结核心结论\n从web版编程agent角度\ndeep seek支持工程及对话式开发\nKIMI则更适合单文件代码片段级别的编程辅助\n两者基础模型能力相当\n差异主要体现在产品化工程实现层面\n关键差异\ndeep seek web版具备完整的工程及开发能力\n支持系统化的项目构建与迭代\nkimi web版无法实现工程及开发\n但在单文件或代码片段的编程建议上表现优秀\n补充说明基础模型层面\n两者实力在伯仲之间\n普通人难以感知差异\n只有在更复杂的场景下才可能体现出细微差别\n如何释放web and deep seek编程的全部产能\n欢迎访问ww domensite det common参加讨论\n我们有辅助的工具\nPanda coder\n辅助AI编程",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cFuJ67Eav",
+  "published_at": "1785990489",
+  "fetched_at": "2026-08-06T23:20:57+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Kimi 与 DeepSeek 编程能力对比图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"准备 Flutter 项目基线\"] --> B1[\"发送基线给 DeepSeek\"]\n    A1 --> C1[\"发送基线给 KIMI\"]\n    B1 --> D1[\"DeepSeek 完成基线分析并存储\"]\n    C1 --> D2[\"KIMI 完成基线分析并存储\"]\n    D1 --> E1[\"修改相同系统日志（DeepSeek）\"]\n    D2 --> E2[\"修改相同系统日志（KIMI）\"]\n    E1 --> F1[\"DeepSeek 输出分析结果\"]\n    E2 --> F2[\"KIMI 输出分析结果\"]\n    F1 --> G1[\"比较输出内容\"]\n    F2 --> G1\n    G1 --> H1[\"评估上下文存储能力\"]\n    G1 --> I1[\"测试超长代码生成\"]\n    H1 --> J1[\"DeepSeek 上下文约 50M\"]\n    H1 --> K1[\"KIMI 上下文有限\"]\n    I1 --> L1[\"DeepSeek 能输出 3000+ 行\"]\n    I1 --> M1[\"KIMI 卡在中间\"]\n    L1 --> N1[\"得出结论\"]\n    M1 --> N1\n```\n\n## 输出丰富度比较\n```mermaid\nflowchart LR\n    A2[\"DeepSeek 基线输出\"] --> B2[\"信息丰富\"]\n    C2[\"KIMI 基线输出\"] --> D2[\"仅一小段\"]\n    B2 --> E2[\"对比结果：DeepSeek 更完整\"]\n    D2 --> E2\n```\n\n## 上下文存储能力\n```mermaid\nflowchart TD\n    A3[\"DeepSeek 上下文上限\"] --> B3[\"约 50M\"]\n    C3[\"KIMI 上下文上限\"] --> D3[\"非常有限\"]\n    B3 --> E3[\"支持对话式 Vibe Coding\"]\n    D3 --> E3\n```\n\n## 超长代码生成能力\n```mermaid\nflowchart LR\n    A4[\"DeepSeek 生成代码\"] --> B4[\"3000+ 行文件\"]\n    C4[\"KIMI 生成代码\"] --> D4[\"两次均卡在中间\"]\n    B4 --> E4[\"展示强大工程化能力\"]\n    D4 --> E4\n```\n\n## 产品化差异\n```mermaid\nflowchart TD\n    A5[\"DeepSeek Web 版\"] --> B5[\"完整工程与开发能力\"]\n    B5 --> C5[\"系统化项目构建与迭代\"]\n    D5[\"KIMI Web 版\"] --> E5[\"单文件/代码片段辅助\"]\n    E5 --> F5[\"在片段建议上表现优秀\"]\n    B5 --> G5[\"适合复杂场景\"]\n    E5 --> G5\n```",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"准备 Flutter 项目基线\"] --> B1[\"发送基线给 DeepSeek\"]\n    A1 --> C1[\"发送基线给 KIMI\"]\n    B1 --> D1[\"DeepSeek 完成基线分析并存储\"]\n    C1 --> D2[\"KIMI 完成基线分析并存储\"]\n    D1 --> E1[\"修改相同系统日志（DeepSeek）\"]\n    D2 --> E2[\"修改相同系统日志（KIMI）\"]\n    E1 --> F1[\"DeepSeek 输出分析结果\"]\n    E2 --> F2[\"KIMI 输出分析结果\"]\n    F1 --> G1[\"比较输出内容\"]\n    F2 --> G1\n    G1 --> H1[\"评估上下文存储能力\"]\n    G1 --> I1[\"测试超长代码生成\"]\n    H1 --> J1[\"DeepSeek 上下文约 50M\"]\n    H1 --> K1[\"KIMI 上下文有限\"]\n    I1 --> L1[\"DeepSeek 能输出 3000+ 行\"]\n    I1 --> M1[\"KIMI 卡在中间\"]\n    L1 --> N1[\"得出结论\"]\n    M1 --> N1"
+        },
+        {
+          "title": "输出丰富度比较",
+          "code": "flowchart LR\n    A2[\"DeepSeek 基线输出\"] --> B2[\"信息丰富\"]\n    C2[\"KIMI 基线输出\"] --> D2[\"仅一小段\"]\n    B2 --> E2[\"对比结果：DeepSeek 更完整\"]\n    D2 --> E2"
+        },
+        {
+          "title": "上下文存储能力",
+          "code": "flowchart TD\n    A3[\"DeepSeek 上下文上限\"] --> B3[\"约 50M\"]\n    C3[\"KIMI 上下文上限\"] --> D3[\"非常有限\"]\n    B3 --> E3[\"支持对话式 Vibe Coding\"]\n    D3 --> E3"
+        },
+        {
+          "title": "超长代码生成能力",
+          "code": "flowchart LR\n    A4[\"DeepSeek 生成代码\"] --> B4[\"3000+ 行文件\"]\n    C4[\"KIMI 生成代码\"] --> D4[\"两次均卡在中间\"]\n    B4 --> E4[\"展示强大工程化能力\"]\n    D4 --> E4"
+        },
+        {
+          "title": "产品化差异",
+          "code": "flowchart TD\n    A5[\"DeepSeek Web 版\"] --> B5[\"完整工程与开发能力\"]\n    B5 --> C5[\"系统化项目构建与迭代\"]\n    D5[\"KIMI Web 版\"] --> E5[\"单文件/代码片段辅助\"]\n    E5 --> F5[\"在片段建议上表现优秀\"]\n    B5 --> G5[\"适合复杂场景\"]\n    E5 --> G5"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-06T23:21:08+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Kimi 与 DeepSeek 编程能力对比图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"准备 Flutter 项目基线\"] --> B1[\"发送基线给 DeepSeek\"]\n    A1 --> C1[\"发送基线给 KIMI\"]\n    B1 --> D1[\"DeepSeek 完成基线分析并存储\"]\n    C1 --> D2[\"KIMI 完成基线分析并存储\"]\n    D1 --> E1[\"修改相同系统日志（DeepSeek）\"]\n    D2 --> E2[\"修改相同系统日志（KIMI）\"]\n    E1 --> F1[\"DeepSeek 输出分析结果\"]\n    E2 --> F2[\"KIMI 输出分析结果\"]\n    F1 --> G1[\"比较输出内容\"]\n    F2 --> G1\n    G1 --> H1[\"评估上下文存储能力\"]\n    G1 --> I1[\"测试超长代码生成\"]\n    H1 --> J1[\"DeepSeek 上下文约 50M\"]\n    H1 --> K1[\"KIMI 上下文有限\"]\n    I1 --> L1[\"DeepSeek 能输出 3000+ 行\"]\n    I1 --> M1[\"KIMI 卡在中间\"]\n    L1 --> N1[\"得出结论\"]\n    M1 --> N1\n```\n\n## 输出丰富度比较\n```mermaid\nflowchart LR\n    A2[\"DeepSeek 基线输出\"] --> B2[\"信息丰富\"]\n    C2[\"KIMI 基线输出\"] --> D2[\"仅一小段\"]\n    B2 --> E2[\"对比结果：DeepSeek 更完整\"]\n    D2 --> E2\n```\n\n## 上下文存储能力\n```mermaid\nflowchart TD\n    A3[\"DeepSeek 上下文上限\"] --> B3[\"约 50M\"]\n    C3[\"KIMI 上下文上限\"] --> D3[\"非常有限\"]\n    B3 --> E3[\"支持对话式 Vibe Coding\"]\n    D3 --> E3\n```\n\n## 超长代码生成能力\n```mermaid\nflowchart LR\n    A4[\"DeepSeek 生成代码\"] --> B4[\"3000+ 行文件\"]\n    C4[\"KIMI 生成代码\"] --> D4[\"两次均卡在中间\"]\n    B4 --> E4[\"展示强大工程化能力\"]\n    D4 --> E4\n```\n\n## 产品化差异\n```mermaid\nflowchart TD\n    A5[\"DeepSeek Web 版\"] --> B5[\"完整工程与开发能力\"]\n    B5 --> C5[\"系统化项目构建与迭代\"]\n    D5[\"KIMI Web 版\"] --> E5[\"单文件/代码片段辅助\"]\n    E5 --> F5[\"在片段建议上表现优秀\"]\n    B5 --> G5[\"适合复杂场景\"]\n    E5 --> G5\n```",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"准备 Flutter 项目基线\"] --> B1[\"发送基线给 DeepSeek\"]\n    A1 --> C1[\"发送基线给 KIMI\"]\n    B1 --> D1[\"DeepSeek 完成基线分析并存储\"]\n    C1 --> D2[\"KIMI 完成基线分析并存储\"]\n    D1 --> E1[\"修改相同系统日志（DeepSeek）\"]\n    D2 --> E2[\"修改相同系统日志（KIMI）\"]\n    E1 --> F1[\"DeepSeek 输出分析结果\"]\n    E2 --> F2[\"KIMI 输出分析结果\"]\n    F1 --> G1[\"比较输出内容\"]\n    F2 --> G1\n    G1 --> H1[\"评估上下文存储能力\"]\n    G1 --> I1[\"测试超长代码生成\"]\n    H1 --> J1[\"DeepSeek 上下文约 50M\"]\n    H1 --> K1[\"KIMI 上下文有限\"]\n    I1 --> L1[\"DeepSeek 能输出 3000+ 行\"]\n    I1 --> M1[\"KIMI 卡在中间\"]\n    L1 --> N1[\"得出结论\"]\n    M1 --> N1"
+    },
+    {
+      "title": "输出丰富度比较",
+      "code": "flowchart LR\n    A2[\"DeepSeek 基线输出\"] --> B2[\"信息丰富\"]\n    C2[\"KIMI 基线输出\"] --> D2[\"仅一小段\"]\n    B2 --> E2[\"对比结果：DeepSeek 更完整\"]\n    D2 --> E2"
+    },
+    {
+      "title": "上下文存储能力",
+      "code": "flowchart TD\n    A3[\"DeepSeek 上下文上限\"] --> B3[\"约 50M\"]\n    C3[\"KIMI 上下文上限\"] --> D3[\"非常有限\"]\n    B3 --> E3[\"支持对话式 Vibe Coding\"]\n    D3 --> E3"
+    },
+    {
+      "title": "超长代码生成能力",
+      "code": "flowchart LR\n    A4[\"DeepSeek 生成代码\"] --> B4[\"3000+ 行文件\"]\n    C4[\"KIMI 生成代码\"] --> D4[\"两次均卡在中间\"]\n    B4 --> E4[\"展示强大工程化能力\"]\n    D4 --> E4"
+    },
+    {
+      "title": "产品化差异",
+      "code": "flowchart TD\n    A5[\"DeepSeek Web 版\"] --> B5[\"完整工程与开发能力\"]\n    B5 --> C5[\"系统化项目构建与迭代\"]\n    D5[\"KIMI Web 版\"] --> E5[\"单文件/代码片段辅助\"]\n    E5 --> F5[\"在片段建议上表现优秀\"]\n    B5 --> G5[\"适合复杂场景\"]\n    E5 --> G5"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T23:21:08+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1m5RmBSEkF",
+  "title": "114. 为什么除以√dk是在给注意力升温？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 778,
+  "text": "今天的问题是\n为什么除以根号下DK是在给注意力升温\n先说什么是温度\n就是soft max调整概率\n尖锐程度所引入的这个T再说什么是DK\n就是transformer头的位数\n注意不是把头拼在一起的那个d model\n这个是有统计学依据的\n对比学习一下为什么clip要引入温度\n而且相当于是降温\na transformer要除根号下DK\n而且相当于是升温\n那么clip他用了余弦相似度来衡量\n文本向量和图片向量的相似度\n但是COSIN的范围是在-1~1之间的\n这就导致了它的分布比较的平缓\n不好训练\n所以引入一个温度\n并且这里的T呢它是比较小的\n相当于是降温\n让LOGIES放大之后再做\n从max使得对角线比较的尖锐\n这样好训练\n而为什么transformer除以根号下\nDK相当于给着力升温呢\n这是由于Q的行向量和K转置的列向量\n他算出来的这个内积可能会偏大\n而偏大\n会导致赢家通吃的问题\n举个例子\n这里的50和60\n按理来说可能都应该分一些注意力\n但是由于赢家通吃\n就是说E的60次方\n然后一的50次方这样算一下\n会发现一的60次方\n相较于一的50次方太大了\n这个数呢非常接近于一\n赢家通吃\n就导致了这些都是111\n而由于transformer的核心公式是在做加权平均\n也就意味着这里得一加上平均V1\n这里是V1\n然后这里一对应V1\n这里一对应着V2\n相当于什么呢\n相当于在这个位置只能注意到V1这个token\n而transformer它除以根号下DK\n相当于是让这里的一零变得平缓一些\n比如说0.880.12\n让这里呢多注意到一些token\n使得不要让注意力永远只会聚在\n单个或者是非常少量的token上\n而含有温度的soft max一般是有算子融合的\nflash attention呢也会把除以根号下DK\n以及说max以及大堆做算子融合\n所以是真的升温",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1m5RmBSEkF",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:15:57+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

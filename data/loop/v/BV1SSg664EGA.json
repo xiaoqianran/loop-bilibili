@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1SSg664EGA",
+  "title": "带破甲教程！爽用一下午gpt5.6模型仅需1块钱！？两分钟教会你接入超低价api，无需会员",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 547,
+  "text": "今天给大家分享一个稳定可靠\n按量计费的中转站\n不仅模型选择丰富\n而且性价比极高\n就连视频开头的这段动画\n也是codex接入中转站里的5.6模型制作的\n像这样的动画\n28秒只需要两毛钱就可以获得成品\n好了不废话了\n让我们来看看吧\n进入首页右上角可以点进登录注册\n新用户注册可获得十刀体验金\n模型广场包含了GPT全家桶和cloud最强模型\n飞able5\n一切都是按量计\n费\n用多少充多少\n还有生图模型\n最低0.041张\n我们来看看都有什么分组\n这里的分组分为了生图分组和常规分组\n最热门的GPT5.6模型\n0.1倍率即可使用\n也就是官方的1/10\n现在站里还推出了福利分组\n0.01即可使用\n接下来教大家怎么接入codex\n这里创建好的密钥\n右边点击导入CCS到这个地方\n点击确定\n然后会出现新导入的密钥\n再点击使用就好了\n像这样显示使用中就可以开始了\n然后我们打开codex来试验一下\n打开了codex后\n在右下角也有很多本站的模型供你使用\n也可以切换思考强度\n新手小白不会使用的\n也可以问我\n让我们来试试能不能成功回复\n这里给他发一个破甲暗号\n回复OK后\n就可以开始帮你破解逆向一些软件了\n也是成功了\n而且还降低了他的道德感\n帮你做很多原本做不了的事\n我也给大家整理了使用流程\n可以帮助大家使用",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1SSg664EGA",
+  "published_at": "1784705340",
+  "fetched_at": "2026-08-09T15:52:37+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 带破甲教程知识图谱\n\n## 平台概览 [BV1SSg664EGA P1 00:00]\n```mermaid\nflowchart TD\n    P[\"中转站\"] --> M[\"模型选择丰富\"]\n    P --> C[\"性价比极高\"]\n    P --> A[\"动画示例（codex 5.6）\"]\n    A --> EC[\"28秒 ≈ 0.2元\"]\n```\n\n## 计费与模型分组 [BV1SSg664EGA P1 00:33]\n```mermaid\nflowchart TD\n    PAY[\"按量计费\"] --> GRP[\"分组\"]\n    GRP --> REG[\"常规分组\"]\n    GRP --> IMG[\"生图分组\"]\n    IMG --> IM[\"生图模型\"]\n    IM --> IC[\"0.041元/张\"]\n    REG --> GPT[\"GPT5.6模型\"]\n    GPT --> GRT[\"0.1倍率（1/10）\"]\n    GRP --> WEL[\"福利分组\"]\n    WEL --> WR[\"0.01倍率\"]\n```\n\n## 使用流程 [BV1SSg664EGA P1 01:04]\n```mermaid\nflowchart TD\n    CK[\"创建密钥\"] --> IMP[\"导入 CCS\"]\n    IMP --> CONF[\"点击确定\"]\n    CONF --> NK[\"出现新密钥\"]\n    NK --> ACT[\"点击使用\"]\n    ACT --> COD[\"打开 codex\"]\n    COD --> SEL[\"选择模型\"]\n    SEL --> INT[\"切换思考强度\"]\n    INT --> SIG[\"发送破甲暗号\"]\n    SIG --> OK[\"回复 OK\"]\n    OK --> CR[\"开始破解逆向软件\"]\n    CR --> MOR[\"降低道德感\"]\n    MOR --> MORE[\"做更多原本做不了的事\"]\n```",
+      "diagrams": [
+        {
+          "title": "平台概览",
+          "code": "flowchart TD\n    P[\"中转站\"] --> M[\"模型选择丰富\"]\n    P --> C[\"性价比极高\"]\n    P --> A[\"动画示例（codex 5.6）\"]\n    A --> EC[\"28秒 ≈ 0.2元\"]"
+        },
+        {
+          "title": "计费与模型分组",
+          "code": "flowchart TD\n    PAY[\"按量计费\"] --> GRP[\"分组\"]\n    GRP --> REG[\"常规分组\"]\n    GRP --> IMG[\"生图分组\"]\n    IMG --> IM[\"生图模型\"]\n    IM --> IC[\"0.041元/张\"]\n    REG --> GPT[\"GPT5.6模型\"]\n    GPT --> GRT[\"0.1倍率（1/10）\"]\n    GRP --> WEL[\"福利分组\"]\n    WEL --> WR[\"0.01倍率\"]"
+        },
+        {
+          "title": "使用流程",
+          "code": "flowchart TD\n    CK[\"创建密钥\"] --> IMP[\"导入 CCS\"]\n    IMP --> CONF[\"点击确定\"]\n    CONF --> NK[\"出现新密钥\"]\n    NK --> ACT[\"点击使用\"]\n    ACT --> COD[\"打开 codex\"]\n    COD --> SEL[\"选择模型\"]\n    SEL --> INT[\"切换思考强度\"]\n    INT --> SIG[\"发送破甲暗号\"]\n    SIG --> OK[\"回复 OK\"]\n    OK --> CR[\"开始破解逆向软件\"]\n    CR --> MOR[\"降低道德感\"]\n    MOR --> MORE[\"做更多原本做不了的事\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T15:53:36+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 带破甲教程知识图谱\n\n## 平台概览 [BV1SSg664EGA P1 00:00]\n```mermaid\nflowchart TD\n    P[\"中转站\"] --> M[\"模型选择丰富\"]\n    P --> C[\"性价比极高\"]\n    P --> A[\"动画示例（codex 5.6）\"]\n    A --> EC[\"28秒 ≈ 0.2元\"]\n```\n\n## 计费与模型分组 [BV1SSg664EGA P1 00:33]\n```mermaid\nflowchart TD\n    PAY[\"按量计费\"] --> GRP[\"分组\"]\n    GRP --> REG[\"常规分组\"]\n    GRP --> IMG[\"生图分组\"]\n    IMG --> IM[\"生图模型\"]\n    IM --> IC[\"0.041元/张\"]\n    REG --> GPT[\"GPT5.6模型\"]\n    GPT --> GRT[\"0.1倍率（1/10）\"]\n    GRP --> WEL[\"福利分组\"]\n    WEL --> WR[\"0.01倍率\"]\n```\n\n## 使用流程 [BV1SSg664EGA P1 01:04]\n```mermaid\nflowchart TD\n    CK[\"创建密钥\"] --> IMP[\"导入 CCS\"]\n    IMP --> CONF[\"点击确定\"]\n    CONF --> NK[\"出现新密钥\"]\n    NK --> ACT[\"点击使用\"]\n    ACT --> COD[\"打开 codex\"]\n    COD --> SEL[\"选择模型\"]\n    SEL --> INT[\"切换思考强度\"]\n    INT --> SIG[\"发送破甲暗号\"]\n    SIG --> OK[\"回复 OK\"]\n    OK --> CR[\"开始破解逆向软件\"]\n    CR --> MOR[\"降低道德感\"]\n    MOR --> MORE[\"做更多原本做不了的事\"]\n```",
+  "diagrams": [
+    {
+      "title": "平台概览",
+      "code": "flowchart TD\n    P[\"中转站\"] --> M[\"模型选择丰富\"]\n    P --> C[\"性价比极高\"]\n    P --> A[\"动画示例（codex 5.6）\"]\n    A --> EC[\"28秒 ≈ 0.2元\"]"
+    },
+    {
+      "title": "计费与模型分组",
+      "code": "flowchart TD\n    PAY[\"按量计费\"] --> GRP[\"分组\"]\n    GRP --> REG[\"常规分组\"]\n    GRP --> IMG[\"生图分组\"]\n    IMG --> IM[\"生图模型\"]\n    IM --> IC[\"0.041元/张\"]\n    REG --> GPT[\"GPT5.6模型\"]\n    GPT --> GRT[\"0.1倍率（1/10）\"]\n    GRP --> WEL[\"福利分组\"]\n    WEL --> WR[\"0.01倍率\"]"
+    },
+    {
+      "title": "使用流程",
+      "code": "flowchart TD\n    CK[\"创建密钥\"] --> IMP[\"导入 CCS\"]\n    IMP --> CONF[\"点击确定\"]\n    CONF --> NK[\"出现新密钥\"]\n    NK --> ACT[\"点击使用\"]\n    ACT --> COD[\"打开 codex\"]\n    COD --> SEL[\"选择模型\"]\n    SEL --> INT[\"切换思考强度\"]\n    INT --> SIG[\"发送破甲暗号\"]\n    SIG --> OK[\"回复 OK\"]\n    OK --> CR[\"开始破解逆向软件\"]\n    CR --> MOR[\"降低道德感\"]\n    MOR --> MORE[\"做更多原本做不了的事\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T15:53:36+00:00"
+}

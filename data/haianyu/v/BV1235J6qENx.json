@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1235J6qENx",
+  "title": "119. 如何可视化多头注意力？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 260,
+  "text": "今天的问题是如何可视化多头注意力\n首先把激活矩阵X乘以WQWKWV\n得到QKV\n假设现在分成两个头\n就把QKV都切一刀\n然后把头重叠起来\n蓝色的放到前面\n橘色的放到背后\nQKV都这样放\n要计算是同类计算的\n就是说蓝色算蓝色的\n橘色算橘色的\n互不干扰\n然后Q乘K转制本质上是做内积\n这里要除以根号下DKDK指的是头的尾数\n而不是X向量的尾数\n那个叫DEMODEL\n这个是有统计学依据的\n然后A乘V本质上是做加权平均\n得到一个O也是同类计算\n然后把O拼回\n使得这个长度和原来的X的长度相同\n然后再进行一个WO的投影\n得到输出",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1235J6qENx",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:15:45+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

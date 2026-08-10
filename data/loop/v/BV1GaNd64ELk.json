@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1GaNd64ELk",
+  "title": "【游戏引擎】轻量化2D游戏引擎开发【ECS架构】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 708,
+  "text": "今天给大家分享\n我使用C加加开发的一款轻量级2D游戏引擎\n编辑器\n整个框架底层采用了纯粹的ECS设计模式\n核心目标是实现一套高度灵活的功能组件系统\n编辑器采用了分体式面板设计\n支持窗口边界的自由拖拽调节\n在编辑器中\n每一个新创建的实体实例\n初始状态都是完全空的\n这并非功能缺失\n而是刻意为之的设计\n这个引擎实现了原数据与实例数据彻底分离\n以及按需实例化的模式\n简单来说\n组件只有在被显示EDID的那一刻\n才会真正触发内存分配\n你需要什么属性就添加什么组件\n不需要的属性连一个字节的内存都不会被浪费\n这种设计让每个实体都做到了极致的轻量化\n假设我现在需要创建一个\n能被玩家子弹击中的目标物体\n在传统OOP继承体系中\n你可能需要预先设计好复杂的类层级\n但在这个的编辑器里\n它就像搭积木一样简单\n由于它是一个被玩家的子弹实力射击的物体\n所以他需要具备纹理\n血量碰撞检测这几个核心组件\n三个核心组件像流水线一样拼装完毕\n一个完整的目标实体就诞生了\n如果场景中需要多个相同的目标\n只需一键复制\n所有组件配置都会被完美克隆\n极大提升了关卡搭建效率\n我将子弹的生成逻辑挂载到玩家实体中\n这意味着子弹不再是硬编码的产物\n而是数据驱动的配置项\n开发者可以直接在inspector面板中\n调整子弹的尺寸\n速度等参数\n无需重新编译代码\n同样的思路也适用于背景创建\n我只需按需添加背景所需的组件\n像流水线装配一样拼出一个完整的背景实例\n从目标子弹到背景\n所有游戏对象都遵循同一套按需组装的范式\n这个编辑器是我学习过程中的一个练手项目\n目前主要实现了组件的按需分配\n自由组合以及数据紧凑和可视化配置\n这些基础功能后续会继续学习\n深入完善和优化",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1GaNd64ELk",
+  "published_at": "1784285154",
+  "fetched_at": "2026-08-10T00:48:44+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 轻量级2D游戏引擎 ECS 结构与工作流\n\n## 总览图\n```mermaid\nflowchart TD\n    Engine[\"轻量级2D游戏引擎\"] --> ECS[\"纯粹的ECS设计模式\"]\n    Engine --> Editor[\"分体式面板编辑器\"]\n    ECS --> Entity[\"实体（空实例）\"]\n    ECS --> Component[\"组件\"]\n    Component --> OnDemand[\"按需实例化 & 内存分配\"]\n    Entity --> DataSeparation[\"原数据 ↔ 实例数据 分离\"]\n    Editor --> Drag[\"窗口边界自由拖拽调节\"]\n    Editor --> VisualConfig[\"可视化配置面板\"]\n    OnDemand --> MemoryEfficiency[\"极致轻量化（无冗余内存）\"]\n    VisualConfig --> DataDriven[\"数据驱动配置\"]\n```\n\n## 实体创建与组件按需分配流程\n```mermaid\nflowchart LR\n    Start[\"创建新实体（空）\"] --> AddComp[\"在Inspector添加所需组件\"]\n    AddComp --> TriggerEDID[\"组件在EDID显示时触发\"]\n    TriggerEDID --> Allocate[\"内存分配（仅需组件）\"]\n    Allocate --> Assemble[\"流水线式拼装组件\"]\n    Assemble --> Complete[\"生成完整实体\"]\n```\n\n## 克隆与关卡搭建效率提升\n```mermaid\nflowchart TD\n    NeedMultiple[\"需要多个相同目标实体\"] --> CloneCmd[\"一键复制指令\"]\n    CloneCmd --> CloneProcess[\"克隆实体及其组件配置\"]\n    CloneProcess --> MultiEntities[\"生成多个实体实例\"]\n    MultiEntities --> Efficiency[\"提升关卡搭建效率\"]\n```\n\n## 数据驱动的子弹/背景配置流程\n```mermaid\nflowchart LR\n    AttachLogic[\"将生成逻辑挂载到玩家实体\"] --> Inspector[\"在Inspector面板调整参数\"]\n    Inspector --> Size[\"尺寸\"]\n    Inspector --> Speed[\"速度\"]\n    Size --> LiveUpdate[\"实时生效\"]\n    Speed --> LiveUpdate\n    LiveUpdate --> NoRecompile[\"无需重新编译代码\"]\n    AttachLogic --> Background[\"同理创建背景实体\"]\n    Background --> AddCompBG[\"按需添加背景组件\"]\n    AddCompBG --> AssembleBG[\"流水线装配背景实例\"]\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    Engine[\"轻量级2D游戏引擎\"] --> ECS[\"纯粹的ECS设计模式\"]\n    Engine --> Editor[\"分体式面板编辑器\"]\n    ECS --> Entity[\"实体（空实例）\"]\n    ECS --> Component[\"组件\"]\n    Component --> OnDemand[\"按需实例化 & 内存分配\"]\n    Entity --> DataSeparation[\"原数据 ↔ 实例数据 分离\"]\n    Editor --> Drag[\"窗口边界自由拖拽调节\"]\n    Editor --> VisualConfig[\"可视化配置面板\"]\n    OnDemand --> MemoryEfficiency[\"极致轻量化（无冗余内存）\"]\n    VisualConfig --> DataDriven[\"数据驱动配置\"]"
+        },
+        {
+          "title": "实体创建与组件按需分配流程",
+          "code": "flowchart LR\n    Start[\"创建新实体（空）\"] --> AddComp[\"在Inspector添加所需组件\"]\n    AddComp --> TriggerEDID[\"组件在EDID显示时触发\"]\n    TriggerEDID --> Allocate[\"内存分配（仅需组件）\"]\n    Allocate --> Assemble[\"流水线式拼装组件\"]\n    Assemble --> Complete[\"生成完整实体\"]"
+        },
+        {
+          "title": "克隆与关卡搭建效率提升",
+          "code": "flowchart TD\n    NeedMultiple[\"需要多个相同目标实体\"] --> CloneCmd[\"一键复制指令\"]\n    CloneCmd --> CloneProcess[\"克隆实体及其组件配置\"]\n    CloneProcess --> MultiEntities[\"生成多个实体实例\"]\n    MultiEntities --> Efficiency[\"提升关卡搭建效率\"]"
+        },
+        {
+          "title": "数据驱动的子弹/背景配置流程",
+          "code": "flowchart LR\n    AttachLogic[\"将生成逻辑挂载到玩家实体\"] --> Inspector[\"在Inspector面板调整参数\"]\n    Inspector --> Size[\"尺寸\"]\n    Inspector --> Speed[\"速度\"]\n    Size --> LiveUpdate[\"实时生效\"]\n    Speed --> LiveUpdate\n    LiveUpdate --> NoRecompile[\"无需重新编译代码\"]\n    AttachLogic --> Background[\"同理创建背景实体\"]\n    Background --> AddCompBG[\"按需添加背景组件\"]\n    AddCompBG --> AssembleBG[\"流水线装配背景实例\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T00:49:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 轻量级2D游戏引擎 ECS 结构与工作流\n\n## 总览图\n```mermaid\nflowchart TD\n    Engine[\"轻量级2D游戏引擎\"] --> ECS[\"纯粹的ECS设计模式\"]\n    Engine --> Editor[\"分体式面板编辑器\"]\n    ECS --> Entity[\"实体（空实例）\"]\n    ECS --> Component[\"组件\"]\n    Component --> OnDemand[\"按需实例化 & 内存分配\"]\n    Entity --> DataSeparation[\"原数据 ↔ 实例数据 分离\"]\n    Editor --> Drag[\"窗口边界自由拖拽调节\"]\n    Editor --> VisualConfig[\"可视化配置面板\"]\n    OnDemand --> MemoryEfficiency[\"极致轻量化（无冗余内存）\"]\n    VisualConfig --> DataDriven[\"数据驱动配置\"]\n```\n\n## 实体创建与组件按需分配流程\n```mermaid\nflowchart LR\n    Start[\"创建新实体（空）\"] --> AddComp[\"在Inspector添加所需组件\"]\n    AddComp --> TriggerEDID[\"组件在EDID显示时触发\"]\n    TriggerEDID --> Allocate[\"内存分配（仅需组件）\"]\n    Allocate --> Assemble[\"流水线式拼装组件\"]\n    Assemble --> Complete[\"生成完整实体\"]\n```\n\n## 克隆与关卡搭建效率提升\n```mermaid\nflowchart TD\n    NeedMultiple[\"需要多个相同目标实体\"] --> CloneCmd[\"一键复制指令\"]\n    CloneCmd --> CloneProcess[\"克隆实体及其组件配置\"]\n    CloneProcess --> MultiEntities[\"生成多个实体实例\"]\n    MultiEntities --> Efficiency[\"提升关卡搭建效率\"]\n```\n\n## 数据驱动的子弹/背景配置流程\n```mermaid\nflowchart LR\n    AttachLogic[\"将生成逻辑挂载到玩家实体\"] --> Inspector[\"在Inspector面板调整参数\"]\n    Inspector --> Size[\"尺寸\"]\n    Inspector --> Speed[\"速度\"]\n    Size --> LiveUpdate[\"实时生效\"]\n    Speed --> LiveUpdate\n    LiveUpdate --> NoRecompile[\"无需重新编译代码\"]\n    AttachLogic --> Background[\"同理创建背景实体\"]\n    Background --> AddCompBG[\"按需添加背景组件\"]\n    AddCompBG --> AssembleBG[\"流水线装配背景实例\"]\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    Engine[\"轻量级2D游戏引擎\"] --> ECS[\"纯粹的ECS设计模式\"]\n    Engine --> Editor[\"分体式面板编辑器\"]\n    ECS --> Entity[\"实体（空实例）\"]\n    ECS --> Component[\"组件\"]\n    Component --> OnDemand[\"按需实例化 & 内存分配\"]\n    Entity --> DataSeparation[\"原数据 ↔ 实例数据 分离\"]\n    Editor --> Drag[\"窗口边界自由拖拽调节\"]\n    Editor --> VisualConfig[\"可视化配置面板\"]\n    OnDemand --> MemoryEfficiency[\"极致轻量化（无冗余内存）\"]\n    VisualConfig --> DataDriven[\"数据驱动配置\"]"
+    },
+    {
+      "title": "实体创建与组件按需分配流程",
+      "code": "flowchart LR\n    Start[\"创建新实体（空）\"] --> AddComp[\"在Inspector添加所需组件\"]\n    AddComp --> TriggerEDID[\"组件在EDID显示时触发\"]\n    TriggerEDID --> Allocate[\"内存分配（仅需组件）\"]\n    Allocate --> Assemble[\"流水线式拼装组件\"]\n    Assemble --> Complete[\"生成完整实体\"]"
+    },
+    {
+      "title": "克隆与关卡搭建效率提升",
+      "code": "flowchart TD\n    NeedMultiple[\"需要多个相同目标实体\"] --> CloneCmd[\"一键复制指令\"]\n    CloneCmd --> CloneProcess[\"克隆实体及其组件配置\"]\n    CloneProcess --> MultiEntities[\"生成多个实体实例\"]\n    MultiEntities --> Efficiency[\"提升关卡搭建效率\"]"
+    },
+    {
+      "title": "数据驱动的子弹/背景配置流程",
+      "code": "flowchart LR\n    AttachLogic[\"将生成逻辑挂载到玩家实体\"] --> Inspector[\"在Inspector面板调整参数\"]\n    Inspector --> Size[\"尺寸\"]\n    Inspector --> Speed[\"速度\"]\n    Size --> LiveUpdate[\"实时生效\"]\n    Speed --> LiveUpdate\n    LiveUpdate --> NoRecompile[\"无需重新编译代码\"]\n    AttachLogic --> Background[\"同理创建背景实体\"]\n    Background --> AddCompBG[\"按需添加背景组件\"]\n    AddCompBG --> AssembleBG[\"流水线装配背景实例\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T00:49:00+00:00"
+}

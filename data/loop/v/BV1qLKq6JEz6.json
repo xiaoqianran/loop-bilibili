@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1qLKq6JEz6",
+  "title": "【零基础AI游戏编程】手搓塞尔达传说.Godot·AI安装(Codex/TraeWork/WorkBuddy/Claude)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1960,
+  "text": "上期视频我们讲了GODA如何与tree ide或者是vs code\n这种IDE式AI编程工具进行配置\n这期视频我来讲一下当下比较流行的智能体类的AI编程工具\n像codex go down要如何配置这类AI编程工具\n市面上的智能体类AI编程工具有很多啊\n比如说codex cloudy\nCodwork er body\n还有tree这些编程工具\n实际上操作方式啊\n界面布局啊都差不多啊\n无非就是后面的模型可能有点区别\n这里呢为了照顾国内的用户呢\n所以我们后面的教程会用tree来作为演示\n当然你也可以根据你个人的习惯选择其他工具\n进入trade官网之后呢\n它这里有两个版本可以下载\n一个叫trade work\n一个叫吹id呃\n这里我们下载trade work\n下载完之后呢\n我们就得到了这个安装包\n因为这个安装本身没有太大难度啊\n所以这里我就只在Mac版演示一次了\nwindows版大家就根据个人情况去安装就好了\n它很简单\n我们直接把它拖到application这个文件夹里\n安装好后\n我们来打开软件\n就能看到这样一个画面\n然后我们点击继续之后\n接着点击继续之后点击立即体验\n然后我们登录一下\n然后我们点个人账户\n这里各位自己注册一个自己的账号就好了\n注册完账号之后呢\n这里点击登录成功之后\n我们就可以使用这个tree了\n接下来我来说一下如何将tree和高德的之间做一个连接\n让tree可以来编程\n我们的GOODA工程\n其实方法特别简单\n首先我们先打开我们的勾搭\n然后我们新建一个工程\n然后我们这里随便创建一个工程\n我这里就直接创建在桌面了\n然后选择当前文件夹\n然后这里我直接新建一个叫test project\n之后这选创建文件夹\n这样他就会在这里特意为我们新建一个文件夹之后\n点击创建\n这样我们就在桌面创建了一个test project\n然后它就弹出了这一个GOA的项目窗口\n然后这一步就结束了\n你不需要在GOA里进行任何设置\n然后下一步我们回到tree\n回到tree work后\n我们同样不需要进行任何设置\n直接新建一个项目\n这里我们选择扣编程之后\n我们点新建任务之后\n在这选选择文件夹\n在桌面上找到刚才我们的那个test project\n然后点击打开\n然后点击允许这样睡\n它就访问到了刚才我们创建的go out工程好\n接下来我们就可以让tree来给我们编程游戏了\n我们这里让他随便写一个小游戏啊\n比如说你跟他说这是一个空的勾搭的项目\n请给我写一个酷炫的游戏\n用上下左右控制方向\n按空格进行射击\n然后这里不要着急\n点击发送\n我们先选择一个合适的模型\n不要用这个audio\n这里我们选择哪个模型呢\n截止到我现在录视频的这个时间\n目前国产最强的模型是这个KIMIK3\n但是它需要你开充会员才能用\n它基本上可以比肩pd和GPP了\n但是如果你不想充会员的话\n你可以选择哪个模型呢\n有两个模型\n一个是GLM5.2\n还有一个是这个mini max m3\n这两个模型属于国产的\n除了K3之外最强的两个模型\n这里我就选择mini max m3\n为什么呢\n因为如果你不充会员的话\n你就需要排队才能使用这个模型\nmini max m3的排队时间要比gm2分点二稍微短一点\n所以这里我选择mini max m3\n然后这个时候我们再点击发送哎\n这一次他没有排队\n应该是现在不是使用高峰\n如果在使用高峰的时候\n他可能需要排个十几分钟队伍嗯\n然后这里我来说补充一下\n因为现在这个视频是我后录制的\n所以在后面的视频我可能会介绍的不是mini max m3和gm5.2\n当时M3和5.2还没有发布呢\nK3也没有发布\n所以当时介绍的时候还是在介绍2.7和5.1\n所以这里大家注意一下\n这里它会提示你需要获取一些权限\n这里我们就直接点击添加到白名单了\n这里gold就崩溃了\n这个无所谓啊\n用tree work给go编程的时候\ngo的大可以完全不用开启\n只开启tree work都可以\n好用时8分36秒生成完毕\n这里我们点击从磁盘中重新加载\n现在画面显示的就是AI刚刚帮我们写好的游戏\n现在我们就来看一下这次的游戏能不能起飞成功\n然后我们点这点这个运行游戏\n然后我们点开始游戏\n然后你就会发现他报错了\n遇到报错不要紧啊\n遇到报错\n我们就直接把这个报错给他复制给这个哎\n让I接着帮我们修就完了\n好修复完毕\n我们再来看一下啊\n这里我们点击上方这个2D来回到我们的游戏场景界面\n然后重新点击一下右上角这个运行按钮\n接下来就是见证奇迹的时刻\n好恭喜各位\n我们第一节课起飞成功\n到此为止\n所有的前期准备工作我们就完成了\n我们下一节课将正式进入系统的游戏开发环节\n好以上就是本节课的全部内容了\n如果你觉得本节课对你有帮助\n麻烦给个三连支持一下\n感谢大家的收看\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qLKq6JEz6",
+  "published_at": "1784443374",
+  "fetched_at": "2026-08-09T02:23:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI 编程工具与工作流图谱\n\n## 工具概览\n```mermaid\nflowchart TD\n    A1[\"智能体类 AI 编程工具\"]\n    B1[\"Codex\"]\n    B2[\"Cloudy\"]\n    B3[\"Codwork\"]\n    B4[\"Tree\"]\n    B5[\"Trade Work\"]\n    B6[\"Trade ID（识别存疑）\"]\n    C1[\"界面布局相似\"]\n    C2[\"模型实现可能不同\"]\n    D1[\"国内用户倾向使用 Tree 进行演示\"]\n    A1 --> B1\n    A1 --> B2\n    A1 --> B3\n    A1 --> B4\n    A1 --> B5\n    A1 --> B6\n    B1 --> C1\n    B2 --> C1\n    B3 --> C1\n    B4 --> C1\n    B5 --> C1\n    B6 --> C1\n    B1 --> C2\n    B2 --> C2\n    B3 --> C2\n    B4 --> C2\n    B5 --> C2\n    B6 --> C2\n    B4 --> D1\n```\n\n## Trade Work 安装流程\n```mermaid\nflowchart TD\n    S1[\"访问 Trade 官网\"]\n    S2[\"选择下载版本\"]\n    S3[\"Trade Work\"]\n    S4[\"Trade ID（识别存疑）\"]\n    S5[\"下载 Trade Work 安装包\"]\n    S6[\"将 .app 拖入 Applications 文件夹\"]\n    S7[\"打开 Trade Work 软件\"]\n    S8[\"点击“继续”\"]\n    S9[\"点击“立即体验”\"]\n    S10[\"登录或注册个人账户\"]\n    S11[\"完成登录，进入主界面\"]\n    S1 --> S2\n    S2 --> S3\n    S2 --> S4\n    S3 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 --> S8\n    S8 --> S9\n    S9 --> S10\n    S10 --> S11\n```\n\n## Tree 与 Godot 项目关联流程\n```mermaid\nflowchart TD\n    T1[\"打开 Godot\"]\n    T2[\"新建项目（如 test project）\"]\n    T3[\"在桌面创建项目文件夹\"]\n    T4[\"返回 Tree Work\"]\n    T5[\"新建任务\"]\n    T6[\"选择已有项目文件夹\"]\n    T7[\"授权 Tree 访问该文件夹\"]\n    T8[\"Tree 开始为项目生成代码\"]\n    T1 --> T2 --> T3 --> T4 --> T5 --> T6 --> T7 --> T8\n```\n\n## 模型选择与使用注意\n```mermaid\nflowchart TD\n    M1[\"可选模型列表\"]\n    M2[\"KIMIK3（需会员）\"]\n    M3[\"GLM5.2（国产）\"]\n    M4[\"MiniMax M3（国产）\"]\n    M5[\"排队时间比较\"]\n    M6[\"高峰期排队可能较长\"]\n    M7[\"选择 MiniMax M3（排队时间较短）\"]\n    M8[\"点击发送请求\"]\n    M9[\"若无排队，立即生成代码\"]\n    M10[\"若排队，等待数分钟\"]\n    M1 --> M2\n    M1 --> M3\n    M1 --> M4\n    M2 --> M5\n    M3 --> M5\n    M4 --> M5\n    M5 --> M6\n    M5 --> M7\n    M7 --> M8\n    M8 --> M9\n    M8 --> M10\n```\n\n## 调试运行与错误修复流程\n```mermaid\nflowchart TD\n    D1[\"AI 生成游戏代码\"]\n    D2[\"从磁盘重新加载项目\"]\n    D3[\"点击运行游戏\"]\n    D4[\"出现报错\"]\n    D5[\"复制报错信息\"]\n    D6[\"提交给 AI 修复\"]\n    D7[\"AI 修复代码\"]\n    D8[\"修复完成，保存\"]\n    D9[\"再次运行游戏\"]\n    D10[\"游戏成功启动\"]\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6 --> D7 --> D8 --> D9 --> D10\n```",
+      "diagrams": [
+        {
+          "title": "工具概览",
+          "code": "flowchart TD\n    A1[\"智能体类 AI 编程工具\"]\n    B1[\"Codex\"]\n    B2[\"Cloudy\"]\n    B3[\"Codwork\"]\n    B4[\"Tree\"]\n    B5[\"Trade Work\"]\n    B6[\"Trade ID（识别存疑）\"]\n    C1[\"界面布局相似\"]\n    C2[\"模型实现可能不同\"]\n    D1[\"国内用户倾向使用 Tree 进行演示\"]\n    A1 --> B1\n    A1 --> B2\n    A1 --> B3\n    A1 --> B4\n    A1 --> B5\n    A1 --> B6\n    B1 --> C1\n    B2 --> C1\n    B3 --> C1\n    B4 --> C1\n    B5 --> C1\n    B6 --> C1\n    B1 --> C2\n    B2 --> C2\n    B3 --> C2\n    B4 --> C2\n    B5 --> C2\n    B6 --> C2\n    B4 --> D1"
+        },
+        {
+          "title": "Trade Work 安装流程",
+          "code": "flowchart TD\n    S1[\"访问 Trade 官网\"]\n    S2[\"选择下载版本\"]\n    S3[\"Trade Work\"]\n    S4[\"Trade ID（识别存疑）\"]\n    S5[\"下载 Trade Work 安装包\"]\n    S6[\"将 .app 拖入 Applications 文件夹\"]\n    S7[\"打开 Trade Work 软件\"]\n    S8[\"点击“继续”\"]\n    S9[\"点击“立即体验”\"]\n    S10[\"登录或注册个人账户\"]\n    S11[\"完成登录，进入主界面\"]\n    S1 --> S2\n    S2 --> S3\n    S2 --> S4\n    S3 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 --> S8\n    S8 --> S9\n    S9 --> S10\n    S10 --> S11"
+        },
+        {
+          "title": "Tree 与 Godot 项目关联流程",
+          "code": "flowchart TD\n    T1[\"打开 Godot\"]\n    T2[\"新建项目（如 test project）\"]\n    T3[\"在桌面创建项目文件夹\"]\n    T4[\"返回 Tree Work\"]\n    T5[\"新建任务\"]\n    T6[\"选择已有项目文件夹\"]\n    T7[\"授权 Tree 访问该文件夹\"]\n    T8[\"Tree 开始为项目生成代码\"]\n    T1 --> T2 --> T3 --> T4 --> T5 --> T6 --> T7 --> T8"
+        },
+        {
+          "title": "模型选择与使用注意",
+          "code": "flowchart TD\n    M1[\"可选模型列表\"]\n    M2[\"KIMIK3（需会员）\"]\n    M3[\"GLM5.2（国产）\"]\n    M4[\"MiniMax M3（国产）\"]\n    M5[\"排队时间比较\"]\n    M6[\"高峰期排队可能较长\"]\n    M7[\"选择 MiniMax M3（排队时间较短）\"]\n    M8[\"点击发送请求\"]\n    M9[\"若无排队，立即生成代码\"]\n    M10[\"若排队，等待数分钟\"]\n    M1 --> M2\n    M1 --> M3\n    M1 --> M4\n    M2 --> M5\n    M3 --> M5\n    M4 --> M5\n    M5 --> M6\n    M5 --> M7\n    M7 --> M8\n    M8 --> M9\n    M8 --> M10"
+        },
+        {
+          "title": "调试运行与错误修复流程",
+          "code": "flowchart TD\n    D1[\"AI 生成游戏代码\"]\n    D2[\"从磁盘重新加载项目\"]\n    D3[\"点击运行游戏\"]\n    D4[\"出现报错\"]\n    D5[\"复制报错信息\"]\n    D6[\"提交给 AI 修复\"]\n    D7[\"AI 修复代码\"]\n    D8[\"修复完成，保存\"]\n    D9[\"再次运行游戏\"]\n    D10[\"游戏成功启动\"]\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6 --> D7 --> D8 --> D9 --> D10"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-09T02:27:00+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI 编程工具与工作流图谱\n\n## 工具概览\n```mermaid\nflowchart TD\n    A1[\"智能体类 AI 编程工具\"]\n    B1[\"Codex\"]\n    B2[\"Cloudy\"]\n    B3[\"Codwork\"]\n    B4[\"Tree\"]\n    B5[\"Trade Work\"]\n    B6[\"Trade ID（识别存疑）\"]\n    C1[\"界面布局相似\"]\n    C2[\"模型实现可能不同\"]\n    D1[\"国内用户倾向使用 Tree 进行演示\"]\n    A1 --> B1\n    A1 --> B2\n    A1 --> B3\n    A1 --> B4\n    A1 --> B5\n    A1 --> B6\n    B1 --> C1\n    B2 --> C1\n    B3 --> C1\n    B4 --> C1\n    B5 --> C1\n    B6 --> C1\n    B1 --> C2\n    B2 --> C2\n    B3 --> C2\n    B4 --> C2\n    B5 --> C2\n    B6 --> C2\n    B4 --> D1\n```\n\n## Trade Work 安装流程\n```mermaid\nflowchart TD\n    S1[\"访问 Trade 官网\"]\n    S2[\"选择下载版本\"]\n    S3[\"Trade Work\"]\n    S4[\"Trade ID（识别存疑）\"]\n    S5[\"下载 Trade Work 安装包\"]\n    S6[\"将 .app 拖入 Applications 文件夹\"]\n    S7[\"打开 Trade Work 软件\"]\n    S8[\"点击“继续”\"]\n    S9[\"点击“立即体验”\"]\n    S10[\"登录或注册个人账户\"]\n    S11[\"完成登录，进入主界面\"]\n    S1 --> S2\n    S2 --> S3\n    S2 --> S4\n    S3 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 --> S8\n    S8 --> S9\n    S9 --> S10\n    S10 --> S11\n```\n\n## Tree 与 Godot 项目关联流程\n```mermaid\nflowchart TD\n    T1[\"打开 Godot\"]\n    T2[\"新建项目（如 test project）\"]\n    T3[\"在桌面创建项目文件夹\"]\n    T4[\"返回 Tree Work\"]\n    T5[\"新建任务\"]\n    T6[\"选择已有项目文件夹\"]\n    T7[\"授权 Tree 访问该文件夹\"]\n    T8[\"Tree 开始为项目生成代码\"]\n    T1 --> T2 --> T3 --> T4 --> T5 --> T6 --> T7 --> T8\n```\n\n## 模型选择与使用注意\n```mermaid\nflowchart TD\n    M1[\"可选模型列表\"]\n    M2[\"KIMIK3（需会员）\"]\n    M3[\"GLM5.2（国产）\"]\n    M4[\"MiniMax M3（国产）\"]\n    M5[\"排队时间比较\"]\n    M6[\"高峰期排队可能较长\"]\n    M7[\"选择 MiniMax M3（排队时间较短）\"]\n    M8[\"点击发送请求\"]\n    M9[\"若无排队，立即生成代码\"]\n    M10[\"若排队，等待数分钟\"]\n    M1 --> M2\n    M1 --> M3\n    M1 --> M4\n    M2 --> M5\n    M3 --> M5\n    M4 --> M5\n    M5 --> M6\n    M5 --> M7\n    M7 --> M8\n    M8 --> M9\n    M8 --> M10\n```\n\n## 调试运行与错误修复流程\n```mermaid\nflowchart TD\n    D1[\"AI 生成游戏代码\"]\n    D2[\"从磁盘重新加载项目\"]\n    D3[\"点击运行游戏\"]\n    D4[\"出现报错\"]\n    D5[\"复制报错信息\"]\n    D6[\"提交给 AI 修复\"]\n    D7[\"AI 修复代码\"]\n    D8[\"修复完成，保存\"]\n    D9[\"再次运行游戏\"]\n    D10[\"游戏成功启动\"]\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6 --> D7 --> D8 --> D9 --> D10\n```",
+  "diagrams": [
+    {
+      "title": "工具概览",
+      "code": "flowchart TD\n    A1[\"智能体类 AI 编程工具\"]\n    B1[\"Codex\"]\n    B2[\"Cloudy\"]\n    B3[\"Codwork\"]\n    B4[\"Tree\"]\n    B5[\"Trade Work\"]\n    B6[\"Trade ID（识别存疑）\"]\n    C1[\"界面布局相似\"]\n    C2[\"模型实现可能不同\"]\n    D1[\"国内用户倾向使用 Tree 进行演示\"]\n    A1 --> B1\n    A1 --> B2\n    A1 --> B3\n    A1 --> B4\n    A1 --> B5\n    A1 --> B6\n    B1 --> C1\n    B2 --> C1\n    B3 --> C1\n    B4 --> C1\n    B5 --> C1\n    B6 --> C1\n    B1 --> C2\n    B2 --> C2\n    B3 --> C2\n    B4 --> C2\n    B5 --> C2\n    B6 --> C2\n    B4 --> D1"
+    },
+    {
+      "title": "Trade Work 安装流程",
+      "code": "flowchart TD\n    S1[\"访问 Trade 官网\"]\n    S2[\"选择下载版本\"]\n    S3[\"Trade Work\"]\n    S4[\"Trade ID（识别存疑）\"]\n    S5[\"下载 Trade Work 安装包\"]\n    S6[\"将 .app 拖入 Applications 文件夹\"]\n    S7[\"打开 Trade Work 软件\"]\n    S8[\"点击“继续”\"]\n    S9[\"点击“立即体验”\"]\n    S10[\"登录或注册个人账户\"]\n    S11[\"完成登录，进入主界面\"]\n    S1 --> S2\n    S2 --> S3\n    S2 --> S4\n    S3 --> S5\n    S5 --> S6\n    S6 --> S7\n    S7 --> S8\n    S8 --> S9\n    S9 --> S10\n    S10 --> S11"
+    },
+    {
+      "title": "Tree 与 Godot 项目关联流程",
+      "code": "flowchart TD\n    T1[\"打开 Godot\"]\n    T2[\"新建项目（如 test project）\"]\n    T3[\"在桌面创建项目文件夹\"]\n    T4[\"返回 Tree Work\"]\n    T5[\"新建任务\"]\n    T6[\"选择已有项目文件夹\"]\n    T7[\"授权 Tree 访问该文件夹\"]\n    T8[\"Tree 开始为项目生成代码\"]\n    T1 --> T2 --> T3 --> T4 --> T5 --> T6 --> T7 --> T8"
+    },
+    {
+      "title": "模型选择与使用注意",
+      "code": "flowchart TD\n    M1[\"可选模型列表\"]\n    M2[\"KIMIK3（需会员）\"]\n    M3[\"GLM5.2（国产）\"]\n    M4[\"MiniMax M3（国产）\"]\n    M5[\"排队时间比较\"]\n    M6[\"高峰期排队可能较长\"]\n    M7[\"选择 MiniMax M3（排队时间较短）\"]\n    M8[\"点击发送请求\"]\n    M9[\"若无排队，立即生成代码\"]\n    M10[\"若排队，等待数分钟\"]\n    M1 --> M2\n    M1 --> M3\n    M1 --> M4\n    M2 --> M5\n    M3 --> M5\n    M4 --> M5\n    M5 --> M6\n    M5 --> M7\n    M7 --> M8\n    M8 --> M9\n    M8 --> M10"
+    },
+    {
+      "title": "调试运行与错误修复流程",
+      "code": "flowchart TD\n    D1[\"AI 生成游戏代码\"]\n    D2[\"从磁盘重新加载项目\"]\n    D3[\"点击运行游戏\"]\n    D4[\"出现报错\"]\n    D5[\"复制报错信息\"]\n    D6[\"提交给 AI 修复\"]\n    D7[\"AI 修复代码\"]\n    D8[\"修复完成，保存\"]\n    D9[\"再次运行游戏\"]\n    D10[\"游戏成功启动\"]\n    D1 --> D2 --> D3 --> D4 --> D5 --> D6 --> D7 --> D8 --> D9 --> D10"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T02:27:00+00:00"
+}

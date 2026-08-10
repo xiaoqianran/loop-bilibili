@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1Xoub6FEzN",
+  "title": "Deepseek+Codex自动控制Blender建模，打造自己的天宫仙境 Codex 使用 skill 控制Blender 建模",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 477,
+  "text": "一句提示词\n使用deep sk正式版加codex连接\nblender制作了一座可以真正运转的南天门仙境\n先锁定建筑结构\n运动轨迹和摄像机运镜\n最后再交给小云雀的最新模型\n完成最终的精确渲染\n先看最终效果\n好了\n接下来讲一下这段视频的具体制作过程\n第一步\n使用deep sick控制blender\n完成白模建筑动画和镜头运镜\n通过整理的blender skill输入提示词\n直接建模出固定建筑位置\n动作顺序\n运动轨迹以及完整的摄像机路线\n第二步\n把输出的白魔视频导入小云雀AI\n完成材质云海和最终光影渲染\n在小云雀画布通过左侧的加号\n依次添加光影角度等示意图\n以及刚才输出的白魔视频\n这里最关键的是在提示词中明确\n白模视频只作为摄像机轨迹\n建筑位置\n主体比例\n动作顺序以及速度节奏的参考模型\n选择SEDENCE2.5\n比例设置为16比九\n每画质选择720P\n时长设置为15秒\n然后提交就可以生成最终视频\n最后再使用画布的超分功能\n将视频提升到4K画质\n本期教程结束啦\n感谢各位小伙伴看到这里\n如果需要skill详细教程和完整提示词的\n可以告诉我\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Xoub6FEzN",
+  "published_at": "1786087689",
+  "fetched_at": "2026-08-08T21:36:38+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T21:39:55+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T21:39:55+00:00"
+}

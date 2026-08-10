@@ -1,0 +1,40 @@
+{
+  "bvid": "BV19pMQ6oEfJ",
+  "title": "DeepSeek-V4-Flash 正式版来了！1分钟看懂 Agent 全面进化",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 337,
+  "text": "2026年7月31日\n比4flash073已正式公开测试\n总参数2840亿\n每次启动130亿\n支援100万上下文\n最大输出384000token预设思考模式\n官方评测\n超越V4pro与篮板\nTerminal bench82.7\nN l 2rio54.2\nCyber gym76.7\nD best w v54.4\nTelephone70.3\n原生支援responses API\n并适配codex相容\nOpenAI语言\nTHROPIC支援JSN与工具呼叫\n每百万输入0.14美元\n快取命中0.0028\n输出0.28美元\n并发上限2500\n官方预告\nV4pro正式版即将到来\n预测A正评测\n在提升15到28%月\n加入responses API\n设定DPCV4flash即可开始使用",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19pMQ6oEfJ",
+  "published_at": "1785729791",
+  "fetched_at": "2026-08-08T22:17:58+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "timeout after 180.0s",
+      "updated_at": "2026-08-08T22:24:14+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "timeout after 180.0s",
+  "analysis_updated_at": "2026-08-08T22:24:14+00:00"
+}

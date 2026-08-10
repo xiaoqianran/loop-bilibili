@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1d1MR6zEqT",
+  "title": "GPT5.6再次攻破数学难题，Claude随后验证正确，AI for Math这次真的要爆！【2026-08-03】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 847,
+  "text": "今天是2026年8月3日\n欢迎收看CONNORAI日报\nOpenAI称\n其未发布的下一代模型ASTRO\n解开了十道长期未解的数学难题\n最古老的可追溯至1964年\nOpenAI通过一篇200多页的论文\n披露其下一代模型ASTRO的内部版本\n解决了十个数学和理论\n计算机科学领域的长期未解问题\n其中最古老的一个于1964年提出\n不到24小时后\nANTHROPIC研究员levent output就表示\n已可用的cloud fable模型\n使用通用提示自主复现了其中五个问题\n且未访问互联网\n阿里巴巴正式发布queen3.8max\n总参数量2.4万亿\n激活参数95亿\n支持em token上下文窗口\n具备多模态理解能力\n并在自主编程任务中可连续运行超过十天\n官方宣布该模型的开放权重将于下周发布\n同时开源的还有QUN3.8217亿\n这将是queen max系列首次开源\nmini max正式开源了视频生成模型H3的权重\nH3是一个33E参数的多模态模型\n可基于文本图像视频和音频生成最长15秒\n带原声立体声音频的视频\n并能在单张RTX5090上\n本地运行768P分辨率\n据爆料\nGLM5.3即将发布\n总参数量超过1万亿\n预计开放权重重点关注智能体编程\n该模型被指与KIMIK3和GPT5.6艘\n处于同一层级\n研究人员发现\n黑客有可能诱骗microsoft copilot\n泄露客户整个MICROSOFT365账户中的数据\n且攻击在标准日志中难以被检测\n据爆料\nOpenAI和ANTHROPIC正悄悄敦促华盛顿方面\n要求对meta和space x AI等竞争对手\n进行与他们所受相同的前沿模型审查\n据媒体报道\nalpha beat正在利用金融工程扩大TPU销售\n其租赁担保额\n在不到一年内\n从65亿美元增至438亿美元\n相关人士称\nBROCK的视频理解能力迈出重要一步\n现在可以分析任何视频\n包括识别AI生成内容和逐帧解释事件\n今天的速报就到这里\n完整日报与原始信源可以前往e i canon点CN查看",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1d1MR6zEqT",
+  "published_at": "1785765623",
+  "fetched_at": "2026-08-07T15:07:45+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI模型与2026年关键动态\n\n## 图1 总览\n```mermaid\nflowchart TD\n    OA[OpenAI_ASTRO] --> SP[Solved_10_Problems]\n    SP --> O1964[Oldest_1964]\n    AN[Anthropic_CloudFable] --> SP5[Solved_5_Problems]\n    SP5 --> NoNet[No_Internet_Access]\n    OA --> AP[200_pages_Paper]\n    AP --> Reveal[Reveal_Model_Version]\n    Reveal --> SP\n    AL[Alibaba_queen3_8max] --> Params2_4T[Params_2.4T]\n    Params2_4T --> Act95B[Activation_95B]\n    AL --> Multimodal\n    Multimodal --> Prog10d[Programming_10days]\n    Prog10d --> OpenW[OpenWeights_NextWeek]\n    QUN[QUN3_8217B] --> FirstOpen[QueenMax_FirstOpen]\n    Mini[MiniMax_H3] --> H3[H3_Model]\n    H3 --> Params33E[Params_33E]\n    Params33E --> Gen15s[Generate_15s_Video]\n    Gen15s --> RTX[RTX5090_768p]\n    GLM[GLM5.3] --> Params>1T[Params_>1T]\n    Params>1T --> FocusAgent[Focus_AgentProg]\n    FocusAgent --> SameTier[SameTier_KIMIK3_GPT5_6]\n    Hack[Hack_Copilot_Leak] --> Copilot[Microsoft_Copilot]\n    Copilot --> LeakM365[Leak_M365_Data]\n    LeakM365 --> DetectDiff[Detection_Difficult]\n    Lobby[OpenAI_Anthropic_Lobby] --> Washington\n    Washington --> Audit[Audit_Competitors]\n    Audit --> MetaSpaceX[Audit_Meta_SpaceX]\n    Alpha[AlphaBeat_TPU_Sales] --> RentalGrowth[RentalGuarantee_Growth]\n    BROCK[ brock_VideoUnderstanding] --> Analyze[Analyze_Any_Video]\n```\n\n## 图2 数学难题突破流程\n```mermaid\nflowchart TD\n    ASTROPaper[ASTRO_InternalPaper] --> Reveal[Reveal_Model_Version]\n    Reveal --> Solve10[Solve_10_Problems]\n    Solve10 --> Old1964[Problem_Oldest_1964]\n    AnthroRes[Anthropic_Researcher_levent] --> CloudFable[CloudFable_Model]\n    CloudFable --> Reproduce5[Reproduce_5_Problems]\n    Reproduce5 --> NoInternet[No_Internet_Access]\n```\n\n## 图3 安全风险与竞争审查\n```mermaid\nflowchart TD\n    HackPossibility[Hack_Possibility] --> Copilot[Microsoft_Copilot]\n    Copilot --> DataLeak[Leak_M365_Data]\n    DataLeak --> DetectChallenge[Detection_Challenge]\n    Lobby[OpenAI_Anthropic_Lobby] --> Washington\n    Washington --> AuditComp[Audit_Competitors]\n    AuditComp --> AuditMetaSpaceX[Audit_Meta_SpaceX]\n    AuditMetaSpaceX --> ModelReview[Competitive_Model_Review]\n```",
+      "diagrams": [
+        {
+          "title": "图1 总览",
+          "code": "flowchart TD\n    OA[OpenAI_ASTRO] --> SP[Solved_10_Problems]\n    SP --> O1964[Oldest_1964]\n    AN[Anthropic_CloudFable] --> SP5[Solved_5_Problems]\n    SP5 --> NoNet[No_Internet_Access]\n    OA --> AP[200_pages_Paper]\n    AP --> Reveal[Reveal_Model_Version]\n    Reveal --> SP\n    AL[Alibaba_queen3_8max] --> Params2_4T[Params_2.4T]\n    Params2_4T --> Act95B[Activation_95B]\n    AL --> Multimodal\n    Multimodal --> Prog10d[Programming_10days]\n    Prog10d --> OpenW[OpenWeights_NextWeek]\n    QUN[QUN3_8217B] --> FirstOpen[QueenMax_FirstOpen]\n    Mini[MiniMax_H3] --> H3[H3_Model]\n    H3 --> Params33E[Params_33E]\n    Params33E --> Gen15s[Generate_15s_Video]\n    Gen15s --> RTX[RTX5090_768p]\n    GLM[GLM5.3] --> Params>1T[Params_>1T]\n    Params>1T --> FocusAgent[Focus_AgentProg]\n    FocusAgent --> SameTier[SameTier_KIMIK3_GPT5_6]\n    Hack[Hack_Copilot_Leak] --> Copilot[Microsoft_Copilot]\n    Copilot --> LeakM365[Leak_M365_Data]\n    LeakM365 --> DetectDiff[Detection_Difficult]\n    Lobby[OpenAI_Anthropic_Lobby] --> Washington\n    Washington --> Audit[Audit_Competitors]\n    Audit --> MetaSpaceX[Audit_Meta_SpaceX]\n    Alpha[AlphaBeat_TPU_Sales] --> RentalGrowth[RentalGuarantee_Growth]\n    BROCK[ brock_VideoUnderstanding] --> Analyze[Analyze_Any_Video]"
+        },
+        {
+          "title": "图2 数学难题突破流程",
+          "code": "flowchart TD\n    ASTROPaper[ASTRO_InternalPaper] --> Reveal[Reveal_Model_Version]\n    Reveal --> Solve10[Solve_10_Problems]\n    Solve10 --> Old1964[Problem_Oldest_1964]\n    AnthroRes[Anthropic_Researcher_levent] --> CloudFable[CloudFable_Model]\n    CloudFable --> Reproduce5[Reproduce_5_Problems]\n    Reproduce5 --> NoInternet[No_Internet_Access]"
+        },
+        {
+          "title": "图3 安全风险与竞争审查",
+          "code": "flowchart TD\n    HackPossibility[Hack_Possibility] --> Copilot[Microsoft_Copilot]\n    Copilot --> DataLeak[Leak_M365_Data]\n    DataLeak --> DetectChallenge[Detection_Challenge]\n    Lobby[OpenAI_Anthropic_Lobby] --> Washington\n    Washington --> AuditComp[Audit_Competitors]\n    AuditComp --> AuditMetaSpaceX[Audit_Meta_SpaceX]\n    AuditMetaSpaceX --> ModelReview[Competitive_Model_Review]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T15:07:59+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI模型与2026年关键动态\n\n## 图1 总览\n```mermaid\nflowchart TD\n    OA[OpenAI_ASTRO] --> SP[Solved_10_Problems]\n    SP --> O1964[Oldest_1964]\n    AN[Anthropic_CloudFable] --> SP5[Solved_5_Problems]\n    SP5 --> NoNet[No_Internet_Access]\n    OA --> AP[200_pages_Paper]\n    AP --> Reveal[Reveal_Model_Version]\n    Reveal --> SP\n    AL[Alibaba_queen3_8max] --> Params2_4T[Params_2.4T]\n    Params2_4T --> Act95B[Activation_95B]\n    AL --> Multimodal\n    Multimodal --> Prog10d[Programming_10days]\n    Prog10d --> OpenW[OpenWeights_NextWeek]\n    QUN[QUN3_8217B] --> FirstOpen[QueenMax_FirstOpen]\n    Mini[MiniMax_H3] --> H3[H3_Model]\n    H3 --> Params33E[Params_33E]\n    Params33E --> Gen15s[Generate_15s_Video]\n    Gen15s --> RTX[RTX5090_768p]\n    GLM[GLM5.3] --> Params>1T[Params_>1T]\n    Params>1T --> FocusAgent[Focus_AgentProg]\n    FocusAgent --> SameTier[SameTier_KIMIK3_GPT5_6]\n    Hack[Hack_Copilot_Leak] --> Copilot[Microsoft_Copilot]\n    Copilot --> LeakM365[Leak_M365_Data]\n    LeakM365 --> DetectDiff[Detection_Difficult]\n    Lobby[OpenAI_Anthropic_Lobby] --> Washington\n    Washington --> Audit[Audit_Competitors]\n    Audit --> MetaSpaceX[Audit_Meta_SpaceX]\n    Alpha[AlphaBeat_TPU_Sales] --> RentalGrowth[RentalGuarantee_Growth]\n    BROCK[ brock_VideoUnderstanding] --> Analyze[Analyze_Any_Video]\n```\n\n## 图2 数学难题突破流程\n```mermaid\nflowchart TD\n    ASTROPaper[ASTRO_InternalPaper] --> Reveal[Reveal_Model_Version]\n    Reveal --> Solve10[Solve_10_Problems]\n    Solve10 --> Old1964[Problem_Oldest_1964]\n    AnthroRes[Anthropic_Researcher_levent] --> CloudFable[CloudFable_Model]\n    CloudFable --> Reproduce5[Reproduce_5_Problems]\n    Reproduce5 --> NoInternet[No_Internet_Access]\n```\n\n## 图3 安全风险与竞争审查\n```mermaid\nflowchart TD\n    HackPossibility[Hack_Possibility] --> Copilot[Microsoft_Copilot]\n    Copilot --> DataLeak[Leak_M365_Data]\n    DataLeak --> DetectChallenge[Detection_Challenge]\n    Lobby[OpenAI_Anthropic_Lobby] --> Washington\n    Washington --> AuditComp[Audit_Competitors]\n    AuditComp --> AuditMetaSpaceX[Audit_Meta_SpaceX]\n    AuditMetaSpaceX --> ModelReview[Competitive_Model_Review]\n```",
+  "diagrams": [
+    {
+      "title": "图1 总览",
+      "code": "flowchart TD\n    OA[OpenAI_ASTRO] --> SP[Solved_10_Problems]\n    SP --> O1964[Oldest_1964]\n    AN[Anthropic_CloudFable] --> SP5[Solved_5_Problems]\n    SP5 --> NoNet[No_Internet_Access]\n    OA --> AP[200_pages_Paper]\n    AP --> Reveal[Reveal_Model_Version]\n    Reveal --> SP\n    AL[Alibaba_queen3_8max] --> Params2_4T[Params_2.4T]\n    Params2_4T --> Act95B[Activation_95B]\n    AL --> Multimodal\n    Multimodal --> Prog10d[Programming_10days]\n    Prog10d --> OpenW[OpenWeights_NextWeek]\n    QUN[QUN3_8217B] --> FirstOpen[QueenMax_FirstOpen]\n    Mini[MiniMax_H3] --> H3[H3_Model]\n    H3 --> Params33E[Params_33E]\n    Params33E --> Gen15s[Generate_15s_Video]\n    Gen15s --> RTX[RTX5090_768p]\n    GLM[GLM5.3] --> Params>1T[Params_>1T]\n    Params>1T --> FocusAgent[Focus_AgentProg]\n    FocusAgent --> SameTier[SameTier_KIMIK3_GPT5_6]\n    Hack[Hack_Copilot_Leak] --> Copilot[Microsoft_Copilot]\n    Copilot --> LeakM365[Leak_M365_Data]\n    LeakM365 --> DetectDiff[Detection_Difficult]\n    Lobby[OpenAI_Anthropic_Lobby] --> Washington\n    Washington --> Audit[Audit_Competitors]\n    Audit --> MetaSpaceX[Audit_Meta_SpaceX]\n    Alpha[AlphaBeat_TPU_Sales] --> RentalGrowth[RentalGuarantee_Growth]\n    BROCK[ brock_VideoUnderstanding] --> Analyze[Analyze_Any_Video]"
+    },
+    {
+      "title": "图2 数学难题突破流程",
+      "code": "flowchart TD\n    ASTROPaper[ASTRO_InternalPaper] --> Reveal[Reveal_Model_Version]\n    Reveal --> Solve10[Solve_10_Problems]\n    Solve10 --> Old1964[Problem_Oldest_1964]\n    AnthroRes[Anthropic_Researcher_levent] --> CloudFable[CloudFable_Model]\n    CloudFable --> Reproduce5[Reproduce_5_Problems]\n    Reproduce5 --> NoInternet[No_Internet_Access]"
+    },
+    {
+      "title": "图3 安全风险与竞争审查",
+      "code": "flowchart TD\n    HackPossibility[Hack_Possibility] --> Copilot[Microsoft_Copilot]\n    Copilot --> DataLeak[Leak_M365_Data]\n    DataLeak --> DetectChallenge[Detection_Challenge]\n    Lobby[OpenAI_Anthropic_Lobby] --> Washington\n    Washington --> AuditComp[Audit_Competitors]\n    AuditComp --> AuditMetaSpaceX[Audit_Meta_SpaceX]\n    AuditMetaSpaceX --> ModelReview[Competitive_Model_Review]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:07:59+00:00"
+}

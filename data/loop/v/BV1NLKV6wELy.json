@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1NLKV6wELy",
+  "title": "godot引擎tres文件嵌入代码",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 166,
+  "text": "大家好\n我是游趣补给站\n分享一个嘎斗test文件文件嵌入代码方法\n首先打开格斗\n我们创建一个测试项目\n我这里选择了我常用的文件夹\n起个名字就task工具\n好等待一下\n等待文件创建\n这是我写的工具带吗\n歌德文件已传入\n我们把工具代码拖进去\n我们现在来创建一个攻击场景模拟正常加载\n这里就起名为攻击腾讯\n一个正常的一个不正常的又没攻击的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1NLKV6wELy",
+  "published_at": "1784214997",
+  "fetched_at": "2026-08-06T20:32:05+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot .tres 文件嵌入与攻击场景测试图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"打开 Godot\"] --> A2[\"创建测试项目\"]\n    A2 --> A3[\"选择文件夹\"]\n    A3 --> A4[\"为项目命名（task工具）\"]\n    A4 --> A5[\"等待项目创建\"]\n    A5 --> A6[\"导入 .tres 文件\"]\n    A6 --> A7[\"将工具代码拖入项目\"]\n    A7 --> A8[\"创建攻击场景\"]\n    A8 --> A9[\"为场景命名（攻击腾讯）\"]\n    A9 --> A10[\"加载并测试：正常场景\"]\n    A9 --> A11[\"加载并测试：异常场景\"]\n```\nEvidence: [BV1NLKV6wELy P1 00:06]、[BV1NLKV6wELy P1 00:09]、[BV1NLKV6wELy P1 00:16]、[BV1NLKV6wELy P1 00:18]、[BV1NLKV6wELy P1 00:23]、[BV1NLKV6wELy P1 00:36]、[BV1NLKV6wELy P1 00:37]、[BV1NLKV6wELy P1 00:41]、[BV1NLKV6wELy P1 00:47]、[BV1NLKV6wELy P1 01:53]\n\n## 工具代码嵌入细节\n```mermaid\nflowchart TD\n    B1[\"准备工具脚本\"] --> B2[\"将脚本文件拖入项目资源树\"]\n    B2 --> B3[\"确认 .tres 文件已成功导入\"]\n    B3 --> B4[\"在攻击场景中引用工具脚本\"]\n```\nEvidence: [BV1NLKV6wELy P1 00:30]、[BV1NLKV6wELy P1 00:36]、[BV1NLKV6wELy P1 00:37]\n\n## 攻击场景加载对比\n```mermaid\nflowchart LR\n    C1[\"攻击场景（攻击腾讯）\"] --> C2[\"正常加载\"]\n    C1 --> C3[\"异常加载\"]\n    C2 --> C4[\"无攻击行为\"]\n    C3 --> C5[\"出现异常或未触发攻击\"]\n```\nEvidence: [BV1NLKV6wELy P1 01:53]",
+      "diagrams": [
+        {
+          "title": "总览流程",
+          "code": "flowchart TD\n    A1[\"打开 Godot\"] --> A2[\"创建测试项目\"]\n    A2 --> A3[\"选择文件夹\"]\n    A3 --> A4[\"为项目命名（task工具）\"]\n    A4 --> A5[\"等待项目创建\"]\n    A5 --> A6[\"导入 .tres 文件\"]\n    A6 --> A7[\"将工具代码拖入项目\"]\n    A7 --> A8[\"创建攻击场景\"]\n    A8 --> A9[\"为场景命名（攻击腾讯）\"]\n    A9 --> A10[\"加载并测试：正常场景\"]\n    A9 --> A11[\"加载并测试：异常场景\"]"
+        },
+        {
+          "title": "工具代码嵌入细节",
+          "code": "flowchart TD\n    B1[\"准备工具脚本\"] --> B2[\"将脚本文件拖入项目资源树\"]\n    B2 --> B3[\"确认 .tres 文件已成功导入\"]\n    B3 --> B4[\"在攻击场景中引用工具脚本\"]"
+        },
+        {
+          "title": "攻击场景加载对比",
+          "code": "flowchart LR\n    C1[\"攻击场景（攻击腾讯）\"] --> C2[\"正常加载\"]\n    C1 --> C3[\"异常加载\"]\n    C2 --> C4[\"无攻击行为\"]\n    C3 --> C5[\"出现异常或未触发攻击\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T20:32:21+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot .tres 文件嵌入与攻击场景测试图谱\n\n## 总览流程\n```mermaid\nflowchart TD\n    A1[\"打开 Godot\"] --> A2[\"创建测试项目\"]\n    A2 --> A3[\"选择文件夹\"]\n    A3 --> A4[\"为项目命名（task工具）\"]\n    A4 --> A5[\"等待项目创建\"]\n    A5 --> A6[\"导入 .tres 文件\"]\n    A6 --> A7[\"将工具代码拖入项目\"]\n    A7 --> A8[\"创建攻击场景\"]\n    A8 --> A9[\"为场景命名（攻击腾讯）\"]\n    A9 --> A10[\"加载并测试：正常场景\"]\n    A9 --> A11[\"加载并测试：异常场景\"]\n```\nEvidence: [BV1NLKV6wELy P1 00:06]、[BV1NLKV6wELy P1 00:09]、[BV1NLKV6wELy P1 00:16]、[BV1NLKV6wELy P1 00:18]、[BV1NLKV6wELy P1 00:23]、[BV1NLKV6wELy P1 00:36]、[BV1NLKV6wELy P1 00:37]、[BV1NLKV6wELy P1 00:41]、[BV1NLKV6wELy P1 00:47]、[BV1NLKV6wELy P1 01:53]\n\n## 工具代码嵌入细节\n```mermaid\nflowchart TD\n    B1[\"准备工具脚本\"] --> B2[\"将脚本文件拖入项目资源树\"]\n    B2 --> B3[\"确认 .tres 文件已成功导入\"]\n    B3 --> B4[\"在攻击场景中引用工具脚本\"]\n```\nEvidence: [BV1NLKV6wELy P1 00:30]、[BV1NLKV6wELy P1 00:36]、[BV1NLKV6wELy P1 00:37]\n\n## 攻击场景加载对比\n```mermaid\nflowchart LR\n    C1[\"攻击场景（攻击腾讯）\"] --> C2[\"正常加载\"]\n    C1 --> C3[\"异常加载\"]\n    C2 --> C4[\"无攻击行为\"]\n    C3 --> C5[\"出现异常或未触发攻击\"]\n```\nEvidence: [BV1NLKV6wELy P1 01:53]",
+  "diagrams": [
+    {
+      "title": "总览流程",
+      "code": "flowchart TD\n    A1[\"打开 Godot\"] --> A2[\"创建测试项目\"]\n    A2 --> A3[\"选择文件夹\"]\n    A3 --> A4[\"为项目命名（task工具）\"]\n    A4 --> A5[\"等待项目创建\"]\n    A5 --> A6[\"导入 .tres 文件\"]\n    A6 --> A7[\"将工具代码拖入项目\"]\n    A7 --> A8[\"创建攻击场景\"]\n    A8 --> A9[\"为场景命名（攻击腾讯）\"]\n    A9 --> A10[\"加载并测试：正常场景\"]\n    A9 --> A11[\"加载并测试：异常场景\"]"
+    },
+    {
+      "title": "工具代码嵌入细节",
+      "code": "flowchart TD\n    B1[\"准备工具脚本\"] --> B2[\"将脚本文件拖入项目资源树\"]\n    B2 --> B3[\"确认 .tres 文件已成功导入\"]\n    B3 --> B4[\"在攻击场景中引用工具脚本\"]"
+    },
+    {
+      "title": "攻击场景加载对比",
+      "code": "flowchart LR\n    C1[\"攻击场景（攻击腾讯）\"] --> C2[\"正常加载\"]\n    C1 --> C3[\"异常加载\"]\n    C2 --> C4[\"无攻击行为\"]\n    C3 --> C5[\"出现异常或未触发攻击\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T20:32:21+00:00"
+}

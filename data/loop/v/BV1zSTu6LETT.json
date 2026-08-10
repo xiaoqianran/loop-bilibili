@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1zSTu6LETT",
+  "title": "几十万像素实时模拟，Noita 靠什么撑住？我用 Unity 验证了",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1325,
+  "text": "上一期视频的最后\n我给自己挖了一个坑\n我说下一次不再是几滴水\n我要直接往unity里面倒一整桶水\n看看是unity先崩溃\n还是我的电脑先冒烟\n今天兑现承诺\n不过真正让我震惊的并不是电脑有没有卡\n而是我终于理解了NOIA为什么敢说\nEvery pixel is simulated\n这就是我升级后的unity工程\n相比上一期整个底层已经重构了一遍\n除了水\n我还加入了沙子火烟木头石头等材料\n不过今天这些都不是重点\n今天我们只干一件事\n倒入约8736个水\n像素8万2944个格子\n一起参与压力测试\n随着闸门打开\nFull scan\n每部要检查约16万5888次格子\nCPU占用迅速拉满\n而第一种模拟方式很快就顶不住了\n帧率直接掉到了3fps\n电脑没有冒烟\n但是unity已经卡的不像样了\n我们来看下程序的工作方式\n第一种模式叫full scan\n它也是很多人第一次写原包自动机时\n最容易想到的方法\n每一帧从左扫到右\n从上扫到下\n把整个地图检查一遍\n不管这里有没有变化\n都重新计算\n哪怕这一大片区域全都是静止的石头\n它还是会一格一格重新扫描\n整个世界越大\n浪费就越严重\n所以真正拖慢程序的并不是流动的水\n而是那些根本没有发生任何变化的地方\n于是我切换到了第二种模式\nactive pixels星活跃像素\n新思路非常简单\n既然真正变化的只有这一小块区域\n那为什么还要把整个地图重新算一遍\n所以只有刚刚发生变化的像素\n才会进入下一帧计算\n远处那些完全静止的区域直接休眠\n结果非常明显\n同样一桶水帧率一下就回来了\n也是目前三种方案里表现最好的一种\n不过如果地图继续扩大\n光管理活跃像素本身也会越来越麻烦\n于是第三种方案来了\nChunk based\n也就是分块更新\n可以把整个世界理解成很多很多小房间\n每个房间里面住着一批像素\n如果这个房间最近一直没有变化\n那整个房间直接休眠\n只有发生变化的时候再重新唤醒\n相比active pixels\nchunk更适合管理超大的世界\n虽然我目前这个unity demo里\n他还没有跑赢active pixels\n但它提供的是另一层优化\n他负责决定哪些区域需要参与模拟\n而active pixels负责决定这些区域里的哪些像素\n需要计算\n真正的大型工程往往不会只选择其中一种\n而是把它们结合起来\n做到这里\n我越来越确定一件事\n很多人看到诺一塔都会觉得他就是原包自动机\n其实原包自动机只是开始\n真正困难的是怎么让几10万个像素\n不用每一帧全部重新计算\n我今天这个unity demo当然还不是诺ITANOITA\n是C加加字眼引擎\n它还有更多底层优化\n比如更高效的内存布局\n更精细的活跃区域管理以及其他工程及优化\n但是至少今天\n我们已经亲手验证了它最核心的一层思想\n真正决定性能的从来不是像素数量\n而是到底有多少像素真的需要计算\n不过做到这里\n新的问题又出现了\n现在我的世界里已经不止有水了\n还有沙子\n烟火木头灰烬\n它们全部跑在同一套系统里\n为什么我几乎没有增加多少代码\n整个世界却越来越复杂\nNOVA又是怎么不断加入毒液\n岩浆\n蒸汽炸药这些新物质\n而不用推翻底层架构\n下一期我们继续拆\n看看NOVA为什么能够用一套系统模拟整个世界",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1zSTu6LETT",
+  "published_at": "1782653703",
+  "fetched_at": "2026-08-10T01:18:24+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Noita 像素模拟的核心概念与实现路径\n\n## 概览：三种模拟方案的关系与定位 【BV1zSTu6LETT P1 00:16】【BV1zSTu6LETT P1 01:01】\n```mermaid\nflowchart TD\n    A[\"Full Scan<br/>逐帧遍历全部格子\"] --> B[\"高 CPU 占用<br/>帧率下降至 3 fps\"]\n    A --> C[\"适用于小规模地图\"]\n    D[\"Active Pixels<br/>仅计算活跃像素\"] --> E[\"显著提升帧率\"]\n    D --> F[\"随地图扩大管理成本上升\"]\n    G[\"Chunk Based<br/>分块更新\"] --> H[\"按区域休眠/唤醒\"]\n    G --> I[\"更适合超大世界\"]\n    J[\"实际游戏 Noita\"] --> K[\"组合使用：Chunk + Active Pixels\"]\n    K --> L[\"在不同层级过滤计算\"]\n```\n\n## 性能瓶颈与优化路径 【BV1zSTu6LETT P1 01:22】【BV1zSTu6LETT P1 01:54】\n```mermaid\nflowchart TD\n    A[\"数十万像素<br/>全局模拟\"] --> B[\"Full Scan 处理\"]\n    B --> C[\"遍历 16 万+ 格子\"]\n    C --> D[\"大量静止区域\"]\n    D --> E[\"无效计算 → CPU 拉满\"]\n    E --> F[\"帧率跌至 3 fps\"]\n    G[\"识别活跃像素\"] --> H[\"仅计算变化区域\"]\n    H --> I[\"帧率恢复\"]\n    J[\"Chunk 划分区域\"] --> K[\"区域级休眠\"]\n    K --> L[\"进一步削减无效计算\"]\n    M[\"综合方案\"] --> N[\"结合活跃像素 + 区块管理\"]\n    N --> O[\"在保持像素数量的同时提升性能\"]\n```\n\n## 系统可扩展性：新材料的低成本加入 【BV1zSTu6LETT P1 03:33】【BV1zSTu6LETT P1 03:45】\n```mermaid\nflowchart TD\n    A[\"核心模拟引擎\"] --> B[\"统一像素系统\"]\n    B --> C[\"水\"]\n    B --> D[\"沙子\"]\n    B --> E[\"烟火\"]\n    B --> F[\"木头\"]\n    B --> G[\"灰烬\"]\n    B --> H[\"岩浆\"]\n    B --> I[\"毒液\"]\n    B --> J[\"蒸汽\"]\n    B --> K[\"炸药\"]\n    C --> L[\"无需额外代码\"]\n    D --> L\n    E --> L\n    F --> L\n    G --> L\n    H --> L\n    I --> L\n    J --> L\n    K --> L\n    L --> M[\"系统复杂度提升<br/>但代码改动极少\"]\n```",
+      "diagrams": [
+        {
+          "title": "概览：三种模拟方案的关系与定位 【BV1zSTu6LETT P1 00:16】【BV1zSTu6LETT P1 01:01】",
+          "code": "flowchart TD\n    A[\"Full Scan<br/>逐帧遍历全部格子\"] --> B[\"高 CPU 占用<br/>帧率下降至 3 fps\"]\n    A --> C[\"适用于小规模地图\"]\n    D[\"Active Pixels<br/>仅计算活跃像素\"] --> E[\"显著提升帧率\"]\n    D --> F[\"随地图扩大管理成本上升\"]\n    G[\"Chunk Based<br/>分块更新\"] --> H[\"按区域休眠/唤醒\"]\n    G --> I[\"更适合超大世界\"]\n    J[\"实际游戏 Noita\"] --> K[\"组合使用：Chunk + Active Pixels\"]\n    K --> L[\"在不同层级过滤计算\"]"
+        },
+        {
+          "title": "性能瓶颈与优化路径 【BV1zSTu6LETT P1 01:22】【BV1zSTu6LETT P1 01:54】",
+          "code": "flowchart TD\n    A[\"数十万像素<br/>全局模拟\"] --> B[\"Full Scan 处理\"]\n    B --> C[\"遍历 16 万+ 格子\"]\n    C --> D[\"大量静止区域\"]\n    D --> E[\"无效计算 → CPU 拉满\"]\n    E --> F[\"帧率跌至 3 fps\"]\n    G[\"识别活跃像素\"] --> H[\"仅计算变化区域\"]\n    H --> I[\"帧率恢复\"]\n    J[\"Chunk 划分区域\"] --> K[\"区域级休眠\"]\n    K --> L[\"进一步削减无效计算\"]\n    M[\"综合方案\"] --> N[\"结合活跃像素 + 区块管理\"]\n    N --> O[\"在保持像素数量的同时提升性能\"]"
+        },
+        {
+          "title": "系统可扩展性：新材料的低成本加入 【BV1zSTu6LETT P1 03:33】【BV1zSTu6LETT P1 03:45】",
+          "code": "flowchart TD\n    A[\"核心模拟引擎\"] --> B[\"统一像素系统\"]\n    B --> C[\"水\"]\n    B --> D[\"沙子\"]\n    B --> E[\"烟火\"]\n    B --> F[\"木头\"]\n    B --> G[\"灰烬\"]\n    B --> H[\"岩浆\"]\n    B --> I[\"毒液\"]\n    B --> J[\"蒸汽\"]\n    B --> K[\"炸药\"]\n    C --> L[\"无需额外代码\"]\n    D --> L\n    E --> L\n    F --> L\n    G --> L\n    H --> L\n    I --> L\n    J --> L\n    K --> L\n    L --> M[\"系统复杂度提升<br/>但代码改动极少\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T01:18:35+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Noita 像素模拟的核心概念与实现路径\n\n## 概览：三种模拟方案的关系与定位 【BV1zSTu6LETT P1 00:16】【BV1zSTu6LETT P1 01:01】\n```mermaid\nflowchart TD\n    A[\"Full Scan<br/>逐帧遍历全部格子\"] --> B[\"高 CPU 占用<br/>帧率下降至 3 fps\"]\n    A --> C[\"适用于小规模地图\"]\n    D[\"Active Pixels<br/>仅计算活跃像素\"] --> E[\"显著提升帧率\"]\n    D --> F[\"随地图扩大管理成本上升\"]\n    G[\"Chunk Based<br/>分块更新\"] --> H[\"按区域休眠/唤醒\"]\n    G --> I[\"更适合超大世界\"]\n    J[\"实际游戏 Noita\"] --> K[\"组合使用：Chunk + Active Pixels\"]\n    K --> L[\"在不同层级过滤计算\"]\n```\n\n## 性能瓶颈与优化路径 【BV1zSTu6LETT P1 01:22】【BV1zSTu6LETT P1 01:54】\n```mermaid\nflowchart TD\n    A[\"数十万像素<br/>全局模拟\"] --> B[\"Full Scan 处理\"]\n    B --> C[\"遍历 16 万+ 格子\"]\n    C --> D[\"大量静止区域\"]\n    D --> E[\"无效计算 → CPU 拉满\"]\n    E --> F[\"帧率跌至 3 fps\"]\n    G[\"识别活跃像素\"] --> H[\"仅计算变化区域\"]\n    H --> I[\"帧率恢复\"]\n    J[\"Chunk 划分区域\"] --> K[\"区域级休眠\"]\n    K --> L[\"进一步削减无效计算\"]\n    M[\"综合方案\"] --> N[\"结合活跃像素 + 区块管理\"]\n    N --> O[\"在保持像素数量的同时提升性能\"]\n```\n\n## 系统可扩展性：新材料的低成本加入 【BV1zSTu6LETT P1 03:33】【BV1zSTu6LETT P1 03:45】\n```mermaid\nflowchart TD\n    A[\"核心模拟引擎\"] --> B[\"统一像素系统\"]\n    B --> C[\"水\"]\n    B --> D[\"沙子\"]\n    B --> E[\"烟火\"]\n    B --> F[\"木头\"]\n    B --> G[\"灰烬\"]\n    B --> H[\"岩浆\"]\n    B --> I[\"毒液\"]\n    B --> J[\"蒸汽\"]\n    B --> K[\"炸药\"]\n    C --> L[\"无需额外代码\"]\n    D --> L\n    E --> L\n    F --> L\n    G --> L\n    H --> L\n    I --> L\n    J --> L\n    K --> L\n    L --> M[\"系统复杂度提升<br/>但代码改动极少\"]\n```",
+  "diagrams": [
+    {
+      "title": "概览：三种模拟方案的关系与定位 【BV1zSTu6LETT P1 00:16】【BV1zSTu6LETT P1 01:01】",
+      "code": "flowchart TD\n    A[\"Full Scan<br/>逐帧遍历全部格子\"] --> B[\"高 CPU 占用<br/>帧率下降至 3 fps\"]\n    A --> C[\"适用于小规模地图\"]\n    D[\"Active Pixels<br/>仅计算活跃像素\"] --> E[\"显著提升帧率\"]\n    D --> F[\"随地图扩大管理成本上升\"]\n    G[\"Chunk Based<br/>分块更新\"] --> H[\"按区域休眠/唤醒\"]\n    G --> I[\"更适合超大世界\"]\n    J[\"实际游戏 Noita\"] --> K[\"组合使用：Chunk + Active Pixels\"]\n    K --> L[\"在不同层级过滤计算\"]"
+    },
+    {
+      "title": "性能瓶颈与优化路径 【BV1zSTu6LETT P1 01:22】【BV1zSTu6LETT P1 01:54】",
+      "code": "flowchart TD\n    A[\"数十万像素<br/>全局模拟\"] --> B[\"Full Scan 处理\"]\n    B --> C[\"遍历 16 万+ 格子\"]\n    C --> D[\"大量静止区域\"]\n    D --> E[\"无效计算 → CPU 拉满\"]\n    E --> F[\"帧率跌至 3 fps\"]\n    G[\"识别活跃像素\"] --> H[\"仅计算变化区域\"]\n    H --> I[\"帧率恢复\"]\n    J[\"Chunk 划分区域\"] --> K[\"区域级休眠\"]\n    K --> L[\"进一步削减无效计算\"]\n    M[\"综合方案\"] --> N[\"结合活跃像素 + 区块管理\"]\n    N --> O[\"在保持像素数量的同时提升性能\"]"
+    },
+    {
+      "title": "系统可扩展性：新材料的低成本加入 【BV1zSTu6LETT P1 03:33】【BV1zSTu6LETT P1 03:45】",
+      "code": "flowchart TD\n    A[\"核心模拟引擎\"] --> B[\"统一像素系统\"]\n    B --> C[\"水\"]\n    B --> D[\"沙子\"]\n    B --> E[\"烟火\"]\n    B --> F[\"木头\"]\n    B --> G[\"灰烬\"]\n    B --> H[\"岩浆\"]\n    B --> I[\"毒液\"]\n    B --> J[\"蒸汽\"]\n    B --> K[\"炸药\"]\n    C --> L[\"无需额外代码\"]\n    D --> L\n    E --> L\n    F --> L\n    G --> L\n    H --> L\n    I --> L\n    J --> L\n    K --> L\n    L --> M[\"系统复杂度提升<br/>但代码改动极少\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T01:18:35+00:00"
+}

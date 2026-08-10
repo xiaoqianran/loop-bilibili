@@ -1,0 +1,74 @@
+{
+  "bvid": "BV18AuE6xEgz",
+  "title": "DeepSeek API 要涨价，那我们用什么？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 331,
+  "text": "deep seek官方刚刚宣布API要涨价了\n而且是大幅上涨\n官方原话\n请你按这个规划用量\n为什么敢用\n因为V4flash是真的能干活\n九项智能体评测全面超过pro预览版\n终端操作82.7\n工具调度70.3\n智能指数50\n比预览版整整高了十分\n但现在按量付费涨价一来直接翻倍\n官方已经公告高峰时段价格翻倍\n夜间优惠也要取消\nOpen code go\n把它打包进订阅\n首月五美金之后\n每月十美金\ndeep seek v4flash每月调用量超过15万8000次\n以前按量付费\n每按一次回车都心疼\n涨价之后更心疼\n现在固定成本随便用\n涨价跟你没关系\n这个账做内容的人比我算的清\n想锁价链接放评论区置顶了\n趁涨价之前\n现在开通首月五美金15万8000次调用\n够你用很久",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV18AuE6xEgz",
+  "published_at": "1785996894",
+  "fetched_at": "2026-08-08T09:10:39+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek API 价格与使用策略\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"DeepSeek API 价格上涨\"] --> B1[\"官方宣布涨价\"]\n    B1 --> C1[\"按量付费翻倍\"]\n    B1 --> D1[\"高峰时段价格翻倍\"]\n    B1 --> E1[\"夜间优惠取消\"]\n    A1 --> F1[\"推出订阅套餐\"]\n    F1 --> G1[\"首月5美元，15.8万次调用\"]\n    F1 --> H1[\"之后每月10美元\"]\n    A1 --> I1[\"V4Flash 性能优势\"]\n    I1 --> J1[\"九项智能体评测超Pro预览版\"]\n    J1 --> K1[\"终端操作 82.7\"]\n    J1 --> L1[\"工具调度 70.3\"]\n    J1 --> M1[\"智能指数 50\"]\n    J1 --> N1[\"整体比预览版高 10 分\"]\n```\n- **B1**: [BV18AuE6xEgz P1 00:00]  \n- **C1**: [BV18AuE6xEgz P1 00:24]  \n- **D1**: [BV18AuE6xEgz P1 00:28]  \n- **E1**: [BV18AuE6xEgz P1 00:31]  \n- **F1**: [BV18AuE6xEgz P1 00:34]  \n- **G1**: [BV18AuE6xEgz P1 00:36]  \n- **H1**: [BV18AuE6xEgz P1 00:38]  \n- **I1**: [BV18AuE6xEgz P1 00:08]  \n- **J1**: [BV18AuE6xEgz P1 00:13]  \n- **K1**: [BV18AuE6xEgz P1 00:17]  \n- **L1**: [BV18AuE6xEgz P1 00:19]  \n- **M1**: [BV18AuE6xEgz P1 00:20]  \n- **N1**: [BV18AuE6xEgz P1 00:22]  \n\n## 订阅套餐细节\n```mermaid\nflowchart LR\n    S1[\"订阅套餐\"] --> S2[\"首月5美元\"]\n    S2 --> S3[\"调用上限 158,000 次\"]\n    S1 --> S4[\"后续每月10美元\"]\n    S4 --> S5[\"调用上限 同首月\"]\n    S1 --> S6[\"固定成本，随意使用\"]\n    S6 --> S7[\"涨价对已订阅用户无影响\"]\n```\n- **S2**: [BV18AuE6xEgz P1 00:36]  \n- **S3**: [BV18AuE6xEgz P1 00:39]  \n- **S4**: [BV18AuE6xEgz P1 00:38]  \n- **S6**: [BV18AuE6xEgz P1 00:50]  \n- **S7**: [BV18AuE6xEgz P1 00:52]  \n\n## V4Flash 性能指标\n```mermaid\nflowchart TD\n    P1[\"V4Flash 性能\"] --> P2[\"九项智能体评测\"]\n    P2 --> P3[\"终端操作 82.7\"]\n    P2 --> P4[\"工具调度 70.3\"]\n    P2 --> P5[\"智能指数 50\"]\n    P2 --> P6[\"整体比Pro预览版高 10 分\"]\n```\n- **P2**: [BV18AuE6xEgz P1 00:13]  \n- **P3**: [BV18AuE6xEgz P1 00:17]  \n- **P4**: [BV18AuE6xEgz P1 00:19]  \n- **P5**: [BV18AuE6xEgz P1 00:20]  \n- **P6**: [BV18AuE6xEgz P1 00:22]  \n\n## 价格变动前的使用建议\n```mermaid\nflowchart LR\n    U1[\"价格上涨前\"] --> U2[\"建议立即订阅\"]\n    U2 --> U3[\"首月5美元，15.8万次调用\"]\n    U1 --> U4[\"避免按量付费高成本\"]\n    U4 --> U5[\"固定订阅更划算\"]\n    U5 --> U6[\"长期使用成本降低\"]\n```\n- **U1**: [BV18AuE6xEgz P1 01:01]  \n- **U2**: [BV18AuE6xEgz P1 01:03]  \n- **U3**: [BV18AuE6xEgz P1 01:03]  \n- **U4**: [BV18AuE6xEgz P1 00:44]  \n- **U5**: [BV18AuE6xEgz P1 00:50]  \n- **U6**: [BV18AuE6xEgz P1 01:07]  ",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    A1[\"DeepSeek API 价格上涨\"] --> B1[\"官方宣布涨价\"]\n    B1 --> C1[\"按量付费翻倍\"]\n    B1 --> D1[\"高峰时段价格翻倍\"]\n    B1 --> E1[\"夜间优惠取消\"]\n    A1 --> F1[\"推出订阅套餐\"]\n    F1 --> G1[\"首月5美元，15.8万次调用\"]\n    F1 --> H1[\"之后每月10美元\"]\n    A1 --> I1[\"V4Flash 性能优势\"]\n    I1 --> J1[\"九项智能体评测超Pro预览版\"]\n    J1 --> K1[\"终端操作 82.7\"]\n    J1 --> L1[\"工具调度 70.3\"]\n    J1 --> M1[\"智能指数 50\"]\n    J1 --> N1[\"整体比预览版高 10 分\"]"
+        },
+        {
+          "title": "订阅套餐细节",
+          "code": "flowchart LR\n    S1[\"订阅套餐\"] --> S2[\"首月5美元\"]\n    S2 --> S3[\"调用上限 158,000 次\"]\n    S1 --> S4[\"后续每月10美元\"]\n    S4 --> S5[\"调用上限 同首月\"]\n    S1 --> S6[\"固定成本，随意使用\"]\n    S6 --> S7[\"涨价对已订阅用户无影响\"]"
+        },
+        {
+          "title": "V4Flash 性能指标",
+          "code": "flowchart TD\n    P1[\"V4Flash 性能\"] --> P2[\"九项智能体评测\"]\n    P2 --> P3[\"终端操作 82.7\"]\n    P2 --> P4[\"工具调度 70.3\"]\n    P2 --> P5[\"智能指数 50\"]\n    P2 --> P6[\"整体比Pro预览版高 10 分\"]"
+        },
+        {
+          "title": "价格变动前的使用建议",
+          "code": "flowchart LR\n    U1[\"价格上涨前\"] --> U2[\"建议立即订阅\"]\n    U2 --> U3[\"首月5美元，15.8万次调用\"]\n    U1 --> U4[\"避免按量付费高成本\"]\n    U4 --> U5[\"固定订阅更划算\"]\n    U5 --> U6[\"长期使用成本降低\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-08T09:11:48+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek API 价格与使用策略\n\n## 总览\n```mermaid\nflowchart TD\n    A1[\"DeepSeek API 价格上涨\"] --> B1[\"官方宣布涨价\"]\n    B1 --> C1[\"按量付费翻倍\"]\n    B1 --> D1[\"高峰时段价格翻倍\"]\n    B1 --> E1[\"夜间优惠取消\"]\n    A1 --> F1[\"推出订阅套餐\"]\n    F1 --> G1[\"首月5美元，15.8万次调用\"]\n    F1 --> H1[\"之后每月10美元\"]\n    A1 --> I1[\"V4Flash 性能优势\"]\n    I1 --> J1[\"九项智能体评测超Pro预览版\"]\n    J1 --> K1[\"终端操作 82.7\"]\n    J1 --> L1[\"工具调度 70.3\"]\n    J1 --> M1[\"智能指数 50\"]\n    J1 --> N1[\"整体比预览版高 10 分\"]\n```\n- **B1**: [BV18AuE6xEgz P1 00:00]  \n- **C1**: [BV18AuE6xEgz P1 00:24]  \n- **D1**: [BV18AuE6xEgz P1 00:28]  \n- **E1**: [BV18AuE6xEgz P1 00:31]  \n- **F1**: [BV18AuE6xEgz P1 00:34]  \n- **G1**: [BV18AuE6xEgz P1 00:36]  \n- **H1**: [BV18AuE6xEgz P1 00:38]  \n- **I1**: [BV18AuE6xEgz P1 00:08]  \n- **J1**: [BV18AuE6xEgz P1 00:13]  \n- **K1**: [BV18AuE6xEgz P1 00:17]  \n- **L1**: [BV18AuE6xEgz P1 00:19]  \n- **M1**: [BV18AuE6xEgz P1 00:20]  \n- **N1**: [BV18AuE6xEgz P1 00:22]  \n\n## 订阅套餐细节\n```mermaid\nflowchart LR\n    S1[\"订阅套餐\"] --> S2[\"首月5美元\"]\n    S2 --> S3[\"调用上限 158,000 次\"]\n    S1 --> S4[\"后续每月10美元\"]\n    S4 --> S5[\"调用上限 同首月\"]\n    S1 --> S6[\"固定成本，随意使用\"]\n    S6 --> S7[\"涨价对已订阅用户无影响\"]\n```\n- **S2**: [BV18AuE6xEgz P1 00:36]  \n- **S3**: [BV18AuE6xEgz P1 00:39]  \n- **S4**: [BV18AuE6xEgz P1 00:38]  \n- **S6**: [BV18AuE6xEgz P1 00:50]  \n- **S7**: [BV18AuE6xEgz P1 00:52]  \n\n## V4Flash 性能指标\n```mermaid\nflowchart TD\n    P1[\"V4Flash 性能\"] --> P2[\"九项智能体评测\"]\n    P2 --> P3[\"终端操作 82.7\"]\n    P2 --> P4[\"工具调度 70.3\"]\n    P2 --> P5[\"智能指数 50\"]\n    P2 --> P6[\"整体比Pro预览版高 10 分\"]\n```\n- **P2**: [BV18AuE6xEgz P1 00:13]  \n- **P3**: [BV18AuE6xEgz P1 00:17]  \n- **P4**: [BV18AuE6xEgz P1 00:19]  \n- **P5**: [BV18AuE6xEgz P1 00:20]  \n- **P6**: [BV18AuE6xEgz P1 00:22]  \n\n## 价格变动前的使用建议\n```mermaid\nflowchart LR\n    U1[\"价格上涨前\"] --> U2[\"建议立即订阅\"]\n    U2 --> U3[\"首月5美元，15.8万次调用\"]\n    U1 --> U4[\"避免按量付费高成本\"]\n    U4 --> U5[\"固定订阅更划算\"]\n    U5 --> U6[\"长期使用成本降低\"]\n```\n- **U1**: [BV18AuE6xEgz P1 01:01]  \n- **U2**: [BV18AuE6xEgz P1 01:03]  \n- **U3**: [BV18AuE6xEgz P1 01:03]  \n- **U4**: [BV18AuE6xEgz P1 00:44]  \n- **U5**: [BV18AuE6xEgz P1 00:50]  \n- **U6**: [BV18AuE6xEgz P1 01:07]  ",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    A1[\"DeepSeek API 价格上涨\"] --> B1[\"官方宣布涨价\"]\n    B1 --> C1[\"按量付费翻倍\"]\n    B1 --> D1[\"高峰时段价格翻倍\"]\n    B1 --> E1[\"夜间优惠取消\"]\n    A1 --> F1[\"推出订阅套餐\"]\n    F1 --> G1[\"首月5美元，15.8万次调用\"]\n    F1 --> H1[\"之后每月10美元\"]\n    A1 --> I1[\"V4Flash 性能优势\"]\n    I1 --> J1[\"九项智能体评测超Pro预览版\"]\n    J1 --> K1[\"终端操作 82.7\"]\n    J1 --> L1[\"工具调度 70.3\"]\n    J1 --> M1[\"智能指数 50\"]\n    J1 --> N1[\"整体比预览版高 10 分\"]"
+    },
+    {
+      "title": "订阅套餐细节",
+      "code": "flowchart LR\n    S1[\"订阅套餐\"] --> S2[\"首月5美元\"]\n    S2 --> S3[\"调用上限 158,000 次\"]\n    S1 --> S4[\"后续每月10美元\"]\n    S4 --> S5[\"调用上限 同首月\"]\n    S1 --> S6[\"固定成本，随意使用\"]\n    S6 --> S7[\"涨价对已订阅用户无影响\"]"
+    },
+    {
+      "title": "V4Flash 性能指标",
+      "code": "flowchart TD\n    P1[\"V4Flash 性能\"] --> P2[\"九项智能体评测\"]\n    P2 --> P3[\"终端操作 82.7\"]\n    P2 --> P4[\"工具调度 70.3\"]\n    P2 --> P5[\"智能指数 50\"]\n    P2 --> P6[\"整体比Pro预览版高 10 分\"]"
+    },
+    {
+      "title": "价格变动前的使用建议",
+      "code": "flowchart LR\n    U1[\"价格上涨前\"] --> U2[\"建议立即订阅\"]\n    U2 --> U3[\"首月5美元，15.8万次调用\"]\n    U1 --> U4[\"避免按量付费高成本\"]\n    U4 --> U5[\"固定订阅更划算\"]\n    U5 --> U6[\"长期使用成本降低\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T09:11:48+00:00"
+}

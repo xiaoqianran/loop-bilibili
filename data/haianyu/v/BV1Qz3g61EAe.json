@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1Qz3g61EAe",
+  "title": "188. 预训练和SFT产生的初始梯度有何不同？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1051,
+  "text": "今天的问题是\n预训练和sf t产生的初始梯度有何不同\n结论先行\n在宝藏问题186中推导过\n交叉熵损失对logic的梯度\n等于模型的预测概率减去标签\n所以无论是预训练阶段还是sf t阶段\n初始梯度都是类似于P矩阵减去Y矩阵\n这种形式的\n视频开始前\n先理清训练时\ntransformer是如何并行预测token的\n假设输入有T一T二T33个token\n经过词嵌入得到矩阵X\n接着投影得到QK和VQ和转制后的K相乘\n得到注意力\n矩阵A本质上是向量内积\n矩阵A右上角的灰色块表示因果掩码\n接着A和V相乘做加权平均\n得到O再通过FFN层先变长后变窄\n得到输出矩阵X在最后一层经过一个线性投影\n就得到了一个行数为三\n宽度为此表大小的预测矩阵\n将这里未做soft max的logic矩阵记为Z\n其中第一行对应对T2的预测\n第二行对应对T3的预测\n以此类推\n问题来了\n交叉熵损失对logic的梯度要怎么求\n还是仿照之前的思路\n假设单token的LOGI为向量\nZ等于Z1Z2Z三\n通过soft max转换为预测概率\nP等于P1P2P三\n此时求概率pi对捞取ZJ的偏导数分两种情况\n当I等于J时\n偏导数为pi乘以一减pi\n当I不等于J时\n偏导数为负的pi乘以PJ\n假设真实标签选中了第二个词\n也就是标签向量Y等于零\n一零对应的交叉熵损失为负的LNP2\n我们对Z1求偏导\n得到负的P2分之一乘以负的P2乘以P1\n化简后刚好就是P1\n我们对Z2求偏导\n得到负的P2分之一乘以P21减P2\n化简后得到P2-1\n同理对Z3求偏导得到P3\n所以Z的梯度就等于P1\nP2-1P3写成向量形式\n刚好就是预测概率向量P减去标签向量Y\n顺着中间绿色的箭头向量扩为矩阵\n我们可以把单token的结论推广到整个序列\n因为预训练阶段\n每一个token都要预测下一个token\n所以初始梯度矩阵里每一行都有值\n梯度等于P减Y除以大N\n这里的P表示模型的预测概率矩阵\n其中的一行表示对下一个token的\n所有可能的概率预测\nY表示标签矩阵\n其中的一行是一个one hot向量\n其中真实标签为一\n其他为零\n大N是全序列的总token数\n而在SFT阶段\n因为输入包含prompt和response\n我们在计算loss时会对prompt区域进行掩码\n反映在梯度矩阵上\n就是矩阵的上半部分\n由于没有损失\n它的梯度为全零\n只有下半部分response对应的行才会产生梯度\n计算公式为P减Y除以小N\n这里的分母小N仅代表\nresponse区域的有效token数",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1Qz3g61EAe",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:12:31+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 预训练与 SFT 初始梯度关系图谱\n\n## 图 1：梯度公式总体与阶段差异\n[BV1Qz3g61EAe P1 00:10]、[BV1Qz3g61EAe P1 00:16]、[BV1Qz3g61EAe P1 02:30]、[BV1Qz3g61EAe P1 02:57]\n\n```mermaid\nflowchart TD\n    CE[\"交叉熵损失\"] --> Grad[\"梯度 dL/dZ\"]\n    Grad --> Diff[\"P - Y\"]\n    Diff --> Pre[\"预训练阶段\"]\n    Pre --> PreFormula[\"梯度 = (P - Y) / N\"]\n    Diff --> SFT[\"SFT 阶段\"]\n    SFT --> Mask[\"Prompt 区域掩码 → 梯度 0\"]\n    SFT --> Resp[\"Response 区域\"]\n    Resp --> SFTFormula[\"梯度 = (P - Y) / n\"]\n```\n\n## 图 2：Transformer 并行预测 Token 流程\n[BV1Qz3g61EAe P1 00:25]、[BV1Qz3g61EAe P1 00:53]\n\n```mermaid\nflowchart LR\n    Tokens[\"输入 Token 序列 T1..T3\"] --> Emb[\"词嵌入 X\"]\n    Emb --> QKV[\"投影得到 Q, K, V\"]\n    QKV --> Att[\"注意力矩阵 A (Q·Kᵀ)\"]\n    Att --> Mask[\"因果掩码（灰色块）\"]\n    Mask --> A2V[\"A 与 V 相乘\"]\n    A2V --> O[\"加权平均得到 O\"]\n    O --> FFN[\"FFN 层（先变长后变窄）\"]\n    FFN --> Z[\"线性投影得到 logits Z\"]\n    Z --> SM[\"Softmax → 预测概率矩阵 P\"]\n```\n\n## 图 3：单 Token 交叉熵梯度推导\n[BV1Qz3g61EAe P1 01:24]、[BV1Qz3g61EAe P1 02:20]\n\n```mermaid\nflowchart TD\n    Z[\"logits Z_i\"] --> Soft[\"Softmax → P_i\"]\n    Soft --> Loss[\"交叉熵 L = -log(P_target)\"]\n    Loss --> dLdZ[\"∂L/∂Z_i\"]\n    dLdZ --> CaseSame[\"i = target: P_i (1 - P_i)\"]\n    dLdZ --> CaseDiff[\"i ≠ target: -P_i * P_target\"]\n    CaseSame --> Vector[\"合并得到向量 P - Y\"]\n    CaseDiff --> Vector\n    Vector --> Result[\"梯度 = P - Y\"]\n```",
+      "diagrams": [
+        {
+          "title": "图 1：梯度公式总体与阶段差异",
+          "code": "flowchart TD\n    CE[\"交叉熵损失\"] --> Grad[\"梯度 dL/dZ\"]\n    Grad --> Diff[\"P - Y\"]\n    Diff --> Pre[\"预训练阶段\"]\n    Pre --> PreFormula[\"梯度 = (P - Y) / N\"]\n    Diff --> SFT[\"SFT 阶段\"]\n    SFT --> Mask[\"Prompt 区域掩码 → 梯度 0\"]\n    SFT --> Resp[\"Response 区域\"]\n    Resp --> SFTFormula[\"梯度 = (P - Y) / n\"]"
+        },
+        {
+          "title": "图 2：Transformer 并行预测 Token 流程",
+          "code": "flowchart LR\n    Tokens[\"输入 Token 序列 T1..T3\"] --> Emb[\"词嵌入 X\"]\n    Emb --> QKV[\"投影得到 Q, K, V\"]\n    QKV --> Att[\"注意力矩阵 A (Q·Kᵀ)\"]\n    Att --> Mask[\"因果掩码（灰色块）\"]\n    Mask --> A2V[\"A 与 V 相乘\"]\n    A2V --> O[\"加权平均得到 O\"]\n    O --> FFN[\"FFN 层（先变长后变窄）\"]\n    FFN --> Z[\"线性投影得到 logits Z\"]\n    Z --> SM[\"Softmax → 预测概率矩阵 P\"]"
+        },
+        {
+          "title": "图 3：单 Token 交叉熵梯度推导",
+          "code": "flowchart TD\n    Z[\"logits Z_i\"] --> Soft[\"Softmax → P_i\"]\n    Soft --> Loss[\"交叉熵 L = -log(P_target)\"]\n    Loss --> dLdZ[\"∂L/∂Z_i\"]\n    dLdZ --> CaseSame[\"i = target: P_i (1 - P_i)\"]\n    dLdZ --> CaseDiff[\"i ≠ target: -P_i * P_target\"]\n    CaseSame --> Vector[\"合并得到向量 P - Y\"]\n    CaseDiff --> Vector\n    Vector --> Result[\"梯度 = P - Y\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-06T18:17:23+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 预训练与 SFT 初始梯度关系图谱\n\n## 图 1：梯度公式总体与阶段差异\n[BV1Qz3g61EAe P1 00:10]、[BV1Qz3g61EAe P1 00:16]、[BV1Qz3g61EAe P1 02:30]、[BV1Qz3g61EAe P1 02:57]\n\n```mermaid\nflowchart TD\n    CE[\"交叉熵损失\"] --> Grad[\"梯度 dL/dZ\"]\n    Grad --> Diff[\"P - Y\"]\n    Diff --> Pre[\"预训练阶段\"]\n    Pre --> PreFormula[\"梯度 = (P - Y) / N\"]\n    Diff --> SFT[\"SFT 阶段\"]\n    SFT --> Mask[\"Prompt 区域掩码 → 梯度 0\"]\n    SFT --> Resp[\"Response 区域\"]\n    Resp --> SFTFormula[\"梯度 = (P - Y) / n\"]\n```\n\n## 图 2：Transformer 并行预测 Token 流程\n[BV1Qz3g61EAe P1 00:25]、[BV1Qz3g61EAe P1 00:53]\n\n```mermaid\nflowchart LR\n    Tokens[\"输入 Token 序列 T1..T3\"] --> Emb[\"词嵌入 X\"]\n    Emb --> QKV[\"投影得到 Q, K, V\"]\n    QKV --> Att[\"注意力矩阵 A (Q·Kᵀ)\"]\n    Att --> Mask[\"因果掩码（灰色块）\"]\n    Mask --> A2V[\"A 与 V 相乘\"]\n    A2V --> O[\"加权平均得到 O\"]\n    O --> FFN[\"FFN 层（先变长后变窄）\"]\n    FFN --> Z[\"线性投影得到 logits Z\"]\n    Z --> SM[\"Softmax → 预测概率矩阵 P\"]\n```\n\n## 图 3：单 Token 交叉熵梯度推导\n[BV1Qz3g61EAe P1 01:24]、[BV1Qz3g61EAe P1 02:20]\n\n```mermaid\nflowchart TD\n    Z[\"logits Z_i\"] --> Soft[\"Softmax → P_i\"]\n    Soft --> Loss[\"交叉熵 L = -log(P_target)\"]\n    Loss --> dLdZ[\"∂L/∂Z_i\"]\n    dLdZ --> CaseSame[\"i = target: P_i (1 - P_i)\"]\n    dLdZ --> CaseDiff[\"i ≠ target: -P_i * P_target\"]\n    CaseSame --> Vector[\"合并得到向量 P - Y\"]\n    CaseDiff --> Vector\n    Vector --> Result[\"梯度 = P - Y\"]\n```",
+  "diagrams": [
+    {
+      "title": "图 1：梯度公式总体与阶段差异",
+      "code": "flowchart TD\n    CE[\"交叉熵损失\"] --> Grad[\"梯度 dL/dZ\"]\n    Grad --> Diff[\"P - Y\"]\n    Diff --> Pre[\"预训练阶段\"]\n    Pre --> PreFormula[\"梯度 = (P - Y) / N\"]\n    Diff --> SFT[\"SFT 阶段\"]\n    SFT --> Mask[\"Prompt 区域掩码 → 梯度 0\"]\n    SFT --> Resp[\"Response 区域\"]\n    Resp --> SFTFormula[\"梯度 = (P - Y) / n\"]"
+    },
+    {
+      "title": "图 2：Transformer 并行预测 Token 流程",
+      "code": "flowchart LR\n    Tokens[\"输入 Token 序列 T1..T3\"] --> Emb[\"词嵌入 X\"]\n    Emb --> QKV[\"投影得到 Q, K, V\"]\n    QKV --> Att[\"注意力矩阵 A (Q·Kᵀ)\"]\n    Att --> Mask[\"因果掩码（灰色块）\"]\n    Mask --> A2V[\"A 与 V 相乘\"]\n    A2V --> O[\"加权平均得到 O\"]\n    O --> FFN[\"FFN 层（先变长后变窄）\"]\n    FFN --> Z[\"线性投影得到 logits Z\"]\n    Z --> SM[\"Softmax → 预测概率矩阵 P\"]"
+    },
+    {
+      "title": "图 3：单 Token 交叉熵梯度推导",
+      "code": "flowchart TD\n    Z[\"logits Z_i\"] --> Soft[\"Softmax → P_i\"]\n    Soft --> Loss[\"交叉熵 L = -log(P_target)\"]\n    Loss --> dLdZ[\"∂L/∂Z_i\"]\n    dLdZ --> CaseSame[\"i = target: P_i (1 - P_i)\"]\n    dLdZ --> CaseDiff[\"i ≠ target: -P_i * P_target\"]\n    CaseSame --> Vector[\"合并得到向量 P - Y\"]\n    CaseDiff --> Vector\n    Vector --> Result[\"梯度 = P - Y\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-06T18:17:23+00:00"
+}

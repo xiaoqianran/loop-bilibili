@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1PVu86EEDG",
+  "title": "【国语】虚幻引擎UE5打造你自己的爆款“红门蓝门”游戏",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 201,
+  "text": "本课程中你将学习制作红门与蓝门游戏\n这是当下热门游戏红蓝类型\n我们将学习如何在UE5中制作此游戏\n虽然用的是旧引擎\n你仍能理解其原理\n在U2和UE5中都适用\n我会展示每一段代码\n如何写代码和创建角色蓝图\n最后我们将制作完整原型\n经验值会统计\n一切完全可用\n有选择系统可选左门或右门\n选对右门即可通过我们将学到全部内容\n通过制作完整原型\n可用于我们的游戏\n希望你能学习此课程\n并制作出你的首个爆款红门游戏",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1PVu86EEDG",
+  "published_at": "1786117745",
+  "fetched_at": "2026-08-10T08:45:00+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# UE5 红门蓝门游戏学习图谱\n\n## 课程总览\n```mermaid\nflowchart TD\n    A[\"课程目标\\n- 制作红门蓝门游戏\"] --> B[\"了解红蓝游戏概念\"]\n    A --> C[\"使用UE5或U2实现\"]\n    A --> D[\"完成完整原型\"]\n    D --> E[\"可用于自己的游戏\"]\n    D --> F[\"统计经验值\"]\n    D --> G[\"左右门选择系统\"]\n```\n\n## 开发流程\n```mermaid\nflowchart LR\n    S[\"学习UE5基础\"] --> BP[\"创建角色蓝图\"]\n    BP --> C[\"编写游戏代码\"]\n    C --> P[\"制作完整原型\"]\n    P --> T[\"测试左右门选择\"]\n    T --> Pub[\"发布爆款游戏\"]\n```\n\n## 功能关系\n```mermaid\nflowchart TD\n    Sel[\"左门/右门选择系统\"] --> R[\"红门\"]\n    Sel --> B[\"蓝门\"]\n    R --> WinR[\"正确选择红门获胜\"]\n    B --> WinB[\"正确选择蓝门获胜\"]\n    WinR --> XP[\"经验值统计\"]\n    WinB --> XP\n```",
+      "diagrams": [
+        {
+          "title": "课程总览",
+          "code": "flowchart TD\n    A[\"课程目标\\n- 制作红门蓝门游戏\"] --> B[\"了解红蓝游戏概念\"]\n    A --> C[\"使用UE5或U2实现\"]\n    A --> D[\"完成完整原型\"]\n    D --> E[\"可用于自己的游戏\"]\n    D --> F[\"统计经验值\"]\n    D --> G[\"左右门选择系统\"]"
+        },
+        {
+          "title": "开发流程",
+          "code": "flowchart LR\n    S[\"学习UE5基础\"] --> BP[\"创建角色蓝图\"]\n    BP --> C[\"编写游戏代码\"]\n    C --> P[\"制作完整原型\"]\n    P --> T[\"测试左右门选择\"]\n    T --> Pub[\"发布爆款游戏\"]"
+        },
+        {
+          "title": "功能关系",
+          "code": "flowchart TD\n    Sel[\"左门/右门选择系统\"] --> R[\"红门\"]\n    Sel --> B[\"蓝门\"]\n    R --> WinR[\"正确选择红门获胜\"]\n    B --> WinB[\"正确选择蓝门获胜\"]\n    WinR --> XP[\"经验值统计\"]\n    WinB --> XP"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T08:45:10+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# UE5 红门蓝门游戏学习图谱\n\n## 课程总览\n```mermaid\nflowchart TD\n    A[\"课程目标\\n- 制作红门蓝门游戏\"] --> B[\"了解红蓝游戏概念\"]\n    A --> C[\"使用UE5或U2实现\"]\n    A --> D[\"完成完整原型\"]\n    D --> E[\"可用于自己的游戏\"]\n    D --> F[\"统计经验值\"]\n    D --> G[\"左右门选择系统\"]\n```\n\n## 开发流程\n```mermaid\nflowchart LR\n    S[\"学习UE5基础\"] --> BP[\"创建角色蓝图\"]\n    BP --> C[\"编写游戏代码\"]\n    C --> P[\"制作完整原型\"]\n    P --> T[\"测试左右门选择\"]\n    T --> Pub[\"发布爆款游戏\"]\n```\n\n## 功能关系\n```mermaid\nflowchart TD\n    Sel[\"左门/右门选择系统\"] --> R[\"红门\"]\n    Sel --> B[\"蓝门\"]\n    R --> WinR[\"正确选择红门获胜\"]\n    B --> WinB[\"正确选择蓝门获胜\"]\n    WinR --> XP[\"经验值统计\"]\n    WinB --> XP\n```",
+  "diagrams": [
+    {
+      "title": "课程总览",
+      "code": "flowchart TD\n    A[\"课程目标\\n- 制作红门蓝门游戏\"] --> B[\"了解红蓝游戏概念\"]\n    A --> C[\"使用UE5或U2实现\"]\n    A --> D[\"完成完整原型\"]\n    D --> E[\"可用于自己的游戏\"]\n    D --> F[\"统计经验值\"]\n    D --> G[\"左右门选择系统\"]"
+    },
+    {
+      "title": "开发流程",
+      "code": "flowchart LR\n    S[\"学习UE5基础\"] --> BP[\"创建角色蓝图\"]\n    BP --> C[\"编写游戏代码\"]\n    C --> P[\"制作完整原型\"]\n    P --> T[\"测试左右门选择\"]\n    T --> Pub[\"发布爆款游戏\"]"
+    },
+    {
+      "title": "功能关系",
+      "code": "flowchart TD\n    Sel[\"左门/右门选择系统\"] --> R[\"红门\"]\n    Sel --> B[\"蓝门\"]\n    R --> WinR[\"正确选择红门获胜\"]\n    B --> WinB[\"正确选择蓝门获胜\"]\n    WinR --> XP[\"经验值统计\"]\n    WinB --> XP"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:45:10+00:00"
+}

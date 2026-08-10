@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1qQoVB5EDk",
+  "title": "为什么deekseekV4是世界第一ai模型",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 948,
+  "text": "本视频重构自语速极慢的原始口播录音\n内容已更新至当前认知\n关于其他软件的评价已在重构中移除\n我当时没有审阅过别人的源代码\ndesk v4灰度测试\n那天我从晚上12点测到凌晨卡着正式发布\n录了视频\n通宵测下来\n一个清晰的结论\n推理练到了生产级自修复自优化\nV4支持百万token上下文\n但80%的工程任务用不到\n需要的是强推理能力\n把有限的上下文用对\n真正解决问题的是推理链的质量\n不是上下文的大小\n调研层给出了几个关键锚点\n锚点一价格V4\nflash每百万token输出0.28美元\nGPT5.5是30美元\n差了107倍\n锚点二毛利率\ndeep se推理毛利率85%\nanthropic 55%\n不是亏本补贴\n是mo架构的结构性成本优势\n越用越便宜\n锚点三融资23天\n估值从100亿涨到515亿美元\n创始人梁文峰持股84%\n这家公司还在创始人手上\n锚点四大基金\n国家大基金首次投大模型公司\n领投deep sick大基金\n之前只投芯片制造\n锚点五\n国产芯片V4发布\n两周内\n九家国产芯片厂商完成适配\n华为升腾950P2\n推理性能接近H100的95%\n说清楚一件事\n开源确实压缩了竞品的差异化空间\n但这不是锁死天花板\nKIMIK2.6在agent上压过deep sek\n幻三有自己的架构\n开源压缩的是价格和基础能力的赛道\n顶级创新还是开放的\n但真正让我觉得deep sick可怕的\n不是现在的价格和开源\n是算法效率和硬件的代差关系\nV4只用49B激活参数\n就打平GPT5.5猫的效率\n碾压dance一个时代\n华为升腾950P2\n已经接近H100的95%\n算法效率的差距比硬件差距大\n而且是越大越明显\n这是在构建一套绕开英伟达的平行体系\n加上西部绿电\n中国工业电价0.05美元\n美国0.10美元\n这是每年数亿美元的运营成本优势\n而且会持续扩大\n而且出口越收紧\n这套平行体系的建设就会越快\n不是因为受限\n是因为没有退路\n所有条件都在往同一个方向推\n所以V4世界第一吗\n在那个时间点是的\n现在数据也验证了\n第一推理质量已经到了生产级\n第二开源加低价加盟\n成本结构等于不可逆的竞争优势\n第三国产芯片加西电东送加地缘政治加速\n等于在构建平行体系\n但这个赛道还有空间\n顶级创新agent策略\n多模态融合还是开放的",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qQoVB5EDk",
+  "published_at": "1776994792",
+  "fetched_at": "2026-08-09T04:07:52+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T04:10:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T04:10:24+00:00"
+}

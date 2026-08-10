@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1GNRmBoEb8",
+  "title": "【中配】你必须了解的GODOT UI工作流程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 4094,
+  "text": "你好\n欢迎来到GODOTA的UI美化教程\n你玩过的每款游戏都有某种形式的用户界面\n你总是需要与各种界面打交道\n比如菜单系统\n物品栏等\n所以做好UI似乎是非常重要的事情\n今天我想介绍一些goat提供的工具\n他们能通过control节点让你的UI开发体验更加轻松\n我们选择用户界面作为根节点\n它会自动打开control\n我们将选择用户界面作为根节点\n它将以control节点打开\n我可以看到它占据整个屏幕尺寸\n这里的蓝线显示了这一点\n这就是项目设置\n我可以看到它占据了整个屏幕的大小\n接下来我要做的是创建一个面板\n你可以在窗口中看到\n这是我视口的宽度\n适口的高度\n所以我想要它成为full react\n意思是不管我往这个control节点里放什么\n它都会根据整个屏幕的大小来放置\n无论屏幕大小是多少\n因为我们希望我们的游戏可以调整大小\n我发现这非常灵活\n而且当你明确知道自己想要什么时\n非常好用\n你知道它会是什么尺寸\n你知道他会是什么样子\n我觉得这种方法非常灵活\n当你确切知道自己想要什么的时候\n非常好用\n你知道它会是什么尺寸\n你知道它会是什么样子\n我要选中CTRL\n然后按CTRLA\n然后开始输入texture react\n所以它目前使用的是左上角锚点预设\n现在我要创建它\n所以目前它使用的是左上锚点预设\n所以现在用的是左上角的锚点预设\n我会往UI里放一个炼药锅\n这样我们可以看到\n而且更容易理解\n我会进入边界区域\n然后我会选择这个确保边界是好的\n我正在抓取所有像素\n我要给UI加个调色板\n这样我们看得更清楚\n操作也更容易\n现在我进入编辑区域\n把这个拿过来\n这是我那个不错的小箱子\n现在我们看到了一些东西\n所以我要运行这个\n现在我们看到了一些东西\n你可以保存在你需要的地方\n所以如果我运行这个场景\n就会看到这个宝箱出现在左上角\n一切都会显示出来\n保存中保存中好的\n所以我们把这个箱子放在了想要的位置\n我们在这里使用的是左上角锚点\n预设我要做个漂亮的UI\n这就是我们想要的对吧\n好的宝箱正好在我们想要的位置\n我要点击这个并设置为居中\n这是我经常使用的\n因为我希望界面无论窗口大小如何都居中显示\n现在我要运行它\n现在你会看到他是居中的\n我要点这个\n现在你会看到他已经居中了\n所以我要在这个纹理句型中\n再创建一个纹理句型\n纹理矩形嵌套\n如果我缩小屏幕\n它仍然保持居中\n如果我缩小屏幕\n它仍然保持居中\n我要点击这个control a\n我要再创建一个texture react\n所以我要在这个texture react里面\n再创建一个texture react\n我正要选择\n我要点这个control a\n然后创建另一个texture rect\n我要把拿走图集拉伸模式\n保持步长16\n步长16\n我要选取atlas拉伸模式保留\n就在这里选取图集拉伸模式保留\n希望你们在这个时候已经开始有所领悟\n开始理解这些可以怎么用\n然而这个纹理句型采用的是这个的间距\n所以它有左上角锚点预设\n它依赖于它的复节点\n也就是这个有箱子的纹理矩形\n不过关于使用这些锚点预设进行定位\n我还想再给你们一个提示\n希望到这个时候\n你的思路开始转动\n因为你开始理解你能用这个做什么了\n不过我还想给你一个关于使用这些锚点预设\n进行定位的提示\n是的没错\n那我把这个移到下面这里\n怎么样\n想象我想要一个东西在这里\n但不是固定在这个面板的这个位置\n所以现在我可以用方向键重新定位这个\n同时保持这里的锚点预设\n希望这时候你们已经茅塞顿开了\n开始理解这东西能怎么用\n所以现在我可以用方向键重新定位\n同时仍然保持这个锚点预设\n我要把这个texture direct删掉\n然后我要引入一个新的节点\n垂直箱容器是我经常使用的一个节点\n因为它帮助垂直排列其子节点\n那我把这个移到这边怎么样\n它会显示选项设置游戏提示\n我不知道\n但通常是垂直格式的\n你可能会想哦\n垂直盒子就是你玩任何现代游戏时\n按escape键看到的那个\n你可以看到垂直箱容器现在的大小是这个\n它会显示选项设置游戏提示什么的\n但我不知道\n不过它通常是垂直格式的\n我要选择垂直相容器\n我要按CTRLA\n然后我要选择按钮\nv box container也是我经常用的节点\n因为它能帮助靶子节点垂直排列\n你可能会想哦\n垂直盒子就是你在玩游戏时\n按ESC键看到的那个东西\n它会显示选项\n设置游戏提示什么的\n但通常都是垂直排列的\n你可以看到v box容器的大小就是这里这么大的\n现在我要做的是在这里使用几个圆形按钮\n我要选中v box容器\n如果你选择垂直箱容器\n你可以进入主题覆盖\n在里面我们有这个常量\n为了给你们展示v box容器的效果\n我按CTRLD复制这个按钮\n你们会看到垂直盒子容器\n自己就能垂直管理它的子节点\n在里面我们有这个常量\n我之前没有明确说过\n但你想使用垂直箱容器的原因是\n它会自动调整和分配子节点的大小和间距\n而不需要你手动管理每个元素的位置\n我之前没有明确说过\n但你想要使用V1box容器的原因是\n它会自动调整和排列子节点的大小和间距\n而不需要你手动管理每个元素的位置\n这是非常宝贵的\n因为你不需要管理\n不需要定位\n垂直箱会帮你做\n这正是control节点的常见主题\ncontrol节点会帮你做这些\n如果你想让他们在一个给定空间内\n完美占据空间\n那么v box容器会自动为你管理间距\n里面有这个常量\n但它实际上与我不想要任何东西的UI部分\n重叠了\n我希望我所有的按钮\n所有的纹理都在这个米色区域内\n而不是与箱子或棕色区域重叠\n我之前没有明确说过\n但使用v box容器的原因是\n它会自己调整子节点的大小和间距\n不用你去手动管理这些元素的位置\n我想要我所有的按钮\n我所有的纹理都在这个米色区域内\n而不是覆盖这个箱子或这个棕色区域\n这非常宝贵\n因为你不需要管理\n不需要定位\nv box会帮你做\n这是控件节点的一个常见特点\n它将是texture react的子节点\n所以我要选择texture rect\n然后我要按CTRLA\n然后我要找一个margin container\n好的\n所以现在文理句型和编剧容器之间\n看起来编剧容器什么都没做\n那是因为我们必须把垂直箱或任何子节点\n放入边距容器中\n我想让所有按钮\n所有纹理都放在这个米色区域里\n不要和宝箱或棕色区域重叠\n那我该怎么做呢\n你会看到他现在会做类似这样的事\n它会是texture react的子节点\n我要选中texture react\n然后按control a\n然后找一个margin container\n它看起来是这样的\n我对margin container要做的是全句型\n因为我想要margin container占据父节点的全部空间\n也就是这个texture react\n然后我要显示我们拥有的不同编剧选项\n我们会看到\n一旦我们开始切换这里的一些选项\n这到底做什么\n它确实稍微超出了边界\n因为按钮也很大\n点击margin container进入主题覆盖\n我要展示我们拥有的不同编剧选项\n我们将会看到\n当我们开始切换其中一些选项时\n他到底做了什么\n我要像这样改变间距\n它确实会稍微超出边界\n因为按钮也很大\n让我们看看margin container\n看看我们能用它做什么\n这稍微把它收回来一点\n通过进入按钮\n我要去常亮展开不同的margin选项\n我们会看到一旦开始切换这些选项\n它具体会做什么\n我要说这里99是我想要的\n他确实会把边界往外推了一点\n因为按钮也很大\n我觉得那是我想要的按钮尺寸\n我要删除这些按钮\n我要为其他的按钮也做这个\n我也要删除这个按钮\n转到按钮那里\n稍微把它收回来一点\n我要把这个按钮删掉\n我要去自定义大小\n我要去字体大小\n然后我要把它缩小到大约八或六\n我也要对其他的做这个\n我们可以像这样改变间距\n我就删除这个按钮\n所以现在我们可以回到垂直箱容器\n我们可以像这样改变间距\n所以现在当我们选择编剧容器时\n它会显示全屏模式\n基本上我们必须在这两者之间来回查看\n看看编剧实际上是如何被影响的\n我希望编剧看起来是什么样子的呢\n我希望它占据这个浅米色区域的空间\n所以我需要稍微调整一下\n转到margin container\n看看编剧如何与v box交互\n我要像这样做\n以按钮作为我的锚点\n这个也是我要删掉这个按钮\n我要选中这个按control d\n好的酷\n看着这个他什么都没改变\n我们可以像这样改变间距\n我要用按钮作为锚点\n做类似这样的事情\n现在当我们选中margin container时\n它会显示全句型\n所以我们实际上要在两者之间切换\n才能看到margin是如何受影响的\n现在我们没有设置自定义最小尺寸\nv box容器和margin container可以决定大小是什么\n看起来这正是我们想要的\n我要去顶部\n我要退回去\n去掉一个像素\n现在我的margin container看起来很好\n对于底部我要增加边距大小\n我想三个像素就够了\n我需要退回去减少一个像素\n现在我的编剧容器看起来非常好\n我的按钮在里面适当兼具了应用这些概念\n我能够创建这样的UI原因吗\n我想是因为我们在这里设置了自定义最小值\n你可以看到水平箱\n你可以看到水平相容器加垂直相容器\n你可以看到网格容器\n现在我们没有设置自定义最小尺寸\nv box容器和margin container\n就可以自己决定大小了\n希望你们学到了些东西\n我能够做这样的东西\n对于底部我要增加margin大小\n我想三个像素就够了\n我要退回去减少一个像素\n现在margin container看起来很完美了\n你可以看到网格容器\n这里肯定有一个margin container\n我到处都使用这个\n希望你们学到了一些东西\n你们可以看到水平盒子容器和垂直盒子容器\n你们可以看到网格容器肯定有margin容器在里面\n我到处都用它\n他真的让我的工作轻松了很多\n他让我能更好的控制UI\n让她漂亮的多\n希望你们学到了一些东西\n告诉我你们怎么看\n你们想让我分享更多UI技巧吗\n告诉我我们下个视频见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1GNRmBoEb8",
+  "published_at": "1778260685",
+  "fetched_at": "2026-08-07T04:01:53+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# GODOT UI 工作流程知识图谱\n\n## UI 基础节点结构\n```mermaid\nflowchart TD\n    RC[\"RootControl\"] --> UI[\"UI 根节点 (Control)\"]\n    UI --> P[\"面板 (Panel)\"]\n    UI --> TR[\"纹理矩形 (TextureRect)\"]\n    UI --> MC[\"边距容器 (MarginContainer)\"]\n    MC --> VBC[\"垂直箱容器 (VBoxContainer)\"]\n    VBC --> BTN[\"按钮 (Button)\"]\n    UI --> HBC[\"水平箱容器 (HBoxContainer)\"]\n    HBC --> BTN2[\"按钮 (Button)\"]\n    UI --> GC[\"网格容器 (GridContainer)\"]\n    GC --> BTN3[\"按钮 (Button)\"]\n    UI --> AP[\"锚点预设 (Anchor Preset)\"]\n```\n\n## 锚点预设与全屏/居中\n```mermaid\nflowchart LR\n    SC[\"选择 Control 节点\"] --> AP[\"设置锚点预设\"]\n    AP --> AL[\"左上锚点预设\"]\n    AP --> AF[\"全屏锚点预设\"]\n    AP --> AC[\"居中锚点预设\"]\n    AF --> FR[\"全屏矩形 (Full Rect)\"]\n    AC --> CEN[\"居中显示\"]\n    FR --> RSP[\"响应式缩放 (Resize Responsive)\"]\n    CEN --> RSP\n    RSP --> RES[\"运行结果\"]\n```\n\n## 容器布局与间距管理\n```mermaid\nflowchart TD\n    VBC[\"垂直箱容器 (VBoxContainer)\"] --> ASZ[\"自动大小 (Automatic Size)\"]\n    VBC --> ASP[\"自动间距 (Automatic Spacing)\"]\n    HBC[\"水平箱容器 (HBoxContainer)\"] --> ASZ2[\"自动大小\"]\n    HBC --> ASP2[\"自动间距\"]\n    GC[\"网格容器 (GridContainer)\"] --> ASZ3[\"自动大小\"]\n    MC[\"边距容器 (MarginContainer)\"] --> ADJ[\"调整边距 (Adjust Margins)\"]\n    ADJ --> RESL[\"最终布局 (Result Layout)\"]\n    VBC --> BTN4[\"子按钮\"]\n    HBC --> BTN5[\"子按钮\"]\n    GC --> BTN6[\"子按钮\"]\n    MC --> BTN7[\"子按钮\"]\n```\n\n## UI 调整与测试流程\n```mermaid\nflowchart LR\n    AN[\"添加节点\"] --> SP[\"设置属性\"]\n    SP --> RS[\"运行场景\"]\n    RS --> OR[\"观察缩放/居中效果\"]\n    OR --> MM[\"修改边距 / 锚点\"]\n    MM --> SS[\"保存场景\"]\n    SS --> EN[\"结束\"]\n    OR --> TC[\"测试居中\"]\n    OR --> TF[\"测试全屏\"]\n```",
+      "diagrams": [
+        {
+          "title": "UI 基础节点结构",
+          "code": "flowchart TD\n    RC[\"RootControl\"] --> UI[\"UI 根节点 (Control)\"]\n    UI --> P[\"面板 (Panel)\"]\n    UI --> TR[\"纹理矩形 (TextureRect)\"]\n    UI --> MC[\"边距容器 (MarginContainer)\"]\n    MC --> VBC[\"垂直箱容器 (VBoxContainer)\"]\n    VBC --> BTN[\"按钮 (Button)\"]\n    UI --> HBC[\"水平箱容器 (HBoxContainer)\"]\n    HBC --> BTN2[\"按钮 (Button)\"]\n    UI --> GC[\"网格容器 (GridContainer)\"]\n    GC --> BTN3[\"按钮 (Button)\"]\n    UI --> AP[\"锚点预设 (Anchor Preset)\"]"
+        },
+        {
+          "title": "锚点预设与全屏/居中",
+          "code": "flowchart LR\n    SC[\"选择 Control 节点\"] --> AP[\"设置锚点预设\"]\n    AP --> AL[\"左上锚点预设\"]\n    AP --> AF[\"全屏锚点预设\"]\n    AP --> AC[\"居中锚点预设\"]\n    AF --> FR[\"全屏矩形 (Full Rect)\"]\n    AC --> CEN[\"居中显示\"]\n    FR --> RSP[\"响应式缩放 (Resize Responsive)\"]\n    CEN --> RSP\n    RSP --> RES[\"运行结果\"]"
+        },
+        {
+          "title": "容器布局与间距管理",
+          "code": "flowchart TD\n    VBC[\"垂直箱容器 (VBoxContainer)\"] --> ASZ[\"自动大小 (Automatic Size)\"]\n    VBC --> ASP[\"自动间距 (Automatic Spacing)\"]\n    HBC[\"水平箱容器 (HBoxContainer)\"] --> ASZ2[\"自动大小\"]\n    HBC --> ASP2[\"自动间距\"]\n    GC[\"网格容器 (GridContainer)\"] --> ASZ3[\"自动大小\"]\n    MC[\"边距容器 (MarginContainer)\"] --> ADJ[\"调整边距 (Adjust Margins)\"]\n    ADJ --> RESL[\"最终布局 (Result Layout)\"]\n    VBC --> BTN4[\"子按钮\"]\n    HBC --> BTN5[\"子按钮\"]\n    GC --> BTN6[\"子按钮\"]\n    MC --> BTN7[\"子按钮\"]"
+        },
+        {
+          "title": "UI 调整与测试流程",
+          "code": "flowchart LR\n    AN[\"添加节点\"] --> SP[\"设置属性\"]\n    SP --> RS[\"运行场景\"]\n    RS --> OR[\"观察缩放/居中效果\"]\n    OR --> MM[\"修改边距 / 锚点\"]\n    MM --> SS[\"保存场景\"]\n    SS --> EN[\"结束\"]\n    OR --> TC[\"测试居中\"]\n    OR --> TF[\"测试全屏\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T04:02:07+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# GODOT UI 工作流程知识图谱\n\n## UI 基础节点结构\n```mermaid\nflowchart TD\n    RC[\"RootControl\"] --> UI[\"UI 根节点 (Control)\"]\n    UI --> P[\"面板 (Panel)\"]\n    UI --> TR[\"纹理矩形 (TextureRect)\"]\n    UI --> MC[\"边距容器 (MarginContainer)\"]\n    MC --> VBC[\"垂直箱容器 (VBoxContainer)\"]\n    VBC --> BTN[\"按钮 (Button)\"]\n    UI --> HBC[\"水平箱容器 (HBoxContainer)\"]\n    HBC --> BTN2[\"按钮 (Button)\"]\n    UI --> GC[\"网格容器 (GridContainer)\"]\n    GC --> BTN3[\"按钮 (Button)\"]\n    UI --> AP[\"锚点预设 (Anchor Preset)\"]\n```\n\n## 锚点预设与全屏/居中\n```mermaid\nflowchart LR\n    SC[\"选择 Control 节点\"] --> AP[\"设置锚点预设\"]\n    AP --> AL[\"左上锚点预设\"]\n    AP --> AF[\"全屏锚点预设\"]\n    AP --> AC[\"居中锚点预设\"]\n    AF --> FR[\"全屏矩形 (Full Rect)\"]\n    AC --> CEN[\"居中显示\"]\n    FR --> RSP[\"响应式缩放 (Resize Responsive)\"]\n    CEN --> RSP\n    RSP --> RES[\"运行结果\"]\n```\n\n## 容器布局与间距管理\n```mermaid\nflowchart TD\n    VBC[\"垂直箱容器 (VBoxContainer)\"] --> ASZ[\"自动大小 (Automatic Size)\"]\n    VBC --> ASP[\"自动间距 (Automatic Spacing)\"]\n    HBC[\"水平箱容器 (HBoxContainer)\"] --> ASZ2[\"自动大小\"]\n    HBC --> ASP2[\"自动间距\"]\n    GC[\"网格容器 (GridContainer)\"] --> ASZ3[\"自动大小\"]\n    MC[\"边距容器 (MarginContainer)\"] --> ADJ[\"调整边距 (Adjust Margins)\"]\n    ADJ --> RESL[\"最终布局 (Result Layout)\"]\n    VBC --> BTN4[\"子按钮\"]\n    HBC --> BTN5[\"子按钮\"]\n    GC --> BTN6[\"子按钮\"]\n    MC --> BTN7[\"子按钮\"]\n```\n\n## UI 调整与测试流程\n```mermaid\nflowchart LR\n    AN[\"添加节点\"] --> SP[\"设置属性\"]\n    SP --> RS[\"运行场景\"]\n    RS --> OR[\"观察缩放/居中效果\"]\n    OR --> MM[\"修改边距 / 锚点\"]\n    MM --> SS[\"保存场景\"]\n    SS --> EN[\"结束\"]\n    OR --> TC[\"测试居中\"]\n    OR --> TF[\"测试全屏\"]\n```",
+  "diagrams": [
+    {
+      "title": "UI 基础节点结构",
+      "code": "flowchart TD\n    RC[\"RootControl\"] --> UI[\"UI 根节点 (Control)\"]\n    UI --> P[\"面板 (Panel)\"]\n    UI --> TR[\"纹理矩形 (TextureRect)\"]\n    UI --> MC[\"边距容器 (MarginContainer)\"]\n    MC --> VBC[\"垂直箱容器 (VBoxContainer)\"]\n    VBC --> BTN[\"按钮 (Button)\"]\n    UI --> HBC[\"水平箱容器 (HBoxContainer)\"]\n    HBC --> BTN2[\"按钮 (Button)\"]\n    UI --> GC[\"网格容器 (GridContainer)\"]\n    GC --> BTN3[\"按钮 (Button)\"]\n    UI --> AP[\"锚点预设 (Anchor Preset)\"]"
+    },
+    {
+      "title": "锚点预设与全屏/居中",
+      "code": "flowchart LR\n    SC[\"选择 Control 节点\"] --> AP[\"设置锚点预设\"]\n    AP --> AL[\"左上锚点预设\"]\n    AP --> AF[\"全屏锚点预设\"]\n    AP --> AC[\"居中锚点预设\"]\n    AF --> FR[\"全屏矩形 (Full Rect)\"]\n    AC --> CEN[\"居中显示\"]\n    FR --> RSP[\"响应式缩放 (Resize Responsive)\"]\n    CEN --> RSP\n    RSP --> RES[\"运行结果\"]"
+    },
+    {
+      "title": "容器布局与间距管理",
+      "code": "flowchart TD\n    VBC[\"垂直箱容器 (VBoxContainer)\"] --> ASZ[\"自动大小 (Automatic Size)\"]\n    VBC --> ASP[\"自动间距 (Automatic Spacing)\"]\n    HBC[\"水平箱容器 (HBoxContainer)\"] --> ASZ2[\"自动大小\"]\n    HBC --> ASP2[\"自动间距\"]\n    GC[\"网格容器 (GridContainer)\"] --> ASZ3[\"自动大小\"]\n    MC[\"边距容器 (MarginContainer)\"] --> ADJ[\"调整边距 (Adjust Margins)\"]\n    ADJ --> RESL[\"最终布局 (Result Layout)\"]\n    VBC --> BTN4[\"子按钮\"]\n    HBC --> BTN5[\"子按钮\"]\n    GC --> BTN6[\"子按钮\"]\n    MC --> BTN7[\"子按钮\"]"
+    },
+    {
+      "title": "UI 调整与测试流程",
+      "code": "flowchart LR\n    AN[\"添加节点\"] --> SP[\"设置属性\"]\n    SP --> RS[\"运行场景\"]\n    RS --> OR[\"观察缩放/居中效果\"]\n    OR --> MM[\"修改边距 / 锚点\"]\n    MM --> SS[\"保存场景\"]\n    SS --> EN[\"结束\"]\n    OR --> TC[\"测试居中\"]\n    OR --> TF[\"测试全屏\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T04:02:07+00:00"
+}

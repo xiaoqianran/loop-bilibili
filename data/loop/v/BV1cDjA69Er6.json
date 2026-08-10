@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1cDjA69Er6",
+  "title": "Ai辅助开发游戏三个月后会是什么样子",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1315,
+  "text": "Hello\n大家好\n好久不见嗯\n今天就是给大家看一下我这个游戏现在的样子\n因为上次是1月份的版本\n然后现在过了那么久嗯\n给大家看一下现在的进度\n然后现在背包之前就是在的\n但是现在是加了一个分页的功能\n然后这个还没有继续往下做\n然后现在有一个任务系统\n可以简单做一些任务\n然后我们等下做这个任务\n购买三个工具\n然后地图也是做了一些更新\n这里有一个池塘\n然后他有一些动态\n这里有个小车\n这个是玩家的房子\n好这里有个商店\n现在是可以进入室内的\n我买三个工具\n再买一些小麦种子嗯\n这里有两个建筑\n等下可以给大家展示一下\n然后我们看一下这个任务还是可以完成的\n然后领取了奖励\n我现在就是很多的一些声音\n还有一些效果没有完全做好\n然后给大家展示一下工具\n现在也是可以用的\n这里还没有做稿子\n所以大多数的动作都是用斧头去执行的\n然后这个种地之前也是有的功能\n只不过现在把它更完善了一点\n给大家看一下\n好我们睡觉的时候\n它也是有一个存档功能的\n等下我们可以验证一下这个存档他是可以的\n出来过后\n小麦现在可以收割好嘛\n看下这个任务已经完成了\n商店也可以去卖东西\n等下把我们这些收割的东西给卖掉\n全都卖掉\n买一个这个啊啊这里就是这个就是一个建筑物\n建筑功能\n它可以放置\n然后也会有一些碰撞的检测\n然后这里\n可以放在这\n也可以把它拆掉\n然后这里我就不去再循环刚刚那些步骤\n这里有一个工作台\n我把它调出来\n我们直接展示一些功能\n把这些都放在上面\n这里是可以放入小麦和一些其他物品\n可以压出一些果汁\n然后我们拿出来过后\n他也可以去消耗体力条\n对\n然后刚刚忘记说了\n我们这个现在所有的动作\n都是有这个体力条系统\n体力条用完了\n然后就是没办法使用工具\n这里有个发酵桶\n果汁就是可以很简单的就发酵得到一个酒水\n现在只是发酵的很快\n所以我现在在测试\n我们多拿一点出来\n啊这里有个啤酒小车\n那就是可以选择点击试\n然后就可以售卖\n这里可以定价定的高一点\n然后这里等一下他就会刷一些NPC出来\nOK这里这里只是做了一个简单的功能\n后面会继续把它给优化好\n这是一个倒酒的小小游戏的类似\nOK这个就是倒的完美了\n再等一等哦\n来了\n我们可以把这个水给倒散哦\n它这里就会出一个bad\n然后我们这个就是没钱了\n等于就是白白浪费了一个物品\n如果到出完美的话\n他会给给你一些额外的奖励\n嗯这个确实\nOK我这里就会显示我们结算后\n就是每天到12:30\n它就会自动结算\n然后卖出的倍数和收入\n客人流失\n然后还有生育系统\n这个生意就是越高的话\n刷新的NPC就会越多\n然后后续可能也会加入一些特殊的NPC\n触发一些事件任务\n然后促使我们这个游玩的过程\n游玩的流程\n然后继续往下走\n好现在\n基本上就是这些东西\n现在这里是可以去进行睡觉\nOK睡完觉后我们测试一下存档\n直接退出游戏\n回到开始界面\n点击刚刚的游戏下载键盘\n然后可以看到我们的物品都是在的\n然后钱应该也是对得上的\n然后出来过后\n现在是有一些bug\n嗯这个等下我回去看一下是哪里出了问题\n摆的建筑都没了\n然后小麦也会自己又冒出来\n嗯等一下我会下去查一下\n这个是因为什么\n因为他有的时候是好的\n有的时候是坏的\nOK然后我们今天就展示到这里",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1cDjA69Er6",
+  "published_at": "1781778785",
+  "fetched_at": "2026-08-07T04:10:51+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Ai辅助开发游戏三个月后概览\n\n## 游戏功能总览\n```mermaid\nflowchart TD\n    B[\"背包<br/>分页功能\"] --> T[\"任务系统\"]\n    T --> C[\"收集工具<br/>种子\"]\n    C --> W[\"工作台\"]\n    W --> F[\"发酵桶\"]\n    F --> BC[\"啤酒小车\"]\n    BC --> S[\"售卖/定价\"]\n    S --> D[\"每日结算<br/>12:30\"]\n    D --> R[\"收入/倍数\"]\n    B --> M[\"地图更新\"]\n    M --> P1[\"池塘\"]\n    M --> C1[\"小车\"]\n    M --> H[\"玩家房子\"]\n    H --> Shop[\"商店<br/>可进入室内\"]\n    Shop --> C\n    T --> Bld[\"建筑物<br/>放置/拆除\"]\n    Bld --> W\n    T --> ST[\"存档功能\"]\n    ST --> L[\"加载/验证\"]\n    L --> B\n    ST --> B\n    S --> NPC[\"NPC系统<br/>刷出/事件\"]\n    NPC --> D\n    St[\"体力条系统\"] --> ToolUse[\"工具使用受限\"]\n    ToolUse --> C\n    ToolUse --> W\n```\n\n## 玩法流程图\n```mermaid\nflowchart LR\n    Start[\"开始任务\"] --> Collect[\"收集工具/种子\"]\n    Collect --> Plant[\"种植小麦\"]\n    Plant --> Harvest[\"收割小麦\"]\n    Harvest --> Process[\"工作台加工\"]\n    Process --> Ferment[\"发酵得到酒水\"]\n    Ferment --> Sell[\"通过啤酒小车售卖\"]\n    Sell --> Settlement[\"每日结算\"]\n    Settlement --> Reward[\"奖励/额外奖励\"]\n    Reward --> End[\"循环下一任务\"]\n```\n\n## 系统交互与依赖\n```mermaid\nflowchart TD\n    Stamina[\"体力条系统\"] -->|体力耗尽| ToolDisable[\"工具不可用\"]\n    ToolDisable -->|恢复体力| Stamina\n    Save[\"存档功能\"] -->|保存进度| Load[\"加载验证\"]\n    Load -->|恢复状态| GameState[\"游戏状态\"]\n    GameState -->|包含| Inventory[\"背包/物品\"]\n    GameState -->|包含| Money[\"金钱\"]\n    NPC[\"NPC生成系统\"] -->|影响| Settlement[\"每日结算\"]\n    Settlement -->|影响| NPCSpawnRate[\"NPC刷出频率\"]\n    NPCSpawnRate -->|提升| Events[\"特殊事件/任务\"]\n```",
+      "diagrams": [
+        {
+          "title": "游戏功能总览",
+          "code": "flowchart TD\n    B[\"背包<br/>分页功能\"] --> T[\"任务系统\"]\n    T --> C[\"收集工具<br/>种子\"]\n    C --> W[\"工作台\"]\n    W --> F[\"发酵桶\"]\n    F --> BC[\"啤酒小车\"]\n    BC --> S[\"售卖/定价\"]\n    S --> D[\"每日结算<br/>12:30\"]\n    D --> R[\"收入/倍数\"]\n    B --> M[\"地图更新\"]\n    M --> P1[\"池塘\"]\n    M --> C1[\"小车\"]\n    M --> H[\"玩家房子\"]\n    H --> Shop[\"商店<br/>可进入室内\"]\n    Shop --> C\n    T --> Bld[\"建筑物<br/>放置/拆除\"]\n    Bld --> W\n    T --> ST[\"存档功能\"]\n    ST --> L[\"加载/验证\"]\n    L --> B\n    ST --> B\n    S --> NPC[\"NPC系统<br/>刷出/事件\"]\n    NPC --> D\n    St[\"体力条系统\"] --> ToolUse[\"工具使用受限\"]\n    ToolUse --> C\n    ToolUse --> W"
+        },
+        {
+          "title": "玩法流程图",
+          "code": "flowchart LR\n    Start[\"开始任务\"] --> Collect[\"收集工具/种子\"]\n    Collect --> Plant[\"种植小麦\"]\n    Plant --> Harvest[\"收割小麦\"]\n    Harvest --> Process[\"工作台加工\"]\n    Process --> Ferment[\"发酵得到酒水\"]\n    Ferment --> Sell[\"通过啤酒小车售卖\"]\n    Sell --> Settlement[\"每日结算\"]\n    Settlement --> Reward[\"奖励/额外奖励\"]\n    Reward --> End[\"循环下一任务\"]"
+        },
+        {
+          "title": "系统交互与依赖",
+          "code": "flowchart TD\n    Stamina[\"体力条系统\"] -->|体力耗尽| ToolDisable[\"工具不可用\"]\n    ToolDisable -->|恢复体力| Stamina\n    Save[\"存档功能\"] -->|保存进度| Load[\"加载验证\"]\n    Load -->|恢复状态| GameState[\"游戏状态\"]\n    GameState -->|包含| Inventory[\"背包/物品\"]\n    GameState -->|包含| Money[\"金钱\"]\n    NPC[\"NPC生成系统\"] -->|影响| Settlement[\"每日结算\"]\n    Settlement -->|影响| NPCSpawnRate[\"NPC刷出频率\"]\n    NPCSpawnRate -->|提升| Events[\"特殊事件/任务\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-07T04:12:10+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Ai辅助开发游戏三个月后概览\n\n## 游戏功能总览\n```mermaid\nflowchart TD\n    B[\"背包<br/>分页功能\"] --> T[\"任务系统\"]\n    T --> C[\"收集工具<br/>种子\"]\n    C --> W[\"工作台\"]\n    W --> F[\"发酵桶\"]\n    F --> BC[\"啤酒小车\"]\n    BC --> S[\"售卖/定价\"]\n    S --> D[\"每日结算<br/>12:30\"]\n    D --> R[\"收入/倍数\"]\n    B --> M[\"地图更新\"]\n    M --> P1[\"池塘\"]\n    M --> C1[\"小车\"]\n    M --> H[\"玩家房子\"]\n    H --> Shop[\"商店<br/>可进入室内\"]\n    Shop --> C\n    T --> Bld[\"建筑物<br/>放置/拆除\"]\n    Bld --> W\n    T --> ST[\"存档功能\"]\n    ST --> L[\"加载/验证\"]\n    L --> B\n    ST --> B\n    S --> NPC[\"NPC系统<br/>刷出/事件\"]\n    NPC --> D\n    St[\"体力条系统\"] --> ToolUse[\"工具使用受限\"]\n    ToolUse --> C\n    ToolUse --> W\n```\n\n## 玩法流程图\n```mermaid\nflowchart LR\n    Start[\"开始任务\"] --> Collect[\"收集工具/种子\"]\n    Collect --> Plant[\"种植小麦\"]\n    Plant --> Harvest[\"收割小麦\"]\n    Harvest --> Process[\"工作台加工\"]\n    Process --> Ferment[\"发酵得到酒水\"]\n    Ferment --> Sell[\"通过啤酒小车售卖\"]\n    Sell --> Settlement[\"每日结算\"]\n    Settlement --> Reward[\"奖励/额外奖励\"]\n    Reward --> End[\"循环下一任务\"]\n```\n\n## 系统交互与依赖\n```mermaid\nflowchart TD\n    Stamina[\"体力条系统\"] -->|体力耗尽| ToolDisable[\"工具不可用\"]\n    ToolDisable -->|恢复体力| Stamina\n    Save[\"存档功能\"] -->|保存进度| Load[\"加载验证\"]\n    Load -->|恢复状态| GameState[\"游戏状态\"]\n    GameState -->|包含| Inventory[\"背包/物品\"]\n    GameState -->|包含| Money[\"金钱\"]\n    NPC[\"NPC生成系统\"] -->|影响| Settlement[\"每日结算\"]\n    Settlement -->|影响| NPCSpawnRate[\"NPC刷出频率\"]\n    NPCSpawnRate -->|提升| Events[\"特殊事件/任务\"]\n```",
+  "diagrams": [
+    {
+      "title": "游戏功能总览",
+      "code": "flowchart TD\n    B[\"背包<br/>分页功能\"] --> T[\"任务系统\"]\n    T --> C[\"收集工具<br/>种子\"]\n    C --> W[\"工作台\"]\n    W --> F[\"发酵桶\"]\n    F --> BC[\"啤酒小车\"]\n    BC --> S[\"售卖/定价\"]\n    S --> D[\"每日结算<br/>12:30\"]\n    D --> R[\"收入/倍数\"]\n    B --> M[\"地图更新\"]\n    M --> P1[\"池塘\"]\n    M --> C1[\"小车\"]\n    M --> H[\"玩家房子\"]\n    H --> Shop[\"商店<br/>可进入室内\"]\n    Shop --> C\n    T --> Bld[\"建筑物<br/>放置/拆除\"]\n    Bld --> W\n    T --> ST[\"存档功能\"]\n    ST --> L[\"加载/验证\"]\n    L --> B\n    ST --> B\n    S --> NPC[\"NPC系统<br/>刷出/事件\"]\n    NPC --> D\n    St[\"体力条系统\"] --> ToolUse[\"工具使用受限\"]\n    ToolUse --> C\n    ToolUse --> W"
+    },
+    {
+      "title": "玩法流程图",
+      "code": "flowchart LR\n    Start[\"开始任务\"] --> Collect[\"收集工具/种子\"]\n    Collect --> Plant[\"种植小麦\"]\n    Plant --> Harvest[\"收割小麦\"]\n    Harvest --> Process[\"工作台加工\"]\n    Process --> Ferment[\"发酵得到酒水\"]\n    Ferment --> Sell[\"通过啤酒小车售卖\"]\n    Sell --> Settlement[\"每日结算\"]\n    Settlement --> Reward[\"奖励/额外奖励\"]\n    Reward --> End[\"循环下一任务\"]"
+    },
+    {
+      "title": "系统交互与依赖",
+      "code": "flowchart TD\n    Stamina[\"体力条系统\"] -->|体力耗尽| ToolDisable[\"工具不可用\"]\n    ToolDisable -->|恢复体力| Stamina\n    Save[\"存档功能\"] -->|保存进度| Load[\"加载验证\"]\n    Load -->|恢复状态| GameState[\"游戏状态\"]\n    GameState -->|包含| Inventory[\"背包/物品\"]\n    GameState -->|包含| Money[\"金钱\"]\n    NPC[\"NPC生成系统\"] -->|影响| Settlement[\"每日结算\"]\n    Settlement -->|影响| NPCSpawnRate[\"NPC刷出频率\"]\n    NPCSpawnRate -->|提升| Events[\"特殊事件/任务\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T04:12:10+00:00"
+}

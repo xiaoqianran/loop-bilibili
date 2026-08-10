@@ -1,0 +1,82 @@
+{
+  "bvid": "BV12kuN6HE2N",
+  "title": "DeepSeek V4 Flash 0731 挑战高考数学题",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 871,
+  "text": "大家好\ndeep seek v4flash最近火爆了\n主播也来蹭个热点\n用之前整理的今年高考数学数据集测试一下吧\ndeep seek这次发布的V4flash是它的正式版\n它的总参数量是284B\n其中只有13B的激活参数\n相比最近其他公司开源的旗舰模型\n还是小了很多\n而千问3.62107B\n总参数量仅仅只有27B\n这个是时间线\n千问3.62107B\n发布时间是2026年4月\n是在高考之前\ndeep seek v4flash是在高考之后约两个月发布的\ndeep seek v4flash有可能会包含今年的高考数据\n本次测试数据还是今年全国一卷高考数学\n之前\n主播用工具把客观题提取出来\n然后构建了一个jason lines数据集\n它看起来是这样的\n题目里面涉及的数学公式都用latex表达\n这个数据集总共14题\n每个模型运行三次\n然后统计结果提交给大模型的提示词是这样的\n注意提示词中是不包含单选题\n多选题或者填空题这种题型信息的\n让大模型自己取判断题型\n模型返回题目的结果后\n测试脚本会把答案提取出来\n然后和数据集中对应题目的参考答案做比较\n评测指标也还是用的和上个视频类似的测试\n结果没什么悬念\ndeep sick v4flash的所有测试的题目都全答对了\n而千万27B还是存在一定的错误率\n但是去看了具体结果之后\n有些其他发现\n比如这是其中一次测试的结果\n图上划线标记的这几单选题\n它的标准答案是选项对应的字母\n但是模型给的答案里面把值也带出来了\n三次里面的其他测试两次也是类似的情况\n千问27B这边模型给的答案\n格式上总体要干净一些\n主播个人觉得从格式输出上来说\n千问这里观感要好一些\n从这道题的回答内容上来说\ndeep sea有点学霸风\n言简意赅\n直接就给出了答案\n千万这边回答上要更加细节一些\n有点像程序员好坏评断见仁见智吧\n综合来看\nDeep seek v4 flash\n由于参数量比千万27B高一个量级\n对于主播收集的今年高考数据集游刃有余\n千问27B也表现不错\n特别是输出规范答案方面表现的非常好\n感谢观看\n希望大家多多支持",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV12kuN6HE2N",
+  "published_at": "1786119947",
+  "fetched_at": "2026-08-10T08:17:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# DeepSeek V4 Flash 与 千问 27B 高考数学测试知识图谱\n\n## 模型参数对比\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4 Flash\"]\n    DS_Params[\"总参数量 284B\"]\n    DS_Act[\"激活参数 13B\"]\n    Q27B[\"千问 27B\"]\n    Q_Params[\"总参数量 27B\"]\n    ScaleDiff[\"参数规模差异\"]\n    Impact[\"参数量级影响模型能力\"]\n    Adapt[\"对今年高考数据的适应性\"]\n\n    DSV4 --> DS_Params\n    DSV4 --> DS_Act\n    Q27B --> Q_Params\n    DS_Params --> ScaleDiff\n    Q_Params --> ScaleDiff\n    ScaleDiff --> Impact\n    Impact --> Adapt\n```\n\n## 发布与高考时间线\n```mermaid\nflowchart LR\n    QRelease[\"千问 27B 发布\"]\n    QDate[\"2026 年 4 月\"]\n    PreExam[\"高考前\"]\n    DSRelease[\"DeepSeek V4 Flash 发布\"]\n    PostExam[\"高考后约两个月\"]\n    DataUse[\"使用今年高考数学数据集\"]\n\n    QRelease --> QDate\n    QDate --> PreExam\n    DSRelease --> PostExam\n    DSRelease --> DataUse\n```\n\n## 高考数学测试流程\n```mermaid\nflowchart TD\n    BuildDS[\"构建数据集\"]\n    TotalQ[\"共 14 题\"]\n    LaTeX[\"题目公式 LaTeX 表示\"]\n    ExtractObj[\"提取客观题\"]\n    JSONL[\"生成 JSONLines 数据\"]\n    Run3[\"每模型运行 3 次\"]\n    Prompt[\"提示词不含题型信息\"]\n    TypeJudge[\"模型自行判断题型\"]\n    ModelAns[\"模型返回答案\"]\n    ExtractAns[\"脚本提取答案\"]\n    Compare[\"与参考答案比较\"]\n    Metrics[\"使用既定评测指标\"]\n    ResultDS[\"DeepSeek 全部答对\"]\n    ResultQ[\"千问 有一定错误率\"]\n\n    BuildDS --> TotalQ\n    BuildDS --> LaTeX\n    BuildDS --> ExtractObj\n    ExtractObj --> JSONL\n    JSONL --> Run3\n    Run3 --> Prompt\n    Prompt --> TypeJudge\n    TypeJudge --> ModelAns\n    ModelAns --> ExtractAns\n    ExtractAns --> Compare\n    Compare --> Metrics\n    Metrics --> ResultDS\n    Metrics --> ResultQ\n```\n\n## 输出格式对比\n```mermaid\nflowchart TD\n    DSAns[\"DeepSeek 答案\"]\n    DSStyle[\"仅字母选项<br/>简洁、学霸风\"]\n    QAns[\"千问 答案\"]\n    QStyle[\"含数值细节<br/>格式更干净、观感好\"]\n    Compare[\"输出简洁 vs 细节\"]\n    Preference[\"观感评价主观<br/>见仁见智\"]\n\n    DSAns --> DSStyle\n    QAns --> QStyle\n    DSStyle --> Compare\n    QStyle --> Compare\n    Compare --> Preference\n```\n\n## 综合评估\n```mermaid\nflowchart TD\n    Params[\"参数量级更高\"]\n    DSAdv[\"DeepSeek 对高考数据游刃有余\"]\n    DSPerf[\"全答对\"]\n    QPerf[\"千问 表现不错<br/>输出规范好\"]\n    Overall[\"综合结论\"]\n    Recommendation[\"DeepSeek 更适合高考数学<br/>千问 仍具参考价值\"]\n\n    Params --> DSAdv\n    DSAdv --> DSPerf\n    QPerf --> Overall\n    DSPerf --> Overall\n    Overall --> Recommendation\n```",
+      "diagrams": [
+        {
+          "title": "模型参数对比",
+          "code": "flowchart TD\n    DSV4[\"DeepSeek V4 Flash\"]\n    DS_Params[\"总参数量 284B\"]\n    DS_Act[\"激活参数 13B\"]\n    Q27B[\"千问 27B\"]\n    Q_Params[\"总参数量 27B\"]\n    ScaleDiff[\"参数规模差异\"]\n    Impact[\"参数量级影响模型能力\"]\n    Adapt[\"对今年高考数据的适应性\"]\n\n    DSV4 --> DS_Params\n    DSV4 --> DS_Act\n    Q27B --> Q_Params\n    DS_Params --> ScaleDiff\n    Q_Params --> ScaleDiff\n    ScaleDiff --> Impact\n    Impact --> Adapt"
+        },
+        {
+          "title": "发布与高考时间线",
+          "code": "flowchart LR\n    QRelease[\"千问 27B 发布\"]\n    QDate[\"2026 年 4 月\"]\n    PreExam[\"高考前\"]\n    DSRelease[\"DeepSeek V4 Flash 发布\"]\n    PostExam[\"高考后约两个月\"]\n    DataUse[\"使用今年高考数学数据集\"]\n\n    QRelease --> QDate\n    QDate --> PreExam\n    DSRelease --> PostExam\n    DSRelease --> DataUse"
+        },
+        {
+          "title": "高考数学测试流程",
+          "code": "flowchart TD\n    BuildDS[\"构建数据集\"]\n    TotalQ[\"共 14 题\"]\n    LaTeX[\"题目公式 LaTeX 表示\"]\n    ExtractObj[\"提取客观题\"]\n    JSONL[\"生成 JSONLines 数据\"]\n    Run3[\"每模型运行 3 次\"]\n    Prompt[\"提示词不含题型信息\"]\n    TypeJudge[\"模型自行判断题型\"]\n    ModelAns[\"模型返回答案\"]\n    ExtractAns[\"脚本提取答案\"]\n    Compare[\"与参考答案比较\"]\n    Metrics[\"使用既定评测指标\"]\n    ResultDS[\"DeepSeek 全部答对\"]\n    ResultQ[\"千问 有一定错误率\"]\n\n    BuildDS --> TotalQ\n    BuildDS --> LaTeX\n    BuildDS --> ExtractObj\n    ExtractObj --> JSONL\n    JSONL --> Run3\n    Run3 --> Prompt\n    Prompt --> TypeJudge\n    TypeJudge --> ModelAns\n    ModelAns --> ExtractAns\n    ExtractAns --> Compare\n    Compare --> Metrics\n    Metrics --> ResultDS\n    Metrics --> ResultQ"
+        },
+        {
+          "title": "输出格式对比",
+          "code": "flowchart TD\n    DSAns[\"DeepSeek 答案\"]\n    DSStyle[\"仅字母选项<br/>简洁、学霸风\"]\n    QAns[\"千问 答案\"]\n    QStyle[\"含数值细节<br/>格式更干净、观感好\"]\n    Compare[\"输出简洁 vs 细节\"]\n    Preference[\"观感评价主观<br/>见仁见智\"]\n\n    DSAns --> DSStyle\n    QAns --> QStyle\n    DSStyle --> Compare\n    QStyle --> Compare\n    Compare --> Preference"
+        },
+        {
+          "title": "综合评估",
+          "code": "flowchart TD\n    Params[\"参数量级更高\"]\n    DSAdv[\"DeepSeek 对高考数据游刃有余\"]\n    DSPerf[\"全答对\"]\n    QPerf[\"千问 表现不错<br/>输出规范好\"]\n    Overall[\"综合结论\"]\n    Recommendation[\"DeepSeek 更适合高考数学<br/>千问 仍具参考价值\"]\n\n    Params --> DSAdv\n    DSAdv --> DSPerf\n    QPerf --> Overall\n    DSPerf --> Overall\n    Overall --> Recommendation"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-10T08:17:24+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# DeepSeek V4 Flash 与 千问 27B 高考数学测试知识图谱\n\n## 模型参数对比\n```mermaid\nflowchart TD\n    DSV4[\"DeepSeek V4 Flash\"]\n    DS_Params[\"总参数量 284B\"]\n    DS_Act[\"激活参数 13B\"]\n    Q27B[\"千问 27B\"]\n    Q_Params[\"总参数量 27B\"]\n    ScaleDiff[\"参数规模差异\"]\n    Impact[\"参数量级影响模型能力\"]\n    Adapt[\"对今年高考数据的适应性\"]\n\n    DSV4 --> DS_Params\n    DSV4 --> DS_Act\n    Q27B --> Q_Params\n    DS_Params --> ScaleDiff\n    Q_Params --> ScaleDiff\n    ScaleDiff --> Impact\n    Impact --> Adapt\n```\n\n## 发布与高考时间线\n```mermaid\nflowchart LR\n    QRelease[\"千问 27B 发布\"]\n    QDate[\"2026 年 4 月\"]\n    PreExam[\"高考前\"]\n    DSRelease[\"DeepSeek V4 Flash 发布\"]\n    PostExam[\"高考后约两个月\"]\n    DataUse[\"使用今年高考数学数据集\"]\n\n    QRelease --> QDate\n    QDate --> PreExam\n    DSRelease --> PostExam\n    DSRelease --> DataUse\n```\n\n## 高考数学测试流程\n```mermaid\nflowchart TD\n    BuildDS[\"构建数据集\"]\n    TotalQ[\"共 14 题\"]\n    LaTeX[\"题目公式 LaTeX 表示\"]\n    ExtractObj[\"提取客观题\"]\n    JSONL[\"生成 JSONLines 数据\"]\n    Run3[\"每模型运行 3 次\"]\n    Prompt[\"提示词不含题型信息\"]\n    TypeJudge[\"模型自行判断题型\"]\n    ModelAns[\"模型返回答案\"]\n    ExtractAns[\"脚本提取答案\"]\n    Compare[\"与参考答案比较\"]\n    Metrics[\"使用既定评测指标\"]\n    ResultDS[\"DeepSeek 全部答对\"]\n    ResultQ[\"千问 有一定错误率\"]\n\n    BuildDS --> TotalQ\n    BuildDS --> LaTeX\n    BuildDS --> ExtractObj\n    ExtractObj --> JSONL\n    JSONL --> Run3\n    Run3 --> Prompt\n    Prompt --> TypeJudge\n    TypeJudge --> ModelAns\n    ModelAns --> ExtractAns\n    ExtractAns --> Compare\n    Compare --> Metrics\n    Metrics --> ResultDS\n    Metrics --> ResultQ\n```\n\n## 输出格式对比\n```mermaid\nflowchart TD\n    DSAns[\"DeepSeek 答案\"]\n    DSStyle[\"仅字母选项<br/>简洁、学霸风\"]\n    QAns[\"千问 答案\"]\n    QStyle[\"含数值细节<br/>格式更干净、观感好\"]\n    Compare[\"输出简洁 vs 细节\"]\n    Preference[\"观感评价主观<br/>见仁见智\"]\n\n    DSAns --> DSStyle\n    QAns --> QStyle\n    DSStyle --> Compare\n    QStyle --> Compare\n    Compare --> Preference\n```\n\n## 综合评估\n```mermaid\nflowchart TD\n    Params[\"参数量级更高\"]\n    DSAdv[\"DeepSeek 对高考数据游刃有余\"]\n    DSPerf[\"全答对\"]\n    QPerf[\"千问 表现不错<br/>输出规范好\"]\n    Overall[\"综合结论\"]\n    Recommendation[\"DeepSeek 更适合高考数学<br/>千问 仍具参考价值\"]\n\n    Params --> DSAdv\n    DSAdv --> DSPerf\n    QPerf --> Overall\n    DSPerf --> Overall\n    Overall --> Recommendation\n```",
+  "diagrams": [
+    {
+      "title": "模型参数对比",
+      "code": "flowchart TD\n    DSV4[\"DeepSeek V4 Flash\"]\n    DS_Params[\"总参数量 284B\"]\n    DS_Act[\"激活参数 13B\"]\n    Q27B[\"千问 27B\"]\n    Q_Params[\"总参数量 27B\"]\n    ScaleDiff[\"参数规模差异\"]\n    Impact[\"参数量级影响模型能力\"]\n    Adapt[\"对今年高考数据的适应性\"]\n\n    DSV4 --> DS_Params\n    DSV4 --> DS_Act\n    Q27B --> Q_Params\n    DS_Params --> ScaleDiff\n    Q_Params --> ScaleDiff\n    ScaleDiff --> Impact\n    Impact --> Adapt"
+    },
+    {
+      "title": "发布与高考时间线",
+      "code": "flowchart LR\n    QRelease[\"千问 27B 发布\"]\n    QDate[\"2026 年 4 月\"]\n    PreExam[\"高考前\"]\n    DSRelease[\"DeepSeek V4 Flash 发布\"]\n    PostExam[\"高考后约两个月\"]\n    DataUse[\"使用今年高考数学数据集\"]\n\n    QRelease --> QDate\n    QDate --> PreExam\n    DSRelease --> PostExam\n    DSRelease --> DataUse"
+    },
+    {
+      "title": "高考数学测试流程",
+      "code": "flowchart TD\n    BuildDS[\"构建数据集\"]\n    TotalQ[\"共 14 题\"]\n    LaTeX[\"题目公式 LaTeX 表示\"]\n    ExtractObj[\"提取客观题\"]\n    JSONL[\"生成 JSONLines 数据\"]\n    Run3[\"每模型运行 3 次\"]\n    Prompt[\"提示词不含题型信息\"]\n    TypeJudge[\"模型自行判断题型\"]\n    ModelAns[\"模型返回答案\"]\n    ExtractAns[\"脚本提取答案\"]\n    Compare[\"与参考答案比较\"]\n    Metrics[\"使用既定评测指标\"]\n    ResultDS[\"DeepSeek 全部答对\"]\n    ResultQ[\"千问 有一定错误率\"]\n\n    BuildDS --> TotalQ\n    BuildDS --> LaTeX\n    BuildDS --> ExtractObj\n    ExtractObj --> JSONL\n    JSONL --> Run3\n    Run3 --> Prompt\n    Prompt --> TypeJudge\n    TypeJudge --> ModelAns\n    ModelAns --> ExtractAns\n    ExtractAns --> Compare\n    Compare --> Metrics\n    Metrics --> ResultDS\n    Metrics --> ResultQ"
+    },
+    {
+      "title": "输出格式对比",
+      "code": "flowchart TD\n    DSAns[\"DeepSeek 答案\"]\n    DSStyle[\"仅字母选项<br/>简洁、学霸风\"]\n    QAns[\"千问 答案\"]\n    QStyle[\"含数值细节<br/>格式更干净、观感好\"]\n    Compare[\"输出简洁 vs 细节\"]\n    Preference[\"观感评价主观<br/>见仁见智\"]\n\n    DSAns --> DSStyle\n    QAns --> QStyle\n    DSStyle --> Compare\n    QStyle --> Compare\n    Compare --> Preference"
+    },
+    {
+      "title": "综合评估",
+      "code": "flowchart TD\n    Params[\"参数量级更高\"]\n    DSAdv[\"DeepSeek 对高考数据游刃有余\"]\n    DSPerf[\"全答对\"]\n    QPerf[\"千问 表现不错<br/>输出规范好\"]\n    Overall[\"综合结论\"]\n    Recommendation[\"DeepSeek 更适合高考数学<br/>千问 仍具参考价值\"]\n\n    Params --> DSAdv\n    DSAdv --> DSPerf\n    QPerf --> Overall\n    DSPerf --> Overall\n    Overall --> Recommendation"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T08:17:24+00:00"
+}

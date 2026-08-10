@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1EtQwBYESD",
+  "title": "蓝图看不懂？我让AI帮你读懂整个UE工程",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 501,
+  "text": "最近的工作是海洋相关的技术\n其中有参考fox工程\n在以前每次学习新的技术或者别人的工程\n都需要自己慢慢扒\n但是现在有AI加持\n学习别人的逻辑是代码的部分\n直接交给AI帮我梳理好\n但是flux工程真的是看的头痛\n几乎都是蓝图开发\n于是效率至上的我开发了一个插件\n用于转写蓝图为AI可读文档\n插件叫get it命令\n将它放在项目的plugins文件夹内\n然后在插件中找到并勾选它即可使用\n选中目标蓝图\n右键导出蓝图未可读代码\n这个文档主要记录了蓝图如何执行\n数据从哪来以及调了哪些函数\n我设置它存放在项目\nsave lueprint exports文件夹内\nOK接下来就可以把它传给AI\n快速理解学习了\n看来效果很不错\n可以选中多个蓝图\n同时导出转写文档\n文档多的话\n建议使用notebook l m更专业全面的分析学习\nnotebook om非常好用\n可以帮你整理思维导图\n生成解说视频等我的快速进步\n它占巨大功劳\nLM的视频解说真是一大亮点\n你有没有想过一件事\n就是游戏和电影里的水为什么能做的那么真\nOK今天的分享结束了\n想要工具的小伙伴可以评论或私信我\n或者欢迎加入我的专属工具分享群\n获得更多工具",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1EtQwBYESD",
+  "published_at": "1775818845",
+  "fetched_at": "2026-08-09T17:26:34+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-09T17:33:52+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-09T17:33:52+00:00"
+}

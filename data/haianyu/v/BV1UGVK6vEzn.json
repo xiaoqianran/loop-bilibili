@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1UGVK6vEzn",
+  "title": "134. 为什么RoPE中旋转矩阵R0是单位阵？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 423,
+  "text": "今天的问题是\n为什么旋转位置编码中旋转矩阵R0\n它是个单位阵\n从几何和代数的角度来理解一下\n先说代数视角\n什么是R0\n指的就是token\n查询他自己那个位置的token的时候\n就会产生ARIN\n就说ANN表示第N个token\n查询第N个token所得到的注意力分数\n那么由于旋转位置编码有一个优美的性质\n就是注意力分数值取决于相对距离\n那么如果把这里的M换成N\n这个时候呢就是N减N\n它什么呢\n它是零\n这个就是R0\n而由于旋转位置编码\n在计算的时候\n要把这个零给它填到每一个角度里面去啊\nCOSIN0是一\nsin0是零\n所以呢这些都是111\n这些都是000\n那这样的话就会发现每一个都单位正\n整体也是单位正得正\n所以呢R0确实是个单位\n正从几何角度来理解呢\n旋转位置编码\n它的一个点就是两个token的相距越远\n就会让它的这个转角整体上变得越大\n而自己查询自己就相当于相距为零\n这个时候呢要转嘛就不转\n就是说远的时候转角大\n距离为零的时候干脆不转",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UGVK6vEzn",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:15:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

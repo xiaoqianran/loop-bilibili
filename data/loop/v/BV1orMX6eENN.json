@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1orMX6eENN",
+  "title": "DeepSeek V4 Flash 正式版 + Reasonix 写脚本！开源 Veusz 画出版级科研图",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1263,
+  "text": "写论文发期摊图表示门面\n但你有没有发现科研绘图软件要么贵的离谱\n要么画一张图要手动点几十下\n今天这个视频给你一个完全免费\n还能脚本批量出图的方案\nV u c\n先说我为什么换origin\n确实是标杆\n但三件事让我难受\n第一正版授权不便宜\n学生党尤其肉疼\n第二手动拖数据\n调样式\n画一张图10分钟\n改个数据又得重来\n论文改五版就画五遍\n第三几十张图要统一风格\n批量导出\n手动根本忙不过来\n所以我要找的是能写脚本画图的方案\nverse就是一个完美的答案\n开源免费跨平台\n专为科学绘图设计\n它的核心能力是文档脚本\n你用Python语法描述数据是什么\n画什么图\n长什么样\n它自动渲染成出版级图表\n而且注意脚本语法是Python意味着什么\n意味着你可以让AI来写\n现在deep seek v4flash正式版刚发布\n你在via x里接上\n他直接说帮我写个vs脚本\n画误差棒\n折线图\n脚本几秒钟就生成VC\n一跑图就出来了\n手都不用动\n脚本能存能改数据\n一换图就重画论文\n改石板都不怕\n安装这一步也可以直接交给RONIX\n在reason ux里发一句\n帮我下载安装views\n它会自动下载官方绿色版\n解压验证能不能跑\n整个过程你只需要看着我推荐windows绿色版\n不用安装解压就能用\n还自带Python环境\n连依赖都不用装\n重头戏来啦\n画一张带误差棒的折线图\n脚本只要十几行\n定义一个页面\n一个坐标轴\n一个折线数据\n最后一句导出PNG跑完图就出来了\n坐标轴误差棒\n图例全自动\n而且我可以负责任的说\nvice画出来的图直接放进论文是没问题的\nverse能画的不止折线图\n柱状乡线直方图\n热图等高线矢量场及坐标三元图\n还有3D散点和曲面\n16种科研常用图形全部支持\n而且每一种我都写了现成的示例\n脚本拿过来改数据就能用\n这批示例也全部开源了\n仓库链接一会给你毕一亮\n出图才是脚本画的精髓\n一条命令把十几个脚本一次跑完\nPNGPDF一次全导出\n改个主题色\n统一字体\n改一处脚本\n所有图一起变\n这在手动画图时代根本不敢想\n最后演示一个真正的科研工作流\n把数据给deep seek with flash\n让他写vs脚本\n导入CSV画散点加拟合曲线一条龙\nAI几秒生成脚本V4立刻渲染出图\n导出高分辨率图片\n直接投稿数据\n在文件里\n脚本是AI写的图\n在脚本里实验重复100次\n图永远一致\n这就是AI时代可复现科研该有的样子\n分享两个我踩过的坑\n第一个3D图必须挂在sing3D容器下\n直接挂页面会报错\n第二个中文标签要确认字体支持科研图\n建议还是用英文标注更保险\n这些坑我都写进文档了\n你们直接绕开\n总结views\n免费开源脚本化16种图形全覆盖\n科研绘图的省钱省心方案\n配合deep seek v4flash正式版和RESONNEX\n连脚本都不用自己写\n说句画图就出来了\n所有脚本示例图和踩坑文档都在GITHUB仓库\nlino agent skills里链接在简介\n上期视频讲了本地AI看图\n这期是科研画图都开源了\n觉得有用\n点个赞\n关注我们\n下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1orMX6eENN",
+  "published_at": "1785753414",
+  "fetched_at": "2026-08-09T10:38:27+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV19B3y65EfM",
+  "title": "godot简易状态机教学",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 916,
+  "text": "Hello\n大家好\n本期我将教大家搭建一个简易状态机\n首先为什么要用状态机呢\n♪ 不用状态机 ♪\n你写代码就写一子弹攻击\n♪ 且没死 ♪\n且不冷却\n写几个条件跟一起改一个bug\n炸三个\n用了状态机所有行为物理隔离攻击状态\n绝不影响走路逻辑\n这就是解耦\n接下来我来演示一下\n♪ 不用状态机 ♪\n♪ 但是和用了状态机的一样的效果 ♪\n我抓到老鼠后\n它进入了死亡的状态\n♪ 这个是没有使用状态机的 ♪\n这个我已经加上了状态机\n可以发现如果不用状态机的话\n只能用it来判断\n后面每加一个状态都要来给这些加薪的条件\n后面会越来越麻烦\n所以状态机很好的解决了这个问题\n接下来我们进入教学环节\n这些大家都应该会\n我就不浪费时间了\n然后我把这里的csis process改成normal嗯\n然后我们新建一个cc process\n专门负责每一键刷新状态\n接着开始赌一下\n♪ 这里快速跳过 ♪\n在这里major就是给状态机贴标签\n是为了以后方便我们修改和看懂\nphysics process会根据下面这个变量来刷新状态\n接下来我们回到physics process\n用match语句看待\n如果enemy seat等于state里面的normal\n就调用normal这个函数\n♪ 如果等于state里面的DISS ♪\n♪ 就调用die这个函数 ♪\n然后我们新建一个变量\n它的初始值等于false\n先这样\n然后我们新定义一个叫做changes state的函数\n把传入的参数news state复制给变量\nENEMIST在这里把east newspe设为true\n然后在PhysX process里面把它设为false\n♪ 这样切换状态的时候就只会运行一次 ♪\n我们再新建一个变量\n这里我先加一个信号\n然后玩家碰到的话\n把状态切换到die\n这里用到cody bird会把stick star扔给changes tap处理\n♪ 这里毫无疑问报错了 ♪\n是因为这里的STG打错了\n现在再来试试\n我碰到它后\n它不动了\n然后我们在带状态里面\n让它播放DE的动画就行了\n在那之前我们加上一个条件\nIs new st\n然后播放动画\n成功\n这就是全部的代码了\n哎就到这吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19B3y65EfM",
+  "published_at": "1785299779",
+  "fetched_at": "2026-08-08T09:14:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Godot 简易状态机教学 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"使用状态机的动机\"] --> A2[\"代码解耦\"]\n    A2 --> A3[\"行为物理隔离\"]\n    A3 --> A4[\"不影响走路逻辑\"]\n    A4 --> A5[\"降低维护复杂度\"]\n```\n[BV19B3y65EfM P1 00:04]  \n[BV19B3y65EfM P1 00:20]  \n[BV19B3y65EfM P1 00:21]  \n[BV19B3y65EfM P1 00:48]\n\n## 状态机架构图\n```mermaid\nflowchart TD\n    B1[\"csis process → normal\"] --> B2[\"新建 cc process（刷新状态）\"]\n    B2 --> B3[\"major 标签（便于修改）\"]\n    B3 --> B4[\"physics process 根据变量刷新状态\"]\n    B4 --> B5[\"match 语句分支\"]\n    B5 --> B6[\"normal 状态 → 调用 normal()\"]\n    B5 --> B7[\"DISS 状态 → 调用 die()\"]\n    B6 --> B8[\"状态函数实现\"]\n    B7 --> B8\n```\n[BV19B3y65EfM P1 01:05]  \n[BV19B3y65EfM P1 01:07]  \n[BV19B3y65EfM P1 01:20]  \n[BV19B3y65EfM P1 01:25]  \n[BV19B3y65EfM P1 01:34]  \n[BV19B3y65EfM P1 01:39]  \n[BV19B3y65EfM P1 01:45]  \n[BV19B3y65EfM P1 01:47]\n\n## 状态切换逻辑图\n```mermaid\nflowchart TD\n    C1[\"bool is_state_changed = false\"] --> C2[\"changes_state(new_state)\"]\n    C2 --> C3[\"复制 new_state 到当前状态变量\"]\n    C3 --> C4[\"is_state_changed 设为 true\"]\n    C4 --> C5[\"physics process 读取标志\"]\n    C5 --> C6[\"执行一次状态切换后设为 false\"]\n```\n[BV19B3y65EfM P1 01:50]  \n[BV19B3y65EfM P1 01:56]  \n[BV19B3y65EfM P1 02:02]  \n[BV19B3y65EfM P1 02:07]  \n[BV19B3y65EfM P1 02:11]\n\n## 碰撞与死亡处理图\n```mermaid\nflowchart TD\n    D1[\"玩家碰撞信号\"] --> D2[\"切换状态至 die\"]\n    D2 --> D3[\"调用 changes_state(die)\"]\n    D3 --> D4[\"标志位 true → physics process 触发 die()\"]\n    D4 --> D5[\"播放死亡动画\"]\n    D5 --> D6[\"is_new_state 条件检查\"]\n    D6 --> D7[\"动画仅播放一次\"]\n    D2 --> D8[\"错误示例：STG 打错\"]\n    D8 --> D9[\"报错 → 修正后正常运行\"]\n```\n[BV19B3y65EfM P1 02:21]  \n[BV19B3y65EfM P1 02:34]  \n[BV19B3y65EfM P1 02:47]  \n[BV19B3y65EfM P1 02:49]  \n[BV19B3y65EfM P1 03:00]  \n[BV19B3y65EfM P1 03:07]  \n[BV19B3y65EfM P1 03:11]\n\n## 实现步骤汇总图\n```mermaid\nflowchart TD\n    E1[\"1. 将 csis process 改为 normal\"] --> E2[\"2. 新建 cc process 负责刷新状态\"]\n    E2 --> E3[\"3. 为状态机添加 major 标签\"]\n    E3 --> E4[\"4. 在 physics process 使用 match 语句分派状态函数\"]\n    E4 --> E5[\"5. 创建 is_state_changed 标志与 changes_state 函数\"]\n    E5 --> E6[\"6. 添加玩家碰撞信号切换至 die 状态\"]\n    E6 --> E7[\"7. 修正 STG 拼写错误\"]\n    E7 --> E8[\"8. 在死亡状态播放一次动画\"]\n    E8 --> E9[\"9. 完成全部代码\"]\n```\n[BV19B3y65EfM P1 01:00]  \n[BV19B3y65EfM P1 01:05]  \n[BV19B3y65EfM P1 01:20]  \n[BV19B3y65EfM P1 01:34]  \n[BV19B3y65EfM P1 01:56]  \n[BV19B3y65EfM P1 02:21]  \n[BV19B3y65EfM P1 02:49]  \n[BV19B3y65EfM P1 03:04]  \n[BV19B3y65EfM P1 03:18]",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A1[\"使用状态机的动机\"] --> A2[\"代码解耦\"]\n    A2 --> A3[\"行为物理隔离\"]\n    A3 --> A4[\"不影响走路逻辑\"]\n    A4 --> A5[\"降低维护复杂度\"]"
+        },
+        {
+          "title": "状态机架构图",
+          "code": "flowchart TD\n    B1[\"csis process → normal\"] --> B2[\"新建 cc process（刷新状态）\"]\n    B2 --> B3[\"major 标签（便于修改）\"]\n    B3 --> B4[\"physics process 根据变量刷新状态\"]\n    B4 --> B5[\"match 语句分支\"]\n    B5 --> B6[\"normal 状态 → 调用 normal()\"]\n    B5 --> B7[\"DISS 状态 → 调用 die()\"]\n    B6 --> B8[\"状态函数实现\"]\n    B7 --> B8"
+        },
+        {
+          "title": "状态切换逻辑图",
+          "code": "flowchart TD\n    C1[\"bool is_state_changed = false\"] --> C2[\"changes_state(new_state)\"]\n    C2 --> C3[\"复制 new_state 到当前状态变量\"]\n    C3 --> C4[\"is_state_changed 设为 true\"]\n    C4 --> C5[\"physics process 读取标志\"]\n    C5 --> C6[\"执行一次状态切换后设为 false\"]"
+        },
+        {
+          "title": "碰撞与死亡处理图",
+          "code": "flowchart TD\n    D1[\"玩家碰撞信号\"] --> D2[\"切换状态至 die\"]\n    D2 --> D3[\"调用 changes_state(die)\"]\n    D3 --> D4[\"标志位 true → physics process 触发 die()\"]\n    D4 --> D5[\"播放死亡动画\"]\n    D5 --> D6[\"is_new_state 条件检查\"]\n    D6 --> D7[\"动画仅播放一次\"]\n    D2 --> D8[\"错误示例：STG 打错\"]\n    D8 --> D9[\"报错 → 修正后正常运行\"]"
+        },
+        {
+          "title": "实现步骤汇总图",
+          "code": "flowchart TD\n    E1[\"1. 将 csis process 改为 normal\"] --> E2[\"2. 新建 cc process 负责刷新状态\"]\n    E2 --> E3[\"3. 为状态机添加 major 标签\"]\n    E3 --> E4[\"4. 在 physics process 使用 match 语句分派状态函数\"]\n    E4 --> E5[\"5. 创建 is_state_changed 标志与 changes_state 函数\"]\n    E5 --> E6[\"6. 添加玩家碰撞信号切换至 die 状态\"]\n    E6 --> E7[\"7. 修正 STG 拼写错误\"]\n    E7 --> E8[\"8. 在死亡状态播放一次动画\"]\n    E8 --> E9[\"9. 完成全部代码\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T09:15:03+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Godot 简易状态机教学 知识图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"使用状态机的动机\"] --> A2[\"代码解耦\"]\n    A2 --> A3[\"行为物理隔离\"]\n    A3 --> A4[\"不影响走路逻辑\"]\n    A4 --> A5[\"降低维护复杂度\"]\n```\n[BV19B3y65EfM P1 00:04]  \n[BV19B3y65EfM P1 00:20]  \n[BV19B3y65EfM P1 00:21]  \n[BV19B3y65EfM P1 00:48]\n\n## 状态机架构图\n```mermaid\nflowchart TD\n    B1[\"csis process → normal\"] --> B2[\"新建 cc process（刷新状态）\"]\n    B2 --> B3[\"major 标签（便于修改）\"]\n    B3 --> B4[\"physics process 根据变量刷新状态\"]\n    B4 --> B5[\"match 语句分支\"]\n    B5 --> B6[\"normal 状态 → 调用 normal()\"]\n    B5 --> B7[\"DISS 状态 → 调用 die()\"]\n    B6 --> B8[\"状态函数实现\"]\n    B7 --> B8\n```\n[BV19B3y65EfM P1 01:05]  \n[BV19B3y65EfM P1 01:07]  \n[BV19B3y65EfM P1 01:20]  \n[BV19B3y65EfM P1 01:25]  \n[BV19B3y65EfM P1 01:34]  \n[BV19B3y65EfM P1 01:39]  \n[BV19B3y65EfM P1 01:45]  \n[BV19B3y65EfM P1 01:47]\n\n## 状态切换逻辑图\n```mermaid\nflowchart TD\n    C1[\"bool is_state_changed = false\"] --> C2[\"changes_state(new_state)\"]\n    C2 --> C3[\"复制 new_state 到当前状态变量\"]\n    C3 --> C4[\"is_state_changed 设为 true\"]\n    C4 --> C5[\"physics process 读取标志\"]\n    C5 --> C6[\"执行一次状态切换后设为 false\"]\n```\n[BV19B3y65EfM P1 01:50]  \n[BV19B3y65EfM P1 01:56]  \n[BV19B3y65EfM P1 02:02]  \n[BV19B3y65EfM P1 02:07]  \n[BV19B3y65EfM P1 02:11]\n\n## 碰撞与死亡处理图\n```mermaid\nflowchart TD\n    D1[\"玩家碰撞信号\"] --> D2[\"切换状态至 die\"]\n    D2 --> D3[\"调用 changes_state(die)\"]\n    D3 --> D4[\"标志位 true → physics process 触发 die()\"]\n    D4 --> D5[\"播放死亡动画\"]\n    D5 --> D6[\"is_new_state 条件检查\"]\n    D6 --> D7[\"动画仅播放一次\"]\n    D2 --> D8[\"错误示例：STG 打错\"]\n    D8 --> D9[\"报错 → 修正后正常运行\"]\n```\n[BV19B3y65EfM P1 02:21]  \n[BV19B3y65EfM P1 02:34]  \n[BV19B3y65EfM P1 02:47]  \n[BV19B3y65EfM P1 02:49]  \n[BV19B3y65EfM P1 03:00]  \n[BV19B3y65EfM P1 03:07]  \n[BV19B3y65EfM P1 03:11]\n\n## 实现步骤汇总图\n```mermaid\nflowchart TD\n    E1[\"1. 将 csis process 改为 normal\"] --> E2[\"2. 新建 cc process 负责刷新状态\"]\n    E2 --> E3[\"3. 为状态机添加 major 标签\"]\n    E3 --> E4[\"4. 在 physics process 使用 match 语句分派状态函数\"]\n    E4 --> E5[\"5. 创建 is_state_changed 标志与 changes_state 函数\"]\n    E5 --> E6[\"6. 添加玩家碰撞信号切换至 die 状态\"]\n    E6 --> E7[\"7. 修正 STG 拼写错误\"]\n    E7 --> E8[\"8. 在死亡状态播放一次动画\"]\n    E8 --> E9[\"9. 完成全部代码\"]\n```\n[BV19B3y65EfM P1 01:00]  \n[BV19B3y65EfM P1 01:05]  \n[BV19B3y65EfM P1 01:20]  \n[BV19B3y65EfM P1 01:34]  \n[BV19B3y65EfM P1 01:56]  \n[BV19B3y65EfM P1 02:21]  \n[BV19B3y65EfM P1 02:49]  \n[BV19B3y65EfM P1 03:04]  \n[BV19B3y65EfM P1 03:18]",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A1[\"使用状态机的动机\"] --> A2[\"代码解耦\"]\n    A2 --> A3[\"行为物理隔离\"]\n    A3 --> A4[\"不影响走路逻辑\"]\n    A4 --> A5[\"降低维护复杂度\"]"
+    },
+    {
+      "title": "状态机架构图",
+      "code": "flowchart TD\n    B1[\"csis process → normal\"] --> B2[\"新建 cc process（刷新状态）\"]\n    B2 --> B3[\"major 标签（便于修改）\"]\n    B3 --> B4[\"physics process 根据变量刷新状态\"]\n    B4 --> B5[\"match 语句分支\"]\n    B5 --> B6[\"normal 状态 → 调用 normal()\"]\n    B5 --> B7[\"DISS 状态 → 调用 die()\"]\n    B6 --> B8[\"状态函数实现\"]\n    B7 --> B8"
+    },
+    {
+      "title": "状态切换逻辑图",
+      "code": "flowchart TD\n    C1[\"bool is_state_changed = false\"] --> C2[\"changes_state(new_state)\"]\n    C2 --> C3[\"复制 new_state 到当前状态变量\"]\n    C3 --> C4[\"is_state_changed 设为 true\"]\n    C4 --> C5[\"physics process 读取标志\"]\n    C5 --> C6[\"执行一次状态切换后设为 false\"]"
+    },
+    {
+      "title": "碰撞与死亡处理图",
+      "code": "flowchart TD\n    D1[\"玩家碰撞信号\"] --> D2[\"切换状态至 die\"]\n    D2 --> D3[\"调用 changes_state(die)\"]\n    D3 --> D4[\"标志位 true → physics process 触发 die()\"]\n    D4 --> D5[\"播放死亡动画\"]\n    D5 --> D6[\"is_new_state 条件检查\"]\n    D6 --> D7[\"动画仅播放一次\"]\n    D2 --> D8[\"错误示例：STG 打错\"]\n    D8 --> D9[\"报错 → 修正后正常运行\"]"
+    },
+    {
+      "title": "实现步骤汇总图",
+      "code": "flowchart TD\n    E1[\"1. 将 csis process 改为 normal\"] --> E2[\"2. 新建 cc process 负责刷新状态\"]\n    E2 --> E3[\"3. 为状态机添加 major 标签\"]\n    E3 --> E4[\"4. 在 physics process 使用 match 语句分派状态函数\"]\n    E4 --> E5[\"5. 创建 is_state_changed 标志与 changes_state 函数\"]\n    E5 --> E6[\"6. 添加玩家碰撞信号切换至 die 状态\"]\n    E6 --> E7[\"7. 修正 STG 拼写错误\"]\n    E7 --> E8[\"8. 在死亡状态播放一次动画\"]\n    E8 --> E9[\"9. 完成全部代码\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T09:15:03+00:00"
+}

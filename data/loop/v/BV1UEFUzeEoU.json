@@ -1,0 +1,40 @@
+{
+  "bvid": "BV1UEFUzeEoU",
+  "title": "丰田造游戏引擎？！为了车载系统狂卷3D渲染，开源引擎Fluorite来了 #丰田 #游戏引擎 #开源 #Fluorite #Flutter #车载系统 #3D渲",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 3115,
+  "text": "你好\n女士们、先生们\n我是Mike，来自Game from Scratch\n今天我们要介绍丰田全新推出的开源游戏引擎\n是的\n就是丰田\n它叫做Fluoride\n这款引擎将占据非常特殊或特定的市场领域\n因为它与Flutter深度集成\n接下来我们将探讨他们为何选择这个方案\n为何不选择其他游戏引擎\n等等\n首先让我们快速了解Fluoride游戏引擎\n现在\n你需要知道的是这个项目尚未存在\n尚未公开发布\n源代码还未开放\n但他们在FOSDEM上宣布了这一消息\n所以我推测源代码将在不久的将来推出\n核心部分是一个高性能的ECS架构\n它是用C++编写的，而非Dart\n也就是Flutter的\n原生语言\n使用C++确保底层高性能\n接下来还有一些独特功能\n第二个亮点功能是模型定义触控触发区\n允许3D艺术家直接在Blender中定义可点击区域\n顺便说一句\nBlender频繁被提及，似乎是他们DCC工具链的核心\n我们稍后会详细讨论\n这体现了创建空间3D UI的流程\n然后是符合主机级的3D渲染\n实际上将支持跨平台，包括主机设备\n同时覆盖桌面和移动端\n将基于Google的Filament引擎驱动\n我们稍后再详细说明\n得益于Flutter和Dart的集成\n支持热重载功能\n可实时更新场景内容\n即时看到修改效果\n更多细节即将揭晓\n目前信息有限\n我之前提到的丰田公司\n版权所有2026年\n丰田北美分公司\n关于这款引擎的几点说明\n在FOSDEM 2026年展示\n若想观看相关视频\n可在该链接获取\n他们详细介绍了所有内容\n这个引擎背后的原因\n我实际上把所有幻灯片都拿出来了\n我们现在要逐一讲解\n帮你节省一点时间\n所以为什么他们这样做呢\n首先\n他们基于已有的项目进行开发\n名为ivi主页屏幕\n集成了flutter\n运行时与原生lytics结合并支持whaland\n这已经在2026款丰田RAV4上投入使用\n不过这种实现有一个重大缺点\n尽管如此\n仅支持二维静态界面\n有限的UI/UX功能\n因此他们最终在构建完整游戏引擎\n而不是仅仅使用ivi主页屏幕\nFlutter的集成\n在数字座舱中使用游戏引擎的场景\n这种情况越来越常见\n实际上现在\nUnity\n虚幻引擎和Godot都在量产车中使用\n用于抬头显示系统\n或各种相关界面\n所以具体是怎么回事\n分步解析\n3D教程\n硬件状态可视化\n环境映射\n更自然的控制与交互并实现竞争性设计\n这就是为何要为汽车开发游戏引擎\n所以他们为何不使用现有游戏引擎呢\n嗯\nUnity和虚幻引擎\n需要提供专有二进制文件\n多视图需启动多个引擎实例\n资源消耗大\n导致帧率低\n且授权费用高昂\n他们还评估了Godot\n最终未选择它\n因启动速度在树莓派上太慢且资源消耗大\n现在\n这让我有点奇怪\n与其创建新游戏引擎\n我以为可以优化启动速度\n不过暂且不论\n这就是为何未选Godot\n然后是Impeller Flutter\nGPU\n完全不知道是什么\n说实话就是这样\n在大多数平台上都不稳定\n而且还不成熟\n这大概就是我从未听说过它的原因\n这项技术的核心\n虽然我们有SDL三\n我们还有嵌入式端的Flutter\n这是II主界面与Meta Flutter项目的结合\nFlutter SDL三和Better正在为跨平台开发工作\n我\n哦\n然后谷歌的Filament 3D渲染引擎用于实时渲染\n物理基础渲染方面的技术\n回到他们之前展示的引擎核心特点\n其中一个特点是高性能ECS核心\n它是用C++编写的\n但针对低端硬件进行了优化\n具备分层场景图和来自其他游戏引擎的知识迁移\n毕竟\n此时此刻我们已经了解ECS是什么\n接着是主机级3D渲染\n他们使用谷歌的Filament 3D渲染器\n内置优化的PBR资源和光照\n可定制的着色器和渲染管线\n热重载是主要功能之一\n这些功能即将推出\n目前仍在开发中\n他们将集成Jolt物理引擎\nJolt物理引擎实际上\n嗯\n曾用于《地平线》系列\n其中一款《地平线》游戏\n可能不是《地平线：零之曙光》\n但《地平线》系列中的一款\n我以Jolt物理引擎为例\n而Jolt物理引擎现在已成为Godot的默认物理引擎\n如同Godot 4.6版本\n他们将在引擎中集成Jolt物理引擎处理物理交互\n这一点相当有趣\n他们似乎完全围绕Blender构建\n创意工作流程\n工具链与UI支持、设计师开发者协作\n开放格式\nBlender兼容性\nGLTF\nKTX\nHDR和GLSL以及便捷\n也能轻松导入其他游戏引擎的资产\n因此应该能很好地融入现有工作流程\n等等\n现在简要概述所有在此结合的不同技术\n来创建氟化物引擎\n最明显的关键技术是Flutter\n这是一个谷歌项目\n呃\n所以它是用于创建类似写入\n跨平台或用户界面应用程序\n大致的\n该技术的下一步进化\n因此是构建精美界面的开放框架\n原生编译\n这是关键部分\n因此它们仍然需要构建和编译\n这里没有运行时环境\n从单一代码库创建多平台应用\n我从未实际使用过Flutter开发\n但有很多人正在使用Flutter\n包括丰田公司\n呃\n另一个方面是Dart语言\nDart是Flutter脚本背后编程语言\nDart最接近的等效语言是TypeScript\n它更像是JavaScript的改进概念\n并发展成更强大的工具\n现在有了AOT或提前编译技术\n可以生成原生机器代码\n也可以编译为JavaScript和WebAssembly\n同样地\n类似于TypeScript\n在最初引入时\n首次推出时\n你可以尝试使用Dart\n如果感兴趣的话\n我没有深入使用Dart\n在它发布后我尝试过一些\n我不太清楚之后的发展\n但Dart目前仍有价值的最主要原因\n是Flutter的流行度\nFlutter使Dart\n成为今天的Dart\n但从我过去使用经验来看\n语法相对简洁\n学习起来并不困难\n另一个重点是ivi主页\n这是丰田公司开发的\n可在嵌入式Linux中嵌入Flutter\n支持Wayland窗口系统\n你可以看到它具体实现的功能\n这就是丰田开发的当前正在使用的项目\n用于用户界面\n针对RAV4车型\nRev\n适用于RAV4车型\n抱歉\n呃\n目前这是2026款车型\nRAV4正在使用这个作为用户界面\n再次\n仅限二维使用\n这也是他们正在突破的原因\n现在进入三维世界\n包括触控等操作\n处理输入\n可能还有声音等\n他们专门使用SDL，即SDL3\n该版本仅半年前发布\n再次强调\n这是游戏开发领域非常流行的库\n包括Unreal Engine在内的许多游戏引擎\n实际上大量使用SDL处理这些功能\n另一个关键组件是Filament\n专为Android设计的实时物理渲染引擎\niOS\nWindows\nLinux\nMacOS和WebGL2\n这就是他们用于三维渲染的技术\n这是谷歌Filament项目的基础\n可见其强大功能\n这涵盖了大量游戏引擎\n渲染部分显然由Filament处理\n他们整合了众多跨平台流行技术\nFlutter\n嗯SDL\n三维Filament等\n他们并未从零构建游戏引擎\n当然还有Jolt物理引擎\n目前尚未集成\n即将推出\n呃\n哦\n所以我们知道\n《地平线 零之曙光》\n《死亡搁浅2》同样如此\n现已成为默认选项\n呃\nGodot游戏引擎内的物理引擎\n这一流行物理引擎支持多平台运行\n女士们先生们，这就是它\n这就是氟化物游戏引擎\n是的\n丰田正在进军游戏引擎领域\n嘿\n你知道，更多选择更好\n总是好事\n还有互动显示的世界\n用游戏引擎做车载显示\n这又是\n这已经是现实了\n所以这确实有一定道理\n但有趣的是\n他们实际上要面向多个平台\n包括游戏主机\n在下方评论区告诉我你对氟化物游戏引擎的看法吧\n我们稍后见\n再见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1UEFUzeEoU",
+  "published_at": "1770685761",
+  "fetched_at": "2026-08-08T17:36:11+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T17:39:28+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T17:39:28+00:00"
+}

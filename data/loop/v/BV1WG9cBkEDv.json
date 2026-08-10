@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1WG9cBkEDv",
+  "title": "矩阵到底在干什么？从揉面团到降维打击 | 算法的数学基础 02",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1602,
+  "text": "你拍了张照歪了\n手指一转正了\n你用美颜相机拍脸\n鼻子变小了\n眼睛变大了\n脸变窄了\ncharge g p t读进一句话\n每过一层神经网络\n那句话的意思就变了一次\n三件事背后都是同一个操作\n用一个矩阵把空间变一变\n往期我们讲了向量\n向量是一个东西\n今天讲矩阵是对一整个空间做的事\n看完这期你会搞懂四件事\n矩阵到底是什么\n两个矩阵乘起来在干什么\n为什么有些方向在变换中纹丝不动\n还有2万维的数据怎么压到两维\n还不丢信息\n先忘掉课本里的矩阵\n课本说矩阵是一个数字方阵\n几行几列\n背公式算乘法\n那不是矩阵的本质\n想象你面前有一张橡皮方格纸\n平平整整\n现在你用手一拉方格纸变形了\n但注意没有撕裂\n没有折叠\n直线还是直线\n平行线还是平行线\n这种变形叫线性变换\n拉压转减\n但不能撕\n那什么是丝\n看到了吗\n线弯了\n直线变成了曲线\n这就不是线性变换了\n记住判断标准直线还是直线\n原点不动好\n关键问题来了\n整个空间在动\n你怎么描述这个变换\n告诉你钉住两个钉子\ni hat和j hat\n它俩钉在哪\n整张纸的形状就定了\ni hat去了零一\nj hat去了一零\n把这两个坐标写成两列\n就是矩阵\n第一列等于i hat的落点\n第二列等于j hat的落点\n两个钉子钉在哪\n整个空间的命运就定了\n矩阵不是数字表格\n是空间变换的配方\n但一个配方只能变一次\n连着变两次呢\n先做一次旋转\n再做一次剪切\n两次合在一起效果是什么\n先旋转再剪切\n等价于一次性做了一个组合变换\n矩阵乘法不是神秘运算\n先做第一个\n再做第二个两步并成一步\n但这里有个坑\n先旋转再剪切和先剪切再旋转\n结果一样吗\n不一样\n先穿袜子再穿鞋和先穿鞋再穿袜子能一样吗\n单位矩阵什么都不做\n就像乘以一逆矩阵\n把变换撤回去\n就像CTRL加Z\n但不是每个矩阵都有逆压成一条线\n二维变一维信息丢了\n丢了的东西找不回来好现在看一个更深的问题\n你对空间做变换\n大部分方向都变了\n箭头们东倒西歪\n但有一个方向\n有些方向在变换之后只是变长了\n方向完全没变\n这些方向叫特征向量\n拉长了多少倍叫特征值\n你可能会想这有什么用\n用处大了一堆高维数据\n你想知道什么方向最重要\n答案就是特征向量值的方向\n特征值越大\n这个方向上数据散得越开\n信息越多\n特征值越小\n数据几乎不动\n可以忽略\n知道了哪个方向最重要\n就可以做一件魔法般的事\n降维上期说了\n基因表达谱是2万多维的向量\n你画不出来\n看不见\n但如果你找到数据最胖的两个方向\n就可以把2万维压到两维\n怎么做\n第一步找到数据散的最开的方向\n这是第一个特征向量\n第二步在垂直于它的方向里找第二散的\n第三步\n把所有数据点投影到这两个方向上\n2万维变成了两维\n这就是PCA主成分分析\n为什么不丢信息\n因为你扔掉的那些方向数据几乎不动\n特征值很小\n没什么好丢的好\n现在把所有东西串起来\n矩阵是变换空间的配方\n神经网络的每一层就是一次矩阵\n变换一组数字进去\n每个数字被矩阵重新组合\n颜色全变了\n然后激活函数微调一下\n就这两步重复重复\n再重复一层\n两层\n96层\n整个深度学习说穿了就一件事\n一堆矩阵乘来乘去\n那特征向量呢\n人脸识别用了一个经典方法叫icon faces\n把几千张人脸当成高维向量做PCA\n找到最重要的几个特征脸\n任何一张新脸\n都能用这几个特征脸的组合来表示\n还记得上期的基因表达谱吗\n2万多维画不出来\n现在你会PCA了\n癌症聚在一起\n健康聚在一起\n甚至不同亚型自动分开了\n没有人告诉他什么是癌症\n你只做了两件事\n把数据变成向量\n然后用特征方向压缩它\n数学自己告诉你\n答案好\n拉回来\n上期向量描述一个东西\n这期矩阵变换空间特征\n向量变换中不变的方向\nPCA沿着最重要的方向压缩\n从一个奶茶点单到2万维基因降到二维\n用的是同一套数学\n下次你看到一个矩阵\n别把它当数字表格\n把它当成空间变换的配方\n有些方向不会变\n沿着那些方向去看\n你就能看到数据最本质的结构\n下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1WG9cBkEDv",
+  "published_at": "1775125296",
+  "fetched_at": "2026-08-10T02:19:01+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 矩阵与线性代数知识图谱\n\n## 矩阵概念与线性变换概览 [BV1WG9cBkEDv P1 00:20]\n```mermaid\nflowchart TD\n    V1[\"向量 (描述一个东西)\"]\n    M1[\"矩阵 (空间变换配方)\"]\n    LT[\"线性变换 (不撕裂、不折叠)\"]\n    Space[\"空间\"]\n    Ihat[\"î (坐标 (1,0))\"]\n    Jhat[\"ĵ (坐标 (0,1))\"]\n    Columns[\"两列坐标 → 矩阵\"]\n    Preserve[\"直线、平行线保持\"]\n    Note[\"原点不动好\"]\n\n    V1 --> Space\n    M1 --> Space\n    LT --> Space\n    Ihat --> Columns\n    Jhat --> Columns\n    Columns --> M1\n    M1 --> LT\n    LT --> Preserve\n    Preserve --> Note\n```\n\n## 矩阵乘法与复合变换顺序 [BV1WG9cBkEDv P1 02:19]\n```mermaid\nflowchart TD\n    Rot[\"矩阵A：旋转\"]\n    Shear[\"矩阵B：剪切\"]\n    Order1[\"先旋转后剪切\"]\n    Order2[\"先剪切后旋转\"]\n    Composite[\"复合变换\"]\n    Diff[\"结果不同\"]\n    Mul[\"矩阵乘法 (先左后右)\"]\n    Identity[\"单位矩阵 (不变)\"]\n    Inverse[\"逆矩阵 (撤回)\"]\n\n    Rot --> Order1\n    Shear --> Order1\n    Order1 --> Composite\n    Shear --> Order2\n    Rot --> Order2\n    Order2 --> Composite\n    Order1 --> Diff\n    Order2 --> Diff\n    Mul --> Composite\n    Identity --> Mul\n    Inverse --> Mul\n```\n\n## 特征向量、特征值与信息保留 [BV1WG9cBkEDv P1 03:10]\n```mermaid\nflowchart TD\n    Transform[\"空间变换\"]\n    Dir[\"方向\"]\n    EigVec[\"特征向量 (方向不变)\"]\n    EigVal[\"特征值 (伸缩倍数)\"]\n    LargeVal[\"特征值大 → 信息多\"]\n    SmallVal[\"特征值小 → 可忽略\"]\n    Info[\"信息保留\"]\n    Discard[\"丢弃方向\"]\n    Preserve[\"保持方向\"]\n\n    Transform --> Dir\n    Dir --> EigVec\n    EigVec --> EigVal\n    EigVal --> LargeVal\n    EigVal --> SmallVal\n    LargeVal --> Info\n    SmallVal --> Discard\n    Preserve --> Dir\n    Preserve --> EigVec\n```\n\n## PCA 降维流程与应用 [BV1WG9cBkEDv P1 03:50]\n```mermaid\nflowchart TD\n    Data[\"高维数据 (2万维)\"]\n    Cov[\"协方差矩阵\"]\n    EigVecs[\"特征向量求解\"]\n    FirstVec[\"第一特征向量 (最大特征值)\"]\n    SecondVec[\"第二特征向量 (正交)\"]\n    Project[\"投影到两向量上\"]\n    Reduced[\"2维表示\"]\n    Visual[\"可视化\"]\n    NoInfoLoss[\"信息不丢失\"]\n    Apps[\"应用：基因表达、 人脸识别\"]\n\n    Data --> Cov\n    Cov --> EigVecs\n    EigVecs --> FirstVec\n    EigVecs --> SecondVec\n    FirstVec --> Project\n    SecondVec --> Project\n    Project --> Reduced\n    Reduced --> Visual\n    Reduced --> NoInfoLoss\n    NoInfoLoss --> Apps\n```",
+      "diagrams": [
+        {
+          "title": "矩阵概念与线性变换概览",
+          "code": "flowchart TD\n    V1[\"向量 (描述一个东西)\"]\n    M1[\"矩阵 (空间变换配方)\"]\n    LT[\"线性变换 (不撕裂、不折叠)\"]\n    Space[\"空间\"]\n    Ihat[\"î (坐标 (1,0))\"]\n    Jhat[\"ĵ (坐标 (0,1))\"]\n    Columns[\"两列坐标 → 矩阵\"]\n    Preserve[\"直线、平行线保持\"]\n    Note[\"原点不动好\"]\n\n    V1 --> Space\n    M1 --> Space\n    LT --> Space\n    Ihat --> Columns\n    Jhat --> Columns\n    Columns --> M1\n    M1 --> LT\n    LT --> Preserve\n    Preserve --> Note"
+        },
+        {
+          "title": "矩阵乘法与复合变换顺序",
+          "code": "flowchart TD\n    Rot[\"矩阵A：旋转\"]\n    Shear[\"矩阵B：剪切\"]\n    Order1[\"先旋转后剪切\"]\n    Order2[\"先剪切后旋转\"]\n    Composite[\"复合变换\"]\n    Diff[\"结果不同\"]\n    Mul[\"矩阵乘法 (先左后右)\"]\n    Identity[\"单位矩阵 (不变)\"]\n    Inverse[\"逆矩阵 (撤回)\"]\n\n    Rot --> Order1\n    Shear --> Order1\n    Order1 --> Composite\n    Shear --> Order2\n    Rot --> Order2\n    Order2 --> Composite\n    Order1 --> Diff\n    Order2 --> Diff\n    Mul --> Composite\n    Identity --> Mul\n    Inverse --> Mul"
+        },
+        {
+          "title": "特征向量、特征值与信息保留",
+          "code": "flowchart TD\n    Transform[\"空间变换\"]\n    Dir[\"方向\"]\n    EigVec[\"特征向量 (方向不变)\"]\n    EigVal[\"特征值 (伸缩倍数)\"]\n    LargeVal[\"特征值大 → 信息多\"]\n    SmallVal[\"特征值小 → 可忽略\"]\n    Info[\"信息保留\"]\n    Discard[\"丢弃方向\"]\n    Preserve[\"保持方向\"]\n\n    Transform --> Dir\n    Dir --> EigVec\n    EigVec --> EigVal\n    EigVal --> LargeVal\n    EigVal --> SmallVal\n    LargeVal --> Info\n    SmallVal --> Discard\n    Preserve --> Dir\n    Preserve --> EigVec"
+        },
+        {
+          "title": "PCA 降维流程与应用",
+          "code": "flowchart TD\n    Data[\"高维数据 (2万维)\"]\n    Cov[\"协方差矩阵\"]\n    EigVecs[\"特征向量求解\"]\n    FirstVec[\"第一特征向量 (最大特征值)\"]\n    SecondVec[\"第二特征向量 (正交)\"]\n    Project[\"投影到两向量上\"]\n    Reduced[\"2维表示\"]\n    Visual[\"可视化\"]\n    NoInfoLoss[\"信息不丢失\"]\n    Apps[\"应用：基因表达、 人脸识别\"]\n\n    Data --> Cov\n    Cov --> EigVecs\n    EigVecs --> FirstVec\n    EigVecs --> SecondVec\n    FirstVec --> Project\n    SecondVec --> Project\n    Project --> Reduced\n    Reduced --> Visual\n    Reduced --> NoInfoLoss\n    NoInfoLoss --> Apps"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T02:19:22+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 矩阵与线性代数知识图谱\n\n## 矩阵概念与线性变换概览 [BV1WG9cBkEDv P1 00:20]\n```mermaid\nflowchart TD\n    V1[\"向量 (描述一个东西)\"]\n    M1[\"矩阵 (空间变换配方)\"]\n    LT[\"线性变换 (不撕裂、不折叠)\"]\n    Space[\"空间\"]\n    Ihat[\"î (坐标 (1,0))\"]\n    Jhat[\"ĵ (坐标 (0,1))\"]\n    Columns[\"两列坐标 → 矩阵\"]\n    Preserve[\"直线、平行线保持\"]\n    Note[\"原点不动好\"]\n\n    V1 --> Space\n    M1 --> Space\n    LT --> Space\n    Ihat --> Columns\n    Jhat --> Columns\n    Columns --> M1\n    M1 --> LT\n    LT --> Preserve\n    Preserve --> Note\n```\n\n## 矩阵乘法与复合变换顺序 [BV1WG9cBkEDv P1 02:19]\n```mermaid\nflowchart TD\n    Rot[\"矩阵A：旋转\"]\n    Shear[\"矩阵B：剪切\"]\n    Order1[\"先旋转后剪切\"]\n    Order2[\"先剪切后旋转\"]\n    Composite[\"复合变换\"]\n    Diff[\"结果不同\"]\n    Mul[\"矩阵乘法 (先左后右)\"]\n    Identity[\"单位矩阵 (不变)\"]\n    Inverse[\"逆矩阵 (撤回)\"]\n\n    Rot --> Order1\n    Shear --> Order1\n    Order1 --> Composite\n    Shear --> Order2\n    Rot --> Order2\n    Order2 --> Composite\n    Order1 --> Diff\n    Order2 --> Diff\n    Mul --> Composite\n    Identity --> Mul\n    Inverse --> Mul\n```\n\n## 特征向量、特征值与信息保留 [BV1WG9cBkEDv P1 03:10]\n```mermaid\nflowchart TD\n    Transform[\"空间变换\"]\n    Dir[\"方向\"]\n    EigVec[\"特征向量 (方向不变)\"]\n    EigVal[\"特征值 (伸缩倍数)\"]\n    LargeVal[\"特征值大 → 信息多\"]\n    SmallVal[\"特征值小 → 可忽略\"]\n    Info[\"信息保留\"]\n    Discard[\"丢弃方向\"]\n    Preserve[\"保持方向\"]\n\n    Transform --> Dir\n    Dir --> EigVec\n    EigVec --> EigVal\n    EigVal --> LargeVal\n    EigVal --> SmallVal\n    LargeVal --> Info\n    SmallVal --> Discard\n    Preserve --> Dir\n    Preserve --> EigVec\n```\n\n## PCA 降维流程与应用 [BV1WG9cBkEDv P1 03:50]\n```mermaid\nflowchart TD\n    Data[\"高维数据 (2万维)\"]\n    Cov[\"协方差矩阵\"]\n    EigVecs[\"特征向量求解\"]\n    FirstVec[\"第一特征向量 (最大特征值)\"]\n    SecondVec[\"第二特征向量 (正交)\"]\n    Project[\"投影到两向量上\"]\n    Reduced[\"2维表示\"]\n    Visual[\"可视化\"]\n    NoInfoLoss[\"信息不丢失\"]\n    Apps[\"应用：基因表达、 人脸识别\"]\n\n    Data --> Cov\n    Cov --> EigVecs\n    EigVecs --> FirstVec\n    EigVecs --> SecondVec\n    FirstVec --> Project\n    SecondVec --> Project\n    Project --> Reduced\n    Reduced --> Visual\n    Reduced --> NoInfoLoss\n    NoInfoLoss --> Apps\n```",
+  "diagrams": [
+    {
+      "title": "矩阵概念与线性变换概览",
+      "code": "flowchart TD\n    V1[\"向量 (描述一个东西)\"]\n    M1[\"矩阵 (空间变换配方)\"]\n    LT[\"线性变换 (不撕裂、不折叠)\"]\n    Space[\"空间\"]\n    Ihat[\"î (坐标 (1,0))\"]\n    Jhat[\"ĵ (坐标 (0,1))\"]\n    Columns[\"两列坐标 → 矩阵\"]\n    Preserve[\"直线、平行线保持\"]\n    Note[\"原点不动好\"]\n\n    V1 --> Space\n    M1 --> Space\n    LT --> Space\n    Ihat --> Columns\n    Jhat --> Columns\n    Columns --> M1\n    M1 --> LT\n    LT --> Preserve\n    Preserve --> Note"
+    },
+    {
+      "title": "矩阵乘法与复合变换顺序",
+      "code": "flowchart TD\n    Rot[\"矩阵A：旋转\"]\n    Shear[\"矩阵B：剪切\"]\n    Order1[\"先旋转后剪切\"]\n    Order2[\"先剪切后旋转\"]\n    Composite[\"复合变换\"]\n    Diff[\"结果不同\"]\n    Mul[\"矩阵乘法 (先左后右)\"]\n    Identity[\"单位矩阵 (不变)\"]\n    Inverse[\"逆矩阵 (撤回)\"]\n\n    Rot --> Order1\n    Shear --> Order1\n    Order1 --> Composite\n    Shear --> Order2\n    Rot --> Order2\n    Order2 --> Composite\n    Order1 --> Diff\n    Order2 --> Diff\n    Mul --> Composite\n    Identity --> Mul\n    Inverse --> Mul"
+    },
+    {
+      "title": "特征向量、特征值与信息保留",
+      "code": "flowchart TD\n    Transform[\"空间变换\"]\n    Dir[\"方向\"]\n    EigVec[\"特征向量 (方向不变)\"]\n    EigVal[\"特征值 (伸缩倍数)\"]\n    LargeVal[\"特征值大 → 信息多\"]\n    SmallVal[\"特征值小 → 可忽略\"]\n    Info[\"信息保留\"]\n    Discard[\"丢弃方向\"]\n    Preserve[\"保持方向\"]\n\n    Transform --> Dir\n    Dir --> EigVec\n    EigVec --> EigVal\n    EigVal --> LargeVal\n    EigVal --> SmallVal\n    LargeVal --> Info\n    SmallVal --> Discard\n    Preserve --> Dir\n    Preserve --> EigVec"
+    },
+    {
+      "title": "PCA 降维流程与应用",
+      "code": "flowchart TD\n    Data[\"高维数据 (2万维)\"]\n    Cov[\"协方差矩阵\"]\n    EigVecs[\"特征向量求解\"]\n    FirstVec[\"第一特征向量 (最大特征值)\"]\n    SecondVec[\"第二特征向量 (正交)\"]\n    Project[\"投影到两向量上\"]\n    Reduced[\"2维表示\"]\n    Visual[\"可视化\"]\n    NoInfoLoss[\"信息不丢失\"]\n    Apps[\"应用：基因表达、 人脸识别\"]\n\n    Data --> Cov\n    Cov --> EigVecs\n    EigVecs --> FirstVec\n    EigVecs --> SecondVec\n    FirstVec --> Project\n    SecondVec --> Project\n    Project --> Reduced\n    Reduced --> Visual\n    Reduced --> NoInfoLoss\n    NoInfoLoss --> Apps"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T02:19:22+00:00"
+}

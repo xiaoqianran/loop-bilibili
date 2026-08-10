@@ -1,0 +1,66 @@
+{
+  "bvid": "BV1TPjr6zEUw",
+  "title": "上手虚幻引擎6和Verse脚本",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 679,
+  "text": "前几天呢公布了虚幻引擎六的分支\n在GITHUB上\n我也是第一时间的去把它给克隆下来\n然后把它编译出来了\n想自己去体验一番\n特别是最火的那个verse脚本\n我特别想试一下\n然后我创建了一个U16的工程\n当前版本是6.0.0\n可以说他们官方的效率还是挺高的\n也就过了几个小时\n新的提交已经超过99条了\n然后我用codex\n让他帮我创建了一个U16的工程\n我又让他学习了一下verse的源码\n现在的verse脚本应该还是一个很基础的版本\n我让cortex强制把一些能用verse实现的代码\n让他用verse去写\n然后写了一个非常小的一个demo\n运行之后呢\n就是有一个标题\n然后有几个按钮在编辑器的上方\n可以看到已经多出了两个按钮\n一个可以直接打开vs code\n然后就可以直接打开这个工程的verse脚本\n然后另外一个是实时编译按钮\n然后我们可以试一下\n比如说刚刚那个标题写的是verse测试\n比如说我随便打几个汉字\n然后编译一下运行\n然后这个编译速度跟蓝图差不多\n然后我们再尝试一下\n改一下下面的一些属性\n然后可以看到这个字号是变大了哈\n现在的U16应该只是一个非常早期的版本\n可以看到一些基础的逻辑\n还是使用的C加加去写的\nVerse\n只是作为一个C加加的封装\n其实能改的参数也不多\n当然以现在U1U16的更新速度来说的话\n每天肯定都是会更新一点的\n所以让我们来期待一下吧\n然后这里再插一个题外话\n我的ORION框架呢\n已经正式升级到了5.8的引擎\n大家可以直接在GITHUB上搜ORIONUEE\n都可以进行一个免费的获取\n这期视频就到这里\n我们下期再见拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1TPjr6zEUw",
+  "published_at": "1781877213",
+  "fetched_at": "2026-08-09T07:28:18+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 上手虚幻引擎6和Verse脚本\n\n## 知识总览\n```mermaid\nflowchart TD\n    A1[\"UE6 分支发布于 GitHub\"] --> A2[\"克隆并编译 UE6\"]\n    A2 --> A3[\"创建 U16 项目 (版本 6.0.0)\"]\n    A3 --> A4[\"使用 Codex 生成项目并学习 Verse 源码\"]\n    A4 --> A5[\"编写 Verse Demo\"]\n    A5 --> B1[\"UI 按钮：打开 VS Code\"]\n    A5 --> B2[\"UI 按钮：实时编译\"]\n    B2 --> C1[\"编译速度≈Blueprint\"]\n    A5 --> C2[\"属性修改：字号变大\"]\n    A5 --> D1[\"Verse 本质：C++ 封装\"]\n    D1 --> D2[\"可调参数有限\"]\n    D1 --> D3[\"U16 为早期版本，持续每日更新\"]\n    E1[\"ORION 框架升级至 UE5.8\"] --> E2[\"GitHub 上搜索 ORIONUEE 免费获取\"]\n```\n\n- UE6 分支发布于 GitHub [BV1TPjr6zEUw P1 00:00]  \n- 克隆并编译 UE6 [BV1TPjr6zEUw P1 00:07]  \n- 创建 U16 项目，当前版本 6.0.0 [BV1TPjr6zEUw P1 00:16‑00:19]  \n- 使用 Codex 生成项目并学习 Verse 源码 [BV1TPjr6zEUw P1 00:28‑00:35]  \n- 编写包含 UI 按钮的 Verse Demo [BV1TPjr6zEUw P1 00:45‑00:56]  \n- “打开 VS Code” 按钮功能 [BV1TPjr6zEUw P1 00:53‑00:56]  \n- “实时编译” 按钮功能 [BV1TPjr6zEUw P1 00:59‑01:02]  \n- 编译速度与 Blueprint 相近 [BV1TPjr6zEUw P1 01:16]  \n- 修改属性后字号变大 [BV1TPjr6zEUw P1 01:21‑01:28]  \n- Verse 作为 C++ 的封装实现 [BV1TPjr6zEUw P1 01:38‑01:42]  \n- 可调参数有限 [BV1TPjr6zEUw P1 01:42]  \n- U16 为早期版本，日常持续更新 [BV1TPjr6zEUw P1 01:44‑01:51]  \n- ORION 框架升级至 UE5.8 [BV1TPjr6zEUw P1 01:56‑02:00]  \n- 在 GitHub 搜索 ORIONUEE 免费获取 [BV1TPjr6zEUw P1 02:00‑02:06]\n\n## Demo 工作流\n```mermaid\nflowchart LR\n    S1[\"克隆 UE6 分支\"] --> S2[\"编译引擎\"]\n    S2 --> S3[\"创建 U16 项目\"]\n    S3 --> S4[\"Codex 生成项目脚手架\"]\n    S4 --> S5[\"Codex 学习 Verse 源码\"]\n    S5 --> S6[\"编写 Demo（含 UI 按钮）\"]\n    S6 --> S7[\"运行 Demo\"]\n    S7 --> S8[\"点击‘打开 VS Code’ → 编辑 Verse 脚本\"]\n    S7 --> S9[\"点击‘实时编译’ → 编译并运行\"]\n    S9 --> S10[\"观察编译速度≈Blueprint\"]\n    S9 --> S11[\"修改属性 → 字号变大\"]\n```\n\n- 克隆 UE6 分支 [BV1TPjr6zEUw P1 00:00‑00:04]  \n- 编译引擎 [BV1TPjr6zEUw P1 00:07]  \n- 创建 U16 项目 [BV1TPjr6zEUw P1 00:16‑00:19]  \n- Codex 生成项目脚手架 [BV1TPjr6zEUw P1 00:28‑00:32]  \n- Codex 学习 Verse 源码 [BV1TPjr6zEUw P1 00:32‑00:35]  \n- 编写 Demo（UI 按钮） [BV1TPjr6zEUw P1 00:45‑00:56]  \n- 运行 Demo 并使用按钮 [BV1TPjr6zEUw P1 00:47‑01:02]  \n- 编译速度≈Blueprint [BV1TPjr6zEUw P1 01:16]  \n- 修改属性后字号变大 [BV1TPjr6zEUw P1 01:21‑01:28]\n\n## Verse 特性与限制\n```mermaid\nflowchart TD\n    V1[\"Verse 语言\"] --> V2[\"基于 C++ 实现\"]\n    V2 --> V3[\"C++ 封装层\"]\n    V3 --> V4[\"提供脚本化接口\"]\n    V4 --> V5[\"可实现部分功能\"]\n    V5 --> V6[\"受限参数数量\"]\n    V6 --> V7[\"功能扩展依赖引擎更新\"]\n    V7 --> V8[\"U16 早期版本，日更\"]\n```\n\n- Verse 基于 C++ 实现 [BV1TPjr6zEUw P1 01:38‑01:40]  \n- 作为 C++ 的封装层 [BV1TPjr6zEUw P1 01:40‑01:42]  \n- 可实现的功能受限于封装 [BV1TPjr6zEUw P1 01:42]  \n- 参数可调范围有限 [BV1TPjr6zEUw P1 01:42]  \n- 功能扩展依赖引擎更新 [BV1TPjr6zEUw P1 01:44‑01:51]  \n- U16 为早期版本，持续每日更新 [BV1TPjr6zEUw P1 01:44‑01:51]",
+      "diagrams": [
+        {
+          "title": "知识总览",
+          "code": "flowchart TD\n    A1[\"UE6 分支发布于 GitHub\"] --> A2[\"克隆并编译 UE6\"]\n    A2 --> A3[\"创建 U16 项目 (版本 6.0.0)\"]\n    A3 --> A4[\"使用 Codex 生成项目并学习 Verse 源码\"]\n    A4 --> A5[\"编写 Verse Demo\"]\n    A5 --> B1[\"UI 按钮：打开 VS Code\"]\n    A5 --> B2[\"UI 按钮：实时编译\"]\n    B2 --> C1[\"编译速度≈Blueprint\"]\n    A5 --> C2[\"属性修改：字号变大\"]\n    A5 --> D1[\"Verse 本质：C++ 封装\"]\n    D1 --> D2[\"可调参数有限\"]\n    D1 --> D3[\"U16 为早期版本，持续每日更新\"]\n    E1[\"ORION 框架升级至 UE5.8\"] --> E2[\"GitHub 上搜索 ORIONUEE 免费获取\"]"
+        },
+        {
+          "title": "Demo 工作流",
+          "code": "flowchart LR\n    S1[\"克隆 UE6 分支\"] --> S2[\"编译引擎\"]\n    S2 --> S3[\"创建 U16 项目\"]\n    S3 --> S4[\"Codex 生成项目脚手架\"]\n    S4 --> S5[\"Codex 学习 Verse 源码\"]\n    S5 --> S6[\"编写 Demo（含 UI 按钮）\"]\n    S6 --> S7[\"运行 Demo\"]\n    S7 --> S8[\"点击‘打开 VS Code’ → 编辑 Verse 脚本\"]\n    S7 --> S9[\"点击‘实时编译’ → 编译并运行\"]\n    S9 --> S10[\"观察编译速度≈Blueprint\"]\n    S9 --> S11[\"修改属性 → 字号变大\"]"
+        },
+        {
+          "title": "Verse 特性与限制",
+          "code": "flowchart TD\n    V1[\"Verse 语言\"] --> V2[\"基于 C++ 实现\"]\n    V2 --> V3[\"C++ 封装层\"]\n    V3 --> V4[\"提供脚本化接口\"]\n    V4 --> V5[\"可实现部分功能\"]\n    V5 --> V6[\"受限参数数量\"]\n    V6 --> V7[\"功能扩展依赖引擎更新\"]\n    V7 --> V8[\"U16 早期版本，日更\"]"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-09T07:37:37+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 上手虚幻引擎6和Verse脚本\n\n## 知识总览\n```mermaid\nflowchart TD\n    A1[\"UE6 分支发布于 GitHub\"] --> A2[\"克隆并编译 UE6\"]\n    A2 --> A3[\"创建 U16 项目 (版本 6.0.0)\"]\n    A3 --> A4[\"使用 Codex 生成项目并学习 Verse 源码\"]\n    A4 --> A5[\"编写 Verse Demo\"]\n    A5 --> B1[\"UI 按钮：打开 VS Code\"]\n    A5 --> B2[\"UI 按钮：实时编译\"]\n    B2 --> C1[\"编译速度≈Blueprint\"]\n    A5 --> C2[\"属性修改：字号变大\"]\n    A5 --> D1[\"Verse 本质：C++ 封装\"]\n    D1 --> D2[\"可调参数有限\"]\n    D1 --> D3[\"U16 为早期版本，持续每日更新\"]\n    E1[\"ORION 框架升级至 UE5.8\"] --> E2[\"GitHub 上搜索 ORIONUEE 免费获取\"]\n```\n\n- UE6 分支发布于 GitHub [BV1TPjr6zEUw P1 00:00]  \n- 克隆并编译 UE6 [BV1TPjr6zEUw P1 00:07]  \n- 创建 U16 项目，当前版本 6.0.0 [BV1TPjr6zEUw P1 00:16‑00:19]  \n- 使用 Codex 生成项目并学习 Verse 源码 [BV1TPjr6zEUw P1 00:28‑00:35]  \n- 编写包含 UI 按钮的 Verse Demo [BV1TPjr6zEUw P1 00:45‑00:56]  \n- “打开 VS Code” 按钮功能 [BV1TPjr6zEUw P1 00:53‑00:56]  \n- “实时编译” 按钮功能 [BV1TPjr6zEUw P1 00:59‑01:02]  \n- 编译速度与 Blueprint 相近 [BV1TPjr6zEUw P1 01:16]  \n- 修改属性后字号变大 [BV1TPjr6zEUw P1 01:21‑01:28]  \n- Verse 作为 C++ 的封装实现 [BV1TPjr6zEUw P1 01:38‑01:42]  \n- 可调参数有限 [BV1TPjr6zEUw P1 01:42]  \n- U16 为早期版本，日常持续更新 [BV1TPjr6zEUw P1 01:44‑01:51]  \n- ORION 框架升级至 UE5.8 [BV1TPjr6zEUw P1 01:56‑02:00]  \n- 在 GitHub 搜索 ORIONUEE 免费获取 [BV1TPjr6zEUw P1 02:00‑02:06]\n\n## Demo 工作流\n```mermaid\nflowchart LR\n    S1[\"克隆 UE6 分支\"] --> S2[\"编译引擎\"]\n    S2 --> S3[\"创建 U16 项目\"]\n    S3 --> S4[\"Codex 生成项目脚手架\"]\n    S4 --> S5[\"Codex 学习 Verse 源码\"]\n    S5 --> S6[\"编写 Demo（含 UI 按钮）\"]\n    S6 --> S7[\"运行 Demo\"]\n    S7 --> S8[\"点击‘打开 VS Code’ → 编辑 Verse 脚本\"]\n    S7 --> S9[\"点击‘实时编译’ → 编译并运行\"]\n    S9 --> S10[\"观察编译速度≈Blueprint\"]\n    S9 --> S11[\"修改属性 → 字号变大\"]\n```\n\n- 克隆 UE6 分支 [BV1TPjr6zEUw P1 00:00‑00:04]  \n- 编译引擎 [BV1TPjr6zEUw P1 00:07]  \n- 创建 U16 项目 [BV1TPjr6zEUw P1 00:16‑00:19]  \n- Codex 生成项目脚手架 [BV1TPjr6zEUw P1 00:28‑00:32]  \n- Codex 学习 Verse 源码 [BV1TPjr6zEUw P1 00:32‑00:35]  \n- 编写 Demo（UI 按钮） [BV1TPjr6zEUw P1 00:45‑00:56]  \n- 运行 Demo 并使用按钮 [BV1TPjr6zEUw P1 00:47‑01:02]  \n- 编译速度≈Blueprint [BV1TPjr6zEUw P1 01:16]  \n- 修改属性后字号变大 [BV1TPjr6zEUw P1 01:21‑01:28]\n\n## Verse 特性与限制\n```mermaid\nflowchart TD\n    V1[\"Verse 语言\"] --> V2[\"基于 C++ 实现\"]\n    V2 --> V3[\"C++ 封装层\"]\n    V3 --> V4[\"提供脚本化接口\"]\n    V4 --> V5[\"可实现部分功能\"]\n    V5 --> V6[\"受限参数数量\"]\n    V6 --> V7[\"功能扩展依赖引擎更新\"]\n    V7 --> V8[\"U16 早期版本，日更\"]\n```\n\n- Verse 基于 C++ 实现 [BV1TPjr6zEUw P1 01:38‑01:40]  \n- 作为 C++ 的封装层 [BV1TPjr6zEUw P1 01:40‑01:42]  \n- 可实现的功能受限于封装 [BV1TPjr6zEUw P1 01:42]  \n- 参数可调范围有限 [BV1TPjr6zEUw P1 01:42]  \n- 功能扩展依赖引擎更新 [BV1TPjr6zEUw P1 01:44‑01:51]  \n- U16 为早期版本，持续每日更新 [BV1TPjr6zEUw P1 01:44‑01:51]",
+  "diagrams": [
+    {
+      "title": "知识总览",
+      "code": "flowchart TD\n    A1[\"UE6 分支发布于 GitHub\"] --> A2[\"克隆并编译 UE6\"]\n    A2 --> A3[\"创建 U16 项目 (版本 6.0.0)\"]\n    A3 --> A4[\"使用 Codex 生成项目并学习 Verse 源码\"]\n    A4 --> A5[\"编写 Verse Demo\"]\n    A5 --> B1[\"UI 按钮：打开 VS Code\"]\n    A5 --> B2[\"UI 按钮：实时编译\"]\n    B2 --> C1[\"编译速度≈Blueprint\"]\n    A5 --> C2[\"属性修改：字号变大\"]\n    A5 --> D1[\"Verse 本质：C++ 封装\"]\n    D1 --> D2[\"可调参数有限\"]\n    D1 --> D3[\"U16 为早期版本，持续每日更新\"]\n    E1[\"ORION 框架升级至 UE5.8\"] --> E2[\"GitHub 上搜索 ORIONUEE 免费获取\"]"
+    },
+    {
+      "title": "Demo 工作流",
+      "code": "flowchart LR\n    S1[\"克隆 UE6 分支\"] --> S2[\"编译引擎\"]\n    S2 --> S3[\"创建 U16 项目\"]\n    S3 --> S4[\"Codex 生成项目脚手架\"]\n    S4 --> S5[\"Codex 学习 Verse 源码\"]\n    S5 --> S6[\"编写 Demo（含 UI 按钮）\"]\n    S6 --> S7[\"运行 Demo\"]\n    S7 --> S8[\"点击‘打开 VS Code’ → 编辑 Verse 脚本\"]\n    S7 --> S9[\"点击‘实时编译’ → 编译并运行\"]\n    S9 --> S10[\"观察编译速度≈Blueprint\"]\n    S9 --> S11[\"修改属性 → 字号变大\"]"
+    },
+    {
+      "title": "Verse 特性与限制",
+      "code": "flowchart TD\n    V1[\"Verse 语言\"] --> V2[\"基于 C++ 实现\"]\n    V2 --> V3[\"C++ 封装层\"]\n    V3 --> V4[\"提供脚本化接口\"]\n    V4 --> V5[\"可实现部分功能\"]\n    V5 --> V6[\"受限参数数量\"]\n    V6 --> V7[\"功能扩展依赖引擎更新\"]\n    V7 --> V8[\"U16 早期版本，日更\"]"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T07:37:37+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1qPub6vE5v",
+  "title": "生死战！Gemini 3.7 Flash 或将吹响反攻号角！MiniMax Code 狙击 DeepSeek Harness 杀入终端！| AI日报0807",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 830,
+  "text": "大家晚上好\n欢迎收看今天的AI日报\ngoogle DeepMind工作人员logan kill patrick表示\n团队目前正在开发一些很棒的新模型\n他称团队吸取了过去两年的经验教训\n博主chatter s转发该帖称\ngoogle已启动Gemini three point seven flash准备工作\n且内部基础就绪\n暂无确切日期\n但预计很快发布\nmini max工作人员DANIELWARNER表示\nmini max code即将登录终端\n团队正在内部进行自用测试\n并邀请开发者先行试用\n据博主提\n波普拉ho在公开的结账定价配置\n和ChatGPT网页应用资源中发现\nOpenAI正在为codex开发付费的额度重置功能\n按不同订阅层级定价5~80美元\n尚未获官方确认\n火山引擎正式上线\nC dance2.5\nAAPI目前已在live TV等多个平台同步上线\n同时SED2.0mini于fast开启\n8月7日至9月7日的限时优惠\nopen call通过其官方账号宣布\nopen cogo方案的deep sick flash使用量已经限时翻倍\n官方暂未说明此次限时活动的具体截止时间\nAnthropic\n更新了CORE cable5的生物学安全防护机制\n旨在减少误报并大幅降低模型回退率\n官方测试显示\n生物学相关的回退率降低了约85%\nand sophic宣布\ncloud code自托管环境已进入公开测试阶段\n允许企业在自有基础设施上运行cloud code会话\n该功能面向cod team和enterprise\n订阅方案的组织开放\n千问宣布上新多项功能\n推出思考研究定时任务和办公助理\n并支持最新旗舰模型千问3.8max\n此外\n语音通话和智能体广场能力也获得全面升级\n据媒体报道\n安全研究人员表示\nTVK3在安全测试期间逃逸至开放互联网\n企图在给定的测试任务中作弊\n目前该事件的发现来源于安全研究人员的观察\n具体技术细节尚未披露\n今天的资讯播送完了\n明天见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1qPub6vE5v",
+  "published_at": "1786097490",
+  "fetched_at": "2026-08-08T15:59:59+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# AI日报资讯图谱\n\n## Gemini 3.7 Flash 与 MiniMax Code\n\n```mermaid\nflowchart TD\n    G[\"Gemini 3.7 Flash<br/>（准备中）\"] -->|内部基础就绪| G_ready[\"内部基础就绪\"]\n    G_ready -->|预计很快发布| G_release[\"发布预期\"]\n    M[\"MiniMax Code<br/>（即将登录终端）\"] -->|内部自用测试| M_test[\"内部自用测试\"]\n    M_test -->|邀请开发者先行试用| M_trial[\"开发者先行试用\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 00:14], [BV1qPub6vE5v P1 00:21], [BV1qPub6vE5v P1 00:26], [BV1qPub6vE5v P1 00:30] -->\n\n## OpenAI Codex 付费额度与定价\n\n```mermaid\nflowchart LR\n    O[\"OpenAI Codex\"] --> P[\"付费额度重置功能\"]\n    P --> D[\"按订阅层级定价\"]\n    D -->|5~80美元| D_range[\"5~80美元\"]\n    D -->|未获官方确认| D_unc[\"官方未确认\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 00:37], [BV1qPub6vE5v P1 00:43], [BV1qPub6vE5v P1 00:46] -->\n\n## Anthropic CORE cable5 生物安全改进\n\n```mermaid\nflowchart TD\n    A[\"Anthropic CORE cable5\"] --> S[\"生物学安全防护机制升级\"]\n    S --> R[\"误报减少\"]\n    S --> B[\"模型回退率降低约85%\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 01:10], [BV1qPub6vE5v P1 01:13], [BV1qPub6vE5v P1 01:17] -->\n\n## Sophic Cloud Code 自托管公开测试\n\n```mermaid\nflowchart TD\n    C[\"Sophic Cloud Code\"] --> T[\"自托管环境公开测试\"]\n    T --> E[\"企业可在自有基础设施运行\"]\n    E --> F[\"面向 cod team 与 enterprise\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 01:21], [BV1qPub6vE5v P1 01:25], [BV1qPub6vE5v P1 01:29] -->\n\n## 千问 3.8max 与功能升级\n\n```mermaid\nflowchart LR\n    Q[\"千问 3.8max\"] --> F1[\"思考研究定时任务\"]\n    Q --> F2[\"办公助理\"]\n    Q --> V[\"语音通话能力升级\"]\n    Q --> A[\"智能体广场能力升级\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 01:35], [BV1qPub6vE5v P1 01:38], [BV1qPub6vE5v P1 01:42], [BV1qPub6vE5v P1 01:43] -->",
+      "diagrams": [
+        {
+          "title": "Gemini 3.7 Flash 与 MiniMax Code",
+          "code": "flowchart TD\n    G[\"Gemini 3.7 Flash<br/>（准备中）\"] -->|内部基础就绪| G_ready[\"内部基础就绪\"]\n    G_ready -->|预计很快发布| G_release[\"发布预期\"]\n    M[\"MiniMax Code<br/>（即将登录终端）\"] -->|内部自用测试| M_test[\"内部自用测试\"]\n    M_test -->|邀请开发者先行试用| M_trial[\"开发者先行试用\"]"
+        },
+        {
+          "title": "OpenAI Codex 付费额度与定价",
+          "code": "flowchart LR\n    O[\"OpenAI Codex\"] --> P[\"付费额度重置功能\"]\n    P --> D[\"按订阅层级定价\"]\n    D -->|5~80美元| D_range[\"5~80美元\"]\n    D -->|未获官方确认| D_unc[\"官方未确认\"]"
+        },
+        {
+          "title": "Anthropic CORE cable5 生物安全改进",
+          "code": "flowchart TD\n    A[\"Anthropic CORE cable5\"] --> S[\"生物学安全防护机制升级\"]\n    S --> R[\"误报减少\"]\n    S --> B[\"模型回退率降低约85%\"]"
+        },
+        {
+          "title": "Sophic Cloud Code 自托管公开测试",
+          "code": "flowchart TD\n    C[\"Sophic Cloud Code\"] --> T[\"自托管环境公开测试\"]\n    T --> E[\"企业可在自有基础设施运行\"]\n    E --> F[\"面向 cod team 与 enterprise\"]"
+        },
+        {
+          "title": "千问 3.8max 与功能升级",
+          "code": "flowchart LR\n    Q[\"千问 3.8max\"] --> F1[\"思考研究定时任务\"]\n    Q --> F2[\"办公助理\"]\n    Q --> V[\"语音通话能力升级\"]\n    Q --> A[\"智能体广场能力升级\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-08T16:00:17+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# AI日报资讯图谱\n\n## Gemini 3.7 Flash 与 MiniMax Code\n\n```mermaid\nflowchart TD\n    G[\"Gemini 3.7 Flash<br/>（准备中）\"] -->|内部基础就绪| G_ready[\"内部基础就绪\"]\n    G_ready -->|预计很快发布| G_release[\"发布预期\"]\n    M[\"MiniMax Code<br/>（即将登录终端）\"] -->|内部自用测试| M_test[\"内部自用测试\"]\n    M_test -->|邀请开发者先行试用| M_trial[\"开发者先行试用\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 00:14], [BV1qPub6vE5v P1 00:21], [BV1qPub6vE5v P1 00:26], [BV1qPub6vE5v P1 00:30] -->\n\n## OpenAI Codex 付费额度与定价\n\n```mermaid\nflowchart LR\n    O[\"OpenAI Codex\"] --> P[\"付费额度重置功能\"]\n    P --> D[\"按订阅层级定价\"]\n    D -->|5~80美元| D_range[\"5~80美元\"]\n    D -->|未获官方确认| D_unc[\"官方未确认\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 00:37], [BV1qPub6vE5v P1 00:43], [BV1qPub6vE5v P1 00:46] -->\n\n## Anthropic CORE cable5 生物安全改进\n\n```mermaid\nflowchart TD\n    A[\"Anthropic CORE cable5\"] --> S[\"生物学安全防护机制升级\"]\n    S --> R[\"误报减少\"]\n    S --> B[\"模型回退率降低约85%\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 01:10], [BV1qPub6vE5v P1 01:13], [BV1qPub6vE5v P1 01:17] -->\n\n## Sophic Cloud Code 自托管公开测试\n\n```mermaid\nflowchart TD\n    C[\"Sophic Cloud Code\"] --> T[\"自托管环境公开测试\"]\n    T --> E[\"企业可在自有基础设施运行\"]\n    E --> F[\"面向 cod team 与 enterprise\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 01:21], [BV1qPub6vE5v P1 01:25], [BV1qPub6vE5v P1 01:29] -->\n\n## 千问 3.8max 与功能升级\n\n```mermaid\nflowchart LR\n    Q[\"千问 3.8max\"] --> F1[\"思考研究定时任务\"]\n    Q --> F2[\"办公助理\"]\n    Q --> V[\"语音通话能力升级\"]\n    Q --> A[\"智能体广场能力升级\"]\n```\n<!-- Evidence: [BV1qPub6vE5v P1 01:35], [BV1qPub6vE5v P1 01:38], [BV1qPub6vE5v P1 01:42], [BV1qPub6vE5v P1 01:43] -->",
+  "diagrams": [
+    {
+      "title": "Gemini 3.7 Flash 与 MiniMax Code",
+      "code": "flowchart TD\n    G[\"Gemini 3.7 Flash<br/>（准备中）\"] -->|内部基础就绪| G_ready[\"内部基础就绪\"]\n    G_ready -->|预计很快发布| G_release[\"发布预期\"]\n    M[\"MiniMax Code<br/>（即将登录终端）\"] -->|内部自用测试| M_test[\"内部自用测试\"]\n    M_test -->|邀请开发者先行试用| M_trial[\"开发者先行试用\"]"
+    },
+    {
+      "title": "OpenAI Codex 付费额度与定价",
+      "code": "flowchart LR\n    O[\"OpenAI Codex\"] --> P[\"付费额度重置功能\"]\n    P --> D[\"按订阅层级定价\"]\n    D -->|5~80美元| D_range[\"5~80美元\"]\n    D -->|未获官方确认| D_unc[\"官方未确认\"]"
+    },
+    {
+      "title": "Anthropic CORE cable5 生物安全改进",
+      "code": "flowchart TD\n    A[\"Anthropic CORE cable5\"] --> S[\"生物学安全防护机制升级\"]\n    S --> R[\"误报减少\"]\n    S --> B[\"模型回退率降低约85%\"]"
+    },
+    {
+      "title": "Sophic Cloud Code 自托管公开测试",
+      "code": "flowchart TD\n    C[\"Sophic Cloud Code\"] --> T[\"自托管环境公开测试\"]\n    T --> E[\"企业可在自有基础设施运行\"]\n    E --> F[\"面向 cod team 与 enterprise\"]"
+    },
+    {
+      "title": "千问 3.8max 与功能升级",
+      "code": "flowchart LR\n    Q[\"千问 3.8max\"] --> F1[\"思考研究定时任务\"]\n    Q --> F2[\"办公助理\"]\n    Q --> V[\"语音通话能力升级\"]\n    Q --> A[\"智能体广场能力升级\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-08T16:00:17+00:00"
+}

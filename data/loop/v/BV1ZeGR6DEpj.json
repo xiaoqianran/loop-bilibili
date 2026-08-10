@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1ZeGR6DEpj",
+  "title": "世界杯来了！用Godot开发一款《热血足球》(完结)",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 354,
+  "text": "世界杯热度已经彻底爆炸了\n你真的不想亲手做一款属于自己的\n像素足球游戏吗\n像pixel cup soccer一样有氛围\n像热血足球一样爽快\n而这一次我会用good dota\n从零开始带你完整开发出来\n注意是完整课程\n而且完全免费\n你没听错\n欢迎来到爱在一毛钱频道\n整个课程永久免费开放\n不卖课\n不割韭菜\n更重要的是\n三连加关注即可免费领取\n商业级游戏素材和完整项目源码\n从角色移动足球\n物理传球射门到AI对抗门将逻辑\n再到像素动画比赛镜头\nUI系统\n球场氛围\n我都会一步步带你实现\n这不是那种只能看不能做的demo教程\n而是真正的完整项目实战开发\n你将学会如何制作一款真正有手感\n有节奏\n有街机味儿的足球游戏\n甚至继续扩展成属于自己的世界杯游戏\n完全免费\n完整项目全流程实战\n现在就关注下载资源\n我们正式开干",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ZeGR6DEpj",
+  "published_at": "1780049700",
+  "fetched_at": "2026-08-10T02:39:08+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 世界杯像素足球开发课程知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    N1[\"世界杯热度爆炸\"] --> N2[\"想做像素足球游戏\"]\n    N2 --> N3[\"参考 Pixel Cup Soccer 氛围\"]\n    N2 --> N4[\"参考 热血足球 爽快\"]\n    N2 --> N5[\"使用 good dota (识别存疑)\"]\n    N5 --> N6[\"完整免费课程\"]\n    N6 --> N7[\"频道：爱在一毛钱\"]\n    N6 --> N8[\"资源免费领取\"]\n```\n- 课程目标：制作像素足球游戏（[BV1ZeGR6DEpj P1 00:02-00:04]）  \n- 参考作品：Pixel Cup Soccer 氛围（[BV1ZeGR6DEpj P1 00:06]）与 热血足球 爽快（[BV1ZeGR6DEpj P1 00:13]）  \n- 使用工具：good dota（识别存疑）（[BV1ZeGR6DEpj P1 00:18-00:20]）  \n- 完整免费课程（[BV1ZeGR6DEpj P1 00:23-00:27]）  \n\n## 开发流程\n```mermaid\nflowchart TD\n    S1[\"角色移动实现\"] --> S2[\"物理传球与射门\"]\n    S2 --> S3[\"AI 门将逻辑\"]\n    S3 --> S4[\"像素动画比赛镜头\"]\n    S4 --> S5[\"UI 系统\"]\n    S5 --> S6[\"球场氛围\"]\n    S0[\"一步步指导实现\"] --> S1\n    S0 --> S2\n    S0 --> S3\n    S0 --> S4\n    S0 --> S5\n    S0 --> S6\n```\n- 角色移动（[BV1ZeGR6DEpj P1 00:39]）  \n- 物理传球射门（[BV1ZeGR6DEpj P1 00:40]）  \n- AI 门将逻辑（[BV1ZeGR6DEpj P1 00:40]）  \n- 像素动画比赛镜头（[BV1ZeGR6DEpj P1 00:44]）  \n- UI 系统（[BV1ZeGR6DEpj P1 00:46]）  \n- 球场氛围（[BV1ZeGR6DEpj P1 00:47]）  \n\n## 资源获取与使用\n```mermaid\nflowchart TD\n    R1[\"三连加关注\"] --> R2[\"免费商业级素材\"]\n    R1 --> R3[\"完整项目源码\"]\n    R4[\"永久开放\"] --> R5[\"不卖课\"]\n    R4 --> R6[\"不割韭菜\"]\n    R7[\"资源获取渠道\"] --> R1\n    R7 --> R4\n```\n- 三连关注可获商业级素材与源码（[BV1ZeGR6DEpj P1 00:34-00:36]）  \n- 课程永久免费、不开售（[BV1ZeGR6DEpj P1 00:30-00:34]）  \n\n## 学习成果与扩展\n```mermaid\nflowchart TD\n    L1[\"手感、节奏、街机味\"] --> L2[\"完整项目全流程实战\"]\n    L2 --> L3[\"可扩展为个人世界杯游戏\"]\n    L0[\"完全免费学习\"] --> L1\n    L0 --> L2\n```\n- 学会制作手感、节奏、街机味的足球游戏（[BV1ZeGR6DEpj P1 00:56-01:00]）  \n- 可进一步扩展为自己的世界杯游戏（[BV1ZeGR6DEpj P1 01:04]）。",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    N1[\"世界杯热度爆炸\"] --> N2[\"想做像素足球游戏\"]\n    N2 --> N3[\"参考 Pixel Cup Soccer 氛围\"]\n    N2 --> N4[\"参考 热血足球 爽快\"]\n    N2 --> N5[\"使用 good dota (识别存疑)\"]\n    N5 --> N6[\"完整免费课程\"]\n    N6 --> N7[\"频道：爱在一毛钱\"]\n    N6 --> N8[\"资源免费领取\"]"
+        },
+        {
+          "title": "开发流程",
+          "code": "flowchart TD\n    S1[\"角色移动实现\"] --> S2[\"物理传球与射门\"]\n    S2 --> S3[\"AI 门将逻辑\"]\n    S3 --> S4[\"像素动画比赛镜头\"]\n    S4 --> S5[\"UI 系统\"]\n    S5 --> S6[\"球场氛围\"]\n    S0[\"一步步指导实现\"] --> S1\n    S0 --> S2\n    S0 --> S3\n    S0 --> S4\n    S0 --> S5\n    S0 --> S6"
+        },
+        {
+          "title": "资源获取与使用",
+          "code": "flowchart TD\n    R1[\"三连加关注\"] --> R2[\"免费商业级素材\"]\n    R1 --> R3[\"完整项目源码\"]\n    R4[\"永久开放\"] --> R5[\"不卖课\"]\n    R4 --> R6[\"不割韭菜\"]\n    R7[\"资源获取渠道\"] --> R1\n    R7 --> R4"
+        },
+        {
+          "title": "学习成果与扩展",
+          "code": "flowchart TD\n    L1[\"手感、节奏、街机味\"] --> L2[\"完整项目全流程实战\"]\n    L2 --> L3[\"可扩展为个人世界杯游戏\"]\n    L0[\"完全免费学习\"] --> L1\n    L0 --> L2"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-10T02:42:39+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 世界杯像素足球开发课程知识图谱\n\n## 总览\n```mermaid\nflowchart TD\n    N1[\"世界杯热度爆炸\"] --> N2[\"想做像素足球游戏\"]\n    N2 --> N3[\"参考 Pixel Cup Soccer 氛围\"]\n    N2 --> N4[\"参考 热血足球 爽快\"]\n    N2 --> N5[\"使用 good dota (识别存疑)\"]\n    N5 --> N6[\"完整免费课程\"]\n    N6 --> N7[\"频道：爱在一毛钱\"]\n    N6 --> N8[\"资源免费领取\"]\n```\n- 课程目标：制作像素足球游戏（[BV1ZeGR6DEpj P1 00:02-00:04]）  \n- 参考作品：Pixel Cup Soccer 氛围（[BV1ZeGR6DEpj P1 00:06]）与 热血足球 爽快（[BV1ZeGR6DEpj P1 00:13]）  \n- 使用工具：good dota（识别存疑）（[BV1ZeGR6DEpj P1 00:18-00:20]）  \n- 完整免费课程（[BV1ZeGR6DEpj P1 00:23-00:27]）  \n\n## 开发流程\n```mermaid\nflowchart TD\n    S1[\"角色移动实现\"] --> S2[\"物理传球与射门\"]\n    S2 --> S3[\"AI 门将逻辑\"]\n    S3 --> S4[\"像素动画比赛镜头\"]\n    S4 --> S5[\"UI 系统\"]\n    S5 --> S6[\"球场氛围\"]\n    S0[\"一步步指导实现\"] --> S1\n    S0 --> S2\n    S0 --> S3\n    S0 --> S4\n    S0 --> S5\n    S0 --> S6\n```\n- 角色移动（[BV1ZeGR6DEpj P1 00:39]）  \n- 物理传球射门（[BV1ZeGR6DEpj P1 00:40]）  \n- AI 门将逻辑（[BV1ZeGR6DEpj P1 00:40]）  \n- 像素动画比赛镜头（[BV1ZeGR6DEpj P1 00:44]）  \n- UI 系统（[BV1ZeGR6DEpj P1 00:46]）  \n- 球场氛围（[BV1ZeGR6DEpj P1 00:47]）  \n\n## 资源获取与使用\n```mermaid\nflowchart TD\n    R1[\"三连加关注\"] --> R2[\"免费商业级素材\"]\n    R1 --> R3[\"完整项目源码\"]\n    R4[\"永久开放\"] --> R5[\"不卖课\"]\n    R4 --> R6[\"不割韭菜\"]\n    R7[\"资源获取渠道\"] --> R1\n    R7 --> R4\n```\n- 三连关注可获商业级素材与源码（[BV1ZeGR6DEpj P1 00:34-00:36]）  \n- 课程永久免费、不开售（[BV1ZeGR6DEpj P1 00:30-00:34]）  \n\n## 学习成果与扩展\n```mermaid\nflowchart TD\n    L1[\"手感、节奏、街机味\"] --> L2[\"完整项目全流程实战\"]\n    L2 --> L3[\"可扩展为个人世界杯游戏\"]\n    L0[\"完全免费学习\"] --> L1\n    L0 --> L2\n```\n- 学会制作手感、节奏、街机味的足球游戏（[BV1ZeGR6DEpj P1 00:56-01:00]）  \n- 可进一步扩展为自己的世界杯游戏（[BV1ZeGR6DEpj P1 01:04]）。",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    N1[\"世界杯热度爆炸\"] --> N2[\"想做像素足球游戏\"]\n    N2 --> N3[\"参考 Pixel Cup Soccer 氛围\"]\n    N2 --> N4[\"参考 热血足球 爽快\"]\n    N2 --> N5[\"使用 good dota (识别存疑)\"]\n    N5 --> N6[\"完整免费课程\"]\n    N6 --> N7[\"频道：爱在一毛钱\"]\n    N6 --> N8[\"资源免费领取\"]"
+    },
+    {
+      "title": "开发流程",
+      "code": "flowchart TD\n    S1[\"角色移动实现\"] --> S2[\"物理传球与射门\"]\n    S2 --> S3[\"AI 门将逻辑\"]\n    S3 --> S4[\"像素动画比赛镜头\"]\n    S4 --> S5[\"UI 系统\"]\n    S5 --> S6[\"球场氛围\"]\n    S0[\"一步步指导实现\"] --> S1\n    S0 --> S2\n    S0 --> S3\n    S0 --> S4\n    S0 --> S5\n    S0 --> S6"
+    },
+    {
+      "title": "资源获取与使用",
+      "code": "flowchart TD\n    R1[\"三连加关注\"] --> R2[\"免费商业级素材\"]\n    R1 --> R3[\"完整项目源码\"]\n    R4[\"永久开放\"] --> R5[\"不卖课\"]\n    R4 --> R6[\"不割韭菜\"]\n    R7[\"资源获取渠道\"] --> R1\n    R7 --> R4"
+    },
+    {
+      "title": "学习成果与扩展",
+      "code": "flowchart TD\n    L1[\"手感、节奏、街机味\"] --> L2[\"完整项目全流程实战\"]\n    L2 --> L3[\"可扩展为个人世界杯游戏\"]\n    L0[\"完全免费学习\"] --> L1\n    L0 --> L2"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T02:42:39+00:00"
+}

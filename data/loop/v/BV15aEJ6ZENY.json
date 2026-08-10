@@ -1,0 +1,66 @@
+{
+  "bvid": "BV15aEJ6ZENY",
+  "title": "利用社区内部VT调试器 干掉VMP TMD等强壳反调试【二进制软件逆向，游戏安全，软件安全，网络安全，CTF比赛必备基础，封包技术】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1367,
+  "text": "哈喽大家好\n我是小迪老师啊\n今天这个视频呢我们来演示一下\n利用社区内部VT调试器去干掉VMPTMD等强壳的反调试\n咱们用到这个工具呢\n就是软件逆向墙壳专用版\n咱们社区会员是免费用的啊\n如果说你加入这个会员都是免费用我们的所有的这个工具的啊\n包括我们这个文章啊\n大家都是免费看的啊\n工具所有的东西都免费啊\n那么现在呢是一个299\n那么过段时间呢可能就要499了\n所以说大家想学习的抓紧呃\n当然呃插一个题外话\n如果说大家有需要游戏驱动保护绕过的请联系\n如果说你去调试一些游戏的话\n那么这个软件逆向用的就不行了啊\n得单独去定制\n我们这边呢有单独的游戏定制版\n是以点卡的这个形式啊去销售给大家的\n可以联系啊\n到时候联系一下\n这是我的联系方式哈\n下面来演示一下啊\n呃我用的这个版本呢\n我看一下啊\n关于是这个VMP啊\n3.8.1这么一个版本还是比较新的一个版本哈\n然后呢这边啊调试器的一个检测模式啊\n我用的是user mode和KERMODE\n就是用户层和内核层\n就是顶层的那种反调试了\n好这个时候呢我们来编译一下\n稍等\n好OK那我们先来测试一下啊\n就是普通的这个调试器看一下会怎么样啊\n普通的调试器我们运行起来啊\n然后点击文件\n点击附加\n然后呢我们随便啊\n随便你就这个找一个关键的一个位置啊\n然后我们打个断点啊\n打断点之后呢\n点击登录\n看到没有进程直接就已停止了\n退出码是这么一个东西啊\n就就出错了\n看到没有\n那有同学说呃我可不可以去那个用这个插件呢\n嗯这个插件一般是大家用来过这个VIP的\n我们来试一下啊\n这个时候呢我也是把这个插件打开了\n好这个时候再附加\n然后呢找到这个断点啊\n好点登录还是闪退了\n看到没有程序闪退了啊\n然后呢整个这个代码你就看不到了对吧\n这就是一个反调试的一个效果\n所以说你就基本上是没有办法去直接切入的哈\n好你看这个调试器直接就卡死了一个状态哈\n包括这个东西啊\n它是怎么去实现的\n我们在内部视频都有讲解啊\n内部视频都有讲解啊\n这个东西都有讲解的\n我看一下在PE里边讲的\n在这在这讲哈哈\n在这看到没有\n在这一部分讲过了啊\n讲过了\n大家想学的可以自己去看一下哈\nOK那我们把这个实验程序呢发到这个虚拟机\n然后呢我先发最新的啊\n发最新的发过去来发过来\n然后保存到这个测试这个文件夹\n然后保存好保存过来了\n保存过来之后呢\n运行我们的这个调试器啊\n运行过来之后呢\n进入调试模式\n然后呢在这个调试器里边呢点一下启动调试器好\n这个时候呢我们就可以测试一下了\n然后呢看一下我们这个插件啊\n这个插件呢我们是什么都没有开的对吧\n然后点击文件\n点击附加附加过来\n然后呢我们也是去打断点哈\n登录成功\n登录失败\n大概在这个位置对吧\n嗯F2打一个断点对吧\n然后呢点击登录看到没有就断下来了\n那我们是可以一个正常的一个分析\n然后运行这边是message box a\n这之前我打了一个断点\nCTRLF9来信息框弹出来了啊\n然后F8CTRLF9F八看到没有\n正常的一个调试分析都是没有什么问题的\n他是可以过满血的这个反调试的啊\n那如果说大家想用这个工具\n想在逆向方面呢更省心更省事一点啊\n有一个老师跟着去学习\n跟着去实践的话\n那么可以考虑一下我们这边\n我们这边的都是永久学习\n永久答疑\n永久服务的好吧\n那么小迪老师呢今天就录制到这里了\n我们下期再见\n拜拜",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV15aEJ6ZENY",
+  "published_at": "1780753970",
+  "fetched_at": "2026-08-10T02:20:35+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# VT 调试器学习图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    VT_Debugger[\"VT 调试器\"] --> VMP_Version[\"VMP 3.8.1\"]\n    VT_Debugger --> Detection_Mode_User[\"User Mode 检测\"]\n    VT_Debugger --> Detection_Mode_Kernel[\"Kernel Mode 检测\"]\n    Detection_Mode_User --> AntiDebug_Terminate[\"进程终止\"]\n    Detection_Mode_Kernel --> AntiDebug_Crash[\"程序闪退\"]\n    AntiDebug_Terminate --> Plugin[\"插件 (VIP)\"]\n    Plugin --> Use_Case_Reverse[\"逆向分析\"]\n    Community_Member[\"社区会员\"] --> Free_Tools[\"免费工具\"]\n    Free_Tools --> VT_Debugger\n    Pricing[\"299 元 → 499 元\"] --> VT_Debugger\n    Game_Custom[\"游戏定制版\"] --> Use_Case_Game[\"游戏驱动保护\"]\n    Use_Case_Reverse --> Learning_Resources[\"内部视频、永久答疑\"]\n    Use_Case_Game --> Learning_Resources\n```\n\n## 反调试绕过流程\n\n```mermaid\nflowchart TD\n    Compile_Program[\"编译实验程序\"] --> Run_Normal_Debugger[\"运行普通调试器\"]\n    Run_Normal_Debugger --> Attach_Process[\"附加进程\"]\n    Attach_Process --> Set_Breakpoint[\"设置断点\"]\n    Set_Breakpoint --> Observe_Terminate[\"观察进程终止 / 退出码错误\"]\n    Observe_Terminate --> Bypass_Failure[\"未能绕过反调试\"]\n    Enable_Plugin[\"启用插件 (VIP)\"] --> Reattach[\"重新附加进程\"]\n    Reattach --> Set_Breakpoint2[\"再次设置断点\"]\n    Set_Breakpoint2 --> Observe_Crash[\"观察程序闪退\"]\n    Observe_Crash --> Bypass_Failure\n```\n\n## 学习路径\n\n```mermaid\nflowchart TD\n    Join_Membership[\"加入社区会员\"] --> Access_Tool[\"获取 VT 调试器\"]\n    Access_Tool --> Practice_Experiment[\"实践实验程序\"]\n    Access_Tool --> Study_Video[\"观看内部视频\"]\n    Study_Video --> Practice_Experiment\n    Practice_Experiment --> Ask_QA[\"永久答疑\"]\n    Ask_QA --> Master_AntiDebug[\"掌握反调试绕过\"]\n    Join_Membership --> Pricing_Info[\"了解定价 299→499\"]\n    Access_Tool --> Permanent_Service[\"永久服务\"]\n    Permanent_Service --> Master_AntiDebug\n```",
+      "diagrams": [
+        {
+          "title": "总览",
+          "code": "flowchart TD\n    VT_Debugger[\"VT 调试器\"] --> VMP_Version[\"VMP 3.8.1\"]\n    VT_Debugger --> Detection_Mode_User[\"User Mode 检测\"]\n    VT_Debugger --> Detection_Mode_Kernel[\"Kernel Mode 检测\"]\n    Detection_Mode_User --> AntiDebug_Terminate[\"进程终止\"]\n    Detection_Mode_Kernel --> AntiDebug_Crash[\"程序闪退\"]\n    AntiDebug_Terminate --> Plugin[\"插件 (VIP)\"]\n    Plugin --> Use_Case_Reverse[\"逆向分析\"]\n    Community_Member[\"社区会员\"] --> Free_Tools[\"免费工具\"]\n    Free_Tools --> VT_Debugger\n    Pricing[\"299 元 → 499 元\"] --> VT_Debugger\n    Game_Custom[\"游戏定制版\"] --> Use_Case_Game[\"游戏驱动保护\"]\n    Use_Case_Reverse --> Learning_Resources[\"内部视频、永久答疑\"]\n    Use_Case_Game --> Learning_Resources"
+        },
+        {
+          "title": "反调试绕过流程",
+          "code": "flowchart TD\n    Compile_Program[\"编译实验程序\"] --> Run_Normal_Debugger[\"运行普通调试器\"]\n    Run_Normal_Debugger --> Attach_Process[\"附加进程\"]\n    Attach_Process --> Set_Breakpoint[\"设置断点\"]\n    Set_Breakpoint --> Observe_Terminate[\"观察进程终止 / 退出码错误\"]\n    Observe_Terminate --> Bypass_Failure[\"未能绕过反调试\"]\n    Enable_Plugin[\"启用插件 (VIP)\"] --> Reattach[\"重新附加进程\"]\n    Reattach --> Set_Breakpoint2[\"再次设置断点\"]\n    Set_Breakpoint2 --> Observe_Crash[\"观察程序闪退\"]\n    Observe_Crash --> Bypass_Failure"
+        },
+        {
+          "title": "学习路径",
+          "code": "flowchart TD\n    Join_Membership[\"加入社区会员\"] --> Access_Tool[\"获取 VT 调试器\"]\n    Access_Tool --> Practice_Experiment[\"实践实验程序\"]\n    Access_Tool --> Study_Video[\"观看内部视频\"]\n    Study_Video --> Practice_Experiment\n    Practice_Experiment --> Ask_QA[\"永久答疑\"]\n    Ask_QA --> Master_AntiDebug[\"掌握反调试绕过\"]\n    Join_Membership --> Pricing_Info[\"了解定价 299→499\"]\n    Access_Tool --> Permanent_Service[\"永久服务\"]\n    Permanent_Service --> Master_AntiDebug"
+        }
+      ],
+      "diagram_count": 3,
+      "error": "",
+      "updated_at": "2026-08-10T02:28:23+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 3
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# VT 调试器学习图谱\n\n## 总览\n\n```mermaid\nflowchart TD\n    VT_Debugger[\"VT 调试器\"] --> VMP_Version[\"VMP 3.8.1\"]\n    VT_Debugger --> Detection_Mode_User[\"User Mode 检测\"]\n    VT_Debugger --> Detection_Mode_Kernel[\"Kernel Mode 检测\"]\n    Detection_Mode_User --> AntiDebug_Terminate[\"进程终止\"]\n    Detection_Mode_Kernel --> AntiDebug_Crash[\"程序闪退\"]\n    AntiDebug_Terminate --> Plugin[\"插件 (VIP)\"]\n    Plugin --> Use_Case_Reverse[\"逆向分析\"]\n    Community_Member[\"社区会员\"] --> Free_Tools[\"免费工具\"]\n    Free_Tools --> VT_Debugger\n    Pricing[\"299 元 → 499 元\"] --> VT_Debugger\n    Game_Custom[\"游戏定制版\"] --> Use_Case_Game[\"游戏驱动保护\"]\n    Use_Case_Reverse --> Learning_Resources[\"内部视频、永久答疑\"]\n    Use_Case_Game --> Learning_Resources\n```\n\n## 反调试绕过流程\n\n```mermaid\nflowchart TD\n    Compile_Program[\"编译实验程序\"] --> Run_Normal_Debugger[\"运行普通调试器\"]\n    Run_Normal_Debugger --> Attach_Process[\"附加进程\"]\n    Attach_Process --> Set_Breakpoint[\"设置断点\"]\n    Set_Breakpoint --> Observe_Terminate[\"观察进程终止 / 退出码错误\"]\n    Observe_Terminate --> Bypass_Failure[\"未能绕过反调试\"]\n    Enable_Plugin[\"启用插件 (VIP)\"] --> Reattach[\"重新附加进程\"]\n    Reattach --> Set_Breakpoint2[\"再次设置断点\"]\n    Set_Breakpoint2 --> Observe_Crash[\"观察程序闪退\"]\n    Observe_Crash --> Bypass_Failure\n```\n\n## 学习路径\n\n```mermaid\nflowchart TD\n    Join_Membership[\"加入社区会员\"] --> Access_Tool[\"获取 VT 调试器\"]\n    Access_Tool --> Practice_Experiment[\"实践实验程序\"]\n    Access_Tool --> Study_Video[\"观看内部视频\"]\n    Study_Video --> Practice_Experiment\n    Practice_Experiment --> Ask_QA[\"永久答疑\"]\n    Ask_QA --> Master_AntiDebug[\"掌握反调试绕过\"]\n    Join_Membership --> Pricing_Info[\"了解定价 299→499\"]\n    Access_Tool --> Permanent_Service[\"永久服务\"]\n    Permanent_Service --> Master_AntiDebug\n```",
+  "diagrams": [
+    {
+      "title": "总览",
+      "code": "flowchart TD\n    VT_Debugger[\"VT 调试器\"] --> VMP_Version[\"VMP 3.8.1\"]\n    VT_Debugger --> Detection_Mode_User[\"User Mode 检测\"]\n    VT_Debugger --> Detection_Mode_Kernel[\"Kernel Mode 检测\"]\n    Detection_Mode_User --> AntiDebug_Terminate[\"进程终止\"]\n    Detection_Mode_Kernel --> AntiDebug_Crash[\"程序闪退\"]\n    AntiDebug_Terminate --> Plugin[\"插件 (VIP)\"]\n    Plugin --> Use_Case_Reverse[\"逆向分析\"]\n    Community_Member[\"社区会员\"] --> Free_Tools[\"免费工具\"]\n    Free_Tools --> VT_Debugger\n    Pricing[\"299 元 → 499 元\"] --> VT_Debugger\n    Game_Custom[\"游戏定制版\"] --> Use_Case_Game[\"游戏驱动保护\"]\n    Use_Case_Reverse --> Learning_Resources[\"内部视频、永久答疑\"]\n    Use_Case_Game --> Learning_Resources"
+    },
+    {
+      "title": "反调试绕过流程",
+      "code": "flowchart TD\n    Compile_Program[\"编译实验程序\"] --> Run_Normal_Debugger[\"运行普通调试器\"]\n    Run_Normal_Debugger --> Attach_Process[\"附加进程\"]\n    Attach_Process --> Set_Breakpoint[\"设置断点\"]\n    Set_Breakpoint --> Observe_Terminate[\"观察进程终止 / 退出码错误\"]\n    Observe_Terminate --> Bypass_Failure[\"未能绕过反调试\"]\n    Enable_Plugin[\"启用插件 (VIP)\"] --> Reattach[\"重新附加进程\"]\n    Reattach --> Set_Breakpoint2[\"再次设置断点\"]\n    Set_Breakpoint2 --> Observe_Crash[\"观察程序闪退\"]\n    Observe_Crash --> Bypass_Failure"
+    },
+    {
+      "title": "学习路径",
+      "code": "flowchart TD\n    Join_Membership[\"加入社区会员\"] --> Access_Tool[\"获取 VT 调试器\"]\n    Access_Tool --> Practice_Experiment[\"实践实验程序\"]\n    Access_Tool --> Study_Video[\"观看内部视频\"]\n    Study_Video --> Practice_Experiment\n    Practice_Experiment --> Ask_QA[\"永久答疑\"]\n    Ask_QA --> Master_AntiDebug[\"掌握反调试绕过\"]\n    Join_Membership --> Pricing_Info[\"了解定价 299→499\"]\n    Access_Tool --> Permanent_Service[\"永久服务\"]\n    Permanent_Service --> Master_AntiDebug"
+    }
+  ],
+  "diagram_count": 3,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-10T02:28:23+00:00"
+}

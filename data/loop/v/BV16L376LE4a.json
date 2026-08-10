@@ -1,0 +1,40 @@
+{
+  "bvid": "BV16L376LE4a",
+  "title": "让AI直接操作godot开发游戏，godot cli发布，预期节省80%token！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 378,
+  "text": "嘎斗NC p native le\n1.0.8正式发布\n这一次我们带来了全新的GDMCPCLI\n获取vi往往需要一次加载全部MCP工具\n定义工具越多\n上下文越拥挤\n真正需要的操作反而更难找到\n现在JDMCP通过渐进式发现\n只查询当前任务需要的工具场景节点脚本资源\n运行和调试都有直接可用的领域命令\n总共33个常用命令\n让AI更快找到正确入口\n你可以用行数字段和数深度参数\n精确控制返回内容\n减少无关信息删除和批量修改等破坏性操作\n必须显示使用确认参数\n避免误操作\n安装同样简单\n打开GTO的MCP面板\n进入COI工具\n点击安装COI插件\n会从GITHUBLIYY下载对应平台的软件包\n并安装到项目的g d NC p beam目录\n不会修改系统path升级\nGADO按cp native f v1.0.8\n用更少的上下文\n更快的发现工具\n更安全的执行GTO操作",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV16L376LE4a",
+  "published_at": "1785043846",
+  "fetched_at": "2026-08-08T17:11:43+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "updated_at": "2026-08-08T17:25:42+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "network error: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+  "analysis_updated_at": "2026-08-08T17:25:42+00:00"
+}

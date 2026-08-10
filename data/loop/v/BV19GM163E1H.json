@@ -1,0 +1,26 @@
+{
+  "bvid": "BV19GM163E1H",
+  "title": "✨告别第三方中转！实测 DeepSeek-V4-Flash 对接 Codex 真实效果⚙️",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 1817,
+  "text": "2026年7月31日\ndeep seek官方正式官宣\ndeep seek v4flash正式版全面开放API公测\n这次更新很有特点\n模型架构参数规模都没有改动\n仅仅依靠专项后训练优化\n就带来了能力上的明显突破\n能力提升最直观的体现就是A证水平大幅跃升\n多项智能体代码工程基准测试成绩\n已经超越此前的V4pro预览版\n自主执行任务工程落地的实力得到显著增强\n物质模型本身能力变强\n在开发适配层面同样迎来关键升级\n新版本原生支持open air responses API规范\n官方还针对codex做了专属优化\n之前旧版deep seek只支持老式对话接口\n但codex底层依赖responses API进行通信\n两套协议格式不互通\n想要对接就必须额外安装第三方工具\n做协议转换步骤繁琐\n还容易出现代码调用报错\n上下文丢失\n而这次vs flash原生兼容\n这套新一代API还专门针对codex做专属优化\n协议完全匹配\n不再需要任何中转代理\ndeep sk可以直接直连codex流畅运行\n自动化代码工作流\n这里也要提醒大家\n本次升级仅面向flash API生效\n网页端\napp端暂时还没有同步更新\n官方同时预告\nvs pro正式版API后续即将上线\n对于开发者来说\n还有一个利好模型调用方式保持不变\n继续沿用原有模型名称\n大家能够无缝迁移\n实现零成本升级\n今天重点给大家更新一套\ndeep seek官方推荐的codex接入方案\n大家提前做好三项必备准备工作\n首先需要安装好codex CLI或者CHEGT桌面端\n且至少启动运行一次\n让系统自动生成codex配置目录\n同时要确认本地codex版本\n不低于0.144.0\n最后登录deep sick开放平台\n在API密钥页面申领一个SK开头的专属API key\n准备工作就完成了\n准备工作完成后\n我们直接用官方一键脚本配置\n比手动改配置文件更安全更规范\n自动备份原有数据不会出错\n我现在演示windows版本完整实操\n打开power shell\n输入官方专属配置脚本回车\n运行脚本后会弹出操作菜单\n我们直接选择数字一绑定deep sick杠V4flash模型\n首次运行会提示输入刚刚申请的API key\n如果提前配置好了deep sick API key\n环境变量\n系统会自动跳过这一步\n无需手动输入对应的Mac os和LINUX版本\n大家可以前往官方文档自行复制使用即可\n视频里就不重复实操了\n如果后续想要切回默认原始配置\n大家再次运行这套脚本\n选择菜单三就能一键还原全程操作简单安全\n可回溯\n脚本运行完毕后\n整套接入配置就全部完成了\n我们重启codex CLI或者cheat g p t桌面端\n重启之后\n软件右下角会直接显示deep sick\n可以先做个简单的连通性测试\n直接在对话框输入hi\n只要模型正常返回回复内容\n就代表接口连通正常\n可以正常使用全部能力了\n接入完成后\n我们实测deep sick vc flash升级后的核心能力\n我直接给codex的一条完整的工程需求\n不用拆分多条命令\n一次性完成\n创建漏洞代码审计重构生成报告四件事\n大家可以看一下这条指令逻辑很复杂\n先要新建带安全漏洞的接口文件\n再读取本地源码扫描隐患\n接着重构输出修复代码\n最后自动生成整改说明文档\n涉及多次本地文件读写\n非常考验模型的A证的调度能力\n可以看到任务完成后\n目录里自动多出了三份文件\n带漏洞的原始接口文件\n优化修复后的规范代码\n还有完整的整改报告\n我们打开整改报告\n看一下整改报告中\n每一处漏洞都标注清楚风险是什么\n会造成什么后果\n以及对应的优化思路\n后续团队开发自查都能直接用上\n同样一条多文件多步骤的复合指令\n新版V4flash可以一次性完整跑完所有流程\n这也是这次版本更新最直观的提升\n通过前面完整的接入演示\n以及代码工程实操演示就能发现\n本次deep sick vs flash升级核心解决了两大痛点\n一是以往对接codex配置繁琐\n兼容报错频发\n现在依托原生协议支持\n可直接联通\n无需额外中转工具\n二是处理多文件工程任务时\n逻辑断裂\n输出残缺的短板\n新版本对此做了大幅优化改善\n不管是日常开发\n写业务接口\n排查代码漏洞\n批量重构项目都能一气呵成\n不用拆分复杂指令\n反复调试\n大幅提升开发效率\nwindows Mac os linux都有对应的配置脚本\n大家直接去官方文档复制就能上手操作",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV19GM163E1H",
+  "published_at": "1785927600",
+  "fetched_at": "2026-08-08T19:28:56+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

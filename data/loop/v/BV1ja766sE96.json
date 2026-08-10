@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1ja766sE96",
+  "title": "1万装机跑35B模型，RTX3090 与 V100 选谁？",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 649,
+  "text": "大家好\n我是根骨啊\n群里有小伙伴问我\n他只有1万元的预算\n但是呢\n他又想运行35B的这样一个大模型啊\n问我怎么配置好啊\n他也也是比较懂行的\n他大概给了两套配置啊\n其实核心差异就是显卡\n一个是V100的显卡\n一个是RTX3090这个显卡啊\nV100显卡是那个32G的吧\n呃32G的这个显存是吧\n然后RTX90的是24G的这样一个显存\n问哪个更优啊\n大概这个都是在万元以内啊\n整机然后我先说结论\n一定要选RTX2090\n这个24G的显存的显卡\n不要去选V100\n如果是二选一的话\n一定要选RTAX3090啊\n不是说V100不好啊\nV100也是能跑的\n但是3090更强一些\n为什么呢\n第一RT x sensor CORE远强于V100\n为什么呢\n他是第三代的伸手扣啊\n那个V100是第一代\n这个就差了两个代几个数量级\n所以说这反应那个token每秒呢\n大概会相差十个token左右\n第二的话\n他的那个库塔技术的那个支持的\n新特性会更多一些啊\n3090这个差距还不那么大\n那第三个差距就是他对那个呃\n推理框架的支持啊\nRTX3090应该更好一些\n我们用的三套比较比较常用的框架\n什么欧拉玛拉玛\n还有lm studio这些大模型框架\nRTX3090支持的更好一些\n所以说你选来选去还是要选RTX3090啊\nRTX3090还可以是吧\n玩玩游戏\n3D游戏是没问题的\nV1版是3D游戏肯定跑不起来是吧\n你想要那个稳定的运行\n为什么呢\n因为它第一不支持光追\n第二不支持DDL深度学习\n所以说你现在是无脑就选3090吧",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ja766sE96",
+  "published_at": "1780642119",
+  "fetched_at": "2026-08-09T22:48:48+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# 1万装机跑35B模型 GPU 选型图谱\n\n## 总体决策概览\n```mermaid\nflowchart LR\nB[\"预算≈1万元\"] --> M[\"目标模型：35B\"]\nM --> O1[\"选项1：V100 32GB\"]\nM --> O2[\"选项2：RTX3090 24GB\"]\nO1 -->|不推荐| R[\"推荐：RTX3090\"]\nO2 -->|推荐| R\nR --> R1[\"性能更强\"]\nR --> R2[\"新特性支持更多\"]\nR --> R3[\"框架兼容更好\"]\nR --> R4[\"可兼作游戏机\"]\n```\n<!-- Evidence: [BV1ja766sE96 P1 00:26] -->\n\n## 性能比较\n```mermaid\nflowchart LR\nC1[\"RTX3090 核心（第3代）\"] --> G[\"代际差距：第3代 vs 第1代\"]\nG --> P[\"每秒 token 处理量 ↑约10\"]\nC2[\"V100 核心（第1代）\"] -->|较弱| P\nP -->|结果| Perf[\"RTX3090 性能更佳\"]\n```\n<!-- Evidence: [BV1ja766sE96 P1 00:39] [BV1ja766sE96 P1 00:51] -->\n\n## 特性与框架支持\n```mermaid\nflowchart LR\nF1[\"RTX3090 支持新 CUDA 特性\"] --> F2[\"更多新特性\"]\nF2 --> Comp[\"框架兼容性提升\"]\nComp --> FW[\"支持：Ollama、LM Studio 等\"]\nV[\"V100 支持的特性较旧\"] -->|较少| FW\n```\n<!-- Evidence: [BV1ja766sE96 P1 00:54] [BV1ja766sE96 P1 01:00] -->\n\n## 额外使用场景\n```mermaid\nflowchart LR\nG1[\"RTX3090 支持光线追踪\"] --> G2[\"支持 DLSS（深度学习超采样）\"]\nG2 --> G3[\"可流畅运行 3D 游戏\"]\nV1[\"V100 不支持光线追踪\"] --> V2[\"不支持 DLSS\"]\nV2 --> V3[\"3D 游戏表现差\"]\n```\n<!-- Evidence: [BV1ja766sE96 P1 01:20] [BV1ja766sE96 P1 01:25] -->",
+      "diagrams": [
+        {
+          "title": "总体决策概览",
+          "code": "flowchart LR\nB[\"预算≈1万元\"] --> M[\"目标模型：35B\"]\nM --> O1[\"选项1：V100 32GB\"]\nM --> O2[\"选项2：RTX3090 24GB\"]\nO1 -->|不推荐| R[\"推荐：RTX3090\"]\nO2 -->|推荐| R\nR --> R1[\"性能更强\"]\nR --> R2[\"新特性支持更多\"]\nR --> R3[\"框架兼容更好\"]\nR --> R4[\"可兼作游戏机\"]"
+        },
+        {
+          "title": "性能比较",
+          "code": "flowchart LR\nC1[\"RTX3090 核心（第3代）\"] --> G[\"代际差距：第3代 vs 第1代\"]\nG --> P[\"每秒 token 处理量 ↑约10\"]\nC2[\"V100 核心（第1代）\"] -->|较弱| P\nP -->|结果| Perf[\"RTX3090 性能更佳\"]"
+        },
+        {
+          "title": "特性与框架支持",
+          "code": "flowchart LR\nF1[\"RTX3090 支持新 CUDA 特性\"] --> F2[\"更多新特性\"]\nF2 --> Comp[\"框架兼容性提升\"]\nComp --> FW[\"支持：Ollama、LM Studio 等\"]\nV[\"V100 支持的特性较旧\"] -->|较少| FW"
+        },
+        {
+          "title": "额外使用场景",
+          "code": "flowchart LR\nG1[\"RTX3090 支持光线追踪\"] --> G2[\"支持 DLSS（深度学习超采样）\"]\nG2 --> G3[\"可流畅运行 3D 游戏\"]\nV1[\"V100 不支持光线追踪\"] --> V2[\"不支持 DLSS\"]\nV2 --> V3[\"3D 游戏表现差\"]"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T22:49:43+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# 1万装机跑35B模型 GPU 选型图谱\n\n## 总体决策概览\n```mermaid\nflowchart LR\nB[\"预算≈1万元\"] --> M[\"目标模型：35B\"]\nM --> O1[\"选项1：V100 32GB\"]\nM --> O2[\"选项2：RTX3090 24GB\"]\nO1 -->|不推荐| R[\"推荐：RTX3090\"]\nO2 -->|推荐| R\nR --> R1[\"性能更强\"]\nR --> R2[\"新特性支持更多\"]\nR --> R3[\"框架兼容更好\"]\nR --> R4[\"可兼作游戏机\"]\n```\n<!-- Evidence: [BV1ja766sE96 P1 00:26] -->\n\n## 性能比较\n```mermaid\nflowchart LR\nC1[\"RTX3090 核心（第3代）\"] --> G[\"代际差距：第3代 vs 第1代\"]\nG --> P[\"每秒 token 处理量 ↑约10\"]\nC2[\"V100 核心（第1代）\"] -->|较弱| P\nP -->|结果| Perf[\"RTX3090 性能更佳\"]\n```\n<!-- Evidence: [BV1ja766sE96 P1 00:39] [BV1ja766sE96 P1 00:51] -->\n\n## 特性与框架支持\n```mermaid\nflowchart LR\nF1[\"RTX3090 支持新 CUDA 特性\"] --> F2[\"更多新特性\"]\nF2 --> Comp[\"框架兼容性提升\"]\nComp --> FW[\"支持：Ollama、LM Studio 等\"]\nV[\"V100 支持的特性较旧\"] -->|较少| FW\n```\n<!-- Evidence: [BV1ja766sE96 P1 00:54] [BV1ja766sE96 P1 01:00] -->\n\n## 额外使用场景\n```mermaid\nflowchart LR\nG1[\"RTX3090 支持光线追踪\"] --> G2[\"支持 DLSS（深度学习超采样）\"]\nG2 --> G3[\"可流畅运行 3D 游戏\"]\nV1[\"V100 不支持光线追踪\"] --> V2[\"不支持 DLSS\"]\nV2 --> V3[\"3D 游戏表现差\"]\n```\n<!-- Evidence: [BV1ja766sE96 P1 01:20] [BV1ja766sE96 P1 01:25] -->",
+  "diagrams": [
+    {
+      "title": "总体决策概览",
+      "code": "flowchart LR\nB[\"预算≈1万元\"] --> M[\"目标模型：35B\"]\nM --> O1[\"选项1：V100 32GB\"]\nM --> O2[\"选项2：RTX3090 24GB\"]\nO1 -->|不推荐| R[\"推荐：RTX3090\"]\nO2 -->|推荐| R\nR --> R1[\"性能更强\"]\nR --> R2[\"新特性支持更多\"]\nR --> R3[\"框架兼容更好\"]\nR --> R4[\"可兼作游戏机\"]"
+    },
+    {
+      "title": "性能比较",
+      "code": "flowchart LR\nC1[\"RTX3090 核心（第3代）\"] --> G[\"代际差距：第3代 vs 第1代\"]\nG --> P[\"每秒 token 处理量 ↑约10\"]\nC2[\"V100 核心（第1代）\"] -->|较弱| P\nP -->|结果| Perf[\"RTX3090 性能更佳\"]"
+    },
+    {
+      "title": "特性与框架支持",
+      "code": "flowchart LR\nF1[\"RTX3090 支持新 CUDA 特性\"] --> F2[\"更多新特性\"]\nF2 --> Comp[\"框架兼容性提升\"]\nComp --> FW[\"支持：Ollama、LM Studio 等\"]\nV[\"V100 支持的特性较旧\"] -->|较少| FW"
+    },
+    {
+      "title": "额外使用场景",
+      "code": "flowchart LR\nG1[\"RTX3090 支持光线追踪\"] --> G2[\"支持 DLSS（深度学习超采样）\"]\nG2 --> G3[\"可流畅运行 3D 游戏\"]\nV1[\"V100 不支持光线追踪\"] --> V2[\"不支持 DLSS\"]\nV2 --> V3[\"3D 游戏表现差\"]"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T22:49:43+00:00"
+}

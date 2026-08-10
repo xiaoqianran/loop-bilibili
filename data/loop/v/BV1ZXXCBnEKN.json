@@ -1,0 +1,82 @@
+{
+  "bvid": "BV1ZXXCBnEKN",
+  "title": "12 分钟掌握最强 AI Agent：Claude Code",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 5172,
+  "text": "截至今天\n全世界只有0.04%的人真正把AI用到了生产力\n场景\n不只是聊天\n回答问题\n而是让他替你干活\n这个视频讲的就是这0.04%的人在用的工具\nClock co\n你可能觉得这东西是给程序员用的\n但其实你不需要写任何代码\n它的名字里虽然带一个code\n但它本质上是一个通用的AI agent\n几乎可以操作你电脑上的一切\n如果你看到这张来自ANTHROPIC的图\n你会发现在管理商业金融\n计算机这些领域\nAI将能够替代几乎全部的人类劳动\n我先用它几分钟就能搞定\n过去几个小时才能完成的工作\n把自己从大量的重复性劳动里彻底解放了出来\n一个人加上CLO\n可以做出过去需要一个团队才能完成的商业产出\n今天我们就做一件事\n带你从0~1彻底上手clock code\n即使你没有任何的技术背景\n也能轻松搞定\n我们先从最基础的内容讲起\n会分成三个部分\n第一我们用最简单的方法安装好cloud code\n第二我们从零上手去熟悉它的界面\n第三我会带你用它完成一个真实的商业任务\n比如说做一个可视化的商业数据分析系统\nOK让我们直接开始\n我知道你们很多人不想去理解复杂的CALLCODE官方文档\n也不想去理解命令行这种技术工具\n所以我今天介绍一个最简单最新手友好的方法\n就是你甚至不用亲自去装\n而是直接让agent来帮你搞定\n现在很多agent的智能程度啊\n完全可以胜任软件安装这种基本任务\n我们就直接下载一个免费的agent\n比如train\n下载完成之后\n我们直接把官方文档的链接贴给他\n说\n请你参考文档中的方法帮我安装好cloud code\n中间遇到任何错误或问题\n请你自己查资料去解决\n这里它提示我们要先打开一个文件夹\n我们照他说的做\n我们可以直接新建一个文件夹\n就叫做cloud code安装\n很快他就开始思考\n并且自主的完成任务\n这个过程当中啊\n他可能会跳出各种对话框来让你批准权限\n我们直接运行就好\n大概过了10分钟\nagent就自主地完成了所有的安装步骤\n接下来我们要给cloud code找一个办公室\n他的办公室可以是命令行集成开发环境\nIDEE独立app网页端等等\n但是最简单最实用的一种就是在vs code这种集成开发环境之下\n去使用cloud code\n我们直接去搜索引擎找到vs code官网\n我们直接点官方下载链接\n打开之后你就能看到这样的欢迎页面\n首先你可以把语言改成中文\n我们点击左边的应用图标\n就像应用商店一样\n你可以直接搜索中文语言包\n点击安装\n然后重启vs code就可以\n然后我们再次点击左边的应用图标\n搜索cloud code\n我们可以看到有一个插件叫做cloud code\nFor vs code\n直接一键安装\n然后它会出现在这里\n我们直接点击就会跳转到这样的登录界面\nclub code可以简单理解成能遵循指令\n调用工具自动工作的一双手\n大语言模型就是他的大脑\n那这一步就是在选择我们为它接入什么样的大脑\n如果你有CD模型的官方订阅\n你可以直接登录\n但是在国内呢使用官方订阅会非常高频的遇到各类网络和账号的问题\n所以我们有两种方案\n第一是通过API去间接接入海外的官方模型\nAPI的全称是application programming interface\n就是官方提供的调用接口\n你可以绕开网页界面\n通过它直接去和大语言模型收发消息\n第二就是使用国内的模型\n比如deep sick girm或者mini max\n那为了最大化工作效率\n我建议大家还是用API去接cloud的官方模型来去体验满血版cloud code的能力\n要接AAPI\n我们要先找到一个API的提供商\n这里我用的是o fox\n大家也可以选open router或者是其他API的服务商\n如果你想接国内的模型呢\n也可以考虑在这一步选择国内模型的API\n我们注册o fox账号之后啊\n先充钱\n然后找到它的API key管理页面\n创建一个新的key\n比如叫for clocal test\n然后复制一下这里的key啊\n相当于你的密码不要公开泄露\n创建好之后\n我们先不要关闭这个页面\n当然如果你一不小心已经关了\n可以再新建一个key\n然后为了方便我们把AAPI配置好啊\n我们可以下载一个API管理工具\n叫做cc switch\n我们进入它的GITHUB主页\n在release这里找到最新版本适合你系统的安装包\n然后下载安装\n装好之后\n我们打开cc switch\n点击右上角添加服务商\n这里没有o fox\n所以选择自定义\n这时候我们把刚才的API key复制过来粘贴到这里\n然后这里的请求地址也需要填\n它一般会在API服务商的开发文档里\n我们直接复制粘贴就好\n这里注意\n因为我们接的是cloud官方模型\n所以我们这里要选择anthropic native的节点\n最后我们填一下供应商的名称\n比如就叫o fox test\n然后添加我们点击这个小药水按钮\n测试一下是不是可用\nOK大功告成\n我们启用这个API\n然后重启vs code\n出现这样的聊天框\n你就可以正常使用了\n你可以在这里跟他打个招呼\n问问他\n你接的是什么模型\n看看能不能正常回复\n如果你在配置过程中啊\n遇到了任何问题\n你可以随时向刚才待命的tree请教\n或者你单独开一个对话框\n比如豆包的专家模式或者是GEMINI\n如果你有任何的报错或者疑问\n你可以直接截图或者复制错误信息\n直接粘贴过来问他们\n基本上都能解决\n在vs code里啊\n我们需要指定一个项目文件夹开始工作\n我桌面上呢已经有了一些自己搭的项目\n我就用一个常见的场景来帮大家实际走完应用的流程\n大家无论是做业务决策还是工作汇报\n数据分析和可视化\n以及如何基于数据做业务判断都是很常见的\n那今天我带大家用clock code做一个专业的商业数据分析和可视化项目\n我们新建一个文件夹\n就叫数据可视化演示\n然后我们把cloud code召唤出来\n可以先观察一下现在的工作环境\n左边是文件区\n我们会在这里搭建项目\n包括系统提示词\n工作流\n工具文档等等\n你可以把关于你所做事情的一切都放在这里\n中间是预览区\n你待会儿就可以在这里打开你的文件\n右边是你和agent的协作区\n我们在这里和CLO对话\n和他一起工作\n让他帮我们规划和执行\n所以简单来说\n左边是文件\n中间是预览\n右边是智能体\n这样的工作方式是比较有条理\n干净整洁的\n我们要做的第一件事就是给cloud code一个系统提示词\n这个是每次开启一个新项目的时候\n你都应该做的第一件事\n那这个系统提示词叫做cloud点MD\nMD就是markdown的缩写\n它是一种文本格式\n类似于TXT\n如果没有cloud点MD这个系统提示词\n就好比你有一个聪明的新员工\n但是他没有任何的背景信息和入职培训\n所以只能给你一个泛泛的输出\n如果有了这个系统提示词\nco在每次工作之前都会优先去读cloud md这个文件\n然后把它放在自己的工作记忆里\ncloud md具体怎么写\n需要根据你做的项目来决定\n我一般会在这里用比较简洁的方式说清楚\n希望cloud code去遵循什么样的方式来工作\n我们在项目空间里直接创建一个cloud点MD的文件\n把我们针对这个项目的系统提示词复制进来\n这里就引出我们的工作框架\n我把它叫做playbook and script框架\n大多数人用cloud code就像用一个更聪明的搜索引擎\n直接发条消息让他帮忙\n那这样用的输出是很随机的\n这个playbook和script框架就可以让agent像真正的员工一样\n按流程有记录的去工作\n这套框架的核心结构是很简单的\n我们给cloud code下达指示之后\n他会去规划如何去达成目标的playbook\n包括流程\n操作步骤等等\n那执行过程当中呢\n他会去调用各种脚本\nscript去完成具体的动作\n比如说把数据变成折线图\n生成一份报告等等\n那这个系统啊同时还内置了纠错反馈循环\n出现问题的时候\nagent先走内循环去自主排查和修复\n并且重新测试\n然后更新playbook和script\n以避免重复犯错\n如果A证搞不定呢\n会走人工干预的外循环\n这套架构的设计逻辑是让agent去负责判断和规划\n让script负责确定性的执行\n两者分工明确\n纯靠agent自由发挥呢\n结果往往不稳定\n如果纯靠脚本写死流程又会非常僵硬\n那playbook和script框架就是在两个极端之间去找平衡的过程\n兼顾灵活性和确定性\n这个在生产环境下是非常重要的\n我们直接告诉cloud code\nHey cloud\n请根据cloud点MD文件初始化这个项目发送之后啊\nCLOCKO会告诉你他在想什么\n在做什么\n我们可以看到左边已经开始出现文件和文件夹了\n项目初始化完成之后\n我们直接输入clear清空对话\n如果想看历史对话\n我们可以点上面这个按钮\n然后我切到规划模式\n也就是PLANO这一步非常重要\n在开始工作之前\n你需要在agent的协助之下\n把你想要的目标描述的非常清楚\n如果你随便说几句\n就让color code直接去做\n那大概率输出是不会太好\n所以你应该先进入PLANOPRIMEMODE之下\n他会更加深入的去思考\n会查看项目文件夹里的所有内容\n还会问你很多你可能没想到的问题\n这些问题会帮他更准确地理解你的需求\n然后才去执行\n我这里有一套美妆品牌的电商销售数据\n可以看到有很多的页面以及不少的维度和指标\n整体的数据是比较杂乱的\n和我们真实收集到的业务数据比较相似\n我们把它放进我们的项目文件夹\n直接和color code说\nHey cloud\n请帮我基于这套数据输出一个可视化的经营分析看板\n并给出深刻可落地的业务洞察和决策指导\n我将要生成一个HTML格式\n双击就能打开可交互并且可筛选的动态看板\n另外每个图表请附带一个下载按钮\n方便我下载生成好的图表\nPNG图片\n这个过程中我们会看到cloud code用BH这个工具去阅读我们的文件\n并操作我们的电脑\n经过几分钟的思考啊\ncloud code创建了一个详细的计划\n我们看一眼没什么大问题\n就直接approve\n你们会注意到在cal执行的过程中\n它会不断的弹出确认权限的请求\n如果你点第一行会批准当前这个权限\n如果你点第二行会批准该项目里的全部同类权限\n但有的时候啊项目非常复杂\n你需要一直守在电脑前面去确认权限就比较麻烦\n这时候我们打开设置搜索cloud code\n可以发现这里有个选项叫做dangerously\nSkip permissions\n勾选它呀\n这里就会出现一个bypass permissions的选项\n这样A证就可以一直跑下去\n不用你每一步都确认\n但它之所以会叫dangerously\n是因为这个模式是存在风险的\n比如会误删你的项目文件\n所以在复杂的项目里\n我们最好频繁的备份\n他大概工作了10分钟\n然后直接帮我们生成\n并且打开了一个看板\n可以看到我们在只给出了一个工作框架和一小段提示词的基础之上\ncloud code就能生成这样一个数据清晰\n图表详实\n并且对渠道商品活动\n客户评价都做了拆解分析的数据\n看板还给出了一系列扎实的业务洞察和决策建议\n可以直接帮助你做出决策或撰写报告\n当然这个看板也有不完美的地方\n比如整体的深色背景之下\n这样黑灰色的就很难看清\n或者你们在动手去做的时候\n可能会出现各种各样的bug\n在和A整协作的过程之中啊\n出现问题和bug是非常正常的事情\n我们只需要不断的和agent去沟通和调整即可\n在这里我们把有问题的部分直接截图\n贴近聊天框\n直接和他说\nHey cloud\n你现在图表里的黑灰色图例文字在深色的看板背景下很难看清\n请你把看板整体替换成符合美妆行业调性的浅色风格\n使得看板底色和图例文字对比清晰\n然后直接发送给他\n很快啊\n克拉扣就搞定了\n现在我们可以看到一个更加清晰美观的可视化的经营分析\n看板了\n我们可以修改限定日期的范围\n也可以按照关键指标去做筛选\n还可以把图表一键下载导出到这里\n你已经从零上手了\nCallcode\n我们回顾一下今天的成果\n首先我们装好并配置了CALLCODE\n其次我们了解了界面基本用法\n还有playbook和script的agent协作框架\n最后我们用它完成了一个真实的商业数据分析任务\n今天演示的只是最最基础的一个场景\n一个人加上cloud code能做到的商业产出其实远远不止这些\n后面我还会去拆更多的真实应用场景\n帮你们用A证去实现能力杠杆的最大化\n今天提到的cloud md文件我也可以分享给大家\n好的\n今天的视频就到这里\n如果有收获\n记得点赞关注\n大家也可以在评论区聊聊\n你最想用它解决的业务问题是什么\n我是雨薇\n我们下期见",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1ZXXCBnEKN",
+  "published_at": "1774961438",
+  "fetched_at": "2026-08-07T03:11:19+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Cloud Code 学习图谱\n\n## 1. 生态概览 [BV1ZXXCBnEKN P1 00:15]\n```mermaid\nflowchart TD\n    A[\"用户\"] --> B[\"Cloud Code AI Agent\"]\n    B --> D[\"VS Code IDE\"]\n    B --> C[\"Anthropic LLM（大语言模型）\"]\n    B --> E[\"API Provider (ofox)\"]\n    E --> F[\"cc switch API 管理\"]\n    B --> G[\"项目文件夹\"]\n    B --> H[\"Playbook & Script 框架\"]\n    B --> I[\"可视化看板\"]\n```\n\n## 2. 安装与配置流程 [BV1ZXXCBnEKN P1 01:12]\n```mermaid\nflowchart TD\n    A[\"下载免费 agent (train)\"] --> B[\"提供官方文档链接\"]\n    B --> C[\"Agent 自动安装 Cloud Code\"]\n    C --> D[\"VS Code 安装\"]\n    D --> E[\"语言包中文\"]\n    E --> F[\"安装 Cloud Code 插件\"]\n    F --> G[\"登录 API Key\"]\n    G --> H[\"配置 cc switch\"]\n    H --> I[\"测试连接\"]\n    I --> J[\"启用 API\"]\n    J --> K[\"重启 VS Code\"]\n    K --> L[\"准备就绪\"]\n```\n\n## 3. Playbook 与 Script 协作模型 [BV1ZXXCBnEKN P1 06:01]\n```mermaid\nflowchart TD\n    A[\"系统提示词 cloud.md\"] --> B[\"Cloud Code Agent\"]\n    B --> C[\"生成 Playbook（计划）\"]\n    C --> D[\"执行 Script（脚本）\"]\n    D --> G[\"输出 报告/看板\"]\n    D --> E[\"内部反馈循环\"]\n    E --> B\n    E --> H[\"更新 Playbook\"]\n    H --> D\n    E --> F[\"外部人工干预\"]\n    F --> B\n```\n\n## 4. 商业数据可视化任务流程 [BV1ZXXCBnEKN P1 08:56]\n```mermaid\nflowchart TD\n    A[\"用户提供数据文件夹\"] --> B[\"在 PLAN 模式下描述需求\"]\n    B --> C[\"Cloud Code 读取数据 (BH)\"]\n    C --> D[\"生成详细计划\"]\n    D --> E[\"用户批准计划\"]\n    E --> F[\"执行生成看板\"]\n    F --> G[\"权限确认弹窗\"]\n    G --> H[\"可选 跳过权限 (dangerously)\"]\n    H --> F\n    G --> I[\"生成 HTML 看板\"]\n    I --> J[\"用户审阅并请求样式修改\"]\n    J --> K[\"Cloud Code 更新看板\"]\n    K --> L[\"最终看板交付\"]\n```\n\n## 5. 权限与风险管理 [BV1ZXXCBnEKN P1 09:45]\n```mermaid\nflowchart TD\n    A[\"权限弹窗\"] --> B[\"用户手动确认\"]\n    A --> C[\"开启 dangerously Skip Permissions\"]\n    C --> D[\"自动连续运行\"]\n    D --> E[\"风险：误删文件\"]\n    D --> F[\"建议：频繁备份\"]\n    D --> G[\"监控运行状态\"]\n    G --> H[\"出现错误时人工干预\"]\n```",
+      "diagrams": [
+        {
+          "title": "1. 生态概览",
+          "code": "flowchart TD\n    A[\"用户\"] --> B[\"Cloud Code AI Agent\"]\n    B --> D[\"VS Code IDE\"]\n    B --> C[\"Anthropic LLM（大语言模型）\"]\n    B --> E[\"API Provider (ofox)\"]\n    E --> F[\"cc switch API 管理\"]\n    B --> G[\"项目文件夹\"]\n    B --> H[\"Playbook & Script 框架\"]\n    B --> I[\"可视化看板\"]"
+        },
+        {
+          "title": "2. 安装与配置流程",
+          "code": "flowchart TD\n    A[\"下载免费 agent (train)\"] --> B[\"提供官方文档链接\"]\n    B --> C[\"Agent 自动安装 Cloud Code\"]\n    C --> D[\"VS Code 安装\"]\n    D --> E[\"语言包中文\"]\n    E --> F[\"安装 Cloud Code 插件\"]\n    F --> G[\"登录 API Key\"]\n    G --> H[\"配置 cc switch\"]\n    H --> I[\"测试连接\"]\n    I --> J[\"启用 API\"]\n    J --> K[\"重启 VS Code\"]\n    K --> L[\"准备就绪\"]"
+        },
+        {
+          "title": "3. Playbook 与 Script 协作模型",
+          "code": "flowchart TD\n    A[\"系统提示词 cloud.md\"] --> B[\"Cloud Code Agent\"]\n    B --> C[\"生成 Playbook（计划）\"]\n    C --> D[\"执行 Script（脚本）\"]\n    D --> G[\"输出 报告/看板\"]\n    D --> E[\"内部反馈循环\"]\n    E --> B\n    E --> H[\"更新 Playbook\"]\n    H --> D\n    E --> F[\"外部人工干预\"]\n    F --> B"
+        },
+        {
+          "title": "4. 商业数据可视化任务流程",
+          "code": "flowchart TD\n    A[\"用户提供数据文件夹\"] --> B[\"在 PLAN 模式下描述需求\"]\n    B --> C[\"Cloud Code 读取数据 (BH)\"]\n    C --> D[\"生成详细计划\"]\n    D --> E[\"用户批准计划\"]\n    E --> F[\"执行生成看板\"]\n    F --> G[\"权限确认弹窗\"]\n    G --> H[\"可选 跳过权限 (dangerously)\"]\n    H --> F\n    G --> I[\"生成 HTML 看板\"]\n    I --> J[\"用户审阅并请求样式修改\"]\n    J --> K[\"Cloud Code 更新看板\"]\n    K --> L[\"最终看板交付\"]"
+        },
+        {
+          "title": "5. 权限与风险管理",
+          "code": "flowchart TD\n    A[\"权限弹窗\"] --> B[\"用户手动确认\"]\n    A --> C[\"开启 dangerously Skip Permissions\"]\n    C --> D[\"自动连续运行\"]\n    D --> E[\"风险：误删文件\"]\n    D --> F[\"建议：频繁备份\"]\n    D --> G[\"监控运行状态\"]\n    G --> H[\"出现错误时人工干预\"]"
+        }
+      ],
+      "diagram_count": 5,
+      "error": "",
+      "updated_at": "2026-08-07T03:21:41+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 5
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Cloud Code 学习图谱\n\n## 1. 生态概览 [BV1ZXXCBnEKN P1 00:15]\n```mermaid\nflowchart TD\n    A[\"用户\"] --> B[\"Cloud Code AI Agent\"]\n    B --> D[\"VS Code IDE\"]\n    B --> C[\"Anthropic LLM（大语言模型）\"]\n    B --> E[\"API Provider (ofox)\"]\n    E --> F[\"cc switch API 管理\"]\n    B --> G[\"项目文件夹\"]\n    B --> H[\"Playbook & Script 框架\"]\n    B --> I[\"可视化看板\"]\n```\n\n## 2. 安装与配置流程 [BV1ZXXCBnEKN P1 01:12]\n```mermaid\nflowchart TD\n    A[\"下载免费 agent (train)\"] --> B[\"提供官方文档链接\"]\n    B --> C[\"Agent 自动安装 Cloud Code\"]\n    C --> D[\"VS Code 安装\"]\n    D --> E[\"语言包中文\"]\n    E --> F[\"安装 Cloud Code 插件\"]\n    F --> G[\"登录 API Key\"]\n    G --> H[\"配置 cc switch\"]\n    H --> I[\"测试连接\"]\n    I --> J[\"启用 API\"]\n    J --> K[\"重启 VS Code\"]\n    K --> L[\"准备就绪\"]\n```\n\n## 3. Playbook 与 Script 协作模型 [BV1ZXXCBnEKN P1 06:01]\n```mermaid\nflowchart TD\n    A[\"系统提示词 cloud.md\"] --> B[\"Cloud Code Agent\"]\n    B --> C[\"生成 Playbook（计划）\"]\n    C --> D[\"执行 Script（脚本）\"]\n    D --> G[\"输出 报告/看板\"]\n    D --> E[\"内部反馈循环\"]\n    E --> B\n    E --> H[\"更新 Playbook\"]\n    H --> D\n    E --> F[\"外部人工干预\"]\n    F --> B\n```\n\n## 4. 商业数据可视化任务流程 [BV1ZXXCBnEKN P1 08:56]\n```mermaid\nflowchart TD\n    A[\"用户提供数据文件夹\"] --> B[\"在 PLAN 模式下描述需求\"]\n    B --> C[\"Cloud Code 读取数据 (BH)\"]\n    C --> D[\"生成详细计划\"]\n    D --> E[\"用户批准计划\"]\n    E --> F[\"执行生成看板\"]\n    F --> G[\"权限确认弹窗\"]\n    G --> H[\"可选 跳过权限 (dangerously)\"]\n    H --> F\n    G --> I[\"生成 HTML 看板\"]\n    I --> J[\"用户审阅并请求样式修改\"]\n    J --> K[\"Cloud Code 更新看板\"]\n    K --> L[\"最终看板交付\"]\n```\n\n## 5. 权限与风险管理 [BV1ZXXCBnEKN P1 09:45]\n```mermaid\nflowchart TD\n    A[\"权限弹窗\"] --> B[\"用户手动确认\"]\n    A --> C[\"开启 dangerously Skip Permissions\"]\n    C --> D[\"自动连续运行\"]\n    D --> E[\"风险：误删文件\"]\n    D --> F[\"建议：频繁备份\"]\n    D --> G[\"监控运行状态\"]\n    G --> H[\"出现错误时人工干预\"]\n```",
+  "diagrams": [
+    {
+      "title": "1. 生态概览",
+      "code": "flowchart TD\n    A[\"用户\"] --> B[\"Cloud Code AI Agent\"]\n    B --> D[\"VS Code IDE\"]\n    B --> C[\"Anthropic LLM（大语言模型）\"]\n    B --> E[\"API Provider (ofox)\"]\n    E --> F[\"cc switch API 管理\"]\n    B --> G[\"项目文件夹\"]\n    B --> H[\"Playbook & Script 框架\"]\n    B --> I[\"可视化看板\"]"
+    },
+    {
+      "title": "2. 安装与配置流程",
+      "code": "flowchart TD\n    A[\"下载免费 agent (train)\"] --> B[\"提供官方文档链接\"]\n    B --> C[\"Agent 自动安装 Cloud Code\"]\n    C --> D[\"VS Code 安装\"]\n    D --> E[\"语言包中文\"]\n    E --> F[\"安装 Cloud Code 插件\"]\n    F --> G[\"登录 API Key\"]\n    G --> H[\"配置 cc switch\"]\n    H --> I[\"测试连接\"]\n    I --> J[\"启用 API\"]\n    J --> K[\"重启 VS Code\"]\n    K --> L[\"准备就绪\"]"
+    },
+    {
+      "title": "3. Playbook 与 Script 协作模型",
+      "code": "flowchart TD\n    A[\"系统提示词 cloud.md\"] --> B[\"Cloud Code Agent\"]\n    B --> C[\"生成 Playbook（计划）\"]\n    C --> D[\"执行 Script（脚本）\"]\n    D --> G[\"输出 报告/看板\"]\n    D --> E[\"内部反馈循环\"]\n    E --> B\n    E --> H[\"更新 Playbook\"]\n    H --> D\n    E --> F[\"外部人工干预\"]\n    F --> B"
+    },
+    {
+      "title": "4. 商业数据可视化任务流程",
+      "code": "flowchart TD\n    A[\"用户提供数据文件夹\"] --> B[\"在 PLAN 模式下描述需求\"]\n    B --> C[\"Cloud Code 读取数据 (BH)\"]\n    C --> D[\"生成详细计划\"]\n    D --> E[\"用户批准计划\"]\n    E --> F[\"执行生成看板\"]\n    F --> G[\"权限确认弹窗\"]\n    G --> H[\"可选 跳过权限 (dangerously)\"]\n    H --> F\n    G --> I[\"生成 HTML 看板\"]\n    I --> J[\"用户审阅并请求样式修改\"]\n    J --> K[\"Cloud Code 更新看板\"]\n    K --> L[\"最终看板交付\"]"
+    },
+    {
+      "title": "5. 权限与风险管理",
+      "code": "flowchart TD\n    A[\"权限弹窗\"] --> B[\"用户手动确认\"]\n    A --> C[\"开启 dangerously Skip Permissions\"]\n    C --> D[\"自动连续运行\"]\n    D --> E[\"风险：误删文件\"]\n    D --> F[\"建议：频繁备份\"]\n    D --> G[\"监控运行状态\"]\n    G --> H[\"出现错误时人工干预\"]"
+    }
+  ],
+  "diagram_count": 5,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T03:21:41+00:00"
+}

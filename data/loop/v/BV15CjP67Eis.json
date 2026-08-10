@@ -1,0 +1,74 @@
+{
+  "bvid": "BV15CjP67Eis",
+  "title": "Windows MCP！AI控制电脑！无需视觉模型！",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 517,
+  "text": "不需要视觉模型的AI控制电脑MCP来了\n我们知道随着skills的大火\nMCP这个词变得越来越少人提了\n但并不代表MCP就不好用了\n比如今天要跟大家介绍的这个windows m cp\n其实啊这个MCP很早之前我就给大家介绍过了\n但是那个时候它还需要搭配个视觉\n多模态大模型才能用\n现在不一样了\n它用上了windows自带UIA无障碍接口\n不用截图识图就能实现电脑控制\n所谓UIA全称UI自动化\n是系统底层原生接口\n会把窗口按钮输入框整理成带坐标\n文字层级的结构化数据\n纯文本大模型就能直接读懂界面\n不用消耗多模态token\n操作延迟低至0.2到0.5秒\n全windows系统兼容一行UVX命令即可部署项目\n兼顾远程操控与完整安全防护\n支持studio本地SSE流式HTTP3种连接模式\n可设置开机后台常驻\n内置密钥校验IP白名单PLS加密\n还能屏蔽power shell\n注册表等高风险工具截图仅作画面参考\n整套控制逻辑完全依托UIA运行短板\n也源于UIA游戏无规范控件的自定义界面\n缺少无障碍数据无法识别\n办公自动化软件测试\n本地AI调度场景则完全适配\n大家\n感兴趣的赶紧玩起来吧\nAI产品狙击手\n每天分享免费AI工具和技巧\n关注我",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV15CjP67Eis",
+  "published_at": "1781538983",
+  "fetched_at": "2026-08-09T04:01:29+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Windows MCP 结构图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"AI 控制模型（纯文本 LLM）\"]\n    B1[\"Windows UIA 无障碍接口\"]\n    C1[\"Windows UI 元素（按钮、输入框等）\"]\n    D1[\"UVX 部署命令\"]\n    E1[\"远程操控 / 本地 AI 调度\"]\n    F1[\"安全防护层\"]\n    G1[\"SSE 流式 HTTP3 连接\"]\n    H1[\"低延迟执行（0.2‑0.5 s）\"]\n\n    A1 -->|读取 UI 结构| B1\n    B1 -->|提供坐标/层级| C1\n    C1 -->|反馈界面信息| A1\n    D1 -->|部署 UIA 接口| B1\n    E1 -->|调度任务| A1\n    F1 -->|加密/校验| A1\n    G1 -->|连接模式| D1\n    B1 -->|提升响应速度| H1\n```\n\n## 工作流图\n```mermaid\nflowchart LR\n    S1[\"启动 UVX 命令\"]\n    S2[\"AI 读取 UIA 数据\"]\n    S3[\"LLM 生成操作指令\"]\n    S4[\"UIA 执行指令\"]\n    S5[\"系统反馈\"]\n    S6[\"循环迭代\"]\n    S7[\"完成任务\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S3\n    S5 --> S7\n```\n\n## 局限性图\n```mermaid\nflowchart TD\n    L1[\"UIA 接口可用性\"]\n    L2[\"标准可访问控件\"]\n    L3[\"自定义非标准控件\"]\n    L4[\"缺少无障碍数据\"]\n    L5[\"无法识别 UI 元素\"]\n    L6[\"功能受限\"]\n    L7[\"适用场景：办公自动化、AI 调度\"]\n    L8[\"不适用场景：需要视觉识别\"]\n\n    L1 --> L2\n    L1 --> L3\n    L3 --> L4\n    L4 --> L5\n    L5 --> L6\n    L6 --> L7\n    L6 --> L8\n```\n\n## 安全特性图\n```mermaid\nflowchart TD\n    Sec1[\"内置密钥校验\"]\n    Sec2[\"IP 白名单\"]\n    Sec3[\"PLS 加密\"]\n    Sec4[\"屏蔽 PowerShell\"]\n    Sec5[\"屏蔽 注册表\"]\n    Sec6[\"截图仅作参考\"]\n    Sec7[\"远程控制安全\"]\n    Sec8[\"本地后台常驻\"]\n\n    Sec1 --> Sec3\n    Sec2 --> Sec3\n    Sec3 --> Sec7\n    Sec4 --> Sec7\n    Sec5 --> Sec7\n    Sec6 --> Sec7\n    Sec8 --> Sec7\n```",
+      "diagrams": [
+        {
+          "title": "总览图",
+          "code": "flowchart TD\n    A1[\"AI 控制模型（纯文本 LLM）\"]\n    B1[\"Windows UIA 无障碍接口\"]\n    C1[\"Windows UI 元素（按钮、输入框等）\"]\n    D1[\"UVX 部署命令\"]\n    E1[\"远程操控 / 本地 AI 调度\"]\n    F1[\"安全防护层\"]\n    G1[\"SSE 流式 HTTP3 连接\"]\n    H1[\"低延迟执行（0.2‑0.5 s）\"]\n\n    A1 -->|读取 UI 结构| B1\n    B1 -->|提供坐标/层级| C1\n    C1 -->|反馈界面信息| A1\n    D1 -->|部署 UIA 接口| B1\n    E1 -->|调度任务| A1\n    F1 -->|加密/校验| A1\n    G1 -->|连接模式| D1\n    B1 -->|提升响应速度| H1"
+        },
+        {
+          "title": "工作流图",
+          "code": "flowchart LR\n    S1[\"启动 UVX 命令\"]\n    S2[\"AI 读取 UIA 数据\"]\n    S3[\"LLM 生成操作指令\"]\n    S4[\"UIA 执行指令\"]\n    S5[\"系统反馈\"]\n    S6[\"循环迭代\"]\n    S7[\"完成任务\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S3\n    S5 --> S7"
+        },
+        {
+          "title": "局限性图",
+          "code": "flowchart TD\n    L1[\"UIA 接口可用性\"]\n    L2[\"标准可访问控件\"]\n    L3[\"自定义非标准控件\"]\n    L4[\"缺少无障碍数据\"]\n    L5[\"无法识别 UI 元素\"]\n    L6[\"功能受限\"]\n    L7[\"适用场景：办公自动化、AI 调度\"]\n    L8[\"不适用场景：需要视觉识别\"]\n\n    L1 --> L2\n    L1 --> L3\n    L3 --> L4\n    L4 --> L5\n    L5 --> L6\n    L6 --> L7\n    L6 --> L8"
+        },
+        {
+          "title": "安全特性图",
+          "code": "flowchart TD\n    Sec1[\"内置密钥校验\"]\n    Sec2[\"IP 白名单\"]\n    Sec3[\"PLS 加密\"]\n    Sec4[\"屏蔽 PowerShell\"]\n    Sec5[\"屏蔽 注册表\"]\n    Sec6[\"截图仅作参考\"]\n    Sec7[\"远程控制安全\"]\n    Sec8[\"本地后台常驻\"]\n\n    Sec1 --> Sec3\n    Sec2 --> Sec3\n    Sec3 --> Sec7\n    Sec4 --> Sec7\n    Sec5 --> Sec7\n    Sec6 --> Sec7\n    Sec8 --> Sec7"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-09T04:01:45+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Windows MCP 结构图谱\n\n## 总览图\n```mermaid\nflowchart TD\n    A1[\"AI 控制模型（纯文本 LLM）\"]\n    B1[\"Windows UIA 无障碍接口\"]\n    C1[\"Windows UI 元素（按钮、输入框等）\"]\n    D1[\"UVX 部署命令\"]\n    E1[\"远程操控 / 本地 AI 调度\"]\n    F1[\"安全防护层\"]\n    G1[\"SSE 流式 HTTP3 连接\"]\n    H1[\"低延迟执行（0.2‑0.5 s）\"]\n\n    A1 -->|读取 UI 结构| B1\n    B1 -->|提供坐标/层级| C1\n    C1 -->|反馈界面信息| A1\n    D1 -->|部署 UIA 接口| B1\n    E1 -->|调度任务| A1\n    F1 -->|加密/校验| A1\n    G1 -->|连接模式| D1\n    B1 -->|提升响应速度| H1\n```\n\n## 工作流图\n```mermaid\nflowchart LR\n    S1[\"启动 UVX 命令\"]\n    S2[\"AI 读取 UIA 数据\"]\n    S3[\"LLM 生成操作指令\"]\n    S4[\"UIA 执行指令\"]\n    S5[\"系统反馈\"]\n    S6[\"循环迭代\"]\n    S7[\"完成任务\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S3\n    S5 --> S7\n```\n\n## 局限性图\n```mermaid\nflowchart TD\n    L1[\"UIA 接口可用性\"]\n    L2[\"标准可访问控件\"]\n    L3[\"自定义非标准控件\"]\n    L4[\"缺少无障碍数据\"]\n    L5[\"无法识别 UI 元素\"]\n    L6[\"功能受限\"]\n    L7[\"适用场景：办公自动化、AI 调度\"]\n    L8[\"不适用场景：需要视觉识别\"]\n\n    L1 --> L2\n    L1 --> L3\n    L3 --> L4\n    L4 --> L5\n    L5 --> L6\n    L6 --> L7\n    L6 --> L8\n```\n\n## 安全特性图\n```mermaid\nflowchart TD\n    Sec1[\"内置密钥校验\"]\n    Sec2[\"IP 白名单\"]\n    Sec3[\"PLS 加密\"]\n    Sec4[\"屏蔽 PowerShell\"]\n    Sec5[\"屏蔽 注册表\"]\n    Sec6[\"截图仅作参考\"]\n    Sec7[\"远程控制安全\"]\n    Sec8[\"本地后台常驻\"]\n\n    Sec1 --> Sec3\n    Sec2 --> Sec3\n    Sec3 --> Sec7\n    Sec4 --> Sec7\n    Sec5 --> Sec7\n    Sec6 --> Sec7\n    Sec8 --> Sec7\n```",
+  "diagrams": [
+    {
+      "title": "总览图",
+      "code": "flowchart TD\n    A1[\"AI 控制模型（纯文本 LLM）\"]\n    B1[\"Windows UIA 无障碍接口\"]\n    C1[\"Windows UI 元素（按钮、输入框等）\"]\n    D1[\"UVX 部署命令\"]\n    E1[\"远程操控 / 本地 AI 调度\"]\n    F1[\"安全防护层\"]\n    G1[\"SSE 流式 HTTP3 连接\"]\n    H1[\"低延迟执行（0.2‑0.5 s）\"]\n\n    A1 -->|读取 UI 结构| B1\n    B1 -->|提供坐标/层级| C1\n    C1 -->|反馈界面信息| A1\n    D1 -->|部署 UIA 接口| B1\n    E1 -->|调度任务| A1\n    F1 -->|加密/校验| A1\n    G1 -->|连接模式| D1\n    B1 -->|提升响应速度| H1"
+    },
+    {
+      "title": "工作流图",
+      "code": "flowchart LR\n    S1[\"启动 UVX 命令\"]\n    S2[\"AI 读取 UIA 数据\"]\n    S3[\"LLM 生成操作指令\"]\n    S4[\"UIA 执行指令\"]\n    S5[\"系统反馈\"]\n    S6[\"循环迭代\"]\n    S7[\"完成任务\"]\n\n    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S3\n    S5 --> S7"
+    },
+    {
+      "title": "局限性图",
+      "code": "flowchart TD\n    L1[\"UIA 接口可用性\"]\n    L2[\"标准可访问控件\"]\n    L3[\"自定义非标准控件\"]\n    L4[\"缺少无障碍数据\"]\n    L5[\"无法识别 UI 元素\"]\n    L6[\"功能受限\"]\n    L7[\"适用场景：办公自动化、AI 调度\"]\n    L8[\"不适用场景：需要视觉识别\"]\n\n    L1 --> L2\n    L1 --> L3\n    L3 --> L4\n    L4 --> L5\n    L5 --> L6\n    L6 --> L7\n    L6 --> L8"
+    },
+    {
+      "title": "安全特性图",
+      "code": "flowchart TD\n    Sec1[\"内置密钥校验\"]\n    Sec2[\"IP 白名单\"]\n    Sec3[\"PLS 加密\"]\n    Sec4[\"屏蔽 PowerShell\"]\n    Sec5[\"屏蔽 注册表\"]\n    Sec6[\"截图仅作参考\"]\n    Sec7[\"远程控制安全\"]\n    Sec8[\"本地后台常驻\"]\n\n    Sec1 --> Sec3\n    Sec2 --> Sec3\n    Sec3 --> Sec7\n    Sec4 --> Sec7\n    Sec5 --> Sec7\n    Sec6 --> Sec7\n    Sec8 --> Sec7"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-09T04:01:45+00:00"
+}

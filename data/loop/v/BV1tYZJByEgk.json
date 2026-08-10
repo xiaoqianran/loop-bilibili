@@ -1,0 +1,74 @@
+{
+  "bvid": "BV1tYZJByEgk",
+  "title": "Claude code 原理拆解：Bash就是一切",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 2637,
+  "text": "最近在高强度的用cloud co嗯\n我很想知道它的底层原理是什么的\n然后就发现在GITHUB有这么一个开源项目\n叫run crowd code\n大家可以去学习一下\n里面他实现了五个版本\n从V0到V4\n然后渐进式的揭露了color co\n它的底层原理是什么呢\n同时呢它也实现了一个开源版本的一个CD code\n大家感兴趣的话也可以去研究一下\n好如果这个系列能帮到你的话\n就欢迎点赞收藏加转发\n好\nOK我们来看一下V0的实现核心就是BS\n就是一切\n这里面仅仅50行代码\n一个工具\n我们就能实现完整的agent的能力\n这里面有一个核心的洞察是UNIX哲学\n一切皆文件\n一切皆可管道\nBS是uni世界的入口\n当你拥有了BS\n你就拥有了一切的能力\n比如说读文件\n写文件\n探索执行\n甚至是实现子代理\n最后一行其实非常关键\n我们通过BS来调用自身就可以来实现子代理\n我们不需要任何的task工具\n我们不需要任何的A证代理\n我们只需要递归就能够实现子代理\n整个A整代码其实也就50行\n关键的核心就这些\n我们来看一下V0所有的代码\n首先这里会传入\n如果是执行这个任务的时候\n直接外部传入参数的话\n就调用这个\n如果是交互的方式的话\n就执行这里好\n进入到这个train里面\n我们看一下\n这里面会传入一个list\n如果历史没有的话\n就是定义一个空的历史列表\n好里面创建创建一个对象\n创建一个user的对象\n然后把用户的提示词放进来\n我们看一下\n这里面是核心的代码\n不要true\n我们写一个死循环\n写一个死循环之后\n让他不断的来调用工具\n然后反馈调用工具反馈\n我们看一下这个model\n这里面要注意\n我们现在这项目里面配置自己的密钥\n配置自己的地址\n然后这里呢我们用的是千问\n你们可以用什么豆瓣啊\n千万啊\nKI啊\n都可以\n我们来看一下这里的提示词嗯\n你是一位位于这个地方的命令行智能体\n最主要的核心就是使用BS命令来解决问题\n规则就是优先使用工具\n少说多做\n先行动\n再简要的说明\n那你可以使用这些工具来读取文件\n可以使用这些工具来写文件\n然后对于一些复杂的任务的话\n可以创建智能体来保证上下文的简洁\n那怎么来创建智能体呢\n可以使用Python命令来调自己\n然后再加上这个任务的描述\n然后什么时候使用智能体任务\n需要大量的读取文件的时候\n比如说嗯\n通过这种方式可以让用来隔离整个探索过程\n来保证上下文的整洁\n任务是独立的\n而且不依赖其他的模块的时候\n也可以使用子弹里\n如果希望整个智能体子弹理嗯\n避免避免整个任务来污染整个上下文的话\n也可以使用子弹理纸质能体在隔离环境中运行\n返回最终的结果\n好我们再回到这里\n好\n接下这是历史表\n然后我们再看一下这个工具\n工具列表里面只有一个工具名字叫BS\n然后他的描述是执行这个效命令\n常用的模式是用这些工具来读取\n用这些工具来写入\n然后还可以使用智子智能体\n通过Python命令\n然后加任务描述\n最终返回结果即可\n这就是这个工具的全部描述啊\n这里面还有一个非常关键的就是输入参数\n输入参数是object\n它的输入的类型是object\n它的参数是command\ncommand的参数值是string\n然后必须要求是command命令\n必须要求的参数是command参数\n这很抽象\n什么意思呢\n我们来回到回到这里\n我们回到这里看一下\n比如说我们在这里面\n用户输入创建一个hello点TXT文件\n这个时候这句话发给大模型\n大模型呢就会返回工具的调用\n返回成的id\n返回成的命令\n你看这里返回一个对象\n然后呢参数是command\n然后呢执行\n那这里面呢就是它这里面就string类型\n这就是执行的命令\n好我们继续\n那这里用户这个大模型会返回最终的结果\n这里面如果是文本的话\n就把文本添加到这个历史列表里面\n如果是工具调用的话\n就放到这里面\n然后放到这个工具呃\n对象里面\n接着如果不是工具调用的话\n我们就直接返回结果\n如果是工具调用的话\n就从就从这个这个command里面\n把这个命令提取出来\n你看我们这里面判断一下to use\n然后类型是to use\n然后从这个从这个input里面\n把这个common里面的命令给它拿出来\n然后拿出来\n然后再通过这个程序来执行命令\n执行完命令后再返回结果好\n这个就是完整流程\n然后呢再把工具的执行结果呢追加到历史里面\n然后再来以一轮新的循环\n然后如果当前这个大模型没有返回结果了\n那就没有没有返回工具调用了\n那就直接把结果返回去\n整个模型的调用\n整个任务执行就结束了\n好我们来演示一下u v run v a0\n好我们就以这个例子来说明一下\nOK我们输入了这跟输入了这个提示词\n然后执行了这个命令\n然后因为这个命令命令是返回是空结果\n然后这个是大模型返回的值啊\n输入这个命令\n然后这个返回工具调用\n然后工具层面执行这个命令\n然后因为因为这个命令返回的是空值嘛\n所以就没有没有返回结果\n最终呢把这完整的历史列表再发给大模型\n大模型呢再返回这个结果\n好一个完整的流程就演示完毕了\n我们再来看一下这个\n那其实我们还可以实现递归的调用\n实现无限的嵌套\n比如说我们可以再来举个例子\n请你使用此代理来总结整个项目\n好我们发现它这里是调用了Python命令\n然后探索\n然后便写把任务描述\n然后又重新递归调调自己了\n好OK1段时间之后\n我们就发现它就是实现了子代理\n来完成整个项目的总结了\n这里我就不详细的看了\n你再回到这里\n然后这里面其实子弹已经实现了进程的隔离\n然后自己的子弹里能够拥有自己的上下文\n我们通过子代理\n通过STT来进行通信\n他拿到结果之后再把这个结果返回给主代理\n还可以实现无限的递归\n子代理还可以再调子代理\n好我们我们V0是牺牲了什么呢\n其实没有代理类型\n也没有工具的过滤\n也没有进度的显示\n只是普通的STT的输出\n但代码复杂呢只需要50行就可以了\nV3呢我们其实我们实现了呃\n各种的代理类型\n还增加了白名单\n还增加了行列更新\n但代码量的就更多一点\n那V0证明了什么复杂的能力\n从简单规则当中就能涌现一个工具就足够了\nbass就是通往一切的入口\n我们还可以实现递归\n递归其实就是层级实现\n通过自我调用来实现代理\n然后还实现了进场的隔离\n通过递归来实现进场的隔离\n再增加提示词\n提示词实现了约束\n很核心的模式\n其人没有改变\n还是使用这个while true循环\n其他的一切代办子代理权限都是V1的\n这个循环来实现的\n所以banks就是一切",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1tYZJByEgk",
+  "published_at": "1771081125",
+  "fetched_at": "2026-08-07T15:29:21+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "ok",
+      "mode": "mermaid",
+      "markdown": "# Claude code 原理拆解：Bash就是一切\n\n## V0 核心执行循环\n```mermaid\nflowchart TD\n    Start[\"启动 V0 实例\"] --> InitHist[\"初始化历史列表（若无则为空）\"]\n    InitHist --> Prompt[\"创建用户提示对象\"]\n    Prompt --> LoopStart[\"while true 循环\"]\n    LoopStart --> CallTool[\"调用唯一工具 BS\"]\n    CallTool --> IsToolCall{\"返回是否为工具调用？\"}\n    IsToolCall -- 是 --> ExecCmd[\"执行 command（字符串）\"]\n    ExecCmd --> AppendResult[\"将执行结果追加到历史列表\"]\n    AppendResult --> LoopStart\n    IsToolCall -- 否 --> ReturnResult[\"返回大模型最终结果\"]\n    ReturnResult --> End[\"任务结束\"]\n```\n关键步骤依据：\n- 写死循环并不断调用工具的描述 [BV1tYZJByEgk P1 01:55]  \n- 完整流程的概述 [BV1tYZJByEgk P1 04:46]  \n- 任务执行结束的说明 [BV1tYZJByEgk P1 04:59]  \n\n## BS 工具定义与调用\n```mermaid\nflowchart LR\n    Tool[\"工具：BS\"] --> InputObj[\"输入 object\"]\n    InputObj --> CmdField[\"字段：command（string）\"]\n    CmdField --> Exec[\"执行 command\"]\n    Exec --> ResultObj[\"返回 object（执行结果）\"]\n    ResultObj --> ModelFeedback[\"反馈给大模型\"]\n    ModelFeedback --> LoopBack[\"进入下一轮循环或结束\"]\n```\n证据来源：\n- 工具列表仅含 BS 且描述为执行命令 [BV1tYZJByEgk P1 03:15]  \n- 输入参数为 object，command 为 string 类型的说明 [BV1tYZJByEgk P1 03:35-03:41]  \n\n## 递归子代理实现机制\n```mermaid\nflowchart TD\n    Init[\"拥有 BS 能力\"] --> SelfCall[\"通过 BS 调用自身\"]\n    SelfCall --> CreateSubAgent[\"创建子代理（可选 Python 调用）\"]\n    CreateSubAgent --> IsolateContext[\"上下文隔离（子弹/进程）\"]\n    IsolateContext --> Recursive[\"递归调用子代理\"]\n    Recursive --> EndSub[\"子代理返回结果\"]\n    EndSub --> MergeResult[\"合并结果回主代理\"]\n    MergeResult --> LoopContinue[\"继续主循环或结束\"]\n```\n关键说明：\n- 通过 BS 调用自身实现子代理的核心句 [BV1tYZJByEgk P1 01:10]  \n- 子代理完成项目总结的演示 [BV1tYZJByEgk P1 06:17]  \n- 无限递归与进程隔离的实现概念 [BV1tYZJByEgk P1 07:15-07:18]  \n\n## V0 与 V3 功能对比\n```mermaid\nflowchart LR\n    V0[\"V0 功能\"] -->|缺失| NoAgentType[\"无代理类型\"]\n    V0 -->|缺失| NoToolFilter[\"无工具过滤\"]\n    V0 -->|缺失| NoProgress[\"无进度显示\"]\n    V0 -->|实现| SimpleLoop[\"普通 while true 循环\"]\n    V3[\"V3 功能\"] -->|新增| AgentTypes[\"支持多种代理类型\"]\n    V3 -->|新增| Whitelist[\"工具白名单\"]\n    V3 -->|新增| LineUpdates[\"行列更新机制\"]\n    V3 -->|实现| EnhancedLoop[\"更复杂的控制流\"]\n    SimpleLoop -->|对比| EnhancedLoop\n```\n对应证据：\n- V0 的局限性描述 [BV1tYZJByEgk P1 06:45-06:48]  \n- V3 增加的代理类型、白名单、行列更新等特性 [BV1tYZJByEgk P1 06:55-06:57]  ",
+      "diagrams": [
+        {
+          "title": "V0 核心执行循环",
+          "code": "flowchart TD\n    Start[\"启动 V0 实例\"] --> InitHist[\"初始化历史列表（若无则为空）\"]\n    InitHist --> Prompt[\"创建用户提示对象\"]\n    Prompt --> LoopStart[\"while true 循环\"]\n    LoopStart --> CallTool[\"调用唯一工具 BS\"]\n    CallTool --> IsToolCall{\"返回是否为工具调用？\"}\n    IsToolCall -- 是 --> ExecCmd[\"执行 command（字符串）\"]\n    ExecCmd --> AppendResult[\"将执行结果追加到历史列表\"]\n    AppendResult --> LoopStart\n    IsToolCall -- 否 --> ReturnResult[\"返回大模型最终结果\"]\n    ReturnResult --> End[\"任务结束\"]"
+        },
+        {
+          "title": "BS 工具定义与调用",
+          "code": "flowchart LR\n    Tool[\"工具：BS\"] --> InputObj[\"输入 object\"]\n    InputObj --> CmdField[\"字段：command（string）\"]\n    CmdField --> Exec[\"执行 command\"]\n    Exec --> ResultObj[\"返回 object（执行结果）\"]\n    ResultObj --> ModelFeedback[\"反馈给大模型\"]\n    ModelFeedback --> LoopBack[\"进入下一轮循环或结束\"]"
+        },
+        {
+          "title": "递归子代理实现机制",
+          "code": "flowchart TD\n    Init[\"拥有 BS 能力\"] --> SelfCall[\"通过 BS 调用自身\"]\n    SelfCall --> CreateSubAgent[\"创建子代理（可选 Python 调用）\"]\n    CreateSubAgent --> IsolateContext[\"上下文隔离（子弹/进程）\"]\n    IsolateContext --> Recursive[\"递归调用子代理\"]\n    Recursive --> EndSub[\"子代理返回结果\"]\n    EndSub --> MergeResult[\"合并结果回主代理\"]\n    MergeResult --> LoopContinue[\"继续主循环或结束\"]"
+        },
+        {
+          "title": "V0 与 V3 功能对比",
+          "code": "flowchart LR\n    V0[\"V0 功能\"] -->|缺失| NoAgentType[\"无代理类型\"]\n    V0 -->|缺失| NoToolFilter[\"无工具过滤\"]\n    V0 -->|缺失| NoProgress[\"无进度显示\"]\n    V0 -->|实现| SimpleLoop[\"普通 while true 循环\"]\n    V3[\"V3 功能\"] -->|新增| AgentTypes[\"支持多种代理类型\"]\n    V3 -->|新增| Whitelist[\"工具白名单\"]\n    V3 -->|新增| LineUpdates[\"行列更新机制\"]\n    V3 -->|实现| EnhancedLoop[\"更复杂的控制流\"]\n    SimpleLoop -->|对比| EnhancedLoop"
+        }
+      ],
+      "diagram_count": 4,
+      "error": "",
+      "updated_at": "2026-08-07T15:29:49+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 4
+  },
+  "analysis_status": "ok",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "# Claude code 原理拆解：Bash就是一切\n\n## V0 核心执行循环\n```mermaid\nflowchart TD\n    Start[\"启动 V0 实例\"] --> InitHist[\"初始化历史列表（若无则为空）\"]\n    InitHist --> Prompt[\"创建用户提示对象\"]\n    Prompt --> LoopStart[\"while true 循环\"]\n    LoopStart --> CallTool[\"调用唯一工具 BS\"]\n    CallTool --> IsToolCall{\"返回是否为工具调用？\"}\n    IsToolCall -- 是 --> ExecCmd[\"执行 command（字符串）\"]\n    ExecCmd --> AppendResult[\"将执行结果追加到历史列表\"]\n    AppendResult --> LoopStart\n    IsToolCall -- 否 --> ReturnResult[\"返回大模型最终结果\"]\n    ReturnResult --> End[\"任务结束\"]\n```\n关键步骤依据：\n- 写死循环并不断调用工具的描述 [BV1tYZJByEgk P1 01:55]  \n- 完整流程的概述 [BV1tYZJByEgk P1 04:46]  \n- 任务执行结束的说明 [BV1tYZJByEgk P1 04:59]  \n\n## BS 工具定义与调用\n```mermaid\nflowchart LR\n    Tool[\"工具：BS\"] --> InputObj[\"输入 object\"]\n    InputObj --> CmdField[\"字段：command（string）\"]\n    CmdField --> Exec[\"执行 command\"]\n    Exec --> ResultObj[\"返回 object（执行结果）\"]\n    ResultObj --> ModelFeedback[\"反馈给大模型\"]\n    ModelFeedback --> LoopBack[\"进入下一轮循环或结束\"]\n```\n证据来源：\n- 工具列表仅含 BS 且描述为执行命令 [BV1tYZJByEgk P1 03:15]  \n- 输入参数为 object，command 为 string 类型的说明 [BV1tYZJByEgk P1 03:35-03:41]  \n\n## 递归子代理实现机制\n```mermaid\nflowchart TD\n    Init[\"拥有 BS 能力\"] --> SelfCall[\"通过 BS 调用自身\"]\n    SelfCall --> CreateSubAgent[\"创建子代理（可选 Python 调用）\"]\n    CreateSubAgent --> IsolateContext[\"上下文隔离（子弹/进程）\"]\n    IsolateContext --> Recursive[\"递归调用子代理\"]\n    Recursive --> EndSub[\"子代理返回结果\"]\n    EndSub --> MergeResult[\"合并结果回主代理\"]\n    MergeResult --> LoopContinue[\"继续主循环或结束\"]\n```\n关键说明：\n- 通过 BS 调用自身实现子代理的核心句 [BV1tYZJByEgk P1 01:10]  \n- 子代理完成项目总结的演示 [BV1tYZJByEgk P1 06:17]  \n- 无限递归与进程隔离的实现概念 [BV1tYZJByEgk P1 07:15-07:18]  \n\n## V0 与 V3 功能对比\n```mermaid\nflowchart LR\n    V0[\"V0 功能\"] -->|缺失| NoAgentType[\"无代理类型\"]\n    V0 -->|缺失| NoToolFilter[\"无工具过滤\"]\n    V0 -->|缺失| NoProgress[\"无进度显示\"]\n    V0 -->|实现| SimpleLoop[\"普通 while true 循环\"]\n    V3[\"V3 功能\"] -->|新增| AgentTypes[\"支持多种代理类型\"]\n    V3 -->|新增| Whitelist[\"工具白名单\"]\n    V3 -->|新增| LineUpdates[\"行列更新机制\"]\n    V3 -->|实现| EnhancedLoop[\"更复杂的控制流\"]\n    SimpleLoop -->|对比| EnhancedLoop\n```\n对应证据：\n- V0 的局限性描述 [BV1tYZJByEgk P1 06:45-06:48]  \n- V3 增加的代理类型、白名单、行列更新等特性 [BV1tYZJByEgk P1 06:55-06:57]  ",
+  "diagrams": [
+    {
+      "title": "V0 核心执行循环",
+      "code": "flowchart TD\n    Start[\"启动 V0 实例\"] --> InitHist[\"初始化历史列表（若无则为空）\"]\n    InitHist --> Prompt[\"创建用户提示对象\"]\n    Prompt --> LoopStart[\"while true 循环\"]\n    LoopStart --> CallTool[\"调用唯一工具 BS\"]\n    CallTool --> IsToolCall{\"返回是否为工具调用？\"}\n    IsToolCall -- 是 --> ExecCmd[\"执行 command（字符串）\"]\n    ExecCmd --> AppendResult[\"将执行结果追加到历史列表\"]\n    AppendResult --> LoopStart\n    IsToolCall -- 否 --> ReturnResult[\"返回大模型最终结果\"]\n    ReturnResult --> End[\"任务结束\"]"
+    },
+    {
+      "title": "BS 工具定义与调用",
+      "code": "flowchart LR\n    Tool[\"工具：BS\"] --> InputObj[\"输入 object\"]\n    InputObj --> CmdField[\"字段：command（string）\"]\n    CmdField --> Exec[\"执行 command\"]\n    Exec --> ResultObj[\"返回 object（执行结果）\"]\n    ResultObj --> ModelFeedback[\"反馈给大模型\"]\n    ModelFeedback --> LoopBack[\"进入下一轮循环或结束\"]"
+    },
+    {
+      "title": "递归子代理实现机制",
+      "code": "flowchart TD\n    Init[\"拥有 BS 能力\"] --> SelfCall[\"通过 BS 调用自身\"]\n    SelfCall --> CreateSubAgent[\"创建子代理（可选 Python 调用）\"]\n    CreateSubAgent --> IsolateContext[\"上下文隔离（子弹/进程）\"]\n    IsolateContext --> Recursive[\"递归调用子代理\"]\n    Recursive --> EndSub[\"子代理返回结果\"]\n    EndSub --> MergeResult[\"合并结果回主代理\"]\n    MergeResult --> LoopContinue[\"继续主循环或结束\"]"
+    },
+    {
+      "title": "V0 与 V3 功能对比",
+      "code": "flowchart LR\n    V0[\"V0 功能\"] -->|缺失| NoAgentType[\"无代理类型\"]\n    V0 -->|缺失| NoToolFilter[\"无工具过滤\"]\n    V0 -->|缺失| NoProgress[\"无进度显示\"]\n    V0 -->|实现| SimpleLoop[\"普通 while true 循环\"]\n    V3[\"V3 功能\"] -->|新增| AgentTypes[\"支持多种代理类型\"]\n    V3 -->|新增| Whitelist[\"工具白名单\"]\n    V3 -->|新增| LineUpdates[\"行列更新机制\"]\n    V3 -->|实现| EnhancedLoop[\"更复杂的控制流\"]\n    SimpleLoop -->|对比| EnhancedLoop"
+    }
+  ],
+  "diagram_count": 4,
+  "analysis_error": "",
+  "analysis_updated_at": "2026-08-07T15:29:49+00:00"
+}

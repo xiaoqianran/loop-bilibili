@@ -1,0 +1,26 @@
+{
+  "bvid": "BV1AG7m6HEEW",
+  "title": "140. 稀疏矩阵乘稠密向量SpMV是如何跳过0值计算的？【每天一个宝藏问题】",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 659,
+  "text": "今天的问题是稀疏矩阵乘稠密向量\nSPMV是如何跳过零值计算的\n先要说什么是SPMV\n就是稀疏矩阵成成面向量\n那么传统的矩阵乘向量有一个问题\n就是他有遍历矩阵\n那么一行和向量的这一列做内积\n无论矩阵当中有多少个零\n都会被老老实实的便利\n而SPMV它可以跳过这个零\n怎么做到呢\n就以CEOO格式的这个A举证举例\n那么coo o格式它有三个要素\n首先就是这个value表示所有非零值具体是什么\n比如说12345排成一排塞进去\n然后是roll index\n就是说这个值的行号是什么\n以及COINDEX它的列号是什么\n那么举个例子\n比如说三这个元素\n它的行号是一\n它的列号也是一\n这个时候就已经定位回这个地方\n相当于这个数组存储\n和这个矩阵存储有一一对应关系\n那么在SPMV当中\n它为什么就能跳过切除矩阵当中的零值呢\n举个例子\n首先它要去遍历这三个数组\n相当于它有个指针\n像这样指到这里好\n这个时候假设便利到了一个元素四\n它的这个行号便利到了12\n列号是零\n这个时候就已经知道他要和哪一个元素相乘了\n当然它要和X0相乘\n这个零就来自这里的零\n向于拿零去在这个数组当中去索引到X0\n然后它相乘\n并且就已经知道他要累加在哪了\n累加到Y2\n这个二就对应着这里的这个\n相当于用二在这个数组当中去索引\n索引到这个位置\n然后把它累加进去\n这个时候会发现\n对于矩阵当中的所有的零都被跳过了\n为什么呢\n假设现在比如说只有一两个元素\n这个时候他就只需要去便利那一两个元素\n相当于数组遍历\n然后呢进行一个累加\n而至于很多的那些零\n其实他没有被便利到",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV1AG7m6HEEW",
+  "published_at": "",
+  "fetched_at": "2026-08-06T07:14:46+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {},
+  "model_counts": {},
+  "analysis_status": "",
+  "analysis_mode": "",
+  "analysis_model": "",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "",
+  "analysis_updated_at": ""
+}

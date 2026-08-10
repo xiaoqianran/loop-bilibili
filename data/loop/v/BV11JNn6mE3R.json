@@ -1,0 +1,40 @@
+{
+  "bvid": "BV11JNn6mE3R",
+  "title": "【附完整文档】LLM Wiki 个人/企业知识库开发实战，系统骨架搭建、问答引用、知识关联全流程，学完可判断自己的数据该走哪条路线｜VibeCoding",
+  "status": "ok",
+  "language": "ai-zh",
+  "chars": 462,
+  "text": "一句话就能生成一个LMVK系统\n这一期我把LLMVK和graph i g怎么选\n怎么搭\n给你讲透\n本期视频完整配套课件评论区置顶\n按需自取\nLLM wiki系统为什么比传统RAG更适合处理\n大量散落文档之间的关联检索\n很多知识库项目问题不在模型不够强\n而在检索结构一开始就选错了\n文档一多关系一复杂\n纯唱K的向量检索就容易出现召回偏低\n幻觉高\n维护成本持续上升的问题\n所以这一期我不讲空概念\n我直接拆两个真实场景\n一个是大量markdown课件知识点之间的关联检索\n看LLMVP\n怎么把散落文档连成可导航的知识网络\n另一个是医药这类垂类场景\n看graph r a g\n为什么必须把实体关系和上下文脉络\n一起拉出来\n才能把问题答准\n更重要的是\n我会把开发链路一起走一遍\n不止讲原理\n还会带你看怎么通过web coding\n先把系统骨架搭起来\n再把问答引用和知识关联一步一步补齐\n这期完整配套课件我也整理好了\n扫描屏幕二维码即可领取\n你拿到之后\n可以直接判断自己的数据该走哪条路线\n也可以照着把第一版系统先跑起来\n公开课现在开始",
+  "error": "",
+  "url": "https://www.bilibili.com/video/BV11JNn6mE3R",
+  "published_at": "1783680739",
+  "fetched_at": "2026-08-09T18:32:02+00:00",
+  "default_model": "openai/gpt-oss-120b",
+  "site_models": [
+    "openai/gpt-oss-120b"
+  ],
+  "analyses": {
+    "openai/gpt-oss-120b": {
+      "model": "openai/gpt-oss-120b",
+      "label": "gpt-oss-120b",
+      "status": "failed",
+      "mode": "mermaid",
+      "markdown": "",
+      "diagrams": [],
+      "diagram_count": 0,
+      "error": "timeout after 180.0s",
+      "updated_at": "2026-08-09T18:38:15+00:00"
+    }
+  },
+  "model_counts": {
+    "openai/gpt-oss-120b": 0
+  },
+  "analysis_status": "failed",
+  "analysis_mode": "mermaid",
+  "analysis_model": "openai/gpt-oss-120b",
+  "analysis_markdown": "",
+  "diagrams": [],
+  "diagram_count": 0,
+  "analysis_error": "timeout after 180.0s",
+  "analysis_updated_at": "2026-08-09T18:38:15+00:00"
+}
